@@ -273,6 +273,10 @@
 	const SEED_BOMB
 	const DRAGON_RUSH
 	const BULLET_PUNCH
+	const ZEN_HEADBUTT
+	const POISON_JAB
+	const DRILL_RUN
+	const DRAININGKISS
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

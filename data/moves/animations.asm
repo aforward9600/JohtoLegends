@@ -291,6 +291,10 @@ BattleAnimations::
 	dw BattleAnim_SeedBomb
 	dw BattleAnim_DragonRush
 	dw BattleAnim_BulletPunch
+	dw BattleAnim_ZenHeadbutt
+	dw BattleAnim_PoisonJab
+	dw BattleAnim_DrillRun
+	dw BattleAnim_DrainingKiss
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -3460,6 +3464,7 @@ BattleAnim_FaintAttack:
 	anim_ret
 
 BattleAnim_SweetKiss:
+BattleAnim_DrainingKiss:
 	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_ANGELS
 	anim_bgeffect ANIM_BG_07, $0, $2, $0
 	anim_obj ANIM_OBJ_SWEET_KISS, 96, 40, $0
@@ -4842,6 +4847,58 @@ BattleAnim_BulletPunch:
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_wait 16
 	anim_ret
+
+BattleAnim_ZenHeadbutt:
+	anim_1gfx ANIM_GFX_HIT
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
+	anim_bgeffect ANIM_BG_PSYCHIC, $0, $0, $0
+.loop
+	anim_sound 6, 2, SFX_PSYCHIC
+	anim_wait 8
+	anim_loop 6, .loop
+	anim_wait 48
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_HEADBUTT
+	anim_obj ANIM_OBJ_01, 136, 56, $0
+	anim_wait 8
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
+BattleAnim_PoisonJab:
+	anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_00, 136, 48, $0
+	anim_wait 8
+	anim_call BattleAnim_ShowMon_0
+	anim_1gfx ANIM_GFX_POISON
+	anim_call BattleAnim_Sludge_branch_cbc15
+	anim_wait 56
+	anim_ret
+
+BattleAnim_DrillRun:
+	anim_2gfx ANIM_GFX_HORN, ANIM_GFX_HIT
+	anim_obj ANIM_OBJ_HORN, 72, 80, $3
+	anim_wait 8
+.loop
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_00, 132, 40, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_00, 140, 48, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_00, 132, 56, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_00, 124, 48, $0
+	anim_wait 8
+	anim_loop 3, .loop
+	anim_ret
+
 
 BattleAnim_DreamEater_branch_cbab3:
 BattleAnim_GigaDrain_branch_cbab3:

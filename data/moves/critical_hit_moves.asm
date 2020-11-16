@@ -8,4 +8,5 @@ CriticalHitMoves:
 	dw CROSS_CHOP
 	dw NIGHT_SLASH
 	dw SHADOW_CLAW
+	dw DRILL_RUN
 	dw -1

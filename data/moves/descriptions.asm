@@ -272,6 +272,10 @@ MoveDescriptions1:
 	dw SeedBombDescription
 	dw DragonRushDescription
 	dw BulletPunchDescription
+	dw ZenHeadbuttDescription
+	dw PoisonJabDescription
+	dw DrillRunDescription
+	dw DrainingKissDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1343,3 +1347,19 @@ DragonRushDescription:
 BulletPunchDescription:
 	db   "Fist of steel that"
 	next "strikes first.@"
+
+ZenHeadbuttDescription:
+	db   "Inner peace bash,"
+	next "can cause flinch.@"
+
+PoisonJabDescription:
+	db   "Powerful jab that"
+	next "can poison foe.@"
+
+DrillRunDescription:
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
+
+DrainingKissDescription:
+	db   "Sweet kiss that"
+	next "heals the user.@"

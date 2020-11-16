@@ -266,3 +266,7 @@ MoveNames::
 	db "Seed Bomb@"
 	db "Dragon Rush@"
 	db "Bullet Punch@"
+	db "Zen Headbutt@"
+	db "Poison Jab@"
+	db "Drill Run@"
+	db "DrainingKiss@"
