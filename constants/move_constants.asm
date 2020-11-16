@@ -293,6 +293,10 @@
 	const EARTH_POWER
 	const IRON_HEAD
 	const SIGNAL_BEAM
+	const ICICLE_CRASH
+	const STONE_EDGE
+	const EXTRASENSORY
+	const X_SCISSOR
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

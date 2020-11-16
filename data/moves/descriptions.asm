@@ -292,6 +292,10 @@ MoveDescriptions1:
 	dw EarthPowerDescription
 	dw IronHeadDescription
 	dw SignalBeamDescription
+	dw IcicleCrashDescription
+	dw StoneEdgeDescription
+	dw ExtrasensoryDescription
+	dw XScissorDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1443,3 +1447,19 @@ IronHeadDescription:
 SignalBeamDescription:
 	db   "Beam that can can"
 	next "cause confusion.@"
+
+IcicleCrashDescription:
+	db   "Causes flinch with"
+	next "big icicles.@"
+
+StoneEdgeDescription:
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
+
+ExtrasensoryDescription:
+	db   "May cause flinchi-"
+	next "ng with the mind.@"
+
+XScissorDescription:
+	db   "Slices foe with"
+	next "crossed limbs.@"

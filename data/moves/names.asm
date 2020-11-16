@@ -286,3 +286,7 @@ MoveNames::
 	db "Earth Power@"
 	db "Iron Head@"
 	db "Signal Beam@"
+	db "Icicle Crash@"
+	db "Stone Edge@"
+	db "Extrasensory@"
+	db "X-Scissor@"

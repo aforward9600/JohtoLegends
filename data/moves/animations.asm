@@ -311,6 +311,10 @@ BattleAnimations::
 	dw BattleAnim_EarthPower
 	dw BattleAnim_IronHead
 	dw BattleAnim_SignalBeam
+	dw BattleAnim_IcicleCrash
+	dw BattleAnim_StoneEdge
+	dw BattleAnim_Extrasensory
+	dw BattleAnim_XScissor
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -1033,6 +1037,7 @@ BattleAnim_IceBeam:
 	anim_ret
 
 BattleAnim_Blizzard:
+BattleAnim_IcicleCrash:
 	anim_1gfx ANIM_GFX_ICE
 .loop
 	anim_sound 6, 2, SFX_SHINE
@@ -3011,6 +3016,7 @@ BattleAnim_Waterfall:
 	anim_ret
 
 BattleAnim_PsychicM:
+BattleAnim_Extrasensory:
 	anim_1gfx ANIM_GFX_PSYCHIC
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
 	anim_bgeffect ANIM_BG_PSYCHIC, $0, $0, $0
@@ -4396,6 +4402,7 @@ BattleAnim_HiddenPower:
 	anim_ret
 
 BattleAnim_CrossChop:
+BattleAnim_XScissor:
 	anim_1gfx ANIM_GFX_CUT
 	anim_sound 0, 1, SFX_CUT
 	anim_obj ANIM_OBJ_A0, 152, 40, $0
@@ -4529,6 +4536,7 @@ BattleAnim_Extremespeed:
 	anim_ret
 
 BattleAnim_Ancientpower:
+BattleAnim_StoneEdge:
 	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_SPARK
 	anim_obj ANIM_OBJ_ANCIENTPOWER, 64, 108, $20
