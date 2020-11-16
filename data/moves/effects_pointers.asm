@@ -43,7 +43,7 @@ MoveEffectsPointers:
 	dw SuperFang
 	dw StaticDamage
 	dw TrapTarget
-	dw NormalHit
+	dw Venoshock
 	dw MultiHit
 	dw NormalHit
 	dw Mist
@@ -78,7 +78,7 @@ MoveEffectsPointers:
 	dw SkyAttack
 	dw ConfuseHit
 	dw PoisonMultiHit
-	dw NormalHit
+	dw Hurricane
 	dw Substitute
 	dw HyperBeam
 	dw Rage
@@ -110,7 +110,7 @@ MoveEffectsPointers:
 	dw Nightmare
 	dw FlameWheel
 	dw Curse
-	dw NormalHit
+	dw FireFang
 	dw Protect
 	dw Spikes
 	dw Foresight
@@ -130,8 +130,8 @@ MoveEffectsPointers:
 	dw BatonPass
 	dw Pursuit
 	dw RapidSpin
-	dw NormalHit
-	dw NormalHit
+	dw IceFang
+	dw ThunderFang
 	dw MorningSun
 	dw Synthesis
 	dw Moonlight
@@ -157,3 +157,8 @@ MoveEffectsPointers:
 	dw BeatUp
 	dw Fly
 	dw DefenseCurl
+	dw DracoFang
+	dw AllDownHit
+	dw SleepHit
+	dw WillOWisp
+	dw FlareBlitz

@@ -181,6 +181,8 @@ ENDM
 	command startloop               ; ae
 	command curl                    ; af
 	command hex                     ; b0
+	command venoshock
+	command allstatsdown
 
 	enum_start $fe
 	command endturn                 ; fe

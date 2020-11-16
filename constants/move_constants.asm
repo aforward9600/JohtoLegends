@@ -305,6 +305,18 @@
 	const POWER_GEM
 	const MUD_BOMB
 	const HEX
+	const VENOSHOCK
+	const HURRICANE
+	const FIRE_FANG
+	const ICE_FANG
+	const THUNDER_FANG
+	const DRACO_FANG
+	const STEEL_SLICE
+	const PIXIE_PUNCH
+	const WILL_O_WISP
+	const MOONBLAST
+	const FLARE_BLITZ
+	const HYPER_VOICE
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

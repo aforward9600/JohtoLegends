@@ -194,10 +194,10 @@ TyphlosionEvosAttacks:
 TotodileEvosAttacks:
 	dbbw EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
-	dbw 1, MUD_BOMB
-	dbw 1, HEX
-	dbw 1, ENERGY_BALL
-	dbw 1, POWER_GEM
+	dbw 1, WILL_O_WISP
+	dbw 1, MOONBLAST
+	dbw 1, FLARE_BLITZ
+	dbw 1, HYPER_VOICE
 	dbw 7, RAGE
 	dbw 13, WATER_GUN
 	dbw 20, BITE

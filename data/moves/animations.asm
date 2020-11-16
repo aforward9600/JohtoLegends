@@ -323,6 +323,18 @@ BattleAnimations::
 	dw BattleAnim_PowerGem
 	dw BattleAnim_MudBomb
 	dw BattleAnim_Hex
+	dw BattleAnim_Venoshock
+	dw BattleAnim_Hurricane
+	dw BattleAnim_FireFang
+	dw BattleAnim_IceFang
+	dw BattleAnim_ThunderFang
+	dw BattleAnim_DracoFang
+	dw BattleAnim_SteelSlice
+	dw BattleAnim_PixiePunch
+	dw BattleAnim_WillOWisp
+	dw BattleAnim_Moonblast
+	dw BattleAnim_FlareBlitz
+	dw BattleAnim_HyperVoice
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -1908,6 +1920,7 @@ BattleAnim_Growl:
 	anim_ret
 
 BattleAnim_Roar:
+BattleAnim_HyperVoice:
 	anim_1gfx ANIM_GFX_NOISE
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_cry $1
@@ -3039,6 +3052,7 @@ BattleAnim_Extrasensory:
 	anim_ret
 
 BattleAnim_Sludge:
+BattleAnim_Venoshock:
 	anim_1gfx ANIM_GFX_POISON
 	anim_call BattleAnim_Sludge_branch_cbc15
 	anim_wait 56
@@ -4090,6 +4104,7 @@ BattleAnim_PainSplit:
 	anim_ret
 
 BattleAnim_SacredFire:
+BattleAnim_FlareBlitz:
 	anim_1gfx ANIM_GFX_FIRE
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
@@ -5165,6 +5180,183 @@ BattleAnim_MudBomb:
 	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_obj ANIM_OBJ_18, 136, 56, $0
 	anim_wait 16
+	anim_ret
+
+BattleAnim_Hurricane:
+	anim_2gfx ANIM_GFX_WIND, ANIM_GFX_HIT
+.loop
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
+	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_GUST, 136, 72, $0
+	anim_wait 6
+	anim_loop 9, .loop
+	anim_obj ANIM_OBJ_01, 144, 64, $18
+	anim_wait 8
+	anim_obj ANIM_OBJ_01, 128, 32, $18
+	anim_wait 16
+	anim_ret
+
+BattleAnim_FireFang:
+	anim_3gfx ANIM_GFX_CUT, ANIM_GFX_HIT, ANIM_GFX_FIRE
+	anim_obj ANIM_OBJ_BITE, 136, 56, $98
+	anim_obj ANIM_OBJ_BITE, 136, 56, $18
+	anim_wait 8
+	anim_sound 0, 1, SFX_BITE
+	anim_obj ANIM_OBJ_01, 144, 48, $18
+	anim_wait 16
+	anim_sound 0, 1, SFX_BITE
+	anim_obj ANIM_OBJ_01, 128, 64, $18
+	anim_wait 32
+	anim_sound 0, 1, SFX_EMBER
+	anim_obj ANIM_OBJ_FIRE_BLAST, 136, 48, $1
+	anim_obj ANIM_OBJ_FIRE_BLAST, 136, 48, $4
+	anim_obj ANIM_OBJ_FIRE_BLAST, 136, 48, $5
+	anim_wait 8
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_wait 4
+	anim_incobj 9
+	anim_wait 8
+	anim_ret
+
+BattleAnim_IceFang:
+	anim_3gfx ANIM_GFX_CUT, ANIM_GFX_HIT, ANIM_GFX_ICE
+	anim_obj ANIM_OBJ_BITE, 136, 56, $98
+	anim_obj ANIM_OBJ_BITE, 136, 56, $18
+	anim_wait 8
+	anim_sound 0, 1, SFX_BITE
+	anim_obj ANIM_OBJ_01, 144, 48, $18
+	anim_wait 16
+	anim_sound 0, 1, SFX_BITE
+	anim_obj ANIM_OBJ_01, 128, 64, $18
+	anim_wait 32
+	anim_call BattleAnim_IcePunch_branch_cbbdf
+	anim_wait 32
+	anim_ret
+
+BattleAnim_ThunderFang:
+	anim_3gfx ANIM_GFX_CUT, ANIM_GFX_HIT, ANIM_GFX_LIGHTNING
+	anim_obj ANIM_OBJ_BITE, 136, 56, $98
+	anim_obj ANIM_OBJ_BITE, 136, 56, $18
+	anim_wait 8
+	anim_sound 0, 1, SFX_BITE
+	anim_obj ANIM_OBJ_01, 144, 48, $18
+	anim_wait 16
+	anim_sound 0, 1, SFX_BITE
+	anim_obj ANIM_OBJ_01, 128, 64, $18
+	anim_wait 32
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $6, $20
+	anim_sound 0, 1, SFX_THUNDER
+	anim_obj ANIM_OBJ_2E, 120, 68, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_THUNDER
+	anim_obj ANIM_OBJ_2F, 152, 68, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_THUNDER
+	anim_obj ANIM_OBJ_2D, 136, 68, $0
+	anim_wait 48
+	anim_ret
+
+BattleAnim_DracoFang:
+	anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_1A, $0, $1, $20
+	anim_sound 0, 0, SFX_OUTRAGE
+	anim_wait 72
+	anim_incbgeffect ANIM_BG_1A
+	anim_call BattleAnim_ShowMon_0
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
+	anim_sound 0, 1, SFX_MOVE_PUZZLE_PIECE
+	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_HIT
+	anim_obj ANIM_OBJ_BITE, 136, 56, $98
+	anim_obj ANIM_OBJ_BITE, 136, 56, $18
+	anim_wait 8
+	anim_sound 0, 1, SFX_BITE
+	anim_obj ANIM_OBJ_01, 144, 48, $18
+	anim_wait 16
+	anim_sound 0, 1, SFX_BITE
+	anim_obj ANIM_OBJ_01, 128, 64, $18
+	anim_wait 8
+	anim_ret
+
+BattleAnim_SteelSlice:
+	anim_1gfx ANIM_GFX_REFLECT
+	anim_obp0 $0
+	anim_sound 0, 0, SFX_RAGE
+	anim_call BattleAnim_TargetObj_1Row
+	anim_call BattleAnim_IronTail_branch_cbc43
+	anim_call BattleAnim_ShowMon_0
+	anim_1gfx ANIM_GFX_CUT
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_3A, 152, 40, $0
+	anim_wait 32
+	anim_ret
+
+BattleAnim_PixiePunch:
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_OBJECTS
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_obj ANIM_OBJ_0A, 136, 56, $43
+	anim_wait 16
+	anim_bgeffect ANIM_BG_07, $0, $2, $0
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_26, $0, $1, $0
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj ANIM_OBJ_HEART, 64, 80, $0
+	anim_wait 32
+	anim_incbgeffect ANIM_BG_26
+	anim_call BattleAnim_ShowMon_0
+	anim_wait 4
+	anim_ret
+
+BattleAnim_WillOWisp:
+	anim_1gfx ANIM_GFX_FIRE
+	anim_sound 6, 2, SFX_NIGHTMARE
+	anim_obj ANIM_OBJ_WILL_O_WISP, 64, 96, $12
+	anim_wait 4
+	anim_sound 6, 2, SFX_NIGHTMARE
+	anim_obj ANIM_OBJ_WILL_O_WISP, 64, 100, $14
+	anim_wait 4
+	anim_sound 6, 2, SFX_NIGHTMARE
+	anim_obj ANIM_OBJ_WILL_O_WISP, 64, 84, $13
+	anim_wait 16
+	anim_incobj 1
+	anim_incobj 2
+	anim_incobj 3
+	anim_sound 0, 1, SFX_NIGHTMARE
+	anim_obj ANIM_OBJ_WILL_O_WISP, 120, 68, $30
+	anim_obj ANIM_OBJ_WILL_O_WISP, 132, 68, $30
+	anim_obj ANIM_OBJ_WILL_O_WISP, 144, 68, $30
+	anim_wait 32
+	anim_ret
+
+BattleAnim_Moonblast:
+	anim_1gfx ANIM_GFX_SHINE
+	anim_bgp $1b
+	anim_bgeffect ANIM_BG_07, $0, $0, $0
+	anim_obj ANIM_OBJ_MOONLIGHT, 0, 40, $0
+	anim_obj ANIM_OBJ_MOONLIGHT, 16, 56, $0
+	anim_obj ANIM_OBJ_MOONLIGHT, 32, 72, $0
+	anim_obj ANIM_OBJ_MOONLIGHT, 48, 88, $0
+	anim_obj ANIM_OBJ_MOONLIGHT, 64, 104, $0
+	anim_wait 1
+	anim_sound 0, 0, SFX_MOONLIGHT
+	anim_wait 63
+	anim_1gfx ANIM_GFX_SPEED
+	anim_bgeffect ANIM_BG_06, $0, $2, $0
+	anim_bgeffect ANIM_BG_08, $0, $4, $0
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $0
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $80
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $88
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $90
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $98
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $a0
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $a8
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $b0
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $b8
+.loop
+	anim_sound 6, 2, SFX_WHIRLWIND
+	anim_wait 16
+	anim_loop 8, .loop
+	anim_wait 32
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

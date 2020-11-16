@@ -304,6 +304,18 @@ MoveDescriptions1:
 	dw PowerGemDescription
 	dw MudBombDescription
 	dw HexDescription
+	dw VenoshockDescription
+	dw HurricaneDescription
+	dw FireFangDescription
+	dw IceFangDescription
+	dw ThunderFangDescription
+	dw DracoFangDescription
+	dw SteelSliceDescription
+	dw PixiePunchDescription
+	dw WillOWispDescription
+	dw MoonblastDescription
+	dw FlareBlitzDescription
+	dw HyperVoiceDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1503,3 +1515,51 @@ MudBombDescription:
 HexDescription:
 	db   "2x damage on foe"
 	next "with status.@"
+
+VenoshockDescription:
+	db   "Deals 2x damage on"
+	next "poisoned foe.@"
+
+HurricaneDescription:
+	db   "May confuse, does-"
+	next "n't miss in rain.@"
+
+FireFangDescription:
+	db   "Searing teeth."
+	next "Flinch or burn.@"
+
+IceFangDescription:
+	db   "Really cold jaws."
+	next "Flinch or freeze.@"
+
+ThunderFangDescription:
+	db   "Stunning jaws, fl-"
+	next "inch or paralyze.@"
+
+DracoFangDescription:
+	db   "Deadly wyrm fangs."
+	next "Flinch or confuse.@"
+
+SteelSliceDescription:
+	db   "Can lower all"
+	next "foe's stats.@"
+
+PixiePunchDescription:
+	db   "Enchanted punch,"
+	next "can make sleep.@"
+
+WillOWispDescription:
+	db   "Burns foe with"
+	next "ghostly fire.@"
+
+MoonblastDescription:
+	db   "May lower Spcl.Atk"
+	next "with moon power.@"
+
+FlareBlitzDescription:
+	db   "Firey tackle that"
+	next "hurts the user.@"
+
+HyperVoiceDescription:
+	db   "Loud and obnoxious"
+	next "voice.@"
