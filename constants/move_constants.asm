@@ -285,6 +285,10 @@
 	const DAZZLINGLEAM
 	const GIGA_IMPACT
 	const NASTY_PLOT
+	const PLAY_ROUGH
+	const FOCUS_BLAST
+	const WATER_PULSE
+	const GUNK_SHOT
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

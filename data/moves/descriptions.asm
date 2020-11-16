@@ -284,6 +284,10 @@ MoveDescriptions1:
 	dw DazzlinGleamDescription
 	dw GigaImpactDescription
 	dw NastyPlotDescription
+	dw PlayRoughDescription
+	dw FocusBlastDescription
+	dw WaterPulseDescription
+	dw GunkShotDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1403,3 +1407,19 @@ GigaImpactDescription:
 NastyPlotDescription:
 	db   "Sharply raises"
 	next "Spcl.Atk.@"
+
+PlayRoughDescription:
+	db   "Plays without mer-"
+	next "cy. Can lower Atk.@"
+
+FocusBlastDescription:
+	db   "Spcl.Def can be"
+	next "lowered.@"
+
+WaterPulseDescription:
+	db   "Can confuse with"
+	next "pulse of water.@"
+
+GunkShotDescription:
+	db   "Filthy garbage th-"
+	next "at can poison.@"

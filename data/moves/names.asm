@@ -278,3 +278,7 @@ MoveNames::
 	db "DazzlinGleam@"
 	db "Giga Impact@"
 	db "Nasty Plot@"
+	db "Play Rough@"
+	db "Focus Blast@"
+	db "Water Pulse@"
+	db "Gunk Shot@"

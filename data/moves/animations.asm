@@ -303,6 +303,10 @@ BattleAnimations::
 	dw BattleAnim_DazzlinGleam
 	dw BattleAnim_GigaImpact
 	dw BattleAnim_NastyPlot
+	dw BattleAnim_PlayRough
+	dw BattleAnim_FocusBlast
+	dw BattleAnim_WaterPulse
+	dw BattleAnim_GunkShot
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -1923,6 +1927,7 @@ BattleAnim_DisarmVoice:
 	anim_ret
 
 BattleAnim_ConfuseRay:
+BattleAnim_FocusBlast:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_bgeffect ANIM_BG_08, $0, $4, $0
@@ -3971,6 +3976,7 @@ BattleAnim_HealBell:
 	anim_ret
 
 BattleAnim_Return:
+BattleAnim_PlayRough:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_2Row
 	anim_bgeffect ANIM_BG_BOUNCE_DOWN, $0, $1, $0
@@ -4938,6 +4944,29 @@ BattleAnim_PowerWhip:
 	anim_sound 0, 1, SFX_EMBER
 	anim_wait 24
 	anim_loop 4, .loop
+	anim_ret
+
+BattleAnim_WaterPulse:
+	anim_1gfx ANIM_GFX_PSYCHIC
+	anim_bgeffect ANIM_BG_1F, $8, $1, $20
+	anim_sound 6, 2, SFX_BUBBLEBEAM
+.loop
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
+	anim_wait 2
+	anim_loop 2, .loop
+	anim_wait 64
+	anim_ret
+
+BattleAnim_GunkShot:
+	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_POISON
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
+	anim_bgeffect ANIM_BG_BLACK_HUES, $0, $8, $0
+	anim_sound 6, 2, SFX_SLUDGE_BOMB
+	anim_obj ANIM_OBJ_SLUDGE_BOMB, 64, 92, $10
+	anim_wait 36
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
+	anim_call BattleAnim_SludgeBomb_branch_cbc15
+	anim_wait 32
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:
