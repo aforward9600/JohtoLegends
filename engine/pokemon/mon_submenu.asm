@@ -286,6 +286,6 @@ MenuHeader_0x24ed4:
 MenuData_0x24edc:
 	db STATICMENU_CURSOR | STATICMENU_NO_TOP_SPACING ; flags
 	db 3 ; items
-	db "SWITCH@"
-	db "STATS@"
-	db "CANCEL@"
+	db "Switch@"
+	db "Stats@"
+	db "Cancel@"

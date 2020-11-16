@@ -158,7 +158,6 @@ INCLUDE "engine/battle/effect_commands.asm"
 SECTION "Enemy Trainers", ROMX
 
 INCLUDE "engine/battle/ai/items.asm"
-INCLUDE "engine/battle/ai/scoring.asm"
 INCLUDE "engine/battle/read_trainer_attributes.asm"
 INCLUDE "engine/battle/read_trainer_party.asm"
 
@@ -171,7 +170,6 @@ INCLUDE "data/battle/effect_command_pointers.asm"
 
 SECTION "bank10", ROMX
 
-INCLUDE "engine/pokedex/pokedex.asm"
 INCLUDE "data/moves/moves.asm"
 INCLUDE "engine/pokemon/evolve.asm"
 
@@ -249,6 +247,7 @@ INCLUDE "engine/events/basement_key.asm"
 INCLUDE "engine/events/sacred_ash.asm"
 INCLUDE "engine/pokemon/tempmon.asm"
 INCLUDE "engine/pokemon/types.asm"
+INCLUDE "engine/pokemon/categories.asm"
 INCLUDE "engine/pokemon/mon_stats.asm"
 INCLUDE "engine/link/init_list.asm"
 INCLUDE "engine/pokemon/experience.asm"
@@ -511,6 +510,7 @@ SECTION "bank3F", ROMX
 INCLUDE "engine/tilesets/tileset_anims.asm"
 INCLUDE "engine/events/npc_trade.asm"
 INCLUDE "engine/events/mom_phone.asm"
+INCLUDE "engine/pokedex/pokedex.asm"
 
 
 INCLUDE "mobile/mobile_40.asm"
@@ -692,6 +692,7 @@ INCLUDE "data/battle_tower/trainer_text.asm"
 SECTION "Battle Tower Trainer Data", ROMX
 
 INCLUDE "data/battle_tower/unknown.asm"
+INCLUDE "engine/battle/ai/scoring.asm"
 
 
 SECTION "Mobile News Data", ROMX

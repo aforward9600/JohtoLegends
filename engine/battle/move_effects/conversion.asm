@@ -25,6 +25,7 @@ BattleCommand_Conversion:
 	ld l, a
 	ld a, MOVE_TYPE
 	call GetMoveAttribute
+	and TYPE_MASK
 	ld [de], a
 	inc de
 	pop bc
