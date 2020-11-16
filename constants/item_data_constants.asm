@@ -114,6 +114,7 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const HELD_DRAGON_BOOST
 	const HELD_DARK_BOOST
 	const HELD_STEEL_BOOST
+	const HELD_FAIRY_BOOST
 
 	const_def 70
 	const HELD_CATCH_CHANCE

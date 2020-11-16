@@ -19,10 +19,4 @@ IsHMMove::
 
 .HMMoves:
 	dw CUT
-	dw FLY
-	dw SURF
-	dw STRENGTH
-	dw FLASH
-	dw WATERFALL
-	dw WHIRLPOOL
 	dw -1 ; end
