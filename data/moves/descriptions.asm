@@ -280,6 +280,10 @@ MoveDescriptions1:
 	dw MetalSoundDescription
 	dw DisarmVoiceDescription
 	dw WildChargeDescription
+	dw PowerWhipDescription
+	dw DazzlinGleamDescription
+	dw GigaImpactDescription
+	dw NastyPlotDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1383,3 +1387,19 @@ DisarmVoiceDescription:
 WildChargeDescription:
 	db   "Electric tackle,"
 	next "hurts the user.@"
+
+PowerWhipDescription:
+	db   "Powerful vine"
+	next "attack.@"
+
+DazzlinGleamDescription:
+	db   "User emits a powe-"
+	next "rful flash.@"
+
+GigaImpactDescription:
+	db   "1st turn: Attack"
+	next "2nd turn: Rest@"
+
+NastyPlotDescription:
+	db   "Sharply raises"
+	next "Spcl.Atk.@"

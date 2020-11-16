@@ -281,6 +281,10 @@
 	const METAL_SOUND
 	const DISARM_VOICE
 	const WILD_CHARGE
+	const POWER_WHIP
+	const DAZZLINGLEAM
+	const GIGA_IMPACT
+	const NASTY_PLOT
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

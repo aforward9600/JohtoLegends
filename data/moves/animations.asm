@@ -299,6 +299,10 @@ BattleAnimations::
 	dw BattleAnim_MetalSound
 	dw BattleAnim_DisarmVoice
 	dw BattleAnim_WildCharge
+	dw BattleAnim_PowerWhip
+	dw BattleAnim_DazzlinGleam
+	dw BattleAnim_GigaImpact
+	dw BattleAnim_NastyPlot
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -2152,6 +2156,7 @@ BattleAnim_TakeDown:
 	anim_ret
 
 BattleAnim_DoubleEdge:
+BattleAnim_GigaImpact:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
@@ -2551,6 +2556,7 @@ BattleAnim_Guillotine:
 
 BattleAnim_Flash:
 BattleAnim_MirrorShot:
+BattleAnim_DazzlinGleam:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_sound 0, 1, SFX_FLASH
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $6, $20
@@ -4476,6 +4482,7 @@ BattleAnim_MirrorCoat:
 	anim_ret
 
 BattleAnim_PsychUp:
+BattleAnim_NastyPlot:
 	anim_1gfx ANIM_GFX_STATUS
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_1A, $0, $1, $20
@@ -4915,6 +4922,22 @@ BattleAnim_MetalSound:
 	anim_wait 8
 	anim_loop 3, .loop
 	anim_wait 56
+	anim_ret
+
+BattleAnim_PowerWhip:
+	anim_1gfx ANIM_GFX_WHIP
+	anim_sound 0, 1, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_40, 116, 52, $80
+	anim_wait 4
+	anim_sound 0, 1, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_3F, 128, 60, $0
+	anim_wait 4
+	anim_incobj 1
+	anim_bgeffect ANIM_BG_1F, $60, $4, $10
+.loop
+	anim_sound 0, 1, SFX_EMBER
+	anim_wait 24
+	anim_loop 4, .loop
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

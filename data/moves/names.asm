@@ -274,3 +274,7 @@ MoveNames::
 	db "Metal Sound@"
 	db "Disarm Voice@"
 	db "Wild Charge@"
+	db "Power Whip@"
+	db "DazzlinGleam@"
+	db "Giga Impact@"
+	db "Nasty Plot@"

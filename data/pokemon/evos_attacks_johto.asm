@@ -194,10 +194,10 @@ TyphlosionEvosAttacks:
 TotodileEvosAttacks:
 	dbbw EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
-	dbw 1, FAIRY_WIND
-	dbw 1, METAL_SOUND
-	dbw 1, DISARM_VOICE
-	dbw 1, WILD_CHARGE
+	dbw 1, GIGA_IMPACT
+	dbw 1, DAZZLINGLEAM
+	dbw 1, NASTY_PLOT
+	dbw 1, POWER_WHIP
 	dbw 7, RAGE
 	dbw 13, WATER_GUN
 	dbw 20, BITE
