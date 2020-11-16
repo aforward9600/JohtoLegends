@@ -258,3 +258,7 @@ MoveNames::
 	db "Ice Shard@"
 	db "Flash Cannon@"
 	db "Bug Buzz@"
+	db "Brave Bird@"
+	db "Drain Punch@"
+	db "Silver Wind@"
+	db "Shadow Claw@"

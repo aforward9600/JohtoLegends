@@ -7,4 +7,5 @@ CriticalHitMoves:
 	dw AEROBLAST
 	dw CROSS_CHOP
 	dw NIGHT_SLASH
+	dw SHADOW_CLAW
 	dw -1

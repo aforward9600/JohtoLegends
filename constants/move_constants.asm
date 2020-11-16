@@ -265,6 +265,10 @@
 	const ICE_SHARD
 	const FLASH_CANNON
 	const BUG_BUZZ
+	const BRAVE_BIRD
+	const DRAIN_PUNCH
+	const SILVER_WIND
+	const SHADOW_CLAW
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

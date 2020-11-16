@@ -264,6 +264,10 @@ MoveDescriptions1:
 	dw IceShardDescription
 	dw FlashCannonDescription
 	dw BugBuzzDescription
+	dw BraveBirdDescription
+	dw DrainPunchDescription
+	dw SilverWindDescription
+	dw ShadowClawDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1303,3 +1307,19 @@ FlashCannonDescription:
 BugBuzzDescription:
 	db   "Obnoxious buzzing,"
 	next "lowers Spcl.Def.@"
+
+BraveBirdDescription:
+	db   "Flying tackle that"
+	next "hurts the user.@"
+
+DrainPunchDescription:
+	db   "Punch that heals"
+	next "the user.@"
+
+SilverWindDescription:
+	db   "Powdery attack, c-"
+	next "an increase stats.@"
+
+ShadowClawDescription:
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
