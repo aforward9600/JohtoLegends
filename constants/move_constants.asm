@@ -297,6 +297,10 @@
 	const STONE_EDGE
 	const EXTRASENSORY
 	const X_SCISSOR
+	const AQUA_JET
+	const AQUA_TAIL
+	const AERIAL_ACE
+	const MAGICAL_LEAF
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

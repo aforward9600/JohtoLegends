@@ -315,6 +315,10 @@ BattleAnimations::
 	dw BattleAnim_StoneEdge
 	dw BattleAnim_Extrasensory
 	dw BattleAnim_XScissor
+	dw BattleAnim_AquaJet
+	dw BattleAnim_AquaTail
+	dw BattleAnim_AerialAce
+	dw BattleAnim_MagicalLeaf
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -5001,6 +5005,113 @@ BattleAnim_EarthPower:
 	anim_wait 2
 	anim_jumpuntil .loop
 	anim_wait 96
+	anim_ret
+
+BattleAnim_AquaJet:
+	anim_3gfx ANIM_GFX_BUBBLE, ANIM_GFX_SPEED, ANIM_GFX_HIT
+	anim_sound 32, 2, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_BUBBLE, 48, 92, $0
+	anim_wait 16
+	anim_sound 32, 2, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_BUBBLE, 48, 92, $0
+	anim_wait 16
+	anim_sound 32, 2, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_BUBBLE, 48, 92, $0
+	anim_wait 16
+	anim_sound 0, 0, SFX_MENU
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
+	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
+	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
+	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
+	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
+	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+	anim_wait 12
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_obj ANIM_OBJ_01, 136, 56, $0
+	anim_wait 8
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 16
+	anim_ret
+
+BattleAnim_AquaTail:
+	anim_2gfx ANIM_GFX_BUBBLE, ANIM_GFX_HIT
+	anim_sound 32, 2, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_BUBBLE, 48, 92, $0
+	anim_wait 16
+	anim_sound 32, 2, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_BUBBLE, 48, 92, $0
+	anim_wait 16
+	anim_sound 32, 2, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_BUBBLE, 48, 92, $0
+	anim_wait 16
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_00, 136, 48, $0
+	anim_wait 8
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
+BattleAnim_AerialAce:
+	anim_1gfx ANIM_GFX_SPEED
+	anim_bgeffect ANIM_BG_06, $0, $1, $0
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_call BattleAnim_Teleport_branch_cbb12
+	anim_wait 32
+	anim_1gfx ANIM_GFX_CUT
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_3A, 152, 40, $0
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 32
+	anim_ret
+
+BattleAnim_MagicalLeaf:
+	anim_1gfx ANIM_GFX_PLANT
+	anim_sound 0, 0, SFX_MENU
+	anim_obj ANIM_OBJ_MAGICAL_LEAF, 48, 80, $28
+	anim_obj ANIM_OBJ_MAGICAL_LEAF, 48, 80, $5c
+	anim_obj ANIM_OBJ_MAGICAL_LEAF, 48, 80, $10
+	anim_obj ANIM_OBJ_MAGICAL_LEAF, 48, 80, $e8
+	anim_obj ANIM_OBJ_MAGICAL_LEAF, 48, 80, $9c
+	anim_obj ANIM_OBJ_MAGICAL_LEAF, 48, 80, $d0
+	anim_wait 6
+	anim_obj ANIM_OBJ_MAGICAL_LEAF, 48, 80, $1c
+	anim_obj ANIM_OBJ_MAGICAL_LEAF, 48, 80, $50
+	anim_obj ANIM_OBJ_MAGICAL_LEAF, 48, 80, $dc
+	anim_obj ANIM_OBJ_MAGICAL_LEAF, 48, 80, $90
+	anim_wait 80
+	anim_sound 16, 2, SFX_MENU
+	anim_incobj 3
+	anim_wait 2
+	anim_sound 16, 2, SFX_MENU
+	anim_incobj 5
+	anim_wait 2
+	anim_sound 16, 2, SFX_MENU
+	anim_incobj 7
+	anim_wait 2
+	anim_sound 16, 2, SFX_MENU
+	anim_incobj 9
+	anim_wait 2
+	anim_sound 16, 2, SFX_MENU
+	anim_incobj 1
+	anim_wait 2
+	anim_sound 16, 2, SFX_MENU
+	anim_incobj 2
+	anim_wait 2
+	anim_sound 16, 2, SFX_MENU
+	anim_incobj 4
+	anim_wait 2
+	anim_sound 16, 2, SFX_MENU
+	anim_incobj 6
+	anim_wait 2
+	anim_sound 16, 2, SFX_MENU
+	anim_incobj 8
+	anim_wait 2
+	anim_sound 16, 2, SFX_MENU
+	anim_incobj 10
+	anim_wait 64
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

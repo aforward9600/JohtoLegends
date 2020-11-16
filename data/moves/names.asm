@@ -290,3 +290,7 @@ MoveNames::
 	db "Stone Edge@"
 	db "Extrasensory@"
 	db "X-Scissor@"
+	db "Aqua Jet@"
+	db "Aqua Tail@"
+	db "Aerial Ace@"
+	db "Magical Leaf@"

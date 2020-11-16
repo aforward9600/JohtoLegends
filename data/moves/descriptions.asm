@@ -296,6 +296,10 @@ MoveDescriptions1:
 	dw StoneEdgeDescription
 	dw ExtrasensoryDescription
 	dw XScissorDescription
+	dw AquaJetDescription
+	dw AquaTailDescription
+	dw AerialAceDescription
+	dw MagicalLeafDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1449,8 +1453,8 @@ SignalBeamDescription:
 	next "cause confusion.@"
 
 IcicleCrashDescription:
-	db   "Causes flinch with"
-	next "big icicles.@"
+	db   "Causes flinching"
+	next "with big icicles.@"
 
 StoneEdgeDescription:
 	db   "Has a high criti-"
@@ -1463,3 +1467,19 @@ ExtrasensoryDescription:
 XScissorDescription:
 	db   "Slices foe with"
 	next "crossed limbs.@"
+
+AquaJetDescription:
+	db   "Strikes first with"
+	next "jet propulsion.@"
+
+AquaTailDescription:
+	db   "A watery tail hits"
+	next "the foe.@"
+
+AerialAceDescription:
+	db   "Aerial strike that"
+	next "never misses.@"
+
+MagicalLeafDescription:
+	db   "Mystical leaves"
+	next "that never miss.@"

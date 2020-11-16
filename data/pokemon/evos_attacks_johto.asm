@@ -194,10 +194,10 @@ TyphlosionEvosAttacks:
 TotodileEvosAttacks:
 	dbbw EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
-	dbw 1, ICICLE_CRASH
-	dbw 1, STONE_EDGE
-	dbw 1, EXTRASENSORY
-	dbw 1, X_SCISSOR
+	dbw 1, AQUA_JET
+	dbw 1, AQUA_TAIL
+	dbw 1, AERIAL_ACE
+	dbw 1, MAGICAL_LEAF
 	dbw 7, RAGE
 	dbw 13, WATER_GUN
 	dbw 20, BITE
