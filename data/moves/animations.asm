@@ -275,6 +275,10 @@ BattleAnimations::
 	dw BattleAnim_RockSmash
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
+	dw BattleAnim_DarkPulse
+	dw BattleAnim_DragonClaw
+	dw BattleAnim_MirrorShot
+	dw BattleAnim_DragonPulse
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -2522,6 +2526,7 @@ BattleAnim_Guillotine:
 	anim_ret
 
 BattleAnim_Flash:
+BattleAnim_MirrorShot:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_sound 0, 1, SFX_FLASH
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $6, $20
@@ -4590,6 +4595,51 @@ BattleAnim_BeatUp:
 	anim_obj ANIM_OBJ_00, 136, 48, $0
 	anim_wait 8
 	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
+BattleAnim_DarkPulse:
+	anim_1gfx ANIM_GFX_PSYCHIC
+.loop
+	anim_sound 6, 2, SFX_SUPERSONIC
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
+	anim_obj ANIM_OBJ_WAVE, 56, 80, $2
+	anim_wait 8
+	anim_loop 3, .loop
+	anim_wait 56
+	anim_ret
+
+BattleAnim_DragonClaw:
+	anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_1A, $0, $1, $20
+	anim_sound 0, 0, SFX_OUTRAGE
+	anim_wait 72
+	anim_incbgeffect ANIM_BG_1A
+	anim_call BattleAnim_ShowMon_0
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
+	anim_sound 0, 1, SFX_MOVE_PUZZLE_PIECE
+	anim_1gfx ANIM_GFX_CUT
+	anim_sound 0, 1, SFX_SCRATCH
+	anim_obj ANIM_OBJ_37, 144, 48, $0
+	anim_obj ANIM_OBJ_37, 140, 44, $0
+	anim_obj ANIM_OBJ_37, 136, 40, $0
+	anim_wait 32
+	anim_ret
+
+BattleAnim_DragonPulse:
+	anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_1A, $0, $1, $20
+	anim_sound 0, 0, SFX_OUTRAGE
+	anim_wait 72
+	anim_incbgeffect ANIM_BG_1A
+	anim_call BattleAnim_ShowMon_0
+	anim_1gfx ANIM_GFX_BEAM
+	anim_bgeffect ANIM_BG_1F, $30, $4, $10
+	anim_bgeffect ANIM_BG_06, $0, $2, $0
+	anim_call BattleAnim_Solarbeam_branch_cbb39
+	anim_wait 48
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

@@ -46,7 +46,6 @@ ItemDescriptions:
 	dw SodaPopDesc
 	dw LemonadeDesc
 	dw XAttackDesc
-	dw QuestionMarkDesc
 	dw XDefendDesc
 	dw XSpeedDesc
 	dw XSpecialDesc

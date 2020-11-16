@@ -257,6 +257,10 @@
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
+	const DARK_PULSE   ; fc
+	const DRAGON_CLAW  ; fd
+	const MIRROR_SHOT  ; fe
+	const DRAGON_PULSE ; ff
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff
