@@ -276,6 +276,10 @@ MoveDescriptions1:
 	dw PoisonJabDescription
 	dw DrillRunDescription
 	dw DrainingKissDescription
+	dw FairyWindDescription
+	dw MetalSoundDescription
+	dw DisarmVoiceDescription
+	dw WildChargeDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1363,3 +1367,19 @@ DrillRunDescription:
 DrainingKissDescription:
 	db   "Sweet kiss that"
 	next "heals the user.@"
+
+FairyWindDescription:
+	db   "User stirs up a"
+	next "fairy wind.@"
+
+MetalSoundDescription:
+	db   "Harsh sound that"
+	next "lowers Splc.Def.@"
+
+DisarmVoiceDescription:
+	db   "Shrill shriek that"
+	next "never misses.@"
+
+WildChargeDescription:
+	db   "Electric tackle,"
+	next "hurts the user.@"

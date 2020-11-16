@@ -295,6 +295,10 @@ BattleAnimations::
 	dw BattleAnim_PoisonJab
 	dw BattleAnim_DrillRun
 	dw BattleAnim_DrainingKiss
+	dw BattleAnim_FairyWind
+	dw BattleAnim_MetalSound
+	dw BattleAnim_DisarmVoice
+	dw BattleAnim_WildCharge
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -1355,6 +1359,7 @@ BattleAnim_Sonicboom_JP:
 
 BattleAnim_Gust:
 BattleAnim_Sonicboom:
+BattleAnim_FairyWind:
 	anim_2gfx ANIM_GFX_WIND, ANIM_GFX_HIT
 .loop
 	anim_sound 0, 1, SFX_RAZOR_WIND
@@ -1902,6 +1907,7 @@ BattleAnim_Supersonic:
 	anim_ret
 
 BattleAnim_Screech:
+BattleAnim_DisarmVoice:
 	anim_1gfx ANIM_GFX_PSYCHIC
 	anim_bgeffect ANIM_BG_1F, $8, $1, $20
 	anim_sound 6, 2, SFX_SCREECH
@@ -3837,6 +3843,7 @@ BattleAnim_MilkDrink:
 	anim_ret
 
 BattleAnim_Spark:
+BattleAnim_WildCharge:
 	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
 	anim_sound 0, 0, SFX_ZAP_CANNON
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
@@ -4899,6 +4906,16 @@ BattleAnim_DrillRun:
 	anim_loop 3, .loop
 	anim_ret
 
+BattleAnim_MetalSound:
+	anim_1gfx ANIM_GFX_PSYCHIC
+.loop
+	anim_sound 0, 0, SFX_RAGE
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
+	anim_obj ANIM_OBJ_WAVE, 56, 80, $2
+	anim_wait 8
+	anim_loop 3, .loop
+	anim_wait 56
+	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:
 BattleAnim_GigaDrain_branch_cbab3:

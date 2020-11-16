@@ -277,6 +277,10 @@
 	const POISON_JAB
 	const DRILL_RUN
 	const DRAININGKISS
+	const FAIRY_WIND
+	const METAL_SOUND
+	const DISARM_VOICE
+	const WILD_CHARGE
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

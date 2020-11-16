@@ -270,3 +270,7 @@ MoveNames::
 	db "Poison Jab@"
 	db "Drill Run@"
 	db "DrainingKiss@"
+	db "Fairy Wind@"
+	db "Metal Sound@"
+	db "Disarm Voice@"
+	db "Wild Charge@"
