@@ -319,6 +319,10 @@ BattleAnimations::
 	dw BattleAnim_AquaTail
 	dw BattleAnim_AerialAce
 	dw BattleAnim_MagicalLeaf
+	dw BattleAnim_EnergyBall
+	dw BattleAnim_PowerGem
+	dw BattleAnim_MudBomb
+	dw BattleAnim_Hex
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -3236,6 +3240,7 @@ BattleAnim_MindReader:
 	anim_ret
 
 BattleAnim_Nightmare:
+BattleAnim_Hex:
 	anim_1gfx ANIM_GFX_ANGELS
 	anim_bgp $1b
 	anim_obp0 $f
@@ -5112,6 +5117,54 @@ BattleAnim_MagicalLeaf:
 	anim_sound 16, 2, SFX_MENU
 	anim_incobj 10
 	anim_wait 64
+	anim_ret
+
+BattleAnim_EnergyBall:
+	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_EXPLOSION
+	anim_sound 6, 2, SFX_THROW_BALL
+	anim_obj ANIM_OBJ_ENERGY_BALL, 64, 92, $2
+	anim_wait 36
+	anim_sound 0, 1, SFX_BALL_POOF
+	anim_obj ANIM_OBJ_18, 136, 56, $2
+	anim_wait 16
+	anim_ret
+
+BattleAnim_PowerGem:
+	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
+	anim_sound 0, 0, SFX_SHINE
+	anim_obj ANIM_OBJ_POWER_GEM, 64, 108, $20
+	anim_wait 8
+	anim_sound 0, 0, SFX_SHINE
+	anim_obj ANIM_OBJ_POWER_GEM, 75, 102, $20
+	anim_wait 8
+	anim_sound 0, 0, SFX_SHINE
+	anim_obj ANIM_OBJ_POWER_GEM, 85, 97, $20
+	anim_wait 8
+	anim_sound 0, 0, SFX_SHINE
+	anim_obj ANIM_OBJ_POWER_GEM, 96, 92, $20
+	anim_wait 8
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_POWER_GEM, 106, 87, $20
+	anim_wait 8
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_POWER_GEM, 116, 82, $20
+	anim_wait 8
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_POWER_GEM, 126, 77, $20
+	anim_wait 8
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_00, 136, 56, $0
+	anim_wait 6
+	anim_ret
+
+BattleAnim_MudBomb:
+	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_EXPLOSION
+	anim_sound 6, 2, SFX_THROW_BALL
+	anim_obj ANIM_OBJ_MUD_BOMB, 64, 92, $10
+	anim_wait 36
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_18, 136, 56, $0
+	anim_wait 16
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

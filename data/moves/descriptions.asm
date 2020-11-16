@@ -300,6 +300,10 @@ MoveDescriptions1:
 	dw AquaTailDescription
 	dw AerialAceDescription
 	dw MagicalLeafDescription
+	dw EnergyBallDescription
+	dw PowerGemDescription
+	dw MudBombDescription
+	dw HexDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1483,3 +1487,19 @@ AerialAceDescription:
 MagicalLeafDescription:
 	db   "Mystical leaves"
 	next "that never miss.@"
+
+EnergyBallDescription:
+	db   "Sphere of energy,"
+	next "lowers Spcl.Def.@"
+
+PowerGemDescription:
+	db   "Attacks foe with"
+	next "gemstones.@"
+
+MudBombDescription:
+	db   "Mud ball that can"
+	next "lower accuracy.@"
+
+HexDescription:
+	db   "2x damage on foe"
+	next "with status.@"

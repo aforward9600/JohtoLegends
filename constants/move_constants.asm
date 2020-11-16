@@ -301,6 +301,10 @@
 	const AQUA_TAIL
 	const AERIAL_ACE
 	const MAGICAL_LEAF
+	const ENERGY_BALL
+	const POWER_GEM
+	const MUD_BOMB
+	const HEX
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

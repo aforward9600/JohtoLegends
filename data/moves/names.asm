@@ -294,3 +294,7 @@ MoveNames::
 	db "Aqua Tail@"
 	db "Aerial Ace@"
 	db "Magical Leaf@"
+	db "Energy Ball@"
+	db "Power Gem@"
+	db "Mud Bomb@"
+	db "Hex@"

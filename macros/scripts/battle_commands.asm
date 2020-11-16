@@ -180,6 +180,7 @@ ENDM
 	command supereffectivelooptext  ; ad
 	command startloop               ; ae
 	command curl                    ; af
+	command hex                     ; b0
 
 	enum_start $fe
 	command endturn                 ; fe

@@ -388,6 +388,7 @@ AI_Smart:
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
+	dbw EFFECT_HEX,              AI_Smart_Hex
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -1515,6 +1516,17 @@ AI_Smart_DefrostOpponent:
 
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ
+	ret z
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	ret
+
+AI_Smart_Hex:
+; Greatly incourage this move if the player has a status condition.
+
+	ld a, [wBattleMonStatus]
+	and a
 	ret z
 	dec [hl]
 	dec [hl]
