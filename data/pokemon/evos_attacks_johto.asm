@@ -194,10 +194,10 @@ TyphlosionEvosAttacks:
 TotodileEvosAttacks:
 	dbbw EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
-	dbw 1, DARK_PULSE
-	dbw 1, DRAGON_CLAW
-	dbw 1, MIRROR_SHOT
-	dbw 1, DRAGON_PULSE
+	dbw 1, NIGHT_SLASH
+	dbw 1, BUG_BUZZ
+	dbw 1, FLASH_CANNON
+	dbw 1, ICE_SHARD
 	dbw 7, RAGE
 	dbw 13, WATER_GUN
 	dbw 20, BITE

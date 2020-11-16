@@ -279,6 +279,10 @@ BattleAnimations::
 	dw BattleAnim_DragonClaw
 	dw BattleAnim_MirrorShot
 	dw BattleAnim_DragonPulse
+	dw BattleAnim_NightSlash
+	dw BattleAnim_IceShard
+	dw BattleAnim_FlashCannon
+	dw BattleAnim_BugBuzz
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -4640,6 +4644,76 @@ BattleAnim_DragonPulse:
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_call BattleAnim_Solarbeam_branch_cbb39
 	anim_wait 48
+	anim_ret
+
+BattleAnim_NightSlash:
+	anim_1gfx ANIM_GFX_CUT
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $10
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_3A, 152, 40, $0
+	anim_obj ANIM_OBJ_3A, 148, 36, $0
+	anim_wait 32
+	anim_ret
+
+BattleAnim_IceShard:
+	anim_2gfx ANIM_GFX_ICE, ANIM_GFX_HIT
+	anim_sound 6, 2, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE_BEAM, 64, 88, $4
+	anim_wait 4
+	anim_obj ANIM_OBJ_ICE_BEAM, 64, 72, $4
+	anim_wait 4
+	anim_obj ANIM_OBJ_ICE_BEAM, 64, 76, $4
+	anim_wait 32
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_obj ANIM_OBJ_04, 120, 32, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_obj ANIM_OBJ_04, 152, 40, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_obj ANIM_OBJ_04, 136, 48, $0
+	anim_wait 32
+	anim_ret
+
+BattleAnim_FlashCannon:
+	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_EXPLOSION
+	anim_sound 6, 2, SFX_THROW_BALL
+	anim_obj ANIM_OBJ_SLUDGE_BOMB, 64, 92, $10
+	anim_wait 36
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_18, 136, 56, $0
+	anim_wait 16
+	anim_1gfx ANIM_GFX_SPEED
+	anim_sound 0, 1, SFX_FLASH
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $6, $20
+	anim_wait 4
+	anim_obj ANIM_OBJ_FLASH, 136, 56, $0
+	anim_wait 4
+	anim_obj ANIM_OBJ_FLASH, 136, 56, $8
+	anim_wait 4
+	anim_obj ANIM_OBJ_FLASH, 136, 56, $10
+	anim_wait 4
+	anim_obj ANIM_OBJ_FLASH, 136, 56, $18
+	anim_wait 4
+	anim_obj ANIM_OBJ_FLASH, 136, 56, $20
+	anim_wait 4
+	anim_obj ANIM_OBJ_FLASH, 136, 56, $28
+	anim_wait 4
+	anim_obj ANIM_OBJ_FLASH, 136, 56, $30
+	anim_wait 4
+	anim_obj ANIM_OBJ_FLASH, 136, 56, $38
+	anim_wait 32
+	anim_ret
+
+BattleAnim_BugBuzz:
+	anim_1gfx ANIM_GFX_PSYCHIC
+.loop
+	anim_sound 6, 2, SFX_SCREECH
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
+	anim_obj ANIM_OBJ_WAVE, 56, 80, $2
+	anim_wait 8
+	anim_loop 3, .loop
+	anim_wait 56
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

@@ -261,6 +261,10 @@
 	const DRAGON_CLAW  ; fd
 	const MIRROR_SHOT  ; fe
 	const DRAGON_PULSE ; ff
+	const NIGHT_SLASH
+	const ICE_SHARD
+	const FLASH_CANNON
+	const BUG_BUZZ
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

@@ -254,3 +254,7 @@ MoveNames::
 	db "Dragon Claw@"
 	db "Mirror Shot@"
 	db "Dragon Pulse@"
+	db "Night Slash@"
+	db "Ice Shard@"
+	db "Flash Cannon@"
+	db "Bug Buzz@"

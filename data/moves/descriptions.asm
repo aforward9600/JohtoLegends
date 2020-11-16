@@ -260,6 +260,10 @@ MoveDescriptions1:
 	dw DragonClawDescription
 	dw MirrorShotDescription
 	dw DragonPulseDescription
+	dw NightSlashDescription
+	dw IceShardDescription
+	dw FlashCannonDescription
+	dw BugBuzzDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1283,3 +1287,19 @@ MirrorShotDescription:
 DragonPulseDescription:
 	db   "Blasts foe with"
 	next "powerful wave.@"
+
+NightSlashDescription:
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
+
+IceShardDescription:
+	db   "Strikes first with"
+	next "sharp icicles.@"
+
+FlashCannonDescription:
+	db   "Cannon of light."
+	next "Lowers Spcl.Def.@"
+
+BugBuzzDescription:
+	db   "Obnoxious buzzing,"
+	next "lowers Spcl.Def.@"
