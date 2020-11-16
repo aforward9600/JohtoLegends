@@ -262,3 +262,7 @@ MoveNames::
 	db "Drain Punch@"
 	db "Silver Wind@"
 	db "Shadow Claw@"
+	db "Bulldoze@"
+	db "Seed Bomb@"
+	db "Dragon Rush@"
+	db "Bullet Punch@"

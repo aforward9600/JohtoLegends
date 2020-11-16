@@ -268,6 +268,10 @@ MoveDescriptions1:
 	dw DrainPunchDescription
 	dw SilverWindDescription
 	dw ShadowClawDescription
+	dw BulldozeDescription
+	dw SeedBombDescription
+	dw DragonRushDescription
+	dw BulletPunchDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1323,3 +1327,19 @@ SilverWindDescription:
 ShadowClawDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
+
+BulldozeDescription:
+	db   "Runs foe over and"
+	next "lowers its Speed.@"
+
+SeedBombDescription:
+	db   "Hard-shelled seeds"
+	next "barrage the foe.@"
+
+DragonRushDescription:
+	db   "Powerful tackle."
+	next "May cause finch.@"
+
+BulletPunchDescription:
+	db   "Fist of steel that"
+	next "strikes first.@"

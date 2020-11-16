@@ -269,6 +269,10 @@
 	const DRAIN_PUNCH
 	const SILVER_WIND
 	const SHADOW_CLAW
+	const BULLDOZE
+	const SEED_BOMB
+	const DRAGON_RUSH
+	const BULLET_PUNCH
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff
