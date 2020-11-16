@@ -288,6 +288,10 @@ MoveDescriptions1:
 	dw FocusBlastDescription
 	dw WaterPulseDescription
 	dw GunkShotDescription
+	dw SludgeWaveDescription
+	dw EarthPowerDescription
+	dw IronHeadDescription
+	dw SignalBeamDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1423,3 +1427,19 @@ WaterPulseDescription:
 GunkShotDescription:
 	db   "Filthy garbage th-"
 	next "at can poison.@"
+
+SludgeWaveDescription:
+	db	 "Swamps the foe's"
+	next "area with poison.@"
+
+EarthPowerDescription:
+	db   "Ground erupts, can"
+	next "lower Spcl.Def.@"
+
+IronHeadDescription:
+	db   "Can cause flinch"
+	next "with a hard head.@"
+
+SignalBeamDescription:
+	db   "Beam that can can"
+	next "cause confusion.@"

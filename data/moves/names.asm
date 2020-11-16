@@ -282,3 +282,7 @@ MoveNames::
 	db "Focus Blast@"
 	db "Water Pulse@"
 	db "Gunk Shot@"
+	db "Sludge Wave@"
+	db "Earth Power@"
+	db "Iron Head@"
+	db "Signal Beam@"

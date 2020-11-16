@@ -307,6 +307,10 @@ BattleAnimations::
 	dw BattleAnim_FocusBlast
 	dw BattleAnim_WaterPulse
 	dw BattleAnim_GunkShot
+	dw BattleAnim_SludgeWave
+	dw BattleAnim_EarthPower
+	dw BattleAnim_IronHead
+	dw BattleAnim_SignalBeam
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -1516,6 +1520,7 @@ BattleAnim_HyperBeam:
 	anim_ret
 
 BattleAnim_AuroraBeam:
+BattleAnim_SignalBeam:
 	anim_1gfx ANIM_GFX_BEAM
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
@@ -3026,6 +3031,7 @@ BattleAnim_Sludge:
 	anim_ret
 
 BattleAnim_Toxic:
+BattleAnim_SludgeWave:
 	anim_1gfx ANIM_GFX_POISON
 	anim_bgeffect ANIM_BG_BLACK_HUES, $0, $8, $0
 	anim_call BattleAnim_Toxic_branch_cbc35
@@ -4229,6 +4235,7 @@ BattleAnim_SweetScent:
 	anim_ret
 
 BattleAnim_IronTail:
+BattleAnim_IronHead:
 	anim_1gfx ANIM_GFX_REFLECT
 	anim_obp0 $0
 	anim_sound 0, 0, SFX_RAGE
@@ -4967,6 +4974,25 @@ BattleAnim_GunkShot:
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
 	anim_call BattleAnim_SludgeBomb_branch_cbc15
 	anim_wait 32
+	anim_ret
+
+BattleAnim_EarthPower:
+	anim_1gfx ANIM_GFX_FIRE
+.loop
+	anim_bgeffect ANIM_BG_1F, $e, $4, $0
+	anim_sound 0, 1, SFX_STRENGTH
+	anim_obj ANIM_OBJ_EMBER, 128, 64, $40
+	anim_wait 2
+	anim_obj ANIM_OBJ_EMBER, 120, 68, $30
+	anim_wait 2
+	anim_obj ANIM_OBJ_EMBER, 152, 68, $30
+	anim_wait 2
+	anim_obj ANIM_OBJ_EMBER, 144, 64, $40
+	anim_wait 2
+	anim_obj ANIM_OBJ_EMBER, 136, 68, $30
+	anim_wait 2
+	anim_jumpuntil .loop
+	anim_wait 96
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

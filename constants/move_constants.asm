@@ -289,6 +289,10 @@
 	const FOCUS_BLAST
 	const WATER_PULSE
 	const GUNK_SHOT
+	const SLUDGE_WAVE
+	const EARTH_POWER
+	const IRON_HEAD
+	const SIGNAL_BEAM
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff
