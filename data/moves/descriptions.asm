@@ -368,6 +368,10 @@ MoveDescriptions1:
 	dw CircleThrowDescription
 	dw PsychoCutDescription
 	dw DualChopDescription
+	dw BounceDescription
+	dw RockPolishDescription
+	dw GyroBallDescription
+	dw SlackOffDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1823,3 +1827,19 @@ PsychoCutDescription:
 DualChopDescription:
 	db	 "Brutally chops the"
 	next "foe twice.@"
+
+BounceDescription:
+	db   "1st turn: Bounce"
+	next "2nd turn: Attack@"
+
+RockPolishDescription:
+	db	 "Polishes body to"
+	next "increase Speed.@"
+
+GyroBallDescription:
+	db   "The user's level"
+	next "equals damage HP.@"
+
+SlackOffDescription:
+	db	 "Slacks off and re-"
+	next "stores half of HP.@"

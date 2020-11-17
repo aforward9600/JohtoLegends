@@ -362,3 +362,7 @@ MoveNames::
 	db "Circle Throw@"
 	db "Psycho Cut@"
 	db "Dual Chop@"
+	db "Bounce@"
+	db "Rock Polish@"
+	db "Gyro Ball@"
+	db "Slack Off@"

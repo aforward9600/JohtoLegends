@@ -369,6 +369,10 @@
 	const CIRCLE_THROW
 	const PSYCHO_CUT
 	const DUAL_CHOP
+	const BOUNCE
+	const ROCK_POLISH
+	const GYRO_BALL
+	const SLACK_OFF
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

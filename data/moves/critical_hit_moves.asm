@@ -12,4 +12,5 @@ CriticalHitMoves:
 	dw STONE_EDGE
 	dw CROSS_POISON
 	dw AIR_CUTTER
+	dw PSYCHO_CUT
 	dw -1

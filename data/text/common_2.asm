@@ -733,6 +733,11 @@ UnknownText_0x1c0d6c::
 	line "dug a hole!"
 	prompt
 
+BounceText::
+	text_start
+	line "bounce high!"
+	prompt
+
 _ActorNameText::
 	text "<USER>@"
 	text_end

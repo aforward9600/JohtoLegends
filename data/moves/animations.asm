@@ -388,6 +388,10 @@ BattleAnimations::
 	dw BattleAnim_CircleThrow
 	dw BattleAnim_PsychoCut
 	dw BattleAnim_DualChop
+	dw BattleAnim_Bounce
+	dw BattleAnim_RockPolish
+	dw BattleAnim_GyroBall
+	dw BattleAnim_SlackOff
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -603,6 +607,7 @@ BattleAnim_Confused:
 	anim_ret
 
 BattleAnim_Slp:
+BattleAnim_SlackOff:
 	anim_1gfx ANIM_GFX_STATUS
 	anim_sound 0, 0, SFX_TAIL_WHIP
 .loop
@@ -1726,6 +1731,7 @@ BattleAnim_Teleport:
 	anim_ret
 
 BattleAnim_Fly:
+BattleAnim_Bounce:
 	anim_if_param_equal $1, BattleAnim_Fly_branch_c9e89
 	anim_if_param_equal $2, BattleAnim_Fly_branch_c9e82
 	anim_1gfx ANIM_GFX_HIT
@@ -2836,6 +2842,7 @@ BattleAnim_LeechLife:
 
 BattleAnim_Harden:
 BattleAnim_IronDefense:
+BattleAnim_RockPolish:
 	anim_1gfx ANIM_GFX_REFLECT
 	anim_obp0 $0
 	anim_call BattleAnim_TargetObj_1Row
@@ -5740,6 +5747,26 @@ BattleAnim_PsychoCut:
 	anim_sound 6, 2, SFX_PSYCHIC
 	anim_obj ANIM_OBJ_3A, 152, 40, $0
 	anim_wait 32
+	anim_ret
+
+BattleAnim_GyroBall:
+	anim_2gfx ANIM_GFX_SHAPES, ANIM_GFX_HIT
+	anim_obp0 $e4
+	anim_call BattleAnim_TargetObj_1Row
+	anim_sound 0, 0, SFX_SHARPEN
+	anim_bgeffect ANIM_BG_18, $0, $1, $40
+	anim_obj ANIM_OBJ_DEFENSE_CURL, 48, 88, $0
+	anim_wait 96
+	anim_incobj 2
+	anim_incbgeffect ANIM_BG_18
+	anim_call BattleAnim_ShowMon_0
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_00, 136, 48, $0
+	anim_wait 8
+	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:
