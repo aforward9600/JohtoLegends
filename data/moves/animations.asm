@@ -355,6 +355,10 @@ BattleAnimations::
 	dw BattleAnim_ShadowPunch
 	dw BattleAnim_RoundM
 	dw BattleAnim_HiHorsepower
+	dw BattleAnim_MudShot
+	dw BattleAnim_SandTomb
+	dw BattleAnim_AuraSphere
+	dw BattleAnim_HammerArm
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -789,6 +793,7 @@ BattleAnim_CometPunch_branch_c9641:
 
 BattleAnim_Bide_branch_c9651:
 BattleAnim_MegaPunch:
+BattleAnim_HammerArm:
 	anim_1gfx ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_1F, $40, $2, $0
 	anim_wait 48
@@ -3611,6 +3616,7 @@ BattleAnim_SludgeBomb:
 	anim_ret
 
 BattleAnim_MudSlap:
+BattleAnim_MudShot:
 	anim_1gfx ANIM_GFX_SAND
 	anim_obp0 $fc
 	anim_call BattleAnim_MudSlap_branch_cbc5b
@@ -3788,6 +3794,7 @@ BattleAnim_Outrage:
 	anim_ret
 
 BattleAnim_Sandstorm:
+BattleAnim_SandTomb:
 	anim_1gfx ANIM_GFX_POWDER
 	anim_obj ANIM_OBJ_SANDSTORM, 88, 0, $0
 	anim_wait 8
@@ -5498,6 +5505,16 @@ BattleAnim_ShadowPunch:
 	anim_wait 8
 	anim_call BattleAnim_ShowMon_0
 	anim_wait 4
+	anim_ret
+
+BattleAnim_AuraSphere:
+	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_EXPLOSION
+	anim_sound 6, 2, SFX_THROW_BALL
+	anim_obj ANIM_OBJ_AURA_SPHERE, 64, 92, $10
+	anim_wait 36
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_18, 136, 56, $0
+	anim_wait 16
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

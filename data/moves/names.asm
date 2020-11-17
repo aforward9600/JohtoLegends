@@ -330,3 +330,7 @@ MoveNames::
 	db "Shadow Punch@"
 	db "Round@"
 	db "HiHorsepower@"
+	db "Mud Shot@"
+	db "Sand Tomb@"
+	db "Aura Sphere@"
+	db "Hammer Arm@"

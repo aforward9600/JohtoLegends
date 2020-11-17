@@ -2326,3 +2326,27 @@ Avalanche:
     buildopponentrage
     kingsrock
     endmove
+
+HammerArm:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	switchturn
+	speeddown
+	statdownmessage
+	switchturn
+	checkfaint
+	buildopponentrage
+	endmove

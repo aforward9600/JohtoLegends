@@ -337,6 +337,10 @@
 	const SHADOW_PUNCH
 	const ROUND_M
 	const HIHORSEPOWER
+	const MUD_SHOT
+	const SAND_TOMB
+	const AURA_SPHERE
+	const HAMMER_ARM
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

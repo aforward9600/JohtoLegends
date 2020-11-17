@@ -336,6 +336,10 @@ MoveDescriptions1:
 	dw ShadowPunchDescription
 	dw RoundMDescription
 	dw HiHorsepowerDescription
+	dw MudShotDescription
+	dw SandTombDescription
+	dw AuraSphereDescription
+	dw HammerArmDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1663,3 +1667,19 @@ RoundMDescription:
 HiHorsepowerDescription:
 	db	 "Fiercely attacks"
 	next "with full body.@"
+
+MudShotDescription:
+	db	 "Hurls mud and"
+	next "lowers Speed.@"
+
+SandTombDescription:
+	db	 "Traps foe in sand"
+	next "for 2-5 turns.@"
+
+AuraSphereDescription:
+	db	 "Lets loose a blast"
+	next "of aura. Will hit.@"
+
+HammerArmDescription:
+	db	 "Heavy hit that lo-"
+	next "wers user's Speed.@"

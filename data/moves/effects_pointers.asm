@@ -163,3 +163,4 @@ MoveEffectsPointers:
 	dw WillOWisp
 	dw FlareBlitz
 	dw Avalanche
+	dw HammerArm
