@@ -356,6 +356,10 @@ MoveDescriptions1:
 	dw RoostDescription
 	dw CrossPoisonDescription
 	dw SmartStrikeDescription
+	dw BelchDescription
+	dw AcidSprayDescription
+	dw NuzzleDescription
+	dw VoltTackleDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1763,3 +1767,19 @@ CrossPoisonDescription:
 SmartStrikeDescription:
 	db	 "Never misses with"
 	next "with a sharp horn.@"
+
+BelchDescription:
+	db	 "A horrible belch"
+	next "that can poison.@"
+
+AcidSprayDescription:
+	db	 "Acid that sharply"
+	next "lowers Spcl.Def.@"
+
+NuzzleDescription:
+	db	 "Nuzzles foe to"
+	next "always paralyze.@"
+
+VoltTackleDescription:
+	db	 "Dangerous tackle"
+	next "that hurts user.@"

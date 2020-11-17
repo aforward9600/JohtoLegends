@@ -174,3 +174,5 @@ MoveEffectsPointers:
 	dw Hail
 	dw BrickBreak
 	dw QuiverDance
+	dw SpecialDefenseDown2Hit
+	dw VoltTackle

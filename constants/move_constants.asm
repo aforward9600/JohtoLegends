@@ -357,6 +357,10 @@
 	const ROOST
 	const CROSS_POISON
 	const SMART_STRIKE
+	const BELCH
+	const ACID_SPRAY
+	const NUZZLE
+	const VOLT_TACKLE
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

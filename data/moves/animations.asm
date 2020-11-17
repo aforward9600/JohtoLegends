@@ -376,6 +376,10 @@ BattleAnimations::
 	dw BattleAnim_Roost
 	dw BattleAnim_CrossPoison
 	dw BattleAnim_SmartStrike
+	dw BattleAnim_Belch
+	dw BattleAnim_AcidSpray
+	dw BattleAnim_Nuzzle
+	dw BattleAnim_VoltTackle
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -1503,6 +1507,7 @@ BattleAnim_Explosion:
 	anim_ret
 
 BattleAnim_Acid:
+BattleAnim_AcidSpray:
 	anim_1gfx ANIM_GFX_POISON
 	anim_call BattleAnim_Acid_branch_cbc35
 	anim_wait 64
@@ -3953,6 +3958,7 @@ BattleAnim_MilkDrink:
 
 BattleAnim_Spark:
 BattleAnim_WildCharge:
+BattleAnim_VoltTackle:
 	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
 	anim_sound 0, 0, SFX_ZAP_CANNON
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
@@ -5059,6 +5065,7 @@ BattleAnim_WaterPulse:
 	anim_ret
 
 BattleAnim_GunkShot:
+BattleAnim_Belch:
 	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_POISON
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
 	anim_bgeffect ANIM_BG_BLACK_HUES, $0, $8, $0
@@ -5704,6 +5711,21 @@ BattleAnim_SmartStrike:
 	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj ANIM_OBJ_01, 136, 56, $0
 	anim_wait 16
+	anim_ret
+
+BattleAnim_Nuzzle:
+	anim_3gfx ANIM_GFX_HIT, ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_00, 136, 48, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_34, 136, 56, $2
+	anim_wait 16
+	anim_sound 0, 1, SFX_THUNDERSHOCK
+	anim_obj ANIM_OBJ_33, 136, 56, $0
+	anim_wait 96
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

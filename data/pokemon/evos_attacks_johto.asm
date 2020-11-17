@@ -194,10 +194,10 @@ TyphlosionEvosAttacks:
 TotodileEvosAttacks:
 	dbbw EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
-	dbw 1, QUIVER_DANCE
-	dbw 1, ROOST
-	dbw 1, CROSS_POISON
-	dbw 1, SMART_STRIKE
+	dbw 1, BELCH
+	dbw 1, NUZZLE
+	dbw 1, ACID_SPRAY
+	dbw 1, VOLT_TACKLE
 	dbw 7, RAGE
 	dbw 13, WATER_GUN
 	dbw 20, BITE

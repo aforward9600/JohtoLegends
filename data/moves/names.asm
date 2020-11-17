@@ -350,3 +350,7 @@ MoveNames::
 	db "Roost@"
 	db "Cross Poison@"
 	db "Smart Strike@"
+	db "Belch@"
+	db "Acid Spray@"
+	db "Nuzzle@"
+	db "Volt Tackle@"
