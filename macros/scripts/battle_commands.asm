@@ -86,7 +86,7 @@ ENDM
 	command kickcounter             ; 4f
 	command thief                   ; 50
 	command arenatrap               ; 51
-	command nightmare               ; 52
+	command blizzardaccuracy        ; 52
 	command defrost                 ; 53
 	command curse                   ; 54
 	command protect                 ; 55
@@ -187,6 +187,8 @@ ENDM
 	command dragondance
 	command shellsmash
 	command honeclaws
+	command starthail
+	command breakscreens
 
 	enum_start $fe
 	command endturn                 ; fe

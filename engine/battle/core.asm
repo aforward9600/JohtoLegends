@@ -1723,35 +1723,42 @@ HandleWeather:
 
 	ld hl, wWeatherCount
 	dec [hl]
-	jr z, .ended
+	jp z, .ended
 
 	ld hl, .WeatherMessages
 	call .PrintWeatherMessage
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
+	jr z, .continue
+	cp WEATHER_HAIL
 	ret nz
 
+.continue
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .enemy_first
 
 .player_first
 	call SetPlayerTurn
-	call .SandstormDamage
+	call .WeatherDamage
 	call SetEnemyTurn
-	jr .SandstormDamage
+	jr .WeatherDamage
 
 .enemy_first
 	call SetEnemyTurn
-	call .SandstormDamage
+	call .WeatherDamage
 	call SetPlayerTurn
 
-.SandstormDamage:
+.WeatherDamage:
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
 	bit SUBSTATUS_UNDERGROUND, a
 	ret nz
+
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	jr z, .HailDamage
 
 	ld hl, wBattleMonType1
 	ldh a, [hBattleTurn]
@@ -1787,12 +1794,33 @@ HandleWeather:
 	ld hl, SandstormHitsText
 	jp StdBattleTextbox
 
-.ended
-	ld hl, .WeatherEndedMessages
-	call .PrintWeatherMessage
+.HailDamage:
+	ld hl, wBattleMonType1
+	ld a, [hBattleTurn]
+	and a
+	jr z, .ok2
+	ld hl, wEnemyMonType1
+
+.ok2
+	ld a, [hli]
+	cp ICE
+	ret z
+
+	ld a, [hl]
+	cp ICE
+	ret z
+
+	call SwitchTurnCore
 	xor a
-	ld [wBattleWeather], a
-	ret
+	ld [wNumHits], a
+	ld de, ANIM_IN_HAIL
+	call Call_PlayBattleAnim
+	call SwitchTurnCore
+	call GetEighthMaxHP
+	call SubtractHPFromUser
+
+	ld hl, HailBuffetsText
+	jp StdBattleTextbox
 
 .PrintWeatherMessage:
 	ld a, [wBattleWeather]
@@ -1806,17 +1834,26 @@ HandleWeather:
 	ld l, a
 	jp StdBattleTextbox
 
+.ended
+	ld hl, .WeatherEndedMessages
+	call .PrintWeatherMessage
+	xor a
+	ld [wBattleWeather], a
+	ret
+
 .WeatherMessages:
 ; entries correspond to WEATHER_* constants
 	dw BattleText_RainContinuesToFall
 	dw BattleText_TheSunlightIsStrong
 	dw BattleText_TheSandstormRages
+	dw BattleText_HailContinues
 
 .WeatherEndedMessages:
 ; entries correspond to WEATHER_* constants
 	dw BattleText_TheRainStopped
 	dw BattleText_TheSunlightFaded
 	dw BattleText_TheSandstormSubsided
+	dw BattleText_HailEnds
 
 SubtractHPFromTarget:
 	call SubtractHP

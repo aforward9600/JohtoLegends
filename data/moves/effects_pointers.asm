@@ -107,7 +107,7 @@ MoveEffectsPointers:
 	dw TripleKick
 	dw Thief
 	dw MeanLook
-	dw Nightmare
+	dw Blizzard
 	dw FlameWheel
 	dw Curse
 	dw FireFang
@@ -170,3 +170,6 @@ MoveEffectsPointers:
 	dw DragonDance
 	dw ShellSmash
 	dw HoneClaws
+	dw SpeedUpHit
+	dw Hail
+	dw BrickBreak

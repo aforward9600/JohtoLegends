@@ -14,6 +14,7 @@
 	dw BattleAnim_InSandstorm
 	dw BattleAnim_InNightmare
 	dw BattleAnim_InWhirlpool
+	dw BattleAnim_InHail
 	dw BattleAnim_Miss
 	dw BattleAnim_EnemyDamage
 	dw BattleAnim_EnemyStatDown
@@ -194,7 +195,7 @@ BattleAnimations::
 	dw BattleAnim_Thief
 	dw BattleAnim_SpiderWeb
 	dw BattleAnim_MindReader
-	dw BattleAnim_Nightmare
+	dw BattleAnim_Featherdance
 	dw BattleAnim_FlameWheel
 	dw BattleAnim_Snore
 	dw BattleAnim_Curse
@@ -367,6 +368,10 @@ BattleAnimations::
 	dw BattleAnim_DragonDance
 	dw BattleAnim_ShellSmash
 	dw BattleAnim_HoneClaws
+	dw BattleAnim_PoisonFang
+	dw BattleAnim_FlameCharge
+	dw BattleAnim_Hail
+	dw BattleAnim_BrickBreak
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -685,6 +690,20 @@ BattleAnim_InWhirlpool:
 	anim_wait 1
 	anim_ret
 
+BattleAnim_InHail:
+	anim_1gfx ANIM_GFX_ICE
+	anim_obj ANIM_OBJ_HAIL, 88, 0, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_HAIL, 72, 0, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_HAIL, 56, 0, $2
+.loop
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_wait 8
+	anim_loop 16, .loop
+	anim_wait 8
+	anim_ret
+
 BattleAnim_HitConfusion:
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_POUND
@@ -803,6 +822,7 @@ BattleAnim_CometPunch_branch_c9641:
 BattleAnim_Bide_branch_c9651:
 BattleAnim_MegaPunch:
 BattleAnim_HammerArm:
+BattleAnim_BrickBreak:
 	anim_1gfx ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_1F, $40, $2, $0
 	anim_wait 48
@@ -3188,6 +3208,7 @@ BattleAnim_Disable:
 	anim_ret
 
 BattleAnim_TailWhip:
+BattleAnim_Featherdance:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_2Row
 	anim_sound 0, 0, SFX_TAIL_WHIP
@@ -3285,7 +3306,6 @@ BattleAnim_MindReader:
 	anim_wait 32
 	anim_ret
 
-BattleAnim_Nightmare:
 BattleAnim_Hex:
 	anim_1gfx ANIM_GFX_ANGELS
 	anim_bgp $1b
@@ -3297,6 +3317,7 @@ BattleAnim_Hex:
 	anim_ret
 
 BattleAnim_FlameWheel:
+BattleAnim_FlameCharge:
 	anim_1gfx ANIM_GFX_FIRE
 .loop
 	anim_sound 0, 0, SFX_EMBER
@@ -5396,6 +5417,7 @@ BattleAnim_Moonblast:
 	anim_ret
 
 BattleAnim_Avalanche:
+BattleAnim_Hail:
 	anim_1gfx ANIM_GFX_ICE
 	anim_obj ANIM_OBJ_HAIL, 88, 0, $0
 	anim_wait 8
@@ -5614,6 +5636,21 @@ BattleAnim_HoneClaws:
 	anim_obj ANIM_OBJ_38,  48, 72, $0
 	anim_sound 0, 1, SFX_SCRATCH
 	anim_wait 32
+	anim_ret
+
+BattleAnim_PoisonFang:
+	anim_3gfx ANIM_GFX_CUT, ANIM_GFX_HIT, ANIM_GFX_POISON
+	anim_obj ANIM_OBJ_BITE, 136, 56, $98
+	anim_obj ANIM_OBJ_BITE, 136, 56, $18
+	anim_wait 8
+	anim_sound 0, 1, SFX_BITE
+	anim_obj ANIM_OBJ_01, 144, 48, $18
+	anim_wait 16
+	anim_sound 0, 1, SFX_BITE
+	anim_obj ANIM_OBJ_01, 128, 64, $18
+	anim_wait 32
+	anim_call BattleAnim_Sludge_branch_cbc15
+	anim_wait 56
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

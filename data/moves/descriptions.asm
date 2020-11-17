@@ -175,7 +175,7 @@ MoveDescriptions1:
 	dw ThiefDescription
 	dw SpiderWebDescription
 	dw MindReaderDescription
-	dw NightmareDescription
+	dw FeatherdanceDescription
 	dw FlameWheelDescription
 	dw SnoreDescription
 	dw CurseDescription
@@ -348,6 +348,10 @@ MoveDescriptions1:
 	dw DragonDanceDescription
 	dw ShellSmashDescription
 	dw HoneClawsDescription
+	dw PoisonFangDescription
+	dw FlameChargeDescription
+	dw HailDescription
+	dw BrickBreakDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1032,9 +1036,9 @@ MindReaderDescription:
 	db   "Ensures the next"
 	next "attack will hit.@"
 
-NightmareDescription:
-	db   "A sleeper loses"
-	next "1/4 HP every turn.@"
+FeatherdanceDescription:
+	db	 "Sharply lowers Atk"
+	next "with feathers.@"
 
 FlameWheelDescription:
 	db   "An attack that may"
@@ -1723,3 +1727,19 @@ ShellSmashDescription:
 HoneClawsDescription:
 	db   "Raise Attack and"
 	next "accuracy.@"
+
+PoisonFangDescription:
+	db	 "Fangs may badly"
+	next "poison the foe.@"
+
+FlameChargeDescription:
+	db	 "Raises user's Sp-"
+	next "eed with flames.@"
+
+HailDescription:
+	db	 "Summons a hailsto-"
+	next "rm for 5 turns.@"
+
+BrickBreakDescription:
+	db	 "Breaks screens"
+	next "with fists.@"

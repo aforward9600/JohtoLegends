@@ -194,10 +194,10 @@ TyphlosionEvosAttacks:
 TotodileEvosAttacks:
 	dbbw EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
-	dbw 1, HONE_CLAWS
-	dbw 1, DRAGON_DANCE
-	dbw 1, STEEL_WING
-	dbw 1, SHELL_SMASH
+	dbw 1, POISON_FANG
+	dbw 1, HAIL
+	dbw 1, BRICK_BREAK
+	dbw 1, BLIZZARD
 	dbw 7, RAGE
 	dbw 13, WATER_GUN
 	dbw 20, BITE

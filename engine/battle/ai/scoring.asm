@@ -353,7 +353,6 @@ AI_Smart:
 	dbw EFFECT_PRIORITY_HIT,     AI_Smart_PriorityHit
 	dbw EFFECT_THIEF,            AI_Smart_Thief
 	dbw EFFECT_MEAN_LOOK,        AI_Smart_MeanLook
-	dbw EFFECT_NIGHTMARE,        AI_Smart_Nightmare
 	dbw EFFECT_FLAME_WHEEL,      AI_Smart_FlameWheel
 	dbw EFFECT_CURSE,            AI_Smart_Curse
 	dbw EFFECT_PROTECT,          AI_Smart_Protect
@@ -389,19 +388,17 @@ AI_Smart:
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
 	dbw EFFECT_HEX,              AI_Smart_Hex
+	dbw EFFECT_HAIL,             AI_Smart_Hail
+	dbw EFFECT_HURRICANE,        AI_Smart_Thunder
 	db -1 ; end
 
 AI_Smart_Sleep:
-; Greatly encourage sleep inducing moves if the enemy has either Dream Eater or Nightmare.
+; Greatly encourage sleep inducing moves if the enemy has either Dream Eater.
 ; 50% chance to greatly encourage sleep inducing moves otherwise.
 
 	ld b, EFFECT_DREAM_EATER
 	call AIHasMoveEffect
 	jr c, .asm_387f0
-
-	ld b, EFFECT_NIGHTMARE
-	call AIHasMoveEffect
-	ret nc
 
 .asm_387f0
 	call AI_50_50
@@ -1793,16 +1790,6 @@ AICheckLastPlayerMon:
 
 	ret
 
-AI_Smart_Nightmare:
-; 50% chance to encourage this move.
-; The AI_Basic layer will make sure that
-; Dream Eater is only used against sleeping targets.
-
-	call AI_50_50
-	ret c
-	dec [hl]
-	ret
-
 AI_Smart_FlameWheel:
 ; Use this move if the enemy is frozen.
 
@@ -2365,6 +2352,26 @@ AI_Smart_SunnyDay:
 
 	; fallthrough
 
+AI_Smart_Hail:
+; Greatly discourage this move if it would favour the player type-wise.
+; Particularly, if the player is an Ice-type.
+	ld a, [wBattleMonType1]
+	cp ICE
+	jr z, AIBadWeatherType
+	cp GROUND
+	jr z, AIGoodWeatherType
+
+	ld a, [wBattleMonType2]
+	cp ICE
+	jr z, AIBadWeatherType
+	cp GROUND
+	jr z, AIGoodWeatherType
+
+	push hl
+	ld hl, HailMoves
+
+	; fallthrough
+
 AI_Smart_WeatherMove:
 ; Rain Dance, Sunny Day
 
@@ -2415,6 +2422,8 @@ AIGoodWeatherType:
 	ret
 
 INCLUDE "data/battle/ai/sunny_day_moves.asm"
+
+INCLUDE "data/battle/ai/hail_moves.asm"
 
 AI_Smart_BellyDrum:
 ; Dismiss this move if enemy's attack is higher than +2 or if enemy's HP is below 50%.
@@ -2631,6 +2640,7 @@ AI_Smart_Solarbeam:
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
+	cp WEATHER_HAIL
 	jr z, .asm_3921e
 
 	cp WEATHER_RAIN
@@ -2657,6 +2667,7 @@ AI_Smart_Thunder:
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
+	cp WEATHER_HAIL
 	ret nz
 
 	call Random

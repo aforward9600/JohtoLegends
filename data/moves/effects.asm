@@ -1446,13 +1446,6 @@ MeanLook:
 	arenatrap
 	endmove
 
-Nightmare:
-	checkobedience
-	usedmovetext
-	doturn
-	nightmare
-	endmove
-
 FlameWheel:
 	checkobedience
 	usedmovetext
@@ -2413,4 +2406,76 @@ HoneClaws:
 	usedmovetext
 	doturn
 	honeclaws
+	endmove
+
+SpeedUpHit:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	speedup
+	statupmessage
+	checkfaint
+	buildopponentrage
+	endmove
+
+Hail:
+	checkobedience
+	usedmovetext
+	doturn
+	starthail
+	endmove
+
+BrickBreak:
+	checkobedience
+	usedmovetext
+	breakscreens
+	doturn
+	checkhit
+	moveanim
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+
+Blizzard:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	blizzardaccuracy
+	checkhit
+	effectchance
+	stab
+	damagevariation
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	freezetarget
 	endmove

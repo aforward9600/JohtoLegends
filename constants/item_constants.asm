@@ -232,7 +232,7 @@ ENDM
 	add_tm STEEL_WING   ; f0
 	add_tm FIRE_PUNCH   ; f1
 	add_tm FURY_CUTTER  ; f2
-	add_tm NIGHTMARE    ; f3
+	add_tm FLAME_CHARGE ; f3
 	add_tm BODY_SLAM
 	add_tm SACRED_FIRE
 	add_tm AEROBLAST
@@ -242,7 +242,7 @@ ENDM
 	add_tm MOONLIGHT
 	add_tm MORNING_SUN
 	add_tm RECOVER
-	add_tm BEAT_UP
+	add_tm NASTY_PLOT
 	add_tm FURY_ATTACK
 	add_tm FLAME_WHEEL
 	add_tm MEGAHORN

@@ -85,7 +85,7 @@ BattleCommandPointers:
 	dw BattleCommand_KickCounter
 	dw BattleCommand_Thief
 	dw BattleCommand_ArenaTrap
-	dw BattleCommand_Nightmare
+	dw BattleCommand_BlizzardAccuracy
 	dw BattleCommand_Defrost
 	dw BattleCommand_Curse
 	dw BattleCommand_Protect
@@ -186,3 +186,5 @@ BattleCommandPointers:
 	dw BattleCommand_DragonDance
 	dw BattleCommand_ShellSmash
 	dw BattleCommand_HoneClaws
+	dw BattleCommand_StartHail
+	dw BattleCommand_BreakScreens
