@@ -80,7 +80,7 @@ PokefanF_SnoreFarmer:
 FarmerFScript_GiveSnore:
 	writetext FarmerFText_HealedMiltank
 	buttonsound
-	verbosegiveitem TM_SNORE
+	verbosegiveitem TM_ICE_BEAM
 	iffalse FarmerFScript_NoRoomForSnore
 	setevent EVENT_GOT_TM13_SNORE_FROM_MOOMOO_FARM
 FarmerFScript_GotSnore:

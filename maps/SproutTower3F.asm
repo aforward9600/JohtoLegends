@@ -76,7 +76,7 @@ SageLiScript:
 	opentext
 	writetext SageLiTakeThisFlashText
 	buttonsound
-	verbosegiveitem TM_FLASH
+	verbosegiveitem TM_DAZZLINGLEAM
 	setevent EVENT_GOT_HM05_FLASH
 	setevent EVENT_BEAT_SAGE_LI
 	writetext SageLiFlashExplanationText

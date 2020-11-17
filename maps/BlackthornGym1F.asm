@@ -66,9 +66,9 @@ BlackthornGymClairScript:
 	iftrue .GotTM24
 	writetext BlackthornGymClairText_YouKeptMeWaiting
 	buttonsound
-	giveitem TM_DRAGONBREATH
+	giveitem TM_DRAGON_CLAW
 	iffalse .BagFull
-	getitemname STRING_BUFFER_3, TM_DRAGONBREATH
+	getitemname STRING_BUFFER_3, TM_DRAGON_CLAW
 	writetext BlackthornGymText_ReceivedTM24
 	playsound SFX_ITEM
 	waitsfx

@@ -285,7 +285,7 @@ RocketBaseElectrodeScript:
 	opentext
 	writetext UnknownText_0x6d809
 	buttonsound
-	verbosegiveitem TM_WHIRLPOOL
+	verbosegiveitem TM_GIGA_IMPACT
 	setevent EVENT_GOT_HM06_WHIRLPOOL
 	writetext UnknownText_0x6d8f8
 	waitbutton

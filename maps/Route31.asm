@@ -206,7 +206,7 @@ Route31MailRecipientScript:
 	writetext Text_Route31ReadingMail
 	buttonsound
 	setevent EVENT_GAVE_KENYA
-	verbosegiveitem TM_FLAME_CHARGE
+	verbosegiveitem TM_THUNDERBOLT
 	iffalse .NoRoomForItems
 	setevent EVENT_GOT_TM50_NIGHTMARE
 .DescribeNightmare:

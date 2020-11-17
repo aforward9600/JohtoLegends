@@ -227,7 +227,7 @@ LakeOfRageElixer:
 	itemball ELIXER
 
 LakeOfRageTMDetect:
-	itemball TM_DETECT
+	itemball TM_SWORDS_DANCE
 
 LakeOfRageHiddenFullRestore:
 	hiddenitem FULL_RESTORE, EVENT_LAKE_OF_RAGE_HIDDEN_FULL_RESTORE

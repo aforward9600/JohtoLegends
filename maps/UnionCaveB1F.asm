@@ -57,7 +57,7 @@ TrainerHikerLeonard:
 	end
 
 UnionCaveB1FTMSwift:
-	itemball TM_SWIFT
+	itemball TM_FLAMETHROWER
 
 UnionCaveB1FXDefend:
 	itemball X_DEFEND
