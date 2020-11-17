@@ -329,6 +329,10 @@
 	const BULLET_SEED
 	const PETAL_BLIZZ
 	const SOLAR_BLADE
+	const INFERNO
+	const WOOD_HAMMER
+	const PAYBACK
+	const SNARL
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

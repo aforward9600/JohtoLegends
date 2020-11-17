@@ -328,6 +328,10 @@ MoveDescriptions1:
 	dw BulletSeedDescription
 	dw PetalBlizzDescription
 	dw SolarBladeDescription
+	dw InfernoDescription
+	dw WoodHammerDescription
+	dw PaybackDescription
+	dw SnarlDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1623,3 +1627,19 @@ PetalBlizzDescription:
 SolarBladeDescription:
 	db   "1st turn: Prepare"
 	next "2nd turn: Attack@"
+
+InfernoDescription:
+	db	 "Foe is engulfed in"
+	next "intense fire.@"
+
+WoodHammerDescription:
+	db	 "Slams its body in-"
+	next "to foe. Recoil.@"
+
+PaybackDescription:
+	db	 "Power is doubled"
+	next "after damaged.@"
+
+SnarlDescription:
+	db	 "User yells and lo-"
+	next "wers Spcl.Atk.@"

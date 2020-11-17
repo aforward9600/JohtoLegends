@@ -322,3 +322,7 @@ MoveNames::
 	db "Bullet Seed@"
 	db "Petal Blizz.@"
 	db "Solar Blade@"
+	db "Inferno@"
+	db "Wood Hammer@"
+	db "Payback@"
+	db "Snarl@"

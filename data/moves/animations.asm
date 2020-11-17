@@ -347,6 +347,10 @@ BattleAnimations::
 	dw BattleAnim_BulletSeed
 	dw BattleAnim_PetalBlizz
 	dw BattleAnim_SolarBlade
+	dw BattleAnim_Inferno
+	dw BattleAnim_WoodHammer
+	dw BattleAnim_Payback
+	dw BattleAnim_Snarl
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -1936,6 +1940,7 @@ BattleAnim_Growl:
 
 BattleAnim_Roar:
 BattleAnim_HyperVoice:
+BattleAnim_Snarl:
 	anim_1gfx ANIM_GFX_NOISE
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_cry $1
@@ -2208,6 +2213,7 @@ BattleAnim_TakeDown:
 
 BattleAnim_DoubleEdge:
 BattleAnim_GigaImpact:
+BattleAnim_WoodHammer:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
@@ -3426,6 +3432,7 @@ BattleAnim_CottonSpore:
 
 BattleAnim_Reversal:
 BattleAnim_Revenge:
+BattleAnim_Payback:
 	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_07, $0, $0, $0
 	anim_sound 0, 1, SFX_MEGA_PUNCH
@@ -4124,6 +4131,7 @@ BattleAnim_PainSplit:
 
 BattleAnim_SacredFire:
 BattleAnim_FlareBlitz:
+BattleAnim_Inferno:
 	anim_1gfx ANIM_GFX_FIRE
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
