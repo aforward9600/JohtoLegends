@@ -373,6 +373,11 @@
 	const ROCK_POLISH
 	const GYRO_BALL
 	const SLACK_OFF
+	const DOUBLE_HIT_M
+	const CHARGE_BEAM
+	const BLAZE_KICK
+	const DRAGON_TAIL
+	const SHEER_COLD
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

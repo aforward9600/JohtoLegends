@@ -13,4 +13,5 @@ CriticalHitMoves:
 	dw CROSS_POISON
 	dw AIR_CUTTER
 	dw PSYCHO_CUT
+	dw BLAZE_KICK
 	dw -1

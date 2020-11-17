@@ -392,6 +392,11 @@ BattleAnimations::
 	dw BattleAnim_RockPolish
 	dw BattleAnim_GyroBall
 	dw BattleAnim_SlackOff
+	dw BattleAnim_DoubleHitM
+	dw BattleAnim_ChargeBeam
+	dw BattleAnim_BlazeKick
+	dw BattleAnim_DragonTail
+	dw BattleAnim_SheerCold
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -805,6 +810,7 @@ BattleAnim_KarateChop:
 
 BattleAnim_Doubleslap:
 BattleAnim_DualChop:
+BattleAnim_DoubleHitM:
 	anim_1gfx ANIM_GFX_HIT
 	anim_if_param_equal $1, BattleAnim_Doubleslap_branch_c961b
 	anim_sound 0, 1, SFX_DOUBLESLAP
@@ -1135,6 +1141,7 @@ BattleAnim_IceBeam:
 
 BattleAnim_Blizzard:
 BattleAnim_IcicleCrash:
+BattleAnim_SheerCold:
 	anim_1gfx ANIM_GFX_ICE
 .loop
 	anim_sound 6, 2, SFX_SHINE
@@ -4913,6 +4920,7 @@ BattleAnim_SeedBomb:
 	anim_ret
 
 BattleAnim_DragonRush:
+BattleAnim_DragonTail:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_1A, $0, $1, $20
@@ -5767,6 +5775,33 @@ BattleAnim_GyroBall:
 	anim_obj ANIM_OBJ_00, 136, 48, $0
 	anim_wait 8
 	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
+BattleAnim_ChargeBeam:
+	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_BEAM
+	anim_sound 0, 0, SFX_ZAP_CANNON
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
+	anim_obj ANIM_OBJ_THUNDER_WAVE, 48, 92, $0
+	anim_wait 24
+	anim_setobj $1, $3
+	anim_wait 1
+	anim_call BattleAnim_TargetObj_1Row
+	anim_wait 16
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_wait 8
+	anim_bgeffect ANIM_BG_06, $0, $2, $0
+	anim_call BattleAnim_Solarbeam_branch_cbb39
+	anim_wait 48
+	anim_ret
+
+BattleAnim_BlazeKick:
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_FIRE
+	anim_obj ANIM_OBJ_07, 136, 56, $0
+	anim_obj ANIM_OBJ_00, 136, 56, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_07, 136, 56, $0
+	anim_call BattleAnim_FirePunch_branch_cbbcc
+	anim_wait 16
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

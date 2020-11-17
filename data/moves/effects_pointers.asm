@@ -178,3 +178,4 @@ MoveEffectsPointers:
 	dw VoltTackle
 	dw PlayNice
 	dw CircleThrow
+	dw SpecialAttackUpHit

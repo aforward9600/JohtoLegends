@@ -372,6 +372,11 @@ MoveDescriptions1:
 	dw RockPolishDescription
 	dw GyroBallDescription
 	dw SlackOffDescription
+	dw DoubleHitMDescription
+	dw ChargeBeamDescription
+	dw BlazeKickDescription
+	dw DragonTailDescription
+	dw SheerColdDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1843,3 +1848,23 @@ GyroBallDescription:
 SlackOffDescription:
 	db	 "Slacks off and re-"
 	next "stores half of HP.@"
+
+DoubleHitMDescription:
+	db	 "Hits the foe"
+	next "twice.@"
+
+ChargeBeamDescription:
+	db	 "Most likely will"
+	next "raise Spcl.Atk.@"
+
+BlazeKickDescription:
+	db	 "Hi-crit ratio, may"
+	next "leave a burn.@"
+
+DragonTailDescription:
+	db	 "Knocks away the"
+	next "foe.@"
+
+SheerColdDescription:
+	db   "A one-hit KO,"
+	next "freeze attack.@"

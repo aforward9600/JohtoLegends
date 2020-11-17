@@ -194,10 +194,10 @@ TyphlosionEvosAttacks:
 TotodileEvosAttacks:
 	dbbw EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
-	dbw 1, GYRO_BALL
-	dbw 1, BOUNCE
-	dbw 1, SLACK_OFF
-	dbw 1, ROCK_POLISH
+	dbw 1, CHARGE_BEAM
+	dbw 1, DOUBLE_HIT_M
+	dbw 1, SHEER_COLD
+	dbw 1, BLAZE_KICK
 	dbw 7, RAGE
 	dbw 13, WATER_GUN
 	dbw 20, BITE

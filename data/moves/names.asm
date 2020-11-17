@@ -366,3 +366,8 @@ MoveNames::
 	db "Rock Polish@"
 	db "Gyro Ball@"
 	db "Slack Off@"
+	db "Double Hit@"
+	db "Charge Beam@"
+	db "Blaze Kick@"
+	db "Dragon Tail@"
+	db "Sheer Cold@"

@@ -147,7 +147,6 @@ INCLUDE "engine/pokemon/print_move_description.asm"
 INCLUDE "data/moves/descriptions.asm"
 INCLUDE "engine/events/pokerus/pokerus.asm"
 INCLUDE "engine/battle/start_battle.asm"
-INCLUDE "engine/gfx/place_graphic.asm"
 
 
 SECTION "Effect Commands", ROMX
@@ -180,6 +179,7 @@ INCLUDE "engine/events/fruit_trees.asm"
 INCLUDE "engine/battle/ai/move.asm"
 INCLUDE "engine/pokedex/pokedex_2.asm"
 INCLUDE "engine/pokemon/mail.asm"
+INCLUDE "engine/gfx/place_graphic.asm"
 
 
 SECTION "Crystal Features 1", ROMX
