@@ -365,6 +365,10 @@
 	const PLAY_NICE
 	const AIR_CUTTER
 	const ODOR_SLEUTH
+	const HOWL
+	const CIRCLE_THROW
+	const PSYCHO_CUT
+	const DUAL_CHOP
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

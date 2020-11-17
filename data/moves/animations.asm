@@ -384,6 +384,10 @@ BattleAnimations::
 	dw BattleAnim_PlayNice
 	dw BattleAnim_AirCutter
 	dw BattleAnim_OdorSleuth
+	dw BattleAnim_Howl
+	dw BattleAnim_CircleThrow
+	dw BattleAnim_PsychoCut
+	dw BattleAnim_DualChop
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -795,6 +799,7 @@ BattleAnim_KarateChop:
 	anim_ret
 
 BattleAnim_Doubleslap:
+BattleAnim_DualChop:
 	anim_1gfx ANIM_GFX_HIT
 	anim_if_param_equal $1, BattleAnim_Doubleslap_branch_c961b
 	anim_sound 0, 1, SFX_DOUBLESLAP
@@ -1983,6 +1988,7 @@ BattleAnim_Growl:
 BattleAnim_Roar:
 BattleAnim_HyperVoice:
 BattleAnim_Snarl:
+BattleAnim_Howl:
 	anim_1gfx ANIM_GFX_NOISE
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_cry $1
@@ -4344,6 +4350,7 @@ BattleAnim_MetalClaw:
 	anim_ret
 
 BattleAnim_VitalThrow:
+BattleAnim_CircleThrow:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_2F, $0, $1, $0
@@ -5725,6 +5732,14 @@ BattleAnim_AirCutter:
 	anim_obj ANIM_OBJ_3A, 152, 40, $0
 	anim_wait 8
 	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
+BattleAnim_PsychoCut:
+	anim_1gfx ANIM_GFX_CUT
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
+	anim_sound 6, 2, SFX_PSYCHIC
+	anim_obj ANIM_OBJ_3A, 152, 40, $0
+	anim_wait 32
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

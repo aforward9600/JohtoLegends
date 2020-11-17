@@ -194,10 +194,10 @@ TyphlosionEvosAttacks:
 TotodileEvosAttacks:
 	dbbw EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
-	dbw 1, PLAY_NICE
-	dbw 1, AIR_CUTTER
-	dbw 1, CRUSH_CLAW
-	dbw 1, ODOR_SLEUTH
+	dbw 1, HOWL
+	dbw 1, CIRCLE_THROW
+	dbw 1, PSYCHO_CUT
+	dbw 1, DUAL_CHOP
 	dbw 7, RAGE
 	dbw 13, WATER_GUN
 	dbw 20, BITE

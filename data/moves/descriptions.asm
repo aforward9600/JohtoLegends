@@ -364,6 +364,10 @@ MoveDescriptions1:
 	dw PlayNiceDescription
 	dw AirCutterDescription
 	dw OdorSleuthDescription
+	dw HowlDescription
+	dw CircleThrowDescription
+	dw PsychoCutDescription
+	dw DualChopDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1803,3 +1807,19 @@ AirCutterDescription:
 OdorSleuthDescription:
 	db   "Negates accuracy"
 	next "reduction moves.@"
+
+HowlDescription:
+	db	 "Howls to raise"
+	next "Attack stat.@"
+
+CircleThrowDescription:
+	db	 "Goes last and swi-"
+	next "tches target.@"
+
+PsychoCutDescription:
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
+
+DualChopDescription:
+	db	 "Brutally chops the"
+	next "foe twice.@"

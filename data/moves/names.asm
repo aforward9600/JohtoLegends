@@ -358,3 +358,7 @@ MoveNames::
 	db "Play Nice@"
 	db "Air Cutter@"
 	db "Odor Sleuth@"
+	db "Howl@"
+	db "Circle Throw@"
+	db "Psycho Cut@"
+	db "Dual Chop@"
