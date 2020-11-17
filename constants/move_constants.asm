@@ -333,6 +333,10 @@
 	const WOOD_HAMMER
 	const PAYBACK
 	const SNARL
+	const ASTONISH
+	const SHADOW_PUNCH
+	const ROUND_M
+	const HIHORSEPOWER
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

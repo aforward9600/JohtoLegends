@@ -326,3 +326,7 @@ MoveNames::
 	db "Wood Hammer@"
 	db "Payback@"
 	db "Snarl@"
+	db "Astonish@"
+	db "Shadow Punch@"
+	db "Round@"
+	db "HiHorsepower@"

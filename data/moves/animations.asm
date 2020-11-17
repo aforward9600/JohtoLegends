@@ -351,6 +351,10 @@ BattleAnimations::
 	dw BattleAnim_WoodHammer
 	dw BattleAnim_Payback
 	dw BattleAnim_Snarl
+	dw BattleAnim_Astonish
+	dw BattleAnim_ShadowPunch
+	dw BattleAnim_RoundM
+	dw BattleAnim_HiHorsepower
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -1510,6 +1514,7 @@ BattleAnim_RockSlide:
 	anim_ret
 
 BattleAnim_Sing:
+BattleAnim_RoundM:
 	anim_1gfx ANIM_GFX_NOISE
 	anim_sound 16, 2, SFX_SING
 .loop
@@ -2167,6 +2172,7 @@ BattleAnim_Headbutt:
 	anim_ret
 
 BattleAnim_Tackle:
+BattleAnim_Astonish:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_2Row
 	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
@@ -2214,6 +2220,7 @@ BattleAnim_TakeDown:
 BattleAnim_DoubleEdge:
 BattleAnim_GigaImpact:
 BattleAnim_WoodHammer:
+BattleAnim_HiHorsepower:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
@@ -5476,6 +5483,21 @@ BattleAnim_SolarBlade:
 	anim_sound 0, 1, SFX_CUT
 	anim_obj ANIM_OBJ_SOLAR_BLADE, 152, 40, $0
 	anim_wait 32
+	anim_ret
+
+BattleAnim_ShadowPunch:
+	anim_1gfx ANIM_GFX_HIT
+	anim_sound 0, 0, SFX_CURSE
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_1D, $0, $1, $80
+	anim_wait 48
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_obj ANIM_OBJ_06, 136, 56, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_01, 136, 56, $0
+	anim_wait 8
+	anim_call BattleAnim_ShowMon_0
+	anim_wait 4
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

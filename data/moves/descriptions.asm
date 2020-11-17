@@ -332,6 +332,10 @@ MoveDescriptions1:
 	dw WoodHammerDescription
 	dw PaybackDescription
 	dw SnarlDescription
+	dw AstonishDescription
+	dw ShadowPunchDescription
+	dw RoundMDescription
+	dw HiHorsepowerDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1643,3 +1647,19 @@ PaybackDescription:
 SnarlDescription:
 	db	 "User yells and lo-"
 	next "wers Spcl.Atk.@"
+
+AstonishDescription:
+	db	 "May shock foe into"
+	next "flinching.@"
+
+ShadowPunchDescription:
+	db	 "Punch from the sh-"
+	next "adows, never miss.@"
+
+RoundMDescription:
+	db	 "Attacks with a"
+	next "dangerous song.@"
+
+HiHorsepowerDescription:
+	db	 "Fiercely attacks"
+	next "with full body.@"
