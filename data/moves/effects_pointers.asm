@@ -176,3 +176,4 @@ MoveEffectsPointers:
 	dw QuiverDance
 	dw SpecialDefenseDown2Hit
 	dw VoltTackle
+	dw PlayNice

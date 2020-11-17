@@ -354,3 +354,7 @@ MoveNames::
 	db "Acid Spray@"
 	db "Nuzzle@"
 	db "Volt Tackle@"
+	db "Crush Claw@"
+	db "Play Nice@"
+	db "Air Cutter@"
+	db "Odor Sleuth@"

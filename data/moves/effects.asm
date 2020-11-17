@@ -2511,3 +2511,16 @@ Growth:
 	doturn
 	growth
 	endmove
+
+PlayNice:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	attackdown
+	lowersub
+	statdownanim
+	raisesub
+	statdownmessage
+	statdownfailtext
+	endmove

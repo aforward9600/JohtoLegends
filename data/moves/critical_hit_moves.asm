@@ -11,4 +11,5 @@ CriticalHitMoves:
 	dw DRILL_RUN
 	dw STONE_EDGE
 	dw CROSS_POISON
+	dw AIR_CUTTER
 	dw -1

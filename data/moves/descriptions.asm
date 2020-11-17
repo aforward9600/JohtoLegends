@@ -360,6 +360,10 @@ MoveDescriptions1:
 	dw AcidSprayDescription
 	dw NuzzleDescription
 	dw VoltTackleDescription
+	dw CrushClawDescription
+	dw PlayNiceDescription
+	dw AirCutterDescription
+	dw OdorSleuthDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1783,3 +1787,19 @@ NuzzleDescription:
 VoltTackleDescription:
 	db	 "Dangerous tackle"
 	next "that hurts user.@"
+
+CrushClawDescription:
+	db	 "Tears at foe, may"
+	next "lower Defense.@"
+
+PlayNiceDescription:
+	db	 "Lowers Attack and"
+	next "never misses.@"
+
+AirCutterDescription:
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
+
+OdorSleuthDescription:
+	db   "Negates accuracy"
+	next "reduction moves.@"

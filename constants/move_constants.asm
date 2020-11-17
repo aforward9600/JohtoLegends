@@ -361,6 +361,10 @@
 	const ACID_SPRAY
 	const NUZZLE
 	const VOLT_TACKLE
+	const CRUSH_CLAW
+	const PLAY_NICE
+	const AIR_CUTTER
+	const ODOR_SLEUTH
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

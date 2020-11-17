@@ -380,6 +380,10 @@ BattleAnimations::
 	dw BattleAnim_AcidSpray
 	dw BattleAnim_Nuzzle
 	dw BattleAnim_VoltTackle
+	dw BattleAnim_CrushClaw
+	dw BattleAnim_PlayNice
+	dw BattleAnim_AirCutter
+	dw BattleAnim_OdorSleuth
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -3209,6 +3213,7 @@ BattleAnim_Disable:
 
 BattleAnim_TailWhip:
 BattleAnim_Featherdance:
+BattleAnim_PlayNice:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_2Row
 	anim_sound 0, 0, SFX_TAIL_WHIP
@@ -3683,6 +3688,7 @@ BattleAnim_ZapCannon:
 	anim_ret
 
 BattleAnim_Foresight:
+BattleAnim_OdorSleuth:
 	anim_1gfx ANIM_GFX_SHINE
 	anim_call BattleAnim_UserObj_1Row
 	anim_bgeffect ANIM_BG_07, $0, $0, $0
@@ -5694,6 +5700,31 @@ BattleAnim_Nuzzle:
 	anim_sound 0, 1, SFX_THUNDERSHOCK
 	anim_obj ANIM_OBJ_33, 136, 56, $0
 	anim_wait 96
+	anim_ret
+
+BattleAnim_CrushClaw:
+	anim_1gfx ANIM_GFX_CUT
+	anim_sound 0, 1, SFX_SCRATCH
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
+	anim_obj ANIM_OBJ_37, 144, 48, $0
+	anim_obj ANIM_OBJ_37, 140, 44, $0
+	anim_obj ANIM_OBJ_37, 136, 40, $0
+	anim_wait 32
+	anim_ret
+
+BattleAnim_AirCutter:
+	anim_2gfx ANIM_GFX_WHIP, ANIM_GFX_CUT
+	anim_sound 0, 1, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_40, 116, 52, $80
+	anim_wait 4
+	anim_sound 0, 1, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_3F, 128, 60, $0
+	anim_wait 4
+	anim_incobj 1
+	anim_wait 4
+	anim_obj ANIM_OBJ_3A, 152, 40, $0
+	anim_wait 8
+	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:
