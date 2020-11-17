@@ -164,3 +164,6 @@ MoveEffectsPointers:
 	dw FlareBlitz
 	dw Avalanche
 	dw HammerArm
+	dw CloseCombat
+	dw BulkUp
+	dw Superpower

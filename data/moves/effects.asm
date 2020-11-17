@@ -2350,3 +2350,62 @@ HammerArm:
 	checkfaint
 	buildopponentrage
 	endmove
+
+CloseCombat:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	switchturn
+	defensedown
+	statdownmessage
+	specialdefensedown
+	statdownmessage
+	switchturn
+	checkfaint
+	buildopponentrage
+	endmove
+
+BulkUp:
+	checkobedience
+	usedmovetext
+	doturn
+	bulkup
+	endmove
+
+Superpower:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	switchturn
+	attackdown
+	statdownmessage
+	defensedown
+	statdownmessage
+	switchturn
+	checkfaint
+	buildopponentrage
+	endmove

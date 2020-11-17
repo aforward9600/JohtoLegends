@@ -184,6 +184,7 @@ ENDM
 	command venoshock
 	command allstatsdown
 	command avalanche
+	command bulkup
 
 	enum_start $fe
 	command endturn                 ; fe

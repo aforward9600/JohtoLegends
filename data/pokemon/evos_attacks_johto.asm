@@ -194,10 +194,10 @@ TyphlosionEvosAttacks:
 TotodileEvosAttacks:
 	dbbw EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
-	dbw 1, MUD_SHOT
-	dbw 1, SAND_TOMB
-	dbw 1, AURA_SPHERE
-	dbw 1, HAMMER_ARM
+	dbw 1, CLOSE_COMBAT
+	dbw 1, LOW_SWEEP
+	dbw 1, BULK_UP
+	dbw 1, SUPERPOWER
 	dbw 7, RAGE
 	dbw 13, WATER_GUN
 	dbw 20, BITE

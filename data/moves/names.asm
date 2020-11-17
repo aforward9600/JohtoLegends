@@ -334,3 +334,7 @@ MoveNames::
 	db "Sand Tomb@"
 	db "Aura Sphere@"
 	db "Hammer Arm@"
+	db "Close Combat@"
+	db "Low Sweep@"
+	db "Bulk Up@"
+	db "Superpower@"

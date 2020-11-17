@@ -5808,6 +5808,8 @@ INCLUDE "engine/battle/move_effects/mist.asm"
 
 INCLUDE "engine/battle/move_effects/focus_energy.asm"
 
+INCLUDE "engine/battle/move_effects/bulk_up.asm"
+
 BattleCommand_Recoil:
 ; recoil
 

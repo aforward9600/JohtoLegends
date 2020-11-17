@@ -183,3 +183,4 @@ BattleCommandPointers:
 	dw BattleCommand_Venoshock
 	dw BattleCommand_AllStatsDown
 	dw BattleCommand_Avalanche
+	dw BattleCommand_BulkUp

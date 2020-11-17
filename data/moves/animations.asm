@@ -359,6 +359,10 @@ BattleAnimations::
 	dw BattleAnim_SandTomb
 	dw BattleAnim_AuraSphere
 	dw BattleAnim_HammerArm
+	dw BattleAnim_CloseCombat
+	dw BattleAnim_LowSweep
+	dw BattleAnim_BulkUp
+	dw BattleAnim_Superpower
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -2241,6 +2245,7 @@ BattleAnim_HiHorsepower:
 	anim_ret
 
 BattleAnim_Submission:
+BattleAnim_CloseCombat:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_UserObj_1Row
 	anim_bgeffect ANIM_BG_26, $0, $0, $0
@@ -3138,6 +3143,7 @@ BattleAnim_Counter:
 	anim_ret
 
 BattleAnim_LowKick:
+BattleAnim_LowSweep:
 	anim_1gfx ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
 	anim_sound 0, 1, SFX_DOUBLE_KICK
@@ -3838,6 +3844,7 @@ BattleAnim_GigaDrain:
 	anim_ret
 
 BattleAnim_Endure:
+BattleAnim_BulkUp:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_1A, $0, $1, $20
@@ -5515,6 +5522,45 @@ BattleAnim_AuraSphere:
 	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_obj ANIM_OBJ_18, 136, 56, $0
 	anim_wait 16
+	anim_ret
+
+BattleAnim_Superpower:
+	anim_1gfx ANIM_GFX_SPEED
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_1A, $0, $1, $20
+	anim_bgeffect ANIM_BG_07, $0, $2, $0
+.loop
+	anim_sound 0, 0, SFX_SWORDS_DANCE
+	anim_obj ANIM_OBJ_47, 44, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_47, 36, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_47, 52, 108, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_47, 28, 108, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_47, 60, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_47, 20, 108, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_47, 68, 108, $8
+	anim_wait 2
+	anim_loop 5, .loop
+	anim_wait 8
+	anim_incbgeffect ANIM_BG_1A
+	anim_call BattleAnim_ShowMon_0
+	anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_wait 3
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_00, 128, 48, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_00, 144, 48, $0
+	anim_wait 3
+	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

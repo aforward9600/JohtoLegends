@@ -340,6 +340,10 @@ MoveDescriptions1:
 	dw SandTombDescription
 	dw AuraSphereDescription
 	dw HammerArmDescription
+	dw CloseCombatDescription
+	dw LowSweepDescription
+	dw BulkUpDescription
+	dw SuperpowerDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1683,3 +1687,19 @@ AuraSphereDescription:
 HammerArmDescription:
 	db	 "Heavy hit that lo-"
 	next "wers user's Speed.@"
+
+CloseCombatDescription:
+	db   "Lowers user's Def"
+	next "and Spcl.Def.@"
+
+LowSweepDescription:
+	db	 "Sweeping kick that"
+	next "lowers Speed.@"
+
+BulkUpDescription:
+	db	 "Boosts Attack and"
+	next "Defense.@"
+
+SuperpowerDescription:
+	db	 "Lowers user's Att-"
+	next "ack and Defense.@"
