@@ -346,3 +346,7 @@ MoveNames::
 	db "Flame Charge@"
 	db "Hail@"
 	db "Brick Break@"
+	db "Quiver Dance@"
+	db "Roost@"
+	db "Cross Poison@"
+	db "Smart Strike@"

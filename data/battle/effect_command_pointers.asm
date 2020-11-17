@@ -188,3 +188,4 @@ BattleCommandPointers:
 	dw BattleCommand_HoneClaws
 	dw BattleCommand_StartHail
 	dw BattleCommand_BreakScreens
+	dw BattleCommand_QuiverDance

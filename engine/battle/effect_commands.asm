@@ -6119,6 +6119,8 @@ INCLUDE "engine/battle/move_effects/strength_sap.asm"
 
 INCLUDE "engine/battle/move_effects/hone_claws.asm"
 
+INCLUDE "engine/battle/move_effects/quiver_dance.asm"
+
 BattleCommand_ResetStats:
 ; resetstats
 

@@ -2479,3 +2479,14 @@ Blizzard:
 	buildopponentrage
 	freezetarget
 	endmove
+
+QuiverDance:
+	checkobedience
+	usedmovetext
+	doturn
+	lowersub
+	statupanim
+	raisesub
+	quiverdance
+	statupfailtext
+	endmove

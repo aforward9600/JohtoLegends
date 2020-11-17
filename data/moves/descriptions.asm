@@ -352,6 +352,10 @@ MoveDescriptions1:
 	dw FlameChargeDescription
 	dw HailDescription
 	dw BrickBreakDescription
+	dw QuiverDanceDescription
+	dw RoostDescription
+	dw CrossPoisonDescription
+	dw SmartStrikeDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1743,3 +1747,19 @@ HailDescription:
 BrickBreakDescription:
 	db	 "Breaks screens"
 	next "with fists.@"
+
+QuiverDanceDescription:
+	db	 "Raise Spcl.Atk, S-"
+	next "pcl.Def and Speed.@"
+
+RoostDescription:
+	db	 "Users rests its"
+	next "wings and heals.@"
+
+CrossPoisonDescription:
+	db	 "High crit. rate,"
+	next "can poison.@"
+
+SmartStrikeDescription:
+	db	 "Never misses with"
+	next "with a sharp horn.@"

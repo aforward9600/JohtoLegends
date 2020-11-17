@@ -173,3 +173,4 @@ MoveEffectsPointers:
 	dw SpeedUpHit
 	dw Hail
 	dw BrickBreak
+	dw QuiverDance

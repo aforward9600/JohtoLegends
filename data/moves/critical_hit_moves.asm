@@ -10,4 +10,5 @@ CriticalHitMoves:
 	dw SHADOW_CLAW
 	dw DRILL_RUN
 	dw STONE_EDGE
+	dw CROSS_POISON
 	dw -1

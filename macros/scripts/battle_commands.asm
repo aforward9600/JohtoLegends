@@ -189,6 +189,7 @@ ENDM
 	command honeclaws
 	command starthail
 	command breakscreens
+	command quiverdance
 
 	enum_start $fe
 	command endturn                 ; fe

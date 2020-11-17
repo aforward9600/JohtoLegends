@@ -353,6 +353,10 @@
 	const FLAME_CHARGE
 	const HAIL
 	const BRICK_BREAK
+	const QUIVER_DANCE
+	const ROOST
+	const CROSS_POISON
+	const SMART_STRIKE
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff
