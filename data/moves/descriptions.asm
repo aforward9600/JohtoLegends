@@ -316,6 +316,10 @@ MoveDescriptions1:
 	dw MoonblastDescription
 	dw FlareBlitzDescription
 	dw HyperVoiceDescription
+	dw AirSlashDescription
+	dw AvalancheDescription
+	dw RevengeDescription
+	dw RockWreckerDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1563,3 +1567,19 @@ FlareBlitzDescription:
 HyperVoiceDescription:
 	db   "Loud and obnoxious"
 	next "voice.@"
+
+AirSlashDescription:
+	db   "Slice of air that"
+	next "causes flinching.@"
+
+AvalancheDescription:
+	db   "Go 2nd. Power rai-"
+	next "sed after damage.@"
+
+RevengeDescription:
+	db   "Go 2nd. Power rai-"
+	next "sed after damage.@"
+
+RockWreckerDescription:
+	db	 "Launches huge rock"
+	next "but must recharge.@"

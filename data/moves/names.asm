@@ -310,3 +310,7 @@ MoveNames::
 	db "Moonblast@"
 	db "Flare Blitz@"
 	db "Hyper Voice@"
+	db "Air Slash@"
+	db "Avalanche@"
+	db "Revenge@"
+	db "Rock Wrecker@"

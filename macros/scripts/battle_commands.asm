@@ -183,6 +183,7 @@ ENDM
 	command hex                     ; b0
 	command venoshock
 	command allstatsdown
+	command avalanche
 
 	enum_start $fe
 	command endturn                 ; fe

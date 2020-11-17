@@ -317,6 +317,10 @@
 	const MOONBLAST
 	const FLARE_BLITZ
 	const HYPER_VOICE
+	const AIR_SLASH
+	const AVALANCHE
+	const REVENGE
+	const ROCK_WRECKER
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

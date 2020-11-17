@@ -182,3 +182,4 @@ BattleCommandPointers:
 	dw BattleCommand_Hex
 	dw BattleCommand_Venoshock
 	dw BattleCommand_AllStatsDown
+	dw BattleCommand_Avalanche

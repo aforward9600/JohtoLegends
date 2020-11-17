@@ -162,3 +162,4 @@ MoveEffectsPointers:
 	dw SleepHit
 	dw WillOWisp
 	dw FlareBlitz
+	dw Avalanche
