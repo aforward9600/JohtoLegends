@@ -194,10 +194,10 @@ TyphlosionEvosAttacks:
 TotodileEvosAttacks:
 	dbbw EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
-	dbw 1, CLOSE_COMBAT
-	dbw 1, LOW_SWEEP
-	dbw 1, BULK_UP
-	dbw 1, SUPERPOWER
+	dbw 1, HONE_CLAWS
+	dbw 1, DRAGON_DANCE
+	dbw 1, STEEL_WING
+	dbw 1, SHELL_SMASH
 	dbw 7, RAGE
 	dbw 13, WATER_GUN
 	dbw 20, BITE
@@ -931,7 +931,6 @@ SneaselEvosAttacks:
 	dbw 33, FURY_SWIPES
 	dbw 41, AGILITY
 	dbw 49, SLASH
-	dbw 57, BEAT_UP
 	dbw 65, METAL_CLAW
 	db 0 ; no more level-up moves
 
@@ -1149,7 +1148,6 @@ DonphanEvosAttacks:
 
 Porygon2EvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, CONVERSION2
 	dbw 1, TACKLE
 	dbw 1, CONVERSION
 	dbw 9, AGILITY

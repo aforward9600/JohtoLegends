@@ -181,7 +181,7 @@
 	const SNORE        ; ad
 	const CURSE        ; ae
 	const FLAIL        ; af
-	const CONVERSION2  ; b0
+	const CALM_MIND    ; b0
 	const AEROBLAST    ; b1
 	const COTTON_SPORE ; b2
 	const REVERSAL     ; b3
@@ -256,7 +256,7 @@
 	const FUTURE_SIGHT ; f8
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
-	const BEAT_UP      ; fb
+	const STRENGTH_SAP ; fb
 	const DARK_PULSE   ; fc
 	const DRAGON_CLAW  ; fd
 	const MIRROR_SHOT  ; fe
@@ -345,6 +345,10 @@
 	const LOW_SWEEP
 	const BULK_UP
 	const SUPERPOWER
+	const POWERUPPUNCH
+	const DRAGON_DANCE
+	const SHELL_SMASH
+	const HONE_CLAWS
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

@@ -180,7 +180,7 @@ MoveDescriptions1:
 	dw SnoreDescription
 	dw CurseDescription
 	dw FlailDescription
-	dw Conversion2Description
+	dw CalmMindDescription
 	dw AeroblastDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
@@ -255,7 +255,7 @@ MoveDescriptions1:
 	dw FutureSightDescription
 	dw RockSmashDescription
 	dw WhirlpoolDescription
-	dw BeatUpDescription
+	dw StrengthSapDescription
 	dw DarkPulseDescription
 	dw DragonClawDescription
 	dw MirrorShotDescription
@@ -344,6 +344,10 @@ MoveDescriptions1:
 	dw LowSweepDescription
 	dw BulkUpDescription
 	dw SuperpowerDescription
+	dw PowerUpPunchDescription
+	dw DragonDanceDescription
+	dw ShellSmashDescription
+	dw HoneClawsDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1048,9 +1052,9 @@ FlailDescription:
 	db   "Stronger if the"
 	next "user's HP is low.@"
 
-Conversion2Description:
-	db   "The user's type is"
-	next "made resistant.@"
+CalmMindDescription:
+	db   "Raises Spcl.Atk"
+	next "and Spcl.Def.@"
 
 AeroblastDescription:
 	db   "Has a high criti-"
@@ -1348,9 +1352,9 @@ WhirlpoolDescription:
 	db   "Traps the foe for"
 	next "2-5 turns.@"
 
-BeatUpDescription:
-	db   "Party #MON join"
-	next "in the attack.@"
+StrengthSapDescription:
+	db   "Heals user and lo-"
+	next "wers foe's Attack.@"
 
 DarkPulseDescription:
 	db   "Unleash dark ener-"
@@ -1703,3 +1707,19 @@ BulkUpDescription:
 SuperpowerDescription:
 	db	 "Lowers user's Att-"
 	next "ack and Defense.@"
+
+PowerUpPunchDescription:
+	db	 "Will always raise"
+	next "user's Attack.@"
+
+DragonDanceDescription:
+	db   "Raises Atk and"
+	next "Speed with dance.@"
+
+ShellSmashDescription:
+	db   "Drops def. stats."
+	next "Raises others.@"
+
+HoneClawsDescription:
+	db   "Raise Attack and"
+	next "accuracy.@"

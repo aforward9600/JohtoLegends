@@ -2500,8 +2500,6 @@ BattleCommand_CheckFaint:
 	cp EFFECT_POISON_MULTI_HIT
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_TRIPLE_KICK
-	jr z, .multiple_hit_raise_sub
-	cp EFFECT_BEAT_UP
 	jr nz, .finish
 
 .multiple_hit_raise_sub
@@ -2973,8 +2971,6 @@ EnemyAttackDamage:
 	and a
 	ret
 
-INCLUDE "engine/battle/move_effects/beat_up.asm"
-
 BattleCommand_ClearMissDamage:
 ; clearmissdamage
 	ld a, [wAttackMissed]
@@ -3419,8 +3415,6 @@ INCLUDE "engine/battle/move_effects/pain_split.asm"
 
 INCLUDE "engine/battle/move_effects/snore.asm"
 
-INCLUDE "engine/battle/move_effects/conversion2.asm"
-
 INCLUDE "engine/battle/move_effects/lock_on.asm"
 
 INCLUDE "engine/battle/move_effects/sketch.asm"
@@ -3649,8 +3643,6 @@ DoSubstituteDamage:
 	cp EFFECT_POISON_MULTI_HIT
 	jr z, .ok
 	cp EFFECT_TRIPLE_KICK
-	jr z, .ok
-	cp EFFECT_BEAT_UP
 	jr z, .ok
 	xor a
 	ld [hl], a
@@ -5342,8 +5334,6 @@ BattleCommand_EndLoop:
 	ld a, 1
 	jr z, .double_hit
 	ld a, [hl]
-	cp EFFECT_BEAT_UP
-	jr z, .beat_up
 	cp EFFECT_TRIPLE_KICK
 	jr nz, .not_triple_kick
 .reject_triple_kick_sample
@@ -5355,33 +5345,6 @@ BattleCommand_EndLoop:
 	ld a, 1
 	ld [bc], a
 	jr .done_loop
-
-.beat_up
-	ldh a, [hBattleTurn]
-	and a
-	jr nz, .check_ot_beat_up
-	ld a, [wPartyCount]
-	cp 1
-	jp z, .only_one_beatup
-	dec a
-	jr .double_hit
-
-.check_ot_beat_up
-	ld a, [wBattleMode]
-	cp WILD_BATTLE
-	jp z, .only_one_beatup
-	ld a, [wOTPartyCount]
-	cp 1
-	jp z, .only_one_beatup
-	dec a
-	jr .double_hit
-
-.only_one_beatup
-	ld a, BATTLE_VARS_SUBSTATUS3
-	call GetBattleVarAddr
-	res SUBSTATUS_IN_LOOP, [hl]
-	call BattleCommand_BeatUpFailText
-	jp EndMoveEffect
 
 .not_triple_kick
 	call BattleRandom
@@ -5420,13 +5383,7 @@ BattleCommand_EndLoop:
 .got_hit_n_times_text
 
 	push bc
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_BEAT_UP
-	jr z, .beat_up_2
 	call StdBattleTextbox
-.beat_up_2
-
 	pop bc
 	xor a
 	ld [bc], a
@@ -6136,6 +6093,16 @@ INCLUDE "engine/battle/move_effects/disable.asm"
 INCLUDE "engine/battle/move_effects/pay_day.asm"
 
 INCLUDE "engine/battle/move_effects/conversion.asm"
+
+INCLUDE "engine/battle/move_effects/calm_mind.asm"
+
+INCLUDE "engine/battle/move_effects/dragon_dance.asm"
+
+INCLUDE "engine/battle/move_effects/shell_smash.asm"
+
+INCLUDE "engine/battle/move_effects/strength_sap.asm"
+
+INCLUDE "engine/battle/move_effects/hone_claws.asm"
 
 BattleCommand_ResetStats:
 ; resetstats

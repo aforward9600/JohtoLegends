@@ -93,7 +93,7 @@ MoveEffectsPointers:
 	dw Encore
 	dw PainSplit
 	dw Snore
-	dw Conversion2
+	dw CalmMind
 	dw LockOn
 	dw Sketch
 	dw DefrostOpponent
@@ -154,7 +154,7 @@ MoveEffectsPointers:
 	dw Solarbeam
 	dw Thunder
 	dw Teleport
-	dw BeatUp
+	dw StrengthSap
 	dw Fly
 	dw DefenseCurl
 	dw DracoFang
@@ -167,3 +167,6 @@ MoveEffectsPointers:
 	dw CloseCombat
 	dw BulkUp
 	dw Superpower
+	dw DragonDance
+	dw ShellSmash
+	dw HoneClaws

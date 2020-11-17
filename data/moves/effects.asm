@@ -706,10 +706,10 @@ DefenseUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkfaint
-	buildopponentrage
 	defenseup
 	statupmessage
+	checkfaint
+	buildopponentrage
 	endmove
 
 AttackUpHit:
@@ -728,10 +728,10 @@ AttackUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkfaint
-	buildopponentrage
 	attackup
 	statupmessage
+	checkfaint
+	buildopponentrage
 	endmove
 
 AllUpHit:
@@ -750,9 +750,9 @@ AllUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
+	allstatsup
 	checkfaint
 	buildopponentrage
-	allstatsup
 	endmove
 
 PayDay:
@@ -1315,14 +1315,6 @@ Snore:
 	buildopponentrage
 	flinchtarget
 	kingsrock
-	endmove
-
-Conversion2:
-	checkobedience
-	usedmovetext
-	doturn
-	checkhit
-	conversion2
 	endmove
 
 LockOn:
@@ -2036,33 +2028,6 @@ Teleport:
 	teleport
 	endmove
 
-BeatUp:
-	checkobedience
-	usedmovetext
-	movedelay
-	doturn
-	startloop
-	lowersub
-	checkhit
-	critical
-	beatup
-	damagecalc
-	damagevariation
-	clearmissdamage
-	moveanimnosub
-	failuretext
-	applydamage
-	criticaltext
-	cleartext
-	supereffectivetext
-	checkfaint
-	buildopponentrage
-	endloop
-	beatupfailtext
-	raisesub
-	kingsrock
-	endmove
-
 DefenseCurl:
 	checkobedience
 	usedmovetext
@@ -2408,4 +2373,44 @@ Superpower:
 	switchturn
 	checkfaint
 	buildopponentrage
+	endmove
+
+CalmMind:
+	checkobedience
+	usedmovetext
+	doturn
+	calmmind
+	endmove
+
+DragonDance:
+	checkobedience
+	usedmovetext
+	doturn
+	dragondance
+	endmove
+
+StrengthSap:
+    checkobedience
+    usedmovetext
+    doturn
+    checkhit
+    strengthsap
+    endmove
+
+ShellSmash:
+	checkobedience
+	usedmovetext
+	doturn
+	lowersub
+	statupanim
+	raisesub
+	shellsmash
+	statupfailtext
+	endmove
+
+HoneClaws:
+	checkobedience
+	usedmovetext
+	doturn
+	honeclaws
 	endmove

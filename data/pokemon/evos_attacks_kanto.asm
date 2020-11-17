@@ -1991,7 +1991,6 @@ FlareonEvosAttacks:
 PorygonEvosAttacks:
 	dbbw EVOLVE_TRADE, UP_GRADE, PORYGON2
 	db 0 ; no more evolutions
-	dbw 1, CONVERSION2
 	dbw 1, TACKLE
 	dbw 1, CONVERSION
 	dbw 9, AGILITY
