@@ -37,8 +37,6 @@ ENDM
 	command payday                  ; 1e
 	command conversion              ; 1f
 	command resetstats              ; 20
-	command storeenergy             ; 21
-	command unleashenergy           ; 22
 	command forceswitch             ; 23
 	command endloop                 ; 24
 	command flinchtarget            ; 25
@@ -103,7 +101,7 @@ ENDM
 	command happinesspower          ; 60
 	command present                 ; 61
 	command damagecalc              ; 62
-	command frustrationpower        ; 63
+	command cosmicpower             ; 63
 	command safeguard               ; 64
 	command checksafeguard          ; 65
 	command getmagnitude            ; 66
@@ -169,7 +167,7 @@ ENDM
 	command ragedamage              ; a2
 	command resettypematchup        ; a3
 	command allstatsup              ; a4
-	command bidefailtext            ; a5
+	command growth            ; a5
 	command raisesubnoanim          ; a6
 	command lowersubnoanim          ; a7
 	command clearmissdamage         ; a9

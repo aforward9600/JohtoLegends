@@ -1110,7 +1110,6 @@ BattleCommand_DoTurn:
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
 	db EFFECT_ROLLOUT
-	db EFFECT_BIDE
 	db EFFECT_RAMPAGE
 	db -1
 
@@ -2358,16 +2357,6 @@ FailText_CheckOpponentProtect:
 	ld l, e
 .not_protected
 	jp StdBattleTextbox
-
-BattleCommand_BideFailText:
-	ld a, [wAttackMissed]
-	and a
-	ret z
-
-	ld a, [wTypeModifier]
-	and $7f
-	jp z, PrintDoesntAffect
-	jp PrintButItFailed
 
 BattleCommand_CriticalText:
 ; criticaltext
@@ -4997,8 +4986,6 @@ CalcBattleStats:
 
 	ret
 
-INCLUDE "engine/battle/move_effects/bide.asm"
-
 BattleCommand_CheckRampage:
 ; checkrampage
 
@@ -6121,6 +6108,10 @@ INCLUDE "engine/battle/move_effects/hone_claws.asm"
 
 INCLUDE "engine/battle/move_effects/quiver_dance.asm"
 
+INCLUDE "engine/battle/move_effects/cosmic_power.asm"
+
+INCLUDE "engine/battle/move_effects/growth.asm"
+
 BattleCommand_ResetStats:
 ; resetstats
 
@@ -6501,8 +6492,6 @@ INCLUDE "engine/battle/move_effects/attract.asm"
 INCLUDE "engine/battle/move_effects/return.asm"
 
 INCLUDE "engine/battle/move_effects/present.asm"
-
-INCLUDE "engine/battle/move_effects/frustration.asm"
 
 INCLUDE "engine/battle/move_effects/safeguard.asm"
 

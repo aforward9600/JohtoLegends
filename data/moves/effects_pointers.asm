@@ -26,7 +26,7 @@ MoveEffectsPointers:
 	dw AccuracyDown
 	dw EvasionDown
 	dw ResetStats
-	dw Bide
+	dw Growth
 	dw Rampage
 	dw ForceSwitch
 	dw MultiHit
@@ -123,7 +123,7 @@ MoveEffectsPointers:
 	dw Attract
 	dw Return
 	dw Present
-	dw Frustration
+	dw CosmicPower
 	dw Safeguard
 	dw SacredFire
 	dw Magnitude

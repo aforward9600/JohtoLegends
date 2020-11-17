@@ -138,6 +138,4 @@ BattleCommand_SleepTalk:
 	cp EFFECT_SOLARBEAM
 	ret z
 	cp EFFECT_FLY
-	ret z
-	cp EFFECT_BIDE
 	ret

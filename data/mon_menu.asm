@@ -25,10 +25,10 @@ MonMenuOptions:
 	dbbw MONMENU_MENUOPTION, MONMENUITEM_ERROR,      .error
 	db -1
 
-.stats:  db "STATS@"
-.switch: db "SWITCH@"
-.item:   db "ITEM@"
-.cancel: db "CANCEL@"
-.move:   db "MOVE@"
-.mail:   db "MAIL@"
+.stats:  db "Stats@"
+.switch: db "Switch@"
+.item:   db "Item@"
+.cancel: db "Cancel@"
+.move:   db "Move@"
+.mail:   db "Mail@"
 .error:  db "ERROR!@"

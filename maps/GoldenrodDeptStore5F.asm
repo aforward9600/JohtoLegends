@@ -88,7 +88,7 @@ GoldenrodDeptStore5FReceptionistScript:
 .NotVeryHappy:
 	writetext GoldenrodDeptStore5FReceptionistItLooksEvilHowAboutThisTMText
 	buttonsound
-	verbosegiveitem TM_FRUSTRATION
+	verbosegiveitem TM_BULLDOZE
 	iffalse .Done
 	setflag ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN
 	closetext

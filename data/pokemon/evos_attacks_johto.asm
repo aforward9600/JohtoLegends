@@ -195,9 +195,9 @@ TotodileEvosAttacks:
 	dbbw EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
 	dbw 1, BELCH
-	dbw 1, NUZZLE
-	dbw 1, ACID_SPRAY
-	dbw 1, VOLT_TACKLE
+	dbw 1, COSMIC_POWER
+	dbw 1, ROCK_TOMB
+	dbw 1, GROWTH
 	dbw 7, RAGE
 	dbw 13, WATER_GUN
 	dbw 20, BITE
@@ -787,7 +787,6 @@ PinecoEvosAttacks:
 	dbw 8, SELFDESTRUCT
 	dbw 15, TAKE_DOWN
 	dbw 22, RAPID_SPIN
-	dbw 29, BIDE
 	dbw 36, EXPLOSION
 	dbw 43, SPIKES
 	dbw 50, DOUBLE_EDGE
@@ -801,7 +800,6 @@ ForretressEvosAttacks:
 	dbw 8, SELFDESTRUCT
 	dbw 15, TAKE_DOWN
 	dbw 22, RAPID_SPIN
-	dbw 29, BIDE
 	dbw 39, EXPLOSION
 	dbw 49, SPIKES
 	dbw 59, DOUBLE_EDGE
@@ -904,7 +902,6 @@ ShuckleEvosAttacks:
 	dbw 9, WRAP
 	dbw 14, ENCORE
 	dbw 23, SAFEGUARD
-	dbw 28, BIDE
 	dbw 37, REST
 	db 0 ; no more level-up moves
 
@@ -1254,7 +1251,6 @@ MiltankEvosAttacks:
 	dbw 8, DEFENSE_CURL
 	dbw 13, STOMP
 	dbw 19, MILK_DRINK
-	dbw 26, BIDE
 	dbw 34, ROLLOUT
 	dbw 43, BODY_SLAM
 	dbw 53, HEAL_BELL

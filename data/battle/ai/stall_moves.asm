@@ -25,7 +25,6 @@ StallMoves:
 	dw HAZE
 	dw REFLECT
 	dw FOCUS_ENERGY
-	dw BIDE
 	dw AMNESIA
 	dw TRANSFORM
 	dw SPLASH

@@ -148,7 +148,6 @@ HoothootEggMoves:
 
 LedybaEggMoves:
 	dw PSYBEAM
-	dw BIDE
 	dw LIGHT_SCREEN
 	dw -1 ; end
 
@@ -168,7 +167,6 @@ ChinchouEggMoves:
 
 PichuEggMoves:
 	dw REVERSAL
-	dw BIDE
 	dw PRESENT
 	dw ENCORE
 	dw DOUBLESLAP
@@ -290,7 +288,6 @@ PinecoEggMoves:
 	dw -1 ; end
 
 DunsparceEggMoves:
-	dw BIDE
 	dw ANCIENTPOWER
 	dw ROCK_SLIDE
 	dw BITE
@@ -328,7 +325,6 @@ ShuckleEggMoves:
 
 HeracrossEggMoves:
 	dw HARDEN
-	dw BIDE
 	dw FLAIL
 	dw -1 ; end
 

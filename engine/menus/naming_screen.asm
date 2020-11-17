@@ -115,8 +115,8 @@ NamingScreen:
 	ret
 
 .NicknameStrings:
-	db "'S@"
-	db "NICKNAME?@"
+	db "'s@"
+	db "Nickname?@"
 
 .Player:
 	farcall GetPlayerIcon
@@ -128,7 +128,7 @@ NamingScreen:
 	ret
 
 .PlayerNameString:
-	db "YOUR NAME?@"
+	db "Your Name?@"
 
 .Rival:
 	ld de, SilverSpriteGFX
@@ -141,7 +141,7 @@ NamingScreen:
 	ret
 
 .RivalNameString:
-	db "RIVAL'S NAME?@"
+	db "Rival's Name?@"
 
 .Mom:
 	ld de, MomSpriteGFX
@@ -178,7 +178,7 @@ NamingScreen:
 	ret
 
 .BoxNameString:
-	db "BOX NAME?@"
+	db "Box Name?@"
 
 .Tomodachi:
 	hlcoord 3, 2

@@ -790,22 +790,6 @@ ResetStats:
 	resetstats
 	endmove
 
-Bide:
-	storeenergy
-	checkobedience
-	doturn
-	usedmovetext
-	unleashenergy
-	resettypematchup
-	checkhit
-	moveanim
-	bidefailtext
-	applydamage
-	checkfaint
-	buildopponentrage
-	kingsrock
-	endmove
-
 Rampage:
 	checkrampage
 	checkobedience
@@ -1620,27 +1604,6 @@ Present:
 	stab
 	damagevariation
 	clearmissdamage
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	checkfaint
-	buildopponentrage
-	kingsrock
-	endmove
-
-Frustration:
-	checkobedience
-	usedmovetext
-	doturn
-	critical
-	damagestats
-	frustrationpower
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	moveanim
 	failuretext
 	applydamage
 	criticaltext
@@ -2533,4 +2496,18 @@ VoltTackle:
 	checkfaint
 	buildopponentrage
 	paralyzetarget
+	endmove
+
+CosmicPower:
+	checkobedience
+	usedmovetext
+	doturn
+	cosmicpower
+	endmove
+
+Growth:
+	checkobedience
+	usedmovetext
+	doturn
+	growth
 	endmove

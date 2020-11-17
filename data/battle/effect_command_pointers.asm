@@ -36,8 +36,6 @@ BattleCommandPointers:
 	dw BattleCommand_PayDay
 	dw BattleCommand_Conversion
 	dw BattleCommand_ResetStats
-	dw BattleCommand_StoreEnergy
-	dw BattleCommand_UnleashEnergy
 	dw BattleCommand_ForceSwitch
 	dw BattleCommand_EndLoop
 	dw BattleCommand_FlinchTarget
@@ -102,7 +100,7 @@ BattleCommandPointers:
 	dw BattleCommand_HappinessPower
 	dw BattleCommand_Present
 	dw BattleCommand_DamageCalc
-	dw BattleCommand_FrustrationPower
+	dw BattleCommand_CosmicPower
 	dw BattleCommand_Safeguard
 	dw BattleCommand_CheckSafeguard
 	dw BattleCommand_GetMagnitude
@@ -168,7 +166,7 @@ BattleCommandPointers:
 	dw BattleCommand_RageDamage
 	dw BattleCommand_ResetTypeMatchup
 	dw BattleCommand_AllStatsUp
-	dw BattleCommand_BideFailText
+	dw BattleCommand_Growth
 	dw BattleCommand_RaiseSubNoAnim
 	dw BattleCommand_LowerSubNoAnim
 	dw BattleCommand_ClearMissDamage

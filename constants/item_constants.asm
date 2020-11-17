@@ -203,7 +203,7 @@ ENDM
 	add_tm RAIN_DANCE   ; d3
 	add_tm GIGA_DRAIN   ; d4
 	add_tm ENDURE       ; d5
-	add_tm FRUSTRATION  ; d6
+	add_tm BULLDOZE     ; d6
 	add_tm SOLARBEAM    ; d7
 	add_tm IRON_TAIL    ; d8
 	add_tm DRAGONBREATH ; d9

@@ -121,7 +121,7 @@ MoveDescriptions1:
 	dw HazeDescription
 	dw ReflectDescription
 	dw FocusEnergyDescription
-	dw BideDescription
+	dw RockTombDescription
 	dw MetronomeDescription
 	dw MirrorMoveDescription
 	dw SelfdestructDescription
@@ -222,7 +222,7 @@ MoveDescriptions1:
 	dw HealBellDescription
 	dw ReturnDescription
 	dw PresentDescription
-	dw FrustrationDescription
+	dw CosmicPowerDescription
 	dw SafeguardDescription
 	dw PainSplitDescription
 	dw SacredFireDescription
@@ -657,8 +657,8 @@ LeechSeedDescription:
 	next "foe on every turn.@"
 
 GrowthDescription:
-	db   "Raises the Spcl."
-	next "Atk rating.@"
+	db   "Raises Attack and"
+	next "Spcl.Atk.@"
 
 RazorLeafDescription:
 	db   "Has a high criti-"
@@ -828,9 +828,9 @@ FocusEnergyDescription:
 	db   "Raises the criti-"
 	next "cal hit ratio.@"
 
-BideDescription:
-	db   "Waits 2-3 turns &"
-	next "hits back double.@"
+RockTombDescription:
+	db	 "Lowers Speed by"
+	next "piling rocks.@"
 
 MetronomeDescription:
 	db   "Randomly uses any"
@@ -1232,9 +1232,9 @@ PresentDescription:
 	db   "A bomb that may"
 	next "restore HP.@"
 
-FrustrationDescription:
-	db   "An attack based on"
-	next "lack of loyalty.@"
+CosmicPowerDescription:
+	db	 "Raises Defense and"
+	next "Spcl.Def.@"
 
 SafeguardDescription:
 	db   "Prevents all"
