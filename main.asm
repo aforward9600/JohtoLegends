@@ -180,6 +180,8 @@ INCLUDE "engine/battle/ai/move.asm"
 INCLUDE "engine/pokedex/pokedex_2.asm"
 INCLUDE "engine/pokemon/mail.asm"
 INCLUDE "engine/gfx/place_graphic.asm"
+INCLUDE "mobile/mobile_12_2.asm"
+INCLUDE "engine/events/buena_menu.asm"
 
 
 SECTION "Crystal Features 1", ROMX
@@ -192,8 +194,6 @@ INCLUDE "engine/events/celebi.asm"
 INCLUDE "engine/menus/main_menu.asm"
 INCLUDE "mobile/mobile_menu.asm"
 INCLUDE "engine/pokemon/search.asm"
-INCLUDE "mobile/mobile_12_2.asm"
-INCLUDE "engine/events/buena_menu.asm"
 
 
 SECTION "bank13", ROMX
