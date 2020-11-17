@@ -339,6 +339,14 @@ BattleAnimations::
 	dw BattleAnim_Avalanche
 	dw BattleAnim_Revenge
 	dw BattleAnim_RockWrecker
+	dw BattleAnim_IcicleSpear
+	dw BattleAnim_FlameBurst
+	dw BattleAnim_Discharge
+	dw BattleAnim_IronDefense
+	dw BattleAnim_RockBlast
+	dw BattleAnim_BulletSeed
+	dw BattleAnim_PetalBlizz
+	dw BattleAnim_SolarBlade
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -917,6 +925,7 @@ BattleAnim_SuperFang:
 	anim_ret
 
 BattleAnim_Ember:
+BattleAnim_FlameBurst:
 	anim_1gfx ANIM_GFX_FIRE
 	anim_sound 6, 2, SFX_EMBER
 	anim_obj ANIM_OBJ_EMBER, 64, 96, $12
@@ -1313,6 +1322,7 @@ BattleAnim_Thundershock:
 	anim_ret
 
 BattleAnim_Thunderbolt:
+BattleAnim_Discharge:
 	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
 	anim_obj ANIM_OBJ_LIGHTNING_BOLT, 136, 56, $2
 	anim_wait 16
@@ -2427,6 +2437,7 @@ BattleAnim_Transform:
 	anim_ret
 
 BattleAnim_PetalDance:
+BattleAnim_PetalBlizz:
 	anim_sound 0, 0, SFX_MENU
 	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_HIT
 .loop
@@ -2767,6 +2778,7 @@ BattleAnim_LeechLife:
 	anim_ret
 
 BattleAnim_Harden:
+BattleAnim_IronDefense:
 	anim_1gfx ANIM_GFX_REFLECT
 	anim_obp0 $0
 	anim_call BattleAnim_TargetObj_1Row
@@ -2865,6 +2877,7 @@ BattleAnim_Smokescreen:
 	anim_ret
 
 BattleAnim_Strength:
+BattleAnim_RockBlast:
 	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_20, $10, $1, $20
 	anim_sound 0, 0, SFX_STRENGTH
@@ -4736,6 +4749,7 @@ BattleAnim_NightSlash:
 	anim_ret
 
 BattleAnim_IceShard:
+BattleAnim_IcicleSpear:
 	anim_2gfx ANIM_GFX_ICE, ANIM_GFX_HIT
 	anim_sound 6, 2, SFX_SHINE
 	anim_obj ANIM_OBJ_ICE_BEAM, 64, 88, $4
@@ -5401,6 +5415,59 @@ BattleAnim_RockWrecker:
 	anim_obj ANIM_OBJ_00, 144, 48, $0
 	anim_wait 3
 	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
+BattleAnim_BulletSeed:
+	anim_2gfx ANIM_GFX_PLANT, ANIM_GFX_HIT
+	anim_obj ANIM_OBJ_LEECH_SEED, 72, 72, $2
+	anim_wait 8
+	anim_sound 0, 1, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_04, 128, 40, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_LEECH_SEED, 80, 88, $2
+	anim_wait 8
+	anim_sound 0, 1, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_04, 136, 56, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_LEECH_SEED, 76, 80, $2
+	anim_wait 8
+	anim_sound 0, 1, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_04, 132, 48, $0
+	anim_wait 8
+	anim_ret
+
+BattleAnim_SolarBlade:
+	anim_if_param_equal $0, .FireSolarBlade
+	; charge turn
+	anim_1gfx ANIM_GFX_CHARGE
+	anim_sound 0, 0, SFX_CHARGE
+	anim_obj ANIM_OBJ_3D, 48, 84, $0
+	anim_obj ANIM_OBJ_3C, 48, 84, $0
+	anim_obj ANIM_OBJ_3C, 48, 84, $8
+	anim_obj ANIM_OBJ_3C, 48, 84, $10
+	anim_obj ANIM_OBJ_3C, 48, 84, $18
+	anim_obj ANIM_OBJ_3C, 48, 84, $20
+	anim_obj ANIM_OBJ_3C, 48, 84, $28
+	anim_obj ANIM_OBJ_3C, 48, 84, $30
+	anim_obj ANIM_OBJ_3C, 48, 84, $38
+	anim_wait 104
+	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
+	anim_wait 64
+	anim_ret
+
+.FireSolarBlade:
+	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_WATER
+	anim_bgp $90
+	anim_sound 0, 1, SFX_MORNING_SUN
+	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
+	anim_wait 8
+	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
+	anim_wait 8
+	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
+	anim_wait 64
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_SOLAR_BLADE, 152, 40, $0
+	anim_wait 32
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

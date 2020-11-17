@@ -320,6 +320,14 @@ MoveDescriptions1:
 	dw AvalancheDescription
 	dw RevengeDescription
 	dw RockWreckerDescription
+	dw IcicleSpearDescription
+	dw FlameBurstDescription
+	dw DischargeDescription
+	dw IronDefenseDescription
+	dw RockBlastDescription
+	dw BulletSeedDescription
+	dw PetalBlizzDescription
+	dw SolarBladeDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1583,3 +1591,35 @@ RevengeDescription:
 RockWreckerDescription:
 	db	 "Launches huge rock"
 	next "but must recharge.@"
+
+IcicleSpearDescription:
+	db   "Fires ice at the"
+	next "foe 2-5 times.@"
+
+FlameBurstDescription:
+	db	 "Attacks foe with"
+	next "burst of fire.@"
+
+DischargeDescription:
+	db	 "Flare of electric-"
+	next "ity, can paralyze.@"
+
+IronDefenseDescription:
+	db	 "Sharply raises"
+	next "Defense.@"
+
+RockBlastDescription:
+	db	 "Hurls rocks at foe"
+	next "2-5 times.@"
+
+BulletSeedDescription:
+	db	 "Shoots 2-5 seeds"
+	next "at the foe@"
+
+PetalBlizzDescription:
+	db	 "Stirs up violent"
+	next "petal blizzard.@"
+
+SolarBladeDescription:
+	db   "1st turn: Prepare"
+	next "2nd turn: Attack@"

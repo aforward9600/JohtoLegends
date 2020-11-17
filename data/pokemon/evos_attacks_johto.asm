@@ -194,10 +194,10 @@ TyphlosionEvosAttacks:
 TotodileEvosAttacks:
 	dbbw EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
-	dbw 1, AVALANCHE
-	dbw 1, REVENGE
-	dbw 1, ROCK_WRECKER
-	dbw 1, AIR_SLASH
+	dbw 1, SUNNY_DAY
+	dbw 1, BULLET_SEED
+	dbw 1, SOLAR_BLADE
+	dbw 1, PETAL_BLIZZ
 	dbw 7, RAGE
 	dbw 13, WATER_GUN
 	dbw 20, BITE

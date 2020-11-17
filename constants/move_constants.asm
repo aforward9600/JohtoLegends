@@ -321,6 +321,14 @@
 	const AVALANCHE
 	const REVENGE
 	const ROCK_WRECKER
+	const ICICLE_SPEAR
+	const FLAME_BURST
+	const DISCHARGE
+	const IRON_DEFENSE
+	const ROCK_BLAST
+	const BULLET_SEED
+	const PETAL_BLIZZ
+	const SOLAR_BLADE
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

@@ -12,4 +12,7 @@ RainDanceMoves:
 	dw CRABHAMMER
 	dw OCTAZOOKA
 	dw WHIRLPOOL
+	dw WATER_PULSE
+	dw AQUA_JET
+	dw AQUA_TAIL
 	dw -1 ; end

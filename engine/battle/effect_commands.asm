@@ -5698,12 +5698,13 @@ BattleCommand_Charge:
 	ret
 
 .move_messages
-	dw RAZOR_WIND, .RazorWind
-	dw SOLARBEAM,  .Solarbeam
-	dw SKULL_BASH, .SkullBash
-	dw SKY_ATTACK, .SkyAttack
-	dw FLY,        .Fly
-	dw DIG,        .Dig
+	dw RAZOR_WIND,  .RazorWind
+	dw SOLARBEAM,   .Solarbeam
+	dw SKULL_BASH,  .SkullBash
+	dw SKY_ATTACK,  .SkyAttack
+	dw FLY,         .Fly
+	dw DIG,         .Dig
+	dw SOLAR_BLADE, .Solarbeam
 	dw -1
 
 .RazorWind:
