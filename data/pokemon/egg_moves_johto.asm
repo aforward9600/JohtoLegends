@@ -76,7 +76,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw DelibirdEggMoves
 	dw MantineEggMoves
-	dw SkarmoryEggMoves
+	dw NoEggMoves2
 	dw HoundourEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -101,6 +101,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw SkarminiEggMoves
 
 ChikoritaEggMoves:
 	dw VINE_WHIP
@@ -388,13 +389,6 @@ MantineEggMoves:
 	dw SLAM
 	dw -1 ; end
 
-SkarmoryEggMoves:
-	dw DRILL_PECK
-	dw PURSUIT
-	dw WHIRLWIND
-	dw SKY_ATTACK
-	dw -1 ; end
-
 HoundourEggMoves:
 	dw FIRE_SPIN
 	dw RAGE
@@ -458,5 +452,13 @@ LarvitarEggMoves:
 	dw OUTRAGE
 	dw FOCUS_ENERGY
 	dw ANCIENTPOWER
+
+SkarminiEggMoves:
+	dw PURSUIT
+	dw WHIRLWIND
+	dw SKY_ATTACK
+	dw PAYBACK
+	dw BRAVE_BIRD
+	dw -1 ; end
 NoEggMoves2:
 	dw -1 ; end

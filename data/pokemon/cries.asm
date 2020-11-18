@@ -256,3 +256,4 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION,  $000,  $100 ; LUGIA
 	mon_cry CRY_AIPOM,       $000,  $180 ; HO_OH
 	mon_cry CRY_ENTEI,       $14a,  $111 ; CELEBI
+	mon_cry CRY_AMPHAROS,    $8a9,  $096 ; SKARMINI

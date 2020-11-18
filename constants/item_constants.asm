@@ -221,17 +221,17 @@ ENDM
 	add_tm SLUDGE_BOMB  ; e5
 	add_tm SANDSTORM    ; e6
 	add_tm FIRE_BLAST   ; e7
-	add_tm ICY_WIND     ; e8
+	add_tm ROCK_TOMB    ; e8
 	add_tm AERIAL_ACE   ; e9
 	add_tm SUBSTITUTE   ; ea
-	add_tm FLY          ; eb
-	add_tm SURF         ; ec
+	add_tm FLASH_CANNON ; fb
+	add_tm ROCK_SLIDE   ; fc
 	add_tm REST         ; ed
 	add_tm ATTRACT      ; ee
 	add_tm THIEF        ; ef
 	add_tm STEEL_WING   ; f0
-	add_tm ROCK_SLIDE   ; f1
-	add_tm STRENGTH     ; f2
+	add_tm FLY          ; f1
+	add_tm SURF         ; f2
 	add_tm ROOST	    ; f3
 	add_tm FOCUS_BLAST
 	add_tm ENERGY_BALL
@@ -243,7 +243,7 @@ ENDM
 	add_tm POWERUPPUNCH
 	add_tm STONE_EDGE
 	add_tm X_SCISSOR
-	add_tm AVALANCHE
+	add_tm ICY_WIND
 	add_tm DRAGON_DANCE
 	add_tm DARK_PULSE
 	add_tm DRAGON_PULSE

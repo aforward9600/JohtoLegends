@@ -515,3 +515,5 @@ PokemonPicPointers::
 	dba HoOhBackpic
 	dba CelebiFrontpic
 	dba CelebiBackpic
+	dba SkarminiFrontpic
+	dba SkarminiBackpic

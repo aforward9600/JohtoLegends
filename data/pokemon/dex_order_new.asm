@@ -198,6 +198,7 @@ NewPokedexOrder:
 	dw PHANPY
 	dw DONPHAN
 	dw MANTINE
+	dw SKARMINI
 	dw SKARMORY
 	dw DODUO
 	dw DODRIO

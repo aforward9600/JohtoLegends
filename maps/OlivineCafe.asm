@@ -15,7 +15,7 @@ OlivineCafeStrengthSailorScript:
 	iftrue .GotStrength
 	writetext OlivineCafeStrengthSailorText
 	buttonsound
-	verbosegiveitem TM_STRENGTH
+	verbosegiveitem TM_FLASH_CANNON
 	setevent EVENT_GOT_HM04_STRENGTH
 .GotStrength:
 	writetext OlivineCafeStrengthSailorText_GotStrength

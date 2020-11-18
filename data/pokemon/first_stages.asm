@@ -226,7 +226,7 @@ FirstEvoStages::
 	dw REMORAID   ;e0
 	dw DELIBIRD
 	dw MANTINE
-	dw SKARMORY
+	dw SKARMINI
 	dw HOUNDOUR
 	dw HOUNDOUR
 	dw HORSEA
@@ -251,3 +251,4 @@ FirstEvoStages::
 	dw LUGIA
 	dw HO_OH
 	dw CELEBI
+	dw SKARMINI

@@ -271,6 +271,7 @@ JOHTO_POKEMON EQU const_value
 	const LUGIA      ; f9
 	const HO_OH      ; fa
 	const CELEBI     ; fb
+	const SKARMINI
 NUM_POKEMON EQU const_value + -1
 
 EGG EQU -3

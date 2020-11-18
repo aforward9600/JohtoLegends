@@ -196,6 +196,7 @@ AlphabeticalPokedexOrder:
 	dw SENTRET
 	dw SHELLDER
 	dw SHUCKLE
+	dw SKARMINI
 	dw SKARMORY
 	dw SKIPLOOM
 	dw SLOWBRO

@@ -101,7 +101,7 @@ EvosAttacksPointers2::
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
-;	dw SkarminiEvosAttacks
+	dw SkarminiEvosAttacks
 ;	dw MismagiusEvosAttacks
 ;	dw HonchkrowEvosAttacks
 ;	dw CursolaEvosAttacks
@@ -238,6 +238,7 @@ TotodileEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, LEER
+	dbw 1, DRAGON_TAIL
 	dbw 6, WATER_GUN
 	dbw 8, RAGE
 	dbw 13, BITE
@@ -2031,27 +2032,27 @@ CelebiEvosAttacks:
 	dbw 91, PERISH_SONG
 	db 0 ; no more level-up moves
 
-;SkarminiEvosAttacks:
-;	dbbw EVOLVE_LEVEL, 27, SKARMORY
-;	db 0 ; no more evolutions
-;	dbw 1, LEER
-;	dbw 1, PECK
-;	dbw 6, SAND_ATTACK
-;	dbw 9, METAL_CLAW
-;	dbw 12, AERIAL_ACE
-;	dbw 17, FURY_ATTACK
-;	dbw 20, ROOST
-;	dbw 23, SWIFT
-;	dbw 27, STEEL_WING
-;	dbw 28, SPIKES
-;	dbw 30, AGILITY
-;	dbw 33, WING_ATTACK
-;	dbw 36, SLASH
-;	dbw 39, SCREECH
-;	dbw 42, DRILL_PECK
-;	dbw 45, SWORDS_DANCE
-;	dbw 48, NIGHT_SLASH
-;	db 0 ; no more level-up moves
+SkarminiEvosAttacks:
+	dbbw EVOLVE_LEVEL, 27, SKARMORY
+	db 0 ; no more evolutions
+	dbw 1, LEER
+	dbw 1, PECK
+	dbw 6, SAND_ATTACK
+	dbw 9, METAL_CLAW
+	dbw 12, AERIAL_ACE
+	dbw 17, FURY_ATTACK
+	dbw 20, ROOST
+	dbw 23, SWIFT
+	dbw 27, STEEL_WING
+	dbw 28, SPIKES
+	dbw 30, AGILITY
+	dbw 33, WING_ATTACK
+	dbw 36, SLASH
+	dbw 39, SCREECH
+	dbw 42, DRILL_PECK
+	dbw 45, SWORDS_DANCE
+	dbw 48, NIGHT_SLASH
+	db 0 ; no more level-up moves
 
 ;MismagiusEvosAttacks:
 ;	db 0 ; no more evolutions
