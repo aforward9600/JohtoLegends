@@ -274,6 +274,7 @@ JOHTO_POKEMON EQU const_value
 	const SKARMINI   ; fc
 	const MISMAGIUS  ; fd
 	const HONCHKROW  ; fe
+	const LEAFEON    ; ff
 NUM_POKEMON EQU const_value + -1
 
 EGG EQU -3

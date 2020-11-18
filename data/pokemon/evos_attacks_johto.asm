@@ -2100,23 +2100,23 @@ HonchkrowEvosAttacks:
 ;	dbw 55, MIRROR_COAT
 ;	db 0 ; no more level-up moves
 
-;LeafeonEvosAttacks:
-;	db 0 ; no more evolutions
-;	dbw 1, RAZOR_LEAF
-;	dbw 1, TACKLE
-;	dbw 1, TAIL_WHIP
-;	dbw 5, SAND_ATTACK
-;	dbw 9, GROWL
-;	dbw 13, QUICK_ATTACK
-;	dbw 17, RAZOR_LEAF
-;	dbw 20, MAGICAL_LEAF
-;	dbw 25, GIGA_DRAIN
-;	dbw 29, SWORDS_DANCE
-;	dbw 33, SYNTHESIS
-;	dbw 37, SUNNY_DAY
-;	dbw 41, DOUBLE_EDGE
-;	dbw 45, SOLAR_BLADE
-;	db 0 ; no more level-up moves
+LeafeonEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, RAZOR_LEAF
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 5, SAND_ATTACK
+	dbw 9, GROWL
+	dbw 13, QUICK_ATTACK
+	dbw 17, RAZOR_LEAF
+	dbw 20, BULLET_SEED
+	dbw 25, GIGA_DRAIN
+	dbw 29, SWORDS_DANCE
+	dbw 33, SYNTHESIS
+	dbw 37, SUNNY_DAY
+	dbw 41, DOUBLE_EDGE
+	dbw 45, SOLAR_BLADE
+	db 0 ; no more level-up moves
 
 ;GlaceonEvosAttacks:
 ;	db 0 ; no more evolutions

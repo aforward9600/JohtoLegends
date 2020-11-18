@@ -253,3 +253,4 @@ FramesPointers:
 	dba SkarminiFrames
 	dba MismagiusFrames
 	dba HonchkrowFrames
+	dba LeafeonFrames

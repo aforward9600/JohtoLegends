@@ -259,3 +259,4 @@ PokemonCries::
 	mon_cry CRY_AMPHAROS,    $8a9,  $096 ; SKARMINI
 	mon_cry CRY_HOOTHOOT,    $130,  $0e8 ; MISMAGIUS
 	mon_cry CRY_MARILL,     -$01f,  $180 ; HONCHKROW
+	mon_cry CRY_VENONAT,     $010,  $0a0 ; LEAFEON

@@ -538,3 +538,5 @@ INCLUDE "gfx/pokemon/mismagius/normal.pal"
 INCLUDE "gfx/pokemon/mismagius/shiny.pal"
 INCLUDE "gfx/pokemon/honchkrow/normal.pal"
 INCLUDE "gfx/pokemon/honchkrow/shiny.pal"
+INCBIN "gfx/pokemon/leafeon/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/leafeon/shiny.pal"

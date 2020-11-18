@@ -257,3 +257,4 @@ PokemonNames::
 	db "Skarmini@@"
 	db "Mismagius@"
 	db "Honchkrow@"
+	db "Leafeon@@@"

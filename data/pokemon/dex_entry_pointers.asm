@@ -254,3 +254,4 @@ PokedexDataPointerTable:
 	dba SkarminiPokedexEntry
 	dba MismagiusPokedexEntry
 	dba HonchkrowPokedexEntry
+	dba LeafeonPokedexEntry

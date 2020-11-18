@@ -521,3 +521,5 @@ PokemonPicPointers::
 	dba MismagiusBackpic
 	dba HonchkrowFrontpic
 	dba HonchkrowBackpic
+	dba LeafeonFrontpic
+	dba LeafeonBackpic

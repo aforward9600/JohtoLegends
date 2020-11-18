@@ -111,6 +111,7 @@ AlphabeticalPokedexOrder:
 	dw LANTURN
 	dw LAPRAS
 	dw LARVITAR
+	dw LEAFEON
 	dw LEDIAN
 	dw LEDYBA
 	dw LICKITUNG

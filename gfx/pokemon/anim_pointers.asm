@@ -253,3 +253,4 @@ AnimationPointers:
 	dw SkarminiAnimation
 	dw MismagiusAnimation
 	dw HonchkrowAnimation
+	dw LeafeonAnimation

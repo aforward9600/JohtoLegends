@@ -254,3 +254,4 @@ FirstEvoStages::
 	dw SKARMINI
 	dw MISDREAVUS
 	dw MURKROW
+	dw EEVEE
