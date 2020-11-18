@@ -519,3 +519,5 @@ PokemonPicPointers::
 	dba SkarminiBackpic
 	dba MismagiusFrontpic
 	dba MismagiusBackpic
+	dba HonchkrowFrontpic
+	dba HonchkrowBackpic

@@ -256,3 +256,4 @@ PokemonNames::
 	db "Celebi@@@@"
 	db "Skarmini@@"
 	db "Mismagius@"
+	db "Honchkrow@"

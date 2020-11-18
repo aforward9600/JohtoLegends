@@ -254,3 +254,4 @@ MonMenuIcons:
 	db ICON_HUMANSHAPE  ; CELEBI
 	db ICON_BIRD        ; SKARMINI
 	db ICON_GHOST       ; MISMAGIUS
+	db ICON_BIRD        ; HONCHKROW

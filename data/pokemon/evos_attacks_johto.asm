@@ -102,8 +102,8 @@ EvosAttacksPointers2::
 	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
 	dw SkarminiEvosAttacks
-;	dw MismagiusEvosAttacks
-;	dw HonchkrowEvosAttacks
+	dw MismagiusEvosAttacks
+	dw HonchkrowEvosAttacks
 ;	dw CursolaEvosAttacks
 ;	dw LeafeonEvosAttacks
 ;	dw GlaceonEvosAttacks
@@ -1027,7 +1027,7 @@ UmbreonEvosAttacks:
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
-;	dbbw EVOLVE_ITEM, DUSK_STONE, HONCHKROW
+	dbbw EVOLVE_ITEM, DUSK_STONE, HONCHKROW
 	db 0 ; no more evolutions
 	dbw 1, ASTONISH
 	dbw 1, PECK
@@ -2067,19 +2067,19 @@ MismagiusEvosAttacks:
 	dbw 1, SHADOW_BALL
 	db 0 ; no more level-up moves
 
-;HonchkrowEvosAttacks:
-;	db 0 ; no more evolutions
-;	dbw 1, AERIAL_ACE
-;	dbw 1, PECK
-;	dbw 11, PURSUIT
-;	dbw 16, HAZE
-;	dbw 25, SWAGGER
-;	dbw 35, NASTY_PLOT
-;	dbw 45, DRILL_PECK
-;	dbw 55, NIGHT_SLASH
-;	dbw 65, ROOST
-;	dbw 75, DARK_PULSE
-;	db 0 ; no more level-up moves
+HonchkrowEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, AERIAL_ACE
+	dbw 1, PECK
+	dbw 11, PURSUIT
+	dbw 16, HAZE
+	dbw 25, SWAGGER
+	dbw 35, NASTY_PLOT
+	dbw 45, DRILL_PECK
+	dbw 55, NIGHT_SLASH
+	dbw 65, ROOST
+	dbw 75, DARK_PULSE
+	db 0 ; no more level-up moves
 
 ;CursolaEvosAttacks:
 ;	db 0 ; no more evolutions

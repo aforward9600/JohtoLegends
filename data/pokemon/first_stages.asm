@@ -253,3 +253,4 @@ FirstEvoStages::
 	dw CELEBI
 	dw SKARMINI
 	dw MISDREAVUS
+	dw MURKROW

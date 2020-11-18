@@ -258,3 +258,4 @@ PokemonCries::
 	mon_cry CRY_ENTEI,       $14a,  $111 ; CELEBI
 	mon_cry CRY_AMPHAROS,    $8a9,  $096 ; SKARMINI
 	mon_cry CRY_HOOTHOOT,    $130,  $0e8 ; MISMAGIUS
+	mon_cry CRY_MARILL,     -$01f,  $180 ; HONCHKROW

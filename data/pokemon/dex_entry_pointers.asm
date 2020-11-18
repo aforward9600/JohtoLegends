@@ -253,3 +253,4 @@ PokedexDataPointerTable:
 	dba CelebiPokedexEntry
 	dba SkarminiPokedexEntry
 	dba MismagiusPokedexEntry
+	dba HonchkrowPokedexEntry

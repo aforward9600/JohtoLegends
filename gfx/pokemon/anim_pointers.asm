@@ -252,3 +252,4 @@ AnimationPointers:
 	dw CelebiAnimation
 	dw SkarminiAnimation
 	dw MismagiusAnimation
+	dw HonchkrowAnimation

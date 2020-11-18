@@ -252,3 +252,4 @@ BitmasksPointers:
 	dw CelebiBitmasks
 	dw SkarminiBitmasks
 	dw MismagiusBitmasks
+	dw HonchkrowBitmasks

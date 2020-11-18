@@ -252,3 +252,4 @@ FramesPointers:
 	dba CelebiFrames
 	dba SkarminiFrames
 	dba MismagiusFrames
+	dba HonchkrowFrames

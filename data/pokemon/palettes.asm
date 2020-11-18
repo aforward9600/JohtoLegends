@@ -536,4 +536,5 @@ INCBIN "gfx/pokemon/skarmini/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/skarmini/shiny.pal"
 INCLUDE "gfx/pokemon/mismagius/normal.pal"
 INCLUDE "gfx/pokemon/mismagius/shiny.pal"
-
+INCLUDE "gfx/pokemon/honchkrow/normal.pal"
+INCLUDE "gfx/pokemon/honchkrow/shiny.pal"
