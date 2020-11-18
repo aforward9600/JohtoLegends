@@ -253,4 +253,5 @@ AnimationIdlePointers:
 	dw SkarminiAnimationIdle
 	dw MismagiusAnimationIdle
 	dw HonchkrowAnimationIdle
+	dw CursolaAnimationIdle
 	dw LeafeonAnimationIdle

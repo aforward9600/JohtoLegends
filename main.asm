@@ -182,6 +182,7 @@ INCLUDE "engine/pokemon/mail.asm"
 INCLUDE "engine/gfx/place_graphic.asm"
 INCLUDE "mobile/mobile_12_2.asm"
 INCLUDE "engine/events/buena_menu.asm"
+INCLUDE "engine/menus/main_menu.asm"
 
 
 SECTION "Crystal Features 1", ROMX
@@ -191,7 +192,6 @@ INCLUDE "engine/items/pack_kris.asm"
 INCLUDE "engine/events/move_tutor.asm"
 INCLUDE "engine/gfx/crystal_layouts.asm"
 INCLUDE "engine/events/celebi.asm"
-INCLUDE "engine/menus/main_menu.asm"
 INCLUDE "mobile/mobile_menu.asm"
 INCLUDE "engine/pokemon/search.asm"
 

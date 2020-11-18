@@ -253,4 +253,5 @@ BitmasksPointers:
 	dw SkarminiBitmasks
 	dw MismagiusBitmasks
 	dw HonchkrowBitmasks
+	dw CursolaBitmasks
 	dw LeafeonBitmasks

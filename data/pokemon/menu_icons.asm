@@ -255,4 +255,5 @@ MonMenuIcons:
 	db ICON_BIRD        ; SKARMINI
 	db ICON_GHOST       ; MISMAGIUS
 	db ICON_BIRD        ; HONCHKROW
+	db ICON_SHELL       ; CURSOLA
 	db ICON_FOX         ; LEAFEON

@@ -104,8 +104,8 @@ EvosAttacksPointers2::
 	dw SkarminiEvosAttacks
 	dw MismagiusEvosAttacks
 	dw HonchkrowEvosAttacks
-;	dw CursolaEvosAttacks
-;	dw LeafeonEvosAttacks
+	dw CursolaEvosAttacks
+	dw LeafeonEvosAttacks
 ;	dw GlaceonEvosAttacks
 ;	dw SylveonEvosAttacks
 ;	dw AmbipomEvosAttacks
@@ -1490,7 +1490,7 @@ PiloswineEvosAttacks:
 	db 0 ; no more level-up moves
 
 CorsolaEvosAttacks:
-;	dbbw EVOLVE_LEVEL, 38, CURSOLA
+	dbbw EVOLVE_LEVEL, 38, CURSOLA
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, HARDEN
@@ -2081,24 +2081,24 @@ HonchkrowEvosAttacks:
 	dbw 75, DARK_PULSE
 	db 0 ; no more level-up moves
 
-;CursolaEvosAttacks:
-;	db 0 ; no more evolutions
-;	dbw 1, PERISH_SONG
-;	dbw 1, TACKLE
-;	dbw 1, HARDEN
-;	dbw 5, ASTONISH
-;	dbw 10, DISABLE
-;	dbw 15, SPITE
-;	dbw 20, ANCIENTPOWER
-;	dbw 25, HEX
-;	dbw 30, CURSE
-;	dbw 35, STRENGTH_SAP
-;	dbw 38, PERISH_SONG
-;	dbw 40, POWER_GEM
-;	dbw 45, NIGHT_SHADE
-;	dbw 50, WILL_O_WISP
-;	dbw 55, MIRROR_COAT
-;	db 0 ; no more level-up moves
+CursolaEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, PERISH_SONG
+	dbw 1, TACKLE
+	dbw 1, HARDEN
+	dbw 5, ASTONISH
+	dbw 10, DISABLE
+	dbw 15, SPITE
+	dbw 20, ANCIENTPOWER
+	dbw 25, HEX
+	dbw 30, CURSE
+	dbw 35, STRENGTH_SAP
+	dbw 38, PERISH_SONG
+	dbw 40, POWER_GEM
+	dbw 45, NIGHT_SHADE
+	dbw 50, WILL_O_WISP
+	dbw 55, MIRROR_COAT
+	db 0 ; no more level-up moves
 
 LeafeonEvosAttacks:
 	db 0 ; no more evolutions
