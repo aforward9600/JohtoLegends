@@ -108,8 +108,8 @@ EvosAttacksPointers2::
 	dw LeafeonEvosAttacks
 	dw GlaceonEvosAttacks
 	dw SylveonEvosAttacks
-;	dw AmbipomEvosAttacks
-;	dw LickilickyEvosAttacks
+	dw AmbipomEvosAttacks
+	dw LickilickyEvosAttacks
 ;	dw YanmegaEvosAttacks
 
 ChikoritaEvosAttacks:
@@ -879,7 +879,7 @@ JumpluffEvosAttacks:
 	db 0 ; no more level-up moves
 
 AipomEvosAttacks:
-;	dbbw EVOLVE_LEVEL, 32, AMBIPOM
+	dbbw EVOLVE_LEVEL, 32, AMBIPOM
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, TAIL_WHIP
@@ -2155,45 +2155,45 @@ SylveonEvosAttacks:
 	dbw 45, PSYCH_UP
 	db 0 ; no more level-up moves
 
-;AmbipomEvosAttacks:
-;	db 0 ; no more evolutions
-;	dbw 1, ASTONISH
-;	dbw 1, DUAL_CHOP
-;	dbw 1, SCRATCH
-;	dbw 1, TAIL_WHIP
-;	dbw 4, SAND_ATTACK
-;	dbw 8, ASTONISH
-;	dbw 11, BATON_PASS
-;	dbw 15, GROWL
-;	dbw 22, SWIFT
-;	dbw 25, SCREECH
-;	dbw 29, AGILITY
-;	dbw 32, DUAL_CHOP
-;	dbw 36, FAINT_ATTACK
-;	dbw 39, SWORDS_DANCE
-;	dbw 43, DOUBLE_EDGE
-;	db 0 ; no more level-up moves
+AmbipomEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, ASTONISH
+	dbw 1, DUAL_CHOP
+	dbw 1, SCRATCH
+	dbw 1, TAIL_WHIP
+	dbw 4, SAND_ATTACK
+	dbw 8, ASTONISH
+	dbw 11, BATON_PASS
+	dbw 15, GROWL
+	dbw 22, SWIFT
+	dbw 25, SCREECH
+	dbw 29, AGILITY
+	dbw 32, DOUBLE_HIT_M
+	dbw 36, FAINT_ATTACK
+	dbw 39, SWORDS_DANCE
+	dbw 43, DOUBLE_EDGE
+	db 0 ; no more level-up moves
 
-;LickilickyEvosAttacks:
-;	db 0 ; no more evolutions
-;	dbw 1, ROLLOUT
-;	dbw 1, LICK
-;	dbw 5, SUPERSONIC
-;	dbw 9, DEFENSE_CURL
-;	dbw 13, FAINT_ATTACK
-;	dbw 17, WRAP
-;	dbw 21, STOMP
-;	dbw 25, DISABLE
-;	dbw 29, SLAM
-;	dbw 33, ROLLOUT
-;	dbw 37, BODY_SLAM
-;	dbw 41, BELLY_DRUM
-;	dbw 45, HEAL_BELL
-;	dbw 49, SCREECH
-;	dbw 53, POWER_WHIP
-;	dbw 57, DOUBLE_EDGE
-;	dbw 61, GYRO_BALL
-;	db 0 ; no more level-up moves
+LickilickyEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, ROLLOUT
+	dbw 1, LICK
+	dbw 5, SUPERSONIC
+	dbw 9, DEFENSE_CURL
+	dbw 13, FAINT_ATTACK
+	dbw 17, WRAP
+	dbw 21, STOMP
+	dbw 25, DISABLE
+	dbw 29, SLAM
+	dbw 33, ROLLOUT
+	dbw 37, BODY_SLAM
+	dbw 41, BELLY_DRUM
+	dbw 45, HEAL_BELL
+	dbw 49, SCREECH
+	dbw 53, POWER_WHIP
+	dbw 57, DOUBLE_EDGE
+	dbw 61, GYRO_BALL
+	db 0 ; no more level-up moves
 
 ;YanmegaEvosAttacks:
 ;	db 0 ; no more evolutions

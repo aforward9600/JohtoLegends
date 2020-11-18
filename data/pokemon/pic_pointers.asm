@@ -529,3 +529,7 @@ PokemonPicPointers::
 	dba GlaceonBackpic
 	dba SylveonFrontpic
 	dba SylveonBackpic
+	dba AmbipomFrontpic
+	dba AmbipomBackpic
+	dba LickilickyFrontpic
+	dba LickilickyBackpic

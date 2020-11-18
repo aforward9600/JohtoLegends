@@ -261,3 +261,5 @@ PokemonNames::
 	db "Leafeon@@@"
 	db "Glaceon@@@"
 	db "Sylveon@@@"
+	db "Ambipom@@@"
+	db "Lickilicky"

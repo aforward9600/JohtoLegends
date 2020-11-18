@@ -257,3 +257,5 @@ AnimationIdlePointers:
 	dw LeafeonAnimationIdle
 	dw GlaceonAnimationIdle
 	dw SylveonAnimationIdle
+	dw AmbipomAnimationIdle
+	dw LickilickyAnimationIdle

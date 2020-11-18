@@ -258,3 +258,5 @@ PokedexDataPointerTable:
 	dba LeafeonPokedexEntry
 	dba GlaceonPokedexEntry
 	dba SylveonPokedexEntry
+	dba AmbipomPokedexEntry
+	dba LickilickyPokedexEntry

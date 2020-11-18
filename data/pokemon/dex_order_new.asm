@@ -123,6 +123,7 @@ NewPokedexOrder:
 	dw VOLTORB
 	dw ELECTRODE
 	dw AIPOM
+	dw AMBIPOM
 	dw SNUBBULL
 	dw GRANBULL
 	dw VULPIX
@@ -180,6 +181,7 @@ NewPokedexOrder:
 	dw SEEL
 	dw DEWGONG
 	dw LICKITUNG
+	dw LICKILICKY
 	dw TANGELA
 	dw EEVEE
 	dw VAPOREON

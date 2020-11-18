@@ -5,6 +5,7 @@ AlphabeticalPokedexOrder:
 	dw AERODACTYL
 	dw AIPOM
 	dw ALAKAZAM
+	dw AMBIPOM
 	dw AMPHAROS
 	dw ARBOK
 	dw ARCANINE
@@ -116,6 +117,7 @@ AlphabeticalPokedexOrder:
 	dw LEAFEON
 	dw LEDIAN
 	dw LEDYBA
+	dw LICKILICKY
 	dw LICKITUNG
 	dw LUGIA
 	dw MACHAMP

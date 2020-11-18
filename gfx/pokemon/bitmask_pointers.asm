@@ -257,3 +257,5 @@ BitmasksPointers:
 	dw LeafeonBitmasks
 	dw GlaceonBitmasks
 	dw SylveonBitmasks
+	dw AmbipomBitmasks
+	dw LickilickyBitmasks

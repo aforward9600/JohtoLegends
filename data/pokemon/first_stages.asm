@@ -258,3 +258,5 @@ FirstEvoStages::
 	dw EEVEE
 	dw EEVEE
 	dw EEVEE
+	dw AIPOM
+	dw LICKITUNG

@@ -257,3 +257,5 @@ FramesPointers:
 	dba LeafeonFrames
 	dba GlaceonFrames
 	dba SylveonFrames
+	dba AmbipomFrames
+	dba LickilickyFrames

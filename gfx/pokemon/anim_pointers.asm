@@ -257,3 +257,5 @@ AnimationPointers:
 	dw LeafeonAnimation
 	dw GlaceonAnimation
 	dw SylveonAnimation
+	dw AmbipomAnimation
+	dw LickilickyAnimation

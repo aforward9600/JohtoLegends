@@ -263,3 +263,5 @@ PokemonCries::
 	mon_cry CRY_VENONAT,     $010,  $0a0 ; LEAFEON
 	mon_cry CRY_VENONAT,    -$0e9,  $0f0 ; GLACEON
 	mon_cry CRY_VENONAT,     $0aa,  $17f ; SYLVEON
+	mon_cry CRY_AIPOM,      -$051,  $0e8 ; AMBIPOM
+	mon_cry CRY_SEEL,        $000,  $100 ; LICKILICKY

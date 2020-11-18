@@ -259,3 +259,5 @@ MonMenuIcons:
 	db ICON_FOX         ; LEAFEON
 	db ICON_FOX         ; GLACEON
 	db ICON_FOX         ; SYLVEON
+	db ICON_MONSTER     ; AMBIPOM
+	db ICON_MONSTER     ; LICKILICKY
