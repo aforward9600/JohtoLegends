@@ -277,6 +277,7 @@ JOHTO_POKEMON EQU const_value
 	const CURSOLA    ; ff
 	const LEAFEON
 	const GLACEON
+	const SYLVEON
 NUM_POKEMON EQU const_value + -1
 
 EGG EQU -3

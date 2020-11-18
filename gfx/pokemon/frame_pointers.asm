@@ -256,3 +256,4 @@ FramesPointers:
 	dba CursolaFrames
 	dba LeafeonFrames
 	dba GlaceonFrames
+	dba SylveonFrames

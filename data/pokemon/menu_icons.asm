@@ -258,3 +258,4 @@ MonMenuIcons:
 	db ICON_SHELL       ; CURSOLA
 	db ICON_FOX         ; LEAFEON
 	db ICON_FOX         ; GLACEON
+	db ICON_FOX         ; SYLVEON

@@ -189,6 +189,7 @@ NewPokedexOrder:
 	dw UMBREON
 	dw LEAFEON
 	dw GLACEON
+	dw SYLVEON
 	dw HORSEA
 	dw SEADRA
 	dw KINGDRA

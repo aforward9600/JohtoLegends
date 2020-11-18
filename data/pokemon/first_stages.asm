@@ -257,3 +257,4 @@ FirstEvoStages::
 	dw CORSOLA
 	dw EEVEE
 	dw EEVEE
+	dw EEVEE

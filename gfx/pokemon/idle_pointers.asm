@@ -256,3 +256,4 @@ AnimationIdlePointers:
 	dw CursolaAnimationIdle
 	dw LeafeonAnimationIdle
 	dw GlaceonAnimationIdle
+	dw SylveonAnimationIdle

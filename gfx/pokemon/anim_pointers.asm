@@ -256,3 +256,4 @@ AnimationPointers:
 	dw CursolaAnimation
 	dw LeafeonAnimation
 	dw GlaceonAnimation
+	dw SylveonAnimation

@@ -544,3 +544,5 @@ INCBIN "gfx/pokemon/leafeon/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/leafeon/shiny.pal"
 INCBIN "gfx/pokemon/glaceon/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/glaceon/shiny.pal"
+INCBIN "gfx/pokemon/sylveon/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sylveon/shiny.pal"

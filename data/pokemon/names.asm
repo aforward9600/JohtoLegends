@@ -260,3 +260,4 @@ PokemonNames::
 	db "Cursola@@@"
 	db "Leafeon@@@"
 	db "Glaceon@@@"
+	db "Sylveon@@@"

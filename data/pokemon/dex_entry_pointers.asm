@@ -257,3 +257,4 @@ PokedexDataPointerTable:
 	dba CursolaPokedexEntry
 	dba LeafeonPokedexEntry
 	dba GlaceonPokedexEntry
+	dba SylveonPokedexEntry

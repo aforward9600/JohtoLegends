@@ -256,3 +256,4 @@ BitmasksPointers:
 	dw CursolaBitmasks
 	dw LeafeonBitmasks
 	dw GlaceonBitmasks
+	dw SylveonBitmasks

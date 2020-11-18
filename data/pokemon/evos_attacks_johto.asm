@@ -107,7 +107,7 @@ EvosAttacksPointers2::
 	dw CursolaEvosAttacks
 	dw LeafeonEvosAttacks
 	dw GlaceonEvosAttacks
-;	dw SylveonEvosAttacks
+	dw SylveonEvosAttacks
 ;	dw AmbipomEvosAttacks
 ;	dw LickilickyEvosAttacks
 ;	dw YanmegaEvosAttacks
@@ -2136,24 +2136,24 @@ GlaceonEvosAttacks:
 	dbw 45, BLIZZARD
 	db 0 ; no more level-up moves
 
-;SylveonEvosAttacks:
-;	db 0 ; no more evolutions
-;	dbw 1, FAIRY_WIND
-;	dbw 1, DISARM_VOICE
-;	dbw 1, TACKLE
-;	dbw 1, TAIL_WHIP
-;	dbw 5, SANDSTORM
-;	dbw 9, GROWL
-;	dbw 13, QUICK_ATTACK
-;	dbw 17, FAIRY_WIND
-;	dbw 20, DRAININGKISS
-;	dbw 25, RECOVER
-;	dbw 29, DAZZLINGLEAM
-;	dbw 33, LIGHT_SCREEN
-;	dbw 37, MOONBLAST
-;	dbw 41, DOUBLE_EDGE
-;	dbw 45, PSYCH_UP
-;	db 0 ; no more level-up moves
+SylveonEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, FAIRY_WIND
+	dbw 1, DISARM_VOICE
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 5, SANDSTORM
+	dbw 9, GROWL
+	dbw 13, QUICK_ATTACK
+	dbw 17, FAIRY_WIND
+	dbw 20, DRAININGKISS
+	dbw 25, RECOVER
+	dbw 29, DAZZLINGLEAM
+	dbw 33, LIGHT_SCREEN
+	dbw 37, MOONBLAST
+	dbw 41, DOUBLE_EDGE
+	dbw 45, PSYCH_UP
+	db 0 ; no more level-up moves
 
 ;AmbipomEvosAttacks:
 ;	db 0 ; no more evolutions
