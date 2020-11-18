@@ -517,3 +517,5 @@ PokemonPicPointers::
 	dba CelebiBackpic
 	dba SkarminiFrontpic
 	dba SkarminiBackpic
+	dba MismagiusFrontpic
+	dba MismagiusBackpic

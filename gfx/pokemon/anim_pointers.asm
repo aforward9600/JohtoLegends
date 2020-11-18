@@ -251,3 +251,4 @@ AnimationPointers:
 	dw HoOhAnimation
 	dw CelebiAnimation
 	dw SkarminiAnimation
+	dw MismagiusAnimation

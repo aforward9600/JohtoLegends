@@ -1068,7 +1068,7 @@ SlowkingEvosAttacks:
 	db 0 ; no more level-up moves
 
 MisdreavusEvosAttacks:
-;	dbbw EVOLVE_ITEM, DUSK_STONE, MISMAGIUS
+	dbbw EVOLVE_ITEM, DUSK_STONE, MISMAGIUS
 	db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 1, PSYWAVE
@@ -2054,18 +2054,18 @@ SkarminiEvosAttacks:
 	dbw 48, NIGHT_SLASH
 	db 0 ; no more level-up moves
 
-;MismagiusEvosAttacks:
-;	db 0 ; no more evolutions
-;	dbw 1, MAGICAL_LEAF
-;	dbw 1, FLAMETHROWER
-;	dbw 1, POWER_GEM
-;	dbw 1, GROWL
-;	dbw 1, THIEF
-;	dbw 1, NIGHT_SHADE
-;	dbw 1, DISARM_VOICE
-;	dbw 1, CURSE
-;	dbw 1, SHADOW_BALL
-;	db 0 ; no more level-up moves
+MismagiusEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, MAGICAL_LEAF
+	dbw 1, FLAMETHROWER
+	dbw 1, POWER_GEM
+	dbw 1, GROWL
+	dbw 1, THIEF
+	dbw 1, NIGHT_SHADE
+	dbw 1, DISARM_VOICE
+	dbw 1, CURSE
+	dbw 1, SHADOW_BALL
+	db 0 ; no more level-up moves
 
 ;HonchkrowEvosAttacks:
 ;	db 0 ; no more evolutions

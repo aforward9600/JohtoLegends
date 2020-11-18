@@ -255,3 +255,4 @@ PokemonNames::
 	db "Ho-oh@@@@@"
 	db "Celebi@@@@"
 	db "Skarmini@@"
+	db "Mismagius@"

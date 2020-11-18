@@ -161,6 +161,9 @@
 	const SQUIRTBOTTLE ; af
 	const PARK_BALL    ; b1
 	const RAINBOW_WING ; b2
+	const DUSK_STONE   ; be
+	const ICE_STONE    ; bf
+	const SHINY_STONE  ; c0
 	const BRICK_PIECE  ; b4
 	const SURF_MAIL    ; b5
 	const LITEBLUEMAIL ; b6

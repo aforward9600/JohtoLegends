@@ -716,3 +716,5 @@ SECTION "Pics 19", ROMX
 
 SkarminiFrontpic:    INCBIN "gfx/pokemon/skarmini/front.animated.2bpp.lz"
 SkarminiBackpic:     INCBIN "gfx/pokemon/skarmini/back.2bpp.lz"
+MismagiusFrontpic:   INCBIN "gfx/pokemon/mismagius/front.animated.2bpp.lz"
+MismagiusBackpic:    INCBIN "gfx/pokemon/mismagius/back.2bpp.lz"

@@ -252,3 +252,4 @@ FirstEvoStages::
 	dw HO_OH
 	dw CELEBI
 	dw SKARMINI
+	dw MISDREAVUS
