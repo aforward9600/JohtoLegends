@@ -255,3 +255,4 @@ FramesPointers:
 	dba HonchkrowFrames
 	dba CursolaFrames
 	dba LeafeonFrames
+	dba GlaceonFrames

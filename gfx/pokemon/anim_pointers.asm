@@ -255,3 +255,4 @@ AnimationPointers:
 	dw HonchkrowAnimation
 	dw CursolaAnimation
 	dw LeafeonAnimation
+	dw GlaceonAnimation

@@ -255,3 +255,4 @@ AnimationIdlePointers:
 	dw HonchkrowAnimationIdle
 	dw CursolaAnimationIdle
 	dw LeafeonAnimationIdle
+	dw GlaceonAnimationIdle

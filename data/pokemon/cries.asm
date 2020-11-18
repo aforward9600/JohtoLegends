@@ -261,3 +261,4 @@ PokemonCries::
 	mon_cry CRY_MARILL,     -$01f,  $180 ; HONCHKROW
 	mon_cry CRY_MAGCARGO,    $0a1,  $0e8 ; CORSOLA
 	mon_cry CRY_VENONAT,     $010,  $0a0 ; LEAFEON
+	mon_cry CRY_VENONAT,    -$0e9,  $0f0 ; GLACEON

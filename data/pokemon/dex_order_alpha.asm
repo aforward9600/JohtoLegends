@@ -70,6 +70,7 @@ AlphabeticalPokedexOrder:
 	dw GENGAR
 	dw GEODUDE
 	dw GIRAFARIG
+	dw GLACEON
 	dw GLIGAR
 	dw GLOOM
 	dw GOLBAT

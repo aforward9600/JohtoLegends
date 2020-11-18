@@ -259,3 +259,4 @@ PokemonNames::
 	db "Honchkrow@"
 	db "Cursola@@@"
 	db "Leafeon@@@"
+	db "Glaceon@@@"

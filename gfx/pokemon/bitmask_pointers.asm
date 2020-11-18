@@ -255,3 +255,4 @@ BitmasksPointers:
 	dw HonchkrowBitmasks
 	dw CursolaBitmasks
 	dw LeafeonBitmasks
+	dw GlaceonBitmasks

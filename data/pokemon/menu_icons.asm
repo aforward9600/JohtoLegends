@@ -257,3 +257,4 @@ MonMenuIcons:
 	db ICON_BIRD        ; HONCHKROW
 	db ICON_SHELL       ; CURSOLA
 	db ICON_FOX         ; LEAFEON
+	db ICON_FOX         ; GLACEON

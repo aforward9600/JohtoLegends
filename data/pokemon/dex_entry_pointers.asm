@@ -256,3 +256,4 @@ PokedexDataPointerTable:
 	dba HonchkrowPokedexEntry
 	dba CursolaPokedexEntry
 	dba LeafeonPokedexEntry
+	dba GlaceonPokedexEntry

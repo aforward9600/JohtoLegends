@@ -106,7 +106,7 @@ EvosAttacksPointers2::
 	dw HonchkrowEvosAttacks
 	dw CursolaEvosAttacks
 	dw LeafeonEvosAttacks
-;	dw GlaceonEvosAttacks
+	dw GlaceonEvosAttacks
 ;	dw SylveonEvosAttacks
 ;	dw AmbipomEvosAttacks
 ;	dw LickilickyEvosAttacks
@@ -2118,23 +2118,23 @@ LeafeonEvosAttacks:
 	dbw 45, SOLAR_BLADE
 	db 0 ; no more level-up moves
 
-;GlaceonEvosAttacks:
-;	db 0 ; no more evolutions
-;	dbw 1, ICY_WIND
-;	dbw 1, TACKLE
-;	dbw 1, TAIL_WHIP
-;	dbw 5, SAND_ATTACK
-;	dbw 9, GROWL
-;	dbw 13, QUICK_ATTACK
-;	dbw 17, ICY_WIND
-;	dbw 20, ICE_FANG
-;	dbw 25, ICE_SHARD
-;	dbw 29, BARRIER
-;	dbw 33, MIRROR_COAT
-;	dbw 37, SANDSTORM
-;	dbw 41, DOUBLE_EDGE
-;	dbw 45, BLIZZARD
-;	db 0 ; no more level-up moves
+GlaceonEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, ICY_WIND
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 5, SAND_ATTACK
+	dbw 9, GROWL
+	dbw 13, QUICK_ATTACK
+	dbw 17, ICY_WIND
+	dbw 20, ICE_FANG
+	dbw 25, ICE_SHARD
+	dbw 29, BARRIER
+	dbw 33, MIRROR_COAT
+	dbw 37, SANDSTORM
+	dbw 41, DOUBLE_EDGE
+	dbw 45, BLIZZARD
+	db 0 ; no more level-up moves
 
 ;SylveonEvosAttacks:
 ;	db 0 ; no more evolutions

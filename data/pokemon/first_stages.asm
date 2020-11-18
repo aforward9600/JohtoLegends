@@ -256,3 +256,4 @@ FirstEvoStages::
 	dw MURKROW
 	dw CORSOLA
 	dw EEVEE
+	dw EEVEE

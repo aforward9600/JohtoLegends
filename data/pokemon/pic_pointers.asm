@@ -525,3 +525,5 @@ PokemonPicPointers::
 	dba CursolaBackpic
 	dba LeafeonFrontpic
 	dba LeafeonBackpic
+	dba GlaceonFrontpic
+	dba GlaceonBackpic
