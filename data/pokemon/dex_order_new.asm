@@ -122,6 +122,7 @@ NewPokedexOrder:
 	dw MUK
 	dw MAGNEMITE
 	dw MAGNETON
+	dw MAGNEZONE
 	dw VOLTORB
 	dw ELECTRODE
 	dw AIPOM
@@ -230,6 +231,7 @@ NewPokedexOrder:
 	dw MISMAGIUS
 	dw PORYGON
 	dw PORYGON2
+	dw PORYGON_Z
 	dw CHANSEY
 	dw BLISSEY
 	dw LAPRAS

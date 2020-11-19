@@ -263,3 +263,5 @@ BitmasksPointers:
 	dw TogekissBitmasks
 	dw MamoswineBitmasks
 	dw TangrowthBitmasks
+	dw MagnezoneBitmasks
+	dw PorygonZBitmasks

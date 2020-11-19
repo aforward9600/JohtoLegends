@@ -114,6 +114,8 @@ EvosAttacksPointers2::
 	dw TogekissEvosAttacks
 	dw MamoswineEvosAttacks
 	dw TangrowthEvosAttacks
+	dw MagnezoneEvosAttacks
+	dw PorygonZEvosAttacks
 
 ChikoritaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, BAYLEEF
@@ -1695,6 +1697,7 @@ DonphanEvosAttacks:
 	db 0 ; no more level-up moves
 
 Porygon2EvosAttacks:
+	dbbw EVOLVE_ITEM, DUBIOUSDISK, PORYGON_Z
 	db 0 ; no more evolutions
 	dbw 1, NASTY_PLOT
 	dbw 1, TACKLE
@@ -2270,4 +2273,50 @@ TangrowthEvosAttacks:
 	dbw 50, AMNESIA
 	dbw 53, POWER_WHIP
 	dbw 56, STONE_EDGE
+	db 0 ; no more level-up moves
+
+MagnezoneEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TRI_ATTACK
+	dbw 1, SUPERSONIC
+	dbw 1, TACKLE
+	dbw 5, THUNDERSHOCK
+	dbw 7, MIRROR_SHOT
+	dbw 11, THUNDER_WAVE
+	dbw 13, LIGHT_SCREEN
+	dbw 17, SONICBOOM
+	dbw 19, SPARK
+	dbw 23, STEEL_SLICE
+	dbw 25, METAL_SOUND
+	dbw 29, DISCHARGE
+	dbw 30, TRI_ATTACK
+	dbw 33, FLASH_CANNON
+	dbw 39, SCREECH
+	dbw 43, THUNDERBOLT
+	dbw 49, LOCK_ON
+	dbw 53, RAIN_DANCE
+	dbw 59, GYRO_BALL
+	dbw 63, ZAP_CANNON
+	dbw 67, THUNDER
+	db 0 ; no more level-up moves
+
+PorygonZEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, NASTY_PLOT
+	dbw 1, TACKLE
+	dbw 1, CONVERSION
+	dbw 1, SHARPEN
+	dbw 7, PSYBEAM
+	dbw 12, AGILITY
+	dbw 18, RECOVER
+	dbw 23, BARRIER
+	dbw 29, SIGNAL_BEAM
+	dbw 34, FLASH_CANNON
+	dbw 40, DISCHARGE
+	dbw 45, LOCK_ON
+	dbw 50, TRI_ATTACK
+	dbw 56, MIRROR_COAT
+	dbw 62, ZAP_CANNON
+	dbw 67, HYPER_BEAM
+	dbw 70, NASTY_PLOT
 	db 0 ; no more level-up moves

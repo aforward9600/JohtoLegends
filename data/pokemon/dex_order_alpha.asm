@@ -129,6 +129,7 @@ AlphabeticalPokedexOrder:
 	dw MAGMAR
 	dw MAGNEMITE
 	dw MAGNETON
+	dw MAGNEZONE
 	dw MAMOSWINE
 	dw MANKEY
 	dw MANTINE
@@ -180,6 +181,7 @@ AlphabeticalPokedexOrder:
 	dw PONYTA
 	dw PORYGON
 	dw PORYGON2
+	dw PORYGON_Z
 	dw PRIMEAPE
 	dw PSYDUCK
 	dw PUPITAR

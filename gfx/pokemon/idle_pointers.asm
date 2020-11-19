@@ -263,3 +263,5 @@ AnimationIdlePointers:
 	dw TogekissAnimationIdle
 	dw MamoswineAnimationIdle
 	dw TangrowthAnimationIdle
+	dw MagnezoneAnimationIdle
+	dw PorygonZAnimationIdle

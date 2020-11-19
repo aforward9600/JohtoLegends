@@ -269,3 +269,5 @@ PokemonCries::
 	mon_cry CRY_TOGETIC,     $03b,  $038 ; TOGEKISS
 	mon_cry CRY_MAGCARGO,   -$109,  $100 ; MAMOSWINE
 	mon_cry CRY_GOLEM,       $000,  $100 ; TANGROWTH
+	mon_cry CRY_METAPOD,     $020,  $140 ; MAGNEZONE
+	mon_cry CRY_GIRAFARIG,   $073,  $240 ; PORYGON_Z

@@ -267,3 +267,5 @@ PokemonNames::
 	db "Togekiss@@"
 	db "Mamoswine@"
 	db "Tangrowth@"
+	db "Magnezone@"
+	db "Porygon-Z@"

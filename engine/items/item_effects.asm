@@ -142,11 +142,11 @@ ItemEffects:
 	dw NoEffect            ; CHARCOAL
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS
-	dw NoEffect            ; METAL_COAT
+	dw EvoStoneEffect      ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
 	dw NoEffect            ; LEFTOVERS
 	dw RestorePPEffect     ; MYSTERYBERRY
-	dw NoEffect            ; DRAGON_SCALE
+	dw EvoStoneEffect      ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
@@ -162,7 +162,7 @@ ItemEffects:
 	dw GorgeousBoxEffect   ; GORGEOUS_BOX
 	dw EvoStoneEffect      ; SUN_STONE
 	dw NoEffect            ; POLKADOT_BOW
-	dw NoEffect            ; UP_GRADE
+	dw EvoStoneEffect      ; UP_GRADE
 	dw RestoreHPEffect     ; BERRY
 	dw RestoreHPEffect     ; GOLD_BERRY
 	dw SquirtbottleEffect  ; SQUIRTBOTTLE
@@ -171,6 +171,15 @@ ItemEffects:
 	dw EvoStoneEffect      ; DUSK_STONE
 	dw EvoStoneEffect      ; ICE_STONE
 	dw EvoStoneEffect      ; SHINY_STONE
+	dw EvoStoneEffect      ; DUBIOUSDISK
+	dw EvoStoneEffect      ; LINK_CABLE
+	dw EvoStoneEffect      ; ELECTIRIZER
+	dw EvoStoneEffect      ; MAGMARIZER
+	dw EvoStoneEffect      ; RAZOR_CLAW
+	dw EvoStoneEffect      ; RAZOR_FANG
+	dw EvoStoneEffect      ; PROTECTOR
+	dw NoEffect            ; STEEL_DAGGER
+	dw EvoStoneEffect      ; ROYAL_ROCK
 
 PokeBallEffect:
 	ld a, [wBattleMode]

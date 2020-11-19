@@ -284,6 +284,8 @@ JOHTO_POKEMON EQU const_value
 	const TOGEKISS
 	const MAMOSWINE
 	const TANGROWTH
+	const MAGNEZONE
+	const PORYGON_Z
 NUM_POKEMON EQU const_value + -1
 
 EGG EQU -3

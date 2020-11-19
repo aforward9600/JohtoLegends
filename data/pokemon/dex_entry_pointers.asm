@@ -264,3 +264,5 @@ PokedexDataPointerTable:
 	dba TogekissPokedexEntry
 	dba MamoswinePokedexEntry
 	dba TangrowthPokedexEntry
+	dba MagnezonePokedexEntry
+	dba PorygonZPokedexEntry

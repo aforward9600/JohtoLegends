@@ -263,3 +263,5 @@ FramesPointers:
 	dba TogekissFrames
 	dba MamoswineFrames
 	dba TangrowthFrames
+	dba MagnezoneFrames
+	dba PorygonZFrames

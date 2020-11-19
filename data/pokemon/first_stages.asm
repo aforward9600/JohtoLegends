@@ -264,3 +264,5 @@ FirstEvoStages::
 	dw TOGEPI
 	dw SWINUB
 	dw TANGELA
+	dw MAGNEMITE
+	dw PORYGON

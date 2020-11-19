@@ -158,6 +158,15 @@ ItemDescriptions:
 	dw DuskStoneDesc
 	dw IceStoneDesc
 	dw ShinyStoneDesc
+	dw DubiousDiskDesc
+	dw LinkCableDesc
+	dw ElectirizerDesc
+	dw MagmarizerDesc
+	dw RazorClawDesc
+	dw RazorFangDesc
+	dw ProtectorDesc
+	dw SteelDaggerDesc
+	dw RoyalRockDesc
 	dw BrickPieceDesc
 	dw SurfMailDesc
 	dw LiteBlueMailDesc
@@ -746,8 +755,8 @@ ScopeLensDesc:
 	next "hit ratio. (Hold)@"
 
 MetalCoatDesc:
-	db   "Powers up steel-"
-	next "type moves. (Hold)@"
+	db   "Evolves certain"
+	next "kinds of #mon.@"
 
 DragonFangDesc:
 	db   "Powers up dragon-"
@@ -858,6 +867,42 @@ IceStoneDesc:
 	next "kinds of #mon.@"
 
 ShinyStoneDesc:
+	db   "Evolves certain"
+	next "kinds of #mon.@"
+
+DubiousDiskDesc:
+	db   "Evolves certain"
+	next "kinds of #mon.@"
+
+LinkCableDesc:
+	db   "Evolves certain"
+	next "kinds of #mon.@"
+
+ElectirizerDesc:
+	db   "Evolves certain"
+	next "kinds of #mon.@"
+
+MagmarizerDesc:
+	db   "Evolves certain"
+	next "kinds of #mon.@"
+
+RazorClawDesc:
+	db   "Evolves certain"
+	next "kinds of #mon.@"
+
+RazorFangDesc:
+	db   "Evolves certain"
+	next "kinds of #mon.@"
+
+ProtectorDesc:
+	db   "Evolves certain"
+	next "kinds of #mon.@"
+
+SteelDaggerDesc:
+	db   "Powers up steel-"
+	next "type moves. (Hold)@"
+
+RoyalRockDesc:
 	db   "Evolves certain"
 	next "kinds of #mon.@"
 

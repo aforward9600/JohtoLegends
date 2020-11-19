@@ -139,7 +139,7 @@ NewBarkTownElmsHouseSign:
 	jumptext NewBarkTownElmsHouseSignText
 
 NewBarkTownTMBodySlam:
-	itemball SHINY_STONE
+	itemball DUBIOUSDISK
 
 Movement_TeacherRunsToYou1_NBT:
 	step LEFT

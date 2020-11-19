@@ -263,3 +263,5 @@ AnimationPointers:
 	dw TogekissAnimation
 	dw MamoswineAnimation
 	dw TangrowthAnimation
+	dw MagnezoneAnimation
+	dw PorygonZAnimation

@@ -164,6 +164,15 @@
 	const DUSK_STONE   ; be
 	const ICE_STONE    ; bf
 	const SHINY_STONE  ; c0
+	const DUBIOUSDISK
+	const LINK_CABLE
+	const ELECTIRIZER
+	const MAGMARIZER
+	const RAZOR_CLAW
+	const RAZOR_FANG
+	const PROTECTOR
+	const STEEL_DAGGER
+	const ROYAL_ROCK
 	const BRICK_PIECE  ; b4
 	const SURF_MAIL    ; b5
 	const LITEBLUEMAIL ; b6
