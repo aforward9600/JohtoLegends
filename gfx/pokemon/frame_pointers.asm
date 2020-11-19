@@ -259,3 +259,4 @@ FramesPointers:
 	dba SylveonFrames
 	dba AmbipomFrames
 	dba LickilickyFrames
+	dba YanmegaFrames

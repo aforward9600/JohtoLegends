@@ -259,3 +259,4 @@ AnimationPointers:
 	dw SylveonAnimation
 	dw AmbipomAnimation
 	dw LickilickyAnimation
+	dw YanmegaAnimation

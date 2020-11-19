@@ -260,3 +260,4 @@ PokedexDataPointerTable:
 	dba SylveonPokedexEntry
 	dba AmbipomPokedexEntry
 	dba LickilickyPokedexEntry
+	dba YanmegaPokedexEntry

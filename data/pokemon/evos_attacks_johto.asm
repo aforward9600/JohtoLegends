@@ -110,7 +110,7 @@ EvosAttacksPointers2::
 	dw SylveonEvosAttacks
 	dw AmbipomEvosAttacks
 	dw LickilickyEvosAttacks
-;	dw YanmegaEvosAttacks
+	dw YanmegaEvosAttacks
 
 ChikoritaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, BAYLEEF
@@ -936,7 +936,8 @@ SunfloraEvosAttacks:
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:
-;	dbbw EVOLVE_LEVEL, 33, YANMEGA
+	dbbw EVOLVE_LEVEL, 33, YANMEGA
+	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, FORESIGHT
 	dbw 6, QUICK_ATTACK
@@ -2195,22 +2196,22 @@ LickilickyEvosAttacks:
 	dbw 61, GYRO_BALL
 	db 0 ; no more level-up moves
 
-;YanmegaEvosAttacks:
-;	db 0 ; no more evolutions
-;	dbw 1, TACKLE
-;	dbw 1, FORESIGHT
-;	dbw 6, QUICK_ATTACK
-;	dbw 11, DOUBLE_TEAM
-;	dbw 14, SONICBOOM
-;	dbw 17, DETECT
-;	dbw 22, SUPERSONIC
-;	dbw 27, HYPER_VOICE
-;	dbw 30, PURSUIT
-;	dbw 33, ANCIENTPOWER
-;	dbw 38, HYPNOSIS
-;	dbw 43, POWER_GEM
-;	dbw 46, NASTY_PLOT
-;	dbw 49, SIGNAL_BEAM
-;	dbw 54, AIR_SLASH
-;	dbw 57, BUG_BUZZ
-;	db 0 ; no more level-up moves
+YanmegaEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, FORESIGHT
+	dbw 6, QUICK_ATTACK
+	dbw 11, DOUBLE_TEAM
+	dbw 14, SONICBOOM
+	dbw 17, DETECT
+	dbw 22, SUPERSONIC
+	dbw 27, HYPER_VOICE
+	dbw 30, PURSUIT
+	dbw 33, ANCIENTPOWER
+	dbw 38, HYPNOSIS
+	dbw 43, POWER_GEM
+	dbw 46, NASTY_PLOT
+	dbw 49, SIGNAL_BEAM
+	dbw 54, AIR_SLASH
+	dbw 57, BUG_BUZZ
+	db 0 ; no more level-up moves

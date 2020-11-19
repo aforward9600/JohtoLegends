@@ -263,3 +263,4 @@ PokemonNames::
 	db "Sylveon@@@"
 	db "Ambipom@@@"
 	db "Lickilicky"
+	db "Yanmega@@@"

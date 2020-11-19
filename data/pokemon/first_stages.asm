@@ -260,3 +260,4 @@ FirstEvoStages::
 	dw EEVEE
 	dw AIPOM
 	dw LICKITUNG
+	dw YANMA

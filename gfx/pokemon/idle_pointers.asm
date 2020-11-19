@@ -259,3 +259,4 @@ AnimationIdlePointers:
 	dw SylveonAnimationIdle
 	dw AmbipomAnimationIdle
 	dw LickilickyAnimationIdle
+	dw YanmegaAnimationIdle

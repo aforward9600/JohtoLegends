@@ -261,3 +261,4 @@ MonMenuIcons:
 	db ICON_FOX         ; SYLVEON
 	db ICON_MONSTER     ; AMBIPOM
 	db ICON_MONSTER     ; LICKILICKY
+	db ICON_BUG         ; YANMEGA

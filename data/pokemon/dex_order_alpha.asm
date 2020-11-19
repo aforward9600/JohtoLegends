@@ -259,5 +259,6 @@ AlphabeticalPokedexOrder:
 	dw WOOPER
 	dw XATU
 	dw YANMA
+	dw YANMEGA
 	dw ZAPDOS
 	dw ZUBAT

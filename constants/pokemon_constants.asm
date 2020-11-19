@@ -280,6 +280,7 @@ JOHTO_POKEMON EQU const_value
 	const SYLVEON
 	const AMBIPOM
 	const LICKILICKY
+	const YANMEGA
 NUM_POKEMON EQU const_value + -1
 
 EGG EQU -3

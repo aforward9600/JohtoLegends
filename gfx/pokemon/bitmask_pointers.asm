@@ -259,3 +259,4 @@ BitmasksPointers:
 	dw SylveonBitmasks
 	dw AmbipomBitmasks
 	dw LickilickyBitmasks
+	dw YanmegaBitmasks
