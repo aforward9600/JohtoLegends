@@ -113,6 +113,7 @@ EvosAttacksPointers2::
 	dw YanmegaEvosAttacks
 	dw TogekissEvosAttacks
 	dw MamoswineEvosAttacks
+	dw TangrowthEvosAttacks
 
 ChikoritaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, BAYLEEF
@@ -2246,4 +2247,27 @@ MamoswineEvosAttacks:
 	dbw 51, EARTHQUAKE
 	dbw 58, ICICLE_CRASH
 	dbw 65, THRASH
+	db 0 ; no more level-up moves
+
+TangrowthEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, CONSTRICT
+	dbw 4, SLEEP_POWDER
+	dbw 7, VINE_WHIP
+	dbw 10, ABSORB
+	dbw 14, POISONPOWDER
+	dbw 17, BIND
+	dbw 20, GROWTH
+	dbw 23, MEGA_DRAIN
+	dbw 27, FAINT_ATTACK
+	dbw 30, STUN_SPORE
+	dbw 33, SYNTHESIS
+	dbw 36, GIGA_DRAIN
+	dbw 40, POWER_GEM
+	dbw 43, SLAM
+	dbw 46, ROCK_SLIDE
+	dbw 49, SWORDS_DANCE
+	dbw 50, AMNESIA
+	dbw 53, POWER_WHIP
+	dbw 56, STONE_EDGE
 	db 0 ; no more level-up moves

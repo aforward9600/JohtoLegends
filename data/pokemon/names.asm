@@ -266,3 +266,4 @@ PokemonNames::
 	db "Yanmega@@@"
 	db "Togekiss@@"
 	db "Mamoswine@"
+	db "Tangrowth@"

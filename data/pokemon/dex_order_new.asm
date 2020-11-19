@@ -185,6 +185,7 @@ NewPokedexOrder:
 	dw LICKITUNG
 	dw LICKILICKY
 	dw TANGELA
+	dw TANGROWTH
 	dw EEVEE
 	dw VAPOREON
 	dw JOLTEON

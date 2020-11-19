@@ -262,3 +262,4 @@ AnimationIdlePointers:
 	dw YanmegaAnimationIdle
 	dw TogekissAnimationIdle
 	dw MamoswineAnimationIdle
+	dw TangrowthAnimationIdle

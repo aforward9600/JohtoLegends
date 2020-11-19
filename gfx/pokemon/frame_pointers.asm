@@ -262,3 +262,4 @@ FramesPointers:
 	dba YanmegaFrames
 	dba TogekissFrames
 	dba MamoswineFrames
+	dba TangrowthFrames

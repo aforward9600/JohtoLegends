@@ -539,3 +539,5 @@ PokemonPicPointers::
 	dba TogekissBackpic
 	dba MamoswineFrontpic
 	dba MamoswineBackpic
+	dba TangrowthFrontpic
+	dba TangrowthBackpic

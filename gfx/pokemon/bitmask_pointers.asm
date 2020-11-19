@@ -262,3 +262,4 @@ BitmasksPointers:
 	dw YanmegaBitmasks
 	dw TogekissBitmasks
 	dw MamoswineBitmasks
+	dw TangrowthBitmasks

@@ -264,3 +264,4 @@ MonMenuIcons:
 	db ICON_BUG         ; YANMEGA
 	db ICON_BIRD        ; TOGEKISS
 	db ICON_EQUINE      ; MAMOSWINE
+	db ICON_ODDISH      ; TANGROWTH

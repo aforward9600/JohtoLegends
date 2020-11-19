@@ -263,3 +263,4 @@ FirstEvoStages::
 	dw YANMA
 	dw TOGEPI
 	dw SWINUB
+	dw TANGELA

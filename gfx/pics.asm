@@ -741,3 +741,5 @@ SECTION "Pics 25", ROMX
 
 MamoswineFrontpic:   INCBIN "gfx/pokemon/mamoswine/front.animated.2bpp.lz"
 MamoswineBackpic:    INCBIN "gfx/pokemon/mamoswine/back.2bpp.lz"
+TangrowthFrontpic:   INCBIN "gfx/pokemon/tangrowth/front.animated.2bpp.lz"
+TangrowthBackpic:    INCBIN "gfx/pokemon/tangrowth/back.2bpp.lz"

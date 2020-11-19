@@ -268,3 +268,4 @@ PokemonCries::
 	mon_cry CRY_TOTODILE,    $031,  $0c8 ; YANMEGA
 	mon_cry CRY_TOGETIC,     $03b,  $038 ; TOGEKISS
 	mon_cry CRY_MAGCARGO,   -$109,  $100 ; MAMOSWINE
+	mon_cry CRY_GOLEM,       $000,  $100 ; TANGROWTH

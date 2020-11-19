@@ -262,3 +262,4 @@ AnimationPointers:
 	dw YanmegaAnimation
 	dw TogekissAnimation
 	dw MamoswineAnimation
+	dw TangrowthAnimation

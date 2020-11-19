@@ -556,3 +556,5 @@ INCLUDE "gfx/pokemon/togekiss/normal.pal"
 INCLUDE "gfx/pokemon/togekiss/shiny.pal"
 INCBIN "gfx/pokemon/mamoswine/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/mamoswine/shiny.pal"
+INCBIN "gfx/pokemon/tangrowth/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/tangrowth/shiny.pal"

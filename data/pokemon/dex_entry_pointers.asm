@@ -263,3 +263,4 @@ PokedexDataPointerTable:
 	dba YanmegaPokedexEntry
 	dba TogekissPokedexEntry
 	dba MamoswinePokedexEntry
+	dba TangrowthPokedexEntry
