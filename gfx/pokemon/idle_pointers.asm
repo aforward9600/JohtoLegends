@@ -260,3 +260,5 @@ AnimationIdlePointers:
 	dw AmbipomAnimationIdle
 	dw LickilickyAnimationIdle
 	dw YanmegaAnimationIdle
+	dw TogekissAnimationIdle
+	dw MamoswineAnimationIdle

@@ -260,3 +260,5 @@ BitmasksPointers:
 	dw AmbipomBitmasks
 	dw LickilickyBitmasks
 	dw YanmegaBitmasks
+	dw TogekissBitmasks
+	dw MamoswineBitmasks

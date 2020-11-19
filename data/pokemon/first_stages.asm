@@ -261,3 +261,5 @@ FirstEvoStages::
 	dw AIPOM
 	dw LICKITUNG
 	dw YANMA
+	dw TOGEPI
+	dw SWINUB

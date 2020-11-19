@@ -48,6 +48,7 @@ NewPokedexOrder:
 	dw WIGGLYTUFF
 	dw TOGEPI
 	dw TOGETIC
+	dw TOGEKISS
 	dw SANDSHREW
 	dw SANDSLASH
 	dw EKANS
@@ -200,6 +201,7 @@ NewPokedexOrder:
 	dw DELIBIRD
 	dw SWINUB
 	dw PILOSWINE
+	dw MAMOSWINE
 	dw TEDDIURSA
 	dw URSARING
 	dw PHANPY

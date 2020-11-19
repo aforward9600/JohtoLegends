@@ -111,6 +111,8 @@ EvosAttacksPointers2::
 	dw AmbipomEvosAttacks
 	dw LickilickyEvosAttacks
 	dw YanmegaEvosAttacks
+	dw TogekissEvosAttacks
+	dw MamoswineEvosAttacks
 
 ChikoritaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, BAYLEEF
@@ -581,6 +583,7 @@ TogepiEvosAttacks:
 	db 0 ; no more level-up moves
 
 TogeticEvosAttacks:
+	dbbw EVOLVE_ITEM, SHINY_STONE, TOGEKISS
 	db 0 ; no more evolutions
 	dbw 1, FAIRY_WIND
 	dbw 1, GROWL
@@ -1472,6 +1475,7 @@ SwinubEvosAttacks:
 	db 0 ; no more level-up moves
 
 PiloswineEvosAttacks:
+	dbbw EVOLVE_ITEM, ICE_STONE, MAMOSWINE
 	db 0 ; no more evolutions
 	dbw 1, ICE_FANG
 	dbw 1, TACKLE
@@ -2214,4 +2218,32 @@ YanmegaEvosAttacks:
 	dbw 49, SIGNAL_BEAM
 	dbw 54, AIR_SLASH
 	dbw 57, BUG_BUZZ
+	db 0 ; no more level-up moves
+
+TogekissEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, EXTREMESPEED
+	dbw 1, AIR_SLASH
+	dbw 1, SKY_ATTACK
+	dbw 55, AURA_SPHERE
+	db 0 ; no more level-up moves
+
+MamoswineEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, ICE_FANG
+	dbw 1, TACKLE
+	dbw 1, MUD_SLAP
+	dbw 5, POWDER_SNOW
+	dbw 10, FLAIL
+	dbw 15, ICE_SHARD
+	dbw 20, MIST
+	dbw 25, ENDURE
+	dbw 30, BULLDOZE
+	dbw 34, DOUBLE_HIT_M
+	dbw 37, AMNESIA
+	dbw 40, ANCIENTPOWER
+	dbw 44, TAKE_DOWN
+	dbw 51, EARTHQUAKE
+	dbw 58, ICICLE_CRASH
+	dbw 65, THRASH
 	db 0 ; no more level-up moves

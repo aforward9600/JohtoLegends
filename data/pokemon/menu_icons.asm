@@ -262,3 +262,5 @@ MonMenuIcons:
 	db ICON_MONSTER     ; AMBIPOM
 	db ICON_MONSTER     ; LICKILICKY
 	db ICON_BUG         ; YANMEGA
+	db ICON_BIRD        ; TOGEKISS
+	db ICON_EQUINE      ; MAMOSWINE

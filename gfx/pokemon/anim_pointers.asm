@@ -260,3 +260,5 @@ AnimationPointers:
 	dw AmbipomAnimation
 	dw LickilickyAnimation
 	dw YanmegaAnimation
+	dw TogekissAnimation
+	dw MamoswineAnimation

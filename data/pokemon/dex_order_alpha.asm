@@ -129,6 +129,7 @@ AlphabeticalPokedexOrder:
 	dw MAGMAR
 	dw MAGNEMITE
 	dw MAGNETON
+	dw MAMOSWINE
 	dw MANKEY
 	dw MANTINE
 	dw MAREEP
@@ -233,6 +234,7 @@ AlphabeticalPokedexOrder:
 	dw TEDDIURSA
 	dw TENTACOOL
 	dw TENTACRUEL
+	dw TOGEKISS
 	dw TOGEPI
 	dw TOGETIC
 	dw TOTODILE

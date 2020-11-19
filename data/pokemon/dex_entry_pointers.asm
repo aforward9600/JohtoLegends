@@ -261,3 +261,5 @@ PokedexDataPointerTable:
 	dba AmbipomPokedexEntry
 	dba LickilickyPokedexEntry
 	dba YanmegaPokedexEntry
+	dba TogekissPokedexEntry
+	dba MamoswinePokedexEntry

@@ -1,4 +1,4 @@
-	db "HAPPINESS@" ; species name
+	db "Happiness@" ; species name
 	dw 200, 70 ; height, weight
 
 	db   "Although it does"

@@ -264,3 +264,5 @@ PokemonNames::
 	db "Ambipom@@@"
 	db "Lickilicky"
 	db "Yanmega@@@"
+	db "Togekiss@@"
+	db "Mamoswine@"

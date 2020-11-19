@@ -266,3 +266,5 @@ PokemonCries::
 	mon_cry CRY_AIPOM,      -$051,  $0e8 ; AMBIPOM
 	mon_cry CRY_SEEL,        $000,  $100 ; LICKILICKY
 	mon_cry CRY_TOTODILE,    $031,  $0c8 ; YANMEGA
+	mon_cry CRY_TOGETIC,     $03b,  $038 ; TOGEKISS
+	mon_cry CRY_MAGCARGO,   -$109,  $100 ; MAMOSWINE

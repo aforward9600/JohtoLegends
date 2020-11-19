@@ -535,3 +535,7 @@ PokemonPicPointers::
 	dba LickilickyBackpic
 	dba YanmegaFrontpic
 	dba YanmegaBackpic
+	dba TogekissFrontpic
+	dba TogekissBackpic
+	dba MamoswineFrontpic
+	dba MamoswineBackpic

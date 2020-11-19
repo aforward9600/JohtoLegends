@@ -260,3 +260,5 @@ FramesPointers:
 	dba AmbipomFrames
 	dba LickilickyFrames
 	dba YanmegaFrames
+	dba TogekissFrames
+	dba MamoswineFrames
