@@ -1,4 +1,4 @@
-	db "WEED@" ; species name
+	db "Weed@" ; species name
 	dw 207, 190 ; height, weight
 
 	db   "The smell from its"

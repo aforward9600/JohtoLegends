@@ -1,4 +1,4 @@
-	db "SUN@" ; species name
+	db "Sun@" ; species name
 	dw 211, 580 ; height, weight
 
 	db   "The tip of its"

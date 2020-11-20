@@ -1,4 +1,4 @@
-	db "DUCK@" ; species name
+	db "Duck@" ; species name
 	dw 507, 1690 ; height, weight
 
 	db   "It swims grace-"

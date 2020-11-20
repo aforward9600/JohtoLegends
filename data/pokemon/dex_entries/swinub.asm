@@ -1,4 +1,4 @@
-	db "PIG@" ; species name
+	db "Pig@" ; species name
 	dw 104, 140 ; height, weight
 
 	db   "It uses the tip of"

@@ -1,4 +1,4 @@
-	db "SLUDGE@" ; species name
+	db "Sludge@" ; species name
 	dw 311, 660 ; height, weight
 
 	db   "As it moves, a"

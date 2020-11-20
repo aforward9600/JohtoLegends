@@ -1,8 +1,8 @@
-	db "TRANSPORT@" ; species name
+	db "Transport@" ; species name
 	dw 802, 4850 ; height, weight
 
 	db   "This gentle"
-	next "#MON loves to"
+	next "#mon loves to"
 	next "give people rides"
 
 	page "and provides a ve-"

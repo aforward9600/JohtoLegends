@@ -1,4 +1,4 @@
-	db "DIVING@" ; species name
+	db "Diving@" ; species name
 	dw 1701, 4760 ; height, weight
 
 	db   "It has an incred-"
@@ -6,5 +6,5 @@
 	next "calm raging sto-"
 
 	page "rms. It is said"
-	next "that LUGIA appears"
+	next "that Lugia appears"
 	next "when storms start.@"

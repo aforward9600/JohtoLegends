@@ -1,4 +1,4 @@
-	db "NEW SPECIE@" ; species name
+	db "New Specie@" ; species name
 	dw 104, 90 ; height, weight
 
 	db   "Because it can"
@@ -7,4 +7,4 @@
 
 	page "research to see if"
 	next "it is the ancestor"
-	next "of all #MON.@"
+	next "of all #mon.@"

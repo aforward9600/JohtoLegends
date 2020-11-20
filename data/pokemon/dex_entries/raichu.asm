@@ -1,4 +1,4 @@
-	db "MOUSE@" ; species name
+	db "Mouse@" ; species name
 	dw 207, 660 ; height, weight
 
 	db   "If its electric"

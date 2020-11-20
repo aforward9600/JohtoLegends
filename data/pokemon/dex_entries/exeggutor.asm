@@ -1,4 +1,4 @@
-	db "COCONUT@" ; species name
+	db "Coconut@" ; species name
 	dw 607, 2650 ; height, weight
 
 	db   "Living in a good"
@@ -7,4 +7,4 @@
 
 	page "heads. A head that"
 	next "drops off becomes"
-	next "an EXEGGCUTE.@"
+	next "an Exeggcute.@"

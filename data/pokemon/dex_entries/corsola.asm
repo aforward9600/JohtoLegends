@@ -1,4 +1,4 @@
-	db "CORAL@" ; species name
+	db "Coral@" ; species name
 	dw 200, 110 ; height, weight
 
 	db   "The points on its"

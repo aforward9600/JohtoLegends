@@ -1,4 +1,4 @@
-	db "BAT@" ; species name
+	db "Bat@" ; species name
 	dw 503, 1210 ; height, weight
 
 	db   "When it plunges"

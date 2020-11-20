@@ -1,4 +1,4 @@
-	db "DOPEY@" ; species name
+	db "Dopey@" ; species name
 	dw 311, 790 ; height, weight
 
 	db   "It is always so"

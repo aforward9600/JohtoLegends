@@ -1,4 +1,4 @@
-	db "LAVA@" ; species name
+	db "Lava@" ; species name
 	dw 204, 770 ; height, weight
 
 	db   "These group to-"

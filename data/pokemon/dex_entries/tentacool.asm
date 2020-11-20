@@ -1,4 +1,4 @@
-	db "JELLYFISH@" ; species name
+	db "Jellyfish@" ; species name
 	dw 211, 1000 ; height, weight
 
 	db   "As it floats along"

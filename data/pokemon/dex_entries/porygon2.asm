@@ -1,9 +1,9 @@
-	db "VIRTUAL@" ; species name
+	db "Virtual@" ; species name
 	dw 200, 720 ; height, weight
 
 	db   "This manmade"
-	next "#MON evolved"
-	next "from the latest"
+	next "#mon evolved"
+	next "from stolen"
 
 	page "technology. It"
 	next "may have unprog-"

@@ -1,4 +1,4 @@
-	db "MOLD@" ; species name
+	db "Mold@" ; species name
 	dw 200, 450 ; height, weight
 
 	db   "The fluid secreted"
@@ -6,5 +6,5 @@
 	next "holes in rocks for"
 
 	page "nesting and can be"
-	next "mixed with BERRIES"
+	next "mixed with berries"
 	next "to make a drink.@"

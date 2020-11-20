@@ -1,4 +1,4 @@
-	db "POISON GAS@" ; species name
+	db "Poison Gas@" ; species name
 	dw 311, 210 ; height, weight
 
 	db   "When it inhales"

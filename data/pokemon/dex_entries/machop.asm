@@ -1,4 +1,4 @@
-	db "SUPERPOWER@" ; species name
+	db "Superpower@" ; species name
 	dw 207, 430 ; height, weight
 
 	db   "It trains by"
@@ -6,5 +6,5 @@
 	next "the mountains. It"
 
 	page "can even pick up a"
-	next "GRAVELER with"
+	next "Graveler with"
 	next "ease.@"

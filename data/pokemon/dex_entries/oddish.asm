@@ -1,4 +1,4 @@
-	db "WEED@" ; species name
+	db "Weed@" ; species name
 	dw 108, 120 ; height, weight
 
 	db   "During the day, it"

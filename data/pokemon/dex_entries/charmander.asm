@@ -1,4 +1,4 @@
-	db "LIZARD@" ; species name
+	db "Lizard@" ; species name
 	dw 200, 190 ; height, weight
 
 	db   "If it's healthy,"

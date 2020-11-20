@@ -1,8 +1,8 @@
-	db "AURORA@" ; species name
+	db "Aurora@" ; species name
 	dw 607, 4120 ; height, weight
 
 	db   "This divine"
-	next "#MON blows"
+	next "#mon blows"
 	next "around the world,"
 
 	page "always in search"

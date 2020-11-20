@@ -1,4 +1,4 @@
-	db "BALLOON@" ; species name
+	db "Balloon@" ; species name
 	dw 108, 120 ; height, weight
 
 	db   "It rolls its cute"

@@ -1,4 +1,4 @@
-	db "HIBERNANT@" ; species name
+	db "Hibernant@" ; species name
 	dw 511, 2770 ; height, weight
 
 	db   "Although it has a"

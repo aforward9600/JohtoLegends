@@ -1,4 +1,4 @@
-	db "KISS@" ; species name
+	db "Kiss@" ; species name
 	dw 104, 130 ; height, weight
 
 	db   "The sensitivity of"

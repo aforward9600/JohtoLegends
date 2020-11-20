@@ -1,4 +1,4 @@
-	db "LONG NOSE@" ; species name
+	db "Long Nose@" ; species name
 	dw 108, 740 ; height, weight
 
 	db   "During the desert-"

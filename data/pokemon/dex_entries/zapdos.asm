@@ -1,8 +1,8 @@
-	db "ELECTRIC@" ; species name
+	db "Electric@" ; species name
 	dw 503, 1160 ; height, weight
 
 	db   "Legendary bird"
-	next "#MON. They say"
+	next "#mon. They say"
 	next "lightning caused"
 
 	page "by the flapping of"

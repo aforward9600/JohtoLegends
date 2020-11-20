@@ -1,8 +1,8 @@
-	db "FLYCATCHER@" ; species name
+	db "Flycatcher@" ; species name
 	dw 507, 340 ; height, weight
 
 	db   "Once ingested into"
-	next "this #MON's"
+	next "this #mon's"
 	next "body, even the"
 
 	page "hardest object"

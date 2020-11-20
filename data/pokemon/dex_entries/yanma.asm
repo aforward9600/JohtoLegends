@@ -1,4 +1,4 @@
-	db "CLEAR WING@" ; species name
+	db "Clear Wing@" ; species name
 	dw 311, 840 ; height, weight
 
 	db   "It can see in all"

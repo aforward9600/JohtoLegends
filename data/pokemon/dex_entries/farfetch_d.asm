@@ -1,4 +1,4 @@
-	db "WILD DUCK@" ; species name
+	db "Wild Duck@" ; species name
 	dw 207, 330 ; height, weight
 
 	db   "In order to pre-"
@@ -7,4 +7,4 @@
 
 	page "people have made"
 	next "an effort to breed"
-	next "these #MON.@"
+	next "these #mon.@"

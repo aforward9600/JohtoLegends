@@ -1,4 +1,4 @@
-	db "WOOL@" ; species name
+	db "Wool@" ; species name
 	dw 200, 170 ; height, weight
 
 	db   "It stores lots of"

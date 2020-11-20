@@ -1,4 +1,4 @@
-	db "BIG HORN@" ; species name
+	db "Big Horn@" ; species name
 	dw 407, 1570 ; height, weight
 
 	db   "The round balls"

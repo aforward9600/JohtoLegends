@@ -1,4 +1,4 @@
-	db "VOLCANO@" ; species name
+	db "Volcano@" ; species name
 	dw 211, 420 ; height, weight
 
 	db   "Before battle, it"

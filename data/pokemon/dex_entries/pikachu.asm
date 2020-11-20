@@ -1,4 +1,4 @@
-	db "MOUSE@" ; species name
+	db "Mouse@" ; species name
 	dw 104, 130 ; height, weight
 
 	db   "When it is anger-"

@@ -1,4 +1,4 @@
-	db "JET@" ; species name
+	db "Jet@" ; species name
 	dw 200, 260 ; height, weight
 
 	db   "To escape from an"

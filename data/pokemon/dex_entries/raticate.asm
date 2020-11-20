@@ -1,4 +1,4 @@
-	db "RAT@" ; species name
+	db "Rat@" ; species name
 	dw 204, 410 ; height, weight
 
 	db   "The webs on its"

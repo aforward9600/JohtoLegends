@@ -1,4 +1,4 @@
-	db "SNAKE@" ; species name
+	db "Snake@" ; species name
 	dw 607, 150 ; height, weight
 
 	db   "It flutters the"

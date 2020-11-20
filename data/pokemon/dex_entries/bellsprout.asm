@@ -1,4 +1,4 @@
-	db "FLOWER@" ; species name
+	db "Flower@" ; species name
 	dw 204, 90 ; height, weight
 
 	db   "If it notices"

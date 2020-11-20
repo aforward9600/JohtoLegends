@@ -1,4 +1,4 @@
-	db "MYSTIC@" ; species name
+	db "Mystic@" ; species name
 	dw 411, 330 ; height, weight
 
 	db   "Once it begins to"

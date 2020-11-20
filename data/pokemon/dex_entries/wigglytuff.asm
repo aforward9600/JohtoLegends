@@ -1,4 +1,4 @@
-	db "BALLOON@" ; species name
+	db "Balloon@" ; species name
 	dw 303, 260 ; height, weight
 
 	db   "The rich, fluffy"

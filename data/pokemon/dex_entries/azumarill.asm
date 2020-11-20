@@ -1,4 +1,4 @@
-	db "AQUARABBIT@" ; species name
+	db "AquaRabbit@" ; species name
 	dw 207, 630 ; height, weight
 
 	db   "The bubble-like"

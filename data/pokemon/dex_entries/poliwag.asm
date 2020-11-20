@@ -1,4 +1,4 @@
-	db "TADPOLE@" ; species name
+	db "Tadpole@" ; species name
 	dw 200, 270 ; height, weight
 
 	db   "The swirl on its"

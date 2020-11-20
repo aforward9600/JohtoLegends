@@ -1,4 +1,4 @@
-	db "TRIPLEBIRD@" ; species name
+	db "Triplebird@" ; species name
 	dw 511, 1880 ; height, weight
 
 	db   "An enemy that"

@@ -1,8 +1,8 @@
-	db "VOLCANO@" ; species name
+	db "Volcano@" ; species name
 	dw 607, 4370 ; height, weight
 
 	db   "This brawny"
-	next "#MON courses"
+	next "#mon courses"
 	next "around the earth,"
 
 	page "spouting flames"

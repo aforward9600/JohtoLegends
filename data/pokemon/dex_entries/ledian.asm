@@ -1,4 +1,4 @@
-	db "FIVE STAR@" ; species name
+	db "Five Star@" ; species name
 	dw 407, 780 ; height, weight
 
 	db   "In the daytime"

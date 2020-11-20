@@ -1,4 +1,4 @@
-	db "BALL@" ; species name
+	db "Ball@" ; species name
 	dw 311, 1470 ; height, weight
 
 	db   "The more energy it"

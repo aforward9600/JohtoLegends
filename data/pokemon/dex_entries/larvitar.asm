@@ -1,9 +1,9 @@
-	db "ROCK SKIN@" ; species name
+	db "Rock Skin@" ; species name
 	dw 200, 1590 ; height, weight
 
 	db   "Born deep under-"
 	next "ground, this"
-	next "#MON becomes a"
+	next "#Mon becomes a"
 
 	page "pupa after eating"
 	next "enough dirt to"

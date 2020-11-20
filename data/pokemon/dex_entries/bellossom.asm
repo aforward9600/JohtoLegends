@@ -1,4 +1,4 @@
-	db "FLOWER@" ; species name
+	db "Flower@" ; species name
 	dw 104, 130 ; height, weight
 
 	db   "When these dance"

@@ -1,4 +1,4 @@
-	db "SEA LION@" ; species name
+	db "Sea Lion@" ; species name
 	dw 307, 1980 ; height, weight
 
 	db   "The light blue fur"

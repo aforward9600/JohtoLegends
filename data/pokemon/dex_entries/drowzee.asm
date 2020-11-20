@@ -1,4 +1,4 @@
-	db "HYPNOSIS@" ; species name
+	db "Hypnosis@" ; species name
 	dw 303, 710 ; height, weight
 
 	db   "When it twitches"

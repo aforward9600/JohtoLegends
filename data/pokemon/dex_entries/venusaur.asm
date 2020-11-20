@@ -1,4 +1,4 @@
-	db "SEED@" ; species name
+	db "Seed@" ; species name
 	dw 607, 2210 ; height, weight
 
 	db   "As it warms it-"

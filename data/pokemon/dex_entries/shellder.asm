@@ -1,4 +1,4 @@
-	db "BIVALVE@" ; species name
+	db "Bivalve@" ; species name
 	dw 100, 90 ; height, weight
 
 	db   "Clamping on to an"
