@@ -286,6 +286,9 @@ JOHTO_POKEMON EQU const_value
 	const TANGROWTH
 	const MAGNEZONE
 	const PORYGON_Z
+	const GLISCOR
+	const WEAVILE
+	const ELECTIVIRE
 NUM_POKEMON EQU const_value + -1
 
 EGG EQU -3

@@ -160,6 +160,7 @@ NewPokedexOrder:
 	dw JYNX
 	dw ELEKID
 	dw ELECTABUZZ
+	dw ELECTIVIRE
 	dw MR__MIME
 	dw SMEARGLE
 	dw FARFETCH_D
@@ -200,6 +201,7 @@ NewPokedexOrder:
 	dw SEADRA
 	dw KINGDRA
 	dw GLIGAR
+	dw GLISCOR
 	dw DELIBIRD
 	dw SWINUB
 	dw PILOSWINE
@@ -227,6 +229,7 @@ NewPokedexOrder:
 	dw SLUGMA
 	dw MAGCARGO
 	dw SNEASEL
+	dw WEAVILE
 	dw MISDREAVUS
 	dw MISMAGIUS
 	dw PORYGON

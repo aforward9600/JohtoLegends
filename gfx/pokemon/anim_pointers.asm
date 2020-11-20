@@ -265,3 +265,6 @@ AnimationPointers:
 	dw TangrowthAnimation
 	dw MagnezoneAnimation
 	dw PorygonZAnimation
+	dw GliscorAnimation
+	dw WeavileAnimation
+	dw ElectivireAnimation

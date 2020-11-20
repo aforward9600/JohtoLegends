@@ -836,7 +836,6 @@ UnusedSfx:
 	musicheader 4, 5, UnusedSfx_Ch5
 	musicheader 1, 6, UnusedSfx_Ch6
 	musicheader 1, 7, UnusedSfx_Ch7
-	musicheader 1, 8, UnusedSfx_Ch8
 
 UnusedSfx_Ch5:
 	togglesfx
@@ -899,14 +898,6 @@ UnusedSfx_Ch7:
 	intensity $35
 	note A_, 3
 	note __, 9
-	endchannel
-
-UnusedSfx_Ch8:
-	togglesfx
-	sfxtogglenoise $4
-	notetype $c
-	note C_, 16
-	note __, 16
 	endchannel
 
 Sfx_Fanfare:

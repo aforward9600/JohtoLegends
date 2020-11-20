@@ -266,3 +266,6 @@ PokedexDataPointerTable:
 	dba TangrowthPokedexEntry
 	dba MagnezonePokedexEntry
 	dba PorygonZPokedexEntry
+	dba GliscorPokedexEntry
+	dba WeavilePokedexEntry
+	dba ElectivirePokedexEntry

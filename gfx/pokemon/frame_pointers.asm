@@ -265,3 +265,6 @@ FramesPointers:
 	dba TangrowthFrames
 	dba MagnezoneFrames
 	dba PorygonZFrames
+	dba GliscorFrames
+	dba WeavileFrames
+	dba ElectivireFrames

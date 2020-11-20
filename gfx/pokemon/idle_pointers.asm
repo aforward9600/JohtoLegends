@@ -265,3 +265,6 @@ AnimationIdlePointers:
 	dw TangrowthAnimationIdle
 	dw MagnezoneAnimationIdle
 	dw PorygonZAnimationIdle
+	dw GliscorAnimationIdle
+	dw WeavileAnimationIdle
+	dw ElectivireAnimationIdle

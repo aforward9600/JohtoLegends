@@ -192,8 +192,6 @@ INCLUDE "engine/items/pack_kris.asm"
 INCLUDE "engine/events/move_tutor.asm"
 INCLUDE "engine/gfx/crystal_layouts.asm"
 INCLUDE "engine/events/celebi.asm"
-INCLUDE "mobile/mobile_menu.asm"
-INCLUDE "engine/pokemon/search.asm"
 
 
 SECTION "bank13", ROMX
@@ -660,6 +658,8 @@ INCLUDE "data/items/names.asm"
 INCLUDE "engine/items/print_item_description.asm"
 INCLUDE "data/moves/names.asm"
 INCLUDE "engine/overworld/landmarks.asm"
+INCLUDE "mobile/mobile_menu.asm"
+INCLUDE "engine/pokemon/search.asm"
 
 
 SECTION "bank77", ROMX

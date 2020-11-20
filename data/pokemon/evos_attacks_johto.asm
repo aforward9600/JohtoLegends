@@ -116,6 +116,9 @@ EvosAttacksPointers2::
 	dw TangrowthEvosAttacks
 	dw MagnezoneEvosAttacks
 	dw PorygonZEvosAttacks
+	dw GliscorEvosAttacks
+	dw WeavileEvosAttacks
+	dw ElectivireEvosAttacks
 
 ChikoritaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, BAYLEEF
@@ -1195,6 +1198,7 @@ DunsparceEvosAttacks:
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
+	dbbw EVOLVE_ITEM, RAZOR_FANG, GLISCOR
 	db 0 ; no more evolutions
 	dbw 1, POISON_STING
 	dbw 4, SAND_ATTACK
@@ -1360,6 +1364,7 @@ HeracrossEvosAttacks:
 	db 0 ; no more level-up moves
 
 SneaselEvosAttacks:
+	dbbw EVOLVE_ITEM, RAZOR_CLAW, WEAVILE
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, LEER
@@ -2319,4 +2324,65 @@ PorygonZEvosAttacks:
 	dbw 62, ZAP_CANNON
 	dbw 67, HYPER_BEAM
 	dbw 70, NASTY_PLOT
+	db 0 ; no more level-up moves
+
+GliscorEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, POISON_STING
+	dbw 4, SAND_ATTACK
+	dbw 7, HARDEN
+	dbw 10, FAINT_ATTACK
+	dbw 13, QUICK_ATTACK
+	dbw 16, FURY_CUTTER
+	dbw 19, BULLDOZE
+	dbw 22, AERIAL_ACE
+	dbw 27, SLASH
+	dbw 30, NIGHT_SLASH
+	dbw 35, SCREECH
+	dbw 40, X_SCISSOR
+	dbw 45, BRICK_BREAK
+	dbw 50, SWORDS_DANCE
+	dbw 55, GUILLOTINE
+	dbw 60, EARTHQUAKE
+	db 0 ; no more level-up moves
+
+WeavileEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 8, QUICK_ATTACK
+	dbw 10, FAINT_ATTACK
+	dbw 14, ICE_SHARD
+	dbw 16, FURY_SWIPES
+	dbw 20, AGILITY
+	dbw 22, METAL_CLAW
+	dbw 25, HONE_CLAWS
+	dbw 28, THIEF
+	dbw 32, SCREECH
+	dbw 35, NIGHT_SLASH
+	dbw 40, PAYBACK
+	dbw 44, ICICLE_CRASH
+	dbw 47, DARK_PULSE
+	db 0 ; no more level-up moves
+
+ElectivireEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, CROSS_CHOP
+	dbw 1, QUICK_ATTACK
+	dbw 1, LEER
+	dbw 1, THUNDERSHOCK
+	dbw 8, LOW_KICK
+	dbw 12, SWIFT
+	dbw 15, SPARK
+	dbw 19, THUNDER_WAVE
+	dbw 22, CHARGE_BEAM
+	dbw 26, LIGHT_SCREEN
+	dbw 29, THUNDERPUNCH
+	dbw 30, CROSS_CHOP
+	dbw 36, DISCHARGE
+	dbw 42, SCREECH
+	dbw 49, THUNDERBOLT
+	dbw 55, VOLT_TACKLE
+	dbw 62, GIGA_IMPACT
+	dbw 65, CLOSE_COMBAT
 	db 0 ; no more level-up moves

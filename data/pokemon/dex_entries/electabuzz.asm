@@ -1,8 +1,8 @@
-	db "ELECTRIC@" ; species name
+	db "Electric@" ; species name
 	dw 307, 660 ; height, weight
 
 	db   "When two"
-	next "ELECTABUZZ touch,"
+	next "Electabuzz touch,"
 	next "they control the"
 
 	page "electric currents"

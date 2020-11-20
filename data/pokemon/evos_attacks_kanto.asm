@@ -2543,6 +2543,7 @@ JynxEvosAttacks:
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
+	dbbw EVOLVE_ITEM, ELECTIRIZER, ELECTIVIRE
 	db 0 ; no more evolutions
 	dbw 1, CROSS_CHOP
 	dbw 1, QUICK_ATTACK

@@ -265,3 +265,6 @@ BitmasksPointers:
 	dw TangrowthBitmasks
 	dw MagnezoneBitmasks
 	dw PorygonZBitmasks
+	dw GliscorBitmasks
+	dw WeavileBitmasks
+	dw ElectivireBitmasks

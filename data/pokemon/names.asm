@@ -269,3 +269,6 @@ PokemonNames::
 	db "Tangrowth@"
 	db "Magnezone@"
 	db "Porygon-Z@"
+	db "Gliscor@@@"
+	db "Weavile@@@"
+	db "Electivire"

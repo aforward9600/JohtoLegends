@@ -266,3 +266,6 @@ FirstEvoStages::
 	dw TANGELA
 	dw MAGNEMITE
 	dw PORYGON
+	dw GLIGAR
+	dw SNEASEL
+	dw ELEKID

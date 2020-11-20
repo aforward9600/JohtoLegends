@@ -545,3 +545,9 @@ PokemonPicPointers::
 	dba MagnezoneBackpic
 	dba PorygonZFrontpic
 	dba PorygonZBackpic
+	dba GliscorFrontpic
+	dba GliscorBackpic
+	dba WeavileFrontpic
+	dba WeavileBackpic
+	dba ElectivireFrontpic
+	dba ElectivireBackpic

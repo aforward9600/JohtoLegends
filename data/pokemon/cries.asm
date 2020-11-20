@@ -271,3 +271,6 @@ PokemonCries::
 	mon_cry CRY_GOLEM,       $000,  $100 ; TANGROWTH
 	mon_cry CRY_METAPOD,     $020,  $140 ; MAGNEZONE
 	mon_cry CRY_GIRAFARIG,   $073,  $240 ; PORYGON_Z
+	mon_cry CRY_GLIGAR,     -$102,  $100 ; GLISCOR
+	mon_cry CRY_WOOPER,      $053,  $0af ; WEAVILE
+	mon_cry CRY_VOLTORB,     $08f,  $17f ; ELECTIVIRE
