@@ -268,3 +268,4 @@ AnimationPointers:
 	dw GliscorAnimation
 	dw WeavileAnimation
 	dw ElectivireAnimation
+	dw MagmortarAnimation

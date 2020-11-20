@@ -268,3 +268,4 @@ FramesPointers:
 	dba GliscorFrames
 	dba WeavileFrames
 	dba ElectivireFrames
+	dba MagmortarFrames

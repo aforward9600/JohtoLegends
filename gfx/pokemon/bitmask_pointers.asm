@@ -268,3 +268,4 @@ BitmasksPointers:
 	dw GliscorBitmasks
 	dw WeavileBitmasks
 	dw ElectivireBitmasks
+	dw MagmortarBitmasks

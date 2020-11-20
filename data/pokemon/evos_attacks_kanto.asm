@@ -2564,6 +2564,7 @@ ElectabuzzEvosAttacks:
 	db 0 ; no more level-up moves
 
 MagmarEvosAttacks:
+	dbbw EVOLVE_ITEM, MAGMARIZER, MAGMORTAR
 	db 0 ; no more evolutions
 	dbw 1, EMBER
 	dbw 1, LEER

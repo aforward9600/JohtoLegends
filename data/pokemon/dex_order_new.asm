@@ -156,6 +156,7 @@ NewPokedexOrder:
 	dw MILTANK
 	dw MAGBY
 	dw MAGMAR
+	dw MAGMORTAR
 	dw SMOOCHUM
 	dw JYNX
 	dw ELEKID

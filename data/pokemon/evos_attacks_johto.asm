@@ -119,6 +119,7 @@ EvosAttacksPointers2::
 	dw GliscorEvosAttacks
 	dw WeavileEvosAttacks
 	dw ElectivireEvosAttacks
+	dw MagmortarEvosAttacks
 
 ChikoritaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, BAYLEEF
@@ -2385,4 +2386,24 @@ ElectivireEvosAttacks:
 	dbw 55, VOLT_TACKLE
 	dbw 62, GIGA_IMPACT
 	dbw 65, CLOSE_COMBAT
+	db 0 ; no more level-up moves
+
+MagmortarEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, EMBER
+	dbw 1, LEER
+	dbw 1, SMOG
+	dbw 5, EMBER
+	dbw 8, SMOKESCREEN
+	dbw 12, FAINT_ATTACK
+	dbw 15, FIRE_SPIN
+	dbw 19, SLUDGE
+	dbw 22, FLAME_BURST
+	dbw 26, CONFUSE_RAY
+	dbw 29, FIRE_PUNCH
+	dbw 36, BLAZE_KICK
+	dbw 42, SUNNY_DAY
+	dbw 49, FLAMETHROWER
+	dbw 55, FIRE_BLAST
+	dbw 62, AURA_SPHERE
 	db 0 ; no more level-up moves

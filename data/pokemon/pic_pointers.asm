@@ -551,3 +551,5 @@ PokemonPicPointers::
 	dba WeavileBackpic
 	dba ElectivireFrontpic
 	dba ElectivireBackpic
+	dba MagmortarFrontpic
+	dba MagmortarBackpic

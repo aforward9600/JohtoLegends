@@ -269,3 +269,4 @@ FirstEvoStages::
 	dw GLIGAR
 	dw SNEASEL
 	dw ELEKID
+	dw MAGBY

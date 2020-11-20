@@ -269,3 +269,4 @@ PokedexDataPointerTable:
 	dba GliscorPokedexEntry
 	dba WeavilePokedexEntry
 	dba ElectivirePokedexEntry
+	dba MagmortarPokedexEntry
