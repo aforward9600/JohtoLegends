@@ -570,3 +570,5 @@ INCBIN "gfx/pokemon/electivire/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/electivire/shiny.pal"
 INCBIN "gfx/pokemon/magmortar/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/magmortar/shiny.pal"
+INCBIN "gfx/pokemon/rhyperior/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/rhyperior/shiny.pal"

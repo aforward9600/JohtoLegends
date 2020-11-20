@@ -223,6 +223,7 @@ NewPokedexOrder:
 	dw KANGASKHAN
 	dw RHYHORN
 	dw RHYDON
+	dw RHYPERIOR
 	dw MURKROW
 	dw HONCHKROW
 	dw HOUNDOUR

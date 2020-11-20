@@ -199,6 +199,7 @@ AlphabeticalPokedexOrder:
 	dw REMORAID
 	dw RHYDON
 	dw RHYHORN
+	dw RHYPERIOR
 	dw SANDSHREW
 	dw SANDSLASH
 	dw SCIZOR

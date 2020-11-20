@@ -290,6 +290,7 @@ JOHTO_POKEMON EQU const_value
 	const WEAVILE
 	const ELECTIVIRE
 	const MAGMORTAR
+	const RHYPERIOR
 NUM_POKEMON EQU const_value + -1
 
 EGG EQU -3

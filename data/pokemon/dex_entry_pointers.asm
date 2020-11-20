@@ -270,3 +270,4 @@ PokedexDataPointerTable:
 	dba WeavilePokedexEntry
 	dba ElectivirePokedexEntry
 	dba MagmortarPokedexEntry
+	dba RhyperiorPokedexEntry

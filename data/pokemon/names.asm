@@ -273,3 +273,4 @@ PokemonNames::
 	db "Weavile@@@"
 	db "Electivire"
 	db "Magmortar@"
+	db "Rhyperior@"

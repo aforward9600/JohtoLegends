@@ -269,3 +269,4 @@ AnimationIdlePointers:
 	dw WeavileAnimationIdle
 	dw ElectivireAnimationIdle
 	dw MagmortarAnimationIdle
+	dw RhyperiorAnimationIdle

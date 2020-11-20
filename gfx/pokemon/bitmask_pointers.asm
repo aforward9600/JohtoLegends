@@ -269,3 +269,4 @@ BitmasksPointers:
 	dw WeavileBitmasks
 	dw ElectivireBitmasks
 	dw MagmortarBitmasks
+	dw RhyperiorBitmasks

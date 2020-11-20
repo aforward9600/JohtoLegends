@@ -269,3 +269,4 @@ FramesPointers:
 	dba WeavileFrames
 	dba ElectivireFrames
 	dba MagmortarFrames
+	dba RhyperiorFrames

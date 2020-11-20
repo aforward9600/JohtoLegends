@@ -270,3 +270,4 @@ FirstEvoStages::
 	dw SNEASEL
 	dw ELEKID
 	dw MAGBY
+	dw RHYHORN

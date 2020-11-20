@@ -2281,6 +2281,7 @@ RhyhornEvosAttacks:
 	db 0 ; no more level-up moves
 
 RhydonEvosAttacks:
+	dbbw EVOLVE_ITEM, PROTECTOR, RHYPERIOR
 	db 0 ; no more evolutions
 	dbw 1, HAMMER_ARM
 	dbw 1, HORN_ATTACK
@@ -2859,9 +2860,9 @@ AerodactylEvosAttacks:
 	dbw 41, TAKE_DOWN
 	dbw 49, FLY
 	dbw 57, IRON_HEAD
-	dbw 65, HYPER_BEAM
-	dbw 73, ROCK_SLIDE
-	dbw 81, GIGA_IMPACT
+	dbw 65, ROCK_SLIDE
+	dbw 73, GIGA_IMPACT
+	dbw 81, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 SnorlaxEvosAttacks:

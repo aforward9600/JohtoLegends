@@ -120,6 +120,7 @@ EvosAttacksPointers2::
 	dw WeavileEvosAttacks
 	dw ElectivireEvosAttacks
 	dw MagmortarEvosAttacks
+	dw RhyperiorEvosAttacks
 
 ChikoritaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, BAYLEEF
@@ -2406,4 +2407,25 @@ MagmortarEvosAttacks:
 	dbw 49, FLAMETHROWER
 	dbw 55, FIRE_BLAST
 	dbw 62, AURA_SPHERE
+	db 0 ; no more level-up moves
+
+RhyperiorEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, HORN_ATTACK
+	dbw 1, TAIL_WHIP
+	dbw 5, FURY_ATTACK
+	dbw 9, SCARY_FACE
+	dbw 13, ROCK_TOMB
+	dbw 17, STOMP
+	dbw 21, BULLDOZE
+	dbw 25, BODY_SLAM
+	dbw 29, ROCK_BLAST
+	dbw 33, DRILL_RUN
+	dbw 37, TAKE_DOWN
+	dbw 41, STONE_EDGE
+	dbw 42, HAMMER_ARM
+	dbw 48, EARTHQUAKE
+	dbw 55, MEGAHORN
+	dbw 62, HORN_DRILL
+	dbw 69, ROCK_WRECKER
 	db 0 ; no more level-up moves

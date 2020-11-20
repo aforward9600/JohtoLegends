@@ -275,3 +275,4 @@ PokemonCries::
 	mon_cry CRY_WOOPER,      $053,  $0af ; WEAVILE
 	mon_cry CRY_VOLTORB,     $08f,  $17f ; ELECTIVIRE
 	mon_cry CRY_CHARMANDER,  $0ff,  $0b0 ; MAGMORTAR
+	mon_cry CRY_RHYDON,      $000,  $100 ; RHYPERIOR
