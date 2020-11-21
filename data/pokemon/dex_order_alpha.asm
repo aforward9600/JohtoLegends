@@ -12,6 +12,7 @@ AlphabeticalPokedexOrder:
 	dw ARIADOS
 	dw ARTICUNO
 	dw AZUMARILL
+	dw BAGON
 	dw BAYLEEF
 	dw BEEDRILL
 	dw BELLOSSOM
@@ -208,6 +209,7 @@ AlphabeticalPokedexOrder:
 	dw SEAKING
 	dw SEEL
 	dw SENTRET
+	dw SHELGON
 	dw SHELLDER
 	dw SHUCKLE
 	dw SKARMINI

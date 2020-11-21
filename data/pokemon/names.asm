@@ -274,3 +274,5 @@ PokemonNames::
 	db "Electivire"
 	db "Magmortar@"
 	db "Rhyperior@"
+	db "Bagon@@@@@"
+	db "Shelgon@@@"

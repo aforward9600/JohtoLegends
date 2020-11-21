@@ -555,3 +555,7 @@ PokemonPicPointers::
 	dba MagmortarBackpic
 	dba RhyperiorFrontpic
 	dba RhyperiorBackpic
+	dba BagonFrontpic
+	dba BagonBackpic
+	dba ShelgonFrontpic
+	dba ShelgonBackpic

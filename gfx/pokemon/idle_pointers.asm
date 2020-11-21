@@ -270,3 +270,5 @@ AnimationIdlePointers:
 	dw ElectivireAnimationIdle
 	dw MagmortarAnimationIdle
 	dw RhyperiorAnimationIdle
+	dw BagonAnimationIdle
+	dw ShelgonAnimationIdle

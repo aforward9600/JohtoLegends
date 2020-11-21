@@ -271,3 +271,5 @@ PokedexDataPointerTable:
 	dba ElectivirePokedexEntry
 	dba MagmortarPokedexEntry
 	dba RhyperiorPokedexEntry
+	dba BagonPokedexEntry
+	dba ShelgonPokedexEntry

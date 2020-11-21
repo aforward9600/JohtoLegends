@@ -270,3 +270,5 @@ AnimationPointers:
 	dw ElectivireAnimation
 	dw MagmortarAnimation
 	dw RhyperiorAnimation
+	dw BagonAnimation
+	dw ShelgonAnimation

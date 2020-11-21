@@ -271,3 +271,5 @@ FirstEvoStages::
 	dw ELEKID
 	dw MAGBY
 	dw RHYHORN
+	dw BAGON
+	dw BAGON

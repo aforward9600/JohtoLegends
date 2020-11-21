@@ -270,3 +270,5 @@ BitmasksPointers:
 	dw ElectivireBitmasks
 	dw MagmortarBitmasks
 	dw RhyperiorBitmasks
+	dw BagonBitmasks
+	dw ShelgonBitmasks

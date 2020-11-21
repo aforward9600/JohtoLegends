@@ -267,6 +267,8 @@ NewPokedexOrder:
 	dw LARVITAR
 	dw PUPITAR
 	dw TYRANITAR
+	dw BAGON
+	dw SHELGON
 	dw LUGIA
 	dw HO_OH
 	dw MEWTWO

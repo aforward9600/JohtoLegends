@@ -270,3 +270,5 @@ FramesPointers:
 	dba ElectivireFrames
 	dba MagmortarFrames
 	dba RhyperiorFrames
+	dba BagonFrames
+	dba ShelgonFrames
