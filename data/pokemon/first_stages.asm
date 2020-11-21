@@ -274,3 +274,4 @@ FirstEvoStages::
 	dw BAGON
 	dw BAGON
 	dw BAGON
+	dw MISSINGNO

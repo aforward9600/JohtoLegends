@@ -1196,7 +1196,7 @@ JohtoGrassWildMons:
 	dbw 2, BAGON
 	dbw 2, SHELGON
 	dbw 3, SALAMENCE
-	dbw 3, SENTRET
+	dbw 3, MISSINGNO
 	dbw 2, RATTATA
 	dbw 3, HOPPIP
 	dbw 3, HOPPIP
@@ -1204,7 +1204,7 @@ JohtoGrassWildMons:
 	dbw 2, BAGON
 	dbw 2, SHELGON
 	dbw 3, SALAMENCE
-	dbw 3, SENTRET
+	dbw 3, MISSINGNO
 	dbw 2, RATTATA
 	dbw 3, HOPPIP
 	dbw 3, HOPPIP
@@ -1212,7 +1212,7 @@ JohtoGrassWildMons:
 	dbw 2, BAGON
 	dbw 2, SHELGON
 	dbw 3, SALAMENCE
-	dbw 3, RATTATA
+	dbw 3, MISSINGNO
 	dbw 2, RATTATA
 	dbw 3, HOOTHOOT
 	dbw 3, HOOTHOOT

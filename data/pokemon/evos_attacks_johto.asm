@@ -124,6 +124,7 @@ EvosAttacksPointers2::
 	dw BagonEvosAttacks
 	dw ShelgonEvosAttacks
 	dw SalamenceEvosAttacks
+	dw MissingnoEvosAttacks
 
 ChikoritaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, BAYLEEF
@@ -2486,4 +2487,12 @@ SalamenceEvosAttacks:
 	dbw 50, FLY
 	dbw 63, DOUBLE_EDGE
 	dbw 69, OUTRAGE
+	db 0 ; no more level-up moves
+
+MissingnoEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, HYDRO_PUMP
+	dbw 1, HURRICANE
+	dbw 1, BRAVE_BIRD
+	dbw 1, GIGA_IMPACT
 	db 0 ; no more level-up moves

@@ -259,7 +259,7 @@ PokemonCries::
 	mon_cry CRY_AMPHAROS,    $8a9,  $096 ; SKARMINI
 	mon_cry CRY_HOOTHOOT,    $130,  $0e8 ; MISMAGIUS
 	mon_cry CRY_MARILL,     -$01f,  $180 ; HONCHKROW
-	mon_cry CRY_MAGCARGO,    $0a1,  $0e8 ; CORSOLA
+	mon_cry CRY_MAGCARGO,    $0a1,  $0e8 ; CURSOLA
 	mon_cry CRY_VENONAT,     $010,  $0a0 ; LEAFEON
 	mon_cry CRY_VENONAT,    -$0e9,  $0f0 ; GLACEON
 	mon_cry CRY_VENONAT,     $0aa,  $17f ; SYLVEON
@@ -279,3 +279,4 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,  -$050,  $0bc ; BAGON
 	mon_cry CRY_BULBASAUR,  -$04a,  $0c9 ; SHELGON
 	mon_cry CRY_BULBASAUR,  -$03c,  $140 ; SALAMENCE
+	mon_cry CRY_DROWZEE,     $000,  $000 ; MISSINGNO

@@ -1701,8 +1701,6 @@ NEXTU ; d002
 ; movement buffer data
 wMovementBufferCount:: db
 wMovementBufferObject:: db
-wUnusedMovementBufferBank:: db
-wUnusedMovementBufferPointer:: dw
 wMovementBuffer:: ds 55
 
 NEXTU ; d002

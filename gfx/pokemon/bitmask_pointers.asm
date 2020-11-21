@@ -273,3 +273,4 @@ BitmasksPointers:
 	dw BagonBitmasks
 	dw ShelgonBitmasks
 	dw SalamenceBitmasks
+	dw MissingnoBitmasks

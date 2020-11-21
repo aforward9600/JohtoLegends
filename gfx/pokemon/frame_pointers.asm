@@ -273,3 +273,4 @@ FramesPointers:
 	dba BagonFrames
 	dba ShelgonFrames
 	dba SalamenceFrames
+	dba MissingnoFrames

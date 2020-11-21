@@ -148,6 +148,7 @@ AlphabeticalPokedexOrder:
 	dw MILTANK
 	dw MISDREAVUS
 	dw MISMAGIUS
+	dw MISSINGNO
 	dw MOLTRES
 	dw MR__MIME
 	dw MUK

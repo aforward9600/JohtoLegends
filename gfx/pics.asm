@@ -763,3 +763,8 @@ ShelgonFrontpic:     INCBIN "gfx/pokemon/shelgon/front.animated.2bpp.lz"
 ShelgonBackpic:      INCBIN "gfx/pokemon/shelgon/back.2bpp.lz"
 SalamenceFrontpic:   INCBIN "gfx/pokemon/salamence/front.animated.2bpp.lz"
 SalamenceBackpic:    INCBIN "gfx/pokemon/salamence/back.2bpp.lz"
+
+
+SECTION "Pics 26", ROMX
+MissingnoFrontpic:   INCBIN "gfx/pokemon/missingno/front.animated.2bpp.lz"
+MissingnoBackpic:    INCBIN "gfx/pokemon/missingno/back.2bpp.lz"

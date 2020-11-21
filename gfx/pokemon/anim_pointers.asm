@@ -273,3 +273,4 @@ AnimationPointers:
 	dw BagonAnimation
 	dw ShelgonAnimation
 	dw SalamenceAnimation
+	dw MissingnoAnimation
