@@ -167,10 +167,6 @@ Gen2ToGen1LinkComms:
 	ld [de], a
 	ld hl, wTimeCapsulePartyMon1Species
 	call Function2868a
-	ld a, LOW(wOTPartyMonOT)
-	ld [wUnusedD102], a
-	ld a, HIGH(wOTPartyMonOT)
-	ld [wUnusedD102 + 1], a
 	ld de, MUSIC_NONE
 	call PlayMusic
 	ldh a, [hSerialConnectionStatus]
@@ -416,10 +412,6 @@ Gen2ToGen2LinkComms:
 	call CopyBytes
 	call Link_FixOTParty_Gen2
 	jp c, LinkTimeout ;we got garbage, so just pretend we're disconnected
-	ld a, LOW(wOTPartyMonOT)
-	ld [wUnusedD102], a
-	ld a, HIGH(wOTPartyMonOT)
-	ld [wUnusedD102 + 1], a
 	ld de, MUSIC_NONE
 	call PlayMusic
 	ldh a, [hSerialConnectionStatus]

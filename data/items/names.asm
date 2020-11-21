@@ -245,5 +245,6 @@ ItemNames::
 	db "TM67@"
 	db "TM68@"
 	db "TM69@"
+	db "TM70@"
 	db "HM01@"
 	db "?@"

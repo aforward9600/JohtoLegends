@@ -32,7 +32,7 @@ rept 3 ; TM49-TM63 + HM01-HM07 + MT01-MT02 (24/24)
 	db _tms3 & $ff
 _tms3 = _tms3 >> 8
 endr
-rept 1 ; MT03
+rept 2 ; MT03
 	db _tms4 & $ff
 _tms4 = _tms4 >> 8
 endr
@@ -42,9 +42,9 @@ BaseData::
 	; the parameter to indirect_table must be a compile-time constant, and BASE_DATA_SIZE is not
 	if ((__RGBDS_MAJOR__ << 24) | (__RGBDS_MINOR__ << 8) | __RGBDS_PATCH__) >= $400
 		; if this version of RGBDS supports asserts, just assert that the size is correct
-		assert $1c == BASE_DATA_SIZE, "Please adjust the table size (and this assertion) to match BASE_DATA_SIZE"
+		assert $1d == BASE_DATA_SIZE, "Please adjust the table size (and this assertion) to match BASE_DATA_SIZE"
 	endc
-	indirect_table $1c, 1
+	indirect_table $1d, 1
 	indirect_entries NUM_POKEMON, BaseData1
 	indirect_table_end
 

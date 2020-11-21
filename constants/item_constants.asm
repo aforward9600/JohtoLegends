@@ -263,6 +263,7 @@ ENDM
 	add_tm SWORDS_DANCE
 	add_tm WILL_O_WISP
 	add_tm POISON_JAB
+	add_tm VENOSHOCK
 	add_tm GIGA_IMPACT
 NUM_TMS EQU const_value - TM01
 
@@ -290,8 +291,14 @@ ENDM
 	add_mt THUNDERPUNCH
 	add_mt ICE_PUNCH
 	add_mt PIXIE_PUNCH
+	add_mt DRAIN_PUNCH
 	add_mt STEEL_SLICE
 	add_mt EXTREMESPEED
+	add_mt STRENGTH_SAP
+	add_mt GYRO_BALL
+	add_mt ICICLE_CRASH
+	add_mt MOONBLAST
+	add_mt HYPNOSIS
 NUM_TM_HM_TUTOR EQU __enum__ + -1
 
 USE_SCRIPT_VAR EQU $00

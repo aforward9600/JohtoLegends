@@ -1982,7 +1982,6 @@ wMailboxEnd:: ; d0fe
 ENDU ; d100
 
 wListPointer:: dw ; d100
-wUnusedD102:: dw ; d102
 wItemAttributesPtr:: dw ; d104
 
 wCurItem:: db ; d106

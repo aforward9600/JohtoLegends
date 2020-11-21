@@ -139,7 +139,7 @@ NewBarkTownElmsHouseSign:
 	jumptext NewBarkTownElmsHouseSignText
 
 NewBarkTownTMBodySlam:
-	itemball PROTECTOR
+	itemball TM_VENOSHOCK
 
 Movement_TeacherRunsToYou1_NBT:
 	step LEFT
