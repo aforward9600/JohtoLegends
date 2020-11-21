@@ -123,6 +123,7 @@ EvosAttacksPointers2::
 	dw RhyperiorEvosAttacks
 	dw BagonEvosAttacks
 	dw ShelgonEvosAttacks
+	dw SalamenceEvosAttacks
 
 ChikoritaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, BAYLEEF
@@ -2451,6 +2452,7 @@ BagonEvosAttacks:
 	db 0 ; no more level-up moves
 
 ShelgonEvosAttacks:
+	dbbw EVOLVE_LEVEL, 50, SALAMENCE
 	db 0 ; no more evolutions
 	dbw 1, RAGE
 	dbw 4, EMBER
@@ -2465,4 +2467,23 @@ ShelgonEvosAttacks:
 	dbw 42, SCARY_FACE
 	dbw 49, FLAMETHROWER
 	dbw 56, DOUBLE_EDGE
+	db 0 ; no more level-up moves
+
+SalamenceEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, RAGE
+	dbw 4, EMBER
+	dbw 7, LEER
+	dbw 10, BITE
+	dbw 13, DRACO_FANG
+	dbw 17, HEADBUTT
+	dbw 21, FOCUS_ENERGY
+	dbw 25, CRUNCH
+	dbw 32, DRAGON_CLAW
+	dbw 35, ZEN_HEADBUTT
+	dbw 42, SCARY_FACE
+	dbw 49, FLAMETHROWER
+	dbw 50, FLY
+	dbw 63, DOUBLE_EDGE
+	dbw 69, OUTRAGE
 	db 0 ; no more level-up moves

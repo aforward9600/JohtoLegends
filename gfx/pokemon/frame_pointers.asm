@@ -272,3 +272,4 @@ FramesPointers:
 	dba RhyperiorFrames
 	dba BagonFrames
 	dba ShelgonFrames
+	dba SalamenceFrames

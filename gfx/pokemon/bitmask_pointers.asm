@@ -272,3 +272,4 @@ BitmasksPointers:
 	dw RhyperiorBitmasks
 	dw BagonBitmasks
 	dw ShelgonBitmasks
+	dw SalamenceBitmasks

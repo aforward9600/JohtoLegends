@@ -276,3 +276,4 @@ PokemonNames::
 	db "Rhyperior@"
 	db "Bagon@@@@@"
 	db "Shelgon@@@"
+	db "Salamence@"

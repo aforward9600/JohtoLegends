@@ -269,6 +269,7 @@ NewPokedexOrder:
 	dw TYRANITAR
 	dw BAGON
 	dw SHELGON
+	dw SALAMENCE
 	dw LUGIA
 	dw HO_OH
 	dw MEWTWO

@@ -274,3 +274,4 @@ MonMenuIcons:
 	db ICON_MONSTER     ; RHYPERIOR
 	db ICON_BIGMON      ; BAGON
 	db ICON_BIGMON      ; SHELGON
+	db ICON_BIGMON      ; SALAMENCE

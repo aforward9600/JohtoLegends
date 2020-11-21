@@ -201,6 +201,7 @@ AlphabeticalPokedexOrder:
 	dw RHYDON
 	dw RHYHORN
 	dw RHYPERIOR
+	dw SALAMENCE
 	dw SANDSHREW
 	dw SANDSLASH
 	dw SCIZOR

@@ -278,3 +278,4 @@ PokemonCries::
 	mon_cry CRY_RHYDON,      $000,  $100 ; RHYPERIOR
 	mon_cry CRY_BULBASAUR,  -$050,  $0bc ; BAGON
 	mon_cry CRY_BULBASAUR,  -$04a,  $0c9 ; SHELGON
+	mon_cry CRY_BULBASAUR,  -$03c,  $140 ; SALAMENCE

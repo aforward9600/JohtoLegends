@@ -559,3 +559,5 @@ PokemonPicPointers::
 	dba BagonBackpic
 	dba ShelgonFrontpic
 	dba ShelgonBackpic
+	dba SalamenceFrontpic
+	dba SalamenceBackpic

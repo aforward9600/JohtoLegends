@@ -272,3 +272,4 @@ AnimationPointers:
 	dw RhyperiorAnimation
 	dw BagonAnimation
 	dw ShelgonAnimation
+	dw SalamenceAnimation

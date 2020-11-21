@@ -1195,7 +1195,7 @@ JohtoGrassWildMons:
 	; morn
 	dbw 2, BAGON
 	dbw 2, SHELGON
-	dbw 3, PIDGEY
+	dbw 3, SALAMENCE
 	dbw 3, SENTRET
 	dbw 2, RATTATA
 	dbw 3, HOPPIP
@@ -1203,7 +1203,7 @@ JohtoGrassWildMons:
 	; day
 	dbw 2, BAGON
 	dbw 2, SHELGON
-	dbw 3, PIDGEY
+	dbw 3, SALAMENCE
 	dbw 3, SENTRET
 	dbw 2, RATTATA
 	dbw 3, HOPPIP
@@ -1211,7 +1211,7 @@ JohtoGrassWildMons:
 	; nite
 	dbw 2, BAGON
 	dbw 2, SHELGON
-	dbw 3, HOOTHOOT
+	dbw 3, SALAMENCE
 	dbw 3, RATTATA
 	dbw 2, RATTATA
 	dbw 3, HOOTHOOT

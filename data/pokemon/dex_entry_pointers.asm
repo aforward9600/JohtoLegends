@@ -273,3 +273,4 @@ PokedexDataPointerTable:
 	dba RhyperiorPokedexEntry
 	dba BagonPokedexEntry
 	dba ShelgonPokedexEntry
+	dba SalamencePokedexEntry

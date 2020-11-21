@@ -273,3 +273,4 @@ FirstEvoStages::
 	dw RHYHORN
 	dw BAGON
 	dw BAGON
+	dw BAGON

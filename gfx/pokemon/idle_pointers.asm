@@ -272,3 +272,4 @@ AnimationIdlePointers:
 	dw RhyperiorAnimationIdle
 	dw BagonAnimationIdle
 	dw ShelgonAnimationIdle
+	dw SalamenceAnimationIdle

@@ -293,6 +293,7 @@ JOHTO_POKEMON EQU const_value
 	const RHYPERIOR
 	const BAGON
 	const SHELGON
+	const SALAMENCE
 NUM_POKEMON EQU const_value + -1
 
 EGG EQU -3
