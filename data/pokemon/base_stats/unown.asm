@@ -1,6 +1,6 @@
 	db 0 ; species ID placeholder
 
-	db  48,  72,  48,  48,  72,  48
+	db  84, 126,  84,  84, 126,  84
 	;   hp  atk  def  spd  sat  sdf
 
 	db PSYCHIC, PSYCHIC ; type
@@ -14,5 +14,5 @@
 	dn EGG_NONE, EGG_NONE ; egg groups
 
 	; tm/hm learnset
-	tmhm
+	tmhm HIDDEN_POWER
 	; end

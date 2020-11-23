@@ -428,9 +428,9 @@ LedianEvosAttacks:
 	dbw 29, BATON_PASS
 	dbw 33, AGILITY
 	dbw 38, BUG_BUZZ
-	dbw 42, AIR_SLASH
+	dbw 42, AURA_SPHERE
 	dbw 47, DOUBLE_EDGE
-	dbw 50, AURA_SPHERE
+	dbw 50, CLOSE_COMBAT
 	db 0 ; no more level-up moves
 
 SpinarakEvosAttacks:
@@ -792,8 +792,9 @@ SudowoodoEvosAttacks:
 	dbw 40, EARTHQUAKE
 	dbw 43, DOUBLE_EDGE
 	dbw 47, STONE_EDGE
-	dbw 50, HAMMER_ARM
-	dbw 54, ROCK_WRECKER
+	dbw 50, WOOD_HAMMER
+	dbw 54, HAMMER_ARM
+	dbw 58, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 PolitoedEvosAttacks:
@@ -1135,7 +1136,7 @@ GirafarigEvosAttacks:
 	db 0 ; no more level-up moves
 
 PinecoEvosAttacks:
-	dbbw EVOLVE_LEVEL, 31, FORRETRESS
+	dbbw EVOLVE_LEVEL, 25, FORRETRESS
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, PROTECT
@@ -1164,8 +1165,8 @@ ForretressEvosAttacks:
 	dbw 17, RAPID_SPIN
 	dbw 20, REVERSAL
 	dbw 23, SUBSTITUTE
+	dbw 25, MIRROR_SHOT
 	dbw 28, SPIKES
-	dbw 31, MIRROR_SHOT
 	dbw 32, PAYBACK
 	dbw 36, EXPLOSION
 	dbw 42, IRON_DEFENSE
@@ -1306,7 +1307,7 @@ QwilfishEvosAttacks:
 	dbw 45, AQUA_TAIL
 	dbw 49, POISON_JAB
 	dbw 53, DESTINY_BOND
-	dbw 57, HYDRO_PUMP
+	dbw 57, GUNK_SHOT
 	dbw 60, LEECH_LIFE
 	db 0 ; no more level-up moves
 
@@ -1500,6 +1501,7 @@ PiloswineEvosAttacks:
 	dbw 20, MIST
 	dbw 25, ENDURE
 	dbw 30, BULLDOZE
+	dbw 33, ICE_FANG
 	dbw 37, AMNESIA
 	dbw 40, ANCIENTPOWER
 	dbw 44, TAKE_DOWN

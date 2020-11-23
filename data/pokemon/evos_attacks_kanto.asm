@@ -1776,7 +1776,7 @@ DewgongEvosAttacks:
 	dbw 27, AURORA_BEAM
 	dbw 31, BUBBLEBEAM
 	dbw 33, WATER_PULSE
-	dbw 34, AVALANCHE
+	dbw 34, SHEER_COLD
 	dbw 39, TAKE_DOWN
 	dbw 45, WATERFALL
 	dbw 49, AQUA_TAIL
@@ -2253,7 +2253,7 @@ WeezingEvosAttacks:
 	dbw 26, HAZE
 	dbw 29, GYRO_BALL
 	dbw 34, SLUDGE_BOMB
-	dbw 35, TOXIC
+	dbw 35, DOUBLE_HIT_M
 	dbw 40, EXPLOSION
 	dbw 46, DESTINY_BOND
 	dbw 51, SLUDGE_WAVE
@@ -2401,7 +2401,7 @@ SeadraEvosAttacks:
 	db 0 ; no more level-up moves
 
 GoldeenEvosAttacks:
-	dbbw EVOLVE_LEVEL, 33, SEAKING
+	dbbw EVOLVE_LEVEL, 22, SEAKING
 	db 0 ; no more evolutions
 	dbw 1, PECK
 	dbw 1, TAIL_WHIP
@@ -2428,10 +2428,10 @@ SeakingEvosAttacks:
 	dbw 13, FLAIL
 	dbw 16, AQUA_JET
 	dbw 21, WATER_PULSE
-	dbw 24, FURY_ATTACK
-	dbw 29, AGILITY
-	dbw 32, WATERFALL
-	dbw 33, POISON_JAB
+	dbw 22, WATERFALL
+	dbw 26, FURY_ATTACK
+	dbw 31, AGILITY
+	dbw 35, POISON_JAB
 	dbw 40, HORN_DRILL
 	dbw 46, AQUA_TAIL
 	dbw 54, MEGAHORN
