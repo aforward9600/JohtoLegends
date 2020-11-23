@@ -166,6 +166,7 @@ ItemNames::
 	db "Protector@"
 	db "Steel Dagger@"
 	db "Royal Rock@"
+	db "Scyther Call@"
 	db "Brick Piece@"
 	db "Surf Mail@"
 	db "Litebluemail@"

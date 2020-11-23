@@ -23,7 +23,7 @@ OverworldSprites:
 	overworld_sprite DaisySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ElmSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite WillSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
-	overworld_sprite FalknerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite WalkerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite WhitneySpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite BugsySpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite MortySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN

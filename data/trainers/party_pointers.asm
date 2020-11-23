@@ -2,7 +2,7 @@
 
 TrainerGroups:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
-	dba FalknerGroup
+	dba WalkerGroup
 	dba WhitneyGroup
 	dba BugsyGroup
 	dba MortyGroup

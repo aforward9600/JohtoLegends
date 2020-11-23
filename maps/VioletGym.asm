@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const VIOLETGYM_FALKNER
+	const VIOLETGYM_WALKER
 	const VIOLETGYM_YOUNGSTER1
 	const VIOLETGYM_YOUNGSTER2
 	const VIOLETGYM_GYM_GUY
@@ -9,19 +9,23 @@ VioletGym_MapScripts:
 
 	db 0 ; callbacks
 
-VioletGymFalknerScript:
+VioletGymWalkerScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_FALKNER
 	iftrue .FightDone
-	writetext FalknerIntroText
+	writetext WalkerIntroText
 	waitbutton
 	closetext
-	winlosstext FalknerWinLossText, 0
-	loadtrainer FALKNER, FALKNER1
+	winlosstext WalkerWinLossText, 0
+	loadtrainer WALKER, WALKER1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_FALKNER
+	opentext
+	writetext BeatenWalkerText
+	waitbutton
+	closetext
 	opentext
 	writetext ReceivedZephyrBadgeText
 	playsound SFX_GET_BADGE
@@ -36,20 +40,20 @@ VioletGymFalknerScript:
 	setevent EVENT_BEAT_BIRD_KEEPER_ABE
 	setmapscene ELMS_LAB, SCENE_ELMSLAB_NOTHING
 	specialphonecall SPECIALCALL_ASSISTANT
-	writetext FalknerZephyrBadgeText
+	writetext WalkerZephyrBadgeText
 	buttonsound
 	verbosegiveitem TM_ROOST
-	iffalse .NoRoomForMudSlap
+	iffalse .NoRoomForRoost
 	setevent EVENT_GOT_TM31_MUD_SLAP
-	writetext FalknerTMMudSlapText
+	writetext WalkerTMRoostText
 	waitbutton
 	closetext
 	end
 
 .SpeechAfterTM:
-	writetext FalknerFightDoneText
+	writetext WalkerFightDoneText
 	waitbutton
-.NoRoomForMudSlap:
+.NoRoomForRoost:
 	closetext
 	end
 
@@ -107,68 +111,90 @@ VioletGymStatue:
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	gettrainername STRING_BUFFER_4, FALKNER, FALKNER1
+	gettrainername STRING_BUFFER_4, WALKER, WALKER1
 	jumpstd gymstatue2
 
-FalknerIntroText:
-	text "I'm FALKNER, the"
-	line "VIOLET #MON GYM"
-	cont "leader!"
+WalkerIntroText:
+	text "I am Walker, "
+	line "Leader of the"
+	cont "Violet City Gym."
 
-	para "People say you can"
-	line "clip flying-type"
+	para "My birds and I"
+	line "yearn to be free"
 
-	para "#MON's wings"
-	line "with a jolt of"
-	cont "electricity…"
+	para "to soar and expore"
+	line "the world, but I"
 
-	para "I won't allow such"
-	line "insults to bird"
-	cont "#MON!"
+	para "had to put those"
+	line "dreams on hold. My"
+	cont "wife is expecting"
 
-	para "I'll show you the"
-	line "real power of the"
+	para "our child, and I"
+	line "cannot abandon"
+	cont "them. I will train"
 
-	para "magnificent bird"
-	line "#MON!"
+	para "my child to take"
+	line "my place so I may"
+	cont "fulfill my dream!"
+	
+	para "Until that day, I"
+	line "will battle all"
+	cont "challengers with"
+	
+	para "all my strength!"
 	done
 
-FalknerWinLossText:
-	text "…Darn! My dad's"
-	line "cherished bird"
-	cont "#MON…"
+WalkerWinLossText:
+	text "We have fallen,"
+	line "but we shall rise"
+	cont "again!"
+	done
 
-	para "All right."
-	line "Take this."
-
-	para "It's the official"
-	line "#MON LEAGUE"
-	cont "ZEPHYRBADGE."
+BeatenWalkerText:
+	text "I see now."
+	line "Although I cannot"
+	cont "leave here yet, I"
+	
+	para "feel that battles"
+	line "are the key to our"
+	cont "freedom!"
+	
+	para "The soaring sensa-"
+	line "tion, not knowing"
+	cont "if you'll win or"
+	
+	para "lose until the"
+	line "end. It's"
+	cont "invigorating."
+	
+	para "Thank you for that"
+	line "battle. Here, take"
+	cont "this ZephyrBadge!"
 	done
 
 ReceivedZephyrBadgeText:
 	text "<PLAYER> received"
-	line "ZEPHYRBADGE."
+	line "ZephyrBadge."
 	done
 
-FalknerZephyrBadgeText:
-	text "ZEPHYRBADGE"
+WalkerZephyrBadgeText:
+	text "ZephyrBadge"
 	line "raises the attack"
-	cont "power of #MON."
+	cont "power of #mon."
 
 	para "It also enables"
-	line "#MON to use"
+	line "#mon to use"
 
-	para "FLASH, if they"
+	para "Flash, if they"
 	line "have it, anytime."
 
 	para "Here--take this"
 	line "too."
 	done
 
-FalknerTMMudSlapText:
+WalkerTMRoostText:
 	text "By using a TM, a"
-	line "#MON will"
+	line "#mon will"
 
 	para "instantly learn a"
 	line "new move."
@@ -177,34 +203,27 @@ FalknerTMMudSlapText:
 	line "act--a TM can be"
 	cont "used only once."
 
-	para "TM31 contains"
-	line "MUD-SLAP."
+	para "TM51 contains"
+	line "Roost."
 
-	para "It reduces the"
-	line "enemy's accuracy"
+	para "It will heal a"
+	line "bird #mon of"
 
-	para "while it causes"
-	line "damage."
-
-	para "In other words, it"
-	line "is both defensive"
-	cont "and offensive."
+	para "its wounds."
+	line "Use it well."
 	done
 
-FalknerFightDoneText:
-	text "There are #MON"
-	line "GYMS in cities and"
-	cont "towns ahead."
+WalkerFightDoneText:
+	text "Someday, I'll"
+	line "travel the world"
+	cont "with my cherished"
 
-	para "You should test"
-	line "your skills at"
-	cont "these GYMS."
+	para "bird #mon, but"
+	line "until that day,"
+	cont "I shall continue"
 
-	para "I'm going to train"
-	line "harder to become"
-
-	para "the greatest bird"
-	line "master!"
+	para "my duties as Gym"
+	line "Leader!"
 	done
 
 BirdKeeperRodSeenText:
@@ -215,7 +234,7 @@ BirdKeeperRodSeenText:
 	line "training night and"
 
 	para "day to become bird"
-	line "#MON masters."
+	line "#mon masters."
 
 	para "Come on!"
 	done
@@ -225,7 +244,7 @@ BirdKeeperRodBeatenText:
 	done
 
 BirdKeeperRodAfterBattleText:
-	text "FALKNER's skills"
+	text "Walker's skills"
 	line "are for real!"
 
 	para "Don't get cocky"
@@ -236,7 +255,7 @@ BirdKeeperRodAfterBattleText:
 BirdKeeperAbeSeenText:
 	text "Let me see if you"
 	line "are good enough to"
-	cont "face FALKNER!"
+	cont "face Walker!"
 	done
 
 BirdKeeperAbeBeatenText:
@@ -251,32 +270,30 @@ BirdKeeperAbeAfterBattleText:
 	done
 
 VioletGymGuyText:
-	text "Hey! I'm no train-"
-	line "er but I can give"
-	cont "some advice!"
+	text "How's it going,"
+	line "champ in the"
+	cont "making?"
 
-	para "Believe me!"
-	line "If you believe, a"
+	para "Walker's a wander-"
+	line "bird master! I'm"
+	cont "impressed he's"
 
-	para "championship dream"
-	line "can come true."
+	para "even still here,"
+	line "but he must have"
+	cont "his reasons."
 
-	para "You believe?"
-	line "Then listen."
+	para "Rock, Electric,"
+	line "Ice types will"
+	cont "clip the wings of"
 
-	para "The grass-type is"
-	line "weak against the"
-
-	para "flying-type. Keep"
-	line "this in mind."
+	para "his Flying Types!"
 	done
 
 VioletGymGuyWinText:
-	text "Nice battle! Keep"
-	line "it up, and you'll"
+	text "Way to go! You"
+	line "knocked 'em right"
 
-	para "be the CHAMP in no"
-	line "time at all!"
+	para "outta the sky!"
 	done
 
 VioletGym_MapEvents:
@@ -293,7 +310,7 @@ VioletGym_MapEvents:
 	bg_event  6, 13, BGEVENT_READ, VioletGymStatue
 
 	db 4 ; object events
-	object_event  5,  1, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymFalknerScript, -1
+	object_event  5,  1, SPRITE_WALKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymWalkerScript, -1
 	object_event  7,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRod, -1
 	object_event  2, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperAbe, -1
 	object_event  7, 13, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletGymGuyScript, -1

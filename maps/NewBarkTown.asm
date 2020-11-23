@@ -139,7 +139,7 @@ NewBarkTownElmsHouseSign:
 	jumptext NewBarkTownElmsHouseSignText
 
 NewBarkTownTMBodySlam:
-	itemball TM_VENOSHOCK
+	itemball SCYTHER_CALL
 
 Movement_TeacherRunsToYou1_NBT:
 	step LEFT

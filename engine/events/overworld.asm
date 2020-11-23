@@ -137,16 +137,9 @@ CutFunction:
 	dw .FailCut
 
 .CheckAble:
-	ld de, ENGINE_HIVEBADGE
-	call CheckBadge
-	jr c, .nohivebadge
 	call CheckMapForSomethingToCut
 	jr c, .nothingtocut
 	ld a, $1
-	ret
-
-.nohivebadge
-	ld a, $80
 	ret
 
 .nothingtocut
@@ -215,7 +208,6 @@ Script_CutFromMenu:
 	special UpdateTimePals
 
 Script_Cut:
-	callasm GetPartyNick
 	writetext Text_UsedCut
 	reloadmappart
 	callasm CutDownTreeOrGrass
@@ -1795,13 +1787,11 @@ GotOffTheBikeText:
 	text_end
 
 TryCutOW::
-	ld hl, CUT
-	call CheckPartyMoveIndex
-	jr c, .cant_cut
-
-	ld de, ENGINE_HIVEBADGE
-	call CheckEngineFlag
-	jr c, .cant_cut
+	ld a, SCYTHER_CALL
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .cant_cut
 
 	ld a, BANK(AskCutScript)
 	ld hl, AskCutScript

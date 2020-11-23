@@ -19,7 +19,7 @@
 	const SPRITE_DAISY ; 0f
 	const SPRITE_ELM ; 10
 	const SPRITE_WILL ; 11
-	const SPRITE_FALKNER ; 12
+	const SPRITE_WALKER ; 12
 	const SPRITE_WHITNEY ; 13
 	const SPRITE_BUGSY ; 14
 	const SPRITE_MORTY ; 15

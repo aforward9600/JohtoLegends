@@ -173,6 +173,7 @@
 	const PROTECTOR
 	const STEEL_DAGGER
 	const ROYAL_ROCK
+	const SCYTHER_CALL
 	const BRICK_PIECE  ; b4
 	const SURF_MAIL    ; b5
 	const LITEBLUEMAIL ; b6

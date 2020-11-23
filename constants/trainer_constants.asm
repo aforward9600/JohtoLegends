@@ -25,8 +25,8 @@ CHRIS EQU __enum__
 	const PHONECONTACT_BUENA
 
 KRIS EQU __enum__
-	trainerclass FALKNER ; 1
-	const FALKNER1
+	trainerclass WALKER ; 1
+	const WALKER1
 
 	trainerclass WHITNEY ; 2
 	const WHITNEY1

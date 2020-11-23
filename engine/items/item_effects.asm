@@ -180,6 +180,7 @@ ItemEffects:
 	dw EvoStoneEffect      ; PROTECTOR
 	dw NoEffect            ; STEEL_DAGGER
 	dw EvoStoneEffect      ; ROYAL_ROCK
+	dw ScytherCallEffect   ; SCYTHER_CALL
 
 PokeBallEffect:
 	ld a, [wBattleMode]
@@ -2922,4 +2923,10 @@ GetMthMoveOfCurrentMon:
 	ld c, a
 	ld b, 0
 	add hl, bc
+	ret
+
+ScytherCallEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall CutFunction
 	ret

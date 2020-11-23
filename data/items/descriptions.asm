@@ -167,6 +167,7 @@ ItemDescriptions:
 	dw ProtectorDesc
 	dw SteelDaggerDesc
 	dw RoyalRockDesc
+	dw ScytherCallDesc
 	dw BrickPieceDesc
 	dw SurfMailDesc
 	dw LiteBlueMailDesc
@@ -905,6 +906,10 @@ SteelDaggerDesc:
 RoyalRockDesc:
 	db   "Evolves certain"
 	next "kinds of #mon.@"
+
+ScytherCallDesc:
+	db   "Calls a Scyther"
+	next "to cut trees.@"
 
 QuestionMarkDesc:
 	db   "?@"

@@ -301,14 +301,13 @@ UnknownText_0x1c05c8::
 	prompt
 
 UnknownText_0x1c05dd::
-	text_ram wStringBuffer2
-	text " used"
-	line "CUT!"
+	text "Scyther appeared"
+	line "and cut!"
 	prompt
 
 UnknownText_0x1c05ec::
 	text "There's nothing to"
-	line "CUT here."
+	line "Cut here."
 	prompt
 
 UnknownText_0x1c0609::

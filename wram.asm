@@ -2971,6 +2971,7 @@ wPokeAnimBitmaskCurBit:: db
 wPokeAnimBitmaskBuffer:: ds 7
 	ds 2
 wPokeAnimStructEnd::
+wUsingHMItem:: db
 
 
 SECTION "16-bit WRAM tables", WRAMX
