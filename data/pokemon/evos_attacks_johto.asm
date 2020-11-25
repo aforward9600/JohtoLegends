@@ -252,7 +252,7 @@ TotodileEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, LEER
-	dbw 1, FLASH
+	dbw 1, STRENGTH
 	dbw 6, WATER_GUN
 	dbw 8, RAGE
 	dbw 13, BITE

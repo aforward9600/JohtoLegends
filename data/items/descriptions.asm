@@ -170,6 +170,7 @@ ItemDescriptions:
 	dw ScytherCallDesc
 	dw GolemCallDesc
 	dw VoltorbCallDesc
+	dw MachampCallDesc
 	dw BrickPieceDesc
 	dw SurfMailDesc
 	dw LiteBlueMailDesc
@@ -920,6 +921,10 @@ GolemCallDesc:
 VoltorbCallDesc:
 	db   "Calls a Voltorb to"
 	next "light up darkness.@"
+
+MachampCallDesc:
+	db   "Calls a Machamp to"
+	next "move boulders.@"
 
 QuestionMarkDesc:
 	db   "?@"

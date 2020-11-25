@@ -3,6 +3,7 @@
 	const NEWBARKTOWN_FISHER
 	const NEWBARKTOWN_SILVER
 	const NEWBARKTOWN_POKE_BALL
+	const NEWBARKTOWN_BOULDER
 
 NewBarkTown_MapScripts:
 	db 2 ; scene scripts
@@ -69,6 +70,9 @@ NewBarkTown_TeacherStopsYouScene2:
 	closetext
 	special RestartMapMusic
 	end
+
+NewBarkTownBoulder:
+	jumpstd strengthboulder
 
 NewBarkTownTeacherScript:
 	faceplayer
@@ -139,7 +143,7 @@ NewBarkTownElmsHouseSign:
 	jumptext NewBarkTownElmsHouseSignText
 
 NewBarkTownTMBodySlam:
-	itemball VOLTORB_CALL
+	itemball MACHAMP_CALL
 
 Movement_TeacherRunsToYou1_NBT:
 	step LEFT
@@ -302,8 +306,9 @@ NewBarkTown_MapEvents:
 	bg_event  3,  3, BGEVENT_READ, NewBarkTownElmsLabSign
 	bg_event  9, 13, BGEVENT_READ, NewBarkTownElmsHouseSign
 
-	db 4 ; object events
+	db 5 ; object events
 	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
 	object_event 12,  9, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
 	object_event  3,  2, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownSilverScript, EVENT_RIVAL_NEW_BARK_TOWN
 	object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NewBarkTownTMBodySlam, EVENT_NEW_BARK_TOWN_TM_BODY_SLAM
+	object_event  3,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownBoulder, -1

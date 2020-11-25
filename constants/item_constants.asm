@@ -176,6 +176,7 @@
 	const SCYTHER_CALL
 	const GOLEM_CALL
 	const VOLTORB_CALL
+	const MACHAMP_CALL
 	const BRICK_PIECE  ; b4
 	const SURF_MAIL    ; b5
 	const LITEBLUEMAIL ; b6

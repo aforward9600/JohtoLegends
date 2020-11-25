@@ -209,6 +209,8 @@ Script_CutFromMenu:
 
 Script_Cut:
 	writetext Text_UsedCut
+	cry SCYTHER
+	pause 3
 	reloadmappart
 	callasm CutDownTreeOrGrass
 	closetext
@@ -306,6 +308,8 @@ UseFlash:
 Script_UseFlash:
 	reloadmappart
 	special UpdateTimePals
+	cry VOLTORB
+	pause 3
 	writetext UnknownText_0xc8f3
 	callasm BlindingFlash
 	closetext
@@ -968,10 +972,6 @@ StrengthFunction:
 	ret
 
 .TryStrength:
-; Strength
-	ld de, ENGINE_PLAINBADGE
-	call CheckBadge
-	jr c, .Failed
 	jr .UseStrength
 
 .Unreferenced_AlreadyUsing:
@@ -1004,7 +1004,6 @@ SetStrengthFlag:
 	add hl, de
 	ld a, [hl]
 	ld [wBuffer6], a
-	call GetPartyNick
 	ret
 
 Script_StrengthFromMenu:
@@ -1015,7 +1014,7 @@ Script_UsedStrength:
 	callasm SetStrengthFlag
 	writetext .UsedStrength
 	readmem wBuffer6
-	cry 0
+	cry MACHAMP
 	pause 3
 	writetext .StrengthAllowedItToMoveBoulders
 	closetext
@@ -1065,13 +1064,11 @@ UnknownText_0xcd73:
 	text_end
 
 TryStrengthOW:
-	ld hl, STRENGTH
-	call CheckPartyMoveIndex
-	jr c, .nope
-
-	ld de, ENGINE_PLAINBADGE
-	call CheckEngineFlag
-	jr c, .nope
+	ld a, MACHAMP_CALL
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .nope
 
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_STRENGTH_ACTIVE_F, [hl]
@@ -1374,6 +1371,8 @@ RockSmashFromMenuScript:
 
 RockSmashScript:
 	writetext UnknownText_0xcf58
+	cry GOLEM
+	pause 3
 	closetext
 	special WaitSFX
 	playsound SFX_STRENGTH

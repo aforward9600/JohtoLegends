@@ -13,12 +13,9 @@ WalkerGroup:
 	next_list_item ; Walker (1)
 	db "Walker@", TRAINERTYPE_MOVES
 	db 7
-	dw PIDGEY
-	dw TACKLE, SAND_ATTACK, GUST, ROOST
+	dw HOOTHOOT
+	dw TACKLE, SAND_ATTACK, PECK, ROOST
 	db 9
-	dw PIDGEOTTO
-	dw TACKLE, SAND_ATTACK, GUST, ROOST
-	db 10
 	dw MURKROW
 	dw PECK, PURSUIT, ROOST, HAZE
 	db -1 ; end

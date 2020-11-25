@@ -384,19 +384,17 @@ UnknownText_0x1c073b::
 	done
 
 UnknownText_0x1c0751::
-	text "A #mon is using"
-	line "STRENGTH already."
+	text "Machamp is using"
+	line "Strength already."
 	prompt
 
 UnknownText_0x1c0774::
-	text_ram wStringBuffer2
-	text " used"
-	line "STRENGTH!"
+	text "Machamp used"
+	line "Strength!"
 	done
 
 UnknownText_0x1c0788::
-	text_ram wStringBuffer1
-	text " can"
+	text "Machamp can"
 	line "move boulders."
 	prompt
 
@@ -404,8 +402,8 @@ UnknownText_0x1c07a0::
 	text "A #mon may be"
 	line "able to move this."
 
-	para "Want to use"
-	line "STRENGTH?"
+	para "Want to call"
+	line "Machamp?"
 	done
 
 UnknownText_0x1c07d8::

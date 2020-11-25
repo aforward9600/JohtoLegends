@@ -183,6 +183,7 @@ ItemEffects:
 	dw ScytherCallEffect   ; SCYTHER_CALL
 	dw GolemCallEffect     ; GOLEM_CALL
 	dw VoltorbCallEffect   ; VOLTORB_CALL
+	dw MachampCallEffect   ; MACHAMP_CALL
 
 PokeBallEffect:
 	ld a, [wBattleMode]
@@ -2937,4 +2938,8 @@ GolemCallEffect:
 
 VoltorbCallEffect:
 	farcall OWFlash
+	ret
+
+MachampCallEffect:
+	farcall StrengthFunction
 	ret

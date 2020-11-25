@@ -169,6 +169,7 @@ ItemNames::
 	db "Scyther Call@"
 	db "Golem Call@"
 	db "Voltorb Call@"
+	db "Machamp Call@"
 	db "Brick Piece@"
 	db "Surf Mail@"
 	db "Litebluemail@"
