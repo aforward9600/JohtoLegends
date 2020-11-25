@@ -311,8 +311,8 @@ UnknownText_0x1c05ec::
 	prompt
 
 UnknownText_0x1c0609::
-	text "A blinding FLASH"
-	line "lights the area!@"
+	text "Voltorb illuminat-"
+	line "ed the area!@"
 	text_waitbutton
 	text_end
 
@@ -459,9 +459,8 @@ UnknownText_0x1c08bc::
 	done
 
 UnknownText_0x1c08f0::
-	text_ram wStringBuffer2
-	text " used"
-	line "ROCK SMASH!"
+	text "Golem smashed"
+	line "the rock!"
 	prompt
 
 UnknownText_0x1c0906::
@@ -473,8 +472,8 @@ UnknownText_0x1c0924::
 	text "This rock looks"
 	line "breakable."
 
-	para "Want to use ROCK"
-	line "SMASH?"
+	para "Want to have Golem"
+	line "smash the rock?"
 	done
 
 UnknownText_0x1c0958::

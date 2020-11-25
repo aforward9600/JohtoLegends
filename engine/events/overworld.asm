@@ -282,9 +282,6 @@ OWFlash:
 
 .CheckUseFlash:
 ; Flash
-	ld de, ENGINE_ZEPHYRBADGE
-	farcall CheckBadge
-	jr c, .nozephyrbadge
 	push hl
 	farcall SpecialAerodactylChamber
 	pop hl
@@ -299,10 +296,6 @@ OWFlash:
 
 .notadarkcave
 	call FieldMoveFailed
-	ld a, $80
-	ret
-
-.nozephyrbadge
 	ld a, $80
 	ret
 
@@ -1380,7 +1373,6 @@ RockSmashFromMenuScript:
 	special UpdateTimePals
 
 RockSmashScript:
-	callasm GetPartyNick
 	writetext UnknownText_0xcf58
 	closetext
 	special WaitSFX
@@ -1408,7 +1400,7 @@ UnknownText_0xcf58:
 
 AskRockSmashScript:
 	callasm HasRockSmash
-	ifequal 1, .no
+	ifequal 0, .no
 
 	opentext
 	writetext UnknownText_0xcf77
@@ -1430,16 +1422,13 @@ UnknownText_0xcf77:
 	text_end
 
 HasRockSmash:
-	ld hl, ROCK_SMASH
-	call CheckPartyMoveIndex
-	jr nc, .yes
-.no
-	ld a, 1
-	jr .done
-.yes
-	xor a
-	jr .done
-.done
+	ld a, GOLEM_CALL
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+; if carry then a=1 else a=0
+	sbc a
+	and 1
 	ld [wScriptVar], a
 	ret
 

@@ -168,6 +168,8 @@ ItemDescriptions:
 	dw SteelDaggerDesc
 	dw RoyalRockDesc
 	dw ScytherCallDesc
+	dw GolemCallDesc
+	dw VoltorbCallDesc
 	dw BrickPieceDesc
 	dw SurfMailDesc
 	dw LiteBlueMailDesc
@@ -910,6 +912,14 @@ RoyalRockDesc:
 ScytherCallDesc:
 	db   "Calls a Scyther"
 	next "to cut trees.@"
+
+GolemCallDesc:
+	db   "Calls a Golem to"
+	next "smash rocks.@"
+
+VoltorbCallDesc:
+	db   "Calls a Voltorb to"
+	next "light up darkness.@"
 
 QuestionMarkDesc:
 	db   "?@"

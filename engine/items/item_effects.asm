@@ -181,6 +181,8 @@ ItemEffects:
 	dw NoEffect            ; STEEL_DAGGER
 	dw EvoStoneEffect      ; ROYAL_ROCK
 	dw ScytherCallEffect   ; SCYTHER_CALL
+	dw GolemCallEffect     ; GOLEM_CALL
+	dw VoltorbCallEffect   ; VOLTORB_CALL
 
 PokeBallEffect:
 	ld a, [wBattleMode]
@@ -2926,7 +2928,13 @@ GetMthMoveOfCurrentMon:
 	ret
 
 ScytherCallEffect:
-	ld a, 1
-	ld [wUsingHMItem], a
 	farcall CutFunction
+	ret
+
+GolemCallEffect:
+	farcall RockSmashFunction
+	ret
+
+VoltorbCallEffect:
+	farcall OWFlash
 	ret

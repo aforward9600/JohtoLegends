@@ -167,6 +167,8 @@ ItemNames::
 	db "Steel Dagger@"
 	db "Royal Rock@"
 	db "Scyther Call@"
+	db "Golem Call@"
+	db "Voltorb Call@"
 	db "Brick Piece@"
 	db "Surf Mail@"
 	db "Litebluemail@"
