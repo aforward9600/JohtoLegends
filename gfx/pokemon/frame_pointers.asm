@@ -273,4 +273,5 @@ FramesPointers:
 	dba BagonFrames
 	dba ShelgonFrames
 	dba SalamenceFrames
+	dba WynautFrames
 	dba MissingnoFrames

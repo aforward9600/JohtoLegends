@@ -92,7 +92,7 @@ RedGyarados:
 .NotBeaten:
 	reloadmapafterbattle
 	opentext
-	giveitem RED_SCALE
+	giveitem DRAGON_SCALE
 	waitsfx
 	writetext UnknownText_0x703df
 	playsound SFX_ITEM

@@ -271,6 +271,7 @@ AlphabeticalPokedexOrder:
 	dw WIGGLYTUFF
 	dw WOBBUFFET
 	dw WOOPER
+	dw WYNAUT
 	dw XATU
 	dw YANMA
 	dw YANMEGA

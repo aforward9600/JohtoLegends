@@ -143,7 +143,7 @@ NewBarkTownElmsHouseSign:
 	jumptext NewBarkTownElmsHouseSignText
 
 NewBarkTownTMBodySlam:
-	itemball LAPRAS_CALLA
+	itemball PIDGEOT_CALL
 
 Movement_TeacherRunsToYou1_NBT:
 	step LEFT

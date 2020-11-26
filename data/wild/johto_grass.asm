@@ -1194,7 +1194,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 2, BAGON
-	dbw 2, SHELGON
+	dbw 2, WYNAUT
 	dbw 3, SALAMENCE
 	dbw 3, MISSINGNO
 	dbw 2, RATTATA
@@ -1202,7 +1202,7 @@ JohtoGrassWildMons:
 	dbw 3, HOPPIP
 	; day
 	dbw 2, BAGON
-	dbw 2, SHELGON
+	dbw 2, WYNAUT
 	dbw 3, SALAMENCE
 	dbw 3, MISSINGNO
 	dbw 2, RATTATA
@@ -1210,7 +1210,7 @@ JohtoGrassWildMons:
 	dbw 3, HOPPIP
 	; nite
 	dbw 2, BAGON
-	dbw 2, SHELGON
+	dbw 2, WYNAUT
 	dbw 3, SALAMENCE
 	dbw 3, MISSINGNO
 	dbw 2, RATTATA

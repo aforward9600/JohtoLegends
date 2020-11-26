@@ -273,4 +273,5 @@ AnimationIdlePointers:
 	dw BagonAnimationIdle
 	dw ShelgonAnimationIdle
 	dw SalamenceAnimationIdle
+	dw WynautAnimationIdle
 	dw MissingnoAnimationIdle

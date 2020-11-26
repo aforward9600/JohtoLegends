@@ -60,7 +60,6 @@ ItemDescriptions:
 	dw EtherDesc
 	dw MaxEtherDesc
 	dw ElixerDesc
-	dw RedScaleDesc
 	dw SecretPotionDesc
 	dw SSTicketDesc
 	dw MysteryEggDesc
@@ -175,6 +174,7 @@ ItemDescriptions:
 	dw LaprasCallADesc
 	dw LaprasCallBDesc
 	dw LaprasCallCDesc
+	dw PidgeotCallDesc
 	dw SurfMailDesc
 	dw LiteBlueMailDesc
 	dw PortraitMailDesc
@@ -490,10 +490,6 @@ MaxEtherDesc:
 ElixerDesc:
 	db   "Restores PP of all"
 	next "moves by 10.@"
-
-RedScaleDesc:
-	db   "A scale from the"
-	next "red Gyarados.@"
 
 SecretPotionDesc:
 	db   "Fully heals any"
@@ -944,6 +940,10 @@ LaprasCallBDesc:
 LaprasCallCDesc:
 	db   "Commands Lapras to"
 	next "climb waterfalls.@"
+
+PidgeotCallDesc:
+	db   "Calls a Pidgeot to"
+	next "fly to locations.@"
 
 QuestionMarkDesc:
 	db   "?@"

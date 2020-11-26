@@ -201,7 +201,7 @@ FirstEvoStages::
 	dw SLOWPOKE
 	dw MISDREAVUS ;c8
 	dw UNOWN
-	dw WOBBUFFET
+	dw WYNAUT
 	dw GIRAFARIG
 	dw PINECO
 	dw PINECO
@@ -274,4 +274,5 @@ FirstEvoStages::
 	dw BAGON
 	dw BAGON
 	dw BAGON
+	dw WYNAUT
 	dw MISSINGNO

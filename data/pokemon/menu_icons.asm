@@ -275,4 +275,5 @@ MonMenuIcons:
 	db ICON_BIGMON      ; BAGON
 	db ICON_BIGMON      ; SHELGON
 	db ICON_BIGMON      ; SALAMENCE
+	db ICON_GHOST       ; WYNAUT
 	db ICON_BLOB        ; MISSINGNO

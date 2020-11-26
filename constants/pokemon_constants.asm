@@ -294,6 +294,7 @@ JOHTO_POKEMON EQU const_value
 	const BAGON
 	const SHELGON
 	const SALAMENCE
+	const WYNAUT
 	const MISSINGNO
 NUM_POKEMON EQU const_value + -1
 

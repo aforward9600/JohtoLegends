@@ -50,7 +50,7 @@ MrPokemonsHouse_MapScripts:
 MrPokemonsHouse_MrPokemonScript:
 	faceplayer
 	opentext
-	checkitem RED_SCALE
+	checkitem DRAGON_SCALE
 	iftrue .RedScale
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iftrue .AlwaysNewDiscoveries
@@ -71,7 +71,7 @@ MrPokemonsHouse_MrPokemonScript:
 	iffalse .refused
 	verbosegiveitem EXP_SHARE
 	iffalse .full
-	takeitem RED_SCALE
+	takeitem DRAGON_SCALE
 	sjump .AlwaysNewDiscoveries
 
 .refused

@@ -578,5 +578,7 @@ INCLUDE "gfx/pokemon/shelgon/normal.pal"
 INCLUDE "gfx/pokemon/shelgon/shiny.pal"
 INCBIN "gfx/pokemon/salamence/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/salamence/shiny.pal"
+INCBIN "gfx/pokemon/wynaut/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/wynaut/shiny.pal"
 INCLUDE "gfx/pokemon/missingno/normal.pal"
 INCLUDE "gfx/pokemon/missingno/shiny.pal"

@@ -561,5 +561,7 @@ PokemonPicPointers::
 	dba ShelgonBackpic
 	dba SalamenceFrontpic
 	dba SalamenceBackpic
+	dba WynautFrontpic
+	dba WynautBackpic
 	dba MissingnoFrontpic
 	dba MissingnoBackpic
