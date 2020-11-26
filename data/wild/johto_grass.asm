@@ -1221,14 +1221,14 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 3, LEDYBA
-	dbw 3, CATERPIE
+	dbw 3, SPINARAK
 	dbw 4, CATERPIE
 	dbw 4, PIDGEY
 	dbw 3, WEEDLE
 	dbw 4, HOPPIP
 	dbw 4, HOPPIP
 	; day
-	dbw 3, PIDGEY
+	dbw 3, SPINARAK
 	dbw 3, CATERPIE
 	dbw 4, CATERPIE
 	dbw 4, PIDGEY

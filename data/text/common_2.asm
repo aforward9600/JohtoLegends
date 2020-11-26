@@ -543,28 +543,21 @@ UnknownText_0x1c0a77::
 	prompt
 
 UnknownText_0x1c0aa9::
-	text "Nope! ITEMFINDER"
+	text "Nope! Itemfinder"
 	line "isn't responding."
 	prompt
 
 UnknownText_0x1c0acc::
 	text_ram wStringBuffer3
 	text_start
-	line "fainted!"
-	prompt
-
-UnknownText_0x1c0ada::
-	text "<PLAYER> is out of"
-	line "useable #mon!"
-
-	para "<PLAYER> whited"
-	line "out!"
+	line "survived the"
+	cont "poisoning!"
 	prompt
 
 UnknownText_0x1c0b03::
 	text_ram wStringBuffer3
 	text " used"
-	line "SWEET SCENT!"
+	line "Sweet Scent!"
 	done
 
 UnknownText_0x1c0b1a::
