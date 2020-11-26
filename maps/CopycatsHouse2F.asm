@@ -119,7 +119,7 @@ Copycat:
 .GivePass:
 	writetext CopycatText_GivePass
 	buttonsound
-	verbosegiveitem PASS
+	verbosegiveitem GS_BALL
 	iffalse .Cancel
 	setevent EVENT_GOT_PASS_FROM_COPYCAT
 	writetext CopycatText_ExplainPass

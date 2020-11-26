@@ -2628,6 +2628,65 @@ DittoMetalPowder:
 	rr c
 	ret
 
+UnevolvedEviolite:
+; get the defender's species
+	ld a, MON_SPECIES
+	call BattlePartyAttr
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [hl]
+	jr nz, .got_species
+	ld a, [wTempEnemyMonSpecies]
+
+.got_species
+; check if the defender has any evolutions
+; hl := EvosAttacksPointers + (species - 1) * 2
+	dec a
+	push hl
+	push bc
+	ld c, a
+	ld b, 0
+	ld hl, EvosAttacksPointers
+	add hl, bc
+	add hl, bc
+; hl := the species' entry from EvosAttacksPointers
+	ld a, BANK(EvosAttacksPointers)
+	call GetFarHalfword
+; a := the first byte of the species' *EvosAttacks data
+	ld a, BANK("Evolutions and Attacks 1")
+	ld a, BANK("Evolutions and Attacks 2")
+	call GetFarByte
+; if a == 0, there are no evolutions, so don't boost stats
+	and a
+	pop bc
+	pop hl
+	ret z
+
+; check if the defender's item is Eviolite
+	push bc
+	call GetOpponentItem
+	ld a, b
+	cp HELD_EVIOLITE
+	pop bc
+	ret nz
+
+; boost the relevant defense stat in bc by 50%
+	ld a, c
+	srl a
+	add c
+	ld c, a
+	ret nc
+
+	srl b
+	ld a, b
+	and a
+	jr nz, .done
+	inc b
+.done
+	scf
+	rr c
+	ret
+
 BattleCommand_DamageStats:
 ; damagestats
 
@@ -2714,6 +2773,7 @@ PlayerAttackDamage:
 	ld a, [wBattleMonLevel]
 	ld e, a
 	call DittoMetalPowder
+	call UnevolvedEviolite
 
 	ld a, 1
 	and a
@@ -2964,6 +3024,7 @@ EnemyAttackDamage:
 	ld a, [wEnemyMonLevel]
 	ld e, a
 	call DittoMetalPowder
+	call UnevolvedEviolite
 
 	ld a, 1
 	and a

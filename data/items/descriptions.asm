@@ -124,7 +124,6 @@ ItemDescriptions:
 	dw StardustDesc
 	dw StarPieceDesc
 	dw BasementKeyDesc
-	dw PassDesc
 	dw CharcoalDesc
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
@@ -175,6 +174,7 @@ ItemDescriptions:
 	dw LaprasCallBDesc
 	dw LaprasCallCDesc
 	dw PidgeotCallDesc
+	dw EvioliteDesc
 	dw SurfMailDesc
 	dw LiteBlueMailDesc
 	dw PortraitMailDesc
@@ -741,10 +741,6 @@ StarPieceDesc:
 BasementKeyDesc:
 	db   "Opens doors.@"
 
-PassDesc:
-	db   "A ticket for the"
-	next "Magnet Train.@"
-
 CharcoalDesc:
 	db   "Powers up fire-"
 	next "type moves. (Hold)@"
@@ -944,6 +940,10 @@ LaprasCallCDesc:
 PidgeotCallDesc:
 	db   "Calls a Pidgeot to"
 	next "fly to locations.@"
+
+EvioliteDesc:
+	db   "Raises defenses of"
+	next "unevolved #mon.@"
 
 QuestionMarkDesc:
 	db   "?@"

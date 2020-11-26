@@ -130,7 +130,6 @@
 	const STARDUST     ; 83
 	const STAR_PIECE   ; 84
 	const BASEMENT_KEY ; 85
-	const PASS         ; 86
 	const CHARCOAL     ; 8a
 	const BERRY_JUICE  ; 8b
 	const SCOPE_LENS   ; 8c
@@ -181,6 +180,7 @@
 	const LAPRAS_CALLB
 	const LAPRAS_CALLC
 	const PIDGEOT_CALL
+	const EVIOLITE
 	const SURF_MAIL    ; b5
 	const LITEBLUEMAIL ; b6
 	const PORTRAITMAIL ; b7

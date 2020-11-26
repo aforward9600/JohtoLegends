@@ -137,7 +137,6 @@ ItemEffects:
 	dw NoEffect            ; STARDUST
 	dw NoEffect            ; STAR_PIECE
 	dw BasementKeyEffect   ; BASEMENT_KEY
-	dw NoEffect            ; PASS
 	dw NoEffect            ; CHARCOAL
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS
@@ -188,6 +187,7 @@ ItemEffects:
 	dw LaprasCallBEffect   ; LAPRAS_CALLB
 	dw LaprasCallCEffect   ; LAPRAS_CALLC
 	dw PidgeotCallEffect   ; PIDGEOT_CALL
+	dw NoEffect            ; EVIOLITE
 
 PokeBallEffect:
 	ld a, [wBattleMode]

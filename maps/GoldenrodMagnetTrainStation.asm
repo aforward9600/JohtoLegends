@@ -25,7 +25,7 @@ GoldenrodMagnetTrainStationOfficerScript:
 	writetext GoldenrodMagnetTrainStationOfficerAreYouComingAboardText
 	yesorno
 	iffalse .DecidedNotToRide
-	checkitem PASS
+	checkitem GS_BALL
 	iffalse .PassNotInBag
 	writetext GoldenrodMagnetTrainStationOfficerRightThisWayText
 	waitbutton

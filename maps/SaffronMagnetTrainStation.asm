@@ -27,7 +27,7 @@ SaffronMagnetTrainStationOfficerScript:
 	writetext SaffronMagnetTrainStationOfficerAreYouComingOnBoardText
 	yesorno
 	iffalse .DecidedNotToRide
-	checkitem PASS
+	checkitem GS_BALL
 	iffalse .PassNotInBag
 	writetext SaffronMagnetTrainStationOfficerRightThisWayText
 	waitbutton
