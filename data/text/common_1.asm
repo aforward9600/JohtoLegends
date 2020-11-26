@@ -1296,8 +1296,15 @@ UnknownText_0x1bd2e7::
 	done
 
 _RepelWoreOffText::
-	text "REPEL's effect"
+	text "Repel's effect"
 	line "wore off."
+	done
+
+_UseAnotherRepelText::
+	text "Repel's effect"
+	line "wore off."
+
+	para "Use another?"
 	done
 
 _PlayerFoundItemText::

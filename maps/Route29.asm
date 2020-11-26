@@ -210,7 +210,7 @@ Route29FruitTree:
 	fruittree FRUITTREE_ROUTE_29
 
 Route29Potion:
-	itemball LAPRAS_CALLC
+	itemball REPEL
 
 DudeMovementData1a:
 	step UP

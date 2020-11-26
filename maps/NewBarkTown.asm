@@ -143,7 +143,7 @@ NewBarkTownElmsHouseSign:
 	jumptext NewBarkTownElmsHouseSignText
 
 NewBarkTownTMBodySlam:
-	itemball EVIOLITE
+	itemball REPEL
 
 Movement_TeacherRunsToYou1_NBT:
 	step LEFT
