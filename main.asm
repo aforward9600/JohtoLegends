@@ -659,7 +659,6 @@ INCLUDE "engine/items/print_item_description.asm"
 INCLUDE "data/moves/names.asm"
 INCLUDE "engine/overworld/landmarks.asm"
 INCLUDE "mobile/mobile_menu.asm"
-INCLUDE "engine/pokemon/search.asm"
 
 
 SECTION "bank77", ROMX
@@ -668,6 +667,7 @@ UnownFont:
 INCBIN "gfx/font/unown_font.2bpp"
 
 INCLUDE "engine/printer/print_party.asm"
+INCLUDE "engine/pokemon/search.asm"
 
 
 SECTION "bank77_2", ROMX

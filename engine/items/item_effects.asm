@@ -184,6 +184,10 @@ ItemEffects:
 	dw GolemCallEffect     ; GOLEM_CALL
 	dw VoltorbCallEffect   ; VOLTORB_CALL
 	dw MachampCallEffect   ; MACHAMP_CALL
+	dw SnubbullCallEffect  ; SNUBBULLCALL
+	dw LaprasCallAEffect   ; LAPRAS_CALLA
+	dw LaprasCallBEffect   ; LAPRAS_CALLB
+	dw LaprasCallCEffect   ; LAPRAS_CALLC
 
 PokeBallEffect:
 	ld a, [wBattleMode]
@@ -1206,11 +1210,11 @@ StatStrings:
 	dw .speed
 	dw .special
 
-.health  db "HEALTH@"
-.attack  db "ATTACK@"
-.defense db "DEFENSE@"
-.speed   db "SPEED@"
-.special db "SPECIAL@"
+.health  db "Health@"
+.attack  db "Attack@"
+.defense db "Defense@"
+.speed   db "Speed@"
+.special db "Special@"
 
 GetStatExpRelativePointer:
 	ld a, [wCurItem]
@@ -2942,4 +2946,20 @@ VoltorbCallEffect:
 
 MachampCallEffect:
 	farcall StrengthFunction
+	ret
+
+SnubbullCallEffect:
+	farcall HeadbuttFunction
+	ret
+
+LaprasCallAEffect:
+	farcall SurfFunction
+	ret
+
+LaprasCallBEffect:
+	farcall WhirlpoolFunction
+	ret
+
+LaprasCallCEffect:
+	farcall WaterfallFunction
 	ret

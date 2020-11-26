@@ -171,7 +171,10 @@ ItemDescriptions:
 	dw GolemCallDesc
 	dw VoltorbCallDesc
 	dw MachampCallDesc
-	dw BrickPieceDesc
+	dw SnubbullCallDesc
+	dw LaprasCallADesc
+	dw LaprasCallBDesc
+	dw LaprasCallCDesc
 	dw SurfMailDesc
 	dw LiteBlueMailDesc
 	dw PortraitMailDesc
@@ -926,12 +929,24 @@ MachampCallDesc:
 	db   "Calls a Machamp to"
 	next "move boulders.@"
 
+SnubbullCallDesc:
+	db   "Calls a Snubbull"
+	next "to headbutt trees.@"
+
+LaprasCallADesc:
+	db   "Calls a Lapras to"
+	next "ferry you.@"
+
+LaprasCallBDesc:
+	db   "Commands Lapras to"
+	next "use Whirlpool.@"
+
+LaprasCallCDesc:
+	db   "Commands Lapras to"
+	next "climb waterfalls.@"
+
 QuestionMarkDesc:
 	db   "?@"
-
-BrickPieceDesc:
-	db   "A rare chunk of"
-	next "tile.@"
 
 SurfMailDesc:
 	db   "Lapras-print Mail."

@@ -345,9 +345,6 @@ SurfFunction:
 	dw .AlreadySurfing
 
 .TrySurf:
-	ld de, ENGINE_FOGBADGE
-	call CheckBadge
-	jr c, .asm_c956
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
 	jr nz, .cannotsurf
@@ -365,9 +362,6 @@ SurfFunction:
 	farcall CheckFacingObject
 	jr c, .cannotsurf
 	ld a, $1
-	ret
-.asm_c956
-	ld a, $80
 	ret
 .alreadyfail
 	ld a, $3
@@ -403,6 +397,8 @@ SurfFromMenuScript:
 UsedSurfScript:
 	writetext UsedSurfText ; "used SURF!"
 	waitbutton
+	cry LAPRAS
+	pause 3
 	closetext
 
 	callasm .empty_fn ; empty function
@@ -502,13 +498,11 @@ TrySurfOW::
 	call CheckDirection
 	jr c, .quit
 
-	ld de, ENGINE_FOGBADGE
-	call CheckEngineFlag
-	jr c, .quit
-
-	ld hl, SURF
-	call CheckPartyMoveIndex
-	jr c, .quit
+	ld a, LAPRAS_CALLA
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .quit
 
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
@@ -516,7 +510,6 @@ TrySurfOW::
 
 	call GetSurfType
 	ld [wBuffer2], a
-	call GetPartyNick
 
 	ld a, BANK(AskSurfScript)
 	ld hl, AskSurfScript
@@ -639,10 +632,6 @@ WaterfallFunction:
 
 .TryWaterfall:
 ; Waterfall
-	ld de, ENGINE_RISINGBADGE
-	farcall CheckBadge
-	ld a, $80
-	ret c
 	call CheckMapCanWaterfall
 	jr c, .failed
 	ld hl, Script_WaterfallFromMenu
@@ -675,8 +664,9 @@ Script_WaterfallFromMenu:
 	special UpdateTimePals
 
 Script_UsedWaterfall:
-	callasm GetPartyNick
 	writetext .Text_UsedWaterfall
+	cry LAPRAS
+	pause 3
 	waitbutton
 	closetext
 	playsound SFX_BUBBLEBEAM
@@ -707,12 +697,11 @@ Script_UsedWaterfall:
 	text_end
 
 TryWaterfallOW::
-	ld hl, WATERFALL
-	call CheckPartyMoveIndex
-	jr c, .failed
-	ld de, ENGINE_RISINGBADGE
-	call CheckEngineFlag
-	jr c, .failed
+	ld a, LAPRAS_CALLC
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .failed
 	call CheckMapCanWaterfall
 	jr c, .failed
 	ld a, BANK(Script_AskWaterfall)
@@ -1105,9 +1094,6 @@ Jumptable_cdae:
 	dw .FailWhirlpool
 
 .TryWhirlpool:
-	ld de, ENGINE_GLACIERBADGE
-	call CheckBadge
-	jr c, .noglacierbadge
 	call TryWhirlpoolMenu
 	jr c, .failed
 	ld a, $1
@@ -1115,10 +1101,6 @@ Jumptable_cdae:
 
 .failed
 	ld a, $2
-	ret
-
-.noglacierbadge
-	ld a, $80
 	ret
 
 .DoWhirlpool:
@@ -1171,8 +1153,9 @@ Script_WhirlpoolFromMenu:
 	special UpdateTimePals
 
 Script_UsedWhirlpool:
-	callasm GetPartyNick
 	writetext Text_UsedWhirlpool
+	cry LAPRAS
+	pause 3
 	reloadmappart
 	callasm DisappearWhirlpool
 	closetext
@@ -1196,12 +1179,11 @@ DisappearWhirlpool:
 	ret
 
 TryWhirlpoolOW::
-	ld hl, WHIRLPOOL
-	call CheckPartyMoveIndex
-	jr c, .failed
-	ld de, ENGINE_GLACIERBADGE
-	call CheckEngineFlag
-	jr c, .failed
+	ld a, LAPRAS_CALLB
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .failed
 	call TryWhirlpoolMenu
 	jr c, .failed
 	ld a, BANK(Script_AskWhirlpoolOW)
@@ -1272,8 +1254,9 @@ HeadbuttFromMenuScript:
 	special UpdateTimePals
 
 HeadbuttScript:
-	callasm GetPartyNick
 	writetext UnknownText_0xce9d
+	cry SNUBBULL
+	pause 3
 
 	reloadmappart
 	callasm ShakeHeadbuttTree
@@ -1293,9 +1276,11 @@ HeadbuttScript:
 	end
 
 TryHeadbuttOW::
-	ld hl, HEADBUTT
-	call CheckPartyMoveIndex
-	jr c, .no
+	ld a, SNUBBULLCALL
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .no
 
 	ld a, BANK(AskHeadbuttScript)
 	ld hl, AskHeadbuttScript

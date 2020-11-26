@@ -177,7 +177,10 @@
 	const GOLEM_CALL
 	const VOLTORB_CALL
 	const MACHAMP_CALL
-	const BRICK_PIECE  ; b4
+	const SNUBBULLCALL
+	const LAPRAS_CALLA
+	const LAPRAS_CALLB
+	const LAPRAS_CALLC
 	const SURF_MAIL    ; b5
 	const LITEBLUEMAIL ; b6
 	const PORTRAITMAIL ; b7

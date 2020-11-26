@@ -291,7 +291,7 @@ UnknownText_0x1c0591::
 	prompt
 
 _BadgeRequiredText::
-	text "Sorry! A new BADGE"
+	text "Sorry! A new Badge"
 	line "is required."
 	prompt
 
@@ -319,30 +319,28 @@ UnknownText_0x1c0609::
 	text_end ; unused
 
 _UsedSurfText::
-	text_ram wStringBuffer2
-	text " used"
-	line "SURF!"
+	text "Lapras appeared"
+	line "and let you ride!"
 	done
 
 _CantSurfText::
-	text "You can't SURF"
-	line "here."
+	text "You can't call"
+	line "Lapras here."
 	prompt
 
 _AlreadySurfingText::
 	text "You're already"
-	line "SURFING."
+	line "on Lapras."
 	prompt
 
 _AskSurfText::
 	text "The water is calm."
-	line "Want to SURF?"
+	line "Wanna call Lapras?"
 	done
 
 UnknownText_0x1c068e::
-	text_ram wStringBuffer2
-	text " used"
-	line "WATERFALL!"
+	text "Lapras climbed"
+	line "the waterfall!"
 	done
 
 UnknownText_0x1c06a3::
@@ -351,8 +349,8 @@ UnknownText_0x1c06a3::
 	done
 
 UnknownText_0x1c06bf::
-	text "Do you want to use"
-	line "WATERFALL?"
+	text "Do you want to cl-"
+	line "imb the waterfall?"
 	done
 
 UnknownText_0x1c06de::
@@ -363,7 +361,7 @@ UnknownText_0x1c06de::
 
 UnknownText_0x1c06ed::
 	text "<PLAYER> used an"
-	line "ESCAPE ROPE."
+	line "Escape Rope."
 	done
 
 UnknownText_0x1c0705::
@@ -373,7 +371,7 @@ UnknownText_0x1c0705::
 
 UnknownText_0x1c071a::
 	text "Return to the last"
-	line "#mon CENTER."
+	line "#mon Center."
 	done
 
 UnknownText_0x1c073b::
@@ -417,9 +415,8 @@ UnknownText_0x1c07f4::
 	done
 
 UnknownText_0x1c0816::
-	text_ram wStringBuffer2
-	text " used"
-	line "WHIRLPOOL!"
+	text "Lapras dissipated"
+	line "the whirlpool!"
 	prompt
 
 UnknownText_0x1c082b::
@@ -434,14 +431,13 @@ UnknownText_0x1c0864::
 	text "A whirlpool is in"
 	line "the way."
 
-	para "Want to use"
-	line "WHIRLPOOL?"
+	para "Want Lapras to"
+	line "use Whirlpool?"
 	done
 
 UnknownText_0x1c0897::
-	text_ram wStringBuffer2
-	text " did a"
-	line "HEADBUTT!"
+	text "Snubbull did a"
+	line "Headbutt!"
 	prompt
 
 UnknownText_0x1c08ac::
@@ -452,8 +448,8 @@ UnknownText_0x1c08bc::
 	text "A #mon could be"
 	line "in this tree."
 
-	para "Want to HEADBUTT"
-	line "it?"
+	para "Want to call"
+	line "Snubbull?"
 	done
 
 UnknownText_0x1c08f0::
