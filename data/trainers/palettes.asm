@@ -4,9 +4,9 @@ TrainerPalettes:
 ; Each .gbcpal is generated from the corresponding .png, and
 ; only the middle two colors are included, not black or white.
 
-PlayerPalette: ; Chris uses the same colors as Cal
-INCBIN "gfx/trainers/cal.gbcpal", middle_colors
-KrisPalette: ; Kris shares Falkner's palette
+PlayerPalette:
+INCLUDE "gfx/player/chris.pal"
+
 INCLUDE "gfx/trainers/walker.pal"
 INCBIN "gfx/trainers/whitney.gbcpal", middle_colors
 INCBIN "gfx/trainers/bugsy.gbcpal", middle_colors
@@ -74,3 +74,6 @@ INCBIN "gfx/trainers/blue.gbcpal", middle_colors
 INCBIN "gfx/trainers/officer.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
+
+KrisPalette:
+INCLUDE "gfx/player/kris.pal"

@@ -629,10 +629,10 @@ _CGB_TrainerCard:
 	xor a ; CHRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, PRYCE
+	ld a, KRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, WALKER
+	ld a, BUGSY
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, WHITNEY
@@ -641,13 +641,13 @@ _CGB_TrainerCard:
 	ld a, MORTY
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, CHUCK
+	ld a, WALKER ; CLAIR
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, JASMINE
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, PRYCE
+	ld a, PRYCE ; CHUCK
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld hl, .BadgePalettes
@@ -675,54 +675,46 @@ _CGB_TrainerCard:
 	ld a, $1 ; kris
 .got_gender2
 	call FillBoxCGB
-	; top-right corner still uses the border's palette
-	hlcoord 18, 1, wAttrMap
-	ld [hl], $1
 	hlcoord 2, 11, wAttrMap
-	lb bc, 2, 4
-	ld a, $1 ; falkner
-	call FillBoxCGB
-	hlcoord 6, 11, wAttrMap
-	lb bc, 2, 4
-	ld a, $2 ; bugsy
-	call FillBoxCGB
-	hlcoord 10, 11, wAttrMap
-	lb bc, 2, 4
-	ld a, $3 ; whitney
-	call FillBoxCGB
-	hlcoord 14, 11, wAttrMap
-	lb bc, 2, 4
-	ld a, $4 ; morty
-	call FillBoxCGB
-	hlcoord 2, 14, wAttrMap
-	lb bc, 2, 4
-	ld a, $5 ; chuck
-	call FillBoxCGB
-	hlcoord 6, 14, wAttrMap
-	lb bc, 2, 4
-	ld a, $6 ; jasmine
-	call FillBoxCGB
-	hlcoord 10, 14, wAttrMap
 	lb bc, 2, 4
 	ld a, $7 ; pryce
 	call FillBoxCGB
-	; clair uses kris's palette
-	ld a, [wPlayerGender]
-	and a
-	push af
-	jr z, .got_gender3
+	hlcoord 6, 11, wAttrMap
+	lb bc, 2, 4
+	ld a, $5 ; enoki
+	call FillBoxCGB
+	hlcoord 10, 11, wAttrMap
+	lb bc, 2, 4
+	ld a, $3 ; chigusa
+	call FillBoxCGB
+	hlcoord 14, 11, wAttrMap
+	lb bc, 2, 4
+	ld a, $4 ; byron
+	call FillBoxCGB
+	hlcoord 2, 14, wAttrMap
+	lb bc, 2, 4
+	ld a, $7 ; milton
+	call FillBoxCGB
+	hlcoord 6, 14, wAttrMap
+	lb bc, 2, 4
+	ld a, $5 ; kurt
+	call FillBoxCGB
+	hlcoord 10, 14, wAttrMap
+	lb bc, 2, 4
+	ld a, $5 ; walker
+	call FillBoxCGB
 	hlcoord 14, 14, wAttrMap
 	lb bc, 2, 4
-	ld a, $1
+	ld a, $5 ; master
 	call FillBoxCGB
-.got_gender3
-	pop af
-	ld c, $0
-	jr nz, .got_gender4
-	inc c
-.got_gender4
-	ld a, c
+	; top-right corner still uses the border's palette
 	hlcoord 18, 1, wAttrMap
+	ld a, [wPlayerGender]
+	and a
+	ld a, $1 ; kris
+	jr z, .got_gender3
+	ld a, $0 ; chris
+.got_gender3
 	ld [hl], a
 	call ApplyAttrMap
 	call ApplyPals
