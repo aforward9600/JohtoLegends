@@ -563,5 +563,7 @@ PokemonPicPointers::
 	dba SalamenceBackpic
 	dba WynautFrontpic
 	dba WynautBackpic
+	dba AzurillFrontpic
+	dba AzurillBackpic
 	dba MissingnoFrontpic
 	dba MissingnoBackpic

@@ -311,12 +311,6 @@ PlaceEnemysName::
 	and a
 	jr nz, .linkbattle
 
-	ld a, [wTrainerClass]
-	cp RIVAL1
-	jr z, .rival
-	cp RIVAL2
-	jr z, .rival
-
 	ld de, wOTClassName
 	call PlaceString
 	ld h, b
@@ -327,10 +321,6 @@ PlaceEnemysName::
 	callfar Battle_GetTrainerName
 	pop hl
 	ld de, wStringBuffer1
-	jr PlaceCommandCharacter
-
-.rival
-	ld de, wRivalName
 	jr PlaceCommandCharacter
 
 .linkbattle

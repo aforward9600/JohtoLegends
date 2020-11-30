@@ -2,8 +2,8 @@ TrainerClassDVs:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	;  atk,def,spd,spc
 	dn  9, 10,  7,  7 ; WALKER
-	dn  8,  8,  8,  8 ; BUGSY
-	dn  9,  8,  8,  8 ; WHITNEY
+	dn  8,  8,  8,  8 ; WHITNEY
+	dn  9,  8,  8,  8 ; KURT
 	dn  9,  8,  8,  8 ; MORTY
 	dn  9,  8,  8,  8 ; PRYCE
 	dn  9,  8,  8,  8 ; JASMINE
@@ -68,3 +68,5 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; OFFICER
 	dn  7, 14, 10,  8 ; GRUNTF
 	dn  9,  8,  8,  8 ; MYSTICALMAN
+	dn 13, 13, 13, 13 ; RIVAL3
+	dn 13, 13, 13, 13 ; RIVAL4

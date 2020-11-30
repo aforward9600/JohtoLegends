@@ -182,8 +182,8 @@ FirstEvoStages::
 	dw MAREEP
 	dw MAREEP
 	dw ODDISH
-	dw MARILL
-	dw MARILL     ;b8
+	dw AZURILL
+	dw AZURILL     ;b8
 	dw SUDOWOODO
 	dw POLIWAG
 	dw HOPPIP
@@ -275,4 +275,5 @@ FirstEvoStages::
 	dw BAGON
 	dw BAGON
 	dw WYNAUT
+	dw AZURILL
 	dw MISSINGNO

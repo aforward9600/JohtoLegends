@@ -32,7 +32,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
-	dw MarillEggMoves
+	dw NoEggMoves2
 	dw NoEggMoves2
 	dw SudowoodoEggMoves
 	dw NoEggMoves2
@@ -125,6 +125,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw AzurillEggMoves
 	dw NoEggMoves2
 
 ChikoritaEggMoves:
@@ -235,17 +236,6 @@ MareepEggMoves:
 	dw SAFEGUARD
 	dw SCREECH
 	dw REFLECT
-	dw -1 ; end
-
-MarillEggMoves:
-	dw LIGHT_SCREEN
-	dw PRESENT
-	dw AMNESIA
-	dw FUTURE_SIGHT
-	dw BELLY_DRUM
-	dw PERISH_SONG
-	dw SUPERSONIC
-	dw FORESIGHT
 	dw -1 ; end
 
 SudowoodoEggMoves:
@@ -493,6 +483,17 @@ BagonEggMoves:
 	dw HYDRO_PUMP
 	dw THRASH
 	dw TWISTER
+	dw -1 ; end
+
+AzurillEggMoves:
+	dw LIGHT_SCREEN
+	dw PRESENT
+	dw AMNESIA
+	dw FUTURE_SIGHT
+	dw BELLY_DRUM
+	dw PERISH_SONG
+	dw SUPERSONIC
+	dw FORESIGHT
 	dw -1 ; end
 NoEggMoves2:
 	dw -1 ; end

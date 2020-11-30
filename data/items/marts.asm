@@ -286,7 +286,7 @@ MartCeladon2F2:
 MartCeladon3F:
 	db 5 ; # items
 	db TM_GIGA_IMPACT
-	db TM_WILD_CHARGE
+	db TM_NASTY_PLOT
 	db TM_PROTECT
 	db TM_DREAM_EATER
 	db TM_HONE_CLAWS

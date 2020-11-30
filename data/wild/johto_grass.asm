@@ -23,9 +23,9 @@ JohtoGrassWildMons:
 	; nite
 	dbw 3, GASTLY
 	dbw 4, GASTLY
-	dbw 5, GASTLY
+	dbw 5, MISDREAVUS
 	dbw 3, RATTATA
-	dbw 6, GASTLY
+	dbw 6, MISDREAVUS
 	dbw 5, RATTATA
 	dbw 5, RATTATA
 
@@ -50,9 +50,9 @@ JohtoGrassWildMons:
 	; nite
 	dbw 3, GASTLY
 	dbw 4, GASTLY
-	dbw 5, GASTLY
+	dbw 5, MISDREAVUS
 	dbw 3, RATTATA
-	dbw 6, GASTLY
+	dbw 6, MISDREAVUS
 	dbw 5, RATTATA
 	dbw 5, RATTATA
 
@@ -1194,25 +1194,25 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 2, BAGON
-	dbw 2, WYNAUT
-	dbw 3, SALAMENCE
-	dbw 3, MISSINGNO
+	dbw 2, AZURILL
+	dbw 3, PIDGEY
+	dbw 3, BAGON
 	dbw 2, RATTATA
 	dbw 3, HOPPIP
 	dbw 3, HOPPIP
 	; day
 	dbw 2, BAGON
-	dbw 2, WYNAUT
-	dbw 3, SALAMENCE
-	dbw 3, MISSINGNO
+	dbw 2, AZURILL
+	dbw 3, PIDGEY
+	dbw 3, BAGON
 	dbw 2, RATTATA
 	dbw 3, HOPPIP
 	dbw 3, HOPPIP
 	; nite
 	dbw 2, BAGON
-	dbw 2, WYNAUT
-	dbw 3, SALAMENCE
-	dbw 3, MISSINGNO
+	dbw 2, AZURILL
+	dbw 3, RATTATA
+	dbw 3, BAGON
 	dbw 2, RATTATA
 	dbw 3, HOOTHOOT
 	dbw 3, HOOTHOOT

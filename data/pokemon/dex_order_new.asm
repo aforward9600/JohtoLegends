@@ -135,6 +135,7 @@ NewPokedexOrder:
 	dw GROWLITHE
 	dw ARCANINE
 	dw STANTLER
+	dw AZURILL
 	dw MARILL
 	dw AZUMARILL
 	dw DIGLETT

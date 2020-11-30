@@ -125,6 +125,7 @@ EvosAttacksPointers2::
 	dw ShelgonEvosAttacks
 	dw SalamenceEvosAttacks
 	dw WynautEvosAttacks
+	dw AzurillEvosAttacks
 	dw MissingnoEvosAttacks
 
 ChikoritaEvosAttacks:
@@ -253,7 +254,6 @@ TotodileEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, LEER
-	dbw 1, FLY
 	dbw 6, WATER_GUN
 	dbw 8, RAGE
 	dbw 13, BITE
@@ -2503,6 +2503,21 @@ WynautEvosAttacks:
 	dbw 15, DESTINY_BOND
 	dbw 15, MIRROR_COAT
 	dbw 15, SAFEGUARD
+	db 0 ; no more level-up moves
+
+AzurillEvosAttacks:
+	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, MARILL
+	db 0 ; no more evolutions
+	dbw 1, SPLASH
+	dbw 1, WATER_GUN
+	dbw 2, TAIL_WHIP
+	dbw 5, DOUBLESLAP
+	dbw 7, BUBBLE
+	dbw 10, CHARM
+	dbw 13, BUBBLEBEAM
+	dbw 16, SWEET_KISS
+	dbw 20, SLAM
+	dbw 23, BOUNCE
 	db 0 ; no more level-up moves
 
 MissingnoEvosAttacks:

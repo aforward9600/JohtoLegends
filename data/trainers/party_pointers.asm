@@ -4,7 +4,7 @@ TrainerGroups:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	dba WalkerGroup
 	dba WhitneyGroup
-	dba BugsyGroup
+	dba KurtGroup
 	dba MortyGroup
 	dba PryceGroup
 	dba JasmineGroup
@@ -69,3 +69,5 @@ TrainerGroups:
 	dba OfficerGroup
 	dba GruntFGroup
 	dba MysticalmanGroup
+	dba Rival3Group
+	dba Rival4Group

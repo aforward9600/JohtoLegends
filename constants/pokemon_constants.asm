@@ -295,6 +295,7 @@ JOHTO_POKEMON EQU const_value
 	const SHELGON
 	const SALAMENCE
 	const WYNAUT
+	const AZURILL
 	const MISSINGNO
 NUM_POKEMON EQU const_value + -1
 

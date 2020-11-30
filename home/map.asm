@@ -1308,11 +1308,11 @@ LoadTilesetGFX::
 
 	ldh a, [rVBK]
 	push af
-	ld a, $1
+	ld a, BANK(vTiles5)
 	ldh [rVBK], a
 
 	ld hl, wDecompressScratch + $80 tiles
-	ld de, vTiles2
+	ld de, vTiles5
 	ld bc, $80 tiles
 	call CopyBytes
 

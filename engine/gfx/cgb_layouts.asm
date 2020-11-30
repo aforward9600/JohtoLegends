@@ -632,7 +632,7 @@ _CGB_TrainerCard:
 	ld a, KRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, BUGSY
+	ld a, KURT
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, WHITNEY
@@ -697,7 +697,7 @@ _CGB_TrainerCard:
 	call FillBoxCGB
 	hlcoord 6, 14, wAttrMap
 	lb bc, 2, 4
-	ld a, $5 ; kurt
+	ld a, $2 ; kurt
 	call FillBoxCGB
 	hlcoord 10, 14, wAttrMap
 	lb bc, 2, 4

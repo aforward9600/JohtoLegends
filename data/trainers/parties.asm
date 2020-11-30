@@ -35,18 +35,18 @@ WhitneyGroup:
 
 	end_list_items
 
-BugsyGroup:
-	next_list_item ; BUGSY (1)
-	db "BUGSY@", TRAINERTYPE_MOVES
+KurtGroup:
+	next_list_item ; KURT (1)
+	db "Kurt@", TRAINERTYPE_MOVES
 	db 14
-	dw METAPOD
-	dw TACKLE, STRING_SHOT, HARDEN, NO_MOVE
+	dw YANMA
+	dw SONICBOOM, QUICK_ATTACK, FORESIGHT, TACKLE
 	db 14
-	dw KAKUNA
-	dw POISON_STING, STRING_SHOT, HARDEN, NO_MOVE
+	dw SPINARAK
+	dw POISON_STING, SCARY_FACE, ABSORB, PAYBACK
 	db 16
-	dw SCYTHER
-	dw QUICK_ATTACK, LEER, FURY_CUTTER, NO_MOVE
+	dw HERACROSS
+	dw HEADBUTT, AERIAL_ACE, HORN_ATTACK, ENDURE
 	db -1 ; end
 
 	end_list_items
@@ -135,26 +135,8 @@ ClairGroup:
 	end_list_items
 
 Rival1Group:
-	next_list_item ; RIVAL1 (1)
-	db "?@", TRAINERTYPE_NORMAL
-	db 5
-	dw CHIKORITA
-	db -1 ; end
-
-	next_list_item ; RIVAL1 (2)
-	db "?@", TRAINERTYPE_NORMAL
-	db 5
-	dw CYNDAQUIL
-	db -1 ; end
-
-	next_list_item ; RIVAL1 (3)
-	db "?@", TRAINERTYPE_NORMAL
-	db 5
-	dw TOTODILE
-	db -1 ; end
-
 	next_list_item ; RIVAL1 (4)
-	db "?@", TRAINERTYPE_NORMAL
+	db "Dahlia@", TRAINERTYPE_NORMAL
 	db 12
 	dw GASTLY
 	db 14
@@ -164,7 +146,7 @@ Rival1Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (5)
-	db "?@", TRAINERTYPE_NORMAL
+	db "Dahlia@", TRAINERTYPE_NORMAL
 	db 12
 	dw GASTLY
 	db 14
@@ -174,7 +156,7 @@ Rival1Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (6)
-	db "?@", TRAINERTYPE_NORMAL
+	db "Dahlia@", TRAINERTYPE_NORMAL
 	db 12
 	dw GASTLY
 	db 14
@@ -184,7 +166,7 @@ Rival1Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (7)
-	db "?@", TRAINERTYPE_MOVES
+	db "Dahlia@", TRAINERTYPE_MOVES
 	db 20
 	dw HAUNTER
 	dw LICK, SPITE, MEAN_LOOK, CURSE
@@ -200,7 +182,7 @@ Rival1Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (8)
-	db "?@", TRAINERTYPE_MOVES
+	db "Dahlia@", TRAINERTYPE_MOVES
 	db 20
 	dw HAUNTER
 	dw LICK, SPITE, MEAN_LOOK, CURSE
@@ -216,7 +198,7 @@ Rival1Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (9)
-	db "?@", TRAINERTYPE_MOVES
+	db "Dahlia@", TRAINERTYPE_MOVES
 	db 20
 	dw HAUNTER
 	dw LICK, SPITE, MEAN_LOOK, CURSE
@@ -232,7 +214,7 @@ Rival1Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (10)
-	db "?@", TRAINERTYPE_MOVES
+	db "Dahlia@", TRAINERTYPE_MOVES
 	db 30
 	dw GOLBAT
 	dw LEECH_LIFE, BITE, CONFUSE_RAY, WING_ATTACK
@@ -251,7 +233,7 @@ Rival1Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (11)
-	db "?@", TRAINERTYPE_MOVES
+	db "Dahlia@", TRAINERTYPE_MOVES
 	db 30
 	dw GOLBAT
 	dw LEECH_LIFE, BITE, CONFUSE_RAY, WING_ATTACK
@@ -270,7 +252,7 @@ Rival1Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (12)
-	db "?@", TRAINERTYPE_MOVES
+	db "Dahlia@", TRAINERTYPE_MOVES
 	db 30
 	dw GOLBAT
 	dw LEECH_LIFE, BITE, CONFUSE_RAY, WING_ATTACK
@@ -289,7 +271,7 @@ Rival1Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (13)
-	db "?@", TRAINERTYPE_MOVES
+	db "Dahlia@", TRAINERTYPE_MOVES
 	db 34
 	dw SNEASEL
 	dw QUICK_ATTACK, SCREECH, FAINT_ATTACK, FURY_CUTTER
@@ -311,7 +293,7 @@ Rival1Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (14)
-	db "?@", TRAINERTYPE_MOVES
+	db "Dahlia@", TRAINERTYPE_MOVES
 	db 34
 	dw SNEASEL
 	dw QUICK_ATTACK, SCREECH, FAINT_ATTACK, FURY_CUTTER
@@ -333,7 +315,7 @@ Rival1Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (15)
-	db "?@", TRAINERTYPE_MOVES
+	db "Dahlia@", TRAINERTYPE_MOVES
 	db 34
 	dw SNEASEL
 	dw QUICK_ATTACK, SCREECH, FAINT_ATTACK, FURY_CUTTER
@@ -3284,7 +3266,7 @@ SuperNerdGroup:
 
 Rival2Group:
 	next_list_item ; RIVAL2 (1)
-	db "?@", TRAINERTYPE_MOVES
+	db "Dahlia@", TRAINERTYPE_MOVES
 	db 41
 	dw SNEASEL
 	dw QUICK_ATTACK, SCREECH, FAINT_ATTACK, FURY_CUTTER
@@ -3306,7 +3288,7 @@ Rival2Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL2 (2)
-	db "?@", TRAINERTYPE_MOVES
+	db "Dahlia@", TRAINERTYPE_MOVES
 	db 41
 	dw SNEASEL
 	dw QUICK_ATTACK, SCREECH, FAINT_ATTACK, FURY_CUTTER
@@ -3328,7 +3310,7 @@ Rival2Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL2 (3)
-	db "?@", TRAINERTYPE_MOVES
+	db "Dahlia@", TRAINERTYPE_MOVES
 	db 41
 	dw SNEASEL
 	dw QUICK_ATTACK, SCREECH, FAINT_ATTACK, FURY_CUTTER
@@ -3350,7 +3332,7 @@ Rival2Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL2 (4)
-	db "?@", TRAINERTYPE_MOVES
+	db "Dahlia@", TRAINERTYPE_MOVES
 	db 45
 	dw SNEASEL
 	dw QUICK_ATTACK, SCREECH, FAINT_ATTACK, FURY_CUTTER
@@ -3372,7 +3354,7 @@ Rival2Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL2 (5)
-	db "?@", TRAINERTYPE_MOVES
+	db "Dahlia@", TRAINERTYPE_MOVES
 	db 45
 	dw SNEASEL
 	dw QUICK_ATTACK, SCREECH, FAINT_ATTACK, FURY_CUTTER
@@ -3394,7 +3376,7 @@ Rival2Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL2 (6)
-	db "?@", TRAINERTYPE_MOVES
+	db "Dahlia@", TRAINERTYPE_MOVES
 	db 45
 	dw SNEASEL
 	dw QUICK_ATTACK, SCREECH, FAINT_ATTACK, FURY_CUTTER
@@ -5271,6 +5253,48 @@ MysticalmanGroup:
 	db 25
 	dw ELECTRODE
 	dw SCREECH, SONICBOOM, THUNDER, ROLLOUT
+	db -1 ; end
+
+	end_list_items
+
+Rival3Group:
+	next_list_item ; RIVAL3 (1)
+	db "Dahlia@", TRAINERTYPE_NORMAL
+	db 5
+	dw CHIKORITA
+	db -1 ; end
+
+	next_list_item ; RIVAL3 (2)
+	db "Dahlia@", TRAINERTYPE_NORMAL
+	db 5
+	dw CYNDAQUIL
+	db -1 ; end
+
+	next_list_item ; RIVAL3 (3)
+	db "Dahlia@", TRAINERTYPE_NORMAL
+	db 5
+	dw TOTODILE
+	db -1 ; end
+
+	end_list_items
+
+Rival4Group:
+	next_list_item ; RIVAL4 (1)
+	db "Draco@", TRAINERTYPE_NORMAL
+	db 5
+	dw CHIKORITA
+	db -1 ; end
+
+	next_list_item ; RIVAL4 (2)
+	db "Draco@", TRAINERTYPE_NORMAL
+	db 5
+	dw CYNDAQUIL
+	db -1 ; end
+
+	next_list_item ; RIVAL4 (3)
+	db "Draco@", TRAINERTYPE_NORMAL
+	db 5
+	dw TOTODILE
 	db -1 ; end
 
 	end_list_items

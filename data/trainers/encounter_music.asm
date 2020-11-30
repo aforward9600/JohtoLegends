@@ -5,7 +5,7 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; none
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; walker
 	db MUSIC_LASS_ENCOUNTER        ; whitney
-	db MUSIC_YOUNGSTER_ENCOUNTER   ; bugsy
+	db MUSIC_OFFICER_ENCOUNTER     ; kurt
 	db MUSIC_OFFICER_ENCOUNTER     ; morty
 	db MUSIC_OFFICER_ENCOUNTER     ; pryce
 	db MUSIC_LASS_ENCOUNTER        ; jasmine
@@ -70,6 +70,8 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; officer
 	db MUSIC_ROCKET_ENCOUNTER      ; gruntf
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
+	db MUSIC_RIVAL_ENCOUNTER       ; rival3
+	db MUSIC_RIVAL_ENCOUNTER       ; rival4
 	db MUSIC_HIKER_ENCOUNTER
 	db MUSIC_HIKER_ENCOUNTER
 	db MUSIC_HIKER_ENCOUNTER

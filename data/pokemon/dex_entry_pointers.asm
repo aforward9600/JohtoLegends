@@ -275,4 +275,5 @@ PokedexDataPointerTable:
 	dba ShelgonPokedexEntry
 	dba SalamencePokedexEntry
 	dba WynautPokedexEntry
+	dba AzurillPokedexEntry
 	dba MissingnoPokedexEntry

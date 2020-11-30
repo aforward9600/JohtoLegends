@@ -21,7 +21,6 @@
 	const SPRITE_WILL ; 11
 	const SPRITE_WALKER ; 12
 	const SPRITE_WHITNEY ; 13
-	const SPRITE_BUGSY ; 14
 	const SPRITE_MORTY ; 15
 	const SPRITE_CHUCK ; 16
 	const SPRITE_JASMINE ; 17
@@ -165,3 +164,4 @@ SPRITE_VARS EQU const_value
 	const SPRITE_FUCHSIA_GYM_4 ; fa
 	const SPRITE_COPYCAT ; fb
 	const SPRITE_JANINE_IMPERSONATOR ; fc
+	const SPRITE_RIVAL

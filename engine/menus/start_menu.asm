@@ -192,7 +192,7 @@ StartMenu::
 .SaveString:     db "Save@"
 .OptionString:   db "Option@"
 .ExitString:     db "Exit@"
-.PokegearString: db "<POKE>Gear@"
+.PokegearString: db "Map@"
 .QuitString:     db "Quit@"
 
 .PokedexDesc:

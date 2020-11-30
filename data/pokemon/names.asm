@@ -278,4 +278,5 @@ PokemonNames::
 	db "Shelgon@@@"
 	db "Salamence@"
 	db "Wynaut@@@@"
+	db "Azurill@@@"
 	db "Missingno."

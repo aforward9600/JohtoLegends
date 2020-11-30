@@ -121,10 +121,14 @@ MrPokemonsHouse_OakScript:
 	waitbutton
 	closetext
 	setevent EVENT_RIVAL_NEW_BARK_TOWN
+	setevent EVENT_RIVAL_NEW_BARK_TOWN_2
 	setevent EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
 	clearevent EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR
 	setscene SCENE_FINISHED
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female2
 	setmapscene CHERRYGROVE_CITY, SCENE_CHERRYGROVECITY_MEET_RIVAL
+.next2
 	setmapscene ELMS_LAB, SCENE_ELMSLAB_MEET_OFFICER
 	specialphonecall SPECIALCALL_ROBBED
 	clearevent EVENT_COP_IN_ELMS_LAB
@@ -142,6 +146,10 @@ MrPokemonsHouse_OakScript:
 .RivalTakesCyndaquil:
 	setevent EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	end
+
+.Female2:
+	setmapscene CHERRYGROVE_CITY, SCENE_CHERRYGROVECITY_MEET_RIVAL_2
+	sjump .next2
 
 MrPokemonsHouse_ForeignMagazines:
 	jumptext MrPokemonsHouse_ForeignMagazinesText

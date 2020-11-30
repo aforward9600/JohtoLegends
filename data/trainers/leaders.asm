@@ -7,7 +7,7 @@
 GymLeaders:
 	db WALKER
 	db WHITNEY
-	db BUGSY
+	db KURT
 	db MORTY
 	db PRYCE
 	db JASMINE

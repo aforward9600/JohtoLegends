@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const AZALEAGYM_BUGSY
+	const AZALEAGYM_KURT
 	const AZALEAGYM_BUG_CATCHER1
 	const AZALEAGYM_BUG_CATCHER2
 	const AZALEAGYM_BUG_CATCHER3
@@ -12,19 +12,23 @@ AzaleaGym_MapScripts:
 
 	db 0 ; callbacks
 
-AzaleaGymBugsyScript:
+AzaleaGymKurtScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_BUGSY
+	checkevent EVENT_BEAT_KURT
 	iftrue .FightDone
-	writetext BugsyText_INeverLose
+	writetext KurtText_DangSilph
 	waitbutton
 	closetext
-	winlosstext BugsyText_ResearchIncomplete, 0
-	loadtrainer BUGSY, BUGSY1
+	winlosstext KurtText_NoRespect, 0
+	loadtrainer KURT, KURT1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_BUGSY
+	setevent EVENT_BEAT_KURT
+	opentext
+	writetext BeatenKurtText
+	waitbutton
+	closetext
 	opentext
 	writetext Text_ReceivedHiveBadge
 	playsound SFX_GET_BADGE
@@ -33,26 +37,26 @@ AzaleaGymBugsyScript:
 	readvar VAR_BADGES
 	scall AzaleaGymActivateRockets
 .FightDone:
-	checkevent EVENT_GOT_TM49_FURY_CUTTER
+	checkevent EVENT_GOT_TM60_X_SCISSOR
 	iftrue .GotFuryCutter
 	setevent EVENT_BEAT_TWINS_AMY_AND_MAY
 	setevent EVENT_BEAT_BUG_CATCHER_BENNY
 	setevent EVENT_BEAT_BUG_CATCHER_AL
 	setevent EVENT_BEAT_BUG_CATCHER_JOSH
-	writetext BugsyText_HiveBadgeSpeech
+	writetext KurtText_HiveBadgeSpeech
 	buttonsound
 	verbosegiveitem TM_X_SCISSOR
-	iffalse .NoRoomForFuryCutter
-	setevent EVENT_GOT_TM49_FURY_CUTTER
-	writetext BugsyText_FuryCutterSpeech
+	iffalse .NoRoomForXScissor
+	setevent EVENT_GOT_TM60_X_SCISSOR
+	writetext KurtText_XScissorSpeech
 	waitbutton
 	closetext
 	end
 
 .GotFuryCutter:
-	writetext BugsyText_BugMonsAreDeep
+	writetext KurtText_Retirement
 	waitbutton
-.NoRoomForFuryCutter:
+.NoRoomForXScissor:
 	closetext
 	end
 
@@ -124,7 +128,7 @@ TrainerBugCatcherJosh:
 
 AzaleaGymGuyScript:
 	faceplayer
-	checkevent EVENT_BEAT_BUGSY
+	checkevent EVENT_BEAT_KURT
 	iftrue .AzaleaGymGuyWinScript
 	opentext
 	writetext AzaleaGymGuyText
@@ -144,90 +148,90 @@ AzaleaGymStatue:
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	gettrainername STRING_BUFFER_4, BUGSY, BUGSY1
+	gettrainername STRING_BUFFER_4, KURT, KURT1
 	jumpstd gymstatue2
 
-BugsyText_INeverLose:
-	text "I'm BUGSY!"
-	line "I never lose when"
+KurtText_DangSilph:
+	text "Humph. I'm Kurt,"
+	line "Gym Leader of"
+	cont "Azalea Town. I"
 
-	para "it comes to bug"
-	line "#MON."
+	para "didn't want to be,"
+	line "but that dang"
+	cont "Silph Co. put me"
 
-	para "My research is"
-	line "going to make me"
+	para "outta business! I"
+	line "made the best"
+	cont "Balls around, but"
 
-	para "the authority on"
-	line "bug #MON!"
+	para "Silph came in with"
+	line "their cheap"
+	cont "quality ones they"
 
-	para "Let me demonstrate"
-	line "what I've learned"
-	cont "from my studies."
+	para "mass produced! My"
+	line "son in Ecruteak"
+	cont "City continues my"
+	
+	para "work as a hobby,"
+	line "but I still need"
+	cont "to work. That's"
+	
+	para "why I'm here!"
+	line "Alright, enough"
+	cont "talk, whipper-"
+	
+	para "snapper!"
 	done
 
-BugsyText_ResearchIncomplete:
-	text "Whoa, amazing!"
-	line "You're an expert"
-	cont "on #MON!"
+KurtText_NoRespect:
+	text "Tch! Kids these"
+	line "days! No respect"
+	cont "at all!"
+	done
 
-	para "My research isn't"
-	line "complete yet."
-
-	para "OK, you win. Take"
-	line "this BADGE."
+BeatenKurtText:
+	text "Alright, alright!"
+	line "You won, so here!"
 	done
 
 Text_ReceivedHiveBadge:
 	text "<PLAYER> received"
-	line "HIVEBADGE."
+	line "HiveBadge."
 	done
 
-BugsyText_HiveBadgeSpeech:
-	text "Do you know the"
-	line "benefits of HIVE-"
-	cont "BADGE?"
+KurtText_HiveBadgeSpeech:
+	text "The HiveBadge"
+	line "makes all #mon"
+	cont "up to Lv 70 obey"
 
-	para "If you have it,"
-	line "#MON up to L30"
-
-	para "will obey you,"
-	line "even traded ones."
-
-	para "#MON that know"
-	line "CUT will be able"
-
-	para "to use it outside"
-	line "of battle too."
-
-	para "Here, I also want"
-	line "you to have this."
+	para "you. Here, take"
+	line "this too."
 	done
 
-BugsyText_FuryCutterSpeech:
-	text "TM49 contains"
-	line "FURY CUTTER."
+KurtText_XScissorSpeech:
+	text "TM60 contains"
+	line "X-Scissor."
 
-	para "If you don't miss,"
-	line "it gets stronger"
-	cont "every turn."
+	para "It's a great move"
+	line "for Bug Types!"
+	cont "No special effects"
 
-	para "The longer your"
-	line "battle goes, the"
-	cont "better it gets."
+	para "though, so it may"
+	line "be boring for a"
+	cont "youngster like"
 
-	para "Isn't that great?"
-	line "I discovered it!"
+	para "you!"
 	done
 
-BugsyText_BugMonsAreDeep:
-	text "Bug #MON are"
-	line "deep. There are"
+KurtText_Retirement:
+	text "Maybe I can retire"
+	line "and rely on my son"
 
-	para "many mysteries to"
-	line "be explored."
+	para "for support. Then"
+	line "I can make Balls"
 
-	para "Study your favor-"
-	line "ites thoroughly."
+	para "as a hobby. Yeah,"
+	line "that sounds nice."
 	done
 
 BugCatcherBennySeenText:
@@ -326,37 +330,35 @@ TwinsAmyandmay2AfterBattleText:
 	done
 
 AzaleaGymGuyText:
-	text "Yo, challenger!"
+	text "How's it going,"
+	line "champ in the"
+	cont "making? Kurt's a"
 
-	para "BUGSY's young, but"
-	line "his knowledge of"
+	para "Bug Type user!"
+	line "Fire, Flying and"
+	cont "Rock Types make"
 
-	para "bug #MON is for"
-	line "real."
+	para "quick work of"
+	line "them! He used to"
+	cont "make unique #"
 
-	para "It's going to be"
-	line "tough without my"
-	cont "advice."
+	para "Balls out of"
+	line "Apricorns, but"
+	cont "Silph took most"
 
-	para "Let's see… Bug"
-	line "#MON don't like"
-	cont "fire."
-
-	para "Flying-type moves"
-	line "are super-effec-"
-	cont "tive too."
+	para "of his business,"
+	line "so he's a little"
+	cont "grouchy!"
 	done
 
 AzaleaGymGuyWinText:
-	text "Well done! That"
-	line "was a great clash"
+	text "You really"
+	line "squashed those"
 
-	para "of talented young"
-	line "trainers."
+	para "Bugs!....."
+	line "Sorry, was that"
 
-	para "With people like"
-	line "you, the future of"
-	cont "#MON is bright!"
+	para "too brutal?"
 	done
 
 AzaleaGym_MapEvents:
@@ -373,7 +375,7 @@ AzaleaGym_MapEvents:
 	bg_event  6, 13, BGEVENT_READ, AzaleaGymStatue
 
 	db 7 ; object events
-	object_event  5,  7, SPRITE_BUGSY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymBugsyScript, -1
+	object_event  5,  7, SPRITE_KURT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaGymKurtScript, -1
 	object_event  5,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherBenny, -1
 	object_event  8,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherAl, -1
 	object_event  0,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherJosh, -1

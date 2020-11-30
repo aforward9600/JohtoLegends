@@ -274,4 +274,5 @@ AnimationPointers:
 	dw ShelgonAnimation
 	dw SalamenceAnimation
 	dw WynautAnimation
+	dw AzurillAnimation
 	dw MissingnoAnimation

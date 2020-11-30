@@ -4,7 +4,7 @@ BTTrainerClassGenders:
 ; entries correspond to trainer classes
 	db MALE   ; FALKNER
 	db FEMALE ; WHITNEY
-	db FEMALE ; BUGSY
+	db MALE   ; KURT
 	db MALE   ; MORTY
 	db MALE   ; PRYCE
 	db FEMALE ; JASMINE

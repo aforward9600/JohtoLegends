@@ -274,4 +274,5 @@ FramesPointers:
 	dba ShelgonFrames
 	dba SalamenceFrames
 	dba WynautFrames
+	dba AzurillFrames
 	dba MissingnoFrames

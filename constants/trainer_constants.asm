@@ -30,8 +30,8 @@ CHRIS EQU __enum__
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
 
-	trainerclass BUGSY ; 3
-	const BUGSY1
+	trainerclass KURT ; 3
+	const KURT1
 
 	trainerclass MORTY ; 4
 	const MORTY1
@@ -49,9 +49,6 @@ CHRIS EQU __enum__
 	const CLAIR1
 
 	trainerclass RIVAL1 ; 9
-	const RIVAL1_1_CHIKORITA
-	const RIVAL1_1_CYNDAQUIL
-	const RIVAL1_1_TOTODILE
 	const RIVAL1_2_CHIKORITA
 	const RIVAL1_2_CYNDAQUIL
 	const RIVAL1_2_TOTODILE
@@ -698,6 +695,16 @@ CHRIS EQU __enum__
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
+
+	trainerclass RIVAL3 ; 44
+	const RIVAL3_A_CHIKORITA
+	const RIVAL3_A_CYNDAQUIL
+	const RIVAL3_A_TOTODILE
+
+	trainerclass RIVAL4 ; 44
+	const RIVAL4_A_CHIKORITA
+	const RIVAL4_A_CYNDAQUIL
+	const RIVAL4_A_TOTODILE
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

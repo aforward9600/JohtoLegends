@@ -4,7 +4,7 @@ TrainerPicPointers::
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	dba WalkerPic
 	dba WhitneyPic
-	dba BugsyPic
+	dba KurtPic
 	dba MortyPic
 	dba PrycePic
 	dba JasminePic
@@ -69,3 +69,5 @@ TrainerPicPointers::
 	dba OfficerPic
 	dba GruntfPic
 	dba MysticalmanPic
+	dba Rival3Pic
+	dba Rival4Pic

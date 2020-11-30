@@ -12,6 +12,7 @@ AlphabeticalPokedexOrder:
 	dw ARIADOS
 	dw ARTICUNO
 	dw AZUMARILL
+	dw AZURILL
 	dw BAGON
 	dw BAYLEEF
 	dw BEEDRILL

@@ -269,7 +269,7 @@ Route35Sign:
 	jumptext Route35SignText
 
 Route35TMRollout:
-	itemball TM_HONE_CLAWS
+	itemball TM_AERIAL_ACE
 
 Route35FruitTree:
 	fruittree FRUITTREE_ROUTE_35
