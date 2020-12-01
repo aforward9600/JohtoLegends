@@ -1,5 +1,7 @@
 	object_const_def ; object_event constants
-	const GOLDENRODBIKESHOP_CLERK
+	const GOLDENRODBIKESHOP_ROCKET
+	const GOLDENRODBIKESHOP_ROCKET_GIRL
+	const GOLDENRODBIKESHOP_ROCKER
 
 GoldenrodBikeShop_MapScripts:
 	db 0 ; scene scripts
@@ -9,94 +11,56 @@ GoldenrodBikeShop_MapScripts:
 .UnreferencedDummyScene:
 	end
 
-GoldenrodBikeShopClerkScript:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_BICYCLE
-	iftrue .GotBicycle
-	writetext GoldenrodBikeShopClerkIntroText
-	yesorno
-	iffalse .Refused
-	writetext GoldenrodBikeShopClerkAgreedText
-	buttonsound
-	waitsfx
-	giveitem BICYCLE
-	writetext BorrowedABicycleText
-	playsound SFX_KEY_ITEM
-	waitsfx
-	itemnotify
-	setflag ENGINE_BIKE_SHOP_CALL_ENABLED
-	setevent EVENT_GOT_BICYCLE
-.GotBicycle:
-	writetext GoldenrodBikeShopClerkFirstRateBikesText
-	waitbutton
-	closetext
-	end
-
-.Refused:
-	writetext GoldenrodBikeShopClerkRefusedText
-	waitbutton
-	closetext
-	end
-
-GoldenrodBikeShopJustReleasedCompactBike:
-; unused
-	jumptext GoldenrodBikeShopJustReleasedCompactBikeText
-
 GoldenrodBikeShopBicycle:
 	jumptext GoldenrodBikeShopBicycleText
 
-GoldenrodBikeShopClerkIntroText:
-	text "…sigh… I moved"
-	line "here, but I can't"
+GoldenrodBlackMarketClerk1Script:
+	faceplayer
+	opentext
+	pokemart MARTTYPE_SHADY, MART_GOLDENROD_BLACK_MARKET_1
+	closetext
+	end
 
-	para "sell my BICYCLES."
-	line "Why is that?"
+GoldenrodBlackMarketClerk2Script:
+	faceplayer
+	opentext
+	pokemart MARTTYPE_SHADY, MART_GOLDENROD_BLACK_MARKET_2
+	closetext
+	end
 
-	para "Could you ride a"
-	line "BICYCLE and adver-"
-	cont "tise for me?"
-	done
+GoldenrodBlackMarketRocketScript:
+	faceplayer
+	opentext
+	writetext BlackMarketRocketText
+	waitbutton
+	closetext
+	end
 
-GoldenrodBikeShopClerkAgreedText:
-	text "Really? Great!"
+BlackMarketRocketText:
+	text "The Upgrade is"
+	line "said to have been"
+	cont "made by reverse"
 
-	para "Give me your name"
-	line "and phone number,"
+	para "engineering the"
+	line "blueprints from"
+	cont "Silph. It seems"
 
-	para "and I'll loan you"
-	line "a BICYCLE."
-	done
+	para "to work fine, but"
+	line "that DubiousDisk."
 
-BorrowedABicycleText:
-	text "<PLAYER> borrowed a"
-	line "BICYCLE."
-	done
+	para "It was made by"
+	line "someone who attem-"
+	cont "ted to further"
 
-GoldenrodBikeShopClerkFirstRateBikesText:
-	text "My BICYCLES are"
-	line "first-rate! You"
-
-	para "can ride them"
-	line "anywhere."
-	done
-
-GoldenrodBikeShopClerkRefusedText:
-	text "…sigh… Oh, for"
-	line "the kindness of"
-	cont "people…"
-	done
-
-GoldenrodBikeShopJustReleasedCompactBikeText:
-	text "Just released!"
-
-	para "First-rate compact"
-	line "BICYCLES!"
+	para "evolve Porygon."
+	line "No idea what went"
+	cont "wrong there."
 	done
 
 GoldenrodBikeShopBicycleText:
-	text "It's a shiny new"
-	line "BICYCLE!"
+	text "It's a box of"
+	line "goods. Are they"
+	cont "stolen?"
 	done
 
 GoldenrodBikeShop_MapEvents:
@@ -119,5 +83,7 @@ GoldenrodBikeShop_MapEvents:
 	bg_event  6,  6, BGEVENT_READ, GoldenrodBikeShopBicycle
 	bg_event  7,  6, BGEVENT_READ, GoldenrodBikeShopBicycle
 
-	db 1 ; object events
-	object_event  7,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodBikeShopClerkScript, -1
+	db 3 ; object events
+	object_event  7,  3, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodBlackMarketClerk1Script, -1
+	object_event  0,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodBlackMarketClerk2Script, -1
+	object_event  4,  2, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodBlackMarketRocketScript, -1

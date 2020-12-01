@@ -1,15 +1,14 @@
 	object_const_def ; object_event constants
-	const GOLDENRODGYM_WHITNEY
-	const GOLDENRODGYM_LASS1
-	const GOLDENRODGYM_LASS2
+	const GOLDENRODGYM_MILTON
+	const GOLDENRODGYM_BREEDER
+	const GOLDENRODGYM_LASS
 	const GOLDENRODGYM_BUENA1
 	const GOLDENRODGYM_BUENA2
 	const GOLDENRODGYM_GYM_GUY
 
 GoldenrodGym_MapScripts:
-	db 2 ; scene scripts
+	db 1 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_GOLDENRODGYM_NOTHING
-	scene_script .DummyScene1 ; SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING
 
 	db 0 ; callbacks
 
@@ -19,61 +18,49 @@ GoldenrodGym_MapScripts:
 .DummyScene1:
 	end
 
-GoldenrodGymWhitneyScript:
+GoldenrodGymMiltonScript:
 	faceplayer
+	opentext
 	checkevent EVENT_BEAT_WHITNEY
 	iftrue .FightDone
-	opentext
-	writetext WhitneyBeforeText
+	writetext MiltonText_Howdy
 	waitbutton
 	closetext
-	winlosstext WhitneyShouldntBeSoSeriousText, 0
-	loadtrainer WHITNEY, WHITNEY1
+	winlosstext MiltonText_HooWee, 0
+	loadtrainer MILTON, MILTON1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_WHITNEY
-	setevent EVENT_MADE_WHITNEY_CRY
-	setscene SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING
-	setevent EVENT_BEAT_BEAUTY_VICTORIA
-	setevent EVENT_BEAT_BEAUTY_SAMANTHA
-	setevent EVENT_BEAT_LASS_CARRIE
-	setevent EVENT_BEAT_LASS_BRIDGET
-.FightDone:
 	opentext
-	checkevent EVENT_MADE_WHITNEY_CRY
-	iffalse .StoppedCrying
-	writetext WhitneyYouMeanieText
+	writetext BeatenMiltonText
 	waitbutton
 	closetext
-	end
-
-.StoppedCrying:
-	checkevent EVENT_GOT_TM45_ATTRACT
-	iftrue .GotAttract
-	checkflag ENGINE_PLAINBADGE
-	iftrue .GotPlainBadge
-	writetext WhitneyWhatDoYouWantText
-	buttonsound
-	waitsfx
+	opentext
 	writetext PlayerReceivedPlainBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_PLAINBADGE
 	readvar VAR_BADGES
 	scall GoldenrodGymActivateRockets
-.GotPlainBadge:
-	writetext WhitneyPlainBadgeText
+.FightDone:
+	checkevent EVENT_GOT_TM45_ATTRACT
+	iftrue .GotAttract
+	setevent EVENT_BEAT_LASS_CARRIE
+	setevent EVENT_BEAT_LASS_BRIDGET
+	setevent EVENT_BEAT_BEAUTY_SAMANTHA
+	setevent EVENT_BEAT_BEAUTY_VICTORIA
+	writetext MiltonText_PlainBadgeSpeech
 	buttonsound
-	verbosegiveitem TM_ATTRACT
+	verbosegiveitem TM_SWORDS_DANCE
 	iffalse .NoRoomForAttract
 	setevent EVENT_GOT_TM45_ATTRACT
-	writetext WhitneyAttractText
+	writetext MiltonAttractText
 	waitbutton
 	closetext
 	end
 
 .GotAttract:
-	writetext WhitneyGoodCryText
+	writetext MiltonSisterText
 	waitbutton
 .NoRoomForAttract:
 	closetext
@@ -99,19 +86,6 @@ TrainerLassCarrie:
 	writetext LassCarrieAfterBattleText
 	waitbutton
 	closetext
-	end
-
-WhitneyCriesScript:
-	showemote EMOTE_SHOCK, GOLDENRODGYM_LASS2, 15
-	applymovement GOLDENRODGYM_LASS2, BridgetWalksUpMovement
-	turnobject PLAYER, DOWN
-	opentext
-	writetext BridgetWhitneyCriesText
-	waitbutton
-	closetext
-	applymovement GOLDENRODGYM_LASS2, BridgetWalksAwayMovement
-	setscene SCENE_GOLDENRODGYM_NOTHING
-	clearevent EVENT_MADE_WHITNEY_CRY
 	end
 
 TrainerLassBridget:
@@ -169,7 +143,7 @@ GoldenrodGymStatue:
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	gettrainername STRING_BUFFER_4, WHITNEY, WHITNEY1
+	gettrainername STRING_BUFFER_4, MILTON, MILTON1
 	jumpstd gymstatue2
 
 BridgetWalksUpMovement:
@@ -182,90 +156,99 @@ BridgetWalksAwayMovement:
 	turn_head LEFT
 	step_end
 
-WhitneyBeforeText:
-	text "Hi! I'm WHITNEY!"
+MiltonText_Howdy:
+	text "Howdy pardner!"
+	line "Welcome to the"
+	cont "Goldenrod City"
 
-	para "Everyone was into"
-	line "#MON, so I got"
-	cont "into it too!"
+	para "Gym! Name's"
+	line "Milton, and I also"
+	cont "own MooMoo Farm! I"
 
-	para "#MON are"
-	line "super-cute!"
+	para "took up this here"
+	line "job as Gym Leader"
+	cont "so we could make"
 
-	para "You want to bat-"
-	line "tle? I'm warning"
-	cont "you--I'm good!"
+	para "extra money. The"
+	line "embargo from Kanto"
+	cont "has put a"
+
+	para "stranglehold on"
+	line "our business, but"
+	cont "enough about money"
+
+	para "and politics, and"
+	line "let's get to why"
+	cont "yer here. I accept"
+
+	para "yer challenge!"
 	done
 
-WhitneyShouldntBeSoSeriousText:
-	text "Sob…"
+MiltonText_HooWee:
+	text "Hoo-wee!"
 
-	para "…Waaaaaaah!"
-	line "You're mean!"
-
-	para "You shouldn't be"
-	line "so serious! You…"
-	cont "you child, you!"
+	para "Now there's some"
+	line "fine battling!"
 	done
 
-WhitneyYouMeanieText:
-	text "Waaaaah!"
+BeatenMiltonText:
+	text "I am impressed! Ya"
+	line "handled that"
+	cont "better than I can"
 
-	para "Waaaaah!"
+	para "handle a greased"
+	line "Primape! You've"
+	cont "earned this"
 
-	para "…Snivel, hic…"
-	line "…You meanie!"
-	done
-
-WhitneyWhatDoYouWantText:
-	text "…Sniff…"
-
-	para "What? What do you"
-	line "want? A BADGE?"
-
-	para "Oh, right."
-	line "I forgot. Here's"
-	cont "PLAINBADGE."
+	para "PlainBadge!"
 	done
 
 PlayerReceivedPlainBadgeText:
 	text "<PLAYER> received"
-	line "PLAINBADGE."
+	line "PlainBadge."
 	done
 
-WhitneyPlainBadgeText:
-	text "PLAINBADGE lets"
-	line "your #MON use"
+MiltonText_PlainBadgeSpeech:
+	text "All #mon up to"
+	line "Lv 60 will listen"
+	cont "to ya. Here, take"
 
-	para "STRENGTH outside"
-	line "of battle."
-
-	para "It also boosts"
-	line "your #MON's"
-	cont "SPEED."
-
-	para "Oh, you can have"
-	line "this too!"
+	para "This TM as well!"
 	done
 
-WhitneyAttractText:
-	text "It's ATTRACT!"
-	line "It makes full use"
+MiltonAttractText:
+	text "It's Swords Dance!"
+	line "It sharply increa-"
 
-	para "of a #MON's"
-	line "charm."
+	para "ses a #mon's"
+	line "Attack. Use it"
 
-	para "Isn't it just per-"
-	line "fect for a cutie"
-	cont "like me?"
+	para "On a tough"
+	line "#mon!"
 	done
 
-WhitneyGoodCryText:
-	text "Ah, that was a"
-	line "good cry!"
+MiltonSisterText:
+	text "My sister is an"
+	line "even better"
+	cont "trainer than I am,"
 
-	para "Come for a visit"
-	line "again! Bye-bye!"
+	para "if ya kin believe"
+	line "it! I hope someday"
+	cont "she can take over"
+
+	para "for me, or maybe"
+	line "her kid, if she"
+	cont "gets to having"
+
+	para "any. Ya might meet"
+	line "her someday!"
+	cont "You'll know when"
+
+	para "ya see her, trust"
+	line "me. Come back for"
+	cont "a chat now, ya"
+
+	para "hear?"
 	done
 
 LassCarrieSeenText:
@@ -311,17 +294,6 @@ LassBridgetAfterBattleText:
 	line "time!"
 	done
 
-BridgetWhitneyCriesText:
-	text "Oh, no. You made"
-	line "WHITNEY cry."
-
-	para "It's OK. She'll"
-	line "stop soon. She"
-
-	para "always cries when"
-	line "she loses."
-	done
-
 BeautyVictoriaSeenText:
 	text "Oh, you are a cute"
 	line "little trainer! "
@@ -359,22 +331,29 @@ BeautySamanthaAfterBattleText:
 	done
 
 GoldenrodGymGuyText:
-	text "Yo! CHAMP in"
-	line "making!"
+	text "How's it going,"
+	line "champ in the"
+	cont "making? Milton is"
 
-	para "This GYM is home"
-	line "to normal-type"
-	cont "#MON trainers."
+	para "a Normal Type"
+	line "wrangler sort of"
+	cont "guy. Fighting is"
 
-	para "I recommend you"
-	line "use fighting-type"
-	cont "#MON."
+	para "their only"
+	line "weakness, so hit"
+	cont "'em hard and fast!"
 	done
 
 GoldenrodGymGuyWinText:
-	text "You won? Great! I"
-	line "was busy admiring"
-	cont "the ladies here."
+	text "Yee-haw! Congrats"
+	line "there pardner! Yer"
+	cont "a real tough"
+
+	para "wrangler now! Hi-"
+	line "ho silv... Sorry."
+	cont "This place is"
+
+	para "getting to me."
 	done
 
 GoldenrodGym_MapEvents:
@@ -384,17 +363,16 @@ GoldenrodGym_MapEvents:
 	warp_event  2, 17, GOLDENROD_CITY, 1
 	warp_event  3, 17, GOLDENROD_CITY, 1
 
-	db 1 ; coord events
-	coord_event  8,  5, SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING, WhitneyCriesScript
+	db 0 ; coord events
 
 	db 2 ; bg events
 	bg_event  1, 15, BGEVENT_READ, GoldenrodGymStatue
 	bg_event  4, 15, BGEVENT_READ, GoldenrodGymStatue
 
 	db 6 ; object events
-	object_event  8,  3, SPRITE_WHITNEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1
-	object_event  9, 13, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerLassCarrie, -1
-	object_event  9,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassBridget, -1
-	object_event  0,  2, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyVictoria, -1
-	object_event 19,  5, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautySamantha, -1
+	object_event 11,  3, SPRITE_MILTON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodGymMiltonScript, -1
+	object_event  9, 13, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerLassCarrie, -1
+	object_event  9,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassBridget, -1
+	object_event  5,  1, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyVictoria, -1
+	object_event 18,  3, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautySamantha, -1
 	object_event  5, 15, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymGuyScript, -1

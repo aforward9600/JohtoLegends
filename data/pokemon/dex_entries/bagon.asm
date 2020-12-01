@@ -1,9 +1,10 @@
 	db "Rock Head@" ; species name
 	dw 200, 928 ; height, weight
 
-	db   "Its steel-hard can"
-	next "shatter boulders."
-	next "It longingly hopes"
+	db   "Its steel-hard he-"
+	next "ad can shatter bo-"
+	next "ulders. It longin-"
 
-	page "for wings to grow"
-	next "so it can fly.@"
+	page "gly hopes for"
+	next "wings to grow so"
+	next "it can fly.@"

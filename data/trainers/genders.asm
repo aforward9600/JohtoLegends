@@ -3,7 +3,7 @@
 BTTrainerClassGenders:
 ; entries correspond to trainer classes
 	db MALE   ; FALKNER
-	db FEMALE ; WHITNEY
+	db MALE   ; MILTON
 	db MALE   ; KURT
 	db MALE   ; MORTY
 	db MALE   ; PRYCE
@@ -52,7 +52,7 @@ BTTrainerClassGenders:
 	db MALE   ; FIREBREATHER
 	db MALE   ; JUGGLER
 	db MALE   ; BLACKBELT_T
-	db MALE   ; EXECUTIVEM
+	db MALE   ; ARCHER
 	db MALE   ; PSYCHIC_T
 	db FEMALE ; PICNICKER
 	db MALE   ; CAMPER

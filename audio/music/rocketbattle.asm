@@ -4,7 +4,7 @@ Music_RocketBattle:
 	musicheader 1, 3, Music_RocketBattle_Ch3
 
 Music_RocketBattle_Ch1:
-	tempo 101
+	tempo 115
 	volume $77
 	dutycycle $3
 	tone $0002

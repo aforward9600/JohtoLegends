@@ -27,8 +27,8 @@ CHRIS EQU __enum__
 	trainerclass WALKER ; 1
 	const WALKER1
 
-	trainerclass WHITNEY ; 2
-	const WHITNEY1
+	trainerclass MILTON ; 2
+	const MILTON1
 
 	trainerclass KURT ; 3
 	const KURT1
@@ -528,11 +528,11 @@ CHRIS EQU __enum__
 	const KENJI3
 	const WAI
 
-	trainerclass EXECUTIVEM ; 33
-	const EXECUTIVEM_1
-	const EXECUTIVEM_2
-	const EXECUTIVEM_3
-	const EXECUTIVEM_4
+	trainerclass ARCHER ; 33
+	const ARCHER_1
+	const ARCHER_2
+	const ARCHER_3
+	const ARCHER_4
 
 	trainerclass PSYCHIC_T ; 34
 	const NATHAN

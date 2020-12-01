@@ -49,7 +49,7 @@
 	tilecoll COUNTER, COUNTER, FLOOR, FLOOR ; 30
 	tilecoll WALL, WALL, FLOOR, WALL ; 31
 	tilecoll PC, WALL, FLOOR, WALL ; 32
-	tilecoll FLOOR, WARP_PANEL, FLOOR, FLOOR ; 33
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 33
 	tilecoll DOOR, WALL, FLOOR, FLOOR ; 34
 	tilecoll DOOR, WALL, FLOOR, WALL ; 35
 	tilecoll DOOR, WALL, FLOOR, FLOOR ; 36

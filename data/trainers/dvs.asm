@@ -2,7 +2,7 @@ TrainerClassDVs:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	;  atk,def,spd,spc
 	dn  9, 10,  7,  7 ; WALKER
-	dn  8,  8,  8,  8 ; WHITNEY
+	dn  8,  8,  8,  8 ; MILTON
 	dn  9,  8,  8,  8 ; KURT
 	dn  9,  8,  8,  8 ; MORTY
 	dn  9,  8,  8,  8 ; PRYCE
@@ -51,7 +51,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; FIREBREATHER
 	dn  9,  8,  8,  8 ; JUGGLER
 	dn  9,  8,  8,  8 ; BLACKBELT_T
-	dn 13,  8, 10,  8 ; EXECUTIVEM
+	dn 13,  8, 10,  8 ; ARCHER
 	dn  9,  8,  8,  8 ; PSYCHIC_T
 	dn  6, 10, 10,  8 ; PICNICKER
 	dn  9,  8,  8,  8 ; CAMPER

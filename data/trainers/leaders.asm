@@ -6,7 +6,7 @@
 
 GymLeaders:
 	db WALKER
-	db WHITNEY
+	db MILTON
 	db KURT
 	db MORTY
 	db PRYCE

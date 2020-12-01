@@ -4,7 +4,7 @@ TrainerEncounterMusic::
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	db MUSIC_HIKER_ENCOUNTER       ; none
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; walker
-	db MUSIC_LASS_ENCOUNTER        ; whitney
+	db MUSIC_OFFICER_ENCOUNTER     ; whitney
 	db MUSIC_OFFICER_ENCOUNTER     ; kurt
 	db MUSIC_OFFICER_ENCOUNTER     ; morty
 	db MUSIC_OFFICER_ENCOUNTER     ; pryce
@@ -53,7 +53,7 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; firebreather
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; juggler
 	db MUSIC_HIKER_ENCOUNTER       ; blackbelt_t
-	db MUSIC_ROCKET_ENCOUNTER      ; executivem
+	db MUSIC_ROCKET_ENCOUNTER      ; archer
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; psychic_t
 	db MUSIC_LASS_ENCOUNTER        ; picnicker
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; camper

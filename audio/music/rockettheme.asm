@@ -5,7 +5,7 @@ Music_RocketTheme:
 	musicheader 1, 4, Music_RocketTheme_Ch4
 
 Music_RocketTheme_Ch1:
-	tempo 128
+	tempo 139
 	volume $77
 	dutycycle $3
 	stereopanning $f

@@ -4,13 +4,13 @@ UnknownText_0x1c0000::
 	done
 
 UnknownText_0x1c0021::
-	text "An EGG? My talent"
+	text "An Egg? My talent"
 	line "is worth more…"
 	done
 
 UnknownText_0x1c0043::
 	text "Hello, hello! I'm"
-	line "the NAME RATER."
+	line "the Name Rater."
 
 	para "I rate the names"
 	line "of #mon."
@@ -1134,25 +1134,25 @@ UnknownText_0x1c14a4::
 	prompt
 
 UnknownText_0x1c14d2::
-	text "PROF.OAK's PC"
-	line "accessed."
+	text "Hello there!"
+	line "This is Prof"
 
-	para "#DEX Rating"
-	line "System opened."
+	para "Oak speaking!"
+	line "How are you?"
 	prompt
 
 UnknownText_0x1c1505::
 	text "…"
-	line "Link closed…"
+	line "Call ended…"
 	done
 
 _OakPCText1::
 	text "Want to get your"
-	line "#DEX rated?"
+	line "Journal rated?"
 	done
 
 _OakPCText2::
-	text "Current #DEX"
+	text "Current Journal"
 	line "completion level:"
 	prompt
 
@@ -1163,7 +1163,7 @@ _OakPCText3::
 	text_ram wStringBuffer4
 	text " #mon owned"
 
-	para "PROF.OAK's"
+	para "Prof.Oak's"
 	line "Rating:"
 	done
 
@@ -1175,7 +1175,7 @@ _OakRating01::
 _OakRating02::
 	text "Good. I see you"
 	line "understand how to"
-	cont "use # BALLS."
+	cont "use # Balls."
 	done
 
 _OakRating03::
@@ -1188,7 +1188,7 @@ _OakRating03::
 
 _OakRating04::
 	text "You need to fill"
-	line "up the #DEX."
+	line "up the Journal."
 
 	para "Catch different"
 	line "kinds of #mon!"
@@ -1198,7 +1198,7 @@ _OakRating05::
 	text "You're trying--I"
 	line "can see that."
 
-	para "Your #DEX is"
+	para "Your Journal is"
 	line "coming together."
 	done
 
@@ -1207,12 +1207,12 @@ _OakRating06::
 	line "#mon grow,"
 
 	para "others use the"
-	line "effects of STONES."
+	line "effects of Stones."
 	done
 
 _OakRating07::
 	text "Have you gotten a"
-	line "fishing ROD? You"
+	line "fishing Rod? You"
 
 	para "can catch #mon"
 	line "by fishing."
@@ -1233,7 +1233,7 @@ _OakRating09::
 	done
 
 _OakRating10::
-	text "Your #DEX is"
+	text "Your Journal is"
 	line "filling up. Keep"
 	cont "up the good work!"
 	done
@@ -1247,30 +1247,33 @@ _OakRating11::
 	done
 
 _OakRating12::
-	text "Have you met KURT?"
-	line "His custom BALLS"
-	cont "should help."
+	text "Have you met the"
+	line "son of Kurt? His"
+	cont "custom Balls"
+
+	para "should help."
 	done
 
 _OakRating13::
 	text "Wow. You've found"
 	line "more #mon than"
 
-	para "the last #DEX"
+	para "the last Journal"
 	line "research project."
 	done
 
 _OakRating14::
-	text "Are you trading"
-	line "your #mon?"
+	text "Are you using"
+	line "Link Cables?"
 
 	para "It's tough to do"
-	line "this alone!"
+	line "this without"
+	cont "them!"
 	done
 
 _OakRating15::
 	text "Wow! You've hit"
-	line "200! Your #DEX"
+	line "200! Your Journal"
 	cont "is looking great!"
 	done
 
@@ -1291,7 +1294,7 @@ _OakRating17::
 	done
 
 _OakRating18::
-	text "Your #DEX is"
+	text "Your Journal is"
 	line "amazing! You're"
 
 	para "ready to turn"
@@ -1300,15 +1303,15 @@ _OakRating18::
 
 _OakRating19::
 	text "Whoa! A perfect"
-	line "#DEX! I've"
+	line "Journal! I've"
 
 	para "dreamt about this!"
 	line "Congratulations!"
 	done
 
 _OakPCText4::
-	text "The link to PROF."
-	line "OAK's PC closed."
+	text "The call with"
+	line "Prof.Oak ended."
 	done
 
 UnknownText_0x1c19cd::
@@ -1444,12 +1447,12 @@ UnknownText_0x1c1c09::
 	prompt
 
 UnknownText_0x1c1c22::
-	text "The MAIL will lose"
+	text "The Mail will lose"
 	line "its message. OK?"
 	done
 
 UnknownText_0x1c1c47::
-	text "MAIL detached from"
+	text "Mail detached from"
 	line "@"
 	text_ram wStringBuffer1
 	text "."
@@ -1457,22 +1460,22 @@ UnknownText_0x1c1c47::
 
 UnknownText_0x1c1c62::
 	text "There's no space"
-	line "for removing MAIL."
+	line "for removing Mail."
 	prompt
 
 UnknownText_0x1c1c86::
 	text "Send the removed"
-	line "MAIL to your PC?"
+	line "Mail to your Box?"
 	done
 
 UnknownText_0x1c1ca9::
-	text "Your PC's MAILBOX"
+	text "Your Mailbox"
 	line "is full."
 	prompt
 
 UnknownText_0x1c1cc4::
-	text "The MAIL was sent"
-	line "to your PC."
+	text "The Mail was sent"
+	line "to your Box."
 	prompt
 
 UnknownText_0x1c1ce3::
@@ -1481,10 +1484,10 @@ UnknownText_0x1c1ce3::
 
 UnknownText_0x1c1cf3::
 	text "An item in your"
-	line "PACK may be"
+	line "Pack may be"
 
 	para "registered for use"
-	line "on SELECT Button."
+	line "on Select Button."
 	done
 
 _OakText1::
@@ -1494,10 +1497,10 @@ _OakText1::
 	para "Welcome to the"
 	line "world of #mon!"
 
-	para "My name is OAK."
+	para "My name is Oak."
 
 	para "People call me the"
-	line "#mon PROF."
+	line "#mon Prof."
 	prompt
 
 _OakText2::

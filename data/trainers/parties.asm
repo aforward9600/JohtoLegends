@@ -22,15 +22,15 @@ WalkerGroup:
 
 	end_list_items
 
-WhitneyGroup:
-	next_list_item ; WHITNEY (1)
-	db "WHITNEY@", TRAINERTYPE_MOVES
+MiltonGroup:
+	next_list_item ; Milton (1)
+	db "Milton@", TRAINERTYPE_MOVES
 	db 18
-	dw CLEFAIRY
-	dw DOUBLESLAP, MIMIC, ENCORE, METRONOME
-	db 20
-	dw MILTANK
-	dw ROLLOUT, ATTRACT, STOMP, MILK_DRINK
+	dw AIPOM
+	dw FURY_SWIPES, SWORDS_DANCE, GROWL, SAND_ATTACK
+	db 19
+	dw TAUROS
+	dw SWORDS_DANCE, REST, HORN_ATTACK, SCARY_FACE
 	db -1 ; end
 
 	end_list_items
@@ -1923,14 +1923,14 @@ PokemaniacGroup:
 	end_list_items
 
 GruntMGroup:
-	next_list_item ; GRUNTM (1)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (1)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 14
 	dw KOFFING
 	db -1 ; end
 
-	next_list_item ; GRUNTM (2)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (2)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 7
 	dw RATTATA
 	db 9
@@ -1939,16 +1939,16 @@ GruntMGroup:
 	dw ZUBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (3)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (3)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 24
 	dw RATICATE
 	db 24
 	dw RATICATE
 	db -1 ; end
 
-	next_list_item ; GRUNTM (4)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (4)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 23
 	dw GRIMER
 	db 23
@@ -1957,8 +1957,8 @@ GruntMGroup:
 	dw MUK
 	db -1 ; end
 
-	next_list_item ; GRUNTM (5)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (5)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 21
 	dw RATTATA
 	db 21
@@ -1971,16 +1971,16 @@ GruntMGroup:
 	dw RATTATA
 	db -1 ; end
 
-	next_list_item ; GRUNTM (6)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (6)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 26
 	dw ZUBAT
 	db 26
 	dw ZUBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (7)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (7)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 23
 	dw KOFFING
 	db 23
@@ -1991,22 +1991,22 @@ GruntMGroup:
 	dw RATTATA
 	db -1 ; end
 
-	next_list_item ; GRUNTM (8)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (8)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 26
 	dw WEEZING
 	db -1 ; end
 
-	next_list_item ; GRUNTM (9)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (9)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 24
 	dw RATICATE
 	db 26
 	dw KOFFING
 	db -1 ; end
 
-	next_list_item ; GRUNTM (10)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (10)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 22
 	dw ZUBAT
 	db 24
@@ -2015,8 +2015,8 @@ GruntMGroup:
 	dw GRIMER
 	db -1 ; end
 
-	next_list_item ; GRUNTM (11)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (11)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 23
 	dw MUK
 	db 23
@@ -2025,36 +2025,36 @@ GruntMGroup:
 	dw RATTATA
 	db -1 ; end
 
-	next_list_item ; GRUNTM (12)
+	next_list_item ; ManM (12)
 	db "EXECUTIVE@", TRAINERTYPE_NORMAL
 	db 33
 	dw HOUNDOUR
 	db -1 ; end
 
-	next_list_item ; GRUNTM (13)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (13)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 27
 	dw RATTATA
 	db -1 ; end
 
-	next_list_item ; GRUNTM (14)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (14)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 24
 	dw RATICATE
 	db 24
 	dw GOLBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (15)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (15)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 26
 	dw GRIMER
 	db 23
 	dw WEEZING
 	db -1 ; end
 
-	next_list_item ; GRUNTM (16)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (16)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 16
 	dw RATTATA
 	db 16
@@ -2065,14 +2065,14 @@ GruntMGroup:
 	dw RATTATA
 	db -1 ; end
 
-	next_list_item ; GRUNTM (17)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (17)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 18
 	dw GOLBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (18)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (18)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 17
 	dw RATTATA
 	db 17
@@ -2081,24 +2081,24 @@ GruntMGroup:
 	dw RATTATA
 	db -1 ; end
 
-	next_list_item ; GRUNTM (19)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (19)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 18
 	dw VENONAT
 	db 18
 	dw VENONAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (20)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (20)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 17
 	dw DROWZEE
 	db 19
 	dw ZUBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (21)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (21)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 16
 	dw ZUBAT
 	db 17
@@ -2107,64 +2107,64 @@ GruntMGroup:
 	dw RATTATA
 	db -1 ; end
 
-	next_list_item ; GRUNTM (22)
+	next_list_item ; ManM (22)
 	db "EXECUTIVE@", TRAINERTYPE_NORMAL
 	db 36
 	dw GOLBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (23)
+	next_list_item ; ManM (23)
 	db "EXECUTIVE@", TRAINERTYPE_NORMAL
 	db 30
 	dw KOFFING
 	db -1 ; end
 
-	next_list_item ; GRUNTM (24)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (24)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 25
 	dw KOFFING
 	db 25
 	dw KOFFING
 	db -1 ; end
 
-	next_list_item ; GRUNTM (25)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (25)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 24
 	dw KOFFING
 	db 24
 	dw MUK
 	db -1 ; end
 
-	next_list_item ; GRUNTM (26)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (26)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 15
 	dw RATTATA
 	db 15
 	dw RATTATA
 	db -1 ; end
 
-	next_list_item ; GRUNTM (27)
+	next_list_item ; ManM (27)
 	db "EXECUTIVE@", TRAINERTYPE_NORMAL
 	db 22
 	dw ZUBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (28)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (28)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 19
 	dw RATICATE
 	db -1 ; end
 
-	next_list_item ; GRUNTM (29)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (29)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 9
 	dw RATTATA
 	db 9
 	dw RATTATA
 	db -1 ; end
 
-	next_list_item ; GRUNTM (30)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (30)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 25
 	dw GOLBAT
 	db 25
@@ -2173,8 +2173,8 @@ GruntMGroup:
 	dw ARBOK
 	db -1 ; end
 
-	next_list_item ; GRUNTM (31)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManM (31)
+	db "Man@", TRAINERTYPE_NORMAL
 	db 30
 	dw GOLBAT
 	db -1 ; end
@@ -3996,9 +3996,9 @@ BlackbeltGroup:
 
 	end_list_items
 
-ExecutiveMGroup:
-	next_list_item ; EXECUTIVEM (1)
-	db "EXECUTIVE@", TRAINERTYPE_MOVES
+ArcherGroup:
+	next_list_item ; ARCHER (1)
+	db "Archer@", TRAINERTYPE_MOVES
 	db 33
 	dw HOUNDOUR
 	dw EMBER, ROAR, BITE, FAINT_ATTACK
@@ -4010,15 +4010,15 @@ ExecutiveMGroup:
 	dw EMBER, SMOG, BITE, FAINT_ATTACK
 	db -1 ; end
 
-	next_list_item ; EXECUTIVEM (2)
-	db "EXECUTIVE@", TRAINERTYPE_MOVES
+	next_list_item ; ARCHER (2)
+	db "Archer@", TRAINERTYPE_MOVES
 	db 36
 	dw GOLBAT
 	dw LEECH_LIFE, BITE, CONFUSE_RAY, WING_ATTACK
 	db -1 ; end
 
-	next_list_item ; EXECUTIVEM (3)
-	db "EXECUTIVE@", TRAINERTYPE_MOVES
+	next_list_item ; ARCHER (3)
+	db "Archer@", TRAINERTYPE_MOVES
 	db 30
 	dw KOFFING
 	dw TACKLE, SELFDESTRUCT, SLUDGE, SMOKESCREEN
@@ -4039,8 +4039,8 @@ ExecutiveMGroup:
 	dw TACKLE, SMOG, SLUDGE, SMOKESCREEN
 	db -1 ; end
 
-	next_list_item ; EXECUTIVEM (4)
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
+	next_list_item ; ARCHER (4)
+	db "Archer@", TRAINERTYPE_NORMAL
 	db 22
 	dw ZUBAT
 	db 24
@@ -5195,30 +5195,30 @@ OfficerGroup:
 	end_list_items
 
 GruntFGroup:
-	next_list_item ; GRUNTF (1)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManF (1)
+	db "Lady@", TRAINERTYPE_NORMAL
 	db 9
 	dw ZUBAT
 	db 11
 	dw EKANS
 	db -1 ; end
 
-	next_list_item ; GRUNTF (2)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManF (2)
+	db "Lady@", TRAINERTYPE_NORMAL
 	db 26
 	dw ARBOK
 	db -1 ; end
 
-	next_list_item ; GRUNTF (3)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManF (3)
+	db "Lady@", TRAINERTYPE_NORMAL
 	db 25
 	dw GLOOM
 	db 25
 	dw GLOOM
 	db -1 ; end
 
-	next_list_item ; GRUNTF (4)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	next_list_item ; ManF (4)
+	db "Lady@", TRAINERTYPE_NORMAL
 	db 21
 	dw EKANS
 	db 23
@@ -5229,8 +5229,8 @@ GruntFGroup:
 	dw GLOOM
 	db -1 ; end
 
-	next_list_item ; GRUNTF (5)
-	db "GRUNT@", TRAINERTYPE_MOVES
+	next_list_item ; ManF (5)
+	db "Lady@", TRAINERTYPE_MOVES
 	db 18
 	dw EKANS
 	dw WRAP, LEER, POISON_STING, BITE

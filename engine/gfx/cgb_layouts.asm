@@ -635,7 +635,7 @@ _CGB_TrainerCard:
 	ld a, KURT
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, WHITNEY
+	ld a, MILTON
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, MORTY

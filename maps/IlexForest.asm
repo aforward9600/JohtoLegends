@@ -349,7 +349,7 @@ IlexForestCharcoalMasterScript:
 	iftrue .AlreadyGotCut
 	writetext Text_CharcoalMasterIntro
 	buttonsound
-	verbosegiveitem HM_CUT
+	verbosegiveitem SCYTHER_CALL
 	setevent EVENT_GOT_HM01_CUT
 	writetext Text_CharcoalMasterOutro
 	waitbutton
@@ -375,7 +375,7 @@ IlexForestHeadbuttGuyScript:
 	iftrue .AlreadyGotHeadbutt
 	writetext Text_HeadbuttIntro
 	buttonsound
-	verbosegiveitem TM_DARK_PULSE
+	verbosegiveitem SNUBBULLCALL
 	iffalse .BagFull
 	setevent EVENT_GOT_TM02_HEADBUTT
 .AlreadyGotHeadbutt:

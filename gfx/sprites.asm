@@ -18,7 +18,7 @@ DaisySpriteGFX::               INCBIN "gfx/sprites/daisy.2bpp"
 ElmSpriteGFX::                 INCBIN "gfx/sprites/elm.2bpp"
 WillSpriteGFX::                INCBIN "gfx/sprites/will.2bpp"
 WalkerSpriteGFX::              INCBIN "gfx/sprites/walker.2bpp"
-WhitneySpriteGFX::             INCBIN "gfx/sprites/whitney.2bpp"
+MiltonSpriteGFX::              INCBIN "gfx/sprites/milton.2bpp"
 MortySpriteGFX::               INCBIN "gfx/sprites/morty.2bpp"
 ChuckSpriteGFX::               INCBIN "gfx/sprites/chuck.2bpp"
 JasmineSpriteGFX::             INCBIN "gfx/sprites/jasmine.2bpp"
@@ -105,3 +105,11 @@ SuicuneSpriteGFX::             INCBIN "gfx/sprites/suicune.2bpp"
 EnteiSpriteGFX::               INCBIN "gfx/sprites/entei.2bpp"
 RaikouSpriteGFX::              INCBIN "gfx/sprites/raikou.2bpp"
 StandingYoungsterSpriteGFX::   INCBIN "gfx/sprites/standing_youngster.2bpp"
+
+
+SECTION "Sprites 3", ROMX
+
+ArcherSpriteGFX::              INCBIN "gfx/sprites/archer.2bpp"
+HikerSpriteGFX::               INCBIN "gfx/sprites/hiker.2bpp"
+KidSpriteGFX::                 INCBIN "gfx/sprites/kid.2bpp"
+BreederSpriteGFX::             INCBIN "gfx/sprites/breeder.2bpp"

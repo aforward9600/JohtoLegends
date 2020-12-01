@@ -1233,8 +1233,8 @@ UnknownText_0x1c5b38::
 UnknownText_0x1c5b53::
 	text_ram wEnemyMonNick
 	text "'s data"
-	line "was newly added to"
-	cont "the #DEX.@"
+	line "was recorded in"
+	cont "the Journal.@"
 	sound_slot_machine_start
 	text_waitbutton
 	text_end
@@ -1518,3 +1518,55 @@ UnknownText_0x1c60d1::
 	para "Come back again in"
 	line "a while."
 	prompt
+
+ShadyShop_IntroText::
+	text "Hey."
+
+	para "Want some"
+	line "evolution items?"
+	cont "Hard to come by"
+
+	para "in these parts."
+	line "Some come from"
+	cont "other regions."
+	done
+
+ShadyShop_DontTellText::
+	text "Don't tell the"
+	line "cops. They're not"
+	cont "exactly fans of"
+
+	para "us here."
+	done
+
+ShadyShop_HowManyText::
+	text "How many ya"
+	line "want?"
+	done
+
+ShadyShop_CostsThisMuchText::
+	text "Not the cheapest"
+	line "stuff to get."
+	cont "This'll cost ya"
+
+	para "¥@"
+	text_decimal hMoneyTemp, 3, 6
+	text ". Alright?"
+	done
+
+ShadyShop_InsufficientFundsText::
+	text "Sorry, I can't"
+	line "give credit. Come"
+	cont "back when you're a"
+
+	para "little, mm richer."
+	done
+
+ShadyShop_BagFullText::
+	text "No room there,"
+	line "stranger."
+	done
+
+ShadyShop_HereYouGoText::
+	text "Thanks, stranger."
+	done

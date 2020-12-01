@@ -98,7 +98,7 @@ PlayBattleMusic:
 	jr z, .done
 	cp GRUNTF
 	jr z, .done
-	cp EXECUTIVEM
+	cp ARCHER
 	jr z, .done
 	cp EXECUTIVEF
 	jr z, .done
@@ -122,6 +122,8 @@ PlayBattleMusic:
 	cp RIVAL2
 	jr z, .done
 	cp RIVAL3
+	jr z, .done
+	cp RIVAL4
 	jr nz, .othertrainer
 
 	ld a, [wOtherTrainerID]

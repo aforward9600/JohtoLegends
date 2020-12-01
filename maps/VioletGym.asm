@@ -199,11 +199,11 @@ WalkerTMRoostText:
 	para "instantly learn a"
 	line "new move."
 
-	para "Think before you"
-	line "act--a TM can be"
-	cont "used only once."
+	para "Don't worry about"
+	line "wasting it, they"
+	cont "can be used again."
 
-	para "TM51 contains"
+	para "TM50 contains"
 	line "Roost."
 
 	para "It will heal a"

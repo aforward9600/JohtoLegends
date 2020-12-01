@@ -8,7 +8,7 @@ PlayerPalette:
 INCLUDE "gfx/player/chris.pal"
 
 INCLUDE "gfx/trainers/walker.pal"
-INCBIN "gfx/trainers/whitney.gbcpal", middle_colors
+INCLUDE "gfx/trainers/milton.pal"
 INCLUDE "gfx/trainers/kurt.pal"
 INCBIN "gfx/trainers/morty.gbcpal", middle_colors
 INCBIN "gfx/trainers/pryce.gbcpal", middle_colors
@@ -35,7 +35,7 @@ INCBIN "gfx/trainers/lass.gbcpal", middle_colors
 INCBIN "gfx/trainers/janine.gbcpal", middle_colors
 INCBIN "gfx/trainers/cooltrainer_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/cooltrainer_f.gbcpal", middle_colors
-INCBIN "gfx/trainers/beauty.gbcpal", middle_colors
+INCLUDE "gfx/trainers/beauty.pal"
 INCBIN "gfx/trainers/pokemaniac.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/gentleman.gbcpal", middle_colors
@@ -57,12 +57,12 @@ INCBIN "gfx/trainers/burglar.gbcpal", middle_colors
 INCBIN "gfx/trainers/firebreather.gbcpal", middle_colors
 INCBIN "gfx/trainers/juggler.gbcpal", middle_colors
 INCBIN "gfx/trainers/blackbelt_t.gbcpal", middle_colors
-INCBIN "gfx/trainers/executive_m.gbcpal", middle_colors
+INCLUDE "gfx/trainers/archer.pal"
 INCBIN "gfx/trainers/psychic_t.gbcpal", middle_colors
 INCBIN "gfx/trainers/picnicker.gbcpal", middle_colors
 INCBIN "gfx/trainers/camper.gbcpal", middle_colors
 INCBIN "gfx/trainers/executive_f.gbcpal", middle_colors
-INCBIN "gfx/trainers/sage.gbcpal", middle_colors
+INCLUDE "gfx/trainers/sage.pal"
 INCBIN "gfx/trainers/medium.gbcpal", middle_colors
 INCBIN "gfx/trainers/boarder.gbcpal", middle_colors
 INCBIN "gfx/trainers/pokefan_m.gbcpal", middle_colors

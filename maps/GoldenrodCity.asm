@@ -32,18 +32,6 @@ GoldenrodCity_MapScripts:
 	return
 
 .MoveTutor:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .MoveTutorDone
-	checkitem COIN_CASE
-	iffalse .MoveTutorDisappear
-	readvar VAR_WEEKDAY
-	ifequal WEDNESDAY, .MoveTutorAppear
-	ifequal SATURDAY, .MoveTutorAppear
-.MoveTutorDisappear:
-	disappear GOLDENRODCITY_MOVETUTOR
-	return
-
-.MoveTutorAppear:
 	checkflag ENGINE_DAILY_MOVE_TUTOR
 	iftrue .MoveTutorDone
 	appear GOLDENRODCITY_MOVETUTOR
@@ -56,12 +44,6 @@ MoveTutorScript:
 	writetext GoldenrodCityMoveTutorAskTeachAMoveText
 	yesorno
 	iffalse .Refused
-	special DisplayCoinCaseBalance
-	writetext GoldenrodCityMoveTutorAsk4000CoinsOkayText
-	yesorno
-	iffalse .Refused2
-	checkcoins 4000
-	ifequal HAVE_LESS, .NotEnoughMoney
 	writetext GoldenrodCityMoveTutorWhichMoveShouldITeachText
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -101,10 +83,10 @@ MoveTutorScript:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "FLAMETHROWER@"
-	db "THUNDERBOLT@"
-	db "ICE BEAM@"
-	db "CANCEL@"
+	db "Fire Fang@"
+	db "Thunder Fang@"
+	db "Ice Fang@"
+	db "Cancel@"
 
 .Refused:
 	writetext GoldenrodCityMoveTutorAwwButTheyreAmazingText
@@ -413,67 +395,67 @@ GoldenrodCityRocket6Text:
 	done
 
 GoldenrodCityStationSignText:
-	text "GOLDENROD CITY"
-	line "STATION"
+	text "Goldenrod City"
+	line "Police Station"
 	done
 
 GoldenrodCityRadioTowerSignText:
-	text "GOLDENROD CITY"
-	line "RADIO TOWER"
+	text "Goldenrod City"
+	line "Tower"
 	done
 
 GoldenrodDeptStoreSignText:
 	text "Full Selection of"
-	line "#MON Goods!"
+	line "#mon Goods!"
 
-	para "GOLDENROD CITY"
-	line "DEPT.STORE"
+	para "Goldenrod City"
+	line "Dept.Store"
 	done
 
 GoldenrodGymSignText:
-	text "GOLDENROD CITY"
-	line "#MON GYM"
-	cont "LEADER: WHITNEY"
+	text "Goldenrod City"
+	line "#mon Gym"
+	cont "Leader: Milton"
 
-	para "The Incredibly"
-	line "Pretty Girl!"
+	para "The Rough and"
+	line "Tough Wrangler!"
 	done
 
 GoldenrodCitySignText:
-	text "GOLDENROD CITY"
+	text "Goldenrod City"
 
 	para "The Festive City"
 	line "of Opulent Charm"
 	done
 
 GoldenrodCityBikeShopSignText:
-	text "The World is a"
-	line "Cycle Path!"
-	cont "BIKE SHOP"
+	text "Come on in."
+	line "We're always"
+	cont "open."
 	done
 
 GoldenrodCityGameCornerSignText:
 	text "Your Playground!"
 
-	para "GOLDENROD CITY"
-	line "GAME CORNER"
+	para "Goldenrod City"
+	line "Game Corner"
 	done
 
 GoldenrodCityNameRaterSignText:
-	text "NAME RATER"
+	text "Name Rater"
 
-	para "Get Your #MON"
+	para "Get Your #mon"
 	line "Nicknames Rated"
 	done
 
 GoldenrodCityUndergroundSignNorthText:
-	text "UNDERGROUND"
-	line "ENTRANCE"
+	text "Underground"
+	line "Coming soon"
 	done
 
 GoldenrodCityUndergroundSignSouthText:
-	text "UNDERGROUND"
-	line "ENTRANCE"
+	text "Underground"
+	line "Coming soon"
 	done
 
 GoldenrodCityPokeComCenterSignText:

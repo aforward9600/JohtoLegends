@@ -236,7 +236,7 @@ VioletCityGrampsText:
 	line "wanderer, so he"
 
 	para "really wants to"
-	line "leave here this"
+	line "leave this here"
 	cont "town someday."
 	done
 

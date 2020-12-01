@@ -20,7 +20,7 @@
 	const SPRITE_ELM ; 10
 	const SPRITE_WILL ; 11
 	const SPRITE_WALKER ; 12
-	const SPRITE_WHITNEY ; 13
+	const SPRITE_MILTON ; 13
 	const SPRITE_MORTY ; 15
 	const SPRITE_CHUCK ; 16
 	const SPRITE_JASMINE ; 17
@@ -103,6 +103,10 @@
 	const SPRITE_ENTEI ; 64
 	const SPRITE_RAIKOU ; 65
 	const SPRITE_STANDING_YOUNGSTER ; 66
+	const SPRITE_ARCHER ; 67
+	const SPRITE_HIKER
+	const SPRITE_KID
+	const SPRITE_BREEDER
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80
@@ -164,4 +168,3 @@ SPRITE_VARS EQU const_value
 	const SPRITE_FUCHSIA_GYM_4 ; fa
 	const SPRITE_COPYCAT ; fb
 	const SPRITE_JANINE_IMPERSONATOR ; fc
-	const SPRITE_RIVAL
