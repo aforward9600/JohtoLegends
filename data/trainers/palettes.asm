@@ -76,6 +76,7 @@ INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
 INCLUDE "gfx/trainers/kris.pal"
 INCLUDE "gfx/trainers/chris.pal"
+INCLUDE "gfx/trainers/breeder.pal"
 
 KrisPalette:
 INCLUDE "gfx/player/kris.pal"

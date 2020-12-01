@@ -72,6 +72,7 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
 	db MUSIC_RIVAL_ENCOUNTER       ; rival3
 	db MUSIC_RIVAL_ENCOUNTER       ; rival4
+	db MUSIC_LASS_ENCOUNTER        ; breeder
 	db MUSIC_HIKER_ENCOUNTER
 	db MUSIC_HIKER_ENCOUNTER
 	db MUSIC_HIKER_ENCOUNTER

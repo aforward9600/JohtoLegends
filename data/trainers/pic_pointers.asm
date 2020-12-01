@@ -71,3 +71,4 @@ TrainerPicPointers::
 	dba MysticalmanPic
 	dba Rival3Pic
 	dba Rival4Pic
+	dba BreederPic

@@ -48,7 +48,7 @@ GoldenrodGymMiltonScript:
 	setevent EVENT_BEAT_LASS_CARRIE
 	setevent EVENT_BEAT_LASS_BRIDGET
 	setevent EVENT_BEAT_BEAUTY_SAMANTHA
-	setevent EVENT_BEAT_BEAUTY_VICTORIA
+	setevent EVENT_BEAT_BREEDER_EMILY
 	writetext MiltonText_PlainBadgeSpeech
 	buttonsound
 	verbosegiveitem TM_SWORDS_DANCE
@@ -99,13 +99,13 @@ TrainerLassBridget:
 	closetext
 	end
 
-TrainerBeautyVictoria:
-	trainer BEAUTY, VICTORIA, EVENT_BEAT_BEAUTY_VICTORIA, BeautyVictoriaSeenText, BeautyVictoriaBeatenText, 0, .Script
+TrainerBreederEmily:
+	trainer BREEDER, EMILY, EVENT_BEAT_BREEDER_EMILY, BreederEmilySeenText, BreederEmilyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BeautyVictoriaAfterBattleText
+	writetext BreederEmilyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -294,23 +294,29 @@ LassBridgetAfterBattleText:
 	line "time!"
 	done
 
-BeautyVictoriaSeenText:
-	text "Oh, you are a cute"
-	line "little trainer! "
+BreederEmilySeenText:
+	text "Heya! You want to"
+	line "learn about Egg"
 
-	para "I like you, but I"
-	line "won't hold back!"
+	para "Moves?"
 	done
 
-BeautyVictoriaBeatenText:
-	text "Let's see… Oops,"
-	line "it's over?"
+BreederEmilyBeatenText:
+	text "Looks like you"
+	line "don't need to"
+	cont "learn!"
 	done
 
-BeautyVictoriaAfterBattleText:
-	text "Wow, you must be"
-	line "good to beat me!"
-	cont "Keep it up!"
+BreederEmilyAfterBattleText:
+	text "Egg Moves can be"
+	line "learned from the"
+	cont "parents. How do"
+
+	para "you think my"
+	line "little Teddiursa"
+	cont "knows such good"
+
+	para "moves?"
 	done
 
 BeautySamanthaSeenText:
@@ -373,6 +379,6 @@ GoldenrodGym_MapEvents:
 	object_event 11,  3, SPRITE_MILTON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodGymMiltonScript, -1
 	object_event  9, 13, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerLassCarrie, -1
 	object_event  9,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassBridget, -1
-	object_event  5,  1, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyVictoria, -1
+	object_event  5,  1, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBreederEmily, -1
 	object_event 18,  3, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautySamantha, -1
 	object_event  5, 15, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymGuyScript, -1

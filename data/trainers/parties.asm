@@ -1690,16 +1690,6 @@ CooltrainerFGroup:
 	end_list_items
 
 BeautyGroup:
-	next_list_item ; BEAUTY (1)
-	db "VICTORIA@", TRAINERTYPE_NORMAL
-	db 9
-	dw SENTRET
-	db 13
-	dw SENTRET
-	db 17
-	dw SENTRET
-	db -1 ; end
-
 	next_list_item ; BEAUTY (2)
 	db "SAMANTHA@", TRAINERTYPE_MOVES
 	db 16
@@ -5295,6 +5285,16 @@ Rival4Group:
 	db "Draco@", TRAINERTYPE_NORMAL
 	db 5
 	dw TOTODILE
+	db -1 ; end
+
+	end_list_items
+
+BreederGroup:
+	next_list_item ; BREEDER (1)
+	db "Emily@", TRAINERTYPE_MOVES
+	db 17
+	dw TEDDIURSA
+	dw CRUNCH, TAKE_DOWN, SEISMIC_TOSS, FOCUS_ENERGY
 	db -1 ; end
 
 	end_list_items

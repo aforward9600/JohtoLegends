@@ -70,3 +70,4 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; MYSTICALMAN
 	dn 13, 13, 13, 13 ; RIVAL3
 	dn 13, 13, 13, 13 ; RIVAL4
+	dn  9,  9, 12,  8 ; BEAUTY

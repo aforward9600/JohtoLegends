@@ -234,7 +234,6 @@ CHRIS EQU __enum__
 	const CARA
 
 	trainerclass BEAUTY ; 1d
-	const VICTORIA
 	const SAMANTHA
 	const JULIE
 	const JACLYN
@@ -701,10 +700,13 @@ CHRIS EQU __enum__
 	const RIVAL3_A_CYNDAQUIL
 	const RIVAL3_A_TOTODILE
 
-	trainerclass RIVAL4 ; 44
+	trainerclass RIVAL4 ; 45
 	const RIVAL4_A_CHIKORITA
 	const RIVAL4_A_CYNDAQUIL
 	const RIVAL4_A_TOTODILE
+
+	trainerclass BREEDER ; 46
+	const EMILY
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

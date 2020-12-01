@@ -69,3 +69,4 @@ TrainerClassNames::
 	db "Mysticalman@"
 	db "Rival@"
 	db "Rival@"
+	db "<PKMN> Breeder@"

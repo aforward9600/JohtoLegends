@@ -71,3 +71,4 @@ TrainerGroups:
 	dba MysticalmanGroup
 	dba Rival3Group
 	dba Rival4Group
+	dba BreederGroup
