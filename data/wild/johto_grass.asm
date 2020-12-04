@@ -275,7 +275,7 @@ JohtoGrassWildMons:
 	map_id BURNED_TOWER_1F
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, RATTATA
+	dbw 13, MAGBY
 	dbw 14, KOFFING
 	dbw 15, RATTATA
 	dbw 14, ZUBAT
@@ -283,7 +283,7 @@ JohtoGrassWildMons:
 	dbw 15, RATICATE
 	dbw 15, RATICATE
 	; day
-	dbw 13, RATTATA
+	dbw 13, MAGBY
 	dbw 14, KOFFING
 	dbw 15, RATTATA
 	dbw 14, ZUBAT
@@ -1355,7 +1355,7 @@ JohtoGrassWildMons:
 	map_id ROUTE_35
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 12, SNUBBULL
+	dbw 12, MIME__JR
 	dbw 14, PIDGEY
 	dbw 13, GROWLITHE
 	dbw 10, ABRA
@@ -1363,7 +1363,7 @@ JohtoGrassWildMons:
 	dbw 10, DITTO
 	dbw 12, YANMA
 	; day
-	dbw 12, SNUBBULL
+	dbw 12, MIME__JR
 	dbw 14, PIDGEY
 	dbw 13, GROWLITHE
 	dbw 10, ABRA
@@ -1371,7 +1371,7 @@ JohtoGrassWildMons:
 	dbw 10, DITTO
 	dbw 12, YANMA
 	; nite
-	dbw 12, DROWZEE
+	dbw 12, MIME__JR
 	dbw 14, HOOTHOOT
 	dbw 13, PSYDUCK
 	dbw 10, ABRA

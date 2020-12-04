@@ -10,7 +10,7 @@ INCLUDE "gfx/player/chris.pal"
 INCLUDE "gfx/trainers/walker.pal"
 INCLUDE "gfx/trainers/milton.pal"
 INCLUDE "gfx/trainers/kurt.pal"
-INCBIN "gfx/trainers/morty.gbcpal", middle_colors
+INCLUDE "gfx/trainers/enoki.pal"
 INCBIN "gfx/trainers/pryce.gbcpal", middle_colors
 INCBIN "gfx/trainers/jasmine.gbcpal", middle_colors
 INCBIN "gfx/trainers/chuck.gbcpal", middle_colors

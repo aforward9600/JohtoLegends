@@ -33,8 +33,8 @@ CHRIS EQU __enum__
 	trainerclass KURT ; 3
 	const KURT1
 
-	trainerclass MORTY ; 4
-	const MORTY1
+	trainerclass ENOKI ; 4
+	const ENOKI1
 
 	trainerclass PRYCE ; 5
 	const PRYCE1
@@ -168,7 +168,6 @@ CHRIS EQU __enum__
 
 	trainerclass LASS ; 19
 	const CARRIE
-	const BRIDGET
 	const ALICE
 	const KRISE
 	const CONNIE1
@@ -234,7 +233,6 @@ CHRIS EQU __enum__
 	const CARA
 
 	trainerclass BEAUTY ; 1d
-	const SAMANTHA
 	const JULIE
 	const JACLYN
 	const BRENDA
@@ -707,6 +705,9 @@ CHRIS EQU __enum__
 
 	trainerclass BREEDER ; 46
 	const EMILY
+	const NINA
+	const SARAH
+	const BRIDGET
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

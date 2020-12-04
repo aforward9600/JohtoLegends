@@ -5,7 +5,7 @@ TrainerPicPointers::
 	dba WalkerPic
 	dba MiltonPic
 	dba KurtPic
-	dba MortyPic
+	dba EnokiPic
 	dba PrycePic
 	dba JasminePic
 	dba ChuckPic

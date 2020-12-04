@@ -275,4 +275,7 @@ BitmasksPointers:
 	dw SalamenceBitmasks
 	dw WynautBitmasks
 	dw AzurillBitmasks
+	dw MunchlaxBitmasks
+	dw BonslyBitmasks
+	dw MimeJrBitmasks
 	dw MissingnoBitmasks

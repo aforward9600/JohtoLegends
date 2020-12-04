@@ -276,4 +276,7 @@ PokedexDataPointerTable:
 	dba SalamencePokedexEntry
 	dba WynautPokedexEntry
 	dba AzurillPokedexEntry
+	dba MunchlaxPokedexEntry
+	dba BonslyPokedexEntry
+	dba MimeJrPokedexEntry
 	dba MissingnoPokedexEntry

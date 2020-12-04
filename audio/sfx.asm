@@ -832,33 +832,6 @@ Sfx_Fanfare2:
 	musicheader 1, 6, Sfx_Fanfare2_Ch6
 	musicheader 1, 8, Sfx_Fanfare2_Ch8
 
-UnusedSfx:
-	musicheader 4, 5, UnusedSfx_Ch5
-
-UnusedSfx_Ch5:
-	togglesfx
-	tempo 124
-	volume $77
-	vibrato $8, $27
-	dutycycle $2
-	notetype $c, $b1
-	octave 4
-	note F_, 2
-	note F_, 1
-	note F_, 1
-	note C_, 2
-	note C_, 1
-	note C_, 1
-	note E_, 2
-	note G_, 1
-	note G_, 1
-	note C_, 2
-	note E_, 1
-	note E_, 1
-	intensity $a5
-	note F_, 16
-	endchannel
-
 Sfx_Fanfare:
 	musicheader 3, 5, Sfx_Fanfare_Ch5
 	musicheader 1, 6, Sfx_Fanfare_Ch6

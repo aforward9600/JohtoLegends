@@ -1,9 +1,9 @@
 	object_const_def ; object_event constants
 	const GOLDENRODGYM_MILTON
-	const GOLDENRODGYM_BREEDER
-	const GOLDENRODGYM_LASS
-	const GOLDENRODGYM_BUENA1
-	const GOLDENRODGYM_BUENA2
+	const GOLDENRODGYM_BREEDER1
+	const GOLDENRODGYM_BREEDER2
+	const GOLDENRODGYM_BREEDER3
+	const GOLDENRODGYM_BREEDER4
 	const GOLDENRODGYM_GYM_GUY
 
 GoldenrodGym_MapScripts:
@@ -21,7 +21,7 @@ GoldenrodGym_MapScripts:
 GoldenrodGymMiltonScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_WHITNEY
+	checkevent EVENT_BEAT_MILTON
 	iftrue .FightDone
 	writetext MiltonText_Howdy
 	waitbutton
@@ -30,7 +30,7 @@ GoldenrodGymMiltonScript:
 	loadtrainer MILTON, MILTON1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_WHITNEY
+	setevent EVENT_BEAT_MILTON
 	opentext
 	writetext BeatenMiltonText
 	waitbutton
@@ -45,9 +45,9 @@ GoldenrodGymMiltonScript:
 .FightDone:
 	checkevent EVENT_GOT_TM45_ATTRACT
 	iftrue .GotAttract
-	setevent EVENT_BEAT_LASS_CARRIE
-	setevent EVENT_BEAT_LASS_BRIDGET
-	setevent EVENT_BEAT_BEAUTY_SAMANTHA
+	setevent EVENT_BEAT_BREEDER_SARAH
+	setevent EVENT_BEAT_BREEDER_BRIDGET
+	setevent EVENT_BEAT_BREEDER_NINA
 	setevent EVENT_BEAT_BREEDER_EMILY
 	writetext MiltonText_PlainBadgeSpeech
 	buttonsound
@@ -77,24 +77,24 @@ GoldenrodGymActivateRockets:
 .RadioTowerRockets:
 	jumpstd radiotowerrockets
 
-TrainerLassCarrie:
-	trainer LASS, CARRIE, EVENT_BEAT_LASS_CARRIE, LassCarrieSeenText, LassCarrieBeatenText, 0, .Script
+TrainerBreederSarah:
+	trainer BREEDER, SARAH, EVENT_BEAT_BREEDER_SARAH, BreederSarahSeenText, BreederSarahBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext LassCarrieAfterBattleText
+	writetext BreederSarahAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerLassBridget:
-	trainer LASS, BRIDGET, EVENT_BEAT_LASS_BRIDGET, LassBridgetSeenText, LassBridgetBeatenText, 0, .Script
+TrainerBreederBridget:
+	trainer BREEDER, BRIDGET, EVENT_BEAT_BREEDER_BRIDGET, BreederBridgetSeenText, BreederBridgetBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext LassBridgetAfterBattleText
+	writetext BreederBridgetAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -110,20 +110,20 @@ TrainerBreederEmily:
 	closetext
 	end
 
-TrainerBeautySamantha:
-	trainer BEAUTY, SAMANTHA, EVENT_BEAT_BEAUTY_SAMANTHA, BeautySamanthaSeenText, BeautySamanthaBeatenText, 0, .Script
+TrainerBreederNina:
+	trainer BREEDER, NINA, EVENT_BEAT_BREEDER_NINA, BreederNinaSeenText, BreederNinaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BeautySamanthaAfterBattleText
+	writetext BreederNinaAfterBattleText
 	waitbutton
 	closetext
 	end
 
 GoldenrodGymGuyScript:
 	faceplayer
-	checkevent EVENT_BEAT_WHITNEY
+	checkevent EVENT_BEAT_MILTON
 	iftrue .GoldenrodGymGuyWinScript
 	opentext
 	writetext GoldenrodGymGuyText
@@ -145,16 +145,6 @@ GoldenrodGymStatue:
 .Beaten:
 	gettrainername STRING_BUFFER_4, MILTON, MILTON1
 	jumpstd gymstatue2
-
-BridgetWalksUpMovement:
-	step LEFT
-	turn_head UP
-	step_end
-
-BridgetWalksAwayMovement:
-	step RIGHT
-	turn_head LEFT
-	step_end
 
 MiltonText_Howdy:
 	text "Howdy pardner!"
@@ -251,47 +241,55 @@ MiltonSisterText:
 	para "hear?"
 	done
 
-LassCarrieSeenText:
-	text "Don't let my"
-	line "#MON's cute"
+BreederSarahSeenText:
+	text "Egg Moves aren't"
+	line "the only way to"
+	cont "give #mon some"
 
-	para "looks fool you."
-	line "They can whip you!"
+	para "special moves!"
 	done
 
-LassCarrieBeatenText:
-	text "Darn… I thought"
-	line "you were weak…"
+BreederSarahBeatenText:
+	text "I guess you"
+	line "already knew"
+	cont "that!"
 	done
 
-LassCarrieAfterBattleText:
-	text "Do my #MON"
-	line "think I'm cute?"
+BreederSarahAfterBattleText:
+	text "TMs can be used to"
+	line "teach unique moves"
+	cont "to #mon, as"
+
+	para "well as Tutors."
+	line "you must have come"
+	cont "across some."
 	done
 
-LassBridgetSeenText:
-	text "I like cute #-"
-	line "MON better than"
-	cont "strong #MON."
+BreederBridgetSeenText:
+	text "I want to see just"
+	line "how strong you"
+	cont "are, by seeing"
 
-	para "But I have strong"
-	line "and cute #MON!"
+	para "how strong my"
+	line "#mon is!"
 	done
 
-LassBridgetBeatenText:
-	text "Oh, no, no, no!"
+BreederBridgetBeatenText:
+	text "Well I'll be!"
+	line "You're strong as"
+	cont "a Tauros!"
 	done
 
-LassBridgetAfterBattleText:
-	text "I'm trying to beat"
-	line "WHITNEY, but…"
-	cont "It's depressing."
+BreederBridgetAfterBattleText:
+	text "I think our Leader"
+	line "will like battling"
+	cont "you! You got the"
 
-	para "I'm okay! If I"
-	line "lose, I'll just"
+	para "stuff he's looking"
+	line "for! Go on,"
 
-	para "try harder next"
-	line "time!"
+	para "what're you"
+	line "waitin' for?"
 	done
 
 BreederEmilySeenText:
@@ -319,21 +317,28 @@ BreederEmilyAfterBattleText:
 	para "moves?"
 	done
 
-BeautySamanthaSeenText:
-	text "Give it your best"
-	line "shot, or I'll take"
-	cont "you down!"
+BreederNinaSeenText:
+	text "#mon raised"
+	line "from Eggs are just"
+	cont "the best!"
 	done
 
-BeautySamanthaBeatenText:
-	text "No! Oh, MEOWTH,"
-	line "I'm so sorry!"
+BreederNinaBeatenText:
+	text "They're still the"
+	line "best! Even if mine"
+	cont "don't win."
 	done
 
-BeautySamanthaAfterBattleText:
-	text "I taught MEOWTH"
-	line "moves for taking"
-	cont "on any type…"
+BreederNinaAfterBattleText:
+	text "Most people don't"
+	line "even know that"
+	cont "#mon come from"
+
+	para "Eggs! What do they"
+	line "think? That they"
+	cont "just appear out of"
+
+	para "the grass?"
 	done
 
 GoldenrodGymGuyText:
@@ -377,8 +382,8 @@ GoldenrodGym_MapEvents:
 
 	db 6 ; object events
 	object_event 11,  3, SPRITE_MILTON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodGymMiltonScript, -1
-	object_event  9, 13, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerLassCarrie, -1
-	object_event  9,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassBridget, -1
+	object_event  9, 13, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerBreederSarah, -1
+	object_event  9,  6, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBreederBridget, -1
 	object_event  5,  1, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBreederEmily, -1
-	object_event 18,  3, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautySamantha, -1
+	object_event 18,  3, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBreederNina, -1
 	object_event  5, 15, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymGuyScript, -1

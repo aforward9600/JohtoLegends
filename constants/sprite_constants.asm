@@ -107,6 +107,8 @@
 	const SPRITE_HIKER
 	const SPRITE_KID
 	const SPRITE_BREEDER
+	const SPRITE_ENOKI
+	const SPRITE_EUSINE
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

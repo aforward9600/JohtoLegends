@@ -565,5 +565,11 @@ PokemonPicPointers::
 	dba WynautBackpic
 	dba AzurillFrontpic
 	dba AzurillBackpic
+	dba MunchlaxFrontpic
+	dba MunchlaxBackpic
+	dba BonslyFrontpic
+	dba BonslyBackpic
+	dba MimeJrFrontpic
+	dba MimeJrBackpic
 	dba MissingnoFrontpic
 	dba MissingnoBackpic

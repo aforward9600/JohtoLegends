@@ -275,4 +275,7 @@ FramesPointers:
 	dba SalamenceFrames
 	dba WynautFrames
 	dba AzurillFrames
+	dba MunchlaxFrames
+	dba BonslyFrames
+	dba MimeJrFrames
 	dba MissingnoFrames

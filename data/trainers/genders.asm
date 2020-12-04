@@ -5,7 +5,7 @@ BTTrainerClassGenders:
 	db MALE   ; FALKNER
 	db MALE   ; MILTON
 	db MALE   ; KURT
-	db MALE   ; MORTY
+	db MALE   ; ENOKI
 	db MALE   ; PRYCE
 	db FEMALE ; JASMINE
 	db MALE   ; CHUCK

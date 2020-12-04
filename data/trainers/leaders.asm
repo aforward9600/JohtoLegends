@@ -8,7 +8,7 @@ GymLeaders:
 	db WALKER
 	db MILTON
 	db KURT
-	db MORTY
+	db ENOKI
 	db PRYCE
 	db JASMINE
 	db CHUCK

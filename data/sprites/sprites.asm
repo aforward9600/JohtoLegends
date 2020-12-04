@@ -111,3 +111,5 @@ OverworldSprites:
 	overworld_sprite HikerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite KidSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BreederSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite EnokiSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite EusineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK

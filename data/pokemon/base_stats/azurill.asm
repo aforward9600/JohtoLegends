@@ -11,7 +11,7 @@
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/azurill/front.dimensions"
 	db GROWTH_FAST ; growth rate
-	dn EGG_WATER_1, EGG_FAIRY ; egg groups
+	dn EGG_NONE, EGG_NONE ; egg groups
 
 	; tm/hm learnset
 	tmhm CURSE, TOXIC, HIDDEN_POWER, ICE_BEAM, BLIZZARD, LIGHT_SCREEN, PROTECT, RAIN_DANCE, IRON_TAIL, RETURN, DOUBLE_TEAM, SUBSTITUTE, REST, ATTRACT, SURF, WATERFALL, SLEEP_TALK, ICY_WIND, MOONBLAST

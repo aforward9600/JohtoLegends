@@ -5,7 +5,7 @@ TrainerGroups:
 	dba WalkerGroup
 	dba MiltonGroup
 	dba KurtGroup
-	dba MortyGroup
+	dba EnokiGroup
 	dba PryceGroup
 	dba JasmineGroup
 	dba ChuckGroup

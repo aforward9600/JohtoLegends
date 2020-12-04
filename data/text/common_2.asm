@@ -307,7 +307,7 @@ UnknownText_0x1c05dd::
 
 UnknownText_0x1c05ec::
 	text "There's nothing to"
-	line "Cut here."
+	line "cut here."
 	prompt
 
 UnknownText_0x1c0609::
@@ -505,14 +505,15 @@ UnknownText_0x1c09c7::
 
 UnknownText_0x1c09dd::
 	text "This tree can be"
-	line "CUT!"
+	line "cut!"
 
-	para "Want to use CUT?"
+	para "Want to call"
+	line "Scyther?"
 	done
 
 UnknownText_0x1c0a05::
 	text "This tree can be"
-	line "CUT!"
+	line "cut!"
 	done
 
 UnknownText_0x1c0a1c::

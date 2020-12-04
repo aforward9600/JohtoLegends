@@ -108,6 +108,7 @@ NewPokedexOrder:
 	dw SUNFLORA
 	dw EXEGGCUTE
 	dw EXEGGUTOR
+	dw BONSLY
 	dw SUDOWOODO
 	dw WYNAUT
 	dw WOBBUFFET
@@ -164,6 +165,7 @@ NewPokedexOrder:
 	dw ELEKID
 	dw ELECTABUZZ
 	dw ELECTIVIRE
+	dw MIME__JR
 	dw MR__MIME
 	dw SMEARGLE
 	dw FARFETCH_D
@@ -247,6 +249,7 @@ NewPokedexOrder:
 	dw KABUTO
 	dw KABUTOPS
 	dw AERODACTYL
+	dw MUNCHLAX
 	dw SNORLAX
 	dw BULBASAUR
 	dw IVYSAUR

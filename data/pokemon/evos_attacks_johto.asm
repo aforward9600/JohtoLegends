@@ -126,6 +126,9 @@ EvosAttacksPointers2::
 	dw SalamenceEvosAttacks
 	dw WynautEvosAttacks
 	dw AzurillEvosAttacks
+	dw MunchlaxEvosAttacks
+	dw BonslyEvosAttacks
+	dw MimeJrEvosAttacks
 	dw MissingnoEvosAttacks
 
 ChikoritaEvosAttacks:
@@ -1703,7 +1706,7 @@ DonphanEvosAttacks:
 	dbw 10, ROLLOUT
 	dbw 15, PAYBACK
 	dbw 19, HORN_ATTACK
-	dbw 25, BULLDOZE
+	dbw 25, HIHORSEPOWER
 	dbw 30, RAPID_SPIN
 	dbw 37, SCARY_FACE
 	dbw 43, EARTHQUAKE
@@ -2518,6 +2521,68 @@ AzurillEvosAttacks:
 	dbw 16, SWEET_KISS
 	dbw 20, SLAM
 	dbw 23, BOUNCE
+	db 0 ; no more level-up moves
+
+MunchlaxEvosAttacks:
+	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, SNORLAX
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, ODOR_SLEUTH
+	dbw 1, METRONOME
+	dbw 1, LICK
+	dbw 4, DEFENSE_CURL
+	dbw 9, AMNESIA
+	dbw 12, LICK
+	dbw 17, HEADBUTT
+	dbw 20, SCREECH
+	dbw 25, BODY_SLAM
+	dbw 28, REST
+	dbw 33, SNORE
+	dbw 36, ROLLOUT
+	dbw 41, CURSE
+	dbw 44, BELLY_DRUM
+	dbw 49, CRUNCH
+	dbw 50, GYRO_BALL
+	dbw 57, HIHORSEPOWER
+	db 0 ; no more level-up moves
+
+BonslyEvosAttacks:
+	dbbw EVOLVE_LEVEL, 16, SUDOWOODO
+	db 0 ; no more evolutions
+	dbw 1, FLAIL
+	dbw 8, LOW_KICK
+	dbw 12, ROCK_THROW
+	dbw 15, MIMIC
+	dbw 19, FAINT_ATTACK
+	dbw 22, HARDEN
+	dbw 26, ROCK_TOMB
+	dbw 29, MEAN_LOOK
+	dbw 33, ROCK_SLIDE
+	dbw 36, COUNTER
+	dbw 40, EARTHQUAKE
+	dbw 43, DOUBLE_EDGE
+	db 0 ; no more level-up moves
+
+MimeJrEvosAttacks:
+	dbbw EVOLVE_LEVEL, 16, MR__MIME
+	db 0 ; no more evolutions
+	dbw 1, BARRIER
+	dbw 1, CONFUSION
+	dbw 1, MAGICAL_LEAF
+	dbw 8, MEDITATE
+	dbw 11, DOUBLESLAP
+	dbw 15, MIMIC
+	dbw 18, ENCORE
+	dbw 22, LIGHT_SCREEN
+	dbw 22, REFLECT
+	dbw 25, PSYBEAM
+	dbw 29, SUBSTITUTE
+	dbw 32, DRAININGKISS
+	dbw 36, DAZZLINGLEAM
+	dbw 39, PSYCHIC_M
+	dbw 43, CALM_MIND
+	dbw 46, BATON_PASS
+	dbw 50, SAFEGUARD
 	db 0 ; no more level-up moves
 
 MissingnoEvosAttacks:

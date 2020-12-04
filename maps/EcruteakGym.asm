@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const ECRUTEAKGYM_MORTY
+	const ECRUTEAKGYM_ENOKI
 	const ECRUTEAKGYM_SAGE1
 	const ECRUTEAKGYM_SAGE2
 	const ECRUTEAKGYM_GRANNY1
@@ -21,19 +21,23 @@ EcruteakGym_MapScripts:
 .DummyScene:
 	end
 
-EcruteakGymMortyScript:
+EcruteakGymEnokiScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_MORTY
+	checkevent EVENT_BEAT_ENOKI
 	iftrue .FightDone
-	writetext MortyIntroText
+	writetext EnokiIntroText
 	waitbutton
 	closetext
-	winlosstext MortyWinLossText, 0
-	loadtrainer MORTY, MORTY1
+	winlosstext EnokiWinLossText, 0
+	loadtrainer ENOKI, ENOKI1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_MORTY
+	setevent EVENT_BEAT_ENOKI
+	opentext
+	writetext BeatenEnokiText
+	waitbutton
+	closetext
 	opentext
 	writetext Text_ReceivedFogBadge
 	playsound SFX_GET_BADGE
@@ -45,26 +49,26 @@ EcruteakGymMortyScript:
 	setevent EVENT_RANG_CLEAR_BELL_1
 	setevent EVENT_RANG_CLEAR_BELL_2
 .FightDone:
-	checkevent EVENT_GOT_TM30_SHADOW_BALL
+	checkevent EVENT_GOT_TM04_HEX
 	iftrue .GotShadowBall
 	setevent EVENT_BEAT_SAGE_JEFFREY
 	setevent EVENT_BEAT_SAGE_PING
 	setevent EVENT_BEAT_MEDIUM_MARTHA
 	setevent EVENT_BEAT_MEDIUM_GRACE
-	writetext MortyText_FogBadgeSpeech
+	writetext EnokiText_FogBadgeSpeech
 	buttonsound
 	verbosegiveitem TM_HEX
-	iffalse .NoRoomForShadowBall
-	setevent EVENT_GOT_TM30_SHADOW_BALL
-	writetext MortyText_ShadowBallSpeech
+	iffalse .NoRoomForHex
+	setevent EVENT_GOT_TM04_HEX
+	writetext EnokiText_HexSpeech
 	waitbutton
 	closetext
 	end
 
 .GotShadowBall:
-	writetext MortyFightDoneText
+	writetext EnokiFightDoneText
 	waitbutton
-.NoRoomForShadowBall:
+.NoRoomForHex:
 	closetext
 	end
 
@@ -142,7 +146,7 @@ TrainerMediumGrace:
 EcruteakGymGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_MORTY
+	checkevent EVENT_BEAT_ENOKI
 	iftrue .EcruteakGymGuyWinScript
 	writetext EcruteakGymGuyText
 	waitbutton
@@ -160,7 +164,7 @@ EcruteakGymStatue:
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	gettrainername STRING_BUFFER_4, MORTY, MORTY1
+	gettrainername STRING_BUFFER_4, ENOKI, ENOKI1
 	jumpstd gymstatue2
 
 EcruteakGymPlayerStepUpMovement:
@@ -177,101 +181,86 @@ EcruteakGymGrampsSlowStepDownMovement:
 	slow_step DOWN
 	step_end
 
-MortyIntroText:
+EnokiIntroText:
 	text "Good of you to"
 	line "have come."
 
-	para "Here in ECRUTEAK,"
-	line "#MON have been"
-	cont "revered."
+	para "I shall re-"
+	line "introduce myself"
+	cont "properly. I am"
 
-	para "It's said that a"
-	line "rainbow-colored"
+	para "Enoki, Gym Leader"
+	line "of Ecruteak City."
 
-	para "#MON will come"
-	line "down to appear"
+	para "For many years, I"
+	line "have trained with"
+	cont "Ghost Types."
 
-	para "before a truly"
-	line "powerful trainer."
+	para "Mysterious and"
+	line "dangerous, they"
+	cont "will mystify you"
 
-	para "I believed that"
-	line "tale, so I have"
+	para "with their powers."
+	line "Come! Face the"
 
-	para "secretly trained"
-	line "here all my life."
-
-	para "As a result, I can"
-	line "now see what"
-	cont "others cannot."
-
-	para "Just a bit more…"
-
-	para "With a little"
-	line "more, I could see"
-
-	para "a future in which"
-	line "I meet the #MON"
-	cont "of rainbow colors."
-
-	para "You're going to"
-	line "help me reach that"
-	cont "level!"
+	para "spectral terror!"
 	done
 
-MortyWinLossText:
-	text "I'm not good"
-	line "enough yet…"
+EnokiWinLossText:
+	text "How curious."
+	line "It seems I wasn't"
 
-	para "All right. This"
-	line "BADGE is yours."
+	para "mistaken."
+	done
+
+BeatenEnokiText:
+	text "Bravo young"
+	line "trainer. It takes"
+	cont "some nerve to face"
+
+	para "ghosts head-on."
+	line "You deserve this"
+	cont "FogBadge!"
 	done
 
 Text_ReceivedFogBadge:
 	text "<PLAYER> received"
-	line "FOGBADGE."
+	line "FogBadge."
 	done
 
-MortyText_FogBadgeSpeech:
-	text "By having FOG-"
-	line "BADGE, #MON up"
+EnokiText_FogBadgeSpeech:
+	text "The FogBadge will"
+	line "make any #mon"
+	cont "up to Lv 30 obey"
 
-	para "to L50 will obey"
-	line "you."
-
-	para "Also, #MON that"
-	line "know SURF will be"
-
-	para "able to use that"
-	line "move anytime."
-
-	para "I want you to have"
-	line "this too."
+	para "you. Here, take"
+	line "this TM."
 	done
 
-MortyText_ShadowBallSpeech:
-	text "It's SHADOW BALL."
-	line "It causes damage"
+EnokiText_HexSpeech:
+	text "It contains the"
+	line "move Hex. Its"
+	cont "power doubles when"
 
-	para "and may reduce"
-	line "SPCL.DEF."
+	para "the opponent has a"
+	line "status condition."
 
-	para "Use it if it"
-	line "appeals to you."
+	para "It's quite"
+	line "terrifying to"
+	cont "witness."
 	done
 
-MortyFightDoneText:
-	text "I see…"
+EnokiFightDoneText:
+	text "Morty will make a"
+	line "fine Gym Leader"
+	cont "one day, and"
 
-	para "Your journey has"
-	line "taken you to far-"
-	cont "away places."
+	para "Eusine will"
+	line "continue to chase"
+	cont "his dreams, even"
 
-	para "And you have wit-"
-	line "nessed much more"
-	cont "than I."
-
-	para "I envy you for"
-	line "that…"
+	para "though he may"
+	line "fail."
 	done
 
 SageJeffreySeenText:
@@ -354,34 +343,42 @@ MediumGraceAfterBattleText:
 	done
 
 EcruteakGymGuyText:
-	text "The trainers here"
-	line "have secret mo-"
-	cont "tives."
+	text "How's it going,"
+	line "champ in the"
+	cont "making? Enoki uses"
 
-	para "If you win, they"
-	line "may tell you some"
+	para "the horrific Ghost"
+	line "Type #mon! Very"
+	cont "little can"
 
-	para "deep secrets about"
-	line "ECRUTEAK."
+	para "actually hurt"
+	line "them, so use Dark"
+	cont "Type moves!"
+
+	para "They're also weak"
+	line "to themselves, so"
+	cont "try that out if"
+
+	para "you have your own"
+	line "Ghost Type!"
 	done
 
 EcruteakGymGuyWinText:
-	text "Whew, <PLAYER>."
-	line "You did great!"
+	text "Ghost Types might"
+	line "be terrifying,"
 
-	para "I was cowering in"
-	line "the corner out of"
-	cont "pure terror!"
+	para "but you're"
+	line "something else!"
 	done
 
 EcruteakGymClosedText:
-	text "MORTY, the GYM"
-	line "LEADER, is absent."
+	text "Enoki, the Gym"
+	line "Leader, is absent."
 
-	para "Sorry, but you'll"
-	line "have to leave."
+	para "He's at the Burned"
+	line "Tower to the"
 
-	para "Hohohoho."
+	para "north."
 	done
 
 EcruteakGym_MapEvents:
@@ -429,7 +426,7 @@ EcruteakGym_MapEvents:
 	bg_event  6, 15, BGEVENT_READ, EcruteakGymStatue
 
 	db 7 ; object events
-	object_event  5,  1, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, EcruteakGymMortyScript, -1
+	object_event  5,  1, SPRITE_ENOKI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakGymEnokiScript, -1
 	object_event  2,  7, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSageJeffrey, -1
 	object_event  3, 13, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSagePing, -1
 	object_event  7,  5, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerMediumMartha, -1

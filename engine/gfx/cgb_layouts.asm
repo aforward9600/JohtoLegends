@@ -638,7 +638,7 @@ _CGB_TrainerCard:
 	ld a, MILTON
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, MORTY
+	ld a, WALKER
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, WALKER ; CLAIR

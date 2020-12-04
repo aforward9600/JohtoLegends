@@ -296,6 +296,9 @@ JOHTO_POKEMON EQU const_value
 	const SALAMENCE
 	const WYNAUT
 	const AZURILL
+	const MUNCHLAX
+	const BONSLY
+	const MIME__JR
 	const MISSINGNO
 NUM_POKEMON EQU const_value + -1
 

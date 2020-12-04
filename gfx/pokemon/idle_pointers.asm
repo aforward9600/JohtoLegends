@@ -275,4 +275,7 @@ AnimationIdlePointers:
 	dw SalamenceAnimationIdle
 	dw WynautAnimationIdle
 	dw AzurillAnimationIdle
+	dw MunchlaxAnimationIdle
+	dw BonslyAnimationIdle
+	dw MimeJrAnimationIdle
 	dw MissingnoAnimationIdle

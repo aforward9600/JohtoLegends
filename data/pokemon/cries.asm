@@ -281,4 +281,7 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,  -$03c,  $140 ; SALAMENCE
 	mon_cry CRY_AMPHAROS,    $27b,  $050 ; WYNAUT
 	mon_cry CRY_MARILL,      $11b,  $070 ; AZURILL
+	mon_cry CRY_GRIMER,      $065,  $080 ; MUNCHLAX
+	mon_cry CRY_CLEFFA,     -$050,  $0bc ; BONSLY
+	mon_cry CRY_KRABBY,     -$050,  $060 ; MIME__JR
 	mon_cry CRY_DROWZEE,     $000,  $000 ; MISSINGNO

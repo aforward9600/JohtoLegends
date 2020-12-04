@@ -51,21 +51,18 @@ KurtGroup:
 
 	end_list_items
 
-MortyGroup:
+EnokiGroup:
 	next_list_item ; MORTY (1)
-	db "MORTY@", TRAINERTYPE_MOVES
+	db "Enoki@", TRAINERTYPE_MOVES
 	db 21
 	dw GASTLY
-	dw LICK, SPITE, MEAN_LOOK, CURSE
+	dw HEX, SPITE, MEAN_LOOK, CURSE
 	db 21
-	dw HAUNTER
-	dw HYPNOSIS, MIMIC, CURSE, NIGHT_SHADE
+	dw CORSOLA
+	dw STRENGTH_SAP, WILL_O_WISP, HEX, SPIKES
 	db 25
-	dw GENGAR
-	dw HYPNOSIS, SHADOW_BALL, MEAN_LOOK, DREAM_EATER
-	db 23
-	dw HAUNTER
-	dw SPITE, MEAN_LOOK, MIMIC, NIGHT_SHADE
+	dw MISDREAVUS
+	dw HEX, HYPNOSIS, MEAN_LOOK, DREAM_EATER
 	db -1 ; end
 
 	end_list_items
@@ -1114,16 +1111,6 @@ LassGroup:
 	dw SCARY_FACE, CHARM, BITE, LICK
 	db -1 ; end
 
-	next_list_item ; LASS (2)
-	db "BRIDGET@", TRAINERTYPE_NORMAL
-	db 15
-	dw JIGGLYPUFF
-	db 15
-	dw JIGGLYPUFF
-	db 15
-	dw JIGGLYPUFF
-	db -1 ; end
-
 	next_list_item ; LASS (3)
 	db "ALICE@", TRAINERTYPE_NORMAL
 	db 30
@@ -1690,16 +1677,6 @@ CooltrainerFGroup:
 	end_list_items
 
 BeautyGroup:
-	next_list_item ; BEAUTY (2)
-	db "SAMANTHA@", TRAINERTYPE_MOVES
-	db 16
-	dw MEOWTH
-	dw SCRATCH, GROWL, BITE, PAY_DAY
-	db 16
-	dw MEOWTH
-	dw SCRATCH, GROWL, BITE, SLASH
-	db -1 ; end
-
 	next_list_item ; BEAUTY (3)
 	db "JULIE@", TRAINERTYPE_NORMAL
 	db 15
@@ -5294,7 +5271,34 @@ BreederGroup:
 	db "Emily@", TRAINERTYPE_MOVES
 	db 17
 	dw TEDDIURSA
-	dw CRUNCH, TAKE_DOWN, SEISMIC_TOSS, FOCUS_ENERGY
+	dw CRUNCH, PLAY_ROUGH, CLOSE_COMBAT, SLACK_OFF
+	db -1 ; end
+
+	next_list_item ; BREEDER (2)
+	db "Nina@", TRAINERTYPE_MOVES
+	db 18
+	dw RATTATA
+	dw SCREECH, REVERSAL, BITE, FURY_SWIPES
+	db 18
+	dw TEDDIURSA
+	dw CRUNCH, PLAY_ROUGH, CLOSE_COMBAT, SLACK_OFF
+	db -1 ; end
+
+	next_list_item ; BREEDER (1)
+	db "Sarah@", TRAINERTYPE_MOVES
+	db 18
+	dw EEVEE
+	dw FLAIL, CHARM, LEER, TACKLE
+	db 19
+	dw AIPOM
+	dw SCREECH, FURY_SWIPES, FAINT_ATTACK, BOUNCE
+	db -1 ; end
+
+	next_list_item ; BREEDER (1)
+	db "Bridget@", TRAINERTYPE_MOVES
+	db 20
+	dw MILTANK
+	dw REVERSAL, MILK_DRINK, BODY_SLAM, ROLLOUT
 	db -1 ; end
 
 	end_list_items

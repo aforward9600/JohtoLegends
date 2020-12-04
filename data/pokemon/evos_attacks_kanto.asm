@@ -2496,6 +2496,7 @@ MrMimeEvosAttacks:
 	dbw 32, DRAININGKISS
 	dbw 36, DAZZLINGLEAM
 	dbw 39, PSYCHIC_M
+	dbw 43, CALM_MIND
 	dbw 46, BATON_PASS
 	dbw 50, SAFEGUARD
 	db 0 ; no more level-up moves
@@ -2880,7 +2881,7 @@ SnorlaxEvosAttacks:
 	dbw 36, ROLLOUT
 	dbw 41, CURSE
 	dbw 44, BELLY_DRUM
-	dbw 59, CRUNCH
+	dbw 49, CRUNCH
 	dbw 50, GYRO_BALL
 	dbw 57, HIHORSEPOWER
 	db 0 ; no more level-up moves

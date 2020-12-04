@@ -6,7 +6,7 @@ TrainerEncounterMusic::
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; walker
 	db MUSIC_OFFICER_ENCOUNTER     ; whitney
 	db MUSIC_OFFICER_ENCOUNTER     ; kurt
-	db MUSIC_OFFICER_ENCOUNTER     ; morty
+	db MUSIC_SAGE_ENCOUNTER        ; enoki
 	db MUSIC_OFFICER_ENCOUNTER     ; pryce
 	db MUSIC_LASS_ENCOUNTER        ; jasmine
 	db MUSIC_OFFICER_ENCOUNTER     ; chuck

@@ -122,7 +122,7 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw NoEggMoves1
-	dw MrMimeEggMoves
+	dw NoEggMoves1
 	dw ScytherEggMoves
 	dw NoEggMoves1
 	dw NoEggMoves1
@@ -143,7 +143,7 @@ EggMovePointers1:
 	dw KabutoEggMoves
 	dw NoEggMoves1
 	dw AerodactylEggMoves
-	dw SnorlaxEggMoves
+	dw NoEggMoves1
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw NoEggMoves1
@@ -154,19 +154,24 @@ EggMovePointers1:
 	dw NoEggMoves1
 
 BulbasaurEggMoves:
-	dw LIGHT_SCREEN
 	dw SKULL_BASH
-	dw SAFEGUARD
 	dw RAZOR_WIND
 	dw PETAL_DANCE
+	dw POWER_WHIP
+	dw MAGICAL_LEAF
+	dw SING
+	dw AMNESIA
+	dw STRENGTH_SAP
 	dw -1 ; end
 
 CharmanderEggMoves:
 	dw BELLY_DRUM
 	dw ANCIENTPOWER
-	dw ROCK_SLIDE
 	dw BITE
 	dw OUTRAGE
+	dw CRUNCH
+	dw DRAGON_RUSH
+	dw FLARE_BLITZ
 	dw -1 ; end
 
 SquirtleEggMoves:
@@ -176,12 +181,16 @@ SquirtleEggMoves:
 	dw CONFUSION
 	dw FORESIGHT
 	dw FLAIL
+	dw AQUA_JET
 	dw -1 ; end
 
 PidgeyEggMoves:
 	dw PURSUIT
 	dw FAINT_ATTACK
 	dw FORESIGHT
+	dw AIR_CUTTER
+	dw AIR_SLASH
+	dw BRAVE_BIRD
 	dw -1 ; end
 
 RattataEggMoves:
@@ -191,6 +200,7 @@ RattataEggMoves:
 	dw BITE
 	dw COUNTER
 	dw REVERSAL
+	dw REVENGE
 	dw -1 ; end
 
 SpearowEggMoves:
@@ -199,13 +209,19 @@ SpearowEggMoves:
 	dw SCARY_FACE
 	dw QUICK_ATTACK
 	dw TRI_ATTACK
+	dw ASTONISH
+	dw FEATHERDANCE
+	dw RAZOR_WIND
+	dw SKY_ATTACK
+	dw WHIRLWIND
 	dw -1 ; end
 
 EkansEggMoves:
 	dw PURSUIT
 	dw SLAM
-	dw SPITE
 	dw CRUNCH
+	dw DISABLE
+	dw SCARY_FACE
 	dw -1 ; end
 
 SandshrewEggMoves:
@@ -214,6 +230,10 @@ SandshrewEggMoves:
 	dw COUNTER
 	dw RAPID_SPIN
 	dw METAL_CLAW
+	dw CRUSH_CLAW
+	dw ENDURE
+	dw MUD_SHOT
+	dw NIGHT_SLASH
 	dw -1 ; end
 
 NidoranFEggMoves:
@@ -223,6 +243,8 @@ NidoranFEggMoves:
 	dw FOCUS_ENERGY
 	dw CHARM
 	dw COUNTER
+	dw ENDURE
+	dw PURSUIT
 	dw -1 ; end
 
 NidoranMEggMoves:
@@ -232,6 +254,8 @@ NidoranMEggMoves:
 	dw CONFUSION
 	dw AMNESIA
 	dw COUNTER
+	dw ENDURE
+	dw FOCUS_ENERGY
 	dw -1 ; end
 
 VulpixEggMoves:
@@ -240,6 +264,9 @@ VulpixEggMoves:
 	dw FLAIL
 	dw SPITE
 	dw DISABLE
+	dw EXTRASENSORY
+	dw FLARE_BLITZ
+	dw HOWL
 	dw -1 ; end
 
 ZubatEggMoves:
@@ -248,13 +275,17 @@ ZubatEggMoves:
 	dw FAINT_ATTACK
 	dw GUST
 	dw WHIRLWIND
+	dw BRAVE_BIRD
+	dw HYPNOSIS
+	dw ZEN_HEADBUTT
+	dw STRENGTH_SAP
 	dw -1 ; end
 
 OddishEggMoves:
-	dw SWORDS_DANCE
 	dw RAZOR_LEAF
 	dw FLAIL
 	dw SYNTHESIS
+	dw STRENGTH_SAP
 	dw -1 ; end
 
 ParasEggMoves:
@@ -265,12 +296,21 @@ ParasEggMoves:
 	dw FLAIL
 	dw LIGHT_SCREEN
 	dw PURSUIT
+	dw AGILITY
+	dw CROSS_POISON
+	dw ENDURE
+	dw LEECH_SEED
+	dw METAL_CLAW
+	dw SWEET_SCENT
+	dw STRENGTH_SAP
 	dw -1 ; end
 
 VenonatEggMoves:
 	dw BATON_PASS
 	dw SCREECH
 	dw GIGA_DRAIN
+	dw AGILITY
+	dw SIGNAL_BEAM
 	dw -1 ; end
 
 DiglettEggMoves:
@@ -278,6 +318,11 @@ DiglettEggMoves:
 	dw SCREECH
 	dw ANCIENTPOWER
 	dw PURSUIT
+	dw ASTONISH
+	dw ENDURE
+	dw HEADBUTT
+	dw MUD_BOMB
+	dw REVERSAL
 	dw -1 ; end
 
 MeowthEggMoves:
@@ -285,25 +330,31 @@ MeowthEggMoves:
 	dw CHARM
 	dw HYPNOSIS
 	dw AMNESIA
+	dw FLAIL
+	dw ODOR_SLEUTH
+	dw TAIL_WHIP
 	dw -1 ; end
 
 PsyduckEggMoves:
-	dw ICE_BEAM
 	dw HYPNOSIS
 	dw PSYBEAM
 	dw FORESIGHT
-	dw LIGHT_SCREEN
 	dw FUTURE_SIGHT
-	dw PSYCHIC_M
 	dw CROSS_CHOP
+	dw CONFUSE_RAY
+	dw ENCORE
+	dw MUD_BOMB
 	dw -1 ; end
 
 MankeyEggMoves:
-	dw ROCK_SLIDE
 	dw FORESIGHT
 	dw MEDITATE
 	dw COUNTER
 	dw REVERSAL
+	dw CLOSE_COMBAT
+	dw ENCORE
+	dw NIGHT_SLASH
+	dw REVENGE
 	dw -1 ; end
 
 GrowlitheEggMoves:
@@ -312,6 +363,13 @@ GrowlitheEggMoves:
 	dw CRUNCH
 	dw THRASH
 	dw FIRE_SPIN
+	dw CLOSE_COMBAT
+	dw DOUBLE_EDGE
+	dw DOUBLE_KICK
+	dw FLARE_BLITZ
+	dw HOWL
+	dw MORNING_SUN
+	dw PLAY_ROUGH
 	dw -1 ; end
 
 PoliwagEggMoves:
@@ -320,27 +378,41 @@ PoliwagEggMoves:
 	dw BUBBLEBEAM
 	dw HAZE
 	dw MIND_READER
+	dw ENCORE
+	dw ENDURE
+	dw MUD_SHOT
+	dw WATER_PULSE
 	dw -1 ; end
 
 AbraEggMoves:
-	dw LIGHT_SCREEN
 	dw ENCORE
 	dw BARRIER
+	dw FIRE_PUNCH
+	dw ICE_PUNCH
+	dw THUNDERPUNCH
+	dw PIXIE_PUNCH
 	dw -1 ; end
 
 MachopEggMoves:
-	dw LIGHT_SCREEN
 	dw MEDITATE
 	dw ROLLING_KICK
 	dw ENCORE
+	dw FIRE_PUNCH
+	dw ICE_PUNCH
+	dw THUNDERPUNCH
+	dw BULLET_PUNCH
+	dw COUNTER
+	dw CLOSE_COMBAT
 	dw -1 ; end
 
 BellsproutEggMoves:
-	dw SWORDS_DANCE
 	dw ENCORE
-	dw REFLECT
 	dw SYNTHESIS
 	dw LEECH_LIFE
+	dw STRENGTH_SAP
+	dw BULLET_SEED
+	dw MAGICAL_LEAF
+	dw POWER_WHIP
 	dw -1 ; end
 
 TentacoolEggMoves:
@@ -348,12 +420,12 @@ TentacoolEggMoves:
 	dw MIRROR_COAT
 	dw RAPID_SPIN
 	dw HAZE
-	dw SAFEGUARD
+	dw BUBBLE
 	dw -1 ; end
 
 GeodudeEggMoves:
 	dw MEGA_PUNCH
-	dw ROCK_SLIDE
+	dw HAMMER_ARM
 	dw -1 ; end
 
 PonytaEggMoves:
@@ -363,13 +435,20 @@ PonytaEggMoves:
 	dw HYPNOSIS
 	dw CHARM
 	dw QUICK_ATTACK
+	dw DOUBLE_EDGE
+	dw HORN_DRILL
+	dw HYPNOSIS
+	dw LOW_KICK
+	dw MORNING_SUN
+	dw FLARE_BLITZ
 	dw -1 ; end
 
 SlowpokeEggMoves:
-	dw SAFEGUARD
 	dw BELLY_DRUM
 	dw FUTURE_SIGHT
 	dw STOMP
+	dw SNORE
+	dw ZEN_HEADBUTT
 	dw -1 ; end
 
 FarfetchDEggMoves:
@@ -378,6 +457,10 @@ FarfetchDEggMoves:
 	dw GUST
 	dw QUICK_ATTACK
 	dw FLAIL
+	dw FEATHERDANCE
+	dw MUD_SLAP
+	dw NIGHT_SLASH
+	dw REVENGE
 	dw -1 ; end
 
 DoduoEggMoves:
@@ -386,6 +469,8 @@ DoduoEggMoves:
 	dw HAZE
 	dw FAINT_ATTACK
 	dw FLAIL
+	dw BRAVE_BIRD
+	dw MIRROR_MOVE
 	dw -1 ; end
 
 SeelEggMoves:
@@ -395,12 +480,17 @@ SeelEggMoves:
 	dw PECK
 	dw SLAM
 	dw ENCORE
+	dw BELCH
+	dw HORN_DRILL
+	dw SIGNAL_BEAM
+	dw WATER_PULSE
 	dw -1 ; end
 
 GrimerEggMoves:
 	dw HAZE
 	dw MEAN_LOOK
 	dw LICK
+	dw SHADOW_PUNCH
 	dw -1 ; end
 
 ShellderEggMoves:
@@ -409,54 +499,75 @@ ShellderEggMoves:
 	dw BARRIER
 	dw RAPID_SPIN
 	dw SCREECH
+	dw AVALANCHE
+	dw ICICLE_SPEAR
+	dw MUD_SHOT
+	dw ROCK_BLAST
+	dw WATER_PULSE
 	dw -1 ; end
 
 GastlyEggMoves:
 	dw PSYWAVE
 	dw PERISH_SONG
 	dw HAZE
+	dw ASTONISH
+	dw DISABLE
+	dw FIRE_PUNCH
+	dw ICE_PUNCH
+	dw THUNDERPUNCH
+	dw SMOG
 	dw -1 ; end
 
 OnixEggMoves:
-	dw ROCK_SLIDE
 	dw FLAIL
+	dw DEFENSE_CURL
+	dw ROCK_BLAST
+	dw ROLLOUT
 	dw -1 ; end
 
 DrowzeeEggMoves:
-	dw LIGHT_SCREEN
 	dw BARRIER
+	dw FIRE_PUNCH
+	dw ICE_PUNCH
+	dw THUNDERPUNCH
+	dw PSYCHO_CUT
 	dw -1 ; end
 
 KrabbyEggMoves:
-	dw DIG
 	dw HAZE
 	dw AMNESIA
 	dw FLAIL
 	dw SLAM
+	dw ANCIENTPOWER
+	dw ENDURE
 	dw -1 ; end
 
 ExeggcuteEggMoves:
 	dw SYNTHESIS
 	dw MOONLIGHT
-	dw REFLECT
 	dw MEGA_DRAIN
 	dw ANCIENTPOWER
 	dw -1 ; end
 
 CuboneEggMoves:
-	dw ROCK_SLIDE
 	dw ANCIENTPOWER
 	dw BELLY_DRUM
 	dw SCREECH
 	dw SKULL_BASH
 	dw PERISH_SONG
-	dw SWORDS_DANCE
+	dw DOUBLE_KICK
+	dw ENDURE
 	dw -1 ; end
 
 LickitungEggMoves:
 	dw BELLY_DRUM
 	dw MAGNITUDE
 	dw BODY_SLAM
+	dw AMNESIA
+	dw HAMMER_ARM
+	dw SNORE
+	dw THRASH
+	dw ZEN_HEADBUTT
 	dw -1 ; end
 
 KoffingEggMoves:
@@ -465,6 +576,7 @@ KoffingEggMoves:
 	dw PSYBEAM
 	dw DESTINY_BOND
 	dw PAIN_SPLIT
+	dw SPITE
 	dw -1 ; end
 
 RhyhornEggMoves:
@@ -475,6 +587,12 @@ RhyhornEggMoves:
 	dw PURSUIT
 	dw COUNTER
 	dw MAGNITUDE
+	dw CRUSH_CLAW
+	dw DRAGON_RUSH
+	dw FIRE_FANG
+	dw ICE_FANG
+	dw THUNDER_FANG
+	dw SKULL_BASH
 	dw -1 ; end
 
 ChanseyEggMoves:
@@ -487,8 +605,8 @@ TangelaEggMoves:
 	dw FLAIL
 	dw CONFUSION
 	dw MEGA_DRAIN
-	dw REFLECT
 	dw AMNESIA
+	dw LEECH_SEED
 	dw -1 ; end
 
 KangaskhanEggMoves:
@@ -497,6 +615,9 @@ KangaskhanEggMoves:
 	dw FOCUS_ENERGY
 	dw SAFEGUARD
 	dw DISABLE
+	dw DOUBLE_EDGE
+	dw CRUSH_CLAW
+	dw HAMMER_ARM
 	dw -1 ; end
 
 HorseaEggMoves:
@@ -506,42 +627,54 @@ HorseaEggMoves:
 	dw DISABLE
 	dw SPLASH
 	dw DRAGON_RAGE
+	dw DRAGONBREATH
+	dw OUTRAGE
+	dw SIGNAL_BEAM
+	dw WATER_PULSE
 	dw -1 ; end
 
 GoldeenEggMoves:
 	dw PSYBEAM
 	dw HAZE
 	dw HYDRO_PUMP
-	dw -1 ; end
-
-MrMimeEggMoves:
-	dw FUTURE_SIGHT
-	dw HYPNOSIS
-	dw MIMIC
+	dw AQUA_TAIL
+	dw MUD_SHOT
 	dw -1 ; end
 
 ScytherEggMoves:
 	dw COUNTER
-	dw SAFEGUARD
+	dw ENDURE
 	dw BATON_PASS
 	dw RAZOR_WIND
 	dw REVERSAL
-	dw LIGHT_SCREEN
+	dw BUG_BUZZ
+	dw NIGHT_SLASH
+	dw SILVER_WIND
 	dw -1 ; end
 
 PinsirEggMoves:
 	dw FURY_ATTACK
 	dw FLAIL
+	dw CLOSE_COMBAT
+	dw FAINT_ATTACK
+	dw QUICK_ATTACK
+	dw SUPERPOWER
 	dw -1 ; end
 
 LaprasEggMoves:
 	dw AURORA_BEAM
 	dw FORESIGHT
+	dw ANCIENTPOWER
+	dw AVALANCHE
+	dw FUTURE_SIGHT
+	dw HORN_DRILL
+	dw WHIRLPOOL
 	dw -1 ; end
 
 EeveeEggMoves:
 	dw FLAIL
 	dw CHARM
+	dw ENDURE
 	dw -1 ; end
 
 OmanyteEggMoves:
@@ -550,6 +683,9 @@ OmanyteEggMoves:
 	dw SLAM
 	dw SUPERSONIC
 	dw HAZE
+	dw SPIKES
+	dw WATER_PULSE
+	dw WHIRLPOOL
 	dw -1 ; end
 
 KabutoEggMoves:
@@ -558,22 +694,31 @@ KabutoEggMoves:
 	dw RAPID_SPIN
 	dw DIG
 	dw FLAIL
+	dw CONFUSE_RAY
+	dw MUD_SHOT
+	dw SCREECH
+	dw TAKE_DOWN
 	dw -1 ; end
 
 AerodactylEggMoves:
 	dw WHIRLWIND
 	dw PURSUIT
 	dw FORESIGHT
-	dw -1 ; end
-
-SnorlaxEggMoves:
-	dw LICK
+	dw DRAGONBREATH
+	dw FIRE_FANG
+	dw THUNDER_FANG
+	dw ICE_FANG
+	dw DRACO_FANG
 	dw -1 ; end
 
 DratiniEggMoves:
-	dw LIGHT_SCREEN
+	dw AQUA_JET
 	dw MIST
 	dw HAZE
 	dw SUPERSONIC
+	dw DRAGONBREATH
+	dw DRAGON_RUSH
+	dw EXTREMESPEED
+	dw WATER_PULSE
 NoEggMoves1:
 	dw -1 ; end

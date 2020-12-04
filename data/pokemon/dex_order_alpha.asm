@@ -20,6 +20,7 @@ AlphabeticalPokedexOrder:
 	dw BELLSPROUT
 	dw BLASTOISE
 	dw BLISSEY
+	dw BONSLY
 	dw BULBASAUR
 	dw BUTTERFREE
 	dw CATERPIE
@@ -147,12 +148,14 @@ AlphabeticalPokedexOrder:
 	dw MEW
 	dw MEWTWO
 	dw MILTANK
+	dw MIME__JR
 	dw MISDREAVUS
 	dw MISMAGIUS
 	dw MISSINGNO
 	dw MOLTRES
 	dw MR__MIME
 	dw MUK
+	dw MUNCHLAX
 	dw MURKROW
 	dw NATU
 	dw NIDOKING

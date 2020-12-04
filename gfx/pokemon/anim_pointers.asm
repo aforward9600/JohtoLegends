@@ -275,4 +275,7 @@ AnimationPointers:
 	dw SalamenceAnimation
 	dw WynautAnimation
 	dw AzurillAnimation
+	dw MunchlaxAnimation
+	dw BonslyAnimation
+	dw MimeJrAnimation
 	dw MissingnoAnimation

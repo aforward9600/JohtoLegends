@@ -121,7 +121,7 @@ FirstEvoStages::
 	dw GOLDEEN
 	dw STARYU     ;78
 	dw STARYU
-	dw MR__MIME
+	dw MIME__JR
 	dw SCYTHER
 	dw SMOOCHUM
 	dw ELEKID
@@ -142,7 +142,7 @@ FirstEvoStages::
 	dw KABUTO
 	dw KABUTO
 	dw AERODACTYL
-	dw SNORLAX
+	dw MUNCHLAX
 	dw ARTICUNO   ;90
 	dw ZAPDOS
 	dw MOLTRES
@@ -184,7 +184,7 @@ FirstEvoStages::
 	dw ODDISH
 	dw AZURILL
 	dw AZURILL     ;b8
-	dw SUDOWOODO
+	dw BONSLY
 	dw POLIWAG
 	dw HOPPIP
 	dw HOPPIP
@@ -276,4 +276,7 @@ FirstEvoStages::
 	dw BAGON
 	dw WYNAUT
 	dw AZURILL
+	dw MUNCHLAX
+	dw BONSLY
+	dw MIME__JR
 	dw MISSINGNO
