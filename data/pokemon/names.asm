@@ -282,4 +282,6 @@ PokemonNames::
 	db "Munchlax@@"
 	db "Bonsly@@@@"
 	db "Mime Jr.@@"
+	db "Mantyke@@@"
+	db "Happiny@@@"
 	db "Missingno."

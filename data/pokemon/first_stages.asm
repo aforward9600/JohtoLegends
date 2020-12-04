@@ -225,7 +225,7 @@ FirstEvoStages::
 	dw REMORAID
 	dw REMORAID   ;e0
 	dw DELIBIRD
-	dw MANTINE
+	dw MANTYKE
 	dw SKARMINI
 	dw HOUNDOUR
 	dw HOUNDOUR
@@ -279,4 +279,5 @@ FirstEvoStages::
 	dw MUNCHLAX
 	dw BONSLY
 	dw MIME__JR
+	dw MANTYKE
 	dw MISSINGNO

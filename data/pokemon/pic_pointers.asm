@@ -571,5 +571,9 @@ PokemonPicPointers::
 	dba BonslyBackpic
 	dba MimeJrFrontpic
 	dba MimeJrBackpic
+	dba MantykeFrontpic
+	dba MantykeBackpic
+	dba HappinyFrontpic
+	dba HappinyBackpic
 	dba MissingnoFrontpic
 	dba MissingnoBackpic

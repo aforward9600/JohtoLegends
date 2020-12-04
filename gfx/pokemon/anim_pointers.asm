@@ -278,4 +278,6 @@ AnimationPointers:
 	dw MunchlaxAnimation
 	dw BonslyAnimation
 	dw MimeJrAnimation
+	dw MantykeAnimation
+	dw HappinyAnimation
 	dw MissingnoAnimation

@@ -129,6 +129,7 @@ EvosAttacksPointers2::
 	dw MunchlaxEvosAttacks
 	dw BonslyEvosAttacks
 	dw MimeJrEvosAttacks
+	dw MantykeEvosAttacks
 	dw MissingnoEvosAttacks
 
 ChikoritaEvosAttacks:
@@ -2583,6 +2584,39 @@ MimeJrEvosAttacks:
 	dbw 43, CALM_MIND
 	dbw 46, BATON_PASS
 	dbw 50, SAFEGUARD
+	db 0 ; no more level-up moves
+
+MantykeEvosAttacks:
+	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, MANTINE
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, BUBBLE
+	dbw 3, SUPERSONIC
+	dbw 7, BUBBLEBEAM
+	dbw 11, CONFUSE_RAY
+	dbw 14, WING_ATTACK
+	dbw 16, HEADBUTT
+	dbw 19, WATER_PULSE
+	dbw 23, PROTECT
+	dbw 27, TAKE_DOWN
+	dbw 32, AGILITY
+	dbw 36, AIR_SLASH
+	dbw 39, ROOST
+	dbw 46, BOUNCE
+	dbw 49, HYDRO_PUMP
+	db 0 ; no more level-up moves
+
+HappinyEvosAttacks:
+	dbbw EVOLVE_ITEM, SHINY_STONE, CHANSEY
+	db 0 ; no more evolutions
+	dbw 1, POUND
+	dbw 1, MINIMIZE
+	dbw 1, MIMIC
+	dbw 4, DEFENSE_CURL
+	dbw 8, SWEET_KISS
+	dbw 12, DISARM_VOICE
+	dbw 16, SAFEGUARD
+	dbw 20, CHARM
 	db 0 ; no more level-up moves
 
 MissingnoEvosAttacks:

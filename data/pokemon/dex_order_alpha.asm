@@ -88,6 +88,7 @@ AlphabeticalPokedexOrder:
 	dw GRIMER
 	dw GROWLITHE
 	dw GYARADOS
+	dw HAPPINY
 	dw HAUNTER
 	dw HERACROSS
 	dw HITMONCHAN
@@ -139,6 +140,7 @@ AlphabeticalPokedexOrder:
 	dw MAMOSWINE
 	dw MANKEY
 	dw MANTINE
+	dw MANTYKE
 	dw MAREEP
 	dw MARILL
 	dw MAROWAK

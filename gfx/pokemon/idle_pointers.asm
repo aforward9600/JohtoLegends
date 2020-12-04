@@ -278,4 +278,6 @@ AnimationIdlePointers:
 	dw MunchlaxAnimationIdle
 	dw BonslyAnimationIdle
 	dw MimeJrAnimationIdle
+	dw MantykeAnimationIdle
+	dw HappinyAnimationIdle
 	dw MissingnoAnimationIdle

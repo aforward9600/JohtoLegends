@@ -299,6 +299,8 @@ JOHTO_POKEMON EQU const_value
 	const MUNCHLAX
 	const BONSLY
 	const MIME__JR
+	const MANTYKE
+	const HAPPINY
 	const MISSINGNO
 NUM_POKEMON EQU const_value + -1
 

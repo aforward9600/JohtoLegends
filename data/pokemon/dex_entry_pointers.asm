@@ -279,4 +279,6 @@ PokedexDataPointerTable:
 	dba MunchlaxPokedexEntry
 	dba BonslyPokedexEntry
 	dba MimeJrPokedexEntry
+	dba MantykePokedexEntry
+	dba HappinyPokedexEntry
 	dba MissingnoPokedexEntry

@@ -215,6 +215,7 @@ NewPokedexOrder:
 	dw URSARING
 	dw PHANPY
 	dw DONPHAN
+	dw MANTYKE
 	dw MANTINE
 	dw SKARMINI
 	dw SKARMORY
@@ -241,6 +242,7 @@ NewPokedexOrder:
 	dw PORYGON
 	dw PORYGON2
 	dw PORYGON_Z
+	dw HAPPINY
 	dw CHANSEY
 	dw BLISSEY
 	dw LAPRAS

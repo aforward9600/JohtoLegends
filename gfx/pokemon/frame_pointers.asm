@@ -278,4 +278,6 @@ FramesPointers:
 	dba MunchlaxFrames
 	dba BonslyFrames
 	dba MimeJrFrames
+	dba MantykeFrames
+	dba HappinyFrames
 	dba MissingnoFrames

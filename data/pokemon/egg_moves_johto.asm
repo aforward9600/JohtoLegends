@@ -75,7 +75,7 @@ EggMovePointers2::
 	dw RemoraidEggMoves
 	dw NoEggMoves2
 	dw DelibirdEggMoves
-	dw MantineEggMoves
+	dw NoEggMoves2
 	dw NoEggMoves2
 	dw HoundourEggMoves
 	dw NoEggMoves2
@@ -129,6 +129,8 @@ EggMovePointers2::
 	dw MunchlaxEggMoves
 	dw BonslyEggMoves
 	dw MimeJrEggMoves
+	dw MantykeEggMoves
+	dw HappinyEggMoves
 	dw NoEggMoves2
 
 ChikoritaEggMoves:
@@ -501,16 +503,6 @@ DelibirdEggMoves:
 	dw ICE_SHARD
 	dw -1 ; end
 
-MantineEggMoves:
-	dw TWISTER
-	dw HYDRO_PUMP
-	dw HAZE
-	dw SLAM
-	dw AMNESIA
-	dw MIRROR_COAT
-	dw SIGNAL_BEAM
-	dw -1 ; end
-
 HoundourEggMoves:
 	dw FIRE_SPIN
 	dw RAGE
@@ -661,6 +653,22 @@ MimeJrEggMoves:
 	dw FUTURE_SIGHT
 	dw HYPNOSIS
 	dw MIMIC
+	dw -1 ; end
+
+MantykeEggMoves:
+	dw TWISTER
+	dw HYDRO_PUMP
+	dw HAZE
+	dw SLAM
+	dw AMNESIA
+	dw MIRROR_COAT
+	dw SIGNAL_BEAM
+	dw -1 ; end
+
+HappinyEggMoves:
+	dw PRESENT
+	dw METRONOME
+	dw HEAL_BELL
 	dw -1 ; end
 NoEggMoves2:
 	dw -1 ; end

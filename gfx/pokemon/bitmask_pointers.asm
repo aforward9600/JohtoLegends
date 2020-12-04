@@ -278,4 +278,6 @@ BitmasksPointers:
 	dw MunchlaxBitmasks
 	dw BonslyBitmasks
 	dw MimeJrBitmasks
+	dw MantykeBitmasks
+	dw HappinyBitmasks
 	dw MissingnoBitmasks
