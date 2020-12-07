@@ -39,8 +39,8 @@ CHRIS EQU __enum__
 	trainerclass PRYCE ; 5
 	const PRYCE1
 
-	trainerclass JASMINE ; 6
-	const JASMINE1
+	trainerclass BYRON ; 6
+	const BYRON1
 
 	trainerclass CHUCK ; 7
 	const CHUCK1
@@ -616,8 +616,6 @@ CHRIS EQU __enum__
 	const KOJI
 
 	trainerclass MEDIUM ; 39
-	const MARTHA
-	const GRACE
 	const BETHANY
 	const MARGRET
 	const ETHEL
@@ -708,6 +706,13 @@ CHRIS EQU __enum__
 	const NINA
 	const SARAH
 	const BRIDGET
+
+	trainerclass HEX_MANIAC ; 47
+	const HILDA
+	const ZELDA
+
+	trainerclass CHIGUSA ; 48
+	const CHIGUSA1
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

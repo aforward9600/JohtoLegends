@@ -2,8 +2,8 @@
 	const ECRUTEAKGYM_ENOKI
 	const ECRUTEAKGYM_SAGE1
 	const ECRUTEAKGYM_SAGE2
-	const ECRUTEAKGYM_GRANNY1
-	const ECRUTEAKGYM_GRANNY2
+	const ECRUTEAKGYM_HEX_MANIAC1
+	const ECRUTEAKGYM_HEX_MANIAC2
 	const ECRUTEAKGYM_GYM_GUY
 	const ECRUTEAKGYM_GRAMPS
 
@@ -53,8 +53,8 @@ EcruteakGymEnokiScript:
 	iftrue .GotShadowBall
 	setevent EVENT_BEAT_SAGE_JEFFREY
 	setevent EVENT_BEAT_SAGE_PING
-	setevent EVENT_BEAT_MEDIUM_MARTHA
-	setevent EVENT_BEAT_MEDIUM_GRACE
+	setevent EVENT_BEAT_HEX_MANIAC_HILDA
+	setevent EVENT_BEAT_HEX_MANIAC_ZELDA
 	writetext EnokiText_FogBadgeSpeech
 	buttonsound
 	verbosegiveitem TM_HEX
@@ -121,24 +121,24 @@ TrainerSagePing:
 	closetext
 	end
 
-TrainerMediumMartha:
-	trainer MEDIUM, MARTHA, EVENT_BEAT_MEDIUM_MARTHA, MediumMarthaSeenText, MediumMarthaBeatenText, 0, .Script
+TrainerHexManiacHilda:
+	trainer HEX_MANIAC, HILDA, EVENT_BEAT_HEX_MANIAC_HILDA, HexManiacHildaSeenText, HexManiacHildaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext MediumMarthaAfterBattleText
+	writetext HexManiacHildaAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerMediumGrace:
-	trainer MEDIUM, GRACE, EVENT_BEAT_MEDIUM_GRACE, MediumGraceSeenText, MediumGraceBeatenText, 0, .Script
+TrainerHexManiacZelda:
+	trainer HEX_MANIAC, ZELDA, EVENT_BEAT_HEX_MANIAC_ZELDA, HexManiacZeldaSeenText, HexManiacZeldaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext MediumGraceAfterBattleText
+	writetext HexManiacZeldaAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -299,43 +299,53 @@ SagePingBeatenText:
 
 SagePingAfterBattleText:
 	text "We use only ghost-"
-	line "type #MON."
+	line "type #mon."
 
 	para "No normal-type"
 	line "attack can harm"
 	cont "them!"
 	done
 
-MediumMarthaSeenText:
-	text "I shall win!"
+HexManiacHildaSeenText:
+	text "I came to this Gym"
+	line "because I felt the"
+	cont "terror of Ghost-"
+
+	para "types! You shall"
+	line "feel it too!"
 	done
 
-MediumMarthaBeatenText:
-	text "I, I, I lost!"
+HexManiacHildaBeatenText:
+	text "Terror indeed!"
 	done
 
-MediumMarthaAfterBattleText:
-	text "The one who wants"
-	line "to win most--will!"
+HexManiacHildaAfterBattleText:
+	text "They truly are"
+	line "terrifying, don't"
+	cont "you agree?"
 	done
 
-MediumGraceSeenText:
-	text "Stumped by our in-"
-	line "visible floor?"
+HexManiacZeldaSeenText:
+	text "The invisible"
+	line "floor here is"
+	cont "quite hard to"
 
-	para "Defeat me if you"
-	line "want a hint!"
+	para "comprehend. Want"
+	line "a hint?"
 	done
 
-MediumGraceBeatenText:
-	text "Wha-what?"
+HexManiacZeldaBeatenText:
+	text "I can't comprehend"
+	line "the true form of"
+
+	para "your attacks!"
 	done
 
-MediumGraceAfterBattleText:
-	text "Fine. I shall tell"
-	line "you the secret of"
+HexManiacZeldaAfterBattleText:
+	text "I'll tell you the"
+	line "secret of the"
 
-	para "the invisible"
+	para "invisible"
 	line "floor."
 
 	para "The path is right"
@@ -429,7 +439,7 @@ EcruteakGym_MapEvents:
 	object_event  5,  1, SPRITE_ENOKI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakGymEnokiScript, -1
 	object_event  2,  7, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSageJeffrey, -1
 	object_event  3, 13, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSagePing, -1
-	object_event  7,  5, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerMediumMartha, -1
-	object_event  7,  9, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerMediumGrace, -1
+	object_event  7,  5, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 1, TrainerHexManiacHilda, -1
+	object_event  7,  9, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 1, TrainerHexManiacZelda, -1
 	object_event  7, 15, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakGymGuyScript, -1
 	object_event  4, 14, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_GRAMPS

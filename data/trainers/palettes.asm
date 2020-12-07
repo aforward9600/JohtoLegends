@@ -12,8 +12,8 @@ INCLUDE "gfx/trainers/milton.pal"
 INCLUDE "gfx/trainers/kurt.pal"
 INCLUDE "gfx/trainers/enoki.pal"
 INCBIN "gfx/trainers/pryce.gbcpal", middle_colors
-INCBIN "gfx/trainers/jasmine.gbcpal", middle_colors
-INCBIN "gfx/trainers/chuck.gbcpal", middle_colors
+INCLUDE "gfx/trainers/byron.pal"
+INCLUDE "gfx/trainers/chuck.pal"
 INCBIN "gfx/trainers/clair.gbcpal", middle_colors
 INCLUDE "gfx/trainers/kris.pal"
 INCBIN "gfx/trainers/oak.gbcpal", middle_colors
@@ -77,6 +77,8 @@ INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
 INCLUDE "gfx/trainers/kris.pal"
 INCLUDE "gfx/trainers/chris.pal"
 INCLUDE "gfx/trainers/breeder.pal"
+INCLUDE "gfx/trainers/hex_maniac.pal"
+INCLUDE "gfx/trainers/chigusa.pal"
 
 KrisPalette:
 INCLUDE "gfx/player/kris.pal"

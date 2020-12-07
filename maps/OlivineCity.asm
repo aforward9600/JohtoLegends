@@ -250,40 +250,40 @@ OlivineCitySailor2Text:
 	done
 
 OlivineCitySignText:
-	text "OLIVINE CITY"
+	text "Olivine City"
 
 	para "The Port Closest"
 	line "to Foreign Lands"
 	done
 
 OlivineCityPortSignText:
-	text "OLIVINE PORT"
-	line "FAST SHIP PIER"
+	text "Olivine Port"
+	line "Fast Ship Pier"
 	done
 
 OlivineGymSignText:
-	text "OLIVINE CITY"
-	line "#MON GYM"
-	cont "LEADER: JASMINE"
+	text "Olivine City"
+	line "#mon Gym"
+	cont "Leader: Jasmine"
 
-	para "The Steel-Clad"
-	line "Defense Girl"
+	para "The Steel"
+	line "Mining Master"
 	done
 
 OlivineLighthouseSignText:
-	text "OLIVINE LIGHTHOUSE"
+	text "Olivine Lighthouse"
 	line "Also known as the"
-	cont "GLITTER LIGHTHOUSE"
+	cont "Glitter Lighthouse"
 	done
 
 OlivineCityBattleTowerSignText:
-	text "BATTLE TOWER AHEAD"
+	text "Battle Tower Ahead"
 	line "Opening Now!"
 	done
 
 OlivineCityBattleTowerSignText_NotYetOpen:
 ; unused; originally shown when the Battle Tower was closed
-	text "BATTLE TOWER AHEAD"
+	text "Battle Tower Ahead"
 	done
 
 OlivineCity_MapEvents:

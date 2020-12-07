@@ -130,6 +130,7 @@ EvosAttacksPointers2::
 	dw BonslyEvosAttacks
 	dw MimeJrEvosAttacks
 	dw MantykeEvosAttacks
+	dw HappinyEvosAttacks
 	dw MissingnoEvosAttacks
 
 ChikoritaEvosAttacks:
@@ -759,8 +760,6 @@ MarillEvosAttacks:
 	db 0 ; no more level-up moves
 
 AzumarillEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, PIXIE_PUNCH
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, WATER_GUN
@@ -2136,8 +2135,8 @@ LeafeonEvosAttacks:
 	dbw 9, GROWL
 	dbw 13, QUICK_ATTACK
 	dbw 17, RAZOR_LEAF
-	dbw 20, BULLET_SEED
-	dbw 25, GIGA_DRAIN
+	dbw 20, GIGA_DRAIN
+	dbw 25, LEAF_BLADE
 	dbw 29, SWORDS_DANCE
 	dbw 33, SYNTHESIS
 	dbw 37, SUNNY_DAY
@@ -2589,7 +2588,9 @@ MimeJrEvosAttacks:
 MantykeEvosAttacks:
 	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, MANTINE
 	db 0 ; no more evolutions
-	dbw 1, TACKLE
+	dbw 1, DIG
+	dbw 1, BOUNCE
+	dbw 1, FLY
 	dbw 1, BUBBLE
 	dbw 3, SUPERSONIC
 	dbw 7, BUBBLEBEAM

@@ -377,6 +377,7 @@ MoveDescriptions1:
 	dw BlazeKickDescription
 	dw DragonTailDescription
 	dw SheerColdDescription
+	dw LeafBladeDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1868,3 +1869,7 @@ DragonTailDescription:
 SheerColdDescription:
 	db   "A one-hit KO,"
 	next "freeze attack.@"
+
+LeafBladeDescription:
+	db   "Has a high criti-"
+	next "cal hit ratio.@"

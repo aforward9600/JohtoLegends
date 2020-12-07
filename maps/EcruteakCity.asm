@@ -217,7 +217,7 @@ EcruteakCityGramps3Text:
 	done
 
 EcruteakCitySignText:
-	text "ECRUTEAK CITY"
+	text "Ecruteak City"
 	line "A Historical City"
 
 	para "Where the Past"
@@ -225,7 +225,7 @@ EcruteakCitySignText:
 	done
 
 TinTowerSignText:
-	text "TIN TOWER"
+	text "Bell Tower"
 
 	para "A legendary #-"
 	line "MON is said to"
@@ -233,21 +233,21 @@ TinTowerSignText:
 	done
 
 EcruteakGymSignText:
-	text "ECRUTEAK CITY"
-	line "#MON GYM"
-	cont "LEADER: MORTY"
+	text "Ecruteak City"
+	line "#mon Gym"
+	cont "Leader: Enoki"
 
-	para "The Mystic Seer of"
-	line "the Future"
+	para "The Terrifying"
+	line "Ghost user"
 	done
 
 EcruteakDanceTheaterSignText:
-	text "ECRUTEAK DANCE"
-	line "THEATER"
+	text "Ecruteak Dance"
+	line "Theater"
 	done
 
 BurnedTowerSignText:
-	text "BURNED TOWER"
+	text "Burned Tower"
 
 	para "It was destroyed"
 	line "by a mysterious"

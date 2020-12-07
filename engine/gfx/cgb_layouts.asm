@@ -632,7 +632,7 @@ _CGB_TrainerCard:
 	ld a, KRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, KURT
+	ld a, CHIGUSA
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, MILTON
@@ -644,7 +644,7 @@ _CGB_TrainerCard:
 	ld a, WALKER ; CLAIR
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, JASMINE
+	ld a, BYRON
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, PRYCE ; CHUCK
@@ -685,11 +685,11 @@ _CGB_TrainerCard:
 	call FillBoxCGB
 	hlcoord 10, 11, wAttrMap
 	lb bc, 2, 4
-	ld a, $3 ; chigusa
+	ld a, $2 ; chigusa
 	call FillBoxCGB
 	hlcoord 14, 11, wAttrMap
 	lb bc, 2, 4
-	ld a, $4 ; byron
+	ld a, $6 ; byron
 	call FillBoxCGB
 	hlcoord 2, 14, wAttrMap
 	lb bc, 2, 4

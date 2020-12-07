@@ -83,25 +83,25 @@ PryceGroup:
 
 	end_list_items
 
-JasmineGroup:
-	next_list_item ; JASMINE (1)
-	db "JASMINE@", TRAINERTYPE_MOVES
+ByronGroup:
+	next_list_item ; BYRON (1)
+	db "Byron@", TRAINERTYPE_MOVES
+	db 29
+	dw FORRETRESS
+	dw MIRROR_SHOT, SPIKES, SUBSTITUTE, REVERSAL
 	db 30
-	dw MAGNEMITE
-	dw THUNDERBOLT, SUPERSONIC, SONICBOOM, THUNDER_WAVE
-	db 30
-	dw MAGNEMITE
-	dw THUNDERBOLT, SUPERSONIC, SONICBOOM, THUNDER_WAVE
+	dw MAGNETON
+	dw DISCHARGE, METAL_SOUND, MIRROR_SHOT, TRI_ATTACK
 	db 35
 	dw STEELIX
-	dw SCREECH, SUNNY_DAY, ROCK_THROW, IRON_TAIL
+	dw IRON_DEFENSE, BULLDOZE, ROCK_SLIDE, IRON_HEAD
 	db -1 ; end
 
 	end_list_items
 
 ChuckGroup:
 	next_list_item ; CHUCK (1)
-	db "CHUCK@", TRAINERTYPE_MOVES
+	db "Chuck@", TRAINERTYPE_MOVES
 	db 27
 	dw PRIMEAPE
 	dw LEER, RAGE, KARATE_CHOP, FURY_SWIPES
@@ -4684,24 +4684,6 @@ SageGroup:
 	end_list_items
 
 MediumGroup:
-	next_list_item ; MEDIUM (1)
-	db "MARTHA@", TRAINERTYPE_NORMAL
-	db 18
-	dw GASTLY
-	db 20
-	dw HAUNTER
-	db 20
-	dw GASTLY
-	db -1 ; end
-
-	next_list_item ; MEDIUM (2)
-	db "GRACE@", TRAINERTYPE_NORMAL
-	db 20
-	dw HAUNTER
-	db 20
-	dw HAUNTER
-	db -1 ; end
-
 	next_list_item ; MEDIUM (3)
 	db "BETHANY@", TRAINERTYPE_NORMAL
 	db 25
@@ -5284,7 +5266,7 @@ BreederGroup:
 	dw CRUNCH, PLAY_ROUGH, CLOSE_COMBAT, SLACK_OFF
 	db -1 ; end
 
-	next_list_item ; BREEDER (1)
+	next_list_item ; BREEDER (3)
 	db "Sarah@", TRAINERTYPE_MOVES
 	db 18
 	dw EEVEE
@@ -5294,11 +5276,44 @@ BreederGroup:
 	dw SCREECH, FURY_SWIPES, FAINT_ATTACK, BOUNCE
 	db -1 ; end
 
-	next_list_item ; BREEDER (1)
+	next_list_item ; BREEDER (4)
 	db "Bridget@", TRAINERTYPE_MOVES
 	db 20
 	dw MILTANK
 	dw REVERSAL, MILK_DRINK, BODY_SLAM, ROLLOUT
+	db -1 ; end
+
+	end_list_items
+
+HexManiacGroup:
+	next_list_item ; HEX_MANIAC (1)
+	db "Hilda@", TRAINERTYPE_NORMAL
+	db 20
+	dw GASTLY
+	db 21
+	dw CORSOLA
+	db -1 ; end
+
+	next_list_item ; HEX_MANIAC (2)
+	db "Zelda@", TRAINERTYPE_NORMAL
+	db 22
+	dw HAUNTER
+	db -1 ; end
+
+	end_list_items
+
+ChigusaGroup:
+	next_list_item ; CHIGUSA
+	db "Chigusa@", TRAINERTYPE_ITEM_MOVES
+	db 27
+	dw PRIMEAPE
+	dw BULK_UP, BRICK_BREAK, ROCK_SLIDE, PAYBACK
+	db 28
+	dw MACHOKE
+	dw BULK_UP, BRICK_BREAK, ROCK_SLIDE, FAINT_ATTACK
+	db 30
+	dw HITMONTOP
+	dw BULK_UP, BRICK_BREAK, ROCK_SLIDE, RAPID_SPIN
 	db -1 ; end
 
 	end_list_items

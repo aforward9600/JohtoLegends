@@ -339,44 +339,44 @@ EusineAfterText:
 	done
 
 CianwoodCitySignText:
-	text "CIANWOOD CITY"
+	text "Cianwood City"
 
 	para "A Port Surrounded"
 	line "by Rough Seas"
 	done
 
 CianwoodGymSignText:
-	text "CIANWOOD CITY"
-	line "#MON GYM"
+	text "Cianwood City"
+	line "#mon Gym"
 
-	para "LEADER: CHUCK"
+	para "Leader: Chigusa"
 
-	para "His Roaring Fists"
-	line "Do the Talking"
+	para "The elegant danci-"
+	line "ng fighter!"
 	done
 
 CianwoodPharmacySignText:
 	text "500 Years of"
 	line "Tradition"
 
-	para "CIANWOOD CITY"
-	line "PHARMACY"
+	para "Cianwood City"
+	line "Pharmacy"
 
 	para "We Await Your"
 	line "Medicinal Queries"
 	done
 
 CianwoodPhotoStudioSignText:
-	text "CIANWOOD CITY"
-	line "PHOTO STUDIO"
+	text "Cianwood City"
+	line "Photo Studio"
 
 	para "Take a Snapshot as"
 	line "a Keepsake!"
 	done
 
 CianwoodPokeSeerSignText:
-	text "THE # SEER"
-	line "AHEAD"
+	text "The # Seer"
+	line "Ahead"
 	done
 
 CianwoodCity_MapEvents:

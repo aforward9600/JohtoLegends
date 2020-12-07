@@ -10,8 +10,8 @@ GymLeaders:
 	db KURT
 	db ENOKI
 	db PRYCE
-	db JASMINE
-	db CHUCK
+	db BYRON
+	db CHIGUSA
 	db CLAIR
 	db WILL
 	db BRUNO

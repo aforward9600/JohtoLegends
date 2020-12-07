@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const OLIVINEGYM_JASMINE
+	const OLIVINEGYM_BYRON
 	const OLIVINEGYM_GYM_GUY
 
 OlivineGym_MapScripts:
@@ -7,19 +7,23 @@ OlivineGym_MapScripts:
 
 	db 0 ; callbacks
 
-OlivineGymJasmineScript:
+OlivineGymByronScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_JASMINE
+	checkevent EVENT_BEAT_BYRON
 	iftrue .FightDone
-	writetext Jasmine_SteelTypeIntro
+	writetext Byron_LittleHero
 	waitbutton
 	closetext
-	winlosstext Jasmine_BetterTrainer, 0
-	loadtrainer JASMINE, JASMINE1
+	winlosstext Byron_Clang, 0
+	loadtrainer BYRON, BYRON1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_JASMINE
+	setevent EVENT_BEAT_BYRON
+	opentext
+	writetext Byron_Beaten
+	waitbutton
+	closetext
 	opentext
 	writetext Text_ReceivedMineralBadge
 	playsound SFX_GET_BADGE
@@ -28,22 +32,22 @@ OlivineGymJasmineScript:
 	readvar VAR_BADGES
 	scall OlivineGymActivateRockets
 .FightDone:
-	checkevent EVENT_GOT_TM23_IRON_TAIL
+	checkevent EVENT_GOT_TM42_FLASH_CANNON
 	iftrue .GotIronTail
-	writetext Jasmine_BadgeSpeech
+	writetext Byron_BadgeSpeech
 	buttonsound
-	verbosegiveitem TM_IRON_TAIL
-	iffalse .NoRoomForIronTail
-	setevent EVENT_GOT_TM23_IRON_TAIL
-	writetext Jasmine_IronTailSpeech
+	verbosegiveitem TM_FLASH_CANNON
+	iffalse .NoRoomForFlashCannon
+	setevent EVENT_GOT_TM42_FLASH_CANNON
+	writetext Byron_FlashCannonSpeech
 	waitbutton
 	closetext
 	end
 
 .GotIronTail:
-	writetext Jasmine_GoodLuck
+	writetext Byron_Sunnyshore
 	waitbutton
-.NoRoomForIronTail:
+.NoRoomForFlashCannon:
 	closetext
 	end
 
@@ -60,7 +64,7 @@ OlivineGymActivateRockets:
 
 OlivineGymGuyScript:
 	faceplayer
-	checkevent EVENT_BEAT_JASMINE
+	checkevent EVENT_BEAT_BYRON
 	iftrue .OlivineGymGuyWinScript
 	checkevent EVENT_JASMINE_RETURNED_TO_GYM
 	iffalse .OlivineGymGuyPreScript
@@ -89,110 +93,132 @@ OlivineGymStatue:
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	gettrainername STRING_BUFFER_4, JASMINE, JASMINE1
+	gettrainername STRING_BUFFER_4, BYRON, BYRON1
 	jumpstd gymstatue2
 
-Jasmine_SteelTypeIntro:
-	text "…Thank you for"
-	line "your help at the"
-	cont "LIGHTHOUSE…"
+Byron_LittleHero:
+	text "Welcome, little"
+	line "hero! I'll"
+	cont "properly introduce"
 
-	para "But this is dif-"
-	line "ferent. Please"
+	para "myself now! I am"
+	line "Byron, the Leader"
+	cont "of the Olivine"
 
-	para "allow me to intro-"
-	line "duce myself."
+	para "City Gym! I came"
+	line "from Canalave City"
+	cont "in the Sinnoh"
 
-	para "I am JASMINE, a"
-	line "GYM LEADER. I use"
-	cont "the steel-type."
+	para "region. I hope to"
+	line "return to my home-"
+	cont "land someday, but"
 
-	para "…Do you know about"
-	line "the steel-type?"
+	para "for now, I shall"
+	line "be the greatest"
+	cont "Leader I can be"
 
-	para "It's a type that"
-	line "was only recently"
-	cont "discovered."
+	para "here in Johto! You"
+	line "were of great help"
+	cont "at the Lighthouse,"
 
-	para "…Um… May I begin?"
+	para "but I can't just"
+	line "give you a Badge"
+	cont "for that! Let's"
+
+	para "get this started!"
 	done
 
-Jasmine_BetterTrainer:
-	text "…You are a better"
-	line "trainer than me,"
+Byron_Clang:
+	text "CLANG! What a"
+	line "battle!"
+	done
 
-	para "in both skill and"
-	line "kindness."
+Byron_Beaten:
+	text "Well, that was"
+	line "what I expected!"
+	cont "A steel-hard"
 
-	para "In accordance with"
-	line "LEAGUE rules, I"
-
-	para "confer upon you"
-	line "this BADGE."
+	para "battle to the end!"
+	line "You've earned this"
+	cont "MineralBadge!"
 	done
 
 Text_ReceivedMineralBadge:
 	text "<PLAYER> received"
-	line "MINERALBADGE."
+	line "MineralBadge."
 	done
 
-Jasmine_BadgeSpeech:
-	text "MINERALBADGE"
-	line "raises #MON's"
-	cont "DEFENSE."
+Byron_BadgeSpeech:
+	text "The MineralBadge"
+	line "will make any"
+	cont "#mon up to Lv."
 
-	para "…Um… Please take"
-	line "this too…"
+	para "50 obey you. Take"
+	line "this TM as well!"
 	done
 
-Text_ReceivedTM09:
-	text "<PLAYER> received"
-	line "TM09."
+Byron_FlashCannonSpeech:
+	text "That lets you"
+	line "teach a #mon"
+	cont "Flash Cannon! It"
+
+	para "can lower a foe's"
+	line "Special Defense,"
+	cont "so it's better to"
+
+	para "be used on a"
+	line "#mon like"
+	cont "Magneton!"
 	done
 
-Jasmine_IronTailSpeech:
-	text "…You could use"
-	line "that TM to teach"
-	cont "IRON TAIL."
-	done
+Byron_Sunnyshore:
+	text "I'll need to find"
+	line "a suitable replac-"
+	cont "ement if I want to"
 
-Jasmine_GoodLuck:
-	text "Um… I don't know"
-	line "how to say this,"
-	cont "but good luck…"
+	para "return home."
+	line "There's a family"
+	cont "of strong Steel"
+
+	para "trainers in Sunny-"
+	line "shore City in"
+	cont "Sinnoh. Perhaps"
+
+	para "one of them can"
+	line "take my place som-"
+	cont "day! Hahahaha!"
 	done
 
 OlivineGymGuyText:
-	text "JASMINE uses the"
-	line "newly discovered"
-	cont "steel-type."
+	text "How's it going,"
+	line "champ in the"
+	cont "making?"
 
-	para "I don't know very"
-	line "much about it."
+	para "Byron uses the"
+	line "Steel-Type. They"
+	cont "are durable, and"
+
+	para "it takes a strong"
+	line "attack to break"
+	cont "through their"
+
+	para "defense. Try Fire,"
+	line "Fighting, or Grou-"
+	cont "nd Types!"
 	done
 
 OlivineGymGuyWinText:
-	text "That was awesome."
-
-	para "The steel-type,"
-	line "huh?"
-
-	para "That was a close"
-	line "encounter of an"
-	cont "unknown kind!"
+	text "Sharp as ever,"
+	cont "you are!"
 	done
 
 OlivineGymGuyPreText:
-	text "JASMINE, the GYM"
-	line "LEADER, is at the"
-	cont "LIGHTHOUSE."
+	text "Byron, the Gym"
+	line "Leader, is at the"
+	cont "Lighthouse."
 
-	para "She's been tending"
-	line "to a sick #MON."
-
-	para "A strong trainer"
-	line "has to be compas-"
-	cont "sionate."
+	para "There's apparently"
+	line "an incident."
 	done
 
 OlivineGym_MapEvents:
@@ -209,5 +235,5 @@ OlivineGym_MapEvents:
 	bg_event  6, 13, BGEVENT_READ, OlivineGymStatue
 
 	db 2 ; object events
-	object_event  5,  3, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGymJasmineScript, EVENT_OLIVINE_GYM_JASMINE
+	object_event  5,  3, SPRITE_BYRON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, OlivineGymByronScript, EVENT_OLIVINE_GYM_JASMINE
 	object_event  7, 13, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGymGuyScript, -1

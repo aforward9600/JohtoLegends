@@ -378,6 +378,7 @@
 	const BLAZE_KICK
 	const DRAGON_TAIL
 	const SHEER_COLD
+	const LEAF_BLADE
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

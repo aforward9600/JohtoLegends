@@ -7,7 +7,7 @@ BTTrainerClassGenders:
 	db MALE   ; KURT
 	db MALE   ; ENOKI
 	db MALE   ; PRYCE
-	db FEMALE ; JASMINE
+	db MALE   ; BYRON
 	db MALE   ; CHUCK
 	db FEMALE ; CLAIR
 	db MALE   ; RIVAL1
@@ -68,3 +68,4 @@ BTTrainerClassGenders:
 	db MALE   ; BLUE
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF
+	db FEMALE ; HEX_MANIAC

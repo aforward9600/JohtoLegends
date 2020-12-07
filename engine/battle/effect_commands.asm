@@ -347,24 +347,28 @@ CantMove:
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVarAddr
 	ld a, [hl]
-	and $ff ^ (1 << SUBSTATUS_BIDE | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_CHARGED)
+	and $ff ^ (1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_CHARGED)
 	ld [hl], a
 
 	call ResetFuryCutterCount
 
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	dw FLY
-	jr z, .fly_bounce_dig
-	dw BOUNCE
-	jr z, .fly_bounce_dig
-	dw DIG
+	push hl
+	jr z, .fly_bounce_dig_moves
+	call CheckMoveInList
+	pop hl
 	ret nz
 
-.fly_bounce_dig
 	res SUBSTATUS_UNDERGROUND, [hl]
 	res SUBSTATUS_FLYING, [hl]
 	jp AppearUserRaiseSub
+
+.fly_bounce_dig_moves
+	dw FLY
+	dw DIG
+	dw BOUNCE
+	dw -1
 
 OpponentCantMove:
 	call BattleCommand_SwitchTurn
@@ -2062,16 +2066,16 @@ BattleCommand_MoveAnimNoSub:
 
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	dw FLY
-	jr z, .fly_bounce_dig
-	dw BOUNCE
-	jr z, .fly_bounce_dig
-	dw DIG
-	ret nz
-
-.fly_bounce_dig
-; clear sprite
+	ld hl, .fly_bounce_dig_moves
+	call CheckMoveInList
+	ret nc
 	jp AppearUserLowerSub
+
+.fly_bounce_dig_moves
+	dw FLY
+	dw DIG
+	dw BOUNCE
+	dw -1
 
 .alternate_anim
 	ld a, [wKickCounter]
@@ -2161,12 +2165,11 @@ BattleCommand_FailureText:
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVarAddr
 
-	dw FLY
-	jr z, .fly_bounce_dig
-	dw BOUNCE
-	jr z, .fly_bounce_dig
-	dw DIG
-	jr z, .fly_bounce_dig
+	push hl
+	ld hl, .fly_bounce_dig_moves
+	call CheckMoveInList
+	pop hl
+	jr c, .fly_bounce_dig
 
 ; Move effect:
 	inc hl
@@ -2191,6 +2194,12 @@ BattleCommand_FailureText:
 	res SUBSTATUS_FLYING, [hl]
 	call AppearUserRaiseSub
 	jp EndMoveEffect
+
+.fly_bounce_dig_moves
+	dw FLY
+	dw DIG
+	dw BOUNCE
+	dw -1
 
 BattleCommand_ApplyDamage:
 ; applydamage
@@ -5639,7 +5648,6 @@ BattleCommand_Charge:
 	call GetBattleVar
 	ld h, a
 	ld bc, FLY
-	ld bc, BOUNCE
 	call CompareMove
 	ld a, 1 << SUBSTATUS_FLYING
 	jr z, .got_move_type

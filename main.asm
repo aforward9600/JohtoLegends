@@ -138,7 +138,6 @@ INCBIN "gfx/battle/dude.2bpp.lz"
 SECTION "bankB", ROMX
 
 INCLUDE "engine/battle/trainer_huds.asm"
-INCLUDE "data/trainers/class_names.asm"
 INCLUDE "engine/battle/ai/redundant.asm"
 INCLUDE "engine/events/move_deleter.asm"
 INCLUDE "engine/link/mystery_gift_2.asm"
@@ -183,6 +182,7 @@ INCLUDE "engine/gfx/place_graphic.asm"
 INCLUDE "mobile/mobile_12_2.asm"
 INCLUDE "engine/events/buena_menu.asm"
 INCLUDE "engine/menus/main_menu.asm"
+INCLUDE "data/trainers/class_names.asm"
 
 
 SECTION "Crystal Features 1", ROMX

@@ -397,6 +397,7 @@ BattleAnimations::
 	dw BattleAnim_BlazeKick
 	dw BattleAnim_DragonTail
 	dw BattleAnim_SheerCold
+	dw BattleAnim_LeafBlade
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -5802,6 +5803,13 @@ BattleAnim_BlazeKick:
 	anim_obj ANIM_OBJ_07, 136, 56, $0
 	anim_call BattleAnim_FirePunch_branch_cbbcc
 	anim_wait 16
+	anim_ret
+
+BattleAnim_LeafBlade:
+	anim_1gfx ANIM_GFX_CUT
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_SOLAR_BLADE, 152, 40, $0
+	anim_wait 32
 	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:

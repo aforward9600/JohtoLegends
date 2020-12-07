@@ -389,3 +389,4 @@ Moves1:
 	move EFFECT_BURN_HIT,           85, FIRE,     PHYSICAL,  90, 10,  10 ;BLAZE_KICK
 	move EFFECT_CIRCLE_THROW,       60, DRAGON,   PHYSICAL,  90, 10,   0 ;DRAGON_TAIL
 	move EFFECT_OHKO,                0, ICE,      SPECIAL,   30,  5,   0 ;SHEER_COLD
+	move EFFECT_NORMAL_HIT,         90, GRASS,    PHYSICAL, 100, 15,   0 ;LEAF_BLADE

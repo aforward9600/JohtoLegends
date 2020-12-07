@@ -7,7 +7,7 @@ TrainerPicPointers::
 	dba KurtPic
 	dba EnokiPic
 	dba PrycePic
-	dba JasminePic
+	dba ByronPic
 	dba ChuckPic
 	dba ClairPic
 	dba Rival1Pic
@@ -72,3 +72,5 @@ TrainerPicPointers::
 	dba Rival3Pic
 	dba Rival4Pic
 	dba BreederPic
+	dba HexManiacPic
+	dba ChigusaPic

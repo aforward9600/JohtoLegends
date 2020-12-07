@@ -461,6 +461,7 @@ FarfetchDEggMoves:
 	dw MUD_SLAP
 	dw NIGHT_SLASH
 	dw REVENGE
+	dw LEAF_BLADE
 	dw -1 ; end
 
 DoduoEggMoves:

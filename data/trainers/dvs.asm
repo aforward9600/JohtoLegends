@@ -6,7 +6,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; KURT
 	dn  9,  8,  8,  8 ; ENOKI
 	dn  9,  8,  8,  8 ; PRYCE
-	dn  9,  8,  8,  8 ; JASMINE
+	dn  12, 12, 8,  8 ; BYRON
 	dn  9,  8,  8,  8 ; CHUCK
 	dn  7, 12, 13, 13 ; CLAIR
 	dn 13, 13, 13, 13 ; RIVAL1
@@ -70,4 +70,6 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; MYSTICALMAN
 	dn 13, 13, 13, 13 ; RIVAL3
 	dn 13, 13, 13, 13 ; RIVAL4
-	dn  9,  9, 12,  8 ; BEAUTY
+	dn  9,  9, 12,  8 ; BREEDER
+	dn  7,  8,  8,  8 ; HEX_MANIAC
+	dn  9,  8,  8,  8 ; CHIGUSA

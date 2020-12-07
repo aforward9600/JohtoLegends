@@ -7,7 +7,7 @@ TrainerGroups:
 	dba KurtGroup
 	dba EnokiGroup
 	dba PryceGroup
-	dba JasmineGroup
+	dba ByronGroup
 	dba ChuckGroup
 	dba ClairGroup
 	dba Rival1Group
@@ -72,3 +72,5 @@ TrainerGroups:
 	dba Rival3Group
 	dba Rival4Group
 	dba BreederGroup
+	dba HexManiacGroup
+	dba ChigusaGroup

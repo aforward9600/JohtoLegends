@@ -8,7 +8,7 @@ TrainerEncounterMusic::
 	db MUSIC_OFFICER_ENCOUNTER     ; kurt
 	db MUSIC_SAGE_ENCOUNTER        ; enoki
 	db MUSIC_OFFICER_ENCOUNTER     ; pryce
-	db MUSIC_LASS_ENCOUNTER        ; jasmine
+	db MUSIC_HIKER_ENCOUNTER       ; byron
 	db MUSIC_OFFICER_ENCOUNTER     ; chuck
 	db MUSIC_BEAUTY_ENCOUNTER      ; clair
 	db MUSIC_RIVAL_ENCOUNTER       ; rival1
@@ -73,6 +73,8 @@ TrainerEncounterMusic::
 	db MUSIC_RIVAL_ENCOUNTER       ; rival3
 	db MUSIC_RIVAL_ENCOUNTER       ; rival4
 	db MUSIC_LASS_ENCOUNTER        ; breeder
+	db MUSIC_POKEMANIAC_ENCOUNTER  ; hex_maniac
+	db MUSIC_BEAUTY_ENCOUNTER      ; chigusa
 	db MUSIC_HIKER_ENCOUNTER
 	db MUSIC_HIKER_ENCOUNTER
 	db MUSIC_HIKER_ENCOUNTER

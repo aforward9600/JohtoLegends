@@ -371,3 +371,4 @@ MoveNames::
 	db "Blaze Kick@"
 	db "Dragon Tail@"
 	db "Sheer Cold@"
+	db "Leaf Blade@"

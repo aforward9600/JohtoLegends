@@ -45,48 +45,36 @@ CianwoodPokecenter1FLassText:
 	done
 
 CianwoodGymGuyText:
-	text "The #MON GYM"
-	line "trainers here are"
-	cont "macho bullies."
+	text "How's it going,"
+	line "champ in the"
+	cont "making? That"
 
-	para "If I stick around,"
-	line "they might come"
-	cont "after me."
+	para "Gym is filled with"
+	line "muscle-heads, and"
+	cont "I'm not one to"
 
-	para "Here's some ad-"
-	line "vice: the GYM"
+	para "stick aournd and"
+	line "get beat up, even"
+	cont "if the Leader is a"
 
-	para "LEADER uses the"
-	line "fighting-type."
+	para "cute girl. Chigusa"
+	line "is an elegant Fig-"
+	cont "hting Type expert."
 
-	para "So you should"
-	line "confound him with"
-	cont "psychic #MON."
+	para "Psychic, Flying"
+	line "and Fairy Types"
+	cont "will easily put"
 
-	para "Wipe out his #-"
-	line "MON before they"
-
-	para "can use their"
-	line "physical strength."
-
-	para "And those boulders"
-	line "in the middle of"
-	cont "the GYM?"
-
-	para "If you don't move"
-	line "them correctly,"
-
-	para "you won't reach"
-	line "the GYM LEADER."
-
-	para "If you get stuck,"
-	line "go outside."
+	para "them out of commi-"
+	line "ssion!"
 	done
 
 CianwoodGymGuyWinText:
-	text "<PLAYER>! You won!"
-	line "I could tell by"
-	cont "looking at you!"
+	text "Nice one! I'm"
+	line "still not going in"
+	cont "there, even to"
+
+	para "talk to Chigusa."
 	done
 
 CianwoodPokecenter1FUnusedText1:

@@ -23,7 +23,7 @@
 	const SPRITE_MILTON ; 13
 	const SPRITE_MORTY ; 15
 	const SPRITE_CHUCK ; 16
-	const SPRITE_JASMINE ; 17
+	const SPRITE_BYRON ; 17
 	const SPRITE_PRYCE ; 18
 	const SPRITE_CLAIR ; 19
 	const SPRITE_BROCK ; 1a
@@ -109,6 +109,9 @@
 	const SPRITE_BREEDER
 	const SPRITE_ENOKI
 	const SPRITE_EUSINE
+	const SPRITE_HEX_MANIAC
+	const SPRITE_CHIGUSA
+	const SPRITE_ARIANA
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

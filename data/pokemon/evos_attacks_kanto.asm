@@ -1431,8 +1431,9 @@ VictreebelEvosAttacks:
 	dbw 1, SWEET_SCENT
 	dbw 1, RAZOR_LEAF
 	dbw 32, SLUDGE_BOMB
-	dbw 44, SOLAR_BLADE
+	dbw 44, LEAF_BLADE
 	dbw 59, POWER_WHIP
+	dbw 64, SOLAR_BLADE
 	db 0 ; no more level-up moves
 
 TentacoolEvosAttacks:
@@ -1694,7 +1695,8 @@ FarfetchDEvosAttacks:
 	dbw 43, ROOST
 	dbw 45, FALSE_SWIPE
 	dbw 49, AIR_SLASH
-	dbw 55, BRAVE_BIRD
+	dbw 55, LEAF_BLADE
+	dbw 60, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 DoduoEvosAttacks:

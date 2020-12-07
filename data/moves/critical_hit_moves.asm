@@ -14,4 +14,5 @@ CriticalHitMoves:
 	dw AIR_CUTTER
 	dw PSYCHO_CUT
 	dw BLAZE_KICK
+	dw LEAF_BLADE
 	dw -1
