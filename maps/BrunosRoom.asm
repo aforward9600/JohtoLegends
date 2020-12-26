@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const BRUNOSROOM_BRUNO
+	const BRUNOSROOM_MARTHA
 
 BrunosRoom_MapScripts:
 	db 2 ; scene scripts
@@ -7,28 +7,28 @@ BrunosRoom_MapScripts:
 	scene_script .DummyScene ; SCENE_FINISHED
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, .BrunosRoomDoors
+	callback MAPCALLBACK_TILES, .MarthasRoomDoors
 
 .LockDoor:
-	prioritysjump .BrunosDoorLocksBehindYou
+	prioritysjump .MarthasDoorLocksBehindYou
 	end
 
 .DummyScene:
 	end
 
-.BrunosRoomDoors:
-	checkevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED
+.MarthasRoomDoors:
+	checkevent EVENT_MARTHAS_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
 	changeblock 4, 14, $2a ; wall
 .KeepEntranceOpen:
-	checkevent EVENT_BRUNOS_ROOM_EXIT_OPEN
+	checkevent EVENT_MARTHAS_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
 	changeblock 4, 2, $16 ; open door
 .KeepExitClosed:
 	return
 
-.BrunosDoorLocksBehindYou:
-	applymovement PLAYER, BrunosRoom_EnterMovement
+.MarthasDoorLocksBehindYou:
+	applymovement PLAYER, MarthasRoom_EnterMovement
 	refreshscreen $86
 	playsound SFX_STRENGTH
 	earthquake 80
@@ -36,90 +36,111 @@ BrunosRoom_MapScripts:
 	reloadmappart
 	closetext
 	setscene SCENE_FINISHED
-	setevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED
+	setevent EVENT_MARTHAS_ROOM_ENTRANCE_CLOSED
 	waitsfx
 	end
 
-BrunoScript_Battle:
+MarthaScript_Battle:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_ELITE_4_BRUNO
-	iftrue BrunoScript_AfterBattle
-	writetext BrunoScript_BrunoBeforeText
+	checkevent EVENT_BEAT_ELITE_4_MARTHA
+	iftrue MarthaScript_AfterBattle
+	writetext MarthaScript_MarthaBeforeText
 	waitbutton
 	closetext
-	winlosstext BrunoScript_BrunoBeatenText, 0
-	loadtrainer BRUNO, BRUNO1
+	winlosstext MarthaScript_MarthaBeatenText, 0
+	loadtrainer MARTHA, MARTHA1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ELITE_4_BRUNO
+	setevent EVENT_BEAT_ELITE_4_MARTHA
 	opentext
-	writetext BrunoScript_BrunoDefeatText
+	writetext MarthaScript_MarthaDefeatText
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door
 	reloadmappart
 	closetext
-	setevent EVENT_BRUNOS_ROOM_EXIT_OPEN
+	setevent EVENT_MARTHAS_ROOM_EXIT_OPEN
 	waitsfx
 	end
 
-BrunoScript_AfterBattle:
-	writetext BrunoScript_BrunoDefeatText
+MarthaScript_AfterBattle:
+	writetext MarthaScript_MarthaDefeatText
 	waitbutton
 	closetext
 	end
 
-BrunosRoom_EnterMovement:
+MarthasRoom_EnterMovement:
 	step UP
 	step UP
 	step UP
 	step UP
 	step_end
 
-BrunoScript_BrunoBeforeText:
-	text "I am BRUNO of the"
-	line "ELITE FOUR."
+MarthaScript_MarthaBeforeText:
+	text "Howdy! Err...I"
+	line "mean..."
 
-	para "I always train to"
-	line "the extreme be-"
-	cont "cause I believe in"
-	cont "our potential."
+	para "Greetings. I am"
+	line "Martha of the"
+	cont "Elite Four."
 
-	para "That is how we"
-	line "became strong."
+	para "It is an honor to"
+	line "to meet you. My"
+	cont "brother, Milton,"
+	cont "told me about you."
 
-	para "Can you withstand"
-	line "our power?"
+	para "I can't wait to"
+	line "see how strong you"
+	cont "you are!...I mean,"
 
-	para "Hm? I see no fear"
-	line "in you. You look"
+	para "I uh...Ah forget"
+	line "this prim and"
+	cont "proper nonsense!"
 
-	para "determined. Per-"
-	line "fect for battle!"
+	para "I was never really"
+	line "good at acting all"
+	cont "lady-like! My up-"
 
-	para "Ready, <PLAYER>?"
-	line "You will bow down"
+	para "bringing would"
+	line "have you believe"
+	cont "that I'm fancy,"
 
-	para "to our overwhelm-"
-	line "ing power!"
+	para "but that's never"
+	line "been my thing! I"
+	cont "always wanted to"
 
-	para "Hoo hah!"
+	para "get my hands dirty"
+	line "like my brother!"
+	cont "So, enough with"
+
+	para "the formalities! I"
+	line "accept your"
+	cont "challenge!"
 	done
 
-BrunoScript_BrunoBeatenText:
-	text "Why? How could we"
-	line "lose?"
+MarthaScript_MarthaBeatenText:
+	text "Well I'll be! He"
+	line "wasn't lying!"
 	done
 
-BrunoScript_BrunoDefeatText:
-	text "Having lost, I"
-	line "have no right to"
-	cont "say anything…"
+MarthaScript_MarthaDefeatText:
+	text "Well done there!"
+	line "my brother was"
+	cont "right about you!"
 
-	para "Go face your next"
-	line "challenge!"
+	para "If I ever have any"
+	line "children, I would"
+	cont "raise them to be"
+
+	para "like you, not the"
+	line "way I was raised."
+
+	para "Go on, the last"
+	line "Elite Four member"
+	cont "is waiting."
+
 	done
 
 BrunosRoom_MapEvents:
@@ -136,4 +157,4 @@ BrunosRoom_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  5,  7, SPRITE_BRUNO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrunoScript_Battle, -1
+	object_event  5,  7, SPRITE_MARTHA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MarthaScript_Battle, -1

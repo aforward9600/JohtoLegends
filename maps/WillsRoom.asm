@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const WILLSROOM_WILL
+	const WILLSROOM_FLORINA
 
 WillsRoom_MapScripts:
 	db 2 ; scene scripts
@@ -7,28 +7,28 @@ WillsRoom_MapScripts:
 	scene_script .DummyScene ; SCENE_FINISHED
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, .WillsRoomDoors
+	callback MAPCALLBACK_TILES, .FlorinasRoomDoors
 
 .LockDoor:
-	prioritysjump .WillsDoorLocksBehindYou
+	prioritysjump .FlorinasDoorLocksBehindYou
 	end
 
 .DummyScene:
 	end
 
-.WillsRoomDoors:
-	checkevent EVENT_WILLS_ROOM_ENTRANCE_CLOSED
+.FlorinasRoomDoors:
+	checkevent EVENT_FLORINAS_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
 	changeblock 4, 14, $2a ; wall
 .KeepEntranceOpen:
-	checkevent EVENT_WILLS_ROOM_EXIT_OPEN
+	checkevent EVENT_FLORINAS_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
 	changeblock 4, 2, $16 ; open door
 .KeepExitClosed:
 	return
 
-.WillsDoorLocksBehindYou:
-	applymovement PLAYER, WillsRoom_EnterMovement
+.FlorinasDoorLocksBehindYou:
+	applymovement PLAYER, FlorinasRoom_EnterMovement
 	refreshscreen $86
 	playsound SFX_STRENGTH
 	earthquake 80
@@ -36,94 +36,93 @@ WillsRoom_MapScripts:
 	reloadmappart
 	closetext
 	setscene SCENE_FINISHED
-	setevent EVENT_WILLS_ROOM_ENTRANCE_CLOSED
+	setevent EVENT_FLORINAS_ROOM_ENTRANCE_CLOSED
 	waitsfx
 	end
 
-WillScript_Battle:
+FlorinaScript_Battle:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_ELITE_4_WILL
-	iftrue WillScript_AfterBattle
-	writetext WillScript_WillBeforeText
+	checkevent EVENT_BEAT_ELITE_4_FLORINA
+	iftrue FlorinaScript_AfterBattle
+	writetext FlorinaScript_FlorinaBeforeText
 	waitbutton
 	closetext
-	winlosstext WillScript_WillBeatenText, 0
-	loadtrainer WILL, WILL1
+	winlosstext FlorinaScript_FlorinaBeatenText, 0
+	loadtrainer FLORINA, FLORINA1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ELITE_4_WILL
+	setevent EVENT_BEAT_ELITE_4_FLORINA
 	opentext
-	writetext WillScript_WillDefeatText
+	writetext FlorinaScript_FlorinaDefeatText
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door
 	reloadmappart
 	closetext
-	setevent EVENT_WILLS_ROOM_EXIT_OPEN
+	setevent EVENT_FLORINAS_ROOM_EXIT_OPEN
 	waitsfx
 	end
 
-WillScript_AfterBattle:
-	writetext WillScript_WillDefeatText
+FlorinaScript_AfterBattle:
+	writetext FlorinaScript_FlorinaDefeatText
 	waitbutton
 	closetext
 	end
 
-WillsRoom_EnterMovement:
+FlorinasRoom_EnterMovement:
 	step UP
 	step UP
 	step UP
 	step UP
 	step_end
 
-WillScript_WillBeforeText:
-	text "Welcome to #MON"
-	line "LEAGUE, <PLAYER>."
+FlorinaScript_FlorinaBeforeText:
+	text "Welcome to #mon"
+	line "League, <PLAYER>."
 
-	para "Allow me to intro-"
-	line "duce myself. I am"
-	cont "WILL."
+	para "I am Florina, and"
+	line "I am your first"
+	cont "battle."
 
-	para "I have trained all"
-	line "around the world,"
+	para "I love flowers,"
+	line "and someday I hope"
+	cont "to set up my own"
+	cont "flower shop."
 
-	para "making my psychic"
-	line "#MON powerful."
+	para "But for now, I"
+	line "will continue to"
+	cont "serve as a member"
+	cont "of the Elite Four."
 
-	para "And, at last, I've"
-	line "been accepted into"
-	cont "the ELITE FOUR."
+	para "My Grass-Types are"
+	line "beautiful and"
+	cont "dangerous."
 
-	para "I can only keep"
-	line "getting better!"
-
-	para "Losing is not an"
-	line "option!"
+	para "Let us begin."
 	done
 
-WillScript_WillBeatenText:
-	text "I… I can't…"
-	line "believe it…"
+FlorinaScript_FlorinaBeatenText:
+	text "That battle was"
+	line "beautiful."
 	done
 
-WillScript_WillDefeatText:
-	text "Even though I was"
-	line "defeated, I won't"
-	cont "change my course."
+FlorinaScript_FlorinaDefeatText:
+	text "Someday, I will"
+	line "fulfill my dream,"
+	cont "and open a flower"
+	cont "shop in Goldenrod,"
 
-	para "I will continue"
-	line "battling until I"
+	para "but my obligation"
+	line "to the League will"
+	cont "come first. The"
 
-	para "stand above all"
-	line "trainers!"
+	para "next member will"
+	line "be even more"
 
-	para "Now, <PLAYER>, move"
-	line "on and experience"
-
-	para "the true ferocity"
-	line "of the ELITE FOUR."
+	para "challenging, so"
+	line "go on."
 	done
 
 WillsRoom_MapEvents:
@@ -139,4 +138,4 @@ WillsRoom_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  5,  7, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, WillScript_Battle, -1
+	object_event  5,  7, SPRITE_FLORINA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FlorinaScript_Battle, -1

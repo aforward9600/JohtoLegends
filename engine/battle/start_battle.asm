@@ -100,7 +100,7 @@ PlayBattleMusic:
 	jr z, .done
 	cp ARCHER
 	jr z, .done
-	cp EXECUTIVEF
+	cp ARIANA
 	jr z, .done
 	cp SCIENTIST
 	jr z, .done

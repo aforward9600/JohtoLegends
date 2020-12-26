@@ -12,10 +12,10 @@ TrainerGroups:
 	dba ClairGroup
 	dba Rival1Group
 	dba PokemonProfGroup
-	dba WillGroup
+	dba FlorinaGroup
 	dba PKMNTrainerGroup
-	dba BrunoGroup
-	dba KarenGroup
+	dba MarthaGroup
+	dba AgathaGroup
 	dba KogaGroup
 	dba ChampionGroup
 	dba BrockGroup
@@ -56,7 +56,7 @@ TrainerGroups:
 	dba PsychicGroup
 	dba PicnickerGroup
 	dba CamperGroup
-	dba ExecutiveFGroup
+	dba ArianaGroup
 	dba SageGroup
 	dba MediumGroup
 	dba BoarderGroup
@@ -74,3 +74,5 @@ TrainerGroups:
 	dba BreederGroup
 	dba HexManiacGroup
 	dba ChigusaGroup
+	dba MasterGroup
+	dba GenSurgeGroup

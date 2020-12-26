@@ -20,11 +20,15 @@ MahoganyGymPryceScript:
 	writetext PryceText_Intro
 	waitbutton
 	closetext
-	winlosstext PryceText_Impressed, 0
+	winlosstext PryceText_Blizzard, 0
 	loadtrainer PRYCE, PRYCE1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_PRYCE
+	opentext
+	writetext PryceText_After
+	waitbutton
+	closetext
 	opentext
 	writetext Text_ReceivedGlacierBadge
 	playsound SFX_GET_BADGE
@@ -51,7 +55,7 @@ MahoganyGymPryceScript:
 	end
 
 PryceScript_Defeat:
-	writetext PryceText_CherishYourPokemon
+	writetext PryceText_GoodLooks
 	waitbutton
 MahoganyGym_NoRoomForIcyWind:
 	closetext
@@ -148,72 +152,87 @@ MahoganyGymStatue:
 	jumpstd gymstatue2
 
 PryceText_Intro:
-	text "#MON have many"
-	line "experiences in"
+	text "Hurrmph! I heard"
+	line "some kids around"
+	cont "here are calling"
 
-	para "their lives, just "
-	line "like we do. "
+	para "me Old Man Pryce!"
+	line "I may look thrice"
+	cont "my age, but 40s"
 
-	para "I, too, have seen"
-	line "and suffered much"
-	cont "in my life."
+	para "aren't that old!"
+	line "Plus, age is just"
+	cont "a number, and it"
 
-	para "Since I am your"
-	line "elder, let me show"
-	cont "you what I mean."
+	para "sure doesn't"
+	line "affect how irresi-"
+	cont "stible I am to the"
 
-	para "I have been with"
-	line "#MON since"
+	para "ladies...Sorry,"
+	line "just thinking out"
+	cont "loud. I am Pryce,"
 
-	para "before you were"
-	line "born."
+	para "the Gym Leader of"
+	line "Mahogany Town,"
+	cont "although I'm sure"
 
-	para "I do not lose"
-	line "easily."
+	para "you already know"
+	line "that. If you're"
+	cont "here for a"
 
-	para "I, PRYCE--the"
-	line "winter trainer--"
+	para "challenge, this"
+	line "not-that-old-yet"
+	cont "man is gonna give"
 
-	para "shall demonstrate"
-	line "my power!"
+	para "you one!"
 	done
 
-PryceText_Impressed:
-	text "Ah, I am impressed"
-	line "by your prowess."
+PryceText_Blizzard:
+	text "Urgh! Age is just"
+	line "a number, but it"
 
-	para "With your strong"
-	line "will, I know you"
+	para "still hits like"
+	line "a Blizzard!"
+	done
 
-	para "will overcome all"
-	line "life's obstacles."
+PryceText_After:
+	text "I became an Ice-"
+	line "Type Gym Leader"
+	cont "because I enjoyed"
 
-	para "You are worthy of"
-	line "this BADGE!"
+	para "the cold, but it"
+	line "sure did a number"
+	cont "on my back and"
+
+	para "looks. Anyway,"
+	line "you've got skills,"
+	cont "kid! Here is the"
+	cont "GlacierBadge!"
 	done
 
 Text_ReceivedGlacierBadge:
 	text "<PLAYER> received"
-	line "GLACIERBADGE."
+	line "GlacierBadge."
 	done
 
 PryceText_GlacierBadgeSpeech:
-	text "That BADGE will"
-	line "raise the SPECIAL"
-	cont "stats of #MON."
+	text "That's your first"
+	line "Badge, right? You"
+	cont "are on your way"
 
-	para "It also lets your"
-	line "#MON use WHIRL-"
-	cont "POOL to get across"
-	cont "real whirlpools."
+	para "to becoming a"
+	line "master. Here, take"
+	cont "this TM. It will"
 
-	para "And this… This is"
-	line "a gift from me!"
+
+	para "teach your #mon"
+	line "a move, and it"
+	cont "can be "
 	done
 
 PryceText_IcyWindSpeech:
 	text "That TM contains"
-	line "ICY WIND."
+	line "Icy Wind."
 
 	para "It inflicts damage"
 	line "and lowers speed."
@@ -223,19 +242,15 @@ PryceText_IcyWindSpeech:
 	cont "winter."
 	done
 
-PryceText_CherishYourPokemon:
-	text "When the ice and"
-	line "snow melt, spring"
-	cont "arrives."
+PryceText_GoodLooks:
+	text "I'll keep my"
+	line "dashing good"
+	cont "looks, even when"
 
-	para "You and your #-"
-	line "MON will be to-"
+	para "I enter my senior"
+	line "years!"
 
-	para "gether for many"
-	line "years to come."
-
-	para "Cherish your time"
-	line "together!"
+	para "...Hopefully."
 	done
 
 BoarderRonaldSeenText:
@@ -339,35 +354,38 @@ SkierClarissaAfterBattleText:
 	done
 
 MahoganyGymGuyText:
-	text "PRYCE is a veteran"
-	line "who has trained"
+	text "Hows it going,"
+	line "champ in the"
+	cont "making?"
 
-	para "#MON for some"
-	line "50 years."
+	para "I'm the Gym Guide"
+	line "and I'm here to"
+	cont "help you out with"
 
-	para "He's said to be"
-	line "good at freezing"
+	para "your Challenge!"
+	line "Pryce loves his"
+	cont "Ice-Types, and"
 
-	para "opponents with"
-	line "ice-type moves."
+	para "he's quite ornery"
+	line "if you mention his"
+	cont "age!"
+	
+	para "Ice-Types are weak"
+	line "against Fire,"
+	cont "Rock, Steel, and"
 
-	para "That means you"
-	line "should melt him"
-
-	para "with your burning"
-	line "ambition!"
+	para "Fighting Types!"
+	line "Dragon and Ground"
+	cont "Types don't do the"
+	cont "greatest."
 	done
 
 MahoganyGymGuyWinText:
-	text "PRYCE is some-"
-	line "thing, but you're"
-	cont "something else!"
+	text "Pryce is ice-cold,"
+	line "but you're firey-"
+	cont "hot! You melted"
 
-	para "That was a hot"
-	line "battle that"
-
-	para "bridged the gen-"
-	line "eration gap!"
+	para "his Ice-Types!"
 	done
 
 MahoganyGym_MapEvents:

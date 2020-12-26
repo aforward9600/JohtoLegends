@@ -13,10 +13,10 @@ TrainerEncounterMusic::
 	db MUSIC_BEAUTY_ENCOUNTER      ; clair
 	db MUSIC_RIVAL_ENCOUNTER       ; rival1
 	db MUSIC_HIKER_ENCOUNTER       ; pokemon_prof
-	db MUSIC_HIKER_ENCOUNTER       ; will
+	db MUSIC_BEAUTY_ENCOUNTER      ; florina
 	db MUSIC_HIKER_ENCOUNTER       ; cal
-	db MUSIC_OFFICER_ENCOUNTER     ; bruno
-	db MUSIC_HIKER_ENCOUNTER       ; karen
+	db MUSIC_BEAUTY_ENCOUNTER      ; martha
+	db MUSIC_SAGE_ENCOUNTER        ; agatha
 	db MUSIC_HIKER_ENCOUNTER       ; koga
 	db MUSIC_OFFICER_ENCOUNTER     ; champion
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; brock
@@ -57,7 +57,7 @@ TrainerEncounterMusic::
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; psychic_t
 	db MUSIC_LASS_ENCOUNTER        ; picnicker
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; camper
-	db MUSIC_ROCKET_ENCOUNTER      ; executivef
+	db MUSIC_ROCKET_ENCOUNTER      ; ariana
 	db MUSIC_SAGE_ENCOUNTER        ; sage
 	db MUSIC_SAGE_ENCOUNTER        ; medium
 	db MUSIC_HIKER_ENCOUNTER       ; boarder
@@ -75,6 +75,8 @@ TrainerEncounterMusic::
 	db MUSIC_LASS_ENCOUNTER        ; breeder
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; hex_maniac
 	db MUSIC_BEAUTY_ENCOUNTER      ; chigusa
+	db MUSIC_SAGE_ENCOUNTER        ; master
+	db MUSIC_OFFICER_ENCOUNTER     ; gen_surge
 	db MUSIC_HIKER_ENCOUNTER
 	db MUSIC_HIKER_ENCOUNTER
 	db MUSIC_HIKER_ENCOUNTER

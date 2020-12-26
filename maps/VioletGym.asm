@@ -12,7 +12,7 @@ VioletGym_MapScripts:
 VioletGymWalkerScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_FALKNER
+	checkevent EVENT_BEAT_WALKER
 	iftrue .FightDone
 	writetext WalkerIntroText
 	waitbutton
@@ -21,7 +21,7 @@ VioletGymWalkerScript:
 	loadtrainer WALKER, WALKER1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_FALKNER
+	setevent EVENT_BEAT_WALKER
 	opentext
 	writetext BeatenWalkerText
 	waitbutton
@@ -93,7 +93,7 @@ TrainerBirdKeeperAbe:
 VioletGymGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_FALKNER
+	checkevent EVENT_BEAT_WALKER
 	iftrue .VioletGymGuyWinScript
 	writetext VioletGymGuyText
 	waitbutton

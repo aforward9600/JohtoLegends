@@ -697,7 +697,7 @@ _CGB_TrainerCard:
 	call FillBoxCGB
 	hlcoord 6, 14, wAttrMap
 	lb bc, 2, 4
-	ld a, $2 ; kurt
+	ld a, $5 ; kurt
 	call FillBoxCGB
 	hlcoord 10, 14, wAttrMap
 	lb bc, 2, 4

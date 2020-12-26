@@ -63,20 +63,21 @@ CHRIS EQU __enum__
 	const RIVAL1_5_TOTODILE
 
 	trainerclass POKEMON_PROF ; a
+	const OAK
 
-	trainerclass WILL ; b
-	const WILL1
+	trainerclass FLORINA ; b
+	const FLORINA1
 
 	trainerclass CAL ; c
 	const CAL1
 	const CAL2
 	const CAL3
 
-	trainerclass BRUNO ; d
-	const BRUNO1
+	trainerclass MARTHA ; d
+	const MARTHA1
 
-	trainerclass KAREN ; e
-	const KAREN1
+	trainerclass AGATHA ; e
+	const AGATHA1
 
 	trainerclass KOGA ; f
 	const KOGA1
@@ -597,9 +598,9 @@ CHRIS EQU __enum__
 	const TODD5
 	const QUENTIN
 
-	trainerclass EXECUTIVEF ; 37
-	const EXECUTIVEF_1
-	const EXECUTIVEF_2
+	trainerclass ARIANA ; 37
+	const ARIANA_1
+	const ARIANA_2
 
 	trainerclass SAGE ; 38
 	const CHOW
@@ -713,6 +714,12 @@ CHRIS EQU __enum__
 
 	trainerclass CHIGUSA ; 48
 	const CHIGUSA1
+
+	trainerclass MASTER ; 49
+	const MASTER1
+
+	trainerclass GEN_SURGE ; 50
+	const GEN_SURGE1
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

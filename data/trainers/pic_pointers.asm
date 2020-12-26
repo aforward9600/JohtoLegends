@@ -12,10 +12,10 @@ TrainerPicPointers::
 	dba ClairPic
 	dba Rival1Pic
 	dba PokemonProfPic
-	dba WillPic
+	dba FlorinaPic
 	dba CalPic
-	dba BrunoPic
-	dba KarenPic
+	dba MarthaPic
+	dba AgathaPic
 	dba KogaPic
 	dba ChampionPic
 	dba BrockPic
@@ -56,7 +56,7 @@ TrainerPicPointers::
 	dba PsychicTPic
 	dba PicnickerPic
 	dba CamperPic
-	dba ExecutivefPic
+	dba ArianaPic
 	dba SagePic
 	dba MediumPic
 	dba BoarderPic
@@ -74,3 +74,5 @@ TrainerPicPointers::
 	dba BreederPic
 	dba HexManiacPic
 	dba ChigusaPic
+	dba MasterPic
+	dba GenSurgePic

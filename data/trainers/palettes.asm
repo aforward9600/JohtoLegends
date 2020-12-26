@@ -11,16 +11,16 @@ INCLUDE "gfx/trainers/walker.pal"
 INCLUDE "gfx/trainers/milton.pal"
 INCLUDE "gfx/trainers/kurt.pal"
 INCLUDE "gfx/trainers/enoki.pal"
-INCBIN "gfx/trainers/pryce.gbcpal", middle_colors
+INCLUDE "gfx/trainers/pryce.pal"
 INCLUDE "gfx/trainers/byron.pal"
 INCLUDE "gfx/trainers/chuck.pal"
-INCBIN "gfx/trainers/clair.gbcpal", middle_colors
+INCLUDE "gfx/trainers/clair.pal"
 INCLUDE "gfx/trainers/kris.pal"
 INCBIN "gfx/trainers/oak.gbcpal", middle_colors
-INCBIN "gfx/trainers/will.gbcpal", middle_colors
+INCLUDE "gfx/trainers/florina.pal"
 INCBIN "gfx/trainers/cal.gbcpal", middle_colors
-INCBIN "gfx/trainers/bruno.gbcpal", middle_colors
-INCBIN "gfx/trainers/karen.gbcpal", middle_colors
+INCLUDE "gfx/trainers/martha.pal"
+INCLUDE "gfx/trainers/agatha.pal"
 INCBIN "gfx/trainers/koga.gbcpal", middle_colors
 INCBIN "gfx/trainers/champion.gbcpal", middle_colors
 INCBIN "gfx/trainers/brock.gbcpal", middle_colors
@@ -61,7 +61,7 @@ INCLUDE "gfx/trainers/archer.pal"
 INCBIN "gfx/trainers/psychic_t.gbcpal", middle_colors
 INCBIN "gfx/trainers/picnicker.gbcpal", middle_colors
 INCBIN "gfx/trainers/camper.gbcpal", middle_colors
-INCBIN "gfx/trainers/executive_f.gbcpal", middle_colors
+INCLUDE "gfx/trainers/ariana.pal"
 INCLUDE "gfx/trainers/sage.pal"
 INCBIN "gfx/trainers/medium.gbcpal", middle_colors
 INCBIN "gfx/trainers/boarder.gbcpal", middle_colors
@@ -79,6 +79,8 @@ INCLUDE "gfx/trainers/chris.pal"
 INCLUDE "gfx/trainers/breeder.pal"
 INCLUDE "gfx/trainers/hex_maniac.pal"
 INCLUDE "gfx/trainers/chigusa.pal"
+INCLUDE "gfx/trainers/master.pal"
+INCLUDE "gfx/trainers/gen_surge.pal"
 
 KrisPalette:
 INCLUDE "gfx/player/kris.pal"

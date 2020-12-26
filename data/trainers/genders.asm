@@ -12,10 +12,10 @@ BTTrainerClassGenders:
 	db FEMALE ; CLAIR
 	db MALE   ; RIVAL1
 	db MALE   ; POKEMON_PROF
-	db FEMALE ; WILL
+	db FEMALE ; FLORINA
 	db MALE   ; CAL
-	db MALE   ; BRUNO
-	db FEMALE ; KAREN
+	db FEMALE ; MARTHA
+	db FEMALE ; AGATHA
 	db MALE   ; KOGA
 	db MALE   ; CHAMPION
 	db MALE   ; BROCK

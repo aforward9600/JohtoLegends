@@ -33,7 +33,7 @@ BlackthornCity_MapScripts:
 BlackthornSuperNerdScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_CLAIR
+	checkevent EVENT_BEAT_MASTER
 	iftrue .BeatClair
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .ClearedRadioTower
@@ -145,40 +145,29 @@ BlackthornCityMartSign:
 Text_ClairIsOut:
 	text "I am sorry."
 
-	para "CLAIR, our GYM"
-	line "LEADER, entered"
+	para "The Master has"
+	line "told me that you"
+	cont "can only enter"
 
-	para "the DRAGON'S DEN"
-	line "behind the GYM."
+	para "when you have"
+	line "seven Badges, as"
+	cont "well as having"
 
-	para "I have no idea"
-	line "when our LEADER"
-	cont "will return."
+	para "talked to a person"
+	line "who posses knowle-"
+	cont "dge of evolution."
 	done
 
 Text_ClairIsIn:
-	text "CLAIR, our GYM"
-	line "LEADER, is waiting"
-	cont "for you."
-
-	para "However, it would"
-	line "be impossible for"
-
-	para "a run-of-the-mill"
-	line "trainer to win."
+	text "The Master is"
+	line "waiting for you."
 	done
 
 Text_ClairIsBeaten:
 	text "You defeated"
-	line "CLAIR?"
+	line "The Master?"
 
 	para "That's amazing!"
-
-	para "I've never heard"
-	line "of her losing to"
-
-	para "anyone other than"
-	line "LANCE."
 	done
 
 BlackthornGrampsRefusesEntryText:
@@ -190,10 +179,10 @@ BlackthornGrampsRefusesEntryText:
 	done
 
 BlackthornGrampsGrantsEntryText:
-	text "If CLAIR allows"
-	line "it, her grand-"
-	cont "father--our MASTER"
-	cont "--will also."
+	text "If the Master"
+	line "procclaims you a"
+	cont "Dragon Master,"
+	cont "I do too."
 
 	para "You may enter."
 	done
@@ -274,29 +263,29 @@ BlackthornCooltrainerF2Text:
 	done
 
 BlackthornCitySignText:
-	text "BLACKTHORN CITY"
+	text "Blackthorn City"
 
 	para "A Quiet Mountain"
 	line "Retreat"
 	done
 
 BlackthornGymSignText:
-	text "BLACKTHORN CITY"
-	line "#MON GYM"
-	cont "LEADER: CLAIR"
+	text "Blackthorn CITY"
+	line "#mon Gym"
+	cont "Leader: Clair"
 
-	para "The Blessed User"
-	line "of Dragon #MON"
+	para "The Greatest User"
+	line "of Dragon #mon"
 	done
 
 MoveDeletersHouseSignText:
-	text "MOVE DELETER'S"
-	line "HOUSE"
+	text "Move Deleter's"
+	line "House"
 	done
 
 DragonDensSignText:
-	text "DRAGON'S DEN"
-	line "AHEAD"
+	text "Dragon's Den"
+	line "Ahead"
 	done
 
 BlackthornCityTrainerTipsText:

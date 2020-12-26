@@ -355,7 +355,7 @@ CantMove:
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	push hl
-	jr z, .fly_bounce_dig_moves
+	jr z, .fly_dig_moves
 	call CheckMoveInList
 	pop hl
 	ret nz
@@ -364,10 +364,9 @@ CantMove:
 	res SUBSTATUS_FLYING, [hl]
 	jp AppearUserRaiseSub
 
-.fly_bounce_dig_moves
+.fly_dig_moves
 	dw FLY
 	dw DIG
-	dw BOUNCE
 	dw -1
 
 OpponentCantMove:
@@ -1007,7 +1006,7 @@ BattleCommand_DoTurn:
 	ret z
 
 	ld a, [de]
-	and 1 << SUBSTATUS_IN_LOOP | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_BIDE
+	and 1 << SUBSTATUS_IN_LOOP | 1 << SUBSTATUS_RAMPAGE
 	ret nz
 
 	call .consume_pp
@@ -2066,15 +2065,14 @@ BattleCommand_MoveAnimNoSub:
 
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	ld hl, .fly_bounce_dig_moves
+	ld hl, .fly_dig_moves
 	call CheckMoveInList
 	ret nc
 	jp AppearUserLowerSub
 
-.fly_bounce_dig_moves
+.fly_dig_moves
 	dw FLY
 	dw DIG
-	dw BOUNCE
 	dw -1
 
 .alternate_anim
@@ -2166,10 +2164,10 @@ BattleCommand_FailureText:
 	call GetBattleVarAddr
 
 	push hl
-	ld hl, .fly_bounce_dig_moves
+	ld hl, .fly_dig_moves
 	call CheckMoveInList
 	pop hl
-	jr c, .fly_bounce_dig
+	jr c, .fly_dig
 
 ; Move effect:
 	inc hl
@@ -2187,7 +2185,7 @@ BattleCommand_FailureText:
 	call BattleCommand_RaiseSub
 	jp EndMoveEffect
 
-.fly_bounce_dig
+.fly_dig
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVarAddr
 	res SUBSTATUS_UNDERGROUND, [hl]
@@ -2195,10 +2193,9 @@ BattleCommand_FailureText:
 	call AppearUserRaiseSub
 	jp EndMoveEffect
 
-.fly_bounce_dig_moves
+.fly_dig_moves
 	dw FLY
 	dw DIG
-	dw BOUNCE
 	dw -1
 
 BattleCommand_ApplyDamage:
@@ -4509,7 +4506,7 @@ BattleCommand_StatDown:
 	jr nz, .GotAmountToLower
 	inc b
 
-.GotAmountToLower
+.GotAmountToLower:
 	call CheckSubstituteOpp
 	jr nz, .Failed
 
@@ -5727,7 +5724,6 @@ BattleCommand_Charge:
 	dw SKY_ATTACK,  .SkyAttack
 	dw FLY,         .Fly
 	dw DIG,         .Dig
-	dw BOUNCE,		.Bounce
 	dw SOLAR_BLADE, .Solarbeam
 	dw -1
 
@@ -5759,11 +5755,6 @@ BattleCommand_Charge:
 .Dig:
 ; 'dug a hole!'
 	text_far UnknownText_0x1c0d6c
-	text_end
-
-.Bounce:
-; 'bounced high!'
-	text_far BounceText
 	text_end
 
 BattleCommand3c:

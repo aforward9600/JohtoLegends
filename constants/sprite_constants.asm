@@ -18,7 +18,7 @@
 	const SPRITE_REDS_MOM ; 0e
 	const SPRITE_DAISY ; 0f
 	const SPRITE_ELM ; 10
-	const SPRITE_WILL ; 11
+	const SPRITE_FLORINA ; 11
 	const SPRITE_WALKER ; 12
 	const SPRITE_MILTON ; 13
 	const SPRITE_MORTY ; 15
@@ -27,8 +27,8 @@
 	const SPRITE_PRYCE ; 18
 	const SPRITE_CLAIR ; 19
 	const SPRITE_BROCK ; 1a
-	const SPRITE_KAREN ; 1b
-	const SPRITE_BRUNO ; 1c
+	const SPRITE_AGATHA ; 1b
+	const SPRITE_MARTHA ; 1c
 	const SPRITE_MISTY ; 1d
 	const SPRITE_LANCE ; 1e
 	const SPRITE_SURGE ; 1f
@@ -112,6 +112,8 @@
 	const SPRITE_HEX_MANIAC
 	const SPRITE_CHIGUSA
 	const SPRITE_ARIANA
+	const SPRITE_MASTER
+	const SPRITE_GEN_SURGE
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

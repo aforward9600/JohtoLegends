@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const KARENSROOM_KAREN
+	const KARENSROOM_AGATHA
 
 KarensRoom_MapScripts:
 	db 2 ; scene scripts
@@ -7,28 +7,28 @@ KarensRoom_MapScripts:
 	scene_script .DummyScene ; SCENE_FINISHED
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, .KarensRoomDoors
+	callback MAPCALLBACK_TILES, .AgathasRoomDoors
 
 .LockDoor:
-	prioritysjump .KarensDoorLocksBehindYou
+	prioritysjump .AgathasDoorLocksBehindYou
 	end
 
 .DummyScene:
 	end
 
-.KarensRoomDoors:
-	checkevent EVENT_KARENS_ROOM_ENTRANCE_CLOSED
+.AgathasRoomDoors:
+	checkevent EVENT_AGATHAS_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
 	changeblock 4, 14, $2a ; wall
 .KeepEntranceOpen:
-	checkevent EVENT_KARENS_ROOM_EXIT_OPEN
+	checkevent EVENT_AGATHAS_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
 	changeblock 4, 2, $16 ; open door
 .KeepExitClosed:
 	return
 
-.KarensDoorLocksBehindYou:
-	applymovement PLAYER, KarensRoom_EnterMovement
+.AgathasDoorLocksBehindYou:
+	applymovement PLAYER, AgathasRoom_EnterMovement
 	refreshscreen $86
 	playsound SFX_STRENGTH
 	earthquake 80
@@ -36,98 +36,115 @@ KarensRoom_MapScripts:
 	reloadmappart
 	closetext
 	setscene SCENE_FINISHED
-	setevent EVENT_KARENS_ROOM_ENTRANCE_CLOSED
+	setevent EVENT_AGATHAS_ROOM_ENTRANCE_CLOSED
 	waitsfx
 	end
 
-KarenScript_Battle:
+AgathaScript_Battle:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_ELITE_4_KAREN
-	iftrue KarenScript_AfterBattle
-	writetext KarenScript_KarenBeforeText
+	checkevent EVENT_BEAT_ELITE_4_AGATHA
+	iftrue AgathaScript_AfterBattle
+	writetext AgathaScript_AgathaBeforeText
 	waitbutton
 	closetext
-	winlosstext KarenScript_KarenBeatenText, 0
-	loadtrainer KAREN, KAREN1
+	winlosstext AgathaScript_AgathaBeatenText, 0
+	loadtrainer AGATHA, AGATHA1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ELITE_4_KAREN
+	setevent EVENT_BEAT_ELITE_4_AGATHA
 	opentext
-	writetext KarenScript_KarenDefeatText
+	writetext AgathaScript_AgathaDefeatText
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door
 	reloadmappart
 	closetext
-	setevent EVENT_KARENS_ROOM_EXIT_OPEN
+	setevent EVENT_AGATHAS_ROOM_EXIT_OPEN
 	waitsfx
 	end
 
-KarenScript_AfterBattle:
-	writetext KarenScript_KarenDefeatText
+AgathaScript_AfterBattle:
+	writetext AgathaScript_AgathaDefeatText
 	waitbutton
 	closetext
 	end
 
-KarensRoom_EnterMovement:
+AgathasRoom_EnterMovement:
 	step UP
 	step UP
 	step UP
 	step UP
 	step_end
 
-KarenScript_KarenBeforeText:
-	text "I am KAREN of the"
-	line "ELITE FOUR."
+AgathaScript_AgathaBeforeText:
+	text "I am Agatha of the"
+	line "Elite Four."
 
-	para "You're <PLAYER>?"
-	line "How amusing."
+	para "I'm the strongest"
+	line "member, since I've"
+	cont "been here the"
+	cont "longest."
 
-	para "I love dark-type"
-	line "#MON."
+	para "I'm a master of"
+	line "tricky #mon."
 
-	para "I find their wild,"
-	line "tough image to be"
+	para "You can never tell"
+	line "what the next move"
+	cont "will be."
 
-	para "so appealing. And"
-	line "they're so strong."
+	para "There was once a"
+	line "trainer tougher"
+	cont "than me, but he"
+	cont "retired not too"
+	cont "long ago."
 
-	para "Think you can take"
-	line "them? Just try to"
-	cont "entertain me."
+	para "He was once tough"
+	line "and handsome, but"
+	cont "that was years"
+	cont "ago."
 
-	para "Let's go."
+	para "Now he just wants"
+	line "to fiddle around"
+	cont "with research."
+
+	para "He's wrong! #-"
+	line "mon are for battl-"
+	cont "ing. I'll teach"
+	cont "this to you!"
 	done
 
-KarenScript_KarenBeatenText:
-	text "Well, aren't you"
-	line "good. I like that"
-	cont "in a trainer."
+AgathaScript_AgathaBeatenText:
+	text "You remind me of"
+	line "him in his prime."
+	cont "A fierce trainer."
 	done
 
-KarenScript_KarenDefeatText:
-	text "Strong #MON."
+AgathaScript_AgathaDefeatText:
+	text "Well done, young"
+	line "one."
 
-	para "Weak #MON."
+	para "It takes guts and"
+	line "brains to take me"
+	cont "on. Now you're the"
+	cont "Champion!"
 
-	para "That is only the"
-	line "selfish perception"
-	cont "of people."
+	para "Or at least you"
+	line "would have been,"
+	cont "if you were a"
 
-	para "Truly skilled"
-	line "trainers should"
+	para "little quicker."
+	line "Someone else beat"
+	cont "you to it."
 
-	para "try to win with"
-	line "their favorites."
+	para "Go on into the"
+	line "next room, and"
+	cont "see for yourself"
 
-	para "I like your style."
-	line "You understand"
-	cont "what's important."
-
-	para "Go on--the CHAM-"
-	line "PION is waiting."
+	para "what kind of"
+	line "trainer you'll"
+	cont "face."
 	done
 
 KarensRoom_MapEvents:
@@ -144,4 +161,4 @@ KarensRoom_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  5,  7, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, KarenScript_Battle, -1
+	object_event  5,  7, SPRITE_AGATHA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AgathaScript_Battle, -1

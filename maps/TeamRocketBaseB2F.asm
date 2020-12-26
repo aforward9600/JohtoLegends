@@ -1,6 +1,6 @@
 	object_const_def ; object_event constants
 	const TEAMROCKETBASEB2F_ROCKET1
-	const TEAMROCKETBASEB2F_ROCKET_GIRL
+	const TEAMROCKETBASEB2F_ARIANA
 	const TEAMROCKETBASEB2F_LANCE
 	const TEAMROCKETBASEB2F_DRAGON
 	const TEAMROCKETBASEB2F_ELECTRODE1
@@ -50,12 +50,12 @@ RocketBaseBossFLeft:
 	sjump RocketBaseBossFScript
 
 RocketBaseBossFRight:
-	moveobject TEAMROCKETBASEB2F_ROCKET_GIRL, 21, 16
+	moveobject TEAMROCKETBASEB2F_ARIANA, 21, 16
 	moveobject TEAMROCKETBASEB2F_ROCKET1, 21, 16
 	moveobject TEAMROCKETBASEB2F_DRAGON, 10, 13
 	moveobject TEAMROCKETBASEB2F_LANCE, 10, 13
 RocketBaseBossFScript:
-	appear TEAMROCKETBASEB2F_ROCKET_GIRL
+	appear TEAMROCKETBASEB2F_ARIANA
 	appear TEAMROCKETBASEB2F_ROCKET1
 	opentext
 	writetext UnknownText_0x6d2ad
@@ -65,7 +65,7 @@ RocketBaseBossFScript:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	applymovement PLAYER, MovementData_0x6d21f
 	playmusic MUSIC_ROCKET_ENCOUNTER
-	applymovement TEAMROCKETBASEB2F_ROCKET_GIRL, MovementData_0x6d224
+	applymovement TEAMROCKETBASEB2F_ARIANA, MovementData_0x6d224
 	turnobject PLAYER, UP
 	applymovement TEAMROCKETBASEB2F_ROCKET1, MovementData_0x6d22f
 	opentext
@@ -73,11 +73,11 @@ RocketBaseBossFScript:
 	waitbutton
 	closetext
 	cry DRAGONITE
-	turnobject TEAMROCKETBASEB2F_ROCKET_GIRL, LEFT
+	turnobject TEAMROCKETBASEB2F_ARIANA, LEFT
 	turnobject PLAYER, LEFT
 	appear TEAMROCKETBASEB2F_DRAGON
 	applymovement TEAMROCKETBASEB2F_DRAGON, MovementData_0x6d236
-	applymovement TEAMROCKETBASEB2F_ROCKET_GIRL, MovementData_0x6d23b
+	applymovement TEAMROCKETBASEB2F_ARIANA, MovementData_0x6d23b
 	applymovement TEAMROCKETBASEB2F_ROCKET1, MovementData_0x6d24c
 	appear TEAMROCKETBASEB2F_LANCE
 	applymovement TEAMROCKETBASEB2F_LANCE, MovementData_0x6d244
@@ -86,16 +86,16 @@ RocketBaseBossFScript:
 	waitbutton
 	closetext
 	turnobject PLAYER, RIGHT
-	applymovement TEAMROCKETBASEB2F_ROCKET_GIRL, MovementData_0x6d241
+	applymovement TEAMROCKETBASEB2F_ARIANA, MovementData_0x6d241
 	opentext
 	writetext UnknownText_0x6d3bd
 	waitbutton
 	closetext
 	applymovement TEAMROCKETBASEB2F_ROCKET1, MovementData_0x6d24a
-	applymovement TEAMROCKETBASEB2F_ROCKET_GIRL, MovementData_0x6d248
+	applymovement TEAMROCKETBASEB2F_ARIANA, MovementData_0x6d248
 	winlosstext UnknownText_0x6d45c, 0
-	setlasttalked TEAMROCKETBASEB2F_ROCKET_GIRL
-	loadtrainer EXECUTIVEF, EXECUTIVEF_2
+	setlasttalked TEAMROCKETBASEB2F_ARIANA
+	loadtrainer ARIANA, ARIANA_2
 	startbattle
 	disappear TEAMROCKETBASEB2F_DRAGON
 	setevent EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE
@@ -110,7 +110,7 @@ RocketBaseBossFScript:
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
 	disappear TEAMROCKETBASEB2F_ROCKET1
-	disappear TEAMROCKETBASEB2F_ROCKET_GIRL
+	disappear TEAMROCKETBASEB2F_ARIANA
 	disappear TEAMROCKETBASEB2F_ROCKET2
 	disappear TEAMROCKETBASEB2F_ROCKET3
 	disappear TEAMROCKETBASEB2F_ROCKET4
@@ -285,7 +285,7 @@ RocketBaseElectrodeScript:
 	opentext
 	writetext UnknownText_0x6d809
 	buttonsound
-	verbosegiveitem TM_GIGA_IMPACT
+	verbosegiveitem LAPRAS_CALLB
 	setevent EVENT_GOT_HM06_WHIRLPOOL
 	writetext UnknownText_0x6d8f8
 	waitbutton
@@ -954,7 +954,7 @@ TeamRocketBaseB2F_MapEvents:
 
 	db 14 ; object events
 	object_event 20, 16, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B2F_GRUNT_WITH_EXECUTIVE
-	object_event 20, 16, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE
+	object_event 20, 16, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE
 	object_event  5, 13, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B2F_LANCE
 	object_event  9, 13, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B2F_DRAGONITE
 	object_event  7,  5, SPRITE_VOLTORB, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketElectrode1, EVENT_TEAM_ROCKET_BASE_B2F_ELECTRODE_1

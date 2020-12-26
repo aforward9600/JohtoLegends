@@ -12,11 +12,11 @@ GymLeaders:
 	db PRYCE
 	db BYRON
 	db CHIGUSA
-	db CLAIR
-	db WILL
-	db BRUNO
-	db KAREN
-	db KOGA
+	db MASTER
+	db FLORINA
+	db MARTHA
+	db AGATHA
+	db GEN_SURGE
 	db CHAMPION
 	db RED
 ; fallthrough

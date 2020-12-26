@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const BLACKTHORNGYM1F_CLAIR
+	const BLACKTHORNGYM1F_MASTER
 	const BLACKTHORNGYM1F_COOLTRAINER_M1
 	const BLACKTHORNGYM1F_COOLTRAINER_M2
 	const BLACKTHORNGYM1F_COOLTRAINER_F
@@ -26,25 +26,32 @@ BlackthornGym1F_MapScripts:
 .skip3
 	return
 
-BlackthornGymClairScript:
+BlackthornGymMasterScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_RISINGBADGE
-	iftrue .AlreadyGotBadge
-	checkevent EVENT_BEAT_CLAIR
+	checkevent EVENT_BEAT_MASTER
 	iftrue .FightDone
-	writetext ClairIntroText
+	writetext MasterIntroText
 	waitbutton
 	closetext
-	winlosstext ClairWinText, 0
-	loadtrainer CLAIR, CLAIR1
+	winlosstext MasterWinText, 0
+	loadtrainer MASTER, MASTER1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_CLAIR
+	setevent EVENT_BEAT_MASTER
 	opentext
-	writetext ClairText_GoToDragonsDen
+	writetext MasterText_Complete
 	waitbutton
 	closetext
+	opentext
+	writetext MasterText_ReceivedRisingBadge
+	playsound SFX_GET_BADGE
+	waitsfx
+	setflag ENGINE_RISINGBADGE
+	readvar VAR_BADGES
+.FightDone:
+	checkevent EVENT_GOT_TM24_DRAGONBREATH
+	iftrue .GotTM24
 	setevent EVENT_BEAT_COOLTRAINERM_PAUL
 	setevent EVENT_BEAT_COOLTRAINERM_CODY
 	setevent EVENT_BEAT_COOLTRAINERM_MIKE
@@ -53,40 +60,20 @@ BlackthornGymClairScript:
 	clearevent EVENT_MAHOGANY_MART_OWNERS
 	setevent EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN
 	clearevent EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
-	end
-
-.FightDone:
-	writetext ClairText_TooMuchToExpect
-	waitbutton
-	closetext
-	end
-
-.AlreadyGotBadge:
-	checkevent EVENT_GOT_TM24_DRAGONBREATH
-	iftrue .GotTM24
-	writetext BlackthornGymClairText_YouKeptMeWaiting
+	writetext MasterText_BadgeExplain
 	buttonsound
-	giveitem TM_DRAGON_CLAW
-	iffalse .BagFull
-	getitemname STRING_BUFFER_3, TM_DRAGON_CLAW
-	writetext BlackthornGymText_ReceivedTM24
-	playsound SFX_ITEM
-	waitsfx
-	itemnotify
+	verbosegiveitem TM_DRAGON_CLAW
+	iffalse .NoRoomforDragonClaw
 	setevent EVENT_GOT_TM24_DRAGONBREATH
-	writetext BlackthornGymClairText_DescribeTM24
-	buttonsound
-	sjump .GotTM24
-
-.BagFull:
-	writetext BlackthornGymClairText_BagFull
+	writetext BlackthornGymMasterText_DescribeTM24
 	waitbutton
 	closetext
 	end
 
 .GotTM24:
-	writetext BlackthornGymClairText_League
+	writetext BlackthornGymMasterText_League
 	waitbutton
+.NoRoomforDragonClaw:
 	closetext
 	end
 
@@ -126,7 +113,7 @@ TrainerCooltrainerfLola:
 BlackthornGymGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_CLAIR
+	checkevent EVENT_BEAT_MASTER
 	iftrue .BlackthornGymGuyWinScript
 	writetext BlackthornGymGuyText
 	waitbutton
@@ -144,26 +131,30 @@ BlackthornGymStatue:
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	gettrainername STRING_BUFFER_4, CLAIR, CLAIR1
+	gettrainername STRING_BUFFER_4, MASTER, MASTER1
 	jumpstd gymstatue2
 
-ClairIntroText:
-	text "I am CLAIR."
+MasterIntroText:
+	text "You have returned."
 
-	para "The world's best"
-	line "dragon master."
+	para "I am proud of you,"
+	line "<PLAYER>. Now,"
+	cont "you have collected"
 
-	para "I can hold my own"
-	line "against even the"
+	para "seven Gym Badges,"
+	line "and you are strong"
+	cont "enough to face me."
 
-	para "#MON LEAGUE's"
-	line "ELITE FOUR."
+	para "I am the Master of"
+	line "Blackthorn City,"
+	cont "and the Gym Leader"
 
-	para "Do you still want"
-	line "to take me on?"
+	para "as well. If you"
+	line "wish to be recogn-"
+	cont "ized as a Dragon"
 
-	para "…Fine."
-	line "Let's do it!"
+	para "Master, then face"
+	line "me!"
 
 	para "As a GYM LEADER,"
 	line "I will use my full"
@@ -172,115 +163,91 @@ ClairIntroText:
 	line "opponent!"
 	done
 
-ClairWinText:
-	text "I lost?"
-
-	para "I don't believe"
-	line "it. There must be"
-	cont "some mistake…"
+MasterWinText:
+	text "There is nothing"
+	line "more I can teach"
+	cont "you."
 	done
 
-ClairText_GoToDragonsDen:
-	text "I won't admit"
-	line "this."
+MasterText_Complete:
+	text "Your training is"
+	line "complete. You are"
+	cont "now worthy of"
 
-	para "I may have lost,"
-	line "but you're still"
+	para "being called a"
+	line "Master. Now, here"
+	cont "is the Rising-"
+	cont "Badge. You've"
 
-	para "not ready for the"
-	line "#MON LEAGUE."
-
-	para "I know. You should"
-	line "take the dragon"
-	cont "user challenge."
-
-	para "Behind this GYM is"
-	line "a place called"
-	cont "DRAGON'S DEN."
-
-	para "There is a small"
-	line "shrine at its"
-
-	para "center."
-	line "Go there."
-
-	para "If you can prove"
-	line "that you've lost"
-
-	para "your lazy ideals,"
-	line "I will recognize"
-
-	para "you as a trainer"
-	line "worthy of a GYM"
-	cont "BADGE!"
+	para "earned it."
 	done
 
-ClairText_TooMuchToExpect:
-	text "What's the matter?"
-
-	para "Is it too much to"
-	line "expect of you?"
+MasterText_ReceivedRisingBadge:
+	text "<PLAYER> received"
+	line "RisingBadge."
 	done
 
-BlackthornGymClairText_YouKeptMeWaiting:
-	text "You've kept me"
-	line "waiting!"
+MasterText_BadgeExplain:
+	text "The RisingBadge"
+	line "will make all"
+	cont "#mon obey you."
 
-	para "Here! Take this!"
+	para "It will also let"
+	line "you gain access"
+	cont "to the Dragon's"
+
+	para "Den behind the"
+	line "Gym. Here, take"
+	cont "this TM as a"
+	cont "gift."
 	done
 
 BlackthornGymText_ReceivedTM24:
 	text "<PLAYER> received"
-	line "TM24."
+	line "TM02."
 	done
 
-BlackthornGymClairText_DescribeTM24:
+BlackthornGymMasterText_DescribeTM24:
 	text "That contains"
-	line "DRAGONBREATH."
+	line "Dragon Claw."
 
-	para "No, it doesn't"
-	line "have anything to"
-	cont "do with my breath."
+	para "It will tear"
+	line "through most"
+	cont "types, but Fairy-"
 
-	para "If you don't want"
-	line "it, you don't have"
-	cont "to take it."
+	para "Types will ignore"
+	line "it."
 	done
 
-BlackthornGymClairText_BagFull:
-	text "What is this? You"
-	line "don't have room?"
-	done
+BlackthornGymMasterText_League:
+	text "You are ready to"
+	line "head to the final"
+	cont "part of your"
 
-BlackthornGymClairText_League:
-	text "What's the matter?"
+	para "journey. Go to the"
+	line "#mon League,"
+	cont "and challenge the"
 
-	para "Aren't you headed"
-	line "to the #MON"
-	cont "LEAGUE?"
+	para "Elite Four. They"
+	line "are among the most"
+	cont "powerful trainers"
 
-	para "Don't you know"
-	line "where it is?"
+	para "in the world."
+	line "Surf east from"
+	cont "New Bark Town to"
 
-	para "From here, go to"
-	line "NEW BARK TOWN."
+	para "reach Route 26."
+	line "It is a part of"
+	cont "Kanto under"
 
-	para "Then SURF east."
-	line "The route there is"
-	cont "very tough."
+	para "Johto's control."
+	line "North from there"
+	cont "is the #mon"
 
-	para "Don't you dare"
-	line "lose at the #-"
-	cont "MON LEAGUE!"
+	para "League. We are all"
+	line "rooting for you"
 
-	para "If you do, I'll"
-	line "feel even worse"
-
-	para "about having lost"
-	line "to you!"
-
-	para "Give it every-"
-	line "thing you've got."
+	para "two."
 	done
 
 CooltrainermPaulSeenText:
@@ -347,41 +314,37 @@ CooltrainerfLolaAfterBattleText:
 	done
 
 BlackthornGymGuyText:
-	text "Yo! CHAMP in"
-	line "making!"
+	text "How's it going,"
+	line "champ in the"
+	cont "making?"
 
-	para "It's been a long"
-	line "journey, but we"
+	para "The Master is a"
+	line "pro with Dragon-"
 
-	para "are almost done!"
-	line "Count on me!"
+	para "Types, as rare as"
+	line "they are."
 
-	para "CLAIR uses the"
-	line "mythical and sac-"
-	cont "red dragon-type"
-	cont "#MON."
+	para "No one is even"
+	line "sure of his real"
+	cont "name!"
 
-	para "You can't damage"
-	line "them very easily."
+	para "Ice, Fairy, and"
+	line "Dragon Types can"
+	cont "deal serious"
 
-	para "But you know,"
-	line "they're supposed"
-
-	para "to be weak against"
-	line "ice-type moves."
+	para "damage!"
 	done
 
 BlackthornGymGuyWinText:
-	text "You were great to"
-	line "beat CLAIR!"
+	text "You did it! You"
+	line "have all eight"
+	cont "Badges! Now you"
 
-	para "All that's left is"
-	line "the #MON LEAGUE"
-	cont "challenge."
+	para "can go to the"
+	line "#Mon League"
+	cont "and become the"
 
-	para "You're on the way"
-	line "to becoming the"
-	cont "#MON CHAMPION!"
+	para "Champion!"
 	done
 
 BlackthornGym1F_MapEvents:
@@ -403,7 +366,7 @@ BlackthornGym1F_MapEvents:
 	bg_event  6, 15, BGEVENT_READ, BlackthornGymStatue
 
 	db 5 ; object events
-	object_event  5,  3, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornGymClairScript, -1
+	object_event  5,  3, SPRITE_MASTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornGymMasterScript, -1
 	object_event  6,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermMike, -1
 	object_event  1, 14, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermPaul, -1
 	object_event  9,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfLola, -1

@@ -2588,9 +2588,9 @@ MimeJrEvosAttacks:
 MantykeEvosAttacks:
 	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, MANTINE
 	db 0 ; no more evolutions
-	dbw 1, DIG
 	dbw 1, BOUNCE
-	dbw 1, FLY
+	dbw 1, CONFUSE_RAY
+	dbw 1, TACKLE
 	dbw 1, BUBBLE
 	dbw 3, SUPERSONIC
 	dbw 7, BUBBLEBEAM

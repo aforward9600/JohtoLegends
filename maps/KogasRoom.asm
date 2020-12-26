@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const KOGASROOM_KOGA
+	const KOGASROOM_GEN_SURGE
 
 KogasRoom_MapScripts:
 	db 2 ; scene scripts
@@ -7,28 +7,28 @@ KogasRoom_MapScripts:
 	scene_script .DummyScene ; SCENE_FINISHED
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, .KogasRoomDoors
+	callback MAPCALLBACK_TILES, .SurgesRoomDoors
 
 .LockDoor:
-	prioritysjump .KogasDoorLocksBehindYou
+	prioritysjump .SurgesDoorLocksBehindYou
 	end
 
 .DummyScene:
 	end
 
-.KogasRoomDoors:
-	checkevent EVENT_KOGAS_ROOM_ENTRANCE_CLOSED
+.SurgesRoomDoors:
+	checkevent EVENT_GEN_SURGES_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
 	changeblock 4, 14, $2a ; wall
 .KeepEntranceOpen:
-	checkevent EVENT_KOGAS_ROOM_EXIT_OPEN
+	checkevent EVENT_GEN_SURGES_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
 	changeblock 4, 2, $16 ; open door
 .KeepExitClosed:
 	return
 
-.KogasDoorLocksBehindYou:
-	applymovement PLAYER, KogasRoom_EnterMovement
+.SurgesDoorLocksBehindYou:
+	applymovement PLAYER, SurgesRoom_EnterMovement
 	refreshscreen $86
 	playsound SFX_STRENGTH
 	earthquake 80
@@ -36,95 +36,107 @@ KogasRoom_MapScripts:
 	reloadmappart
 	closetext
 	setscene SCENE_FINISHED
-	setevent EVENT_KOGAS_ROOM_ENTRANCE_CLOSED
+	setevent EVENT_GEN_SURGES_ROOM_ENTRANCE_CLOSED
 	waitsfx
 	end
 
-KogaScript_Battle:
+SurgeScript_Battle:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_ELITE_4_KOGA
-	iftrue KogaScript_AfterBattle
-	writetext KogaScript_KogaBeforeText
+	checkevent EVENT_BEAT_ELITE_4_GEN_SURGE
+	iftrue SurgeScript_AfterBattle
+	writetext SurgeScript_SurgeBeforeText
 	waitbutton
 	closetext
-	winlosstext KogaScript_KogaBeatenText, 0
-	loadtrainer KOGA, KOGA1
+	winlosstext SurgeScript_SurgeBeatenText, 0
+	loadtrainer GEN_SURGE, GEN_SURGE1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ELITE_4_KOGA
+	setevent EVENT_BEAT_ELITE_4_GEN_SURGE
 	opentext
-	writetext KogaScript_KogaDefeatText
+	writetext SurgeScript_SurgeDefeatText
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door
 	reloadmappart
 	closetext
-	setevent EVENT_KOGAS_ROOM_EXIT_OPEN
+	setevent EVENT_GEN_SURGES_ROOM_EXIT_OPEN
 	waitsfx
 	end
 
-KogaScript_AfterBattle:
-	writetext KogaScript_KogaDefeatText
+SurgeScript_AfterBattle:
+	writetext SurgeScript_SurgeDefeatText
 	waitbutton
 	closetext
 	end
 
-KogasRoom_EnterMovement:
+SurgesRoom_EnterMovement:
 	step UP
 	step UP
 	step UP
 	step UP
 	step_end
 
-KogaScript_KogaBeforeText:
-	text "Fwahahahaha!"
+SurgeScript_SurgeBeforeText:
+	text "Attention!..."
+	line "At ease!"
 
-	para "I am KOGA of the"
-	line "ELITE FOUR."
+	para "I am General Surge"
+	line "of the Elite Four."
 
-	para "I live in shadows,"
-	line "a ninja!"
+	para "After the war, the"
+	line "League was impres-"
+	cont "sed with my skill,"
 
-	para "My intricate style"
-	line "will confound and"
-	cont "destroy you!"
+	para "gave me this"
+	line "position."
 
-	para "Confusion, sleep,"
-	line "poison…"
+	para "I may be retired"
+	line "from the military,"
+	cont "but my skills are"
 
-	para "Prepare to be the"
-	line "victim of my sin-"
-	cont "ister technique!"
+	para "still just as"
+	line "sharp as they were"
+	cont "during war."
 
-	para "Fwahahahaha!"
+	para "My son followed in"
+	line "my footsteps, and"
+	cont "hopes to be better"
+	cont "than me someday."
 
-	para "#MON is not"
-	line "merely about brute"
+	para "I'll let him keep"
+	line "dreaming. Hahaha!"
 
-	para "force--you shall"
-	line "see soon enough!"
+	para "Jokes aside, it's"
+	line "time for you to"
+	cont "face my electrif-"
+	cont "ying #mon!"
 	done
 
-KogaScript_KogaBeatenText:
-	text "Ah!"
-	line "You have proven"
-	cont "your worth!"
+SurgeScript_SurgeBeatenText:
+	text "A job well done."
 	done
 
-KogaScript_KogaDefeatText:
-	text "I subjected you to"
-	line "everything I could"
-	cont "muster."
+SurgeScript_SurgeDefeatText:
+	text "Surprised to see"
+	line "my Zapdos? Caught"
+	cont "it during the war."
 
-	para "But my efforts"
-	line "failed. I must"
-	cont "hone my skills."
+	para "Saved me a few"
+	line "times. You may"
+	cont "find one yourself"
+	cont "one day."
 
-	para "Go on to the next"
-	line "room, and put your"
-	cont "abilities to test!"
+	para "What? You think"
+	line "there's only one"
+	cont "in the world? Ha!"
+
+	para "There's multiple,"
+	line "you just need to"
+	cont "look. Go on, the"
+	cont "next member is"
+	cont "waiting."
 	done
 
 KogasRoom_MapEvents:
@@ -141,4 +153,4 @@ KogasRoom_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  5,  7, SPRITE_KOGA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, KogaScript_Battle, -1
+	object_event  5,  7, SPRITE_GEN_SURGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SurgeScript_Battle, -1

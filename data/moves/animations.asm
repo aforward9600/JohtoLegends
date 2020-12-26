@@ -1739,7 +1739,6 @@ BattleAnim_Teleport:
 	anim_ret
 
 BattleAnim_Fly:
-BattleAnim_Bounce:
 	anim_if_param_equal $1, BattleAnim_Fly_branch_c9e89
 	anim_if_param_equal $2, BattleAnim_Fly_branch_c9e82
 	anim_1gfx ANIM_GFX_HIT
@@ -5802,6 +5801,19 @@ BattleAnim_BlazeKick:
 	anim_wait 6
 	anim_obj ANIM_OBJ_07, 136, 56, $0
 	anim_call BattleAnim_FirePunch_branch_cbbcc
+	anim_wait 16
+	anim_ret
+
+BattleAnim_Bounce:
+	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_HIT
+	anim_bgeffect ANIM_BG_06, $0, $1, $0
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_call BattleAnim_Fly_branch_cbb12
+	anim_wait 16
+	anim_sound 0, 1, SFX_WING_ATTACK
+	anim_obj ANIM_OBJ_01, 136, 56, $0
+	anim_wait 32
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_wait 16
 	anim_ret
 
