@@ -1193,7 +1193,7 @@ JohtoGrassWildMons:
 	map_id ROUTE_29
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 2, HOUNDOOM
+	dbw 2, MAREEP
 	dbw 2, MANTYKE
 	dbw 3, PIDGEY
 	dbw 3, BAGON
@@ -1201,7 +1201,7 @@ JohtoGrassWildMons:
 	dbw 3, HOPPIP
 	dbw 3, HOPPIP
 	; day
-	dbw 2, HOUNDOOM
+	dbw 2, MAREEP
 	dbw 2, MANTYKE
 	dbw 3, PIDGEY
 	dbw 3, BAGON
@@ -1209,7 +1209,7 @@ JohtoGrassWildMons:
 	dbw 3, HOPPIP
 	dbw 3, HOPPIP
 	; nite
-	dbw 2, HOUNDOOM
+	dbw 2, MAREEP
 	dbw 2, MANTYKE
 	dbw 3, RATTATA
 	dbw 3, BAGON
@@ -1600,7 +1600,7 @@ JohtoGrassWildMons:
 	; morn
 	dbw 2, GEODUDE
 	dbw 2, SPEAROW
-	dbw 3, GEODUDE
+	dbw 3, SNEASEL
 	dbw 3, RATTATA
 	dbw 2, PHANPY
 	dbw 2, RATTATA
@@ -1608,7 +1608,7 @@ JohtoGrassWildMons:
 	; day
 	dbw 2, GEODUDE
 	dbw 2, SPEAROW
-	dbw 3, GEODUDE
+	dbw 3, SNEASEL
 	dbw 3, RATTATA
 	dbw 2, RATTATA
 	dbw 2, RATTATA
@@ -1616,7 +1616,7 @@ JohtoGrassWildMons:
 	; nite
 	dbw 2, GEODUDE
 	dbw 2, RATTATA
-	dbw 3, GEODUDE
+	dbw 3, SNEASEL
 	dbw 3, RATTATA
 	dbw 2, RATTATA
 	dbw 2, RATTATA

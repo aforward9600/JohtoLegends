@@ -355,10 +355,10 @@ CantMove:
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	push hl
-	jr z, .fly_dig_moves
+	ld hl, .fly_dig_moves
 	call CheckMoveInList
 	pop hl
-	ret nz
+	ret nc
 
 	res SUBSTATUS_UNDERGROUND, [hl]
 	res SUBSTATUS_FLYING, [hl]
