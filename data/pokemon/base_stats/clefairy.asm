@@ -6,7 +6,7 @@
 	db FAIRY, FAIRY ; type
 	db 150 ; catch rate
 	db 68 ; base exp
-	db MYSTERYBERRY, MOON_STONE ; items
+	db LEPPA_BERRY, MOON_STONE ; items
 	db GENDER_F75 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/clefairy/front.dimensions"

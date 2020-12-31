@@ -48,27 +48,35 @@ MoveTutorScript:
 	loadmenu .MoveMenuHeader
 	verticalmenu
 	closewindow
-	ifequal MOVETUTOR_FLAMETHROWER, .Flamethrower
-	ifequal MOVETUTOR_THUNDERBOLT, .Thunderbolt
-	ifequal MOVETUTOR_ICE_BEAM, .IceBeam
+	ifequal 1, .FireFang
+	ifequal 2, .ThunderFang
+	ifequal 3, .IceFang
+	ifequal 4, .DracoFang
 	sjump .Incompatible
 
-.Flamethrower:
-	setval MOVETUTOR_FLAMETHROWER
+.FireFang:
+	loadmoveindex FIRE_FANG
 	writetext UnknownText_0x1991cf
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
 
-.Thunderbolt:
-	setval MOVETUTOR_THUNDERBOLT
+.ThunderFang:
+	loadmoveindex THUNDER_FANG
 	writetext UnknownText_0x1991cf
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
 
-.IceBeam:
-	setval MOVETUTOR_ICE_BEAM
+.IceFang:
+	loadmoveindex ICE_FANG
+	writetext UnknownText_0x1991cf
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+
+.DracoFang:
+	loadmoveindex DRACO_FANG
 	writetext UnknownText_0x1991cf
 	special MoveTutor
 	ifequal FALSE, .TeachMove
@@ -76,16 +84,17 @@ MoveTutorScript:
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, 15, TEXTBOX_Y - 1
+	menu_coords 0, 0, 15, TEXTBOX_Y - 0
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
-	db 4 ; items
+	db 5 ; items
 	db "Fire Fang@"
 	db "Thunder Fang@"
 	db "Ice Fang@"
+	db "Draco Fang@"
 	db "Cancel@"
 
 .Refused:
@@ -103,10 +112,6 @@ MoveTutorScript:
 .TeachMove:
 	writetext GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText
 	buttonsound
-	takecoins 4000
-	waitsfx
-	playsound SFX_TRANSACTION
-	special DisplayCoinCaseBalance
 	writetext GoldenrodCityMoveTutorFarewellKidText
 	waitbutton
 	closetext

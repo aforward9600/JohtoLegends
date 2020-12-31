@@ -2,6 +2,7 @@ CriticalHitMoves:
 	dw KARATE_CHOP
 	dw RAZOR_WIND
 	dw RAZOR_LEAF
+	dw SKY_ATTACK
 	dw CRABHAMMER
 	dw SLASH
 	dw AEROBLAST

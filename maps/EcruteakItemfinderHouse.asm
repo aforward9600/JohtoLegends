@@ -42,9 +42,10 @@ EcruteakPorygonGuy:
 	waitsfx
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .NoRoom
+	writetext GotPorygonText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke PORYGON, 20
+	givepoke PORYGON, 15
 	setevent EVENT_GOT_PORYGON_R
 .GotPorygon:
 	writetext QuitText
@@ -150,6 +151,11 @@ HereTakeItText:
 
 	para "it was stolen."
 	line "It's yours now."
+	done
+
+GotPorygonText:
+	text "<PLAYER> received"
+	line "Porygon!"
 	done
 
 QuitText:

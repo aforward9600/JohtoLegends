@@ -235,6 +235,7 @@ ScriptCommandTable:
 	dw Script_checksave                  ; a9
 	dw Script_loadmonindex               ; aa
 	dw Script_checkmaplockedmons         ; ab
+	dw Script_loadmoveindex              ; ac
 
 StartScript:
 	ld hl, wScriptFlags
@@ -2871,3 +2872,13 @@ LoadScriptPokemonID:
 	jp nz, GetPokemonIDFromIndex
 	ld a, [wScriptVar]
 	ret
+
+Script_loadmoveindex:
+; script command 0xac
+  call GetScriptByte
+  ld l, a
+  call GetScriptByte
+  ld h, a
+  call GetMoveIDFromIndex
+  ld [wScriptVar], a
+  ret

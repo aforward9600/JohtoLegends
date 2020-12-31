@@ -6,7 +6,7 @@
 	db PSYCHIC, FAIRY ; type
 	db 145 ; catch rate
 	db 62 ; base exp
-	db NO_ITEM, MYSTERYBERRY ; items
+	db NO_ITEM, LEPPA_BERRY ; items
 	db GENDER_F50 ; gender ratio
 	db 25 ; step cycles to hatch
 	INCBIN "gfx/pokemon/mimejr/front.dimensions"

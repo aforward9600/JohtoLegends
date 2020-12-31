@@ -3,5 +3,5 @@
 ; item associated with the table entry is used instead.
 
 TimeCapsule_CatchRateItems:
-	db -1,      BERRY
+	db -1,      ORAN_BERRY
 	db 0 ; end

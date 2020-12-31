@@ -1074,3 +1074,9 @@ ENDM
 checkmaplockedmons: MACRO
 	db checkmaplockedmons_command
 ENDM
+
+	enum loadmoveindex_command ; $ac
+loadmoveindex: MACRO
+	db loadmoveindex_command
+	dw \1
+ENDM

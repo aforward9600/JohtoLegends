@@ -28,7 +28,7 @@ _NothingHereText::
 	done
 
 _WhichApricornText::
-	text "Which APRICORN"
+	text "Which Apricorn"
 	line "should I use?"
 	done
 

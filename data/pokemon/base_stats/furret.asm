@@ -6,7 +6,7 @@
 	db NORMAL, NORMAL ; type
 	db 90 ; catch rate
 	db 116 ; base exp
-	db BERRY, GOLD_BERRY ; items
+	db ORAN_BERRY, SITRUS_BERRY ; items
 	db GENDER_F50 ; gender ratio
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/furret/front.dimensions"

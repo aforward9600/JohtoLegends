@@ -6,7 +6,7 @@
 	db ICE, PSYCHIC ; type
 	db 45 ; catch rate
 	db 87 ; base exp
-	db ICE_BERRY, ICE_BERRY ; items
+	db ASPEAR_BERRY, ASPEAR_BERRY ; items
 	db GENDER_F100 ; gender ratio
 	db 25 ; step cycles to hatch
 	INCBIN "gfx/pokemon/smoochum/front.dimensions"

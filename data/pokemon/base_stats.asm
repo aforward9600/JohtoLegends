@@ -2,8 +2,8 @@ tmhm: MACRO
 ; used in data/pokemon/base_stats/*.asm
 _tms1 = 0 ; TM01-TM24 (24)
 _tms2 = 0 ; TM25-TM48 (24)
-_tms3 = 0 ; TM49-TM63 + HM01-HM07 + MT01-MT02 (24/24)
-_tms4 = 0 ; MT03
+_tms3 = 0 ; TM49-TM70 + HM01 + MT01 (24/24)
+_tms4 = 0 ; MT02 - MT16 (15/16)
 rept _NARG
 	if DEF(\1_TMNUM)
 	if \1_TMNUM < 24 + 1
@@ -13,7 +13,7 @@ _tms2 = _tms2 | (1 << ((\1_TMNUM) - 1 - 24))
 	elif \1_TMNUM < 72 + 1
 _tms3 = _tms3 | (1 << ((\1_TMNUM) - 1 - 48))
 	else
-_tms4 = _tms3 | (1 << ((\1_TMNUM) - 1 - 72))
+_tms4 = _tms4 | (1 << ((\1_TMNUM) - 1 - 72))
 	endc
 	else
 		fail "\1 is not a TM, HM, or move tutor move"
@@ -28,11 +28,11 @@ rept 3 ; TM25-TM48 (24/24)
 	db _tms2 & $ff
 _tms2 = _tms2 >> 8
 endr
-rept 3 ; TM49-TM63 + HM01-HM07 + MT01-MT02 (24/24)
+rept 3 ; TM49-TM70 + HM01 + MT01 (24/24)
 	db _tms3 & $ff
 _tms3 = _tms3 >> 8
 endr
-rept 2 ; MT03
+rept 2 ; MT02 - MT16 (15/16)
 	db _tms4 & $ff
 _tms4 = _tms4 >> 8
 endr

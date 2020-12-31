@@ -64,9 +64,9 @@ MoomooScript:
 	writetext Route39BarnAskGiveBerryText
 	yesorno
 	iffalse .Refused
-	checkitem BERRY
+	checkitem ORAN_BERRY
 	iffalse .NoBerriesInBag
-	takeitem BERRY
+	takeitem ORAN_BERRY
 	readmem wMooMooBerries
 	addval 1
 	writemem wMooMooBerries
