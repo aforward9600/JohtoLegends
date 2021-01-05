@@ -76,3 +76,4 @@ TrainerGroups:
 	dba ChigusaGroup
 	dba MasterGroup
 	dba GenSurgeGroup
+	dba LanceGroup

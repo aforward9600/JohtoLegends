@@ -718,8 +718,11 @@ CHRIS EQU __enum__
 	trainerclass MASTER ; 49
 	const MASTER1
 
-	trainerclass GEN_SURGE ; 50
+	trainerclass GEN_SURGE ; 4a
 	const GEN_SURGE1
+
+	trainerclass DRAGON_KID ; 4b
+	const LANCE1
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

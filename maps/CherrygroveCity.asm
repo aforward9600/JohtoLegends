@@ -124,9 +124,9 @@ CherrygroveSilverSceneNorth:
 	writetext CherrygroveRivalText_Seen
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	checkevent EVENT_GOT_DRATINI_FROM_MASTER
 	iftrue .Totodile
-	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .Chikorita
 	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_KRIS
@@ -200,9 +200,9 @@ CherrygroveSilverSceneNorth2:
 	writetext CherrygroveRivalText_Seen
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	checkevent EVENT_GOT_DRATINI_FROM_MASTER
 	iftrue .Totodile2
-	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .Chikorita2
 	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_CHRIS

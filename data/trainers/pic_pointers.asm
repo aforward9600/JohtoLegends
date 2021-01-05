@@ -76,3 +76,4 @@ TrainerPicPointers::
 	dba ChigusaPic
 	dba MasterPic
 	dba GenSurgePic
+	dba LancePic

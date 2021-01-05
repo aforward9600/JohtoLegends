@@ -524,13 +524,13 @@ SetDayOfWeek:
 	dw .Saturday
 	dw .Sunday
 
-.Sunday:    db " SUNDAY@"
-.Monday:    db " MONDAY@"
-.Tuesday:   db " TUESDAY@"
-.Wednesday: db "WEDNESDAY@"
-.Thursday:  db "THURSDAY@"
-.Friday:    db " FRIDAY@"
-.Saturday:  db "SATURDAY@"
+.Sunday:    db " Sunday@"
+.Monday:    db " Monday@"
+.Tuesday:   db " Tuesday@"
+.Wednesday: db "Wednesday@"
+.Thursday:  db "Thursday@"
+.Friday:    db " Friday@"
+.Saturday:  db "Saturday@"
 
 .WhatDayIsItText:
 	; What day is it?
@@ -717,9 +717,9 @@ GetTimeOfDayString:
 	ld de, .day_string
 	ret
 
-.nite_string: db "NITE@"
-.morn_string: db "MORN@"
-.day_string:  db "DAY@"
+.nite_string: db "Nite@"
+.morn_string: db "Morn@"
+.day_string:  db "Day@"
 
 AdjustHourForAMorPM:
 ; Convert the hour stored in c (0-23) to a 1-12 value

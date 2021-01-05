@@ -88,9 +88,9 @@ PlateauRivalBattleCommon:
 	waitbutton
 	closetext
 	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	checkevent EVENT_GOT_DRATINI_FROM_MASTER
 	iftrue .Totodile
-	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .Chikorita
 	; Cyndaquil
 	winlosstext PlateauRivalWinText, PlateauRivalLoseText

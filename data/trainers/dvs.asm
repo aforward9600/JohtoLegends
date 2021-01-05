@@ -8,7 +8,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; PRYCE
 	dn  12, 12, 8,  8 ; BYRON
 	dn  9,  8,  8,  8 ; CHUCK
-	dn  7, 12, 13, 13 ; CLAIR
+	dn  7,  8,  8,  8 ; CLAIR
 	dn 13, 13, 13, 13 ; RIVAL1
 	dn 15, 15, 15, 15 ; POKEMON_PROF
 	dn 13, 12, 13, 13 ; FLORINA
@@ -75,3 +75,4 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; CHIGUSA
 	dn 12, 12, 13, 13 ; MASTER
 	dn 13, 12, 13, 13 ; GEN_SURGE
+	dn  9,  8,  8,  8 ; LANCE

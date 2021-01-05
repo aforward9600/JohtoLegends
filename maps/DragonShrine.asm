@@ -2,7 +2,6 @@
 	const DRAGONSHRINE_ELDER1
 	const DRAGONSHRINE_ELDER2
 	const DRAGONSHRINE_ELDER3
-	const DRAGONSHRINE_CLAIR
 
 DragonShrine_MapScripts:
 	db 2 ; scene scripts
@@ -117,75 +116,8 @@ DragonShrine_MapScripts:
 	writetext DragonShrinePassedTestText
 	waitbutton
 	closetext
-	playsound SFX_ENTER_DOOR
-	showemote EMOTE_SHOCK, PLAYER, 15
-	playmusic MUSIC_CLAIR
-	appear DRAGONSHRINE_CLAIR
-	waitsfx
-	turnobject PLAYER, DOWN
-	pause 30
-	applymovement DRAGONSHRINE_CLAIR, DragonShrineClairWalkInMovement
-	turnobject DRAGONSHRINE_CLAIR, RIGHT
-	turnobject PLAYER, LEFT
-	turnobject DRAGONSHRINE_ELDER1, LEFT
-	opentext
-	writetext DragonShrineClairYouPassedText
-	waitbutton
-	closetext
-	special FadeOutMusic
-	applymovement DRAGONSHRINE_CLAIR, DragonShrineClairBigStepLeftMovement
-	opentext
-	writetext DragonShrineClairThatCantBeText
-	waitbutton
-	closetext
-	applymovement DRAGONSHRINE_CLAIR, DragonShrineClairSlowStepLeftMovement
-	opentext
-	writetext DragonShrineClairYoureLyingText
-	waitbutton
-	closetext
-	applymovement DRAGONSHRINE_ELDER1, DragonShrineElderWalkToClairMovement
-	turnobject DRAGONSHRINE_CLAIR, UP
-	opentext
-	writetext DragonShrineMustIInformLanceText
-	waitbutton
-	closetext
-	showemote EMOTE_SHOCK, DRAGONSHRINE_CLAIR, 15
-	opentext
-	writetext DragonShrineIUnderstandText
-	waitbutton
-	closetext
-	applymovement DRAGONSHRINE_CLAIR, DragonShrineClairTwoSlowStepsRightMovement
-	opentext
-	writetext DragonShrineHereRisingBadgeText
-	waitbutton
-	setflag ENGINE_RISINGBADGE
-	playsound SFX_GET_BADGE
-	waitsfx
-	special RestartMapMusic
 	specialphonecall SPECIALCALL_MASTERBALL
 	setscene SCENE_FINISHED
-	setmapscene DRAGONS_DEN_B1F, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM
-	writetext DragonShrinePlayerReceivedRisingBadgeText
-	buttonsound
-	writetext DragonShrineRisingBadgeExplanationText
-	waitbutton
-	closetext
-	applymovement DRAGONSHRINE_ELDER1, DragonShrineElderWalkAway1Movement
-	turnobject DRAGONSHRINE_CLAIR, UP
-	applymovement DRAGONSHRINE_ELDER1, DragonShrineElderWalkAway2Movement
-	turnobject PLAYER, UP
-	opentext
-	writetext DragonShrineElderScoldsClairText
-	waitbutton
-	closetext
-	opentext
-	writetext DragonShrineSpeechlessText
-	waitbutton
-	closetext
-	applymovement DRAGONSHRINE_CLAIR, DragonShrineClairWalkOutMovement
-	playsound SFX_ENTER_DOOR
-	disappear DRAGONSHRINE_CLAIR
-	waitsfx
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	end
 
@@ -213,7 +145,7 @@ DragonShrineElder1Script:
 	writetext DragonShrinePlayerReceivedDratiniText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke DRATINI, 15
+	givepoke BAGON, 15
 	checkevent EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG
 	special GiveDratini
 	setevent EVENT_GOT_DRATINI
@@ -342,70 +274,26 @@ DragonShrineElderStepDownMovement:
 	slow_step DOWN
 	step_end
 
-DragonShrineElderWalkToClairMovement:
-	slow_step LEFT
-	slow_step LEFT
-	slow_step LEFT
-	turn_head DOWN
-	step_end
-
-DragonShrineElderWalkAway1Movement:
-	slow_step RIGHT
-	slow_step RIGHT
-	step_end
-
-DragonShrineElderWalkAway2Movement:
-	slow_step RIGHT
-	turn_head DOWN
-	step_end
-
-DragonShrineClairWalkInMovement:
-	slow_step UP
-	slow_step UP
-	slow_step UP
-	slow_step UP
-	slow_step UP
-	step_end
-
-DragonShrineClairBigStepLeftMovement:
-	fix_facing
-	big_step LEFT
-	step_end
-
-DragonShrineClairSlowStepLeftMovement:
-	slow_step LEFT
-	remove_fixed_facing
-	step_end
-
-DragonShrineClairTwoSlowStepsRightMovement:
-	slow_step RIGHT
-	slow_step RIGHT
-	step_end
-
-DragonShrineClairWalkOutMovement:
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
-
 DragonShrineElderGreetingText:
 	text "Hm… Good to see"
 	line "you here."
 
-	para "No need to explain"
-	line "why you came."
+	para "I see that you"
+	line "possess the"
+	cont "RisingBadge."
 
-	para "CLAIR sent you"
-	line "here, didn't she?"
+	para "That means that"
+	line "the Master has"
+	cont "finally recognized"
 
-	para "That girl is a"
-	line "handful…"
+	para "you as being"
+	line "worthy."
 
-	para "I am sorry, but I"
-	line "must test you."
+	para "Now that you are"
+	line "here, you may take"
+	cont "the Dragon Master"
+
+	para "Challenge."
 
 	para "Not to worry, you"
 	line "are to answer only"
@@ -415,7 +303,7 @@ DragonShrineElderGreetingText:
 	done
 
 DragonShrineQuestion1Text:
-	text "What are #MON"
+	text "What are #mon"
 	line "to you?"
 	done
 
@@ -433,12 +321,12 @@ DragonShrineQuestion3Text:
 DragonShrineQuestion4Text:
 	text "What is most"
 	line "important for"
-	cont "raising #MON?"
+	cont "raising #mon?"
 	done
 
 DragonShrineQuestion5Text:
-	text "Strong #MON."
-	line "Weak #MON."
+	text "Strong #mon."
+	line "Weak #mon."
 
 	para "Which is more"
 	line "important?"
@@ -448,7 +336,7 @@ DragonShrinePassedTestText:
 	text "Hm… I see…"
 
 	para "You care deeply"
-	line "for #MON."
+	line "for #mon."
 
 	para "Very commendable."
 
@@ -460,37 +348,17 @@ DragonShrinePassedTestText:
 
 	para "It will see you"
 	line "through at the"
-	cont "#MON LEAGUE."
-	done
+	cont "#mon League."
 
-DragonShrineMustIInformLanceText:
-	text "CLAIR!"
+	para "Come back later."
+	line "I will have a"
+	cont "gift befitting a"
 
-	para "This child is"
-	line "impeccable, in"
-	cont "skill and spirit!"
-
-	para "Admit defeat and"
-	line "confer the RISING-"
-	cont "BADGE!"
-
-	para "…Or must I inform"
-	line "LANCE of this?"
-	done
-
-DragonShrineElderScoldsClairText:
-	text "CLAIR…"
-
-	para "Reflect upon what"
-	line "it is that you"
-
-	para "lack and this"
-	line "child has."
+	para "Dragon Master."
 	done
 
 DragonShrineComeAgainText:
-	text "Come again, if you"
-	line "so desire."
+	text "Come back later."
 	done
 
 DragonShrineTakeThisDratiniText:
@@ -503,44 +371,57 @@ DragonShrineTakeThisDratiniText:
 	para "I have something"
 	line "for you."
 
-	para "Take this DRATINI"
-	line "as proof that I"
+	para "Take this Bagon"
+	line "as proof that we"
 
 	para "have recognized"
 	line "your worth."
+
+	para "It is a child of"
+	line "the Master's"
+	cont "Salamence."
 	done
 
 DragonShrinePlayerReceivedDratiniText:
 	text "<PLAYER> received"
-	line "DRATINI!"
+	line "Bagon!"
 	done
 
 DragonShrinePartyFullText:
-	text "Hm? Your #MON"
+	text "Hm? Your #mon"
 	line "party is full."
 	done
 
 DragonShrineSymbolicDragonText:
-	text "Dragon #MON are"
+	text "Dragon #mon are"
 	line "symbolic of our"
 	cont "clan."
 
-	para "You have shown"
-	line "that you can be"
+	para "You should know"
+	line "this, as you are"
 
-	para "entrusted with"
-	line "one."
+	para "now a master."
 	done
 
 DragonShrineClairsGrandfatherText:
-	text "CLAIR appears to"
-	line "have learned an"
+	text "Long ago, while"
+	line "journeying in the"
+	cont "Hoenn region, the"
 
-	para "invaluable lesson"
-	line "from you."
+	para "Master saved a"
+	line "young man's life."
 
-	para "I thank you as her"
-	line "grandfather."
+	para "The man's name was"
+	line "Drake. He gifted"
+	cont "him a Bagon, and"
+
+	para "it has been a life"
+	line "long companion."
+	cont "I hope that you"
+
+	para "will form such a"
+	line "bond with your"
+	cont "Bagon."
 	done
 
 DragonShrineSilverIsInTrainingText:
@@ -570,89 +451,62 @@ DragonShrineRightAnswerText:
 	done
 
 DragonShrineElder2Text:
-	text "It's been quite"
-	line "some time since a"
+	text "For as long as"
+	line "anyone can rememb-"
+	cont "er, the ones who"
 
-	para "trainer has gained"
-	line "our MASTER's rare"
-	cont "approval."
+	para "loved the Dragon"
+	line "and the ones who"
+	cont "loved the Behemoth"
 
-	para "In fact, not since"
-	line "Master LANCE."
+	para "have despised each"
+	line "other. It created"
+	cont "a rift here in"
+
+	para "Blackthorn, and"
+	line "many left. It is"
+	cont "believed that they"
+
+	para "relocated to a"
+	line "valley in the"
+	cont "Sevii Islands."
+
+	para "We older folks"
+	line "will still hold"
+	cont "prejudices against"
+
+	para "the Behemoth, but"
+	line "I'm glad that you"
+	cont "young folks are"
+
+	para "beginning to see"
+	line "past such"
+	cont "nonsense."
 	done
 
 DragonShrineElder3Text:
-	text "You know young"
-	line "Master LANCE?"
+	text "Dragonite the"
+	line "Dragon, and"
+	cont "Tyranitar the"
 
-	para "He looks so much"
-	line "like our MASTER"
-	cont "did in his youth."
+	para "Behemoth. These"
+	line "two have been the"
+	cont "symbols of"
 
-	para "It's in their"
-	line "blood."
-	done
+	para "Blackthorn for"
+	line "generations, for"
+	cont "better or worse."
 
-DragonShrineClairYouPassedText:
-	text "So how did it go?"
+	para "The Master is not"
+	line "above his own"
+	cont "prejudice in the"
 
-	para "I guess there's no"
-	line "point in asking."
+	para "matter. He has"
+	line "seen past it,"
+	cont "though. You and"
 
-	para "You did fail?"
-
-	para "<……><……><……><……><……><……>"
-
-	para "…What? You passed?"
-	done
-
-DragonShrineClairThatCantBeText:
-	text "That can't be!"
-	done
-
-DragonShrineClairYoureLyingText:
-	text "You're lying!"
-
-	para "Even I haven't"
-	line "been approved!"
-	done
-
-DragonShrineIUnderstandText:
-	text "I-I understand…"
-	done
-
-DragonShrineHereRisingBadgeText:
-	text "Here, this is the"
-	line "RISINGBADGE…"
-
-	para "Hurry up! Take it!"
-	done
-
-DragonShrinePlayerReceivedRisingBadgeText:
-	text "<PLAYER> received"
-	line "RISINGBADGE."
-	done
-
-DragonShrineRisingBadgeExplanationText:
-	text "RISINGBADGE will"
-	line "enable your"
-
-	para "#MON to use the"
-	line "move for climbing"
-	cont "waterfalls."
-
-	para "Also, all #MON"
-	line "will recognize you"
-
-	para "as a trainer and"
-	line "obey your every"
-
-	para "command without"
-	line "question."
-	done
-
-DragonShrineSpeechlessText:
-	text "<……><……><……><……><……><……>"
+	para "your friend are"
+	line "proof of that."
 	done
 
 DragonShrine_MapEvents:
@@ -666,8 +520,7 @@ DragonShrine_MapEvents:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 3 ; object events
 	object_event  5,  1, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonShrineElder1Script, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	object_event  2,  4, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonShrineElder2Script, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	object_event  7,  4, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonShrineElder3Script, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	object_event  4,  8, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRAGON_SHRINE_CLAIR

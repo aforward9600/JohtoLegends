@@ -103,7 +103,7 @@ NewBarkTownTeacherScript:
 	iftrue .CallMom
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iftrue .TellMomYoureLeaving
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue .MonIsAdorable
 	writetext Text_GearIsImpressive
 	waitbutton
@@ -325,19 +325,18 @@ NewBarkTownPlayersHouseSignText:
 	done
 
 NewBarkTownElmsLabSignText:
-	text "ELM #MON LAB"
+	text "Elm #mon Lab"
 	done
 
 NewBarkTownElmsHouseSignText:
-	text "ELM'S HOUSE"
+	text "Elm's House"
 	done
 
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
+	db 3 ; warp events
 	warp_event  6,  3, ELMS_LAB, 1
-	warp_event 13,  5, PLAYERS_HOUSE_1F, 1
 	warp_event  3, 11, PLAYERS_NEIGHBORS_HOUSE, 1
 	warp_event 11, 13, ELMS_HOUSE, 1
 

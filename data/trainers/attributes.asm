@@ -44,8 +44,8 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Clair
-	db FULL_HEAL, HYPER_POTION ; items
-	db 25 ; base reward
+	db NO_ITEM, NO_ITEM ; items
+	db 15 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
@@ -442,5 +442,11 @@ TrainerClassAttributes:
 ; GenSurge
 	db FULL_HEAL, FULL_RESTORE ; items
 	db 25 ; base reward
+	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+
+; Lance
+	db NO_ITEM, NO_ITEM ; items
+	db 15 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES

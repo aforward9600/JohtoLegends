@@ -1,8 +1,8 @@
 	object_const_def ; object_event constants
-	const PLAYERSHOUSE1F_MOM1
-	const PLAYERSHOUSE1F_MOM2
-	const PLAYERSHOUSE1F_MOM3
-	const PLAYERSHOUSE1F_MOM4
+	const PLAYERSHOUSE1F_GRANNY1
+	const PLAYERSHOUSE1F_GRANNY2
+	const PLAYERSHOUSE1F_GRANNY3
+	const PLAYERSHOUSE1F_GRANNY4
 	const PLAYERSHOUSE1F_POKEFAN_F
 
 PlayersHouse1F_MapScripts:
@@ -23,18 +23,20 @@ MeetMomLeftScript:
 
 MeetMomRightScript:
 	playmusic MUSIC_MOM
-	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_MOM1, 15
+	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_GRANNY1, 15
 	turnobject PLAYER, LEFT
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .OnRight
-	applymovement PLAYERSHOUSE1F_MOM1, MomTurnsTowardPlayerMovement
+	applymovement PLAYERSHOUSE1F_GRANNY1, MomTurnsTowardPlayerMovement
 	sjump MeetMomScript
 
 .OnRight:
-	applymovement PLAYERSHOUSE1F_MOM1, MomWalksToPlayerMovement
+	applymovement PLAYERSHOUSE1F_GRANNY1, MomWalksToPlayerMovement
 MeetMomScript:
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .GrannyGirl
 	opentext
-	writetext ElmsLookingForYouText
+	writetext DahliasLookingForYouText
 	buttonsound
 	getstring STRING_BUFFER_4, GearName
 	scall PlayersHouse1FReceiveItemStd
@@ -55,6 +57,25 @@ MeetMomScript:
 	yesorno
 	iffalse .SetDayOfWeek
 	sjump .DayOfWeekDone
+
+.GrannyGirl:
+	opentext
+	writetext DracosLookingForYouText
+	buttonsound
+	getstring STRING_BUFFER_4, GearName
+	scall PlayersHouse1FReceiveItemStd
+	setflag ENGINE_POKEGEAR
+	setflag ENGINE_PHONE_CARD
+	addcellnum PHONE_MOM
+	setscene SCENE_FINISHED
+	setevent EVENT_PLAYERS_HOUSE_MOM_1
+	setevent EVENT_RIVAL_AT_MASTERS_HOUSE_1
+	setevent EVENT_RIVAL_AT_MASTERS_HOUSE_2
+	clearevent EVENT_PLAYERS_HOUSE_MOM_2
+	writetext MomGivesPokegearText
+	buttonsound
+	special SetDayOfWeek
+	sjump .SetDayOfWeek
 
 .WrongDay:
 	special InitialClearDSTFlag
@@ -87,16 +108,16 @@ MeetMomScript:
 	sjump .Finish
 
 .FromRight:
-	applymovement PLAYERSHOUSE1F_MOM1, MomTurnsBackMovement
+	applymovement PLAYERSHOUSE1F_GRANNY1, MomTurnsBackMovement
 	sjump .Finish
 
 .FromLeft:
-	applymovement PLAYERSHOUSE1F_MOM1, MomWalksBackMovement
+	applymovement PLAYERSHOUSE1F_GRANNY1, MomWalksBackMovement
 	sjump .Finish
 
 .Finish:
 	special RestartMapMusic
-	turnobject PLAYERSHOUSE1F_MOM1, LEFT
+	turnobject PLAYERSHOUSE1F_GRANNY1, LEFT
 	end
 
 MeetMomTalkedScript:
@@ -104,7 +125,7 @@ MeetMomTalkedScript:
 	sjump MeetMomScript
 
 GearName:
-	db "#GEAR@"
+	db "#Gear@"
 
 PlayersHouse1FReceiveItemStd:
 	jumpstd receiveitem
@@ -120,9 +141,9 @@ MomScript:
 	iftrue .FirstTimeBanking
 	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
 	iftrue .BankOfMom
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
+	checkevent EVENT_MASTERS_RIVAL_DONE
 	iftrue .GaveMysteryEgg
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue .GotAPokemon
 	writetext HurryUpElmIsWaitingText
 	waitbutton
@@ -148,6 +169,19 @@ MomScript:
 	special BankOfMom
 	waitbutton
 	closetext
+	opentext
+	writetext OhWaitText
+	buttonsound
+	waitsfx
+	writetext GotJournalText
+	playsound SFX_ITEM
+	waitsfx
+	setflag ENGINE_POKEDEX
+	writetext GrandmaJournalText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_JOURNAL
+	setmapscene BLACKTHORN_CITY, SCENE_BLACKTHORN_CITY_NOTHING
 	end
 
 NeighborScript:
@@ -176,7 +210,16 @@ NeighborScript:
 	sjump .Main
 
 .Main:
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Main2
 	writetext NeighborText
+	waitbutton
+	closetext
+	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
+	end
+
+.Main2:
+	writetext NeighborText2
 	waitbutton
 	closetext
 	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
@@ -210,35 +253,48 @@ MomWalksBackMovement:
 	slow_step LEFT
 	step_end
 
-ElmsLookingForYouText:
-	text "Oh, <PLAYER>…! Our"
-	line "neighbor, PROF."
+DahliasLookingForYouText:
+	text "You're finally"
+	line "awake, <PLAYER>!"
 
-	para "ELM, was looking"
-	line "for you."
+	para "Your friend, oh,"
+	line "what was her"
+	cont "name?…"
 
-	para "He said he wanted"
-	line "you to do some-"
-	cont "thing for him."
+	para "Ah, Dahlia! She"
+	line "came by looking"
+	cont "for you. This is"
 
-	para "Oh! I almost for-"
-	line "got! Your #MON"
+	para "a big day for you"
+	line "two, so get going."
 
-	para "GEAR is back from"
-	line "the repair shop."
+	para "You don't want to"
+	line "keep her and the"
+	cont "Master waiting, do"
 
-	para "Here you go!"
+	para "you? I wish your"
+	line "parents were here"
+	cont "to see this."
+
+	para "They would be so"
+	line "proud of you,"
+	cont "starting on a"
+
+	para "journey with a"
+	line "#mon, just they"
+	cont "did…"
+
+	para "Sorry, I was lost"
+	line "in a memory. You"
+	cont "better get going."
+
+	para "Here is a map, it"
+	line "will help you get"
+	cont "started."
 	done
 
 MomGivesPokegearText:
-	text "#MON GEAR, or"
-	line "just #GEAR."
-
-	para "It's essential if"
-	line "you want to be a"
-	cont "good trainer."
-
-	para "Oh, the day of the"
+	text "Oh, the day of the"
 	line "week isn't set."
 
 	para "You mustn't forget"
@@ -290,25 +346,61 @@ InstructionsNextText:
 	line "convenient?"
 	done
 
-HurryUpElmIsWaitingText:
-	text "PROF.ELM is wait-"
-	line "ing for you."
+DracosLookingForYouText:
+	text "You're finally"
+	line "awake, <PLAYER>!"
 
-	para "Hurry up, baby!"
+	para "Your friend, oh,"
+	line "what was his"
+	cont "name?…"
+
+	para "Ah, Draco! He"
+	line "came by looking"
+	cont "for you. This is"
+
+	para "a big day for you"
+	line "two, so get going."
+
+	para "You don't want to"
+	line "keep him and the"
+	cont "Master waiting, do"
+
+	para "you? I wish your"
+	line "parents were here"
+	cont "to see this."
+
+	para "They would be so"
+	line "proud of you,"
+	cont "starting on a"
+
+	para "journey with a"
+	line "#mon, just they"
+	cont "did…"
+
+	para "Sorry, I was lost"
+	line "in a memory. You"
+	cont "better get going."
+
+	para "Here is a map, it"
+	line "will help you get"
+	cont "started."
+	done
+
+HurryUpElmIsWaitingText:
+	text "The Master is wai-"
+	line "ting for you."
+
+	para "Don't keep him for"
+	line "long!"
 	done
 
 SoWhatWasProfElmsErrandText:
-	text "So, what was PROF."
-	line "ELM's errand?"
+	text "Ah, so that's your"
+	line "#mon."
 
 	para "…"
 
-	para "That does sound"
-	line "challenging."
-
-	para "But, you should be"
-	line "proud that people"
-	cont "rely on you."
+	para "How cute."
 	done
 
 ImBehindYouText:
@@ -338,24 +430,35 @@ NeighborNiteIntroText:
 	done
 
 NeighborText:
-	text "<PLAY_G>, have you"
-	line "heard?"
+	text "It's hard to"
+	line "believe that my"
 
-	para "My daughter is"
-	line "adamant about"
+	para "baby is going on a"
+	line "journey, as are"
+	cont "you."
 
-	para "becoming PROF."
-	line "ELM's assistant."
+	para "Keep a close eye"
+	line "on her for me,"
+	cont "would you?"
+	done
 
-	para "She really loves"
-	line "#MON!"
+NeighborText2:
+	text "It's hard to"
+	line "believe that my"
+
+	para "baby is going on a"
+	line "journey, as are"
+	cont "you."
+
+	para "Keep a close eye"
+	line "on him for me,"
+	cont "would you?"
 	done
 
 StoveText:
-	text "Mom's specialty!"
+	text "Granny's specialty!"
 
-	para "CINNABAR VOLCANO"
-	line "BURGER!"
+	para "Shelmet Escargot!"
 	done
 
 SinkText:
@@ -368,8 +471,8 @@ FridgeText:
 	text "Let's see what's"
 	line "in the fridge…"
 
-	para "FRESH WATER and"
-	line "tasty LEMONADE!"
+	para "Fresh Water and"
+	line "tasty Lemonade!"
 	done
 
 TVText:
@@ -383,12 +486,50 @@ TVText:
 	line "rolling too!"
 	done
 
+OhWaitText:
+	text ".....Oh, wait!"
+
+	para "I almost forgot!"
+	line "Here, have your"
+	cont "father's journal."
+
+	para "He was going to"
+	line "use it to record"
+	cont "information on all"
+
+	para "the #mon he"
+	line "found, but then he"
+	cont "met your mother,"
+
+	para "and he got a bit"
+	line "distracted, hoho!"
+
+	para "I'm certain he'd"
+	line "want you to have"
+	cont "it."
+	done
+
+GotJournalText:
+	text "<PLAYER> received"
+	line "the Journal!"
+	done
+
+GrandmaJournalText:
+	text "Well, that's"
+	line "everything, then."
+	cont "Good luck, and"
+
+	para "don't forget, I'm"
+	line "always here for"
+	cont "you."
+	done
+
 PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  6,  7, NEW_BARK_TOWN, 2
-	warp_event  7,  7, NEW_BARK_TOWN, 2
+	warp_event  6,  7, BLACKTHORN_CITY, 9
+	warp_event  7,  7, BLACKTHORN_CITY, 9
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
 
 	db 2 ; coord events
@@ -402,8 +543,8 @@ PlayersHouse1F_MapEvents:
 	bg_event  4,  1, BGEVENT_READ, TVScript
 
 	db 5 ; object events
-	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
-	object_event  2,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  0,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  7,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
+	object_event  2,  2, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  7,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  0,  2, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
 	object_event  4,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR

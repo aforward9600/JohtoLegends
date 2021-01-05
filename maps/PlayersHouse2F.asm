@@ -50,33 +50,10 @@ PlayersHousePosterScript:
 .Script:
 	describedecoration DECODESC_POSTER
 
-PlayersHouseRadioScript:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .NormalRadio
-	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
-	iftrue .AbbreviatedRadio
-	playmusic MUSIC_POKEMON_TALK
+PlayersHouseBookScript:
 	opentext
-	writetext PlayersRadioText1
-	pause 45
-	writetext PlayersRadioText2
-	pause 45
-	writetext PlayersRadioText3
-	pause 45
-	musicfadeout MUSIC_NEW_BARK_TOWN, 16
-	writetext PlayersRadioText4
-	pause 45
-	closetext
-	setevent EVENT_LISTENED_TO_INITIAL_RADIO
-	end
-
-.NormalRadio:
-	jumpstd radio1
-
-.AbbreviatedRadio:
-	opentext
-	writetext PlayersRadioText4
-	pause 45
+	writetext PlayersHouseBookText
+	waitbutton
 	closetext
 	end
 
@@ -93,24 +70,22 @@ PlayersHousePCScript:
 	warp NONE, 0, 0
 	end
 
-PlayersRadioText1:
-	text "PROF.OAK'S #MON"
-	line "TALK! Please tune"
-	cont "in next time!"
-	done
+PlayersHouseBookText:
+	text "#mon Journal:"
 
-PlayersRadioText2:
-	text "#MON CHANNEL!"
-	done
+	para "The Abra Delivery"
+	line "System, stationed"
+	cont "in Kanto, is the"
 
-PlayersRadioText3:
-	text "This is DJ MARY,"
-	line "your co-host!"
-	done
+	para "best way to store"
+	line "your #mon and"
+	cont "items. Will it get"
 
-PlayersRadioText4:
-	text "#MON!"
-	line "#MON CHANNEL…"
+	para "any better than"
+	line "this?"
+
+	para "Only time will"
+	line "tell."
 	done
 
 PlayersHouse2F_MapEvents:
@@ -121,14 +96,14 @@ PlayersHouse2F_MapEvents:
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 3 ; bg events
 	bg_event  2,  1, BGEVENT_UP, PlayersHousePCScript
-	bg_event  3,  1, BGEVENT_READ, PlayersHouseRadioScript
 	bg_event  5,  1, BGEVENT_READ, PlayersHouseBookshelfScript
 	bg_event  6,  0, BGEVENT_IFSET, PlayersHousePosterScript
 
-	db 4 ; object events
+	db 5 ; object events
 	object_event  4,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GameConsoleScript, EVENT_PLAYERS_HOUSE_2F_CONSOLE
 	object_event  4,  4, SPRITE_DOLL_1, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Doll1Script, EVENT_PLAYERS_HOUSE_2F_DOLL_1
 	object_event  5,  4, SPRITE_DOLL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Doll2Script, EVENT_PLAYERS_HOUSE_2F_DOLL_2
 	object_event  0,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BigDollScript, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
+	object_event  3,  1, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseBookScript, -1

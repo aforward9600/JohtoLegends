@@ -139,7 +139,7 @@ ElmCheckGotEggAgain:
 	iftrue ElmStudyingEggScript
 	checkevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
 	iftrue ElmAfterTheftScript
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue ElmDescribesMrPokemonScript
 	writetext ElmText_LetYourMonBattleIt
 	waitbutton
@@ -156,7 +156,7 @@ LabTryToLeaveScript:
 	end
 
 CyndaquilPokeBallScript:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
@@ -186,7 +186,7 @@ CyndaquilPokeBallScript:
 	sjump ElmDirectionsScript
 
 TotodilePokeBallScript:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
@@ -199,7 +199,7 @@ TotodilePokeBallScript:
 	yesorno
 	iffalse DidntChooseStarterScript
 	disappear ELMSLAB_POKE_BALL2
-	setevent EVENT_GOT_TOTODILE_FROM_ELM
+	setevent EVENT_GOT_DRATINI_FROM_MASTER
 	writetext ChoseStarterText
 	buttonsound
 	waitsfx
@@ -214,7 +214,7 @@ TotodilePokeBallScript:
 	sjump ElmDirectionsScript
 
 ChikoritaPokeBallScript:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
@@ -227,7 +227,7 @@ ChikoritaPokeBallScript:
 	yesorno
 	iffalse DidntChooseStarterScript
 	disappear ELMSLAB_POKE_BALL3
-	setevent EVENT_GOT_CHIKORITA_FROM_ELM
+	setevent EVENT_GOT_LARVITAR_FROM_MASTER
 	writetext ChoseStarterText
 	buttonsound
 	waitsfx
@@ -270,7 +270,7 @@ ElmDirectionsScript:
 	writetext ElmDirectionsText3
 	waitbutton
 	closetext
-	setevent EVENT_GOT_A_POKEMON_FROM_ELM
+	setevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
 	setmapscene NEW_BARK_TOWN, SCENE_FINISHED
@@ -291,7 +291,7 @@ LookAtElmPokeBallScript:
 
 ElmsLabHealingMachine:
 	opentext
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue .CanHeal
 	writetext ElmsLabHealingMachineText1
 	waitbutton

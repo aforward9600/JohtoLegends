@@ -879,7 +879,7 @@ UnknownText_0x1c0fdd::
 Text_WasSentToBillsPC::
 	text_ram wStringBuffer1
 	text " was"
-	line "sent to BILL's PC."
+	line "sent to ADS."
 	prompt
 
 UnknownText_0x1c1006::
@@ -1041,7 +1041,7 @@ UnknownText_0x1c12ae::
 	para "of @"
 	text_ram wStringBuffer1
 	text " in"
-	line "your PC BOX."
+	line "your Box."
 	prompt
 
 UnknownText_0x1c12fc::
@@ -1059,8 +1059,8 @@ UnknownText_0x1c1328::
 	prompt
 
 UnknownText_0x1c1353::
-	text "<PLAYER> turned on"
-	line "the PC."
+	text "<PLAYER> picked"
+	line "up the phone."
 	prompt
 
 UnknownText_0x1c1368::
@@ -1111,24 +1111,25 @@ _PlayersPCNoRoomDepositText::
 	prompt
 
 UnknownText_0x1c144d::
-	text "<PLAYER> turned on"
-	line "the PC."
+	text "<PLAYER> picked"
+	line "up the phone."
 	prompt
 
 UnknownText_0x1c1462::
-	text "Access whose PC?"
+	text "Call who?"
 	done
 
 UnknownText_0x1c1474::
-	text "BILL's PC"
+	text "#mon Delivery"
 	line "accessed."
 
 	para "#mon Storage"
-	line "System opened."
+	line "System called."
 	prompt
 
 UnknownText_0x1c14a4::
-	text "Accessed own PC."
+	text "Accessed personal"
+	line "account."
 
 	para "Item Storage"
 	line "System opened."

@@ -13,7 +13,7 @@ GiveDratini:
 	ld a, [bc]
 	ld c, a
 	push hl
-	ld hl, DRATINI
+	ld hl, BAGON
 	call GetPokemonIDFromIndex
 	pop hl
 	ld b, a
@@ -77,17 +77,17 @@ GiveDratini:
 .Movesets:
 .Moveset0:
 ; Dratini does not normally learn Extremespeed. This is a special gift.
-	dw WRAP
-	dw THUNDER_WAVE
-	dw TWISTER
+	dw LEER
+	dw BITE
+	dw DRACO_FANG
 	dw EXTREMESPEED
 	dw 0
 .Moveset1:
 ; This is the normal moveset of a level 15 Dratini
-	dw WRAP
 	dw LEER
-	dw THUNDER_WAVE
-	dw TWISTER
+	dw BITE
+	dw DRACO_FANG
+	dw EMBER
 	dw 0
 
 .GetNthPartyMon:

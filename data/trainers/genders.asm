@@ -68,4 +68,12 @@ BTTrainerClassGenders:
 	db MALE   ; BLUE
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF
+	db MALE   ; MYSTICAL_MAN
+	db FEMALE ; RIVAL3
+	db MALE   ; RIVAL4
+	db FEMALE ; BREEDER
 	db FEMALE ; HEX_MANIAC
+	db FEMALE ; CHIGUSA
+	db MALE   ; MASTER
+	db MALE   ; GEN_SURGE
+	db MALE   ; LANCE

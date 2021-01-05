@@ -2661,8 +2661,11 @@ wFastShipB1FSceneID::                             db ; d9bd
 wMountMoonSquareSceneID::                         db ; d9be
 wMobileTradeRoomSceneID::                         db ; d9bf
 wMobileBattleRoomSceneID::                        db ; d9c0
+wMastersHouse1FSceneID::                          db
+wMastersHouse2FSceneID::                          db
+wBlackthornCitySceneID::                          db
 
-	ds 49
+	ds 46
 
 ; fight counts
 wJackFightCount::    db ; d9f2

@@ -84,4 +84,7 @@ MapScenes::
 	scene_var MOUNT_MOON_SQUARE,                           wMountMoonSquareSceneID
 	scene_var MOBILE_TRADE_ROOM,                           wMobileTradeRoomSceneID
 	scene_var MOBILE_BATTLE_ROOM,                          wMobileBattleRoomSceneID
+	scene_var MASTERS_HOUSE_1F,                            wMastersHouse1FSceneID
+	scene_var MASTERS_HOUSE_2F,                            wMastersHouse2FSceneID
+	scene_var BLACKTHORN_CITY,                             wBlackthornCitySceneID
 	db -1 ; end

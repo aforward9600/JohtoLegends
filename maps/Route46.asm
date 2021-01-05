@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const ROUTE46_POKEFAN_M
+	const ROUTE46_HIKER
 	const ROUTE46_YOUNGSTER
 	const ROUTE46_LASS
 	const ROUTE46_FRUIT_TREE1
@@ -244,8 +244,8 @@ PicnickerErin2BeatenText:
 	done
 
 Route46SignText:
-	text "ROUTE 46"
-	line "MOUNTAIN RD. AHEAD"
+	text "Route 46"
+	line "Mountain Rd. Ahead"
 	done
 
 Route46_MapEvents:
@@ -262,7 +262,7 @@ Route46_MapEvents:
 	bg_event  9, 27, BGEVENT_READ, Route46Sign
 
 	db 6 ; object events
-	object_event 12, 19, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerBailey, -1
+	object_event 12, 19, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerHikerBailey, -1
 	object_event  4, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperTed, -1
 	object_event  2, 13, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerErin1, -1
 	object_event  7,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree1, -1

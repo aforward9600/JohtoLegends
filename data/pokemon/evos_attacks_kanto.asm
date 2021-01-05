@@ -2951,9 +2951,10 @@ MoltresEvosAttacks:
 DratiniEvosAttacks:
 	dbbw EVOLVE_LEVEL, 25, DRAGONAIR
 	db 0 ; no more evolutions
-	dbw 1, WRAP
+	dbw 1, TACKLE
 	dbw 1, LEER
-	dbw 5, THUNDER_WAVE
+	dbw 6, THUNDER_WAVE
+	dbw 9, WRAP
 	dbw 11, DRAGON_RAGE
 	dbw 15, DRACO_FANG
 	dbw 21, SLAM

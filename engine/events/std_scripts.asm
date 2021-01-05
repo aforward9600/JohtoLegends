@@ -272,19 +272,19 @@ DayToTextScript:
 	getstring STRING_BUFFER_3, .SaturdayText
 	end
 .SundayText:
-	db "SUNDAY@"
+	db "Sunday@"
 .MondayText:
-	db "MONDAY@"
+	db "Monday@"
 .TuesdayText:
-	db "TUESDAY@"
+	db "Tuesday@"
 .WednesdayText:
-	db "WEDNESDAY@"
+	db "Wednesday@"
 .ThursdayText:
-	db "THURSDAY@"
+	db "Thursday@"
 .FridayText:
-	db "FRIDAY@"
+	db "Friday@"
 .SaturdayText:
-	db "SATURDAY@"
+	db "Saturday@"
 
 GoldenrodRocketsScript:
 	clearevent EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
@@ -565,7 +565,6 @@ InitializeEventsScript:
 	setevent EVENT_GOLDENROD_CITY_MOVE_TUTOR
 	setevent EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER
 	setevent EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
-	setevent EVENT_DRAGON_SHRINE_CLAIR
 	setevent EVENT_BATTLE_TOWER_BATTLE_ROOM_YOUNGSTER
 	setevent EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR
 	setevent EVENT_AZALEA_TOWN_KURT

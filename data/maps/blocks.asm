@@ -64,7 +64,6 @@ FuchsiaPokecenter2FBeta_Blocks:
 LavenderPokecenter2FBeta_Blocks:
 CeladonPokecenter2FBeta_Blocks:
 ViridianPokecenter2FBeta_Blocks:
-SaffronPokecenter2FBeta_Blocks:
 	INCBIN "maps/Pokecenter2F.blk"
 
 Route41_Blocks:
@@ -149,7 +148,6 @@ BetaCianwoodCity_Blocks:
 	INCBIN "maps/unused/BetaCianwoodCity.blk"
 
 OlivineTimsHouse_Blocks:
-OlivineHouseBeta_Blocks:
 OlivinePunishmentSpeechHouse_Blocks:
 OlivineGoodRodHouse_Blocks:
 Route39Farmhouse_Blocks:
@@ -1040,8 +1038,13 @@ BattleTowerElevator_Blocks:
 BattleTowerOutside_Blocks:
 	INCBIN "maps/BattleTowerOutside.blk"
 
-BetaBlank_Blocks:
-	INCBIN "maps/unused/BetaBlank.blk"
-
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
+
+SECTION "Map Blocks 4", ROMX
+
+MastersHouse1F_Blocks:
+	INCBIN "maps/MastersHouse1F.blk"
+
+MastersHouse2F_Blocks:
+	INCBIN "maps/MastersHouse2F.blk"

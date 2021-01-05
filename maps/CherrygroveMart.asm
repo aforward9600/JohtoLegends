@@ -10,32 +10,12 @@ CherrygroveMart_MapScripts:
 
 CherrygroveMartClerkScript:
 	opentext
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .PokeBallsInStock
 	pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE
 	closetext
 	end
 
-.PokeBallsInStock:
-	pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE_DEX
-	closetext
-	end
-
 CherrygroveMartCooltrainerMScript:
-	faceplayer
-	opentext
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .PokeBallsInStock
-	writetext CherrygroveMartCooltrainerMText
-	waitbutton
-	closetext
-	end
-
-.PokeBallsInStock:
-	writetext CherrygroveMartCooltrainerMText_PokeBallsInStock
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer CherrygroveMartCooltrainerMText
 
 CherrygroveMartYoungsterScript:
 	jumptextfaceplayer CherrygroveMartYoungsterText
@@ -46,12 +26,6 @@ CherrygroveMartCooltrainerMText:
 
 	para "When will they get"
 	line "more of them?"
-	done
-
-CherrygroveMartCooltrainerMText_PokeBallsInStock:
-	text "# BALLS are in"
-	line "stock! Now I can"
-	cont "catch #MON!"
 	done
 
 CherrygroveMartYoungsterText:

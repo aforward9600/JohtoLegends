@@ -53,11 +53,11 @@ PCPC_TURN_OFF     EQU 4
 	dw HallOfFamePC, .String_HallOfFame
 	dw TurnOffPC,    .String_TurnOff
 
-.String_PlayersPC:  db "<PLAYER>'s PC@"
-.String_BillsPC:    db "BILL's PC@"
-.String_OaksPC:     db "PROF.OAK's PC@"
-.String_HallOfFame: db "HALL OF FAME@"
-.String_TurnOff:    db "TURN OFF@"
+.String_PlayersPC:  db "ADS Personal@"
+.String_BillsPC:    db "ADS #mon@"
+.String_OaksPC:     db "Prof.Oak@"
+.String_HallOfFame: db "Hall Of Fame@"
+.String_TurnOff:    db "Turn Off@"
 
 .WhichPC:
 	; before Pokédex
@@ -265,13 +265,13 @@ PLAYERSPC_LOG_OFF       EQU 6
 	dw PlayerLogOffMenu,       .LogOff
 	dw PlayerLogOffMenu,       .TurnOff
 
-.WithdrawItem: db "WITHDRAW ITEM@"
-.DepositItem:  db "DEPOSIT ITEM@"
-.TossItem:     db "TOSS ITEM@"
-.MailBox:      db "MAIL BOX@"
-.Decoration:   db "DECORATION@"
-.TurnOff:      db "TURN OFF@"
-.LogOff:       db "LOG OFF@"
+.WithdrawItem: db "Withdraw Item@"
+.DepositItem:  db "Deposit Item@"
+.TossItem:     db "Toss Item@"
+.MailBox:      db "Mail Box@"
+.Decoration:   db "Decoration@"
+.TurnOff:      db "Hang Up@"
+.LogOff:       db "Turn Off@"
 
 .PlayersPCMenuList1:
 	db 5

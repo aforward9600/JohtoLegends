@@ -39,4 +39,6 @@ FemaleTrainers:
 	db KIMONO_GIRL
 	db POKEFANF
 	db COOLTRAINERF
+	db BREEDER
+	db HEX_MANIAC
 .End

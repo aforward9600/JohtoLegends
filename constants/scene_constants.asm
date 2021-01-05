@@ -156,3 +156,17 @@ SCENE_FINISHED EQU 1
 	const_def 1
 	const SCENE_FASTSHIP1F_ENTER_SHIP   ; 1
 	const SCENE_FASTSHIP1F_MEET_GRANDPA ; 2
+
+; wMastersHouse1FSceneID
+	const_def 1
+	const SCENE_CANT_LEAVE_HOUSE ; 1
+	const SCENE_MASTERS_HOUSE_1F_NOTHING ; 2
+	const SCENE_DONE_WITH_2F
+
+;wMastersHouse2FSceneID
+	const_def 1
+	const SCENE_MASTERS_HOUSE_2F_NOTHING
+
+;wBlackthornCitySceneID
+	const_def 1
+	const SCENE_BLACKTHORN_CITY_NOTHING

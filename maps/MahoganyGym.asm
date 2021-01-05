@@ -227,7 +227,9 @@ PryceText_GlacierBadgeSpeech:
 
 	para "teach your #mon"
 	line "a move, and it"
-	cont "can be "
+	cont "can be used"
+
+	para "over and over."
 	done
 
 PryceText_IcyWindSpeech:

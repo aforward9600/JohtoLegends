@@ -10,38 +10,67 @@ BlackthornMart_MapScripts:
 
 BlackthornMartClerkScript:
 	opentext
+	checkevent EVENT_GOT_JOURNAL
+	iftrue .PokeBallsInStock
 	pokemart MARTTYPE_STANDARD, MART_BLACKTHORN
 	closetext
 	end
 
+.PokeBallsInStock:
+	pokemart MARTTYPE_STANDARD, MART_BLACKTHORN_JOURNAL
+	closetext
+	end
+
 BlackthornMartCooltrainerMScript:
-	jumptextfaceplayer BlackthornMartCooltrainerMText
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_JOURNAL
+	iftrue .PokeBallsInStock
+	writetext BlackthornMartCooltrainerMText
+	waitbutton
+	closetext
+	end
+
+.PokeBallsInStock:
+	writetext BlackthornMartCooltrainerMText_PokeBallsInStock
+	waitbutton
+	closetext
+	end
 
 BlackthornMartBlackBeltScript:
 	jumptextfaceplayer BlackthornMartBlackBeltText
 
 BlackthornMartCooltrainerMText:
-	text "You can't buy MAX"
-	line "REVIVE, but it"
+	text "Where are the #"
+	line "Balls? I need them"
+	cont "to fill out my"
 
-	para "fully restores a"
-	line "fainted #MON."
+	para "team! I don't want"
+	line "to be the weakest"
+	cont "in my family!"
+	done
 
-	para "Beware--it won't"
-	line "restore PP, the"
+BlackthornMartCooltrainerMText_PokeBallsInStock:
+	text "Hey, they got #"
+	line "Balls in stock"
+	cont "now! I can get to"
 
-	para "POWER POINTS"
-	line "needed for moves."
+	para "catching #mon!"
 	done
 
 BlackthornMartBlackBeltText:
-	text "MAX REPEL keeps"
-	line "weak #MON away"
-	cont "from you."
+	text "When I was walking"
+	line "in the grass, a"
 
-	para "It's the longest"
-	line "lasting of the"
-	cont "REPEL sprays."
+	para "bug #mon poi-"
+	line "soned my #mon!"
+
+	para "I just kept going,"
+	line "but then my"
+	cont "#mon had 1 HP."
+
+	para "You should keep an"
+	line "Antidote with you."
 	done
 
 BlackthornMart_MapEvents:

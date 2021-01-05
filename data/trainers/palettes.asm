@@ -81,6 +81,7 @@ INCLUDE "gfx/trainers/hex_maniac.pal"
 INCLUDE "gfx/trainers/chigusa.pal"
 INCLUDE "gfx/trainers/master.pal"
 INCLUDE "gfx/trainers/gen_surge.pal"
+INCBIN "gfx/trainers/lance.gbcpal", middle_colors
 
 KrisPalette:
 INCLUDE "gfx/player/kris.pal"

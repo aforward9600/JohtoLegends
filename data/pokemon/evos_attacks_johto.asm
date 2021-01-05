@@ -1951,9 +1951,10 @@ SuicuneEvosAttacks:
 LarvitarEvosAttacks:
 	dbbw EVOLVE_LEVEL, 25, PUPITAR
 	db 0 ; no more evolutions
-	dbw 1, ROCK_THROW
+	dbw 1, TACKLE
 	dbw 1, LEER
-	dbw 5, SANDSTORM
+	dbw 6, SANDSTORM
+	dbw 8, ROCK_THROW
 	dbw 10, SCREECH
 	dbw 14, BITE
 	dbw 19, ROCK_SLIDE

@@ -16,9 +16,9 @@ GymLeaders:
 	db FLORINA
 	db MARTHA
 	db AGATHA
-	db GEN_SURGE
 	db CHAMPION
 	db RED
+	db GEN_SURGE
 ; fallthrough
 KantoGymLeaders:
 	db BROCK
