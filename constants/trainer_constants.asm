@@ -106,7 +106,7 @@ CHRIS EQU __enum__
 
 	trainerclass YOUNGSTER ; 16
 	const JOEY1
-	const MIKEY
+	const TIMMY
 	const ALBERT
 	const GORDON
 	const SAMUEL
@@ -121,7 +121,7 @@ CHRIS EQU __enum__
 	const JOEY5
 
 	trainerclass SCHOOLBOY ; 17
-	const JACK1
+	const FINN
 	const KIPP
 	const ALAN1
 	const JOHNNY
@@ -153,7 +153,7 @@ CHRIS EQU __enum__
 	const THEO
 	const TOBY
 	const DENIS
-	const VANCE1
+	const SAL
 	const HANK
 	const ROY
 	const BORIS
@@ -169,7 +169,7 @@ CHRIS EQU __enum__
 
 	trainerclass LASS ; 19
 	const CARRIE
-	const ALICE
+	const ARIELLE
 	const KRISE
 	const CONNIE1
 	const LINDA
@@ -266,6 +266,7 @@ CHRIS EQU __enum__
 	const ZACH
 	const BRENT4
 	const MILLER
+	const JARVIS
 
 	trainerclass GRUNTM ; 1f
 	const GRUNTM_1
@@ -308,20 +309,21 @@ CHRIS EQU __enum__
 	const ALFRED
 
 	trainerclass SKIER ; 21
-	const ROXANNE
-	const CLARISSA
+	const BRANDY
+	const PAM
 
 	trainerclass TEACHER ; 22
 	const COLETTE
 	const HILLARY
 	const SHIRLEY
+	const CADI
 
 	trainerclass SABRINA ; 23
 	const SABRINA1
 
 	trainerclass BUG_CATCHER ; 24
-	const DON
-	const ROB
+	const ANTON
+	const COLTON
 	const ED
 	const WADE1
 	const BUG_CATCHER_BENNY
@@ -346,11 +348,11 @@ CHRIS EQU __enum__
 	const ARNOLD
 	const KYLE
 	const HENRY
-	const MARVIN
+	const FISHER_SHANE
 	const TULLY1
 	const ANDRE
 	const RAYMOND
-	const WILTON1
+	const LYLE1
 	const EDGAR
 	const JONAH
 	const MARTIN
@@ -360,7 +362,7 @@ CHRIS EQU __enum__
 	const RALPH3
 	const TULLY2
 	const TULLY3
-	const WILTON2
+	const BUTCH
 	const SCOTT
 	const WILTON3
 	const RALPH4
@@ -427,7 +429,7 @@ CHRIS EQU __enum__
 	const HUEY4
 
 	trainerclass SUPER_NERD ; 29
-	const STAN
+	const DEXTER
 	const ERIC
 	const GREGG
 	const JAY
@@ -498,7 +500,7 @@ CHRIS EQU __enum__
 	const COREY
 
 	trainerclass FIREBREATHER ; 30
-	const OTIS
+	const CHAZ
 	const DICK
 	const NED
 	const BURT
@@ -509,7 +511,7 @@ CHRIS EQU __enum__
 
 	trainerclass JUGGLER ; 31
 	const IRWIN1
-	const FRITZ
+	const PERCY
 	const HORTON
 	const IRWIN2
 	const IRWIN3
@@ -547,9 +549,9 @@ CHRIS EQU __enum__
 	const RODNEY
 
 	trainerclass PICNICKER ; 35
-	const LIZ1
+	const HAYLEE
 	const GINA1
-	const BROOKE
+	const CHLOE
 	const KIM
 	const CINDY
 	const HOPE
@@ -575,7 +577,7 @@ CHRIS EQU __enum__
 	const TIFFANY4
 
 	trainerclass CAMPER ; 36
-	const ROLAND
+	const CAMPER_GARRET
 	const TODD1
 	const IVAN
 	const ELLIOT
@@ -626,7 +628,7 @@ CHRIS EQU __enum__
 	trainerclass BOARDER ; 3a
 	const RONALD
 	const BRAD
-	const DOUGLAS
+	const SONNY
 
 	trainerclass POKEFANM ; 3b
 	const WILLIAM
@@ -693,13 +695,13 @@ CHRIS EQU __enum__
 	const EUSINE
 
 	trainerclass RIVAL3 ; 44
-	const RIVAL3_A_CHIKORITA
-	const RIVAL3_A_CYNDAQUIL
+	const RIVAL3_A_LARVITAR
+	const RIVAL3_A_DRATINI
 	const RIVAL3_A_TOTODILE
 
 	trainerclass RIVAL4 ; 45
-	const RIVAL4_A_CHIKORITA
-	const RIVAL4_A_CYNDAQUIL
+	const RIVAL4_A_LARVITAR
+	const RIVAL4_A_DRATINI
 	const RIVAL4_A_TOTODILE
 
 	trainerclass BREEDER ; 46
@@ -723,6 +725,9 @@ CHRIS EQU __enum__
 
 	trainerclass DRAGON_KID ; 4b
 	const LANCE1
+
+	trainerclass PASSERBY ; 4c
+	const MIYAMOTO
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

@@ -38,7 +38,7 @@ CherrygrovePokecenter1FFisherText:
 	text "It's great. I can"
 	line "store any number"
 
-	para "of #MON, and"
+	para "of #mon, and"
 	line "it's all free."
 	done
 

@@ -433,7 +433,7 @@ Unreferenced_Function2ca95:
 	ret
 
 TMHM_String_Cancel:
-	db "CANCEL@"
+	db "Cancel@"
 
 TMHM_GetCurrentPocketPosition:
 	ld hl, wTMsHMs

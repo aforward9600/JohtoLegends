@@ -671,16 +671,16 @@ UnknownText_0x16694:
 	text_end
 
 Mom_SavedString:
-	db "SAVED@"
+	db "Saved@"
 
 Mon_WithdrawString:
-	db "WITHDRAW@"
+	db "Withdraw@"
 
 Mom_DepositString:
-	db "DEPOSIT@"
+	db "Deposit@"
 
 Mom_HeldString:
-	db "HELD@"
+	db "Held@"
 
 MenuHeader_0x166b5:
 	db MENU_BACKUP_TILES ; flags
@@ -691,7 +691,7 @@ MenuHeader_0x166b5:
 MenuData_0x166bd:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "GET@"
-	db "SAVE@"
-	db "CHANGE@"
-	db "CANCEL@"
+	db "Get@"
+	db "Save@"
+	db "Change@"
+	db "Cancel@"

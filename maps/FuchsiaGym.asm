@@ -25,7 +25,7 @@ FuchsiaGymJanineScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_JANINE
-	setevent EVENT_BEAT_LASS_ALICE
+	setevent EVENT_BEAT_LASS_ARIELLE
 	setevent EVENT_BEAT_LASS_LINDA
 	setevent EVENT_BEAT_PICNICKER_CINDY
 	setevent EVENT_BEAT_CAMPER_BARRY
@@ -58,7 +58,7 @@ FuchsiaGymJanineScript:
 	end
 
 LassAliceScript:
-	checkevent EVENT_BEAT_LASS_ALICE
+	checkevent EVENT_BEAT_LASS_ARIELLE
 	iftrue .AliceUnmasked
 	applymovement FUCHSIAGYM_FUCHSIA_GYM_1, Movement_NinjaSpin
 	faceplayer
@@ -67,17 +67,17 @@ LassAliceScript:
 .AliceUnmasked:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_LASS_ALICE
+	checkevent EVENT_BEAT_LASS_ARIELLE
 	iftrue .AliceAfterScript
 	writetext LassAliceBeforeText
 	waitbutton
 	closetext
 	winlosstext LassAliceBeatenText, 0
-	loadtrainer LASS, ALICE
+	loadtrainer LASS, ARIELLE
 	startbattle
 	iftrue .AliceBecomesJanine
 	reloadmapafterbattle
-	setevent EVENT_BEAT_LASS_ALICE
+	setevent EVENT_BEAT_LASS_ARIELLE
 	end
 
 .AliceBecomesJanine:

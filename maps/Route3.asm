@@ -10,7 +10,7 @@ Route3_MapScripts:
 	db 0 ; callbacks
 
 TrainerFirebreatherOtis:
-	trainer FIREBREATHER, OTIS, EVENT_BEAT_FIREBREATHER_OTIS, FirebreatherOtisSeenText, FirebreatherOtisBeatenText, 0, .Script
+	trainer FIREBREATHER, CHAZ, EVENT_BEAT_FIREBREATHER_CHAZ, FirebreatherOtisSeenText, FirebreatherOtisBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

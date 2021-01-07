@@ -1,8 +1,9 @@
 	object_const_def ; object_event constants
 	const MAHOGANYPOKECENTER1F_NURSE
-	const MAHOGANYPOKECENTER1F_POKEFAN_M
+	const MAHOGANYPOKECENTER1F_COOLTRAINER_M
 	const MAHOGANYPOKECENTER1F_YOUNGSTER
-	const MAHOGANYPOKECENTER1F_COOLTRAINER_F
+	const MAHOGANYPOKECENTER1F_TWIN
+	const MAHOGANYPOKECENTER1F_SWINUB
 
 MahoganyPokecenter1F_MapScripts:
 	db 0 ; scene scripts
@@ -12,43 +13,54 @@ MahoganyPokecenter1F_MapScripts:
 MahoganyPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
-MahoganyPokecenter1FPokefanMScript:
-	jumptextfaceplayer MahoganyPokecenter1FPokefanMText
+MahoganyPokecenter1FCooltrainerMScript:
+	jumptextfaceplayer MahoganyPokecenter1FCooltrainerMText
 
 MahoganyPokecenter1FYoungsterScript:
 	jumptextfaceplayer MahoganyPokecenter1FYoungsterText
 
-MahoganyPokecenter1FCooltrainerFScript:
-	jumptextfaceplayer MahoganyPokecenter1FCooltrainerFText
+MahoganyPokecenter1FTwinScript:
+	jumptextfaceplayer MahoganyPokecenter1FTwinText
 
-MahoganyPokecenter1FPokefanMText:
-	text "What's this? TEAM"
-	line "ROCKET has come"
-	cont "back?"
+MahoganyPokecenter1FSwinubScript:
+	opentext
+	writetext MahoganyPokecenter1FSwinubText
+	cry SWINUB
+	waitbutton
+	closetext
+	end
 
-	para "I saw some men in"
-	line "black at LAKE OF"
-	cont "RAGE…"
+MahoganyPokecenter1FCooltrainerMText:
+	text "The shop seems a"
+	line "little different"
+	cont "lately."
+
+	para "Maybe I'm just"
+	line "imagining it."
 	done
 
 MahoganyPokecenter1FYoungsterText:
-	text "I stop my #MON"
-	line "from evolving too"
-	cont "early."
+	text "Pryce can be quite"
+	line "cold, but he has a"
+	cont "soft spot."
 
-	para "I make them learn"
-	line "certain moves be-"
-	cont "fore I let them"
-	cont "evolve."
+	para "Just ask the girl"
+	line "over there."
 	done
 
-MahoganyPokecenter1FCooltrainerFText:
-	text "#MON do become"
-	line "stronger when they"
+MahoganyPokecenter1FTwinText:
+	text "Isn't my Swinub"
+	line "the cutest?"
 
-	para "evolve, but they"
-	line "also learn moves"
-	cont "more slowly."
+	para "Pryce gave it to"
+	line "me!"
+
+	para "I'm going to raise"
+	line "it with love!"
+	done
+
+MahoganyPokecenter1FSwinubText:
+	text "Swinub: Burrurrr!"
 	done
 
 MahoganyPokecenter1F_MapEvents:
@@ -63,8 +75,9 @@ MahoganyPokecenter1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 5 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FNurseScript, -1
-	object_event  7,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FPokefanMScript, -1
-	object_event  1,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FYoungsterScript, -1
-	object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FCooltrainerFScript, -1
+	object_event  7,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FCooltrainerMScript, -1
+	object_event  7,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FYoungsterScript, -1
+	object_event  2,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FTwinScript, -1
+	object_event  1,  3, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FSwinubScript, -1

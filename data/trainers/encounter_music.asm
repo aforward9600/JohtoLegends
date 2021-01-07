@@ -78,3 +78,4 @@ TrainerEncounterMusic::
 	db MUSIC_SAGE_ENCOUNTER        ; master
 	db MUSIC_OFFICER_ENCOUNTER     ; gen_surge
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; lance
+	db MUSIC_ROCKET_ENCOUNTER      ; passerby

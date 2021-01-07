@@ -1,5 +1,6 @@
 	object_const_def ; object_event constants
-	const LAKEOFRAGEMAGIKARPHOUSE_FISHING_GURU
+	const LAKEOFRAGEMAGIKARPHOUSE_FISHING_GURU1
+	const LAKEOFRAGEMAGIKARPHOUSE_FISHING_GURU2
 
 LakeOfRageMagikarpHouse_MapScripts:
 	db 0 ; scene scripts
@@ -83,6 +84,35 @@ MagikarpLengthRaterScript:
 	closetext
 	end
 
+MagikarpLengthOldRodScript:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_OLD_ROD
+	iftrue .GotOldRod
+	writetext OldRodText_Question
+	yesorno
+	iffalse .Refused
+	writetext OldRodText_Yes
+	buttonsound
+	verbosegiveitem OLD_ROD
+	writetext OldRodText_GiveOldRod
+	waitbutton
+	closetext
+	setevent EVENT_GOT_OLD_ROD
+	end
+
+.Refused:
+	writetext OldRodText_No
+	waitbutton
+	closetext
+	end
+
+.GotOldRod:
+	writetext OldRodText_After
+	waitbutton
+	closetext
+	end
+
 LakeOfRageMagikarpHouseUnusedRecordSign:
 ; unused
 	jumptext LakeOfRageMagikarpHouseUnusedRecordText
@@ -91,16 +121,16 @@ MagikarpHouseBookshelf:
 	jumpstd difficultbookshelf
 
 MagikarpLengthRaterText_LakeOfRageHistory:
-	text "LAKE OF RAGE is"
+	text "Lake OF Rage is"
 	line "actually a crater"
 
 	para "made by rampaging"
-	line "GYARADOS."
+	line "Gyarados."
 
 	para "The crater filled"
 	line "up with rainwater"
 
-	para "and the LAKE was"
+	para "and the Lake was"
 	line "formed."
 
 	para "That's the story"
@@ -112,7 +142,7 @@ MagikarpLengthRaterText_LakeOfRageHistory:
 	para "It used to be that"
 	line "you could catch"
 
-	para "lively MAGIKARP"
+	para "lively Magikarp"
 	line "there, but…"
 
 	para "I don't understand"
@@ -120,7 +150,7 @@ MagikarpLengthRaterText_LakeOfRageHistory:
 	done
 
 MagikarpLengthRaterText_MenInBlack:
-	text "The LAKE hasn't"
+	text "The Lake hasn't"
 	line "been normal since"
 
 	para "those men wearing"
@@ -128,25 +158,25 @@ MagikarpLengthRaterText_MenInBlack:
 	done
 
 MagikarpLengthRaterText_WorldsLargestMagikarp:
-	text "LAKE OF RAGE is"
+	text "Lake Of Rage is"
 	line "back to normal."
 
-	para "The MAGIKARP have"
+	para "The Magikarp have"
 	line "returned."
 
 	para "I may yet realize"
 	line "my dream of see-"
 	cont "ing the world's"
-	cont "largest MAGIKARP."
+	cont "largest Magikarp."
 
-	para "Do you have a ROD?"
+	para "Do you have a Rod?"
 	line "Please help me if"
 	cont "you do."
 	done
 
 MagikarpLengthRaterText_YouHaveAMagikarp:
 	text "Ah, you have a"
-	line "MAGIKARP! Let's"
+	line "Magikarp! Let's"
 
 	para "see how big that"
 	line "baby is."
@@ -184,7 +214,7 @@ MagikarpLengthRaterText_TooShort:
 
 MagikarpLengthRaterText_NotMagikarp:
 	text "What? That's not a"
-	line "MAGIKARP!"
+	line "Magikarp!"
 	done
 
 MagikarpLengthRaterText_Refused:
@@ -196,7 +226,7 @@ MagikarpLengthRaterText_Refused:
 	done
 
 LakeOfRageMagikarpHouseUnusedRecordText:
-	text "CURRENT RECORD"
+	text "Current Record"
 
 	para "@"
 	text_ram wStringBuffer3
@@ -206,6 +236,46 @@ LakeOfRageMagikarpHouseUnusedRecordText:
 	text_end
 
 	text_end ; unused
+
+OldRodText_Question:
+	text "This is a great"
+	line "fishing spot."
+
+	para "You saw people"
+	line "fishing? How"
+	cont "about you?"
+
+	para "Would you like one"
+	line "of my Rods?"
+	done
+
+OldRodText_Yes:
+	text "Heh, that's good"
+	line "to hear."
+
+	para "Now you're an"
+	line "angler too!"
+	done
+
+OldRodText_GiveOldRod:
+	text "Fishing is great!"
+
+	para "If there's water,"
+	line "be it the sea or a"
+
+	para "stream, try out"
+	line "your Rod."
+	done
+
+OldRodText_No:
+	text "Oh. That's rather"
+	line "disappointing…"
+	done
+
+OldRodText_After:
+	text "Yo, kid. How are"
+	line "they biting?"
+	done
 
 LakeOfRageMagikarpHouse_MapEvents:
 	db 0, 0 ; filler
@@ -220,5 +290,6 @@ LakeOfRageMagikarpHouse_MapEvents:
 	bg_event  0,  1, BGEVENT_READ, MagikarpHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, MagikarpHouseBookshelf
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MagikarpLengthRaterScript, -1
+	object_event  2,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MagikarpLengthOldRodScript, -1

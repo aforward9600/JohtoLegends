@@ -70,7 +70,7 @@ NationalParkGameboyKidScript:
 	end
 
 TrainerSchoolboyJack1:
-	trainer SCHOOLBOY, JACK1, EVENT_BEAT_SCHOOLBOY_JACK, SchoolboyJack1SeenText, SchoolboyJack1BeatenText, 0, .Script
+	trainer SCHOOLBOY, FINN, EVENT_BEAT_SCHOOLBOY_FINN, SchoolboyJack1SeenText, SchoolboyJack1BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_SCHOOLBOY_JACK
@@ -94,7 +94,7 @@ TrainerSchoolboyJack1:
 	askforphonenumber PHONE_SCHOOLBOY_JACK
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, SCHOOLBOY, JACK1
+	gettrainername STRING_BUFFER_3, SCHOOLBOY, FINN
 	scall .RegisteredNumber
 	sjump .NumberAccepted
 
@@ -120,7 +120,7 @@ TrainerSchoolboyJack1:
 	checkflag ENGINE_FLYPOINT_OLIVINE
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer SCHOOLBOY, JACK1
+	loadtrainer SCHOOLBOY, FINN
 	startbattle
 	reloadmapafterbattle
 	loadmem wJackFightCount, 1

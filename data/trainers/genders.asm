@@ -77,3 +77,4 @@ BTTrainerClassGenders:
 	db MALE   ; MASTER
 	db MALE   ; GEN_SURGE
 	db MALE   ; LANCE
+	db FEMALE ; PASSERBY

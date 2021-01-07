@@ -32,17 +32,20 @@ BlackthornDragonSpeechHouseGrannyText:
 
 	para "command dragons"
 	line "live right here in"
-	cont "BLACKTHORN."
+	cont "Blackthorn."
 
 	para "As a result, there"
 	line "are many legends"
 
 	para "about dragons in"
 	line "this town."
+
+	para "You should know."
+	line "You live here."
 	done
 
 BlackthornDragonSpeechHouseDratiniText:
-	text "DRATINI: Draa!"
+	text "Dratini: Draa!"
 	done
 
 BlackthornDragonSpeechHouse_MapEvents:

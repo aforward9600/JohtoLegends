@@ -4,295 +4,92 @@
 	const ROUTE44_YOUNGSTER1
 	const ROUTE44_SUPER_NERD
 	const ROUTE44_YOUNGSTER2
-	const ROUTE44_COOLTRAINER_M
-	const ROUTE44_COOLTRAINER_F
+	const ROUTE44_BUG_CATCHER
+	const ROUTE44_TEACHER
 	const ROUTE44_FRUIT_TREE
 	const ROUTE44_POKE_BALL1
 	const ROUTE44_POKE_BALL2
 	const ROUTE44_POKE_BALL3
+	const ROUTE44_LASS
 
 Route44_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-TrainerBirdKeeperVance1:
-	trainer BIRD_KEEPER, VANCE1, EVENT_BEAT_BIRD_KEEPER_VANCE, BirdKeeperVance1SeenText, BirdKeeperVance1BeatenText, 0, .Script
-
-.Script:
-	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_VANCE
-	endifjustbattled
-	opentext
-	checkflag ENGINE_VANCE
-	iftrue .WantsBattle
-	checkcellnum PHONE_BIRDKEEPER_VANCE
-	iftrue Route44NumberAcceptedM
-	checkevent EVENT_VANCE_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskedAlready
-	writetext BirdKeeperVanceLegendaryBirdsText
-	buttonsound
-	setevent EVENT_VANCE_ASKED_FOR_PHONE_NUMBER
-	scall Route44AskNumber1M
-	sjump .AskForNumber
-
-.AskedAlready:
-	scall Route44AskNumber2M
-.AskForNumber:
-	askforphonenumber PHONE_BIRDKEEPER_VANCE
-	ifequal PHONE_CONTACTS_FULL, Route44PhoneFullM
-	ifequal PHONE_CONTACT_REFUSED, Route44NumberDeclinedM
-	gettrainername STRING_BUFFER_3, BIRD_KEEPER, VANCE1
-	scall Route44RegisteredNumberM
-	sjump Route44NumberAcceptedM
-
-.WantsBattle:
-	scall Route44RematchM
-	winlosstext BirdKeeperVance1BeatenText, 0
-	readmem wVanceFightCount
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight2:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
-.Fight1:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer BIRD_KEEPER, VANCE1
-	startbattle
-	reloadmapafterbattle
-	loadmem wVanceFightCount, 1
-	clearflag ENGINE_VANCE
-	end
-
-.LoadFight1:
-	loadtrainer BIRD_KEEPER, VANCE2
-	startbattle
-	reloadmapafterbattle
-	loadmem wVanceFightCount, 2
-	clearflag ENGINE_VANCE
-	end
-
-.LoadFight2:
-	loadtrainer BIRD_KEEPER, VANCE3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_VANCE
-	checkevent EVENT_VANCE_CARBOS
-	iftrue .Carbos
-	checkevent EVENT_GOT_CARBOS_FROM_VANCE
-	iftrue .ReceivedCarbosBefore
-	scall Route44RematchGiftM
-	verbosegiveitem CARBOS
-	iffalse VancePackFull
-	setevent EVENT_GOT_CARBOS_FROM_VANCE
-	sjump Route44NumberAcceptedM
-
-.ReceivedCarbosBefore:
-	end
-
-.Carbos:
-	opentext
-	writetext BirdKeeperVance2BeatenText
-	waitbutton
-	verbosegiveitem CARBOS
-	iffalse VancePackFull
-	clearevent EVENT_VANCE_CARBOS
-	setevent EVENT_GOT_CARBOS_FROM_VANCE
-	sjump Route44NumberAcceptedM
-
-Route44AskNumber1M:
-	jumpstd asknumber1m
-	end
-
-Route44AskNumber2M:
-	jumpstd asknumber2m
-	end
-
-Route44RegisteredNumberM:
-	jumpstd registerednumberm
-	end
-
-Route44NumberAcceptedM:
-	jumpstd numberacceptedm
-	end
-
-Route44NumberDeclinedM:
-	jumpstd numberdeclinedm
-	end
-
-Route44PhoneFullM:
-	jumpstd phonefullm
-	end
-
-Route44RematchM:
-	jumpstd rematchm
-	end
-
-Route44GiftM:
-	jumpstd giftm
-	end
-
-Route44PackFullM:
-	jumpstd packfullm
-	end
-
-VancePackFull:
-	setevent EVENT_VANCE_CARBOS
-	jumpstd packfullm
-	end
-
-Route44RematchGiftM:
-	jumpstd rematchgiftm
-	end
-
-TrainerPsychicPhil:
-	trainer PSYCHIC_T, PHIL, EVENT_BEAT_PSYCHIC_PHIL, PsychicPhilSeenText, PsychicPhilBeatenText, 0, .Script
+TrainerBirdKeeperSal:
+	trainer BIRD_KEEPER, SAL, EVENT_BEAT_BIRD_KEEPER_SAL, BirdKeeperSalSeenText, BirdKeeperSalBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PsychicPhilAfterBattleText
+	writetext BirdKeeperSalAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerFisherWilton1:
-	trainer FISHER, WILTON1, EVENT_BEAT_FISHER_WILTON, FisherWilton1SeenText, FisherWilton1BeatenText, 0, .Script
-
-.Script:
-	loadvar VAR_CALLERID, PHONE_FISHER_WILTON
-	endifjustbattled
-	opentext
-	checkflag ENGINE_WILTON
-	iftrue .WantsBattle
-	checkflag ENGINE_WILTON_HAS_ITEM
-	iftrue .HasItem
-	checkcellnum PHONE_FISHER_WILTON
-	iftrue Route44NumberAcceptedM
-	checkevent EVENT_WILTON_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskedAlready
-	writetext FisherWiltonHugePoliwagText
-	buttonsound
-	setevent EVENT_WILTON_ASKED_FOR_PHONE_NUMBER
-	scall Route44AskNumber1M
-	sjump .AskForNumber
-
-.AskedAlready:
-	scall Route44AskNumber2M
-.AskForNumber:
-	askforphonenumber PHONE_FISHER_WILTON
-	ifequal PHONE_CONTACTS_FULL, Route44PhoneFullM
-	ifequal PHONE_CONTACT_REFUSED, Route44NumberDeclinedM
-	gettrainername STRING_BUFFER_3, FISHER, WILTON1
-	scall Route44RegisteredNumberM
-	sjump Route44NumberAcceptedM
-
-.WantsBattle:
-	scall Route44RematchM
-	winlosstext FisherWilton1BeatenText, 0
-	readmem wWiltonFightCount
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight2:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
-.Fight1:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer FISHER, WILTON1
-	startbattle
-	reloadmapafterbattle
-	loadmem wWiltonFightCount, 1
-	clearflag ENGINE_WILTON
-	end
-
-.LoadFight1:
-	loadtrainer FISHER, WILTON2
-	startbattle
-	reloadmapafterbattle
-	loadmem wWiltonFightCount, 2
-	clearflag ENGINE_WILTON
-	end
-
-.LoadFight2:
-	loadtrainer FISHER, WILTON3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_WILTON
-	end
-
-.HasItem:
-	scall Route44GiftM
-	checkevent EVENT_WILTON_HAS_ULTRA_BALL
-	iftrue .UltraBall
-	checkevent EVENT_WILTON_HAS_GREAT_BALL
-	iftrue .GreatBall
-	checkevent EVENT_WILTON_HAS_POKE_BALL
-	iftrue .PokeBall
-.UltraBall:
-	verbosegiveitem ULTRA_BALL
-	iffalse .Route44PackFullM
-	sjump .ItemReceived
-
-.GreatBall:
-	verbosegiveitem GREAT_BALL
-	iffalse .Route44PackFullM
-	sjump .ItemReceived
-
-.PokeBall:
-	verbosegiveitem POKE_BALL
-	iffalse .Route44PackFullM
-.ItemReceived:
-	clearflag ENGINE_WILTON_HAS_ITEM
-	sjump Route44NumberAcceptedM
-
-.Route44PackFullM:
-	sjump Route44PackFullM
-
-TrainerFisherEdgar:
-	trainer FISHER, EDGAR, EVENT_BEAT_FISHER_EDGAR, FisherEdgarSeenText, FisherEdgarBeatenText, 0, .Script
+TrainerSchoolboyFinn:
+	trainer SCHOOLBOY, FINN, EVENT_BEAT_SCHOOLBOY_FINN, SchoolboyFinnSeenText, SchoolboyFinnBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherEdgarAfterBattleText
+	writetext SchoolboyFinnAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerCooltrainerfCybil:
-	trainer COOLTRAINERF, CYBIL, EVENT_BEAT_COOLTRAINERF_CYBIL, CooltrainerfCybilSeenText, CooltrainerfCybilBeatenText, 0, .Script
+TrainerFisherLyle:
+	trainer FISHER, LYLE1, EVENT_BEAT_FISHER_LYLE, FisherLyleSeenText, FisherLyleBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerfCybilAfterBattleText
+	writetext FisherLyleAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPokemaniacZach:
-	trainer POKEMANIAC, ZACH, EVENT_BEAT_POKEMANIAC_ZACH, PokemaniacZachSeenText, PokemaniacZachBeatenText, 0, .Script
+TrainerFisherButch:
+	trainer FISHER, BUTCH, EVENT_BEAT_FISHER_BUTCH, FisherButchSeenText, FisherButchBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokemaniacZachAfterBattleText
+	writetext FisherButchAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerCooltrainermAllen:
-	trainer COOLTRAINERM, ALLEN, EVENT_BEAT_COOLTRAINERM_ALLEN, CooltrainermAllenSeenText, CooltrainermAllenBeatenText, 0, .Script
+TrainerSuperNerdDexter:
+	trainer SUPER_NERD, DEXTER, EVENT_BEAT_SUPER_NERD_DEXTER, SuperNerdDexterSeenText, SuperNerdDexterBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainermAllenAfterBattleText
+	writetext SuperNerdDexterAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBugCatcherColton:
+	trainer BUG_CATCHER, COLTON, EVENT_BEAT_BUG_CATCHER_COLTON, BugCatcherColtonSeenText, BugCatcherColtonBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugCatcherColtonAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerTeacherCadi:
+	trainer TEACHER, CADI, EVENT_BEAT_TEACHER_CADI, TeacherCadiSeenText, TeacherCadiBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext TeacherCadiAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -306,202 +103,227 @@ Route44Sign2:
 Route44FruitTree:
 	fruittree FRUITTREE_ROUTE_44
 
-Route44MaxRevive:
-	itemball MAX_REVIVE
+Route44Revive:
+	itemball REVIVE
 
-Route44UltraBall:
-	itemball ULTRA_BALL
+Route44PokeBall:
+	itemball POKE_BALL
 
-Route44MaxRepel:
-	itemball MAX_REPEL
+Route44Repel:
+	itemball REPEL
 
 Route44HiddenElixer:
 	hiddenitem ELIXER, EVENT_ROUTE_44_HIDDEN_ELIXER
 
-FisherWilton1SeenText:
-	text "Aack! You made me"
-	line "lose a POLIWAG!"
+Route44HealScript:
+	faceplayer
+	opentext
+	writetext Route44HealRestAWhileText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	special StubbedTrainerRankings_Healings
+	playmusic MUSIC_HEAL
+	special HealParty
+	pause 60
+	special FadeInQuickly
+	special RestartMapMusic
+	opentext
+	writetext Route44HealKeepAtItText
+	waitbutton
+	closetext
+	end
 
-	para "What are you going"
-	line "to do about it?"
+FisherLyleSeenText:
+	text "Ain't nothin'"
+	line "better than some"
+	cont "good ol' fishin',"
+	cont "eh?"
 	done
 
-FisherWilton1BeatenText:
-	text "Just forget about"
-	line "it."
+FisherLyleBeatenText:
+	text "Losin' certainly"
+	line "ain't better."
 	done
 
-FisherWiltonHugePoliwagText:
-	text "That POLIWAG that"
-	line "got away…"
-	cont "It was huge."
-
-	para "I swear it must've"
-	line "been 16 feet long!"
+FisherLyleAfterBattleText:
+	text "Well, back to my"
+	line "fishin'."
 	done
 
-FisherEdgarSeenText:
-	text "I fish until I"
-	line "can't anymore."
+FisherButchSeenText:
+	text "Hey pal, you wanna"
+	line "fish?"
 
-	para "I also battle"
-	line "until I drop."
-
-	para "That's my"
-	line "relationship"
-	cont "with my #MON."
+	para "I'll let you in on"
+	line "a secret if you"
+	cont "beat me!"
 	done
 
-FisherEdgarBeatenText:
-	text "Hmmmm… "
-	line "This isn't right."
+FisherButchBeatenText:
+	text "Alright, alright!"
+	line "I'll tell ya."
 	done
 
-FisherEdgarAfterBattleText:
-	text "That's 100 wins"
-	line "to 101 losses."
+FisherButchAfterBattleText:
+	text "Up at the Lake of"
+	line "Rage, my buddy has"
+	cont "some fishing rods"
 
-	para "I won't battle"
-	line "again for a while."
+	para "he likes to give"
+	line "away."
+
+	para "Go see him if you"
+	line "want to start"
+	cont "learning how to"
+	cont "fish."
 	done
 
-BirdKeeperVance1SeenText:
-	text "Do you know about"
-	line "the legendary bird"
-	cont "#MON?"
+BirdKeeperSalSeenText:
+	text "You came through"
+	line "the Ice Path?"
+
+	para "Good job. That"
+	line "place is torture"
+	cont "on my birds."
 	done
 
-BirdKeeperVance1BeatenText:
-	text "Whew! You're hot"
-	line "stuff."
+BirdKeeperSalBeatenText:
+	text "I can see why"
+	line "you made it."
 	done
 
-BirdKeeperVanceLegendaryBirdsText:
-	text "ARTICUNO, ZAPDOS"
-	line "and MOLTRES are"
+BirdKeeperSalAfterBattleText:
+	text "Despite being from"
+	line "Blackthorn, you"
+	cont "through Ice Path"
 
-	para "the three legend-"
-	line "ary bird #MON."
-
-	para "I heard there are"
-	line "other legendary"
-	cont "birds, though."
+	para "no problem. Maybe"
+	line "someday I can do"
+	cont "the same."
 	done
 
-BirdKeeperVance2BeatenText:
-	text "Why can't I ever"
-	line "beat you?"
-
-	para "Oh yeah, here you"
-	line "go. It's that gift"
-
-	para "I couldn't give"
-	line "you last time."
+SchoolboyFinnSeenText:
+	text "Quiet! I'm looking"
+	line "for a Tangela!"
 	done
 
-PsychicPhilSeenText:
-	text "I'm gonna win,"
-	line "for sure!"
+SchoolboyFinnBeatenText:
+	text "I just can't seem"
+	line "to find one."
 	done
 
-PsychicPhilBeatenText:
-	text "Arrgh… That's a"
-	line "shocking loss…"
+SchoolboyFinnAfterBattleText:
+	text "Did you know that"
+	line "Tangela can"
+	cont "evolve? It's quite"
+
+	para "bulky once it"
+	line "does."
 	done
 
-PsychicPhilAfterBattleText:
-	text "It's important to"
-	line "have conviction"
-	cont "on your side."
+SuperNerdDexterSeenText:
+	text "You won't believe"
+	line "this!"
+
+	para "I lost to the Gym"
+	line "Leader in Mahogany"
+	cont "Town!"
+
+	para "I've been here"
+	line "searching for some"
+	cont "new #mon, but"
+
+	para "so far, I haven't"
+	line "got anything."
 	done
 
-PokemaniacZachSeenText:
-	text "I'll do anything"
-	line "to get my hands on"
-	cont "rare #MON!"
+SuperNerdDexterBeatenText:
+	text "Your #mon might"
+	line "do fine."
 	done
 
-PokemaniacZachBeatenText:
-	text "Oooh, your #MON"
-	line "are so appealing."
+SuperNerdDexterAfterBattleText:
+	text "Grass-types don't"
+	line "do so well,"
+	cont "neither do Water"
+
+	para "or Electric-types."
+	line "Apparently Ice-"
+	cont "types have more"
+
+	para "resistances than"
+	line "we first thought."
 	done
 
-PokemaniacZachAfterBattleText:
-	text "If a #MON has"
-	line "different colors"
+BugCatcherColtonSeenText:
+	text "It was pretty cold"
+	line "in Ice Path."
 
-	para "from usual, it's"
-	line "more valuable."
-
-	para "What? You mean"
-	line "that's not true?"
+	para "My #mon are"
+	line "still thawing out."
 	done
 
-CooltrainermAllenSeenText:
-	text "I can tell you're"
-	line "a good trainer by"
-	cont "looking at you."
-
-	para "I'm good at #-"
-	line "MON, and I can see"
-	cont "that you are too."
+BugCatcherColtonBeatenText:
+	text "I guess they"
+	line "weren't thawed out"
+	cont "enough."
 	done
 
-CooltrainermAllenBeatenText:
-	text "Tch! It's a total"
-	line "loss on my part."
+BugCatcherColtonAfterBattleText:
+	text "My friend is still"
+	line "in Ice Path."
+
+	para "I may have to go"
+	line "and get him soon."
 	done
 
-CooltrainermAllenAfterBattleText:
-	text "Wow. You have a"
-	line "lot of BADGES."
+TeacherCadiSeenText:
+	text "I've taken a few"
+	line "of my students"
+	cont "here to catch some"
+	cont "#mon."
 
-	para "No wonder you're"
-	line "so tough."
-
-	para "I wonder if"
-	line "ECRUTEAK GYM's"
-
-	para "MORTY is still in"
-	line "training?"
-
-	para "He really hammered"
-	line "me."
+	para "It's a good"
+	line "experience for"
+	cont "them."
 	done
 
-CooltrainerfCybilSeenText:
-	text "You look strong."
-
-	para "Good trainers seek"
-	line "tough opponents"
-	cont "instinctively."
+TeacherCadiBeatenText:
+	text "You're too good to"
+	line "be my student!"
 	done
 
-CooltrainerfCybilBeatenText:
-	text "Nope! This won't"
-	line "do at all."
+TeacherCadiAfterBattleText:
+	text "The #mon around"
+	line "here aren't the"
+	cont "best to take on"
+	cont "the Gym Leader."
 	done
 
-CooltrainerfCybilAfterBattleText:
-	text "We all get better"
-	line "by experiencing"
-	cont "many battles."
+Route44HealRestAWhileText:
+	text "Ice Path can take"
+	line "a lot out of you."
 
-	para "I battled a lot to"
-	line "become what I am"
-	cont "today--an elite."
+	para "Here, let me heal"
+	line "your #mon."
+	done
+
+Route44HealKeepAtItText:
+	text "Don't give up!"
 	done
 
 Route44Sign1Text:
-	text "ROUTE 44"
-	line "ICE PATH AHEAD"
+	text "Route 44"
+	line "Ice Path Ahead"
 	done
 
 Route44Sign2Text:
-	text "ROUTE 44"
+	text "Route 44"
 
-	para "MAHOGANY TOWN -"
-	line "BLACKTHORN CITY"
+	para "Mahogany Town -"
+	line "Blackthorn City"
 	done
 
 Route44_MapEvents:
@@ -517,15 +339,16 @@ Route44_MapEvents:
 	bg_event  6, 10, BGEVENT_READ, Route44Sign2
 	bg_event 32,  9, BGEVENT_ITEM, Route44HiddenElixer
 
-	db 11 ; object events
-	object_event 35,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherWilton1, -1
-	object_event 19, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherEdgar, -1
-	object_event 10,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicPhil, -1
-	object_event 43,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacZach, -1
-	object_event 51,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperVance1, -1
-	object_event 41, 15, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainermAllen, -1
-	object_event 31, 14, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfCybil, -1
+	db 12 ; object events
+	object_event 42,  5, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherLyle, -1
+	object_event 24, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherButch, -1
+	object_event 30,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSchoolboyFinn, -1
+	object_event 44,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdDexter, -1
+	object_event 53, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperSal, -1
+	object_event 35, 15, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBugCatcherColton, -1
+	object_event 40, 14, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerTeacherCadi, -1
 	object_event  9,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route44FruitTree, -1
-	object_event 30,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRevive, EVENT_ROUTE_44_MAX_REVIVE
-	object_event 45,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44UltraBall, EVENT_ROUTE_44_ULTRA_BALL
-	object_event 14,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRepel, EVENT_ROUTE_44_MAX_REPEL
+	object_event 35,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44Revive, EVENT_ROUTE_44_MAX_REVIVE
+	object_event 57, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44PokeBall, EVENT_ROUTE_44_ULTRA_BALL
+	object_event 14,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44Repel, EVENT_ROUTE_44_MAX_REPEL
+	object_event 57,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route44HealScript, -1

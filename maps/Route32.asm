@@ -142,7 +142,7 @@ _OfferToSellSlowpokeTail:
 	end
 
 TrainerCamperRoland:
-	trainer CAMPER, ROLAND, EVENT_BEAT_CAMPER_ROLAND, CamperRolandSeenText, CamperRolandBeatenText, 0, .Script
+	trainer CAMPER, CAMPER_GARRET, EVENT_BEAT_CAMPER_GARRET, CamperRolandSeenText, CamperRolandBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -300,7 +300,7 @@ TrainerFisherHenry:
 	end
 
 TrainerPicnickerLiz1:
-	trainer PICNICKER, LIZ1, EVENT_BEAT_PICNICKER_LIZ, PicnickerLiz1SeenText, PicnickerLiz1BeatenText, 0, .Script
+	trainer PICNICKER, HAYLEE, EVENT_BEAT_PICNICKER_HAYLEE, PicnickerLiz1SeenText, PicnickerLiz1BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_PICNICKER_LIZ
@@ -324,7 +324,7 @@ TrainerPicnickerLiz1:
 	askforphonenumber PHONE_PICNICKER_LIZ
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, PICNICKER, LIZ1
+	gettrainername STRING_BUFFER_3, PICNICKER, HAYLEE
 	scall .RegisteredNumber
 	sjump .NumberAccepted
 
@@ -350,7 +350,7 @@ TrainerPicnickerLiz1:
 	checkflag ENGINE_FLYPOINT_ECRUTEAK
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer PICNICKER, LIZ1
+	loadtrainer PICNICKER, HAYLEE
 	startbattle
 	reloadmapafterbattle
 	loadmem wLizFightCount, 1

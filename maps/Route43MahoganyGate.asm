@@ -24,7 +24,7 @@ Route43MahoganyGateOfficer:
 
 Route43MahoganyGateOfficerText:
 	text "Only people headed"
-	line "up to LAKE OF RAGE"
+	line "up to Lake OF Rage"
 
 	para "have been through"
 	line "here lately."

@@ -58,14 +58,14 @@ _PlayerDecorationMenu:
 	dw DecoBigDollMenu, .big_doll
 	dw DecoExitMenu, .exit
 
-.bed      db "BED@"
-.carpet   db "CARPET@"
-.plant    db "PLANT@"
-.poster   db "POSTER@"
-.game     db "GAME CONSOLE@"
-.ornament db "ORNAMENT@"
-.big_doll db "BIG DOLL@"
-.exit     db "EXIT@"
+.bed      db "Bed@"
+.carpet   db "Carpet@"
+.plant    db "Plant@"
+.poster   db "Poster@"
+.game     db "Game Console@"
+.ornament db "Ornament@"
+.big_doll db "Big Doll@"
+.exit     db "Exit@"
 
 .FindCategoriesWithOwnedDecos:
 	xor a
@@ -888,9 +888,9 @@ MenuHeader_0x26eab:
 MenuData_0x26eb3:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db "RIGHT SIDE@"
-	db "LEFT SIDE@"
-	db "CANCEL@"
+	db "Right Side@"
+	db "Left Side@"
+	db "Cancel@"
 
 DecoText_PutAwayTheDeco:
 	; Put away the @ .

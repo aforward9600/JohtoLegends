@@ -1,5 +1,5 @@
 WiltonPhoneCalleeScript:
-	gettrainername STRING_BUFFER_3, FISHER, WILTON1
+	gettrainername STRING_BUFFER_3, FISHER, LYLE1
 	checkflag ENGINE_WILTON
 	iftrue .WantsBattle
 	farscall PhoneScript_AnswerPhone_Male
@@ -24,7 +24,7 @@ WiltonPhoneCalleeScript:
 	farsjump WiltonWantThis
 
 WiltonPhoneCallerScript:
-	gettrainername STRING_BUFFER_3, FISHER, WILTON1
+	gettrainername STRING_BUFFER_3, FISHER, LYLE1
 	farscall PhoneScript_GreetPhone_Male
 	checkflag ENGINE_WILTON
 	iftrue .GenericCall

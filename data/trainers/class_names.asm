@@ -75,3 +75,4 @@ TrainerClassNames::
 	db "Leader@"
 	db "Elite Four@"
 	db "Dragon Kid@"
+	db "Passerby@"

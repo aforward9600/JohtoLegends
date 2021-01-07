@@ -1,5 +1,5 @@
 LizPhoneCalleeScript:
-	gettrainername STRING_BUFFER_3, PICNICKER, LIZ1
+	gettrainername STRING_BUFFER_3, PICNICKER, HAYLEE
 	checkflag ENGINE_LIZ
 	iftrue .WantsBattle
 	farscall PhoneScript_AnswerPhone_Female
@@ -19,7 +19,7 @@ LizPhoneCalleeScript:
 	farsjump UnknownScript_0xa0a5a
 
 LizPhoneCallerScript:
-	gettrainername STRING_BUFFER_3, PICNICKER, LIZ1
+	gettrainername STRING_BUFFER_3, PICNICKER, HAYLEE
 	farscall PhoneScript_Random4
 	ifequal 0, LizWrongNumber
 	farscall PhoneScript_GreetPhone_Female

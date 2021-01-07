@@ -87,4 +87,7 @@ MapScenes::
 	scene_var MASTERS_HOUSE_1F,                            wMastersHouse1FSceneID
 	scene_var MASTERS_HOUSE_2F,                            wMastersHouse2FSceneID
 	scene_var BLACKTHORN_CITY,                             wBlackthornCitySceneID
+	scene_var ICE_PATH_1F,                                 wIcePath1FSceneID
+	scene_var MAHOGANY_GYM,                                wMahoganyGymSceneID
+	scene_var LAKE_OF_RAGE,                                wLakeOfRageSceneID
 	db -1 ; end

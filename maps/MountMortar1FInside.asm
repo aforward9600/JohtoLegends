@@ -9,6 +9,7 @@
 	const MOUNTMORTAR1FINSIDE_SUPER_NERD2
 	const MOUNTMORTAR1FINSIDE_POKE_BALL6
 	const MOUNTMORTAR1FINSIDE_POKE_BALL7
+	const MOUNTMORTAR1FINSIDE_HIKER
 
 MountMortar1FInside_MapScripts:
 	db 0 ; scene scripts
@@ -64,6 +65,9 @@ MountMortar1FInsideUltraBall:
 MountMortar1FInsideHiddenMaxRepel:
 	hiddenitem MAX_REPEL, EVENT_MOUNT_MORTAR_1F_INSIDE_HIDDEN_MAX_REPEL
 
+MountMortar1FInsideHikerScript:
+	jumptextfaceplayer MountMortar1FInsideHikerText
+
 PokemaniacMillerSeenText:
 	text "I'm not losing"
 	line "this time!"
@@ -114,6 +118,42 @@ SupernerdMarkusAfterBattleText:
 	line "WATERFALL?"
 	done
 
+MountMortar1FInsideHikerText:
+	text "These earthquakes"
+	line "are getting"
+	cont "ridiculous."
+
+	para "It's going to take"
+	line "me a little while"
+	cont "to clear this out."
+
+	para "Hm? You need to"
+	line "get to Ecruteak"
+	cont "City?"
+
+	para "Well, you can take"
+	line "the long way"
+	cont "around through the"
+	cont "cave."
+
+	para "Maybe by the time"
+	line "you get through,"
+	cont "I'll have this"
+	cont "cleared."
+
+	para "Pardon? You say"
+	line "you've had this"
+	cont "happen before?"
+
+	para "Yeah, there have"
+	line "been a lot of"
+	cont "quakes lately."
+
+	para "I have a feeling"
+	line "this will happen"
+	cont "to you again."
+	done
+
 MountMortar1FInside_MapEvents:
 	db 0, 0 ; filler
 
@@ -130,7 +170,7 @@ MountMortar1FInside_MapEvents:
 	db 1 ; bg events
 	bg_event 30, 11, BGEVENT_ITEM, MountMortar1FInsideHiddenMaxRepel
 
-	db 10 ; object events
+	db 11 ; object events
 	object_event 21, 43, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortar1FBoulder, -1
 	object_event 35, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideEscapeRope, EVENT_MOUNT_MORTAR_1F_INSIDE_ESCAPE_ROPE
 	object_event 16, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideMaxRevive, EVENT_MOUNT_MORTAR_1F_INSIDE_MAX_REVIVE
@@ -141,3 +181,4 @@ MountMortar1FInside_MapEvents:
 	object_event 24, 28, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdMarkus, -1
 	object_event  8, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideIron, EVENT_MOUNT_MORTAR_1F_INSIDE_IRON
 	object_event 17, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideUltraBall, EVENT_MOUNT_MORTAR_1F_INSIDE_ULTRA_BALL
+	object_event 18, 46, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideHikerScript, -1

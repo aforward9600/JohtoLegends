@@ -4,10 +4,10 @@
 	const BLACKTHORNCITY_GRAMPS1
 	const BLACKTHORNCITY_GRAMPS2
 	const BLACKTHORNCITY_BLACK_BELT
-	const BLACKTHORNCITY_COOLTRAINER_F1
+	const BLACKTHORNCITY_COOLTRAINER_M
 	const BLACKTHORNCITY_YOUNGSTER1
 	const BLACKTHORNCITY_SANTOS
-	const BLACKTHORNCITY_COOLTRAINER_F2
+	const BLACKTHORNCITY_LASS
 	const BLACKTHORNCITY_HIKER
 
 BlackthornCity_MapScripts:
@@ -22,9 +22,7 @@ BlackthornCity_MapScripts:
 .IcePathGuard:
 	checkscene
 	iftrue .Skip ; not SCENE_DEFAULT
-	moveobject BLACKTHORNCITY_COOLTRAINER_F2, 36, 10
-	moveobject BLACKTHORNCITY_HIKER, 10, 35
-	moveobject BLACKTHORNCITY_BLACK_BELT, 21, 30
+	moveobject BLACKTHORNCITY_LASS, 36, 10
 .Skip:
 	end
 
@@ -36,6 +34,12 @@ BlackthornCity_MapScripts:
 	return
 
 .Santos:
+	checkflag ENGINE_GLACIERBADGE
+	iftrue .DoesSantosAppear
+	disappear BLACKTHORNCITY_SANTOS
+	return
+
+.DoesSantosAppear:
 	readvar VAR_WEEKDAY
 	ifequal SATURDAY, .SantosAppears
 	disappear BLACKTHORNCITY_SANTOS
@@ -91,19 +95,24 @@ BlackthornBlackBeltScript:
 	closetext
 	end
 
-BlackthornCooltrainerF1Script:
-	jumptextfaceplayer BlackthornCooltrainerF1Text
+BlackthornCooltrainerMScript:
+	jumptextfaceplayer BlackthornCooltrainerMText
 
 BlackthornYoungsterScript:
+	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
+	iftrue .GotPokemon
 	jumptextfaceplayer BlackthornYoungsterText
 
-BlackthornCooltrainerF2Script:
+.GotPokemon:
+	jumptextfaceplayer BlackthornYoungsterText2
+
+BlackthornLassScript:
 	checkevent EVENT_GOT_JOURNAL
 	iftrue .GotJournal
-	jumptextfaceplayer BlackthornCooltrainerF2Text
+	jumptextfaceplayer BlackthornLassText
 
 .GotJournal:
-	jumptextfaceplayer BlackthornCooltrainerF2Text2
+	jumptextfaceplayer BlackthornLassText2
 
 SantosScript:
 	faceplayer
@@ -218,8 +227,9 @@ Text_ClairIsOut:
 	cont "well as having"
 
 	para "talked to a person"
-	line "who posses knowle-"
-	cont "dge of evolution."
+	line "who possesses"
+	cont "knowledge of"
+	cont "evolution."
 	done
 
 Text_ClairIsIn:
@@ -273,59 +283,84 @@ BlackthornCityBlackBeltText:
 	cont "pretty useful."
 	done
 
-BlackthornCooltrainerF1Text:
+BlackthornCooltrainerMText:
 	text "Are you going to"
 	line "make your #mon"
 	cont "forget some moves?"
+
+	para "The Move Deleter's"
+	line "House is right"
+	cont "there."
+
+	para "I don't see why he"
+	line "does that."
+
+	para "There aren't any"
+	line "moves that can't"
+	cont "be forgotten."
 	done
 
 BlackthornYoungsterText:
-	text "Dragon masters all"
-	line "come from the city"
-	cont "of BLACKTHORN."
+	text "Yo, <PLAYER>!"
+
+	para "Today's the day,"
+	line "huh?"
+
+	para "Man, I'm jealous."
+
+	para "Maybe someday, the"
+	line "Master will see me"
+	cont "as being worthy."
+	done
+
+BlackthornYoungsterText2:
+	text "Yo, <PLAYER>!"
+
+	para "You got your"
+	line "#mon, huh?"
+
+	para "Man, I'm jealous."
+
+	para "Maybe someday, the"
+	line "Master will see me"
+	cont "as being worthy."
 	done
 
 MeetSantosText:
-	text "SANTOS: …"
+	text "Howdy! They call"
+	line "me the Week Guy."
 
-	para "It's Saturday…"
+	para "Not weak as in"
+	line "strength, but"
+	cont "like time."
 
-	para "I'm SANTOS of"
-	line "Saturday…"
+	para "Since it's"
+	line "Saturday, I'll"
+	cont "give you this!"
 	done
 
 SantosGivesGiftText:
-	text "You can have this…"
+	text "Here you go!"
 	done
 
 SantosGaveGiftText:
-	text "SANTOS: …"
-
-	para "SPELL TAG…"
-
-	para "Ghost-type moves"
-	line "get stronger…"
-
-	para "It will frighten"
-	line "you…"
+	text "That's a Spell"
+	line "Tag! Powers up"
+	cont "Ghost-type moves."
 	done
 
 SantosSaturdayText:
-	text "SANTOS: …"
-
-	para "See you again on"
-	line "another Saturday…"
-
-	para "I won't have any"
-	line "more gifts…"
+	text "Come back on an-"
+	line "other Saturday,"
+	cont "if you want!"
 	done
 
 SantosNotSaturdayText:
-	text "SANTOS: Today's"
-	line "not Saturday…"
+	text "Hey, it's not"
+	line "Saturday!"
 	done
 
-BlackthornCooltrainerF2Text:
+BlackthornLassText:
 	text "Sorry, but the"
 	line "Master told me not"
 	cont "to let you through"
@@ -337,7 +372,7 @@ BlackthornCooltrainerF2Text:
 	para "are ready."
 	done
 
-BlackthornCooltrainerF2Text2:
+BlackthornLassText2:
 	text "Be careful. Ice"
 	line "Path is brutal to"
 	cont "the trainers of"
@@ -353,7 +388,7 @@ BlackthornCitySignText:
 	done
 
 BlackthornGymSignText:
-	text "Blackthorn CITY"
+	text "Blackthorn City"
 	line "#mon Gym"
 	cont "Leader: Master"
 
@@ -408,7 +443,7 @@ BlackthornCity_MapEvents:
 	db 10 ; warp events
 	warp_event 18, 11, BLACKTHORN_GYM_1F, 1
 	warp_event 13, 21, BLACKTHORN_DRAGON_SPEECH_HOUSE, 1
-	warp_event 29, 23, BLACKTHORN_EMYS_HOUSE, 1
+	warp_event 29, 23, RIVALS_HOUSE_1F, 1
 	warp_event 15, 29, BLACKTHORN_MART, 2
 	warp_event 21, 29, BLACKTHORN_POKECENTER_1F, 1
 	warp_event  9, 31, MOVE_DELETERS_HOUSE, 1
@@ -439,9 +474,9 @@ BlackthornCity_MapEvents:
 	object_event 19, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornSuperNerdScript, EVENT_BLACKTHORN_CITY_SUPER_NERD_DOES_NOT_BLOCK_GYM
 	object_event 20,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGramps1Script, EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN
 	object_event 21,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGramps2Script, EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
-	object_event 10, 14, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornBlackBeltScript, -1
-	object_event  9, 25, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornCooltrainerF1Script, -1
-	object_event 13, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornYoungsterScript, -1
-	object_event 22, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SantosScript, EVENT_BLACKTHORN_CITY_SANTOS_OF_SATURDAY
-	object_event 37, 10, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornCooltrainerF2Script, -1
-	object_event 15, 31, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornHikerScript, -1
+	object_event 21, 30, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornBlackBeltScript, EVENT_BLACKTHORN_BLACK_BELT
+	object_event 11, 27, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornCooltrainerMScript, -1
+	object_event  4, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornYoungsterScript, -1
+	object_event 27, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SantosScript, EVENT_BLACKTHORN_CITY_SANTOS_OF_SATURDAY
+	object_event 37, 10, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornLassScript, -1
+	object_event 10, 35, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornHikerScript, EVENT_BLACKTHORN_HIKER

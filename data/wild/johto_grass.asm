@@ -791,7 +791,7 @@ JohtoGrassWildMons:
 	dbw 4, SWINUB
 	dbw 4, DELIBIRD
 	dbw 4, SEEL
-	dbw 4, ZUBAT
+	dbw 4, SMOOCHUM
 	dbw 5, SMOOCHUM
 	; day
 	dbw 3, SWINUB
@@ -800,7 +800,7 @@ JohtoGrassWildMons:
 	dbw 4, SWINUB
 	dbw 4, DELIBIRD
 	dbw 4, SEEL
-	dbw 4, ZUBAT
+	dbw 4, SMOOCHUM
 	dbw 5, SMOOCHUM
 	; nite
 	dbw 3, SWINUB
@@ -809,7 +809,7 @@ JohtoGrassWildMons:
 	dbw 4, SWINUB
 	dbw 4, DELIBIRD
 	dbw 4, SEEL
-	dbw 4, ZUBAT
+	dbw 4, SNEASEL
 	dbw 5, SNEASEL
 
 	map_id ICE_PATH_B2F_MAHOGANY_SIDE
@@ -1685,62 +1685,62 @@ JohtoGrassWildMons:
 	map_id ROUTE_43
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 15, SENTRET
-	dbw 16, PIDGEOTTO
-	dbw 16, FARFETCH_D
-	dbw 15, FURRET
-	dbw 17, RATICATE
-	dbw 17, FURRET
-	dbw 17, FURRET
-	dbw 17, FURRET
+	dbw  8, MAREEP
+	dbw  8, GROWLITHE
+	dbw  8, VULPIX
+	dbw  9, PSYDUCK
+	dbw  9, ELEKID
+	dbw  9, MIME__JR
+	dbw 10, TOTODILE
+	dbw 10, TOTODILE
 	; day
-	dbw 15, SENTRET
-	dbw 16, PIDGEOTTO
-	dbw 16, FARFETCH_D
-	dbw 15, FURRET
-	dbw 17, RATICATE
-	dbw 17, FURRET
-	dbw 17, FURRET
-	dbw 17, FURRET
+	dbw  8, MAREEP
+	dbw  8, GROWLITHE
+	dbw  8, VULPIX
+	dbw  9, PSYDUCK
+	dbw  9, ELEKID
+	dbw  9, MIME__JR
+	dbw 10, TOTODILE
+	dbw 10, TOTODILE
 	; nite
-	dbw 15, VENONAT
-	dbw 16, NOCTOWL
-	dbw 16, RATICATE
-	dbw 17, VENONAT
-	dbw 17, RATICATE
-	dbw 17, VENOMOTH
-	dbw 17, VENOMOTH
-	dbw 17, VENOMOTH
+	dbw  8, MAREEP
+	dbw  8, HOUNDOUR
+	dbw  8, HOUNDOUR
+	dbw  9, PSYDUCK
+	dbw  9, ELEKID
+	dbw  9, MIME__JR
+	dbw 10, TOTODILE
+	dbw 10, TOTODILE
 
 	map_id ROUTE_44
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 23, TANGELA
-	dbw 22, LICKITUNG
-	dbw 22, BELLSPROUT
-	dbw 24, WEEPINBELL
-	dbw 24, LICKITUNG
-	dbw 26, LICKITUNG
-	dbw 26, LICKITUNG
-	dbw 26, LICKITUNG
+	dbw 7, TANGELA
+	dbw 7, BELLSPROUT
+	dbw 8, ODDISH
+	dbw 8, PIDGEY
+	dbw 8, POLIWAG
+	dbw 7, SENTRET
+	dbw 9, LICKITUNG
+	dbw 9, LICKITUNG
 	; day
-	dbw 23, TANGELA
-	dbw 22, LICKITUNG
-	dbw 22, BELLSPROUT
-	dbw 24, WEEPINBELL
-	dbw 24, LICKITUNG
-	dbw 26, LICKITUNG
-	dbw 26, LICKITUNG
-	dbw 26, LICKITUNG
+	dbw 7, TANGELA
+	dbw 7, BELLSPROUT
+	dbw 8, ODDISH
+	dbw 8, PIDGEY
+	dbw 8, POLIWAG
+	dbw 7, SENTRET
+	dbw 9, LICKITUNG
+	dbw 9, LICKITUNG
 	; nite
-	dbw 23, TANGELA
-	dbw 22, POLIWAG
-	dbw 22, BELLSPROUT
-	dbw 24, WEEPINBELL
-	dbw 24, POLIWHIRL
-	dbw 26, POLIWHIRL
-	dbw 26, POLIWHIRL
-	dbw 26, POLIWHIRL
+	dbw 7, TANGELA
+	dbw 7, BELLSPROUT
+	dbw 8, ODDISH
+	dbw 8, PIDGEY
+	dbw 8, POLIWAG
+	dbw 7, SENTRET
+	dbw 9, MURKROW
+	dbw 9, MURKROW
 
 	map_id ROUTE_45
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1831,5 +1831,35 @@ JohtoGrassWildMons:
 	dbw 44, GOLBAT
 	dbw 44, GOLBAT
 	dbw 44, GOLBAT
+
+	map_id DARK_CAVE_NEW_ENTRANCE
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 3, GEODUDE
+	dbw 2, ZUBAT
+	dbw 2, WOOPER
+	dbw 4, NATU
+	dbw 2, TEDDIURSA
+	dbw 4, ZUBAT
+	dbw 4, MUNCHLAX
+	dbw 4, MUNCHLAX
+	; day
+	dbw 3, GEODUDE
+	dbw 2, ZUBAT
+	dbw 2, WOOPER
+	dbw 4, NATU
+	dbw 2, TEDDIURSA
+	dbw 4, ZUBAT
+	dbw 4, WYNAUT
+	dbw 4, WYNAUT
+	; nite
+	dbw 3, GEODUDE
+	dbw 2, ZUBAT
+	dbw 2, WOOPER
+	dbw 4, POLIWAG
+	dbw 2, RATTATA
+	dbw 4, ZUBAT
+	dbw 4, WYNAUT
+	dbw 4, WYNAUT
 
 	db -1 ; end

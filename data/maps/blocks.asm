@@ -55,8 +55,6 @@ Route10South_Blocks:
 	INCBIN "maps/Route10South.blk"
 
 Pokecenter2F_Blocks:
-CinnabarPokecenter2FBeta_Blocks:
-CeruleanPokecenter2FBeta_Blocks:
 Route10Pokecenter2FBeta_Blocks:
 VermilionPokecenter2FBeta_Blocks:
 PewterPokecenter2FBeta_Blocks:
@@ -153,7 +151,6 @@ OlivineGoodRodHouse_Blocks:
 Route39Farmhouse_Blocks:
 MahoganyRedGyaradosSpeechHouse_Blocks:
 BlackthornDragonSpeechHouse_Blocks:
-BlackthornEmysHouse_Blocks:
 MoveDeletersHouse_Blocks:
 CeruleanGymBadgeSpeechHouse_Blocks:
 CeruleanPoliceStation_Blocks:
@@ -1048,3 +1045,12 @@ MastersHouse1F_Blocks:
 
 MastersHouse2F_Blocks:
 	INCBIN "maps/MastersHouse2F.blk"
+
+RivalsHouse1F_Blocks:
+	INCBIN "maps/RivalsHouse1F.blk"
+
+RivalsHouse2F_Blocks:
+	INCBIN "maps/RivalsHouse2F.blk"
+
+DarkCaveNewEntrance_Blocks:
+	INCBIN "maps/DarkCaveNewEntrance.blk"

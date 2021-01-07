@@ -145,6 +145,7 @@ ENDM
 	map_const SAFARI_ZONE_FUCHSIA_GATE_BETA,                5,  4 ; 89
 	map_const SAFARI_ZONE_BETA,                            10, 18 ; 90
 	map_const VICTORY_ROAD,                                10, 36 ; 91
+	map_const DARK_CAVE_NEW_ENTRANCE,                       6,  4 ; 92
 
 	newgroup                                                      ;  4
 
@@ -163,7 +164,7 @@ ENDM
 	map_const BLACKTHORN_GYM_1F,                            5,  9 ;  1
 	map_const BLACKTHORN_GYM_2F,                            5,  9 ;  2
 	map_const BLACKTHORN_DRAGON_SPEECH_HOUSE,               4,  4 ;  3
-	map_const BLACKTHORN_EMYS_HOUSE,                        4,  4 ;  4
+	map_const RIVALS_HOUSE_1F,                              4,  4 ;  4                          
 	map_const BLACKTHORN_MART,                              6,  4 ;  5
 	map_const BLACKTHORN_POKECENTER_1F,                     5,  4 ;  6
 	map_const MOVE_DELETERS_HOUSE,                          4,  4 ;  7
@@ -172,11 +173,11 @@ ENDM
 	map_const BLACKTHORN_CITY,                             20, 18 ; 10
 	map_const MASTERS_HOUSE_1F,                             5,  7 ; 11
 	map_const MASTERS_HOUSE_2F,                             5,  6 ; 12
+	map_const RIVALS_HOUSE_2F,                              4,  3 ; 13
 
 	newgroup                                                      ;  6
 
 	map_const CINNABAR_POKECENTER_1F,                       5,  4 ;  1
-	map_const CINNABAR_POKECENTER_2F_BETA,                  8,  4 ;  2
 	map_const ROUTE_19_FUCHSIA_GATE,                        5,  4 ;  3
 	map_const SEAFOAM_GYM,                                  5,  4 ;  4
 	map_const ROUTE_19,                                    10, 18 ;  5
@@ -190,7 +191,6 @@ ENDM
 	map_const CERULEAN_POLICE_STATION,                      4,  4 ;  2
 	map_const CERULEAN_TRADE_SPEECH_HOUSE,                  4,  4 ;  3
 	map_const CERULEAN_POKECENTER_1F,                       5,  4 ;  4
-	map_const CERULEAN_POKECENTER_2F_BETA,                  8,  4 ;  5
 	map_const CERULEAN_GYM,                                 5,  8 ;  6
 	map_const CERULEAN_MART,                                6,  4 ;  7
 	map_const ROUTE_10_POKECENTER_1F,                       5,  4 ;  8

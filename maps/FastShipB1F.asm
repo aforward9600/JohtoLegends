@@ -114,7 +114,7 @@ TrainerPicnickerDebra:
 	end
 
 TrainerJugglerFritz:
-	trainer JUGGLER, FRITZ, EVENT_BEAT_JUGGLER_FRITZ, JugglerFritzSeenText, JugglerFritzBeatenText, 0, .Script
+	trainer JUGGLER, PERCY, EVENT_BEAT_JUGGLER_PERCY, JugglerFritzSeenText, JugglerFritzBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

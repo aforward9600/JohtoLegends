@@ -170,3 +170,15 @@ SCENE_FINISHED EQU 1
 ;wBlackthornCitySceneID
 	const_def 1
 	const SCENE_BLACKTHORN_CITY_NOTHING
+
+;wIcePath1FSceneID
+	const_def 1
+	const SCENE_ICE_PATH_1F_RIVAL
+
+;wMahoganyGymSceneID
+	const_def 1
+	const SCENE_GYM_GUIDE_STOPS_YOU
+
+;wLakeOfRageSceneID
+	const_def 1
+	const SCENE_LAKE_OF_RAGE_RIVAL

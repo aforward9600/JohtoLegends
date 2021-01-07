@@ -38,11 +38,12 @@ MeetMomScript:
 	opentext
 	writetext DahliasLookingForYouText
 	buttonsound
-	getstring STRING_BUFFER_4, GearName
-	scall PlayersHouse1FReceiveItemStd
+	waitsfx
+	writetext GotWatchText
+	playsound SFX_ITEM
+	waitsfx
 	setflag ENGINE_POKEGEAR
-	setflag ENGINE_PHONE_CARD
-	addcellnum PHONE_MOM
+	setflag ENGINE_MAP_CARD
 	setscene SCENE_FINISHED
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
@@ -62,11 +63,12 @@ MeetMomScript:
 	opentext
 	writetext DracosLookingForYouText
 	buttonsound
-	getstring STRING_BUFFER_4, GearName
-	scall PlayersHouse1FReceiveItemStd
+	waitsfx
+	writetext GotWatchText
+	playsound SFX_ITEM
+	waitsfx
 	setflag ENGINE_POKEGEAR
-	setflag ENGINE_PHONE_CARD
-	addcellnum PHONE_MOM
+	setflag ENGINE_MAP_CARD
 	setscene SCENE_FINISHED
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	setevent EVENT_RIVAL_AT_MASTERS_HOUSE_1
@@ -83,22 +85,6 @@ MeetMomScript:
 	iffalse .SetDayOfWeek
 .DayOfWeekDone:
 	writetext ComeHomeForDSTText
-	yesorno
-	iffalse .ExplainPhone
-	sjump .KnowPhone
-
-.KnowPhone:
-	writetext KnowTheInstructionsText
-	buttonsound
-	sjump .FinishPhone
-
-.ExplainPhone:
-	writetext DontKnowTheInstructionsText
-	buttonsound
-	sjump .FinishPhone
-
-.FinishPhone:
-	writetext InstructionsNextText
 	waitbutton
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -181,7 +167,10 @@ MomScript:
 	waitbutton
 	closetext
 	setevent EVENT_GOT_JOURNAL
+	setevent EVENT_BLACKTHORN_HIKER
+	setevent EVENT_BLACKTHORN_BLACK_BELT
 	setmapscene BLACKTHORN_CITY, SCENE_BLACKTHORN_CITY_NOTHING
+	setmapscene ICE_PATH_1F, SCENE_ICE_PATH_1F_RIVAL
 	end
 
 NeighborScript:
@@ -288,9 +277,10 @@ DahliasLookingForYouText:
 	line "in a memory. You"
 	cont "better get going."
 
-	para "Here is a map, it"
-	line "will help you get"
-	cont "started."
+	para "Here is a watch."
+	line "It will help you"
+	cont "keep track of time"
+	cont "and location."
 	done
 
 MomGivesPokegearText:
@@ -313,37 +303,14 @@ ComeHomeForDSTText:
 	para "for Daylight"
 	line "Saving Time."
 
-	para "By the way, do you"
-	line "know how to use"
-	cont "the PHONE?"
-	done
+	para "By the way, for"
+	line "the watch, press"
+	cont "Left or Right to"
+	cont "switch between the"
+	cont "clock and map."
 
-KnowTheInstructionsText:
-	text "Don't you just"
-	line "turn the #GEAR"
-
-	para "on and select the"
-	line "PHONE icon?"
-	done
-
-DontKnowTheInstructionsText:
-	text "I'll read the"
-	line "instructions."
-
-	para "Turn the #GEAR"
-	line "on and select the"
-	cont "PHONE icon."
-	done
-
-InstructionsNextText:
-	text "Phone numbers are"
-	line "stored in memory."
-
-	para "Just choose a name"
-	line "you want to call."
-
-	para "Gee, isn't that"
-	line "convenient?"
+	para "See? Even I can"
+	line "understand it."
 	done
 
 DracosLookingForYouText:
@@ -381,9 +348,10 @@ DracosLookingForYouText:
 	line "in a memory. You"
 	cont "better get going."
 
-	para "Here is a map, it"
-	line "will help you get"
-	cont "started."
+	para "Here is a watch."
+	line "It will help you"
+	cont "keep track of time"
+	cont "and location."
 	done
 
 HurryUpElmIsWaitingText:
@@ -463,8 +431,8 @@ StoveText:
 
 SinkText:
 	text "The sink is spot-"
-	line "less. Mom likes it"
-	cont "clean."
+	line "less. Granny likes"
+	cont "it clean."
 	done
 
 FridgeText:
@@ -512,6 +480,11 @@ OhWaitText:
 GotJournalText:
 	text "<PLAYER> received"
 	line "the Journal!"
+	done
+
+GotWatchText:
+	text "<PLAYER> received"
+	line "the Watch!"
 	done
 
 GrandmaJournalText:

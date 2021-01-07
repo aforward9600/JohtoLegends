@@ -7,6 +7,11 @@ MoveDeletersHouse_MapScripts:
 	db 0 ; callbacks
 
 MoveDeleter:
+	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
+	iftrue .MoveDeletionScript
+	jumptextfaceplayer MoveDeleterNoMonText
+
+.MoveDeletionScript:
 	faceplayer
 	opentext
 	special MoveDeletion
@@ -16,6 +21,22 @@ MoveDeleter:
 
 MoveDeletersHouseBookshelf:
 	jumpstd difficultbookshelf
+
+MoveDeleterNoMonText:
+	text "Um… Oh, yes, I'm"
+	line "the Move Deleter."
+
+	para "I can make #mon"
+	line "forget moves."
+
+	para "Shall I make a"
+	line "#mon forget?"
+
+	para "....Hey!"
+
+	para "You don't even"
+	line "have a #mon!"
+	done
 
 MoveDeletersHouse_MapEvents:
 	db 0, 0 ; filler

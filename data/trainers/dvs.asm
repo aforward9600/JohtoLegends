@@ -76,3 +76,4 @@ TrainerClassDVs:
 	dn 12, 12, 13, 13 ; MASTER
 	dn 13, 12, 13, 13 ; GEN_SURGE
 	dn  9,  8,  8,  8 ; LANCE
+	dn  7,  8,  8,  8 ; PASSERBY

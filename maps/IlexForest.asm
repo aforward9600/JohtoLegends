@@ -371,13 +371,13 @@ IlexForestCharcoalMasterScript:
 IlexForestHeadbuttGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TM02_HEADBUTT
+	checkevent EVENT_GOT_SNUBBULLCALL
 	iftrue .AlreadyGotHeadbutt
 	writetext Text_HeadbuttIntro
 	buttonsound
 	verbosegiveitem SNUBBULLCALL
 	iffalse .BagFull
-	setevent EVENT_GOT_TM02_HEADBUTT
+	setevent EVENT_GOT_SNUBBULLCALL
 .AlreadyGotHeadbutt:
 	writetext Text_HeadbuttOutro
 	waitbutton

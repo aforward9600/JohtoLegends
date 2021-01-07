@@ -1534,16 +1534,10 @@ _NPCTradeAfterText4::
 	done
 
 _MomLeavingText1::
-	text "Wow, that's a cute"
-	line "#mon."
+	text "So, this is it."
 
-	para "Where did you get"
-	line "it?"
-
-	para "…"
-
-	para "So, you're leaving"
-	line "on an adventure…"
+	para "Your adventure"
+	line "begins now."
 
 	para "OK!"
 	line "I'll help too."

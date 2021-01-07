@@ -19,7 +19,7 @@ BugContestantPointers:
 ;   dw 3rd-place mon, score
 
 BugContestant_BugCatcherDon:
-	db BUG_CATCHER, DON
+	db BUG_CATCHER, ANTON
 	dw KAKUNA,     300
 	dw METAPOD,    285
 	dw CATERPIE,   226

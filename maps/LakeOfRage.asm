@@ -1,11 +1,11 @@
 	object_const_def ; object_event constants
-	const LAKEOFRAGE_LANCE
-	const LAKEOFRAGE_GRAMPS
+	const LAKEOFRAGE_MIYAMOTO
+	const LAKEOFRAGE_KRIS ; if Male
 	const LAKEOFRAGE_SUPER_NERD1
 	const LAKEOFRAGE_COOLTRAINER_F1
 	const LAKEOFRAGE_FISHER1
 	const LAKEOFRAGE_FISHER2
-	const LAKEOFRAGE_COOLTRAINER_M
+	const LAKEOFRAGE_POKE_FAN_M
 	const LAKEOFRAGE_COOLTRAINER_F2
 	const LAKEOFRAGE_GYARADOS
 	const LAKEOFRAGE_WESLEY
@@ -14,8 +14,8 @@
 
 LakeOfRage_MapScripts:
 	db 2 ; scene scripts
-	scene_script .DummyScene0 ; unusable
-	scene_script .DummyScene1 ; unusable
+	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene1 ; SCENE_LAKE_OF_RAGE_RIVAL
 
 	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
@@ -32,6 +32,12 @@ LakeOfRage_MapScripts:
 	return
 
 .Wesley:
+	checkflag ENGINE_GLACIERBADGE
+	iftrue .Wesley2
+	disappear LAKEOFRAGE_WESLEY
+	return
+
+.Wesley2:
 	readvar VAR_WEEKDAY
 	ifequal WEDNESDAY, .WesleyAppears
 	disappear LAKEOFRAGE_WESLEY
@@ -56,8 +62,8 @@ LakeOfRageLanceScript:
 	waitbutton
 	closetext
 	playsound SFX_WARP_TO
-	applymovement LAKEOFRAGE_LANCE, MovementData_0x70155
-	disappear LAKEOFRAGE_LANCE
+	applymovement LAKEOFRAGE_MIYAMOTO, MovementData_0x70155
+	disappear LAKEOFRAGE_MIYAMOTO
 	clearevent EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE
 	setevent EVENT_DECIDED_TO_HELP_LANCE
 	setmapscene MAHOGANY_MART_1F, SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS
@@ -100,7 +106,7 @@ RedGyarados:
 	itemnotify
 	closetext
 	setscene 0 ; Lake of Rage does not have a scene variable
-	appear LAKEOFRAGE_LANCE
+	appear LAKEOFRAGE_MIYAMOTO
 	end
 
 LakeOfRageGrampsScript:
@@ -441,54 +447,49 @@ CooltrainerfLoisAfterBattleText:
 	done
 
 MeetWesleyText:
-	text "WESLEY: Well, how"
-	line "do you do?"
+	text "Howdy! They call"
+	line "me the Week Guy."
 
-	para "Seeing as how it's"
-	line "Wednesday today,"
+	para "Not weak as in"
+	line "strength, but"
+	cont "like time."
 
-	para "I'm WESLEY of"
-	line "Wednesday."
+	para "Since it's"
+	line "Wednesday, I'll"
+	cont "give you this!"
 	done
 
 WesleyGivesGiftText:
-	text "Pleased to meet"
-	line "you. Please take a"
-	cont "souvenir."
+	text "Here you go!"
 	done
 
 WesleyGaveGiftText:
-	text "WESLEY: BLACKBELT"
-	line "beefs up the power"
-	cont "of fighting moves."
+	text "That's a Black"
+	line "Belt! Powers up"
+	cont "Fighting-type"
+	cont "moves."
 	done
 
 WesleyWednesdayText:
-	text "WESLEY: Since you"
-	line "found me, you must"
-
-	para "have met my broth-"
-	line "ers and sisters."
-
-	para "Or did you just"
-	line "get lucky?"
+	text "Come back on an-"
+	line "other Wednesday,"
+	cont "if you want!"
 	done
 
 WesleyNotWednesdayText:
-	text "WESLEY: Today's"
-	line "not Wednesday."
-	cont "That's too bad."
+	text "Hey, it's not"
+	line "Wednesday!"
 	done
 
 LakeOfRageSignText:
-	text "LAKE OF RAGE,"
+	text "Lake Of Rage,"
 	line "also known as"
-	cont "GYARADOS LAKE."
+	cont "Gyarados Lake."
 	done
 
 FishingGurusHouseSignText:
-	text "FISHING GURU'S"
-	line "HOUSE"
+	text "Fishing Guru's"
+	line "House"
 	done
 
 LakeOfRage_MapEvents:
@@ -508,15 +509,15 @@ LakeOfRage_MapEvents:
 	bg_event 35,  5, BGEVENT_ITEM, LakeOfRageHiddenMaxPotion
 
 	db 12 ; object events
-	object_event 21, 28, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageLanceScript, EVENT_LAKE_OF_RAGE_LANCE
-	object_event 20, 26, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageGrampsScript, -1
+	object_event 21, 28, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageLanceScript, EVENT_LAKE_OF_RAGE_LANCE
+	object_event 20, 26, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageGrampsScript, EVENT_RIVAL_AT_LAKE_OF_RAGE
 	object_event 36, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageSuperNerdScript, -1
 	object_event 25, 29, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageCooltrainerFScript, -1
 	object_event 30, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherAndre, EVENT_LAKE_OF_RAGE_CIVILIANS
 	object_event 24, 26, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherRaymond, EVENT_LAKE_OF_RAGE_CIVILIANS
-	object_event  4, 15, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainermAaron, EVENT_LAKE_OF_RAGE_CIVILIANS
+	object_event  4, 15, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainermAaron, EVENT_LAKE_OF_RAGE_CIVILIANS
 	object_event 36,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerCooltrainerfLois, EVENT_LAKE_OF_RAGE_CIVILIANS
 	object_event 18, 22, SPRITE_GYARADOS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RedGyarados, EVENT_LAKE_OF_RAGE_RED_GYARADOS
-	object_event  4,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WesleyScript, EVENT_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY
+	object_event  4,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WesleyScript, EVENT_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY
 	object_event  7, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageElixer, EVENT_LAKE_OF_RAGE_ELIXER
 	object_event 35,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageTMDetect, EVENT_LAKE_OF_RAGE_TM_DETECT

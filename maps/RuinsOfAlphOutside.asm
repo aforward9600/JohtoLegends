@@ -111,7 +111,7 @@ TrainerPsychicNathan:
 	end
 
 TrainerSuperNerdStan:
-	trainer SUPER_NERD, STAN, EVENT_BEAT_SUPER_NERD_STAN, SuperNerdStanSeenText, SuperNerdStanBeatenText, 0, .Script
+	trainer SUPER_NERD, DEXTER, EVENT_BEAT_SUPER_NERD_DEXTER, SuperNerdStanSeenText, SuperNerdStanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

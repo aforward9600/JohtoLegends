@@ -14,7 +14,7 @@ Route2_MapScripts:
 	db 0 ; callbacks
 
 TrainerBugCatcherRob:
-	trainer BUG_CATCHER, ROB, EVENT_BEAT_BUG_CATCHER_ROB, BugCatcherRobSeenText, BugCatcherRobBeatenText, 0, .Script
+	trainer BUG_CATCHER, COLTON, EVENT_BEAT_BUG_CATCHER_COLTON, BugCatcherRobSeenText, BugCatcherRobBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

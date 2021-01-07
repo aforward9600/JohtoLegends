@@ -2664,8 +2664,11 @@ wMobileBattleRoomSceneID::                        db ; d9c0
 wMastersHouse1FSceneID::                          db
 wMastersHouse2FSceneID::                          db
 wBlackthornCitySceneID::                          db
+wIcePath1FSceneID::                               db
+wMahoganyGymSceneID::                             db
+wLakeOfRageSceneID::                              db
 
-	ds 46
+	ds 43
 
 ; fight counts
 wJackFightCount::    db ; d9f2

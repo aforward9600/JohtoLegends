@@ -1,16 +1,22 @@
 	object_const_def ; object_event constants
 	const MAHOGANYGYM_PRYCE
 	const MAHOGANYGYM_BUENA1
-	const MAHOGANYGYM_ROCKER1
 	const MAHOGANYGYM_BUENA2
-	const MAHOGANYGYM_ROCKER2
 	const MAHOGANYGYM_ROCKER3
 	const MAHOGANYGYM_GYM_GUY
 
 MahoganyGym_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene1 ; SCENE_GYM_GUIDE_STOPS_YOU
 
 	db 0 ; callbacks
+
+.DummyScene0:
+	end
+
+.DummyScene1:
+	end
 
 MahoganyGymPryceScript:
 	faceplayer
@@ -39,11 +45,9 @@ MahoganyGymPryceScript:
 .FightDone:
 	checkevent EVENT_GOT_TM16_ICY_WIND
 	iftrue PryceScript_Defeat
-	setevent EVENT_BEAT_SKIER_ROXANNE
-	setevent EVENT_BEAT_SKIER_CLARISSA
-	setevent EVENT_BEAT_BOARDER_RONALD
-	setevent EVENT_BEAT_BOARDER_BRAD
-	setevent EVENT_BEAT_BOARDER_DOUGLAS
+	setevent EVENT_BEAT_SKIER_BRANDY
+	setevent EVENT_BEAT_SKIER_PAM
+	setevent EVENT_BEAT_BOARDER_SONNY
 	writetext PryceText_GlacierBadgeSpeech
 	buttonsound
 	verbosegiveitem TM_ICY_WIND
@@ -52,6 +56,7 @@ MahoganyGymPryceScript:
 	writetext PryceText_IcyWindSpeech
 	waitbutton
 	closetext
+	setscene SCENE_GYM_GUIDE_STOPS_YOU
 	end
 
 PryceScript_Defeat:
@@ -72,57 +77,35 @@ MahoganyGymActivateRockets:
 .RadioTowerRockets:
 	jumpstd radiotowerrockets
 
-TrainerSkierRoxanne:
-	trainer SKIER, ROXANNE, EVENT_BEAT_SKIER_ROXANNE, SkierRoxanneSeenText, SkierRoxanneBeatenText, 0, .Script
+TrainerSkierBrandy:
+	trainer SKIER, BRANDY, EVENT_BEAT_SKIER_BRANDY, SkierBrandySeenText, SkierBrandyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SkierRoxanneAfterBattleText
+	writetext SkierBrandyAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerSkierClarissa:
-	trainer SKIER, CLARISSA, EVENT_BEAT_SKIER_CLARISSA, SkierClarissaSeenText, SkierClarissaBeatenText, 0, .Script
+TrainerSkierPam:
+	trainer SKIER, PAM, EVENT_BEAT_SKIER_PAM, SkierPamSeenText, SkierPamBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SkierClarissaAfterBattleText
+	writetext SkierPamAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerBoarderRonald:
-	trainer BOARDER, RONALD, EVENT_BEAT_BOARDER_RONALD, BoarderRonaldSeenText, BoarderRonaldBeatenText, 0, .Script
+TrainerBoarderSonny:
+	trainer BOARDER, SONNY, EVENT_BEAT_BOARDER_SONNY, BoarderSonnySeenText, BoarderSonnyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BoarderRonaldAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerBoarderBrad:
-	trainer BOARDER, BRAD, EVENT_BEAT_BOARDER_BRAD, BoarderBradSeenText, BoarderBradBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext BoarderBradAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerBoarderDouglas:
-	trainer BOARDER, DOUGLAS, EVENT_BEAT_BOARDER_DOUGLAS, BoarderDouglasSeenText, BoarderDouglasBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext BoarderDouglasAfterBattleText
+	writetext BoarderSonnyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -143,6 +126,56 @@ MahoganyGymGuyScript:
 	closetext
 	end
 
+GymGuyStopsYou1Script:
+	applymovement MAHOGANYGYM_GYM_GUY, StopsYouMovement1
+	turnobject PLAYER, RIGHT
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female1
+	opentext
+	writetext ByTheWay1Text
+	waitbutton
+	closetext
+	applymovement MAHOGANYGYM_GYM_GUY, GoesBackMovement1
+	turnobject MAHOGANYGYM_GYM_GUY, DOWN
+	setscene SCENE_DEFAULT
+	end
+
+.Female1:
+	opentext
+	writetext ByTheWay2Text
+	waitbutton
+	closetext
+	applymovement MAHOGANYGYM_GYM_GUY, GoesBackMovement1
+	turnobject MAHOGANYGYM_GYM_GUY, DOWN
+	setscene SCENE_DEFAULT
+	end
+
+GymGuyStopsYou2Script:
+	applymovement MAHOGANYGYM_GYM_GUY, StopsYouMovement2
+	turnobject PLAYER, RIGHT
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female2
+	opentext
+	writetext ByTheWay1Text
+	waitbutton
+	closetext
+	applymovement MAHOGANYGYM_GYM_GUY, GoesBackMovement2
+	turnobject MAHOGANYGYM_GYM_GUY, DOWN
+	setscene SCENE_DEFAULT
+	end
+
+.Female2:
+	opentext
+	waitbutton
+	writetext ByTheWay2Text
+	waitbutton
+	closetext
+	applymovement MAHOGANYGYM_GYM_GUY, GoesBackMovement2
+	turnobject MAHOGANYGYM_GYM_GUY, DOWN
+	setscene SCENE_DEFAULT
+	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE
+	end
+
 MahoganyGymStatue:
 	checkflag ENGINE_GLACIERBADGE
 	iftrue .Beaten
@@ -150,6 +183,32 @@ MahoganyGymStatue:
 .Beaten:
 	gettrainername STRING_BUFFER_4, PRYCE, PRYCE1
 	jumpstd gymstatue2
+
+StopsYouMovement1:
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step_end
+
+StopsYouMovement2:
+	step DOWN
+	step DOWN
+	step LEFT
+	step_end
+
+GoesBackMovement1:
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
+	step_end
+
+GoesBackMovement2:
+	step RIGHT
+	step UP
+	step UP
+	step_end
 
 PryceText_Intro:
 	text "Hurrmph! I heard"
@@ -255,104 +314,85 @@ PryceText_GoodLooks:
 	para "...Hopefully."
 	done
 
-BoarderRonaldSeenText:
-	text "I'll freeze your"
-	line "#MON, so you"
-	cont "can't do a thing!"
+BoarderSonnySeenText:
+	text "Pryce may be the"
+	line "master of Ice, but"
+	cont "I'm right behind"
+	cont "him in skill."
 	done
 
-BoarderRonaldBeatenText:
-	text "Darn. I couldn't"
-	line "do a thing."
+BoarderSonnyBeatenText:
+	text "Apparently I'm"
+	line "not."
 	done
 
-BoarderRonaldAfterBattleText:
-	text "I think there's a"
-	line "move a #MON"
+BoarderSonnyAfterBattleText:
+	text "I guess I was too"
+	line "focused on snow-"
 
-	para "can use while it's"
-	line "frozen."
+	para "boarding instead"
+	line "of #mon."
 	done
 
-BoarderBradSeenText:
-	text "This GYM has a"
-	line "slippery floor."
+SkierBrandySeenText:
+	text "The ice is really"
+	line "slippery."
 
-	para "It's fun, isn't"
-	line "it?"
+	para "You need to think"
+	line "before you skate,"
 
-	para "But hey--we're"
-	line "not playing games"
-	cont "here!"
+	para "otherwise you'll"
+	line "just crash into a"
+	cont "wall."
 	done
 
-BoarderBradBeatenText:
-	text "Do you see how"
-	line "serious we are?"
+SkierBrandyBeatenText:
+	text "Looks like I was"
+	line "the one crashing!"
 	done
 
-BoarderBradAfterBattleText:
-	text "This GYM is great."
-	line "I love boarding"
-	cont "with my #MON!"
+SkierBrandyAfterBattleText:
+	text "I once crashed in-"
+	line "to a guy on a ski"
+	cont "trip."
+
+	para "He's my boyfriend"
+	line "now."
 	done
 
-BoarderDouglasSeenText:
-	text "I know PRYCE's"
-	line "secret."
+SkierPamSeenText:
+	text "You should totally"
+	line "check out my"
+	cont "COOL battling"
+	cont "skills!"
+
+	para "Hahaha!"
+	line "Get it?"
 	done
 
-BoarderDouglasBeatenText:
-	text "OK. I'll tell you"
-	line "PRYCE's secret."
+SkierPamBeatenText:
+	text "Hey, CHILL out!"
+	line "Hahaha!"
 	done
 
-BoarderDouglasAfterBattleText:
-	text "The secret behind"
-	line "PRYCE's power…"
+SkierPamAfterBattleText:
+	text "Alright, I'm done"
+	line "with the puns."
 
-	para "He meditates under"
-	line "a waterfall daily"
+	para "But, you must"
+	line "admit, my skills"
+	cont "were pretty..."
 
-	para "to strengthen his"
-	line "mind and body."
-	done
+	para "ICE!"
 
-SkierRoxanneSeenText:
-	text "To get to PRYCE,"
-	line "our GYM LEADER,"
+	para "Hahahaha!"
 
-	para "you need to think"
-	line "before you skate."
-	done
+	para "....I guess you're"
+	line "giving me..."
 
-SkierRoxanneBeatenText:
-	text "I wouldn't lose to"
-	line "you in skiing!"
-	done
+	para "The COLD Shoulder."
 
-SkierRoxanneAfterBattleText:
-	text "If you don't skate"
-	line "with precision,"
-
-	para "you won't get far"
-	line "in this GYM."
-	done
-
-SkierClarissaSeenText:
-	text "Check out my"
-	line "parallel turn!"
-	done
-
-SkierClarissaBeatenText:
-	text "No! You made me"
-	line "wipe out!"
-	done
-
-SkierClarissaAfterBattleText:
-	text "I shouldn't have"
-	line "been bragging"
-	cont "about my skiing…"
+	para "Giggle."
 	done
 
 MahoganyGymGuyText:
@@ -379,7 +419,11 @@ MahoganyGymGuyText:
 	para "Fighting Types!"
 	line "Dragon and Ground"
 	cont "Types don't do the"
-	cont "greatest."
+	cont "greatest. Also,"
+
+	para "Water and Electric"
+	line "moves don't effect"
+	cont "them so well."
 	done
 
 MahoganyGymGuyWinText:
@@ -390,6 +434,34 @@ MahoganyGymGuyWinText:
 	para "his Ice-Types!"
 	done
 
+ByTheWay1Text:
+	text "Oh, by the way,"
+	line "your friend"
+	cont "Dahlia told me to"
+
+	para "tell you:"
+
+	para "Meet me at the"
+	line "Lake of Rage!"
+
+	para "You better go see"
+	line "her."
+	done
+
+ByTheWay2Text:
+	text "Oh, by the way,"
+	line "your friend"
+	cont "Draco told me to"
+
+	para "tell you:"
+
+	para "Meet me at the"
+	line "Lake of Rage!"
+
+	para "You better go see"
+	line "him."
+	done
+
 MahoganyGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -397,17 +469,17 @@ MahoganyGym_MapEvents:
 	warp_event  4, 17, MAHOGANY_TOWN, 3
 	warp_event  5, 17, MAHOGANY_TOWN, 3
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event 4, 17, SCENE_GYM_GUIDE_STOPS_YOU, GymGuyStopsYou1Script
+	coord_event 5, 17, SCENE_GYM_GUIDE_STOPS_YOU, GymGuyStopsYou2Script
 
 	db 2 ; bg events
 	bg_event  3, 15, BGEVENT_READ, MahoganyGymStatue
 	bg_event  6, 15, BGEVENT_READ, MahoganyGymStatue
 
-	db 7 ; object events
+	db 5 ; object events
 	object_event  5,  3, SPRITE_PRYCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyGymPryceScript, -1
-	object_event  4,  6, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSkierRoxanne, -1
-	object_event  0, 17, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderRonald, -1
-	object_event  9, 17, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSkierClarissa, -1
-	object_event  5,  9, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderBrad, -1
-	object_event  2,  4, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderDouglas, -1
+	object_event  5,  9, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSkierBrandy, -1
+	object_event  9, 17, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSkierPam, -1
+	object_event  2,  4, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderSonny, -1
 	object_event  7, 15, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyGymGuyScript, -1

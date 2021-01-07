@@ -1,8 +1,8 @@
 	object_const_def ; object_event constants
 	const BLACKTHORNPOKECENTER1F_NURSE
 	const BLACKTHORNPOKECENTER1F_GENTLEMAN
-	const BLACKTHORNPOKECENTER1F_TWIN
-	const BLACKTHORNPOKECENTER1F_COOLTRAINER_M
+	const BLACKTHORNPOKECENTER1F_FISHER
+	const BLACKTHORNPOKECENTER1F_COOLTRAINER_F
 
 BlackthornPokecenter1F_MapScripts:
 	db 0 ; scene scripts
@@ -15,36 +15,43 @@ BlackthornPokecenter1FNurseScript:
 BlackthornPokecenter1FGentlemanScript:
 	jumptextfaceplayer BlackthornPokecenter1FGentlemanText
 
-BlackthornPokecenter1FTwinScript:
-	jumptextfaceplayer BlackthornPokecenter1FTwinText
+BlackthornPokecenter1FFisherScript:
+	jumptextfaceplayer BlackthornPokecenter1FFisherText
 
-BlackthornPokecenter1FCooltrainerMScript:
-	jumpstd happinesschecknpc
+BlackthornPokecenter1FCooltrainerFScript:
+	jumptextfaceplayer BlackthornPokecenter1FCooltrainerFText
 
 BlackthornPokecenter1FGentlemanText:
-	text "Deep inside far-"
-	line "off INDIGO PLATEAU"
-
-	para "is the #MON"
-	line "LEAGUE."
-
-	para "I hear the best"
-	line "trainers gather"
-
-	para "there from around"
-	line "the country."
+	text "That Phone is free"
+	line "for any trainer"
+	cont "to use."
 	done
 
-BlackthornPokecenter1FTwinText:
-	text "There was this"
-	line "move I just had"
+BlackthornPokecenter1FFisherText:
+	text "The ADS is great."
+	line "I can store any"
 
-	para "to teach my #-"
-	line "MON."
+	para "number of #mon,"
+	line "and it's all free."
+	done
 
-	para "So I got the MOVE"
-	line "DELETER to make it"
-	cont "forget an HM move."
+BlackthornPokecenter1FCooltrainerFText:
+	text "I hear they're"
+	line "going to remodel"
+	cont "all the #mon"
+
+	para "Centers in Johto"
+	line "to have a second"
+	cont "floor. No idea"
+
+	para "what will be in"
+	line "them."
+
+	para "Doesn't sound like"
+	line "the ones in Kanto"
+	cont "will get the same"
+	cont "treatment right"
+	cont "now."
 	done
 
 BlackthornPokecenter1F_MapEvents:
@@ -62,5 +69,5 @@ BlackthornPokecenter1F_MapEvents:
 	db 4 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FNurseScript, -1
 	object_event  5,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FGentlemanScript, -1
-	object_event  1,  4, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FTwinScript, -1
-	object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FCooltrainerMScript, -1
+	object_event  1,  4, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FFisherScript, -1
+	object_event  7,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FCooltrainerFScript, -1

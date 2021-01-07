@@ -272,6 +272,7 @@ MastersTestScript1:
 	playsound SFX_EXIT_BUILDING
 	disappear MASTERSHOUSE1F_KRIS
 	setscene SCENE_MASTERS_HOUSE_1F_NOTHING
+	setevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	waitsfx
 	end
 
@@ -280,6 +281,7 @@ MastersTestScript1:
 	playsound SFX_EXIT_BUILDING
 	disappear MASTERSHOUSE1F_CHRIS
 	setscene SCENE_MASTERS_HOUSE_1F_NOTHING
+	setevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	waitsfx
 	end
 
@@ -363,6 +365,7 @@ WalkUpToRival2:
 	setscene SCENE_MASTERS_HOUSE_1F_NOTHING
 	setevent EVENT_MASTERS_RIVAL_DONE
 	setevent EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
+	clearevent EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR
 	waitsfx
 	applymovement MASTERSHOUSE1F_MASTER, MasterLastMovement
 	turnobject PLAYER, UP

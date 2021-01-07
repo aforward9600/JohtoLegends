@@ -1,99 +1,106 @@
 	object_const_def ; object_event constants
-	const ICEPATHB1F_BOULDER1
-	const ICEPATHB1F_BOULDER2
-	const ICEPATHB1F_BOULDER3
-	const ICEPATHB1F_BOULDER4
+	const ICEPATHB1F_ROCK1
+	const ICEPATHB1F_ROCK2
+	const ICEPATHB1F_ROCK3
+	const ICEPATHB1F_ROCK4
 	const ICEPATHB1F_POKE_BALL
+	const ICEPATHB1F_YOUNGSTER
+	const ICEPATHB1F_LASS
 
 IcePathB1F_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_CMDQUEUE, .SetUpStoneTable
+	db 0 ; callbacks
 
-.SetUpStoneTable:
-	writecmdqueue .CommandQueue
-	return
+IcePathB1FRock:
+	jumpstd smashrock
 
-.CommandQueue:
-	cmdqueue CMDQUEUE_STONETABLE, .StoneTable ; check if any stones are sitting on a warp
+IcePathB1FPotion:
+	itemball POTION
 
-.StoneTable:
-	stonetable 3, ICEPATHB1F_BOULDER1, .Boulder1
-	stonetable 4, ICEPATHB1F_BOULDER2, .Boulder2
-	stonetable 5, ICEPATHB1F_BOULDER3, .Boulder3
-	stonetable 6, ICEPATHB1F_BOULDER4, .Boulder4
-	db -1 ; end
+IcePathB1FRazorClaw:
+	itemball RAZOR_CLAW
 
-.Boulder1:
-	disappear ICEPATHB1F_BOULDER1
-	clearevent EVENT_BOULDER_IN_ICE_PATH_1A
-	sjump .FinishBoulder
+TrainerYoungsterTimmy:
+	trainer YOUNGSTER, TIMMY, EVENT_BEAT_YOUNGSTER_TIMMY, YoungsterTimmySeenText, YoungsterTimmyBeatenText, 0, .Script
 
-.Boulder2:
-	disappear ICEPATHB1F_BOULDER2
-	clearevent EVENT_BOULDER_IN_ICE_PATH_2A
-	sjump .FinishBoulder
-
-.Boulder3:
-	disappear ICEPATHB1F_BOULDER3
-	clearevent EVENT_BOULDER_IN_ICE_PATH_3A
-	sjump .FinishBoulder
-
-.Boulder4:
-	disappear ICEPATHB1F_BOULDER4
-	clearevent EVENT_BOULDER_IN_ICE_PATH_4A
-	sjump .FinishBoulder
-
-.FinishBoulder:
-	pause 30
-	scall .BoulderFallsThrough
+.Script:
+	endifjustbattled
 	opentext
-	writetext IcePathBoulderFellThroughText
+	writetext YoungsterTimmyAfterText
 	waitbutton
 	closetext
 	end
 
-.BoulderFallsThrough:
-	playsound SFX_STRENGTH
-	earthquake 80
+TrainerLassArielle:
+	trainer LASS, ARIELLE, EVENT_BEAT_LASS_ARIELLE, LassArielleSeenText, LassArielleBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LassArielleAfterText
+	waitbutton
+	closetext
 	end
 
-IcePathB1FBoulder:
-	jumpstd strengthboulder
-
-IcePathB1FIron:
-	itemball IRON
-
 IcePathB1FHiddenMaxPotion:
-	hiddenitem MAX_POTION, EVENT_ICE_PATH_B1F_HIDDEN_MAX_POTION
+	hiddenitem RARE_CANDY, EVENT_ICE_PATH_B1F_HIDDEN_MAX_POTION
 
-IcePathBoulderFellThroughText:
-	text "The boulder fell"
-	line "through."
+YoungsterTimmySeenText:
+	text "W-w-w-wow!"
+	line "It-t-t-t's"
+	cont "f-f-f-reezing!"
+	done
+
+YoungsterTimmyBeatenText:
+	text "C-c-c-cold!"
+	done
+
+YoungsterTimmyAfterText:
+	text "I t-t-think m-my"
+	line "f-f-feet are f-f-"
+	cont "frozen in place!"
+	done
+
+LassArielleSeenText:
+	text "Aren't you a sight"
+	line "for sore eyes!"
+	done
+
+LassArielleBeatenText:
+	text "That wasn't a"
+	line "sight I wanted to"
+	cont "see!"
+	done
+
+LassArielleAfterText:
+	text "Alright, out of"
+	line "my sight! I"
+	cont "wasn't expecting"
+
+	para "to lose like that!"
 	done
 
 IcePathB1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 8 ; warp events
+	db 4 ; warp events
 	warp_event  3, 15, ICE_PATH_1F, 3
 	warp_event 17,  3, ICE_PATH_B2F_MAHOGANY_SIDE, 1
-	warp_event 11,  2, ICE_PATH_B2F_MAHOGANY_SIDE, 3 ; hole
-	warp_event  4,  7, ICE_PATH_B2F_MAHOGANY_SIDE, 4 ; hole
-	warp_event  5, 12, ICE_PATH_B2F_MAHOGANY_SIDE, 5 ; hole
-	warp_event 12, 13, ICE_PATH_B2F_MAHOGANY_SIDE, 6 ; hole
 	warp_event  5, 25, ICE_PATH_1F, 4
 	warp_event 11, 27, ICE_PATH_B2F_BLACKTHORN_SIDE, 1
 
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event 17, 30, BGEVENT_ITEM, IcePathB1FHiddenMaxPotion
+	bg_event 16, 33, BGEVENT_ITEM, IcePathB1FHiddenMaxPotion
 
-	db 5 ; object events
-	object_event 11,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB1FBoulder, EVENT_BOULDER_IN_ICE_PATH_1
-	object_event  7,  8, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB1FBoulder, EVENT_BOULDER_IN_ICE_PATH_2
-	object_event  8,  9, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB1FBoulder, EVENT_BOULDER_IN_ICE_PATH_3
-	object_event 17,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB1FBoulder, EVENT_BOULDER_IN_ICE_PATH_4
-	object_event  5, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePathB1FIron, EVENT_ICE_PATH_B1F_IRON
+	db 8 ; object events
+	object_event  9,  1, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB1FRock, -1
+	object_event 17, 14, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB1FRock, -1
+	object_event  6, 11, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB1FRock, -1
+	object_event  6, 13, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB1FRock, -1
+	object_event  5, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePathB1FPotion, EVENT_ICE_PATH_B1F_IRON
+	object_event  3, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL,0, IcePathB1FRazorClaw, EVENT_ICE_PATH_B1F_RAZOR_CLAW
+	object_event 14, 24, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerYoungsterTimmy, -1
+	object_event  4,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassArielle, -1

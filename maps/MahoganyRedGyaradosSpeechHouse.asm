@@ -1,6 +1,7 @@
 	object_const_def ; object_event constants
 	const MAHOGANYREDGYARADOSSPEECHHOUSE_BLACK_BELT
 	const MAHOGANYREDGYARADOSSPEECHHOUSE_TEACHER
+	const MAHOGANYREDGYARADOSSPEECHHOUSE_HERACROSS
 
 MahoganyRedGyaradosSpeechHouse_MapScripts:
 	db 0 ; scene scripts
@@ -13,15 +14,24 @@ MahoganyRedGyaradosSpeechHouseBlackBeltScript:
 MahoganyRedGyaradosSpeechHouseTeacherScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_ROCKETS_IN_RADIO_TOWER
-	iftrue .RocketsInRadioTower
-	writetext MahoganyRedGyaradosSpeechHouseTeacherText
+	checkevent EVENT_GOT_SNUBBULLCALL
+	iftrue .AlreadyGotSnubbullCall
+	writetext SnubbullCallIntroText
+	buttonsound
+	verbosegiveitem SNUBBULLCALL
+	iffalse .BagFull
+	setevent EVENT_GOT_SNUBBULLCALL
+.AlreadyGotSnubbullCall:
+	writetext SnubbullCallDoneText
 	waitbutton
+.BagFull:
 	closetext
 	end
 
-.RocketsInRadioTower:
-	writetext MahoganyRedGyaradosSpeechHouseTeacherText_RocketsInRadioTower
+MahoganyRedGyaradosSpeechHouseHeracrossScript:
+	opentext
+	writetext MahoganyRedGyaradosSpeechHouseHeracrossText
+	cry HERACROSS
 	waitbutton
 	closetext
 	end
@@ -35,21 +45,39 @@ MahoganyRedGyaradosSpeechHouseUnusedBookshelf2:
 	jumpstd magazinebookshelf
 
 MahoganyRedGyaradosSpeechHouseBlackBeltText:
-	text "I heard that a red"
-	line "GYARADOS appeared"
-	cont "at the LAKE."
+	text "A Heracross once"
+	line "fell on my head"
+	cont "after I used a"
 
-	para "That's odd, since"
-	line "even ordinary"
+	para "Snubbull Call."
 
-	para "GYARADOS are rare"
-	line "in that lake…"
+	para "Now it's my best"
+	line "friend."
 	done
 
-MahoganyRedGyaradosSpeechHouseTeacherText:
-	text "My favorite radio"
-	line "program? I'd say"
-	cont "#MON MUSIC."
+SnubbullCallIntroText:
+	text "Some #mon can"
+	line "only be found in"
+	cont "trees."
+
+	para "How can you get"
+	line "them out? Easy!"
+
+	para "Just one blow on"
+	line "this call will"
+	cont "summon a Snubbull"
+
+	para "to you. They'll"
+	line "headbutt trees and"
+	cont "knock them to the"
+	cont "ground."
+	done
+
+SnubbullCallDoneText:
+	text "Go out and enjoy"
+	line "using Snubbulls"
+	cont "to catch more"
+	cont "#mon!"
 	done
 
 MahoganyRedGyaradosSpeechHouseTeacherText_RocketsInRadioTower:
@@ -58,6 +86,10 @@ MahoganyRedGyaradosSpeechHouseTeacherText_RocketsInRadioTower:
 
 	para "radio…"
 	line "It's creepy."
+	done
+
+MahoganyRedGyaradosSpeechHouseHeracrossText:
+	text "Heracross: Cross!"
 	done
 
 MahoganyRedGyaradosSpeechHouse_MapEvents:
@@ -71,6 +103,7 @@ MahoganyRedGyaradosSpeechHouse_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event  2,  3, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyRedGyaradosSpeechHouseBlackBeltScript, -1
 	object_event  6,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyRedGyaradosSpeechHouseTeacherScript, -1
+	object_event  1,  3, SPRITE_PARAS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyRedGyaradosSpeechHouseHeracrossScript, -1

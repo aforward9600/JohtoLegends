@@ -16,7 +16,21 @@
 Route45_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .ClearRocks
+
+.ClearRocks:
+	checkevent EVENT_BEAT_MASTER
+	iftrue .Done
+	changeblock 12, 10, $0a ; rock
+	changeblock 14, 10, $0a ; rock
+	changeblock 16, 10, $0a ; rock
+	changeblock  2, 16, $0a ; rock
+	changeblock 10, 12, $0a ; rock
+	changeblock  4, 16, $0a ; rock
+	changeblock  4, 14, $0a ; rock
+.Done:
+	return
 
 TrainerBlackbeltKenji:
 	trainer BLACKBELT_T, KENJI3, EVENT_BEAT_BLACKBELT_KENJI, BlackbeltKenji3SeenText, BlackbeltKenji3BeatenText, 0, .Script
@@ -122,15 +136,13 @@ Route45RematchGiftM:
 	jumpstd rematchgiftm
 	end
 
-TrainerHikerErik:
-	trainer HIKER, ERIK, EVENT_BEAT_HIKER_ERIK, HikerErikSeenText, HikerErikBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+HikerWorkerScript:
+	faceplayer
 	opentext
-	writetext HikerErikAfterBattleText
+	writetext RockSlideText
 	waitbutton
 	closetext
+	turnobject ROUTE45_HIKER1, DOWN
 	end
 
 TrainerHikerMichael:
@@ -312,25 +324,24 @@ Route45MaxPotion:
 Route45HiddenPpUp:
 	hiddenitem PP_UP, EVENT_ROUTE_45_HIDDEN_PP_UP
 
-HikerErikSeenText:
-	text "Be prepared for"
-	line "anything!"
+RockSlideText:
+	text "Man, the recent"
+	line "earthquake really"
+	cont "messed this area"
 
-	para "Let me see if your"
-	line "#MON have been"
-	cont "raised properly!"
-	done
+	para "up bad. It's gonna"
+	line "be a while before"
+	cont "these rocks are"
 
-HikerErikBeatenText:
-	text "Oh, I lost that!"
-	done
+	para "cleared. Be care-"
+	line "ful if you go into"
+	cont "Dark Cave. My bro"
 
-HikerErikAfterBattleText:
-	text "I'll head back to"
-	line "BLACKTHORN's ICE"
+	para "is clearing out"
+	line "rocks in there,"
+	cont "and he's not very"
 
-	para "PATH and train"
-	line "some more."
+	para "happy about it."
 	done
 
 HikerMichaelSeenText:
@@ -533,7 +544,7 @@ Route45_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event  2,  5, DARK_CAVE_BLACKTHORN_ENTRANCE, 1
+	warp_event  2,  5, DARK_CAVE_NEW_ENTRANCE, 1
 
 	db 0 ; coord events
 
@@ -542,7 +553,7 @@ Route45_MapEvents:
 	bg_event 13, 80, BGEVENT_ITEM, Route45HiddenPpUp
 
 	db 13 ; object events
-	object_event 10, 16, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 1, TrainerHikerErik, -1
+	object_event 10, 11, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 1, HikerWorkerScript, -1
 	object_event 15, 65, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerHikerMichael, -1
 	object_event  5, 28, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerHikerParry, -1
 	object_event  9, 65, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 1, TrainerHikerTimothy, -1

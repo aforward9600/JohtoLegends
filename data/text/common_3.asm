@@ -1227,7 +1227,7 @@ Text_Waitbutton_2::
 UnknownText_0x1c5b38::
 	text_ram wMonOrItemNameBuffer
 	text " was"
-	line "sent to BILL's PC."
+	line "sent to the ADS."
 	prompt
 
 UnknownText_0x1c5b53::
@@ -1262,14 +1262,14 @@ UnknownText_0x1c5bac::
 	prompt
 
 Text_RepelUsedEarlierIsStillInEffect::
-	text "The REPEL used"
+	text "The Repel used"
 	line "earlier is still"
 	cont "in effect."
 	prompt
 
 UnknownText_0x1c5bf9::
 	text "Played the #"
-	line "FLUTE."
+	line "Flute."
 
 	para "Now, that's a"
 	line "catchy tune!"
@@ -1347,13 +1347,14 @@ UnknownText_0x1c5d3e::
 
 UnknownText_0x1c5d50::
 	text "That can't be used"
-	line "on an EGG."
+	line "on an Egg."
 	prompt
 
 UnknownText_0x1c5d6e::
-	text "OAK: <PLAYER>!"
-	line "This isn't the"
-	cont "time to use that!"
+	text "Granny: <PLAYER>!"
+	line "Are you certain it"
+	cont "is a good time for"
+	cont "that?"
 	prompt
 
 UnknownText_0x1c5d97::
@@ -1368,7 +1369,7 @@ UnknownText_0x1c5db6::
 
 UnknownText_0x1c5dd0::
 	text "The trainer"
-	line "blocked the BALL!"
+	line "blocked the Ball!"
 	prompt
 
 UnknownText_0x1c5def::
@@ -1388,7 +1389,7 @@ UnknownText_0x1c5e1d::
 	prompt
 
 UnknownText_0x1c5e3a::
-	text "The #mon BOX"
+	text "The #mon Box"
 	line "is full. That"
 	cont "can't be used now."
 	prompt
@@ -1441,7 +1442,7 @@ UnknownText_0x1c5ef5::
 	done
 
 UnknownText_0x1c5f17::
-	text "An EGG doesn't"
+	text "An Egg doesn't"
 	line "know any moves!"
 	done
 
@@ -1457,7 +1458,7 @@ UnknownText_0x1c5f50::
 
 UnknownText_0x1c5f74::
 	text "Um… Oh, yes, I'm"
-	line "the MOVE DELETER."
+	line "the Move Deleter."
 
 	para "I can make #mon"
 	line "forget moves."
@@ -1513,7 +1514,7 @@ UnknownText_0x1c6095::
 UnknownText_0x1c60d1::
 	text "I lost the in-"
 	line "struction booklet"
-	cont "for the #GEAR."
+	cont "for the Watch."
 
 	para "Come back again in"
 	line "a while."

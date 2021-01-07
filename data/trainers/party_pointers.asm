@@ -77,3 +77,4 @@ TrainerGroups:
 	dba MasterGroup
 	dba GenSurgeGroup
 	dba LanceGroup
+	dba PasserbyGroup

@@ -7,7 +7,7 @@ IcePathB2FBlackthornSide_MapScripts:
 	db 0 ; callbacks
 
 IcePathB2FBlackthornSideTMRest:
-	itemball TM_REST
+	itemball TM_SUBSTITUTE
 
 IcePathB2FBlackthornSideHiddenIceHeal:
 	hiddenitem ICE_HEAL, EVENT_ICE_PATH_B2F_BLACKTHORN_SIDE_HIDDEN_ICE_HEAL
@@ -16,7 +16,7 @@ IcePathB2FBlackthornSide_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  3, 15, ICE_PATH_B1F, 8
+	warp_event  3, 15, ICE_PATH_B1F, 4
 	warp_event  3,  3, ICE_PATH_B3F, 2
 
 	db 0 ; coord events
