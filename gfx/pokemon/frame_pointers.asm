@@ -175,37 +175,46 @@ FramesPointers:
 	dba IgglybuffFrames
 	dba TogepiFrames
 	dba TogeticFrames
+	dba TogekissFrames
 	dba NatuFrames
 	dba XatuFrames
 	dba MareepFrames
 	dba FlaaffyFrames
 	dba AmpharosFrames
 	dba BellossomFrames
+	dba AzurillFrames
 	dba MarillFrames
 	dba AzumarillFrames
+	dba BonslyFrames
 	dba SudowoodoFrames
 	dba PolitoedFrames
 	dba HoppipFrames
 	dba SkiploomFrames
 	dba JumpluffFrames
 	dba AipomFrames
+	dba AmbipomFrames
 	dba SunkernFrames
 	dba SunfloraFrames
 	dba YanmaFrames
+	dba YanmegaFrames
 	dba WooperFrames
 	dba QuagsireFrames
 	dba EspeonFrames
 	dba UmbreonFrames
 	dba MurkrowFrames
+	dba HonchkrowFrames
 	dba SlowkingFrames
 	dba MisdreavusFrames
+	dba MismagiusFrames
 	dba UnownFrames
+	dba WynautFrames
 	dba WobbuffetFrames
 	dba GirafarigFrames
 	dba PinecoFrames
 	dba ForretressFrames
 	dba DunsparceFrames
 	dba GligarFrames
+	dba GliscorFrames
 	dba SteelixFrames
 	dba SnubbullFrames
 	dba GranbullFrames
@@ -214,17 +223,22 @@ FramesPointers:
 	dba ShuckleFrames
 	dba HeracrossFrames
 	dba SneaselFrames
+	dba WeavileFrames
 	dba TeddiursaFrames
 	dba UrsaringFrames
 	dba SlugmaFrames
 	dba MagcargoFrames
 	dba SwinubFrames
 	dba PiloswineFrames
+	dba MamoswineFrames
 	dba CorsolaFrames
+	dba CursolaFrames
 	dba RemoraidFrames
 	dba OctilleryFrames
 	dba DelibirdFrames
+	dba MantykeFrames
 	dba MantineFrames
+	dba SkarminiFrames
 	dba SkarmoryFrames
 	dba HoundourFrames
 	dba HoundoomFrames
@@ -247,37 +261,23 @@ FramesPointers:
 	dba LarvitarFrames
 	dba PupitarFrames
 	dba TyranitarFrames
-	dba LugiaFrames
-	dba HoOhFrames
-	dba CelebiFrames
-	dba SkarminiFrames
-	dba MismagiusFrames
-	dba HonchkrowFrames
-	dba CursolaFrames
-	dba LeafeonFrames
-	dba GlaceonFrames
-	dba SylveonFrames
-	dba AmbipomFrames
-	dba LickilickyFrames
-	dba YanmegaFrames
-	dba TogekissFrames
-	dba MamoswineFrames
-	dba TangrowthFrames
-	dba MagnezoneFrames
-	dba PorygonZFrames
-	dba GliscorFrames
-	dba WeavileFrames
-	dba ElectivireFrames
-	dba MagmortarFrames
-	dba RhyperiorFrames
 	dba BagonFrames
 	dba ShelgonFrames
 	dba SalamenceFrames
-	dba WynautFrames
-	dba AzurillFrames
+	dba LugiaFrames
+	dba HoOhFrames
+	dba CelebiFrames
+	dba LeafeonFrames
+	dba GlaceonFrames
+	dba SylveonFrames
+	dba LickilickyFrames
+	dba TangrowthFrames
+	dba MagnezoneFrames
+	dba PorygonZFrames
+	dba ElectivireFrames
+	dba MagmortarFrames
+	dba RhyperiorFrames
 	dba MunchlaxFrames
-	dba BonslyFrames
 	dba MimeJrFrames
-	dba MantykeFrames
 	dba HappinyFrames
 	dba MissingnoFrames

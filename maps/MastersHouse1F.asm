@@ -88,12 +88,22 @@ TryToLeaveHouseScript:
 	end
 
 MaastersHouseMasterScript:
+	checkevent EVENT_BEAT_DRAGON_KID_CLAIR
+	iftrue .BeatDragonKid1
+	checkevent EVENT_BEAT_DRAGON_KID_LANCE
+	iftrue .BeatDragonKid2
 	checkevent EVENT_MASTERS_RIVAL_DONE
 	iftrue .MasterGoodLuck
 	jumptextfaceplayer MastersHouseMasterText
 
 .MasterGoodLuck:
 	jumptextfaceplayer MasterGoodLuckText
+
+.BeatDragonKid1:
+	jumptextfaceplayer HmText
+
+.BeatDragonKid2:
+	jumptextfaceplayer HmText
 
 MastersHouseRivalScript:
 	jumptextfaceplayer MastersHouseRivalText
@@ -659,6 +669,10 @@ LetsStartText:
 MastersHouseMasterText:
 	text "Go, and face your"
 	line "first challenge."
+	done
+
+HmText:
+	text "Hm."
 	done
 
 MastersHouseRivalText:

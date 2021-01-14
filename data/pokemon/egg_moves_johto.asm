@@ -26,14 +26,17 @@ EggMovePointers2::
 	dw IgglybuffEggMoves
 	dw TogepiEggMoves
 	dw NoEggMoves2
+	dw NoEggMoves2
 	dw NatuEggMoves
 	dw NoEggMoves2
 	dw MareepEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw AzurillEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw BonslyEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw HoppipEggMoves
@@ -42,14 +45,19 @@ EggMovePointers2::
 	dw AipomEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw NoEggMoves2
 	dw YanmaEggMoves
+	dw NoEggMoves2
 	dw WooperEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw MurkrowEggMoves
 	dw NoEggMoves2
+	dw NoEggMoves2
 	dw MisdreavusEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw GirafarigEggMoves
@@ -58,6 +66,7 @@ EggMovePointers2::
 	dw DunsparceEggMoves
 	dw GligarEggMoves
 	dw NoEggMoves2
+	dw NoEggMoves2
 	dw SnubbullEggMoves
 	dw NoEggMoves2
 	dw QwilfishEggMoves
@@ -65,17 +74,22 @@ EggMovePointers2::
 	dw ShuckleEggMoves
 	dw HeracrossEggMoves
 	dw SneaselEggMoves
+	dw NoEggMoves2
 	dw TeddiursaEggMoves
 	dw NoEggMoves2
 	dw SlugmaEggMoves
 	dw NoEggMoves2
 	dw SwinubEggMoves
 	dw NoEggMoves2
+	dw NoEggMoves2
 	dw CorsolaEggMoves
+	dw NoEggMoves2
 	dw RemoraidEggMoves
 	dw NoEggMoves2
 	dw DelibirdEggMoves
+	dw MantykeEggMoves
 	dw NoEggMoves2
+	dw SkarminiEggMoves
 	dw NoEggMoves2
 	dw HoundourEggMoves
 	dw NoEggMoves2
@@ -98,38 +112,24 @@ EggMovePointers2::
 	dw LarvitarEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw SkarminiEggMoves
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
 	dw BagonEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
-	dw AzurillEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw MunchlaxEggMoves
-	dw BonslyEggMoves
 	dw MimeJrEggMoves
-	dw MantykeEggMoves
 	dw HappinyEggMoves
 	dw NoEggMoves2
 
@@ -272,6 +272,29 @@ MareepEggMoves:
 	dw AGILITY
 	dw ODOR_SLEUTH
 	dw SAND_ATTACK
+	dw -1 ; end
+
+AzurillEggMoves:
+	dw PRESENT
+	dw AMNESIA
+	dw FUTURE_SIGHT
+	dw BELLY_DRUM
+	dw PERISH_SONG
+	dw SUPERSONIC
+	dw FORESIGHT
+	dw BODY_SLAM
+	dw ENCORE
+	dw SING
+	dw SLAM
+	dw -1 ; end
+
+BonslyEggMoves:
+	dw SELFDESTRUCT
+	dw SAND_TOMB
+	dw ENDURE
+	dw ROLLOUT
+	dw DEFENSE_CURL
+	dw HARDEN
 	dw -1 ; end
 
 HoppipEggMoves:
@@ -503,6 +526,26 @@ DelibirdEggMoves:
 	dw ICE_SHARD
 	dw -1 ; end
 
+MantykeEggMoves:
+	dw TWISTER
+	dw HYDRO_PUMP
+	dw HAZE
+	dw SLAM
+	dw AMNESIA
+	dw MIRROR_COAT
+	dw SIGNAL_BEAM
+	dw -1 ; end
+
+SkarminiEggMoves:
+	dw PURSUIT
+	dw WHIRLWIND
+	dw SKY_ATTACK
+	dw PAYBACK
+	dw BRAVE_BIRD
+	dw ENDURE
+	dw DRILL_PECK
+	dw -1 ; end
+
 HoundourEggMoves:
 	dw FIRE_SPIN
 	dw RAGE
@@ -596,16 +639,6 @@ LarvitarEggMoves:
 	dw EXTREMESPEED
 	dw -1 ; end
 
-SkarminiEggMoves:
-	dw PURSUIT
-	dw WHIRLWIND
-	dw SKY_ATTACK
-	dw PAYBACK
-	dw BRAVE_BIRD
-	dw ENDURE
-	dw DRILL_PECK
-	dw -1 ; end
-
 BagonEggMoves:
 	dw DRAGON_RAGE
 	dw DRAGON_RUSH
@@ -617,20 +650,6 @@ BagonEggMoves:
 	dw EXTREMESPEED
 	dw -1 ; end
 
-AzurillEggMoves:
-	dw PRESENT
-	dw AMNESIA
-	dw FUTURE_SIGHT
-	dw BELLY_DRUM
-	dw PERISH_SONG
-	dw SUPERSONIC
-	dw FORESIGHT
-	dw BODY_SLAM
-	dw ENCORE
-	dw SING
-	dw SLAM
-	dw -1 ; end
-
 MunchlaxEggMoves:
 	dw LICK
 	dw BELCH
@@ -640,29 +659,10 @@ MunchlaxEggMoves:
 	dw SLACK_OFF
 	dw -1 ; end
 
-BonslyEggMoves:
-	dw SELFDESTRUCT
-	dw SAND_TOMB
-	dw ENDURE
-	dw ROLLOUT
-	dw DEFENSE_CURL
-	dw HARDEN
-	dw -1 ; end
-
 MimeJrEggMoves:
 	dw FUTURE_SIGHT
 	dw HYPNOSIS
 	dw MIMIC
-	dw -1 ; end
-
-MantykeEggMoves:
-	dw TWISTER
-	dw HYDRO_PUMP
-	dw HAZE
-	dw SLAM
-	dw AMNESIA
-	dw MIRROR_COAT
-	dw SIGNAL_BEAM
 	dw -1 ; end
 
 HappinyEggMoves:

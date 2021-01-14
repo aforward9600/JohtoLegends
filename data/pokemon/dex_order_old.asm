@@ -1,3 +1,5 @@
+; Every Pokémon sorted in Old Pokédex Order.
+
 OldPokedexOrder:
 	dw BULBASAUR
 	dw IVYSAUR

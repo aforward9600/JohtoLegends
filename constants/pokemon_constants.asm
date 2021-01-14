@@ -196,37 +196,46 @@ JOHTO_POKEMON EQU const_value
 	const IGGLYBUFF  ; ae
 	const TOGEPI     ; af
 	const TOGETIC    ; b0
+	const TOGEKISS
 	const NATU       ; b1
 	const XATU       ; b2
 	const MAREEP     ; b3
 	const FLAAFFY    ; b4
 	const AMPHAROS   ; b5
 	const BELLOSSOM  ; b6
+	const AZURILL
 	const MARILL     ; b7
 	const AZUMARILL  ; b8
+	const BONSLY
 	const SUDOWOODO  ; b9
 	const POLITOED   ; ba
 	const HOPPIP     ; bb
 	const SKIPLOOM   ; bc
 	const JUMPLUFF   ; bd
 	const AIPOM      ; be
+	const AMBIPOM
 	const SUNKERN    ; bf
 	const SUNFLORA   ; c0
 	const YANMA      ; c1
+	const YANMEGA
 	const WOOPER     ; c2
 	const QUAGSIRE   ; c3
 	const ESPEON     ; c4
 	const UMBREON    ; c5
 	const MURKROW    ; c6
+	const HONCHKROW  ; fe
 	const SLOWKING   ; c7
 	const MISDREAVUS ; c8
+	const MISMAGIUS  ; fd
 	const UNOWN      ; c9
+	const WYNAUT
 	const WOBBUFFET  ; ca
 	const GIRAFARIG  ; cb
 	const PINECO     ; cc
 	const FORRETRESS ; cd
 	const DUNSPARCE  ; ce
 	const GLIGAR     ; cf
+	const GLISCOR
 	const STEELIX    ; d0
 	const SNUBBULL   ; d1
 	const GRANBULL   ; d2
@@ -235,17 +244,22 @@ JOHTO_POKEMON EQU const_value
 	const SHUCKLE    ; d5
 	const HERACROSS  ; d6
 	const SNEASEL    ; d7
+	const WEAVILE
 	const TEDDIURSA  ; d8
 	const URSARING   ; d9
 	const SLUGMA     ; da
 	const MAGCARGO   ; db
 	const SWINUB     ; dc
 	const PILOSWINE  ; dd
+	const MAMOSWINE
 	const CORSOLA    ; de
+	const CURSOLA    ; ff
 	const REMORAID   ; df
 	const OCTILLERY  ; e0
 	const DELIBIRD   ; e1
+	const MANTYKE
 	const MANTINE    ; e2
+	const SKARMINI   ; fc
 	const SKARMORY   ; e3
 	const HOUNDOUR   ; e4
 	const HOUNDOOM   ; e5
@@ -268,38 +282,24 @@ JOHTO_POKEMON EQU const_value
 	const LARVITAR   ; f6
 	const PUPITAR    ; f7
 	const TYRANITAR  ; f8
-	const LUGIA      ; f9
-	const HO_OH      ; fa
-	const CELEBI     ; fb
-	const SKARMINI   ; fc
-	const MISMAGIUS  ; fd
-	const HONCHKROW  ; fe
-	const CURSOLA    ; ff
-	const LEAFEON
-	const GLACEON
-	const SYLVEON
-	const AMBIPOM
-	const LICKILICKY
-	const YANMEGA
-	const TOGEKISS
-	const MAMOSWINE
-	const TANGROWTH
-	const MAGNEZONE
-	const PORYGON_Z
-	const GLISCOR
-	const WEAVILE
-	const ELECTIVIRE
-	const MAGMORTAR
-	const RHYPERIOR
 	const BAGON
 	const SHELGON
 	const SALAMENCE
-	const WYNAUT
-	const AZURILL
+	const LUGIA      ; f9
+	const HO_OH      ; fa
+	const CELEBI     ; fb
+	const LEAFEON
+	const GLACEON
+	const SYLVEON
+	const LICKILICKY
+	const TANGROWTH
+	const MAGNEZONE
+	const PORYGON_Z
+	const ELECTIVIRE
+	const MAGMORTAR
+	const RHYPERIOR
 	const MUNCHLAX
-	const BONSLY
 	const MIME__JR
-	const MANTYKE
 	const HAPPINY
 	const MISSINGNO
 NUM_POKEMON EQU const_value + -1

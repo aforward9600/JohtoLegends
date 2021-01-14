@@ -709,7 +709,33 @@ INCLUDE "gfx/overworld/trainer_battle_day.pal"
 INCLUDE "gfx/overworld/trainer_battle_nite.pal"
 
 .loadpokeballgfx
+	ld de, TeamRocketTransition
 	ld a, [wOtherTrainerClass]
+	cp GRUNTM
+	ret z
+	cp GRUNTF
+	ret z
+	cp ARIANA
+	ret z
+	cp ARCHER
+	ret z
+	cp SCIENTIST
+	ret z
+	ld de, RivalTransition
+	cp RIVAL3
+	ret z
+	cp RIVAL4
+	ret z
+	ld de, LanceTransition
+	cp DRAGON_KID
+	ret z
+	cp CLAIR
+	ret z
+	cp MASTER
+	ret z
+	ld de, PryceTransition
+	cp PRYCE
+	ret z
 	ld de, PokeBallTransition
 	ret
 
@@ -733,6 +759,90 @@ opt b.X ; . = 0, X = 1
 	bigdw %..XXXX....XXXX..
 	bigdw %....XXXXXXXX....
 	bigdw %......XXXX......
+popo
+
+TeamRocketTransition:
+pusho
+opt b.X ; . = 0, X = 0
+	bigdw %...............X
+	bigdw %..............X.
+	bigdw %...XXXX......XX.
+	bigdw %..XXXXXX....XX..
+	bigdw %.XXX..XXX...XX..
+	bigdw %XXX....XXX.XX...
+	bigdw %XX......XXXXX...
+	bigdw %XX.......XXX....
+	bigdw %XX.......XX......
+	bigdw %XX......XXXX....
+	bigdw %XXX....XXX.XX...
+	bigdw %.XXX..XXX..XX...
+	bigdw %..XXXXXX....X..X
+	bigdw %...XXXX.....XXXX
+	bigdw %.............XX.
+	bigdw %................
+popo
+
+RivalTransition:
+pusho
+opt b.X ; . = 0, X = 0
+	bigdw %XXXXXXXXX.......
+	bigdw %XXXXXXXXXXXX....
+	bigdw %XXXXXXXXXXXXX...
+	bigdw %XXX.....XXXXXX..
+	bigdw %XXX......XXXXXX.
+	bigdw %XXX.......XXXXX.
+	bigdw %XXX........XXXX.
+	bigdw %XXX........XXXX.
+	bigdw %XXX........XXXX.
+	bigdw %XXX........XXXX.
+	bigdw %XXX.......XXXXX.
+	bigdw %XXX......XXXXXX.
+	bigdw %XXX.....XXXXXX..
+	bigdw %XXXXXXXXXXXXX...
+	bigdw %XXXXXXXXXXXX....
+	bigdw %XXXXXXXXX.......
+popo
+
+LanceTransition:
+pusho
+opt b.X ; . = 0, X = 0
+	bigdw %..XXXXXXXXXXXX..
+	bigdw %..X..X....X..X..
+	bigdw %.XX..X....X..XX.
+	bigdw %X..XX......XX..X
+	bigdw %X..............X
+	bigdw %X...X......X...X
+	bigdw %X...XX....XX...X
+	bigdw %X....XX..XX....X
+	bigdw %X..............X
+	bigdw %.XXX........XXX.
+	bigdw %..XXXX....XXXX..
+	bigdw %...XX.X..X.XX...
+	bigdw %....X.X..X.X....
+	bigdw %....XX....XX....
+	bigdw %.....X....X.....
+	bigdw %......XXXX......
+popo
+
+PryceTransition:
+pusho
+opt b.X ; . = 0, X = 0
+	bigdw %.......XX.......
+	bigdw %.....XX..XX.....
+	bigdw %...XX...X..XX...
+	bigdw %.XX..XX.X....XX.
+	bigdw %X...X...XXX.X..X
+	bigdw %X.X...X.X.XXX..X
+	bigdw %X.XXX...XXX....X
+	bigdw %X.X.XXX.X...X..X
+	bigdw %X.X.X...XXX.X..X
+	bigdw %X.X...X.X.XXX..X
+	bigdw %X.X..XX.X..XX..X
+	bigdw %X..XX...XXX....X
+	bigdw %.XX..XX.X....XX.
+	bigdw %...XX...X..XX...
+	bigdw %.....XX..XX.....
+	bigdw %.......XX.......
 popo
 
 WipeLYOverrides:
