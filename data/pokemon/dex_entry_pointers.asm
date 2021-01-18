@@ -24,6 +24,7 @@ PokedexDataPointerTable:
 	dba FearowPokedexEntry
 	dba EkansPokedexEntry
 	dba ArbokPokedexEntry
+	dba PichuPokedexEntry
 	dba PikachuPokedexEntry
 	dba RaichuPokedexEntry
 	dba SandshrewPokedexEntry
@@ -34,17 +35,21 @@ PokedexDataPointerTable:
 	dba NidoranMPokedexEntry
 	dba NidorinoPokedexEntry
 	dba NidokingPokedexEntry
+	dba CleffaPokedexEntry
 	dba ClefairyPokedexEntry
 	dba ClefablePokedexEntry
 	dba VulpixPokedexEntry
 	dba NinetalesPokedexEntry
+	dba IgglybuffPokedexEntry
 	dba JigglypuffPokedexEntry
 	dba WigglytuffPokedexEntry
 	dba ZubatPokedexEntry
 	dba GolbatPokedexEntry
+	dba CrobatPokedexEntry
 	dba OddishPokedexEntry
 	dba GloomPokedexEntry
 	dba VileplumePokedexEntry
+	dba BellossomPokedexEntry
 	dba ParasPokedexEntry
 	dba ParasectPokedexEntry
 	dba VenonatPokedexEntry
@@ -62,6 +67,7 @@ PokedexDataPointerTable:
 	dba PoliwagPokedexEntry
 	dba PoliwhirlPokedexEntry
 	dba PoliwrathPokedexEntry
+	dba PolitoedPokedexEntry
 	dba AbraPokedexEntry
 	dba KadabraPokedexEntry
 	dba AlakazamPokedexEntry
@@ -80,8 +86,10 @@ PokedexDataPointerTable:
 	dba RapidashPokedexEntry
 	dba SlowpokePokedexEntry
 	dba SlowbroPokedexEntry
+	dba SlowkingPokedexEntry
 	dba MagnemitePokedexEntry
 	dba MagnetonPokedexEntry
+	dba MagnezonePokedexEntry
 	dba FarfetchDPokedexEntry
 	dba DoduoPokedexEntry
 	dba DodrioPokedexEntry
@@ -95,6 +103,7 @@ PokedexDataPointerTable:
 	dba HaunterPokedexEntry
 	dba GengarPokedexEntry
 	dba OnixPokedexEntry
+	dba SteelixPokedexEntry
 	dba DrowzeePokedexEntry
 	dba HypnoPokedexEntry
 	dba KrabbyPokedexEntry
@@ -105,27 +114,42 @@ PokedexDataPointerTable:
 	dba ExeggutorPokedexEntry
 	dba CubonePokedexEntry
 	dba MarowakPokedexEntry
+	dba TyroguePokedexEntry
 	dba HitmonleePokedexEntry
 	dba HitmonchanPokedexEntry
+	dba HitmontopPokedexEntry
 	dba LickitungPokedexEntry
+	dba LickilickyPokedexEntry
 	dba KoffingPokedexEntry
 	dba WeezingPokedexEntry
 	dba RhyhornPokedexEntry
 	dba RhydonPokedexEntry
+	dba RhyperiorPokedexEntry
+	dba HappinyPokedexEntry
 	dba ChanseyPokedexEntry
+	dba BlisseyPokedexEntry
 	dba TangelaPokedexEntry
+	dba TangrowthPokedexEntry
 	dba KangaskhanPokedexEntry
 	dba HorseaPokedexEntry
 	dba SeadraPokedexEntry
+	dba KingdraPokedexEntry
 	dba GoldeenPokedexEntry
 	dba SeakingPokedexEntry
 	dba StaryuPokedexEntry
 	dba StarmiePokedexEntry
+	dba MimeJrPokedexEntry
 	dba MrMimePokedexEntry
 	dba ScytherPokedexEntry
+	dba ScizorPokedexEntry
+	dba SmoochumPokedexEntry
 	dba JynxPokedexEntry
+	dba ElekidPokedexEntry
 	dba ElectabuzzPokedexEntry
+	dba ElectivirePokedexEntry
+	dba MagbyPokedexEntry
 	dba MagmarPokedexEntry
+	dba MagmortarPokedexEntry
 	dba PinsirPokedexEntry
 	dba TaurosPokedexEntry
 	dba MagikarpPokedexEntry
@@ -136,12 +160,20 @@ PokedexDataPointerTable:
 	dba VaporeonPokedexEntry
 	dba JolteonPokedexEntry
 	dba FlareonPokedexEntry
+	dba EspeonPokedexEntry
+	dba UmbreonPokedexEntry
+	dba LeafeonPokedexEntry
+	dba GlaceonPokedexEntry
+	dba SylveonPokedexEntry
 	dba PorygonPokedexEntry
+	dba Porygon2PokedexEntry
+	dba PorygonZPokedexEntry
 	dba OmanytePokedexEntry
 	dba OmastarPokedexEntry
 	dba KabutoPokedexEntry
 	dba KabutopsPokedexEntry
 	dba AerodactylPokedexEntry
+	dba MunchlaxPokedexEntry
 	dba SnorlaxPokedexEntry
 	dba ArticunoPokedexEntry
 	dba ZapdosPokedexEntry
@@ -168,12 +200,8 @@ PokedexDataPointerTable:
 	dba LedianPokedexEntry
 	dba SpinarakPokedexEntry
 	dba AriadosPokedexEntry
-	dba CrobatPokedexEntry
 	dba ChinchouPokedexEntry
 	dba LanturnPokedexEntry
-	dba PichuPokedexEntry
-	dba CleffaPokedexEntry
-	dba IgglybuffPokedexEntry
 	dba TogepiPokedexEntry
 	dba TogeticPokedexEntry
 	dba TogekissPokedexEntry
@@ -182,13 +210,11 @@ PokedexDataPointerTable:
 	dba MareepPokedexEntry
 	dba FlaaffyPokedexEntry
 	dba AmpharosPokedexEntry
-	dba BellossomPokedexEntry
 	dba AzurillPokedexEntry
 	dba MarillPokedexEntry
 	dba AzumarillPokedexEntry
 	dba BonslyPokedexEntry
 	dba SudowoodoPokedexEntry
-	dba PolitoedPokedexEntry
 	dba HoppipPokedexEntry
 	dba SkiploomPokedexEntry
 	dba JumpluffPokedexEntry
@@ -200,11 +226,8 @@ PokedexDataPointerTable:
 	dba YanmegaPokedexEntry
 	dba WooperPokedexEntry
 	dba QuagsirePokedexEntry
-	dba EspeonPokedexEntry
-	dba UmbreonPokedexEntry
 	dba MurkrowPokedexEntry
 	dba HonchkrowPokedexEntry
-	dba SlowkingPokedexEntry
 	dba MisdreavusPokedexEntry
 	dba MismagiusPokedexEntry
 	dba UnownPokedexEntry
@@ -216,11 +239,9 @@ PokedexDataPointerTable:
 	dba DunsparcePokedexEntry
 	dba GligarPokedexEntry
 	dba GliscorPokedexEntry
-	dba SteelixPokedexEntry
 	dba SnubbullPokedexEntry
 	dba GranbullPokedexEntry
 	dba QwilfishPokedexEntry
-	dba ScizorPokedexEntry
 	dba ShucklePokedexEntry
 	dba HeracrossPokedexEntry
 	dba SneaselPokedexEntry
@@ -243,19 +264,11 @@ PokedexDataPointerTable:
 	dba SkarmoryPokedexEntry
 	dba HoundourPokedexEntry
 	dba HoundoomPokedexEntry
-	dba KingdraPokedexEntry
 	dba PhanpyPokedexEntry
 	dba DonphanPokedexEntry
-	dba Porygon2PokedexEntry
 	dba StantlerPokedexEntry
 	dba SmearglePokedexEntry
-	dba TyroguePokedexEntry
-	dba HitmontopPokedexEntry
-	dba SmoochumPokedexEntry
-	dba ElekidPokedexEntry
-	dba MagbyPokedexEntry
 	dba MiltankPokedexEntry
-	dba BlisseyPokedexEntry
 	dba RaikouPokedexEntry
 	dba EnteiPokedexEntry
 	dba SuicunePokedexEntry
@@ -268,17 +281,4 @@ PokedexDataPointerTable:
 	dba LugiaPokedexEntry
 	dba HoOhPokedexEntry
 	dba CelebiPokedexEntry
-	dba LeafeonPokedexEntry
-	dba GlaceonPokedexEntry
-	dba SylveonPokedexEntry
-	dba LickilickyPokedexEntry
-	dba TangrowthPokedexEntry
-	dba MagnezonePokedexEntry
-	dba PorygonZPokedexEntry
-	dba ElectivirePokedexEntry
-	dba MagmortarPokedexEntry
-	dba RhyperiorPokedexEntry
-	dba MunchlaxPokedexEntry
-	dba MimeJrPokedexEntry
-	dba HappinyPokedexEntry
 	dba MissingnoPokedexEntry

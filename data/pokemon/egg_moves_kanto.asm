@@ -25,6 +25,7 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw EkansEggMoves
 	dw NoEggMoves1
+	dw PichuEggMoves
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw SandshrewEggMoves
@@ -35,15 +36,19 @@ EggMovePointers1:
 	dw NidoranMEggMoves
 	dw NoEggMoves1
 	dw NoEggMoves1
+	dw CleffaEggMoves
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw VulpixEggMoves
 	dw NoEggMoves1
+	dw IgglybuffEggMoves
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw ZubatEggMoves
 	dw NoEggMoves1
+	dw NoEggMoves1
 	dw OddishEggMoves
+	dw NoEggMoves1
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw ParasEggMoves
@@ -61,6 +66,7 @@ EggMovePointers1:
 	dw GrowlitheEggMoves
 	dw NoEggMoves1
 	dw PoliwagEggMoves
+	dw NoEggMoves1
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw AbraEggMoves
@@ -83,6 +89,8 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw NoEggMoves1
+	dw NoEggMoves1
+	dw NoEggMoves1
 	dw FarfetchDEggMoves
 	dw DoduoEggMoves
 	dw NoEggMoves1
@@ -96,6 +104,7 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw OnixEggMoves
+	dw NoEggMoves1
 	dw DrowzeeEggMoves
 	dw NoEggMoves1
 	dw KrabbyEggMoves
@@ -106,50 +115,40 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw CuboneEggMoves
 	dw NoEggMoves1
+	dw TyrogueEggMoves
+	dw NoEggMoves1
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw LickitungEggMoves
+	dw NoEggMoves1
 	dw KoffingEggMoves
 	dw NoEggMoves1
 	dw RhyhornEggMoves
 	dw NoEggMoves1
 	dw NoEggMoves1
+	dw HappinyEggMoves
+	dw NoEggMoves1
+	dw NoEggMoves1
 	dw TangelaEggMoves
+	dw NoEggMoves1
 	dw KangaskhanEggMoves
 	dw HorseaEggMoves
+	dw NoEggMoves1
 	dw NoEggMoves1
 	dw GoldeenEggMoves
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw NoEggMoves1
+	dw MimeJrEggMoves
 	dw NoEggMoves1
 	dw ScytherEggMoves
 	dw NoEggMoves1
+	dw SmoochumEggMoves
+	dw NoEggMoves1
+	dw ElekidEggMoves
 	dw NoEggMoves1
 	dw NoEggMoves1
-	dw PinsirEggMoves
-	dw NoEggMoves1
-	dw NoEggMoves1
-	dw NoEggMoves1
-	dw LaprasEggMoves
-	dw NoEggMoves1
-	dw EeveeEggMoves
-	dw NoEggMoves1
-	dw NoEggMoves1
-	dw NoEggMoves1
-	dw NoEggMoves1
-	dw OmanyteEggMoves
-	dw NoEggMoves1
-	dw KabutoEggMoves
-	dw NoEggMoves1
-	dw AerodactylEggMoves
-	dw NoEggMoves1
-	dw NoEggMoves1
-	dw NoEggMoves1
-	dw NoEggMoves1
-	dw DratiniEggMoves
-	dw NoEggMoves1
-	dw NoEggMoves1
+	dw MagbyEggMoves
 	dw NoEggMoves1
 	dw NoEggMoves1
 
@@ -224,6 +223,17 @@ EkansEggMoves:
 	dw SCARY_FACE
 	dw -1 ; end
 
+PichuEggMoves:
+	dw REVERSAL
+	dw PRESENT
+	dw ENCORE
+	dw DOUBLESLAP
+	dw DISARM_VOICE
+	dw ENDURE
+	dw THUNDERPUNCH
+	dw VOLT_TACKLE
+	dw -1 ; end
+
 SandshrewEggMoves:
 	dw FLAIL
 	dw SAFEGUARD
@@ -258,6 +268,15 @@ NidoranMEggMoves:
 	dw FOCUS_ENERGY
 	dw -1 ; end
 
+CleffaEggMoves:
+	dw PRESENT
+	dw METRONOME
+	dw AMNESIA
+	dw BELLY_DRUM
+	dw SPLASH
+	dw MIMIC
+	dw -1 ; end
+
 VulpixEggMoves:
 	dw FAINT_ATTACK
 	dw HYPNOSIS
@@ -267,6 +286,12 @@ VulpixEggMoves:
 	dw EXTRASENSORY
 	dw FLARE_BLITZ
 	dw HOWL
+	dw -1 ; end
+
+IgglybuffEggMoves:
+	dw PERISH_SONG
+	dw PRESENT
+	dw FAINT_ATTACK
 	dw -1 ; end
 
 ZubatEggMoves:
@@ -560,6 +585,16 @@ CuboneEggMoves:
 	dw ENDURE
 	dw -1 ; end
 
+TyrogueEggMoves:
+	dw RAPID_SPIN
+	dw HI_JUMP_KICK
+	dw MACH_PUNCH
+	dw MIND_READER
+	dw BULLET_PUNCH
+	dw PURSUIT
+	dw ENDURE
+	dw -1 ; end
+
 LickitungEggMoves:
 	dw BELLY_DRUM
 	dw MAGNITUDE
@@ -594,6 +629,12 @@ RhyhornEggMoves:
 	dw ICE_FANG
 	dw THUNDER_FANG
 	dw SKULL_BASH
+	dw -1 ; end
+
+HappinyEggMoves:
+	dw PRESENT
+	dw METRONOME
+	dw HEAL_BELL
 	dw -1 ; end
 
 TangelaEggMoves:
@@ -636,6 +677,12 @@ GoldeenEggMoves:
 	dw MUD_SHOT
 	dw -1 ; end
 
+MimeJrEggMoves:
+	dw FUTURE_SIGHT
+	dw HYPNOSIS
+	dw MIMIC
+	dw -1 ; end
+
 ScytherEggMoves:
 	dw COUNTER
 	dw ENDURE
@@ -647,73 +694,31 @@ ScytherEggMoves:
 	dw SILVER_WIND
 	dw -1 ; end
 
-PinsirEggMoves:
-	dw FURY_ATTACK
-	dw FLAIL
-	dw CLOSE_COMBAT
-	dw FAINT_ATTACK
-	dw QUICK_ATTACK
-	dw SUPERPOWER
+SmoochumEggMoves:
+	dw MEDITATE
+	dw ICE_PUNCH
 	dw -1 ; end
 
-LaprasEggMoves:
-	dw AURORA_BEAM
-	dw FORESIGHT
-	dw ANCIENTPOWER
-	dw AVALANCHE
-	dw FUTURE_SIGHT
-	dw HORN_DRILL
-	dw WHIRLPOOL
+ElekidEggMoves:
+	dw KARATE_CHOP
+	dw BARRIER
+	dw ROLLING_KICK
+	dw MEDITATE
+	dw CROSS_CHOP
+	dw FIRE_PUNCH
+	dw THUNDERPUNCH
 	dw -1 ; end
 
-EeveeEggMoves:
-	dw FLAIL
-	dw CHARM
-	dw ENDURE
-	dw -1 ; end
-
-OmanyteEggMoves:
-	dw BUBBLEBEAM
-	dw AURORA_BEAM
-	dw SLAM
-	dw SUPERSONIC
-	dw HAZE
-	dw SPIKES
-	dw WATER_PULSE
-	dw WHIRLPOOL
-	dw -1 ; end
-
-KabutoEggMoves:
-	dw BUBBLEBEAM
-	dw AURORA_BEAM
-	dw RAPID_SPIN
-	dw DIG
-	dw FLAIL
-	dw CONFUSE_RAY
-	dw MUD_SHOT
+MagbyEggMoves:
+	dw KARATE_CHOP
+	dw MEGA_PUNCH
+	dw BARRIER
 	dw SCREECH
-	dw TAKE_DOWN
+	dw CROSS_CHOP
+	dw FIRE_PUNCH
+	dw THUNDERPUNCH
+	dw FOCUS_ENERGY
+	dw MACH_PUNCH
 	dw -1 ; end
-
-AerodactylEggMoves:
-	dw WHIRLWIND
-	dw PURSUIT
-	dw FORESIGHT
-	dw DRAGONBREATH
-	dw FIRE_FANG
-	dw THUNDER_FANG
-	dw ICE_FANG
-	dw DRACO_FANG
-	dw -1 ; end
-
-DratiniEggMoves:
-	dw AQUA_JET
-	dw MIST
-	dw HAZE
-	dw SUPERSONIC
-	dw DRAGONBREATH
-	dw DRAGON_RUSH
-	dw EXTREMESPEED
-	dw WATER_PULSE
 NoEggMoves1:
 	dw -1 ; end

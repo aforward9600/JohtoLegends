@@ -1,6 +1,39 @@
 SECTION "Egg Moves 2", ROMX
 
 EggMovePointers2::
+	dw PinsirEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw LaprasEggMoves
+	dw NoEggMoves2
+	dw EeveeEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw OmanyteEggMoves
+	dw NoEggMoves2
+	dw KabutoEggMoves
+	dw NoEggMoves2
+	dw AerodactylEggMoves
+	dw MunchlaxEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw DratiniEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw ChikoritaEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -18,12 +51,8 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw SpinarakEggMoves
 	dw NoEggMoves2
-	dw NoEggMoves2
 	dw ChinchouEggMoves
 	dw NoEggMoves2
-	dw PichuEggMoves
-	dw CleffaEggMoves
-	dw IgglybuffEggMoves
 	dw TogepiEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -32,12 +61,10 @@ EggMovePointers2::
 	dw MareepEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
-	dw NoEggMoves2
 	dw AzurillEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw BonslyEggMoves
-	dw NoEggMoves2
 	dw NoEggMoves2
 	dw HoppipEggMoves
 	dw NoEggMoves2
@@ -50,10 +77,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw WooperEggMoves
 	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
 	dw MurkrowEggMoves
-	dw NoEggMoves2
 	dw NoEggMoves2
 	dw MisdreavusEggMoves
 	dw NoEggMoves2
@@ -66,11 +90,9 @@ EggMovePointers2::
 	dw DunsparceEggMoves
 	dw GligarEggMoves
 	dw NoEggMoves2
-	dw NoEggMoves2
 	dw SnubbullEggMoves
 	dw NoEggMoves2
 	dw QwilfishEggMoves
-	dw NoEggMoves2
 	dw ShuckleEggMoves
 	dw HeracrossEggMoves
 	dw SneaselEggMoves
@@ -93,19 +115,11 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw HoundourEggMoves
 	dw NoEggMoves2
-	dw NoEggMoves2
 	dw PhanpyEggMoves
-	dw NoEggMoves2
 	dw NoEggMoves2
 	dw StantlerEggMoves
 	dw NoEggMoves2
-	dw TyrogueEggMoves
-	dw NoEggMoves2
-	dw SmoochumEggMoves
-	dw ElekidEggMoves
-	dw MagbyEggMoves
 	dw MiltankEggMoves
-	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -119,19 +133,84 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw MunchlaxEggMoves
-	dw MimeJrEggMoves
-	dw HappinyEggMoves
-	dw NoEggMoves2
+
+PinsirEggMoves:
+	dw FURY_ATTACK
+	dw FLAIL
+	dw CLOSE_COMBAT
+	dw FAINT_ATTACK
+	dw QUICK_ATTACK
+	dw SUPERPOWER
+	dw -1 ; end
+
+LaprasEggMoves:
+	dw AURORA_BEAM
+	dw FORESIGHT
+	dw ANCIENTPOWER
+	dw AVALANCHE
+	dw FUTURE_SIGHT
+	dw HORN_DRILL
+	dw WHIRLPOOL
+	dw -1 ; end
+
+EeveeEggMoves:
+	dw FLAIL
+	dw CHARM
+	dw ENDURE
+	dw -1 ; end
+
+OmanyteEggMoves:
+	dw BUBBLEBEAM
+	dw AURORA_BEAM
+	dw SLAM
+	dw SUPERSONIC
+	dw HAZE
+	dw SPIKES
+	dw WATER_PULSE
+	dw WHIRLPOOL
+	dw -1 ; end
+
+KabutoEggMoves:
+	dw BUBBLEBEAM
+	dw AURORA_BEAM
+	dw RAPID_SPIN
+	dw DIG
+	dw FLAIL
+	dw CONFUSE_RAY
+	dw MUD_SHOT
+	dw SCREECH
+	dw TAKE_DOWN
+	dw -1 ; end
+
+AerodactylEggMoves:
+	dw WHIRLWIND
+	dw PURSUIT
+	dw FORESIGHT
+	dw DRAGONBREATH
+	dw FIRE_FANG
+	dw THUNDER_FANG
+	dw ICE_FANG
+	dw DRACO_FANG
+	dw -1 ; end
+
+MunchlaxEggMoves:
+	dw LICK
+	dw BELCH
+	dw COUNTER
+	dw DOUBLE_EDGE
+	dw ZEN_HEADBUTT
+	dw SLACK_OFF
+	dw -1 ; end
+
+DratiniEggMoves:
+	dw AQUA_JET
+	dw MIST
+	dw HAZE
+	dw SUPERSONIC
+	dw DRAGONBREATH
+	dw DRAGON_RUSH
+	dw EXTREMESPEED
+	dw WATER_PULSE
 
 ChikoritaEggMoves:
 	dw VINE_WHIP
@@ -219,32 +298,6 @@ ChinchouEggMoves:
 	dw AGILITY
 	dw PSYBEAM
 	dw WATER_PULSE
-	dw -1 ; end
-
-PichuEggMoves:
-	dw REVERSAL
-	dw PRESENT
-	dw ENCORE
-	dw DOUBLESLAP
-	dw DISARM_VOICE
-	dw ENDURE
-	dw THUNDERPUNCH
-	dw VOLT_TACKLE
-	dw -1 ; end
-
-CleffaEggMoves:
-	dw PRESENT
-	dw METRONOME
-	dw AMNESIA
-	dw BELLY_DRUM
-	dw SPLASH
-	dw MIMIC
-	dw -1 ; end
-
-IgglybuffEggMoves:
-	dw PERISH_SONG
-	dw PRESENT
-	dw FAINT_ATTACK
 	dw -1 ; end
 
 TogepiEggMoves:
@@ -582,43 +635,6 @@ StantlerEggMoves:
 	dw ZEN_HEADBUTT
 	dw -1 ; end
 
-TyrogueEggMoves:
-	dw RAPID_SPIN
-	dw HI_JUMP_KICK
-	dw MACH_PUNCH
-	dw MIND_READER
-	dw BULLET_PUNCH
-	dw PURSUIT
-	dw ENDURE
-	dw -1 ; end
-
-SmoochumEggMoves:
-	dw MEDITATE
-	dw ICE_PUNCH
-	dw -1 ; end
-
-ElekidEggMoves:
-	dw KARATE_CHOP
-	dw BARRIER
-	dw ROLLING_KICK
-	dw MEDITATE
-	dw CROSS_CHOP
-	dw FIRE_PUNCH
-	dw THUNDERPUNCH
-	dw -1 ; end
-
-MagbyEggMoves:
-	dw KARATE_CHOP
-	dw MEGA_PUNCH
-	dw BARRIER
-	dw SCREECH
-	dw CROSS_CHOP
-	dw FIRE_PUNCH
-	dw THUNDERPUNCH
-	dw FOCUS_ENERGY
-	dw MACH_PUNCH
-	dw -1 ; end
-
 MiltankEggMoves:
 	dw PRESENT
 	dw REVERSAL
@@ -648,27 +664,6 @@ BagonEggMoves:
 	dw TWISTER
 	dw DRAGONBREATH
 	dw EXTREMESPEED
-	dw -1 ; end
-
-MunchlaxEggMoves:
-	dw LICK
-	dw BELCH
-	dw COUNTER
-	dw DOUBLE_EDGE
-	dw ZEN_HEADBUTT
-	dw SLACK_OFF
-	dw -1 ; end
-
-MimeJrEggMoves:
-	dw FUTURE_SIGHT
-	dw HYPNOSIS
-	dw MIMIC
-	dw -1 ; end
-
-HappinyEggMoves:
-	dw PRESENT
-	dw METRONOME
-	dw HEAL_BELL
 	dw -1 ; end
 NoEggMoves2:
 	dw -1 ; end

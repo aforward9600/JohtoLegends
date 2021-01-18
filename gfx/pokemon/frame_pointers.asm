@@ -23,6 +23,7 @@ FramesPointers:
 	dba FearowFrames
 	dba EkansFrames
 	dba ArbokFrames
+	dba PichuFrames
 	dba PikachuFrames
 	dba RaichuFrames
 	dba SandshrewFrames
@@ -33,17 +34,21 @@ FramesPointers:
 	dba NidoranMFrames
 	dba NidorinoFrames
 	dba NidokingFrames
+	dba CleffaFrames
 	dba ClefairyFrames
 	dba ClefableFrames
 	dba VulpixFrames
 	dba NinetalesFrames
+	dba IgglybuffFrames
 	dba JigglypuffFrames
 	dba WigglytuffFrames
 	dba ZubatFrames
 	dba GolbatFrames
+	dba CrobatFrames
 	dba OddishFrames
 	dba GloomFrames
 	dba VileplumeFrames
+	dba BellossomFrames
 	dba ParasFrames
 	dba ParasectFrames
 	dba VenonatFrames
@@ -61,6 +66,7 @@ FramesPointers:
 	dba PoliwagFrames
 	dba PoliwhirlFrames
 	dba PoliwrathFrames
+	dba PolitoedFrames
 	dba AbraFrames
 	dba KadabraFrames
 	dba AlakazamFrames
@@ -79,8 +85,10 @@ FramesPointers:
 	dba RapidashFrames
 	dba SlowpokeFrames
 	dba SlowbroFrames
+	dba SlowkingFrames
 	dba MagnemiteFrames
 	dba MagnetonFrames
+	dba MagnezoneFrames
 	dba FarfetchDFrames
 	dba DoduoFrames
 	dba DodrioFrames
@@ -94,6 +102,7 @@ FramesPointers:
 	dba HaunterFrames
 	dba GengarFrames
 	dba OnixFrames
+	dba SteelixFrames
 	dba DrowzeeFrames
 	dba HypnoFrames
 	dba KrabbyFrames
@@ -104,27 +113,42 @@ FramesPointers:
 	dba ExeggutorFrames
 	dba CuboneFrames
 	dba MarowakFrames
+	dba TyrogueFrames
 	dba HitmonleeFrames
 	dba HitmonchanFrames
+	dba HitmontopFrames
 	dba LickitungFrames
+	dba LickilickyFrames
 	dba KoffingFrames
 	dba WeezingFrames
 	dba RhyhornFrames
 	dba RhydonFrames
+	dba RhyperiorFrames
+	dba HappinyFrames
 	dba ChanseyFrames
+	dba BlisseyFrames
 	dba TangelaFrames
+	dba TangrowthFrames
 	dba KangaskhanFrames
 	dba HorseaFrames
 	dba SeadraFrames
+	dba KingdraFrames
 	dba GoldeenFrames
 	dba SeakingFrames
 	dba StaryuFrames
 	dba StarmieFrames
+	dba MimeJrFrames
 	dba MrMimeFrames
 	dba ScytherFrames
+	dba ScizorFrames
+	dba SmoochumFrames
 	dba JynxFrames
+	dba ElekidFrames
 	dba ElectabuzzFrames
+	dba ElectivireFrames
+	dba MagbyFrames
 	dba MagmarFrames
+	dba MagmortarFrames
 	dba PinsirFrames
 	dba TaurosFrames
 	dba MagikarpFrames
@@ -135,12 +159,20 @@ FramesPointers:
 	dba VaporeonFrames
 	dba JolteonFrames
 	dba FlareonFrames
+	dba EspeonFrames
+	dba UmbreonFrames
+	dba LeafeonFrames
+	dba GlaceonFrames
+	dba SylveonFrames
 	dba PorygonFrames
+	dba Porygon2Frames
+	dba PorygonZFrames
 	dba OmanyteFrames
 	dba OmastarFrames
 	dba KabutoFrames
 	dba KabutopsFrames
 	dba AerodactylFrames
+	dba MunchlaxFrames
 	dba SnorlaxFrames
 	dba ArticunoFrames
 	dba ZapdosFrames
@@ -167,12 +199,8 @@ FramesPointers:
 	dba LedianFrames
 	dba SpinarakFrames
 	dba AriadosFrames
-	dba CrobatFrames
 	dba ChinchouFrames
 	dba LanturnFrames
-	dba PichuFrames
-	dba CleffaFrames
-	dba IgglybuffFrames
 	dba TogepiFrames
 	dba TogeticFrames
 	dba TogekissFrames
@@ -181,13 +209,11 @@ FramesPointers:
 	dba MareepFrames
 	dba FlaaffyFrames
 	dba AmpharosFrames
-	dba BellossomFrames
 	dba AzurillFrames
 	dba MarillFrames
 	dba AzumarillFrames
 	dba BonslyFrames
 	dba SudowoodoFrames
-	dba PolitoedFrames
 	dba HoppipFrames
 	dba SkiploomFrames
 	dba JumpluffFrames
@@ -199,11 +225,8 @@ FramesPointers:
 	dba YanmegaFrames
 	dba WooperFrames
 	dba QuagsireFrames
-	dba EspeonFrames
-	dba UmbreonFrames
 	dba MurkrowFrames
 	dba HonchkrowFrames
-	dba SlowkingFrames
 	dba MisdreavusFrames
 	dba MismagiusFrames
 	dba UnownFrames
@@ -215,11 +238,9 @@ FramesPointers:
 	dba DunsparceFrames
 	dba GligarFrames
 	dba GliscorFrames
-	dba SteelixFrames
 	dba SnubbullFrames
 	dba GranbullFrames
 	dba QwilfishFrames
-	dba ScizorFrames
 	dba ShuckleFrames
 	dba HeracrossFrames
 	dba SneaselFrames
@@ -242,19 +263,11 @@ FramesPointers:
 	dba SkarmoryFrames
 	dba HoundourFrames
 	dba HoundoomFrames
-	dba KingdraFrames
 	dba PhanpyFrames
 	dba DonphanFrames
-	dba Porygon2Frames
 	dba StantlerFrames
 	dba SmeargleFrames
-	dba TyrogueFrames
-	dba HitmontopFrames
-	dba SmoochumFrames
-	dba ElekidFrames
-	dba MagbyFrames
 	dba MiltankFrames
-	dba BlisseyFrames
 	dba RaikouFrames
 	dba EnteiFrames
 	dba SuicuneFrames
@@ -267,17 +280,4 @@ FramesPointers:
 	dba LugiaFrames
 	dba HoOhFrames
 	dba CelebiFrames
-	dba LeafeonFrames
-	dba GlaceonFrames
-	dba SylveonFrames
-	dba LickilickyFrames
-	dba TangrowthFrames
-	dba MagnezoneFrames
-	dba PorygonZFrames
-	dba ElectivireFrames
-	dba MagmortarFrames
-	dba RhyperiorFrames
-	dba MunchlaxFrames
-	dba MimeJrFrames
-	dba HappinyFrames
 	dba MissingnoFrames
