@@ -23,9 +23,13 @@ MahoganyPokecenter1FTwinScript:
 	jumptextfaceplayer MahoganyPokecenter1FTwinText
 
 MahoganyPokecenter1FSwinubScript:
+	refreshscreen
+	pokepic SWINUB
+	cry SWINUB
+	waitbutton
+	closepokepic
 	opentext
 	writetext MahoganyPokecenter1FSwinubText
-	cry SWINUB
 	waitbutton
 	closetext
 	end

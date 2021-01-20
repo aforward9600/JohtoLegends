@@ -90,4 +90,5 @@ MapScenes::
 	scene_var ICE_PATH_1F,                                 wIcePath1FSceneID
 	scene_var MAHOGANY_GYM,                                wMahoganyGymSceneID
 	scene_var LAKE_OF_RAGE,                                wLakeOfRageSceneID
+	scene_var MOUNT_MORTAR_1F_INSIDE,                      wMountMortar1FInsideSceneID
 	db -1 ; end

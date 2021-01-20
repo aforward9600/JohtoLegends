@@ -32,7 +32,7 @@ MahoganyMart1F_MapScripts:
 MahogayMart1FPharmacistScript:
 	faceplayer
 	opentext
-	checkevent EVENT_DECIDED_TO_HELP_LANCE
+	checkevent EVENT_BEAT_CHAMPION_LANCE
 	iftrue .LanceEntered
 	pokemart MARTTYPE_STANDARD, MART_MAHOGANY_1
 	closetext
@@ -47,7 +47,7 @@ MahogayMart1FPharmacistScript:
 MahogayMart1FBuenaScript:
 	faceplayer
 	opentext
-	checkevent EVENT_DECIDED_TO_HELP_LANCE
+	checkevent EVENT_BEAT_CHAMPION_LANCE
 	iftrue .LanceEntered
 	writetext MahogayMart1FBuenaText
 	waitbutton

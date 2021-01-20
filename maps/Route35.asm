@@ -83,7 +83,7 @@ Route35RematchM:
 	end
 
 TrainerCamperIvan:
-	trainer CAMPER, IVAN, EVENT_BEAT_CAMPER_IVAN, CamperIvanSeenText, CamperIvanBeatenText, 0, .Script
+	trainer HIKER, BENJAMIN, EVENT_BEAT_HIKER_BENJAMIN, CamperIvanSeenText, CamperIvanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

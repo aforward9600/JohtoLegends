@@ -635,62 +635,62 @@ JohtoGrassWildMons:
 	map_id MOUNT_MORTAR_1F_OUTSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 14, RATTATA
-	dbw 13, ZUBAT
-	dbw 14, MACHOP
-	dbw 13, GOLBAT
-	dbw 14, GEODUDE
-	dbw 16, RATICATE
-	dbw 16, RATICATE
-	dbw 16, RATICATE
+	dbw  9, RATTATA
+	dbw  9, ZUBAT
+	dbw  9, MACHOP
+	dbw 10, MARILL
+	dbw 10, GEODUDE
+	dbw 10, SANDSHREW
+	dbw 11, DIGLETT
+	dbw 11, DIGLETT
 	; day
-	dbw 14, RATTATA
-	dbw 13, ZUBAT
-	dbw 14, MACHOP
-	dbw 13, GOLBAT
-	dbw 14, GEODUDE
-	dbw 16, RATICATE
-	dbw 16, RATICATE
-	dbw 16, RATICATE
+	dbw  9, RATTATA
+	dbw  9, ZUBAT
+	dbw  9, MACHOP
+	dbw 10, MARILL
+	dbw 10, GEODUDE
+	dbw 10, SANDSHREW
+	dbw 11, DIGLETT
+	dbw 11, DIGLETT
 	; nite
-	dbw 14, RATTATA
-	dbw 13, ZUBAT
-	dbw 14, MARILL
-	dbw 13, GOLBAT
-	dbw 14, GEODUDE
-	dbw 16, RATICATE
-	dbw 16, RATICATE
-	dbw 16, RATICATE
+	dbw  9, RATTATA
+	dbw  9, ZUBAT
+	dbw  9, MACHOP
+	dbw 10, MARILL
+	dbw 10, GEODUDE
+	dbw 10, SANDSHREW
+	dbw 11, DIGLETT
+	dbw 11, DIGLETT
 
 	map_id MOUNT_MORTAR_1F_INSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, GEODUDE
-	dbw 14, RATTATA
-	dbw 15, MACHOP
-	dbw 14, RATICATE
-	dbw 15, ZUBAT
-	dbw 15, GOLBAT
-	dbw 15, GOLBAT
-	dbw 15, GOLBAT
+	dbw  9, RATTATA
+	dbw  9, ZUBAT
+	dbw  9, MACHOP
+	dbw 10, MARILL
+	dbw 10, GEODUDE
+	dbw 10, SANDSHREW
+	dbw 11, DIGLETT
+	dbw 11, DIGLETT
 	; day
-	dbw 13, GEODUDE
-	dbw 14, RATTATA
-	dbw 15, MACHOP
-	dbw 14, RATICATE
-	dbw 15, ZUBAT
-	dbw 15, GOLBAT
-	dbw 15, GOLBAT
-	dbw 15, GOLBAT
+	dbw  9, RATTATA
+	dbw  9, ZUBAT
+	dbw  9, MACHOP
+	dbw 10, MARILL
+	dbw 10, GEODUDE
+	dbw 10, SANDSHREW
+	dbw 11, DIGLETT
+	dbw 11, DIGLETT
 	; nite
-	dbw 13, GEODUDE
-	dbw 14, RATTATA
-	dbw 15, RATICATE
-	dbw 14, ZUBAT
-	dbw 15, MARILL
-	dbw 15, GOLBAT
-	dbw 15, GOLBAT
-	dbw 15, GOLBAT
+	dbw  9, RATTATA
+	dbw  9, ZUBAT
+	dbw  9, MACHOP
+	dbw 10, MARILL
+	dbw 10, GEODUDE
+	dbw 10, SANDSHREW
+	dbw 11, DIGLETT
+	dbw 11, DIGLETT
 
 	map_id MOUNT_MORTAR_2F_INSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -1655,32 +1655,32 @@ JohtoGrassWildMons:
 	map_id ROUTE_42
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, EKANS
-	dbw 14, SPEAROW
-	dbw 15, RATTATA
-	dbw 16, RATICATE
-	dbw 15, ARBOK
-	dbw 16, FEAROW
-	dbw 16, FEAROW
-	dbw 16, FEAROW
+	dbw  8, PICHU
+	dbw  8, PICHU
+	dbw  8, RATTATA
+	dbw  9, BONSLY
+	dbw  9, ABRA
+	dbw  9, PONYTA
+	dbw 10, SPEAROW
+	dbw 10, SPEAROW
 	; day
-	dbw 13, EKANS
-	dbw 14, SPEAROW
-	dbw 15, RATTATA
-	dbw 16, RATICATE
-	dbw 15, ARBOK
-	dbw 16, FEAROW
-	dbw 16, FEAROW
-	dbw 16, FEAROW
+	dbw  8, PICHU
+	dbw  8, PICHU
+	dbw  8, RATTATA
+	dbw  9, BONSLY
+	dbw  9, ABRA
+	dbw  9, PONYTA
+	dbw 10, SPEAROW
+	dbw 10, SPEAROW
 	; nite
-	dbw 13, RATTATA
-	dbw 14, ZUBAT
-	dbw 15, RATICATE
-	dbw 16, GOLBAT
-	dbw 15, MARILL
-	dbw 16, GOLBAT
-	dbw 16, GOLBAT
-	dbw 16, GOLBAT
+	dbw  8, PICHU
+	dbw  8, PICHU
+	dbw  8, RATTATA
+	dbw  9, BONSLY
+	dbw  9, ABRA
+	dbw  9, HOUNDOUR
+	dbw 10, MURKROW
+	dbw 10, MURKROW
 
 	map_id ROUTE_43
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1715,23 +1715,23 @@ JohtoGrassWildMons:
 	map_id ROUTE_44
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 7, TANGELA
+	dbw 7, LICKITUNG
 	dbw 7, BELLSPROUT
 	dbw 8, ODDISH
 	dbw 8, PIDGEY
 	dbw 8, POLIWAG
 	dbw 7, SENTRET
-	dbw 9, LICKITUNG
-	dbw 9, LICKITUNG
+	dbw 9, CHIKORITA
+	dbw 9, CHIKORITA
 	; day
-	dbw 7, TANGELA
+	dbw 7, LICKITUNG
 	dbw 7, BELLSPROUT
 	dbw 8, ODDISH
 	dbw 8, PIDGEY
 	dbw 8, POLIWAG
 	dbw 7, SENTRET
-	dbw 9, LICKITUNG
-	dbw 9, LICKITUNG
+	dbw 9, CHIKORITA
+	dbw 9, CHIKORITA
 	; nite
 	dbw 7, TANGELA
 	dbw 7, BELLSPROUT
@@ -1747,7 +1747,7 @@ JohtoGrassWildMons:
 	; morn
 	dbw 2, GEODUDE
 	dbw 2, PHANPY
-	dbw 3, BONSLY
+	dbw 3, PONYTA
 	dbw 3, GEODUDE
 	dbw 3, LEDYBA
 	dbw 2, SKARMINI
@@ -1756,7 +1756,7 @@ JohtoGrassWildMons:
 	; day
 	dbw 2, GEODUDE
 	dbw 2, PHANPY
-	dbw 3, BONSLY
+	dbw 3, PONYTA
 	dbw 3, GEODUDE
 	dbw 3, SPEAROW
 	dbw 2, SKARMINI
@@ -1765,7 +1765,7 @@ JohtoGrassWildMons:
 	; nite
 	dbw 2, GEODUDE
 	dbw 2, PHANPY
-	dbw 3, BONSLY
+	dbw 3, PONYTA
 	dbw 3, GEODUDE
 	dbw 3, SPINARAK
 	dbw 2, SKARMINI
@@ -1841,8 +1841,8 @@ JohtoGrassWildMons:
 	dbw 4, NATU
 	dbw 2, TEDDIURSA
 	dbw 4, ZUBAT
-	dbw 4, MUNCHLAX
-	dbw 4, MUNCHLAX
+	dbw 4, CYNDAQUIL
+	dbw 4, CYNDAQUIL
 	; day
 	dbw 3, GEODUDE
 	dbw 2, ZUBAT
@@ -1850,16 +1850,16 @@ JohtoGrassWildMons:
 	dbw 4, NATU
 	dbw 2, TEDDIURSA
 	dbw 4, ZUBAT
-	dbw 4, WYNAUT
-	dbw 4, WYNAUT
+	dbw 4, CYNDAQUIL
+	dbw 4, CYNDAQUIL
 	; nite
 	dbw 3, GEODUDE
 	dbw 2, ZUBAT
 	dbw 2, WOOPER
 	dbw 4, POLIWAG
-	dbw 2, RATTATA
+	dbw 2, WYNAUT
 	dbw 4, ZUBAT
-	dbw 4, WYNAUT
-	dbw 4, WYNAUT
+	dbw 4, CYNDAQUIL
+	dbw 4, CYNDAQUIL
 
 	db -1 ; end

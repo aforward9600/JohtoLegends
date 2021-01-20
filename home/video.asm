@@ -424,13 +424,6 @@ AnimateTileset::
 	and a
 	ret z
 
-; Back out if we're too far into VBlank
-	ldh a, [rLY]
-	cp LY_VBLANK
-	ret c
-	cp LY_VBLANK + 7
-	ret nc
-
 	ldh a, [hROMBank]
 	push af
 	ld a, BANK(_AnimateTileset)

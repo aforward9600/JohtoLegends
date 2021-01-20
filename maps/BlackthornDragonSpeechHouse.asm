@@ -11,9 +11,13 @@ BlackthornDragonSpeechHouseGrannyScript:
 	jumptextfaceplayer BlackthornDragonSpeechHouseGrannyText
 
 BlackthornDragonSpeechHouseDratiniScript:
+	refreshscreen
+	pokepic DRATINI
+	cry DRATINI
+	waitbutton
+	closepokepic
 	opentext
 	writetext BlackthornDragonSpeechHouseDratiniText
-	cry DRATINI
 	waitbutton
 	closetext
 	end

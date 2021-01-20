@@ -168,7 +168,7 @@ CHRIS EQU __enum__
 	const VANCE3
 
 	trainerclass LASS ; 19
-	const CARRIE
+	const JACKIE
 	const ARIELLE
 	const KRISE
 	const CONNIE1
@@ -265,7 +265,7 @@ CHRIS EQU __enum__
 	const DONALD
 	const ZACH
 	const BRENT4
-	const MILLER
+	const ALLAN1
 	const JARVIS
 
 	trainerclass GRUNTM ; 1f
@@ -349,9 +349,9 @@ CHRIS EQU __enum__
 	const KYLE
 	const HENRY
 	const FISHER_SHANE
-	const TULLY1
-	const ANDRE
-	const RAYMOND
+	const FRED
+	const AIDAN
+	const NOAH
 	const LYLE1
 	const EDGAR
 	const JONAH
@@ -458,7 +458,7 @@ CHRIS EQU __enum__
 
 	trainerclass HIKER ; 2c
 	const ANTHONY1
-	const RUSSELL
+	const OZZY
 	const PHILLIP
 	const LEONARD
 	const ANTHONY2
@@ -535,7 +535,7 @@ CHRIS EQU __enum__
 	const ARCHER_4
 
 	trainerclass PSYCHIC_T ; 34
-	const NATHAN
+	const JORDAN
 	const FRANKLIN
 	const HERMAN
 	const FIDEL
@@ -579,7 +579,7 @@ CHRIS EQU __enum__
 	trainerclass CAMPER ; 36
 	const CAMPER_GARRET
 	const TODD1
-	const IVAN
+	const HOWARD
 	const ELLIOT
 	const BARRY
 	const LLOYD

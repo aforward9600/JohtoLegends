@@ -1,31 +1,70 @@
 	object_const_def ; object_event constants
-	const MOUNTMORTAR1FINSIDE_BOULDER
+	const MOUNTMORTAR1FINSIDE_BOULDER_1
 	const MOUNTMORTAR1FINSIDE_POKE_BALL1
 	const MOUNTMORTAR1FINSIDE_POKE_BALL2
 	const MOUNTMORTAR1FINSIDE_POKE_BALL3
-	const MOUNTMORTAR1FINSIDE_POKE_BALL4
+	const MOUNTMORTAR1FINSIDE_HIKER3
 	const MOUNTMORTAR1FINSIDE_POKE_BALL5
 	const MOUNTMORTAR1FINSIDE_SUPER_NERD1
 	const MOUNTMORTAR1FINSIDE_SUPER_NERD2
 	const MOUNTMORTAR1FINSIDE_POKE_BALL6
 	const MOUNTMORTAR1FINSIDE_POKE_BALL7
-	const MOUNTMORTAR1FINSIDE_HIKER
+	const MOUNTMORTAR1FINSIDE_HIKER1
+	const MOUNTMORTAR1FINSIDE_HIKER2
+	const MOUNTMORTAR1FINSIDE_BOULDER_2
 
 MountMortar1FInside_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene1 ; SCENE_MOUNT_MORTAR_1F_INSIDE_HIKER
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .ClearRocks
 
-TrainerPokemaniacMiller:
-	trainer POKEMANIAC, MILLER, EVENT_BEAT_POKEMANIAC_MILLER, PokemaniacMillerSeenText, PokemaniacMillerBeatenText, 0, .Script
+.DummyScene0:
+	end
 
-.Script:
-	endifjustbattled
+.DummyScene1:
+	end
+
+.ClearRocks:
+	checkevent EVENT_BEAT_PRYCE
+	iftrue .MoveRocks
+	changeblock 26, 46, $1d ; rock
+	changeblock 24, 46, $1d ; rock
+	changeblock 10, 46, $1d ; rock
+	changeblock 12, 46, $1d ; rock
+	return
+.MoveRocks:
+	checkevent EVENT_MET_HIKER
+	iftrue .MoveRocks1
+	changeblock 16, 46, $1d ; rock
+	changeblock 10, 46, $1d ; rock
+	changeblock 12, 46, $1d ; rock
+	return
+.MoveRocks1:
+	return
+
+TrainerPokemaniacAllan:
+	faceplayer
 	opentext
-	writetext PokemaniacMillerAfterBattleText
+	writetext PokemaniacAllanSeenText
 	waitbutton
 	closetext
+	winlosstext PokemaniacAllanBeatenText, 0
+	loadtrainer POKEMANIAC, ALLAN1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext PokemaniacAllanAfterBattleText
+	waitbutton
+	closetext
+	applymovement MOUNTMORTAR1FINSIDE_SUPER_NERD1, PokemaniacMovement
+	disappear MOUNTMORTAR1FINSIDE_SUPER_NERD1
+	setevent EVENT_BEAT_POKEMANIAC_ALLAN
+	setscene SCENE_MOUNT_MORTAR_1F_INSIDE_HIKER
 	end
+	
 
 TrainerSupernerdMarkus:
 	trainer SUPER_NERD, MARKUS, EVENT_BEAT_SUPER_NERD_MARKUS, SupernerdMarkusSeenText, SupernerdMarkusBeatenText, 0, .Script
@@ -38,7 +77,72 @@ TrainerSupernerdMarkus:
 	closetext
 	end
 
-MountMortar1FBoulder:
+TrainerHikerOzzy:
+	trainer HIKER, OZZY, EVENT_BEAT_HIKER_OZZY, HikerOzzySeenText, HikerOzzyBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext HikerOzzyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+HikerStopsYou1:
+	moveobject MOUNTMORTAR1FINSIDE_HIKER1, 11, 42
+	appear MOUNTMORTAR1FINSIDE_HIKER1
+	applymovement MOUNTMORTAR1FINSIDE_HIKER1, HikerMovement1
+	turnobject, PLAYER, RIGHT
+	opentext
+	writetext FinallyDoneText
+	waitbutton
+	closetext
+	applymovement MOUNTMORTAR1FINSIDE_HIKER1, HikerMovement2
+	disappear MOUNTMORTAR1FINSIDE_HIKER1
+	changeblock 16, 46, $1d ; rock
+	changeblock 10, 46, $02 ; exit
+	changeblock 12, 46, $02 ; rock
+	setevent EVENT_MOUNT_MORTAR_HIKER_1
+	setevent EVENT_MET_HIKER
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female1
+	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE_1
+	setscene SCENE_DEFAULT
+	end
+
+.Female1:
+	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE_2
+	setscene SCENE_DEFAULT
+	end
+
+HikerStopsYou2:
+	moveobject MOUNTMORTAR1FINSIDE_HIKER1, 11, 42
+	appear MOUNTMORTAR1FINSIDE_HIKER1
+	applymovement MOUNTMORTAR1FINSIDE_HIKER1, HikerMovement3
+	turnobject, PLAYER, RIGHT
+	opentext
+	writetext FinallyDoneText
+	waitbutton
+	closetext
+	applymovement MOUNTMORTAR1FINSIDE_HIKER1, HikerMovement4
+	disappear MOUNTMORTAR1FINSIDE_HIKER1
+	changeblock 16, 46, $02 ; rock
+	changeblock 10, 46, $24 ; exit
+	changeblock 12, 46, $02 ; rock
+	setevent EVENT_MOUNT_MORTAR_HIKER_1
+	setevent EVENT_MET_HIKER
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female2
+	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE_1
+	setscene SCENE_DEFAULT
+	end
+
+.Female2:
+	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE_2
+	setscene SCENE_DEFAULT
+	end
+
+MountMortar1FInsideBoulder:
 	jumpstd strengthboulder
 
 MountMortar1FInsideEscapeRope:
@@ -49,9 +153,6 @@ MountMortar1FInsideMaxRevive:
 
 MountMortar1FInsideHyperPotion:
 	itemball HYPER_POTION
-
-MountMortar1FInsideMaxPotion:
-	itemball MAX_POTION
 
 MountMortar1FInsideNugget:
 	itemball NUGGET
@@ -66,33 +167,83 @@ MountMortar1FInsideHiddenMaxRepel:
 	hiddenitem MAX_REPEL, EVENT_MOUNT_MORTAR_1F_INSIDE_HIDDEN_MAX_REPEL
 
 MountMortar1FInsideHikerScript:
-	jumptextfaceplayer MountMortar1FInsideHikerText
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_PRYCE
+	iftrue .NextRocks
+	writetext MountMortar1FInsideHikerText1
+	waitbutton
+	closetext
+	end
 
-PokemaniacMillerSeenText:
-	text "I'm not losing"
-	line "this time!"
+.NextRocks:
+	writetext MountMortar1FInsideHikerText2
+	waitbutton
+	closetext
+	end
+
+PokemaniacMovement:
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step_end
+
+HikerMovement1:
+	step LEFT
+	step LEFT
+	step LEFT
+	step UP
+	step UP
+	step UP
+	step LEFT
+	step_end
+
+HikerMovement2:
+	step RIGHT
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step DOWN
+	step_end
+
+HikerMovement3:
+	step LEFT
+	step LEFT
+	step LEFT
+	step UP
+	step UP
+	step LEFT
+	step_end
+
+HikerMovement4:
+	step RIGHT
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+PokemaniacAllanSeenText:
+	text "I'm looking for a"
+	line "Marill, they're"
+	cont "quite the rare"
+	cont "#mon."
 	done
 
-PokemaniacMillerBeatenText:
-	text "I lost to some"
-	line "kid…?"
+PokemaniacAllanBeatenText:
+	text "If I had a Marill,"
+	line "I woulda won!"
 	done
 
-PokemaniacMillerAfterBattleText:
-	text "A while back, this"
-	line "karate dude wanted"
-
-	para "to battle. He was"
-	line "ridiculously good."
-
-	para "He just thrashed"
-	line "us silly."
-
-	para "He went in deeper"
-	line "saying it was for"
-
-	para "his training. I"
-	line "wonder how he is?"
+PokemaniacAllanAfterBattleText:
+	text "Guess I'll go look"
+	line "somewhere else."
 	done
 
 SupernerdMarkusSeenText:
@@ -118,7 +269,31 @@ SupernerdMarkusAfterBattleText:
 	line "WATERFALL?"
 	done
 
-MountMortar1FInsideHikerText:
+HikerOzzySeenText:
+	text "Dark caves like"
+	line "this make me feel"
+	cont "at home!"
+	done
+
+HikerOzzyBeatenText:
+	text "No place like"
+	line "home!"
+	done
+
+HikerOzzyAfterBattleText:
+	text "My home isn't this"
+	line "damp at the least."
+	done
+
+MountMortar1FInsideHikerText1:
+	text "I'm clearing out"
+	line "these rocks."
+
+	para "Best to come back"
+	line "later."
+	done
+
+MountMortar1FInsideHikerText2:
 	text "These earthquakes"
 	line "are getting"
 	cont "ridiculous."
@@ -154,31 +329,62 @@ MountMortar1FInsideHikerText:
 	cont "to you again."
 	done
 
+FinallyDoneText:
+	text "Whew!"
+
+	para "I finally cleared"
+	line "out those rocks!"
+
+	para "Looks like I got"
+	line "done a little too"
+	cont "late, though."
+
+	para "Sorry I made you"
+	line "take the long way"
+	cont "around, but think"
+
+	para "of it this way."
+
+	para "You got some more"
+	line "experience!"
+
+	para "Gahahahaha!"
+
+	para "See you around,"
+	line "kid!"
+	done
+
 MountMortar1FInside_MapEvents:
 	db 0, 0 ; filler
 
-	db 6 ; warp events
+	db 8 ; warp events
 	warp_event 11, 47, MOUNT_MORTAR_1F_OUTSIDE, 5
 	warp_event 29, 47, MOUNT_MORTAR_1F_OUTSIDE, 6
 	warp_event  5, 39, MOUNT_MORTAR_1F_OUTSIDE, 8
 	warp_event 33, 41, MOUNT_MORTAR_1F_OUTSIDE, 9
 	warp_event  3, 19, MOUNT_MORTAR_B1F, 1
 	warp_event  9,  9, MOUNT_MORTAR_2F_INSIDE, 2
+	warp_event 27, 41, MOUNT_MORTAR_1F_OUTSIDE, 10
+	warp_event  9, 23, MOUNT_MORTAR_1F_OUTSIDE, 11
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event 6, 39, SCENE_MOUNT_MORTAR_1F_INSIDE_HIKER, HikerStopsYou1
+	coord_event 6, 40, SCENE_MOUNT_MORTAR_1F_INSIDE_HIKER, HikerStopsYou2
 
 	db 1 ; bg events
 	bg_event 30, 11, BGEVENT_ITEM, MountMortar1FInsideHiddenMaxRepel
 
-	db 11 ; object events
-	object_event 21, 43, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortar1FBoulder, -1
+	db 13 ; object events
+	object_event  9, 12, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideBoulder, -1
 	object_event 35, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideEscapeRope, EVENT_MOUNT_MORTAR_1F_INSIDE_ESCAPE_ROPE
 	object_event 16, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideMaxRevive, EVENT_MOUNT_MORTAR_1F_INSIDE_MAX_REVIVE
 	object_event 10, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideHyperPotion, EVENT_MOUNT_MORTAR_1F_INSIDE_HYPER_POTION
-	object_event 22, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideMaxPotion, EVENT_MOUNT_MORTAR_1F_INSIDE_MAX_POTION
+	object_event 25, 21, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerHikerOzzy, -1
 	object_event 35, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideNugget, EVENT_MOUNT_MORTAR_1F_INSIDE_NUGGET
-	object_event 33, 43, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacMiller, -1
+	object_event  7, 22, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerPokemaniacAllan, EVENT_BEAT_POKEMANIAC_ALLAN
 	object_event 24, 28, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdMarkus, -1
 	object_event  8, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideIron, EVENT_MOUNT_MORTAR_1F_INSIDE_IRON
 	object_event 17, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideUltraBall, EVENT_MOUNT_MORTAR_1F_INSIDE_ULTRA_BALL
-	object_event 18, 46, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideHikerScript, -1
+	object_event 18, 46, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideHikerScript, EVENT_MOUNT_MORTAR_HIKER_1
+	object_event 28, 46, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideHikerScript, EVENT_MOUNT_MORTAR_HIKER_2
+	object_event  7,  2, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideBoulder, -1

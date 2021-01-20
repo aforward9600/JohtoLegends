@@ -182,3 +182,7 @@ SCENE_FINISHED EQU 1
 ;wLakeOfRageSceneID
 	const_def 1
 	const SCENE_LAKE_OF_RAGE_RIVAL
+
+;wMountMortar1FInsideSceneID
+	const_def 1
+	const SCENE_MOUNT_MORTAR_1F_INSIDE_HIKER

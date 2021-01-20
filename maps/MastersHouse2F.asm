@@ -214,9 +214,13 @@ Rival4:
 	end
 
 MastersHouseDratiniScript:
+	refreshscreen
+	pokepic DRATINI
+	cry DRATINI
+	waitbutton
+	closepokepic
 	opentext
 	writetext MastersHouseDratiniText
-	cry DRATINI
 	waitbutton
 	closetext
 	end

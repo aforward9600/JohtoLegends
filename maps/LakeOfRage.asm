@@ -2,12 +2,13 @@
 	const LAKEOFRAGE_MIYAMOTO
 	const LAKEOFRAGE_KRIS ; if Male
 	const LAKEOFRAGE_SUPER_NERD1
-	const LAKEOFRAGE_COOLTRAINER_F1
+	const LAKEOFRAGE_POKE_FAN_M_2
 	const LAKEOFRAGE_FISHER1
 	const LAKEOFRAGE_FISHER2
 	const LAKEOFRAGE_POKE_FAN_M
-	const LAKEOFRAGE_COOLTRAINER_F2
+	const LAKEOFRAGE_LASS
 	const LAKEOFRAGE_WESLEY
+	const LAKEOFRAGE_CHRIS ; if Female
 	const LAKEOFRAGE_POKE_BALL1
 	const LAKEOFRAGE_POKE_BALL2
 
@@ -46,55 +47,46 @@ LakeOfRage_MapScripts:
 	appear LAKEOFRAGE_WESLEY
 	return
 
-LakeOfRageLanceScript:
-	checkevent EVENT_REFUSED_TO_HELP_LANCE_AT_LAKE_OF_RAGE
-	iftrue .AskAgainForHelp
+LakeOfRageMiyamotoScript:
 	opentext
-	writetext UnknownText_0x70157
-	buttonsound
-	faceplayer
-	writetext UnknownText_0x701b4
-	yesorno
-	iffalse .RefusedToHelp
-.AgreedToHelp:
-	writetext UnknownText_0x702c6
+	writetext OnlyMagikarpText
 	waitbutton
 	closetext
-	playsound SFX_WARP_TO
-	applymovement LAKEOFRAGE_MIYAMOTO, MovementData_0x70155
+	faceplayer
+	opentext
+	writetext HelloText
+	closetext
+	winlosstext MiyamotoLossText, 0
+	loadtrainer PASSERBY, MIYAMOTO
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext WillBeKeepingAnEyeText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
 	disappear LAKEOFRAGE_MIYAMOTO
-	clearevent EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE
-	setevent EVENT_DECIDED_TO_HELP_LANCE
-	setmapscene MAHOGANY_MART_1F, SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS
+	pause 15
+	special FadeInQuickly
+	setevent EVENT_LAKE_OF_RAGE_MIYAMOTO
+	clearevent EVENT_MOUNT_MORTAR_HIKER_1
+	setevent EVENT_MOUNT_MORTAR_HIKER_2
 	end
 
-.RefusedToHelp:
-	writetext UnknownText_0x70371
-	waitbutton
-	closetext
-	setevent EVENT_REFUSED_TO_HELP_LANCE_AT_LAKE_OF_RAGE
-	end
-
-.AskAgainForHelp:
+LakeOfRageRivalScript:
 	faceplayer
 	opentext
-	writetext UnknownText_0x703a5
-	yesorno
-	iffalse .RefusedToHelp
-	sjump .AgreedToHelp
-
-LakeOfRageGrampsScript:
-	faceplayer
-	opentext
-	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
-	iftrue .ClearedRocketHideout
-	writetext LakeOfRageGrampsText
+	checkevent EVENT_LAKE_OF_RAGE_MIYAMOTO
+	iftrue .BeatMiyamoto
+	writetext LakeOfRageRivalScaryText
 	waitbutton
 	closetext
+	turnobject LAKEOFRAGE_KRIS, UP
 	end
 
-.ClearedRocketHideout:
-	writetext LakeOfRageGrampsText_ClearedRocketHideout
+.BeatMiyamoto:
+	writetext LakeOfRageRivalThatWasSomethingText
 	waitbutton
 	closetext
 	end
@@ -123,24 +115,24 @@ MagikarpHouseSignScript:
 	closetext
 	end
 
-TrainerFisherAndre:
-	trainer FISHER, ANDRE, EVENT_BEAT_FISHER_ANDRE, FisherAndreSeenText, FisherAndreBeatenText, 0, .Script
+TrainerFisherAidan:
+	trainer FISHER, AIDAN, EVENT_BEAT_FISHER_AIDAN, FisherAidanSeenText, FisherAidanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherAndreAfterBattleText
+	writetext FisherAidanAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerFisherRaymond:
-	trainer FISHER, RAYMOND, EVENT_BEAT_FISHER_RAYMOND, FisherRaymondSeenText, FisherRaymondBeatenText, 0, .Script
+TrainerFisherNoah:
+	trainer FISHER, NOAH, EVENT_BEAT_FISHER_NOAH, FisherNoahSeenText, FisherNoahBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherRaymondAfterBattleText
+	writetext FisherNoahAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -156,13 +148,13 @@ TrainerCooltrainermAaron:
 	closetext
 	end
 
-TrainerCooltrainerfLois:
-	trainer COOLTRAINERF, LOIS, EVENT_BEAT_COOLTRAINERF_LOIS, CooltrainerfLoisSeenText, CooltrainerfLoisBeatenText, 0, .Script
+TrainerLassJackie:
+	trainer LASS, JACKIE, EVENT_BEAT_LASS_JACKIE, LassJackieSeenText, LassJackieBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerfLoisAfterBattleText
+	writetext LassJackieAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -207,7 +199,7 @@ LakeOfRageElixer:
 	itemball ELIXER
 
 LakeOfRageTMDetect:
-	itemball TM_SWORDS_DANCE
+	itemball TM_ROAR
 
 LakeOfRageHiddenFullRestore:
 	hiddenitem FULL_RESTORE, EVENT_LAKE_OF_RAGE_HIDDEN_FULL_RESTORE
@@ -222,155 +214,153 @@ MovementData_0x70155:
 	teleport_from
 	step_end
 
-UnknownText_0x70157:
-	text "This lake is full"
-	line "of GYARADOS but"
-	cont "nothing else…"
+OnlyMagikarpText:
+	text "Hm…"
 
-	para "So the MAGIKARP"
-	line "are being forced"
-	cont "to evolve…"
+	para "This lake is full"
+	line "of nothing but"
+	cont "Magikarp. What a"
+
+	para "waste."
 	done
 
-UnknownText_0x701b4:
-	text "Did you come here"
-	line "because of the"
-	cont "rumors?"
+HelloText:
+	text "Oh, sorry. Didn't"
+	line "see you there."
 
-	para "You're <PLAYER>?"
-	line "I'm LANCE, a"
-	cont "trainer like you."
+	para "Hello. My name is"
+	line "Miyamoto. I am a"
+	cont "freelance photo-"
+	cont "grapher."
 
-	para "I heard some ru-"
-	line "mors, so I came to"
-	cont "investigate…"
+	para "I heard some rum"
+	line "mors about a rare"
+	cont "#mon here, but"
 
-	para "I saw the way you"
-	line "battled earlier,"
-	cont "<PLAY_G>."
+	para "I've only found"
+	line "Magikarp. Hardly"
+	cont "rare."
 
-	para "I can tell that"
-	line "you're a trainer"
+	para "And you are?"
 
-	para "with considerable"
-	line "skill."
+	para "..........Ah,"
+	line "<PLAYER>, is it?"
 
-	para "If you don't mind,"
-	line "could you help me"
-	cont "investigate?"
+	para "I see that you"
+	line "already have a"
+	cont "Badge."
+
+	para "Care to see how"
+	line "good you really"
+	cont "are?"
 	done
 
-UnknownText_0x702c6:
-	text "LANCE: Excellent!"
-
-	para "It seems that the"
-	line "LAKE's MAGIKARP"
-
-	para "are being forced"
-	line "to evolve."
-
-	para "A mysterious radio"
-	line "broadcast coming"
-
-	para "from MAHOGANY is"
-	line "the cause."
-
-	para "I'll be waiting"
-	line "for you, <PLAY_G>."
+MiyamotoLossText:
+	text "Well, aren't you"
+	line "quite the little"
+	cont "trainer."
 	done
 
-UnknownText_0x70371:
-	text "Oh… Well, if you"
-	line "change your mind,"
-	cont "please help me."
+WillBeKeepingAnEyeText:
+	text "I'll be continuing"
+	line "my journey to snap"
+	cont "a rare picture,"
+
+	para "and I'm sure that"
+	line "we'll run into"
+	cont "each other again."
+
+	para "I'll be keeping an"
+	line "eye on your"
+	cont "progress."
+
+	para "See ya."
 	done
 
-UnknownText_0x703a5:
-	text "LANCE: Hm? Are you"
-	line "going to help me?"
+LakeOfRageRivalScaryText:
+	text "............"
+	line "That woman at the"
+	cont "lake...."
+
+	para "She's quite scary."
+	line "She looks"
+	cont "familiar, but I"
+
+	para "can't remember if"
+	line "I've ever seen her"
+	cont "before..."
 	done
 
-UnknownText_0x703cb:
-	text "GYARADOS: Gyashaa!"
-	done
+LakeOfRageRivalThatWasSomethingText:
+	text ".....Well, that"
+	line "was something."
 
-UnknownText_0x703df:
-	text "<PLAYER> obtained a"
-	line "RED SCALE."
-	done
-
-LakeOfRageGrampsText:
-	text "The GYARADOS are"
-	line "angry!"
-
-	para "It's a bad omen!"
-	done
-
-LakeOfRageGrampsText_ClearedRocketHideout:
-	text "Hahah! The MAGI-"
-	line "KARP are biting!"
+	para "I'm going to stick"
+	line "around for a while"
+	cont "and look at the"
+	cont "scenes."
 	done
 
 LakeOfRageSuperNerdText:
 	text "I heard this lake"
 	line "was made by ram-"
 	cont "paging GYARADOS."
-
-	para "I wonder if there"
-	line "is any connection"
-
-	para "to their mass out-"
-	line "break now?"
 	done
 
 LakeOfRageCooltrainerFText:
-	text "Did my eyes de-"
-	line "ceive me? I saw a"
+	text "I've always wanted"
+	line "a Gyarados, but I"
+	cont "don't have the"
 
-	para "red GYARADOS in"
-	line "the LAKE…"
+	para "time to raise a"
+	line "Magikarp. Maybe I"
+	cont "can fish one up"
 
-	para "But I thought"
-	line "GYARADOS were"
-	cont "usually blue?"
+	para "with a better rod."
 	done
 
-FisherAndreSeenText:
-	text "Let me battle with"
-	line "the #MON I just"
-	cont "caught!"
+FisherAidanSeenText:
+	text "Fishing and"
+	line "battling both"
+	cont "require skill and"
+
+	para "patience."
 	done
 
-FisherAndreBeatenText:
-	text "I might be an ex-"
-	line "pert angler, but"
+FisherAidanBeatenText:
+	text "Apparently I don't"
+	line "have the patience"
 
-	para "I stink as a #-"
-	line "MON trainer…"
+	para "for either…"
 	done
 
-FisherAndreAfterBattleText:
-	text "I won't lose as an"
-	line "angler! I catch"
-	cont "#MON all day."
+FisherAidanAfterBattleText:
+	text "You're a good"
+	line "battler, no doubt."
+
+	para "I don't think you"
+	line "would compare to"
+	cont "me in fishing."
 	done
 
-FisherRaymondSeenText:
-	text "No matter what I"
-	line "do, all I catch"
+FisherNoahSeenText:
+	text "Despite it's name,"
+	line "it's real calm"
+	cont "here."
 
-	para "are the same #-"
-	line "MON…"
+	para "Perfect conditions"
+	line "for fishing!"
 	done
 
-FisherRaymondBeatenText:
-	text "My line's all"
-	line "tangled up…"
+FisherNoahBeatenText:
+	text "Not perfect"
+	line "conditions for"
+	cont "battling, though."
 	done
 
-FisherRaymondAfterBattleText:
-	text "Why can't I catch"
-	line "any good #MON?"
+FisherNoahAfterBattleText:
+	text "Fishing is always"
+	line "a relaxing time."
 	done
 
 CooltrainermAaronSeenText:
@@ -397,27 +387,21 @@ CooltrainermAaronAfterBattleText:
 	line "constant battling."
 	done
 
-CooltrainerfLoisSeenText:
-	text "What happened to"
-	line "the red GYARADOS?"
-
-	para "It's gone?"
-
-	para "Oh, darn. I came"
-	line "here for nothing?"
-
-	para "I know--let's"
-	line "battle!"
+LassJackieSeenText:
+	text "This lake is so"
+	line "pretty, don't you"
+	cont "agree?"
 	done
 
-CooltrainerfLoisBeatenText:
-	text "Good going!"
+LassJackieBeatenText:
+	text "Well, I think it"
+	line "is."
 	done
 
-CooltrainerfLoisAfterBattleText:
-	text "Come to think of"
-	line "it, I've seen a"
-	cont "pink BUTTERFREE."
+LassJackieAfterBattleText:
+	text "I could stay here"
+	line "forever looking at"
+	cont "this lake."
 	done
 
 MeetWesleyText:
@@ -480,17 +464,18 @@ LakeOfRage_MapEvents:
 	bg_event 25, 31, BGEVENT_READ, MagikarpHouseSignScript
 	bg_event 11, 28, BGEVENT_ITEM, LakeOfRageHiddenFullRestore
 	bg_event  4,  4, BGEVENT_ITEM, LakeOfRageHiddenRareCandy
-	bg_event 35,  5, BGEVENT_ITEM, LakeOfRageHiddenMaxPotion
+	bg_event 31,  2, BGEVENT_ITEM, LakeOfRageHiddenMaxPotion
 
-	db 11 ; object events
-	object_event 21, 28, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageLanceScript, EVENT_LAKE_OF_RAGE_MIYAMOTO
-	object_event 20, 26, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageGrampsScript, EVENT_RIVAL_AT_LAKE_OF_RAGE
+	db 12 ; object events
+	object_event 20, 27, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageMiyamotoScript, EVENT_LAKE_OF_RAGE_MIYAMOTO
+	object_event 20, 29, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageRivalScript, EVENT_RIVAL_AT_LAKE_OF_RAGE_1
 	object_event 36, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageSuperNerdScript, -1
-	object_event 25, 29, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageCooltrainerFScript, -1
-	object_event 30, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherAndre, EVENT_LAKE_OF_RAGE_CIVILIANS
-	object_event 24, 26, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherRaymond, EVENT_LAKE_OF_RAGE_CIVILIANS
+	object_event 25, 27, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageCooltrainerFScript, -1
+	object_event 32, 20, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherAidan, -1
+	object_event 28, 24, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherNoah, -1
 	object_event  4, 15, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainermAaron, EVENT_LAKE_OF_RAGE_CIVILIANS
-	object_event 36,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerCooltrainerfLois, EVENT_LAKE_OF_RAGE_CIVILIANS
+	object_event 37,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassJackie, -1
 	object_event  4,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WesleyScript, EVENT_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY
+	object_event 20, 29, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageRivalScript, EVENT_RIVAL_AT_LAKE_OF_RAGE_2
 	object_event  7, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageElixer, EVENT_LAKE_OF_RAGE_ELIXER
-	object_event 35,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageTMDetect, EVENT_LAKE_OF_RAGE_TM_DETECT
+	object_event 35,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageTMDetect, EVENT_LAKE_OF_RAGE_TM_DETECT

@@ -2672,8 +2672,9 @@ wBlackthornCitySceneID::                          db
 wIcePath1FSceneID::                               db
 wMahoganyGymSceneID::                             db
 wLakeOfRageSceneID::                              db
+wMountMortar1FInsideSceneID::                     db
 
-	ds 43
+	ds 42
 
 ; fight counts
 wJackFightCount::    db ; d9f2

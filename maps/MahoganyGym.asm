@@ -138,6 +138,8 @@ GymGuyStopsYou1Script:
 	applymovement MAHOGANYGYM_GYM_GUY, GoesBackMovement1
 	turnobject MAHOGANYGYM_GYM_GUY, DOWN
 	setscene SCENE_DEFAULT
+	clearevent EVENT_RIVAL_AT_LAKE_OF_RAGE_1
+	clearevent EVENT_LAKE_OF_RAGE_MIYAMOTO
 	end
 
 .Female1:
@@ -148,6 +150,8 @@ GymGuyStopsYou1Script:
 	applymovement MAHOGANYGYM_GYM_GUY, GoesBackMovement1
 	turnobject MAHOGANYGYM_GYM_GUY, DOWN
 	setscene SCENE_DEFAULT
+	clearevent EVENT_RIVAL_AT_LAKE_OF_RAGE_2
+	clearevent EVENT_LAKE_OF_RAGE_MIYAMOTO
 	end
 
 GymGuyStopsYou2Script:
@@ -162,6 +166,8 @@ GymGuyStopsYou2Script:
 	applymovement MAHOGANYGYM_GYM_GUY, GoesBackMovement2
 	turnobject MAHOGANYGYM_GYM_GUY, DOWN
 	setscene SCENE_DEFAULT
+	clearevent EVENT_RIVAL_AT_LAKE_OF_RAGE_1
+	clearevent EVENT_LAKE_OF_RAGE_MIYAMOTO
 	end
 
 .Female2:
@@ -173,12 +179,14 @@ GymGuyStopsYou2Script:
 	applymovement MAHOGANYGYM_GYM_GUY, GoesBackMovement2
 	turnobject MAHOGANYGYM_GYM_GUY, DOWN
 	setscene SCENE_DEFAULT
-	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE
+	clearevent EVENT_RIVAL_AT_LAKE_OF_RAGE_2
+	clearevent EVENT_LAKE_OF_RAGE_MIYAMOTO
 	end
 
 MahoganyGymStatue:
 	checkflag ENGINE_GLACIERBADGE
 	iftrue .Beaten
+	gettrainername STRING_BUFFER_4, PRYCE, PRYCE1
 	jumpstd gymstatue1
 .Beaten:
 	gettrainername STRING_BUFFER_4, PRYCE, PRYCE1

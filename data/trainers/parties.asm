@@ -70,15 +70,15 @@ EnokiGroup:
 PryceGroup:
 	next_list_item ; PRYCE (1)
 	db "Pryce@", TRAINERTYPE_MOVES
-	db 27
+	db 10
+	dw SMOOCHUM
+	dw SWEET_KISS, POUND, ICY_WIND, CONFUSION
+	db 11
+	dw SWINUB
+	dw MUD_SLAP, POWDER_SNOW, TACKLE, HAIL
+	db 12
 	dw SNEASEL
-	dw ICE_SHARD, FAINT_ATTACK, HONE_CLAWS, AVALANCHE
-	db 29
-	dw DEWGONG
-	dw HEADBUTT, ICY_WIND, AURORA_BEAM, REST
-	db 31
-	dw MAMOSWINE
-	dw ICICLE_CRASH, ROCK_SLIDE, REST, EARTHQUAKE
+	dw SCRATCH, PURSUIT, HONE_CLAWS, ICE_SHARD
 	db -1 ; end
 
 	end_list_items
@@ -1126,8 +1126,8 @@ BirdKeeperGroup:
 
 LassGroup:
 	next_list_item ; LASS (1)
-	db "CARRIE@", TRAINERTYPE_MOVES
-	db 18
+	db "Jackie@", TRAINERTYPE_MOVES
+	db 13
 	dw SNUBBULL
 	dw SCARY_FACE, CHARM, BITE, LICK
 	db -1 ; end
@@ -1901,11 +1901,11 @@ PokemaniacGroup:
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (15)
-	db "MILLER@", TRAINERTYPE_NORMAL
-	db 17
-	dw NIDOKING
-	db 17
-	dw NIDOQUEEN
+	db "Allan@", TRAINERTYPE_NORMAL
+	db 12
+	dw NIDORAN_M
+	db 12
+	dw SUNKERN
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (16)
@@ -2507,27 +2507,27 @@ FisherGroup:
 	db -1 ; end
 
 	next_list_item ; FISHER (7)
-	db "TULLY@", TRAINERTYPE_NORMAL
-	db 18
-	dw QWILFISH
+	db "Fred@", TRAINERTYPE_NORMAL
+	db 12
+	dw GOLDEEN
 	db -1 ; end
 
 	next_list_item ; FISHER (8)
-	db "ANDRE@", TRAINERTYPE_NORMAL
-	db 27
-	dw GYARADOS
+	db "Aidan@", TRAINERTYPE_NORMAL
+	db 13
+	dw TENTACOOL
 	db -1 ; end
 
 	next_list_item ; FISHER (9)
-	db "RAYMOND@", TRAINERTYPE_NORMAL
-	db 22
+	db "Noah@", TRAINERTYPE_NORMAL
+	db 11
 	dw MAGIKARP
-	db 22
-	dw MAGIKARP
-	db 22
-	dw MAGIKARP
-	db 22
-	dw MAGIKARP
+	db 11
+	dw TENTACOOL
+	db 11
+	dw GOLDEEN
+	db 11
+	dw WOOPER
 	db -1 ; end
 
 	next_list_item ; FISHER (10)
@@ -3435,13 +3435,13 @@ HikerGroup:
 	db -1 ; end
 
 	next_list_item ; HIKER (2)
-	db "RUSSELL@", TRAINERTYPE_NORMAL
-	db 4
+	db "Ozzy@", TRAINERTYPE_NORMAL
+	db 11
 	dw GEODUDE
-	db 6
-	dw GEODUDE
-	db 8
-	dw GEODUDE
+	db 11
+	dw MACHOP
+	db 12
+	dw BONSLY
 	db -1 ; end
 
 	next_list_item ; HIKER (3)
@@ -4056,9 +4056,13 @@ ArcherGroup:
 
 PsychicGroup:
 	next_list_item ; PSYCHIC_T (1)
-	db "NATHAN@", TRAINERTYPE_NORMAL
-	db 26
-	dw GIRAFARIG
+	db "Jordan@", TRAINERTYPE_NORMAL
+	db 11
+	dw NATU
+	db 11
+	dw ABRA
+	db 11
+	dw SLOWPOKE
 	db -1 ; end
 
 	next_list_item ; PSYCHIC_T (2)
@@ -4387,23 +4391,27 @@ CamperGroup:
 	next_list_item ; CAMPER (1)
 	db "Garret@", TRAINERTYPE_NORMAL
 	db 11
-	dw PSYDUCK
+	dw DIGLETT
 	db -1 ; end
 
 	next_list_item ; CAMPER (2)
 	db "TODD@", TRAINERTYPE_NORMAL
-	db 14
+	db 11
+	dw ODDISH
+	db 11
+	dw SLUGMA
+	db 11
 	dw PSYDUCK
 	db -1 ; end
 
-	next_list_item ; CAMPER (3)
-	db "IVAN@", TRAINERTYPE_NORMAL
-	db 10
-	dw DIGLETT
-	db 10
-	dw ZUBAT
-	db 14
-	dw DIGLETT
+	next_list_item ; CAMPER (2)
+	db "Howard@", TRAINERTYPE_NORMAL
+	db 11
+	dw ODDISH
+	db 11
+	dw SLUGMA
+	db 11
+	dw PSYDUCK
 	db -1 ; end
 
 	next_list_item ; CAMPER (4)
@@ -5418,11 +5426,11 @@ LanceGroup:
 PasserbyGroup:
 	next_list_item ; MIYAMOTO
 	db "Miyamoto@", TRAINERTYPE_NORMAL
-	db 12
+	db 11
 	dw HOUNDOUR
-	db 12
+	db 11
 	dw ZUBAT
-	db 13
+	db 12
 	dw MEOWTH
 	db -1 ; end
 

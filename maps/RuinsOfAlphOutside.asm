@@ -100,7 +100,7 @@ RuinsOfAlphOutsideYoungster2Script:
 	end
 
 TrainerPsychicNathan:
-	trainer PSYCHIC_T, NATHAN, EVENT_BEAT_PSYCHIC_NATHAN, PsychicNathanSeenText, PsychicNathanBeatenText, 0, .Script
+	trainer PSYCHIC_T, JORDAN, EVENT_BEAT_PSYCHIC_JORDAN, PsychicNathanSeenText, PsychicNathanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

@@ -80,6 +80,10 @@ RestOfRival:
 	playsound SFX_EXIT_BUILDING
 	disappear ICEPATH1F_KRIS
 	setevent EVENT_ICE_PATH_1F_RIVAL1
+	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE_1
+	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE_2
+	setevent EVENT_LAKE_OF_RAGE_MIYAMOTO
+	setevent EVENT_MOUNT_MORTAR_HIKER_1
 	setscene SCENE_DEFAULT
 	waitsfx
 	playmapmusic
@@ -115,6 +119,10 @@ RestOfRival:
 	playsound SFX_EXIT_BUILDING
 	disappear ICEPATH1F_CHRIS
 	setevent EVENT_ICE_PATH_1F_RIVAL2
+	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE_1
+	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE_2
+	setevent EVENT_LAKE_OF_RAGE_MIYAMOTO
+	setevent EVENT_MOUNT_MORTAR_HIKER_1
 	setscene SCENE_DEFAULT
 	waitsfx
 	playmapmusic

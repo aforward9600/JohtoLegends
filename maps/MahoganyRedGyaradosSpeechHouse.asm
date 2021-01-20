@@ -29,9 +29,13 @@ MahoganyRedGyaradosSpeechHouseTeacherScript:
 	end
 
 MahoganyRedGyaradosSpeechHouseHeracrossScript:
+	refreshscreen
+	pokepic HERACROSS
+	cry HERACROSS
+	waitbutton
+	closepokepic
 	opentext
 	writetext MahoganyRedGyaradosSpeechHouseHeracrossText
-	cry HERACROSS
 	waitbutton
 	closetext
 	end
@@ -107,3 +111,4 @@ MahoganyRedGyaradosSpeechHouse_MapEvents:
 	object_event  2,  3, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyRedGyaradosSpeechHouseBlackBeltScript, -1
 	object_event  6,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyRedGyaradosSpeechHouseTeacherScript, -1
 	object_event  1,  3, SPRITE_PARAS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyRedGyaradosSpeechHouseHeracrossScript, -1
+	

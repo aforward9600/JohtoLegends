@@ -1,5 +1,5 @@
 TullyPhoneCalleeScript:
-	gettrainername STRING_BUFFER_3, FISHER, TULLY1
+	gettrainername STRING_BUFFER_3, FISHER, FRED
 	checkflag ENGINE_TULLY
 	iftrue .WantsBattle
 	farscall PhoneScript_AnswerPhone_Male
@@ -24,7 +24,7 @@ TullyPhoneCalleeScript:
 	farsjump UnknownScript_0xa0add
 
 TullyPhoneCallerScript:
-	gettrainername STRING_BUFFER_3, FISHER, TULLY1
+	gettrainername STRING_BUFFER_3, FISHER, FRED
 	farscall PhoneScript_GreetPhone_Male
 	checkflag ENGINE_TULLY
 	iftrue .Generic

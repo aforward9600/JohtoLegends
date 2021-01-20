@@ -1,7 +1,6 @@
 	object_const_def ; object_event constants
 	const UNIONCAVE1F_HIKER1
 	const UNIONCAVE1F_SUPER_NERD
-	const UNIONCAVE1F_HIKER2
 	const UNIONCAVE1F_FISHER1
 	const UNIONCAVE1F_FISHER2
 	const UNIONCAVE1F_POKE_BALL1
@@ -21,17 +20,6 @@ TrainerPokemaniacLarry:
 	endifjustbattled
 	opentext
 	writetext PokemaniacLarryAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerHikerRussell:
-	trainer HIKER, RUSSELL, EVENT_BEAT_HIKER_RUSSELL, HikerRussellSeenText, HikerRussellBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext HikerRussellAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -211,10 +199,9 @@ UnionCave1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 9 ; object events
+	db 8 ; object events
 	object_event  3,  6, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerHikerDaniel, -1
 	object_event  4, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacLarry, -1
-	object_event 11,  8, SPRITE_HIKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 1, TrainerHikerRussell, -1
 	object_event 15, 27, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherRay, -1
 	object_event 14, 19, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherBill, -1
 	object_event 17, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FGreatBall, EVENT_UNION_CAVE_1F_GREAT_BALL

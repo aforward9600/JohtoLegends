@@ -498,10 +498,10 @@ InitializeEventsScript:
 	setevent EVENT_COP_IN_ELMS_LAB
 	setevent EVENT_RUINS_OF_ALPH_OUTSIDE_SCIENTIST
 	setevent EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST
-	setevent EVENT_BOULDER_IN_ICE_PATH_1A
-	setevent EVENT_BOULDER_IN_ICE_PATH_2A
-	setevent EVENT_BOULDER_IN_ICE_PATH_3A
-	setevent EVENT_BOULDER_IN_ICE_PATH_4A
+	setevent EVENT_MT_MOON_SQUARE_CLEFAIRY
+	setevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
+	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
+	setevent EVENT_INITIALIZED_EVENTS
 	setevent EVENT_ROUTE_30_YOUNGSTER_JOEY
 	setevent EVENT_BUG_CATCHING_CONTESTANT_1A
 	setevent EVENT_BUG_CATCHING_CONTESTANT_2A
@@ -605,10 +605,6 @@ InitializeEventsScript:
 	setevent EVENT_COPYCATS_HOUSE_2F_DOLL
 	setevent EVENT_VIRIDIAN_GYM_BLUE
 	setevent EVENT_SEAFOAM_GYM_GYM_GUY
-	setevent EVENT_MT_MOON_SQUARE_CLEFAIRY
-	setevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
-	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
-	setevent EVENT_INITIALIZED_EVENTS
 	return
 
 AskNumber1MScript:
@@ -1753,6 +1749,16 @@ GymStatue1Script:
 	getcurlandmarkname STRING_BUFFER_3
 	opentext
 	farwritetext GymStatue_CityGymText
+	buttonsound
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female1
+	farwritetext GymStatue_DahliaText
+	waitbutton
+	closetext
+	end
+
+.Female1:
+	farwritetext GymStatue_DracoText
 	waitbutton
 	closetext
 	end
@@ -1762,7 +1768,15 @@ GymStatue2Script:
 	opentext
 	farwritetext GymStatue_CityGymText
 	buttonsound
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female2
 	farwritetext GymStatue_WinningTrainersText
+	waitbutton
+	closetext
+	end
+
+.Female2:
+	farwritetext GymStatue_WinningTrainers2Text
 	waitbutton
 	closetext
 	end

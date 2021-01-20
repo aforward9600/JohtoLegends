@@ -284,12 +284,38 @@ GymStatue_CityGymText:
 	line "#mon Gym"
 	done
 
+GymStatue_DahliaText:
+	text "Leader: @"
+	text_ram wStringBuffer4
+	text_start
+	para "Winning Trainers:"
+	line "Dahlia"
+	done
+
+GymStatue_DracoText:
+	text "Leader: @"
+	text_ram wStringBuffer4
+	text_start
+	para "Winning Trainers:"
+	line "Draco"
+	done
+
 GymStatue_WinningTrainersText:
 	text "Leader: @"
 	text_ram wStringBuffer4
 	text_start
 	para "Winning Trainers:"
-	line "<PLAYER>"
+	line "Dahlia"
+	cont "<PLAYER>"
+	done
+
+GymStatue_WinningTrainers2Text:
+	text "Leader: @"
+	text_ram wStringBuffer4
+	text_start
+	para "Winning Trainers:"
+	line "Draco"
+	cont "<PLAYER>"
 	done
 
 CoinVendor_WelcomeText:
