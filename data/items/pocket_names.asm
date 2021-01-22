@@ -4,6 +4,7 @@ ItemPocketNames:
 	dw .Key
 	dw .Ball
 	dw .TM
+	dw .Berry
 
 .Item:  db "Item Pocket@"
 .Key:   db "Key Pocket@"

@@ -1,13 +1,11 @@
 	object_const_def ; object_event constants
 	const ROUTE36_YOUNGSTER1
 	const ROUTE36_YOUNGSTER2
-	const ROUTE36_WEIRD_TREE
 	const ROUTE36_LASS1
 	const ROUTE36_FISHER
 	const ROUTE36_FRUIT_TREE
 	const ROUTE36_ARTHUR
 	const ROUTE36_FLORIA
-	const ROUTE36_SUICUNE
 
 Route36_MapScripts:
 	db 2 ; scene scripts
@@ -33,67 +31,8 @@ Route36_MapScripts:
 	appear ROUTE36_ARTHUR
 	return
 
-Route36SuicuneScript:
-	showemote EMOTE_SHOCK, PLAYER, 15
-	pause 15
-	playsound SFX_WARP_FROM
-	turnobject PLAYER, UP
-	applymovement ROUTE36_SUICUNE, Route36SuicuneMovement
-	disappear ROUTE36_SUICUNE
-	turnobject PLAYER, DOWN
-	pause 10
-	setscene SCENE_ROUTE36_NOTHING
-	clearevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
-	setmapscene CIANWOOD_CITY, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
-	end
-
-SudowoodoScript:
-	checkitem SQUIRTBOTTLE
-	iftrue .Fight
-
-	waitsfx
-	playsound SFX_SANDSTORM
-	applymovement ROUTE36_WEIRD_TREE, SudowoodoShakeMovement
-	end
-
-.Fight:
-	opentext
-	writetext UseSquirtbottleText
-	yesorno
-	iffalse DidntUseSquirtbottleScript
-	closetext
-WateredWeirdTreeScript:: ; export (for when you use Squirtbottle from pack)
-	opentext
-	writetext UsedSquirtbottleText
-	waitbutton
-	closetext
-	waitsfx
-	playsound SFX_SANDSTORM
-	applymovement ROUTE36_WEIRD_TREE, SudowoodoShakeMovement
-	opentext
-	writetext SudowoodoAttackedText
-	waitbutton
-	closetext
-	loadwildmon SUDOWOODO, 20
-	startbattle
-	setevent EVENT_FOUGHT_SUDOWOODO
-	ifequal DRAW, DidntCatchSudowoodo
-	disappear ROUTE36_WEIRD_TREE
-	variablesprite SPRITE_WEIRD_TREE, SPRITE_TWIN
-	reloadmapafterbattle
-	end
-
 DidntUseSquirtbottleScript:
 	closetext
-	end
-
-DidntCatchSudowoodo:
-	reloadmapafterbattle
-	applymovement ROUTE36_WEIRD_TREE, WeirdTreeMovement_Flee
-	disappear ROUTE36_WEIRD_TREE
-	variablesprite SPRITE_WEIRD_TREE, SPRITE_TWIN
-	special LoadUsedSpritesGFX
-	special RefreshSprites
 	end
 
 Route36FloriaScript:
@@ -133,6 +72,7 @@ Route36RockSmashGuyScript:
 	writetext RockSmashGuyText1
 	waitbutton
 	closetext
+	variablesprite SPRITE_WEIRD_TREE, SPRITE_TWIN
 	end
 
 .ClearedSudowoodo:
@@ -470,14 +410,17 @@ FloriaText2:
 RockSmashGuyText1:
 	text "Wa-hey!"
 
-	para "I was going to"
-	line "snap that tree"
+	para "Don't walk over"
+	line "here!"
 
-	para "with my straight-"
-	line "arm punch."
+	para "A tree punched me"
+	line "and my contacts"
+	cont "fell out!"
 
-	para "But I couldn't!"
-	line "I'm a failure!"
+	para "I keep trying to"
+	line "find them, but the"
+	cont "trees keep"
+	cont "punching me!"
 	done
 
 RockSmashGuyText2:
@@ -580,11 +523,12 @@ UnknownText_0x1947aa:
 	done
 
 MeetArthurText:
-	text "ARTHUR: Who are"
-	line "you?"
+	text "Howdy! It's me,"
+	line "the Week Guy!"
 
-	para "I'm ARTHUR of"
-	line "Thursday."
+	para "I'm wearing diffe-"
+	line "rent clothes, but"
+	cont "I'm still me!"
 	done
 
 ArthurGivesGiftText:
@@ -593,8 +537,8 @@ ArthurGivesGiftText:
 	done
 
 ArthurGaveGiftText:
-	text "ARTHUR: A #MON"
-	line "that uses rock-"
+	text "A #mon that"
+	line "uses rock-"
 
 	para "type moves should"
 	line "hold on to that."
@@ -604,32 +548,29 @@ ArthurGaveGiftText:
 	done
 
 ArthurThursdayText:
-	text "ARTHUR: I'm ARTHUR"
-	line "of Thursday. I'm"
-
-	para "the second son out"
-	line "of seven children."
+	text "Come back on an-"
+	line "other Thursday,"
+	cont "if you want!"
 	done
 
 ArthurNotThursdayText:
-	text "ARTHUR: Today's"
-	line "not Thursday. How"
-	cont "disappointing."
+	text "Hey, it's not"
+	line "Thursday!"
 	done
 
 Route36SignText:
-	text "ROUTE 36"
+	text "Route 36"
 	done
 
 RuinsOfAlphNorthSignText:
-	text "RUINS OF ALPH"
-	line "NORTH ENTRANCE"
+	text "Ruins Of Alph"
+	line "North Entrance"
 	done
 
 Route36TrainerTips1Text:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
-	para "#MON stats"
+	para "#mon stats"
 	line "vary--even within"
 	cont "the same species."
 
@@ -640,13 +581,13 @@ Route36TrainerTips1Text:
 	line "ences will become"
 
 	para "pronounced as the"
-	line "#MON grow."
+	line "#mon grow."
 	done
 
 Route36TrainerTips2Text:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
-	para "Use DIG to return"
+	para "Use Dig to return"
 	line "to the entrance of"
 	cont "any place."
 
@@ -666,9 +607,7 @@ Route36_MapEvents:
 	warp_event 47, 13, ROUTE_36_RUINS_OF_ALPH_GATE, 1
 	warp_event 48, 13, ROUTE_36_RUINS_OF_ALPH_GATE, 2
 
-	db 2 ; coord events
-	coord_event 20,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
-	coord_event 22,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
+	db 0 ; coord events
 
 	db 4 ; bg events
 	bg_event 29,  1, BGEVENT_READ, Route36TrainerTips2
@@ -676,13 +615,11 @@ Route36_MapEvents:
 	bg_event 55,  7, BGEVENT_READ, Route36Sign
 	bg_event 21,  7, BGEVENT_READ, Route36TrainerTips1
 
-	db 9 ; object events
+	db 7 ; object events
 	object_event 20, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1
 	object_event 31, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyAlan1, -1
-	object_event 35,  9, SPRITE_WEIRD_TREE, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
 	object_event 51,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1
-	object_event 44,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1
+	object_event 35,  9, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1
 	object_event 21,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36FruitTree, -1
-	object_event 46,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
+	object_event 46,  6, SPRITE_FISHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
 	object_event 33, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FloriaScript, EVENT_FLORIA_AT_SUDOWOODO
-	object_event 21,  6, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_36

@@ -1,13 +1,11 @@
 	object_const_def ; object_event constants
-	const BURNEDTOWERB1F_BOULDER
 	const BURNEDTOWERB1F_RAIKOU1
 	const BURNEDTOWERB1F_ENTEI1
 	const BURNEDTOWERB1F_SUICUNE1
 	const BURNEDTOWERB1F_RAIKOU2
 	const BURNEDTOWERB1F_ENTEI2
 	const BURNEDTOWERB1F_SUICUNE2
-	const BURNEDTOWERB1F_POKE_BALL
-	const BURNEDTOWERB1F_EUSINE
+	const BURNEDTOWERB1F_ENOKI
 
 BurnedTowerB1F_MapScripts:
 	db 2 ; scene scripts
@@ -33,160 +31,119 @@ BurnedTowerB1F_MapScripts:
 ReleaseTheBeasts:
 	playmusic MUSIC_NONE
 	pause 30
-	appear BURNEDTOWERB1F_RAIKOU1
-	turnobject PLAYER, UP
-	pause 5
-	disappear BURNEDTOWERB1F_RAIKOU2
-	pause 15
-	cry RAIKOU
-	appear BURNEDTOWERB1F_ENTEI1
-	turnobject PLAYER, UP
-	pause 5
-	disappear BURNEDTOWERB1F_ENTEI2
-	pause 15
-	cry ENTEI
-	appear BURNEDTOWERB1F_SUICUNE1
-	turnobject PLAYER, UP
-	pause 5
-	disappear BURNEDTOWERB1F_SUICUNE2
-	pause 15
-	cry SUICUNE
-	pause 15
-	playsound SFX_WARP_FROM
-	turnobject PLAYER, LEFT
-	applymovement BURNEDTOWERB1F_RAIKOU1, BurnedTowerRaikouMovement
-	disappear BURNEDTOWERB1F_RAIKOU1
-	waitsfx
-	playsound SFX_WARP_FROM
+	opentext
+	writetext TheyWontAwakeText
+	waitbutton
+	closetext
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, DOWN
+	special FadeOutMusic
+	pause 10
+	playmusic MUSIC_TIN_TOWER
+	appear BURNEDTOWERB1F_ENOKI
+	applymovement BURNEDTOWERB1F_ENOKI, EnokiMovement1
+	applymovement PLAYER, PlayerMovement1
 	turnobject PLAYER, RIGHT
-	applymovement BURNEDTOWERB1F_ENTEI1, BurnedTowerEnteiMovement
-	disappear BURNEDTOWERB1F_ENTEI1
-	waitsfx
-	pause 15
-	playsound SFX_WARP_FROM
+	applymovement BURNEDTOWERB1F_ENOKI, EnokiMovement2
 	turnobject PLAYER, UP
-	applymovement BURNEDTOWERB1F_SUICUNE1, BurnedTowerSuicuneMovement1
-	playsound SFX_WARP_FROM
-	turnobject PLAYER, DOWN
-	applymovement BURNEDTOWERB1F_SUICUNE1, BurnedTowerSuicuneMovement2
+	opentext
+	writetext RaikouText
+	waitbutton
+	closetext
+	applymovement BURNEDTOWERB1F_ENOKI, EnokiMovement3
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext EnteiText
+	waitbutton
+	closetext
+	applymovement BURNEDTOWERB1F_ENOKI, EnokiMovement4
+	turnobject BURNEDTOWERB1F_ENOKI, UP
 	turnobject PLAYER, UP
-	pause 20
-	cry SUICUNE
-	pause 30
-	playsound SFX_WARP_FROM
-	applymovement BURNEDTOWERB1F_SUICUNE1, BurnedTowerSuicuneMovement3
-	turnobject PLAYER, DOWN
-	disappear BURNEDTOWERB1F_SUICUNE1
+	opentext
+	writetext SuicuneText
+	waitbutton
+	closetext
+	applymovement BURNEDTOWERB1F_ENOKI, EnokiMovement5
+	turnobject BURNEDTOWERB1F_ENOKI, LEFT
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext InTheDistantPastText
+	waitbutton
+	closetext
+	applymovement BURNEDTOWERB1F_ENOKI, EnokiMovement6
+	disappear BURNEDTOWERB1F_ENOKI
 	waitsfx
 	special RestartMapMusic
-	setscene SCENE_FINISHED
+	setscene SCENE_DEFAULT
 	setevent EVENT_RELEASED_THE_BEASTS
 	special InitRoamMons
 	setmapscene ECRUTEAK_GYM, SCENE_FINISHED
-	setmapscene CIANWOOD_CITY, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
-	clearevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
 	setevent EVENT_ECRUTEAK_GYM_GRAMPS
 	clearevent EVENT_ECRUTEAK_CITY_GRAMPS
 	setevent EVENT_BURNED_TOWER_MORTY
 	setevent EVENT_BURNED_TOWER_1F_EUSINE
-	appear BURNEDTOWERB1F_EUSINE
+	clearevent EVENT_ECRUTEAK_GYM_KIDS
 	refreshscreen
 	changeblock 6, 14, $1b ; ladder
 	reloadmappart
 	closetext
-	setscene SCENE_FINISHED
+	setscene SCENE_DEFAULT
 	end
 
-BurnedTowerB1FEusine:
-	faceplayer
-	opentext
-	writetext BurnedTowerB1FEusineText
-	waitbutton
-	closetext
-	readvar VAR_FACING
-	ifequal UP, .Movement2
-	applymovement BURNEDTOWERB1F_EUSINE, BurnedTowerB1FEusineMovement1
-	sjump .Finish
+RaikouExamine:
+	jumptext RaikouExamineText
 
-.Movement2:
-	applymovement BURNEDTOWERB1F_EUSINE, BurnedTowerB1FEusineMovement2
-.Finish:
-	disappear BURNEDTOWERB1F_EUSINE
-	playsound SFX_EXIT_BUILDING
-	waitsfx
-	end
+EnteiExamine:
+	jumptext EnteiExamineText
 
-BurnedTowerB1FTMEndure:
-	itemball TM_WILL_O_WISP
+SuicuneExamine:
+	jumptext SuicuneExamineText
 
-BurnedTowerB1FBoulder:
-	jumpstd strengthboulder
-
-BurnedTowerRaikouMovement:
-	set_sliding
-	fast_jump_step DOWN
-	fast_jump_step LEFT
-	remove_sliding
+EnokiMovement1:
+	step UP
+	step UP
+	step UP
+	step UP
 	step_end
 
-BurnedTowerEnteiMovement:
-	set_sliding
-	fast_jump_step RIGHT
-	fast_jump_step DOWN
-	fast_jump_step RIGHT
-	remove_sliding
+PlayerMovement1:
+	step LEFT
 	step_end
 
-BurnedTowerSuicuneMovement1:
-	set_sliding
-	fast_jump_step RIGHT
-	fast_jump_step DOWN
-	fast_jump_step DOWN
-	fast_jump_step LEFT
-	remove_sliding
-	step_end
-
-BurnedTowerSuicuneMovement2:
-	set_sliding
-	fast_jump_step LEFT
-	fast_jump_step UP
-	big_step UP
-	fast_jump_step RIGHT
-	remove_sliding
-	step_end
-
-BurnedTowerUnusedMovement:
-; unreferenced
-	set_sliding
-	big_step DOWN
-	remove_sliding
-	step_end
-
-BurnedTowerSuicuneMovement3:
-	set_sliding
-	big_step UP
-	fast_jump_step RIGHT
-	fast_jump_step DOWN
-	fast_jump_step DOWN
-	fast_jump_step DOWN
-	fast_jump_step DOWN
-	remove_sliding
-	step_end
-
-BurnedTowerB1FEusineMovement2:
+EnokiMovement2:
+	step UP
+	step UP
 	step LEFT
 	step LEFT
-	step DOWN
-	step DOWN
 	step LEFT
-	step DOWN
+	step UP
 	step_end
 
-BurnedTowerB1FEusineMovement1:
+EnokiMovement3:
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step_end
+
+EnokiMovement4:
 	step DOWN
 	step LEFT
 	step LEFT
-	step LEFT
+	step_end
+
+EnokiMovement5:
+	step DOWN
+	step_end
+
+EnokiMovement6:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
 	step DOWN
 	step DOWN
 	step_end
@@ -194,44 +151,140 @@ BurnedTowerB1FEusineMovement1:
 BurnedTowerB1FEusineText:
 	text "EUSINE: I dug a"
 	line "hole here, too…"
+	done
 
-	para "I was shocked!"
+TheyWontAwakeText:
+	text "They won't awake."
 
-	para "SUICUNE raced by"
-	line "like a blur, right"
+	para "Not for you."
 
-	para "in front of my"
-	line "eyes!"
+	para "Not for I."
+	done
 
-	para "For ten years I"
-	line "chased SUICUNE,"
+RaikouText:
+	text "Raikou."
+	done
 
-	para "and I finally got"
-	line "to see it."
+EnteiText:
+	text "Entei."
+	done
 
-	para "I'm all choked up!"
+SuicuneText:
+	text "Suicune."
+	done
 
-	para "<PLAYER>, I owe"
-	line "this all to you!"
+InTheDistantPastText:
+	text "In the distant"
+	line "past…"
 
-	para "Thank you!"
+	para "This tower burned"
+	line "in a fire. Three"
 
-	para "I heard that the"
-	line "legendary #MON"
+	para "nameless #mon"
+	line "perished in it."
 
-	para "of ECRUTEAK test"
-	line "chosen humans by"
+	para "A rainbow-colored"
+	line "#mon descended"
 
-	para "allowing them to"
-	line "get close."
+	para "from the sky and"
+	line "resurrected them…"
 
-	para "I'm going to track"
-	line "SUICUNE."
+	para "It's a legend that"
+	line "has been passed"
 
-	para "<PLAYER>, let's"
-	line "meet again!"
+	para "down by Ecruteak"
+	line "Gym Leaders."
 
-	para "Farewell!"
+	para "Me?"
+
+	para "I am the Leader of"
+	line "the Ecruteak Gym."
+
+	para "I am Enoki."
+
+	para "I apologize for"
+	line "not introducing"
+	cont "myself earlier. I"
+	cont "was preoccupied"
+	cont "with the safety of"
+	cont "the children."
+
+	para "The legend I just"
+	line "told you, is not"
+	cont "a legend."
+
+	para "It is true, and"
+	line "these are those"
+	cont "#mon spoken of."
+
+	para "They have been"
+	line "resting here for"
+	cont "200 years,"
+	cont "waiting."
+
+	para "Waiting for one"
+	line "worthy of facing"
+	cont "them."
+
+	para "I have not been"
+	line "deemed worthy, nor"
+	cont "have you."
+
+	para "Someday, they will"
+	line "meet the one they"
+	cont "seek."
+
+	para "Will it be Eusine?"
+	line "Will it be your"
+	cont "future child?"
+
+	para "I cannot answer"
+	line "that."
+
+	para "What I can answer,"
+	line "is this."
+
+	para "You wish to face"
+	line "me in a battle,"
+	cont "yes?"
+
+	para "Then I will accept"
+	line "your challenge at"
+	cont "the Gym."
+
+	para "You will then be"
+	line "one step closer"
+	cont "to your goal, if"
+	cont "you can defeat me."
+
+	para "One more thing."
+
+	para "After we leave"
+	line "here, this floor"
+	cont "will be sealed"
+	cont "off."
+
+	para "This way, these"
+	line "#mon will not"
+	cont "be disturbed until"
+
+	para "the one they"
+	line "choose arrives."
+
+	para "I will see you"
+	line "later."
+	done
+
+RaikouExamineText:
+	text "It's Raikou."
+	done
+
+EnteiExamineText:
+	text "It's Entei."
+	done
+
+SuicuneExamineText:
+	text "It's Suicune."
 	done
 
 BurnedTowerB1F_MapEvents:
@@ -246,17 +299,15 @@ BurnedTowerB1F_MapEvents:
 	warp_event  7, 15, BURNED_TOWER_1F, 14
 
 	db 1 ; coord events
-	coord_event 10,  6, SCENE_DEFAULT, ReleaseTheBeasts
+	coord_event 10,  6, SCENE_FINISHED, ReleaseTheBeasts
 
 	db 0 ; bg events
 
-	db 9 ; object events
-	object_event 17,  8, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTowerB1FBoulder, -1
-	object_event  7,  3, SPRITE_RAIKOU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURNED_TOWER_B1F_BEASTS_1
-	object_event 12,  3, SPRITE_ENTEI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURNED_TOWER_B1F_BEASTS_1
-	object_event 10,  4, SPRITE_SUICUNE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURNED_TOWER_B1F_BEASTS_1
-	object_event  7,  3, SPRITE_RAIKOU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURNED_TOWER_B1F_BEASTS_2
-	object_event 12,  3, SPRITE_ENTEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURNED_TOWER_B1F_BEASTS_2
-	object_event 10,  4, SPRITE_SUICUNE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURNED_TOWER_B1F_BEASTS_2
-	object_event 16,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTowerB1FTMEndure, EVENT_BURNED_TOWER_B1F_TM_ENDURE
-	object_event 10, 12, SPRITE_EUSINE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, BurnedTowerB1FEusine, EVENT_EUSINE_IN_BURNED_TOWER
+	db 7 ; object events
+	object_event  7,  3, SPRITE_RAIKOU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RaikouExamine, EVENT_BURNED_TOWER_B1F_BEASTS_1
+	object_event 12,  3, SPRITE_ENTEI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EnteiExamine, EVENT_BURNED_TOWER_B1F_BEASTS_1
+	object_event 10,  4, SPRITE_SUICUNE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SuicuneExamine, EVENT_BURNED_TOWER_B1F_BEASTS_1
+	object_event  7,  3, SPRITE_RAIKOU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, RaikouExamine, EVENT_BURNED_TOWER_B1F_BEASTS_2
+	object_event 12,  3, SPRITE_ENTEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, EnteiExamine, EVENT_BURNED_TOWER_B1F_BEASTS_2
+	object_event 10,  4, SPRITE_SUICUNE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, SuicuneExamine, EVENT_BURNED_TOWER_B1F_BEASTS_2
+	object_event 10, 11, SPRITE_ENOKI, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_EUSINE_IN_BURNED_TOWER

@@ -18,9 +18,8 @@
 GoldenrodCity_MapScripts:
 	db 0 ; scene scripts
 
-	db 2 ; callbacks
+	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPointAndFloria
-	callback MAPCALLBACK_OBJECTS, .MoveTutor
 
 .FlyPointAndFloria:
 	setflag ENGINE_FLYPOINT_GOLDENROD
@@ -29,13 +28,6 @@ GoldenrodCity_MapScripts:
 	iftrue .FloriaDone
 	clearevent EVENT_FLORIA_AT_SUDOWOODO
 .FloriaDone:
-	return
-
-.MoveTutor:
-	checkflag ENGINE_DAILY_MOVE_TUTOR
-	iftrue .MoveTutorDone
-	appear GOLDENRODCITY_MOVETUTOR
-.MoveTutorDone:
 	return
 
 MoveTutorScript:

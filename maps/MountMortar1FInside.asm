@@ -99,19 +99,22 @@ HikerStopsYou1:
 	closetext
 	applymovement MOUNTMORTAR1FINSIDE_HIKER1, HikerMovement2
 	disappear MOUNTMORTAR1FINSIDE_HIKER1
-	changeblock 16, 46, $1d ; rock
-	changeblock 10, 46, $02 ; exit
+	changeblock 16, 46, $02 ; rock
+	changeblock 10, 46, $24 ; exit
 	changeblock 12, 46, $02 ; rock
 	setevent EVENT_MOUNT_MORTAR_HIKER_1
 	setevent EVENT_MET_HIKER
+	setmapscene ROUTE_38_ECRUTEAK_GATE, SCENE_ECRUTEAK_GATE_RIVAL
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female1
 	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE_1
+	setevent EVENT_ECRUTEAK_GATE_RIVAL_2
 	setscene SCENE_DEFAULT
 	end
 
 .Female1:
 	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE_2
+	setevent EVENT_ECRUTEAK_GATE_RIVAL_1
 	setscene SCENE_DEFAULT
 	end
 
@@ -131,14 +134,17 @@ HikerStopsYou2:
 	changeblock 12, 46, $02 ; rock
 	setevent EVENT_MOUNT_MORTAR_HIKER_1
 	setevent EVENT_MET_HIKER
+	setmapscene ROUTE_38_ECRUTEAK_GATE, SCENE_ECRUTEAK_GATE_RIVAL
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female2
 	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE_1
+	setevent EVENT_ECRUTEAK_GATE_RIVAL_2
 	setscene SCENE_DEFAULT
 	end
 
 .Female2:
 	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE_2
+	setevent EVENT_ECRUTEAK_GATE_RIVAL_1
 	setscene SCENE_DEFAULT
 	end
 

@@ -55,8 +55,6 @@ Route10South_Blocks:
 	INCBIN "maps/Route10South.blk"
 
 Pokecenter2F_Blocks:
-Route10Pokecenter2FBeta_Blocks:
-VermilionPokecenter2FBeta_Blocks:
 PewterPokecenter2FBeta_Blocks:
 FuchsiaPokecenter2FBeta_Blocks:
 LavenderPokecenter2FBeta_Blocks:
@@ -439,6 +437,7 @@ EcruteakLugiaSpeechHouse_Blocks:
 EcruteakItemfinderHouse_Blocks:
 VioletNicknameSpeechHouse_Blocks:
 VioletKylesHouse_Blocks:
+EcruteakMoveTutorHouse_Blocks:
 	INCBIN "maps/House2.blk"
 
 BetaUnionCave_Blocks:
@@ -1054,3 +1053,6 @@ RivalsHouse2F_Blocks:
 
 DarkCaveNewEntrance_Blocks:
 	INCBIN "maps/DarkCaveNewEntrance.blk"
+
+BellchimePath_Blocks:
+	INCBIN "maps/BellchimePath.blk"

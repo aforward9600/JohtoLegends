@@ -2673,8 +2673,9 @@ wIcePath1FSceneID::                               db
 wMahoganyGymSceneID::                             db
 wLakeOfRageSceneID::                              db
 wMountMortar1FInsideSceneID::                     db
+wRoute38EcruteakGateSceneID::                     db
 
-	ds 42
+	ds 41
 
 ; fight counts
 wJackFightCount::    db ; d9f2

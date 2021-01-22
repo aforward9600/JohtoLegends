@@ -10,7 +10,7 @@ Route42EcruteakGateOfficerScript:
 	jumptextfaceplayer Route42EcruteakGateOfficerText
 
 Route42EcruteakGateOfficerText:
-	text "MT.MORTAR is like"
+	text "Mt.Mortar is like"
 	line "a maze inside."
 
 	para "Be careful. Don't"

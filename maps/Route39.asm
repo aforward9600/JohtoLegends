@@ -103,7 +103,7 @@ TrainerPokefanmDerek:
 	end
 
 TrainerPokefanfRuth:
-	trainer POKEFANF, RUTH, EVENT_BEAT_POKEFANF_RUTH, PokefanfRuthSeenText, PokefanfRuthBeatenText, 0, .Script
+	trainer POKEFANF, ETHEL1, EVENT_BEAT_POKEFANF_ETHEL, PokefanfRuthSeenText, PokefanfRuthBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

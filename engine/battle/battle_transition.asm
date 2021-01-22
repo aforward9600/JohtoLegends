@@ -736,6 +736,9 @@ INCLUDE "gfx/overworld/trainer_battle_nite.pal"
 	ld de, PryceTransition
 	cp PRYCE
 	ret z
+	ld de, EnokiTransition
+	cp ENOKI
+	ret z
 	ld de, PokeBallTransition
 	ret
 
@@ -843,6 +846,27 @@ opt b.X ; . = 0, X = 0
 	bigdw %...XX...X..XX...
 	bigdw %.....XX..XX.....
 	bigdw %.......XX.......
+popo
+
+EnokiTransition:
+pusho
+opt b.X ; . = 0, X = 0
+	bigdw %.....XXXXXX.....
+	bigdw %...XX......XX...
+	bigdw %..X..........X..
+	bigdw %.X....X..X....X.
+	bigdw %.X...XX..XX...X.
+	bigdw %X...XXX..XXX..XX
+	bigdw %X.............XX
+	bigdw %X.............XX
+	bigdw %.X...........XX.
+	bigdw %.X...........XX.
+	bigdw %..X.........XX..
+	bigdw %...X.....XXXX...
+	bigdw %....X....XXX....
+	bigdw %.....XX...X.....
+	bigdw %.......XX..X....
+	bigdw %.........XXXX...
 popo
 
 WipeLYOverrides:

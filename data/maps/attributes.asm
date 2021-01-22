@@ -505,7 +505,6 @@ ENDM
 	map_attributes CeruleanGym, CERULEAN_GYM, $00, 0
 	map_attributes CeruleanMart, CERULEAN_MART, $00, 0
 	map_attributes Route10Pokecenter1F, ROUTE_10_POKECENTER_1F, $00, 0
-	map_attributes Route10Pokecenter2FBeta, ROUTE_10_POKECENTER_2F_BETA, $00, 0
 	map_attributes PowerPlant, POWER_PLANT, $00, 0
 	map_attributes BillsHouse, BILLS_HOUSE, $00, 0
 	map_attributes AzaleaPokecenter1F, AZALEA_POKECENTER_1F, $00, 0
@@ -553,7 +552,6 @@ ENDM
 	map_attributes DayCare, DAY_CARE, $00, 0
 	map_attributes VermilionFishingSpeechHouse, VERMILION_FISHING_SPEECH_HOUSE, $00, 0
 	map_attributes VermilionPokecenter1F, VERMILION_POKECENTER_1F, $00, 0
-	map_attributes VermilionPokecenter2FBeta, VERMILION_POKECENTER_2F_BETA, $00, 0
 	map_attributes PokemonFanClub, POKEMON_FAN_CLUB, $00, 0
 	map_attributes VermilionMagnetTrainSpeechHouse, VERMILION_MAGNET_TRAIN_SPEECH_HOUSE, $00, 0
 	map_attributes VermilionMart, VERMILION_MART, $00, 0
@@ -694,3 +692,5 @@ ENDM
 	map_attributes MastersHouse2F, MASTERS_HOUSE_2F, $00, 0
 	map_attributes RivalsHouse2F, RIVALS_HOUSE_2F, $00, 0
 	map_attributes DarkCaveNewEntrance, DARK_CAVE_NEW_ENTRANCE, $00, 0
+	map_attributes BellchimePath, BELLCHIME_PATH, $05, 0
+	map_attributes EcruteakMoveTutorHouse, ECRUTEAK_MOVE_TUTOR_HOUSE, $00, 0

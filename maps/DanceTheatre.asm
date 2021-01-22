@@ -1,70 +1,55 @@
 	object_const_def ; object_event constants
 	const DANCETHEATRE_KIMONO_GIRL1
-	const DANCETHEATRE_KIMONO_GIRL2
-	const DANCETHEATRE_KIMONO_GIRL3
-	const DANCETHEATRE_KIMONO_GIRL4
-	const DANCETHEATRE_KIMONO_GIRL5
 	const DANCETHEATRE_GENTLEMAN
 	const DANCETHEATRE_RHYDON
-	const DANCETHEATRE_COOLTRAINER_M
+	const DANCETHEATRE_BUG_CATCHER
 	const DANCETHEATRE_GRANNY
+	const DANCETHEATRE_TWIN1
+	const DANCETHEATRE_TWIN2
+	const DANCETHEATRE_TWIN3
+	const DANCETHEATRE_TWIN4
+	const DANCETHEATRE_TWIN5
 
 DanceTheatre_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-TrainerKimonoGirlNaoko2:
-	trainer KIMONO_GIRL, NAOKO2, EVENT_BEAT_KIMONO_GIRL_NAOKO, KimonoGirlNaoko2SeenText, KimonoGirlNaoko2BeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+TrainerKimonoGirlRui:
+	faceplayer
 	opentext
-	writetext KimonoGirlNaoko2AfterBattleText
+	checkevent EVENT_GOT_EEVEE
+	iftrue .GotEevee
+	checkevent EVENT_BEAT_KIMONO_GIRL_RUI
+	iftrue .GiveEevee
+	writetext TrainerKimonoGirlRuiText
+	waitbutton
+	closetext
+	winlosstext TrainerKimonoGirlRuiBeatenText, 0
+	loadtrainer KIMONO_GIRL, RUI
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_KIMONO_GIRL_RUI
+	opentext
+.GiveEevee:
+	writetext GiveEeveeText
+	buttonsound
+	waitsfx
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	writetext GotEeveeText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke EEVEE, 10
+	setevent EVENT_GOT_EEVEE
+.GotEevee:
+	writetext TrainerKimonoGirlRuiAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerKimonoGirlSayo:
-	trainer KIMONO_GIRL, SAYO, EVENT_BEAT_KIMONO_GIRL_SAYO, KimonoGirlSayoSeenText, KimonoGirlSayoBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext KimonoGirlSayoAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerKimonoGirlZuki:
-	trainer KIMONO_GIRL, ZUKI, EVENT_BEAT_KIMONO_GIRL_ZUKI, KimonoGirlZukiSeenText, KimonoGirlZukiBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext KimonoGirlZukiAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerKimonoGirlKuni:
-	trainer KIMONO_GIRL, KUNI, EVENT_BEAT_KIMONO_GIRL_KUNI, KimonoGirlKuniSeenText, KimonoGirlKuniBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext KimonoGirlKuniAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerKimonoGirlMiki:
-	trainer KIMONO_GIRL, MIKI, EVENT_BEAT_KIMONO_GIRL_MIKI, KimonoGirlMikiSeenText, KimonoGirlMikiBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext KimonoGirlMikiAfterBattleText
+.NoRoom:
+	writetext NoRoomText
 	waitbutton
 	closetext
 	end
@@ -72,56 +57,39 @@ TrainerKimonoGirlMiki:
 DanceTheaterSurfGuy:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_KIMONO_GIRL_RUI
+	iftrue .WildCharge
 	writetext SurfGuyNeverLeftAScratchText
-	buttonsound
-	checkevent EVENT_GOT_HM03_SURF
-	iftrue SurfGuyAlreadyGaveSurf
-	checkevent EVENT_BEAT_KIMONO_GIRL_NAOKO
-	iffalse .KimonoGirlsUndefeated
-	checkevent EVENT_BEAT_KIMONO_GIRL_SAYO
-	iffalse .KimonoGirlsUndefeated
-	checkevent EVENT_BEAT_KIMONO_GIRL_ZUKI
-	iffalse .KimonoGirlsUndefeated
-	checkevent EVENT_BEAT_KIMONO_GIRL_KUNI
-	iffalse .KimonoGirlsUndefeated
-	checkevent EVENT_BEAT_KIMONO_GIRL_MIKI
-	iffalse .KimonoGirlsUndefeated
-	sjump .GetSurf
-
-.KimonoGirlsUndefeated:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .PlayerIsFemale
-	writetext SurfGuyLadGiftText
 	waitbutton
 	closetext
 	end
 
-.PlayerIsFemale:
-	writetext SurfGuyLassieGiftText
-	waitbutton
-	closetext
-	end
-
-.GetSurf:
+.WildCharge:
+	checkevent EVENT_GOT_TM09_WILD_CHARGE
+	iftrue .WildChargeExplanation
 	writetext SurfGuyLikeADanceText
 	buttonsound
-	verbosegiveitem TM_SURF
-	setevent EVENT_GOT_HM03_SURF
-	writetext SurfGuySurfExplanationText
+	verbosegiveitem TM_WILD_CHARGE
+	setevent EVENT_GOT_TM09_WILD_CHARGE
+	writetext SurfGuyWildChargeExplanationText
 	waitbutton
 	closetext
 	end
 
-SurfGuyAlreadyGaveSurf:
-	writetext SurfGuyElegantKimonoGirlsText
+.WildChargeExplanation:
+	writetext SurfGuyWildChargeExplanationText
 	waitbutton
 	closetext
 	end
 
 DanceTheaterRhydon:
+	refreshscreen
+	pokepic RHYDON
+	cry RHYDON
+	waitbutton
+	closepokepic
 	opentext
 	writetext RhydonText
-	cry RHYDON
 	waitbutton
 	closetext
 	end
@@ -135,133 +103,140 @@ DanceTheatreGrannyScript:
 DanceTheatreFancyPanel:
 	jumptext DanceTheatreFancyPanelText
 
-KimonoGirlNaoko2SeenText:
-	text "You have lovely"
-	line "#MON. May I see"
-	cont "them in battle?"
+QuintupletNaokoScript:
+	jumptextfaceplayer QuintupletNaokoText
+
+QuintupletSayoScript:
+	jumptextfaceplayer QuintupletSayoText
+
+QuintupletZukiScript:
+	jumptextfaceplayer QuintupletZukiText
+
+QuintupletKuniScript:
+	jumptextfaceplayer QuintupletKuniText
+
+QuintupletMikiScript:
+	jumptextfaceplayer QuintupletMikiText
+
+TrainerKimonoGirlRuiText:
+	text "Oh, hello there."
+
+	para "Welcome to the"
+	line "Dance House. My"
+	cont "name is Rui."
+
+	para "I learned to dance"
+	line "from a young age."
+
+	para "It is something I"
+	line "truly enjoy."
+
+	para "#mon battles"
+	line "are also something"
+	cont "I enjoy."
+
+	para "Would you care to"
+	line "join me in a"
+	cont "dance?"
 	done
 
-KimonoGirlNaoko2BeatenText:
-	text "Oh, you are very"
-	line "strong."
+TrainerKimonoGirlRuiBeatenText:
+	text "Truly an elegant"
+	line "dance."
 	done
 
-KimonoGirlNaoko2AfterBattleText:
-	text "I enjoyed that"
-	line "bout. I would like"
-	cont "to see you again."
+GiveEeveeText:
+	text "That was an"
+	line "inspired dance."
+
+	para "Here, I want you"
+	line "to have this."
+
+	para "It's an Eevee."
+
+	para "It's a wonderful"
+	line "little #mon."
+
+	para "It will evolve in-"
+	line "to one of eight"
+	cont "different forms."
+
+	para "Please take good"
+	line "care of it."
 	done
 
-KimonoGirlSayoSeenText:
-	text "I always dance"
-	line "with my #MON."
-
-	para "Of course, I also"
-	line "train them."
+GotEeveeText:
+	text "<PLAYER> received"
+	line "Eevee!"
 	done
 
-KimonoGirlSayoBeatenText:
-	text "Oh, so close!"
-	line "I almost had you."
+TrainerKimonoGirlRuiAfterBattleText:
+	text "If you see my son,"
+	line "Bill, in Goldenrod"
+	cont "City, please visit"
+	cont "him."
+
+	para "He's a good boy,"
+	line "and he's quite a"
+	cont "wiz with tech-"
+	cont "nology."
 	done
 
-KimonoGirlSayoAfterBattleText:
-	text "Rhythm is impor-"
-	line "tant for both"
-
-	para "dancing and #-"
-	line "MON."
+NoRoomText:
+	text "Oh dear, you have"
+	line "no room in your"
+	cont "party for this."
 	done
 
-KimonoGirlZukiSeenText:
-	text "Isn't my barrette"
-	line "pretty?"
+QuintupletNaokoText:
+	text "Naoko: Rui's"
+	line "Flareon is so"
+	cont "pretty!"
 
-	para "Oh. A #MON"
-	line "battle?"
+	para "I want one when"
+	line "I'm older!"
 	done
 
-KimonoGirlZukiBeatenText:
-	text "I don't have any"
-	line "#MON left…"
+QuintupletSayoText:
+	text "Sayo: I'm going"
+	line "to train to be a"
+	cont "Kimono Girl just"
+	cont "like Rui!"
 	done
 
-KimonoGirlZukiAfterBattleText:
-	text "I put a different"
-	line "flower in my bar-"
-	cont "rette every month."
+QuintupletZukiText:
+	text "Zuki: I want a"
+	line "barrette like Rui!"
+
+	para "It's so shiny!"
 	done
 
-KimonoGirlKuniSeenText:
-	text "Oh, you're a cute"
-	line "trainer. Would you"
-	cont "like to battle?"
+QuintupletKuniText:
+	text "Kuni: Vaporeon is"
+	line "so elegant!"
+
+	para "It's the coolest!"
 	done
 
-KimonoGirlKuniBeatenText:
-	text "You're stronger"
-	line "than you look."
-	done
-
-KimonoGirlKuniAfterBattleText:
-	text "I trained a lot,"
-	line "so I thought I was"
-
-	para "a capable trainer."
-	line "I guess I'm not."
-	done
-
-KimonoGirlMikiSeenText:
-	text "Do you like my"
-	line "dancing? I'm good"
-	cont "at #MON too."
-	done
-
-KimonoGirlMikiBeatenText:
-	text "Ooh, you're good"
-	line "at #MON too."
-	done
-
-KimonoGirlMikiAfterBattleText:
-	text "I can keep dancing"
-	line "because there are"
-
-	para "people who enjoy"
-	line "what I do."
-
-	para "My #MON keep my"
-	line "spirits up too."
+QuintupletMikiText:
+	text "Miki: My favorite"
+	line "is Jolteon! It's"
+	cont "so pointy!"
 	done
 
 SurfGuyNeverLeftAScratchText:
-	text "Not only are the"
-	line "KIMONO GIRLS great"
+	text "Not only is Rui a"
+	line "great dancer, but"
 
-	para "dancers, they're"
-	line "also skilled at"
-	cont "#MON."
+	para "she is also really"
+	line "skilled at"
+	cont "#mon."
 
 	para "I always challenge"
-	line "them, but I've"
+	line "her, but I've"
 
 	para "never even left a"
 	line "scratch…"
-	done
-
-SurfGuyLadGiftText:
-	text "Lad! If you can"
-	line "defeat all the"
-
-	para "KIMONO GIRLS, I'll"
-	line "give you a gift."
-	done
-
-SurfGuyLassieGiftText:
-	text "Lassie, if you can"
-	line "defeat all the"
-
-	para "KIMONO GIRLS, I'll"
-	line "give you a gift."
 	done
 
 SurfGuyLikeADanceText:
@@ -277,18 +252,24 @@ SurfGuyLikeADanceText:
 	cont "--take it!"
 	done
 
-SurfGuySurfExplanationText:
-	text "That's SURF."
+SurfGuyWildChargeExplanationText:
+	text "That's Wild"
+	line "Charge."
 
 	para "It's a move that"
-	line "lets #MON swim"
-	cont "across water."
-	done
+	line "lets a #mon"
+	cont "rush the opponent"
 
-SurfGuyElegantKimonoGirlsText:
-	text "I wish my #MON"
-	line "were as elegant as"
-	cont "the KIMONO GIRLS…"
+	para "recklessly while"
+	line "charged with"
+	cont "electricity."
+
+	para "It's not the most"
+	line "elegant move."
+
+	para "That's probably"
+	line "why I always lose"
+	cont "to Rui."
 	done
 
 RhydonText:
@@ -298,27 +279,28 @@ RhydonText:
 
 DanceTheatreCooltrainerMText:
 	text "That man's always"
-	line "with his RHYDON."
+	line "with his Rhydon."
 
 	para "Says he wants a"
-	line "#MON that can"
-	cont "SURF and dance."
+	line "#mon that can"
+	cont "Surf and dance."
 
 	para "Is he trying to"
 	line "make a synchro-"
 	cont "nized swimming"
-	cont "#MON?"
+	cont "#mon?"
 	done
 
 DanceTheatreGrannyText:
-	text "The KIMONO GIRLS"
-	line "are so beautiful…"
+	text "The Kimono Girl"
+	line "Rui is so"
+	cont "beautiful…"
 
-	para "But they have to"
+	para "But she had to"
 	line "go through rigor-"
 	cont "ous training."
 
-	para "And they have to"
+	para "And she had to"
 	line "learn to follow"
 
 	para "customs before ap-"
@@ -327,6 +309,10 @@ DanceTheatreGrannyText:
 	para "But if you love"
 	line "something, any-"
 	cont "thing is possible."
+
+	para "The little girls"
+	line "there wish to be"
+	cont "like her someday."
 	done
 
 DanceTheatreFancyPanelText:
@@ -348,13 +334,14 @@ DanceTheatre_MapEvents:
 	bg_event  5,  6, BGEVENT_UP, DanceTheatreFancyPanel
 	bg_event  6,  6, BGEVENT_UP, DanceTheatreFancyPanel
 
-	db 9 ; object events
-	object_event  0,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlNaoko2, -1
-	object_event  2,  1, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlSayo, -1
-	object_event  6,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlZuki, -1
-	object_event  9,  1, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlKuni, -1
-	object_event 11,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlMiki, -1
+	db 10 ; object events
+	object_event  5,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerKimonoGirlRui, -1
 	object_event  7, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheaterSurfGuy, -1
 	object_event  6,  8, SPRITE_RHYDON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DanceTheaterRhydon, -1
-	object_event 10, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DanceTheatreCooltrainerMScript, -1
-	object_event  3,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheatreGrannyScript, -1
+	object_event 10, 10, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, DanceTheatreCooltrainerMScript, -1
+	object_event  1,  8, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheatreGrannyScript, -1
+	object_event  7,  5, SPRITE_TWIN, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, QuintupletNaokoScript, -1
+	object_event  8,  6, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, QuintupletSayoScript, -1
+	object_event  9,  5, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, QuintupletZukiScript, -1
+	object_event 10,  6, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, QuintupletKuniScript, -1
+	object_event 11,  5, SPRITE_TWIN, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, QuintupletMikiScript, -1

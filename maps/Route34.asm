@@ -353,17 +353,17 @@ OfficerKeithScript:
 	opentext
 	checktime NITE
 	iffalse .NoFight
-	checkevent EVENT_BEAT_OFFICER_KEITH
+	checkevent EVENT_BEAT_OFFICER_TOBY
 	iftrue .AfterScript
 	playmusic MUSIC_OFFICER_ENCOUNTER
 	writetext OfficerKeithSeenText
 	waitbutton
 	closetext
 	winlosstext OfficerKeithWinText, 0
-	loadtrainer OFFICER, KEITH
+	loadtrainer OFFICER, TOBY1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_OFFICER_KEITH
+	setevent EVENT_BEAT_OFFICER_TOBY
 	closetext
 	end
 

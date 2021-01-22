@@ -328,7 +328,7 @@ BlackthornYoungsterText2:
 
 MeetSantosText:
 	text "Howdy! They call"
-	line "me the Week Guy."
+	line "me the Week Guy!"
 
 	para "Not weak as in"
 	line "strength, but"

@@ -67,7 +67,7 @@ Route42Sign2:
 	jumptext Route42Sign2Text
 
 Route42UltraBall:
-	itemball ULTRA_BALL
+	itemball GREAT_BALL
 
 Route42SuperPotion:
 	itemball SUPER_POTION
@@ -82,7 +82,7 @@ Route42FruitTree3:
 	fruittree FRUITTREE_ROUTE_42_3
 
 Route42HiddenMaxPotion:
-	hiddenitem MAX_POTION, EVENT_ROUTE_42_HIDDEN_MAX_POTION
+	hiddenitem RARE_CANDY, EVENT_ROUTE_42_HIDDEN_MAX_POTION
 
 Route42SuicuneMovement:
 	set_sliding
@@ -204,7 +204,7 @@ Route42_MapEvents:
 	bg_event  7,  5, BGEVENT_READ, MtMortarSign1
 	bg_event 45,  9, BGEVENT_READ, MtMortarSign2
 	bg_event 54,  8, BGEVENT_READ, Route42Sign2
-	bg_event 16, 11, BGEVENT_ITEM, Route42HiddenMaxPotion
+	bg_event  7,  4, BGEVENT_ITEM, Route42HiddenMaxPotion
 
 	db 8 ; object events
 	object_event 42,  8, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherFred, -1
@@ -213,5 +213,5 @@ Route42_MapEvents:
 	object_event 27, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree1, -1
 	object_event 28, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree2, -1
 	object_event 29, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree3, -1
-	object_event  6,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42UltraBall, EVENT_ROUTE_42_ULTRA_BALL
+	object_event  4, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42UltraBall, EVENT_ROUTE_42_ULTRA_BALL
 	object_event 33,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42SuperPotion, EVENT_ROUTE_42_SUPER_POTION

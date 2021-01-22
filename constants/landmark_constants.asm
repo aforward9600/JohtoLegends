@@ -25,6 +25,7 @@
 	const ROUTE_36          ; 14
 	const ROUTE_37          ; 15
 	const ECRUTEAK_CITY     ; 16
+	const BELLCHIME_PATH
 	const TIN_TOWER         ; 17
 	const BURNED_TOWER      ; 18
 	const ROUTE_38          ; 19

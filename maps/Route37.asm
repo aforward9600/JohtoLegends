@@ -1,11 +1,10 @@
 	object_const_def ; object_event constants
-	const ROUTE37_WEIRD_TREE1
-	const ROUTE37_WEIRD_TREE2
 	const ROUTE37_YOUNGSTER
 	const ROUTE37_FRUIT_TREE1
 	const ROUTE37_SUNNY
 	const ROUTE37_FRUIT_TREE2
 	const ROUTE37_FRUIT_TREE3
+	const ROUTE37_OFFICER
 
 Route37_MapScripts:
 	db 0 ; scene scripts
@@ -23,35 +22,13 @@ Route37_MapScripts:
 	appear ROUTE37_SUNNY
 	return
 
-TrainerTwinsAnnandanne1:
-	trainer TWINS, ANNANDANNE1, EVENT_BEAT_TWINS_ANN_AND_ANNE, TwinsAnnandanne1SeenText, TwinsAnnandanne1BeatenText, 0, .Script
+TrainerPokefanFEthel:
+	trainer POKEFANF, ETHEL1, EVENT_BEAT_POKEFANF_ETHEL, PokefanFEthelSeenText, PokefanFEthelBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext TwinsAnnandanne1AfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerTwinsAnnandanne2:
-	trainer TWINS, ANNANDANNE2, EVENT_BEAT_TWINS_ANN_AND_ANNE, TwinsAnnandanne2SeenText, TwinsAnnandanne2BeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext TwinsAnnandanne2AfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerPsychicGreg:
-	trainer PSYCHIC_T, GREG, EVENT_BEAT_PSYCHIC_GREG, PsychicGregSeenText, PsychicGregBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext PsychicGregAfterBattleText
+	writetext PokefanFEthelAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -99,6 +76,37 @@ SunnyNotSundayScript:
 	closetext
 	end
 
+OfficerTobyScript:
+	faceplayer
+	opentext
+	checktime NITE
+	iffalse .NoFight
+	checkevent EVENT_BEAT_OFFICER_TOBY
+	iftrue .AfterScript
+	playmusic MUSIC_OFFICER_ENCOUNTER
+	writetext OfficerTobySeenText
+	waitbutton
+	closetext
+	winlosstext OfficerTobyWinText, 0
+	loadtrainer OFFICER, TOBY1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_OFFICER_TOBY
+	closetext
+	end
+
+.AfterScript:
+	writetext OfficerTobyAfterText
+	waitbutton
+	closetext
+	end
+
+.NoFight:
+	writetext OfficerTobyDaytimeText
+	waitbutton
+	closetext
+	end
+
 Route37Sign:
 	jumptext Route37SignText
 
@@ -114,125 +122,117 @@ Route37FruitTree3:
 Route37HiddenEther:
 	hiddenitem ETHER, EVENT_ROUTE_37_HIDDEN_ETHER
 
-TwinsAnnandanne1SeenText:
-	text "ANN: ANNE and I"
-	line "are in this to-"
-	cont "gether!"
+PokefanFEthelSeenText:
+	text "I'll show you my"
+	line "darling #mon!"
 	done
 
-TwinsAnnandanne1BeatenText:
-	text "ANN & ANNE: Nnn… A"
-	line "little too strong."
+PokefanFEthelBeatenText:
+	text "Isn't my #mon"
+	line "just precious?"
 	done
 
-TwinsAnnandanne1AfterBattleText:
-	text "ANN: I can tell"
-	line "what my sister and"
+PokefanFEthelAfterBattleText:
+	text "It's not the"
+	line "easiest #mon"
+	cont "to find."
 
-	para "my #MON are"
-	line "thinking."
-	done
-
-TwinsAnnandanne2SeenText:
-	text "ANNE: ANN and I"
-	line "are in this to-"
-	cont "gether!"
-	done
-
-TwinsAnnandanne2BeatenText:
-	text "ANN & ANNE: Nnn… A"
-	line "little too strong."
-	done
-
-TwinsAnnandanne2AfterBattleText:
-	text "ANNE: We share the"
-	line "same feelings as"
-	cont "our #MON."
-	done
-
-PsychicGregSeenText:
-	text "#MON can't do a"
-	line "thing if they are"
-	cont "asleep."
-
-	para "I'll show you how"
-	line "scary that is!"
-	done
-
-PsychicGregBeatenText:
-	text "I lost. That's"
-	line "pretty sad…"
-	done
-
-PsychicGregAfterBattleText:
-	text "Putting #MON to"
-	line "sleep or paralyz-"
-	cont "ing them are good"
-	cont "battle techniques."
+	para "My husband gave"
+	line "it to me!"
 	done
 
 MeetSunnyText:
-	text "SUNNY: Hi!"
+	text "Hi!"
 
-	para "I'm SUNNY of Sun-"
-	line "day, meaning it's"
-	cont "Sunday today!"
+	para "I'm known as the"
+	line "Week Lady!"
+
+	para "And no, it has"
+	line "nothing to do"
+	cont "with strength,"
+
+	para "I hear that joke"
+	line "enough."
 	done
 
 SunnyGivesGiftText1:
-	text "I was told to give"
-	line "you this if I saw"
-	cont "you!"
+	text "Here, I want you"
+	line "to have this!"
 	done
 
 SunnyGivesGiftText2:
-	text "I was told to give"
-	line "you this if I saw"
-	cont "you!"
+	text "Here, I want you"
+	line "to have this!"
 	done
 
 SunnyGaveGiftText:
-	text "SUNNY: That thing…"
+	text "It's a Magnet!"
 
-	para "Um…"
-
-	para "… What was it now…"
-
-	para "…"
-
-	para "Oh! I remember"
-	line "now!"
-
-	para "A #MON that"
+	para "A #mon that"
 	line "knows electric"
 
 	para "moves should hold"
 	line "it."
 
-	para "My sis MONICA said"
-	line "it powers up"
+	para "I know that it"
+	line "powers up"
 	cont "electric moves!"
 	done
 
 SunnySundayText:
-	text "SUNNY: My sisters"
-	line "and brothers are"
-	cont "MONICA, TUSCANY,"
-	cont "WESLEY, ARTHUR,"
-	cont "FRIEDA and SANTOS."
+	text "Come again"
+	line "sometime!"
 
-	para "They're all older"
-	line "than me!"
+	para "I can't give you"
+	line "another item, but"
+	cont "I enjoy company!"
 	done
 
 SunnyNotSundayText:
-	text "SUNNY: Isn't today"
-	line "Sunday?"
-	cont "Um… I forgot!"
+	text "Today's not"
+	line "Sunday!"
+	done
+
+OfficerTobySeenText:
+	text "Halt!"
+
+	para "Are you a tree?"
+
+	para "Oh, you're just"
+	line "a trainer."
+
+	para "May as well have"
+	line "a battle."
+	done
+
+OfficerTobyWinText:
+	text "I suppose a tree"
+	line "would have been an"
+	cont "easier opponent."
+	done
+
+OfficerTobyAfterText:
+	text "There have been"
+	line "reports of violent"
+	cont "trees in the area."
+
+	para "They're quite hard"
+	line "to believe, but I"
+	cont "was sent to"
+	cont "investigate."
+	done
+
+OfficerTobyDaytimeText:
+	text "Careful now."
+
+	para "You might get"
+	line "assaulted by a"
+	cont "tree on this"
+	cont "Route."
 	done
 
 Route37SignText:
-	text "ROUTE 37"
+	text "Route 37"
 	done
 
 Route37_MapEvents:
@@ -246,11 +246,10 @@ Route37_MapEvents:
 	bg_event  5,  3, BGEVENT_READ, Route37Sign
 	bg_event  4,  2, BGEVENT_ITEM, Route37HiddenEther
 
-	db 7 ; object events
-	object_event  6, 12, SPRITE_WEIRD_TREE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAnnandanne1, -1
-	object_event  7, 12, SPRITE_WEIRD_TREE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAnnandanne2, -1
-	object_event  6,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicGreg, -1
+	db 6 ; object events
+	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPokefanFEthel, -1
 	object_event 13,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree1, -1
-	object_event 16,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SunnyScript, EVENT_ROUTE_37_SUNNY_OF_SUNDAY
+	object_event 16,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SunnyScript, EVENT_ROUTE_37_SUNNY_OF_SUNDAY
 	object_event 16,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree2, -1
 	object_event 15,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree3, -1
+	object_event 16, 12, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OfficerTobyScript, -1

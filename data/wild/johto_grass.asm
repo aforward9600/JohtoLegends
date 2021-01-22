@@ -303,64 +303,64 @@ JohtoGrassWildMons:
 	dbw 24, RATTATA
 
 	map_id BURNED_TOWER_1F
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 13, MAGBY
 	dbw 14, KOFFING
 	dbw 15, RATTATA
 	dbw 14, ZUBAT
-	dbw 15, RATTATA
-	dbw 15, RATICATE
-	dbw 15, RATICATE
-	dbw 15, RATICATE
+	dbw 15, GRIMER
+	dbw 15, SLUGMA
+	dbw 15, SLUGMA
+	dbw 15, SLUGMA
 	; day
 	dbw 13, MAGBY
 	dbw 14, KOFFING
 	dbw 15, RATTATA
 	dbw 14, ZUBAT
-	dbw 15, RATTATA
-	dbw 15, RATICATE
-	dbw 15, RATICATE
-	dbw 15, RATICATE
+	dbw 15, GRIMER
+	dbw 15, SLUGMA
+	dbw 15, SLUGMA
+	dbw 15, SLUGMA
 	; nite
 	dbw 13, RATTATA
 	dbw 14, KOFFING
 	dbw 15, RATTATA
 	dbw 14, ZUBAT
-	dbw 15, RATTATA
-	dbw 15, RATICATE
-	dbw 15, RATICATE
-	dbw 15, RATICATE
+	dbw 15, GRIMER
+	dbw 15, MISDREAVUS
+	dbw 15, MISDREAVUS
+	dbw 15, MISDREAVUS
 
 	map_id BURNED_TOWER_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 14, RATTATA
+	dbw 13, MAGBY
 	dbw 14, KOFFING
-	dbw 16, KOFFING
-	dbw 15, ZUBAT
-	dbw 12, KOFFING
-	dbw 16, KOFFING
-	dbw 16, WEEZING
-	dbw 15, RATICATE
+	dbw 15, RATTATA
+	dbw 14, ZUBAT
+	dbw 15, GRIMER
+	dbw 15, SLUGMA
+	dbw 15, SLUGMA
+	dbw 15, SLUGMA
 	; day
-	dbw 14, RATTATA
+	dbw 13, MAGBY
 	dbw 14, KOFFING
-	dbw 16, KOFFING
-	dbw 15, ZUBAT
-	dbw 12, KOFFING
-	dbw 16, KOFFING
-	dbw 16, WEEZING
-	dbw 15, RATICATE
+	dbw 15, RATTATA
+	dbw 14, ZUBAT
+	dbw 15, GRIMER
+	dbw 15, SLUGMA
+	dbw 15, SLUGMA
+	dbw 15, SLUGMA
 	; nite
-	dbw 14, RATTATA
+	dbw 13, RATTATA
 	dbw 14, KOFFING
-	dbw 16, KOFFING
-	dbw 15, ZUBAT
-	dbw 12, KOFFING
-	dbw 16, KOFFING
-	dbw 16, WEEZING
-	dbw 15, RATICATE
+	dbw 15, RATTATA
+	dbw 14, ZUBAT
+	dbw 15, GRIMER
+	dbw 15, MISDREAVUS
+	dbw 15, MISDREAVUS
+	dbw 15, MISDREAVUS
 
 	map_id NATIONAL_PARK
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

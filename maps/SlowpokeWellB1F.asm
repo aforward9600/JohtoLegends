@@ -72,7 +72,7 @@ TrainerGruntM1:
 	end
 
 TrainerGruntM2:
-	trainer GRUNTM, GRUNTM_2, EVENT_BEAT_ROCKET_GRUNTM_2, GruntM2SeenText, GruntM2BeatenText, 0, .Script
+	trainer GRUNTM, GRUNTM_2, EVENT_BEAT_OLIVINE_GRUNT, GruntM2SeenText, GruntM2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

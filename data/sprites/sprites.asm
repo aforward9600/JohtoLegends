@@ -119,3 +119,4 @@ OverworldSprites:
 	overworld_sprite MasterSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite GenSurgeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite MiyamotoSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite SherlesSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE

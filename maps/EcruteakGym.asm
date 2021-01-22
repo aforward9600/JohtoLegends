@@ -6,6 +6,8 @@
 	const ECRUTEAKGYM_HEX_MANIAC2
 	const ECRUTEAKGYM_GYM_GUY
 	const ECRUTEAKGYM_GRAMPS
+	const ECRUTEAKGYM_MORTY
+	const ECRUTEAKGYM_EUSINE
 
 EcruteakGym_MapScripts:
 	db 2 ; scene scripts
@@ -46,8 +48,6 @@ EcruteakGymEnokiScript:
 	readvar VAR_BADGES
 	scall EcruteakGymActivateRockets
 	setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_FINISHED
-	setevent EVENT_RANG_CLEAR_BELL_1
-	setevent EVENT_RANG_CLEAR_BELL_2
 .FightDone:
 	checkevent EVENT_GOT_TM04_HEX
 	iftrue .GotShadowBall
@@ -63,6 +63,23 @@ EcruteakGymEnokiScript:
 	writetext EnokiText_HexSpeech
 	waitbutton
 	closetext
+	opentext
+	writetext EnokiHelpText
+	waitbutton
+	closetext
+	showemote EMOTE_SHOCK, ECRUTEAKGYM_ENOKI, 15
+	opentext
+	writetext WhatIsGoingOnText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear ECRUTEAKGYM_ENOKI
+	pause 15
+	special FadeInQuickly
+	clearevent EVENT_TIN_TOWER_ENTRANCE_ROCKET
+	setevent EVENT_ECRUTEAK_GYM_ENOKI
+	setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_FINISHED
 	end
 
 .GotShadowBall:
@@ -159,9 +176,16 @@ EcruteakGymGuyScript:
 	closetext
 	end
 
+EcruteakGymMorty:
+	jumptextfaceplayer EcruteakGymMortyGymText
+
+EcruteakGymEusine:
+	jumptextfaceplayer EcruteakGymEusineText
+
 EcruteakGymStatue:
 	checkflag ENGINE_FOGBADGE
 	iftrue .Beaten
+	gettrainername STRING_BUFFER_4, ENOKI, ENOKI1
 	jumpstd gymstatue1
 .Beaten:
 	gettrainername STRING_BUFFER_4, ENOKI, ENOKI1
@@ -250,6 +274,26 @@ EnokiText_HexSpeech:
 	cont "witness."
 	done
 
+EnokiHelpText:
+	text "Master Enoki!"
+
+	para "Please help!"
+
+	para "There is a"
+	line "trouble-maker at"
+	cont "Bell Tower!"
+	done
+
+WhatIsGoingOnText:
+	text "What's that?"
+
+	para "Please, excuse me"
+	line "<PLAYER>."
+
+	para "I must go invest-"
+	line "igate."
+	done
+
 EnokiFightDoneText:
 	text "Morty will make a"
 	line "fine Gym Leader"
@@ -265,7 +309,7 @@ EnokiFightDoneText:
 
 SageJeffreySeenText:
 	text "I spent the spring"
-	line "with my #MON."
+	line "with my #mon."
 
 	para "Then summer, fall"
 	line "and winter…"
@@ -283,14 +327,14 @@ SageJeffreyBeatenText:
 	done
 
 SageJeffreyAfterBattleText:
-	text "Where did #MON"
+	text "Where did #mon"
 	line "come from?"
 	done
 
 SagePingSeenText:
 	text "Can you inflict"
 	line "any damage on our"
-	cont "#MON?"
+	cont "#mon?"
 	done
 
 SagePingBeatenText:
@@ -388,7 +432,45 @@ EcruteakGymClosedText:
 	para "He's at the Burned"
 	line "Tower to the"
 
-	para "north."
+	para "north. Two"
+	line "children have gone"
+	cont "there."
+	done
+
+EcruteakGymMortyGymText:
+	text "Gramps got pretty"
+	line "mad at us for"
+	cont "going into the"
+	cont "Burned Tower."
+
+	para "Can you blame us?"
+	line "It's our natural"
+	cont "curiosity."
+
+	para "How else are we"
+	line "supposed to figure"
+	cont "out the mysteries"
+	cont "of the Legendary"
+	cont "#mon?"
+	done
+
+EcruteakGymEusineText:
+	text "Ah man."
+
+	para "Our punishment is"
+	line "to stay in the Gym"
+	cont "and think about"
+	cont "what we did."
+
+	para "I'll tell you what"
+	line "we did!"
+
+	para "We found out about"
+	line "the basement in"
+	cont "Burned Tower!"
+
+	para "We're close to"
+	line "finding Suicune!"
 	done
 
 EcruteakGym_MapEvents:
@@ -435,11 +517,13 @@ EcruteakGym_MapEvents:
 	bg_event  3, 15, BGEVENT_READ, EcruteakGymStatue
 	bg_event  6, 15, BGEVENT_READ, EcruteakGymStatue
 
-	db 7 ; object events
-	object_event  5,  1, SPRITE_ENOKI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakGymEnokiScript, -1
+	db 9 ; object events
+	object_event  5,  1, SPRITE_ENOKI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakGymEnokiScript, EVENT_ECRUTEAK_GYM_ENOKI
 	object_event  2,  7, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSageJeffrey, -1
 	object_event  3, 13, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSagePing, -1
 	object_event  7,  5, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 1, TrainerHexManiacHilda, -1
 	object_event  7,  9, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 1, TrainerHexManiacZelda, -1
 	object_event  7, 15, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakGymGuyScript, -1
 	object_event  4, 14, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_GRAMPS
+	object_event  0, 14, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakGymMorty, EVENT_ECRUTEAK_GYM_KIDS
+	object_event  1, 14, SPRITE_EUSINE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakGymEusine, EVENT_ECRUTEAK_GYM_KIDS

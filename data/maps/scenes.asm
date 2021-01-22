@@ -91,4 +91,5 @@ MapScenes::
 	scene_var MAHOGANY_GYM,                                wMahoganyGymSceneID
 	scene_var LAKE_OF_RAGE,                                wLakeOfRageSceneID
 	scene_var MOUNT_MORTAR_1F_INSIDE,                      wMountMortar1FInsideSceneID
+	scene_var ROUTE_38_ECRUTEAK_GATE,                      wRoute38EcruteakGateSceneID
 	db -1 ; end

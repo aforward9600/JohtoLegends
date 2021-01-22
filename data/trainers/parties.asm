@@ -54,13 +54,13 @@ KurtGroup:
 EnokiGroup:
 	next_list_item ; MORTY (1)
 	db "Enoki@", TRAINERTYPE_MOVES
-	db 21
+	db 16
 	dw GASTLY
 	dw HEX, SPITE, MEAN_LOOK, CURSE
-	db 21
+	db 17
 	dw CORSOLA
 	dw STRENGTH_SAP, WILL_O_WISP, HEX, SPIKES
-	db 25
+	db 18
 	dw MISDREAVUS
 	dw HEX, HYPNOSIS, MEAN_LOOK, DREAM_EATER
 	db -1 ; end
@@ -638,7 +638,7 @@ YoungsterGroup:
 	next_list_item ; YOUNGSTER (2)
 	db "Timmy@", TRAINERTYPE_NORMAL
 	db 5
-	dw POLIWAG
+	dw PIDGEY
 	db 6
 	dw RATTATA
 	db -1 ; end
@@ -1920,17 +1920,21 @@ GruntMGroup:
 	next_list_item ; ManM (1)
 	db "Man@", TRAINERTYPE_NORMAL
 	db 14
-	dw KOFFING
+	dw SPEAROW
+	db 14
+	dw ELEKID
+	db 15
+	dw STARYU
 	db -1 ; end
 
 	next_list_item ; ManM (2)
 	db "Man@", TRAINERTYPE_NORMAL
-	db 7
-	dw RATTATA
-	db 9
-	dw ZUBAT
-	db 9
-	dw ZUBAT
+	db 16
+	dw MURKROW
+	db 16
+	dw BEEDRILL
+	db 17
+	dw KADABRA
 	db -1 ; end
 
 	next_list_item ; ManM (3)
@@ -4659,23 +4663,23 @@ SageGroup:
 	db -1 ; end
 
 	next_list_item ; SAGE (5)
-	db "JEFFREY@", TRAINERTYPE_NORMAL
-	db 22
-	dw HAUNTER
+	db "Jeffrey@", TRAINERTYPE_NORMAL
+	db 15
+	dw MISDREAVUS
 	db -1 ; end
 
 	next_list_item ; SAGE (6)
-	db "PING@", TRAINERTYPE_NORMAL
-	db 16
+	db "Ping@", TRAINERTYPE_NORMAL
+	db 13
 	dw GASTLY
-	db 16
+	db 13
 	dw GASTLY
-	db 16
+	db 13
 	dw GASTLY
-	db 16
+	db 13
 	dw GASTLY
-	db 16
-	dw GASTLY
+	db 13
+	dw CORSOLA
 	db -1 ; end
 
 	next_list_item ; SAGE (7)
@@ -4934,13 +4938,13 @@ PokefanMGroup:
 
 KimonoGirlGroup:
 	next_list_item ; KIMONO_GIRL (1)
-	db "NAOKO@", TRAINERTYPE_NORMAL
-	db 20
-	dw SKIPLOOM
-	db 20
-	dw VULPIX
-	db 18
-	dw SKIPLOOM
+	db "Rui@", TRAINERTYPE_NORMAL
+	db 14
+	dw VAPOREON
+	db 14
+	dw JOLTEON
+	db 14
+	dw FLAREON
 	db -1 ; end
 
 	next_list_item ; KIMONO_GIRL (2)
@@ -5075,9 +5079,9 @@ PokefanFGroup:
 	db -1 ; end
 
 	next_list_item ; POKEFANF (2)
-	db "RUTH@", TRAINERTYPE_ITEM
-	db 17
-	dw PIKACHU
+	db "Ethel@", TRAINERTYPE_ITEM
+	db 15
+	dw TOGEPI
 	db ORAN_BERRY
 	db -1 ; end
 
@@ -5175,8 +5179,8 @@ BlueGroup:
 
 OfficerGroup:
 	next_list_item ; OFFICER (1)
-	db "KEITH@", TRAINERTYPE_NORMAL
-	db 17
+	db "Toby@", TRAINERTYPE_NORMAL
+	db 16
 	dw GROWLITHE
 	db -1 ; end
 
@@ -5276,6 +5280,26 @@ Rival3Group:
 	dw TOTODILE
 	db -1 ; end
 
+	next_list_item ; RIVAL3 (4)
+	db "Dahlia@", TRAINERTYPE_NORMAL
+	db 15
+	dw EEVEE
+	db 15
+	dw SWINUB
+	db 16
+	dw LARVITAR
+	db -1 ; end
+
+	next_list_item ; RIVAL3 (5)
+	db "Dahlia@", TRAINERTYPE_NORMAL
+	db 15
+	dw EEVEE
+	db 15
+	dw SWINUB
+	db 16
+	dw DRATINI
+	db -1 ; end
+
 	end_list_items
 
 Rival4Group:
@@ -5299,6 +5323,26 @@ Rival4Group:
 	db "Draco@", TRAINERTYPE_NORMAL
 	db 5
 	dw TOTODILE
+	db -1 ; end
+
+	next_list_item ; RIVAL4 (4)
+	db "Draco@", TRAINERTYPE_NORMAL
+	db 15
+	dw EEVEE
+	db 15
+	dw SWINUB
+	db 16
+	dw LARVITAR
+	db -1 ; end
+
+	next_list_item ; RIVAL4 (5)
+	db "Draco@", TRAINERTYPE_NORMAL
+	db 15
+	dw EEVEE
+	db 15
+	dw SWINUB
+	db 16
+	dw DRATINI
 	db -1 ; end
 
 	end_list_items
@@ -5343,15 +5387,15 @@ BreederGroup:
 HexManiacGroup:
 	next_list_item ; HEX_MANIAC (1)
 	db "Hilda@", TRAINERTYPE_NORMAL
-	db 20
+	db 14
 	dw GASTLY
-	db 21
+	db 14
 	dw CORSOLA
 	db -1 ; end
 
 	next_list_item ; HEX_MANIAC (2)
 	db "Zelda@", TRAINERTYPE_NORMAL
-	db 22
+	db 16
 	dw HAUNTER
 	db -1 ; end
 

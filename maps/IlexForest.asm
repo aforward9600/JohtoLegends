@@ -18,7 +18,7 @@ IlexForest_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .FarfetchdCallback
 
 .FarfetchdCallback:
-	checkevent EVENT_GOT_HM01_CUT
+	checkevent EVENT_GOT_SCYTHER_CALL
 	iftrue .Static
 	readmem wFarfetchdPosition
 	ifequal  1, .PositionOne
@@ -345,12 +345,12 @@ IlexForestFarfetchdScript:
 IlexForestCharcoalMasterScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_HM01_CUT
+	checkevent EVENT_GOT_SCYTHER_CALL
 	iftrue .AlreadyGotCut
 	writetext Text_CharcoalMasterIntro
 	buttonsound
 	verbosegiveitem SCYTHER_CALL
-	setevent EVENT_GOT_HM01_CUT
+	setevent EVENT_GOT_SCYTHER_CALL
 	writetext Text_CharcoalMasterOutro
 	waitbutton
 	closetext

@@ -647,7 +647,7 @@ CHRIS EQU __enum__
 	const ALLAN
 
 	trainerclass KIMONO_GIRL ; 3c
-	const NAOKO1
+	const RUI
 	const NAOKO2
 	const SAYO
 	const ZUKI
@@ -668,7 +668,7 @@ CHRIS EQU __enum__
 
 	trainerclass POKEFANF ; 3e
 	const BEVERLY1
-	const RUTH
+	const ETHEL1
 	const BEVERLY2
 	const BEVERLY3
 	const GEORGIA
@@ -681,7 +681,7 @@ CHRIS EQU __enum__
 	const BLUE1
 
 	trainerclass OFFICER ; 41
-	const KEITH
+	const TOBY1
 	const DIRK
 
 	trainerclass GRUNTF ; 42
@@ -698,11 +698,15 @@ CHRIS EQU __enum__
 	const RIVAL3_A_LARVITAR
 	const RIVAL3_A_DRATINI
 	const RIVAL3_A_TOTODILE
+	const RIVAL3_B_LARVITAR
+	const RIVAL3_B_DRATINI
 
 	trainerclass RIVAL4 ; 45
 	const RIVAL4_A_LARVITAR
 	const RIVAL4_A_DRATINI
 	const RIVAL4_A_TOTODILE
+	const RIVAL4_B_LARVITAR
+	const RIVAL4_B_DRATINI
 
 	trainerclass BREEDER ; 46
 	const EMILY

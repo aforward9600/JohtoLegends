@@ -115,6 +115,7 @@
 	const SPRITE_MASTER
 	const SPRITE_GEN_SURGE
 	const SPRITE_MIYAMOTO
+	const SPRITE_SHERLES
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

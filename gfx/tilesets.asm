@@ -98,15 +98,6 @@ INCLUDE "data/tilesets/cave_collision.asm"
 
 SECTION "Tileset Data 3", ROMX
 
-TilesetTowerGFX:
-INCBIN "gfx/tilesets/tower.2bpp.lz"
-
-TilesetTowerMeta:
-INCBIN "data/tilesets/tower_metatiles.bin"
-
-TilesetTowerColl:
-INCLUDE "data/tilesets/tower_collision.asm"
-
 TilesetLabGFX:
 INCBIN "gfx/tilesets/lab.2bpp.lz"
 
@@ -335,3 +326,12 @@ INCBIN "data/tilesets/omanyte_word_room_metatiles.bin"
 
 TilesetAerodactylWordRoomMeta:
 INCBIN "data/tilesets/aerodactyl_word_room_metatiles.bin"
+
+TilesetTowerGFX:
+INCBIN "gfx/tilesets/tower.2bpp.lz"
+
+TilesetTowerMeta:
+INCBIN "data/tilesets/tower_metatiles.bin"
+
+TilesetTowerColl:
+INCLUDE "data/tilesets/tower_collision.asm"

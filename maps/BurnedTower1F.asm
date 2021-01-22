@@ -1,9 +1,9 @@
 	object_const_def ; object_event constants
 	const BURNEDTOWER1F_ROCK
 	const BURNEDTOWER1F_EUSINE
-	const BURNEDTOWER1F_SILVER
 	const BURNEDTOWER1F_MORTY
 	const BURNEDTOWER1F_POKE_BALL
+	const BURNEDTOWER1F_ENOKI
 
 BurnedTower1F_MapScripts:
 	db 3 ; scene scripts
@@ -25,79 +25,56 @@ BurnedTower1F_MapScripts:
 	end
 
 .HoleAndLadder:
-	checkevent EVENT_HOLE_IN_BURNED_TOWER
-	iftrue .KeepHoleOpen
-	changeblock 10, 8, $32 ; floor
-.KeepHoleOpen:
 	checkevent EVENT_RELEASED_THE_BEASTS
 	iftrue .HideBasement
 	changeblock 6, 14, $09 ; ladder
 .HideBasement:
+	checkevent EVENT_BEAT_ENOKI
+	iftrue .HideBasement2
+	return
+
+.HideBasement2:
+	changeblock 6, 14, $09 ; ladder
 	return
 
 .MeetEusine:
-	turnobject BURNEDTOWER1F_EUSINE, DOWN
-	showemote EMOTE_SHOCK, BURNEDTOWER1F_EUSINE, 15
-	applymovement BURNEDTOWER1F_EUSINE, BurnedTower1FEusineMovement
+	turnobject BURNEDTOWER1F_ENOKI, DOWN
+	showemote EMOTE_SHOCK, BURNEDTOWER1F_ENOKI, 15
+	applymovement BURNEDTOWER1F_ENOKI, BurnedTower1FEusineMovement
 	opentext
-	writetext BurnedTower1FEusineIntroText
+	writetext BurnedTower1FEnokiIntroText
 	waitbutton
 	closetext
-	moveobject BURNEDTOWER1F_EUSINE, 9, 14
+	moveobject BURNEDTOWER1F_ENOKI, 9, 14
 	setscene SCENE_BURNEDTOWER1F_RIVAL_BATTLE
 	end
 
-BurnedTowerRivalBattleScript:
-	showemote EMOTE_SHOCK, BURNEDTOWER1F_SILVER, 15
-	special FadeOutMusic
-	pause 15
-	turnobject BURNEDTOWER1F_SILVER, RIGHT
-	pause 15
-	applymovement PLAYER, BurnedTowerMovement_PlayerWalksToSilver
-	applymovement BURNEDTOWER1F_SILVER, BurnedTowerMovement_SilverWalksToPlayer
-	playmusic MUSIC_RIVAL_ENCOUNTER
+BurnedTower1FEusineScript:
 	opentext
-	writetext BurnedTowerSilver_BeforeText
+	writetext EusineBurnedTowerSuicuneText
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_DRATINI_FROM_MASTER
-	iftrue .totodile
-	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
-	iftrue .chikorita
-	winlosstext BurnedTowerSilver_WinText, BurnedTowerSilver_LossText
-	setlasttalked BURNEDTOWER1F_SILVER
-	loadtrainer RIVAL1, RIVAL1_3_TOTODILE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .returnfrombattle
-
-.totodile
-	winlosstext BurnedTowerSilver_WinText, BurnedTowerSilver_LossText
-	setlasttalked BURNEDTOWER1F_SILVER
-	loadtrainer RIVAL1, RIVAL1_3_CHIKORITA
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .returnfrombattle
-
-.chikorita
-	winlosstext BurnedTowerSilver_WinText, BurnedTowerSilver_LossText
-	setlasttalked BURNEDTOWER1F_SILVER
-	loadtrainer RIVAL1, RIVAL1_3_CYNDAQUIL
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .returnfrombattle
-
-.returnfrombattle
-	playmusic MUSIC_RIVAL_AFTER
 	opentext
-	writetext BurnedTowerSilver_AfterText1
+	writetext MortyHoOhText
+	waitbutton
+	closetext
+	opentext
+	writetext EusineReallyText
+	waitbutton
+	closetext
+	showemote EMOTE_SHOCK, BURNEDTOWER1F_EUSINE, 15
+	special FadeOutMusic
+	pause 15
+	turnobject BURNEDTOWER1F_EUSINE, RIGHT
+	pause 15
+	applymovement PLAYER, BurnedTowerMovement_PlayerWalksToSilver
+	applymovement BURNEDTOWER1F_EUSINE, BurnedTowerMovement_SilverWalksToPlayer
+	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
+	opentext
+	writetext EusineHelloText
 	waitbutton
 	closetext
 	setscene SCENE_BURNEDTOWER1F_NOTHING
-	setevent EVENT_RIVAL_BURNED_TOWER
 	special FadeOutMusic
 	pause 15
 	earthquake 50
@@ -109,18 +86,20 @@ BurnedTowerRivalBattleScript:
 	pause 15
 	applymovement PLAYER, BurnedTower1FMovement_PlayerStartsToFall
 	playsound SFX_KINESIS
-	showemote EMOTE_SHOCK, BURNEDTOWER1F_SILVER, 20
+	showemote EMOTE_SHOCK, BURNEDTOWER1F_EUSINE, 20
 	opentext
-	writetext BurnedTowerSilver_AfterText2
+	writetext AreYouOKText
 	waitbutton
 	closetext
 	setevent EVENT_HOLE_IN_BURNED_TOWER
+	setevent EVENT_EUSINE_IN_BURNED_TOWER
+	setmapscene BURNED_TOWER_B1F, SCENE_FINISHED
 	pause 15
 	warpcheck
 	end
 
-BurnedTower1FEusineScript:
-	jumptextfaceplayer BurnedTower1FEusineText
+BurnedTower1FEnokiScript:
+	jumptextfaceplayer BurnedTower1FEnokiText
 
 BurnedTower1FMortyScript:
 	jumptextfaceplayer BurnedTower1FMortyText
@@ -135,7 +114,7 @@ BurnedTower1FHiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_BURNED_TOWER_1F_HIDDEN_ULTRA_BALL
 
 BurnedTower1FHPUp:
-	itemball HP_UP
+	itemball TM_WILL_O_WISP
 
 BurnedTowerMovement_PlayerWalksToSilver:
 	step LEFT
@@ -157,104 +136,93 @@ BurnedTower1FEusineMovement:
 	step DOWN
 	step_end
 
-BurnedTowerSilver_BeforeText:
-	text "<……> <……> <……>"
+EusineBurnedTowerSuicuneText:
+	text "Eusine: Come on"
+	line "Morty!"
 
-	para "…Oh, it's you."
+	para "Suicune's gotta be"
+	line "here!"
 
-	para "I came looking for"
-	line "some legendary"
+	para "Your gramps would-"
+	line "n't have forbid us"
+	cont "from coming here"
 
-	para "#MON that they"
-	line "say roosts here."
-
-	para "But there's"
-	line "nothing here!"
-
-	para "Nothing after all"
-	line "the trouble of"
-
-	para "coming to this"
-	line "dump? No way!"
-
-	para "It's all your"
-	line "fault!"
+	para "if it wasn't!"
 	done
 
-BurnedTowerSilver_WinText:
-	text "…Humph!"
+MortyHoOhText:
+	text "Morty: I don't"
+	line "really care about"
+	cont "Suicune."
 
-	para "This is why I hate"
-	line "battling wimps."
-
-	para "There's no"
-	line "challenge in it."
+	para "I'm interested in"
+	line "meeting that"
+	cont "rainbow-colored"
+	cont "#mon."
 	done
 
-BurnedTowerSilver_AfterText1:
-	text "…Aw, whatever."
+EusineReallyText:
+	text "Eusine: Really,"
+	line "man?"
 
-	para "You would never be"
-	line "able to catch a"
+	para "There are plenty"
+	line "of bird #mon."
 
-	para "legendary #MON"
-	line "anyway."
+	para "There's only one"
+	line "like Suicune!"
 	done
 
-BurnedTowerSilver_LossText:
-	text "…Humph!"
+EusineHelloText:
+	text "Hi there!"
 
-	para "This is why I hate"
-	line "battling wimps."
+	para "I'm Eusine, and"
+	line "this is Morty!"
 
-	para "It's just a waste"
-	line "of my time."
+	para "We're searching"
+	line "for the legendary"
+	cont "#mon, Suicune!"
+	
+	para "Can you help us?"
+
+	para "...What?"
+
+	para "Morty's gramps is"
+	line "looking for us?"
+
+	para "Ah man, we're"
+	line "busted."
+
+	para "Alright, looks"
+	line "like we gotta go,"
+	cont "right, Morty?"
 	done
 
-BurnedTowerSilver_AfterText2:
-	text "Humph!"
+AreYouOKText:
+	text "Woah!"
 
-	para "What are you doing"
-	line "falling into a"
-
-	para "hole? Some genius"
-	line "you are!"
-
-	para "Serves you right!"
+	para "Are you OK?"
 	done
 
-BurnedTower1FEusineIntroText:
-	text "EUSINE: My name's"
-	line "EUSINE."
+BurnedTower1FEnokiIntroText:
+	text "Hello."
+	line "I beg your pardon,"
 
-	para "I'm on the trail"
-	line "of a #MON named"
-	cont "SUICUNE."
+	para "but I need some"
+	line "help. My grandson"
+	cont "Morty and his"
 
-	para "And you are…?"
+	para "friend Eusine are"
+	line "somewhere here in"
+	cont "the Burned Tower."
 
-	para "<PLAYER>? Glad to"
-	line "meet you!"
-
-	para "I heard rumors"
-	line "that SUICUNE is in"
-
-	para "this BURNED TOWER,"
-	line "so I came to look."
-
-	para "But where exactly"
-	line "could it be?"
+	para "Could you help me"
+	line "find them?"
 	done
 
-BurnedTower1FEusineText:
-	text "EUSINE: I heard"
-	line "that SUICUNE is in"
-
-	para "this BURNED TOWER,"
-	line "so I came to look."
-
-	para "But where exactly"
-	line "could it be?"
+BurnedTower1FEnokiText:
+	text "Hmmm...."
+	line "Maybe they're"
+	cont "near the center."
 	done
 
 BurnedTower1FMortyText:
@@ -295,7 +263,7 @@ BurnedTower1F_MapEvents:
 	warp_event  7, 15, BURNED_TOWER_B1F, 6 ; inaccessible, left over from G/S
 
 	db 1 ; coord events
-	coord_event 11,  9, SCENE_BURNEDTOWER1F_RIVAL_BATTLE, BurnedTowerRivalBattleScript
+	coord_event 11,  9, SCENE_BURNEDTOWER1F_RIVAL_BATTLE, BurnedTower1FEusineScript
 
 	db 2 ; bg events
 	bg_event  8,  7, BGEVENT_ITEM, BurnedTower1FHiddenEther
@@ -303,7 +271,7 @@ BurnedTower1F_MapEvents:
 
 	db 5 ; object events
 	object_event 15,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTower1FRock, -1
-	object_event 12, 12, SPRITE_EUSINE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEusineScript, EVENT_BURNED_TOWER_1F_EUSINE
-	object_event  8,  9, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, ObjectEvent, EVENT_RIVAL_BURNED_TOWER
-	object_event 14, 14, SPRITE_MORTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BurnedTower1FMortyScript, EVENT_BURNED_TOWER_MORTY
+	object_event  8,  9, SPRITE_EUSINE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEusineScript, EVENT_BURNED_TOWER_MORTY
+	object_event  7,  9, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BurnedTower1FMortyScript, EVENT_BURNED_TOWER_MORTY
 	object_event 14,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTower1FHPUp, EVENT_BURNED_TOWER_1F_HP_UP
+	object_event 12, 12, SPRITE_ENOKI, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEnokiScript, EVENT_BURNED_TOWER_1F_EUSINE
