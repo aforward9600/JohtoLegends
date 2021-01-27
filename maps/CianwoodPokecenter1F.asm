@@ -3,6 +3,8 @@
 	const CIANWOODPOKECENTER1F_LASS
 	const CIANWOODPOKECENTER1F_GYM_GUY
 	const CIANWOODPOKECENTER1F_SUPER_NERD
+	const CIANWOODPOKECENTER1F_KRIS ; if Male
+	const CIANWOODPOKECENTER1F_CHRIS ; if Female
 
 CianwoodPokecenter1F_MapScripts:
 	db 0 ; scene scripts
@@ -35,13 +37,17 @@ CianwoodGymGuyScript:
 CianwoodPokecenter1FSuperNerdScript:
 	jumptextfaceplayer CianwoodPokecenter1FSuperNerdText
 
+CianwoodPokecenterRivalScript:
+	jumptextfaceplayer CianwoodPokecenterRivalText
+
 CianwoodPokecenter1FLassText:
 	text "Did you meet the"
-	line "#MANIAC?"
+	line "kid with the Snea-"
+	cont "sel and Shuckle?"
 
 	para "He's always brag-"
 	line "ging about his"
-	cont "rare #MON."
+	cont "rare #mon."
 	done
 
 CianwoodGymGuyText:
@@ -106,17 +112,34 @@ CianwoodPokecenter1FUnusedText2:
 	done
 
 CianwoodPokecenter1FSuperNerdText:
-	text "I love showing off"
-	line "the #MON that"
+	text "Don't you get the"
+	line "urge to show off"
 
-	para "I've raised."
-	line "Don't you?"
+	para "your #mon to"
+	line "friends?"
 
-	para "I'm going to get"
-	line "into a bunch of"
+	para "I wish I could"
+	line "show the #mon I"
 
-	para "battles, and show"
-	line "off my #MON!"
+	para "raised to my pal"
+	line "in Violet."
+	done
+
+CianwoodPokecenterRivalText:
+	text "Ugh..."
+
+	para "Sorry...I got a"
+	line "little seasick."
+
+	para "I'm not used to"
+	line "travelling on"
+	cont "water..."
+
+	para "I'm going to take"
+	line "a break and try to"
+	cont "feel better..."
+
+	para "Ugh..."
 	done
 
 CianwoodPokecenter1F_MapEvents:
@@ -131,8 +154,10 @@ CianwoodPokecenter1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 6 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FNurseScript, -1
-	object_event  1,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FLassScript, -1
+	object_event  1,  5, SPRITE_TWIN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FLassScript, -1
 	object_event  5,  3, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodGymGuyScript, -1
 	object_event  8,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FSuperNerdScript, -1
+	object_event  2,  7, SPRITE_KRIS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenterRivalScript, EVENT_CIANWOOD_CITY_CENTER_RIVAL1
+	object_event  2,  7, SPRITE_CHRIS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenterRivalScript, EVENT_CIANWOOD_CITY_CENTER_RIVAL2

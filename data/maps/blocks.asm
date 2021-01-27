@@ -55,8 +55,6 @@ Route10South_Blocks:
 	INCBIN "maps/Route10South.blk"
 
 Pokecenter2F_Blocks:
-PewterPokecenter2FBeta_Blocks:
-FuchsiaPokecenter2FBeta_Blocks:
 LavenderPokecenter2FBeta_Blocks:
 CeladonPokecenter2FBeta_Blocks:
 ViridianPokecenter2FBeta_Blocks:
@@ -403,6 +401,7 @@ CeladonDeptStore6F_Blocks:
 
 GoldenrodDeptStoreElevator_Blocks:
 CeladonDeptStoreElevator_Blocks:
+LighthouseElevator_Blocks:
 	INCBIN "maps/DeptStoreElevator.blk"
 
 CeladonMansion1F_Blocks:
@@ -932,6 +931,7 @@ SeafoamGym_Blocks:
 	INCBIN "maps/SeafoamGym.blk"
 
 MrPokemonsHouse_Blocks:
+FossilHouse_Blocks:
 	INCBIN "maps/MrPokemonsHouse.blk"
 
 VictoryRoadGate_Blocks:

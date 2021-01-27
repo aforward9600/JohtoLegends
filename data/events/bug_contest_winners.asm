@@ -25,7 +25,7 @@ BugContestant_BugCatcherDon:
 	dw CATERPIE,   226
 
 BugContestant_BugCatcherEd:
-	db BUG_CATCHER, ED
+	db BUG_CATCHER, STEVIE
 	dw BUTTERFREE, 286
 	dw BUTTERFREE, 251
 	dw CATERPIE,   237

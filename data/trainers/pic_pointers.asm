@@ -78,3 +78,4 @@ TrainerPicPointers::
 	dba GenSurgePic
 	dba LancePic
 	dba PasserbyPic
+	dba PasserbyPic

@@ -324,7 +324,7 @@ CHRIS EQU __enum__
 	trainerclass BUG_CATCHER ; 24
 	const ANTON
 	const COLTON
-	const ED
+	const STEVIE
 	const WADE1
 	const BUG_CATCHER_BENNY
 	const AL
@@ -717,6 +717,7 @@ CHRIS EQU __enum__
 	trainerclass HEX_MANIAC ; 47
 	const HILDA
 	const ZELDA
+	const SABRINA2
 
 	trainerclass CHIGUSA ; 48
 	const CHIGUSA1
@@ -732,6 +733,9 @@ CHRIS EQU __enum__
 
 	trainerclass PASSERBY ; 4c
 	const MIYAMOTO
+
+	trainerclass MYSTERIOUS ; 4d
+	const MIYAMOTO1
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

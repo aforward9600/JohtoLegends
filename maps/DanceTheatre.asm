@@ -40,7 +40,7 @@ TrainerKimonoGirlRui:
 	writetext GotEeveeText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke EEVEE, 10
+	givepoke EEVEE, 15
 	setevent EVENT_GOT_EEVEE
 .GotEevee:
 	writetext TrainerKimonoGirlRuiAfterBattleText
@@ -98,7 +98,162 @@ DanceTheatreCooltrainerMScript:
 	jumptextfaceplayer DanceTheatreCooltrainerMText
 
 DanceTheatreGrannyScript:
-	jumptextfaceplayer DanceTheatreGrannyText
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_EEVEE
+	iftrue .GiveStones
+	writetext DanceTheatreGrannyText
+	waitbutton
+	closetext
+	end
+
+.GiveStones:
+	checkevent EVENT_GOT_STONE_FROM_THEATRE
+	iftrue .NoStones
+	writetext YouGotAnEeveeText
+	waitbutton
+	loadmenu DanceTheatreStonesMenu
+	verticalmenu
+	closewindow
+	ifequal 1, .WaterStone
+	ifequal 2, .ThunderStone
+	ifequal 3, .FireStone
+	ifequal 4, .SunStone
+	ifequal 5, .NewMenu
+	sjump .MaybeLater
+
+.NewMenu:
+	loadmenu DanceTheatreStonesMenu2
+	verticalmenu
+	closewindow
+	ifequal 1, .MoonStone
+	ifequal 2, .LeafStone
+	ifequal 3, .IceStone
+	ifequal 4, .ShinyStone
+	ifequal 5, .MaybeLater
+	sjump .MaybeLater
+
+.NoStones:
+	writetext HowIsYourEeveeText
+	waitbutton
+	closetext
+	end
+
+.WaterStone:
+	writetext HereYouGoText
+	buttonsound
+	verbosegiveitem WATER_STONE
+	writetext VaporeonText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_STONE_FROM_THEATRE
+	end
+
+.ThunderStone:
+	writetext HereYouGoText
+	buttonsound
+	verbosegiveitem THUNDERSTONE
+	writetext JolteonText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_STONE_FROM_THEATRE
+	end
+
+.FireStone:
+	writetext HereYouGoText
+	buttonsound
+	verbosegiveitem FIRE_STONE
+	writetext FlareonText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_STONE_FROM_THEATRE
+	end
+
+.SunStone:
+	writetext HereYouGoText
+	buttonsound
+	verbosegiveitem SUN_STONE
+	writetext EspeonText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_STONE_FROM_THEATRE
+	end
+
+.MoonStone:
+	writetext HereYouGoText
+	buttonsound
+	verbosegiveitem MOON_STONE
+	writetext UmbreonText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_STONE_FROM_THEATRE
+	end
+
+.LeafStone:
+	writetext HereYouGoText
+	buttonsound
+	verbosegiveitem LEAF_STONE
+	writetext LeafeonText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_STONE_FROM_THEATRE
+	end
+
+.IceStone:
+	writetext HereYouGoText
+	buttonsound
+	verbosegiveitem ICE_STONE
+	writetext GlaceonText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_STONE_FROM_THEATRE
+	end
+
+.ShinyStone:
+	writetext HereYouGoText
+	buttonsound
+	verbosegiveitem SHINY_STONE
+	writetext SylveonText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_STONE_FROM_THEATRE
+	end
+
+.MaybeLater:
+	writetext OKMaybeNextTimeText
+	waitbutton
+	closetext
+	end
+
+DanceTheatreStonesMenu:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 15, TEXTBOX_Y - 0
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 5 ; items
+	db "Water Stone@"
+	db "Thunderstone@"
+	db "Fire Stone@"
+	db "Sun Stone@"
+	db "Next Page@"
+
+DanceTheatreStonesMenu2:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 15, TEXTBOX_Y - 0
+	dw .MenuData2
+	db 1 ; default option
+
+.MenuData2:
+	db STATICMENU_CURSOR ; flags
+	db 5 ; items	
+	db "Moon Stone@"
+	db "Leaf Stone@"
+	db "Ice Stone@"
+	db "Shiny Stone@"
+	db "Cancel@"
 
 DanceTheatreFancyPanel:
 	jumptext DanceTheatreFancyPanelText
@@ -319,6 +474,85 @@ DanceTheatreFancyPanelText:
 	text "It's a fancy panel"
 	line "that's decorated"
 	cont "with flowers."
+	done
+
+YouGotAnEeveeText:
+	text "Oh, I see you have"
+	line "an Eevee."
+
+	para "The most versatile"
+	line "of #mon, Eevee"
+	cont "can evolve into"
+	cont "one of 8 forms."
+
+	para "I can give you an"
+	line "item to evolve it,"
+	cont "but only one."
+
+	para "Choose wisely."
+	done
+
+HereYouGoText:
+	text "Here you go."
+	done
+
+VaporeonText:
+	text "Vaporeon the Water"
+	line "type. An excellent"
+	cont "choice."
+	done
+
+JolteonText:
+	text "Jolteon the Elect-"
+	line "ric type. An exce-"
+	cont "llent choice."
+	done
+
+FlareonText:
+	text "Flareon the Fire"
+	line "type. An excellent"
+	cont "choice."
+	done
+
+EspeonText:
+	text "Espeon the Psychic"
+	line "type. An excellent"
+	cont "choice."
+	done
+
+UmbreonText:
+	text "Umbreon the Dark"
+	line "type. An excellent"
+	cont "choice."
+	done
+
+LeafeonText:
+	text "Leafeon the Grass"
+	line "type. An excellent"
+	cont "choice."
+	done
+
+GlaceonText:
+	text "Glaceon the Ice"
+	line "type. An excellent"
+	cont "choice."
+	done
+
+SylveonText:
+	text "Sylveon the Fairy"
+	line "type. An excellent"
+	cont "choice."
+	done
+
+HowIsYourEeveeText:
+	text "How's your Eevee?"
+
+	para "Has it evolved"
+	line "yet?"
+	done
+
+OKMaybeNextTimeText:
+	text "OK. Perhaps later."
 	done
 
 DanceTheatre_MapEvents:

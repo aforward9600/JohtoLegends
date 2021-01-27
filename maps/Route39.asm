@@ -6,9 +6,9 @@
 	const ROUTE39_MILTANK2
 	const ROUTE39_MILTANK3
 	const ROUTE39_MILTANK4
-	const ROUTE39_PSYCHIC_NORMAN
+	const ROUTE39_BUG_CATCHER
 	const ROUTE39_FRUIT_TREE
-	const ROUTE39_POKEFAN_F2
+	const ROUTE39_HEX_MANIAC
 
 Route39_MapScripts:
 	db 0 ; scene scripts
@@ -16,151 +16,87 @@ Route39_MapScripts:
 	db 0 ; callbacks
 
 Route39Miltank:
-	opentext
-	writetext Route39MiltankText
+	refreshscreen
+	pokepic MILTANK
 	cry MILTANK
 	waitbutton
-	closetext
-	end
-
-TrainerPokefanmDerek:
-	trainer POKEFANM, DEREK1, EVENT_BEAT_POKEFANM_DEREK, PokefanmDerekSeenText, PokefanmDerekBeatenText, 0, .Script
-
-.Script:
-	loadvar VAR_CALLERID, PHONE_POKEFANM_DEREK
-	endifjustbattled
+	closepokepic
 	opentext
-	checkflag ENGINE_DEREK_HAS_NUGGET
-	iftrue .HasNugget
-	checkcellnum PHONE_POKEFANM_DEREK
-	iftrue .NumberAccepted
-	checkpoke PIKACHU
-	iffalse .WantsPikachu
-	checkevent EVENT_DEREK_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskedAlready
-	writetext PokefanMDerekText_NotBragging
-	buttonsound
-	setevent EVENT_DEREK_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
-	sjump .AskForNumber
-
-.AskedAlready:
-	scall .AskNumber2
-.AskForNumber:
-	askforphonenumber PHONE_POKEFANM_DEREK
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, POKEFANM, DEREK1
-	scall .RegisteredNumber
-	sjump .NumberAccepted
-
-.HasNugget:
-	scall .Gift
-	verbosegiveitem NUGGET
-	iffalse .NoRoom
-	clearflag ENGINE_DEREK_HAS_NUGGET
-	sjump .NumberAccepted
-
-.NoRoom:
-	sjump .PackFull
-
-.WantsPikachu:
-	writetext PokefanMDerekPikachuIsItText
+	writetext Route39MiltankText
 	waitbutton
 	closetext
 	end
 
-.AskNumber1:
-	jumpstd asknumber1m
-	end
-
-.AskNumber2:
-	jumpstd asknumber2m
-	end
-
-.RegisteredNumber:
-	jumpstd registerednumberm
-	end
-
-.NumberAccepted:
-	jumpstd numberacceptedm
-	end
-
-.NumberDeclined:
-	jumpstd numberdeclinedm
-	end
-
-.PhoneFull:
-	jumpstd phonefullm
-	end
-
-.Gift:
-	jumpstd giftm
-	end
-
-.PackFull:
-	jumpstd packfullm
-	end
-
-TrainerPokefanfRuth:
-	trainer POKEFANF, ETHEL1, EVENT_BEAT_POKEFANF_ETHEL, PokefanfRuthSeenText, PokefanfRuthBeatenText, 0, .Script
+TrainerPokefanmDevon:
+	trainer POKEFANM, DEREK1, EVENT_BEAT_POKEFANM_DEREK, PokefanmDevonSeenText, PokefanmDevonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokefanfRuthAfterBattleText
+	writetext PokefanmDevonAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerSailorEugene:
-	trainer SAILOR, EUGENE, EVENT_BEAT_SAILOR_EUGENE, SailorEugeneSeenText, SailorEugeneBeatenText, 0, .Script
+TrainerPokefanfCamilla:
+	trainer POKEFANF, GEORGIA, EVENT_BEAT_POKEFANF_GEORGIA, PokefanfCamillaSeenText, PokefanfCamillaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SailorEugeneAfterBattleText
+	writetext PokefanfCamillaAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPsychicNorman:
-	trainer PSYCHIC_T, NORMAN, EVENT_BEAT_PSYCHIC_NORMAN, PsychicNormanSeenText, PsychicNormanBeatenText, 0, .Script
+TrainerSailorSheldon:
+	trainer SAILOR, EUGENE, EVENT_BEAT_SAILOR_EUGENE, SailorSheldonSeenText, SailorSheldonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PsychicNormanAfterBattleText
+	writetext SailorSheldonAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPokefanfJaime:
+TrainerBugCatcherStevie:
+	trainer BUG_CATCHER, STEVIE, EVENT_BEAT_BUG_CATCHER_STEVIE, BugCatcherStevieSeenText, BugCatcherStevieBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugCatcherStevieAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerHexManiacSabrina:
 	faceplayer
 	opentext
 	checktime NITE
 	iffalse .NotNight
-	checkevent EVENT_BEAT_POKEFANF_JAIME
+	checkevent EVENT_BEAT_HEX_MANIAC_SABRINA
 	iftrue .Beaten
-	writetext PokefanfJaimeSeenText
+	writetext HexManiacSabrinaSeenText
 	waitbutton
 	closetext
-	winlosstext PokefanfJaimeBeatenText, 0
-	loadtrainer POKEFANF, JAIME
+	winlosstext HexManiacSabrinaBeatenText, 0
+	loadtrainer HEX_MANIAC, SABRINA2
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_POKEFANF_JAIME
+	setevent EVENT_BEAT_HEX_MANIAC_SABRINA
 	closetext
 	end
 
 .Beaten:
-	writetext PokefanfJaimeAfterBattleText
+	writetext HexManiacSabrinaAfterBattleText
 	waitbutton
 	closetext
 	end
 
 .NotNight:
-	writetext PokefanfJaimeHopeItGetsDarkText
+	writetext HexManiacSabrinaHopeItGetsDarkText
 	waitbutton
 	closetext
 	end
@@ -181,73 +117,76 @@ Route39HiddenNugget:
 	hiddenitem NUGGET, EVENT_ROUTE_39_HIDDEN_NUGGET
 
 Route39MiltankText:
-	text "MILTANK: Mooo!"
+	text "Miltank: Mooo!"
 	done
 
-SailorEugeneSeenText:
-	text "I just got back to"
-	line "OLIVINE."
-
-	para "So how about a"
-	line "#MON battle?"
+SailorSheldonSeenText:
+	text "I hope the ships"
+	line "start sailing to"
+	cont "Kanto again."
 	done
 
-SailorEugeneBeatenText:
+SailorSheldonBeatenText:
 	text "Awaaargh!"
 	done
 
-SailorEugeneAfterBattleText:
-	text "My #MON were"
-	line "caught and raised"
-	cont "overseas."
+SailorSheldonAfterBattleText:
+	text "Yeah, we can"
+	line "only sail to Hoenn"
+	cont "and Sinnoh."
 
-	para "They're my compan-"
-	line "ions on those long"
-	cont "voyages."
+	para "Unova's tariffs"
+	line "are too high, and"
+	cont "Kalos, Alola and"
+	cont "Galar are too far"
+	cont "for an average"
+	cont "haul."
+
+	para "Orre would be"
+	line "easier if they had"
+	cont "more than one"
+	cont "port."
 	done
 
-PokefanmDerekSeenText:
-	text "This is a good"
-	line "time to brag about"
-	cont "my PIKACHU!"
+PokefanmDevonSeenText:
+	text "Pikachu is too"
+	line "cute, but I love"
+	cont "all my #mon"
+	cont "equally!"
 	done
 
-PokefanmDerekBeatenText:
-	text "I had no time to"
-	line "show off PIKACHU…"
+PokefanmDevonBeatenText:
+	text "See, all cute!"
 	done
 
-PokefanMDerekText_NotBragging:
-	text "I'm not listening"
-	line "to your bragging!"
+PokefanmDevonAfterBattleText:
+	text "I'm quite over-"
+	line "bearing toward my"
+	cont "#mon, but it's"
 
-	para "We # FANS have"
-	line "a policy of not"
-
-	para "listening to other"
-	line "people brag!"
+	para "better than being"
+	line "neglectful!"
 	done
 
-PokefanfRuthSeenText:
-	text "Such darling"
-	line "#MON."
+PokefanfCamillaSeenText:
+	text "I have a #mon"
+	line "some wouldn't"
+	cont "consider to be"
+	cont "cute, but they're"
 
-	para "Let's show our"
-	line "#MON together"
-	cont "at the same time."
+	para "wrong! Here, take"
+	line "a look!"
 	done
 
-PokefanfRuthBeatenText:
-	text "I don't mind"
-	line "losing."
-	done
-
-PokefanfRuthAfterBattleText:
-	text "Do you know about"
-	line "baby #MON?"
-
-	para "I bet they're just"
+PokefanfCamillaBeatenText:
+	text "Croconaw is"
 	line "adorable!"
+	done
+
+PokefanfCamillaAfterBattleText:
+	text "Don't you agree?"
+	line "Croconaw is just"
+	cont "cutest!"
 	done
 
 PokefanMDerekPikachuIsItText:
@@ -255,90 +194,79 @@ PokefanMDerekPikachuIsItText:
 	line "Don't you agree?"
 	done
 
-PsychicNormanSeenText:
-	text "Let me see what"
-	line "your #MON are"
-	cont "capable of."
+BugCatcherStevieSeenText:
+	text "There's some good"
+	line "Bug #mon in"
+	cont "this area!"
 	done
 
-PsychicNormanBeatenText:
-	text "Ooh, your #MON"
-	line "have potential."
+BugCatcherStevieBeatenText:
+	text "My bugs weren't"
+	line "strong enough..."
 	done
 
-PsychicNormanAfterBattleText:
-	text "You know how #-"
-	line "MON have different"
-	cont "abilities?"
+BugCatcherStevieAfterBattleText:
+	text "National Forest"
+	line "has so many Bug-"
+	cont "types! You should"
 
-	para "People are like"
-	line "that too. Every-"
-	cont "one has different"
-	cont "potential."
+	para "vist sometime."
 	done
 
-PokefanfJaimeHopeItGetsDarkText:
+HexManiacSabrinaHopeItGetsDarkText:
 	text "Ufufufu… I hope it"
 	line "gets dark soon."
 	done
 
-PokefanfJaimeSeenText:
-	text "You came at just"
-	line "the right time."
+HexManiacSabrinaSeenText:
+	text "A murder of"
+	line "Murkrow come out"
+	cont "at night."
 
-	para "Let's battle."
+	para "It's a spectacular"
+	line "sight."
 	done
 
-PokefanfJaimeBeatenText:
-	text "Oh, how disap-"
-	line "pointing…"
+HexManiacSabrinaBeatenText:
+	text "Although they can"
+	line "give you a fright."
 	done
 
-PokefanfJaimeAfterBattleText:
-	text "I met my MEOWTH at"
-	line "night, right here"
-	cont "on ROUTE 39."
-
-	para "I'm not sure why,"
-	line "but it seems to"
-
-	para "like it when I"
-	line "train here."
-
-	para "It seems to become"
-	line "friendlier by"
-
-	para "training here than"
-	line "anywhere else."
+HexManiacSabrinaAfterBattleText:
+	text "The only thing"
+	line "that causes them"
+	cont "to recede is"
+	cont "light."
 	done
 
 Route39SignText:
-	text "ROUTE 39"
+	text "Route 39"
 
-	para "OLIVINE CITY -"
-	line "ECRUTEAK CITY"
+	para "Olivine City -"
+	line "Ecruteak City"
 	done
 
 MoomooFarmSignText:
-	text "MOOMOO FARM"
+	text "MooMoo Farm"
 
 	para "Enjoy Our Fresh"
 	line "and Tasty Milk"
 	done
 
 Route39TrainerTipsText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
-	para "Use HEADBUTT on"
-	line "trees to shake"
-	cont "#MON out."
+	para "Use SnubbullCall"
+	line "on trees to shake"
+	cont "#mon out."
 
 	para "Different kinds of"
-	line "#MON drop out"
+	line "#mon drop out"
 	cont "of trees."
 
-	para "Use HEADBUTT on"
-	line "any tree you see!"
+	para "Use SnubbullCall"
+	line "on any tree you"
+	cont "see!"
 	done
 
 Route39_MapEvents:
@@ -357,13 +285,13 @@ Route39_MapEvents:
 	bg_event  5, 13, BGEVENT_ITEM, Route39HiddenNugget
 
 	db 10 ; object events
-	object_event 13, 29, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSailorEugene, -1
-	object_event 10, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanmDerek, -1
-	object_event 11, 19, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanfRuth, -1
+	object_event 13, 29, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSailorSheldon, -1
+	object_event 10, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanmDevon, -1
+	object_event 11, 19, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanfCamilla, -1
 	object_event  3, 12, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event  6, 11, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event  4, 15, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event  8, 13, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
-	object_event 13,  7, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicNorman, -1
+	object_event 13,  7, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherStevie, -1
 	object_event  9,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FruitTree, -1
-	object_event  4, 22, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerPokefanfJaime, -1
+	object_event  4, 22, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, TrainerHexManiacSabrina, -1

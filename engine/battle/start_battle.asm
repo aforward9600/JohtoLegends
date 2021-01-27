@@ -78,7 +78,7 @@ PlayBattleMusic:
 	ld de, MUSIC_JOHTO_WILD_BATTLE
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jr nz, .done
+	jp nz, .done
 	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
 	jr .done
 
@@ -103,6 +103,8 @@ PlayBattleMusic:
 	cp ARIANA
 	jr z, .done
 	cp SCIENTIST
+	jr z, .done
+	cp MYSTERIOUS
 	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE

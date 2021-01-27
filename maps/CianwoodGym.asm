@@ -1,18 +1,27 @@
 	object_const_def ; object_event constants
 	const CIANWOODGYM_CHUCK
 	const CIANWOODGYM_BLACK_BELT1
-	const CIANWOODGYM_BLACK_BELT2
 	const CIANWOODGYM_BLACK_BELT3
 	const CIANWOODGYM_BLACK_BELT4
 	const CIANWOODGYM_CHIGUSA
 	const CIANWOODGYM_BOULDER2
 	const CIANWOODGYM_BOULDER3
 	const CIANWOODGYM_BOULDER4
+	const CIANWOODGYM_KRIS ; if Male
+	const CIANWOODGYM_CHRIS ; if Female
 
 CianwoodGym_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .Dummy0 ; SCENE_DEFAULT
+	scene_script .Dummy1 ; SCENE_FINISHED
 
 	db 0 ; callbacks
+
+.Dummy0
+	end
+
+.Dummy1
+	end
 
 CianwoodGymChigusaScript:
 	faceplayer
@@ -38,6 +47,7 @@ CianwoodGymChigusaScript:
 	setflag ENGINE_STORMBADGE
 	readvar VAR_BADGES
 	scall CianwoodGymActivateRockets
+	setscene SCENE_FINISHED
 .FightDone:
 	checkevent EVENT_GOT_TM08_BULK_UP
 	iftrue .AlreadyGotTM
@@ -85,17 +95,6 @@ TrainerBlackbeltYoshi:
 	closetext
 	end
 
-TrainerBlackbeltLao:
-	trainer BLACKBELT_T, LAO, EVENT_BEAT_BLACKBELT_LAO, BlackbeltLaoSeenText, BlackbeltLaoBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext BlackbeltLaoAfterText
-	waitbutton
-	closetext
-	end
-
 TrainerBlackbeltNob:
 	trainer BLACKBELT_T, NOB, EVENT_BEAT_BLACKBELT_NOB, BlackbeltNobSeenText, BlackbeltNobBeatenText, 0, .Script
 
@@ -139,6 +138,118 @@ CianwoodGymStatue:
 .Beaten:
 	gettrainername STRING_BUFFER_4, CHIGUSA, CHIGUSA1
 	jumpstd gymstatue2
+
+CianwoodGymDahliaScript:
+	faceplayer
+	opentext
+	writetext CianwoodGymRivalText
+	waitbutton
+	closetext
+	turnobject CIANWOODGYM_KRIS, UP
+	end
+
+CianwoodGymDracoScript:
+	faceplayer
+	opentext
+	writetext CianwoodGymRivalText
+	waitbutton
+	closetext
+	turnobject CIANWOODGYM_CHRIS, UP
+	end
+
+RivalWalksLeft:
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female1
+	moveobject CIANWOODGYM_KRIS, 4, 17
+	playsound SFX_ENTER_DOOR
+	appear CIANWOODGYM_KRIS
+	applymovement CIANWOODGYM_KRIS, RivalWalksUpMovement
+	opentext
+	writetext CianwoodGymHeyThereText
+	waitbutton
+	closetext
+	applymovement CIANWOODGYM_KRIS, RivalWalksLeftMovement
+	disappear CIANWOODGYM_KRIS
+	moveobject CIANWOODGYM_KRIS, 5, 2
+	clearevent EVENT_CIANWOOD_GYM_RIVAL1
+	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL1
+	setscene SCENE_DEFAULT
+	end
+
+.Female1:
+	moveobject CIANWOODGYM_CHRIS, 4, 17
+	playsound SFX_ENTER_DOOR
+	appear CIANWOODGYM_CHRIS
+	applymovement CIANWOODGYM_CHRIS, RivalWalksUpMovement
+	opentext
+	writetext CianwoodGymHeyThereText
+	waitbutton
+	closetext
+	applymovement CIANWOODGYM_CHRIS, RivalWalksLeftMovement
+	disappear CIANWOODGYM_CHRIS
+	moveobject CIANWOODGYM_CHRIS, 5, 2
+	clearevent EVENT_CIANWOOD_GYM_RIVAL2
+	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL2
+	setscene SCENE_DEFAULT
+	end
+
+RivalWalksRight:
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female2
+	moveobject CIANWOODGYM_KRIS, 5, 17
+	playsound SFX_ENTER_DOOR
+	appear CIANWOODGYM_KRIS
+	applymovement CIANWOODGYM_KRIS, RivalWalksUpMovement
+	opentext
+	writetext CianwoodGymHeyThereText
+	waitbutton
+	closetext
+	applymovement CIANWOODGYM_KRIS, RivalWalksRightMovement
+	disappear CIANWOODGYM_KRIS
+	moveobject CIANWOODGYM_KRIS, 5, 2
+	clearevent EVENT_CIANWOOD_GYM_RIVAL1
+	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL1
+	setscene SCENE_DEFAULT
+	end
+
+.Female2:
+	moveobject CIANWOODGYM_CHRIS, 5, 17
+	playsound SFX_ENTER_DOOR
+	appear CIANWOODGYM_CHRIS
+	applymovement CIANWOODGYM_CHRIS, RivalWalksUpMovement
+	opentext
+	writetext CianwoodGymHeyThereText
+	waitbutton
+	closetext
+	applymovement CIANWOODGYM_CHRIS, RivalWalksRightMovement
+	disappear CIANWOODGYM_CHRIS
+	moveobject CIANWOODGYM_CHRIS, 5, 2
+	clearevent EVENT_CIANWOOD_GYM_RIVAL2
+	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL2
+	setscene SCENE_DEFAULT
+	end
+
+RivalWalksUpMovement:
+	step UP
+	step UP
+	step UP
+	step_end
+
+RivalWalksLeftMovement:
+	step RIGHT
+	step UP
+	step UP
+	step UP
+	step UP
+	step_end
+
+RivalWalksRightMovement:
+	step LEFT
+	step UP
+	step UP
+	step UP
+	step UP
+	step_end
 
 ChigusaIntroText:
 	text "Heya trainer! I'm"
@@ -194,9 +305,7 @@ GetStormBadgeText:
 	done
 
 ChigusaExplainBadgeText:
-	text "#mon up to Lv"
-	line "40 will obey you."
-	cont "Take this TM!"
+	text "Take this TM!"
 	done
 
 ChigusaExplainTMText:
@@ -230,12 +339,10 @@ ChigusaAfterText:
 	done
 
 BlackbeltYoshiSeenText:
-	text "My #MON and I"
-	line "are bound togeth-"
-	cont "er by friendship."
+	text "I break boards"
+	line "with my head!"
 
-	para "Our bond will"
-	line "never be broken!"
+	para "I am invincable!"
 	done
 
 BlackbeltYoshiBeatenText:
@@ -243,24 +350,9 @@ BlackbeltYoshiBeatenText:
 	done
 
 BlackbeltYoshiAfterText:
-	text "You seem to have a"
-	line "strong bond with"
-	cont "your #MON too!"
-	done
-
-BlackbeltLaoSeenText:
-	text "We martial artists"
-	line "fear nothing!"
-	done
-
-BlackbeltLaoBeatenText:
-	text "That's shocking!"
-	done
-
-BlackbeltLaoAfterText:
-	text "Fighting #MON"
-	line "are afraid of psy-"
-	cont "chics…"
+	text "Perhaps board brea-"
+	line "king isn't useful"
+	cont "in battles."
 	done
 
 BlackbeltNobSeenText:
@@ -279,19 +371,22 @@ BlackbeltNobAfterText:
 	done
 
 BlackbeltLungSeenText:
-	text "My raging fists"
-	line "will shatter your"
-	cont "#MON!"
+	text "He has no style!"
+
+	para "He has no grace!"
+
+	para "This Blackbelt has"
+	line "a funny face!"
 	done
 
 BlackbeltLungBeatenText:
-	text "I got shattered!"
+	text "Huh!"
 	done
 
 BlackbeltLungAfterText:
-	text "My #MON lost…"
-	line "My… my pride is"
-	cont "shattered…"
+	text "I sing this song"
+	line "to hype myself"
+	cont "up for battle."
 	done
 
 ChuckSeenText:
@@ -372,6 +467,32 @@ ChuckAfterText:
 	line "me."
 	done
 
+CianwoodGymHeyThereText:
+	text "Alright, I'm feel-"
+	line "ing better now."
+
+	para "You got ahead of"
+	line "me, but I'll catch"
+	cont "up in no time!"
+
+	para "After this battle,"
+	line "can you meet me at"
+	cont "Route 48?"
+
+	para "It's through the"
+	line "cave to the west."
+
+	para "There's something"
+	line "there I want to"
+	cont "show you."
+	done
+
+CianwoodGymRivalText:
+	text "I didn't think"
+	line "this Leader would"
+	cont "be so tough!"
+	done
+
 CianwoodGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -379,19 +500,22 @@ CianwoodGym_MapEvents:
 	warp_event  4, 17, CIANWOOD_CITY, 2
 	warp_event  5, 17, CIANWOOD_CITY, 2
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event  4, 14, SCENE_FINISHED, RivalWalksLeft
+	coord_event  5, 14, SCENE_FINISHED, RivalWalksRight
 
 	db 2 ; bg events
 	bg_event  3, 15, BGEVENT_READ, CianwoodGymStatue
 	bg_event  6, 15, BGEVENT_READ, CianwoodGymStatue
 
-	db 9 ; object events
+	db 10 ; object events
 	object_event  3,  4, SPRITE_CHUCK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerApprenticeChuck, -1
 	object_event  2, 12, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltYoshi, -1
-	object_event  7, 12, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltLao, -1
 	object_event  3,  9, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltNob, -1
 	object_event  5,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBlackbeltLung, -1
-	object_event  4,  1, SPRITE_CHIGUSA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodGymChigusaScript, -1
+	object_event  5,  1, SPRITE_CHIGUSA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodGymChigusaScript, -1
 	object_event  3,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
 	object_event  4,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
 	object_event  5,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
+	object_event  5,  2, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymDahliaScript, EVENT_CIANWOOD_GYM_RIVAL1
+	object_event  5,  2, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymDracoScript, EVENT_CIANWOOD_GYM_RIVAL2

@@ -1,5 +1,6 @@
 	object_const_def ; object_event constants
 	const CIANWOODPHARMACY_PHARMACIST
+	const CIANWOODPHARMACY_GRANDMA
 
 CianwoodPharmacy_MapScripts:
 	db 1 ; scene scripts
@@ -11,63 +12,22 @@ CianwoodPharmacy_MapScripts:
 	end
 
 CianwoodPharmacist:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_SECRETPOTION_FROM_PHARMACY
-	iftrue .Mart
-	checkevent EVENT_JASMINE_EXPLAINED_AMPHYS_SICKNESS
-	iffalse .Mart
-	writetext PharmacistGiveSecretpotionText
-	buttonsound
-	giveitem SECRETPOTION
-	writetext ReceivedSecretpotionText
-	playsound SFX_KEY_ITEM
-	waitsfx
-	itemnotify
-	setevent EVENT_GOT_SECRETPOTION_FROM_PHARMACY
-	writetext PharmacistDescribeSecretpotionText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer CianwoodPharmacistText
 
-.Mart:
-	pokemart MARTTYPE_PHARMACY, MART_CIANWOOD
+PharmacyGrannyScript:
+	opentext
+	pokemart MARTTYPE_BITTER, MART_UNDERGROUND
 	closetext
 	end
 
 CianwoodPharmacyBookshelf:
 	jumpstd difficultbookshelf
 
-PharmacistGiveSecretpotionText:
-	text "Your #MON ap-"
-	line "pear to be fine."
-
-	para "Is something wor- "
-	line "rying you?"
-
-	para "…"
-
-	para "The LIGHTHOUSE"
-	line "#MON is in"
-	cont "trouble?"
-
-	para "I got it!"
-
-	para "This ought to do"
-	line "the trick."
-	done
-
-ReceivedSecretpotionText:
-	text "<PLAYER> received"
-	line "SECRETPOTION."
-	done
-
-PharmacistDescribeSecretpotionText:
-	text "My SECRETPOTION is"
-	line "a tad too strong."
-
-	para "I only offer it in"
-	line "an emergency."
+CianwoodPharmacistText:
+	text "My grandma has a"
+	line "SecretPotion, and"
+	cont "she's going to"
+	cont "teach me someday."
 	done
 
 CianwoodPharmacy_MapEvents:
@@ -83,5 +43,6 @@ CianwoodPharmacy_MapEvents:
 	bg_event  0,  1, BGEVENT_READ, CianwoodPharmacyBookshelf
 	bg_event  1,  1, BGEVENT_READ, CianwoodPharmacyBookshelf
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event  2,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodPharmacist, -1
+	object_event  5,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PharmacyGrannyScript, -1

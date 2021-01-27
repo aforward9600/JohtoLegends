@@ -168,29 +168,29 @@ MartGoldenrodBlackMarket2:
 
 MartOlivine:
 	db 9 ; # items
-	db GREAT_BALL
+	db POKE_BALL
+	db POTION
 	db SUPER_POTION
-	db HYPER_POTION
+	db ESCAPE_ROPE
+	db REPEL
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
-	db ICE_HEAL
-	db SUPER_REPEL
-	db SURF_MAIL
+	db FLOWER_MAIL
 	db -1 ; end
 
 MartEcruteak:
 	db 10 ; # items
 	db POKE_BALL
-	db GREAT_BALL
 	db POTION
-	db SUPER_POTION
+	db ESCAPE_ROPE
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
-	db BURN_HEAL
-	db ICE_HEAL
-	db REVIVE
+	db X_DEFEND
+	db X_ATTACK
+	db X_SPEED
+	db FLOWER_MAIL
 	db -1 ; end
 
 MartMahogany1:

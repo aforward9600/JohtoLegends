@@ -2674,8 +2674,13 @@ wMahoganyGymSceneID::                             db
 wLakeOfRageSceneID::                              db
 wMountMortar1FInsideSceneID::                     db
 wRoute38EcruteakGateSceneID::                     db
+wOlivineLighthouse6FSceneID::                     db
+wOlivineLighthouse4FSceneID::                     db
+wOlivineLighthouse5FSceneID::                     db
+wOlivineLighthouse1FSceneID::                     db
+wCianwoodGymSceneID::                             db
 
-	ds 41
+	ds 36
 
 ; fight counts
 wJackFightCount::    db ; d9f2

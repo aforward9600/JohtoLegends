@@ -25,7 +25,7 @@ TrainerBugCatcherRob:
 	end
 
 TrainerBugCatcherEd:
-	trainer BUG_CATCHER, ED, EVENT_BEAT_BUG_CATCHER_ED, BugCatcherEdSeenText, BugCatcherEdBeatenText, 0, .Script
+	trainer BUG_CATCHER, STEVIE, EVENT_BEAT_BUG_CATCHER_STEVIE, BugCatcherEdSeenText, BugCatcherEdBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

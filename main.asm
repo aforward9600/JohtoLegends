@@ -314,7 +314,6 @@ INCLUDE "engine/events/field_moves.asm"
 INCLUDE "engine/events/magnet_train.asm"
 INCLUDE "engine/battle/battlestart_copytilemapatonce.asm"
 INCLUDE "engine/gfx/sprites.asm"
-INCLUDE "engine/gfx/mon_icons.asm"
 
 
 SECTION "bank24", ROMX
@@ -325,6 +324,7 @@ INCLUDE "engine/pokegear/pokegear.asm"
 INCLUDE "engine/events/fish.asm"
 INCLUDE "engine/games/slot_machine.asm"
 INCLUDE "data/pokemon/first_stages.asm"
+
 
 SECTION "Phone Scripts 1", ROMX
 
@@ -698,6 +698,7 @@ INCLUDE "engine/battle/ai/scoring.asm"
 SECTION "Mobile News Data", ROMX
 
 INCLUDE "mobile/news/news.asm"
+INCLUDE "engine/gfx/mon_icons.asm"
 
 
 SECTION "Crystal Events", ROMX

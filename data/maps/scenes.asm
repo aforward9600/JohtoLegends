@@ -92,4 +92,9 @@ MapScenes::
 	scene_var LAKE_OF_RAGE,                                wLakeOfRageSceneID
 	scene_var MOUNT_MORTAR_1F_INSIDE,                      wMountMortar1FInsideSceneID
 	scene_var ROUTE_38_ECRUTEAK_GATE,                      wRoute38EcruteakGateSceneID
+	scene_var OLIVINE_LIGHTHOUSE_6F,                       wOlivineLighthouse6FSceneID
+	scene_var OLIVINE_LIGHTHOUSE_4F,                       wOlivineLighthouse4FSceneID
+	scene_var OLIVINE_LIGHTHOUSE_5F,                       wOlivineLighthouse5FSceneID
+	scene_var OLIVINE_LIGHTHOUSE_1F,                       wOlivineLighthouse1FSceneID
+	scene_var CIANWOOD_GYM,                                wCianwoodGymSceneID
 	db -1 ; end

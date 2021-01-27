@@ -1,94 +1,63 @@
 ROUTE39FARMHOUSE_MILK_PRICE EQU 500
 
 	object_const_def ; object_event constants
-	const ROUTE39FARMHOUSE_POKEFAN_M
 	const ROUTE39FARMHOUSE_POKEFAN_F
+	const ROUTE39FARMHOUSE_GRANNY
 
 Route39Farmhouse_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-PokefanM_DairyFarmer:
+FarmerFScript_SellMilk:
 	faceplayer
 	opentext
-	checkevent EVENT_HEALED_MOOMOO
-	iftrue FarmerMScript_SellMilk
-	writetext FarmerMText_SickCow
-	waitbutton
-	closetext
-	setevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO
-	end
-
-FarmerMScript_SellMilk:
 	checkitem MOOMOO_MILK
-	iftrue FarmerMScript_Milking
-	writetext FarmerMText_BuyMilk
+	iftrue FarmerFScript_Milking
+	writetext FarmerFText_BuyMilk
 	special PlaceMoneyTopRight
 	yesorno
-	iffalse FarmerMScript_NoSale
+	iffalse FarmerFScript_NoSale
 	checkmoney YOUR_MONEY, ROUTE39FARMHOUSE_MILK_PRICE
-	ifequal HAVE_LESS, FarmerMScript_NoMoney
+	ifequal HAVE_LESS, FarmerFScript_NoMoney
 	giveitem MOOMOO_MILK
-	iffalse FarmerMScript_NoRoom
+	iffalse FarmerFScript_NoRoom
 	takemoney YOUR_MONEY, ROUTE39FARMHOUSE_MILK_PRICE
 	special PlaceMoneyTopRight
 	waitsfx
 	playsound SFX_TRANSACTION
-	writetext FarmerMText_GotMilk
+	writetext FarmerFText_GotMilk
 	buttonsound
 	itemnotify
 	closetext
 	end
 
-FarmerMScript_NoMoney:
-	writetext FarmerMText_NoMoney
+FarmerFScript_NoMoney:
+	writetext FarmerFText_NoMoney
 	waitbutton
 	closetext
 	end
 
-FarmerMScript_NoRoom:
-	writetext FarmerMText_NoRoom
+FarmerFScript_NoRoom:
+	writetext FarmerFText_NoRoom
 	waitbutton
 	closetext
 	end
 
-FarmerMScript_NoSale:
-	writetext FarmerMText_NoSale
+FarmerFScript_NoSale:
+	writetext FarmerFText_NoSale
 	waitbutton
 	closetext
 	end
 
-FarmerMScript_Milking:
-	writetext FarmerMText_Milking
+FarmerFScript_Milking:
+	writetext FarmerFText_Milking
 	waitbutton
 	closetext
 	end
 
-PokefanF_SnoreFarmer:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_TM13_SNORE_FROM_MOOMOO_FARM
-	iftrue FarmerFScript_GotSnore
-	checkevent EVENT_HEALED_MOOMOO
-	iftrue FarmerFScript_GiveSnore
-	writetext FarmerFText_InTrouble
-	waitbutton
-	closetext
-	end
-
-FarmerFScript_GiveSnore:
-	writetext FarmerFText_HealedMiltank
-	buttonsound
-	verbosegiveitem TM_ICE_BEAM
-	iffalse FarmerFScript_NoRoomForSnore
-	setevent EVENT_GOT_TM13_SNORE_FROM_MOOMOO_FARM
-FarmerFScript_GotSnore:
-	writetext FarmerFText_SnoreSpeech
-	waitbutton
-FarmerFScript_NoRoomForSnore:
-	closetext
-	end
+Route39FarmhouseGrannyScript:
+	jumptextfaceplayer GrannyText_InTrouble
 
 FarmhouseBookshelf:
 	jumpstd picturebookshelf
@@ -111,85 +80,65 @@ FarmerMText_SickCow:
 	line "BERRIES, I reckon."
 	done
 
-FarmerMText_BuyMilk:
-	text "How'd you like my"
-	line "MOOMOO MILK?"
+FarmerFText_BuyMilk:
+	text "Howdy!"
 
-	para "It's my pride and"
-	line "joy, there."
+	para "Would ya like some"
+	line "MooMoo Milk?"
 
-	para "Give it to #MON"
+	para "Give it to #mon"
 	line "to restore HP!"
 
 	para "I'll give it to ya"
-	line "fer just ¥500."
+	line "for just ¥500."
 	done
 
-FarmerMText_GotMilk:
-	text "Here ya go!"
+FarmerFText_GotMilk:
+	text "Here ya go, honey!"
 	line "Drink up'n enjoy!"
 	done
 
-FarmerMText_NoMoney:
+FarmerFText_NoMoney:
 	text "Sorry, there."
 	line "No cash, no sale!"
 	done
 
-FarmerMText_NoRoom:
+FarmerFText_NoRoom:
 	text "I reckon yer"
-	line "PACK's full."
+	line "Pack's full."
 	done
 
-FarmerMText_NoSale:
+FarmerFText_NoSale:
 	text "You don't want it?"
 	line "Come again, hear?"
 	done
 
-FarmerMText_Milking:
-	text "I best go do my"
-	line "milkin'."
+FarmerFText_Milking:
+	text "I best see if he's"
+	line "got any more milk."
 	done
 
-FarmerFText_InTrouble:
-	text "Our milk even goes"
-	line "out to KANTO."
+GrannyText_InTrouble:
+	text "My son took over"
+	line "his father's farm"
+	cont "after his passing,"
 
-	para "So if our own"
-	line "MILTANK won't give"
+	para "but we've never"
+	line "experienced this"
+	cont "kind of hardship"
+	cont "before."
 
-	para "us any milk, we're"
-	line "in trouble."
-	done
+	para "Those idiots over"
+	line "in Kanto, letting"
+	cont "their region get"
+	cont "overrun by a"
+	cont "bunch of trouble-"
+	cont "makers!"
 
-FarmerFText_HealedMiltank:
-	text "You fixed our"
-	line "MILTANK, hon. Now"
-
-	para "it gives MOOMOO"
-	line "MILK again."
-
-	para "Here's somethin'"
-	line "fer your trouble."
-	done
-
-Text_ReceivedTM13:
-	text "<PLAYER> received"
-	line "TM13."
-	done
-
-FarmerFText_SnoreSpeech:
-	text "That there's"
-	line "SNORE."
-
-	para "It's a rare move"
-	line "that only works"
-
-	para "while the #MON"
-	line "is asleep."
-
-	para "You best think how"
-	line "you ought to use"
-	cont "it, hon."
+	para "If I were younger,"
+	line "I'd kick all their"
+	cont "butts so we could"
+	cont "sell milk again!"
 	done
 
 Route39Farmhouse_MapEvents:
@@ -206,5 +155,5 @@ Route39Farmhouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, FarmhouseBookshelf
 
 	db 2 ; object events
-	object_event  3,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PokefanM_DairyFarmer, -1
-	object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PokefanF_SnoreFarmer, -1
+	object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FarmerFScript_SellMilk, -1
+	object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FarmhouseGrannyScript, -1

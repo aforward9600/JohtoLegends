@@ -1,5 +1,6 @@
 	object_const_def ; object_event constants
 	const OLIVINETIMSHOUSE_TIM
+	const OLIVINETIMSHOUSE_TIMSMOM
 
 OlivineTimsHouse_MapScripts:
 	db 0 ; scene scripts
@@ -14,8 +15,20 @@ Tim:
 	closetext
 	end
 
+TimsMomScript:
+	jumptextfaceplayer TimsMomText
+
 TimsHouseBookshelf:
 	jumpstd magazinebookshelf
+
+TimsMomText:
+	text "My son Tim likes"
+	line "trade #mon."
+
+	para "He hopes to have"
+	line "a Voltorb to trade"
+	cont "someday."
+	done
 
 OlivineTimsHouse_MapEvents:
 	db 0, 0 ; filler
@@ -30,5 +43,6 @@ OlivineTimsHouse_MapEvents:
 	bg_event  0,  1, BGEVENT_READ, TimsHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, TimsHouseBookshelf
 
-	db 1 ; object events
-	object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Tim, -1
+	db 2 ; object events
+	object_event  5,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Tim, -1
+	object_event  5,  6, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TimsMomScript, -1

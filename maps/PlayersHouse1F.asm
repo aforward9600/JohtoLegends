@@ -152,10 +152,6 @@ MomScript:
 	setevent EVENT_FIRST_TIME_BANKING_WITH_MOM
 .BankOfMom:
 	setevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
-	special BankOfMom
-	waitbutton
-	closetext
-	opentext
 	writetext OhWaitText
 	buttonsound
 	waitsfx
@@ -341,8 +337,8 @@ DracosLookingForYouText:
 	cont "starting on a"
 
 	para "journey with a"
-	line "#mon, just they"
-	cont "did…"
+	line "#mon, just as"
+	cont "they did…"
 
 	para "Sorry, I was lost"
 	line "in a memory. You"
@@ -455,7 +451,16 @@ TVText:
 	done
 
 OhWaitText:
-	text ".....Oh, wait!"
+	text "So, you've got"
+	line "your #mon and"
+	cont "you're leaving on"
+	cont "an adventure..."
+
+	para "Good luck to you,"
+	line "and you're always"
+	cont "welcome back."
+
+	para ".....Oh, wait!"
 
 	para "I almost forgot!"
 	line "Here, have your"

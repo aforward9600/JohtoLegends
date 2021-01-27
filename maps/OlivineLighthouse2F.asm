@@ -1,5 +1,11 @@
 	object_const_def ; object_event constants
-	const OLIVINELIGHTHOUSE2F_SAILOR
+	const OLIVINELIGHTHOUSE2F_GRUNTF1
+	const OLIVINELIGHTHOUSE2F_GRUNTF2
+	const OLIVINELIGHTHOUSE2F_GRUNTF3
+	const OLIVINELIGHTHOUSE2F_KRIS ; if Male
+	const OLIVINELIGHTHOUSE2F_CHRIS ; if Female
+	const OLIVINELIGHTHOUSE2F_SWINUB
+	const OLIVINELIGHTHOUSE2F_RATICATE
 	const OLIVINELIGHTHOUSE2F_GENTLEMAN
 
 OlivineLighthouse2F_MapScripts:
@@ -7,216 +13,171 @@ OlivineLighthouse2F_MapScripts:
 
 	db 0 ; callbacks
 
-TrainerGentlemanAlfred:
-	trainer GENTLEMAN, ALFRED, EVENT_BEAT_GENTLEMAN_ALFRED, GentlemanAlfredSeenText, GentlemanAlfredBeatenText, 0, .Script
+TrainerOlivineLighthouse2FRocketF1:
+	trainer GRUNTF, GRUNTF_1, EVENT_BEAT_ROCKET_GRUNTF_1, OlivineLighthouse2FRocketF1SeenText, OlivineLighthouse2FRocketF1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GentlemanAlfredAfterBattleText
+	writetext OlivineLighthouse2FRocketF1AfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerSailorHuey:
-	trainer SAILOR, HUEY1, EVENT_BEAT_SAILOR_HUEY, SailorHueySeenText, SailorHueyBeatenText, 0, .Script
+TrainerOlivineLighthouse2FRocketF2:
+	trainer GRUNTF, GRUNTF_2, EVENT_BEAT_ROCKET_GRUNTF_2, OlivineLighthouse2FRocketF2SeenText, OlivineLighthouse2FRocketF2BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_SAILOR_HUEY
 	endifjustbattled
 	opentext
-	checkflag ENGINE_HUEY
-	iftrue .WantsBattle
-	checkcellnum PHONE_SAILOR_HUEY
-	iftrue .NumberAccepted
-	checkevent EVENT_HUEY_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskedBefore
-	setevent EVENT_HUEY_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
-	sjump .AskForNumber
-
-.AskedBefore:
-	scall .AskNumber2
-.AskForNumber:
-	askforphonenumber PHONE_SAILOR_HUEY
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, SAILOR, HUEY1
-	scall .RegisteredNumber
-	sjump .NumberAccepted
-
-.WantsBattle:
-	scall .Rematch
-	winlosstext SailorHueyBeatenText, 0
-	readmem wHueyFightCount
-	ifequal 3, .Fight3
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight3:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight3
-.Fight2:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight2
-.Fight1:
-	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer SAILOR, HUEY1
-	startbattle
-	reloadmapafterbattle
-	loadmem wHueyFightCount, 1
-	clearflag ENGINE_HUEY
-	end
-
-.LoadFight1:
-	loadtrainer SAILOR, HUEY2
-	startbattle
-	reloadmapafterbattle
-	loadmem wHueyFightCount, 2
-	clearflag ENGINE_HUEY
-	end
-
-.LoadFight2:
-	loadtrainer SAILOR, HUEY3
-	startbattle
-	reloadmapafterbattle
-	loadmem wHueyFightCount, 3
-	clearflag ENGINE_HUEY
-	end
-
-.LoadFight3:
-	loadtrainer SAILOR, HUEY4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_HUEY
-	checkevent EVENT_HUEY_PROTEIN
-	iftrue .HasProtein
-	checkevent EVENT_GOT_PROTEIN_FROM_HUEY
-	iftrue .SkipGift
-	scall .RematchGift
-	verbosegiveitem PROTEIN
-	iffalse .PackFull
-	setevent EVENT_GOT_PROTEIN_FROM_HUEY
-	sjump .NumberAccepted
-
-.SkipGift:
-	end
-
-.HasProtein:
-	opentext
-	writetext SailorHueyGiveProteinText
+	writetext OlivineLighthouse2FRocketF2AfterBattleText
 	waitbutton
-	verbosegiveitem PROTEIN
-	iffalse .PackFull
-	clearevent EVENT_HUEY_PROTEIN
-	setevent EVENT_GOT_PROTEIN_FROM_HUEY
-	sjump .NumberAccepted
-
-.AskNumber1:
-	jumpstd asknumber1m
+	closetext
 	end
 
-.AskNumber2:
-	jumpstd asknumber2m
+Lighthouse2FRocketScript:
+	faceplayer
+	opentext
+	writetext ThisKidIsToughText
+	waitbutton
+	closetext
+	turnobject OLIVINELIGHTHOUSE2F_GRUNTF3, LEFT
 	end
 
-.RegisteredNumber:
-	jumpstd registerednumberm
+Lighthouse2FDahliaScript:
+	faceplayer
+	opentext
+	writetext GoOnAheadText
+	waitbutton
+	closetext
+	turnobject OLIVINELIGHTHOUSE2F_KRIS, RIGHT
 	end
 
-.NumberAccepted:
-	jumpstd numberacceptedm
+Lighthouse2FDracoScript:
+	faceplayer
+	opentext
+	writetext GoOnAheadText
+	waitbutton
+	closetext
+	turnobject OLIVINELIGHTHOUSE2F_CHRIS, RIGHT
 	end
 
-.NumberDeclined:
-	jumpstd numberdeclinedm
+LighthouseSwinubScript:
+	refreshscreen
+	pokepic SWINUB
+	cry SWINUB
+	waitbutton
+	closepokepic
+	opentext
+	writetext LighthouseSwinubText
+	waitbutton
+	closetext
 	end
 
-.PhoneFull:
-	jumpstd phonefullm
+LighthouseRaticateScript:
+	refreshscreen
+	pokepic RATICATE
+	cry RATICATE
+	waitbutton
+	closepokepic
+	opentext
+	writetext LighthouseRaticateText
+	waitbutton
+	closetext
 	end
 
-.Rematch:
-	jumpstd rematchm
-	end
+Lighthouse2FGentlemanScript:
+	jumptextfaceplayer Lighthouse2FGentlemanText
 
-.PackFull:
-	setevent EVENT_HUEY_PROTEIN
-	jumpstd packfullm
-	end
+OlivineLighthouse2FRocketF1SeenText:
+	text "Those men down-"
+	line "stairs are so"
+	cont "weak!"
 
-.RematchGift:
-	jumpstd rematchgiftm
-	end
-
-SailorHueySeenText:
-	text "Men of the sea are"
-	line "always spoiling"
-	cont "for a good fight!"
+	para "I'll show you what"
+	line "a real trainer is"
+	cont "like!"
 	done
 
-SailorHueyBeatenText:
-	text "Urf!"
-	line "I lose!"
+OlivineLighthouse2FRocketF1BeatenText:
+	text "Dang it!"
 	done
 
-SailorHueyUnusedText:
-; unused
-	text "What power!"
-	line "How would you like"
+OlivineLighthouse2FRocketF1AfterBattleText:
+	text "Listen kid!"
 
-	para "to sail the seas"
-	line "with me?"
+	para "Don't mess with"
+	line "us!"
+
+	para "You'll be in a"
+	line "world of hurt if"
+	cont "you do!"
 	done
 
-GentlemanAlfredSeenText:
-	text "Hm? This is no"
-	line "place for playing."
+OlivineLighthouse2FRocketF2SeenText:
+	text "Go play somewhere"
+	line "else!"
 	done
 
-GentlemanAlfredBeatenText:
-	text "Ah! I can see that"
-	line "you're serious."
+OlivineLighthouse2FRocketF2BeatenText:
+	text "Seriously?"
 	done
 
-GentlemanAlfredAfterBattleText:
-	text "Up top is a #-"
-	line "MON that keeps the"
-	cont "LIGHTHOUSE lit."
+OlivineLighthouse2FRocketF2AfterBattleText:
+	text "Get out of here!"
 
-	para "But I hear that"
-	line "it's sick now and"
-
-	para "can't be cured by"
-	line "ordinary medicine."
+	para "The boss isn't"
+	line "going to go easy"
+	cont "on you!"
 	done
 
-SailorHueyGiveProteinText:
-	text "Man! You're as"
-	line "tough as ever!"
+ThisKidIsToughText:
+	text "Man, this kid is"
+	line "tough!"
 
-	para "Anyway, here's"
-	line "that medicine from"
-	cont "before."
+	para "Who is raising the"
+	line "youth these days?"
+	done
+
+GoOnAheadText:
+	text "Go on ahead, this"
+	line "is easy!"
+	done
+
+LighthouseSwinubText:
+	text "Swinub: Burrurrr!"
+	done
+
+LighthouseRaticateText:
+	text "Raticate: Rrra-"
+	line "rarra!"
+	done
+
+Lighthouse2FGentlemanText:
+	text "The police are"
+	line "here."
+
+	para "I wonder what"
+	line "happened?"
 	done
 
 OlivineLighthouse2F_MapEvents:
 	db 0, 0 ; filler
 
-	db 6 ; warp events
+	db 2 ; warp events
 	warp_event  3, 11, OLIVINE_LIGHTHOUSE_1F, 3
 	warp_event  5,  3, OLIVINE_LIGHTHOUSE_3F, 2
-	warp_event 16, 13, OLIVINE_LIGHTHOUSE_1F, 4
-	warp_event 17, 13, OLIVINE_LIGHTHOUSE_1F, 5
-	warp_event 16, 11, OLIVINE_LIGHTHOUSE_3F, 4
-	warp_event 17, 11, OLIVINE_LIGHTHOUSE_3F, 5
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 2 ; object events
-	object_event  9,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSailorHuey, -1
-	object_event 17,  8, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerGentlemanAlfred, -1
+	db 8 ; object events
+	object_event 14,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerOlivineLighthouse2FRocketF1, EVENT_LIGHTHOUSE_ROCKETS
+	object_event 14, 10, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerOlivineLighthouse2FRocketF2, EVENT_LIGHTHOUSE_ROCKETS
+	object_event 11, 14, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Lighthouse2FRocketScript, EVENT_LIGHTHOUSE_ROCKETS
+	object_event  8, 14, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Lighthouse2FDahliaScript, EVENT_LIGHTHOUSE2F_RIVAL1
+	object_event  8, 14, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Lighthouse2FDracoScript, EVENT_LIGHTHOUSE2F_RIVAL2
+	object_event  9, 14, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LighthouseSwinubScript, EVENT_LIGHTHOUSE_ROCKETS
+	object_event 10, 14, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LighthouseRaticateScript, EVENT_LIGHTHOUSE_ROCKETS
+	object_event  8,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Lighthouse2FGentlemanScript, EVENT_LIGHTHOUSE_CIVILLIANS

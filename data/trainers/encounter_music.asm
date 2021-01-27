@@ -79,3 +79,4 @@ TrainerEncounterMusic::
 	db MUSIC_OFFICER_ENCOUNTER     ; gen_surge
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; lance
 	db MUSIC_ROCKET_ENCOUNTER      ; passerby
+	db MUSIC_ROCKET_ENCOUNTER      ; miyamoto

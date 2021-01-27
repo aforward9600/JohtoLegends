@@ -78,3 +78,4 @@ TrainerGroups:
 	dba GenSurgeGroup
 	dba LanceGroup
 	dba PasserbyGroup
+	dba MiyamotoGroup

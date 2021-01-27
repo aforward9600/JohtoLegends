@@ -1,189 +1,79 @@
 	object_const_def ; object_event constants
-	const ROUTE39BARN_TWIN1
-	const ROUTE39BARN_TWIN2
 	const ROUTE39BARN_MOOMOO
+	const ROUTE39BARN_SAILOR
 
 Route39Barn_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-Route39BarnTwin1Script:
-	faceplayer
-	opentext
-	checkevent EVENT_HEALED_MOOMOO
-	iftrue .FeedingMooMoo
-	writetext Route39BarnTwinMoomooIsSickText
-	waitbutton
-	closetext
-	turnobject ROUTE39BARN_TWIN1, RIGHT
-	end
-
-.FeedingMooMoo:
-	writetext Route39BarnTwinWereFeedingMoomooText
-	waitbutton
-	closetext
-	turnobject ROUTE39BARN_TWIN1, RIGHT
-	end
-
-Route39BarnTwin2Script:
-	faceplayer
-	opentext
-	checkevent EVENT_HEALED_MOOMOO
-	iftrue .FeedingMooMoo
-	writetext Route39BarnTwinMoomooIsSickText
-	waitbutton
-	closetext
-	turnobject ROUTE39BARN_TWIN2, LEFT
-	end
-
-.FeedingMooMoo:
-	writetext Route39BarnTwinWereFeedingMoomooText
-	waitbutton
-	closetext
-	turnobject ROUTE39BARN_TWIN2, LEFT
-	end
-
 MoomooScript:
-	opentext
-	checkevent EVENT_HEALED_MOOMOO
-	iftrue .HappyCow
-	writetext MoomooWeakMooText
-	loadmonindex 1, MILTANK
-	special PlaySlowCry
-	buttonsound
-	writetext Route39BarnItsCryIsWeakText
-	checkevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO
-	iftrue .GiveBerry
-	waitbutton
-	closetext
-	end
-
-.GiveBerry:
-	buttonsound
-	writetext Route39BarnAskGiveBerryText
-	yesorno
-	iffalse .Refused
-	checkitem ORAN_BERRY
-	iffalse .NoBerriesInBag
-	takeitem ORAN_BERRY
-	readmem wMooMooBerries
-	addval 1
-	writemem wMooMooBerries
-	ifequal 3, .ThreeBerries
-	ifequal 5, .FiveBerries
-	ifequal 7, .SevenBerries
-	writetext Route39BarnGaveBerryText
-	waitbutton
-	closetext
-	end
-
-.ThreeBerries:
-	writetext Route39BarnGaveBerryText
-	buttonsound
-	writetext Route39BarnLittleHealthierText
-	waitbutton
-	closetext
-	end
-
-.FiveBerries:
-	writetext Route39BarnGaveBerryText
-	buttonsound
-	writetext Route39BarnQuiteHealthyText
-	waitbutton
-	closetext
-	end
-
-.SevenBerries:
-	playmusic MUSIC_HEAL
-	writetext Route39BarnGaveBerryText
-	pause 60
-	buttonsound
-	special RestartMapMusic
-	writetext Route39BarnTotallyHealthyText
-	waitbutton
-	closetext
-	setevent EVENT_HEALED_MOOMOO
-	end
-
-.NoBerriesInBag:
-	writetext Route39BarnNoBerriesText
-	waitbutton
-	closetext
-	end
-
-.Refused:
-	writetext Route39BarnRefusedBerryText
-	waitbutton
-	closetext
-	end
-
-.HappyCow:
-	writetext MoomooHappyMooText
+	refreshscreen
+	pokepic MILTANK
 	cry MILTANK
 	waitbutton
+	closepokepic
+	opentext
+	checkevent EVENT_GOT_PINK_BOW_FROM_MOOMOO
+	iftrue .GotBow
+	writetext HoldingSomethingText
+	buttonsound
+	verbosegiveitem PINK_BOW
+	waitbutton
+	closetext
+	setevent EVENT_GOT_PINK_BOW_FROM_MOOMOO
+	end
+
+.GotBow:
+	writetext MoomooHappyMooText
+	waitbutton
 	closetext
 	end
 
-Route39BarnTwinMoomooIsSickText:
-	text "MOOMOO is sick…"
+Route39BarnSailorScript:
+	jumptextfaceplayer Route39BarnSailorText
 
-	para "She needs lots of"
-	line "BERRIES."
-	done
+HoldingSomethingText:
+	text "Miltank: Mooo!"
 
-Route39BarnTwinWereFeedingMoomooText:
-	text "We're feeding"
-	line "MOOMOO!"
-	done
+	para "The Miltank is"
+	line "holding something."
 
-MoomooWeakMooText:
-	text "MILTANK: …Moo…"
-	done
-
-Route39BarnItsCryIsWeakText:
-	text "Its cry is weak…"
+	para "Looks like she"
+	line "wants to give it"
+	cont "to you."
 	done
 
 MoomooHappyMooText:
-	text "MILTANK: Mooo!"
+	text "Miltank: Mooo!"
 	done
 
-Route39BarnAskGiveBerryText:
-	text "Give a BERRY to"
-	line "MILTANK?"
-	done
+Route39BarnSailorText:
+	text "Oh, hello!"
 
-Route39BarnGaveBerryText:
-	text "<PLAYER> gave a"
-	line "BERRY to MILTANK."
-	done
+	para "I'm just helping"
+	line "out part-time"
+	cont "since the owner"
+	cont "took a job in"
+	cont "Goldenrod City."
 
-Route39BarnLittleHealthierText:
-	text "MILTANK became a"
-	line "little healthier!"
-	done
+	para "The embargo took a"
+	line "lot out of the"
+	cont "business."
 
-Route39BarnQuiteHealthyText:
-	text "MILTANK became"
-	line "quite healthy!"
-	done
+	para "Luckily, we're"
+	line "able to scrape by"
+	cont "with Johto sales."
 
-Route39BarnTotallyHealthyText:
-	text "MILTANK became"
-	line "totally healthy!"
-	done
+	para "If you want to buy"
+	line "some MooMoo Milk,"
+	cont "head into the"
+	cont "house and speak"
+	cont "with the owner's"
+	cont "wife."
 
-Route39BarnNoBerriesText:
-	text "<PLAYER> has no"
-	line "BERRIES…"
-	done
-
-Route39BarnRefusedBerryText:
-	text "<PLAYER> wouldn't"
-	line "give a BERRY."
-
-	para "MILTANK looks sad."
+	para "Thank you for your"
+	line "business!"
 	done
 
 Route39Barn_MapEvents:
@@ -197,7 +87,6 @@ Route39Barn_MapEvents:
 
 	db 0 ; bg events
 
-	db 3 ; object events
-	object_event  2,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin1Script, -1
-	object_event  4,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin2Script, -1
+	db 2 ; object events
 	object_event  3,  3, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoomooScript, -1
+	object_event  6,  3, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnSailorScript, -1

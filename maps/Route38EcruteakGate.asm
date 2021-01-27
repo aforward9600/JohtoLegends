@@ -38,6 +38,8 @@ EcruteakGateRival1:
 	applymovement PLAYER, MovementBack
 	applymovement ROUTE38ECRUTEAKGATE_KRIS, Movement2
 	turnobject ROUTE38ECRUTEAKGATE_KRIS, RIGHT
+	waitsfx
+	playmapmusic
 	end
 .Female1:
 	special FadeOutMusic
@@ -53,6 +55,8 @@ EcruteakGateRival1:
 	applymovement PLAYER, MovementBack
 	applymovement ROUTE38ECRUTEAKGATE_CHRIS, Movement2
 	turnobject ROUTE38ECRUTEAKGATE_CHRIS, RIGHT
+	waitsfx
+	playmapmusic
 	end
 
 .RivalBattle1:
@@ -146,6 +150,8 @@ EcruteakGateRival2:
 	applymovement PLAYER, MovementBack
 	applymovement ROUTE38ECRUTEAKGATE_KRIS, Movement4
 	turnobject ROUTE38ECRUTEAKGATE_KRIS, RIGHT
+	waitsfx
+	playmapmusic
 	end
 .Female2:
 	special FadeOutMusic
@@ -161,6 +167,8 @@ EcruteakGateRival2:
 	applymovement PLAYER, MovementBack
 	applymovement ROUTE38ECRUTEAKGATE_CHRIS, Movement4
 	turnobject ROUTE38ECRUTEAKGATE_CHRIS, RIGHT
+	waitsfx
+	playmapmusic
 	end
 
 .RivalBattle2:

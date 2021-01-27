@@ -207,6 +207,8 @@ EeveeEvosAttacks:
 	dbbw EVOLVE_ITEM, WATER_STONE, VAPOREON
 	dbbw EVOLVE_ITEM, FIRE_STONE, FLAREON
 	dbbw EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
+	dbbw EVOLVE_ITEM, SUN_STONE, ESPEON
+	dbbw EVOLVE_ITEM, MOON_STONE, UMBREON
 	dbbw EVOLVE_HAPPINESS, TR_NITE, UMBREON
 	dbbw EVOLVE_ITEM, LEAF_STONE, LEAFEON
 	dbbw EVOLVE_ITEM, ICE_STONE, GLACEON
@@ -217,6 +219,7 @@ EeveeEvosAttacks:
 	dbw 5, SAND_ATTACK
 	dbw 9, GROWL
 	dbw 13, QUICK_ATTACK
+	dbw 14, BITE
 	dbw 17, BITE
 	dbw 17, SWIFT
 	dbw 20, HEAL_BELL
@@ -236,6 +239,7 @@ VaporeonEvosAttacks:
 	dbw 5, SAND_ATTACK
 	dbw 9, GROWL
 	dbw 13, QUICK_ATTACK
+	dbw 14, WATER_GUN
 	dbw 17, WATER_GUN
 	dbw 20, AURORA_BEAM
 	dbw 25, WATER_PULSE
@@ -254,6 +258,7 @@ JolteonEvosAttacks:
 	dbw 5, SAND_ATTACK
 	dbw 9, GROWL
 	dbw 13, QUICK_ATTACK
+	dbw 14, THUNDERSHOCK
 	dbw 17, THUNDERSHOCK
 	dbw 20, THUNDER_FANG
 	dbw 25, DOUBLE_KICK
@@ -272,6 +277,7 @@ FlareonEvosAttacks:
 	dbw 5, SAND_ATTACK
 	dbw 9, GROWL
 	dbw 13, QUICK_ATTACK
+	dbw 14, EMBER
 	dbw 17, EMBER
 	dbw 20, FIRE_FANG
 	dbw 25, FLAME_CHARGE
@@ -290,6 +296,7 @@ EspeonEvosAttacks:
 	dbw 5, SAND_ATTACK
 	dbw 9, GROWL
 	dbw 13, QUICK_ATTACK
+	dbw 14, CONFUSION
 	dbw 17, CONFUSION
 	dbw 20, PSYBEAM
 	dbw 25, FUTURE_SIGHT
@@ -308,6 +315,7 @@ UmbreonEvosAttacks:
 	dbw 5, SAND_ATTACK
 	dbw 9, GROWL
 	dbw 13, QUICK_ATTACK
+	dbw 14, PURSUIT
 	dbw 17, PURSUIT
 	dbw 20, FAINT_ATTACK
 	dbw 25, PAYBACK
@@ -326,6 +334,7 @@ LeafeonEvosAttacks:
 	dbw 5, SAND_ATTACK
 	dbw 9, GROWL
 	dbw 13, QUICK_ATTACK
+	dbw 14, RAZOR_LEAF
 	dbw 17, RAZOR_LEAF
 	dbw 20, GIGA_DRAIN
 	dbw 25, LEAF_BLADE
@@ -344,6 +353,7 @@ GlaceonEvosAttacks:
 	dbw 5, SAND_ATTACK
 	dbw 9, GROWL
 	dbw 13, QUICK_ATTACK
+	dbw 14, ICY_WIND
 	dbw 17, ICY_WIND
 	dbw 20, ICE_FANG
 	dbw 25, ICE_SHARD
@@ -363,6 +373,7 @@ SylveonEvosAttacks:
 	dbw 5, SANDSTORM
 	dbw 9, GROWL
 	dbw 13, QUICK_ATTACK
+	dbw 14, FAIRY_WIND
 	dbw 17, FAIRY_WIND
 	dbw 20, DRAININGKISS
 	dbw 25, RECOVER
@@ -1168,6 +1179,7 @@ TogekissEvosAttacks:
 	dbw 1, EXTREMESPEED
 	dbw 1, AIR_SLASH
 	dbw 1, SKY_ATTACK
+	dbw 45, AIR_SLASH
 	dbw 55, AURA_SPHERE
 	db 0 ; no more level-up moves
 

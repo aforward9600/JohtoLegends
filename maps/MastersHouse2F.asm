@@ -165,6 +165,7 @@ Rival1:
 	setscene SCENE_MASTERS_HOUSE_2F_NOTHING
 	setevent EVENT_2F_RIVAL_1
 	setmapscene MASTERS_HOUSE_1F, SCENE_DONE_WITH_2F
+	setevent EVENT_MASTERS_RIVAL_DONE
 	end
 
 Rival2:
@@ -180,6 +181,7 @@ Rival2:
 	setscene SCENE_MASTERS_HOUSE_2F_NOTHING
 	setevent EVENT_2F_RIVAL_1
 	setmapscene MASTERS_HOUSE_1F, SCENE_DONE_WITH_2F
+	setevent EVENT_MASTERS_RIVAL_DONE
 	end
 
 Rival3:
@@ -195,6 +197,7 @@ Rival3:
 	setscene SCENE_MASTERS_HOUSE_2F_NOTHING
 	setevent EVENT_2F_RIVAL_2
 	setmapscene MASTERS_HOUSE_1F, SCENE_DONE_WITH_2F
+	setevent EVENT_MASTERS_RIVAL_DONE
 	end
 
 
@@ -211,6 +214,7 @@ Rival4:
 	setscene SCENE_MASTERS_HOUSE_2F_NOTHING
 	setevent EVENT_2F_RIVAL_2
 	setmapscene MASTERS_HOUSE_1F, SCENE_DONE_WITH_2F
+	setevent EVENT_MASTERS_RIVAL_DONE
 	end
 
 MastersHouseDratiniScript:

@@ -35,8 +35,8 @@ EcruteakTinTowerEntrance_MapScripts:
 	return
 
 .BlockTower:
-	clearevent EVENT_RANG_CLEAR_BELL_1
-	setevent EVENT_RANG_CLEAR_BELL_2
+	clearevent EVENT_RANG_CLEAR_BELL_2
+	setevent EVENT_RANG_CLEAR_BELL_1
 	setevent EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE
 	checkitem CLEAR_BELL
 	iftrue .NoClearBell
@@ -72,6 +72,8 @@ EcruteakTinTowerEntrance_CoordEvent_DontMove:
 	end
 
 EcruteakTinTowerEntrance_CoordEvent3:
+	checkevent EVENT_TIN_TOWER_ENTRANCE_ROCKET
+	iffalse .Done
 	turnobject ECRUTEAKTINTOWERENTRANCE_SHERLES, LEFT
 	turnobject, PLAYER, RIGHT
 	opentext
@@ -80,6 +82,9 @@ EcruteakTinTowerEntrance_CoordEvent3:
 	closetext
 	turnobject ECRUTEAKTINTOWERENTRANCE_SHERLES, UP
 	setscene SCENE_DEFAULT
+	end
+
+.Done:
 	end
 
 EcruteakTinTowerEntranceSageScript:
@@ -118,7 +123,7 @@ EcruteakTinTowerEntranceSageScript:
 	writetext EcruteakTinTowerEntranceSageText_HearsClearBell
 	waitbutton
 	closetext
-	setscene SCENE_FINISHED
+	setscene SCENE_ECRUTEAKTINTOWERENTRANCE_NOTHING
 	setevent EVENT_RANG_CLEAR_BELL_2
 	clearevent EVENT_RANG_CLEAR_BELL_1
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1

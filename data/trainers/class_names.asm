@@ -76,3 +76,4 @@ TrainerClassNames::
 	db "Elite Four@"
 	db "Dragon Kid@"
 	db "Passerby@"
+	db "Boss@"

@@ -21,26 +21,19 @@ OlivineMartLassScript:
 	jumptextfaceplayer OlivineMartLassText
 
 OlivineMartCooltrainerFText:
-	text "Do your #MON"
-	line "already know the"
+	text "Do you have an"
+	line "item that calls a"
 
-	para "move for carrying"
+	para "#mon to carry"
 	line "people on water?"
 	done
 
 OlivineMartLassText:
-	text "My BUTTERFREE came"
-	line "from my boyfriend"
-	cont "overseas."
+	text "Mail can be fun to"
+	line "send to people,"
+	cont "especially to"
 
-	para "It carried some"
-	line "MAIL from him."
-
-	para "Want to know what"
-	line "it says?"
-
-	para "Let's see… Nope!"
-	line "It's a secret!"
+	para "people you love."
 	done
 
 OlivineMart_MapEvents:

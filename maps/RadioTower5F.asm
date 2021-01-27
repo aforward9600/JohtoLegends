@@ -66,7 +66,7 @@ Director:
 	end
 
 TrainerExecutivef1:
-	trainer ARIANA, ARIANA_1, EVENT_BEAT_ROCKET_EXECUTIVEF_1, Executivef1SeenText, Executivef1BeatenText, 0, .Script
+	trainer ARIANA, ARIANA_1, EVENT_BEAT_LIGHTHOUSE_ARIANA, Executivef1SeenText, Executivef1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -99,7 +99,7 @@ RadioTower5FRocketBossScene:
 	disappear RADIOTOWER5F_ARIANA
 	pause 15
 	special FadeInQuickly
-	setevent EVENT_BEAT_ROCKET_EXECUTIVEM_1
+	setevent EVENT_BEAT_LIGHTHOUSE_ARCHER
 	setevent EVENT_CLEARED_RADIO_TOWER
 	clearflag ENGINE_ROCKETS_IN_RADIO_TOWER
 	setevent EVENT_GOLDENROD_CITY_ROCKET_SCOUT

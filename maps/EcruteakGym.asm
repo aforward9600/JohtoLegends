@@ -47,7 +47,6 @@ EcruteakGymEnokiScript:
 	setflag ENGINE_FOGBADGE
 	readvar VAR_BADGES
 	scall EcruteakGymActivateRockets
-	setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_FINISHED
 .FightDone:
 	checkevent EVENT_GOT_TM04_HEX
 	iftrue .GotShadowBall

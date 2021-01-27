@@ -77,3 +77,4 @@ TrainerClassDVs:
 	dn 13, 12, 13, 13 ; GEN_SURGE
 	dn  9,  8,  8,  8 ; LANCE
 	dn  7,  8,  8,  8 ; PASSERBY
+	dn  7,  8,  8,  8 ; MIYAMOTO

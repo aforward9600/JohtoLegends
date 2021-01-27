@@ -721,6 +721,8 @@ INCLUDE "gfx/overworld/trainer_battle_nite.pal"
 	ret z
 	cp SCIENTIST
 	ret z
+	cp MYSTERIOUS
+	ret z
 	ld de, RivalTransition
 	cp RIVAL3
 	ret z

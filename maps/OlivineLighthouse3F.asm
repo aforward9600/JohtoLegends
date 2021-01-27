@@ -1,135 +1,146 @@
 	object_const_def ; object_event constants
-	const OLIVINELIGHTHOUSE3F_SAILOR
-	const OLIVINELIGHTHOUSE3F_GENTLEMAN
-	const OLIVINELIGHTHOUSE3F_YOUNGSTER
+	const OLIVINELIGHTHOUSE3F_ROCKET
+	const OLIVINELIGHTHOUSE3F_ROCKETF1
+	const OLIVINELIGHTHOUSE3F_ROCKET_GIRL
 	const OLIVINELIGHTHOUSE3F_POKE_BALL
+	const OLIVINELIGHTHOUSE3F_SAILOR
+	const OLIVINELIGHTHOUSE3F_OFFICER
 
 OlivineLighthouse3F_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-TrainerBirdKeeperTheo:
-	trainer BIRD_KEEPER, THEO, EVENT_BEAT_BIRD_KEEPER_THEO, BirdKeeperTheoSeenText, BirdKeeperTheoBeatenText, 0, .Script
+TrainerOlivineLighthouse3FRocket1:
+	trainer GRUNTM, GRUNTM_5, EVENT_BEAT_ROCKET_GRUNTM_5, OlivineLighthouse3FRocket1SeenText, OlivineLighthouse3FRocket1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperTheoAfterBattleText
+	writetext OlivineLighthouse3FRocket1AfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerGentlemanPreston:
-	trainer GENTLEMAN, PRESTON, EVENT_BEAT_GENTLEMAN_PRESTON, GentlemanPrestonSeenText, GentlemanPrestonBeatenText, 0, .Script
+TrainerOlivineLighthouse3FRocket2:
+	trainer GRUNTM, GRUNTM_6, EVENT_BEAT_ROCKET_GRUNTM_6, OlivineLighthouse3FRocket2SeenText, OlivineLighthouse3FRocket2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GentlemanPrestonAfterBattleText
+	writetext OlivineLighthouse3FRocket2AfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerSailorTerrell:
-	trainer SAILOR, TERRELL, EVENT_BEAT_SAILOR_TERRELL, SailorTerrellSeenText, SailorTerrellBeatenText, 0, .Script
+TrainerOlivineLighthouse3FRocketF:
+	trainer GRUNTF, GRUNTF_3, EVENT_BEAT_ROCKET_GRUNTF_3, OlivineLighthouse3FRocketFSeenText, OlivineLighthouse3FRocketFBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SailorTerrellAfterBattleText
+	writetext OlivineLighthouse3FRocketFAfterBattleText
 	waitbutton
 	closetext
 	end
+
+Lighthouse3FSailorScript:
+	jumptextfaceplayer Lighthouse3FSailorText
+
+Lighthouse3FOfficerScript:
+	jumptextfaceplayer Lighthouse3FOfficerText
 
 OlivineLighthouse3FEther:
 	itemball ETHER
 
-BirdKeeperTheoSeenText:
-	text "Why are you here?"
-	line "Are you just going"
-
-	para "to gawk? I suggest"
-	line "that you leave!"
+OlivineLighthouse3FRocket1SeenText:
+	text "You're starting to"
+	line "get on our nerves!"
 	done
 
-BirdKeeperTheoBeatenText:
-	text "You really are"
-	line "concerned…"
+OlivineLighthouse3FRocket1BeatenText:
+	text "How annoying…"
 	done
 
-BirdKeeperTheoAfterBattleText:
-	text "How the heck do"
-	line "you go up?"
-
-	para "I want to visit"
-	line "the sick #MON,"
-
-	para "but I can't get up"
-	line "there…"
+OlivineLighthouse3FRocket1AfterBattleText:
+	text "Keep this up, and"
+	line "you'll know true"
+	cont "pain!"
 	done
 
-SailorTerrellSeenText:
-	text "Sailors are both"
-	line "kind and strong."
-	cont "How about you?"
+OlivineLighthouse3FRocket2SeenText:
+	text "I'll stop you"
+	line "right here and get"
+	cont "a promotion!"
 	done
 
-SailorTerrellBeatenText:
-	text "You are both kind"
-	line "and strong…"
+OlivineLighthouse3FRocket2BeatenText:
+	text "No!"
+
+	para "My promotion!"
 	done
 
-SailorTerrellAfterBattleText:
-	text "Every time I come"
-	line "back to OLIVINE, I"
-	cont "visit the GYM."
-
-	para "The GYM LEADER's"
-	line "#MON type has"
-
-	para "changed without me"
-	line "noticing."
+OlivineLighthouse3FRocket2AfterBattleText:
+	text "I guess I'll just"
+	line "have to give my-"
+	cont "self a promotion!"
 	done
 
-GentlemanPrestonSeenText:
-	text "I travel the world"
-	line "to train my #-"
-	cont "MON. I wish to"
-	cont "battle with you."
+OlivineLighthouse3FRocketFSeenText:
+	text "Stop interferring"
+	line "with our plans!"
 	done
 
-GentlemanPrestonBeatenText:
-	text "…sigh… I must"
-	line "train some more…"
+OlivineLighthouse3FRocketFBeatenText:
+	text "I failed, just"
+	line "like the others."
 	done
 
-GentlemanPrestonAfterBattleText:
-	text "JASMINE used to"
-	line "use rock #MON"
-	cont "like ONIX."
+OlivineLighthouse3FRocketFAfterBattleText:
+	text "You're in for a"
+	line "rude awakening on"
+	cont "the next floor."
+	done
+
+Lighthouse3FSailorText:
+	text "I come back from a"
+	line "trip out to sea,"
+	cont "and the lighthouse"
+	cont "has officers all"
+	cont "over the place."
+
+	para "What happened?"
+
+	para "Did they forget to"
+	line "pay their taxes?"
+	done
+
+Lighthouse3FOfficerText:
+	text "How did those guys"
+	line "figure out the"
+	cont "layout here?"
+
+	para "It makes no sense."
 	done
 
 OlivineLighthouse3F_MapEvents:
 	db 0, 0 ; filler
 
-	db 9 ; warp events
+	db 5 ; warp events
 	warp_event 13,  3, OLIVINE_LIGHTHOUSE_4F, 1
 	warp_event  5,  3, OLIVINE_LIGHTHOUSE_2F, 2
 	warp_event  9,  5, OLIVINE_LIGHTHOUSE_4F, 4
-	warp_event 16, 11, OLIVINE_LIGHTHOUSE_2F, 5
-	warp_event 17, 11, OLIVINE_LIGHTHOUSE_2F, 6
-	warp_event 16,  9, OLIVINE_LIGHTHOUSE_4F, 5
-	warp_event 17,  9, OLIVINE_LIGHTHOUSE_4F, 6
-	warp_event  8,  3, OLIVINE_LIGHTHOUSE_4F, 7
-	warp_event  9,  3, OLIVINE_LIGHTHOUSE_4F, 8
+	warp_event  8,  3, OLIVINE_LIGHTHOUSE_4F, 5
+	warp_event  9,  3, OLIVINE_LIGHTHOUSE_4F, 6
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 4 ; object events
-	object_event  9,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSailorTerrell, -1
-	object_event 13,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerGentlemanPreston, -1
-	object_event  3,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperTheo, -1
+	db 6 ; object events
+	object_event  9,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerOlivineLighthouse3FRocket1, EVENT_LIGHTHOUSE_ROCKETS
+	object_event  5, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerOlivineLighthouse3FRocket2, EVENT_LIGHTHOUSE_ROCKETS
+	object_event 13,  5, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerOlivineLighthouse3FRocketF, EVENT_LIGHTHOUSE_ROCKETS
 	object_event  8,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OlivineLighthouse3FEther, EVENT_OLIVINE_LIGHTHOUSE_3F_ETHER
+	object_event 15, 13, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Lighthouse3FSailorScript, EVENT_LIGHTHOUSE_CIVILLIANS
+	object_event  8, 14, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Lighthouse3FOfficerScript, EVENT_LIGHTHOUSE_SHERLES

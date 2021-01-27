@@ -1,53 +1,326 @@
 	object_const_def ; object_event constants
-	const OLIVINELIGHTHOUSE1F_SAILOR
-	const OLIVINELIGHTHOUSE1F_POKEFAN_F
+	const OLIVINELIGHTHOUSE1F_ROCKETM1
+	const OLIVINELIGHTHOUSE1F_ROCKETM2
+	const OLIVINELIGHTHOUSE1F_SHERLES
+	const OLIVINELIGHTHOUSE1F_KRIS ; if Male
+	const OLIVINELIGHTHOUSE1F_CHRIS ; if Female
+	const OLIVINELIGHTHOUSE1F_OFFICER
 
 OlivineLighthouse1F_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene1 ; SCENE_FINISHED
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .ElevatorBlocked
 
-OlivineLighthouse1FSailorScript:
-	jumptextfaceplayer OlivineLighthouse1FSailorText
+.DummyScene0:
+	end
 
-OlivineLighthouse1FPokefanFScript:
-	jumptextfaceplayer OlivineLighthouse1FPokefanFText
+.DummyScene1:
+	end
 
-OlivineLighthouse1FSailorText:
-	text "People train at"
-	line "this LIGHTHOUSE."
+.ElevatorBlocked:
+	checkevent EVENT_BEAT_LIGHTHOUSE_MIYAMOTO
+	iftrue .ElevatorFree
+	changeblock 10,  0, $3b ; blocked elevator
+.ElevatorFree:
+	return
 
-	para "It's not easy to"
-	line "climb because of"
-	cont "all the trainers."
+LeftRival:
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female
+	clearevent EVENT_LIGHTHOUSE1F_RIVAL1
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, UP
+	special FadeOutMusic
+	pause 10
+	appear OLIVINELIGHTHOUSE1F_KRIS
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	applymovement OLIVINELIGHTHOUSE1F_KRIS, RivalMovesUp1
+	turnobject OLIVINELIGHTHOUSE1F_KRIS, LEFT
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext LighthouseHeyPlayerText
+	waitbutton
+	closetext
+	applymovement OLIVINELIGHTHOUSE1F_KRIS, RivalDisappearsMovement1
+	disappear OLIVINELIGHTHOUSE1F_KRIS
+	playsound SFX_EXIT_BUILDING
+	special RestartMapMusic
+	setscene SCENE_FINISHED
+	setevent EVENT_LIGHTHOUSE1F_RIVAL1
+	setevent EVENT_LIGHTHOUSE1F_RIVAL1
+	setevent EVENT_LIGHTHOUSE2F_RIVAL2
+	setevent EVENT_LIGHTHOUSE6F_RIVAL2
+	setevent EVENT_LIGHTHOUSE6F_RIVAL1
+	end
+
+.Female:
+	clearevent EVENT_LIGHTHOUSE1F_RIVAL2
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, UP
+	special FadeOutMusic
+	pause 10
+	appear OLIVINELIGHTHOUSE1F_CHRIS
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	applymovement OLIVINELIGHTHOUSE1F_CHRIS, RivalMovesUp1
+	turnobject OLIVINELIGHTHOUSE1F_CHRIS, LEFT
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext LighthouseHeyPlayerText
+	waitbutton
+	closetext
+	applymovement OLIVINELIGHTHOUSE1F_CHRIS, RivalDisappearsMovement1
+	disappear OLIVINELIGHTHOUSE1F_CHRIS
+	playsound SFX_EXIT_BUILDING
+	special RestartMapMusic
+	setscene SCENE_FINISHED
+	setevent EVENT_LIGHTHOUSE1F_RIVAL2
+	setevent EVENT_LIGHTHOUSE2F_RIVAL1
+	setevent EVENT_LIGHTHOUSE6F_RIVAL1
+	setevent EVENT_LIGHTHOUSE6F_RIVAL2
+	end
+
+RightRival:
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female2
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, UP
+	special FadeOutMusic
+	pause 10
+	clearevent EVENT_LIGHTHOUSE1F_RIVAL1
+	appear OLIVINELIGHTHOUSE1F_KRIS
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	applymovement OLIVINELIGHTHOUSE1F_KRIS, RivalMovesUp2
+	opentext
+	writetext LighthouseHeyPlayerText
+	waitbutton
+	closetext
+	applymovement OLIVINELIGHTHOUSE1F_KRIS, RivalDisappearsMovement2
+	disappear OLIVINELIGHTHOUSE1F_KRIS
+	playsound SFX_EXIT_BUILDING
+	special RestartMapMusic
+	setscene SCENE_FINISHED
+	setevent EVENT_LIGHTHOUSE1F_RIVAL1
+	setevent EVENT_LIGHTHOUSE1F_RIVAL1
+	setevent EVENT_LIGHTHOUSE2F_RIVAL2
+	setevent EVENT_LIGHTHOUSE6F_RIVAL2
+	setevent EVENT_LIGHTHOUSE6F_RIVAL1
+	end
+
+.Female2:
+	clearevent EVENT_LIGHTHOUSE1F_RIVAL2
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, UP
+	special FadeOutMusic
+	pause 10
+	appear OLIVINELIGHTHOUSE1F_CHRIS
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	applymovement OLIVINELIGHTHOUSE1F_CHRIS, RivalMovesUp2
+	opentext
+	writetext LighthouseHeyPlayerText
+	waitbutton
+	closetext
+	applymovement OLIVINELIGHTHOUSE1F_CHRIS, RivalDisappearsMovement2
+	disappear OLIVINELIGHTHOUSE1F_CHRIS
+	playsound SFX_EXIT_BUILDING
+	special RestartMapMusic
+	setscene SCENE_FINISHED
+	setevent EVENT_LIGHTHOUSE1F_RIVAL2
+	setevent EVENT_LIGHTHOUSE1F_RIVAL2
+	setevent EVENT_LIGHTHOUSE2F_RIVAL1
+	setevent EVENT_LIGHTHOUSE6F_RIVAL1
+	setevent EVENT_LIGHTHOUSE6F_RIVAL2
+	end
+
+OlivineLighthouse1FRocket1Script:
+	trainer GRUNTM, GRUNTM_3, EVENT_BEAT_ROCKET_GRUNTM_3, OlivineLighthouse1FRocketSeenText, OlivineLighthouse1FRocketBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext OlivineLighthouse1FRocketAfterBattleText
+	waitbutton
+	closetext
+	end
+
+OlivineLighthouse1FRocket2Script:
+	trainer GRUNTM, GRUNTM_4, EVENT_BEAT_ROCKET_GRUNTM_4, OlivineLighthouse1FRocket2SeenText, OlivineLighthouse1FRocket2BeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext OlivineLighthouse1FRocket2AfterBattleText
+	waitbutton
+	closetext
+	end
+
+OlivineLighthouse1FSherlesScript:
+	opentext
+	writetext OlivineLighthouse1FSherles1Text
+	waitbutton
+	closetext
+	faceplayer
+	opentext
+	writetext OlivineLighthouse1FSherles2Text
+	waitbutton
+	closetext
+	end
+
+ElevatorScript:
+	opentext
+	checkevent EVENT_BEAT_LIGHTHOUSE_MIYAMOTO
+	iftrue .ElevatorFunctioning
+	writetext ElevatorBlockedText
+	waitbutton
+	closetext
+	end
+
+.ElevatorFunctioning:
+	writetext ElevatorFreeText
+	waitbutton
+	closetext
+	end
+
+OlivineLighthouse1FOfficer:
+	jumptextfaceplayer Lighthouse1FOfficerText
+
+RivalMovesUp1:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+RivalMovesUp2:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+RivalDisappearsMovement1:
+	step DOWN
+	step_end
+
+RivalDisappearsMovement2:
+	step LEFT
+	step DOWN
+	step DOWN
+	step RIGHT
+	step_end
+
+OlivineLighthouse1FRocketSeenText:
+	text "Hey!"
+	line "This area is off"
+	cont "limits!"
 	done
 
-OlivineLighthouse1FPokefanFText:
-	text "In the past, #-"
-	line "MON used to light"
+OlivineLighthouse1FRocketBeatenText:
+	text "Doesn't look like"
+	line "you care."
+	done
 
-	para "the sea around"
-	line "OLIVINE at night."
+OlivineLighthouse1FRocketAfterBattleText:
+	text "I guess you saw"
+	line "through my lie."
+	done
 
-	para "The LIGHTHOUSE was"
-	line "made in honor of"
-	cont "those #MON."
+OlivineLighthouse1FRocket2SeenText:
+	text "So you're the kid"
+	line "he was raving"
+	cont "about."
+
+	para "Heh, you don't"
+	line "look that tough!"
+	done
+
+OlivineLighthouse1FRocket2BeatenText:
+	text "You REALLY are"
+	line "that strong!"
+	done
+
+OlivineLighthouse1FRocket2AfterBattleText:
+	text "I just thought"
+	line "those guys you"
+	cont "beat were weak."
+
+	para "Then again, maybe"
+	line "I am too."
+	done
+
+OlivineLighthouse1FSherles1Text:
+	text "More people in"
+	line "black with sun-"
+	cont "glasses..."
+
+	para "Someone named"
+	line "Miyamoto..."
+	done
+
+OlivineLighthouse1FSherles2Text:
+	text "Pardon?"
+
+	para "I'm busy right"
+	line "now."
+	done
+
+LighthouseHeyPlayerText:
+	text "Hey <PLAYER>!"
+
+	para "I heard the"
+	line "Lighthouse was in"
+	cont "trouble, so I came"
+	cont "to help!"
+
+	para "I'll go on ahead!"
+	done
+
+ElevatorBlockedText:
+	text "The elevator seems"
+	line "to be stuck."
+	done
+
+ElevatorFreeText:
+	text "The elevator is"
+	line "working."
+	done
+
+Lighthouse1FOfficerText:
+	text "This is the second"
+	line "instance of a"
+	cont "tower being"
+	cont "invaded by people"
+	cont "if black."
+
+	para "If we can't solve"
+	line "this problem,"
+	cont "conspiracies will"
+	cont "start to pop up."
 	done
 
 OlivineLighthouse1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 5 ; warp events
-	warp_event 10, 17, OLIVINE_CITY, 9
-	warp_event 11, 17, OLIVINE_CITY, 9
+	db 4 ; warp events
+	warp_event 10, 17, OLIVINE_CITY, 8
+	warp_event 11, 17, OLIVINE_CITY, 8
 	warp_event  3, 11, OLIVINE_LIGHTHOUSE_2F, 1
-	warp_event 16, 13, OLIVINE_LIGHTHOUSE_2F, 3
-	warp_event 17, 13, OLIVINE_LIGHTHOUSE_2F, 4
+	warp_event 10,  1, LIGHTHOUSE_ELEVATOR, 1
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event  3, 10, SCENE_DEFAULT, RightRival
+	coord_event  2, 10, SCENE_DEFAULT, LeftRival
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 10,  1, BGEVENT_READ, ElevatorScript
 
-	db 2 ; object events
-	object_event  8,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineLighthouse1FSailorScript, -1
-	object_event 16,  9, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineLighthouse1FPokefanFScript, -1
+	db 6 ; object events
+	object_event 17,  6, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, OlivineLighthouse1FRocket1Script, EVENT_LIGHTHOUSE_ROCKETS
+	object_event  2,  5, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, OlivineLighthouse1FRocket2Script, EVENT_LIGHTHOUSE_ROCKETS
+	object_event 15, 12, SPRITE_SHERLES, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineLighthouse1FSherlesScript, EVENT_LIGHTHOUSE_SHERLES
+	object_event  3,  5, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LIGHTHOUSE1F_RIVAL1
+	object_event  3,  5, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LIGHTHOUSE1F_RIVAL2
+	object_event  6,  2, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineLighthouse1FOfficer, EVENT_LIGHTHOUSE_SHERLES

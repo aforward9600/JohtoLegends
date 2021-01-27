@@ -1568,89 +1568,89 @@ JohtoGrassWildMons:
 	dbw 13, LEDYBA
 	dbw 14, GROWLITHE
 	dbw 15, PIDGEY
-	dbw 16, GROWLITHE
-	dbw 15, PIDGEOTTO
-	dbw 15, LEDIAN
-	dbw 15, LEDIAN
-	dbw 15, LEDIAN
+	dbw 16, VULPIX
+	dbw 15, JIGGLYPUFF
+	dbw 15, FARFETCH_D
+	dbw 15, FARFETCH_D
+	dbw 15, FARFETCH_D
 	; day
-	dbw 13, PIDGEY
+	dbw 13, DODUO
 	dbw 14, GROWLITHE
 	dbw 15, PIDGEY
-	dbw 16, GROWLITHE
-	dbw 15, PIDGEOTTO
-	dbw 15, PIDGEY
-	dbw 15, PIDGEY
-	dbw 15, PIDGEY
+	dbw 16, VULPIX
+	dbw 15, JIGGLYPUFF
+	dbw 15, MEOWTH
+	dbw 15, MEOWTH
+	dbw 15, MEOWTH
 	; nite
 	dbw 13, SPINARAK
 	dbw 14, STANTLER
 	dbw 15, HOOTHOOT
-	dbw 16, STANTLER
-	dbw 15, NOCTOWL
-	dbw 15, ARIADOS
-	dbw 15, ARIADOS
-	dbw 15, ARIADOS
+	dbw 16, VULPIX
+	dbw 15, JIGGLYPUFF
+	dbw 15, MURKROW
+	dbw 15, MURKROW
+	dbw 15, MURKROW
 
 	map_id ROUTE_38
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 16, RATTATA
-	dbw 16, RATICATE
 	dbw 16, MAGNEMITE
-	dbw 16, PIDGEOTTO
+	dbw 16, DROWZEE
+	dbw 16, BUTTERFREE
+	dbw 16, SCYTHER
 	dbw 13, TAUROS
 	dbw 13, MILTANK
 	dbw 13, MILTANK
 	dbw 13, MILTANK
 	; day
-	dbw 16, RATTATA
-	dbw 16, RATICATE
 	dbw 16, MAGNEMITE
-	dbw 16, PIDGEOTTO
+	dbw 16, DROWZEE
+	dbw 16, BUTTERFREE
+	dbw 16, SCYTHER
 	dbw 13, TAUROS
 	dbw 13, MILTANK
 	dbw 13, MILTANK
 	dbw 13, MILTANK
 	; nite
-	dbw 16, MEOWTH
-	dbw 16, RATICATE
 	dbw 16, MAGNEMITE
-	dbw 16, NOCTOWL
+	dbw 16, DROWZEE
+	dbw 16, BEEDRILL
+	dbw 16, SCYTHER
 	dbw 16, MEOWTH
-	dbw 16, MEOWTH
-	dbw 16, MEOWTH
-	dbw 16, MEOWTH
+	dbw 16, MURKROW
+	dbw 16, MURKROW
+	dbw 16, MURKROW
 
 	map_id ROUTE_39
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 16, RATTATA
-	dbw 16, RATICATE
 	dbw 16, MAGNEMITE
-	dbw 16, PIDGEOTTO
+	dbw 16, DROWZEE
+	dbw 16, BUTTERFREE
+	dbw 16, YANMA
 	dbw 15, MILTANK
 	dbw 15, TAUROS
 	dbw 15, TAUROS
 	dbw 15, TAUROS
 	; day
-	dbw 16, RATTATA
-	dbw 16, RATICATE
 	dbw 16, MAGNEMITE
-	dbw 16, PIDGEOTTO
+	dbw 16, DROWZEE
+	dbw 16, BUTTERFREE
+	dbw 16, YANMA
 	dbw 15, MILTANK
 	dbw 15, TAUROS
 	dbw 15, TAUROS
 	dbw 15, TAUROS
 	; nite
-	dbw 16, MEOWTH
-	dbw 16, RATICATE
 	dbw 16, MAGNEMITE
-	dbw 16, NOCTOWL
+	dbw 16, DROWZEE
+	dbw 16, BEEDRILL
+	dbw 16, YANMA
 	dbw 18, MEOWTH
-	dbw 18, MEOWTH
-	dbw 18, MEOWTH
-	dbw 18, MEOWTH
+	dbw 18, MURKROW
+	dbw 18, MURKROW
+	dbw 18, MURKROW
 
 	map_id ROUTE_42
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

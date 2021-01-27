@@ -69,6 +69,12 @@ OlivineRocketScript:
 	applymovement OLIVINECITY_GRUNT, OlivineGruntMovement
 	playsound SFX_ENTER_DOOR
 	disappear OLIVINECITY_GRUNT
+	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GUY
+	special LoadUsedSpritesGFX
+	setevent EVENT_LIGHTHOUSE_SHERLES
+	setevent EVENT_LIGHTHOUSE1F_RIVAL1
+	setevent EVENT_LIGHTHOUSE1F_RIVAL2
+	setevent EVENT_LIGHTHOUSE_CIVILLIANS
 	end
 
 OlivineCitySailor2Script:
@@ -178,8 +184,7 @@ GotWordFromGruntText:
 
 	para "You're the one"
 	line "that messed with"
-	cont "us at Bell"
-	cont "Tower."
+	cont "us at Bell Tower."
 
 	para "Sorry, but it"
 	line "looks like I'll"
@@ -269,4 +274,4 @@ OlivineCity_MapEvents:
 	object_event 26, 27, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
 	object_event 10, 12, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
 	object_event 17, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
-	object_event 29, 28, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineRocketScript, EVENT_BEAT_OLIVINE_GRUNT
+	object_event 29, 28, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineRocketScript, EVENT_BEAT_OLIVINE_GRUNT

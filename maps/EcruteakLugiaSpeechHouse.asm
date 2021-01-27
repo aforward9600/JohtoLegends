@@ -24,7 +24,7 @@ EcruteakLugiaSpeechHouseGrampsText:
 	line "turned black. A"
 
 	para "giant flying #-"
-	line "MON was blocking"
+	line "mon was blocking"
 	cont "out the sun."
 
 	para "I wonder what that"
@@ -36,7 +36,7 @@ EcruteakLugiaSpeechHouseGrampsText:
 
 EcruteakLugiaSpeechHouseYoungsterText:
 	text "Is there really a"
-	line "#MON that big?"
+	line "#mon that big?"
 
 	para "If it exists, it"
 	line "must be powerful."

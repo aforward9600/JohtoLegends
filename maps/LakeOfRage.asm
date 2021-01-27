@@ -304,7 +304,7 @@ LakeOfRageRivalThatWasSomethingText:
 LakeOfRageSuperNerdText:
 	text "I heard this lake"
 	line "was made by ram-"
-	cont "paging GYARADOS."
+	cont "paging Gyarados."
 	done
 
 LakeOfRageCooltrainerFText:
