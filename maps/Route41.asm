@@ -133,137 +133,132 @@ Route41HiddenMaxEther:
 	hiddenitem MAX_ETHER, EVENT_ROUTE_41_HIDDEN_MAX_ETHER
 
 SwimmermCharlieSeenText:
-	text "The water's warm"
-	line "here. I'm loose"
-	cont "and limber."
+	text "These islands are"
+	line "quite somber."
 
-	para "Sure, I'll take"
-	line "you on!"
+	para "Think there's som-"
+	line "ething up with"
+	cont "them?"
 	done
 
 SwimmermCharlieBeatenText:
-	text "Yikes! I've got"
-	line "prune skin!"
+	text "Your skills are"
+	line "scary!"
 	done
 
 SwimmermCharlieAfterBattleText:
-	text "Isn't it relaxing"
-	line "just floating like"
-	cont "this?"
+	text "I would go in"
+	line "there, but these"
+	cont "whirlpools are in"
+	cont "the way."
 	done
 
 SwimmermGeorgeSeenText:
-	text "I'm a bit tired."
-	line "If I win, lend me"
-	cont "your #MON."
+	text "This is my spot!"
+
+	para "Get your own!"
 	done
 
 SwimmermGeorgeBeatenText:
-	text "Pant, pant…"
+	text "Fine."
 	done
 
 SwimmermGeorgeAfterBattleText:
-	text "It's so far to"
-	line "CIANWOOD."
+	text "You can stay here."
 
-	para "But it's no easy"
-	line "return trip to"
-	cont "OLIVINE either."
-
-	para "What should I do?"
+	para "Don't expect any"
+	line "hospitality."
 	done
 
 SwimmermBerkeSeenText:
-	text "See those islands"
-	line "that are blocked"
-	cont "by whirlpools?"
+	text "I've been chased"
+	line "by Tentacruel out"
+	cont "here."
 
-	para "There just has to"
-	line "be a secret!"
+	para "Luckily I'm pretty"
+	line "fast!"
 	done
 
 SwimmermBerkeBeatenText:
-	text "What's the secret"
-	line "to your strength?"
+	text "Speed will only"
+	line "get me so far."
 	done
 
 SwimmermBerkeAfterBattleText:
-	text "It was a dark and"
-	line "stormy night…"
+	text "Don't get stung by"
+	line "a Tentacruel."
 
-	para "I saw this giant"
-	line "#MON flying"
-	cont "from the islands."
-
-	para "It was scattering"
-	line "feathers from its"
-	cont "silver wings."
+	para "It's not very"
+	line "pleasant, unless"
+	cont "you're into it."
 	done
 
 SwimmermKirkSeenText:
-	text "The waves are wild"
-	line "here."
-
-	para "They tire you out"
-	line "while you swim."
+	text "Glub, glub!"
 	done
 
 SwimmermKirkBeatenText:
-	text "I'm beat!"
+	text "Glub!!"
 	done
 
 SwimmermKirkAfterBattleText:
-	text "The currents keep"
-	line "me from reaching"
-	cont "that island."
+	text "GASP!"
+
+	para "Sorry. I was"
+	line "drowning. I'm all"
+	cont "better now."
 	done
 
 SwimmermMathewSeenText:
-	text "Are you seeking"
-	line "the secrets of"
-	cont "WHIRL ISLANDS?"
+	text "There's said to be"
+	line "a large, silvery"
+	cont "#mon here in"
+	cont "the Whirl Islands."
 	done
 
 SwimmermMathewBeatenText:
-	text "Ooh, you've got"
-	line "great endurance!"
+	text "I'm done!"
 	done
 
 SwimmermMathewAfterBattleText:
-	text "A secret about"
-	line "WHIRL ISLANDS…"
+	text "My grandfather"
+	line "told me stories of"
+	cont "that #mon."
 
-	para "It's pitch-black"
-	line "inside!"
+	para "Said he saw it"
+	line "himself!"
 	done
 
 SwimmerfKayleeSeenText:
-	text "I'm on my way to"
-	line "WHIRL ISLANDS."
+	text "Have you ever been"
+	line "inside the Whirl"
+	cont "Islands?"
 
-	para "I'm going explor-"
-	line "ing with friends."
+	para "Apparently it's"
+	line "pitch-black in"
+	cont "there."
 	done
 
 SwimmerfKayleeBeatenText:
-	text "Is that how you do"
-	line "it?"
+	text "Blackout!"
 	done
 
 SwimmerfKayleeAfterBattleText:
-	text "There's supposed"
-	line "to be a big #-"
-	cont "MON deep beneath"
-	cont "WHIRL ISLANDS."
+	text "Unless you've got"
+	line "way to light it up"
+	cont "in there, you are"
+	cont "not getting very"
+	cont "far."
 
-	para "I wonder what it"
-	line "could be?"
+	para "I heard that"
+	line "Sprout Tower gives"
+	cont "out a useful item."
 	done
 
 SwimmerfSusieSeenText:
 	text "You look so ele-"
 	line "gant, riding your"
-	cont "#MON."
+	cont "#mon."
 	done
 
 SwimmerfSusieBeatenText:
@@ -273,66 +268,63 @@ SwimmerfSusieBeatenText:
 SwimmerfSusieAfterBattleText:
 	text "Wasn't there a hit"
 	line "song about a boy"
-	cont "riding a LAPRAS?"
+	cont "riding a Lapras?"
 	done
 
 SwimmerfDeniseSeenText:
-	text "The weather is so"
-	line "beautiful, I'm in"
-	cont "a daze!"
+	text "The whirlpools are"
+	line "so violent, it's"
+	cont "dangerous to go"
+	cont "near them."
 	done
 
 SwimmerfDeniseBeatenText:
-	text "Ohhh!"
+	text "Washed away!"
 	done
 
 SwimmerfDeniseAfterBattleText:
-	text "A sunburn is the"
-	line "worst for skin."
-
-	para "But I don't use a"
-	line "sunblock."
-
-	para "I won't pollute"
-	line "the water."
+	text "Certain Lapras can"
+	line "get rid of those"
+	cont "Whirlpools."
 	done
 
 SwimmerfKaraSeenText:
-	text "If you need to"
-	line "rest, just tread"
-	cont "water."
+	text "There's an old man"
+	line "stationed in Whirl"
+	cont "Islands, but no"
+	cont "one knows why."
 
-	para "You'll get your"
-	line "wind back, so you"
-
-	para "can keep on going"
-	line "strong."
+	para "He refuses to say"
+	line "anything."
 	done
 
 SwimmerfKaraBeatenText:
-	text "Oh! You have more"
-	line "energy than I do."
+	text "You don't say much"
+	line "either."
 	done
 
 SwimmerfKaraAfterBattleText:
-	text "I heard roars from"
-	line "deep inside the"
-	cont "ISLANDS."
+	text "He's so mysterious."
+
+	para "Someone should get"
+	line "him to talk."
 	done
 
 SwimmerfWendySeenText:
-	text "At night, STARYU"
-	line "gather near the"
-	cont "water's surface."
+	text "Staryu are so"
+	line "pretty. At night,"
+	cont "they gather near"
+	cont "the water's sur-"
+	cont "face."
 	done
 
 SwimmerfWendyBeatenText:
-	text "Oh, dear…"
+	text "Oh, man."
 	done
 
 SwimmerfWendyAfterBattleText:
 	text "The clusters of"
-	line "STARYU light up"
+	line "Staryu light up"
 	cont "at the same time."
 
 	para "It's so beautiful,"

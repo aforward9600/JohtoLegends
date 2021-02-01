@@ -2707,67 +2707,67 @@ SwimmerMGroup:
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (2)
-	db "SIMON@", TRAINERTYPE_NORMAL
-	db 20
+	db "Derick@", TRAINERTYPE_NORMAL
+	db 25
 	dw TENTACOOL
-	db 20
-	dw TENTACOOL
+	db 25
+	dw HORSEA
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (3)
-	db "RANDALL@", TRAINERTYPE_NORMAL
-	db 18
+	db "Jaxson@", TRAINERTYPE_NORMAL
+	db 23
 	dw SHELLDER
-	db 20
+	db 24
 	dw WARTORTLE
-	db 18
-	dw SHELLDER
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (4)
-	db "CHARLIE@", TRAINERTYPE_NORMAL
-	db 21
-	dw SHELLDER
-	db 19
-	dw TENTACOOL
-	db 19
-	dw TENTACRUEL
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (5)
-	db "GEORGE@", TRAINERTYPE_NORMAL
-	db 16
-	dw TENTACOOL
-	db 17
-	dw TENTACOOL
-	db 16
-	dw TENTACOOL
-	db 19
+	db 24
 	dw STARYU
-	db 17
-	dw TENTACOOL
-	db 19
-	dw REMORAID
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (6)
-	db "BERKE@", TRAINERTYPE_NORMAL
+	next_list_item ; SWIMMERM (4) CHARLIE
+	db "Daryl@", TRAINERTYPE_NORMAL
+	db 23
+	dw MARILL
+	db 23
+	dw REMORAID
+	db 23
+	dw OCTILLERY
+	db -1 ; end
+
+	next_list_item ; SWIMMERM (5) GEORGE
+	db "Guy@", TRAINERTYPE_NORMAL
+	db 19
+	dw WOOPER
+	db 21
+	dw TENTACOOL
+	db 21
+	dw SLOWPOKE
+	db 20
+	dw STARYU
+	db 20
+	dw GYARADOS
+	db 22
+	dw QUAGSIRE
+	db -1 ; end
+
+	next_list_item ; SWIMMERM (6) BERKE
+	db "Barry@", TRAINERTYPE_NORMAL
 	db 23
 	dw QWILFISH
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (7)
-	db "KIRK@", TRAINERTYPE_NORMAL
-	db 20
-	dw GYARADOS
-	db 20
-	dw GYARADOS
+	next_list_item ; SWIMMERM (7) KIRK
+	db "Reid@", TRAINERTYPE_NORMAL
+	db 24
+	dw HORSEA
+	db 24
+	dw SEADRA
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (8)
-	db "MATHEW@", TRAINERTYPE_NORMAL
-	db 23
-	dw KRABBY
+	next_list_item ; SWIMMERM (8) MATHEW
+	db "Rod@", TRAINERTYPE_NORMAL
+	db 25
+	dw KINGLER
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (9)
@@ -2898,61 +2898,62 @@ SwimmerMGroup:
 
 SwimmerFGroup:
 	next_list_item ; SWIMMERF (1)
-	db "ELAINE@", TRAINERTYPE_NORMAL
-	db 21
-	dw STARYU
+	db "Angie@", TRAINERTYPE_MOVES
+	db 25
+	dw STARMIE
+	dw MINIMIZE, WATER_GUN, RAPID_SPIN, PSYBEAM
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (2)
-	db "PAULA@", TRAINERTYPE_NORMAL
-	db 19
-	dw STARYU
-	db 19
-	dw SHELLDER
+	db "Kaitlyn@", TRAINERTYPE_NORMAL
+	db 24
+	dw PSYDUCK
+	db 24
+	dw SEEL
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (3)
-	db "KAYLEE@", TRAINERTYPE_NORMAL
-	db 18
+	db "Brady@", TRAINERTYPE_NORMAL
+	db 23
 	dw GOLDEEN
-	db 20
-	dw GOLDEEN
-	db 20
+	db 23
+	dw CROCONAW
+	db 24
 	dw SEAKING
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (4)
-	db "SUSIE@", TRAINERTYPE_MOVES
-	db 20
+	db "Susan@", TRAINERTYPE_MOVES
+	db 24
 	dw PSYDUCK
-	dw SCRATCH, TAIL_WHIP, DISABLE, CONFUSION
-	db 22
+	dw SCRATCH, SCREECH, WATER_PULSE, CONFUSION
+	db 24
 	dw GOLDEEN
-	dw PECK, TAIL_WHIP, SUPERSONIC, HORN_ATTACK
+	dw TAIL_WHIP, AQUA_JET, WATER_PULSE, FURY_ATTACK
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (5)
-	db "DENISE@", TRAINERTYPE_NORMAL
-	db 22
-	dw SEEL
+	db "Pamela@", TRAINERTYPE_NORMAL
+	db 25
+	dw GYARADOS
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (6)
-	db "KARA@", TRAINERTYPE_NORMAL
-	db 20
-	dw STARYU
-	db 20
-	dw STARMIE
+	db "Lois@", TRAINERTYPE_NORMAL
+	db 24
+	dw SHELLDER
+	db 24
+	dw CLOYSTER
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (7)
-	db "WENDY@", TRAINERTYPE_MOVES
-	db 21
+	db "Elma@", TRAINERTYPE_MOVES
+	db 24
 	dw HORSEA
-	dw BUBBLE, SMOKESCREEN, LEER, WATER_GUN
-	db 21
+	dw BUBBLEBEAM, SMOKESCREEN, TWISTER, WATER_GUN
+	db 24
 	dw HORSEA
-	dw DRAGON_RAGE, SMOKESCREEN, LEER, WATER_GUN
+	dw DRAGON_RAGE, SMOKESCREEN, BUBBLEBEAM, WATER_GUN
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (8)

@@ -2,9 +2,8 @@ tilepal: MACRO
 ; used in gfx/tilesets/*_palette_map.asm
 ; vram bank, pals
 x = \1 << OAM_TILE_BANK
-rept (_NARG + -1) / 2
-	dn (x | PAL_BG_\3), (x | PAL_BG_\2)
-	shift
+rept _NARG +- 1
+	db (x | PAL_BG_\2)
 	shift
 endr
 ENDM
@@ -108,6 +107,9 @@ INCLUDE "gfx/tilesets/battle_tower_palette_map.asm"
 
 TilesetBattleTowerOutsidePalMap:
 INCLUDE "gfx/tilesets/battle_tower_outside_palette_map.asm"
+
+TilesetRoute47PalMap:
+INCLUDE "gfx/tilesets/route_47_palette_map.asm"
 
 ; unused
 rept 26

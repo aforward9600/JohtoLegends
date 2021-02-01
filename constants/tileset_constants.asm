@@ -36,6 +36,7 @@
 	const TILESET_KABUTO_WORD_ROOM     ; 22
 	const TILESET_OMANYTE_WORD_ROOM    ; 23
 	const TILESET_AERODACTYL_WORD_ROOM ; 24
+	const TILESET_ROUTE_47             ; 25
 
 ; bg palette values (see gfx/tilesets/*_palette_map.asm)
 ; TilesetBGPalette indexes (see gfx/tilesets/bg_tiles.pal)
@@ -48,3 +49,13 @@
 	const PAL_BG_BROWN  ; 5
 	const PAL_BG_ROOF   ; 6
 	const PAL_BG_TEXT   ; 7
+
+const_value set $80
+	const PAL_BG_PRIORITY_GRAY   ; 80
+	const PAL_BG_PRIORITY_RED    ; 81
+	const PAL_BG_PRIORITY_GREEN  ; 82
+	const PAL_BG_PRIORITY_WATER  ; 83
+	const PAL_BG_PRIORITY_YELLOW ; 84
+	const PAL_BG_PRIORITY_BROWN  ; 85
+	const PAL_BG_PRIORITY_ROOF   ; 86
+	const PAL_BG_PRIORITY_TEXT   ; 87

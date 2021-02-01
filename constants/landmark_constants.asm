@@ -37,6 +37,10 @@
 	const WHIRL_ISLANDS     ; 1f
 	const ROUTE_41          ; 20
 	const CIANWOOD_CITY     ; 21
+	const CLIFFS_EDGE_GATE
+	const ROUTE_47          ; 61
+	const ROUTE_48          ; 62
+	const WILD_AREA_OUTSIDE ; 60
 	const ROUTE_42          ; 22
 	const MT_MORTAR         ; 23
 	const MAHOGANY_TOWN     ; 24

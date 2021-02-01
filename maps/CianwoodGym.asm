@@ -171,8 +171,10 @@ RivalWalksLeft:
 	applymovement CIANWOODGYM_KRIS, RivalWalksLeftMovement
 	disappear CIANWOODGYM_KRIS
 	moveobject CIANWOODGYM_KRIS, 5, 2
+	appear CIANWOODGYM_KRIS
 	clearevent EVENT_CIANWOOD_GYM_RIVAL1
 	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL1
+	setevent EVENT_CLIFFS_EDGE_GATE_GUARD
 	setscene SCENE_DEFAULT
 	end
 
@@ -188,8 +190,10 @@ RivalWalksLeft:
 	applymovement CIANWOODGYM_CHRIS, RivalWalksLeftMovement
 	disappear CIANWOODGYM_CHRIS
 	moveobject CIANWOODGYM_CHRIS, 5, 2
+	appear CIANWOODGYM_CHRIS
 	clearevent EVENT_CIANWOOD_GYM_RIVAL2
 	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL2
+	setevent EVENT_CLIFFS_EDGE_GATE_GUARD
 	setscene SCENE_DEFAULT
 	end
 
@@ -207,8 +211,10 @@ RivalWalksRight:
 	applymovement CIANWOODGYM_KRIS, RivalWalksRightMovement
 	disappear CIANWOODGYM_KRIS
 	moveobject CIANWOODGYM_KRIS, 5, 2
+	appear CIANWOODGYM_KRIS
 	clearevent EVENT_CIANWOOD_GYM_RIVAL1
 	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL1
+	setevent EVENT_CLIFFS_EDGE_GATE_GUARD
 	setscene SCENE_DEFAULT
 	end
 
@@ -224,13 +230,14 @@ RivalWalksRight:
 	applymovement CIANWOODGYM_CHRIS, RivalWalksRightMovement
 	disappear CIANWOODGYM_CHRIS
 	moveobject CIANWOODGYM_CHRIS, 5, 2
+	appear CIANWOODGYM_CHRIS
 	clearevent EVENT_CIANWOOD_GYM_RIVAL2
 	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL2
+	setevent EVENT_CLIFFS_EDGE_GATE_GUARD
 	setscene SCENE_DEFAULT
 	end
 
 RivalWalksUpMovement:
-	step UP
 	step UP
 	step UP
 	step_end
@@ -241,10 +248,14 @@ RivalWalksLeftMovement:
 	step UP
 	step UP
 	step UP
+	step UP
+	step UP
 	step_end
 
 RivalWalksRightMovement:
 	step LEFT
+	step UP
+	step UP
 	step UP
 	step UP
 	step UP
@@ -350,8 +361,8 @@ BlackbeltYoshiBeatenText:
 	done
 
 BlackbeltYoshiAfterText:
-	text "Perhaps board brea-"
-	line "king isn't useful"
+	text "Perhaps board bre-"
+	line "aking isn't useful"
 	cont "in battles."
 	done
 

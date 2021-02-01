@@ -55,9 +55,6 @@ Route10South_Blocks:
 	INCBIN "maps/Route10South.blk"
 
 Pokecenter2F_Blocks:
-LavenderPokecenter2FBeta_Blocks:
-CeladonPokecenter2FBeta_Blocks:
-ViridianPokecenter2FBeta_Blocks:
 	INCBIN "maps/Pokecenter2F.blk"
 
 Route41_Blocks:
@@ -87,20 +84,11 @@ Route25_Blocks:
 Route24_Blocks:
 	INCBIN "maps/Route24.blk"
 
-BetaVioletCity_Blocks:
-	INCBIN "maps/unused/BetaVioletCity.blk"
-
 Route3_Blocks:
 	INCBIN "maps/Route3.blk"
 
 PewterCity_Blocks:
 	INCBIN "maps/PewterCity.blk"
-
-BetaSilverCaveOutside_Blocks:
-	INCBIN "maps/unused/BetaSilverCaveOutside.blk"
-
-BetaSproutTower2_Blocks:
-	INCBIN "maps/unused/BetaSproutTower2.blk"
 
 Route12_Blocks:
 	INCBIN "maps/Route12.blk"
@@ -564,17 +552,8 @@ Route16_Blocks:
 Route18_Blocks:
 	INCBIN "maps/Route18.blk"
 
-GoldenrodUnderground_Blocks:
-	INCBIN "maps/GoldenrodUnderground.blk"
-
-GoldenrodUndergroundSwitchRoomEntrances_Blocks:
-	INCBIN "maps/GoldenrodUndergroundSwitchRoomEntrances.blk"
-
 GoldenrodDeptStoreB1F_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreB1F.blk"
-
-GoldenrodUndergroundWarehouse_Blocks:
-	INCBIN "maps/GoldenrodUndergroundWarehouse.blk"
 
 BetaElevator_Blocks:
 	INCBIN "maps/unused/BetaElevator.blk"
@@ -1056,3 +1035,12 @@ DarkCaveNewEntrance_Blocks:
 
 BellchimePath_Blocks:
 	INCBIN "maps/BellchimePath.blk"
+
+CliffsEdgeGate_Blocks:
+	INCBIN "maps/CliffsEdgeGate.blk"
+
+Route47_Blocks:
+	INCBIN "maps/Route47.blk"
+
+Route48_Blocks:
+	INCBIN "maps/Route48.blk"

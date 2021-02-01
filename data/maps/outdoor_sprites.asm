@@ -29,6 +29,7 @@ OutdoorSprites:
 	dw NewBarkGroupSprites
 	dw SaffronGroupSprites
 	dw CherrygroveGroupSprites
+	dw Route47GroupSprites
 
 ; Route1 and ViridianCity are connected
 ; Route2, and PewterCity are connected
@@ -200,7 +201,8 @@ OlivineGroupSprites:
 ; Route38, Route39, OlivineCity
 CianwoodGroupSprites:
 ; Route40, Route41, CianwoodCity, BattleTowerOutside
-	db SPRITE_ROCKET
+Route47GroupSprites:
+	db SPRITE_OLIVINE_RIVAL
 	db SPRITE_POKEFAN_M
 	db SPRITE_LASS
 	db SPRITE_BUENA
@@ -214,7 +216,7 @@ CianwoodGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
 	db SPRITE_STANDING_YOUNGSTER ; non-walking version of SPRITE_YOUNGSTER
-	db SPRITE_SUICUNE
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 MahoganyGroupSprites:

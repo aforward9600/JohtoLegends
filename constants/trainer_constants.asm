@@ -371,8 +371,8 @@ CHRIS EQU __enum__
 
 	trainerclass SWIMMERM ; 26
 	const HAROLD
-	const SIMON
-	const RANDALL
+	const DERRICK
+	const JACKSON
 	const CHARLIE
 	const GEORGE
 	const BERKE
@@ -393,8 +393,8 @@ CHRIS EQU __enum__
 	const PARKER
 
 	trainerclass SWIMMERF ; 27
-	const ELAINE
-	const PAULA
+	const ANGIE
+	const KAITLYN
 	const KAYLEE
 	const SUSIE
 	const DENISE

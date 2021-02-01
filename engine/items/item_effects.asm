@@ -136,7 +136,7 @@ ItemEffects:
 	dw NoEffect            ; LOST_ITEM
 	dw NoEffect            ; STARDUST
 	dw NoEffect            ; STAR_PIECE
-	dw BasementKeyEffect   ; BASEMENT_KEY
+	dw NoEffect            ; BASEMENT_KEY
 	dw NoEffect            ; CHARCOAL
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS
@@ -2554,10 +2554,6 @@ SquirtbottleEffect:
 
 CardKeyEffect:
 	farcall _CardKey
-	ret
-
-BasementKeyEffect:
-	farcall _BasementKey
 	ret
 
 SacredAshEffect:

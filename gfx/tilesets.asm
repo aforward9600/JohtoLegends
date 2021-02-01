@@ -84,17 +84,6 @@ INCBIN "data/tilesets/mansion_metatiles.bin"
 TilesetMansionColl:
 INCLUDE "data/tilesets/mansion_collision.asm"
 
-TilesetCaveGFX:
-INCBIN "gfx/tilesets/cave.2bpp.lz"
-
-TilesetCaveMeta:
-TilesetDarkCaveMeta:
-INCBIN "data/tilesets/cave_metatiles.bin"
-
-TilesetCaveColl:
-TilesetDarkCaveColl:
-INCLUDE "data/tilesets/cave_collision.asm"
-
 
 SECTION "Tileset Data 3", ROMX
 
@@ -335,3 +324,25 @@ INCBIN "data/tilesets/tower_metatiles.bin"
 
 TilesetTowerColl:
 INCLUDE "data/tilesets/tower_collision.asm"
+
+TilesetCaveGFX:
+INCBIN "gfx/tilesets/cave.2bpp.lz"
+
+TilesetCaveMeta:
+TilesetDarkCaveMeta:
+INCBIN "data/tilesets/cave_metatiles.bin"
+
+TilesetCaveColl:
+TilesetDarkCaveColl:
+INCLUDE "data/tilesets/cave_collision.asm"
+
+SECTION "Tileset Data 9", ROMX
+
+TilesetRoute47GFX::
+INCBIN "gfx/tilesets/route_47.2bpp.lz"
+
+TilesetRoute47Meta::
+INCBIN "data/tilesets/route_47_metatiles.bin"
+
+TilesetRoute47Coll::
+INCBIN "data/tilesets/route_47_collision.asm"

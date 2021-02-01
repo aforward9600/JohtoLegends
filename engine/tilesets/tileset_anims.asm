@@ -76,6 +76,7 @@ TilesetForestAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetJohtoAnim:
+TilesetRoute47Anim:
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -88,6 +89,7 @@ TilesetJohtoAnim:
 	dw WhirlpoolFrames4, AnimateWhirlpoolTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
+	dw vTiles2 tile $68, WriteTileToBuffer
 	dw NULL,  DoneTileAnimation
 
 UnusedTilesetAnim_fc0d7:

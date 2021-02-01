@@ -41,6 +41,10 @@ Landmarks:
 	landmark  28,  92, WhirlIslandsName
 	landmark  28, 100, Route41Name
 	landmark  20, 100, CianwoodCityName
+	landmark  20,  99, CliffsEdgeGateName
+	landmark  12, 100, Route47Name
+	landmark   4,  92, Route48Name
+	landmark   4,  84, WildAreaName
 	landmark  92,  44, Route42Name
 	landmark  84,  44, MtMortarName
 	landmark 108,  44, MahoganyTownName
@@ -112,6 +116,7 @@ GoldenrodCityName:   db "Goldenrod¯City@"
 EcruteakCityName:    db "Ecruteak¯City@"
 OlivineCityName:     db "Olivine¯City@"
 CianwoodCityName:    db "Cianwood¯City@"
+CliffsEdgeGateName:  db "Cliff's Edge¯Gate@"
 MahoganyTownName:    db "Mahogany¯Town@"
 BlackthornCityName:  db "Blackthorn¯City@"
 LakeOfRageName:      db "Lake Of¯Rage@"
@@ -122,7 +127,7 @@ UnionCaveName:       db "Union Cave@"
 SlowpokeWellName:    db "Slowpoke¯Well@"
 RadioTowerName:      db "Goldenrod¯Tower@"
 PowerPlantName:      db "Power Plant@"
-NationalParkName:    db "National¯Park@"
+NationalParkName:    db "National¯Forest@"
 BellchimePathName:   db "Bellchime¯Path@"
 TinTowerName:        db "Bell Tower@"
 LighthouseName:      db "Lighthouse@"
@@ -207,3 +212,6 @@ TohjoFallsName:      db "Tohjo Falls@"
 UndergroundName:     db "Underground@"
 BattleTowerName:     db "Battle¯Tower@"
 SpecialMapName:      db "Special@"
+WildAreaName:        db "Wild Area@"
+Route47Name:         db "Route 47@"
+Route48Name:         db "Route 48@"

@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const CIANWOODCITY_STANDING_YOUNGSTER
+	const CIANWOODCITY_STANDING_YOUNGSTER1
 	const CIANWOODCITY_POKEFAN_M
 	const CIANWOODCITY_LASS
 	const CIANWOODCITY_ROCK1
@@ -9,6 +9,8 @@
 	const CIANWOODCITY_ROCK5
 	const CIANWOODCITY_ROCK6
 	const CIANWOODCITY_LASS1
+	const CIANWOODCITY_STANDING_YOUNGSTER2
+	const CIANWOODCITY_POKE_BALL
 
 CianwoodCity_MapScripts:
 	db 2 ; scene scripts
@@ -66,8 +68,7 @@ CianwoodCityPokefanM:
 CianwoodCityLass:
 	jumptextfaceplayer CianwoodCityLassText
 
-CianwoodCityUnusedScript:
-; unreferenced
+CliffsEdgeGateGuardScript:
 	jumptextfaceplayer CianwoodCityUnusedText
 
 CianwoodCitySign:
@@ -90,6 +91,9 @@ CianwoodPokecenterSign:
 
 CianwoodCityRock:
 	jumpstd smashrock
+
+CianwoodCityItemBallScript:
+	itemball TM_ROCK_TOMB
 
 CianwoodCityHiddenRevive:
 	hiddenitem REVIVE, EVENT_CIANWOOD_CITY_HIDDEN_REVIVE
@@ -230,14 +234,13 @@ CianwoodCityLassText:
 	done
 
 CianwoodCityUnusedText:
-; unused
-	text "There are several"
-	line "islands between"
-	cont "here and OLIVINE."
+	text "They're installing"
+	line "fences in the"
+	cont "Cliff's Edge Gate."
 
-	para "A mythical sea"
-	line "creature supposed-"
-	cont "ly lives there."
+	para "We need to insure"
+	line "that no more"
+	cont "injuries occur."
 	done
 
 CianwoodCitySignText:
@@ -284,7 +287,7 @@ CianwoodPokeSeerSignText:
 CianwoodCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 7 ; warp events
+	db 8 ; warp events
 	warp_event 17, 41, MANIAS_HOUSE, 1
 	warp_event  8, 43, CIANWOOD_GYM, 1
 	warp_event 23, 43, CIANWOOD_POKECENTER_1F, 1
@@ -292,6 +295,7 @@ CianwoodCity_MapEvents:
 	warp_event  9, 31, CIANWOOD_PHOTO_STUDIO, 1
 	warp_event 15, 37, CIANWOOD_LUGIA_SPEECH_HOUSE, 1
 	warp_event  5, 17, POKE_SEERS_HOUSE, 1
+	warp_event  4, 23, CLIFFS_EDGE_GATE, 1
 
 	db 0 ; coord events
 
@@ -305,14 +309,16 @@ CianwoodCity_MapEvents:
 	bg_event  4, 19, BGEVENT_ITEM, CianwoodCityHiddenRevive
 	bg_event  5, 29, BGEVENT_ITEM, CianwoodCityHiddenMaxEther
 
-	db 10 ; object events
+	db 12 ; object events
 	object_event 21, 37, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityYoungster, -1
 	object_event 17, 33, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityPokefanM, -1
 	object_event 14, 42, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityLass, -1
 	object_event  8, 16, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  9, 17, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event  4, 25, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
+	object_event  5, 27, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  5, 29, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event 10, 27, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  4, 19, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event 10, 46, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
+	object_event  4, 24, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CliffsEdgeGateGuardScript, EVENT_CLIFFS_EDGE_GATE_GUARD
+	object_event 10, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CianwoodCityItemBallScript, EVENT_CIANWOOD_CITY_ITEM_BALL
