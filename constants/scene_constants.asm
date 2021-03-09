@@ -178,7 +178,7 @@ SCENE_FINISHED EQU 1
 
 ;wIcePath1FSceneID
 	const_def 1
-	const SCENE_ICE_PATH_1F_RIVAL
+	const SCENE_ICE_PATH_B1F_RIVAL
 
 ;wMahoganyGymSceneID
 	const_def 1

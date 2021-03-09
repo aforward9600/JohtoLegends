@@ -32,14 +32,14 @@ DarkCaveNewEntranceHikerText1:
 	para "Can't ya see I'm"
 	line "working here? The"
 	cont "cave-in was"
-	cont "devastating,"
+	cont "devastating."
 
 	para "#mon were"
 	line "disturbed from"
-	cont "their sleep, I had"
-	cont "to use a flash-"
+	cont "their sleep. I"
+	cont "have to use a fla-"
 
-	para "light to see in"
+	para "shlight to see in"
 	line "here, it's damp,"
 	cont "it's cold, there's"
 

@@ -345,4 +345,4 @@ TilesetRoute47Meta::
 INCBIN "data/tilesets/route_47_metatiles.bin"
 
 TilesetRoute47Coll::
-INCBIN "data/tilesets/route_47_collision.asm"
+INCLUDE "data/tilesets/route_47_collision.asm"

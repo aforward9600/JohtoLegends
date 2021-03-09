@@ -375,10 +375,14 @@ ENDM
 	connection south, LavenderTown, LAVENDER_TOWN, 0
 
 	map_attributes Route47, ROUTE_47, $35, NORTH
-	connection north, Route48, ROUTE_48, 0
+	connection north, Route48, ROUTE_48, 1
 
-	map_attributes Route48, ROUTE_48, $35, SOUTH
-	connection south, Route47, ROUTE_47, 0
+	map_attributes Route48, ROUTE_48, $35, NORTH | SOUTH
+	connection north, WildAreaOutside, WILD_AREA_OUTSIDE, 2
+	connection south, Route47, ROUTE_47, -1
+
+	map_attributes WildAreaOutside, WILD_AREA_OUTSIDE, $35, SOUTH
+	connection south, Route48, ROUTE_48, -2
 
 	map_attributes Route23, ROUTE_23, $0f, 0
 	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
@@ -613,8 +617,6 @@ ENDM
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0
 	map_attributes Colosseum, COLOSSEUM, $00, 0
 	map_attributes TimeCapsule, TIME_CAPSULE, $00, 0
-	map_attributes MobileTradeRoom, MOBILE_TRADE_ROOM, $00, 0
-	map_attributes MobileBattleRoom, MOBILE_BATTLE_ROOM, $00, 0
 	map_attributes CeladonDeptStore1F, CELADON_DEPT_STORE_1F, $00, 0
 	map_attributes CeladonDeptStore2F, CELADON_DEPT_STORE_2F, $00, 0
 	map_attributes CeladonDeptStore3F, CELADON_DEPT_STORE_3F, $00, 0
@@ -695,3 +697,5 @@ ENDM
 	map_attributes EcruteakMoveTutorHouse, ECRUTEAK_MOVE_TUTOR_HOUSE, $00, 0
 	map_attributes FossilHouse, FOSSIL_HOUSE, $00, 0
 	map_attributes CliffsEdgeGate, CLIFFS_EDGE_GATE, $00, 0
+	map_attributes CliffCave, CLIFF_CAVE, $00, 0
+	map_attributes WildAreaPokecenter, WILD_AREA_POKECENTER, $00, 0

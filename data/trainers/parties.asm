@@ -59,7 +59,7 @@ EnokiGroup:
 	dw HEX, SPITE, MEAN_LOOK, CURSE
 	db 17
 	dw CORSOLA
-	dw STRENGTH_SAP, WILL_O_WISP, HEX, SPIKES
+	dw NIGHT_SHADE, WILL_O_WISP, HEX, SPIKES
 	db 18
 	dw MISDREAVUS
 	dw HEX, HYPNOSIS, MEAN_LOOK, DREAM_EATER
@@ -70,13 +70,13 @@ EnokiGroup:
 PryceGroup:
 	next_list_item ; PRYCE (1)
 	db "Pryce@", TRAINERTYPE_MOVES
-	db 10
+	db 9
 	dw SMOOCHUM
 	dw SWEET_KISS, POUND, ICY_WIND, CONFUSION
-	db 11
+	db 10
 	dw SWINUB
 	dw MUD_SLAP, POWDER_SNOW, TACKLE, HAIL
-	db 12
+	db 11
 	dw SNEASEL
 	dw SCRATCH, PURSUIT, HONE_CLAWS, ICE_SHARD
 	db -1 ; end
@@ -637,9 +637,9 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (2)
 	db "Timmy@", TRAINERTYPE_NORMAL
-	db 5
+	db 3
 	dw PIDGEY
-	db 6
+	db 4
 	dw RATTATA
 	db -1 ; end
 
@@ -1025,11 +1025,11 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (7)
 	db "Sal@", TRAINERTYPE_NORMAL
-	db 8
+	db 7
 	dw PIDGEY
-	db 8
+	db 7
 	dw SPEAROW
-	db 9
+	db 8
 	dw HOOTHOOT
 	db -1 ; end
 
@@ -1138,11 +1138,11 @@ LassGroup:
 
 	next_list_item ; LASS (3)
 	db "Arielle@", TRAINERTYPE_NORMAL
-	db 5
+	db 4
 	dw PIDGEY
-	db 6
+	db 5
 	dw NIDORAN_F
-	db 6
+	db 5
 	dw JIGGLYPUFF
 	db -1 ; end
 
@@ -2259,7 +2259,7 @@ TeacherGroup:
 
 	next_list_item ; TEACHER (4)
 	db "Cadi@", TRAINERTYPE_ITEM
-	db 11
+	db 9
 	dw CLEFAIRY
 	db ORAN_BERRY
 	db -1 ; end
@@ -2285,19 +2285,19 @@ SabrinaGroup:
 BugCatcherGroup:
 	next_list_item ; BUG_CATCHER (1)
 	db "Anton@", TRAINERTYPE_NORMAL
-	db 7
+	db 6
 	dw SPINARAK
-	db 7
+	db 6
 	dw LEDYBA
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (2)
 	db "Colton@", TRAINERTYPE_NORMAL
-	db 10
+	db 7
 	dw VENONAT
-	db 10
+	db 7
 	dw PARAS
-	db 11
+	db 8
 	dw PINECO
 	db -1 ; end
 
@@ -2517,13 +2517,13 @@ FisherGroup:
 
 	next_list_item ; FISHER (7)
 	db "Fred@", TRAINERTYPE_NORMAL
-	db 12
+	db 10
 	dw GOLDEEN
 	db -1 ; end
 
 	next_list_item ; FISHER (8)
 	db "Aidan@", TRAINERTYPE_NORMAL
-	db 13
+	db 11
 	dw TENTACOOL
 	db -1 ; end
 
@@ -4075,11 +4075,11 @@ ArcherGroup:
 PsychicGroup:
 	next_list_item ; PSYCHIC_T (1)
 	db "Jordan@", TRAINERTYPE_NORMAL
-	db 11
+	db 9
 	dw NATU
-	db 11
+	db 9
 	dw ABRA
-	db 11
+	db 9
 	dw SLOWPOKE
 	db -1 ; end
 
@@ -4184,12 +4184,12 @@ PsychicGroup:
 PicnickerGroup:
 	next_list_item ; PICNICKER (1)
 	db "Haylee@", TRAINERTYPE_NORMAL
-	db 8
-	dw PICHU
-	db 8
-	dw CLEFFA
-	db 8
-	dw IGGLYBUFF
+	db 7
+	dw HOPPIP
+	db 7
+	dw AZURILL
+	db 7
+	dw NIDORAN_F
 	db -1 ; end
 
 	next_list_item ; PICNICKER (2)

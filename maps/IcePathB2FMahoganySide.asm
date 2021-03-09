@@ -11,7 +11,7 @@ IcePathB2FMahoganySideIceHeal:
 	itemball ICE_HEAL
 
 IcePathB2FMahoganySideIceStone:
-	itemball ICE_STONE
+	itemball POTION
 
 IcePathB2FMahoganySideHiddenCarbos:
 	hiddenitem CARBOS, EVENT_ICE_PATH_B2F_MAHOGANY_SIDE_HIDDEN_CARBOS

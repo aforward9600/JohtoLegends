@@ -157,7 +157,7 @@ Rival1:
 	turnobject MASTERSHOUSE2F_KRIS, UP
 	turnobject PLAYER, DOWN
 	opentext
-	writetext TheyWereToughText
+	writetext DahliaTheyWereToughText
 	waitbutton
 	closetext
 	applymovement MASTERSHOUSE2F_KRIS, LeavingRoomMovement1
@@ -173,7 +173,7 @@ Rival2:
 	turnobject MASTERSHOUSE2F_KRIS, UP
 	turnobject PLAYER, DOWN
 	opentext
-	writetext TheyWereToughText
+	writetext DahliaTheyWereToughText
 	waitbutton
 	closetext
 	applymovement MASTERSHOUSE2F_KRIS, LeavingRoomMovement2
@@ -189,7 +189,7 @@ Rival3:
 	turnobject MASTERSHOUSE2F_CHRIS, UP
 	turnobject PLAYER, DOWN
 	opentext
-	writetext TheyWereToughText
+	writetext DracoTheyWereToughText
 	waitbutton
 	closetext
 	applymovement MASTERSHOUSE2F_CHRIS, LeavingRoomMovement1
@@ -206,7 +206,7 @@ Rival4:
 	turnobject MASTERSHOUSE2F_CHRIS, UP
 	turnobject PLAYER, DOWN
 	opentext
-	writetext TheyWereToughText
+	writetext DracoTheyWereToughText
 	waitbutton
 	closetext
 	applymovement MASTERSHOUSE2F_CHRIS, LeavingRoomMovement2
@@ -294,7 +294,7 @@ DragonKidClairAfterBattleText:
 
 ClairIWontLoseText:
 	text "I won't lose next"
-	line "next time!"
+	line "time!"
 	done
 
 LanceHiText:
@@ -334,9 +334,23 @@ ToughKidText:
 	line "tough!"
 	done
 
-TheyWereToughText:
-	text "Master wasn't"
-	line "joking about his"
+DahliaTheyWereToughText:
+	text "Dahila: Master"
+	line "wasn't joking"
+	cont "about his"
+	cont "grandchildren!"
+
+	para "But, we won, so"
+	line "let's go back to"
+	cont "him and tell him"
+
+	para "the good news!"
+	done
+
+DracoTheyWereToughText:
+	text "Draco: Master"
+	line "wasn't joking"
+	cont "about his"
 	cont "grandchildren!"
 
 	para "But, we won, so"

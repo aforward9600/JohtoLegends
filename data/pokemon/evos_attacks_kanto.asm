@@ -881,9 +881,9 @@ WigglytuffEvosAttacks:
 ZubatEvosAttacks:
 	dbbw EVOLVE_LEVEL, 22, GOLBAT
 	db 0 ; no more evolutions
-	dbw 1, ABSORB
+	dbw 1, ASTONISH
 	dbw 5, SUPERSONIC
-	dbw 7, ASTONISH
+	dbw 7, ABSORB
 	dbw 11, BITE
 	dbw 13, WING_ATTACK
 	dbw 17, CONFUSE_RAY

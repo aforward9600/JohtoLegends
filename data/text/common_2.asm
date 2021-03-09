@@ -610,9 +610,10 @@ UnknownText_0x1c0bd8::
 	prompt
 
 UnknownText_0x1c0bee::
-	text "OAK: <PLAYER>!"
-	line "This isn't the"
-	cont "time to use that!"
+	text "Granny: <PLAYER>!"
+	line "Are you certain"
+	cont "this is the time"
+	cont "to use that?"
 	prompt
 
 Text_YouDontHaveAMon::
@@ -1379,9 +1380,10 @@ UnknownText_0x1c1adf::
 	prompt
 
 UnknownText_0x1c1b03::
-	text "OAK: <PLAYER>!"
-	line "This isn't the"
-	cont "time to use that!"
+	text "Granny: <PLAYER>!"
+	line "Are you certain"
+	cont "this is the time"
+	cont "to use that?"
 	done
 
 UnknownText_0x1c1b2c::
@@ -1493,16 +1495,21 @@ UnknownText_0x1c1cf3::
 	done
 
 _OakText1::
-	text "Hello! Sorry to"
-	line "keep you waiting!"
+	text "Greetings!"
+
+	para "I apologize for"
+	line "making you wait."
 
 	para "Welcome to the"
 	line "world of #mon!"
 
-	para "My name is Oak."
+	para "You may call me"
+	line "the Master."
 
-	para "People call me the"
-	line "#mon Prof."
+	para "I am the elder of"
+	line "Blackthorn City,"
+	cont "home of the"
+	cont "Dragons."
 	prompt
 
 _OakText2::
@@ -1531,14 +1538,16 @@ _OakText4::
 	prompt
 
 _OakText5::
-	text "But we don't know"
-	line "everything about"
-	cont "#mon yet."
+	text "The bond between"
+	line "trainers and"
+	cont "#mon is"
+	cont "paramount to"
 
-	para "There are still"
-	line "many mysteries to"
-	cont "solve."
+	para "sucess. That is"
+	line "what I always"
+	cont "strive to teach my"
+	cont "students."
 
-	para "That's why I study"
-	line "#mon every day."
+	para "Students such as"
+	line "you."
 	prompt

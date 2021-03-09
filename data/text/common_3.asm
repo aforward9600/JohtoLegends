@@ -1,6 +1,7 @@
 _OakText6::
-	text "Now, what did you"
-	line "say your name was?"
+	text "Now, remind me,"
+	line "what did you say"
+	cont "your name was?"
 	prompt
 
 _OakText7::
@@ -11,9 +12,16 @@ _OakText7::
 	line "#mon story is"
 	cont "about to unfold."
 
-	para "You'll face fun"
-	line "times and tough"
-	cont "challenges."
+	para "The Johto region"
+	line "is rich in history"
+	cont "and mythology."
+
+	para "Your journey will"
+	line "take you across"
+	cont "Johto, and you'll"
+	cont "meet new faces, as"
+	cont "well as familiar"
+	cont "ones."
 
 	para "A world of dreams"
 	line "and adventures"

@@ -5,13 +5,11 @@
 	const POKECENTER2F_OFFICER
 
 Pokecenter2F_MapScripts:
-	db 6 ; scene scripts
+	db 4 ; scene scripts
 	scene_script .Scene0 ; SCENE_DEFAULT
 	scene_script .Scene1 ; SCENE_POKECENTER2F_LEAVE_TRADE_CENTER
 	scene_script .Scene2 ; SCENE_POKECENTER2F_LEAVE_COLOSSEUM
 	scene_script .Scene3 ; SCENE_POKECENTER2F_LEAVE_TIME_CAPSULE
-	scene_script .Scene4 ; SCENE_POKECENTER2F_LEAVE_MOBILE_TRADE_ROOM
-	scene_script .Scene5 ; SCENE_POKECENTER2F_LEAVE_MOBILE_BATTLE_ROOM
 
 	db 0 ; callbacks
 
@@ -36,14 +34,6 @@ Pokecenter2F_MapScripts:
 
 .Scene3:
 	prioritysjump Script_LeftTimeCapsule
-	end
-
-.Scene4:
-	prioritysjump Script_LeftMobileTradeRoom
-	end
-
-.Scene5:
-	prioritysjump Script_LeftMobileBattleRoom
 	end
 
 Pokecenter2F_AppearMysteryGiftDeliveryGuy:
@@ -378,37 +368,11 @@ Script_LeftCableTradeCenter:
 	setmapscene TRADE_CENTER, SCENE_DEFAULT
 	end
 
-Script_LeftMobileTradeRoom:
-	special Function101220
-	scall Script_WalkOutOfMobileTradeRoom
-	setscene SCENE_DEFAULT
-	setmapscene MOBILE_TRADE_ROOM, SCENE_DEFAULT
-	end
-
-Script_WalkOutOfMobileTradeRoom:
-	applymovement POKECENTER2F_TRADE_RECEPTIONIST, Pokecenter2FMobileMovementData_ReceptionistWalksUpAndLeft
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerWalksOutOfMobileRoom
-	applymovement POKECENTER2F_TRADE_RECEPTIONIST, Pokecenter2FMobileMovementData_ReceptionistWalksRightAndDown
-	end
-
 Script_LeftCableColosseum:
 	special WaitForOtherPlayerToExit
 	scall Script_WalkOutOfLinkBattleRoom
 	setscene SCENE_DEFAULT
 	setmapscene COLOSSEUM, SCENE_DEFAULT
-	end
-
-Script_LeftMobileBattleRoom:
-	special Function101220
-	scall Script_WalkOutOfMobileBattleRoom
-	setscene SCENE_DEFAULT
-	setmapscene MOBILE_BATTLE_ROOM, SCENE_DEFAULT
-	end
-
-Script_WalkOutOfMobileBattleRoom:
-	applymovement POKECENTER2F_BATTLE_RECEPTIONIST, Pokecenter2FMobileMovementData_ReceptionistWalksUpAndLeft
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerWalksOutOfMobileRoom
-	applymovement POKECENTER2F_BATTLE_RECEPTIONIST, Pokecenter2FMobileMovementData_ReceptionistWalksRightAndDown
 	end
 
 Pokecenter2F_CheckGender:
@@ -1023,13 +987,11 @@ Text_BrokeStadiumRules:
 Pokecenter2F_MapEvents:
 	db 0, 0 ; filler
 
-	db 6 ; warp events
+	db 4 ; warp events
 	warp_event  0,  7, POKECENTER_2F, -1
 	warp_event  5,  0, TRADE_CENTER, 1
 	warp_event  9,  0, COLOSSEUM, 1
 	warp_event 13,  2, TIME_CAPSULE, 1
-	warp_event  6,  0, MOBILE_TRADE_ROOM, 1
-	warp_event 10,  0, MOBILE_BATTLE_ROOM, 1
 
 	db 0 ; coord events
 

@@ -1,10 +1,10 @@
 	db "Genetic@" ; species name
 	dw 607, 2690 ; height, weight
 
-	db   "Said to rest qui-"
-	next "etly in an"
-	next "undiscovered cave,"
+	db   "The Cinnabar Mans-"
+	next "ion was said to be"
+	next "burned down by"
 
-	page "this #mon was"
-	next "created solely for"
-	next "battling.@"
+	page "this all-powerful"
+	next "#mon. It will"
+	next "battle anything.@"

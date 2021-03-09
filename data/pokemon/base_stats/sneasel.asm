@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db DARK, ICE ; type
-	db 60 ; catch rate
+	db 190 ; catch rate
 	db 132 ; base exp
 	db QUICK_CLAW, RAZOR_CLAW ; items
 	db GENDER_F50 ; gender ratio

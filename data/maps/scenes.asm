@@ -81,12 +81,10 @@ MapScenes::
 	scene_var FAST_SHIP_1F,                                wFastShip1FSceneID
 	scene_var FAST_SHIP_B1F,                               wFastShipB1FSceneID
 	scene_var MOUNT_MOON_SQUARE,                           wMountMoonSquareSceneID
-	scene_var MOBILE_TRADE_ROOM,                           wMobileTradeRoomSceneID
-	scene_var MOBILE_BATTLE_ROOM,                          wMobileBattleRoomSceneID
 	scene_var MASTERS_HOUSE_1F,                            wMastersHouse1FSceneID
 	scene_var MASTERS_HOUSE_2F,                            wMastersHouse2FSceneID
 	scene_var BLACKTHORN_CITY,                             wBlackthornCitySceneID
-	scene_var ICE_PATH_1F,                                 wIcePath1FSceneID
+	scene_var ICE_PATH_B1F,                                wIcePathB1FSceneID
 	scene_var MAHOGANY_GYM,                                wMahoganyGymSceneID
 	scene_var LAKE_OF_RAGE,                                wLakeOfRageSceneID
 	scene_var MOUNT_MORTAR_1F_INSIDE,                      wMountMortar1FInsideSceneID

@@ -331,7 +331,7 @@ AI_Smart:
 	dbw EFFECT_REFLECT,          AI_Smart_Reflect
 	dbw EFFECT_PARALYZE,         AI_Smart_Paralyze
 	dbw EFFECT_SPEED_DOWN_HIT,   AI_Smart_SpeedDownHit
-	dbw EFFECT_HURRICANE,		 AI_Smart_Thunder
+	dbw EFFECT_HURRICANE,        AI_Smart_Thunder
 	dbw EFFECT_SUBSTITUTE,       AI_Smart_Substitute
 	dbw EFFECT_HYPER_BEAM,       AI_Smart_HyperBeam
 	dbw EFFECT_RAGE,             AI_Smart_Rage

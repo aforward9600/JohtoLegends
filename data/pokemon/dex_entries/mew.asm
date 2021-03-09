@@ -1,7 +1,7 @@
 	db "New Specie@" ; species name
 	dw 104, 90 ; height, weight
 
-	db   "Because it can"
+	db   "Long thought to be"
 	next "learn any move,"
 	next "some people began"
 

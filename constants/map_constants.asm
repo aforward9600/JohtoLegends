@@ -51,7 +51,7 @@ ENDM
 	map_const ROUTE_42,                                    30,  9 ;  5
 	map_const ROUTE_44,                                    30,  9 ;  6
 	map_const MAHOGANY_TOWN,                               10,  9 ;  7
-	map_const FOSSIL_HOUSE,                                 4,  4 ; 8
+	map_const FOSSIL_HOUSE,                                 4,  4 ;  8
 
 	newgroup                                                      ;  3
 
@@ -374,8 +374,6 @@ ENDM
 	map_const TRADE_CENTER,                                 5,  4 ;  2
 	map_const COLOSSEUM,                                    5,  4 ;  3
 	map_const TIME_CAPSULE,                                 5,  4 ;  4
-	map_const MOBILE_TRADE_ROOM,                            5,  4 ;  5
-	map_const MOBILE_BATTLE_ROOM,                           5,  4 ;  6
 
 	newgroup                                                      ; 21
 
@@ -489,5 +487,8 @@ ENDM
 
 	newgroup
 
-	map_const ROUTE_47,                                    26, 14 ; 1
+	map_const ROUTE_47,                                    27, 14 ; 1
 	map_const ROUTE_48,                                    15,  9 ; 2
+	map_const CLIFF_CAVE,                                  10,  9 ; 3
+	map_const WILD_AREA_OUTSIDE,                           10,  9 ; 4
+	map_const WILD_AREA_POKECENTER,                         5,  4 ; 5

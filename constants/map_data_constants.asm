@@ -89,6 +89,7 @@ const_value = -1
 	const SPAWN_UNION_CAVE
 	const SPAWN_AZALEA
 	const SPAWN_CIANWOOD
+	const SPAWN_WILD_AREA
 	const SPAWN_GOLDENROD
 	const SPAWN_OLIVINE
 	const SPAWN_ECRUTEAK

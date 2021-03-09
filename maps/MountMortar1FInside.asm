@@ -28,12 +28,13 @@ MountMortar1FInside_MapScripts:
 	end
 
 .ClearRocks:
-	checkevent EVENT_BEAT_PRYCE
+	checkevent EVENT_LAKE_OF_RAGE_MIYAMOTO
 	iftrue .MoveRocks
 	changeblock 26, 46, $1d ; rock
 	changeblock 24, 46, $1d ; rock
 	changeblock 10, 46, $1d ; rock
 	changeblock 12, 46, $1d ; rock
+	changeblock 30, 46, $19 ; rocks
 	return
 .MoveRocks:
 	checkevent EVENT_MET_HIKER

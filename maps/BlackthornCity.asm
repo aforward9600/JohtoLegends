@@ -230,6 +230,12 @@ Text_ClairIsOut:
 	line "who possesses"
 	cont "knowledge of"
 	cont "evolution."
+
+	para "Don't ask me about"
+	line "that last one."
+
+	para "I don't make the"
+	line "rules here."
 	done
 
 Text_ClairIsIn:
@@ -308,7 +314,7 @@ BlackthornYoungsterText:
 
 	para "Man, I'm jealous."
 
-	para "Maybe someday, the"
+	para "Maybe someday the"
 	line "Master will see me"
 	cont "as being worthy."
 	done
@@ -320,10 +326,6 @@ BlackthornYoungsterText2:
 	line "#mon, huh?"
 
 	para "Man, I'm jealous."
-
-	para "Maybe someday, the"
-	line "Master will see me"
-	cont "as being worthy."
 	done
 
 MeetSantosText:

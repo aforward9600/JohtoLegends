@@ -204,7 +204,7 @@ RivalLarvitarScript:
 	buttonsound
 	waitsfx
 	getmonname STRING_BUFFER_3, LARVITAR
-	writetext RivalStarterText
+	writetext RivalStarter2Text
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
@@ -311,6 +311,7 @@ MastersTestScript2:
 	playsound SFX_EXIT_BUILDING
 	disappear MASTERSHOUSE1F_KRIS
 	setscene SCENE_MASTERS_HOUSE_1F_NOTHING
+	setevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	waitsfx
 	end
 
@@ -664,7 +665,7 @@ MastersTestText:
 LetsStartText:
 	text "Sounds simple"
 	line "enough. This'll"
-	cont"be fun!"
+	cont "be fun!"
 	done
 
 MastersHouseMasterText:

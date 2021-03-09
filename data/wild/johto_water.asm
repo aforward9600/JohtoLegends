@@ -166,15 +166,15 @@ JohtoWaterWildMons:
 	map_id ROUTE_40
 	db 6 percent ; encounter rate
 	dbw 20, TENTACOOL
-	dbw 15, TENTACOOL
-	dbw 20, TENTACRUEL
+	dbw 15, CORSOLA
+	dbw 20, REMORAID
 	dbw 20, TENTACRUEL
 
 	map_id ROUTE_41
 	db 6 percent ; encounter rate
 	dbw 20, TENTACOOL
-	dbw 20, TENTACRUEL
-	dbw 20, TENTACRUEL
+	dbw 20, SHELLDER
+	dbw 20, STARYU
 	dbw 20, MANTINE
 
 	map_id ROUTE_42
@@ -267,5 +267,12 @@ JohtoWaterWildMons:
 	dbw 40, POLIWHIRL
 	dbw 35, POLIWAG
 	dbw 35, POLIWAG
+
+	map_id ROUTE_47
+	db 6 percent ; encounter rate
+	dbw 20, TENTACOOL
+	dbw 20, GOLDEEN
+	dbw 19, MAGIKARP
+	dbw 25, QWILFISH
 
 	db -1 ; end

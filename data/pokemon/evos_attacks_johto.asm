@@ -645,11 +645,11 @@ MoltresEvosAttacks:
 DratiniEvosAttacks:
 	dbbw EVOLVE_LEVEL, 25, DRAGONAIR
 	db 0 ; no more evolutions
-	dbw 1, TACKLE
+	dbw 1, DRAGON_RAGE
 	dbw 1, LEER
 	dbw 6, THUNDER_WAVE
 	dbw 9, WRAP
-	dbw 11, DRAGON_RAGE
+	dbw 11, TWISTER
 	dbw 15, DRACO_FANG
 	dbw 21, SLAM
 	dbw 25, AGILITY
@@ -1585,9 +1585,10 @@ YanmegaEvosAttacks:
 WooperEvosAttacks:
 	dbbw EVOLVE_LEVEL, 20, QUAGSIRE
 	db 0 ; no more evolutions
-	dbw 1, AQUA_JET
+	dbw 1, WATER_GUN
 	dbw 1, TAIL_WHIP
 	dbw 9, MUD_SHOT
+	dbw 12, AQUA_JET
 	dbw 15, SLAM
 	dbw 19, MUD_BOMB
 	dbw 23, AMNESIA

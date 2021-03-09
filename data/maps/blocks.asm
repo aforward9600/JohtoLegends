@@ -340,6 +340,7 @@ CianwoodPokecenter1F_Blocks:
 ViridianPokecenter1F_Blocks:
 SaffronPokecenter1F_Blocks:
 CherrygrovePokecenter1F_Blocks:
+WildAreaPokecenter_Blocks:
 	INCBIN "maps/Pokecenter1F.blk"
 
 BetaPewterMuseumOfScience1F_Blocks:
@@ -998,12 +999,6 @@ BattleTowerBattleRoom_Blocks:
 PokecomCenterAdminOfficeMobile_Blocks:
 	INCBIN "maps/PokecomCenterAdminOfficeMobile.blk"
 
-MobileTradeRoom_Blocks:
-	INCBIN "maps/MobileTradeRoom.blk"
-
-MobileBattleRoom_Blocks:
-	INCBIN "maps/MobileBattleRoom.blk"
-
 BattleTowerHallway_Blocks:
 	INCBIN "maps/BattleTowerHallway.blk"
 
@@ -1044,3 +1039,9 @@ Route47_Blocks:
 
 Route48_Blocks:
 	INCBIN "maps/Route48.blk"
+
+CliffCave_Blocks:
+	INCBIN "maps/CliffCave.blk"
+
+WildAreaOutside_Blocks:
+	INCBIN "maps/WildAreaOutside.blk"

@@ -43,6 +43,7 @@ Landmarks:
 	landmark  20, 100, CianwoodCityName
 	landmark  20,  99, CliffsEdgeGateName
 	landmark  12, 100, Route47Name
+	landmark  11, 100, CliffCaveName
 	landmark   4,  92, Route48Name
 	landmark   4,  84, WildAreaName
 	landmark  92,  44, Route42Name
@@ -215,3 +216,4 @@ SpecialMapName:      db "Special@"
 WildAreaName:        db "Wild Area@"
 Route47Name:         db "Route 47@"
 Route48Name:         db "Route 48@"
+CliffCaveName:       db "Cliff Cave@"

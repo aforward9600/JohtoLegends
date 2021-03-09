@@ -319,8 +319,7 @@ INCLUDE "maps/Pokecenter2F.asm"
 INCLUDE "maps/TradeCenter.asm"
 INCLUDE "maps/Colosseum.asm"
 INCLUDE "maps/TimeCapsule.asm"
-INCLUDE "maps/MobileTradeRoom.asm"
-INCLUDE "maps/MobileBattleRoom.asm"
+INCLUDE "maps/WildAreaPokecenter.asm"
 
 
 SECTION "Map Scripts 18", ROMX
@@ -485,3 +484,5 @@ INCLUDE "maps/FossilHouse.asm"
 INCLUDE "maps/CliffsEdgeGate.asm"
 INCLUDE "maps/Route47.asm"
 INCLUDE "maps/Route48.asm"
+INCLUDE "maps/CliffCave.asm"
+INCLUDE "maps/WildAreaOutside.asm"

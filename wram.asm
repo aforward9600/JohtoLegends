@@ -2669,7 +2669,7 @@ wMobileBattleRoomSceneID::                        db ; d9c0
 wMastersHouse1FSceneID::                          db
 wMastersHouse2FSceneID::                          db
 wBlackthornCitySceneID::                          db
-wIcePath1FSceneID::                               db
+wIcePathB1FSceneID::                              db
 wMahoganyGymSceneID::                             db
 wLakeOfRageSceneID::                              db
 wMountMortar1FInsideSceneID::                     db

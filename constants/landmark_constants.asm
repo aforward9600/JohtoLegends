@@ -39,6 +39,7 @@
 	const CIANWOOD_CITY     ; 21
 	const CLIFFS_EDGE_GATE
 	const ROUTE_47          ; 61
+	const CLIFF_CAVE
 	const ROUTE_48          ; 62
 	const WILD_AREA_OUTSIDE ; 60
 	const ROUTE_42          ; 22

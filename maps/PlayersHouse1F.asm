@@ -166,7 +166,14 @@ MomScript:
 	setevent EVENT_BLACKTHORN_HIKER
 	setevent EVENT_BLACKTHORN_BLACK_BELT
 	setmapscene BLACKTHORN_CITY, SCENE_BLACKTHORN_CITY_NOTHING
-	setmapscene ICE_PATH_1F, SCENE_ICE_PATH_1F_RIVAL
+	setmapscene ICE_PATH_B1F, SCENE_ICE_PATH_B1F_RIVAL
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female
+	setevent EVENT_ICE_PATH_B1F_RIVAL1
+	end
+
+.Female:
+	setevent EVENT_ICE_PATH_B1F_RIVAL2
 	end
 
 NeighborScript:
@@ -244,7 +251,7 @@ DahliasLookingForYouText:
 
 	para "Your friend, oh,"
 	line "what was her"
-	cont "name?…"
+	cont "name…?"
 
 	para "Ah, Dahlia! She"
 	line "came by looking"
@@ -315,7 +322,7 @@ DracosLookingForYouText:
 
 	para "Your friend, oh,"
 	line "what was his"
-	cont "name?…"
+	cont "name…?"
 
 	para "Ah, Draco! He"
 	line "came by looking"
@@ -460,7 +467,7 @@ OhWaitText:
 	line "and you're always"
 	cont "welcome back."
 
-	para ".....Oh, wait!"
+	para "...Oh, wait!"
 
 	para "I almost forgot!"
 	line "Here, have your"
@@ -506,7 +513,7 @@ PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  6,  7, CLIFFS_EDGE_GATE, 2
+	warp_event  6,  7, BLACKTHORN_CITY, 9
 	warp_event  7,  7, BLACKTHORN_CITY, 9
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
 

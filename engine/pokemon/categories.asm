@@ -2,13 +2,10 @@ GetMoveCategoryName:
 ; Copy the category name of move b to wStringBuffer1.
 
 	ld a, b
-	dec a
-	ld bc, MOVE_LENGTH
+	ld l, a
 	ld a, MOVE_TYPE
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-
+	call GetMoveAttribute
+	
 ; Mask out the type
 	and $ff ^ TYPE_MASK
 ; Shift the category bits into the range 0-2

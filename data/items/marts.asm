@@ -223,12 +223,14 @@ MartBlackthorn:
 	db -1 ; end
 
 MartBlackthornJournal:
-	db 5 ; # items
+	db 7 ; # items
 	db POKE_BALL
 	db POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
+	db ESCAPE_ROPE
+	db REPEL
 	db -1 ; end
 
 MartViridian:
