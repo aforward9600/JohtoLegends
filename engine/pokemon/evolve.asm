@@ -436,30 +436,35 @@ LearnLevelMoves:
 	call SkipEvolutions
 
 .find_move
-	call GetNextEvoAttackByte
-	and a
-	jr z, .done
+    call GetNextEvoAttackByte
+    and a
+    jr z, .done
 
-	ld b, a
-	ld a, [wCurPartyLevel]
-	cp b
-	call GetNextEvoAttackByte
-	ld e, a
-	call GetNextEvoAttackByte
-	ld d, a
-	jr nz, .find_move
+	cp LEARN_EVO_MOVE
+    jr z, .get_move
 
-	push hl
-	ld h, d
-	ld l, e
-	call GetMoveIDFromIndex
-	ld d, a
-	ld hl, wPartyMon1Moves
-	ld a, [wCurPartyMon]
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
+    ld b, a
+    ld a, [wCurPartyLevel]
+    cp b
 
-	ld b, NUM_MOVES
+.get_move
+    call GetNextEvoAttackByte
+    ld e, a
+    call GetNextEvoAttackByte
+    ld d, a
+    jr nz, .find_move
+
+    push hl
+    ld h, d
+    ld l, e
+    call GetMoveIDFromIndex
+    ld d, a
+    ld hl, wPartyMon1Moves
+    ld a, [wCurPartyMon]
+    ld bc, PARTYMON_STRUCT_LENGTH
+    call AddNTimes
+
+    ld b, NUM_MOVES
 .check_move
 	call GetNextEvoAttackByte
 	cp d

@@ -94,4 +94,5 @@ MapScenes::
 	scene_var OLIVINE_LIGHTHOUSE_5F,                       wOlivineLighthouse5FSceneID
 	scene_var OLIVINE_LIGHTHOUSE_1F,                       wOlivineLighthouse1FSceneID
 	scene_var CIANWOOD_GYM,                                wCianwoodGymSceneID
+	scene_var WILD_AREA_OUTSIDE,                           wWildAreaOutsideSceneID
 	db -1 ; end

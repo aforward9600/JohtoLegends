@@ -48,6 +48,9 @@ CianwoodGymChigusaScript:
 	readvar VAR_BADGES
 	scall CianwoodGymActivateRockets
 	setscene SCENE_FINISHED
+	setmapscene WILD_AREA_OUTSIDE, SCENE_WILD_AREA_RIVAL
+	setevent EVENT_WILD_AREA_OUTSIDE_RIVAL1
+	setevent EVENT_WILD_AREA_OUTSIDE_RIVAL2
 .FightDone:
 	checkevent EVENT_GOT_TM08_BULK_UP
 	iftrue .AlreadyGotTM
@@ -134,8 +137,13 @@ CianwoodGymBoulder:
 CianwoodGymStatue:
 	checkflag ENGINE_STORMBADGE
 	iftrue .Beaten
-	jumpstd gymstatue1
+	checkevent EVENT_WILD_AREA_RIVAL_BEAT
+	iftrue .RivalBeaten
+	jumpstd gymstatue4
 .Beaten:
+	gettrainername STRING_BUFFER_4, CHIGUSA, CHIGUSA1
+	jumpstd gymstatue3
+.RivalBeaten:
 	gettrainername STRING_BUFFER_4, CHIGUSA, CHIGUSA1
 	jumpstd gymstatue2
 

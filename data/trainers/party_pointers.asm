@@ -79,3 +79,4 @@ TrainerGroups:
 	dba LanceGroup
 	dba PasserbyGroup
 	dba MiyamotoGroup
+	dba CynthiaGroup

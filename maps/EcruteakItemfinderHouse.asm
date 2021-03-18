@@ -14,9 +14,6 @@ EcruteakItemfinderGuy:
 	checkevent EVENT_GOT_ITEMFINDER
 	iftrue .itemfinder
 	writetext EcruteakItemfinderAdventureText
-	yesorno
-	iffalse .no
-	writetext EcruteakItemfinderTrueSpiritText
 	buttonsound
 	verbosegiveitem ITEMFINDER
 	setevent EVENT_GOT_ITEMFINDER
@@ -47,6 +44,7 @@ EcruteakPorygonGuy:
 	waitsfx
 	givepoke PORYGON, 15
 	setevent EVENT_GOT_PORYGON_R
+	clearevent EVENT_ITEMFINDER_GUY
 .GotPorygon:
 	writetext QuitText
 	waitbutton
@@ -84,53 +82,32 @@ ItemFinderHouseRadio:
 	jumpstd radio2
 
 EcruteakItemfinderAdventureText:
-	text "Ah. You're on an"
-	line "adventure with"
-	cont "your #MON?"
+	text "I leave for a few"
+	line "minutes, and I"
+	cont "find my food gone,"
 
-	para "Well, what's an"
-	line "adventure without"
-	cont "treasure hunting?"
+	para "my history book is"
+	line "out, and this"
+	cont "thing is on my"
+	cont "table!"
 
-	para "Am I right, or am"
-	line "I right?"
-	done
+	para "I don't want to"
+	line "get the police"
+	cont "involved, so here,"
+	cont "take this."
 
-EcruteakItemfinderTrueSpiritText:
-	text "Good! You under-"
-	line "stand the true"
+	para "Why don't I want"
+	line "the cops involved?"
 
-	para "spirit of adven-"
-	line "ture."
-
-	para "I like that! Take"
-	line "this with you."
+	para "Don't worry about"
+	line "it."
 	done
 
 ItemfinderExplanationText:
-	text "There are many"
-	line "items lying about"
+	text "I'm going to have"
+	line "to restock my"
 
-	para "that aren't ob-"
-	line "vious."
-
-	para "Use ITEMFINDER to"
-	line "check if there is"
-
-	para "an item on the"
-	line "ground near you."
-
-	para "It doesn't show"
-	line "the exact spot,"
-
-	para "so you'll have to"
-	line "look yourself."
-
-	para "Oh yeah--I heard"
-	line "there are items"
-
-	para "in Ecruteak's"
-	line "Burned Tower."
+	para "cupboards."
 	done
 
 EcruteakItemfinderToEachHisOwnText:
@@ -232,6 +209,6 @@ EcruteakItemfinderHouse_MapEvents:
 	bg_event  2,  1, BGEVENT_READ, ItemFinderHouseRadio
 
 	db 3 ; object events
-	object_event  2,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakItemfinderGuy, -1
-	object_event  5,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, EcruteakPorygonGuy, -1
+	object_event  2,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakItemfinderGuy, EVENT_ITEMFINDER_GUY
+	object_event  5,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, EcruteakPorygonGuy, EVENT_GOT_PORYGON_R
 	object_event  3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakHistoryBook, -1

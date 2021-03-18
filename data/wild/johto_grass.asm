@@ -665,30 +665,30 @@ JohtoGrassWildMons:
 	map_id MOUNT_MORTAR_1F_INSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw  9, RATTATA
+	dbw  9, SANDSHREW
 	dbw  9, ZUBAT
 	dbw  9, MACHOP
 	dbw 10, MARILL
-	dbw 10, GEODUDE
-	dbw 10, SANDSHREW
+	dbw 10, TYROGUE
+	dbw 10, TYROGUE
 	dbw 11, DIGLETT
 	dbw 11, DIGLETT
 	; day
-	dbw  9, RATTATA
+	dbw  9, SANDSHREW
 	dbw  9, ZUBAT
 	dbw  9, MACHOP
 	dbw 10, MARILL
-	dbw 10, GEODUDE
-	dbw 10, SANDSHREW
+	dbw 10, TYROGUE
+	dbw 10, TYROGUE
 	dbw 11, DIGLETT
 	dbw 11, DIGLETT
 	; nite
-	dbw  9, RATTATA
+	dbw  9, SANDSHREW
 	dbw  9, ZUBAT
 	dbw  9, MACHOP
 	dbw 10, MARILL
-	dbw 10, GEODUDE
-	dbw 10, SANDSHREW
+	dbw 10, TYROGUE
+	dbw 10, TYROGUE
 	dbw 11, DIGLETT
 	dbw 11, DIGLETT
 

@@ -2944,37 +2944,55 @@ GetMthMoveOfCurrentMon:
 	ret
 
 ScytherCallEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
 	farcall CutFunction
 	ret
 
 GolemCallEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
 	farcall RockSmashFunction
 	ret
 
 VoltorbCallEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
 	farcall OWFlash
 	ret
 
 MachampCallEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
 	farcall StrengthFunction
 	ret
 
 SnubbullCallEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
 	farcall HeadbuttFunction
 	ret
 
 LaprasCallAEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
 	farcall SurfFunction
 	ret
 
 LaprasCallBEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
 	farcall WhirlpoolFunction
 	ret
 
 LaprasCallCEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
 	farcall WaterfallFunction
 	ret
 
 PidgeotCallEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
 	farcall FlyFunction
 	ret

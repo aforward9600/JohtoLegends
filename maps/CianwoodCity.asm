@@ -33,7 +33,7 @@ CianwoodCity_MapScripts:
 CianwoodCityChucksWife:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_HM02_FLY
+	checkevent EVENT_GOT_TM_FLY
 	iftrue .GotFly
 	writetext ChucksWifeEasierToFlyText
 	buttonsound
@@ -49,7 +49,7 @@ CianwoodCityChucksWife:
 	buttonsound
 	verbosegiveitem TM_FLY
 	iffalse .Done
-	setevent EVENT_GOT_HM02_FLY
+	setevent EVENT_GOT_TM_FLY
 	writetext ChucksWifeFlySpeechText
 	buttonsound
 .GotFly:
@@ -272,11 +272,10 @@ CianwoodPharmacySignText:
 	done
 
 CianwoodPhotoStudioSignText:
-	text "Cianwood City"
-	line "Photo Studio"
+	text "Master of Fists"
 
-	para "Take a Snapshot as"
-	line "a Keepsake!"
+	para "Teach your #mon"
+	line "a punching move."
 	done
 
 CianwoodPokeSeerSignText:

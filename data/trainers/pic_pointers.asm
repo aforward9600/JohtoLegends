@@ -79,3 +79,4 @@ TrainerPicPointers::
 	dba LancePic
 	dba PasserbyPic
 	dba PasserbyPic
+	dba TouristPic

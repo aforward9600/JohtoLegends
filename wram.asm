@@ -2679,8 +2679,9 @@ wOlivineLighthouse4FSceneID::                     db
 wOlivineLighthouse5FSceneID::                     db
 wOlivineLighthouse1FSceneID::                     db
 wCianwoodGymSceneID::                             db
+wWildAreaOutsideSceneID::                         db
 
-	ds 36
+	ds 35
 
 ; fight counts
 wJackFightCount::    db ; d9f2

@@ -78,6 +78,7 @@ TrainerHexManiacSabrina:
 	iffalse .NotNight
 	checkevent EVENT_BEAT_HEX_MANIAC_SABRINA
 	iftrue .Beaten
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
 	writetext HexManiacSabrinaSeenText
 	waitbutton
 	closetext
@@ -179,13 +180,13 @@ PokefanfCamillaSeenText:
 	done
 
 PokefanfCamillaBeatenText:
-	text "Croconaw is"
+	text "Totodile is"
 	line "adorable!"
 	done
 
 PokefanfCamillaAfterBattleText:
 	text "Don't you agree?"
-	line "Croconaw is just"
+	line "Totodile is just"
 	cont "cutest!"
 	done
 

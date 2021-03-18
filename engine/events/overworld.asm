@@ -592,11 +592,12 @@ FlyFunction:
 
 .FailFly:
 	call FieldMoveFailed
-	ld a, $82
+	ld a, $80
 	ret
 
 .FlyScript:
 	reloadmappart
+	cry 18
 	callasm HideSprites
 	special UpdateTimePals
 	callasm FlyFromAnim

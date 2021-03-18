@@ -195,3 +195,7 @@ SCENE_FINISHED EQU 1
 ;wRoute38EcruteakGateSceneID
 	const_def 1
 	const SCENE_ECRUTEAK_GATE_RIVAL
+
+;wWildAreaOutsideSceneID
+	const_def 1
+	const SCENE_WILD_AREA_RIVAL

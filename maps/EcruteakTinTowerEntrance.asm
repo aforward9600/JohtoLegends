@@ -187,8 +187,30 @@ EcruteakTinTowerEntranceRocketScript:
 	writetext WhateverText
 	waitbutton
 	closetext
+	readvar VAR_FACING
+	ifequal LEFT, .GruntLeavesDownScript
+	ifequal RIGHT, .GruntLeavesDownScript
+	ifequal UP, .GruntLeavesScript
+	end
+
+.Refused:
+	writetext YeahGoodChoiceText
+	waitbutton
+	closetext
+	turnobject ECRUTEAKTINTOWERENTRANCE_GRUNT, UP
+	end
+
+.GruntLeavesScript:
 	applymovement ECRUTEAKTINTOWERENTRANCE_GRUNT, GruntLeavesMovement
 	disappear ECRUTEAKTINTOWERENTRANCE_GRUNT
+	sjump GetScytherCall
+
+.GruntLeavesDownScript:
+	applymovement ECRUTEAKTINTOWERENTRANCE_GRUNT, GruntLeavesDownMovement
+	disappear ECRUTEAKTINTOWERENTRANCE_GRUNT
+	sjump GetScytherCall
+
+GetScytherCall:
 	opentext
 	writetext ThankYouAgainText
 	buttonsound
@@ -207,13 +229,6 @@ EcruteakTinTowerEntranceRocketScript:
 	appear ECRUTEAKTINTOWERENTRANCE_SHERLES
 	setevent EVENT_TIN_TOWER_ENTRANCE_ROCKET
 	clearevent EVENT_ECRUTEAK_GYM_ENOKI
-	end
-
-.Refused:
-	writetext YeahGoodChoiceText
-	waitbutton
-	closetext
-	turnobject ECRUTEAKTINTOWERENTRANCE_GRUNT, UP
 	end
 
 TinTowerEntranceSherlesScript:
@@ -249,6 +264,14 @@ GruntLeavesMovement:
 	step DOWN
 	step DOWN
 	step RIGHT
+	step DOWN
+	step DOWN
+	step_end
+
+GruntLeavesDownMovement:
+	step DOWN
+	step DOWN
+	step DOWN
 	step DOWN
 	step DOWN
 	step_end

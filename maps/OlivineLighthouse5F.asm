@@ -180,7 +180,7 @@ Lighthouse5FRocketFSeenText:
 	done
 
 Lighthouse5FRocketFBeatenText:
-	text "I wish you did'nt"
+	text "I wish you didn't"
 	line "come here."
 	done
 

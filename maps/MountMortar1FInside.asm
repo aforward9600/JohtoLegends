@@ -28,7 +28,7 @@ MountMortar1FInside_MapScripts:
 	end
 
 .ClearRocks:
-	checkevent EVENT_LAKE_OF_RAGE_MIYAMOTO
+	checkevent EVENT_MOUNT_MORTAR_HIKER_2
 	iftrue .MoveRocks
 	changeblock 26, 46, $1d ; rock
 	changeblock 24, 46, $1d ; rock
@@ -159,7 +159,7 @@ MountMortar1FInsideMaxRevive:
 	itemball MAX_REVIVE
 
 MountMortar1FInsideHyperPotion:
-	itemball HYPER_POTION
+	itemball SUPER_POTION
 
 MountMortar1FInsideNugget:
 	itemball NUGGET
@@ -254,26 +254,24 @@ PokemaniacAllanAfterBattleText:
 	done
 
 SupernerdMarkusSeenText:
-	text "Hey! HUGH!"
+	text "The rocks here are"
+	line "so interesting,"
+	cont "wouldn't you say?"
 	done
 
 SupernerdMarkusBeatenText:
-	text "I mistook you for"
-	line "someone else…"
+	text "You must not think"
+	line "so…"
 	done
 
 SupernerdMarkusAfterBattleText:
-	text "I came to explore"
-	line "MT.MORTAR, but I"
+	text "Geology was my"
+	line "favorite subject"
+	cont "in school."
 
-	para "got separated from"
-	line "my partner…"
-
-	para "Did you run into a"
-	line "trainer who uses a"
-
-	para "SEADRA that knows"
-	line "WATERFALL?"
+	para "I'm just absorbed"
+	line "into the study of"
+	cont "rocks."
 	done
 
 HikerOzzySeenText:

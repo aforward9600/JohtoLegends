@@ -3771,6 +3771,7 @@ BattleAnim_PerishSong:
 	anim_wait 112
 	anim_ret
 
+BattleAnim_FairyWind:
 BattleAnim_IcyWind:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
@@ -5931,29 +5932,6 @@ BattleAnim_Roost:
     anim_wait 32
     anim_incbgeffect ANIM_BG_BOUNCE_DOWN
     anim_wait 32
-    anim_ret
-
-BattleAnim_FairyWind:
-    anim_1gfx ANIM_GFX_SPEED
-    anim_bgeffect ANIM_BG_06, $0, $2, $0
-    anim_battlergfx_1row
-    anim_sound 0, 0, SFX_METRONOME
-.loop
-    anim_wait 8
-    anim_obj ANIM_OBJ_AE, 64, 88, $4
-    anim_wait 8
-    anim_obj ANIM_OBJ_AE, 64, 80, $4
-    anim_wait 8
-    anim_obj ANIM_OBJ_AE, 64, 96, $4
-    anim_wait 8
-    anim_loop 2, .loop
-    anim_wait 16
-    anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, $1, $0
-    anim_wait 6
-    anim_bgeffect ANIM_BG_NIGHT_SHADE, $0, $0, $8
-    anim_wait 64
-    anim_incobj 7
-    anim_wait 1
     anim_ret
 
 BattleAnim_SilverWind:

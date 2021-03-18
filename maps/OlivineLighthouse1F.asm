@@ -293,7 +293,7 @@ Lighthouse1FOfficerText:
 	line "instance of a"
 	cont "tower being"
 	cont "invaded by people"
-	cont "if black."
+	cont "in black."
 
 	para "If we can't solve"
 	line "this problem,"

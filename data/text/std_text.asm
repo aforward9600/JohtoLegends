@@ -318,6 +318,14 @@ GymStatue_WinningTrainers2Text:
 	cont "<PLAYER>"
 	done
 
+GymStatue_WinningTrainers3Text:
+	text "Leader: @"
+	text_ram wStringBuffer4
+	text_start
+	para "Winning Trainers:"
+	line "<PLAYER>"
+	done
+
 CoinVendor_WelcomeText:
 	text "Welcome to the"
 	line "Game Corner."

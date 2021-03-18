@@ -84,6 +84,7 @@ INCLUDE "gfx/trainers/gen_surge.pal"
 INCBIN "gfx/trainers/lance.gbcpal", middle_colors
 INCLUDE "gfx/trainers/miyamoto.pal"
 INCLUDE "gfx/trainers/miyamoto.pal"
+INCBIN "gfx/trainers/lass_2.gbcpal", middle_colors
 
 KrisPalette:
 INCLUDE "gfx/player/kris.pal"

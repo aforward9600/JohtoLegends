@@ -700,6 +700,8 @@ CHRIS EQU __enum__
 	const RIVAL3_A_TOTODILE
 	const RIVAL3_B_LARVITAR
 	const RIVAL3_B_DRATINI
+	const RIVAL3_C_LARVITAR
+	const RIVAL3_C_DRATINI
 
 	trainerclass RIVAL4 ; 45
 	const RIVAL4_A_LARVITAR
@@ -707,6 +709,8 @@ CHRIS EQU __enum__
 	const RIVAL4_A_TOTODILE
 	const RIVAL4_B_LARVITAR
 	const RIVAL4_B_DRATINI
+	const RIVAL4_C_LARVITAR
+	const RIVAL4_C_DRATINI
 
 	trainerclass BREEDER ; 46
 	const EMILY
@@ -736,6 +740,9 @@ CHRIS EQU __enum__
 
 	trainerclass MYSTERIOUS ; 4d
 	const MIYAMOTO1
+
+	trainerclass TOURIST ; 4e
+	const CYNTHIA1
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

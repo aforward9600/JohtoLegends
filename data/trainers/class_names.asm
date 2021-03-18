@@ -77,3 +77,4 @@ TrainerClassNames::
 	db "Dragon Kid@"
 	db "Passerby@"
 	db "Boss@"
+	db "Tourist@"

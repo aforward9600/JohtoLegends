@@ -2539,11 +2539,12 @@ CircleThrow:
 	moveanim
 	failuretext
 	applydamage
+	checkfaint
 	criticaltext
 	supereffectivetext
-	checkfaint
-	forceswitch
 	buildopponentrage
+	kingsrock
+	forceswitch
 	endmove
 
 SpecialAttackUpHit:

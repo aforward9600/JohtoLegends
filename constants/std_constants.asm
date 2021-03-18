@@ -53,3 +53,5 @@
 	enum pcscript
 	enum gamecornercoinvendor
 	enum happinesschecknpc
+	enum gymstatue3
+	enum gymstatue4

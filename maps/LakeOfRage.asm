@@ -233,7 +233,7 @@ HelloText:
 	cont "freelance photo-"
 	cont "grapher."
 
-	para "I heard some rum"
+	para "I heard some rum-"
 	line "mors about a rare"
 	cont "#mon here, but"
 

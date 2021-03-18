@@ -6,44 +6,122 @@ CianwoodPhotoStudio_MapScripts:
 
 	db 0 ; callbacks
 
-CianwoodPhotoStudioFishingGuruScript:
+EcruteakMoveTutorScript:
 	faceplayer
 	opentext
-	writetext CianwoodPhotoStudioFishingGuruText_Question
+	writetext EcruteakMoveTutorAskTeachAMoveText
 	yesorno
 	iffalse .Refused
-	writetext CianwoodPhotoStudioFishingGuruText_Yes
-	waitbutton
-	special PhotoStudio
-	waitbutton
-	closetext
-	end
+	writetext EcruteakMoveTutorWhichMoveShouldITeachText
+	loadmenu .MoveMenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .FirePunch
+	ifequal 2, .Thunderpunch
+	ifequal 3, .IcePunch
+	ifequal 4, .PixiePunch
+	sjump .Incompatible
+
+.FirePunch:
+	loadmoveindex FIRE_PUNCH
+	writetext TeachMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+
+.Thunderpunch:
+	loadmoveindex THUNDERPUNCH
+	writetext TeachMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+
+.IcePunch:
+	loadmoveindex ICE_PUNCH
+	writetext TeachMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+
+.PixiePunch:
+	loadmoveindex PIXIE_PUNCH
+	writetext TeachMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
 
 .Refused:
-	writetext CianwoodPhotoStudioFishingGuruText_No
+	writetext EcruteakMoveTutorVeryWellText
 	waitbutton
 	closetext
 	end
 
-CianwoodPhotoStudioFishingGuruText_Question:
-	text "You have magnifi-"
-	line "cent #MON with"
-	cont "you."
+.Incompatible:
+	writetext EcruteakMoveTutorHmTooBadText
+	waitbutton
+	closetext
+	end
 
-	para "How about a photo"
-	line "for a souvenir?"
+.TeachMove:
+	writetext EcruteakMoveTutorPowerfulFistsText
+	buttonsound
+	writetext EcruteakMoveTutorFarewellText
+	waitbutton
+	closetext
+	end
+
+.MoveMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 15, TEXTBOX_Y - 0
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 5 ; items
+	db "Fire Punch@"
+	db "Thunderpunch@"
+	db "Ice Punch@"
+	db "Pixie Punch@"
+	db "Cancel@"
+
+EcruteakMoveTutorAskTeachAMoveText:
+	text "There are moves"
+	line "that are used with"
+	cont "a #mon's fists."
+
+	para "Would you like a"
+	line "#mon to learn"
+	cont "one?"
 	done
 
-CianwoodPhotoStudioFishingGuruText_Yes:
-	text "OK! Big smile now!"
+EcruteakMoveTutorVeryWellText:
+	text "Hmph. Very well."
+	line "Return if you"
+	cont "change your mind."
 	done
 
-CianwoodPhotoStudioFishingGuruText_No:
-	text "Oh, that's too"
-	line "bad. I thought it"
+EcruteakMoveTutorWhichMoveShouldITeachText:
+	text "Which move shall"
+	line "suit your style?"
+	done
 
-	para "would be a great"
-	line "memento…"
+EcruteakMoveTutorPowerfulFistsText:
+	text "Your #mon's"
+	line "fists are now pow-"
+	cont "erful."
+	done
+
+EcruteakMoveTutorFarewellText:
+	text "Use them wisely."
+	done
+
+EcruteakMoveTutorHmTooBadText:
+	text "How unfortunate."
+	done
+
+TeachMoveText:
+	text_start
 	done
 
 CianwoodPhotoStudio_MapEvents:
@@ -58,4 +136,4 @@ CianwoodPhotoStudio_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodPhotoStudioFishingGuruScript, -1
+	object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakMoveTutorScript, -1

@@ -264,11 +264,8 @@ GetSpeciesIcon:
 	ret
 
 FlyFunction_GetMonIcon:
-	push de
-	ld a, [wTempIconSpecies]
-	call ReadMonMenuIcon
+	ld a, ICON_BIRD
 	ld [wCurIcon], a
-	pop de
 	ld a, e
 	call GetIcon_a
 	ret

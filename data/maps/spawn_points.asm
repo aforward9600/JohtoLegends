@@ -23,19 +23,19 @@ SpawnPoints:
 	spawn CINNABAR_ISLAND,            11, 12
 	spawn ROUTE_23,                    9,  6
 
-	spawn NEW_BARK_TOWN,              13,  6
-	spawn CHERRYGROVE_CITY,           29,  4
-	spawn VIOLET_CITY,                31, 26
-	spawn ROUTE_32,                   11, 74
-	spawn AZALEA_TOWN,                15, 10
-	spawn CIANWOOD_CITY,              23, 44
-	spawn WILD_AREA_OUTSIDE,           5, 13
-	spawn GOLDENROD_CITY,             15, 28
-	spawn OLIVINE_CITY,               13, 22
-	spawn ECRUTEAK_CITY,              23, 28
+	spawn BLACKTHORN_CITY,            21, 30
 	spawn MAHOGANY_TOWN,              15, 14
 	spawn LAKE_OF_RAGE,               21, 29
-	spawn BLACKTHORN_CITY,            21, 30
+	spawn ECRUTEAK_CITY,              23, 28
+	spawn OLIVINE_CITY,               13, 22
+	spawn CIANWOOD_CITY,              23, 44
+	spawn WILD_AREA_OUTSIDE,           5, 16
+	spawn GOLDENROD_CITY,             15, 28
+	spawn AZALEA_TOWN,                15, 10
+	spawn ROUTE_32,                   11, 74
+	spawn VIOLET_CITY,                31, 26
+	spawn CHERRYGROVE_CITY,           29,  4
+	spawn NEW_BARK_TOWN,              13,  6
 	spawn SILVER_CAVE_OUTSIDE,        23, 20
 	spawn FAST_SHIP_CABINS_SW_SSW_NW,  6,  2
 	spawn N_A,                        -1, -1

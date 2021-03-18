@@ -26,7 +26,7 @@ EcruteakGateRival1:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female1
 	special FadeOutMusic
-	pause 5
+	pause 10
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	applymovement ROUTE38ECRUTEAKGATE_KRIS, Movement1
 	opentext
@@ -38,12 +38,15 @@ EcruteakGateRival1:
 	applymovement PLAYER, MovementBack
 	applymovement ROUTE38ECRUTEAKGATE_KRIS, Movement2
 	turnobject ROUTE38ECRUTEAKGATE_KRIS, RIGHT
+	special FadeOutMusic
+	pause 10
+	special RestartMapMusic
 	waitsfx
 	playmapmusic
 	end
 .Female1:
 	special FadeOutMusic
-	pause 5
+	pause 10
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	applymovement ROUTE38ECRUTEAKGATE_CHRIS, Movement1
 	opentext
@@ -55,8 +58,10 @@ EcruteakGateRival1:
 	applymovement PLAYER, MovementBack
 	applymovement ROUTE38ECRUTEAKGATE_CHRIS, Movement2
 	turnobject ROUTE38ECRUTEAKGATE_CHRIS, RIGHT
+	special FadeOutMusic
+	pause 10
+	special RestartMapMusic
 	waitsfx
-	playmapmusic
 	end
 
 .RivalBattle1:
@@ -138,7 +143,7 @@ EcruteakGateRival2:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female2
 	special FadeOutMusic
-	pause 5
+	pause 10
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	applymovement ROUTE38ECRUTEAKGATE_KRIS, Movement3
 	opentext
@@ -150,12 +155,15 @@ EcruteakGateRival2:
 	applymovement PLAYER, MovementBack
 	applymovement ROUTE38ECRUTEAKGATE_KRIS, Movement4
 	turnobject ROUTE38ECRUTEAKGATE_KRIS, RIGHT
+	special FadeOutMusic
+	pause 10
+	special RestartMapMusic
 	waitsfx
 	playmapmusic
 	end
 .Female2:
 	special FadeOutMusic
-	pause 5
+	pause 10
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	applymovement ROUTE38ECRUTEAKGATE_CHRIS, Movement3
 	opentext
@@ -167,6 +175,9 @@ EcruteakGateRival2:
 	applymovement PLAYER, MovementBack
 	applymovement ROUTE38ECRUTEAKGATE_CHRIS, Movement4
 	turnobject ROUTE38ECRUTEAKGATE_CHRIS, RIGHT
+	special FadeOutMusic
+	pause 10
+	special RestartMapMusic
 	waitsfx
 	playmapmusic
 	end

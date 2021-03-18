@@ -78,3 +78,4 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; LANCE
 	dn  7,  8,  8,  8 ; PASSERBY
 	dn  7,  8,  8,  8 ; MIYAMOTO
+	dn  7,  8,  8,  8 ; TOURIST

@@ -3,27 +3,17 @@
 
 ; Johto landmarks
 	const SPECIAL_MAP       ; 00
-	const NEW_BARK_TOWN     ; 01
-	const ROUTE_29          ; 02
-	const CHERRYGROVE_CITY  ; 03
-	const ROUTE_30          ; 04
-	const ROUTE_31          ; 05
-	const VIOLET_CITY       ; 06
-	const SPROUT_TOWER      ; 07
-	const ROUTE_32          ; 08
-	const RUINS_OF_ALPH     ; 09
-	const UNION_CAVE        ; 0a
-	const ROUTE_33          ; 0b
-	const AZALEA_TOWN       ; 0c
-	const SLOWPOKE_WELL     ; 0d
-	const ILEX_FOREST       ; 0e
-	const ROUTE_34          ; 0f
-	const GOLDENROD_CITY    ; 10
-	const RADIO_TOWER       ; 11
-	const ROUTE_35          ; 12
-	const NATIONAL_PARK     ; 13
-	const ROUTE_36          ; 14
-	const ROUTE_37          ; 15
+	const BLACKTHORN_CITY   ; 29
+	const DRAGONS_DEN       ; 2a
+	const ROUTE_45          ; 2b
+	const DARK_CAVE         ; 2c
+	const ICE_PATH          ; 28
+	const ROUTE_44          ; 27
+	const MAHOGANY_TOWN     ; 24
+	const ROUTE_43          ; 25
+	const LAKE_OF_RAGE      ; 26
+	const ROUTE_42          ; 22
+	const MT_MORTAR         ; 23
 	const ECRUTEAK_CITY     ; 16
 	const BELLCHIME_PATH
 	const TIN_TOWER         ; 17
@@ -42,17 +32,27 @@
 	const CLIFF_CAVE
 	const ROUTE_48          ; 62
 	const WILD_AREA_OUTSIDE ; 60
-	const ROUTE_42          ; 22
-	const MT_MORTAR         ; 23
-	const MAHOGANY_TOWN     ; 24
-	const ROUTE_43          ; 25
-	const LAKE_OF_RAGE      ; 26
-	const ROUTE_44          ; 27
-	const ICE_PATH          ; 28
-	const BLACKTHORN_CITY   ; 29
-	const DRAGONS_DEN       ; 2a
-	const ROUTE_45          ; 2b
-	const DARK_CAVE         ; 2c
+	const ROUTE_37          ; 15
+	const ROUTE_36          ; 14
+	const NATIONAL_PARK     ; 13
+	const ROUTE_35          ; 12
+	const GOLDENROD_CITY    ; 10
+	const RADIO_TOWER       ; 11
+	const ROUTE_34          ; 0f
+	const ILEX_FOREST       ; 0e
+	const AZALEA_TOWN       ; 0c
+	const SLOWPOKE_WELL     ; 0d
+	const ROUTE_33          ; 0b
+	const UNION_CAVE        ; 0a
+	const ROUTE_32          ; 08
+	const RUINS_OF_ALPH     ; 09
+	const VIOLET_CITY       ; 06
+	const SPROUT_TOWER      ; 07
+	const ROUTE_31          ; 05
+	const ROUTE_30          ; 04
+	const CHERRYGROVE_CITY  ; 03
+	const ROUTE_29          ; 02
+	const NEW_BARK_TOWN     ; 01
 	const ROUTE_46          ; 2d
 	const SILVER_CAVE       ; 2e
 

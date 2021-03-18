@@ -139,22 +139,19 @@ MagikarpLengthRaterText_LakeOfRageHistory:
 	para "Grandpa's great-"
 	line "great-grandpa."
 
-	para "It used to be that"
-	line "you could catch"
-
-	para "lively Magikarp"
-	line "there, but…"
-
-	para "I don't understand"
-	line "what's happening."
+	para "There's plenty of"
+	line "Magikarp to go"
+	cont "around."
 	done
 
 MagikarpLengthRaterText_MenInBlack:
-	text "The Lake hasn't"
-	line "been normal since"
+	text "Some people try to"
+	line "fish for Gyarados,"
+	cont "but get too frust-"
+	cont "rated to find one."
 
-	para "those men wearing"
-	line "black arrived."
+	para "Understandable,"
+	line "really."
 	done
 
 MagikarpLengthRaterText_WorldsLargestMagikarp:

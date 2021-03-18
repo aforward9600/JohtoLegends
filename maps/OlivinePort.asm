@@ -219,7 +219,7 @@ OlivinePortYoungsterScript:
 	writetext OlivinePortYoungsterText
 	waitbutton
 	closetext
-	turnobject OLIVINEPORT_YOUNGSTER, DOWN
+	turnobject OLIVINEPORT_YOUNGSTER, LEFT
 	end
 
 OlivinePortCooltrainerFScript:
@@ -345,7 +345,7 @@ UnknownText_0x74bce:
 	done
 
 OlivinePortFishingGuru1Text:
-	text "SHELLDER are easy"
+	text "Shellder are easy"
 	line "to catch here."
 
 	para "They're kind of"
@@ -353,33 +353,66 @@ OlivinePortFishingGuru1Text:
 	done
 
 OlivinePortFishingGuru2Text:
-	text "How many RODS do"
+	text "How many rods do"
 	line "you have?"
 
-	para "Different RODS"
+	para "Different rods"
 	line "catch different"
-	cont "#MON."
+	cont "#mon."
 	done
 
 OlivinePortYoungsterText:
-	text "S.S.AQUA uses jets"
-	line "to skim over the"
-	cont "waves!"
+	text "The Corsola have"
+	line "lost all their"
+	cont "color from the"
+	cont "pollution."
+
+	para "Some of us have"
+	line "decided to do som-"
+	cont "ething about it."
+
+	para "If we clean up the"
+	line "waters, it should"
+	cont "only take about a"
+	cont "decade for the"
+	cont "Corsola to regain"
+	cont "their colors!"
 	done
 
 OlivinePortCooltrainerFText:
 	text "There are lots of"
-	line "#MON in KANTO."
+	line "#mon in Kanto."
 
 	para "I wish I could go…"
 	done
 
 OlivinePortSailorBeforeHOFText:
-	text "We don't want you"
-	line "to fall into the"
+	text "Sorry, no boats"
+	line "are sailing to"
+	cont "Kanto right now."
 
-	para "sea, so you're not"
-	line "allowed in."
+	para "Nor will any"
+	line "boats go to Kanto"
+	cont "for a while."
+
+	para "Haven't you heard?"
+
+	para "Roaming gangs of"
+	line "bikers have caused"
+	cont "such chaos that"
+	cont "the League was cut"
+	cont "off from the"
+	cont "region."
+
+	para "Gyms were burned"
+	line "down, Leaders"
+	cont "disappeared."
+
+	para "No one knows if"
+	line "they're still"
+	cont "alive."
+
+	para "Terrible stuff."
 	done
 
 OlivinePort_MapEvents:
@@ -401,5 +434,5 @@ OlivinePort_MapEvents:
 	object_event  6, 15, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortSailorAfterHOFScript, EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME
 	object_event  4, 14, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortFishingGuru1Script, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
 	object_event 13, 14, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortFishingGuru2Script, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
-	object_event  4, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortYoungsterScript, EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME
-	object_event 11, 15, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortCooltrainerFScript, EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME
+	object_event  2, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortYoungsterScript, -1
+	object_event 11, 15, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortCooltrainerFScript, -1

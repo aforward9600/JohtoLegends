@@ -52,6 +52,8 @@ StdScripts::
 	dba PCScript
 	dba GameCornerCoinVendorScript
 	dba HappinessCheckScript
+	dba GymStatue3Script
+	dba GymStatue4Script
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -610,6 +612,7 @@ InitializeEventsScript:
 	setevent EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_SHERLES
 	setevent EVENT_CIANWOOD_GYM_RIVAL1
 	setevent EVENT_CIANWOOD_GYM_RIVAL2
+	setevent EVENT_ITEMFINDER_GUY
 	return
 
 AskNumber1MScript:
@@ -1900,6 +1903,22 @@ HappinessCheckScript:
 
 .Unhappy:
 	farwritetext HappinessText1
+	waitbutton
+	closetext
+	end
+
+GymStatue3Script:
+	getcurlandmarkname STRING_BUFFER_3
+	opentext
+	farwritetext GymStatue_WinningTrainers3Text
+	buttonsound
+	closetext
+	end
+
+GymStatue4Script:
+	getcurlandmarkname STRING_BUFFER_3
+	opentext
+	farwritetext GymStatue_CityGymText
 	waitbutton
 	closetext
 	end

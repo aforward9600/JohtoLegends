@@ -79,6 +79,7 @@ OlivineLighthouse6F_MapScripts:
 	closetext
 	appear OLIVINELIGHTHOUSE6F_MONSTER
 	applymovement OLIVINELIGHTHOUSE6F_MONSTER, RosaMovesMovement
+	moveobject OLIVINELIGHTHOUSE6F_MONSTER, 8, 9
 	opentext
 	writetext ThisIsRosaText
 	waitbutton
@@ -228,6 +229,7 @@ OlivineLighthouse6F_MapScripts:
 	clearevent EVENT_LIGHTHOUSE_CIVILLIANS
 	setevent EVENT_LIGHTHOUSE2F_RIVAL1
 	setevent EVENT_LIGHTHOUSE2F_RIVAL2
+	setevent EVENT_LIGHTHOUSE_ROCKETS
 	setscene SCENE_FINISHED
 	end
 

@@ -92,10 +92,10 @@ OlivineGymStatue:
 	checkflag ENGINE_MINERALBADGE
 	iftrue .Beaten
 	gettrainername STRING_BUFFER_4, BYRON, BYRON1
-	jumpstd gymstatue1
+	jumpstd gymstatue4
 .Beaten:
 	gettrainername STRING_BUFFER_4, BYRON, BYRON1
-	jumpstd gymstatue2
+	jumpstd gymstatue3
 
 Byron_LittleHero:
 	text "Welcome, little"

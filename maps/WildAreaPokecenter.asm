@@ -15,7 +15,13 @@ WildAreaPokecenterRockerScript:
 	jumptextfaceplayer WildAreaPokecenterRockerText
 
 WildAreaPokecenterCooltrainerFScript:
-	jumptextfaceplayer WildAreaPokecenterCooltrainerFText
+	faceplayer
+	opentext
+	writetext WildAreaPokecenterCooltrainerFText
+	waitbutton
+	closetext
+	setflag ENGINE_FLYPOINT_WILD_AREA
+	end
 
 WildAreaPokecenterRockerText:
 	text "The Wild Area has"

@@ -35,7 +35,7 @@ TrainerSailorLarry:
 	end
 
 TrainerLassCynthia:
-	trainer LASS, DANA1, EVENT_BEAT_LASS_DANA, LassCynthiaSeenText, LassCynthiaBeatenText, 0, .Script
+	trainer TOURIST, CYNTHIA1, EVENT_BEAT_LASS_DANA, LassCynthiaSeenText, LassCynthiaBeatenText, 0, .Script
 
 .Script
 	endifjustbattled
@@ -266,6 +266,6 @@ Route38_MapEvents:
 	object_event 15,  3, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorLarry, -1
 	object_event 12, 15, SPRITE_BUENA, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyWilma, -1
 	object_event 19,  9, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyEric, -1
-	object_event 24,  5, SPRITE_LASS, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassCynthia, -1
+	object_event 24,  5, SPRITE_LASS, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerLassCynthia, -1
 	object_event 12, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route38FruitTree, -1
 	object_event  5,  8, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBirdKeeperFarley, -1

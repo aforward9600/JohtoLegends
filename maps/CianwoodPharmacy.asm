@@ -15,6 +15,7 @@ CianwoodPharmacist:
 	jumptextfaceplayer CianwoodPharmacistText
 
 PharmacyGrannyScript:
+	faceplayer
 	opentext
 	pokemart MARTTYPE_BITTER, MART_UNDERGROUND
 	closetext

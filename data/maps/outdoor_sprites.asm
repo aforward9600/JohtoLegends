@@ -201,7 +201,6 @@ OlivineGroupSprites:
 ; Route38, Route39, OlivineCity
 CianwoodGroupSprites:
 ; Route40, Route41, CianwoodCity, BattleTowerOutside
-Route47GroupSprites:
 	db SPRITE_OLIVINE_RIVAL
 	db SPRITE_POKEFAN_M
 	db SPRITE_LASS
@@ -296,7 +295,9 @@ FastShipGroupSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_YOUNGSTER
-	; 5 of max 9 walking sprites
+	db SPRITE_SCIENTIST
+	db SPRITE_TWIN
+	; 7 of max 9 walking sprites
 	db SPRITE_HO_OH
 	db SPRITE_FAIRY
 	db SPRITE_ROCK
@@ -305,4 +306,19 @@ FastShipGroupSprites:
 CableClubGroupSprites:
 ; (no outdoor maps)
 	; 0 of max 9 walking sprites
+	db 0 ; end
+
+Route47GroupSprites:
+; Route47, Route48, WildAreaOutside
+	db SPRITE_KRIS
+	db SPRITE_CHRIS
+	db SPRITE_GRAMPS
+	db SPRITE_YOUNGSTER
+	db SPRITE_LASS
+	db SPRITE_HIKER
+	db SPRITE_FISHER
+	; 7 of max 9 walking sprites
+	db SPRITE_ROCK
+	db SPRITE_POKE_BALL
+	db SPRITE_FRUIT_TREE
 	db 0 ; end

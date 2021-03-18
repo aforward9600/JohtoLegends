@@ -76,7 +76,6 @@ ReleaseTheBeasts:
 	special RestartMapMusic
 	setscene SCENE_DEFAULT
 	setevent EVENT_RELEASED_THE_BEASTS
-	special InitRoamMons
 	setmapscene ECRUTEAK_GYM, SCENE_FINISHED
 	setevent EVENT_ECRUTEAK_GYM_GRAMPS
 	clearevent EVENT_ECRUTEAK_CITY_GRAMPS

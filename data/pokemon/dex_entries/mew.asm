@@ -2,9 +2,9 @@
 	dw 104, 90 ; height, weight
 
 	db   "Long thought to be"
-	next "learn any move,"
-	next "some people began"
+	next "a mirage, it's co-"
+	next "nfirmed to exist."
 
-	page "research to see if"
-	next "it is the ancestor"
-	next "of all #mon.@"
+	page "The ones in black"
+	next "sought to catch it"
+	next "at any cost.@"

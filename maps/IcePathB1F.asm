@@ -12,7 +12,7 @@
 	const ICEPATHB1F_CHRIS ; if Female
 
 IcePathB1F_MapScripts:
-	db 1 ; scene scripts
+	db 2 ; scene scripts
 	scene_script .DummyScene1 ; SCENE_DEFAULT
 	scene_script .DummyScene2 ; SCENE_ICE_PATH_B1F_RIVAL
 

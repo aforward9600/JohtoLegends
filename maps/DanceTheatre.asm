@@ -468,6 +468,15 @@ DanceTheatreGrannyText:
 	para "The little girls"
 	line "there wish to be"
 	cont "like her someday."
+
+	para "Tell you what,"
+	line "if you can beat"
+	cont "her in a battle"
+	cont "and get a reward"
+	cont "from her,"
+
+	para "then I'll give"
+	line "something useful."
 	done
 
 DanceTheatreFancyPanelText:
