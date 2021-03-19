@@ -1,9 +1,27 @@
 	object_const_def ; object_event constants
+	const CLIFFCAVE_SUPERNERD
 
 CliffCave_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
+
+CliffCaveSuperNerdScript:
+	jumptextfaceplayer CliffCaveSuperNerdText
+
+CliffCaveSuperNerdText:
+	text "Someday, I plan on"
+	line "digging on down."
+
+	para "There's said to be"
+	line "a tower around"
+	cont "here, but the way"
+	cont "to it has been"
+	cont "lost."
+
+	para "I plan on finding"
+	line "where it is!"
+	done
 
 CliffCave_MapEvents:
 	db 0, 0 ; filler
@@ -18,4 +36,5 @@ CliffCave_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event  6, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CliffCaveSuperNerdScript, -1

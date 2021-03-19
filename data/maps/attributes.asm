@@ -699,3 +699,9 @@ ENDM
 	map_attributes CliffsEdgeGate, CLIFFS_EDGE_GATE, $00, 0
 	map_attributes CliffCave, CLIFF_CAVE, $00, 0
 	map_attributes WildAreaPokecenter, WILD_AREA_POKECENTER, $00, 0
+	map_attributes WildAreaMart, WILD_AREA_MART, $00, 0
+	map_attributes WildArea1, WILD_AREA_1, $00, 0
+	map_attributes WildArea23, WILD_AREA_2_3, $00, 0
+	map_attributes WildAreaCave, WILD_AREA_CAVE, $00, 0
+	map_attributes WildArea4, WILD_AREA_4, $00, 0
+	map_attributes WildArea5, WILD_AREA_5, $00, 0

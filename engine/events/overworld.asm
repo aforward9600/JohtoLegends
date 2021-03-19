@@ -580,6 +580,9 @@ FlyFunction:
 
 .illegal
 	call CloseWindow
+	farcall Pack_InitGFX
+	farcall WaitBGMap_DrawPackGFX
+	farcall Pack_InitColors
 	call WaitBGMap
 	ld a, $80
 	ret

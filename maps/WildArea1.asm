@@ -1,0 +1,83 @@
+	object_const_def ; object_event constants
+	const WILDAREA1_BAOBA
+
+WildArea1_MapScripts:
+	db 0 ; scene scripts
+
+	db 0 ; callbacks
+
+BaobaScript:
+	jumptextfaceplayer BaobaText
+
+BaobaText:
+	text "Oh, hello there!"
+
+	para "My name is Baoba."
+
+	para "I run the Safari"
+	line "Zone in Fuchsia"
+	cont "City."
+
+	para "I was able to"
+	line "leave Kanto for a"
+	cont "little vacation"
+	cont "here in Johto."
+
+	para "This area would be"
+	line "perfect for a"
+	cont "Safari Zone, wou-"
+	cont "ldn't you agree?"
+
+	para "To tell you the"
+	line "truth, the Safari"
+	cont "Zone was the"
+	cont "target of vandals"
+	cont "recently, and I've"
+	cont "had some bouts of"
+	cont "depression as a"
+	cont "result."
+
+	para "I came here to"
+	line "clear my head"
+	cont "while my employees"
+	cont "fix up the Zone."
+
+	para "My goal was to fi-"
+	line "nd someplace that"
+	cont "could be a second"
+	cont "Safari Zone, and"
+	cont "I'd say I found"
+	cont "it."
+	
+	para "With a little bit"
+	line "of polish, this"
+	cont "wilderness could"
+	cont "be a haven for"
+	cont "#mon and train-"
+	cont "ers."
+
+	para "Maybe someday I"
+	line "can fulfill my"
+	cont "new dream of a"
+	cont "Johto Safari Zone."
+	done
+
+WildArea1_MapEvents:
+	db 0, 0 ; filler
+
+	db 8 ; warp events
+	warp_event  6, 13, WILD_AREA_OUTSIDE, 3
+	warp_event  7, 13, WILD_AREA_OUTSIDE, 4
+	warp_event 13,  6, WILD_AREA_2_3, 1
+	warp_event 13,  7, WILD_AREA_2_3, 2
+	warp_event  6,  0, WILD_AREA_2_3, 3
+	warp_event  7,  0, WILD_AREA_2_3, 4
+	warp_event  0,  6, WILD_AREA_4, 1
+	warp_event  0,  7, WILD_AREA_4, 2
+
+	db 0 ; coord events
+
+	db 0 ; bg events
+
+	db 1 ; object events
+	object_event  6,  7, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BaobaScript, -1

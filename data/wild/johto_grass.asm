@@ -1922,4 +1922,154 @@ JohtoGrassWildMons:
 	dbw 25, GIRAFARIG
 	dbw 25, GIRAFARIG
 
+	map_id WILD_AREA_1
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 15, CLEFAIRY
+	dbw 15, JIGGLYPUFF
+	dbw 15, NIDORAN_F
+	dbw 15, SUNKERN
+	dbw 15, VENONAT
+	dbw 15, MANKEY
+	dbw 15, DODUO
+	dbw 15, DROWZEE
+	; day
+	dbw 15, CLEFAIRY
+	dbw 15, JIGGLYPUFF
+	dbw 15, NIDORAN_F
+	dbw 15, SUNKERN
+	dbw 15, VENONAT
+	dbw 15, MANKEY
+	dbw 15, DODUO
+	dbw 15, DROWZEE
+	; nite
+	dbw 15, CLEFAIRY
+	dbw 15, JIGGLYPUFF
+	dbw 15, NIDORAN_F
+	dbw 15, SUNKERN
+	dbw 15, VENONAT
+	dbw 15, MANKEY
+	dbw 15, DODUO
+	dbw 15, DROWZEE
+
+	map_id WILD_AREA_2_3
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 15, EXEGGCUTE
+	dbw 15, LEDYBA
+	dbw 15, SPINARAK
+	dbw 15, RHYHORN
+	dbw 15, SNUBBULL
+	dbw 15, MUNCHLAX
+	dbw 15, TOGEPI
+	dbw 15, EEVEE
+	; day
+	dbw 15, EXEGGCUTE
+	dbw 15, LEDYBA
+	dbw 15, SPINARAK
+	dbw 15, RHYHORN
+	dbw 15, SNUBBULL
+	dbw 15, MUNCHLAX
+	dbw 15, TOGEPI
+	dbw 15, EEVEE
+	; nite
+	dbw 15, EXEGGCUTE
+	dbw 15, LEDYBA
+	dbw 15, SPINARAK
+	dbw 15, RHYHORN
+	dbw 15, SNUBBULL
+	dbw 15, MUNCHLAX
+	dbw 15, TOGEPI
+	dbw 15, EEVEE
+
+	map_id WILD_AREA_CAVE
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 15, SNEASEL
+	dbw 15, SMEARGLE
+	dbw 15, PARAS
+	dbw 15, WOBBUFFET
+	dbw 15, CUBONE
+	dbw 15, KANGASKHAN
+	dbw 15, MISDREAVUS
+	dbw 15, DUNSPARCE
+	; day
+	dbw 15, SNEASEL
+	dbw 15, SMEARGLE
+	dbw 15, PARAS
+	dbw 15, WOBBUFFET
+	dbw 15, CUBONE
+	dbw 15, KANGASKHAN
+	dbw 15, MISDREAVUS
+	dbw 15, DUNSPARCE
+	; nite
+	dbw 15, SNEASEL
+	dbw 15, SMEARGLE
+	dbw 15, PARAS
+	dbw 15, WOBBUFFET
+	dbw 15, CUBONE
+	dbw 15, KANGASKHAN
+	dbw 15, MISDREAVUS
+	dbw 15, DUNSPARCE
+
+	map_id WILD_AREA_4
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 15, GROWLITHE
+	dbw 15, HOUNDOUR
+	dbw 15, NIDORAN_M
+	dbw 15, CHANSEY
+	dbw 15, NATU
+	dbw 15, MURKROW
+	dbw 15, GLIGAR
+	dbw 15, STANTLER
+	; morn
+	dbw 15, GROWLITHE
+	dbw 15, HOUNDOUR
+	dbw 15, NIDORAN_M
+	dbw 15, CHANSEY
+	dbw 15, NATU
+	dbw 15, MURKROW
+	dbw 15, GLIGAR
+	dbw 15, STANTLER
+	; nite
+	dbw 15, GROWLITHE
+	dbw 15, HOUNDOUR
+	dbw 15, NIDORAN_M
+	dbw 15, CHANSEY
+	dbw 15, NATU
+	dbw 15, MURKROW
+	dbw 15, GLIGAR
+	dbw 15, STANTLER
+
+	map_id WILD_AREA_5
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 15, ODDISH
+	dbw 15, BELLSPROUT
+	dbw 15, SUNKERN
+	dbw 15, TANGELA
+	dbw 15, HOPPIP
+	dbw 15, SHUCKLE
+	dbw 15, BUTTERFREE
+	dbw 15, BEEDRILL
+	; day
+	dbw 15, ODDISH
+	dbw 15, BELLSPROUT
+	dbw 15, SUNKERN
+	dbw 15, TANGELA
+	dbw 15, HOPPIP
+	dbw 15, SHUCKLE
+	dbw 15, BUTTERFREE
+	dbw 15, BEEDRILL
+	; nite
+	dbw 15, ODDISH
+	dbw 15, BELLSPROUT
+	dbw 15, SUNKERN
+	dbw 15, TANGELA
+	dbw 15, HOPPIP
+	dbw 15, SHUCKLE
+	dbw 15, BUTTERFREE
+	dbw 15, BEEDRILL
+
 	db -1 ; end

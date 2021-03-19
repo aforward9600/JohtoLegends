@@ -490,5 +490,11 @@ ENDM
 	map_const ROUTE_47,                                    27, 14 ; 1
 	map_const ROUTE_48,                                    15,  9 ; 2
 	map_const CLIFF_CAVE,                                  10,  9 ; 3
-	map_const WILD_AREA_OUTSIDE,                           10, 10 ; 4
+	map_const WILD_AREA_OUTSIDE,                           10, 11 ; 4
 	map_const WILD_AREA_POKECENTER,                         5,  4 ; 5
+	map_const WILD_AREA_MART,                               6,  4 ; 6
+	map_const WILD_AREA_1,                                  7,  7 ; 7
+	map_const WILD_AREA_2_3,                               14, 14 ; 8
+	map_const WILD_AREA_CAVE,                               7,  7 ; 9
+	map_const WILD_AREA_4,                                  7,  7 ; 10
+	map_const WILD_AREA_5,                                  7,  7 ; 11

@@ -35,7 +35,7 @@ TrainerPokemaniacCalvin:
 	end
 
 TrainerHikerPhillip:
-	trainer HIKER, PHILLIP, EVENT_BEAT_HIKER_PHILLIP, HikerPhillipSeenText, HikerPhillipBeatenText, 0, .Script
+	trainer HIKER, PHIL, EVENT_BEAT_HIKER_PHIL, HikerPhillipSeenText, HikerPhillipBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

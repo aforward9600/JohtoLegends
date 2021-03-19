@@ -47,7 +47,7 @@ TrainerCooltrainermNick:
 	end
 
 TrainerCooltrainerfGwen:
-	trainer COOLTRAINERF, GWEN, EVENT_BEAT_COOLTRAINERF_GWEN, CooltrainerfGwenSeenText, CooltrainerfGwenBeatenText, 0, .Script
+	trainer COOLTRAINERF, TERESA, EVENT_BEAT_COOLTRAINERF_TERESA, CooltrainerfGwenSeenText, CooltrainerfGwenBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

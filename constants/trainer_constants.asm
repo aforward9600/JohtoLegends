@@ -211,7 +211,7 @@ CHRIS EQU __enum__
 	const DARIN
 
 	trainerclass COOLTRAINERF ; 1c
-	const GWEN
+	const TERESA
 	const LOIS
 	const FRAN
 	const LOLA
@@ -459,7 +459,7 @@ CHRIS EQU __enum__
 	trainerclass HIKER ; 2c
 	const ANTHONY1
 	const OZZY
-	const PHILLIP
+	const PHIL1
 	const LEONARD
 	const ANTHONY2
 	const BENJAMIN
@@ -501,7 +501,7 @@ CHRIS EQU __enum__
 
 	trainerclass FIREBREATHER ; 30
 	const CHAZ
-	const DICK
+	const FARREL
 	const NED
 	const BURT
 	const BILL
@@ -580,7 +580,7 @@ CHRIS EQU __enum__
 	const CAMPER_GARRET
 	const TODD1
 	const HOWARD
-	const ELLIOT
+	const EMIL
 	const BARRY
 	const LLOYD
 	const DEAN

@@ -94,7 +94,7 @@ TrainerCamperIvan:
 	end
 
 TrainerCamperElliot:
-	trainer CAMPER, ELLIOT, EVENT_BEAT_CAMPER_ELLIOT, CamperElliotSeenText, CamperElliotBeatenText, 0, .Script
+	trainer CAMPER, EMIL, EVENT_BEAT_CAMPER_EMIL, CamperElliotSeenText, CamperElliotBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

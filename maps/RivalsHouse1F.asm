@@ -11,7 +11,6 @@ RivalsDadScript:
 	faceplayer
 	opentext
 	writetext RivalsDadText
-	verbosegiveitem LAPRAS_CALLB
 	waitbutton
 	closetext
 	end

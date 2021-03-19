@@ -86,13 +86,13 @@ PryceGroup:
 ByronGroup:
 	next_list_item ; BYRON (1)
 	db "Byron@", TRAINERTYPE_MOVES
-	db 29
+	db 26
 	dw FORRETRESS
 	dw MIRROR_SHOT, SPIKES, SUBSTITUTE, REVERSAL
-	db 30
+	db 27
 	dw MAGNETON
 	dw DISCHARGE, METAL_SOUND, MIRROR_SHOT, TRI_ATTACK
-	db 35
+	db 28
 	dw STEELIX
 	dw IRON_DEFENSE, BULLDOZE, ROCK_SLIDE, IRON_HEAD
 	db -1 ; end
@@ -1499,15 +1499,15 @@ CooltrainerMGroup:
 
 CooltrainerFGroup:
 	next_list_item ; COOLTRAINERF (1)
-	db "GWEN@", TRAINERTYPE_NORMAL
-	db 26
-	dw EEVEE
-	db 22
-	dw FLAREON
-	db 22
-	dw VAPOREON
-	db 22
-	dw JOLTEON
+	db "Teresa@", TRAINERTYPE_NORMAL
+	db 24
+	dw SKIPLOOM
+	db 24
+	dw WOBBUFFET
+	db 24
+	dw MUNCHLAX
+	db 24
+	dw FLAAFFY
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (2)
@@ -3457,12 +3457,12 @@ HikerGroup:
 	db -1 ; end
 
 	next_list_item ; HIKER (3)
-	db "PHILLIP@", TRAINERTYPE_NORMAL
-	db 23
-	dw GEODUDE
-	db 23
-	dw GEODUDE
-	db 23
+	db "Phil@", TRAINERTYPE_NORMAL
+	db 25
+	dw MACHOP
+	db 25
+	dw SUDOWOODO
+	db 26
 	dw GRAVELER
 	db -1 ; end
 
@@ -3792,8 +3792,8 @@ FirebreatherGroup:
 	db -1 ; end
 
 	next_list_item ; FIREBREATHER (2)
-	db "DICK@", TRAINERTYPE_NORMAL
-	db 17
+	db "Farrel@", TRAINERTYPE_NORMAL
+	db 27
 	dw CHARMELEON
 	db -1 ; end
 
@@ -4433,11 +4433,13 @@ CamperGroup:
 	db -1 ; end
 
 	next_list_item ; CAMPER (4)
-	db "ELLIOT@", TRAINERTYPE_NORMAL
-	db 13
-	dw SANDSHREW
-	db 15
-	dw MARILL
+	db "Emil@", TRAINERTYPE_NORMAL
+	db 25
+	dw SANDSLASH
+	db 25
+	dw LEDIAN
+	db 25
+	dw AIPOM
 	db -1 ; end
 
 	next_list_item ; CAMPER (5)

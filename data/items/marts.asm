@@ -33,6 +33,7 @@ Marts:
 	dw MartMtMoon
 	dw MartIndigoPlateau
 	dw MartUnderground
+	dw MartWildArea
 .End
 
 MartCherrygrove:
@@ -405,6 +406,19 @@ MartUnderground:
 	db ENERGY_ROOT
 	db HEAL_POWDER
 	db REVIVAL_HERB
+	db -1 ; end
+
+MartWildArea:
+	db 9 ; # items
+	db POKE_BALL
+	db GREAT_BALL
+	db SUPER_POTION
+	db ESCAPE_ROPE
+	db SUPER_REPEL
+	db ANTIDOTE
+	db PARLYZ_HEAL
+	db AWAKENING
+	db BURN_HEAL
 	db -1 ; end
 
 DefaultMart:

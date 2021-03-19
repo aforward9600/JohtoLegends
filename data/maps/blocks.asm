@@ -311,6 +311,7 @@ LavenderMart_Blocks:
 ViridianMart_Blocks:
 SaffronMart_Blocks:
 CherrygroveMart_Blocks:
+WildAreaMart_Blocks:
 	INCBIN "maps/Mart.blk"
 
 Route10North_Blocks:
@@ -1045,3 +1046,18 @@ CliffCave_Blocks:
 
 WildAreaOutside_Blocks:
 	INCBIN "maps/WildAreaOutside.blk"
+
+WildArea1_Blocks:
+	INCBIN "maps/WildArea1.blk"
+
+WildArea23_Blocks:
+	INCBIN "maps/WildArea23.blk"
+
+WildAreaCave_Blocks:
+	INCBIN "maps/WildAreaCave.blk"
+
+WildArea4_Blocks:
+	INCBIN "maps/WildArea4.blk"
+
+WildArea5_Blocks:
+	INCBIN "maps/WildArea5.blk"

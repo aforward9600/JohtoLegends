@@ -1,13 +1,15 @@
 	object_const_def ; object_event constants
 	const WILDAREAOUTSIDE_KRIS ; if male
 	const WILDAREAOUTSIDE_CHRIS ; if female
+	const WILDAREAOUTSIDE_GRAMPS
+	const WILDAREAOUTSIDE_TWIN
 
 WildAreaOutside_MapScripts:
 	db 2 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_WILD_AREA_OUTSIDE_RIVAL
 
-	db 0 ; callbacks
+	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .Flypoint
 
 .DummyScene0:
@@ -276,6 +278,12 @@ RivalWalksUpRight:
 	waitsfx
 	end
 
+WildAreaOutsideOldManScript:
+	jumptextfaceplayer WildAreaOutsideOldManText
+
+WildAreaOutsideTwinScript:
+	jumptextfaceplayer WildAreaOutsideTwinText
+
 RivalMovesUp:
 	step UP
 	step UP
@@ -357,6 +365,30 @@ ThisIsTheWildAreaText:
 	para "See you later!"
 	done
 
+WildAreaOutsideOldManText:
+	text "Back in my day,"
+	line "those buildings"
+	cont "weren't there."
+
+	para "We had to endure"
+	line "the walk from"
+	cont "Cianwood, through"
+	cont "the dangerous"
+	cont "caves, all without"
+	cont "healing!"
+
+	para "Even worse, if you"
+	line "came here without"
+	cont "any #balls, you"
+	cont "were out of luck!"
+	done
+
+WildAreaOutsideTwinText:
+	text "Yay!"
+
+	para "So many #mon!"
+	done
+
 WildAreaOutsideSignText:
 	text "Wild Area"
 
@@ -368,16 +400,21 @@ WildAreaOutsideSignText:
 WildAreaOutside_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
-	warp_event  5, 15, WILD_AREA_POKECENTER, 1
+	db 4 ; warp events
+	warp_event  5, 17, WILD_AREA_POKECENTER, 1
+	warp_event 11, 17, WILD_AREA_MART, 1
+	warp_event  8,  6, WILD_AREA_1, 1
+	warp_event  9,  6, WILD_AREA_1, 2
 
 	db 2 ; coord events
-	coord_event  8,  6, SCENE_WILD_AREA_RIVAL, RivalWalksUpLeft
-	coord_event  9,  6, SCENE_WILD_AREA_RIVAL, RivalWalksUpRight
+	coord_event  8,  7, SCENE_WILD_AREA_RIVAL, RivalWalksUpLeft
+	coord_event  9,  7, SCENE_WILD_AREA_RIVAL, RivalWalksUpRight
 
 	db 1 ; bg events
-	bg_event  7,  6, BGEVENT_READ, WildAreaOutsideSign
+	bg_event  7,  7, BGEVENT_READ, WildAreaOutsideSign
 
-	db 2 ; object events
-	object_event  9,  11, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_WILD_AREA_OUTSIDE_RIVAL1
-	object_event  9,  11, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_WILD_AREA_OUTSIDE_RIVAL2
+	db 4 ; object events
+	object_event  9, 12, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_WILD_AREA_OUTSIDE_RIVAL1
+	object_event  9, 12, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_WILD_AREA_OUTSIDE_RIVAL2
+	object_event  4, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildAreaOutsideOldManScript, -1
+	object_event 11, 11, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildAreaOutsideTwinScript, -1
