@@ -57,7 +57,7 @@
 	tilecoll BUOY, WALL, WATER, WALL ; 38
 	tilecoll WATER, WALL, WATER, WATER ; 39
 	tilecoll WATER, WALL, WATER, WALL ; 3a
-	tilecoll WALL, WALL, WATER, BUOY ; 3b
+	tilecoll WALL, WALL, BUOY, WATER ; 3b
 	tilecoll WALL, WALL, WALL, WALL ; 3c
 	tilecoll WATER, WATER, WATER, WATER ; 3d
 	tilecoll WALL, WALL, WALL, WALL ; 3e
@@ -162,3 +162,4 @@
 	tilecoll WALL, WALL, WALL, WALL ; a1
 	tilecoll WALL, WALL, WALL, WALL ; a2
 	tilecoll WATER, WATER, WATER, WATER ; a3
+	tilecoll BUOY, BUOY, WATER, WATER ; a4

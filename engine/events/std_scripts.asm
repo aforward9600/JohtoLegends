@@ -613,6 +613,7 @@ InitializeEventsScript:
 	setevent EVENT_CIANWOOD_GYM_RIVAL1
 	setevent EVENT_CIANWOOD_GYM_RIVAL2
 	setevent EVENT_ITEMFINDER_GUY
+	setevent EVENT_ROUTE_36_GUY
 	return
 
 AskNumber1MScript:

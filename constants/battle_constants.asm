@@ -1,7 +1,7 @@
 ; significant level values
 MAX_LEVEL EQU 100
-MIN_LEVEL EQU 2
-EGG_LEVEL EQU 5
+MIN_LEVEL EQU 1
+EGG_LEVEL EQU 1
 
 ; maximum moves known per mon
 NUM_MOVES EQU 4
@@ -96,6 +96,7 @@ SPDSPCDV_SHINY EQU $AA
 	const BATTLETYPE_FORCEITEM
 	const BATTLETYPE_CELEBI
 	const BATTLETYPE_SUICUNE
+	const BATTLETYPE_MEWTWO
 
 ; BattleVarPairs indexes (see home/battle.asm)
 	const_def

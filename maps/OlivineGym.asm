@@ -1,6 +1,8 @@
 	object_const_def ; object_event constants
 	const OLIVINEGYM_BYRON
 	const OLIVINEGYM_GYM_GUY
+	const OLIVINEGYM_GENTLEMAN
+	const OLIVINEGYM_TEACHER
 
 OlivineGym_MapScripts:
 	db 0 ; scene scripts
@@ -39,6 +41,8 @@ OlivineGymByronScript:
 	verbosegiveitem TM_FLASH_CANNON
 	iffalse .NoRoomForFlashCannon
 	setevent EVENT_GOT_TM42_FLASH_CANNON
+	setevent EVENT_ROCK_SMASH_GUY
+	clearevent EVENT_ROUTE_36_GUY
 	writetext Byron_FlashCannonSpeech
 	waitbutton
 	closetext
@@ -66,8 +70,6 @@ OlivineGymGuyScript:
 	faceplayer
 	checkevent EVENT_BEAT_BYRON
 	iftrue .OlivineGymGuyWinScript
-	checkevent EVENT_JASMINE_RETURNED_TO_GYM
-	iffalse .OlivineGymGuyPreScript
 	opentext
 	writetext OlivineGymGuyText
 	waitbutton
@@ -88,14 +90,40 @@ OlivineGymGuyScript:
 	closetext
 	end
 
+OlivineGymTrainerGentlemanCrofton:
+	trainer GENTLEMAN, CROFTON, EVENT_BEAT_GENTLEMAN_CROFTON, GentlemanCroftonSeenText, GentlemanCroftonBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext GentlemanCroftonAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerTeacherAbigail:
+	trainer TEACHER, ABIGAIL, EVENT_BEAT_TEACHER_ABIGAIL, TeacherAbigailSeenText, TeacherAbigailBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext TeacherAbigailAfterBattleText
+	waitbutton
+	closetext
+	end
+
 OlivineGymStatue:
+	checkflag ENGINE_PLAINBADGE
+	iftrue .RivalBeaten
 	checkflag ENGINE_MINERALBADGE
 	iftrue .Beaten
-	gettrainername STRING_BUFFER_4, BYRON, BYRON1
 	jumpstd gymstatue4
 .Beaten:
 	gettrainername STRING_BUFFER_4, BYRON, BYRON1
 	jumpstd gymstatue3
+.RivalBeaten:
+	gettrainername STRING_BUFFER_4, BYRON, BYRON1
+	jumpstd gymstatue1
 
 Byron_LittleHero:
 	text "Welcome, little"
@@ -190,6 +218,49 @@ Byron_Sunnyshore:
 	cont "day! Hahahaha!"
 	done
 
+GentlemanCroftonSeenText:
+	text "Steel is a hard"
+	line "type to overcome."
+
+	para "What can you do"
+	line "against it?"
+	done
+
+GentlemanCroftonBeatenText:
+	text "Apparently you are"
+	line "harder to"
+	cont "overcome."
+	done
+
+GentlemanCroftonAfterBattleText:
+	text "Steel's weaknesses"
+	line "are less than that"
+	cont "of most other"
+	cont "types."
+	done
+
+TeacherAbigailSeenText:
+	text "Teachers need to"
+	line "be sharp in order"
+	cont "to mold young"
+	cont "minds."
+
+	para "As sharp as a"
+	line "Steel-Type!"
+	done
+
+TeacherAbigailBeatenText:
+	text "Truly sharp."
+	done
+
+TeacherAbigailAfterBattleText:
+	text "I guess you're"
+	line "sharper then me."
+
+	para "I need to sharpen"
+	line "my mind."
+	done
+
 OlivineGymGuyText:
 	text "How's it going,"
 	line "champ in the"
@@ -210,7 +281,7 @@ OlivineGymGuyText:
 
 OlivineGymGuyWinText:
 	text "Sharp as ever,"
-	cont "you are!"
+	line "you are!"
 	done
 
 OlivineGymGuyPreText:
@@ -235,6 +306,8 @@ OlivineGym_MapEvents:
 	bg_event  3, 13, BGEVENT_READ, OlivineGymStatue
 	bg_event  6, 13, BGEVENT_READ, OlivineGymStatue
 
-	db 2 ; object events
+	db 4 ; object events
 	object_event  5,  3, SPRITE_BYRON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, OlivineGymByronScript, EVENT_OLIVINE_GYM_JASMINE
 	object_event  7, 13, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGymGuyScript, -1
+	object_event  3, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, OlivineGymTrainerGentlemanCrofton, -1
+	object_event  6,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerTeacherAbigail, -1

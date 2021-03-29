@@ -1543,7 +1543,7 @@ _OakText5::
 	cont "#mon is"
 	cont "paramount to"
 
-	para "sucess. That is"
+	para "success. That is"
 	line "what I always"
 	cont "strive to teach my"
 	cont "students."

@@ -159,7 +159,7 @@ EcruteakGroupSprites:
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_BUG_CATCHER
 	db SPRITE_SUPER_NERD
-	db SPRITE_TEACHER
+	db SPRITE_POKEFAN_F
 	; 9 of max 9 walking sprites
 	db SPRITE_WEIRD_TREE ; variable sprite: becomes SPRITE_SUDOWOODO and SPRITE_TWIN
 	db SPRITE_POKE_BALL
@@ -280,9 +280,10 @@ DungeonsGroupSprites:
 	db SPRITE_YOUNGSTER
 	db SPRITE_POKEFAN_M
 	db SPRITE_ROCKER
-	db SPRITE_FISHER
+	db SPRITE_BUG_CATCHER
 	db SPRITE_SCIENTIST
-	; 8 of 9 max walking sprites
+	db SPRITE_ENGINEER
+	; 9 of 9 max walking sprites
 	db SPRITE_GAMEBOY_KID
 	db SPRITE_POKE_BALL
 	db SPRITE_GROWLITHE

@@ -79,3 +79,5 @@ BTTrainerClassGenders:
 	db MALE   ; LANCE
 	db FEMALE ; PASSERBY
 	db FEMALE ; MIYAMOTO
+	db FEMALE ; TOURIST
+	db MALE   ; ENGINEER

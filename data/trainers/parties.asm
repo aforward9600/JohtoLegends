@@ -25,12 +25,18 @@ WalkerGroup:
 MiltonGroup:
 	next_list_item ; Milton (1)
 	db "Milton@", TRAINERTYPE_MOVES
-	db 18
-	dw AIPOM
-	dw FURY_SWIPES, SWORDS_DANCE, GROWL, SAND_ATTACK
-	db 19
+	db 28
+	dw MILTANK
+	dw MILK_DRINK, SWORDS_DANCE, BODY_SLAM, ROLLOUT
+	db 29
 	dw TAUROS
 	dw SWORDS_DANCE, REST, HORN_ATTACK, SCARY_FACE
+	db 30
+	dw GIRAFARIG
+	dw PSYBEAM, SWORDS_DANCE, DOUBLE_HIT_M, STOMP
+	db 31
+	dw URSARING
+	dw SWORDS_DANCE, SLASH, PLAY_ROUGH, FAINT_ATTACK
 	db -1 ; end
 
 	end_list_items
@@ -746,15 +752,13 @@ SchoolboyGroup:
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (2)
-	db "KIPP@", TRAINERTYPE_NORMAL
+	db "Pierce@", TRAINERTYPE_NORMAL
 	db 27
 	dw VOLTORB
-	db 27
-	dw MAGNEMITE
-	db 31
-	dw VOLTORB
-	db 31
-	dw MAGNETON
+	db 26
+	dw TANGELA
+	db 26
+	dw PONYTA
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (3)
@@ -982,11 +986,13 @@ BirdKeeperGroup:
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (3)
-	db "BRYAN@", TRAINERTYPE_NORMAL
-	db 12
-	dw PIDGEY
-	db 14
+	db "Gunner@", TRAINERTYPE_NORMAL
+	db 27
+	dw FARFETCH_D
+	db 26
 	dw PIDGEOTTO
+	db 27
+	dw DODUO
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (4)
@@ -1811,9 +1817,11 @@ BeautyGroup:
 
 PokemaniacGroup:
 	next_list_item ; POKEMANIAC (1)
-	db "LARRY@", TRAINERTYPE_NORMAL
-	db 10
-	dw SLOWPOKE
+	db "Alvin@", TRAINERTYPE_NORMAL
+	db 26
+	dw PHANPY
+	db 26
+	dw LICKITUNG
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (2)
@@ -2186,11 +2194,13 @@ GruntMGroup:
 
 GentlemanGroup:
 	next_list_item ; GENTLEMAN (1)
-	db "PRESTON@", TRAINERTYPE_NORMAL
-	db 18
-	dw GROWLITHE
-	db 18
-	dw GROWLITHE
+	db "Crofton@", TRAINERTYPE_NORMAL
+	db 27
+	dw MAGNEMITE
+	db 27
+	dw SKARMINI
+	db 27
+	dw MAGCARGO
 	db -1 ; end
 
 	next_list_item ; GENTLEMAN (2)
@@ -2238,9 +2248,13 @@ SkierGroup:
 
 TeacherGroup:
 	next_list_item ; TEACHER (1)
-	db "COLETTE@", TRAINERTYPE_NORMAL
-	db 36
-	dw CLEFAIRY
+	db "Abigail@", TRAINERTYPE_NORMAL
+	db 27
+	dw SKARMINI
+	db 27
+	dw OCTILLERY
+	db 27
+	dw MAGNEMITE
 	db -1 ; end
 
 	next_list_item ; TEACHER (2)
@@ -3792,7 +3806,7 @@ FirebreatherGroup:
 	db -1 ; end
 
 	next_list_item ; FIREBREATHER (2)
-	db "Farrel@", TRAINERTYPE_NORMAL
+	db "Farel@", TRAINERTYPE_NORMAL
 	db 27
 	dw CHARMELEON
 	db -1 ; end
@@ -4123,16 +4137,19 @@ PsychicGroup:
 	db -1 ; end
 
 	next_list_item ; PSYCHIC_T (7)
-	db "MARK@", TRAINERTYPE_MOVES
-	db 13
-	dw ABRA
-	dw TELEPORT, FLASH, NO_MOVE, NO_MOVE
-	db 13
-	dw ABRA
-	dw TELEPORT, FLASH, NO_MOVE, NO_MOVE
-	db 15
+	db "Uri@", TRAINERTYPE_MOVES
+	db 24
+	dw NATU
+	dw CONFUSE_RAY, SILVER_WIND, AIR_CUTTER, CONFUSION
+	db 25
+	dw XATU
+	dw AIR_SLASH, ROOST, CONFUSION, SILVER_WIND
+	db 26
 	dw KADABRA
-	dw TELEPORT, KINESIS, CONFUSION, NO_MOVE
+	dw PSYBEAM, REFLECT, DISABLE, HYPNOSIS
+	db 25
+	dw DROWZEE
+	dw PSYBEAM, MEDITATE, POISON_GAS, HEADBUTT
 	db -1 ; end
 
 	next_list_item ; PSYCHIC_T (8)
@@ -4963,13 +4980,16 @@ PokefanMGroup:
 
 KimonoGirlGroup:
 	next_list_item ; KIMONO_GIRL (1)
-	db "Rui@", TRAINERTYPE_NORMAL
+	db "Rui@", TRAINERTYPE_MOVES
 	db 14
 	dw VAPOREON
+	dw QUICK_ATTACK, SAND_ATTACK, GROWL, WATER_GUN
 	db 14
 	dw JOLTEON
+	dw QUICK_ATTACK, SAND_ATTACK, GROWL, THUNDERSHOCK
 	db 14
 	dw FLAREON
+	dw QUICK_ATTACK, SAND_ATTACK, GROWL, EMBER
 	db -1 ; end
 
 	next_list_item ; KIMONO_GIRL (2)
@@ -5556,13 +5576,13 @@ PasserbyGroup:
 MiyamotoGroup:
 	next_list_item ; MIYAMOTO1
 	db "Miyamoto@", TRAINERTYPE_NORMAL
-	db 18
+	db 19
 	dw YANMA
 	db 18
 	dw GOLBAT
-	db 19
-	dw MEOWTH
 	db 20
+	dw MEOWTH
+	db 22
 	dw HOUNDOUR
 	db -1 ; end
 
@@ -5574,6 +5594,17 @@ CynthiaGroup:
 	db 17
 	dw TOGETIC
 	dw FAIRY_WIND, SING, ENCORE, METRONOME
+	db -1 ; end
+
+	end_list_items
+
+EngineerGroup:
+	next_list_item ; ENGINEER (1)
+	db "Harvey@", TRAINERTYPE_NORMAL
+	db 28
+	dw ELEKID
+	db 28
+	dw FLAAFFY
 	db -1 ; end
 
 	end_list_items

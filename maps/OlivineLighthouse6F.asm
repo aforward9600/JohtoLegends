@@ -6,6 +6,7 @@
 	const OLIVINELIGHTHOUSE6F_KRIS ; if Male
 	const OLIVINELIGHTHOUSE6F_CHRIS
 	const OLIVINELIGHTHOUSE6F_SHERLES
+	const OLIVINELIGHTHOUSE6F_MONSTER2
 
 OlivineLighthouse6F_MapScripts:
 	db 2 ; scene scripts
@@ -16,8 +17,8 @@ OlivineLighthouse6F_MapScripts:
 
 .MeetBoss:
 	playmusic MUSIC_ROCKET_ENCOUNTER
-	moveobject OLIVINELIGHTHOUSE6F_MONSTER, 8, 6
 	disappear OLIVINELIGHTHOUSE6F_MONSTER
+	setevent EVENT_LIGHTHOUSE_MONSTER
 	applymovement PLAYER, MovesUpToMiyamotoMovement
 	opentext
 	writetext HandItOverText
@@ -77,9 +78,10 @@ OlivineLighthouse6F_MapScripts:
 	writetext DangSmokeBombsText
 	waitbutton
 	closetext
+	applymovement OLIVINELIGHTHOUSE6F_MONSTER2, RosaMovesMovement
+	setevent EVENT_LIGHTHOUSE_MONSTER2
+	clearevent EVENT_LIGHTHOUSE_MONSTER
 	appear OLIVINELIGHTHOUSE6F_MONSTER
-	applymovement OLIVINELIGHTHOUSE6F_MONSTER, RosaMovesMovement
-	moveobject OLIVINELIGHTHOUSE6F_MONSTER, 8, 9
 	opentext
 	writetext ThisIsRosaText
 	waitbutton
@@ -95,6 +97,7 @@ OlivineLighthouse6F_MapScripts:
 	buttonsound
 	verbosegiveitem LAPRAS_CALLA
 	setevent EVENT_GOT_LAPRAS_CALLA
+	disappear OLIVINELIGHTHOUSE6F_MONSTER2
 	writetext ThatsSurfText
 	waitbutton
 	closetext
@@ -144,8 +147,10 @@ OlivineLighthouse6F_MapScripts:
 	writetext DangSmokeBombsText
 	waitbutton
 	closetext
+	applymovement OLIVINELIGHTHOUSE6F_MONSTER2, RosaMovesMovement
+	setevent EVENT_LIGHTHOUSE_MONSTER2
+	clearevent EVENT_LIGHTHOUSE_MONSTER
 	appear OLIVINELIGHTHOUSE6F_MONSTER
-	applymovement OLIVINELIGHTHOUSE6F_MONSTER, RosaMovesMovement
 	opentext
 	writetext ThisIsRosaText
 	waitbutton
@@ -161,6 +166,7 @@ OlivineLighthouse6F_MapScripts:
 	buttonsound
 	verbosegiveitem LAPRAS_CALLA
 	setevent EVENT_GOT_LAPRAS_CALLA
+	disappear OLIVINELIGHTHOUSE6F_MONSTER2
 	writetext ThatsSurfText
 	waitbutton
 	closetext
@@ -688,11 +694,12 @@ OlivineLighthouse6F_MapEvents:
 
 	db 0 ; bg events
 
-	db 7 ; object events
+	db 8 ; object events
 	object_event  9,  8, SPRITE_BYRON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_OLIVINE_LIGHTHOUSE_JASMINE
-	object_event  8,  9, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, -1
+	object_event  8,  9, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, EVENT_LIGHTHOUSE_MONSTER
 	object_event  3,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OlivineLighthouse6FSuperPotion, EVENT_OLIVINE_LIGHTHOUSE_6F_SUPER_POTION
 	object_event  9, 10, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_LIGHTHOUSE_MIYAMOTO
 	object_event  9, 15, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LIGHTHOUSE6F_RIVAL1
 	object_event  9, 15, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LIGHTHOUSE6F_RIVAL2
 	object_event  9, 15, SPRITE_SHERLES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LIGHTHOUSE6F_SHERLES
+	object_event  8,  6, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, EVENT_LIGHTHOUSE_MONSTER2

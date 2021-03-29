@@ -135,10 +135,10 @@ CianwoodGymBoulder:
 	jumpstd strengthboulder
 
 CianwoodGymStatue:
-	checkflag ENGINE_STORMBADGE
-	iftrue .Beaten
 	checkevent EVENT_WILD_AREA_RIVAL_BEAT
 	iftrue .RivalBeaten
+	checkflag ENGINE_STORMBADGE
+	iftrue .Beaten
 	jumpstd gymstatue4
 .Beaten:
 	gettrainername STRING_BUFFER_4, CHIGUSA, CHIGUSA1
@@ -530,7 +530,7 @@ CianwoodGym_MapEvents:
 	db 10 ; object events
 	object_event  3,  4, SPRITE_CHUCK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerApprenticeChuck, -1
 	object_event  2, 12, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltYoshi, -1
-	object_event  3,  9, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltNob, -1
+	object_event  6,  9, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltNob, -1
 	object_event  5,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBlackbeltLung, -1
 	object_event  5,  1, SPRITE_CHIGUSA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodGymChigusaScript, -1
 	object_event  3,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1

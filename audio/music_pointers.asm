@@ -106,3 +106,8 @@ Music:
 	dba Music_SuicuneBattle
 	dba Music_BattleTowerLobby
 	dba Music_MobileCenter
+	dba Music_Route47
+	dba Music_SafariZoneGate
+	dba Music_SafariZone
+	dba Music_Anthem
+	dba Music_MewtwoBattle

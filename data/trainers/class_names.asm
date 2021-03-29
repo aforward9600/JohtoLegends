@@ -78,3 +78,4 @@ TrainerClassNames::
 	db "Passerby@"
 	db "Boss@"
 	db "Tourist@"
+	db "Engineer@"

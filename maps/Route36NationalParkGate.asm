@@ -486,9 +486,9 @@ Route36NationalParkGateOfficer1AskToParticipateText:
 	line "ple."
 
 	para "Using one of your"
-	line "#MON, catch a"
+	line "#mon, catch a"
 
-	para "bug #MON to be"
+	para "bug #mon to be"
 	line "judged."
 
 	para "Would you like to"
@@ -496,37 +496,37 @@ Route36NationalParkGateOfficer1AskToParticipateText:
 	done
 
 Route36NationalParkGateOfficer1GiveParkBallsText:
-	text "Here are the PARK"
-	line "BALLS for the"
+	text "Here are the Bug"
+	line "Balls for the"
 	cont "Contest."
 	done
 
 Route36NationalParkGatePlayerReceivedParkBallsText:
 	text "<PLAYER> received"
-	line "20 PARK BALLS."
+	line "20 Bug Balls."
 	done
 
 Route36NationalParkGateOfficer1ExplainsRulesText:
 	text "The person who"
 	line "gets the strong-"
-	cont "est bug #MON"
+	cont "est bug #mon"
 	cont "is the winner."
 
 	para "You have 20"
 	line "minutes."
 
 	para "If you run out of"
-	line "PARK BALLS, you're"
+	line "Bug Balls, you're"
 	cont "done."
 
 	para "You can keep the"
-	line "last #MON you"
+	line "last #mon you"
 	cont "catch as your own."
 
 	para "Go out and catch"
 	line "the strongest bug"
 
-	para "#MON you can"
+	para "#mon you can"
 	line "find!"
 	done
 
@@ -534,14 +534,14 @@ Route36NationalParkGateOfficer1AskToUseFirstMonText:
 	text "Uh-oh…"
 
 	para "You have more than"
-	line "one #MON."
+	line "one #mon."
 
 	para "You'll have to use"
 	line "@"
 	text_ram wStringBuffer3
 	text ", the"
 
-	para "first #MON in"
+	para "first #mon in"
 	line "your party."
 
 	para "Is that OK with"
@@ -550,19 +550,19 @@ Route36NationalParkGateOfficer1AskToUseFirstMonText:
 
 Route36NationalParkGateOfficer1WellHoldYourMonText:
 	text "Fine, we'll hold"
-	line "your other #MON"
+	line "your other #mon"
 	cont "while you compete."
 	done
 
 Route36NationalParkGatePlayersMonLeftWithHelperText:
-	text "<PLAYER>'s #MON"
+	text "<PLAYER>'s #mon"
 	line "were left with the"
-	cont "CONTEST HELPER."
+	cont "Contest Helper."
 	done
 
 Route36NationalParkGateOfficer1ChooseMonAndComeBackText:
 	text "Please choose the"
-	line "#MON to be used"
+	line "#mon to be used"
 
 	para "in the Contest,"
 	line "then come see me."
@@ -576,13 +576,13 @@ Route36NationalParkGateOfficer1TakePartInFutureText:
 
 Route36NationalParkGateOfficer1FirstMonCantBattleText:
 	text "Uh-oh…"
-	line "The first #MON"
+	line "The first #mon"
 
 	para "in your party"
 	line "can't battle."
 
 	para "Please switch it"
-	line "with the #MON"
+	line "with the #mon"
 
 	para "you want to use,"
 	line "then come see me."
@@ -592,29 +592,29 @@ Route36NationalParkGateOfficer1MakeRoomText:
 	text "Uh-oh…"
 	line "Both your party"
 
-	para "and your PC BOX"
+	para "and your ADS Box"
 	line "are full."
 
 	para "You have no room"
 	line "to put the bug"
-	cont "#MON you catch."
+	cont "#mon you catch."
 
 	para "Please make room"
 	line "in your party or"
 
-	para "your PC BOX, then"
+	para "your ADS Box, then"
 	line "come see me."
 	done
 
 Route36NationalParkGateOfficer1EggAsFirstMonText:
 	text "Uh-oh…"
-	line "You have an EGG as"
+	line "You have an Egg as"
 
-	para "the first #MON"
+	para "the first #mon"
 	line "in your party."
 
 	para "Please switch it"
-	line "with the #MON"
+	line "with the #mon"
 
 	para "you want to use,"
 	line "then come see me."
@@ -653,23 +653,23 @@ Route36NationalParkGateOfficer1ContestIsOverText:
 	done
 
 Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText:
-	text "Some #MON can"
+	text "Some #mon can"
 	line "only be seen in"
-	cont "the PARK."
+	cont "the Forest."
 	done
 
 BugCatchingContestant1BText:
-	text "DON: Wow, you beat"
+	text "Don: Wow, you beat"
 	line "me. You're pretty"
 	cont "good."
 	done
 
 BugCatchingContestant1BStillCompetingText:
-	text "DON: Luck plays a"
+	text "Don: Luck plays a"
 	line "big part in this."
 
 	para "You never know"
-	line "what #MON will"
+	line "what #mon will"
 	cont "appear."
 	done
 
@@ -823,14 +823,14 @@ UnusedBugCatchingContestExplanationText:
 	line "you also get to"
 
 	para "keep the bug"
-	line "#MON you may"
+	line "#mon you may"
 
 	para "have at the end of"
 	line "the contest."
 	done
 
 Route36NationalParkGateOfficer1WellHoldPrizeText:
-	text "Uh-oh… Your PACK"
+	text "Uh-oh… Your Pack"
 	line "is full."
 
 	para "We'll hold on to"

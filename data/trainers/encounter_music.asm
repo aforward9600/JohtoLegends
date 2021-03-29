@@ -81,3 +81,4 @@ TrainerEncounterMusic::
 	db MUSIC_ROCKET_ENCOUNTER      ; passerby
 	db MUSIC_ROCKET_ENCOUNTER      ; miyamoto
 	db MUSIC_LASS_ENCOUNTER        ; tourist
+	db MUSIC_HIKER_ENCOUNTER       ; engineer

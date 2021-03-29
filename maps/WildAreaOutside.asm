@@ -81,10 +81,14 @@ RivalWalksUpLeft:
 	disappear WILDAREAOUTSIDE_KRIS
 	setevent EVENT_WILD_AREA_RIVAL_BEAT
 	clearevent EVENT_OLIVINE_GYM_JASMINE
+	setevent EVENT_WILD_AREA_5_RIVAL2
+	setevent EVENT_CIANWOOD_GYM_RIVAL1
+	setscene SCENE_DEFAULT
 	special FadeOutMusic
 	pause 10
 	special RestartMapMusic
 	waitsfx
+	playmapmusic
 	end
 
 .Female1:
@@ -138,15 +142,19 @@ RivalWalksUpLeft:
 	writetext ThisIsTheWildAreaText
 	waitbutton
 	closetext
-	applymovement WILDAREAOUTSIDE_CHRIS, RivalLeavesMovement
+	applymovement WILDAREAOUTSIDE_CHRIS, RivalLeavesWildAreaMovement
 	playsound SFX_EXIT_BUILDING
 	disappear WILDAREAOUTSIDE_CHRIS
 	setevent EVENT_WILD_AREA_RIVAL_BEAT
 	clearevent EVENT_OLIVINE_GYM_JASMINE
+	setevent EVENT_WILD_AREA_5_RIVAL1
+	setevent EVENT_CIANWOOD_GYM_RIVAL2
+	setscene SCENE_DEFAULT
 	special FadeOutMusic
 	pause 10
 	special RestartMapMusic
 	waitsfx
+	playmapmusic
 	end
 
 RivalWalksUpRight:
@@ -155,7 +163,7 @@ RivalWalksUpRight:
 	iftrue .Female2
 	showemote EMOTE_SHOCK, PLAYER, 15
 	turnobject, PLAYER, DOWN
-	moveobject WILDAREAOUTSIDE_KRIS, 8, 11
+	moveobject WILDAREAOUTSIDE_KRIS, 8, 12
 	appear WILDAREAOUTSIDE_KRIS
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	applymovement WILDAREAOUTSIDE_KRIS, RivalMovesUp
@@ -209,15 +217,19 @@ RivalWalksUpRight:
 	disappear WILDAREAOUTSIDE_KRIS
 	setevent EVENT_WILD_AREA_RIVAL_BEAT
 	clearevent EVENT_OLIVINE_GYM_JASMINE
+	setevent EVENT_WILD_AREA_5_RIVAL2
+	setevent EVENT_CIANWOOD_GYM_RIVAL1
+	setscene SCENE_DEFAULT
 	special FadeOutMusic
 	pause 10
 	special RestartMapMusic
 	waitsfx
+	playmapmusic
 	end
 
 .Female2:
 	turnobject, PLAYER, DOWN
-	moveobject WILDAREAOUTSIDE_CHRIS, 8, 11
+	moveobject WILDAREAOUTSIDE_CHRIS, 8, 12
 	appear WILDAREAOUTSIDE_CHRIS
 	showemote EMOTE_SHOCK, PLAYER, 15
 	playmusic MUSIC_RIVAL_ENCOUNTER
@@ -272,10 +284,14 @@ RivalWalksUpRight:
 	disappear WILDAREAOUTSIDE_CHRIS
 	setevent EVENT_WILD_AREA_RIVAL_BEAT
 	clearevent EVENT_OLIVINE_GYM_JASMINE
+	setevent EVENT_WILD_AREA_5_RIVAL1
+	setevent EVENT_CIANWOOD_GYM_RIVAL2
+	setscene SCENE_DEFAULT
 	special FadeOutMusic
 	pause 10
 	special RestartMapMusic
 	waitsfx
+	playmapmusic
 	end
 
 WildAreaOutsideOldManScript:
@@ -293,7 +309,6 @@ RivalMovesUp:
 	step_end
 
 RivalLeavesWildAreaMovement:
-	step UP
 	step UP
 	step_end
 

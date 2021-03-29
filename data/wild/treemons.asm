@@ -18,8 +18,8 @@ TreeMonSet_City:
 TreeMonSet_Canyon:
 ; common
 	dbbw 50, 10, SPEAROW
-	dbbw 15, 10, SPEAROW
-	dbbw 15, 10, SPEAROW
+	dbbw 15, 10, HERACROSS
+	dbbw 15, 10, HERACROSS
 	dbbw 10, 10, AIPOM
 	dbbw  5, 10, AIPOM
 	dbbw  5, 10, AIPOM
@@ -37,8 +37,8 @@ TreeMonSet_Town:
 ; common
 	dbbw 50, 10, SPEAROW
 	dbbw 15, 10, EKANS
-	dbbw 15, 10, SPEAROW
-	dbbw 10, 10, AIPOM
+	dbbw 15, 10, HERACROSS
+	dbbw 10, 10, HERACROSS
 	dbbw  5, 10, AIPOM
 	dbbw  5, 10, AIPOM
 	db -1
@@ -54,8 +54,8 @@ TreeMonSet_Town:
 TreeMonSet_Route:
 ; common
 	dbbw 50, 10, HOOTHOOT
-	dbbw 15, 10, SPINARAK
-	dbbw 15, 10, LEDYBA
+	dbbw 15, 10, PINECO
+	dbbw 15, 10, PINECO
 	dbbw 10, 10, EXEGGCUTE
 	dbbw  5, 10, EXEGGCUTE
 	dbbw  5, 10, EXEGGCUTE
@@ -72,8 +72,8 @@ TreeMonSet_Route:
 TreeMonSet_Kanto:
 ; common
 	dbbw 50, 10, HOOTHOOT
-	dbbw 15, 10, EKANS
-	dbbw 15, 10, HOOTHOOT
+	dbbw 15, 10, PINECO
+	dbbw 15, 10, PINECO
 	dbbw 10, 10, EXEGGCUTE
 	dbbw  5, 10, EXEGGCUTE
 	dbbw  5, 10, EXEGGCUTE
@@ -91,7 +91,7 @@ TreeMonSet_Lake:
 ; common
 	dbbw 50, 10, HOOTHOOT
 	dbbw 15, 10, VENONAT
-	dbbw 15, 10, HOOTHOOT
+	dbbw 15, 10, PINECO
 	dbbw 10, 10, EXEGGCUTE
 	dbbw  5, 10, EXEGGCUTE
 	dbbw  5, 10, EXEGGCUTE

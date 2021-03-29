@@ -122,7 +122,7 @@ CHRIS EQU __enum__
 
 	trainerclass SCHOOLBOY ; 17
 	const FINN
-	const KIPP
+	const PIERCE
 	const ALAN1
 	const JOHNNY
 	const DANNY
@@ -149,7 +149,7 @@ CHRIS EQU __enum__
 	trainerclass BIRD_KEEPER ; 18
 	const ROD
 	const ABE
-	const BRYAN
+	const GUNNER
 	const THEO
 	const TOBY
 	const DENIS
@@ -251,7 +251,7 @@ CHRIS EQU __enum__
 	const OLIVIA
 
 	trainerclass POKEMANIAC ; 1e
-	const LARRY
+	const ALVIN
 	const ANDREW
 	const CALVIN
 	const SHANE
@@ -302,7 +302,7 @@ CHRIS EQU __enum__
 	const GRUNTM_31
 
 	trainerclass GENTLEMAN ; 20
-	const PRESTON
+	const CROFTON
 	const EDWARD
 	const GREGORY
 	const VIRGIL
@@ -313,7 +313,7 @@ CHRIS EQU __enum__
 	const PAM
 
 	trainerclass TEACHER ; 22
-	const COLETTE
+	const ABIGAIL
 	const HILLARY
 	const SHIRLEY
 	const CADI
@@ -743,6 +743,9 @@ CHRIS EQU __enum__
 
 	trainerclass TOURIST ; 4e
 	const CYNTHIA1
+
+	trainerclass ENGINEER ; 4f
+	const HARVEY1
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

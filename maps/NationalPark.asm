@@ -11,13 +11,22 @@
 	const NATIONALPARK_POKEFAN_M
 	const NATIONALPARK_LASS2
 	const NATIONALPARK_POKE_BALL1
-	const NATIONALPARK_GAMEBOY_KID
+	const NATIONALPARK_ENGINEER
 	const NATIONALPARK_POKE_BALL2
+	const NATIONALPARK_ENGINEER2
 
 NationalPark_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene1 ; SCENE_FINISHED
 
 	db 0 ; callbacks
+
+.DummyScene0:
+	end
+
+.DummyScene1:
+	end
 
 NationalParkLassScript:
 	jumptextfaceplayer NationalParkLassText
@@ -42,8 +51,16 @@ NationalParkTeacher1Script:
 	closetext
 	end
 
-NationalParkYoungster1Script:
-	jumptextfaceplayer NationalParkYoungster1Text
+BirdKeeperGunner:
+	trainer BIRD_KEEPER, GUNNER, EVENT_BEAT_BIRD_KEEPER_GUNNER, BirdKeeperGunnerSeenText, BirdKeeperGunnerBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BirdKeeperGunnerAfterBattleText
+	waitbutton
+	closetext
+	end
 
 NationalParkYoungster2Script:
 	jumptextfaceplayer NationalParkYoungster2Text
@@ -52,138 +69,43 @@ NationalParkTeacher2Script:
 	jumptextfaceplayer NationalParkTeacher2Text
 
 NationalParkPersian:
+	refreshscreen
+	pokepic MEOWTH
+	cry MEOWTH
+	waitbutton
+	closepokepic
 	faceplayer
 	opentext
 	writetext NationalParkPersianText
-	cry PERSIAN
 	waitbutton
 	closetext
 	end
 
-NationalParkGameboyKidScript:
+NationalParkEngineerScript:
 	faceplayer
 	opentext
-	writetext NationalParkGameboyKidText
+	writetext NationalParkEngineerText
 	waitbutton
 	closetext
-	turnobject NATIONALPARK_GAMEBOY_KID, DOWN
 	end
 
-TrainerSchoolboyJack1:
-	trainer SCHOOLBOY, FINN, EVENT_BEAT_SCHOOLBOY_FINN, SchoolboyJack1SeenText, SchoolboyJack1BeatenText, 0, .Script
+NationalParkEngineer2Script:
+	faceplayer
+	opentext
+	writetext NationalParkEngineer2Text
+	waitbutton
+	closetext
+	end
+
+TrainerEngineerHarvey:
+	trainer ENGINEER, HARVEY1, EVENT_BEAT_ENGINEER_HARVEY, EngineerHarveySeenText, EngineerHarveyBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_SCHOOLBOY_JACK
 	endifjustbattled
 	opentext
-	checkflag ENGINE_JACK
-	iftrue .Rematch
-	checkcellnum PHONE_SCHOOLBOY_JACK
-	iftrue .NumberAccepted
-	checkevent EVENT_JACK_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskAgain
-	writetext UnknownText_0x5c4f3
-	buttonsound
-	setevent EVENT_JACK_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
-	sjump .RequestNumber
-
-.AskAgain:
-	scall .AskNumber2
-.RequestNumber:
-	askforphonenumber PHONE_SCHOOLBOY_JACK
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, SCHOOLBOY, FINN
-	scall .RegisteredNumber
-	sjump .NumberAccepted
-
-.Rematch:
-	scall .RematchStd
-	winlosstext SchoolboyJack1BeatenText, 0
-	readmem wJackFightCount
-	ifequal 4, .Fight4
-	ifequal 3, .Fight3
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight4:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight4
-.Fight3:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight3
-.Fight2:
-	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .LoadFight2
-.Fight1:
-	checkflag ENGINE_FLYPOINT_OLIVINE
-	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer SCHOOLBOY, FINN
-	startbattle
-	reloadmapafterbattle
-	loadmem wJackFightCount, 1
-	clearflag ENGINE_JACK
-	end
-
-.LoadFight1:
-	loadtrainer SCHOOLBOY, JACK2
-	startbattle
-	reloadmapafterbattle
-	loadmem wJackFightCount, 2
-	clearflag ENGINE_JACK
-	end
-
-.LoadFight2:
-	loadtrainer SCHOOLBOY, JACK3
-	startbattle
-	reloadmapafterbattle
-	loadmem wJackFightCount, 3
-	clearflag ENGINE_JACK
-	end
-
-.LoadFight3:
-	loadtrainer SCHOOLBOY, JACK4
-	startbattle
-	reloadmapafterbattle
-	loadmem wJackFightCount, 4
-	clearflag ENGINE_JACK
-	end
-
-.LoadFight4:
-	loadtrainer SCHOOLBOY, JACK5
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JACK
-	end
-
-.AskNumber1:
-	jumpstd asknumber1m
-	end
-
-.AskNumber2:
-	jumpstd asknumber2m
-	end
-
-.RegisteredNumber:
-	jumpstd registerednumberm
-	end
-
-.NumberAccepted:
-	jumpstd numberacceptedm
-	end
-
-.NumberDeclined:
-	jumpstd numberdeclinedm
-	end
-
-.PhoneFull:
-	jumpstd phonefullm
-	end
-
-.RematchStd:
-	jumpstd rematchm
+	writetext EngineerHarveyAfterBattleText
+	waitbutton
+	closetext
 	end
 
 TrainerPokefanmWilliam:
@@ -290,20 +212,29 @@ TrainerLassKrise:
 NationalParkRelaxationSquareSign:
 	jumptext NationalParkRelaxationSquareText
 
-NationalParkBattleNoticeSign:
-	jumptext NationalParkBattleNoticeText
-
-NationalParkTrainerTipsSign:
-	jumptext NationalParkTrainerTipsText
-
 NationalParkParlyzHeal:
 	itemball PARLYZ_HEAL
 
 NationalParkTMDig:
-	itemball TM_DIG
+	itemball TM_SLEEP_TALK
 
 NationalParkHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
+
+NationalParkEngineerStopsYou:
+	turnobject NATIONALPARK_ENGINEER, DOWN
+	turnobject PLAYER, UP
+	opentext
+	writetext ConstructionGoingOnText
+	waitbutton
+	closetext
+	applymovement PLAYER, EngineerMovesYouMovement
+	turnobject NATIONALPARK_ENGINEER, RIGHT
+	end
+
+EngineerMovesYouMovement:
+	step RIGHT
+	step_end
 
 NationalParkLassText:
 	text "Look! Check out my"
@@ -323,28 +254,26 @@ NationalParkPokefanFText:
 	done
 
 NationalParkTeacher1Text:
-	text "Pay attention,"
-	line "please!"
+	text "I wanna be a teac-"
+	line "her someday!"
 
-	para "…Oops, I have to"
-	line "quit thinking like"
+	para "What about you?"
 
-	para "a teacher all the"
-	line "time."
+	para "What do you wanna"
+	line "be?"
 
-	para "You must be a"
-	line "#MON trainer."
+	para "If you wanna be a"
+	line "#mon trainer,"
+	cont "or a teacher, you"
+	cont "need to be quick."
 
-	para "Since you're work-"
-	line "ing so hard, I"
-
-	para "want you to have"
-	line "this."
+	para "This will help"
+	line "with that."
 	done
 
 NationalParkTeacher1Text_GotQuickClaw:
-	text "Let a #MON hold"
-	line "that QUICK CLAW."
+	text "Let a #mon hold"
+	line "that Quick Claw."
 
 	para "Sometimes it will"
 	line "strike first"
@@ -375,47 +304,40 @@ NationalParkTeacher2Text:
 	done
 
 NationalParkPersianText:
-	text "PERSIAN: Fufushaa!"
+	text "Meowth: Fufushaa!"
 	done
 
-NationalParkGameboyKidText:
-	text "I'm printing out"
-	line "my #DEX."
+NationalParkEngineerText:
+	text "The construction"
+	line "is going smoothly."
 
-	para "You can also print"
-	line "out stuff like"
+	para "After we finish"
+	line "the fountain, then"
+	cont "we'll clear out"
+	cont "the rest of the"
+	cont "trees."
 
-	para "MAIL and your PC"
-	line "BOXES."
+	para "The grass around"
+	line "the fountain will"
+	cont "be shaped like a"
+	cont "# Ball."
 	done
 
-SchoolboyJack1SeenText:
-	text "The world of"
-	line "#MON is deep."
+EngineerHarveySeenText:
+	text "Go away kid."
 
-	para "There are still"
-	line "lots of things we"
-	cont "don't know."
-
-	para "But I know more"
-	line "than you do!"
+	para "Can't you see I'm"
+	line "on my break?"
 	done
 
-SchoolboyJack1BeatenText:
-	text "Wha-wha-what?"
+EngineerHarveyBeatenText:
+	text "Break's over, I"
+	line "guess..."
 	done
 
-UnknownText_0x5c4f3:
-	text "There is a lot"
-	line "to learn."
-
-	para "For example…"
-
-	para "There are 50 kinds"
-	line "of TMs."
-
-	para "Traded #MON"
-	line "level up faster."
+EngineerHarveyAfterBattleText:
+	text "Well, back to"
+	line "work for me."
 	done
 
 PokefanfBeverly1SeenText:
@@ -459,6 +381,22 @@ PokefanmWilliamAfterBattleText:
 	line "being most lovely."
 	done
 
+BirdKeeperGunnerSeenText:
+	text "The bugs here are"
+	line "easy pickins' for"
+	cont "my birds!"
+	done
+
+BirdKeeperGunnerBeatenText:
+	text "My birds!"
+	done
+
+BirdKeeperGunnerAfterBattleText:
+	text "Bugs are easy, but"
+	line "other trainers are"
+	cont "another story."
+	done
+
 UnknownText_0x5c68a:
 	text "My friend keeps a"
 	line "MARILL!"
@@ -487,28 +425,41 @@ LassKriseAfterBattleText:
 	cont "because I'm cute!"
 	done
 
+ConstructionGoingOnText:
+	text "Sorry, but we're"
+	line "still doing some"
+	cont "construction on"
+	cont "the fountain."
+
+	para "There's a path"
+	line "through the forest"
+	cont "if you want to get"
+	cont "by."
+
+	para "Be careful."
+
+	para "There's plenty of"
+	line "weird people out"
+	cont "there, looking for"
+	cont "bugs."
+	done
+
+NationalParkEngineer2Text:
+	text "I'd say this park"
+	line "is going to be a"
+	cont "nice sight when"
+	cont "it's all finished."
+
+	para "Needs some fences,"
+	line "though, don't you"
+	cont "think?"
+	done
+
 NationalParkRelaxationSquareText:
-	text "RELAXATION SQUARE"
-	line "NATIONAL PARK"
-	done
+	text "National Forest"
 
-NationalParkBattleNoticeText:
-	text "What is this"
-	line "notice?"
-
-	para "Please battle only"
-	line "in the grass."
-
-	para "NATIONAL PARK"
-	line "WARDEN'S OFFICE"
-	done
-
-NationalParkTrainerTipsText:
-	text "TRAINER TIPS"
-
-	para "Print out MAIL by"
-	line "opening it then"
-	cont "pressing START."
+	para "National Park"
+	line "under construction"
 	done
 
 NationalPark_MapEvents:
@@ -520,26 +471,26 @@ NationalPark_MapEvents:
 	warp_event 10, 47, ROUTE_35_NATIONAL_PARK_GATE, 1
 	warp_event 11, 47, ROUTE_35_NATIONAL_PARK_GATE, 2
 
-	db 0 ; coord events
+	db 1 ; coord events
+	coord_event 29, 19, SCENE_DEFAULT, NationalParkEngineerStopsYou
 
-	db 4 ; bg events
-	bg_event 14, 44, BGEVENT_READ, NationalParkRelaxationSquareSign
-	bg_event 27, 31, BGEVENT_READ, NationalParkBattleNoticeSign
-	bg_event  6, 47, BGEVENT_ITEM, NationalParkHiddenFullHeal
-	bg_event 12,  4, BGEVENT_READ, NationalParkTrainerTipsSign
+	db 2 ; bg events
+	bg_event 33, 16, BGEVENT_READ, NationalParkRelaxationSquareSign
+	bg_event  2, 34, BGEVENT_ITEM, NationalParkHiddenFullHeal
 
-	db 14 ; object events
+	db 15 ; object events
 	object_event 15, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkLassScript, -1
 	object_event 14,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPokefanFScript, -1
-	object_event 27, 40, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher1Script, -1
-	object_event 11, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster1Script, -1
-	object_event 10, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster2Script, -1
+	object_event 23, 40, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher1Script, -1
+	object_event 11, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, BirdKeeperGunner, -1
+	object_event 11, 40, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster2Script, -1
 	object_event 17, 41, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher2Script, -1
-	object_event 26, 40, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPersian, -1
-	object_event 27, 23, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyJack1, -1
+	object_event 22, 40, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPersian, -1
+	object_event  3,  2, SPRITE_ENGINEER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerEngineerHarvey, -1
 	object_event 18, 29, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanfBeverly1, -1
 	object_event 16,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanmWilliam, -1
 	object_event  8, 14, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassKrise, -1
 	object_event 35, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkParlyzHeal, EVENT_NATIONAL_PARK_PARLYZ_HEAL
-	object_event 26,  6, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkGameboyKidScript, -1
-	object_event  1, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkTMDig, EVENT_NATIONAL_PARK_TM_DIG
+	object_event 29, 18, SPRITE_ENGINEER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkEngineerScript, -1
+	object_event  5, 50, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkTMDig, EVENT_NATIONAL_PARK_TM_SLEEP_TALK
+	object_event 13, 20, SPRITE_ENGINEER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkEngineer2Script, -1

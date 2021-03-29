@@ -156,3 +156,11 @@ SECTION "Cries", ROMX
 INCLUDE "data/pokemon/cries.asm"
 
 INCLUDE "audio/cries.asm"
+
+SECTION "New Songs", ROMX
+
+INCLUDE "audio/music/route47.asm"
+INCLUDE "audio/music/wildareaoutside.asm"
+INCLUDE "audio/music/wildarea.asm"
+INCLUDE "audio/music/anthem.asm"
+INCLUDE "audio/music/mewtwobattle.asm"

@@ -11,11 +11,20 @@
 	const NATIONALPARKBUGCONTEST_YOUNGSTER7
 	const NATIONALPARKBUGCONTEST_POKE_BALL1
 	const NATIONALPARKBUGCONTEST_POKE_BALL2
+	const NATIONALPARKBUGCONTEST_ENGINEER
 
 NationalParkBugContest_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene1 ; SCENE_FINISHED
 
 	db 0 ; callbacks
+
+.DummyScene0:
+	end
+
+.DummyScene1:
+	end
 
 BugCatchingContestant1AScript:
 	faceplayer
@@ -110,10 +119,29 @@ NationalParkBugContestParlyzHeal:
 	itemball PARLYZ_HEAL
 
 NationalParkBugContestTMDig:
-	itemball TM_DIG
+	itemball TM_SLEEP_TALK
 
 NationalParkBugContestHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
+
+NationalParkBugContestEngineerScript:
+	faceplayer
+	opentext
+	writetext NationalParkBugContestEngineerText
+	waitbutton
+	closetext
+	end
+
+NationalParkBugContestEngineerStopsYou:
+	turnobject NATIONALPARKBUGCONTEST_ENGINEER, DOWN
+	turnobject PLAYER, UP
+	opentext
+	writetext ConstructionGoingOnText
+	waitbutton
+	closetext
+	applymovement PLAYER, EngineerMovesYouMovement
+	turnobject NATIONALPARKBUGCONTEST_ENGINEER, RIGHT
+	end
 
 BugCatchingContestant1AText:
 	text "DON: I'm going to"
@@ -194,9 +222,27 @@ BugCatchingContestant10AText:
 	line "for sure."
 	done
 
+NationalParkBugContestEngineerText:
+	text "The construction"
+	line "is going smoothly."
+
+	para "After we finish"
+	line "the fountain, then"
+	cont "we'll clear out"
+	cont "the rest of the"
+	cont "trees."
+
+	para "The grass around"
+	line "the fountain will"
+	cont "be shaped like a"
+	cont "# Ball."
+	done
+
 NationalParkBugContestRelaxationSquareText:
-	text "RELAXATION SQUARE"
-	line "NATIONAL PARK"
+	text "National Forest"
+
+	para "National Park"
+	line "under construction"
 	done
 
 NationalParkBugContestBattleNoticeText:
@@ -227,15 +273,14 @@ NationalParkBugContest_MapEvents:
 	warp_event 10, 47, ROUTE_35_NATIONAL_PARK_GATE, 1
 	warp_event 11, 47, ROUTE_35_NATIONAL_PARK_GATE, 1
 
-	db 0 ; coord events
+	db 1 ; coord events
+	coord_event 29, 19, SCENE_DEFAULT, NationalParkBugContestEngineerStopsYou
 
-	db 4 ; bg events
-	bg_event 14, 44, BGEVENT_READ, NationalParkBugContestRelaxationSquareSign
-	bg_event 27, 31, BGEVENT_READ, NationalParkBugContestBattleNoticeSign
-	bg_event  6, 47, BGEVENT_ITEM, NationalParkBugContestHiddenFullHeal
-	bg_event 12,  4, BGEVENT_READ, NationalParkBugContestTrainerTipsSign
+	db 2 ; bg events
+	bg_event 33, 16, BGEVENT_READ, NationalParkBugContestRelaxationSquareSign
+	bg_event  2, 34, BGEVENT_ITEM, NationalParkBugContestHiddenFullHeal
 
-	db 12 ; object events
+	db 13 ; object events
 	object_event 19, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant1AScript, EVENT_BUG_CATCHING_CONTESTANT_1A
 	object_event 28, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant2AScript, EVENT_BUG_CATCHING_CONTESTANT_2A
 	object_event  9, 18, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant3AScript, EVENT_BUG_CATCHING_CONTESTANT_3A
@@ -247,4 +292,5 @@ NationalParkBugContest_MapEvents:
 	object_event 16,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant9AScript, EVENT_BUG_CATCHING_CONTESTANT_9A
 	object_event 17, 34, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant10AScript, EVENT_BUG_CATCHING_CONTESTANT_10A
 	object_event 35, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkBugContestParlyzHeal, EVENT_NATIONAL_PARK_PARLYZ_HEAL
-	object_event  1, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkBugContestTMDig, EVENT_NATIONAL_PARK_TM_DIG
+	object_event  5, 50, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkBugContestTMDig, EVENT_NATIONAL_PARK_TM_SLEEP_TALK
+	object_event 29, 18, SPRITE_ENGINEER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkBugContestEngineerScript, -1

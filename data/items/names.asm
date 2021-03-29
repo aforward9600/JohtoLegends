@@ -150,7 +150,7 @@ ItemNames::
 	db "Oran Berry@"
 	db "Sitrus Berry@"
 	db "Squirtbottle@"
-	db "Park Ball@"
+	db "Bug Ball@"
 	db "Rainbow Wing@"
 	db "Dusk Stone@"
 	db "Ice Stone@"

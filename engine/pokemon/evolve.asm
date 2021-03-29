@@ -228,6 +228,9 @@ EvolveAfterBattle_MasterLoop:
 	ld hl, Text_CongratulationsYourPokemon
 	call PrintText
 
+	ld a, $1
+	ld [wMonDidEvolve], a
+
 	ld a, [wEvolutionNewSpecies]
 	ld [wCurSpecies], a
 	ld [wTempMonSpecies], a
@@ -352,6 +355,10 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wMonTriedToEvolve]
 	and a
 	call nz, RestartMapMusic
+
+	ld a, $0
+	ld [wMonDidEvolve], a
+
 	ret
 
 UpdateSpeciesNameIfNotNicknamed:
@@ -424,25 +431,45 @@ Text_WhatEvolving:
 	text_end
 
 LearnLevelMoves:
-	ld a, [wTempSpecies]
-	ld [wCurPartySpecies], a
-	call GetPokemonIndexFromID
-	ld b, h
-	ld c, l
-	ld hl, EvosAttacksPointers
-	ld a, BANK(EvosAttacksPointers)
-	call LoadDoubleIndirectPointer
-	ldh [hTemp], a
-	call SkipEvolutions
+    ld a, [wTempSpecies]
+    ld [wCurPartySpecies], a
+    call GetPokemonIndexFromID
+    ld b, h
+    ld c, l
+    ld hl, EvosAttacksPointers
+    ld a, BANK(EvosAttacksPointers)
+    call LoadDoubleIndirectPointer
+    ldh [hTemp], a
+    call SkipEvolutions
 
 .find_move
     call GetNextEvoAttackByte
     and a
     jr z, .done
 
-	cp LEARN_EVO_MOVE
+; Store the verificaiton byte in register c
+    ld c, a 
+
+	ld a, [wMonDidEvolve]
+	and a
+
+; If there was no evolution, do not check
+    jr z, .no_evolve
+
+; Loads the move verificaiton byte back into
+; register a and proceeds with moves learned
+; during evolution
+    ld a, c
+
+    cp LEARN_EVO_MOVE
     jr z, .get_move
 
+
+; Loads the move verificaiton byte back into
+; register a and proceeds with standard 
+; level up moves
+.no_evolve
+    ld a, c
     ld b, a
     ld a, [wCurPartyLevel]
     cp b
@@ -466,31 +493,32 @@ LearnLevelMoves:
 
     ld b, NUM_MOVES
 .check_move
-	call GetNextEvoAttackByte
-	cp d
-	jr z, .has_move
-	dec b
-	jr nz, .check_move
-	jr .learn
+    call GetNextEvoAttackByte
+    cp d
+    jr z, .has_move
+    dec b
+    jr nz, .check_move
+    jr .learn
 .has_move
 
-	pop hl
-	jr .find_move
+    pop hl
+    jr .find_move
 
 .learn
-	ld a, d
-	ld [wPutativeTMHMMove], a
-	ld [wNamedObjectIndexBuffer], a
-	call GetMoveName
-	call CopyName1
-	predef LearnMove
-	pop hl
-	jr .find_move
+    ld a, d
+    ld [wPutativeTMHMMove], a
+    ld [wNamedObjectIndexBuffer], a
+    call GetMoveName
+    call CopyName1
+    predef LearnMove
+    pop hl
+    jr .find_move
+
 
 .done
-	ld a, [wCurPartySpecies]
-	ld [wTempSpecies], a
-	ret
+    ld a, [wCurPartySpecies]
+    ld [wTempSpecies], a
+    ret
 
 FillMoves:
 ; Fill in moves at de for wCurPartySpecies at wCurPartyLevel

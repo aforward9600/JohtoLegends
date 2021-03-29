@@ -365,32 +365,32 @@ JohtoGrassWildMons:
 	map_id NATIONAL_PARK
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 12, NIDORAN_M
-	dbw 12, NIDORAN_F
-	dbw 14, LEDYBA
-	dbw 13, PIDGEY
-	dbw 10, CATERPIE
-	dbw 10, WEEDLE
-	dbw 10, WEEDLE
-	dbw 10, WEEDLE
+	dbw 23, NIDORINO
+	dbw 23, NIDORINA
+	dbw 25, LEDIAN
+	dbw 25, BUTTERFREE
+	dbw 24, PINSIR
+	dbw 25, PINSIR
+	dbw 24, SCYTHER
+	dbw 25, SCYTHER
 	; day
-	dbw 12, NIDORAN_F
-	dbw 12, NIDORAN_M
-	dbw 14, SUNKERN
-	dbw 13, PIDGEY
-	dbw 10, CATERPIE
-	dbw 10, WEEDLE
-	dbw 10, WEEDLE
-	dbw 10, WEEDLE
+	dbw 23, NIDORINO
+	dbw 23, NIDORINA
+	dbw 25, LEDIAN
+	dbw 25, BUTTERFREE
+	dbw 24, PINSIR
+	dbw 25, PINSIR
+	dbw 24, SCYTHER
+	dbw 25, SCYTHER
 	; nite
-	dbw 12, PSYDUCK
-	dbw 13, HOOTHOOT
-	dbw 14, SPINARAK
-	dbw 15, HOOTHOOT
-	dbw 10, VENONAT
-	dbw 12, VENONAT
-	dbw 12, VENONAT
-	dbw 12, VENONAT
+	dbw 23, NIDORINO
+	dbw 23, NIDORINA
+	dbw 25, ARIADOS
+	dbw 25, BEEDRILL
+	dbw 24, PINSIR
+	dbw 25, PINSIR
+	dbw 24, SCYTHER
+	dbw 25, SCYTHER
 
 	map_id RUINS_OF_ALPH_OUTSIDE
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
@@ -695,62 +695,62 @@ JohtoGrassWildMons:
 	map_id MOUNT_MORTAR_2F_INSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 31, GRAVELER
-	dbw 32, MACHOKE
-	dbw 31, GEODUDE
-	dbw 30, RATICATE
-	dbw 28, MACHOP
-	dbw 30, GOLBAT
-	dbw 30, GOLBAT
-	dbw 30, GOLBAT
+	dbw 18, ZUBAT
+	dbw 20, ZUBAT
+	dbw 20, GOLBAT
+	dbw 20, MANKEY
+	dbw 19, TYROGUE
+	dbw 21, RATICATE
+	dbw 21, ONIX
+	dbw 21, ONIX
 	; day
-	dbw 31, GRAVELER
-	dbw 32, MACHOKE
-	dbw 31, GEODUDE
-	dbw 30, RATICATE
-	dbw 28, MACHOP
-	dbw 30, GOLBAT
-	dbw 30, GOLBAT
-	dbw 30, GOLBAT
+	dbw 18, ZUBAT
+	dbw 20, ZUBAT
+	dbw 20, GOLBAT
+	dbw 20, MANKEY
+	dbw 19, TYROGUE
+	dbw 21, RATICATE
+	dbw 21, ONIX
+	dbw 21, ONIX
 	; nite
-	dbw 31, GRAVELER
-	dbw 31, GEODUDE
-	dbw 30, RATICATE
-	dbw 30, GOLBAT
-	dbw 28, MARILL
-	dbw 32, GOLBAT
-	dbw 32, GOLBAT
-	dbw 30, GOLBAT
+	dbw 18, ZUBAT
+	dbw 20, ZUBAT
+	dbw 20, GOLBAT
+	dbw 20, MANKEY
+	dbw 19, TYROGUE
+	dbw 21, RATICATE
+	dbw 21, ONIX
+	dbw 21, ONIX
 
 	map_id MOUNT_MORTAR_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 15, ZUBAT
-	dbw 17, ZUBAT
-	dbw 17, GOLBAT
-	dbw 16, MACHOP
-	dbw 16, GEODUDE
-	dbw 18, RATICATE
-	dbw 18, RATICATE
-	dbw 18, RATICATE
+	dbw 18, ZUBAT
+	dbw 20, ZUBAT
+	dbw 20, GOLBAT
+	dbw 20, MANKEY
+	dbw 19, TYROGUE
+	dbw 21, RATICATE
+	dbw 21, ONIX
+	dbw 21, ONIX
 	; day
-	dbw 15, ZUBAT
-	dbw 17, ZUBAT
-	dbw 17, GOLBAT
-	dbw 16, MACHOP
-	dbw 16, GEODUDE
-	dbw 18, RATICATE
-	dbw 18, RATICATE
-	dbw 18, RATICATE
+	dbw 18, ZUBAT
+	dbw 20, ZUBAT
+	dbw 20, GOLBAT
+	dbw 20, MANKEY
+	dbw 19, TYROGUE
+	dbw 21, RATICATE
+	dbw 21, ONIX
+	dbw 21, ONIX
 	; nite
-	dbw 15, ZUBAT
-	dbw 17, ZUBAT
-	dbw 17, GOLBAT
-	dbw 16, MARILL
-	dbw 16, GEODUDE
-	dbw 18, RATICATE
-	dbw 18, RATICATE
-	dbw 18, RATICATE
+	dbw 18, ZUBAT
+	dbw 20, ZUBAT
+	dbw 20, GOLBAT
+	dbw 20, MANKEY
+	dbw 19, TYROGUE
+	dbw 21, RATICATE
+	dbw 21, ONIX
+	dbw 21, ONIX
 
 	map_id ICE_PATH_1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
@@ -1535,60 +1535,60 @@ JohtoGrassWildMons:
 	map_id ROUTE_36
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 4, LEDYBA
-	dbw 4, PIDGEY
-	dbw 5, BELLSPROUT
-	dbw 5, GROWLITHE
-	dbw 5, PIDGEY
-	dbw 6, PIDGEY
-	dbw 6, PIDGEY
-	dbw 6, PIDGEY
+	dbw 25, DROWZEE
+	dbw 24, PIDGEOTTO
+	dbw 25, WEEPINBELL
+	dbw 25, GLOOM
+	dbw 24, DODUO
+	dbw 25, DODUO
+	dbw 24, EKANS
+	dbw 25, ARBOK
 	; day
-	dbw 4, PIDGEY
-	dbw 4, PIDGEY
-	dbw 5, BELLSPROUT
-	dbw 5, GROWLITHE
-	dbw 5, PIDGEY
-	dbw 6, PIDGEY
-	dbw 6, PIDGEY
-	dbw 6, PIDGEY
+	dbw 25, DROWZEE
+	dbw 24, PIDGEOTTO
+	dbw 25, WEEPINBELL
+	dbw 25, GLOOM
+	dbw 24, DODUO
+	dbw 25, DODUO
+	dbw 24, EKANS
+	dbw 25, ARBOK
 	; nite
-	dbw 4, SPINARAK
-	dbw 4, HOOTHOOT
-	dbw 5, BELLSPROUT
-	dbw 5, HOOTHOOT
-	dbw 5, HOOTHOOT
-	dbw 5, GASTLY
-	dbw 5, GASTLY
-	dbw 5, GASTLY
+	dbw 25, DROWZEE
+	dbw 24, PIDGEOTTO
+	dbw 25, WEEPINBELL
+	dbw 25, GLOOM
+	dbw 24, NOCTOWL
+	dbw 25, NOCTOWL
+	dbw 24, HOUNDOUR
+	dbw 25, HOUNDOOM
 
 	map_id ROUTE_37
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 13, LEDYBA
-	dbw 14, GROWLITHE
+	dbw 14, NIDORAN_F
 	dbw 15, PIDGEY
-	dbw 16, VULPIX
+	dbw 16, NIDORAN_M
 	dbw 15, JIGGLYPUFF
-	dbw 15, FARFETCH_D
+	dbw 15, JIGGLYPUFF
 	dbw 15, FARFETCH_D
 	dbw 15, FARFETCH_D
 	; day
 	dbw 13, DODUO
-	dbw 14, GROWLITHE
+	dbw 14, NIDORAN_F
 	dbw 15, PIDGEY
-	dbw 16, VULPIX
+	dbw 16, NIDORAN_M
 	dbw 15, JIGGLYPUFF
-	dbw 15, MEOWTH
+	dbw 15, JIGGLYPUFF
 	dbw 15, MEOWTH
 	dbw 15, MEOWTH
 	; nite
 	dbw 13, SPINARAK
-	dbw 14, STANTLER
+	dbw 14, NIDORAN_M
 	dbw 15, HOOTHOOT
-	dbw 16, VULPIX
+	dbw 16, NIDORAN_F
 	dbw 15, JIGGLYPUFF
-	dbw 15, MURKROW
+	dbw 15, JIGGLYPUFF
 	dbw 15, MURKROW
 	dbw 15, MURKROW
 
@@ -1600,7 +1600,7 @@ JohtoGrassWildMons:
 	dbw 16, BUTTERFREE
 	dbw 17, SCYTHER
 	dbw 17, TAUROS
-	dbw 17, MILTANK
+	dbw 17, TAUROS
 	dbw 18, MILTANK
 	dbw 18, MILTANK
 	; day
@@ -1609,7 +1609,7 @@ JohtoGrassWildMons:
 	dbw 16, BUTTERFREE
 	dbw 17, SCYTHER
 	dbw 17, TAUROS
-	dbw 17, MILTANK
+	dbw 17, TAUROS
 	dbw 18, MILTANK
 	dbw 18, MILTANK
 	; nite
@@ -1618,7 +1618,7 @@ JohtoGrassWildMons:
 	dbw 16, BEEDRILL
 	dbw 17, SCYTHER
 	dbw 17, MEOWTH
-	dbw 17, MURKROW
+	dbw 17, MEOWTH
 	dbw 18, MURKROW
 	dbw 18, MURKROW
 
@@ -1630,7 +1630,7 @@ JohtoGrassWildMons:
 	dbw 17, BUTTERFREE
 	dbw 18, YANMA
 	dbw 18, MILTANK
-	dbw 18, TAUROS
+	dbw 18, MILTANK
 	dbw 19, TAUROS
 	dbw 19, TAUROS
 	; day
@@ -1639,7 +1639,7 @@ JohtoGrassWildMons:
 	dbw 17, BUTTERFREE
 	dbw 18, YANMA
 	dbw 18, MILTANK
-	dbw 18, TAUROS
+	dbw 18, MILTANK
 	dbw 19, TAUROS
 	dbw 19, TAUROS
 	; nite
@@ -1648,7 +1648,7 @@ JohtoGrassWildMons:
 	dbw 17, BEEDRILL
 	dbw 18, YANMA
 	dbw 18, MEOWTH
-	dbw 18, MURKROW
+	dbw 18, MEOWTH
 	dbw 19, MURKROW
 	dbw 19, MURKROW
 
@@ -1679,8 +1679,8 @@ JohtoGrassWildMons:
 	dbw  9, BONSLY
 	dbw  9, PICHU
 	dbw  9, HOUNDOUR
-	dbw 10, MURKROW
-	dbw 10, MURKROW
+	dbw 10, HOOTHOOT
+	dbw 10, HOOTHOOT
 
 	map_id ROUTE_43
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1720,7 +1720,7 @@ JohtoGrassWildMons:
 	dbw 8, POLIWAG
 	dbw 8, PIDGEY
 	dbw 8, POLIWAG
-	dbw 7, LICKITUNG
+	dbw 7, EKANS
 	dbw 9, CHIKORITA
 	dbw 9, CHIKORITA
 	; day
@@ -1729,7 +1729,7 @@ JohtoGrassWildMons:
 	dbw 8, POLIWAG
 	dbw 8, PIDGEY
 	dbw 8, POLIWAG
-	dbw 7, LICKITUNG
+	dbw 7, EKANS
 	dbw 9, CHIKORITA
 	dbw 9, CHIKORITA
 	; nite
@@ -1738,7 +1738,7 @@ JohtoGrassWildMons:
 	dbw 8, POLIWAG
 	dbw 8, PIDGEY
 	dbw 8, POLIWAG
-	dbw 7, LICKITUNG
+	dbw 7, EKANS
 	dbw 9, HOOTHOOT
 	dbw 9, HOOTHOOT
 

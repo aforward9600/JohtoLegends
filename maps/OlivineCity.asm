@@ -26,6 +26,10 @@ OlivineCitySailor1Script:
 	jumptextfaceplayer OlivineCitySailor1Text
 
 OlivineCityStandingYoungsterScript:
+	checkflag ENGINE_STORMBADGE
+	iftrue .GoToWildArea
+	checkevent EVENT_OLIVINE_LIGHTHOUSE_JASMINE
+	iftrue .GoToCianwood
 	faceplayer
 	opentext
 	writetext OlivineCityStandingYoungsterPokegearText
@@ -33,7 +37,24 @@ OlivineCityStandingYoungsterScript:
 	closetext
 	end
 
+.GoToWildArea:
+	faceplayer
+	opentext
+	writetext OlivineCityStandingYoungsterGotBadgeText
+	waitbutton
+	closetext
+	end
+
+.GoToCianwood:
+	faceplayer
+	opentext
+	writetext OlivineCityStandingYoungsterGoToCianwoodText
+	waitbutton
+	closetext
+	end
+
 OlivineRocketScript:
+	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ROCKET_GRUNTM_1
 	iftrue .WordFromGrunt
@@ -52,7 +73,7 @@ OlivineRocketScript:
 	writetext YeahText
 	waitbutton
 	closetext
-	turnobject OLIVINECITY_GRUNT, DOWN
+	faceplayer
 	opentext
 	writetext GotWordFromGruntText
 	waitbutton
@@ -132,6 +153,34 @@ OlivineCityStandingYoungsterPokegearText:
 
 	para "Apparently there's"
 	line "been an incident."
+	done
+
+OlivineCityStandingYoungsterGoToCianwoodText:
+	text "The Gym Leader"
+	line "said to not let"
+	cont "you in until you"
+	cont "get the StormBadge"
+	cont "from Cianwood."
+
+	para "Even then, you may"
+	line "need to wait a"
+	cont "little while long-"
+	cont "er."
+	done
+
+OlivineCityStandingYoungsterGotBadgeText:
+	text "Hey, you got the"
+	line "StormBadge! Nice!"
+
+	para "I'd like to let"
+	line "you in, but Byron"
+	cont "is still getting"
+	cont "ready."
+
+	para "Why don't you"
+	line "check out the Wild"
+	cont "Area in Cianwood"
+	cont "to pass the time?"
 	done
 
 OlivineCityStandingYoungsterPokedexText:

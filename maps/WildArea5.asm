@@ -1,9 +1,28 @@
 	object_const_def ; object_event constants
+	const WILDAREA5_KRIS ; if Male
+	const WILDAREA5_CHRIS ; if Female
 
 WildArea5_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
+
+WildArea5RivalScript:
+	faceplayer
+	opentext
+	writetext PlentyOfPokemonHereText
+	waitbutton
+	closetext
+	end
+
+PlentyOfPokemonHereText:
+	text "Wow, there sure"
+	line "are plenty of"
+	cont "#mon here!"
+
+	para "How many are you"
+	line "going to catch?"
+	done
 
 WildArea5_MapEvents:
 	db 0, 0 ; filler
@@ -18,4 +37,6 @@ WildArea5_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 2 ; object events
+	object_event  8,  5, SPRITE_KRIS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildArea5RivalScript, EVENT_WILD_AREA_5_RIVAL1
+	object_event  8,  5, SPRITE_CHRIS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildArea5RivalScript, EVENT_WILD_AREA_5_RIVAL2

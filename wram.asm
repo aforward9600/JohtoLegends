@@ -2261,6 +2261,7 @@ wd265:: ; mobile
 wFailedToFlee:: db
 wNumFleeAttempts:: db
 wMonTriedToEvolve:: db
+wMonDidEvolve:: db
 
 wTimeOfDay:: db ; d269
 
@@ -2680,8 +2681,10 @@ wOlivineLighthouse5FSceneID::                     db
 wOlivineLighthouse1FSceneID::                     db
 wCianwoodGymSceneID::                             db
 wWildAreaOutsideSceneID::                         db
+wNationalParkSceneID::                            db
+wNationalParkBugContestID::                       db
 
-	ds 35
+	ds 33
 
 ; fight counts
 wJackFightCount::    db ; d9f2

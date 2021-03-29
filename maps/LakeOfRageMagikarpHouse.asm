@@ -121,7 +121,7 @@ MagikarpHouseBookshelf:
 	jumpstd difficultbookshelf
 
 MagikarpLengthRaterText_LakeOfRageHistory:
-	text "Lake OF Rage is"
+	text "Lake of Rage is"
 	line "actually a crater"
 
 	para "made by rampaging"

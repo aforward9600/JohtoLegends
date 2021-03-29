@@ -152,6 +152,9 @@ HikerStopsYou2:
 MountMortar1FInsideBoulder:
 	jumpstd strengthboulder
 
+MountMortar1FInsideRock:
+	jumpstd smashrock
+
 MountMortar1FInsideEscapeRope:
 	itemball ESCAPE_ROPE
 
@@ -168,7 +171,7 @@ MountMortar1FInsideIron:
 	itemball IRON
 
 MountMortar1FInsideUltraBall:
-	itemball ULTRA_BALL
+	itemball GREAT_BALL
 
 MountMortar1FInsideHiddenMaxRepel:
 	hiddenitem MAX_REPEL, EVENT_MOUNT_MORTAR_1F_INSIDE_HIDDEN_MAX_REPEL
@@ -176,7 +179,7 @@ MountMortar1FInsideHiddenMaxRepel:
 MountMortar1FInsideHikerScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_PRYCE
+	checkevent EVENT_MOUNT_MORTAR_HIKER_2
 	iftrue .NextRocks
 	writetext MountMortar1FInsideHikerText1
 	waitbutton
@@ -380,7 +383,7 @@ MountMortar1FInside_MapEvents:
 	bg_event 30, 11, BGEVENT_ITEM, MountMortar1FInsideHiddenMaxRepel
 
 	db 13 ; object events
-	object_event  9, 12, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideBoulder, -1
+	object_event  9, 12, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideRock, -1
 	object_event 35, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideEscapeRope, EVENT_MOUNT_MORTAR_1F_INSIDE_ESCAPE_ROPE
 	object_event 16, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideMaxRevive, EVENT_MOUNT_MORTAR_1F_INSIDE_MAX_REVIVE
 	object_event 10, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideHyperPotion, EVENT_MOUNT_MORTAR_1F_INSIDE_HYPER_POTION

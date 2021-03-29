@@ -281,8 +281,7 @@ OlivineLighthouse5F_MapEvents:
 	warp_event  9,  7, OLIVINE_LIGHTHOUSE_4F, 3
 	warp_event  6, 15, OLIVINE_LIGHTHOUSE_4F, 7
 
-	db 5 ; coord events
-	coord_event  6, 14, SCENE_DEFAULT, ArcherWalks1
+	db 4 ; coord events
 	coord_event  7, 14, SCENE_DEFAULT, ArcherWalks2
 	coord_event  8, 14, SCENE_DEFAULT, ArcherWalks3
 	coord_event  9, 14, SCENE_DEFAULT, ArcherWalks4

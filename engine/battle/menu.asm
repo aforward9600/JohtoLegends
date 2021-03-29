@@ -89,7 +89,7 @@ MenuData_0x24f91:
 Strings24f9a:
 	db "Fight@"
 	db "<PKMN>@"
-	db "ParkBall×  @"
+	db "Bug Ball×  @"
 	db "Run@"
 
 Function24fb2:

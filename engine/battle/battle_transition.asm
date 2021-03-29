@@ -741,6 +741,12 @@ INCLUDE "gfx/overworld/trainer_battle_nite.pal"
 	ld de, EnokiTransition
 	cp ENOKI
 	ret z
+	ld de, ChigusaTransition
+	cp CHIGUSA
+	ret z
+	ld de, ByronTransition
+	cp BYRON
+	ret z
 	ld de, PokeBallTransition
 	ret
 
@@ -869,6 +875,48 @@ opt b.X ; . = 0, X = 0
 	bigdw %.....XX...X.....
 	bigdw %.......XX..X....
 	bigdw %.........XXXX...
+popo
+
+ChigusaTransition:
+pusho
+opt b.X ; . = 0, X = 0
+	bigdw %....XXXXXXXX....
+	bigdw %.XXXX..X...XXXX.
+	bigdw %.X..X..X...X..X.
+	bigdw %.X..X..X...X..X.
+	bigdw %XX..X..X...X..XX
+	bigdw %X...X..X...X...X
+	bigdw %X...X..X...X...X
+	bigdw %X...X..X...X...X
+	bigdw %XXXXXXXXXX.X...X
+	bigdw %X........X.X...X
+	bigdw %X........XXXXXXX
+	bigdw %XXXXXXXXXX....XX
+	bigdw %.X............X.
+	bigdw %.X............X.
+	bigdw %.XXXX.......XXX.
+	bigdw %....XXXXXXXX....
+popo
+
+ByronTransition:
+pusho
+opt b.X ; . = 0, X = 0
+	bigdw %.....XXXXXX.....
+	bigdw %....XXXXXXXX....
+	bigdw %...XX..X.XXXX...
+	bigdw %..XX..X.XXX..X..
+	bigdw %.XX..X.XXX....X.
+	bigdw %XX..X.XXX....X.X
+	bigdw %XX.X.XXX....X..X
+	bigdw %XX.XXX.....X.X.X
+	bigdw %X.XXX.....X.XX.X
+	bigdw %XXXX.....X.XX..X
+	bigdw %XXX.....X.XX...X
+	bigdw %.XX....X.XX...X.
+	bigdw %..X...X.XX...X..
+	bigdw %...X.X.XX...X...
+	bigdw %....X......X....
+	bigdw %.....XXXXXX.....
 popo
 
 WipeLYOverrides:

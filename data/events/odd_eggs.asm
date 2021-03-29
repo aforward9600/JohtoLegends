@@ -76,7 +76,7 @@ OddEggs:
 	db 30, 20, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 17 ; Max HP
@@ -85,7 +85,7 @@ OddEggs:
 	bigdw 11 ; Spd
 	bigdw 8 ; SAtk
 	bigdw 8 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db 0 ; Species, will be filled on load
 	db NO_ITEM
@@ -102,7 +102,7 @@ OddEggs:
 	db 30, 20, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 17 ; Max HP
@@ -111,7 +111,7 @@ OddEggs:
 	bigdw 12 ; Spd
 	bigdw 9 ; SAtk
 	bigdw 9 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db 0 ; Species, will be filled on load
 	db NO_ITEM
@@ -128,7 +128,7 @@ OddEggs:
 	db 35, 20, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 20 ; Max HP
@@ -137,7 +137,7 @@ OddEggs:
 	bigdw 6 ; Spd
 	bigdw 9 ; SAtk
 	bigdw 10 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db 0 ; Species, will be filled on load
 	db NO_ITEM
@@ -154,7 +154,7 @@ OddEggs:
 	db 35, 20, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 20 ; Max HP
@@ -163,7 +163,7 @@ OddEggs:
 	bigdw 7 ; Spd
 	bigdw 10 ; SAtk
 	bigdw 11 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db 0 ; Species, will be filled on load
 	db NO_ITEM
@@ -180,7 +180,7 @@ OddEggs:
 	db 15, 20, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 24 ; Max HP
@@ -189,7 +189,7 @@ OddEggs:
 	bigdw 6 ; Spd
 	bigdw 9 ; SAtk
 	bigdw 7 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db 0 ; Species, will be filled on load
 	db NO_ITEM
@@ -206,7 +206,7 @@ OddEggs:
 	db 15, 20, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 24 ; Max HP
@@ -215,7 +215,7 @@ OddEggs:
 	bigdw 7 ; Spd
 	bigdw 10 ; SAtk
 	bigdw 8 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db 0 ; Species, will be filled on load
 	db NO_ITEM
@@ -232,7 +232,7 @@ OddEggs:
 	db 35, 30, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -241,7 +241,7 @@ OddEggs:
 	bigdw 11 ; Spd
 	bigdw 13 ; SAtk
 	bigdw 11 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db 0 ; Species, will be filled on load
 	db NO_ITEM
@@ -258,7 +258,7 @@ OddEggs:
 	db 35, 30, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -267,7 +267,7 @@ OddEggs:
 	bigdw 12 ; Spd
 	bigdw 14 ; SAtk
 	bigdw 12 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db 0 ; Species, will be filled on load
 	db NO_ITEM
@@ -284,7 +284,7 @@ OddEggs:
 	db 25, 10, 0, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -293,7 +293,7 @@ OddEggs:
 	bigdw 13 ; Spd
 	bigdw 12 ; SAtk
 	bigdw 10 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db 0 ; Species, will be filled on load
 	db NO_ITEM
@@ -310,7 +310,7 @@ OddEggs:
 	db 25, 10, 0, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -319,7 +319,7 @@ OddEggs:
 	bigdw 14 ; Spd
 	bigdw 13 ; SAtk
 	bigdw 11 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db 0 ; Species, will be filled on load
 	db NO_ITEM
@@ -336,7 +336,7 @@ OddEggs:
 	db 30, 30, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -345,7 +345,7 @@ OddEggs:
 	bigdw 14 ; Spd
 	bigdw 11 ; SAtk
 	bigdw 10 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db 0 ; Species, will be filled on load
 	db NO_ITEM
@@ -362,7 +362,7 @@ OddEggs:
 	db 30, 30, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -371,7 +371,7 @@ OddEggs:
 	bigdw 15 ; Spd
 	bigdw 12 ; SAtk
 	bigdw 11 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db 0 ; Species, will be filled on load
 	db NO_ITEM
@@ -388,7 +388,7 @@ OddEggs:
 	db 35, 10, 0, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 18 ; Max HP
@@ -397,7 +397,7 @@ OddEggs:
 	bigdw 8 ; Spd
 	bigdw 8 ; SAtk
 	bigdw 8 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db 0 ; Species, will be filled on load
 	db NO_ITEM
@@ -414,7 +414,7 @@ OddEggs:
 	db 35, 10, 0, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 18 ; Max HP
@@ -423,4 +423,4 @@ OddEggs:
 	bigdw 9 ; Spd
 	bigdw 9 ; SAtk
 	bigdw 9 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"

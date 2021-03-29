@@ -651,7 +651,7 @@ OakSpeech:
 	call RotateFourPalettesLeft
 	call ClearTileMap
 
-	ld de, MUSIC_ROUTE_30
+	ld de, MUSIC_ANTHEM
 	call PlayMusic
 
 	call RotateFourPalettesRight

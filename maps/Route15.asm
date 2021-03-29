@@ -13,7 +13,7 @@ Route15_MapScripts:
 	db 0 ; callbacks
 
 TrainerTeacherColette:
-	trainer TEACHER, COLETTE, EVENT_BEAT_TEACHER_COLETTE, TeacherColetteSeenText, TeacherColetteBeatenText, 0, .Script
+	trainer TEACHER, ABIGAIL, EVENT_BEAT_TEACHER_ABIGAIL, TeacherColetteSeenText, TeacherColetteBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -35,7 +35,7 @@ TrainerTeacherHillary:
 	end
 
 TrainerSchoolboyKipp:
-	trainer SCHOOLBOY, KIPP, EVENT_BEAT_SCHOOLBOY_KIP, SchoolboyKippSeenText, SchoolboyKippBeatenText, 0, .Script
+	trainer SCHOOLBOY, PIERCE, EVENT_BEAT_SCHOOLBOY_PIE, SchoolboyKippSeenText, SchoolboyKippBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

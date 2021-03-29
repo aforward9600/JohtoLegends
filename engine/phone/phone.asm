@@ -409,13 +409,17 @@ WrongNumber:
 	text_end
 
 Script_ReceivePhoneCall:
+	pause 15
 	refreshscreen
-	callasm RingTwice_StartCall
-	memcall wCallerContact + PHONE_CONTACT_SCRIPT2_BANK
+	pokepic ABRA
+	cry ABRA
 	waitbutton
-	callasm HangUp
+	closepokepic
+	pause 10
+	opentext
+	farwritetext BillPhoneNewlyFullText
+	waitbutton
 	closetext
-	callasm InitCallReceiveDelay
 	end
 
 Script_SpecialBillCall::

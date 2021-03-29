@@ -17,7 +17,7 @@ Route35_MapScripts:
 	db 0 ; callbacks
 
 TrainerBirdKeeperBryan:
-	trainer BIRD_KEEPER, BRYAN, EVENT_BEAT_BIRD_KEEPER_BRYAN, BirdKeeperBryanSeenText, BirdKeeperBryanBeatenText, 0, .Script
+	trainer BIRD_KEEPER, GUNNER, EVENT_BEAT_BIRD_KEEPER_GUNNER, BirdKeeperBryanSeenText, BirdKeeperBryanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

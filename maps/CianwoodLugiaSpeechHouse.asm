@@ -22,7 +22,7 @@ CianwoodLugiaSpeechHouseBookshelf:
 
 CianwoodLugiaSpeechHouseTeacherText:
 	text "You came from"
-	line "OLIVINE?"
+	line "Olivine?"
 
 	para "Do you remember"
 	line "the four islands"
@@ -38,8 +38,8 @@ CianwoodLugiaSpeechHouseLassText:
 	text "I heard that you"
 	line "can only see it if"
 
-	para "you have a SILVER"
-	line "WING."
+	para "you have a Silver"
+	line "Wing."
 
 	para "It must have the"
 	line "same scent as the"
@@ -55,7 +55,7 @@ CianwoodLugiaSpeechHouseTwinText:
 	cont "sea creature."
 
 	para "You might need a"
-	line "special move to"
+	line "special item to"
 	cont "get past them."
 	done
 
@@ -73,6 +73,6 @@ CianwoodLugiaSpeechHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, CianwoodLugiaSpeechHouseBookshelf
 
 	db 3 ; object events
-	object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseTeacherScript, -1
-	object_event  6,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseLassScript, -1
-	object_event  0,  2, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseTwinScript, -1
+	object_event  2,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseTeacherScript, -1
+	object_event  6,  5, SPRITE_TWIN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseLassScript, -1
+	object_event  0,  2, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseTwinScript, -1

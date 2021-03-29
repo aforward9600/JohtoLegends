@@ -95,4 +95,6 @@ MapScenes::
 	scene_var OLIVINE_LIGHTHOUSE_1F,                       wOlivineLighthouse1FSceneID
 	scene_var CIANWOOD_GYM,                                wCianwoodGymSceneID
 	scene_var WILD_AREA_OUTSIDE,                           wWildAreaOutsideSceneID
+	scene_var NATIONAL_PARK,                               wNationalParkSceneID
+	scene_var NATIONAL_PARK_BUG_CONTEST,                   wNationalParkBugContestID
 	db -1 ; end

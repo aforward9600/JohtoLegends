@@ -80,3 +80,4 @@ TrainerPicPointers::
 	dba PasserbyPic
 	dba PasserbyPic
 	dba TouristPic
+	dba EngineerPic

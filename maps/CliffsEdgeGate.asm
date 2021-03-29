@@ -69,4 +69,4 @@ CliffsEdgeGate_MapEvents:
 	db 3 ; object events
 	object_event 20,  9, SPRITE_ENGINEER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CliffsEdgeGateEngineer1Script, -1
 	object_event 14,  8, SPRITE_ENGINEER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CliffsEdgeGateEngineer2Script, -1
-	object_event 13, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CliffsEdgeGateItemScript, EVENT_CLIFFS_EDGE_GATE_ITEM
+	object_event 12, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CliffsEdgeGateItemScript, EVENT_CLIFFS_EDGE_GATE_ITEM

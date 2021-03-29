@@ -209,8 +209,11 @@ Script_CutFromMenu:
 
 Script_Cut:
 	writetext Text_UsedCut
+	refreshscreen
+	pokepic SCYTHER
 	cry SCYTHER
 	pause 3
+	closepokepic
 	reloadmappart
 	callasm CutDownTreeOrGrass
 	closetext
@@ -397,8 +400,11 @@ SurfFromMenuScript:
 UsedSurfScript:
 	writetext UsedSurfText ; "used SURF!"
 	waitbutton
+	refreshscreen
+	pokepic LAPRAS
 	cry LAPRAS
 	pause 3
+	closepokepic
 	closetext
 
 	callasm .empty_fn ; empty function
@@ -600,7 +606,11 @@ FlyFunction:
 
 .FlyScript:
 	reloadmappart
+	refreshscreen
+	pokepic PIDGEOT
 	cry 18
+	pause 10
+	closepokepic
 	callasm HideSprites
 	special UpdateTimePals
 	callasm FlyFromAnim
@@ -662,9 +672,11 @@ Script_WaterfallFromMenu:
 
 Script_UsedWaterfall:
 	writetext .Text_UsedWaterfall
+	refreshscreen
+	pokepic LAPRAS
 	cry LAPRAS
 	pause 3
-	waitbutton
+	closepokepic
 	closetext
 	playsound SFX_BUBBLEBEAM
 .loop
@@ -1000,8 +1012,11 @@ Script_UsedStrength:
 	callasm SetStrengthFlag
 	writetext .UsedStrength
 	readmem wBuffer6
+	refreshscreen
+	pokepic MACHAMP
 	cry MACHAMP
 	pause 3
+	closepokepic
 	writetext .StrengthAllowedItToMoveBoulders
 	closetext
 	end
@@ -1151,8 +1166,11 @@ Script_WhirlpoolFromMenu:
 
 Script_UsedWhirlpool:
 	writetext Text_UsedWhirlpool
+	refreshscreen
+	pokepic LAPRAS
 	cry LAPRAS
 	pause 3
+	closepokepic
 	reloadmappart
 	callasm DisappearWhirlpool
 	closetext
@@ -1252,8 +1270,11 @@ HeadbuttFromMenuScript:
 
 HeadbuttScript:
 	writetext UnknownText_0xce9d
+	refreshscreen
+	pokepic SNUBBULL
 	cry SNUBBULL
 	pause 3
+	closepokepic
 
 	reloadmappart
 	callasm ShakeHeadbuttTree

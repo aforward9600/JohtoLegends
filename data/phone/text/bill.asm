@@ -81,21 +81,25 @@ BillPhoneFullText:
 	done
 
 BillPhoneNewlyFullText:
-	text "Hi, <PLAY_G>?"
-	line "It's me, BILL!"
+	text "An Abra teleported"
+	line "to you, holding a"
+	cont "note."
 
-	para "Thanks for using"
-	line "my STORAGE SYSTEM."
+	para "To <PLAYER>:"
 
-	para "That last #MON"
+	para "Thank you for us-"
+	line "ing the Abra Deli-"
+	cont "very System!"
+
+	para "That last #mon"
 	line "you sent filled"
-	cont "your BOX up."
+	cont "your Box up."
 
 	para "You'll have to"
-	line "switch BOXES if"
+	line "switch Boxes if"
 
 	para "you want to catch"
-	line "more #MON."
+	line "more #mon."
 
-	para "Bye now!"
+	para "Good luck!"
 	done

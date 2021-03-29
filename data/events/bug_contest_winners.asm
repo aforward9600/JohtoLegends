@@ -73,7 +73,7 @@ BugContestant_YoungsterSamuel:
 	dw CATERPIE,   251
 
 BugContestant_SchoolboyKipp:
-	db SCHOOLBOY, KIPP
+	db SCHOOLBOY, PIERCE
 	dw VENONAT,    267
 	dw PARAS,      254
 	dw KAKUNA,     259

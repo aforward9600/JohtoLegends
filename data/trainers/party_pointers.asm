@@ -80,3 +80,4 @@ TrainerGroups:
 	dba PasserbyGroup
 	dba MiyamotoGroup
 	dba CynthiaGroup
+	dba EngineerGroup

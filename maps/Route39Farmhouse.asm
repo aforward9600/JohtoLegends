@@ -114,8 +114,9 @@ FarmerFText_NoSale:
 	done
 
 FarmerFText_Milking:
-	text "I best see if he's"
-	line "got any more milk."
+	text "I'd best see if"
+	line "he's got any more"
+	cont "milk."
 	done
 
 GrannyText_InTrouble:

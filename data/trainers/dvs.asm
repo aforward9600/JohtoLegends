@@ -79,3 +79,4 @@ TrainerClassDVs:
 	dn  7,  8,  8,  8 ; PASSERBY
 	dn  7,  8,  8,  8 ; MIYAMOTO
 	dn  7,  8,  8,  8 ; TOURIST
+	dn  9,  8,  8,  8 ; OFFICER

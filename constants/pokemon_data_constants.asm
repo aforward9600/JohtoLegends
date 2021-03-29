@@ -142,7 +142,7 @@ NUM_HOF_TEAMS EQU 30
 	const ATK_EQ_DEF
 
 ; Learn move upon evo trigger
-	const_def MAX_LEVEL
+	const_def MAX_LEVEL + 1
 	const LEARN_EVO_MOVE
 
 ; wild data
