@@ -33,7 +33,7 @@ Route45_MapScripts:
 	return
 
 TrainerBlackbeltKenji:
-	trainer BLACKBELT_T, KENJI3, EVENT_BEAT_BLACKBELT_KENJI, BlackbeltKenji3SeenText, BlackbeltKenji3BeatenText, 0, .Script
+	trainer BLACKBELT_T, KENJI3, EVENT_BEAT_BLACKBELT_HIDEO, BlackbeltKenji3SeenText, BlackbeltKenji3BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_BLACKBELT_KENJI

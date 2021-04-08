@@ -2020,7 +2020,7 @@ wSpriteFlags:: db ; d13e
 
 wHandlePlayerStep:: db ; d13f
 
-	ds 1
+wCurIconMonHasItemOrMail:: db
 
 wPartyMenuActionText:: db ; d141
 
@@ -2683,8 +2683,9 @@ wCianwoodGymSceneID::                             db
 wWildAreaOutsideSceneID::                         db
 wNationalParkSceneID::                            db
 wNationalParkBugContestID::                       db
+wEcruteakCitySceneID::                            db
 
-	ds 33
+	ds 32
 
 ; fight counts
 wJackFightCount::    db ; d9f2

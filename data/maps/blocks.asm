@@ -1061,3 +1061,6 @@ WildArea4_Blocks:
 
 WildArea5_Blocks:
 	INCBIN "maps/WildArea5.blk"
+
+BurnedTower2F_Blocks:
+	INCBIN "maps/BurnedTower2F.blk"

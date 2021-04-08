@@ -705,3 +705,4 @@ ENDM
 	map_attributes WildAreaCave, WILD_AREA_CAVE, $00, 0
 	map_attributes WildArea4, WILD_AREA_4, $00, 0
 	map_attributes WildArea5, WILD_AREA_5, $00, 0
+	map_attributes BurnedTower2F, BURNED_TOWER_2F, $00, 0

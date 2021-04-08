@@ -36,7 +36,7 @@ UnionCaveLapras:
 	end
 
 TrainerCooltrainermNick:
-	trainer COOLTRAINERM, NICK, EVENT_BEAT_COOLTRAINERM_NICK, CooltrainermNickSeenText, CooltrainermNickBeatenText, 0, .Script
+	trainer COOLTRAINERM, FABIO, EVENT_BEAT_COOLTRAINERM_FABIO, CooltrainermNickSeenText, CooltrainermNickBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

@@ -1299,16 +1299,16 @@ JanineGroup:
 
 CooltrainerMGroup:
 	next_list_item ; COOLTRAINERM (1)
-	db "NICK@", TRAINERTYPE_MOVES
-	db 26
-	dw CHARMANDER
-	dw EMBER, SMOKESCREEN, RAGE, SCARY_FACE
-	db 26
-	dw SQUIRTLE
-	dw WITHDRAW, WATER_GUN, BITE, CURSE
-	db 26
-	dw BULBASAUR
-	dw LEECH_SEED, POISONPOWDER, SLEEP_POWDER, RAZOR_LEAF
+	db "Fabio@", TRAINERTYPE_MOVES
+	db 22
+	dw CHARMELEON
+	dw EMBER, SMOKESCREEN, ANCIENTPOWER, SCARY_FACE
+	db 22
+	dw WARTORTLE
+	dw ICY_WIND, BUBBLE, BITE, RAPID_SPIN
+	db 22
+	dw IVYSAUR
+	dw LEECH_SEED, GIGA_DRAIN, SLEEP_POWDER, RAZOR_LEAF
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (2)
@@ -1517,13 +1517,16 @@ CooltrainerFGroup:
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (2)
-	db "LOIS@", TRAINERTYPE_MOVES
-	db 25
+	db "Ariel@", TRAINERTYPE_MOVES
+	db 21
 	dw SKIPLOOM
-	dw SYNTHESIS, POISONPOWDER, MEGA_DRAIN, LEECH_SEED
-	db 25
+	dw FAIRY_WIND, SLEEP_POWDER, BULLET_SEED, LEECH_SEED
+	db 21
 	dw NINETALES
-	dw EMBER, QUICK_ATTACK, CONFUSE_RAY, SAFEGUARD
+	dw FIRE_SPIN, QUICK_ATTACK, WILL_O_WISP, HEX
+	db 23
+	dw DONPHAN
+	dw BULLDOZE, ROLLOUT, DEFENSE_CURL, HORN_ATTACK
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (3)
@@ -2242,6 +2245,16 @@ SkierGroup:
 	db "Luann@", TRAINERTYPE_NORMAL
 	db 11
 	dw SEEL
+	db -1 ; end
+
+	next_list_item ; SKIER (3)
+	db "Lupita@", TRAINERTYPE_NORMAL
+	db 22
+	dw SNEASEL
+	db 23
+	dw SWINUB
+	db 23
+	dw LAPRAS
 	db -1 ; end
 
 	end_list_items
@@ -3763,13 +3776,13 @@ BlaineGroup:
 
 BurglarGroup:
 	next_list_item ; BURGLAR (1)
-	db "DUNCAN@", TRAINERTYPE_NORMAL
+	db "Locke@", TRAINERTYPE_NORMAL
 	db 23
-	dw KOFFING
+	dw PONYTA
 	db 25
-	dw MAGMAR
-	db 23
 	dw KOFFING
+	db 23
+	dw SLUGMA
 	db -1 ; end
 
 	next_list_item ; BURGLAR (2)
@@ -3938,15 +3951,15 @@ JugglerGroup:
 
 BlackbeltGroup:
 	next_list_item ; BLACKBELT_T (1)
-	db "KENJI@", TRAINERTYPE_NORMAL
-	db 27
+	db "Hideo@", TRAINERTYPE_NORMAL
+	db 23
 	dw ONIX
-	db 30
-	dw HITMONLEE
-	db 27
-	dw ONIX
-	db 32
-	dw MACHOKE
+	db 23
+	dw MANKEY
+	db 23
+	dw SHUCKLE
+	db 24
+	dw MACHOP
 	db -1 ; end
 
 	next_list_item ; BLACKBELT_T (2)
@@ -4809,21 +4822,23 @@ MediumGroup:
 
 BoarderGroup:
 	next_list_item ; BOARDER (1)
-	db "RONALD@", TRAINERTYPE_NORMAL
-	db 24
+	db "Gareth@", TRAINERTYPE_NORMAL
+	db 22
 	dw SEEL
-	db 25
-	dw DEWGONG
-	db 24
-	dw SEEL
+	db 23
+	dw JYNX
+	db 23
+	dw CLOYSTER
 	db -1 ; end
 
 	next_list_item ; BOARDER (2)
-	db "BRAD@", TRAINERTYPE_NORMAL
-	db 26
-	dw SWINUB
-	db 26
-	dw SWINUB
+	db "Brody@", TRAINERTYPE_MOVES
+	db 24
+	dw DELIBIRD
+	dw ICE_SHARD, AERIAL_ACE, FUTURE_SIGHT, PRESENT
+	db 24
+	dw GLACEON
+	dw ICE_FANG, BITE, ICY_WIND, SHADOW_BALL
 	db -1 ; end
 
 	next_list_item ; BOARDER (3)

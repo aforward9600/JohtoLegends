@@ -97,4 +97,5 @@ MapScenes::
 	scene_var WILD_AREA_OUTSIDE,                           wWildAreaOutsideSceneID
 	scene_var NATIONAL_PARK,                               wNationalParkSceneID
 	scene_var NATIONAL_PARK_BUG_CONTEST,                   wNationalParkBugContestID
+	scene_var ECRUTEAK_CITY,                               wEcruteakCitySceneID
 	db -1 ; end

@@ -159,7 +159,7 @@ MountMortar1FInsideEscapeRope:
 	itemball ESCAPE_ROPE
 
 MountMortar1FInsideMaxRevive:
-	itemball MAX_REVIVE
+	itemball REVIVE
 
 MountMortar1FInsideHyperPotion:
 	itemball SUPER_POTION

@@ -199,3 +199,7 @@ SCENE_FINISHED EQU 1
 ;wWildAreaOutsideSceneID
 	const_def 1
 	const SCENE_WILD_AREA_RIVAL
+
+;wEcruteakCitySceneID
+	const_def 1
+	const SCENE_ECRUTEAK_MOTHER

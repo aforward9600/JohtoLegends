@@ -614,6 +614,7 @@ InitializeEventsScript:
 	setevent EVENT_CIANWOOD_GYM_RIVAL2
 	setevent EVENT_ITEMFINDER_GUY
 	setevent EVENT_ROUTE_36_GUY
+	setevent EVENT_AFTER_RESCUING_BURNED_TOWER_GIRL
 	return
 
 AskNumber1MScript:

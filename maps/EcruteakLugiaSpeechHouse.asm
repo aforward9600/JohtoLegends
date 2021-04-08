@@ -1,6 +1,8 @@
 	object_const_def ; object_event constants
 	const ECRUTEAKLUGIASPEECHHOUSE_GRAMPS
 	const ECRUTEAKLUGIASPEECHHOUSE_YOUNGSTER
+	const ECRUTEAKLUGIASPEECHHOUSE_MOTHER
+	const ECRUTEAKLUGIASPEECHHOUSE_CHILD
 
 EcruteakLugiaSpeechHouse_MapScripts:
 	db 0 ; scene scripts
@@ -12,6 +14,12 @@ EcruteakLugiaSpeechHouseGrampsScript:
 
 EcruteakLugiaSpeechHouseYoungsterScript:
 	jumptextfaceplayer EcruteakLugiaSpeechHouseYoungsterText
+
+EcruteakLugiaSpeechHouseMotherScript:
+	jumptextfaceplayer EcruteakLugiaSpeechHouseMotherText
+
+EcruteakLugiaSpeechHouseDaughterScript:
+	jumptextfaceplayer EcruteakLugiaSpeechHouseDaughterText
 
 LugiaSpeechHouseRadio:
 	jumpstd radio2
@@ -42,6 +50,18 @@ EcruteakLugiaSpeechHouseYoungsterText:
 	line "must be powerful."
 	done
 
+EcruteakLugiaSpeechHouseMotherText:
+	text "Once again, thank"
+	line "you for saving my"
+	cont "daughter."
+	done
+
+EcruteakLugiaSpeechHouseDaughterText:
+	text "Thanks for saving"
+	line "me again, cool"
+	cont "trainer!"
+	done
+
 EcruteakLugiaSpeechHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -54,6 +74,8 @@ EcruteakLugiaSpeechHouse_MapEvents:
 	db 1 ; bg events
 	bg_event  2,  1, BGEVENT_READ, LugiaSpeechHouseRadio
 
-	db 2 ; object events
+	db 4 ; object events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakLugiaSpeechHouseGrampsScript, -1
-	object_event  5,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakLugiaSpeechHouseYoungsterScript, -1
+	object_event  1,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakLugiaSpeechHouseYoungsterScript, -1
+	object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakLugiaSpeechHouseMotherScript, EVENT_AFTER_RESCUING_BURNED_TOWER_GIRL
+	object_event  0,  6, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakLugiaSpeechHouseDaughterScript, EVENT_AFTER_RESCUING_BURNED_TOWER_GIRL

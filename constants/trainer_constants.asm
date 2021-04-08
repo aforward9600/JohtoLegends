@@ -189,7 +189,7 @@ CHRIS EQU __enum__
 	const JANINE1
 
 	trainerclass COOLTRAINERM ; 1b
-	const NICK
+	const FABIO
 	const AARON
 	const PAUL
 	const CODY
@@ -212,7 +212,7 @@ CHRIS EQU __enum__
 
 	trainerclass COOLTRAINERF ; 1c
 	const TERESA
-	const LOIS
+	const ARIEL
 	const FRAN
 	const LOLA
 	const KATE
@@ -311,6 +311,7 @@ CHRIS EQU __enum__
 	trainerclass SKIER ; 21
 	const BRANDY
 	const PAM
+	const LUPITA
 
 	trainerclass TEACHER ; 22
 	const ABIGAIL
@@ -495,7 +496,7 @@ CHRIS EQU __enum__
 	const BLAINE1
 
 	trainerclass BURGLAR ; 2f
-	const DUNCAN
+	const LOCKE
 	const EDDIE
 	const COREY
 
@@ -518,7 +519,7 @@ CHRIS EQU __enum__
 	const IRWIN4
 
 	trainerclass BLACKBELT_T ; 32
-	const KENJI1
+	const HIDEO
 	const YOSHI
 	const KENJI2
 	const LAO
@@ -626,8 +627,8 @@ CHRIS EQU __enum__
 	const DORIS
 
 	trainerclass BOARDER ; 3a
-	const RONALD
-	const BRAD
+	const GARETH
+	const BRODY
 	const SONNY
 
 	trainerclass POKEFANM ; 3b

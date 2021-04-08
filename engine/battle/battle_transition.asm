@@ -747,6 +747,14 @@ INCLUDE "gfx/overworld/trainer_battle_nite.pal"
 	ld de, ByronTransition
 	cp BYRON
 	ret z
+	ld de, MiltonTransition
+	cp MILTON
+	ld de, KurtTransition
+	cp KURT
+	ret z
+	ld de, WalkerTransition
+	cp WALKER
+	ret z
 	ld de, PokeBallTransition
 	ret
 
@@ -917,6 +925,69 @@ opt b.X ; . = 0, X = 0
 	bigdw %...X.X.XX...X...
 	bigdw %....X......X....
 	bigdw %.....XXXXXX.....
+popo
+
+MiltonTransition:
+pusho
+opt b.X ; . = 0, X = 0
+	bigdw %.......XX.......
+	bigdw %......X.XX......
+	bigdw %.....X...XX.....
+	bigdw %....X.....XX....
+	bigdw %...X.......XX...
+	bigdw %..X.........XX..
+	bigdw %.X...........XX.
+	bigdw %X.............XX
+	bigdw %X.............XX
+	bigdw %.X...........XX.
+	bigdw %..X.........XX..
+	bigdw %...X.......XX...
+	bigdw %....X.....XX....
+	bigdw %.....X...XX.....
+	bigdw %......XXXX......
+	bigdw %.......XX.......
+popo
+
+KurtTransition:
+pusho
+opt b.X ; . = 0, X = 0
+	bigdw %......XXXX......
+	bigdw %....XXXXXXXX....
+	bigdw %..XXXXXXXXXXXX..
+	bigdw %..X..........X..
+	bigdw %.X.....XX.....X.
+	bigdw %.X....XXXX....X.
+	bigdw %X.....XXXX.....X
+	bigdw %X......XX......X
+	bigdw %X...XX....XX...X
+	bigdw %X..XXXX..XXXX..X
+	bigdw %.X.XXXX..XXXX.X.
+	bigdw %.X..XX....XX..X.
+	bigdw %..X..........X..
+	bigdw %..XX........XX..
+	bigdw %....XX....XX....
+	bigdw %......XXXX......
+popo
+
+WalkerTransition:
+pusho
+opt b.X ; . = 0, X = 0
+	bigdw %....XXXXXXXX....
+	bigdw %..XX........XX..
+	bigdw %XX..XXX..XXX..XX
+	bigdw %X.XXX.X..X.XXX.X
+	bigdw %X.X.X.X..X.X.X.X
+	bigdw %X.X.X.XXXX.X.X.X
+	bigdw %X.X.X.X..X.X.X.X
+	bigdw %X.X.X.X..X.X.X.X
+	bigdw %X.X.X.X..X.X.X.X
+	bigdw %X.X.X.X..X.X.X.X
+	bigdw %X.X.X.X..X.X.X.X
+	bigdw %X.X.XXX..XXX.X.X
+	bigdw %X.X.X......X.X.X
+	bigdw %X.XXX......XXX.X
+	bigdw %X.X..........X.X
+	bigdw %XXX..........XXX
 popo
 
 WipeLYOverrides:

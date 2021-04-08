@@ -362,6 +362,36 @@ JohtoGrassWildMons:
 	dbw 15, MISDREAVUS
 	dbw 15, MISDREAVUS
 
+	map_id BURNED_TOWER_2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 22, MAGBY
+	dbw 22, KOFFING
+	dbw 22, ZUBAT
+	dbw 23, RATICATE
+	dbw 23, GRIMER
+	dbw 23, SLUGMA
+	dbw 24, SLUGMA
+	dbw 24, MAGCARGO
+	; day
+	dbw 22, MAGBY
+	dbw 22, KOFFING
+	dbw 22, ZUBAT
+	dbw 23, RATICATE
+	dbw 23, GRIMER
+	dbw 23, SLUGMA
+	dbw 24, SLUGMA
+	dbw 24, MAGCARGO
+	; nite
+	dbw 22, RATICATE
+	dbw 22, KOFFING
+	dbw 22, ZUBAT
+	dbw 23, RATICATE
+	dbw 23, GRIMER
+	dbw 23, MISDREAVUS
+	dbw 24, MISDREAVUS
+	dbw 24, HAUNTER
+
 	map_id NATIONAL_PARK
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn

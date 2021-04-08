@@ -12,13 +12,13 @@ MountMortar2FInside_MapScripts:
 
 	db 0 ; callbacks
 
-TrainerSupernerdHugh:
-	trainer SUPER_NERD, HUGH, EVENT_BEAT_SUPER_NERD_HUGH, SupernerdHughSeenText, SupernerdHughBeatenText, 0, .Script
+TrainerBurglarLocke:
+	trainer BURGLAR, LOCKE, EVENT_BEAT_BURGLAR_LOCKE, BurglarLockeSeenText, BurglarLockeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SupernerdHughAfterBattleText
+	writetext BurglarLockeAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -44,24 +44,26 @@ MountMortar2FInsideEscapeRope:
 MountMortar2FInsideHiddenFullRestore:
 	hiddenitem FULL_RESTORE, EVENT_MOUNT_MORTAR_2F_INSIDE_HIDDEN_FULL_RESTORE
 
-SupernerdHughSeenText:
-	text "Yo! MARKUS!"
+BurglarLockeSeenText:
+	text "I came here to"
+	line "find someone who"
+	cont "will give me an"
+	cont "item, but I seem"
+	cont "to be lost."
 	done
 
-SupernerdHughBeatenText:
-	text "Sorry, my mistake."
+BurglarLockeBeatenText:
+	text "Yep, I'm lost."
 	done
 
-SupernerdHughAfterBattleText:
-	text "I'm investigating"
-	line "MT.MORTAR, but my"
-	cont "pal's gone AWOL."
+BurglarLockeAfterBattleText:
+	text "Ok, you got me. I"
+	line "was actually going"
+	cont "to mug them for"
+	cont "the item."
 
-	para "Have you seen a"
-	line "trainer who has a"
-
-	para "SLOWPOKE that can"
-	line "use STRENGTH?"
+	para "I am a burglar,"
+	line "after all."
 	done
 
 MountMortar2FInside_MapEvents:
@@ -83,4 +85,4 @@ MountMortar2FInside_MapEvents:
 	object_event 16,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar2FInsideDragonScale, EVENT_MOUNT_MORTAR_2F_INSIDE_DRAGON_SCALE
 	object_event  9, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar2FInsideElixer, EVENT_MOUNT_MORTAR_2F_INSIDE_ELIXER
 	object_event 28,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar2FInsideEscapeRope, EVENT_MOUNT_MORTAR_2F_INSIDE_ESCAPE_ROPE
-	object_event 13, 26, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerSupernerdHugh, -1
+	object_event 13, 26, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBurglarLocke, -1

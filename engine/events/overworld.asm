@@ -311,8 +311,12 @@ UseFlash:
 Script_UseFlash:
 	reloadmappart
 	special UpdateTimePals
-	cry VOLTORB
-	pause 3
+	refreshscreen
+	pokepic GOLEM
+	cry GOLEM
+	pause 10
+	closepokepic
+	closetext
 	writetext UnknownText_0xc8f3
 	callasm BlindingFlash
 	closetext
@@ -1374,8 +1378,11 @@ RockSmashFromMenuScript:
 
 RockSmashScript:
 	writetext UnknownText_0xcf58
+	refreshscreen
+	pokepic GOLEM
 	cry GOLEM
-	pause 3
+	pause 10
+	closepokepic
 	closetext
 	special WaitSFX
 	playsound SFX_STRENGTH

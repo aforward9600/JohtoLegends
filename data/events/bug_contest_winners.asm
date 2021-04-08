@@ -31,7 +31,7 @@ BugContestant_BugCatcherEd:
 	dw CATERPIE,   237
 
 BugContestant_CooltrainerMNick:
-	db COOLTRAINERM, NICK
+	db COOLTRAINERM, FABIO
 	dw SCYTHER,    357
 	dw BUTTERFREE, 349
 	dw PINSIR,     368

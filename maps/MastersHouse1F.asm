@@ -131,7 +131,7 @@ DratiniPokeballScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke LEAFEON, 16, LEAF_STONE
+	givepoke DRATINI, 5, ORAN_BERRY
 	closetext
 	sjump RivalLarvitarScript
 
@@ -364,7 +364,7 @@ WalkUpToRival2:
 	buttonsound
 	getitemname STRING_BUFFER_4, POKE_BALL
 	scall Rival_ReceiveTheBalls
-	giveitem RARE_CANDY, 10
+	giveitem POKE_BALL, 10
 	buttonsound
 	itemnotify
 	writetext RivalGoodByeText

@@ -312,7 +312,6 @@ SECTION "bank23", ROMX
 
 INCLUDE "engine/tilesets/timeofday_pals.asm"
 INCLUDE "engine/battle/battle_transition.asm"
-INCLUDE "engine/events/field_moves.asm"
 INCLUDE "engine/battle/battlestart_copytilemapatonce.asm"
 INCLUDE "engine/gfx/sprites.asm"
 INCLUDE "engine/gfx/mon_icons.asm"
@@ -696,6 +695,7 @@ SECTION "Battle Tower Trainer Data", ROMX
 
 INCLUDE "data/battle_tower/unknown.asm"
 INCLUDE "engine/battle/ai/scoring.asm"
+INCLUDE "engine/events/field_moves.asm"
 
 
 SECTION "Mobile News Data", ROMX

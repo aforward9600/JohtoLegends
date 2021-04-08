@@ -2,14 +2,14 @@
 	const ICEPATHB1F_ROCK1
 	const ICEPATHB1F_ROCK2
 	const ICEPATHB1F_ROCK3
-	const ICEPATHB1F_ROCK4
 	const ICEPATHB1F_POKE_BALL1
 	const ICEPATHB1F_POKE_BALL2
 	const ICEPATHB1F_POKE_BALL3
 	const ICEPATHB1F_YOUNGSTER
-	const ICEPATHB1F_LASS
+	const ICEPATHB1F_SKIER
 	const ICEPATHB1F_KRIS ; if Male
 	const ICEPATHB1F_CHRIS ; if Female
+	const ICEPATHB1F_BOARDER
 
 IcePathB1F_MapScripts:
 	db 2 ; scene scripts
@@ -132,7 +132,10 @@ IcePathB1FRazorClaw:
 	itemball RAZOR_CLAW
 
 IcePathB1FAntidote:
-	itemball ANTIDOTE
+	itemball ICE_STONE
+
+IcePathB1FWaterfall:
+	itemball TM_WATERFALL
 
 TrainerYoungsterTimmy:
 	trainer YOUNGSTER, TIMMY, EVENT_BEAT_YOUNGSTER_TIMMY, YoungsterTimmySeenText, YoungsterTimmyBeatenText, 0, .Script
@@ -145,13 +148,35 @@ TrainerYoungsterTimmy:
 	closetext
 	end
 
-TrainerLassArielle:
-	trainer LASS, ARIELLE, EVENT_BEAT_LASS_ARIELLE, LassArielleSeenText, LassArielleBeatenText, 0, .Script
+TrainerSkierLupita:
+	trainer SKIER, LUPITA, EVENT_BEAT_SKIER_LUPITA, SkierLupitaSeenText, SkierLupitaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext LassArielleAfterText
+	writetext SkierLupitaAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerBoarderGareth:
+	trainer BOARDER, GARETH, EVENT_BEAT_BOARDER_GARETH, BoarderGarethSeenText, BoarderGarethBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BoarderGarethAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerBoarderBrody:
+	trainer BOARDER, BRODY, EVENT_BEAT_BOARDER_BRODY, BoarderBrodySeenText, BoarderBrodyBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BoarderBrodyAfterText
 	waitbutton
 	closetext
 	end
@@ -217,18 +242,18 @@ YoungsterTimmyAfterText:
 	cont "frozen in place!"
 	done
 
-LassArielleSeenText:
+SkierLupitaSeenText:
 	text "Aren't you a sight"
 	line "for sore eyes!"
 	done
 
-LassArielleBeatenText:
+SkierLupitaBeatenText:
 	text "That wasn't a"
 	line "sight I wanted to"
 	cont "see!"
 	done
 
-LassArielleAfterText:
+SkierLupitaAfterText:
 	text "Alright, out of"
 	line "my sight! I"
 	cont "wasn't expecting"
@@ -236,15 +261,59 @@ LassArielleAfterText:
 	para "to lose like that!"
 	done
 
+BoarderGarethSeenText:
+	text "Hey, hey, hey!"
+
+	para "Let's battle!"
+	done
+
+BoarderGarethBeatenText:
+	text "Hey, hey, hey!"
+
+	para "I lost!"
+	done
+
+BoarderGarethAfterText:
+	text "I keep saying that"
+	line "ever since I saw"
+	cont "someone on TV say"
+	cont "it."
+	done
+
+BoarderBrodySeenText:
+	text "The cold of this"
+	line "cave is great for"
+	cont "training!"
+
+	para "It really builds"
+	line "resistance!"
+	done
+
+BoarderBrodyBeatenText:
+	text "My #mon didn't"
+	line "have enough"
+	cont "resistance..."
+	done
+
+BoarderBrodyAfterText:
+	text "My Ice-types love"
+	line "the cold, but I"
+	cont "can't stand it."
+
+	para "There's no way I'm"
+	line "going to be build-"
+	cont "ing resistance for"
+	cont "myself!"
+	done
+
 IcePathB1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 5 ; warp events
+	db 4 ; warp events
 	warp_event  3, 15, ICE_PATH_1F, 3
-	warp_event 17,  3, ICE_PATH_B2F_MAHOGANY_SIDE, 1
 	warp_event  5, 25, ICE_PATH_1F, 4
 	warp_event 11, 27, ICE_PATH_B2F_BLACKTHORN_SIDE, 1
-	warp_event  2,  1, ICE_PATH_B2F_BLACKTHORN_SIDE, 3
+	warp_event  2,  1, ICE_PATH_B2F_BLACKTHORN_SIDE, 2
 
 	db 1 ; coord events
 	coord_event  1, 14, SCENE_ICE_PATH_B1F_RIVAL, IcePath1FRivalScene1
@@ -252,15 +321,16 @@ IcePathB1F_MapEvents:
 	db 1 ; bg events
 	bg_event 16, 33, BGEVENT_ITEM, IcePathB1FHiddenMaxPotion
 
-	db 11 ; object events
+	db 12 ; object events
 	object_event 10,  1, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB1FRock, -1
-	object_event 17, 14, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB1FRock, -1
+	object_event 16, 12, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBoarderGareth, -1
 	object_event  5,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB1FRock, -1
-	object_event  6, 13, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB1FRock, -1
 	object_event  5, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePathB1FPotion, EVENT_ICE_PATH_B1F_POTION
 	object_event  3, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL,0, IcePathB1FRazorClaw, EVENT_ICE_PATH_B1F_RAZOR_CLAW
 	object_event 16,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL,0, IcePathB1FAntidote, EVENT_ICE_PATH_B1F_ANTIDOTE
 	object_event 14, 24, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerYoungsterTimmy, -1
-	object_event  4,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassArielle, -1
+	object_event  7, 11, SPRITE_BUENA, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerSkierLupita, -1
 	object_event  3, 14, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ICE_PATH_B1F_RIVAL1
 	object_event  3, 14, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ICE_PATH_B1F_RIVAL2
+	object_event 17,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePathB1FWaterfall, EVENT_GOT_TM_WATERFALL
+	object_event 17,  1, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderBrody, -1

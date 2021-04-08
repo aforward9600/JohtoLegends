@@ -145,6 +145,7 @@ ENDM
 	map_const VICTORY_ROAD,                                10, 36 ; 91
 	map_const DARK_CAVE_NEW_ENTRANCE,                       6,  4 ; 92
 	map_const LIGHTHOUSE_ELEVATOR,                          2,  2 ; 93
+	map_const BURNED_TOWER_2F,                             10,  9 ; 94
 
 	newgroup                                                      ;  4
 

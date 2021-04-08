@@ -2,16 +2,24 @@
 	const ECRUTEAKCITY_GRAMPS1
 	const ECRUTEAKCITY_GRAMPS2
 	const ECRUTEAKCITY_LASS1
-	const ECRUTEAKCITY_LASS2
+	const ECRUTEAKCITY_MOTHER
 	const ECRUTEAKCITY_FISHER
 	const ECRUTEAKCITY_YOUNGSTER
 	const ECRUTEAKCITY_GRAMPS3
 
 EcruteakCity_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene1 ; SCENE_ECRUTEAK_MOTHER
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
+
+.DummyScene0:
+	end
+
+.DummyScene1:
+	end
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_ECRUTEAK
@@ -76,6 +84,45 @@ EcruteakCityMartSign:
 
 EcruteakCityHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_ECRUTEAK_CITY_HIDDEN_HYPER_POTION
+
+EcruteakCityMotherWalks:
+	applymovement ECRUTEAKCITY_MOTHER, EcruteakMotherWalksMovement
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext ThankYouForSavingDaughterText
+	buttonsound
+	verbosegiveitem TM_CALM_MIND
+	iffalse .BagFull
+	writetext ThatsCalmMindText
+	waitbutton
+	closetext
+	applymovement ECRUTEAKCITY_MOTHER, EcruteakMotherWalksAwayMovement
+	disappear ECRUTEAKCITY_MOTHER
+	setevent EVENT_ECRUTEAK_CITY_MOTHER
+	clearevent EVENT_AFTER_RESCUING_BURNED_TOWER_GIRL
+	setscene SCENE_DEFAULT
+	end
+
+.BagFull:
+	closetext
+	end
+
+EcruteakMotherWalksMovement:
+	step UP
+	step UP
+	step LEFT
+	step_end
+
+EcruteakMotherWalksAwayMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step_end
 
 EcruteakCityMotherText:
 	text "Oh, no. Oh, no…"
@@ -197,6 +244,36 @@ EcruteakCityGramps3Text:
 	para "Thank goodness."
 	done
 
+ThankYouForSavingDaughterText:
+	text "Oh, you're the one"
+	line "who rescued my"
+	cont "little girl!"
+
+	para "Thank you so much!"
+
+	para "I don't know how"
+	line "I can repay you!"
+
+	para "Here, have this!"
+	done
+
+ThatsCalmMindText:
+	text "That's Calm Mind!"
+
+	para "It raises the"
+	line "Special Attack and"
+	cont "Special Defense of"
+
+	para "the user!"
+
+	para "I thought of that"
+	line "since you put my"
+	cont "mind at rest!"
+
+	para "Please, come visit"
+	line "us at any time!"
+	done
+
 EcruteakCitySignText:
 	text "Ecruteak City"
 	line "A Historical City"
@@ -248,7 +325,8 @@ EcruteakCity_MapEvents:
 	warp_event  5, 16, ECRUTEAK_MOVE_TUTOR_HOUSE, 1
 	warp_event  5,  5, BURNED_TOWER_1F, 1
 
-	db 0 ; coord events
+	db 1 ; coord events
+	coord_event  5,  7, SCENE_ECRUTEAK_MOTHER, EcruteakCityMotherWalks
 
 	db 7 ; bg events
 	bg_event 15, 21, BGEVENT_READ, EcruteakCitySign
@@ -263,7 +341,7 @@ EcruteakCity_MapEvents:
 	object_event 18, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps1Script, -1
 	object_event 20, 21, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps2Script, -1
 	object_event 30, 16, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass1Script, -1
-	object_event  7,  9, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityMotherScript, -1
+	object_event  7,  9, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityMotherScript, EVENT_ECRUTEAK_CITY_MOTHER
 	object_event 19, 15, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1
 	object_event 11, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCityYoungsterScript, -1
 	object_event  3,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS

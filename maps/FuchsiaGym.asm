@@ -1,6 +1,5 @@
 	object_const_def ; object_event constants
 	const FUCHSIAGYM_JANINE
-	const FUCHSIAGYM_FUCHSIA_GYM_1
 	const FUCHSIAGYM_FUCHSIA_GYM_2
 	const FUCHSIAGYM_FUCHSIA_GYM_3
 	const FUCHSIAGYM_FUCHSIA_GYM_4
@@ -25,11 +24,9 @@ FuchsiaGymJanineScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_JANINE
-	setevent EVENT_BEAT_LASS_ARIELLE
 	setevent EVENT_BEAT_LASS_LINDA
 	setevent EVENT_BEAT_PICNICKER_CINDY
 	setevent EVENT_BEAT_CAMPER_BARRY
-	variablesprite SPRITE_FUCHSIA_GYM_1, SPRITE_LASS
 	variablesprite SPRITE_FUCHSIA_GYM_2, SPRITE_LASS
 	variablesprite SPRITE_FUCHSIA_GYM_3, SPRITE_LASS
 	variablesprite SPRITE_FUCHSIA_GYM_4, SPRITE_YOUNGSTER
@@ -53,40 +50,6 @@ FuchsiaGymJanineScript:
 	setevent EVENT_GOT_TM06_TOXIC
 .AfterTM:
 	writetext JanineText_ApplyMyself
-	waitbutton
-	closetext
-	end
-
-LassAliceScript:
-	checkevent EVENT_BEAT_LASS_ARIELLE
-	iftrue .AliceUnmasked
-	applymovement FUCHSIAGYM_FUCHSIA_GYM_1, Movement_NinjaSpin
-	faceplayer
-	variablesprite SPRITE_FUCHSIA_GYM_1, SPRITE_LASS
-	special LoadUsedSpritesGFX
-.AliceUnmasked:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_LASS_ARIELLE
-	iftrue .AliceAfterScript
-	writetext LassAliceBeforeText
-	waitbutton
-	closetext
-	winlosstext LassAliceBeatenText, 0
-	loadtrainer LASS, ARIELLE
-	startbattle
-	iftrue .AliceBecomesJanine
-	reloadmapafterbattle
-	setevent EVENT_BEAT_LASS_ARIELLE
-	end
-
-.AliceBecomesJanine:
-	variablesprite SPRITE_FUCHSIA_GYM_1, SPRITE_JANINE
-	reloadmapafterbattle
-	end
-
-.AliceAfterScript:
-	writetext LassAliceAfterText
 	waitbutton
 	closetext
 	end
@@ -391,9 +354,8 @@ FuchsiaGym_MapEvents:
 	bg_event  3, 15, BGEVENT_READ, FuchsiaGymStatue
 	bg_event  6, 15, BGEVENT_READ, FuchsiaGymStatue
 
-	db 6 ; object events
+	db 5 ; object events
 	object_event  1, 10, SPRITE_JANINE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FuchsiaGymJanineScript, -1
-	object_event  5,  7, SPRITE_FUCHSIA_GYM_1, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LassAliceScript, -1
 	object_event  5, 11, SPRITE_FUCHSIA_GYM_2, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LassLindaScript, -1
 	object_event  9,  4, SPRITE_FUCHSIA_GYM_3, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PicnickerCindyScript, -1
 	object_event  4,  2, SPRITE_FUCHSIA_GYM_4, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CamperBarryScript, -1

@@ -34,30 +34,30 @@ OddEggSpecies:
 	dw CLEFFA
 	dw IGGLYBUFF
 	dw IGGLYBUFF
-	dw SMOOCHUM
-	dw SMOOCHUM
-	dw MAGBY
-	dw MAGBY
-	dw ELEKID
-	dw ELEKID
+	dw MUNCHLAX
+	dw MUNCHLAX
+	dw AZURILL
+	dw AZURILL
+	dw HAPPINY
+	dw HAPPINY
 	dw TYROGUE
 	dw TYROGUE
 
 OddEggMoves:
-	dw THUNDERSHOCK, CHARM, DIZZY_PUNCH, NO_MOVE
-	dw THUNDERSHOCK, CHARM, DIZZY_PUNCH, NO_MOVE
-	dw POUND, CHARM, DIZZY_PUNCH, NO_MOVE
-	dw POUND, CHARM, DIZZY_PUNCH, NO_MOVE
-	dw SING, CHARM, DIZZY_PUNCH, NO_MOVE
-	dw SING, CHARM, DIZZY_PUNCH, NO_MOVE
-	dw POUND, LICK, DIZZY_PUNCH, NO_MOVE
-	dw POUND, LICK, DIZZY_PUNCH, NO_MOVE
-	dw EMBER, DIZZY_PUNCH, NO_MOVE, NO_MOVE
-	dw EMBER, DIZZY_PUNCH, NO_MOVE, NO_MOVE
-	dw QUICK_ATTACK, LEER, DIZZY_PUNCH, NO_MOVE
-	dw QUICK_ATTACK, LEER, DIZZY_PUNCH, NO_MOVE
-	dw TACKLE, DIZZY_PUNCH, NO_MOVE, NO_MOVE
-	dw TACKLE, DIZZY_PUNCH, NO_MOVE, NO_MOVE
+	dw THUNDERSHOCK, CHARM, TAIL_WHIP, DIZZY_PUNCH
+	dw THUNDERSHOCK, CHARM, TAIL_WHIP, DIZZY_PUNCH
+	dw POUND, CHARM, ENCORE, DIZZY_PUNCH
+	dw POUND, CHARM, ENCORE, DIZZY_PUNCH
+	dw SING, CHARM, DEFENSE_CURL, DIZZY_PUNCH
+	dw SING, CHARM, DEFENSE_CURL, DIZZY_PUNCH
+	dw DIZZY_PUNCH, DEFENSE_CURL, LICK, METRONOME
+	dw DIZZY_PUNCH, DEFENSE_CURL, LICK, METRONOME
+	dw WATER_GUN, TAIL_WHIP, DOUBLESLAP, DIZZY_PUNCH
+	dw WATER_GUN, TAIL_WHIP, DOUBLESLAP, DIZZY_PUNCH
+	dw DIZZY_PUNCH, MINIMIZE, DEFENSE_CURL, MIMIC
+	dw DIZZY_PUNCH, MINIMIZE, DEFENSE_CURL, MIMIC
+	dw TACKLE, FORESIGHT, FOCUS_ENERGY, DIZZY_PUNCH
+	dw TACKLE, FORESIGHT, FOCUS_ENERGY, DIZZY_PUNCH
 
 OddEggs:
 
@@ -76,7 +76,7 @@ OddEggs:
 	db 30, 20, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 1 ; Level
+	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 17 ; Max HP
@@ -102,7 +102,7 @@ OddEggs:
 	db 30, 20, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 1 ; Level
+	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 17 ; Max HP
@@ -128,7 +128,7 @@ OddEggs:
 	db 35, 20, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 1 ; Level
+	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 20 ; Max HP
@@ -154,7 +154,7 @@ OddEggs:
 	db 35, 20, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 1 ; Level
+	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 20 ; Max HP
@@ -180,7 +180,7 @@ OddEggs:
 	db 15, 20, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 1 ; Level
+	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 24 ; Max HP
@@ -206,7 +206,7 @@ OddEggs:
 	db 15, 20, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 1 ; Level
+	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 24 ; Max HP
@@ -232,7 +232,7 @@ OddEggs:
 	db 35, 30, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 1 ; Level
+	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -258,7 +258,7 @@ OddEggs:
 	db 35, 30, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 1 ; Level
+	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -284,7 +284,7 @@ OddEggs:
 	db 25, 10, 0, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 1 ; Level
+	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -310,7 +310,7 @@ OddEggs:
 	db 25, 10, 0, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 1 ; Level
+	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -336,7 +336,7 @@ OddEggs:
 	db 30, 30, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 1 ; Level
+	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -362,7 +362,7 @@ OddEggs:
 	db 30, 30, 10, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 1 ; Level
+	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -388,7 +388,7 @@ OddEggs:
 	db 35, 10, 0, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 1 ; Level
+	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 18 ; Max HP
@@ -414,7 +414,7 @@ OddEggs:
 	db 35, 10, 0, 0 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 1 ; Level
+	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 18 ; Max HP

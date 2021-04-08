@@ -227,7 +227,7 @@ TrainerGruntM25:
 	end
 
 TrainerBurglarDuncan:
-	trainer BURGLAR, DUNCAN, EVENT_BEAT_BURGLAR_DUNCAN, BurglarDuncanSeenText, BurglarDuncanBeatenText, 0, .Script
+	trainer BURGLAR, LOCKE, EVENT_BEAT_BURGLAR_LOCKE, BurglarDuncanSeenText, BurglarDuncanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
