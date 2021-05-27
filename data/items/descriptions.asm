@@ -143,7 +143,7 @@ ItemDescriptions:
 	dw FriendBallDesc
 	dw MoonBallDesc
 	dw LoveBallDesc
-	dw NormalBoxDesc
+	dw ZincDesc
 	dw GorgeousBoxDesc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
@@ -364,7 +364,7 @@ LuckyPunchDesc:
 	next "ratio of Chansey.@"
 
 CalciumDesc:
-	db   "Ups Special stats"
+	db   "Ups Spcl.Atk stat"
 	next "of one #mon.@"
 
 RareCandyDesc:
@@ -817,9 +817,9 @@ LoveBallDesc:
 	db   "For catching the"
 	next "opposite gender.@"
 
-NormalBoxDesc:
-	db   "Open it and see"
-	next "what's inside.@"
+ZincDesc:
+	db   "Ups Spcl.Def stat"
+	next "of one #mon.@"
 
 GorgeousBoxDesc:
 	db   "Open it and see"

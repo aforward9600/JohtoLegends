@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db  75,  55,  70, 121,  60,  95
+	evs  0,   0,   0,   3,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, FLYING ; type

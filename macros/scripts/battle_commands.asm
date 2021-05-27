@@ -62,7 +62,7 @@ ENDM
 	command charge                  ; 39
 	command checkcharge             ; 3a
 	command traptarget              ; 3b
-	command effect0x3c              ; 3c
+	command resetmiss               ; 3c
 	command rampage                 ; 3d
 	command checkrampage            ; 3e
 	command constantdamage          ; 3f
@@ -70,7 +70,6 @@ ENDM
 	command encore                  ; 41
 	command painsplit               ; 42
 	command snore                   ; 43
-	command calmmind                ; 44
 	command lockon                  ; 45
 	command sketch                  ; 46
 	command defrostopponent         ; 47
@@ -101,7 +100,6 @@ ENDM
 	command happinesspower          ; 60
 	command present                 ; 61
 	command damagecalc              ; 62
-	command cosmicpower             ; 63
 	command safeguard               ; 64
 	command checksafeguard          ; 65
 	command getmagnitude            ; 66
@@ -167,7 +165,6 @@ ENDM
 	command ragedamage              ; a2
 	command resettypematchup        ; a3
 	command allstatsup              ; a4
-	command growth            ; a5
 	command raisesubnoanim          ; a6
 	command lowersubnoanim          ; a7
 	command clearmissdamage         ; a9
@@ -181,13 +178,10 @@ ENDM
 	command venoshock
 	command allstatsdown
 	command avalanche
-	command bulkup
-	command dragondance
 	command shellsmash
-	command honeclaws
 	command starthail
 	command breakscreens
-	command quiverdance
+	command suckerpunch
 
 	enum_start $fe
 	command endturn                 ; fe

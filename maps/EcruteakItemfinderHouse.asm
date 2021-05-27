@@ -45,6 +45,7 @@ EcruteakPorygonGuy:
 	givepoke PORYGON, 15
 	setevent EVENT_GOT_PORYGON_R
 	clearevent EVENT_ITEMFINDER_GUY
+	clearevent EVENT_JAILED_ROCKET
 .GotPorygon:
 	writetext QuitText
 	waitbutton

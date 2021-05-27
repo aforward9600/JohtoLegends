@@ -934,7 +934,7 @@ SentretEvosAttacks:
 	dbw 19, DIZZY_PUNCH
 	dbw 25, SLAM
 	dbw 28, REST
-	dbw 31, FAINT_ATTACK
+	dbw 31, SUCKER_PUNCH
 	dbw 36, AMNESIA
 	dbw 39, BATON_PASS
 	dbw 42, DOUBLE_EDGE
@@ -953,7 +953,7 @@ FurretEvosAttacks:
 	dbw 21, DIZZY_PUNCH
 	dbw 28, SLAM
 	dbw 32, REST
-	dbw 36, FAINT_ATTACK
+	dbw 36, SUCKER_PUNCH
 	dbw 42, AMNESIA
 	dbw 46, BATON_PASS
 	dbw 50, DOUBLE_EDGE
@@ -992,7 +992,7 @@ NoctowlEvosAttacks:
 	dbw 12, REFLECT
 	dbw 15, LIGHT_SCREEN
 	dbw 18, AIR_SLASH
-	dbw 23, EXTRASENSORY
+	dbw 23, SHADOW_BALL
 	dbw 28, TAKE_DOWN
 	dbw 33, HYPER_VOICE
 	dbw 38, ROOST
@@ -1000,7 +1000,7 @@ NoctowlEvosAttacks:
 	dbw 48, HYPNOSIS
 	dbw 53, DREAM_EATER
 	dbw 56, HURRICANE
-	dbw LEARN_EVO_MOVE, PSYBEAM
+	dbw LEARN_EVO_MOVE, HEX
 	db 0 ; no more level-up moves
 
 LedybaEvosAttacks:
@@ -1055,7 +1055,7 @@ SpinarakEvosAttacks:
 	dbw 15, NIGHT_SHADE
 	dbw 19, PURSUIT
 	dbw 22, FURY_SWIPES
-	dbw 26, FAINT_ATTACK
+	dbw 26, SUCKER_PUNCH
 	dbw 29, SPIDER_WEB
 	dbw 33, AGILITY
 	dbw 36, X_SCISSOR
@@ -1076,7 +1076,7 @@ AriadosEvosAttacks:
 	dbw 15, NIGHT_SHADE
 	dbw 19, PURSUIT
 	dbw 23, FURY_SWIPES
-	dbw 28, FAINT_ATTACK
+	dbw 28, SUCKER_PUNCH
 	dbw 32, SPIDER_WEB
 	dbw 37, AGILITY
 	dbw 41, X_SCISSOR
@@ -1355,7 +1355,7 @@ BonslyEvosAttacks:
 	dbw 29, MEAN_LOOK
 	dbw 33, ROCK_SLIDE
 	dbw 36, COUNTER
-	dbw 40, EARTHQUAKE
+	dbw 40, SUCKER_PUNCH
 	dbw 43, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
@@ -1372,7 +1372,7 @@ SudowoodoEvosAttacks:
 	dbw 29, MEAN_LOOK
 	dbw 33, ROCK_SLIDE
 	dbw 36, COUNTER
-	dbw 40, EARTHQUAKE
+	dbw 40, SUCKER_PUNCH
 	dbw 43, DOUBLE_EDGE
 	dbw 47, STONE_EDGE
 	dbw 50, WOOD_HAMMER
@@ -1634,7 +1634,7 @@ MurkrowEvosAttacks:
 	dbw 41, MEAN_LOOK
 	dbw 45, AIR_SLASH
 	dbw 50, ROOST
-	dbw 55, NIGHT_SLASH
+	dbw 55, SUCKER_PUNCH
 	dbw 61, SWAGGER
 	dbw 65, BRAVE_BIRD
 	db 0 ; no more level-up moves
@@ -2477,6 +2477,7 @@ LarvitarEvosAttacks:
 	dbw 1, TACKLE
 	dbw 1, LEER
 	dbw 6, SANDSTORM
+	dbw 7, QUIVER_DANCE
 	dbw 8, ROCK_THROW
 	dbw 10, SCREECH
 	dbw 14, BITE

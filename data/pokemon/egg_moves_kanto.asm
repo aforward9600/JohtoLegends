@@ -221,6 +221,7 @@ EkansEggMoves:
 	dw CRUNCH
 	dw DISABLE
 	dw SCARY_FACE
+	dw SUCKER_PUNCH
 	dw -1 ; end
 
 PichuEggMoves:
@@ -266,6 +267,7 @@ NidoranMEggMoves:
 	dw COUNTER
 	dw ENDURE
 	dw FOCUS_ENERGY
+	dw SUCKER_PUNCH
 	dw -1 ; end
 
 CleffaEggMoves:

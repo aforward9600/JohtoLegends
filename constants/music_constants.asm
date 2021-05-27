@@ -112,6 +112,7 @@
 	const MUSIC_WILD_AREA                    ; 69
 	const MUSIC_ANTHEM                       ; 70
 	const MUSIC_MEWTWO_BATTLE                ; 71
+	const MUSIC_CINNABAR_MANSION             ; 72
 
 ; GetMapMusic picks music for this value (see home/map.asm)
 MUSIC_MAHOGANY_MART EQU $64

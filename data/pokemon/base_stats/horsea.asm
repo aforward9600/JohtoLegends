@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db  30,  40,  70,  60,  70,  25
+	evs  0,   0,   0,   0,   1,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, WATER ; type

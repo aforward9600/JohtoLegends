@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db  80,  90,  70,  70,  90,  70
+	evs  0,   1,   0,   0,   1,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, DARK ; type

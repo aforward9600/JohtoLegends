@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db  45,  50,  45,  95, 115,  55
+	evs  0,   0,   0,   0,   2,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db GHOST, POISON ; type

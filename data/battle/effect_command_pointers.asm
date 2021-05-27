@@ -61,7 +61,7 @@ BattleCommandPointers:
 	dw BattleCommand_Charge
 	dw BattleCommand_CheckCharge
 	dw BattleCommand_TrapTarget
-	dw BattleCommand3c
+	dw BattleCommand_ResetMiss
 	dw BattleCommand_Rampage
 	dw BattleCommand_CheckRampage
 	dw BattleCommand_ConstantDamage
@@ -69,7 +69,6 @@ BattleCommandPointers:
 	dw BattleCommand_Encore
 	dw BattleCommand_PainSplit
 	dw BattleCommand_Snore
-	dw BattleCommand_CalmMind
 	dw BattleCommand_LockOn
 	dw BattleCommand_Sketch
 	dw BattleCommand_DefrostOpponent
@@ -100,7 +99,6 @@ BattleCommandPointers:
 	dw BattleCommand_HappinessPower
 	dw BattleCommand_Present
 	dw BattleCommand_DamageCalc
-	dw BattleCommand_CosmicPower
 	dw BattleCommand_Safeguard
 	dw BattleCommand_CheckSafeguard
 	dw BattleCommand_GetMagnitude
@@ -166,7 +164,6 @@ BattleCommandPointers:
 	dw BattleCommand_RageDamage
 	dw BattleCommand_ResetTypeMatchup
 	dw BattleCommand_AllStatsUp
-	dw BattleCommand_Growth
 	dw BattleCommand_RaiseSubNoAnim
 	dw BattleCommand_LowerSubNoAnim
 	dw BattleCommand_ClearMissDamage
@@ -180,10 +177,7 @@ BattleCommandPointers:
 	dw BattleCommand_Venoshock
 	dw BattleCommand_AllStatsDown
 	dw BattleCommand_Avalanche
-	dw BattleCommand_BulkUp
-	dw BattleCommand_DragonDance
 	dw BattleCommand_ShellSmash
-	dw BattleCommand_HoneClaws
 	dw BattleCommand_StartHail
 	dw BattleCommand_BreakScreens
-	dw BattleCommand_QuiverDance
+	dw BattleCommand_SuckerPunch

@@ -21,6 +21,20 @@ MahoganyGym_MapScripts:
 MahoganyGymPryceScript:
 	faceplayer
 	opentext
+	checkflag ENGINE_RISINGBADGE
+	iftrue .PryceBattle8
+	checkflag ENGINE_ZEPHYRBADGE
+	iftrue .PryceBattle7
+	checkflag ENGINE_HIVEBADGE
+	iftrue .PryceBattle6
+	checkflag ENGINE_PLAINBADGE
+	iftrue .PryceBattle5
+	checkflag ENGINE_MINERALBADGE
+	iftrue .PryceBattle4
+	checkflag ENGINE_STORMBADGE
+	iftrue .PryceBattle3
+	checkflag ENGINE_FOGBADGE
+	iftrue .PryceBattle2
 	checkevent EVENT_BEAT_PRYCE
 	iftrue .FightDone
 	writetext PryceText_Intro
@@ -57,6 +71,125 @@ MahoganyGymPryceScript:
 	waitbutton
 	closetext
 	setscene SCENE_GYM_GUIDE_STOPS_YOU
+	end
+
+.PryceBattle2:
+	checkevent EVENT_BEAT_PRYCE_2
+	iftrue .FightDone
+	writetext PryceText_WelcomeBack
+	waitbutton
+	closetext
+	winlosstext PryceText_Blizzard, 0
+	loadtrainer PRYCE, PRYCE2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_PRYCE_2
+	opentext
+	writetext PryceText_BeatenAgain
+	waitbutton
+	closetext
+	end
+
+.PryceBattle3:
+	checkevent EVENT_BEAT_PRYCE_3
+	iftrue .FightDone
+	writetext PryceText_WelcomeBack
+	waitbutton
+	closetext
+	winlosstext PryceText_Blizzard, 0
+	loadtrainer PRYCE, PRYCE3
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_PRYCE_3
+	opentext
+	writetext PryceText_BeatenAgain
+	waitbutton
+	closetext
+	end
+
+.PryceBattle4:
+	checkevent EVENT_BEAT_PRYCE_4
+	iftrue .FightDone
+	writetext PryceText_WelcomeBack
+	waitbutton
+	closetext
+	winlosstext PryceText_Blizzard, 0
+	loadtrainer PRYCE, PRYCE4
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_PRYCE_4
+	opentext
+	writetext PryceText_BeatenAgain
+	waitbutton
+	closetext
+	end
+
+.PryceBattle5:
+	checkevent EVENT_BEAT_PRYCE_5
+	iftrue .FightDone
+	writetext PryceText_WelcomeBack
+	waitbutton
+	closetext
+	winlosstext PryceText_Blizzard, 0
+	loadtrainer PRYCE, PRYCE5
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_PRYCE_5
+	opentext
+	writetext PryceText_BeatenAgain
+	waitbutton
+	closetext
+	end
+
+.PryceBattle6:
+	checkevent EVENT_BEAT_PRYCE_6
+	iftrue .FightDone
+	writetext PryceText_WelcomeBack
+	waitbutton
+	closetext
+	winlosstext PryceText_Blizzard, 0
+	loadtrainer PRYCE, PRYCE6
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_PRYCE_6
+	opentext
+	writetext PryceText_BeatenAgain
+	waitbutton
+	closetext
+	end
+
+.PryceBattle7:
+	checkevent EVENT_BEAT_PRYCE_7
+	iftrue .FightDone
+	writetext PryceText_WelcomeBack
+	waitbutton
+	closetext
+	winlosstext PryceText_Blizzard, 0
+	loadtrainer PRYCE, PRYCE7
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_PRYCE_7
+	opentext
+	writetext PryceText_BeatenAgain
+	waitbutton
+	closetext
+	end
+
+.PryceBattle8:
+	checkevent EVENT_BEAT_PRYCE_8
+	iftrue .FightDone
+	writetext PryceText_WelcomeBack
+	waitbutton
+	closetext
+	winlosstext PryceText_Blizzard, 0
+	loadtrainer PRYCE, PRYCE8
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_PRYCE_8
+	opentext
+	writetext PryceText_BeatenAgain
+	waitbutton
+	closetext
 	end
 
 PryceScript_Defeat:
@@ -320,6 +453,27 @@ PryceText_GoodLooks:
 	line "years!"
 
 	para "...Hopefully."
+	done
+
+PryceText_WelcomeBack:
+	text "Well, well, well,"
+	line "looks who's back!"
+
+	para "You here for a"
+	line "rematch?"
+
+	para "I'm not too old"
+	line "for this yet!"
+	done
+
+PryceText_BeatenAgain:
+	text "Sheesh!"
+
+	para "Looks like the"
+	line "younger folks"
+	cont "will give my"
+	cont "generation a run"
+	cont "for our money!"
 	done
 
 BoarderSonnySeenText:

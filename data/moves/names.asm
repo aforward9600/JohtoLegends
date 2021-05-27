@@ -372,3 +372,4 @@ MoveNames::
 	db "Dragon Tail@"
 	db "Sheer Cold@"
 	db "Leaf Blade@"
+	db "Sucker Punch@"

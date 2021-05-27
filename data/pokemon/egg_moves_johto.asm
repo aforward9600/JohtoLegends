@@ -316,6 +316,7 @@ NatuEggMoves:
 	dw FAINT_ATTACK
 	dw FEATHERDANCE
 	dw ZEN_HEADBUTT
+	dw SUCKER_PUNCH
 	dw -1 ; end
 
 MareepEggMoves:
@@ -411,6 +412,7 @@ MisdreavusEggMoves:
 	dw SCREECH
 	dw DESTINY_BOND
 	dw DISARM_VOICE
+	dw SUCKER_PUNCH
 	dw -1 ; end
 
 GirafarigEggMoves:
@@ -609,6 +611,7 @@ HoundourEggMoves:
 	dw DESTINY_BOND
 	dw FIRE_FANG
 	dw THUNDER_FANG
+	dw SUCKER_PUNCH
 	dw -1 ; end
 
 PhanpyEggMoves:

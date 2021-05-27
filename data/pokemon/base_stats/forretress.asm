@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db  75,  90, 140,  60,  40,  80
+	evs  0,   0,   2,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, STEEL ; type

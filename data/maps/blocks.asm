@@ -1064,3 +1064,6 @@ WildArea5_Blocks:
 
 BurnedTower2F_Blocks:
 	INCBIN "maps/BurnedTower2F.blk"
+
+GoldenrodJail_Blocks:
+	INCBIN "maps/GoldenrodJail.blk"

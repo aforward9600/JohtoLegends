@@ -179,3 +179,4 @@ MoveEffectsPointers:
 	dw PlayNice
 	dw CircleThrow
 	dw SpecialAttackUpHit
+	dw SuckerPunch

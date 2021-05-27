@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db  70,  90,  60, 110,  90,  80
+	evs  0,   0,   0,   3,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db ELECTRIC, ELECTRIC ; type

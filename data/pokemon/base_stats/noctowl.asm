@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db 100,  50,  65,  73,  91,  96
+	evs  2,   0,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db GHOST, FLYING ; type

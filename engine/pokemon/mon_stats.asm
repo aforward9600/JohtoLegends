@@ -178,16 +178,28 @@ GetGender:
 
 ; Attack DV
 	ld a, [hli]
-	and $f0
-	ld b, a
-; Speed DV
-	ld a, [hl]
-	and $f0
+	cpl
+	and $10
 	swap a
-
-; Put our DVs together.
-	or b
-	ld b, a
+	add a    ; Atk DV << 1
+	ld b, a  ; Store it in register b
+; Defense DV
+	ld a, [hli]
+	and $1
+	add a    ; Def DV << 1
+	add a    ; Def DV << 2
+	or b    ; Add (Atk DV << 1) + (Def DV << 2)
+	ld b, a  ; Store result in b
+; Special DV
+	ld a, [hl]
+	cpl
+	and $1
+	add a    ; Spec DV << 1
+	add a    ; Spec DV << 2
+	add a    ; Spec DV << 3
+	or b    ; Add (Spec DV << 3)
+	swap a
+	ld b, a  ; Again, stored in b.
 
 ; Close SRAM if we were dealing with a sBoxMon.
 	ld a, [wMonType]
@@ -483,4 +495,167 @@ ListMoves:
 	jr nz, .nonmove_loop
 
 .done
+	ret
+
+PrintTempMonStatsDVs:
+; Print wTempMon's stats at hl, with spacing bc.
+	push bc
+	push hl
+	ld de, .StatNames
+	call PlaceString
+	pop hl
+	pop bc
+	add hl, bc
+	ld bc, SCREEN_WIDTH - 7
+	add hl, bc
+	
+	 ; Attack DVs, EVs and stat
+	ld a, [wTempMonDVs]
+    and $f0
+    swap a
+	ld [wTempMonPadding + 1], a
+	xor a
+	ld [wTempMonPadding], a
+	ld de, wTempMonPadding
+	lb bc, 2, 3
+	call .PrintDVEVs
+	
+	ld de, wTempMonAtkEV
+	ld a, [de]
+	ld [wTempMonPadding + 1], a
+	ld de, wTempMonPadding
+	lb bc, 2, 3
+	call .PrintDVEVs
+	
+	lb bc, 2, 3
+	ld de, wTempMonAttack
+	call .PrintStat
+	
+	 ; Defense DVs, EVs and stat
+	ld a, [wTempMonDVs]
+    and $f
+	ld [wTempMonPadding + 1], a
+	ld de, wTempMonPadding
+	lb bc, 2, 3
+	call .PrintDVEVs
+	
+	ld de, wTempMonDefEV
+	ld a, [de]
+	ld [wTempMonPadding + 1], a
+	ld de, wTempMonPadding
+	lb bc, 2, 3
+	call .PrintDVEVs
+	
+	lb bc, 2, 3
+	ld de, wTempMonDefense
+	call .PrintStat
+	
+	 ; Special DVs and Sp. Atk EVs and stat
+	ld a, [wTempMonDVs + 1]
+    and $f
+	ld [wTempMonPadding + 1], a
+	ld de, wTempMonPadding
+	lb bc, 2, 3
+	call .PrintDVEVs
+	
+	ld de, wTempMonSpclAtkEV
+	ld a, [de]
+	ld [wTempMonPadding + 1], a
+	ld de, wTempMonPadding
+	lb bc, 2, 3
+	call .PrintDVEVs
+	
+	lb bc, 2, 3
+	ld de, wTempMonSpclAtk
+	call .PrintStat
+	
+	 ; Special DVs and Sp. Def EVs and stat
+	ld a, [wTempMonDVs + 1]
+    and $f
+	ld [wTempMonPadding + 1], a
+	ld de, wTempMonPadding
+	lb bc, 2, 3
+	call .PrintDVEVs
+	
+	ld de, wTempMonSpclDefEV
+	ld a, [de]
+	ld [wTempMonPadding + 1], a
+	ld de, wTempMonPadding
+	lb bc, 2, 3
+	call .PrintDVEVs
+	
+	lb bc, 2, 3
+	ld de, wTempMonSpclDef
+	call .PrintStat
+	
+	 ; Speed DVs and stat
+	ld a, [wTempMonDVs + 1]
+    and $f0
+    swap a
+	ld [wTempMonPadding + 1], a
+	ld de, wTempMonPadding
+	lb bc, 2, 3
+	call .PrintDVEVs
+	
+	ld de, wTempMonSpdEV
+	lb bc, 2, 3
+	ld a, [de]
+	ld [wTempMonPadding + 1], a
+	ld de, wTempMonPadding
+	call .PrintDVEVs
+	
+	xor a
+	ld [wTempMonPadding + 1], a
+	lb bc, 2, 3
+	ld de, wTempMonSpeed
+	jp PrintNum
+
+.PrintStat:
+	push hl
+	call PrintNum
+	pop hl
+	ld de, SCREEN_WIDTH
+	add hl, de
+	ld de, SCREEN_WIDTH - 8
+	add hl, de
+	ret
+
+.PrintDVEVs:
+	push hl
+	call PrintNum
+	pop hl
+	ld de, 4
+	add hl, de
+	ret
+
+.StatNames:
+	db   "DV  EV Atk"
+	next "DV  EV Def"
+	next "DV  EV SpA"
+	next "DV  EV SpD"
+	next "DV  EV Spe"
+	next "@"
+
+PrintTempMonHPDVs:
+	ld a, [wTempMonDVs]
+    and $f
+	ld [wTempMonPadding + 1], a
+	ld de, wTempMonPadding
+	lb bc, 2, 3
+	call .PrintHPDVEVs
+	
+	ld de, wTempMonHPEV
+	ld a, [de]
+	ld [wTempMonPadding + 1], a
+	ld de, wTempMonPadding
+	lb bc, 2, 3
+	call .PrintHPDVEVs
+	ret
+
+.PrintHPDVEVs:
+	push hl
+	call PrintNum
+	pop hl
+	ld de, 4
+	add hl, de
 	ret

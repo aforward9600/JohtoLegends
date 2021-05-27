@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db  70, 100,  70,  95, 100,  70
+	evs  0,   0,   0,   0,   2,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, PSYCHIC ; type

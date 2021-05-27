@@ -66,12 +66,8 @@ OddEggs:
 	db 0, 0, 0, 0 ; Moves, will be filled on load
 	dw 02048 ; OT ID
 	dt 125 ; Exp
-	; Stat exp
-	bigdw 0
-	bigdw 0
-	bigdw 0
-	bigdw 0
-	bigdw 0
+	db 0, 0, 0, 0, 0, 0 ; EVs
+	db 0, 0, 0, 0 ; padding
 	dn 0, 0, 0, 0 ; DVs
 	db 30, 20, 10, 0 ; PP
 	db 20 ; Step cycles to hatch

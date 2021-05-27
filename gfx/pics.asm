@@ -710,6 +710,7 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 SECTION "Pics 19", ROMX
 
+MasterPic:           INCBIN "gfx/trainers/master.2bpp.lz"
 SkarminiFrontpic:    INCBIN "gfx/pokemon/skarmini/front.animated.2bpp.lz"
 SkarminiBackpic:     INCBIN "gfx/pokemon/skarmini/back.2bpp.lz"
 MismagiusFrontpic:   INCBIN "gfx/pokemon/mismagius/front.animated.2bpp.lz"
@@ -732,7 +733,7 @@ LickilickyBackpic:   INCBIN "gfx/pokemon/lickilicky/back.2bpp.lz"
 YanmegaFrontpic:     INCBIN "gfx/pokemon/yanmega/front.animated.2bpp.lz"
 YanmegaBackpic:      INCBIN "gfx/pokemon/yanmega/back.2bpp.lz"
 TogekissFrontpic:    INCBIN "gfx/pokemon/togekiss/front.animated.2bpp.lz"
-TogekissBackpic:     INCBIN "gfx/pokemon/togekiss/back.2bpp.lz"
+
 
 SECTION "Pics 25", ROMX
 
@@ -748,8 +749,7 @@ GliscorFrontpic:     INCBIN "gfx/pokemon/gliscor/front.animated.2bpp.lz"
 GliscorBackpic:      INCBIN "gfx/pokemon/gliscor/back.2bpp.lz"
 WeavileFrontpic:     INCBIN "gfx/pokemon/weavile/front.animated.2bpp.lz"
 WeavileBackpic:      INCBIN "gfx/pokemon/weavile/back.2bpp.lz"
-ElectivireFrontpic:  INCBIN "gfx/pokemon/electivire/front.animated.2bpp.lz"
-ElectivireBackpic:   INCBIN "gfx/pokemon/electivire/back.2bpp.lz"
+TogekissBackpic:     INCBIN "gfx/pokemon/togekiss/back.2bpp.lz"
 MagmortarFrontpic:   INCBIN "gfx/pokemon/magmortar/front.animated.2bpp.lz"
 MagmortarBackpic:    INCBIN "gfx/pokemon/magmortar/back.2bpp.lz"
 RhyperiorFrontpic:   INCBIN "gfx/pokemon/rhyperior/front.animated.2bpp.lz"
@@ -784,7 +784,8 @@ HappinyFrontpic:     INCBIN "gfx/pokemon/happiny/front.animated.2bpp.lz"
 HappinyBackpic:      INCBIN "gfx/pokemon/happiny/back.2bpp.lz"
 HexManiacPic:        INCBIN "gfx/trainers/hex_maniac.2bpp.lz"
 ChigusaPic:          INCBIN "gfx/trainers/chigusa.2bpp.lz"
-MasterPic:           INCBIN "gfx/trainers/master.2bpp.lz"
+ElectivireFrontpic:  INCBIN "gfx/pokemon/electivire/front.animated.2bpp.lz"
+ElectivireBackpic:   INCBIN "gfx/pokemon/electivire/back.2bpp.lz"
 GenSurgePic:         INCBIN "gfx/trainers/gen_surge.2bpp.lz"
 UrsaringFrontpic:    INCBIN "gfx/pokemon/ursaring/front.animated.2bpp.lz"
 MoltresFrontpic:     INCBIN "gfx/pokemon/moltres/front.animated.2bpp.lz"

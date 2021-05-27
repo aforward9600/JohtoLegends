@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db  10,  55,  25,  95,  35,  45
+	evs  0,   0,   0,   1,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db GROUND, GROUND ; type

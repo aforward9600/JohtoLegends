@@ -398,6 +398,7 @@ BattleAnimations::
 	dw BattleAnim_DragonTail
 	dw BattleAnim_SheerCold
 	dw BattleAnim_LeafBlade
+	dw BattleAnim_SuckerPunch
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -5972,6 +5973,41 @@ BattleAnim_PetalBlizz:
     anim_obj ANIM_OBJ_FLOWER, 48, 108, $34
     anim_wait 56
     anim_ret
+
+BattleAnim_SuckerPunch:
+	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_HIT
+	anim_sound 0, 0, SFX_LICK
+	anim_bgeffect ANIM_BG_27, $0, $1, $0
+	anim_wait 48
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_obj ANIM_OBJ_04, 104, 34, $0
+	anim_wait 2
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_obj ANIM_OBJ_04, 124, 34, $0
+	anim_wait 2
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_obj ANIM_OBJ_04, 144, 34, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_obj ANIM_OBJ_04, 156, 52, $0
+	anim_wait 2
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_obj ANIM_OBJ_04, 138, 52, $0
+	anim_wait 2
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_00, 122, 52, $0
+	anim_wait 12
+	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
+	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
+	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
+	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
+	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
+	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+	anim_wait 8
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 4
+	anim_ret
 
 BattleAnim_DreamEater_branch_cbab3:
 BattleAnim_GigaDrain_branch_cbab3:

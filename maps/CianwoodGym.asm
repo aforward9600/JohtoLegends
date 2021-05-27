@@ -26,6 +26,16 @@ CianwoodGym_MapScripts:
 CianwoodGymChigusaScript:
 	faceplayer
 	opentext
+	checkflag ENGINE_RISINGBADGE
+	iftrue .ChigusaBattle6
+	checkflag ENGINE_ZEPHYRBADGE
+	iftrue .ChigusaBattle5
+	checkflag ENGINE_HIVEBADGE
+	iftrue .ChigusaBattle4
+	checkflag ENGINE_PLAINBADGE
+	iftrue .ChigusaBattle3
+	checkflag ENGINE_MINERALBADGE
+	iftrue .ChigusaBattle2
 	checkevent EVENT_BEAT_CHIGUSA
 	iftrue .FightDone
 	writetext ChigusaIntroText
@@ -73,6 +83,91 @@ CianwoodGymChigusaScript:
 	writetext ChigusaAfterText
 	waitbutton
 .BagFull:
+	closetext
+	end
+
+.ChigusaBattle2:
+	checkevent EVENT_BEAT_CHIGUSA_2
+	iftrue .FightDone
+	writetext ReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext ChigusaLossText, 0
+	loadtrainer CHIGUSA, CHIGUSA2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CHIGUSA_2
+	opentext
+	writetext BeatenChigusaAgainText
+	waitbutton
+	closetext
+	end
+
+.ChigusaBattle3:
+	checkevent EVENT_BEAT_CHIGUSA_3
+	iftrue .FightDone
+	writetext ReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext ChigusaLossText, 0
+	loadtrainer CHIGUSA, CHIGUSA3
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CHIGUSA_3
+	opentext
+	writetext BeatenChigusaAgainText
+	waitbutton
+	closetext
+	end
+
+.ChigusaBattle4:
+	checkevent EVENT_BEAT_CHIGUSA_4
+	iftrue .FightDone
+	writetext ReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext ChigusaLossText, 0
+	loadtrainer CHIGUSA, CHIGUSA4
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CHIGUSA_4
+	opentext
+	writetext BeatenChigusaAgainText
+	waitbutton
+	closetext
+	end
+
+.ChigusaBattle5:
+	checkevent EVENT_BEAT_CHIGUSA_5
+	iftrue .FightDone
+	writetext ReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext ChigusaLossText, 0
+	loadtrainer CHIGUSA, CHIGUSA5
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CHIGUSA_5
+	opentext
+	writetext BeatenChigusaAgainText
+	waitbutton
+	closetext
+	end
+
+.ChigusaBattle6:
+	checkevent EVENT_BEAT_CHIGUSA_6
+	iftrue .FightDone
+	writetext ReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext ChigusaLossText, 0
+	loadtrainer CHIGUSA, CHIGUSA6
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CHIGUSA_6
+	opentext
+	writetext BeatenChigusaAgainText
+	waitbutton
 	closetext
 	end
 
@@ -355,6 +450,26 @@ ChigusaAfterText:
 
 	para "the time I'm"
 	line "done."
+	done
+
+ReadyForARematchText:
+	text "Heya!"
+
+	para "I've been waiting"
+	line "for you!"
+
+	para "Ready for a re-"
+	line "match?"
+
+	para "It won't go the"
+	line "same way as last"
+	cont "time!"
+	done
+
+BeatenChigusaAgainText:
+	text "Wow, your elegance"
+	line "only increases"
+	cont "with time!"
 	done
 
 BlackbeltYoshiSeenText:

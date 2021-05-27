@@ -1313,12 +1313,6 @@ BattleCommand_Stab:
 	pop de
 	pop hl
 
-	push de
-	push bc
-	farcall DoBadgeTypeBoosts
-	pop bc
-	pop de
-
 	ld a, [wCurType]
 	cp b
 	jr z, .stab
@@ -4812,6 +4806,7 @@ BattleCommand_AllStatsDown:
 	jp   BattleCommand_StatDownMessage
 
 ResetMiss:
+BattleCommand_ResetMiss:
 	xor a
 	ld [wAttackMissed], a
 	ret
@@ -4947,7 +4942,6 @@ CalcPlayerStats:
 	ld a, 5
 	call CalcBattleStats
 
-	ld hl, BadgeStatBoosts
 	call CallBattleCore
 
 	call BattleCommand_SwitchTurn
@@ -5759,10 +5753,6 @@ BattleCommand_Charge:
 	text_far UnknownText_0x1c0d6c
 	text_end
 
-BattleCommand3c:
-; unused
-	ret
-
 BattleCommand_TrapTarget:
 ; traptarget
 
@@ -5829,8 +5819,6 @@ BattleCommand_TrapTarget:
 INCLUDE "engine/battle/move_effects/mist.asm"
 
 INCLUDE "engine/battle/move_effects/focus_energy.asm"
-
-INCLUDE "engine/battle/move_effects/bulk_up.asm"
 
 BattleCommand_Recoil:
 ; recoil
@@ -6159,21 +6147,11 @@ INCLUDE "engine/battle/move_effects/pay_day.asm"
 
 INCLUDE "engine/battle/move_effects/conversion.asm"
 
-INCLUDE "engine/battle/move_effects/calm_mind.asm"
-
-INCLUDE "engine/battle/move_effects/dragon_dance.asm"
-
 INCLUDE "engine/battle/move_effects/shell_smash.asm"
 
 INCLUDE "engine/battle/move_effects/strength_sap.asm"
 
-INCLUDE "engine/battle/move_effects/hone_claws.asm"
-
-INCLUDE "engine/battle/move_effects/quiver_dance.asm"
-
-INCLUDE "engine/battle/move_effects/cosmic_power.asm"
-
-INCLUDE "engine/battle/move_effects/growth.asm"
+INCLUDE "engine/battle/move_effects/sucker_punch.asm"
 
 BattleCommand_ResetStats:
 ; resetstats

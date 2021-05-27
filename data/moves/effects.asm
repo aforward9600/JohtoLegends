@@ -2302,7 +2302,16 @@ BulkUp:
 	checkobedience
 	usedmovetext
 	doturn
-	bulkup
+	lowersub
+	attackup
+	statupanim
+	statupmessage
+	statupfailtext
+	resetmiss
+	defenseup
+	statupmessage
+	statupfailtext
+	raisesub
 	endmove
 
 Superpower:
@@ -2335,14 +2344,32 @@ CalmMind:
 	checkobedience
 	usedmovetext
 	doturn
-	calmmind
+	lowersub
+	specialattackup
+	statupanim
+	statupmessage
+	statupfailtext
+	resetmiss
+	specialdefenseup
+	statupmessage
+	statupfailtext
+	raisesub
 	endmove
 
 DragonDance:
 	checkobedience
 	usedmovetext
 	doturn
-	dragondance
+	lowersub
+	attackup
+	statupanim
+	statupmessage
+	statupfailtext
+	resetmiss
+	speedup
+	statupmessage
+	statupfailtext
+	raisesub
 	endmove
 
 StrengthSap:
@@ -2368,7 +2395,16 @@ HoneClaws:
 	checkobedience
 	usedmovetext
 	doturn
-	honeclaws
+	lowersub
+	attackup
+	statupanim
+	statupmessage
+	statupfailtext
+	resetmiss
+	accuracyup
+	statupmessage
+	statupfailtext
+	raisesub
 	endmove
 
 SpeedUpHit:
@@ -2448,10 +2484,19 @@ QuiverDance:
 	usedmovetext
 	doturn
 	lowersub
+	specialattackup
 	statupanim
-	raisesub
-	quiverdance
+	statupmessage
 	statupfailtext
+	resetmiss
+	specialdefenseup
+	statupmessage
+	statupfailtext
+	resetmiss
+	speedup
+	statupmessage
+	statupfailtext
+	raisesub
 	endmove
 
 SpecialDefenseDown2Hit:
@@ -2502,14 +2547,32 @@ CosmicPower:
 	checkobedience
 	usedmovetext
 	doturn
-	cosmicpower
+	lowersub
+	defenseup
+	statupanim
+	statupmessage
+	statupfailtext
+	resetmiss
+	specialdefenseup
+	statupmessage
+	statupfailtext
+	raisesub
 	endmove
 
 Growth:
 	checkobedience
 	usedmovetext
 	doturn
-	growth
+	lowersub
+	attackup
+	statupanim
+	statupmessage
+	statupfailtext
+	resetmiss
+	specialattackup
+	statupmessage
+	statupfailtext
+	raisesub
 	endmove
 
 PlayNice:
@@ -2567,4 +2630,25 @@ SpecialAttackUpHit:
 	statupmessage
 	checkfaint
 	buildopponentrage
+	endmove
+
+SuckerPunch:
+	checkobedience
+	usedmovetext
+	doturn
+	suckerpunch
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
 	endmove

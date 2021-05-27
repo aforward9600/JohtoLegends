@@ -5,6 +5,7 @@
 	const ICEPATH1F_YOUNGSTER
 	const ICEPATH1F_TWIN
 	const ICEPATH1F_LASS
+	const ICEPATH1F_SMOOCHUM
 
 IcePath1F_MapScripts:
 	db 0 ; scene scripts
@@ -43,6 +44,18 @@ TrainerPicnickerHaylee:
 	endifjustbattled
 	opentext
 	writetext PicnickerHayleeAfterText
+	waitbutton
+	closetext
+	end
+
+IcePath1FSmoochumScript:
+	refreshscreen
+	pokepic SMOOCHUM
+	cry SMOOCHUM
+	waitbutton
+	closepokepic
+	opentext
+	writetext IcePath1FSmoochumText
 	waitbutton
 	closetext
 	end
@@ -122,6 +135,11 @@ PicnickerHayleeAfterText:
 	cont "trainers."
 	done
 
+IcePath1FSmoochumText:
+	text "Smoochum: Smoo-"
+	line "mooo!"
+	done
+
 IcePath1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -135,10 +153,11 @@ IcePath1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event 31,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FTMHail, EVENT_GOT_TM07_HAIL
 	object_event 32, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FPotion, EVENT_ICE_PATH_1F_PP_UP
 	object_event 33,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FPokeBall, EVENT_ICE_PATH_1F_POKE_BALL
-	object_event 17,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePath1FBrotherScript, -1
-	object_event 18,  4, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePath1FSisterScript, -1
+	object_event 19,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePath1FBrotherScript, -1
+	object_event 21,  2, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePath1FSisterScript, -1
 	object_event 11, 15, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerHaylee, -1
+	object_event 20,  2, SPRITE_SMOOCHUM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, IcePath1FSmoochumScript, -1

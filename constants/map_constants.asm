@@ -270,6 +270,7 @@ ENDM
 	map_const ILEX_FOREST_AZALEA_GATE,                      5,  4 ; 22
 	map_const ROUTE_34_ILEX_FOREST_GATE,                    5,  4 ; 23
 	map_const DAY_CARE,                                     5,  4 ; 24
+	map_const GOLDENROD_JAIL,                              11,  7 ; 25
 
 	newgroup                                                      ; 12
 

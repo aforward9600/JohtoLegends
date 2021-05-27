@@ -1,3 +1,8 @@
+evs: MACRO
+	db (\1 << 6) | (\2 << 4) | (\3 << 2) | \4
+	db (\5 << 6) | (\6 << 4)
+ENDM
+
 tmhm: MACRO
 ; used in data/pokemon/base_stats/*.asm
 _tms1 = 0 ; TM01-TM24 (24)
@@ -42,9 +47,9 @@ BaseData::
 	; the parameter to indirect_table must be a compile-time constant, and BASE_DATA_SIZE is not
 	if ((__RGBDS_MAJOR__ << 24) | (__RGBDS_MINOR__ << 8) | __RGBDS_PATCH__) >= $400
 		; if this version of RGBDS supports asserts, just assert that the size is correct
-		assert $1d == BASE_DATA_SIZE, "Please adjust the table size (and this assertion) to match BASE_DATA_SIZE"
+		assert $1f == BASE_DATA_SIZE, "Please adjust the table size (and this assertion) to match BASE_DATA_SIZE"
 	endc
-	indirect_table $1d, 1
+	indirect_table $1f, 1
 	indirect_entries NUM_POKEMON, BaseData1
 	indirect_table_end
 

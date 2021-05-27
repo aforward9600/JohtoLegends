@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db 110,  80,  80,  45,  80,  80
+	evs  2,   0,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db GROUND, FAIRY ; type

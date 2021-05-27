@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db  80,  82,  83,  80, 100, 100
+	evs  0,   0,   0,   0,   2,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, POISON ; type

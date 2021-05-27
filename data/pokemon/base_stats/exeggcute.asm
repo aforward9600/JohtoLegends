@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db  60,  40,  80,  40,  60,  45
+	evs  0,   0,   1,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, PSYCHIC ; type

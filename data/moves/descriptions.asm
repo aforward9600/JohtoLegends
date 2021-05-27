@@ -378,6 +378,7 @@ MoveDescriptions1:
 	dw DragonTailDescription
 	dw SheerColdDescription
 	dw LeafBladeDescription
+	dw SuckerPunchDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1873,3 +1874,7 @@ SheerColdDescription:
 LeafBladeDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
+
+SuckerPunchDescription:
+	db	"Won't work if foe"
+	next "doesn't attack.@"

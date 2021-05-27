@@ -465,7 +465,7 @@ RattataEvosAttacks:
 	dbw 16, HYPER_FANG
 	dbw 19, PAYBACK
 	dbw 22, CRUNCH
-	dbw 25, FAINT_ATTACK
+	dbw 25, SUCKER_PUNCH
 	dbw 28, SUPER_FANG
 	dbw 31, SLASH
 	dbw 34, DOUBLE_EDGE
@@ -483,7 +483,7 @@ RaticateEvosAttacks:
 	dbw 16, HYPER_FANG
 	dbw 19, PAYBACK
 	dbw 24, CRUNCH
-	dbw 29, FAINT_ATTACK
+	dbw 29, SUCKER_PUNCH
 	dbw 34, SUPER_FANG
 	dbw 39, SLASH
 	dbw 44, DOUBLE_EDGE
@@ -1096,7 +1096,7 @@ DiglettEvosAttacks:
 	dbw 10, MUD_SLAP
 	dbw 14, MAGNITUDE
 	dbw 18, BULLDOZE
-	dbw 22, FAINT_ATTACK
+	dbw 22, SUCKER_PUNCH
 	dbw 25, MUD_BOMB
 	dbw 28, EARTH_POWER
 	dbw 31, DIG
@@ -1115,7 +1115,7 @@ DugtrioEvosAttacks:
 	dbw 10, MUD_SLAP
 	dbw 14, MAGNITUDE
 	dbw 18, BULLDOZE
-	dbw 22, FAINT_ATTACK
+	dbw 22, SUCKER_PUNCH
 	dbw 25, MUD_BOMB
 	dbw 30, EARTH_POWER
 	dbw 35, DIG
@@ -2004,7 +2004,7 @@ GastlyEvosAttacks:
 	dbw 12, CURSE
 	dbw 15, NIGHT_SHADE
 	dbw 19, CONFUSE_RAY
-	dbw 22, FAINT_ATTACK
+	dbw 22, SUCKER_PUNCH
 	dbw 26, PAYBACK
 	dbw 29, SHADOW_BALL
 	dbw 33, DREAM_EATER
@@ -2025,7 +2025,7 @@ HaunterEvosAttacks:
 	dbw 12, CURSE
 	dbw 15, NIGHT_SHADE
 	dbw 19, CONFUSE_RAY
-	dbw 22, FAINT_ATTACK
+	dbw 22, SUCKER_PUNCH
 	dbw 28, PAYBACK
 	dbw 33, SHADOW_BALL
 	dbw 39, DREAM_EATER
@@ -2046,7 +2046,7 @@ GengarEvosAttacks:
 	dbw 12, CURSE
 	dbw 15, NIGHT_SHADE
 	dbw 19, CONFUSE_RAY
-	dbw 22, FAINT_ATTACK
+	dbw 22, SUCKER_PUNCH
 	dbw 25, SHADOW_PUNCH
 	dbw 28, PAYBACK
 	dbw 33, SHADOW_BALL
@@ -2649,7 +2649,7 @@ KangaskhanEvosAttacks:
 	dbw 37, FAINT_ATTACK
 	dbw 43, ENDURE
 	dbw 46, OUTRAGE
-	dbw 49, CRUNCH
+	dbw 49, SUCKER_PUNCH
 	dbw 49, REVERSAL
 	db 0 ; no more level-up moves
 

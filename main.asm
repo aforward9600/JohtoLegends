@@ -67,7 +67,6 @@ INCLUDE "engine/events/bug_contest/judging.asm"
 INCLUDE "engine/events/pokerus/apply_pokerus_tick.asm"
 INCLUDE "engine/events/bug_contest/contest_2.asm"
 INCLUDE "engine/pokemon/correct_party_errors.asm"
-INCLUDE "engine/math/get_square_root.asm"
 
 
 SECTION "bank5", ROMX
@@ -240,16 +239,10 @@ INCLUDE "engine/events/poke_seer.asm"
 SECTION "bank14", ROMX
 
 INCLUDE "engine/pokemon/party_menu.asm"
-INCLUDE "engine/events/poisonstep.asm"
-INCLUDE "engine/events/sweet_scent.asm"
-INCLUDE "engine/events/squirtbottle.asm"
-INCLUDE "engine/events/card_key.asm"
-INCLUDE "engine/events/sacred_ash.asm"
 INCLUDE "engine/pokemon/tempmon.asm"
 INCLUDE "engine/pokemon/types.asm"
 INCLUDE "engine/pokemon/categories.asm"
 INCLUDE "engine/pokemon/mon_stats.asm"
-INCLUDE "engine/link/init_list.asm"
 INCLUDE "engine/pokemon/experience.asm"
 INCLUDE "engine/pokemon/switchpartymons.asm"
 INCLUDE "engine/gfx/load_pics.asm"
@@ -278,6 +271,8 @@ INCLUDE "data/phone/text/wilton_caller.asm"
 INCLUDE "data/phone/text/kenji_caller.asm"
 INCLUDE "data/phone/text/parry_caller.asm"
 INCLUDE "data/phone/text/erin_caller.asm"
+INCLUDE "engine/events/squirtbottle.asm"
+INCLUDE "engine/events/card_key.asm"
 
 
 SECTION "bank20", ROMX
@@ -525,6 +520,7 @@ INCLUDE "engine/link/mystery_gift.asm"
 INCLUDE "engine/battle/used_move_text.asm"
 INCLUDE "mobile/mobile_41.asm"
 INCLUDE "engine/gfx/load_overworld_font.asm"
+INCLUDE "engine/link/init_list.asm"
 
 
 SECTION "Mobile 42", ROMX
@@ -670,6 +666,9 @@ INCBIN "gfx/font/unown_font.2bpp"
 
 INCLUDE "engine/printer/print_party.asm"
 INCLUDE "engine/pokemon/search.asm"
+INCLUDE "engine/events/poisonstep.asm"
+INCLUDE "engine/events/sweet_scent.asm"
+INCLUDE "engine/events/sacred_ash.asm"
 
 
 SECTION "bank77_2", ROMX

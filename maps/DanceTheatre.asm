@@ -428,7 +428,7 @@ SurfGuyWildChargeExplanationText:
 	done
 
 RhydonText:
-	text "RHYDON: Gugooh"
+	text "Rhydon: Gugooh"
 	line "gugogooh!"
 	done
 

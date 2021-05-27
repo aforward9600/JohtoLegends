@@ -615,6 +615,7 @@ InitializeEventsScript:
 	setevent EVENT_ITEMFINDER_GUY
 	setevent EVENT_ROUTE_36_GUY
 	setevent EVENT_AFTER_RESCUING_BURNED_TOWER_GIRL
+	setevent EVENT_JAILED_ROCKET
 	return
 
 AskNumber1MScript:

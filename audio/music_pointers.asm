@@ -111,3 +111,4 @@ Music:
 	dba Music_SafariZone
 	dba Music_Anthem
 	dba Music_MewtwoBattle
+	dba Music_CinnabarMansion

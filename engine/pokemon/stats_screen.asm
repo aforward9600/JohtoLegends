@@ -541,13 +541,19 @@ StatsScreen_LoadGFX:
 	dw .BluePage
 
 .PinkPage:
-	hlcoord 0, 9
+	hlcoord 0, 8
 	ld b, $0
 	predef DrawPlayerHP
-	hlcoord 8, 9
+	hlcoord 8, 8
 	ld [hl], $41 ; right HP/exp bar end cap
+	ld de, .DVsEvsStat
+	hlcoord 0, 10
+	call PlaceString
+	hlcoord 1, 11
+	ld bc, 6
+	predef PrintTempMonHPDVs
 	ld de, .Status_Type
-	hlcoord 0, 12
+	hlcoord 0, 13
 	call PlaceString
 	ld a, [wTempMonPokerusStatus]
 	ld b, a
@@ -556,13 +562,13 @@ StatsScreen_LoadGFX:
 	ld a, b
 	and $f0
 	jr z, .NotImmuneToPkrs
-	hlcoord 8, 8
+	hlcoord 8, 9
 	ld [hl], "." ; Pokérus immunity dot
 .NotImmuneToPkrs:
 	ld a, [wMonType]
 	cp BOXMON
 	jr z, .StatusOK
-	hlcoord 6, 13
+	hlcoord 6, 14
 	push hl
 	ld de, wTempMonStatus
 	predef PlaceStatusString
@@ -571,16 +577,16 @@ StatsScreen_LoadGFX:
 	jr .StatusOK
 .HasPokerus:
 	ld de, .PkrsStr
-	hlcoord 1, 13
+	hlcoord 1, 14
 	call PlaceString
 	jr .done_status
 .StatusOK:
 	ld de, .OK_str
 	call PlaceString
 .done_status
-	hlcoord 1, 15
+	hlcoord 1, 16
 	predef PrintMonTypes
-	hlcoord 9, 8
+	hlcoord 9, 9
 	ld de, SCREEN_WIDTH
 	ld b, 10
 	ld a, $31 ; vertical divider
@@ -682,6 +688,9 @@ StatsScreen_LoadGFX:
 .PkrsStr:
 	db "#rus@"
 
+.DVsEvsStat:
+	db "  DV  EV@"
+
 .GreenPage:
 	ld de, .Item
 	hlcoord 0, 8
@@ -729,7 +738,7 @@ StatsScreen_LoadGFX:
 
 .BluePage:
 	call .PlaceOTInfo
-	hlcoord 10, 8
+	hlcoord 9, 8
 	ld de, SCREEN_WIDTH
 	ld b, 10
 	ld a, $31 ; vertical divider
@@ -738,9 +747,9 @@ StatsScreen_LoadGFX:
 	add hl, de
 	dec b
 	jr nz, .BluePageVerticalDivider
-	hlcoord 11, 8
+	hlcoord 10, 8
 	ld bc, 6
-	predef PrintTempMonStats
+	predef PrintTempMonStatsDVs
 	ret
 
 .PlaceOTInfo:
@@ -750,7 +759,7 @@ StatsScreen_LoadGFX:
 	ld de, OTString
 	hlcoord 0, 12
 	call PlaceString
-	hlcoord 2, 10
+	hlcoord 1, 10
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
 	ld de, wTempMonID
 	call PrintNum
@@ -758,21 +767,20 @@ StatsScreen_LoadGFX:
 	call GetNicknamePointer
 	call CopyNickname
 	farcall CorrectNickErrors
-	hlcoord 2, 13
+	hlcoord 1, 13
 	call PlaceString
 	ld a, [wTempMonCaughtGender]
 	and a
-	jr z, .done
+	ret z
 	cp $7f
-	jr z, .done
+	ret z
 	and $80
 	ld a, "♂"
 	jr z, .got_gender
 	ld a, "♀"
 .got_gender
-	hlcoord 9, 13
+	hlcoord 8, 13
 	ld [hl], a
-.done
 	ret
 
 .OTNamePointers:

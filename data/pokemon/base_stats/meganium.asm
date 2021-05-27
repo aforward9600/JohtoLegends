@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db  80,  82, 100,  80,  83, 100
+	evs  0,   0,   1,   0,   0,   2
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, FAIRY ; type

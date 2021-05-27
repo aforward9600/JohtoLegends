@@ -404,7 +404,7 @@ WalkUpToRival3:
 	buttonsound
 	getitemname STRING_BUFFER_4, POKE_BALL
 	scall Rival_ReceiveTheBalls
-	giveitem POKE_BALL, 5
+	giveitem POKE_BALL, 10
 	buttonsound
 	itemnotify
 	writetext RivalGoodByeText

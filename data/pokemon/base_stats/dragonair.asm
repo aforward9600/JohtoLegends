@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db  61,  84,  75,  80,  80,  80
+	evs  0,   2,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db DRAGON, DRAGON ; type

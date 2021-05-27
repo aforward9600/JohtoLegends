@@ -26,6 +26,18 @@ EcruteakGym_MapScripts:
 EcruteakGymEnokiScript:
 	faceplayer
 	opentext
+	checkflag ENGINE_RISINGBADGE
+	iftrue .EnokiBattle7
+	checkflag ENGINE_ZEPHYRBADGE
+	iftrue .EnokiBattle6
+	checkflag ENGINE_HIVEBADGE
+	iftrue .EnokiBattle5
+	checkflag ENGINE_PLAINBADGE
+	iftrue .EnokiBattle4
+	checkflag ENGINE_MINERALBADGE
+	iftrue .EnokiBattle3
+	checkflag ENGINE_STORMBADGE
+	iftrue .EnokiBattle2
 	checkevent EVENT_BEAT_ENOKI
 	iftrue .FightDone
 	writetext EnokiIntroText
@@ -85,6 +97,108 @@ EcruteakGymEnokiScript:
 	writetext EnokiFightDoneText
 	waitbutton
 .NoRoomForHex:
+	closetext
+	end
+
+.EnokiBattle2:
+	checkevent EVENT_BEAT_ENOKI_2
+	iftrue .FightDone
+	writetext EnokiReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext EnokiWinLossText, 0
+	loadtrainer ENOKI, ENOKI2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ENOKI_2
+	opentext
+	writetext BeatenEnokiAgainText
+	waitbutton
+	closetext
+	end
+
+.EnokiBattle3:
+	checkevent EVENT_BEAT_ENOKI_3
+	iftrue .FightDone
+	writetext EnokiReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext EnokiWinLossText, 0
+	loadtrainer ENOKI, ENOKI3
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ENOKI_3
+	opentext
+	writetext BeatenEnokiAgainText
+	waitbutton
+	closetext
+	end
+
+.EnokiBattle4:
+	checkevent EVENT_BEAT_ENOKI_4
+	iftrue .FightDone
+	writetext EnokiReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext EnokiWinLossText, 0
+	loadtrainer ENOKI, ENOKI4
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ENOKI_4
+	opentext
+	writetext BeatenEnokiAgainText
+	waitbutton
+	closetext
+	end
+
+.EnokiBattle5:
+	checkevent EVENT_BEAT_ENOKI_5
+	iftrue .FightDone
+	writetext EnokiReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext EnokiWinLossText, 0
+	loadtrainer ENOKI, ENOKI5
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ENOKI_5
+	opentext
+	writetext BeatenEnokiAgainText
+	waitbutton
+	closetext
+	end
+
+.EnokiBattle6:
+	checkevent EVENT_BEAT_ENOKI_6
+	iftrue .FightDone
+	writetext EnokiReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext EnokiWinLossText, 0
+	loadtrainer ENOKI, ENOKI6
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ENOKI_6
+	opentext
+	writetext BeatenEnokiAgainText
+	waitbutton
+	closetext
+	end
+
+.EnokiBattle7:
+	checkevent EVENT_BEAT_ENOKI_7
+	iftrue .FightDone
+	writetext EnokiReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext EnokiWinLossText, 0
+	loadtrainer ENOKI, ENOKI7
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ENOKI_7
+	opentext
+	writetext BeatenEnokiAgainText
+	waitbutton
 	closetext
 	end
 
@@ -304,6 +418,28 @@ EnokiFightDoneText:
 
 	para "though he may"
 	line "fail."
+	done
+
+EnokiReadyForARematchText:
+	text "Good of you to"
+	line "return."
+
+	para "Would you do this"
+	line "old man a favor"
+	cont "and battle me?"
+
+	para "I need to keep up"
+	line "with my skills."
+	done
+
+BeatenEnokiAgainText:
+	text "You truly are on"
+	line "your way to becom-"
+	cont "ing a master."
+
+	para "Keep going, and do"
+	line "not become discou-"
+	cont "aged."
 	done
 
 SageJeffreySeenText:

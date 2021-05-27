@@ -35,12 +35,26 @@ CHRIS EQU __enum__
 
 	trainerclass ENOKI ; 4
 	const ENOKI1
+	const ENOKI2
+	const ENOKI3
+	const ENOKI4
+	const ENOKI5
+	const ENOKI6
+	const ENOKI7
 
 	trainerclass PRYCE ; 5
 	const PRYCE1
+	const PRYCE2
+	const PRYCE3
+	const PRYCE4
+	const PRYCE5
+	const PRYCE6
+	const PRYCE7
+	const PRYCE8
 
 	trainerclass BYRON ; 6
 	const BYRON1
+	const BYRON2
 
 	trainerclass CHUCK ; 7
 	const CHUCK1
@@ -726,6 +740,11 @@ CHRIS EQU __enum__
 
 	trainerclass CHIGUSA ; 48
 	const CHIGUSA1
+	const CHIGUSA2
+	const CHIGUSA3
+	const CHIGUSA4
+	const CHIGUSA5
+	const CHIGUSA6
 
 	trainerclass MASTER ; 49
 	const MASTER1

@@ -167,12 +167,12 @@ PokemonCries::
 	mon_cry CRY_VENONAT,     $010,  $0a0 ; FLAREON
 	mon_cry CRY_AIPOM,       $0a2,  $140 ; ESPEON
 	mon_cry CRY_VENONAT,    -$0e9,  $0f0 ; UMBREON
-	mon_cry CRY_VENONAT,     $010,  $0a0 ; LEAFEON
-	mon_cry CRY_VENONAT,    -$0e9,  $0f0 ; GLACEON
-	mon_cry CRY_VENONAT,     $0aa,  $17f ; SYLVEON
+	mon_cry CRY_VENONAT,     $03d,  $160 ; LEAFEON
+	mon_cry CRY_METAPOD,     $fc6,  $1aa ; GLACEON
+	mon_cry CRY_VENONAT,     $0b0,  $16f ; SYLVEON
 	mon_cry CRY_WEEPINBELL,  $0aa,  $17f ; PORYGON
 	mon_cry CRY_GIRAFARIG,   $073,  $240 ; PORYGON2
-	mon_cry CRY_GIRAFARIG,   $073,  $240 ; PORYGON_Z
+	mon_cry CRY_SEEL,        $212,  $270 ; PORYGON_Z
 	mon_cry CRY_GROWLITHE,   $0f0,  $081 ; OMANYTE
 	mon_cry CRY_GROWLITHE,   $0ff,  $0c0 ; OMASTAR
 	mon_cry CRY_CATERPIE,    $0bb,  $0c0 ; KABUTO
@@ -280,9 +280,9 @@ PokemonCries::
 	mon_cry CRY_RAIKOU,      $05f,  $0d0 ; LARVITAR
 	mon_cry CRY_SPINARAK,   -$1db,  $150 ; PUPITAR
 	mon_cry CRY_RAIKOU,     -$100,  $180 ; TYRANITAR
-	mon_cry CRY_BULBASAUR,  -$050,  $0bc ; BAGON
-	mon_cry CRY_BULBASAUR,  -$04a,  $0c9 ; SHELGON
-	mon_cry CRY_BULBASAUR,  -$03c,  $140 ; SALAMENCE
+	mon_cry CRY_NIDORAN_F,   $f26,  $0c0 ; BAGON
+	mon_cry CRY_NIDORAN_F,   $e15,  $200 ; SHELGON
+	mon_cry CRY_RAICHU,      $f1f,  $130 ; SALAMENCE
 	mon_cry CRY_TYPHLOSION,  $000,  $100 ; LUGIA
 	mon_cry CRY_AIPOM,       $000,  $180 ; HO_OH
 	mon_cry CRY_ENTEI,       $14a,  $111 ; CELEBI

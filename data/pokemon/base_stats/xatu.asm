@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db  85,  75,  70,  95,  95,  70
+	evs  0,   0,   0,   1,   1,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db PSYCHIC, FLYING ; type

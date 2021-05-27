@@ -1,6 +1,7 @@
 	db 0 ; species ID placeholder
 
 	db  45,  20,  50,  50,  60, 120
+	evs  0,   0,   0,   0,   0,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, FLYING ; type
