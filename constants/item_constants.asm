@@ -306,6 +306,7 @@ ENDM
 	add_mt ICICLE_CRASH
 	add_mt MOONBLAST
 	add_mt HYPNOSIS
+	add_mt GRASS_KNOT
 NUM_TM_HM_TUTOR EQU __enum__ + -1
 
 USE_SCRIPT_VAR EQU $00

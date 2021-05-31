@@ -399,6 +399,8 @@ BattleAnimations::
 	dw BattleAnim_SheerCold
 	dw BattleAnim_LeafBlade
 	dw BattleAnim_SuckerPunch
+	dw BattleAnim_GrassKnot
+	dw BattleAnim_WorkUp
 	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
@@ -3213,6 +3215,41 @@ BattleAnim_LowSweep:
 	anim_obj ANIM_OBJ_00, 140, 64, $0
 	anim_wait 16
 	anim_ret
+
+BattleAnim_GrassKnot:
+	anim_1gfx ANIM_GFX_PLANT
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 124, 64, $0
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 124, 64, $0
+	anim_wait 6
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 132, 64, $0
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 132, 64, $0
+	anim_wait 6
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 140, 64, $0
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 140, 64, $0
+	anim_wait 16
+	anim_ret
+
+BattleAnim_WorkUp:
+	anim_1gfx ANIM_GFX_WIND
+	anim_call BattleAnim_TargetObj_2Row
+	anim_sound 0, 0, SFX_AEROBLAST
+	anim_bgeffect ANIM_BG_18, $0, $1, $40
+.loop
+	anim_bgeffect ANIM_BG_WITHDRAW, $0, $1, $50
+	anim_wait 3
+	anim_incbgeffect ANIM_BG_WITHDRAW
+	anim_loop 16, .loop
+	anim_wait 32
+	anim_sound 0, 0, SFX_MENU
+	anim_obj ANIM_OBJ_SWAGGER, 72, 88, $44
+	anim_wait 32
+	anim_jump BattleAnim_ShowMon_0
 
 BattleAnim_WingAttack:
 	anim_1gfx ANIM_GFX_HIT

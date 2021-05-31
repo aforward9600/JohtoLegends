@@ -2741,6 +2741,8 @@ PlayerAttackDamage:
 	ld b, a
 	ld c, [hl]
 
+
+	call SandstormSpDefBoost
 	ld a, [wEnemyScreens]
 	bit SCREENS_LIGHT_SCREEN, a
 	jr z, .specialcrit
@@ -2810,9 +2812,6 @@ TruncateHL_BC:
 	inc l
 
 .finish
-	ld a, [wLinkMode]
-	cp LINK_COLOSSEUM
-	jr z, .done
 ; If we go back to the loop point,
 ; it's the same as doing this exact
 ; same check twice.
@@ -2820,7 +2819,6 @@ TruncateHL_BC:
 	or b
 	jr nz, .loop
 
-.done
 	ld b, l
 	ret
 
@@ -2995,6 +2993,8 @@ EnemyAttackDamage:
 	ld b, a
 	ld c, [hl]
 
+
+	call SandstormSpDefBoost
 	ld a, [wPlayerScreens]
 	bit SCREENS_LIGHT_SCREEN, a
 	jr z, .specialcrit
@@ -4942,8 +4942,6 @@ CalcPlayerStats:
 	ld a, 5
 	call CalcBattleStats
 
-	call CallBattleCore
-
 	call BattleCommand_SwitchTurn
 
 	ld hl, ApplyPrzEffectOnSpeed
@@ -5819,6 +5817,8 @@ BattleCommand_TrapTarget:
 INCLUDE "engine/battle/move_effects/mist.asm"
 
 INCLUDE "engine/battle/move_effects/focus_energy.asm"
+
+INCLUDE "engine/battle/move_effects/grass_knot.asm"
 
 BattleCommand_Recoil:
 ; recoil
@@ -6971,3 +6971,33 @@ CheckMoveInList:
 	ret
 
 INCLUDE "engine/battle/move_effects/avalanche.asm"
+
+SandstormSpDefBoost: 
+; First, check if Sandstorm is active.
+	ld a, [wBattleWeather]
+	cp WEATHER_SANDSTORM
+	ret nz
+
+; Then, check the opponent's types.
+	ld hl, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wBattleMonType1
+.ok
+	ld a, [hli]
+	cp ROCK
+	jr z, .start_boost
+	ld a, [hl]
+	cp ROCK
+	ret nz
+
+.start_boost
+	ld h, b
+	ld l, c
+	srl b
+	rr c
+	add hl, bc
+	ld b, h
+	ld c, l
+	ret

@@ -1,10 +1,11 @@
-Music_Route29:
+Music_Route29: ; f0386
 	musicheader 4, 1, Music_Route29_Ch1
 	musicheader 1, 2, Music_Route29_Ch2
 	musicheader 1, 3, Music_Route29_Ch3
 	musicheader 1, 4, Music_Route29_Ch4
-
-Music_Route29_Ch1:
+; f0392
+ 
+Music_Route29_Ch1: ; f0392
 	tempo 146
 	volume $77
 	dutycycle $3
@@ -13,7 +14,7 @@ Music_Route29_Ch1:
 	stereopanning $f
 	notetype $c, $b2
 	note __, 2
-Music_Route29_branch_f03a5:
+Music_Route29_branch_f03a5: ; f03a5
 	note __, 2
 	octave 4
 	note C_, 2
@@ -167,15 +168,16 @@ Music_Route29_branch_f03a5:
 	note G_, 2
 	note G_, 4
 	loopchannel 0, Music_Route29_branch_f03a5
-
-Music_Route29_Ch2:
+; f044d
+ 
+Music_Route29_Ch2: ; f044d
 	dutycycle $3
 	vibrato $12, $36
 	notetype $c, $c2
 	octave 4
 	note C_, 1
 	note D_, 1
-Music_Route29_branch_f0458:
+Music_Route29_branch_f0458: ; f0458
 	callchannel Music_Route29_branch_f04de
 	note F_, 1
 	note E_, 1
@@ -299,8 +301,9 @@ Music_Route29_branch_f0458:
 	note C_, 1
 	note D_, 1
 	loopchannel 0, Music_Route29_branch_f0458
-
-Music_Route29_branch_f04de:
+; f04de
+ 
+Music_Route29_branch_f04de: ; f04de
 	note E_, 2
 	note E_, 2
 	note G_, 2
@@ -330,13 +333,14 @@ Music_Route29_branch_f04de:
 	note E_, 2
 	note C_, 2
 	endchannel
-
-Music_Route29_Ch3:
+; f04fb
+ 
+Music_Route29_Ch3: ; f04fb
 	stereopanning $f0
-	notetype $c, $25
+	notetype $c, $24
 	vibrato $9, $27
 	note __, 2
-Music_Route29_branch_f0504:
+Music_Route29_branch_f0504: ; f0504
 	note __, 2
 	octave 3
 	note G_, 1
@@ -499,13 +503,14 @@ Music_Route29_branch_f0504:
 	note C_, 1
 	note __, 3
 	loopchannel 0, Music_Route29_branch_f0504
-
-Music_Route29_Ch4:
+; f05a9
+ 
+Music_Route29_Ch4: ; f05a9
 	stereopanning $f
 	togglenoise $0
 	notetype $c
 	note __, 2
-Music_Route29_branch_f05b0:
+Music_Route29_branch_f05b0: ; f05b0
 	note __, 2
 	note F_, 2
 	note F_, 6
@@ -517,4 +522,53 @@ Music_Route29_branch_f05b0:
 	note F_, 4
 	note F_, 2
 	note F_, 4
+	loopchannel 0, Music_Route29_branch_f05b0
+; f05bf
+ 
+Music_Route29Night:
+	musicheader 4, 1, Music_Route29Night_Ch1
+	musicheader 1, 2, Music_Route29Night_Ch2
+	musicheader 1, 3, Music_Route29Night_Ch3
+	musicheader 1, 4, Music_Route29Night_Ch4
+ 
+; ============================================================================================================
+Music_Route29Night_Ch1:
+	tempo 152
+	volume $77
+	dutycycle $2
+	tone $0001
+	vibrato $10, $15
+	stereopanning $f
+	notetype $c, $b2
+	note __, 2
+ 
+	loopchannel 0, Music_Route29_branch_f03a5
+ 
+; ============================================================================================================
+Music_Route29Night_Ch2:
+	dutycycle $2
+	vibrato $12, $26
+	notetype $c, $c2
+	octave 4
+	note C_, 1
+	note D_, 1
+ 
+	loopchannel 0, Music_Route29_branch_f0458
+ 
+; ============================================================================================================
+Music_Route29Night_Ch3:
+	stereopanning $f0
+	notetype $c, $11
+	vibrato $9, $17
+	note __, 2
+ 
+	loopchannel 0, Music_Route29_branch_f0504
+ 
+; ============================================================================================================
+Music_Route29Night_Ch4:
+	stereopanning $f
+	togglenoise $6
+	notetype $c
+	note __, 2
+ 
 	loopchannel 0, Music_Route29_branch_f05b0

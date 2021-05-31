@@ -235,6 +235,7 @@ CyndaquilEggMoves:
 	dw FLARE_BLITZ
 	dw FLAME_BURST
 	dw HOWL
+	dw WORK_UP
 	dw -1 ; end
 
 TotodileEggMoves:
@@ -255,6 +256,7 @@ SentretEggMoves:
 	dw SLASH
 	dw FOCUS_ENERGY
 	dw REVERSAL
+	dw WORK_UP
 	dw -1 ; end
 
 HoothootEggMoves:
@@ -373,6 +375,7 @@ AipomEggMoves:
 	dw DOUBLE_EDGE
 	dw BOUNCE
 	dw REVENGE
+	dw WORK_UP
 	dw -1 ; end
 
 YanmaEggMoves:
@@ -423,6 +426,7 @@ GirafarigEggMoves:
 	dw RAZOR_WIND
 	dw MEAN_LOOK
 	dw DOUBLE_KICK
+	dw WORK_UP
 	dw -1 ; end
 
 PinecoEggMoves:
@@ -525,6 +529,7 @@ TeddiursaEggMoves:
 	dw PLAY_ROUGH
 	dw NIGHT_SLASH
 	dw SLACK_OFF
+	dw WORK_UP
 	dw -1 ; end
 
 SlugmaEggMoves:
@@ -636,6 +641,7 @@ StantlerEggMoves:
 	dw RAGE
 	dw THRASH
 	dw ZEN_HEADBUTT
+	dw WORK_UP
 	dw -1 ; end
 
 MiltankEggMoves:
@@ -646,6 +652,7 @@ MiltankEggMoves:
 	dw ENDURE
 	dw BELCH
 	dw DOUBLE_EDGE
+	dw WORK_UP
 	dw -1 ; end
 
 LarvitarEggMoves:

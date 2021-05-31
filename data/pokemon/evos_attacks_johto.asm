@@ -143,7 +143,7 @@ TaurosEvosAttacks:
 	dbw 15, PURSUIT
 	dbw 19, REST
 	dbw 24, PAYBACK
-	dbw 29, BULK_UP
+	dbw 29, WORK_UP
 	dbw 35, ZEN_HEADBUTT
 	dbw 41, TAKE_DOWN
 	dbw 48, SWAGGER
@@ -2477,7 +2477,7 @@ LarvitarEvosAttacks:
 	dbw 1, TACKLE
 	dbw 1, LEER
 	dbw 6, SANDSTORM
-	dbw 7, QUIVER_DANCE
+	dbw 7, WORK_UP
 	dbw 8, ROCK_THROW
 	dbw 10, SCREECH
 	dbw 14, BITE

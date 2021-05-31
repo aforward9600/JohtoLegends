@@ -181,3 +181,4 @@ BattleCommandPointers:
 	dw BattleCommand_StartHail
 	dw BattleCommand_BreakScreens
 	dw BattleCommand_SuckerPunch
+	dw BattleCommand_GrassKnot

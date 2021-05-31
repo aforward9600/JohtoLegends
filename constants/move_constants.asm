@@ -380,6 +380,8 @@
 	const SHEER_COLD
 	const LEAF_BLADE
 	const SUCKER_PUNCH
+	const GRASS_KNOT
+	const WORK_UP
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

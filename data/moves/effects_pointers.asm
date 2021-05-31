@@ -180,3 +180,4 @@ MoveEffectsPointers:
 	dw CircleThrow
 	dw SpecialAttackUpHit
 	dw SuckerPunch
+	dw GrassKnot

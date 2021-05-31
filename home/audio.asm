@@ -410,7 +410,9 @@ RestartMapMusic::
 	call PlayMusic
 	call DelayFrame
 	ld a, [wMapMusic]
-	ld e, a
+	ld c, a
+	call ChangeMusicIfNight
+	ld e, c
 	ld d, 0
 	call PlayMusic
 	pop af

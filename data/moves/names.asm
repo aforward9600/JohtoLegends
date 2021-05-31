@@ -373,3 +373,5 @@ MoveNames::
 	db "Sheer Cold@"
 	db "Leaf Blade@"
 	db "Sucker Punch@"
+	db "Grass Knot@"
+	db "Work Up@"

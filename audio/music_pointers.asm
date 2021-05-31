@@ -112,3 +112,20 @@ Music:
 	dba Music_Anthem
 	dba Music_MewtwoBattle
 	dba Music_CinnabarMansion
+	dba Music_AzaleaTownNight
+	dba Music_NewBarkTownNight
+	dba Music_KantoWildBattleNight
+	dba Music_Route36Night
+	dba Music_EcruteakCityNight
+	dba Music_CherrygroveCityNight
+	dba Music_VioletCityNight
+	dba Music_GoldenrodCityNight
+	dba Music_LavenderTownNight
+	dba Music_LakeOfRageNight
+	dba Music_CeladonCity_Night
+	dba Music_Route1Night
+	dba Music_Route3_Night
+	dba Music_Route12_Night
+	dba Music_Route29Night
+	dba Music_Route30Night
+	dba Music_Route37Night

@@ -90,4 +90,5 @@ TMHMMoves:
 	dw ICICLE_CRASH
 	dw MOONBLAST
 	dw HYPNOSIS
+	dw GRASS_KNOT
 	dw 0 ; end

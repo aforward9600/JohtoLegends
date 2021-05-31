@@ -2652,3 +2652,24 @@ SuckerPunch:
 	buildopponentrage
 	kingsrock
 	endmove
+
+GrassKnot:
+	checkobedience
+	usedmovetext
+	doturn
+	grassknot
+	critical
+	damagestats
+	damagecalc
+	stab
+	checkhit
+	damagevariation
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove

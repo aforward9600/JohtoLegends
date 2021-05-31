@@ -379,6 +379,8 @@ MoveDescriptions1:
 	dw SheerColdDescription
 	dw LeafBladeDescription
 	dw SuckerPunchDescription
+	dw LowKickDescription
+	dw GrowthDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -648,8 +650,8 @@ SubmissionDescription:
 	next "so hurts the user.@"
 
 LowKickDescription:
-	db   "An attack that may"
-	next "cause flinching.@"
+	db   "Damage depends on"
+	next "target's weight.@"
 
 CounterDescription:
 	db   "Returns a physical"

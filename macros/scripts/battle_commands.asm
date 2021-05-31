@@ -182,6 +182,7 @@ ENDM
 	command starthail
 	command breakscreens
 	command suckerpunch
+	command grassknot
 
 	enum_start $fe
 	command endturn                 ; fe

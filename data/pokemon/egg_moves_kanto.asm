@@ -200,6 +200,7 @@ RattataEggMoves:
 	dw COUNTER
 	dw REVERSAL
 	dw REVENGE
+	dw WORK_UP
 	dw -1 ; end
 
 SpearowEggMoves:
@@ -245,6 +246,7 @@ SandshrewEggMoves:
 	dw ENDURE
 	dw MUD_SHOT
 	dw NIGHT_SLASH
+	dw WORK_UP
 	dw -1 ; end
 
 NidoranFEggMoves:
@@ -350,6 +352,7 @@ DiglettEggMoves:
 	dw HEADBUTT
 	dw MUD_BOMB
 	dw REVERSAL
+	dw WORK_UP
 	dw -1 ; end
 
 MeowthEggMoves:
@@ -360,6 +363,7 @@ MeowthEggMoves:
 	dw FLAIL
 	dw ODOR_SLEUTH
 	dw TAIL_WHIP
+	dw WORK_UP
 	dw -1 ; end
 
 PsyduckEggMoves:
@@ -382,6 +386,7 @@ MankeyEggMoves:
 	dw ENCORE
 	dw NIGHT_SLASH
 	dw REVENGE
+	dw WORK_UP
 	dw -1 ; end
 
 GrowlitheEggMoves:

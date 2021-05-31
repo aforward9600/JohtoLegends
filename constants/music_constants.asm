@@ -110,9 +110,26 @@
 	const MUSIC_ROUTE_47                     ; 67
 	const MUSIC_WILD_AREA_OUTSIDE            ; 68
 	const MUSIC_WILD_AREA                    ; 69
-	const MUSIC_ANTHEM                       ; 70
-	const MUSIC_MEWTWO_BATTLE                ; 71
-	const MUSIC_CINNABAR_MANSION             ; 72
+	const MUSIC_ANTHEM                       ; 6a
+	const MUSIC_MEWTWO_BATTLE                ; 6b
+	const MUSIC_CINNABAR_MANSION             ; 6c
+	const MUSIC_AZALEA_TOWN_NIGHT            ; 6d
+	const MUSIC_NEW_BARK_TOWN_NIGHT          ; 6e
+	const MUSIC_KANTO_WILD_BATTLE_NIGHT      ; 6f
+	const MUSIC_ROUTE_36_NIGHT               ; 70
+	const MUSIC_ECRUTEAK_CITY_NIGHT          ; 71
+	const MUSIC_CHERRYGROVE_CITY_NIGHT       ; 72
+	const MUSIC_VIOLET_CITY_NIGHT            ; 73
+	const MUSIC_GOLDENROD_CITY_NIGHT         ; 74
+	const MUSIC_LAVENDER_TOWN_NIGHT          ; 75
+	const MUSIC_LAKE_OF_RAGE_NIGHT           ; 76
+	const MUSIC_CELADON_CITY_NIGHT           ; 77
+	const MUSIC_ROUTE_1_NIGHT                ; 78
+	const MUSIC_ROUTE_3_NIGHT                ; 79
+	const MUSIC_ROUTE_12_NIGHT               ; 7a
+	const MUSIC_ROUTE_29_NIGHT               ; 7b
+	const MUSIC_ROUTE_30_NIGHT               ; 7c
+	const MUSIC_ROUTE_37_NIGHT
 
 ; GetMapMusic picks music for this value (see home/map.asm)
 MUSIC_MAHOGANY_MART EQU $64

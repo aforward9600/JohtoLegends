@@ -1,10 +1,11 @@
-Music_LakeOfRage:
+Music_LakeOfRage: ; ee6c5
 	musicheader 4, 1, Music_LakeOfRage_Ch1
 	musicheader 1, 2, Music_LakeOfRage_Ch2
 	musicheader 1, 3, Music_LakeOfRage_Ch3
 	musicheader 1, 4, Music_LakeOfRage_Ch4
-
-Music_LakeOfRage_Ch1:
+; ee6d1
+ 
+Music_LakeOfRage_Ch1: ; ee6d1
 	tempo 144
 	volume $77
 	dutycycle $3
@@ -18,7 +19,7 @@ Music_LakeOfRage_Ch1:
 	note D_, 6
 	note D_, 6
 	note E_, 4
-Music_LakeOfRage_branch_ee6e9:
+Music_LakeOfRage_branch_ee6e9: ; ee6e9
 	intensity $b5
 	note F#, 6
 	note E_, 6
@@ -92,8 +93,9 @@ Music_LakeOfRage_branch_ee6e9:
 	intensity $a7
 	note D_, 6
 	loopchannel 0, Music_LakeOfRage_branch_ee6e9
-
-Music_LakeOfRage_Ch2:
+; ee749
+ 
+Music_LakeOfRage_Ch2: ; ee749
 	dutycycle $3
 	vibrato $20, $44
 	stereopanning $ff
@@ -106,7 +108,7 @@ Music_LakeOfRage_Ch2:
 	note A_, 8
 	intensity $a7
 	note A_, 8
-Music_LakeOfRage_branch_ee75e:
+Music_LakeOfRage_branch_ee75e: ; ee75e
 	notetype $8, $c7
 	octave 4
 	note D_, 16
@@ -181,8 +183,9 @@ Music_LakeOfRage_branch_ee75e:
 	notetype $c, $c7
 	note A_, 16
 	loopchannel 0, Music_LakeOfRage_branch_ee75e
-
-Music_LakeOfRage_Ch3:
+; ee7c1
+ 
+Music_LakeOfRage_Ch3: ; ee7c1
 	stereopanning $f
 	notetype $c, $16
 	octave 3
@@ -195,7 +198,7 @@ Music_LakeOfRage_Ch3:
 	note F#, 4
 	note __, 2
 	note E_, 4
-Music_LakeOfRage_branch_ee7d0:
+Music_LakeOfRage_branch_ee7d0: ; ee7d0
 	octave 3
 	note D_, 4
 	octave 2
@@ -294,12 +297,13 @@ Music_LakeOfRage_branch_ee7d0:
 	octave 2
 	note A_, 2
 	loopchannel 0, Music_LakeOfRage_branch_ee7d0
-
-Music_LakeOfRage_Ch4:
+; ee835
+ 
+Music_LakeOfRage_Ch4: ; ee835
 	stereopanning $f0
 	togglenoise $3
 	notetype $c
-Music_LakeOfRage_branch_ee83b:
+Music_LakeOfRage_branch_ee83b: ; ee83b
 	note D_, 2
 	note D_, 1
 	note D_, 1
@@ -319,4 +323,68 @@ Music_LakeOfRage_branch_ee83b:
 	note D_, 1
 	note D_, 1
 	note D_, 1
+	loopchannel 0, Music_LakeOfRage_branch_ee83b
+; ee852
+ 
+; 
+; Demixed by TriteHexagon
+Music_LakeOfRageNight:
+	musicheader 4, 1, Music_LakeOfRageNight_Ch1
+	musicheader 1, 2, Music_LakeOfRageNight_Ch2
+	musicheader 1, 3, Music_LakeOfRageNight_Ch3
+	musicheader 1, 4, Music_LakeOfRageNight_Ch4
+ 
+; ============================================================================================================
+Music_LakeOfRageNight_Ch1:
+	tempo 150
+	volume $77
+	dutycycle $2
+	tone $0002
+	vibrato $8, $21
+	stereopanning $f0
+	notetype $c, $b4
+	octave 3
+	note D_, 6
+	note D_, 10
+	note D_, 6
+	note D_, 6
+	note E_, 4
+	loopchannel 0, Music_LakeOfRage_branch_ee6e9
+ 
+; ============================================================================================================
+Music_LakeOfRageNight_Ch2:
+	dutycycle $2
+	vibrato $20, $43
+	stereopanning $ff
+	notetype $c, $90
+	octave 3
+	note G_, 8
+	intensity $97
+	note G_, 8
+	intensity $a0
+	note A_, 8
+	intensity $a7
+	note A_, 8
+	loopchannel 0, Music_LakeOfRage_branch_ee75e
+ 
+; ============================================================================================================
+Music_LakeOfRageNight_Ch3:
+	stereopanning $f
+	notetype $c, $10
+	octave 3
+	note G_, 4
+	note __, 2
+	note G_, 4
+	note __, 6
+	note F#, 4
+	note __, 2
+	note F#, 4
+	note __, 2
+	note E_, 4
+	loopchannel 0, Music_LakeOfRage_branch_ee7d0
+ 
+Music_LakeOfRageNight_Ch4:
+	stereopanning $f0
+	togglenoise $9
+	notetype $c
 	loopchannel 0, Music_LakeOfRage_branch_ee83b
