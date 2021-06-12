@@ -138,3 +138,5 @@
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 89
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 8a
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 8b
+	tilecoll WALL, WALL, WALL, WALL ; 8c
+	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; 8d

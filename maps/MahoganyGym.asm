@@ -40,7 +40,7 @@ MahoganyGymPryceScript:
 	writetext PryceText_Intro
 	waitbutton
 	closetext
-	winlosstext PryceText_Blizzard, 0
+	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE, PRYCE1
 	startbattle
 	reloadmapafterbattle
@@ -79,7 +79,7 @@ MahoganyGymPryceScript:
 	writetext PryceText_WelcomeBack
 	waitbutton
 	closetext
-	winlosstext PryceText_Blizzard, 0
+	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE, PRYCE2
 	startbattle
 	reloadmapafterbattle
@@ -96,7 +96,7 @@ MahoganyGymPryceScript:
 	writetext PryceText_WelcomeBack
 	waitbutton
 	closetext
-	winlosstext PryceText_Blizzard, 0
+	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE, PRYCE3
 	startbattle
 	reloadmapafterbattle
@@ -113,7 +113,7 @@ MahoganyGymPryceScript:
 	writetext PryceText_WelcomeBack
 	waitbutton
 	closetext
-	winlosstext PryceText_Blizzard, 0
+	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE, PRYCE4
 	startbattle
 	reloadmapafterbattle
@@ -130,7 +130,7 @@ MahoganyGymPryceScript:
 	writetext PryceText_WelcomeBack
 	waitbutton
 	closetext
-	winlosstext PryceText_Blizzard, 0
+	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE, PRYCE5
 	startbattle
 	reloadmapafterbattle
@@ -147,7 +147,7 @@ MahoganyGymPryceScript:
 	writetext PryceText_WelcomeBack
 	waitbutton
 	closetext
-	winlosstext PryceText_Blizzard, 0
+	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE, PRYCE6
 	startbattle
 	reloadmapafterbattle
@@ -164,7 +164,7 @@ MahoganyGymPryceScript:
 	writetext PryceText_WelcomeBack
 	waitbutton
 	closetext
-	winlosstext PryceText_Blizzard, 0
+	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE, PRYCE7
 	startbattle
 	reloadmapafterbattle
@@ -181,7 +181,7 @@ MahoganyGymPryceScript:
 	writetext PryceText_WelcomeBack
 	waitbutton
 	closetext
-	winlosstext PryceText_Blizzard, 0
+	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE, PRYCE8
 	startbattle
 	reloadmapafterbattle
@@ -393,6 +393,11 @@ PryceText_Blizzard:
 
 	para "still hits like"
 	line "a Blizzard!"
+	done
+
+PryceText_StillGotIt:
+	text "Told ya' I still"
+	line "got it!"
 	done
 
 PryceText_After:

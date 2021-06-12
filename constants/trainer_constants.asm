@@ -112,7 +112,7 @@ CHRIS EQU __enum__
 	const ROSS
 	const MITCH
 	const JED
-	const MARC
+	const MAC
 	const RICH
 
 	trainerclass ERIKA ; 15
@@ -341,9 +341,9 @@ CHRIS EQU __enum__
 	const COLTON
 	const STEVIE
 	const WADE1
-	const BUG_CATCHER_BENNY
+	const ELMER
 	const AL
-	const JOSH
+	const BUZZY
 	const ARNIE1
 	const KEN
 	const WADE2
@@ -646,7 +646,7 @@ CHRIS EQU __enum__
 	const SONNY
 
 	trainerclass POKEFANM ; 3b
-	const WILLIAM
+	const BERNARD
 	const DEREK1
 	const ROBERT
 	const JOSHUA
@@ -705,6 +705,10 @@ CHRIS EQU __enum__
 	const GRUNTF_3
 	const GRUNTF_4
 	const GRUNTF_5
+	const GRUNTF_6
+	const GRUNTF_7
+	const GRUNTF_8
+	const GRUNTF_9
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
@@ -760,12 +764,14 @@ CHRIS EQU __enum__
 
 	trainerclass MYSTERIOUS ; 4d
 	const MIYAMOTO1
+	const MIYAMOTO2
 
 	trainerclass TOURIST ; 4e
 	const CYNTHIA1
 
 	trainerclass ENGINEER ; 4f
 	const HARVEY1
+	const OSWALD
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

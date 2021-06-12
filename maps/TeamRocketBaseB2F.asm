@@ -102,7 +102,7 @@ RocketBaseBossFScript:
 	setevent EVENT_TEAM_ROCKET_BASE_B2F_GRUNT_WITH_EXECUTIVE
 	setevent EVENT_TEAM_ROCKET_BASE_B2F_LANCE
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ROCKET_EXECUTIVEF_2
+	setevent EVENT_BEAT_GOLDENROD_TOWER_ARIANA
 	opentext
 	writetext UnknownText_0x6d4c6
 	waitbutton

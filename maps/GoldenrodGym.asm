@@ -5,10 +5,12 @@
 	const GOLDENRODGYM_BREEDER3
 	const GOLDENRODGYM_BREEDER4
 	const GOLDENRODGYM_GYM_GUY
+	const GOLDENRODGYM_DAHLIA
 
 GoldenrodGym_MapScripts:
-	db 1 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_GOLDENRODGYM_NOTHING
+	db 2 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_GOLDENRODGYM_DEFAULT
+	scene_script .DummyScene1 ; SCENE_GOLDENRODGYM_FINISHED
 
 	db 0 ; callbacks
 
@@ -31,6 +33,7 @@ GoldenrodGymMiltonScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MILTON
+	scall GoldenrodRockets
 	opentext
 	writetext BeatenMiltonText
 	waitbutton
@@ -41,7 +44,6 @@ GoldenrodGymMiltonScript:
 	waitsfx
 	setflag ENGINE_PLAINBADGE
 	readvar VAR_BADGES
-	scall GoldenrodGymActivateRockets
 .FightDone:
 	checkevent EVENT_GOT_TM45_ATTRACT
 	iftrue .GotAttract
@@ -66,15 +68,10 @@ GoldenrodGymMiltonScript:
 	closetext
 	end
 
-GoldenrodGymActivateRockets:
-	ifequal 7, .RadioTowerRockets
-	ifequal 6, .GoldenrodRockets
-	end
-
-.GoldenrodRockets:
+GoldenrodRockets:
 	jumpstd goldenrodrockets
 
-.RadioTowerRockets:
+GoldenrodGymActivateRockets:
 	jumpstd radiotowerrockets
 
 TrainerBreederSarah:
@@ -145,6 +142,53 @@ GoldenrodGymStatue:
 .Beaten:
 	gettrainername STRING_BUFFER_4, MILTON, MILTON1
 	jumpstd gymstatue2
+
+TowerInvaded1:
+	playsound SFX_ENTER_DOOR
+	appear GOLDENRODGYM_DAHLIA
+	applymovement GOLDENRODGYM_DAHLIA, GoldenrodGymRivalMovement1
+	turnobject GOLDENRODGYM_DAHLIA, LEFT
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext TowerIsBeingInvadedText
+	waitbutton
+	closetext
+	applymovement GOLDENRODGYM_DAHLIA, GoldenrodGymRivalMovement2
+	disappear GOLDENRODGYM_DAHLIA
+	playsound SFX_EXIT_BUILDING
+	setscene SCENE_DEFAULT
+	end
+
+TowerInvaded2:
+	moveobject, GOLDENRODGYM_DAHLIA, 2, 17
+	playsound SFX_ENTER_DOOR
+	appear GOLDENRODGYM_DAHLIA
+	applymovement GOLDENRODGYM_DAHLIA, GoldenrodGymRivalMovement1
+	turnobject GOLDENRODGYM_DAHLIA, RIGHT
+	turnobject PLAYER, LEFT
+	opentext
+	writetext TowerIsBeingInvadedText
+	waitbutton
+	closetext
+	applymovement GOLDENRODGYM_DAHLIA, GoldenrodGymRivalMovement2
+	disappear GOLDENRODGYM_DAHLIA
+	playsound SFX_EXIT_BUILDING
+	setscene SCENE_DEFAULT
+	end
+
+GoldenrodGymRivalMovement1:
+	step UP
+	step UP
+	step UP
+	step UP
+	step_end
+
+GoldenrodGymRivalMovement2:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
 
 MiltonText_Howdy:
 	text "Howdy pardner!"
@@ -367,6 +411,24 @@ GoldenrodGymGuyWinText:
 	para "getting to me."
 	done
 
+TowerIsBeingInvadedText:
+	text "<PLAYER>!"
+
+	para "The old tower is"
+	line "being invaded!"
+
+	para "I'll bet it's"
+	line "those people in"
+	cont "black again!"
+
+	para "Looks like my Gym"
+	line "challenge will"
+	cont "have to wait!"
+
+	para "I'll meet you"
+	line "over there!"
+	done
+
 GoldenrodGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -374,16 +436,19 @@ GoldenrodGym_MapEvents:
 	warp_event  2, 17, GOLDENROD_CITY, 1
 	warp_event  3, 17, GOLDENROD_CITY, 1
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event  2, 13, SCENE_FINISHED, TowerInvaded1
+	coord_event  3, 13, SCENE_FINISHED, TowerInvaded2
 
 	db 2 ; bg events
 	bg_event  1, 15, BGEVENT_READ, GoldenrodGymStatue
 	bg_event  4, 15, BGEVENT_READ, GoldenrodGymStatue
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event 11,  3, SPRITE_MILTON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodGymMiltonScript, -1
 	object_event  9, 13, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBreederSarah, -1
-	object_event  9,  6, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBreederBridget, -1
+	object_event  9,  6, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBreederBridget, -1
 	object_event  5,  1, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBreederEmily, -1
-	object_event 18,  3, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBreederNina, -1
+	object_event 18,  3, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBreederNina, -1
 	object_event  5, 15, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymGuyScript, -1
+	object_event  3, 17, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_GOLDENROD_GYM_RIVAL_1

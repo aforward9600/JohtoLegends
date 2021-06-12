@@ -183,6 +183,8 @@ ENDM
 	command breakscreens
 	command suckerpunch
 	command grassknot
+;	command wakeupslap
+;	command awakenopponent
 
 	enum_start $fe
 	command endturn                 ; fe

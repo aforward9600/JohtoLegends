@@ -491,21 +491,6 @@ SproutTower3F_Blocks:
 BetaSproutTowerCutOut3_Blocks:
 	INCBIN "maps/unused/BetaSproutTowerCutOut3.blk"
 
-RadioTower1F_Blocks:
-	INCBIN "maps/RadioTower1F.blk"
-
-RadioTower2F_Blocks:
-	INCBIN "maps/RadioTower2F.blk"
-
-RadioTower3F_Blocks:
-	INCBIN "maps/RadioTower3F.blk"
-
-RadioTower4F_Blocks:
-	INCBIN "maps/RadioTower4F.blk"
-
-RadioTower5F_Blocks:
-	INCBIN "maps/RadioTower5F.blk"
-
 NewBarkTown_Blocks:
 	INCBIN "maps/NewBarkTown.blk"
 
@@ -561,12 +546,15 @@ BetaElevator_Blocks:
 	INCBIN "maps/unused/BetaElevator.blk"
 
 TinTower1F_Blocks:
+RadioTower1F_Blocks:
 	INCBIN "maps/TinTower1F.blk"
 
 TinTower2F_Blocks:
+RadioTower2F_Blocks:
 	INCBIN "maps/TinTower2F.blk"
 
 TinTower3F_Blocks:
+RadioTower3F_Blocks:
 	INCBIN "maps/TinTower3F.blk"
 
 TinTower4F_Blocks:
@@ -576,6 +564,7 @@ TinTower5F_Blocks:
 	INCBIN "maps/TinTower5F.blk"
 
 TinTower6F_Blocks:
+RadioTower4F_Blocks:
 	INCBIN "maps/TinTower6F.blk"
 
 TinTower7F_Blocks:
@@ -588,6 +577,7 @@ TinTower9F_Blocks:
 	INCBIN "maps/TinTower9F.blk"
 
 TinTowerRoof_Blocks:
+RadioTower5F_Blocks:
 	INCBIN "maps/TinTowerRoof.blk"
 
 BurnedTower1F_Blocks:

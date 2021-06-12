@@ -71,7 +71,7 @@ ENDM
 	map_const BURNED_TOWER_B1F,                            10,  9 ; 14
 	map_const NATIONAL_PARK,                               20, 27 ; 15
 	map_const NATIONAL_PARK_BUG_CONTEST,                   20, 27 ; 16
-	map_const RADIO_TOWER_1F,                               9,  4 ; 17
+	map_const RADIO_TOWER_1F,                              10,  9 ; 17
 	map_const RADIO_TOWER_2F,                               9,  4 ; 18
 	map_const RADIO_TOWER_3F,                               9,  4 ; 19
 	map_const RADIO_TOWER_4F,                               9,  4 ; 20

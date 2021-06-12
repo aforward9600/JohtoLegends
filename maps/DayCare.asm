@@ -1,6 +1,7 @@
 	object_const_def ; object_event constants
 	const DAYCARE_GRAMPS
 	const DAYCARE_GRANNY
+	const DAYCARE_MR_POKEMON
 
 DayCare_MapScripts:
 	db 0 ; scene scripts
@@ -70,6 +71,19 @@ DayCareLadyScript:
 	closetext
 	end
 
+DayCareMrPokemon:
+	opentext
+	writetext DayCareMrPokemonText
+	waitbutton
+	closetext
+	faceplayer
+	opentext
+	writetext DayCareMrPokemonBusyText
+	waitbutton
+	closetext
+	turnobject DAYCARE_MR_POKEMON, RIGHT
+	end
+
 DayCareBookshelf:
 	jumpstd difficultbookshelf
 
@@ -79,13 +93,13 @@ Text_GrampsLookingForYou:
 	done
 
 Text_DayCareManTalksAboutEggTicket:
-	text "I'm the DAY-CARE"
-	line "MAN."
+	text "I'm the Day-Care"
+	line "Man."
 
 	para "There's something"
-	line "new in GOLDENROD"
+	line "new in Goldenrod"
 
-	para "called the TRADE"
+	para "called the Trade"
 	line "CORNER."
 
 	para "I was given an EGG"
@@ -102,24 +116,24 @@ Text_DayCareManTalksAboutEggTicket:
 	done
 
 DayCareManText_GiveOddEgg:
-	text "I'm the DAY-CARE"
+	text "I'm the Day-Care"
 	line "MAN."
 
 	para "Do you know about"
-	line "EGGS?"
+	line "Eggs?"
 
 	para "I was raising"
-	line "#MON with my"
+	line "#mon with my"
 	cont "wife, you see."
 
 	para "We were shocked to"
-	line "find an EGG!"
+	line "find an Egg!"
 
 	para "How incredible is"
 	line "that?"
 
 	para "Well, wouldn't you"
-	line "like this EGG?"
+	line "like this Egg?"
 
 	para "Then fine, this is"
 	line "yours to keep!"
@@ -131,26 +145,38 @@ DayCareText_ComeAgain:
 
 DayCareText_GotOddEgg:
 	text "<PLAYER> received"
-	line "ODD EGG!"
+	line "Odd Egg!"
 	done
 
 DayCareText_DescribeOddEgg:
 	text "I found that when"
 	line "I was caring for"
 
-	para "someone's #MON"
+	para "someone's #mon"
 	line "before."
 
 	para "But the trainer"
 	line "didn't want the"
 
-	para "EGG, so I'd kept"
+	para "Egg, so I'd kept"
 	line "it around."
 	done
 
 DayCareText_PartyFull:
 	text "You've no room for"
 	line "this."
+	done
+
+DayCareMrPokemonText:
+	text "So you're saying"
+	line "these eggs are..."
+	done
+
+DayCareMrPokemonBusyText:
+	text "Excuse me, I'm"
+	line "trying to have a"
+	cont "conversation right"
+	cont "now."
 	done
 
 DayCare_MapEvents:
@@ -168,6 +194,7 @@ DayCare_MapEvents:
 	bg_event  0,  1, BGEVENT_READ, DayCareBookshelf
 	bg_event  1,  1, BGEVENT_READ, DayCareBookshelf
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Inside, EVENT_DAY_CARE_MAN_IN_DAY_CARE
 	object_event  5,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DayCareLadyScript, -1
+	object_event  2,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareMrPokemon, EVENT_DAY_CARE_MR_POKEMON

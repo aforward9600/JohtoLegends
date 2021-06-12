@@ -5820,6 +5820,8 @@ INCLUDE "engine/battle/move_effects/focus_energy.asm"
 
 INCLUDE "engine/battle/move_effects/grass_knot.asm"
 
+;INCLUDE "engine/battle/move_effects/wake_up_slap.asm"
+
 BattleCommand_Recoil:
 ; recoil
 

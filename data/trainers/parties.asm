@@ -824,14 +824,14 @@ ScientistGroup:
 	dw MAGNEMITE
 	db -1 ; end
 
-	next_list_item ; SCIENTIST (4)
-	db "MARC@", TRAINERTYPE_NORMAL
-	db 27
-	dw MAGNEMITE
-	db 27
-	dw MAGNEMITE
-	db 27
-	dw MAGNEMITE
+	next_list_item ; SCIENTIST (4) Radio Tower 3F
+	db "Mac@", TRAINERTYPE_NORMAL
+	db 31
+	dw MAGNETON
+	db 30
+	dw RAICHU
+	db 30
+	dw ELECTABUZZ
 	db -1 ; end
 
 	next_list_item ; SCIENTIST (5)
@@ -2161,7 +2161,7 @@ PokemaniacGroup:
 	end_list_items
 
 GruntMGroup:
-	next_list_item ; ManM (1)
+	next_list_item ; ManM (1) Tin Tower
 	db "Man@", TRAINERTYPE_NORMAL
 	db 14
 	dw SPEAROW
@@ -2171,7 +2171,7 @@ GruntMGroup:
 	dw STARYU
 	db -1 ; end
 
-	next_list_item ; ManM (2)
+	next_list_item ; ManM (2) Olivine City
 	db "Man@", TRAINERTYPE_NORMAL
 	db 16
 	dw MURKROW
@@ -2181,7 +2181,7 @@ GruntMGroup:
 	dw KADABRA
 	db -1 ; end
 
-	next_list_item ; ManM (3)
+	next_list_item ; ManM (3) Lighthouse
 	db "Man@", TRAINERTYPE_NORMAL
 	db 18
 	dw KOFFING
@@ -2189,7 +2189,7 @@ GruntMGroup:
 	dw ARIADOS
 	db -1 ; end
 
-	next_list_item ; ManM (4)
+	next_list_item ; ManM (4) Lighthouse
 	db "Man@", TRAINERTYPE_NORMAL
 	db 17
 	dw GRIMER
@@ -2199,7 +2199,7 @@ GruntMGroup:
 	dw GLIGAR
 	db -1 ; end
 
-	next_list_item ; ManM (5)
+	next_list_item ; ManM (5) Lighthouse
 	db "Man@", TRAINERTYPE_NORMAL
 	db 16
 	dw PONYTA
@@ -2213,7 +2213,7 @@ GruntMGroup:
 	dw AZUMARILL
 	db -1 ; end
 
-	next_list_item ; ManM (6)
+	next_list_item ; ManM (6) Lighthouse
 	db "Man@", TRAINERTYPE_NORMAL
 	db 19
 	dw ZUBAT
@@ -2221,7 +2221,7 @@ GruntMGroup:
 	dw SLOWPOKE
 	db -1 ; end
 
-	next_list_item ; ManM (7)
+	next_list_item ; ManM (7) Lighthouse
 	db "Man@", TRAINERTYPE_NORMAL
 	db 19
 	dw KOFFING
@@ -2233,13 +2233,13 @@ GruntMGroup:
 	dw RATICATE
 	db -1 ; end
 
-	next_list_item ; ManM (8)
+	next_list_item ; ManM (8) Not used yet
 	db "Man@", TRAINERTYPE_NORMAL
 	db 22
 	dw WEEZING
 	db -1 ; end
 
-	next_list_item ; ManM (9)
+	next_list_item ; ManM (9) Not used yet
 	db "Man@", TRAINERTYPE_NORMAL
 	db 24
 	dw RATICATE
@@ -2247,7 +2247,7 @@ GruntMGroup:
 	dw KOFFING
 	db -1 ; end
 
-	next_list_item ; ManM (10)
+	next_list_item ; ManM (10) Not used yet
 	db "Man@", TRAINERTYPE_NORMAL
 	db 22
 	dw ZUBAT
@@ -2257,42 +2257,59 @@ GruntMGroup:
 	dw GRIMER
 	db -1 ; end
 
-	next_list_item ; ManM (11)
+	next_list_item ; ManM (11) Radio Tower 2F
 	db "Man@", TRAINERTYPE_NORMAL
-	db 23
-	dw MUK
-	db 23
-	dw KOFFING
-	db 25
-	dw RATTATA
+	db 29
+	dw WEEPINBELL
+	db 29
+	dw ARBOK
+	db 30
+	dw TENTACRUEL
 	db -1 ; end
 
-	next_list_item ; ManM (12)
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 33
-	dw HOUNDOUR
+	next_list_item ; ManM (12) Radio Tower 1F
+	db "Man@", TRAINERTYPE_MOVES
+	db 31
+	dw MAGMAR
+	dw THUNDERPUNCH, FIRE_PUNCH, BULK_UP, SLUDGE
 	db -1 ; end
 
-	next_list_item ; ManM (13)
+	next_list_item ; ManM (13) Radio Tower 2F
 	db "Man@", TRAINERTYPE_NORMAL
-	db 27
-	dw RATTATA
-	db -1 ; end
-
-	next_list_item ; ManM (14)
-	db "Man@", TRAINERTYPE_NORMAL
-	db 24
+	db 29
 	dw RATICATE
-	db 24
+	db 29
 	dw GOLBAT
+	db 29
+	dw DUGTRIO
 	db -1 ; end
 
-	next_list_item ; ManM (15)
+	next_list_item ; ManM (14) Radio Tower 2F
 	db "Man@", TRAINERTYPE_NORMAL
-	db 26
-	dw GRIMER
-	db 23
-	dw WEEZING
+	db 28
+	dw QUAGSIRE
+	db 28
+	dw DUNSPARCE
+	db 28
+	dw GLIGAR
+	db 28
+	dw MANTINE
+	db -1 ; end
+
+	next_list_item ; ManM (15) Radio Tower 4F
+	db "Man@", TRAINERTYPE_MOVES
+	db 30
+	dw SUDOWOODO
+	dw ROCK_TOMB, SANDSTORM, IRON_HEAD, MIMIC
+	db 30
+	dw GRANBULL
+	dw PIXIE_PUNCH, FIRE_FANG, BULLDOZE, SWORDS_DANCE
+	db 30
+	dw QWILFISH
+	dw SURF, POISON_JAB, REST, SLEEP_TALK
+	db 30
+	dw DELIBIRD
+	dw ICY_WIND, AERIAL_ACE, PRESENT, ROOST
 	db -1 ; end
 
 	next_list_item ; ManM (16)
@@ -2579,12 +2596,12 @@ BugCatcherGroup:
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (5)
-	db "BENNY@", TRAINERTYPE_NORMAL
-	db 7
-	dw WEEDLE
-	db 9
-	dw KAKUNA
-	db 12
+	db "Elmer@", TRAINERTYPE_NORMAL
+	db 27
+	dw LEDIAN
+	db 27
+	dw YANMA
+	db 28
 	dw BEEDRILL
 	db -1 ; end
 
@@ -2597,9 +2614,9 @@ BugCatcherGroup:
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (7)
-	db "JOSH@", TRAINERTYPE_NORMAL
-	db 13
-	dw PARAS
+	db "Buzzy@", TRAINERTYPE_NORMAL
+	db 29
+	dw PARASECT
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (8)
@@ -4288,9 +4305,21 @@ ArcherGroup:
 
 	next_list_item ; ARCHER (2)
 	db "Archer@", TRAINERTYPE_MOVES
-	db 36
-	dw GOLBAT
-	dw LEECH_LIFE, BITE, CONFUSE_RAY, WING_ATTACK
+	db 32
+	dw SLOWKING
+	dw HIDDEN_POWER, ZEN_HEADBUTT, WATER_PULSE, NASTY_PLOT
+	db 32
+	dw KOFFING
+	dw MUD_BOMB, SLUDGE, SELFDESTRUCT, HAZE
+	db 32
+	dw HOUNDOOM
+	dw ODOR_SLEUTH, FAINT_ATTACK, SNARL, FIRE_FANG
+	db 32
+	dw MACHOKE
+	dw BULK_UP, BRICK_BREAK, VITAL_THROW, FAINT_ATTACK
+	db 33
+	dw NIDOKING
+	dw POISON_JAB, BULLDOZE, STOMP, LEER
 	db -1 ; end
 
 	next_list_item ; ARCHER (3)
@@ -4891,15 +4920,21 @@ ArianaGroup:
 
 	next_list_item ; EXECUTIVEF (2)
 	db "Ariana@", TRAINERTYPE_MOVES
-	db 19
+	db 31
 	dw ARBOK
-	dw WRAP, LEER, POISON_STING, BITE
-	db 20
-	dw GLOOM
-	dw ABSORB, SWEET_SCENT, SLEEP_POWDER, ACID
-	db 21
+	dw POISON_JAB, SCREECH, CRUNCH, GLARE
+	db 31
+	dw VILEPLUME
+	dw GROWTH, SLEEP_POWDER, GIGA_DRAIN, SLUDGE_BOMB
+	db 31
 	dw MURKROW
-	dw PECK, PURSUIT, HAZE, NO_MOVE
+	dw WING_ATTACK, PURSUIT, HAZE, NIGHT_SHADE
+	db 31
+	dw KADABRA
+	dw PSYBEAM, RECOVER, CALM_MIND, DAZZLINGLEAM
+	db 32
+	dw NIDOQUEEN
+	dw DOUBLE_KICK, POISON_JAB, BULLDOZE, TAIL_WHIP
 	db -1 ; end
 
 	end_list_items
@@ -5083,10 +5118,10 @@ BoarderGroup:
 
 PokefanMGroup:
 	next_list_item ; POKEFANM (1)
-	db "WILLIAM@", TRAINERTYPE_ITEM
-	db 14
-	dw RAICHU
-	db ORAN_BERRY
+	db "Bernard@", TRAINERTYPE_ITEM
+	db 29
+	dw TANGELA
+	db SITRUS_BERRY
 	db -1 ; end
 
 	next_list_item ; POKEFANM (2) DEREK1
@@ -5477,7 +5512,7 @@ OfficerGroup:
 	end_list_items
 
 GruntFGroup:
-	next_list_item ; ManF (1)
+	next_list_item ; GruntF (1) Lighthouse
 	db "Lady@", TRAINERTYPE_NORMAL
 	db 18
 	dw RATICATE
@@ -5485,13 +5520,13 @@ GruntFGroup:
 	dw PORYGON
 	db -1 ; end
 
-	next_list_item ; ManF (2)
+	next_list_item ; GruntF (2) Lighthouse
 	db "Lady@", TRAINERTYPE_NORMAL
 	db 20
 	dw SKIPLOOM
 	db -1 ; end
 
-	next_list_item ; ManF (3)
+	next_list_item ; GruntF (3) Lighthouse
 	db "Lady@", TRAINERTYPE_NORMAL
 	db 18
 	dw CHARMELEON
@@ -5499,7 +5534,7 @@ GruntFGroup:
 	dw SCYTHER
 	db -1 ; end
 
-	next_list_item ; ManF (4)
+	next_list_item ; GruntF (4) Lighthouse
 	db "Lady@", TRAINERTYPE_NORMAL
 	db 17
 	dw MEOWTH
@@ -5511,7 +5546,7 @@ GruntFGroup:
 	dw GOLBAT
 	db -1 ; end
 
-	next_list_item ; ManF (5)
+	next_list_item ; GruntF (5) Lighthouse
 	db "Lady@", TRAINERTYPE_MOVES
 	db 18
 	dw EKANS
@@ -5519,6 +5554,42 @@ GruntFGroup:
 	db 18
 	dw GLOOM
 	dw ABSORB, SWEET_SCENT, STUN_SPORE, SLEEP_POWDER
+	db -1 ; end
+
+	next_list_item ; GruntF (6) Radio Tower 2F
+	db "Lady@", TRAINERTYPE_NORMAL
+	db 29
+	dw JUMPLUFF
+	db 29
+	dw CHANSEY
+	db 29
+	dw CLEFABLE
+	db -1 ; end
+
+	next_list_item ; GruntF (7) Radio Tower 2F
+	db "Lady@", TRAINERTYPE_NORMAL
+	db 32
+	dw NINETALES
+	db 32
+	dw PERSIAN
+	db -1 ; end
+
+	next_list_item ; GruntF (8) Radio Tower 3F
+	db "Lady@", TRAINERTYPE_NORMAL
+	db 31
+	dw RAPIDASH
+	db 31
+	dw SEADRA
+	db -1 ; end
+
+	next_list_item ; GruntF (9) Radio Tower 4F
+	db "Lady@", TRAINERTYPE_NORMAL
+	db 32
+	dw KANGASKHAN
+	db 32
+	dw JYNX
+	db 32
+	dw LEAFEON
 	db -1 ; end
 
 	end_list_items
@@ -5918,6 +5989,20 @@ MiyamotoGroup:
 	dw HOUNDOUR
 	db -1 ; end
 
+	next_list_item ; MIYAMOTO2
+	db "Miyamoto@", TRAINERTYPE_NORMAL
+	db 32
+	dw YANMA
+	db 32
+	dw GOLBAT
+	db 32
+	dw PERSIAN
+	db 33
+	dw HOUNDOOM
+	db 34
+	dw HONCHKROW
+	db -1 ; end
+
 	end_list_items
 
 CynthiaGroup:
@@ -5937,6 +6022,16 @@ EngineerGroup:
 	dw ELEKID
 	db 28
 	dw FLAAFFY
+	db -1 ; end
+
+	next_list_item ; ENGINEER (2)
+	db "Oswald@", TRAINERTYPE_NORMAL
+	db 27
+	dw MAGNEMITE
+	db 27
+	dw LANTURN
+	db 28
+	dw MACHOKE
 	db -1 ; end
 
 	end_list_items

@@ -105,10 +105,13 @@ OlivineLighthouse6F_MapScripts:
 	disappear OLIVINELIGHTHOUSE6F_BYRON
 	playsound SFX_EXIT_BUILDING
 	setevent EVENT_OLIVINE_LIGHTHOUSE_JASMINE
+	special FadeOutMusic
+	pause 30
 	opentext
 	writetext SilenceText
 	waitbutton
 	closetext
+	playmusic MUSIC_UNWAVERING_HEART
 	turnobject OLIVINELIGHTHOUSE6F_KRIS, DOWN
 	turnobject PLAYER, UP
 	sjump .Backstory
@@ -174,10 +177,13 @@ OlivineLighthouse6F_MapScripts:
 	playsound SFX_EXIT_BUILDING
 	disappear OLIVINELIGHTHOUSE6F_BYRON
 	setevent EVENT_OLIVINE_LIGHTHOUSE_JASMINE
+	special FadeOutMusic
+	pause 30
 	opentext
 	writetext SilenceText
 	waitbutton
 	closetext
+	playmusic MUSIC_UNWAVERING_HEART
 	turnobject OLIVINELIGHTHOUSE6F_CHRIS, DOWN
 	turnobject PLAYER, UP
 	sjump .Backstory
@@ -201,6 +207,9 @@ OlivineLighthouse6F_MapScripts:
 	iftrue .Female2
 	applymovement OLIVINELIGHTHOUSE6F_KRIS, RivalLeavesMovement
 	playsound SFX_EXIT_BUILDING
+	special FadeOutMusic
+	pause 30
+	special RestartMapMusic
 	disappear OLIVINELIGHTHOUSE6F_KRIS
 	setevent EVENT_LIGHTHOUSE6F_RIVAL1
 	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL2
@@ -209,6 +218,9 @@ OlivineLighthouse6F_MapScripts:
 .Female2:
 	applymovement OLIVINELIGHTHOUSE6F_CHRIS, RivalLeavesMovement
 	playsound SFX_EXIT_BUILDING
+	special FadeOutMusic
+	pause 30
+	special RestartMapMusic
 	disappear OLIVINELIGHTHOUSE6F_CHRIS
 	setevent EVENT_LIGHTHOUSE6F_RIVAL2
 	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL1

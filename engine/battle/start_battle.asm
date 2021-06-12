@@ -100,6 +100,10 @@ PlayBattleMusic:
 	cp RED
 	jr z, .done
 
+	ld de, MUSIC_MARNIE_BATTLE
+	cp RIVAL3
+	jr z, .done
+
 	ld de, MUSIC_ROCKET_BATTLE
 	cp GRUNTM
 	jr z, .done
@@ -129,8 +133,6 @@ PlayBattleMusic:
 	cp RIVAL1
 	jr z, .done
 	cp RIVAL2
-	jr z, .done
-	cp RIVAL3
 	jr z, .done
 	cp RIVAL4
 	jr nz, .othertrainer

@@ -7,6 +7,7 @@
 	const ROUTE36_ARTHUR
 	const ROUTE36_FLORIA
 	const ROUTE36_FISHER2
+	const ROUTE36_FISHER3
 
 Route36_MapScripts:
 	db 2 ; scene scripts
@@ -127,6 +128,9 @@ ArthurNotThursdayScript:
 
 Route36RockSmashGuyScript2:
 	jumptextfaceplayer RockSmashGuyText4
+
+Route36RockSmashGuyScript3:
+	jumptextfaceplayer RockSmashGuyText5
 
 Route36Sign:
 	jumptext Route36SignText
@@ -323,6 +327,18 @@ RockSmashGuyText4:
 	line "ing my contacts!"
 	done
 
+RockSmashGuyText5:
+	text "Alright, I got my"
+	line "contacts back, now"
+	cont "it's payback time!"
+
+	para "...Huh?"
+
+	para "Oh. I guess it was"
+	line "a Sudowoodo. How"
+	cont "awkward..."
+	done
+
 Route36SignText:
 	text "Route 36"
 	done
@@ -380,7 +396,7 @@ Route36_MapEvents:
 	bg_event 55,  7, BGEVENT_READ, Route36Sign
 	bg_event 21,  7, BGEVENT_READ, Route36TrainerTips1
 
-	db 8 ; object events
+	db 9 ; object events
 	object_event 23, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1
 	object_event 21,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyPierce, -1
 	object_event 51,  8, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1
@@ -389,3 +405,4 @@ Route36_MapEvents:
 	object_event 46,  6, SPRITE_FISHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
 	object_event 31, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacAlvin, -1
 	object_event 36,  9, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript2, EVENT_ROUTE_36_GUY
+	object_event 42,  7, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript3, EVENT_ROUTE_36_GUY_2

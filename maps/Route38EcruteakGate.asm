@@ -27,7 +27,7 @@ EcruteakGateRival1:
 	iftrue .Female1
 	special FadeOutMusic
 	pause 10
-	playmusic MUSIC_RIVAL_ENCOUNTER
+	playmusic MUSIC_DAHLIA_ENCOUNTER
 	applymovement ROUTE38ECRUTEAKGATE_KRIS, Movement1
 	opentext
 	checkevent EVENT_GOT_EEVEE
@@ -90,7 +90,7 @@ EcruteakGateRival1:
 	sjump .AfterVictorious
 
 .AfterVictorious:
-	playmusic MUSIC_RIVAL_AFTER
+	playmusic MUSIC_DAHLIA_AFTER_BATTLE
 	opentext
 	writetext YouWonAgainText
 	waitbutton
@@ -144,7 +144,7 @@ EcruteakGateRival2:
 	iftrue .Female2
 	special FadeOutMusic
 	pause 10
-	playmusic MUSIC_RIVAL_ENCOUNTER
+	playmusic MUSIC_DAHLIA_ENCOUNTER
 	applymovement ROUTE38ECRUTEAKGATE_KRIS, Movement3
 	opentext
 	checkevent EVENT_GOT_EEVEE
@@ -208,7 +208,7 @@ EcruteakGateRival2:
 	sjump .AfterVictorious3
 
 .AfterVictorious3:
-	playmusic MUSIC_RIVAL_AFTER
+	playmusic MUSIC_DAHLIA_AFTER_BATTLE
 	opentext
 	writetext YouWonAgainText
 	waitbutton

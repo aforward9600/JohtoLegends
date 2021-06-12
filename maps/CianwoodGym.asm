@@ -41,7 +41,7 @@ CianwoodGymChigusaScript:
 	writetext ChigusaIntroText
 	waitbutton
 	closetext
-	winlosstext ChigusaLossText, 0
+	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA, CHIGUSA1
 	startbattle
 	reloadmapafterbattle
@@ -92,7 +92,7 @@ CianwoodGymChigusaScript:
 	writetext ReadyForARematchText
 	waitbutton
 	closetext
-	winlosstext ChigusaLossText, 0
+	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA, CHIGUSA2
 	startbattle
 	reloadmapafterbattle
@@ -109,7 +109,7 @@ CianwoodGymChigusaScript:
 	writetext ReadyForARematchText
 	waitbutton
 	closetext
-	winlosstext ChigusaLossText, 0
+	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA, CHIGUSA3
 	startbattle
 	reloadmapafterbattle
@@ -126,7 +126,7 @@ CianwoodGymChigusaScript:
 	writetext ReadyForARematchText
 	waitbutton
 	closetext
-	winlosstext ChigusaLossText, 0
+	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA, CHIGUSA4
 	startbattle
 	reloadmapafterbattle
@@ -143,7 +143,7 @@ CianwoodGymChigusaScript:
 	writetext ReadyForARematchText
 	waitbutton
 	closetext
-	winlosstext ChigusaLossText, 0
+	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA, CHIGUSA5
 	startbattle
 	reloadmapafterbattle
@@ -160,7 +160,7 @@ CianwoodGymChigusaScript:
 	writetext ReadyForARematchText
 	waitbutton
 	closetext
-	winlosstext ChigusaLossText, 0
+	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA, CHIGUSA6
 	startbattle
 	reloadmapafterbattle
@@ -398,6 +398,11 @@ ChigusaIntroText:
 ChigusaLossText:
 	text "Whoah! Now that's"
 	line "elegant!"
+	done
+
+ChigusaWinText:
+	text "Elegance is my"
+	line "specialty!"
 	done
 
 BeatenChigusaText:

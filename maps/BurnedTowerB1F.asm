@@ -82,6 +82,8 @@ ReleaseTheBeasts:
 	setevent EVENT_BURNED_TOWER_MORTY
 	setevent EVENT_BURNED_TOWER_1F_EUSINE
 	clearevent EVENT_ECRUTEAK_GYM_KIDS
+	clearevent EVENT_BURNED_TOWER_1F_ENOKI_2
+	setmapscene BURNED_TOWER_1F, SCENE_BURNEDTOWER1F_NOTHING
 	refreshscreen
 	changeblock 6, 14, $1b ; ladder
 	reloadmappart

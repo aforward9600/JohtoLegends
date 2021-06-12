@@ -1,9 +1,6 @@
 	object_const_def ; object_event constants
-	const RADIOTOWER5F_DIRECTOR
-	const RADIOTOWER5F_ARCHER
-	const RADIOTOWER5F_ARIANA
-	const RADIOTOWER5F_ROCKER
-	const RADIOTOWER5F_POKE_BALL
+	const RADIOTOWER5F_MIYAMOTO
+	const RADIOTOWER5F_RIVAL
 
 RadioTower5F_MapScripts:
 	db 3 ; scene scripts
@@ -22,250 +19,272 @@ RadioTower5F_MapScripts:
 .DummyScene2:
 	end
 
-FakeDirectorScript:
-	turnobject RADIOTOWER5F_DIRECTOR, UP
-	showemote EMOTE_SHOCK, RADIOTOWER5F_DIRECTOR, 15
-	opentext
-	writetext FakeDirectorTextBefore1
-	waitbutton
-	closetext
-	applymovement RADIOTOWER5F_DIRECTOR, FakeDirectorMovement
+RadioTowerMiyamotoScene1:
+	turnobject RADIOTOWER5F_MIYAMOTO, LEFT
+	pause 15
+	turnobject RADIOTOWER5F_MIYAMOTO, UP
+	pause 15
+	turnobject RADIOTOWER5F_MIYAMOTO, DOWN
+	showemote EMOTE_SHOCK, RADIOTOWER5F_MIYAMOTO, 15
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	opentext
-	writetext FakeDirectorTextBefore2
+	writetext RadioTowerMiyamotoText1
 	waitbutton
 	closetext
-	winlosstext FakeDirectorWinText, 0
-	setlasttalked RADIOTOWER5F_DIRECTOR
-	loadtrainer ARCHER, ARCHER_3
+	applymovement RADIOTOWER5F_MIYAMOTO, MiyamotoMovement1
+	turnobject RADIOTOWER5F_MIYAMOTO, LEFT
+	turnobject PLAYER, RIGHT
+	sjump Reconverge
+
+RadioTowerMiyamotoScene2:
+	turnobject RADIOTOWER5F_MIYAMOTO, LEFT
+	pause 15
+	turnobject RADIOTOWER5F_MIYAMOTO, UP
+	pause 15
+	turnobject RADIOTOWER5F_MIYAMOTO, DOWN
+	showemote EMOTE_SHOCK, RADIOTOWER5F_MIYAMOTO, 15
+	playmusic MUSIC_ROCKET_ENCOUNTER
+	opentext
+	writetext RadioTowerMiyamotoText1
+	waitbutton
+	closetext
+	applymovement RADIOTOWER5F_MIYAMOTO, MiyamotoMovement2
+	sjump Reconverge
+
+Reconverge:
+	opentext
+	writetext RadioTowerMiyamotoText2
+	waitbutton
+	closetext
+	winlosstext RadioTowerMiyamotoWinText, 0
+	setlasttalked RADIOTOWER5F_MIYAMOTO
+	loadtrainer MYSTERIOUS, MIYAMOTO2
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext FakeDirectorTextAfter
-	buttonsound
-	verbosegiveitem BASEMENT_KEY
-	closetext
-	setscene SCENE_RADIOTOWER5F_ROCKET_BOSS
-	setevent EVENT_BEAT_ROCKET_EXECUTIVEM_3
-	end
-
-Director:
-	faceplayer
-	opentext
-	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .TrueDirector
-	writetext FakeDirectorTextAfter
-	waitbutton
-	closetext
-	end
-
-.TrueDirector:
-	writetext RadioTower5FDirectorText
-	waitbutton
-	closetext
-	end
-
-TrainerExecutivef1:
-	trainer ARIANA, ARIANA_1, EVENT_BEAT_LIGHTHOUSE_ARIANA, Executivef1SeenText, Executivef1BeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext Executivef1AfterBattleText
-	waitbutton
-	closetext
-	end
-
-RadioTower5FRocketBossScene:
-	applymovement PLAYER, RadioTower5FPlayerTwoStepsLeftMovement
-	playmusic MUSIC_ROCKET_ENCOUNTER
-	turnobject RADIOTOWER5F_ARCHER, RIGHT
-	opentext
-	writetext RadioTower5FRocketBossBeforeText
-	waitbutton
-	closetext
-	winlosstext RadioTower5FRocketBossWinText, 0
-	setlasttalked RADIOTOWER5F_ARCHER
-	loadtrainer ARCHER, ARCHER_1
-	startbattle
-	reloadmapafterbattle
-	opentext
-	writetext RadioTower5FRocketBossAfterText
+	writetext RadioTowerMiyamotoTextAfter
 	waitbutton
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	disappear RADIOTOWER5F_ARCHER
-	disappear RADIOTOWER5F_ARIANA
+	disappear RADIOTOWER5F_MIYAMOTO
 	pause 15
 	special FadeInQuickly
-	setevent EVENT_BEAT_LIGHTHOUSE_ARCHER
-	setevent EVENT_CLEARED_RADIO_TOWER
 	clearflag ENGINE_ROCKETS_IN_RADIO_TOWER
-	setevent EVENT_GOLDENROD_CITY_ROCKET_SCOUT
-	setevent EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
-	setevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	clearevent EVENT_MAHOGANY_MART_OWNERS
-	clearflag ENGINE_ROCKETS_IN_MAHOGANY
-	clearevent EVENT_GOLDENROD_CITY_CIVILIANS
-	clearevent EVENT_RADIO_TOWER_CIVILIANS_AFTER
-	setevent EVENT_BLACKTHORN_CITY_SUPER_NERD_BLOCKS_GYM
-	clearevent EVENT_BLACKTHORN_CITY_SUPER_NERD_DOES_NOT_BLOCK_GYM
-	special PlayMapMusic
-	disappear RADIOTOWER5F_DIRECTOR
-	moveobject RADIOTOWER5F_DIRECTOR, 12, 0
-	appear RADIOTOWER5F_DIRECTOR
-	applymovement RADIOTOWER5F_DIRECTOR, RadioTower5FDirectorWalksIn
-	turnobject PLAYER, RIGHT
-	opentext
-	writetext RadioTower5FDirectorThankYouText
-	buttonsound
-	verbosegiveitem CLEAR_BELL
-	writetext RadioTower5FDirectorDescribeClearBellText
-	waitbutton
-	closetext
 	setscene SCENE_RADIOTOWER5F_NOTHING
-	setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_DEFAULT
-	setevent EVENT_GOT_CLEAR_BELL
-	setevent EVENT_TEAM_ROCKET_DISBANDED
-	sjump .UselessJump
-
-.UselessJump:
-	applymovement RADIOTOWER5F_DIRECTOR, RadioTower5FDirectorWalksOut
-	playsound SFX_EXIT_BUILDING
-	disappear RADIOTOWER5F_DIRECTOR
+	setevent EVENT_BEAT_GOLDENROD_TOWER_MIYAMOTO
+	setevent EVENT_GOLDENROD_TOWER_TAKEOVER
+	clearevent EVENT_GOLDENROD_TOWER_DIRECTOR
+	clearevent EVENT_GOLDENROD_TOWER_POLICE
+	special PlayMapMusic
+	pause 15
+	readvar VAR_FACING
+	ifequal UP, .RivalAppears1
+	ifequal RIGHT, .RivalAppears2
 	end
 
-Ben:
-	jumptextfaceplayer BenText
+.RivalAppears1:
+	playsound SFX_ENTER_DOOR
+	moveobject RADIOTOWER5F_RIVAL, 9, 13
+	appear RADIOTOWER5F_RIVAL
+	applymovement RADIOTOWER5F_RIVAL, RivalMoves1
+	turnobject RADIOTOWER5F_RIVAL, RIGHT
+	turnobject PLAYER, LEFT
+	opentext
+	writetext RadioTower5FRivalText1
+	waitbutton
+	closetext
+	applymovement RADIOTOWER5F_RIVAL, RivalMoves2
+	turnobject PLAYER, UP
+	turnobject RADIOTOWER5F_RIVAL, LEFT
+	pause 15
+	turnobject RADIOTOWER5F_RIVAL, RIGHT
+	pause 15
+	turnobject RADIOTOWER5F_RIVAL, UP
+	pause 15
+	showemote EMOTE_SHOCK, RADIOTOWER5F_RIVAL, 15
+	opentext
+	writetext RivalFindsClearBellText
+	waitbutton
+	closetext
+	applymovement RADIOTOWER5F_RIVAL, MiyamotoMovement2
+	turnobject RADIOTOWER5F_RIVAL, RIGHT
+	turnobject PLAYER, LEFT
+	opentext
+	writetext HeresTheClearBellText
+	buttonsound
+	verbosegiveitem CLEAR_BELL
+	writetext LetsGoText
+	waitbutton
+	closetext
+	setevent EVENT_GOLDENROD_TOWER_RIVAL_1
+	special FadeOutPalettes
+	special HealParty
+	pause 15
+	warp RADIO_TOWER_1F, 10, 3
+	end
 
-RadioTower5FUltraBall:
-	itemball ULTRA_BALL
+.RivalAppears2:
+	playsound SFX_ENTER_DOOR
+	moveobject RADIOTOWER5F_RIVAL, 9, 13
+	appear RADIOTOWER5F_RIVAL
+	applymovement RADIOTOWER5F_RIVAL, RivalMoves2
+	turnobject RADIOTOWER5F_RIVAL, LEFT
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext RadioTower5FRivalText1
+	waitbutton
+	closetext
+	applymovement RADIOTOWER5F_RIVAL, RivalMoves2
+	turnobject PLAYER, UP
+	turnobject RADIOTOWER5F_RIVAL, LEFT
+	pause 15
+	turnobject RADIOTOWER5F_RIVAL, RIGHT
+	pause 15
+	turnobject RADIOTOWER5F_RIVAL, UP
+	pause 15
+	showemote EMOTE_SHOCK, RADIOTOWER5F_RIVAL, 15
+	opentext
+	writetext RivalFindsClearBellText
+	waitbutton
+	closetext
+	applymovement RADIOTOWER5F_RIVAL, MiyamotoMovement2
+	turnobject RADIOTOWER5F_RIVAL, LEFT
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext HeresTheClearBellText
+	buttonsound
+	verbosegiveitem CLEAR_BELL
+	writetext LetsGoText
+	waitbutton
+	closetext
+	setevent EVENT_GOLDENROD_TOWER_RIVAL_1
+	special FadeOutPalettes
+	special HealParty
+	pause 15
+	warp RADIO_TOWER_1F, 10, 3
+	end
 
-RadioTower5FDirectorsOfficeSign:
-	jumptext RadioTower5FDirectorsOfficeSignText
+MiyamotoMovement1:
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
 
-RadioTower5FStudio1Sign:
-	jumptext RadioTower5FStudio1SignText
+MiyamotoMovement2:
+	step DOWN
+	step DOWN
+	step_end
 
-RadioTower5FBookshelf:
-	jumpstd magazinebookshelf
-
-FakeDirectorMovement:
+RivalMoves1:
+	step UP
 	step LEFT
-	step LEFT
-	step LEFT
+	step UP
+	step_end
+
+RivalMoves2:
 	step UP
 	step UP
 	step_end
 
-RadioTower5FDirectorWalksIn:
-	step DOWN
-	step DOWN
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step DOWN
-	step DOWN
-	step DOWN
-	step LEFT
-	step_end
-
-RadioTower5FDirectorWalksOut:
-	step RIGHT
-	step UP
-	step UP
-	step UP
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step UP
-	step UP
-	step_end
-
-RadioTower5FPlayerTwoStepsLeftMovement:
-	step LEFT
-	step LEFT
-	step_end
-
-FakeDirectorTextBefore1:
-	text "Y-you! You came to"
-	line "rescue me?"
+RadioTowerMiyamotoText1:
+	text "Right on time, as"
+	line "usual, <PLAYER>."
 	done
 
-FakeDirectorTextBefore2:
-	text "Is that what you"
-	line "were expecting?"
-
-	para "Wrong!"
-	line "I'm an imposter!"
-
-	para "I pretended to be"
-	line "the real thing to"
-
-	para "prepare for our"
-	line "takeover."
-
-	para "Do you want to"
-	line "know where we hid"
-	cont "the real DIRECTOR?"
-
-	para "Sure, I'll tell"
-	line "you. But only if"
-	cont "you can beat me!"
+RadioTowerMiyamotoText2:
+	text "I'm a little busy"
+	line "right now, but if"
+	cont "you truly want to"
+	cont "get in my way,"
+	cont "I'll be happy to"
+	cont "oblige, and"
+	cont "destroy you."
 	done
 
-FakeDirectorWinText:
-	text "OK, OK. I'll tell"
-	line "you where he is."
+RadioTowerMiyamotoWinText:
+	text "Another loss for"
+	line "me, it seems."
 	done
 
-FakeDirectorTextAfter:
-	text "We stashed the"
-	line "real DIRECTOR in"
+RadioTowerMiyamotoTextAfter:
+	text "Well, it would"
+	line "appear that our"
+	cont "informant was in-"
+	cont "correct."
 
-	para "the UNDERGROUND"
-	line "WAREHOUSE."
+	para "I'll have to pun-"
+	line "ish him later."
 
-	para "It's at the far"
-	line "end of the UNDER-"
-	cont "GROUND."
+	para "For now, let me"
+	line "tell you some-"
+	cont "thing."
 
-	para "But I doubt you'll"
-	line "get that far."
+	para "What we seek is"
+	line "unknown to you,"
+	cont "and it should stay"
+	cont "that way."
+
+	para "I really hope that"
+	line "we don't meet"
+	cont "again."
+
+	para "If we do, I won't"
+	line "hesitate to defeat"
+	cont "you."
+
+	para "Later."
 	done
 
-Executivef1SeenText:
-	text "Remember me from"
-	line "the HIDEOUT in"
-	cont "MAHOGANY TOWN?"
+RadioTower5FRivalText1:
+	text "<PLAYER>,"
+	line "sorry I'm late!"
 
-	para "I lost then, but I"
-	line "won't this time."
+	para "That guy had six"
+	line "Wobbuffets!"
+
+	para "What a cruel joke!"
+
+	para "…Oh, looks like I"
+	line "missed her again…"
+
+	para "I still want to"
+	line "get revenge on"
+	cont "behalf of my #-"
+	cont "mon…"
+
+	para "…Well, for right"
+	line "now, let's look"
+	cont "for the item the"
+	cont "old man was talk-"
+	cont "ing about."
 	done
 
-Executivef1BeatenText:
-	text "This can't be"
-	line "happening!"
+RivalFindsClearBellText:
+	text "Hey, I think I"
+	line "found it!"
 
-	para "I fought hard, but"
-	line "I still lost…"
+	para "It's…an old bell?"
+
+	para "It's not my place"
+	line "to criticize a"
+	cont "person's tastes."
 	done
 
-Executivef1AfterBattleText:
-	text "<PLAYER>, isn't it?"
+HeresTheClearBellText:
+	text "Here, you take"
+	line "this for now."
 
-	para "A brat like you"
-	line "won't appreciate"
+	para "I don't want to"
+	line "break it."
+	done
 
-	para "the magnificence"
-	line "of TEAM ROCKET."
+LetsGoText:
+	text "<PLAYER>, we"
+	line "should head back."
 
-	para "That's too bad."
-	line "I really admire"
-	cont "your power."
+	para "There's nothing"
+	line "else we need here."
 	done
 
 RadioTower5FRocketBossBeforeText:
@@ -386,59 +405,18 @@ RadioTower5FDirectorDescribeClearBellText:
 	line "my OFFICE."
 	done
 
-RadioTower5FDirectorText:
-	text "DIRECTOR: Hello,"
-	line "<PLAY_G>!"
-
-	para "You know, I love"
-	line "#MON."
-
-	para "I built this RADIO"
-	line "TOWER so I could"
-
-	para "express my love"
-	line "of #MON."
-
-	para "It would be nice"
-	line "if people enjoyed"
-	cont "our programs."
-	done
-
-BenText:
-	text "BEN: Do you listen"
-	line "to our music?"
-	done
-
-RadioTower5FDirectorsOfficeSignText:
-	text "5F DIRECTOR'S"
-	line "   OFFICE"
-	done
-
-RadioTower5FStudio1SignText:
-	text "5F STUDIO 1"
-	done
-
 RadioTower5F_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
-	warp_event  0,  0, RADIO_TOWER_4F, 1
-	warp_event 12,  0, RADIO_TOWER_4F, 3
+	db 1 ; warp events
+	warp_event  9, 13, RADIO_TOWER_4F, 1
 
 	db 2 ; coord events
-	coord_event  0,  3, SCENE_DEFAULT, FakeDirectorScript
-	coord_event 16,  5, SCENE_RADIOTOWER5F_ROCKET_BOSS, RadioTower5FRocketBossScene
+	coord_event  8, 11, SCENE_DEFAULT, RadioTowerMiyamotoScene1
+	coord_event  9, 11, SCENE_DEFAULT, RadioTowerMiyamotoScene2
 
-	db 5 ; bg events
-	bg_event  3,  0, BGEVENT_READ, RadioTower5FDirectorsOfficeSign
-	bg_event 11,  0, BGEVENT_READ, RadioTower5FStudio1Sign
-	bg_event 15,  0, BGEVENT_READ, RadioTower5FStudio1Sign
-	bg_event 16,  1, BGEVENT_READ, RadioTower5FBookshelf
-	bg_event 17,  1, BGEVENT_READ, RadioTower5FBookshelf
+	db 0 ; bg events
 
-	db 5 ; object events
-	object_event  3,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Director, -1
-	object_event 13,  5, SPRITE_ARCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 17,  2, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 1, TrainerExecutivef1, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 13,  5, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Ben, EVENT_RADIO_TOWER_CIVILIANS_AFTER
-	object_event  8,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RadioTower5FUltraBall, EVENT_RADIO_TOWER_5F_ULTRA_BALL
+	db 2 ; object events
+	object_event  9,  8, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_GOLDENROD_TOWER_TAKEOVER
+	object_event  0, 17, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_GOLDENROD_TOWER_RIVAL_1

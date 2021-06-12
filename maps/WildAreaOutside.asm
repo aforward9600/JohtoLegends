@@ -29,7 +29,7 @@ RivalWalksUpLeft:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	turnobject, PLAYER, DOWN
 	appear WILDAREAOUTSIDE_KRIS
-	playmusic MUSIC_RIVAL_ENCOUNTER
+	playmusic MUSIC_DAHLIA_ENCOUNTER
 	applymovement WILDAREAOUTSIDE_KRIS, RivalMovesUp
 	turnobject WILDAREAOUTSIDE_KRIS, LEFT
 	turnobject PLAYER, RIGHT
@@ -57,7 +57,7 @@ RivalWalksUpLeft:
 	sjump .AfterVictorious1
 
 .AfterVictorious1:
-	playmusic MUSIC_RIVAL_AFTER
+	playmusic MUSIC_DAHLIA_AFTER_BATTLE
 	opentext
 	writetext YouWonOnceAgainText
 	buttonsound
@@ -165,7 +165,7 @@ RivalWalksUpRight:
 	turnobject, PLAYER, DOWN
 	moveobject WILDAREAOUTSIDE_KRIS, 8, 12
 	appear WILDAREAOUTSIDE_KRIS
-	playmusic MUSIC_RIVAL_ENCOUNTER
+	playmusic MUSIC_DAHLIA_ENCOUNTER
 	applymovement WILDAREAOUTSIDE_KRIS, RivalMovesUp
 	turnobject WILDAREAOUTSIDE_KRIS, RIGHT
 	turnobject PLAYER, LEFT
@@ -193,7 +193,7 @@ RivalWalksUpRight:
 	sjump .AfterVictorious3
 
 .AfterVictorious3:
-	playmusic MUSIC_RIVAL_AFTER
+	playmusic MUSIC_DAHLIA_AFTER_BATTLE
 	opentext
 	writetext YouWonOnceAgainText
 	buttonsound

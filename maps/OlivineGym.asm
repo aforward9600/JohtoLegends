@@ -17,7 +17,7 @@ OlivineGymByronScript:
 	writetext Byron_LittleHero
 	waitbutton
 	closetext
-	winlosstext Byron_Clang, 0
+	winlosstext Byron_Clang, Byron_SteelyDetermination
 	loadtrainer BYRON, BYRON1
 	startbattle
 	reloadmapafterbattle
@@ -160,6 +160,12 @@ Byron_LittleHero:
 Byron_Clang:
 	text "CLANG! What a"
 	line "battle!"
+	done
+
+Byron_SteelyDetermination:
+	text "Steely determin-"
+	line "ation wins every"
+	cont "time!"
 	done
 
 Byron_Beaten:

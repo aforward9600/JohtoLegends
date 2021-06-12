@@ -1,7 +1,6 @@
 	object_const_def ; object_event constants
 	const GOLDENRODHAPPINESSRATER_TEACHER
 	const GOLDENRODHAPPINESSRATER_POKEFAN_M
-	const GOLDENRODHAPPINESSRATER_TWIN
 
 GoldenrodHappinessRater_MapScripts:
 	db 0 ; scene scripts
@@ -60,9 +59,6 @@ GoldenrodHappinessRaterTeacherScript:
 GoldenrodHappinessRaterPokefanMScript:
 	jumptextfaceplayer GoldenrodHappinessRaterPokefanMText
 
-GoldenrodHappinessRaterTwinScript:
-	jumptextfaceplayer GoldenrodHappinessRaterTwinText
-
 HappinessRatersHouseBookshelf:
 	jumpstd difficultbookshelf
 
@@ -71,7 +67,7 @@ HappinessRatersHouseRadio:
 
 GoldenrodHappinessRaterTeacherText:
 	text "If you treat your"
-	line "#MON nicely,"
+	line "#mon nicely,"
 
 	para "they will love you"
 	line "in return."
@@ -120,17 +116,17 @@ GoldenrodHappinessRaterPokefanMText:
 	text "I keep losing in"
 	line "battles, and my"
 
-	para "#MON end up"
+	para "#mon end up"
 	line "fainting…"
 
 	para "Maybe that's why"
-	line "my #MON don't"
+	line "my #mon don't"
 	cont "like me much…"
 	done
 
 GoldenrodHappinessRaterTwinText:
 	text "When I use an item"
-	line "on my #MON, it"
+	line "on my #mon, it"
 	cont "acts really glad!"
 	done
 
@@ -148,7 +144,6 @@ GoldenrodHappinessRater_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, HappinessRatersHouseBookshelf
 	bg_event  7,  1, BGEVENT_READ, HappinessRatersHouseRadio
 
-	db 3 ; object events
-	object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterTeacherScript, -1
-	object_event  5,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterPokefanMScript, -1
-	object_event  5,  6, SPRITE_TWIN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterTwinScript, -1
+	db 2 ; object events
+	object_event  2,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterTeacherScript, -1
+	object_event  5,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterPokefanMScript, -1

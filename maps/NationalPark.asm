@@ -1,15 +1,15 @@
 	object_const_def ; object_event constants
-	const NATIONALPARK_LASS1
-	const NATIONALPARK_POKEFAN_F1
-	const NATIONALPARK_TEACHER1
+	const NATIONALPARK_ENGINEER3
 	const NATIONALPARK_YOUNGSTER1
-	const NATIONALPARK_YOUNGSTER2
-	const NATIONALPARK_TEACHER2
+	const NATIONALPARK_LASS
+	const NATIONALPARK_BUG_CATCHER1
+	const NATIONALPARK_ENGINEER5
+	const NATIONALPARK_GRAMPS
 	const NATIONALPARK_PERSIAN
-	const NATIONALPARK_YOUNGSTER3
-	const NATIONALPARK_POKEFAN_F2
+	const NATIONALPARK_ENGINEER4
+	const NATIONALPARK_POKEFAN_F
+	const NATIONALPARK_BUG_CATCHER2
 	const NATIONALPARK_POKEFAN_M
-	const NATIONALPARK_LASS2
 	const NATIONALPARK_POKE_BALL1
 	const NATIONALPARK_ENGINEER
 	const NATIONALPARK_POKE_BALL2
@@ -28,8 +28,8 @@ NationalPark_MapScripts:
 .DummyScene1:
 	end
 
-NationalParkLassScript:
-	jumptextfaceplayer NationalParkLassText
+NationalParkEngineer3Script:
+	jumptextfaceplayer NationalParkEngineer3Text
 
 NationalParkPokefanFScript:
 	jumptextfaceplayer NationalParkPokefanFText
@@ -51,22 +51,44 @@ NationalParkTeacher1Script:
 	closetext
 	end
 
-BirdKeeperGunner:
-	trainer BIRD_KEEPER, GUNNER, EVENT_BEAT_BIRD_KEEPER_GUNNER, BirdKeeperGunnerSeenText, BirdKeeperGunnerBeatenText, 0, .Script
+BugCatcherElmer:
+	trainer BUG_CATCHER, ELMER, EVENT_BEAT_BUG_CATCHER_ELMER, BugCatcherElmerSeenText, BugCatcherElmerBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperGunnerAfterBattleText
+	writetext BugCatcherElmerAfterBattleText
 	waitbutton
 	closetext
 	end
 
-NationalParkYoungster2Script:
-	jumptextfaceplayer NationalParkYoungster2Text
+TrainerEngineerOswald:
+	trainer ENGINEER, OSWALD, EVENT_BEAT_ENGINEER_OSWALD, TrainerEngineerOswaldSeenText, TrainerEngineerOswaldBeatenText, 0, .Script
 
-NationalParkTeacher2Script:
-	jumptextfaceplayer NationalParkTeacher2Text
+.Script:
+	endifjustbattled
+	opentext
+	writetext TrainerEngineerOswaldAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerPokefanMBernard:
+	trainer POKEFANM, BERNARD, EVENT_BEAT_POKEFANM_BERNARD, TrainerPokefanMBernardSeenText, TrainerPokefanMBernardBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext TrainerPokefanMBernardAfterBattleText
+	waitbutton
+	closetext
+	end
+
+NationalParkYoungster1Script:
+	jumptextfaceplayer NationalParkYoungster1Text
+
+NationalParkGrampsScript:
+	jumptextfaceplayer NationalParkGrampsText
 
 NationalParkPersian:
 	refreshscreen
@@ -101,6 +123,8 @@ TrainerEngineerHarvey:
 	trainer ENGINEER, HARVEY1, EVENT_BEAT_ENGINEER_HARVEY, EngineerHarveySeenText, EngineerHarveyBeatenText, 0, .Script
 
 .Script:
+	setscene SCENE_FINISHED
+	setmapscene NATIONAL_PARK_BUG_CONTEST, SCENE_FINISHED
 	endifjustbattled
 	opentext
 	writetext EngineerHarveyAfterBattleText
@@ -108,95 +132,19 @@ TrainerEngineerHarvey:
 	closetext
 	end
 
-TrainerPokefanmWilliam:
-	trainer POKEFANM, WILLIAM, EVENT_BEAT_POKEFANM_WILLIAM, PokefanmWilliamSeenText, PokefanmWilliamBeatenText, 0, .Script
+TrainerBugCatcherBuzzy:
+	trainer BUG_CATCHER, BUZZY, EVENT_BEAT_BUG_CATCHER_BUZZY, BugCatcherBuzzySeenText, BugCatcherBuzzyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokefanmWilliamAfterBattleText
+	writetext BugCatcherBuzzyAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPokefanfBeverly1:
-	trainer POKEFANF, BEVERLY1, EVENT_BEAT_POKEFANF_BEVERLY, PokefanfBeverly1SeenText, PokefanfBeverly1BeatenText, 0, .Script
-
-.Script:
-	loadvar VAR_CALLERID, PHONE_POKEFAN_BEVERLY
-	endifjustbattled
-	opentext
-	checkflag ENGINE_BEVERLY_HAS_NUGGET
-	iftrue .GiveNugget
-	checkcellnum PHONE_POKEFAN_BEVERLY
-	iftrue .NumberAccepted
-	checkpoke MARILL
-	iffalse .NoMarill
-	checkevent EVENT_BEVERLY_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskAgain
-	writetext UnknownText_0x5c5bd
-	buttonsound
-	setevent EVENT_BEVERLY_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
-	sjump .RequestNumber
-
-.AskAgain:
-	scall .AskNumber2
-.RequestNumber:
-	askforphonenumber PHONE_POKEFAN_BEVERLY
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, POKEFANF, BEVERLY1
-	scall .RegisteredNumber
-	sjump .NumberAccepted
-
-.GiveNugget:
-	scall .Gift
-	verbosegiveitem NUGGET
-	iffalse .NoRoom
-	clearflag ENGINE_BEVERLY_HAS_NUGGET
-	sjump .NumberAccepted
-
-.NoRoom:
-	sjump .PackFull
-
-.NoMarill:
-	writetext UnknownText_0x5c68a
-	waitbutton
-	closetext
-	end
-
-.AskNumber1:
-	jumpstd asknumber1f
-	end
-
-.AskNumber2:
-	jumpstd asknumber2f
-	end
-
-.RegisteredNumber:
-	jumpstd registerednumberf
-	end
-
-.NumberAccepted:
-	jumpstd numberacceptedf
-	end
-
-.NumberDeclined:
-	jumpstd numberdeclinedf
-	end
-
-.PhoneFull:
-	jumpstd phonefullf
-	end
-
-.Gift:
-	jumpstd giftf
-	end
-
-.PackFull:
-	jumpstd packfullf
-	end
+NationalParkPokefanF2Script:
+	jumptextfaceplayer NationalParkPokefanF2Text
 
 TrainerLassKrise:
 	trainer LASS, KRISE, EVENT_BEAT_LASS_KRISE, LassKriseSeenText, LassKriseBeatenText, 0, .Script
@@ -212,8 +160,8 @@ TrainerLassKrise:
 NationalParkRelaxationSquareSign:
 	jumptext NationalParkRelaxationSquareText
 
-NationalParkParlyzHeal:
-	itemball PARLYZ_HEAL
+NationalParkEther:
+	itemball ETHER
 
 NationalParkTMDig:
 	itemball TM_SLEEP_TALK
@@ -236,15 +184,26 @@ EngineerMovesYouMovement:
 	step RIGHT
 	step_end
 
-NationalParkLassText:
-	text "Look! Check out my"
-	line "bag!"
+NationalParkEngineer3Text:
+	text "Whew!"
 
-	para "I printed out my"
-	line "favorites from my"
+	para "The fountain is"
+	line "almost complete."
 
-	para "#DEX and stuck"
-	line "them on my bag."
+	para "Next up we'll cut"
+	line "down some of these"
+	cont "trees and plant"
+	cont "some nice tall"
+	cont "grass."
+
+	para "Don't worry, we'll"
+	line "also plant some"
+	cont "more trees out in"
+	cont "the deeper parts"
+	cont "of the forest, so"
+	cont "we won't hear any"
+	cont "whining from the"
+	cont "conservationists."
 	done
 
 NationalParkPokefanFText:
@@ -281,9 +240,12 @@ NationalParkTeacher1Text_GotQuickClaw:
 	done
 
 NationalParkYoungster1Text:
-	text "I'm playing with"
-	line "stickers I printed"
-	cont "from my #DEX."
+	text "This place is nice"
+	line "and secluded."
+
+	para "Perfect for some"
+	line "relaxing isolat-"
+	cont "ion."
 	done
 
 NationalParkYoungster2Text:
@@ -292,15 +254,15 @@ NationalParkYoungster2Text:
 	cont "sticker if I win."
 	done
 
-NationalParkTeacher2Text:
-	text "I take walks in"
-	line "the PARK, but I"
+NationalParkGrampsText:
+	text "It'll be sad to"
+	line "see the forest I"
 
-	para "never go into the"
-	line "grass."
+	para "grew up with gone"
+	line "in a matter of"
+	cont "months."
 
-	para "Trainers always"
-	line "want to battle…"
+	para "Sigh..."
 	done
 
 NationalParkPersianText:
@@ -340,18 +302,10 @@ EngineerHarveyAfterBattleText:
 	line "work for me."
 	done
 
-PokefanfBeverly1SeenText:
-	text "My #MON are"
-	line "simply darling."
+NationalParkPokefanF2Text:
+	text "Uh-oh..."
 
-	para "Let me tell you"
-	line "how proud my"
-	cont "darlings make me."
-	done
-
-PokefanfBeverly1BeatenText:
-	text "I can beat you in"
-	line "pride, but…"
+	para "I think I'm lost."
 	done
 
 UnknownText_0x5c5bd:
@@ -360,41 +314,65 @@ UnknownText_0x5c5bd:
 	cont "cute, too."
 	done
 
-PokefanmWilliamSeenText:
-	text "We adore our #-"
-	line "MON, even if they"
-	cont "dislike us."
+BugCatcherBuzzySeenText:
+	text "Bug Types are my"
+	line "favorite #mon!"
 
-	para "That's what being"
-	line "a FAN is about."
+	para "How 'bout you?"
 	done
 
-PokefanmWilliamBeatenText:
-	text "M-my #MON!"
+BugCatcherBuzzyBeatenText:
+	text "My bugs!"
 	done
 
-PokefanmWilliamAfterBattleText:
-	text "I lost the battle,"
-	line "but my #MON win"
+BugCatcherBuzzyAfterBattleText:
+	text "Don't sleep on Bug"
+	line "Type #mon!"
 
-	para "the prize for"
-	line "being most lovely."
+	para "They can mess you"
+	line "up!"
 	done
 
-BirdKeeperGunnerSeenText:
-	text "The bugs here are"
-	line "easy pickins' for"
-	cont "my birds!"
+TrainerPokefanMBernardSeenText:
+	text "All these bugs are"
+	line "no good for my"
+	cont "#mon!"
 	done
 
-BirdKeeperGunnerBeatenText:
-	text "My birds!"
+TrainerPokefanMBernardBeatenText:
+	text "My poor Tangela!"
 	done
 
-BirdKeeperGunnerAfterBattleText:
-	text "Bugs are easy, but"
-	line "other trainers are"
-	cont "another story."
+TrainerPokefanMBernardAfterBattleText:
+	text "That's the last"
+	line "time I listen to"
+	cont "my friends!"
+
+	para "Peer pressure is"
+	line "no joke!"
+	done
+
+BugCatcherElmerSeenText:
+	text "Be vewy, vewy"
+	line "quiet!"
+
+	para "I'm hunting"
+	line "Catewpie!"
+	done
+
+BugCatcherElmerBeatenText:
+	text "Aw outta #"
+	line "Baws!"
+	done
+
+BugCatcherElmerAfterBattleText:
+	text "Peopwe wike to"
+	line "make fun of my"
+	cont "speech impediment."
+
+	para "It's weally not"
+	line "good for my sewf"
+	cont "esteem."
 	done
 
 UnknownText_0x5c68a:
@@ -455,6 +433,27 @@ NationalParkEngineer2Text:
 	cont "think?"
 	done
 
+TrainerEngineerOswaldSeenText:
+	text "Good job making it"
+	line "through the forest"
+	cont "in one piece!"
+
+	para "How 'bout a battle"
+	line "to celebrate?"
+	done
+
+TrainerEngineerOswaldBeatenText:
+	text "Now I'm in pieces!"
+	done
+
+TrainerEngineerOswaldAfterBattleText:
+	text "We should be done"
+	line "with the fountain"
+	cont "now, so no need to"
+	cont "go the long way"
+	cont "again."
+	done
+
 NationalParkRelaxationSquareText:
 	text "National Forest"
 
@@ -479,18 +478,18 @@ NationalPark_MapEvents:
 	bg_event  2, 34, BGEVENT_ITEM, NationalParkHiddenFullHeal
 
 	db 15 ; object events
-	object_event 15, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkLassScript, -1
-	object_event 14,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPokefanFScript, -1
+	object_event 15, 24, SPRITE_ENGINEER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkEngineer3Script, -1
+	object_event  4, 19, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster1Script, -1
 	object_event 23, 40, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher1Script, -1
-	object_event 11, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, BirdKeeperGunner, -1
-	object_event 11, 40, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster2Script, -1
-	object_event 17, 41, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher2Script, -1
-	object_event 22, 40, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPersian, -1
+	object_event 35, 31, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, BugCatcherElmer, -1
+	object_event 10, 41, SPRITE_ENGINEER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerEngineerOswald, -1
+	object_event 18, 32, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkGrampsScript, -1
+	object_event 22, 40, SPRITE_MEOWTH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPersian, -1
 	object_event  3,  2, SPRITE_ENGINEER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerEngineerHarvey, -1
-	object_event 18, 29, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanfBeverly1, -1
-	object_event 16,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanmWilliam, -1
-	object_event  8, 14, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassKrise, -1
-	object_event 35, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkParlyzHeal, EVENT_NATIONAL_PARK_PARLYZ_HEAL
+	object_event 18,  2, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkPokefanF2Script, -1
+	object_event 36,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherBuzzy, -1
+	object_event 12, 30, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerPokefanMBernard, -1
+	object_event 24, 51, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkEther, EVENT_NATIONAL_PARK_ETHER
 	object_event 29, 18, SPRITE_ENGINEER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkEngineerScript, -1
 	object_event  5, 50, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkTMDig, EVENT_NATIONAL_PARK_TM_SLEEP_TALK
-	object_event 13, 20, SPRITE_ENGINEER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkEngineer2Script, -1
+	object_event 15, 13, SPRITE_ENGINEER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkEngineer2Script, -1

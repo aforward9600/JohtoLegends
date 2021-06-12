@@ -1,7 +1,7 @@
 	object_const_def ; object_event constants
 	const BILLSFAMILYSHOUSE_BILL
-	const BILLSFAMILYSHOUSE_POKEFAN_F
-	const BILLSFAMILYSHOUSE_TWIN
+	const BILLSFAMILYSHOUSE_POKEFAN_M
+	const BILLSFAMILYSHOUSE_KID
 
 BillsFamilysHouse_MapScripts:
 	db 0 ; scene scripts
@@ -11,91 +11,26 @@ BillsFamilysHouse_MapScripts:
 BillScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_EEVEE
-	iftrue .GotEevee
-	writetext BillTakeThisEeveeText
-	yesorno
-	iffalse .Refused
-	writetext BillImCountingOnYouText
-	buttonsound
-	waitsfx
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
-	writetext ReceivedEeveeText
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	givepoke EEVEE, 20
-	setevent EVENT_GOT_EEVEE
-	writetext BillEeveeMayEvolveText
+	writetext BillText
 	waitbutton
 	closetext
 	end
 
-.NoRoom:
-	writetext BillPartyFullText
-	waitbutton
-	closetext
-	end
-
-.Refused:
-	writetext BillNoEeveeText
-	waitbutton
-	closetext
-	end
-
-.GotEevee:
-	writetext BillPopWontWorkText
-	waitbutton
-	closetext
-	end
-
-BillsMomScript:
+BillsDadScript:
 	faceplayer
 	opentext
-	checkevent EVENT_MET_BILL
-	iffalse .HaventMetBill
 	writetext BillsPopText
 	waitbutton
 	closetext
 	end
 
-.HaventMetBill:
-	writetext BillsMomText
-	waitbutton
-	closetext
-	end
-
-BillsSisterScript:
+BillsBrotherHouseScript:
 	faceplayer
 	opentext
-	checkcellnum PHONE_BILL
-	iftrue .GotBillsNumber
-	writetext BillsSisterUsefulNumberText
-	askforphonenumber PHONE_BILL
-	ifequal PHONE_CONTACTS_FULL, .NoRoom
-	ifequal PHONE_CONTACT_REFUSED, .Refused
-	waitsfx
-	addcellnum PHONE_BILL
-	writetext RecordedBillsNumberText
-	playsound SFX_REGISTER_PHONE_NUMBER
-	waitsfx
-	buttonsound
-.GotBillsNumber:
-	writetext BillsSisterStorageSystemText
+	writetext BillsSecretText
 	waitbutton
 	closetext
 	end
-
-.Refused:
-	writetext BillsSisterRefusedNumberText
-	waitbutton
-	closetext
-	end
-
-.NoRoom:
-	writetext BillsSisterPhoneFullText
-	buttonsound
-	sjump .Refused
 
 BillsHouseBookshelf1:
 	jumpstd picturebookshelf
@@ -106,138 +41,69 @@ BillsHouseBookshelf2:
 BillsHouseRadio:
 	jumpstd radio2
 
-BillTakeThisEeveeText:
-	text "BILL: Hi, <PLAYER>!"
-	line "Do us a favor and"
-	cont "take this EEVEE."
+BillText:
+	text "Howdy! My name is"
+	line "Bill!"
 
-	para "It came over when"
-	line "I was adjusting"
-	cont "the TIME CAPSULE."
+	para "I'm great with"
+	line "technology!"
 
-	para "Someone has to"
-	line "take care of it,"
+	para "My grandfather"
+	line "runs the Abra"
+	cont "Delivery System!"
 
-	para "but I don't like"
-	line "being outside."
+	para "It's pretty con-"
+	line "venient, but I"
+	cont "think I've come up"
+	cont "with an even"
+	cont "better idea!"
 
-	para "Can I count on you"
-	line "to play with it,"
-	cont "<PLAYER>?"
-	done
+	para "A computer that"
+	line "stores #mon and"
+	cont "items!"
 
-BillImCountingOnYouText:
-	text "BILL: I knew you'd"
-	line "come through!"
+	para "Sounds ingenious,"
+	line "don't you think?"
 
-	para "Way to go! You're"
-	line "the real deal!"
+	para "I plan on making"
+	line "that dream a"
+	cont "reality someday!"
 
-	para "OK, I'm counting"
-	line "on you."
+	para "I think I should"
+	line "get Prof. Oak on"
+	cont "board with this."
 
-	para "Take good care of"
-	line "it!"
-	done
-
-ReceivedEeveeText:
-	text "<PLAYER> received"
-	line "EEVEE!"
-	done
-
-BillEeveeMayEvolveText:
-	text "BILL: PROF.ELM"
-	line "claims EEVEE may"
-
-	para "evolve in new and"
-	line "unknown ways."
-	done
-
-BillPartyFullText:
-	text "Whoa, wait. You"
-	line "can't carry any"
-	cont "more #MON."
-	done
-
-BillNoEeveeText:
-	text "Oh… Now what to"
-	line "do?"
-	done
-
-BillPopWontWorkText:
-	text "BILL: My pop, he"
-	line "won't work. All he"
-
-	para "does is goof off"
-	line "all day long."
-
-	para "He's getting to be"
-	line "a real headache…"
+	para "It would help with"
+	line "his research!"
 	done
 
 BillsPopText:
-	text "Oh, you collect"
-	line "#MON? My son"
-	cont "BILL is an expert."
+	text "My father seems to"
+	line "be the only one in"
+	cont "Kanto making money"
+	cont "during this"
+	cont "embargo."
 
-	para "He just got called"
-	line "to the #MON"
+	para "Just don't ask me"
+	line "where he gets his"
+	cont "money from."
 
-	para "CENTER in ECRUTEAK"
-	line "CITY."
-
-	para "My husband went"
-	line "off to the GAME"
-
-	para "CORNER without"
-	line "being called…"
+	para "Oh, and I guess"
+	line "Silph too."
 	done
 
-BillsMomText:
-	text "My husband was"
-	line "once known as a"
+BillsSecretText:
+	text "Wanna know a"
+	line "secret?"
 
-	para "#MANIAC."
-	line "BILL must have"
+	para "My brother Bill"
+	line "has a crush on"
+	cont "the girl in the"
+	cont "house with all the"
+	cont "flowers!"
 
-	para "taken after his"
-	line "father."
-	done
-
-BillsSisterUsefulNumberText:
-	text "Are you a trainer?"
-
-	para "I've got a useful"
-	line "phone number for"
-	cont "you."
-	done
-
-RecordedBillsNumberText:
-	text "<PLAYER> recorded"
-	line "BILL's number."
-	done
-
-BillsSisterRefusedNumberText:
-	text "My brother made"
-	line "the PC #MON"
-	cont "storage system."
-
-	para "I was going to"
-	line "give you BILL's"
-	cont "number…"
-	done
-
-BillsSisterPhoneFullText:
-	text "You can't record"
-	line "any more numbers."
-	done
-
-BillsSisterStorageSystemText:
-	text "My big brother"
-	line "BILL made the PC"
-
-	para "#MON storage"
-	line "system."
+	para "Don't tell him I"
+	line "told you!"
 	done
 
 BillsFamilysHouse_MapEvents:
@@ -255,6 +121,6 @@ BillsFamilysHouse_MapEvents:
 	bg_event  7,  1, BGEVENT_READ, BillsHouseRadio
 
 	db 3 ; object events
-	object_event  2,  3, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillScript, EVENT_MET_BILL
-	object_event  5,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillsMomScript, -1
-	object_event  5,  4, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BillsSisterScript, -1
+	object_event  2,  3, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillScript, -1
+	object_event  5,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillsDadScript, -1
+	object_event  5,  4, SPRITE_KID, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BillsBrotherHouseScript, -1

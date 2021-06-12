@@ -107,7 +107,7 @@ Route32RoarTMGuyScript:
 	iftrue .AlreadyHaveRoar
 	writetext Text_RoarIntro
 	buttonsound
-	verbosegiveitem TM_ROAR
+	verbosegiveitem TM_DYNAMICPUNCH
 	iffalse .Finish
 	setevent EVENT_GOT_TM05_ROAR
 .AlreadyHaveRoar:
@@ -843,22 +843,29 @@ Route32UnusedText:
 	done
 
 Text_RoarIntro:
-	text "WROOOOAR!"
-	line "PEOPLE RUN WHEN I"
+	text "You ever want to"
+	line "hit something as"
+	cont "hard as you can?"
 
-	para "ROAR! BUT YOU"
-	line "CAME LOOKING!"
-
-	para "THAT PLEASES ME!"
-	line "NOW TAKE THIS!"
+	para "Now your #mon"
+	line "can do it!"
 	done
 
 Text_RoarOutro:
-	text "WROOOAR!"
-	line "IT'S ROAR!"
+	text "It's Dynamicpunch!"
+	line "Your #mon goes"
+	cont "at the opponent"
+	cont "without regard for"
+	cont "accuracy."
 
-	para "EVEN #MON RUN"
-	line "FROM A GOOD ROAR!"
+	para "Not only that, but"
+	line "it will also conf-"
+	cont "use!"
+
+	para "Like I said, accu-"
+	line "racy is not the"
+	cont "focus of this"
+	cont "move."
 	done
 
 MeetFriedaText:

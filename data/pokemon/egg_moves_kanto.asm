@@ -181,6 +181,7 @@ SquirtleEggMoves:
 	dw FORESIGHT
 	dw FLAIL
 	dw AQUA_JET
+	dw MUDDY_WATER
 	dw -1 ; end
 
 PidgeyEggMoves:
@@ -214,6 +215,7 @@ SpearowEggMoves:
 	dw RAZOR_WIND
 	dw SKY_ATTACK
 	dw WHIRLWIND
+	dw ECHOED_VOICE
 	dw -1 ; end
 
 EkansEggMoves:
@@ -234,6 +236,7 @@ PichuEggMoves:
 	dw ENDURE
 	dw THUNDERPUNCH
 	dw VOLT_TACKLE
+	dw ECHOED_VOICE
 	dw -1 ; end
 
 SandshrewEggMoves:
@@ -279,6 +282,7 @@ CleffaEggMoves:
 	dw BELLY_DRUM
 	dw SPLASH
 	dw MIMIC
+	dw ECHOED_VOICE
 	dw -1 ; end
 
 VulpixEggMoves:
@@ -290,6 +294,7 @@ VulpixEggMoves:
 	dw EXTRASENSORY
 	dw FLARE_BLITZ
 	dw HOWL
+	dw HEAT_WAVE
 	dw -1 ; end
 
 IgglybuffEggMoves:
@@ -402,6 +407,7 @@ GrowlitheEggMoves:
 	dw HOWL
 	dw MORNING_SUN
 	dw PLAY_ROUGH
+	dw HEAT_WAVE
 	dw -1 ; end
 
 PoliwagEggMoves:
@@ -453,6 +459,7 @@ TentacoolEggMoves:
 	dw RAPID_SPIN
 	dw HAZE
 	dw BUBBLE
+	dw MUDDY_WATER
 	dw -1 ; end
 
 GeodudeEggMoves:
@@ -504,6 +511,7 @@ DoduoEggMoves:
 	dw FLAIL
 	dw BRAVE_BIRD
 	dw MIRROR_MOVE
+	dw ECHOED_VOICE
 	dw -1 ; end
 
 SeelEggMoves:
@@ -611,6 +619,7 @@ LickitungEggMoves:
 	dw SNORE
 	dw THRASH
 	dw ZEN_HEADBUTT
+	dw MUDDY_WATER
 	dw -1 ; end
 
 KoffingEggMoves:
@@ -674,6 +683,7 @@ HorseaEggMoves:
 	dw OUTRAGE
 	dw SIGNAL_BEAM
 	dw WATER_PULSE
+	dw MUDDY_WATER
 	dw -1 ; end
 
 GoldeenEggMoves:

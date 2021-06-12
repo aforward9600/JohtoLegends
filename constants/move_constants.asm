@@ -382,6 +382,12 @@
 	const SUCKER_PUNCH
 	const GRASS_KNOT
 	const WORK_UP
+	const ECHOED_VOICE
+	const MUDDY_WATER
+	const HEAT_WAVE
+	const LAVA_PLUME
+	const STONE_BASH
+;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

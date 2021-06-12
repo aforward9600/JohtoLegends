@@ -23,6 +23,8 @@ OpenMartDialog::
 	dw Pharmacist
 	dw RooftopSale
 	dw ShadyShop
+	dw TMSShop
+	dw BallsShop
 
 MartDialog:
 	ld a, MARTTYPE_STANDARD
@@ -80,6 +82,26 @@ ShadyShop:
 	call MartTextbox
 	call BuyMenu
 	ld hl, Text_ShadyShop_DontTell
+	call MartTextbox
+	ret
+
+TMSShop:
+	call FarReadMart
+	call LoadStandardMenuHeader
+	ld hl, Text_TMSShop_Intro
+	call MartTextbox
+	call BuyMenu
+	ld hl, Text_TMSShop_ComeAgain
+	call MartTextbox
+	ret
+
+BallsShop:
+	call FarReadMart
+	call LoadStandardMenuHeader
+	ld hl, Text_BallsShop_Intro
+	call MartTextbox
+	call BuyMenu
+	ld hl, Text_BallsShop_ComeAgain
 	call MartTextbox
 	ret
 
@@ -446,6 +468,8 @@ GetMartDialogGroup:
 	dwb .PharmacyPointers, 0
 	dwb .StandardMartPointers, 2
 	dwb .ShadyPointers, 0
+	dwb .TMSShopPointers, 0
+	dwb .BallsShopPointers, 0
 
 .StandardMartPointers:
 	dw Text_Mart_HowMany
@@ -485,6 +509,22 @@ GetMartDialogGroup:
 	dw Text_ShadyShop_InsufficientFunds
 	dw Text_ShadyShop_BagFull
 	dw Text_ShadyShop_HereYouGo
+	dw BuyMenuLoop
+
+.TMSShopPointers:
+	dw Text_TMSShop_HowMany
+	dw Text_TMSShop_CostsThisMuch
+	dw Text_TMSShop_InsufficientFunds
+	dw Text_TMSShop_BagFull
+	dw Text_TMSShop_HereYouGo
+	dw BuyMenuLoop
+
+.BallsShopPointers:
+	dw Text_BallsShop_HowMany
+	dw Text_BallsShop_CostsThisMuch
+	dw Text_BallsShop_InsufficientFunds
+	dw Text_BallsShop_BagFull
+	dw Text_BallsShop_HereYouGo
 	dw BuyMenuLoop
 
 BuyMenuLoop:
@@ -971,6 +1011,62 @@ Text_ShadyShop_BagFull:
 
 Text_ShadyShop_HereYouGo:
 	text_far ShadyShop_HereYouGoText
+	text_end
+
+Text_TMSShop_Intro:
+	text_far TMSShop_IntroText
+	text_end
+
+Text_TMSShop_ComeAgain:
+	text_far TMSShop_ComeAgainText
+	text_end
+
+Text_TMSShop_HowMany:
+	text_far UnknownText_0x1c4ca3
+	text_end
+
+Text_TMSShop_CostsThisMuch:
+	text_far UnknownText_0x1c4c08
+	text_end
+
+Text_TMSShop_InsufficientFunds:
+	text_far TMSShop_InsufficientFundsText
+	text_end
+
+Text_TMSShop_BagFull:
+	text_far TMSShop_BagFullText
+	text_end
+
+Text_TMSShop_HereYouGo:
+	text_far TMSShop_HereYouGoText
+	text_end
+
+Text_BallsShop_Intro:
+	text_far BallsShop_IntroText
+	text_end
+
+Text_BallsShop_ComeAgain:
+	text_far BallsShop_ComeAgainText
+	text_end
+
+Text_BallsShop_HowMany:
+	text_far UnknownText_0x1c4ca3
+	text_end
+
+Text_BallsShop_CostsThisMuch:
+	text_far UnknownText_0x1c4c08
+	text_end
+
+Text_BallsShop_InsufficientFunds:
+	text_far BallsShop_InsufficientFundsText
+	text_end
+
+Text_BallsShop_BagFull:
+	text_far BallsShop_BagFullText
+	text_end
+
+Text_BallsShop_HereYouGo:
+	text_far BallsShop_HereYouGoText
 	text_end
 
 PlayTransactionSound:

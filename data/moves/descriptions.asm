@@ -381,6 +381,12 @@ MoveDescriptions1:
 	dw SuckerPunchDescription
 	dw LowKickDescription
 	dw GrowthDescription
+	dw FuryAttackDescription
+	dw MuddyWaterDescription
+	dw HeatWaveDescription
+	dw LavaPlumeDescription
+	dw StoneBashDescription
+;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
 	db "?@"
@@ -1878,5 +1884,25 @@ LeafBladeDescription:
 	next "cal hit ratio.@"
 
 SuckerPunchDescription:
-	db	"Won't work if foe"
+	db	 "Won't work if foe"
 	next "doesn't attack.@"
+
+MuddyWaterDescription:
+	db   "Can lower accuracy"
+	next "with muddy water.@"
+
+HeatWaveDescription:
+	db   "Hot breath can"
+	next "burn target.@"
+
+LavaPlumeDescription:
+	db   "Lava erupts and"
+	next "may burn foe.@"
+
+StoneBashDescription:
+	db   "Hits foe with a"
+	next "hardened body.@"
+
+WakeUpSlapDescription:
+	db   "Wakes up sleeping"
+	next "foe, more damage.@"

@@ -182,3 +182,5 @@ BattleCommandPointers:
 	dw BattleCommand_BreakScreens
 	dw BattleCommand_SuckerPunch
 	dw BattleCommand_GrassKnot
+;	dw BattleCommand_WakeUpSlap
+;	dw BattleCommand_AwakenOpponent

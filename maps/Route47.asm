@@ -44,7 +44,7 @@ TrainerCooltrainerFTeresa:
 	end
 
 Route47ItemBallScript:
-	itemball TM_ENERGY_BALL
+	itemball TM_GIGA_DRAIN
 
 Route47ItemBall2Script:
 	itemball REVIVE

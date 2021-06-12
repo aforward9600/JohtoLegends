@@ -70,9 +70,9 @@ MeetMomScript:
 	setflag ENGINE_POKEGEAR
 	setflag ENGINE_MAP_CARD
 	setscene SCENE_FINISHED
+	variablesprite SPRITE_RIVAL, SPRITE_CHRIS
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	setevent EVENT_RIVAL_AT_MASTERS_HOUSE_1
-	setevent EVENT_RIVAL_AT_MASTERS_HOUSE_2
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
 	writetext MomGivesPokegearText
 	buttonsound

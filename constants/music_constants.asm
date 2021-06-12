@@ -130,14 +130,20 @@
 	const MUSIC_ROUTE_29_NIGHT               ; 7b
 	const MUSIC_ROUTE_30_NIGHT               ; 7c
 	const MUSIC_ROUTE_37_NIGHT
+	const MUSIC_LUGIA_BATTLE
+	const MUSIC_KANTO_LEGEND_BATTLE_XY
+	const MUSIC_HO_OH_BATTLE
+	const MUSIC_MEGALOVANIA
+	const MUSIC_UNWAVERING_HEART
+	const MUSIC_MARNIE_BATTLE
+	const MUSIC_DAHLIA_ENCOUNTER
+	const MUSIC_DAHLIA_AFTER_BATTLE
+	const MUSIC_MADAME_BOSS
 
 ; GetMapMusic picks music for this value (see home/map.asm)
-MUSIC_MAHOGANY_MART EQU $64
+MUSIC_MAHOGANY_MART EQU $fc
+MUSIC_RADIO_TOWER   EQU $fd
 
 ; ExitPokegearRadio_HandleMusic uses these values
 RESTART_MAP_MUSIC EQU $fe
 ENTER_MAP_MUSIC   EQU $ff
-
-; GetMapMusic picks music for this bit flag
-RADIO_TOWER_MUSIC_F EQU 7
-RADIO_TOWER_MUSIC EQU 1 << RADIO_TOWER_MUSIC_F

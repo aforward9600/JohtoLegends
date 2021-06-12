@@ -11,6 +11,8 @@ Marts:
 	dw MartGoldenrod5F
 	dw MartGoldenrodBlackMarket1
 	dw MartGoldenrodBlackMarket2
+	dw MartGoldenrodBlackMarket3
+	dw MartGoldenrodBlackMarket4
 	dw MartOlivine
 	dw MartEcruteak
 	dw MartMahogany1
@@ -34,6 +36,8 @@ Marts:
 	dw MartIndigoPlateau
 	dw MartUnderground
 	dw MartWildArea
+	dw MartEcruteakBalls
+	dw MartOlivineTMs
 .End
 
 MartCherrygrove:
@@ -165,6 +169,27 @@ MartGoldenrodBlackMarket2:
 	db DUBIOUSDISK
 	db ROYAL_ROCK
 	db METAL_COAT
+	db -1 ; end
+
+MartGoldenrodBlackMarket3:
+	db 7 ; # items
+	db WATER_STONE
+	db FIRE_STONE
+	db THUNDERSTONE
+	db LEAF_STONE
+	db MOON_STONE
+	db SUN_STONE
+	db ICE_STONE
+	db -1 ; end
+
+MartGoldenrodBlackMarket4:
+	db 6 ; # items
+	db UP_GRADE
+	db ROYAL_ROCK
+	db METAL_COAT
+	db SHINY_STONE
+	db DUSK_STONE
+	db LINK_CABLE
 	db -1 ; end
 
 MartOlivine:
@@ -419,6 +444,25 @@ MartWildArea:
 	db PARLYZ_HEAL
 	db AWAKENING
 	db BURN_HEAL
+	db -1 ; end
+
+MartEcruteakBalls:
+	db 7 ; # items
+	db HEAVY_BALL
+	db LURE_BALL
+	db FRIEND_BALL
+	db LOVE_BALL
+	db LEVEL_BALL
+	db FAST_BALL
+	db MOON_BALL
+	db -1 ; end
+
+MartOlivineTMs:
+	db 4
+	db TM_CURSE
+	db TM_BRICK_BREAK
+	db TM_ATTRACT
+	db TM_POISON_JAB
 	db -1 ; end
 
 DefaultMart:

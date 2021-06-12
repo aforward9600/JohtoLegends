@@ -401,11 +401,11 @@ ENDM
 	map_attributes BurnedTowerB1F, BURNED_TOWER_B1F, $09, 0
 	map_attributes NationalPark, NATIONAL_PARK, $00, 0
 	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $00, 0
-	map_attributes RadioTower1F, RADIO_TOWER_1F, $00, 0
-	map_attributes RadioTower2F, RADIO_TOWER_2F, $00, 0
-	map_attributes RadioTower3F, RADIO_TOWER_3F, $00, 0
-	map_attributes RadioTower4F, RADIO_TOWER_4F, $00, 0
-	map_attributes RadioTower5F, RADIO_TOWER_5F, $00, 0
+	map_attributes RadioTower1F, TIN_TOWER_1F, $00, 0
+	map_attributes RadioTower2F, TIN_TOWER_2F, $00, 0
+	map_attributes RadioTower3F, TIN_TOWER_3F, $00, 0
+	map_attributes RadioTower4F, TIN_TOWER_6F, $00, 0
+	map_attributes RadioTower5F, TIN_TOWER_ROOF, $00, 0
 	map_attributes RuinsOfAlphOutside, RUINS_OF_ALPH_OUTSIDE, $05, 0
 	map_attributes RuinsOfAlphHoOhChamber, RUINS_OF_ALPH_HO_OH_CHAMBER, $00, 0
 	map_attributes RuinsOfAlphKabutoChamber, RUINS_OF_ALPH_KABUTO_CHAMBER, $00, 0

@@ -5,12 +5,12 @@ BugContestantPointers:
 	dw BugContestant_BugCatcherEd
 	dw BugContestant_CooltrainerMNick
 	dw BugContestant_PokefanMWilliam
-	dw BugContestant_BugCatcherBenny
+	dw BugContestant_BugCatcherElmer
 	dw BugContestant_CamperBarry
 	dw BugContestant_PicnickerCindy
-	dw BugContestant_BugCatcherJosh
+	dw BugContestant_BugCatcherBuzzy
 	dw BugContestant_YoungsterSamuel
-	dw BugContestant_SchoolboyKipp
+	dw BugContestant_SchoolboyPierce
 
 ; contestant format:
 ;   db class, id
@@ -37,42 +37,42 @@ BugContestant_CooltrainerMNick:
 	dw PINSIR,     368
 
 BugContestant_PokefanMWilliam:
-	db POKEFANM, WILLIAM
+	db POKEFANM, BERNARD
 	dw PINSIR,     332
 	dw BUTTERFREE, 324
 	dw VENONAT,    321
 
-BugContestant_BugCatcherBenny:
-	db BUG_CATCHER, BUG_CATCHER_BENNY
+BugContestant_BugCatcherElmer:
+	db BUG_CATCHER, ELMER
 	dw BUTTERFREE, 318
 	dw WEEDLE,     295
 	dw CATERPIE,   285
 
 BugContestant_CamperBarry:
-	db CAMPER, BARRY
+	db CAMPER, CAMPER_GARRET
 	dw PINSIR,     366
 	dw VENONAT,    329
 	dw KAKUNA,     314
 
 BugContestant_PicnickerCindy:
-	db PICNICKER, CINDY
+	db PICNICKER, HAYLEE
 	dw BUTTERFREE, 341
 	dw METAPOD,    301
 	dw CATERPIE,   264
 
-BugContestant_BugCatcherJosh:
-	db BUG_CATCHER, JOSH
+BugContestant_BugCatcherBuzzy:
+	db BUG_CATCHER, BUZZY
 	dw SCYTHER,    326
 	dw BUTTERFREE, 292
 	dw METAPOD,    282
 
 BugContestant_YoungsterSamuel:
-	db YOUNGSTER, SAMUEL
+	db YOUNGSTER, TIMMY
 	dw WEEDLE,     270
 	dw PINSIR,     282
 	dw CATERPIE,   251
 
-BugContestant_SchoolboyKipp:
+BugContestant_SchoolboyPierce:
 	db SCHOOLBOY, PIERCE
 	dw VENONAT,    267
 	dw PARAS,      254

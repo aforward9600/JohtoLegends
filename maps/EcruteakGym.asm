@@ -43,7 +43,7 @@ EcruteakGymEnokiScript:
 	writetext EnokiIntroText
 	waitbutton
 	closetext
-	winlosstext EnokiWinLossText, 0
+	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI, ENOKI1
 	startbattle
 	reloadmapafterbattle
@@ -106,7 +106,7 @@ EcruteakGymEnokiScript:
 	writetext EnokiReadyForARematchText
 	waitbutton
 	closetext
-	winlosstext EnokiWinLossText, 0
+	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI, ENOKI2
 	startbattle
 	reloadmapafterbattle
@@ -123,7 +123,7 @@ EcruteakGymEnokiScript:
 	writetext EnokiReadyForARematchText
 	waitbutton
 	closetext
-	winlosstext EnokiWinLossText, 0
+	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI, ENOKI3
 	startbattle
 	reloadmapafterbattle
@@ -140,7 +140,7 @@ EcruteakGymEnokiScript:
 	writetext EnokiReadyForARematchText
 	waitbutton
 	closetext
-	winlosstext EnokiWinLossText, 0
+	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI, ENOKI4
 	startbattle
 	reloadmapafterbattle
@@ -157,7 +157,7 @@ EcruteakGymEnokiScript:
 	writetext EnokiReadyForARematchText
 	waitbutton
 	closetext
-	winlosstext EnokiWinLossText, 0
+	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI, ENOKI5
 	startbattle
 	reloadmapafterbattle
@@ -174,7 +174,7 @@ EcruteakGymEnokiScript:
 	writetext EnokiReadyForARematchText
 	waitbutton
 	closetext
-	winlosstext EnokiWinLossText, 0
+	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI, ENOKI6
 	startbattle
 	reloadmapafterbattle
@@ -191,7 +191,7 @@ EcruteakGymEnokiScript:
 	writetext EnokiReadyForARematchText
 	waitbutton
 	closetext
-	winlosstext EnokiWinLossText, 0
+	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI, ENOKI7
 	startbattle
 	reloadmapafterbattle
@@ -348,6 +348,11 @@ EnokiWinLossText:
 	line "It seems I wasn't"
 
 	para "mistaken."
+	done
+
+EnokiWinText:
+	text "Return once you've"
+	line "become stronger."
 	done
 
 BeatenEnokiText:

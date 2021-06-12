@@ -11,10 +11,10 @@ GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 1500
 	const GOLDENRODGAMECORNER_RECEPTIONIST2
 	const GOLDENRODGAMECORNER_PHARMACIST1
 	const GOLDENRODGAMECORNER_PHARMACIST2
-	const GOLDENRODGAMECORNER_POKEFAN_M1
 	const GOLDENRODGAMECORNER_COOLTRAINER_M
+	const GOLDENRODGAMECORNER_GRAMPS
 	const GOLDENRODGAMECORNER_POKEFAN_F
-	const GOLDENRODGAMECORNER_COOLTRAINER_F
+	const GOLDENRODGAMECORNER_GRANNY
 	const GOLDENRODGAMECORNER_GENTLEMAN
 	const GOLDENRODGAMECORNER_POKEFAN_M2
 	const GOLDENRODGAMECORNER_MOVETUTOR
@@ -166,7 +166,7 @@ GoldenrodGameCornerTMVendorMenuHeader:
 	db "TM25    5500@"
 	db "TM14    5500@"
 	db "TM38    5500@"
-	db "CANCEL@"
+	db "Cancel@"
 
 GoldenrodGameCornerPrizeMonVendorScript:
 	faceplayer
@@ -249,10 +249,10 @@ GoldenrodGameCornerPrizeMonVendorScript:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "ABRA        100@"
-	db "CUBONE      800@"
-	db "WOBBUFFET  1500@"
-	db "CANCEL@"
+	db "Abra        100@"
+	db "Cubone      800@"
+	db "Wobbuffet  1500@"
+	db "Cancel@"
 
 GoldenrodGameCornerPharmacistScript:
 	faceplayer
@@ -263,13 +263,13 @@ GoldenrodGameCornerPharmacistScript:
 	turnobject LAST_TALKED, LEFT
 	end
 
-GoldenrodGameCornerPokefanM1Script:
+GoldenrodGameCornerGrampsScript:
 	faceplayer
 	opentext
-	writetext GoldenrodGameCornerPokefanM1Text
+	writetext GoldenrodGameCornerGrampsText
 	waitbutton
 	closetext
-	turnobject GOLDENRODGAMECORNER_POKEFAN_M1, RIGHT
+	turnobject GOLDENRODGAMECORNER_GRAMPS, LEFT
 	end
 
 GoldenrodGameCornerCooltrainerMScript:
@@ -278,7 +278,7 @@ GoldenrodGameCornerCooltrainerMScript:
 	writetext GoldenrodGameCornerCooltrainerMText
 	waitbutton
 	closetext
-	turnobject GOLDENRODGAMECORNER_COOLTRAINER_M, LEFT
+	turnobject GOLDENRODGAMECORNER_COOLTRAINER_M, RIGHT
 	end
 
 GoldenrodGameCornerPokefanFScript:
@@ -290,8 +290,8 @@ GoldenrodGameCornerPokefanFScript:
 	turnobject GOLDENRODGAMECORNER_POKEFAN_F, RIGHT
 	end
 
-GoldenrodGameCornerCooltrainerFScript:
-	jumptextfaceplayer GoldenrodGameCornerCooltrainerFText
+GoldenrodGameCornerGrannyScript:
+	jumptextfaceplayer GoldenrodGameCornerGrannyText
 
 GoldenrodGameCornerGentlemanScript:
 	faceplayer
@@ -303,7 +303,19 @@ GoldenrodGameCornerGentlemanScript:
 	end
 
 GoldenrodGameCornerPokefanM2Script:
-	jumptextfaceplayer GoldenrodGameCornerPokefanM2Text
+	faceplayer
+	opentext
+	checkevent EVENT_GOLDENROD_UNDERGROUND_COIN_CASE
+	iftrue .GotCoinCase
+	writetext GoldenrodGameCornerPokefanM2Text
+	buttonsound
+	verbosegiveitem COIN_CASE
+	setevent EVENT_GOLDENROD_UNDERGROUND_COIN_CASE
+.GotCoinCase:
+	writetext ThatsCoinCaseText
+	waitbutton
+	closetext
+	end
 
 GoldenrodGameCornerLeftTheirDrinkScript:
 	jumptext GoldenrodGameCornerLeftTheirDrinkText
@@ -376,7 +388,7 @@ GoldenrodGameCornerPrizeVendorQuitText:
 
 GoldenrodGameCornerPrizeVendorNoCoinCaseText:
 	text "Oh? You don't have"
-	line "a COIN CASE."
+	line "a Coin Case."
 	done
 
 GoldenrodGameCornerPharmacistText:
@@ -387,19 +399,22 @@ GoldenrodGameCornerPharmacistText:
 	line "others, I think."
 	done
 
-GoldenrodGameCornerPokefanM1Text:
-	text "I just love this"
-	line "new slot machine."
+GoldenrodGameCornerCooltrainerMText:
+	text "I swear, this"
+	line "machine is rigged!"
 
-	para "It's more of a"
-	line "challenge than the"
-	cont "ones in CELADON."
+	para "I just can't win!"
 	done
 
-GoldenrodGameCornerCooltrainerMText:
-	text "Life is a gamble."
-	line "I'm going to flip"
-	cont "cards till I drop!"
+GoldenrodGameCornerGrampsText:
+	text "I think I'm too"
+	line "old for all this"
+	cont "excitement."
+
+	para "But I can't stop"
+	line "now."
+
+	para "I'm on a roll!"
 	done
 
 GoldenrodGameCornerPokefanFText:
@@ -415,14 +430,19 @@ GoldenrodGameCornerPokefanFText:
 	line "much lower."
 	done
 
-GoldenrodGameCornerCooltrainerFText:
-	text "I won't quit until"
-	line "I win!"
+GoldenrodGameCornerGrannyText:
+	text "My husband and I"
+	line "are both addicted"
+	cont "to the slots."
+
+	para "It's a problem,"
+	line "but it's just too"
+	cont "fun to quit!"
 	done
 
 GoldenrodGameCornerGentlemanText:
-	text "I taught BLIZZARD"
-	line "to my #MON."
+	text "I taught Thunder"
+	line "to my #mon."
 
 	para "It was hard to get"
 	line "enough coins for"
@@ -432,29 +452,47 @@ GoldenrodGameCornerGentlemanText:
 	done
 
 GoldenrodGameCornerPokefanM2Text:
-	text "I couldn't win at"
-	line "the slots, and I"
+	text "Hey there, you"
+	line "wanna start a cri-"
+	cont "ppling gambling"
+	cont "addiction?"
 
-	para "blew it on card"
-	line "flipping…"
+	para "Here, have this!"
+	done
 
-	para "I got so furious,"
-	line "I tossed out my"
+ThatsCoinCaseText:
+	text "That's a Coin Case"
+	line "right there!"
 
-	para "Coin Case in the"
-	line "Underground."
+	para "You need it to"
+	line "store your coins"
+	cont "for the games!"
+
+	para "Don't worry about"
+	line "me, I've got two!"
 	done
 
 MoveTutorInsideText:
-	text "Wahahah! The coins"
-	line "keep rolling in!"
+	text "What?"
+
+	para "Are you saying I'm"
+	line "too young to be in"
+	cont "here?"
+
+	para "Aren't you too old"
+	line "to be talking to"
+	cont "someone my age?"
 	done
 
 GoldenrodGameCornerLeftTheirDrinkText:
 	text "Someone left their"
 	line "drink."
 
-	para "It smells sweet."
+	para "I shouldn't drink"
+	line "it."
+
+	para "I still remember"
+	line "those PSAs."
 	done
 
 GoldenrodGameCorner_MapEvents:
@@ -503,12 +541,12 @@ GoldenrodGameCorner_MapEvents:
 	object_event  3,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerCoinVendorScript, -1
 	object_event 16,  2, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerTMVendorScript, -1
 	object_event 18,  2, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerPrizeMonVendorScript, -1
-	object_event  8,  7, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerPharmacistScript, -1
+	object_event  8, 10, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerPharmacistScript, -1
 	object_event  8,  7, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, NITE, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerPharmacistScript, -1
-	object_event 11, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerPokefanM1Script, -1
-	object_event 14,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerCooltrainerMScript, -1
-	object_event 17,  6, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerPokefanFScript, -1
-	object_event 10,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerCooltrainerFScript, -1
-	object_event  5, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerGentlemanScript, -1
+	object_event 11,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerCooltrainerMScript, -1
+	object_event 14, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerGrampsScript, -1
+	object_event 17,  7, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerPokefanFScript, -1
+	object_event 10,  3, SPRITE_GRANNY, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerGrannyScript, -1
+	object_event  5,  8, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerGentlemanScript, -1
 	object_event  2,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerPokefanM2Script, -1
-	object_event 17, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoveTutorInsideScript, EVENT_GOLDENROD_GAME_CORNER_MOVE_TUTOR
+	object_event 17, 11, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoveTutorInsideScript, -1

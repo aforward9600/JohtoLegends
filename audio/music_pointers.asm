@@ -129,3 +129,12 @@ Music:
 	dba Music_Route29Night
 	dba Music_Route30Night
 	dba Music_Route37Night
+	dba Music_LugiaBattle
+	dba Music_KantoLegendBattleXY
+	dba Music_HoOhBattleHGSS
+	dba Music_Megalovania
+	dba Music_UnwaveringHeart
+	dba Music_MarnieBattle
+	dba Music_DahliaEncounter
+	dba Music_DahliaAfterBattle
+	dba Music_MadameBoss

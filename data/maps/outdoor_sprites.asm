@@ -188,9 +188,11 @@ GoldenrodGroupSprites:
 	db SPRITE_OFFICER
 	db SPRITE_POKEFAN_M
 	db SPRITE_COOLTRAINER_F
-	db SPRITE_ROCKET
+	db SPRITE_NINJA
 	db SPRITE_LASS
-	; 7 of max 9 walking sprites
+	db SPRITE_GENTLEMAN
+	db SPRITE_BLACK_BELT
+	; 9 of max 9 walking sprites
 	db SPRITE_DAY_CARE_MON_1
 	db SPRITE_DAY_CARE_MON_2
 	db SPRITE_POKE_BALL
@@ -276,7 +278,7 @@ DungeonsGroupSprites:
 ; NationalPark, NationalParkBugContest, RuinsOfAlphOutside
 	db SPRITE_LASS
 	db SPRITE_POKEFAN_F
-	db SPRITE_TEACHER
+	db SPRITE_GRAMPS
 	db SPRITE_YOUNGSTER
 	db SPRITE_POKEFAN_M
 	db SPRITE_ROCKER
@@ -287,21 +289,25 @@ DungeonsGroupSprites:
 	db SPRITE_GAMEBOY_KID
 	db SPRITE_POKE_BALL
 	db SPRITE_GROWLITHE
+	db SPRITE_MEOWTH
 	db 0 ; end
 
 FastShipGroupSprites:
-; OlivinePort, VermilionPort, MountMoonSquare, TinTowerRoof
+; OlivinePort, VermilionPort, MountMoonSquare, TinTowerRoof, RadioTower5F
 	db SPRITE_SAILOR
-	db SPRITE_FISHING_GURU
+	db SPRITE_SHERLES
 	db SPRITE_SUPER_NERD
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_YOUNGSTER
 	db SPRITE_SCIENTIST
 	db SPRITE_TWIN
+	db SPRITE_MIYAMOTO
+	db SPRITE_RIVAL
 	; 7 of max 9 walking sprites
 	db SPRITE_HO_OH
 	db SPRITE_FAIRY
 	db SPRITE_ROCK
+	db SPRITE_SUICUNE
 	db 0 ; end
 
 CableClubGroupSprites:

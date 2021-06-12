@@ -61,6 +61,7 @@ INCLUDE "audio/music/halloffame.asm"
 INCLUDE "audio/music/healpokemon.asm"
 INCLUDE "audio/music/evolution.asm"
 INCLUDE "audio/music/printer.asm"
+INCLUDE "audio/music/dahliaafterbattle.asm"
 
 
 SECTION "Songs 4", ROMX
@@ -149,6 +150,13 @@ INCLUDE "audio/music/wildarea.asm"
 INCLUDE "audio/music/anthem.asm"
 INCLUDE "audio/music/mewtwobattle.asm"
 INCLUDE "audio/music/cinnabarmansion.asm"
+INCLUDE "audio/music/lugiabattle.asm"
+INCLUDE "audio/music/kantolegendbattlexy.asm"
+INCLUDE "audio/music/hoohbattle.asm"
+INCLUDE "audio/music/megalovania.asm"
+INCLUDE "audio/music/unwaveringheart.asm"
+INCLUDE "audio/music/marniebattle.asm"
+INCLUDE "audio/music/dahliaencounter.asm"
 
 SECTION "Altered Songs", ROMX
 
@@ -168,3 +176,7 @@ INCLUDE "audio/music/route3.asm"
 INCLUDE "audio/music/route12.asm"
 INCLUDE "audio/music/route30.asm"
 INCLUDE "audio/music/route37.asm"
+
+SECTION "Newest Songs", ROMX
+
+INCLUDE "audio/music/madameboss.asm"

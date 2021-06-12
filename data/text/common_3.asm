@@ -485,7 +485,7 @@ UnknownText_0x1c4c08::
 	text_decimal wItemQuantityChangeBuffer, 1, 2
 	text " @"
 	text_ram wStringBuffer2
-	text "(S)"
+	text "(s)"
 	line "will be ¥@"
 	text_decimal hMoneyTemp, 3, 6
 	text "."
@@ -514,7 +514,7 @@ UnknownText_0x1c4cae::
 	text_decimal wItemQuantityChangeBuffer, 1, 2
 	text " @"
 	text_ram wStringBuffer2
-	text "(S)"
+	text "(s)"
 	line "will be ¥@"
 	text_decimal hMoneyTemp, 3, 6
 	text "."
@@ -597,7 +597,7 @@ UnknownText_0x1c4e89::
 	text_decimal wItemQuantityChangeBuffer, 1, 2
 	text " @"
 	text_ram wStringBuffer2
-	text "(S)"
+	text "(s)"
 	line "will cost ¥@"
 	text_decimal hMoneyTemp, 3, 6
 	text "."
@@ -680,7 +680,7 @@ UnknownText_0x1c502e::
 	text " for"
 	line "@"
 	text_ram wStringBuffer2
-	text "(S)."
+	text "(s)."
 	done
 
 UnknownText_0x1c5049::
@@ -1578,4 +1578,62 @@ ShadyShop_BagFullText::
 
 ShadyShop_HereYouGoText::
 	text "Thanks, stranger."
+	done
+
+TMSShop_IntroText::
+	text "Welcome!"
+
+	para "We've got some"
+	line "good TMs on sale"
+	cont "here! Want a few?"
+	done
+
+TMSShop_ComeAgainText::
+	text "Come again!"
+	done
+
+TMSShop_InsufficientFundsText::
+	text "I'm afraid you do"
+	line "have enough for"
+	cont "this purchase."
+	done
+
+TMSShop_BagFullText::
+	text "Whoops!"
+
+	para "Your bag is full!"
+	done
+
+TMSShop_HereYouGoText::
+	text "Here you go!"
+	done
+
+BallsShop_IntroText::
+	text "Welcome!"
+
+	para "Want some special"
+	line "# Balls?"
+
+	para "My father used to"
+	line "make them!"
+	done
+
+BallsShop_ComeAgainText::
+	text "Come again!"
+	done
+
+BallsShop_InsufficientFundsText::
+	text "I'm afraid you do"
+	line "have enough for"
+	cont "this purchase."
+	done
+
+BallsShop_BagFullText::
+	text "Whoops!"
+
+	para "Your bag is full!"
+	done
+
+BallsShop_HereYouGoText::
+	text "Here you go!"
 	done

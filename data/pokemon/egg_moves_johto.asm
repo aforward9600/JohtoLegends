@@ -168,6 +168,7 @@ OmanyteEggMoves:
 	dw SPIKES
 	dw WATER_PULSE
 	dw WHIRLPOOL
+	dw MUDDY_WATER
 	dw -1 ; end
 
 KabutoEggMoves:
@@ -309,6 +310,7 @@ TogepiEggMoves:
 	dw FORESIGHT
 	dw FUTURE_SIGHT
 	dw EXTRASENSORY
+	dw ECHOED_VOICE
 	dw -1 ; end
 
 NatuEggMoves:
@@ -342,6 +344,7 @@ AzurillEggMoves:
 	dw ENCORE
 	dw SING
 	dw SLAM
+	dw MUDDY_WATER
 	dw -1 ; end
 
 BonslyEggMoves:
@@ -674,6 +677,7 @@ BagonEggMoves:
 	dw TWISTER
 	dw DRAGONBREATH
 	dw EXTREMESPEED
+	dw HEAT_WAVE
 	dw -1 ; end
 NoEggMoves2:
 	dw -1 ; end

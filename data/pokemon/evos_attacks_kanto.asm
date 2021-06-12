@@ -261,9 +261,9 @@ CharizardEvosAttacks:
 	dbw 32, FLAME_BURST
 	dbw 41, SLASH
 	dbw 47, FLAMETHROWER
-	dbw 56, FIRE_SPIN
+	dbw 56, DRAGON_PULSE
 	dbw 62, INFERNO
-	dbw 71, DRAGON_PULSE
+	dbw 71, HEAT_WAVE
 	dbw 77, FLARE_BLITZ
 	dbw LEARN_EVO_MOVE, AIR_SLASH
 	db 0 ; no more level-up moves
@@ -851,8 +851,9 @@ JigglypuffEvosAttacks:
 	dbbw EVOLVE_ITEM, MOON_STONE, WIGGLYTUFF
 	db 0 ; no more evolutions
 	dbw 1, SING
-	dbw 3, DEFENSE_CURL
-	dbw 5, POUND
+	dbw 1, DEFENSE_CURL
+	dbw 1, POUND
+	dbw 5, ECHOED_VOICE
 	dbw 9, PLAY_NICE
 	dbw 14, DISABLE
 	dbw 17, DOUBLESLAP
@@ -875,6 +876,7 @@ WigglytuffEvosAttacks:
 	dbw 1, DISABLE
 	dbw 1, DEFENSE_CURL
 	dbw 1, DOUBLESLAP
+	dbw 1, ECHOED_VOICE
 	dbw LEARN_EVO_MOVE, PIXIE_PUNCH
 	db 0 ; no more level-up moves
 
@@ -1270,9 +1272,9 @@ GrowlitheEvosAttacks:
 	dbw 28, FLAME_CHARGE
 	dbw 30, AGILITY
 	dbw 32, STOMP
-	dbw 34, FLAME_BURST
+	dbw 34, FLAMETHROWER
 	dbw 39, CRUNCH
-	dbw 41, FLAMETHROWER
+	dbw 41, HEAT_WAVE
 	dbw 43, OUTRAGE
 	dbw 45, PLAY_ROUGH
 	dbw 48, FLARE_BLITZ
@@ -2551,6 +2553,7 @@ ChanseyEvosAttacks:
 	dbw 1, POUND
 	dbw 5, GROWL
 	dbw 5, TAIL_WHIP
+	dbw 7, ECHOED_VOICE
 	dbw 9, HEAL_BELL
 	dbw 12, DOUBLESLAP
 	dbw 16, SOFTBOILED
@@ -2572,6 +2575,7 @@ BlisseyEvosAttacks:
 	dbw 1, POUND
 	dbw 5, GROWL
 	dbw 5, TAIL_WHIP
+	dbw 7, ECHOED_VOICE
 	dbw 9, HEAL_BELL
 	dbw 12, DOUBLESLAP
 	dbw 16, SOFTBOILED
@@ -2988,7 +2992,7 @@ MagbyEvosAttacks:
 	dbw 22, FLAME_BURST
 	dbw 26, CONFUSE_RAY
 	dbw 29, FIRE_PUNCH
-	dbw 33, BLAZE_KICK
+	dbw 33, LAVA_PLUME
 	dbw 36, SUNNY_DAY
 	dbw 40, FLAMETHROWER
 	dbw 43, FIRE_BLAST
@@ -3008,7 +3012,7 @@ MagmarEvosAttacks:
 	dbw 22, FLAME_BURST
 	dbw 26, CONFUSE_RAY
 	dbw 29, FIRE_PUNCH
-	dbw 36, BLAZE_KICK
+	dbw 36, LAVA_PLUME
 	dbw 42, SUNNY_DAY
 	dbw 49, FLAMETHROWER
 	dbw 55, FIRE_BLAST
@@ -3027,7 +3031,7 @@ MagmortarEvosAttacks:
 	dbw 22, FLAME_BURST
 	dbw 26, CONFUSE_RAY
 	dbw 29, FIRE_PUNCH
-	dbw 36, BLAZE_KICK
+	dbw 36, LAVA_PLUME
 	dbw 42, SUNNY_DAY
 	dbw 49, FLAMETHROWER
 	dbw 55, FIRE_BLAST

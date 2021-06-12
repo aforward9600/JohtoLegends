@@ -121,3 +121,4 @@ OverworldSprites:
 	overworld_sprite MiyamotoSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite SherlesSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite EngineerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite NinjaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_SILVER

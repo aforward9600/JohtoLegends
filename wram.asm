@@ -2687,8 +2687,9 @@ wWildAreaOutsideSceneID::                         db
 wNationalParkSceneID::                            db
 wNationalParkBugContestID::                       db
 wEcruteakCitySceneID::                            db
+wGoldenrodCitySceneID::                           db
 
-	ds 32
+	ds 31
 
 ; fight counts
 wJackFightCount::    db ; d9f2

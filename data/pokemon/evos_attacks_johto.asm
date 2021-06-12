@@ -243,7 +243,7 @@ VaporeonEvosAttacks:
 	dbw 25, WATER_PULSE
 	dbw 29, ACID_ARMOR
 	dbw 33, HAZE
-	dbw 37, SURF
+	dbw 37, MUDDY_WATER
 	dbw 41, DOUBLE_EDGE
 	dbw 45, HYDRO_PUMP
 	dbw LEARN_EVO_MOVE, WATER_GUN
@@ -281,7 +281,7 @@ FlareonEvosAttacks:
 	dbw 25, FLAME_CHARGE
 	dbw 29, SCARY_FACE
 	dbw 33, SMOG
-	dbw 37, FLAMETHROWER
+	dbw 37, LAVA_PLUME
 	dbw 41, DOUBLE_EDGE
 	dbw 45, FLARE_BLITZ
 	dbw LEARN_EVO_MOVE, EMBER
@@ -628,11 +628,11 @@ MoltresEvosAttacks:
 	dbw 15, AGILITY
 	dbw 22, ENDURE
 	dbw 29, ANCIENTPOWER
-	dbw 36, FLAME_BURST
+	dbw 36, FLAMETHROWER
 	dbw 43, SAFEGUARD
 	dbw 50, AIR_SLASH
 	dbw 57, SUNNY_DAY
-	dbw 64, FLAMETHROWER
+	dbw 64, HEAT_WAVE
 	dbw 71, SOLARBEAM
 	dbw 78, SKY_ATTACK
 	dbw 85, ROOST
@@ -806,7 +806,7 @@ CyndaquilEvosAttacks:
 	dbw 22, DEFENSE_CURL
 	dbw 28, SWIFT
 	dbw 31, FLAME_CHARGE
-	dbw 37, FLAME_BURST
+	dbw 37, LAVA_PLUME
 	dbw 40, FLAMETHROWER
 	dbw 46, INFERNO
 	dbw 49, ROLLOUT
@@ -827,7 +827,7 @@ QuilavaEvosAttacks:
 	dbw 24, DEFENSE_CURL
 	dbw 31, SWIFT
 	dbw 35, FLAME_CHARGE
-	dbw 42, FLAME_BURST
+	dbw 42, LAVA_PLUME
 	dbw 46, FLAMETHROWER
 	dbw 53, INFERNO
 	dbw 57, ROLLOUT
@@ -848,7 +848,7 @@ TyphlosionEvosAttacks:
 	dbw 24, DEFENSE_CURL
 	dbw 31, SWIFT
 	dbw 35, FLAME_CHARGE
-	dbw 43, FLAME_BURST
+	dbw 43, LAVA_PLUME
 	dbw 48, FLAMETHROWER
 	dbw 56, INFERNO
 	dbw 61, ROLLOUT
@@ -966,40 +966,45 @@ HoothootEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, GROWL
-	dbw 3, PECK
-	dbw 6, FORESIGHT
-	dbw 9, CONFUSION
-	dbw 12, REFLECT
-	dbw 15, LIGHT_SCREEN
-	dbw 18, AIR_SLASH
-	dbw 21, EXTRASENSORY
-	dbw 24, TAKE_DOWN
-	dbw 27, HYPER_VOICE
-	dbw 30, ROOST
-	dbw 33, MOONBLAST
-	dbw 36, HYPNOSIS
-	dbw 39, DREAM_EATER
+	dbw 1, FORESIGHT
+	dbw 4, HYPNOSIS
+	dbw 7, PECK
+	dbw 10, CONFUSION
+	dbw 13, ECHOED_VOICE
+	dbw 16, ZEN_HEADBUTT
+	dbw 19, LIGHT_SCREEN
+	dbw 22, NIGHT_SHADE
+	dbw 25, TAKE_DOWN
+	dbw 28, REFLECT
+	dbw 31, AIR_SLASH
+	dbw 34, HYPER_VOICE
+	dbw 37, ROOST
+	dbw 40, SHADOW_BALL
+	dbw 43, PSYCH_UP
+	dbw 46, DREAM_EATER
 	db 0 ; no more level-up moves
 
 NoctowlEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, PSYBEAM
 	dbw 1, TACKLE
 	dbw 1, GROWL
-	dbw 3, PECK
-	dbw 6, FORESIGHT
-	dbw 9, CONFUSION
-	dbw 12, REFLECT
-	dbw 15, LIGHT_SCREEN
-	dbw 18, AIR_SLASH
-	dbw 23, SHADOW_BALL
-	dbw 28, TAKE_DOWN
-	dbw 33, HYPER_VOICE
-	dbw 38, ROOST
-	dbw 43, MOONBLAST
-	dbw 48, HYPNOSIS
-	dbw 53, DREAM_EATER
-	dbw 56, HURRICANE
+	dbw 1, FORESIGHT
+	dbw 4, HYPNOSIS
+	dbw 7, PECK
+	dbw 10, CONFUSION
+	dbw 13, ECHOED_VOICE
+	dbw 16, ZEN_HEADBUTT
+	dbw 19, LIGHT_SCREEN
+	dbw 23, NIGHT_SHADE
+	dbw 27, TAKE_DOWN
+	dbw 31, REFLECT
+	dbw 35, AIR_SLASH
+	dbw 39, HYPER_VOICE
+	dbw 43, ROOST
+	dbw 47, SHADOW_BALL
+	dbw 51, PSYCH_UP
+	dbw 55, DREAM_EATER
+	dbw 60, HURRICANE
 	dbw LEARN_EVO_MOVE, HEX
 	db 0 ; no more level-up moves
 
@@ -1598,7 +1603,8 @@ WooperEvosAttacks:
 	dbw 37, RAIN_DANCE
 	dbw 43, MIST
 	dbw 43, HAZE
-	dbw 47, AQUA_TAIL
+	dbw 47, MUDDY_WATER
+	dbw 51, AQUA_TAIL
 	db 0 ; no more level-up moves
 
 QuagsireEvosAttacks:
@@ -1615,7 +1621,8 @@ QuagsireEvosAttacks:
 	dbw 41, RAIN_DANCE
 	dbw 48, MIST
 	dbw 48, HAZE
-	dbw 53, AQUA_TAIL
+	dbw 53, MUDDY_WATER
+	dbw 57, AQUA_TAIL
 	dbw LEARN_EVO_MOVE, BULLDOZE
 	db 0 ; no more level-up moves
 
@@ -2032,11 +2039,11 @@ SlugmaEvosAttacks:
 	dbw 22, ANCIENTPOWER
 	dbw 27, FLAME_BURST
 	dbw 29, STEEL_SLICE
-	dbw 34, FLAMETHROWER
+	dbw 34, LAVA_PLUME
 	dbw 36, AMNESIA
 	dbw 41, BODY_SLAM
 	dbw 43, RECOVER
-	dbw 48, INFERNO
+	dbw 48, FLAMETHROWER
 	dbw 50, EARTH_POWER
 	db 0 ; no more level-up moves
 
@@ -2053,11 +2060,11 @@ MagcargoEvosAttacks:
 	dbw 27, FLAME_BURST
 	dbw 30, STEEL_SLICE
 	dbw 33, FLASH_CANNON
-	dbw 36, FLAMETHROWER
+	dbw 36, LAVA_PLUME
 	dbw 39, AMNESIA
 	dbw 43, BODY_SLAM
 	dbw 47, RECOVER
-	dbw 54, INFERNO
+	dbw 54, FLAMETHROWER
 	dbw 58, EARTH_POWER
 	dbw LEARN_EVO_MOVE, SHELL_SMASH
 	db 0 ; no more level-up moves
@@ -2446,7 +2453,7 @@ EnteiEvosAttacks:
 	dbw 36, FLAMETHROWER
 	dbw 43, SWAGGER
 	dbw 50, FIRE_FANG
-	dbw 57, FLAME_CHARGE
+	dbw 57, LAVA_PLUME
 	dbw 64, ZEN_HEADBUTT
 	dbw 71, FLARE_BLITZ
 	dbw 78, BULK_UP
@@ -2474,10 +2481,9 @@ SuicuneEvosAttacks:
 LarvitarEvosAttacks:
 	dbbw EVOLVE_LEVEL, 20, PUPITAR
 	db 0 ; no more evolutions
-	dbw 1, TACKLE
+	dbw 1, STONE_BASH
 	dbw 1, LEER
 	dbw 6, SANDSTORM
-	dbw 7, WORK_UP
 	dbw 8, ROCK_THROW
 	dbw 10, SCREECH
 	dbw 14, BITE

@@ -1,451 +1,242 @@
 	object_const_def ; object_event constants
-	const RADIOTOWER1F_RECEPTIONIST
-	const RADIOTOWER1F_LASS
-	const RADIOTOWER1F_YOUNGSTER
+	const RADIOTOWER1F_RIVAL
+	const RADIOTOWER1F_DIRECTOR
+	const RADIOTOWER1F_SHERLES
 	const RADIOTOWER1F_ROCKET
-	const RADIOTOWER1F_LUCKYNUMBERMAN
-	const RADIOTOWER1F_CARD_WOMAN
+	const RADIOTOWER1F_ROCKET2
+	const RADIOTOWER1F_ROCKET3
+	const RADIOTOWER1F_ROCKET4
+	const RADIOTOWER1F_ENGINEER
+	const RADIOTOWER1F_ENGINEER2
+	const RADIOTOWER1F_POLICE
+	const RADIOTOWER1F_BLACKBELT
+	const RADIOTOWER1F_SYLVEON
+	const RADIOTOWER1F_WOBBUFFET
 
 RadioTower1F_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-RadioTower1FReceptionistScript:
+RadioTower1FRivalScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_ROCKETS_IN_RADIO_TOWER
-	iftrue .Rockets
-	writetext RadioTower1FReceptionistWelcomeText
+	writetext RadioTower1FRivalText
 	waitbutton
 	closetext
+	turnobject RADIOTOWER1F_RIVAL, RIGHT
 	end
 
-.Rockets:
-	writetext RadioTower1FReceptionistNoToursText
-	waitbutton
-	closetext
-	end
+RadioTower1FDirectorScript:
+	jumptextfaceplayer RadioTower1FDirectorText
 
-RadioTower1FLuckyNumberManScript:
+RadioTower1FSherlesScript:
+	jumptextfaceplayer RadioTower1FSherlesText
+
+RadioTower1FGruntMScript:
 	faceplayer
 	opentext
-	writetext RadioTower1FLuckyNumberManAskToPlayText
-	buttonsound
-	special CheckLuckyNumberShowFlag
-	iffalse .skip
-	special ResetLuckyNumberShowFlag
-.skip
-	special PrintTodaysLuckyNumber
-	checkflag ENGINE_LUCKY_NUMBER_SHOW
-	iftrue .GameOver
-	writetext RadioTower1FLuckyNumberManThisWeeksIdIsText
-	buttonsound
-	closetext
-	applymovement RADIOTOWER1F_LUCKYNUMBERMAN, RadioTower1FLuckyNumberManGoToPCMovement
-	opentext
-	writetext RadioTower1FLuckyNumberManCheckIfMatchText
-	buttonsound
-	waitsfx
-	writetext RadioTower1FLuckyNumberManDotDotDotText
-	playsound SFX_DEX_FANFARE_20_49
-	waitsfx
-	buttonsound
-	special CheckForLuckyNumberWinners
-	closetext
-	applymovement RADIOTOWER1F_LUCKYNUMBERMAN, RadioTower1FLuckyNumberManReturnToPlayerMovement
-	opentext
-	ifequal 1, .FirstPlace
-	ifequal 2, .SecondPlace
-	ifequal 3, .ThirdPlace
-	sjump .NoPrize
-
-.GameOver:
-	writetext RadioTower1FLuckyNumberManComeAgainText
+	writetext RadioTower1FGruntMText
 	waitbutton
 	closetext
+	turnobject RADIOTOWER1F_ROCKET, LEFT
 	end
 
-.FirstPlace:
-	writetext RadioTower1FLuckyNumberManPerfectMatchText
-	playsound SFX_1ST_PLACE
-	waitsfx
-	buttonsound
-	giveitem MASTER_BALL
-	iffalse .BagFull
-	itemnotify
-	setflag ENGINE_LUCKY_NUMBER_SHOW
-	sjump .GameOver
+RadioTower1FGruntM2Script:
+	jumptextfaceplayer RadioTower1FGruntM2Text
 
-.SecondPlace:
-	writetext RadioTower1FLuckyNumberManOkayMatchText
-	playsound SFX_2ND_PLACE
-	waitsfx
-	buttonsound
-	giveitem EXP_SHARE
-	iffalse .BagFull
-	itemnotify
-	setflag ENGINE_LUCKY_NUMBER_SHOW
-	sjump .GameOver
-
-.ThirdPlace:
-	writetext RadioTower1FLuckyNumberManWeakMatchText
-	playsound SFX_3RD_PLACE
-	waitsfx
-	buttonsound
-	giveitem PP_UP
-	iffalse .BagFull
-	itemnotify
-	setflag ENGINE_LUCKY_NUMBER_SHOW
-	sjump .GameOver
-
-.NoPrize:
-	writetext RadioTower1FLuckyNumberManNoneOfYourIDNumbersMatchText
-	waitbutton
-	closetext
-	end
-
-.BagFull:
-	writetext RadioTower1FLuckyNumberManNoRoomForYourPrizeText
-	waitbutton
-	closetext
-	end
-
-RadioTower1FRadioCardWomanScript:
+RadioTower1FGruntM3Script:
 	faceplayer
 	opentext
-	checkflag ENGINE_RADIO_CARD
-	iftrue .GotCard
-	writetext RadioTower1FRadioCardWomanOfferQuizText
-	yesorno
-	iffalse .NoQuiz
-	writetext RadioTower1FRadioCardWomanQuestion1Text
-	yesorno
-	iffalse .WrongAnswer
-	playsound SFX_ELEVATOR_END
-	waitsfx
-	writetext RadioTower1FRadioCardWomanQuestion2Text
-	yesorno
-	iffalse .WrongAnswer
-	playsound SFX_ELEVATOR_END
-	waitsfx
-	writetext RadioTower1FRadioCardWomanQuestion3Text
-	yesorno
-	iftrue .WrongAnswer
-	playsound SFX_ELEVATOR_END
-	waitsfx
-	writetext RadioTower1FRadioCardWomanQuestion4Text
-	yesorno
-	iffalse .WrongAnswer
-	playsound SFX_ELEVATOR_END
-	waitsfx
-	writetext RadioTower1FRadioCardWomanQuestion5Text
-	yesorno
-	iftrue .WrongAnswer
-	playsound SFX_ELEVATOR_END
-	waitsfx
-	writetext RadioTower1FRadioCardWomanYouWinText
-	buttonsound
-	getstring STRING_BUFFER_4, .RadioCardText
-	scall .ReceiveItem
-	writetext RadioTower1FPokegearIsARadioText
-	buttonsound
-	setflag ENGINE_RADIO_CARD
-.GotCard:
-	writetext RadioTower1FRadioCardWomanTuneInText
+	writetext GruntM3SeenText
 	waitbutton
 	closetext
-	end
-
-.RadioCardText:
-	db "RADIO CARD@"
-
-.ReceiveItem:
-	jumpstd receiveitem
-	end
-
-.WrongAnswer:
-	playsound SFX_WRONG
-	writetext RadioTower1FRadioCardWomanWrongAnswerText
-	waitbutton
-	closetext
-	end
-
-.NoQuiz:
-	writetext RadioTower1FRadioCardWomanNotTakingQuizText
-	waitbutton
-	closetext
-	end
-
-RadioTower1FLassScript:
-	jumptextfaceplayer RadioTower1FLassText
-
-RadioTower1FYoungsterScript:
-	jumptextfaceplayer RadioTower1FYoungsterText
-
-TrainerGruntM3:
-	trainer GRUNTM, GRUNTM_3, EVENT_BEAT_ROCKET_GRUNTM_3, GruntM3SeenText, GruntM3BeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	winlosstext GruntM3BeatenText, 0
+	loadtrainer GRUNTM, GRUNTM_12
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ROCKET_GRUNTM_12
 	opentext
 	writetext GruntM3AfterBattleText
 	waitbutton
 	closetext
+	disappear RADIOTOWER1F_ROCKET3
+	playsound SFX_EXIT_BUILDING
 	end
 
-RadioTower1FDirectory:
-	jumptext RadioTower1FDirectoryText
+RadioTower1FGruntM4Script:
+	jumptextfaceplayer RadioTower1FGruntM4Text
 
-RadioTower1FLuckyChannelSign:
-	jumptext RadioTower1FLuckyChannelSignText
+RadioTower1FEngineerScript:
+	jumptextfaceplayer RadioTower1FEngineerText
 
-RadioTower1FLuckyNumberManGoToPCMovement:
-	step RIGHT
-	turn_head UP
-	step_end
+RadioTower1FEngineer2Script:
+	jumptextfaceplayer RadioTower1FEngineer2Text
 
-RadioTower1FLuckyNumberManReturnToPlayerMovement:
-	step LEFT
-	turn_head UP
-	step_end
+RadioTower1FOfficerScript:
+	jumptextfaceplayer RadioTower1FOfficerText
 
-RadioTower1FReceptionistWelcomeText:
-	text "Welcome!"
+RadioTower1FBlackBeltScript:
+	jumptextfaceplayer RadioTower1FBlackBeltText
+
+RadioTower1FSylveonScript:
+	refreshscreen
+	pokepic SYLVEON
+	cry SYLVEON
+	waitbutton
+	closepokepic
+	opentext
+	writetext TowerSylveonText
+	waitbutton
+	closetext
+	end
+
+RadioTower1FWobbuffetScript:
+	refreshscreen
+	pokepic WOBBUFFET
+	cry WOBBUFFET
+	waitbutton
+	closepokepic
+	opentext
+	writetext WobbuffetText
+	waitbutton
+	closetext
+	end
+
+RadioTower1FRivalText:
+	text "Don't worry, I got"
+	line "this! You go on"
+	cont "ahead!"
 	done
 
-RadioTower1FReceptionistNoToursText:
-	text "Hello. I'm sorry,"
-	line "but we're not"
-	cont "offering any tours"
-	cont "today."
+RadioTower1FDirectorText:
+	text "So, if we plant"
+	line "the explosives"
+	cont "there, then we…"
+
+	para "Hm, yes. That"
+	line "should work."
 	done
 
-RadioTower1FLuckyNumberManAskToPlayText:
-	text "Hi, are you here"
-	line "for the LUCKY NUM-"
-	cont "BER SHOW?"
+RadioTower1FSherlesText:
+	text "Stop hanging"
+	line "around here kid,"
+	cont "or I'll arrest"
+	cont "you."
 
-	para "Want me to check"
-	line "the ID numbers of"
-	cont "your #MON?"
-
-	para "If you get lucky,"
-	line "you win a prize."
+	para "You're on thin"
+	line "ice, now."
 	done
 
-RadioTower1FLuckyNumberManThisWeeksIdIsText:
-	text "This week's ID"
-	line "number is @"
-	text_ram wStringBuffer3
-	text "."
+RadioTower1FGruntMText:
+	text "Why are these kids"
+	line "always so tough?"
 	done
 
-RadioTower1FLuckyNumberManCheckIfMatchText:
-	text "Let's see if you"
-	line "have a match."
+RadioTower1FGruntM2Text:
+	text "Taking over this"
+	line "place was a piece"
+	cont "of cake!"
+
+	para "What are we even"
+	line "here for, though?"
+
+	para "Doesn't look like"
+	line "there's anything"
+	cont "to steal."
 	done
 
-RadioTower1FLuckyNumberManDotDotDotText:
-	text "<……>"
-	line "<……>"
+RadioTower1FGruntM3Text:
+	text "Let's hope our"
+	line "informant was"
+	cont "correct, for his"
+	cont "sake."
 	done
 
-RadioTower1FLuckyNumberManComeAgainText:
-	text "Please come back"
-	line "next week for the"
-	cont "next LUCKY NUMBER."
+RadioTower1FGruntM4Text:
+	text "Quit your yelling."
+
+	para "Nobody's saving you"
+	line "today."
 	done
 
-RadioTower1FLuckyNumberManPerfectMatchText:
-	text "Wow! You have a"
-	line "perfect match of"
-	cont "all five numbers!"
+RadioTower1FEngineerText:
+	text "Help me, please!"
 
-	para "We have a grand"
-	line "prize winner!"
+	para "I'm not a trainer!"
 
-	para "You have won a"
-	line "MASTER BALL!"
+	para "I'm just a simple"
+	line "engineer!"
 	done
 
-RadioTower1FLuckyNumberManOkayMatchText:
-	text "Hey! You've"
-	line "matched the last"
-	cont "three numbers!"
+RadioTower1FEngineer2Text:
+	text "Hey, thanks for"
+	line "help back there."
 
-	para "You've won second"
-	line "prize, an EXP."
-	cont "SHARE!"
+	para "Just don't tell"
+	line "anyone I was"
+	cont "pleading."
+
+	para "I got a reputation"
+	line "to uphold!"
 	done
 
-RadioTower1FLuckyNumberManWeakMatchText:
-	text "Ooh, you've"
-	line "matched the last"
-	cont "two numbers."
+RadioTower1FOfficerText:
+	text "Another day,"
+	line "another tower."
 
-	para "You've won third"
-	line "prize, a PP UP."
+	para "I'm starting to"
+	line "think these guys"
+	cont "like towers."
+
+	para "Maybe their hide-"
+	line "out is in one?"
 	done
 
-RadioTower1FLuckyNumberManNoneOfYourIDNumbersMatchText:
-	text "Nope, none of your"
-	line "ID numbers match."
+TowerSylveonText:
+	text "Sylveon: Syyyyyll!"
 	done
 
-RadioTower1FLuckyNumberManNoRoomForYourPrizeText:
-	text "You've got no room"
-	line "for your prize."
+WobbuffetText:
+	text "Wobbuffet: WAAAAH!"
 
-	para "Make room and come"
-	line "back right away."
+	para "…buffet."
 	done
 
-RadioTower1FRadioCardWomanOfferQuizText:
-	text "We have a special"
-	line "quiz campaign on"
-	cont "right now."
+RadioTower1FBlackBeltText:
+	text "You can go on"
+	line "ahead."
 
-	para "Answer five ques-"
-	line "tions correctly to"
-	cont "win a RADIO CARD."
-
-	para "Slide it into your"
-	line "#GEAR to play"
-
-	para "the radio anytime,"
-	line "anywhere."
-
-	para "Would you like to"
-	line "take the quiz?"
-	done
-
-RadioTower1FRadioCardWomanQuestion1Text:
-	text "Question 1:"
-
-	para "Is there a #MON"
-	line "that appears only"
-	cont "in the morning?"
-	done
-
-RadioTower1FRadioCardWomanQuestion2Text:
-	text "Correct!"
-	line "Question 2:"
-
-	para "Is this statement"
-	line "correct?"
-
-	para "You can't buy a"
-	line "BERRY at a MART."
-	done
-
-RadioTower1FRadioCardWomanQuestion3Text:
-	text "Bull's-eye!"
-	line "Question 3:"
-
-	para "Does HM01 contain"
-	line "the move FLASH?"
-	done
-
-RadioTower1FRadioCardWomanQuestion4Text:
-	text "So far so good!"
-	line "Question 4:"
-
-	para "Is FALKNER the"
-	line "VIOLET GYM LEADER"
-
-	para "who uses bird"
-	line "#MON?"
-	done
-
-RadioTower1FRadioCardWomanQuestion5Text:
-	text "Wow! Right again!"
-	line "Here's the final"
-	cont "question:"
-
-	para "Do GOLDENROD GAME"
-	line "CORNER's slots"
-
-	para "have CHARMANDER"
-	line "on their reels?"
-	done
-
-RadioTower1FRadioCardWomanYouWinText:
-	text "Bingo! You got it!"
-	line "Congratulations!"
-
-	para "Here's your prize,"
-	line "a RADIO CARD!"
-	done
-
-RadioTower1FPokegearIsARadioText:
-	text "<PLAYER>'s #GEAR"
-	line "can now double as"
-	cont "a radio!"
-	done
-
-RadioTower1FRadioCardWomanTuneInText:
-	text "Please tune in to"
-	line "our radio shows."
-	done
-
-RadioTower1FRadioCardWomanWrongAnswerText:
-	text "Oh, dear."
-	line "Sorry, but you"
-
-	para "got it wrong."
-	line "Please try again!"
-	done
-
-RadioTower1FRadioCardWomanNotTakingQuizText:
-	text "Oh. I see. Please"
-	line "see me if you"
-	cont "change your mind."
-	done
-
-RadioTower1FLassText:
-	text "BEN is a fabulous"
-	line "DJ."
-
-	para "His sweet voice"
-	line "makes me melt!"
-	done
-
-RadioTower1FYoungsterText:
-	text "I love MARY, from"
-	line "#MON TALK."
-
-	para "I only know what"
-	line "she sounds like,"
-	cont "though."
+	para "It's you, after-"
+	line "all."
 	done
 
 GruntM3SeenText:
-	text "We've finally"
-	line "taken over the"
-	cont "RADIO TOWER!"
+	text "I got word that"
+	line "you'd be here."
 
-	para "Now everyone will"
-	line "get to experience"
+	para "We didn't expect"
+	line "you to show up so"
+	cont "soon!"
 
-	para "the true terror of"
-	line "TEAM ROCKET!"
-
-	para "We'll show you"
-	line "how scary we are!"
+	para "I'll take care of"
+	line "you right now, so"
+	cont "our plan goes off"
+	cont "without a hitch!"
 	done
 
 GruntM3BeatenText:
-	text "Too strong! We"
-	line "must watch you…"
+	text "Too strong! Gotta"
+	line "warn the others…"
 	done
 
 GruntM3AfterBattleText:
-	text "You're too strong."
+	text "This won't do…"
 
 	para "Our plan could be"
-	line "ruined. I must"
-	cont "warn the others…"
+	line "ruined. The others"
+	cont "will have to get"
+	cont "rid of you…"
 	done
 
 RadioTower1FDirectoryText:
@@ -474,20 +265,25 @@ RadioTower1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  2,  7, GOLDENROD_CITY, 11
-	warp_event  3,  7, GOLDENROD_CITY, 11
-	warp_event 15,  0, RADIO_TOWER_2F, 2
+	warp_event  9, 15, GOLDENROD_CITY, 11
+	warp_event 10, 15, GOLDENROD_CITY, 11
+	warp_event 10,  2, RADIO_TOWER_2F, 2
 
 	db 0 ; coord events
 
-	db 2 ; bg events
-	bg_event  3,  0, BGEVENT_READ, RadioTower1FDirectory
-	bg_event 13,  0, BGEVENT_READ, RadioTower1FLuckyChannelSign
+	db 0 ; bg events
 
-	db 6 ; object events
-	object_event  5,  6, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower1FReceptionistScript, -1
-	object_event 16,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower1FLassScript, EVENT_GOLDENROD_CITY_CIVILIANS
-	object_event 15,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower1FYoungsterScript, EVENT_GOLDENROD_CITY_CIVILIANS
-	object_event 14,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event  8,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower1FLuckyNumberManScript, EVENT_GOLDENROD_CITY_CIVILIANS
-	object_event 12,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower1FRadioCardWomanScript, EVENT_GOLDENROD_CITY_CIVILIANS
+	db 13 ; object events
+	object_event  8, 11, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FRivalScript, EVENT_GOLDENROD_TOWER_RIVAL
+	object_event 16,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FDirectorScript, EVENT_GOLDENROD_TOWER_DIRECTOR
+	object_event 15,  4, SPRITE_SHERLES, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower1FSherlesScript, EVENT_GOLDENROD_TOWER_SHERLES
+	object_event 11, 11, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FGruntMScript, EVENT_GOLDENROD_TOWER_TAKEOVER
+	object_event  4,  6, SPRITE_ROCKET, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FGruntM2Script, EVENT_GOLDENROD_TOWER_TAKEOVER
+	object_event 10,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FGruntM3Script, EVENT_BEAT_ROCKET_GRUNTM_12
+	object_event 15,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FGruntM4Script, EVENT_GOLDENROD_TOWER_TAKEOVER
+	object_event 16,  4, SPRITE_ENGINEER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FEngineerScript, EVENT_GOLDENROD_TOWER_TAKEOVER
+	object_event  5, 12, SPRITE_ENGINEER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FEngineer2Script, EVENT_GOLDENROD_TOWER_DIRECTOR
+	object_event  4,  3, SPRITE_OFFICER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FOfficerScript, EVENT_GOLDENROD_TOWER_POLICE
+	object_event 11,  2, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FBlackBeltScript, EVENT_GOLDENROD_TOWER_DIRECTOR
+	object_event  9, 11, SPRITE_SYLVEON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower1FSylveonScript, EVENT_GOLDENROD_TOWER_TAKEOVER
+	object_event 10, 11, SPRITE_WOBBUFFET, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower1FWobbuffetScript, EVENT_GOLDENROD_TOWER_TAKEOVER

@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const GOLDENRODPPSPEECHHOUSE_FISHER
+	const GOLDENRODPPSPEECHHOUSE_YOUNGSTER
 	const GOLDENRODPPSPEECHHOUSE_LASS
 
 GoldenrodPPSpeechHouse_MapScripts:
@@ -7,11 +7,32 @@ GoldenrodPPSpeechHouse_MapScripts:
 
 	db 0 ; callbacks
 
-GoldenrodPPSpeechHouseFisherScript:
-	jumptextfaceplayer GoldenrodPPSpeechHouseFisherText
+GoldenrodPPSpeechHouseYoungsterScript:
+	jumptextfaceplayer GoldenrodPPSpeechHouseYoungsterText
 
-GoldenrodPPSpeechHouseLassScript:
-	jumptextfaceplayer GoldenrodPPSpeechHouseLassText
+GoldenrodPPSpeechHouseGrampsScript:
+	faceplayer
+	opentext
+	writetext GoldenrodPPSpeechHouseGrampsDrainPunchText
+	waitbutton
+	writetext GoldenrodPPSpeechHouseGrampsDrainPunchText2
+	yesorno
+	iffalse .TutorRefused
+	loadmoveindex DRAIN_PUNCH
+	writetext GoldenrodPPSpeechHouseGrampsDrainPunchClear
+	special MoveTutor
+	if_equal $0, .TeachMove
+.TutorRefused
+	writetext GoldenrodPPSpeechHouseGrampsDrainPunchRefused
+	waitbutton
+	closetext
+	end
+
+.TeachMove
+	writetext GoldenrodPPSpeechHouseGrampsDrainPunchTaught
+	waitbutton
+	closetext
+	end
 
 GoldenrodPPSpeechHouseBookshelf2:
 	jumpstd difficultbookshelf
@@ -22,31 +43,45 @@ GoldenrodPPSpeechHouseBookshelf1:
 GoldenrodPPSpeechHouseRadio:
 	jumpstd radio2
 
-GoldenrodPPSpeechHouseFisherText:
-	text "Once while I was"
-	line "battling, my"
+GoldenrodPPSpeechHouseYoungsterText:
+	text "See those trees"
+	line "outside?"
 
-	para "#MON couldn't"
-	line "make any moves."
+	para "Grandpa says that"
+	line "they probably"
 
-	para "The POWER POINTS,"
-	line "or PP, of its"
-
-	para "moves were all"
-	line "gone."
+	para "won't be there in"
+	line "a few years, since"
+	cont "the city is mod-"
+	cont "ernizing."
 	done
 
-GoldenrodPPSpeechHouseLassText:
-	text "Sometimes, a"
-	line "healthy #MON"
+GoldenrodPPSpeechHouseGrampsDrainPunchText:
+	text "There is a"
+	line "punching move that"
 
-	para "may be unable to"
-	line "use its moves."
+	para "heals the user."
+	done
 
-	para "If that happens,"
-	line "heal it at a #-"
-	cont "MON CENTER or use"
-	cont "an item."
+GoldenrodPPSpeechHouseGrampsDrainPunchText2:
+	text "Would you like me"
+	line "to teach a #-"
+	cont "mon Drain Punch?"
+	done
+
+GoldenrodPPSpeechHouseGrampsDrainPunchClear:
+	text ""
+	done
+
+GoldenrodPPSpeechHouseGrampsDrainPunchRefused:
+	text "Alrighty then."
+
+	para "Come back later."
+	done
+
+GoldenrodPPSpeechHouseGrampsDrainPunchTaught:
+	text "Now you're playing"
+	line "with power!"
 	done
 
 GoldenrodPPSpeechHouse_MapEvents:
@@ -64,5 +99,5 @@ GoldenrodPPSpeechHouse_MapEvents:
 	bg_event  7,  1, BGEVENT_READ, GoldenrodPPSpeechHouseRadio
 
 	db 2 ; object events
-	object_event  2,  4, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodPPSpeechHouseFisherScript, -1
-	object_event  5,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPPSpeechHouseLassScript, -1
+	object_event  2,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodPPSpeechHouseYoungsterScript, -1
+	object_event  5,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPPSpeechHouseGrampsScript, -1

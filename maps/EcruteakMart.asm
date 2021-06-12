@@ -2,6 +2,7 @@
 	const ECRUTEAKMART_CLERK
 	const ECRUTEAKMART_SUPER_NERD
 	const ECRUTEAKMART_GRANNY
+	const ECRUTEAKMART_CLERK_2
 
 EcruteakMart_MapScripts:
 	db 0 ; scene scripts
@@ -11,6 +12,12 @@ EcruteakMart_MapScripts:
 EcruteakMartClerkScript:
 	opentext
 	pokemart MARTTYPE_STANDARD, MART_ECRUTEAK
+	closetext
+	end
+
+EcruteakMartBallClerkScript:
+	opentext
+	pokemart MARTTYPE_BALLS, MART_ECRUTEAK_BALLS
 	closetext
 	end
 
@@ -54,7 +61,8 @@ EcruteakMart_MapEvents:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakMartClerkScript, -1
 	object_event  5,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakMartSuperNerdScript, -1
 	object_event  6,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakMartGrannyScript, -1
+	object_event  1,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakMartBallClerkScript, -1

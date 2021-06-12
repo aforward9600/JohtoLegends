@@ -2,8 +2,8 @@
 	const GOLDENRODPOKECENTER1F_NURSE
 	const GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST
 	const GOLDENRODPOKECENTER1F_GAMEBOY_KID
-	const GOLDENRODPOKECENTER1F_LASS
-	const GOLDENRODPOKECENTER1F_POKEFAN_F
+	const GOLDENRODPOKECENTER1F_FISHER
+	const GOLDENRODPOKECENTER1F_TWIN
 
 GoldenrodPokecenter1F_MapScripts:
 	db 0 ; scene scripts
@@ -97,7 +97,7 @@ GoldenrodPokecenter1FPokefanF:
 	waitbutton
 	writetext GoldenrodPokecenter1FPokefanFThisIsForYouText
 	waitbutton
-	verbosegiveitem REVIVE
+	verbosegiveitem EVIOLITE
 	iffalse .NoRoom
 	writetext GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText
 	waitbutton
@@ -662,15 +662,18 @@ UnknownText_0x620a1:
 	done
 
 GoldenrodPokecenter1FGameboyKidText:
-	text "The COLOSSEUM"
-	line "upstairs is for"
-	cont "link battles."
+	text "Have you ever"
+	line "played Donkey Kong"
+	cont "on Game & Watch?"
 
-	para "Battle records are"
-	line "posted on the"
+	para "It's not as good"
+	line "as the arcade,"
 
-	para "wall, so I can't"
-	line "afford to lose."
+	para "but I can't see"
+	line "a better handheld"
+
+	para "version ever be-"
+	line "ing made!"
 	done
 
 UnknownText_0x62173:
@@ -700,19 +703,15 @@ UnknownText_0x62222:
 	done
 
 GoldenrodPokecenter1FLassText:
-	text "A higher level"
-	line "#MON doesn't"
-	cont "always win."
+	text "Apparently, port-"
+	line "able radios will"
+	cont "be finished soon."
 
-	para "After all, it may"
-	line "have a type dis-"
-	cont "advantage."
+	para "That means that"
+	line "the planned radio"
+	cont "tower will be"
 
-	para "I don't think"
-	line "there is a single"
-
-	para "#MON that is"
-	line "the toughest."
+	para "quite useful."
 	done
 
 GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText:
@@ -755,36 +754,36 @@ UnknownText_0x623c7:
 	done
 
 GoldenrodPokecenter1FPokefanFDoYouHaveEonMailText:
-	text "Oh my, your pack"
-	line "looks so heavy!"
+	text "Do you happen to"
+	line "have something"
+	cont "named Eon Mail?"
 
-	para "Oh! Do you happen"
-	line "to have something"
-	cont "named EON MAIL?"
-
-	para "My daughter is"
-	line "after one."
+	para "I'd like to have"
+	line "one."
 
 	para "You can part with"
 	line "one, can't you?"
 	done
 
 GoldenrodPokecenter1FAskGiveAwayAnEonMailText:
-	text "Give away an EON"
-	line "MAIL?"
+	text "Give away an Eon"
+	line "Mail?"
 	done
 
 GoldenrodPokecenter1FPokefanFThisIsForYouText:
 	text "Oh, that's great!"
-	line "Thank you, honey!"
+	line "Thank you!"
 
 	para "Here, this is for"
 	line "you in return!"
 	done
 
 GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText:
-	text "My daughter will"
-	line "be delighted!"
+	text "That Eviolite will"
+	line "boost the defenses"
+
+	para "of unevolved #-"
+	line "mon!"
 	done
 
 GoldenrodPokecenter1FPokefanFTooBadText:
@@ -799,7 +798,7 @@ GoldenrodPokecenter1FPokefanFAnotherTimeThenText:
 
 GoldenrodPokecenter1FPlayerGaveAwayTheEonMailText:
 	text "<PLAYER> gave away"
-	line "the EON MAIL."
+	line "the Eon Mail."
 	done
 
 GoldenrodPokecenter1F_MapEvents:
@@ -821,5 +820,5 @@ GoldenrodPokecenter1F_MapEvents:
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FNurseScript, -1
 	object_event 16,  8, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  6,  1, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FGameboyKidScript, -1
-	object_event  1,  4, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FLassScript, -1
-	object_event  7,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FPokefanF, -1
+	object_event  1,  4, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FLassScript, -1
+	object_event  7,  5, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FPokefanF, -1

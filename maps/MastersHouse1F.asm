@@ -1,9 +1,8 @@
 	object_const_def ; object_event constants
 	const MASTERSHOUSE1F_MASTER
-	const MASTERSHOUSE1F_KRIS ; if Male
+	const MASTERSHOUSE1F_RIVAL
 	const MASTERSHOUSE1F_POKE_BALL1
 	const MASTERSHOUSE1F_POKE_BALL2
-	const MASTERSHOUSE1F_CHRIS ; if Female
 
 MastersHouse1F_MapScripts:
 	db 4 ; scene scripts
@@ -15,8 +14,6 @@ MastersHouse1F_MapScripts:
 	db 0 ; callbacks
 
 .MeetMaster:
-	disappear MASTERSHOUSE1F_CHRIS
-	disappear MASTERSHOUSE1F_KRIS
 	prioritysjump WalkUpToRival
 	end
 
@@ -30,47 +27,21 @@ MastersHouse1F_MapScripts:
 	end
 
 WalkUpToRival:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female2
-	appear MASTERSHOUSE1F_KRIS
+	appear MASTERSHOUSE1F_RIVAL
 	applymovement PLAYER, MastersHouse1F_WalkUpMovement
-	turnobject MASTERSHOUSE1F_KRIS, LEFT
+	turnobject MASTERSHOUSE1F_RIVAL, LEFT
 	opentext
 	writetext HeySleepyHeadText
 	waitbutton
 	closetext
-	turnobject MASTERSHOUSE1F_KRIS, UP
+	turnobject MASTERSHOUSE1F_RIVAL, UP
 	turnobject PLAYER, UP
 	applymovement MASTERSHOUSE1F_MASTER, MastersHouse1F_MastersMovement
 	opentext
 	writetext GoodOfYouText
 	waitbutton
 	closetext
-	turnobject MASTERSHOUSE1F_KRIS, LEFT
-	turnobject PLAYER, RIGHT
-	opentext
-	writetext GoodSportText
-	waitbutton
-	setscene SCENE_CANT_LEAVE_HOUSE
-	closetext
-	end
-
-.Female2:
-	appear MASTERSHOUSE1F_CHRIS
-	applymovement PLAYER, MastersHouse1F_WalkUpMovement
-	turnobject MASTERSHOUSE1F_CHRIS, LEFT
-	opentext
-	writetext HeySleepyHeadText
-	waitbutton
-	closetext
-	turnobject MASTERSHOUSE1F_CHRIS, UP
-	turnobject PLAYER, UP
-	applymovement MASTERSHOUSE1F_MASTER, MastersHouse1F_MastersMovement
-	opentext
-	writetext GoodOfYouText
-	waitbutton
-	closetext
-	turnobject MASTERSHOUSE1F_CHRIS, LEFT
+	turnobject MASTERSHOUSE1F_RIVAL, LEFT
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext GoodSportText
@@ -172,98 +143,83 @@ DidntChooseLarvitarScript:
 	end
 
 RivalLarvitarScript:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female3
-	applymovement MASTERSHOUSE1F_KRIS, MastersHouse1F_RivalLarvitarMovement
+	applymovement MASTERSHOUSE1F_RIVAL, MastersHouse1F_RivalLarvitarMovement
 	disappear MASTERSHOUSE1F_POKE_BALL2
 	opentext
 	writetext RivalChoseText
 	buttonsound
 	waitsfx
 	getmonname STRING_BUFFER_3, LARVITAR
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female
 	writetext RivalStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
 	closetext
-	turnobject MASTERSHOUSE1F_KRIS, LEFT
+	turnobject MASTERSHOUSE1F_RIVAL, LEFT
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext IsntItCuteText
 	waitbutton
 	closetext
-	turnobject MASTERSHOUSE1F_KRIS, UP
+	turnobject MASTERSHOUSE1F_RIVAL, UP
 	turnobject PLAYER, UP
 	sjump MastersTestScript1
 
-.Female3:
-	applymovement MASTERSHOUSE1F_CHRIS, MastersHouse1F_RivalLarvitarMovement
-	disappear MASTERSHOUSE1F_POKE_BALL2
-	opentext
-	writetext RivalChoseText
-	buttonsound
-	waitsfx
-	getmonname STRING_BUFFER_3, LARVITAR
+.Female:
 	writetext RivalStarter2Text
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
 	closetext
-	turnobject MASTERSHOUSE1F_CHRIS, LEFT
+	turnobject MASTERSHOUSE1F_RIVAL, LEFT
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext HehToughMonText
-	waitbutton
 	closetext
-	turnobject MASTERSHOUSE1F_CHRIS, UP
+	turnobject MASTERSHOUSE1F_RIVAL, UP
 	turnobject PLAYER, UP
 	sjump MastersTestScript1
 
 RivalDratiniScript:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female4
-	applymovement MASTERSHOUSE1F_KRIS, MastersHouse1F_RivalDratiniMovement
+	applymovement MASTERSHOUSE1F_RIVAL, MastersHouse1F_RivalDratiniMovement
 	disappear MASTERSHOUSE1F_POKE_BALL1
 	opentext
 	writetext RivalChoseText
 	buttonsound
 	waitsfx
 	getmonname STRING_BUFFER_3, DRATINI
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female2
 	writetext RivalStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
 	closetext
-	turnobject MASTERSHOUSE1F_KRIS, RIGHT
+	turnobject MASTERSHOUSE1F_RIVAL, RIGHT
 	turnobject PLAYER, LEFT
 	opentext
 	writetext IsntItCuteText
 	waitbutton
 	closetext
-	turnobject MASTERSHOUSE1F_KRIS, UP
+	turnobject MASTERSHOUSE1F_RIVAL, UP
 	turnobject PLAYER, UP
 	sjump MastersTestScript2
 
-.Female4:
-	applymovement MASTERSHOUSE1F_CHRIS, MastersHouse1F_RivalDratiniMovement
-	disappear MASTERSHOUSE1F_POKE_BALL1
-	opentext
-	writetext RivalChoseText
-	buttonsound
-	waitsfx
-	getmonname STRING_BUFFER_3, DRATINI
+.Female2:
 	writetext RivalStarter2Text
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
 	closetext
-	turnobject MASTERSHOUSE1F_CHRIS, RIGHT
+	turnobject MASTERSHOUSE1F_RIVAL, RIGHT
 	turnobject PLAYER, LEFT
 	opentext
 	writetext HehToughMonText
 	waitbutton
 	closetext
-	turnobject MASTERSHOUSE1F_CHRIS, UP
+	turnobject MASTERSHOUSE1F_RIVAL, UP
 	turnobject PLAYER, UP
 	sjump MastersTestScript2
 
@@ -276,22 +232,12 @@ MastersTestScript1:
 	writetext LetsStartText
 	waitbutton
 	closetext
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female5
-	applymovement MASTERSHOUSE1F_KRIS, HeadUpstairs1Movement
+	applymovement MASTERSHOUSE1F_RIVAL, HeadUpstairs1Movement
 	playsound SFX_EXIT_BUILDING
-	disappear MASTERSHOUSE1F_KRIS
-	setscene SCENE_MASTERS_HOUSE_1F_NOTHING
+	disappear MASTERSHOUSE1F_RIVAL
+	setscene SCENE_CANT_LEAVE_HOUSE
 	setevent EVENT_GOT_A_POKEMON_FROM_MASTER
-	waitsfx
-	end
-
-.Female5:
-	applymovement MASTERSHOUSE1F_CHRIS, HeadUpstairs1Movement
-	playsound SFX_EXIT_BUILDING
-	disappear MASTERSHOUSE1F_CHRIS
-	setscene SCENE_MASTERS_HOUSE_1F_NOTHING
-	setevent EVENT_GOT_A_POKEMON_FROM_MASTER
+	setevent EVENT_RIVAL_AT_MASTERS_HOUSE_1
 	waitsfx
 	end
 
@@ -304,45 +250,23 @@ MastersTestScript2:
 	writetext LetsStartText
 	waitbutton
 	closetext
-	setscene SCENE_MASTERS_HOUSE_1F_NOTHING
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female6
-	applymovement MASTERSHOUSE1F_KRIS, HeadUpstairs2Movement
+	applymovement MASTERSHOUSE1F_RIVAL, HeadUpstairs2Movement
 	playsound SFX_EXIT_BUILDING
-	disappear MASTERSHOUSE1F_KRIS
-	setscene SCENE_MASTERS_HOUSE_1F_NOTHING
+	disappear MASTERSHOUSE1F_RIVAL
+	setscene SCENE_CANT_LEAVE_HOUSE
 	setevent EVENT_GOT_A_POKEMON_FROM_MASTER
-	waitsfx
-	end
-
-.Female6:
-	applymovement MASTERSHOUSE1F_CHRIS, HeadUpstairs2Movement
-	playsound SFX_EXIT_BUILDING
-	disappear MASTERSHOUSE1F_CHRIS
-	setscene SCENE_MASTERS_HOUSE_1F_NOTHING
+	setevent EVENT_RIVAL_AT_MASTERS_HOUSE_1
 	waitsfx
 	end
 
 FinishTutorialScript:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .JourneyStart1
 	checkevent EVENT_2F_RIVAL_1
 	iftrue .JourneyStart2
 	end
 
-.JourneyStart1:
-	checkevent EVENT_2F_RIVAL_2
-	iftrue .JourneyStart3
-	end
-
 .JourneyStart2:
-	appear MASTERSHOUSE1F_KRIS
+	appear MASTERSHOUSE1F_RIVAL
 	sjump WalkUpToRival2
-	end
-
-.JourneyStart3:
-	appear MASTERSHOUSE1F_CHRIS
-	sjump WalkUpToRival3
 	end
 
 WalkUpToRival2:
@@ -357,7 +281,7 @@ WalkUpToRival2:
 	writetext ThankYouText
 	waitbutton
 	closetext
-	turnobject MASTERSHOUSE1F_KRIS, LEFT
+	turnobject MASTERSHOUSE1F_RIVAL, LEFT
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext ImOffText
@@ -370,9 +294,9 @@ WalkUpToRival2:
 	writetext RivalGoodByeText
 	waitbutton
 	closetext
-	applymovement MASTERSHOUSE1F_KRIS, RivalLeaves1Movement
+	applymovement MASTERSHOUSE1F_RIVAL, RivalLeaves1Movement
 	playsound SFX_EXIT_BUILDING
-	disappear MASTERSHOUSE1F_KRIS
+	disappear MASTERSHOUSE1F_RIVAL
 	setscene SCENE_MASTERS_HOUSE_1F_NOTHING
 	setevent EVENT_MASTERS_RIVAL_DONE
 	setevent EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
@@ -382,47 +306,6 @@ WalkUpToRival2:
 	turnobject PLAYER, UP
 	opentext
 	writetext TalkToGranny
-	closetext
-	end
-
-WalkUpToRival3:
-	applymovement PLAYER, PlayerMovesToRivalMovement
-	turnobject PLAYER, UP
-	applymovement MASTERSHOUSE1F_MASTER, MastersLastMovement
-	opentext
-	writetext CongratulationsText
-	waitbutton
-	closetext
-	opentext
-	writetext ThankYouText
-	waitbutton
-	closetext
-	turnobject MASTERSHOUSE1F_CHRIS, LEFT
-	turnobject PLAYER, RIGHT
-	opentext
-	writetext ImOffText
-	buttonsound
-	getitemname STRING_BUFFER_4, POKE_BALL
-	scall Rival_ReceiveTheBalls
-	giveitem POKE_BALL, 10
-	buttonsound
-	itemnotify
-	writetext RivalGoodByeText
-	waitbutton
-	closetext
-	applymovement MASTERSHOUSE1F_CHRIS, RivalLeaves1Movement
-	playsound SFX_EXIT_BUILDING
-	disappear MASTERSHOUSE1F_CHRIS
-	setscene SCENE_MASTERS_HOUSE_1F_NOTHING
-	setevent EVENT_MASTERS_RIVAL_DONE
-	setevent EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
-	clearevent EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR
-	waitsfx
-	applymovement MASTERSHOUSE1F_MASTER, MasterLastMovement
-	turnobject PLAYER, UP
-	opentext
-	writetext TalkToGranny
-	waitbutton
 	closetext
 	end
 
@@ -758,16 +641,17 @@ MastersHouse1F_MapEvents:
 	warp_event  5, 13, BLACKTHORN_CITY, 10
 	warp_event  4,  1, MASTERS_HOUSE_2F, 1
 
-	db 3 ; coord events
+	db 5 ; coord events
+	coord_event 2,  8, SCENE_CANT_LEAVE_HOUSE, TryToLeaveHouseScript
 	coord_event 4,  8, SCENE_CANT_LEAVE_HOUSE, TryToLeaveHouseScript
 	coord_event 5,  8, SCENE_CANT_LEAVE_HOUSE, TryToLeaveHouseScript
+	coord_event 7,  8, SCENE_CANT_LEAVE_HOUSE, TryToLeaveHouseScript
 	coord_event 5,  1, SCENE_DONE_WITH_2F, FinishTutorialScript
 
 	db 0 ; bg events
 
-	db 5 ; object events
+	db 4 ; object events
 	object_event  4,  2, SPRITE_MASTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MaastersHouseMasterScript, -1
-	object_event  5,  7, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MastersHouseRivalScript, EVENT_RIVAL_AT_MASTERS_HOUSE_1
+	object_event  5,  7, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MastersHouseRivalScript, EVENT_RIVAL_AT_MASTERS_HOUSE_1
 	object_event  4,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DratiniPokeballScript, EVENT_DRATINI_POKEBALL_AT_MASTERS
 	object_event  5,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LarvitarPokeballScript, EVENT_LARVITAR_POKEBALL_AT_MASTERS
-	object_event  5,  7, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MastersHouseRival2Script, EVENT_RIVAL_AT_MASTERS_HOUSE_2

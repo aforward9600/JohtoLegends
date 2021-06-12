@@ -2,6 +2,7 @@
 	const GOLDENRODBIKESHOP_ROCKET
 	const GOLDENRODBIKESHOP_ROCKET_GIRL
 	const GOLDENRODBIKESHOP_ROCKER
+	const GOLDENRODBIKESHOP_BURGLAR
 
 GoldenrodBikeShop_MapScripts:
 	db 0 ; scene scripts
@@ -17,6 +18,13 @@ GoldenrodBikeShopBicycle:
 GoldenrodBlackMarketClerk1Script:
 	faceplayer
 	opentext
+	checkflag ENGINE_HIVEBADGE
+	iftrue .NewMart1
+	pokemart MARTTYPE_SHADY, MART_GOLDENROD_BLACK_MARKET_3
+	closetext
+	end
+
+.NewMart1:
 	pokemart MARTTYPE_SHADY, MART_GOLDENROD_BLACK_MARKET_1
 	closetext
 	end
@@ -24,14 +32,32 @@ GoldenrodBlackMarketClerk1Script:
 GoldenrodBlackMarketClerk2Script:
 	faceplayer
 	opentext
+	checkflag ENGINE_HIVEBADGE
+	iftrue .NewMart2
+	pokemart MARTTYPE_SHADY, MART_GOLDENROD_BLACK_MARKET_4
+	closetext
+	end
+
+.NewMart2:
 	pokemart MARTTYPE_SHADY, MART_GOLDENROD_BLACK_MARKET_2
 	closetext
 	end
 
 GoldenrodBlackMarketRocketScript:
+	jumptextfaceplayer BlackMarketRocketText
+
+GoldenrodBikeShopBurglarScript:
 	faceplayer
 	opentext
-	writetext BlackMarketRocketText
+	checkflag ENGINE_HIVEBADGE
+	iftrue .NewItems
+	writetext BikeShopBurglarText1
+	waitbutton
+	closetext
+	end
+
+.NewItems:
+	writetext BikeShopBurglarText2
 	waitbutton
 	closetext
 	end
@@ -55,6 +81,26 @@ BlackMarketRocketText:
 	para "evolve Porygon."
 	line "No idea what went"
 	cont "wrong there."
+	done
+
+BikeShopBurglarText1:
+	text "I should be pro-"
+	line "curing some new"
+	cont "items for the shop"
+	cont "soon."
+
+	para "Stop on by later,"
+	line "maybe when you"
+	cont "have more badges."
+	done
+
+BikeShopBurglarText2:
+	text "Looks like our"
+	line "stock is complete."
+
+	para "Go ahead, buy to"
+	line "your heart's"
+	cont "content!"
 	done
 
 GoldenrodBikeShopBicycleText:
@@ -83,7 +129,8 @@ GoldenrodBikeShop_MapEvents:
 	bg_event  6,  6, BGEVENT_READ, GoldenrodBikeShopBicycle
 	bg_event  7,  6, BGEVENT_READ, GoldenrodBikeShopBicycle
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event  7,  3, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodBlackMarketClerk1Script, -1
 	object_event  0,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodBlackMarketClerk2Script, -1
 	object_event  4,  2, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodBlackMarketRocketScript, -1
+	object_event  4,  6, SPRITE_PHARMACIST, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodBikeShopBurglarScript, -1

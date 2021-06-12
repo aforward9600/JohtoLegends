@@ -226,9 +226,10 @@ music0xf8: MACRO
 	db music0xf8_cmd
 ENDM
 
-	enum unknownmusic0xf9_cmd ; $f9
-unknownmusic0xf9: MACRO
-	db unknownmusic0xf9_cmd
+	enum noisesampleset_cmd
+noisesampleset: MACRO
+	db noisesampleset_cmd
+	db \1 ; noise
 ENDM
 
 	enum setcondition_cmd ; $fa

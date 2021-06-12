@@ -98,4 +98,5 @@ MapScenes::
 	scene_var NATIONAL_PARK,                               wNationalParkSceneID
 	scene_var NATIONAL_PARK_BUG_CONTEST,                   wNationalParkBugContestID
 	scene_var ECRUTEAK_CITY,                               wEcruteakCitySceneID
+	scene_var GOLDENROD_CITY,                              wGoldenrodCitySceneID
 	db -1 ; end

@@ -37,3 +37,6 @@ SpriteMons:
 	dw HO_OH
 	dw DRATINI
 	dw SMOOCHUM
+	dw MEOWTH
+	dw SYLVEON
+	dw WOBBUFFET

@@ -193,7 +193,6 @@ INCLUDE "maps/EcruteakMart.asm"
 INCLUDE "maps/EcruteakGym.asm"
 INCLUDE "maps/EcruteakItemfinderHouse.asm"
 INCLUDE "maps/ViridianGym.asm"
-INCLUDE "maps/ViridianNicknameSpeechHouse.asm"
 INCLUDE "maps/TrainerHouse1F.asm"
 
 
@@ -215,6 +214,7 @@ INCLUDE "maps/CianwoodPokecenter1F.asm"
 INCLUDE "maps/CianwoodPharmacy.asm"
 INCLUDE "maps/CianwoodPhotoStudio.asm"
 INCLUDE "maps/CianwoodLugiaSpeechHouse.asm"
+INCLUDE "maps/ViridianNicknameSpeechHouse.asm"
 
 
 SECTION "Map Scripts 13", ROMX
@@ -351,7 +351,6 @@ INCLUDE "maps/Route31VioletGate.asm"
 SECTION "Map Scripts 19", ROMX
 
 INCLUDE "maps/AzaleaTown.asm"
-INCLUDE "maps/GoldenrodCity.asm"
 INCLUDE "maps/SaffronCity.asm"
 INCLUDE "maps/MahoganyRedGyaradosSpeechHouse.asm"
 INCLUDE "maps/MahoganyGym.asm"
@@ -493,4 +492,9 @@ INCLUDE "maps/WildArea5.asm"
 INCLUDE "maps/PokeSeersHouse.asm"
 INCLUDE "maps/BattleTower1F.asm"
 INCLUDE "maps/BurnedTower2F.asm"
+
+
+SECTION "Map Scripts 27", ROMX
+
 INCLUDE "maps/GoldenrodJail.asm"
+INCLUDE "maps/GoldenrodCity.asm"

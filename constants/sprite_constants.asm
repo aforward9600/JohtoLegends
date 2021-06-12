@@ -117,6 +117,7 @@
 	const SPRITE_MIYAMOTO
 	const SPRITE_SHERLES
 	const SPRITE_ENGINEER
+	const SPRITE_NINJA
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80
@@ -158,6 +159,9 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_HO_OH ; a2
 	const SPRITE_DRATINI
 	const SPRITE_SMOOCHUM
+	const SPRITE_MEOWTH
+	const SPRITE_SYLVEON
+	const SPRITE_WOBBUFFET
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
 	const_def $e0
@@ -180,3 +184,4 @@ SPRITE_VARS EQU const_value
 	const SPRITE_FUCHSIA_GYM_4 ; fa
 	const SPRITE_COPYCAT ; fb
 	const SPRITE_JANINE_IMPERSONATOR ; fc
+	const SPRITE_RIVAL ; fd

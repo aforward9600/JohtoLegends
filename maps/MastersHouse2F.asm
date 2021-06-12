@@ -1,9 +1,8 @@
 	object_const_def ; object_event constants
 	const MASTERSHOUSE2F_CLAIR
 	const MASTERSHOUSE2F_LANCE
-	const MASTERSHOUSE2F_KRIS ; if Male
+	const MASTERSHOUSE2F_RIVAL
 	const MASTERSHOUSE2F_EKANS
-	const MASTERSHOUSE2F_CHRIS ; if Female
 
 MastersHouse2F_MapScripts:
 	db 2 ; scene scripts
@@ -20,30 +19,16 @@ MastersHouse2F_MapScripts:
 	end
 
 .Rival:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female
 	checkevent EVENT_2F_RIVAL_1
 	iftrue .Disappear
-	disappear MASTERSHOUSE2F_CHRIS
-	appear MASTERSHOUSE2F_KRIS
+	appear MASTERSHOUSE2F_RIVAL
 	checkevent EVENT_GOT_DRATINI_FROM_MASTER
 	iftrue .Skip ; not SCENE_DEFAULT
-	moveobject MASTERSHOUSE2F_KRIS, 2, 7
-	return
-
-.Female:
-	checkevent EVENT_2F_RIVAL_2
-	iftrue .Disappear
-	disappear MASTERSHOUSE2F_KRIS
-	appear MASTERSHOUSE2F_CHRIS
-	checkevent EVENT_GOT_DRATINI_FROM_MASTER
-	iftrue .Skip
-	moveobject MASTERSHOUSE2F_CHRIS, 2, 7
+	moveobject MASTERSHOUSE2F_RIVAL, 2, 7
 	return
 
 .Disappear:
-	disappear MASTERSHOUSE2F_KRIS
-	disappear MASTERSHOUSE2F_CHRIS
+	disappear MASTERSHOUSE2F_RIVAL
 	return
 
 .Skip:
@@ -70,12 +55,7 @@ TrainerDragonKidClair:
 	waitbutton
 	closetext
 	special HealParty
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female4
 	sjump Rival1
-
-.Female4:
-	sjump Rival3
 
 .LarvitarScript:
 	faceplayer
@@ -114,12 +94,7 @@ TrainerDragonKidLance:
 	waitbutton
 	closetext
 	special HealParty
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female5
 	sjump Rival2
-
-.Female5:
-	sjump Rival4
 
 .DratiniScript:
 	faceplayer
@@ -143,25 +118,19 @@ MastersHouse2FRival1Script:
 	writetext ToughKidText
 	waitbutton
 	closetext
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female3
-	turnobject MASTERSHOUSE2F_KRIS, UP
-	end
-
-.Female3:
-	turnobject MASTERSHOUSE2F_CHRIS, UP
+	turnobject MASTERSHOUSE2F_RIVAL, UP
 	end
 
 Rival1:
-	applymovement MASTERSHOUSE2F_KRIS, AfterBattleMovement1
-	turnobject MASTERSHOUSE2F_KRIS, UP
+	applymovement MASTERSHOUSE2F_RIVAL, AfterBattleMovement1
+	turnobject MASTERSHOUSE2F_RIVAL, UP
 	turnobject PLAYER, DOWN
 	opentext
 	writetext DahliaTheyWereToughText
 	waitbutton
 	closetext
-	applymovement MASTERSHOUSE2F_KRIS, LeavingRoomMovement1
-	disappear MASTERSHOUSE2F_KRIS
+	applymovement MASTERSHOUSE2F_RIVAL, LeavingRoomMovement1
+	disappear MASTERSHOUSE2F_RIVAL
 	setscene SCENE_MASTERS_HOUSE_2F_NOTHING
 	setevent EVENT_2F_RIVAL_1
 	setmapscene MASTERS_HOUSE_1F, SCENE_DONE_WITH_2F
@@ -169,50 +138,17 @@ Rival1:
 	end
 
 Rival2:
-	applymovement MASTERSHOUSE2F_KRIS, AfterBattleMovement2
-	turnobject MASTERSHOUSE2F_KRIS, UP
+	applymovement MASTERSHOUSE2F_RIVAL, AfterBattleMovement2
+	turnobject MASTERSHOUSE2F_RIVAL, UP
 	turnobject PLAYER, DOWN
 	opentext
 	writetext DahliaTheyWereToughText
 	waitbutton
 	closetext
-	applymovement MASTERSHOUSE2F_KRIS, LeavingRoomMovement2
-	disappear MASTERSHOUSE2F_KRIS
+	applymovement MASTERSHOUSE2F_RIVAL, LeavingRoomMovement2
+	disappear MASTERSHOUSE2F_RIVAL
 	setscene SCENE_MASTERS_HOUSE_2F_NOTHING
 	setevent EVENT_2F_RIVAL_1
-	setmapscene MASTERS_HOUSE_1F, SCENE_DONE_WITH_2F
-	setevent EVENT_MASTERS_RIVAL_DONE
-	end
-
-Rival3:
-	applymovement MASTERSHOUSE2F_CHRIS, AfterBattleMovement1
-	turnobject MASTERSHOUSE2F_CHRIS, UP
-	turnobject PLAYER, DOWN
-	opentext
-	writetext DracoTheyWereToughText
-	waitbutton
-	closetext
-	applymovement MASTERSHOUSE2F_CHRIS, LeavingRoomMovement1
-	disappear MASTERSHOUSE2F_CHRIS
-	setscene SCENE_MASTERS_HOUSE_2F_NOTHING
-	setevent EVENT_2F_RIVAL_2
-	setmapscene MASTERS_HOUSE_1F, SCENE_DONE_WITH_2F
-	setevent EVENT_MASTERS_RIVAL_DONE
-	end
-
-
-Rival4:
-	applymovement MASTERSHOUSE2F_CHRIS, AfterBattleMovement2
-	turnobject MASTERSHOUSE2F_CHRIS, UP
-	turnobject PLAYER, DOWN
-	opentext
-	writetext DracoTheyWereToughText
-	waitbutton
-	closetext
-	applymovement MASTERSHOUSE2F_CHRIS, LeavingRoomMovement2
-	disappear MASTERSHOUSE2F_CHRIS
-	setscene SCENE_MASTERS_HOUSE_2F_NOTHING
-	setevent EVENT_2F_RIVAL_2
 	setmapscene MASTERS_HOUSE_1F, SCENE_DONE_WITH_2F
 	setevent EVENT_MASTERS_RIVAL_DONE
 	end
@@ -374,9 +310,8 @@ MastersHouse2F_MapEvents:
 
 	db 0 ; bg events
 
-	db 5 ; object events
+	db 4 ; object events
 	object_event  2,  6, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerDragonKidClair, -1
 	object_event  7,  6, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerDragonKidLance, -1
-	object_event, 7,  7, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MastersHouse2FRival1Script, EVENT_2F_RIVAL_1
+	object_event, 7,  7, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MastersHouse2FRival1Script, EVENT_2F_RIVAL_1
 	object_event, 6, 11, SPRITE_DRATINI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MastersHouseDratiniScript, -1
-	object_event, 7,  7, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MastersHouse2FRival1Script, EVENT_2F_RIVAL_2

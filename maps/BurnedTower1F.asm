@@ -4,6 +4,7 @@
 	const BURNEDTOWER1F_MORTY
 	const BURNEDTOWER1F_POKE_BALL
 	const BURNEDTOWER1F_ENOKI
+	const BURNEDTOWER1F_ENOKI_2
 
 BurnedTower1F_MapScripts:
 	db 3 ; scene scripts
@@ -22,6 +23,18 @@ BurnedTower1F_MapScripts:
 	end
 
 .DummyScene2:
+	turnobject PLAYER, UP
+	opentext ImHidingTheBasementText
+	applymovement PLAYER, BurnedTower1F_PlayerMovesRight
+	turnobject PLAYER, LEFT
+	playsound SFX_STRENGTH
+	earthquake 80
+	changeblock 6, 14, $09
+	applymovement BURNEDTOWER1F_ENOKI_2, BurnedTower1F_EnokiLeavesMovement
+	disappear BURNEDTOWER1F_ENOKI_2
+	playsound SFX_EXIT_BUILDING
+	setscene SCENE_FINISHED
+	setevent EVENT_BURNED_TOWER_1F_ENOKI_2
 	end
 
 .HoleAndLadder:
@@ -29,7 +42,7 @@ BurnedTower1F_MapScripts:
 	iftrue .HideBasement
 	changeblock 6, 14, $09 ; ladder
 .HideBasement:
-	checkevent EVENT_BEAT_ENOKI
+	checkevent EVENT_HIDE_BASEMENT
 	iftrue .HideBasement2
 	return
 
@@ -136,6 +149,17 @@ BurnedTower1FEusineMovement:
 	step DOWN
 	step_end
 
+BurnedTower1F_PlayerMovesRight:
+	step RIGHT
+	step_end
+
+BurnedTower1F_EnokiLeavesMovement:
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step DOWN
+	step_end
+
 EusineBurnedTowerSuicuneText:
 	text "Eusine: Come on"
 	line "Morty!"
@@ -219,6 +243,19 @@ BurnedTower1FEnokiIntroText:
 	line "find them?"
 	done
 
+ImHidingTheBasementText:
+	text "This will hope-"
+	line "fully prevent any-"
+	cont "one else from"
+	cont "disturbing them"
+	cont "until the proper"
+	cont "time comes."
+
+	para "I'll be waiting at"
+	line "the Gym for your"
+	cont "challenge."
+	done
+
 BurnedTower1FEnokiText:
 	text "Hmmm...."
 	line "Maybe they're"
@@ -269,9 +306,10 @@ BurnedTower1F_MapEvents:
 	bg_event  8,  7, BGEVENT_ITEM, BurnedTower1FHiddenEther
 	bg_event 13, 11, BGEVENT_ITEM, BurnedTower1FHiddenUltraBall
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event 15,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTower1FRock, -1
 	object_event  8,  9, SPRITE_EUSINE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEusineScript, EVENT_BURNED_TOWER_MORTY
 	object_event  7,  9, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BurnedTower1FMortyScript, EVENT_BURNED_TOWER_MORTY
 	object_event 14,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTower1FHPUp, EVENT_BURNED_TOWER_1F_HP_UP
 	object_event 12, 12, SPRITE_ENOKI, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEnokiScript, EVENT_BURNED_TOWER_1F_EUSINE
+	object_event  7, 14, SPRITE_ENOKI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURNED_TOWER_1F_ENOKI_2
