@@ -162,6 +162,8 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_MEOWTH
 	const SPRITE_SYLVEON
 	const SPRITE_WOBBUFFET
+	const SPRITE_RATICATE
+	const SPRITE_AMPHAROS
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
 	const_def $e0

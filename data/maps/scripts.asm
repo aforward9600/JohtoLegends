@@ -498,3 +498,4 @@ SECTION "Map Scripts 27", ROMX
 
 INCLUDE "maps/GoldenrodJail.asm"
 INCLUDE "maps/GoldenrodCity.asm"
+INCLUDE "maps/TeamRocketBaseJail.asm"

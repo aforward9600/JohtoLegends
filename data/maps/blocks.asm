@@ -1057,3 +1057,6 @@ BurnedTower2F_Blocks:
 
 GoldenrodJail_Blocks:
 	INCBIN "maps/GoldenrodJail.blk"
+
+TeamRocketBaseJail_Blocks:
+	INCBIN "maps/TeamRocketBaseJail.blk"

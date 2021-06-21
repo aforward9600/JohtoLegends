@@ -40,3 +40,5 @@ SpriteMons:
 	dw MEOWTH
 	dw SYLVEON
 	dw WOBBUFFET
+	dw RATICATE
+	dw AMPHAROS

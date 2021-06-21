@@ -23,7 +23,7 @@ TimsHouseBookshelf:
 
 TimsMomText:
 	text "My son Tim likes"
-	line "ro trade #mon."
+	line "to trade #mon."
 
 	para "He hopes to have"
 	line "a Voltorb to trade"

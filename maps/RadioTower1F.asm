@@ -12,11 +12,151 @@
 	const RADIOTOWER1F_BLACKBELT
 	const RADIOTOWER1F_SYLVEON
 	const RADIOTOWER1F_WOBBUFFET
+	const RADIOTOWER1F_RIVAL2
 
 RadioTower1F_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene1 ; SCENE_RADIOTOWER1F_DIRECTOR
 
 	db 0 ; callbacks
+
+.DummyScene0:
+	end
+
+.DummyScene1:
+	end
+
+RadioTowerDirector1:
+	applymovement PLAYER, PlayerTowerMovement1
+	applymovement PLAYER, PlayerTowerMovement2
+	sjump ContinueWithDirector
+
+RadioTowerDirector2:
+	applymovement PLAYER, PlayerTowerMovement1
+	applymovement PLAYER, PlayerTowerMovement3
+	sjump ContinueWithDirector
+
+RadioTowerDirector3:
+	applymovement PLAYER, PlayerTowerMovement1
+	applymovement PLAYER, PlayerTowerMovement4
+	sjump ContinueWithDirector
+
+RadioTowerDirector4:
+	applymovement PLAYER, PlayerTowerMovement1
+	applymovement PLAYER, PlayerTowerMovement5
+	sjump ContinueWithDirector
+
+ContinueWithDirector:
+	turnobject PLAYER, DOWN
+	applymovement RADIOTOWER1F_DIRECTOR, DirectorMovesUpMovement
+	opentext
+	writetext ThankYouClearBellText
+	waitbutton
+	takeitem CLEAR_BELL
+	writetext GaveUpClearBellText
+	waitbutton
+	writetext HaveAWingText
+	waitbutton
+	closetext
+	opentext
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DracoCanWeReally
+	writetext CanWeReallyText1
+	waitbutton
+	closetext
+	sjump YesYesOfCourse
+
+.DracoCanWeReally:
+	writetext CanWeReallyText2
+	waitbutton
+	closetext
+	sjump YesYesOfCourse
+
+YesYesOfCourse:
+	opentext
+	writetext YesYesOfCourseText
+	buttonsound
+	loadmenu RainbowOrSilverWingMenu
+	verticalmenu
+	closewindow
+	ifequal 1, .RainbowWing
+	ifequal 2, .SilverWing
+	end
+
+.RainbowWing:
+	verbosegiveitem RAINBOW_WING
+	setevent EVENT_GOT_RAINBOW_WING
+	closetext
+	sjump BeautifulWing
+
+.SilverWing:
+	verbosegiveitem SILVER_WING
+	setevent EVENT_GOT_SILVER_WING
+	closetext
+	sjump BeautifulWing
+
+BeautifulWing:
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .CoolWing
+	opentext
+	writetext ItsSoPrettyText
+	waitbutton
+	closetext
+	sjump TalkToMrPokemon
+
+.CoolWing:
+	opentext
+	writetext ItsCoolText
+	waitbutton
+	closetext
+	sjump TalkToMrPokemon
+
+TalkToMrPokemon:
+	opentext
+	writetext GoTalkToMrPokemonText
+	waitbutton
+	closetext
+	turnobject RADIOTOWER1F_RIVAL2, RIGHT
+	turnobject PLAYER, LEFT
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DracoSeeYa
+	opentext
+	writetext DahliaSeeYaText
+	waitbutton
+	closetext
+	applymovement RADIOTOWER1F_RIVAL2, RadioTowerRivalLeavesMovement
+	disappear RADIOTOWER1F_RIVAL2
+	playsound SFX_EXIT_BUILDING
+	setevent EVENT_GOLDENROD_TOWER_RIVAL_2
+	sjump SherlesAppearsGoldenrodTower
+
+.DracoSeeYa:
+	opentext
+	writetext DracoSeeYaText
+	waitbutton
+	closetext
+	applymovement RADIOTOWER1F_RIVAL2, RadioTowerRivalLeavesMovement
+	disappear RADIOTOWER1F_RIVAL2
+	playsound SFX_EXIT_BUILDING
+	setevent EVENT_GOLDENROD_TOWER_RIVAL_2
+	sjump SherlesAppearsGoldenrodTower
+
+SherlesAppearsGoldenrodTower:
+	pause 30
+	moveobject RADIOTOWER1F_SHERLES, 9, 15
+	playsound SFX_ENTER_DOOR
+	appear RADIOTOWER1F_SHERLES
+	applymovement RADIOTOWER1F_SHERLES, SherlesMovesToYouMovement
+	turnobject RADIOTOWER1F_SHERLES, RIGHT
+	opentext
+	writetext YouAgainText
+	waitbutton
+	closetext
+	applymovement RADIOTOWER1F_SHERLES, SherlesMovesIntoPlaceMovement
+	clearevent EVENT_GOLDENROD_TOWER_SHERLES
+	clearevent EVENT_GOLDENROD_GYM_RIVAL_1
+	end
 
 RadioTower1FRivalScript:
 	faceplayer
@@ -102,6 +242,88 @@ RadioTower1FWobbuffetScript:
 	waitbutton
 	closetext
 	end
+
+PlayerTowerMovement1:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+PlayerTowerMovement2:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step_end
+
+PlayerTowerMovement3:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step_end
+
+PlayerTowerMovement4:
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
+
+PlayerTowerMovement5:
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
+
+RadioTowerRivalLeavesMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step DOWN
+	step_end
+
+SherlesMovesToYouMovement:
+	step UP
+	step LEFT
+	step UP
+	step UP
+	step UP
+	step_end
+
+SherlesMovesIntoPlaceMovement:
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_end
+
+RainbowOrSilverWingMenu:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 8, 6, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	db 2 ; items
+	db "Rainbow@"
+	db "Silver@"
+
+DirectorMovesUpMovement:
+	step UP
+	step_end
 
 RadioTower1FRivalText:
 	text "Don't worry, I got"
@@ -239,26 +461,155 @@ GruntM3AfterBattleText:
 	cont "rid of you…"
 	done
 
-RadioTower1FDirectoryText:
-	text "1F RECEPTION"
-	line "2F SALES"
+ThankYouClearBellText:
+	text "Thanks to you two,"
+	line "my tower is safe,"
+	cont "as is my bell!"
 
-	para "3F PERSONNEL"
-	line "4F PRODUCTION"
-
-	para "5F DIRECTOR'S"
-	line "   OFFICE"
+	para "Please, return it"
+	line "to me."
 	done
 
-RadioTower1FLuckyChannelSignText:
-	text "LUCKY CHANNEL!"
+GaveUpClearBellText:
+	text "<PLAYER> gave away"
+	line "the Clear Bell."
+	done
 
-	para "Win with #MON"
-	line "ID numbers!"
+HaveAWingText:
+	text "Don't worry, there"
+	line "is a reward, of"
+	cont "course!"
 
-	para "Trade your #MON"
-	line "to collect differ-"
-	cont "ent ID numbers!"
+	para "In my possession,"
+	line "are two #mon"
+	cont "feathers, both"
+	cont "from rare #-"
+	cont "mon!"
+
+	para "I want each of"
+	line "you to have one!"
+	done
+
+CanWeReallyText1:
+	text "Dahlia: Can we"
+	line "really?!"
+	done
+
+CanWeReallyText2:
+	text "Draco: Can we"
+	line "really?!"
+	done
+
+YesYesOfCourseText:
+	text "Yes, yes, of"
+	line "course!"
+
+	para "You risked your"
+	line "lives for me, so"
+	cont "it is only fair"
+	cont "that you receive"
+	cont "something so"
+	cont "precious!"
+
+	para "Now then, which"
+	line "shall you take?"
+	done
+
+ItsSoPrettyText:
+	text "Dahlia: They're so"
+	line "pretty, but what"
+	cont "kind of #mon"
+	cont "are they from?"
+	done
+
+ItsCoolText:
+	text "Draco: They're so"
+	line "cool, but what"
+	cont "kind of #mon"
+	cont "are they from?"
+	done
+
+GoTalkToMrPokemonText:
+	text "I've never been"
+	line "quite sure myself,"
+
+	para "but there is"
+	line "one person I can"
+	cont "think of that"
+	cont "could tell you."
+
+	para "His name is Mr."
+	line "#mon."
+
+	para "He lives on Route"
+	line "30, but I've heard"
+	cont "he's actually vis-"
+	cont "iting the Day-Care"
+	cont "on Route 34."
+
+	para "You had best go"
+	line "and talk with him."
+
+	para "Who knows?"
+
+	para "He might give you"
+	line "an idea about the"
+	cont "origins of those"
+	cont "feathers."
+	done
+
+DahliaSeeYaText:
+	text "Dahlia: Sounds"
+	line "like a plan."
+
+	para "You go on ahead,"
+	line "<PLAYER>."
+
+	para "I still have a"
+	line "PlainBadge to"
+	cont "earn!"
+
+	para "See ya at the"
+	line "Day-Care!"
+	done
+
+DracoSeeYaText:
+	text "Draco: Sounds"
+	line "like a plan."
+
+	para "You go on ahead,"
+	line "<PLAYER>."
+
+	para "I still have a"
+	line "PlainBadge to"
+	cont "earn!"
+
+	para "See ya at the"
+	line "Day-Care!"
+	done
+
+YouAgainText:
+	text "You again, huh?"
+
+	para "Everytime these"
+	line "people show up,"
+	cont "you're right"
+	cont "there alongside"
+	cont "them."
+
+	para "If I find you"
+	line "in their company"
+	cont "again, I may have"
+	cont "to arrest you."
+
+	para "My investigations"
+	line "are showing that,"
+	cont "whether by coinc-"
+	cont "idence or not,"
+	cont "you're involved."
+
+	para "Stay out of this,"
+	line "got it?"
 	done
 
 RadioTower1F_MapEvents:
@@ -269,21 +620,26 @@ RadioTower1F_MapEvents:
 	warp_event 10, 15, GOLDENROD_CITY, 11
 	warp_event 10,  2, RADIO_TOWER_2F, 2
 
-	db 0 ; coord events
+	db 4 ; coord events
+	coord_event  4,  7, SCENE_RADIOTOWER1F_DIRECTOR, RadioTowerDirector1
+	coord_event  5,  7, SCENE_RADIOTOWER1F_DIRECTOR, RadioTowerDirector2
+	coord_event 14,  6, SCENE_RADIOTOWER1F_DIRECTOR, RadioTowerDirector3
+	coord_event 15,  6, SCENE_RADIOTOWER1F_DIRECTOR, RadioTowerDirector4
 
 	db 0 ; bg events
 
-	db 13 ; object events
+	db 14 ; object events
 	object_event  8, 11, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FRivalScript, EVENT_GOLDENROD_TOWER_RIVAL
-	object_event 16,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FDirectorScript, EVENT_GOLDENROD_TOWER_DIRECTOR
-	object_event 15,  4, SPRITE_SHERLES, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower1FSherlesScript, EVENT_GOLDENROD_TOWER_SHERLES
+	object_event  9, 13, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FDirectorScript, EVENT_GOLDENROD_TOWER_DIRECTOR
+	object_event 11, 13, SPRITE_SHERLES, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower1FSherlesScript, EVENT_GOLDENROD_TOWER_SHERLES
 	object_event 11, 11, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FGruntMScript, EVENT_GOLDENROD_TOWER_TAKEOVER
 	object_event  4,  6, SPRITE_ROCKET, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FGruntM2Script, EVENT_GOLDENROD_TOWER_TAKEOVER
 	object_event 10,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FGruntM3Script, EVENT_BEAT_ROCKET_GRUNTM_12
 	object_event 15,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FGruntM4Script, EVENT_GOLDENROD_TOWER_TAKEOVER
 	object_event 16,  4, SPRITE_ENGINEER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FEngineerScript, EVENT_GOLDENROD_TOWER_TAKEOVER
-	object_event  5, 12, SPRITE_ENGINEER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FEngineer2Script, EVENT_GOLDENROD_TOWER_DIRECTOR
+	object_event 16,  3, SPRITE_ENGINEER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FEngineer2Script, EVENT_GOLDENROD_TOWER_DIRECTOR
 	object_event  4,  3, SPRITE_OFFICER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FOfficerScript, EVENT_GOLDENROD_TOWER_POLICE
 	object_event 11,  2, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FBlackBeltScript, EVENT_GOLDENROD_TOWER_DIRECTOR
 	object_event  9, 11, SPRITE_SYLVEON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower1FSylveonScript, EVENT_GOLDENROD_TOWER_TAKEOVER
 	object_event 10, 11, SPRITE_WOBBUFFET, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower1FWobbuffetScript, EVENT_GOLDENROD_TOWER_TAKEOVER
+	object_event  8, 11, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower1FRivalScript, EVENT_GOLDENROD_TOWER_RIVAL_2

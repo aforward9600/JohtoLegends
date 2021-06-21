@@ -167,13 +167,6 @@ MomScript:
 	setevent EVENT_BLACKTHORN_BLACK_BELT
 	setmapscene BLACKTHORN_CITY, SCENE_BLACKTHORN_CITY_NOTHING
 	setmapscene ICE_PATH_B1F, SCENE_ICE_PATH_B1F_RIVAL
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female
-	setevent EVENT_ICE_PATH_B1F_RIVAL2
-	end
-
-.Female:
-	setevent EVENT_ICE_PATH_B1F_RIVAL1
 	end
 
 NeighborScript:

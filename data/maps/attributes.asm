@@ -707,3 +707,4 @@ ENDM
 	map_attributes WildArea5, WILD_AREA_5, $00, 0
 	map_attributes BurnedTower2F, BURNED_TOWER_2F, $00, 0
 	map_attributes GoldenrodJail, GOLDENROD_JAIL, $00, 0
+	map_attributes TeamRocketBaseJail, TEAM_ROCKET_BASE_JAIL, $00, 0

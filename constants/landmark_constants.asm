@@ -10,6 +10,7 @@
 	const ICE_PATH          ; 28
 	const ROUTE_44          ; 27
 	const MAHOGANY_TOWN     ; 24
+	const UNKNOWN
 	const ROUTE_43          ; 25
 	const LAKE_OF_RAGE      ; 26
 	const ROUTE_42          ; 22

@@ -2155,7 +2155,7 @@ GetMapMusic::
 	jr .done
 
 .clearedradiotower
-	ld de, MUSIC_GOLDENROD_CITY
+	ld c, MUSIC_GOLDENROD_CITY
 	jr .done
 
 .mahoganymart

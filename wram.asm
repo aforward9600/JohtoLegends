@@ -2688,8 +2688,9 @@ wNationalParkSceneID::                            db
 wNationalParkBugContestID::                       db
 wEcruteakCitySceneID::                            db
 wGoldenrodCitySceneID::                           db
+wRadioTower1FSceneID::                            db
 
-	ds 31
+	ds 30
 
 ; fight counts
 wJackFightCount::    db ; d9f2

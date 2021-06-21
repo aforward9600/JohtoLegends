@@ -5,7 +5,6 @@ IconPointers:
 	dw JigglypuffIcon
 	dw DiglettIcon
 	dw PikachuIcon
-	dw StaryuIcon
 	dw FishIcon
 	dw BirdIcon
 	dw MonsterIcon
@@ -161,6 +160,7 @@ IconPointers:
 	dw KingdraIcon
 	dw GoldeenIcon
 	dw SeakingIcon
+	dw StaryuIcon
 	dw StarmieIcon
 	dw MimeJrIcon
 	dw MrMimeIcon

@@ -23,31 +23,41 @@ BurnedTower1F_MapScripts:
 	end
 
 .DummyScene2:
-	turnobject PLAYER, UP
-	opentext ImHidingTheBasementText
 	applymovement PLAYER, BurnedTower1F_PlayerMovesRight
+	opentext
+	writetext ImHidingTheBasementText
+	waitbutton
+	closetext
+	applymovement BURNEDTOWER1F_ENOKI_2, BurnedTower1F_EnokiHidesMovement
+	turnobject BURNEDTOWER1F_ENOKI_2, DOWN
 	turnobject PLAYER, LEFT
+	setscene SCENE_FINISHED
 	playsound SFX_STRENGTH
-	earthquake 80
-	changeblock 6, 14, $09
+	earthquake 50
+	waitsfx
+	changeblock 6, 14, $09 ; No Ladder
+	reloadmappart
+	closetext
+	pause 15
 	applymovement BURNEDTOWER1F_ENOKI_2, BurnedTower1F_EnokiLeavesMovement
+	turnobject PLAYER, RIGHT
 	disappear BURNEDTOWER1F_ENOKI_2
 	playsound SFX_EXIT_BUILDING
-	setscene SCENE_FINISHED
 	setevent EVENT_BURNED_TOWER_1F_ENOKI_2
+	setevent EVENT_HIDE_BASEMENT
 	end
 
 .HoleAndLadder:
 	checkevent EVENT_RELEASED_THE_BEASTS
 	iftrue .HideBasement
-	changeblock 6, 14, $09 ; ladder
+	changeblock 6, 14, $09 ; No ladder
 .HideBasement:
 	checkevent EVENT_HIDE_BASEMENT
 	iftrue .HideBasement2
 	return
 
 .HideBasement2:
-	changeblock 6, 14, $09 ; ladder
+	changeblock 6, 14, $09 ; No ladder
 	return
 
 .MeetEusine:
@@ -157,7 +167,12 @@ BurnedTower1F_EnokiLeavesMovement:
 	step RIGHT
 	step RIGHT
 	step DOWN
-	step DOWN
+	step_end
+
+BurnedTower1F_EnokiHidesMovement:
+	step UP
+	step LEFT
+	step LEFT
 	step_end
 
 EusineBurnedTowerSuicuneText:
@@ -312,4 +327,4 @@ BurnedTower1F_MapEvents:
 	object_event  7,  9, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BurnedTower1FMortyScript, EVENT_BURNED_TOWER_MORTY
 	object_event 14,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTower1FHPUp, EVENT_BURNED_TOWER_1F_HP_UP
 	object_event 12, 12, SPRITE_ENOKI, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEnokiScript, EVENT_BURNED_TOWER_1F_EUSINE
-	object_event  7, 14, SPRITE_ENOKI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURNED_TOWER_1F_ENOKI_2
+	object_event  9, 15, SPRITE_ENOKI, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURNED_TOWER_1F_ENOKI_2

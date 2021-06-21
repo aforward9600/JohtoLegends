@@ -3,8 +3,7 @@
 	const OLIVINELIGHTHOUSE6F_MONSTER
 	const OLIVINELIGHTHOUSE6F_POKE_BALL
 	const OLIVINELIGHTHOUSE6F_MIYAMOTO
-	const OLIVINELIGHTHOUSE6F_KRIS ; if Male
-	const OLIVINELIGHTHOUSE6F_CHRIS
+	const OLIVINELIGHTHOUSE6F_RIVAL
 	const OLIVINELIGHTHOUSE6F_SHERLES
 	const OLIVINELIGHTHOUSE6F_MONSTER2
 
@@ -43,17 +42,17 @@ OlivineLighthouse6F_MapScripts:
 	writetext WeArentDoneYetText
 	waitbutton
 	closetext
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female1
 	playsound SFX_ENTER_DOOR
-	appear OLIVINELIGHTHOUSE6F_KRIS
-	applymovement OLIVINELIGHTHOUSE6F_KRIS, RivalMovesUpMovement
+	appear OLIVINELIGHTHOUSE6F_RIVAL
+	applymovement OLIVINELIGHTHOUSE6F_RIVAL, RivalMovesUpMovement
 	turnobject PLAYER, LEFT
 	opentext
 	writetext HuffHuffText
 	waitbutton
 	closetext
 	turnobject PLAYER, UP
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female1
 	opentext
 	writetext ThisYourGFText
 	waitbutton
@@ -78,10 +77,16 @@ OlivineLighthouse6F_MapScripts:
 	writetext DangSmokeBombsText
 	waitbutton
 	closetext
-	applymovement OLIVINELIGHTHOUSE6F_MONSTER2, RosaMovesMovement
+	special FadeOutPalettes
+	pause 10
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
 	setevent EVENT_LIGHTHOUSE_MONSTER2
-	clearevent EVENT_LIGHTHOUSE_MONSTER
 	appear OLIVINELIGHTHOUSE6F_MONSTER
+	clearevent EVENT_LIGHTHOUSE_MONSTER
+	cry AMPHAROS
+	pause 15
+	special FadeInQuickly
 	opentext
 	writetext ThisIsRosaText
 	waitbutton
@@ -89,13 +94,18 @@ OlivineLighthouse6F_MapScripts:
 	applymovement OLIVINELIGHTHOUSE6F_BYRON, ByronLeavesMovement1
 	applymovement PLAYER, RivalMovesOutOfWayMovement
 	turnobject PLAYER, RIGHT
-	turnobject OLIVINELIGHTHOUSE6F_KRIS, RIGHT
+	turnobject OLIVINELIGHTHOUSE6F_RIVAL, RIGHT
 	applymovement OLIVINELIGHTHOUSE6F_BYRON, ByronLeavesMovement1
 	turnobject OLIVINELIGHTHOUSE6F_BYRON, LEFT
 	opentext
 	writetext HeresSurfText
 	buttonsound
-	verbosegiveitem LAPRAS_CALLA
+	giveitem LAPRAS_CALLA
+	writetext ReceivedLaprasCallText
+	waitsfx
+	specialsound
+	waitbutton
+	itemnotify
 	setevent EVENT_GOT_LAPRAS_CALLA
 	disappear OLIVINELIGHTHOUSE6F_MONSTER2
 	writetext ThatsSurfText
@@ -112,20 +122,11 @@ OlivineLighthouse6F_MapScripts:
 	waitbutton
 	closetext
 	playmusic MUSIC_UNWAVERING_HEART
-	turnobject OLIVINELIGHTHOUSE6F_KRIS, DOWN
+	turnobject OLIVINELIGHTHOUSE6F_RIVAL, DOWN
 	turnobject PLAYER, UP
 	sjump .Backstory
 
 .Female1:
-	playsound SFX_ENTER_DOOR
-	appear OLIVINELIGHTHOUSE6F_CHRIS
-	applymovement OLIVINELIGHTHOUSE6F_CHRIS, RivalMovesUpMovement
-	turnobject PLAYER, LEFT
-	opentext
-	writetext HuffHuffText
-	waitbutton
-	closetext
-	turnobject PLAYER, UP
 	opentext
 	writetext ThisYourBFText
 	waitbutton
@@ -150,10 +151,16 @@ OlivineLighthouse6F_MapScripts:
 	writetext DangSmokeBombsText
 	waitbutton
 	closetext
-	applymovement OLIVINELIGHTHOUSE6F_MONSTER2, RosaMovesMovement
+	special FadeOutPalettes
+	pause 10
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
 	setevent EVENT_LIGHTHOUSE_MONSTER2
-	clearevent EVENT_LIGHTHOUSE_MONSTER
 	appear OLIVINELIGHTHOUSE6F_MONSTER
+	clearevent EVENT_LIGHTHOUSE_MONSTER
+	cry AMPHAROS
+	pause 15
+	special FadeInQuickly
 	opentext
 	writetext ThisIsRosaText
 	waitbutton
@@ -161,15 +168,20 @@ OlivineLighthouse6F_MapScripts:
 	applymovement OLIVINELIGHTHOUSE6F_BYRON, ByronLeavesMovement1
 	applymovement PLAYER, RivalMovesOutOfWayMovement
 	turnobject PLAYER, RIGHT
-	turnobject OLIVINELIGHTHOUSE6F_CHRIS, RIGHT
+	turnobject OLIVINELIGHTHOUSE6F_RIVAL, RIGHT
 	applymovement OLIVINELIGHTHOUSE6F_BYRON, ByronLeavesMovement1
 	turnobject OLIVINELIGHTHOUSE6F_BYRON, LEFT
 	opentext
 	writetext HeresSurfText
 	buttonsound
-	verbosegiveitem LAPRAS_CALLA
-	setevent EVENT_GOT_LAPRAS_CALLA
+	giveitem LAPRAS_CALLA
+	writetext ReceivedLaprasCallText
+	waitsfx
+	specialsound
+	waitbutton
+	itemnotify
 	disappear OLIVINELIGHTHOUSE6F_MONSTER2
+	setevent EVENT_GOT_LAPRAS_CALLA
 	writetext ThatsSurfText
 	waitbutton
 	closetext
@@ -184,7 +196,7 @@ OlivineLighthouse6F_MapScripts:
 	waitbutton
 	closetext
 	playmusic MUSIC_UNWAVERING_HEART
-	turnobject OLIVINELIGHTHOUSE6F_CHRIS, DOWN
+	turnobject OLIVINELIGHTHOUSE6F_RIVAL, DOWN
 	turnobject PLAYER, UP
 	sjump .Backstory
 
@@ -203,29 +215,13 @@ OlivineLighthouse6F_MapScripts:
 	sjump .RivalLeaves
 
 .RivalLeaves:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female2
-	applymovement OLIVINELIGHTHOUSE6F_KRIS, RivalLeavesMovement
+	applymovement OLIVINELIGHTHOUSE6F_RIVAL, RivalLeavesMovement
 	playsound SFX_EXIT_BUILDING
 	special FadeOutMusic
+	disappear OLIVINELIGHTHOUSE6F_RIVAL
 	pause 30
 	special RestartMapMusic
-	disappear OLIVINELIGHTHOUSE6F_KRIS
 	setevent EVENT_LIGHTHOUSE6F_RIVAL1
-	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL2
-	sjump .SherlesAppears
-
-.Female2:
-	applymovement OLIVINELIGHTHOUSE6F_CHRIS, RivalLeavesMovement
-	playsound SFX_EXIT_BUILDING
-	special FadeOutMusic
-	pause 30
-	special RestartMapMusic
-	disappear OLIVINELIGHTHOUSE6F_CHRIS
-	setevent EVENT_LIGHTHOUSE6F_RIVAL2
-	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL1
-	sjump .SherlesAppears
-
 .SherlesAppears:
 	pause 15
 	playsound SFX_ENTER_DOOR
@@ -243,11 +239,10 @@ OlivineLighthouse6F_MapScripts:
 	setevent EVENT_LIGHTHOUSE6F_SHERLES
 	clearevent EVENT_LIGHTHOUSE_SHERLES
 	setevent EVENT_CIANWOOD_CITY_GYM_RIVAL1
-	setevent EVENT_CIANWOOD_CITY_GYM_RIVAL2
 	clearevent EVENT_LIGHTHOUSE_CIVILLIANS
 	setevent EVENT_LIGHTHOUSE2F_RIVAL1
-	setevent EVENT_LIGHTHOUSE2F_RIVAL2
 	setevent EVENT_LIGHTHOUSE_ROCKETS
+	setevent EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_SHERLES
 	setscene SCENE_FINISHED
 	end
 
@@ -357,7 +352,7 @@ IKnewIdSeeYouText:
 
 	para "I am Miyamoto, and"
 	line "I am the leader of"
-	cont "this little group."
+	cont "this group."
 
 	para "I had hoped we"
 	line "would meet again,"
@@ -695,6 +690,11 @@ AmphyPaluPaluluText:
 	line "Palulu!"
 	done
 
+ReceivedLaprasCallText:
+	text "<PLAYER> received"
+	line "Lapras CallA."
+	done
+
 OlivineLighthouse6F_MapEvents:
 	db 0, 0 ; filler
 
@@ -706,12 +706,11 @@ OlivineLighthouse6F_MapEvents:
 
 	db 0 ; bg events
 
-	db 8 ; object events
+	db 7 ; object events
 	object_event  9,  8, SPRITE_BYRON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_OLIVINE_LIGHTHOUSE_JASMINE
-	object_event  8,  9, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, EVENT_LIGHTHOUSE_MONSTER
+	object_event  8,  9, SPRITE_AMPHAROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, EVENT_LIGHTHOUSE_MONSTER
 	object_event  3,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OlivineLighthouse6FSuperPotion, EVENT_OLIVINE_LIGHTHOUSE_6F_SUPER_POTION
 	object_event  9, 10, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_LIGHTHOUSE_MIYAMOTO
-	object_event  9, 15, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LIGHTHOUSE6F_RIVAL1
-	object_event  9, 15, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LIGHTHOUSE6F_RIVAL2
+	object_event  9, 15, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LIGHTHOUSE6F_RIVAL1
 	object_event  9, 15, SPRITE_SHERLES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LIGHTHOUSE6F_SHERLES
-	object_event  8,  6, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, EVENT_LIGHTHOUSE_MONSTER2
+	object_event  8,  6, SPRITE_AMPHAROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, EVENT_LIGHTHOUSE_MONSTER2

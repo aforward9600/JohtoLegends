@@ -2,8 +2,7 @@
 	const OLIVINELIGHTHOUSE1F_ROCKETM1
 	const OLIVINELIGHTHOUSE1F_ROCKETM2
 	const OLIVINELIGHTHOUSE1F_SHERLES
-	const OLIVINELIGHTHOUSE1F_KRIS ; if Male
-	const OLIVINELIGHTHOUSE1F_CHRIS ; if Female
+	const OLIVINELIGHTHOUSE1F_RIVAL
 	const OLIVINELIGHTHOUSE1F_OFFICER
 
 OlivineLighthouse1F_MapScripts:
@@ -35,51 +34,46 @@ LeftRival:
 	turnobject PLAYER, UP
 	special FadeOutMusic
 	pause 10
-	appear OLIVINELIGHTHOUSE1F_KRIS
-	playmusic MUSIC_RIVAL_ENCOUNTER
-	applymovement OLIVINELIGHTHOUSE1F_KRIS, RivalMovesUp1
-	turnobject OLIVINELIGHTHOUSE1F_KRIS, LEFT
+	appear OLIVINELIGHTHOUSE1F_RIVAL
+	playmusic MUSIC_DAHLIA_ENCOUNTER
+	applymovement OLIVINELIGHTHOUSE1F_RIVAL, RivalMovesUp1
+	turnobject OLIVINELIGHTHOUSE1F_RIVAL, LEFT
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext LighthouseHeyPlayerText
 	waitbutton
 	closetext
-	applymovement OLIVINELIGHTHOUSE1F_KRIS, RivalDisappearsMovement1
-	disappear OLIVINELIGHTHOUSE1F_KRIS
+	applymovement OLIVINELIGHTHOUSE1F_RIVAL, RivalDisappearsMovement1
+	disappear OLIVINELIGHTHOUSE1F_RIVAL
 	playsound SFX_EXIT_BUILDING
 	special RestartMapMusic
 	setscene SCENE_FINISHED
 	setevent EVENT_LIGHTHOUSE1F_RIVAL1
-	setevent EVENT_LIGHTHOUSE1F_RIVAL1
-	setevent EVENT_LIGHTHOUSE2F_RIVAL2
-	setevent EVENT_LIGHTHOUSE6F_RIVAL2
 	setevent EVENT_LIGHTHOUSE6F_RIVAL1
 	end
 
 .Female:
-	clearevent EVENT_LIGHTHOUSE1F_RIVAL2
+	clearevent EVENT_LIGHTHOUSE1F_RIVAL1
 	showemote EMOTE_SHOCK, PLAYER, 15
 	turnobject PLAYER, UP
 	special FadeOutMusic
 	pause 10
-	appear OLIVINELIGHTHOUSE1F_CHRIS
+	appear OLIVINELIGHTHOUSE1F_RIVAL
 	playmusic MUSIC_RIVAL_ENCOUNTER
-	applymovement OLIVINELIGHTHOUSE1F_CHRIS, RivalMovesUp1
-	turnobject OLIVINELIGHTHOUSE1F_CHRIS, LEFT
+	applymovement OLIVINELIGHTHOUSE1F_RIVAL, RivalMovesUp1
+	turnobject OLIVINELIGHTHOUSE1F_RIVAL, LEFT
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext LighthouseHeyPlayerText
 	waitbutton
 	closetext
-	applymovement OLIVINELIGHTHOUSE1F_CHRIS, RivalDisappearsMovement1
-	disappear OLIVINELIGHTHOUSE1F_CHRIS
+	applymovement OLIVINELIGHTHOUSE1F_RIVAL, RivalDisappearsMovement1
+	disappear OLIVINELIGHTHOUSE1F_RIVAL
 	playsound SFX_EXIT_BUILDING
 	special RestartMapMusic
 	setscene SCENE_FINISHED
-	setevent EVENT_LIGHTHOUSE1F_RIVAL2
-	setevent EVENT_LIGHTHOUSE2F_RIVAL1
+	setevent EVENT_LIGHTHOUSE1F_RIVAL1
 	setevent EVENT_LIGHTHOUSE6F_RIVAL1
-	setevent EVENT_LIGHTHOUSE6F_RIVAL2
 	end
 
 RightRival:
@@ -90,48 +84,42 @@ RightRival:
 	special FadeOutMusic
 	pause 10
 	clearevent EVENT_LIGHTHOUSE1F_RIVAL1
-	appear OLIVINELIGHTHOUSE1F_KRIS
-	playmusic MUSIC_RIVAL_ENCOUNTER
-	applymovement OLIVINELIGHTHOUSE1F_KRIS, RivalMovesUp2
+	appear OLIVINELIGHTHOUSE1F_RIVAL
+	playmusic MUSIC_DAHLIA_ENCOUNTER
+	applymovement OLIVINELIGHTHOUSE1F_RIVAL, RivalMovesUp2
 	opentext
 	writetext LighthouseHeyPlayerText
 	waitbutton
 	closetext
-	applymovement OLIVINELIGHTHOUSE1F_KRIS, RivalDisappearsMovement2
-	disappear OLIVINELIGHTHOUSE1F_KRIS
+	applymovement OLIVINELIGHTHOUSE1F_RIVAL, RivalDisappearsMovement2
+	disappear OLIVINELIGHTHOUSE1F_RIVAL
 	playsound SFX_EXIT_BUILDING
 	special RestartMapMusic
 	setscene SCENE_FINISHED
 	setevent EVENT_LIGHTHOUSE1F_RIVAL1
-	setevent EVENT_LIGHTHOUSE1F_RIVAL1
-	setevent EVENT_LIGHTHOUSE2F_RIVAL2
-	setevent EVENT_LIGHTHOUSE6F_RIVAL2
 	setevent EVENT_LIGHTHOUSE6F_RIVAL1
 	end
 
 .Female2:
-	clearevent EVENT_LIGHTHOUSE1F_RIVAL2
+	clearevent EVENT_LIGHTHOUSE1F_RIVAL1
 	showemote EMOTE_SHOCK, PLAYER, 15
 	turnobject PLAYER, UP
 	special FadeOutMusic
 	pause 10
-	appear OLIVINELIGHTHOUSE1F_CHRIS
+	appear OLIVINELIGHTHOUSE1F_RIVAL
 	playmusic MUSIC_RIVAL_ENCOUNTER
-	applymovement OLIVINELIGHTHOUSE1F_CHRIS, RivalMovesUp2
+	applymovement OLIVINELIGHTHOUSE1F_RIVAL, RivalMovesUp2
 	opentext
 	writetext LighthouseHeyPlayerText
 	waitbutton
 	closetext
-	applymovement OLIVINELIGHTHOUSE1F_CHRIS, RivalDisappearsMovement2
-	disappear OLIVINELIGHTHOUSE1F_CHRIS
+	applymovement OLIVINELIGHTHOUSE1F_RIVAL, RivalDisappearsMovement2
+	disappear OLIVINELIGHTHOUSE1F_RIVAL
 	playsound SFX_EXIT_BUILDING
 	special RestartMapMusic
 	setscene SCENE_FINISHED
-	setevent EVENT_LIGHTHOUSE1F_RIVAL2
-	setevent EVENT_LIGHTHOUSE1F_RIVAL2
-	setevent EVENT_LIGHTHOUSE2F_RIVAL1
+	setevent EVENT_LIGHTHOUSE1F_RIVAL1
 	setevent EVENT_LIGHTHOUSE6F_RIVAL1
-	setevent EVENT_LIGHTHOUSE6F_RIVAL2
 	end
 
 OlivineLighthouse1FRocket1Script:
@@ -317,10 +305,9 @@ OlivineLighthouse1F_MapEvents:
 	db 1 ; bg events
 	bg_event 10,  1, BGEVENT_READ, ElevatorScript
 
-	db 6 ; object events
+	db 5 ; object events
 	object_event 17,  6, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, OlivineLighthouse1FRocket1Script, EVENT_LIGHTHOUSE_ROCKETS
 	object_event  2,  5, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, OlivineLighthouse1FRocket2Script, EVENT_LIGHTHOUSE_ROCKETS
 	object_event 15, 12, SPRITE_SHERLES, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineLighthouse1FSherlesScript, EVENT_LIGHTHOUSE_SHERLES
-	object_event  3,  5, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LIGHTHOUSE1F_RIVAL1
-	object_event  3,  5, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LIGHTHOUSE1F_RIVAL2
+	object_event  3,  5, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LIGHTHOUSE1F_RIVAL1
 	object_event  6,  2, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineLighthouse1FOfficer, EVENT_LIGHTHOUSE_SHERLES

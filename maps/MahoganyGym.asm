@@ -283,7 +283,7 @@ GymGuyStopsYou1Script:
 	applymovement MAHOGANYGYM_GYM_GUY, GoesBackMovement1
 	turnobject MAHOGANYGYM_GYM_GUY, DOWN
 	setscene SCENE_DEFAULT
-	clearevent EVENT_RIVAL_AT_LAKE_OF_RAGE_2
+	clearevent EVENT_RIVAL_AT_LAKE_OF_RAGE_1
 	clearevent EVENT_LAKE_OF_RAGE_MIYAMOTO
 	end
 
@@ -312,7 +312,7 @@ GymGuyStopsYou2Script:
 	applymovement MAHOGANYGYM_GYM_GUY, GoesBackMovement2
 	turnobject MAHOGANYGYM_GYM_GUY, DOWN
 	setscene SCENE_DEFAULT
-	clearevent EVENT_RIVAL_AT_LAKE_OF_RAGE_2
+	clearevent EVENT_RIVAL_AT_LAKE_OF_RAGE_1
 	clearevent EVENT_LAKE_OF_RAGE_MIYAMOTO
 	end
 

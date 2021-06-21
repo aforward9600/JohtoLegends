@@ -98,4 +98,5 @@ const_value = -1
 	const SPAWN_NEW_BARK
 	const SPAWN_MT_SILVER
 	const SPAWN_FAST_SHIP
+	const SPAWN_UNKNOWN
 NUM_SPAWNS EQU const_value

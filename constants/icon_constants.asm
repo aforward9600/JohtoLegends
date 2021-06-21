@@ -5,7 +5,6 @@
 	const ICON_JIGGLYPUFF
 	const ICON_DIGLETT
 	const ICON_PIKACHU
-	const ICON_STARYU
 	const ICON_FISH
 	const ICON_BIRD
 	const ICON_MONSTER
@@ -161,6 +160,7 @@
 	const ICON_KINGDRA
 	const ICON_GOLDEEN
 	const ICON_SEAKING
+	const ICON_STARYU
 	const ICON_STARMIE
 	const ICON_MIME__JR
 	const ICON_MR__MIME

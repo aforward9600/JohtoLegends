@@ -203,3 +203,11 @@ SCENE_FINISHED EQU 1
 ;wEcruteakCitySceneID
 	const_def 1
 	const SCENE_ECRUTEAK_MOTHER
+
+;wRadioTower1FSceneID
+	const_def 1
+	const SCENE_RADIOTOWER1F_DIRECTOR
+
+;wRoute34SceneID
+	const_def 1
+	const SCENE_ROUTE_34_NINJA

@@ -1,7 +1,6 @@
 	object_const_def ; object_event constants
 	const ROUTE38ECRUTEAKGATE_OFFICER
-	const ROUTE38ECRUTEAKGATE_KRIS ; if Male
-	const ROUTE38ECRUTEAKGATE_CHRIS ; if Female
+	const ROUTE38ECRUTEAKGATE_RIVAL
 
 Route38EcruteakGate_MapScripts:
 	db 2 ; scene scripts
@@ -23,12 +22,12 @@ Route38EcruteakGateRivalScript:
 	jumptextfaceplayer Route38EcruteakRivalText
 
 EcruteakGateRival1:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female1
 	special FadeOutMusic
 	pause 10
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female1
 	playmusic MUSIC_DAHLIA_ENCOUNTER
-	applymovement ROUTE38ECRUTEAKGATE_KRIS, Movement1
+	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement1
 	opentext
 	checkevent EVENT_GOT_EEVEE
 	iftrue .RivalBattle1
@@ -36,19 +35,18 @@ EcruteakGateRival1:
 	waitbutton
 	closetext
 	applymovement PLAYER, MovementBack
-	applymovement ROUTE38ECRUTEAKGATE_KRIS, Movement2
-	turnobject ROUTE38ECRUTEAKGATE_KRIS, RIGHT
+	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement2
+	turnobject ROUTE38ECRUTEAKGATE_RIVAL, RIGHT
 	special FadeOutMusic
 	pause 10
 	special RestartMapMusic
 	waitsfx
 	playmapmusic
 	end
+
 .Female1:
-	special FadeOutMusic
-	pause 10
 	playmusic MUSIC_RIVAL_ENCOUNTER
-	applymovement ROUTE38ECRUTEAKGATE_CHRIS, Movement1
+	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement1
 	opentext
 	checkevent EVENT_GOT_EEVEE
 	iftrue .RivalBattle1
@@ -56,12 +54,13 @@ EcruteakGateRival1:
 	waitbutton
 	closetext
 	applymovement PLAYER, MovementBack
-	applymovement ROUTE38ECRUTEAKGATE_CHRIS, Movement2
-	turnobject ROUTE38ECRUTEAKGATE_CHRIS, RIGHT
+	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement2
+	turnobject ROUTE38ECRUTEAKGATE_RIVAL, RIGHT
 	special FadeOutMusic
 	pause 10
 	special RestartMapMusic
 	waitsfx
+	playmapmusic
 	end
 
 .RivalBattle1:
@@ -73,7 +72,7 @@ EcruteakGateRival1:
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .Larvitar
 	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
-	setlasttalked ROUTE38ECRUTEAKGATE_KRIS
+	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
 	loadtrainer RIVAL3, RIVAL3_B_LARVITAR
 	startbattle
 	dontrestartmapmusic
@@ -82,7 +81,7 @@ EcruteakGateRival1:
 
 .Larvitar:
 	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
-	setlasttalked ROUTE38ECRUTEAKGATE_KRIS
+	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
 	loadtrainer RIVAL3, RIVAL3_B_DRATINI
 	startbattle
 	dontrestartmapmusic
@@ -95,9 +94,9 @@ EcruteakGateRival1:
 	writetext YouWonAgainText
 	waitbutton
 	closetext
-	applymovement ROUTE38ECRUTEAKGATE_KRIS, DahliaLeavesMovement
+	applymovement ROUTE38ECRUTEAKGATE_RIVAL, DahliaLeavesMovement
 	playsound SFX_EXIT_BUILDING
-	disappear ROUTE38ECRUTEAKGATE_KRIS
+	disappear ROUTE38ECRUTEAKGATE_RIVAL
 	setevent EVENT_ECRUTEAK_GATE_RIVAL_1
 	setscene SCENE_DEFAULT
 	waitsfx
@@ -108,7 +107,7 @@ EcruteakGateRival1:
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .Larvitar2
 	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
-	setlasttalked ROUTE38ECRUTEAKGATE_CHRIS
+	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
 	loadtrainer RIVAL4, RIVAL4_B_LARVITAR
 	startbattle
 	dontrestartmapmusic
@@ -117,7 +116,7 @@ EcruteakGateRival1:
 
 .Larvitar2:
 	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
-	setlasttalked ROUTE38ECRUTEAKGATE_CHRIS
+	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
 	loadtrainer RIVAL4, RIVAL4_B_DRATINI
 	startbattle
 	dontrestartmapmusic
@@ -130,22 +129,22 @@ EcruteakGateRival1:
 	writetext YouWonAgainText
 	waitbutton
 	closetext
-	applymovement ROUTE38ECRUTEAKGATE_CHRIS, DahliaLeavesMovement
+	applymovement ROUTE38ECRUTEAKGATE_RIVAL, DahliaLeavesMovement
 	playsound SFX_EXIT_BUILDING
-	disappear ROUTE38ECRUTEAKGATE_CHRIS
-	setevent EVENT_ECRUTEAK_GATE_RIVAL_2
+	disappear ROUTE38ECRUTEAKGATE_RIVAL
+	setevent EVENT_ECRUTEAK_GATE_RIVAL_1
 	setscene SCENE_DEFAULT
 	waitsfx
 	playmapmusic
 	end
 
 EcruteakGateRival2:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female2
 	special FadeOutMusic
 	pause 10
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female2
 	playmusic MUSIC_DAHLIA_ENCOUNTER
-	applymovement ROUTE38ECRUTEAKGATE_KRIS, Movement3
+	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement3
 	opentext
 	checkevent EVENT_GOT_EEVEE
 	iftrue .RivalBattle2
@@ -153,8 +152,8 @@ EcruteakGateRival2:
 	waitbutton
 	closetext
 	applymovement PLAYER, MovementBack
-	applymovement ROUTE38ECRUTEAKGATE_KRIS, Movement4
-	turnobject ROUTE38ECRUTEAKGATE_KRIS, RIGHT
+	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement4
+	turnobject ROUTE38ECRUTEAKGATE_RIVAL, RIGHT
 	special FadeOutMusic
 	pause 10
 	special RestartMapMusic
@@ -162,10 +161,8 @@ EcruteakGateRival2:
 	playmapmusic
 	end
 .Female2:
-	special FadeOutMusic
-	pause 10
 	playmusic MUSIC_RIVAL_ENCOUNTER
-	applymovement ROUTE38ECRUTEAKGATE_CHRIS, Movement3
+	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement3
 	opentext
 	checkevent EVENT_GOT_EEVEE
 	iftrue .RivalBattle2
@@ -173,8 +170,8 @@ EcruteakGateRival2:
 	waitbutton
 	closetext
 	applymovement PLAYER, MovementBack
-	applymovement ROUTE38ECRUTEAKGATE_CHRIS, Movement4
-	turnobject ROUTE38ECRUTEAKGATE_CHRIS, RIGHT
+	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement4
+	turnobject ROUTE38ECRUTEAKGATE_RIVAL, RIGHT
 	special FadeOutMusic
 	pause 10
 	special RestartMapMusic
@@ -191,7 +188,7 @@ EcruteakGateRival2:
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .Larvitar3
 	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
-	setlasttalked ROUTE38ECRUTEAKGATE_KRIS
+	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
 	loadtrainer RIVAL3, RIVAL3_B_LARVITAR
 	startbattle
 	dontrestartmapmusic
@@ -200,7 +197,7 @@ EcruteakGateRival2:
 
 .Larvitar3:
 	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
-	setlasttalked ROUTE38ECRUTEAKGATE_KRIS
+	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
 	loadtrainer RIVAL3, RIVAL3_B_DRATINI
 	startbattle
 	dontrestartmapmusic
@@ -213,9 +210,9 @@ EcruteakGateRival2:
 	writetext YouWonAgainText
 	waitbutton
 	closetext
-	applymovement ROUTE38ECRUTEAKGATE_KRIS, DahliaLeavesMovement
+	applymovement ROUTE38ECRUTEAKGATE_RIVAL, DahliaLeavesMovement
 	playsound SFX_EXIT_BUILDING
-	disappear ROUTE38ECRUTEAKGATE_KRIS
+	disappear ROUTE38ECRUTEAKGATE_RIVAL
 	setevent EVENT_ECRUTEAK_GATE_RIVAL_1
 	setscene SCENE_DEFAULT
 	waitsfx
@@ -226,7 +223,7 @@ EcruteakGateRival2:
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .Larvitar4
 	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
-	setlasttalked ROUTE38ECRUTEAKGATE_CHRIS
+	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
 	loadtrainer RIVAL4, RIVAL4_B_LARVITAR
 	startbattle
 	dontrestartmapmusic
@@ -235,7 +232,7 @@ EcruteakGateRival2:
 
 .Larvitar4:
 	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
-	setlasttalked ROUTE38ECRUTEAKGATE_CHRIS
+	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
 	loadtrainer RIVAL4, RIVAL4_B_DRATINI
 	startbattle
 	dontrestartmapmusic
@@ -248,10 +245,10 @@ EcruteakGateRival2:
 	writetext YouWonAgainText
 	waitbutton
 	closetext
-	applymovement ROUTE38ECRUTEAKGATE_CHRIS, DahliaLeavesMovement
+	applymovement ROUTE38ECRUTEAKGATE_RIVAL, DahliaLeavesMovement
 	playsound SFX_EXIT_BUILDING
-	disappear ROUTE38ECRUTEAKGATE_CHRIS
-	setevent EVENT_ECRUTEAK_GATE_RIVAL_2
+	disappear ROUTE38ECRUTEAKGATE_RIVAL
+	setevent EVENT_ECRUTEAK_GATE_RIVAL_1
 	setscene SCENE_DEFAULT
 	waitsfx
 	playmapmusic
@@ -421,7 +418,6 @@ Route38EcruteakGate_MapEvents:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 2 ; object events
 	object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route38EcruteakGateOfficerScript, -1
-	object_event  4,  4, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route38EcruteakGateRivalScript, EVENT_ECRUTEAK_GATE_RIVAL_1
-	object_event  4,  4, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route38EcruteakGateRivalScript, EVENT_ECRUTEAK_GATE_RIVAL_2
+	object_event  4,  4, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route38EcruteakGateRivalScript, EVENT_ECRUTEAK_GATE_RIVAL_1

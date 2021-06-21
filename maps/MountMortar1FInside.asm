@@ -12,6 +12,7 @@
 	const MOUNTMORTAR1FINSIDE_HIKER1
 	const MOUNTMORTAR1FINSIDE_HIKER2
 	const MOUNTMORTAR1FINSIDE_BOULDER_2
+	const MOUNTMORTAR1FINSIDE_YOUNGSTER
 
 MountMortar1FInside_MapScripts:
 	db 2 ; scene scripts
@@ -89,6 +90,17 @@ TrainerHikerOzzy:
 	closetext
 	end
 
+TrainerYoungsterBert:
+	trainer YOUNGSTER, ALBERT, EVENT_BEAT_YOUNGSTER_ALBERT, YoungsterBertSeenText, YoungsterBertBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext YoungsterBertAfterBattleText
+	waitbutton
+	closetext
+	end
+
 HikerStopsYou1:
 	moveobject MOUNTMORTAR1FINSIDE_HIKER1, 11, 42
 	appear MOUNTMORTAR1FINSIDE_HIKER1
@@ -136,16 +148,7 @@ HikerStopsYou2:
 	setevent EVENT_MOUNT_MORTAR_HIKER_1
 	setevent EVENT_MET_HIKER
 	setmapscene ROUTE_38_ECRUTEAK_GATE, SCENE_ECRUTEAK_GATE_RIVAL
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female2
 	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE_1
-	setevent EVENT_ECRUTEAK_GATE_RIVAL_2
-	setscene SCENE_DEFAULT
-	end
-
-.Female2:
-	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE_2
-	setevent EVENT_ECRUTEAK_GATE_RIVAL_1
 	setscene SCENE_DEFAULT
 	end
 
@@ -165,7 +168,7 @@ MountMortar1FInsideHyperPotion:
 	itemball SUPER_POTION
 
 MountMortar1FInsideNugget:
-	itemball NUGGET
+	itemball AWAKENING
 
 MountMortar1FInsideIron:
 	itemball IRON
@@ -362,6 +365,33 @@ FinallyDoneText:
 	line "kid!"
 	done
 
+YoungsterBertSeenText:
+	text "Wassup?"
+
+	para "I'm just here"
+	line "since it's nice"
+	cont "and quiet."
+
+	para "What about you?"
+	done
+
+YoungsterBertBeatenText:
+	text "Well, it's not so"
+	line "quiet now."
+	done
+
+YoungsterBertAfterBattleText:
+	text "You're heading to"
+	line "Ecruteak City?"
+
+	para "It's quite the"
+	line "traditional little"
+	cont "hamlet."
+
+	para "The buildings are"
+	line "cool-looking."
+	done
+
 MountMortar1FInside_MapEvents:
 	db 0, 0 ; filler
 
@@ -382,7 +412,7 @@ MountMortar1FInside_MapEvents:
 	db 1 ; bg events
 	bg_event 30, 11, BGEVENT_ITEM, MountMortar1FInsideHiddenMaxRepel
 
-	db 13 ; object events
+	db 14 ; object events
 	object_event  9, 12, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideRock, -1
 	object_event 35, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideEscapeRope, EVENT_MOUNT_MORTAR_1F_INSIDE_ESCAPE_ROPE
 	object_event 16, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideMaxRevive, EVENT_MOUNT_MORTAR_1F_INSIDE_MAX_REVIVE
@@ -396,3 +426,4 @@ MountMortar1FInside_MapEvents:
 	object_event 18, 46, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideHikerScript, EVENT_MOUNT_MORTAR_HIKER_1
 	object_event 28, 46, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideHikerScript, EVENT_MOUNT_MORTAR_HIKER_2
 	object_event  7,  2, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideBoulder, -1
+	object_event 31,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerYoungsterBert, -1

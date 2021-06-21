@@ -14,6 +14,7 @@ Landmarks:
 	landmark 130,  38, IcePathName
 	landmark 120,  44, Route44Name
 	landmark 108,  44, MahoganyTownName
+	landmark 109,  45, UnknownName
 	landmark 108,  36, Route43Name
 	landmark 108,  28, LakeOfRageName
 	landmark  92,  44, Route42Name
@@ -119,6 +120,7 @@ OlivineCityName:     db "Olivine¯City@"
 CianwoodCityName:    db "Cianwood¯City@"
 CliffsEdgeGateName:  db "Cliff's Edge¯Gate@"
 MahoganyTownName:    db "Mahogany¯Town@"
+UnknownName:         db "???@"
 BlackthornCityName:  db "Blackthorn¯City@"
 LakeOfRageName:      db "Lake Of¯Rage@"
 SilverCaveName:      db "Silver Cave@"

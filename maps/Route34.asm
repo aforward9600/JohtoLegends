@@ -12,12 +12,21 @@
 	const ROUTE34_COOLTRAINER_F2
 	const ROUTE34_COOLTRAINER_F3
 	const ROUTE34_POKE_BALL
+	const ROUTE34_NINJA
 
 Route34_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene1 ; SCENE_ROUTE_34_NINJA
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, .EggCheckCallback
+
+.DummyScene0:
+	end
+
+.DummyScene1:
+	end
 
 .EggCheckCallback:
 	checkflag ENGINE_DAY_CARE_MAN_HAS_EGG
@@ -492,6 +501,51 @@ Route34HiddenRareCandy:
 Route34HiddenSuperPotion:
 	hiddenitem SUPER_POTION, EVENT_ROUTE_34_HIDDEN_SUPER_POTION
 
+NinjaAmbushesYou1:
+	special FadeOutMusic
+	applymovement PLAYER, PlayerMoveIntoTrapMovement
+	pause 15
+	appear ROUTE34_NINJA
+	applymovement ROUTE34_NINJA, NinjaAmbushesYou1Movement
+	turnobject PLAYER, UP
+	special HealParty
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	takeitem RAINBOW_WING
+	iffalse .TakeSilverWing
+	pause 45
+	warp TEAM_ROCKET_BASE_JAIL, 5, 6
+	end
+
+.TakeSilverWing:
+	takeitem SILVER_WING
+	pause 45
+	warp TEAM_ROCKET_BASE_JAIL, 5, 6
+	end
+
+NinjaAmbushesYou2:
+	special FadeOutMusic
+	applymovement PLAYER, PlayerMoveIntoTrapMovement
+	pause 15
+	appear ROUTE34_NINJA
+	applymovement ROUTE34_NINJA, NinjaAmbushesYou2Movement
+	turnobject PLAYER, UP
+	special HealParty
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	takeitem RAINBOW_WING
+	iffalse .TakeSilverWing2
+	pause 45
+	warp TEAM_ROCKET_BASE_JAIL, 5, 6
+	end
+
+.TakeSilverWing2:
+	takeitem SILVER_WING
+	pause 45
+	warp TEAM_ROCKET_BASE_JAIL, 5, 6
+	end
+
+
 Route34MovementData_DayCareManWalksBackInside:
 	slow_step LEFT
 	slow_step LEFT
@@ -504,6 +558,23 @@ Route34MovementData_DayCareManWalksBackInside_WalkAroundPlayer:
 	slow_step LEFT
 	slow_step UP
 	slow_step UP
+	step_end
+
+PlayerMoveIntoTrapMovement:
+	step LEFT
+	step_end
+
+NinjaAmbushesYou1Movement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+NinjaAmbushesYou2Movement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
 	step_end
 
 YoungsterSamuelSeenText:
@@ -770,7 +841,9 @@ Route34_MapEvents:
 	warp_event 11, 15, DAY_CARE, 2
 	warp_event 13, 15, DAY_CARE, 3
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event 10, 14, SCENE_ROUTE_34_NINJA, NinjaAmbushesYou1
+	coord_event 10, 15, SCENE_ROUTE_34_NINJA, NinjaAmbushesYou2
 
 	db 5 ; bg events
 	bg_event 12,  6, BGEVENT_READ, Route34Sign
@@ -779,12 +852,12 @@ Route34_MapEvents:
 	bg_event  8, 32, BGEVENT_ITEM, Route34HiddenRareCandy
 	bg_event 17, 19, BGEVENT_ITEM, Route34HiddenSuperPotion
 
-	db 13 ; object events
+	db 14 ; object events
 	object_event 13,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 5, TrainerCamperTodd1, -1
 	object_event 15, 32, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterSamuel, -1
 	object_event 11, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterIan, -1
 	object_event 10, 26, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerGina1, -1
-	object_event  9, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OfficerKeithScript, -1
+	object_event  9, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OfficerKeithScript, EVENT_ROUTE_34_OFFICER
 	object_event 18, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmBrandon, -1
 	object_event 15, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Outside, EVENT_DAY_CARE_MAN_ON_ROUTE_34
 	object_event 14, 18, SPRITE_DAY_CARE_MON_1, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareMon1Script, EVENT_DAY_CARE_MON_1
@@ -793,3 +866,4 @@ Route34_MapEvents:
 	object_event  3, 48, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfJenn, -1
 	object_event  6, 51, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfKate, -1
 	object_event  7, 30, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route34Nugget, EVENT_ROUTE_34_NUGGET
+	object_event  9, 10, SPRITE_NINJA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_34_NINJA

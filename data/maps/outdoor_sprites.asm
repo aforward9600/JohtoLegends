@@ -240,15 +240,14 @@ MahoganyGroupSprites:
 LakeOfRageGroupSprites:
 ; Route43, LakeofRage
 	db SPRITE_MIYAMOTO
-	db SPRITE_KRIS
+	db SPRITE_RIVAL
 	db SPRITE_SUPER_NERD
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_FISHER
 	db SPRITE_POKEFAN_M
 	db SPRITE_LASS
 	db SPRITE_YOUNGSTER
-	db SPRITE_CHRIS
-	; 9 of 9 walking sprites
+	; 8 of 9 walking sprites
 	db SPRITE_GYARADOS
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
@@ -303,7 +302,7 @@ FastShipGroupSprites:
 	db SPRITE_TWIN
 	db SPRITE_MIYAMOTO
 	db SPRITE_RIVAL
-	; 7 of max 9 walking sprites
+	; 9 of max 9 walking sprites
 	db SPRITE_HO_OH
 	db SPRITE_FAIRY
 	db SPRITE_ROCK

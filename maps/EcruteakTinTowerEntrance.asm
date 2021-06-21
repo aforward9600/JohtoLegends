@@ -26,6 +26,8 @@ EcruteakTinTowerEntrance_MapScripts:
 	end
 
 .InitializeSages:
+	checkevent EVENT_TIN_TOWER_ENTRANCE_ROCKET
+	iffalse .MoveSage
 	checkevent EVENT_FOUGHT_SUICUNE
 	iftrue .DontBlockTower
 	checkevent EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER
@@ -46,6 +48,10 @@ EcruteakTinTowerEntrance_MapScripts:
 
 .DontBlockTower:
 	clearevent EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE
+	return
+
+.MoveSage:
+	moveobject ECRUTEAKTINTOWERENTRANCE_SAGE1, 5, 6
 	return
 
 EcruteakTinTowerEntrance_CoordEvent1:
@@ -515,7 +521,7 @@ HoldItRightThereText:
 	cont "sacred sight."
 
 	para "You chased him"
-	line "correct?"
+	line "out, correct?"
 
 	para "I thank you."
 

@@ -2,6 +2,7 @@
 	const DAYCARE_GRAMPS
 	const DAYCARE_GRANNY
 	const DAYCARE_MR_POKEMON
+	const DAYCARE_RIVAL
 
 DayCare_MapScripts:
 	db 0 ; scene scripts
@@ -72,11 +73,17 @@ DayCareLadyScript:
 	end
 
 DayCareMrPokemon:
+	checkevent EVENT_TALKED_TO_MR_POKEMON_AT_DAY_CARE
+	iftrue .PerhapsIllSeeYouLater
 	opentext
 	writetext DayCareMrPokemonText
 	waitbutton
 	closetext
 	faceplayer
+	checkevent EVENT_GOT_RAINBOW_WING
+	iftrue .LegendaryPokemon
+	checkevent EVENT_GOT_SILVER_WING
+	iftrue .LegendaryPokemon
 	opentext
 	writetext DayCareMrPokemonBusyText
 	waitbutton
@@ -84,8 +91,79 @@ DayCareMrPokemon:
 	turnobject DAYCARE_MR_POKEMON, RIGHT
 	end
 
+.LegendaryPokemon:
+	opentext
+	writetext HmWhatIsThatText
+	waitbutton
+	closetext
+	pause 15
+	playsound SFX_ENTER_DOOR
+	appear DAYCARE_RIVAL
+	applymovement DAYCARE_RIVAL, DayCareRivalMovement1
+	readvar VAR_FACING
+	ifequal UP, .DayCareRival1
+	ifequal RIGHT, .DayCareRival2
+
+.DayCareRival1:
+	turnobject DAYCARE_RIVAL, UP
+.DayCareRival2:
+	opentext
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DracoMrPokemon
+	writetext DahliaMrPokemonText
+	waitbutton
+	closetext
+	sjump MrPokemonLegendary
+
+.DracoMrPokemon:
+	writetext DracoMrPokemonText
+	waitbutton
+	closetext
+	sjump MrPokemonLegendary
+
+.PerhapsIllSeeYouLater:
+	jumptextfaceplayer PerhapsIllSeeYouLaterText
+
+MrPokemonLegendary:
+	opentext
+	writetext MrPokemonLegendaryText
+	waitbutton
+	closetext
+	setevent EVENT_TALKED_TO_MR_POKEMON_AT_DAY_CARE
+	setevent EVENT_GOLDENROD_GYM_RIVAL_1
+	setmapscene ROUTE_34, SCENE_ROUTE_34_NINJA
+	setevent EVENT_ROUTE_34_OFFICER
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DayCareDracoFarewell
+	opentext
+	writetext DayCareDahliaFarewellText
+	waitbutton
+	closetext
+	applymovement DAYCARE_RIVAL, DayCareRivalMovement2
+	disappear DAYCARE_RIVAL
+	playsound SFX_EXIT_BUILDING
+	end
+
+.DayCareDracoFarewell:
+	opentext
+	writetext DayCareDracoFarewellText
+	waitbutton
+	closetext
+	applymovement DAYCARE_RIVAL, DayCareRivalMovement2
+	disappear DAYCARE_RIVAL
+	playsound SFX_EXIT_BUILDING
+	end
+
 DayCareBookshelf:
 	jumpstd difficultbookshelf
+
+DayCareRivalMovement1:
+	step RIGHT
+	step_end
+
+DayCareRivalMovement2:
+	step LEFT
+	step_end
 
 Text_GrampsLookingForYou:
 	text "Gramps was looking"
@@ -169,7 +247,7 @@ DayCareText_PartyFull:
 
 DayCareMrPokemonText:
 	text "So you're saying"
-	line "these eggs are..."
+	line "these eggs are…"
 	done
 
 DayCareMrPokemonBusyText:
@@ -177,6 +255,168 @@ DayCareMrPokemonBusyText:
 	line "trying to have a"
 	cont "conversation right"
 	cont "now."
+	done
+
+HmWhatIsThatText:
+	text "Excuse me, I'm"
+	line "trying to have a"
+	cont "convers…"
+
+	para "…Hm?"
+
+	para "W-what is that you"
+	line "have there?"
+
+	para "That wing…"
+
+	para "Is that what I"
+	line "think it is?"
+
+	para "…It is! It is!"
+
+	para "What you hold here"
+	line "is a feather from"
+	cont "a legendary #-"
+	cont "mon!"
+
+	para "What would you"
+	line "trade it for?!"
+
+	para "I have plenty of"
+	line "of rare objects!"
+
+	para "…Pardon?"
+
+	para "You don't want to"
+	line "part with it?"
+
+	para "How disappointing…"
+
+	para "You should have"
+	line "said so sooner…"
+	done
+
+DahliaMrPokemonText:
+	text "Dahlia: Hey"
+	line "<PLAYER>!"
+
+	para "You found Mr."
+	line "#mon!"
+
+	para "Have you found"
+	line "anything out?"
+
+	para "…A legendary #-"
+	line "mon?!"
+
+	para "Awesome!"
+
+	para "Mr. #mon, can"
+	line "you tell me about"
+	cont "my feater as well?"
+	done
+
+DracoMrPokemonText:
+	text "Draco: Hey"
+	line "<PLAYER>!"
+
+	para "You found Mr."
+	line "#mon!"
+
+	para "Have you found"
+	line "anything out?"
+
+	para "…A legendary #-"
+	line "mon?!"
+
+	para "Awesome!"
+
+	para "Mr. #mon, can"
+	line "you tell me about"
+	cont "my feater as well?"
+	done
+
+MrPokemonLegendaryText:
+	text "Y-you have one as"
+	line "well?!"
+
+	para "Where did you get"
+	line "these?!"
+
+	para "…A man at the"
+	line "Goldenrod Tower?"
+
+	para "…Of course, I"
+	line "should have known."
+
+	para "That selfish old"
+	line "geezer never let"
+	cont "me even make an"
+	cont "offer on his rare"
+	cont "collection."
+
+	para "I may as well give"
+	line "you some info on"
+	cont "those wings, but"
+	cont "my memory is a"
+	cont "little hazy."
+
+	para "This Rainbow Wing"
+	line "belonged to Ho-Oh,"
+	cont "and this Silver"
+	cont "Wing belonged to"
+	cont "Lugia."
+
+	para "I'm afraid that"
+	line "if you want to"
+	cont "learn more than"
+	cont "that, then you'll"
+	cont "have to talk with"
+	cont "an old man at the"
+	cont "Bell Tower in"
+	cont "Ecruteak City."
+
+	para "Nobody knows more"
+	line "about the legends"
+	cont "than the monks of"
+	cont "Bell Tower."
+
+	para "At least I got to"
+	line "see these wings"
+	cont "in person."
+
+	para "Thank you for"
+	line "that."
+	done
+
+DayCareDahliaFarewellText:
+	text "Dahlia: So, Bell"
+	line "Tower, huh?"
+
+	para "I'm off then!"
+
+	para "Thank you, Mr."
+	line "#mon!"
+	done
+
+DayCareDracoFarewellText:
+	text "Draco: So, Bell"
+	line "Tower, huh?"
+
+	para "I'm off then!"
+
+	para "Thank you, Mr."
+	line "#mon!"
+	done
+
+PerhapsIllSeeYouLaterText:
+	text "Come see me at my"
+	line "house on Route 30"
+	cont "sometime."
+
+	para "Especially if you"
+	line "find anything you"
+	cont "want to trade."
 	done
 
 DayCare_MapEvents:
@@ -194,7 +434,8 @@ DayCare_MapEvents:
 	bg_event  0,  1, BGEVENT_READ, DayCareBookshelf
 	bg_event  1,  1, BGEVENT_READ, DayCareBookshelf
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Inside, EVENT_DAY_CARE_MAN_IN_DAY_CARE
 	object_event  5,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DayCareLadyScript, -1
 	object_event  2,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareMrPokemon, EVENT_DAY_CARE_MR_POKEMON
+	object_event  0,  5, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DAY_CARE_RIVAL

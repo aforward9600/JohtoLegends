@@ -62,10 +62,19 @@ GoldenrodGymMiltonScript:
 	end
 
 .GotAttract:
+	checkevent EVENT_GOLDENROD_GYM_RIVAL_1
+	iffalse .ToughKid
 	writetext MiltonSisterText
 	waitbutton
 .NoRoomForAttract:
 	closetext
+	end
+
+.ToughKid:
+	writetext AsToughAsYouAreText
+	waitbutton
+	closetext
+	turnobject GOLDENRODGYM_MILTON, DOWN
 	end
 
 GoldenrodRockets:
@@ -73,6 +82,15 @@ GoldenrodRockets:
 
 GoldenrodGymActivateRockets:
 	jumpstd radiotowerrockets
+
+GoldenrodGymRivalScript:
+	faceplayer
+	opentext
+	writetext GoldenrodGymRivalText
+	waitbutton
+	closetext
+	turnobject GOLDENRODGYM_DAHLIA, UP
+	end
 
 TrainerBreederSarah:
 	trainer BREEDER, SARAH, EVENT_BEAT_BREEDER_SARAH, BreederSarahSeenText, BreederSarahBeatenText, 0, .Script
@@ -136,16 +154,30 @@ GoldenrodGymGuyScript:
 	end
 
 GoldenrodGymStatue:
+	checkflag EVENT_ROCKET_JAIL_RIVAL
+	iftrue .RivalBeatGym
 	checkflag ENGINE_PLAINBADGE
 	iftrue .Beaten
-	jumpstd gymstatue1
+	jumpstd gymstatue4
 .Beaten:
+	gettrainername STRING_BUFFER_4, MILTON, MILTON1
+	jumpstd gymstatue3
+.RivalBeatGym:
 	gettrainername STRING_BUFFER_4, MILTON, MILTON1
 	jumpstd gymstatue2
 
 TowerInvaded1:
+	moveobject, GOLDENRODGYM_DAHLIA, 3, 17
 	playsound SFX_ENTER_DOOR
 	appear GOLDENRODGYM_DAHLIA
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .GoldenrodGymFemale1
+	playmusic MUSIC_DAHLIA_ENCOUNTER
+	sjump .FinishGoldenrodGymRival1
+
+.GoldenrodGymFemale1:
+	playmusic MUSIC_RIVAL_ENCOUNTER
+.FinishGoldenrodGymRival1:
 	applymovement GOLDENRODGYM_DAHLIA, GoldenrodGymRivalMovement1
 	turnobject GOLDENRODGYM_DAHLIA, LEFT
 	turnobject PLAYER, RIGHT
@@ -156,6 +188,7 @@ TowerInvaded1:
 	applymovement GOLDENRODGYM_DAHLIA, GoldenrodGymRivalMovement2
 	disappear GOLDENRODGYM_DAHLIA
 	playsound SFX_EXIT_BUILDING
+	special RestartMapMusic
 	setscene SCENE_DEFAULT
 	end
 
@@ -163,6 +196,14 @@ TowerInvaded2:
 	moveobject, GOLDENRODGYM_DAHLIA, 2, 17
 	playsound SFX_ENTER_DOOR
 	appear GOLDENRODGYM_DAHLIA
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .GoldenrodGymFemale2
+	playmusic MUSIC_DAHLIA_ENCOUNTER
+	sjump .FinishGoldenrodGymRival2
+
+.GoldenrodGymFemale2:
+	playmusic MUSIC_RIVAL_ENCOUNTER
+.FinishGoldenrodGymRival2:
 	applymovement GOLDENRODGYM_DAHLIA, GoldenrodGymRivalMovement1
 	turnobject GOLDENRODGYM_DAHLIA, RIGHT
 	turnobject PLAYER, LEFT
@@ -429,6 +470,15 @@ TowerIsBeingInvadedText:
 	line "over there!"
 	done
 
+GoldenrodGymRivalText:
+	text "Tauros is no joke!"
+	done
+
+AsToughAsYouAreText:
+	text "This kid is as"
+	line "tough as you are!"
+	done
+
 GoldenrodGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -451,4 +501,4 @@ GoldenrodGym_MapEvents:
 	object_event  5,  1, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBreederEmily, -1
 	object_event 18,  3, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBreederNina, -1
 	object_event  5, 15, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymGuyScript, -1
-	object_event  3, 17, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_GOLDENROD_GYM_RIVAL_1
+	object_event 11,  4, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodGymRivalScript, EVENT_GOLDENROD_GYM_RIVAL_1

@@ -869,7 +869,7 @@ YoungsterGroup:
 	dw RATTATA
 	db -1 ; end
 
-	next_list_item ; YOUNGSTER (2)
+	next_list_item ; YOUNGSTER (2) Ice Path
 	db "Timmy@", TRAINERTYPE_NORMAL
 	db 3
 	dw PIDGEY
@@ -877,12 +877,12 @@ YoungsterGroup:
 	dw RATTATA
 	db -1 ; end
 
-	next_list_item ; YOUNGSTER (3)
-	db "ALBERT@", TRAINERTYPE_NORMAL
-	db 6
+	next_list_item ; YOUNGSTER (3), Mount Mortar 1F Inside
+	db "Bert@", TRAINERTYPE_NORMAL
+	db 10
 	dw RATTATA
-	db 8
-	dw ZUBAT
+	db 11
+	dw BELLSPROUT
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (4)

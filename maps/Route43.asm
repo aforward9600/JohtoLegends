@@ -113,7 +113,7 @@ CamperGarretAfterBattleText:
 	text "It doesn't matter"
 	line "how weak I am."
 
-	para "she still loves"
+	para "She still loves"
 	line "me."
 	done
 
@@ -236,7 +236,7 @@ Route43Sign1Text:
 	text "Route 43"
 
 	para "Lake Of Rage -"
-	line "MAHOGANY TOWN"
+	line "Mahogany Town"
 	done
 
 Route43Sign2Text:
