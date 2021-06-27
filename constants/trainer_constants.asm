@@ -248,7 +248,7 @@ CHRIS EQU __enum__
 	const CARA
 
 	trainerclass BEAUTY ; 1d
-	const JULIE
+	const ASHLEY
 	const JACLYN
 	const BRENDA
 	const CASSIE
@@ -772,6 +772,8 @@ CHRIS EQU __enum__
 	trainerclass ENGINEER ; 4f
 	const HARVEY1
 	const OSWALD
+	const DANTE
+	const RUDY
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

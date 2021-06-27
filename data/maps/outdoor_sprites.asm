@@ -316,8 +316,7 @@ CableClubGroupSprites:
 
 Route47GroupSprites:
 ; Route47, Route48, WildAreaOutside, WildArea
-	db SPRITE_KRIS
-	db SPRITE_CHRIS
+	db SPRITE_RIVAL
 	db SPRITE_GRAMPS
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
@@ -325,7 +324,7 @@ Route47GroupSprites:
 	db SPRITE_FISHER
 	db SPRITE_TWIN
 	db SPRITE_COOLTRAINER_F
-	; 9 of max 9 walking sprites
+	; 8 of max 9 walking sprites
 	db SPRITE_ROCK
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE

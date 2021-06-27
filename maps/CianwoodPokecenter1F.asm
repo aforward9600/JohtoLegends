@@ -3,8 +3,7 @@
 	const CIANWOODPOKECENTER1F_LASS
 	const CIANWOODPOKECENTER1F_GYM_GUY
 	const CIANWOODPOKECENTER1F_SUPER_NERD
-	const CIANWOODPOKECENTER1F_KRIS ; if Male
-	const CIANWOODPOKECENTER1F_CHRIS ; if Female
+	const CIANWOODPOKECENTER1F_RIVAL
 
 CianwoodPokecenter1F_MapScripts:
 	db 0 ; scene scripts
@@ -59,7 +58,7 @@ CianwoodGymGuyText:
 	line "muscle-heads, and"
 	cont "I'm not one to"
 
-	para "stick aournd and"
+	para "stick around and"
 	line "get beat up, even"
 	cont "if the Leader is a"
 
@@ -154,10 +153,9 @@ CianwoodPokecenter1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 6 ; object events
+	db 5 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FNurseScript, -1
 	object_event  1,  5, SPRITE_TWIN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FLassScript, -1
 	object_event  5,  3, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodGymGuyScript, -1
 	object_event  8,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FSuperNerdScript, -1
-	object_event  2,  7, SPRITE_KRIS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenterRivalScript, EVENT_CIANWOOD_CITY_CENTER_RIVAL1
-	object_event  2,  7, SPRITE_CHRIS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenterRivalScript, EVENT_CIANWOOD_CITY_CENTER_RIVAL2
+	object_event  2,  7, SPRITE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenterRivalScript, EVENT_CIANWOOD_CITY_CENTER_RIVAL1

@@ -90,7 +90,7 @@ UnknownText_0x7e2a9:
 
 UnknownText_0x7e2c0:
 	text "I… have been"
-	cont "smashed…"
+	line "smashed…"
 
 	para "Speaking of which,"
 

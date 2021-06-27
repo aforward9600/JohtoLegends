@@ -14,10 +14,10 @@ Music_UnwaveringHeart:
 ; ============================================================================================================
 
 Music_UnwaveringHeart_Ch1:
+	tempo 222
 	volume $77
 	dutycycle $1
 	notetype 3, $a7
-	tempo 222
 ;Bar 1, 64
 UnwaveringHeartLoop1:
 	octave 4
@@ -249,8 +249,9 @@ UnwaveringHeartLoop1:
 	note G#, 16
 	intensity $37
 	note E_, 16
-;Bar 18, 64, 1160
-	note F#, 48
+;Bar 18, 48, 1144
+	note F#, 16
+	note __, 16
 	note __, 16
 	loopchannel 0, Music_UnwaveringHeart_Ch1
 	endchannel
@@ -258,19 +259,25 @@ UnwaveringHeartLoop1:
 ; ============================================================================================================
 
 Music_UnwaveringHeart_Ch2:
-	dutycycle $1
-	notetype 12, $a7
+	dutycycle $2
+	notetype 3, $a7
 ;Bar 1, 64
 	octave 2
 	intensity $67
 	note D_, 16
-	note __, 48 ; WARNING: Auto-Sync says: Rounded down!
+	note __, 16 ; WARNING: Auto-Sync says: Rounded down!
+	note __, 16
+	note __, 16
 ;Bar 2, 64
 	note B_, 16 ; WARNING: Auto-Sync says: Rounded down!
-	note __, 48
+	note __, 16
+	note __, 16
+	note __, 16
 ;Bar 3, 64
 	note B_, 16 ; WARNING: Auto-Sync says: Rounded down!
-	note __, 48
+	note __, 16
+	note __, 16
+	note __, 16
 ;Bar 4, 64
 	note F#, 16 ; WARNING: Auto-Sync says: Rounded down!
 	note __, 16 ; WARNING: Auto-Sync says: Rounded down!
@@ -278,16 +285,21 @@ Music_UnwaveringHeart_Ch2:
 	note __, 16
 ;Bar 5, 64
 	note B_, 16 ; WARNING: Auto-Sync says: Rounded down!
-	note __, 48
+	note __, 16
+	note __, 16
+	note __, 16
 ;Bar 6, 64
 	note A_, 16
-	note __, 48
+	note __, 16
+	note __, 16
+	note __, 16
 ;Bar 7, 64
 	note B_, 16 ; WARNING: Auto-Sync says: Rounded down!
 	note __, 48
 ;Bar 8, 64
 	note __, 16
-	note F#, 32
+	note F#, 16
+	note __, 16
 	note __, 16
 ;Bar 9, 72
 	note B_, 8
@@ -296,7 +308,10 @@ Music_UnwaveringHeart_Ch2:
 ;Bar 9, 72
 	note D_, 8
 	note A_, 8
-	note __, 56
+	note __, 16
+	note __, 16
+	note __, 16
+	note __, 8
 ;Bar 10, 64
 	note E_, 8
 	note B_, 16
@@ -311,8 +326,10 @@ Music_UnwaveringHeart_Ch2:
 	note B_, 16
 	note __, 16
 ;Bar 12, 64
-	note F#, 32
-	note E_, 32
+	note F#, 16
+	note __, 16
+	note E_, 16
+	note __, 16
 ;Bar 13, 64
 	note B_, 8
 	note F#, 8
@@ -324,8 +341,10 @@ Music_UnwaveringHeart_Ch2:
 ;Bar 14, 64
 	note C#, 12
 	note G#, 4
-	note B_, 20
-	note __, 24
+	note B_, 16
+	note __, 4
+	note __, 16
+	note __, 8
 	note C#, 4
 ;Bar 15, 64
 	note C#, 4
@@ -337,14 +356,18 @@ Music_UnwaveringHeart_Ch2:
 	note __, 12
 	note A_, 10
 ;Bar 16, 64
-	note B_, 32
-	note __, 32
+	note B_, 16
+	note __, 16
+	note __, 16
+	note __, 16
 ;Bar 17, 64
-	note A_, 32
+	note A_, 16
+	note __, 16
 	note E_, 16
 	note __, 16
-;Bar 18, 64, 1160
-	note B_, 48
+;Bar 18, 48, 1144
+	note B_, 16
+	note __, 16
 	note __, 16
 	loopchannel 0, Music_UnwaveringHeart_Ch2
 	endchannel

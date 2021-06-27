@@ -58,6 +58,16 @@ CheckOwnMonAnywhere:
 	and a
 	ret z
 
+	ld hl, wBreedMon1Species
+	ld bc, wBreedMon1OT
+	call CheckOwnMon
+	ret c ; found
+
+	ld hl, wBreedMon2Species
+	ld bc, wBreedMon2OT
+	call CheckOwnMon
+	ret c ; found
+
 	ld d, a
 	ld e, 0
 	ld hl, wPartyMon1Species

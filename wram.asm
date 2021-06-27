@@ -2689,8 +2689,12 @@ wNationalParkBugContestID::                       db
 wEcruteakCitySceneID::                            db
 wGoldenrodCitySceneID::                           db
 wRadioTower1FSceneID::                            db
+wOlivineGym1FSceneID::                            db
+wOlivineGym2FSceneID::                            db
+wOlivineGym3FSceneID::                            db
+wOlivineGym4FSceneID::                            db
 
-	ds 30
+	ds 26
 
 ; fight counts
 wJackFightCount::    db ; d9f2

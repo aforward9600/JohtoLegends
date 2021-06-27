@@ -1060,3 +1060,15 @@ GoldenrodJail_Blocks:
 
 TeamRocketBaseJail_Blocks:
 	INCBIN "maps/TeamRocketBaseJail.blk"
+
+OlivineGym1F_Blocks:
+	INCBIN "maps/OlivineGym1F.blk"
+
+OlivineGym2F_Blocks:
+	INCBIN "maps/OlivineGym2F.blk"
+
+OlivineGym3F_Blocks:
+	INCBIN "maps/OlivineGym3F.blk"
+
+OlivineGym4F_Blocks:
+	INCBIN "maps/OlivineGym4F.blk"

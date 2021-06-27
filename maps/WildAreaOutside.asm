@@ -1,6 +1,5 @@
 	object_const_def ; object_event constants
-	const WILDAREAOUTSIDE_KRIS ; if male
-	const WILDAREAOUTSIDE_CHRIS ; if female
+	const WILDAREAOUTSIDE_RIVAL
 	const WILDAREAOUTSIDE_GRAMPS
 	const WILDAREAOUTSIDE_TWIN
 
@@ -28,10 +27,10 @@ RivalWalksUpLeft:
 	iftrue .Female1
 	showemote EMOTE_SHOCK, PLAYER, 15
 	turnobject, PLAYER, DOWN
-	appear WILDAREAOUTSIDE_KRIS
+	appear WILDAREAOUTSIDE_RIVAL
 	playmusic MUSIC_DAHLIA_ENCOUNTER
-	applymovement WILDAREAOUTSIDE_KRIS, RivalMovesUp
-	turnobject WILDAREAOUTSIDE_KRIS, LEFT
+	applymovement WILDAREAOUTSIDE_RIVAL, RivalMovesUp
+	turnobject WILDAREAOUTSIDE_RIVAL, LEFT
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext HeyRivalText
@@ -40,7 +39,7 @@ RivalWalksUpLeft:
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .Larvitar1
 	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
-	setlasttalked WILDAREAOUTSIDE_KRIS
+	setlasttalked WILDAREAOUTSIDE_RIVAL
 	loadtrainer RIVAL3, RIVAL3_C_LARVITAR
 	startbattle
 	dontrestartmapmusic
@@ -49,7 +48,7 @@ RivalWalksUpLeft:
 
 .Larvitar1:
 	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
-	setlasttalked WILDAREAOUTSIDE_KRIS
+	setlasttalked WILDAREAOUTSIDE_RIVAL
 	loadtrainer RIVAL3, RIVAL3_C_DRATINI
 	startbattle
 	dontrestartmapmusic
@@ -70,18 +69,17 @@ RivalWalksUpLeft:
 	writetext ByTheWayText
 	waitbutton
 	closetext
-	turnobject WILDAREAOUTSIDE_KRIS, UP
+	turnobject WILDAREAOUTSIDE_RIVAL, UP
 	turnobject PLAYER, UP
 	opentext
 	writetext ThisIsTheWildAreaText
 	waitbutton
 	closetext
-	applymovement WILDAREAOUTSIDE_KRIS, RivalLeavesWildAreaMovement
+	applymovement WILDAREAOUTSIDE_RIVAL, RivalLeavesWildAreaMovement
 	playsound SFX_EXIT_BUILDING
-	disappear WILDAREAOUTSIDE_KRIS
+	disappear WILDAREAOUTSIDE_RIVAL
 	setevent EVENT_WILD_AREA_RIVAL_BEAT
 	clearevent EVENT_OLIVINE_GYM_JASMINE
-	setevent EVENT_WILD_AREA_5_RIVAL2
 	setevent EVENT_CIANWOOD_GYM_RIVAL1
 	setscene SCENE_DEFAULT
 	special FadeOutMusic
@@ -94,10 +92,10 @@ RivalWalksUpLeft:
 .Female1:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	turnobject, PLAYER, DOWN
-	appear WILDAREAOUTSIDE_CHRIS
+	appear WILDAREAOUTSIDE_RIVAL
 	playmusic MUSIC_RIVAL_ENCOUNTER
-	applymovement WILDAREAOUTSIDE_CHRIS, RivalMovesUp
-	turnobject WILDAREAOUTSIDE_CHRIS, LEFT
+	applymovement WILDAREAOUTSIDE_RIVAL, RivalMovesUp
+	turnobject WILDAREAOUTSIDE_RIVAL, LEFT
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext HeyRivalText
@@ -106,7 +104,7 @@ RivalWalksUpLeft:
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .Larvitar2
 	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
-	setlasttalked WILDAREAOUTSIDE_CHRIS
+	setlasttalked WILDAREAOUTSIDE_RIVAL
 	loadtrainer RIVAL4, RIVAL4_C_LARVITAR
 	startbattle
 	dontrestartmapmusic
@@ -115,7 +113,7 @@ RivalWalksUpLeft:
 
 .Larvitar2:
 	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
-	setlasttalked WILDAREAOUTSIDE_CHRIS
+	setlasttalked WILDAREAOUTSIDE_RIVAL
 	loadtrainer RIVAL4, RIVAL4_C_DRATINI
 	startbattle
 	dontrestartmapmusic
@@ -136,19 +134,18 @@ RivalWalksUpLeft:
 	writetext ByTheWayText
 	waitbutton
 	closetext
-	turnobject WILDAREAOUTSIDE_CHRIS, UP
+	turnobject WILDAREAOUTSIDE_RIVAL, UP
 	turnobject PLAYER, UP
 	opentext
 	writetext ThisIsTheWildAreaText
 	waitbutton
 	closetext
-	applymovement WILDAREAOUTSIDE_CHRIS, RivalLeavesWildAreaMovement
+	applymovement WILDAREAOUTSIDE_RIVAL, RivalLeavesWildAreaMovement
 	playsound SFX_EXIT_BUILDING
-	disappear WILDAREAOUTSIDE_CHRIS
+	disappear WILDAREAOUTSIDE_RIVAL
 	setevent EVENT_WILD_AREA_RIVAL_BEAT
 	clearevent EVENT_OLIVINE_GYM_JASMINE
-	setevent EVENT_WILD_AREA_5_RIVAL1
-	setevent EVENT_CIANWOOD_GYM_RIVAL2
+	setevent EVENT_CIANWOOD_GYM_RIVAL1
 	setscene SCENE_DEFAULT
 	special FadeOutMusic
 	pause 10
@@ -163,11 +160,11 @@ RivalWalksUpRight:
 	iftrue .Female2
 	showemote EMOTE_SHOCK, PLAYER, 15
 	turnobject, PLAYER, DOWN
-	moveobject WILDAREAOUTSIDE_KRIS, 8, 12
-	appear WILDAREAOUTSIDE_KRIS
+	moveobject WILDAREAOUTSIDE_RIVAL, 8, 12
+	appear WILDAREAOUTSIDE_RIVAL
 	playmusic MUSIC_DAHLIA_ENCOUNTER
-	applymovement WILDAREAOUTSIDE_KRIS, RivalMovesUp
-	turnobject WILDAREAOUTSIDE_KRIS, RIGHT
+	applymovement WILDAREAOUTSIDE_RIVAL, RivalMovesUp
+	turnobject WILDAREAOUTSIDE_RIVAL, RIGHT
 	turnobject PLAYER, LEFT
 	opentext
 	writetext HeyRivalText
@@ -176,7 +173,7 @@ RivalWalksUpRight:
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .Larvitar3
 	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
-	setlasttalked WILDAREAOUTSIDE_KRIS
+	setlasttalked WILDAREAOUTSIDE_RIVAL
 	loadtrainer RIVAL3, RIVAL3_C_LARVITAR
 	startbattle
 	dontrestartmapmusic
@@ -185,7 +182,7 @@ RivalWalksUpRight:
 
 .Larvitar3:
 	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
-	setlasttalked WILDAREAOUTSIDE_KRIS
+	setlasttalked WILDAREAOUTSIDE_RIVAL
 	loadtrainer RIVAL3, RIVAL3_C_DRATINI
 	startbattle
 	dontrestartmapmusic
@@ -206,18 +203,17 @@ RivalWalksUpRight:
 	writetext ByTheWayText
 	waitbutton
 	closetext
-	turnobject WILDAREAOUTSIDE_KRIS, UP
+	turnobject WILDAREAOUTSIDE_RIVAL, UP
 	turnobject PLAYER, UP
 	opentext
 	writetext ThisIsTheWildAreaText
 	waitbutton
 	closetext
-	applymovement WILDAREAOUTSIDE_KRIS, RivalLeavesMovement
+	applymovement WILDAREAOUTSIDE_RIVAL, RivalLeavesMovement
 	playsound SFX_EXIT_BUILDING
-	disappear WILDAREAOUTSIDE_KRIS
+	disappear WILDAREAOUTSIDE_RIVAL
 	setevent EVENT_WILD_AREA_RIVAL_BEAT
 	clearevent EVENT_OLIVINE_GYM_JASMINE
-	setevent EVENT_WILD_AREA_5_RIVAL2
 	setevent EVENT_CIANWOOD_GYM_RIVAL1
 	setscene SCENE_DEFAULT
 	special FadeOutMusic
@@ -229,12 +225,12 @@ RivalWalksUpRight:
 
 .Female2:
 	turnobject, PLAYER, DOWN
-	moveobject WILDAREAOUTSIDE_CHRIS, 8, 12
-	appear WILDAREAOUTSIDE_CHRIS
+	moveobject WILDAREAOUTSIDE_RIVAL, 8, 12
+	appear WILDAREAOUTSIDE_RIVAL
 	showemote EMOTE_SHOCK, PLAYER, 15
 	playmusic MUSIC_RIVAL_ENCOUNTER
-	applymovement WILDAREAOUTSIDE_CHRIS, RivalMovesUp
-	turnobject WILDAREAOUTSIDE_CHRIS, RIGHT
+	applymovement WILDAREAOUTSIDE_RIVAL, RivalMovesUp
+	turnobject WILDAREAOUTSIDE_RIVAL, RIGHT
 	turnobject PLAYER, LEFT
 	opentext
 	writetext HeyRivalText
@@ -243,7 +239,7 @@ RivalWalksUpRight:
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .Larvitar4
 	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
-	setlasttalked WILDAREAOUTSIDE_CHRIS
+	setlasttalked WILDAREAOUTSIDE_RIVAL
 	loadtrainer RIVAL4, RIVAL4_C_LARVITAR
 	startbattle
 	dontrestartmapmusic
@@ -252,7 +248,7 @@ RivalWalksUpRight:
 
 .Larvitar4:
 	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
-	setlasttalked WILDAREAOUTSIDE_CHRIS
+	setlasttalked WILDAREAOUTSIDE_RIVAL
 	loadtrainer RIVAL4, RIVAL4_C_DRATINI
 	startbattle
 	dontrestartmapmusic
@@ -273,19 +269,18 @@ RivalWalksUpRight:
 	writetext ByTheWayText
 	waitbutton
 	closetext
-	turnobject WILDAREAOUTSIDE_CHRIS, UP
+	turnobject WILDAREAOUTSIDE_RIVAL, UP
 	turnobject PLAYER, UP
 	opentext
 	writetext ThisIsTheWildAreaText
 	waitbutton
 	closetext
-	applymovement WILDAREAOUTSIDE_CHRIS, RivalLeavesWildAreaMovement
+	applymovement WILDAREAOUTSIDE_RIVAL, RivalLeavesWildAreaMovement
 	playsound SFX_EXIT_BUILDING
-	disappear WILDAREAOUTSIDE_CHRIS
+	disappear WILDAREAOUTSIDE_RIVAL
 	setevent EVENT_WILD_AREA_RIVAL_BEAT
 	clearevent EVENT_OLIVINE_GYM_JASMINE
-	setevent EVENT_WILD_AREA_5_RIVAL1
-	setevent EVENT_CIANWOOD_GYM_RIVAL2
+	setevent EVENT_CIANWOOD_GYM_RIVAL1
 	setscene SCENE_DEFAULT
 	special FadeOutMusic
 	pause 10
@@ -428,8 +423,7 @@ WildAreaOutside_MapEvents:
 	db 1 ; bg events
 	bg_event  7,  7, BGEVENT_READ, WildAreaOutsideSign
 
-	db 4 ; object events
-	object_event  9, 12, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_WILD_AREA_OUTSIDE_RIVAL1
-	object_event  9, 12, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_WILD_AREA_OUTSIDE_RIVAL2
+	db 3 ; object events
+	object_event  9, 12, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_WILD_AREA_OUTSIDE_RIVAL1
 	object_event  4, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildAreaOutsideOldManScript, -1
 	object_event 11, 11, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildAreaOutsideTwinScript, -1

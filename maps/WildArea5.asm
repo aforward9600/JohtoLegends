@@ -1,6 +1,5 @@
 	object_const_def ; object_event constants
-	const WILDAREA5_KRIS ; if Male
-	const WILDAREA5_CHRIS ; if Female
+	const WILDAREA5_RIVAL
 
 WildArea5_MapScripts:
 	db 0 ; scene scripts
@@ -37,6 +36,5 @@ WildArea5_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
-	object_event  8,  5, SPRITE_KRIS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildArea5RivalScript, EVENT_WILD_AREA_5_RIVAL1
-	object_event  8,  5, SPRITE_CHRIS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildArea5RivalScript, EVENT_WILD_AREA_5_RIVAL2
+	db 1 ; object events
+	object_event  8,  5, SPRITE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildArea5RivalScript, EVENT_WILD_AREA_5_RIVAL1

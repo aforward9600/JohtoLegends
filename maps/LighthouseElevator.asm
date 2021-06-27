@@ -12,8 +12,6 @@ LighthouseElevatorScript:
 	playsound SFX_ELEVATOR
 	earthquake 60
 	waitsfx
-	end
-
 .Done:
 	end
 

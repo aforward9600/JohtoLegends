@@ -156,15 +156,6 @@ INCBIN "data/tilesets/radio_tower_metatiles.bin"
 TilesetRadioTowerColl:
 INCLUDE "data/tilesets/radio_tower_collision.asm"
 
-TilesetUndergroundGFX:
-INCBIN "gfx/tilesets/underground.2bpp.lz"
-
-TilesetUndergroundMeta:
-INCBIN "data/tilesets/underground_metatiles.bin"
-
-TilesetUndergroundColl:
-INCLUDE "data/tilesets/underground_collision.asm"
-
 TilesetDarkCaveGFX:
 INCBIN "gfx/tilesets/dark_cave.2bpp.lz"
 
@@ -346,3 +337,12 @@ INCBIN "data/tilesets/route_47_metatiles.bin"
 
 TilesetRoute47Coll::
 INCLUDE "data/tilesets/route_47_collision.asm"
+
+TilesetUndergroundGFX:
+INCBIN "gfx/tilesets/underground.2bpp.lz"
+
+TilesetUndergroundMeta:
+INCBIN "data/tilesets/underground_metatiles.bin"
+
+TilesetUndergroundColl:
+INCLUDE "data/tilesets/underground_collision.asm"

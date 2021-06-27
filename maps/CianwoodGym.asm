@@ -7,8 +7,7 @@
 	const CIANWOODGYM_BOULDER2
 	const CIANWOODGYM_BOULDER3
 	const CIANWOODGYM_BOULDER4
-	const CIANWOODGYM_KRIS ; if Male
-	const CIANWOODGYM_CHRIS ; if Female
+	const CIANWOODGYM_RIVAL
 
 CianwoodGym_MapScripts:
 	db 2 ; scene scripts
@@ -248,94 +247,43 @@ CianwoodGymDahliaScript:
 	writetext CianwoodGymRivalText
 	waitbutton
 	closetext
-	turnobject CIANWOODGYM_KRIS, UP
-	end
-
-CianwoodGymDracoScript:
-	faceplayer
-	opentext
-	writetext CianwoodGymRivalText
-	waitbutton
-	closetext
-	turnobject CIANWOODGYM_CHRIS, UP
+	turnobject CIANWOODGYM_RIVAL, UP
 	end
 
 RivalWalksLeft:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female1
-	moveobject CIANWOODGYM_KRIS, 4, 17
+	moveobject CIANWOODGYM_RIVAL, 4, 17
 	playsound SFX_ENTER_DOOR
-	appear CIANWOODGYM_KRIS
-	applymovement CIANWOODGYM_KRIS, RivalWalksUpMovement
+	appear CIANWOODGYM_RIVAL
+	applymovement CIANWOODGYM_RIVAL, RivalWalksUpMovement
 	opentext
 	writetext CianwoodGymHeyThereText
 	waitbutton
 	closetext
-	applymovement CIANWOODGYM_KRIS, RivalWalksLeftMovement
-	disappear CIANWOODGYM_KRIS
-	moveobject CIANWOODGYM_KRIS, 5, 2
-	appear CIANWOODGYM_KRIS
+	applymovement CIANWOODGYM_RIVAL, RivalWalksLeftMovement
+	disappear CIANWOODGYM_RIVAL
+	moveobject CIANWOODGYM_RIVAL, 5, 2
+	appear CIANWOODGYM_RIVAL
 	clearevent EVENT_CIANWOOD_GYM_RIVAL1
 	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL1
-	setevent EVENT_CLIFFS_EDGE_GATE_GUARD
-	setscene SCENE_DEFAULT
-	end
-
-.Female1:
-	moveobject CIANWOODGYM_CHRIS, 4, 17
-	playsound SFX_ENTER_DOOR
-	appear CIANWOODGYM_CHRIS
-	applymovement CIANWOODGYM_CHRIS, RivalWalksUpMovement
-	opentext
-	writetext CianwoodGymHeyThereText
-	waitbutton
-	closetext
-	applymovement CIANWOODGYM_CHRIS, RivalWalksLeftMovement
-	disappear CIANWOODGYM_CHRIS
-	moveobject CIANWOODGYM_CHRIS, 5, 2
-	appear CIANWOODGYM_CHRIS
-	clearevent EVENT_CIANWOOD_GYM_RIVAL2
-	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL2
 	setevent EVENT_CLIFFS_EDGE_GATE_GUARD
 	setscene SCENE_DEFAULT
 	end
 
 RivalWalksRight:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female2
-	moveobject CIANWOODGYM_KRIS, 5, 17
+	moveobject CIANWOODGYM_RIVAL, 5, 17
 	playsound SFX_ENTER_DOOR
-	appear CIANWOODGYM_KRIS
-	applymovement CIANWOODGYM_KRIS, RivalWalksUpMovement
+	appear CIANWOODGYM_RIVAL
+	applymovement CIANWOODGYM_RIVAL, RivalWalksUpMovement
 	opentext
 	writetext CianwoodGymHeyThereText
 	waitbutton
 	closetext
-	applymovement CIANWOODGYM_KRIS, RivalWalksRightMovement
-	disappear CIANWOODGYM_KRIS
-	moveobject CIANWOODGYM_KRIS, 5, 2
-	appear CIANWOODGYM_KRIS
+	applymovement CIANWOODGYM_RIVAL, RivalWalksRightMovement
+	disappear CIANWOODGYM_RIVAL
+	moveobject CIANWOODGYM_RIVAL, 5, 2
+	appear CIANWOODGYM_RIVAL
 	clearevent EVENT_CIANWOOD_GYM_RIVAL1
 	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL1
-	setevent EVENT_CLIFFS_EDGE_GATE_GUARD
-	setscene SCENE_DEFAULT
-	end
-
-.Female2:
-	moveobject CIANWOODGYM_CHRIS, 5, 17
-	playsound SFX_ENTER_DOOR
-	appear CIANWOODGYM_CHRIS
-	applymovement CIANWOODGYM_CHRIS, RivalWalksUpMovement
-	opentext
-	writetext CianwoodGymHeyThereText
-	waitbutton
-	closetext
-	applymovement CIANWOODGYM_CHRIS, RivalWalksRightMovement
-	disappear CIANWOODGYM_CHRIS
-	moveobject CIANWOODGYM_CHRIS, 5, 2
-	appear CIANWOODGYM_CHRIS
-	clearevent EVENT_CIANWOOD_GYM_RIVAL2
-	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL2
 	setevent EVENT_CLIFFS_EDGE_GATE_GUARD
 	setscene SCENE_DEFAULT
 	end
@@ -481,7 +429,7 @@ BlackbeltYoshiSeenText:
 	text "I break boards"
 	line "with my head!"
 
-	para "I am invincable!"
+	para "I am invincible!"
 	done
 
 BlackbeltYoshiBeatenText:
@@ -647,7 +595,7 @@ CianwoodGym_MapEvents:
 	bg_event  3, 15, BGEVENT_READ, CianwoodGymStatue
 	bg_event  6, 15, BGEVENT_READ, CianwoodGymStatue
 
-	db 10 ; object events
+	db 9 ; object events
 	object_event  3,  4, SPRITE_CHUCK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerApprenticeChuck, -1
 	object_event  2, 12, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltYoshi, -1
 	object_event  6,  9, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltNob, -1
@@ -656,5 +604,4 @@ CianwoodGym_MapEvents:
 	object_event  3,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
 	object_event  4,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
 	object_event  5,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
-	object_event  5,  2, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymDahliaScript, EVENT_CIANWOOD_GYM_RIVAL1
-	object_event  5,  2, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymDracoScript, EVENT_CIANWOOD_GYM_RIVAL2
+	object_event  5,  2, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymDahliaScript, EVENT_CIANWOOD_GYM_RIVAL1

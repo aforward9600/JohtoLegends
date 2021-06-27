@@ -41,6 +41,10 @@ ENDM
 	map_const ROUTE_38,                                    20,  9 ; 12
 	map_const ROUTE_39,                                    10, 18 ; 13
 	map_const OLIVINE_CITY,                                20, 18 ; 14
+	map_const OLIVINE_GYM_1F,                              13,  7 ; 15
+	map_const OLIVINE_GYM_2F,                               8,  7 ; 16
+	map_const OLIVINE_GYM_3F,                               9,  7 ; 17
+	map_const OLIVINE_GYM_4F,                               7,  5 ; 18
 
 	newgroup                                                      ;  2
 

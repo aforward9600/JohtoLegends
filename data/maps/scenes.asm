@@ -100,4 +100,8 @@ MapScenes::
 	scene_var ECRUTEAK_CITY,                               wEcruteakCitySceneID
 	scene_var GOLDENROD_CITY,                              wGoldenrodCitySceneID
 	scene_var RADIO_TOWER_1F,                              wRadioTower1FSceneID
+	scene_var OLIVINE_GYM_1F,                              wOlivineGym1FSceneID
+	scene_var OLIVINE_GYM_2F,                              wOlivineGym2FSceneID
+	scene_var OLIVINE_GYM_3F,                              wOlivineGym3FSceneID
+	scene_var OLIVINE_GYM_4F,                              wOlivineGym4FSceneID
 	db -1 ; end

@@ -708,3 +708,7 @@ ENDM
 	map_attributes BurnedTower2F, BURNED_TOWER_2F, $00, 0
 	map_attributes GoldenrodJail, GOLDENROD_JAIL, $00, 0
 	map_attributes TeamRocketBaseJail, TEAM_ROCKET_BASE_JAIL, $00, 0
+	map_attributes OlivineGym1F, OLIVINE_GYM_1F, $00, 0
+	map_attributes OlivineGym2F, OLIVINE_GYM_2F, $00, 0
+	map_attributes OlivineGym3F, OLIVINE_GYM_3F, $00, 0
+	map_attributes OlivineGym4F, OLIVINE_GYM_4F, $00, 0

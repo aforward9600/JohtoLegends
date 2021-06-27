@@ -545,7 +545,6 @@ NinjaAmbushesYou2:
 	warp TEAM_ROCKET_BASE_JAIL, 5, 6
 	end
 
-
 Route34MovementData_DayCareManWalksBackInside:
 	slow_step LEFT
 	slow_step LEFT

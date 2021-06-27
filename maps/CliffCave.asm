@@ -10,7 +10,7 @@ CliffCaveSuperNerdScript:
 	jumptextfaceplayer CliffCaveSuperNerdText
 
 CliffCaveSuperNerdText:
-	text "Someday, I plan on"
+	text "Someday, I'll be"
 	line "digging on down."
 
 	para "There's said to be"

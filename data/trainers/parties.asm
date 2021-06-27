@@ -12,12 +12,21 @@ SECTION "Enemy Trainer Parties 1", ROMX
 WalkerGroup:
 	next_list_item ; Walker (1)
 	db "Walker@", TRAINERTYPE_MOVES
-	db 7
-	dw HOOTHOOT
-	dw TACKLE, SAND_ATTACK, PECK, ROOST
-	db 9
-	dw MURKROW
-	dw PECK, PURSUIT, ROOST, HAZE
+	db 38
+	dw SKARMORY
+	dw AERIAL_ACE, SPIKES, STEEL_WING, ROOST
+	db 38
+	dw NOCTOWL
+	dw AIR_SLASH, REFLECT, ROOST, SHADOW_BALL
+	db 39
+	dw XATU
+	dw AIR_SLASH, AMNESIA, ROOST, PSYCHIC_M
+	db 39
+	dw HONCHKROW
+	dw FAINT_ATTACK, ROOST, WING_ATTACK, AGILITY
+	db 40
+	dw PIDGEOT
+	dw BRAVE_BIRD, FEATHERDANCE, ROOST, GIGA_IMPACT
 	db -1 ; end
 
 	end_list_items
@@ -35,8 +44,8 @@ MiltonGroup:
 	dw GIRAFARIG
 	dw PSYBEAM, SWORDS_DANCE, DOUBLE_HIT_M, STOMP
 	db 31
-	dw URSARING
-	dw SWORDS_DANCE, SLASH, PLAY_ROUGH, FAINT_ATTACK
+	dw AMBIPOM
+	dw SWORDS_DANCE, DOUBLE_HIT_M, BATON_PASS, AGILITY
 	db -1 ; end
 
 	end_list_items
@@ -44,15 +53,18 @@ MiltonGroup:
 KurtGroup:
 	next_list_item ; KURT (1)
 	db "Kurt@", TRAINERTYPE_MOVES
-	db 14
-	dw YANMA
-	dw SONICBOOM, QUICK_ATTACK, FORESIGHT, TACKLE
-	db 14
-	dw SPINARAK
-	dw POISON_STING, SCARY_FACE, ABSORB, PAYBACK
-	db 16
+	db 35
+	dw SHUCKLE
+	dw SHELL_SMASH, SPIKES, ROCK_SLIDE, X_SCISSOR
+	db 36
+	dw YANMEGA
+	dw PURSUIT, DETECT, ANCIENTPOWER, HYPER_VOICE
+	db 37
 	dw HERACROSS
-	dw HEADBUTT, AERIAL_ACE, HORN_ATTACK, ENDURE
+	dw TAKE_DOWN, MEGAHORN, BRICK_BREAK, AERIAL_ACE
+	db 38
+	dw SCIZOR
+	dw METAL_CLAW, IRON_DEFENSE, X_SCISSOR, AGILITY
 	db -1 ; end
 
 	end_list_items
@@ -304,7 +316,7 @@ PryceGroup:
 	end_list_items
 
 ByronGroup:
-	next_list_item ; BYRON (2)
+	next_list_item ; BYRON (1)
 	db "Byron@", TRAINERTYPE_MOVES
 	db 26
 	dw FORRETRESS
@@ -317,6 +329,8 @@ ByronGroup:
 	dw IRON_DEFENSE, BULLDOZE, ROCK_SLIDE, IRON_HEAD
 	db -1 ; end
 
+	next_list_item ; BYRON (2)
+	db "Byron@", TRAINERTYPE_MOVES
 	db 30
 	dw FORRETRESS
 	dw MIRROR_SHOT, SPIKES, SUBSTITUTE, REVERSAL
@@ -1936,10 +1950,10 @@ CooltrainerFGroup:
 	end_list_items
 
 BeautyGroup:
-	next_list_item ; BEAUTY (3)
-	db "JULIE@", TRAINERTYPE_NORMAL
-	db 15
-	dw SENTRET
+	next_list_item ; BEAUTY (3) Olivine Gym 2F
+	db "Ashley@", TRAINERTYPE_NORMAL
+	db 28
+	dw SKARMORY
 	db -1 ; end
 
 	next_list_item ; BEAUTY (4)
@@ -2532,7 +2546,7 @@ TeacherGroup:
 	next_list_item ; TEACHER (4)
 	db "Cadi@", TRAINERTYPE_ITEM
 	db 8
-	dw CLEFFA
+	dw HAPPINY
 	db ORAN_BERRY
 	db -1 ; end
 
@@ -4469,7 +4483,7 @@ PsychicGroup:
 	end_list_items
 
 PicnickerGroup:
-	next_list_item ; PICNICKER (1)
+	next_list_item ; PICNICKER (1) Ice Path
 	db "Haylee@", TRAINERTYPE_NORMAL
 	db 7
 	dw HOPPIP
@@ -5786,7 +5800,7 @@ BreederGroup:
 	end_list_items
 
 HexManiacGroup:
-	next_list_item ; HEX_MANIAC (1)
+	next_list_item ; HEX_MANIAC (1) Ecruteak Gym
 	db "Hilda@", TRAINERTYPE_NORMAL
 	db 14
 	dw GASTLY
@@ -5794,13 +5808,13 @@ HexManiacGroup:
 	dw CORSOLA
 	db -1 ; end
 
-	next_list_item ; HEX_MANIAC (2)
+	next_list_item ; HEX_MANIAC (2) Ecruteak Gym
 	db "Zelda@", TRAINERTYPE_NORMAL
 	db 16
 	dw HAUNTER
 	db -1 ; end
 
-	next_list_item ; HEX_MANIAC (3)
+	next_list_item ; HEX_MANIAC (3) Route 39
 	db "Sabrina@", TRAINERTYPE_NORMAL
 	db 18
 	dw NOCTOWL
@@ -5916,16 +5930,19 @@ ChigusaGroup:
 MasterGroup:
 	next_list_item ; MASTER
 	db "Master@", TRAINERTYPE_MOVES
-	db 37
+	db 43
+	dw GYARADOS
+	dw AQUA_TAIL, DRAGON_DANCE, ICE_FANG, EARTHQUAKE
+	db 43
 	dw DRAGONAIR
 	dw DRAGON_PULSE, DRAGON_DANCE, IRON_TAIL, THUNDERBOLT
-	db 37
+	db 44
 	dw KINGDRA
 	dw DRAGON_PULSE, SURF, HYPER_BEAM, ICE_BEAM
-	db 37
+	db 44
 	dw AMPHAROS
 	dw THUNDERBOLT, DRAGON_PULSE, COTTON_SPORE, FLASH_CANNON
-	db 40
+	db 45
 	dw SALAMENCE
 	dw DRAGON_CLAW, DRAGON_DANCE, FLY, STEEL_WING
 	db -1 ; end
@@ -6032,6 +6049,22 @@ EngineerGroup:
 	dw LANTURN
 	db 28
 	dw MACHOKE
+	db -1 ; end
+
+	next_list_item ; ENGINEER (3) Olivine Gym 2F
+	db "Dante@", TRAINERTYPE_NORMAL
+	db 27
+	dw MAGNEMITE
+	db 27
+	dw MAGNEMITE
+	db 27
+	dw SKARMINI
+	db -1 ; end
+
+	next_list_item ; ENGINEER (4) Olivine Gym 3F
+	db "Rudy@", TRAINERTYPE_NORMAL
+	db 28
+	dw FORRETRESS
 	db -1 ; end
 
 	end_list_items
