@@ -31,75 +31,31 @@ TrainerJugglerIrwin:
 	trainer JUGGLER, IRWIN1, EVENT_BEAT_JUGGLER_IRWIN, JugglerIrwin1SeenText, JugglerIrwin1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_JUGGLER_IRWIN
 	endifjustbattled
 	opentext
-	checkcellnum PHONE_JUGGLER_IRWIN
-	iftrue Route35NumberAcceptedM
-	checkevent EVENT_IRWIN_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskedAlready
 	writetext JugglerIrwinAfterBattleText
-	buttonsound
-	setevent EVENT_IRWIN_ASKED_FOR_PHONE_NUMBER
-	scall Route35AskNumber1M
-	sjump .AskForNumber
-
-.AskedAlready:
-	scall Route35AskNumber2M
-.AskForNumber:
-	askforphonenumber PHONE_JUGGLER_IRWIN
-	ifequal PHONE_CONTACTS_FULL, Route35PhoneFullM
-	ifequal PHONE_CONTACT_REFUSED, Route35NumberDeclinedM
-	gettrainername STRING_BUFFER_3, JUGGLER, IRWIN1
-	scall Route35RegisteredNumberM
-	sjump Route35NumberAcceptedM
-
-Route35AskNumber1M:
-	jumpstd asknumber1m
-	end
-
-Route35AskNumber2M:
-	jumpstd asknumber2m
-	end
-
-Route35RegisteredNumberM:
-	jumpstd registerednumberm
-	end
-
-Route35NumberAcceptedM:
-	jumpstd numberacceptedm
-	end
-
-Route35NumberDeclinedM:
-	jumpstd numberdeclinedm
-	end
-
-Route35PhoneFullM:
-	jumpstd phonefullm
-	end
-
-Route35RematchM:
-	jumpstd rematchm
-	end
-
-TrainerCamperIvan:
-	trainer HIKER, BENJAMIN, EVENT_BEAT_HIKER_BENJAMIN, CamperIvanSeenText, CamperIvanBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext CamperIvanAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerCamperElliot:
-	trainer CAMPER, EMIL, EVENT_BEAT_CAMPER_EMIL, CamperElliotSeenText, CamperElliotBeatenText, 0, .Script
+TrainerYoungsterCaleb:
+	trainer YOUNGSTER, CALEB, EVENT_BEAT_YOUNGSTER_CALEB, YoungsterCalebSeenText, YoungsterCalebBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CamperElliotAfterBattleText
+	writetext YoungsterCalebAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainermAJ:
+	trainer COOLTRAINERM, AJ, EVENT_BEAT_COOLTRAINERM_AJ, CooltrainermAJSeenText, CooltrainermAJBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext CooltrainermAJAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -126,141 +82,55 @@ TrainerPicnickerKim:
 	closetext
 	end
 
-TrainerBugCatcherArnie:
-	trainer BUG_CATCHER, ARNIE1, EVENT_BEAT_BUG_CATCHER_ARNIE, BugCatcherArnieSeenText, BugCatcherArnieBeatenText, 0, .Script
-
-.Script:
-	loadvar VAR_CALLERID, PHONE_BUG_CATCHER_ARNIE
-	endifjustbattled
-	opentext
-	checkflag ENGINE_ARNIE
-	iftrue .WantsBattle
-	checkflag ENGINE_YANMA_SWARM
-	iftrue .YanmaSwarming
-	checkcellnum PHONE_BUG_CATCHER_ARNIE
-	iftrue Route35NumberAcceptedM
-	checkevent EVENT_ARNIE_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskedAlready
-	writetext BugCatcherArnieAfterBattleText
-	buttonsound
-	setevent EVENT_ARNIE_ASKED_FOR_PHONE_NUMBER
-	scall Route35AskNumber1M
-	sjump .AskForNumber
-
-.AskedAlready:
-	scall Route35AskNumber2M
-.AskForNumber:
-	askforphonenumber PHONE_BUG_CATCHER_ARNIE
-	ifequal PHONE_CONTACTS_FULL, Route35PhoneFullM
-	ifequal PHONE_CONTACT_REFUSED, Route35NumberDeclinedM
-	gettrainername STRING_BUFFER_3, BUG_CATCHER, ARNIE1
-	scall Route35RegisteredNumberM
-	sjump Route35NumberAcceptedM
-
-.WantsBattle:
-	scall Route35RematchM
-	winlosstext BugCatcherArnieBeatenText, 0
-	readmem wArnieFightCount
-	ifequal 4, .Fight4
-	ifequal 3, .Fight3
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight4:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight4
-.Fight3:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight3
-.Fight2:
-	checkflag ENGINE_FLYPOINT_BLACKTHORN
-	iftrue .LoadFight2
-.Fight1:
-	checkflag ENGINE_FLYPOINT_LAKE_OF_RAGE
-	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer BUG_CATCHER, ARNIE1
-	startbattle
-	reloadmapafterbattle
-	loadmem wArnieFightCount, 1
-	clearflag ENGINE_ARNIE
-	end
-
-.LoadFight1:
-	loadtrainer BUG_CATCHER, ARNIE2
-	startbattle
-	reloadmapafterbattle
-	loadmem wArnieFightCount, 2
-	clearflag ENGINE_ARNIE
-	end
-
-.LoadFight2:
-	loadtrainer BUG_CATCHER, ARNIE3
-	startbattle
-	reloadmapafterbattle
-	loadmem wArnieFightCount, 3
-	clearflag ENGINE_ARNIE
-	end
-
-.LoadFight3:
-	loadtrainer BUG_CATCHER, ARNIE4
-	startbattle
-	reloadmapafterbattle
-	loadmem wArnieFightCount, 4
-	clearflag ENGINE_ARNIE
-	end
-
-.LoadFight4:
-	loadtrainer BUG_CATCHER, ARNIE5
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ARNIE
-	end
-
-.YanmaSwarming:
-	writetext BugCatcherArnieYanmaText
-	waitbutton
-	closetext
-	end
-
-TrainerFirebreatherWalt:
-	trainer FIREBREATHER, WALT, EVENT_BEAT_FIREBREATHER_WALT, FirebreatherWaltSeenText, FirebreatherWaltBeatenText, 0, .Script
+TrainerBugCatcherPalmer:
+	trainer BUG_CATCHER, ARNIE1, EVENT_BEAT_BUG_CATCHER_PALMER, BugCatcherPalmerSeenText, BugCatcherPalmerBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext FirebreatherWaltAfterBattleText
+	writetext BugCatcherPalmerAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerOfficerDirk:
+TrainerFirebreatherKelvin:
+	trainer FIREBREATHER, KELVIN, EVENT_BEAT_FIREBREATHER_KELVIN, FirebreatherKelvinSeenText, FirebreatherKelvinBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext FirebreatherKelvinAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerOfficerClancy:
 	faceplayer
 	opentext
 	checktime NITE
 	iffalse .NotNight
-	checkevent EVENT_BEAT_OFFICER_DIRK
+	checkevent EVENT_BEAT_OFFICER_CLANCY
 	iftrue .AfterBattle
 	playmusic MUSIC_OFFICER_ENCOUNTER
-	writetext OfficerDirkSeenText
+	writetext OfficerClancySeenText
 	waitbutton
 	closetext
-	winlosstext OfficerDirkBeatenText, 0
-	loadtrainer OFFICER, DIRK
+	winlosstext OfficerClancyBeatenText, 0
+	loadtrainer OFFICER, CLANCY
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_OFFICER_DIRK
+	setevent EVENT_BEAT_OFFICER_CLANCY
 	closetext
 	end
 
 .AfterBattle:
-	writetext OfficerDirkAfterBattleText
+	writetext OfficerClancyAfterBattleText
 	waitbutton
 	closetext
 	end
 
 .NotNight:
-	writetext OfficerDirkPrettyToughText
+	writetext OfficerClancyPrettyToughText
 	waitbutton
 	closetext
 	end
@@ -274,39 +144,47 @@ Route35TMRollout:
 Route35FruitTree:
 	fruittree FRUITTREE_ROUTE_35
 
-CamperIvanSeenText:
-	text "I've been getting"
-	line "#MON data off"
+YoungsterCalebSeenText:
+	text "Thanks for coming"
+	line "over here!"
 
-	para "my radio. I think"
-	line "I'm good."
+	para "I was getting"
+	line "pretty lonely!"
 	done
 
-CamperIvanBeatenText:
-	text "I give!"
+YoungsterCalebBeatenText:
+	text "Maaaannn!"
 	done
 
-CamperIvanAfterBattleText:
-	text "Music on the radio"
-	line "changes the moods"
-	cont "of wild #MON."
+YoungsterCalebAfterBattleText:
+	text "Why am I over here"
+	line "by myself?"
+
+	para "I dunno."
+
+	para "Why did you show"
+	line "up here?"
 	done
 
-CamperElliotSeenText:
-	text "I'm gonna show my"
-	line "girlfriend I'm hot"
-	cont "stuff!"
+CooltrainermAJSeenText:
+	text "You're almost to"
+	line "Goldenrod City,"
+	cont "the biggest city"
+	cont "in Johto!"
 	done
 
-CamperElliotBeatenText:
-	text "I wish you would"
-	line "have lost for me…"
+CooltrainermAJBeatenText:
+	text "You might be"
+	line "ready for the gym!"
 	done
 
-CamperElliotAfterBattleText:
-	text "I was humiliated"
-	line "in front of my"
-	cont "girlfriend…"
+CooltrainermAJAfterBattleText:
+	text "Goldenrod used to"
+	line "be a smaller town,"
+
+	para "but they've been"
+	line "expanding in"
+	cont "recent years."
 	done
 
 PicnickerBrookeSeenText:
@@ -369,41 +247,39 @@ BirdKeeperBryanAfterBattleText:
 	done
 
 JugglerIrwin1SeenText:
-	text "Behold my graceful"
-	line "BALL dexterity!"
+	text "Round #mon are"
+	line "kinda my thing."
 	done
 
 JugglerIrwin1BeatenText:
-	text "Whew! That was a"
-	line "jolt!"
+	text "Juggling style!"
 	done
 
 JugglerIrwinAfterBattleText:
-	text "I was going to"
-	line "dazzle you with my"
-	cont "prize #MON."
-
-	para "But your prowess"
-	line "electrified me!"
+	text "I've only dropped"
+	line "my Jigglypuff"
+	cont "once, OK?"
 	done
 
-BugCatcherArnieSeenText:
-	text "I'll go anywhere"
-	line "if bug #MON"
-	cont "appear there."
+BugCatcherPalmerSeenText:
+	text "Wanna see my cool"
+	line "Bug #mon?"
 	done
 
-BugCatcherArnieBeatenText:
-	text "Huh? I shouldn't"
-	line "have lost that…"
+BugCatcherPalmerBeatenText:
+	text "Cool, huh?"
 	done
 
-BugCatcherArnieAfterBattleText:
-	text "My VENONAT won me"
-	line "the Bug-Catching"
+BugCatcherPalmerAfterBattleText:
+	text "Some people think"
+	line "Venomoth is part"
+	cont "Poison-type."
 
-	para "Contest at the"
-	line "NATIONAL PARK."
+	para "That's crazy, huh?"
+
+	para "Everyone knows"
+	line "it's part Psychic-"
+	cont "type!"
 	done
 
 BugCatcherArnieYanmaText:
@@ -414,50 +290,65 @@ BugCatcherArnieYanmaText:
 	line "I can't move."
 	done
 
-FirebreatherWaltSeenText:
-	text "I'm practicing my"
-	line "fire breathing."
+FirebreatherKelvinSeenText:
+	text "I'm not allowed in"
+	line "the National"
+	cont "Forest anymore…"
+
+	para "I'm considered a"
+	line "fire hazard!"
+
+	para "Can you believe"
+	line "that?!"
 	done
 
-FirebreatherWaltBeatenText:
-	text "Ow! I scorched the"
-	line "tip of my nose!"
+FirebreatherKelvinBeatenText:
+	text "YOW!"
+
+	para "Hot, hot, hot!"
 	done
 
-FirebreatherWaltAfterBattleText:
-	text "The #MON March"
-	line "on the radio lures"
-	cont "wild #MON."
+FirebreatherKelvinAfterBattleText:
+	text "Well, I guess"
+	line "they're right"
+	cont "about that…"
 	done
 
-OfficerDirkSeenText:
-	text "Danger lurks in"
-	line "the night!"
+OfficerClancySeenText:
+	text "I am the protector"
+	line "of the night!"
 	done
 
-OfficerDirkBeatenText:
-	text "Whoops!"
+OfficerClancyBeatenText:
+	text "Help, I need"
+	line "protection!"
 	done
 
-OfficerDirkAfterBattleText:
-	text "You know, night-"
-	line "time is fun in its"
-	cont "own ways."
+OfficerClancyAfterBattleText:
+	text "Oh, it's just a"
+	line "kid."
 
-	para "But don't overdo"
-	line "it, OK?"
+	para "Well, looks like"
+	line "my work here is"
+	cont "done!"
 	done
 
-OfficerDirkPrettyToughText:
-	text "Your #MON look"
-	line "pretty tough."
+OfficerClancyPrettyToughText:
+	text "Move along,"
+	line "citizen."
 
-	para "You could go any-"
-	line "where safely."
+	para "I'm here to make"
+	line "sure no suspicious"
+	cont "individuals enter"
+	cont "the forest."
+
+	para "Especially that"
+	line "Firebreather over"
+	cont "there…"
 	done
 
 Route35SignText:
-	text "ROUTE 35"
+	text "Route 35"
 	done
 
 Route35_MapEvents:
@@ -475,14 +366,14 @@ Route35_MapEvents:
 	bg_event 11, 31, BGEVENT_READ, Route35Sign
 
 	db 11 ; object events
-	object_event  4, 19, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperIvan, -1
-	object_event  8, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperElliot, -1
-	object_event  7, 20, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerBrooke, -1
+	object_event  0, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerYoungsterCaleb, -1
+	object_event  8, 20, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermAJ, -1
+	object_event  3, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerBrooke, -1
 	object_event 10, 26, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerKim, -1
 	object_event 14, 28, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerBirdKeeperBryan, -1
-	object_event  2, 10, SPRITE_FISHER, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherWalt, -1
-	object_event 16,  7, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherArnie, -1
+	object_event  2, 10, SPRITE_FISHER, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherKelvin, -1
+	object_event 16,  7, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherPalmer, -1
 	object_event  5, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerJugglerIrwin, -1
-	object_event  5,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerOfficerDirk, -1
+	object_event  2,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerOfficerClancy, -1
 	object_event  2, 25, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route35FruitTree, -1
 	object_event 13, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route35TMRollout, EVENT_ROUTE_35_TM_ROLLOUT

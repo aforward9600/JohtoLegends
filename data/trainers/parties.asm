@@ -899,10 +899,14 @@ YoungsterGroup:
 	dw BELLSPROUT
 	db -1 ; end
 
-	next_list_item ; YOUNGSTER (4)
-	db "GORDON@", TRAINERTYPE_NORMAL
-	db 10
-	dw WOOPER
+	next_list_item ; YOUNGSTER (4) Route 35
+	db "Caleb@", TRAINERTYPE_NORMAL
+	db 28
+	dw QUAGSIRE
+	db 28
+	dw GRANBULL
+	db 29
+	dw WEEPINBELL
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (5)
@@ -1553,14 +1557,14 @@ CooltrainerMGroup:
 	dw LEECH_SEED, GIGA_DRAIN, SLEEP_POWDER, RAZOR_LEAF
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERM (2)
-	db "AARON@", TRAINERTYPE_NORMAL
-	db 24
-	dw IVYSAUR
-	db 24
-	dw CHARMELEON
-	db 24
-	dw WARTORTLE
+	next_list_item ; COOLTRAINERM (2) Route 35
+	db "AJ@", TRAINERTYPE_NORMAL
+	db 28
+	dw BAYLEEF
+	db 28
+	dw QUILAVA
+	db 28
+	dw CROCONAW
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (3)
@@ -2544,10 +2548,10 @@ TeacherGroup:
 	db -1 ; end
 
 	next_list_item ; TEACHER (4)
-	db "Cadi@", TRAINERTYPE_ITEM
+	db "Cadi@", TRAINERTYPE_NICKNAME
 	db 8
 	dw HAPPINY
-	db ORAN_BERRY
+	db "Joy@"
 	db -1 ; end
 
 	end_list_items
@@ -2634,9 +2638,9 @@ BugCatcherGroup:
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (8)
-	db "ARNIE@", TRAINERTYPE_NORMAL
-	db 15
-	dw VENONAT
+	db "Palmer@", TRAINERTYPE_NORMAL
+	db 31
+	dw VENOMOTH
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (9)
@@ -4109,12 +4113,12 @@ FirebreatherGroup:
 	dw KOFFING
 	db -1 ; end
 
-	next_list_item ; FIREBREATHER (6)
-	db "WALT@", TRAINERTYPE_NORMAL
-	db 11
+	next_list_item ; FIREBREATHER (6) Route 35
+	db "Brad@", TRAINERTYPE_NORMAL
+	db 29
 	dw MAGMAR
-	db 13
-	dw MAGMAR
+	db 29
+	dw NINETALES
 	db -1 ; end
 
 	next_list_item ; FIREBREATHER (7)
@@ -4136,16 +4140,16 @@ FirebreatherGroup:
 	end_list_items
 
 JugglerGroup:
-	next_list_item ; JUGGLER (1)
-	db "IRWIN@", TRAINERTYPE_NORMAL
-	db 2
+	next_list_item ; JUGGLER (1) Route 35
+	db "Herbert@", TRAINERTYPE_NORMAL
+	db 27
+	dw GLOOM
+	db 28
+	dw JIGGLYPUFF
+	db 29
 	dw VOLTORB
-	db 6
-	dw VOLTORB
-	db 10
-	dw VOLTORB
-	db 14
-	dw VOLTORB
+	db 30
+	dw ELECTRODE
 	db -1 ; end
 
 	next_list_item ; JUGGLER (2)
@@ -5509,18 +5513,18 @@ BlueGroup:
 	end_list_items
 
 OfficerGroup:
-	next_list_item ; OFFICER (1)
+	next_list_item ; OFFICER (1) Route 37
 	db "Toby@", TRAINERTYPE_NORMAL
 	db 16
 	dw GROWLITHE
 	db -1 ; end
 
-	next_list_item ; OFFICER (2)
-	db "DIRK@", TRAINERTYPE_NORMAL
-	db 14
+	next_list_item ; OFFICER (2) Route 35
+	db "Clancy@", TRAINERTYPE_NORMAL
+	db 29
 	dw GROWLITHE
-	db 14
-	dw GROWLITHE
+	db 29
+	dw ARCANINE
 	db -1 ; end
 
 	end_list_items

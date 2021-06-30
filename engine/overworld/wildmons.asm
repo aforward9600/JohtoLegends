@@ -919,6 +919,8 @@ RandomPhoneMon:
 	ld [wTrainerGroupBank], a
 	inc hl
 	ld a, BANK(TrainerGroups)
+	and TRAINERTYPE_NICKNAME
+	jr nz, .got_mon
 	call GetFarHalfword
 
 .skip_trainer

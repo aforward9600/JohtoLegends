@@ -89,7 +89,7 @@ LoadContestantName:
 	push hl
 	push bc
 ; Get the Trainer Class name and copy it into wBugContestWinnerName.
-	callfar GetTrainerClassName
+	farcall GetTrainerClassName
 	ld hl, wStringBuffer1
 	ld de, wBugContestWinnerName
 	ld bc, TRAINER_CLASS_NAME_LENGTH

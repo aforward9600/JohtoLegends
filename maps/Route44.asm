@@ -87,9 +87,22 @@ TrainerTeacherCadi:
 	trainer TEACHER, CADI, EVENT_BEAT_TEACHER_CADI, TeacherCadiSeenText, TeacherCadiBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
-	writetext TeacherCadiAfterBattleText
+	writetext TeacherCadiRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_BEAUTY_ENCOUNTER
+	writetext TeacherCadiLetsDoItText
+	waitbutton
+	winlosstext TeacherCadiBeatenText, 0
+	loadtrainer TEACHER, CADI
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.Refused:
+	writetext TeacherCadiRefusedText
 	waitbutton
 	closetext
 	end
@@ -295,11 +308,24 @@ TeacherCadiBeatenText:
 	line "be my student!"
 	done
 
-TeacherCadiAfterBattleText:
-	text "The #mon around"
-	line "here aren't the"
-	cont "best to take on"
-	cont "the Gym Leader."
+TeacherCadiLetsDoItText:
+	text "Let us commence."
+	done
+
+TeacherCadiRematchText:
+	text "My students are"
+	line "still trying to"
+	cont "catch some #mon"
+	cont "right now."
+
+	para "How about a battle"
+	line "to pass the time?"
+	done
+
+TeacherCadiRefusedText:
+	text "Oh well."
+
+	para "Perhaps later."
 	done
 
 Route44HealRestAWhileText:
@@ -317,6 +343,13 @@ Route44HealKeepAtItText:
 Route44Sign1Text:
 	text "Route 44"
 	line "Ice Path Ahead"
+
+	para "There's something"
+	line "scribbled here."
+
+	para "Teacher Cadi is"
+	line "willing to fight"
+	cont "anytime!"
 	done
 
 Route44Sign2Text:
@@ -324,6 +357,13 @@ Route44Sign2Text:
 
 	para "Mahogany Town -"
 	line "Blackthorn City"
+
+	para "There's something"
+	line "scribbled here."
+
+	para "Teacher Cadi is"
+	line "willing to fight"
+	cont "anytime!"
 	done
 
 Route44_MapEvents:

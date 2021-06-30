@@ -630,6 +630,7 @@ InitializeEventsScript:
 	setevent EVENT_DAY_CARE_RIVAL
 	setevent EVENT_ROUTE_34_NINJA
 	setevent EVENT_GOLDENROD_TOWER_RIVAL_2
+	setevent EVENT_ROUTE_44_REMATCH
 	return
 
 AskNumber1MScript:

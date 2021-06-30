@@ -1834,3 +1834,9 @@ CantCutScript:
 UnknownText_0xd1d0:
 	text_far UnknownText_0x1c0a05
 	text_end
+
+VSSeekerFunction:
+	clearevent EVENT_ROUTE_44_REMATCH
+	text_far UnknownText_0x1c5c5e
+	text_end
+	end

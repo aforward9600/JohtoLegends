@@ -120,7 +120,7 @@ ItemEffects:
 	dw NoEffect            ; SPELL_TAG
 	dw RestoreHPEffect     ; RAGECANDYBAR
 	dw NoEffect            ; GS_BALL
-	dw BlueCardEffect      ; BLUE_CARD
+	dw VSSeekerEffect      ; VS_SEEKER
 	dw NoEffect            ; MIRACLE_SEED
 	dw NoEffect            ; THICK_CLUB
 	dw NoEffect            ; FOCUS_BAND
@@ -2284,13 +2284,9 @@ PokeFluteEffect:
 .battle
 	jp PokeFluteTerminatorCharacter
 
-BlueCardEffect:
-	ld hl, .bluecardtext
-	jp MenuTextboxWaitButton
-
-.bluecardtext
-	text_far UnknownText_0x1c5c5e
-	text_end
+VSSeekerEffect:
+	farcall VSSeekerFunction
+	ret
 
 CoinCaseEffect:
 	ld hl, .coincasetext

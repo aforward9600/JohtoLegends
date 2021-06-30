@@ -1297,10 +1297,9 @@ UnknownText_0x1c5c44::
 	text_end ; unused
 
 UnknownText_0x1c5c5e::
-	text "You now have"
-	line "@"
-	text_decimal wBlueCardBalance, 1, 2
-	text " points."
+	text "Trainers are now"
+	line "ready for"
+	cont "rematches."
 	done
 
 UnknownText_0x1c5c7b::

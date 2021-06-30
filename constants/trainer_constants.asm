@@ -122,7 +122,7 @@ CHRIS EQU __enum__
 	const JOEY1
 	const TIMMY
 	const ALBERT
-	const GORDON
+	const CALEB
 	const SAMUEL
 	const IAN
 	const JOEY2
@@ -204,7 +204,7 @@ CHRIS EQU __enum__
 
 	trainerclass COOLTRAINERM ; 1b
 	const FABIO
-	const AARON
+	const AJ
 	const PAUL
 	const CODY
 	const MIKE
@@ -520,7 +520,7 @@ CHRIS EQU __enum__
 	const NED
 	const BURT
 	const BILL
-	const WALT
+	const KELVIN
 	const RAY
 	const LYLE
 
@@ -697,7 +697,7 @@ CHRIS EQU __enum__
 
 	trainerclass OFFICER ; 41
 	const TOBY1
-	const DIRK
+	const CLANCY
 
 	trainerclass GRUNTF ; 42
 	const GRUNTF_1

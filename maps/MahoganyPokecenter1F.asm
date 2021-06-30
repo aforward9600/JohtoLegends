@@ -14,7 +14,18 @@ MahoganyPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
 MahoganyPokecenter1FCooltrainerMScript:
-	jumptextfaceplayer MahoganyPokecenter1FCooltrainerMText
+	faceplayer
+	opentext
+	writetext MahoganyPokecenter1FCooltrainerMText
+	waitbutton
+	closetext
+	opentext
+	verbosegiveitem VS_SEEKER
+	opentext
+	writetext ThatsVSSeekerText
+	waitbutton
+	closetext
+	end
 
 MahoganyPokecenter1FYoungsterScript:
 	jumptextfaceplayer MahoganyPokecenter1FYoungsterText
@@ -35,12 +46,45 @@ MahoganyPokecenter1FSwinubScript:
 	end
 
 MahoganyPokecenter1FCooltrainerMText:
-	text "The shop seems a"
-	line "little different"
-	cont "lately."
+	text "Did you ever want"
+	line "to have rematches"
+	cont "with trainers you"
+	cont "have battled"
+	cont "before?"
 
-	para "Maybe I'm just"
-	line "imagining it."
+	para "This will do it!"
+	done
+
+ThatsVSSeekerText:
+	text "Thats a VS Seeker!"
+
+	para "You can use it"
+	line "anytime, no need"
+	cont "to charge!"
+
+	para "Any trainer that"
+	line "can be rematched"
+	cont "will be ready"
+	cont "when you meet up"
+	cont "with them!"
+
+	para "Much better than"
+	line "the one I had"
+	cont "from Vermillion"
+	cont "City!"
+
+	para "Wanna know which"
+	line "trainers will re-"
+	cont "battle you?"
+
+	para "Check the signs at"
+	line "the start or end"
+	cont "of a Route!"
+
+	para "The scrappiest"
+	line "trainers tend to"
+	cont "write their names"
+	cont "on them!"
 	done
 
 MahoganyPokecenter1FYoungsterText:
