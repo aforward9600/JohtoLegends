@@ -2548,10 +2548,10 @@ TeacherGroup:
 	db -1 ; end
 
 	next_list_item ; TEACHER (4)
-	db "Cadi@", TRAINERTYPE_NICKNAME
+	db "Cadi@", TRAINERTYPE_DVS
 	db 8
 	dw HAPPINY
-	db "Joy@"
+	bigdw $eaaa
 	db -1 ; end
 
 	end_list_items

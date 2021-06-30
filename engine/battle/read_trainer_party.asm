@@ -83,6 +83,22 @@ ReadTrainerParty:
 ReadTrainerPartyPieces:
 	ld h, d
 	ld l, e
+	ld a, [wOtherTrainerType]
+	add a, a
+	jr nc, .loop
+	call GetNextTrainerDataByte
+	ld c, a
+	call GetNextTrainerDataByte
+	ld h, a
+	ld l, c
+	inc de
+	inc de
+	ld a, [wTrainerGroupBank]
+	ld b, a
+	ld a, [wOtherTrainerType]
+	and $7f
+	rst FarCall
+	ret
 
 .loop
 	call GetNextTrainerDataByte
@@ -224,6 +240,35 @@ ReadTrainerPartyPieces:
 
 	pop hl
 .no_moves
+
+
+	push hl
+	ld a, [wOTPartyCount]
+	dec a
+	ld hl, wOTPartyMon1DVs
+	call GetPartyLocation
+	ld d, h
+	ld e, l
+	pop hl
+	ld a, [wOtherTrainerType]
+	and TRAINERTYPE_DVS
+	jr z, .no_dvs
+	call GetNextTrainerDataByte
+	ld [de], a
+	inc de
+	call GetNextTrainerDataByte
+	ld [de], a
+	jr .dvs_done
+.no_dvs
+	push hl
+	farcall GetTrainerDVs
+	ld a, b
+	ld [de], a
+	inc de
+	ld a, c
+	ld [de], a
+	pop hl
+.dvs_done
 
 	jp .loop
 
