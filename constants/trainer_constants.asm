@@ -55,6 +55,7 @@ CHRIS EQU __enum__
 	trainerclass BYRON ; 6
 	const BYRON1
 	const BYRON2
+	const BYRON3
 
 	trainerclass CHUCK ; 7
 	const CHUCK1
@@ -164,7 +165,7 @@ CHRIS EQU __enum__
 	const ROD
 	const ABE
 	const GUNNER
-	const THEO
+	const THAD
 	const TOBY
 	const DENIS
 	const SAL
@@ -184,7 +185,7 @@ CHRIS EQU __enum__
 	trainerclass LASS ; 19
 	const JACKIE
 	const ARIELLE
-	const KRISE
+	const VIVIAN
 	const CONNIE1
 	const LINDA
 	const LAURA
@@ -358,7 +359,7 @@ CHRIS EQU __enum__
 	const WAYNE
 
 	trainerclass FISHER ; 25
-	const JUSTIN
+	const RUSTY
 	const RALPH1
 	const ARNOLD
 	const KYLE

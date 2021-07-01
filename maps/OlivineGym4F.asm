@@ -16,6 +16,8 @@ OlivineGym4F_MapScripts:
 OlivineGym1FByronScript:
 	faceplayer
 	opentext
+	checkflag ENGINE_PLAINBADGE
+	iftrue .ByronBattle2
 	checkevent EVENT_BEAT_BYRON
 	iftrue .FightDone
 	writetext Byron1F_LittleHero
@@ -59,6 +61,23 @@ OlivineGym1FByronScript:
 	closetext
 	end
 
+.ByronBattle2:
+	checkevent EVENT_BEAT_BYRON_2
+	iftrue .FightDone
+	writetext ByronRematchText
+	waitbutton
+	closetext
+	winlosstext Byron1F_Beaten, Byron1F_SteelyDetermination
+	loadtrainer BYRON, BYRON2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_BYRON_2
+	opentext
+	writetext BeatenByronAgainText
+	waitbutton
+	closetext
+	end
+
 OlivineGym1FActivateRockets:
 	ifequal 7, .RadioTower1FRockets
 	ifequal 6, .Goldenrod1FRockets
@@ -89,6 +108,125 @@ TwelthElevator:
 	setevent EVENT_GYM_TWELTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 5, 2
 	end
+
+Byron1F_LittleHero:
+	text "Welcome, little"
+	line "hero! I'll"
+	cont "properly introduce"
+
+	para "myself now! I am"
+	line "Byron, the Leader"
+	cont "of the Olivine"
+
+	para "City Gym! I came"
+	line "from Canalave City"
+	cont "in the Sinnoh"
+
+	para "region. I hope to"
+	line "return to my home-"
+	cont "land someday, but"
+
+	para "for now, I shall"
+	line "be the greatest"
+	cont "Leader I can be"
+
+	para "here in Johto! You"
+	line "were of great help"
+	cont "at the Lighthouse,"
+
+	para "but I can't just"
+	line "give you a Badge"
+	cont "for that! Let's"
+
+	para "get this started!"
+	done
+
+Byron1F_Clang:
+	text "CLANG! What a"
+	line "battle!"
+	done
+
+Byron1F_SteelyDetermination:
+	text "Steely determin-"
+	line "ation wins every"
+	cont "time!"
+	done
+
+Byron1F_Beaten:
+	text "Well, that was"
+	line "what I expected!"
+	cont "A steel-hard"
+
+	para "battle to the end!"
+	line "You've earned this"
+	cont "MineralBadge!"
+	done
+
+Text1F_ReceivedMineralBadge:
+	text "<PLAYER> received"
+	line "MineralBadge."
+	done
+
+Byron1F_BadgeSpeech:
+	text "The MineralBadge"
+	line "will make any"
+	cont "#mon up to Lv."
+
+	para "50 obey you. Take"
+	line "this TM as well!"
+	done
+
+Byron1F_FlashCannonSpeech:
+	text "That lets you"
+	line "teach a #mon"
+	cont "Flash Cannon! It"
+
+	para "can lower a foe's"
+	line "Special Defense,"
+	cont "so it's better to"
+
+	para "be used on a"
+	line "#mon like"
+	cont "Magneton!"
+	done
+
+Byron1F_Sunnyshore:
+	text "I'll need to find"
+	line "a suitable replac-"
+	cont "ement if I want to"
+
+	para "return home."
+	line "There's a family"
+	cont "of strong Steel"
+
+	para "trainers in Sunny-"
+	line "shore City in"
+	cont "Sinnoh. Perhaps"
+
+	para "one of them can"
+	line "take my place som-"
+	cont "day! Hahahaha!"
+	done
+
+ByronRematchText:
+	text "Welcome back, lil'"
+	line "hero!"
+
+	para "Ready for our"
+	line "rematch?"
+
+	para "CLANG!"
+	done
+
+BeatenByronAgainText:
+	text "Dang!"
+
+	para "You're too good!"
+
+	para "Maybe you can be"
+	line "a Gym Leader some-"
+	cont "day!"
+	done
 
 OlivineGym4F_MapEvents:
 	db 0, 0 ; filler

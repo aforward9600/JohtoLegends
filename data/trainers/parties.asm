@@ -5,6 +5,9 @@
 ;    * for TRAINERTYPE_MOVES:      db level, species, 4 moves
 ;    * for TRAINERTYPE_ITEM:       db level, species, item
 ;    * for TRAINERTYPE_ITEM_MOVES: db level, species, item, 4 moves
+;    * for TRAINERTYPE_NICKNAME:   db "*@"
+;    * for TRAINERTYPE_DVS:        bigdw $ffff
+;    * for TRAINERTYPE_EVS:        db 0, 0, 0, 0, 0, 0
 ; - db -1 ; end
 
 SECTION "Enemy Trainer Parties 1", ROMX
@@ -341,6 +344,22 @@ ByronGroup:
 	dw MAGCARGO
 	dw STEEL_SLICE, SHELL_SMASH, FLAME_BURST, ANCIENTPOWER
 	db 32
+	dw STEELIX
+	dw STEEL_SLICE, BULLDOZE, ROCK_SLIDE, IRON_HEAD
+	db -1 ; end
+
+	next_list_item ; BYRON (3)
+	db "Byron@", TRAINERTYPE_MOVES
+	db 34
+	dw FORRETRESS
+	dw MIRROR_SHOT, SPIKES, SUBSTITUTE, REVERSAL
+	db 34
+	dw MAGNETON
+	dw DISCHARGE, METAL_SOUND, MIRROR_SHOT, TRI_ATTACK
+	db 35
+	dw MAGCARGO
+	dw STEEL_SLICE, SHELL_SMASH, FLAME_BURST, ANCIENTPOWER
+	db 36
 	dw STEELIX
 	dw STEEL_SLICE, BULLDOZE, ROCK_SLIDE, IRON_HEAD
 	db -1 ; end
@@ -1241,18 +1260,18 @@ BirdKeeperGroup:
 	dw DODUO
 	db -1 ; end
 
-	next_list_item ; BIRD_KEEPER (4)
-	db "THEO@", TRAINERTYPE_NORMAL
-	db 17
-	dw PIDGEY
-	db 15
-	dw PIDGEY
-	db 19
-	dw PIDGEY
-	db 15
-	dw PIDGEY
-	db 15
-	dw PIDGEY
+	next_list_item ; BIRD_KEEPER (4) Route 35
+	db "Thad@", TRAINERTYPE_NORMAL
+	db 27
+	dw FEAROW
+	db 27
+	dw NOCTOWL
+	db 27
+	dw PIDGEOTTO
+	db 27
+	dw DODUO
+	db 28
+	dw FARFETCH_D
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (5) TOBY
@@ -1388,7 +1407,7 @@ LassGroup:
 	dw SCARY_FACE, CHARM, BITE, LICK
 	db -1 ; end
 
-	next_list_item ; LASS (3)
+	next_list_item ; LASS (3) Not used yet
 	db "Arielle@", TRAINERTYPE_NORMAL
 	db 4
 	dw PIDGEY
@@ -1399,11 +1418,13 @@ LassGroup:
 	db -1 ; end
 
 	next_list_item ; LASS (4)
-	db "KRISE@", TRAINERTYPE_NORMAL
-	db 12
-	dw ODDISH
-	db 15
-	dw CUBONE
+	db "Vivian@", TRAINERTYPE_NORMAL
+	db 28
+	dw SUNKERN
+	db 28
+	dw FURRET
+	db 28
+	dw MAROWAK
 	db -1 ; end
 
 	next_list_item ; LASS (5)
@@ -2523,7 +2544,7 @@ SkierGroup:
 	end_list_items
 
 TeacherGroup:
-	next_list_item ; TEACHER (1)
+	next_list_item ; TEACHER (1) Olivine Gym
 	db "Abigail@", TRAINERTYPE_NORMAL
 	db 27
 	dw SKARMINI
@@ -2547,11 +2568,10 @@ TeacherGroup:
 	dw JIGGLYPUFF
 	db -1 ; end
 
-	next_list_item ; TEACHER (4)
-	db "Cadi@", TRAINERTYPE_DVS
+	next_list_item ; TEACHER (4) Route 44
+	db "Cadi@", TRAINERTYPE_NORMAL
 	db 8
 	dw HAPPINY
-	bigdw $eaaa
 	db -1 ; end
 
 	end_list_items
@@ -2751,16 +2771,16 @@ BugCatcherGroup:
 	end_list_items
 
 FisherGroup:
-	next_list_item ; FISHER (1)
-	db "JUSTIN@", TRAINERTYPE_NORMAL
-	db 5
-	dw MAGIKARP
-	db 5
-	dw MAGIKARP
-	db 15
-	dw MAGIKARP
-	db 5
-	dw MAGIKARP
+	next_list_item ; FISHER (1) Route 35
+	db "Rusty@", TRAINERTYPE_NORMAL
+	db 28
+	dw SEAKING
+	db 28
+	dw QWILFISH
+	db 28
+	dw MANTINE
+	db 28
+	dw GYARADOS
 	db -1 ; end
 
 	next_list_item ; FISHER (2)
@@ -5769,34 +5789,34 @@ Rival4Group:
 BreederGroup:
 	next_list_item ; BREEDER (1)
 	db "Emily@", TRAINERTYPE_MOVES
-	db 17
+	db 29
 	dw TEDDIURSA
 	dw CRUNCH, PLAY_ROUGH, CLOSE_COMBAT, SLACK_OFF
 	db -1 ; end
 
 	next_list_item ; BREEDER (2)
 	db "Nina@", TRAINERTYPE_MOVES
-	db 18
-	dw RATTATA
+	db 28
+	dw RATICATE
 	dw SCREECH, REVERSAL, BITE, FURY_SWIPES
-	db 18
+	db 28
 	dw TEDDIURSA
 	dw CRUNCH, PLAY_ROUGH, CLOSE_COMBAT, SLACK_OFF
 	db -1 ; end
 
 	next_list_item ; BREEDER (3)
 	db "Sarah@", TRAINERTYPE_MOVES
-	db 18
+	db 28
 	dw EEVEE
-	dw FLAIL, CHARM, LEER, TACKLE
-	db 19
+	dw FLAIL, CHARM, LEER, TAKE_DOWN
+	db 28
 	dw AIPOM
 	dw SCREECH, FURY_SWIPES, FAINT_ATTACK, BOUNCE
 	db -1 ; end
 
 	next_list_item ; BREEDER (4)
 	db "Bridget@", TRAINERTYPE_MOVES
-	db 20
+	db 28
 	dw MILTANK
 	dw REVERSAL, MILK_DRINK, BODY_SLAM, ROLLOUT
 	db -1 ; end

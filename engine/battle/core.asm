@@ -6386,6 +6386,14 @@ LoadEnemyMon:
 	ld de, wEnemyMonMaxHP
 	ld b, FALSE
 	ld hl, wEnemyMonDVs - (MON_DVS - MON_EVS + 1) ; wLinkBattleRNs + 7 ; ?
+	ld a, [wBattleMode]
+	cp TRAINER_BATTLE
+	jr nz, .no_evs
+	ld a, [wCurPartyMon]
+	ld hl, wOTPartyMon1EVs - 1
+	call GetPartyLocation
+	ld b, TRUE
+.no_evs
 	predef CalcMonStats
 
 ; If we're in a trainer battle,

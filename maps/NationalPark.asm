@@ -146,17 +146,6 @@ TrainerBugCatcherBuzzy:
 NationalParkPokefanF2Script:
 	jumptextfaceplayer NationalParkPokefanF2Text
 
-TrainerLassKrise:
-	trainer LASS, KRISE, EVENT_BEAT_LASS_KRISE, LassKriseSeenText, LassKriseBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext LassKriseAfterBattleText
-	waitbutton
-	closetext
-	end
-
 NationalParkRelaxationSquareSign:
 	jumptext NationalParkRelaxationSquareText
 

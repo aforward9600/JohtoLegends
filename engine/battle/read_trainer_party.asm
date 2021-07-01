@@ -83,22 +83,6 @@ ReadTrainerParty:
 ReadTrainerPartyPieces:
 	ld h, d
 	ld l, e
-	ld a, [wOtherTrainerType]
-	add a, a
-	jr nc, .loop
-	call GetNextTrainerDataByte
-	ld c, a
-	call GetNextTrainerDataByte
-	ld h, a
-	ld l, c
-	inc de
-	inc de
-	ld a, [wTrainerGroupBank]
-	ld b, a
-	ld a, [wOtherTrainerType]
-	and $7f
-	rst FarCall
-	ret
 
 .loop
 	call GetNextTrainerDataByte
@@ -241,34 +225,103 @@ ReadTrainerPartyPieces:
 	pop hl
 .no_moves
 
+	ld a, [wOtherTrainerType]
+	bit TRAINERTYPE_DVS_F, a
+	jr z, .dvs_done
 
 	push hl
 	ld a, [wOTPartyCount]
 	dec a
 	ld hl, wOTPartyMon1DVs
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld d, h
+	ld e, l
+	pop hl
+
+	; when reading DVs, $00 means $ff, since $ff is the end-of-trainer marker
+	call GetNextTrainerDataByte
+	and a
+	jr nz, .dv1_ok
+	ld a, $ff
+.dv1_ok
+	ld [de], a
+	inc de
+	call GetNextTrainerDataByte
+	and a
+	jr nz, .dv2_ok
+	ld a, $ff
+.dv2_ok
+	ld [de], a
+	inc de
+	call GetNextTrainerDataByte
+	and a
+	jr nz, .dv3_ok
+	ld a, $ff
+.dv3_ok
+	ld [de], a
+.dvs_done
+
+	ld a, [wOtherTrainerType]
+	bit TRAINERTYPE_EVS_F, a
+	jr z, .no_evs
+
+	push hl
+	ld a, [wOTPartyCount]
+	dec a
+	ld hl, wOTPartyMon1EVs
 	call GetPartyLocation
 	ld d, h
 	ld e, l
 	pop hl
+
+	ld c, NUM_STATS
+
+.evs_loop
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .evs_loop
+.no_evs
+
+; Custom DVs affect stats, so recalculate them after TryAddMonToParty
 	ld a, [wOtherTrainerType]
-	and TRAINERTYPE_DVS
-	jr z, .no_dvs
-	call GetNextTrainerDataByte
-	ld [de], a
-	inc de
-	call GetNextTrainerDataByte
-	ld [de], a
-	jr .dvs_done
-.no_dvs
+	and TRAINERTYPE_DVS | TRAINERTYPE_EVS
+	jr z, .no_stat_recalc
+
 	push hl
-	farcall GetTrainerDVs
-	ld a, b
-	ld [de], a
-	inc de
-	ld a, c
-	ld [de], a
+
+	ld a, [wOTPartyCount]
+	dec a
+	ld hl, wOTPartyMon1MaxHP
+	call GetPartyLocation
+	ld d, h
+	ld e, l
+
+	ld a, [wOTPartyCount]
+	dec a
+	ld hl, wOTPartyMon1EVs - 1
+	call GetPartyLocation
+
+; recalculate stats
+	ld b, TRUE
+	push de
+	predef CalcMonStats
 	pop hl
-.dvs_done
+
+; copy max HP to current HP
+	inc hl
+	ld c, [hl]
+	dec hl
+	ld b, [hl]
+	dec hl
+	ld [hl], c
+	dec hl
+	ld [hl], b
+
+	pop hl
+.no_stat_recalc
 
 	jp .loop
 

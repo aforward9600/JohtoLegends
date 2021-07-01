@@ -16,13 +16,13 @@ Route35_MapScripts:
 
 	db 0 ; callbacks
 
-TrainerBirdKeeperBryan:
-	trainer BIRD_KEEPER, GUNNER, EVENT_BEAT_BIRD_KEEPER_GUNNER, BirdKeeperBryanSeenText, BirdKeeperBryanBeatenText, 0, .Script
+TrainerBirdKeeperThad:
+	trainer BIRD_KEEPER, THAD, EVENT_BEAT_BIRD_KEEPER_THAD, BirdKeeperThadSeenText, BirdKeeperThadBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperBryanAfterBattleText
+	writetext BirdKeeperThadAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -60,24 +60,24 @@ TrainerCooltrainermAJ:
 	closetext
 	end
 
-TrainerPicnickerBrooke:
-	trainer PICNICKER, CHLOE, EVENT_BEAT_PICNICKER_CHLOE, PicnickerBrookeSeenText, PicnickerBrookeBeatenText, 0, .Script
+TrainerLassVivian:
+	trainer LASS, VIVIAN, EVENT_BEAT_LASS_VIVIAN, LassVivianSeenText, LassVivianBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PicnickerBrookeAfterBattleText
+	writetext LassVivianAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPicnickerKim:
-	trainer PICNICKER, KIM, EVENT_BEAT_PICNICKER_KIM, PicnickerKimSeenText, PicnickerKimBeatenText, 0, .Script
+TrainerFisherRusty:
+	trainer FISHER, RUSTY, EVENT_BEAT_FISHER_RUSTY, FisherRustySeenText, FisherRustyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PicnickerKimAfterBattleText
+	writetext FisherRustyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -187,63 +187,66 @@ CooltrainermAJAfterBattleText:
 	cont "recent years."
 	done
 
-PicnickerBrookeSeenText:
-	text "My boyfriend's"
-	line "weak, so I can't"
-	cont "rely on him."
+LassVivianSeenText:
+	text "I may be cute, but"
+	line "don't underest-"
+	cont "imate me!"
 	done
 
-PicnickerBrookeBeatenText:
-	text "Oh, my! You're so"
-	line "strong!"
+LassVivianBeatenText:
+	text "I underestimated"
+	line "you!"
 	done
 
-PicnickerBrookeAfterBattleText:
-	text "I can count on my"
-	line "#MON more than"
-	cont "my boyfriend."
+LassVivianAfterBattleText:
+	text "Looks can be dec-"
+	line "eiving, don't you"
+	cont "think?"
 	done
 
-PicnickerKimSeenText:
-	text "Are you going to"
-	line "the GYM? Me too!"
+FisherRustySeenText:
+	text "The three rules of"
+	line "fishing are:"
+
+	para "1: Be patient."
+
+	para "2: Be quiet."
+
+	para "3: Don't throw"
+	line "your rod in the"
+	cont "water."
+
+	para "That last one I"
+	line "learned the hard"
+	cont "way…"
 	done
 
-PicnickerKimBeatenText:
-	text "Oh. I couldn't"
-	line "win…"
+FisherRustyBeatenText:
+	text "Fish outta water!"
 	done
 
-PicnickerKimAfterBattleText:
-	text "The GYM BADGES are"
-	line "pretty. I collect"
-	cont "them."
+FisherRustyAfterBattleText:
+	text "You wouldn't"
+	line "believe how many"
+	cont "rods I've thrown"
+	cont "away by accident…"
 	done
 
-BirdKeeperBryanSeenText:
-	text "What kinds of"
-	line "BALLS do you use?"
+BirdKeeperThadSeenText:
+	text "I never cage my"
+	line "birds!"
+
+	para "That's just in-"
+	line "humane!"
 	done
 
-BirdKeeperBryanBeatenText:
-	text "Yikes! Not fast"
-	line "enough!"
+BirdKeeperThadBeatenText:
+	text "My birds!"
 	done
 
-BirdKeeperBryanAfterBattleText:
-	text "Some #MON flee"
-	line "right away."
-
-	para "Try catching them"
-	line "with KURT's FAST"
-	cont "BALL."
-
-	para "Whenever I find a"
-	line "WHT APRICORN, I"
-	cont "take it to KURT."
-
-	para "He turns it into a"
-	line "custom BALL."
+BirdKeeperThadAfterBattleText:
+	text "Birds are meant to"
+	line "fly freely!"
 	done
 
 JugglerIrwin1SeenText:
@@ -368,11 +371,11 @@ Route35_MapEvents:
 	db 11 ; object events
 	object_event  0, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerYoungsterCaleb, -1
 	object_event  8, 20, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermAJ, -1
-	object_event  3, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerBrooke, -1
-	object_event 10, 26, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerKim, -1
-	object_event 14, 28, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerBirdKeeperBryan, -1
+	object_event  4, 17, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassVivian, -1
+	object_event  8, 27, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherRusty, -1
+	object_event 16,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperThad, -1
 	object_event  2, 10, SPRITE_FISHER, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherKelvin, -1
-	object_event 16,  7, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherPalmer, -1
+	object_event 14, 28, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherPalmer, -1
 	object_event  5, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerJugglerIrwin, -1
 	object_event  2,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerOfficerClancy, -1
 	object_event  2, 25, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route35FruitTree, -1

@@ -153,7 +153,7 @@ TrainerCamperRoland:
 	end
 
 TrainerFisherJustin:
-	trainer FISHER, JUSTIN, EVENT_BEAT_FISHER_JUSTIN, FisherJustinSeenText, FisherJustinBeatenText, 0, .Script
+	trainer FISHER, RUSTY, EVENT_BEAT_FISHER_RUSTY, FisherJustinSeenText, FisherJustinBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
