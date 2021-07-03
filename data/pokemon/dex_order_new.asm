@@ -80,6 +80,8 @@ NewPokedexOrder:
 	dw GLISCOR
 	dw SNEASEL
 	dw WEAVILE
+	dw BRONZOR
+	dw BRONZONG
 	dw PINECO
 	dw FORRETRESS
 	dw DODUO

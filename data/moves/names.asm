@@ -380,4 +380,5 @@ MoveNames::
 	db "Heat Wave@"
 	db "Lava Plume@"
 	db "Stone Bash@"
+	db "Shadow Sneak@"
 ;	db "Wake Up Slap@"

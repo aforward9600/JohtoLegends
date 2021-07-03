@@ -406,6 +406,7 @@ BattleAnimations::
 	dw BattleAnim_HeatWave
 	dw BattleAnim_LavaPlume
 	dw BattleAnim_StoneBash
+	dw BattleAnim_ShadowSneak
 ;	dw BattleAnim_WakeUpSlap
 	dw BattleAnim_SweetScent2
 
@@ -3754,6 +3755,32 @@ BattleAnim_ScaryFace:
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_call BattleAnim_ScaryFace_branch_cbadc
 	anim_wait 64
+	anim_ret
+
+BattleAnim_ShadowSneak:
+	anim_1gfx ANIM_GFX_HIT
+	anim_sound 0, 0, SFX_CURSE
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_1D, $0, $1, $80
+	anim_wait 96
+	anim_sound 0, 1, SFX_LICK
+	anim_obj ANIM_OBJ_01, 136, 56, $0
+	anim_wait 3
+	anim_sound 0, 1, SFX_LICK
+	anim_obj ANIM_OBJ_01, 136, 48, $0
+	anim_wait 3
+	anim_sound 0, 1, SFX_LICK
+	anim_obj ANIM_OBJ_01, 136, 40, $0
+	anim_wait 3
+	anim_sound 0, 1, SFX_LICK
+	anim_obj ANIM_OBJ_01, 136, 32, $0
+	anim_wait 3
+	anim_sound 0, 1, SFX_LICK
+	anim_obj ANIM_OBJ_01, 136, 24, $0
+	anim_wait 8
+	anim_incbgeffect ANIM_BG_1D
+	anim_call BattleAnim_ShowMon_0
+	anim_wait 4
 	anim_ret
 
 BattleAnim_FaintAttack:

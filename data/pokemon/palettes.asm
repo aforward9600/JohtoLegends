@@ -574,6 +574,10 @@ INCBIN "gfx/pokemon/dusclops/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/dusclops/shiny.pal"
 INCBIN "gfx/pokemon/dusknoir/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/dusknoir/shiny.pal"
+INCBIN "gfx/pokemon/bronzor/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/bronzor/shiny.pal"
+INCBIN "gfx/pokemon/bronzong/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/bronzong/shiny.pal"
 INCBIN "gfx/pokemon/raikou/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/raikou/shiny.pal"
 INCBIN "gfx/pokemon/entei/front.gbcpal", middle_colors

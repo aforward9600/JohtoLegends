@@ -271,6 +271,8 @@ AnimationPointers:
 	dw DuskullAnimation
 	dw DusclopsAnimation
 	dw DusknoirAnimation
+	dw BronzorAnimation
+	dw BronzongAnimation
 	dw RaikouAnimation
 	dw EnteiAnimation
 	dw SuicuneAnimation

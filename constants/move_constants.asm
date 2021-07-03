@@ -387,6 +387,7 @@
 	const HEAT_WAVE
 	const LAVA_PLUME
 	const STONE_BASH
+	const SHADOW_SNEAK
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 

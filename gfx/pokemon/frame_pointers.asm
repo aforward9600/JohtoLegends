@@ -271,6 +271,8 @@ FramesPointers:
 	dba DuskullFrames
 	dba DusclopsFrames
 	dba DusknoirFrames
+	dba BronzorFrames
+	dba BronzongFrames
 	dba RaikouFrames
 	dba EnteiFrames
 	dba SuicuneFrames

@@ -310,7 +310,7 @@ JohtoGrassWildMons:
 	dbw 15, RATTATA
 	dbw 14, ZUBAT
 	dbw 15, GRIMER
-	dbw 15, DUSKNOIR
+	dbw 15, DUSKULL
 	dbw 15, SLUGMA
 	dbw 15, SLUGMA
 	; day
@@ -319,7 +319,7 @@ JohtoGrassWildMons:
 	dbw 15, RATTATA
 	dbw 14, ZUBAT
 	dbw 15, GRIMER
-	dbw 15, DUSKNOIR
+	dbw 15, DUSKULL
 	dbw 15, SLUGMA
 	dbw 15, SLUGMA
 	; nite
@@ -328,7 +328,7 @@ JohtoGrassWildMons:
 	dbw 15, RATTATA
 	dbw 14, ZUBAT
 	dbw 15, GRIMER
-	dbw 15, DUSKNOIR
+	dbw 15, DUSKULL
 	dbw 15, MISDREAVUS
 	dbw 15, MISDREAVUS
 
@@ -340,7 +340,7 @@ JohtoGrassWildMons:
 	dbw 15, RATTATA
 	dbw 14, ZUBAT
 	dbw 15, GRIMER
-	dbw 15, SLUGMA
+	dbw 15, DUSKULL
 	dbw 15, SLUGMA
 	dbw 15, SLUGMA
 	; day
@@ -349,7 +349,7 @@ JohtoGrassWildMons:
 	dbw 15, RATTATA
 	dbw 14, ZUBAT
 	dbw 15, GRIMER
-	dbw 15, SLUGMA
+	dbw 15, DUSKULL
 	dbw 15, SLUGMA
 	dbw 15, SLUGMA
 	; nite
@@ -358,7 +358,7 @@ JohtoGrassWildMons:
 	dbw 15, RATTATA
 	dbw 14, ZUBAT
 	dbw 15, GRIMER
-	dbw 15, MISDREAVUS
+	dbw 15, DUSKULL
 	dbw 15, MISDREAVUS
 	dbw 15, MISDREAVUS
 
@@ -370,7 +370,7 @@ JohtoGrassWildMons:
 	dbw 22, ZUBAT
 	dbw 23, RATICATE
 	dbw 23, GRIMER
-	dbw 23, SLUGMA
+	dbw 23, DUSKULL
 	dbw 24, SLUGMA
 	dbw 24, MAGCARGO
 	; day
@@ -379,7 +379,7 @@ JohtoGrassWildMons:
 	dbw 22, ZUBAT
 	dbw 23, RATICATE
 	dbw 23, GRIMER
-	dbw 23, SLUGMA
+	dbw 23, DUSKULL
 	dbw 24, SLUGMA
 	dbw 24, MAGCARGO
 	; nite
@@ -388,7 +388,7 @@ JohtoGrassWildMons:
 	dbw 22, ZUBAT
 	dbw 23, RATICATE
 	dbw 23, GRIMER
-	dbw 23, MISDREAVUS
+	dbw 23, DUSKULL
 	dbw 24, MISDREAVUS
 	dbw 24, HAUNTER
 

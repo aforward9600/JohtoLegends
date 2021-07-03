@@ -271,6 +271,8 @@ AnimationIdlePointers:
 	dw DuskullAnimationIdle
 	dw DusclopsAnimationIdle
 	dw DusknoirAnimationIdle
+	dw BronzorAnimationIdle
+	dw BronzongAnimationIdle
 	dw RaikouAnimationIdle
 	dw EnteiAnimationIdle
 	dw SuicuneAnimationIdle

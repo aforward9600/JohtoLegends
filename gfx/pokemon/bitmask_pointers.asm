@@ -271,6 +271,8 @@ BitmasksPointers:
 	dw DuskullBitmasks
 	dw DusclopsBitmasks
 	dw DusknoirBitmasks
+	dw BronzorBitmasks
+	dw BronzongBitmasks
 	dw RaikouBitmasks
 	dw EnteiBitmasks
 	dw SuicuneBitmasks

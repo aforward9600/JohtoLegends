@@ -267,6 +267,8 @@ OldPokedexOrder:
 	dw DUSKULL
 	dw DUSCLOPS
 	dw DUSKNOIR
+	dw BRONZOR
+	dw BRONZONG
 	dw RAIKOU
 	dw ENTEI
 	dw SUICUNE

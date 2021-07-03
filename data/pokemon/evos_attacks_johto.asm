@@ -122,6 +122,8 @@ EvosAttacksPointers2::
 	dw DuskullEvosAttacks
 	dw DusclopsEvosAttacks
 	dw DusknoirEvosAttacks
+	dw BronzorEvosAttacks
+	dw BronzongEvosAttacks
 	dw RaikouEvosAttacks
 	dw EnteiEvosAttacks
 	dw SuicuneEvosAttacks
@@ -1061,7 +1063,7 @@ SpinarakEvosAttacks:
 	dbw 8, PAYBACK
 	dbw 12, SCARY_FACE
 	dbw 15, NIGHT_SHADE
-	dbw 19, PURSUIT
+	dbw 19, SHADOW_SNEAK
 	dbw 22, FURY_SWIPES
 	dbw 26, SUCKER_PUNCH
 	dbw 29, SPIDER_WEB
@@ -1082,7 +1084,7 @@ AriadosEvosAttacks:
 	dbw 8, PAYBACK
 	dbw 12, SCARY_FACE
 	dbw 15, NIGHT_SHADE
-	dbw 19, PURSUIT
+	dbw 19, SHADOW_SNEAK
 	dbw 23, FURY_SWIPES
 	dbw 28, SUCKER_PUNCH
 	dbw 32, SPIDER_WEB
@@ -2435,7 +2437,7 @@ DuskullEvosAttacks:
 	dbw 6, DISABLE
 	dbw 9, ASTONISH
 	dbw 14, FORESIGHT
-	dbw 17, QUICK_ATTACK
+	dbw 17, SHADOW_SNEAK
 	dbw 22, PURSUIT
 	dbw 25, WILL_O_WISP
 	dbw 30, CONFUSE_RAY
@@ -2456,7 +2458,7 @@ DusclopsEvosAttacks:
 	dbw 6, DISABLE
 	dbw 9, ASTONISH
 	dbw 14, FORESIGHT
-	dbw 17, QUICK_ATTACK
+	dbw 17, SHADOW_SNEAK
 	dbw 22, PURSUIT
 	dbw 25, WILL_O_WISP
 	dbw 30, CONFUSE_RAY
@@ -2477,7 +2479,7 @@ DusknoirEvosAttacks:
 	dbw 6, DISABLE
 	dbw 9, ASTONISH
 	dbw 14, FORESIGHT
-	dbw 17, QUICK_ATTACK
+	dbw 17, SHADOW_SNEAK
 	dbw 22, PURSUIT
 	dbw 25, WILL_O_WISP
 	dbw 30, CONFUSE_RAY
@@ -2487,6 +2489,49 @@ DusknoirEvosAttacks:
 	dbw 52, MEAN_LOOK
 	dbw 57, PAYBACK
 	dbw 64, FUTURE_SIGHT
+	db 0 ; no more level-up moves
+
+BronzorEvosAttacks:
+	dbbw EVOLVE_LEVEL, 33, BRONZONG
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, CONFUSION
+	dbw 5, HYPNOSIS
+	dbw 9, MEAN_LOOK
+	dbw 11, CONFUSE_RAY
+	dbw 15, PSYWAVE
+	dbw 19, IRON_DEFENSE
+	dbw 21, FAINT_ATTACK
+	dbw 25, SAFEGUARD
+	dbw 29, FUTURE_SIGHT
+	dbw 31, METAL_SOUND
+	dbw 35, GYRO_BALL
+	dbw 39, EXTRASENSORY
+	dbw 41, PAYBACK
+	dbw 45, CALM_MIND
+	dbw 49, FLASH_CANNON
+	db 0 ; no more level-up moves
+
+BronzongEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, ZEN_HEADBUTT
+	dbw 1, TACKLE
+	dbw 1, CONFUSION
+	dbw 5, HYPNOSIS
+	dbw 9, MEAN_LOOK
+	dbw 11, CONFUSE_RAY
+	dbw 15, PSYWAVE
+	dbw 19, IRON_DEFENSE
+	dbw 21, FAINT_ATTACK
+	dbw 25, SAFEGUARD
+	dbw 29, FUTURE_SIGHT
+	dbw 31, METAL_SOUND
+	dbw 36, GYRO_BALL
+	dbw 42, EXTRASENSORY
+	dbw 46, PAYBACK
+	dbw 52, CALM_MIND
+	dbw 58, FLASH_CANNON
+	dbw LEARN_EVO_MOVE, ZEN_HEADBUTT
 	db 0 ; no more level-up moves
 
 RaikouEvosAttacks:

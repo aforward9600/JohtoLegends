@@ -386,6 +386,7 @@ MoveDescriptions1:
 	dw HeatWaveDescription
 	dw LavaPlumeDescription
 	dw StoneBashDescription
+	dw QuickAttackDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:

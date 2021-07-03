@@ -275,6 +275,8 @@ PokemonNames::
 	db "Duskull@@@"
 	db "Dusclops@@"
 	db "Dusknoir@@"
+	db "Bronzor@@@"
+	db "Bronzong@@"
 	db "Raikou@@@@"
 	db "Entei@@@@@"
 	db "Suicune@@@"
