@@ -310,7 +310,7 @@ JohtoGrassWildMons:
 	dbw 15, RATTATA
 	dbw 14, ZUBAT
 	dbw 15, GRIMER
-	dbw 15, SLUGMA
+	dbw 15, DUSKNOIR
 	dbw 15, SLUGMA
 	dbw 15, SLUGMA
 	; day
@@ -319,7 +319,7 @@ JohtoGrassWildMons:
 	dbw 15, RATTATA
 	dbw 14, ZUBAT
 	dbw 15, GRIMER
-	dbw 15, SLUGMA
+	dbw 15, DUSKNOIR
 	dbw 15, SLUGMA
 	dbw 15, SLUGMA
 	; nite
@@ -328,7 +328,7 @@ JohtoGrassWildMons:
 	dbw 15, RATTATA
 	dbw 14, ZUBAT
 	dbw 15, GRIMER
-	dbw 15, MISDREAVUS
+	dbw 15, DUSKNOIR
 	dbw 15, MISDREAVUS
 	dbw 15, MISDREAVUS
 

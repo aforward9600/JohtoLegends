@@ -999,7 +999,7 @@ VileplumeEvosAttacks:
 
 BellossomEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, PETAL_BLIZZ
+	dbw 1, MOONBLAST
 	dbw 1, ABSORB
 	dbw 1, SWEET_SCENT
 	dbw 1, STUN_SPORE
@@ -1007,7 +1007,7 @@ BellossomEvosAttacks:
 	dbw 39, QUIVER_DANCE
 	dbw 59, PETAL_DANCE
 	dbw 69, SOLARBEAM
-	dbw LEARN_EVO_MOVE, PETAL_BLIZZ
+	dbw LEARN_EVO_MOVE, MOONBLAST
 	db 0 ; no more level-up moves
 
 ParasEvosAttacks:

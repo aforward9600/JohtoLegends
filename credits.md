@@ -33,6 +33,8 @@ Houndoom- Soup
 
 Mime Jr. Back Sprite: lakeofdance
 
+Duskull, Dusclops, Dusknoir, Bronzor, and Bronzong: Prism Team.
+
 Minisprites 1-251:
 Chamber
 Solo993

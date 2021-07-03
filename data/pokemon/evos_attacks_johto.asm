@@ -119,6 +119,9 @@ EvosAttacksPointers2::
 	dw StantlerEvosAttacks
 	dw SmeargleEvosAttacks
 	dw MiltankEvosAttacks
+	dw DuskullEvosAttacks
+	dw DusclopsEvosAttacks
+	dw DusknoirEvosAttacks
 	dw RaikouEvosAttacks
 	dw EnteiEvosAttacks
 	dw SuicuneEvosAttacks
@@ -2422,6 +2425,68 @@ MiltankEvosAttacks:
 	dbw 41, GYRO_BALL
 	dbw 48, HEAL_BELL
 	dbw 50, GIGA_IMPACT
+	db 0 ; no more level-up moves
+
+DuskullEvosAttacks:
+	dbbw EVOLVE_LEVEL, 37, DUSCLOPS
+	db 0 ; no more evolutions
+	dbw 1, LEER
+	dbw 1, NIGHT_SHADE
+	dbw 6, DISABLE
+	dbw 9, ASTONISH
+	dbw 14, FORESIGHT
+	dbw 17, QUICK_ATTACK
+	dbw 22, PURSUIT
+	dbw 25, WILL_O_WISP
+	dbw 30, CONFUSE_RAY
+	dbw 33, CURSE
+	dbw 38, HEX
+	dbw 41, SHADOW_BALL
+	dbw 46, MEAN_LOOK
+	dbw 49, PAYBACK
+	dbw 54, FUTURE_SIGHT
+	db 0 ; no more level-up moves
+
+DusclopsEvosAttacks:
+	dbbw EVOLVE_ITEM, DUSK_STONE, DUSKNOIR
+	db 0 ; no more evolutions
+	dbw 1, SHADOW_PUNCH
+	dbw 1, LEER
+	dbw 1, NIGHT_SHADE
+	dbw 6, DISABLE
+	dbw 9, ASTONISH
+	dbw 14, FORESIGHT
+	dbw 17, QUICK_ATTACK
+	dbw 22, PURSUIT
+	dbw 25, WILL_O_WISP
+	dbw 30, CONFUSE_RAY
+	dbw 33, CURSE
+	dbw 40, HEX
+	dbw 45, SHADOW_BALL
+	dbw 52, MEAN_LOOK
+	dbw 57, PAYBACK
+	dbw 64, FUTURE_SIGHT
+	dbw LEARN_EVO_MOVE, SHADOW_PUNCH
+	db 0 ; no more level-up moves
+
+DusknoirEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SHADOW_PUNCH
+	dbw 1, LEER
+	dbw 1, NIGHT_SHADE
+	dbw 6, DISABLE
+	dbw 9, ASTONISH
+	dbw 14, FORESIGHT
+	dbw 17, QUICK_ATTACK
+	dbw 22, PURSUIT
+	dbw 25, WILL_O_WISP
+	dbw 30, CONFUSE_RAY
+	dbw 33, CURSE
+	dbw 40, HEX
+	dbw 45, SHADOW_BALL
+	dbw 52, MEAN_LOOK
+	dbw 57, PAYBACK
+	dbw 64, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
 RaikouEvosAttacks:

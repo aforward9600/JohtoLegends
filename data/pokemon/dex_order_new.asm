@@ -54,6 +54,9 @@ NewPokedexOrder:
 	dw AZUMARILL
 	dw WOOPER
 	dw QUAGSIRE
+	dw DUSKULL
+	dw DUSCLOPS
+	dw DUSKNOIR
 	dw NATU
 	dw XATU
 	dw ZUBAT

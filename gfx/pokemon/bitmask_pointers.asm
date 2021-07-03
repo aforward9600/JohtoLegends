@@ -268,6 +268,9 @@ BitmasksPointers:
 	dw StantlerBitmasks
 	dw SmeargleBitmasks
 	dw MiltankBitmasks
+	dw DuskullBitmasks
+	dw DusclopsBitmasks
+	dw DusknoirBitmasks
 	dw RaikouBitmasks
 	dw EnteiBitmasks
 	dw SuicuneBitmasks

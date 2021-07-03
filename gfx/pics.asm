@@ -763,6 +763,7 @@ SalamenceBackpic:    INCBIN "gfx/pokemon/salamence/back.2bpp.lz"
 
 
 SECTION "Pics 26", ROMX
+
 MissingnoFrontpic:   INCBIN "gfx/pokemon/missingno/front.animated.2bpp.lz"
 MissingnoBackpic:    INCBIN "gfx/pokemon/missingno/back.2bpp.lz"
 WynautFrontpic:      INCBIN "gfx/pokemon/wynaut/front.animated.2bpp.lz"
@@ -794,3 +795,12 @@ LancePic:            INCBIN "gfx/trainers/lance.2bpp.lz"
 PasserbyPic:         INCBIN "gfx/trainers/miyamoto.2bpp.lz"
 TouristPic:          INCBIN "gfx/trainers/lass_2.2bpp.lz"
 EngineerPic:         INCBIN "gfx/trainers/engineer.2bpp.lz"
+
+SECTION "Pics 27", ROMX
+
+DuskullFrontpic:     INCBIN "gfx/pokemon/duskull/front.animated.2bpp.lz"
+DuskullBackpic:      INCBIN "gfx/pokemon/duskull/back.2bpp.lz"
+DusclopsFrontpic:    INCBIN "gfx/pokemon/dusclops/front.animated.2bpp.lz"
+DusclopsBackpic:     INCBIN "gfx/pokemon/dusclops/back.2bpp.lz"
+DusknoirFrontpic:    INCBIN "gfx/pokemon/dusknoir/front.animated.2bpp.lz"
+DusknoirBackpic:     INCBIN "gfx/pokemon/dusknoir/back.2bpp.lz"

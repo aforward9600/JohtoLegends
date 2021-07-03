@@ -270,6 +270,9 @@ MonMenuIcons:
 	db ICON_EQUINE      ; STANTLER
 	db ICON_MONSTER     ; SMEARGLE
 	db ICON_EQUINE      ; MILTANK
+	db ICON_GHOST       ; DUSKULL
+	db ICON_GHOST       ; DUSCLOPS
+	db ICON_GHOST       ; DUSKNOIR
 	db ICON_FOX         ; RAIKOU
 	db ICON_FOX         ; ENTEI
 	db ICON_FOX         ; SUICUNE

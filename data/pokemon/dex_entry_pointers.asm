@@ -269,6 +269,9 @@ PokedexDataPointerTable:
 	dba StantlerPokedexEntry
 	dba SmearglePokedexEntry
 	dba MiltankPokedexEntry
+	dba DuskullPokedexEntry
+	dba DusclopsPokedexEntry
+	dba DusknoirPokedexEntry
 	dba RaikouPokedexEntry
 	dba EnteiPokedexEntry
 	dba SuicunePokedexEntry

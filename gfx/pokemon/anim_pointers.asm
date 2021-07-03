@@ -268,6 +268,9 @@ AnimationPointers:
 	dw StantlerAnimation
 	dw SmeargleAnimation
 	dw MiltankAnimation
+	dw DuskullAnimation
+	dw DusclopsAnimation
+	dw DusknoirAnimation
 	dw RaikouAnimation
 	dw EnteiAnimation
 	dw SuicuneAnimation

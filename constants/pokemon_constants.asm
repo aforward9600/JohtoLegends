@@ -289,15 +289,18 @@ JOHTO_POKEMON EQU const_value
 	const STANTLER   ; ea
 	const SMEARGLE   ; eb
 	const MILTANK    ; f1
+	const DUSKULL    ; f2
+	const DUSCLOPS
+	const DUSKNOIR
 	const RAIKOU     ; f3
 	const ENTEI      ; f4
 	const SUICUNE    ; f5
 	const LARVITAR   ; f6
 	const PUPITAR    ; f7
 	const TYRANITAR  ; f8
-	const BAGON
-	const SHELGON
-	const SALAMENCE
+	const BAGON      ; f9
+	const SHELGON    ; fa
+	const SALAMENCE  ; fb
 	const LUGIA      ; f9
 	const HO_OH      ; fa
 	const CELEBI     ; fb

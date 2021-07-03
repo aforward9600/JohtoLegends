@@ -154,7 +154,7 @@ GoldenrodGymGuyScript:
 	end
 
 GoldenrodGymStatue:
-	checkflag EVENT_ROCKET_JAIL_RIVAL
+	checkevent EVENT_ROCKET_JAIL_RIVAL
 	iftrue .RivalBeatGym
 	checkflag ENGINE_PLAINBADGE
 	iftrue .Beaten
@@ -214,6 +214,7 @@ TowerInvaded2:
 	applymovement GOLDENRODGYM_DAHLIA, GoldenrodGymRivalMovement2
 	disappear GOLDENRODGYM_DAHLIA
 	playsound SFX_EXIT_BUILDING
+	special RestartMapMusic
 	setscene SCENE_DEFAULT
 	end
 

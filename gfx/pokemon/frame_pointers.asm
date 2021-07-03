@@ -268,6 +268,9 @@ FramesPointers:
 	dba StantlerFrames
 	dba SmeargleFrames
 	dba MiltankFrames
+	dba DuskullFrames
+	dba DusclopsFrames
+	dba DusknoirFrames
 	dba RaikouFrames
 	dba EnteiFrames
 	dba SuicuneFrames

@@ -268,6 +268,9 @@ AnimationIdlePointers:
 	dw StantlerAnimationIdle
 	dw SmeargleAnimationIdle
 	dw MiltankAnimationIdle
+	dw DuskullAnimationIdle
+	dw DusclopsAnimationIdle
+	dw DusknoirAnimationIdle
 	dw RaikouAnimationIdle
 	dw EnteiAnimationIdle
 	dw SuicuneAnimationIdle

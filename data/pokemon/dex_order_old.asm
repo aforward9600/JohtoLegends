@@ -264,6 +264,9 @@ OldPokedexOrder:
 	dw STANTLER
 	dw SMEARGLE
 	dw MILTANK
+	dw DUSKULL
+	dw DUSCLOPS
+	dw DUSKNOIR
 	dw RAIKOU
 	dw ENTEI
 	dw SUICUNE

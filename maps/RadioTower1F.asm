@@ -156,6 +156,7 @@ SherlesAppearsGoldenrodTower:
 	applymovement RADIOTOWER1F_SHERLES, SherlesMovesIntoPlaceMovement
 	clearevent EVENT_GOLDENROD_TOWER_SHERLES
 	clearevent EVENT_GOLDENROD_GYM_RIVAL_1
+	setscene SCENE_DEFAULT
 	end
 
 RadioTower1FRivalScript:

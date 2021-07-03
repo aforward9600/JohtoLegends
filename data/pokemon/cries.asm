@@ -274,6 +274,9 @@ PokemonCries::
 	mon_cry CRY_AIPOM,      -$160,  $180 ; STANTLER
 	mon_cry CRY_PICHU,      -$21a,  $1f0 ; SMEARGLE
 	mon_cry CRY_GLIGAR,     -$1cd,  $1a0 ; MILTANK
+	mon_cry CRY_CYNDAQUIL,   $10e,  $050 ; DUSKULL
+	mon_cry CRY_NATU,        $a5e,  $160 ; DUSCLOPS
+	mon_cry CRY_MAGCARGO,   -$01a,  $2e2 ; DUSKNOIR
 	mon_cry CRY_RAIKOU,      $22e,  $120 ; RAIKOU
 	mon_cry CRY_ENTEI,       $000,  $1a0 ; ENTEI
 	mon_cry CRY_MAGCARGO,    $000,  $180 ; SUICUNE

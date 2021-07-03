@@ -749,6 +749,7 @@ INCLUDE "gfx/overworld/trainer_battle_nite.pal"
 	ret z
 	ld de, MiltonTransition
 	cp MILTON
+	ret z
 	ld de, KurtTransition
 	cp KURT
 	ret z

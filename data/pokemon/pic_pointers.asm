@@ -551,6 +551,12 @@ PokemonPicPointers::
 	dba SmeargleBackpic
 	dba MiltankFrontpic
 	dba MiltankBackpic
+	dba DuskullFrontpic
+	dba DuskullBackpic
+	dba DusclopsFrontpic
+	dba DusclopsBackpic
+	dba DusknoirFrontpic
+	dba DusknoirBackpic
 	dba RaikouFrontpic
 	dba RaikouBackpic
 	dba EnteiFrontpic

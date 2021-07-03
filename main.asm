@@ -718,3 +718,7 @@ INCLUDE "engine/16/table_functions.asm"
 
 ; own section
 INCLUDE "data/trainers/parties.asm"
+
+SECTION "New Base Stats", ROMX
+
+INCLUDE "data/pokemon/base_stats_2.asm"
