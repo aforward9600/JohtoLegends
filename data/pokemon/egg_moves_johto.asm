@@ -125,6 +125,9 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw RaltsEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -669,6 +672,14 @@ DuskullEggMoves:
 	dw FAINT_ATTACK
 	dw HAZE
 	dw PAIN_SPLIT
+	dw -1 ; end
+
+RaltsEggMoves:
+	dw CONFUSE_RAY
+	dw DESTINY_BOND
+	dw DISABLE
+	dw MEAN_LOOK
+	dw SHADOW_SNEAK
 	dw -1 ; end
 
 LarvitarEggMoves:

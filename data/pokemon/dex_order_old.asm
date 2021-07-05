@@ -269,6 +269,9 @@ OldPokedexOrder:
 	dw DUSKNOIR
 	dw BRONZOR
 	dw BRONZONG
+	dw RALTS
+	dw KIRLIA
+	dw GARDEVOIR
 	dw RAIKOU
 	dw ENTEI
 	dw SUICUNE

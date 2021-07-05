@@ -274,6 +274,9 @@ PokedexDataPointerTable:
 	dba DusknoirPokedexEntry
 	dba BronzorPokedexEntry
 	dba BronzongPokedexEntry
+	dba RaltsPokedexEntry
+	dba KirliaPokedexEntry
+	dba GardevoirPokedexEntry
 	dba RaikouPokedexEntry
 	dba EnteiPokedexEntry
 	dba SuicunePokedexEntry

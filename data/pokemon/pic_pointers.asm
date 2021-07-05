@@ -561,6 +561,12 @@ PokemonPicPointers::
 	dba BronzorBackpic
 	dba BronzongFrontpic
 	dba BronzongBackpic
+	dba RaltsFrontpic
+	dba RaltsBackpic
+	dba KirliaFrontpic
+	dba KirliaBackpic
+	dba GardevoirFrontpic
+	dba GardevoirBackpic
 	dba RaikouFrontpic
 	dba RaikouBackpic
 	dba EnteiFrontpic

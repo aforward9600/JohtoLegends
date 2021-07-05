@@ -275,6 +275,9 @@ MonMenuIcons:
 	db ICON_GHOST       ; DUSKNOIR
 	db ICON_VOLTORB     ; BRONZOR
 	db ICON_VOLTORB     ; BRONZONG
+	db ICON_MONSTER     ; RALTS
+	db ICON_MONSTER     ; KIRLIA
+	db ICON_MONSTER     ; GARDEVOIR
 	db ICON_FOX         ; RAIKOU
 	db ICON_FOX         ; ENTEI
 	db ICON_FOX         ; SUICUNE

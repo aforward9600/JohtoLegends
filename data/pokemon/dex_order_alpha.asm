@@ -76,6 +76,7 @@ AlphabeticalPokedexOrder:
 	dw FLAREON
 	dw FORRETRESS
 	dw FURRET
+	dw GARDEVOIR
 	dw GASTLY
 	dw GENGAR
 	dw GEODUDE
@@ -120,6 +121,7 @@ AlphabeticalPokedexOrder:
 	dw KANGASKHAN
 	dw KINGDRA
 	dw KINGLER
+	dw KIRLIA
 	dw KOFFING
 	dw KRABBY
 	dw LANTURN
@@ -206,6 +208,7 @@ AlphabeticalPokedexOrder:
 	dw QWILFISH
 	dw RAICHU
 	dw RAIKOU
+	dw RALTS
 	dw RAPIDASH
 	dw RATICATE
 	dw RATTATA

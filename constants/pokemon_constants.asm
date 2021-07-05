@@ -294,6 +294,9 @@ JOHTO_POKEMON EQU const_value
 	const DUSKNOIR
 	const BRONZOR
 	const BRONZONG
+	const RALTS
+	const KIRLIA
+	const GARDEVOIR
 	const RAIKOU     ; f3
 	const ENTEI      ; f4
 	const SUICUNE    ; f5

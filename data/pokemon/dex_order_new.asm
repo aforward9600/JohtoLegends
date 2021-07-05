@@ -95,6 +95,9 @@ NewPokedexOrder:
 	dw AMPHAROS
 	dw SANDSHREW
 	dw SANDSLASH
+	dw RALTS
+	dw KIRLIA
+	dw GARDEVOIR
 	dw POLIWAG
 	dw POLIWHIRL
 	dw POLIWRATH

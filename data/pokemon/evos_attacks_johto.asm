@@ -124,6 +124,9 @@ EvosAttacksPointers2::
 	dw DusknoirEvosAttacks
 	dw BronzorEvosAttacks
 	dw BronzongEvosAttacks
+	dw RaltsEvosAttacks
+	dw KirliaEvosAttacks
+	dw GardevoirEvosAttacks
 	dw RaikouEvosAttacks
 	dw EnteiEvosAttacks
 	dw SuicuneEvosAttacks
@@ -2533,6 +2536,72 @@ BronzongEvosAttacks:
 	dbw 58, FLASH_CANNON
 	dbw LEARN_EVO_MOVE, ZEN_HEADBUTT
 	db 0 ; no more level-up moves
+
+RaltsEvosAttacks:
+	dbbw EVOLVE_LEVEL, 20, KIRLIA
+	db 0 ; no more evolutions
+	dbw 1, GROWL
+	dbw 4, CONFUSION
+	dbw 6, DOUBLE_TEAM
+	dbw 9, TELEPORT
+	dbw 11, DISARM_VOICE
+	dbw 14, SAFEGUARD
+	dbw 17, MAGICAL_LEAF
+	dbw 19, MOONLIGHT
+	dbw 22, DRAININGKISS
+	dbw 24, CALM_MIND
+	dbw 27, PSYCHIC_M
+	dbw 29, LIGHT_SCREEN
+	dbw 32, FUTURE_SIGHT
+	dbw 34, CHARM
+	dbw 37, HYPNOSIS
+	dbw 39, DREAM_EATER
+	dbw 42, DAZZLINGLEAM
+	db 0 ; no more evolutions
+
+KirliaEvosAttacks:
+	dbbw EVOLVE_LEVEL, 30, GARDEVOIR
+	db 0 ; no more evolutions
+	dbw 1, GROWL
+	dbw 4, CONFUSION
+	dbw 6, DOUBLE_TEAM
+	dbw 9, TELEPORT
+	dbw 11, DISARM_VOICE
+	dbw 14, SAFEGUARD
+	dbw 17, MAGICAL_LEAF
+	dbw 19, MOONLIGHT
+	dbw 23, DRAININGKISS
+	dbw 26, CALM_MIND
+	dbw 30, PSYCHIC_M
+	dbw 33, LIGHT_SCREEN
+	dbw 37, FUTURE_SIGHT
+	dbw 40, CHARM
+	dbw 44, HYPNOSIS
+	dbw 47, DREAM_EATER
+	dbw 51, DAZZLINGLEAM
+	db 0 ; no more evolutions
+
+GardevoirEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, GROWL
+	dbw 4, CONFUSION
+	dbw 6, DOUBLE_TEAM
+	dbw 9, TELEPORT
+	dbw 11, DISARM_VOICE
+	dbw 14, SAFEGUARD
+	dbw 17, MAGICAL_LEAF
+	dbw 19, MOONLIGHT
+	dbw 23, DRAININGKISS
+	dbw 26, CALM_MIND
+	dbw 31, PSYCHIC_M
+	dbw 35, LIGHT_SCREEN
+	dbw 40, FUTURE_SIGHT
+	dbw 44, CHARM
+	dbw 49, HYPNOSIS
+	dbw 53, DREAM_EATER
+	dbw 58, DAZZLINGLEAM
+	dbw 62, MOONBLAST
+	db 0 ; no more evolutions
 
 RaikouEvosAttacks:
 	db 0 ; no more evolutions

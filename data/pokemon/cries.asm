@@ -279,6 +279,9 @@ PokemonCries::
 	mon_cry CRY_MAGCARGO,   -$01a,  $2e2 ; DUSKNOIR
 	mon_cry CRY_EKANS,       $101,  $086 ; BRONZOR
 	mon_cry CRY_EKANS,       $12a,  $170 ; BRONZONG
+	mon_cry CRY_GLIGAR,      $ffc,  $110 ; RALTS
+	mon_cry CRY_VILEPLUME,   $008,  $100 ; KIRLIA
+	mon_cry CRY_VILEPLUME,   $f22,  $163 ; GARDEVOIR
 	mon_cry CRY_RAIKOU,      $22e,  $120 ; RAIKOU
 	mon_cry CRY_ENTEI,       $000,  $1a0 ; ENTEI
 	mon_cry CRY_MAGCARGO,    $000,  $180 ; SUICUNE
