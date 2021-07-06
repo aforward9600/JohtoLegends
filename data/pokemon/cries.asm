@@ -282,6 +282,7 @@ PokemonCries::
 	mon_cry CRY_GLIGAR,      $ffc,  $110 ; RALTS
 	mon_cry CRY_VILEPLUME,   $008,  $100 ; KIRLIA
 	mon_cry CRY_VILEPLUME,   $f22,  $163 ; GARDEVOIR
+	mon_cry CRY_VILEPLUME,   $f22,  $163 ; GALLADE
 	mon_cry CRY_RAIKOU,      $22e,  $120 ; RAIKOU
 	mon_cry CRY_ENTEI,       $000,  $1a0 ; ENTEI
 	mon_cry CRY_MAGCARGO,    $000,  $180 ; SUICUNE

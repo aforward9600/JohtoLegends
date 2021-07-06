@@ -280,6 +280,7 @@ PokemonNames::
 	db "Ralts@@@@@"
 	db "Kirlia@@@@"
 	db "Gardevoir@"
+	db "Gallade@@@"
 	db "Raikou@@@@"
 	db "Entei@@@@@"
 	db "Suicune@@@"

@@ -98,6 +98,7 @@ NewPokedexOrder:
 	dw RALTS
 	dw KIRLIA
 	dw GARDEVOIR
+	dw GALLADE
 	dw POLIWAG
 	dw POLIWHIRL
 	dw POLIWRATH

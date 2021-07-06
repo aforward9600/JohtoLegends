@@ -567,6 +567,8 @@ PokemonPicPointers::
 	dba KirliaBackpic
 	dba GardevoirFrontpic
 	dba GardevoirBackpic
+	dba GalladeFrontpic
+	dba GalladeBackpic
 	dba RaikouFrontpic
 	dba RaikouBackpic
 	dba EnteiFrontpic

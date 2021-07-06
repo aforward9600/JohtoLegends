@@ -272,6 +272,7 @@ OldPokedexOrder:
 	dw RALTS
 	dw KIRLIA
 	dw GARDEVOIR
+	dw GALLADE
 	dw RAIKOU
 	dw ENTEI
 	dw SUICUNE

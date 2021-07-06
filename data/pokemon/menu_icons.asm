@@ -278,6 +278,7 @@ MonMenuIcons:
 	db ICON_MONSTER     ; RALTS
 	db ICON_MONSTER     ; KIRLIA
 	db ICON_MONSTER     ; GARDEVOIR
+	db ICON_MONSTER     ; GALLADE
 	db ICON_FOX         ; RAIKOU
 	db ICON_FOX         ; ENTEI
 	db ICON_FOX         ; SUICUNE

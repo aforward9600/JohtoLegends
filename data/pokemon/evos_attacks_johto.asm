@@ -127,6 +127,7 @@ EvosAttacksPointers2::
 	dw RaltsEvosAttacks
 	dw KirliaEvosAttacks
 	dw GardevoirEvosAttacks
+	dw GalladeEvosAttacks
 	dw RaikouEvosAttacks
 	dw EnteiEvosAttacks
 	dw SuicuneEvosAttacks
@@ -2601,6 +2602,29 @@ GardevoirEvosAttacks:
 	dbw 53, DREAM_EATER
 	dbw 58, DAZZLINGLEAM
 	dbw 62, MOONBLAST
+	db 0 ; no more evolutions
+
+GalladeEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SLASH
+	dbw 1, GROWL
+	dbw 4, CONFUSION
+	dbw 6, DOUBLE_TEAM
+	dbw 9, TELEPORT
+	dbw 11, KARATE_CHOP
+	dbw 14, FURY_CUTTER
+	dbw 17, AERIAL_ACE
+	dbw 19, MOONLIGHT
+	dbw 23, LEAF_BLADE
+	dbw 26, SWORDS_DANCE
+	dbw 31, PSYCHO_CUT
+	dbw 35, REFLECT
+	dbw 40, FAINT_ATTACK
+	dbw 44, FALSE_SWIPE
+	dbw 49, PROTECT
+	dbw 53, CLOSE_COMBAT
+	dbw 58, ZEN_HEADBUTT
+	dbw LEARN_EVO_MOVE, SLASH
 	db 0 ; no more evolutions
 
 RaikouEvosAttacks:

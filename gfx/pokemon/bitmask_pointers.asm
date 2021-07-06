@@ -276,6 +276,7 @@ BitmasksPointers:
 	dw RaltsBitmasks
 	dw KirliaBitmasks
 	dw GardevoirBitmasks
+	dw GalladeBitmasks
 	dw RaikouBitmasks
 	dw EnteiBitmasks
 	dw SuicuneBitmasks

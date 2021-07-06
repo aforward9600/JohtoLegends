@@ -76,6 +76,7 @@ AlphabeticalPokedexOrder:
 	dw FLAREON
 	dw FORRETRESS
 	dw FURRET
+	dw GALLADE
 	dw GARDEVOIR
 	dw GASTLY
 	dw GENGAR

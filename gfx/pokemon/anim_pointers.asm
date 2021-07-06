@@ -276,6 +276,7 @@ AnimationPointers:
 	dw RaltsAnimation
 	dw KirliaAnimation
 	dw GardevoirAnimation
+	dw GalladeAnimation
 	dw RaikouAnimation
 	dw EnteiAnimation
 	dw SuicuneAnimation
