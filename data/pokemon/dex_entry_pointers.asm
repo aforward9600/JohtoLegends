@@ -269,6 +269,9 @@ PokedexDataPointerTable:
 	dba StantlerPokedexEntry
 	dba SmearglePokedexEntry
 	dba MiltankPokedexEntry
+	dba BudewPokedexEntry
+	dba RoseliaPokedexEntry
+	dba RoseradePokedexEntry
 	dba DuskullPokedexEntry
 	dba DusclopsPokedexEntry
 	dba DusknoirPokedexEntry

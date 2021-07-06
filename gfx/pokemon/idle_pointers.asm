@@ -268,6 +268,9 @@ AnimationIdlePointers:
 	dw StantlerAnimationIdle
 	dw SmeargleAnimationIdle
 	dw MiltankAnimationIdle
+	dw BudewAnimationIdle
+	dw RoseliaAnimationIdle
+	dw RoseradeAnimationIdle
 	dw DuskullAnimationIdle
 	dw DusclopsAnimationIdle
 	dw DusknoirAnimationIdle

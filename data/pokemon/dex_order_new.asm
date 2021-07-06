@@ -28,6 +28,9 @@ NewPokedexOrder:
 	dw FEAROW
 	dw HOOTHOOT
 	dw NOCTOWL
+	dw BUDEW
+	dw ROSELIA
+	dw ROSERADE
 	dw GEODUDE
 	dw GRAVELER
 	dw GOLEM

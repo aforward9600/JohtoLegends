@@ -551,6 +551,12 @@ PokemonPicPointers::
 	dba SmeargleBackpic
 	dba MiltankFrontpic
 	dba MiltankBackpic
+	dba BudewFrontpic
+	dba BudewBackpic
+	dba RoseliaFrontpic
+	dba RoseliaBackpic
+	dba RoseradeFrontpic
+	dba RoseradeBackpic
 	dba DuskullFrontpic
 	dba DuskullBackpic
 	dba DusclopsFrontpic

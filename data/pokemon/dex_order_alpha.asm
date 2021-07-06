@@ -23,6 +23,7 @@ AlphabeticalPokedexOrder:
 	dw BONSLY
 	dw BRONZONG
 	dw BRONZOR
+	dw BUDEW
 	dw BULBASAUR
 	dw BUTTERFREE
 	dw CATERPIE
@@ -217,6 +218,8 @@ AlphabeticalPokedexOrder:
 	dw RHYDON
 	dw RHYHORN
 	dw RHYPERIOR
+	dw ROSELIA
+	dw ROSERADE
 	dw SALAMENCE
 	dw SANDSHREW
 	dw SANDSLASH

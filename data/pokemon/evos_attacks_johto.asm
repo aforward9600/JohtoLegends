@@ -119,6 +119,9 @@ EvosAttacksPointers2::
 	dw StantlerEvosAttacks
 	dw SmeargleEvosAttacks
 	dw MiltankEvosAttacks
+	dw BudewEvoseAttacks
+	dw RoseliaEvosAttacks
+	dw RoseradeEvosAttacks
 	dw DuskullEvosAttacks
 	dw DusclopsEvosAttacks
 	dw DusknoirEvosAttacks
@@ -2432,6 +2435,47 @@ MiltankEvosAttacks:
 	dbw 48, HEAL_BELL
 	dbw 50, GIGA_IMPACT
 	db 0 ; no more level-up moves
+
+BudewEvoseAttacks:
+	dbw EVOLVE_HAPPINESS, TR_MORNDAY, ROSELIA
+	db 0 ; no more evolutions
+	dbw 1, ABSORB
+	dbw 4, GROWTH
+	dbw 7, ACID
+	dbw 10, STUN_SPORE
+	dbw 13, MEGA_DRAIN
+	dbw 16, SLEEP_POWDER
+	db 0 ; no more level-up moves
+
+RoseliaEvosAttacks:
+	dbw EVOLVE_ITEM, SHINY_STONE, ROSERADE
+	db 0 ; no more evolutions
+	dbw 1, ABSORB
+	dbw 4, GROWTH
+	dbw 7, POISON_STING
+	dbw 10, STUN_SPORE
+	dbw 13, MEGA_DRAIN
+	dbw 16, LEECH_SEED
+	dbw 19, MAGICAL_LEAF
+	dbw 22, SING
+	dbw 25, GIGA_DRAIN
+	dbw 28, SPIKES
+	dbw 31, SWEET_SCENT
+	dbw 34, SLUDGE_BOMB
+	dbw 37, PETAL_BLIZZ
+	dbw 40, TOXIC
+	dbw 43, HEAL_BELL
+	dbw 46, SYNTHESIS
+	dbw 50, SOLARBEAM
+	db 0 ; no more level-up moves
+
+RoseradeEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, PETAL_DANCE
+	dbw 1, MEGA_DRAIN
+	dbw 1, MAGICAL_LEAF
+	dbw 1, SLUDGE_BOMB
+	dbw LEARN_EVO_MOVE, PETAL_DANCE
 
 DuskullEvosAttacks:
 	dbbw EVOLVE_LEVEL, 37, DUSCLOPS

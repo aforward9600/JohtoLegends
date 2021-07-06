@@ -274,6 +274,9 @@ PokemonCries::
 	mon_cry CRY_AIPOM,      -$160,  $180 ; STANTLER
 	mon_cry CRY_PICHU,      -$21a,  $1f0 ; SMEARGLE
 	mon_cry CRY_GLIGAR,     -$1cd,  $1a0 ; MILTANK
+	mon_cry CRY_VENONAT,     $00e,  $0be ; BUDEW
+	mon_cry CRY_AIPOM,       $041,  $0ae ; ROSELIA
+	mon_cry CRY_PICHU,      -$047,  $266 ; ROSERADE
 	mon_cry CRY_CYNDAQUIL,   $10e,  $050 ; DUSKULL
 	mon_cry CRY_NATU,        $a5e,  $160 ; DUSCLOPS
 	mon_cry CRY_MAGCARGO,   -$01a,  $2e2 ; DUSKNOIR

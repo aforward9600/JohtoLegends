@@ -120,6 +120,9 @@ EggMovePointers2::
 	dw StantlerEggMoves
 	dw NoEggMoves2
 	dw MiltankEggMoves
+	dw BudewEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw DuskullEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -665,6 +668,19 @@ MiltankEggMoves:
 	dw BELCH
 	dw DOUBLE_EDGE
 	dw WORK_UP
+	dw -1 ; end
+
+BudewEggMoves:
+	dw COTTON_SPORE
+	dw EXTRASENSORY
+	dw GIGA_DRAIN
+	dw SING
+	dw SEED_BOMB
+	dw RAZOR_LEAF
+	dw SYNTHESIS
+	dw SLEEP_POWDER
+	dw SPIKES
+	dw POWER_WHIP
 	dw -1 ; end
 
 DuskullEggMoves:

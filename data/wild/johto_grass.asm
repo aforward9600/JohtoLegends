@@ -1775,32 +1775,32 @@ JohtoGrassWildMons:
 	map_id ROUTE_45
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 2, KIRLIA
-	dbw 2, KIRLIA
-	dbw 3, KIRLIA
-	dbw 3, KIRLIA
-	dbw 3, KIRLIA
-	dbw 2, KIRLIA
-	dbw 3, KIRLIA
-	dbw 3, KIRLIA
+	dbw 2, PIDGEY
+	dbw 2, SENTRET
+	dbw 3, GEODUDE
+	dbw 3, SKARMINI
+	dbw 3, PHANPY
+	dbw 2, SKARMINI
+	dbw 3, GEODUDE
+	dbw 3, PHANPY
 	; day
-	dbw 2, KIRLIA
-	dbw 2, KIRLIA
-	dbw 3, KIRLIA
-	dbw 3, KIRLIA
-	dbw 3, KIRLIA
-	dbw 2, KIRLIA
-	dbw 3, KIRLIA
-	dbw 3, KIRLIA
+	dbw 2, PIDGEY
+	dbw 2, SENTRET
+	dbw 3, GEODUDE
+	dbw 3, SKARMINI
+	dbw 3, PHANPY
+	dbw 2, SKARMINI
+	dbw 3, GEODUDE
+	dbw 3, PHANPY
 	; nite
-	dbw 2, KIRLIA
-	dbw 2, KIRLIA
-	dbw 3, KIRLIA
-	dbw 3, KIRLIA
-	dbw 3, KIRLIA
-	dbw 2, KIRLIA
-	dbw 3, KIRLIA
-	dbw 3, KIRLIA
+	dbw 2, HOOTHOOT
+	dbw 2, RATTATA
+	dbw 3, GEODUDE
+	dbw 3, SKARMINI
+	dbw 3, PHANPY
+	dbw 2, SKARMINI
+	dbw 3, GEODUDE
+	dbw 3, PHANPY
 
 	map_id ROUTE_46
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
