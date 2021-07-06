@@ -11,6 +11,8 @@ Dark Zeta and Celadonk for Evolution moves for Pokecrystal16.
 
 Mountvesuvius for Strength Sap and HM Key Items.
 
+Dev727 for alternate Evolution methods.
+
 New Pokemon cries: chattycrystal team
 
 Calm Mind, Sucker Punch, Dragon Dance, Quiver Dance, Grass Knot: chattycrystal team

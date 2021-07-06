@@ -71,6 +71,12 @@ EvolveAfterBattle_MasterLoop:
 	jp nz, .dont_evolve_check
 
 	ld a, b
+	cp EVOLVE_ITEM_MALE
+	jp z, .item_male
+
+	cp EVOLVE_ITEM_FEMALE
+	jp z, .item_female
+
 	cp EVOLVE_ITEM
 	jp z, .item
 
@@ -131,7 +137,7 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jp nz, .skip_evolution_species
-	jr .proceed
+	jp .proceed
 
 .happiness_daylight
 	ld a, [wTimeOfDay]
@@ -163,6 +169,24 @@ EvolveAfterBattle_MasterLoop:
 	xor a
 	ld [wTempMonItem], a
 	jr .proceed
+
+.item_male
+	xor a
+	ld [wMonType], a
+	push hl
+	farcall GetGender
+	pop hl
+	jp z, .skip_evolution_species
+	jr .item
+
+.item_female
+	xor a
+	ld [wMonType], a
+	push hl
+	farcall GetGender
+	pop hl
+	jp z, .skip_evolution_species
+	jr .item
 
 .item
 	call GetNextEvoAttackByte
@@ -692,15 +716,46 @@ DetermineEvolutionItemResults::
 	call GetNextEvoAttackByte
 	and a
 	ret z
-	cp EVOLVE_STAT
-	jr z, .skip_species_two_parameters
+
+	cp EVOLVE_ITEM_MALE
+	jr z, .item_male
+	cp EVOLVE_ITEM_FEMALE
+	jr z, .item_female
 	cp EVOLVE_ITEM
-	jr nz, .skip_species_parameter
+	jr z, .item
+
+
+	jr .loop
+
+.item_male
+	xor a
+	ld [wMonType], a
+	push hl
+	farcall GetGender
+	pop hl
+
+	jr z, .skip_species
+
+	jr .item
+
+.item_female
+	xor a
+	ld [wMonType], a
+	push hl
+	farcall GetGender
+	pop hl
+
+	jr z, .skip_species
+
+	jr .item
+
+.item
 	call GetNextEvoAttackByte
-	ld b, a	
+	ld b, a
 	ld a, [wCurItem]
 	cp b
 	jr nz, .skip_species
+
 	ldh a, [hTemp]
 	call GetFarHalfword
 	ld d, h

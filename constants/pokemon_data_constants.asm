@@ -1,26 +1,29 @@
 ; base data struct members (see data/pokemon/base_stats/*.asm)
-BASE_SPECIES     EQUS "(wBaseSpecies - wCurBaseData)"
-BASE_STATS       EQUS "(wBaseStats - wCurBaseData)"
-BASE_HP          EQUS "(wBaseHP - wCurBaseData)"
-BASE_ATK         EQUS "(wBaseAttack - wCurBaseData)"
-BASE_SPD         EQUS "(wBaseSpeed - wCurBaseData)"
-BASE_SAT         EQUS "(wBaseSpecialAttack - wCurBaseData)"
-BASE_SDF         EQUS "(wBaseSpecialDefense - wCurBaseData)"
-BASE_TYPES       EQUS "(wBaseType - wCurBaseData)"
-BASE_TYPE_1      EQUS "(wBaseType1 - wCurBaseData)"
-BASE_TYPE_2      EQUS "(wBaseType2 - wCurBaseData)"
-BASE_CATCH_RATE  EQUS "(wBaseCatchRate - wCurBaseData)"
-BASE_EXP         EQUS "(wBaseExp - wCurBaseData)"
-BASE_ITEMS       EQUS "(wBaseItems - wCurBaseData)"
-BASE_ITEM_1      EQUS "(wBaseItem1 - wCurBaseData)"
-BASE_ITEM_2      EQUS "(wBaseItem2 - wCurBaseData)"
-BASE_GENDER      EQUS "(wBaseGender - wCurBaseData)"
-BASE_EGG_STEPS   EQUS "(wBaseEggSteps - wCurBaseData)"
-BASE_PIC_SIZE    EQUS "(wBasePicSize - wCurBaseData)"
-BASE_GROWTH_RATE EQUS "(wBaseGrowthRate - wCurBaseData)"
-BASE_EGG_GROUPS  EQUS "(wBaseEggGroups - wCurBaseData)"
-BASE_TMHM        EQUS "(wBaseTMHM - wCurBaseData)"
-BASE_DATA_SIZE   EQUS "(wCurBaseDataEnd - wCurBaseData)"
+BASE_SPECIES            EQUS "(wBaseSpecies - wCurBaseData)"
+BASE_STATS              EQUS "(wBaseStats - wCurBaseData)"
+BASE_HP                 EQUS "(wBaseHP - wCurBaseData)"
+BASE_ATK                EQUS "(wBaseAttack - wCurBaseData)"
+BASE_SPD                EQUS "(wBaseSpeed - wCurBaseData)"
+BASE_SAT                EQUS "(wBaseSpecialAttack - wCurBaseData)"
+BASE_SDF                EQUS "(wBaseSpecialDefense - wCurBaseData)"
+BASE_EVS                EQUS "(wBaseEVs - wCurBaseData)"
+BASE_HP_ATK_DEF_SPD_EVS EQUS "(wBaseHPAtkDefSpdEVs - wCurBaseData)"
+BASE_SAT_SDF_EVS        EQUS "(wBaseSpAtkSpDefEVs - wCurBaseData)"
+BASE_TYPES              EQUS "(wBaseType - wCurBaseData)"
+BASE_TYPE_1             EQUS "(wBaseType1 - wCurBaseData)"
+BASE_TYPE_2             EQUS "(wBaseType2 - wCurBaseData)"
+BASE_CATCH_RATE         EQUS "(wBaseCatchRate - wCurBaseData)"
+BASE_EXP                EQUS "(wBaseExp - wCurBaseData)"
+BASE_ITEMS              EQUS "(wBaseItems - wCurBaseData)"
+BASE_ITEM_1             EQUS "(wBaseItem1 - wCurBaseData)"
+BASE_ITEM_2             EQUS "(wBaseItem2 - wCurBaseData)"
+BASE_GENDER             EQUS "(wBaseGender - wCurBaseData)"
+BASE_EGG_STEPS          EQUS "(wBaseEggSteps - wCurBaseData)"
+BASE_PIC_SIZE           EQUS "(wBasePicSize - wCurBaseData)"
+BASE_GROWTH_RATE        EQUS "(wBaseGrowthRate - wCurBaseData)"
+BASE_EGG_GROUPS         EQUS "(wBaseEggGroups - wCurBaseData)"
+BASE_TMHM               EQUS "(wBaseTMHM - wCurBaseData)"
+BASE_DATA_SIZE          EQUS "(wCurBaseDataEnd - wCurBaseData)"
 
 ; gender ratio constants
 GENDER_F0      EQU 0 percent
@@ -130,7 +133,8 @@ NUM_HOF_TEAMS EQU 30
 	const EVOLVE_TRADE
 	const EVOLVE_HAPPINESS
 	const EVOLVE_STAT
-	const EVOLVE_ITEM_GENDER
+	const EVOLVE_ITEM_MALE
+	const EVOLVE_ITEM_FEMALE
 
 ; EVOLVE_HAPPINESS triggers
 	const_def 1
