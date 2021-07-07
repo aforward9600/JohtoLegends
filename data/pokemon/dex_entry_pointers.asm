@@ -272,6 +272,8 @@ PokedexDataPointerTable:
 	dba BudewPokedexEntry
 	dba RoseliaPokedexEntry
 	dba RoseradePokedexEntry
+	dba ElectrikePokedexEntry
+	dba ManectricPokedexEntry
 	dba DuskullPokedexEntry
 	dba DusclopsPokedexEntry
 	dba DusknoirPokedexEntry

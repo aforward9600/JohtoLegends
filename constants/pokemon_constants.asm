@@ -292,6 +292,8 @@ JOHTO_POKEMON EQU const_value
 	const BUDEW
 	const ROSELIA
 	const ROSERADE
+	const ELECTRIKE
+	const MANECTRIC
 	const DUSKULL    ; f2
 	const DUSCLOPS
 	const DUSKNOIR

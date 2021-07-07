@@ -1599,7 +1599,7 @@ JohtoGrassWildMons:
 	dbw 14, NIDORAN_F
 	dbw 15, PIDGEY
 	dbw 16, NIDORAN_M
-	dbw 15, JIGGLYPUFF
+	dbw 15, MIME__JR
 	dbw 15, JIGGLYPUFF
 	dbw 15, FARFETCH_D
 	dbw 15, FARFETCH_D
@@ -1608,7 +1608,7 @@ JohtoGrassWildMons:
 	dbw 14, NIDORAN_F
 	dbw 15, PIDGEY
 	dbw 16, NIDORAN_M
-	dbw 15, JIGGLYPUFF
+	dbw 15, MIME__JR
 	dbw 15, JIGGLYPUFF
 	dbw 15, MEOWTH
 	dbw 15, MEOWTH
@@ -1617,7 +1617,7 @@ JohtoGrassWildMons:
 	dbw 14, NIDORAN_M
 	dbw 15, HOOTHOOT
 	dbw 16, NIDORAN_F
-	dbw 15, JIGGLYPUFF
+	dbw 15, MIME__JR
 	dbw 15, JIGGLYPUFF
 	dbw 15, MURKROW
 	dbw 15, MURKROW
@@ -1659,7 +1659,7 @@ JohtoGrassWildMons:
 	dbw 17, DROWZEE
 	dbw 17, BUTTERFREE
 	dbw 18, YANMA
-	dbw 18, MILTANK
+	dbw 18, ROSELIA
 	dbw 18, MILTANK
 	dbw 19, TAUROS
 	dbw 19, TAUROS
@@ -1668,7 +1668,7 @@ JohtoGrassWildMons:
 	dbw 17, DROWZEE
 	dbw 17, BUTTERFREE
 	dbw 18, YANMA
-	dbw 18, MILTANK
+	dbw 18, ROSELIA
 	dbw 18, MILTANK
 	dbw 19, TAUROS
 	dbw 19, TAUROS
@@ -1677,7 +1677,7 @@ JohtoGrassWildMons:
 	dbw 17, DROWZEE
 	dbw 17, BEEDRILL
 	dbw 18, YANMA
-	dbw 18, MEOWTH
+	dbw 18, ROSELIA
 	dbw 18, MEOWTH
 	dbw 19, MURKROW
 	dbw 19, MURKROW
@@ -1691,8 +1691,8 @@ JohtoGrassWildMons:
 	dbw  9, BONSLY
 	dbw  9, PICHU
 	dbw  9, PONYTA
-	dbw 10, SPEAROW
-	dbw 10, SPEAROW
+	dbw 10, ELECTRIKE
+	dbw 10, ELECTRIKE
 	; day
 	dbw  8, PICHU
 	dbw  8, ABRA
@@ -1700,8 +1700,8 @@ JohtoGrassWildMons:
 	dbw  9, BONSLY
 	dbw  9, PICHU
 	dbw  9, PONYTA
-	dbw 10, SPEAROW
-	dbw 10, SPEAROW
+	dbw 10, ELECTRIKE
+	dbw 10, ELECTRIKE
 	; nite
 	dbw  8, PICHU
 	dbw  8, ABRA
@@ -1709,8 +1709,8 @@ JohtoGrassWildMons:
 	dbw  9, BONSLY
 	dbw  9, PICHU
 	dbw  9, HOUNDOUR
-	dbw 10, HOOTHOOT
-	dbw 10, HOOTHOOT
+	dbw 10, ELECTRIKE
+	dbw 10, ELECTRIKE
 
 	map_id ROUTE_43
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1720,7 +1720,7 @@ JohtoGrassWildMons:
 	dbw  8, VULPIX
 	dbw  9, PSYDUCK
 	dbw  9, ELEKID
-	dbw  9, MIME__JR
+	dbw  9, RALTS
 	dbw 10, TOTODILE
 	dbw 10, TOTODILE
 	; day
@@ -1729,7 +1729,7 @@ JohtoGrassWildMons:
 	dbw  8, VULPIX
 	dbw  9, PSYDUCK
 	dbw  9, ELEKID
-	dbw  9, MIME__JR
+	dbw  9, RALTS
 	dbw 10, TOTODILE
 	dbw 10, TOTODILE
 	; nite
@@ -1738,7 +1738,7 @@ JohtoGrassWildMons:
 	dbw  8, RATTATA
 	dbw  9, PSYDUCK
 	dbw  9, ELEKID
-	dbw  9, MIME__JR
+	dbw  9, RALTS
 	dbw 10, TOTODILE
 	dbw 10, TOTODILE
 
@@ -1749,7 +1749,7 @@ JohtoGrassWildMons:
 	dbw 7, ODDISH
 	dbw 8, POLIWAG
 	dbw 8, PIDGEY
-	dbw 8, POLIWAG
+	dbw 8, BUDEW
 	dbw 7, EKANS
 	dbw 9, CHIKORITA
 	dbw 9, CHIKORITA
@@ -1758,7 +1758,7 @@ JohtoGrassWildMons:
 	dbw 7, ODDISH
 	dbw 8, POLIWAG
 	dbw 8, PIDGEY
-	dbw 8, POLIWAG
+	dbw 8, BUDEW
 	dbw 7, EKANS
 	dbw 9, CHIKORITA
 	dbw 9, CHIKORITA
@@ -1767,7 +1767,7 @@ JohtoGrassWildMons:
 	dbw 7, ODDISH
 	dbw 8, POLIWAG
 	dbw 8, PIDGEY
-	dbw 8, POLIWAG
+	dbw 8, BUDEW
 	dbw 7, EKANS
 	dbw 9, HOOTHOOT
 	dbw 9, HOOTHOOT
@@ -1778,27 +1778,27 @@ JohtoGrassWildMons:
 	dbw 2, PIDGEY
 	dbw 2, SENTRET
 	dbw 3, GEODUDE
-	dbw 3, SKARMINI
-	dbw 3, PHANPY
 	dbw 2, SKARMINI
+	dbw 3, PHANPY
+	dbw 3, SKARMINI
 	dbw 3, GEODUDE
 	dbw 3, PHANPY
 	; day
 	dbw 2, PIDGEY
 	dbw 2, SENTRET
 	dbw 3, GEODUDE
-	dbw 3, SKARMINI
-	dbw 3, PHANPY
 	dbw 2, SKARMINI
+	dbw 3, PHANPY
+	dbw 3, SKARMINI
 	dbw 3, GEODUDE
 	dbw 3, PHANPY
 	; nite
 	dbw 2, HOOTHOOT
 	dbw 2, RATTATA
 	dbw 3, GEODUDE
-	dbw 3, SKARMINI
-	dbw 3, PHANPY
 	dbw 2, SKARMINI
+	dbw 3, PHANPY
+	dbw 3, SKARMINI
 	dbw 3, GEODUDE
 	dbw 3, PHANPY
 

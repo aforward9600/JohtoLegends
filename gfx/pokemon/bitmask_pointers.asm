@@ -271,6 +271,8 @@ BitmasksPointers:
 	dw BudewBitmasks
 	dw RoseliaBitmasks
 	dw RoseradeBitmasks
+	dw ElectrikeBitmasks
+	dw ManectricBitmasks
 	dw DuskullBitmasks
 	dw DusclopsBitmasks
 	dw DusknoirBitmasks

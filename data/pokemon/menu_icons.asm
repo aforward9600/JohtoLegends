@@ -273,6 +273,8 @@ MonMenuIcons:
 	db ICON_ODDISH      ; BUDEW
 	db ICON_ODDISH      ; ROSELIA
 	db ICON_ODDISH      ; ROSERADE
+	db ICON_FOX         ; ELECTRIKE
+	db ICON_FOX         ; MANECTRIC
 	db ICON_GHOST       ; DUSKULL
 	db ICON_GHOST       ; DUSCLOPS
 	db ICON_GHOST       ; DUSKNOIR

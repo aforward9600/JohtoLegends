@@ -64,6 +64,7 @@ AlphabeticalPokedexOrder:
 	dw EKANS
 	dw ELECTABUZZ
 	dw ELECTIVIRE
+	dw ELECTRIKE
 	dw ELECTRODE
 	dw ELEKID
 	dw ENTEI
@@ -147,6 +148,7 @@ AlphabeticalPokedexOrder:
 	dw MAGNETON
 	dw MAGNEZONE
 	dw MAMOSWINE
+	dw MANECTRIC
 	dw MANKEY
 	dw MANTINE
 	dw MANTYKE

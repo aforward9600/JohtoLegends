@@ -65,6 +65,8 @@ NewPokedexOrder:
 	dw ZUBAT
 	dw GOLBAT
 	dw CROBAT
+	dw ELECTRIKE
+	dw MANECTRIC
 	dw SWINUB
 	dw PILOSWINE
 	dw MAMOSWINE

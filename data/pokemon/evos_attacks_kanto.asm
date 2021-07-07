@@ -2830,6 +2830,7 @@ MrMimeEvosAttacks:
 	dbw 43, CALM_MIND
 	dbw 46, BATON_PASS
 	dbw 50, SAFEGUARD
+	dbw LEARN_EVO_MOVE, CONFUSION
 	db 0 ; no more level-up moves
 
 ScytherEvosAttacks:

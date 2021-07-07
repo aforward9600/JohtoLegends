@@ -277,6 +277,8 @@ PokemonCries::
 	mon_cry CRY_VENONAT,     $00e,  $0be ; BUDEW
 	mon_cry CRY_AIPOM,       $041,  $0ae ; ROSELIA
 	mon_cry CRY_PICHU,      -$047,  $266 ; ROSERADE
+	mon_cry CRY_PICHU,       $f17,  $270 ; ELECTRIKE
+	mon_cry CRY_RAICHU,      $f27,  $080 ; MANECTRIC
 	mon_cry CRY_CYNDAQUIL,   $10e,  $050 ; DUSKULL
 	mon_cry CRY_NATU,        $a5e,  $160 ; DUSCLOPS
 	mon_cry CRY_MAGCARGO,   -$01a,  $2e2 ; DUSKNOIR

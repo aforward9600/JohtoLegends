@@ -122,6 +122,8 @@ EvosAttacksPointers2::
 	dw BudewEvoseAttacks
 	dw RoseliaEvosAttacks
 	dw RoseradeEvosAttacks
+	dw ElectrikeEvosAttacks
+	dw ManectricEvosAttacks
 	dw DuskullEvosAttacks
 	dw DusclopsEvosAttacks
 	dw DusknoirEvosAttacks
@@ -2476,6 +2478,45 @@ RoseradeEvosAttacks:
 	dbw 1, MAGICAL_LEAF
 	dbw 1, SLUDGE_BOMB
 	dbw LEARN_EVO_MOVE, PETAL_DANCE
+	db 0 ; no more level-up moves
+
+ElectrikeEvosAttacks:
+	dbw EVOLVE_LEVEL, 26, MANECTRIC
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, THUNDER_WAVE
+	dbw 4, LEER
+	dbw 7, HOWL
+	dbw 10, QUICK_ATTACK
+	dbw 13, SPARK
+	dbw 16, ODOR_SLEUTH
+	dbw 19, DISCHARGE
+	dbw 24, SNARL
+	dbw 29, THUNDERBOLT
+	dbw 34, ROAR
+	dbw 39, WILD_CHARGE
+	dbw 44, RAIN_DANCE
+	dbw 49, THUNDER
+	db 0 ; no more level-up moves
+
+ManectricEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, THUNDER_WAVE
+	dbw 4, LEER
+	dbw 7, HOWL
+	dbw 10, QUICK_ATTACK
+	dbw 13, SPARK
+	dbw 16, ODOR_SLEUTH
+	dbw 19, DISCHARGE
+	dbw 24, SNARL
+	dbw 30, THUNDERBOLT
+	dbw 36, ROAR
+	dbw 42, WILD_CHARGE
+	dbw 48, RAIN_DANCE
+	dbw 54, CRUNCH
+	dbw 60, THUNDER
+	db 0 ; no more level-up moves
 
 DuskullEvosAttacks:
 	dbbw EVOLVE_LEVEL, 37, DUSCLOPS

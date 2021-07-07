@@ -271,6 +271,8 @@ FramesPointers:
 	dba BudewFrames
 	dba RoseliaFrames
 	dba RoseradeFrames
+	dba ElectrikeFrames
+	dba ManectricFrames
 	dba DuskullFrames
 	dba DusclopsFrames
 	dba DusknoirFrames

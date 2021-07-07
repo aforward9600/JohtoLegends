@@ -267,6 +267,8 @@ OldPokedexOrder:
 	dw BUDEW
 	dw ROSELIA
 	dw ROSERADE
+	dw ELECTRIKE
+	dw MANECTRIC
 	dw DUSKULL
 	dw DUSCLOPS
 	dw DUSKNOIR

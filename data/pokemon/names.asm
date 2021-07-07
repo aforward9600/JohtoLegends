@@ -275,6 +275,8 @@ PokemonNames::
 	db "Budew@@@@@"
 	db "Roselia@@@"
 	db "Roserade@@"
+	db "Electrike@"
+	db "Manectric@"
 	db "Duskull@@@"
 	db "Dusclops@@"
 	db "Dusknoir@@"

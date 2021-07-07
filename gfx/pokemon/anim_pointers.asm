@@ -271,6 +271,8 @@ AnimationPointers:
 	dw BudewAnimation
 	dw RoseliaAnimation
 	dw RoseradeAnimation
+	dw ElectrikeAnimation
+	dw ManectricAnimation
 	dw DuskullAnimation
 	dw DusclopsAnimation
 	dw DusknoirAnimation

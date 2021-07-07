@@ -822,3 +822,10 @@ RoseliaFrontpic:     INCBIN "gfx/pokemon/roselia/front.animated.2bpp.lz"
 RoseliaBackpic:      INCBIN "gfx/pokemon/roselia/back.2bpp.lz"
 RoseradeFrontpic:    INCBIN "gfx/pokemon/roserade/front.animated.2bpp.lz"
 RoseradeBackpic:     INCBIN "gfx/pokemon/roserade/back.2bpp.lz"
+ElectrikeFrontpic:   INCBIN "gfx/pokemon/electrike/front.animated.2bpp.lz"
+ElectrikeBackpic:    INCBIN "gfx/pokemon/electrike/back.2bpp.lz"
+
+SECTION "Pics 28", ROMX
+
+ManectricFrontpic:   INCBIN "gfx/pokemon/manectric/front.animated.2bpp.lz"
+ManectricBackpic:    INCBIN "gfx/pokemon/manectric/back.2bpp.lz"

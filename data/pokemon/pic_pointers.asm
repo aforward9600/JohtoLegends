@@ -557,6 +557,10 @@ PokemonPicPointers::
 	dba RoseliaBackpic
 	dba RoseradeFrontpic
 	dba RoseradeBackpic
+	dba ElectrikeFrontpic
+	dba ElectrikeBackpic
+	dba ManectricFrontpic
+	dba ManectricBackpic
 	dba DuskullFrontpic
 	dba DuskullBackpic
 	dba DusclopsFrontpic

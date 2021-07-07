@@ -123,6 +123,8 @@ EggMovePointers2::
 	dw BudewEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw ElectrikeEggMoves
+	dw NoEggMoves2
 	dw DuskullEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -681,6 +683,19 @@ BudewEggMoves:
 	dw SLEEP_POWDER
 	dw SPIKES
 	dw POWER_WHIP
+	dw -1 ; end
+
+ElectrikeEggMoves:
+	dw CRUNCH
+	dw DISCHARGE
+	dw FIRE_FANG
+	dw FLAME_BURST
+	dw HEADBUTT
+	dw ICE_FANG
+	dw SWIFT
+	dw THUNDER_FANG
+	dw DOUBLE_EDGE
+	dw SNARL
 	dw -1 ; end
 
 DuskullEggMoves:

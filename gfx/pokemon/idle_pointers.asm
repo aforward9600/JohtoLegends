@@ -271,6 +271,8 @@ AnimationIdlePointers:
 	dw BudewAnimationIdle
 	dw RoseliaAnimationIdle
 	dw RoseradeAnimationIdle
+	dw ElectrikeAnimationIdle
+	dw ManectricAnimationIdle
 	dw DuskullAnimationIdle
 	dw DusclopsAnimationIdle
 	dw DusknoirAnimationIdle
