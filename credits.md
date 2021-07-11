@@ -36,7 +36,7 @@ Houndoom- Soup
 Mime Jr. Back Sprite: lakeofdance
 
 Duskull, Dusclops, Dusknoir, Bronzor, Bronzong, Ralts, Kirlia, Gardevoir, Gallade,
-Budew, Roselia, Roserade sprites:
+Budew, Roselia, Roserade, Electrike, Manectric, Cacnea, Cacturne sprites:
 Prism Team.
 
 Minisprites 1-251:

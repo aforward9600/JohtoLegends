@@ -561,6 +561,10 @@ PokemonPicPointers::
 	dba ElectrikeBackpic
 	dba ManectricFrontpic
 	dba ManectricBackpic
+	dba CroagunkFrontpic
+	dba CroagunkBackpic
+	dba ToxicroakFrontpic
+	dba ToxicroakBackpic
 	dba DuskullFrontpic
 	dba DuskullBackpic
 	dba DusclopsFrontpic
@@ -571,6 +575,10 @@ PokemonPicPointers::
 	dba BronzorBackpic
 	dba BronzongFrontpic
 	dba BronzongBackpic
+	dba CacneaFrontpic
+	dba CacneaBackpic
+	dba CacturneFrontpic
+	dba CacturneBackpic
 	dba RaltsFrontpic
 	dba RaltsBackpic
 	dba KirliaFrontpic

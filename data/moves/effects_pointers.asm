@@ -181,4 +181,5 @@ MoveEffectsPointers:
 	dw SpecialAttackUpHit
 	dw SuckerPunch
 	dw GrassKnot
+	dw Flatter
 ;	dw WakeUpSlap

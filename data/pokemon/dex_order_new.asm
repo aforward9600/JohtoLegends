@@ -48,6 +48,8 @@ NewPokedexOrder:
 	dw HORSEA
 	dw SEADRA
 	dw KINGDRA
+	dw CROAGUNK
+	dw TOXICROAK
 	dw WYNAUT
 	dw WOBBUFFET
 	dw HOUNDOUR
@@ -108,6 +110,8 @@ NewPokedexOrder:
 	dw POLIWHIRL
 	dw POLIWRATH
 	dw POLITOED
+	dw CACNEA
+	dw CACTURNE
 	dw MIME__JR
 	dw MR__MIME
 	dw BONSLY

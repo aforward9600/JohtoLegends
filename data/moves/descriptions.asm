@@ -387,6 +387,9 @@ MoveDescriptions1:
 	dw LavaPlumeDescription
 	dw StoneBashDescription
 	dw QuickAttackDescription
+	dw StompDescription
+	dw FlatterDescription
+	dw SingDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1903,6 +1906,10 @@ LavaPlumeDescription:
 StoneBashDescription:
 	db   "Hits foe with a"
 	next "hardened body.@"
+
+FlatterDescription:
+	db   "Causes confusion"
+	next "and raises Sp.Atk.@"
 
 WakeUpSlapDescription:
 	db   "Wakes up sleeping"

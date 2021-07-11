@@ -1991,7 +1991,7 @@ JohtoGrassWildMons:
 	dbw 15, RHYHORN
 	dbw 15, SNUBBULL
 	dbw 15, MUNCHLAX
-	dbw 15, TOGEPI
+	dbw 15, CACNEA
 	dbw 15, EEVEE
 	; day
 	dbw 15, EXEGGCUTE
@@ -2000,7 +2000,7 @@ JohtoGrassWildMons:
 	dbw 15, RHYHORN
 	dbw 15, SNUBBULL
 	dbw 15, MUNCHLAX
-	dbw 15, TOGEPI
+	dbw 15, CACNEA
 	dbw 15, EEVEE
 	; nite
 	dbw 15, EXEGGCUTE
@@ -2009,7 +2009,7 @@ JohtoGrassWildMons:
 	dbw 15, RHYHORN
 	dbw 15, SNUBBULL
 	dbw 15, MUNCHLAX
-	dbw 15, TOGEPI
+	dbw 15, CACNEA
 	dbw 15, EEVEE
 
 	map_id WILD_AREA_CAVE
@@ -2081,8 +2081,8 @@ JohtoGrassWildMons:
 	dbw 15, TANGELA
 	dbw 15, HOPPIP
 	dbw 15, SHUCKLE
-	dbw 15, BUTTERFREE
-	dbw 15, BEEDRILL
+	dbw 15, CACNEA
+	dbw 15, ROSELIA
 	; day
 	dbw 15, ODDISH
 	dbw 15, BELLSPROUT
@@ -2090,8 +2090,8 @@ JohtoGrassWildMons:
 	dbw 15, TANGELA
 	dbw 15, HOPPIP
 	dbw 15, SHUCKLE
-	dbw 15, BUTTERFREE
-	dbw 15, BEEDRILL
+	dbw 15, CACNEA
+	dbw 15, ROSELIA
 	; nite
 	dbw 15, ODDISH
 	dbw 15, BELLSPROUT
@@ -2099,7 +2099,7 @@ JohtoGrassWildMons:
 	dbw 15, TANGELA
 	dbw 15, HOPPIP
 	dbw 15, SHUCKLE
-	dbw 15, BUTTERFREE
-	dbw 15, BEEDRILL
+	dbw 15, CACNEA
+	dbw 15, ROSELIA
 
 	db -1 ; end

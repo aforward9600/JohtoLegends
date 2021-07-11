@@ -829,3 +829,12 @@ SECTION "Pics 28", ROMX
 
 ManectricFrontpic:   INCBIN "gfx/pokemon/manectric/front.animated.2bpp.lz"
 ManectricBackpic:    INCBIN "gfx/pokemon/manectric/back.2bpp.lz"
+CacneaFrontpic:      INCBIN "gfx/pokemon/cacnea/front.animated.2bpp.lz"
+CacneaBackpic:       INCBIN "gfx/pokemon/cacnea/back.2bpp.lz"
+CacturneFrontpic:    INCBIN "gfx/pokemon/cacturne/front.animated.2bpp.lz"
+CacturneBackpic:     INCBIN "gfx/pokemon/cacturne/back.2bpp.lz"
+CroagunkFrontpic:    INCBIN "gfx/pokemon/croagunk/front.animated.2bpp.lz"
+CroagunkBackpic:     INCBIN "gfx/pokemon/croagunk/back.2bpp.lz"
+ToxicroakFrontpic:   INCBIN "gfx/pokemon/toxicroak/front.animated.2bpp.lz"
+ToxicroakBackpic:    INCBIN "gfx/pokemon/toxicroak/back.2bpp.lz"
+

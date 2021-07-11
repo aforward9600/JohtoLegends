@@ -72,9 +72,22 @@ TrainerPokemaniacJarvis:
 	trainer POKEMANIAC, JARVIS, EVENT_BEAT_POKEMANIAC_JARVIS, PokemaniacJarvisSeenText, PokemaniacJarvisBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
-	writetext PokemaniacJarvisAfterBattleText
+	writetext PokemaniacJarvisRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
+	writetext PokemaniacJarvisLetsDoItText
+	waitbutton
+	winlosstext PokemaniacJarvisBeatenText, 0
+	loadtrainer POKEMANIAC, JARVIS
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.Refused:
+	writetext PokemaniacJarvisRefusedText
 	waitbutton
 	closetext
 	end
@@ -220,14 +233,23 @@ PokemaniacJarvisBeatenText:
 	line "#mon!"
 	done
 
-PokemaniacJarvisAfterBattleText:
-	text "I wonder if I'll"
-	line "find some great"
-	cont "#mon there."
+PokemaniacJarvisRematchText:
+	text "Come back to show"
+	line "me your rare"
+	cont "#mon?"
+	done
+
+PokemaniacJarvisLetsDoItText:
+	text "Show me the"
+	line "#mon!"
+	done
+
+PokemaniacJarvisRefusedText:
+	text "Aw, come on!"
 	done
 
 PicnickerTiffanyClefairyText:
-	text "Isn't my CLEFAIRY"
+	text "Isn't my Clefairy"
 	line "just the most"
 	cont "adorable thing?"
 	done
@@ -237,6 +259,11 @@ Route43Sign1Text:
 
 	para "Lake Of Rage -"
 	line "Mahogany Town"
+
+	para "Pokemaniac Jarvis"
+	line "is looking for"
+	cont "rare #mon to"
+	cont "battle."
 	done
 
 Route43Sign2Text:
@@ -244,6 +271,11 @@ Route43Sign2Text:
 
 	para "Lake Of Rage -"
 	line "Mahogany Town"
+
+	para "Pokemaniac Jarvis"
+	line "is looking for"
+	cont "rare #mon to"
+	cont "battle."
 	done
 
 Route43TrainerTipsText:

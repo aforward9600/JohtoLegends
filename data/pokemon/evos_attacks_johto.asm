@@ -124,11 +124,15 @@ EvosAttacksPointers2::
 	dw RoseradeEvosAttacks
 	dw ElectrikeEvosAttacks
 	dw ManectricEvosAttacks
+	dw CroagunkEvosAttacks
+	dw ToxicroakEvosAttacks
 	dw DuskullEvosAttacks
 	dw DusclopsEvosAttacks
 	dw DusknoirEvosAttacks
 	dw BronzorEvosAttacks
 	dw BronzongEvosAttacks
+	dw CacneaEvosAttacks
+	dw CacturneEvosAttacks
 	dw RaltsEvosAttacks
 	dw KirliaEvosAttacks
 	dw GardevoirEvosAttacks
@@ -346,7 +350,7 @@ LeafeonEvosAttacks:
 	dbw 5, SAND_ATTACK
 	dbw 9, GROWL
 	dbw 13, QUICK_ATTACK
-	dbw 17, SING
+	dbw 17, GRASSWHISTLE
 	dbw 20, GIGA_DRAIN
 	dbw 25, LEAF_BLADE
 	dbw 29, SWORDS_DANCE
@@ -677,6 +681,7 @@ DratiniEvosAttacks:
 DragonairEvosAttacks:
 	dbbw EVOLVE_LEVEL, 55, DRAGONITE
 	db 0 ; no more evolutions
+	dbw 1, DRAGONBREATH
 	dbw 1, WRAP
 	dbw 1, LEER
 	dbw 5, THUNDER_WAVE
@@ -691,6 +696,7 @@ DragonairEvosAttacks:
 	dbw 61, DRAGON_DANCE
 	dbw 67, OUTRAGE
 	dbw 75, HYPER_BEAM
+	dbw LEARN_EVO_MOVE, DRAGONBREATH
 	db 0 ; no more level-up moves
 
 DragoniteEvosAttacks:
@@ -1527,7 +1533,7 @@ SunkernEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, ABSORB
 	dbw 1, GROWTH
-	dbw 7, SING
+	dbw 7, GRASSWHISTLE
 	dbw 10, MEGA_DRAIN
 	dbw 13, LEECH_SEED
 	dbw 16, RAZOR_LEAF
@@ -2459,7 +2465,7 @@ RoseliaEvosAttacks:
 	dbw 13, MEGA_DRAIN
 	dbw 16, LEECH_SEED
 	dbw 19, MAGICAL_LEAF
-	dbw 22, SING
+	dbw 22, GRASSWHISTLE
 	dbw 25, GIGA_DRAIN
 	dbw 28, SPIKES
 	dbw 31, SWEET_SCENT
@@ -2516,6 +2522,49 @@ ManectricEvosAttacks:
 	dbw 48, RAIN_DANCE
 	dbw 54, CRUNCH
 	dbw 60, THUNDER
+	db 0 ; no more level-up moves
+
+CroagunkEvosAttacks:
+	dbw EVOLVE_LEVEL, 37, TOXICROAK
+	db 0 ; no more evolutions
+	dbw 1, ASTONISH
+	dbw 3, MUD_SLAP
+	dbw 8, POISON_STING
+	dbw 10, KARATE_CHOP
+	dbw 15, PURSUIT
+	dbw 17, FAINT_ATTACK
+	dbw 22, REVENGE
+	dbw 24, SWAGGER
+	dbw 29, LOW_SWEEP
+	dbw 31, SUCKER_PUNCH
+	dbw 36, VENOSHOCK
+	dbw 38, NASTY_PLOT
+	dbw 43, POISON_JAB
+	dbw 45, SLUDGE_BOMB
+	dbw 47, BELCH
+	dbw 50, FLATTER
+	dbw 54, CLOSE_COMBAT
+	db 0 ; no more level-up moves
+
+ToxicroakEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, ASTONISH
+	dbw 3, MUD_SLAP
+	dbw 8, POISON_STING
+	dbw 10, KARATE_CHOP
+	dbw 15, PURSUIT
+	dbw 17, FAINT_ATTACK
+	dbw 22, REVENGE
+	dbw 24, SWAGGER
+	dbw 29, LOW_SWEEP
+	dbw 31, SUCKER_PUNCH
+	dbw 36, VENOSHOCK
+	dbw 41, NASTY_PLOT
+	dbw 49, POISON_JAB
+	dbw 54, SLUDGE_BOMB
+	dbw 58, BELCH
+	dbw 62, FLATTER
+	dbw 65, CLOSE_COMBAT
 	db 0 ; no more level-up moves
 
 DuskullEvosAttacks:
@@ -2621,6 +2670,51 @@ BronzongEvosAttacks:
 	dbw 52, CALM_MIND
 	dbw 58, FLASH_CANNON
 	dbw LEARN_EVO_MOVE, ZEN_HEADBUTT
+	db 0 ; no more level-up moves
+
+CacneaEvosAttacks:
+	dbw EVOLVE_LEVEL, 32, CACTURNE
+	db 0 ; no more evolutions
+	dbw 1, POISON_STING
+	dbw 1, LEER
+	dbw 4, ABSORB
+	dbw 7, GROWTH
+	dbw 10, LEECH_SEED
+	dbw 13, SAND_ATTACK
+	dbw 16, NEEDLE_ARM
+	dbw 19, FAINT_ATTACK
+	dbw 22, SYNTHESIS
+	dbw 26, PAYBACK
+	dbw 30, SPIKES
+	dbw 34, SUCKER_PUNCH
+	dbw 38, PIN_MISSILE
+	dbw 42, ENERGY_BALL
+	dbw 46, COTTON_SPORE
+	dbw 50, SANDSTORM
+	dbw 54, DARK_PULSE
+	db 0 ; no more level-up moves
+
+CacturneEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, REVENGE
+	dbw 1, POISON_STING
+	dbw 1, LEER
+	dbw 4, ABSORB
+	dbw 7, GROWTH
+	dbw 10, LEECH_SEED
+	dbw 13, SAND_ATTACK
+	dbw 16, NEEDLE_ARM
+	dbw 19, FAINT_ATTACK
+	dbw 22, SYNTHESIS
+	dbw 26, PAYBACK
+	dbw 30, SPIKES
+	dbw 35, SUCKER_PUNCH
+	dbw 38, PIN_MISSILE
+	dbw 44, ENERGY_BALL
+	dbw 49, COTTON_SPORE
+	dbw 54, SANDSTORM
+	dbw 59, DARK_PULSE
+	dbw LEARN_EVO_MOVE, REVENGE
 	db 0 ; no more level-up moves
 
 RaltsEvosAttacks:
@@ -2790,6 +2884,7 @@ LarvitarEvosAttacks:
 PupitarEvosAttacks:
 	dbbw EVOLVE_LEVEL, 55, TYRANITAR
 	db 0 ; no more evolutions
+	dbw 1, BULLDOZE
 	dbw 1, ROCK_THROW
 	dbw 1, LEER
 	dbw 5, SANDSTORM
@@ -2804,6 +2899,7 @@ PupitarEvosAttacks:
 	dbw 54, EARTHQUAKE
 	dbw 60, STONE_EDGE
 	dbw 67, HYPER_BEAM
+	dbw LEARN_EVO_MOVE, BULLDOZE
 	db 0 ; no more level-up moves
 
 TyranitarEvosAttacks:

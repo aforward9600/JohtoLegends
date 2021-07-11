@@ -407,6 +407,9 @@ BattleAnimations::
 	dw BattleAnim_LavaPlume
 	dw BattleAnim_StoneBash
 	dw BattleAnim_ShadowSneak
+	dw BattleAnim_NeedleArm
+	dw BattleAnim_Flatter
+	dw BattleAnim_GrassWhistle
 ;	dw BattleAnim_WakeUpSlap
 	dw BattleAnim_SweetScent2
 
@@ -1644,6 +1647,24 @@ BattleAnim_RoundM:
 	anim_wait 64
 	anim_ret
 
+BattleAnim_GrassWhistle:
+	anim_1gfx ANIM_GFX_NOISE
+	anim_sound 16, 2, SFX_SING
+.loop
+	anim_obj ANIM_OBJ_GRASSWHISTLE, 64, 92, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_GRASSWHISTLE, 64, 92, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_GRASSWHISTLE, 64, 92, $2
+	anim_wait 8
+	anim_obj ANIM_OBJ_GRASSWHISTLE, 64, 92, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_GRASSWHISTLE, 64, 92, $2
+	anim_wait 8
+	anim_loop 4, .loop
+	anim_wait 64
+	anim_ret
+
 BattleAnim_Poisonpowder:
 BattleAnim_SleepPowder:
 BattleAnim_Spore:
@@ -2705,6 +2726,30 @@ BattleAnim_Peck:
 	anim_sound 0, 1, SFX_PECK
 	anim_obj ANIM_OBJ_02, 136, 56, $0
 	anim_wait 16
+	anim_ret
+
+BattleAnim_NeedleArm:
+	anim_2gfx ANIM_GFX_HORN, ANIM_GFX_HIT
+	anim_obj ANIM_OBJ_HORN, 72, 72, $2
+	anim_wait 8
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_04, 128, 40, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_HORN, 80, 88, $2
+	anim_wait 8
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_04, 136, 56, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_HORN, 76, 80, $2
+	anim_wait 8
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_04, 132, 48, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_obj ANIM_OBJ_06, 144, 48, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_01, 144, 48, $0
+	anim_wait 8
 	anim_ret
 
 BattleAnim_DrillPeck:
@@ -4484,6 +4529,7 @@ BattleAnim_BatonPass:
 	anim_wait 64
 	anim_ret
 
+BattleAnim_Flatter:
 BattleAnim_Encore:
 	anim_1gfx ANIM_GFX_OBJECTS
 	anim_obj ANIM_OBJ_99, 64, 80, $90

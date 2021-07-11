@@ -273,11 +273,15 @@ BitmasksPointers:
 	dw RoseradeBitmasks
 	dw ElectrikeBitmasks
 	dw ManectricBitmasks
+	dw CroagunkBitmasks
+	dw ToxicroakBitmasks
 	dw DuskullBitmasks
 	dw DusclopsBitmasks
 	dw DusknoirBitmasks
 	dw BronzorBitmasks
 	dw BronzongBitmasks
+	dw CacneaBitmasks
+	dw CacturneBitmasks
 	dw RaltsBitmasks
 	dw KirliaBitmasks
 	dw GardevoirBitmasks

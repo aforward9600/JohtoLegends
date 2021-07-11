@@ -273,11 +273,15 @@ AnimationIdlePointers:
 	dw RoseradeAnimationIdle
 	dw ElectrikeAnimationIdle
 	dw ManectricAnimationIdle
+	dw CroagunkAnimationIdle
+	dw ToxicroakAnimationIdle
 	dw DuskullAnimationIdle
 	dw DusclopsAnimationIdle
 	dw DusknoirAnimationIdle
 	dw BronzorAnimationIdle
 	dw BronzongAnimationIdle
+	dw CacneaAnimationIdle
+	dw CacturneAnimationIdle
 	dw RaltsAnimationIdle
 	dw KirliaAnimationIdle
 	dw GardevoirAnimationIdle

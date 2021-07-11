@@ -294,11 +294,15 @@ JOHTO_POKEMON EQU const_value
 	const ROSERADE
 	const ELECTRIKE
 	const MANECTRIC
+	const CROAGUNK
+	const TOXICROAK
 	const DUSKULL    ; f2
 	const DUSCLOPS
 	const DUSKNOIR
 	const BRONZOR
 	const BRONZONG
+	const CACNEA
+	const CACTURNE
 	const RALTS
 	const KIRLIA
 	const GARDEVOIR

@@ -26,6 +26,8 @@ AlphabeticalPokedexOrder:
 	dw BUDEW
 	dw BULBASAUR
 	dw BUTTERFREE
+	dw CACNEA
+	dw CACTURNE
 	dw CATERPIE
 	dw CELEBI
 	dw CHANSEY
@@ -39,6 +41,7 @@ AlphabeticalPokedexOrder:
 	dw CLEFFA
 	dw CLOYSTER
 	dw CORSOLA
+	dw CROAGUNK
 	dw CROBAT
 	dw CROCONAW
 	dw CUBONE
@@ -269,6 +272,7 @@ AlphabeticalPokedexOrder:
 	dw TOGEPI
 	dw TOGETIC
 	dw TOTODILE
+	dw TOXICROAK
 	dw TYPHLOSION
 	dw TYRANITAR
 	dw TYROGUE

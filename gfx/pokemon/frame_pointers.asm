@@ -273,11 +273,15 @@ FramesPointers:
 	dba RoseradeFrames
 	dba ElectrikeFrames
 	dba ManectricFrames
+	dba CroagunkFrames
+	dba ToxicroakFrames
 	dba DuskullFrames
 	dba DusclopsFrames
 	dba DusknoirFrames
 	dba BronzorFrames
 	dba BronzongFrames
+	dba CacneaFrames
+	dba CacturneFrames
 	dba RaltsFrames
 	dba KirliaFrames
 	dba GardevoirFrames

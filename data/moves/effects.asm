@@ -2676,6 +2676,24 @@ GrassKnot:
 	kingsrock
 	endmove
 
+Flatter:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	switchturn
+	specialattackup2
+	switchturn
+	lowersub
+	statupanim
+	raisesub
+	failuretext
+	switchturn
+	statupmessage
+	switchturn
+	confusetarget
+	endmove
+
 ;WakeUpSlap:
 ;	checkobedience
 ;	usedmovetext

@@ -102,7 +102,7 @@ DratiniPokeballScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke MANECTRIC, 5, ORAN_BERRY
+	givepoke TOXICROAK, 5, ORAN_BERRY
 	closetext
 	sjump RivalLarvitarScript
 

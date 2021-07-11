@@ -4395,10 +4395,10 @@ ArcherGroup:
 	end_list_items
 
 PsychicGroup:
-	next_list_item ; PSYCHIC_T (1)
+	next_list_item ; PSYCHIC_T (1) Route 42
 	db "Jordan@", TRAINERTYPE_NORMAL
 	db 9
-	dw NATU
+	dw RALTS
 	db 9
 	dw ABRA
 	db 9
@@ -4447,8 +4447,8 @@ PsychicGroup:
 	next_list_item ; PSYCHIC_T (7)
 	db "Uri@", TRAINERTYPE_MOVES
 	db 24
-	dw NATU
-	dw CONFUSE_RAY, SILVER_WIND, AIR_CUTTER, CONFUSION
+	dw KIRLIA
+	dw CONFUSION, DRAININGKISS, MAGICAL_LEAF, CALM_MIND
 	db 25
 	dw XATU
 	dw AIR_SLASH, ROOST, CONFUSION, SILVER_WIND

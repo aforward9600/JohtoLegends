@@ -381,4 +381,7 @@ MoveNames::
 	db "Lava Plume@"
 	db "Stone Bash@"
 	db "Shadow Sneak@"
+	db "Needle Arm@"
+	db "Flatter@"
+	db "GrassWhistle@"
 ;	db "Wake Up Slap@"

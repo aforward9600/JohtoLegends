@@ -36,9 +36,22 @@ TrainerPsychicJordan:
 	trainer PSYCHIC_T, JORDAN, EVENT_BEAT_PSYCHIC_JORDAN, PsychicJordanSeenText, PsychicJordanBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
-	writetext PsychicJordanAfterBattleText
+	writetext PsychicJordanRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_YOUNGSTER_ENCOUNTER
+	writetext PsychicJordanLetsDoItText
+	waitbutton
+	winlosstext PsychicJordanBeatenText, 0
+	loadtrainer PSYCHIC_T, JORDAN
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.Refused:
+	writetext PsychicJordanRefusedText
 	waitbutton
 	closetext
 	end
@@ -153,10 +166,21 @@ PsychicJordanBeatenText:
 	line "correct…"
 	done
 
-PsychicJordanAfterBattleText:
-	text "Perhaps it shall"
-	line "come to me in a"
-	cont "dream."
+PsychicJordanLetsDoItText:
+	text "Let us commence."
+	done
+
+PsychicJordanRematchText:
+	text "I forsaw your"
+	line "return."
+
+	para "Shall we battle?"
+	done
+
+PsychicJordanRefusedText:
+	text "You will return."
+
+	para "I forsee it."
 	done
 
 Route42Sign1Text:
@@ -164,6 +188,14 @@ Route42Sign1Text:
 
 	para "Ecruteak City -"
 	line "Mahogany Town"
+
+	para "Psychic Jordan"
+	line "will always be"
+	cont "prepared to fight."
+
+	para "I envision seeing"
+	line "you more than"
+	cont "once."
 	done
 
 MtMortarSign1Text:
@@ -185,6 +217,14 @@ Route42Sign2Text:
 
 	para "Ecruteak City -"
 	line "Mahogany Town"
+
+	para "Psychic Jordan"
+	line "will always be"
+	cont "prepared to fight."
+
+	para "I envision seeing"
+	line "you more than"
+	cont "once."
 	done
 
 Route42_MapEvents:

@@ -448,7 +448,7 @@ BlackthornCity_MapEvents:
 	warp_event 29, 23, RIVALS_HOUSE_1F, 1
 	warp_event 15, 29, BLACKTHORN_MART, 2
 	warp_event 21, 29, BLACKTHORN_POKECENTER_1F, 1
-	warp_event  9, 31, OLIVINE_LIGHTHOUSE_6F, 2
+	warp_event  9, 31, MOVE_DELETERS_HOUSE, 1
 	warp_event 36,  9, ICE_PATH_1F, 2
 	warp_event 20,  1, DRAGONS_DEN_1F, 1
 	warp_event  3, 25, PLAYERS_HOUSE_1F, 1

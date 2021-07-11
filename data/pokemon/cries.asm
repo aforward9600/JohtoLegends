@@ -279,11 +279,15 @@ PokemonCries::
 	mon_cry CRY_PICHU,      -$047,  $266 ; ROSERADE
 	mon_cry CRY_PICHU,       $f17,  $270 ; ELECTRIKE
 	mon_cry CRY_RAICHU,      $f27,  $080 ; MANECTRIC
+	mon_cry CRY_DIGLETT,    -$133,  $125 ; CROAGUNK
+	mon_cry CRY_SLOWKING,    $002,  $2c6 ; TOXICROAK
 	mon_cry CRY_CYNDAQUIL,   $10e,  $050 ; DUSKULL
 	mon_cry CRY_NATU,        $a5e,  $160 ; DUSCLOPS
 	mon_cry CRY_MAGCARGO,   -$01a,  $2e2 ; DUSKNOIR
 	mon_cry CRY_EKANS,       $101,  $086 ; BRONZOR
 	mon_cry CRY_EKANS,       $12a,  $170 ; BRONZONG
+	mon_cry CRY_BULBASAUR,   $080,  $040 ; CACNEA
+	mon_cry CRY_BULBASAUR,   $080,  $180 ; CACTURNE
 	mon_cry CRY_GLIGAR,      $ffc,  $110 ; RALTS
 	mon_cry CRY_VILEPLUME,   $008,  $100 ; KIRLIA
 	mon_cry CRY_VILEPLUME,   $f22,  $163 ; GARDEVOIR

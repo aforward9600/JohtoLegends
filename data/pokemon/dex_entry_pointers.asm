@@ -274,11 +274,15 @@ PokedexDataPointerTable:
 	dba RoseradePokedexEntry
 	dba ElectrikePokedexEntry
 	dba ManectricPokedexEntry
+	dba CroagunkPokedexEntry
+	dba ToxicroakPokedexEntry
 	dba DuskullPokedexEntry
 	dba DusclopsPokedexEntry
 	dba DusknoirPokedexEntry
 	dba BronzorPokedexEntry
 	dba BronzongPokedexEntry
+	dba CacneaPokedexEntry
+	dba CacturnePokedexEntry
 	dba RaltsPokedexEntry
 	dba KirliaPokedexEntry
 	dba GardevoirPokedexEntry

@@ -125,10 +125,13 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw ElectrikeEggMoves
 	dw NoEggMoves2
+	dw CroagunkEggMoves
 	dw DuskullEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw NoEggMoves2
+	dw CacneaEggMoves
 	dw NoEggMoves2
 	dw RaltsEggMoves
 	dw NoEggMoves2
@@ -263,6 +266,7 @@ TotodileEggMoves:
 	dw ICE_PUNCH
 	dw ICE_FANG
 	dw WATER_PULSE
+	dw FLATTER
 	dw -1 ; end
 
 SentretEggMoves:
@@ -344,6 +348,7 @@ MareepEggMoves:
 	dw AGILITY
 	dw ODOR_SLEUTH
 	dw SAND_ATTACK
+	dw FLATTER
 	dw -1 ; end
 
 AzurillEggMoves:
@@ -676,7 +681,7 @@ BudewEggMoves:
 	dw COTTON_SPORE
 	dw EXTRASENSORY
 	dw GIGA_DRAIN
-	dw SING
+	dw GRASSWHISTLE
 	dw SEED_BOMB
 	dw RAZOR_LEAF
 	dw SYNTHESIS
@@ -698,12 +703,31 @@ ElectrikeEggMoves:
 	dw SNARL
 	dw -1 ; end
 
+CroagunkEggMoves:
+	dw BULLET_PUNCH
+	dw COUNTER
+	dw CROSS_CHOP
+	dw HEADBUTT
+	dw MEDITATE
+	dw -1 ; end
+
 DuskullEggMoves:
 	dw DARK_PULSE
 	dw DESTINY_BOND
 	dw FAINT_ATTACK
 	dw HAZE
 	dw PAIN_SPLIT
+	dw -1 ; end
+
+CacneaEggMoves:
+	dw ACID
+	dw COUNTER
+	dw DYNAMICPUNCH
+	dw GRASSWHISTLE
+	dw LOW_KICK
+	dw MAGICAL_LEAF
+	dw NASTY_PLOT
+	dw SEED_BOMB
 	dw -1 ; end
 
 RaltsEggMoves:

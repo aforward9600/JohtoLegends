@@ -273,11 +273,15 @@ AnimationPointers:
 	dw RoseradeAnimation
 	dw ElectrikeAnimation
 	dw ManectricAnimation
+	dw CroagunkAnimation
+	dw ToxicroakAnimation
 	dw DuskullAnimation
 	dw DusclopsAnimation
 	dw DusknoirAnimation
 	dw BronzorAnimation
 	dw BronzongAnimation
+	dw CacneaAnimation
+	dw CacturneAnimation
 	dw RaltsAnimation
 	dw KirliaAnimation
 	dw GardevoirAnimation
