@@ -274,6 +274,9 @@ OldPokedexOrder:
 	dw DUSKULL
 	dw DUSCLOPS
 	dw DUSKNOIR
+	dw SNORUNT
+	dw GLALIE
+	dw FROSLASS
 	dw BRONZOR
 	dw BRONZONG
 	dw CACNEA

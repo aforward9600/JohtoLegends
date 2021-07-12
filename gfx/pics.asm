@@ -33,8 +33,6 @@ ArticunoFrontpic:    INCBIN "gfx/pokemon/articuno/front.animated.2bpp.lz"
 TaurosFrontpic:      INCBIN "gfx/pokemon/tauros/front.animated.2bpp.lz"
 VenusaurFrontpic:    INCBIN "gfx/pokemon/venusaur/front.animated.2bpp.lz"
 EnteiFrontpic:       INCBIN "gfx/pokemon/entei/front.animated.2bpp.lz"
-SuicuneFrontpic:     INCBIN "gfx/pokemon/suicune/front.animated.2bpp.lz"
-TyphlosionFrontpic:  INCBIN "gfx/pokemon/typhlosion/front.animated.2bpp.lz"
 
 
 SECTION "Pics 2", ROMX
@@ -837,4 +835,11 @@ CroagunkFrontpic:    INCBIN "gfx/pokemon/croagunk/front.animated.2bpp.lz"
 CroagunkBackpic:     INCBIN "gfx/pokemon/croagunk/back.2bpp.lz"
 ToxicroakFrontpic:   INCBIN "gfx/pokemon/toxicroak/front.animated.2bpp.lz"
 ToxicroakBackpic:    INCBIN "gfx/pokemon/toxicroak/back.2bpp.lz"
-
+SnoruntFrontpic:     INCBIN "gfx/pokemon/snorunt/front.animated.2bpp.lz"
+SnoruntBackpic:      INCBIN "gfx/pokemon/snorunt/back.2bpp.lz"
+GlalieFrontpic:      INCBIN "gfx/pokemon/glalie/front.animated.2bpp.lz"
+GlalieBackpic:       INCBIN "gfx/pokemon/glalie/back.2bpp.lz"
+SuicuneFrontpic:     INCBIN "gfx/pokemon/suicune/front.animated.2bpp.lz"
+TyphlosionFrontpic:  INCBIN "gfx/pokemon/typhlosion/front.animated.2bpp.lz"
+FroslassFrontpic:    INCBIN "gfx/pokemon/froslass/front.animated.2bpp.lz"
+FroslassBackpic:     INCBIN "gfx/pokemon/froslass/back.2bpp.lz"

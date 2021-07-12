@@ -284,6 +284,9 @@ PokemonCries::
 	mon_cry CRY_CYNDAQUIL,   $10e,  $050 ; DUSKULL
 	mon_cry CRY_NATU,        $a5e,  $160 ; DUSCLOPS
 	mon_cry CRY_MAGCARGO,   -$01a,  $2e2 ; DUSKNOIR
+	mon_cry CRY_PSYDUCK,     $26f,  $0dd ; SNORUNT
+	mon_cry CRY_PSYDUCK,     $008,  $180 ; GLALIE
+	mon_cry CRY_BLASTOISE,   $12b,  $0eb ; FROSLASS
 	mon_cry CRY_EKANS,       $101,  $086 ; BRONZOR
 	mon_cry CRY_EKANS,       $12a,  $170 ; BRONZONG
 	mon_cry CRY_BULBASAUR,   $080,  $040 ; CACNEA

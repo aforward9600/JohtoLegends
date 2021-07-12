@@ -279,6 +279,9 @@ PokedexDataPointerTable:
 	dba DuskullPokedexEntry
 	dba DusclopsPokedexEntry
 	dba DusknoirPokedexEntry
+	dba SnoruntPokedexEntry
+	dba GlaliePokedexEntry
+	dba FroslassPokedexEntry
 	dba BronzorPokedexEntry
 	dba BronzongPokedexEntry
 	dba CacneaPokedexEntry

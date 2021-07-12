@@ -80,6 +80,7 @@ AlphabeticalPokedexOrder:
 	dw FLAAFFY
 	dw FLAREON
 	dw FORRETRESS
+	dw FROSLASS
 	dw FURRET
 	dw GALLADE
 	dw GARDEVOIR
@@ -88,6 +89,7 @@ AlphabeticalPokedexOrder:
 	dw GEODUDE
 	dw GIRAFARIG
 	dw GLACEON
+	dw GLALIE
 	dw GLIGAR
 	dw GLISCOR
 	dw GLOOM
@@ -248,6 +250,7 @@ AlphabeticalPokedexOrder:
 	dw SMOOCHUM
 	dw SNEASEL
 	dw SNORLAX
+	dw SNORUNT
 	dw SNUBBULL
 	dw SPEAROW
 	dw SPINARAK

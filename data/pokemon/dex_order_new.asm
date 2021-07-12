@@ -10,6 +10,9 @@ NewPokedexOrder:
 	dw BAGON
 	dw SHELGON
 	dw SALAMENCE
+	dw SNORUNT
+	dw GLALIE
+	dw FROSLASS
 	dw CATERPIE
 	dw METAPOD
 	dw BUTTERFREE

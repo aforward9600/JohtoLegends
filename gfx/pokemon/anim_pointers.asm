@@ -278,6 +278,9 @@ AnimationPointers:
 	dw DuskullAnimation
 	dw DusclopsAnimation
 	dw DusknoirAnimation
+	dw SnoruntAnimation
+	dw GlalieAnimation
+	dw FroslassAnimation
 	dw BronzorAnimation
 	dw BronzongAnimation
 	dw CacneaAnimation

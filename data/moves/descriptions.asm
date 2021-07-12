@@ -390,6 +390,7 @@ MoveDescriptions1:
 	dw StompDescription
 	dw FlatterDescription
 	dw SingDescription
+	dw AncientpowerDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:

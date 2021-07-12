@@ -299,6 +299,9 @@ JOHTO_POKEMON EQU const_value
 	const DUSKULL    ; f2
 	const DUSCLOPS
 	const DUSKNOIR
+	const SNORUNT
+	const GLALIE
+	const FROSLASS
 	const BRONZOR
 	const BRONZONG
 	const CACNEA

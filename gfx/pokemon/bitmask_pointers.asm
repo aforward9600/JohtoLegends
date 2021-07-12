@@ -278,6 +278,9 @@ BitmasksPointers:
 	dw DuskullBitmasks
 	dw DusclopsBitmasks
 	dw DusknoirBitmasks
+	dw SnoruntBitmasks
+	dw GlalieBitmasks
+	dw FroslassBitmasks
 	dw BronzorBitmasks
 	dw BronzongBitmasks
 	dw CacneaBitmasks

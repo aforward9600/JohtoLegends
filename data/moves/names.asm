@@ -384,4 +384,5 @@ MoveNames::
 	db "Needle Arm@"
 	db "Flatter@"
 	db "GrassWhistle@"
+	db "Ominous Wind@"
 ;	db "Wake Up Slap@"

@@ -188,7 +188,6 @@ SECTION "Crystal Features 1", ROMX
 
 INCLUDE "engine/menus/init_gender.asm"
 INCLUDE "engine/items/pack_kris.asm"
-INCLUDE "engine/events/move_tutor.asm"
 INCLUDE "engine/gfx/crystal_layouts.asm"
 INCLUDE "engine/events/celebi.asm"
 
@@ -197,6 +196,7 @@ SECTION "Tileset Palettes", ROMX
 
 INCLUDE "engine/tilesets/map_palettes.asm"
 INCLUDE "gfx/tileset_palette_maps.asm"
+INCLUDE "engine/events/move_tutor.asm"
 
 SECTION "bank13", ROMX
 

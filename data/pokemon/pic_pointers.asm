@@ -571,6 +571,12 @@ PokemonPicPointers::
 	dba DusclopsBackpic
 	dba DusknoirFrontpic
 	dba DusknoirBackpic
+	dba SnoruntFrontpic
+	dba SnoruntBackpic
+	dba GlalieFrontpic
+	dba GlalieBackpic
+	dba FroslassFrontpic
+	dba FroslassBackpic
 	dba BronzorFrontpic
 	dba BronzorBackpic
 	dba BronzongFrontpic

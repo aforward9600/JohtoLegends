@@ -788,29 +788,29 @@ JohtoGrassWildMons:
 	dbw 3, SWINUB
 	dbw 3, ZUBAT
 	dbw 3, SEEL
-	dbw 4, DELIBIRD
+	dbw 4, SEEL
 	dbw 4, SWINUB
 	dbw 4, ZUBAT
-	dbw 4, SEEL
-	dbw 5, DELIBIRD
+	dbw 4, SNORUNT
+	dbw 5, SNORUNT
 	; day
 	dbw 3, SWINUB
 	dbw 3, ZUBAT
 	dbw 3, SEEL
-	dbw 4, DELIBIRD
+	dbw 4, SEEL
 	dbw 4, SWINUB
 	dbw 4, ZUBAT
-	dbw 4, SEEL
-	dbw 5, DELIBIRD
+	dbw 4, SNORUNT
+	dbw 5, SNORUNT
 	; nite
 	dbw 3, SWINUB
 	dbw 3, ZUBAT
 	dbw 3, SEEL
-	dbw 4, DELIBIRD
+	dbw 4, SEEL
 	dbw 4, SWINUB
 	dbw 4, ZUBAT
-	dbw 4, SEEL
-	dbw 5, DELIBIRD
+	dbw 4, SNORUNT
+	dbw 5, SNORUNT
 
 	map_id ICE_PATH_B1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite

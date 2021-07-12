@@ -391,6 +391,7 @@
 	const NEEDLE_ARM
 	const FLATTER
 	const GRASSWHISTLE
+	const OMINOUS_WIND
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 

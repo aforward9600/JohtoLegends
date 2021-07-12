@@ -278,6 +278,9 @@ AnimationIdlePointers:
 	dw DuskullAnimationIdle
 	dw DusclopsAnimationIdle
 	dw DusknoirAnimationIdle
+	dw SnoruntAnimationIdle
+	dw GlalieAnimationIdle
+	dw FroslassAnimationIdle
 	dw BronzorAnimationIdle
 	dw BronzongAnimationIdle
 	dw CacneaAnimationIdle

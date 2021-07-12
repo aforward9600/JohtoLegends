@@ -70,7 +70,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw AipomEggMoves
-	dw NoEggMoves2
+	dw SunkernEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw YanmaEggMoves
@@ -127,6 +127,9 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw CroagunkEggMoves
 	dw DuskullEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw SnoruntEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -238,6 +241,7 @@ ChikoritaEggMoves:
 	dw FLAIL
 	dw BODY_SLAM
 	dw STRENGTH_SAP
+	dw GRASSWHISTLE
 	dw -1 ; end
 
 CyndaquilEggMoves:
@@ -398,6 +402,15 @@ AipomEggMoves:
 	dw BOUNCE
 	dw REVENGE
 	dw WORK_UP
+	dw -1 ; end
+
+SunkernEggMoves:
+	dw ENDURE
+	dw ENCORE
+	dw GRASSWHISTLE
+	dw LEECH_SEED
+	dw SWEET_SCENT
+	dw SEED_BOMB
 	dw -1 ; end
 
 YanmaEggMoves:
@@ -717,6 +730,11 @@ DuskullEggMoves:
 	dw FAINT_ATTACK
 	dw HAZE
 	dw PAIN_SPLIT
+	dw -1 ; end
+
+SnoruntEggMoves:
+	dw ROLLOUT
+	dw DISABLE
 	dw -1 ; end
 
 CacneaEggMoves:

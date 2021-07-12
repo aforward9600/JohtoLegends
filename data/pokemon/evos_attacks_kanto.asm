@@ -668,7 +668,7 @@ NidoranFEvosAttacks:
 	dbw 21, BITE
 	dbw 25, DOUBLE_TEAM
 	dbw 31, TOXIC
-	dbw 33, SWAGGER
+	dbw 33, FLATTER
 	dbw 37, CRUNCH
 	dbw 43, VENOSHOCK
 	dbw 45, POISON_FANG
@@ -686,7 +686,7 @@ NidorinaEvosAttacks:
 	dbw 23, BITE
 	dbw 28, DOUBLE_TEAM
 	dbw 35, TOXIC
-	dbw 38, SWAGGER
+	dbw 38, FLATTER
 	dbw 43, CRUNCH
 	dbw 50, VENOSHOCK
 	dbw 58, POISON_FANG
@@ -717,7 +717,7 @@ NidoranMEvosAttacks:
 	dbw 21, HORN_ATTACK
 	dbw 25, DOUBLE_TEAM
 	dbw 31, TOXIC
-	dbw 33, SWAGGER
+	dbw 33, FLATTER
 	dbw 37, POISON_JAB
 	dbw 43, VENOSHOCK
 	dbw 45, HORN_DRILL
@@ -735,7 +735,7 @@ NidorinoEvosAttacks:
 	dbw 23, HORN_ATTACK
 	dbw 28, DOUBLE_TEAM
 	dbw 35, TOXIC
-	dbw 38, SWAGGER
+	dbw 38, FLATTER
 	dbw 43, POISON_JAB
 	dbw 50, VENOSHOCK
 	dbw 58, HORN_DRILL

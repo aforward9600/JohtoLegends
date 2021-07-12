@@ -410,6 +410,7 @@ BattleAnimations::
 	dw BattleAnim_NeedleArm
 	dw BattleAnim_Flatter
 	dw BattleAnim_GrassWhistle
+	dw BattleAnim_OminousWind
 ;	dw BattleAnim_WakeUpSlap
 	dw BattleAnim_SweetScent2
 
@@ -6239,6 +6240,29 @@ BattleAnim_SilverWind:
     anim_obj ANIM_OBJ_04, 136, 48, $0
     anim_wait 32
     anim_call BattleAnim_ShowMon_0
+    anim_ret
+
+BattleAnim_OminousWind:
+    anim_2gfx ANIM_GFX_WIND, ANIM_GFX_ANGELS
+    anim_obp0 $fc
+    anim_call BattleAnim_TargetObj_1Row
+    anim_obj ANIM_OBJ_AGILITY, 8, 24, $10
+    anim_obj ANIM_OBJ_AGILITY, 8, 48, $2
+    anim_obj ANIM_OBJ_AGILITY, 8, 88, $8
+    anim_wait 4
+    anim_obj ANIM_OBJ_AGILITY, 8, 32, $6
+    anim_obj ANIM_OBJ_AGILITY, 8, 56, $c
+    anim_obj ANIM_OBJ_AGILITY, 8, 80, $4
+    anim_obj ANIM_OBJ_AGILITY, 8, 104, $e
+    anim_sound 0, 0, SFX_RAZOR_WIND
+    anim_wait 4
+    anim_call BattleAnim_ShowMon_0
+	anim_bgp $1b
+	anim_obp0 $f
+	anim_obj ANIM_OBJ_NIGHTMARE, 132, 40, $0
+	anim_obj ANIM_OBJ_NIGHTMARE, 132, 40, $a0
+	anim_sound 0, 1, SFX_NIGHTMARE
+	anim_wait 96
     anim_ret
 
 BattleAnim_PetalBlizz:

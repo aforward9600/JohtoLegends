@@ -129,6 +129,9 @@ EvosAttacksPointers2::
 	dw DuskullEvosAttacks
 	dw DusclopsEvosAttacks
 	dw DusknoirEvosAttacks
+	dw SnoruntEvosAttacks
+	dw GlalieEvosAttacks
+	dw FroslassEvosAttacks
 	dw BronzorEvosAttacks
 	dw BronzongEvosAttacks
 	dw CacneaEvosAttacks
@@ -1216,7 +1219,7 @@ NatuEvosAttacks:
 	dbw 9, TELEPORT
 	dbw 12, CONFUSION
 	dbw 17, AIR_CUTTER
-	dbw 20, SILVER_WIND
+	dbw 20, OMINOUS_WIND
 	dbw 23, CONFUSE_RAY
 	dbw 28, ROOST
 	dbw 33, PSYCHIC_M
@@ -1236,7 +1239,7 @@ XatuEvosAttacks:
 	dbw 9, TELEPORT
 	dbw 12, CONFUSION
 	dbw 17, AIR_CUTTER
-	dbw 20, SILVER_WIND
+	dbw 20, OMINOUS_WIND
 	dbw 23, CONFUSE_RAY
 	dbw 29, ROOST
 	dbw 35, PSYCHIC_M
@@ -2627,6 +2630,66 @@ DusknoirEvosAttacks:
 	dbw 52, MEAN_LOOK
 	dbw 57, PAYBACK
 	dbw 64, FUTURE_SIGHT
+	db 0 ; no more level-up moves
+
+SnoruntEvosAttacks:
+	dbbw EVOLVE_LEVEL, 42, GLALIE
+	dbbw EVOLVE_ITEM_FEMALE, DUSK_STONE, FROSLASS
+	db 0 ; no more evolutions
+	dbw 1, POWDER_SNOW
+	dbw 1, LEER
+	dbw 5, DOUBLE_TEAM
+	dbw 10, ICE_SHARD
+	dbw 14, ICY_WIND
+	dbw 19, BITE
+	dbw 23, ICE_FANG
+	dbw 28, HEADBUTT
+	dbw 32, PROTECT
+	dbw 37, ICE_BEAM
+	dbw 41, CRUNCH
+	dbw 46, BLIZZARD
+	dbw 50, HAIL
+	db 0 ; no more level-up moves
+
+GlalieEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, AVALANCHE
+	dbw 1, POWDER_SNOW
+	dbw 1, LEER
+	dbw 5, DOUBLE_TEAM
+	dbw 10, ICE_SHARD
+	dbw 14, ICY_WIND
+	dbw 19, BITE
+	dbw 23, ICE_FANG
+	dbw 28, HEADBUTT
+	dbw 32, PROTECT
+	dbw 37, ICE_BEAM
+	dbw 41, CRUNCH
+	dbw 48, BLIZZARD
+	dbw 54, HAIL
+	dbw 61, SHEER_COLD
+	dbw LEARN_EVO_MOVE, AVALANCHE
+	db 0 ; no more level-up moves
+
+FroslassEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, OMINOUS_WIND
+	dbw 1, POWDER_SNOW
+	dbw 1, LEER
+	dbw 5, DOUBLE_TEAM
+	dbw 10, ICE_SHARD
+	dbw 14, ICY_WIND
+	dbw 19, ASTONISH
+	dbw 23, DRAININGKISS
+	dbw 28, WILL_O_WISP
+	dbw 32, CONFUSE_RAY
+	dbw 37, ICE_BEAM
+	dbw 41, ATTRACT
+	dbw 42, SHADOW_BALL
+	dbw 48, BLIZZARD
+	dbw 54, HAIL
+	dbw 61, SHEER_COLD
+	dbw LEARN_EVO_MOVE, OMINOUS_WIND
 	db 0 ; no more level-up moves
 
 BronzorEvosAttacks:

@@ -278,6 +278,9 @@ FramesPointers:
 	dba DuskullFrames
 	dba DusclopsFrames
 	dba DusknoirFrames
+	dba SnoruntFrames
+	dba GlalieFrames
+	dba FroslassFrames
 	dba BronzorFrames
 	dba BronzongFrames
 	dba CacneaFrames

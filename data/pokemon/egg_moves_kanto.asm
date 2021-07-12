@@ -572,6 +572,7 @@ DrowzeeEggMoves:
 	dw ICE_PUNCH
 	dw THUNDERPUNCH
 	dw PSYCHO_CUT
+	dw FLATTER
 	dw -1 ; end
 
 KrabbyEggMoves:
