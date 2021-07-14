@@ -84,7 +84,7 @@
 	const KINGS_ROCK   ; 52
 	const PERSIM_BERRY ; 53
 	const CHESTO_BERRY ; 54
-	const RED_APRICORN ; 55
+	const DAWN_STONE   ; 55
 	const TINYMUSHROOM ; 56
 	const BIG_MUSHROOM ; 57
 	const SILVERPOWDER ; 58

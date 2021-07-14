@@ -2938,7 +2938,7 @@ ElekidEvosAttacks:
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
-	dbbw EVOLVE_ITEM, ELECTIRIZER, ELECTIVIRE
+	dbbw EVOLVE_ITEM, THUNDERSTONE, ELECTIVIRE
 	db 0 ; no more evolutions
 	dbw 1, CROSS_CHOP
 	dbw 1, QUICK_ATTACK
@@ -3000,7 +3000,7 @@ MagbyEvosAttacks:
 	db 0 ; no more level-up moves
 
 MagmarEvosAttacks:
-	dbbw EVOLVE_ITEM, MAGMARIZER, MAGMORTAR
+	dbbw EVOLVE_ITEM, FIRE_STONE, MAGMORTAR
 	db 0 ; no more evolutions
 	dbw 1, EMBER
 	dbw 1, LEER

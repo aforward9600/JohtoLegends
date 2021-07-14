@@ -154,16 +154,15 @@ MartGoldenrodBlackMarket1:
 	db ICE_STONE
 	db SHINY_STONE
 	db DUSK_STONE
-	db LINK_CABLE
+	db DAWN_STONE
 	db -1 ; end
 
 MartGoldenrodBlackMarket2:
-	db 10 ; # items
+	db 9 ; # items
 	db DRAGON_SCALE
 	db RAZOR_CLAW
 	db RAZOR_FANG
-	db ELECTIRIZER
-	db MAGMARIZER
+	db LINK_CABLE
 	db PROTECTOR
 	db UP_GRADE
 	db DUBIOUSDISK
@@ -183,13 +182,14 @@ MartGoldenrodBlackMarket3:
 	db -1 ; end
 
 MartGoldenrodBlackMarket4:
-	db 6 ; # items
+	db 7 ; # items
 	db UP_GRADE
 	db ROYAL_ROCK
 	db METAL_COAT
 	db SHINY_STONE
 	db DUSK_STONE
 	db LINK_CABLE
+	db DAWN_STONE
 	db -1 ; end
 
 MartOlivine:

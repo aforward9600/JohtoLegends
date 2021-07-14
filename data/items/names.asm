@@ -77,7 +77,7 @@ ItemNames::
 	db "King's Rock@"
 	db "Persim Berry@"
 	db "Chesto Berry@"
-	db "Red Apricorn@"
+	db "Dawn Stone@"
 	db "Tinymushroom@"
 	db "Big Mushroom@"
 	db "Silverpowder@"

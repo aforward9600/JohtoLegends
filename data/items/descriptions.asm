@@ -78,7 +78,7 @@ ItemDescriptions:
 	dw KingsRockDesc
 	dw BitterBerryDesc
 	dw MintBerryDesc
-	dw RedApricornDesc
+	dw DawnStoneDesc
 	dw TinyMushroomDesc
 	dw BigMushroomDesc
 	dw SilverPowderDesc
@@ -563,8 +563,9 @@ MintBerryDesc:
 	db   "A self-awakening"
 	next "for sleep. (Hold)@"
 
-RedApricornDesc:
-	db   "A red Apricorn.@"
+DawnStoneDesc:
+	db   "Evolves certain"
+	next "kinds of #mon.@"
 
 TinyMushroomDesc:
 	db   "An ordinary mush-"

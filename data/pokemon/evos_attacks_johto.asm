@@ -2634,7 +2634,7 @@ DusknoirEvosAttacks:
 
 SnoruntEvosAttacks:
 	dbbw EVOLVE_LEVEL, 42, GLALIE
-	dbbw EVOLVE_ITEM_FEMALE, DUSK_STONE, FROSLASS
+	dbbw EVOLVE_ITEM_FEMALE, DAWN_STONE, FROSLASS
 	db 0 ; no more evolutions
 	dbw 1, POWDER_SNOW
 	dbw 1, LEER
@@ -2804,7 +2804,7 @@ RaltsEvosAttacks:
 
 KirliaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 30, GARDEVOIR
-	dbbw EVOLVE_ITEM_MALE, SHINY_STONE, GALLADE
+	dbbw EVOLVE_ITEM_MALE, DAWN_STONE, GALLADE
 	db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 4, CONFUSION
