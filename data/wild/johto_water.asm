@@ -53,24 +53,24 @@ JohtoWaterWildMons:
 
 	map_id MOUNT_MORTAR_1F_OUTSIDE
 	db 4 percent ; encounter rate
-	dbw 20, GOLDEEN
-	dbw 20, MARILL
-	dbw 25, SEAKING
-	dbw 25, SEAKING
+	dbw 17, GOLDEEN
+	dbw 17, MARILL
+	dbw 20, SEAKING
+	dbw 20, SEAKING
 
 	map_id MOUNT_MORTAR_2F_INSIDE
 	db 2 percent ; encounter rate
-	dbw 20, GOLDEEN
-	dbw 25, MARILL
-	dbw 25, SEAKING
+	dbw 17, GOLDEEN
+	dbw 20, MARILL
 	dbw 20, SEAKING
+	dbw 17, SEAKING
 
 	map_id MOUNT_MORTAR_B1F
 	db 2 percent ; encounter rate
-	dbw 20, GOLDEEN
-	dbw 20, MARILL
-	dbw 25, SEAKING
-	dbw 25, SEAKING
+	dbw 17, GOLDEEN
+	dbw 17, MARILL
+	dbw 20, SEAKING
+	dbw 20, SEAKING
 
 	map_id WHIRL_ISLAND_SW
 	db 4 percent ; encounter rate

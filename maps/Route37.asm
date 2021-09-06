@@ -28,7 +28,21 @@ TrainerPokefanFEthel:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokefanFEthelAfterBattleText
+	writetext PokefanFEthelRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_BEAUTY_ENCOUNTER
+	writetext PokefanFEthelLetsDoItText
+	waitbutton
+	winlosstext PokefanFEthelBeatenText, 0
+	loadtrainer POKEFANF, ETHEL1
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.Refused:
+	writetext PokefanFEthelRefusedText
 	waitbutton
 	closetext
 	end
@@ -132,13 +146,22 @@ PokefanFEthelBeatenText:
 	line "just precious?"
 	done
 
-PokefanFEthelAfterBattleText:
-	text "It's not the"
-	line "easiest #mon"
-	cont "to find."
+PokefanFEthelRematchText:
+	text "You came to see my"
+	line "#mon again?"
+	done
 
-	para "My husband gave"
-	line "it to me!"
+PokefanFEthelLetsDoItText:
+	text "Come on, my"
+	line "Togepi!"
+	done
+
+PokefanFEthelRefusedText:
+	text "Fine!"
+
+	para "I didn't want to"
+	line "show you my #-"
+	cont "mon anyway!"
 	done
 
 MeetSunnyText:
@@ -233,6 +256,10 @@ OfficerTobyDaytimeText:
 
 Route37SignText:
 	text "Route 37"
+
+	para "Pokefan Ethel"
+	line "wants to show"
+	cont "off her #mon!"
 	done
 
 Route37_MapEvents:

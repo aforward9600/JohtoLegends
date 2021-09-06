@@ -82,10 +82,10 @@ ItemDescriptions:
 	dw TinyMushroomDesc
 	dw BigMushroomDesc
 	dw SilverPowderDesc
-	dw BluApricornDesc
+	dw OldAmberDesc
 	dw AmuletCoinDesc
-	dw YlwApricornDesc
-	dw GrnApricornDesc
+	dw HelixFossilDesc
+	dw DomeFossilDesc
 	dw CleanseTagDesc
 	dw MysticWaterDesc
 	dw TwistedSpoonDesc
@@ -579,18 +579,21 @@ SilverPowderDesc:
 	db   "Powers up bug-type"
 	next "moves. (Hold)@"
 
-BluApricornDesc:
-	db   "A blue Apricorn.@"
+OldAmberDesc:
+	db   "Ancient piece of"
+	next "amber.@"
 
 AmuletCoinDesc:
 	db   "Doubles monetary"
 	next "earnings. (Hold)@"
 
-YlwApricornDesc:
-	db   "A yellow Apricorn.@"
+HelixFossilDesc:
+	db   "Ancient fossil in"
+	next "a helix shape.@"
 
-GrnApricornDesc:
-	db   "A green Apricorn.@"
+DomeFossilDesc:
+	db   "Ancient fossil in"
+	next "a dome shape.@"
 
 CleanseTagDesc:
 	db   "Helps repel wild"

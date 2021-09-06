@@ -1719,7 +1719,7 @@ JohtoGrassWildMons:
 	dbw  8, GROWLITHE
 	dbw  8, VULPIX
 	dbw  9, PSYDUCK
-	dbw  9, ELEKID
+	dbw  9, RALTS
 	dbw  9, RALTS
 	dbw 10, TOTODILE
 	dbw 10, TOTODILE
@@ -1728,7 +1728,7 @@ JohtoGrassWildMons:
 	dbw  8, GROWLITHE
 	dbw  8, VULPIX
 	dbw  9, PSYDUCK
-	dbw  9, ELEKID
+	dbw  9, RALTS
 	dbw  9, RALTS
 	dbw 10, TOTODILE
 	dbw 10, TOTODILE
@@ -1737,10 +1737,40 @@ JohtoGrassWildMons:
 	dbw  8, HOUNDOUR
 	dbw  8, RATTATA
 	dbw  9, PSYDUCK
-	dbw  9, ELEKID
+	dbw  9, RALTS
 	dbw  9, RALTS
 	dbw 10, TOTODILE
 	dbw 10, TOTODILE
+
+	map_id LAKE_OF_RAGE
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw  8, ELECTRIKE
+	dbw  8, GROWLITHE
+	dbw  8, VULPIX
+	dbw  9, ELEKID
+	dbw  9, PSYDUCK
+	dbw  9, MIME__JR
+	dbw 10, CROAGUNK
+	dbw 10, CROAGUNK
+	; day
+	dbw  8, ELECTRIKE
+	dbw  8, GROWLITHE
+	dbw  8, VULPIX
+	dbw  9, ELEKID
+	dbw  9, PSYDUCK
+	dbw  9, MIME__JR
+	dbw 10, CROAGUNK
+	dbw 10, CROAGUNK
+	; nite
+	dbw  8, ELECTRIKE
+	dbw  8, HOUNDOUR
+	dbw  8, RATTATA
+	dbw  9, ELEKID
+	dbw  9, PSYDUCK
+	dbw  9, MIME__JR
+	dbw 10, CROAGUNK
+	dbw 10, CROAGUNK
 
 	map_id ROUTE_44
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

@@ -176,7 +176,7 @@ EvolveAfterBattle_MasterLoop:
 	push hl
 	farcall GetGender
 	pop hl
-	jp z, .skip_evolution_species
+	jp z, .skip_evolution_species_parameter
 	jr .item
 
 .item_female
@@ -185,7 +185,7 @@ EvolveAfterBattle_MasterLoop:
 	push hl
 	farcall GetGender
 	pop hl
-	jp nz, .skip_evolution_species
+	jp nz, .skip_evolution_species_parameter
 	jr .item
 
 .item

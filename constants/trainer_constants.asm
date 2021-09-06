@@ -333,6 +333,8 @@ CHRIS EQU __enum__
 	const HILLARY
 	const SHIRLEY
 	const CADI
+	const CADI2
+	const CADI3
 
 	trainerclass SABRINA ; 23
 	const SABRINA1
@@ -769,6 +771,7 @@ CHRIS EQU __enum__
 
 	trainerclass TOURIST ; 4e
 	const CYNTHIA1
+	const CYNTHIA2
 
 	trainerclass ENGINEER ; 4f
 	const HARVEY1

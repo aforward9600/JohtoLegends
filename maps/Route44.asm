@@ -87,6 +87,7 @@ TrainerTeacherCadi:
 	trainer TEACHER, CADI, EVENT_BEAT_TEACHER_CADI, TeacherCadiSeenText, TeacherCadiBeatenText, 0, .Script
 
 .Script:
+	endifjustbattled
 	opentext
 	writetext TeacherCadiRematchText
 	yesorno
@@ -94,6 +95,8 @@ TrainerTeacherCadi:
 	playmusic MUSIC_BEAUTY_ENCOUNTER
 	writetext TeacherCadiLetsDoItText
 	waitbutton
+	checkflag ENGINE_GLACIERBADGE
+	iftrue .CadiRematch1
 	winlosstext TeacherCadiBeatenText, 0
 	loadtrainer TEACHER, CADI
 	startbattle
@@ -104,6 +107,24 @@ TrainerTeacherCadi:
 .Refused:
 	writetext TeacherCadiRefusedText
 	waitbutton
+	closetext
+	end
+
+.CadiRematch1:
+	checkflag ENGINE_STORMBADGE
+	iftrue .CadiRematch2
+	winlosstext TeacherCadiBeatenText, 0
+	loadtrainer TEACHER, CADI2
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.CadiRematch2:
+	winlosstext TeacherCadiBeatenText, 0
+	loadtrainer TEACHER, CADI3
+	startbattle
+	reloadmapafterbattle
 	closetext
 	end
 
@@ -126,7 +147,7 @@ Route44Repel:
 	itemball REPEL
 
 Route44HiddenElixer:
-	hiddenitem ELIXER, EVENT_ROUTE_44_HIDDEN_ELIXER
+	hiddenitem ETHER, EVENT_ROUTE_44_HIDDEN_ELIXER
 
 Route44HealScript:
 	faceplayer

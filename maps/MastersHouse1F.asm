@@ -102,7 +102,7 @@ DratiniPokeballScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke KIRLIA, 5, SHINY_STONE
+	givepoke DRATINI, 5, ORAN_BERRY
 	closetext
 	sjump RivalLarvitarScript
 

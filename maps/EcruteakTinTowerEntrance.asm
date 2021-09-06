@@ -51,7 +51,9 @@ EcruteakTinTowerEntrance_MapScripts:
 	return
 
 .MoveSage:
-	moveobject ECRUTEAKTINTOWERENTRANCE_SAGE1, 5, 6
+	moveobject ECRUTEAKTINTOWERENTRANCE_SAGE2, 5, 6
+	appear ECRUTEAKTINTOWERENTRANCE_SAGE2
+	disappear ECRUTEAKTINTOWERENTRANCE_SAGE1
 	return
 
 EcruteakTinTowerEntrance_CoordEvent1:

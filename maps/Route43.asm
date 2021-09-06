@@ -72,6 +72,7 @@ TrainerPokemaniacJarvis:
 	trainer POKEMANIAC, JARVIS, EVENT_BEAT_POKEMANIAC_JARVIS, PokemaniacJarvisSeenText, PokemaniacJarvisBeatenText, 0, .Script
 
 .Script:
+	endifjustbattled
 	opentext
 	writetext PokemaniacJarvisRematchText
 	yesorno

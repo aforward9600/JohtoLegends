@@ -59,7 +59,6 @@ CianwoodGymChigusaScript:
 	setscene SCENE_FINISHED
 	setmapscene WILD_AREA_OUTSIDE, SCENE_WILD_AREA_RIVAL
 	setevent EVENT_WILD_AREA_OUTSIDE_RIVAL1
-	setevent EVENT_WILD_AREA_OUTSIDE_RIVAL2
 .FightDone:
 	checkevent EVENT_GOT_TM08_BULK_UP
 	iftrue .AlreadyGotTM

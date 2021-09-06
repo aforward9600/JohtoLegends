@@ -66,6 +66,20 @@ TrainerBugCatcherStevie:
 .Script:
 	endifjustbattled
 	opentext
+	writetext BugCatcherStevieRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_YOUNGSTER_ENCOUNTER
+	writetext BugCatcherStevieLetsDoItText
+	waitbutton
+	winlosstext LassCynthiaBeatenText, 0
+	loadtrainer BUG_CATCHER, STEVIE
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.Refused:
 	writetext BugCatcherStevieAfterBattleText
 	waitbutton
 	closetext
@@ -91,6 +105,20 @@ TrainerHexManiacSabrina:
 	end
 
 .Beaten:
+	writetext HexManiacSabrinaRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
+	writetext HexManiacSabrinaLetsDoItText
+	waitbutton
+	winlosstext HexManiacSabrinaBeatenText, 0
+	loadtrainer HEX_MANIAC, SABRINA2
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.Refused:
 	writetext HexManiacSabrinaAfterBattleText
 	waitbutton
 	closetext
@@ -191,7 +219,7 @@ PokefanfCamillaAfterBattleText:
 	done
 
 PokefanMDerekPikachuIsItText:
-	text "PIKACHU is it!"
+	text "Pikachu is it!"
 	line "Don't you agree?"
 	done
 
@@ -206,8 +234,20 @@ BugCatcherStevieBeatenText:
 	line "strong enough..."
 	done
 
+BugCatcherStevieRematchText:
+	text "Here to rematch my"
+	line "awesome bugs?"
+	done
+
+BugCatcherStevieLetsDoItText:
+	text "Go, my Bug"
+	line "#mon!"
+	done
+
 BugCatcherStevieAfterBattleText:
-	text "National Forest"
+	text "Okey dokey!"
+
+	para "National Forest"
 	line "has so many Bug-"
 	cont "types! You should"
 
@@ -233,11 +273,21 @@ HexManiacSabrinaBeatenText:
 	line "give you a fright."
 	done
 
+HexManiacSabrinaRematchText:
+	text "Ready for yet"
+	line "another fight?"
+	done
+
+HexManiacSabrinaLetsDoItText:
+	text "It's time to do"
+	line "this right."
+	done
+
 HexManiacSabrinaAfterBattleText:
-	text "The only thing"
-	line "that causes them"
-	cont "to recede is"
-	cont "light."
+	text "Will I not fight"
+	line "in the light?"
+
+	para "I just might."
 	done
 
 Route39SignText:
@@ -245,6 +295,14 @@ Route39SignText:
 
 	para "Olivine City -"
 	line "Ecruteak City"
+
+	para "Bug Catcher Stevie"
+	line "has some Bug #-"
+	cont "mon to battle!"
+
+	para "Hex Maniac Sabrina"
+	line "waits for you at"
+	cont "night."
 	done
 
 MoomooFarmSignText:

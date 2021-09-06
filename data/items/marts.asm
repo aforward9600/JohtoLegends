@@ -38,6 +38,7 @@ Marts:
 	dw MartWildArea
 	dw MartEcruteakBalls
 	dw MartOlivineTMs
+	dw MartBlackthornTMs
 .End
 
 MartCherrygrove:
@@ -137,10 +138,11 @@ MartGoldenrod4F:
 	db -1 ; end
 
 MartGoldenrod5F:
-	db 3 ; # items
+	db 4 ; # items
 	db TM_SAFEGUARD
 	db TM_LIGHT_SCREEN
 	db TM_REFLECT
+	db TM_PROTECT
 	db -1 ; end
 
 MartGoldenrodBlackMarket1:
@@ -346,12 +348,11 @@ MartCeladon2F2:
 	db -1 ; end
 
 MartCeladon3F:
-	db 5 ; # items
+	db 4 ; # items
 	db TM_GIGA_IMPACT
 	db TM_NASTY_PLOT
-	db TM_PROTECT
 	db TM_DREAM_EATER
-	db TM_HONE_CLAWS
+	db TM_HYPER_BEAM
 	db -1 ; end
 
 MartCeladon4F:
@@ -463,6 +464,14 @@ MartOlivineTMs:
 	db TM_BRICK_BREAK
 	db TM_ATTRACT
 	db TM_POISON_JAB
+	db -1 ; end
+
+MartBlackthornTMs:
+	db 4
+	db TM_DOUBLE_TEAM
+	db TM_SUBSTITUTE
+	db TM_SLEEP_TALK
+	db TM_HONE_CLAWS
 	db -1 ; end
 
 DefaultMart:

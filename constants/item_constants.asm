@@ -88,10 +88,10 @@
 	const TINYMUSHROOM ; 56
 	const BIG_MUSHROOM ; 57
 	const SILVERPOWDER ; 58
-	const BLU_APRICORN ; 59
+	const OLD_AMBER    ; 59
 	const AMULET_COIN  ; 5b
-	const YLW_APRICORN ; 5c
-	const GRN_APRICORN ; 5d
+	const HELIX_FOSSIL ; 5c
+	const DOME_FOSSIL  ; 5d
 	const CLEANSE_TAG  ; 5e
 	const MYSTIC_WATER ; 5f
 	const TWISTEDSPOON ; 60

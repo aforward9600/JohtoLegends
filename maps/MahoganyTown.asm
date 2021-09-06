@@ -66,12 +66,64 @@ MahoganyTownPokecenterSign:
 	jumpstd pokecentersign
 
 MahoganyTownGrampsText:
-	text "The Lake of Rage"
-	line "is a spectacular"
-	cont "sight."
+	text "Have you noticed"
+	line "any unusual #-"
+	cont "mon in the area?"
 
-	para "You should go and"
-	line "see for yourself."
+	para "Johto has #mon"
+	line "native to our"
+	cont "region, as well"
+	cont "as Kanto."
+
+	para "But recently, more"
+	line "#mon have been"
+	cont "popping up."
+
+	para "They are invasive"
+	line "species to some."
+
+	para "Normally, they're"
+	line "shipped in as"
+	cont "exotic pets, and"
+	cont "then abandoned."
+
+	para "They reproduce"
+	line "with other species"
+	cont "and therefore they"
+	cont "multiply."
+
+	para "There are Snorunt"
+	line "in Ice Path, Ralts"
+	cont "on Route 43,"
+
+	para "Croagunk, Cacnea"
+	line "and Electrike at"
+	cont "the Lake of Rage."
+
+	para "There's even Budew"
+	line "on Route 44."
+
+	para "Not to mention the"
+	line "Duskull in the"
+	cont "Burned Tower of"
+	cont "Ecruteak City."
+
+	para "The League and"
+	line "locals have begun"
+	cont "concentrated eff-"
+
+	para "orts to relocate"
+	line "them back to"
+	cont "Hoenn and Sinnoh."
+
+	para "Trainers aren't"
+	line "above using them"
+	cont "when they want, so"
+	cont "go ahead."
+
+	para "Someday they may"
+	line "no longer be"
+	cont "here…"
 	done
 
 MahoganyTownGrampsText_ClearedRocketHideout:

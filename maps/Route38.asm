@@ -40,6 +40,20 @@ TrainerLassCynthia:
 .Script
 	endifjustbattled
 	opentext
+	writetext LassCynthiaRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_LASS_ENCOUNTER
+	writetext LassCynthiaLetsDoItText
+	waitbutton
+	winlosstext LassCynthiaBeatenText, 0
+	loadtrainer TOURIST, CYNTHIA1
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.Refused:
 	writetext LassCynthiaAfterBattleText
 	waitbutton
 	closetext
@@ -145,11 +159,24 @@ LassCynthiaBeatenText:
 	done
 
 LassCynthiaAfterBattleText:
-	text "It's hard to get"
+	text "Perhaps another"
+	line "time."
+
+	para "By the way..."
+
+	para "It's hard to get"
 	line "to the ruins,"
 
 	para "with all the trees"
 	line "and Sudowoodo."
+	done
+
+LassCynthiaRematchText:
+	text "Back again, huh?"
+	done
+
+LassCynthiaLetsDoItText:
+	text "After you!"
 	done
 
 BeautyFionaSeenText:
@@ -230,6 +257,10 @@ Route38SignText:
 
 	para "Olivine City -"
 	line "Ecruteak City"
+
+	para "Tourist Cynthia"
+	line "never refuses a"
+	cont "challenge!"
 	done
 
 Route38TrainerTipsText:

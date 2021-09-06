@@ -2448,7 +2448,7 @@ MiltankEvosAttacks:
 	db 0 ; no more level-up moves
 
 BudewEvoseAttacks:
-	dbw EVOLVE_HAPPINESS, TR_MORNDAY, ROSELIA
+	dbbw EVOLVE_HAPPINESS, TR_MORNDAY, ROSELIA
 	db 0 ; no more evolutions
 	dbw 1, ABSORB
 	dbw 4, GROWTH
@@ -2459,7 +2459,7 @@ BudewEvoseAttacks:
 	db 0 ; no more level-up moves
 
 RoseliaEvosAttacks:
-	dbw EVOLVE_ITEM, SHINY_STONE, ROSERADE
+	dbbw EVOLVE_ITEM, SHINY_STONE, ROSERADE
 	db 0 ; no more evolutions
 	dbw 1, ABSORB
 	dbw 4, GROWTH
@@ -2490,7 +2490,7 @@ RoseradeEvosAttacks:
 	db 0 ; no more level-up moves
 
 ElectrikeEvosAttacks:
-	dbw EVOLVE_LEVEL, 26, MANECTRIC
+	dbbw EVOLVE_LEVEL, 26, MANECTRIC
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, THUNDER_WAVE
@@ -2528,7 +2528,7 @@ ManectricEvosAttacks:
 	db 0 ; no more level-up moves
 
 CroagunkEvosAttacks:
-	dbw EVOLVE_LEVEL, 37, TOXICROAK
+	dbbw EVOLVE_LEVEL, 37, TOXICROAK
 	db 0 ; no more evolutions
 	dbw 1, ASTONISH
 	dbw 3, MUD_SLAP
@@ -2633,7 +2633,7 @@ DusknoirEvosAttacks:
 	db 0 ; no more level-up moves
 
 SnoruntEvosAttacks:
-	dbbw EVOLVE_LEVEL, 42, GLALIE
+	dbbw EVOLVE_LEVEL, 32, GLALIE
 	dbbw EVOLVE_ITEM_FEMALE, DAWN_STONE, FROSLASS
 	db 0 ; no more evolutions
 	dbw 1, POWDER_SNOW
@@ -2662,8 +2662,8 @@ GlalieEvosAttacks:
 	dbw 19, BITE
 	dbw 23, ICE_FANG
 	dbw 28, HEADBUTT
-	dbw 32, PROTECT
-	dbw 37, ICE_BEAM
+	dbw 33, PROTECT
+	dbw 38, ICE_BEAM
 	dbw 41, CRUNCH
 	dbw 48, BLIZZARD
 	dbw 54, HAIL
@@ -2736,7 +2736,7 @@ BronzongEvosAttacks:
 	db 0 ; no more level-up moves
 
 CacneaEvosAttacks:
-	dbw EVOLVE_LEVEL, 32, CACTURNE
+	dbbw EVOLVE_LEVEL, 32, CACTURNE
 	db 0 ; no more evolutions
 	dbw 1, POISON_STING
 	dbw 1, LEER

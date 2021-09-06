@@ -10,7 +10,155 @@ FossilHouse_MapScripts:
 	db 0 ; callbacks
 
 ScientistScript:
-	jumptextfaceplayer FossilHouseScientistText
+	faceplayer
+	opentext
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue .YouNoPatient
+	checkevent EVENT_GAVE_OLD_AMBER
+	iftrue .Aerodactyl
+	checkevent EVENT_GAVE_HELIX_FOSSIL
+	iftrue .Omanyte
+	checkevent EVENT_GAVE_DOME_FOSSIL
+	iftrue .Kabuto
+	checkitem OLD_AMBER
+	iftrue .AlreadySpokeToScientist
+	checkitem HELIX_FOSSIL
+	iftrue .AlreadySpokeToScientist
+	checkitem DOME_FOSSIL
+	iftrue .AlreadySpokeToScientist
+	writetext FossilHouseScientistText
+	waitbutton
+	closetext
+	end
+
+.AlreadySpokeToScientist:
+	writetext YouHaveFossilText
+	yesorno
+	iffalse .Refused
+	writetext WhichFossil
+	loadmenu .FossilMenu
+	verticalmenu
+	closewindow
+	ifequal 1, .OldAmber
+	ifequal 2, .HelixFossil
+	ifequal 3, .DomeFossil
+	sjump .Refused
+
+.Refused:
+	writetext FineNoFossilText
+	waitbutton
+	closetext
+	end
+
+.FossilMenu:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, 15, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "Old Amber@"
+	db "Helix Fossil@"
+	db "Dome Fossil@"
+	db "Cancel@"
+
+.OldAmber:
+	checkitem OLD_AMBER
+	iffalse .DontHaveFossil
+	takeitem OLD_AMBER
+	setevent EVENT_GAVE_OLD_AMBER
+	sjump .GaveFossil
+
+.HelixFossil:
+	checkitem HELIX_FOSSIL
+	iffalse .DontHaveFossil
+	takeitem HELIX_FOSSIL
+	setevent EVENT_GAVE_HELIX_FOSSIL
+	sjump .GaveFossil
+
+.DomeFossil:
+	checkitem DOME_FOSSIL
+	iffalse .DontHaveFossil
+	takeitem DOME_FOSSIL
+	setevent EVENT_GAVE_DOME_FOSSIL
+	sjump .GaveFossil
+
+.DontHaveFossil:
+	opentext
+	writetext YouNoHaveFossil
+	waitbutton
+	closetext
+	end
+
+.GaveFossil:
+	opentext
+	writetext YouGoNow
+	waitbutton
+	closetext
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	end
+
+.YouNoPatient:
+	writetext YouNoPatientText
+	waitbutton
+	closetext
+	end
+
+.Aerodactyl:
+	writetext AerodactylText
+	buttonsound
+	waitsfx
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	writetext GotAerodactylText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke AERODACTYL, 20
+	clearevent EVENT_GAVE_OLD_AMBER
+	writetext TakeGoodCareText
+	waitbutton
+	closetext
+	end
+
+.Omanyte:
+	writetext OmanyteText
+	buttonsound
+	waitsfx
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	writetext GotOmanyteText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke OMANYTE, 20
+	clearevent EVENT_GAVE_HELIX_FOSSIL
+	writetext TakeGoodCareText
+	waitbutton
+	closetext
+	end
+
+.Kabuto:
+	writetext KabutoText
+	buttonsound
+	waitsfx
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	writetext GotKabutoText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke KABUTO, 20
+	clearevent EVENT_GAVE_DOME_FOSSIL
+	writetext TakeGoodCareText
+	waitbutton
+	closetext
+	end
+
+.NoRoom:
+	writetext FossilNoRoomText
+	waitbutton
+	closetext
+	end
 
 KimScript:
 	faceplayer
@@ -62,17 +210,111 @@ FossilHouseScientistText:
 
 	para "Children of mine"
 	line "don't care for"
-	cont "the #mon I gave"
-	cont "them, it seems."
+	cont "the scientific"
+	cont "process, it seems."
 
-	para "Willing to trade"
-	line "them, they are."
+	para "Find any fossils,"
+	line "and I can revive"
+	cont "them for you, I"
+	cont "can!"
+	done
 
-	para "How unfortunate."
+YouHaveFossilText:
+	text "You! You have"
+	line "fossil for me?"
 
-	para "Not caring for"
-	line "scientific prog-"
-	cont "ress, looks like."
+	para "Can revive it, I"
+	line "can!"
+
+	para "Give me fossil,"
+	line "will you?"
+	done
+
+WhichFossil:
+	text "Which fossil?"
+	done
+
+FineNoFossilText:
+	text "Fine!"
+
+	para "No fossil for you!"
+	done
+
+YouGoNow:
+	text "Great!"
+
+	para "I take fossil,"
+	line "you come back"
+	cont "later, yes?"
+
+	para "Will have a"
+	line "#mon for you!"
+	done
+
+YouNoHaveFossil:
+	text "You no have"
+	line "that fossil!"
+	done
+
+YouNoPatientText:
+	text "You're not very"
+	line "patient, yes?"
+
+	para "Come back later!"
+	done
+
+AerodactylText:
+	text "Where were you?"
+
+	para "Your fossil is"
+	line "back to life!"
+
+	para "It was Aerodactyl-"
+	line "like, I think!"
+	done
+
+OmanyteText:
+	text "Where were you?"
+
+	para "Your fossil is"
+	line "back to life!"
+
+	para "It was Omanyte-"
+	line "like, I think!"
+	done
+
+KabutoText:
+	text "Where were you?"
+
+	para "Your fossil is"
+	line "back to life!"
+
+	para "It was Kabuto-"
+	line "like, I think!"
+	done
+
+TakeGoodCareText:
+	text "Take good care"
+	line "of your #mon!"
+	done
+
+GotAerodactylText:
+	text "<PLAYER> received"
+	line "an Aerodactyl!"
+	done
+
+GotOmanyteText:
+	text "<PLAYER> received"
+	line "an Omanyte!"
+	done
+
+GotKabutoText:
+	text "<PLAYER> received"
+	line "a Kabuto!"
+	done
+
+FossilNoRoomText:
+	text "You have no room!"
 	done
 
 FossilHouse_ScienceMagazinesText:

@@ -266,8 +266,8 @@ DahliasLookingForYouText:
 	cont "starting on a"
 
 	para "journey with a"
-	line "#mon, just they"
-	cont "did…"
+	line "#mon, just as"
+	cont "they did…"
 
 	para "Sorry, I was lost"
 	line "in a memory. You"
