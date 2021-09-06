@@ -63,7 +63,21 @@ TrainerPokemaniacAlvin:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokemaniacAlvinAfterBattleText
+	writetext PokemaniacAlvinRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
+	writetext PokemaniacAlvinLetsDoItText
+	waitbutton
+	winlosstext PokemaniacAlvinBeatenText, 0
+	loadtrainer POKEMANIAC, ALVIN
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.Refused:
+	writetext PokemaniacAlvinRefusedText
 	waitbutton
 	closetext
 	end
@@ -227,8 +241,23 @@ PokemaniacAlvinBeatenText:
 	text "Yuck!"
 	done
 
-PokemaniacAlvinAfterBattleText:
-	text "Bugs are the third"
+PokemaniacAlvinRematchText:
+	text "I'll always fight,"
+	line "just so long as"
+	cont "it's not in the"
+	cont "forest."
+	done
+
+PokemaniacAlvinLetsDoItText:
+	text "Let's get started!"
+	done
+
+PokemaniacAlvinRefusedText:
+	text "Alright, then."
+
+	para "Just so you know,"
+
+	para "bugs are the third"
 	line "most disgusting"
 	cont "things in the"
 	cont "world!"
@@ -341,6 +370,11 @@ RockSmashGuyText5:
 
 Route36SignText:
 	text "Route 36"
+
+	para "#maniac Alvin"
+	line "is waiting out-"
+	cont "side the forest,"
+	cont "ready to battle!"
 	done
 
 RuinsOfAlphNorthSignText:
@@ -398,7 +432,7 @@ Route36_MapEvents:
 
 	db 9 ; object events
 	object_event 23, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1
-	object_event 21,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyPierce, -1
+	object_event 21,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyPierce, -1
 	object_event 51,  8, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1
 	object_event 35,  9, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, EVENT_ROCK_SMASH_GUY
 	object_event 21,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36FruitTree, -1

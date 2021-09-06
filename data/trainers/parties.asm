@@ -88,29 +88,29 @@ EnokiGroup:
 
 	next_list_item ; ENOKI (2)
 	db "Enoki@", TRAINERTYPE_MOVES
-	db 25
+	db 24
 	dw DUSKULL
 	dw HEX, WILL_O_WISP, SHADOW_SNEAK, FORESIGHT
-	db 25
+	db 24
 	dw CORSOLA
 	dw ANCIENTPOWER, WILL_O_WISP, HEX, SPITE
-	db 26
+	db 25
 	dw MISDREAVUS
 	dw HEX, HYPNOSIS, MEAN_LOOK, DREAM_EATER
 	db -1 ; end
 
 	next_list_item ; ENOKI (3)
 	db "Enoki@", TRAINERTYPE_MOVES
-	db 28
+	db 26
 	dw DUSKULL
 	dw HEX, WILL_O_WISP, SHADOW_SNEAK, FORESIGHT
-	db 28
+	db 26
 	dw CORSOLA
 	dw ANCIENTPOWER, WILL_O_WISP, HEX, STRENGTH_SAP
-	db 29
+	db 27
 	dw NOCTOWL
 	dw SHADOW_BALL, AIR_SLASH, REFLECT, LIGHT_SCREEN
-	db 30
+	db 28
 	dw MISDREAVUS
 	dw HEX, WILL_O_WISP, MEAN_LOOK, PSYBEAM
 	db -1 ; end
@@ -216,16 +216,16 @@ PryceGroup:
 
 	next_list_item ; PRYCE (3)
 	db "Pryce@", TRAINERTYPE_MOVES
-	db 23
+	db 25
 	dw SMOOCHUM
 	dw SING, POWDER_SNOW, ICY_WIND, PSYBEAM
-	db 24
+	db 25
 	dw SWINUB
 	dw BULLDOZE, ICE_FANG, ENDURE, HAIL
-	db 25
+	db 26
 	dw SNORUNT
 	dw ICE_FANG, BITE, HAIL, ICY_WIND
-	db 26
+	db 28
 	dw SNEASEL
 	dw METAL_CLAW, FAINT_ATTACK, AGILITY, ICE_SHARD
 	db -1 ; end
@@ -1028,9 +1028,13 @@ SchoolboyGroup:
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (3)
-	db "ALAN@", TRAINERTYPE_NORMAL
-	db 16
-	dw TANGELA
+	db "Gregory@", TRAINERTYPE_NORMAL
+	db 29
+	dw CACNEA
+	db 29
+	dw WEEPINBELL
+	db 30
+	dw DONPHAN
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (4)
@@ -1428,30 +1432,28 @@ LassGroup:
 	dw MAROWAK
 	db -1 ; end
 
-	next_list_item ; LASS (5)
-	db "CONNIE@", TRAINERTYPE_NORMAL
-	db 21
-	dw MARILL
-	db -1 ; end
-
-	next_list_item ; LASS (6)
-	db "LINDA@", TRAINERTYPE_NORMAL
+	next_list_item ; Lass (5) Route 34
+	db "Jenn@", TRAINERTYPE_NORMAL
+	db 29
+	dw STARYU
 	db 30
-	dw BULBASAUR
-	db 32
-	dw IVYSAUR
-	db 34
-	dw VENUSAUR
+	dw STARMIE
 	db -1 ; end
 
-	next_list_item ; LASS (7)
-	db "LAURA@", TRAINERTYPE_NORMAL
-	db 28
-	dw GLOOM
-	db 31
-	dw PIDGEOTTO
-	db 31
-	dw BELLOSSOM
+	next_list_item ; Lass (6) Route 34
+	db "Kate@", TRAINERTYPE_NORMAL
+	db 29
+	dw SHELLDER
+	db 30
+	dw CLOYSTER
+	db -1 ; end
+
+	next_list_item ; Lass (7) Route 34
+	db "Irene@", TRAINERTYPE_NORMAL
+	db 29
+	dw GOLDEEN
+	db 30
+	dw SEAKING
 	db -1 ; end
 
 	next_list_item ; LASS (8)
@@ -1812,11 +1814,13 @@ CooltrainerFGroup:
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (5)
-	db "KATE@", TRAINERTYPE_NORMAL
+	db "Tina@", TRAINERTYPE_NORMAL
 	db 26
-	dw SHELLDER
+	dw IVYSAUR
 	db 28
-	dw CLOYSTER
+	dw ESPEON
+	db 29
+	dw WIGGLYTUFF
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (6)
@@ -2226,7 +2230,7 @@ GruntMGroup:
 	db 18
 	dw KOFFING
 	db 19
-	dw ARIADOS
+	dw SPINARAK
 	db -1 ; end
 
 	next_list_item ; ManM (4) Lighthouse
@@ -2270,7 +2274,7 @@ GruntMGroup:
 	db 19
 	dw ZUBAT
 	db 20
-	dw RATICATE
+	dw ELECTRIKE
 	db -1 ; end
 
 	next_list_item ; ManM (8) Not used yet
@@ -2282,7 +2286,7 @@ GruntMGroup:
 	next_list_item ; ManM (9) Not used yet
 	db "Man@", TRAINERTYPE_NORMAL
 	db 24
-	dw RATICATE
+	dw CACNEA
 	db 26
 	dw KOFFING
 	db -1 ; end
@@ -2481,7 +2485,7 @@ GruntMGroup:
 	end_list_items
 
 GentlemanGroup:
-	next_list_item ; GENTLEMAN (1)
+	next_list_item ; GENTLEMAN (1) Olivine Gym 
 	db "Crofton@", TRAINERTYPE_NORMAL
 	db 27
 	dw MAGNEMITE
@@ -2491,9 +2495,9 @@ GentlemanGroup:
 	dw MAGCARGO
 	db -1 ; end
 
-	next_list_item ; GENTLEMAN (2)
-	db "EDWARD@", TRAINERTYPE_NORMAL
-	db 33
+	next_list_item ; GENTLEMAN (2) Route 34
+	db "Frank@", TRAINERTYPE_NORMAL
+	db 31
 	dw PERSIAN
 	db -1 ; end
 
@@ -4250,7 +4254,7 @@ JugglerGroup:
 	end_list_items
 
 BlackbeltGroup:
-	next_list_item ; BLACKBELT_T (1)
+	next_list_item ; BLACKBELT_T (1) Mt.Mortar
 	db "Hideo@", TRAINERTYPE_NORMAL
 	db 23
 	dw ONIX
@@ -4262,7 +4266,7 @@ BlackbeltGroup:
 	dw MACHOP
 	db -1 ; end
 
-	next_list_item ; BLACKBELT_T (2)
+	next_list_item ; BLACKBELT_T (2) Cianwood Gym
 	db "Shigeru@", TRAINERTYPE_MOVES
 	db 22
 	dw HITMONLEE
@@ -4272,20 +4276,20 @@ BlackbeltGroup:
 	dw AERIAL_ACE, MACH_PUNCH, BULK_UP, BULLET_PUNCH
 	db -1 ; end
 
-	next_list_item ; BLACKBELT_T (3)
-	db "KENJI@", TRAINERTYPE_MOVES
-	db 33
+	next_list_item ; BLACKBELT_T (3) Route 34
+	db "Satoru@", TRAINERTYPE_MOVES
+	db 29
 	dw ONIX
-	dw BIND, ROCK_THROW, TOXIC, DIG
-	db 38
-	dw MACHAMP
-	dw HEADBUTT, SWAGGER, THUNDERPUNCH, VITAL_THROW
-	db 33
-	dw STEELIX
-	dw EARTHQUAKE, ROCK_THROW, IRON_TAIL, SANDSTORM
-	db 36
-	dw HITMONLEE
-	dw DOUBLE_TEAM, HI_JUMP_KICK, MUD_SLAP, SWIFT
+	dw DRAGONBREATH, ROCK_TOMB, SLAM, DIG
+	db 29
+	dw CROAGUNK
+	dw LOW_SWEEP, SWAGGER, REVENGE, FAINT_ATTACK
+	db 30
+	dw GRAVELER
+	dw SPIKES, SELFDESTRUCT, BULLDOZE, ROCK_TOMB
+	db 31
+	dw MACHOKE
+	dw BRICK_BREAK, FAINT_ATTACK, REVENGE, FORESIGHT
 	db -1 ; end
 
 	next_list_item ; BLACKBELT_T (4)
@@ -4295,14 +4299,14 @@ BlackbeltGroup:
 	dw COMET_PUNCH, THUNDERPUNCH, ICE_PUNCH, FIRE_PUNCH
 	db -1 ; end
 
-	next_list_item ; BLACKBELT_T (5)
+	next_list_item ; BLACKBELT_T (5) Cianwood Gym
 	db "Satoshi@", TRAINERTYPE_MOVES
 	db 22
 	dw MACHOP
 	dw LEER, FOCUS_ENERGY, KARATE_CHOP, SEISMIC_TOSS
 	db 23
-	dw MACHOKE
-	dw LEER, KARATE_CHOP, SEISMIC_TOSS, ROCK_SLIDE
+	dw CROAGUNK
+	dw REVENGE, KARATE_CHOP, FAINT_ATTACK, POISON_STING
 	db -1 ; end
 
 	next_list_item ; BLACKBELT_T (6)
@@ -4313,12 +4317,12 @@ BlackbeltGroup:
 	dw HITMONCHAN
 	db -1 ; end
 
-	next_list_item ; BLACKBELT_T (7)
+	next_list_item ; BLACKBELT_T (7) Cianwood Gym
 	db "Kensuke@", TRAINERTYPE_NORMAL
 	db 22
 	dw MANKEY
 	db 22
-	dw MANKEY
+	dw CROAGUNK
 	db 23
 	dw PRIMEAPE
 	db -1 ; end
@@ -5570,7 +5574,7 @@ GruntFGroup:
 	next_list_item ; GruntF (1) Lighthouse
 	db "Lady@", TRAINERTYPE_NORMAL
 	db 18
-	dw RATICATE
+	dw RALTS
 	db 19
 	dw PORYGON
 	db -1 ; end
@@ -5598,7 +5602,7 @@ GruntFGroup:
 	db 18
 	dw PINECO
 	db 19
-	dw GOLBAT
+	dw CACNEA
 	db -1 ; end
 
 	next_list_item ; GruntF (5) Lighthouse

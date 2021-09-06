@@ -230,7 +230,7 @@ CHRIS EQU __enum__
 	const ARIEL
 	const FRAN
 	const LOLA
-	const KATE
+	const TINA
 	const IRENE
 	const KELLY
 	const JOYCE
@@ -318,7 +318,7 @@ CHRIS EQU __enum__
 
 	trainerclass GENTLEMAN ; 20
 	const CROFTON
-	const EDWARD
+	const FRANK
 	const GREGORY
 	const VIRGIL
 	const ALFRED
@@ -538,7 +538,7 @@ CHRIS EQU __enum__
 	trainerclass BLACKBELT_T ; 32
 	const HIDEO
 	const YOSHI
-	const KENJI2
+	const SATORU
 	const LAO
 	const NOB
 	const KIYO

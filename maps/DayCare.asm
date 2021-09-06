@@ -93,16 +93,18 @@ DayCareMrPokemon:
 
 .LegendaryPokemon:
 	opentext
-	writetext HmWhatIsThatText
+	writetext EndOfDemoText ; need to delete later
+	;writetext HmWhatIsThatText
 	waitbutton
 	closetext
-	pause 15
-	playsound SFX_ENTER_DOOR
-	appear DAYCARE_RIVAL
-	applymovement DAYCARE_RIVAL, DayCareRivalMovement1
-	readvar VAR_FACING
-	ifequal UP, .DayCareRival1
-	ifequal RIGHT, .DayCareRival2
+	end ; need to delete later
+	;pause 15
+	;playsound SFX_ENTER_DOOR
+	;appear DAYCARE_RIVAL
+	;applymovement DAYCARE_RIVAL, DayCareRivalMovement1
+	;readvar VAR_FACING
+	;ifequal UP, .DayCareRival1
+	;ifequal RIGHT, .DayCareRival2
 
 .DayCareRival1:
 	turnobject DAYCARE_RIVAL, UP
@@ -142,7 +144,8 @@ MrPokemonLegendary:
 	applymovement DAYCARE_RIVAL, DayCareRivalMovement2
 	disappear DAYCARE_RIVAL
 	playsound SFX_EXIT_BUILDING
-	end
+	pause 30
+	sjump .LeaveDaycare
 
 .DayCareDracoFarewell:
 	opentext
@@ -152,6 +155,26 @@ MrPokemonLegendary:
 	applymovement DAYCARE_RIVAL, DayCareRivalMovement2
 	disappear DAYCARE_RIVAL
 	playsound SFX_EXIT_BUILDING
+	pause 30
+	sjump .LeaveDaycare
+
+.LeaveDaycare:
+	readvar VAR_FACING
+	ifequal UP, .PlayerLeaves
+	ifequal RIGHT, .PlayerLeavesDown
+
+.PlayerLeavesDown:
+	applymovement PLAYER, DayCarePlayerMovement2
+	playsound SFX_EXIT_BUILDING
+	pause 15
+	warpfacing LEFT, ROUTE_34, 11, 14
+	end
+
+.PlayerLeaves:
+	applymovement PLAYER, DayCarePlayerMovement1
+	playsound SFX_EXIT_BUILDING
+	pause 15
+	warpfacing LEFT, ROUTE_34, 11, 14
 	end
 
 DayCareBookshelf:
@@ -162,6 +185,16 @@ DayCareRivalMovement1:
 	step_end
 
 DayCareRivalMovement2:
+	step LEFT
+	step_end
+
+DayCarePlayerMovement1:
+	step LEFT
+	step LEFT
+	step_end
+
+DayCarePlayerMovement2:
+	step DOWN
 	step LEFT
 	step_end
 
@@ -255,6 +288,18 @@ DayCareMrPokemonBusyText:
 	line "trying to have a"
 	cont "conversation right"
 	cont "now."
+	done
+
+EndOfDemoText:
+	text "This is the end of"
+	line "the current demo."
+
+	para "Stay tuned for"
+	line "updates!"
+
+	para "Thats what this"
+	line "letter from"
+	cont "Ferropexola says!"
 	done
 
 HmWhatIsThatText:

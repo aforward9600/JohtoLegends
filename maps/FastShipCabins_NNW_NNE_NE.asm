@@ -57,7 +57,7 @@ TrainerHikerNoland:
 	end
 
 TrainerGentlemanEdward:
-	trainer GENTLEMAN, EDWARD, EVENT_BEAT_GENTLEMAN_EDWARD, GentlemanEdwardSeenText, GentlemanEdwardBeatenText, 0, .Script
+	trainer GENTLEMAN, FRANK, EVENT_BEAT_GENTLEMAN_FRANK, GentlemanEdwardSeenText, GentlemanEdwardBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

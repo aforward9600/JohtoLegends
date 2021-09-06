@@ -1,0 +1,242 @@
+Belch does not require a berry.
+
+Roost currently does not change the type of the user.
+
+Hyper Voice does not hit through Substitute as of now.
+
+Fly is buffed to 90 power.
+
+Bubble is buffed to 40 power.
+
+Rapid Spin is 50 power and increases Speed by 1 level.
+
+Crabhammer is buffed to 100.
+
+Leech Life buffed to 80 and PP decreased to 10.
+
+Future Sight buffed to 120.
+
+Dragon Rage is 40 power, as it is a move that will come early to one of the starters.
+
+Growth increases Attack and Special Attack.
+
+Giga Drain is 75 power and 10 PP.
+
+Gyro Ball is currently level based until I can figure out the code. Animation is glitched.
+
+Thrash, Outrage and Petal Dance buffed to 120.
+
+Metal Coat no longer powers up steel moves, Dragon Scale no longer powers up dragon moves.
+
+Steel Dagger powers up steel moves, and Dragon Fang power up dragon moves, Polkadot Bow powers up fairy moves.
+
+Metal Coat acts as an evolution stone for Onix and Scyther, Royal Rock acts as an evolution stone for Poliwhirl and Slowpoke,
+Dragon Fang acts as an evolution stone for Seadra. Link Cables act as an evolution stone for Kadabra, Machoke, Graveler, and Haunter.
+Each of the evolution items introduced in Gen 4 are used as evolution stones. Magneton evolves with a Thunderstone. Eevee evolves
+into Leafeon with a Leaf Stone. Up-Grade acts as an evolution stone for Porygon. Dragon Scale acts as an evolution stone for Seadra.
+Shiny Stone evolves Eevee into Sylveon, Togetic into Togekiss. Ice Stone evolves Eevee into Glaceon and Piloswine into Mamoswine.
+Dusk Stone evolves Murkrow into Honchkrow and Misdreavus into Mismagius. 
+
+Removed:
+
+Conversion2
+
+Beat Up
+
+Frustration
+
+Bide
+
+Nightmare
+
+
+Things added:
+
+377-251=126 new moves
+
+Changes to Pokemon:
+
+Blastoise: Is now a Water-Steel Type.
+
+Butterfree: +20HP, +10DEF, +5SPATK, +20SPDEF. +10SPD. 460BST
+
+Beedrill: +10HP, +25ATK, +10DEF, +20SPD. 460BST
+
+Pidgeot: +5ATK, +25SPATK, -9SPD. 500BST. Focus on Special Attack.
+
+Raticate: +8HP, +20ATK, +10DEF, +19SPD. 470BST
+
+Fearow; +10HP, +10ATK, +8SPD. 470BST
+
+Arbok: +10HP, +5ATK, +10DEF, +5SPATK, +9SPDEF, +13SPD. 500BST. Is now a Poison-Dark Type.
+
+Raichu: +10HP, +5DEF. 500BST
+
+Sandslash: +15ATK, +20SPDEF, +15SPD. 500BST
+
+Cleffa: Is now a Fairy Type.
+
+Clefairy: Is now a Fairy Type.
+
+Clefable: Is now a Fairy Type.
+
+Ninetales: +12HP, -16ATK, +10DEF, +24SPATK, 535BST. Is now a Fire-Ghost Type.
+
+Igglybuff: Is now a Normal-Fairy Type.
+
+Jigglypuff: Is now a Normal-Fairy Type.
+
+Wigglytuff: +5ATK, +23DEF, +20SPDEF. 483BST. Is now a Normal-Fairy Type.
+
+Vileplume: +5HP, -5ATK. 490BST
+
+Bellossom: +5HP, -5ATK. 490BST. Is a now Grass-Fairy type.
+
+Parasect: +30HP, +10ATK, +10DEF, +20SPATK, +10SPDEF, +10SPD. 495.
+
+Venonat: Is now a Bug-Psychic Type.
+
+Venomoth: +5HP, +5ATK, +5DEF, +10SPATK, +5SPDEF, +10SPD. 490BST. Is now a Bug-Psychic Type.
+
+Dugtrio: +6ATK, +11SPD. 442BST
+
+Persian: +10ATK, +10DEF, +15SPATK, +5SPDEF. 500BST
+
+Primape: +12ATK, +12SPD. 479BST
+
+Golem: +10SPD. 505BST
+
+Ponyta: Evolves at Level 30.
+
+Farfetch'd: +18HP, +10ATK, +10DEF, +10SPDEF, +30SPD. 455BST
+
+Dodrio: +10HP, +10ATK, +10SPDEF. 500BST
+
+Dewgong: +10ATK, +10DEF, +10SPATK. 505BST
+
+Hypno: +5ATK, +5DEF, +5SPATK, +2SPD. 500BST
+
+Kingler: +10HP, +5SPDEF, +10SPD. 500BST
+
+Voltorb: +25ATK, -25SPATK. Now Physically oriented.
+
+Electrode: +30ATK, -10SPD. 510BST. Mixed attacker.
+
+Marowak: +25HP, +10SPDEF, +10SPD. 470BST
+
+Hitmonlee: +20HP. 475BST
+
+Hitmonchan: +20HP. 475BST
+
+Hitmontop: +20HP. 475BST
+
+Goldeen: Evolves at Level 22.
+
+Seaking: +5ATK, +20SPD. 475BST.
+
+Mr Mime: +20HP, +20ATK, +10DEF, +10SPATK. 520BST to match Electivire and Magmortar. Is Psychic-Fairy Type.
+
+Jynx: +20HP, +20ATK, +10DEF, +10SPATK, +5SPDEF. 520 BST to match Electivire and Magmortar.
+
+Ditto: +72SPD. 360BST
+
+Omastar: +15HP. 510BST
+
+Kabutops: +15SPD. 510BST
+
+Dratini: Family changed to Medium-Slow Growth. Evolves at Level 20.
+
+Dragonair: +10DEF, +10SPATK, +10SPDEF, +10SPD. 470BST
+
+Meganium: Is now a Grass-Fairy Type.
+
+Typhlosion: Is now a Fire-Ground Type.
+
+Feraligatr: Is now a Water-Dark Type.
+
+Furret: +10DEF, +20SPDEF, +27SPD. 472BST
+
+Noctowl: +15DEF, +5SPATK, +3SPD. 475BST. Is now Ghost-Flying Type.
+
+Ledian: +10HP, +50ATK, +10DEF, +10SPATK, -20SPDEF, +20SPD. 470BST. Is now a Bug-Fighting Type.
+
+Ariados: +10HP, +30SPATK, +30SPD. 470BST Is now a Bug-Dark Type.
+
+Lanturn: +10SPATK, +10SPDEF. 480BST
+
+Togepi: Is now a Fairy Type.
+
+Togetic: Is now a Fairy-Flying Type.
+
+Xatu: +20HP. 490BST
+
+Ampharos: +10ATK. 520BST. Is now an Electric-Dragon Type.
+
+Azurill: +20ATK. 210BST. Attack increase emulates Huge Power. 
+
+Marill: +20ATK. 270BST. Attack increase emulates Huge Power. Is now a Water-Fairy Type.
+
+Azumarill: +50ATK, +10SPATK. 480BST. Attack increase emulates Huge Power. Is now a Water-Fairy Type.
+
+Sudowoodo: +20HP, +10ATK, +10DEF, +30SPDEF. 480BST
+
+Jumpluff: +5SPATK, +11SPD. 476BST
+
+Ambipom: +15HP, +18SPATK. 515BST
+
+Sunflora: +10HP, +15DEF, +35SPATK, +5SPDEF. 490BST. Is now a Grass-Fire Type.
+
+Yanmega: +10HP, -10ATK, +10SPDEF. 525BST. Is now a Bug-Rock Type.
+
+Quagsire: +5HP, +10ATK, +10DEF, +10SPATK, +10SPDEF, +10SPD. 485BST
+
+Honchkrow: +5DEF, +5SPATK, +5SPDEF. 520BST
+
+Mismagius: +10HP, +5SPATK, +5SPDEF, +5SPD. 520BST. Is now a Ghost-Fairy Type.
+
+Unown: +36HP, +54ATK, +36HP, +54SPATK, +36SPDEF, +36SPD. 588BST
+
+Wobbuffet: +60HP. 465BST
+
+Girafarig: +20ATK, +5DEF, +10SPATK, +5DEF, +10SPD. 505BST
+
+Forretress: -20SPATK, +20SPDEF, +20SPD. 485BST
+
+Dunsparce: +10HP, +10ATK, +10DEF, +15SPATK, +15SPDEF. 475BST. Is now a Fairy-Ground Type.
+
+Snubbull: Is now a Fairy Type.
+
+Granbull: +5HP, 15SPDEF, +25SPD. 495BST. Is now a Fairy Type.
+
+Qwilfish: +10HP, +10SPDEF, +20SPD. 480BST
+
+Magcargo: +12HP, +20ATK, +30SPDEF. 492BST. Is now a Fire-Steel Type, so it no longer is the worst defensive type-combo.
+
+Corsola: -5HP, +5DEF, +5SPDEF, -5SPD. 410BST, the same. Is now a Ghost Type.
+
+Octillery: Is now a Water-Steel Type.
+
+Delibird: +40HP, +10ATK, +20DEF, +30SPATK, +20SPDEF, +20SPD. 470BST
+
+Skarmory: +10HP, +10ATK. 485BST
+
+Stantler: +10DEF, +10SPATK, +10SPDEF, +10SPD. 505BST
+
+Larvitar: Family changed to Medium-Slow Growth. Evolves at Level 20.
+
+Pupitar: +10HP, +10ATK, +10DEF, +10SPATK, +10SPDEF, +10SPD. 470BST
+
+Manectric: +24SPATK, +24SPD. 523BST
+
+Cacturne: +15DEF, +15SPDEF. 505BST
+
+Glalie: +5 to all stats. 510BST
+
+Froslass: +15ATK, +15SPATK. 510BST
+
+
+
+Steel no longer resists Dark and Ghost.
+
+Ice resists Water and Electric now.
+

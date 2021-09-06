@@ -24,7 +24,7 @@ FuchsiaGymJanineScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_JANINE
-	setevent EVENT_BEAT_LASS_LINDA
+	setevent EVENT_BEAT_LASS_DANA3
 	setevent EVENT_BEAT_PICNICKER_CINDY
 	setevent EVENT_BEAT_CAMPER_BARRY
 	variablesprite SPRITE_FUCHSIA_GYM_2, SPRITE_LASS
@@ -55,7 +55,7 @@ FuchsiaGymJanineScript:
 	end
 
 LassLindaScript:
-	checkevent EVENT_BEAT_LASS_LINDA
+	checkevent EVENT_BEAT_LASS_DANA3
 	iftrue .LindaUnmasked
 	applymovement FUCHSIAGYM_FUCHSIA_GYM_2, Movement_NinjaSpin
 	faceplayer
@@ -64,7 +64,7 @@ LassLindaScript:
 .LindaUnmasked:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_LASS_LINDA
+	checkevent EVENT_BEAT_LASS_DANA3
 	iftrue .LindaAfterScript
 	writetext LassLindaBeforeText
 	waitbutton
@@ -74,7 +74,7 @@ LassLindaScript:
 	startbattle
 	iftrue .LindaBecomesJanine
 	reloadmapafterbattle
-	setevent EVENT_BEAT_LASS_LINDA
+	setevent EVENT_BEAT_LASS_DANA3
 	end
 
 .LindaBecomesJanine:

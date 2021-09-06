@@ -25,7 +25,6 @@ TeamRocketBaseB3F_MapScripts:
 	callback MAPCALLBACK_TILES, .CheckGiovanniDoor
 
 .LanceGetsPassword:
-	prioritysjump LanceGetPasswordScript
 	end
 
 .DummyScene1:
@@ -137,16 +136,24 @@ GruntF5Script:
 	setevent EVENT_LEARNED_SLOWPOKETAIL
 	end
 
-RaticateTailGrunt:
-	trainer GRUNTM, GRUNTM_28, EVENT_BEAT_ROCKET_GRUNTM_28, GruntM28SeenText, GruntM28BeatenText, 0, GruntM28Script
-
-GruntM28Script:
-	endifjustbattled
+HideoutB3FRival:
+	faceplayer
 	opentext
-	writetext GruntM28AfterBattleText
+	writetext IllHealYouB3FText
 	waitbutton
 	closetext
-	setevent EVENT_LEARNED_RATICATE_TAIL
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	special StubbedTrainerRankings_Healings
+	playmusic MUSIC_HEAL
+	special HealParty
+	pause 60
+	special FadeInQuickly
+	special RestartMapMusic
+	opentext
+	writetext TheresAPCText
+	waitbutton
+	closetext
 	end
 
 TrainerScientistRoss:
@@ -459,39 +466,6 @@ GruntF5AfterBattleText:
 	cont "two passwords."
 	done
 
-GruntM28SeenText:
-	text "Hyuck-hyuck-hyuck!"
-
-	para "You're challenging"
-	line "me to a battle?"
-
-	para "Hah! You're nuts,"
-	line "but you have guts!"
-
-	para "I like that!"
-
-	para "If you can beat"
-	line "me, I'll tell you"
-
-	para "a password to the"
-	line "boss's room!"
-	done
-
-GruntM28BeatenText:
-	text "Hyuck-hyuck-hyuck!"
-	line "You're good!"
-	done
-
-GruntM28AfterBattleText:
-	text "Hyuck-hyuck-hyuck!"
-
-	para "The password to"
-	line "the boss's room…"
-
-	para "Uh…, I think it is"
-	line "RATICATE TAIL."
-	done
-
 ScientistRossSeenText:
 	text "I used to work for"
 	line "SILPH, but now I"
@@ -563,15 +537,37 @@ TeamRocketBaseB3FLockedDoorOpenSesameText:
 	para "The door opened!"
 	done
 
+IllHealYouB3FText:
+	text "There's a strange"
+	line "presence here…"
+
+	para "I'll keep your"
+	line "#mon in good"
+	cont "health for you."
+	done
+
+TheresAPCText:
+	text "There's a phone in"
+	line "the corner there."
+
+	para "I don't know what"
+	line "it's for, but you"
+	cont "can use it to"
+	cont "contact the ADS."
+
+	para "Good luck!"
+	done
+
 TeamRocketBaseB3F_MapEvents:
 	db 0, 0 ; filler
 
-	db 5 ; warp events
+	db 6 ; warp events
 	warp_event  3,  2, TEAM_ROCKET_BASE_B2F, 2
 	warp_event 27,  2, TEAM_ROCKET_BASE_B2F, 3
 	warp_event  3,  6, TEAM_ROCKET_BASE_B2F, 4
 	warp_event 27, 14, TEAM_ROCKET_BASE_B2F, 5
 	warp_event  4, 17, TEAM_ROCKET_BASE_JAIL, 1
+	warp_event  5, 17, TEAM_ROCKET_BASE_JAIL, 1
 
 	db 3 ; coord events
 	coord_event 10,  8, SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS, RocketBaseBossLeft
@@ -595,7 +591,7 @@ TeamRocketBaseB3F_MapEvents:
 	object_event  8,  3, SPRITE_ARCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B3F_EXECUTIVE
 	object_event  7,  2, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RocketBaseMurkrow, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event 21,  7, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, SlowpokeTailGrunt, EVENT_TEAM_ROCKET_BASE_POPULATION
-	object_event  5, 14, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, RaticateTailGrunt, EVENT_TEAM_ROCKET_BASE_POPULATION
+	object_event  5, 14, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, HideoutB3FRival, EVENT_HIDEOUT_B3F_RIVAL
 	object_event 23, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistRoss, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event 11, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerScientistMitch, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event 24, 14, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TeamRocketBaseB3FRocketScript, EVENT_TEAM_ROCKET_BASE_POPULATION

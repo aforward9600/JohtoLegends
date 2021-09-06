@@ -22,8 +22,12 @@ TimsHouseBookshelf:
 	jumpstd magazinebookshelf
 
 TimsMomText:
-	text "My son Tim likes"
-	line "to trade #mon."
+	text "My son Tim loves"
+	line "the #mon he got"
+	cont "from the Gym"
+	cont "Leader, but now he"
+	cont "just wants to"
+	cont "trade it away!"
 
 	para "He hopes to have"
 	line "a Voltorb to trade"

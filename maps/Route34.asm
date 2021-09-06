@@ -1,18 +1,19 @@
 	object_const_def ; object_event constants
-	const ROUTE34_YOUNGSTER1
-	const ROUTE34_YOUNGSTER2
-	const ROUTE34_YOUNGSTER3
-	const ROUTE34_LASS
+	const ROUTE34_COOLTRAINERF
+	const ROUTE34_BLACK_BELT
+	const ROUTE34_YOUNGSTER
+	const ROUTE34_GENTLEMAN
 	const ROUTE34_OFFICER
 	const ROUTE34_POKEFAN_M
 	const ROUTE34_GRAMPS
 	const ROUTE34_DAY_CARE_MON_1
 	const ROUTE34_DAY_CARE_MON_2
-	const ROUTE34_COOLTRAINER_F1
-	const ROUTE34_COOLTRAINER_F2
-	const ROUTE34_COOLTRAINER_F3
+	const ROUTE34_LASS1
+	const ROUTE34_LASS2
+	const ROUTE34_LASS3
 	const ROUTE34_POKE_BALL
 	const ROUTE34_NINJA
+	const ROUTE34_POKEFAN_M2
 
 Route34_MapScripts:
 	db 2 ; scene scripts
@@ -26,6 +27,28 @@ Route34_MapScripts:
 	end
 
 .DummyScene1:
+	pause 15
+	special FadeOutMusic
+	applymovement PLAYER, PlayerMoveIntoTrapMovement
+	pause 15
+	appear ROUTE34_NINJA
+	applymovement ROUTE34_NINJA, NinjaAmbushesYou1Movement
+	turnobject PLAYER, UP
+	special HealParty
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	takeitem RAINBOW_WING
+	iffalse .TakeSilverWing
+	pause 45
+	warp TEAM_ROCKET_BASE_JAIL, 5, 6
+	blackoutmod TEAM_ROCKET_BASE_JAIL
+	end
+
+.TakeSilverWing:
+	takeitem SILVER_WING
+	pause 45
+	warp TEAM_ROCKET_BASE_JAIL, 5, 6
+	blackoutmod TEAM_ROCKET_BASE_JAIL
 	end
 
 .EggCheckCallback:
@@ -94,289 +117,58 @@ DayCareMon2Script:
 	closetext
 	end
 
-TrainerCamperTodd1:
-	trainer CAMPER, TODD1, EVENT_BEAT_CAMPER_TODD, CamperTodd1SeenText, CamperTodd1BeatenText, 0, .Script
+TrainerCooltrainerFTina:
+	trainer COOLTRAINERF, TINA, EVENT_BEAT_COOLTRAINERF_TINA, CooltrainerFTinaSeenText, CooltrainerFTinaBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_CAMPER_TODD
 	endifjustbattled
 	opentext
-	checkflag ENGINE_TODD
-	iftrue .Rematch
-	checkflag ENGINE_GOLDENROD_DEPT_STORE_SALE_IS_ON
-	iftrue .SaleIsOn
-	checkcellnum PHONE_CAMPER_TODD
-	iftrue .NumberAccepted
-	checkevent EVENT_TODD_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskAgain
-	writetext CamperTodd1AfterText
-	buttonsound
-	setevent EVENT_TODD_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber
-	sjump .FinishAsk
-
-.AskAgain:
-	scall .AskNumber2
-.FinishAsk:
-	askforphonenumber PHONE_CAMPER_TODD
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, CAMPER, TODD1
-	scall .RegisteredNumber
-	sjump .NumberAccepted
-
-.Rematch:
-	scall .RematchStd
-	winlosstext CamperTodd1BeatenText, 0
-	readmem wToddFightCount
-	ifequal 4, .Fight4
-	ifequal 3, .Fight3
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight4:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight4
-.Fight3:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight3
-.Fight2:
-	checkflag ENGINE_FLYPOINT_BLACKTHORN
-	iftrue .LoadFight2
-.Fight1:
-	checkflag ENGINE_FLYPOINT_CIANWOOD
-	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer CAMPER, TODD1
+	writetext CooltrainerFTinaRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_BEAUTY_ENCOUNTER
+	writetext CooltrainerFTinaLetsDoItText
+	waitbutton
+	winlosstext CooltrainerFTinaBeatenText, 0
+	loadtrainer COOLTRAINERF, TINA
 	startbattle
 	reloadmapafterbattle
-	loadmem wToddFightCount, 1
-	clearflag ENGINE_TODD
+	closetext
 	end
 
-.LoadFight1:
-	loadtrainer CAMPER, TODD2
-	startbattle
-	reloadmapafterbattle
-	loadmem wToddFightCount, 2
-	clearflag ENGINE_TODD
-	end
-
-.LoadFight2:
-	loadtrainer CAMPER, TODD3
-	startbattle
-	reloadmapafterbattle
-	loadmem wToddFightCount, 3
-	clearflag ENGINE_TODD
-	end
-
-.LoadFight3:
-	loadtrainer CAMPER, TODD4
-	startbattle
-	reloadmapafterbattle
-	loadmem wToddFightCount, 4
-	clearflag ENGINE_TODD
-	end
-
-.LoadFight4:
-	loadtrainer CAMPER, TODD5
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TODD
-	end
-
-.SaleIsOn:
-	writetext CamperToddSaleText
+.Refused:
+	writetext CooltrainerFTinaRefusedText
 	waitbutton
 	closetext
 	end
 
-.AskNumber:
-	jumpstd asknumber1m
-	end
-
-.AskNumber2:
-	jumpstd asknumber2m
-	end
-
-.RegisteredNumber:
-	jumpstd registerednumberm
-	end
-
-.NumberAccepted:
-	jumpstd numberacceptedm
-	end
-
-.NumberDeclined:
-	jumpstd numberdeclinedm
-	end
-
-.PhoneFull:
-	jumpstd phonefullm
-	end
-
-.RematchStd:
-	jumpstd rematchm
-	end
-
-TrainerPicnickerGina1:
-	trainer PICNICKER, GINA1, EVENT_BEAT_PICNICKER_GINA, PicnickerGina1SeenText, PicnickerGina1BeatenText, 0, .Script
+TrainerBlackbeltSatoru:
+	trainer BLACKBELT_T, SATORU, EVENT_BEAT_BLACKBELT_SATORU, BlackbeltSatoruSeenText, BlackbeltSatoruBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_PICNICKER_GINA
 	endifjustbattled
 	opentext
-	checkflag ENGINE_GINA
-	iftrue .Rematch
-	checkflag ENGINE_GINA_HAS_LEAF_STONE
-	iftrue .LeafStone
-	checkcellnum PHONE_PICNICKER_GINA
-	iftrue .NumberAccepted
-	checkevent EVENT_GINA_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskAgain
-	writetext PicnickerGina1AfterText
-	buttonsound
-	setevent EVENT_GINA_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
-	sjump .FinishAsk
-
-.AskAgain:
-	scall .AskNumber2
-.FinishAsk:
-	askforphonenumber PHONE_PICNICKER_GINA
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, PICNICKER, GINA1
-	scall .RegisteredNumber
-	sjump .NumberAccepted
-
-.Rematch:
-	scall .RematchStd
-	winlosstext PicnickerGina1BeatenText, 0
-	readmem wGinaFightCount
-	ifequal 4, .Fight4
-	ifequal 3, .Fight3
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight4:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight4
-.Fight3:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight3
-.Fight2:
-	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .LoadFight2
-.Fight1:
-	checkflag ENGINE_FLYPOINT_MAHOGANY
-	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer PICNICKER, GINA1
-	startbattle
-	reloadmapafterbattle
-	loadmem wGinaFightCount, 1
-	clearflag ENGINE_GINA
+	writetext BlackbeltSatoruAfterText
+	waitbutton
+	closetext
 	end
 
-.LoadFight1:
-	loadtrainer PICNICKER, GINA2
-	startbattle
-	reloadmapafterbattle
-	loadmem wGinaFightCount, 2
-	clearflag ENGINE_GINA
-	end
+TrainerGentlemanFrank:
+	trainer GENTLEMAN, FRANK, EVENT_BEAT_GENTLEMAN_FRANK, GentlemanFrankSeenText, GentlemanFrankBeatenText, 0, .Script
 
-.LoadFight2:
-	loadtrainer PICNICKER, GINA3
-	startbattle
-	reloadmapafterbattle
-	loadmem wGinaFightCount, 3
-	clearflag ENGINE_GINA
-	end
-
-.LoadFight3:
-	loadtrainer PICNICKER, GINA4
-	startbattle
-	reloadmapafterbattle
-	loadmem wGinaFightCount, 4
-	clearflag ENGINE_GINA
-	end
-
-.LoadFight4:
-	loadtrainer PICNICKER, GINA5
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_GINA
-	end
-
-.LeafStone:
-	scall .Gift
-	verbosegiveitem LEAF_STONE
-	iffalse .BagFull
-	clearflag ENGINE_GINA_HAS_LEAF_STONE
-	setevent EVENT_GINA_GAVE_LEAF_STONE
-	sjump .NumberAccepted
-
-.BagFull:
-	sjump .PackFull
-
-.AskNumber1:
-	jumpstd asknumber1f
-	end
-
-.AskNumber2:
-	jumpstd asknumber2f
-	end
-
-.RegisteredNumber:
-	jumpstd registerednumberf
-	end
-
-.NumberAccepted:
-	jumpstd numberacceptedf
-	end
-
-.NumberDeclined:
-	jumpstd numberdeclinedf
-	end
-
-.PhoneFull:
-	jumpstd phonefullf
-	end
-
-.RematchStd:
-	jumpstd rematchf
-	end
-
-.Gift:
-	jumpstd giftf
-	end
-
-.PackFull:
-	jumpstd packfullf
+.Script:
+	endifjustbattled
+	opentext
+	writetext GentlemanFrankAfterText
+	waitbutton
+	closetext
 	end
 
 OfficerKeithScript:
 	faceplayer
 	opentext
-	checktime NITE
-	iffalse .NoFight
-	checkevent EVENT_BEAT_OFFICER_TOBY
-	iftrue .AfterScript
-	playmusic MUSIC_OFFICER_ENCOUNTER
-	writetext OfficerKeithSeenText
-	waitbutton
-	closetext
-	winlosstext OfficerKeithWinText, 0
-	loadtrainer OFFICER, TOBY1
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_OFFICER_TOBY
-	closetext
-	end
-
-.AfterScript:
+	checkevent EVENT_KOGA_SAVES_YOU_FROM_JAIL
+	iftrue .NoFight
 	writetext OfficerKeithAfterText
 	waitbutton
 	closetext
@@ -388,13 +180,13 @@ OfficerKeithScript:
 	closetext
 	end
 
-TrainerYoungsterSamuel:
-	trainer YOUNGSTER, SAMUEL, EVENT_BEAT_YOUNGSTER_SAMUEL, YoungsterSamuelSeenText, YoungsterSamuelBeatenText, 0, .Script
+TrainerSchoolboyGregory:
+	trainer SCHOOLBOY, ALAN1, EVENT_BEAT_SCHOOLBOY_ALAN, SchoolboyGregorySeenText, SchoolboyGregoryBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext YoungsterSamuelAfterText
+	writetext SchoolboyGregoryAfterText
 	waitbutton
 	closetext
 	end
@@ -410,19 +202,8 @@ TrainerYoungsterIan:
 	closetext
 	end
 
-TrainerPokefanmBrandon:
-	trainer POKEFANM, BRANDON, EVENT_BEAT_POKEFANM_BRANDON, PokefanmBrandonSeenText, PokefanmBrandonBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext PokefanmBrandonAfterText
-	waitbutton
-	closetext
-	end
-
 TrainerCooltrainerfIrene:
-	trainer COOLTRAINERF, IRENE, EVENT_BEAT_COOLTRAINERF_IRENE, CooltrainerfIreneSeenText, CooltrainerfIreneBeatenText, 0, .Script
+	trainer LASS, LAURA, EVENT_BEAT_LASS_IRENE, CooltrainerfIreneSeenText, CooltrainerfIreneBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -441,7 +222,7 @@ TrainerCooltrainerfIrene:
 	end
 
 TrainerCooltrainerfJenn:
-	trainer COOLTRAINERF, JENN, EVENT_BEAT_COOLTRAINERF_JENN, CooltrainerfJennSeenText, CooltrainerfJennBeatenText, 0, .Script
+	trainer LASS, CONNIE1, EVENT_BEAT_LASS_JENN, CooltrainerfJennSeenText, CooltrainerfJennBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -460,7 +241,7 @@ TrainerCooltrainerfJenn:
 	end
 
 TrainerCooltrainerfKate:
-	trainer COOLTRAINERF, KATE, EVENT_BEAT_COOLTRAINERF_KATE, CooltrainerfKateSeenText, CooltrainerfKateBeatenText, 0, .Script
+	trainer LASS, LINDA, EVENT_BEAT_LASS_KATE, CooltrainerfKateSeenText, CooltrainerfKateBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -478,6 +259,12 @@ TrainerCooltrainerfKate:
 .BagFull:
 	closetext
 	end
+
+Route34Guard1:
+	jumptextfaceplayer ForestGuardianText
+
+Route34Guard2:
+	jumptextfaceplayer TakingPicturesText
 
 Route34IlexForestSign:
 ; unused
@@ -501,50 +288,6 @@ Route34HiddenRareCandy:
 Route34HiddenSuperPotion:
 	hiddenitem SUPER_POTION, EVENT_ROUTE_34_HIDDEN_SUPER_POTION
 
-NinjaAmbushesYou1:
-	special FadeOutMusic
-	applymovement PLAYER, PlayerMoveIntoTrapMovement
-	pause 15
-	appear ROUTE34_NINJA
-	applymovement ROUTE34_NINJA, NinjaAmbushesYou1Movement
-	turnobject PLAYER, UP
-	special HealParty
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	takeitem RAINBOW_WING
-	iffalse .TakeSilverWing
-	pause 45
-	warp TEAM_ROCKET_BASE_JAIL, 5, 6
-	end
-
-.TakeSilverWing:
-	takeitem SILVER_WING
-	pause 45
-	warp TEAM_ROCKET_BASE_JAIL, 5, 6
-	end
-
-NinjaAmbushesYou2:
-	special FadeOutMusic
-	applymovement PLAYER, PlayerMoveIntoTrapMovement
-	pause 15
-	appear ROUTE34_NINJA
-	applymovement ROUTE34_NINJA, NinjaAmbushesYou2Movement
-	turnobject PLAYER, UP
-	special HealParty
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	takeitem RAINBOW_WING
-	iffalse .TakeSilverWing2
-	pause 45
-	warp TEAM_ROCKET_BASE_JAIL, 5, 6
-	end
-
-.TakeSilverWing2:
-	takeitem SILVER_WING
-	pause 45
-	warp TEAM_ROCKET_BASE_JAIL, 5, 6
-	end
-
 Route34MovementData_DayCareManWalksBackInside:
 	slow_step LEFT
 	slow_step LEFT
@@ -561,6 +304,7 @@ Route34MovementData_DayCareManWalksBackInside_WalkAroundPlayer:
 
 PlayerMoveIntoTrapMovement:
 	step LEFT
+	step LEFT
 	step_end
 
 NinjaAmbushesYou1Movement:
@@ -576,14 +320,18 @@ NinjaAmbushesYou2Movement:
 	step DOWN
 	step_end
 
-YoungsterSamuelSeenText:
-	text "This is where I do"
-	line "my training!"
+SchoolboyGregorySeenText:
+	text "I've come here to"
+	line "observe Egg-making"
+	cont "in person!"
+
+	para "This will surely"
+	line "get me an A!"
 	done
 
-YoungsterSamuelBeatenText:
-	text "Beaten by a"
-	line "passing stranger!"
+SchoolboyGregoryBeatenText:
+	text "That was probably"
+	line "an F…"
 	done
 
 YoungsterSamuelMobileText:
@@ -597,13 +345,17 @@ YoungsterSamuelMobileText:
 	line "#MON CENTER?"
 	done
 
-YoungsterSamuelAfterText:
-	text "I'm going to train"
-	line "even harder."
+SchoolboyGregoryAfterText:
+	text "Eggs are so"
+	line "mysterious!"
 
-	para "After all, I'm"
-	line "trying to become"
-	cont "a GYM LEADER."
+	para "It seems like the"
+	line "top researchers"
+	cont "aren't even look-"
+	cont "into them…"
+
+	para "Maybe I can be the"
+	line "first!"
 	done
 
 YoungsterIanSeenText:
@@ -622,119 +374,113 @@ YoungsterIanAfterText:
 	cont "in my class."
 	done
 
-CamperTodd1SeenText:
-	text "I'm confident in"
-	line "my ability to"
-	cont "raise #MON."
+CooltrainerFTinaSeenText:
+	text "You comin' to see"
+	line "the #mon Day-"
+	cont "Care?"
 
-	para "Want to see?"
+	para "It's the only"
+	line "thing to do here."
 	done
 
-CamperTodd1BeatenText:
-	text "Did I screw up my"
-	line "training?"
+CooltrainerFTinaBeatenText:
+	text "Looks like you"
+	line "don't need the"
+	cont "Day-Care!"
 	done
 
-CamperTodd1AfterText:
-	text "Maybe I should"
-	line "take one to a DAY-"
+CooltrainerFTinaRematchText:
+	text "You here to see"
+	line "the Day-Care"
+	cont "again?"
 
-	para "CARE. Or maybe use"
-	line "some items…"
+	para "Or are you here"
+	line "to see me?"
 	done
 
-CamperToddSaleText:
-	text "Shopping under the"
-	line "sky!"
-
-	para "It feels so nice"
-	line "up on a rooftop."
+CooltrainerFTinaLetsDoItText:
+	text "Sounds good!"
 	done
 
-PicnickerGina1SeenText:
-	text "Are you a trainer?"
+CooltrainerFTinaRefusedText:
+	text "Like I said,"
 
-	para "Let's have a"
-	line "practice battle."
+	para "people only come"
+	line "here to see the"
+	cont "Day-Care…"
 	done
 
-PicnickerGina1BeatenText:
-	text "Oh, no! I just"
-	line "can't win…"
+GentlemanFrankSeenText:
+	text "Ah…"
+
+	para "The Day-Care has"
+	line "always supplied me"
+	cont "with comfort,"
+	cont "especially the"
+	cont "sounds…"
+
+	para "………What?"
+
+	para "That's not weird!"
+
+	para "I, uh, have a"
+	line "scientific"
+	cont "curiosity!"
+
+	para "…Yeah, that's it!"
 	done
 
-PicnickerGina1AfterText:
-	text "You're too strong"
-	line "to be a practice"
-	cont "partner."
+GentlemanFrankBeatenText:
+	text "It's not weird, I"
+	line "swear!"
 	done
 
-OfficerKeithSeenText:
-	text "Who goes there?"
-	line "What are you up"
-	cont "to?"
-	done
-
-OfficerKeithWinText:
-	text "You're a tough"
-	line "little kid."
+GentlemanFrankAfterText:
+	text "Just go away, and"
+	line "forget this"
+	cont "happened, OK?"
 	done
 
 OfficerKeithAfterText:
-	text "Yep, I see nothing"
-	line "wrong today. You"
+	text "Looks like every-"
+	line "thing's A-OK right"
+	cont "now."
 
-	para "be good and stay"
-	line "out of trouble."
+	para "No suspicious"
+	line "activity here."
 	done
 
 OfficerKeithDaytimeText:
-	text "I'm on patrol for"
-	line "suspicious indi-"
-	cont "viduals."
-	done
+	text "Ugh…"
 
-PokefanmBrandonSeenText:
-	text "I just got my"
-	line "#MON back from"
-	cont "DAY-CARE."
+	para "Didn't see that"
+	cont "guy coming…"
 
-	para "Let's see how much"
-	line "stronger it got!"
-	done
+	para "He knocked me out"
+	line "and hid me in the"
+	cont "trees!"
 
-PokefanmBrandonBeatenText:
-	text "Why does it end"
-	line "this way?"
-	done
-
-PokefanmBrandonAfterText:
-	text "My #MON knew"
-	line "moves I didn't"
-	cont "know it had."
-
-	para "That confounded me"
-	line "to no end!"
+	para "Talk about low…"
 	done
 
 CooltrainerfIreneSeenText:
-	text "IRENE: Kyaaah!"
+	text "Irene: Kyaaah!"
 	line "Someone found us!"
 	done
 
 CooltrainerfIreneBeatenText:
-	text "IRENE: Ohhh!"
+	text "Irene: Ohhh!"
 	line "Too strong!"
 	done
 
 CooltrainerfIreneAfterText1:
-	text "IRENE: My sister"
-	line "KATE will get you"
+	text "Irene: My sister"
+	line "Kate will get you"
 	cont "for this!"
 	done
 
 CooltrainerfIreneAfterText2:
-	text "IRENE: Isn't this"
+	text "Irene: Isn't this"
 	line "beach great?"
 
 	para "It's our secret"
@@ -742,41 +488,41 @@ CooltrainerfIreneAfterText2:
 	done
 
 CooltrainerfJennSeenText:
-	text "JENN: You can't"
-	line "beat IRENE and go"
+	text "Jenn: You can't"
+	line "beat Irene and go"
 	cont "unpunished!"
 	done
 
 CooltrainerfJennBeatenText:
-	text "JENN: So sorry,"
-	line "IRENE! Sis!"
+	text "Jenn: So sorry,"
+	line "Irene! Sis!"
 	done
 
 CooltrainerfJennAfterText1:
-	text "JENN: Don't get"
+	text "Jenn: Don't get"
 	line "cocky! My sister"
-	cont "KATE is tough!"
+	cont "Kate is tough!"
 	done
 
 CooltrainerfJennAfterText2:
-	text "JENN: Sunlight"
+	text "Jenn: Sunlight"
 	line "makes your body"
 	cont "stronger."
 	done
 
 CooltrainerfKateSeenText:
-	text "KATE: You sure"
+	text "Kate: You sure"
 	line "were mean to my"
 	cont "little sisters!"
 	done
 
 CooltrainerfKateBeatenText:
-	text "KATE: No! I can't"
+	text "Kate: No! I can't"
 	line "believe I lost."
 	done
 
 CooltrainerfKateOfferSoftSandText:
-	text "KATE: You're too"
+	text "Kate: You're too"
 	line "strong. I didn't"
 	cont "stand a chance."
 
@@ -785,7 +531,7 @@ CooltrainerfKateOfferSoftSandText:
 	done
 
 CooltrainerfKateAfterText:
-	text "KATE: I'm sorry we"
+	text "Kate: I'm sorry we"
 	line "jumped you."
 
 	para "We never expected"
@@ -797,37 +543,77 @@ CooltrainerfKateAfterText:
 
 Route34IlexForestSignText:
 ; unused
-	text "ILEX FOREST"
-	line "THROUGH THE GATE"
+	text "Ilex Forest"
+	line "through the gate"
 	done
 
 Route34SignText:
-	text "ROUTE 34"
+	text "Route 34"
 
-	para "GOLDENROD CITY -"
-	line "AZALEA TOWN"
+	para "Goldenrod City -"
+	line "Azalea Town"
 
-	para "ILEX FOREST"
-	line "SOMEWHERE BETWEEN"
+	para "Ilex Forest"
+	line "somewhere between"
 	done
 
 Route34TrainerTipsText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
-	para "BERRY trees grow"
-	line "new BERRIES"
+	para "Berry trees grow"
+	line "new Berries"
 	cont "every day."
 
 	para "Make a note of"
 	line "which trees bear"
-	cont "which BERRIES."
+	cont "which Berries."
 	done
 
 DayCareSignText:
-	text "DAY-CARE"
+	text "Day-Care"
 
-	para "LET US RAISE YOUR"
-	line "#MON FOR YOU!"
+	para "Let us raise your"
+	line "#mon for you!"
+	done
+
+ForestGuardianText:
+	text "Get lost kid!"
+
+	para "The guardian of"
+	line "Ilex Forest has"
+	cont "been spotted!"
+
+	para "You'll scare it"
+	line "away!"
+	done
+
+TakingPicturesText:
+	text "We're taking pics"
+	line "of the guardian,"
+	cont "so scram!"
+	done
+
+BlackbeltSatoruSeenText:
+	text "Remember, our"
+	line "world is bigger"
+	cont "than just Johto…"
+	done
+
+BlackbeltSatoruBeatenText:
+	text "Bigger than all of"
+	line "us…"
+	done
+
+BlackbeltSatoruAfterText:
+	text "To think that"
+	line "Kanto is cut off"
+	cont "from us here…"
+
+	para "I can only hope"
+	line "that the two"
+	cont "regions can come"
+	cont "together as one"
+	cont "someday…"
 	done
 
 Route34_MapEvents:
@@ -840,9 +626,7 @@ Route34_MapEvents:
 	warp_event 11, 15, DAY_CARE, 2
 	warp_event 13, 15, DAY_CARE, 3
 
-	db 2 ; coord events
-	coord_event 10, 14, SCENE_ROUTE_34_NINJA, NinjaAmbushesYou1
-	coord_event 10, 15, SCENE_ROUTE_34_NINJA, NinjaAmbushesYou2
+	db 0 ; coord events
 
 	db 5 ; bg events
 	bg_event 12,  6, BGEVENT_READ, Route34Sign
@@ -851,18 +635,19 @@ Route34_MapEvents:
 	bg_event  8, 32, BGEVENT_ITEM, Route34HiddenRareCandy
 	bg_event 17, 19, BGEVENT_ITEM, Route34HiddenSuperPotion
 
-	db 14 ; object events
-	object_event 13,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 5, TrainerCamperTodd1, -1
-	object_event 15, 32, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterSamuel, -1
-	object_event 11, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterIan, -1
-	object_event 10, 26, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerGina1, -1
+	db 15 ; object events
+	object_event 13,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerFTina, -1
+	object_event 16, 30, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltSatoru, -1
+	object_event 11, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyGregory, -1
+	object_event 10, 26, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerGentlemanFrank, -1
 	object_event  9, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OfficerKeithScript, EVENT_ROUTE_34_OFFICER
-	object_event 18, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmBrandon, -1
+	object_event 13, 37, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34Guard1, EVENT_OPEN_ILEX_FOREST
 	object_event 15, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Outside, EVENT_DAY_CARE_MAN_ON_ROUTE_34
 	object_event 14, 18, SPRITE_DAY_CARE_MON_1, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareMon1Script, EVENT_DAY_CARE_MON_1
 	object_event 17, 19, SPRITE_DAY_CARE_MON_2, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareMon2Script, EVENT_DAY_CARE_MON_2
-	object_event 11, 48, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfIrene, -1
-	object_event  3, 48, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfJenn, -1
-	object_event  6, 51, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfKate, -1
+	object_event 11, 48, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfIrene, -1
+	object_event  3, 48, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfJenn, -1
+	object_event  6, 51, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfKate, -1
 	object_event  7, 30, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route34Nugget, EVENT_ROUTE_34_NUGGET
 	object_event  9, 10, SPRITE_NINJA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_34_NINJA
+	object_event 14, 37, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34Guard2, EVENT_OPEN_ILEX_FOREST

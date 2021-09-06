@@ -154,6 +154,7 @@ SherlesAppearsGoldenrodTower:
 	waitbutton
 	closetext
 	applymovement RADIOTOWER1F_SHERLES, SherlesMovesIntoPlaceMovement
+	setevent EVENT_LIGHTHOUSE_SHERLES
 	clearevent EVENT_GOLDENROD_TOWER_SHERLES
 	clearevent EVENT_GOLDENROD_GYM_RIVAL_1
 	setscene SCENE_DEFAULT

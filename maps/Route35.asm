@@ -66,7 +66,21 @@ TrainerLassVivian:
 .Script:
 	endifjustbattled
 	opentext
-	writetext LassVivianAfterBattleText
+	writetext LassVivianRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_LASS_ENCOUNTER
+	writetext LassVivianLetsDoItText
+	waitbutton
+	winlosstext LassVivianBeatenText, 0
+	loadtrainer LASS, VIVIAN
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.Refused:
+	writetext LassVivianRefusedText
 	waitbutton
 	closetext
 	end
@@ -99,7 +113,21 @@ TrainerFirebreatherKelvin:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FirebreatherKelvinAfterBattleText
+	writetext FirebreatherKelvinRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_HIKER_ENCOUNTER
+	writetext FirebreatherKelvinLetsDoItText
+	waitbutton
+	winlosstext FirebreatherKelvinBeatenText, 0
+	loadtrainer FIREBREATHER, KELVIN
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.Refused:
+	writetext FirebreatherKelvinRefusedText
 	waitbutton
 	closetext
 	end
@@ -198,8 +226,19 @@ LassVivianBeatenText:
 	line "you!"
 	done
 
-LassVivianAfterBattleText:
-	text "Looks can be dec-"
+LassVivianRematchText:
+	text "Came back to see"
+	line "how cute I am?"
+	done
+
+LassVivianLetsDoItText:
+	text "I knew it!"
+	done
+
+LassVivianRefusedText:
+	text "Fine."
+
+	para "Looks can be dec-"
 	line "eiving, don't you"
 	cont "think?"
 	done
@@ -311,10 +350,25 @@ FirebreatherKelvinBeatenText:
 	para "Hot, hot, hot!"
 	done
 
-FirebreatherKelvinAfterBattleText:
-	text "Well, I guess"
-	line "they're right"
-	cont "about that…"
+FirebreatherKelvinRematchText:
+	text "You're back!"
+
+	para "Ready to watch"
+	line "my fire show?"
+	done
+
+FirebreatherKelvinLetsDoItText:
+	text "Time for a heated"
+	line "match!"
+	done
+
+FirebreatherKelvinRefusedText:
+	text "OK…"
+
+	para "Looks like they"
+	line "were right about"
+	cont "me being a fire"
+	cont "hazard…"
 	done
 
 OfficerClancySeenText:
@@ -352,6 +406,13 @@ OfficerClancyPrettyToughText:
 
 Route35SignText:
 	text "Route 35"
+
+	para "Firebreather Brad"
+	line "is fired up!"
+
+	para "Lass Vivian is"
+	line "always looking for"
+	cont "admirers!"
 	done
 
 Route35_MapEvents:

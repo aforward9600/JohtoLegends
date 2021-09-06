@@ -153,7 +153,7 @@ NationalParkEther:
 	itemball ETHER
 
 NationalParkTMDig:
-	itemball TM_SLEEP_TALK
+	itemball TM_DIG
 
 NationalParkHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL

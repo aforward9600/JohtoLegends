@@ -110,7 +110,7 @@ TrainerSchoolboyJoe:
 	end
 
 TrainerLassLaura:
-	trainer LASS, LAURA, EVENT_BEAT_LASS_LAURA, LassLauraSeenText, LassLauraBeatenText, 0, .Script
+	trainer LASS, LAURA, EVENT_BEAT_LASS_DANA3, LassLauraSeenText, LassLauraBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

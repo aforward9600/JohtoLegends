@@ -2018,28 +2018,28 @@ JohtoGrassWildMons:
 	dbw 15, EXEGGCUTE
 	dbw 15, LEDYBA
 	dbw 15, SPINARAK
-	dbw 15, RHYHORN
+	dbw 15, NIDORAN_M
 	dbw 15, SNUBBULL
 	dbw 15, MUNCHLAX
-	dbw 15, CACNEA
+	dbw 15, RHYHORN
 	dbw 15, EEVEE
 	; day
 	dbw 15, EXEGGCUTE
 	dbw 15, LEDYBA
 	dbw 15, SPINARAK
-	dbw 15, RHYHORN
+	dbw 15, NIDORAN_M
 	dbw 15, SNUBBULL
 	dbw 15, MUNCHLAX
-	dbw 15, CACNEA
+	dbw 15, RHYHORN
 	dbw 15, EEVEE
 	; nite
 	dbw 15, EXEGGCUTE
 	dbw 15, LEDYBA
 	dbw 15, SPINARAK
-	dbw 15, RHYHORN
+	dbw 15, NIDORAN_M
 	dbw 15, SNUBBULL
 	dbw 15, MUNCHLAX
-	dbw 15, CACNEA
+	dbw 15, RHYHORN
 	dbw 15, EEVEE
 
 	map_id WILD_AREA_CAVE
@@ -2077,7 +2077,7 @@ JohtoGrassWildMons:
 	; morn
 	dbw 15, GROWLITHE
 	dbw 15, HOUNDOUR
-	dbw 15, NIDORAN_M
+	dbw 15, CACNEA
 	dbw 15, CHANSEY
 	dbw 15, NATU
 	dbw 15, MURKROW
@@ -2086,7 +2086,7 @@ JohtoGrassWildMons:
 	; morn
 	dbw 15, GROWLITHE
 	dbw 15, HOUNDOUR
-	dbw 15, NIDORAN_M
+	dbw 15, CACNEA
 	dbw 15, CHANSEY
 	dbw 15, NATU
 	dbw 15, MURKROW
@@ -2095,7 +2095,7 @@ JohtoGrassWildMons:
 	; nite
 	dbw 15, GROWLITHE
 	dbw 15, HOUNDOUR
-	dbw 15, NIDORAN_M
+	dbw 15, CACNEA
 	dbw 15, CHANSEY
 	dbw 15, NATU
 	dbw 15, MURKROW

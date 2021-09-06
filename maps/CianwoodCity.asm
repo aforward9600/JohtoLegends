@@ -65,7 +65,7 @@ CianwoodCityYoungster:
 CianwoodCityPokefanM:
 	jumptextfaceplayer CianwoodCityPokefanMText
 
-CianwoodCityLass:
+CianwoodCityLassScript:
 	jumptextfaceplayer CianwoodCityLassText
 
 CliffsEdgeGateGuardScript:
@@ -100,37 +100,6 @@ CianwoodCityHiddenRevive:
 
 CianwoodCityHiddenMaxEther:
 	hiddenitem MAX_ETHER, EVENT_CIANWOOD_CITY_HIDDEN_MAX_ETHER
-
-CianwoodCitySuicuneApproachMovement:
-	set_sliding
-	fast_jump_step DOWN
-	fast_jump_step DOWN
-	fast_jump_step RIGHT
-	remove_sliding
-	step_end
-
-CianwoodCitySuicuneDepartMovement:
-	set_sliding
-	fast_jump_step RIGHT
-	fast_jump_step UP
-	fast_jump_step RIGHT
-	fast_jump_step RIGHT
-	remove_sliding
-	step_end
-
-CianwoodCityEusineApproachMovement:
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
-CianwoodCityEusineDepartMovement:
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
 
 ChucksWifeEasierToFlyText:
 	text "Hey, you're a"
@@ -238,7 +207,7 @@ CianwoodCityUnusedText:
 	line "fences in the"
 	cont "Cliff's Edge Gate."
 
-	para "We need to insure"
+	para "We need to ensure"
 	line "that no more"
 	cont "injuries occur."
 	done
@@ -311,7 +280,7 @@ CianwoodCity_MapEvents:
 	db 12 ; object events
 	object_event 21, 37, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityYoungster, -1
 	object_event 17, 33, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityPokefanM, -1
-	object_event 14, 42, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodCityLass, -1
+	object_event 12, 37, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodCityLassScript, -1
 	object_event  8, 16, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  9, 17, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  5, 27, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1

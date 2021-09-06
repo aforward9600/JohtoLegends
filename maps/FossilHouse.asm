@@ -213,6 +213,10 @@ FossilHouseScientistText:
 	cont "the scientific"
 	cont "process, it seems."
 
+	para "Only want to trade"
+	line "#mon, as it"
+	cont "looks."
+
 	para "Find any fossils,"
 	line "and I can revive"
 	cont "them for you, I"

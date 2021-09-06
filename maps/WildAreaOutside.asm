@@ -209,7 +209,7 @@ RivalWalksUpRight:
 	writetext ThisIsTheWildAreaText
 	waitbutton
 	closetext
-	applymovement WILDAREAOUTSIDE_RIVAL, RivalLeavesMovement
+	applymovement WILDAREAOUTSIDE_RIVAL, RivalLeavesWildAreaMovement
 	playsound SFX_EXIT_BUILDING
 	disappear WILDAREAOUTSIDE_RIVAL
 	setevent EVENT_WILD_AREA_RIVAL_BEAT
