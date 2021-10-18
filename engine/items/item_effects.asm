@@ -1386,6 +1386,7 @@ RareCandyEffect:
 	xor a ; PARTYMON
 	ld [wMonType], a
 	ld a, [wCurPartySpecies]
+	ld [wEvolutionOldSpecies], a
 	ld [wTempSpecies], a
 	predef LearnLevelMoves
 
