@@ -176,7 +176,7 @@ EvolveAfterBattle_MasterLoop:
 	push hl
 	farcall GetGender
 	pop hl
-	jp z, .skip_evolution_species_parameter
+	jp z, .skip_evolution_species
 	jr .item
 
 .item_female
@@ -185,7 +185,7 @@ EvolveAfterBattle_MasterLoop:
 	push hl
 	farcall GetGender
 	pop hl
-	jp nz, .skip_evolution_species_parameter
+	jp nz, .skip_evolution_species
 	jr .item
 
 .item
@@ -318,7 +318,11 @@ EvolveAfterBattle_MasterLoop:
 	ld [wTempSpecies], a
 	xor a
 	ld [wMonType], a
+	ld a, [wEvolutionOldSpecies]
+	push af
 	call LearnLevelMoves
+	pop af
+	ld [wEvolutionOldSpecies], a
 	ld a, [wTempSpecies]
 	call SetSeenAndCaughtMon
 
@@ -379,10 +383,6 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wMonTriedToEvolve]
 	and a
 	call nz, RestartMapMusic
-
-	ld a, $0
-	ld [wMonDidEvolve], a
-
 	ret
 
 UpdateSpeciesNameIfNotNicknamed:
@@ -455,88 +455,77 @@ Text_WhatEvolving:
 	text_end
 
 LearnLevelMoves:
-    ld a, [wTempSpecies]
-    ld [wCurPartySpecies], a
-    call GetPokemonIndexFromID
-    ld b, h
-    ld c, l
-    ld hl, EvosAttacksPointers
-    ld a, BANK(EvosAttacksPointers)
-    call LoadDoubleIndirectPointer
-    ldh [hTemp], a
-    call SkipEvolutions
+	ld a, [wTempSpecies]
+	ld [wCurPartySpecies], a
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld hl, EvosAttacksPointers
+	ld a, BANK(EvosAttacksPointers)
+	call LoadDoubleIndirectPointer
+	ldh [hTemp], a
+	call SkipEvolutions
 
 .find_move
-    call GetNextEvoAttackByte
-    and a
-    jr z, .done
-
-; Store the verificaiton byte in register c
-    ld c, a 
-
-	ld a, [wMonDidEvolve]
+	call GetNextEvoAttackByte
 	and a
+	jr z, .done
 
-; If there was no evolution, do not check
-    jr z, .no_evolve
+	ld d, a
+	ld a, [wEvolutionOldSpecies]
+	ld e, a
+	ld a, [wCurPartySpecies]
+	cp e
+	ld a, d
+	jr z, .did_not_evolve
 
-; Loads the move verificaiton byte back into
-; register a and proceeds with moves learned
-; during evolution
-    ld a, c
+	cp LEARN_EVO_MOVE
+	jr z, .get_move
 
-    cp LEARN_EVO_MOVE
-    jr z, .get_move
-
-
-; Loads the move verificaiton byte back into
-; register a and proceeds with standard 
-; level up moves
-.no_evolve
-    ld a, c
-    ld b, a
-    ld a, [wCurPartyLevel]
-    cp b
+.did_not_evolve
+	ld b, a
+	ld a, [wCurPartyLevel]
+	cp b
 
 .get_move
-    call GetNextEvoAttackByte
-    ld e, a
-    call GetNextEvoAttackByte
-    ld d, a
-    jr nz, .find_move
+	call GetNextEvoAttackByte
+	ld e, a
+	call GetNextEvoAttackByte
+	ld d, a
+	jr nz, .find_move
 
-    push hl
-    ld h, d
-    ld l, e
-    call GetMoveIDFromIndex
-    ld d, a
-    ld hl, wPartyMon1Moves
-    ld a, [wCurPartyMon]
-    ld bc, PARTYMON_STRUCT_LENGTH
-    call AddNTimes
+	push hl
+	ld h, d
+	ld l, e
+	call GetMoveIDFromIndex
+	ld d, a
+	ld hl, wPartyMon1Moves
+	ld a, [wCurPartyMon]
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
 
-    ld b, NUM_MOVES
+	ld b, NUM_MOVES
 .check_move
-    call GetNextEvoAttackByte
-    cp d
-    jr z, .has_move
-    dec b
-    jr nz, .check_move
-    jr .learn
+	call GetNextEvoAttackByte
+	cp d
+	jr z, .has_move
+	dec b
+	jr nz, .check_move
+	jr .learn
 .has_move
 
-    pop hl
-    jr .find_move
+	pop hl
+	jr .find_move
 
 .learn
-    ld a, d
-    ld [wPutativeTMHMMove], a
-    ld [wNamedObjectIndexBuffer], a
-    call GetMoveName
-    call CopyName1
-    predef LearnMove
-    pop hl
-    jr .find_move
+	ld a, d
+	ld [wPutativeTMHMMove], a
+	ld [wNamedObjectIndexBuffer], a
+	call GetMoveName
+	call CopyName1
+	predef LearnMove
+	pop hl
+	jr .find_move
 
 
 .done
@@ -734,7 +723,7 @@ DetermineEvolutionItemResults::
 	farcall GetGender
 	pop hl
 
-	jr z, .skip_species
+	jr nz, .skip_species
 
 	jr .item
 
