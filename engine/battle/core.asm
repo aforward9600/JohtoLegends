@@ -7257,8 +7257,8 @@ GiveExperiencePoints:
 	dec bc
 	jr .decrease_evs_gained
 .check_ev_overflow
-	pop hl 
-	pop bc 
+	pop hl
+	pop bc
 	ld a, e
 	add [hl]
 	jr c, .ev_overflow
@@ -7542,6 +7542,8 @@ GiveExperiencePoints:
 	inc b
 	ld a, b
 	ld [wCurPartyLevel], a
+	ld a, [wCurPartySpecies]
+	ld [wEvolutionOldSpecies], a
 	push bc
 	predef LearnLevelMoves
 	pop bc
