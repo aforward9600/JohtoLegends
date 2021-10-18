@@ -36,6 +36,7 @@ TrainerPsychicJordan:
 	trainer PSYCHIC_T, JORDAN, EVENT_BEAT_PSYCHIC_JORDAN, PsychicJordanSeenText, PsychicJordanBeatenText, 0, .Script
 
 .Script:
+	endifjustbattled
 	opentext
 	writetext PsychicJordanRematchText
 	yesorno

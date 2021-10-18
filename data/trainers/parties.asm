@@ -2220,9 +2220,9 @@ GruntMGroup:
 	db 16
 	dw MURKROW
 	db 16
-	dw BEEDRILL
+	dw CACNEA
 	db 17
-	dw KADABRA
+	dw SNORUNT
 	db -1 ; end
 
 	next_list_item ; ManM (3) Lighthouse
@@ -2625,11 +2625,13 @@ BugCatcherGroup:
 	next_list_item ; BUG_CATCHER (2) Route 44
 	db "Colton@", TRAINERTYPE_NORMAL
 	db 6
-	dw VENONAT
+	dw WEEDLE
 	db 6
-	dw PARAS
+	dw CATERPIE
 	db 7
-	dw PINECO
+	dw SPINARAK
+	db 7
+	dw LEDYBA
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (3)
@@ -3496,7 +3498,7 @@ SuperNerdGroup:
 	next_list_item ; SUPER_NERD (1) Route 44
 	db "Dexter@", TRAINERTYPE_NORMAL
 	db 7
-	dw GRIMER
+	dw BUDEW
 	db 7
 	dw PICHU
 	db -1 ; end
@@ -4383,24 +4385,21 @@ ArcherGroup:
 
 	next_list_item ; ARCHER (3)
 	db "Archer@", TRAINERTYPE_MOVES
-	db 30
-	dw KOFFING
-	dw TACKLE, SELFDESTRUCT, SLUDGE, SMOKESCREEN
-	db 30
-	dw KOFFING
-	dw TACKLE, SELFDESTRUCT, SLUDGE, SMOKESCREEN
-	db 30
-	dw KOFFING
-	dw TACKLE, SELFDESTRUCT, SLUDGE, SMOKESCREEN
-	db 32
+	db 34
+	dw SLOWKING
+	dw HIDDEN_POWER, ZEN_HEADBUTT, WATER_PULSE, NASTY_PLOT
+	db 35
 	dw WEEZING
-	dw TACKLE, EXPLOSION, SLUDGE, SMOKESCREEN
-	db 30
-	dw KOFFING
-	dw TACKLE, SELFDESTRUCT, SLUDGE, SMOKESCREEN
-	db 30
-	dw KOFFING
-	dw TACKLE, SMOG, SLUDGE, SMOKESCREEN
+	dw MUD_BOMB, SLUDGE, SELFDESTRUCT, HAZE
+	db 34
+	dw HOUNDOOM
+	dw ODOR_SLEUTH, FAINT_ATTACK, SNARL, FIRE_FANG
+	db 34
+	dw MACHOKE
+	dw BULK_UP, BRICK_BREAK, VITAL_THROW, FAINT_ATTACK
+	db 36
+	dw NIDOKING
+	dw POISON_JAB, BULLDOZE, STOMP, LEER
 	db -1 ; end
 
 	next_list_item ; ARCHER (4)
@@ -4996,6 +4995,25 @@ ArianaGroup:
 	dw DOUBLE_KICK, POISON_JAB, BULLDOZE, TAIL_WHIP
 	db -1 ; end
 
+	next_list_item ; EXECUTIVEF (3)
+	db "Ariana@", TRAINERTYPE_MOVES
+	db 33
+	dw ARBOK
+	dw POISON_JAB, SCREECH, CRUNCH, GLARE
+	db 33
+	dw VILEPLUME
+	dw GROWTH, SLEEP_POWDER, GIGA_DRAIN, SLUDGE_BOMB
+	db 33
+	dw HONCHKROW
+	dw WING_ATTACK, PURSUIT, HAZE, NIGHT_SHADE
+	db 33
+	dw KADABRA
+	dw PSYBEAM, RECOVER, CALM_MIND, DAZZLINGLEAM
+	db 35
+	dw NIDOQUEEN
+	dw DOUBLE_KICK, POISON_JAB, BULLDOZE, TAIL_WHIP
+	db -1 ; end
+
 	end_list_items
 
 SageGroup:
@@ -5582,7 +5600,7 @@ GruntFGroup:
 	next_list_item ; GruntF (2) Lighthouse
 	db "Lady@", TRAINERTYPE_NORMAL
 	db 20
-	dw SKIPLOOM
+	dw ROSELIA
 	db -1 ; end
 
 	next_list_item ; GruntF (3) Lighthouse
@@ -5736,6 +5754,34 @@ Rival3Group:
 	dw DRAGONAIR
 	db -1 ; end
 
+	next_list_item ; RIVAL3 (7)
+	db "Dahlia@", TRAINERTYPE_NORMAL
+	db 36
+	dw POLIWRATH
+	db 36
+	dw PILOSWINE
+	db 37
+	dw SYLVEON
+	db 37
+	dw MAGNETON
+	db 38
+	dw PUPITAR
+	db -1 ; end
+
+	next_list_item ; RIVAL3 (8)
+	db "Dahlia@", TRAINERTYPE_NORMAL
+	db 36
+	dw POLIWRATH
+	db 36
+	dw PILOSWINE
+	db 37
+	dw SYLVEON
+	db 37
+	dw MAGNETON
+	db 38
+	dw DRAGONAIR
+	db -1 ; end
+
 	end_list_items
 
 Rival4Group:
@@ -5802,6 +5848,34 @@ Rival4Group:
 	db 24
 	dw SYLVEON
 	db 25
+	dw DRAGONAIR
+	db -1 ; end
+
+	next_list_item ; RIVAL4 (7)
+	db "Dahlia@", TRAINERTYPE_NORMAL
+	db 36
+	dw POLIWRATH
+	db 36
+	dw PILOSWINE
+	db 37
+	dw SYLVEON
+	db 37
+	dw MAGNETON
+	db 38
+	dw PUPITAR
+	db -1 ; end
+
+	next_list_item ; RIVAL4 (8)
+	db "Dahlia@", TRAINERTYPE_NORMAL
+	db 36
+	dw POLIWRATH
+	db 36
+	dw PILOSWINE
+	db 37
+	dw SYLVEON
+	db 37
+	dw MAGNETON
+	db 38
 	dw DRAGONAIR
 	db -1 ; end
 
@@ -6120,6 +6194,116 @@ EngineerGroup:
 	db "Rudy@", TRAINERTYPE_NORMAL
 	db 28
 	dw FORRETRESS
+	db -1 ; end
+
+	end_list_items
+
+MahoganyNinjaMGroup:
+	next_list_item ; MNINJA_M (1)
+	db "Ninja@", TRAINERTYPE_NORMAL
+	db 32
+	dw QWILFISH
+	db 32
+	dw GLIGAR
+	db -1 ; end
+
+	next_list_item ; MNINJA_M (2)
+	db "Ninja@", TRAINERTYPE_NORMAL
+	db 32
+	dw JOLTEON
+	db 32
+	dw BEEDRILL
+	db -1 ; end
+
+
+	next_list_item ; MNINJA_M (3)
+	db "Ninja@", TRAINERTYPE_NORMAL
+	db 33
+	dw MANECTRIC
+	db 33
+	dw DUSKULL
+	db 33
+	dw MR__MIME
+	db -1 ; end
+
+	next_list_item ; MNINJA_M (4)
+	db "Ninja@", TRAINERTYPE_NORMAL
+	db 34
+	dw ELECTABUZZ
+	db 34
+	dw SKARMORY
+	db 34
+	dw DEWGONG
+	db -1 ; end
+
+	end_list_items
+
+MahoganyNinjaFGroup:
+	next_list_item ; MNINJA_F (1)
+	db "Ninja@", TRAINERTYPE_NORMAL
+	db 32
+	dw YANMA
+	db 32
+	dw ELECTRODE
+	db -1
+
+	next_list_item ; MNINJA_F (2)
+	db "Ninja@", TRAINERTYPE_NORMAL
+	db 32
+	dw DUGTRIO
+	db 32
+	dw SEADRA
+	db -1
+
+	next_list_item ; MNINJA_F (3)
+	db "Ninja@", TRAINERTYPE_NORMAL
+	db 33
+	dw GLALIE
+	db 33
+	dw CACTURNE
+	db 33
+	dw GARDEVOIR
+	db -1
+
+	next_list_item ; MNINJA_F (4)
+	db "Ninja@", TRAINERTYPE_NORMAL
+	db 34
+	dw GIRAFARIG
+	db 34
+	dw AMPHAROS
+	db 34
+	dw DODRIO
+	db -1 ; end
+
+	end_list_items
+
+DepressedDahliaGroup:
+	next_list_item ; RIVAL3 (6)
+	db "Dahlia@", TRAINERTYPE_NORMAL
+	db 36
+	dw POLIWRATH
+	db 36
+	dw PILOSWINE
+	db 37
+	dw SYLVEON
+	db 37
+	dw MAGNETON
+	db 38
+	dw PUPITAR
+	db -1 ; end
+
+	next_list_item ; RIVAL3 (6)
+	db "Dahlia@", TRAINERTYPE_NORMAL
+	db 36
+	dw POLIWRATH
+	db 36
+	dw PILOSWINE
+	db 37
+	dw SYLVEON
+	db 37
+	dw MAGNETON
+	db 38
+	dw DRAGONAIR
 	db -1 ; end
 
 	end_list_items

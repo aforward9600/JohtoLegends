@@ -50,3 +50,4 @@ Tilesets::
 	tileset TilesetOmanyteWordRoom
 	tileset TilesetAerodactylWordRoom
 	tileset TilesetRoute47
+	tileset TilesetJohto3

@@ -111,6 +111,9 @@ INCLUDE "gfx/tilesets/battle_tower_outside_palette_map.asm"
 TilesetRoute47PalMap:
 INCLUDE "gfx/tilesets/route_47_palette_map.asm"
 
+TilesetJohto3PalMap:
+INCLUDE "gfx/tilesets/johto_3_palette_map.asm"
+
 ; unused
 rept 26
 	db $06

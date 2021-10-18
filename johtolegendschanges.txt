@@ -52,7 +52,7 @@ Nightmare
 
 Things added:
 
-377-251=126 new moves
+386-251=135 new moves
 
 Changes to Pokemon:
 
@@ -112,6 +112,8 @@ Farfetch'd: +18HP, +10ATK, +10DEF, +10SPDEF, +30SPD. 455BST
 
 Dodrio: +10HP, +10ATK, +10SPDEF. 500BST
 
+Seel: Evolves at Level 28.
+
 Dewgong: +10ATK, +10DEF, +10SPATK. 505BST
 
 Hypno: +5ATK, +5DEF, +5SPATK, +2SPD. 500BST
@@ -146,7 +148,7 @@ Kabutops: +15SPD. 510BST
 
 Dratini: Family changed to Medium-Slow Growth. Evolves at Level 20.
 
-Dragonair: +10DEF, +10SPATK, +10SPDEF, +10SPD. 470BST
+Dragonair: +10DEF, +10SPATK, +10SPDEF, +10SPD. 470BST Evolves at Level 40.
 
 Meganium: Is now a Grass-Fairy Type.
 
@@ -224,7 +226,7 @@ Stantler: +10DEF, +10SPATK, +10SPDEF, +10SPD. 505BST
 
 Larvitar: Family changed to Medium-Slow Growth. Evolves at Level 20.
 
-Pupitar: +10HP, +10ATK, +10DEF, +10SPATK, +10SPDEF, +10SPD. 470BST
+Pupitar: +10HP, +10ATK, +10DEF, +10SPATK, +10SPDEF, +10SPD. 470BST Evolves at Level 40.
 
 Manectric: +24SPATK, +24SPD. 523BST
 
@@ -235,8 +237,11 @@ Glalie: +5 to all stats. 510BST
 Froslass: +15ATK, +15SPATK. 510BST
 
 
-
 Steel no longer resists Dark and Ghost.
 
 Ice resists Water and Electric now.
+
+Some additions:
+
+Fossils can be found by smashing rocks. 
 

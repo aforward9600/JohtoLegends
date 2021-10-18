@@ -79,3 +79,6 @@ TrainerClassNames::
 	db "Boss@"
 	db "Tourist@"
 	db "Engineer@"
+	db "Mahogany@"
+	db "Mahogany@"
+	db "Rival@"

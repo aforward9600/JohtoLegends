@@ -329,13 +329,13 @@ INCLUDE "data/tilesets/cave_collision.asm"
 
 SECTION "Tileset Data 9", ROMX
 
-TilesetRoute47GFX::
+TilesetRoute47GFX:
 INCBIN "gfx/tilesets/route_47.2bpp.lz"
 
-TilesetRoute47Meta::
+TilesetRoute47Meta:
 INCBIN "data/tilesets/route_47_metatiles.bin"
 
-TilesetRoute47Coll::
+TilesetRoute47Coll:
 INCLUDE "data/tilesets/route_47_collision.asm"
 
 TilesetUndergroundGFX:
@@ -346,3 +346,12 @@ INCBIN "data/tilesets/underground_metatiles.bin"
 
 TilesetUndergroundColl:
 INCLUDE "data/tilesets/underground_collision.asm"
+
+TilesetJohto3GFX:
+INCBIN "gfx/tilesets/johto_3.2bpp.lz"
+
+TilesetJohto3Meta:
+INCBIN "data/tilesets/johto_3_metatiles.bin"
+
+TilesetJohto3Coll:
+INCLUDE "data/tilesets/johto_3_collision.asm"

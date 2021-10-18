@@ -1,11 +1,11 @@
 	object_const_def ; object_event constants
-	const TEAMROCKETBASEB3F_LANCE
-	const TEAMROCKETBASEB3F_ARCHER
-	const TEAMROCKETBASEB3F_MOLTRES
-	const TEAMROCKETBASEB3F_ROCKET_GIRL
-	const TEAMROCKETBASEB3F_ROCKET2
-	const TEAMROCKETBASEB3F_SCIENTIST1
-	const TEAMROCKETBASEB3F_SCIENTIST2
+	const TEAMROCKETBASEB3F_NINJA3
+	const TEAMROCKETBASEB3F_NINJA4
+	const TEAMROCKETBASEB3F_KOGA
+	const TEAMROCKETBASEB3F_ARIANA
+	const TEAMROCKETBASEB3F_RIVAL
+	const TEAMROCKETBASEB3F_NINJA2
+	const TEAMROCKETBASEB3F_NINJA1
 	const TEAMROCKETBASEB3F_ROCKET3
 	const TEAMROCKETBASEB3F_SILVER
 	const TEAMROCKETBASEB3F_POKE_BALL1
@@ -16,15 +16,14 @@
 
 TeamRocketBaseB3F_MapScripts:
 	db 4 ; scene scripts
-	scene_script .LanceGetsPassword ; SCENE_DEFAULT
+	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER
 	scene_script .DummyScene2 ; SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS
 	scene_script .DummyScene3 ; SCENE_TEAMROCKETBASEB3F_NOTHING
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, .CheckGiovanniDoor
+	db 0 ; callbacks
 
-.LanceGetsPassword:
+.DummyScene0:
 	end
 
 .DummyScene1:
@@ -34,30 +33,6 @@ TeamRocketBaseB3F_MapScripts:
 	end
 
 .DummyScene3:
-	end
-
-.CheckGiovanniDoor:
-	checkevent EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE
-	iftrue .OpenSesame
-	return
-
-.OpenSesame:
-	changeblock 10, 8, $07 ; floor
-	return
-
-LanceGetPasswordScript:
-	turnobject PLAYER, LEFT
-	pause 5
-	turnobject TEAMROCKETBASEB3F_MOLTRES, RIGHT
-	pause 20
-	applymovement TEAMROCKETBASEB3F_LANCE, MovementData_0x6e12a
-	opentext
-	writetext LanceGetPasswordText
-	waitbutton
-	closetext
-	applymovement TEAMROCKETBASEB3F_LANCE, MovementData_0x6e12c
-	disappear TEAMROCKETBASEB3F_LANCE
-	setscene SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER
 	end
 
 RocketBaseRival:
@@ -81,7 +56,11 @@ RocketBaseRival:
 	end
 
 TeamRocketBaseB3FRocketScript:
-	jumptextfaceplayer TeamRocketBaseB3FRocketText
+	opentext
+	writetext TeamRocketBaseB3FRocketText
+	waitbutton
+	closetext
+	end
 
 RocketBaseBossLeft:
 	applymovement PLAYER, MovementData_0x6e133
@@ -90,38 +69,104 @@ RocketBaseBossLeft:
 RocketBaseBossRight:
 	applymovement PLAYER, MovementData_0x6e13a
 RocketBaseBoss:
-	pause 30
-	showemote EMOTE_SHOCK, TEAMROCKETBASEB3F_ARCHER, 15
+	pause 15
+	showemote EMOTE_SHOCK, TEAMROCKETBASEB3F_ARIANA, 15
 	playmusic MUSIC_ROCKET_ENCOUNTER
-	turnobject TEAMROCKETBASEB3F_ARCHER, DOWN
+	turnobject TEAMROCKETBASEB3F_ARIANA, DOWN
 	opentext
-	writetext ExecutiveM4BeforeText
+	writetext HideoutB3FArianaBeforeText
 	waitbutton
 	closetext
-	applymovement TEAMROCKETBASEB3F_ARCHER, MovementData_0x6e142
+	moveobject TEAMROCKETBASEB3F_RIVAL, 6, 10
+	appear TEAMROCKETBASEB3F_RIVAL
+	applymovement TEAMROCKETBASEB3F_RIVAL, MovementData_0x6e142
+	opentext
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .ArianaInsultsDraco
+	writetext HideoutB3FArianaDahliaText
+	waitbutton
+	closetext
+	sjump .HideoutArianaBattle
+
+.ArianaInsultsDraco:
+	writetext HideoutB3FArianaDracoText
+	waitbutton
+	closetext
+.HideoutArianaBattle:
 	winlosstext ExecutiveM4BeatenText, 0
-	setlasttalked TEAMROCKETBASEB3F_ARCHER
-	loadtrainer ARCHER, ARCHER_4
+	setlasttalked TEAMROCKETBASEB3F_ARIANA
+	loadtrainer ARIANA, ARIANA_3
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ROCKET_EXECUTIVEM_4
+	setevent EVENT_BEAT_HIDEOUT_ARIANA
 	opentext
-	writetext ExecutiveM4AfterText
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .ArianaHatesDraco
+	writetext HideoutArianaDahliaAfterText
 	waitbutton
 	closetext
-	applymovement TEAMROCKETBASEB3F_ARCHER, MovementData_0x6e144
+	sjump .KogaStopsAriana
+
+.ArianaHatesDraco:
+	writetext HideoutArianaDracoAfterText
+	waitbutton
+	closetext
+.KogaStopsAriana:
+	pause 30
+	showemote EMOTE_SHOCK, TEAMROCKETBASEB3F_ARIANA, 15
+	turnobject TEAMROCKETBASEB3F_ARIANA, LEFT
+	opentext
+	writetext ArianaWhosThereText
+	waitbutton
+	closetext
+	pause 15
+	turnobject PLAYER, LEFT
+	turnobject TEAMROCKETBASEB3F_RIVAL, LEFT
+	appear TEAMROCKETBASEB3F_KOGA
+	applymovement TEAMROCKETBASEB3F_KOGA, MovementData_0x6e144
 	playsound SFX_TACKLE
-	applymovement TEAMROCKETBASEB3F_ARCHER, MovementData_0x6e147
-	disappear TEAMROCKETBASEB3F_ARCHER
+	turnobject PLAYER, UP
+	turnobject TEAMROCKETBASEB3F_RIVAL, UP
+	opentext
+	writetext WhatDoYouThinkYoureDoingText
+	waitbutton
+	closetext
+	opentext
+	writetext IAmNoLongerAPawnText
+	waitbutton
+	closetext
+	opentext
+	writetext AlrightIllTellYouText
+	waitbutton
+	closetext
+	turnobject, TEAMROCKETBASEB3F_KOGA, DOWN
+	opentext
+	writetext WeHaveThePasswordText
+	waitbutton
+	closetext
+	applymovement TEAMROCKETBASEB3F_KOGA, MovementData_0x6e147
+	disappear TEAMROCKETBASEB3F_KOGA
+	turnobject PLAYER, LEFT
+	turnobject TEAMROCKETBASEB3F_RIVAL, RIGHT
+	opentext
+	writetext GoodThingHesOnOurSideText
+	waitbutton
+	closetext
+	applymovement TEAMROCKETBASEB3F_RIVAL, RocketBaseRivalEnterMovement
+	disappear TEAMROCKETBASEB3F_RIVAL
+	moveobject TEAMROCKETBASEB3F_RIVAL, 5, 14
+	appear TEAMROCKETBASEB3F_RIVAL
+	setevent EVENT_HIDEOUT_B3F_KOGA
+	clearevent EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE
+	setevent EVENT_LEARNED_RATICATE_TAIL
 	setscene SCENE_TEAMROCKETBASEB3F_NOTHING
 	end
 
-RocketBaseMurkrow:
+HideoutArianaScript:
 	opentext
-	writetext RocketBaseMurkrowText
+	writetext RocketBaseArianaText
 	waitbutton
 	closetext
-	setevent EVENT_LEARNED_HAIL_GIOVANNI
 	end
 
 SlowpokeTailGrunt:
@@ -156,58 +201,76 @@ HideoutB3FRival:
 	closetext
 	end
 
-TrainerScientistRoss:
-	trainer SCIENTIST, ROSS, EVENT_BEAT_SCIENTIST_ROSS, ScientistRossSeenText, ScientistRossBeatenText, 0, .Script
+TrainerMNinjaF1:
+	trainer MNINJA_F, MNINJA_F1, EVENT_HIDEOUT_NINJA2, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
 
 .Script:
+	pause 15
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear TEAMROCKETBASEB3F_NINJA2
+	pause 15
+	special FadeInQuickly
 	endifjustbattled
 	opentext
-	writetext ScientistRossAfterBattleText
+	writetext MNinjaM1SeenText
 	waitbutton
 	closetext
 	end
 
-TrainerScientistMitch:
-	trainer SCIENTIST, MITCH, EVENT_BEAT_SCIENTIST_MITCH, ScientistMitchSeenText, ScientistMitchBeatenText, 0, .Script
+TrainerMNinjaF2:
+	trainer MNINJA_F, MNINJA_F2, EVENT_HIDEOUT_NINJA3, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
 
 .Script:
+	pause 15
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear TEAMROCKETBASEB3F_NINJA3
+	pause 15
+	special FadeInQuickly
 	endifjustbattled
 	opentext
-	writetext ScientistMitchAfterBattleText
+	writetext MNinjaM1SeenText
 	waitbutton
 	closetext
 	end
 
-TeamRocketBaseB3FLockedDoor:
-	conditional_event EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE, .Script
+TrainerMNinjaM1:
+	trainer MNINJA_M, MNINJA_M1, EVENT_HIDEOUT_NINJA, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
 
 .Script:
+	pause 15
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear TEAMROCKETBASEB3F_NINJA1
+	pause 15
+	special FadeInQuickly
+	endifjustbattled
 	opentext
-	checkevent EVENT_LEARNED_SLOWPOKETAIL
-	iffalse .NeedsPassword
-	checkevent EVENT_LEARNED_RATICATE_TAIL
-	iffalse .NeedsPassword
-	sjump .OpenSesame
-
-.NeedsPassword:
-	writetext TeamRocketBaseB3FLockedDoorNeedsPasswordText
+	writetext MNinjaM1SeenText
 	waitbutton
 	closetext
 	end
 
-.OpenSesame:
-	writetext TeamRocketBaseB3FLockedDoorOpenSesameText
+TrainerMNinjaM2:
+	trainer MNINJA_M, MNINJA_M2, EVENT_HIDEOUT_NINJA4, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
+
+.Script:
+	pause 15
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear TEAMROCKETBASEB3F_NINJA4
+	pause 15
+	special FadeInQuickly
+	endifjustbattled
+	opentext
+	writetext MNinjaM1SeenText
 	waitbutton
-	playsound SFX_ENTER_DOOR
-	changeblock 10, 8, $07 ; floor
-	reloadmappart
 	closetext
-	setevent EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE
-	waitsfx
 	end
 
 TeamRocketBaseB3FOathScript:
-	jumpstd teamrocketoath
+	jumptext NinjaBookText
 
 TeamRocketBaseB3FProtein:
 	itemball PROTEIN
@@ -219,10 +282,10 @@ TeamRocketBaseB3FFullHeal:
 	itemball FULL_HEAL
 
 TeamRocketBaseB3FIceHeal:
-	itemball ICE_HEAL
+	itemball PARLYZ_HEAL
 
 TeamRocketBaseB3FUltraBall:
-	itemball ULTRA_BALL
+	itemball GREAT_BALL
 
 MovementData_0x6e12a:
 	step RIGHT
@@ -239,61 +302,44 @@ MovementData_0x6e12c:
 
 MovementData_0x6e133:
 	step UP
+	step RIGHT
 	step UP
-	step UP
-	step LEFT
-	step LEFT
-	turn_head UP
 	step_end
 
 MovementData_0x6e13a:
 	step UP
 	step UP
-	step LEFT
-	step UP
-	step LEFT
-	step LEFT
-	turn_head UP
 	step_end
 
 MovementData_0x6e142:
-	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
+	step UP
+	step UP
 	step_end
 
 MovementData_0x6e144:
-	big_step RIGHT
-	big_step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
 	step_end
 
 MovementData_0x6e147:
-	fix_facing
-	fast_jump_step LEFT
-	remove_fixed_facing
-	step_sleep 8
-	step_sleep 8
-	slow_step RIGHT
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step RIGHT
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step LEFT
-	big_step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step RIGHT
+	step DOWN
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
 	step_end
 
 RocketBaseRivalEnterMovement:
@@ -301,10 +347,10 @@ RocketBaseRivalEnterMovement:
 	step DOWN
 	step DOWN
 	step DOWN
-	step DOWN
-	step RIGHT
-	step RIGHT
-	step RIGHT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
 	step_end
 
 RocketBaseRivalLeaveMovement:
@@ -343,9 +389,10 @@ LanceGetPasswordText:
 	done
 
 TeamRocketBaseB3FRocketText:
-	text "Urrggh… The guy"
-	line "in the cape is"
-	cont "incredibly tough…"
+	text "zzzz… zzzz…"
+
+	para "(The guard here"
+	line "isn't so useful.)"
 	done
 
 RocketBaseRivalText:
@@ -390,39 +437,69 @@ RocketBaseRivalText:
 	cont "the likes of you!"
 	done
 
-ExecutiveM4BeforeText:
-	text "What? Who are you?"
-	line "This is the office"
+HideoutB3FArianaBeforeText:
+	text "What? You got out?"
 
-	para "of our leader,"
-	line "GIOVANNI."
+	para "Of course you"
+	line "would…"
 
-	para "Since disbanding"
-	line "TEAM ROCKET three"
+	para "Obnoxious brat!"
+	done
 
-	para "years ago, he has"
-	line "been in training."
+HideoutB3FArianaDahliaText:
+	text "Dahlia: You!"
 
-	para "But we're certain"
-	line "he will be back"
+	para "You're the one"
+	line "that left us to"
+	cont "rot in that cell!"
 
-	para "some day to assume"
-	line "command again."
+	para "Ariana: Your girl-"
+	line "friend is here to"
+	cont "watch you lose!"
 
-	para "That's why we're"
-	line "standing guard."
+	para "How precious!"
 
-	para "I won't let any-"
-	line "one disturb this"
-	cont "place!"
+	para "After I'm done"
+	line "with you, she'll"
+	cont "be a piece of"
+	cont "cake!"
+
+	para "Dahlia: What was"
+	line "that?!"
+
+	para "Go on, <PLAYER>!"
+	line "Take her down!"
+	done
+
+HideoutB3FArianaDracoText:
+	text "Draco: You!"
+
+	para "You're the one"
+	line "that left us to"
+	cont "rot in that cell!"
+
+	para "Ariana: Your boy-"
+	line "friend is here to"
+	cont "watch you lose!"
+
+	para "How precious!"
+
+	para "After I'm done"
+	line "with you, he'll"
+	cont "be a piece of"
+	cont "cake!"
+
+	para "Draco: Think you"
+	line "are funny, do ya?"
+
+	para "Go on, <PLAYER>!"
+	line "Take her down!"
 	done
 
 ExecutiveM4BeatenText:
-	text "I… I couldn't do a"
-	line "thing…"
+	text "ARGH!"
 
-	para "GIOVANNI, please"
-	line "forgive me…"
+	para "Not again!"
 	done
 
 ExecutiveM4AfterText:
@@ -433,11 +510,13 @@ ExecutiveM4AfterText:
 	line "the others…"
 	done
 
-RocketBaseMurkrowText:
-	text "MURKROW: The"
-	line "password is…"
+RocketBaseArianaText:
+	text "ARGH!"
 
-	para "HAIL GIOVANNI."
+	para "You traitor!"
+
+	para "I'll get you for"
+	line "this!"
 	done
 
 GruntF5SeenText:
@@ -498,27 +577,8 @@ ScientistRossAfterBattleText:
 	line "nothing."
 	done
 
-ScientistMitchSeenText:
-	text "I don't care that"
-	line "#MON are hurt"
-	cont "by our experiment."
-	done
-
-ScientistMitchBeatenText:
-	text "Thinking is my"
-	line "strong suit, not"
-	cont "battling."
-	done
-
-ScientistMitchAfterBattleText:
-	text "If we turn up the"
-	line "power of our radio"
-
-	para "signal for broad-"
-	line "cast nationwide…"
-
-	para "The very thought"
-	line "excites me!"
+MNinjaM1SeenText:
+	text "…………………………"
 	done
 
 TeamRocketBaseB3FLockedDoorNeedsPasswordText:
@@ -558,6 +618,136 @@ TheresAPCText:
 	para "Good luck!"
 	done
 
+HideoutArianaDahliaAfterText:
+	text "Ariana: Pah!"
+
+	para "Whatever!"
+
+	para "Not like you're"
+	line "going to leave"
+	cont "here!"
+
+	para "Especially with-"
+	line "out the password,"
+	cont "that only I know!"
+
+	para "Dahlia: You better"
+	line "tell us, you"
+	cont "witch!"
+
+	para "Ariana: Witch?!"
+
+	para "How dare you, you"
+	line "little b…"
+	done
+
+HideoutArianaDracoAfterText:
+	text "Ariana: Pah!"
+
+	para "Whatever!"
+
+	para "Not like you're"
+	line "going to leave"
+	cont "here!"
+
+	para "Especially with-"
+	line "out the password,"
+	cont "that only I know!"
+
+	para "Draco: You better"
+	line "tell us, you"
+	cont "witch!"
+
+	para "Ariana: Witch?!"
+
+	para "How dare you, you"
+	line "little d…"
+	done
+
+ArianaWhosThereText:
+	text "Ariana:…!"
+
+	para "Who's there?!"
+	done
+
+WhatDoYouThinkYoureDoingText:
+	text "Ariana: What do"
+	line "you think you're"
+	cont "doing?!"
+
+	para "Untie me this"
+	line "instant!"
+
+	para "You work for me,"
+	line "understand?!"
+	done
+
+IAmNoLongerAPawnText:
+	text "Koga: I refuse to"
+	line "be a pawn in such"
+	cont "nefarious schemes."
+
+	para "You will tell us"
+	line "the password you"
+	cont "know, or else my"
+	cont "Weezing shall use"
+	cont "Toxic on you."
+
+	para "Can you imagine"
+	line "how painful that"
+	cont "must be?"
+
+	para "Fufufufufu………"
+	done
+
+AlrightIllTellYouText:
+	text "Ariana: A-alright,"
+	line "I'll tell you!"
+
+	para "The password is:"
+
+	para "Prepare for"
+	line "trouble!"
+
+	para "Now let me go!"
+
+	para "H-hey! What are"
+	line "you doing?!"
+
+	para "Let me go!"
+	done
+
+WeHaveThePasswordText:
+	text "Koga: We now have"
+	line "the password."
+
+	para "I have overheard"
+	line "that there is a"
+	cont "second password"
+	cont "needed to open"
+	cont "the door."
+
+	para "Keep searching"
+	line "for it."
+	done
+
+GoodThingHesOnOurSideText:
+	text "…Good thing he's"
+	line "on our side…"
+
+	para "I'm going on"
+	line "ahead. We have"
+	cont "to find that"
+	cont "next password!"
+	done
+
+NinjaBookText:
+	text "There are a bunch"
+	line "of books about"
+	cont "ninjas on the"
+	cont "shelves here."
+	done
+
 TeamRocketBaseB3F_MapEvents:
 	db 0, 0 ; filler
 
@@ -570,13 +760,11 @@ TeamRocketBaseB3F_MapEvents:
 	warp_event  5, 17, TEAM_ROCKET_BASE_JAIL, 1
 
 	db 3 ; coord events
-	coord_event 10,  8, SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS, RocketBaseBossLeft
-	coord_event 11,  8, SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS, RocketBaseBossRight
+	coord_event 10,  8, SCENE_DEFAULT, RocketBaseBossLeft
+	coord_event 11,  8, SCENE_DEFAULT, RocketBaseBossRight
 	coord_event  8, 10, SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER, RocketBaseRival
 
-	db 10 ; bg events
-	bg_event 10,  9, BGEVENT_IFNOTSET, TeamRocketBaseB3FLockedDoor
-	bg_event 11,  9, BGEVENT_IFNOTSET, TeamRocketBaseB3FLockedDoor
+	db 8 ; bg events
 	bg_event 10,  1, BGEVENT_READ, TeamRocketBaseB3FOathScript
 	bg_event 11,  1, BGEVENT_READ, TeamRocketBaseB3FOathScript
 	bg_event 12,  1, BGEVENT_READ, TeamRocketBaseB3FOathScript
@@ -587,17 +775,17 @@ TeamRocketBaseB3F_MapEvents:
 	bg_event  7, 13, BGEVENT_READ, TeamRocketBaseB3FOathScript
 
 	db 14 ; object events
-	object_event 25, 14, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LanceGetPasswordScript, EVENT_TEAM_ROCKET_BASE_B3F_LANCE_PASSWORDS
-	object_event  8,  3, SPRITE_ARCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B3F_EXECUTIVE
-	object_event  7,  2, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RocketBaseMurkrow, EVENT_TEAM_ROCKET_BASE_POPULATION
-	object_event 21,  7, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, SlowpokeTailGrunt, EVENT_TEAM_ROCKET_BASE_POPULATION
+	object_event 21,  9, SPRITE_NINJA, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerMNinjaF2, EVENT_HIDEOUT_NINJA3
+	object_event 22,  2, SPRITE_NINJA, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_TRAINER, 2, TrainerMNinjaM2, EVENT_HIDEOUT_NINJA4
+	object_event  7,  5, SPRITE_KOGA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_B3F_KOGA
+	object_event 11,  5, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, HideoutArianaScript, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event  5, 14, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, HideoutB3FRival, EVENT_HIDEOUT_B3F_RIVAL
-	object_event 23, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistRoss, EVENT_TEAM_ROCKET_BASE_POPULATION
-	object_event 11, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerScientistMitch, EVENT_TEAM_ROCKET_BASE_POPULATION
+	object_event 23, 12, SPRITE_NINJA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerMNinjaF1, EVENT_HIDEOUT_NINJA2
+	object_event 14, 12, SPRITE_NINJA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_TRAINER, 1, TrainerMNinjaM1, EVENT_HIDEOUT_NINJA
 	object_event 24, 14, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TeamRocketBaseB3FRocketScript, EVENT_TEAM_ROCKET_BASE_POPULATION
-	object_event  4,  5, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_TEAM_ROCKET_BASE
-	object_event  1, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FProtein, EVENT_TEAM_ROCKET_BASE_B3F_PROTEIN
+	object_event  4,  5, SPRITE_NINJA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_TEAM_ROCKET_BASE
+	object_event  1, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FProtein, EVENT_TEAM_ROCKET_BASE_B3F_PROTEIN
 	object_event  3, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FXSpecial, EVENT_TEAM_ROCKET_BASE_B3F_X_SPECIAL
 	object_event 28,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FFullHeal, EVENT_TEAM_ROCKET_BASE_B3F_FULL_HEAL
 	object_event 17,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FIceHeal, EVENT_TEAM_ROCKET_BASE_B3F_ICE_HEAL
-	object_event 14, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FUltraBall, EVENT_TEAM_ROCKET_BASE_B3F_ULTRA_BALL
+	object_event 23,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FUltraBall, EVENT_TEAM_ROCKET_BASE_B3F_ULTRA_BALL

@@ -81,3 +81,6 @@ TrainerGroups:
 	dba MiyamotoGroup
 	dba CynthiaGroup
 	dba EngineerGroup
+	dba MahoganyNinjaMGroup
+	dba MahoganyNinjaFGroup
+	dba DepressedDahliaGroup

@@ -93,18 +93,16 @@ DayCareMrPokemon:
 
 .LegendaryPokemon:
 	opentext
-	writetext EndOfDemoText ; need to delete later
-	;writetext HmWhatIsThatText
+	writetext HmWhatIsThatText
 	waitbutton
 	closetext
-	end ; need to delete later
-	;pause 15
-	;playsound SFX_ENTER_DOOR
-	;appear DAYCARE_RIVAL
-	;applymovement DAYCARE_RIVAL, DayCareRivalMovement1
-	;readvar VAR_FACING
-	;ifequal UP, .DayCareRival1
-	;ifequal RIGHT, .DayCareRival2
+	pause 15
+	playsound SFX_ENTER_DOOR
+	appear DAYCARE_RIVAL
+	applymovement DAYCARE_RIVAL, DayCareRivalMovement1
+	readvar VAR_FACING
+	ifequal UP, .DayCareRival1
+	ifequal RIGHT, .DayCareRival2
 
 .DayCareRival1:
 	turnobject DAYCARE_RIVAL, UP

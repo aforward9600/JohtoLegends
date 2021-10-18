@@ -117,6 +117,7 @@ TeamRocketBaseJailRivalScript:
 	disappear TEAMROCKETBASEJAIL_RIVAL
 	playsound SFX_EXIT_BUILDING
 	setevent EVENT_ROCKET_JAIL_RIVAL
+	setevent EVENT_HIDEOUT_B3F_KOGA
 	end
 
 LockedDoor:

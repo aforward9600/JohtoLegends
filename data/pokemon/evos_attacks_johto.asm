@@ -227,18 +227,18 @@ EeveeEvosAttacks:
 	dbbw EVOLVE_ITEM, THUNDERSTONE, JOLTEON
 	dbbw EVOLVE_ITEM, WATER_STONE, VAPOREON
 	dbbw EVOLVE_ITEM, FIRE_STONE, FLAREON
-	dbbw EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
 	dbbw EVOLVE_ITEM, SUN_STONE, ESPEON
 	dbbw EVOLVE_ITEM, MOON_STONE, UMBREON
-	dbbw EVOLVE_HAPPINESS, TR_NITE, UMBREON
 	dbbw EVOLVE_ITEM, LEAF_STONE, LEAFEON
 	dbbw EVOLVE_ITEM, ICE_STONE, GLACEON
 	dbbw EVOLVE_ITEM, SHINY_STONE, SYLVEON
+	dbbw EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
+	dbbw EVOLVE_HAPPINESS, TR_NITE, UMBREON
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
+	dbw 1, GROWL
 	dbw 5, SAND_ATTACK
-	dbw 9, GROWL
 	dbw 13, QUICK_ATTACK
 	dbw 17, BITE
 	dbw 17, SWIFT
@@ -385,11 +385,12 @@ GlaceonEvosAttacks:
 
 SylveonEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, FAIRY_WIND
 	dbw 1, FAIRY_WIND
 	dbw 1, DISARM_VOICE
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
-	dbw 5, SANDSTORM
+	dbw 5, SAND_ATTACK
 	dbw 9, GROWL
 	dbw 13, QUICK_ATTACK
 	dbw 17, SWIFT
@@ -400,7 +401,6 @@ SylveonEvosAttacks:
 	dbw 37, MOONBLAST
 	dbw 41, DOUBLE_EDGE
 	dbw 45, PSYCH_UP
-	dbw LEARN_EVO_MOVE, FAIRY_WIND
 	db 0 ; no more level-up moves
 
 PorygonEvosAttacks:
@@ -682,7 +682,7 @@ DratiniEvosAttacks:
 	db 0 ; no more level-up moves
 
 DragonairEvosAttacks:
-	dbbw EVOLVE_LEVEL, 55, DRAGONITE
+	dbbw EVOLVE_LEVEL, 40, DRAGONITE
 	db 0 ; no more evolutions
 	dbw 1, DRAGONBREATH
 	dbw 1, WRAP
@@ -714,8 +714,8 @@ DragoniteEvosAttacks:
 	dbw 27, AGILITY
 	dbw 33, DRAGON_TAIL
 	dbw 39, AQUA_TAIL
-	dbw 47, DRAGON_RUSH
-	dbw 53, SAFEGUARD
+	dbw 50, DRAGON_RUSH
+	dbw 56, SAFEGUARD
 	dbw 61, DRAGON_DANCE
 	dbw 67, OUTRAGE
 	dbw 75, HYPER_BEAM
@@ -2945,7 +2945,7 @@ LarvitarEvosAttacks:
 	db 0 ; no more level-up moves
 
 PupitarEvosAttacks:
-	dbbw EVOLVE_LEVEL, 55, TYRANITAR
+	dbbw EVOLVE_LEVEL, 40, TYRANITAR
 	db 0 ; no more evolutions
 	dbw 1, BULLDOZE
 	dbw 1, ROCK_THROW
@@ -2975,9 +2975,9 @@ TyranitarEvosAttacks:
 	dbw 23, SCARY_FACE
 	dbw 30, THRASH
 	dbw 34, DARK_PULSE
-	dbw 41, PAYBACK
-	dbw 47, CRUNCH
-	dbw 54, EARTHQUAKE
+	dbw 43, PAYBACK
+	dbw 50, CRUNCH
+	dbw 57, EARTHQUAKE
 	dbw 63, STONE_EDGE
 	dbw 73, HYPER_BEAM
 	dbw 82, GIGA_IMPACT

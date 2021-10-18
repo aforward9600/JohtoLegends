@@ -1873,7 +1873,7 @@ DodrioEvosAttacks:
 	db 0 ; no more level-up moves
 
 SeelEvosAttacks:
-	dbbw EVOLVE_LEVEL, 34, DEWGONG
+	dbbw EVOLVE_LEVEL, 28, DEWGONG
 	db 0 ; no more evolutions
 	dbw 1, HEADBUTT
 	dbw 3, GROWL
@@ -2812,8 +2812,8 @@ MimeJrEvosAttacks:
 
 MrMimeEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, BARRIER
 	dbw 1, CONFUSION
+	dbw 1, BARRIER
 	dbw 1, MAGICAL_LEAF
 	dbw 8, MEDITATE
 	dbw 11, DOUBLESLAP

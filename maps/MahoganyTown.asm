@@ -92,22 +92,6 @@ MahoganyTownGrampsText:
 	cont "and therefore they"
 	cont "multiply."
 
-	para "There are Snorunt"
-	line "in Ice Path, Ralts"
-	cont "on Route 43,"
-
-	para "Croagunk, Cacnea"
-	line "and Electrike at"
-	cont "the Lake of Rage."
-
-	para "There's even Budew"
-	line "on Route 44."
-
-	para "Not to mention the"
-	line "Duskull in the"
-	cont "Burned Tower of"
-	cont "Ecruteak City."
-
 	para "The League and"
 	line "locals have begun"
 	cont "concentrated eff-"

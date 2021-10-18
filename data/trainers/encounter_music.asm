@@ -82,3 +82,6 @@ TrainerEncounterMusic::
 	db MUSIC_ROCKET_ENCOUNTER      ; miyamoto
 	db MUSIC_LASS_ENCOUNTER        ; tourist
 	db MUSIC_HIKER_ENCOUNTER       ; engineer
+	db MUSIC_ROCKET_ENCOUNTER      ; mninjam
+	db MUSIC_ROCKET_ENCOUNTER      ; mninjaf
+	db MUSIC_RIVAL_ENCOUNTER       ; depresseddahlia

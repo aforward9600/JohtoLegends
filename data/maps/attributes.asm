@@ -375,11 +375,11 @@ ENDM
 	connection south, LavenderTown, LAVENDER_TOWN, 0
 
 	map_attributes Route47, ROUTE_47, $35, NORTH
-	connection north, Route48, ROUTE_48, 1
+	connection north, Route48, ROUTE_48, -1
 
 	map_attributes Route48, ROUTE_48, $35, NORTH | SOUTH
 	connection north, WildAreaOutside, WILD_AREA_OUTSIDE, 2
-	connection south, Route47, ROUTE_47, -1
+	connection south, Route47, ROUTE_47, 1
 
 	map_attributes WildAreaOutside, WILD_AREA_OUTSIDE, $35, SOUTH
 	connection south, Route48, ROUTE_48, -2

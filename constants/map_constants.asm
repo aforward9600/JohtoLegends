@@ -494,10 +494,10 @@ ENDM
 
 	newgroup
 
-	map_const ROUTE_47,                                    27, 14 ; 1
-	map_const ROUTE_48,                                    15,  9 ; 2
+	map_const ROUTE_47,                                    39, 19 ; 1
+	map_const ROUTE_48,                                    18,  9 ; 2
 	map_const CLIFF_CAVE,                                  10,  9 ; 3
-	map_const WILD_AREA_OUTSIDE,                           10, 11 ; 4
+	map_const WILD_AREA_OUTSIDE,                           11, 11 ; 4
 	map_const WILD_AREA_POKECENTER,                         5,  4 ; 5
 	map_const WILD_AREA_MART,                               6,  4 ; 6
 	map_const WILD_AREA_1,                                  7,  7 ; 7

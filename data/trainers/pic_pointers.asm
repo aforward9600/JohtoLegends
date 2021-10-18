@@ -81,3 +81,6 @@ TrainerPicPointers::
 	dba PasserbyPic
 	dba TouristPic
 	dba EngineerPic
+	dba MahoganyNinjaMPic
+	dba MahoganyNinjaFPic
+	dba DepressedDahliaPic

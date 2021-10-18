@@ -79,4 +79,7 @@ TrainerClassDVs:
 	dn  7,  8,  8,  8 ; PASSERBY
 	dn  7,  8,  8,  8 ; MIYAMOTO
 	dn  7,  8,  8,  8 ; TOURIST
-	dn  9,  8,  8,  8 ; OFFICER
+	dn  9,  8,  8,  8 ; ENGINEER
+	dn 10,  8, 11,  8 ; MNINJA_M
+	dn  8, 10, 11,  8 ; MNINJA_F
+	dn 13, 13, 13, 13 ; DEPRESSED_DAHLIA

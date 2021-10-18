@@ -11,7 +11,11 @@ Dark Zeta and Celadonk for Evolution moves for Pokecrystal16.
 
 Mountvesuvius for Strength Sap and HM Key Items.
 
-Dev727 for alternate Evolution methods.
+Idain, Rangi, WasabiRaptor for EVS.
+
+Rangi and aaaaaa123456789 for items from smashing rocks
+
+Dark Zeta, PiaCarrot, and cardboardbox for new evolution moves and fixing the glitch
 
 New Pokemon cries: chattycrystal team
 
@@ -20,6 +24,8 @@ Calm Mind, Sucker Punch, Dragon Dance, Quiver Dance, Grass Knot: chattycrystal t
 Sucker Punch, Work Up, Aqua Jet, Muddy Water, Rock Blast, Heat Wave, Brick Break, Hurricane, Leaf Blade, Lava Plume Animation: chattycrystal team
 
 Move Steel Slice: Mskd.
+
+Rangi for Route 47 and 48 maps.
 
 Ambipom original sprites from Chaos Rush's 64x64 project.
 

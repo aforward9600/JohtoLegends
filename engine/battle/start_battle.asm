@@ -81,15 +81,15 @@ PlayBattleMusic:
 	ld de, MUSIC_JOHTO_WILD_BATTLE
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jp nz, .done
+	jp z, .done
 	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
-	jr .done
+	jp nz, .done
 
 .kantowild
 	ld de, MUSIC_KANTO_WILD_BATTLE
 	ld a, [wTimeOfDay]
     cp NITE_F
-    jr nz, .done
+    jp nz, .done
     ld de, MUSIC_KANTO_WILD_BATTLE_NIGHT
 	jr .done
 
@@ -116,6 +116,14 @@ PlayBattleMusic:
 	cp SCIENTIST
 	jr z, .done
 	cp MYSTERIOUS
+	jr z, .done
+	cp MNINJA_M
+	jr z, .done
+	cp MNINJA_F
+	jr z, .done
+
+	ld de, MUSIC_UNWAVERING_HEART
+	cp DEPRESSED_DAHLIA
 	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE

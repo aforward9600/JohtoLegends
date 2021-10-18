@@ -1636,3 +1636,8 @@ BallsShop_BagFullText::
 BallsShop_HereYouGoText::
 	text "Here you go!"
 	done
+
+_WarnVBAText::
+	text "Please use a more"
+	line "accurate emulator."
+	done

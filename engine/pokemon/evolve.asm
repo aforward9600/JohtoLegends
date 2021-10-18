@@ -318,7 +318,11 @@ EvolveAfterBattle_MasterLoop:
 	ld [wTempSpecies], a
 	xor a
 	ld [wMonType], a
+	ld a, [wEvolutionOldSpecies]
+	push af
 	call LearnLevelMoves
+	pop af
+	ld [wEvolutionOldSpecies], a
 	ld a, [wTempSpecies]
 	call SetSeenAndCaughtMon
 
@@ -471,29 +475,18 @@ LearnLevelMoves:
     and a
     jr z, .done
 
-; Store the verificaiton byte in register c
-    ld c, a 
+    ld d, a
+	ld a, [wEvolutionOldSpecies]
+	ld e, a
+	ld a, [wCurPartySpecies]
+	cp e
+	ld a, d
+	jr z, .did_not_evolve
 
-	ld a, [wMonDidEvolve]
-	and a
+	cp LEARN_EVO_MOVE
+	jr z, .get_move
 
-; If there was no evolution, do not check
-    jr z, .no_evolve
-
-; Loads the move verificaiton byte back into
-; register a and proceeds with moves learned
-; during evolution
-    ld a, c
-
-    cp LEARN_EVO_MOVE
-    jr z, .get_move
-
-
-; Loads the move verificaiton byte back into
-; register a and proceeds with standard 
-; level up moves
-.no_evolve
-    ld a, c
+.did_not_evolve
     ld b, a
     ld a, [wCurPartyLevel]
     cp b
@@ -537,7 +530,6 @@ LearnLevelMoves:
     predef LearnMove
     pop hl
     jr .find_move
-
 
 .done
     ld a, [wCurPartySpecies]

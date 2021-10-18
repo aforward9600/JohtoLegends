@@ -37,6 +37,7 @@
 	const TILESET_OMANYTE_WORD_ROOM    ; 23
 	const TILESET_AERODACTYL_WORD_ROOM ; 24
 	const TILESET_ROUTE_47             ; 25
+	const TILESET_JOHTO_3              ; 26
 
 ; bg palette values (see gfx/tilesets/*_palette_map.asm)
 ; TilesetBGPalette indexes (see gfx/tilesets/bg_tiles.pal)

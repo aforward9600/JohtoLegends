@@ -621,6 +621,7 @@ CHRIS EQU __enum__
 	trainerclass ARIANA ; 37
 	const ARIANA_1
 	const ARIANA_2
+	const ARIANA_3
 
 	trainerclass SAGE ; 38
 	const CHOW
@@ -724,6 +725,8 @@ CHRIS EQU __enum__
 	const RIVAL3_B_DRATINI
 	const RIVAL3_C_LARVITAR
 	const RIVAL3_C_DRATINI
+	const RIVAL3_D_LARVITAR
+	const RIVAL3_D_DRATINI
 
 	trainerclass RIVAL4 ; 45
 	const RIVAL4_A_LARVITAR
@@ -733,6 +736,8 @@ CHRIS EQU __enum__
 	const RIVAL4_B_DRATINI
 	const RIVAL4_C_LARVITAR
 	const RIVAL4_C_DRATINI
+	const RIVAL4_D_LARVITAR
+	const RIVAL4_D_DRATINI
 
 	trainerclass BREEDER ; 46
 	const EMILY
@@ -778,6 +783,22 @@ CHRIS EQU __enum__
 	const OSWALD
 	const DANTE
 	const RUDY
+
+	trainerclass MNINJA_M ; 50
+	const MNINJA_M1
+	const MNINJA_M2
+	const MNINJA_M3
+	const MNINJA_M4
+
+	trainerclass MNINJA_F ; 51
+	const MNINJA_F1
+	const MNINJA_F2
+	const MNINJA_F3
+	const MNINJA_F4
+
+	trainerclass DEPRESSED_DAHLIA ; 52
+	const DAHLIA_LARVITAR_1
+	const DAHLIA_DRATINI_2
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__
