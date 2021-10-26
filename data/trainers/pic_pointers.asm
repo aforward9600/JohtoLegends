@@ -84,3 +84,4 @@ TrainerPicPointers::
 	dba MahoganyNinjaMPic
 	dba MahoganyNinjaFPic
 	dba DepressedDahliaPic
+	dba DepressedDracoPic

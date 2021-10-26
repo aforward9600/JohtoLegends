@@ -84,3 +84,4 @@ TrainerGroups:
 	dba MahoganyNinjaMGroup
 	dba MahoganyNinjaFGroup
 	dba DepressedDahliaGroup
+	dba DepressedDracoGroup

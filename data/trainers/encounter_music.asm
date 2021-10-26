@@ -85,3 +85,4 @@ TrainerEncounterMusic::
 	db MUSIC_ROCKET_ENCOUNTER      ; mninjam
 	db MUSIC_ROCKET_ENCOUNTER      ; mninjaf
 	db MUSIC_RIVAL_ENCOUNTER       ; depresseddahlia
+	db MUSIC_RIVAL_ENCOUNTER       ; depresseddraco

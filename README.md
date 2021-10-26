@@ -7,6 +7,7 @@ This is a prequel to Pokémon Crystal, where you play as either Draco or
 Dahlia, and travel the Johto Region, collect the eight badges, and discover
 a conspiracy to take over the region from the shadows.
 
+
 Features
 
 Thanks to the expansion, we were able to go beyond the usual 256 limit, and
@@ -37,6 +38,8 @@ New music.
 New trainer sprites and classes.
 
 A list of major gameplay changes can be found in the file 
+
+
 
 Download and Play
 

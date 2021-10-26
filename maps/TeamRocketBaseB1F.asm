@@ -1,66 +1,23 @@
 	object_const_def ; object_event constants
-	const TEAMROCKETBASEB1F_ROCKET1
-	const TEAMROCKETBASEB1F_ROCKET2
-	const TEAMROCKETBASEB1F_SCIENTIST
+	const TEAMROCKETBASEB1F_NINJA1
+	const TEAMROCKETBASEB1F_NINJA2
+	const TEAMROCKETBASEB1F_NINJA3
 	const TEAMROCKETBASEB1F_POKE_BALL1
-	const TEAMROCKETBASEB1F_POKE_BALL2
+	const TEAMROCKETBASEB1F_NINJA4
 	const TEAMROCKETBASEB1F_POKE_BALL3
+	const TEAMROCKETBASEB1F_RIVAL
+	const TEAMROCKETBASEB1F_MIYAMOTO
 
 TeamRocketBaseB1F_MapScripts:
 	db 1 ; scene scripts
 	scene_script .DummyScene ; SCENE_DEFAULT
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_OBJECTS, .HideSecurityGrunt
+	db 0 ; callbacks
 
 .DummyScene:
 	end
 
-.HideSecurityGrunt:
-	disappear TEAMROCKETBASEB1F_ROCKET1
-	return
-
 NoSecurityCamera:
-	end
-
-TrainerCameraGrunt1:
-	opentext
-	writetext CameraGrunt1SeenText
-	waitbutton
-	closetext
-	winlosstext CameraGrunt1BeatenText, 0
-	setlasttalked TEAMROCKETBASEB1F_ROCKET1
-	loadtrainer GRUNTM, GRUNTM_20
-	startbattle
-	disappear TEAMROCKETBASEB1F_ROCKET1
-	reloadmapafterbattle
-	end
-
-TrainerCameraGrunt2:
-	opentext
-	writetext CameraGrunt2SeenText
-	waitbutton
-	closetext
-	winlosstext CameraGrunt2BeatenText, 0
-	setlasttalked TEAMROCKETBASEB1F_ROCKET1
-	loadtrainer GRUNTM, GRUNTM_21
-	startbattle
-	disappear TEAMROCKETBASEB1F_ROCKET1
-	reloadmapafterbattle
-	end
-
-PlaySecurityCameraSounds:
-	playsound SFX_LICK
-	pause 10
-	playsound SFX_LICK
-	pause 10
-	playsound SFX_LICK
-	pause 10
-	playsound SFX_LICK
-	pause 10
-	playsound SFX_LICK
-	pause 10
-	playsound SFX_LICK
 	end
 
 ExplodingTrap1:
@@ -245,7 +202,7 @@ VoltorbExplodingTrap:
 	special FadeInPalettes
 	setlasttalked -1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
-	loadwildmon VOLTORB, 23
+	loadwildmon ELECTRODE, 30
 	startbattle
 	end
 
@@ -255,7 +212,7 @@ GeodudeExplodingTrap:
 	special FadeInPalettes
 	setlasttalked -1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
-	loadwildmon GEODUDE, 21
+	loadwildmon GRAVELER, 29
 	startbattle
 	end
 
@@ -265,7 +222,7 @@ KoffingExplodingTrap:
 	special FadeInPalettes
 	setlasttalked -1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
-	loadwildmon KOFFING, 21
+	loadwildmon KOFFING, 29
 	startbattle
 	end
 
@@ -273,12 +230,146 @@ NoExplodingTrap:
 	end
 
 RivalConfronts1:
+	checkevent EVENT_HIDEOUT_B1F_CONFRONTATION
+	iftrue .ConfrontationOver1
+	applymovement PLAYER, SecurityCameraMovement1
+	turnobject PLAYER, RIGHT
+	sjump RivalConfronts3
+
+.ConfrontationOver1:
 	end
 
 RivalConfronts2:
+	checkevent EVENT_HIDEOUT_B1F_CONFRONTATION
+	iftrue .ConfrontationOver2
+	applymovement PLAYER, SecurityCameraMovement2
+	turnobject PLAYER, RIGHT
+	sjump RivalConfronts3
+
+.ConfrontationOver2:
+	end
+	
+RivalConfronts3:
+	checkevent EVENT_HIDEOUT_B1F_CONFRONTATION
+	iftrue .ConfrontationOver3
+	special FadeOutMusic
+	pause 15
+	opentext
+	writetext ThatAllYouGotText
+	waitbutton
+	closetext
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .RivalConfrontsFemale
+	opentext
+	writetext DahliaIsSilentText
+	waitbutton
+	closetext
+	opentext
+	writetext DahliaSilentAgainText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	jumpstd ninjahideoutclear
+	disappear TEAMROCKETBASEB1F_MIYAMOTO
+	pause 15
+	special FadeInQuickly
+	pause 15
+	opentext
+	writetext DahliaIsSilentText
+	waitbutton
+	closetext
+	applymovement TEAMROCKETBASEB1F_RIVAL, SecurityCameraMovement3
+	pause 15
+	opentext
+	writetext ICouldntDoItText
+	waitbutton
+	closetext
+	special HealParty
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
+	iftrue .HideoutDahliaBattleDratini
+	winlosstext, HideoutRivalDefeatedText, HideoutRivalLostText
+	setlasttalked TEAMROCKETBASEB1F_RIVAL
+	loadtrainer DEPRESSED_DAHLIA, DAHLIA_LARVITAR_1
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .HideoutVictorious1
+
+.HideoutDahliaBattleDratini:
+	winlosstext, HideoutRivalDefeatedText, HideoutRivalLostText
+	setlasttalked TEAMROCKETBASEB1F_RIVAL
+	loadtrainer DEPRESSED_DAHLIA, DAHLIA_DRATINI_1
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .HideoutVictorious1
+
+.RivalConfrontsFemale:
+	opentext
+	writetext DracoIsSilentText
+	waitbutton
+	closetext
+	opentext
+	writetext DracoSilentAgainText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	jumpstd ninjahideoutclear
+	disappear TEAMROCKETBASEB1F_MIYAMOTO
+	pause 15
+	special FadeInQuickly
+	pause 15
+	opentext
+	writetext DracoIsSilentText
+	waitbutton
+	closetext
+	applymovement TEAMROCKETBASEB1F_RIVAL, SecurityCameraMovement3
+	pause 15
+	opentext
+	writetext ICouldntDoItText
+	waitbutton
+	closetext
+	special HealParty
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
+	iftrue .HideoutDracoBattleDratini
+	winlosstext, HideoutRivalDefeatedText, HideoutRivalLostText
+	setlasttalked TEAMROCKETBASEB1F_RIVAL
+	loadtrainer DEPRESSED_DRACO, DRACO_LARVITAR_1
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .HideoutVictorious1
+
+.HideoutDracoBattleDratini:
+	winlosstext, HideoutRivalDefeatedText, HideoutRivalLostText
+	setlasttalked TEAMROCKETBASEB1F_RIVAL
+	loadtrainer DEPRESSED_DRACO, DRACO_DRATINI_1
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .HideoutVictorious1
+
+.HideoutVictorious1:
+	playmusic MUSIC_UNWAVERING_HEART
+	pause 15
+	opentext
+	writetext ThankYouOnceAgainText
+	waitbutton
+	closetext
+	pause 15
+	applymovement TEAMROCKETBASEB1F_RIVAL, SecurityCameraMovement4
+	playsound SFX_EXIT_BUILDING
+	disappear TEAMROCKETBASEB1F_RIVAL
+	setevent EVENT_HIDEOUT_B1F_RIVAL
+	setevent EVENT_HIDEOUT_B1F_CONFRONTATION
+	waitsfx
+	playmapmusic
+	setmapscene MAHOGANY_MART_1F, SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS
 	end
 
-RivalConfronts3:
+.ConfrontationOver3:
 	end
 
 WarpPanelBroke:
@@ -288,24 +379,70 @@ WarpPanelBroke:
 	closetext
 	end
 
-TrainerScientistJed:
-	trainer SCIENTIST, JED, EVENT_BEAT_SCIENTIST_JED, ScientistJedSeenText, ScientistJedBeatenText, 0, .Script
+TrainerMNinjaM5:
+	trainer MNINJA_M, MNINJA_M5, EVENT_HIDEOUT_NINJA9, MNinjaM5SeenText, MNinjaM5SeenText, 0, .Script
 
 .Script:
+	pause 15
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear TEAMROCKETBASEB1F_NINJA1
+	pause 15
+	special FadeInQuickly
 	endifjustbattled
 	opentext
-	writetext ScientistJedAfterBattleText
+	writetext MNinjaM5SeenText
 	waitbutton
 	closetext
 	end
 
-TrainerGruntM16:
-	trainer GRUNTM, GRUNTM_16, EVENT_BEAT_ROCKET_GRUNTM_16, GruntM16SeenText, GruntM16BeatenText, 0, .Script
+TrainerMNinjaF5:
+	trainer MNINJA_F, MNINJA_F5, EVENT_HIDEOUT_NINJA10, MNinjaM5SeenText, MNinjaM5SeenText, 0, .Script
 
 .Script:
+	pause 15
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear TEAMROCKETBASEB1F_NINJA2
+	pause 15
+	special FadeInQuickly
 	endifjustbattled
 	opentext
-	writetext GruntM16AfterBattleText
+	writetext MNinjaM5SeenText
+	waitbutton
+	closetext
+	end
+
+TrainerMNinjaM6:
+	trainer MNINJA_M, MNINJA_M6, EVENT_HIDEOUT_NINJA11, MNinjaM5SeenText, MNinjaM5SeenText, 0, .Script
+
+.Script:
+	pause 15
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear TEAMROCKETBASEB1F_NINJA3
+	pause 15
+	special FadeInQuickly
+	endifjustbattled
+	opentext
+	writetext MNinjaM5SeenText
+	waitbutton
+	closetext
+	end
+
+TrainerMNinjaF6:
+	trainer MNINJA_F, MNINJA_F6, EVENT_HIDEOUT_NINJA12, MNinjaM5SeenText, MNinjaM5SeenText, 0, .Script
+
+.Script:
+	pause 15
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear TEAMROCKETBASEB1F_NINJA4
+	pause 15
+	special FadeInQuickly
+	endifjustbattled
+	opentext
+	writetext MNinjaM5SeenText
 	waitbutton
 	closetext
 	end
@@ -317,7 +454,7 @@ TeamRocketBaseB1FBookshelf:
 	jumpstd teamrocketoath
 
 TeamRocketBaseB1FSecretSwitch:
-	jumpstd TeamRocketBaseB1FSecretSwitchText
+	jumptext TeamRocketBaseB1FSecretSwitchText
 
 TeamRocketBaseB1FHyperPotion:
 	itemball HYPER_POTION
@@ -325,48 +462,29 @@ TeamRocketBaseB1FHyperPotion:
 TeamRocketBaseB1FNugget:
 	itemball NUGGET
 
-TeamRocketBaseB1FGuardSpec:
-	itemball GUARD_SPEC
+TeamRocketBaseB1FSludgeBomb:
+	itemball TM_SLUDGE_BOMB
 
 TeamRocketBaseB1FHiddenRevive:
 	hiddenitem REVIVE, EVENT_TEAM_ROCKET_BASE_B1F_HIDDEN_REVIVE
 
 SecurityCameraMovement1:
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
+	step DOWN
 	step_end
 
 SecurityCameraMovement2:
-	big_step UP
-	big_step RIGHT
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	turn_head RIGHT
+	step UP
 	step_end
 
 SecurityCameraMovement3:
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step LEFT
-	big_step LEFT
+	step LEFT
 	step_end
 
 SecurityCameraMovement4:
-; he jumps over a trap
-	jump_step UP
-	big_step RIGHT
-	big_step UP
-	big_step UP
-	big_step UP
-	turn_head RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
 	step_end
 
 SecurityCameraMovement5:
@@ -425,28 +543,25 @@ WarpPanelBrokeText:
 	cont "broken."
 	done
 
-CameraGrunt1SeenText:
-	text "Hey!"
-	line "Intruder alert!"
+MNinjaM5SeenText:
+	text "………………………"
 	done
 
-CameraGrunt1BeatenText:
-	text "Dang… I failed…"
+ThatAllYouGotText:
+	text "Miyamoto: That all"
+	line "you got?"
+
+	para "I expected more"
+	line "out of someone"
+	cont "like you."
 	done
 
-CameraGrunt2SeenText:
-	text "It's my turn!"
-	line "There's no escape!"
+DracoIsSilentText:
+	text "Draco:………………………"
 	done
 
-CameraGrunt2BeatenText:
-	text "Surveillance cams"
-	line "are in the #MON"
-	cont "statues."
-
-	para "We'll keep appear-"
-	line "ing until you trip"
-	cont "a secret switch."
+DahliaIsSilentText:
+	text "Dahlia:………………………"
 	done
 
 ScientistJedSeenText:
@@ -458,49 +573,102 @@ ScientistJedSeenText:
 	cont "like you."
 	done
 
-ScientistJedBeatenText:
-	text "I get it…"
+HideoutRivalDefeatedText:
+	text "……………………………"
+
+	para "…I see…"
 	done
 
-ScientistJedAfterBattleText:
-	text "All right. I'll"
-	line "divulge a secret"
-	cont "about our hideout."
-
-	para "That thing on the"
-	line "floor up ahead is"
-	cont "a warp panel."
-
-	para "If you step on it,"
-	line "you'll be warped"
-
-	para "back to the en-"
-	line "trance."
+HideoutRivalLostText:
+	text "…Maybe I'm strong"
+	line "after all…"
 	done
 
-GruntM16SeenText:
-	text "Heheh. Feeling"
-	line "lucky, punk?"
+DahliaSilentAgainText:
+	text "Miyamoto: Silent"
+	line "again, huh?"
 
-	para "Go ahead, take"
-	line "another step."
+	para "Pathetic."
 
-	para "We've got traps"
-	line "set in the floor!"
+	para "Oh, look who it"
+	line "is."
+
+	para "Come to help your"
+	line "friend?"
+
+	para "She needs all the"
+	line "help she can get,"
+	cont "judging by her"
+	cont "battle skills."
+
+	para "I'd like to stay"
+	line "and have some fun,"
+	cont "but I have some"
+	cont "business to attend"
+	cont "to."
+
+	para "Later."
 	done
 
-GruntM16BeatenText:
-	text "Kaboom!"
+DracoSilentAgainText:
+	text "Miyamoto: Silent"
+	line "again, huh?"
+
+	para "Pathetic."
+
+	para "Oh, look who it"
+	line "is."
+
+	para "Come to help your"
+	line "friend?"
+
+	para "He needs all the"
+	line "help he can get,"
+	cont "judging by his"
+	cont "battle skills."
+
+	para "I'd like to stay"
+	line "and have some fun,"
+	cont "but I have some"
+	cont "business to attend"
+	cont "to."
+
+	para "Later."
 	done
 
-GruntM16AfterBattleText:
-	text "I don't even know"
-	line "where the traps"
-	cont "are planted."
+ICouldntDoItText:
+	text "…Sniff…"
 
-	para "You'll just have"
-	line "to collect your"
-	cont "courage and walk."
+	para "D-dang it…"
+
+	para "<PLAYER>, I-"
+
+	para "I couldn't do"
+	line "it…"
+	
+	para "She's too strong"
+	line "for me…"
+
+	para "…<PLAYER>, please,"
+	line "battle me…"
+	
+	para "I need to know if"
+	line "I'm strong enough…"
+	done
+
+ThankYouOnceAgainText:
+	text "…Thank you <PLAYER>…"
+
+	para "I know I need to"
+	line "get stronger…"
+
+	para "For my #mon's"
+	line "sake…"
+
+	para "…Let's go…"
+
+	para "…Let's leave this"
+	line "place behind…"
 	done
 
 TeamRocketBaseB1FSecurityCameraText:
@@ -559,8 +727,8 @@ TeamRocketBaseB1F_MapEvents:
 	coord_event  4, 13, SCENE_DEFAULT, ExplodingTrap21
 	coord_event  5, 13, SCENE_DEFAULT, ExplodingTrap22
 	coord_event 21,  1, SCENE_DEFAULT, RivalConfronts1
-	coord_event 21,  1, SCENE_DEFAULT, RivalConfronts2
-	coord_event 21,  1, SCENE_DEFAULT, RivalConfronts3
+	coord_event 21,  2, SCENE_DEFAULT, RivalConfronts3
+	coord_event 21,  3, SCENE_DEFAULT, RivalConfronts2
 	coord_event  5, 15, SCENE_DEFAULT, WarpPanelBroke
 
 	db 9 ; bg events
@@ -574,10 +742,12 @@ TeamRocketBaseB1F_MapEvents:
 	bg_event 21, 11, BGEVENT_READ, TeamRocketBaseB1FBookshelf
 	bg_event  3, 11, BGEVENT_ITEM, TeamRocketBaseB1FHiddenRevive
 
-	db 6 ; object events
-	object_event  0,  0, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_SECURITY_GRUNTS
-	object_event  2,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM16, EVENT_TEAM_ROCKET_BASE_POPULATION
-	object_event 18, 12, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerScientistJed, EVENT_TEAM_ROCKET_BASE_POPULATION
+	db 8 ; object events
+	object_event 16, 15, SPRITE_NINJA, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, TrainerMNinjaM5, EVENT_HIDEOUT_NINJA9
+	object_event  2,  4, SPRITE_NINJA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 3, TrainerMNinjaF5, EVENT_HIDEOUT_NINJA10
+	object_event 18, 12, SPRITE_NINJA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerMNinjaM6, EVENT_HIDEOUT_NINJA11
 	object_event 27,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB1FHyperPotion, EVENT_TEAM_ROCKET_BASE_B1F_HYPER_POTION
-	object_event 14, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB1FNugget, EVENT_TEAM_ROCKET_BASE_B1F_NUGGET
-	object_event 21, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB1FGuardSpec, EVENT_TEAM_ROCKET_BASE_B1F_GUARD_SPEC
+	object_event 19,  6, SPRITE_NINJA, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 1, TrainerMNinjaF6, EVENT_HIDEOUT_NINJA12
+	object_event 21, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB1FSludgeBomb, EVENT_GOT_TM36_SLUDGE_BOMB
+	object_event 23,  2, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_B1F_RIVAL
+	object_event 25,  2, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_BF1_MIYAMOTO

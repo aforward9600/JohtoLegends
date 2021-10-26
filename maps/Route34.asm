@@ -308,9 +308,9 @@ PlayerMoveIntoTrapMovement:
 	step_end
 
 NinjaAmbushesYou1Movement:
-	step DOWN
-	step DOWN
-	step DOWN
+	big_step DOWN
+	big_step DOWN
+	big_step DOWN
 	step_end
 
 NinjaAmbushesYou2Movement:

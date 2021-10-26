@@ -106,7 +106,7 @@ ENDM
 	map_const OLIVINE_LIGHTHOUSE_4F,                       10,  9 ; 45
 	map_const OLIVINE_LIGHTHOUSE_5F,                       10,  9 ; 46
 	map_const OLIVINE_LIGHTHOUSE_6F,                       10,  9 ; 47
-	map_const MAHOGANY_MART_1F,                             4,  4 ; 48
+	map_const MAHOGANY_MART_1F,                             7,  4 ; 48
 	map_const TEAM_ROCKET_BASE_B1F,                        15,  9 ; 49
 	map_const TEAM_ROCKET_BASE_B2F,                        15,  9 ; 50
 	map_const TEAM_ROCKET_BASE_B3F,                        15,  9 ; 51
@@ -323,7 +323,7 @@ ENDM
 	map_const OLIVINE_PORT_PASSAGE,                        10,  9 ;  8
 	map_const VERMILION_PORT_PASSAGE,                      10,  9 ;  9
 	map_const MOUNT_MOON_SQUARE,                           15,  9 ; 10
-	map_const MOUNT_MOON_GIFT_SHOP,                         4,  4 ; 11
+	map_const MOUNT_MOON_GIFT_SHOP,                         4,  6 ; 11
 	map_const TIN_TOWER_ROOF,                              10,  9 ; 12
 
 	newgroup                                                      ; 16

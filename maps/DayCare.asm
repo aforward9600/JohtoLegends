@@ -164,14 +164,16 @@ MrPokemonLegendary:
 .PlayerLeavesDown:
 	applymovement PLAYER, DayCarePlayerMovement2
 	playsound SFX_EXIT_BUILDING
-	pause 15
+	disappear PLAYER
+	special FadeOutPalettes
 	warpfacing LEFT, ROUTE_34, 11, 14
 	end
 
 .PlayerLeaves:
 	applymovement PLAYER, DayCarePlayerMovement1
 	playsound SFX_EXIT_BUILDING
-	pause 15
+	disappear PLAYER
+	special FadeOutPalettes
 	warpfacing LEFT, ROUTE_34, 11, 14
 	end
 

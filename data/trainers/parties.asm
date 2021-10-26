@@ -6215,7 +6215,6 @@ MahoganyNinjaMGroup:
 	dw BEEDRILL
 	db -1 ; end
 
-
 	next_list_item ; MNINJA_M (3)
 	db "Ninja@", TRAINERTYPE_NORMAL
 	db 33
@@ -6234,6 +6233,30 @@ MahoganyNinjaMGroup:
 	dw SKARMORY
 	db 34
 	dw DEWGONG
+	db -1 ; end
+
+	next_list_item ; MNINJA_M (5)
+	db "Ninja@", TRAINERTYPE_NORMAL
+	db 34
+	dw HYPNO
+	db 34
+	dw URSARING
+	db 34
+	dw MACHAMP
+	db 35
+	dw ARCANINE
+	db -1 ; end
+
+	next_list_item ; MNINJA_M (6)
+	db "Ninja@", TRAINERTYPE_NORMAL
+	db 34
+	dw JUMPLUFF
+	db 34
+	dw HERACROSS
+	db 34
+	dw RATICATE
+	db 35
+	dw WEEZING
 	db -1 ; end
 
 	end_list_items
@@ -6275,6 +6298,30 @@ MahoganyNinjaFGroup:
 	dw DODRIO
 	db -1 ; end
 
+	next_list_item ; MNINJA_F (5)
+	db "Ninja@", TRAINERTYPE_NORMAL
+	db 34
+	dw PORYGON2
+	db 34
+	dw ARIADOS
+	db 34
+	dw GOLBAT
+	db 35
+	dw MISDREAVUS
+	db -1 ; end
+
+	next_list_item ; MNINJA_F (6)
+	db "Ninja@", TRAINERTYPE_NORMAL
+	db 34
+	dw GRANBULL
+	db 34
+	dw NINETALES
+	db 34
+	dw DEWGONG
+	db 35
+	dw SUDOWOODO
+	db -1 ; end
+
 	end_list_items
 
 DepressedDahliaGroup:
@@ -6294,6 +6341,37 @@ DepressedDahliaGroup:
 
 	next_list_item ; RIVAL3 (6)
 	db "Dahlia@", TRAINERTYPE_NORMAL
+	db 36
+	dw POLIWRATH
+	db 36
+	dw PILOSWINE
+	db 37
+	dw SYLVEON
+	db 37
+	dw MAGNETON
+	db 38
+	dw DRAGONAIR
+	db -1 ; end
+
+	end_list_items
+
+DepressedDracoGroup:
+	next_list_item ; RIVAL4 (6)
+	db "Draco@", TRAINERTYPE_NORMAL
+	db 36
+	dw POLIWRATH
+	db 36
+	dw PILOSWINE
+	db 37
+	dw SYLVEON
+	db 37
+	dw MAGNETON
+	db 38
+	dw PUPITAR
+	db -1 ; end
+
+	next_list_item ; RIVAL4 (6)
+	db "Draco@", TRAINERTYPE_NORMAL
 	db 36
 	dw POLIWRATH
 	db 36

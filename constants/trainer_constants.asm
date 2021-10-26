@@ -789,16 +789,24 @@ CHRIS EQU __enum__
 	const MNINJA_M2
 	const MNINJA_M3
 	const MNINJA_M4
+	const MNINJA_M5
+	const MNINJA_M6
 
 	trainerclass MNINJA_F ; 51
 	const MNINJA_F1
 	const MNINJA_F2
 	const MNINJA_F3
 	const MNINJA_F4
+	const MNINJA_F5
+	const MNINJA_F6
 
 	trainerclass DEPRESSED_DAHLIA ; 52
 	const DAHLIA_LARVITAR_1
-	const DAHLIA_DRATINI_2
+	const DAHLIA_DRATINI_1
+
+	trainerclass DEPRESSED_DRACO ; 52
+	const DRACO_LARVITAR_1
+	const DRACO_DRATINI_1
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

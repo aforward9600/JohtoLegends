@@ -54,6 +54,7 @@ StdScripts::
 	dba HappinessCheckScript
 	dba GymStatue3Script
 	dba GymStatue4Script
+	dba NinjaHideoutClear
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -631,6 +632,9 @@ InitializeEventsScript:
 	setevent EVENT_ROUTE_34_NINJA
 	setevent EVENT_GOLDENROD_TOWER_RIVAL_2
 	setevent EVENT_ROUTE_44_REMATCH
+	setevent EVENT_MART_RIVAL
+	setevent EVENT_MART_SHERLES
+	setevent EVENT_MART_KOGA
 	return
 
 AskNumber1MScript:
@@ -1939,6 +1943,25 @@ GymStatue4Script:
 	farwritetext GymStatue_CityGymText
 	waitbutton
 	closetext
+	end
+
+NinjaHideoutClear:
+	setevent EVENT_HIDEOUT_NINJA
+	setevent EVENT_HIDEOUT_NINJA2
+	setevent EVENT_HIDEOUT_NINJA3
+	setevent EVENT_HIDEOUT_NINJA4
+	setevent EVENT_HIDEOUT_NINJA5
+	setevent EVENT_HIDEOUT_NINJA6
+	setevent EVENT_HIDEOUT_NINJA7
+	setevent EVENT_HIDEOUT_NINJA8
+	setevent EVENT_HIDEOUT_NINJA9
+	setevent EVENT_HIDEOUT_NINJA10
+	setevent EVENT_HIDEOUT_NINJA11
+	setevent EVENT_HIDEOUT_NINJA12
+	setevent EVENT_HIDEOUT_BF1_MIYAMOTO
+	setevent EVENT_TEAM_ROCKET_BASE_POPULATION
+	clearevent EVENT_MART_RIVAL
+	setevent EVENT_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART
 	end
 
 Movement_ContestResults_WalkAfterWarp:

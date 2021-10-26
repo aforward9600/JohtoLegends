@@ -95,6 +95,7 @@ TeamRocketBaseJailRivalScript:
 	turnobject PLAYER, UP
 	turnobject TEAMROCKETBASEJAIL_RIVAL, UP
 	playsound SFX_ENTER_DOOR
+	pause 15
 	moveobject TEAMROCKETBASEJAIL_KOGA, 4, 2
 	appear TEAMROCKETBASEJAIL_KOGA
 	applymovement TEAMROCKETBASEJAIL_KOGA, ArianaShowsUpMovement

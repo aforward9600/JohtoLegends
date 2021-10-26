@@ -1505,32 +1505,32 @@ JohtoGrassWildMons:
 	map_id ROUTE_34
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 10, SNUBBULL
-	dbw 11, RATTATA
-	dbw 12, PIDGEY
-	dbw 10, ABRA
-	dbw 12, JIGGLYPUFF
-	dbw 10, DITTO
-	dbw 10, DITTO
-	dbw 10, DITTO
+	dbw 25, GRANBULL
+	dbw 25, DROWZEE
+	dbw 25, PIDGEOTTO
+	dbw 26, JIGGLYPUFF
+	dbw 26, HYPNO
+	dbw 27, DITTO
+	dbw 27, DITTO
+	dbw 27, DITTO
 	; day
-	dbw 10, SNUBBULL
-	dbw 11, RATTATA
-	dbw 12, PIDGEY
-	dbw 10, ABRA
-	dbw 12, JIGGLYPUFF
-	dbw 10, DITTO
-	dbw 10, DITTO
-	dbw 10, DITTO
+	dbw 25, GRANBULL
+	dbw 25, DROWZEE
+	dbw 25, PIDGEOTTO
+	dbw 26, JIGGLYPUFF
+	dbw 26, HYPNO
+	dbw 27, DITTO
+	dbw 27, DITTO
+	dbw 27, DITTO
 	; nite
-	dbw 12, DROWZEE
-	dbw 11, RATTATA
-	dbw 12, HOOTHOOT
-	dbw 10, ABRA
-	dbw 12, JIGGLYPUFF
-	dbw 10, DITTO
-	dbw 10, DITTO
-	dbw 10, DITTO
+	dbw 25, GRANBULL
+	dbw 25, DROWZEE
+	dbw 25, NOCTOWL
+	dbw 26, JIGGLYPUFF
+	dbw 26, HYPNO
+	dbw 27, DITTO
+	dbw 27, DITTO
+	dbw 27, DITTO
 
 	map_id ROUTE_35
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

@@ -125,6 +125,8 @@ PlayBattleMusic:
 	ld de, MUSIC_UNWAVERING_HEART
 	cp DEPRESSED_DAHLIA
 	jr z, .done
+	cp DEPRESSED_DRACO
+	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
 	farcall IsKantoGymLeader
@@ -138,10 +140,6 @@ PlayBattleMusic:
 
 	ld de, MUSIC_RIVAL_BATTLE
 	ld a, [wOtherTrainerClass]
-	cp RIVAL1
-	jr z, .done
-	cp RIVAL2
-	jr z, .done
 	cp RIVAL4
 	jr nz, .othertrainer
 	jr .done
