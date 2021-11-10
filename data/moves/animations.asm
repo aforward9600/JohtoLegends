@@ -4684,6 +4684,7 @@ BattleAnim_MorningSun:
 	anim_ret
 
 BattleAnim_Synthesis:
+BattleAnim_Roost:
 	anim_1gfx ANIM_GFX_SHINE
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_18, $0, $1, $40
@@ -6198,20 +6199,6 @@ BattleAnim_DrainingKiss:
     anim_obj ANIM_OBJ_DRAININGKISS, 136, 32, $4
     anim_wait 6
     anim_loop 5, .loop
-    anim_wait 32
-    anim_ret
-
-BattleAnim_Roost:
-    anim_1gfx ANIM_GFX_WIND
-    anim_call BattleAnim_TargetObj_2Row
-    anim_bgeffect ANIM_BG_BOUNCE_DOWN, $0, $1, $0
-    anim_sound 0, 0, SFX_WING_ATTACK
-    anim_wait 4
-    anim_obj ANIM_OBJ_SWAGGER, 72, 88, $44
-    anim_wait 32
-    anim_obj ANIM_OBJ_SWAGGER, 72, 88, $44
-    anim_wait 32
-    anim_incbgeffect ANIM_BG_BOUNCE_DOWN
     anim_wait 32
     anim_ret
 

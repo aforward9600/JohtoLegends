@@ -5,7 +5,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db ICE, PSYCHIC ; type
-	db 45 ; catch rate
+	db 150 ; catch rate
 	db 87 ; base exp
 	db ASPEAR_BERRY, ASPEAR_BERRY ; items
 	db GENDER_F100 ; gender ratio

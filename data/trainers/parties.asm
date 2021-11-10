@@ -5098,26 +5098,26 @@ SageGroup:
 	db -1 ; end
 
 	next_list_item ; SAGE (10)
-	db "GAKU@", TRAINERTYPE_NORMAL
-	db 32
+	db "Gaku@", TRAINERTYPE_NORMAL
+	db 35
 	dw NOCTOWL
-	db 32
+	db 35
 	dw FLAREON
 	db -1 ; end
 
 	next_list_item ; SAGE (11)
-	db "MASA@", TRAINERTYPE_NORMAL
-	db 32
+	db "Masa@", TRAINERTYPE_NORMAL
+	db 35
 	dw NOCTOWL
-	db 32
+	db 35
 	dw JOLTEON
 	db -1 ; end
 
 	next_list_item ; SAGE (12)
-	db "KOJI@", TRAINERTYPE_NORMAL
-	db 32
+	db "Koji@", TRAINERTYPE_NORMAL
+	db 35
 	dw NOCTOWL
-	db 32
+	db 35
 	dw VAPOREON
 	db -1 ; end
 

@@ -45,17 +45,22 @@ Route34IlexForestGateTeacherScript:
 	opentext
 	checkevent EVENT_FOREST_IS_RESTLESS
 	iftrue .ForestIsRestless
-	checkevent EVENT_GOT_TM12_SWEET_SCENT
-	iftrue .GotSweetScent
 	writetext Route34IlexForestGateTeacherText
-	buttonsound
-	verbosegiveitem TM_SUBSTITUTE
-	iffalse .NoRoom
-	setevent EVENT_GOT_TM12_SWEET_SCENT
-.GotSweetScent:
+	yesorno
+	iffalse .Refused
+	loadmoveindex STRENGTH_SAP
+	writetext StrengthSapTutorClear
+	special MoveTutor
+	if_equal $0, .TeachMove
+.Refused:
 	writetext Route34IlexForestGateTeacher_GotSweetScent
 	waitbutton
-.NoRoom:
+	closetext
+	end
+
+.TeachMove
+	writetext StrengthSapTutorTaught
+	waitbutton
 	closetext
 	end
 
@@ -66,9 +71,13 @@ Route34IlexForestGateTeacherScript:
 	end
 
 Route34IlexForestGateButterfreeScript:
+	refreshscreen
+	pokepic BUTTERFREE
+	cry BUTTERFREE
+	waitbutton
+	closepokepic
 	opentext
 	writetext Route34IlexForestGateButterfreeText
-	cry BUTTERFREE
 	waitbutton
 	closetext
 	end
@@ -88,49 +97,67 @@ MovementData_0x62d9a:
 
 Route34IlexForestGateTeacherText:
 	text "Oh, honey. You're"
-	line "making a #DEX?"
+	line "writing a journal?"
 
 	para "It must be hard if"
-	line "#MON won't"
+	line "#mon are too"
+	cont "strong."
 
-	para "appear. Try using"
-	line "this TM."
+	para "I can teach your"
+	line "#mon a move"
+	cont "that will weaken"
+	cont "an opponent's"
+
+	para "Attack and heal"
+	line "your #mon!"
+
+	para "Shall I teach"
+	line "your #mon"
+	cont "Strength Sap?"
 	done
 
 Route34IlexForestGateTeacher_GotSweetScent:
-	text "It's SWEET SCENT."
+	text "Don't say I didn't"
+	line "warn you…"
+	done
 
-	para "Use it wherever"
-	line "#MON appear."
+StrengthSapTutorClear:
+	text ""
+	done
 
-	para "#MON will be"
-	line "enticed by it."
+StrengthSapTutorTaught:
+	text "This should help"
+	line "your #mon stay"
+	cont "healthy!"
 	done
 
 Route34IlexForestGateTeacher_ForestIsRestless:
 	text "Something's wrong"
-	line "in ILEX FOREST…"
+	line "in Ilex Forest…"
 
-	para "You should stay"
-	line "away right now."
+	para "Sorry, I can't"
+	line "teach your #mon"
+
+	para "Strength Sap right"
+	line "now."
 	done
 
 Route34IlexForestGateButterfreeText:
-	text "BUTTERFREE: Freeh!"
+	text "Butterfree: Freeh!"
 	done
 
 Route34IlexForestGateLassText:
-	text "Did you see the"
-	line "shrine honoring"
-	cont "the protector?"
+	text "Apparently, the"
+	line "rumors of the"
+	cont "Forest's protector"
 
-	para "It watches over"
-	line "the FOREST from"
-	cont "across time."
+	para "appearing was just"
+	line "a prank!"
 
-	para "I think that it"
-	line "must be a grass-"
-	cont "type #MON."
+	para "Dang it!"
+
+	para "I was hoping to"
+	line "see it!"
 	done
 
 Route34IlexForestGate_MapEvents:
@@ -148,7 +175,7 @@ Route34IlexForestGate_MapEvents:
 	db 0 ; bg events
 
 	db 4 ; object events
-	object_event  9,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateTeacherScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_BEHIND_COUNTER
-	object_event  9,  4, SPRITE_BUTTERFREE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateButterfreeScript, -1
-	object_event  3,  4, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateLassScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS
-	object_event  5,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateTeacherScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_IN_WALKWAY
+	object_event  9,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateTeacherScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_BEHIND_COUNTER
+	object_event  9,  4, SPRITE_BUTTERFREE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateButterfreeScript, -1
+	object_event  3,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateLassScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS
+	object_event  5,  7, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateTeacherScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_IN_WALKWAY

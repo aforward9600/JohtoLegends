@@ -1,5 +1,6 @@
 	object_const_def ; object_event constants
 	const DARKCAVENEWENTRANCE_HIKER
+	const DARKCAVENEWENTRANCE_POKE_BALL
 
 DarkCaveNewEntrance_MapScripts:
 	db 0 ; scene scripts
@@ -24,6 +25,9 @@ DarkCaveNewEntranceHikerScript:
 	closetext
 	turnobject DARKCAVENEWENTRANCE_HIKER, RIGHT
 	end
+
+DarkCaveNewEntrancePotion:
+	itemball POTION
 
 DarkCaveNewEntranceHikerText1:
 	text "Hey! Get out of"
@@ -79,5 +83,7 @@ DarkCaveNewEntrance_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event  7,  3, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveNewEntranceHikerScript, -1
+	object_event  2,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveNewEntrancePotion, EVENT_DARK_CAVE_NEW_ENTRANCE_POTION
+

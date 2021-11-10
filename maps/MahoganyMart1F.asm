@@ -41,7 +41,7 @@ MahoganyMart1F_MapScripts:
 	return
 
 .SherlesStays:
-	checkevent EVENT_MART_SHERLES
+	checkevent EVENT_MAHOGANY_MART_OWNERS
 	iftrue .SherlesLeaves
 	moveobject MAHOGANYMART1F_DRAGON, 9, 6
 	return
@@ -52,69 +52,101 @@ MahoganyMart1F_MapScripts:
 MahogayMart1FPharmacistScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_CHAMPION_LANCE
-	iftrue .LanceEntered
 	pokemart MARTTYPE_STANDARD, MART_MAHOGANY_1
 	closetext
-	end
-
-.LanceEntered:
 	end
 
 MahogayMart1FBuenaScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_CHAMPION_LANCE
-	iftrue .LanceEntered
 	writetext MahogayMart1FBuenaText
 	waitbutton
 	closetext
 	end
 
-.LanceEntered:
-	end
-
-MahoganyMart1FLanceUncoversStaircaseScript:
+SherlesTriesToArrestKoga:
+	pause 10
+	turnobject MAHOGANYMART1F_LANCE, RIGHT
+	turnobject PLAYER, LEFT
 	pause 15
 	opentext
-	writetext UnknownText_0x6c52a
-	pause 15
-	closetext
-	playsound SFX_TACKLE
-	applymovement MAHOGANYMART1F_DRAGON, MovementData_0x6c3f6
-	applymovement MAHOGANYMART1F_BUENA, MovementData_0x6c3fb
-	pause 15
-	disappear MAHOGANYMART1F_DRAGON
-	pause 15
-	applymovement MAHOGANYMART1F_LANCE, MovementData_0x6c407
-	opentext
-	writetext UnknownText_0x6c549
+	writetext TheresNobodyHereText
 	waitbutton
 	closetext
-	follow MAHOGANYMART1F_LANCE, PLAYER
-	applymovement MAHOGANYMART1F_LANCE, MovementData_0x6c40a
-	applymovement MAHOGANYMART1F_PHARMACIST, MovementData_0x6c403
-	applymovement MAHOGANYMART1F_LANCE, MovementData_0x6c40e
-	stopfollow
-	opentext
-	writetext UnknownText_0x6c59e
-	waitbutton
-	showemote EMOTE_SHOCK, MAHOGANYMART1F_PHARMACIST, 10
-	playsound SFX_FAINT
-	changeblock 10, 2, $1e ; stairs
-	reloadmappart
-	closetext
-	setevent EVENT_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART
-	turnobject MAHOGANYMART1F_LANCE, LEFT
-	opentext
-	writetext UnknownText_0x6c5ba
-	waitbutton
-	closetext
-	applymovement MAHOGANYMART1F_LANCE, MovementData_0x6c412
+	pause 15
+	showemote EMOTE_SHOCK, MAHOGANYMART1F_LANCE, 10
 	playsound SFX_EXIT_BUILDING
+	turnobject PLAYER, DOWN
+	turnobject MAHOGANYMART1F_LANCE, DOWN
+	moveobject MAHOGANYMART1F_DRAGON, 10, 7
+	turnobject MAHOGANYMART1F_DRAGON, UP
+	appear MAHOGANYMART1F_DRAGON
+	applymovement MAHOGANYMART1F_DRAGON, MovementData_0x6c3f6
+	opentext
+	writetext ThankGoodnessIFoundYouText
+	waitbutton
+	closetext
+	pause 15
+	playsound SFX_EXIT_BUILDING
+	pause 10
+	moveobject MAHOGANYMART1F_KOGA, 13, 3
+	appear MAHOGANYMART1F_KOGA
+	showemote EMOTE_SHOCK, MAHOGANYMART1F_DRAGON, 10
+	opentext
+	writetext TheresOneNowText
+	waitbutton
+	closetext
+	applymovement MAHOGANYMART1F_DRAGON, SherlesMovesRightMovement
+	applymovement PLAYER, PlayerMovesOutOfWayMovement
+	turnobject PLAYER, RIGHT
+	turnobject MAHOGANYMART1F_LANCE, RIGHT
+	applymovement MAHOGANYMART1F_DRAGON, SherlesWalksToKogaMovement
+	opentext
+	writetext HoldItRightThereNinjaText
+	waitbutton
+	closetext
+	pause 10
+	turnobject MAHOGANYMART1F_DRAGON, LEFT
+	opentext
+	writetext WaitWhatWasThatText
+	waitbutton
+	closetext
+	pause 10
+	turnobject MAHOGANYMART1F_DRAGON, RIGHT
+	opentext
+	writetext MyApologiesText
+	waitbutton
+	closetext
+	opentext
+	writetext DontWorryAboutItText
+	waitbutton
+	closetext
+	applymovement MAHOGANYMART1F_KOGA, KogaLeavesMartMovement
+	disappear MAHOGANYMART1F_KOGA
+	playsound SFX_EXIT_BUILDING
+	setevent EVENT_MART_KOGA
+	pause 10
+	turnobject MAHOGANYMART1F_DRAGON, LEFT
+	opentext
+	writetext IllKeepInvestigatingText
+	waitbutton
+	closetext
+	applymovement MAHOGANYMART1F_DRAGON, SherlesMovesIntoPlaceAgainMovement
+	turnobject PLAYER, DOWN
+	turnobject MAHOGANYMART1F_LANCE, UP
+	opentext
+	writetext MaybeWeShouldLeaveText
+	waitbutton
+	closetext
+	applymovement MAHOGANYMART1F_LANCE, RivalLeavesMartMovement
 	disappear MAHOGANYMART1F_LANCE
+	playsound SFX_EXIT_BUILDING
+	setevent EVENT_MART_RIVAL
+	clearevent EVENT_MAHOGANY_MART_OWNERS
 	setscene SCENE_MAHOGANYMART1F_NOTHING
-	waitsfx
+	clearevent EVENT_MART_SHERLES
+	setevent EVENT_CLEARED_RADIO_TOWER
+	setevent EVENT_WHIRL_ISLAND_SAGE_2
 	end
 
 MahogayMart1FGrannyScript:
@@ -132,51 +164,57 @@ MartSherlesScript:
 	closetext
 	end
 
+MartRival:
+	jumptextfaceplayer EmptyHuhText
+
 BrokenRadio:
 	jumptext BrokenRadioText
 
 MovementData_0x6c3f6:
-	fix_facing
-	big_step LEFT
+	big_step UP
+	big_step UP
+	step_end
+
+SherlesMovesRightMovement:
 	big_step RIGHT
-	remove_fixed_facing
 	step_end
 
-MovementData_0x6c3fb:
-	fix_facing
+PlayerMovesOutOfWayMovement:
+	big_step UP
 	big_step LEFT
-	remove_fixed_facing
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
 	step_end
 
-MovementData_0x6c403:
-	fix_facing
-	big_step LEFT
-	remove_fixed_facing
+SherlesWalksToKogaMovement:
+	big_step UP
+	big_step UP
+	big_step RIGHT
 	step_end
 
-MovementData_0x6c407:
-	slow_step LEFT
-	turn_head DOWN
+KogaLeavesMartMovement:
+	step UP
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step LEFT
+	step DOWN
 	step_end
 
-MovementData_0x6c40a:
-	slow_step RIGHT
-	slow_step UP
-	slow_step UP
+SherlesMovesIntoPlaceAgainMovement:
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
 	step_end
 
-MovementData_0x6c40e:
-	slow_step UP
-	slow_step RIGHT
-	slow_step RIGHT
-	step_end
-
-MovementData_0x6c412:
-	slow_step RIGHT
+RivalLeavesMartMovement:
+	step DOWN
+	step DOWN
+	step DOWN
 	step_end
 
 UnknownText_0x6c414:
@@ -201,39 +239,157 @@ MahogayMart1FBuenaText:
 	cont "different."
 	done
 
+TheresNobodyHereText:
+	text "Hm…"
+
+	para "That weird shop"
+	line "keep is gone…"
+
+	para "Maybe he was one"
+	line "of them?"
+	done
+
+ThankGoodnessIFoundYouText:
+	text "I found you two!"
+
+	para "Thank goodness!"
+
+	para "I received a"
+	line "report that two"
+	cont "teens disappeared"
+	cont "from Route 34."
+
+	para "Tell me, what"
+	line "happened?"
+
+	para "………………………………………………"
+	
+	para "So, you were kid-"
+	line "napped by ninjas?"
+
+	para "And they're with"
+	line "those black-"
+	cont "clothed people"
+	cont "from before?"
+
+	para "………………Normally,"
+	line "I'd say that's"
+	cont "crazy, but after"
+	cont "recent events,"
+
+	para "it's most likely"
+	line "true."
+
+	para "<PLAYER>, I'd like"
+	line "to apologize for"
+	cont "my earlier"
+	cont "suspicions."
+
+	para "You're as much as"
+	line "a victim as others"
+	cont "in this whole"
+	cont "situation."
+	done
+
 MartSherlesText:
 	text "Hm…"
 
 	para "Ninjas, huh?"
 	done
 
-UnknownText_0x6c52a:
-	text "LANCE: DRAGONITE,"
-	line "HYPER BEAM."
+TheresOneNowText:
+	text "Hold on!"
+
+	para "There's one of"
+	line "those ninjas"
+	cont "right now!"
 	done
 
-UnknownText_0x6c549:
-	text "What took you,"
-	line "<PLAY_G>?"
+HoldItRightThereNinjaText:
+	text "Hold it right"
+	line "there, ninja!"
 
-	para "Just as I thought,"
-	line "that strange radio"
+	para "You're under"
+	line "arrest for"
+	cont "kidnapping!"
 
-	para "signal is coming"
-	line "from here."
+	para "Among other"
+	line "things!"
 	done
 
-UnknownText_0x6c59e:
-	text "The stairs are"
-	line "right here."
+WaitWhatWasThatText:
+	text "……………Wait,"
+	line "what was that?"
+
+	para "He's the one"
+	line "that saved you?"
+
+	para "……………Ah, I see…"
 	done
 
-UnknownText_0x6c5ba:
-	text "LANCE: <PLAY_G>, we"
-	line "should split up to"
+MyApologiesText:
+	text "My apologies, sir."
 
-	para "check this place."
-	line "I'll go first."
+	para "I almost made a"
+	line "terrible mistake."
+	done
+
+DontWorryAboutItText:
+	text "Koga: Don't worry"
+	line "about it."
+
+	para "I am just glad"
+	line "that I was able to"
+	cont "help them, even"
+	cont "if it led to me"
+	cont "abandoning my"
+	cont "clan…"
+
+	para "I must go now."
+
+	para "They will try to"
+	line "find me, now that"
+	cont "I am branded as a"
+	cont "traitor."
+
+	para "Perhaps our sister"
+	line "clan in Fuchsia"
+	cont "will accept me."
+
+	para "I hope to meet"
+	line "again someday."
+
+	para "Farewell."
+	done
+
+IllKeepInvestigatingText:
+	text "You two should get"
+	line "out of here."
+
+	para "Try to leave this"
+	line "mess to us."
+
+	para "I'll start an"
+	line "investigation"
+	cont "here, so you can"
+	cont "come back if you"
+	cont "need to talk to"
+	cont "someone."
+	done
+
+MaybeWeShouldLeaveText:
+	text "………Maybe we should"
+	line "leave now."
+
+	para "I'm going to Bell"
+	line "Tower, like Mr."
+	cont "#mon said."
+
+	para "See you."
+	done
+
+EmptyHuhText:
+	text "Empty, huh?"
 	done
 
 BrokenRadioText:
@@ -251,7 +407,8 @@ MahoganyMart1F_MapEvents:
 	warp_event 10,  7, MAHOGANY_TOWN, 1
 	warp_event 13,  3, TEAM_ROCKET_BASE_B1F, 1
 
-	db 0 ; coord events
+	db 1 ; coord events
+	coord_event 11,  4, SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS, SherlesTriesToArrestKoga
 
 	db 1 ; bg events
 	bg_event  6,  1, BGEVENT_READ, BrokenRadio
@@ -259,7 +416,7 @@ MahoganyMart1F_MapEvents:
 	db 6 ; object events
 	object_event 10,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahogayMart1FPharmacistScript, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event  8,  6, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahogayMart1FBuenaScript, EVENT_TEAM_ROCKET_BASE_POPULATION
-	object_event  0,  0, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MART_RIVAL
-	object_event  0,  0, SPRITE_SHERLES, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MartSherlesScript, EVENT_MART_SHERLES
+	object_event  0,  0, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MartRival, EVENT_MART_RIVAL
+	object_event  9,  6, SPRITE_SHERLES, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MartSherlesScript, EVENT_MART_SHERLES
 	object_event  7,  2, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahogayMart1FGrannyScript, EVENT_MAHOGANY_MART_OWNERS
-	object_event  0,  0, SPRITE_KOGA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MART_KOGA
+	object_event  0,  0, SPRITE_KOGA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MART_KOGA

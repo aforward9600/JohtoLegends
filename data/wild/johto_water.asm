@@ -32,24 +32,24 @@ JohtoWaterWildMons:
 
 	map_id SLOWPOKE_WELL_B1F
 	db 2 percent ; encounter rate
-	dbw 15, SLOWPOKE
-	dbw 20, SLOWPOKE
-	dbw 10, SLOWPOKE
-	dbw 10, SLOWPOKE
+	dbw 25, SLOWPOKE
+	dbw 25, SLOWPOKE
+	dbw 30, SLOWBRO
+	dbw 30, SLOWBRO
 
 	map_id SLOWPOKE_WELL_B2F
 	db 2 percent ; encounter rate
-	dbw 15, SLOWPOKE
-	dbw 20, SLOWPOKE
-	dbw 20, SLOWBRO
-	dbw 20, SLOWKING
+	dbw 25, SLOWPOKE
+	dbw 25, SLOWPOKE
+	dbw 30, SLOWKING
+	dbw 30, SLOWKING
 
 	map_id ILEX_FOREST
 	db 2 percent ; encounter rate
-	dbw 15, PSYDUCK
-	dbw 10, PSYDUCK
-	dbw 15, GOLDUCK
-	dbw 15, GOLDUCK
+	dbw 25, PSYDUCK
+	dbw 25, PSYDUCK
+	dbw 30, GOLDUCK
+	dbw 30, GOLDUCK
 
 	map_id MOUNT_MORTAR_1F_OUTSIDE
 	db 4 percent ; encounter rate
@@ -130,17 +130,17 @@ JohtoWaterWildMons:
 
 	map_id ROUTE_30
 	db 2 percent ; encounter rate
+	dbw 25, POLIWAG
 	dbw 20, POLIWAG
-	dbw 15, POLIWAG
-	dbw 20, POLIWHIRL
-	dbw 20, POLIWHIRL
+	dbw 25, POLIWHIRL
+	dbw 25, POLIWHIRL
 
 	map_id ROUTE_31
 	db 2 percent ; encounter rate
 	dbw 20, POLIWAG
 	dbw 15, POLIWAG
-	dbw 20, POLIWHIRL
-	dbw 20, POLIWHIRL
+	dbw 25, POLIWHIRL
+	dbw 25, POLIWHIRL
 
 	map_id ROUTE_32
 	db 6 percent ; encounter rate
@@ -151,17 +151,17 @@ JohtoWaterWildMons:
 
 	map_id ROUTE_34
 	db 6 percent ; encounter rate
-	dbw 20, TENTACOOL
-	dbw 15, TENTACOOL
-	dbw 20, TENTACRUEL
-	dbw 20, POLIWHIRL
+	dbw 27, TENTACOOL
+	dbw 22, TENTACOOL
+	dbw 27, TENTACRUEL
+	dbw 27, POLIWHIRL
 
 	map_id ROUTE_35
 	db 4 percent ; encounter rate
+	dbw 25, PSYDUCK
 	dbw 20, PSYDUCK
-	dbw 15, PSYDUCK
-	dbw 20, GOLDUCK
-	dbw 20, GOLDUCK
+	dbw 25, GOLDUCK
+	dbw 25, GOLDUCK
 
 	map_id ROUTE_40
 	db 6 percent ; encounter rate

@@ -11,8 +11,7 @@ WiseTriosRoom_MapScripts:
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_OBJECTS, .WiseTrioCallback
+	db 0 ; callbacks
 
 .DummyScene0:
 	end
@@ -97,13 +96,12 @@ TrainerSageKoji:
 	opentext
 	writetext SageKojiAfterBattleQuestionText
 	buttonsound
-	writetext SageKojiAfterBattleSpeechText
-	waitbutton
 	closetext
 	applymovement WISETRIOSROOM_SAGE6, MovementData_0x98628
 	turnobject WISETRIOSROOM_SAGE6, UP
 	setevent EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER
 	setscene SCENE_FINISHED
+	clearevent EVENT_TIN_TOWER_1F_EUSINE
 	end
 
 .KojiAllowsPassage:
@@ -179,33 +177,33 @@ WiseTriosRoomSage3Text:
 	done
 
 SageGakuSeenText:
-	text "Legend has it that"
-	line "upon the emergence"
+	text "Welcome, young"
+	line "trainer, and owner"
+	cont "of the sacred"
+	cont "feather."
 
-	para "of a trainer who"
-	line "has the ability to"
+	para "We, the Wise Trio,"
+	line "guard the Bell"
+	cont "Tower, waiting for"
 
-	para "touch the souls of"
-	line "#MON, a #MON"
+	para "a trainer worthy"
+	line "of climbing the"
+	cont "tower, and thus,"
 
-	para "will come forth to"
-	line "put that trainer"
+	para "one worthy of"
+	line "facing Ho-Oh, the"
 
-	para "to test at the TIN"
-	line "TOWER."
+	para "Legendary #mon."
 
-	para "The legend has"
-	line "come true!"
+	para "You have come"
+	line "seeking knowledge"
+	cont "of the Legendary"
+	cont "#mon, correct?"
 
-	para "The legendary"
-	line "#MON SUICUNE"
-	cont "has arrived!"
-
-	para "We, the WISE TRIO,"
-	line "shall test your"
-
-	para "worthiness to go"
-	line "inside!"
+	para "We shall be your"
+	line "test, to ascertain"
+	cont "if you are worthy"
+	cont "of such knowledge."
 	done
 
 SageGakuBeatenText:
@@ -214,18 +212,15 @@ SageGakuBeatenText:
 	done
 
 SageGakuAfterBattleText:
-	text "Ah, so it is you"
-	line "who claim to have"
+	text "Your friend has"
+	line "already bested us."
 
-	para "seen SUICUNE,"
-	line "ENTEI and RAIKOU"
-	cont "while they slept?"
+	para "I believe that"
+	line "both of you are in"
+	cont "possession of a"
 
-	para "Unbelievable!"
-
-	para "Legend has it that"
-	line "they can't be seen"
-	cont "while they sleep…"
+	para "strength unlike"
+	line "any other."
 	done
 
 SageMasaSeenText:
@@ -242,53 +237,10 @@ SageMasaBeatenText:
 	done
 
 SageMasaAfterBattleText:
-	text "In the past, there"
-	line "were two nine-tier"
-	cont "towers here."
+	text "The sage in Bell"
+	line "Tower will tell"
 
-	para "The BRASS TOWER,"
-	line "which was said to"
-
-	para "awaken #MON,"
-	line "and the TIN TOWER,"
-
-	para "where #MON were"
-	line "said to rest."
-
-	para "The view from the"
-	line "tops of the TOWERS"
-
-	para "must have been"
-	line "magnificent."
-
-	para "At the time, an"
-	line "immense, silver-"
-
-	para "colored #MON"
-	line "was said to make"
-
-	para "its roost atop the"
-	line "BRASS TOWER."
-
-	para "However…"
-
-	para "About 150 years"
-	line "ago, a lightning"
-
-	para "bolt struck one of"
-	line "the TOWERS."
-
-	para "It was engulfed in"
-	line "flames that raged"
-	cont "for three days."
-
-	para "A sudden downpour"
-	line "finally put out"
-	cont "the blaze."
-
-	para "And that is how"
-	line "the BURNED TOWER"
-	cont "came to be."
+	para "what you seek."
 	done
 
 SageKojiSeenText:
@@ -302,11 +254,17 @@ SageKojiBeatenText:
 	done
 
 SageKojiAfterBattleQuestionText:
-	text "You… Are you the"
-	line "trainer who is"
+	text "You… are worthy of"
+	line "the knowledge that"
 
-	para "awaited by the"
-	line "legendary #MON?"
+	para "has been safe-"
+	line "guarded by the"
+
+
+	para "sages of Ecruteak"
+	line "for centuries."
+
+	para "Go on…"
 	done
 
 SageKojiAfterBattleSpeechText:
@@ -336,10 +294,10 @@ SageKojiAfterBattleSpeechText:
 	done
 
 SageKojiAfterBattleFinalText:
-	text "Please, do go on."
+	text "Have you begun to"
 
-	para "SUICUNE will put"
-	line "you to the test."
+	para "understand the"
+	line "truth?"
 	done
 
 WiseTriosRoom_MapEvents:

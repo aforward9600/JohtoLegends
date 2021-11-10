@@ -42,6 +42,9 @@ Route34_MapScripts:
 	pause 45
 	warp TEAM_ROCKET_BASE_JAIL, 5, 6
 	blackoutmod TEAM_ROCKET_BASE_JAIL
+	setscene SCENE_DEFAULT
+	setevent EVENT_ROUTE_34_NINJA
+	clearevent EVENT_ROUTE_34_OFFICER
 	end
 
 .TakeSilverWing:
@@ -49,6 +52,9 @@ Route34_MapScripts:
 	pause 45
 	warp TEAM_ROCKET_BASE_JAIL, 5, 6
 	blackoutmod TEAM_ROCKET_BASE_JAIL
+	setscene SCENE_DEFAULT
+	setevent EVENT_ROUTE_34_NINJA
+	clearevent EVENT_ROUTE_34_OFFICER
 	end
 
 .EggCheckCallback:
@@ -454,7 +460,7 @@ OfficerKeithDaytimeText:
 	text "Ugh…"
 
 	para "Didn't see that"
-	cont "guy coming…"
+	line "guy coming…"
 
 	para "He knocked me out"
 	line "and hid me in the"

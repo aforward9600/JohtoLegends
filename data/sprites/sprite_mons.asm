@@ -42,3 +42,4 @@ SpriteMons:
 	dw WOBBUFFET
 	dw RATICATE
 	dw AMPHAROS
+	dw FARFETCH_D

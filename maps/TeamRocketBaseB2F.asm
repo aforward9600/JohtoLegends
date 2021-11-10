@@ -89,6 +89,7 @@ RocketBaseCantLeaveScript:
 	disappear TEAMROCKETBASEB2F_RIVAL
 	setevent EVENT_TEAM_ROCKET_BASE_B2F_LANCE
 	setscene SCENE_TEAMROCKETBASEB2F_NOTHING
+	setevent EVENT_HIDEOUT_B3F_RIVAL
 	end
 
 RocketBaseCantLeaveScriptDown:
@@ -137,6 +138,7 @@ RocketBaseCantLeaveScriptDown:
 	disappear TEAMROCKETBASEB2F_RIVAL
 	setevent EVENT_TEAM_ROCKET_BASE_B2F_LANCE
 	setscene SCENE_TEAMROCKETBASEB2F_NOTHING
+	setevent EVENT_HIDEOUT_B3F_RIVAL
 	end
 
 HideoutGrannyScript:
@@ -937,7 +939,8 @@ GoldenrodWorkerHelpMeText:
 	cont "me!"
 
 	para "I swear, I'll"
-	line "never snitch again!"
+	line "never snitch"
+	cont "again!"
 	done
 
 HideoutGrannyText:

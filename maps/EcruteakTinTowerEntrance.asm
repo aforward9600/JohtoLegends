@@ -9,9 +9,9 @@
 
 EcruteakTinTowerEntrance_MapScripts:
 	db 3 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_ECRUTEAKTINTOWERENTRANCE_SHERLES
-	scene_script .DummyScene2 ; SCENE_ECRUTEAKTINTOWERENTRANCE_NOTHING
+	scene_script .DummyScene0 ; SCENE_ECRUTEAKTINTOWERENTRANCE_NORMAL
+	scene_script .DummyScene1 ; SCENE_ECRUTEAKTINTOWERENTRANCE_NOTHING
+	scene_script .DummyScene2 ; SCENE_ECRUTEAKTINTOWERENTRANCE_SHERLES
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, .InitializeSages
@@ -39,10 +39,6 @@ EcruteakTinTowerEntrance_MapScripts:
 .BlockTower:
 	clearevent EVENT_RANG_CLEAR_BELL_2
 	setevent EVENT_RANG_CLEAR_BELL_1
-	setevent EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE
-	checkitem CLEAR_BELL
-	iftrue .NoClearBell
-	setscene SCENE_DEFAULT
 .NoClearBell:
 	return
 
@@ -89,7 +85,7 @@ EcruteakTinTowerEntrance_CoordEvent3:
 	waitbutton
 	closetext
 	turnobject ECRUTEAKTINTOWERENTRANCE_SHERLES, UP
-	setscene SCENE_DEFAULT
+	setscene SCENE_ECRUTEAKTINTOWERENTRANCE_NORMAL
 	end
 
 .Done:
@@ -120,7 +116,7 @@ EcruteakTinTowerEntranceSageScript:
 	iftrue .AllowedThrough
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .RangClearBell
-	checkitem CLEAR_BELL
+	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .GotClearBell
 	writetext EcruteakTinTowerEntranceSageText_NoClearBell
 	waitbutton
@@ -134,6 +130,9 @@ EcruteakTinTowerEntranceSageScript:
 	setscene SCENE_ECRUTEAKTINTOWERENTRANCE_NOTHING
 	setevent EVENT_RANG_CLEAR_BELL_2
 	clearevent EVENT_RANG_CLEAR_BELL_1
+	setmapscene WISE_TRIOS_ROOM, SCENE_FINISHED
+	setevent EVENT_WISE_TRIOS_ROOM_WISE_TRIO_1
+	clearevent EVENT_WISE_TRIOS_ROOM_WISE_TRIO_2
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	end
 
@@ -331,37 +330,32 @@ EcruteakTinTowerEntranceSageText_NoClearBell:
 	done
 
 EcruteakTinTowerEntranceSageText_HearsClearBell:
-	text "A momentous event"
-	line "has occurred."
+	text "Ah!"
 
-	para "I beg your pardon,"
-	line "but I must ask you"
-	cont "to leave."
+	para "It's you!"
+	line "The one who helped"
+	cont "us before!!"
+
+	para "What brings you"
+	line "here?"
 
 	para "<……><……><……>"
 
-	para "Ah!"
+	para "I see…"
 
-	para "The sound of that"
-	line "CLEAR BELL!"
+	para "You seek the sage"
+	line "in Bell Tower."
 
-	para "It… It's sublime!"
+	para "Your friend was"
+	line "already here."
 
-	para "I've never heard"
-	line "so beautiful a"
+	para "Go ahead, but I"
+	line "must warn you."
 	cont "sound before!"
 
-	para "That bell's chime"
-	line "is indicative of"
-	cont "the bearer's soul."
-
-	para "You…"
-
-	para "You may be able to"
-	line "make it through"
-	cont "TIN TOWER."
-
-	para "Please, do go on."
+	para "The Wise Trio will"
+	line "test your power"
+	cont "first."
 	done
 
 EcruteakTinTowerEntranceSageText_PleaseDoGoOn:
@@ -568,8 +562,8 @@ EcruteakTinTowerEntrance_MapEvents:
 	warp_event 17,  3, WISE_TRIOS_ROOM, 3
 
 	db 5 ; coord events
-	coord_event  4,  7, SCENE_DEFAULT, EcruteakTinTowerEntrance_CoordEvent1
-	coord_event  5,  7, SCENE_DEFAULT, EcruteakTinTowerEntrance_CoordEvent2
+	coord_event  4,  7, SCENE_ECRUTEAKTINTOWERENTRANCE_NORMAL, EcruteakTinTowerEntrance_CoordEvent1
+	coord_event  5,  7, SCENE_ECRUTEAKTINTOWERENTRANCE_NORMAL, EcruteakTinTowerEntrance_CoordEvent2
 	coord_event  4,  7, SCENE_ECRUTEAKTINTOWERENTRANCE_SHERLES, EcruteakTinTowerEntrance_CoordEvent1
 	coord_event  5,  7, SCENE_ECRUTEAKTINTOWERENTRANCE_SHERLES, EcruteakTinTowerEntrance_CoordEvent2
 	coord_event  4, 14, SCENE_ECRUTEAKTINTOWERENTRANCE_SHERLES, EcruteakTinTowerEntrance_CoordEvent3

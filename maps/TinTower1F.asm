@@ -1,7 +1,4 @@
 	object_const_def ; object_event constants
-	const TINTOWER1F_SUICUNE
-	const TINTOWER1F_RAIKOU
-	const TINTOWER1F_ENTEI
 	const TINTOWER1F_EUSINE
 	const TINTOWER1F_SAGE1
 	const TINTOWER1F_SAGE2
@@ -21,7 +18,6 @@ TinTower1F_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .LoadReservedIDs
 
 .FaceSuicune:
-	prioritysjump .SuicuneBattle
 	end
 
 .DummyScene:
@@ -52,37 +48,37 @@ TinTower1F_MapScripts:
 .FaceBeasts:
 	checkevent EVENT_FOUGHT_SUICUNE
 	iftrue .FoughtSuicune
-	appear TINTOWER1F_SUICUNE
+	appear TINTOWER1F_EUSINE
 	loadmonindex 0, RAIKOU
 	special MonCheck
 	iftrue .NoRaikou
-	appear TINTOWER1F_RAIKOU
+	appear TINTOWER1F_EUSINE
 	sjump .CheckEntei
 
 .NoRaikou:
-	disappear TINTOWER1F_RAIKOU
+	disappear TINTOWER1F_EUSINE
 .CheckEntei:
 	loadmonindex 0, ENTEI
 	special MonCheck
 	iftrue .NoEntei
-	appear TINTOWER1F_ENTEI
+	appear TINTOWER1F_EUSINE
 	sjump .BeastsDone
 
 .NoEntei:
-	disappear TINTOWER1F_ENTEI
+	disappear TINTOWER1F_EUSINE
 .BeastsDone:
 	return
 
 .FoughtSuicune:
-	disappear TINTOWER1F_SUICUNE
-	disappear TINTOWER1F_RAIKOU
-	disappear TINTOWER1F_ENTEI
+	disappear TINTOWER1F_EUSINE
+	disappear TINTOWER1F_EUSINE
+	disappear TINTOWER1F_EUSINE
 	clearevent EVENT_TIN_TOWER_1F_WISE_TRIO_1
 	setevent EVENT_TIN_TOWER_1F_WISE_TRIO_2
 	return
 
 .StairsCallback:
-	checkevent EVENT_GOT_RAINBOW_WING
+	checkevent EVENT_OPEN_TIN_TOWER
 	iftrue .DontHideStairs
 	changeblock 10, 2, $09 ; floor
 .DontHideStairs:
@@ -94,40 +90,40 @@ TinTower1F_MapScripts:
 	loadmonindex 0, RAIKOU
 	special MonCheck
 	iftrue .Next1 ; if player caught Raikou, he doesn't appear in Tin Tower
-	applymovement TINTOWER1F_RAIKOU, TinTowerRaikouMovement1
+	applymovement TINTOWER1F_EUSINE, TinTowerRaikouMovement1
 	turnobject PLAYER, LEFT
 	cry RAIKOU
 	pause 10
 	playsound SFX_WARP_FROM
-	applymovement TINTOWER1F_RAIKOU, TinTowerRaikouMovement2
-	disappear TINTOWER1F_RAIKOU
+	applymovement TINTOWER1F_EUSINE, TinTowerRaikouMovement2
+	disappear TINTOWER1F_EUSINE
 	playsound SFX_EXIT_BUILDING
 	waitsfx
 .Next1:
 	loadmonindex 0, ENTEI
 	special MonCheck
 	iftrue .Next2 ; if player caught Entei, he doesn't appear in Tin Tower
-	applymovement TINTOWER1F_ENTEI, TinTowerEnteiMovement1
+	applymovement TINTOWER1F_EUSINE, TinTowerEnteiMovement1
 	turnobject PLAYER, RIGHT
 	cry ENTEI
 	pause 10
 	playsound SFX_WARP_FROM
-	applymovement TINTOWER1F_ENTEI, TinTowerEnteiMovement2
-	disappear TINTOWER1F_ENTEI
+	applymovement TINTOWER1F_EUSINE, TinTowerEnteiMovement2
+	disappear TINTOWER1F_EUSINE
 	playsound SFX_EXIT_BUILDING
 	waitsfx
 .Next2:
 	turnobject PLAYER, UP
 	pause 10
 	applymovement PLAYER, TinTowerPlayerMovement2
-	applymovement TINTOWER1F_SUICUNE, TinTowerSuicuneMovement
+	applymovement TINTOWER1F_EUSINE, TinTowerSuicuneMovement
 	cry SUICUNE
 	pause 20
 	loadwildmon SUICUNE, 40
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
 	startbattle
 	dontrestartmapmusic
-	disappear TINTOWER1F_SUICUNE
+	disappear TINTOWER1F_EUSINE
 	setevent EVENT_FOUGHT_SUICUNE
 	setevent EVENT_SAW_SUICUNE_ON_ROUTE_42
 	setmapscene ROUTE_42, SCENE_ROUTE42_NOTHING
@@ -232,7 +228,36 @@ TinTower1FSage6Script:
 	jumptextfaceplayer TinTower1FSage6Text2
 
 TinTowerEusine:
-	jumptextfaceplayer TinTowerEusineHoOhText
+	faceplayer
+	opentext
+	checkevent EVENT_OPEN_ILEX_FOREST
+	iftrue .TinTowerSage
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .TinTowerSageFemale
+	writetext TinTowerEusineHoOhText
+	waitbutton
+	closetext
+	setevent EVENT_OPEN_ILEX_FOREST
+	setmapscene ROUTE_34, SCENE_DEFAULT
+	setevent EVENT_ROUTE_34_NINJA
+	clearevent EVENT_ROUTE_34_OFFICER
+	end
+
+.TinTowerSage:
+	writetext TinTowerSageText
+	waitbutton
+	closetext
+	end
+
+.TinTowerSageFemale:
+	writetext TinTowerEusineHoOhTextFemale
+	waitbutton
+	closetext
+	setevent EVENT_OPEN_ILEX_FOREST
+	setmapscene ROUTE_34, SCENE_DEFAULT
+	setevent EVENT_ROUTE_34_NINJA
+	clearevent EVENT_ROUTE_34_OFFICER
+	end
 
 TinTowerPlayerMovement1:
 	slow_step UP
@@ -448,25 +473,200 @@ TinTower1FSage6Text1:
 	done
 
 TinTowerEusineHoOhText:
-	text "I knew it."
+	text "Welcome, young"
+	line "trainer."
 
-	para "I knew you'd get"
-	line "to see the #MON"
+	para "Your friend,"
+	line "Dahlia told me"
+	cont "you'd come."
 
-	para "of rainbow colors,"
-	line "<PLAYER>."
+	para "You wish to know"
+	line "the history of the"
+	cont "Legendary #mon,"
 
-	para "It happened just"
-	line "as I envisioned."
+	para "and I shall tell"
+	line "you."
 
-	para "My research isn't"
-	line "bad, I might say."
+	para "In the past, there"
+	line "were two nine-tier"
+	cont "towers here."
 
-	para "I'm going to keep"
-	line "studying #MON"
+	para "The Brass Tower,"
+	line "which was said to"
 
-	para "to become a famous"
-	line "#MANIAC!"
+	para "awaken #mon,"
+	line "and the Bell"
+	cont "Tower, where"
+
+	para "#mon were said"
+	line "to rest."
+
+	para "The view from the"
+	line "tops of the towers"
+
+	para "must have been"
+	line "magnificent."
+
+	para "At the time, an"
+	line "immense, silver-"
+
+	para "colored #mon"
+	line "was said to make"
+
+	para "its roost atop the"
+	line "Brass Tower."
+
+	para "However…"
+
+	para "About 150 years"
+	line "ago, a lightning"
+
+	para "bolt struck one of"
+	line "the towers."
+
+	para "It was engulfed in"
+	line "flames that raged"
+	cont "for three days."
+
+	para "A sudden downpour"
+	line "finally put out"
+	cont "the blaze."
+
+	para "And that is how"
+	line "the Burned Tower"
+	cont "came to be."
+
+	para "What became of"
+	line "those #mon?"
+
+	para "Ho-Oh left this"
+	line "Tower, waiting for"
+	cont "one worthy of its"
+	cont "power."
+
+	para "The #mon of"
+	line "Brass Tower, Lugia"
+	cont "left for the Whirl"
+	cont "Islands, where we"
+	cont "guard its resting"
+	cont "place."
+
+	para "Even though you"
+	line "possess a wing of"
+	cont "Legendary origin,"
+
+	para "it still isn't"
+	line "enough to face"
+	cont "them."
+
+	para "Someday, you may"
+	line "be able to face"
+	cont "them."
+
+	para "Do what you will"
+	line "with this"
+	cont "knowledge."
+	done
+
+TinTowerEusineHoOhTextFemale:
+	text "Welcome, young"
+	line "trainer."
+
+	para "Your friend,"
+	line "Draco told me"
+	cont "you'd come."
+
+	para "You wish to know"
+	line "the history of the"
+	cont "Legendary #mon,"
+
+	para "and I shall tell"
+	line "you."
+
+	para "In the past, there"
+	line "were two nine-tier"
+	cont "towers here."
+
+	para "The Brass Tower,"
+	line "which was said to"
+
+	para "awaken #mon,"
+	line "and the Bell"
+	cont "Tower, where"
+
+	para "#mon were said"
+	line "to rest."
+
+	para "The view from the"
+	line "tops of the towers"
+
+	para "must have been"
+	line "magnificent."
+
+	para "At the time, an"
+	line "immense, silver-"
+
+	para "colored #mon"
+	line "was said to make"
+
+	para "its roost atop the"
+	line "Brass Tower."
+
+	para "However…"
+
+	para "About 150 years"
+	line "ago, a lightning"
+
+	para "bolt struck one of"
+	line "the towers."
+
+	para "It was engulfed in"
+	line "flames that raged"
+	cont "for three days."
+
+	para "A sudden downpour"
+	line "finally put out"
+	cont "the blaze."
+
+	para "And that is how"
+	line "the Burned Tower"
+	cont "came to be."
+
+	para "What became of"
+	line "those #mon?"
+
+	para "Ho-Oh left this"
+	line "Tower, waiting for"
+	cont "one worthy of its"
+	cont "power."
+
+	para "The #mon of"
+	line "Brass Tower, Lugia"
+	cont "left for the Whirl"
+	cont "Islands, where we"
+	cont "guard its resting"
+	cont "place."
+
+	para "Even though you"
+	line "possess a wing of"
+	cont "Legendary origin,"
+
+	para "it still isn't"
+	line "enough to face"
+	cont "them."
+
+	para "Someday, you may"
+	line "be able to face"
+	cont "them."
+
+	para "Do what you will"
+	line "with this"
+	cont "knowledge."
+	done
+
+TinTowerSageText:
+	text "Good luck on your"
+	line "journey."
 	done
 
 TinTower1FSage4Text2:
@@ -539,14 +739,14 @@ TinTower1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 10 ; object events
-	object_event  9,  9, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_SUICUNE
-	object_event  7,  9, SPRITE_RAIKOU, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_RAIKOU
-	object_event 12,  9, SPRITE_ENTEI, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_ENTEI
-	object_event  8,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TinTowerEusine, EVENT_TIN_TOWER_1F_EUSINE
+	db 7 ; object events
+	;object_event  9,  9, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_SUICUNE
+	;object_event  7,  9, SPRITE_RAIKOU, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_RAIKOU
+	;object_event 12,  9, SPRITE_ENTEI, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_ENTEI
+	object_event  9,  1, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TinTowerEusine, EVENT_TIN_TOWER_1F_EUSINE
 	object_event  5,  9, SPRITE_SAGE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage1Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
 	object_event 11, 11, SPRITE_SAGE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage2Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
 	object_event 14,  6, SPRITE_SAGE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage3Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
 	object_event  4,  2, SPRITE_SAGE, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage4Script, EVENT_TIN_TOWER_1F_WISE_TRIO_2
-	object_event  9,  1, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage5Script, EVENT_TIN_TOWER_1F_WISE_TRIO_2
+	object_event  8,  3, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage5Script, EVENT_TIN_TOWER_1F_WISE_TRIO_2
 	object_event 14,  2, SPRITE_SAGE, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage6Script, EVENT_TIN_TOWER_1F_WISE_TRIO_2

@@ -126,7 +126,7 @@ LarvitarPokeballScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke EEVEE, 5, SHINY_STONE
+	givepoke LARVITAR, 5, ORAN_BERRY
 	closetext
 	sjump RivalDratiniScript
 

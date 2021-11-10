@@ -91,7 +91,6 @@ INCLUDE "maps/MahoganyMart1F.asm"
 INCLUDE "maps/TeamRocketBaseB1F.asm"
 INCLUDE "maps/TeamRocketBaseB2F.asm"
 INCLUDE "maps/TeamRocketBaseB3F.asm"
-INCLUDE "maps/IlexForest.asm"
 
 
 SECTION "Map Scripts 7", ROMX
@@ -503,3 +502,4 @@ INCLUDE "maps/OlivineGym1F.asm"
 INCLUDE "maps/OlivineGym2F.asm"
 INCLUDE "maps/OlivineGym3F.asm"
 INCLUDE "maps/OlivineGym4F.asm"
+INCLUDE "maps/IlexForest.asm"

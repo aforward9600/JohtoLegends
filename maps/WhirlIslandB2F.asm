@@ -2,6 +2,7 @@
 	const WHIRLISLANDB2F_POKE_BALL1
 	const WHIRLISLANDB2F_POKE_BALL2
 	const WHIRLISLANDB2F_POKE_BALL3
+	const WHIRLISLANDB2F_SAGE
 
 WhirlIslandB2F_MapScripts:
 	db 0 ; scene scripts
@@ -17,6 +18,23 @@ WhirlIslandB2FMaxRevive:
 WhirlIslandB2FMaxElixer:
 	itemball MAX_ELIXER
 
+WhirlIslandSageScript:
+	jumptextfaceplayer WhirlIslandSageText
+
+WhirlIslandSage2Script:
+	jumptextfaceplayer WhirlIslandSage2Text
+
+WhirlIslandSageText:
+	text "I'm sorry, but you"
+	line "cannot go through"
+	cont "here."
+	done
+
+WhirlIslandSage2Text:
+	text "Welcome, young"
+	line "trainer."
+	done
+
 WhirlIslandB2F_MapEvents:
 	db 0, 0 ; filler
 
@@ -30,7 +48,9 @@ WhirlIslandB2F_MapEvents:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event 10, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, WhirlIslandB2FFullRestore, EVENT_WHIRL_ISLAND_B2F_FULL_RESTORE
 	object_event  6,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, WhirlIslandB2FMaxRevive, EVENT_WHIRL_ISLAND_B2F_MAX_REVIVE
 	object_event  5, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, WhirlIslandB2FMaxElixer, EVENT_WHIRL_ISLAND_B2F_MAX_ELIXER
+	object_event  7, 26, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WhirlIslandSageScript, EVENT_WHIRL_ISLAND_SAGE_1
+	object_event  8, 26, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WhirlIslandSage2Script, EVENT_WHIRL_ISLAND_SAGE_2
