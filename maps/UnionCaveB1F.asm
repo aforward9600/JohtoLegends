@@ -13,7 +13,7 @@ UnionCaveB1F_MapScripts:
 	db 0 ; callbacks
 
 TrainerPokemaniacAndrew:
-	trainer POKEMANIAC, ANDREW, EVENT_BEAT_POKEMANIAC_ANDREW, PokemaniacAndrewSeenText, PokemaniacAndrewBeatenText, 0, .Script
+	trainer POKEMANIAC, DAMIEN, EVENT_BEAT_POKEMANIAC_DAMIEN, PokemaniacAndrewSeenText, PokemaniacAndrewBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

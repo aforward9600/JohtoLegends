@@ -54,6 +54,7 @@ INCLUDE "maps/RadioTower1F.asm"
 INCLUDE "maps/RadioTower2F.asm"
 INCLUDE "maps/RadioTower3F.asm"
 INCLUDE "maps/RadioTower4F.asm"
+INCLUDE "maps/IlexForest.asm"
 
 
 SECTION "Map Scripts 4", ROMX
@@ -502,4 +503,3 @@ INCLUDE "maps/OlivineGym1F.asm"
 INCLUDE "maps/OlivineGym2F.asm"
 INCLUDE "maps/OlivineGym3F.asm"
 INCLUDE "maps/OlivineGym4F.asm"
-INCLUDE "maps/IlexForest.asm"

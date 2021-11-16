@@ -61,41 +61,38 @@ GoldenrodDeptStore2FUnusedText2:
 	done
 
 GoldenrodDeptStore2FYoungsterText:
-	text "#GEAR can store"
-	line "up to ten phone"
-	cont "numbers."
+	text "You got a Watch?!"
 
-	para "It's hard to de-"
-	line "cide which numbers"
-	cont "to keep."
+	para "Lucky!"
 	done
 
 GoldenrodDeptStore2FCooltrainerFText:
-	text "I got my ABRA at"
-	line "the GAME CORNER."
+	text "I got my Abra at"
+	line "the Game Corner."
 
 	para "Now it's my best"
 	line "partner."
 	done
 
 GoldenrodDeptStore2FGentlemanText:
-	text "This DEPT.STORE"
+	text "This Dept.Store"
 	line "makes me realize"
 
-	para "that GOLDENROD is"
-	line "a big city."
+	para "that Goldenrod is"
+	line "developing as a"
+	cont "city."
 
-	para "The selection here"
-	line "is unmatched any-"
-	cont "where else."
+	para "Maybe someday, it"
+	line "will be even"
+	cont "bigger."
 	done
 
 GoldenrodDeptStore2FDirectoryText:
 	text "Your Travel"
 	line "Companion"
 
-	para "2F TRAINER'S"
-	line "   MARKET"
+	para "2F Trainer's"
+	line "   Market"
 	done
 
 GoldenrodDeptStore2F_MapEvents:

@@ -39,40 +39,43 @@ GoldenrodDeptStore4FElevatorButton:
 
 GoldenrodDeptStore4FCooltrainerMText:
 	text "Hey. I love strong"
-	line "#MON."
+	line "#mon."
 
-	para "I feed them PRO-"
-	line "TEIN to crank up"
-	cont "their ATTACK."
+	para "I feed them Pro-"
+	line "tein to crank up"
+	cont "their Attack."
 	done
 
 GoldenrodDeptStore4FBugCatcherText:
-	text "IRON adds to your"
-	line "#MON's DEFENSE."
+	text "Iron adds to your"
+	line "#mon's Defense."
 	done
 
 GoldenrodDeptStore4FGameboyKidText:
-	text "Some #MON"
+	text "Some #mon"
 	line "evolve only by"
 
-	para "being traded via a"
-	line "Game Link cable."
+	para "using a Link"
+	line "Cable."
 
 	para "I know of four:"
-	line "MACHOKE, KADABRA,"
+	line "Machoke, Kadabra,"
 
-	para "HAUNTER and, um,"
-	line "GRAVELER."
+	para "Haunter and, um,"
+	line "Graveler."
 
 	para "I heard there are"
-	line "others too."
+	line "other items that"
+
+	para "can evolve"
+	line "different #mon."
 	done
 
 GoldenrodDeptStore4FDirectoryText:
 	text "Let Us Pump Up"
-	line "Your #MON!"
+	line "Your #mon!"
 
-	para "4F MEDICINE BOX"
+	para "4F Medicine Box"
 	done
 
 GoldenrodDeptStore4F_MapEvents:
@@ -91,6 +94,6 @@ GoldenrodDeptStore4F_MapEvents:
 
 	db 4 ; object events
 	object_event 13,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore4FClerkScript, -1
-	object_event 11,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore4FCooltrainerMScript, -1
+	object_event 11,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore4FCooltrainerMScript, -1
 	object_event  7,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore4FBugCatcherScript, -1
 	object_event  5,  1, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore4FGameboyKidScript, -1

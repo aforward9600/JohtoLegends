@@ -6,6 +6,8 @@
 	const TINTOWER1F_SAGE4
 	const TINTOWER1F_SAGE5
 	const TINTOWER1F_SAGE6
+	const TINTOWER1F_ROCKET2
+	const TINTOWER1F_ROCKET3
 
 TinTower1F_MapScripts:
 	db 2 ; scene scripts
@@ -153,9 +155,6 @@ TinTower1F_MapScripts:
 	moveobject TINTOWER1F_SAGE3, 9, 15
 	appear TINTOWER1F_SAGE3
 	applymovement TINTOWER1F_SAGE3, MovementData_0x1851fe
-	moveobject TINTOWER1F_SAGE1, 7, 13
-	moveobject TINTOWER1F_SAGE2, 9, 13
-	moveobject TINTOWER1F_SAGE3, 11, 13
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext TinTowerEusineSuicuneText
@@ -179,13 +178,29 @@ TinTower1FSage2Script:
 TinTower1FSage3Script:
 	jumptextfaceplayer TinTower1FSage3Text
 
-TinTower1FSage4Script:
-	checkevent EVENT_FOUGHT_HO_OH
-	iftrue .FoughtHoOh
+TinTower1FRocket1Script:
+	faceplayer
+	opentext
+	writetext TinTower1FRocket1Text
+	waitbutton
+	closetext
+	turnobject, TINTOWER1F_SAGE4, LEFT
+	end
+
+TinTower1FRivalScript:
+	faceplayer
+	opentext
+	writetext TinTower1FRivalText
+	waitbutton
+	closetext
+	turnobject, TINTOWER1F_SAGE3, RIGHT
+	end
+
+TinTower1FRocket2Script:
 	jumptextfaceplayer TinTower1FSage4Text1
 
-.FoughtHoOh:
-	jumptextfaceplayer TinTower1FSage4Text2
+TinTower1FRocket3Script:
+	jumptextfaceplayer TinTower1FSage4Text1
 
 TinTower1FSage5Script:
 	faceplayer
@@ -227,6 +242,30 @@ TinTower1FSage6Script:
 .FoughtHoOh:
 	jumptextfaceplayer TinTower1FSage6Text2
 
+TinTower1FPoliwrathScript:
+	refreshscreen
+	pokepic POLIWRATH
+	cry POLIWRATH
+	waitbutton
+	closepokepic
+	opentext
+	writetext TinTower1FPoliwrathText
+	waitbutton
+	closetext
+	end
+
+TinTower1FPersianScript:
+	refreshscreen
+	pokepic PERSIAN
+	cry PERSIAN
+	waitbutton
+	closepokepic
+	opentext
+	writetext TinTower1FPersianText
+	waitbutton
+	closetext
+	end
+
 TinTowerEusine:
 	faceplayer
 	opentext
@@ -241,10 +280,20 @@ TinTowerEusine:
 	setmapscene ROUTE_34, SCENE_DEFAULT
 	setevent EVENT_ROUTE_34_NINJA
 	clearevent EVENT_ROUTE_34_OFFICER
+	clearevent EVENT_AZALEA_TOWN_SLOWPOKES
+	clearevent EVENT_ILEX_FOREST_FARFETCHD
 	end
 
 .TinTowerSage:
+	checkevent EVENT_TIN_TOWER_TAKEOVER
+	iftrue .PleaseHelpUs
 	writetext TinTowerSageText
+	waitbutton
+	closetext
+	end
+
+.PleaseHelpUs:
+	writetext TinTowerSageHelpUsText
 	waitbutton
 	closetext
 	end
@@ -257,6 +306,8 @@ TinTowerEusine:
 	setmapscene ROUTE_34, SCENE_DEFAULT
 	setevent EVENT_ROUTE_34_NINJA
 	clearevent EVENT_ROUTE_34_OFFICER
+	clearevent EVENT_AZALEA_TOWN_SLOWPOKES
+	clearevent EVENT_ILEX_FOREST_FARFETCHD
 	end
 
 TinTowerPlayerMovement1:
@@ -727,6 +778,36 @@ TinTower1FSage6Text2:
 	line "with SUICUNE."
 	done
 
+TinTower1FRocket1Text:
+	text "Agh!"
+
+	para "Not this kid"
+	line "again!"
+	done
+
+TinTower1FRivalText:
+	text "Don't worry about"
+	line "me, <PLAYER>!"
+
+	para "This guy's even"
+	line "easier than last"
+	cont "time!"
+	done
+
+TinTower1FPoliwrathText:
+	text "Wrath, wrath!"
+	done
+
+TinTower1FPersianText:
+	text "Purrrr!"
+	done
+
+TinTowerSageHelpUsText:
+	text "Please…"
+
+	para "Help us…"
+	done
+
 TinTower1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -739,14 +820,16 @@ TinTower1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 7 ; object events
+	db 9 ; object events
 	;object_event  9,  9, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_SUICUNE
 	;object_event  7,  9, SPRITE_RAIKOU, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_RAIKOU
 	;object_event 12,  9, SPRITE_ENTEI, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_ENTEI
 	object_event  9,  1, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TinTowerEusine, EVENT_TIN_TOWER_1F_EUSINE
-	object_event  5,  9, SPRITE_SAGE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage1Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
-	object_event 11, 11, SPRITE_SAGE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage2Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
-	object_event 14,  6, SPRITE_SAGE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage3Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
-	object_event  4,  2, SPRITE_SAGE, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage4Script, EVENT_TIN_TOWER_1F_WISE_TRIO_2
-	object_event  8,  3, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage5Script, EVENT_TIN_TOWER_1F_WISE_TRIO_2
-	object_event 14,  2, SPRITE_SAGE, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage6Script, EVENT_TIN_TOWER_1F_WISE_TRIO_2
+	object_event 10, 11, SPRITE_PERSIAN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TinTower1FPersianScript, EVENT_TIN_TOWER_1F_WISE_TRIO_1
+	object_event  9, 11, SPRITE_POLIWRATH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TinTower1FPoliwrathScript, EVENT_TIN_TOWER_1F_WISE_TRIO_1
+	object_event  8, 11, SPRITE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage3Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
+	object_event 11, 11, SPRITE_ROCKET, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FRocket1Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
+	object_event  8,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage5Script, EVENT_TIN_TOWER_1F_WISE_TRIO_2
+	object_event 14,  2, SPRITE_SHERLES, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage6Script, EVENT_TIN_TOWER_1F_WISE_TRIO_2
+	object_event 11, 11, SPRITE_ROCKET, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FRocket2Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
+	object_event 15,  7, SPRITE_ROCKET, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FRocket3Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1

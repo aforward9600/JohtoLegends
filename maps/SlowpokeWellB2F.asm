@@ -31,32 +31,33 @@ SlowpokeWellB2FTMRainDance:
 	itemball TM_RAIN_DANCE
 
 SlowpokeWellB2FGymGuyText:
-	text "I'm waiting to see"
-	line "SLOWPOKE's moment"
-	cont "of evolution."
+	text "Dang it!"
 
-	para "Through observa-"
-	line "tion, I made a new"
-	cont "discovery."
+	para "I thought this"
+	line "rock would make a"
 
-	para "A SLOWPOKE with a"
-	line "KING'S ROCK often"
+	para "Slowpoke evolve,"
+	line "but all it does is"
+	cont "make it flinch!"
 
-	para "gets bitten by a"
-	line "SHELLDER."
+	para "Apparently, I need"
+	line "a Royal Rock!"
 
-	para "Here, I'll share a"
-	line "KING'S ROCK with"
-	cont "you."
+	para "Here, take this"
+	line "King's Rock away!"
+
+	para "I don't want it"
+	line "anymore!"
 	done
 
 SlowpokeWellB2FGymGuyText_GotKingsRock:
-	text "I'm going to be"
-	line "like SLOWPOKE."
+	text "Guess I'll have to"
+	line "go and find a"
 
-	para "I'll wait patient-"
-	line "ly, so I can see"
-	cont "one evolve."
+	para "Royal Rock if I"
+	line "want to see a"
+	cont "Slowpoke evolve"
+	cont "into a Slowking…"
 	done
 
 SlowpokeWellB2F_MapEvents:

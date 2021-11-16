@@ -39,6 +39,7 @@ Marts:
 	dw MartEcruteakBalls
 	dw MartOlivineTMs
 	dw MartBlackthornTMs
+	dw MartAzaleaTMs
 .End
 
 MartCherrygrove:
@@ -73,15 +74,16 @@ MartViolet:
 	db -1 ; end
 
 MartAzalea:
-	db 9 ; # items
+	db 10 ; # items
 	db CHARCOAL
-	db POKE_BALL
-	db POTION
+	db GREAT_BALL
+	db ULTRA_BALL
 	db SUPER_POTION
+	db HYPER_POTION
 	db ESCAPE_ROPE
-	db REPEL
-	db ANTIDOTE
-	db PARLYZ_HEAL
+	db SUPER_REPEL
+	db REVIVE
+	db FULL_HEAL
 	db FLOWER_MAIL
 	db -1 ; end
 
@@ -95,9 +97,10 @@ MartCianwood:
 	db -1 ; end
 
 MartGoldenrod2F1:
-	db 7 ; # items
+	db 8 ; # items
 	db POTION
 	db SUPER_POTION
+	db REPEL
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
@@ -110,7 +113,7 @@ MartGoldenrod2F2:
 	db POKE_BALL
 	db GREAT_BALL
 	db ESCAPE_ROPE
-	db REPEL
+	db SUPER_REPEL
 	db REVIVE
 	db FULL_HEAL
 	db POKE_DOLL
@@ -350,7 +353,7 @@ MartCeladon2F2:
 MartCeladon3F:
 	db 4 ; # items
 	db TM_GIGA_IMPACT
-	db TM_NASTY_PLOT
+	db TM_FOCUS_BLAST
 	db TM_DREAM_EATER
 	db TM_HYPER_BEAM
 	db -1 ; end
@@ -472,6 +475,14 @@ MartBlackthornTMs:
 	db TM_SUBSTITUTE
 	db TM_SLEEP_TALK
 	db TM_HONE_CLAWS
+	db -1 ; end
+
+MartAzaleaTMs:
+	db 4
+	db TM_SUNNY_DAY
+	db TM_FLAMETHROWER
+	db TM_BULLDOZE
+	db TM_REST
 	db -1 ; end
 
 DefaultMart:

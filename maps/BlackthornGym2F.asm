@@ -68,7 +68,7 @@ TrainerCooltrainermCody:
 	end
 
 TrainerCooltrainerfFran:
-	trainer COOLTRAINERF, FRAN, EVENT_BEAT_COOLTRAINERF_FRAN, CooltrainerfFranSeenText, CooltrainerfFranBeatenText, 0, .Script
+	trainer COOLTRAINERF, EMIKO, EVENT_BEAT_COOLTRAINERF_EMIKO, CooltrainerfFranSeenText, CooltrainerfFranBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

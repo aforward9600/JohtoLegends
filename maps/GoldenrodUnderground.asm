@@ -112,7 +112,7 @@ GoldenrodUnderground_MapScripts:
 	return
 
 TrainerSupernerdEric:
-	trainer SUPER_NERD, ERIC, EVENT_BEAT_SUPER_NERD_ERIC, SupernerdEricSeenText, SupernerdEricBeatenText, 0, .Script
+	trainer SUPER_NERD, IRWIN, EVENT_BEAT_SUPER_NERD_IRWIN, SupernerdEricSeenText, SupernerdEricBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

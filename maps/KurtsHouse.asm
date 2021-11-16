@@ -16,10 +16,13 @@ KurtsHouseYoungster:
 	end
 
 KurtsHouseSlowpoke:
-	faceplayer
+	refreshscreen
+	pokepic SLOWPOKE
+	cry SLOWPOKE
+	waitbutton
+	closepokepic
 	opentext
 	writetext KurtsHouseSlowpokeText
-	cry SLOWPOKE
 	waitbutton
 	closetext
 	end

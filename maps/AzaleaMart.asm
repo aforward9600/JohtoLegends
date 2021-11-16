@@ -2,6 +2,7 @@
 	const AZALEAMART_CLERK
 	const AZALEAMART_COOLTRAINER_M
 	const AZALEAMART_BUG_CATCHER
+	const AZALEAMART_CLERK2
 
 AzaleaMart_MapScripts:
 	db 0 ; scene scripts
@@ -14,6 +15,12 @@ AzaleaMartClerkScript:
 	closetext
 	end
 
+AzaleaMartTMClerkScript:
+	opentext
+	pokemart MARTTYPE_STANDARD, MART_AZALEA_TMS
+	closetext
+	end
+
 AzaleaMartCooltrainerMScript:
 	jumptextfaceplayer AzaleaMartCooltrainerMText
 
@@ -21,26 +28,24 @@ AzaleaMartBugCatcherScript:
 	jumptextfaceplayer AzaleaMartBugCatcherText
 
 AzaleaMartCooltrainerMText:
-	text "There's no GREAT"
-	line "BALL here. #"
+	text "There's some Ultra"
+	line "Balls here."
 
-	para "BALLS will have"
-	line "to do."
+	para "They're pretty"
+	line "great, but I feel"
 
-	para "I wish KURT would"
-	line "make me some of"
-	cont "his custom BALLS."
+	para "bad for Kurt."
 	done
 
 AzaleaMartBugCatcherText:
-	text "A GREAT BALL is"
-	line "better for catch-"
-	cont "ing #MON than a"
-	cont "# BALL."
+	text "Apparently, Kurt's"
+	line "son in Ecruteak"
+	cont "City sells his"
+	cont "old stock."
 
-	para "But KURT's might"
-	line "be better some-"
-	cont "times."
+	para "Dang it!"
+
+	para "Why not here?!"
 	done
 
 AzaleaMart_MapEvents:
@@ -54,7 +59,8 @@ AzaleaMart_MapEvents:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaMartClerkScript, -1
-	object_event  2,  5, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaMartCooltrainerMScript, -1
-	object_event  7,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaMartBugCatcherScript, -1
+	object_event  2,  5, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaMartCooltrainerMScript, -1
+	object_event  7,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaMartBugCatcherScript, -1
+	object_event  1,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaMartTMClerkScript, -1

@@ -43,3 +43,6 @@ SpriteMons:
 	dw RATICATE
 	dw AMPHAROS
 	dw FARFETCH_D
+	dw MACHOKE
+	dw POLIWRATH
+	dw PERSIAN

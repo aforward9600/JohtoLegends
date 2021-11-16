@@ -1,11 +1,6 @@
 	object_const_def ; object_event constants
 	const SLOWPOKEWELLB1F_ROCKET1
 	const SLOWPOKEWELLB1F_ROCKET2
-	const SLOWPOKEWELLB1F_ROCKET3
-	const SLOWPOKEWELLB1F_ROCKET_GIRL
-	const SLOWPOKEWELLB1F_SLOWPOKE1
-	const SLOWPOKEWELLB1F_SLOWPOKE2
-	const SLOWPOKEWELLB1F_KURT
 	const SLOWPOKEWELLB1F_BOULDER
 	const SLOWPOKEWELLB1F_POKE_BALL
 
@@ -14,106 +9,24 @@ SlowpokeWellB1F_MapScripts:
 
 	db 0 ; callbacks
 
-SlowpokeWellB1FKurtScript:
-	jumptextfaceplayer SlowpokeWellB1FKurtText
-
-TrainerGruntM29:
-	trainer GRUNTM, GRUNTM_29, EVENT_BEAT_ROCKET_GRUNTM_29, GruntM29SeenText, GruntM29BeatenText, 0, .Script
+TrainerSuperNerdNed:
+	trainer SUPER_NERD, NED1, EVENT_BEAT_SUPER_NERD_NED, SuperNerdNedSeenText, SuperNerdNedBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM29AfterBattleText
+	writetext SuperNerdNedAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerGruntM1:
-	trainer GRUNTM, GRUNTM_1, EVENT_BEAT_ROCKET_GRUNTM_1, GruntM1SeenText, GruntM1BeatenText, 0, .Script
-
-.Script:
-	opentext
-	writetext TrainerGruntM1WhenTalkText
-	waitbutton
-	closetext
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	disappear SLOWPOKEWELLB1F_ROCKET1
-	disappear SLOWPOKEWELLB1F_ROCKET2
-	disappear SLOWPOKEWELLB1F_ROCKET3
-	disappear SLOWPOKEWELLB1F_ROCKET_GIRL
-	pause 15
-	special FadeInQuickly
-	disappear SLOWPOKEWELLB1F_KURT
-	moveobject SLOWPOKEWELLB1F_KURT, 11, 6
-	appear SLOWPOKEWELLB1F_KURT
-	applymovement SLOWPOKEWELLB1F_KURT, KurtSlowpokeWellVictoryMovementData
-	turnobject PLAYER, RIGHT
-	opentext
-	writetext KurtLeaveSlowpokeWellText
-	waitbutton
-	closetext
-	setevent EVENT_CLEARED_SLOWPOKE_WELL
-	variablesprite SPRITE_AZALEA_ROCKET, SPRITE_SILVER
-	setmapscene AZALEA_TOWN, SCENE_AZALEATOWN_RIVAL_BATTLE
-	clearevent EVENT_ILEX_FOREST_APPRENTICE
-	clearevent EVENT_ILEX_FOREST_FARFETCHD
-	setevent EVENT_CHARCOAL_KILN_FARFETCH_D
-	setevent EVENT_CHARCOAL_KILN_APPRENTICE
-	setevent EVENT_SLOWPOKE_WELL_SLOWPOKES
-	setevent EVENT_SLOWPOKE_WELL_KURT
-	clearevent EVENT_AZALEA_TOWN_SLOWPOKES
-	clearevent EVENT_KURTS_HOUSE_SLOWPOKE
-	clearevent EVENT_KURTS_HOUSE_KURT_1
-	special FadeOutPalettes
-	special HealParty
-	pause 15
-	warp KURTS_HOUSE, 3, 3
-	end
-
-TrainerGruntM40:
-	trainer GRUNTM, GRUNTM_2, EVENT_BEAT_OLIVINE_GRUNT, GruntM40SeenText, GruntM40BeatenText, 0, .Script
+TrainerPokemaniacDamien:
+	trainer POKEMANIAC, DAMIEN, EVENT_BEAT_POKEMANIAC_DAMIEN, PokemaniacDamienSeenText, PokemaniacDamienBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM40AfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerGruntF1:
-	trainer GRUNTF, GRUNTF_1, EVENT_BEAT_ROCKET_GRUNTF_1, GruntF1SeenText, GruntF1BeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext GruntF1AfterBattleText
-	waitbutton
-	closetext
-	end
-
-SlowpokeWellB1FSlowpokeWithMailScript:
-	faceplayer
-	opentext
-	cry SLOWPOKE
-	writetext SlowpokeWellB1FSlowpokeWithMailText
-	yesorno
-	iftrue .ReadMail
-	closetext
-	end
-
-.ReadMail:
-	writetext SlowpokeWellB1FSlowpokeMailText
-	waitbutton
-	closetext
-	end
-
-SlowpokeWellB1FTaillessSlowpokeScript:
-	faceplayer
-	opentext
-	writetext SlowpokeWellB1FTaillessSlowpokeText
-	cry SLOWPOKE
+	writetext PokemaniacDamienAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -122,25 +35,7 @@ SlowpokeWellB1FBoulder:
 	jumpstd strengthboulder
 
 SlowpokeWellB1FSuperPotion:
-	itemball SUPER_POTION
-
-KurtSlowpokeWellVictoryMovementData:
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step UP
-	step_sleep 8
-	step_sleep 8
-	step_sleep 8
-	step LEFT
-	step UP
-	step UP
-	step_sleep 8
-	step_sleep 8
-	step_sleep 8
-	turn_head LEFT
-	step_end
+	itemball FULL_HEAL
 
 SlowpokeWellB1FKurtText:
 	text "KURT: Hey there,"
@@ -184,42 +79,41 @@ KurtLeaveSlowpokeWellText:
 	cont "of here."
 	done
 
-GruntM29SeenText:
-	text "Darn! I was stand-"
-	line "ing guard up top"
+SuperNerdNedSeenText:
+	text "Have you ever"
+	line "observed a"
+	cont "Slowpoke in the"
+	cont "wild?"
 
-	para "when some old coot"
-	line "yelled at me."
-
-	para "He startled me so"
-	line "much that I fell"
-	cont "down here."
-
-	para "I think I'll vent"
-	line "my anger by taking"
-	cont "it out on you!"
+	para "It's fascinating,"
+	line "don't you think?"
 	done
 
-GruntM29BeatenText:
-	text "Arrgh! This is NOT"
-	line "my day!"
+SuperNerdNedBeatenText:
+	text "Truly fascinating!"
 	done
 
-GruntM29AfterBattleText:
-	text "Sure, we've been"
-	line "hacking the tails"
+SuperNerdNedAfterBattleText:
+	text "We've always"
+	line "thought that"
 
-	para "off SLOWPOKE and"
-	line "selling them."
+	para "Slowpoke need a"
+	line "Shellder in order"
 
-	para "Everything we do"
-	line "is for profit."
+	para "to evolve, but is"
+	line "that true?"
 
-	para "That's right!"
-	line "We're TEAM ROCKET,"
+	para "Perhaps I should"
+	line "ask Mr. Elm…"
 
-	para "and we'll do any-"
-	line "thing for money!"
+	para "Whoops, I mean"
+	line "Professor Elm!"
+
+	para "I forgot he just"
+	line "recently became"
+
+	para "a full-fledged"
+	line "#mon Professor!"
 	done
 
 GruntM1SeenText:
@@ -250,67 +144,28 @@ TrainerGruntM1WhenTalkText:
 	cont "stir up trouble!"
 	done
 
-GruntM40SeenText:
-	text "Quit taking SLOW-"
-	line "POKETAILS?"
+PokemaniacDamienSeenText:
+	text "You want a"
+	line "Slowpoke?"
 
-	para "If we obeyed you,"
-	line "TEAM ROCKET's rep"
-	cont "would be ruined!"
+	para "Too bad, they're"
+	line "all mine!"
 	done
 
-GruntM40BeatenText:
-	text "Just…"
-	line "Too strong…"
+PokemaniacDamienBeatenText:
+	text "Ok, not really…"
 	done
 
-GruntM40AfterBattleText:
-	text "We need the money,"
-	line "but selling SLOW-"
-	cont "POKETAILS?"
+PokemaniacDamienAfterBattleText:
+	text "I'd love to have"
+	line "all the Slowpoke"
+	cont "to myself,"
 
-	para "It's tough being a"
-	line "ROCKET GRUNT!"
-	done
+	para "but I can't do"
+	line "that…"
 
-GruntF1SeenText:
-	text "Stop taking TAILS?"
-
-	para "Yeah, just try to"
-	line "defeat all of us!"
-	done
-
-GruntF1BeatenText:
-	text "You rotten brat!"
-	done
-
-GruntF1AfterBattleText:
-	text "SLOWPOKETAILS"
-	line "grow back fast!"
-
-	para "What's wrong with"
-	line "selling them?"
-	done
-
-SlowpokeWellB1FSlowpokeWithMailText:
-	text "A SLOWPOKE with"
-	line "its TAIL cut off…"
-
-	para "Huh? It has MAIL."
-	line "Read it?"
-	done
-
-SlowpokeWellB1FSlowpokeMailText:
-	text "<PLAYER> read the"
-	line "MAIL."
-
-	para "Be good and look"
-	line "after the house"
-
-	para "with Grandpa and"
-	line "SLOWPOKE."
-
-	para "Love, Dad"
+	para "That would just"
+	line "be selfish!"
 	done
 
 SlowpokeWellB1FTaillessSlowpokeText:
@@ -329,13 +184,8 @@ SlowpokeWellB1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 9 ; object events
-	object_event 15,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM29, EVENT_SLOWPOKE_WELL_ROCKETS
-	object_event  5,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGruntM1, EVENT_SLOWPOKE_WELL_ROCKETS
-	object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntM40, EVENT_SLOWPOKE_WELL_ROCKETS
-	object_event 10,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerGruntF1, EVENT_SLOWPOKE_WELL_ROCKETS
-	object_event  7,  4, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FSlowpokeWithMailScript, EVENT_SLOWPOKE_WELL_SLOWPOKES
-	object_event  6,  2, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FTaillessSlowpokeScript, EVENT_SLOWPOKE_WELL_SLOWPOKES
-	object_event 16, 14, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FKurtScript, EVENT_SLOWPOKE_WELL_KURT
+	db 4 ; object events
+	object_event 15,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdNed, -1
+	object_event  5,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacDamien, -1
 	object_event  3,  2, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FBoulder, -1
 	object_event 10,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SlowpokeWellB1FSuperPotion, EVENT_SLOWPOKE_WELL_B1F_SUPER_POTION

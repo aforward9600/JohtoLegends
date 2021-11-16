@@ -137,7 +137,7 @@ GoldenrodDeptStoreRoofPokefanMText:
 	line "necessary cash…"
 
 	para "Maybe I'll sell"
-	line "off the BERRIES"
+	line "off the Berries"
 	cont "I've collected…"
 	done
 
@@ -146,18 +146,18 @@ GoldenrodDeptStoreRoofTeacherText:
 	line "so cheap!"
 
 	para "I bought so much,"
-	line "my PACK's crammed!"
+	line "my Pack's crammed!"
 	done
 
 GoldenrodDeptStoreRoofBugCatcherText:
-	text "My #MON always"
+	text "My #mon always"
 	line "get paralyzed or"
 
 	para "poisoned when the"
 	line "chips are down…"
 
 	para "So I came to buy"
-	line "some FULL HEAL."
+	line "some Full Heal."
 
 	para "I wonder if"
 	line "there's any left?"
@@ -179,7 +179,7 @@ Binoculars2Text:
 	line "are battling on"
 	cont "the road!"
 
-	para "A #MON fired a"
+	para "A #mon fired a"
 	line "flurry of leaves!"
 
 	para "That makes me feel"
@@ -188,10 +188,10 @@ Binoculars2Text:
 	done
 
 Binoculars3Text:
-	text "A FISHER caught a"
-	line "lot of MAGIKARP…"
+	text "A Fisher caught a"
+	line "lot of Magikarp…"
 
-	para "They're SPLASHing"
+	para "They're Splashing"
 	line "at the same time!"
 
 	para "Look at the water"
@@ -200,7 +200,7 @@ Binoculars3Text:
 
 PokeDollVendingMachineText:
 	text "A vending machine"
-	line "for #MON dolls?"
+	line "for #mon dolls?"
 
 	para "Insert money, then"
 	line "turn the crank…"

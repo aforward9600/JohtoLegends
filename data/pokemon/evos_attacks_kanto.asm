@@ -209,6 +209,7 @@ VenusaurEvosAttacks:
 	dbw 45, SYNTHESIS
 	dbw 50, PETAL_BLIZZ
 	dbw 53, SOLARBEAM
+	dbw 60, FRENZY_PLANT
 	dbw LEARN_EVO_MOVE, PETAL_DANCE
 	db 0 ; no more level-up moves
 
@@ -262,7 +263,7 @@ CharizardEvosAttacks:
 	dbw 56, DRAGON_PULSE
 	dbw 62, INFERNO
 	dbw 71, HEAT_WAVE
-	dbw 77, FLARE_BLITZ
+	dbw 77, BLAST_BURN
 	dbw LEARN_EVO_MOVE, AIR_SLASH
 	db 0 ; no more level-up moves
 
@@ -321,6 +322,7 @@ BlastoiseEvosAttacks:
 	dbw 47, IRON_DEFENSE
 	dbw 54, RAIN_DANCE
 	dbw 60, HYDRO_PUMP
+	dbw 65, HYDRO_CANNON
 	dbw LEARN_EVO_MOVE, FLASH_CANNON
 	db 0 ; no more level-up moves
 

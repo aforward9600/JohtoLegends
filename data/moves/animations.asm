@@ -411,6 +411,9 @@ BattleAnimations::
 	dw BattleAnim_Flatter
 	dw BattleAnim_GrassWhistle
 	dw BattleAnim_OminousWind
+	dw BattleAnim_FrenzyPlant
+	dw BattleAnim_BlastBurn
+	dw BattleAnim_HydroCannon
 ;	dw BattleAnim_WakeUpSlap
 	dw BattleAnim_SweetScent2
 
@@ -1164,6 +1167,42 @@ BattleAnim_FireBlast:
 	anim_wait 32
 	anim_ret
 
+BattleAnim_BlastBurn:
+	anim_2gfx ANIM_GFX_FIRE, ANIM_GFX_EXPLOSION
+.loop1
+	anim_sound 6, 2, SFX_EMBER
+	anim_obj ANIM_OBJ_FIRE_BLAST, 64, 92, $7
+	anim_wait 6
+	anim_loop 10, .loop1
+.loop2
+	anim_sound 0, 1, SFX_EMBER
+	anim_wait 8
+	anim_loop 10, .loop2
+	anim_incobj 1
+	anim_incobj 2
+	anim_incobj 3
+	anim_incobj 4
+	anim_incobj 5
+	anim_incobj 6
+	anim_incobj 7
+	anim_incobj 8
+	anim_incobj 9
+	anim_incobj 10
+	anim_wait 2
+	anim_bgeffect ANIM_BG_1F, $60, $4, $10
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $24
+	anim_if_param_equal $1, .loop3
+	anim_call BattleAnim_Explosion_branch_cbb8f
+	anim_wait 16
+	anim_ret
+
+.loop3
+	anim_call BattleAnim_Explosion_branch_cbb62
+	anim_wait 5
+	anim_loop 2, .loop3
+	anim_wait 16
+	anim_ret
+
 BattleAnim_IcePunch:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_ICE
 	anim_obj ANIM_OBJ_0A, 136, 56, $43
@@ -1306,6 +1345,51 @@ BattleAnim_HydroPump:
 	anim_bgeffect ANIM_BG_31, $30, $0, $0
 	anim_wait 8
 	anim_sound 0, 1, SFX_HYDRO_PUMP
+	anim_obj ANIM_OBJ_HYDRO_PUMP, 156, 72, $0
+	anim_bgeffect ANIM_BG_31, $1c, $0, $0
+	anim_wait 32
+	anim_call BattleAnim_ShowMon_1
+	anim_bgeffect ANIM_BG_32, $0, $0, $0
+	anim_wait 16
+	anim_ret
+
+BattleAnim_HydroCannon:
+	anim_bgeffect ANIM_BG_30, $0, $0, $0
+	anim_1gfx ANIM_GFX_WATER
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_call BattleAnim_UserObj_2Row
+	anim_sound 0, 1, SFX_HYDRO_PUMP
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_obj ANIM_OBJ_HYDRO_PUMP, 108, 72, $0
+	anim_bgeffect ANIM_BG_31, $1c, $0, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_HYDRO_PUMP
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_obj ANIM_OBJ_HYDRO_PUMP, 116, 72, $0
+	anim_bgeffect ANIM_BG_31, $8, $0, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_HYDRO_PUMP
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_obj ANIM_OBJ_HYDRO_PUMP, 124, 72, $0
+	anim_bgeffect ANIM_BG_31, $30, $0, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_HYDRO_PUMP
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_obj ANIM_OBJ_HYDRO_PUMP, 132, 72, $0
+	anim_bgeffect ANIM_BG_31, $1c, $0, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_HYDRO_PUMP
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_obj ANIM_OBJ_HYDRO_PUMP, 140, 72, $0
+	anim_bgeffect ANIM_BG_31, $8, $0, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_HYDRO_PUMP
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_obj ANIM_OBJ_HYDRO_PUMP, 148, 72, $0
+	anim_bgeffect ANIM_BG_31, $30, $0, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_HYDRO_PUMP
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
 	anim_obj ANIM_OBJ_HYDRO_PUMP, 156, 72, $0
 	anim_bgeffect ANIM_BG_31, $1c, $0, $0
 	anim_wait 32
@@ -5336,6 +5420,32 @@ BattleAnim_PowerWhip:
 	anim_sound 0, 1, SFX_EMBER
 	anim_wait 24
 	anim_loop 4, .loop
+	anim_ret
+
+BattleAnim_FrenzyPlant:
+	anim_2gfx ANIM_GFX_WHIP, ANIM_GFX_PLANT
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 124, 64, $0
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 124, 64, $0
+	anim_wait 6
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
+	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 132, 64, $0
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 132, 64, $0
+	anim_wait 6
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
+	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 140, 64, $0
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 140, 64, $0
+	anim_wait 16
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 136, 40, $28
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 136, 40, $d0
+	anim_wait 32
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 136, 40, $10
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 136, 40, $dc
+	anim_wait 32
 	anim_ret
 
 BattleAnim_WaterPulse:

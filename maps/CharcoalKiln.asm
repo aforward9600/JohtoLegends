@@ -11,22 +11,14 @@ CharcoalKiln_MapScripts:
 CharcoalKilnBoss:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_SCYTHER_CALL
-	iftrue .GotCut
-	checkevent EVENT_CLEARED_SLOWPOKE_WELL
-	iftrue .SavedSlowpoke
+	checkevent EVENT_ILEX_FOREST_FARFETCHD
+	iftrue .BeatFarfetchd
 	writetext CharcoalKilnBossText1
 	waitbutton
 	closetext
 	end
 
-.SavedSlowpoke:
-	writetext CharcoalKilnBossText2
-	waitbutton
-	closetext
-	end
-
-.GotCut:
+.BeatFarfetchd:
 	writetext CharcoalKilnBossText3
 	waitbutton
 	closetext
@@ -36,15 +28,7 @@ CharcoalKilnApprentice:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_CHARCOAL_IN_CHARCOAL_KILN
-	iftrue .YoureTheCoolest
-	checkevent EVENT_GOT_SCYTHER_CALL
 	iftrue .Thanks
-	writetext CharcoalKilnApprenticeText1
-	waitbutton
-	closetext
-	end
-
-.Thanks:
 	writetext CharcoalKilnApprenticeText2
 	buttonsound
 	verbosegiveitem CHARCOAL
@@ -53,18 +37,24 @@ CharcoalKilnApprentice:
 	closetext
 	end
 
-.YoureTheCoolest:
-	writetext CharcoalKilnApprenticeText3
+.Thanks:
+	writetext CharcoalKilnApprenticeText1
 	waitbutton
+	closetext
+	end
+
 .Done:
 	closetext
 	end
 
 CharcoalKilnFarfetchd:
-	faceplayer
+	refreshscreen
+	pokepic FARFETCH_D
+	cry FARFETCH_D
+	waitbutton
+	closepokepic
 	opentext
 	writetext FarfetchdText
-	cry FARFETCH_D
 	waitbutton
 	closetext
 	end
@@ -76,17 +66,18 @@ CharcoalKilnRadio:
 	jumpstd radio2
 
 CharcoalKilnBossText1:
-	text "All the SLOWPOKE"
-	line "have disappeared"
-	cont "from the town."
+	text "Some say that on"
+	line "Mondays, a strange"
+	cont "colored #mon"
 
-	para "The forest's pro-"
-	line "tector may be"
-	cont "angry with us…"
+	para "appears in Ilex"
+	line "Forest."
 
-	para "It may be a bad"
-	line "omen. We should"
-	cont "stay in."
+	para "Hm?"
+
+	para "Why Mondays?"
+
+	para "No idea…"
 	done
 
 CharcoalKilnBossText2:
@@ -102,35 +93,40 @@ CharcoalKilnBossText2:
 	done
 
 CharcoalKilnBossText3:
-	text "You chased off"
-	line "TEAM ROCKET and"
+	text "So, you saw it?"
+	line "That Farfetch'd…"
 
-	para "went to ILEX"
-	line "FOREST alone?"
+	para "Most likely it's"
+	line "one of a kind…"
 
-	para "That takes guts!"
-	line "I like that. Come"
-	cont "train with us."
+	para "You likely won't"
+	line "see another like"
+	cont "it…"
 	done
 
 CharcoalKilnApprenticeText1:
-	text "Where have all the"
-	line "SLOWPOKE gone?"
+	text "I'm gonna be a"
+	line "master cutter"
+	cont "someday!"
 
-	para "Are they out play-"
-	line "ing somewhere?"
+	para "Together with my"
+	line "trusty Farfetch'd,"
+
+	para "we'll make a"
+	line "perfect team!"
 	done
 
 CharcoalKilnApprenticeText2:
-	text "I'm sorry--I for-"
-	line "got to thank you."
+	text "Hey, take this!"
 
-	para "This is CHARCOAL"
-	line "that I made."
+	para "This is Charcoal"
+	line "that I made!"
 
-	para "Fire-type #MON"
+	para "Fire-type #mon"
 	line "would be happy to"
 	cont "hold that."
+
+	para "Cool, huh?"
 	done
 
 CharcoalKilnApprenticeText3:
@@ -143,7 +139,7 @@ CharcoalKilnApprenticeText3:
 	done
 
 FarfetchdText:
-	text "FARFETCH'D: Kwaa!"
+	text "Farfetch'd: Kwaa!"
 	done
 
 CharcoalKiln_MapEvents:
@@ -162,5 +158,5 @@ CharcoalKiln_MapEvents:
 
 	db 3 ; object events
 	object_event  2,  3, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharcoalKilnBoss, EVENT_CHARCOAL_KILN_BOSS
-	object_event  5,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharcoalKilnApprentice, EVENT_CHARCOAL_KILN_APPRENTICE
-	object_event  5,  6, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CharcoalKilnFarfetchd, EVENT_CHARCOAL_KILN_FARFETCH_D
+	object_event  5,  3, SPRITE_KID, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharcoalKilnApprentice, -1
+	object_event  5,  6, SPRITE_FARFETCHD, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CharcoalKilnFarfetchd, EVENT_CHARCOAL_KILN_FARFETCH_D

@@ -228,7 +228,7 @@ CHRIS EQU __enum__
 	trainerclass COOLTRAINERF ; 1c
 	const TERESA
 	const ARIEL
-	const FRAN
+	const EMIKO
 	const LOLA
 	const TINA
 	const IRENE
@@ -267,7 +267,7 @@ CHRIS EQU __enum__
 
 	trainerclass POKEMANIAC ; 1e
 	const ALVIN
-	const ANDREW
+	const DAMIEN
 	const CALVIN
 	const SHANE
 	const BEN
@@ -448,8 +448,8 @@ CHRIS EQU __enum__
 
 	trainerclass SUPER_NERD ; 29
 	const DEXTER
-	const ERIC
-	const GREGG
+	const IRWIN
+	const NED1
 	const JAY
 	const DAVE
 	const SAM
@@ -749,6 +749,7 @@ CHRIS EQU __enum__
 	const HILDA
 	const ZELDA
 	const SABRINA2
+	const MAEVE
 
 	trainerclass CHIGUSA ; 48
 	const CHIGUSA1

@@ -814,7 +814,7 @@ MeganiumEvosAttacks:
 	dbw 54, SAFEGUARD
 	dbw 60, HEAL_BELL
 	dbw 66, SOLARBEAM
-	dbw 70, PETAL_BLIZZ
+	dbw 70, FRENZY_PLANT
 	dbw LEARN_EVO_MOVE, PETAL_DANCE
 	db 0 ; no more level-up moves
 
@@ -876,9 +876,9 @@ TyphlosionEvosAttacks:
 	dbw 48, FLAMETHROWER
 	dbw 56, INFERNO
 	dbw 61, ROLLOUT
-	dbw 69, DOUBLE_EDGE
+	dbw 69, EARTHQUAKE
 	dbw 74, FIRE_BLAST
-	dbw 82, EARTHQUAKE
+	dbw 82, BLAST_BURN
 	dbw LEARN_EVO_MOVE, EARTH_POWER
 	db 0 ; no more level-up moves
 
@@ -943,6 +943,7 @@ FeraligatrEvosAttacks:
 	dbw 63, AQUA_TAIL
 	dbw 71, SUPERPOWER
 	dbw 76, HYDRO_PUMP
+	dbw 80, HYDRO_CANNON
 	dbw LEARN_EVO_MOVE, NIGHT_SLASH
 	db 0 ; no more level-up moves
 

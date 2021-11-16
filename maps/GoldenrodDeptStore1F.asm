@@ -18,8 +18,8 @@ GoldenrodDeptStore1FGentlemanScript:
 GoldenrodDeptStore1FPokefanFScript:
 	jumptextfaceplayer GoldenrodDeptStore1FPokefanFText
 
-GoldenrodDeptStore1FBugCatcherScript:
-	jumptextfaceplayer GoldenrodDeptStore1FBugCatcherText
+GoldenrodDeptStore1FLassScript:
+	jumptextfaceplayer GoldenrodDeptStore1FLassText
 
 GoldenrodDeptStore1FDirectory:
 	jumptext GoldenrodDeptStore1FDirectoryText
@@ -28,52 +28,54 @@ GoldenrodDeptStore1FElevatorButton:
 	jumpstd elevatorbutton
 
 GoldenrodDeptStore1FReceptionistText:
-	text "Welcome to GOLDEN-"
-	line "ROD DEPT.STORE."
+	text "Welcome to Golden-"
+	line "rod Dept.Store."
 	done
 
 GoldenrodDeptStore1FGentlemanText:
-	text "The DEPT.STORE"
+	text "The Dept.Store"
 	line "has a decent se-"
 	cont "lection."
 
 	para "But some items"
 	line "are only available"
 
-	para "as GAME CORNER"
+	para "as Game Corner"
 	line "prizes."
 	done
 
 GoldenrodDeptStore1FPokefanFText:
-	text "I'm raring to shop"
-	line "again today!"
+	text "My daughter loves"
+	line "to shop."
+
+	para "Frankly, I don't"
+	line "see the fun in it."
 	done
 
-GoldenrodDeptStore1FBugCatcherText:
-	text "Mom's good at"
-	line "bargain hunting."
+GoldenrodDeptStore1FLassText:
+	text "Yay!"
 
-	para "She always buys"
-	line "stuff at lower"
-	cont "prices."
+	para "Shopping,"
+	line "shopping,"
+	cont "shopping!"
 	done
 
 GoldenrodDeptStore1FDirectoryText:
-	text "1F SERVICE COUNTER"
+	text "1F Service Counter"
 
-	para "2F TRAINER'S"
-	line "   MARKET"
+	para "2F Trainer's"
+	line "   Market"
 
-	para "3F BATTLE"
-	line "   COLLECTION"
+	para "3F Battle"
+	line "   Collection"
 
-	para "4F MEDICINE BOX"
+	para "4F Medicine Box"
 
-	para "5F TM CORNER"
+	para "5F TM Corner"
 
-	para "6F TRANQUIL SQUARE"
+	para "6F Tranquil Square"
 
-	para "ROOFTOP LOOKOUT"
+	para "Rooftop Lookout"
 	done
 
 GoldenrodDeptStore1F_MapEvents:
@@ -94,5 +96,5 @@ GoldenrodDeptStore1F_MapEvents:
 	db 4 ; object events
 	object_event 10,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore1FReceptionistScript, -1
 	object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore1FPokefanFScript, -1
-	object_event  5,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore1FBugCatcherScript, -1
+	object_event  5,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore1FLassScript, -1
 	object_event 11,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore1FGentlemanScript, -1

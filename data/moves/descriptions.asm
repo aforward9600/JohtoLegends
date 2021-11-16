@@ -391,6 +391,9 @@ MoveDescriptions1:
 	dw FlatterDescription
 	dw SingDescription
 	dw AncientpowerDescription
+	dw HyperBeamDescription
+	dw HyperBeamDescription
+	dw HyperBeamDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:

@@ -26,14 +26,11 @@ AzaleaPokecenter1FPokefanFScript:
 	jumptextfaceplayer AzaleaPokecenter1FPokefanFText
 
 AzaleaPokecenter1FGentlemanText:
-	text "Do your #MON"
-	line "know HM moves?"
+	text "Somedays, I just"
+	line "don't want to do"
 
-	para "Those moves can"
-	line "be used even if"
-
-	para "your #MON has"
-	line "fainted."
+	para "anything, just"
+	line "like a Slowpoke."
 	done
 
 AzaleaPokecenter1FUnusedText:
@@ -50,14 +47,13 @@ AzaleaPokecenter1FUnusedText:
 	done
 
 AzaleaPokecenter1FFishingGuruText:
-	text "BILL's PC can"
-	line "store up to 20"
-	cont "#MON per BOX."
+	text "Slowpoke are neat,"
+	line "don't you think?"
 	done
 
 AzaleaPokecenter1FPokefanFText:
 	text "Do you know about"
-	line "APRICORNS?"
+	line "Apricorns?"
 
 	para "Crack one open,"
 	line "hollow it out and"
@@ -66,13 +62,23 @@ AzaleaPokecenter1FPokefanFText:
 	line "special device."
 
 	para "Then you can catch"
-	line "#MON with it."
+	line "#mon with it."
 
-	para "Before # BALLS"
-	line "were invented,"
+	para "At least, you"
+	line "have, if wild"
 
-	para "everyone used"
-	line "APRICORNS."
+	para "Apricorns didn't"
+	line "disappear."
+
+	para "They were over-"
+	line "harvested."
+
+	para "There are efforts"
+	line "to restore them,"
+
+	para "so maybe they'll"
+	line "be back in the"
+	cont "future."
 	done
 
 AzaleaPokecenter1F_MapEvents:
@@ -91,4 +97,4 @@ AzaleaPokecenter1F_MapEvents:
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FNurseScript, -1
 	object_event  9,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FGentlemanScript, -1
 	object_event  6,  1, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FFishingGuruScript, -1
-	object_event  1,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FPokefanFScript, -1
+	object_event  1,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FPokefanFScript, -1

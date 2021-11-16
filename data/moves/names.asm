@@ -385,4 +385,7 @@ MoveNames::
 	db "Flatter@"
 	db "GrassWhistle@"
 	db "Ominous Wind@"
+	db "Frenzy Plant@"
+	db "Blast Burn@"
+	db "Hydro Cannon@"
 ;	db "Wake Up Slap@"

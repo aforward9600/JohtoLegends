@@ -1,12 +1,12 @@
 	object_const_def ; object_event constants
 	const ILEXFOREST_FARFETCHD
-	const ILEXFOREST_YOUNGSTER1
+	const ILEXFOREST_SUPER_NERD
 	const ILEXFOREST_BLACK_BELT
 	const ILEXFOREST_ROCKER
 	const ILEXFOREST_POKE_BALL1
 	const ILEXFOREST_KURT
 	const ILEXFOREST_LASS
-	const ILEXFOREST_YOUNGSTER2
+	const ILEXFOREST_HEX_MANIAC
 	const ILEXFOREST_POKE_BALL2
 	const ILEXFOREST_POKE_BALL3
 	const ILEXFOREST_POKE_BALL4
@@ -14,7 +14,21 @@
 IlexForest_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .FarfetchDAppears
+
+.FarfetchDAppears:
+	checkevent EVENT_ILEX_FOREST_FARFETCHD
+	iftrue .FarfetchDWillNotAppear
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .FarfetchDWillAppear
+.FarfetchDWillNotAppear:
+	disappear ILEXFOREST_FARFETCHD
+	return
+
+.FarfetchDWillAppear:
+	appear ILEXFOREST_FARFETCHD
+	return
 
 IlexForestCharcoalApprenticeScript:
 	faceplayer
@@ -32,6 +46,17 @@ IlexForestCharcoalApprenticeScript:
 	closetext
 	end
 
+TrainerSuperNerdIrwin:
+	trainer SUPER_NERD, IRWIN, EVENT_BEAT_SUPER_NERD_IRWIN, SuperNerdIrwinSeenText, SuperNerdIrwinBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SuperNerdIrwinAfterBattleText
+	waitbutton
+	closetext
+	end
+
 IlexForestFarfetchdScript:
 	faceplayer
 	opentext
@@ -45,6 +70,7 @@ IlexForestFarfetchdScript:
 	startbattle
 	ifequal LOSE, .NotBeaten
 	disappear ILEXFOREST_FARFETCHD
+	setevent EVENT_ILEX_FOREST_FARFETCHD
 .NotBeaten:
 	reloadmapafterbattle
 	end
@@ -79,31 +105,40 @@ IlexForestDarkPulseGirlScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_TM63_DARK_PULSE
-	iftrue .AlreadyGotDarkPulse
+	iftrue .AlreadyGotHeadbutt
 	writetext Text_DarkPulseIntro
 	buttonsound
 	verbosegiveitem TM_DARK_PULSE
-	iffalse .BagFullIlex
+	iffalse .BagFull
 	setevent EVENT_GOT_TM63_DARK_PULSE
-	writetext Text_DarkPulseOutro
-	waitbutton
 	closetext
 	end
 
-.AlreadyGotDarkPulse:
+.AlreadyGotHeadbutt:
 	writetext Text_DarkPulseOutro
 	waitbutton
-.BagFullIlex:
+.BagFull:
 	closetext
 	end
 
-TrainerBugCatcherWayne:
-	trainer BUG_CATCHER, WAYNE, EVENT_BEAT_BUG_CATCHER_WAYNE, BugCatcherWayneSeenText, BugCatcherWayneBeatenText, 0, .Script
+TrainerHexManiacMaeve:
+	trainer HEX_MANIAC, MAEVE, EVENT_BEAT_HEX_MANIAC_MAEVE, HexManiacMaeveSeenText, HexManiacMaeveBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BugCatcherWayneAfterBattleText
+	writetext HexManiacMaeveAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainerFEmiko:
+	trainer COOLTRAINERF, EMIKO, EVENT_BEAT_COOLTRAINERF_EMIKO, CooltrainerFEmikoSeenText, CooltrainerFEmikoBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext CooltrainerFEmikoAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -118,16 +153,16 @@ IlexForestXAttack:
 	itemball X_ATTACK
 
 IlexForestAntidote:
-	itemball ANTIDOTE
+	itemball ULTRA_BALL
 
 IlexForestEther:
 	itemball ETHER
 
 IlexForestHiddenEther:
-	hiddenitem ETHER, EVENT_ILEX_FOREST_HIDDEN_ETHER
+	hiddenitem MAX_ETHER, EVENT_ILEX_FOREST_HIDDEN_ETHER
 
 IlexForestHiddenSuperPotion:
-	hiddenitem SUPER_POTION, EVENT_ILEX_FOREST_HIDDEN_SUPER_POTION
+	hiddenitem HYPER_POTION, EVENT_ILEX_FOREST_HIDDEN_SUPER_POTION
 
 IlexForestHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL
@@ -193,241 +228,6 @@ IlexForestShrineScript:
 .DidntCatchCelebi:
 	end
 
-MovementData_Farfetchd_Pos1_Pos2:
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	step_end
-
-MovementData_Farfetchd_Pos2_Pos3:
-	big_step UP
-	big_step UP
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step DOWN
-	step_end
-
-MovementData_Farfetchd_Pos2_Pos8:
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	step_end
-
-MovementData_Farfetchd_Pos3_Pos4:
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	step_end
-
-MovementData_Farfetchd_Pos3_Pos2:
-	big_step UP
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	step_end
-
-MovementData_Farfetchd_Pos4_Pos5:
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	step_end
-
-MovementData_Farfetchd_Pos4_Pos3:
-	big_step LEFT
-	jump_step LEFT
-	big_step LEFT
-	big_step LEFT
-	step_end
-
-MovementData_Farfetchd_Pos5_Pos6:
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	step_end
-
-MovementData_Farfetchd_Pos5_Pos7:
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	step_end
-
-MovementData_Farfetched_Pos5_Pos4_Up:
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step RIGHT
-	big_step UP
-	step_end
-
-MovementData_Farfetched_Pos5_Pos4_Right:
-	big_step RIGHT
-	turn_head UP
-	step_sleep 1
-	turn_head DOWN
-	step_sleep 1
-	turn_head UP
-	step_sleep 1
-	big_step DOWN
-	big_step DOWN
-	fix_facing
-	jump_step UP
-	step_sleep 8
-	step_sleep 8
-	remove_fixed_facing
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	step_end
-
-MovementData_Farfetched_Pos6_Pos7:
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step UP
-	big_step UP
-	big_step RIGHT
-	big_step UP
-	big_step UP
-	step_end
-
-MovementData_Farfetched_Pos6_Pos5:
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	step_end
-
-MovementData_Farfetched_Pos7_Pos8:
-	big_step UP
-	big_step UP
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	step_end
-
-MovementData_Farfetched_Pos7_Pos6:
-	big_step DOWN
-	big_step DOWN
-	big_step LEFT
-	big_step DOWN
-	big_step DOWN
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	step_end
-
-MovementData_Farfetched_Pos7_Pos5:
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	step_end
-
-MovementData_Farfetched_Pos8_Pos9:
-	big_step DOWN
-	big_step LEFT
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	step_end
-
-MovementData_Farfetched_Pos8_Pos7:
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	step_end
-
-MovementData_Farfetched_Pos8_Pos2:
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	step_end
-
-MovementData_Farfetched_Pos9_Pos10:
-	big_step LEFT
-	big_step LEFT
-	fix_facing
-	jump_step RIGHT
-	step_sleep 8
-	step_sleep 8
-	remove_fixed_facing
-	big_step LEFT
-	big_step LEFT
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	step_end
-
-MovementData_Farfetched_Pos9_Pos8_Right:
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	step_end
-
-MovementData_Farfetched_Pos9_Pos8_Down:
-	big_step LEFT
-	big_step LEFT
-	fix_facing
-	jump_step RIGHT
-	step_sleep 8
-	step_sleep 8
-	remove_fixed_facing
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	step_end
-
 MovementData_0x6ef4e:
 	step UP
 	step UP
@@ -483,7 +283,7 @@ Text_ItsTheMissingPokemon:
 	done
 
 Text_Kwaaaa:
-	text "FARFETCH'D: Kwaa!"
+	text "Farfetch'd: Kwaa!"
 	done
 
 Text_CharcoalMasterIntro:
@@ -546,6 +346,17 @@ Text_DarkPulseIntro:
 	para "with this."
 	done
 
+ReceivedDarkPulseText:
+	text "<PLAYER> received"
+	line "TM63."
+	done
+
+TMGoesIntoBagText:
+	text "<PLAYER> puts the"
+	line "TM63 in"
+	cont "the TM Pocket."
+	done
+
 Text_DarkPulseOutro:
 	text "Dark Pulse can"
 	line "make an opponent"
@@ -562,7 +373,7 @@ Text_IlexForestLass:
 	done
 
 IlexForestSignpostText:
-	text "ILEX FOREST is"
+	text "Ilex Forest is"
 	line "so overgrown with"
 
 	para "trees that you"
@@ -574,8 +385,8 @@ IlexForestSignpostText:
 	done
 
 Text_IlexForestShrine:
-	text "ILEX FOREST"
-	line "SHRINE…"
+	text "Ilex Forest"
+	line "Shrine…"
 
 	para "It's in honor of"
 	line "the forest's"
@@ -583,8 +394,8 @@ Text_IlexForestShrine:
 	done
 
 Text_ShrineCelebiEvent:
-	text "ILEX FOREST"
-	line "SHRINE…"
+	text "Ilex Forest"
+	line "Shrine…"
 
 	para "It's in honor of"
 	line "the forest's"
@@ -595,16 +406,16 @@ Text_ShrineCelebiEvent:
 	para "It's a hole."
 	line "It looks like the"
 
-	para "GS BALL would fit"
+	para "GS Berry would fit"
 	line "inside it."
 
 	para "Want to put the GS"
-	line "BALL here?"
+	line "Berry here?"
 	done
 
 Text_InsertGSBall:
 	text "<PLAYER> put in the"
-	line "GS BALL."
+	line "GS Berry."
 	done
 
 Text_KurtCaughtCelebi:
@@ -615,42 +426,84 @@ Text_KurtCaughtCelebi:
 	line "fantastic. Thanks!"
 
 	para "The legends about"
-	line "that SHRINE were"
+	line "that Shrine were"
 	cont "real after all."
 
 	para "I feel inspired by"
 	line "what I just saw."
 
 	para "It motivates me to"
-	line "make better BALLS!"
+	line "be a better"
+	cont "Leader!"
 
 	para "I'm going!"
 	done
 
-BugCatcherWayneSeenText:
-	text "Don't sneak up on"
-	line "me like that!"
-
-	para "You frightened a"
-	line "#MON away!"
+HexManiacMaeveSeenText:
+	text "Are you here to"
+	line "bask in darkness"
+	cont "as well?"
 	done
 
-BugCatcherWayneBeatenText:
-	text "I hadn't seen that"
-	line "#MON before…"
+HexManiacMaeveBeatenText:
+	text "I guess not…"
 	done
 
-BugCatcherWayneAfterBattleText:
-	text "A #MON I've"
-	line "never seen before"
+HexManiacMaeveAfterBattleText:
+	text "Please leave."
 
-	para "fell out of the"
-	line "tree when I used"
-	cont "HEADBUTT."
+	para "Your bright aura"
+	line "is making this"
+	cont "place a little"
+	cont "too uncomfortable."
+	done
 
-	para "I ought to use"
-	line "HEADBUTT in other"
-	cont "places too."
+SuperNerdIrwinSeenText:
+	text "Hey!"
+
+	para "Don't try to"
+	line "muscle in on my"
+	cont "territory!"
+	done
+
+SuperNerdIrwinBeatenText:
+	text "Muscle is right!"
+	done
+
+SuperNerdIrwinAfterBattleText:
+	text "I heard there was"
+	line "a #mon of an"
+	cont "unusual color in"
+	cont "this forest…"
+
+	para "But I haven't come"
+	line "across it yet…"
+	done
+
+CooltrainerFEmikoSeenText:
+	text "Have you heard the"
+	line "the legend of the"
+	cont "Guardian of the"
+	cont "Forest?"
+	done
+
+CooltrainerFEmikoBeatenText:
+	text "Legendary!"
+	done
+
+CooltrainerFEmikoAfterBattleText:
+	text "The shrine back"
+	line "there was built in"
+	cont "honor of the"
+	cont "Guardian of the"
+	cont "Forest."
+
+	para "I'd say it's a"
+	line "Grass-Type #mon"
+	cont "since it's a"
+	cont "forest."
+
+	para "Makes sense, yes?"
 	done
 
 IlexForest_MapEvents:
@@ -671,14 +524,14 @@ IlexForest_MapEvents:
 	bg_event  8, 22, BGEVENT_UP, IlexForestShrineScript
 
 	db 11 ; object events
-	object_event 25, 22, SPRITE_FARFETCHD, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IlexForestFarfetchdScript, EVENT_ILEX_FOREST_FARFETCHD
-	object_event  7, 28, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestCharcoalApprenticeScript, EVENT_ILEX_FOREST_APPRENTICE
-	object_event  5, 28, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestCharcoalMasterScript, EVENT_ILEX_FOREST_CHARCOAL_MASTER
+	object_event 25, 22, SPRITE_FARFETCHD, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IlexForestFarfetchdScript, EVENT_ILEX_FOREST_FARFETCHD
+	object_event 29, 30, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerSuperNerdIrwin, -1
+	object_event  1, 36, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerFEmiko, -1
 	object_event 15, 14, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestDarkPulseGirlScript, -1
 	object_event 20, 32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestRevive, EVENT_ILEX_FOREST_REVIVE
 	object_event  8, 29, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ILEX_FOREST_KURT
-	object_event  3, 24, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestLassScript, EVENT_ILEX_FOREST_LASS
-	object_event 12,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerBugCatcherWayne, -1
+	object_event  3, 24, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestLassScript, EVENT_ILEX_FOREST_LASS
+	object_event 12,  1, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerHexManiacMaeve, -1
 	object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestXAttack, EVENT_ILEX_FOREST_X_ATTACK
 	object_event 17,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE
 	object_event 27,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER

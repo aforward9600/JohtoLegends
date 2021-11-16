@@ -1800,9 +1800,15 @@ CooltrainerFGroup:
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (3)
-	db "FRAN@", TRAINERTYPE_NORMAL
-	db 37
+	db "Emiko@", TRAINERTYPE_NORMAL
+	db 36
 	dw SEADRA
+	db 36
+	dw ROSELIA
+	db 36
+	dw GRANBULL
+	db 37
+	dw STEELIX
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (4)
@@ -2099,12 +2105,12 @@ PokemaniacGroup:
 	dw LICKITUNG
 	db -1 ; end
 
-	next_list_item ; POKEMANIAC (2)
-	db "ANDREW@", TRAINERTYPE_NORMAL
-	db 24
-	dw MAROWAK
-	db 24
-	dw MAROWAK
+	next_list_item ; POKEMANIAC (2) SLOWPOKE WELL
+	db "Damien@", TRAINERTYPE_NORMAL
+	db 36
+	dw SLOWPOKE
+	db 37
+	dw SLOWBRO
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (3)
@@ -3504,21 +3510,23 @@ SuperNerdGroup:
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (2)
-	db "ERIC@", TRAINERTYPE_NORMAL
-	db 11
-	dw GRIMER
-	db 11
-	dw GRIMER
+	db "Irwin@", TRAINERTYPE_NORMAL
+	db 36
+	dw ROSELIA
+	db 36
+	dw SANDSLASH
+	db 37
+	dw MUK
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (3)
-	db "GREGG@", TRAINERTYPE_NORMAL
-	db 20
-	dw MAGNEMITE
-	db 20
-	dw MAGNEMITE
-	db 20
-	dw MAGNEMITE
+	next_list_item ; SUPER_NERD (3) SLOWPOKE WELL
+	db "Ned@", TRAINERTYPE_MOVES
+	db 36
+	dw SLOWPOKE
+	dw WATER_PULSE, ZEN_HEADBUTT, SLACK_OFF, HEADBUTT
+	db 37
+	dw SLOWKING
+	dw NASTY_PLOT, WATER_PULSE, ZEN_HEADBUTT, HIDDEN_POWER
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (4)
@@ -3772,11 +3780,13 @@ GuitaristGroup:
 
 HikerGroup:
 	next_list_item ; HIKER (1)
-	db "ANTHONY@", TRAINERTYPE_NORMAL
-	db 16
-	dw GEODUDE
-	db 18
+	db "Anthony@", TRAINERTYPE_NORMAL
+	db 36
+	dw GOLEM
+	db 37
 	dw MACHAMP
+	db 37
+	dw DUNSPARCE
 	db -1 ; end
 
 	next_list_item ; HIKER (2)
@@ -5939,6 +5949,16 @@ HexManiacGroup:
 	dw NOCTOWL
 	db -1 ; end
 
+	next_list_item ; HEX_MANIAC (4) Ilex Forest
+	db "Maeve@", TRAINERTYPE_NORMAL
+	db 36
+	dw PERSIAN
+	db 36
+	dw UMBREON
+	db 37
+	dw DUSCLOPS
+	db -1 ; end
+
 	end_list_items
 
 ChigusaGroup:
@@ -6327,29 +6347,29 @@ MahoganyNinjaFGroup:
 DepressedDahliaGroup:
 	next_list_item ; RIVAL3 (6)
 	db "Dahlia@", TRAINERTYPE_NORMAL
-	db 36
+	db 35
 	dw POLIWRATH
-	db 36
+	db 35
 	dw PILOSWINE
-	db 37
+	db 36
 	dw SYLVEON
-	db 37
+	db 36
 	dw MAGNETON
-	db 38
+	db 37
 	dw PUPITAR
 	db -1 ; end
 
 	next_list_item ; RIVAL3 (6)
 	db "Dahlia@", TRAINERTYPE_NORMAL
-	db 36
+	db 35
 	dw POLIWRATH
-	db 36
+	db 35
 	dw PILOSWINE
-	db 37
+	db 36
 	dw SYLVEON
-	db 37
+	db 36
 	dw MAGNETON
-	db 38
+	db 37
 	dw DRAGONAIR
 	db -1 ; end
 
@@ -6358,29 +6378,29 @@ DepressedDahliaGroup:
 DepressedDracoGroup:
 	next_list_item ; RIVAL4 (6)
 	db "Draco@", TRAINERTYPE_NORMAL
-	db 36
+	db 35
 	dw POLIWRATH
-	db 36
+	db 35
 	dw PILOSWINE
-	db 37
+	db 36
 	dw SYLVEON
-	db 37
+	db 36
 	dw MAGNETON
-	db 38
+	db 37
 	dw PUPITAR
 	db -1 ; end
 
 	next_list_item ; RIVAL4 (6)
 	db "Draco@", TRAINERTYPE_NORMAL
-	db 36
+	db 35
 	dw POLIWRATH
-	db 36
+	db 35
 	dw PILOSWINE
-	db 37
+	db 36
 	dw SYLVEON
-	db 37
+	db 36
 	dw MAGNETON
-	db 38
+	db 37
 	dw DRAGONAIR
 	db -1 ; end
 
