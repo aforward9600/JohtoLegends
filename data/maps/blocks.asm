@@ -1072,3 +1072,6 @@ OlivineGym3F_Blocks:
 
 OlivineGym4F_Blocks:
 	INCBIN "maps/OlivineGym4F.blk"
+
+PokemonMansion1F_Blocks:
+	INCBIN "maps/PokemonMansion1F.blk"

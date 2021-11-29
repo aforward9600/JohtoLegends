@@ -183,6 +183,7 @@ ENDM
 	command breakscreens
 	command suckerpunch
 	command grassknot
+	command aquaring
 ;	command wakeupslap
 ;	command awakenopponent
 

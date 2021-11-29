@@ -394,6 +394,7 @@ MoveDescriptions1:
 	dw HyperBeamDescription
 	dw HyperBeamDescription
 	dw HyperBeamDescription
+	dw AquaRingDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1918,3 +1919,7 @@ FlatterDescription:
 WakeUpSlapDescription:
 	db   "Wakes up sleeping"
 	next "foe, more damage.@"
+
+AquaRingDescription:
+	db	 "Restores HP each"
+	next "turn.@"

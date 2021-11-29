@@ -51,3 +51,4 @@ Tilesets::
 	tileset TilesetAerodactylWordRoom
 	tileset TilesetRoute47
 	tileset TilesetJohto3
+	tileset TilesetPokemonMansion

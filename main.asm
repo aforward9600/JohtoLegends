@@ -162,6 +162,10 @@ INCLUDE "engine/battle/read_trainer_party.asm"
 SECTION "Battle Core", ROMX
 
 INCLUDE "engine/battle/core.asm"
+
+
+SECTION "Battle Core 2", ROMX
+
 INCLUDE "data/battle/effect_command_pointers.asm"
 
 
@@ -725,3 +729,7 @@ INCLUDE "data/trainers/parties.asm"
 SECTION "New Base Stats", ROMX
 
 INCLUDE "data/pokemon/base_stats_2.asm"
+
+SECTION "Battle Weather Images", ROMX
+
+INCLUDE "gfx/weather_images.asm"

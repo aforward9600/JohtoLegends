@@ -355,3 +355,14 @@ INCBIN "data/tilesets/johto_3_metatiles.bin"
 
 TilesetJohto3Coll:
 INCLUDE "data/tilesets/johto_3_collision.asm"
+
+SECTION "Tileset Data 10", ROMX
+
+TilesetPokemonMansionGFX:
+INCBIN "gfx/tilesets/pokemon_mansion.2bpp.lz"
+
+TilesetPokemonMansionMeta:
+INCBIN "data/tilesets/pokemon_mansion_metatiles.bin"
+
+TilesetPokemonMansionColl:
+INCLUDE "data/tilesets/pokemon_mansion_collision.asm"

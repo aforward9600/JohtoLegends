@@ -1883,7 +1883,7 @@ SeelEvosAttacks:
 	dbw 12, ENCORE
 	dbw 17, ICE_SHARD
 	dbw 21, REST
-	dbw 23, HEAL_BELL
+	dbw 23, AQUA_RING
 	dbw 27, AURORA_BEAM
 	dbw 31, BUBBLEBEAM
 	dbw 33, WATER_PULSE
@@ -1906,7 +1906,7 @@ DewgongEvosAttacks:
 	dbw 12, ENCORE
 	dbw 17, ICE_SHARD
 	dbw 21, REST
-	dbw 23, HEAL_BELL
+	dbw 23, AQUA_RING
 	dbw 27, AURORA_BEAM
 	dbw 31, BUBBLEBEAM
 	dbw 33, WATER_PULSE
@@ -2719,7 +2719,7 @@ GoldeenEvosAttacks:
 	dbw 8, HORN_ATTACK
 	dbw 13, FLAIL
 	dbw 16, AQUA_JET
-	dbw 21, WATER_PULSE
+	dbw 21, AQUA_RING
 	dbw 24, FURY_ATTACK
 	dbw 29, AGILITY
 	dbw 32, WATERFALL
@@ -2737,7 +2737,7 @@ SeakingEvosAttacks:
 	dbw 8, HORN_ATTACK
 	dbw 13, FLAIL
 	dbw 16, AQUA_JET
-	dbw 21, WATER_PULSE
+	dbw 21, AQUA_RING
 	dbw 26, FURY_ATTACK
 	dbw 31, AGILITY
 	dbw 35, WATERFALL

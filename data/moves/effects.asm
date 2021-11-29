@@ -2694,6 +2694,13 @@ Flatter:
 	confusetarget
 	endmove
 
+AquaRing:
+	checkobedience
+	usedmovetext
+	doturn
+	aquaring
+	endmove
+
 ;WakeUpSlap:
 ;	checkobedience
 ;	usedmovetext

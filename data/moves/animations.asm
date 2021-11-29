@@ -414,6 +414,7 @@ BattleAnimations::
 	dw BattleAnim_FrenzyPlant
 	dw BattleAnim_BlastBurn
 	dw BattleAnim_HydroCannon
+	dw BattleAnim_AquaRing
 ;	dw BattleAnim_WakeUpSlap
 	dw BattleAnim_SweetScent2
 
@@ -4516,6 +4517,20 @@ BattleAnim_Safeguard:
 	anim_wait 96
 	anim_ret
 
+BattleAnim_AquaRing:
+	anim_1gfx ANIM_GFX_BUBBLE
+	anim_bgeffect ANIM_BG_06, $0, $2, $0
+	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
+	anim_obj ANIM_OBJ_AQUA_RING, 80, 80, $0
+	anim_obj ANIM_OBJ_AQUA_RING, 80, 80, $d
+	anim_obj ANIM_OBJ_AQUA_RING, 80, 80, $1a
+	anim_obj ANIM_OBJ_AQUA_RING, 80, 80, $27
+	anim_obj ANIM_OBJ_AQUA_RING, 80, 80, $34
+	anim_sound 0, 0, SFX_PROTECT
+	anim_wait 96
+	anim_incbgeffect ANIM_BG_WHIRLPOOL
+	anim_ret
+
 BattleAnim_PainSplit:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_OBJECTS
 	anim_call BattleAnim_TargetObj_2Row
@@ -6230,21 +6245,33 @@ BattleAnim_GyroBall:
 	anim_ret
 
 BattleAnim_ChargeBeam:
-	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_BEAM
-	anim_sound 0, 0, SFX_ZAP_CANNON
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
-	anim_obj ANIM_OBJ_THUNDER_WAVE, 48, 92, $0
-	anim_wait 24
-	anim_setobj $1, $3
-	anim_wait 1
-	anim_call BattleAnim_TargetObj_1Row
-	anim_wait 16
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
-	anim_wait 8
-	anim_bgeffect ANIM_BG_06, $0, $2, $0
-	anim_call BattleAnim_Solarbeam_branch_cbb39
-	anim_wait 48
-	anim_ret
+    anim_3gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION, ANIM_GFX_BEAM
+    anim_sound 0, 0, SFX_ZAP_CANNON
+    anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
+    anim_obj ANIM_OBJ_THUNDER_WAVE, 48, 92, $0
+    anim_wait 24
+    anim_setobj $1, $3
+    anim_wait 1
+    anim_sound 0, 0, SFX_HYPER_BEAM
+    anim_obj ANIM_OBJ_27, 64, 92, $0
+    anim_wait 4
+    anim_sound 0, 0, SFX_HYPER_BEAM
+    anim_obj ANIM_OBJ_27, 80, 84, $0
+    anim_wait 4
+    anim_sound 0, 1, SFX_HYPER_BEAM
+    anim_obj ANIM_OBJ_27, 96, 76, $0
+    anim_wait 4
+    anim_sound 0, 1, SFX_HYPER_BEAM
+    anim_obj ANIM_OBJ_27, 112, 68, $0
+    anim_obj ANIM_OBJ_28, 126, 62, $0
+    anim_wait 48
+    anim_clearobjs
+    anim_obj ANIM_OBJ_34, 136, 56, $2
+    anim_wait 16
+    anim_sound 0, 1, SFX_THUNDERSHOCK
+    anim_obj ANIM_OBJ_33, 136, 56, $0
+    anim_wait 64
+    anim_ret
 
 BattleAnim_BlazeKick:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_FIRE

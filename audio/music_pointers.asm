@@ -138,3 +138,4 @@ Music:
 	dba Music_DahliaEncounter
 	dba Music_DahliaAfterBattle
 	dba Music_MadameBoss
+	dba Music_CinnabarIslandGBS

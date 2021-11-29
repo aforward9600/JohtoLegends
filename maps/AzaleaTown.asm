@@ -15,7 +15,7 @@
 AzaleaTown_MapScripts:
 	db 3 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_AZALEATOWN_NOTHING
-	scene_script .AzaleaTownRivalBattleScene1 ; SCENE_AZALEATOWN_RIVAL_BATTLE
+	scene_script .DummyScene1 ; SCENE_AZALEATOWN_RIVAL_BATTLE
 	scene_script .DummyScene2 ; SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL
 
 	db 1 ; callbacks
@@ -24,7 +24,18 @@ AzaleaTown_MapScripts:
 .DummyScene0:
 	end
 
-.AzaleaTownRivalBattleScene1:
+.DummyScene1:
+	end
+
+.DummyScene2:
+	end
+
+.Flypoint:
+	setflag ENGINE_FLYPOINT_AZALEA
+	return
+
+AzaleaTownRivalBattleScene1:
+	pause 15
 	turnobject PLAYER, RIGHT
 	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
@@ -41,9 +52,13 @@ AzaleaTown_MapScripts:
 	clearevent EVENT_TIN_TOWER_1F_WISE_TRIO_1
 	setevent EVENT_OPEN_TIN_TOWER
 	setevent EVENT_TIN_TOWER_TAKEOVER
+	setevent EVENT_TIN_TOWER_ROOF_PLAYER
+	setevent EVENT_TIN_TOWER_ROOF_HO_OH
 	applymovement AZALEATOWN_RIVAL, AzaleaTownRivalBattleExitMovement
 	disappear AZALEATOWN_RIVAL
 	setscene SCENE_AZALEATOWN_NOTHING
+	pause 15
+	special RestartMapMusic
 	waitsfx
 	playmapmusic
 	end
@@ -57,19 +72,15 @@ AzaleaTown_MapScripts:
 	clearevent EVENT_TIN_TOWER_1F_WISE_TRIO_1
 	setevent EVENT_OPEN_TIN_TOWER
 	setevent EVENT_TIN_TOWER_TAKEOVER
+	setevent EVENT_TIN_TOWER_ROOF_PLAYER
+	setevent EVENT_TIN_TOWER_ROOF_HO_OH
 	applymovement AZALEATOWN_RIVAL, AzaleaTownRivalBattleExitMovement
 	disappear AZALEATOWN_RIVAL
 	setscene SCENE_AZALEATOWN_NOTHING
+	special RestartMapMusic
 	waitsfx
 	playmapmusic
 	end
-
-.DummyScene2:
-	end
-
-.Flypoint:
-	setflag ENGINE_FLYPOINT_AZALEA
-	return
 
 AzaleaTownCooltrainerScript:
 	jumptextfaceplayer AzaleaTownCooltrainerText
@@ -188,14 +199,8 @@ AzaleaTownRivalBattleApproachMovement1:
 	step LEFT
 	step_end
 
-AzaleaTownRivalBattleApproachMovement2:
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	turn_head DOWN
+PlayerMovesDownAzalea:
+	step DOWN
 	step_end
 
 AzaleaTownRivalBattleExitMovement:
@@ -298,22 +303,21 @@ AzaleaTownCooltrainerText:
 	done
 
 AzaleaTownRocket2Text:
-	text "Do you know about"
-	line "SlowpokeTail? I"
-	cont "heard it's tasty!"
+	text "This is such a"
+	line "peaceful little"
+	cont "town, isn't it?"
 
-	para "Aren't you glad I"
-	line "told you that?"
+	para "All the Slowpoke"
+	line "certainly just"
+
+	para "make you wanna"
+	line "relax."
 	done
 
 AzaleaTownGrampsTextBefore:
-	text "The Slowpoke have"
-	line "disappeared from"
-	cont "town…"
-
-	para "I heard their"
-	line "Tails are being"
-	cont "sold somewhere."
+	text "Please be respect-"
+	line "ful of our"
+	cont "Slowpoke."
 	done
 
 AzaleaTownGrampsTextAfter:
@@ -334,6 +338,9 @@ AzaleaTownTeacherText:
 
 	para "A lot of people do"
 	line "just that."
+
+	para "Too bad he doesn't"
+	line "make them anymore."
 	done
 
 AzaleaTownYoungsterText:

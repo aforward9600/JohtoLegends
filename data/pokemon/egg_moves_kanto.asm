@@ -182,6 +182,7 @@ SquirtleEggMoves:
 	dw FLAIL
 	dw AQUA_JET
 	dw MUDDY_WATER
+	dw AQUA_RING
 	dw -1 ; end
 
 PidgeyEggMoves:
@@ -460,6 +461,7 @@ TentacoolEggMoves:
 	dw HAZE
 	dw BUBBLE
 	dw MUDDY_WATER
+	dw AQUA_RING
 	dw -1 ; end
 
 GeodudeEggMoves:

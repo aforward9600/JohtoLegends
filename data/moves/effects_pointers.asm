@@ -182,4 +182,5 @@ MoveEffectsPointers:
 	dw SuckerPunch
 	dw GrassKnot
 	dw Flatter
+	dw AquaRing
 ;	dw WakeUpSlap

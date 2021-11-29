@@ -35,11 +35,11 @@ AzaleaGymKurtScript:
 	waitsfx
 	setflag ENGINE_HIVEBADGE
 	readvar VAR_BADGES
-	scall AzaleaGymActivateRockets
+	setmapscene AZALEA_TOWN, SCENE_AZALEATOWN_RIVAL_BATTLE
 .FightDone:
 	checkevent EVENT_GOT_TM60_X_SCISSOR
 	iftrue .GotFuryCutter
-	setevent EVENT_BEAT_TWINS_AMY_AND_MAY
+	setevent EVENT_BEAT_TWINS_GINGER_AND_SAM
 	setevent EVENT_BEAT_BUG_CATCHER_ELMER
 	setevent EVENT_BEAT_BUG_CATCHER_AL
 	setevent EVENT_BEAT_BUG_CATCHER_BUZZY
@@ -71,57 +71,57 @@ AzaleaGymActivateRockets:
 .RadioTowerRockets:
 	jumpstd radiotowerrockets
 
-TrainerTwinsAmyandmay1:
-	trainer TWINS, AMYANDMAY1, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay1SeenText, TwinsAmyandmay1BeatenText, 0, .AfterScript
+TrainerTwinsGingerandsam1:
+	trainer TWINS, GINGERANDSAM1, EVENT_BEAT_TWINS_GINGER_AND_SAM, TwinsGingerandsam1SeenText, TwinsGingerandsam1BeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext TwinsAmyandmay1AfterBattleText
+	writetext TwinsGingerandsam1AfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerTwinsAmyandmay2:
-	trainer TWINS, AMYANDMAY2, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay2SeenText, TwinsAmyandmay2BeatenText, 0, .AfterScript
+TrainerTwinsGingerandsam2:
+	trainer TWINS, GINGERANDSAM2, EVENT_BEAT_TWINS_GINGER_AND_SAM, TwinsGingerandsam2SeenText, TwinsGingerandsam2BeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext TwinsAmyandmay2AfterBattleText
+	writetext TwinsGingerandsam2AfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerBugCatcherBenny:
-	trainer BUG_CATCHER, ELMER, EVENT_BEAT_BUG_CATCHER_ELMER, BugCatcherBennySeenText, BugCatcherBennyBeatenText, 0, .AfterScript
+TrainerBugCatcherNat:
+	trainer BUG_CATCHER, NAT, EVENT_BEAT_BUG_CATCHER_NAT, BugCatcherNatSeenText, BugCatcherNatBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext BugCatcherBennyAfterBattleText
+	writetext BugCatcherNatAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerBugCatcherAl:
-	trainer BUG_CATCHER, AL, EVENT_BEAT_BUG_CATCHER_AL, BugCatcherAlSeenText, BugCatcherAlBeatenText, 0, .AfterScript
+TrainerBugCatcherPete:
+	trainer BUG_CATCHER, PETE, EVENT_BEAT_BUG_CATCHER_PETE, BugCatcherPeteSeenText, BugCatcherPeteBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext BugCatcherAlAfterBattleText
+	writetext BugCatcherPeteAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerBugCatcherJosh:
-	trainer BUG_CATCHER, BUZZY, EVENT_BEAT_BUG_CATCHER_BUZZY, BugCatcherJoshSeenText, BugCatcherJoshBeatenText, 0, .AfterScript
+TrainerBugCatcherMarty:
+	trainer BUG_CATCHER, MARTY, EVENT_BEAT_BUG_CATCHER_MARTY, BugCatcherMartySeenText, BugCatcherMartyBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext BugCatcherJoshAfterBattleText
+	writetext BugCatcherMartyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -239,99 +239,105 @@ KurtText_Retirement:
 	line "that sounds nice."
 	done
 
-BugCatcherBennySeenText:
-	text "Bug #MON evolve"
-	line "young. So they get"
+BugCatcherPeteSeenText:
+	text "Some people find"
+	line "bugs gross,"
 
-	para "stronger that much"
-	line "faster."
+	para "but I love 'em!"
 	done
 
-BugCatcherBennyBeatenText:
-	text "Just evolving"
-	line "isn't enough!"
+BugCatcherPeteBeatenText:
+	text "My bugs!"
 	done
 
-BugCatcherBennyAfterBattleText:
-	text "#MON become"
-	line "stronger if they"
-	cont "evolve. Really!"
+BugCatcherPeteAfterBattleText:
+	text "Don't ask me why."
+
+	para "I just love 'em"
 	done
 
-BugCatcherAlSeenText:
-	text "Bug #MON are"
-	line "cool and tough!"
+BugCatcherNatSeenText:
+	text "You ever seen a"
+	line "purple Spinarak?"
 
-	para "I'll prove it to"
-	line "you!"
+	para "I've never seen"
+	line "one in real life,"
+
+	para "but I know someone"
+	line "who has!"
 	done
 
-BugCatcherAlBeatenText:
-	text "You proved how"
-	line "tough you are…"
+BugCatcherNatBeatenText:
+	text "Wish I had a"
+	line "purple Spinarak…"
 	done
 
-BugCatcherAlAfterBattleText:
-	text "They're so cool,"
-	line "but most girls"
+BugCatcherNatAfterBattleText:
+	text "Maybe a purple one"
+	line "would evolve into"
 
-	para "don't like bug"
-	line "#MON."
+	para "a green Ariados…"
 
-	para "I don't know why…"
+	para "Eh, probably not."
 	done
 
-BugCatcherJoshSeenText:
-	text "You saved all the"
-	line "SLOWPOKE? Whew,"
-	cont "you're mighty!"
+BugCatcherMartySeenText:
+	text "Weird how we have"
+	line "a Bug-type Gym,"
 
-	para "But my grown-up"
-	line "#MON are pretty"
-	cont "tough too!"
+	para "but Slowpoke is"
+	line "the town's mascot,"
+	cont "huh?"
 	done
 
-BugCatcherJoshBeatenText:
-	text "Urrgggh!"
+BugCatcherMartyBeatenText:
+	text "How slow can you"
+	line "go?"
 	done
 
-BugCatcherJoshAfterBattleText:
-	text "I guess I should"
-	line "teach them better"
-	cont "moves…"
+BugCatcherMartyAfterBattleText:
+	text "Guess I shouldn't"
+	line "complain about it."
+
+	para "Bug-types are just"
+	line "cooler than those"
+	cont "dopey Slowpoke!"
 	done
 
-TwinsAmyandmay1SeenText:
-	text "AMY: Hi! Are you"
-	line "challenging the"
-	cont "LEADER? No way!"
+TwinsGingerandsam1SeenText:
+	text "Sami: Hi! Do you"
+	line "like Bug-types?"
+
+	para "I think they're"
+	line "adorable!"
 	done
 
-TwinsAmyandmay1BeatenText:
-	text "AMY & MAY: Oh,"
-	line "double goodness!"
+TwinsGingerandsam1BeatenText:
+	text "Sami & Sam:"
+	line "Double dang!"
 	done
 
-TwinsAmyandmay1AfterBattleText:
-	text "AMY: You're"
-	line "really strong!"
+TwinsGingerandsam1AfterBattleText:
+	text "Sami: You must"
+	line "think so too!"
 	done
 
-TwinsAmyandmay2SeenText:
-	text "MAY: You want to"
-	line "see the LEADER?"
-	cont "We come first!"
+TwinsGingerandsam2SeenText:
+	text "Sam: Hi! Do you"
+	line "like Bug-types?"
+
+	para "I think they're"
+	line "strong!"
 	done
 
-TwinsAmyandmay2BeatenText:
-	text "AMY & MAY: Oh,"
-	line "double goodness!"
+TwinsGingerandsam2BeatenText:
+	text "Sami & Sam:"
+	line "Double dang!"
 	done
 
-TwinsAmyandmay2AfterBattleText:
-	text "MAY: Our bug #-"
-	line "MON lost! Oh, what"
-	cont "a shame."
+TwinsGingerandsam2AfterBattleText:
+	text "Sam: You're strong"
+	line "too!"
 	done
 
 AzaleaGymGuyText:
@@ -381,9 +387,9 @@ AzaleaGym_MapEvents:
 
 	db 7 ; object events
 	object_event  5,  1, SPRITE_KURT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaGymKurtScript, -1
-	object_event  5,  7, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherBenny, -1
-	object_event  8,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherAl, -1
-	object_event  5,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherJosh, -1
-	object_event  1, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay1, -1
-	object_event  2, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay2, -1
+	object_event  5,  7, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherMarty, -1
+	object_event  8,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherNat, -1
+	object_event  5,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherPete, -1
+	object_event  1, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsGingerandsam1, -1
+	object_event  2, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsGingerandsam2, -1
 	object_event  7, 13, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaGymGuyScript, -1

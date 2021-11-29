@@ -99,6 +99,7 @@ Landmarks:
 	landmark  76, 132, Route20Name
 	landmark  68, 132, SeafoamIslandsName
 	landmark  52, 132, CinnabarIslandName
+	landmark  51, 131, PokemonMansionName
 	landmark  52, 120, Route21Name
 	landmark  36,  68, Route22Name
 	landmark  28,  52, VictoryRoadName
@@ -153,7 +154,7 @@ IndigoPlateauName:   db "Indigo¯Plateau@"
 VictoryRoadName:     db "Victory¯Road@"
 MtMoonName:          db "Mt.Moon@"
 RockTunnelName:      db "Rock Tunnel@"
-LavRadioTowerName:   db "#mon Tower@"
+LavRadioTowerName:   db "#mon¯Tower@"
 SilphCoName:         db "Silph Co.@"
 SafariZoneName:      db "Safari Zone@"
 SeafoamIslandsName:  db "Seafoam¯Islands@"

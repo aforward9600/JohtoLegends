@@ -180,3 +180,4 @@ INCLUDE "audio/music/route37.asm"
 SECTION "Newest Songs", ROMX
 
 INCLUDE "audio/music/madameboss.asm"
+INCLUDE "audio/music/cinnabarisland.asm"

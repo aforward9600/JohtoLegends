@@ -388,4 +388,5 @@ MoveNames::
 	db "Frenzy Plant@"
 	db "Blast Burn@"
 	db "Hydro Cannon@"
+	db "Aqua Ring@"
 ;	db "Wake Up Slap@"

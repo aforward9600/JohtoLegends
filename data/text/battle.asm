@@ -1136,3 +1136,19 @@ BattleText_0x8188e:
 	text "There is no time"
 	line "left today!"
 	done
+
+SurroundedByWaterText:
+	text "<USER> has"
+	line "surrounded itself"
+
+	para "with a veil of"
+	line "water!"
+	done
+
+RecoveredWithSomethingText:
+	text "<USER>"
+	line "recovered with"
+	cont "@"
+	text_ram wStringBuffer1
+	text "."
+	prompt

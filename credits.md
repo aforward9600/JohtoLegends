@@ -19,7 +19,7 @@ Dark Zeta, PiaCarrot, and cardboardbox for new evolution moves and fixing the gl
 
 New Pokemon cries: chattycrystal team
 
-Calm Mind, Sucker Punch, Dragon Dance, Quiver Dance, Grass Knot: chattycrystal team
+Calm Mind, Sucker Punch, Dragon Dance, Quiver Dance, Grass Knot, Aqua Ring: chattycrystal team
 
 Sucker Punch, Work Up, Aqua Jet, Muddy Water, Rock Blast, Heat Wave, Brick Break, Hurricane, Leaf Blade, Lava Plume Animation: chattycrystal team
 
@@ -38,6 +38,8 @@ Beta Wooper back sprite made by 64BitWonder.
 Sneasel, Tyranitar, Dragonite, Moltres, Heracross,
 Teddiursa, Ursaring, Phanpy, Umbreon, Feraligatr,
 Houndoom- Soup
+
+Idain and Bronzeswagger for Weather Icons.
 
 Mime Jr. Back Sprite: lakeofdance
 
@@ -79,6 +81,8 @@ metalflygon08: Fire Fang, Ice Fang, Thunder Fang,
 Draining Kiss, Dragon Dance, Roost, Fairy Wind,
 Water Pulse, Silver Wind, Air Slash, Avalanche,
 Aqua Tail, Calm Mind, Bulk Up, X-Scissor
+
+Charge Beam: ElfinHilon10
 
 Music:
 Pokemon Stadium 2 Anthem - ShockSlayer

@@ -36,7 +36,7 @@ TrainerBugCatcherEd:
 	end
 
 TrainerBugCatcherDoug:
-	trainer BUG_CATCHER, DOUG, EVENT_BEAT_BUG_CATCHER_DOUG, BugCatcherDougSeenText, BugCatcherDougBeatenText, 0, .Script
+	trainer BUG_CATCHER, MARTY, EVENT_BEAT_BUG_CATCHER_MARTY, BugCatcherDougSeenText, BugCatcherDougBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

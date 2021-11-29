@@ -29,6 +29,7 @@ CHRIS EQU __enum__
 
 	trainerclass MILTON ; 2
 	const MILTON1
+	const MILTON2
 
 	trainerclass KURT ; 3
 	const KURT1
@@ -348,17 +349,17 @@ CHRIS EQU __enum__
 	const AL
 	const BUZZY
 	const ARNIE1
-	const KEN
+	const NAT
 	const WADE2
 	const WADE3
-	const DOUG
+	const MARTY
 	const ARNIE2
 	const ARNIE3
 	const WADE4
 	const WADE5
 	const ARNIE4
 	const ARNIE5
-	const WAYNE
+	const PETE
 
 	trainerclass FISHER ; 25
 	const RUSTY
@@ -674,10 +675,10 @@ CHRIS EQU __enum__
 	const MIKI
 
 	trainerclass TWINS ; 3d
-	const AMYANDMAY1
+	const GINGERANDSAM1
 	const ANNANDANNE1
 	const ANNANDANNE2
-	const AMYANDMAY2
+	const GINGERANDSAM2
 	const JOANDZOE1
 	const JOANDZOE2
 	const MEGANDPEG1

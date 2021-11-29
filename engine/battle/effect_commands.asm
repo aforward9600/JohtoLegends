@@ -7003,3 +7003,5 @@ SandstormSpDefBoost:
 	ld b, h
 	ld c, l
 	ret
+
+INCLUDE "engine/battle/move_effects/aqua_ring.asm"

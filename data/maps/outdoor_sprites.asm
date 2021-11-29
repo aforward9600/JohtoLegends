@@ -273,7 +273,14 @@ BlackthornGroupSprites:
 	db 0 ; end
 
 SilverGroupSprites:
-	; 0 of max 9 walking sprites
+; TinTowerRoof
+	db SPRITE_MIYAMOTO
+	db SPRITE_RIVAL
+	db SPRITE_SHERLES
+	db SPRITE_CHRIS
+	db SPRITE_KRIS
+	; 5 of max 9 walking sprites
+	db SPRITE_HO_OH
 	db 0 ; end
 
 DungeonsGroupSprites:

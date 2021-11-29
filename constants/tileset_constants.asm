@@ -38,6 +38,7 @@
 	const TILESET_AERODACTYL_WORD_ROOM ; 24
 	const TILESET_ROUTE_47             ; 25
 	const TILESET_JOHTO_3              ; 26
+	const TILESET_POKEMON_MANSION     ; 
 
 ; bg palette values (see gfx/tilesets/*_palette_map.asm)
 ; TilesetBGPalette indexes (see gfx/tilesets/bg_tiles.pal)

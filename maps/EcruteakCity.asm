@@ -26,7 +26,20 @@ EcruteakCity_MapScripts:
 	return
 
 EcruteakCityGramps1Script:
-	jumptextfaceplayer EcruteakCityGramps1Text
+	faceplayer
+	opentext
+	checkevent EVENT_TIN_TOWER_TAKEOVER
+	iftrue .Toldyou
+	writetext EcruteakCityGramps1Text
+	waitbutton
+	closetext
+	end
+
+.Toldyou:
+	writetext EcruteakCityGrampsToldYouText
+	waitbutton
+	closetext
+	end
 
 EcruteakCityGramps2Script:
 	jumptextfaceplayer EcruteakCityGramps2Text
@@ -48,15 +61,15 @@ EcruteakCityMotherScript:
 EcruteakCityFisherScript:
 	faceplayer
 	opentext
-	checkevent EVENT_JASMINE_RETURNED_TO_GYM
-	iftrue .JasmineReturned
+	checkevent EVENT_TIN_TOWER_TAKEOVER
+	iftrue .CalmDown
 	writetext EcruteakCityFisherText
 	waitbutton
 	closetext
 	end
 
-.JasmineReturned:
-	writetext EcruteakCityFisherText_JasmineReturned
+.CalmDown:
+	writetext EcruteakCityFisherText_CalmDown
 	waitbutton
 	closetext
 	end
@@ -218,14 +231,13 @@ EcruteakCityFisherText:
 	line "Politoed."
 	done
 
-EcruteakCityFisherText_JasmineReturned:
-	text "The #MON at"
-	line "OLIVINE LIGHTHOUSE"
-	cont "has been cured."
+EcruteakCityFisherText_CalmDown:
+	text "Calm down,"
+	line "Grandpa!"
 
-	para "Boats can safely"
-	line "sail out to sea at"
-	cont "night again."
+	para "Maybe they're just"
+	line "here to inspect"
+	cont "the tower?"
 	done
 
 EcruteakCityYoungsterText:
@@ -305,6 +317,17 @@ BurnedTowerSignText:
 
 	para "Please stay away,"
 	line "as it is unsafe."
+	done
+
+EcruteakCityGrampsToldYouText:
+	text "See?! I told you!"
+
+	para "They're here for"
+	line "our Clefairy!"
+
+	para "I'm not going down"
+	line "without a fight,"
+	cont "you hooligans!"
 	done
 
 EcruteakCity_MapEvents:

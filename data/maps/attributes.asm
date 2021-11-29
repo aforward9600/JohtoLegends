@@ -712,3 +712,4 @@ ENDM
 	map_attributes OlivineGym2F, OLIVINE_GYM_2F, $00, 0
 	map_attributes OlivineGym3F, OLIVINE_GYM_3F, $00, 0
 	map_attributes OlivineGym4F, OLIVINE_GYM_4F, $00, 0
+	map_attributes PokemonMansion1F, POKEMON_MANSION_1F, $00, 0

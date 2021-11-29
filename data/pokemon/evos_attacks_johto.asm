@@ -1135,7 +1135,7 @@ ChinchouEvosAttacks:
 	dbw 31, FLAIL
 	dbw 34, DISCHARGE
 	dbw 39, TAKE_DOWN
-	dbw 42, RAIN_DANCE
+	dbw 42, AQUA_RING
 	dbw 45, HYDRO_PUMP
 	dbw 47, AMNESIA
 	dbw 50, THUNDER
@@ -1151,14 +1151,14 @@ LanturnEvosAttacks:
 	dbw 17, CONFUSE_RAY
 	dbw 20, BUBBLEBEAM
 	dbw 23, CHARGE_BEAM
-	dbw 28, SIGNAL_BEAM
-	dbw 30, DISCHARGE
-	dbw 36, RAIN_DANCE
-	dbw 42, FLAIL
-	dbw 48, TAKE_DOWN
-	dbw 54, HYDRO_PUMP
-	dbw 57, AMNESIA
-	dbw 60, THUNDER
+	dbw 29, SIGNAL_BEAM
+	dbw 33, FLAIL
+	dbw 37, DISCHARGE
+	dbw 43, TAKE_DOWN
+	dbw 47, AQUA_RING
+	dbw 51, HYDRO_PUMP
+	dbw 54, AMNESIA
+	dbw 58, THUNDER
 	dbw LEARN_EVO_MOVE, SURF
 	db 0 ; no more level-up moves
 
@@ -1347,7 +1347,7 @@ MarillEvosAttacks:
 	dbw 16, GROWTH
 	dbw 20, AQUA_TAIL
 	dbw 23, PLAY_ROUGH
-	dbw 28, MOONLIGHT
+	dbw 28, AQUA_RING
 	dbw 31, RAIN_DANCE
 	dbw 37, DOUBLE_EDGE
 	dbw 40, SUPERPOWER
@@ -1368,7 +1368,7 @@ AzumarillEvosAttacks:
 	dbw 16, GROWTH
 	dbw 21, AQUA_TAIL
 	dbw 25, PLAY_ROUGH
-	dbw 31, MOONLIGHT
+	dbw 31, AQUA_RING
 	dbw 35, RAIN_DANCE
 	dbw 42, DOUBLE_EDGE
 	dbw 46, SUPERPOWER
@@ -2260,7 +2260,7 @@ MantykeEvosAttacks:
 	dbw 27, TAKE_DOWN
 	dbw 32, AGILITY
 	dbw 36, AIR_SLASH
-	dbw 39, ROOST
+	dbw 39, AQUA_RING
 	dbw 46, BOUNCE
 	dbw 49, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -2279,7 +2279,7 @@ MantineEvosAttacks:
 	dbw 27, TAKE_DOWN
 	dbw 32, AGILITY
 	dbw 36, AIR_SLASH
-	dbw 39, ROOST
+	dbw 39, AQUA_RING
 	dbw 46, BOUNCE
 	dbw 49, HYDRO_PUMP
 	dbw 52, RAIN_DANCE

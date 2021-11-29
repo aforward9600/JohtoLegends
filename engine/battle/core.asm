@@ -196,6 +196,9 @@ BattleTurn:
 	jr nz, .quit
 .skip_iteration
 	call ParsePlayerAction
+	push af
+	call ClearSprites
+	pop af
 	jr nz, .loop1
 
 	call EnemyTriesToFlee
@@ -1311,6 +1314,18 @@ HandleLeftovers:
 	call SetPlayerTurn
 .do_it
 
+	; Aqua Ring heals 1/16 of max HP every turn if active
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_AQUA_RING, a
+	jr z, .aqua_ring_done
+	ld hl, AQUA_RING
+	call GetMoveIDFromIndex
+	ld [wNamedObjectIndexBuffer], a
+	call GetMoveName
+	call .do_recovery
+	; fallthrough
+.aqua_ring_done
 	callfar GetUserItem
 	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
@@ -1319,6 +1334,7 @@ HandleLeftovers:
 	cp HELD_LEFTOVERS
 	ret nz
 
+.do_recovery
 	ld hl, wBattleMonHP
 	ldh a, [hBattleTurn]
 	and a
@@ -1342,7 +1358,8 @@ HandleLeftovers:
 	call GetSixteenthMaxHP
 	call SwitchTurnCore
 	call RestoreHP
-	ld hl, BattleText_TargetRecoveredWithItem
+	call SwitchTurnCore
+	ld hl, RecoveredWithSomethingText
 	jp StdBattleTextbox
 
 HandleMysteryberry:
@@ -5552,6 +5569,7 @@ MoveSelectionScreen:
 
 .battle_player_moves
 	call MoveInfoBox
+	call GetWeatherImage
 	ld a, [wMoveSwapBuffer]
 	and a
 	jr z, .interpret_joypad
@@ -5638,6 +5656,9 @@ MoveSelectionScreen:
 	ld hl, BattleText_TheresNoPPLeftForThisMove
 
 .place_textbox_start_over
+	push hl
+	call ClearSprites
+	pop hl
 	call StdBattleTextbox
 	call Call_LoadTempTileMapToTileMap
 	jp MoveSelectionScreen
@@ -9403,3 +9424,55 @@ BattleStartMessage:
 	farcall Mobile_PrintOpponentBattleMessage
 
 	ret
+
+GetWeatherImage:
+	ld a, [wBattleWeather]
+	and a
+	ret z
+	ld de, RainWeatherImage
+	lb bc, PAL_BATTLE_OB_BLUE, 4
+	cp WEATHER_RAIN
+	jr z, .done
+	ld de, SunWeatherImage
+	ld b, PAL_BATTLE_OB_YELLOW
+	cp WEATHER_SUN
+	jr z, .done
+	ld de, SandstormWeatherImage
+	ld b, PAL_BATTLE_OB_BROWN
+	cp WEATHER_SANDSTORM
+	jr z, .done
+	ld de, HailWeatherImage
+	ld b, PAL_BATTLE_OB_BLUE
+	cp WEATHER_HAIL
+	ret nz
+	
+.done
+	push bc
+	ld b, BANK(WeatherImages) ; c = 4
+	ld hl, vTiles0
+	call Request2bpp
+	pop bc
+	ld hl, wVirtualOAMSprite00
+	ld de, .WeatherImageOAMData
+.loop
+	ld a, [de]
+	inc de
+	ld [hli], a
+	ld a, [de]
+	inc de
+	ld [hli], a
+	dec c
+	ld a, c
+	ld [hli], a
+	ld a, b
+	ld [hli], a
+	jr nz, .loop
+	ret
+
+.WeatherImageOAMData
+; positions are backwards since
+; we load them in reverse order
+	db $88, $1c ; y/x - bottom right
+	db $88, $14 ; y/x - bottom left
+	db $80, $1c ; y/x - top right
+	db $80, $14 ; y/x - top left

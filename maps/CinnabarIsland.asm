@@ -32,6 +32,9 @@ CinnabarIslandSign:
 CinnabarIslandPokecenterSign:
 	jumpstd pokecentersign
 
+CinnabarIslandLabSign:
+	jumptext CinnabarIslandLabSignText
+
 CinnabarIslandHiddenRareCandy:
 	hiddenitem RARE_CANDY, EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
 
@@ -108,36 +111,41 @@ CinnabarIslandBlueText:
 	done
 
 CinnabarIslandGymSignText:
-	text "There's a notice"
-	line "here…"
+	text "Cinnabar Island"
+	line "Quiz Game"
 
-	para "CINNABAR GYM has"
-	line "relocated to SEA-"
-	cont "FOAM ISLANDS."
-
-	para "BLAINE"
+	para "Closed"
 	done
 
 CinnabarIslandSignText:
-	text "CINNABAR ISLAND"
+	text "Cinnabar Island"
 
 	para "The Fiery Town of"
 	line "Burning Desire"
 	done
 
+CinnabarIslandLabSignText:
+	text "#mon Lab"
+
+	para "Construction on"
+	line "hold"
+	done
+
 CinnabarIsland_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
+	db 2 ; warp events
 	warp_event 11, 11, CINNABAR_POKECENTER_1F, 1
+	warp_event  7,  3, POKEMON_MANSION_1F, 2
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 5 ; bg events
 	bg_event 12, 11, BGEVENT_READ, CinnabarIslandPokecenterSign
-	bg_event  9, 11, BGEVENT_READ, CinnabarIslandGymSign
-	bg_event  7,  7, BGEVENT_READ, CinnabarIslandSign
-	bg_event  9,  1, BGEVENT_ITEM, CinnabarIslandHiddenRareCandy
+	bg_event 13,  3, BGEVENT_READ, CinnabarIslandGymSign
+	bg_event  8,  4, BGEVENT_READ, CinnabarIslandSign
+	bg_event 11,  5, BGEVENT_ITEM, CinnabarIslandHiddenRareCandy
+	bg_event  9, 11, BGEVENT_READ, CinnabarIslandLabSign
 
 	db 1 ; object events
 	object_event  9,  6, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandBlue, EVENT_BLUE_IN_CINNABAR

@@ -51,6 +51,25 @@ MiltonGroup:
 	dw SWORDS_DANCE, DOUBLE_HIT_M, BATON_PASS, AGILITY
 	db -1 ; end
 
+	next_list_item ; Milton (2)
+	db "Milton@", TRAINERTYPE_MOVES
+	db 35
+	dw MILTANK
+	dw MILK_DRINK, SWORDS_DANCE, BODY_SLAM, ROLLOUT
+	db 35
+	dw TAUROS
+	dw SWORDS_DANCE, REST, HORN_ATTACK, SCARY_FACE
+	db 36
+	dw URSARING
+	dw SWORDS_DANCE, SLASH, SLACK_OFF, SHADOW_CLAW
+	db 36
+	dw GIRAFARIG
+	dw PSYBEAM, SWORDS_DANCE, DOUBLE_HIT_M, STOMP
+	db 37
+	dw AMBIPOM
+	dw SWORDS_DANCE, FAINT_ATTACK, BATON_PASS, AGILITY
+	db -1 ; end
+
 	end_list_items
 
 KurtGroup:
@@ -264,14 +283,14 @@ PryceGroup:
 
 	next_list_item ; PRYCE (6)
 	db "Pryce@", TRAINERTYPE_MOVES
-	db 30
+	db 34
 	dw JYNX
 	dw LOVELY_KISS, NASTY_PLOT, ICY_WIND, PSYBEAM
 	db 34
 	dw PILOSWINE
 	dw BULLDOZE, ICE_FANG, TAKE_DOWN, HAIL
 	db 35
-	dw SNORUNT
+	dw GLALIE
 	dw PROTECT, BITE, HAIL, ICY_WIND
 	db 36
 	dw WEAVILE
@@ -287,7 +306,7 @@ PryceGroup:
 	dw MAMOSWINE
 	dw BULLDOZE, ICE_FANG, TAKE_DOWN, HAIL
 	db 40
-	dw SNORUNT
+	dw GLALIE
 	dw HEADBUTT, BITE, HAIL, ICY_WIND
 	db 40
 	dw GLACEON
@@ -2692,12 +2711,14 @@ BugCatcherGroup:
 	dw VENOMOTH
 	db -1 ; end
 
-	next_list_item ; BUG_CATCHER (9)
-	db "KEN@", TRAINERTYPE_NORMAL
-	db 30
-	dw ARIADOS
-	db 32
+	next_list_item ; BUG_CATCHER (9) AZALEA GYM
+	db "Nat@", TRAINERTYPE_NORMAL
+	db 37
+	dw BUTTERFREE
+	db 37
 	dw PINSIR
+	db 38
+	dw YANMA
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (10)
@@ -2724,10 +2745,16 @@ BugCatcherGroup:
 	dw BUTTERFREE
 	db -1 ; end
 
-	next_list_item ; BUG_CATCHER (12)
-	db "DOUG@", TRAINERTYPE_NORMAL
-	db 34
-	dw ARIADOS
+	next_list_item ; BUG_CATCHER (12) AZALEA GYM
+	db "Marty@", TRAINERTYPE_NORMAL
+	db 36
+	dw VENOMOTH
+	db 36
+	dw FORRETRESS
+	db 36
+	dw SCYTHER
+	db 37
+	dw BEEDRILL
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (13)
@@ -2789,12 +2816,12 @@ BugCatcherGroup:
 	dw GUST, SUPERSONIC, PSYCHIC_M, TOXIC
 	db -1 ; end
 
-	next_list_item ; BUG_CATCHER (19)
-	db "WAYNE@", TRAINERTYPE_NORMAL
-	db 8
-	dw LEDYBA
-	db 10
-	dw PARAS
+	next_list_item ; BUG_CATCHER (19) AZALEA GYM
+	db "Pete@", TRAINERTYPE_NORMAL
+	db 38
+	dw PARASECT
+	db 38
+	dw SHUCKLE
 	db -1 ; end
 
 	end_list_items
@@ -5391,11 +5418,11 @@ KimonoGirlGroup:
 
 TwinsGroup:
 	next_list_item ; TWINS (1)
-	db "AMY & MAY@", TRAINERTYPE_NORMAL
-	db 10
-	dw SPINARAK
-	db 10
-	dw LEDYBA
+	db "Sami & Sam@", TRAINERTYPE_NORMAL
+	db 38
+	dw ARIADOS
+	db 38
+	dw LEDIAN
 	db -1 ; end
 
 	next_list_item ; TWINS (2)
@@ -5419,11 +5446,11 @@ TwinsGroup:
 	db -1 ; end
 
 	next_list_item ; TWINS (4)
-	db "AMY & MAY@", TRAINERTYPE_NORMAL
-	db 10
-	dw LEDYBA
-	db 10
-	dw SPINARAK
+	db "Sami & Sam@", TRAINERTYPE_NORMAL
+	db 38
+	dw LEDIAN
+	db 38
+	dw ARIADOS
 	db -1 ; end
 
 	next_list_item ; TWINS (5)

@@ -191,6 +191,7 @@ ENDM
 	map_const ROUTE_20,                                    30,  9 ;  6
 	map_const ROUTE_21,                                    10, 18 ;  7
 	map_const CINNABAR_ISLAND,                             10,  9 ;  8
+	map_const POKEMON_MANSION_1F,                          15, 14 ;  9
 
 	newgroup                                                      ;  7
 
@@ -324,7 +325,6 @@ ENDM
 	map_const VERMILION_PORT_PASSAGE,                      10,  9 ;  9
 	map_const MOUNT_MOON_SQUARE,                           15,  9 ; 10
 	map_const MOUNT_MOON_GIFT_SHOP,                         4,  6 ; 11
-	map_const TIN_TOWER_ROOF,                              10,  9 ; 12
 
 	newgroup                                                      ; 16
 
@@ -374,6 +374,7 @@ ENDM
 	map_const SILVER_CAVE_OUTSIDE,                         20, 18 ;  2
 	map_const SILVER_CAVE_POKECENTER_1F,                    5,  4 ;  3
 	map_const ROUTE_28_STEEL_WING_HOUSE,                    4,  4 ;  4
+	map_const TIN_TOWER_ROOF,                              10, 11 ; 12
 
 	newgroup                                                      ; 20
 

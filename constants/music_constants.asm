@@ -139,6 +139,7 @@
 	const MUSIC_DAHLIA_ENCOUNTER
 	const MUSIC_DAHLIA_AFTER_BATTLE
 	const MUSIC_MADAME_BOSS
+	const MUSIC_CINNABAR_ISLAND
 
 ; GetMapMusic picks music for this value (see home/map.asm)
 MUSIC_MAHOGANY_MART EQU $fc

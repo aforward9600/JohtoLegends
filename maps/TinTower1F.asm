@@ -197,10 +197,10 @@ TinTower1FRivalScript:
 	end
 
 TinTower1FRocket2Script:
-	jumptextfaceplayer TinTower1FSage4Text1
+	jumptextfaceplayer TinTower1FRocket2Text
 
 TinTower1FRocket3Script:
-	jumptextfaceplayer TinTower1FSage4Text1
+	jumptextfaceplayer TinTower1FRocket3Text
 
 TinTower1FSage5Script:
 	faceplayer
@@ -497,12 +497,25 @@ TinTower1FSage3Text:
 	line "important today."
 	done
 
-TinTower1FSage4Text1:
-	text "HO-OH appears to"
-	line "have descended"
+TinTower1FRocket2Text:
+	text "This better not be"
+	line "a dud like the"
 
-	para "upon this, the TIN"
-	line "TOWER!"
+	para "last two times!"
+	done
+
+TinTower1FRocket3Text:
+	text "These old guys are"
+	line "no match for us!"
+
+	para "…What?"
+
+	para "I can't be proud"
+	line "of a victory?"
+
+	para "So what if it was"
+	line "just some elderly"
+	cont "men?"
 	done
 
 TinTower1FSage5Text1:
@@ -827,9 +840,9 @@ TinTower1F_MapEvents:
 	object_event  9,  1, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TinTowerEusine, EVENT_TIN_TOWER_1F_EUSINE
 	object_event 10, 11, SPRITE_PERSIAN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TinTower1FPersianScript, EVENT_TIN_TOWER_1F_WISE_TRIO_1
 	object_event  9, 11, SPRITE_POLIWRATH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TinTower1FPoliwrathScript, EVENT_TIN_TOWER_1F_WISE_TRIO_1
-	object_event  8, 11, SPRITE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage3Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
-	object_event 11, 11, SPRITE_ROCKET, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FRocket1Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
+	object_event  8, 11, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FRivalScript, EVENT_TIN_TOWER_1F_WISE_TRIO_1
+	object_event 11, 11, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FRocket1Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
 	object_event  8,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage5Script, EVENT_TIN_TOWER_1F_WISE_TRIO_2
 	object_event 14,  2, SPRITE_SHERLES, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage6Script, EVENT_TIN_TOWER_1F_WISE_TRIO_2
-	object_event 11, 11, SPRITE_ROCKET, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FRocket2Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
+	object_event  4,  9, SPRITE_ROCKET, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FRocket2Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
 	object_event 15,  7, SPRITE_ROCKET, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FRocket3Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1

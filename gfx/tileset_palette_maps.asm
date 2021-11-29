@@ -114,6 +114,9 @@ INCLUDE "gfx/tilesets/route_47_palette_map.asm"
 TilesetJohto3PalMap:
 INCLUDE "gfx/tilesets/johto_3_palette_map.asm"
 
+TilesetPokemonMansionPalMap:
+INCLUDE "gfx/tilesets/pokemon_mansion_palette_map.asm"
+
 ; unused
 rept 26
 	db $06

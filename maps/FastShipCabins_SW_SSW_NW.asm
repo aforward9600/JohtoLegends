@@ -21,7 +21,7 @@ TrainerFirebreatherLyle:
 	end
 
 TrainerBugCatcherKen:
-	trainer BUG_CATCHER, KEN, EVENT_BEAT_BUG_CATCHER_KEN, BugCatcherKenSeenText, BugCatcherKenBeatenText, 0, .Script
+	trainer BUG_CATCHER, MARTY, EVENT_BEAT_BUG_CATCHER_MARTY, BugCatcherKenSeenText, BugCatcherKenBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
