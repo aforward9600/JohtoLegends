@@ -140,6 +140,9 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw AronEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -754,6 +757,16 @@ RaltsEggMoves:
 	dw DISABLE
 	dw MEAN_LOOK
 	dw SHADOW_SNEAK
+	dw -1 ; end
+
+AronEggMoves:
+	dw BODY_SLAM
+	dw DRAGON_RUSH
+	dw IRON_HEAD
+	dw SCREECH
+	dw REVERSAL
+	dw STOMP
+	dw SUPERPOWER
 	dw -1 ; end
 
 LarvitarEggMoves:

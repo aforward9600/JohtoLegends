@@ -29,9 +29,15 @@ Rangi for Route 47 and 48 maps.
 
 Ambipom original sprites from Chaos Rush's 64x64 project.
 
+Ambipom back sprite: ShadowOne333
+
 Lickilicky sprites by Chaos Rush.
 
 Munchlax animation by SCMidna.
+
+Skarmini design and sprite: Ferropexola
+
+Skarmini back sprite: Frogtoes
 
 Beta Wooper back sprite made by 64BitWonder.
 
@@ -45,8 +51,12 @@ Mime Jr. Back Sprite: lakeofdance
 
 Duskull, Dusclops, Dusknoir, Bronzor, Bronzong, Ralts, Kirlia, Gardevoir, Gallade,
 Budew, Roselia, Roserade, Electrike, Manectric, Cacnea, Cacturne, Croagunk,
-Toxicroak, Snorunt, Glalie, Froslass sprites:
+Toxicroak, Snorunt, Glalie, Froslass, Aggron sprites:
 Prism Team.
+
+Aron and Lairon sprites: Nukkiie
+
+Ein trainer sprite: Sindorman
 
 Minisprites 1-251:
 Chamber

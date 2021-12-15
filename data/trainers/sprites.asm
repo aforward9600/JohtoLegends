@@ -83,3 +83,4 @@ BTTrainerClassSprites:
 	db SPRITE_NINJA
 	db SPRITE_KRIS
 	db SPRITE_CHRIS
+	db SPRITE_SCIENTIST

@@ -295,6 +295,9 @@ PokemonCries::
 	mon_cry CRY_VILEPLUME,   $008,  $100 ; KIRLIA
 	mon_cry CRY_VILEPLUME,   $f22,  $163 ; GARDEVOIR
 	mon_cry CRY_VILEPLUME,   $f22,  $163 ; GALLADE
+	mon_cry CRY_GROWLITHE,   $080,  $0b0 ; ARON
+	mon_cry CRY_WEEDLE,      $040,  $090 ; LAIRON
+	mon_cry CRY_SLOWKING,    $207,  $1b2 ; AGGRON
 	mon_cry CRY_RAIKOU,      $22e,  $120 ; RAIKOU
 	mon_cry CRY_ENTEI,       $000,  $1a0 ; ENTEI
 	mon_cry CRY_MAGCARGO,    $000,  $180 ; SUICUNE

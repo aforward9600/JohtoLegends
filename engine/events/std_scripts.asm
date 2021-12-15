@@ -633,6 +633,7 @@ InitializeEventsScript:
 	setevent EVENT_MART_RIVAL
 	setevent EVENT_MART_SHERLES
 	setevent EVENT_MART_KOGA
+	setevent EVENT_BLACKTHORN_CITY_RIVAL
 	return
 
 AskNumber1MScript:

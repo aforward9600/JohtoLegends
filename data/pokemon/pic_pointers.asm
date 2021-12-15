@@ -593,6 +593,12 @@ PokemonPicPointers::
 	dba GardevoirBackpic
 	dba GalladeFrontpic
 	dba GalladeBackpic
+	dba AronFrontpic
+	dba AronBackpic
+	dba LaironFrontpic
+	dba LaironBackpic
+	dba AggronFrontpic
+	dba AggronBackpic
 	dba RaikouFrontpic
 	dba RaikouBackpic
 	dba EnteiFrontpic

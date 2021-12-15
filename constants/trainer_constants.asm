@@ -276,7 +276,7 @@ CHRIS EQU __enum__
 	const RON
 	const ETHAN
 	const BRENT2
-	const BRENT3
+	const JARVIS2
 	const ISSAC
 	const DONALD
 	const ZACH
@@ -809,6 +809,9 @@ CHRIS EQU __enum__
 	trainerclass DEPRESSED_DRACO ; 52
 	const DRACO_LARVITAR_1
 	const DRACO_DRATINI_1
+
+	trainerclass EIN ; 53
+	const EIN1
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

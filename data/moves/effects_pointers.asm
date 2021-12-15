@@ -160,7 +160,6 @@ MoveEffectsPointers:
 	dw DracoFang
 	dw AllDownHit
 	dw SleepHit
-	dw WillOWisp
 	dw FlareBlitz
 	dw Avalanche
 	dw HammerArm
@@ -183,4 +182,5 @@ MoveEffectsPointers:
 	dw GrassKnot
 	dw Flatter
 	dw AquaRing
+	dw DoBurn
 ;	dw WakeUpSlap

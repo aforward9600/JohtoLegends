@@ -310,6 +310,9 @@ JOHTO_POKEMON EQU const_value
 	const KIRLIA
 	const GARDEVOIR
 	const GALLADE
+	const ARON
+	const LAIRON
+	const AGGRON
 	const RAIKOU     ; f3
 	const ENTEI      ; f4
 	const SUICUNE    ; f5

@@ -118,6 +118,7 @@
 	const SPRITE_SHERLES
 	const SPRITE_ENGINEER
 	const SPRITE_NINJA
+	const SPRITE_EIN
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

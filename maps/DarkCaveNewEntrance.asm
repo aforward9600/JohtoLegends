@@ -58,18 +58,12 @@ DarkCaveNewEntranceHikerText1:
 	cont "stare at me,"
 
 	para "waiting for me to"
-	line "do something, I"
-	cont "can't tell the"
-	cont "difference bet-"
+	line "do something, I'm"
+	cont "tired, I'm hungry,"
 
-	para "ween a rock and a"
-	line "Geodude until it's"
-	cont "already hitting"
-	cont "me, I'm tired, I'm"
-
-	para "hungry, and I want"
-	line "to go home! Stay"
-	cont "out of my way!"
+	para "and I want to go"
+	line "home! Stay out of"
+	cont "my way!"
 	done
 
 DarkCaveNewEntrance_MapEvents:

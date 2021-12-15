@@ -289,6 +289,9 @@ AnimationPointers:
 	dw KirliaAnimation
 	dw GardevoirAnimation
 	dw GalladeAnimation
+	dw AronAnimation
+	dw LaironAnimation
+	dw AggronAnimation
 	dw RaikouAnimation
 	dw EnteiAnimation
 	dw SuicuneAnimation

@@ -26,6 +26,7 @@ FirstEvoStages::
 	dw EKANS      ;18
 	dw PICHU
 	dw PICHU
+	dw PICHU
 	dw SANDSHREW
 	dw SANDSHREW
 	dw NIDORAN_F
@@ -36,12 +37,16 @@ FirstEvoStages::
 	dw NIDORAN_M
 	dw CLEFFA
 	dw CLEFFA
+	dw CLEFFA
 	dw VULPIX
 	dw VULPIX
+	dw IGGLYBUFF
 	dw IGGLYBUFF
 	dw IGGLYBUFF  ;28
 	dw ZUBAT
 	dw ZUBAT
+	dw ZUBAT
+	dw ODDISH
 	dw ODDISH
 	dw ODDISH
 	dw ODDISH
@@ -62,6 +67,7 @@ FirstEvoStages::
 	dw POLIWAG
 	dw POLIWAG
 	dw POLIWAG
+	dw POLIWAG
 	dw ABRA
 	dw ABRA       ;40
 	dw ABRA
@@ -79,7 +85,9 @@ FirstEvoStages::
 	dw PONYTA
 	dw PONYTA
 	dw SLOWPOKE
+	dw SLOWPOKE
 	dw SLOWPOKE   ;50
+	dw MAGNEMITE
 	dw MAGNEMITE
 	dw MAGNEMITE
 	dw FARFETCH_D
@@ -95,6 +103,7 @@ FirstEvoStages::
 	dw GASTLY
 	dw GASTLY
 	dw ONIX
+	dw ONIX
 	dw DROWZEE    ;60
 	dw DROWZEE
 	dw KRABBY
@@ -107,14 +116,22 @@ FirstEvoStages::
 	dw CUBONE
 	dw TYROGUE
 	dw TYROGUE
+	dw TYROGUE
+	dw TYROGUE
+	dw LICKITUNG
 	dw LICKITUNG
 	dw KOFFING
 	dw KOFFING
 	dw RHYHORN
-	dw RHYHORN    ;70
-	dw CHANSEY
+	dw RHYHORN  	;70
+	dw RHYHORN
+	dw HAPPINY
+	dw HAPPINY
+	dw HAPPINY
+	dw TANGELA
 	dw TANGELA
 	dw KANGASKHAN
+	dw HORSEA
 	dw HORSEA
 	dw HORSEA
 	dw GOLDEEN
@@ -122,9 +139,16 @@ FirstEvoStages::
 	dw STARYU     ;78
 	dw STARYU
 	dw MIME__JR
+	dw MIME__JR
+	dw SCYTHER
 	dw SCYTHER
 	dw SMOOCHUM
+	dw SMOOCHUM
 	dw ELEKID
+	dw ELEKID
+	dw ELEKID
+	dw MAGBY
+	dw MAGBY
 	dw MAGBY
 	dw PINSIR
 	dw TAUROS     ;80
@@ -135,13 +159,21 @@ FirstEvoStages::
 	dw EEVEE
 	dw EEVEE
 	dw EEVEE
+	dw EEVEE
+	dw EEVEE
+	dw EEVEE
+	dw EEVEE
+	dw EEVEE
 	dw EEVEE      ;88
+	dw PORYGON
+	dw PORYGON
 	dw PORYGON
 	dw OMANYTE
 	dw OMANYTE
 	dw KABUTO
 	dw KABUTO
 	dw AERODACTYL
+	dw MUNCHLAX
 	dw MUNCHLAX
 	dw ARTICUNO   ;90
 	dw ZAPDOS
@@ -168,52 +200,51 @@ FirstEvoStages::
 	dw LEDYBA
 	dw SPINARAK
 	dw SPINARAK   ;a8
-	dw ZUBAT
 	dw CHINCHOU
 	dw CHINCHOU
-	dw PICHU
-	dw CLEFFA
-	dw IGGLYBUFF
 	dw TOGEPI
-	dw TOGEPI     ;b0
+	dw TOGEPI    	;b0
+	dw TOGEPI
 	dw NATU
 	dw NATU
 	dw MAREEP
 	dw MAREEP
 	dw MAREEP
-	dw ODDISH
+	dw AZURILL
 	dw AZURILL
 	dw AZURILL     ;b8
 	dw BONSLY
-	dw POLIWAG
+	dw BONSLY
 	dw HOPPIP
 	dw HOPPIP
 	dw HOPPIP
 	dw AIPOM
+	dw AIPOM
 	dw SUNKERN
 	dw SUNKERN    ;c0
 	dw YANMA
+	dw YANMA
 	dw WOOPER
 	dw WOOPER
-	dw EEVEE
-	dw EEVEE
 	dw MURKROW
-	dw SLOWPOKE
+	dw MURKROW
+	dw MISDREAVUS
 	dw MISDREAVUS ;c8
 	dw UNOWN
+	dw WYNAUT
 	dw WYNAUT
 	dw GIRAFARIG
 	dw PINECO
 	dw PINECO
 	dw DUNSPARCE
 	dw GLIGAR
-	dw ONIX       ;d0
+	dw GLIGAR
 	dw SNUBBULL
 	dw SNUBBULL
 	dw QWILFISH
-	dw SCYTHER
 	dw SHUCKLE
 	dw HERACROSS
+	dw SNEASEL
 	dw SNEASEL
 	dw TEDDIURSA  ;d8
 	dw TEDDIURSA
@@ -221,63 +252,57 @@ FirstEvoStages::
 	dw SLUGMA
 	dw SWINUB
 	dw SWINUB
+	dw SWINUB
+	dw CORSOLA
 	dw CORSOLA
 	dw REMORAID
 	dw REMORAID   ;e0
 	dw DELIBIRD
 	dw MANTYKE
+	dw MANTYKE
+	dw SKARMINI
 	dw SKARMINI
 	dw HOUNDOUR
 	dw HOUNDOUR
-	dw HORSEA
 	dw PHANPY
 	dw PHANPY     ;e8
-	dw PORYGON
 	dw STANTLER
-	dw SMEARGLE
-	dw TYROGUE
-	dw TYROGUE
-	dw SMOOCHUM
-	dw ELEKID
-	dw MAGBY      ;f0
+	dw SMEARGLE      ;f0
 	dw MILTANK
-	dw CHANSEY
+	dw BUDEW
+	dw BUDEW
+	dw BUDEW
+	dw ELECTRIKE
+	dw ELECTRIKE
+	dw CROAGUNK
+	dw CROAGUNK
+	dw DUSKULL
+	dw DUSKULL
+	dw DUSKULL
+	dw SNORUNT
+	dw SNORUNT
+	dw SNORUNT
+	dw BRONZOR
+	dw BRONZOR
+	dw CACNEA
+	dw CACNEA
+	dw RALTS
+	dw RALTS
+	dw RALTS
+	dw RALTS
+	dw ARON
+	dw ARON
+	dw ARON
 	dw RAIKOU
 	dw ENTEI
 	dw SUICUNE
 	dw LARVITAR
 	dw LARVITAR
 	dw LARVITAR   ;f8
+	dw BAGON
+	dw BAGON
+	dw BAGON
 	dw LUGIA
 	dw HO_OH
 	dw CELEBI
-	dw SKARMINI
-	dw MISDREAVUS
-	dw MURKROW
-	dw CORSOLA
-	dw EEVEE
-	dw EEVEE
-	dw EEVEE
-	dw AIPOM
-	dw LICKITUNG
-	dw YANMA
-	dw TOGEPI
-	dw SWINUB
-	dw TANGELA
-	dw MAGNEMITE
-	dw PORYGON
-	dw GLIGAR
-	dw SNEASEL
-	dw ELEKID
-	dw MAGBY
-	dw RHYHORN
-	dw BAGON
-	dw BAGON
-	dw BAGON
-	dw WYNAUT
-	dw AZURILL
-	dw MUNCHLAX
-	dw BONSLY
-	dw MIME__JR
-	dw MANTYKE
 	dw MISSINGNO

@@ -183,5 +183,6 @@ BattleCommandPointers:
 	dw BattleCommand_SuckerPunch
 	dw BattleCommand_GrassKnot
 	dw BattleCommand_AquaRing
+	dw BattleCommand_Burn
 ;	dw BattleCommand_WakeUpSlap
 ;	dw BattleCommand_AwakenOpponent

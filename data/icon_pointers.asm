@@ -7,7 +7,6 @@ IconPointers:
 	dw PikachuIcon
 	dw FishIcon
 	dw BirdIcon
-	dw MonsterIcon
 	dw ClefairyIcon
 	dw OddishIcon
 	dw BugIcon
@@ -18,7 +17,6 @@ IconPointers:
 	dw EquineIcon
 	dw ShellIcon
 	dw BlobIcon
-	dw SerpentIcon
 	dw VoltorbIcon
 	dw SquirtleIcon
 	dw BulbasaurIcon
@@ -28,7 +26,6 @@ IconPointers:
 	dw GeodudeIcon
 	dw FighterIcon
 	dw EggIcon
-	dw JellyfishIcon
 	dw MothIcon
 	dw GolbatIcon
 	dw SnorlaxIcon
@@ -252,3 +249,10 @@ IconPointers:
 	dw MismagiusIcon
 	dw WynautIcon
 	dw WobbuffetIcon
+	dw GirafarigIcon
+	dw PinecoIcon
+	dw ForretressIcon
+	dw DunsparceIcon
+	dw GligarIcon
+	dw GliscorIcon
+	dw MonsterIcon

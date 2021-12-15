@@ -12,6 +12,10 @@ BattleCommand_Teleport:
 	jr z, .failed
 	cp BATTLETYPE_MEWTWO
 	jr z, .failed
+	cp BATTLETYPE_HO_OH
+	jr z, .failed
+	cp BATTLETYPE_LUGIA
+	jr z, .failed
 
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVar
@@ -68,11 +72,8 @@ BattleCommand_Teleport:
 	srl b
 	srl b
 	cp b
-	; This does the wrong thing. What was
-	; probably intended was jr c, .failed
-	; The way this is made makes enemy use
-	; of Teleport always succeed if able
-	jr nc, .run_away
+	; If the random number >= player level / 4, Teleport will succeed
+	jr nc, .failed
 .run_away
 	call UpdateBattleMonInParty
 	xor a

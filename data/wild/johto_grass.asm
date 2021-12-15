@@ -425,27 +425,27 @@ JohtoGrassWildMons:
 	map_id MOUNT_MORTAR_1F_OUTSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw  9, RATTATA
 	dbw  9, ZUBAT
 	dbw  9, MACHOP
+	dbw  9, LAIRON
 	dbw 10, MARILL
 	dbw 10, GEODUDE
 	dbw 10, SANDSHREW
 	dbw 11, DIGLETT
 	dbw 11, DIGLETT
 	; day
-	dbw  9, RATTATA
 	dbw  9, ZUBAT
 	dbw  9, MACHOP
+	dbw  9, LAIRON
 	dbw 10, MARILL
 	dbw 10, GEODUDE
 	dbw 10, SANDSHREW
 	dbw 11, DIGLETT
 	dbw 11, DIGLETT
 	; nite
-	dbw  9, RATTATA
 	dbw  9, ZUBAT
 	dbw  9, MACHOP
+	dbw  9, LAIRON
 	dbw 10, MARILL
 	dbw 10, GEODUDE
 	dbw 10, SANDSHREW
@@ -580,27 +580,27 @@ JohtoGrassWildMons:
 	dbw 3, SEEL
 	dbw 4, DELIBIRD
 	dbw 4, SWINUB
-	dbw 4, ZUBAT
 	dbw 4, SMOOCHUM
 	dbw 5, SMOOCHUM
+	dbw 5, SNEASEL
 	; day
 	dbw 3, SWINUB
 	dbw 3, ZUBAT
 	dbw 3, SEEL
 	dbw 4, DELIBIRD
 	dbw 4, SWINUB
-	dbw 4, ZUBAT
 	dbw 4, SMOOCHUM
 	dbw 5, SMOOCHUM
+	dbw 5, SNEASEL
 	; nite
 	dbw 3, SWINUB
 	dbw 3, ZUBAT
 	dbw 3, SEEL
 	dbw 4, DELIBIRD
 	dbw 4, SWINUB
-	dbw 4, ZUBAT
 	dbw 4, SMOOCHUM
 	dbw 5, SMOOCHUM
+	dbw 5, SNEASEL
 
 	map_id ICE_PATH_B2F_MAHOGANY_SIDE
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
@@ -1058,7 +1058,7 @@ JohtoGrassWildMons:
 	dbw 3, GEODUDE
 	dbw 2, ZUBAT
 	dbw 2, GEODUDE
-	dbw 4, GEODUDE
+	dbw 4, CLEFFA
 	dbw 2, TEDDIURSA
 	dbw 4, ZUBAT
 	dbw 4, DUNSPARCE
@@ -1067,7 +1067,7 @@ JohtoGrassWildMons:
 	dbw 3, GEODUDE
 	dbw 2, ZUBAT
 	dbw 2, GEODUDE
-	dbw 4, GEODUDE
+	dbw 4, CLEFFA
 	dbw 2, ZUBAT
 	dbw 4, ZUBAT
 	dbw 4, DUNSPARCE
@@ -1076,7 +1076,7 @@ JohtoGrassWildMons:
 	dbw 3, GEODUDE
 	dbw 2, ZUBAT
 	dbw 2, GEODUDE
-	dbw 4, GEODUDE
+	dbw 4, CLEFFA
 	dbw 2, ZUBAT
 	dbw 4, ZUBAT
 	dbw 4, DUNSPARCE
@@ -1655,8 +1655,8 @@ JohtoGrassWildMons:
 	map_id DARK_CAVE_NEW_ENTRANCE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 3, GEODUDE
-	dbw 2, ZUBAT
+	dbw 3, ZUBAT
+	dbw 2, CLEFFA
 	dbw 2, WOOPER
 	dbw 4, WYNAUT
 	dbw 2, TEDDIURSA
@@ -1664,8 +1664,8 @@ JohtoGrassWildMons:
 	dbw 4, CYNDAQUIL
 	dbw 4, CYNDAQUIL
 	; day
-	dbw 3, GEODUDE
-	dbw 2, ZUBAT
+	dbw 3, ZUBAT
+	dbw 2, CLEFFA
 	dbw 2, WOOPER
 	dbw 4, WYNAUT
 	dbw 2, TEDDIURSA
@@ -1673,8 +1673,8 @@ JohtoGrassWildMons:
 	dbw 4, CYNDAQUIL
 	dbw 4, CYNDAQUIL
 	; nite
-	dbw 3, GEODUDE
-	dbw 2, ZUBAT
+	dbw 3, ZUBAT
+	dbw 2, CLEFFA
 	dbw 2, WOOPER
 	dbw 4, TEDDIURSA
 	dbw 2, WYNAUT

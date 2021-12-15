@@ -7,7 +7,6 @@
 	const ICON_PIKACHU
 	const ICON_FISH
 	const ICON_BIRD
-	const ICON_MONSTER
 	const ICON_CLEFAIRY
 	const ICON_ODDISH
 	const ICON_BUG
@@ -18,7 +17,6 @@
 	const ICON_EQUINE
 	const ICON_SHELL
 	const ICON_BLOB
-	const ICON_SERPENT
 	const ICON_VOLTORB
 	const ICON_SQUIRTLE
 	const ICON_BULBASAUR
@@ -28,7 +26,6 @@
 	const ICON_GEODUDE
 	const ICON_FIGHTER
 	const ICON_EGG
-	const ICON_JELLYFISH
 	const ICON_MOTH
 	const ICON_GOLBAT
 	const ICON_SNORLAX
@@ -252,6 +249,13 @@
 	const ICON_MISMAGIUS
 	const ICON_WYNAUT
 	const ICON_WOBBUFFET
+	const ICON_GIRAFARIG
+	const ICON_PINECO
+	const ICON_FORRETRESS
+	const ICON_DUNSPARCE
+	const ICON_GLIGAR
+	const ICON_GLISCOR
+	const ICON_MONSTER
 
 ; LoadMenuMonIcon.Jumptable indexes (see engine/gfx/mon_icons.asm)
 	const_def

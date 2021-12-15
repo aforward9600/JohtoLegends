@@ -83,3 +83,4 @@ TrainerClassNames::
 	db "Mahogany@"
 	db "Rival@"
 	db "Rival@"
+	db "Scientist@"

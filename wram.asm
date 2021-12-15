@@ -2588,8 +2588,6 @@ wMooMooBerries:: db ; d962
 wUndergroundSwitchPositions:: db ; d963
 wFarfetchdPosition:: db ; d964
 
-	ds 13
-
 ; map scene ids
 wPokecenter2FSceneID::                            db ; d972
 wTradeCenterSceneID::                             db ; d973

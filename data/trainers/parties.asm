@@ -359,10 +359,10 @@ ByronGroup:
 	db 30
 	dw BRONZOR
 	dw FUTURE_SIGHT, FLASH_CANNON, CONFUSION, IRON_DEFENSE
-	db 31
-	dw MAGCARGO
-	dw STEEL_SLICE, SHELL_SMASH, FLAME_BURST, ANCIENTPOWER
 	db 32
+	dw LAIRON
+	dw IRON_HEAD, ROCK_SLIDE, ROAR, PROTECT
+	db 33
 	dw STEELIX
 	dw STEEL_SLICE, BULLDOZE, ROCK_SLIDE, IRON_HEAD
 	db -1 ; end
@@ -376,8 +376,8 @@ ByronGroup:
 	dw BRONZONG
 	dw METAL_SOUND, FLASH_CANNON, CONFUSION, IRON_DEFENSE
 	db 35
-	dw MAGCARGO
-	dw STEEL_SLICE, SHELL_SMASH, FLAME_BURST, ANCIENTPOWER
+	dw LAIRON
+	dw IRON_TAIL, ROCK_SLIDE, ROAR, PROTECT
 	db 36
 	dw STEELIX
 	dw STEEL_SLICE, BULLDOZE, ROCK_SLIDE, IRON_HEAD
@@ -2178,11 +2178,12 @@ PokemaniacGroup:
 	dw KANGASKHAN
 	db -1 ; end
 
-	next_list_item ; POKEMANIAC (10)
-	db "BRENT@", TRAINERTYPE_MOVES
-	db 36
-	dw PORYGON
-	dw RECOVER, PSYCHIC_M, NASTY_PLOT, TRI_ATTACK
+	next_list_item ; POKEMANIAC (10) Route 43
+	db "Jarvis@", TRAINERTYPE_NORMAL
+	db 14
+	dw LICKITUNG
+	db 14
+	dw ARON
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (11)
@@ -2618,6 +2619,8 @@ TeacherGroup:
 	dw CHANSEY
 	db 26
 	dw AZUMARILL
+	db 26
+	dw JIGGLYPUFF
 	db -1 ; end
 
 	end_list_items
@@ -6429,6 +6432,28 @@ DepressedDracoGroup:
 	dw MAGNETON
 	db 37
 	dw DRAGONAIR
+	db -1 ; end
+
+	end_list_items
+
+EinGroup:
+	next_list_item ; EIN (1)
+	db "Ein@", TRAINERTYPE_MOVES
+	db 45
+	dw LANTURN
+	dw SURF, THUNDER, RAIN_DANCE, ICY_WIND
+	db 45
+	dw STARMIE
+	dw ICE_BEAM, SURF, PSYCHIC_M, RAPID_SPIN
+	db 46
+	dw CROBAT
+	dw POISON_FANG, AERIAL_ACE, BITE, HAZE
+	db 46
+	dw AGGRON
+	dw ROCK_SLIDE, IRON_TAIL, EARTHQUAKE, BRICK_BREAK
+	db 47
+	dw RAIKOU
+	dw THUNDER, RAIN_DANCE, BITE, QUICK_ATTACK
 	db -1 ; end
 
 	end_list_items

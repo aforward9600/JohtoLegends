@@ -84,3 +84,4 @@ TrainerClassDVs:
 	dn  8, 10, 11,  8 ; MNINJA_F
 	dn 13, 13, 13, 13 ; DEPRESSED_DAHLIA
 	dn 13, 13, 13, 13 ; DEPRESSED_DRACO
+	dn 13,  8, 10,  8 ; EIN

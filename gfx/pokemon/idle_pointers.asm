@@ -289,6 +289,9 @@ AnimationIdlePointers:
 	dw KirliaAnimationIdle
 	dw GardevoirAnimationIdle
 	dw GalladeAnimationIdle
+	dw AronAnimationIdle
+	dw LaironAnimationIdle
+	dw AggronAnimationIdle
 	dw RaikouAnimationIdle
 	dw EnteiAnimationIdle
 	dw SuicuneAnimationIdle

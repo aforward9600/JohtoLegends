@@ -2,13 +2,31 @@ FleeMons:
 ; referenced by TryEnemyFlee and FastBallMultiplier
 
 SometimesFleeMons:
-	dw TOGETIC
+	dw ABRA
+	dw KADABRA
+	dw DIGLETT
+	dw DUGTRIO
+	dw MEOWTH
+	dw PERSIAN
 	dw -1
 
 OftenFleeMons:
-	dw TOGEKISS
+	dw ENTEI
+	dw SUICUNE
+	dw RAIKOU
+	dw ELECTRIKE
+	dw MANECTRIC
+	dw ELECTABUZZ
+	dw PONYTA
+	dw ELEKID
+	dw RAPIDASH
 	dw -1
 
 AlwaysFleeMons:
-	dw TOGEPI
+	dw VOLTORB
+	dw ELECTRODE
+	dw RATTATA
+	dw RATICATE
+	dw SMOOCHUM
+	dw JYNX
 	dw -1

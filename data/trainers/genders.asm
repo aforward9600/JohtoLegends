@@ -85,3 +85,4 @@ BTTrainerClassGenders:
 	db FEMALE ; MNINJA_F
 	db FEMALE ; DEPRESSED_DAHLIA
 	db MALE   ; DEPRESSED_DRACO
+	db MALE   ; EIN

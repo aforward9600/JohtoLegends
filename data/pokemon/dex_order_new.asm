@@ -65,6 +65,9 @@ NewPokedexOrder:
 	dw DUSKULL
 	dw DUSCLOPS
 	dw DUSKNOIR
+	dw ARON
+	dw LAIRON
+	dw AGGRON
 	dw NATU
 	dw XATU
 	dw ZUBAT

@@ -62,6 +62,12 @@ PlayBattleMusic:
 	cp BATTLETYPE_MEWTWO
 	ld de, MUSIC_MEWTWO_BATTLE
 	jp z, .done
+	cp BATTLETYPE_HO_OH
+	ld de, MUSIC_HO_OH_BATTLE
+	jp z, .done
+	cp BATTLETYPE_LUGIA
+	ld de, MUSIC_LUGIA_BATTLE
+	jp z, .done
 	cp BATTLETYPE_SUICUNE
 	ld de, MUSIC_SUICUNE_BATTLE
 	jp z, .done

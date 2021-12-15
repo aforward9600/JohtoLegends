@@ -23,6 +23,8 @@ GoldenrodGym_MapScripts:
 GoldenrodGymMiltonScript:
 	faceplayer
 	opentext
+	checkflag ENGINE_HIVEBADGE
+	iftrue .MiltonBattle2
 	checkevent EVENT_BEAT_MILTON
 	iftrue .FightDone
 	writetext MiltonText_Howdy
@@ -75,6 +77,23 @@ GoldenrodGymMiltonScript:
 	waitbutton
 	closetext
 	turnobject GOLDENRODGYM_MILTON, DOWN
+	end
+
+.MiltonBattle2:
+	checkevent EVENT_BEAT_MILTON_2
+	iftrue .FightDone
+	writetext MiltonReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext MiltonText_HooWee, 0
+	loadtrainer MILTON, MILTON2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MILTON_2
+	opentext
+	writetext BeatenMiltonAgainText
+	waitbutton
+	closetext
 	end
 
 GoldenrodRockets:
@@ -478,6 +497,22 @@ GoldenrodGymRivalText:
 AsToughAsYouAreText:
 	text "This kid is as"
 	line "tough as you are!"
+	done
+
+MiltonReadyForARematchText:
+	text "Y'all ready for a"
+	line "rematch?"
+
+	para "This ain't gonna"
+	line "go the same way"
+	cont "as last time!"
+	done
+
+BeatenMiltonAgainText:
+	text "Hot dang!"
+
+	para "Yer a tough one"
+	line "alright!"
 	done
 
 GoldenrodGym_MapEvents:

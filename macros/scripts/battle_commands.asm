@@ -184,6 +184,7 @@ ENDM
 	command suckerpunch
 	command grassknot
 	command aquaring
+	command burn
 ;	command wakeupslap
 ;	command awakenopponent
 

@@ -289,6 +289,9 @@ BitmasksPointers:
 	dw KirliaBitmasks
 	dw GardevoirBitmasks
 	dw GalladeBitmasks
+	dw AronBitmasks
+	dw LaironBitmasks
+	dw AggronBitmasks
 	dw RaikouBitmasks
 	dw EnteiBitmasks
 	dw SuicuneBitmasks

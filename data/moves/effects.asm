@@ -2196,17 +2196,6 @@ SleepHit:
 	sleeptarget
 	endmove
 
-WillOWisp:
-	checkobedience
-	usedmovetext
-	doturn
-	stab
-	checkhit
-	checksafeguard
-	moveanim
-	burntarget
-	endmove
-
 FlareBlitz:
 	checkobedience
 	usedmovetext
@@ -2699,6 +2688,16 @@ AquaRing:
 	usedmovetext
 	doturn
 	aquaring
+	endmove
+
+DoBurn:
+	checkobedience
+	usedmovetext
+	doturn
+	stab
+	checkhit
+	checksafeguard
+	burn
 	endmove
 
 ;WakeUpSlap:

@@ -10,8 +10,7 @@ LoadOverworldMonIcon:
 	ld a, [hli]
 	ld e, a
 	ld d, [hl]
-	call GetIconBank
-	ret
+	jp GetIconBank
 
 ;SetMenuMonIconColor:
 ;	push hl
@@ -464,7 +463,7 @@ endr
 
 GetIconBank:
 	ld a, [wCurIcon]
-	cp ICON_MAROWAK ; first icon in Icons2
+	cp TANGELA; first icon in Icons2
 	lb bc, BANK("Mon Icons 1"), 8
 	ret c
 	ld b, BANK("Mon Icons 2")

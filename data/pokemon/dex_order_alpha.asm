@@ -3,6 +3,7 @@
 AlphabeticalPokedexOrder:
 	dw ABRA
 	dw AERODACTYL
+	dw AGGRON
 	dw AIPOM
 	dw ALAKAZAM
 	dw AMBIPOM
@@ -10,6 +11,7 @@ AlphabeticalPokedexOrder:
 	dw ARBOK
 	dw ARCANINE
 	dw ARIADOS
+	dw ARON
 	dw ARTICUNO
 	dw AZUMARILL
 	dw AZURILL
@@ -132,6 +134,7 @@ AlphabeticalPokedexOrder:
 	dw KIRLIA
 	dw KOFFING
 	dw KRABBY
+	dw LAIRON
 	dw LANTURN
 	dw LAPRAS
 	dw LARVITAR

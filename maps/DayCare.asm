@@ -157,6 +157,7 @@ MrPokemonLegendary:
 	sjump .LeaveDaycare
 
 .LeaveDaycare:
+	setevent EVENT_DAY_CARE_MR_POKEMON
 	readvar VAR_FACING
 	ifequal UP, .PlayerLeaves
 	ifequal RIGHT, .PlayerLeavesDown

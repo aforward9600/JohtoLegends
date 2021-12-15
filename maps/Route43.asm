@@ -7,6 +7,7 @@
 	const ROUTE43_FISHER1
 	const ROUTE43_FRUIT_TREE
 	const ROUTE43_POKE_BALL
+	const ROUTE42_EGGGIVER
 
 Route43_MapScripts:
 	db 0 ; scene scripts
@@ -80,6 +81,8 @@ TrainerPokemaniacJarvis:
 	playmusic MUSIC_POKEMANIAC_ENCOUNTER
 	writetext PokemaniacJarvisLetsDoItText
 	waitbutton
+	checkflag ENGINE_GLACIERBADGE
+	iftrue .JarvisRematch2
 	winlosstext PokemaniacJarvisBeatenText, 0
 	loadtrainer POKEMANIAC, JARVIS
 	startbattle
@@ -91,6 +94,54 @@ TrainerPokemaniacJarvis:
 	writetext PokemaniacJarvisRefusedText
 	waitbutton
 	closetext
+	end
+
+.JarvisRematch2:
+	winlosstext PokemaniacJarvisBeatenText, 0
+	loadtrainer POKEMANIAC, JARVIS2
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+	
+
+TogepiEggGiver:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
+	iftrue .TakeCareOfIt
+	writetext AskEggText
+	yesorno
+	iffalse .RefusedEgg
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .PartyFull
+	giveegg TOGEPI, 5
+	getstring STRING_BUFFER_4, .eggname
+	scall .GivenTogepiEgg
+	setevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
+.TakeCareOfIt:
+	writetext TakeCareOfItText
+	waitbutton
+	closetext
+	end
+
+.eggname:
+	db "Egg@"
+
+.RefusedEgg:
+	writetext NoEggForYouText
+	waitbutton
+	closetext
+	end
+
+.PartyFull:
+	writetext YouAintGotRoomText
+	waitbutton
+	closetext
+	end
+
+.GivenTogepiEgg:
+	jumpstd receivetogepiegg
 	end
 
 Route43Sign1:
@@ -301,6 +352,35 @@ Route43TrainerTipsText:
 	line "#mon's type."
 	done
 
+AskEggText:
+	text "Can I offer you a"
+	line "nice egg in these"
+	cont "trying times?"
+
+	para "Got it from a Day-"
+	line "Care on Route 34,"
+
+	para "but hatching eggs"
+	line "isn't something"
+	cont "good at…"
+	done
+
+TakeCareOfItText:
+	text "Take good care of"
+	line "that egg!"
+	done
+
+YouAintGotRoomText:
+	text "Looks like your"
+	line "party's full…"
+	done
+
+NoEggForYouText:
+	text "Fine then!"
+
+	para "No egg for you!"
+	done
+
 Route43_MapEvents:
 	db 0, 0 ; filler
 
@@ -318,7 +398,7 @@ Route43_MapEvents:
 	bg_event 11, 49, BGEVENT_READ, Route43Sign2
 	bg_event 16, 38, BGEVENT_READ, Route43TrainerTips
 
-	db 8 ; object events
+	db 9 ; object events
 	object_event 10,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperGarret, -1
 	object_event 15, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerJugglerPercy, -1
 	object_event 15,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerChloe, -1
@@ -327,3 +407,4 @@ Route43_MapEvents:
 	object_event  8, 29, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherChaz, -1
 	object_event  1, 26, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route43FruitTree, -1
 	object_event  1,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route43Ether, EVENT_ROUTE_43_MAX_ETHER
+	object_event 19, 11, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TogepiEggGiver, -1

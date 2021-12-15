@@ -37,6 +37,11 @@ into Leafeon with a Leaf Stone. Up-Grade acts as an evolution stone for Porygon.
 Shiny Stone evolves Eevee into Sylveon, Togetic into Togekiss. Ice Stone evolves Eevee into Glaceon and Piloswine into Mamoswine.
 Dusk Stone evolves Murkrow into Honchkrow and Misdreavus into Mismagius. 
 
+Fast Ball now catches Pokemon with higher speed: Electrike, Manectric, Abra, Kadabra, Rattata, Raticate, Diglett, Dugtrio, Meowth,
+Persian, Elekid, Electabuzz, Ponyta, Rapidash, Voltorb, Electrode, Smoochum, Jynx, Raikou, Entei, Suicune.
+
+Wild Pokemon no longer flee.
+
 Removed:
 
 Conversion2

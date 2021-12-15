@@ -290,6 +290,9 @@ PokedexDataPointerTable:
 	dba KirliaPokedexEntry
 	dba GardevoirPokedexEntry
 	dba GalladePokedexEntry
+	dba AronPokedexEntry
+	dba LaironPokedexEntry
+	dba AggronPokedexEntry
 	dba RaikouPokedexEntry
 	dba EnteiPokedexEntry
 	dba SuicunePokedexEntry

@@ -289,6 +289,9 @@ FramesPointers:
 	dba KirliaFrames
 	dba GardevoirFrames
 	dba GalladeFrames
+	dba AronFrames
+	dba LaironFrames
+	dba AggronFrames
 	dba RaikouFrames
 	dba EnteiFrames
 	dba SuicuneFrames
