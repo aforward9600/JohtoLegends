@@ -396,6 +396,7 @@
 	const BLAST_BURN
 	const HYDRO_CANNON
 	const AQUA_RING
+	const KNOCK_OFF
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 

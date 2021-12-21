@@ -451,7 +451,7 @@ MartWildArea:
 	db -1 ; end
 
 MartEcruteakBalls:
-	db 7 ; # items
+	db 8 ; # items
 	db HEAVY_BALL
 	db LURE_BALL
 	db FRIEND_BALL
@@ -459,6 +459,7 @@ MartEcruteakBalls:
 	db LEVEL_BALL
 	db FAST_BALL
 	db MOON_BALL
+	db DUSK_BALL
 	db -1 ; end
 
 MartOlivineTMs:

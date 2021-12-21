@@ -6,4 +6,5 @@ MoveEffectPriorities:
 	db EFFECT_COUNTER,      0
 	db EFFECT_MIRROR_COAT,  0
 	db EFFECT_AVALANCHE,	0
+	db EFFECT_CIRCLE_THROW, 0
 	db -1

@@ -183,4 +183,5 @@ MoveEffectsPointers:
 	dw Flatter
 	dw AquaRing
 	dw DoBurn
+	dw KnockOff
 ;	dw WakeUpSlap

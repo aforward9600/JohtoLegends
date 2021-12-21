@@ -395,6 +395,7 @@ MoveDescriptions1:
 	dw HyperBeamDescription
 	dw HyperBeamDescription
 	dw AquaRingDescription
+	dw KnockOffDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1923,3 +1924,7 @@ WakeUpSlapDescription:
 AquaRingDescription:
 	db	 "Restores HP each"
 	next "turn.@"
+
+KnockOffDescription:
+	db	 "Can knock off a"
+	next "foe's item.@"

@@ -43,11 +43,15 @@ EcruteakMartSuperNerdText:
 	done
 
 EcruteakMartGrannyText:
-	text "If you use Revive,"
-	line "a #mon that's"
+	text "Fast Balls help to"
+	line "catch speedy #-"
+	cont "mon, like Ponyta"
 
-	para "fainted will wake"
-	line "right up."
+	para "or Voltorb. There"
+	line "are a bunch more"
+	cont "#mon they can"
+
+	para "be used on!"
 	done
 
 EcruteakMart_MapEvents:

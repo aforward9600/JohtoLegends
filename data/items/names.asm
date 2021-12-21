@@ -106,7 +106,7 @@ ItemNames::
 	db "Spell Tag@"
 	db "Ragecandybar@"
 	db "GS Berry@"
-	db "VS. Seeker@"
+	db "Dusk Ball@"
 	db "Miracle Seed@"
 	db "Thick Club@"
 	db "Focus Band@"

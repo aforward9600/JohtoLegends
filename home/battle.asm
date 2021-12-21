@@ -196,6 +196,40 @@ GetBattleAnimPointer::
 
 	ret
 
+IsUserItemUsable::
+; Returns nz if user's held item is unusable (knocked off).
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerKnockOff
+	ld a, [wCurBattleMon]
+	jr z, .got_knock_off
+	ld hl, wEnemyKnockOff
+	ld a, [wCurOTMon]
+.got_knock_off
+	push de
+	push bc
+	ld e, a
+	ld d, 0
+	ld b, CHECK_FLAG
+	call FlagAction
+	pop bc
+	pop de
+	ret
+
+IsOpponentItemUsable::
+; Returns nz if opponent's held item is unusable (knocked off)
+	call SwitchTurn
+	call IsUserItemUsable
+	; fallthrough
+SwitchTurn::
+; preserves registers
+	push af
+	ldh a, [hBattleTurn]
+	xor 1
+	ldh [hBattleTurn], a
+	pop af
+	ret
+
 GetBattleAnimByte::
 	push hl
 	push de

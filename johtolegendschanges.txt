@@ -42,6 +42,12 @@ Persian, Elekid, Electabuzz, Ponyta, Rapidash, Voltorb, Electrode, Smoochum, Jyn
 
 Wild Pokemon no longer flee.
 
+AI has been improved, thanks to pret's bugs and glitches doc.
+
+Time and Weather sensitive moves (Morning Sun, Moonlight and Synthesis) no longer function on time.
+
+Added Dusk Ball.
+
 Removed:
 
 Conversion2

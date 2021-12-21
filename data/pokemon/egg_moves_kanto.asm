@@ -430,6 +430,7 @@ AbraEggMoves:
 	dw ICE_PUNCH
 	dw THUNDERPUNCH
 	dw PIXIE_PUNCH
+	dw KNOCK_OFF
 	dw -1 ; end
 
 MachopEggMoves:
@@ -442,6 +443,7 @@ MachopEggMoves:
 	dw BULLET_PUNCH
 	dw COUNTER
 	dw CLOSE_COMBAT
+	dw KNOCK_OFF
 	dw -1 ; end
 
 BellsproutEggMoves:

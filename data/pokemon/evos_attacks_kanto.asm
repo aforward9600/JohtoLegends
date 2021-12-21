@@ -1414,7 +1414,7 @@ MachopEvosAttacks:
 	dbw 13, LOW_SWEEP
 	dbw 15, SEISMIC_TOSS
 	dbw 19, REVENGE
-	dbw 21, FAINT_ATTACK
+	dbw 21, KNOCK_OFF
 	dbw 25, VITAL_THROW
 	dbw 27, BRICK_BREAK
 	dbw 31, DUAL_CHOP
@@ -1436,7 +1436,7 @@ MachokeEvosAttacks:
 	dbw 13, LOW_SWEEP
 	dbw 15, SEISMIC_TOSS
 	dbw 19, REVENGE
-	dbw 21, FAINT_ATTACK
+	dbw 21, KNOCK_OFF
 	dbw 25, VITAL_THROW
 	dbw 27, BRICK_BREAK
 	dbw 33, DUAL_CHOP
@@ -1458,7 +1458,7 @@ MachampEvosAttacks:
 	dbw 13, LOW_SWEEP
 	dbw 15, SEISMIC_TOSS
 	dbw 19, REVENGE
-	dbw 21, FAINT_ATTACK
+	dbw 21, KNOCK_OFF
 	dbw 25, VITAL_THROW
 	dbw 27, BRICK_BREAK
 	dbw 33, DUAL_CHOP
@@ -1480,10 +1480,10 @@ BellsproutEvosAttacks:
 	dbw 15, POISONPOWDER
 	dbw 17, STUN_SPORE
 	dbw 23, ACID
-	dbw 27, RAZOR_LEAF
+	dbw 27, KNOCK_OFF
 	dbw 29, SWEET_SCENT
 	dbw 35, SWORDS_DANCE
-	dbw 39, SEED_BOMB
+	dbw 39, RAZOR_LEAF
 	dbw 41, POISON_JAB
 	dbw 47, SLASH
 	dbw 45, SOLAR_BLADE
@@ -1499,10 +1499,10 @@ WeepinbellEvosAttacks:
 	dbw 15, POISONPOWDER
 	dbw 17, STUN_SPORE
 	dbw 24, ACID
-	dbw 29, RAZOR_LEAF
+	dbw 29, KNOCK_OFF
 	dbw 32, SWEET_SCENT
 	dbw 39, SWORDS_DANCE
-	dbw 44, SEED_BOMB
+	dbw 44, RAZOR_LEAF
 	dbw 47, POISON_JAB
 	dbw 54, SLASH
 	dbw 58, SOLAR_BLADE
@@ -1816,7 +1816,7 @@ FarfetchDEvosAttacks:
 	dbw 1, LEER
 	dbw 7, FURY_ATTACK
 	dbw 9, WING_ATTACK
-	dbw 13, FAINT_ATTACK
+	dbw 13, KNOCK_OFF
 	dbw 19, SLASH
 	dbw 21, AIR_CUTTER
 	dbw 25, SWORDS_DANCE
@@ -1931,7 +1931,7 @@ GrimerEvosAttacks:
 	dbw 15, SLUDGE
 	dbw 18, MUD_BOMB
 	dbw 21, MINIMIZE
-	dbw 26, FAINT_ATTACK
+	dbw 26, KNOCK_OFF
 	dbw 29, SLUDGE_BOMB
 	dbw 32, SLUDGE_WAVE
 	dbw 37, SCREECH
@@ -1952,7 +1952,7 @@ MukEvosAttacks:
 	dbw 15, SLUDGE
 	dbw 18, MUD_BOMB
 	dbw 21, MINIMIZE
-	dbw 26, FAINT_ATTACK
+	dbw 26, KNOCK_OFF
 	dbw 29, SLUDGE_BOMB
 	dbw 32, SLUDGE_WAVE
 	dbw 37, SCREECH
@@ -2394,7 +2394,7 @@ LickitungEvosAttacks:
 	dbw 1, LICK
 	dbw 5, SUPERSONIC
 	dbw 9, DEFENSE_CURL
-	dbw 13, FAINT_ATTACK
+	dbw 13, KNOCK_OFF
 	dbw 17, WRAP
 	dbw 21, STOMP
 	dbw 25, DISABLE
@@ -2413,7 +2413,7 @@ LickilickyEvosAttacks:
 	dbw 1, LICK
 	dbw 5, SUPERSONIC
 	dbw 9, DEFENSE_CURL
-	dbw 13, FAINT_ATTACK
+	dbw 13, KNOCK_OFF
 	dbw 17, WRAP
 	dbw 21, STOMP
 	dbw 25, DISABLE
@@ -2604,7 +2604,7 @@ TangelaEvosAttacks:
 	dbw 17, BIND
 	dbw 20, GROWTH
 	dbw 23, MEGA_DRAIN
-	dbw 27, FAINT_ATTACK
+	dbw 27, KNOCK_OFF
 	dbw 30, STUN_SPORE
 	dbw 33, SYNTHESIS
 	dbw 36, GIGA_DRAIN
@@ -2626,7 +2626,7 @@ TangrowthEvosAttacks:
 	dbw 17, BIND
 	dbw 20, GROWTH
 	dbw 23, MEGA_DRAIN
-	dbw 27, FAINT_ATTACK
+	dbw 27, KNOCK_OFF
 	dbw 30, STUN_SPORE
 	dbw 33, SYNTHESIS
 	dbw 36, GIGA_DRAIN

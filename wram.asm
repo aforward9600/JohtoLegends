@@ -634,12 +634,13 @@ wEnemyScreens:: ; c700
 wPlayerSafeguardCount:: db ; c701
 wPlayerLightScreenCount:: db ; c702
 wPlayerReflectCount:: db ; c703
-	ds 1
+wPlayerKnockOff:: db
 
 wEnemySafeguardCount:: db ; c705
 wEnemyLightScreenCount:: db ; c706
 wEnemyReflectCount:: db ; c707
-	ds 2
+wEnemyKnockOff:: db
+	ds 1
 
 wBattleWeather:: ; c70a
 ; 00 normal

@@ -306,6 +306,7 @@ LedybaEggMoves:
 	dw ENCORE
 	dw SCREECH
 	dw SILVER_WIND
+	dw KNOCK_OFF
 	dw -1 ; end
 
 SpinarakEggMoves:
@@ -527,6 +528,7 @@ QwilfishEggMoves:
 
 ShuckleEggMoves:
 	dw SWEET_SCENT
+	dw KNOCK_OFF
 	dw -1 ; end
 
 HeracrossEggMoves:
@@ -551,6 +553,7 @@ SneaselEggMoves:
 	dw ICE_SHARD
 	dw ICICLE_CRASH
 	dw PURSUIT
+	dw KNOCK_OFF
 	dw -1 ; end
 
 TeddiursaEggMoves:
@@ -757,6 +760,7 @@ RaltsEggMoves:
 	dw DISABLE
 	dw MEAN_LOOK
 	dw SHADOW_SNEAK
+	dw KNOCK_OFF
 	dw -1 ; end
 
 AronEggMoves:

@@ -107,7 +107,7 @@ ItemDescriptions:
 	dw SpellTagDesc
 	dw RageCandyBarDesc
 	dw GSBallDesc
-	dw VSSeekerDesc
+	dw DuskBallDesc
 	dw MiracleSeedDesc
 	dw ThickClubDesc
 	dw FocusBandDesc
@@ -678,9 +678,9 @@ GSBallDesc:
 	db   "The mysterious"
 	next "Ball.@"
 
-VSSeekerDesc:
-	db   "Allows certain re-"
-	next "matches to happen.@"
+DuskBallDesc:
+	db   "Catches #mon"
+	next "better at night.@"
 
 MiracleSeedDesc:
 	db   "Powers up grass-"

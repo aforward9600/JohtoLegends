@@ -185,6 +185,10 @@ ENDM
 	command grassknot
 	command aquaring
 	command burn
+	command sleephit
+	command switchhit
+	command knockoff_power
+	command knockoff
 ;	command wakeupslap
 ;	command awakenopponent
 

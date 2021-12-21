@@ -19,7 +19,7 @@ Dark Zeta, PiaCarrot, and cardboardbox for new evolution moves and fixing the gl
 
 New Pokemon cries: chattycrystal team
 
-Calm Mind, Sucker Punch, Dragon Dance, Quiver Dance, Grass Knot, Aqua Ring: chattycrystal team
+Calm Mind, Sucker Punch, Dragon Dance, Quiver Dance, Grass Knot, Aqua Ring, Sleep effect, Knock Off: chattycrystal team
 
 Sucker Punch, Work Up, Aqua Jet, Muddy Water, Rock Blast, Heat Wave, Brick Break, Hurricane, Leaf Blade, Lava Plume Animation: chattycrystal team
 
@@ -46,6 +46,8 @@ Teddiursa, Ursaring, Phanpy, Umbreon, Feraligatr,
 Houndoom- Soup
 
 Idain and Bronzeswagger for Weather Icons.
+
+Idain for time and weather sensitive fixes.
 
 Mime Jr. Back Sprite: lakeofdance
 

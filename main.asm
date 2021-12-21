@@ -1,6 +1,5 @@
 INCLUDE "constants.asm"
 
-
 SECTION "bank1", ROMX
 
 INCLUDE "engine/link/place_waiting_text.asm"
@@ -145,12 +144,6 @@ INCLUDE "engine/pokemon/print_move_description.asm"
 INCLUDE "data/moves/descriptions.asm"
 INCLUDE "engine/events/pokerus/pokerus.asm"
 INCLUDE "engine/battle/start_battle.asm"
-
-
-SECTION "Effect Commands", ROMX
-
-INCLUDE "engine/battle/effect_commands.asm"
-
 
 SECTION "Enemy Trainers", ROMX
 
@@ -416,7 +409,6 @@ INCLUDE "engine/events/trainer_scripts.asm"
 SECTION "bank32", ROMX
 
 INCLUDE "data/moves/animations.asm"
-INCLUDE "engine/events/poisonstep_pals.asm"
 
 TheEndGFX::
 INCBIN "gfx/credits/theend.2bpp"
@@ -726,6 +718,8 @@ INCLUDE "engine/16/table_functions.asm"
 ; own section
 INCLUDE "data/trainers/parties.asm"
 
+INCLUDE "engine/battle/effect_command_files.asm"
+
 SECTION "New Base Stats", ROMX
 
 INCLUDE "data/pokemon/base_stats_2.asm"
@@ -733,3 +727,4 @@ INCLUDE "data/pokemon/base_stats_2.asm"
 SECTION "Battle Weather Images", ROMX
 
 INCLUDE "gfx/weather_images.asm"
+INCLUDE "engine/events/poisonstep_pals.asm"

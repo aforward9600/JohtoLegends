@@ -389,4 +389,5 @@ MoveNames::
 	db "Blast Burn@"
 	db "Hydro Cannon@"
 	db "Aqua Ring@"
+	db "Knock Off@"
 ;	db "Wake Up Slap@"

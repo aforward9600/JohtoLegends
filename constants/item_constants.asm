@@ -113,7 +113,7 @@
 	const SPELL_TAG    ; 71
 	const RAGECANDYBAR ; 72
 	const GS_BALL      ; 73
-	const VS_SEEKER    ; 74
+	const DUSK_BALL    ; 74
 	const MIRACLE_SEED ; 75
 	const THICK_CLUB   ; 76
 	const FOCUS_BAND   ; 77
