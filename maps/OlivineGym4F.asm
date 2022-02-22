@@ -16,8 +16,6 @@ OlivineGym4F_MapScripts:
 OlivineGym1FByronScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_PLAINBADGE
-	iftrue .ByronBattle2
 	checkevent EVENT_BEAT_BYRON
 	iftrue .FightDone
 	writetext Byron1F_LittleHero
@@ -40,6 +38,8 @@ OlivineGym1FByronScript:
 	readvar VAR_BADGES
 	scall OlivineGym1FActivateRockets
 .FightDone:
+	checkflag ENGINE_BEAT_BYRON
+	iftrue .RematchByron
 	checkevent EVENT_GOT_TM42_FLASH_CANNON
 	iftrue .GotIronTail
 	writetext Byron1F_BadgeSpeech
@@ -61,9 +61,26 @@ OlivineGym1FByronScript:
 	closetext
 	end
 
+.RematchByron:
+	readvar VAR_BADGES
+	ifequal 4, .ByronBattle1
+	ifequal 5, .ByronBattle2
+	ifequal 6, .ByronBattle3
+	ifequal 7, .ByronBattle4
+	ifequal 8, .ByronBattle5
+	end
+
+.ByronBattle1:
+	writetext ByronRematchText
+	waitbutton
+	closetext
+	winlosstext Byron1F_Beaten, Byron1F_SteelyDetermination
+	loadtrainer BYRON, BYRON1
+	startbattle
+	reloadmapafterbattle
+	sjump AfterByronRematch
+
 .ByronBattle2:
-	checkevent EVENT_BEAT_BYRON_2
-	iftrue .FightDone
 	writetext ByronRematchText
 	waitbutton
 	closetext
@@ -71,7 +88,39 @@ OlivineGym1FByronScript:
 	loadtrainer BYRON, BYRON2
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_BYRON_2
+	sjump AfterByronRematch
+
+.ByronBattle3:
+	writetext ByronRematchText
+	waitbutton
+	closetext
+	winlosstext Byron1F_Beaten, Byron1F_SteelyDetermination
+	loadtrainer BYRON, BYRON3
+	startbattle
+	reloadmapafterbattle
+	sjump AfterByronRematch
+
+.ByronBattle4:
+	writetext ByronRematchText
+	waitbutton
+	closetext
+	winlosstext Byron1F_Beaten, Byron1F_SteelyDetermination
+	loadtrainer BYRON, BYRON4
+	startbattle
+	reloadmapafterbattle
+	sjump AfterByronRematch
+
+.ByronBattle5:
+	writetext ByronRematchText
+	waitbutton
+	closetext
+	winlosstext Byron1F_Beaten, Byron1F_SteelyDetermination
+	loadtrainer BYRON, BYRON5
+	startbattle
+	reloadmapafterbattle
+	sjump AfterByronRematch
+
+AfterByronRematch:
 	opentext
 	writetext BeatenByronAgainText
 	waitbutton

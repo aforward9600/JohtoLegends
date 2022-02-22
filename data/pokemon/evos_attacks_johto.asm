@@ -1845,7 +1845,7 @@ GligarEvosAttacks:
 	dbw 1, POISON_STING
 	dbw 4, SAND_ATTACK
 	dbw 7, HARDEN
-	dbw 10, FAINT_ATTACK
+	dbw 10, KNOCK_OFF
 	dbw 13, QUICK_ATTACK
 	dbw 16, FURY_CUTTER
 	dbw 19, BULLDOZE
@@ -1865,7 +1865,7 @@ GliscorEvosAttacks:
 	dbw 1, POISON_STING
 	dbw 4, SAND_ATTACK
 	dbw 7, HARDEN
-	dbw 10, FAINT_ATTACK
+	dbw 10, KNOCK_OFF
 	dbw 13, QUICK_ATTACK
 	dbw 16, FURY_CUTTER
 	dbw 19, BULLDOZE
@@ -2400,7 +2400,8 @@ DonphanEvosAttacks:
 	dbw 1, DEFENSE_CURL
 	dbw 10, ROLLOUT
 	dbw 15, PAYBACK
-	dbw 19, HORN_ATTACK
+	dbw 19, KNOCK_OFF
+	dbw 24, SLAM
 	dbw 30, RAPID_SPIN
 	dbw 37, SCARY_FACE
 	dbw 43, EARTHQUAKE

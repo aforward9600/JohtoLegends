@@ -91,7 +91,20 @@ NameRival:
 	ret
 
 .default
-	db "SILVER@"
+	db "Dahlia@"
+
+NameRivalFemale:
+	ld b, NAME_RIVAL_FEMALE
+	ld de, wRivalName
+	farcall _NamingScreen
+	; default to "SILVER"
+	ld hl, wRivalName
+	ld de, .default
+	call InitName
+	ret
+
+.default
+	db "Draco@"
 
 NameRater:
 	farcall _NameRater

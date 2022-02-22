@@ -162,7 +162,7 @@ MountMortar1FInsideNugget:
 	itemball AWAKENING
 
 MountMortar1FInsideIron:
-	itemball HARD_STONE
+	itemball EVERSTONE
 
 MountMortar1FInsideUltraBall:
 	itemball GREAT_BALL

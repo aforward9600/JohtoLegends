@@ -150,7 +150,7 @@ NationalParkRelaxationSquareSign:
 	jumptext NationalParkRelaxationSquareText
 
 NationalParkEther:
-	itemball ETHER
+	itemball SILVERPOWDER
 
 NationalParkTMDig:
 	itemball TM_DIG

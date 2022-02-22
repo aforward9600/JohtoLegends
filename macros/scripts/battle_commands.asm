@@ -189,6 +189,7 @@ ENDM
 	command switchhit
 	command knockoff_power
 	command knockoff
+	command uturn
 ;	command wakeupslap
 ;	command awakenopponent
 

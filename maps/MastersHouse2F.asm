@@ -271,7 +271,7 @@ ToughKidText:
 	done
 
 DahliaTheyWereToughText:
-	text "Dahila: Master"
+	text "<RIVAL>: Master"
 	line "wasn't joking"
 	cont "about his"
 	cont "grandchildren!"
@@ -284,7 +284,7 @@ DahliaTheyWereToughText:
 	done
 
 DracoTheyWereToughText:
-	text "Draco: Master"
+	text "<RIVAL>: Master"
 	line "wasn't joking"
 	cont "about his"
 	cont "grandchildren!"

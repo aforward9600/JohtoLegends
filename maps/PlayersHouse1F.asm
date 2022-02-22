@@ -36,6 +36,9 @@ MeetMomScript:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .GrannyGirl
 	opentext
+	writetext WhatWasHerNameText
+	buttonsound
+	special NameRival
 	writetext DahliasLookingForYouText
 	buttonsound
 	waitsfx
@@ -61,6 +64,9 @@ MeetMomScript:
 
 .GrannyGirl:
 	opentext
+	writetext WhatWasHisNameText
+	buttonsound
+	special NameRivalFemale
 	writetext DracosLookingForYouText
 	buttonsound
 	waitsfx
@@ -238,15 +244,17 @@ MomWalksBackMovement:
 	slow_step LEFT
 	step_end
 
-DahliasLookingForYouText:
+WhatWasHerNameText:
 	text "You're finally"
 	line "awake, <PLAYER>!"
 
 	para "Your friend, oh,"
 	line "what was her"
 	cont "name…?"
+	done
 
-	para "Ah, Dahlia! She"
+DahliasLookingForYouText:
+	text "Ah, <RIVAL>! She"
 	line "came by looking"
 	cont "for you. This is"
 
@@ -309,15 +317,17 @@ ComeHomeForDSTText:
 	line "understand it."
 	done
 
-DracosLookingForYouText:
+WhatWasHisNameText:
 	text "You're finally"
 	line "awake, <PLAYER>!"
 
 	para "Your friend, oh,"
 	line "what was his"
 	cont "name…?"
+	done
 
-	para "Ah, Draco! He"
+DracosLookingForYouText:
+	text "Ah, <RIVAL>! He"
 	line "came by looking"
 	cont "for you. This is"
 

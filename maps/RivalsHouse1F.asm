@@ -16,6 +16,8 @@ RivalsDadScript:
 	end
 
 RivalsMomScript:
+	checkevent EVENT_ICE_PATH_B1F_RIVAL1
+	iftrue .KeepAnEyeOnThem
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female
 	faceplayer
@@ -33,27 +35,32 @@ RivalsMomScript:
 	closetext
 	end
 
+.KeepAnEyeOnThem:
+	writetext KeepAnEyeOnThemText
+	waitbutton
+	closetext
+	end
+
 RivalsHouseBookshelf:
 	jumpstd magazinebookshelf
 
 RivalsDadText:
-	text "Yeah, I know, I"
-	line "need to fix the"
-	cont "sign out front."
+	text "My kid's finally"
+	line "going on a"
+	cont "#mon journey!"
 
-	para "It's so faded, no"
-	line "one knows we live"
-	cont "here."
+	para "Oh, it's enough"
+	line "to bring a tear"
 
-	para "A real problem"
-	line "when the mailman"
-	cont "comes."
+	para "to my eye!"
+
+	para "Sniff..."
 	done
 
 RivalsMom1Text:
 	text "Hi, <PLAYER>!"
 
-	para "Dahlia has already"
+	para "<RIVAL> has already"
 	line "left. She should"
 	cont "be in Ice Path by"
 	cont "now."
@@ -64,12 +71,18 @@ RivalsMom1Text:
 RivalsMom2Text:
 	text "Hi, <PLAYER>!"
 
-	para "Draco has already"
+	para "<RIVAL> has already"
 	line "left. He should"
 	cont "be in Ice Path by"
 	cont "now."
 
 	para "Have fun!"
+	done
+
+KeepAnEyeOnThemText:
+	text "Keep an eye on my"
+	line "<RIVAL> for me,"
+	cont "alright?"
 	done
 
 RivalsHouse1F_MapEvents:

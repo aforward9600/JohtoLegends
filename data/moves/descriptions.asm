@@ -396,6 +396,7 @@ MoveDescriptions1:
 	dw HyperBeamDescription
 	dw AquaRingDescription
 	dw KnockOffDescription
+	dw UTurnDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1928,3 +1929,7 @@ AquaRingDescription:
 KnockOffDescription:
 	db	 "Can knock off a"
 	next "foe's item.@"
+
+UTurnDescription:
+	db   "After attacking,"
+	line "user switches out.@"

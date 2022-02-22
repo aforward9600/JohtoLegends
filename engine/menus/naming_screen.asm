@@ -80,7 +80,7 @@ NamingScreen:
 	dw .Mom
 	dw .Box
 	dw .Tomodachi
-	dw .Pokemon
+	dw .RivalFemale
 	dw .Pokemon
 
 .Pokemon:
@@ -131,8 +131,8 @@ NamingScreen:
 	db "Your Name?@"
 
 .Rival:
-	ld de, SilverSpriteGFX
-	ld b, BANK(SilverSpriteGFX)
+	ld de, KrisSpriteGFX
+	ld b, BANK(KrisSpriteGFX)
 	call .LoadSprite
 	hlcoord 5, 2
 	ld de, .RivalNameString
@@ -253,6 +253,19 @@ NamingScreen:
 	ld a, h
 	ld [wNamingScreenStringEntryCoord + 1], a
 	ret
+
+.RivalFemale:
+	ld de, ChrisSpriteGFX
+	ld b, BANK(ChrisSpriteGFX)
+	call .LoadSprite
+	hlcoord 5, 2
+	ld de, .RivalFemaleNameString
+	call PlaceString
+	call .StoreSpriteIconParams
+	ret
+
+.RivalFemaleNameString:
+	db "Rival's Name?@"
 
 NamingScreen_IsTargetBox:
 	push bc

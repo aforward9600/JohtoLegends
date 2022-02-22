@@ -418,10 +418,7 @@ BlackthornCityMastersHouseText:
 	done
 
 BlackthornCityRivalsHouseText:
-	text "The text is too"
-	line "faded to make out."
-
-	para "       's House"
+	text "<RIVAL>'s House"
 	done
 
 BlackthornCityHikerStopsYouText:

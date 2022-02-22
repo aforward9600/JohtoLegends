@@ -57,6 +57,8 @@ CHRIS EQU __enum__
 	const BYRON1
 	const BYRON2
 	const BYRON3
+	const BYRON4
+	const BYRON5
 
 	trainerclass CHUCK ; 7
 	const CHUCK1
@@ -721,7 +723,6 @@ CHRIS EQU __enum__
 	trainerclass RIVAL3 ; 44
 	const RIVAL3_A_LARVITAR
 	const RIVAL3_A_DRATINI
-	const RIVAL3_A_TOTODILE
 	const RIVAL3_B_LARVITAR
 	const RIVAL3_B_DRATINI
 	const RIVAL3_C_LARVITAR
@@ -732,7 +733,6 @@ CHRIS EQU __enum__
 	trainerclass RIVAL4 ; 45
 	const RIVAL4_A_LARVITAR
 	const RIVAL4_A_DRATINI
-	const RIVAL4_A_TOTODILE
 	const RIVAL4_B_LARVITAR
 	const RIVAL4_B_DRATINI
 	const RIVAL4_C_LARVITAR

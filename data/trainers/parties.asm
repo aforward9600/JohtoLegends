@@ -75,16 +75,16 @@ MiltonGroup:
 KurtGroup:
 	next_list_item ; KURT (1)
 	db "Kurt@", TRAINERTYPE_MOVES
-	db 35
+	db 38
 	dw SHUCKLE
 	dw SHELL_SMASH, SPIKES, ROCK_SLIDE, X_SCISSOR
-	db 36
+	db 38
 	dw PINSIR
 	dw X_SCISSOR, CIRCLE_THROW, SWORDS_DANCE, BRICK_BREAK
-	db 37
+	db 39
 	dw HERACROSS
 	dw TAKE_DOWN, MEGAHORN, BRICK_BREAK, AERIAL_ACE
-	db 38
+	db 40
 	dw SCIZOR
 	dw METAL_CLAW, IRON_DEFENSE, X_SCISSOR, AGILITY
 	db -1 ; end
@@ -136,32 +136,32 @@ EnokiGroup:
 
 	next_list_item ; ENOKI (4)
 	db "Enoki@", TRAINERTYPE_MOVES
-	db 33
+	db 32
 	dw DUSKULL
 	dw HEX, WILL_O_WISP, CONFUSE_RAY, CURSE
-	db 33
+	db 32
 	dw CORSOLA
 	dw ANCIENTPOWER, WILL_O_WISP, HEX, STRENGTH_SAP
-	db 34
+	db 33
 	dw NOCTOWL
 	dw SHADOW_BALL, AIR_SLASH, REFLECT, LIGHT_SCREEN
-	db 35
+	db 32
 	dw MISMAGIUS
 	dw HEX, WILL_O_WISP, PAIN_SPLIT, MAGICAL_LEAF
 	db -1 ; end
 
 	next_list_item ; ENOKI (5)
 	db "Enoki@", TRAINERTYPE_MOVES
-	db 35
-	dw DUSKULL
+	db 38
+	dw DUSCLOPS
 	dw HEX, WILL_O_WISP, CONFUSE_RAY, CURSE
-	db 35
-	dw CORSOLA
+	db 38
+	dw CURSOLA
 	dw ANCIENTPOWER, WILL_O_WISP, HEX, STRENGTH_SAP
-	db 36
+	db 39
 	dw NOCTOWL
 	dw SHADOW_BALL, AIR_SLASH, REFLECT, LIGHT_SCREEN
-	db 37
+	db 40
 	dw MISMAGIUS
 	dw HEX, WILL_O_WISP, PAIN_SPLIT, MAGICAL_LEAF
 	db -1 ; end
@@ -197,7 +197,7 @@ EnokiGroup:
 	dw NOCTOWL
 	dw SHADOW_BALL, AIR_SLASH, MOONBLAST, ROOST
 	db 44
-	dw HAUNTER
+	dw GENGAR
 	dw SHADOW_BALL, FAINT_ATTACK, HYPNOSIS, DREAM_EATER
 	db 45
 	dw MISMAGIUS
@@ -381,6 +381,41 @@ ByronGroup:
 	db 36
 	dw STEELIX
 	dw STEEL_SLICE, BULLDOZE, ROCK_SLIDE, IRON_HEAD
+	db -1 ; end
+
+	next_list_item ; BYRON (4)
+	db "Byron@", TRAINERTYPE_MOVES
+	db 37
+	dw FORRETRESS
+	dw MIRROR_SHOT, SPIKES, SUBSTITUTE, REVERSAL
+	db 38
+	dw BRONZONG
+	dw METAL_SOUND, FLASH_CANNON, CONFUSION, IRON_DEFENSE
+	db 39
+	dw LAIRON
+	dw IRON_TAIL, ROCK_SLIDE, ROAR, PROTECT
+	db 40
+	dw STEELIX
+	dw STEEL_SLICE, EARTHQUAKE, ROCK_SLIDE, IRON_HEAD
+	db -1 ; end
+
+	next_list_item ; BYRON (4)
+	db "Byron@", TRAINERTYPE_MOVES
+	db 42
+	dw FORRETRESS
+	dw MIRROR_SHOT, SPIKES, SUBSTITUTE, REVERSAL
+	db 43
+	dw BRONZONG
+	dw METAL_SOUND, FLASH_CANNON, CONFUSION, IRON_DEFENSE
+	db 43
+	dw OCTILLERY
+	dw OCTAZOOKA, FLASH_CANNON, FLAMETHROWER, ICE_BEAM
+	db 44
+	dw AGGRON
+	dw IRON_TAIL, ROCK_SLIDE, ROAR, PROTECT
+	db 45
+	dw STEELIX
+	dw STEEL_SLICE, EARTHQUAKE, ROCK_SLIDE, IRON_HEAD
 	db -1 ; end
 
 	end_list_items
@@ -3000,14 +3035,14 @@ FisherGroup:
 	dw QWILFISH
 	db -1 ; end
 
-	next_list_item ; FISHER (20)
+	next_list_item ; FISHER (20) Route 44
 	db "Butch@", TRAINERTYPE_NORMAL
 	db 8
-	dw POLIWAG
+	dw GOLDEEN
 	db 8
 	dw WOOPER
 	db 9
-	dw KRABBY
+	dw MAGIKARP
 	db -1 ; end
 
 	next_list_item ; FISHER (21)
@@ -3536,7 +3571,7 @@ SuperNerdGroup:
 	db 7
 	dw BUDEW
 	db 7
-	dw PICHU
+	dw HOUNDOUR
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (2)
@@ -4570,11 +4605,11 @@ PicnickerGroup:
 	next_list_item ; PICNICKER (1) Ice Path
 	db "Haylee@", TRAINERTYPE_NORMAL
 	db 6
-	dw HOPPIP
+	dw LEDYBA
 	db 6
-	dw AZURILL
+	dw SENTRET
 	db 6
-	dw NIDORAN_F
+	dw SNORUNT
 	db -1 ; end
 
 	next_list_item ; PICNICKER (2)
@@ -5729,7 +5764,7 @@ MysticalmanGroup:
 
 Rival3Group:
 	next_list_item ; RIVAL3 (1)
-	db "Dahlia@", TRAINERTYPE_NORMAL
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 5
 	dw SMOOCHUM
 	db 6
@@ -5737,7 +5772,7 @@ Rival3Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL3 (2)
-	db "Dahlia@", TRAINERTYPE_NORMAL
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 5
 	dw SMOOCHUM
 	db 6
@@ -5745,13 +5780,7 @@ Rival3Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL3 (3)
-	db "Dahlia@", TRAINERTYPE_NORMAL
-	db 5
-	dw TOTODILE
-	db -1 ; end
-
-	next_list_item ; RIVAL3 (4)
-	db "Dahlia@", TRAINERTYPE_NORMAL
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 15
 	dw EEVEE
 	db 15
@@ -5760,8 +5789,8 @@ Rival3Group:
 	dw LARVITAR
 	db -1 ; end
 
-	next_list_item ; RIVAL3 (5)
-	db "Dahlia@", TRAINERTYPE_NORMAL
+	next_list_item ; RIVAL3 (4)
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 15
 	dw EEVEE
 	db 15
@@ -5770,8 +5799,8 @@ Rival3Group:
 	dw DRATINI
 	db -1 ; end
 
-	next_list_item ; RIVAL3 (6)
-	db "Dahlia@", TRAINERTYPE_NORMAL
+	next_list_item ; RIVAL3 (5)
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 24
 	dw POLIWHIRL
 	db 24
@@ -5782,8 +5811,8 @@ Rival3Group:
 	dw PUPITAR
 	db -1 ; end
 
-	next_list_item ; RIVAL3 (7)
-	db "Dahlia@", TRAINERTYPE_NORMAL
+	next_list_item ; RIVAL3 (6)
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 24
 	dw POLIWHIRL
 	db 24
@@ -5795,7 +5824,7 @@ Rival3Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL3 (7)
-	db "Dahlia@", TRAINERTYPE_NORMAL
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 36
 	dw POLIWRATH
 	db 36
@@ -5809,7 +5838,7 @@ Rival3Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL3 (8)
-	db "Dahlia@", TRAINERTYPE_NORMAL
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 36
 	dw POLIWRATH
 	db 36
@@ -5826,7 +5855,7 @@ Rival3Group:
 
 Rival4Group:
 	next_list_item ; RIVAL4 (1)
-	db "Draco@", TRAINERTYPE_NORMAL
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 5
 	dw SMOOCHUM
 	db 6
@@ -5834,7 +5863,7 @@ Rival4Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL3 (2)
-	db "Draco@", TRAINERTYPE_NORMAL
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 5
 	dw SMOOCHUM
 	db 6
@@ -5842,13 +5871,7 @@ Rival4Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL4 (3)
-	db "Draco@", TRAINERTYPE_NORMAL
-	db 5
-	dw TOTODILE
-	db -1 ; end
-
-	next_list_item ; RIVAL4 (4)
-	db "Draco@", TRAINERTYPE_NORMAL
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 15
 	dw EEVEE
 	db 15
@@ -5857,8 +5880,8 @@ Rival4Group:
 	dw LARVITAR
 	db -1 ; end
 
-	next_list_item ; RIVAL4 (5)
-	db "Draco@", TRAINERTYPE_NORMAL
+	next_list_item ; RIVAL4 (4)
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 15
 	dw EEVEE
 	db 15
@@ -5867,8 +5890,8 @@ Rival4Group:
 	dw DRATINI
 	db -1 ; end
 
-	next_list_item ; RIVAL4 (6)
-	db "Draco@", TRAINERTYPE_NORMAL
+	next_list_item ; RIVAL4 (5)
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 24
 	dw POLIWHIRL
 	db 24
@@ -5879,8 +5902,8 @@ Rival4Group:
 	dw PUPITAR
 	db -1 ; end
 
-	next_list_item ; RIVAL4 (7)
-	db "Draco@", TRAINERTYPE_NORMAL
+	next_list_item ; RIVAL4 (6)
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 24
 	dw POLIWHIRL
 	db 24
@@ -5892,7 +5915,7 @@ Rival4Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL4 (7)
-	db "Dahlia@", TRAINERTYPE_NORMAL
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 36
 	dw POLIWRATH
 	db 36
@@ -5906,7 +5929,7 @@ Rival4Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL4 (8)
-	db "Dahlia@", TRAINERTYPE_NORMAL
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 36
 	dw POLIWRATH
 	db 36
@@ -6376,7 +6399,7 @@ MahoganyNinjaFGroup:
 
 DepressedDahliaGroup:
 	next_list_item ; RIVAL3 (6)
-	db "Dahlia@", TRAINERTYPE_NORMAL
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 35
 	dw POLIWRATH
 	db 35
@@ -6390,7 +6413,7 @@ DepressedDahliaGroup:
 	db -1 ; end
 
 	next_list_item ; RIVAL3 (6)
-	db "Dahlia@", TRAINERTYPE_NORMAL
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 35
 	dw POLIWRATH
 	db 35
@@ -6407,7 +6430,7 @@ DepressedDahliaGroup:
 
 DepressedDracoGroup:
 	next_list_item ; RIVAL4 (6)
-	db "Draco@", TRAINERTYPE_NORMAL
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 35
 	dw POLIWRATH
 	db 35
@@ -6421,7 +6444,7 @@ DepressedDracoGroup:
 	db -1 ; end
 
 	next_list_item ; RIVAL4 (6)
-	db "Draco@", TRAINERTYPE_NORMAL
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 35
 	dw POLIWRATH
 	db 35

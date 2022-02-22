@@ -286,6 +286,12 @@ CELEBIEVENT_FOREST_IS_RESTLESS_F EQU 2
 	const DAILYFLAGS2_MOVE_TUTOR_F                        ; 6
 	const DAILYFLAGS2_BUENAS_PASSWORD_F                   ; 7
 
+	const_def
+	const DAILYFLAGS3_BEAT_PRYCE_F
+	const DAILYFLAGS3_BEAT_ENOKI_F
+	const DAILYFLAGS3_BEAT_CHIGUSA_F
+	const DAILYFLAGS3_BEAT_BYRON_F
+
 ; wSwarmFlags:: ; dc20
 	const_def
 	const SWARMFLAGS_BUENAS_PASSWORD_F           ; 0

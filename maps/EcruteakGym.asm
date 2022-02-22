@@ -26,18 +26,6 @@ EcruteakGym_MapScripts:
 EcruteakGymEnokiScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_RISINGBADGE
-	iftrue .EnokiBattle7
-	checkflag ENGINE_ZEPHYRBADGE
-	iftrue .EnokiBattle6
-	checkflag ENGINE_HIVEBADGE
-	iftrue .EnokiBattle5
-	checkflag ENGINE_PLAINBADGE
-	iftrue .EnokiBattle4
-	checkflag ENGINE_MINERALBADGE
-	iftrue .EnokiBattle3
-	checkflag ENGINE_STORMBADGE
-	iftrue .EnokiBattle2
 	checkevent EVENT_BEAT_ENOKI
 	iftrue .FightDone
 	writetext EnokiIntroText
@@ -60,6 +48,8 @@ EcruteakGymEnokiScript:
 	readvar VAR_BADGES
 	scall EcruteakGymActivateRockets
 .FightDone:
+	checkflag ENGINE_BEAT_ENOKI
+	iftrue .EnokiRematch
 	checkevent EVENT_GOT_TM04_HEX
 	iftrue .GotShadowBall
 	setevent EVENT_BEAT_SAGE_JEFFREY
@@ -100,9 +90,28 @@ EcruteakGymEnokiScript:
 	closetext
 	end
 
+.EnokiRematch:
+	readvar VAR_BADGES
+	ifequal 2, .EnokiBattle1
+	ifequal 3, .EnokiBattle2
+	ifequal 4, .EnokiBattle3
+	ifequal 5, .EnokiBattle4
+	ifequal 6, .EnokiBattle5
+	ifequal 7, .EnokiBattle6
+	ifequal 8, .EnokiBattle7
+	end
+
+.EnokiBattle1:
+	writetext EnokiReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext EnokiWinLossText, EnokiWinText
+	loadtrainer ENOKI, ENOKI1
+	startbattle
+	reloadmapafterbattle
+	sjump AfterEnokiRematch
+
 .EnokiBattle2:
-	checkevent EVENT_BEAT_ENOKI_2
-	iftrue .FightDone
 	writetext EnokiReadyForARematchText
 	waitbutton
 	closetext
@@ -110,16 +119,9 @@ EcruteakGymEnokiScript:
 	loadtrainer ENOKI, ENOKI2
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ENOKI_2
-	opentext
-	writetext BeatenEnokiAgainText
-	waitbutton
-	closetext
-	end
+	sjump AfterEnokiRematch
 
 .EnokiBattle3:
-	checkevent EVENT_BEAT_ENOKI_3
-	iftrue .FightDone
 	writetext EnokiReadyForARematchText
 	waitbutton
 	closetext
@@ -127,16 +129,9 @@ EcruteakGymEnokiScript:
 	loadtrainer ENOKI, ENOKI3
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ENOKI_3
-	opentext
-	writetext BeatenEnokiAgainText
-	waitbutton
-	closetext
-	end
+	sjump AfterEnokiRematch
 
 .EnokiBattle4:
-	checkevent EVENT_BEAT_ENOKI_4
-	iftrue .FightDone
 	writetext EnokiReadyForARematchText
 	waitbutton
 	closetext
@@ -144,16 +139,9 @@ EcruteakGymEnokiScript:
 	loadtrainer ENOKI, ENOKI4
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ENOKI_4
-	opentext
-	writetext BeatenEnokiAgainText
-	waitbutton
-	closetext
-	end
+	sjump AfterEnokiRematch
 
 .EnokiBattle5:
-	checkevent EVENT_BEAT_ENOKI_5
-	iftrue .FightDone
 	writetext EnokiReadyForARematchText
 	waitbutton
 	closetext
@@ -161,16 +149,9 @@ EcruteakGymEnokiScript:
 	loadtrainer ENOKI, ENOKI5
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ENOKI_5
-	opentext
-	writetext BeatenEnokiAgainText
-	waitbutton
-	closetext
-	end
+	sjump AfterEnokiRematch
 
 .EnokiBattle6:
-	checkevent EVENT_BEAT_ENOKI_6
-	iftrue .FightDone
 	writetext EnokiReadyForARematchText
 	waitbutton
 	closetext
@@ -178,16 +159,9 @@ EcruteakGymEnokiScript:
 	loadtrainer ENOKI, ENOKI6
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ENOKI_6
-	opentext
-	writetext BeatenEnokiAgainText
-	waitbutton
-	closetext
-	end
+	sjump AfterEnokiRematch
 
 .EnokiBattle7:
-	checkevent EVENT_BEAT_ENOKI_7
-	iftrue .FightDone
 	writetext EnokiReadyForARematchText
 	waitbutton
 	closetext
@@ -195,7 +169,9 @@ EcruteakGymEnokiScript:
 	loadtrainer ENOKI, ENOKI7
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ENOKI_7
+	sjump AfterEnokiRematch
+
+AfterEnokiRematch:
 	opentext
 	writetext BeatenEnokiAgainText
 	waitbutton

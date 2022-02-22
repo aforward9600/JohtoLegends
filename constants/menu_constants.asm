@@ -107,6 +107,6 @@ HMENURETURN_ASM    EQU %11111111
 	const NAME_MOM
 	const NAME_BOX
 	const NAME_FRIEND
-	const NAME_6 ; duplicate of NAME_MON
+	const NAME_RIVAL_FEMALE
 	const NAME_7 ; duplicate of NAME_MON
 NUM_NAME_TYPES EQU const_value

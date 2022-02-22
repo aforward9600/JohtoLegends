@@ -155,7 +155,6 @@ INCLUDE "audio/music/kantolegendbattlexy.asm"
 INCLUDE "audio/music/hoohbattle.asm"
 INCLUDE "audio/music/megalovania.asm"
 INCLUDE "audio/music/unwaveringheart.asm"
-INCLUDE "audio/music/marniebattle.asm"
 INCLUDE "audio/music/dahliaencounter.asm"
 
 SECTION "Altered Songs", ROMX
@@ -181,3 +180,4 @@ SECTION "Newest Songs", ROMX
 
 INCLUDE "audio/music/madameboss.asm"
 INCLUDE "audio/music/cinnabarisland.asm"
+INCLUDE "audio/music/marniebattle.asm"

@@ -25,16 +25,6 @@ CianwoodGym_MapScripts:
 CianwoodGymChigusaScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_RISINGBADGE
-	iftrue .ChigusaBattle6
-	checkflag ENGINE_ZEPHYRBADGE
-	iftrue .ChigusaBattle5
-	checkflag ENGINE_HIVEBADGE
-	iftrue .ChigusaBattle4
-	checkflag ENGINE_PLAINBADGE
-	iftrue .ChigusaBattle3
-	checkflag ENGINE_MINERALBADGE
-	iftrue .ChigusaBattle2
 	checkevent EVENT_BEAT_CHIGUSA
 	iftrue .FightDone
 	writetext ChigusaIntroText
@@ -60,6 +50,8 @@ CianwoodGymChigusaScript:
 	setmapscene WILD_AREA_OUTSIDE, SCENE_WILD_AREA_RIVAL
 	setevent EVENT_WILD_AREA_OUTSIDE_RIVAL1
 .FightDone:
+	checkflag ENGINE_BEAT_CHIGUSA
+	iftrue .Rematch
 	checkevent EVENT_GOT_TM08_BULK_UP
 	iftrue .AlreadyGotTM
 	setevent EVENT_BEAT_BLACKBELT_YOSHI
@@ -84,9 +76,27 @@ CianwoodGymChigusaScript:
 	closetext
 	end
 
+.Rematch:
+	readvar VAR_BADGES
+	ifequal 3, .ChigusaBattle1
+	ifequal 4, .ChigusaBattle2
+	ifequal 5, .ChigusaBattle3
+	ifequal 6, .ChigusaBattle4
+	ifequal 7, .ChigusaBattle5
+	ifequal 8, .ChigusaBattle6
+	end
+
+.ChigusaBattle1:
+	writetext ReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext ChigusaLossText, ChigusaWinText
+	loadtrainer CHIGUSA, CHIGUSA1
+	startbattle
+	reloadmapafterbattle
+	sjump AfterChigusaRematch
+
 .ChigusaBattle2:
-	checkevent EVENT_BEAT_CHIGUSA_2
-	iftrue .FightDone
 	writetext ReadyForARematchText
 	waitbutton
 	closetext
@@ -94,16 +104,9 @@ CianwoodGymChigusaScript:
 	loadtrainer CHIGUSA, CHIGUSA2
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_CHIGUSA_2
-	opentext
-	writetext BeatenChigusaAgainText
-	waitbutton
-	closetext
-	end
+	sjump AfterChigusaRematch
 
 .ChigusaBattle3:
-	checkevent EVENT_BEAT_CHIGUSA_3
-	iftrue .FightDone
 	writetext ReadyForARematchText
 	waitbutton
 	closetext
@@ -111,16 +114,9 @@ CianwoodGymChigusaScript:
 	loadtrainer CHIGUSA, CHIGUSA3
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_CHIGUSA_3
-	opentext
-	writetext BeatenChigusaAgainText
-	waitbutton
-	closetext
-	end
+	sjump AfterChigusaRematch
 
 .ChigusaBattle4:
-	checkevent EVENT_BEAT_CHIGUSA_4
-	iftrue .FightDone
 	writetext ReadyForARematchText
 	waitbutton
 	closetext
@@ -128,16 +124,9 @@ CianwoodGymChigusaScript:
 	loadtrainer CHIGUSA, CHIGUSA4
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_CHIGUSA_4
-	opentext
-	writetext BeatenChigusaAgainText
-	waitbutton
-	closetext
-	end
+	sjump AfterChigusaRematch
 
 .ChigusaBattle5:
-	checkevent EVENT_BEAT_CHIGUSA_5
-	iftrue .FightDone
 	writetext ReadyForARematchText
 	waitbutton
 	closetext
@@ -145,16 +134,9 @@ CianwoodGymChigusaScript:
 	loadtrainer CHIGUSA, CHIGUSA5
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_CHIGUSA_5
-	opentext
-	writetext BeatenChigusaAgainText
-	waitbutton
-	closetext
-	end
+	sjump AfterChigusaRematch
 
 .ChigusaBattle6:
-	checkevent EVENT_BEAT_CHIGUSA_6
-	iftrue .FightDone
 	writetext ReadyForARematchText
 	waitbutton
 	closetext
@@ -162,7 +144,9 @@ CianwoodGymChigusaScript:
 	loadtrainer CHIGUSA, CHIGUSA6
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_CHIGUSA_6
+	sjump AfterChigusaRematch
+
+AfterChigusaRematch:
 	opentext
 	writetext BeatenChigusaAgainText
 	waitbutton

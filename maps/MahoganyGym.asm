@@ -21,20 +21,6 @@ MahoganyGym_MapScripts:
 MahoganyGymPryceScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_RISINGBADGE
-	iftrue .PryceBattle8
-	checkflag ENGINE_ZEPHYRBADGE
-	iftrue .PryceBattle7
-	checkflag ENGINE_HIVEBADGE
-	iftrue .PryceBattle6
-	checkflag ENGINE_PLAINBADGE
-	iftrue .PryceBattle5
-	checkflag ENGINE_MINERALBADGE
-	iftrue .PryceBattle4
-	checkflag ENGINE_STORMBADGE
-	iftrue .PryceBattle3
-	checkflag ENGINE_FOGBADGE
-	iftrue .PryceBattle2
 	checkevent EVENT_BEAT_PRYCE
 	iftrue .FightDone
 	writetext PryceText_Intro
@@ -57,6 +43,8 @@ MahoganyGymPryceScript:
 	readvar VAR_BADGES
 	scall MahoganyGymActivateRockets
 .FightDone:
+	checkflag ENGINE_BEAT_PRYCE
+	iftrue .Rematch
 	checkevent EVENT_GOT_TM16_ICY_WIND
 	iftrue PryceScript_Defeat
 	setevent EVENT_BEAT_SKIER_BRANDY
@@ -73,9 +61,29 @@ MahoganyGymPryceScript:
 	setscene SCENE_GYM_GUIDE_STOPS_YOU
 	end
 
+.Rematch:
+	readvar VAR_BADGES
+	ifequal 1, .PryceBattle1
+	ifequal 2, .PryceBattle2
+	ifequal 3, .PryceBattle3
+	ifequal 4, .PryceBattle4
+	ifequal 5, .PryceBattle5
+	ifequal 6, .PryceBattle6
+	ifequal 7, .PryceBattle7
+	ifequal 8, .PryceBattle8
+	end
+
+.PryceBattle1:
+	writetext PryceText_WelcomeBack
+	waitbutton
+	closetext
+	winlosstext PryceText_Blizzard, PryceText_StillGotIt
+	loadtrainer PRYCE, PRYCE1
+	startbattle
+	reloadmapafterbattle
+	sjump AfterPryceRematch
+
 .PryceBattle2:
-	checkevent EVENT_BEAT_PRYCE_2
-	iftrue .FightDone
 	writetext PryceText_WelcomeBack
 	waitbutton
 	closetext
@@ -83,16 +91,9 @@ MahoganyGymPryceScript:
 	loadtrainer PRYCE, PRYCE2
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_PRYCE_2
-	opentext
-	writetext PryceText_BeatenAgain
-	waitbutton
-	closetext
-	end
+	sjump AfterPryceRematch
 
 .PryceBattle3:
-	checkevent EVENT_BEAT_PRYCE_3
-	iftrue .FightDone
 	writetext PryceText_WelcomeBack
 	waitbutton
 	closetext
@@ -100,16 +101,9 @@ MahoganyGymPryceScript:
 	loadtrainer PRYCE, PRYCE3
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_PRYCE_3
-	opentext
-	writetext PryceText_BeatenAgain
-	waitbutton
-	closetext
-	end
+	sjump AfterPryceRematch
 
 .PryceBattle4:
-	checkevent EVENT_BEAT_PRYCE_4
-	iftrue .FightDone
 	writetext PryceText_WelcomeBack
 	waitbutton
 	closetext
@@ -117,16 +111,9 @@ MahoganyGymPryceScript:
 	loadtrainer PRYCE, PRYCE4
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_PRYCE_4
-	opentext
-	writetext PryceText_BeatenAgain
-	waitbutton
-	closetext
-	end
+	sjump AfterPryceRematch
 
 .PryceBattle5:
-	checkevent EVENT_BEAT_PRYCE_5
-	iftrue .FightDone
 	writetext PryceText_WelcomeBack
 	waitbutton
 	closetext
@@ -134,16 +121,9 @@ MahoganyGymPryceScript:
 	loadtrainer PRYCE, PRYCE5
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_PRYCE_5
-	opentext
-	writetext PryceText_BeatenAgain
-	waitbutton
-	closetext
-	end
+	sjump AfterPryceRematch
 
 .PryceBattle6:
-	checkevent EVENT_BEAT_PRYCE_6
-	iftrue .FightDone
 	writetext PryceText_WelcomeBack
 	waitbutton
 	closetext
@@ -151,16 +131,9 @@ MahoganyGymPryceScript:
 	loadtrainer PRYCE, PRYCE6
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_PRYCE_6
-	opentext
-	writetext PryceText_BeatenAgain
-	waitbutton
-	closetext
-	end
+	sjump AfterPryceRematch
 
 .PryceBattle7:
-	checkevent EVENT_BEAT_PRYCE_7
-	iftrue .FightDone
 	writetext PryceText_WelcomeBack
 	waitbutton
 	closetext
@@ -168,16 +141,9 @@ MahoganyGymPryceScript:
 	loadtrainer PRYCE, PRYCE7
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_PRYCE_7
-	opentext
-	writetext PryceText_BeatenAgain
-	waitbutton
-	closetext
-	end
+	sjump AfterPryceRematch
 
 .PryceBattle8:
-	checkevent EVENT_BEAT_PRYCE_8
-	iftrue .FightDone
 	writetext PryceText_WelcomeBack
 	waitbutton
 	closetext
@@ -185,17 +151,19 @@ MahoganyGymPryceScript:
 	loadtrainer PRYCE, PRYCE8
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_PRYCE_8
-	opentext
-	writetext PryceText_BeatenAgain
-	waitbutton
-	closetext
-	end
+	sjump AfterPryceRematch
 
 PryceScript_Defeat:
 	writetext PryceText_GoodLooks
 	waitbutton
 MahoganyGym_NoRoomForIcyWind:
+	closetext
+	end
+
+AfterPryceRematch:
+	opentext
+	writetext PryceText_BeatenAgain
+	waitbutton
 	closetext
 	end
 

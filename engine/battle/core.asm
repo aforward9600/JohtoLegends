@@ -5407,6 +5407,27 @@ PassedBattleMonEntrance:
 	call SetPlayerTurn
 	jp SpikesDamage
 
+PassedBattleMonEntranceUTurn:
+	ld c, 50
+	call DelayFrames
+
+	hlcoord 9, 7
+	lb bc, 5, 11
+	call ClearBox
+
+	ld a, [wCurPartyMon]
+	ld [wCurBattleMon], a
+	call AddBattleParticipant
+	call InitBattleMon
+	xor a ; FALSE
+	ld [wApplyStatLevelMultipliersToEnemy], a
+	call ApplyStatLevelMultiplierOnAllStats
+	call SendOutPlayerMon
+	call EmptyBattleTextbox
+	call LoadTileMapToTempTileMap
+	call SetPlayerTurn
+	jp SpikesDamage
+
 BattleMenu_Run:
 	call Call_LoadTempTileMapToTileMap
 	ld a, $3

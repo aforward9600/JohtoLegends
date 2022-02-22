@@ -110,7 +110,7 @@ NationalParkBugContestRelaxationSquareSign:
 	jumptext NationalParkBugContestRelaxationSquareText
 
 NationalParkBugContestEther:
-	itemball ETHER
+	itemball SILVERPOWDER
 
 NationalParkBugContestTMDig:
 	itemball TM_DIG

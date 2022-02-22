@@ -177,6 +177,7 @@ RivalLarvitarScript:
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext HehToughMonText
+	waitbutton
 	closetext
 	turnobject MASTERSHOUSE1F_RIVAL, UP
 	turnobject PLAYER, UP
@@ -494,14 +495,14 @@ RecievedStarterText:
 	done
 
 RivalStarterText:
-	text "Dahlia received"
+	text "<RIVAL> received"
 	line "@"
 	text_ram wStringBuffer3
 	text "!"
 	done
 
 RivalStarter2Text:
-	text "Draco received"
+	text "<RIVAL> received"
 	line "@"
 	text_ram wStringBuffer3
 	text "!"
@@ -546,9 +547,9 @@ MastersTestText:
 	done
 
 LetsStartText:
-	text "Sounds simple"
-	line "enough. This'll"
-	cont "be fun!"
+	text "<RIVAL>:Sounds"
+	line "simple enough."
+	cont "This'll be fun!"
 	done
 
 MastersHouseMasterText:
@@ -587,7 +588,8 @@ CongratulationsText:
 	done
 
 ThankYouText:
-	text "Thank you, Master!"
+	text "<RIVAL>:Thank you,"
+	line "Master!"
 	done
 
 ImOffText:

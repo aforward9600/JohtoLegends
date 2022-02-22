@@ -130,7 +130,7 @@ CherrygroveSilverSceneNorth:
 	iftrue .Chikorita
 	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_KRIS
-	loadtrainer RIVAL3, RIVAL3_A_TOTODILE
+	loadtrainer RIVAL3, RIVAL3_A_DRATINI
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -206,7 +206,7 @@ CherrygroveSilverSceneNorth2:
 	iftrue .Chikorita2
 	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_CHRIS
-	loadtrainer RIVAL4, RIVAL4_A_TOTODILE
+	loadtrainer RIVAL4, RIVAL4_A_DRATINI
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
