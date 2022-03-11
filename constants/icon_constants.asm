@@ -5,37 +5,16 @@
 	const ICON_JIGGLYPUFF
 	const ICON_DIGLETT
 	const ICON_PIKACHU
-	const ICON_FISH
-	const ICON_BIRD
 	const ICON_CLEFAIRY
 	const ICON_ODDISH
-	const ICON_BUG
-	const ICON_GHOST
-	const ICON_LAPRAS
-	const ICON_HUMANSHAPE
-	const ICON_FOX
-	const ICON_EQUINE
-	const ICON_SHELL
-	const ICON_BLOB
-	const ICON_VOLTORB
+	const ICON_MOTH
 	const ICON_SQUIRTLE
 	const ICON_BULBASAUR
 	const ICON_CHARMANDER
 	const ICON_CATERPILLAR
-	const ICON_UNOWN
 	const ICON_GEODUDE
-	const ICON_FIGHTER
-	const ICON_EGG
-	const ICON_MOTH
 	const ICON_GOLBAT
-	const ICON_SNORLAX
-	const ICON_HO_OH
-	const ICON_LUGIA
-	const ICON_GYARADOS
 	const ICON_SLOWPOKE
-	const ICON_SUDOWOODO
-	const ICON_BIGMON
-	const ICON_CELEBI
 	const ICON_IVYSAUR
 	const ICON_VENUSAUR
 	const ICON_CHARMELEON
@@ -130,6 +109,7 @@
 	const ICON_HYPNO
 	const ICON_KRABBY
 	const ICON_KINGLER
+	const ICON_VOLTORB
 	const ICON_ELECTRODE
 	const ICON_EXEGGCUTE
 	const ICON_EXEGGUTOR
@@ -174,6 +154,8 @@
 	const ICON_PINSIR
 	const ICON_TAUROS
 	const ICON_MAGIKARP
+	const ICON_GYARADOS
+	const ICON_LAPRAS
 	const ICON_DITTO
 	const ICON_EEVEE
 	const ICON_VAPOREON
@@ -193,6 +175,7 @@
 	const ICON_KABUTOPS
 	const ICON_AERODACTYL
 	const ICON_MUNCHLAX
+	const ICON_SNORLAX
 	const ICON_ARTICUNO
 	const ICON_ZAPDOS
 	const ICON_MOLTRES
@@ -232,6 +215,7 @@
 	const ICON_MARILL
 	const ICON_AZUMARILL
 	const ICON_BONSLY
+	const ICON_SUDOWOODO
 	const ICON_HOPPIP
 	const ICON_SKIPLOOM
 	const ICON_JUMPLUFF
@@ -247,6 +231,7 @@
 	const ICON_HONCHKROW
 	const ICON_MISDREAVUS
 	const ICON_MISMAGIUS
+	const ICON_UNOWN
 	const ICON_WYNAUT
 	const ICON_WOBBUFFET
 	const ICON_GIRAFARIG
@@ -255,7 +240,22 @@
 	const ICON_DUNSPARCE
 	const ICON_GLIGAR
 	const ICON_GLISCOR
+	const ICON_HO_OH
+	const ICON_LUGIA
+	const ICON_CELEBI
+	const ICON_FISH
+	const ICON_BIRD
 	const ICON_MONSTER
+	const ICON_BUG
+	const ICON_GHOST
+	const ICON_HUMANSHAPE
+	const ICON_FOX
+	const ICON_EQUINE
+	const ICON_SHELL
+	const ICON_BLOB
+	const ICON_FIGHTER
+	const ICON_EGG
+	const ICON_BIGMON
 
 ; LoadMenuMonIcon.Jumptable indexes (see engine/gfx/mon_icons.asm)
 	const_def

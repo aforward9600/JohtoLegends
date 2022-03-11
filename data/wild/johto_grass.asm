@@ -427,7 +427,7 @@ JohtoGrassWildMons:
 	; morn
 	dbw  9, ZUBAT
 	dbw  9, MACHOP
-	dbw  9, LAIRON
+	dbw  9, ARON
 	dbw 10, MARILL
 	dbw 10, GEODUDE
 	dbw 10, SANDSHREW
@@ -436,7 +436,7 @@ JohtoGrassWildMons:
 	; day
 	dbw  9, ZUBAT
 	dbw  9, MACHOP
-	dbw  9, LAIRON
+	dbw  9, ARON
 	dbw 10, MARILL
 	dbw 10, GEODUDE
 	dbw 10, SANDSHREW
@@ -445,7 +445,7 @@ JohtoGrassWildMons:
 	; nite
 	dbw  9, ZUBAT
 	dbw  9, MACHOP
-	dbw  9, LAIRON
+	dbw  9, ARON
 	dbw 10, MARILL
 	dbw 10, GEODUDE
 	dbw 10, SANDSHREW

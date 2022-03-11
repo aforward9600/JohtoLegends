@@ -1779,15 +1779,7 @@ GymStatue1Script:
 	opentext
 	farwritetext GymStatue_CityGymText
 	buttonsound
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female1
 	farwritetext GymStatue_DahliaText
-	waitbutton
-	closetext
-	end
-
-.Female1:
-	farwritetext GymStatue_DracoText
 	waitbutton
 	closetext
 	end
@@ -1797,15 +1789,7 @@ GymStatue2Script:
 	opentext
 	farwritetext GymStatue_CityGymText
 	buttonsound
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female2
 	farwritetext GymStatue_WinningTrainersText
-	waitbutton
-	closetext
-	end
-
-.Female2:
-	farwritetext GymStatue_WinningTrainers2Text
 	waitbutton
 	closetext
 	end

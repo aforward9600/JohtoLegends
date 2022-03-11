@@ -215,7 +215,7 @@ UnknownText_0x1c460d::
 
 UnknownText_0x1c462a::
 	text "When you change a"
-	line "#mon BOX, data"
+	line "#mon Box, data"
 	cont "will be saved. OK?"
 	done
 
@@ -912,9 +912,8 @@ UnknownText_0x1c55d6::
 	done
 
 UnknownText_0x1c55db::
-	text "Password OK."
-	line "Select CONTINUE &"
-	cont "reset settings."
+	text "Select Continue &"
+	line "reset settings."
 	prompt
 
 UnknownText_0x1c560b::

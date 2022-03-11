@@ -44,7 +44,7 @@ MahoganyGymPryceScript:
 	scall MahoganyGymActivateRockets
 .FightDone:
 	checkflag ENGINE_BEAT_PRYCE
-	iftrue .Rematch
+	iffalse .Rematch
 	checkevent EVENT_GOT_TM16_ICY_WIND
 	iftrue PryceScript_Defeat
 	setevent EVENT_BEAT_SKIER_BRANDY
@@ -165,6 +165,7 @@ AfterPryceRematch:
 	writetext PryceText_BeatenAgain
 	waitbutton
 	closetext
+	setflag ENGINE_BEAT_PRYCE
 	end
 
 MahoganyGymActivateRockets:
@@ -572,7 +573,7 @@ MahoganyGymGuyWinText:
 ByTheWay1Text:
 	text "Oh, by the way,"
 	line "your friend"
-	cont "Dahlia told me to"
+	cont "<RIVAL> told me to"
 
 	para "tell you:"
 
@@ -586,7 +587,7 @@ ByTheWay1Text:
 ByTheWay2Text:
 	text "Oh, by the way,"
 	line "your friend"
-	cont "Draco told me to"
+	cont "<RIVAL> told me to"
 
 	para "tell you:"
 

@@ -16,7 +16,12 @@ BurnedTower1F_MapScripts:
 	callback MAPCALLBACK_TILES, .HoleAndLadder
 
 .EusineScene:
+	checkevent EVENT_BURNED_TOWER_1F_EUSINE
+	iftrue .SceneEnd
 	prioritysjump .MeetEusine
+	end
+
+.SceneEnd:
 	end
 
 .DummyScene1:
@@ -45,6 +50,7 @@ BurnedTower1F_MapScripts:
 	playsound SFX_EXIT_BUILDING
 	setevent EVENT_BURNED_TOWER_1F_ENOKI_2
 	setevent EVENT_HIDE_BASEMENT
+	setscene SCENE_DEFAULT
 	end
 
 .HoleAndLadder:

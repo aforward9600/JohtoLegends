@@ -514,7 +514,7 @@ HoldItRightThereText:
 	para "I recieved word of"
 	line "a hooligan causing"
 	cont "a ruckus at this"
-	cont "sacred sight."
+	cont "sacred site."
 
 	para "You chased him"
 	line "out, correct?"

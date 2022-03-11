@@ -47,9 +47,10 @@ EcruteakGymEnokiScript:
 	setflag ENGINE_FOGBADGE
 	readvar VAR_BADGES
 	scall EcruteakGymActivateRockets
+	setflag ENGINE_BEAT_ENOKI
 .FightDone:
 	checkflag ENGINE_BEAT_ENOKI
-	iftrue .EnokiRematch
+	iffalse .EnokiRematch
 	checkevent EVENT_GOT_TM04_HEX
 	iftrue .GotShadowBall
 	setevent EVENT_BEAT_SAGE_JEFFREY
@@ -176,6 +177,7 @@ AfterEnokiRematch:
 	writetext BeatenEnokiAgainText
 	waitbutton
 	closetext
+	setflag ENGINE_BEAT_ENOKI
 	end
 
 EcruteakGymActivateRockets:

@@ -17,6 +17,7 @@ INCLUDE "maps/GoldenrodDeptStore6F.asm"
 INCLUDE "maps/GoldenrodDeptStoreElevator.asm"
 INCLUDE "maps/GoldenrodDeptStoreRoof.asm"
 INCLUDE "maps/GoldenrodGameCorner.asm"
+INCLUDE "maps/OlivineLighthouse1F.asm"
 
 
 SECTION "Map Scripts 2", ROMX
@@ -474,7 +475,6 @@ INCLUDE "maps/Route2NuggetHouse.asm"
 INCLUDE "maps/ViridianPokecenter1F.asm"
 INCLUDE "maps/TrainerHouseB1F.asm"
 INCLUDE "maps/ViridianMart.asm"
-INCLUDE "maps/OlivineLighthouse1F.asm"
 INCLUDE "maps/LighthouseElevator.asm"
 INCLUDE "maps/OlivineLighthouse6F.asm"
 INCLUDE "maps/CliffsEdgeGate.asm"

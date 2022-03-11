@@ -5,37 +5,16 @@ IconPointers:
 	dw JigglypuffIcon
 	dw DiglettIcon
 	dw PikachuIcon
-	dw FishIcon
-	dw BirdIcon
 	dw ClefairyIcon
 	dw OddishIcon
-	dw BugIcon
-	dw GhostIcon
-	dw LaprasIcon
-	dw HumanshapeIcon
-	dw FoxIcon
-	dw EquineIcon
-	dw ShellIcon
-	dw BlobIcon
-	dw VoltorbIcon
+	dw MothIcon
 	dw SquirtleIcon
 	dw BulbasaurIcon
 	dw CharmanderIcon
 	dw CaterpillarIcon
-	dw UnownIcon
 	dw GeodudeIcon
-	dw FighterIcon
-	dw EggIcon
-	dw MothIcon
 	dw GolbatIcon
-	dw SnorlaxIcon
-	dw HoOhIcon
-	dw LugiaIcon
-	dw GyaradosIcon
 	dw SlowpokeIcon
-	dw SudowoodoIcon
-	dw BigmonIcon
-	dw CelebiIcon
 	dw IvysaurIcon
 	dw VenusaurIcon
 	dw CharmeleonIcon
@@ -130,6 +109,7 @@ IconPointers:
 	dw HypnoIcon
 	dw KrabbyIcon
 	dw KinglerIcon
+	dw VoltorbIcon
 	dw ElectrodeIcon
 	dw ExeggcuteIcon
 	dw ExeggutorIcon
@@ -174,6 +154,8 @@ IconPointers:
 	dw PinsirIcon
 	dw TaurosIcon
 	dw MagikarpIcon
+	dw GyaradosIcon
+	dw LaprasIcon
 	dw DittoIcon
 	dw EeveeIcon
 	dw VaporeonIcon
@@ -193,6 +175,7 @@ IconPointers:
 	dw KabutopsIcon
 	dw AerodactylIcon
 	dw MunchlaxIcon
+	dw SnorlaxIcon
 	dw ArticunoIcon
 	dw ZapdosIcon
 	dw MoltresIcon
@@ -232,6 +215,7 @@ IconPointers:
 	dw MarillIcon
 	dw AzumarillIcon
 	dw BonslyIcon
+	dw SudowoodoIcon
 	dw HoppipIcon
 	dw SkiploomIcon
 	dw JumpluffIcon
@@ -247,6 +231,7 @@ IconPointers:
 	dw HonchkrowIcon
 	dw MisdreavusIcon
 	dw MismagiusIcon
+	dw UnownIcon
 	dw WynautIcon
 	dw WobbuffetIcon
 	dw GirafarigIcon
@@ -255,4 +240,19 @@ IconPointers:
 	dw DunsparceIcon
 	dw GligarIcon
 	dw GliscorIcon
+	dw HoOhIcon
+	dw LugiaIcon
+	dw CelebiIcon
+	dw FishIcon
+	dw BirdIcon
 	dw MonsterIcon
+	dw BugIcon
+	dw GhostIcon
+	dw HumanshapeIcon
+	dw FoxIcon
+	dw EquineIcon
+	dw ShellIcon
+	dw BlobIcon
+	dw FighterIcon
+	dw EggIcon
+	dw BigmonIcon
