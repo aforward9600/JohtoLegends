@@ -1,129 +1,130 @@
 LoadOverworldMonIcon:
 	ld a, e
 	call ReadMonMenuIcon
-	ld [wCurIcon], a
-	ld l, a
-	ld h, 0
-	add hl, hl
-	ld de, IconPointers
-	add hl, de
-	ld a, [hli]
-	ld e, a
-	ld d, [hl]
-	jp GetIconBank
+	ld a, b
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld hl, IconPointers
+	ld a, BANK(IconPointers)
+	call LoadDoubleIndirectPointer
+	ld e, l
+	ld d, h
+	ld c, 8
+	ret
 
-;SetMenuMonIconColor:
-;	push hl
-;	push de
-;	push bc
-;	push af
-;
-;	ld a, [wd265]
-;	ld [wCurPartySpecies], a
-;	call GetMenuMonIconPalette
-;	jr _ApplyMenuMonIconColor
-;
-;SetMenuMonIconColor_NoShiny:
-;	push hl
-;	push de
-;	push bc
-;	push af
-;
-;	ld a, [wd265]
-;	ld [wCurPartySpecies],a
-;	and a
-;	call GetMenuMonIconPalette_PredeterminedShininess
-;	jr _ApplyMenuMonIconColor
-;
-;LoadPartyMenuMonIconColors:
-;	push hl
-;	push de
-;	push bc
-;	push af
-;
-;	ld a, [wPartyCount]
-;	sub c
-;	ld [wCurPartyMon], a
-;	ld e, a
-;	ld d, 0
-;
-;	ld hl, wPartyMon1Item
-;	call GetPartyLocation
-;	ld a, [hl]
-;	ld [wCurIconMonHasItemOrMail], a
-;
-;	ld hl, wPartySpecies
-;	add hl, de
-;	ld a, [hl]
-;	ld [wCurPartySpecies], a
-;	ld a, MON_DVS
-;	call GetPartyParamLocation
-;	call GetMenuMonIconPalette
-;	ld hl, wVirtualOAMSprite00Attributes
-;	push af
-;	ld a, [wCurPartyMon]
-;	swap a
-;	ld d, 0
-;	ld e, a
-;	add hl, de
-;	pop af
-;
-;	ld de, 4
-;	ld [hl], a ; top left
-;	add hl, de
-;	ld [hl], a ; top right
-;	add hl, de
-;	push hl
-;	add hl, de
-;	ld [hl], a ; bottom right
-;	pop hl
-;	ld d, a
-;	ld a, [wCurIconMonHasItemOrMail]
-;	and a
-;	ld a, PAL_OW_RED ; item or mail color
-;	jr nz, .ok
-;	ld a, d
-;.ok
-;	ld [hl], a ; bottom left
-;	jr _FinishMenuMonIconColor
-;
-;_ApplyMenuMonIconColor:
-;	ld c, 4
-;	ld de, 4
-;.loop
-;	ld [hl], a
-;	add hl, de
-;	dec c
-;	jr nz, .loop
-;	; fallthrough
-;_FinishMenuMonIconColor:
-;	pop af
-;	pop bc
-;	pop de
-;	pop hl
-;	ret
-;
-;GetMenuMonIconPalette:
-;	ld c, l
-;	ld b, h
-;	farcall CheckShininess
-;GetMenuMonIconPalette_PredeterminedShininess:
-;	push af
-;	ld a, [wCurPartySpecies]
-;	dec a
-;	ld c, a
-;	ld b, 0
-;	ld hl, MonMenuIconPals
-;	add hl, bc
-;	ld e, [hl]
-;	pop af
-;	ld a, e
-;	jr c, .shiny
-;	swap a
-;.shiny
-;	and $f
-;	ld l, a
-;	ret
+SetMenuMonIconColor:
+	push hl
+	push de
+	push bc
+	push af
+
+	ld a, [wTempIconSpecies]
+	ld [wCurPartySpecies], a
+	call GetMenuMonIconPalette
+	jr _ApplyMenuMonIconColor
+
+SetMenuMonIconColor_NoShiny:
+	push hl
+	push de
+	push bc
+	push af
+
+	ld a, [wd265]
+	ld [wCurPartySpecies],a
+	and a
+	call GetMenuMonIconPalette_PredeterminedShininess
+	jr _ApplyMenuMonIconColor
+
+LoadPartyMenuMonIconColors:
+	push hl
+	push de
+	push bc
+	push af
+
+	ld a, [wPartyCount]
+	sub c
+	ld [wCurPartyMon], a
+	ld e, a
+	ld d, 0
+
+	ld hl, wPartyMon1Item
+	call GetPartyLocation
+	ld a, [hl]
+	ld [wCurIconMonHasItemOrMail], a
+
+	ld hl, wPartySpecies
+	add hl, de
+	ld a, [hl]
+	ld [wCurPartySpecies], a
+	ld a, MON_DVS
+	call GetPartyParamLocation
+	call GetMenuMonIconPalette
+	ld hl, wVirtualOAMSprite00Attributes
+	push af
+	ld a, [wCurPartyMon]
+	swap a
+	ld d, 0
+	ld e, a
+	add hl, de
+	pop af
+
+	ld de, 4
+	ld [hl], a ; top left
+	add hl, de
+	ld [hl], a ; top right
+	add hl, de
+	push hl
+	add hl, de
+	ld [hl], a ; bottom right
+	pop hl
+	ld d, a
+	ld a, [wCurIconMonHasItemOrMail]
+	and a
+	ld a, PAL_OW_RED ; item or mail color
+	jr nz, .ok
+	ld a, d
+.ok
+	ld [hl], a ; bottom left
+	jr _FinishMenuMonIconColor
+
+_ApplyMenuMonIconColor:
+	ld hl, wVirtualOAMSprite00Attributes
+	ld c, 4
+	ld de, 4
+.loop
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, .loop
+	; fallthrough
+_FinishMenuMonIconColor:
+	pop af
+	pop bc
+	pop de
+	pop hl
+	ret
+
+GetMenuMonIconPalette:
+	ld c, l
+	ld b, h
+	farcall CheckShininess
+GetMenuMonIconPalette_PredeterminedShininess:
+	push af
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld c, l
+	ld b, h
+	ld hl, MonMenuIconPals
+	add hl, bc
+	ld e, [hl]
+	pop af
+	ld a, e
+	jr c, .shiny
+	swap a
+.shiny
+	and $f
+	ret
 
 LoadMenuMonIcon:
 	push hl
@@ -264,7 +265,7 @@ PartyMenu_InitAnimatedMonIcon:
 	ret
 
 InitPartyMenuIcon:
-;	call LoadPartyMenuMonIconColors
+	call LoadPartyMenuMonIconColors
 	ld a, [wCurIconTile]
 	push af
 	ldh a, [hObjectStructIndexBuffer]
@@ -274,7 +275,6 @@ InitPartyMenuIcon:
 	add hl, de
 	ld a, [hl]
 	call ReadMonMenuIcon
-	ld [wCurIcon], a
 	call GetMemIconGFX
 	ldh a, [hObjectStructIndexBuffer]
 ; y coord
@@ -328,11 +328,10 @@ SetPartyMonIconAnimSpeed:
 	db $80 ; HP_RED
 
 NamingScreen_InitAnimatedMonIcon:
-;	ld hl, wTempMonDVs
-;	call SetMenuMonIconColor
+	ld hl, wTempMonDVs
+	call SetMenuMonIconColor
 	ld a, [wTempIconSpecies]
 	call ReadMonMenuIcon
-	ld [wCurIcon], a
 	xor a
 	call GetIconGFX
 	depixel 4, 4, 4, 0
@@ -344,12 +343,11 @@ NamingScreen_InitAnimatedMonIcon:
 	ret
 
 MoveList_InitAnimatedMonIcon:
-;	ld a, MON_DVS
-;	call GetPartyParamLocation
-;	call SetMenuMonIconColor
+	ld a, MON_DVS
+	call GetPartyParamLocation
+	call SetMenuMonIconColor
 	ld a, [wTempIconSpecies]
 	call ReadMonMenuIcon
-	ld [wCurIcon], a
 	xor a
 	call GetIconGFX
 	ld d, 3 * 8 + 2 ; depixel 3, 4, 2, 4
@@ -364,7 +362,6 @@ MoveList_InitAnimatedMonIcon:
 Trade_LoadMonIconGFX:
 	ld a, [wTempIconSpecies]
 	call ReadMonMenuIcon
-	ld [wCurIcon], a
 	ld a, $62
 	ld [wCurIconTile], a
 	call GetMemIconGFX
@@ -373,20 +370,18 @@ Trade_LoadMonIconGFX:
 GetSpeciesIcon:
 ; Load species icon into VRAM at tile a
 	push de
-;	ld a, MON_DVS
-;	call GetPartyParamLocation
-;	call SetMenuMonIconColor
+	ld a, MON_DVS
+	call GetPartyParamLocation
+	call SetMenuMonIconColor
 	ld a, [wTempIconSpecies]
-	call ReadMonMenuIcon
-	ld [wCurIcon], a
+	call GetPokemonIndexFromID
 	pop de
 	ld a, e
 	call GetIconGFX
 	ret
 
 FlyFunction_GetMonIcon:
-	ld a, ICON_PIDGEOT
-	ld [wCurIcon], a
+	ld a, PIDGEOT
 	ld a, e
 	call GetIcon_a
 	ret
@@ -443,30 +438,22 @@ endr
 
 ; The icons are contiguous, in order and of the same
 ; size, so the pointer table is somewhat redundant.
-	ld a, [wCurIcon]
 	push hl
-	ld l, a
-	ld h, 0
-	add hl, hl
-	ld de, IconPointers
-	add hl, de
-	ld a, [hli]
-	ld e, a
-	ld d, [hl]
+	ld a, b
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld hl, IconPointers
+	ld a, BANK(IconPointers)
+	call LoadDoubleIndirectPointer
+	ld e, l
+	ld d, h
 	pop hl
 
-	call GetIconBank
+	ld c, 8
 	call GetGFXUnlessMobile
 
 	pop hl
-	ret
-
-GetIconBank:
-	ld a, [wCurIcon]
-	cp TANGELA; first icon in Icons2
-	lb bc, BANK("Mon Icons 1"), 8
-	ret c
-	ld b, BANK("Mon Icons 2")
 	ret
 
 GetGFXUnlessMobile:
@@ -563,19 +550,12 @@ HoldSwitchmonIcon:
 ReadMonMenuIcon:
 	cp EGG
 	jr z, .egg
-	call GetPokemonIndexFromID
-	ld de, MonMenuIcons - 1
-	add hl, de
-	ld a, [hl]
+	ld b, a
 	ret
 .egg
-	ld a, ICON_EGG
+	ld b, 0
 	ret
 
-INCLUDE "data/pokemon/menu_icons.asm"
-
 INCLUDE "data/pokemon/menu_icons_pals.asm"
-
-INCLUDE "data/icon_pointers.asm"
 
 INCLUDE "gfx/icons.asm"

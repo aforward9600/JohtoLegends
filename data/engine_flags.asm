@@ -125,6 +125,10 @@ EngineFlags:
 	engine_flag wDailyFlags3, DAILYFLAGS3_BEAT_ENOKI_F
 	engine_flag wDailyFlags3, DAILYFLAGS3_BEAT_CHIGUSA_F
 	engine_flag wDailyFlags3, DAILYFLAGS3_BEAT_BYRON_F
+	engine_flag wDailyFlags3, DAILYFLAGS3_BEAT_MILTON_F
+	engine_flag wDailyFlags3, DAILYFLAGS3_BEAT_KURT_F
+	engine_flag wDailyFlags3, DAILYFLAGS3_BEAT_WALKER_F
+	engine_flag wDailyFlags3, DAILYFLAGS3_BEAT_MASTER_F
 
 	engine_flag wSwarmFlags, SWARMFLAGS_BUENAS_PASSWORD_F ; $60
 	engine_flag wSwarmFlags, SWARMFLAGS_GOLDENROD_DEPT_STORE_SALE_F

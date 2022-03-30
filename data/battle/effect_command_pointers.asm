@@ -189,6 +189,6 @@ BattleCommandPointers:
 	effectfn BattleCommand_SwitchHit
 	effectfn BattleCommand_KnockOffPower
 	effectfn BattleCommand_KnockOff
-	effectfn BattleCommand_UTurn
+;	effectfn BattleCommand_UTurn
 ;	effectfn BattleCommand_WakeUpSlap
 ;	effectfn BattleCommand_AwakenOpponent

@@ -408,5 +408,5 @@ Moves1:
 	move EFFECT_HYPER_BEAM,        150, WATER,    SPECIAL,   90,  5,   0 ;HYDRO_CANNON
 	move EFFECT_AQUA_RING,           0, WATER,    STATUS,   100, 20,   0 ;AQUA_RING
 	move EFFECT_KNOCK_OFF,          65, DARK,     PHYSICAL, 100, 20,   0 ;KNOCK_OFF
-	move EFFECT_U_TURN,             70, BUG,      PHYSICAL, 100, 20,   0 ;U_TURN
+;	move EFFECT_U_TURN,             70, BUG,      PHYSICAL, 100, 20,   0 ;U_TURN
 ;	move EFFECT_WAKE_UP_SLAP,       70, FIGHTING, PHYSICAL, 100, 10,   0 ;WAKE_UP_SLAP

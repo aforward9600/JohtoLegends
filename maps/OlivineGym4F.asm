@@ -37,9 +37,10 @@ OlivineGym1FByronScript:
 	setflag ENGINE_MINERALBADGE
 	readvar VAR_BADGES
 	scall OlivineGym1FActivateRockets
+	setflag ENGINE_BEAT_BYRON
 .FightDone:
 	checkflag ENGINE_BEAT_BYRON
-	iftrue .RematchByron
+	iffalse .RematchByron
 	checkevent EVENT_GOT_TM42_FLASH_CANNON
 	iftrue .GotIronTail
 	writetext Byron1F_BadgeSpeech
@@ -125,6 +126,7 @@ AfterByronRematch:
 	writetext BeatenByronAgainText
 	waitbutton
 	closetext
+	setflag ENGINE_BEAT_BYRON
 	end
 
 OlivineGym1FActivateRockets:

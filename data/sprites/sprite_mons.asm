@@ -46,3 +46,7 @@ SpriteMons:
 	dw MACHOKE
 	dw POLIWRATH
 	dw PERSIAN
+	dw HERACROSS
+	dw SHUCKLE
+	dw SWINUB
+	dw SNEASEL

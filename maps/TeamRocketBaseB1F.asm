@@ -250,16 +250,18 @@ RivalConfronts2:
 	end
 	
 RivalConfronts3:
+	special FadeOutMusic
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .RivalConfrontsFemale
 	checkevent EVENT_HIDEOUT_B1F_CONFRONTATION
 	iftrue .ConfrontationOver3
-	special FadeOutMusic
+	checkevent EVENT_TEAM_ROCKET_BASE_POPULATION
+	iftrue .SkipToBattle
 	pause 15
 	opentext
 	writetext ThatAllYouGotText
 	waitbutton
 	closetext
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .RivalConfrontsFemale
 	opentext
 	writetext DahliaIsSilentText
 	waitbutton
@@ -294,6 +296,7 @@ RivalConfronts3:
 	disappear TEAMROCKETBASEB1F_MIYAMOTO
 	pause 15
 	special FadeInQuickly
+.SkipToBattle:
 	pause 15
 	opentext
 	writetext DahliaIsSilentText
@@ -326,6 +329,16 @@ RivalConfronts3:
 	sjump .HideoutVictorious1
 
 .RivalConfrontsFemale:
+	checkevent EVENT_HIDEOUT_B1F_CONFRONTATION
+	iftrue .ConfrontationOver3
+	checkevent EVENT_TEAM_ROCKET_BASE_POPULATION
+	iftrue .SkipToBattleFemale
+	special FadeOutMusic
+	pause 15
+	opentext
+	writetext ThatAllYouGotText
+	waitbutton
+	closetext
 	opentext
 	writetext DracoIsSilentText
 	waitbutton
@@ -360,6 +373,7 @@ RivalConfronts3:
 	disappear TEAMROCKETBASEB1F_MIYAMOTO
 	pause 15
 	special FadeInQuickly
+.SkipToBattleFemale:
 	pause 15
 	opentext
 	writetext DracoIsSilentText
@@ -408,6 +422,9 @@ RivalConfronts3:
 	waitsfx
 	playmapmusic
 	setmapscene MAHOGANY_MART_1F, SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS
+	setmapscene ROUTE_34, SCENE_DEFAULT
+	setevent EVENT_ROUTE_34_NINJA
+	clearevent EVENT_ROUTE_34_OFFICER
 	end
 
 .ConfrontationOver3:
@@ -598,11 +615,11 @@ ThatAllYouGotText:
 	done
 
 DracoIsSilentText:
-	text "Draco:………………………"
+	text "<RIVAL>:………………………"
 	done
 
 DahliaIsSilentText:
-	text "Dahlia:………………………"
+	text "<RIVAL>:………………………"
 	done
 
 ScientistJedSeenText:

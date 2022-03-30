@@ -78,5 +78,5 @@ ManiasHouse_MapEvents:
 	db 4 ; object events
 	object_event  2,  4, SPRITE_KID, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ManiaScript, -1
 	object_event  5,  6, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ManiaMotherScript, -1
-	object_event  0,  2, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SneaselScript, -1
-	object_event  5,  1, SPRITE_PARAS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ShuckleScript, -1
+	object_event  0,  2, SPRITE_SNEASEL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SneaselScript, -1
+	object_event  5,  1, SPRITE_SHUCKLE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ShuckleScript, -1

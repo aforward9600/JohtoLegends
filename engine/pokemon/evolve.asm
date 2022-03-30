@@ -459,23 +459,23 @@ Text_WhatEvolving:
 	text_end
 
 LearnLevelMoves:
-    ld a, [wTempSpecies]
-    ld [wCurPartySpecies], a
-    call GetPokemonIndexFromID
-    ld b, h
-    ld c, l
-    ld hl, EvosAttacksPointers
-    ld a, BANK(EvosAttacksPointers)
-    call LoadDoubleIndirectPointer
-    ldh [hTemp], a
-    call SkipEvolutions
+	ld a, [wTempSpecies]
+	ld [wCurPartySpecies], a
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld hl, EvosAttacksPointers
+	ld a, BANK(EvosAttacksPointers)
+	call LoadDoubleIndirectPointer
+	ldh [hTemp], a
+	call SkipEvolutions
 
 .find_move
-    call GetNextEvoAttackByte
-    and a
-    jr z, .done
+	call GetNextEvoAttackByte
+	and a
+	jr z, .done
 
-    ld d, a
+	ld d, a
 	ld a, [wEvolutionOldSpecies]
 	ld e, a
 	ld a, [wCurPartySpecies]
@@ -487,49 +487,49 @@ LearnLevelMoves:
 	jr z, .get_move
 
 .did_not_evolve
-    ld b, a
-    ld a, [wCurPartyLevel]
-    cp b
+	ld b, a
+	ld a, [wCurPartyLevel]
+	cp b
 
 .get_move
-    call GetNextEvoAttackByte
-    ld e, a
-    call GetNextEvoAttackByte
-    ld d, a
-    jr nz, .find_move
+	call GetNextEvoAttackByte
+	ld e, a
+	call GetNextEvoAttackByte
+	ld d, a
+	jr nz, .find_move
 
-    push hl
-    ld h, d
-    ld l, e
-    call GetMoveIDFromIndex
-    ld d, a
-    ld hl, wPartyMon1Moves
-    ld a, [wCurPartyMon]
-    ld bc, PARTYMON_STRUCT_LENGTH
-    call AddNTimes
+	push hl
+	ld h, d
+	ld l, e
+	call GetMoveIDFromIndex
+	ld d, a
+	ld hl, wPartyMon1Moves
+	ld a, [wCurPartyMon]
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
 
-    ld b, NUM_MOVES
+	ld b, NUM_MOVES
 .check_move
-    call GetNextEvoAttackByte
-    cp d
-    jr z, .has_move
-    dec b
-    jr nz, .check_move
-    jr .learn
+ 	call GetNextEvoAttackByte
+	cp d
+	jr z, .has_move
+	dec b
+	jr nz, .check_move
+	jr .learn
 .has_move
 
-    pop hl
-    jr .find_move
+	pop hl
+	jr .find_move
 
 .learn
-    ld a, d
-    ld [wPutativeTMHMMove], a
-    ld [wNamedObjectIndexBuffer], a
-    call GetMoveName
-    call CopyName1
-    predef LearnMove
-    pop hl
-    jr .find_move
+	ld a, d
+	ld [wPutativeTMHMMove], a
+	ld [wNamedObjectIndexBuffer], a
+	call GetMoveName
+	call CopyName1
+	predef LearnMove
+	pop hl
+	jr .find_move
 
 .done
     ld a, [wCurPartySpecies]

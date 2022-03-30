@@ -73,7 +73,7 @@ UnknownText_0x1c01be::
 
 UnknownText_0x1c0208::
 	text "Whoa… That's just"
-	line "an EGG."
+	line "an Egg."
 	done
 
 UnknownText_0x1c0222::
@@ -776,7 +776,7 @@ UnknownText_0x1c0df3::
 	text_ram wBreedMon2Nick
 	text_start
 	line "that was left with"
-	cont "the DAY-CARE LADY."
+	cont "the Day-Care Lady."
 	done
 
 UnknownText_0x1c0e24::
@@ -784,7 +784,7 @@ UnknownText_0x1c0e24::
 	text_ram wBreedMon1Nick
 	text_start
 	line "that was left with"
-	cont "the DAY-CARE MAN."
+	cont "the Day-Care Man."
 	done
 
 UnknownText_0x1c0e54::

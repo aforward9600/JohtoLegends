@@ -2722,26 +2722,26 @@ KnockOff:
 	kingsrock
 	endmove
 
-UTurn:
-    checkobedience
-    usedmovetext
-    doturn
-    critical
-    damagestats
-    damagecalc
-    stab
-    damagevariation
-    checkhit
-    moveanim
-    failuretext
-    applydamage
-    criticaltext
-    supereffectivetext
-    checkfaint
-    buildopponentrage
-    kingsrock
-	uturn
-    endmove
+;UTurn:
+;    checkobedience
+;    usedmovetext
+;    doturn
+;    critical
+;    damagestats
+;    damagecalc
+;    stab
+;    damagevariation
+;    checkhit
+;    moveanim
+;    failuretext
+;    applydamage
+;    criticaltext
+;    supereffectivetext
+;    checkfaint
+;    buildopponentrage
+;    kingsrock
+;  	 uturn
+;    endmove
 
 ;WakeUpSlap:
 ;	checkobedience

@@ -212,7 +212,7 @@ PersianDahliaText:
 	line "Persian dragged"
 	cont "in!"
 
-	para "Dahlia: You!"
+	para "<RIVAL>: You!"
 
 	para "I remember you!"
 
@@ -234,79 +234,7 @@ PersianDahliaText:
 	cont "until we no longer"
 	cont "need you."
 
-	para "Dahlia: Wait, my"
-	line "wing!"
-
-	para "What did you do"
-	line "with it?!"
-
-	para "Ariana: Oh, you"
-	line "mean that old"
-	cont "feather?"
-
-	para "Don't worry, we're"
-	line "keeping it nice"
-	cont "and safe, until"
-	cont "have use of it."
-
-	para "We took yours too,"
-	line "so don't bother"
-	cont "searching your"
-	cont "bag for it."
-
-	para "Now, if you'll"
-	line "excuse me, young"
-	cont "lovebirds, I have"
-	cont "more important"
-	cont "business to attend"
-	cont "to."
-
-	para "Dahlia: You know"
-	line "we're older than"
-	cont "you, right?"
-
-	para "Ariana: Shut up!"
-
-	para "I'll give you and"
-	line "your boyfriend"
-	cont "matching black"
-	cont "eyes if you keep"
-	cont "it up!"
-
-	para "Ugh, I'm done"
-	line "here!"
-	done
-
-PersianDracoText:
-	text "Well, well, well!"
-
-	para "Look what the"
-	line "Persian dragged"
-	cont "in!"
-
-	para "Draco: You!"
-
-	para "I remember you!"
-
-	para "Ariana: Oh, do"
-	line "you?"
-
-	para "I'm flattered,"
-	line "really."
-
-	para "Regardless, you're"
-	line "here, and you're"
-	cont "not going any-"
-	cont "where."
-
-	para "You've both been"
-	line "thorough thorns"
-	cont "in our sides, and"
-	cont "you'll remain here"
-	cont "until we no longer"
-	cont "need you."
-
-	para "Draco: Wait, my"
+	para "<RIVAL>: Wait, my"
 	line "wing!"
 
 	para "What did you do"
@@ -333,7 +261,79 @@ PersianDracoText:
 	cont "business to attend"
 	cont "to."
 
-	para "Draco: You know"
+	para "<RIVAL>: You know"
+	line "we're older than"
+	cont "you, right?"
+
+	para "Ariana: Shut up!"
+
+	para "I'll give you and"
+	line "your boyfriend"
+	cont "matching black"
+	cont "eyes if you keep"
+	cont "it up!"
+
+	para "Ugh, I'm done"
+	line "here!"
+	done
+
+PersianDracoText:
+	text "Well, well, well!"
+
+	para "Look what the"
+	line "Persian dragged"
+	cont "in!"
+
+	para "<RIVAL>: You!"
+
+	para "I remember you!"
+
+	para "Ariana: Oh, do"
+	line "you?"
+
+	para "I'm flattered,"
+	line "really."
+
+	para "Regardless, you're"
+	line "here, and you're"
+	cont "not going any-"
+	cont "where."
+
+	para "You've both been"
+	line "thorough thorns"
+	cont "in our sides, and"
+	cont "you'll remain here"
+	cont "until we no longer"
+	cont "need you."
+
+	para "<RIVAL>: Wait, my"
+	line "wing!"
+
+	para "What did you do"
+	line "with it?!"
+
+	para "Ariana: Oh, you"
+	line "mean that old"
+	cont "feather?"
+
+	para "Don't worry, we're"
+	line "keeping it nice"
+	cont "and safe, until we"
+	cont "have use of it."
+
+	para "We took yours too,"
+	line "so don't bother"
+	cont "searching your"
+	cont "bag for it."
+
+	para "Now, if you'll"
+	line "excuse me, young"
+	cont "lovebirds, I have"
+	cont "more important"
+	cont "business to attend"
+	cont "to."
+
+	para "<RIVAL>: You know"
 	line "we're older than"
 	cont "you, right?"
 

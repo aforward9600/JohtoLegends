@@ -2,7 +2,6 @@ MonMenuOptions:
 ; category, item, value; actions are in PokemonActionSubmenu (see engine/pokemon/mon_menu.asm)
 ; moves
 	dbbw MONMENU_FIELD_MOVE, MONMENUITEM_CUT,        CUT
-	dbbw MONMENU_FIELD_MOVE, MONMENUITEM_FLY,        FLY
 	dbbw MONMENU_FIELD_MOVE, MONMENUITEM_DIG,        DIG
 	dbbw MONMENU_FIELD_MOVE, MONMENUITEM_TELEPORT,   TELEPORT
 	dbbw MONMENU_FIELD_MOVE, MONMENUITEM_SOFTBOILED, SOFTBOILED

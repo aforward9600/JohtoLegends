@@ -91,7 +91,7 @@ Reconverge:
 
 .RivalAppears1:
 	playsound SFX_ENTER_DOOR
-	moveobject RADIOTOWER5F_RIVAL, 9, 13
+	moveobject RADIOTOWER5F_RIVAL, 9, 17
 	appear RADIOTOWER5F_RIVAL
 	applymovement RADIOTOWER5F_RIVAL, RivalMoves1
 	turnobject RADIOTOWER5F_RIVAL, RIGHT
@@ -132,7 +132,7 @@ Reconverge:
 
 .RivalAppears2:
 	playsound SFX_ENTER_DOOR
-	moveobject RADIOTOWER5F_RIVAL, 9, 13
+	moveobject RADIOTOWER5F_RIVAL, 9, 17
 	appear RADIOTOWER5F_RIVAL
 	applymovement RADIOTOWER5F_RIVAL, RivalMoves2
 	turnobject RADIOTOWER5F_RIVAL, LEFT
@@ -415,14 +415,14 @@ RadioTower5F_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event  9, 13, RADIO_TOWER_4F, 1
+	warp_event  9, 17, RADIO_TOWER_4F, 1
 
 	db 2 ; coord events
-	coord_event  8, 11, SCENE_DEFAULT, RadioTowerMiyamotoScene1
-	coord_event  9, 11, SCENE_DEFAULT, RadioTowerMiyamotoScene2
+	coord_event  8, 15, SCENE_DEFAULT, RadioTowerMiyamotoScene1
+	coord_event  9, 15, SCENE_DEFAULT, RadioTowerMiyamotoScene2
 
 	db 0 ; bg events
 
 	db 2 ; object events
-	object_event  9,  8, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_GOLDENROD_TOWER_TAKEOVER
+	object_event  9, 12, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_GOLDENROD_TOWER_TAKEOVER
 	object_event  0, 17, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_GOLDENROD_TOWER_RIVAL_1

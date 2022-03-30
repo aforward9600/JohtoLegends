@@ -42,6 +42,7 @@ MahoganyGymPryceScript:
 	setflag ENGINE_GLACIERBADGE
 	readvar VAR_BADGES
 	scall MahoganyGymActivateRockets
+	setflag ENGINE_BEAT_PRYCE
 .FightDone:
 	checkflag ENGINE_BEAT_PRYCE
 	iffalse .Rematch

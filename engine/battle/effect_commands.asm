@@ -3816,7 +3816,11 @@ BattleCommand_Poison:
 	call CheckIfTargetIsPoisonType
 	jp z, .failed
 
-	call CheckForStatusIfAlreadyHasAny
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	ld b, a
+	ld hl, AlreadyPoisonedText
+	and 1 << PSN
 	jp nz, .failed
 
 	call GetOpponentItem
@@ -3830,6 +3834,12 @@ BattleCommand_Poison:
 	jr .failed
 
 .do_poison
+	ld hl, AvoidStatusText
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and a
+	jr nz, .failed
+
 	call CheckSubstituteOpp
 	jr nz, .failed
 	ld a, [wAttackMissed]
@@ -5420,48 +5430,48 @@ BattleCommand_SwitchHit:
 
 	ld a, [wBattleType]
 	cp BATTLETYPE_SHINY
-	jp z, .fail
+	jp z, .fail_hit
 	cp BATTLETYPE_TRAP
-	jp z, .fail
+	jp z, .fail_hit
 	cp BATTLETYPE_CELEBI
-	jp z, .fail
+	jp z, .fail_hit
 	cp BATTLETYPE_SUICUNE
-	jp z, .fail
+	jp z, .fail_hit
 	cp BATTLETYPE_MEWTWO
-	jp z, .fail
+	jp z, .fail_hit
 	cp BATTLETYPE_HO_OH
-	jp z, .fail
+	jp z, .fail_hit
 	cp BATTLETYPE_LUGIA
-	jp z, .fail
+	jp z, .fail_hit
 	ldh a, [hBattleTurn]
 	and a
-	jp nz, .force_player_switch
+	jp nz, .force_player_switch_hit
 	ld a, [wAttackMissed]
 	and a
-	jr nz, .missed
+	jr nz, .missed_hit
 	ld a, [wBattleMode]
 	dec a
-	jr nz, .trainer
+	jr nz, .trainer_hit
 	ld a, [wCurPartyLevel]
 	ld b, a
 	ld a, [wBattleMonLevel]
 	cp b
-	jr nc, .wild_force_flee
+	jr nc, .wild_force_flee_hit
 	add b
 	ld c, a
 	inc c
-.random_loop_wild
+.random_loop_wild_hit
 	call BattleRandom
 	cp c
-	jr nc, .random_loop_wild
+	jr nc, .random_loop_wild_hit
 	srl b
 	srl b
 	cp b
-	jr nc, .wild_force_flee
-.missed
-	jp .fail
+	jr nc, .wild_force_flee_hit
+.missed_hit
+	jp .fail_hit
 
-.wild_force_flee
+.wild_force_flee_hit
 	call UpdateBattleMonInParty
 	xor a
 	ld [wNumHits], a
@@ -5469,32 +5479,29 @@ BattleCommand_SwitchHit:
 	ld [wForcedSwitch], a
 	call SetBattleDraw
 	ld a, [wPlayerMoveStructAnimation]
-	jp .succeed
+	jp .succeed_hit
 
-.trainer
+.trainer_hit
 	call FindAliveEnemyMons
-	jr c, .switch_fail
+	jr c, .switch_fail_hit
 	ld a, [wEnemyGoesFirst]
 	and a
-	jr z, .switch_fail
+	jr z, .switch_fail_hit
 	call UpdateEnemyMonInParty
 	ld a, $1
 	ld [wKickCounter], a
-	call ClearBox
-	ld c, 20
-	call DelayFrames
 	ld a, [wOTPartyCount]
 	ld b, a
 	ld a, [wCurOTMon]
 	ld c, a
 ; select a random enemy mon to switch to
-.random_loop_trainer
+.random_loop_trainer_hit
 	call BattleRandom
 	and $7
 	cp b
-	jr nc, .random_loop_trainer
+	jr nc, .random_loop_trainer_hit
 	cp c
-	jr z, .random_loop_trainer
+	jr z, .random_loop_trainer_hit
 	push af
 	push bc
 	ld hl, wOTPartyMon1HP
@@ -5503,7 +5510,7 @@ BattleCommand_SwitchHit:
 	or [hl]
 	pop bc
 	pop de
-	jr z, .random_loop_trainer
+	jr z, .random_loop_trainer_hit
 	ld a, d
 	inc a
 	ld [wEnemySwitchMonIndex], a
@@ -5515,41 +5522,41 @@ BattleCommand_SwitchHit:
 	ld hl, SpikesDamage
 	jp CallBattleCore
 
-.switch_fail
-	jp .fail
+.switch_fail_hit
+	jp .fail_hit
 
-.force_player_switch
+.force_player_switch_hit
 	ld a, [wAttackMissed]
 	and a
-	jr nz, .player_miss
+	jr nz, .player_miss_hit
 
 	ld a, [wBattleMode]
 	dec a
-	jr nz, .vs_trainer
+	jr nz, .vs_trainer_hit
 
 	ld a, [wBattleMonLevel]
 	ld b, a
 	ld a, [wCurPartyLevel]
 	cp b
-	jr nc, .wild_succeed_playeristarget
+	jr nc, .wild_succeed_playeristarget_hit
 
 	add b
 	ld c, a
 	inc c
-.wild_random_loop_playeristarget
+.wild_random_loop_playeristarget_hit
 	call BattleRandom
 	cp c
-	jr nc, .wild_random_loop_playeristarget
+	jr nc, .wild_random_loop_playeristarget_hit
 
 	srl b
 	srl b
 	cp b
-	jr nc, .wild_succeed_playeristarget
+	jr nc, .wild_succeed_playeristarget_hit
 
-.player_miss
-	jr .fail
+.player_miss_hit
+	jr .fail_hit
 
-.wild_succeed_playeristarget
+.wild_succeed_playeristarget_hit
 	call UpdateBattleMonInParty
 	xor a
 	ld [wNumHits], a
@@ -5557,34 +5564,31 @@ BattleCommand_SwitchHit:
 	ld [wForcedSwitch], a
 	call SetBattleDraw
 	ld a, [wEnemyMoveStructAnimation]
-	jr .succeed
+	jr .succeed_hit
 
-.vs_trainer
+.vs_trainer_hit
 	call CheckPlayerHasMonToSwitchTo
-	jr c, .fail
+	jr c, .fail_hit
 
 	ld a, [wEnemyGoesFirst]
 	cp $1
-	jr z, .switch_fail
+	jr z, .switch_fail_hit
 
 	call UpdateBattleMonInParty
 	ld a, $1
 	ld [wKickCounter], a
-	call ClearBox
-	ld c, 20
-	call DelayFrames
 	ld a, [wPartyCount]
 	ld b, a
 	ld a, [wCurBattleMon]
 	ld c, a
-.random_loop_trainer_playeristarget
+.random_loop_trainer_playeristarget_hit
 	call BattleRandom
 	and $7
 	cp b
-	jr nc, .random_loop_trainer_playeristarget
+	jr nc, .random_loop_trainer_playeristarget_hit
 
 	cp c
-	jr z, .random_loop_trainer_playeristarget
+	jr z, .random_loop_trainer_playeristarget_hit
 
 	push af
 	push bc
@@ -5594,7 +5598,7 @@ BattleCommand_SwitchHit:
 	or [hl]
 	pop bc
 	pop de
-	jr z, .random_loop_trainer_playeristarget
+	jr z, .random_loop_trainer_playeristarget_hit
 
 	ld a, d
 	ld [wCurPartyMon], a
@@ -5607,13 +5611,13 @@ BattleCommand_SwitchHit:
 	ld hl, SpikesDamage
 	jp CallBattleCore
 
-.fail
+.fail_hit
 	call BattleCommand_LowerSub
 	call BattleCommand_MoveDelay
 	call BattleCommand_RaiseSub
 	ret
 
-.succeed
+.succeed_hit
 	push af
 	call SetBattleDraw
 	ld a, $1
@@ -5621,7 +5625,7 @@ BattleCommand_SwitchHit:
 	pop af
 
 	ld hl, BlownAwayText
-.do_text
+.do_text_hit
 	jp StdBattleTextbox
 
 CheckPlayerHasMonToSwitchTo:

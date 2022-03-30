@@ -49,9 +49,10 @@ CianwoodGymChigusaScript:
 	setscene SCENE_FINISHED
 	setmapscene WILD_AREA_OUTSIDE, SCENE_WILD_AREA_RIVAL
 	setevent EVENT_WILD_AREA_OUTSIDE_RIVAL1
+	setflag ENGINE_BEAT_CHIGUSA
 .FightDone:
 	checkflag ENGINE_BEAT_CHIGUSA
-	iftrue .Rematch
+	iffalse .Rematch
 	checkevent EVENT_GOT_TM08_BULK_UP
 	iftrue .AlreadyGotTM
 	setevent EVENT_BEAT_BLACKBELT_YOSHI
@@ -151,6 +152,7 @@ AfterChigusaRematch:
 	writetext BeatenChigusaAgainText
 	waitbutton
 	closetext
+	setflag ENGINE_BEAT_CHIGUSA
 	end
 
 CianwoodGymActivateRockets:

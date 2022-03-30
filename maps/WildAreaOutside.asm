@@ -160,7 +160,7 @@ RivalWalksUpRight:
 	iftrue .Female2
 	showemote EMOTE_SHOCK, PLAYER, 15
 	turnobject, PLAYER, DOWN
-	moveobject WILDAREAOUTSIDE_RIVAL, 8, 12
+	moveobject WILDAREAOUTSIDE_RIVAL, 9, 12
 	appear WILDAREAOUTSIDE_RIVAL
 	playmusic MUSIC_DAHLIA_ENCOUNTER
 	applymovement WILDAREAOUTSIDE_RIVAL, RivalMovesUp
@@ -225,7 +225,7 @@ RivalWalksUpRight:
 
 .Female2:
 	turnobject, PLAYER, DOWN
-	moveobject WILDAREAOUTSIDE_RIVAL, 8, 12
+	moveobject WILDAREAOUTSIDE_RIVAL, 9, 12
 	appear WILDAREAOUTSIDE_RIVAL
 	showemote EMOTE_SHOCK, PLAYER, 15
 	playmusic MUSIC_RIVAL_ENCOUNTER
@@ -424,6 +424,6 @@ WildAreaOutside_MapEvents:
 	bg_event  8,  8, BGEVENT_READ, WildAreaOutsideSign
 
 	db 3 ; object events
-	object_event 11, 12, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_WILD_AREA_OUTSIDE_RIVAL1
+	object_event 10, 12, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_WILD_AREA_OUTSIDE_RIVAL1
 	object_event  4, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildAreaOutsideOldManScript, -1
 	object_event 13, 11, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildAreaOutsideTwinScript, -1

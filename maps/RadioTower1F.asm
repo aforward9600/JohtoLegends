@@ -60,15 +60,7 @@ ContinueWithDirector:
 	waitbutton
 	closetext
 	opentext
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .DracoCanWeReally
 	writetext CanWeReallyText1
-	waitbutton
-	closetext
-	sjump YesYesOfCourse
-
-.DracoCanWeReally:
-	writetext CanWeReallyText2
 	waitbutton
 	closetext
 	sjump YesYesOfCourse
@@ -119,21 +111,8 @@ TalkToMrPokemon:
 	closetext
 	turnobject RADIOTOWER1F_RIVAL2, RIGHT
 	turnobject PLAYER, LEFT
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .DracoSeeYa
 	opentext
 	writetext DahliaSeeYaText
-	waitbutton
-	closetext
-	applymovement RADIOTOWER1F_RIVAL2, RadioTowerRivalLeavesMovement
-	disappear RADIOTOWER1F_RIVAL2
-	playsound SFX_EXIT_BUILDING
-	setevent EVENT_GOLDENROD_TOWER_RIVAL_2
-	sjump SherlesAppearsGoldenrodTower
-
-.DracoSeeYa:
-	opentext
-	writetext DracoSeeYaText
 	waitbutton
 	closetext
 	applymovement RADIOTOWER1F_RIVAL2, RadioTowerRivalLeavesMovement
@@ -493,12 +472,12 @@ HaveAWingText:
 	done
 
 CanWeReallyText1:
-	text "Dahlia: Can we"
+	text "<RIVAL>: Can we"
 	line "really?!"
 	done
 
 CanWeReallyText2:
-	text "Draco: Can we"
+	text "<RIVAL>: Can we"
 	line "really?!"
 	done
 
@@ -518,14 +497,14 @@ YesYesOfCourseText:
 	done
 
 ItsSoPrettyText:
-	text "Dahlia: They're so"
+	text "<RIVAL>: They're so"
 	line "pretty, but what"
 	cont "kind of #mon"
 	cont "are they from?"
 	done
 
 ItsCoolText:
-	text "Draco: They're so"
+	text "<RIVAL>: They're so"
 	line "cool, but what"
 	cont "kind of #mon"
 	cont "are they from?"
@@ -561,7 +540,7 @@ GoTalkToMrPokemonText:
 	done
 
 DahliaSeeYaText:
-	text "Dahlia: Sounds"
+	text "<RIVAL>: Sounds"
 	line "like a plan."
 
 	para "You go on ahead,"
@@ -576,7 +555,7 @@ DahliaSeeYaText:
 	done
 
 DracoSeeYaText:
-	text "Draco: Sounds"
+	text "<RIVAL>: Sounds"
 	line "like a plan."
 
 	para "You go on ahead,"

@@ -23,14 +23,12 @@ GoldenrodGym_MapScripts:
 GoldenrodGymMiltonScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_HIVEBADGE
-	iftrue .MiltonBattle2
 	checkevent EVENT_BEAT_MILTON
 	iftrue .FightDone
 	writetext MiltonText_Howdy
 	waitbutton
 	closetext
-	winlosstext MiltonText_HooWee, 0
+	winlosstext MiltonText_HooWee, MiltonText_Yeehaw
 	loadtrainer MILTON, MILTON1
 	startbattle
 	reloadmapafterbattle
@@ -46,7 +44,10 @@ GoldenrodGymMiltonScript:
 	waitsfx
 	setflag ENGINE_PLAINBADGE
 	readvar VAR_BADGES
+	setflag ENGINE_BEAT_MILTON
 .FightDone:
+	checkflag ENGINE_BEAT_MILTON
+	iffalse .RematchMilton
 	checkevent EVENT_GOT_TM45_ATTRACT
 	iftrue .GotAttract
 	setevent EVENT_BEAT_BREEDER_SARAH
@@ -79,21 +80,68 @@ GoldenrodGymMiltonScript:
 	turnobject GOLDENRODGYM_MILTON, DOWN
 	end
 
-.MiltonBattle2:
-	checkevent EVENT_BEAT_MILTON_2
-	iftrue .FightDone
+.RematchMilton:
+	readvar VAR_BADGES
+	ifequal 5, .MiltonBattle1
+	ifequal 6, .MiltonBattle2
+	ifequal 7, .MiltonBattle3
+	ifequal 8, .MiltonBattle4
+	end
+
+.MiltonBattle1:
+	checkevent EVENT_GOLDENROD_GYM_RIVAL_1
+	iffalse .ToughKid
 	writetext MiltonReadyForARematchText
 	waitbutton
 	closetext
-	winlosstext MiltonText_HooWee, 0
+	winlosstext MiltonText_HooWee, MiltonText_Yeehaw
+	loadtrainer MILTON, MILTON1
+	startbattle
+	reloadmapafterbattle
+	sjump AfterMiltonRematch
+
+.MiltonBattle2:
+	checkevent EVENT_GOLDENROD_GYM_RIVAL_1
+	iffalse .ToughKid
+	writetext MiltonReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext MiltonText_HooWee, MiltonText_Yeehaw
 	loadtrainer MILTON, MILTON2
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_MILTON_2
-	opentext
-	writetext BeatenMiltonAgainText
+	sjump AfterMiltonRematch
+
+.MiltonBattle3:
+	checkevent EVENT_GOLDENROD_GYM_RIVAL_1
+	iffalse .ToughKid
+	writetext MiltonReadyForARematchText
 	waitbutton
 	closetext
+	winlosstext MiltonText_HooWee, MiltonText_Yeehaw
+	loadtrainer MILTON, MILTON3
+	startbattle
+	reloadmapafterbattle
+	sjump AfterMiltonRematch
+
+.MiltonBattle4:
+	checkevent EVENT_GOLDENROD_GYM_RIVAL_1
+	iffalse .ToughKid
+	writetext MiltonReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext MiltonText_HooWee, MiltonText_Yeehaw
+	loadtrainer MILTON, MILTON4
+	startbattle
+	reloadmapafterbattle
+	sjump AfterMiltonRematch
+
+AfterMiltonRematch:
+	opentext
+	writetext MiltonText_BeatenAgain
+	waitbutton
+	closetext
+	setflag ENGINE_BEAT_MILTON
 	end
 
 GoldenrodRockets:
@@ -209,6 +257,7 @@ TowerInvaded1:
 	playsound SFX_EXIT_BUILDING
 	special RestartMapMusic
 	setscene SCENE_DEFAULT
+	setevent EVENT_WILD_AREA_5_RIVAL1
 	end
 
 TowerInvaded2:
@@ -235,6 +284,7 @@ TowerInvaded2:
 	playsound SFX_EXIT_BUILDING
 	special RestartMapMusic
 	setscene SCENE_DEFAULT
+	setevent EVENT_WILD_AREA_5_RIVAL1
 	end
 
 GoldenrodGymRivalMovement1:
@@ -286,6 +336,20 @@ MiltonText_HooWee:
 	line "fine battling!"
 	done
 
+MiltonText_Yeehaw:
+	text "Yee-haw!"
+
+	para "How's that fer a"
+	line "battle?"
+	done
+
+MiltonText_BeatenAgain:
+	text "Well, dang!"
+
+	para "Ya beat me"
+	line "again!"
+	done
+
 BeatenMiltonText:
 	text "I am impressed! Ya"
 	line "handled that"
@@ -304,11 +368,10 @@ PlayerReceivedPlainBadgeText:
 	done
 
 MiltonText_PlainBadgeSpeech:
-	text "All #mon up to"
-	line "Lv 60 will listen"
-	cont "to ya. Here, take"
-
-	para "This TM as well!"
+	text "Well done there,"
+	line "pardner! Here,"
+	cont "take this TM as"
+	cont "well!"
 	done
 
 MiltonAttractText:

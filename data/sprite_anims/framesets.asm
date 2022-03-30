@@ -72,8 +72,8 @@ SpriteAnimFrameData:
 	endanim
 
 .Frameset_PartyMon:
-	frame SPRITE_ANIM_OAMSET_RED_WALK_1,  8
-	frame SPRITE_ANIM_OAMSET_RED_WALK_2,  8
+	frame SPRITE_ANIM_OAMSET_PARTY_MON_1,  8
+	frame SPRITE_ANIM_OAMSET_PARTY_MON_2,  8
 	dorestart
 
 .Frameset_PartyMonWithMail:
@@ -87,8 +87,8 @@ SpriteAnimFrameData:
 	dorestart
 
 .Frameset_PartyMonFast:
-	frame SPRITE_ANIM_OAMSET_RED_WALK_1,  4
-	frame SPRITE_ANIM_OAMSET_RED_WALK_2,  4
+	frame SPRITE_ANIM_OAMSET_PARTY_MON_1,  4
+	frame SPRITE_ANIM_OAMSET_PARTY_MON_2,  4
 	dorestart
 
 .Frameset_PartyMonWithMailFast:

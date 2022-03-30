@@ -30,6 +30,8 @@ CHRIS EQU __enum__
 	trainerclass MILTON ; 2
 	const MILTON1
 	const MILTON2
+	const MILTON3
+	const MILTON4
 
 	trainerclass KURT ; 3
 	const KURT1

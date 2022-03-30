@@ -979,7 +979,7 @@ HideoutGrannyText:
 	done
 
 GotRainbowWingText:
-	text "Dahlia's Rainbow"
+	text "<RIVAL>'s Rainbow"
 	line "Wing was in it as"
 	cont "well."
 
@@ -988,7 +988,7 @@ GotRainbowWingText:
 	done
 
 GotRainbowWingFemaleText:
-	text "Draco's Rainbow"
+	text "<RIVAL>'s Rainbow"
 	line "Wing was in it as"
 	cont "well."
 
@@ -997,7 +997,7 @@ GotRainbowWingFemaleText:
 	done
 
 GotSilverWingText:
-	text "Dahlia's Silver"
+	text "<RIVAL>'s Silver"
 	line "Wing was in it as"
 	cont "well."
 
@@ -1006,7 +1006,7 @@ GotSilverWingText:
 	done
 
 GotSilverWingFemaleText:
-	text "Draco's Silver"
+	text "<RIVAL>'s Silver"
 	line "Wing was in it as"
 	cont "well."
 

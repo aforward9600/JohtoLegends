@@ -363,15 +363,12 @@ EcruteakTinTowerEntranceSageText_PleaseDoGoOn:
 	done
 
 EcruteakTinTowerEntranceSageText_HeardClearBell:
-	text "That bell's chime"
-	line "is indicative of"
-	cont "the bearer's soul."
-
-	para "You…"
+	text "You…"
 
 	para "You may be able to"
 	line "make it through"
-	cont "Bell Tower."
+	cont "Bell Tower"
+	cont "someday."
 
 	para "Please, do go on."
 	done

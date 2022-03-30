@@ -91,6 +91,7 @@ INCLUDE "gfx/tilesets.asm"
 SECTION "Roofs", ROMX
 
 INCLUDE "engine/tilesets/mapgroup_roofs.asm"
+INCLUDE "engine/events/celebi.asm"
 
 
 SECTION "Clock Reset", ROMX
@@ -162,6 +163,11 @@ SECTION "Battle Core 2", ROMX
 INCLUDE "data/battle/effect_command_pointers.asm"
 
 
+SECTION "Battle Core 3", ROMX
+
+INCLUDE "engine/battle/effect_command_files.asm"
+
+
 SECTION "bank10", ROMX
 
 INCLUDE "data/moves/moves.asm"
@@ -186,7 +192,6 @@ SECTION "Crystal Features 1", ROMX
 INCLUDE "engine/menus/init_gender.asm"
 INCLUDE "engine/items/pack_kris.asm"
 INCLUDE "engine/gfx/crystal_layouts.asm"
-INCLUDE "engine/events/celebi.asm"
 
 
 SECTION "Tileset Palettes", ROMX
@@ -717,8 +722,6 @@ INCLUDE "engine/16/table_functions.asm"
 
 ; own section
 INCLUDE "data/trainers/parties.asm"
-
-INCLUDE "engine/battle/effect_command_files.asm"
 
 SECTION "New Base Stats", ROMX
 

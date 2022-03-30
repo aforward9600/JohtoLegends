@@ -447,7 +447,7 @@ HideoutB3FArianaBeforeText:
 	done
 
 HideoutB3FArianaDahliaText:
-	text "Dahlia: You!"
+	text "<RIVAL>: You!"
 
 	para "You're the one"
 	line "that left us to"
@@ -464,7 +464,7 @@ HideoutB3FArianaDahliaText:
 	cont "be a piece of"
 	cont "cake!"
 
-	para "Dahlia: What was"
+	para "<RIVAL>: What was"
 	line "that?!"
 
 	para "Go on, <PLAYER>!"
@@ -472,7 +472,7 @@ HideoutB3FArianaDahliaText:
 	done
 
 HideoutB3FArianaDracoText:
-	text "Draco: You!"
+	text "<RIVAL>: You!"
 
 	para "You're the one"
 	line "that left us to"
@@ -489,7 +489,7 @@ HideoutB3FArianaDracoText:
 	cont "be a piece of"
 	cont "cake!"
 
-	para "Draco: Think you"
+	para "<RIVAL>: Think you"
 	line "are funny, do ya?"
 
 	para "Go on, <PLAYER>!"
@@ -631,7 +631,7 @@ HideoutArianaDahliaAfterText:
 	line "out the password,"
 	cont "that only I know!"
 
-	para "Dahlia: You better"
+	para "<RIVAL>: You better"
 	line "tell us, you"
 	cont "witch!"
 
@@ -654,7 +654,7 @@ HideoutArianaDracoAfterText:
 	line "out the password,"
 	cont "that only I know!"
 
-	para "Draco: You better"
+	para "<RIVAL>: You better"
 	line "tell us, you"
 	cont "witch!"
 

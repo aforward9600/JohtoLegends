@@ -2,8 +2,15 @@ icon_pals: MACRO
 	dn PAL_ICON_\1, PAL_ICON_\2
 ENDM
 
+	icon_pals RED, RED
+	icon_pals RED, BLUE ; EGG
+	icon_pals RED, RED ; NULL
+	icon_pals RED, RED ; NULL
+
 MonMenuIconPals:
+	table_width 1, MonMenuIconPals
 	;		normal, shiny
+	icon_pals RED,    RED    ; NULL
 	icon_pals TEAL,   GREEN  ; BULBASAUR
 	icon_pals TEAL,   GREEN  ; IVYSAUR
 	icon_pals TEAL,   GREEN  ; VENUSAUR
@@ -94,7 +101,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  GRAY   ; MAGNEMITE
 	icon_pals BROWN,  GRAY   ; MAGNETON
 	icon_pals BROWN,  GRAY   ; MAGNEZONE
-	icon_pals BROWN,  GRAY   ; FARFETCH_D
+	icon_pals BROWN,  BLUE   ; FARFETCH_D
 	icon_pals BROWN,  PINK   ; DODUO
 	icon_pals BROWN,  PINK   ; DODRIO
 	icon_pals BLUE,   GRAY   ; SEEL
@@ -273,6 +280,30 @@ MonMenuIconPals:
 	icon_pals BROWN,  GREEN  ; STANTLER
 	icon_pals BROWN,  GREEN  ; SMEARGLE
 	icon_pals PINK,   BLUE   ; MILTANK
+	icon_pals GREEN,  TEAL   ; BUDEW
+	icon_pals GREEN,  PURPLE ; ROSELIA
+	icon_pals GREEN,  PURPLE ; ROSERADE
+	icon_pals GREEN,  BLUE   ; ELECTRIKE
+	icon_pals BLUE,   GRAY   ; MANECTRIC
+	icon_pals BLUE,   TEAL   ; CROAGUNK
+	icon_pals BLUE,   TEAL   ; TOXICROAK
+	icon_pals RED,    PINK   ; DUSKULL
+	icon_pals RED,    PINK   ; DUSCLOPS
+	icon_pals RED,    BLUE   ; DUSKNOIR
+	icon_pals RED,    BLUE   ; SNORUNT
+	icon_pals BLUE,   RED    ; GLALIE
+	icon_pals RED,    PURPLE ; FROSLASS
+	icon_pals BLUE,   GREEN  ; BRONZOR
+	icon_pals BLUE,   GREEN  ; BRONZONG
+	icon_pals GREEN,  RED    ; CACNEA
+	icon_pals GREEN,  RED    ; CACTURNE
+	icon_pals GREEN,  BLUE   ; RALTS
+	icon_pals GREEN,  BLUE   ; KIRLIA
+	icon_pals GREEN,  BLUE   ; GARDEVOIR
+	icon_pals GREEN,  BLUE   ; GALLADE
+	icon_pals GRAY,   TEAL   ; ARON
+	icon_pals GRAY,   TEAL   ; LAIRON
+	icon_pals GRAY,   TEAL   ; AGGRON
 	icon_pals RED,    PINK   ; RAIKOU
 	icon_pals RED,    BROWN  ; ENTEI
 	icon_pals BLUE,   TEAL   ; SUICUNE

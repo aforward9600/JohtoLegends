@@ -1652,22 +1652,22 @@ _DaycareDummyText::
 	done
 
 _DayCareManIntroText::
-	text "I'm the DAY-CARE"
-	line "MAN. Want me to"
+	text "I'm the Day-Care"
+	line "Man. Want me to"
 	cont "raise a #mon?"
 	done
 
 _DayCareManOddEggText::
-	text "I'm the DAY-CARE"
-	line "MAN. Do you know"
-	cont "about EGGS?"
+	text "I'm the Day-Care"
+	line "Man. Do you know"
+	cont "about Eggs?"
 
 	para "I was raising"
 	line "#mon with my"
 	cont "wife, you see."
 
 	para "We were shocked to"
-	line "find an EGG!"
+	line "find an Egg!"
 
 	para "How incredible is"
 	line "that?"
@@ -1677,24 +1677,24 @@ _DayCareManOddEggText::
 	done
 
 _DayCareLadyIntroText::
-	text "I'm the DAY-CARE"
-	line "LADY."
+	text "I'm the Day-Care"
+	line "Lady."
 
 	para "Should I raise a"
 	line "#mon for you?"
 	done
 
 _DayCareLadyOddEggText::
-	text "I'm the DAY-CARE"
-	line "LADY. Do you know"
-	cont "about EGGS?"
+	text "I'm the Day-Care"
+	line "Lady. Do you know"
+	cont "about Eggs?"
 
 	para "My husband and I"
 	line "were raising some"
 	cont "#mon, you see."
 
 	para "We were shocked to"
-	line "find an EGG!"
+	line "find an Egg!"
 
 	para "How incredible"
 	line "could that be?"
@@ -1715,11 +1715,11 @@ _OnlyOneMonText::
 
 _CantRaiseEggText::
 	text "Sorry, but I can't"
-	line "accept an EGG."
+	line "accept an Egg."
 	prompt
 
 _RemoveMailText::
-	text "Remove MAIL before"
+	text "Remove Mail before"
 	line "you come see me."
 	prompt
 
@@ -1824,7 +1824,7 @@ _FoundAnEggText::
 	line "we surprised!"
 
 	para "Your #mon had"
-	line "an EGG!"
+	line "an Egg!"
 
 	para "We don't know how"
 	line "it got there, but"
@@ -1835,7 +1835,7 @@ _FoundAnEggText::
 
 _ReceivedEggText::
 	text "<PLAYER> received"
-	line "the EGG!"
+	line "the Egg!"
 	done
 
 _TakeGoodCareOfEggText::

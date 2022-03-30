@@ -343,7 +343,7 @@ HmWhatIsThatText:
 	done
 
 DahliaMrPokemonText:
-	text "Dahlia: Hey"
+	text "<RIVAL>: Hey"
 	line "<PLAYER>!"
 
 	para "You found Mr."
@@ -363,7 +363,7 @@ DahliaMrPokemonText:
 	done
 
 DracoMrPokemonText:
-	text "Draco: Hey"
+	text "<RIVAL>: Hey"
 	line "<PLAYER>!"
 
 	para "You found Mr."
@@ -436,7 +436,7 @@ MrPokemonLegendaryText:
 	done
 
 DayCareDahliaFarewellText:
-	text "Dahlia: So, Bell"
+	text "<RIVAL>: So, Bell"
 	line "Tower, huh?"
 
 	para "I'm off then!"
@@ -446,7 +446,7 @@ DayCareDahliaFarewellText:
 	done
 
 DayCareDracoFarewellText:
-	text "Draco: So, Bell"
+	text "<RIVAL>: So, Bell"
 	line "Tower, huh?"
 
 	para "I'm off then!"
