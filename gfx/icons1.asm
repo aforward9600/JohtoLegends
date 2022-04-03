@@ -1,4 +1,5 @@
 SECTION "Mon Icons 1", ROMX
+
 Icons1:
 	dw EggIcon
 	dw BulbasaurIcon

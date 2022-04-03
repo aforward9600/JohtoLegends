@@ -381,7 +381,10 @@ GetSpeciesIcon:
 	ret
 
 FlyFunction_GetMonIcon:
+	push de
 	ld a, PIDGEOT
+	call ReadMonMenuIcon
+	pop de
 	ld a, e
 	call GetIcon_a
 	ret

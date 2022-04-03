@@ -60,7 +60,7 @@ Aron and Lairon sprites: Nukkiie
 
 Ein trainer sprite: Sindorman
 
-Minisprites 1-251:
+Minisprites 1-251 and Gen 4:
 Chamber
 Solo993
 Blue Emerald
