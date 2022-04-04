@@ -563,6 +563,8 @@ FillMoves:
 	and a
 	jp z, .done
 	ld b, a
+	cp LEARN_EVO_MOVE
+	jr z, .CheckMove
 	ld a, [wCurPartyLevel]
 	cp b
 	jp c, .done
