@@ -7,7 +7,9 @@ Fake Out
 
 KDLPro for the status appearance change.
 
-Dark Zeta and Celadonk for Evolution moves for Pokecrystal16.
+Dark Zeta, Celadonk and cardboardbox for Evolution moves for Pokecrystal16.
+
+Rangi, DGamers-64 and Vendily for the fourth stat page.
 
 Mountvesuvius for Strength Sap and HM Key Items.
 

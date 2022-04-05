@@ -9,10 +9,33 @@ PokeSeersHouse_MapScripts:
 SeerScript:
 	faceplayer
 	opentext
-	special PokeSeer
+	writetext ShallITellYouText
 	waitbutton
 	closetext
 	end
+
+ShallITellYouText:
+	text "I see all."
+	line "I know all…"
+
+	para "Certainly, I know"
+	line "of your #mon!"
+
+	para "…What's that?"
+
+	para "You don't need me"
+	line "to tell you about"
+	cont "your #mon?"
+
+	para "…A fourth stats"
+	line "page?"
+
+	para "What are you even"
+	line "talking about?!"
+
+	para "Tch, kids these"
+	line "days…"
+	done
 
 PokeSeersHouse_MapEvents:
 	db 0, 0 ; filler
