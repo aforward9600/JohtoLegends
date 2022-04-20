@@ -86,3 +86,4 @@ TrainerGroups:
 	dba DepressedDahliaGroup
 	dba DepressedDracoGroup
 	dba EinGroup
+	dba DragonTamerFGroup

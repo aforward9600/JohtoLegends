@@ -2702,6 +2702,7 @@ TownMapMon:
 	add hl, de
 	ld a, [hl]
 	ld [wTempIconSpecies], a
+	ld b, a
 ; Get FlyMon icon
 	ld e, $08 ; starting tile in VRAM
 	farcall FlyFunction_GetMonIcon

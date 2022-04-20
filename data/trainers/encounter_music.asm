@@ -87,3 +87,4 @@ TrainerEncounterMusic::
 	db MUSIC_RIVAL_ENCOUNTER       ; depresseddahlia
 	db MUSIC_RIVAL_ENCOUNTER       ; depresseddraco
 	db MUSIC_ROCKET_ENCOUNTER      ; ein
+	db MUSIC_BEAUTY_ENCOUNTER      ; dragontamerf

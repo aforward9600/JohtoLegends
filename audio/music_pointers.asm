@@ -139,3 +139,4 @@ Music:
 	dba Music_DahliaAfterBattle
 	dba Music_MadameBoss
 	dba Music_CinnabarIslandGBS
+	dba Music_FriendlyShop

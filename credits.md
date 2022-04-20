@@ -15,6 +15,10 @@ Mountvesuvius for Strength Sap and HM Key Items.
 
 Idain, Rangi, WasabiRaptor for EVS.
 
+Rangi and Idain for Evening time.
+
+Idain for the Hidden Power Guru.
+
 Rangi and aaaaaa123456789 for items from smashing rocks
 
 Dark Zeta, PiaCarrot, and cardboardbox for new evolution moves and fixing the glitch
@@ -62,6 +66,10 @@ Aron and Lairon sprites: Nukkiie
 
 Ein trainer sprite: Sindorman
 
+Dragon Tamer Male sprite: JustinNuggets
+
+Dragon Tamer Female base sprite: Rangi
+
 Minisprites 1-251 and Gen 4:
 Chamber
 Solo993
@@ -70,6 +78,8 @@ Lake
 Neslug
 Pikachu25
 Ryta
+Koolboyman
+Prism Team
 
 Gen 3 and 6 minisprites:
 EeVeeEe1999
@@ -105,7 +115,7 @@ WildAreaOutside/JohtoSafariZoneGate - Mmmmmmmmmmmmmmmmm
 WildArea/JohtoSafariZone - Mmmmmmmmmmmmmmmmm
 Route 47 - Mmmmmmmmmmmmmmmmm
 Cinnabar Mansion - Dannye
-NightTime coding and songs: Tritehexagon
+NightTime coding and songs, Friendly Shop: Tritehexagon
 Lugia Battle: Pigu
 Kanto Legend Battle XY: GACT and Pigu
 Ho-Oh Battle: Pigu

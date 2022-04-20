@@ -16,4 +16,10 @@ SunnyDayMoves:
 	dw FLARE_BLITZ
 	dw FLAME_BURST
 	dw SOLAR_BLADE
+	dw INFERNO
+	dw FLAME_CHARGE
+	dw BLAZE_KICK
+	dw HEAT_WAVE
+	dw LAVA_PLUME
+	dw BLAST_BURN
 	dw -1 ; end

@@ -145,6 +145,7 @@ INCLUDE "engine/pokemon/print_move_description.asm"
 INCLUDE "data/moves/descriptions.asm"
 INCLUDE "engine/events/pokerus/pokerus.asm"
 INCLUDE "engine/battle/start_battle.asm"
+INCLUDE "engine/events/hidden_power_guru.asm"
 
 SECTION "Enemy Trainers", ROMX
 

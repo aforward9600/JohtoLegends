@@ -1742,6 +1742,7 @@ HiddenPower:
 	doturn
 	critical
 	hiddenpower
+	damagestats
 	damagecalc
 	stab
 	damagevariation

@@ -854,3 +854,7 @@ LaironBackpic:       INCBIN "gfx/pokemon/lairon/back.2bpp.lz"
 AggronFrontpic:      INCBIN "gfx/pokemon/aggron/front.animated.2bpp.lz"
 AggronBackpic:       INCBIN "gfx/pokemon/aggron/back.2bpp.lz"
 EinPic:              INCBIN "gfx/trainers/ein.2bpp.lz"
+
+SECTION "Pics 29", ROMX
+
+DragonTamerFPic:	 INCBIN "gfx/trainers/dragon_tamer_f.2bpp.lz"

@@ -551,8 +551,6 @@ EnemyUsedFullRestore:
 	call AI_HealStatus
 	ld a, FULL_RESTORE
 	ld [wCurEnemyItem], a
-	xor a
-	ld [wEnemyConfuseCount], a
 
 FullRestoreContinue:
 	ld de, wCurHPAnimOldHP

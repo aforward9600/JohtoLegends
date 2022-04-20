@@ -181,3 +181,4 @@ SECTION "Newest Songs", ROMX
 INCLUDE "audio/music/madameboss.asm"
 INCLUDE "audio/music/cinnabarisland.asm"
 INCLUDE "audio/music/marniebattle.asm"
+INCLUDE "audio/music/friendlyshop.asm"

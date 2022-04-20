@@ -182,3 +182,4 @@ SpecialsPointers::
 	add_special InitialClearDSTFlag
 	add_special DummySpecial_c224 ; $a8
 	add_special NameRivalFemale
+	add_special HiddenPowerGuru

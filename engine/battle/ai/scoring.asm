@@ -3109,6 +3109,8 @@ AI_Status:
 	jr z, .typeimmunity
 	cp EFFECT_PARALYZE
 	jr z, .typeimmunity
+	cp EFFECT_BURN
+	jr z, .burnimmunity
 
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
@@ -3122,6 +3124,14 @@ AI_Status:
 	jr z, .immune
 	ld a, [wBattleMonType2]
 	cp POISON
+	jr z, .immune
+
+.burnimmunity
+	ld a, [wBattleMonType1]
+	cp FIRE
+	jr z, .immune
+	ld a, [wBattleMonType2]
+	cp FIRE
 	jr z, .immune
 
 .typeimmunity

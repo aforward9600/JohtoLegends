@@ -86,3 +86,4 @@ TrainerPicPointers::
 	dba DepressedDahliaPic
 	dba DepressedDracoPic
 	dba EinPic
+	dba DragonTamerFPic

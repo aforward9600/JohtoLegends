@@ -16,11 +16,14 @@ INCLUDE "engine/battle/move_effects/pain_split.asm"
 INCLUDE "engine/battle/move_effects/snore.asm"
 INCLUDE "engine/battle/move_effects/lock_on.asm"
 INCLUDE "engine/battle/move_effects/false_swipe.asm"
-
-SECTION "Effect Commands Extra", ROMX
 INCLUDE "engine/battle/move_effects/sleep_talk.asm"
 INCLUDE "engine/battle/move_effects/destiny_bond.asm"
-INCLUDE "engine/battle/move_effects/spite.asm"
 INCLUDE "engine/battle/move_effects/heal_bell.asm"
 INCLUDE "engine/battle/move_effects/sketch.asm"
+INCLUDE "engine/battle/move_effects/spite.asm"
+
+SECTION "Effect Commands Extra", ROMX
+INCLUDE "engine/battle/effect_commands_extra.asm"
+
 INCLUDE "engine/battle/move_effects/knock_off.asm"
+INCLUDE "engine/battle/move_effects/hex.asm"

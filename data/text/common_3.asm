@@ -1640,3 +1640,48 @@ _WarnVBAText::
 	text "Please use a more"
 	line "accurate emulator."
 	done
+
+_HiddenPowerGuyQuestion::
+	text "Would you like to"
+	line "know what Hidden"
+	cont "Power your"
+	cont "#mon has?"
+	done
+
+_HiddenPowerGuyWhichMon::
+	text "Which #mon?"
+	done
+
+_HiddenPowerGuyEgg::
+	text "That's an Egg…"
+	done
+
+_HiddenPowerGuyCancel::
+	text "…Fine then…"
+	done
+
+_HiddenPowerGuyNoMon::
+	text "How can I tell"
+	line "what Hidden Power"
+	cont "your #mon has,"
+
+	para "if you have no"
+	line "#mon?"
+	done
+
+_HiddenPowerGuyAnswer::
+	text "…Hm, yes…"
+
+	para "Its Hidden Power"
+	line "is @"
+	text_ram wStringBuffer1
+	text "-type!"
+	done
+
+_TurnedOffExpShareText::
+	text "Exp.Share is off."
+	done
+
+_TurnedOnExpShareText::
+	text "Exp.Share is on."
+	done

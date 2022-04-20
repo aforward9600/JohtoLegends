@@ -14,16 +14,17 @@ HiddenPowerGuy:
 	writetext HiddenPowerGuyText1
 	buttonsound
 	verbosegiveitem TM_HIDDEN_POWER
-	iffalse .Done
 	setevent EVENT_GOT_TM10_HIDDEN_POWER
 	writetext HiddenPowerGuyText2
 	waitbutton
-	closetext
-	end
+	sjump .CheckHiddenPower
 .AlreadyGotItem:
 	writetext HiddenPowerGuyText3
 	waitbutton
+.CheckHiddenPower:
+	special HiddenPowerGuru
 .Done:
+	waitbutton
 	closetext
 	end
 
@@ -42,23 +43,23 @@ HiddenPowerGuyText1:
 
 	para "Let me share my"
 	line "power with your"
+	cont "#mon."
 
-	para "#MON."
-	line "Take this, child."
+	para "Take this, child."
 	done
 
 HiddenPowerGuyText2:
 	text "Do you see it? It"
-	line "is HIDDEN POWER!"
+	line "is Hidden Power!"
 
 	para "It draws out the"
-	line "power of #MON"
+	line "power of #mon"
 	cont "for attacking."
 
 	para "Remember this: its"
-	line "type and power de-"
-	cont "pend on the #-"
-	cont "MON using it."
+	line "type depends on"
+	cont "the #mon using"
+	cont "it."
 	done
 
 HiddenPowerGuyText3:

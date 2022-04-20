@@ -807,10 +807,10 @@ StatsScreen_LoadGFX:
 	call PlaceString
 	ld a, [wTempMonCaughtTime]
 	and CAUGHT_TIME_MASK
-	ret z ; no time
 	rlca
 	rlca
 	dec a
+	maskbits NUM_DAYTIMES
 	ld hl, .times
 	call GetNthString
 	ld d, h
@@ -831,6 +831,7 @@ StatsScreen_LoadGFX:
 	db "Morning@"
 	db "Day@"
 	db "Night@"
+	db "Evening@"
 
 .placeCaughtLevel
 	; caught level

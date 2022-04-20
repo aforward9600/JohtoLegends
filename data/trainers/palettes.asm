@@ -91,6 +91,7 @@ INCBIN "gfx/trainers/ninja_f.gbcpal", middle_colors
 INCLUDE "gfx/trainers/kris.pal"
 INCLUDE "gfx/trainers/chris.pal"
 INCBIN "gfx/trainers/ein.gbcpal", middle_colors
+INCBIN "gfx/trainers/dragon_tamer_f.gbcpal", middle_colors
 
 KrisPalette:
 INCLUDE "gfx/player/kris.pal"

@@ -64,7 +64,7 @@ ItemEffects:
 	dw XItemEffect         ; X_SPECIAL
 	dw CoinCaseEffect      ; COIN_CASE
 	dw ItemfinderEffect    ; ITEMFINDER
-	dw NoEffect            ; EXP_SHARE
+	dw ExpShareEffect      ; EXP_SHARE
 	dw OldRodEffect        ; OLD_ROD
 	dw GoodRodEffect       ; GOOD_ROD
 	dw NoEffect            ; SILVER_LEAF
@@ -1003,6 +1003,7 @@ FastBallMultiplier:
 	ld a, BANK(FleeMons)
 	call GetFarByte
 	ld c, a
+	inc hl
 	ld a, BANK(FleeMons)
 	call GetFarByte
 	ld b, a
@@ -3055,3 +3056,21 @@ PidgeotCallEffect:
 	ld [wUsingHMItem], a
 	farcall FlyFunction
 	ret
+
+ExpShareEffect:
+	ld hl, wExpShareOn
+	ld a, [hl]
+	xor 1
+	ld [hl], a
+	ld hl, .turnedOffText
+	jr z, .gotText
+	ld hl, .turnedOnText
+.gotText:
+	call PrintText
+	jp WaitPressAorB_BlinkCursor
+.turnedOffText:
+	text_far _TurnedOffExpShareText
+	text_end
+.turnedOnText:
+	text_far _TurnedOnExpShareText
+	text_end

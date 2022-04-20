@@ -2216,17 +2216,17 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	ld a, [wBattleResult]
 	and BATTLERESULT_BITMASK
 	ld [wBattleResult], a ; WIN
-	call IsAnyMonHoldingExpShare
-	jr z, .skip_exp
-	ld hl, wEnemyMonBaseStats
-	ld b, wEnemyMonEnd - wEnemyMonBaseStats
-.loop
-	srl [hl]
-	inc hl
-	dec b
-	jr nz, .loop
-
-.skip_exp
+	;call IsAnyMonHoldingExpShare
+	;jr z, .skip_exp
+	;ld hl, wEnemyMonBaseStats
+	;ld b, wEnemyMonEnd - wEnemyMonBaseStats
+;.loop
+	; srl [hl]
+;	inc hl
+;	dec b
+;	jr nz, .loop
+;
+;.skip_exp
 	ld hl, wEnemyMonBaseStats
 	ld de, wBackupEnemyMonBaseStats
 	ld bc, wEnemyMonEnd - wEnemyMonBaseStats
@@ -2253,17 +2253,17 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	ret
 
 ApplyExperienceAfterEnemyCaught:
-	call IsAnyMonHoldingExpShare
-	jr z, .skip_exp
-	ld hl, wEnemyMonBaseStats
-	ld b, wEnemyMonEnd - wEnemyMonBaseStats
-.loop
-	srl [hl]
-	inc hl
-	dec b
-	jr nz, .loop
+;	call IsAnyMonHoldingExpShare
+;	jr z, .skip_exp
+;	ld hl, wEnemyMonBaseStats
+;	ld b, wEnemyMonEnd - wEnemyMonBaseStats
+;.loop
+;	srl [hl]
+;	inc hl
+;	dec b
+;	jr nz, .loop
 
-.skip_exp
+;.skip_exp
 	ld hl, wEnemyMonBaseStats
 	ld de, wBackupEnemyMonBaseStats
 	ld bc, wEnemyMonEnd - wEnemyMonBaseStats
@@ -3420,7 +3420,6 @@ IsThePlayerMonTypesEffectiveAgainstOTMon:
 	add hl, bc
 	ld de, wEnemyMonType
 	ld c, BASE_CATCH_RATE - BASE_TYPES
-	ld a, BANK(BaseData)
 	call FarCopyBytes
 	ld a, [wBattleMonType1]
 	ld [wPlayerMoveStruct + MOVE_TYPE], a

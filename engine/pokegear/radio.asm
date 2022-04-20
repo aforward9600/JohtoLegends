@@ -223,7 +223,7 @@ OaksPKMNTalk4:
 .loop2
 	call Random
 	maskbits NUM_DAYTIMES
-	cp DARKNESS_F
+	cp EVE_F
 	jr z, .loop2
 	; Point hl to the list of Pokémon for that time of day, skipping the map ID and the percentages
 	ld bc, 5

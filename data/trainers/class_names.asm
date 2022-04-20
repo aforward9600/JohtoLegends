@@ -84,3 +84,4 @@ TrainerClassNames::
 	db "Rival@"
 	db "Rival@"
 	db "Scientist@"
+	db "Dragon Tamer@"

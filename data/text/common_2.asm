@@ -580,7 +580,7 @@ UnknownText_0x1c0b65::
 	done
 
 Text_AnEGGCantHoldAnItem::
-	text "An EGG can't hold"
+	text "An Egg can't hold"
 	line "an item."
 	prompt
 
@@ -599,14 +599,14 @@ UnknownText_0x1c0bbb::
 	text_start
 	line "@"
 	text_ram wStringBuffer2
-	text "(S)?"
+	text "(s)?"
 	done
 
 UnknownText_0x1c0bd8::
 	text "Threw away"
 	line "@"
 	text_ram wStringBuffer2
-	text "(S)."
+	text "(s)."
 	prompt
 
 UnknownText_0x1c0bee::
@@ -757,7 +757,7 @@ UnknownText_0x1c0db8::
 UnknownText_0x1c0dba::
 	text_ram wStringBuffer1
 	text " came"
-	line "out of its EGG!@"
+	line "out of its Egg!@"
 	sound_caught_mon
 	text_waitbutton
 	text_end
@@ -845,13 +845,13 @@ MailAlreadyHoldingItemText::
 	prompt
 
 MailEggText::
-	text "An EGG can't hold"
-	line "any MAIL."
+	text "An Egg can't hold"
+	line "any Mail."
 	prompt
 
 MailMovedFromBoxText::
-	text "The MAIL was moved"
-	line "from the MAILBOX."
+	text "The Mail was moved"
+	line "from the Mailbox."
 	prompt
 
 UnknownText_0x1c0fb3::
@@ -1103,7 +1103,7 @@ _PlayersPCDepositItemsText::
 	text_start
 	line "@"
 	text_ram wStringBuffer2
-	text "(S)."
+	text "(s)."
 	prompt
 
 _PlayersPCNoRoomDepositText::
@@ -1355,7 +1355,7 @@ UnknownText_0x1c1a90::
 	text "Toss out how many"
 	line "@"
 	text_ram wStringBuffer2
-	text "(S)?"
+	text "(s)?"
 	done
 
 UnknownText_0x1c1aad::
@@ -1364,14 +1364,14 @@ UnknownText_0x1c1aad::
 	text_start
 	line "@"
 	text_ram wStringBuffer2
-	text "(S)?"
+	text "(s)?"
 	done
 
 UnknownText_0x1c1aca::
 	text "Discarded"
 	line "@"
 	text_ram wStringBuffer1
-	text "(S)."
+	text "(s)."
 	prompt
 
 UnknownText_0x1c1adf::

@@ -104,8 +104,22 @@ BlackthornYoungsterScript:
 	iftrue .GotPokemon
 	jumptextfaceplayer BlackthornYoungsterText
 
-.GotPokemon:
-	jumptextfaceplayer BlackthornYoungsterText2
+.GotPokemon
+	checkevent EVENT_RECEIVED_EXP_SHARE
+	iftrue .GotExpShare
+	faceplayer
+	opentext
+	writetext BlackthornYoungsterText2
+	buttonsound
+	verbosegiveitem EXP_SHARE
+	setevent EVENT_RECEIVED_EXP_SHARE
+	writetext ThatsExpShareText
+	waitbutton
+	closetext
+	end
+
+.GotExpShare
+	jumptextfaceplayer BlackthornYoungsterText3
 
 BlackthornLassScript:
 	checkevent EVENT_GOT_JOURNAL
@@ -327,6 +341,39 @@ BlackthornYoungsterText2:
 	line "#mon, huh?"
 
 	para "Man, I'm jealous."
+
+	para "I might as well"
+	line "give you this,"
+	cont "since I won't"
+	cont "need it now."
+	done
+
+ThatsExpShareText:
+	text "That's Exp.share!"
+
+	para "You can use it to"
+	line "give experience to"
+
+	para "a #mon that is"
+	line "not in battle!"
+
+	para "Just give it to a"
+	line "#mon, and watch"
+	cont "the experience"
+
+	para "roll in!"
+	done
+
+BlackthornYoungsterText3:
+	text "How's that Exp."
+	line "share treating ya?"
+
+	para "I'm going to want"
+	line "it back some day."
+
+	para "I'm going to be a"
+	line "trainer eventually"
+	cont "after all!"
 	done
 
 MeetSantosText:

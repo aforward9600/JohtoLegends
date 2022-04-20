@@ -1080,3 +1080,11 @@ loadmoveindex: MACRO
 	db loadmoveindex_command
 	dw \1
 ENDM
+
+	enum holdemote_command ; $75
+holdemote: MACRO
+	db showemote_command
+	db \1 ; bubble
+	db \2 ; object id
+	db \3 ; time
+ENDM

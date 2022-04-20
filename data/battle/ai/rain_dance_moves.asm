@@ -15,4 +15,6 @@ RainDanceMoves:
 	dw WATER_PULSE
 	dw AQUA_JET
 	dw AQUA_TAIL
+	dw MUDDY_WATER
+	dw HYDRO_CANNON
 	dw -1 ; end

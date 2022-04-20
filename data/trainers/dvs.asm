@@ -85,3 +85,4 @@ TrainerClassDVs:
 	dn 13, 13, 13, 13 ; DEPRESSED_DAHLIA
 	dn 13, 13, 13, 13 ; DEPRESSED_DRACO
 	dn 13,  8, 10,  8 ; EIN
+	dn  7, 12, 12,  8 ; DRAGON_TAMER_F

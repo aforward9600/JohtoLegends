@@ -50,7 +50,7 @@ ItemNames::
 	db "X Special@"
 	db "Coin Case@"
 	db "Itemfinder@"
-	db "Exp.share@"
+	db "Exp.Share@"
 	db "Old Rod@"
 	db "Good Rod@"
 	db "Silver Leaf@"

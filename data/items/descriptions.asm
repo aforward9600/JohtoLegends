@@ -445,7 +445,7 @@ XSpeedDesc:
 
 XSpecialDesc:
 	db   "Raises Special"
-	next "ATTACK. (1 BTL)@"
+	next "Attack. (1 BTL)@"
 
 CoinCaseDesc:
 	db   "Holds up to 9,999"
@@ -799,7 +799,7 @@ LevelBallDesc:
 
 LureBallDesc:
 	db   "A Ball for #mon"
-	next "hooked by a ROD.@"
+	next "hooked by a Rod.@"
 
 FastBallDesc:
 	db   "A Ball for catch-"

@@ -19,3 +19,4 @@ Emotes:
 	emote FishingRodGFX,  2, $fc
 	emote BoulderDustGFX, 2, $fe
 	emote GrassRustleGFX, 1, $fe
+	emote SilenceEmote,   4, $f8

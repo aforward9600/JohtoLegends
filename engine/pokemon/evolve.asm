@@ -133,16 +133,16 @@ EvolveAfterBattle_MasterLoop:
 	cp TR_MORNDAY
 	jr z, .happiness_daylight
 
-; TR_NITE
+; TR_EVENITE
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jp nz, .skip_evolution_species
+	jp c, .skip_evolution_species
 	jp .proceed
 
 .happiness_daylight
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jp z, .skip_evolution_species
+	jp nc, .skip_evolution_species
 	jr .proceed
 
 .trade

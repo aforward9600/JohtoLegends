@@ -123,3 +123,6 @@ OverworldSprites:
 	overworld_sprite EngineerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite NinjaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_SILVER
 	overworld_sprite EinSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite DragonTamerMGFX, 12, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite DragonTamerFGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite BossGFX, 12, STANDING_SPRITE, PAL_OW_RED

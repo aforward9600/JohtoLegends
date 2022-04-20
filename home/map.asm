@@ -2228,7 +2228,7 @@ LoadTileset::
 ChangeMusicIfNight::
 	ld a, [wTimeOfDay]
   	cp NITE_F
-	ret nz
+	ret c
 	ld hl, NightMusicTable
 .loop
     ld a, [hli]

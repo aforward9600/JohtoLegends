@@ -815,5 +815,8 @@ CHRIS EQU __enum__
 	trainerclass EIN ; 53
 	const EIN1
 
+	trainerclass DRAGON_TAMER_F
+	const DAWNA
+
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

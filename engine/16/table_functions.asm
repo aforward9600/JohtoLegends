@@ -30,7 +30,7 @@ PokemonTableGarbageCollection:
 	ld a, 1
 	ldh [rSVBK], a
 	___conversion_bitmap_check_structs wPartyMons, PARTYMON_STRUCT_LENGTH, PARTY_LENGTH, .set_bit
-	___conversion_bitmap_check_structs wBreedMon1, wBreedMon2 - wBreedMon1, 2, .set_bit
+	___conversion_bitmap_check_structs wBreedMon1Species, wBreedMon2 - wBreedMon1, 2, .set_bit
 	ld a, [wEggMonSpecies]
 	call .set_bit
 	; may or may not be valid, but marking them in use is free

@@ -6518,3 +6518,12 @@ EinGroup:
 	db -1 ; end
 
 	end_list_items
+
+DragonTamerFGroup:
+	next_list_item ; DRAGON_TAMER_F (1)
+	db "Dawna@", TRAINERTYPE_NORMAL
+	db 15
+	dw DRATINI
+	db -1 ; end
+
+	end_list_items
