@@ -77,16 +77,15 @@ OlivineLighthouse6F_MapScripts:
 	writetext DangSmokeBombsText
 	waitbutton
 	closetext
-	special FadeOutPalettes
 	pause 10
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	setevent EVENT_LIGHTHOUSE_MONSTER2
+	applymovement OLIVINELIGHTHOUSE6F_MONSTER2, RosaMovesMovement
 	appear OLIVINELIGHTHOUSE6F_MONSTER
+	setevent EVENT_LIGHTHOUSE_MONSTER2
+	disappear OLIVINELIGHTHOUSE6F_MONSTER2
 	clearevent EVENT_LIGHTHOUSE_MONSTER
+	pause 10
 	cry AMPHAROS
 	pause 15
-	special FadeInQuickly
 	opentext
 	writetext ThisIsRosaText
 	waitbutton
@@ -151,16 +150,15 @@ OlivineLighthouse6F_MapScripts:
 	writetext DangSmokeBombsText
 	waitbutton
 	closetext
-	special FadeOutPalettes
 	pause 10
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	setevent EVENT_LIGHTHOUSE_MONSTER2
+	applymovement OLIVINELIGHTHOUSE6F_MONSTER2, RosaMovesMovement
 	appear OLIVINELIGHTHOUSE6F_MONSTER
+	setevent EVENT_LIGHTHOUSE_MONSTER2
+	disappear OLIVINELIGHTHOUSE6F_MONSTER2
 	clearevent EVENT_LIGHTHOUSE_MONSTER
+	pause 10
 	cry AMPHAROS
 	pause 15
-	special FadeInQuickly
 	opentext
 	writetext ThisIsRosaText
 	waitbutton
@@ -708,9 +706,9 @@ OlivineLighthouse6F_MapEvents:
 
 	db 7 ; object events
 	object_event  9,  8, SPRITE_BYRON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_OLIVINE_LIGHTHOUSE_JASMINE
-	object_event  8,  9, SPRITE_AMPHAROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, EVENT_LIGHTHOUSE_MONSTER
+	object_event  8,  9, SPRITE_AMPHAROS_P, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, EVENT_LIGHTHOUSE_MONSTER
 	object_event  3,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OlivineLighthouse6FSuperPotion, EVENT_OLIVINE_LIGHTHOUSE_6F_SUPER_POTION
 	object_event  9, 10, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_LIGHTHOUSE_MIYAMOTO
 	object_event  9, 15, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LIGHTHOUSE6F_RIVAL1
 	object_event  9, 15, SPRITE_SHERLES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LIGHTHOUSE6F_SHERLES
-	object_event  8,  6, SPRITE_AMPHAROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, EVENT_LIGHTHOUSE_MONSTER2
+	object_event  8,  6, SPRITE_AMPHAROS_P, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, EVENT_LIGHTHOUSE_MONSTER2

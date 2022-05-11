@@ -50,3 +50,4 @@ SpriteMons:
 	dw SHUCKLE
 	dw SWINUB
 	dw SNEASEL
+	dw MILTANK

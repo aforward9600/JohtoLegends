@@ -35,7 +35,7 @@ TrainerSailorLarry:
 	end
 
 TrainerLassCynthia:
-	trainer TOURIST, CYNTHIA1, EVENT_BEAT_LASS_DANA, LassCynthiaSeenText, LassCynthiaBeatenText, 0, .Script
+	trainer CYNTHIA, CYNTHIA3, EVENT_BEAT_LASS_DANA, LassCynthiaSeenText, LassCynthiaBeatenText, 0, .Script
 
 .Script
 	endifjustbattled
@@ -47,7 +47,7 @@ TrainerLassCynthia:
 	writetext LassCynthiaLetsDoItText
 	waitbutton
 	winlosstext LassCynthiaBeatenText, 0
-	loadtrainer TOURIST, CYNTHIA1
+	loadtrainer CYNTHIA, CYNTHIA3
 	startbattle
 	reloadmapafterbattle
 	closetext

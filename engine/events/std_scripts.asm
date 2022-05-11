@@ -641,6 +641,7 @@ InitializeEventsScript:
 	setevent EVENT_MART_SHERLES
 	setevent EVENT_MART_KOGA
 	setevent EVENT_BLACKTHORN_CITY_RIVAL
+	setevent EVENT_WILD_AREA_CYNTHIA
 	return
 
 AskNumber1MScript:

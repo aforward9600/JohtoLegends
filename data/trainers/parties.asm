@@ -862,21 +862,21 @@ ChampionGroup:
 
 	end_list_items
 
-BrockGroup:
-	next_list_item ; BROCK (1)
-	db "BROCK@", TRAINERTYPE_MOVES
+FlintGroup:
+	next_list_item ; FLINT (1)
+	db "Flint@", TRAINERTYPE_MOVES
 	db 41
-	dw GRAVELER
+	dw GOLEM
 	dw DEFENSE_CURL, ROCK_SLIDE, ROLLOUT, EARTHQUAKE
 	db 41
-	dw RHYHORN
-	dw FURY_ATTACK, SCARY_FACE, EARTHQUAKE, HORN_DRILL
+	dw AERODACTYL
+	dw WING_ATTACK, ROCK_SLIDE, EARTHQUAKE, ICE_FANG
 	db 42
 	dw OMASTAR
 	dw BITE, SURF, PROTECT, SPIKE_CANNON
 	db 44
-	dw ONIX
-	dw BIND, ROCK_SLIDE, EARTHQUAKE, SANDSTORM
+	dw SUDOWOODO
+	dw WOOD_HAMMER, ROCK_SLIDE, EARTHQUAKE, SANDSTORM
 	db 42
 	dw KABUTOPS
 	dw SLASH, SURF, ENDURE, GIGA_DRAIN
@@ -5659,27 +5659,19 @@ RedGroup:
 
 	end_list_items
 
-BlueGroup:
+GiovanniGroup:
 	next_list_item ; BLUE (1)
-	db "BLUE@", TRAINERTYPE_MOVES
+	db "Giovanni@", TRAINERTYPE_NORMAL
 	db 56
-	dw PIDGEOT
-	dw QUICK_ATTACK, WHIRLWIND, WING_ATTACK, MIRROR_MOVE
+	dw DUGTRIO
 	db 54
-	dw ALAKAZAM
-	dw DISABLE, RECOVER, PSYCHIC_M, REFLECT
+	dw NIDOKING
 	db 56
-	dw RHYDON
-	dw FURY_ATTACK, SANDSTORM, ROCK_SLIDE, EARTHQUAKE
+	dw NIDOQUEEN
 	db 58
-	dw GYARADOS
-	dw TWISTER, HYDRO_PUMP, RAIN_DANCE, HYPER_BEAM
+	dw GLISCOR
 	db 58
-	dw EXEGGUTOR
-	dw SUNNY_DAY, LEECH_SEED, EGG_BOMB, SOLARBEAM
-	db 58
-	dw ARCANINE
-	dw ROAR, SWIFT, FLAMETHROWER, EXTREMESPEED
+	dw RHYPERIOR
 	db -1 ; end
 
 	end_list_items
@@ -6524,6 +6516,44 @@ DragonTamerFGroup:
 	db "Dawna@", TRAINERTYPE_NORMAL
 	db 15
 	dw DRATINI
+	db -1 ; end
+
+	end_list_items
+
+DragonTamerMGroup:
+	next_list_item ; DRAGON_TAMER_M (1)
+	db "Drew@", TRAINERTYPE_NORMAL
+	db 15
+	dw DRATINI
+	db -1 ; end
+
+	end_list_items
+
+MadameBossGroup:
+	next_list_item ; MADAME_BOSS (1)
+	db "Boss@", TRAINERTYPE_NORMAL
+	db 57
+	dw PORYGON_Z
+	db 57
+	dw LAPRAS
+	db 57
+	dw SNORLAX
+	db 58
+	dw ARTICUNO
+	db 58
+	dw ZAPDOS
+	db 58
+	dw MOLTRES
+	db -1 ; end
+
+	end_list_items
+
+Cynthia2Group:
+	next_list_item ; LASS (9) DANA1
+	db "Cynthia@", TRAINERTYPE_MOVES
+	db 17
+	dw TOGETIC
+	dw FAIRY_WIND, SING, ENCORE, METRONOME
 	db -1 ; end
 
 	end_list_items

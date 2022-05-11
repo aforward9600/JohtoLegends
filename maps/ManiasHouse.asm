@@ -1,5 +1,8 @@
 	object_const_def ; object_event constants
 	const MANIASHOUSE_ROCKER
+	const MANIASHOUSE_POKEFAN_F
+	const MANIASHOUSE_SNEASEL
+	const MANIASHOUSE_SHUCKLE
 
 ManiasHouse_MapScripts:
 	db 0 ; scene scripts

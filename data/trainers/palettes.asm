@@ -23,9 +23,9 @@ INCLUDE "gfx/trainers/martha.pal"
 INCLUDE "gfx/trainers/agatha.pal"
 INCBIN "gfx/trainers/koga.gbcpal", middle_colors
 INCBIN "gfx/trainers/champion.gbcpal", middle_colors
-INCBIN "gfx/trainers/brock.gbcpal", middle_colors
+INCBIN "gfx/trainers/flint.pal"
 INCBIN "gfx/trainers/misty.gbcpal", middle_colors
-INCBIN "gfx/trainers/lt_surge.gbcpal", middle_colors
+INCBIN "gfx/trainers/pvt_surge.pal"
 INCBIN "gfx/trainers/scientist.gbcpal", middle_colors
 INCLUDE "gfx/trainers/erika.pal"
 INCBIN "gfx/trainers/youngster.gbcpal", middle_colors
@@ -41,7 +41,7 @@ INCBIN "gfx/trainers/grunt_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/gentleman.gbcpal", middle_colors
 INCBIN "gfx/trainers/skier.gbcpal", middle_colors
 INCBIN "gfx/trainers/teacher.gbcpal", middle_colors
-INCBIN "gfx/trainers/sabrina.gbcpal", middle_colors
+INCBIN "gfx/trainers/sabrina.pal"
 INCBIN "gfx/trainers/bug_catcher.gbcpal", middle_colors
 INCBIN "gfx/trainers/fisher.gbcpal", middle_colors
 INCBIN "gfx/trainers/swimmer_m.gbcpal", middle_colors
@@ -70,7 +70,7 @@ INCBIN "gfx/trainers/kimono_girl.gbcpal", middle_colors
 INCBIN "gfx/trainers/twins.gbcpal", middle_colors
 INCBIN "gfx/trainers/pokefan_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/red.gbcpal", middle_colors
-INCBIN "gfx/trainers/blue.gbcpal", middle_colors
+INCBIN "gfx/trainers/giovanni.gbcpal", middle_colors
 INCBIN "gfx/trainers/officer.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
@@ -92,6 +92,9 @@ INCLUDE "gfx/trainers/kris.pal"
 INCLUDE "gfx/trainers/chris.pal"
 INCBIN "gfx/trainers/ein.gbcpal", middle_colors
 INCBIN "gfx/trainers/dragon_tamer_f.gbcpal", middle_colors
+INCBIN "gfx/trainers/dragon_tamer_m.gbcpal", middle_colors
+INCLUDE "gfx/trainers/madame_boss.pal"
+INCBIN "gfx/trainers/cynthia.gbcpal", middle_colors
 
 KrisPalette:
 INCLUDE "gfx/player/kris.pal"

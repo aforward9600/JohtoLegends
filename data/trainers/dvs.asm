@@ -17,7 +17,7 @@ TrainerClassDVs:
 	dn  7, 15, 13, 15 ; AGATHA
 	dn 13, 12, 13, 13 ; KOGA
 	dn 13, 12, 13, 13 ; CHAMPION
-	dn  9,  8,  8,  8 ; BROCK
+	dn  9,  8,  8,  8 ; FLINT
 	dn  7,  8,  8,  8 ; MISTY
 	dn  9,  8,  8,  8 ; LT_SURGE
 	dn  9,  8,  8,  8 ; SCIENTIST
@@ -64,7 +64,7 @@ TrainerClassDVs:
 	dn  6,  8, 10,  8 ; TWINS
 	dn  6, 13,  8,  8 ; POKEFANF
 	dn 15, 13, 13, 14 ; RED
-	dn  9, 13, 13, 13 ; BLUE
+	dn 15, 13, 13, 13 ; GIOVANNI
 	dn  9,  8,  8,  8 ; OFFICER
 	dn  7, 14, 10,  8 ; GRUNTF
 	dn  9,  8,  8,  8 ; MYSTICALMAN
@@ -86,3 +86,6 @@ TrainerClassDVs:
 	dn 13, 13, 13, 13 ; DEPRESSED_DRACO
 	dn 13,  8, 10,  8 ; EIN
 	dn  7, 12, 12,  8 ; DRAGON_TAMER_F
+	dn 13,  8, 12,  8 ; DRAGON_TAMER_M
+	dn 14, 14, 14, 14 ; MADAME_BOSS
+	dn  7,  8,  8,  8 ; CYNTHIA

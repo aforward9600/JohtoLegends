@@ -30,7 +30,7 @@ OverworldSprites:
 	overworld_sprite ByronSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite PryceSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ClairSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite BrockSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite FlintSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite AgathaSpriteGFX, 12, STANDING_SPRITE, PAL_OW_PINK
 	overworld_sprite MarthaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite MistySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
@@ -126,3 +126,6 @@ OverworldSprites:
 	overworld_sprite DragonTamerMGFX, 12, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite DragonTamerFGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BossGFX, 12, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite AmpharosGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite GiovanniGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite CynthiaGFX, 12, WALKING_SPRITE, PAL_OW_PINK

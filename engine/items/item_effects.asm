@@ -3062,6 +3062,7 @@ ExpShareEffect:
 	ld a, [hl]
 	xor 1
 	ld [hl], a
+	and 1
 	ld hl, .turnedOffText
 	jr z, .gotText
 	ld hl, .turnedOnText

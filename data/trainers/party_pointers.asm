@@ -18,7 +18,7 @@ TrainerGroups:
 	dba AgathaGroup
 	dba KogaGroup
 	dba ChampionGroup
-	dba BrockGroup
+	dba FlintGroup
 	dba MistyGroup
 	dba LtSurgeGroup
 	dba ScientistGroup
@@ -65,7 +65,7 @@ TrainerGroups:
 	dba TwinsGroup
 	dba PokefanFGroup
 	dba RedGroup
-	dba BlueGroup
+	dba GiovanniGroup
 	dba OfficerGroup
 	dba GruntFGroup
 	dba MysticalmanGroup
@@ -87,3 +87,6 @@ TrainerGroups:
 	dba DepressedDracoGroup
 	dba EinGroup
 	dba DragonTamerFGroup
+	dba DragonTamerMGroup
+	dba MadameBossGroup
+	dba Cynthia2Group

@@ -216,7 +216,7 @@ CianwoodGroupSprites:
 	db SPRITE_HEX_MANIAC
 	db SPRITE_BUG_CATCHER
 	; 9 of max 9 walking sprites
-	db SPRITE_TAUROS
+	db SPRITE_MILTANK
 	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
 	db SPRITE_STANDING_YOUNGSTER ; non-walking version of SPRITE_YOUNGSTER

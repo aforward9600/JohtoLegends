@@ -104,7 +104,15 @@ Text_ABoostedStringBuffer2ExpPoints::
 	line "a boosted"
 	cont "@"
 	text_decimal wStringBuffer2, 2, 4
-	text " EXP. Points!"
+	text " Exp. Points!"
+	prompt
+
+Text_ExpPointsFromShareText::
+	text_start
+	line "@"
+	text_decimal wStringBuffer2, 2, 4
+	text " Exp. Points"
+	cont "from Exp.Share!"
 	prompt
 
 Text_StringBuffer2ExpPoints::

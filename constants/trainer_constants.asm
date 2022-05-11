@@ -105,8 +105,8 @@ CHRIS EQU __enum__
 	trainerclass CHAMPION ; 10
 	const LANCE
 
-	trainerclass BROCK ; 11
-	const BROCK1
+	trainerclass FLINT ; 11
+	const FLINT1
 
 	trainerclass MISTY ; 12
 	const MISTY1
@@ -701,8 +701,8 @@ CHRIS EQU __enum__
 	trainerclass RED ; 3f
 	const RED1
 
-	trainerclass BLUE ; 40
-	const BLUE1
+	trainerclass GIOVANNI ; 40
+	const GIOVANNI1
 
 	trainerclass OFFICER ; 41
 	const TOBY1
@@ -817,6 +817,15 @@ CHRIS EQU __enum__
 
 	trainerclass DRAGON_TAMER_F
 	const DAWNA
+
+	trainerclass DRAGON_TAMER_M
+	const DREW
+
+	trainerclass MADAME_BOSS
+	const BOSS
+
+	trainerclass CYNTHIA
+	const CYNTHIA3
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

@@ -8,14 +8,14 @@ PnP_HiddenPeople:
 	db CHAMPION
 	; fallthrough
 PnP_HiddenPeople_BeatE4:
-	db BROCK
+	db FLINT
 	db MISTY
 	db LT_SURGE
 	db ERIKA
 	db JANINE
 	db SABRINA
 	db BLAINE
-	db BLUE
+	db GIOVANNI
 	; fallthrough
 PnP_HiddenPeople_BeatKanto:
 	db RIVAL1

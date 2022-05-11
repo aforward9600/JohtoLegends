@@ -18,7 +18,7 @@ BTTrainerClassGenders:
 	db FEMALE ; AGATHA
 	db MALE   ; KOGA
 	db MALE   ; CHAMPION
-	db MALE   ; BROCK
+	db MALE   ; FLINT
 	db FEMALE ; MISTY
 	db MALE   ; LT_SURGE
 	db MALE   ; SCIENTIST
@@ -65,7 +65,7 @@ BTTrainerClassGenders:
 	db FEMALE ; TWINS
 	db FEMALE ; POKEFANF
 	db MALE   ; RED
-	db MALE   ; BLUE
+	db MALE   ; GIOVANNI
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF
 	db MALE   ; MYSTICAL_MAN
@@ -87,3 +87,6 @@ BTTrainerClassGenders:
 	db MALE   ; DEPRESSED_DRACO
 	db MALE   ; EIN
 	db FEMALE ; DRAGON_TAMER_F
+	db MALE   ; DRAGON_TAMER_M
+	db FEMALE ; MADAME_BOSS
+	db FEMALE ; CYNTHIA

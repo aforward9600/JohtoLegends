@@ -210,11 +210,15 @@ ClairHiText:
 	done
 
 DragonKidClairSeenText:
-	text "Hi <PLAYER>!"
-	line "Are you here to"
-	cont "play? Yay! I won't"
+	text "Hello there,"
+	line "<PLAYER>!"
 
-	para "lose!"
+	para "You finally got"
+	line "your #mon,"
+	cont "huh?"
+
+	para "Let's see what you"
+	line "can do!"
 	done
 
 DragonKidClairBeatenText:
@@ -243,47 +247,35 @@ DragonKidLanceSeenText:
 	text "Hey there,"
 	line "<PLAYER>!"
 
-	para "Did Grandpa send"
-	line "you to play with"
-	cont "us?"
+	para "Finally got your"
+	line "#mon, did you?"
 
-	para "Let's play, then!"
+	para "Let's test your"
+	line "skills!"
 	done
 
 DragonKidLanceBeatenText:
-	text "That was fun!"
+	text "What a battle!"
 	done
 
 DragonKidLanceAfterBattleText:
-	text "Someday, I'll be"
-	line "as strong as you!"
+	text "You'll go far,"
+	line "<PLAYER>!"
 	done
 
 LanceNextTimeText:
 	text "Perhaps next time"
-	line "you can play with"
+	line "you can battle"
 	cont "us both!"
 	done
 
 ToughKidText:
-	text "Wow! This kid is"
-	line "tough!"
+	text "Wow! I can't"
+	line "believe how tough"
+	cont "they've gotten!"
 	done
 
 DahliaTheyWereToughText:
-	text "<RIVAL>: Master"
-	line "wasn't joking"
-	cont "about his"
-	cont "grandchildren!"
-
-	para "But, we won, so"
-	line "let's go back to"
-	cont "him and tell him"
-
-	para "the good news!"
-	done
-
-DracoTheyWereToughText:
 	text "<RIVAL>: Master"
 	line "wasn't joking"
 	cont "about his"

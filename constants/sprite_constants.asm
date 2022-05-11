@@ -26,7 +26,7 @@
 	const SPRITE_BYRON ; 17
 	const SPRITE_PRYCE ; 18
 	const SPRITE_CLAIR ; 19
-	const SPRITE_BROCK ; 1a
+	const SPRITE_FLINT ; 1a
 	const SPRITE_AGATHA ; 1b
 	const SPRITE_MARTHA ; 1c
 	const SPRITE_MISTY ; 1d
@@ -122,6 +122,9 @@
 	const SPRITE_DRAGON_TAMER_M
 	const SPRITE_DRAGON_TAMER_F
 	const SPRITE_BOSS
+	const SPRITE_AMPHAROS_P
+	const SPRITE_GIOVANNI
+	const SPRITE_CYNTHIA
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80
@@ -176,6 +179,7 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_SHUCKLE
 	const SPRITE_SWINUB
 	const SPRITE_SNEASEL
+	const SPRITE_MILTANK
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
 	const_def $e0

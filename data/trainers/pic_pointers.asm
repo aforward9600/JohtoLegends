@@ -18,7 +18,7 @@ TrainerPicPointers::
 	dba AgathaPic
 	dba KogaPic
 	dba ChampionPic
-	dba BrockPic
+	dba FlintPic
 	dba MistyPic
 	dba LtSurgePic
 	dba ScientistPic
@@ -65,7 +65,7 @@ TrainerPicPointers::
 	dba TwinsPic
 	dba PokefanfPic
 	dba RedPic
-	dba BluePic
+	dba GiovanniPic
 	dba OfficerPic
 	dba GruntfPic
 	dba MysticalmanPic
@@ -87,3 +87,6 @@ TrainerPicPointers::
 	dba DepressedDracoPic
 	dba EinPic
 	dba DragonTamerFPic
+	dba DragonTamerMPic
+	dba MadameBossPic
+	dba CynthiaPic

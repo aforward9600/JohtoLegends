@@ -9,6 +9,7 @@
 	const DANCETHEATRE_TWIN3
 	const DANCETHEATRE_TWIN4
 	const DANCETHEATRE_TWIN5
+	const DANCETHEATRE_CYNTHIA
 
 DanceTheatre_MapScripts:
 	db 0 ; scene scripts
@@ -254,6 +255,51 @@ DanceTheatreStonesMenu2:
 	db "Ice Stone@"
 	db "Shiny Stone@"
 	db "Cancel@"
+
+DanceTheaterCynthiaScript:
+	faceplayer
+	opentext
+	writetext CynthiaIntroductionText
+	waitbutton
+	closetext
+	winlosstext CynthiaBeatenText, 0
+	loadtrainer CYNTHIA, CYNTHIA3
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext HeadingToWildAreText
+	waitbutton
+	closetext
+	setevent EVENT_DANCE_THEATER_CYNTHIA
+	clearevent EVENT_WILD_AREA_CYNTHIA
+	readvar VAR_FACING
+	ifequal LEFT, .CynthiaLeavesOther
+	applymovement DANCETHEATRE_CYNTHIA, CynthiaLeavesDanceTheaterMovement1
+	disappear DANCETHEATRE_CYNTHIA
+	playsound SFX_EXIT_BUILDING
+	end
+
+.CynthiaLeavesOther
+	applymovement DANCETHEATRE_CYNTHIA, CynthiaLeavesDanceTheaterMovement2
+	disappear DANCETHEATRE_CYNTHIA
+	playsound SFX_EXIT_BUILDING
+	end
+
+CynthiaLeavesDanceTheaterMovement1:
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+CynthiaLeavesDanceTheaterMovement2:
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step DOWN
+	step_end
 
 DanceTheatreFancyPanel:
 	jumptext DanceTheatreFancyPanelText
@@ -564,6 +610,64 @@ OKMaybeNextTimeText:
 	text "OK. Perhaps later."
 	done
 
+CynthiaIntroductionText:
+	text "Hello. My name is"
+	line "Cynthia."
+
+	para "I have travelled"
+	line "from Sinnoh, and"
+	cont "I just love myths"
+	cont "and legends."
+
+	para "I hoped to visit"
+	line "the Bell Tower and"
+	cont "Burned Tower to"
+	cont "learn more about"
+	cont "them, but I'm not"
+	cont "allowed in."
+
+	para "I can't get to the"
+	line "Ruins of Alph"
+	cont "right now, with"
+	cont "the reports of the"
+	cont "strange trees in"
+	cont "the area."
+
+	para "I decided to learn"
+	line "from the dances"
+	cont "performed here in"
+	cont "the meantime."
+
+	para "Would you like to"
+	line "battle to pass the"
+	cont "time?"
+	done
+
+CynthiaBeatenText:
+	text "You're quite good!"
+	done
+
+HeadingToWildAreText:
+	text "Nicely done."
+
+	para "You're a better"
+	line "trainer than you"
+	cont "appear."
+
+	para "Perhaps we shall"
+	line "meet again."
+
+	para "I am heading to"
+	line "the Wild Area near"
+	cont "Cianwood City."
+
+	para "There's supposed to"
+	line "be plenty of rare"
+	cont "#mon there."
+
+	para "See you around."
+	done
+
 DanceTheatre_MapEvents:
 	db 0, 0 ; filler
 
@@ -577,7 +681,7 @@ DanceTheatre_MapEvents:
 	bg_event  5,  6, BGEVENT_UP, DanceTheatreFancyPanel
 	bg_event  6,  6, BGEVENT_UP, DanceTheatreFancyPanel
 
-	db 10 ; object events
+	db 11 ; object events
 	object_event  5,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerKimonoGirlRui, -1
 	object_event  7, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheaterSurfGuy, -1
 	object_event  6,  8, SPRITE_RHYDON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DanceTheaterRhydon, -1
@@ -588,3 +692,4 @@ DanceTheatre_MapEvents:
 	object_event  9,  5, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, QuintupletZukiScript, -1
 	object_event 10,  6, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, QuintupletKuniScript, -1
 	object_event 11,  5, SPRITE_TWIN, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, QuintupletMikiScript, -1
+	object_event  3, 10, SPRITE_CYNTHIA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DanceTheaterCynthiaScript, EVENT_DANCE_THEATER_CYNTHIA

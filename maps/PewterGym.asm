@@ -17,7 +17,7 @@ PewterGymBrockScript:
 	waitbutton
 	closetext
 	winlosstext BrockWinLossText, 0
-	loadtrainer BROCK, BROCK1
+	loadtrainer FLINT, FLINT1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BROCK
@@ -70,7 +70,7 @@ PewterGymStatue:
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	gettrainername STRING_BUFFER_4, BROCK, BROCK1
+	gettrainername STRING_BUFFER_4, FLINT, FLINT1
 	jumpstd gymstatue2
 
 BrockIntroText:
@@ -220,6 +220,6 @@ PewterGym_MapEvents:
 	bg_event  7, 11, BGEVENT_READ, PewterGymStatue
 
 	db 3 ; object events
-	object_event  5,  1, SPRITE_BROCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterGymBrockScript, -1
+	object_event  5,  1, SPRITE_FLINT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, PewterGymBrockScript, -1
 	object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperJerry, -1
 	object_event  6, 11, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, PewterGymGuyScript, -1

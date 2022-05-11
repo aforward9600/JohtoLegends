@@ -95,9 +95,9 @@ PlayBattleMusic:
 	ld de, MUSIC_KANTO_WILD_BATTLE
 	ld a, [wTimeOfDay]
     cp NITE_F
-    jr c, .done
+    jp c, .done
     ld de, MUSIC_KANTO_WILD_BATTLE_NIGHT
-	jr .done
+	jp .done
 
 .trainermusic
 	ld de, MUSIC_CHAMPION_BATTLE
@@ -132,6 +132,10 @@ PlayBattleMusic:
 	cp DEPRESSED_DAHLIA
 	jr z, .done
 	cp DEPRESSED_DRACO
+	jr z, .done
+
+	ld de, MUSIC_MADAME_BOSS
+	cp MADAME_BOSS
 	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE

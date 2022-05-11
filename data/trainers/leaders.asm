@@ -21,12 +21,12 @@ GymLeaders:
 	db GEN_SURGE
 ; fallthrough
 KantoGymLeaders:
-	db BROCK
+	db FLINT
 	db MISTY
 	db LT_SURGE
 	db ERIKA
 	db JANINE
 	db SABRINA
 	db BLAINE
-	db BLUE
+	db GIOVANNI
 	db -1

@@ -70,6 +70,12 @@ Dragon Tamer Male sprite: JustinNuggets
 
 Dragon Tamer Female base sprite: Rangi
 
+Ariana, Archer and Giovanni trainer and overworld sprite: SirWhibbles
+
+Ampharos overworld sprite: Prism Team
+
+Lance and Cynthia overworld sprites: Rangi and the Polished Crystal Team.
+
 Minisprites 1-251 and Gen 4:
 Chamber
 Solo993

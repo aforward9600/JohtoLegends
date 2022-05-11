@@ -19,7 +19,7 @@ TrainerEncounterMusic::
 	db MUSIC_SAGE_ENCOUNTER        ; agatha
 	db MUSIC_HIKER_ENCOUNTER       ; koga
 	db MUSIC_OFFICER_ENCOUNTER     ; champion
-	db MUSIC_YOUNGSTER_ENCOUNTER   ; brock
+	db MUSIC_YOUNGSTER_ENCOUNTER   ; flint
 	db MUSIC_LASS_ENCOUNTER        ; misty
 	db MUSIC_OFFICER_ENCOUNTER     ; lt_surge
 	db MUSIC_ROCKET_ENCOUNTER      ; scientist
@@ -66,7 +66,7 @@ TrainerEncounterMusic::
 	db MUSIC_LASS_ENCOUNTER        ; twins
 	db MUSIC_BEAUTY_ENCOUNTER      ; pokefanf
 	db MUSIC_HIKER_ENCOUNTER       ; red
-	db MUSIC_RIVAL_ENCOUNTER       ; blue
+	db MUSIC_ROCKET_ENCOUNTER      ; giovanni
 	db MUSIC_HIKER_ENCOUNTER       ; officer
 	db MUSIC_ROCKET_ENCOUNTER      ; gruntf
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
@@ -88,3 +88,6 @@ TrainerEncounterMusic::
 	db MUSIC_RIVAL_ENCOUNTER       ; depresseddraco
 	db MUSIC_ROCKET_ENCOUNTER      ; ein
 	db MUSIC_BEAUTY_ENCOUNTER      ; dragontamerf
+	db MUSIC_HIKER_ENCOUNTER       ; dragontamerm
+	db MUSIC_ROCKET_ENCOUNTER      ; madameboss
+	db MUSIC_LASS_ENCOUNTER        ; cynthia
