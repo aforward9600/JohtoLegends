@@ -17,7 +17,7 @@ TrainerGroups:
 	dba MarthaGroup
 	dba AgathaGroup
 	dba KogaGroup
-	dba ChampionGroup
+	dba ChampionDahliaGroup
 	dba FlintGroup
 	dba MistyGroup
 	dba LtSurgeGroup
@@ -90,3 +90,4 @@ TrainerGroups:
 	dba DragonTamerMGroup
 	dba MadameBossGroup
 	dba Cynthia2Group
+	dba FlorinaGroup2

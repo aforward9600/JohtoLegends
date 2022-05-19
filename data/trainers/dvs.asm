@@ -89,3 +89,5 @@ TrainerClassDVs:
 	dn 13,  8, 12,  8 ; DRAGON_TAMER_M
 	dn 14, 14, 14, 14 ; MADAME_BOSS
 	dn  7,  8,  8,  8 ; CYNTHIA
+	dn  7,  8,  8,  8 ; FLORINA_2
+	

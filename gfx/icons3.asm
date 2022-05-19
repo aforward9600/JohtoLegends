@@ -51,6 +51,9 @@ Icons3:
 	dw LarvitarIcon
 	dw PupitarIcon
 	dw TyranitarIcon
+	dw GibleIcon
+	dw GabiteIcon
+	dw GarchompIcon
 	dw BagonIcon
 	dw ShelgonIcon
 	dw SalamenceIcon
@@ -108,6 +111,9 @@ SuicuneIcon:	  INCBIN "gfx/icons/suicune.2bpp"
 LarvitarIcon:	  INCBIN "gfx/icons/larvitar.2bpp"
 PupitarIcon:	  INCBIN "gfx/icons/pupitar.2bpp"
 TyranitarIcon:	  INCBIN "gfx/icons/tyranitar.2bpp"
+GibleIcon:        INCBIN "gfx/icons/gible.2bpp"
+GabiteIcon:       INCBIN "gfx/icons/gabite.2bpp"
+GarchompIcon:     INCBIN "gfx/icons/garchomp.2bpp"
 BagonIcon:		  INCBIN "gfx/icons/bagon.2bpp"
 ShelgonIcon:	  INCBIN "gfx/icons/shelgon.2bpp"
 SalamenceIcon:	  INCBIN "gfx/icons/salamence.2bpp"

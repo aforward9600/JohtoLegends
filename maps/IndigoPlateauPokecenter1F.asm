@@ -37,8 +37,9 @@ IndigoPlateauPokecenter1F_MapScripts:
 	clearevent EVENT_BEAT_ELITE_4_GEN_SURGE
 	clearevent EVENT_BEAT_ELITE_4_MARTHA
 	clearevent EVENT_BEAT_ELITE_4_AGATHA
-	clearevent EVENT_BEAT_CHAMPION_LANCE
-	setevent EVENT_LANCES_ROOM_OAK_AND_MARY
+	setevent EVENT_CHALLENGER_OAK
+	setevent EVENT_CHALLENGER_RIVAL
+	setevent EVENT_CHALLENGER_CYNTHIA
 	return
 
 PlateauRivalBattle1:

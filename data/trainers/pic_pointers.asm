@@ -17,7 +17,7 @@ TrainerPicPointers::
 	dba MarthaPic
 	dba AgathaPic
 	dba KogaPic
-	dba ChampionPic
+	dba ChampionDahliaPic
 	dba FlintPic
 	dba MistyPic
 	dba LtSurgePic
@@ -90,3 +90,4 @@ TrainerPicPointers::
 	dba DragonTamerMPic
 	dba MadameBossPic
 	dba CynthiaPic
+	dba FlorinaPic2

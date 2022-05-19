@@ -5,7 +5,7 @@ PnP_HiddenPeople:
 	db MARTHA
 	db AGATHA
 	db GEN_SURGE
-	db CHAMPION
+	db CHAMPION_DAHLIA
 	; fallthrough
 PnP_HiddenPeople_BeatE4:
 	db FLINT

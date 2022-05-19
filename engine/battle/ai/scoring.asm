@@ -2026,6 +2026,46 @@ AI_Smart_Sandstorm:
 	db STEEL
 	db -1 ; end
 
+AI_Smart_Hail:
+; Greatly discourage this move if it would favour the player type-wise.
+; Particularly, if the player is an Ice-type.
+	ld a, [wBattleMonType1]
+	cp ICE
+	jr z, .greatly_discourage
+
+	ld a, [wBattleMonType2]
+	cp ICE
+	jr z, .greatly_discourage
+
+; Discourage this move if player's HP is below 50%.
+	call AICheckPlayerHalfHP
+	jr nc, .discourage
+
+; Encourage move if AI has good Hail moves
+	push hl
+	ld hl, .GoodHailMoves
+	call AIHasMoveInArray
+	pop hl
+	jr c, .encourage
+
+; 50% chance to encourage this move otherwise.
+	call AI_50_50
+	ret c
+
+.encourage
+	dec [hl]
+	ret
+
+.greatly_discourage
+	inc [hl]
+.discourage
+	inc [hl]
+	ret
+
+.GoodHailMoves
+	db BLIZZARD
+	db -1 ; end
+
 AI_Smart_Endure:
 	ld a, [wEnemyProtectCount]
 	and a
@@ -2336,26 +2376,6 @@ AI_Smart_SunnyDay:
 
 	push hl
 	ld hl, SunnyDayMoves
-
-	; fallthrough
-
-AI_Smart_Hail:
-; Greatly discourage this move if it would favour the player type-wise.
-; Particularly, if the player is an Ice-type.
-	ld a, [wBattleMonType1]
-	cp ICE
-	jr z, AIBadWeatherType
-	cp GROUND
-	jr z, AIGoodWeatherType
-
-	ld a, [wBattleMonType2]
-	cp ICE
-	jr z, AIBadWeatherType
-	cp GROUND
-	jr z, AIGoodWeatherType
-
-	push hl
-	ld hl, HailMoves
 
 	; fallthrough
 

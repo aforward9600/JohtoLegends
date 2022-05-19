@@ -149,9 +149,9 @@ EvosAttacksPointers2::
 	dw LarvitarEvosAttacks
 	dw PupitarEvosAttacks
 	dw TyranitarEvosAttacks
-	dw BagonEvosAttacks
-	dw ShelgonEvosAttacks
-	dw SalamenceEvosAttacks
+	dw GibleEvosAttacks
+	dw GabiteEvosAttacks
+	dw GarchompEvosAttacks
 
 TaurosEvosAttacks:
 	db 0 ; no more evolutions
@@ -3066,58 +3066,50 @@ TyranitarEvosAttacks:
 	dbw 82, GIGA_IMPACT
 	db 0 ; no more level-up moves
 
-BagonEvosAttacks:
-	dbbw EVOLVE_LEVEL, 25, SHELGON
+GibleEvosAttacks:
+	dbbw EVOLVE_LEVEL, 24, GABITE
 	db 0 ; no more evolutions
-	dbw 1, RAGE
-	dbw 4, EMBER
-	dbw 7, LEER
-	dbw 10, BITE
-	dbw 13, DRACO_FANG
-	dbw 17, HEADBUTT
-	dbw 21, FOCUS_ENERGY
-	dbw 25, CRUNCH
-	dbw 29, DRAGON_CLAW
-	dbw 34, ZEN_HEADBUTT
-	dbw 39, SCARY_FACE
-	dbw 44, FLAMETHROWER
-	dbw 49, DOUBLE_EDGE
+	dbw 1, TACKLE
+	dbw 3, SAND_ATTACK
+	dbw 7, DRAGON_RAGE
+	dbw 13, SANDSTORM
+	dbw 15, TAKE_DOWN
+	dbw 19, SAND_TOMB
+	dbw 25, SLASH
+	dbw 27, DRAGON_CLAW
+	dbw 31, DIG
+	dbw 37, DRAGON_RUSH
 	db 0 ; no more level-up moves
 
-ShelgonEvosAttacks:
-	dbbw EVOLVE_LEVEL, 50, SALAMENCE
+GabiteEvosAttacks:
+	dbbw EVOLVE_LEVEL, 48, GARCHOMP
 	db 0 ; no more evolutions
-	dbw 1, RAGE
-	dbw 4, EMBER
-	dbw 7, LEER
-	dbw 10, BITE
-	dbw 13, DRACO_FANG
-	dbw 17, HEADBUTT
-	dbw 21, FOCUS_ENERGY
-	dbw 25, CRUNCH
-	dbw 32, DRAGON_CLAW
-	dbw 35, ZEN_HEADBUTT
-	dbw 42, SCARY_FACE
-	dbw 49, FLAMETHROWER
-	dbw 56, DOUBLE_EDGE
+	dbw LEARN_EVO_MOVE, DUAL_CHOP
+	dbw 1, DUAL_CHOP
+	dbw 1, TACKLE
+	dbw 3, SAND_ATTACK
+	dbw 7, DRAGON_RAGE
+	dbw 13, SANDSTORM
+	dbw 15, TAKE_DOWN
+	dbw 19, SAND_TOMB
+	dbw 28, SLASH
+	dbw 33, DRAGON_CLAW
+	dbw 40, DIG
+	dbw 49, DRAGON_RUSH
 	db 0 ; no more level-up moves
 
-SalamenceEvosAttacks:
+GarchompEvosAttacks:
 	db 0 ; no more evolutions
-	dbw LEARN_EVO_MOVE, FLY
-	dbw 1, FLY
-	dbw 1, RAGE
-	dbw 4, EMBER
-	dbw 7, LEER
-	dbw 10, BITE
-	dbw 13, DRACO_FANG
-	dbw 17, HEADBUTT
-	dbw 21, FOCUS_ENERGY
-	dbw 25, CRUNCH
-	dbw 32, DRAGON_CLAW
-	dbw 35, ZEN_HEADBUTT
-	dbw 42, SCARY_FACE
-	dbw 49, FLAMETHROWER
-	dbw 63, DOUBLE_EDGE
-	dbw 69, OUTRAGE
+	dbw LEARN_EVO_MOVE, CRUNCH
+	dbw 1, CRUNCH
+	dbw 1, TACKLE
+	dbw 3, SAND_ATTACK
+	dbw 7, DRAGON_RAGE
+	dbw 13, SANDSTORM
+	dbw 15, TAKE_DOWN
+	dbw 19, SAND_TOMB
+	dbw 28, SLASH
+	dbw 33, DRAGON_CLAW
+	dbw 40, DIG
+	dbw 55, DRAGON_RUSH
 	db 0 ; no more level-up moves

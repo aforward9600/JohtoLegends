@@ -1,11 +1,69 @@
 SECTION "Evolution and Attacks 3", ROMX
 
 EvosAttacksPointers3::
-
+	dw BagonEvosAttacks
+	dw ShelgonEvosAttacks
+	dw SalamenceEvosAttacks
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
 	dw MissingnoEvosAttacks
+
+BagonEvosAttacks:
+	dbbw EVOLVE_LEVEL, 25, SHELGON
+	db 0 ; no more evolutions
+	dbw 1, RAGE
+	dbw 4, EMBER
+	dbw 7, LEER
+	dbw 10, BITE
+	dbw 13, DRACO_FANG
+	dbw 17, HEADBUTT
+	dbw 21, FOCUS_ENERGY
+	dbw 25, CRUNCH
+	dbw 29, DRAGON_CLAW
+	dbw 34, ZEN_HEADBUTT
+	dbw 39, SCARY_FACE
+	dbw 44, FLAMETHROWER
+	dbw 49, DOUBLE_EDGE
+	db 0 ; no more level-up moves
+
+ShelgonEvosAttacks:
+	dbbw EVOLVE_LEVEL, 50, SALAMENCE
+	db 0 ; no more evolutions
+	dbw 1, RAGE
+	dbw 4, EMBER
+	dbw 7, LEER
+	dbw 10, BITE
+	dbw 13, DRACO_FANG
+	dbw 17, HEADBUTT
+	dbw 21, FOCUS_ENERGY
+	dbw 25, CRUNCH
+	dbw 32, DRAGON_CLAW
+	dbw 35, ZEN_HEADBUTT
+	dbw 42, SCARY_FACE
+	dbw 49, FLAMETHROWER
+	dbw 56, DOUBLE_EDGE
+	db 0 ; no more level-up moves
+
+SalamenceEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, FLY
+	dbw 1, FLY
+	dbw 1, RAGE
+	dbw 4, EMBER
+	dbw 7, LEER
+	dbw 10, BITE
+	dbw 13, DRACO_FANG
+	dbw 17, HEADBUTT
+	dbw 21, FOCUS_ENERGY
+	dbw 25, CRUNCH
+	dbw 32, DRAGON_CLAW
+	dbw 35, ZEN_HEADBUTT
+	dbw 42, SCARY_FACE
+	dbw 49, FLAMETHROWER
+	dbw 63, DOUBLE_EDGE
+	dbw 69, OUTRAGE
+	db 0 ; no more level-up moves
 
 LugiaEvosAttacks:
 	db 0 ; no more evolutions

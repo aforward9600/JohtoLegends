@@ -90,3 +90,4 @@ BTTrainerClassGenders:
 	db MALE   ; DRAGON_TAMER_M
 	db FEMALE ; MADAME_BOSS
 	db FEMALE ; CYNTHIA
+	db FEMALE ; FLORINA

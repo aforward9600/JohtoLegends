@@ -334,7 +334,8 @@ Route47GroupSprites:
 	db SPRITE_FISHER
 	db SPRITE_TWIN
 	db SPRITE_COOLTRAINER_F
-	; 8 of max 9 walking sprites
+	db SPRITE_CYNTHIA
+	; 9 of max 9 walking sprites
 	db SPRITE_ROCK
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE

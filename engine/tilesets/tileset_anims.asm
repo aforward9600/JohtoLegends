@@ -48,6 +48,18 @@ TilesetKantoAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+TilesetFacilityAnim:
+	dw vTiles2 tile $62, AnimateWaterTile
+	dw NULL,  WaitTileAnimation
+	dw vTiles2 tile $6f, AnimateFountain
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateWaterPalette
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
 TilesetParkAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
@@ -153,6 +165,7 @@ TilesetEliteFourRoomAnim:
 	dw NULL,  LavaBubbleAnim1
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
+	dw NULL,  AnimateFlowerTile3
 	dw NULL,  DoneTileAnimation
 
 UnusedTilesetAnim_fc17f:
@@ -287,7 +300,6 @@ TilesetPlayersHouseAnim:
 TilesetPokecenterAnim:
 TilesetGateAnim:
 TilesetLabAnim:
-TilesetFacilityAnim:
 TilesetMartAnim:
 TilesetMansionAnim:
 TilesetGameCornerAnim:
@@ -687,6 +699,64 @@ AnimateFlowerTile:
 	ld sp, hl
 
 	ld hl, vTiles2 tile $03
+
+	jp WriteTile
+
+AnimateFlowerTile2:
+; No parameters.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; Alternate tile graphic every other frame
+	ld a, [wTileAnimationTimer]
+	and %10
+
+; CGB has different color mappings for flowers.
+	ld e, a
+	ldh a, [hCGB]
+	and 1
+	add e
+
+	swap a
+	ld e, a
+	ld d, 0
+	ld hl, FlowerTileFrames
+	add hl, de
+	ld sp, hl
+
+	ld hl, vTiles2 tile $63
+
+	jp WriteTile
+
+AnimateFlowerTile3:
+; No parameters.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; Alternate tile graphic every other frame
+	ld a, [wTileAnimationTimer]
+	and %10
+
+; CGB has different color mappings for flowers.
+	ld e, a
+	ldh a, [hCGB]
+	and 1
+	add e
+
+	swap a
+	ld e, a
+	ld d, 0
+	ld hl, FlowerTileFrames
+	add hl, de
+	ld sp, hl
+
+	ld hl, vTiles2 tile $64
 
 	jp WriteTile
 

@@ -494,7 +494,6 @@ INCLUDE "engine/battle_anims/bg_effects.asm"
 SECTION "bank3E", ROMX
 
 INCLUDE "engine/gfx/load_font.asm"
-INCLUDE "engine/link/time_capsule.asm"
 INCLUDE "engine/events/name_rater.asm"
 INCLUDE "engine/events/play_slow_cry.asm"
 INCLUDE "engine/pokedex/new_pokedex_entry.asm"
@@ -732,3 +731,4 @@ SECTION "Battle Weather Images", ROMX
 
 INCLUDE "gfx/weather_images.asm"
 INCLUDE "engine/events/poisonstep_pals.asm"
+INCLUDE "engine/link/time_capsule.asm"

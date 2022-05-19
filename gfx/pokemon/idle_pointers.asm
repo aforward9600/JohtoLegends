@@ -298,6 +298,9 @@ AnimationIdlePointers:
 	dw LarvitarAnimationIdle
 	dw PupitarAnimationIdle
 	dw TyranitarAnimationIdle
+	dw GibleAnimationIdle
+	dw GabiteAnimationIdle
+	dw GarchompAnimationIdle
 	dw BagonAnimationIdle
 	dw ShelgonAnimationIdle
 	dw SalamenceAnimationIdle

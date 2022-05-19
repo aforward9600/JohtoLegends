@@ -611,6 +611,12 @@ PokemonPicPointers::
 	dba PupitarBackpic
 	dba TyranitarFrontpic
 	dba TyranitarBackpic
+	dba GibleFrontpic
+	dba GibleBackpic
+	dba GabiteFrontpic
+	dba GabiteBackpic
+	dba GarchompFrontpic
+	dba GarchompBackpic
 	dba BagonFrontpic
 	dba BagonBackpic
 	dba ShelgonFrontpic

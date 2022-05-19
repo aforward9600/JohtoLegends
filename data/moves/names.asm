@@ -232,7 +232,7 @@ MoveNames::
 	db "Iron Tail@"
 	db "Metal Claw@"
 	db "Vital Throw@"
-	db "MORNING Sun@"
+	db "Morning Sun@"
 	db "Synthesis@"
 	db "Moonlight@"
 	db "Hidden Power@"

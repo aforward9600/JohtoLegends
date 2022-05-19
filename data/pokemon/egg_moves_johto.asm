@@ -149,6 +149,9 @@ EggMovePointers2::
 	dw LarvitarEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw GibleEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw BagonEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -781,6 +784,19 @@ LarvitarEggMoves:
 	dw ANCIENTPOWER
 	dw IRON_DEFENSE
 	dw EXTREMESPEED
+	dw -1 ; end
+
+GibleEggMoves:
+	dw DOUBLE_EDGE
+	dw BODY_SLAM
+	dw DRAGONBREATH
+	dw IRON_HEAD
+	dw METAL_CLAW
+	dw OUTRAGE
+	dw SAND_TOMB
+	dw SCARY_FACE
+	dw THRASH
+	dw TWISTER
 	dw -1 ; end
 
 BagonEggMoves:

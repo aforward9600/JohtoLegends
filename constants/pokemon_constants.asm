@@ -319,6 +319,9 @@ JOHTO_POKEMON EQU const_value
 	const LARVITAR   ; f6
 	const PUPITAR    ; f7
 	const TYRANITAR  ; f8
+	const GIBLE
+	const GABITE
+	const GARCHOMP
 	const BAGON      ; f9
 	const SHELGON    ; fa
 	const SALAMENCE  ; fb

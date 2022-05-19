@@ -88,3 +88,4 @@ TrainerClassNames::
 	db "Dragon Tamer@"
 	db "Madame@"
 	db "Tourist@"
+	db "Elite Four@"

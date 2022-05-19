@@ -298,6 +298,9 @@ FramesPointers:
 	dba LarvitarFrames
 	dba PupitarFrames
 	dba TyranitarFrames
+	dba GibleFrames
+	dba GabiteFrames
+	dba GarchompFrames
 	dba BagonFrames
 	dba ShelgonFrames
 	dba SalamenceFrames

@@ -16,7 +16,7 @@ GymLeaders:
 	db FLORINA
 	db MARTHA
 	db AGATHA
-	db CHAMPION
+	db CHAMPION_DAHLIA
 	db RED
 	db GEN_SURGE
 ; fallthrough

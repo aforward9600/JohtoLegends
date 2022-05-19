@@ -310,6 +310,9 @@ MonMenuIconPals:
 	icon_pals GREEN,  PURPLE ; LARVITAR
 	icon_pals BLUE,   PURPLE ; PUPITAR
 	icon_pals GREEN,  PURPLE ; TYRANITAR
+	icon_pals BLUE,   TEAL   ; GIBLE
+	icon_pals BLUE,   TEAL   ; GABITE
+	icon_pals BLUE,   TEAL   ; GARCHOMP
 	icon_pals BLUE,   PINK   ; BAGON
 	icon_pals BLUE,   PINK   ; SHELGON
 	icon_pals BLUE,   PINK   ; SALAMENCE

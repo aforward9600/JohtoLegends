@@ -299,6 +299,9 @@ FirstEvoStages::
 	dw LARVITAR
 	dw LARVITAR
 	dw LARVITAR   ;f8
+	dw GIBLE
+	dw GIBLE
+	dw GIBLE
 	dw BAGON
 	dw BAGON
 	dw BAGON

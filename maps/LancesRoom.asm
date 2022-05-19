@@ -1,7 +1,10 @@
 	object_const_def ; object_event constants
-	const LANCESROOM_LANCE
-	const LANCESROOM_MARY
+	const LANCESROOM_RIVAL
+	const LANCESROOM_RIVAL2
 	const LANCESROOM_OAK
+	const LANCESROOM_OAK2
+	const LANCESROOM_CYNTHIA
+	const LANCESROOM_CYNTHIA2
 
 LancesRoom_MapScripts:
 	db 2 ; scene scripts
@@ -50,20 +53,35 @@ Script_ApproachLanceFromRight:
 	special FadeOutMusic
 	applymovement PLAYER, MovementData_ApproachLanceFromRight
 LancesRoomLanceScript:
-	turnobject LANCESROOM_LANCE, LEFT
+	turnobject LANCESROOM_RIVAL, LEFT
 	opentext
-	writetext LanceBattleIntroText
+	writetext LooksLikeImTheChampionText
 	waitbutton
 	closetext
-	winlosstext LanceBattleWinText, 0
-	setlasttalked LANCESROOM_LANCE
-	loadtrainer CHAMPION, LANCE
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
+	iftrue .DahliaDragoniteBattle
+	winlosstext ChampionWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL
+	loadtrainer CHAMPION_DAHLIA, CHAMP_DAHLIA_1
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CHAMPION_LANCE
+	sjump .AfterChampionBattle
+
+.DahliaDragoniteBattle
+	winlosstext ChampionWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL
+	loadtrainer CHAMPION_DAHLIA, CHAMP_DAHLIA_2
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CHAMPION_LANCE
+	sjump .AfterChampionBattle
+
+.AfterChampionBattle
 	opentext
-	writetext LanceBattleAfterText
+	writetext ChampionBattleAfterText
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
@@ -73,56 +91,40 @@ LancesRoomLanceScript:
 	setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
 	musicfadeout MUSIC_BEAUTY_ENCOUNTER, 16
 	pause 30
-	showemote EMOTE_SHOCK, LANCESROOM_LANCE, 15
-	turnobject LANCESROOM_LANCE, DOWN
+	showemote EMOTE_SHOCK, LANCESROOM_RIVAL, 15
+	turnobject LANCESROOM_RIVAL, DOWN
 	pause 10
 	turnobject PLAYER, DOWN
-	appear LANCESROOM_MARY
-	applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryRushesIn
+	moveobject LANCESROOM_OAK2, 4, 7
+	appear LANCESROOM_OAK2
+	applymovement LANCESROOM_OAK2, LancesRoomMovementData_OakCongratulatesYou
 	opentext
-	writetext UnknownText_0x1811dd
+	writetext OakCongratulatesYouText
 	waitbutton
 	closetext
-	appear LANCESROOM_OAK
-	applymovement LANCESROOM_OAK, LancesRoomMovementData_OakWalksIn
-	follow LANCESROOM_MARY, LANCESROOM_OAK
-	applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryYieldsToOak
-	stopfollow
-	turnobject LANCESROOM_OAK, UP
-	turnobject LANCESROOM_LANCE, LEFT
+	turnobject LANCESROOM_OAK2, RIGHT
 	opentext
-	writetext UnknownText_0x18121b
+	writetext OakCongratulatesRivalText
 	waitbutton
 	closetext
-	applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryInterviewChampion
-	turnobject PLAYER, LEFT
 	opentext
-	writetext UnknownText_0x18134b
+	writetext RivalThanksOakText
 	waitbutton
 	closetext
-	applymovement LANCESROOM_LANCE, LancesRoomMovementData_LancePositionsSelfToGuidePlayerAway
-	turnobject PLAYER, UP
+	applymovement LANCESROOM_OAK, LancesRoomMovementData_OakPositionsSelfToGuidePlayerAway
 	opentext
-	writetext UnknownText_0x18137b
+	writetext OakComeWithMeText
 	waitbutton
 	closetext
-	follow LANCESROOM_LANCE, PLAYER
-	turnobject LANCESROOM_MARY, UP
-	turnobject LANCESROOM_OAK, UP
-	applymovement LANCESROOM_LANCE, LancesRoomMovementData_LanceLeadsPlayerToHallOfFame
+	follow LANCESROOM_OAK2, PLAYER
+	turnobject LANCESROOM_RIVAL, UP
+	applymovement LANCESROOM_OAK2, LancesRoomMovementData_LanceLeadsPlayerToHallOfFame
 	stopfollow
 	playsound SFX_EXIT_BUILDING
-	disappear LANCESROOM_LANCE
+	disappear LANCESROOM_OAK2
 	applymovement PLAYER, LancesRoomMovementData_PlayerExits
 	playsound SFX_EXIT_BUILDING
 	disappear PLAYER
-	applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryTriesToFollow
-	showemote EMOTE_SHOCK, LANCESROOM_MARY, 15
-	opentext
-	writetext UnknownText_0x1813c5
-	pause 30
-	closetext
-	applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryRunsBackAndForth
 	special FadeOutPalettes
 	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
@@ -148,11 +150,10 @@ MovementData_ApproachLanceFromRight:
 	turn_head RIGHT
 	step_end
 
-LancesRoomMovementData_MaryRushesIn:
-	big_step UP
-	big_step UP
-	big_step UP
-	turn_head DOWN
+LancesRoomMovementData_OakCongratulatesYou:
+	step UP
+	step UP
+	step UP
 	step_end
 
 LancesRoomMovementData_OakWalksIn:
@@ -170,9 +171,11 @@ LancesRoomMovementData_MaryInterviewChampion:
 	turn_head RIGHT
 	step_end
 
-LancesRoomMovementData_LancePositionsSelfToGuidePlayerAway:
-	step UP
+LancesRoomMovementData_OakPositionsSelfToGuidePlayerAway:
 	step LEFT
+	step UP
+	step UP
+	step RIGHT
 	turn_head DOWN
 	step_end
 
@@ -204,39 +207,53 @@ LancesRoomMovementData_MaryRunsBackAndForth:
 	turn_head UP
 	step_end
 
-LanceBattleIntroText:
-	text "LANCE: I've been"
-	line "waiting for you."
+LooksLikeImTheChampionText:
+	text "<PLAY_G>!"
 
-	para "<PLAY_G>!"
+	para "I did it!"
 
-	para "I knew that you,"
-	line "with your skills,"
+	para "I beat the Elite"
+	line "Four before you!"
 
-	para "would eventually"
-	line "reach me here."
+	para "I'm the Champion"
+	line "now! The first one"
+	cont "in years!"
 
-	para "There's no need"
-	line "for words now."
+	para "It's strange, isn't"
+	line "it?"
 
-	para "We will battle to"
-	line "determine who is"
+	para "You always seemed"
+	line "one step ahead of"
+	cont "me throughout our"
+	cont "journey."
 
-	para "the stronger of"
-	line "the two of us."
+	para "But that doesn't"
+	line "matter now!"
 
-	para "As the most power-"
-	line "ful trainer and as"
+	para "I avenged my #-"
+	line "mon's mother, and"
 
-	para "the #MON LEAGUE"
-	line "CHAMPION…"
+	para "and we captured"
+	line "the legendary"
+	cont "#mon together!"
 
-	para "I, LANCE the drag-"
-	line "on master, accept"
-	cont "your challenge!"
+	para "And now here we"
+	line "are, the two most"
+	cont "powerful Trainers"
+	cont "in Johto!"
+
+	para "What do you say we"
+	line "see who is the"
+	cont "strongest?"
+
+	para "As the Pokemon"
+	line "League Champion,"
+
+	para "I, <RIVAL>, accept"
+	line "your challenge!"
 	done
 
-LanceBattleWinText:
+ChampionWinText:
 	text "…It's over."
 
 	para "But it's an odd"
@@ -247,83 +264,95 @@ LanceBattleWinText:
 	cont "feel happy."
 
 	para "Happy that I"
-	line "witnessed the rise"
+	line "I saw my best"
+	cont "friend become the"
 
-	para "of a great new"
-	line "CHAMPION!"
+	para "new Champion!"
 	done
 
-LanceBattleAfterText:
-	text "…Whew."
+ChampionLoseText:
+	text "…Looks like I'm"
+	line "the strongest"
+	cont "trainer after all…"
+ChampionBattleAfterText:
+	text "……………………………"
 
-	para "You have become"
-	line "truly powerful,"
-	cont "<PLAY_G>."
+	para "Well done,"
+	line "<PLAY_G>."
 
-	para "Your #MON have"
-	line "responded to your"
+	para "I may not be the"
+	line "strongest, but I"
+	cont "am glad that I got"
+	cont "to battle you,"
 
-	para "strong and up-"
-	line "standing nature."
+	para "here, at the #mon"
+	line "League…"
 
-	para "As a trainer, you"
-	line "will continue to"
+	para "We put our strength"
+	line "against each other,"
+	cont "and you won."
 
-	para "grow strong with"
-	line "your #MON."
+	para "Regardless of who"
+	line "won, I believe we"
+	cont "would have each"
+	cont "others' backs."
+
+	para "We're best friends"
+	line "after all…"
 	done
 
-UnknownText_0x1811dd:
-	text "MARY: Oh, no!"
-	line "It's all over!"
+OakCongratulatesYouText:
+	text "Prof.Oak: Hello"
+	line "<PLAYER>!"
 
-	para "PROF.OAK, if you"
-	line "weren't so slow…"
+	para "Congratulations on"
+	line "your triumph over"
+	cont "the League!"
+
+	para "I knew you had it"
+	line "in you!"
+
+	para "It's not very"
+	line "often that two"
+	cont "Champions are"
+	cont "crowned!"
 	done
 
-UnknownText_0x18121b:
+OakCongratulatesRivalText:
 	text "PROF.OAK: Ah,"
-	line "<PLAY_G>!"
+	line "<RIVAL>!"
 
-	para "It's been a long"
-	line "while."
+	para "You fought well,"
+	line "and you fought"
+	cont "with conviction."
 
-	para "You certainly look"
-	line "more impressive."
+	para "There's no doubt"
+	line "in my mind that"
+	cont "you deserved to"
+	cont "be here."
 
-	para "Your conquest of"
-	line "the LEAGUE is just"
-	cont "fantastic!"
-
-	para "Your dedication,"
-	line "trust and love for"
-
-	para "your #MON made"
-	line "this happen."
-
-	para "Your #MON were"
-	line "outstanding too."
-
-	para "Because they be-"
-	line "lieved in you as a"
-
-	para "trainer, they per-"
-	line "severed."
-
-	para "Congratulations,"
-	line "<PLAY_G>!"
+	para "You should not"
+	line "dwell in self-"
+	cont "pity, but should"
+	cont "rejoice in your"
+	cont "accomplishments!"
 	done
 
-UnknownText_0x18134b:
-	text "MARY: Let's inter-"
-	line "view the brand new"
-	cont "CHAMPION!"
+RivalThanksOakText:
+	text "<RIVAL>: Thank you"
+	line "Prof.Oak. I have"
+	cont "come to terms with"
+	cont "loss here."
+
+	para "I am happy that I"
+	line "got to share this"
+	cont "moment with my"
+	cont "best friend."
 	done
 
-UnknownText_0x18137b:
-	text "LANCE: This is"
-	line "getting to be a"
-	cont "bit too noisy…"
+OakComeWithMeText:
+	text "Prof.Oak: With"
+	line "that all settled,"
 
 	para "<PLAY_G>, could you"
 	line "come with me?"
@@ -350,7 +379,10 @@ LancesRoom_MapEvents:
 
 	db 0 ; bg events
 
-	db 3 ; object events
-	object_event  5,  3, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LancesRoomLanceScript, -1
-	object_event  4,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LANCES_ROOM_OAK_AND_MARY
-	object_event  4,  7, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LANCES_ROOM_OAK_AND_MARY
+	db 6 ; object events
+	object_event  5,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LancesRoomLanceScript, EVENT_CHAMPION_RIVAL
+	object_event  5,  7, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LancesRoomLanceScript, EVENT_CHALLENGER_RIVAL
+	object_event  5,  3, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CHAMPION_OAK
+	object_event  5,  7, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CHALLENGER_OAK
+	object_event  5,  3, SPRITE_CYNTHIA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CHAMPION_CYNTHIA
+	object_event  5,  7, SPRITE_CYNTHIA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CHALLENGER_CYNTHIA

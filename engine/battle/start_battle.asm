@@ -101,7 +101,7 @@ PlayBattleMusic:
 
 .trainermusic
 	ld de, MUSIC_CHAMPION_BATTLE
-	cp CHAMPION
+	cp CHAMPION_DAHLIA
 	jr z, .done
 	cp RED
 	jr z, .done

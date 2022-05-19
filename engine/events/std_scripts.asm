@@ -642,6 +642,9 @@ InitializeEventsScript:
 	setevent EVENT_MART_KOGA
 	setevent EVENT_BLACKTHORN_CITY_RIVAL
 	setevent EVENT_WILD_AREA_CYNTHIA
+	setevent EVENT_RUINS_OF_ALPH_CYNTHIA
+	setevent EVENT_CHAMPION_OAK
+	setevent EVENT_CHAMPION_CYNTHIA
 	return
 
 AskNumber1MScript:

@@ -7,6 +7,9 @@ NewPokedexOrder:
 	dw LARVITAR
 	dw PUPITAR
 	dw TYRANITAR
+	dw GIBLE
+	dw GABITE
+	dw GARCHOMP
 	dw BAGON
 	dw SHELGON
 	dw SALAMENCE

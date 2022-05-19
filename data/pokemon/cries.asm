@@ -304,6 +304,9 @@ PokemonCries::
 	mon_cry CRY_RAIKOU,      $05f,  $0d0 ; LARVITAR
 	mon_cry CRY_SPINARAK,   -$1db,  $150 ; PUPITAR
 	mon_cry CRY_RAIKOU,     -$100,  $180 ; TYRANITAR
+	mon_cry CRY_NIDORAN_F,   $f26,  $0c0 ; GIBLE
+	mon_cry CRY_NIDORAN_F,   $e15,  $200 ; GABITE
+	mon_cry CRY_RAICHU,      $f1f,  $130 ; GARCHOMP
 	mon_cry CRY_NIDORAN_F,   $f26,  $0c0 ; BAGON
 	mon_cry CRY_NIDORAN_F,   $e15,  $200 ; SHELGON
 	mon_cry CRY_RAICHU,      $f1f,  $130 ; SALAMENCE

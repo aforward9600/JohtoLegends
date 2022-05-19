@@ -102,8 +102,11 @@ CHRIS EQU __enum__
 	trainerclass KOGA ; f
 	const KOGA1
 
-	trainerclass CHAMPION ; 10
-	const LANCE
+	trainerclass CHAMPION_DAHLIA ; 10
+	const CHAMP_DAHLIA_1
+	const CHAMP_DAHLIA_2
+	const CHAMP_DAHLIA_3
+	const CHAMP_DAHLIA_4
 
 	trainerclass FLINT ; 11
 	const FLINT1
@@ -826,6 +829,9 @@ CHRIS EQU __enum__
 
 	trainerclass CYNTHIA
 	const CYNTHIA3
+
+	trainerclass FLORINA_NEW ; b
+	const FLORINA2
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

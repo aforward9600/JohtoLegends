@@ -298,6 +298,9 @@ BitmasksPointers:
 	dw LarvitarBitmasks
 	dw PupitarBitmasks
 	dw TyranitarBitmasks
+	dw GibleBitmasks
+	dw GabiteBitmasks
+	dw GarchompBitmasks
 	dw BagonBitmasks
 	dw ShelgonBitmasks
 	dw SalamenceBitmasks

@@ -76,6 +76,8 @@ Ampharos overworld sprite: Prism Team
 
 Lance and Cynthia overworld sprites: Rangi and the Polished Crystal Team.
 
+Armored Mewtwo sprites and icon: Rangi
+
 Minisprites 1-251 and Gen 4:
 Chamber
 Solo993

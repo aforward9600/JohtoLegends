@@ -298,6 +298,9 @@ AnimationPointers:
 	dw LarvitarAnimation
 	dw PupitarAnimation
 	dw TyranitarAnimation
+	dw GibleAnimation
+	dw GabiteAnimation
+	dw GarchompAnimation
 	dw BagonAnimation
 	dw ShelgonAnimation
 	dw SalamenceAnimation

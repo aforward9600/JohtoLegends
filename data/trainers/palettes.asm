@@ -22,10 +22,10 @@ INCBIN "gfx/trainers/cal.gbcpal", middle_colors
 INCLUDE "gfx/trainers/martha.pal"
 INCLUDE "gfx/trainers/agatha.pal"
 INCBIN "gfx/trainers/koga.gbcpal", middle_colors
-INCBIN "gfx/trainers/champion.gbcpal", middle_colors
-INCBIN "gfx/trainers/flint.pal"
+INCLUDE "gfx/trainers/kris.pal"
+INCLUDE "gfx/trainers/flint.pal"
 INCBIN "gfx/trainers/misty.gbcpal", middle_colors
-INCBIN "gfx/trainers/pvt_surge.pal"
+INCLUDE "gfx/trainers/pvt_surge.pal"
 INCBIN "gfx/trainers/scientist.gbcpal", middle_colors
 INCLUDE "gfx/trainers/erika.pal"
 INCBIN "gfx/trainers/youngster.gbcpal", middle_colors
@@ -41,7 +41,7 @@ INCBIN "gfx/trainers/grunt_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/gentleman.gbcpal", middle_colors
 INCBIN "gfx/trainers/skier.gbcpal", middle_colors
 INCBIN "gfx/trainers/teacher.gbcpal", middle_colors
-INCBIN "gfx/trainers/sabrina.pal"
+INCLUDE "gfx/trainers/sabrina.pal"
 INCBIN "gfx/trainers/bug_catcher.gbcpal", middle_colors
 INCBIN "gfx/trainers/fisher.gbcpal", middle_colors
 INCBIN "gfx/trainers/swimmer_m.gbcpal", middle_colors
@@ -95,6 +95,7 @@ INCBIN "gfx/trainers/dragon_tamer_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/dragon_tamer_m.gbcpal", middle_colors
 INCLUDE "gfx/trainers/madame_boss.pal"
 INCBIN "gfx/trainers/cynthia.gbcpal", middle_colors
+INCLUDE "gfx/trainers/florina.pal"
 
 KrisPalette:
 INCLUDE "gfx/player/kris.pal"

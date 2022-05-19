@@ -84,11 +84,14 @@ AlphabeticalPokedexOrder:
 	dw FORRETRESS
 	dw FROSLASS
 	dw FURRET
+	dw GABITE
 	dw GALLADE
+	dw GARCHOMP
 	dw GARDEVOIR
 	dw GASTLY
 	dw GENGAR
 	dw GEODUDE
+	dw GIBLE
 	dw GIRAFARIG
 	dw GLACEON
 	dw GLALIE
