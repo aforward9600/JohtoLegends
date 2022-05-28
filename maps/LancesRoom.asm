@@ -111,7 +111,8 @@ LancesRoomLanceScript:
 	writetext RivalThanksOakText
 	waitbutton
 	closetext
-	applymovement LANCESROOM_OAK, LancesRoomMovementData_OakPositionsSelfToGuidePlayerAway
+	applymovement LANCESROOM_OAK2, LancesRoomMovementData_OakPositionsSelfToGuidePlayerAway
+	turnobject PLAYER, UP
 	opentext
 	writetext OakComeWithMeText
 	waitbutton
@@ -285,17 +286,19 @@ ChampionBattleAfterText:
 	cont "am glad that I got"
 	cont "to battle you,"
 
-	para "here, at the #mon"
-	line "League…"
+	para "here, at the #-"
+	line "mon League…"
 
-	para "We put our strength"
-	line "against each other,"
-	cont "and you won."
+	para "We put our"
+	line "strength against"
+	cont "each other, and"
+	cont "you won."
 
 	para "Regardless of who"
 	line "won, I believe we"
-	cont "would have each"
-	cont "others' backs."
+	cont "would have had"
+	cont "each others'"
+	cont "backs."
 
 	para "We're best friends"
 	line "after all…"
@@ -319,7 +322,7 @@ OakCongratulatesYouText:
 	done
 
 OakCongratulatesRivalText:
-	text "PROF.OAK: Ah,"
+	text "Prof.Oak: Ah,"
 	line "<RIVAL>!"
 
 	para "You fought well,"
@@ -342,7 +345,7 @@ RivalThanksOakText:
 	text "<RIVAL>: Thank you"
 	line "Prof.Oak. I have"
 	cont "come to terms with"
-	cont "loss here."
+	cont "my loss here."
 
 	para "I am happy that I"
 	line "got to share this"
@@ -382,7 +385,7 @@ LancesRoom_MapEvents:
 	db 6 ; object events
 	object_event  5,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LancesRoomLanceScript, EVENT_CHAMPION_RIVAL
 	object_event  5,  7, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LancesRoomLanceScript, EVENT_CHALLENGER_RIVAL
-	object_event  5,  3, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CHAMPION_OAK
-	object_event  5,  7, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CHALLENGER_OAK
+	object_event  5,  3, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CHAMPION_OAK
+	object_event  5,  7, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CHALLENGER_OAK
 	object_event  5,  3, SPRITE_CYNTHIA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CHAMPION_CYNTHIA
 	object_event  5,  7, SPRITE_CYNTHIA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CHALLENGER_CYNTHIA

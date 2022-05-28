@@ -1285,7 +1285,7 @@ Function170923:
 BattleTowerAction_EggTicket: ; BattleTowerAction $0e
 	xor a ; FALSE
 	ld [wScriptVar], a
-	ld a, EGG_TICKET
+	ld a, MIRAGE_MAIL
 	ld [wCurItem], a
 	ld hl, wNumItems
 	call CheckItem
@@ -1328,7 +1328,7 @@ endr
 	ld [hli], a
 	ld [hli], a
 	pop hl
-	ld a, EGG_TICKET
+	ld a, MIRAGE_MAIL
 	ld [wCurItem], a
 	ld a, 1
 	ld [wItemQuantityChangeBuffer], a

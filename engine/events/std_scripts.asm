@@ -645,6 +645,9 @@ InitializeEventsScript:
 	setevent EVENT_RUINS_OF_ALPH_CYNTHIA
 	setevent EVENT_CHAMPION_OAK
 	setevent EVENT_CHAMPION_CYNTHIA
+	setevent EVENT_CHALLENGER_OAK
+	setevent EVENT_CHALLENGER_CYNTHIA
+	setevent EVENT_CHALLENGER_RIVAL
 	return
 
 AskNumber1MScript:

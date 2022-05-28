@@ -49,7 +49,7 @@ Beta Wooper back sprite made by 64BitWonder.
 
 Sneasel, Tyranitar, Dragonite, Moltres, Heracross,
 Teddiursa, Ursaring, Phanpy, Umbreon, Feraligatr,
-Houndoom- Soup
+Houndoom- SoupPotato
 
 Idain and Bronzeswagger for Weather Icons.
 
@@ -127,7 +127,7 @@ NightTime coding and songs, Friendly Shop: Tritehexagon
 Lugia Battle: Pigu
 Kanto Legend Battle XY: GACT and Pigu
 Ho-Oh Battle: Pigu
-Megalovania: Shockslayer
+Megalovania: Shockslayer, Radiation
 Unwavering Heart MIDI: LyricWulf
 Marnie's Theme/Dahlia's Theme MIDI: ryanisthebomb203
 Giovanni Battle Theme/Madame Boss Theme MIDI: CynthiaCelestic

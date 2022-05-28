@@ -132,7 +132,7 @@ ItemEffects:
 	dw NoEffect            ; LUCKY_EGG
 	dw CardKeyEffect       ; CARD_KEY
 	dw NoEffect            ; MACHINE_PART
-	dw NoEffect            ; EGG_TICKET
+	dw NoEffect            ; POWER_BAND
 	dw NoEffect            ; LOST_ITEM
 	dw NoEffect            ; STARDUST
 	dw NoEffect            ; STAR_PIECE

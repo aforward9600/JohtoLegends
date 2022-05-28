@@ -23,7 +23,7 @@ BrunosRoom_MapScripts:
 .KeepEntranceOpen:
 	checkevent EVENT_MARTHAS_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
-	changeblock 4, 2, $16 ; open door
+	changeblock 4, 2, $7b ; open door
 .KeepExitClosed:
 	return
 
@@ -58,7 +58,7 @@ MarthaScript_Battle:
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 2, $16 ; open door
+	changeblock 4, 2, $7b ; open door
 	reloadmappart
 	closetext
 	setevent EVENT_MARTHAS_ROOM_EXIT_OPEN

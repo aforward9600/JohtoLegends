@@ -1340,8 +1340,8 @@ _JustSawSomeRareMonText::
 	prompt
 
 _SavingRecordText::
-	text "SAVING RECORD…"
-	line "DON'T TURN OFF!"
+	text "Saving Record…"
+	line "Don't Turn Off!"
 	done
 
 _ReceiveItemText::

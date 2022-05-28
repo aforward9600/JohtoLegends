@@ -118,7 +118,7 @@ ItemNames::
 	db "Lucky Egg@"
 	db "Card Key@"
 	db "Machine Part@"
-	db "Egg Ticket@"
+	db "Power Band@"
 	db "Lost Item@"
 	db "Stardust@"
 	db "Star Piece@"

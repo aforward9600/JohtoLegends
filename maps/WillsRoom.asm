@@ -23,7 +23,7 @@ WillsRoom_MapScripts:
 .KeepEntranceOpen:
 	checkevent EVENT_FLORINAS_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
-	changeblock 4, 2, $16 ; open door
+	changeblock 4, 2, $79 ; open door
 .KeepExitClosed:
 	return
 
@@ -58,7 +58,7 @@ FlorinaScript_Battle:
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 2, $16 ; open door
+	changeblock 4, 2, $79 ; open door
 	reloadmappart
 	closetext
 	setevent EVENT_FLORINAS_ROOM_EXIT_OPEN

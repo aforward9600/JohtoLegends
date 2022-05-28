@@ -82,7 +82,7 @@ _GiveOddEgg:
 	dec c
 	jr nz, .move_loop
 
-	ld a, EGG_TICKET
+	ld a, MIRAGE_MAIL
 	ld [wCurItem], a
 	ld a, 1
 	ld [wItemQuantityChangeBuffer], a

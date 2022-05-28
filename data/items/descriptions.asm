@@ -119,7 +119,7 @@ ItemDescriptions:
 	dw LuckyEggDesc
 	dw CardKeyDesc
 	dw MachinePartDesc
-	dw EggTicketDesc
+	dw PowerBandDesc
 	dw LostItemDesc
 	dw StardustDesc
 	dw StarPieceDesc
@@ -715,7 +715,7 @@ HardStoneDesc:
 	next "type moves. (Hold)@"
 
 LuckyEggDesc:
-	db   "Earns extra EXP."
+	db   "Earns extra Exp."
 	next "points. (Hold)@"
 
 CardKeyDesc:
@@ -726,9 +726,9 @@ MachinePartDesc:
 	db   "A machine part for"
 	next "the Power Plant.@"
 
-EggTicketDesc:
-	db   "May use at Golden-"
-	next "rod trade corner.@"
+PowerBandDesc:
+	db   "Increases holder's"
+	next "Attack stat (Hold)@"
 
 LostItemDesc:
 	db   "The # Doll lost"

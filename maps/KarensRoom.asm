@@ -23,7 +23,7 @@ KarensRoom_MapScripts:
 .KeepEntranceOpen:
 	checkevent EVENT_AGATHAS_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
-	changeblock 4, 2, $16 ; open door
+	changeblock 4, 2, $7c ; open door
 .KeepExitClosed:
 	return
 
@@ -58,7 +58,7 @@ AgathaScript_Battle:
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 2, $16 ; open door
+	changeblock 4, 2, $7c ; open door
 	reloadmappart
 	closetext
 	setevent EVENT_AGATHAS_ROOM_EXIT_OPEN
