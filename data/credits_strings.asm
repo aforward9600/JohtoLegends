@@ -211,7 +211,7 @@ CreditsStrings:
 .GraphicsDesign:      db "    & Graphics@"         ; "グラフィック　デザイン@"
 .Music:               db "       Music@"              ; "おんがく@"
 .SkarminiDesign:      db "  Skarmini Design@"          ; "サウンド　エフェクト@"
-.Mskd:                db "         Mskd@"         ; "ゲームデザイン@"
+.Mskd:                db "        Mskd@"         ; "ゲームデザイン@"
 .GameScenario:        db "   GAME SCENARIO@"          ; "シナりオ@"
 .ToolProgramming:     db "  TOOL PROGRAMMING@"        ; "ツール　プログラム@"
 .SirWhibbles:         db "    SirWhibbles@"        ; "パラメーター　せってい@"

@@ -521,8 +521,15 @@ PokeBallEffect:
 	ld a, [wBattleType]
 	cp BATTLETYPE_CONTEST
 	jp z, .catch_bug_contest_mon
+	cp BATTLETYPE_SHINY
+	jr z, .is_celebi
+	cp BATTLETYPE_HO_OH
+	jr z, .is_celebi
+	cp BATTLETYPE_LUGIA
+	jr z, .is_celebi
 	cp BATTLETYPE_CELEBI
 	jr nz, .not_celebi
+.is_celebi
 	ld hl, wBattleResult
 	set BATTLERESULT_CAUGHT_CELEBI, [hl]
 .not_celebi

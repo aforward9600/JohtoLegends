@@ -6,9 +6,10 @@
 	const PLAYERSHOUSE1F_POKEFAN_F
 
 PlayersHouse1F_MapScripts:
-	db 2 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_FINISHED
+	db 3 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_GRANDMA_GIVES_YOU_WATCH
+	scene_script .DummyScene1 ; SCENE_GRANDMA_TELLS_YOU_ABOUT_OAK
+	scene_script .DummyScene2 ; SCENE_PLAYERS_HOUSE_NOTHING
 
 	db 0 ; callbacks
 
@@ -16,6 +17,9 @@ PlayersHouse1F_MapScripts:
 	end
 
 .DummyScene1:
+	end
+
+.DummyScene2:
 	end
 
 MeetMomLeftScript:
@@ -47,7 +51,7 @@ MeetMomScript:
 	waitsfx
 	setflag ENGINE_POKEGEAR
 	setflag ENGINE_MAP_CARD
-	setscene SCENE_FINISHED
+	setscene SCENE_PLAYERS_HOUSE_NOTHING
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
 	writetext MomGivesPokegearText
@@ -75,7 +79,7 @@ MeetMomScript:
 	waitsfx
 	setflag ENGINE_POKEGEAR
 	setflag ENGINE_MAP_CARD
-	setscene SCENE_FINISHED
+	setscene SCENE_PLAYERS_HOUSE_NOTHING
 	variablesprite SPRITE_RIVAL, SPRITE_CHRIS
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	setevent EVENT_RIVAL_AT_MASTERS_HOUSE_1
@@ -116,6 +120,10 @@ MeetMomTalkedScript:
 	playmusic MUSIC_MOM
 	sjump MeetMomScript
 
+MeetGrandmaTalkedScript:
+	playmusic MUSIC_MOM
+	sjump MeetGrandmaScript
+
 GearName:
 	db "#Gear@"
 
@@ -126,8 +134,13 @@ PlayersHouse1FReceiveItemStd:
 MomScript:
 	faceplayer
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
-	checkscene
-	iffalse MeetMomTalkedScript ; SCENE_DEFAULT
+	checkscene SCENE_PLAYERS_HOUSE_NOTHING
+	iftrue .GrannySpeaks
+	checkscene SCENE_GRANDMA_GIVES_YOU_WATCH
+	iftrue MeetMomTalkedScript ; SCENE_DEFAULT
+	checkscene SCENE_GRANDMA_TELLS_YOU_ABOUT_OAK
+	iftrue MeetGrandmaTalkedScript
+.GrannySpeaks
 	opentext
 	checkevent EVENT_FIRST_TIME_BANKING_WITH_MOM
 	iftrue .FirstTimeBanking
@@ -175,9 +188,65 @@ MomScript:
 	setmapscene ICE_PATH_B1F, SCENE_ICE_PATH_B1F_RIVAL
 	end
 
+MeetGrandmaLeftScript:
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+
+MeetGrandmaRightScript:
+	playmusic MUSIC_MOM
+	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_GRANNY1, 15
+	turnobject PLAYER, LEFT
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iffalse .OnRight
+	applymovement PLAYERSHOUSE1F_GRANNY1, MomTurnsTowardPlayerMovement
+	sjump MeetGrandmaScript
+
+.OnRight:
+	applymovement PLAYERSHOUSE1F_GRANNY1, MomWalksToPlayerMovement
+MeetGrandmaScript:
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DracoCameBy
+	opentext
+	writetext DahliaCameByText
+	waitbutton
+	closetext
+.ReconvergeGranny:
+	clearevent EVENT_VICTORY_ROAD_GATE_OAK
+	clearevent EVENT_VICTORY_ROAD_GATE_RIVAL
+	setevent EVENT_VICTORY_ROAD_GATE_GUARD
+	setmapscene VICTORY_ROAD_GATE, SCENE_VICTORY_ROAD_GATE_OAK
+	setscene SCENE_PLAYERS_HOUSE_NOTHING
+	setevent EVENT_GOT_RIVALS_MESSAGE
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue .FromRight2
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	iffalse .FromLeft2
+	sjump .Finish2
+
+.FromRight2:
+	applymovement PLAYERSHOUSE1F_GRANNY1, MomTurnsBackMovement
+	sjump .Finish2
+
+.FromLeft2:
+	applymovement PLAYERSHOUSE1F_GRANNY1, MomWalksBackMovement
+	sjump .Finish2
+
+.Finish2:
+	special RestartMapMusic
+	turnobject PLAYERSHOUSE1F_GRANNY1, LEFT
+	end
+
+.DracoCameBy:
+	opentext
+	writetext DracoCameByText
+	waitbutton
+	closetext
+	sjump .ReconvergeGranny
+
 NeighborScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .CongratulationsOnBeingChampion
 	checktime MORN
 	iftrue .MornScript
 	checktime DAY
@@ -211,6 +280,22 @@ NeighborScript:
 
 .Main2:
 	writetext NeighborText2
+	waitbutton
+	closetext
+	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
+	end
+
+.CongratulationsOnBeingChampion:
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .CongratsFemale
+	writetext CongratulationsOnBeingChampionText
+	waitbutton
+	closetext
+	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
+	end
+
+.CongratsFemale:
+	writetext CongratsFemaleText
 	waitbutton
 	closetext
 	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
@@ -464,13 +549,13 @@ OhWaitText:
 	text "So, you've got"
 	line "your #mon and"
 	cont "you're leaving on"
-	cont "an adventure..."
+	cont "an adventure…"
 
 	para "Good luck to you,"
 	line "and you're always"
 	cont "welcome back."
 
-	para "...Oh, wait!"
+	para "…Oh, wait!"
 
 	para "I almost forgot!"
 	line "Here, have your"
@@ -512,6 +597,102 @@ GrandmaJournalText:
 	cont "you."
 	done
 
+DahliaCameByText:
+	text "Ah, there you are,"
+	line "<PLAYER>!"
+
+	para "Congratulations on"
+	line "becoming Champion!"
+
+	para "I'm certain your"
+	line "parents would be"
+	cont "proud!"
+
+	para "Oh, by the way…"
+
+	para "<RIVAL> came by."
+
+	para "She said to meet"
+	line "her at the gate"
+	cont "to Victory Road."
+
+	para "I don't know what"
+	line "she wants, but"
+	cont "you better not"
+	cont "keep her waiting!"
+	done
+
+DracoCameByText:
+	text "Ah, there you are,"
+	line "<PLAYER>!"
+
+	para "Congratulations on"
+	line "becoming Champion!"
+
+	para "I'm certain your"
+	line "parents would be"
+	cont "proud!"
+
+	para "Oh, by the way…"
+
+	para "<RIVAL> came by."
+
+	para "He said to meet"
+	line "him at the gate"
+	cont "to Victory Road."
+
+	para "I don't know what"
+	line "he wants, but"
+	cont "you better not"
+	cont "keep him waiting!"
+	done
+
+CongratulationsOnBeingChampionText:
+	text "<PLAYER>!"
+
+	para "Congratulations on"
+	line "becoming champion!"
+
+	para "I'm proud of you,"
+	line "and <RIVAL> as"
+	cont "well!"
+
+	para "She's taking the"
+	line "loss better than"
+	cont "I thought she"
+	cont "would."
+
+	para "She certainly"
+	line "doesn't get her"
+	cont "humility from"
+	cont "her father!"
+
+	para "Hohoho!"
+	done
+
+CongratsFemaleText:
+	text "<PLAYER>!"
+
+	para "Congratulations on"
+	line "becoming champion!"
+
+	para "I'm proud of you,"
+	line "and <RIVAL> as"
+	cont "well!"
+
+	para "He's taking the"
+	line "loss better than"
+	cont "I thought he"
+	cont "would."
+
+	para "He certainly"
+	line "doesn't get his"
+	cont "humility from"
+	cont "her father!"
+
+	para "Hohoho!"
+	done
+
 PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -520,9 +701,11 @@ PlayersHouse1F_MapEvents:
 	warp_event  7,  7, BLACKTHORN_CITY, 9
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
 
-	db 2 ; coord events
-	coord_event  8,  4, SCENE_DEFAULT, MeetMomLeftScript
-	coord_event  9,  4, SCENE_DEFAULT, MeetMomRightScript
+	db 4 ; coord events
+	coord_event  8,  4, SCENE_GRANDMA_GIVES_YOU_WATCH, MeetMomLeftScript
+	coord_event  9,  4, SCENE_GRANDMA_GIVES_YOU_WATCH, MeetMomRightScript
+	coord_event  8,  4, SCENE_GRANDMA_TELLS_YOU_ABOUT_OAK, MeetGrandmaLeftScript
+	coord_event  9,  4, SCENE_GRANDMA_TELLS_YOU_ABOUT_OAK, MeetGrandmaRightScript
 
 	db 4 ; bg events
 	bg_event  0,  1, BGEVENT_READ, StoveScript

@@ -95,7 +95,7 @@
 	const CLEANSE_TAG  ; 5e
 	const MYSTIC_WATER ; 5f
 	const TWISTEDSPOON ; 60
-	const WHT_APRICORN ; 61
+	const BADGE_POUCH  ; 61
 	const BLACKBELT    ; 62
 	const BLK_APRICORN ; 63
 	const PNK_APRICORN ; 65

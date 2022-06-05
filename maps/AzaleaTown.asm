@@ -77,6 +77,7 @@ AzaleaTownRivalBattleScene1:
 	applymovement AZALEATOWN_RIVAL, AzaleaTownRivalBattleExitMovement
 	disappear AZALEATOWN_RIVAL
 	setscene SCENE_AZALEATOWN_NOTHING
+	pause 15
 	special RestartMapMusic
 	waitsfx
 	playmapmusic

@@ -89,7 +89,7 @@ ItemDescriptions:
 	dw CleanseTagDesc
 	dw MysticWaterDesc
 	dw TwistedSpoonDesc
-	dw WhtApricornDesc
+	dw BadgePouchDesc
 	dw BlackbeltDesc
 	dw BlkApricornDesc
 	dw PnkApricornDesc
@@ -607,8 +607,9 @@ TwistedSpoonDesc:
 	db   "Powers up psychic-"
 	next "type moves. (Hold)@"
 
-WhtApricornDesc:
-	db   "A white Apricorn.@"
+BadgePouchDesc:
+	db   "A pouch of Kanto"
+	next "League Badges.@"
 
 BlackbeltDesc:
 	db   "Boosts fighting-"

@@ -73,6 +73,12 @@ IlexForestFarfetchdScript:
 	setevent EVENT_ILEX_FOREST_FARFETCHD
 .NotBeaten:
 	reloadmapafterbattle
+	special CheckCaughtCelebi
+	iftrue .CaughtFarfetchd
+	end
+
+.CaughtFarfetchd:
+	setevent EVENT_CAUGHT_FARFETCHD
 	end
 
 IlexForestCharcoalMasterScript:

@@ -22,11 +22,11 @@ TinTowerRoof_MapScripts:
 	end
 
 .HoOh:
-	checkevent EVENT_FOUGHT_HO_OH
+	checkevent EVENT_CAUGHT_HO_OH
 	iftrue .NoAppear
-	checkitem RAINBOW_WING
-	iftrue .Appear
-	sjump .NoAppear
+;	checkitem RAINBOW_WING
+;	iftrue .Appear
+;	sjump .NoAppear
 
 .Appear:
 	appear TINTOWERROOF_HO_OH
@@ -57,9 +57,20 @@ TinTowerHoOh:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_HO_OH
 	loadwildmon HO_OH, 60
 	startbattle
+	ifequal LOSE, .NotBeatenHoOh
 	disappear TINTOWERROOF_HO_OH
-	reloadmapafterbattle
 	setevent EVENT_SET_WHEN_FOUGHT_HO_OH
+.NotBeatenHoOh:
+	reloadmapafterbattle
+	special CheckCaughtCelebi
+	iftrue .CaughtHoOh
+	end
+
+.CaughtHoOh:
+	opentext
+	writetext HoOhText
+	waitbutton
+	closetext
 	end
 
 PlayerHoOhMovement1:

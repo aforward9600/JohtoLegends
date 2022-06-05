@@ -1088,7 +1088,7 @@ YoungsterGroup:
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (5)
-	db "SAMUEL@", TRAINERTYPE_NORMAL
+	db "Gordy@", TRAINERTYPE_NORMAL
 	db 7
 	dw RATTATA
 	db 10
@@ -1096,7 +1096,7 @@ YoungsterGroup:
 	db 8
 	dw SPEAROW
 	db 8
-	dw SPEAROW
+	dw PICHU
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (6)

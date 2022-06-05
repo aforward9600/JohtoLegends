@@ -76,6 +76,8 @@ Ampharos overworld sprite: Prism Team
 
 Lance and Cynthia overworld sprites: Rangi and the Polished Crystal Team.
 
+Clair Trainer Sprite base: Solo993
+
 Armored Mewtwo sprites and icon: Rangi
 
 Minisprites 1-251 and Gen 4:

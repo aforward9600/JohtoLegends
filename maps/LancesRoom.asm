@@ -113,12 +113,12 @@ LancesRoomLanceScript:
 	closetext
 	applymovement LANCESROOM_OAK2, LancesRoomMovementData_OakPositionsSelfToGuidePlayerAway
 	turnobject PLAYER, UP
+	turnobject LANCESROOM_RIVAL, UP
 	opentext
 	writetext OakComeWithMeText
 	waitbutton
 	closetext
 	follow LANCESROOM_OAK2, PLAYER
-	turnobject LANCESROOM_RIVAL, UP
 	applymovement LANCESROOM_OAK2, LancesRoomMovementData_LanceLeadsPlayerToHallOfFame
 	stopfollow
 	playsound SFX_EXIT_BUILDING

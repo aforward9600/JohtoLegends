@@ -61,13 +61,13 @@ TrainerFisherButch:
 	closetext
 	end
 
-TrainerSuperNerdDexter:
-	trainer SUPER_NERD, DEXTER, EVENT_BEAT_SUPER_NERD_DEXTER, SuperNerdDexterSeenText, SuperNerdDexterBeatenText, 0, .Script
+TrainerYoungsterGordy:
+	trainer YOUNGSTER, GORDY, EVENT_BEAT_YOUNGSTER_GORDY, YoungsterGordySeenText, YoungsterGordyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SuperNerdDexterAfterBattleText
+	writetext YoungsterGordyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -257,7 +257,7 @@ SchoolboyFinnAfterBattleText:
 	line "does."
 	done
 
-SuperNerdDexterSeenText:
+YoungsterGordySeenText:
 	text "You won't believe"
 	line "this!"
 
@@ -273,12 +273,12 @@ SuperNerdDexterSeenText:
 	line "got anything."
 	done
 
-SuperNerdDexterBeatenText:
+YoungsterGordyBeatenText:
 	text "Your #mon might"
 	line "do fine."
 	done
 
-SuperNerdDexterAfterBattleText:
+YoungsterGordyAfterBattleText:
 	text "Grass-types don't"
 	line "do so well,"
 	cont "neither do Water"
@@ -404,7 +404,7 @@ Route44_MapEvents:
 	object_event 36,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherLyle, -1
 	object_event 24, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherButch, -1
 	object_event 30,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSchoolboyFinn, -1
-	object_event 44,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdDexter, -1
+	object_event 44,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerYoungsterGordy, -1
 	object_event 53, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperSal, -1
 	object_event 35, 15, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherColton, -1
 	object_event 40, 14, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerTeacherCadi, -1

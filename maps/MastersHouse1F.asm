@@ -102,7 +102,7 @@ DratiniPokeballScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke MEWTWO, 70, ORAN_BERRY
+	givepoke DRAGONAIR, 39, MASTER_BALL
 	closetext
 	sjump RivalLarvitarScript
 

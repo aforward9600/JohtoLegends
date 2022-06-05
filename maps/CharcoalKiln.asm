@@ -19,8 +19,31 @@ CharcoalKilnBoss:
 	end
 
 .BeatFarfetchd:
+	checkevent EVENT_CAUGHT_FARFETCHD
+	iftrue .CaughtFarfetchd
 	writetext CharcoalKilnBossText3
 	waitbutton
+	closetext
+	end
+
+.CaughtFarfetchd:
+	checkevent EVENT_GOT_STICK_IN_CHARCOAL_KILN
+	iftrue .AlreadyGotStick
+	writetext CharcoalKilnBossText4
+	buttonsound
+	verbosegiveitem STICK
+	iffalse .Done
+	setevent EVENT_GOT_STICK_IN_CHARCOAL_KILN
+	closetext
+	end
+
+.AlreadyGotStick:
+	writetext CharcoalKilnBossText2
+	waitbutton
+	closetext
+	end
+
+.Done:
 	closetext
 	end
 
@@ -81,15 +104,12 @@ CharcoalKilnBossText1:
 	done
 
 CharcoalKilnBossText2:
-	text "The SLOWPOKE have"
-	line "returned…"
+	text "Has the Farfetch'd"
+	line "been a good ally"
+	cont "to you?"
 
-	para "But my APPRENTICE"
-	line "hasn't come back"
-	cont "from ILEX FOREST."
-
-	para "Where in the world"
-	line "is that lazy guy?"
+	para "Take good care of"
+	line "it…"
 	done
 
 CharcoalKilnBossText3:
@@ -102,6 +122,26 @@ CharcoalKilnBossText3:
 	para "You likely won't"
 	line "see another like"
 	cont "it…"
+	done
+
+CharcoalKilnBossText4:
+	text "So, you caught"
+	line "that Farfetch'd?"
+
+	para "Most impressive…"
+
+	para "Here, I want you"
+	line "to have this…"
+
+	para "It's a Stick…"
+
+	para "Farfetch'd love"
+	line "them…"
+
+	para "It boosts the rate"
+	line "at which they deal"
+	cont "critical hits when"
+	cont "they hold it…"
 	done
 
 CharcoalKilnApprenticeText1:

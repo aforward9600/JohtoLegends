@@ -88,7 +88,7 @@ ItemNames::
 	db "Cleanse Tag@"
 	db "Mystic Water@"
 	db "Twistedspoon@"
-	db "Wht Apricorn@"
+	db "Badge Pouch@"
 	db "Blackbelt@"
 	db "Blk Apricorn@"
 	db "Pnk Apricorn@"
