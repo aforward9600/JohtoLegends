@@ -60,11 +60,11 @@ CreditsStrings:
 	dw .Shockslayer
 	dw .MoveAnimations
 	dw .Pigu
-	dw .NobOgasawara
+	dw .MegamanOmega
 	dw .LyricWulf
 	dw .ryanisthebomb
 	dw .CynthiaCelestic
-	dw .ThomasHertzog
+	dw .Vulcandth
 	dw .ErikJohnson
 	dw .Mmmmmmmmmmmmmmmmm
 	dw .TerukiMurakawa
@@ -190,11 +190,11 @@ CreditsStrings:
 .End:                 db "        END@"               ; "おしまい@"
 .Unknown:             db "      ????????@"            ; "？？？？？？？？@"
 .Pigu:                db "        Pigu@"
-.NobOgasawara:        db "   NOB OGASAWARA@"
+.MegamanOmega:        db "    MegamanOmega@"
 .LyricWulf:           db "     LyricWulf@"
 .ryanisthebomb:       db "  ryanisthebomb203@"
 .CynthiaCelestic:     db "  CynthiaCelestic@"
-.ThomasHertzog:       db "   THOMAS HERTZOG@"
+.Vulcandth:           db "     Vulcandth@"
 .ErikJohnson:         db "    ERIK JOHNSON@"
 .Mmmmmmmmmmmmmmmmm:   db " Mmmmmmmmmmmmmmmmm@"
 .TerukiMurakawa:      db "  TERUKI MURAKAWA@"

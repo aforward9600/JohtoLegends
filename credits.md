@@ -23,9 +23,11 @@ Rangi and aaaaaa123456789 for items from smashing rocks
 
 Dark Zeta, PiaCarrot, and cardboardbox for new evolution moves and fixing the glitch
 
+Vulcandth and Rangi: Level Caught Design Flaw Fix
+
 New Pokemon cries: chattycrystal team
 
-Calm Mind, Sucker Punch, Dragon Dance, Quiver Dance, Grass Knot, Aqua Ring, Sleep effect, Knock Off: chattycrystal team
+Calm Mind, Sucker Punch, Dragon Dance, Quiver Dance, Grass Knot, Aqua Ring, Sleep, Knock Off, Roost effect,: chattycrystal team
 
 Sucker Punch, Work Up, Aqua Jet, Muddy Water, Rock Blast, Heat Wave, Brick Break, Hurricane, Leaf Blade, Lava Plume Animation: chattycrystal team
 
@@ -77,6 +79,8 @@ Ampharos overworld sprite: Prism Team
 Lance and Cynthia overworld sprites: Rangi and the Polished Crystal Team.
 
 Clair Trainer Sprite base: Solo993
+
+Lance Trainer Sprite base: MegamanOmega
 
 Armored Mewtwo sprites and icon: Rangi
 

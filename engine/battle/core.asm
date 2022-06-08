@@ -293,6 +293,7 @@ HandleBetweenTurnEffects:
 	call HandleDefrost
 	call HandleSafeguard
 	call HandleScreens
+	call HandleRoost
 	call HandleStatBoostingHeldItems
 	call HandleHealingItems
 	call UpdateBattleMonInParty
@@ -1683,6 +1684,25 @@ HandleScreens:
 	res SCREENS_REFLECT, [hl]
 	ld hl, BattleText_MonsReflectFaded
 	jp StdBattleTextbox
+
+HandleRoost:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .player1
+	call .CheckPlayer
+	jr .CheckEnemy
+
+.player1
+	call .CheckEnemy
+.CheckPlayer:
+	ld a, [wPlayerSubStatus5]
+	res SUBSTATUS_ROOSTING, a
+	ret
+	
+.CheckEnemy:
+	ld a, [wEnemySubStatus5]
+	res SUBSTATUS_ROOSTING, a
+	ret
 
 HandleWeather:
 	ld a, [wBattleWeather]

@@ -17,13 +17,14 @@ box_struct: MACRO
 \1SpdEV::          db
 \1SpclAtkEV::      db
 \1SpclDefEV::      db
-\1Padding::        ds 4
+\1CaughtTime::
+\1Padding2::       db
+\1Padding::        ds 3
 \1DVs::            dw
 \1PP::             ds NUM_MOVES
 \1Happiness::      db
 \1PokerusStatus::  db
 \1CaughtData::
-\1CaughtTime::
 \1CaughtLevel::    db
 \1CaughtGender::
 \1CaughtLocation:: db

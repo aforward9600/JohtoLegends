@@ -44,7 +44,8 @@ CreditsScript:
 	db     PROGRAMMING_HELP, 0
 	db                RANGI, 1
 	db                IDAIN, 2
-	db               KDLPRO, 3 ;IDAIN
+	db               KDLPRO, 3
+	db            VULCANDTH, 4
 
 	db CREDITS_WAIT, 12
 
@@ -128,17 +129,18 @@ CreditsScript:
 
 	db CREDITS_WAIT, 12
 
-	db      TRAINER_SPRITES, 1
-	db           GAME_FREAK, 2
-	db          SIRWHIBBLES, 3
-	db                RANGI, 4
+	db      TRAINER_SPRITES, 0
+	db           GAME_FREAK, 1
+	db          SIRWHIBBLES, 2
+	db                RANGI, 3
+	db         MEGAMANOMEGA, 4
 
 	db CREDITS_WAIT, 12
 
-	db      TRAINER_SPRITES, 1
-	db        JUSTINNUGGETS, 2
-	db            SINDORMAN, 3
-	db          FERROPEXOLA, 4
+	db      TRAINER_SPRITES, 0
+	db        JUSTINNUGGETS, 1
+	db            SINDORMAN, 2
+	db          FERROPEXOLA, 3
 
 	db CREDITS_WAIT, 12
 

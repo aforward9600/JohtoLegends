@@ -1633,7 +1633,7 @@ wSeerOTName:: ds NAME_LENGTH
 wSeerOTNameGrammar:: db
 wSeerCaughtLevelString:: ds 4
 wSeerCaughtLevel:: db
-wSeerCaughtData:: db
+wSeerCaughtTime:: db
 wSeerCaughtGender:: db
 
 NEXTU ; d002

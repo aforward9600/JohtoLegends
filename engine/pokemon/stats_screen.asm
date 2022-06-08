@@ -837,7 +837,7 @@ StatsScreen_LoadGFX:
 	; caught level
 	; Limited to between 1 and 63 since it's a 6-bit quantity
 	ld a, [wTempMonCaughtLevel]
-	and CAUGHT_LEVEL_MASK
+	and a
 	jr z, .unknown_level
 	cp CAUGHT_EGG_LEVEL
 	jr nz, .print

@@ -1278,18 +1278,18 @@ BattleCommand_Stab:
 	ld d, a
 	ld e, [hl]
 
+	push hl
+	call ChangeTypeForRoost
+	pop hl
+
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .go ; Who Attacks and who Defends
 
-	ld hl, wEnemyMonType1
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-	ld hl, wBattleMonType1
-	ld a, [hli]
-	ld d, a
-	ld e, [hl]
+	push de ;changing this code to not have to run the roost check twice and so it can know which register is which side
+	ld d, b
+	ld e, c
+	pop bc
 
 .go
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1460,6 +1460,9 @@ CheckTypeMatchup:
 	ld b, [hl]
 	inc hl
 	ld c, [hl]
+
+	farcall ChangeTypeForOpponentRoost
+
 	ld a, 10 ; 1.0
 	ld [wTypeMatchup], a
 	ld hl, TypeMatchups
@@ -6964,3 +6967,5 @@ SandstormSpDefBoost:
 	ret
 
 INCLUDE "engine/battle/move_effects/aqua_ring.asm"
+
+INCLUDE "engine/battle/move_effects/roost.asm"

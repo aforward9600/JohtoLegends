@@ -2723,6 +2723,13 @@ KnockOff:
 	kingsrock
 	endmove
 
+Roost:
+	checkobedience
+	usedmovetext
+	doturn
+	roost
+	endmove
+
 ;UTurn:
 ;    checkobedience
 ;    usedmovetext

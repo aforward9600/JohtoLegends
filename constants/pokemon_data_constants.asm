@@ -75,14 +75,15 @@ MON_DEF_EV             EQUS "(wPartyMon1DefEV - wPartyMon1)"
 MON_SPD_EV             EQUS "(wPartyMon1SpdEV - wPartyMon1)"
 MON_SAT_EV             EQUS "(wPartyMon1SpclAtkEV - wPartyMon1)"
 MON_SDF_EV             EQUS "(wPartyMon1SpclDefEV - wPartyMon1)"
+MON_CAUGHTTIME         EQUS "(wPartyMon1CaughtTime - wPartyMon1)"
 MON_PADDING            EQUS "(wPartyMon1Padding - wPartyMon1)"
+MON_PADDING2           EQUS "(wPartyMon1Padding2 - wPartyMon1)"
 MON_DVS                EQUS "(wPartyMon1DVs - wPartyMon1)"
 MON_PP                 EQUS "(wPartyMon1PP - wPartyMon1)"
 MON_HAPPINESS          EQUS "(wPartyMon1Happiness - wPartyMon1)"
 MON_PKRUS              EQUS "(wPartyMon1PokerusStatus - wPartyMon1)"
 MON_CAUGHTDATA         EQUS "(wPartyMon1CaughtData - wPartyMon1)"
 MON_CAUGHTLEVEL        EQUS "(wPartyMon1CaughtLevel - wPartyMon1)"
-MON_CAUGHTTIME         EQUS "(wPartyMon1CaughtTime - wPartyMon1)"
 MON_CAUGHTGENDER       EQUS "(wPartyMon1CaughtGender - wPartyMon1)"
 MON_CAUGHTLOCATION     EQUS "(wPartyMon1CaughtLocation - wPartyMon1)"
 MON_LEVEL              EQUS "(wPartyMon1Level - wPartyMon1)"
@@ -102,8 +103,8 @@ REDMON_STRUCT_LENGTH EQU 44
 
 ; caught data
 
-CAUGHT_TIME_MASK  EQU %11000000
-CAUGHT_LEVEL_MASK EQU %00111111
+CAUGHT_TIME_MASK    EQU %11000000
+CAUGHT_PADDING_MASK EQU %00111111
 
 CAUGHT_GENDER_MASK   EQU %10000000
 CAUGHT_LOCATION_MASK EQU %01111111
