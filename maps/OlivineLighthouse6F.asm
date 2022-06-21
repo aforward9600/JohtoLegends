@@ -80,10 +80,10 @@ OlivineLighthouse6F_MapScripts:
 	pause 10
 	applymovement OLIVINELIGHTHOUSE6F_MONSTER2, RosaMovesMovement
 	appear OLIVINELIGHTHOUSE6F_MONSTER
-	setevent EVENT_LIGHTHOUSE_MONSTER2
+	pause 10
+	applymovement OLIVINELIGHTHOUSE6F_MONSTER2, RosaDisappears
 	disappear OLIVINELIGHTHOUSE6F_MONSTER2
 	clearevent EVENT_LIGHTHOUSE_MONSTER
-	pause 10
 	cry AMPHAROS
 	pause 15
 	opentext
@@ -153,10 +153,10 @@ OlivineLighthouse6F_MapScripts:
 	pause 10
 	applymovement OLIVINELIGHTHOUSE6F_MONSTER2, RosaMovesMovement
 	appear OLIVINELIGHTHOUSE6F_MONSTER
-	setevent EVENT_LIGHTHOUSE_MONSTER2
+	pause 10
+	applymovement OLIVINELIGHTHOUSE6F_MONSTER2, RosaDisappears
 	disappear OLIVINELIGHTHOUSE6F_MONSTER2
 	clearevent EVENT_LIGHTHOUSE_MONSTER
-	pause 10
 	cry AMPHAROS
 	pause 15
 	opentext
@@ -310,6 +310,10 @@ SherlesApproachesMovement:
 	step UP
 	step UP
 	step UP
+	step_end
+
+RosaDisappears:
+	hide_person
 	step_end
 
 HandItOverText:

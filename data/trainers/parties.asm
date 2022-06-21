@@ -1100,11 +1100,13 @@ YoungsterGroup:
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (6)
-	db "IAN@", TRAINERTYPE_NORMAL
-	db 10
-	dw MANKEY
-	db 12
-	dw DIGLETT
+	db "Randy@", TRAINERTYPE_NORMAL
+	db 15
+	dw ELECTRIKE
+	db 15
+	dw ARON
+	db 16
+	dw IVYSAUR
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (7)

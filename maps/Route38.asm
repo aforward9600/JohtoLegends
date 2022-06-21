@@ -1,6 +1,6 @@
 	object_const_def ; object_event constants
 	const ROUTE38_STANDING_YOUNGSTER1
-	const ROUTE38_LASS
+	const ROUTE38_STANDING_YOUNGSTER3
 	const ROUTE38_STANDING_YOUNGSTER2
 	const ROUTE38_BUENA1
 	const ROUTE38_SAILOR
@@ -34,27 +34,27 @@ TrainerSailorLarry:
 	closetext
 	end
 
-TrainerLassCynthia:
-	trainer CYNTHIA, CYNTHIA3, EVENT_BEAT_LASS_DANA, LassCynthiaSeenText, LassCynthiaBeatenText, 0, .Script
+TrainerYoungsterRandy:
+	trainer YOUNGSTER, RANDY, EVENT_BEAT_YOUNGSTER_RANDY, YoungsterRandySeenText, YoungsterRandyBeatenText, 0, .Script
 
-.Script
+.Script:
 	endifjustbattled
 	opentext
-	writetext LassCynthiaRematchText
+	writetext YoungsterRandyRematchText
 	yesorno
 	iffalse .Refused
-	playmusic MUSIC_LASS_ENCOUNTER
-	writetext LassCynthiaLetsDoItText
+	playmusic MUSIC_YOUNGSTER_ENCOUNTER
+	writetext YoungsterRandyLetsDoItText
 	waitbutton
-	winlosstext LassCynthiaBeatenText, 0
-	loadtrainer CYNTHIA, CYNTHIA3
+	winlosstext YoungsterRandyBeatenText, 0
+	loadtrainer YOUNGSTER, RANDY
 	startbattle
 	reloadmapafterbattle
 	closetext
 	end
 
 .Refused:
-	writetext LassCynthiaAfterBattleText
+	writetext YoungsterRandyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -142,40 +142,30 @@ SchoolboyEricAfterBattleText:
 	para "champion of the"
 	line "#mon League."
 	done
+YoungsterRandySeenText:
+	text "Ever been to"
+	line "Olivine City?"
 
-LassCynthiaSeenText:
-	text "My family is from"
-	line "Sinnoh."
-
-	para "We're visiting the"
-	line "region in hopes of"
-	cont "visiting the Ruins"
-	cont "of Alph."
+	para "The lighthouse"
+	line "there is pretty"
+	cont "cool!"
 	done
 
-LassCynthiaBeatenText:
-	text "Wow! You're quite"
-	line "strong!"
+YoungsterRandyBeatenText:
+	text "You're as bright"
+	line "as a lighthouse!"
 	done
 
-LassCynthiaAfterBattleText:
-	text "Perhaps another"
-	line "time."
-
-	para "By the way..."
-
-	para "It's hard to get"
-	line "to the ruins,"
-
-	para "with all the trees"
-	line "and Sudowoodo."
+YoungsterRandyAfterBattleText:
+	text "Alright. See you"
+	line "later."
 	done
 
-LassCynthiaRematchText:
+YoungsterRandyRematchText:
 	text "Back again, huh?"
 	done
 
-LassCynthiaLetsDoItText:
+YoungsterRandyLetsDoItText:
 	text "After you!"
 	done
 
@@ -258,7 +248,7 @@ Route38SignText:
 	para "Olivine City -"
 	line "Ecruteak City"
 
-	para "Tourist Cynthia"
+	para "Youngster Randy"
 	line "never refuses a"
 	cont "challenge!"
 	done
@@ -297,6 +287,6 @@ Route38_MapEvents:
 	object_event 15,  3, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorLarry, -1
 	object_event 12, 15, SPRITE_BUENA, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyWilma, -1
 	object_event 19,  9, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyEric, -1
-	object_event 24,  5, SPRITE_LASS, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerLassCynthia, -1
+	object_event 24,  5, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerYoungsterRandy, -1
 	object_event 12, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route38FruitTree, -1
 	object_event  5,  8, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBirdKeeperFarley, -1

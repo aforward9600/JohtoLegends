@@ -197,17 +197,6 @@ TrainerSchoolboyGregory:
 	closetext
 	end
 
-TrainerYoungsterIan:
-	trainer YOUNGSTER, IAN, EVENT_BEAT_YOUNGSTER_IAN, YoungsterIanSeenText, YoungsterIanBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext YoungsterIanAfterText
-	waitbutton
-	closetext
-	end
-
 TrainerCooltrainerfIrene:
 	trainer LASS, LAURA, EVENT_BEAT_LASS_IRENE, CooltrainerfIreneSeenText, CooltrainerfIreneBeatenText, 0, .Script
 
@@ -362,22 +351,6 @@ SchoolboyGregoryAfterText:
 
 	para "Maybe I can be the"
 	line "first!"
-	done
-
-YoungsterIanSeenText:
-	text "I'm the best in my"
-	line "class at #MON."
-	done
-
-YoungsterIanBeatenText:
-	text "No! There are bet-"
-	line "ter trainers…"
-	done
-
-YoungsterIanAfterText:
-	text "I'm trying hard so"
-	line "I can be the star"
-	cont "in my class."
 	done
 
 CooltrainerFTinaSeenText:

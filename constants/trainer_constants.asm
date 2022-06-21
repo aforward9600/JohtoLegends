@@ -133,7 +133,7 @@ CHRIS EQU __enum__
 	const ALBERT
 	const CALEB
 	const GORDY
-	const IAN
+	const RANDY
 	const JOEY2
 	const JOEY3
 	const WARREN

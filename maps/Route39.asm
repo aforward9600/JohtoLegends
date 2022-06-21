@@ -72,7 +72,7 @@ TrainerBugCatcherStevie:
 	playmusic MUSIC_YOUNGSTER_ENCOUNTER
 	writetext BugCatcherStevieLetsDoItText
 	waitbutton
-	winlosstext LassCynthiaBeatenText, 0
+	winlosstext BugCatcherStevieBeatenText, 0
 	loadtrainer BUG_CATCHER, STEVIE
 	startbattle
 	reloadmapafterbattle
