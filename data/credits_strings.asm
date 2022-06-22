@@ -33,7 +33,7 @@ CreditsStrings:
 	dw .TakehiroIzushi
 	dw .TakashiKawaguchi
 	dw .Radiation
-	dw .HiroshiYamauchi
+	dw .DragonArbock
 	dw .KenjiSaiki
 	dw .AtsushiTada
 	dw .NaokoKawakami
@@ -159,7 +159,7 @@ CreditsStrings:
 .TakehiroIzushi:      db "  TAKEHIRO IZUSHI@"         ; "いずし　たけひろ@"
 .TakashiKawaguchi:    db " TAKASHI KAWAGUCHI@"        ; "かわぐち　たかし@"
 .Radiation:           db "     Radiation@"       ; "いしはら　つねかず@"
-.HiroshiYamauchi:     db "  HIROSHI YAMAUCHI@"        ; "やまうち　ひろし@"
+.DragonArbock:        db "   Dragon Arbock@"        ; "やまうち　ひろし@"
 .KenjiSaiki:          db "    KENJI SAIKI@"           ; "さいき　けんじ@"
 .AtsushiTada:         db "    ATSUSHI TADA@"          ; "ただ　あつし@"
 .NaokoKawakami:       db "   NAOKO KAWAKAMI@"         ; "かわかみ　なおこ@"

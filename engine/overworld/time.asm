@@ -190,17 +190,17 @@ CheckPokerusTick::
 	ret
 
 ; unused
-	ld hl, wDailyFlags1
-	set DAILYFLAGS1_FISH_SWARM_F, [hl]
-	ret
+;	ld hl, wDailyFlags1
+;	set DAILYFLAGS1_FISH_SWARM_F, [hl]
+;	ret
 
 ; unused
-	and a
-	ld hl, wDailyFlags1
-	bit DAILYFLAGS1_FISH_SWARM_F, [hl]
-	ret nz
-	scf
-	ret
+;	and a
+;	ld hl, wDailyFlags1
+;	bit DAILYFLAGS1_FISH_SWARM_F, [hl]
+;	ret nz
+;	scf
+;	ret
 
 RestartLuckyNumberCountdown:
 	call .GetDaysUntilNextFriday

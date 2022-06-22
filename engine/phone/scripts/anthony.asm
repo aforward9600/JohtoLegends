@@ -11,7 +11,7 @@ AnthonyPhoneCalleeScript:
 	iftrue AnthonyFridayNight
 
 .NotFriday:
-	checkflag ENGINE_DUNSPARCE_SWARM
+	checkflag ENGINE_SWARM
 	iftrue .AlreadySwarming
 	farsjump UnknownScript_0xa0950
 
@@ -49,11 +49,11 @@ AnthonyWantsBattle:
 	farsjump PhoneScript_WantsToBattle_Male
 
 AnthonyTriesDunsparceSwarm:
-	checkflag ENGINE_DUNSPARCE_SWARM
+	checkflag ENGINE_SWARM
 	iftrue .Generic
-	setflag ENGINE_DUNSPARCE_SWARM
+	setflag ENGINE_SWARM
 	getmonname STRING_BUFFER_4, DUNSPARCE
-	swarm SWARM_DUNSPARCE, DARK_CAVE_VIOLET_ENTRANCE
+	swarm DARK_CAVE_VIOLET_ENTRANCE
 	getlandmarkname STRING_BUFFER_5, DARK_CAVE
 	farsjump UnknownScript_0xa05de
 

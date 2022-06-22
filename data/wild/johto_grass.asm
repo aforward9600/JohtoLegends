@@ -1418,29 +1418,29 @@ JohtoGrassWildMons:
 	dbw 17, MAGNEMITE
 	dbw 17, DROWZEE
 	dbw 17, BUTTERFREE
-	dbw 18, YANMA
+	dbw 18, TAUROS
 	dbw 18, ROSELIA
 	dbw 18, MILTANK
 	dbw 19, TAUROS
-	dbw 19, TAUROS
+	dbw 19, YANMA
 	; day
 	dbw 17, MAGNEMITE
 	dbw 17, DROWZEE
 	dbw 17, BUTTERFREE
-	dbw 18, YANMA
+	dbw 18, TAUROS
 	dbw 18, ROSELIA
 	dbw 18, MILTANK
 	dbw 19, TAUROS
-	dbw 19, TAUROS
+	dbw 19, YANMA
 	; nite
 	dbw 17, MAGNEMITE
 	dbw 17, DROWZEE
 	dbw 17, BEEDRILL
-	dbw 18, YANMA
+	dbw 18, MURKROW
 	dbw 18, ROSELIA
 	dbw 18, MEOWTH
 	dbw 19, MURKROW
-	dbw 19, MURKROW
+	dbw 19, YANMA
 
 	map_id ROUTE_42
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

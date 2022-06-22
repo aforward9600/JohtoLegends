@@ -10,7 +10,7 @@ RalphPhoneCalleeScript:
 	checktime MORN
 	iftrue Ralph_WednesdayMorning
 .CheckSwarm:
-	checkflag ENGINE_FISH_SWARM
+	checkflag ENGINE_SWARM
 	iftrue .ReportSwarm
 	farsjump UnknownScript_0xa0940
 
@@ -46,9 +46,9 @@ Ralph_FightMe:
 	farsjump PhoneScript_WantsToBattle_Male
 
 Ralph_SetUpSwarm:
-	checkflag ENGINE_FISH_SWARM
+	checkflag ENGINE_SWARM
 	iftrue .Generic
-	setflag ENGINE_FISH_SWARM
+	setflag ENGINE_SWARM
 	getmonname STRING_BUFFER_4, QWILFISH
 	getlandmarkname STRING_BUFFER_5, ROUTE_32
 	setval FISHSWARM_QWILFISH

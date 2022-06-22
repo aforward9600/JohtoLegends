@@ -464,6 +464,7 @@ CheckTimeEvents:
 
 .do_daily
 	farcall CheckDailyResetTimer
+	farcall CheckSwarmFlag
 	farcall CheckPokerusTick
 	farcall CheckPhoneCall
 	ret c

@@ -53,6 +53,7 @@ CreditsScript:
 	db           DGAMERS_64, 1 ;DGAMERS_64
 	db              VENDILY, 2
 	db       CHATTY_CRYSTAL, 3
+	db        DRAGON_ARBOCK, 4
 
 	db CREDITS_WAIT, 12
 

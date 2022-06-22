@@ -425,7 +425,7 @@ _GrassWildmonLookup:
 	ld de, KantoGrassWildMons
 	call _JohtoWildmonCheck
 	ld bc, GRASS_WILDDATA_LENGTH
-	jr _NormalWildmonOK
+	jp _NormalWildmonOK
 
 _WaterWildmonLookup:
 	ld hl, SwarmWaterWildMons
@@ -448,32 +448,10 @@ _JohtoWildmonCheck:
 
 _SwarmWildmonCheck:
 	call CopyCurrMapDE
-	push hl
-	ld hl, wSwarmFlags
-	bit SWARMFLAGS_DUNSPARCE_SWARM_F, [hl]
-	pop hl
-	jr z, .CheckYanma
-	ld a, [wDunsparceMapGroup]
-	cp d
-	jr nz, .CheckYanma
-	ld a, [wDunsparceMapNumber]
-	cp e
-	jr nz, .CheckYanma
-	call LookUpWildmonsForMapDE
-	jr nc, _NoSwarmWildmon
-	scf
-	ret
-
-.CheckYanma:
-	push hl
-	ld hl, wSwarmFlags
-	bit SWARMFLAGS_YANMA_SWARM_F, [hl]
-	pop hl
-	jr z, _NoSwarmWildmon
-	ld a, [wYanmaMapGroup]
+	ld a, [wSwarmMapGroup]
 	cp d
 	jr nz, _NoSwarmWildmon
-	ld a, [wYanmaMapNumber]
+	ld a, [wSwarmMapNumber]
 	cp e
 	jr nz, _NoSwarmWildmon
 	call LookUpWildmonsForMapDE

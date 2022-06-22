@@ -25,6 +25,8 @@ Dark Zeta, PiaCarrot, and cardboardbox for new evolution moves and fixing the gl
 
 Vulcandth and Rangi: Level Caught Design Flaw Fix
 
+New Swarming System: Dragon Arbock
+
 New Pokemon cries: chattycrystal team
 
 Calm Mind, Sucker Punch, Dragon Dance, Quiver Dance, Grass Knot, Aqua Ring, Sleep, Knock Off, Roost effect,: chattycrystal team

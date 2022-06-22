@@ -6230,7 +6230,7 @@ LoadEnemyMon:
 	ld b, [hl]
 	inc hl
 	ld c, [hl]
-	jr .UpdateDVs
+	jp .UpdateDVs
 
 .WildDVs:
 ; Wild DVs
@@ -6260,7 +6260,7 @@ LoadEnemyMon:
 ; Get back the result of our check
 	pop af
 ; If the RoamMon struct has already been initialized, we're done
-	jr nz, .UpdateDVs
+	jp nz, .UpdateDVs
 
 ; If it hasn't, we need to initialize the DVs
 ; (HP is initialized at the end of the battle)
@@ -6273,7 +6273,7 @@ LoadEnemyMon:
 	ld [hl], a
 	ld b, a
 ; We're done with DVs
-	jr .UpdateDVs
+	jp .UpdateDVs
 
 .NotRoaming:
 ; Register a contains wBattleType
@@ -6288,6 +6288,16 @@ LoadEnemyMon:
 	jr .UpdateDVs
 
 .GenerateDVs:
+
+;checkswarm
+	ld hl, wDailyFlags1
+	bit DAILYFLAGS1_SWARM_F, [hl]
+	jr z, .skipshine
+
+	farcall GenerateShinySwarm
+	jp .next
+
+.skipshine:
 ; Generate new random DVs
 	call BattleRandom
 	ld b, a
@@ -6300,6 +6310,8 @@ LoadEnemyMon:
 	ld a, b
 	ld [hli], a
 	ld [hl], c
+
+.next
 
 ; We've still got more to do if we're dealing with a wild monster
 	ld a, [wBattleMode]
@@ -6332,7 +6344,7 @@ LoadEnemyMon:
 ; Can't use any letters that haven't been unlocked
 ; If combined with forced shiny battletype, causes an infinite loop
 	call CheckUnownLetter
-	jr c, .GenerateDVs ; try again
+	jp c, .GenerateDVs ; try again
 	jr .Happiness ; skip the Magikarp check
 
 .Magikarp:
@@ -6376,7 +6388,7 @@ LoadEnemyMon:
 ; Try again if length >= 1616 mm (i.e. if LOW(length) >= 4 inches)
 	ld a, [wMagikarpLength + 1]
 	cp LOW(1616) ; should be "cp 4", since 1616 mm = 5'4", but LOW(1616) = 80
-	jr nc, .GenerateDVs
+	jp nc, .GenerateDVs
 
 ; 20% chance of skipping this check
 	call Random
@@ -6385,7 +6397,7 @@ LoadEnemyMon:
 ; Try again if length >= 1600 mm (i.e. if LOW(length) >= 3 inches)
 	ld a, [wMagikarpLength + 1]
 	cp LOW(1600) ; should be "cp 3", since 1600 mm = 5'3", but LOW(1600) = 64
-	jr nc, .GenerateDVs
+	jp nc, .GenerateDVs
 
 .CheckMagikarpArea:
 ; The "jr z" checks are supposed to be "jr nz".
@@ -6414,7 +6426,7 @@ LoadEnemyMon:
 ; Try again if length < 1024 mm (i.e. if HIGH(length) < 3 feet)
 	ld a, [wMagikarpLength]
 	cp HIGH(1024) ; should be "cp 3", since 1024 mm = 3'4", but HIGH(1024) = 4
-	jr c, .GenerateDVs ; try again
+	jp c, .GenerateDVs ; try again
 
 ; Finally done with DVs
 

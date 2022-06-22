@@ -732,3 +732,4 @@ SECTION "Battle Weather Images", ROMX
 INCLUDE "gfx/weather_images.asm"
 INCLUDE "engine/events/poisonstep_pals.asm"
 INCLUDE "engine/link/time_capsule.asm"
+INCLUDE "engine/battle/shiny_swarm.asm"

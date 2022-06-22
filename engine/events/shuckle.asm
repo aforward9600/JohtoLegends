@@ -6,7 +6,7 @@ GiveShuckle:
 	ld [wMonType], a
 
 ; Level 15 Shuckle.
-	ld hl, SHUCKLE
+	ld hl, GIBLE
 	call GetPokemonIDFromIndex
 	ld [wCurPartySpecies], a
 	ld a, 15
@@ -67,10 +67,10 @@ GiveShuckle:
 	ret
 
 SpecialShuckleOT:
-	db "MANIA@"
+	db "Cynthia@"
 
 SpecialShuckleNick:
-	db "SHUCKIE@"
+	db "Gibbie@"
 
 ReturnShuckle:
 	farcall SelectMonFromParty
@@ -79,16 +79,16 @@ ReturnShuckle:
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld a, l
-	sub LOW(SHUCKLE)
-	if HIGH(SHUCKLE) == 0
+	sub LOW(GIBLE)
+	if HIGH(GIBLE) == 0
 		or h
 	else
 		jr nz, .DontReturn
-		if HIGH(SHUCKLE) == 1
+		if HIGH(GIBLE) == 1
 			dec h
 		else
 			ld a, h
-			cp HIGH(SHUCKLE)
+			cp HIGH(GIBLE)
 		endc
 	endc
 	jr nz, .DontReturn

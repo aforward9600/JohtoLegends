@@ -1,17 +1,17 @@
 	object_const_def ; object_event constants
 	const OLIVINEPUNISHMENTSPEECHHOUSE_POKEFAN_M
-	const OLIVINEPUNISHMENTSPEECHHOUSE_TWIN
+	const OLIVINEPUNISHMENTSPEECHHOUSE_GRANDPA
 
 OlivinePunishmentSpeechHouse_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-OlivinePunishmentSpeechHouseDad:
-	jumptextfaceplayer OlivinePunishmentSpeechHouseDadText
-
 OlivinePunishmentSpeechHouseDaughter:
 	jumptextfaceplayer OlivinePunishmentSpeechHouseDaughterText
+
+OlivinePunishmentSpeechHouseSwarmGuy:
+	jumptextfaceplayer OlivinePunishmentSpeechHouseSwarmGuyText
 
 OlivinePunishmentSpeechHouseBookshelf2:
 	jumpstd picturebookshelf
@@ -19,22 +19,177 @@ OlivinePunishmentSpeechHouseBookshelf2:
 OlivinePunishmentSpeechHouseBookshelf1:
 	jumpstd magazinebookshelf
 
-OlivinePunishmentSpeechHouseDadText:
-	text "Along the way to"
-	line "Cianwood, there"
+SwarmChannel:
+	opentext
+	checkflag ENGINE_SWARM
+	iftrue .skiprandomswarm
+	writetext WhatSwarmTodayText
+	waitbutton
+	random 4
+	ifequal 0, .noswarm
+	ifequal 1, .yanma
+	ifequal 2, .dunsparce
+	ifequal 3, .qwilfish
 
-	para "are four deserted"
-	line "islands."
+.noswarm
+	setflag ENGINE_SWARM
+	writetext NoSwarmTodayText
+	waitbutton
+	closetext
+	end
 
-	para "Bad kids are taken"
-	line "to the islands as"
-	cont "punishment!"
-	done
+.yanma
+	setflag ENGINE_SWARM
+	swarm ROUTE_39
+	writetext YanmaSwarmText
+	waitbutton
+	closetext
+	end
+
+.dunsparce
+	setflag ENGINE_SWARM
+	swarm DARK_CAVE_NEW_ENTRANCE
+	writetext DunsparceSwarmText
+	waitbutton
+	closetext
+	end
+
+.qwilfish
+	setflag ENGINE_SWARM
+	setval FISHSWARM_QWILFISH
+	special ActivateFishingSwarm
+	writetext QwilfishSwarmText
+	waitbutton
+	closetext
+	end
+
+.skiprandomswarm
+	writetext ThatsAllFolksText
+	waitbutton
+	closetext
+	end
 
 OlivinePunishmentSpeechHouseDaughterText:
-	text "Whenever I get in"
-	line "trouble, Daddy"
-	cont "always scares me."
+	text "My father likes to"
+	line "watch the Swarm"
+	cont "Channel a little"
+	cont "too much, to be"
+	cont "honest."
+
+	para "It's the only"
+	line "thing he watches."
+
+	para "We're probably the"
+	line "only house in the"
+	cont "region with the"
+	cont "channel constantly"
+	cont "on."
+	done
+
+OlivinePunishmentSpeechHouseSwarmGuyText:
+	text "You here to watch"
+	line "the Swarm Channel?"
+
+	para "It's great!"
+
+	para "They let you know"
+	line "where a swarm of"
+	cont "#mon appear!"
+
+	para "It changes every"
+	line "day, and sometimes"
+
+	para "you may not get a"
+	line "swarm."
+
+	para "I've heard that"
+	line "uniquely colored"
+	cont "#mon can show"
+
+	para "more often in such"
+	line "swarms!"
+	done
+
+WhatSwarmTodayText:
+	text "Hello everyone!"
+
+	para "Welcome to the"
+	line "Swarm Channel!"
+
+	para "Will there be a"
+	line "swarm in Johto"
+	cont "today?"
+
+	para "Let's find out!"
+	done
+
+NoSwarmTodayText:
+	text "………………………"
+
+	para "Bad luck,"
+	line "trainers…"
+
+	para "No #mon are"
+	line "swarming today…"
+
+	para "Better luck"
+	line "tomorrow!"
+	done
+
+YanmaSwarmText:
+	text "………………………"
+	
+	para "Ah!"
+
+	para "On Route 39, there"
+	line "is a swarm of"
+	cont "Yanma!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to Route 39"
+	line "and catch a Yanma!"
+	done
+
+DunsparceSwarmText:
+	text "………………………"
+	
+	para "Ah!"
+
+	para "In Dark Cave,"
+	line "there is a swarm"
+	cont "of Dunsparce!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to Dark Cave"
+	line "and catch a"
+	cont "Dunsparce!"
+	done
+
+QwilfishSwarmText:
+	text "………………………"
+
+	para "Ah!"
+
+	para "In the Wild Area,"
+	line "there is a swarm"
+	cont "of Qwilfish!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to the Wild"
+	line "Area and catch a"
+	cont "Qwilfish!"
+	done
+
+ThatsAllFolksText:
+	text "Tune in tomorrow"
+	line "for another swarm"
+	cont "update!"
 	done
 
 OlivinePunishmentSpeechHouse_MapEvents:
@@ -46,10 +201,11 @@ OlivinePunishmentSpeechHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, OlivinePunishmentSpeechHouseBookshelf1
 	bg_event  1,  1, BGEVENT_READ, OlivinePunishmentSpeechHouseBookshelf2
+	bg_event  2,  1, BGEVENT_READ, SwarmChannel
 
 	db 2 ; object events
-	object_event  1,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePunishmentSpeechHouseDad, -1
-	object_event  5,  5, SPRITE_TWIN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePunishmentSpeechHouseDaughter, -1
+	object_event  1,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePunishmentSpeechHouseDaughter, -1
+	object_event  5,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePunishmentSpeechHouseSwarmGuy, -1

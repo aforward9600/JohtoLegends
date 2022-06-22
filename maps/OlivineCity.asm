@@ -122,6 +122,9 @@ OlivineCityPokecenterSign:
 OlivineCityMartSign:
 	jumpstd martsign
 
+OlivineSwarmHouseSign:
+	jumptext OlivineSwarmHouseSignText
+
 OlivineGruntMovement:
 	step UP
 	step_end
@@ -283,6 +286,14 @@ OlivineLighthouseSignText:
 	cont "Glitter Lighthouse"
 	done
 
+OlivineSwarmHouseSignText:
+	text "Swarm House"
+
+	para "Come on in and"
+	line "watch the Swarm"
+	cont "Channel on TV!"
+	done
+
 OlivineCityBattleTowerSignText:
 	text "Battle Tower Ahead"
 	line "Opening Now!"
@@ -310,7 +321,7 @@ OlivineCity_MapEvents:
 
 	db 0 ; coord events
 
-	db 7 ; bg events
+	db 8 ; bg events
 	bg_event 17, 11, BGEVENT_READ, OlivineCitySign
 	bg_event 20, 24, BGEVENT_READ, OlivineCityPortSign
 	bg_event  7, 11, BGEVENT_READ, OlivineGymSign
@@ -318,6 +329,7 @@ OlivineCity_MapEvents:
 	bg_event  3, 23, BGEVENT_READ, OlivineCityBattleTowerSign
 	bg_event 14, 21, BGEVENT_READ, OlivineCityPokecenterSign
 	bg_event 20, 17, BGEVENT_READ, OlivineCityMartSign
+	bg_event 30, 12, BGEVENT_READ, OlivineSwarmHouseSign
 
 	db 4 ; object events
 	object_event 26, 27, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
