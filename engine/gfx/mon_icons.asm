@@ -382,7 +382,7 @@ GetSpeciesIcon:
 
 FlyFunction_GetMonIcon:
 	ld hl, PIDGEOT
-	call GetPokemonIndexFromID
+	call GetPokemonIDFromIndex
 	ld b, a
 	ld a, e
 	call GetIcon_a

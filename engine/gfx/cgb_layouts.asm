@@ -643,7 +643,7 @@ _CGB_TrainerCard:
 	ld a, MILTON
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, WALKER
+	ld a, KURT
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, WALKER ; CLAIR
@@ -680,36 +680,36 @@ _CGB_TrainerCard:
 	ld a, $1 ; kris
 .got_gender2
 	call FillBoxCGB
-	hlcoord 2, 11, wAttrMap
-	lb bc, 2, 4
+	hlcoord 3, 10, wAttrMap
+	lb bc, 3, 3
 	ld a, $7 ; pryce
 	call FillBoxCGB
-	hlcoord 6, 11, wAttrMap
-	lb bc, 2, 4
-	ld a, $5 ; enoki
+	hlcoord 7, 10, wAttrMap
+	lb bc, 3, 3
+	ld a, $4 ; enoki
 	call FillBoxCGB
-	hlcoord 10, 11, wAttrMap
-	lb bc, 2, 4
+	hlcoord 11, 10, wAttrMap
+	lb bc, 3, 3
 	ld a, $2 ; chigusa
 	call FillBoxCGB
-	hlcoord 14, 11, wAttrMap
-	lb bc, 2, 4
+	hlcoord 15, 10, wAttrMap
+	lb bc, 3, 3
 	ld a, $6 ; byron
 	call FillBoxCGB
-	hlcoord 2, 14, wAttrMap
-	lb bc, 2, 4
+	hlcoord 3, 13, wAttrMap
+	lb bc, 3, 3
 	ld a, $7 ; milton
 	call FillBoxCGB
-	hlcoord 6, 14, wAttrMap
-	lb bc, 2, 4
-	ld a, $5 ; kurt
+	hlcoord 7, 13, wAttrMap
+	lb bc, 3, 3
+	ld a, $4 ; kurt
 	call FillBoxCGB
-	hlcoord 10, 14, wAttrMap
-	lb bc, 2, 4
+	hlcoord 11, 13, wAttrMap
+	lb bc, 3, 3
 	ld a, $5 ; walker
 	call FillBoxCGB
-	hlcoord 14, 14, wAttrMap
-	lb bc, 2, 4
+	hlcoord 15, 13, wAttrMap
+	lb bc, 3, 3
 	ld a, $5 ; master
 	call FillBoxCGB
 	; top-right corner still uses the border's palette

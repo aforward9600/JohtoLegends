@@ -8,8 +8,10 @@ GenerateShinySwarm:
 	jr z, .dunsparce
 	cp ROUTE_39
 	jr z, .yanma
-	cp OLIVINE_CITY
-	jr z, .qwilfish
+	cp WILD_AREA_OUTSIDE
+	jr z, .wildarea
+	cp ICE_PATH
+	jr z, .sneasel
 	jp .skipshineswarm
 
 .dunsparce
@@ -50,7 +52,7 @@ GenerateShinySwarm:
 	jr nz, .skipshineswarm
 	jr .rollshiny
 
-.qwilfish
+.wildarea
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld a, l
@@ -64,6 +66,82 @@ GenerateShinySwarm:
 		else
 			ld a, h
 			cp HIGH(QWILFISH)
+		endc
+	endc
+	jr nz, .eevee
+	jr .rollshiny
+
+.eevee
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(EEVEE)
+	if HIGH(EEVEE) == 0
+		or h
+	else
+		jr nz, .skipshineswarm
+		if HIGH(EEVEE) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(EEVEE)
+		endc
+	endc
+	jr nz, .kangaskhan
+	jr .rollshiny
+
+.kangaskhan
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(KANGASKHAN)
+	if HIGH(KANGASKHAN) == 0
+		or h
+	else
+		jr nz, .skipshineswarm
+		if HIGH(KANGASKHAN) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(KANGASKHAN)
+		endc
+	endc
+	jr nz, .gible
+	jr .rollshiny
+
+.gible
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(GIBLE)
+	if HIGH(GIBLE) == 0
+		or h
+	else
+		jr nz, .skipshineswarm
+		if HIGH(GIBLE) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(GIBLE)
+		endc
+	endc
+	jr nz, .skipshineswarm
+	jr .rollshiny
+
+.sneasel
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(SNEASEL)
+	if HIGH(SNEASEL) == 0
+		or h
+	else
+		jr nz, .skipshineswarm
+		if HIGH(SNEASEL) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(SNEASEL)
 		endc
 	endc
 	jr nz, .skipshineswarm

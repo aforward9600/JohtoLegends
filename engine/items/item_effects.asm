@@ -3065,20 +3065,20 @@ PidgeotCallEffect:
 	ret
 
 ExpShareEffect:
-	ld hl, wExpShareOn
-	ld a, [hl]
+	ld a, [wExpShareToggle]
 	xor 1
-	ld [hl], a
-	and 1
-	ld hl, .turnedOffText
-	jr z, .gotText
-	ld hl, .turnedOnText
-.gotText:
-	call PrintText
-	jp WaitPressAorB_BlinkCursor
-.turnedOffText:
+	ld [wExpShareToggle], a
+	and a
+	ld hl, ExpShareToggleOn
+	jp nz, PrintText
+
+	ld hl, ExpShareToggleOff
+	jp PrintText
+
+ExpShareToggleOff:
 	text_far _TurnedOffExpShareText
 	text_end
-.turnedOnText:
+
+ExpShareToggleOn:
 	text_far _TurnedOnExpShareText
 	text_end

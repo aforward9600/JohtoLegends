@@ -234,7 +234,13 @@ SetGiftPartyMonCaughtData:
 	pop bc
 SetGiftMonCaughtData:
 	xor a
-	ld [hli], a
+	ld [hl], a
+	ld a, (wPartyMon1CaughtLevel - wPartyMon1CaughtTime)
+	add l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
 	ld a, GIFT_LOCATION
 	rrc b
 	or b

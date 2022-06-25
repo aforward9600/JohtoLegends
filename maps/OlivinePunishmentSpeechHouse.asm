@@ -25,11 +25,15 @@ SwarmChannel:
 	iftrue .skiprandomswarm
 	writetext WhatSwarmTodayText
 	waitbutton
-	random 4
+	random 8
 	ifequal 0, .noswarm
 	ifequal 1, .yanma
 	ifequal 2, .dunsparce
 	ifequal 3, .qwilfish
+	ifequal 4, .eevee
+	ifequal 5, .kangaskhan
+	ifequal 6, .gible
+	ifequal 7, .sneasel
 
 .noswarm
 	setflag ENGINE_SWARM
@@ -59,6 +63,38 @@ SwarmChannel:
 	setval FISHSWARM_QWILFISH
 	special ActivateFishingSwarm
 	writetext QwilfishSwarmText
+	waitbutton
+	closetext
+	end
+
+.eevee
+	setflag ENGINE_SWARM
+	swarm WILD_AREA_2_3
+	writetext EeveeSwarmText
+	waitbutton
+	closetext
+	end
+
+.kangaskhan
+	setflag ENGINE_SWARM
+	swarm WILD_AREA_CAVE
+	writetext KangaskhanSwarmText
+	waitbutton
+	closetext
+	end
+
+.gible
+	setflag ENGINE_SWARM
+	swarm WILD_AREA_4
+	writetext GibleSwarmText
+	waitbutton
+	closetext
+	end
+
+.sneasel
+	setflag ENGINE_SWARM
+	swarm ICE_PATH_B1F
+	writetext SneaselSwarmText
 	waitbutton
 	closetext
 	end
@@ -157,8 +193,9 @@ DunsparceSwarmText:
 	
 	para "Ah!"
 
-	para "In Dark Cave,"
-	line "there is a swarm"
+	para "In Dark Cave near"
+	line "Blackthorn City,"
+	cont "there is a swarm"
 	cont "of Dunsparce!"
 
 	para "Now's your chance,"
@@ -184,6 +221,76 @@ QwilfishSwarmText:
 	para "Head to the Wild"
 	line "Area and catch a"
 	cont "Qwilfish!"
+	done
+
+EeveeSwarmText:
+	text "………………………"
+
+	para "Ah!"
+
+	para "In the Wild Area,"
+	line "there is a swarm"
+	cont "of Eevee!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to the Wild"
+	line "Area and catch an"
+	cont "Eevee!"
+	done
+
+KangaskhanSwarmText:
+	text "………………………"
+
+	para "Ah!"
+
+	para "In the Wild Area"
+	line "cave, there is a"
+	cont "swarm of"
+	cont "Kangaskhan!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to the Wild"
+	line "Area Cave and"
+	cont "catch a"
+	cont "Kangaskhan!"
+	done
+
+GibleSwarmText:
+	text "………………………"
+
+	para "Ah!"
+
+	para "In the Wild Area,"
+	line "there is a swarm"
+	cont "of Gible!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to the Wild"
+	line "Area and catch a"
+	cont "Gible!"
+	done
+
+SneaselSwarmText:
+	text "………………………"
+
+	para "Ah!"
+
+	para "In the B1F of Ice"
+	line "Path, there is a"
+	cont "swarm of Sneasel!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to Ice Path"
+	line "and catch a"
+	cont "Sneasel!"
 	done
 
 ThatsAllFolksText:

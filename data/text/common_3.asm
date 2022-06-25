@@ -1679,9 +1679,11 @@ _HiddenPowerGuyAnswer::
 	done
 
 _TurnedOffExpShareText::
-	text "Exp.Share is off."
-	done
+	text "The Exp.Share was"
+	line "turned off."
+	prompt
 
 _TurnedOnExpShareText::
-	text "Exp.Share is on."
-	done
+	text "The Exp.Share was"
+	line "turned on."
+	prompt

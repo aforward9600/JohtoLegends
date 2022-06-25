@@ -101,7 +101,7 @@ FishGroups:
 	dbbw  85 percent + 1,  5, MAGIKARP
 	dbbw 100 percent,      5, QWILFISH
 .Qwilfish_Swarm_Good:
-	dbbw  35 percent,     20, MAGIKARP
+	dbbw  35 percent,     20, HORSEA
 	dbbw  70 percent,     20, QWILFISH
 	dbbw  90 percent + 1, 20, QWILFISH
 	dbbw 100 percent,     10, TIME_GROUP
@@ -174,19 +174,19 @@ FishGroups:
 .Qwilfish_NoSwarm_Old:
 .Qwilfish_Old:
 	dbbw  70 percent + 1, 10, MAGIKARP
-	dbbw  85 percent + 1, 10, MAGIKARP
-	dbbw 100 percent,     10, TENTACOOL
+	dbbw  85 percent + 1, 10, TENTACOOL
+	dbbw 100 percent,     10, KRABBY
 .Qwilfish_NoSwarm_Good:
 .Qwilfish_Good:
 	dbbw  35 percent,     20, MAGIKARP
-	dbbw  70 percent,     20, TENTACOOL
-	dbbw  90 percent + 1, 20, TENTACOOL
-	dbbw 100 percent,     20, TIME_GROUP
+	dbbw  70 percent,     20, GOLDEEN
+	dbbw  90 percent + 1, 20, POLIWAG
+	dbbw 100 percent,     20, REMORAID
 .Qwilfish_NoSwarm_Super:
 .Qwilfish_Super:
-	dbbw  40 percent,     40, TENTACOOL
-	dbbw  70 percent,     21, TIME_GROUP
-	dbbw  90 percent + 1, 40, MAGIKARP
+	dbbw  40 percent,     40, TENTACRUEL
+	dbbw  70 percent,     40, KINGLER
+	dbbw  90 percent + 1, 40, OCTILLERY
 	dbbw 100 percent,     40, QWILFISH
 
 .Remoraid_Old:

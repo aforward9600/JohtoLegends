@@ -56,12 +56,136 @@ SwarmGrassWildMons:
 	dbw 19, YANMA
 	; nite
 	dbw 17, YANMA
-	dbw 17, DROWZEE
+	dbw 17, YANMA
 	dbw 17, BEEDRILL
-	dbw 18, MAGNEMITE
-	dbw 18, ROSELIA
+	dbw 18, YANMA
+	dbw 18, YANMA
 	dbw 18, MEOWTH
 	dbw 19, MURKROW
 	dbw 19, YANMA
+
+; Eevee swarm
+	map_id WILD_AREA_2_3
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 15, EEVEE
+	dbw 15, EEVEE
+	dbw 15, SNUBBULL
+	dbw 15, EEVEE
+	dbw 15, EEVEE
+	dbw 15, MUNCHLAX
+	dbw 15, RHYHORN
+	dbw 15, EEVEE
+	; day
+	dbw 15, EEVEE
+	dbw 15, EEVEE
+	dbw 15, SNUBBULL
+	dbw 15, EEVEE
+	dbw 15, EEVEE
+	dbw 15, MUNCHLAX
+	dbw 15, RHYHORN
+	dbw 15, EEVEE
+	; night
+	dbw 15, EEVEE
+	dbw 15, EEVEE
+	dbw 15, SNUBBULL
+	dbw 15, EEVEE
+	dbw 15, EEVEE
+	dbw 15, MUNCHLAX
+	dbw 15, RHYHORN
+	dbw 15, EEVEE
+
+; Kangaskhan swarm
+	map_id WILD_AREA_CAVE
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 15, KANGASKHAN
+	dbw 15, KANGASKHAN
+	dbw 15, SMEARGLE
+	dbw 15, KANGASKHAN
+	dbw 15, KANGASKHAN
+	dbw 15, GLIGAR
+	dbw 15, BRONZOR
+	dbw 15, KANGASKHAN
+	; day
+	dbw 15, KANGASKHAN
+	dbw 15, KANGASKHAN
+	dbw 15, SMEARGLE
+	dbw 15, KANGASKHAN
+	dbw 15, KANGASKHAN
+	dbw 15, GLIGAR
+	dbw 15, BRONZOR
+	dbw 15, KANGASKHAN
+	; nite
+	dbw 15, KANGASKHAN
+	dbw 15, KANGASKHAN
+	dbw 15, SMEARGLE
+	dbw 15, KANGASKHAN
+	dbw 15, KANGASKHAN
+	dbw 15, GLIGAR
+	dbw 15, BRONZOR
+	dbw 15, KANGASKHAN
+
+; Gible swarm
+	map_id WILD_AREA_4
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 15, GIBLE
+	dbw 15, GIBLE
+	dbw 15, CHANSEY
+	dbw 15, GIBLE
+	dbw 15, GIBLE
+	dbw 15, MURKROW
+	dbw 15, STANTLER
+	dbw 15, GIBLE
+	; morn
+	dbw 15, GIBLE
+	dbw 15, GIBLE
+	dbw 15, CHANSEY
+	dbw 15, GIBLE
+	dbw 15, GIBLE
+	dbw 15, MURKROW
+	dbw 15, STANTLER
+	dbw 15, GIBLE
+	; nite
+	dbw 15, GIBLE
+	dbw 15, GIBLE
+	dbw 15, CHANSEY
+	dbw 15, GIBLE
+	dbw 15, GIBLE
+	dbw 15, MURKROW
+	dbw 15, STANTLER
+	dbw 15, GIBLE
+
+; Sneasel swarm
+	map_id ICE_PATH_B1F
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 3, SNEASEL
+	dbw 3, SNEASEL
+	dbw 3, DELIBIRD
+	dbw 4, SNEASEL
+	dbw 4, SNEASEL
+	dbw 4, ZUBAT
+	dbw 5, SMOOCHUM
+	dbw 5, SNEASEL
+	; day
+	dbw 3, SNEASEL
+	dbw 3, SNEASEL
+	dbw 3, DELIBIRD
+	dbw 4, SNEASEL
+	dbw 4, SNEASEL
+	dbw 4, ZUBAT
+	dbw 5, SMOOCHUM
+	dbw 5, SNEASEL
+	; nite
+	dbw 3, SNEASEL
+	dbw 3, SNEASEL
+	dbw 3, DELIBIRD
+	dbw 4, SNEASEL
+	dbw 4, SNEASEL
+	dbw 4, ZUBAT
+	dbw 5, SMOOCHUM
+	dbw 5, SNEASEL
 
 	db -1 ; end

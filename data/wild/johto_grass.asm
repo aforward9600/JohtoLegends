@@ -1805,32 +1805,32 @@ JohtoGrassWildMons:
 	map_id WILD_AREA_CAVE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 15, SNEASEL
+	dbw 15, BRONZOR
 	dbw 15, SMEARGLE
 	dbw 15, PARAS
 	dbw 15, WOBBUFFET
 	dbw 15, CUBONE
-	dbw 15, KANGASKHAN
+	dbw 15, GLIGAR
 	dbw 15, MISDREAVUS
-	dbw 15, DUNSPARCE
+	dbw 15, KANGASKHAN
 	; day
-	dbw 15, SNEASEL
+	dbw 15, BRONZOR
 	dbw 15, SMEARGLE
 	dbw 15, PARAS
 	dbw 15, WOBBUFFET
 	dbw 15, CUBONE
-	dbw 15, KANGASKHAN
+	dbw 15, GLIGAR
 	dbw 15, MISDREAVUS
-	dbw 15, DUNSPARCE
+	dbw 15, KANGASKHAN
 	; nite
-	dbw 15, SNEASEL
+	dbw 15, BRONZOR
 	dbw 15, SMEARGLE
 	dbw 15, PARAS
 	dbw 15, WOBBUFFET
 	dbw 15, CUBONE
-	dbw 15, KANGASKHAN
+	dbw 15, GLIGAR
 	dbw 15, MISDREAVUS
-	dbw 15, DUNSPARCE
+	dbw 15, KANGASKHAN
 
 	map_id WILD_AREA_4
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1841,8 +1841,8 @@ JohtoGrassWildMons:
 	dbw 15, CHANSEY
 	dbw 15, NATU
 	dbw 15, MURKROW
-	dbw 15, GLIGAR
 	dbw 15, STANTLER
+	dbw 15, GIBLE
 	; morn
 	dbw 15, GROWLITHE
 	dbw 15, HOUNDOUR
@@ -1850,8 +1850,8 @@ JohtoGrassWildMons:
 	dbw 15, CHANSEY
 	dbw 15, NATU
 	dbw 15, MURKROW
-	dbw 15, GLIGAR
 	dbw 15, STANTLER
+	dbw 15, GIBLE
 	; nite
 	dbw 15, GROWLITHE
 	dbw 15, HOUNDOUR
@@ -1859,8 +1859,8 @@ JohtoGrassWildMons:
 	dbw 15, CHANSEY
 	dbw 15, NATU
 	dbw 15, MURKROW
-	dbw 15, GLIGAR
 	dbw 15, STANTLER
+	dbw 15, GIBLE
 
 	map_id WILD_AREA_5
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

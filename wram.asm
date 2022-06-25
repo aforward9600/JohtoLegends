@@ -529,7 +529,7 @@ wBattleScriptBufferAddress:: dw ; c6b2
 
 wTurnEnded:: db ; c6b4
 
-wExpShareOn:: db
+wExpShareToggle:: db
 
 wPlayerStats:: ; c6b6
 wPlayerAttack:: dw

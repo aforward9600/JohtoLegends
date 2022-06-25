@@ -73,8 +73,8 @@ HaveThisGibleText:
 	cont "and beautiful"
 	cont "#mon."
 
-	para "Some #mon you"
-	line "can't find here,"
+	para "Some #mon here"
+	line "are quite rare,"
 	cont "such as this"
 	cont "Gible I have."
 
