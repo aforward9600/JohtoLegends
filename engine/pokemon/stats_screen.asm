@@ -835,9 +835,10 @@ StatsScreen_LoadGFX:
 
 .placeCaughtLevel
 	; caught level
-	; Limited to between 1 and 63 since it's a 6-bit quantity
 	ld a, [wTempMonCaughtLevel]
 	and a
+	jr z, .unknown_level
+	cp GIFT_LOCATION
 	jr z, .unknown_level
 	cp CAUGHT_EGG_LEVEL
 	jr nz, .print
