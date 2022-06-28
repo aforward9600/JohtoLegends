@@ -188,4 +188,66 @@ SwarmGrassWildMons:
 	dbw 5, SMOOCHUM
 	dbw 5, SNEASEL
 
+; Magcargo swarm
+	map_id BURNED_TOWER_2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 22, MAGCARGO
+	dbw 22, MAGCARGO
+	dbw 22, MAGBY
+	dbw 23, MAGCARGO
+	dbw 23, MAGCARGO
+	dbw 23, DUSKULL
+	dbw 24, DUSKULL
+	dbw 24, MAGCARGO
+	; day
+	dbw 22, MAGCARGO
+	dbw 22, MAGCARGO
+	dbw 22, MAGBY
+	dbw 23, MAGCARGO
+	dbw 23, MAGCARGO
+	dbw 23, DUSKULL
+	dbw 24, DUSKULL
+	dbw 24, MAGCARGO
+	; nite
+	dbw 22, MAGCARGO
+	dbw 22, MAGCARGO
+	dbw 22, MAGBY
+	dbw 23, MAGCARGO
+	dbw 23, MAGCARGO
+	dbw 23, DUSKULL
+	dbw 24, DUSKULL
+	dbw 24, MAGCARGO
+
+; Scyther swarm
+	map_id NATIONAL_PARK
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 23, NIDORINO
+	dbw 23, NIDORINA
+	dbw 25, SCYTHER
+	dbw 25, SCYTHER
+	dbw 24, PINSIR
+	dbw 25, SCYTHER
+	dbw 24, SCYTHER
+	dbw 25, SCYTHER
+	; day
+	dbw 23, NIDORINO
+	dbw 23, NIDORINA
+	dbw 25, SCYTHER
+	dbw 25, SCYTHER
+	dbw 24, PINSIR
+	dbw 25, SCYTHER
+	dbw 24, SCYTHER
+	dbw 25, SCYTHER
+	; nite
+	dbw 23, NIDORINO
+	dbw 23, NIDORINA
+	dbw 25, SCYTHER
+	dbw 25, SCYTHER
+	dbw 24, PINSIR
+	dbw 25, SCYTHER
+	dbw 24, SCYTHER
+	dbw 25, SCYTHER
+
 	db -1 ; end

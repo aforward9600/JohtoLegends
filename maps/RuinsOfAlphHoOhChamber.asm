@@ -1,3 +1,6 @@
+	object_const_def
+	const RUINSOFALPH_CYNTHIA
+
 RuinsOfAlphHoOhChamber_MapScripts:
 	db 2 ; scene scripts
 	scene_script .CheckWall ; SCENE_DEFAULT
@@ -73,6 +76,49 @@ RuinsOfAlphHoOhChamberPuzzle:
 	warpcheck
 	end
 
+RuinsOfAlphCynthiaScript:
+	faceplayer
+	opentext
+	writetext HowIsGibleDoingText
+	yesorno
+	iffalse .ShowMeLater
+	special ReturnShuckle
+	ifequal SHUCKIE_WRONG_MON, .wrong
+	ifequal SHUCKIE_REFUSED, .nothappy
+	ifequal SHUCKIE_HAPPY, .superhappy
+	ifequal SHUCKIE_FAINTED, .nothappy
+	; SHUCKIE_RETURNED
+.nothappy
+	writetext GibleIsNotHappyText
+	waitbutton
+	closetext
+	end
+
+.ShowMeLater
+	writetext ShowMeLaterText
+	waitbutton
+	closetext
+	end
+
+.wrong
+	writetext GibleIsNotHereText
+	waitbutton
+	closetext
+	end
+
+.superhappy
+	writetext GibleIsVeryHappyText
+	waitbutton
+	closetext
+	setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear RUINSOFALPH_CYNTHIA
+	pause 15
+	setevent EVENT_RUINS_OF_ALPH_CYNTHIA
+	special FadeInQuickly
+	end
+
 RuinsOfAlphHoOhChamberAncientReplica:
 	jumptext RuinsOfAlphHoOhChamberAncientReplicaText
 
@@ -131,15 +177,101 @@ RuinsOfAlphHoOhChamberWallHoleText:
 RuinsOfAlphHoOhChamberAncientReplicaText:
 	text "It's a replica of"
 	line "an ancient #-"
-	cont "MON."
+	cont "mon."
 	done
 
 RuinsOfAlphHoOhChamberDescriptionText:
-	text "A #MON that"
+	text "A #mon that"
 	line "flew gracefully on"
 
 	para "rainbow-colored"
 	line "wings."
+	done
+
+HowIsGibleDoingText:
+	text "Hello again,"
+	line "<PLAYER>."
+
+	para "I'm here studying"
+	line "the Ruins of Alph."
+
+	para "This place is"
+	line "quite fascinating."
+
+	para "There are similar"
+	line "ruins in Solaceon"
+	cont "Town near my home-"
+	cont "town."
+
+	para "On an unrelated"
+	line "note,"
+
+	para "How is the Gible"
+	line "I gave to you?"
+
+	para "Will you please"
+	line "let me see?"
+	done
+
+GibleIsNotHappyText:
+	text "………………"
+
+	para "It seems Gible"
+	line "is not very happy"
+	cont "at the moment…"
+
+	para "Please return"
+	line "later when Gible"
+	cont "is trusting of"
+	cont "you…"
+	done
+
+GibleIsNotHereText:
+	text "………………"
+
+	para "You don't have"
+	line "Gible with you…"
+
+	para "Please return"
+	line "later when you"
+	cont "have Gible."
+	done
+
+GibleIsVeryHappyText:
+	text "………………"
+
+	para "It seems I was"
+	line "wise to give Gible"
+	cont "to you."
+
+	para "Gible is very"
+	line "happy to be with"
+	cont "a trainer like"
+	cont "you."
+
+	para "You may keep Gible"
+	line "with you."
+
+	para "I hope that it"
+	line "continue to grow"
+	cont "alongside the"
+	cont "trainer it loves."
+
+	para "Perhaps we will"
+	line "meet again later."
+
+	para "Farewell…"
+	done
+
+ShowMeLaterText:
+	text "I guess you are"
+	line "not ready to show"
+	cont "me how Gible is"
+	cont "doing just yet…"
+
+	para "Please return"
+	line "later when you"
+	cont "are ready."
 	done
 
 RuinsOfAlphHoOhChamber_MapEvents:
@@ -162,4 +294,5 @@ RuinsOfAlphHoOhChamber_MapEvents:
 	bg_event  3,  0, BGEVENT_UP, RuinsOfAlphHoOhChamberWallPatternLeft
 	bg_event  4,  0, BGEVENT_UP, RuinsOfAlphHoOhChamberWallPatternRight
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event  2,  6, SPRITE_CYNTHIA, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphCynthiaScript, EVENT_RUINS_OF_ALPH_CYNTHIA

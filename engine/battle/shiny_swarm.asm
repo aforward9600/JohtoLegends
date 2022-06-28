@@ -12,6 +12,10 @@ GenerateShinySwarm:
 	jr z, .wildarea
 	cp ICE_PATH
 	jr z, .sneasel
+	cp BURNED_TOWER
+	jr z, .magcargo
+	cp NATIONAL_PARK
+	jr z, .scyther
 	jp .skipshineswarm
 
 .dunsparce
@@ -30,8 +34,8 @@ GenerateShinySwarm:
 			cp HIGH(DUNSPARCE)
 		endc
 	endc
-	jr nz, .skipshineswarm
-	jr .rollshiny
+	jp nz, .skipshineswarm
+	jp .rollshiny
 
 .yanma
 	ld a, [wCurPartySpecies]
@@ -49,8 +53,8 @@ GenerateShinySwarm:
 			cp HIGH(YANMA)
 		endc
 	endc
-	jr nz, .skipshineswarm
-	jr .rollshiny
+	jp nz, .skipshineswarm
+	jp .rollshiny
 
 .wildarea
 	ld a, [wCurPartySpecies]
@@ -142,6 +146,44 @@ GenerateShinySwarm:
 		else
 			ld a, h
 			cp HIGH(SNEASEL)
+		endc
+	endc
+	jr nz, .skipshineswarm
+	jr .rollshiny
+
+.magcargo
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(MAGCARGO)
+	if HIGH(MAGCARGO) == 0
+		or h
+	else
+		jr nz, .skipshineswarm
+		if HIGH(MAGCARGO)
+			dec h
+		else
+			ld a, h
+			cp HIGH(MAGCARGO)
+		endc
+	endc
+	jr nz, .skipshineswarm
+	jr .rollshiny
+
+.scyther
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(SCYTHER)
+	if HIGH(SCYTHER) == 0
+		or h
+	else
+		jr nz, .skipshineswarm
+		if HIGH(SCYTHER)
+			dec h
+		else
+			ld a, h
+			cp HIGH(SCYTHER)
 		endc
 	endc
 	jr nz, .skipshineswarm

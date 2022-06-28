@@ -18,6 +18,7 @@ INCLUDE "maps/GoldenrodDeptStoreElevator.asm"
 INCLUDE "maps/GoldenrodDeptStoreRoof.asm"
 INCLUDE "maps/GoldenrodGameCorner.asm"
 INCLUDE "maps/OlivineLighthouse1F.asm"
+INCLUDE "maps/OlivineGym2F.asm"
 
 
 SECTION "Map Scripts 2", ROMX
@@ -493,7 +494,6 @@ INCLUDE "maps/GoldenrodCity.asm"
 INCLUDE "maps/TeamRocketBaseJail.asm"
 INCLUDE "maps/FossilHouse.asm"
 INCLUDE "maps/OlivineGym1F.asm"
-INCLUDE "maps/OlivineGym2F.asm"
 INCLUDE "maps/OlivineGym3F.asm"
 INCLUDE "maps/OlivineGym4F.asm"
 INCLUDE "maps/PokemonMansion1F.asm"

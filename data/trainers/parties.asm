@@ -2719,7 +2719,7 @@ TeacherGroup:
 	next_list_item ; TEACHER (1) Olivine Gym
 	db "Abigail@", TRAINERTYPE_NORMAL
 	db 27
-	dw SKARMINI
+	dw ARON
 	db 27
 	dw OCTILLERY
 	db 27

@@ -20,9 +20,12 @@ OlivinePunishmentSpeechHouseBookshelf1:
 	jumpstd magazinebookshelf
 
 SwarmChannel:
+	playmusic MUSIC_POKEMON_MARCH
 	opentext
 	checkflag ENGINE_SWARM
 	iftrue .skiprandomswarm
+	checkflag ENGINE_MINERALBADGE
+	iftrue .Badges4Swarm
 	writetext WhatSwarmTodayText
 	waitbutton
 	random 8
@@ -35,12 +38,27 @@ SwarmChannel:
 	ifequal 6, .gible
 	ifequal 7, .sneasel
 
+.Badges4Swarm:
+	writetext WhatSwarmTodayText
+	waitbutton
+	random 10
+	ifequal 0, .noswarm
+	ifequal 1, .yanma
+	ifequal 2, .dunsparce
+	ifequal 3, .qwilfish
+	ifequal 4, .eevee
+	ifequal 5, .kangaskhan
+	ifequal 6, .gible
+	ifequal 7, .sneasel
+	ifequal 8, .magcargo
+	ifequal 9, .scyther
+
 .noswarm
 	setflag ENGINE_SWARM
 	writetext NoSwarmTodayText
 	waitbutton
 	closetext
-	end
+	sjump .endswarmchannel
 
 .yanma
 	setflag ENGINE_SWARM
@@ -48,7 +66,7 @@ SwarmChannel:
 	writetext YanmaSwarmText
 	waitbutton
 	closetext
-	end
+	sjump .endswarmchannel
 
 .dunsparce
 	setflag ENGINE_SWARM
@@ -56,7 +74,7 @@ SwarmChannel:
 	writetext DunsparceSwarmText
 	waitbutton
 	closetext
-	end
+	sjump .endswarmchannel
 
 .qwilfish
 	setflag ENGINE_SWARM
@@ -65,7 +83,7 @@ SwarmChannel:
 	writetext QwilfishSwarmText
 	waitbutton
 	closetext
-	end
+	sjump .endswarmchannel
 
 .eevee
 	setflag ENGINE_SWARM
@@ -73,7 +91,7 @@ SwarmChannel:
 	writetext EeveeSwarmText
 	waitbutton
 	closetext
-	end
+	sjump .endswarmchannel
 
 .kangaskhan
 	setflag ENGINE_SWARM
@@ -81,7 +99,7 @@ SwarmChannel:
 	writetext KangaskhanSwarmText
 	waitbutton
 	closetext
-	end
+	sjump .endswarmchannel
 
 .gible
 	setflag ENGINE_SWARM
@@ -89,7 +107,7 @@ SwarmChannel:
 	writetext GibleSwarmText
 	waitbutton
 	closetext
-	end
+	sjump .endswarmchannel
 
 .sneasel
 	setflag ENGINE_SWARM
@@ -97,12 +115,34 @@ SwarmChannel:
 	writetext SneaselSwarmText
 	waitbutton
 	closetext
-	end
+	sjump .endswarmchannel
+
+.magcargo
+	setflag ENGINE_SWARM
+	swarm BURNED_TOWER_2F
+	writetext MagcargoSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.scyther
+	setflag ENGINE_SWARM
+	swarm NATIONAL_PARK
+	writetext ScytherSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
 
 .skiprandomswarm
 	writetext ThatsAllFolksText
 	waitbutton
 	closetext
+	sjump .endswarmchannel
+
+.endswarmchannel
+	special FadeOutMusic
+	pause 15
+	special RestartMapMusic
 	end
 
 OlivinePunishmentSpeechHouseDaughterText:
@@ -291,6 +331,42 @@ SneaselSwarmText:
 	para "Head to Ice Path"
 	line "and catch a"
 	cont "Sneasel!"
+	done
+
+MagcargoSwarmText:
+	text "………………………"
+
+	para "Ah!"
+
+	para "In the 2F of the"
+	line "Burned Tower,"
+	cont "there is a swarm"
+	cont "of Magcargo!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to Burned"
+	line "Tower and catch a"
+	cont "Magcargo!"
+	done
+
+ScytherSwarmText:
+	text "………………………"
+
+	para "Ah!"
+
+	para "In the National"
+	line "Forest, there is"
+	cont "a swarm of"
+	cont "Scyther!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to National"
+	line "Forest and catch a"
+	cont "Scyther!"
 	done
 
 ThatsAllFolksText:

@@ -838,8 +838,6 @@ StatsScreen_LoadGFX:
 	ld a, [wTempMonCaughtLevel]
 	and a
 	jr z, .unknown_level
-	cp GIFT_LOCATION
-	jr z, .unknown_level
 	cp CAUGHT_EGG_LEVEL
 	jr nz, .print
 	ld a, EGG_LEVEL ; egg hatch level
