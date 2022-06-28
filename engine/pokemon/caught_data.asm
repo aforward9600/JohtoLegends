@@ -241,6 +241,8 @@ SetGiftMonCaughtData:
 	adc h
 	sub l
 	ld h, a
+	xor a
+	ld [hli], a
 	ld a, GIFT_LOCATION
 	rrc b
 	or b
