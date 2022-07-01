@@ -1,8 +1,8 @@
 	object_const_def ; object_event constants
 	const MAHOGANYMART1F_PHARMACIST
 	const MAHOGANYMART1F_BUENA
-	const MAHOGANYMART1F_LANCE
-	const MAHOGANYMART1F_DRAGON
+	const MAHOGANYMART1F_RIVAL
+	const MAHOGANYMART1F_SHERLES
 	const MAHOGANYMART1F_GRANNY
 	const MAHOGANYMART1F_KOGA
 
@@ -37,13 +37,13 @@ MahoganyMart1F_MapScripts:
 	return
 
 .RivalMovesPlace:
-	moveobject MAHOGANYMART1F_LANCE, 10, 4
+	moveobject MAHOGANYMART1F_RIVAL, 10, 4
 	return
 
 .SherlesStays:
 	checkevent EVENT_MAHOGANY_MART_OWNERS
 	iftrue .SherlesLeaves
-	moveobject MAHOGANYMART1F_DRAGON, 9, 6
+	moveobject MAHOGANYMART1F_SHERLES, 9, 6
 	return
 
 .SherlesLeaves:
@@ -66,7 +66,7 @@ MahogayMart1FBuenaScript:
 
 SherlesTriesToArrestKoga:
 	pause 10
-	turnobject MAHOGANYMART1F_LANCE, RIGHT
+	turnobject MAHOGANYMART1F_RIVAL, RIGHT
 	turnobject PLAYER, LEFT
 	pause 15
 	opentext
@@ -74,14 +74,15 @@ SherlesTriesToArrestKoga:
 	waitbutton
 	closetext
 	pause 15
-	showemote EMOTE_SHOCK, MAHOGANYMART1F_LANCE, 10
+	showemote EMOTE_SHOCK, MAHOGANYMART1F_RIVAL, 10
 	playsound SFX_EXIT_BUILDING
 	turnobject PLAYER, DOWN
-	turnobject MAHOGANYMART1F_LANCE, DOWN
-	moveobject MAHOGANYMART1F_DRAGON, 10, 7
-	turnobject MAHOGANYMART1F_DRAGON, UP
-	appear MAHOGANYMART1F_DRAGON
-	applymovement MAHOGANYMART1F_DRAGON, MovementData_0x6c3f6
+	turnobject MAHOGANYMART1F_RIVAL, DOWN
+	moveobject MAHOGANYMART1F_SHERLES, 10, 7
+	turnobject MAHOGANYMART1F_SHERLES, UP
+	appear MAHOGANYMART1F_SHERLES
+	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
+	applymovement MAHOGANYMART1F_SHERLES, MovementData_0x6c3f6
 	opentext
 	writetext ThankGoodnessIFoundYouText
 	waitbutton
@@ -91,28 +92,28 @@ SherlesTriesToArrestKoga:
 	pause 10
 	moveobject MAHOGANYMART1F_KOGA, 13, 3
 	appear MAHOGANYMART1F_KOGA
-	showemote EMOTE_SHOCK, MAHOGANYMART1F_DRAGON, 10
+	showemote EMOTE_SHOCK, MAHOGANYMART1F_SHERLES, 10
 	opentext
 	writetext TheresOneNowText
 	waitbutton
 	closetext
-	applymovement MAHOGANYMART1F_DRAGON, SherlesMovesRightMovement
+	applymovement MAHOGANYMART1F_SHERLES, SherlesMovesRightMovement
 	applymovement PLAYER, PlayerMovesOutOfWayMovement
 	turnobject PLAYER, RIGHT
-	turnobject MAHOGANYMART1F_LANCE, RIGHT
-	applymovement MAHOGANYMART1F_DRAGON, SherlesWalksToKogaMovement
+	turnobject MAHOGANYMART1F_RIVAL, RIGHT
+	applymovement MAHOGANYMART1F_SHERLES, SherlesWalksToKogaMovement
 	opentext
 	writetext HoldItRightThereNinjaText
 	waitbutton
 	closetext
 	pause 10
-	turnobject MAHOGANYMART1F_DRAGON, LEFT
+	turnobject MAHOGANYMART1F_SHERLES, LEFT
 	opentext
 	writetext WaitWhatWasThatText
 	waitbutton
 	closetext
 	pause 10
-	turnobject MAHOGANYMART1F_DRAGON, RIGHT
+	turnobject MAHOGANYMART1F_SHERLES, RIGHT
 	opentext
 	writetext MyApologiesText
 	waitbutton
@@ -126,20 +127,20 @@ SherlesTriesToArrestKoga:
 	playsound SFX_EXIT_BUILDING
 	setevent EVENT_MART_KOGA
 	pause 10
-	turnobject MAHOGANYMART1F_DRAGON, LEFT
+	turnobject MAHOGANYMART1F_SHERLES, LEFT
 	opentext
 	writetext IllKeepInvestigatingText
 	waitbutton
 	closetext
-	applymovement MAHOGANYMART1F_DRAGON, SherlesMovesIntoPlaceAgainMovement
+	applymovement MAHOGANYMART1F_SHERLES, SherlesMovesIntoPlaceAgainMovement
 	turnobject PLAYER, DOWN
-	turnobject MAHOGANYMART1F_LANCE, UP
+	turnobject MAHOGANYMART1F_RIVAL, UP
 	opentext
 	writetext MaybeWeShouldLeaveText
 	waitbutton
 	closetext
-	applymovement MAHOGANYMART1F_LANCE, RivalLeavesMartMovement
-	disappear MAHOGANYMART1F_LANCE
+	applymovement MAHOGANYMART1F_RIVAL, RivalLeavesMartMovement
+	disappear MAHOGANYMART1F_RIVAL
 	playsound SFX_EXIT_BUILDING
 	setevent EVENT_MART_RIVAL
 	clearevent EVENT_MAHOGANY_MART_OWNERS
@@ -147,6 +148,10 @@ SherlesTriesToArrestKoga:
 	clearevent EVENT_MART_SHERLES
 	setevent EVENT_CLEARED_RADIO_TOWER
 	setevent EVENT_WHIRL_ISLAND_SAGE_2
+	setevent EVENT_GOLDENROD_TOWER_SHERLES
+	pause 10
+	special FadeOutMusic
+	special RestartMapMusic
 	end
 
 MahogayMart1FGrannyScript:

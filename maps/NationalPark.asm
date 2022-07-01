@@ -66,6 +66,7 @@ TrainerEngineerOswald:
 	trainer ENGINEER, OSWALD, EVENT_BEAT_ENGINEER_OSWALD, TrainerEngineerOswaldSeenText, TrainerEngineerOswaldBeatenText, 0, .Script
 
 .Script:
+	setscene SCENE_FINISHED
 	endifjustbattled
 	opentext
 	writetext TrainerEngineerOswaldAfterBattleText
@@ -123,8 +124,6 @@ TrainerEngineerHarvey:
 	trainer ENGINEER, HARVEY1, EVENT_BEAT_ENGINEER_HARVEY, EngineerHarveySeenText, EngineerHarveyBeatenText, 0, .Script
 
 .Script:
-	setscene SCENE_FINISHED
-	setmapscene NATIONAL_PARK_BUG_CONTEST, SCENE_FINISHED
 	endifjustbattled
 	opentext
 	writetext EngineerHarveyAfterBattleText

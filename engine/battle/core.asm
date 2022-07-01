@@ -1697,11 +1697,13 @@ HandleRoost:
 .CheckPlayer:
 	ld a, [wPlayerSubStatus5]
 	res SUBSTATUS_ROOSTING, a
+	ld [wPlayerSubStatus5], a
 	ret
 	
 .CheckEnemy:
 	ld a, [wEnemySubStatus5]
 	res SUBSTATUS_ROOSTING, a
+	ld [wEnemySubStatus5], a
 	ret
 
 HandleWeather:
@@ -2670,6 +2672,8 @@ AddBattleMoneyToAccount:
 	ret
 
 PlayVictoryMusic:
+	call IsDepressedRival
+	jr z, .DepressedRivals
 	push de
 	ld de, MUSIC_NONE
 	call PlayMusic
@@ -2704,8 +2708,15 @@ PlayVictoryMusic:
 	pop de
 	ret
 
+.DepressedRivals:
+	ret
+
 IsKantoGymLeader:
 	ld hl, KantoGymLeaders
+	jr IsGymLeaderCommon
+
+IsDepressedRival:
+	ld hl, DepressedRivals
 	jr IsGymLeaderCommon
 
 IsGymLeader:
@@ -3036,8 +3047,14 @@ LostBattle:
 	jr nz, .battle_tower
 
 	ld a, [wBattleType]
-	cp BATTLETYPE_CANLOSE
-	jr nz, .not_canlose
+	dec a ; wild?
+	jr z, .no_loss_text
+
+	ld hl, wLossTextPointer
+	ld a, [hli]
+	ld h, [hl]
+	or h
+	jr z, .no_loss_text
 
 ; Remove the enemy from the screen.
 	hlcoord 0, 0
@@ -3073,7 +3090,7 @@ LostBattle:
 	call ClearBGPalettes
 	ret
 
-.not_canlose
+.no_loss_text
 	ld a, [wLinkMode]
 	and a
 	jr nz, .LostLinkBattle

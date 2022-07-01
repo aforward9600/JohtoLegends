@@ -66,6 +66,8 @@ LoadSpecialMapPalette:
 .tower
 	ld a, [wEnvironment]
 	and $7
+	cp GATE
+	jr z, .LoadTowerPalette
 	cp ROUTE
 	jr z, .LoadTowerPalette
 	and a

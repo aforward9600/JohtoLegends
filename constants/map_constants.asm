@@ -79,7 +79,6 @@ ENDM
 	map_const RADIO_TOWER_2F,                               9,  4 ; 18
 	map_const RADIO_TOWER_3F,                               9,  4 ; 19
 	map_const RADIO_TOWER_4F,                               9,  4 ; 20
-	map_const RADIO_TOWER_5F,                               9,  4 ; 21
 	map_const RUINS_OF_ALPH_OUTSIDE,                       10, 18 ; 22
 	map_const RUINS_OF_ALPH_HO_OH_CHAMBER,                  4,  5 ; 23
 	map_const RUINS_OF_ALPH_KABUTO_CHAMBER,                 4,  5 ; 24
@@ -375,6 +374,7 @@ ENDM
 	map_const SILVER_CAVE_POKECENTER_1F,                    5,  4 ;  3
 	map_const ROUTE_28_STEEL_WING_HOUSE,                    4,  4 ;  4
 	map_const TIN_TOWER_ROOF,                              10, 11 ; 12
+	map_const RADIO_TOWER_5F,                               9,  4 ; 21
 
 	newgroup                                                      ; 20
 

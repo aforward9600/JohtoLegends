@@ -651,6 +651,7 @@ InitializeEventsScript:
 	setevent EVENT_VICTORY_ROAD_GATE_OAK
 	setevent EVENT_VICTORY_ROAD_GATE_RIVAL
 	setmapscene PLAYERS_HOUSE_1F, SCENE_GRANDMA_GIVES_YOU_WATCH
+	setevent EVENT_TEAM_ROCKET_BASE_B2F_LANCE
 	return
 
 AskNumber1MScript:

@@ -6397,13 +6397,16 @@ MahoganyNinjaMGroup:
 	db -1 ; end
 
 	next_list_item ; MNINJA_M (4)
-	db "Ninja@", TRAINERTYPE_NORMAL
+	db "Ninja@", TRAINERTYPE_MOVES
 	db 34
 	dw ELECTABUZZ
+	dw CHARGE_BEAM, LIGHT_SCREEN, LOW_KICK, QUICK_ATTACK
 	db 34
 	dw SKARMORY
+	dw ROOST, WING_ATTACK, STEEL_WING, AGILITY
 	db 34
 	dw DEWGONG
+	dw WATER_PULSE, AURORA_BEAM, AQUA_RING, SHEER_COLD
 	db -1 ; end
 
 	next_list_item ; MNINJA_M (5)

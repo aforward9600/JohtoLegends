@@ -30,3 +30,8 @@ KantoGymLeaders:
 	db BLAINE
 	db GIOVANNI
 	db -1
+
+DepressedRivals:
+	db DEPRESSED_DAHLIA
+	db DEPRESSED_DRACO
+	db -1

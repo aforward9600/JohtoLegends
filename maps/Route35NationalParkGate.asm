@@ -9,9 +9,9 @@ Route35NationalParkGate_MapScripts:
 	scene_script .DummyScene1 ; SCENE_ROUTE35NATIONALPARKGATE_UNUSED
 	scene_script .LeaveContestEarly ; SCENE_ROUTE35NATIONALPARKGATE_LEAVE_CONTEST_EARLY
 
-	db 2 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .CheckIfContestRunning
-	callback MAPCALLBACK_OBJECTS, .CheckIfContestAvailable
+	db 0 ; callbacks
+;	callback MAPCALLBACK_NEWMAP, .CheckIfContestRunning
+;	callback MAPCALLBACK_OBJECTS, .CheckIfContestAvailable
 
 .DummyScene0:
 	end
@@ -190,8 +190,8 @@ Route35NationalParkGate_NoContestToday:
 Route35NationalParkGateOfficerScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_DAILY_BUG_CONTEST
-	iftrue Route35NationalParkGate_ContestIsOver
+;	checkflag ENGINE_DAILY_BUG_CONTEST
+;	iftrue Route35NationalParkGate_ContestIsOver
 	writetext Route35NationalParkGateOfficer1WeHoldContestsText
 	waitbutton
 	closetext
@@ -405,8 +405,14 @@ Route35NationalParkGateOfficer1WeHoldContestsText:
 	text "We hold Contests"
 	line "regularly in the"
 
-	para "Forest. You should"
-	line "give it a shot."
+	para "Forest. Well,"
+	line "normally we do."
+
+	para "Right now, we're"
+	line "constructing a"
+	cont "park, so they are"
+
+	para "on hold for now."
 	done
 
 Route35NationalParkGateYoungsterText:
@@ -417,22 +423,15 @@ Route35NationalParkGateYoungsterText:
 
 BugCatchingContestExplanationText:
 	text "The Bug-Catching"
-	line "Contest is held on"
+	line "Contest is on hold"
 
-	para "Tuesday, Thursday"
-	line "and Saturday."
+	para "for the foresee-"
+	line "able future."
 
-	para "Not only do you"
-	line "earn a prize just"
+	para "It will return"
+	line "when the National"
 
-	para "for participating,"
-	line "you also get to"
-
-	para "keep the bug"
-	line "#mon you may"
-
-	para "have at the end of"
-	line "the contest."
+	para "Park is complete."
 	done
 
 Route35NationalParkGate_MapEvents:

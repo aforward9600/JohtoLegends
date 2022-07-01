@@ -9,58 +9,59 @@ Route35GoldenrodGate_MapScripts:
 	db 0 ; callbacks
 
 RandyScript:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_HP_UP_FROM_RANDY
-	iftrue .gothpup
-	checkevent EVENT_GAVE_KENYA
-	iftrue .questcomplete
-	checkevent EVENT_GOT_KENYA
-	iftrue .alreadyhavekenya
-	writetext Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText
-	yesorno
-	iffalse .refused
-	writetext Route35GoldenrodGateRandyThanksKidText
-	buttonsound
-	waitsfx
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .partyfull
-	writetext Route35GoldenrodGatePlayerReceivedAMonWithMailText
-	playsound SFX_KEY_ITEM
-	waitsfx
-	givepoke SPEAROW, 10, NO_ITEM, TRUE, GiftSpearowName, GiftSpearowOTName
-	givepokemail GiftSpearowMail
-	setevent EVENT_GOT_KENYA
-.alreadyhavekenya
-	writetext Route35GoldenrodGateRandyWeirdTreeBlockingRoadText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer Route35GoldenrodGateGuardText
+;	faceplayer
+;	opentext
+;	checkevent EVENT_GOT_HP_UP_FROM_RANDY
+;	iftrue .gothpup
+;	checkevent EVENT_GAVE_KENYA
+;	iftrue .questcomplete
+;	checkevent EVENT_GOT_KENYA
+;	iftrue .alreadyhavekenya
+;	writetext Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText
+;	yesorno
+;	iffalse .refused
+;	writetext Route35GoldenrodGateRandyThanksKidText
+;	buttonsound
+;	waitsfx
+;	readvar VAR_PARTYCOUNT
+;	ifequal PARTY_LENGTH, .partyfull
+;	writetext Route35GoldenrodGatePlayerReceivedAMonWithMailText
+;	playsound SFX_KEY_ITEM
+;	waitsfx
+;	givepoke SPEAROW, 10, NO_ITEM, TRUE, GiftSpearowName, GiftSpearowOTName
+;	givepokemail GiftSpearowMail
+;	setevent EVENT_GOT_KENYA
+;.alreadyhavekenya
+;	writetext Route35GoldenrodGateRandyWeirdTreeBlockingRoadText
+;	waitbutton
+;	closetext
+;	end
 
-.partyfull
-	writetext Route35GoldenrodGateRandyCantCarryAnotherMonText
-	waitbutton
-	closetext
-	end
-
-.refused
-	writetext Route35GoldenrodGateRandyOhNeverMindThenText
-	waitbutton
-	closetext
-	end
-
-.questcomplete
-	writetext Route35GoldenrodGateRandySomethingForYourTroubleText
-	buttonsound
-	verbosegiveitem HP_UP
-	iffalse .bagfull
-	setevent EVENT_GOT_HP_UP_FROM_RANDY
-.gothpup
-	writetext Route35GoldenrodGateRandyMyPalWasSnoozingRightText
-	waitbutton
-.bagfull
-	closetext
-	end
+;.partyfull
+;	writetext Route35GoldenrodGateRandyCantCarryAnotherMonText
+;	waitbutton
+;	closetext
+;	end
+;
+;.refused
+;	writetext Route35GoldenrodGateRandyOhNeverMindThenText
+;	waitbutton
+;	closetext
+;	end
+;
+;.questcomplete
+;	writetext Route35GoldenrodGateRandySomethingForYourTroubleText
+;	buttonsound
+;	verbosegiveitem HP_UP
+;	iffalse .bagfull
+;	setevent EVENT_GOT_HP_UP_FROM_RANDY
+;.gothpup
+;	writetext Route35GoldenrodGateRandyMyPalWasSnoozingRightText
+;	waitbutton
+;.bagfull
+;	closetext
+;	end
 
 GiftSpearowMail:
 	db FLOWER_MAIL
@@ -76,14 +77,7 @@ GiftSpearowOTName:
 	db 0 ; filler
 
 Route35GoldenrodGatePokefanFScript:
-	faceplayer
-	opentext
-	checkevent EVENT_FOUGHT_SUDOWOODO
-	iftrue .FoughtSudowoodo
-	writetext Route35GoldenrodGatePokefanFText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer Route35GoldenrodGatePokefanFText
 
 .FoughtSudowoodo
 	writetext Route35GoldenrodGatePokefanFText_FoughtSudowoodo
@@ -162,17 +156,14 @@ Route35GoldenrodGateRandyMyPalWasSnoozingRightText:
 	done
 
 Route35GoldenrodGatePokefanFText:
-	text "A strange tree is"
-	line "blocking the road."
+	text "Apparently, some"
+	line "guy keeps getting"
 
-	para "It wriggles around"
-	line "if you talk to it."
+	para "punched by trees"
+	line "around here."
 
-	para "I heard it became"
-	line "wild when someone"
-
-	para "watered it with a"
-	line "SQUIRTBOTTLE."
+	para "Sounds pretty"
+	line "bogus to me."
 	done
 
 Route35GoldenrodGatePokefanFText_FoughtSudowoodo:
@@ -182,17 +173,35 @@ Route35GoldenrodGatePokefanFText_FoughtSudowoodo:
 	done
 
 Route35GoldenrodGateFisherText:
-	text "I wonder how many"
-	line "kinds of #MON"
+	text "Some people have"
+	line "said that there"
 
-	para "there are in the"
-	line "world."
+	para "are about 300"
+	line "species of #-"
+	cont "mon in Johto!"
 
-	para "Three years ago,"
-	line "PROF.OAK said that"
+	para "Can you believe"
+	line "that?!"
 
-	para "there were 150"
-	line "different kinds."
+	para "Though some think"
+	line "that we'll have"
+	cont "less in the"
+	cont "future…"
+	done
+
+Route35GoldenrodGateGuardText:
+	text "Did you go through"
+	line "the National"
+	cont "Forest?"
+
+	para "Or did you just"
+	line "take the side"
+	cont "path?"
+
+	para "You'll miss out on"
+	line "some great #mon"
+	cont "if you took the"
+	cont "short cut."
 	done
 
 Route35GoldenrodGate_MapEvents:
@@ -210,5 +219,5 @@ Route35GoldenrodGate_MapEvents:
 
 	db 3 ; object events
 	object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RandyScript, -1
-	object_event  6,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route35GoldenrodGatePokefanFScript, -1
+	object_event  6,  4, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route35GoldenrodGatePokefanFScript, -1
 	object_event  3,  2, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route35GoldenrodGateFisherScript, -1

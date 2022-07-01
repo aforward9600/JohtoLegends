@@ -18,9 +18,9 @@ Route36NationalParkGate_MapScripts:
 	scene_script .DummyScene1 ; SCENE_ROUTE36NATIONALPARKGATE_UNUSED
 	scene_script .LeaveContestEarly ; SCENE_ROUTE36NATIONALPARKGATE_LEAVE_CONTEST_EARLY
 
-	db 2 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .CheckIfContestRunning
-	callback MAPCALLBACK_OBJECTS, .CheckIfContestAvailable
+	db 0 ; callbacks
+;	callback MAPCALLBACK_NEWMAP, .CheckIfContestRunning
+;	callback MAPCALLBACK_OBJECTS, .CheckIfContestAvailable
 
 .DummyScene0:
 	end
@@ -29,116 +29,118 @@ Route36NationalParkGate_MapScripts:
 	end
 
 .LeaveContestEarly:
-	prioritysjump .LeavingContestEarly
+;	prioritysjump .LeavingContestEarly
 	end
 
-.CheckIfContestRunning:
-	checkflag ENGINE_BUG_CONTEST_TIMER
-	iftrue .BugContestIsRunning
-	setscene SCENE_ROUTE36NATIONALPARKGATE_NOTHING
-	return
+;.CheckIfContestRunning:
+;	checkflag ENGINE_BUG_CONTEST_TIMER
+;	iftrue .BugContestIsRunning
+;	setscene SCENE_ROUTE36NATIONALPARKGATE_NOTHING
+;	return
 
-.BugContestIsRunning:
-	setscene SCENE_ROUTE36NATIONALPARKGATE_LEAVE_CONTEST_EARLY
-	return
+;.BugContestIsRunning:
+;	setscene SCENE_ROUTE36NATIONALPARKGATE_LEAVE_CONTEST_EARLY
+;	return
 
-.CheckIfContestAvailable:
-	checkevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
-	iftrue .Return
-	readvar VAR_WEEKDAY
-	ifequal TUESDAY, .SetContestOfficer
-	ifequal THURSDAY, .SetContestOfficer
-	ifequal SATURDAY, .SetContestOfficer
-	checkflag ENGINE_BUG_CONTEST_TIMER
-	iftrue .SetContestOfficer
-	disappear ROUTE36NATIONALPARKGATE_OFFICER1
-	appear ROUTE36NATIONALPARKGATE_OFFICER2
-	return
+;.CheckIfContestAvailable:
+;	checkevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
+;	iftrue .Return
+;	readvar VAR_WEEKDAY
+;	ifequal TUESDAY, .SetContestOfficer
+;	ifequal THURSDAY, .SetContestOfficer
+;	ifequal SATURDAY, .SetContestOfficer
+;	checkflag ENGINE_BUG_CONTEST_TIMER
+;	iftrue .SetContestOfficer
+;	disappear ROUTE36NATIONALPARKGATE_OFFICER1
+;	appear ROUTE36NATIONALPARKGATE_OFFICER2
+;	return
 
-.SetContestOfficer:
-	appear ROUTE36NATIONALPARKGATE_OFFICER1
-	disappear ROUTE36NATIONALPARKGATE_OFFICER2
-.Return:
-	return
+;.SetContestOfficer:
+;	appear ROUTE36NATIONALPARKGATE_OFFICER1
+;	disappear ROUTE36NATIONALPARKGATE_OFFICER2
+;.Return:
+;	return
 
-.LeavingContestEarly:
-	turnobject PLAYER, UP
-	opentext
-	readvar VAR_CONTESTMINUTES
-	addval 1
-	getnum STRING_BUFFER_3
-	writetext Route36NationalParkGateOfficer1WantToFinishText
-	yesorno
-	iffalse .GoBackToContest
-	writetext Route36NationalParkGateOfficer1WaitHereForAnnouncementText
-	waitbutton
-	closetext
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	scall .CopyContestants
-	disappear ROUTE36NATIONALPARKGATE_OFFICER1
-	appear ROUTE36NATIONALPARKGATE_OFFICER2
-	applymovement PLAYER, Route36NationalParkGatePlayerWaitWithContestantsMovement
-	pause 15
-	special FadeInQuickly
-	jumpstd bugcontestresults
+;.LeavingContestEarly:
+;	turnobject PLAYER, UP
+;	opentext
+;	readvar VAR_CONTESTMINUTES
+;	addval 1
+;	getnum STRING_BUFFER_3
+;	writetext Route36NationalParkGateOfficer1WantToFinishText
+;	yesorno
+;	iffalse .GoBackToContest
+;	writetext Route36NationalParkGateOfficer1WaitHereForAnnouncementText
+;	waitbutton
+;	closetext
+;	special FadeBlackQuickly
+;	special ReloadSpritesNoPalettes
+;	scall .CopyContestants
+;	disappear ROUTE36NATIONALPARKGATE_OFFICER1
+;	appear ROUTE36NATIONALPARKGATE_OFFICER2
+;	applymovement PLAYER, Route36NationalParkGatePlayerWaitWithContestantsMovement
+;	pause 15
+;	special FadeInQuickly
+;	jumpstd bugcontestresults
 
-.GoBackToContest:
-	writetext Route36NationalParkGateOfficer1OkGoFinishText
-	waitbutton
-	closetext
-	turnobject PLAYER, LEFT
-	playsound SFX_EXIT_BUILDING
-	special FadeOutPalettes
-	waitsfx
-	warpfacing LEFT, NATIONAL_PARK_BUG_CONTEST, 33, 18
-	end
+;.GoBackToContest:
+;	writetext Route36NationalParkGateOfficer1OkGoFinishText
+;	waitbutton
+;	closetext
+;	turnobject PLAYER, LEFT
+;	playsound SFX_EXIT_BUILDING
+;	special FadeOutPalettes
+;	waitsfx
+;	warpfacing LEFT, NATIONAL_PARK_BUG_CONTEST, 33, 18
+;	end
 
-.CopyContestants:
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_1A
-	iftrue .Not1
-	appear ROUTE36NATIONALPARKGATE_YOUNGSTER1
-.Not1:
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_2A
-	iftrue .Not2
-	appear ROUTE36NATIONALPARKGATE_YOUNGSTER2
-.Not2:
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_3A
-	iftrue .Not3
-	appear ROUTE36NATIONALPARKGATE_ROCKER
-.Not3:
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_4A
-	iftrue .Not4
-	appear ROUTE36NATIONALPARKGATE_POKEFAN_M
-.Not4:
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_5A
-	iftrue .Not5
-	appear ROUTE36NATIONALPARKGATE_YOUNGSTER3
-.Not5:
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_6A
-	iftrue .Not6
-	appear ROUTE36NATIONALPARKGATE_YOUNGSTER4
-.Not6:
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_7A
-	iftrue .Not7
-	appear ROUTE36NATIONALPARKGATE_LASS
-.Not7:
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_8A
-	iftrue .Not8
-	appear ROUTE36NATIONALPARKGATE_YOUNGSTER5
-.Not8:
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_9A
-	iftrue .Not9
-	appear ROUTE36NATIONALPARKGATE_YOUNGSTER6
-.Not9:
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_10A
-	iftrue .Not10
-	appear ROUTE36NATIONALPARKGATE_YOUNGSTER7
-.Not10:
-	special UpdateSprites
-	end
+;.CopyContestants:
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_1A
+;	iftrue .Not1
+;	appear ROUTE36NATIONALPARKGATE_YOUNGSTER1
+;.Not1:
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_2A
+;	iftrue .Not2
+;	appear ROUTE36NATIONALPARKGATE_YOUNGSTER2
+;.Not2:
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_3A
+;	iftrue .Not3
+;	appear ROUTE36NATIONALPARKGATE_ROCKER
+;.Not3:
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_4A
+;	iftrue .Not4
+;	appear ROUTE36NATIONALPARKGATE_POKEFAN_M
+;.Not4:
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_5A
+;	iftrue .Not5
+;	appear ROUTE36NATIONALPARKGATE_YOUNGSTER3
+;.Not5:
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_6A
+;	iftrue .Not6
+;	appear ROUTE36NATIONALPARKGATE_YOUNGSTER4
+;.Not6:
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_7A
+;	iftrue .Not7
+;	appear ROUTE36NATIONALPARKGATE_LASS
+;.Not7:
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_8A
+;	iftrue .Not8
+;	appear ROUTE36NATIONALPARKGATE_YOUNGSTER5
+;.Not8:
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_9A
+;	iftrue .Not9
+;	appear ROUTE36NATIONALPARKGATE_YOUNGSTER6
+;.Not9:
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_10A
+;	iftrue .Not10
+;	appear ROUTE36NATIONALPARKGATE_YOUNGSTER7
+;.Not10:
+;	special UpdateSprites
+;	end
 
 Route36OfficerScriptContest:
+	setevent EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY
+	clearevent EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY
 	readvar VAR_WEEKDAY
 	ifequal SUNDAY, _ContestNotOn
 	ifequal MONDAY, _ContestNotOn
@@ -292,8 +294,8 @@ _ContestNotOn:
 Route36NationalParkGateOfficerScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_DAILY_BUG_CONTEST
-	iftrue Route36Officer_ContestHasConcluded
+;	checkflag ENGINE_DAILY_BUG_CONTEST
+;	iftrue Route36Officer_ContestHasConcluded
 	writetext Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText
 	waitbutton
 	closetext
@@ -867,8 +869,7 @@ Route36NationalParkGate_MapEvents:
 	db 1 ; bg events
 	bg_event  6,  0, BGEVENT_READ, BugCatchingContestExplanationSign
 
-	db 12 ; object events
-	object_event  0,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36OfficerScriptContest, EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY
+	db 11 ; object events
 	object_event  2,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant1BScript, EVENT_BUG_CATCHING_CONTESTANT_1B
 	object_event  4,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant2BScript, EVENT_BUG_CATCHING_CONTESTANT_2B
 	object_event  2,  6, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant3BScript, EVENT_BUG_CATCHING_CONTESTANT_3B

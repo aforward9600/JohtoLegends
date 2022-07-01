@@ -790,6 +790,7 @@ StatsScreen_LoadGFX:
 	hlcoord 1, 9
 	call PlaceString
 	call .placeCaughtLevel
+	call .placeHappiness
 	ret
 
 .placeCaughtLocation
@@ -855,6 +856,31 @@ StatsScreen_LoadGFX:
 	ld [hl], "<LV>"
 	ret
 
+.placeHappiness
+	ld de, HappinessString
+	hlcoord 1, 14
+	call PlaceString
+	ld a, [wTempMonHappiness]
+	ld de, MaxString
+	cp 255
+	jr z, .got_happiness
+	ld de, PoorString
+	cp 30
+	jr c, .got_happiness
+	ld de, LowString
+	cp 70
+	jr c, .got_happiness
+	ld de, MidString
+	cp 150
+	jr c, .got_happiness
+	ld de, GoodString
+	cp 220
+	jr c, .got_happiness
+	ld de, HighString
+.got_happiness
+	hlcoord 1, 15
+	jp PlaceString
+
 .unknown_level
 	ld de, MetUnknownLevelString
 	hlcoord 2, 12
@@ -878,6 +904,27 @@ IDNoString:
 
 OTString:
 	db "OT/@"
+
+HappinessString:
+	db "Happiness@"
+
+MaxString:
+	db "/Elated@"
+
+HighString:
+	db "/Happy@"
+
+GoodString:
+	db "/Content@"
+
+MidString:
+	db "/Average@"
+
+LowString:
+	db "/Unhappy@"
+
+PoorString:
+	db "/Miserable@"
 
 StatsScreen_PlaceFrontpic:
 	ld hl, wTempMonDVs
