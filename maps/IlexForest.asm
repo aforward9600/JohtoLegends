@@ -18,7 +18,7 @@ IlexForest_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .FarfetchDAppears
 
 .FarfetchDAppears:
-	checkevent EVENT_ILEX_FOREST_FARFETCHD
+	checkflag ENGINE_ILEX_FOREST_FARFETCHD
 	iftrue .FarfetchDWillNotAppear
 	readvar VAR_WEEKDAY
 	ifequal MONDAY, .FarfetchDWillAppear
@@ -70,15 +70,19 @@ IlexForestFarfetchdScript:
 	startbattle
 	ifequal LOSE, .NotBeaten
 	disappear ILEXFOREST_FARFETCHD
-	setevent EVENT_ILEX_FOREST_FARFETCHD
-.NotBeaten:
 	reloadmapafterbattle
 	special CheckCaughtCelebi
 	iftrue .CaughtFarfetchd
+	setevent EVENT_BEAT_FARFETCHD
 	end
 
 .CaughtFarfetchd:
 	setevent EVENT_CAUGHT_FARFETCHD
+	setflag ENGINE_ILEX_FOREST_FARFETCHD
+	end
+
+.NotBeaten:
+	reloadmapafterbattle
 	end
 
 IlexForestCharcoalMasterScript:
@@ -181,15 +185,15 @@ IlexForestSignpost:
 	jumptext IlexForestSignpostText
 
 IlexForestShrineScript:
-	checkevent EVENT_FOREST_IS_RESTLESS
-	iftrue .ForestIsRestless
-	sjump .DontDoCelebiEvent
+;	checkevent EVENT_FOREST_IS_RESTLESS
+;	iftrue .ForestIsRestless
+;	sjump .DontDoCelebiEvent
 
-.ForestIsRestless:
-	checkitem GS_BALL
-	iftrue .AskCelebiEvent
-.DontDoCelebiEvent:
-	jumptext Text_IlexForestShrine
+;.ForestIsRestless:
+;	checkitem GS_BALL
+;	iftrue .AskCelebiEvent
+;.DontDoCelebiEvent:
+;	jumptext Text_IlexForestShrine
 
 .AskCelebiEvent:
 	opentext
@@ -200,7 +204,7 @@ IlexForestShrineScript:
 	end
 
 .CelebiEvent:
-	takeitem GS_BALL
+;	takeitem GS_BALL
 	clearevent EVENT_FOREST_IS_RESTLESS
 	setevent EVENT_AZALEA_TOWN_KURT
 	disappear ILEXFOREST_LASS

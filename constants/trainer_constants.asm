@@ -38,22 +38,10 @@ CHRIS EQU __enum__
 
 	trainerclass ENOKI ; 4
 	const ENOKI1
-	const ENOKI2
-	const ENOKI3
-	const ENOKI4
-	const ENOKI5
-	const ENOKI6
-	const ENOKI7
 
 	trainerclass PRYCE ; 5
 	const PRYCE1
 	const PRYCE2
-	const PRYCE3
-	const PRYCE4
-	const PRYCE5
-	const PRYCE6
-	const PRYCE7
-	const PRYCE8
 
 	trainerclass BYRON ; 6
 	const BYRON1
@@ -830,8 +818,25 @@ CHRIS EQU __enum__
 	trainerclass CYNTHIA
 	const CYNTHIA3
 
-	trainerclass FLORINA_NEW ; b
-	const FLORINA2
+	trainerclass PRYCE_2 ; b
+	const PRYCE3
+	const PRYCE4
+	const PRYCE5
+
+	trainerclass PRYCE_3
+	const PRYCE6
+	const PRYCE7
+	const PRYCE8
+
+	trainerclass ENOKI_2
+	const ENOKI2
+	const ENOKI3
+	const ENOKI4
+
+	trainerclass ENOKI_3
+	const ENOKI5
+	const ENOKI6
+	const ENOKI7
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

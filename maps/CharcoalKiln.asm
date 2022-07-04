@@ -11,7 +11,7 @@ CharcoalKiln_MapScripts:
 CharcoalKilnBoss:
 	faceplayer
 	opentext
-	checkevent EVENT_ILEX_FOREST_FARFETCHD
+	checkevent EVENT_BEAT_FARFETCHD
 	iftrue .BeatFarfetchd
 	writetext CharcoalKilnBossText1
 	waitbutton

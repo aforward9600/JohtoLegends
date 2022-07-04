@@ -19,6 +19,10 @@ GymLeaders:
 	db CHAMPION_DAHLIA
 	db RED
 	db GEN_SURGE
+	db PRYCE_2
+	db PRYCE_3
+	db ENOKI_2
+	db ENOKI_3
 ; fallthrough
 KantoGymLeaders:
 	db FLINT

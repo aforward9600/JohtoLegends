@@ -722,11 +722,6 @@ INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 	ret z
 	cp MYSTERIOUS
 	ret z
-	ld de, RivalTransition
-	cp RIVAL3
-	ret z
-	cp RIVAL4
-	ret z
 	ld de, LanceTransition
 	cp DRAGON_KID
 	ret z
@@ -737,8 +732,16 @@ INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 	ld de, PryceTransition
 	cp PRYCE
 	ret z
+	cp PRYCE_2
+	ret z
+	cp PRYCE_3
+	ret z
 	ld de, EnokiTransition
 	cp ENOKI
+	ret z
+	cp ENOKI_2
+	ret z
+	cp ENOKI_3
 	ret z
 	ld de, ChigusaTransition
 	cp CHIGUSA

@@ -55,6 +55,7 @@ StdScripts::
 	dba GymStatue3Script
 	dba GymStatue4Script
 	dba NinjaHideoutClear
+	dba StaticPokemonRefresh
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -1971,3 +1972,12 @@ Movement_ContestResults_WalkAfterWarp:
 	step DOWN
 	turn_head UP
 	step_end
+
+StaticPokemonRefresh:
+	checkevent EVENT_CAUGHT_FARFETCHD
+	iftrue .refreshfarfetchd
+	return
+
+.refreshfarfetchd:
+	clearflag ENGINE_ILEX_FOREST_FARFETCHD
+	return

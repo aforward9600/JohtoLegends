@@ -91,4 +91,7 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; dragontamerm
 	db MUSIC_ROCKET_ENCOUNTER      ; madameboss
 	db MUSIC_LASS_ENCOUNTER        ; cynthia
-	db MUSIC_BEAUTY_ENCOUNTER      ; florina
+	db MUSIC_OFFICER_ENCOUNTER     ; pryce2
+	db MUSIC_OFFICER_ENCOUNTER     ; pryce3
+	db MUSIC_SAGE_ENCOUNTER        ; enoki2
+	db MUSIC_SAGE_ENCOUNTER        ; enoki3

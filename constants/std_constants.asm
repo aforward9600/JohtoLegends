@@ -56,3 +56,4 @@
 	enum gymstatue3
 	enum gymstatue4
 	enum ninjahideoutclear
+	enum staticpokemonrefresh

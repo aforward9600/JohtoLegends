@@ -99,7 +99,7 @@ MahoganyGymPryceScript:
 	waitbutton
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
-	loadtrainer PRYCE, PRYCE3
+	loadtrainer PRYCE_2, PRYCE3
 	startbattle
 	reloadmapafterbattle
 	sjump AfterPryceRematch
@@ -109,7 +109,7 @@ MahoganyGymPryceScript:
 	waitbutton
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
-	loadtrainer PRYCE, PRYCE4
+	loadtrainer PRYCE_2, PRYCE4
 	startbattle
 	reloadmapafterbattle
 	sjump AfterPryceRematch
@@ -119,7 +119,7 @@ MahoganyGymPryceScript:
 	waitbutton
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
-	loadtrainer PRYCE, PRYCE5
+	loadtrainer PRYCE_2, PRYCE5
 	startbattle
 	reloadmapafterbattle
 	sjump AfterPryceRematch
@@ -129,7 +129,7 @@ MahoganyGymPryceScript:
 	waitbutton
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
-	loadtrainer PRYCE, PRYCE6
+	loadtrainer PRYCE_3, PRYCE6
 	startbattle
 	reloadmapafterbattle
 	sjump AfterPryceRematch
@@ -139,7 +139,7 @@ MahoganyGymPryceScript:
 	waitbutton
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
-	loadtrainer PRYCE, PRYCE7
+	loadtrainer PRYCE_3, PRYCE7
 	startbattle
 	reloadmapafterbattle
 	sjump AfterPryceRematch
@@ -149,7 +149,7 @@ MahoganyGymPryceScript:
 	waitbutton
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
-	loadtrainer PRYCE, PRYCE8
+	loadtrainer PRYCE_3, PRYCE8
 	startbattle
 	reloadmapafterbattle
 	sjump AfterPryceRematch

@@ -90,4 +90,7 @@ TrainerClassDVs:
 	dn 14, 14, 14, 14 ; MADAME_BOSS
 	dn  7,  8,  8,  8 ; CYNTHIA
 	dn  7,  8,  8,  8 ; FLORINA_2
-	
+	dn  9,  8,  8,  8 ; PRYCE2
+	dn  9,  8,  8,  8 ; PRYCE3
+	dn  9,  8,  8,  8 ; ENOKI2
+	dn  9,  8,  8,  8 ; ENOKI3

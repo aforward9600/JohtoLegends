@@ -90,4 +90,7 @@ TrainerPicPointers::
 	dba DragonTamerMPic
 	dba MadameBossPic
 	dba CynthiaPic
-	dba FlorinaPic2
+	dba PrycePic
+	dba PrycePic
+	dba EnokiPic
+	dba EnokiPic

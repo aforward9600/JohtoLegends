@@ -95,7 +95,10 @@ INCBIN "gfx/trainers/dragon_tamer_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/dragon_tamer_m.gbcpal", middle_colors
 INCLUDE "gfx/trainers/madame_boss.pal"
 INCBIN "gfx/trainers/cynthia.gbcpal", middle_colors
-INCLUDE "gfx/trainers/florina.pal"
+INCLUDE "gfx/trainers/pryce.pal"
+INCLUDE "gfx/trainers/pryce.pal"
+INCLUDE "gfx/trainers/enoki.pal"
+INCLUDE "gfx/trainers/enoki.pal"
 
 KrisPalette:
 INCLUDE "gfx/player/kris.pal"

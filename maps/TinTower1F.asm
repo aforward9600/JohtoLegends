@@ -277,9 +277,6 @@ TinTowerEusine:
 	waitbutton
 	closetext
 	setevent EVENT_OPEN_ILEX_FOREST
-	setmapscene ROUTE_34, SCENE_DEFAULT
-	setevent EVENT_ROUTE_34_NINJA
-	clearevent EVENT_ROUTE_34_OFFICER
 	clearevent EVENT_AZALEA_TOWN_SLOWPOKES
 	clearevent EVENT_ILEX_FOREST_FARFETCHD
 	end
@@ -303,9 +300,6 @@ TinTowerEusine:
 	waitbutton
 	closetext
 	setevent EVENT_OPEN_ILEX_FOREST
-	setmapscene ROUTE_34, SCENE_DEFAULT
-	setevent EVENT_ROUTE_34_NINJA
-	clearevent EVENT_ROUTE_34_OFFICER
 	clearevent EVENT_AZALEA_TOWN_SLOWPOKES
 	clearevent EVENT_ILEX_FOREST_FARFETCHD
 	end

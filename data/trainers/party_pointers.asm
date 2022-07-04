@@ -90,4 +90,7 @@ TrainerGroups:
 	dba DragonTamerMGroup
 	dba MadameBossGroup
 	dba Cynthia2Group
-	dba FlorinaGroup2
+	dba PryceGroup2
+	dba PryceGroup3
+	dba EnokiGroup2
+	dba EnokiGroup3

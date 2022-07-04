@@ -117,7 +117,7 @@ EcruteakGymEnokiScript:
 	waitbutton
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
-	loadtrainer ENOKI, ENOKI2
+	loadtrainer ENOKI_2, ENOKI2
 	startbattle
 	reloadmapafterbattle
 	sjump AfterEnokiRematch
@@ -127,7 +127,7 @@ EcruteakGymEnokiScript:
 	waitbutton
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
-	loadtrainer ENOKI, ENOKI3
+	loadtrainer ENOKI_2, ENOKI3
 	startbattle
 	reloadmapafterbattle
 	sjump AfterEnokiRematch
@@ -137,7 +137,7 @@ EcruteakGymEnokiScript:
 	waitbutton
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
-	loadtrainer ENOKI, ENOKI4
+	loadtrainer ENOKI_2, ENOKI4
 	startbattle
 	reloadmapafterbattle
 	sjump AfterEnokiRematch
@@ -147,7 +147,7 @@ EcruteakGymEnokiScript:
 	waitbutton
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
-	loadtrainer ENOKI, ENOKI5
+	loadtrainer ENOKI_3, ENOKI5
 	startbattle
 	reloadmapafterbattle
 	sjump AfterEnokiRematch
@@ -157,7 +157,7 @@ EcruteakGymEnokiScript:
 	waitbutton
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
-	loadtrainer ENOKI, ENOKI6
+	loadtrainer ENOKI_3, ENOKI6
 	startbattle
 	reloadmapafterbattle
 	sjump AfterEnokiRematch
@@ -167,7 +167,7 @@ EcruteakGymEnokiScript:
 	waitbutton
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
-	loadtrainer ENOKI, ENOKI7
+	loadtrainer ENOKI_3, ENOKI7
 	startbattle
 	reloadmapafterbattle
 	sjump AfterEnokiRematch
