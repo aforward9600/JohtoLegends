@@ -28,7 +28,7 @@ MrPokemonsHouse_MapScripts:
 	writetext MrPokemonIntroText2
 	buttonsound
 	waitsfx
-	giveitem MYSTERY_EGG
+	giveitem FOCUS_SASH
 	writetext MrPokemonsHouse_GotEggText
 	playsound SFX_KEY_ITEM
 	waitsfx

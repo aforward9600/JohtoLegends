@@ -323,12 +323,12 @@ ElmAfterTheftDoneScript:
 
 ElmAfterTheftScript:
 	writetext ElmAfterTheftText1
-	checkitem MYSTERY_EGG
+	checkitem FOCUS_SASH
 	iffalse ElmAfterTheftDoneScript
 	buttonsound
 	writetext ElmAfterTheftText2
 	waitbutton
-	takeitem MYSTERY_EGG
+	takeitem FOCUS_SASH
 	scall ElmJumpBackScript1
 	writetext ElmAfterTheftText3
 	waitbutton

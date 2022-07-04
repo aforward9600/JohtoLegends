@@ -68,7 +68,7 @@
 	const ELIXER       ; 41
 	const SECRETPOTION ; 43
 	const S_S_TICKET   ; 44
-	const MYSTERY_EGG  ; 45
+	const FOCUS_SASH   ; 45
 	const CLEAR_BELL   ; 46
 	const SILVER_WING  ; 47
 	const MOOMOO_MILK  ; 48

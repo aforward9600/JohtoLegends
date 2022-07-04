@@ -62,7 +62,7 @@ ItemDescriptions:
 	dw ElixerDesc
 	dw SecretPotionDesc
 	dw SSTicketDesc
-	dw MysteryEggDesc
+	dw FocusSashDesc
 	dw ClearBellDesc
 	dw SilverWingDesc
 	dw MoomooMilkDesc
@@ -499,9 +499,9 @@ SSTicketDesc:
 	db   "A ticket for the"
 	next "S.S.Aqua.@"
 
-MysteryEggDesc:
-	db   "An Egg obtained"
-	next "from Mr.#mon.@"
+FocusSashDesc:
+	db   "Prevents one-hit"
+	next "K.O.s (Hold)@"
 
 ClearBellDesc:
 	db   "Makes a gentle"

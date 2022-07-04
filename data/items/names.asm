@@ -61,7 +61,7 @@ ItemNames::
 	db "Elixer@"
 	db "Secretpotion@"
 	db "S.S.Ticket@"
-	db "Mystery Egg@"
+	db "Focus Sash@"
 	db "Clear Bell@"
 	db "Silver Wing@"
 	db "Moomoo Milk@"
