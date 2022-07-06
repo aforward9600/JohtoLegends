@@ -403,7 +403,7 @@ INCLUDE "maps/Route31.asm"
 INCLUDE "maps/Route39.asm"
 INCLUDE "maps/Route40.asm"
 INCLUDE "maps/Route41.asm"
-INCLUDE "maps/Route12.asm"
+INCLUDE "maps/MastersHouse1F.asm"
 
 
 SECTION "Map Scripts 23", ROMX
@@ -422,6 +422,7 @@ INCLUDE "maps/Route9.asm"
 INCLUDE "maps/CinnabarPokecenter1F.asm"
 INCLUDE "maps/Route19FuchsiaGate.asm"
 INCLUDE "maps/SeafoamGym.asm"
+INCLUDE "maps/MastersHouse2F.asm"
 
 
 SECTION "Map Scripts 24", ROMX
@@ -448,34 +449,32 @@ INCLUDE "maps/Route10South.asm"
 INCLUDE "maps/Route23.asm"
 INCLUDE "maps/SilverCavePokecenter1F.asm"
 INCLUDE "maps/Route28SteelWingHouse.asm"
+INCLUDE "maps/Route12SuperRodHouse.asm"
 
 
 SECTION "Map Scripts 25", ROMX
 
-INCLUDE "maps/Route10North.asm"
-INCLUDE "maps/MastersHouse1F.asm"
-INCLUDE "maps/MastersHouse2F.asm"
-INCLUDE "maps/RivalsHouse2F.asm"
-INCLUDE "maps/DarkCaveNewEntrance.asm"
-INCLUDE "maps/Route12SuperRodHouse.asm"
-INCLUDE "maps/Route40BattleTowerGate.asm"
-INCLUDE "maps/EcruteakMoveTutorHouse.asm"
+INCLUDE "maps/BattleTower1F.asm"
 INCLUDE "maps/BattleTowerHallway.asm"
 INCLUDE "maps/BattleTowerElevator.asm"
 INCLUDE "maps/BattleTowerBattleRoom.asm"
 INCLUDE "maps/LighthouseElevator.asm"
-INCLUDE "maps/WildAreaOutside.asm"
+INCLUDE "maps/RivalsHouse2F.asm"
+INCLUDE "maps/Route12.asm"
 
 
 SECTION "Map Scripts 26", ROMX
 
+INCLUDE "maps/EcruteakMoveTutorHouse.asm"
+INCLUDE "maps/Route10North.asm"
+INCLUDE "maps/Route40BattleTowerGate.asm"
+INCLUDE "maps/DarkCaveNewEntrance.asm"
+INCLUDE "maps/WildAreaOutside.asm"
 INCLUDE "maps/VictoryRoadGate.asm"
-INCLUDE "maps/Route2Gate.asm"
 INCLUDE "maps/Route2NuggetHouse.asm"
 INCLUDE "maps/ViridianPokecenter1F.asm"
 INCLUDE "maps/TrainerHouseB1F.asm"
 INCLUDE "maps/OlivineLighthouse6F.asm"
-INCLUDE "maps/Route47.asm"
 INCLUDE "maps/Route48.asm"
 INCLUDE "maps/WildAreaMart.asm"
 INCLUDE "maps/WildArea1.asm"
@@ -483,8 +482,6 @@ INCLUDE "maps/WildArea23.asm"
 INCLUDE "maps/WildAreaCave.asm"
 INCLUDE "maps/WildArea4.asm"
 INCLUDE "maps/WildArea5.asm"
-INCLUDE "maps/BattleTower1F.asm"
-INCLUDE "maps/BurnedTower2F.asm"
 
 
 SECTION "Map Scripts 27", ROMX
@@ -504,3 +501,6 @@ INCLUDE "maps/CliffsEdgeGate.asm"
 INCLUDE "maps/CliffCave.asm"
 INCLUDE "maps/ViridianMart.asm"
 INCLUDE "maps/PokeSeersHouse.asm"
+INCLUDE "maps/BurnedTower2F.asm"
+INCLUDE "maps/Route2Gate.asm"
+INCLUDE "maps/Route47.asm"

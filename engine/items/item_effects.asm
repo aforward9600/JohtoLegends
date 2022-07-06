@@ -130,7 +130,7 @@ ItemEffects:
 	dw RevivalHerbEffect   ; REVIVAL_HERB
 	dw NoEffect            ; HARD_STONE
 	dw NoEffect            ; LUCKY_EGG
-	dw CardKeyEffect       ; CARD_KEY
+	dw BattleCardEffect    ; BATTLE_CARD
 	dw NoEffect            ; MACHINE_PART
 	dw NoEffect            ; POWER_BAND
 	dw NoEffect            ; LOST_ITEM
@@ -2316,9 +2316,13 @@ PokeFluteEffect:
 .battle
 	jp PokeFluteTerminatorCharacter
 
-VSSeekerEffect:
-	farcall VSSeekerFunction
-	ret
+BattleCardEffect:
+	ld hl, .bluecardtext
+	jp MenuTextboxWaitButton
+
+.bluecardtext
+	text_far UnknownText_0x1c5c5e
+	text_end
 
 CoinCaseEffect:
 	ld hl, .coincasetext

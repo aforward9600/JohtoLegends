@@ -1,8 +1,8 @@
 BuenaPrizeItems:
 ; there are NUM_BUENA_PRIZES items (see engine/events/buena.asm)
-	db ULTRA_BALL,   2
-	db FULL_RESTORE, 2
-	db NUGGET,       3
+	db FOCUS_SASH,   10
+	db POWER_BAND,   2
+	db SPECIALSPECS, 3
 	db RARE_CANDY,   3
 	db PROTEIN,      5
 	db IRON,         5

@@ -3044,6 +3044,9 @@ BattleCommand_DamageCalc:
 	and a
 	jr z, .DoneItem
 
+	cp HELD_CATEGORY_BOOST
+	jr z, .CategoryBoost
+
 	ld hl, TypeBoostItems
 
 .NextItem:
@@ -3071,6 +3074,35 @@ BattleCommand_DamageCalc:
 	call Multiply
 
 ; / 100
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	jr .DoneItem
+
+.CategoryBoost:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	and TYPE_MASK
+	cp SPECIAL
+	jr nc, .special
+; physical
+	ld a, [hl]
+	cp POWER_BAND
+	jr z, .doCategoryBoost
+	jr .DoneItem
+
+.special:
+	ld a, [hl]
+	cp SPECIALSPECS
+	jr nz, .DoneItem
+
+.doCategoryBoost:
+	ld a, 10
+	add 100
+	ldh [hMultiplier], a
+	call Multiply
+
 	ld a, 100
 	ldh [hDivisor], a
 	ld b, 4
@@ -5928,8 +5960,6 @@ BattleCommand_Charge:
 ; 'dug a hole!'
 	text_far UnknownText_0x1c0d6c
 	text_end
-
-INCLUDE "engine/battle/move_effects/mist.asm"
 
 INCLUDE "engine/battle/move_effects/focus_energy.asm"
 

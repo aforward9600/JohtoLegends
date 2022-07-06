@@ -34,7 +34,7 @@ CreditsStrings:
 	dw .TakashiKawaguchi
 	dw .Radiation
 	dw .DragonArbock
-	dw .KenjiSaiki
+	dw .AzureKeys
 	dw .AtsushiTada
 	dw .NaokoKawakami
 	dw .HiroyukiZinnai
@@ -160,7 +160,7 @@ CreditsStrings:
 .TakashiKawaguchi:    db " TAKASHI KAWAGUCHI@"        ; "かわぐち　たかし@"
 .Radiation:           db "     Radiation@"       ; "いしはら　つねかず@"
 .DragonArbock:        db "   Dragon Arbock@"        ; "やまうち　ひろし@"
-.KenjiSaiki:          db "    KENJI SAIKI@"           ; "さいき　けんじ@"
+.AzureKeys:           db "     AzureKeys@"           ; "さいき　けんじ@"
 .AtsushiTada:         db "    ATSUSHI TADA@"          ; "ただ　あつし@"
 .NaokoKawakami:       db "   NAOKO KAWAKAMI@"         ; "かわかみ　なおこ@"
 .HiroyukiZinnai:      db "  HIROYUKI ZINNAI@"         ; "じんない　ひろゆき@"

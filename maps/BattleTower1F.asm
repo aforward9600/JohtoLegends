@@ -4,6 +4,7 @@
 	const BATTLETOWER1F_COOLTRAINER_F
 	const BATTLETOWER1F_BUG_CATCHER
 	const BATTLETOWER1F_GRANNY
+	const BATTLETOWER1F_RECEPTIONIST_2
 
 BattleTower1F_MapScripts:
 	db 2 ; scene scripts
@@ -52,6 +53,8 @@ BattleTower1FRulesSign:
 	end
 
 BattleTower1FReceptionistScript:
+	checkevent EVENT_MET_BUENA
+	iffalse .GiveBattleCard
 	setval BATTLETOWERACTION_GET_CHALLENGE_STATE ; readmem sBattleTowerChallengeState
 	special BattleTowerAction
 	ifequal $3, Script_BeatenAllTrainers2 ; maps/BattleTowerBattleRoom.asm
@@ -62,6 +65,17 @@ BattleTower1FReceptionistScript:
 	special BattleTowerAction
 	ifnotequal $0, Script_Menu_ChallengeExplanationCancel
 	sjump Script_BattleTowerIntroductionYesNo
+
+.GiveBattleCard:
+	opentext
+	writetext HereIsABattleCardText
+	buttonsound
+	setevent EVENT_MET_BUENA
+	verbosegiveitem BATTLE_CARD
+	writetext ThatIsABattleCardText
+	waitbutton
+	closetext
+	end
 
 Script_Menu_ChallengeExplanationCancel:
 	writetext Text_WantToGoIntoABattleRoom
@@ -118,14 +132,13 @@ Script_WalkToBattleTowerElevator:
 	end
 
 Script_GivePlayerHisPrize:
-	setval BATTLETOWERACTION_1C
-	special BattleTowerAction
-	setval BATTLETOWERACTION_GIVEREWARD
-	special BattleTowerAction
-	ifequal POTION, Script_YourPackIsStuffedFull
-	getitemname STRING_BUFFER_4, USE_SCRIPT_VAR
-	giveitem ITEM_FROM_MEM, 5
+	readvar VAR_BLUECARDBALANCE
+	addval 5
+	writevar VAR_BLUECARDBALANCE
+	waitsfx
+	playsound SFX_TRANSACTION
 	writetext Text_PlayerGotFive
+	waitbutton
 	setval BATTLETOWERACTION_1D
 	special BattleTowerAction
 	closetext
@@ -253,8 +266,36 @@ BattleTower1FYoungsterScript:
 	turnobject BATTLETOWER1F_YOUNGSTER, RIGHT
 	end
 
+BattleTower1FPrizeReceptionistScript:
+	faceplayer
+	opentext
+	checkitem BATTLE_CARD
+	iffalse .NoCard
+	writetext BattleTower1FPrizeReceptionistText
+	buttonsound
+	special BuenaPrize
+	closetext
+	end
+
+.NoCard:
+	writetext BattleTower1FPrizeReceptionistNoCardText
+	buttonsound
+	closetext
+	end
+
 BattleTower1FCooltrainerFScript:
-	jumptextfaceplayer Text_BattleTowerCooltrainerF
+	faceplayer
+	opentext
+	readvar VAR_BLUECARDBALANCE
+	addval 5
+	writevar VAR_BLUECARDBALANCE
+	waitsfx
+	playsound SFX_TRANSACTION
+	writetext Text_PlayerGotFive
+	setval BATTLETOWERACTION_1D
+	special BattleTowerAction
+	closetext
+	end
 
 BattleTower1FBugCatcherScript:
 	jumptextfaceplayer Text_BattleTowerBugCatcher
@@ -347,54 +388,54 @@ MovementData_BattleTowerBattleRoomPlayerTurnsToFaceNextOpponent:
 	step_end
 
 Text_BattleTowerWelcomesYou:
-	text "BATTLE TOWER"
+	text "Battle Tower"
 	line "welcomes you!"
 
 	para "I could show you"
-	line "to a BATTLE ROOM."
+	line "to a Battle Room."
 	done
 
 Text_WantToGoIntoABattleRoom:
 	text "Want to go into a"
-	line "BATTLE ROOM?"
+	line "Battle Room?"
 	done
 
 Text_RightThisWayToYourBattleRoom:
 	text "Right this way to"
-	line "your BATTLE ROOM."
+	line "your Battle Room."
 	done
 
 Text_BattleTowerIntroduction_1:
-	text "BATTLE TOWER is a"
+	text "Battle Tower is a"
 	line "facility made for"
-	cont "#MON battles."
+	cont "#mon battles."
 
-	para "Countless #MON"
+	para "Countless #mon"
 	line "trainers gather"
 
 	para "from all over to"
 	line "hold battles in"
 
 	para "specially designed"
-	line "BATTLE ROOMS."
+	line "Battle Rooms."
 
 	para "There are many"
-	line "BATTLE ROOMS in"
-	cont "the BATTLE TOWER."
+	line "Battle Rooms in"
+	cont "the Battle Tower."
 
-	para "Each ROOM holds"
+	para "Each Room holds"
 	line "seven trainers."
 
 	para "If you defeat the"
-	line "seven in a ROOM,"
+	line "seven in a Room,"
 
 	para "and you have a"
 	line "good record, you"
 
 	para "could become the"
-	line "ROOM's LEADER."
+	line "Room's Leader."
 
-	para "All LEADERS will"
+	para "All Leaders will"
 	line "be recorded in the"
 
 	para "HONOR ROLL for"
@@ -403,14 +444,14 @@ Text_BattleTowerIntroduction_1:
 	para "You may challenge"
 	line "in up to five"
 
-	para "BATTLE ROOMS each"
+	para "Battle Rooms each"
 	line "day."
 
 	para "However, you may"
 	line "battle only once a"
 
 	para "day in any given"
-	line "ROOM."
+	line "Room."
 
 	para "To interrupt a"
 	line "session, you must"
@@ -418,31 +459,31 @@ Text_BattleTowerIntroduction_1:
 	para "SAVE. If not, you"
 	line "won't be able to"
 
-	para "resume your ROOM"
+	para "resume your Room"
 	line "challenge."
 
 	para ""
 	done
 
 Text_BattleTowerIntroduction_2:
-	text "BATTLE TOWER is a"
+	text "Battle Tower is a"
 	line "facility made for"
-	cont "#MON battles."
+	cont "#mon battles."
 
-	para "Countless #MON"
+	para "Countless #mon"
 	line "trainers gather"
 
 	para "from all over to"
 	line "hold battles in"
 
 	para "specially designed"
-	line "BATTLE ROOMS."
+	line "Battle Rooms."
 
 	para "There are many"
-	line "BATTLE ROOMS in"
-	cont "the BATTLE TOWER."
+	line "Battle Rooms in"
+	cont "the Battle Tower."
 
-	para "Each ROOM holds"
+	para "Each Room holds"
 	line "seven trainers."
 
 	para "Beat them all, and"
@@ -454,7 +495,7 @@ Text_BattleTowerIntroduction_2:
 	para "SAVE. If not, you"
 	line "won't be able to"
 
-	para "resume your ROOM"
+	para "resume your Room"
 	line "challenge."
 
 	para ""
@@ -462,7 +503,7 @@ Text_BattleTowerIntroduction_2:
 
 Text_ReceivedAListOfLeadersOnTheHonorRoll:
 	text "Received a list of"
-	line "LEADERS on the"
+	line "Leaders on the"
 	cont "HONOR ROLL."
 
 	para ""
@@ -497,7 +538,7 @@ Text_BeatenAllTheTrainers_Mobile:
 	line "results, you may"
 
 	para "be chosen as a"
-	line "ROOM LEADER."
+	line "Room Leader."
 
 	para ""
 	done
@@ -524,12 +565,8 @@ Text_AskRegisterRecord_Mobile:
 
 Text_PlayerGotFive:
 	text "<PLAYER> got five"
-	line "@"
-	text_ram wStringBuffer4
-	text "!@"
-	sound_item
-	text_waitbutton
-	text_end
+	line "Battle Points!"
+	done
 
 Text_YourPackIsStuffedFull:
 	text "Oops, your PACK is"
@@ -559,14 +596,14 @@ Text_PleaseStepThisWay:
 Text_WouldYouLikeToHearAboutTheBattleTower:
 	text "Would you like to"
 	line "hear about the"
-	cont "BATTLE TOWER?"
+	cont "Battle Tower?"
 	done
 
 Text_CantBeRegistered:
 	text "Your record from"
 	line "the previous"
 
-	para "BATTLE ROOM can't"
+	para "Battle Room can't"
 	line "be registered. OK?"
 	done
 
@@ -574,7 +611,7 @@ Text_CantBeRegistered_PreviousRecordDeleted:
 	text "Your record from"
 	line "the previous"
 
-	para "BATTLE ROOM can't"
+	para "Battle Room can't"
 	line "be registered."
 
 	para "Also, the existing"
@@ -583,19 +620,19 @@ Text_CantBeRegistered_PreviousRecordDeleted:
 	done
 
 Text_CheckTheLeaderHonorRoll:
-	text "Check the LEADER"
-	line "HONOR ROLL?"
+	text "Check the Leader"
+	line "Honor Roll?"
 	done
 
 Text_ReadBattleTowerRules:
-	text "BATTLE TOWER rules"
+	text "Battle Tower rules"
 	line "are written here."
 
 	para "Read the rules?"
 	done
 
 Text_BattleTowerRules:
-	text "Three #MON may"
+	text "Three #mon may"
 	line "enter battles."
 
 	para "All three must be"
@@ -605,7 +642,7 @@ Text_BattleTowerRules:
 	line "hold must also be"
 	cont "different."
 
-	para "Certain #MON"
+	para "Certain #mon"
 	line "may also have"
 
 	para "level restrictions"
@@ -617,7 +654,7 @@ Text_BattleTower_LeftWithoutSaving:
 	line "You didn't SAVE"
 
 	para "before exiting"
-	line "the BATTLE ROOM."
+	line "the Battle Room."
 
 	para "I'm awfully sorry,"
 	line "but your challenge"
@@ -627,7 +664,7 @@ Text_BattleTower_LeftWithoutSaving:
 	done
 
 Text_YourMonWillBeHealedToFullHealth:
-	text "Your #MON will"
+	text "Your #mon will"
 	line "be healed to full"
 	cont "health."
 	done
@@ -649,7 +686,7 @@ Text_SaveBeforeConnecting_Mobile:
 
 Text_SaveBeforeEnteringBattleRoom:
 	text "Before entering"
-	line "the BATTLE ROOM,"
+	line "the Battle Room,"
 
 	para "your progress will"
 	line "be saved."
@@ -665,12 +702,12 @@ Text_SaveBeforeReentry:
 	line "be SAVED before"
 
 	para "you go back into"
-	line "the previous ROOM."
+	line "the previous Room."
 	done
 
 Text_CancelYourBattleRoomChallenge:
-	text "Cancel your BATTLE"
-	line "ROOM challenge?"
+	text "Cancel your Battle"
+	line "Room challenge?"
 	done
 
 Text_RegisterRecordOnFile_Mobile:
@@ -686,13 +723,13 @@ Text_WeveBeenWaitingForYou:
 	text "We've been waiting"
 	line "for you. This way"
 
-	para "to a BATTLE ROOM,"
+	para "to a Battle Room,"
 	line "please."
 	done
 
 Text_FiveDayBattleLimit_Mobile:
 	text "You may enter only"
-	line "five BATTLE ROOMS"
+	line "five Battle Rooms"
 	cont "each day."
 
 	para "Please come back"
@@ -732,7 +769,7 @@ Text_RegisterRecordTimedOut_Mobile:
 
 Text_AMonLevelExceeds:
 	text "One or more of"
-	line "your #MON's"
+	line "your #mon's"
 	cont "levels exceeds @"
 	text_decimal wScriptVar, 1, 3
 	text "."
@@ -741,10 +778,10 @@ Text_AMonLevelExceeds:
 Text_MayNotEnterABattleRoomUnderL70:
 	text_ram wcd49
 	text " may not"
-	line "enter a BATTLE"
-	cont "ROOM under L70."
+	line "enter a Battle"
+	cont "Room under L70."
 
-	para "This BATTLE ROOM"
+	para "This Battle Room"
 	line "is for L@"
 	text_decimal wScriptVar, 1, 3
 	text "."
@@ -760,7 +797,7 @@ Text_BattleTowerYoungster:
 
 Text_BattleTowerCooltrainerF:
 	text "There are lots of"
-	line "BATTLE ROOMS, but"
+	line "Battle Rooms, but"
 
 	para "I'm going to win"
 	line "them all!"
@@ -774,7 +811,7 @@ Text_BattleTowerGranny:
 	line "in battle."
 
 	para "Making your"
-	line "#MON hold items"
+	line "#mon hold items"
 
 	para "is the key to"
 	line "winning battles."
@@ -785,10 +822,68 @@ Text_BattleTowerBugCatcher:
 	line "how far I can go"
 
 	para "using just bug"
-	line "#MON."
+	line "#mon."
 
 	para "Don't let there be"
-	line "any fire #MON…"
+	line "any fire #mon…"
+	done
+
+HereIsABattleCardText:
+	text "Welcome to the"
+	line "Battle Tower!"
+
+	para "Are you here to"
+	line "participate in a"
+	cont "series of battles?"
+
+	para "…Oh, it appears"
+	line "you don't have a"
+	cont "Battle Card…"
+
+	para "Here, take this"
+	line "as a gift to start"
+
+	para "your Battle Tower"
+	line "career!"
+	done
+
+ThatIsABattleCardText:
+	text "That Battle Card"
+	line "will save the"
+	cont "Battle Points, or"
+	cont "BP that you earn."
+
+	para "You can exchange"
+	line "them for prizes"
+	cont "with the"
+
+	para "receptionist to"
+	line "the right."
+
+	para "Good luck in your"
+	line "battles!"
+	done
+
+BattleTower1FPrizeReceptionistText:
+	text "Welcome to the"
+	line "Prize Counter!"
+
+	para "What prizes do you"
+	line "want?"
+	done
+
+BattleTower1FPrizeReceptionistNoCardText:
+	text "Welcome to the"
+	line "Prize Counter!"
+
+	para "…Oh, it looks like"
+	line "you don't have a"
+	cont "Battle Card…"
+
+	para "You can get one"
+	line "from the"
+	cont "receptionist to"
+	cont "the left."
 	done
 
 BattleTower1F_MapEvents:
@@ -804,9 +899,10 @@ BattleTower1F_MapEvents:
 	db 1 ; bg events
 	bg_event  6,  6, BGEVENT_READ, BattleTower1FRulesSign
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event  7,  6, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTower1FReceptionistScript, -1
-	object_event 14,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BattleTower1FYoungsterScript, -1
-	object_event  4,  9, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTower1FCooltrainerFScript, -1
-	object_event  1,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BattleTower1FBugCatcherScript, -1
-	object_event 14,  3, SPRITE_GRANNY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTower1FGrannyScript, -1
+	object_event 14,  9, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BattleTower1FYoungsterScript, -1
+	object_event  4,  9, SPRITE_TWIN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTower1FCooltrainerFScript, -1
+	object_event  1,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BattleTower1FBugCatcherScript, -1
+	object_event 14,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTower1FGrannyScript, -1
+	object_event  9,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTower1FPrizeReceptionistScript, -1

@@ -25,6 +25,8 @@ Dark Zeta, PiaCarrot, and cardboardbox for new evolution moves and fixing the gl
 
 Vulcandth and Rangi: Level Caught Design Flaw Fix
 
+Focus Sash: AzureKeys
+
 New Swarming System: Dragon Arbock
 
 New Pokemon cries: chattycrystal team

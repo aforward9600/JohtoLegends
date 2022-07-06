@@ -57,9 +57,8 @@ CreditsScript:
 
 	db CREDITS_WAIT, 12
 
-	db      POKEMON_CRYSTAL, 1
-	db        BIT_EXPANSION, 2
-	db                  AX6, 3
+	db     PROGRAMMING_HELP, 0
+	db            AZUREKEYS, 2
 
 	db CREDITS_WAIT, 12
 

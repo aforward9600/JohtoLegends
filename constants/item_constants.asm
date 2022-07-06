@@ -123,13 +123,13 @@
 	const REVIVAL_HERB ; 7c
 	const HARD_STONE   ; 7d
 	const LUCKY_EGG    ; 7e
-	const CARD_KEY     ; 7f
+	const BATTLE_CARD  ; 7f
 	const MACHINE_PART ; 80
 	const POWER_BAND   ; 81
 	const LOST_ITEM    ; 82
 	const STARDUST     ; 83
 	const STAR_PIECE   ; 84
-	const BASEMENT_KEY ; 85
+	const SPECIALSPECS ; 85
 	const CHARCOAL     ; 8a
 	const BERRY_JUICE  ; 8b
 	const SCOPE_LENS   ; 8c

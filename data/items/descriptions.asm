@@ -117,7 +117,7 @@ ItemDescriptions:
 	dw RevivalHerbDesc
 	dw HardStoneDesc
 	dw LuckyEggDesc
-	dw CardKeyDesc
+	dw BattleCardDesc
 	dw MachinePartDesc
 	dw PowerBandDesc
 	dw LostItemDesc
@@ -719,9 +719,9 @@ LuckyEggDesc:
 	db   "Earns extra Exp."
 	next "points. (Hold)@"
 
-CardKeyDesc:
-	db   "Opens shutters in"
-	next "the Radio Tower.@"
+BattleCardDesc:
+	db   "Stores BP to use"
+	next "at Battle Tower.@"
 
 MachinePartDesc:
 	db   "A machine part for"
@@ -744,7 +744,8 @@ StarPieceDesc:
 	next "Sell very high.@"
 
 BasementKeyDesc:
-	db   "Opens doors.@"
+	db   "Increases holder's"
+	next "Sp.Atk stat (Hold)@"
 
 CharcoalDesc:
 	db   "Powers up fire-"

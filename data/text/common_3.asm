@@ -1177,14 +1177,14 @@ _TheMonMustNotHoldTheSameItemsText::
 
 _YouCantTakeAnEggText::
 	text "You can't take an"
-	line "EGG!"
+	line "Egg!"
 
 	para ""
 	done
 
 UnknownText_0x1c5a5a::
 	text "It dodged the"
-	line "thrown BALL!"
+	line "thrown Ball!"
 
 	para "This #mon"
 	line "can't be caught!"
@@ -1296,9 +1296,10 @@ UnknownText_0x1c5c44::
 	text_end ; unused
 
 UnknownText_0x1c5c5e::
-	text "Trainers are now"
-	line "ready for"
-	cont "rematches."
+	text "You now have"
+	line "@"
+	text_decimal wBlueCardBalance, 1, 2
+	text " points."
 	done
 
 UnknownText_0x1c5c7b::
