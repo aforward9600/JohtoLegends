@@ -364,7 +364,7 @@ UnknownText_0x1c06bf::
 UnknownText_0x1c06de::
 	text_ram wStringBuffer2
 	text " used"
-	line "DIG!"
+	line "Dig!"
 	done
 
 UnknownText_0x1c06ed::
@@ -546,7 +546,7 @@ UnknownText_0x1c0a4e::
 	done
 
 UnknownText_0x1c0a77::
-	text "Yes! ITEMFINDER"
+	text "Yes! Itemfinder"
 	line "indicates there's"
 	cont "an item nearby."
 	prompt

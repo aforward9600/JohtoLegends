@@ -4,8 +4,8 @@ BuenaPrizeItems:
 	db POWER_BAND,   2
 	db SPECIALSPECS, 3
 	db RARE_CANDY,   3
-	db PROTEIN,      5
-	db IRON,         5
+	db WIDE_LENS,    5
+	db LIFE_ORB,     5
 	db CARBOS,       5
 	db CALCIUM,      5
 	db HP_UP,        5

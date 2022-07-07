@@ -90,7 +90,7 @@ ItemNames::
 	db "Twistedspoon@"
 	db "Badge Pouch@"
 	db "Blackbelt@"
-	db "Blk Apricorn@"
+	db "Life Orb@"
 	db "Pnk Apricorn@"
 	db "Blackglasses@"
 	db "Slowpoketail@"

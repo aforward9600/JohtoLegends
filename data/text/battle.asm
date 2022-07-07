@@ -1176,3 +1176,9 @@ KnockedOffItemText:
 	text_ram wStringBuffer1
 	text "!"
 	prompt
+
+BattleText_UserLostSomeOfItsHP:
+	text "<USER>"
+	line "lost some of its"
+	cont "HP!"
+	prompt

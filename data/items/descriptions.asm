@@ -91,7 +91,7 @@ ItemDescriptions:
 	dw TwistedSpoonDesc
 	dw BadgePouchDesc
 	dw BlackbeltDesc
-	dw BlkApricornDesc
+	dw LifeOrbDesc
 	dw PnkApricornDesc
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
@@ -615,9 +615,9 @@ BlackbeltDesc:
 	db   "Boosts fighting-"
 	next "type moves. (Hold)@"
 
-BlkApricornDesc:
-	db   "A black Apricorn."
-	next "@"
+LifeOrbDesc:
+	db   "User loses HP,"
+	next "increases power.@"
 
 PnkApricornDesc:
 	db   "A pink Apricorn."

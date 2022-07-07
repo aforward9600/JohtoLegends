@@ -3063,6 +3063,9 @@ BattleCommand_DamageCalc:
 	and a
 	jr z, .DoneItem
 
+	cp HELD_LIFE_ORB
+	jr z, .LifeOrb
+
 	cp HELD_CATEGORY_BOOST
 	jr z, .CategoryBoost
 
@@ -3099,6 +3102,18 @@ BattleCommand_DamageCalc:
 	call Divide
 	jr .DoneItem
 
+.LifeOrb:
+	ld a, 30
+	add 100
+	ldh [hMultiplier], a
+	call Multiply
+
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	jr .DoneItem
+
 .CategoryBoost:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
@@ -3116,7 +3131,7 @@ BattleCommand_DamageCalc:
 	jr nz, .DoneItem
 
 .doCategoryBoost:
-	ld a, 50
+	ld a, 10
 	add 100
 	ldh [hMultiplier], a
 	call Multiply
@@ -5756,9 +5771,15 @@ BattleCommand_HeldFlinch:
 	call GetUserItem
 	ld a, b
 	cp HELD_FLINCH
-	ret nz
+	jr z, .flinch
+	cp HELD_LIFE_ORB
+	jr z, .lifeorb
+	ret
 
+.flinch:
 	call CheckSubstituteOpp
+	ret nz
+	call BattleCommand_CheckFaint
 	ret nz
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVarAddr
@@ -5772,6 +5793,23 @@ BattleCommand_HeldFlinch:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVarAddr
 	set SUBSTATUS_FLINCHED, [hl]
+	ret
+
+.lifeorb:
+	call .checkfaint
+	ret z
+	xor a
+	farcall GetEighthMaxHP
+	farcall SubtractHPFromUser
+	ld hl, BattleText_UserLostSomeOfItsHP
+	jp StdBattleTextbox
+
+.checkfaint:
+	; if we fainted, abort the move sequence
+	farcall HasUserFainted
+	ret nz
+	call EndMoveEffect
+	xor a
 	ret
 
 BattleCommand_OHKO:
@@ -6502,8 +6540,6 @@ ResetTurn:
 	call DoMove
 	jp EndMoveEffect
 
-INCLUDE "engine/battle/move_effects/thief.asm"
-
 BattleCommand_ArenaTrap:
 ; arenatrap
 
@@ -6582,8 +6618,6 @@ INCLUDE "engine/battle/move_effects/rollout.asm"
 BattleCommand5d:
 ; unused
 	ret
-
-INCLUDE "engine/battle/move_effects/fury_cutter.asm"
 
 INCLUDE "engine/battle/move_effects/attract.asm"
 

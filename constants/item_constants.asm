@@ -97,7 +97,7 @@
 	const TWISTEDSPOON ; 60
 	const BADGE_POUCH  ; 61
 	const BLACKBELT    ; 62
-	const BLK_APRICORN ; 63
+	const LIFE_ORB     ; 63
 	const PNK_APRICORN ; 65
 	const BLACKGLASSES ; 66
 	const SLOWPOKETAIL ; 67
