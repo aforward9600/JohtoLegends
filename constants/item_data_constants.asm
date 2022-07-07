@@ -96,7 +96,7 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 
 	const_def 40
 	const HELD_40
-	const HELD_41
+	const HELD_ACCURACY_BOOST
 	const HELD_METAL_POWDER
 	const HELD_EVIOLITE
 

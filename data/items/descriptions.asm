@@ -60,7 +60,7 @@ ItemDescriptions:
 	dw EtherDesc
 	dw MaxEtherDesc
 	dw ElixerDesc
-	dw SecretPotionDesc
+	dw WideLensDesc
 	dw SSTicketDesc
 	dw FocusSashDesc
 	dw ClearBellDesc
@@ -491,9 +491,9 @@ ElixerDesc:
 	db   "Restores PP of all"
 	next "moves by 10.@"
 
-SecretPotionDesc:
-	db   "Fully heals any"
-	next "#mon.@"
+WideLensDesc:
+	db   "Increases holder's"
+	next "Accuracy. (Hold)@"
 
 SSTicketDesc:
 	db   "A ticket for the"

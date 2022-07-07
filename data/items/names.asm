@@ -59,7 +59,7 @@ ItemNames::
 	db "Ether@"
 	db "Max Ether@"
 	db "Elixer@"
-	db "Secretpotion@"
+	db "Wide Lens@"
 	db "S.S.Ticket@"
 	db "Focus Sash@"
 	db "Clear Bell@"

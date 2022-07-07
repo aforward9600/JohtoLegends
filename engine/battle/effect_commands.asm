@@ -1578,37 +1578,56 @@ BattleCommand_CheckHit:
 	ld b, a
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .BrightPowder
+	jr z, .CheckItems
 	ld a, [wEnemyMoveStruct + MOVE_ACC]
 	ld b, a
 
-.BrightPowder:
-	push bc
+.CheckItems:
+	xor a
+	ldh [hMultiplicand + 0], a
+	ldh [hMultiplicand + 1], a
+	ld a, b
+	ldh [hMultiplicand + 2], a
+	call GetUserItem
+	ld a, b
+	cp HELD_ACCURACY_BOOST
+	jr nz, .check_brightpowder
+	ld a, c ; % miss
+	add 100
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+
+.check_brightpowder:
 	call GetOpponentItem
 	ld a, b
 	cp HELD_BRIGHTPOWDER
-	ld a, c ; % miss
-	pop bc
 	jr nz, .skip_brightpowder
-
-	ld c, a
-	ld a, b
-	sub c
-	ld b, a
-	jr nc, .skip_brightpowder
-	ld b, 0
+	ld a, 100
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, c ; % miss
+	add 100
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
 
 .skip_brightpowder
-	ld a, b
+	ldh a, [hMultiplicand + 0]
+	ld b, a
+	ldh a, [hMultiplicand +1]
+	or b
+	ret nz ; If either upper byte of result has data, then we are over 100%
+	ldh a, [hMultiplicand +2]
 	cp -1
-	jr z, .Hit
-
+	ret z ; $ff = 100%
+	ld b, a
 	call BattleRandom
 	cp b
-	jr nc, .Miss
-
-.Hit:
-	ret
+	ret c
 
 .Miss:
 ; Keep the damage value intact if we're using (Hi) Jump Kick.
@@ -3082,8 +3101,7 @@ BattleCommand_DamageCalc:
 
 .CategoryBoost:
 	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVarAddr
-	and TYPE_MASK
+	call GetBattleVar
 	cp SPECIAL
 	jr nc, .special
 ; physical
@@ -3098,7 +3116,7 @@ BattleCommand_DamageCalc:
 	jr nz, .DoneItem
 
 .doCategoryBoost:
-	ld a, 10
+	ld a, 50
 	add 100
 	ldh [hMultiplier], a
 	call Multiply

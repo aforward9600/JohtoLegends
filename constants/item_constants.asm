@@ -66,7 +66,7 @@
 	const ETHER        ; 3f
 	const MAX_ETHER    ; 40
 	const ELIXER       ; 41
-	const SECRETPOTION ; 43
+	const WIDE_LENS    ; 43
 	const S_S_TICKET   ; 44
 	const FOCUS_SASH   ; 45
 	const CLEAR_BELL   ; 46
