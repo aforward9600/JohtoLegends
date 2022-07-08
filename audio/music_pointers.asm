@@ -140,3 +140,4 @@ Music:
 	dba Music_MadameBoss
 	dba Music_CinnabarIslandGBS
 	dba Music_FriendlyShop
+	dba Music_BattleCynthia
