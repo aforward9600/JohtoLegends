@@ -104,9 +104,9 @@ PlayBattleMusic:
 .trainermusic
 	ld de, MUSIC_CHAMPION_BATTLE
 	cp CHAMPION_DAHLIA
-	jr z, .done
+	jp z, .done
 	cp RED
-	jr z, .done
+	jp z, .done
 
 	ld de, MUSIC_MARNIE_BATTLE
 	cp RIVAL3
@@ -146,6 +146,10 @@ PlayBattleMusic:
 
 	; IsGymLeader also counts CHAMPION, RED, and the Kanto gym leaders
 	; but they have been taken care of before this
+	ld de, MUSIC_ELITE_FOUR
+	farcall IsEliteFour
+	jr c, .done
+
 	ld de, MUSIC_JOHTO_GYM_LEADER_BATTLE
 	farcall IsGymLeader
 	jr c, .done

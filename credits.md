@@ -133,7 +133,7 @@ WildAreaOutside/JohtoSafariZoneGate - Mmmmmmmmmmmmmmmmm
 WildArea/JohtoSafariZone - Mmmmmmmmmmmmmmmmm
 Route 47 - Mmmmmmmmmmmmmmmmm
 Cinnabar Mansion - Dannye
-NightTime coding and songs, Friendly Shop: Tritehexagon
+NightTime coding and songs, Friendly Shop, Cynthia Battle and FRLG Gym Leader Song: Tritehexagon
 Lugia Battle: Pigu
 Kanto Legend Battle XY: GACT and Pigu
 Ho-Oh Battle: Pigu

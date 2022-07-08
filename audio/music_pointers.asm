@@ -141,3 +141,4 @@ Music:
 	dba Music_CinnabarIslandGBS
 	dba Music_FriendlyShop
 	dba Music_BattleCynthia
+	dba Music_KantoGymLeaderFRLG

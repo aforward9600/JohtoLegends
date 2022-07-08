@@ -2719,6 +2719,10 @@ IsDepressedRival:
 	ld hl, DepressedRivals
 	jr IsGymLeaderCommon
 
+IsEliteFour:
+	ld hl, EliteFour
+	jr IsGymLeaderCommon
+
 IsGymLeader:
 	ld hl, GymLeaders
 IsGymLeaderCommon:
