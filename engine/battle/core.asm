@@ -657,6 +657,7 @@ ParsePlayerAction:
 	ldh [hBGMapMode], a
 	pop af
 	ret nz
+	call SetChoiceLock
 
 .encored
 	call SetPlayerTurn
@@ -5991,6 +5992,7 @@ ParseEnemyAction:
 	bit SUBSTATUS_ENCORED, [hl]
 	ld a, [wLastEnemyMove]
 	jp nz, .finish
+	call SetChoiceLock
 	ld hl, wEnemyMonMoves
 	ld b, 0
 	add hl, bc
@@ -6071,6 +6073,7 @@ ParseEnemyAction:
 
 .skip_load
 	call SetEnemyTurn
+	call SetChoiceLock
 	callfar UpdateMoveData
 	call CheckEnemyLockedIn
 	jr nz, .raging
@@ -6107,6 +6110,30 @@ ParseEnemyAction:
 	ld hl, STRUGGLE
 	call GetMoveIDFromIndex
 	jr .finish
+
+SetChoiceLock:
+	push hl
+	push bc
+	callfar GetUserItem
+	ld a, b
+	cp HELD_CHOICE_BOOST
+	jr nz, .done
+	ld hl, wPlayerEncoreCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .GotEncoreCount
+	ld hl, wEnemyEncoreCount
+.GotEncoreCount
+	ld a, -1 ; set encore count to 255
+	ld [hl], a
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	set SUBSTATUS_ENCORED, [hl]
+
+.done
+	pop bc
+	pop hl
+	ret
 
 ResetVarsForSubstatusRage:
 	xor a
@@ -6830,6 +6857,7 @@ ApplyStatusEffectOnEnemyStats:
 
 ApplyStatusEffectOnStats:
 	ldh [hBattleTurn], a
+	farcall ApplyChoiceScarfOnSpeed
 	call ApplyPrzEffectOnSpeed
 	jp ApplyBrnEffectOnAttack
 

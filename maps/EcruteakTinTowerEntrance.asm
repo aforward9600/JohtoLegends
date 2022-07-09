@@ -137,6 +137,8 @@ EcruteakTinTowerEntranceSageScript:
 	end
 
 .AllowedThrough:
+	checkevent EVENT_TIN_TOWER_TAKEOVER
+	iftrue .PleaseHelpUs
 	writetext EcruteakTinTowerEntranceSageText_PleaseDoGoOn
 	waitbutton
 	closetext
@@ -154,24 +156,43 @@ EcruteakTinTowerEntranceSageScript:
 	closetext
 	end
 
+.PleaseHelpUs:
+	writetext PleaseHelpUsText
+	waitbutton
+	closetext
+	end
+
 EcruteakTinTowerEntranceWanderingSageScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_CLEAR_BELL
-	iftrue .GotClearBell
+	checkevent EVENT_TIN_TOWER_TAKEOVER
+	iftrue .PleaseHelpTheTower
 	writetext EcruteakTinTowerEntranceWanderingSageText
 	waitbutton
 	closetext
 	end
 
-.GotClearBell:
-	writetext EcruteakTinTowerEntranceWanderingSageText_GotClearBell
+.PleaseHelpTheTower:
+	writetext PleaseHelpTheTowerText
 	waitbutton
 	closetext
 	end
 
 EcruteakTinTowerEntranceGrampsScript:
-	jumptextfaceplayer EcruteakTinTowerEntranceGrampsText
+	faceplayer
+	opentext
+	checkevent EVENT_TIN_TOWER_TAKEOVER
+	iftrue .ThisIsTerrible
+	writetext EcruteakTinTowerEntranceGrampsText
+	waitbutton
+	closetext
+	end
+
+.ThisIsTerrible:
+	writetext ThisIsTerribleText
+	waitbutton
+	closetext
+	end
 
 EcruteakTinTowerEntranceRocketScript:
 	opentext
@@ -499,7 +520,7 @@ HoldItRightThereText:
 
 	para "You are?"
 
-	para "...Ah, <PLAYER>."
+	para "…Ah, <PLAYER>."
 
 	para "I heard about you"
 	line "in the report."
@@ -537,15 +558,33 @@ HoldItRightThereText:
 	done
 
 SunglassesText:
-	text "Hm...."
+	text "Hm…"
 
 	para "So, a man in black"
-	line "with sunglasses..."
+	line "with sunglasses…"
 	done
 
 SorryImBusyText:
 	text "Sorry, but I'm"
 	line "busy right now."
+	done
+
+PleaseHelpUsText:
+	text "…Please…"
+
+	para "…Help us…"
+	done
+
+ThisIsTerribleText:
+	text "…This is terrible…"
+
+	para "…How could this"
+	line "happen?"
+	done
+
+PleaseHelpTheTowerText:
+	text "Please help those"
+	line "at the tower!"
 	done
 
 EcruteakTinTowerEntrance_MapEvents:

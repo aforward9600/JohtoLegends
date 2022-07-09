@@ -194,7 +194,6 @@ INCLUDE "maps/EcruteakMart.asm"
 INCLUDE "maps/EcruteakGym.asm"
 INCLUDE "maps/EcruteakItemfinderHouse.asm"
 INCLUDE "maps/ViridianGym.asm"
-INCLUDE "maps/TrainerHouse1F.asm"
 
 
 SECTION "Map Scripts 12", ROMX
@@ -504,3 +503,4 @@ INCLUDE "maps/PokeSeersHouse.asm"
 INCLUDE "maps/BurnedTower2F.asm"
 INCLUDE "maps/Route2Gate.asm"
 INCLUDE "maps/Route47.asm"
+INCLUDE "maps/TrainerHouse1F.asm"

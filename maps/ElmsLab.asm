@@ -410,7 +410,6 @@ ElmGiveMasterBallScript:
 ElmGiveTicketScript:
 	writetext ElmGiveTicketText1
 	buttonsound
-	verbosegiveitem S_S_TICKET
 	setevent EVENT_GOT_SS_TICKET_FROM_ELM
 	writetext ElmGiveTicketText2
 	waitbutton

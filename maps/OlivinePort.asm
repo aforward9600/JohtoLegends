@@ -93,8 +93,6 @@ OlivinePortWalkUpToShipScript:
 	iffalse OlivinePortNotRidingMoveAwayScript
 	writetext UnknownText_0x74ada
 	buttonsound
-	checkitem S_S_TICKET
-	iffalse .NoTicket
 	writetext UnknownText_0x74b11
 	waitbutton
 	closetext
@@ -158,8 +156,6 @@ OlivinePortSailorAfterHOFScript:
 	iffalse OlivinePortNotRidingScript
 	writetext UnknownText_0x74ada
 	buttonsound
-	checkitem S_S_TICKET
-	iffalse .NoTicket
 	writetext UnknownText_0x74b11
 	waitbutton
 	closetext

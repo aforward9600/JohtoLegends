@@ -3061,7 +3061,7 @@ BattleCommand_DamageCalc:
 
 	ld a, b
 	and a
-	jr z, .DoneItem
+	jp z, .DoneItem
 
 	cp HELD_LIFE_ORB
 	jr z, .LifeOrb
@@ -3069,12 +3069,15 @@ BattleCommand_DamageCalc:
 	cp HELD_CATEGORY_BOOST
 	jr z, .CategoryBoost
 
+	cp HELD_CHOICE_BOOST
+	jr z, .ChoiceBoost
+
 	ld hl, TypeBoostItems
 
 .NextItem:
 	ld a, [hli]
 	cp -1
-	jr z, .DoneItem
+	jp z, .DoneItem
 
 ; Item effect
 	cp b
@@ -3132,6 +3135,38 @@ BattleCommand_DamageCalc:
 
 .doCategoryBoost:
 	ld a, 10
+	add 100
+	ldh [hMultiplier], a
+	call Multiply
+
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	jr .DoneItem
+
+.ChoiceBoost:
+	ld a, c
+	cp SP_ATTACK
+	jr z, .choice_specs
+	and a
+	jr nz, .DoneItem ; Must be Scarf, so no boost
+
+; Choice Band
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp SPECIAL
+	jr c, .doChoiceBoost
+	jr .DoneItem
+
+.choice_specs:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp SPECIAL
+	jr c, .DoneItem
+
+.doChoiceBoost:
+	ld a, 50
 	add 100
 	ldh [hMultiplier], a
 	call Multiply
@@ -4980,6 +5015,8 @@ CalcPlayerStats:
 
 	call BattleCommand_SwitchTurn
 
+	call ApplyChoiceScarfOnSpeed
+
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
 
@@ -4997,6 +5034,8 @@ CalcEnemyStats:
 	call CalcBattleStats
 
 	call BattleCommand_SwitchTurn
+
+	call ApplyChoiceScarfOnSpeed
 
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
@@ -7063,3 +7102,67 @@ SandstormSpDefBoost:
 INCLUDE "engine/battle/move_effects/aqua_ring.asm"
 
 INCLUDE "engine/battle/move_effects/roost.asm"
+
+ApplyChoiceScarfOnSpeed:
+	Call GetOpponentItem
+	ld a, b
+	cp HELD_CHOICE_BOOST
+	ret nz
+	ld a, c
+	cp SPEED
+	ret nz
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .enemy
+; load wBattleMonSpeed into hMultiplicand
+	ld hl, wBattleMonSpeed
+	xor a
+	ldh [hMultiplicand + 0], a
+	ld a, [hli]
+	ldh [hMultiplicand + 1], a
+	ld a, [hl]
+	ldh [hMultiplicand + 2], a
+; Multiply by 150
+	ld a, 50
+	add 100
+	ldh [hMultiplier], a
+	call Multiply
+; Divide by 100
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+; load hQuotient back into wBattleMonSpeed
+	ldh a, [hQuotient + 2]
+	ld hl, wBattleMonSpeed
+	ld [hli], a
+	ldh a, [hQuotient + 3]
+	ld [hl], a
+	ret
+
+.enemy:
+; load wEnemyMonSpeed into hMultiplicand
+	ld hl, wEnemyMonSpeed
+	xor a
+	ldh [hMultiplicand + 0], a
+	ld a, [hli]
+	ldh [hMultiplicand + 1], a
+	ld a, [hl]
+	ldh [hMultiplicand + 2], a
+; Multiply by 150
+	ld a, 50
+	add 100
+	ldh [hMultiplier], a
+	call Multiply
+; Divide by 100
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+; load hQuotient back into wEnemyMonSpeed
+	ldh a, [hQuotient + 2]
+	ld hl, wEnemyMonSpeed
+	ld [hli], a
+	ldh a, [hQuotient + 3]
+	ld [hl], a
+	ret

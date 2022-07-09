@@ -75,7 +75,7 @@ PokemonFanClubClefairyGuyScript:
 	writetext PokemonFanClubClefairyGuyTakeThisDollBackToGirlText
 	buttonsound
 	waitsfx
-	giveitem LOST_ITEM
+	giveitem CHOICE_SPECS
 	iffalse .NoRoom
 	disappear POKEMONFANCLUB_FAIRY
 	writetext PokemonFanClubPlayerReceivedDollText

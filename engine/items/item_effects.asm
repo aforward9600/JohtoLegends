@@ -74,7 +74,7 @@ ItemEffects:
 	dw RestorePPEffect     ; MAX_ETHER
 	dw RestorePPEffect     ; ELIXER
 	dw NoEffect            ; SECRETPOTION
-	dw NoEffect            ; S_S_TICKET
+	dw NoEffect            ; CHOICE_SPECS
 	dw NoEffect            ; MYSTERY_EGG
 	dw NoEffect            ; CLEAR_BELL
 	dw NoEffect            ; SILVER_WING
@@ -104,8 +104,8 @@ ItemEffects:
 	dw NoEffect            ; TWISTEDSPOON
 	dw NoEffect            ; WHT_APRICORN
 	dw NoEffect            ; BLACKBELT
-	dw NoEffect            ; BLK_APRICORN
-	dw NoEffect            ; PNK_APRICORN
+	dw NoEffect            ; LIFE_ORB
+	dw NoEffect            ; CHOICE_BAND
 	dw NoEffect            ; BLACKGLASSES
 	dw NoEffect            ; SLOWPOKETAIL
 	dw NoEffect            ; PINK_BOW
@@ -133,7 +133,7 @@ ItemEffects:
 	dw BattleCardEffect    ; BATTLE_CARD
 	dw NoEffect            ; MACHINE_PART
 	dw NoEffect            ; POWER_BAND
-	dw NoEffect            ; LOST_ITEM
+	dw NoEffect            ; CHOICE_SCARF
 	dw NoEffect            ; STARDUST
 	dw NoEffect            ; STAR_PIECE
 	dw NoEffect            ; BASEMENT_KEY

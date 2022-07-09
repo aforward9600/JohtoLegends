@@ -67,7 +67,7 @@
 	const MAX_ETHER    ; 40
 	const ELIXER       ; 41
 	const WIDE_LENS    ; 43
-	const S_S_TICKET   ; 44
+	const CHOICE_SPECS ; 44
 	const FOCUS_SASH   ; 45
 	const CLEAR_BELL   ; 46
 	const SILVER_WING  ; 47
@@ -98,7 +98,7 @@
 	const BADGE_POUCH  ; 61
 	const BLACKBELT    ; 62
 	const LIFE_ORB     ; 63
-	const PNK_APRICORN ; 65
+	const CHOICE_BAND  ; 65
 	const BLACKGLASSES ; 66
 	const SLOWPOKETAIL ; 67
 	const PINK_BOW     ; 68
@@ -126,7 +126,7 @@
 	const BATTLE_CARD  ; 7f
 	const MACHINE_PART ; 80
 	const POWER_BAND   ; 81
-	const LOST_ITEM    ; 82
+	const CHOICE_SCARF ; 82
 	const STARDUST     ; 83
 	const STAR_PIECE   ; 84
 	const SPECIALSPECS ; 85

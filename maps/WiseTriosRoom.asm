@@ -41,13 +41,52 @@ WiseTriosRoom_MapScripts:
 	return
 
 WiseTriosRoomSage1Script:
-	jumptextfaceplayer WiseTriosRoomSage1Text
+	faceplayer
+	opentext
+	checkevent EVENT_TIN_TOWER_TAKEOVER
+	iftrue .WiseTriosRoomSage1Takeover
+	writetext WiseTriosRoomSage1Text
+	waitbutton
+	closetext
+	end
+
+.WiseTriosRoomSage1Takeover:
+	writetext WiseTriosRoomSage1TakeoverText
+	waitbutton
+	closetext
+	end
 
 WiseTriosRoomSage2Script:
-	jumptextfaceplayer WiseTriosRoomSage2Text
+	faceplayer
+	opentext
+	checkevent EVENT_TIN_TOWER_TAKEOVER
+	iftrue .WiseTriosRoomSage2Takeover
+	writetext WiseTriosRoomSage2Text
+	waitbutton
+	closetext
+	end
+
+.WiseTriosRoomSage2Takeover:
+	writetext WiseTriosRoomSage2TakeoverText
+	waitbutton
+	closetext
+	end
 
 WiseTriosRoomSage3Script:
-	jumptextfaceplayer WiseTriosRoomSage3Text
+	faceplayer
+	opentext
+	checkevent EVENT_TIN_TOWER_TAKEOVER
+	iftrue .WiseTriosRoomSage3Takeover
+	writetext WiseTriosRoomSage3Text
+	waitbutton
+	closetext
+	end
+
+.WiseTriosRoomSage3Takeover:
+	writetext WiseTriosRoomSage3TakeoverText
+	waitbutton
+	closetext
+	end
 
 WiseTriosRoom_CannotEnterTinTowerScript:
 	turnobject WISETRIOSROOM_SAGE3, UP
@@ -70,7 +109,15 @@ TrainerSageGaku:
 
 .Script:
 	opentext
+	checkevent EVENT_TIN_TOWER_TAKEOVER
+	iftrue .WiseTriosRoomSage1Takeover
 	writetext SageGakuAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.WiseTriosRoomSage1Takeover:
+	writetext WiseTriosRoomSage1TakeoverText
 	waitbutton
 	closetext
 	end
@@ -80,7 +127,15 @@ TrainerSageMasa:
 
 .Script:
 	opentext
+	checkevent EVENT_TIN_TOWER_TAKEOVER
+	iftrue .WiseTriosRoomSage2Takeover
 	writetext SageMasaAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.WiseTriosRoomSage2Takeover:
+	writetext WiseTriosRoomSage2TakeoverText
 	waitbutton
 	closetext
 	end
@@ -89,6 +144,8 @@ TrainerSageKoji:
 	trainer SAGE, KOJI, EVENT_BEAT_SAGE_KOJI, SageKojiSeenText, SageKojiBeatenText, 0, .Script
 
 .Script:
+	checkevent EVENT_TIN_TOWER_TAKEOVER
+	iftrue .WiseTriosRoomSage3Takeover
 	checkevent EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER
 	iftrue .KojiAllowsPassage
 	pause 10
@@ -107,6 +164,13 @@ TrainerSageKoji:
 .KojiAllowsPassage:
 	opentext
 	writetext SageKojiAfterBattleFinalText
+	waitbutton
+	closetext
+	end
+
+.WiseTriosRoomSage3Takeover:
+	opentext
+	writetext WiseTriosRoomSage3TakeoverText
 	waitbutton
 	closetext
 	end
@@ -223,6 +287,15 @@ SageGakuAfterBattleText:
 	line "any other."
 	done
 
+WiseTriosRoomSage1TakeoverText:
+	text "Your friend has"
+	line "already gone"
+	cont "ahead…"
+
+	para "…You two may be"
+	line "able to stop them…"
+	done
+
 SageMasaSeenText:
 	text "Can you be trusted"
 	line "with the truth?"
@@ -241,6 +314,12 @@ SageMasaAfterBattleText:
 	line "Tower will tell"
 
 	para "what you seek."
+	done
+
+WiseTriosRoomSage2TakeoverText:
+	text "…Those who are not"
+	line "worthy have taken"
+	cont "over the tower…"
 	done
 
 SageKojiSeenText:
@@ -298,6 +377,11 @@ SageKojiAfterBattleFinalText:
 
 	para "understand the"
 	line "truth?"
+	done
+
+WiseTriosRoomSage3TakeoverText:
+	text "We were no match"
+	line "for them…"
 	done
 
 WiseTriosRoom_MapEvents:

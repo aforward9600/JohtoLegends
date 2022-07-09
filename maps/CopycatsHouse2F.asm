@@ -30,7 +30,7 @@ Copycat:
 	iftrue .GotPass
 	checkevent EVENT_RETURNED_LOST_ITEM_TO_COPYCAT
 	iftrue .TryGivePassAgain
-	checkitem LOST_ITEM
+	checkitem CHOICE_SPECS
 	iftrue .ReturnLostItem
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Default_Female_1
@@ -109,7 +109,7 @@ Copycat:
 	opentext
 	writetext CopycatText_GiveDoll
 	buttonsound
-	takeitem LOST_ITEM
+	takeitem CHOICE_SPECS
 	setevent EVENT_RETURNED_LOST_ITEM_TO_COPYCAT
 	clearevent EVENT_COPYCATS_HOUSE_2F_DOLL
 	sjump .GivePass

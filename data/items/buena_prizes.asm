@@ -6,7 +6,7 @@ BuenaPrizeItems:
 	db RARE_CANDY,   3
 	db WIDE_LENS,    5
 	db LIFE_ORB,     5
-	db CARBOS,       5
-	db CALCIUM,      5
-	db HP_UP,        5
+	db CHOICE_BAND,  5
+	db CHOICE_SPECS, 5
+	db CHOICE_SCARF, 5
 .End

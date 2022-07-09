@@ -454,7 +454,8 @@ AzaleaTown_MapEvents:
 	warp_event  2, 10, ILEX_FOREST_AZALEA_GATE, 3
 	warp_event  2, 11, ILEX_FOREST_AZALEA_GATE, 4
 
-	db 0 ; coord events
+	db 1 ; coord events
+	coord_event 10, 16, SCENE_AZALEATOWN_RIVAL_BATTLE, AzaleaTownRivalBattleScene1
 
 	db 9 ; bg events
 	bg_event 19,  9, BGEVENT_READ, AzaleaTownSign

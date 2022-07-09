@@ -94,8 +94,6 @@ VermilionPortWalkUpToShipScript:
 	iffalse VermilionPortNotRidingMoveAwayScript
 	writetext UnknownText_0x74f8b
 	buttonsound
-	checkitem S_S_TICKET
-	iffalse .NoTicket
 	writetext VermilionPortSSTicketText
 	waitbutton
 	closetext
@@ -156,8 +154,6 @@ VermilionPortSailorScript:
 	iffalse VermilionPortNotRidingScript
 	writetext UnknownText_0x74f8b
 	buttonsound
-	checkitem S_S_TICKET
-	iffalse .NoTicket
 	writetext VermilionPortSSTicketText
 	waitbutton
 	closetext

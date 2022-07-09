@@ -61,7 +61,7 @@ ItemDescriptions:
 	dw MaxEtherDesc
 	dw ElixerDesc
 	dw WideLensDesc
-	dw SSTicketDesc
+	dw ChoiceSpecsDesc
 	dw FocusSashDesc
 	dw ClearBellDesc
 	dw SilverWingDesc
@@ -92,7 +92,7 @@ ItemDescriptions:
 	dw BadgePouchDesc
 	dw BlackbeltDesc
 	dw LifeOrbDesc
-	dw PnkApricornDesc
+	dw ChoiceBandDesc
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
 	dw PinkBowDesc
@@ -120,7 +120,7 @@ ItemDescriptions:
 	dw BattleCardDesc
 	dw MachinePartDesc
 	dw PowerBandDesc
-	dw LostItemDesc
+	dw ChoiceScarfDesc
 	dw StardustDesc
 	dw StarPieceDesc
 	dw BasementKeyDesc
@@ -495,9 +495,9 @@ WideLensDesc:
 	db   "Increases holder's"
 	next "Accuracy. (Hold)@"
 
-SSTicketDesc:
-	db   "A ticket for the"
-	next "S.S.Aqua.@"
+ChoiceSpecsDesc:
+	db   "Ups Sp.Atk, can't"
+	next "swap move. (Hold)@"
 
 FocusSashDesc:
 	db   "Prevents one-hit"
@@ -619,9 +619,9 @@ LifeOrbDesc:
 	db   "User loses HP,"
 	next "increases power.@"
 
-PnkApricornDesc:
-	db   "A pink Apricorn."
-	next "@"
+ChoiceBandDesc:
+	db   "Ups Attack, can't"
+	next "swap move. (Hold)@"
 
 BlackGlassesDesc:
 	db   "Powers up dark-"
@@ -731,9 +731,9 @@ PowerBandDesc:
 	db   "Increases holder's"
 	next "Attack stat (Hold)@"
 
-LostItemDesc:
-	db   "The # Doll lost"
-	next "by the Copycat.@"
+ChoiceScarfDesc:
+	db   "Ups Speed, can't"
+	next "swap move. (Hold)@"
 
 StardustDesc:
 	db   "Pretty, red sand."
