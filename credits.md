@@ -25,7 +25,7 @@ Dark Zeta, PiaCarrot, and cardboardbox for new evolution moves and fixing the gl
 
 Vulcandth and Rangi: Level Caught Design Flaw Fix
 
-Focus Sash, Power Band, SpecialSpecs, Wide Lens and Life Orb coding: AzureKeys
+Focus Sash, Power Band, SpecialSpecs, Wide Lens, Life Orb, Choice Band, Choice Scarf and Choice Specs coding: AzureKeys
 
 New Swarming System: Dragon Arbock
 
