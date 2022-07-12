@@ -2770,6 +2770,26 @@ Roost:
 	roost
 	endmove
 
+Acrobatics:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	acrobatics
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	supereffectivetext
+	kingsrock
+	checkfaint
+	buildopponentrage
+	endmove
+
 ;UTurn:
 ;    checkobedience
 ;    usedmovetext

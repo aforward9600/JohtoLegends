@@ -2326,16 +2326,16 @@ GruntMGroup:
 	dw ICY_WIND, AERIAL_ACE, PRESENT, ROOST
 	db -1 ; end
 
-	next_list_item ; ManM (16)
+	next_list_item ; ManM (16) Tin Tower 2F
 	db "Man@", TRAINERTYPE_NORMAL
-	db 16
-	dw RATTATA
-	db 16
-	dw RATTATA
-	db 16
-	dw RATTATA
-	db 16
-	dw RATTATA
+	db 39
+	dw LAIRON
+	db 39
+	dw DUNSPARCE
+	db 40
+	dw FEAROW
+	db 40
+	dw DUSCLOPS
 	db -1 ; end
 
 	next_list_item ; ManM (17)
@@ -5643,6 +5643,18 @@ GruntFGroup:
 	dw JYNX
 	db 32
 	dw LEAFEON
+	db -1 ; end
+
+	next_list_item ; GruntF (10) Tin Tower 2F
+	db "Lady@", TRAINERTYPE_NORMAL
+	db 39
+	dw PORYGON2
+	db 39
+	dw TYPHLOSION
+	db 40
+	dw GABITE
+	db 40
+	dw ESPEON
 	db -1 ; end
 
 	end_list_items

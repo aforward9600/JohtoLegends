@@ -709,6 +709,7 @@ CHRIS EQU __enum__
 	const GRUNTF_7
 	const GRUNTF_8
 	const GRUNTF_9
+	const GRUNTF_10
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE

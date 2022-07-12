@@ -475,7 +475,7 @@ MartBlackthornTMs:
 	db TM_DOUBLE_TEAM
 	db TM_SUBSTITUTE
 	db TM_SLEEP_TALK
-	db TM_HONE_CLAWS
+	db TM_ACROBATICS
 	db -1 ; end
 
 MartAzaleaTMs:

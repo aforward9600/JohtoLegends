@@ -397,6 +397,7 @@ MoveDescriptions1:
 	dw AquaRingDescription
 	dw KnockOffDescription
 	dw UTurnDescription
+	dw AcrobaticsDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1918,9 +1919,9 @@ FlatterDescription:
 	db   "Causes confusion"
 	next "and raises Sp.Atk.@"
 
-WakeUpSlapDescription:
-	db   "Wakes up sleeping"
-	next "foe, more damage.@"
+;WakeUpSlapDescription:
+;	db   "Wakes up sleeping"
+;	next "foe, more damage.@"
 
 AquaRingDescription:
 	db	 "Restores HP each"
@@ -1933,3 +1934,7 @@ KnockOffDescription:
 UTurnDescription:
 	db   "After attacking,"
 	line "user switches out.@"
+
+AcrobaticsDescription:
+	db   "More power when"
+	line "user has no item.@"

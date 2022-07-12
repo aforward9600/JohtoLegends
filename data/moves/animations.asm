@@ -417,6 +417,7 @@ BattleAnimations::
 	dw BattleAnim_AquaRing
 	dw BattleAnim_KnockOff
 	dw BattleAnim_UTurn
+	dw BattleAnim_Acrobatics
 ;	dw BattleAnim_WakeUpSlap
 	dw BattleAnim_SweetScent2
 
@@ -3186,6 +3187,7 @@ BattleAnim_SwordsDance:
 
 BattleAnim_QuickAttack:
 BattleAnim_UTurn:
+BattleAnim_Acrobatics:
 	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_MENU
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0

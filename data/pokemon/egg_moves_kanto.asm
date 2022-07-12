@@ -203,6 +203,7 @@ RattataEggMoves:
 	dw REVERSAL
 	dw REVENGE
 	dw WORK_UP
+	dw HONE_CLAWS
 	dw -1 ; end
 
 SpearowEggMoves:
@@ -251,6 +252,7 @@ SandshrewEggMoves:
 	dw MUD_SHOT
 	dw NIGHT_SLASH
 	dw WORK_UP
+	dw HONE_CLAWS
 	dw -1 ; end
 
 NidoranFEggMoves:
@@ -262,6 +264,7 @@ NidoranFEggMoves:
 	dw COUNTER
 	dw ENDURE
 	dw PURSUIT
+	dw HONE_CLAWS
 	dw -1 ; end
 
 NidoranMEggMoves:
@@ -274,6 +277,7 @@ NidoranMEggMoves:
 	dw ENDURE
 	dw FOCUS_ENERGY
 	dw SUCKER_PUNCH
+	dw HONE_CLAWS
 	dw -1 ; end
 
 CleffaEggMoves:
@@ -359,6 +363,7 @@ DiglettEggMoves:
 	dw MUD_BOMB
 	dw REVERSAL
 	dw WORK_UP
+	dw HONE_CLAWS
 	dw -1 ; end
 
 MeowthEggMoves:
@@ -370,6 +375,7 @@ MeowthEggMoves:
 	dw ODOR_SLEUTH
 	dw TAIL_WHIP
 	dw WORK_UP
+	dw HONE_CLAWS
 	dw -1 ; end
 
 PsyduckEggMoves:
@@ -393,6 +399,7 @@ MankeyEggMoves:
 	dw NIGHT_SLASH
 	dw REVENGE
 	dw WORK_UP
+	dw HONE_CLAWS
 	dw -1 ; end
 
 GrowlitheEggMoves:

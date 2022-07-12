@@ -235,7 +235,7 @@ ENDM
 	add_tm BRICK_BREAK  ; e0
 	add_tm DOUBLE_TEAM  ; e1
 	add_tm REFLECT      ; e2
-	add_tm HONE_CLAWS   ; e3
+	add_tm ACROBATICS   ; e3
 	add_tm FLAMETHROWER ; e4
 	add_tm SLUDGE_BOMB  ; e5
 	add_tm SANDSTORM    ; e6

@@ -391,4 +391,5 @@ MoveNames::
 	db "Aqua Ring@"
 	db "Knock Off@"
 	db "U-turn@"
+	db "Acrobatics@"
 ;	db "Wake Up Slap@"

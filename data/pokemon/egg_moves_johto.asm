@@ -286,6 +286,7 @@ SentretEggMoves:
 	dw FOCUS_ENERGY
 	dw REVERSAL
 	dw WORK_UP
+	dw HONE_CLAWS
 	dw -1 ; end
 
 HoothootEggMoves:
@@ -557,6 +558,7 @@ SneaselEggMoves:
 	dw ICICLE_CRASH
 	dw PURSUIT
 	dw KNOCK_OFF
+	dw HONE_CLAWS
 	dw -1 ; end
 
 TeddiursaEggMoves:
@@ -574,6 +576,7 @@ TeddiursaEggMoves:
 	dw NIGHT_SLASH
 	dw SLACK_OFF
 	dw WORK_UP
+	dw HONE_CLAWS
 	dw -1 ; end
 
 SlugmaEggMoves:

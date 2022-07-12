@@ -190,6 +190,7 @@ ENDM
 	command knockoff_power
 	command knockoff
 	command roost
+	command acrobatics
 ;	command uturn
 ;	command wakeupslap
 ;	command awakenopponent

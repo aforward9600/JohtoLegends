@@ -23,6 +23,7 @@ INCLUDE "engine/battle/move_effects/heal_bell.asm"
 SECTION "Effect Commands Extra", ROMX
 INCLUDE "engine/battle/effect_commands_extra.asm"
 
+INCLUDE "engine/battle/move_effects/acrobatics.asm"
 INCLUDE "engine/battle/move_effects/knock_off.asm"
 INCLUDE "engine/battle/move_effects/hex.asm"
 INCLUDE "engine/battle/move_effects/false_swipe.asm"

@@ -398,6 +398,7 @@
 	const AQUA_RING
 	const KNOCK_OFF
 	const U_TURN
+	const ACROBATICS
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 
