@@ -145,7 +145,7 @@ CheckPlayerTurn:
 	res SUBSTATUS_RECHARGE, [hl]
 	ld hl, MustRechargeText
 	call StdBattleTextbox
-	call CantMove
+	farcall CantMove
 	jp EndTurn
 
 .no_recharge
@@ -169,7 +169,7 @@ CheckPlayerTurn:
 .woke_up
 	ld hl, WokeUpText
 	call StdBattleTextbox
-	call CantMove
+	farcall CantMove
 	call UpdateBattleMonInParty
 	ld hl, UpdatePlayerHUD
 	call CallBattleCore
@@ -188,7 +188,7 @@ CheckPlayerTurn:
 	ld hl, .sleep_bypass_moves
 	call CheckMoveInList
 	jr c, .not_asleep
-	call CantMove
+	farcall CantMove
 	jp EndTurn
 
 .sleep_bypass_moves
@@ -339,7 +339,7 @@ CheckPlayerTurn:
 
 	ld hl, FullyParalyzedText
 	call StdBattleTextbox
-	call CantMove
+	farcall CantMove
 	jp EndTurn
 
 CantMove:
@@ -374,7 +374,7 @@ CantMove:
 
 OpponentCantMove:
 	call BattleCommand_SwitchTurn
-	call CantMove
+	farcall CantMove
 	jp BattleCommand_SwitchTurn
 
 CheckEnemyTurn:
@@ -385,7 +385,7 @@ CheckEnemyTurn:
 	res SUBSTATUS_RECHARGE, [hl]
 	ld hl, MustRechargeText
 	call StdBattleTextbox
-	call CantMove
+	farcall CantMove
 	jp EndTurn
 
 .no_recharge
@@ -411,7 +411,7 @@ CheckEnemyTurn:
 .woke_up
 	ld hl, WokeUpText
 	call StdBattleTextbox
-	call CantMove
+	farcall CantMove
 	call UpdateEnemyMonInParty
 	ld hl, UpdateEnemyHUD
 	call CallBattleCore
@@ -427,7 +427,7 @@ CheckEnemyTurn:
 	ld hl, .sleep_bypass_moves
 	call CheckMoveInList
 	jr c, .not_asleep
-	call CantMove
+	farcall CantMove
 	jp EndTurn
 
 .sleep_bypass_moves
@@ -449,7 +449,7 @@ CheckEnemyTurn:
 
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
-	call CantMove
+	farcall CantMove
 	jp EndTurn
 
 .thawing_moves
@@ -467,7 +467,7 @@ CheckEnemyTurn:
 	ld hl, FlinchedText
 	call StdBattleTextbox
 
-	call CantMove
+	farcall CantMove
 	jp EndTurn
 
 .not_flinched
@@ -544,7 +544,7 @@ CheckEnemyTurn:
 	ld c, TRUE
 	call DoEnemyDamage
 	call BattleCommand_RaiseSub
-	call CantMove
+	farcall CantMove
 	jp EndTurn
 
 .not_confused
@@ -567,7 +567,7 @@ CheckEnemyTurn:
 
 	ld hl, InfatuationText
 	call StdBattleTextbox
-	call CantMove
+	farcall CantMove
 	jp EndTurn
 
 .not_infatuated
@@ -584,7 +584,7 @@ CheckEnemyTurn:
 
 	call MoveDisabled
 
-	call CantMove
+	farcall CantMove
 	jp EndTurn
 
 .no_disabled_move
@@ -600,7 +600,7 @@ CheckEnemyTurn:
 
 	ld hl, FullyParalyzedText
 	call StdBattleTextbox
-	call CantMove
+	farcall CantMove
 
 	; fallthrough
 

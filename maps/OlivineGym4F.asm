@@ -50,6 +50,11 @@ OlivineGym1FByronScript:
 	setevent EVENT_GOT_TM42_FLASH_CANNON
 	setevent EVENT_ROCK_SMASH_GUY
 	clearevent EVENT_ROUTE_36_GUY
+	setevent EVENT_BEAT_GENTLEMAN_CROFTON
+	setevent EVENT_BEAT_TEACHER_ABIGAIL
+	setevent EVENT_BEAT_ENGINEER_DANTE
+	setevent EVENT_BEAT_BEAUTY_ASHLEY
+	setevent EVENT_BEAT_ENGINEER_RUDY
 	writetext Byron1F_FlashCannonSpeech
 	waitbutton
 	closetext

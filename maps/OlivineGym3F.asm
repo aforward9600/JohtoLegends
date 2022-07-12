@@ -1,4 +1,5 @@
 	object_const_def ; object_event constants
+	const OLIVINEGYM3F_ENGINEER
 
 OlivineGym3F_MapScripts:
 	db 2 ; scene_scripts
