@@ -211,7 +211,7 @@ CheckPlayerTurn:
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 
-	call CantMove
+	farcall CantMove
 	jp EndTurn
 
 .thawing_moves
@@ -229,7 +229,7 @@ CheckPlayerTurn:
 	ld hl, FlinchedText
 	call StdBattleTextbox
 
-	call CantMove
+	farcall CantMove
 	jp EndTurn
 
 .not_flinched
@@ -284,7 +284,7 @@ CheckPlayerTurn:
 	ld [hl], a
 
 	call HitConfusion
-	call CantMove
+	farcall CantMove
 	jp EndTurn
 
 .not_confused
@@ -307,7 +307,7 @@ CheckPlayerTurn:
 
 	ld hl, InfatuationText
 	call StdBattleTextbox
-	call CantMove
+	farcall CantMove
 	jp EndTurn
 
 .not_infatuated
@@ -323,7 +323,7 @@ CheckPlayerTurn:
 	jr nz, .no_disabled_move
 
 	call MoveDisabled
-	call CantMove
+	farcall CantMove
 	jp EndTurn
 
 .no_disabled_move

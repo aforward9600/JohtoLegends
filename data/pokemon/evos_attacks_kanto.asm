@@ -1823,7 +1823,7 @@ FarfetchDEvosAttacks:
 	dbw 25, SWORDS_DANCE
 	dbw 31, AGILITY
 	dbw 33, NIGHT_SLASH
-	dbw 37, AERIAL_ACE
+	dbw 37, ACROBATICS
 	dbw 43, ROOST
 	dbw 45, FALSE_SWIPE
 	dbw 49, AIR_SLASH

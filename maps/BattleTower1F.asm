@@ -55,6 +55,9 @@ BattleTower1FRulesSign:
 BattleTower1FReceptionistScript:
 	checkevent EVENT_MET_BUENA
 	iffalse .GiveBattleCard
+	readvar VAR_BLUECARDBALANCE
+	ifequal 95, .CardFull
+.BattleTowerMenu:
 	setval BATTLETOWERACTION_GET_CHALLENGE_STATE ; readmem sBattleTowerChallengeState
 	special BattleTowerAction
 	ifequal $3, Script_BeatenAllTrainers2 ; maps/BattleTowerBattleRoom.asm
@@ -73,6 +76,19 @@ BattleTower1FReceptionistScript:
 	setevent EVENT_MET_BUENA
 	verbosegiveitem BATTLE_CARD
 	writetext ThatIsABattleCardText
+	waitbutton
+	closetext
+	end
+
+.CardFull:
+	opentext
+	writetext YourCardIsFullText
+	yesorno
+	iffalse .Refused
+	sjump .BattleTowerMenu
+
+.Refused:
+	writetext ComeBackWithLessPointsText
 	waitbutton
 	closetext
 	end
@@ -133,16 +149,25 @@ Script_WalkToBattleTowerElevator:
 
 Script_GivePlayerHisPrize:
 	readvar VAR_BLUECARDBALANCE
+	ifequal 95, .NoPoints
+	readvar VAR_BLUECARDBALANCE
 	addval 5
 	writevar VAR_BLUECARDBALANCE
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext Text_PlayerGotFive
 	waitbutton
+.DoneWithPoints:
 	setval BATTLETOWERACTION_1D
 	special BattleTowerAction
 	closetext
 	end
+
+.NoPoints:
+	verbosegiveitem LEPPA_BERRY
+	buttonsound
+	waitbutton
+	sjump .DoneWithPoints
 
 Script_YourPackIsStuffedFull:
 	writetext Text_YourPackIsStuffedFull
@@ -884,6 +909,34 @@ BattleTower1FPrizeReceptionistNoCardText:
 	line "from the"
 	cont "receptionist to"
 	cont "the left."
+	done
+
+YourCardIsFullText:
+	text "Welcome to the"
+	line "Battle Tower!"
+
+	para "…Oh, it looks"
+	line "like your Battle"
+
+	para "Card is full on"
+	line "points…"
+
+	para "Would you like to"
+	line "participate?"
+
+	para "You won't earn any"
+	line "points, but you"
+
+	para "can get a rare"
+	line "berry."
+	done
+
+ComeBackWithLessPointsText:
+	text "No problem."
+
+	para "Come back later,"
+	line "when you have"
+	cont "less points."
 	done
 
 BattleTower1F_MapEvents:

@@ -1431,7 +1431,7 @@ HoppipEvosAttacks:
 	dbw 19, BULLET_SEED
 	dbw 22, LEECH_SEED
 	dbw 25, MEGA_DRAIN
-	dbw 28, AERIAL_ACE
+	dbw 28, ACROBATICS
 	dbw 31, SUNNY_DAY
 	dbw 34, COTTON_SPORE
 	dbw 37, QUIVER_DANCE
@@ -1459,7 +1459,7 @@ SkiploomEvosAttacks:
 	dbw 20, BULLET_SEED
 	dbw 24, LEECH_SEED
 	dbw 28, MEGA_DRAIN
-	dbw 32, AERIAL_ACE
+	dbw 32, ACROBATICS
 	dbw 36, SUNNY_DAY
 	dbw 40, COTTON_SPORE
 	dbw 44, QUIVER_DANCE
@@ -1488,7 +1488,7 @@ JumpluffEvosAttacks:
 	dbw 20, BULLET_SEED
 	dbw 24, LEECH_SEED
 	dbw 29, MEGA_DRAIN
-	dbw 34, AERIAL_ACE
+	dbw 34, ACROBATICS
 	dbw 39, SUNNY_DAY
 	dbw 44, COTTON_SPORE
 	dbw 49, QUIVER_DANCE
@@ -1849,7 +1849,7 @@ GligarEvosAttacks:
 	dbw 13, QUICK_ATTACK
 	dbw 16, FURY_CUTTER
 	dbw 19, BULLDOZE
-	dbw 22, AERIAL_ACE
+	dbw 22, ACROBATICS
 	dbw 27, SLASH
 	dbw 30, NIGHT_SLASH
 	dbw 35, SCREECH
@@ -1869,7 +1869,7 @@ GliscorEvosAttacks:
 	dbw 13, QUICK_ATTACK
 	dbw 16, FURY_CUTTER
 	dbw 19, BULLDOZE
-	dbw 22, AERIAL_ACE
+	dbw 22, ACROBATICS
 	dbw 27, SLASH
 	dbw 30, NIGHT_SLASH
 	dbw 35, SCREECH

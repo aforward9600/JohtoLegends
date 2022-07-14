@@ -20,7 +20,7 @@ AzaleaGymKurtScript:
 	writetext KurtText_DangSilph
 	waitbutton
 	closetext
-	winlosstext KurtText_NoRespect, 0
+	winlosstext KurtText_NoRespect, KurtText_Respect
 	loadtrainer KURT, KURT1
 	startbattle
 	reloadmapafterbattle
@@ -36,7 +36,10 @@ AzaleaGymKurtScript:
 	setflag ENGINE_HIVEBADGE
 	readvar VAR_BADGES
 	setmapscene AZALEA_TOWN, SCENE_AZALEATOWN_RIVAL_BATTLE
+	setflag ENGINE_BEAT_KURT
 .FightDone:
+	checkflag ENGINE_BEAT_KURT
+	iffalse .Rematch
 	checkevent EVENT_GOT_TM60_X_SCISSOR
 	iftrue .GotFuryCutter
 	setevent EVENT_BEAT_TWINS_GINGER_AND_SAM
@@ -58,6 +61,51 @@ AzaleaGymKurtScript:
 	waitbutton
 .NoRoomForXScissor:
 	closetext
+	end
+
+.Rematch:
+	readvar VAR_BADGES
+	ifequal 6, .KurtBattle1
+	ifequal 7, .KurtBattle2
+	ifequal 8, .KurtBattle3
+	end
+
+.KurtBattle1:
+	writetext KurtText_Rematch
+	waitbutton
+	closetext
+	winlosstext KurtText_NoRespect, KurtText_Respect
+	loadtrainer KURT, KURT1
+	startbattle
+	reloadmapafterbattle
+	sjump AfterKurtRematch
+
+.KurtBattle2:
+	writetext KurtText_Rematch
+	waitbutton
+	closetext
+	winlosstext KurtText_NoRespect, KurtText_Respect
+	loadtrainer KURT, KURT2
+	startbattle
+	reloadmapafterbattle
+	sjump AfterKurtRematch
+
+.KurtBattle3:
+	writetext KurtText_Rematch
+	waitbutton
+	closetext
+	winlosstext KurtText_NoRespect, KurtText_Respect
+	loadtrainer KURT, KURT3
+	startbattle
+	reloadmapafterbattle
+	sjump AfterKurtRematch
+
+AfterKurtRematch:
+	opentext
+	writetext KurtText_BeatenAgain
+	waitbutton
+	closetext
+	setflag ENGINE_BEAT_KURT
 	end
 
 AzaleaGymActivateRockets:
@@ -370,6 +418,30 @@ AzaleaGymGuyWinText:
 	line "Sorry, was that"
 
 	para "too brutal?"
+	done
+
+KurtText_Rematch:
+	text "You here for a"
+	line "rematch?"
+
+	para "Don't hold back!"
+	done
+
+KurtText_Respect:
+	text "Ha!"
+
+	para "That'll teach you"
+	line "some respect!"
+	done
+
+KurtText_BeatenAgain:
+	text "Yep, you're just"
+	line "as strong as"
+	cont "before."
+
+	para "You might be"
+	line "stronger than"
+	cont "before."
 	done
 
 AzaleaGym_MapEvents:

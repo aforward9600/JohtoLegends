@@ -1975,7 +1975,7 @@ Movement_ContestResults_WalkAfterWarp:
 
 StaticPokemonRefresh:
 	checkevent EVENT_CAUGHT_FARFETCHD
-	iftrue .refreshfarfetchd
+	iffalse .refreshfarfetchd
 	return
 
 .refreshfarfetchd:

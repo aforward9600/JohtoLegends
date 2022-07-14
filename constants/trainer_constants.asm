@@ -35,6 +35,8 @@ CHRIS EQU __enum__
 
 	trainerclass KURT ; 3
 	const KURT1
+	const KURT2
+	const KURT3
 
 	trainerclass ENOKI ; 4
 	const ENOKI1
