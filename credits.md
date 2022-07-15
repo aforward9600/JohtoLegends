@@ -17,7 +17,7 @@ Idain, Rangi, WasabiRaptor for EVS.
 
 Rangi and Idain for Evening time.
 
-Idain for the Hidden Power Guru.
+Idain for the Hidden Power Guru and Gen 6+ Exp. Share.
 
 Rangi and aaaaaa123456789 for items from smashing rocks
 
@@ -37,7 +37,7 @@ Sucker Punch, Work Up, Aqua Jet, Muddy Water, Rock Blast, Heat Wave, Brick Break
 
 Move Steel Slice: Mskd.
 
-Rangi for Route 47 and 48 maps.
+Rangi for Route 47 and 48 maps and the Town Map expansion.
 
 Ambipom original sprites from Chaos Rush's 64x64 project.
 

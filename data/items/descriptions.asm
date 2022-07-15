@@ -716,8 +716,8 @@ HardStoneDesc:
 	next "type moves. (Hold)@"
 
 LuckyEggDesc:
-	db   "Earns extra Exp."
-	next "points. (Hold)@"
+	db   "Party earns extra"
+	next "Exp. Points.@"
 
 BattleCardDesc:
 	db   "Stores BP to use"

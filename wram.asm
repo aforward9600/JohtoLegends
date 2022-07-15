@@ -529,8 +529,6 @@ wBattleScriptBufferAddress:: dw ; c6b2
 
 wTurnEnded:: db ; c6b4
 
-wExpShareToggle:: db
-
 wPlayerStats:: ; c6b6
 wPlayerAttack:: dw
 wPlayerDefense:: dw
@@ -2584,6 +2582,7 @@ wRegisteredItem:: db ; d95c
 wPlayerState:: db ; d95d
 
 wHallOfFameCount:: dw
+wExpShareToggle:: db
 wTradeFlags:: flag_array NUM_NPC_TRADES ; d960
 	ds 1
 wMooMooBerries:: db ; d962
