@@ -257,15 +257,18 @@ DanceTheatreStonesMenu2:
 	db "Cancel@"
 
 DanceTheaterCynthiaScript:
+	playmusic MUSIC_CYNTHIA_ENCOUNTER
 	faceplayer
 	opentext
 	writetext CynthiaIntroductionText
 	waitbutton
 	closetext
 	winlosstext CynthiaBeatenText, 0
-	loadtrainer CYNTHIA, CYNTHIA3
+	loadtrainer TOURIST, CYNTHIA1
 	startbattle
+	dontrestartmapmusic
 	reloadmapafterbattle
+	playmusic MUSIC_CYNTHIA_ENCOUNTER
 	opentext
 	writetext HeadingToWildAreText
 	waitbutton
@@ -277,12 +280,18 @@ DanceTheaterCynthiaScript:
 	applymovement DANCETHEATRE_CYNTHIA, CynthiaLeavesDanceTheaterMovement1
 	disappear DANCETHEATRE_CYNTHIA
 	playsound SFX_EXIT_BUILDING
+	special RestartMapMusic
+	waitsfx
+	playmapmusic
 	end
 
 .CynthiaLeavesOther
 	applymovement DANCETHEATRE_CYNTHIA, CynthiaLeavesDanceTheaterMovement2
 	disappear DANCETHEATRE_CYNTHIA
 	playsound SFX_EXIT_BUILDING
+	special RestartMapMusic
+	waitsfx
+	playmapmusic
 	end
 
 CynthiaLeavesDanceTheaterMovement1:

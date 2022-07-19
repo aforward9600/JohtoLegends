@@ -85,6 +85,8 @@ INCLUDE "maps/Route35GoldenrodGate.asm"
 INCLUDE "maps/Route35NationalParkGate.asm"
 INCLUDE "maps/Route36RuinsOfAlphGate.asm"
 INCLUDE "maps/Route36NationalParkGate.asm"
+INCLUDE "maps/TrainerHouse1F.asm"
+INCLUDE "maps/BillsFamilysHouse.asm"
 
 
 SECTION "Map Scripts 6", ROMX
@@ -502,5 +504,3 @@ INCLUDE "maps/PokeSeersHouse.asm"
 INCLUDE "maps/BurnedTower2F.asm"
 INCLUDE "maps/Route2Gate.asm"
 INCLUDE "maps/Route47.asm"
-INCLUDE "maps/TrainerHouse1F.asm"
-INCLUDE "maps/BillsFamilysHouse.asm"

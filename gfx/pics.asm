@@ -859,7 +859,7 @@ SECTION "Pics 29", ROMX
 DragonTamerFPic:	 INCBIN "gfx/trainers/dragon_tamer_f.2bpp.lz"
 DragonTamerMPic:     INCBIN "gfx/trainers/dragon_tamer_m.2bpp.lz"
 MadameBossPic:		 INCBIN "gfx/trainers/madame_boss.2bpp.lz"
-TouristPic:          INCBIN "gfx/trainers/lass_2.2bpp.lz"
+TouristPic:          INCBIN "gfx/trainers/cynthia.2bpp.lz"
 CynthiaPic:          INCBIN "gfx/trainers/cynthia.2bpp.lz"
 GibleFrontpic:       INCBIN "gfx/pokemon/gible/front.animated.2bpp.lz"
 GibleBackpic:        INCBIN "gfx/pokemon/gible/back.2bpp.lz"

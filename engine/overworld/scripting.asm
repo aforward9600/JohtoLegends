@@ -236,7 +236,7 @@ ScriptCommandTable:
 	dw Script_loadmonindex               ; aa
 	dw Script_checkmaplockedmons         ; ab
 	dw Script_loadmoveindex              ; ac
-	dw Script_holdemote
+	dw Script_partyselect
 
 StartScript:
 	ld hl, wScriptFlags
@@ -1249,29 +1249,6 @@ ShowEmoteScript:
 	hide_emote
 	step_sleep 1
 	step_end
-
-Script_holdemote:
-; script command 0x75
-; parameters: bubble, object_id, time
-
-	call GetScriptByte
-	ld [wScriptVar], a
-	call GetScriptByte
-	call GetScriptObject
-	cp LAST_TALKED
-	jr z, .ok
-	ldh [hLastTalked], a
-.ok
-	call GetScriptByte
-	ld [wScriptDelay], a
-	ld b, BANK(ShowEmoteScript)
-	ld de, HoldEmoteScript
-	jp ScriptCall
-
-HoldEmoteScript:
-	loademote EMOTE_FROM_MEM
-	show_emote
-	end
 
 Script_earthquake:
 ; script command 0x78
@@ -2904,3 +2881,12 @@ Script_loadmoveindex:
   call GetMoveIDFromIndex
   ld [wScriptVar], a
   ret
+
+Script_partyselect:
+	farcall SelectMonFromParty
+	ld hl, wMenuCursorY
+	ccf
+	sbc a
+	and [hl]
+	ld [wScriptVar], a
+	ret

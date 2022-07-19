@@ -182,15 +182,18 @@ KurtGroup:
 
 EnokiGroup:
 	next_list_item ; ENOKI (1)
-	db "Enoki@", TRAINERTYPE_MOVES
+	db "Enoki@", TRAINERTYPE_ITEM_MOVES
 	db 15
 	dw DUSKULL
+	db NO_ITEM
 	dw HEX, SHADOW_SNEAK, FORESIGHT, WILL_O_WISP
 	db 16
 	dw CORSOLA
+	db NO_ITEM
 	dw NIGHT_SHADE, WILL_O_WISP, HEX, SPIKES
 	db 17
 	dw MISDREAVUS
+	db ORAN_BERRY
 	dw HEX, HYPNOSIS, MEAN_LOOK, DREAM_EATER
 	db -1 ; end
 
@@ -198,15 +201,18 @@ EnokiGroup:
 
 PryceGroup:
 	next_list_item ; PRYCE (1)
-	db "Pryce@", TRAINERTYPE_MOVES
-	db 9
-	dw SMOOCHUM
-	dw SWEET_KISS, POUND, ICY_WIND, CONFUSION
-	db 10
-	dw SWINUB
-	dw MUD_SLAP, POWDER_SNOW, TACKLE, HAIL
+	db "Pryce@", TRAINERTYPE_ITEM_MOVES
 	db 11
+	dw SMOOCHUM
+	db NO_ITEM
+	dw SWEET_KISS, POUND, ICY_WIND, CONFUSION
+	db 12
+	dw SWINUB
+	db NO_ITEM
+	dw MUD_SLAP, POWDER_SNOW, TACKLE, HAIL
+	db 13
 	dw SNEASEL
+	db ORAN_BERRY
 	dw SCRATCH, PURSUIT, HONE_CLAWS, ICE_SHARD
 	db -1 ; end
 
@@ -921,9 +927,9 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (3), Mount Mortar 1F Inside
 	db "Bert@", TRAINERTYPE_NORMAL
-	db 10
+	db 12
 	dw RATTATA
-	db 11
+	db 13
 	dw BELLSPROUT
 	db -1 ; end
 
@@ -2205,11 +2211,11 @@ PokemaniacGroup:
 	dw ROLLOUT, ATTRACT, EGG_BOMB, SOFTBOILED
 	db -1 ; end
 
-	next_list_item ; POKEMANIAC (15)
+	next_list_item ; POKEMANIAC (15) Mount Mortar 1F Inside
 	db "Allan@", TRAINERTYPE_NORMAL
-	db 12
+	db 14
 	dw NIDORAN_M
-	db 12
+	db 14
 	dw SUNKERN
 	db -1 ; end
 
@@ -3810,13 +3816,13 @@ HikerGroup:
 	dw DUNSPARCE
 	db -1 ; end
 
-	next_list_item ; HIKER (2)
+	next_list_item ; HIKER (2) Mount Mortar 1F Inside
 	db "Ozzy@", TRAINERTYPE_NORMAL
-	db 11
+	db 13
 	dw GEODUDE
-	db 11
+	db 13
 	dw MACHOP
-	db 12
+	db 14
 	dw BONSLY
 	db -1 ; end
 
@@ -6177,9 +6183,15 @@ MiyamotoGroup:
 CynthiaGroup:
 	next_list_item ; CYNTHIA1
 	db "Cynthia@", TRAINERTYPE_MOVES
-	db 17
+	db 15
 	dw TOGETIC
 	dw FAIRY_WIND, SING, ENCORE, METRONOME
+	db 15
+	dw ROSELIA
+	dw MEGA_DRAIN, STUN_SPORE, ACID, GROWTH
+	db 16
+	dw GIBLE
+	dw TAKE_DOWN, SANDSTORM, DRACO_FANG, SAND_ATTACK
 	db -1 ; end
 
 	next_list_item ; CYNTHIA2

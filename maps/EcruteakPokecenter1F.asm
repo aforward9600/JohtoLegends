@@ -13,7 +13,19 @@ EcruteakPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
 EcruteakPokecenter1FPokefanMScript:
-	jumptextfaceplayer EcruteakPokecenter1FPokefanMText
+;	jumptextfaceplayer EcruteakPokecenter1FPokefanMText
+	faceplayer
+	opentext
+	writetext WannaRelearnMove
+	yesorno
+	iffalse .cancel
+	farscall MoveRelearnerScript
+	iftrue .end
+.end
+	end
+
+.cancel
+	farsjump MoveRelearnerCancel
 
 EcruteakPokecenter1FCooltrainerFScript:
 	jumptextfaceplayer EcruteakPokecenter1FCooltrainerFText
@@ -63,6 +75,11 @@ EcruteakPokecenter1FGymGuyText:
 
 	para "I smell a conspir-"
 	line "acy. I know it!"
+	done
+
+WannaRelearnMove:
+	text "Wanna relearn a"
+	line "move?"
 	done
 
 EcruteakPokecenter1F_MapEvents:

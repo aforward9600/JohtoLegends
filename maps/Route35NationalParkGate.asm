@@ -1,5 +1,4 @@
 	object_const_def ; object_event constants
-	const ROUTE35NATIONALPARKGATE_OFFICER1
 	const ROUTE35NATIONALPARKGATE_YOUNGSTER
 	const ROUTE35NATIONALPARKGATE_OFFICER2
 
@@ -20,168 +19,6 @@ Route35NationalParkGate_MapScripts:
 	end
 
 .LeaveContestEarly:
-	prioritysjump .LeavingContestEarly
-	end
-
-.CheckIfContestRunning:
-	checkflag ENGINE_BUG_CONTEST_TIMER
-	iftrue .BugContestIsRunning
-	setscene SCENE_ROUTE35NATIONALPARKGATE_NOTHING
-	return
-
-.BugContestIsRunning:
-	setscene SCENE_ROUTE35NATIONALPARKGATE_LEAVE_CONTEST_EARLY
-	return
-
-.CheckIfContestAvailable:
-	readvar VAR_WEEKDAY
-	ifequal TUESDAY, .SetContestOfficer
-	ifequal THURSDAY, .SetContestOfficer
-	ifequal SATURDAY, .SetContestOfficer
-	checkflag ENGINE_BUG_CONTEST_TIMER
-	iftrue .BugContestIsRunning
-	disappear ROUTE35NATIONALPARKGATE_OFFICER1
-	appear ROUTE35NATIONALPARKGATE_YOUNGSTER
-	appear ROUTE35NATIONALPARKGATE_OFFICER2
-	return
-
-.SetContestOfficer:
-	appear ROUTE35NATIONALPARKGATE_OFFICER1
-	disappear ROUTE35NATIONALPARKGATE_YOUNGSTER
-	disappear ROUTE35NATIONALPARKGATE_OFFICER2
-	return
-
-.LeavingContestEarly:
-	applymovement PLAYER, Route35NationalParkGatePlayerApproachOfficer1Movement
-	turnobject ROUTE35NATIONALPARKGATE_OFFICER1, RIGHT
-	opentext
-	readvar VAR_CONTESTMINUTES
-	addval 1
-	getnum STRING_BUFFER_3
-	writetext Route35NationalParkGateOfficer1WantToFinishText
-	yesorno
-	iffalse .GoBackToContest
-	writetext Route35NationalParkGateOfficer1WaitAtNorthGateText
-	waitbutton
-	closetext
-	jumpstd bugcontestresultswarp
-
-.GoBackToContest:
-	writetext Route35NationalParkGateOfficer1OkGoFinishText
-	waitbutton
-	closetext
-	scall Route35NationalParkGate_EnterContest
-	playsound SFX_ENTER_DOOR
-	special FadeOutPalettes
-	waitsfx
-	warpfacing UP, NATIONAL_PARK_BUG_CONTEST, 10, 47
-	end
-
-Route35OfficerScriptContest:
-	readvar VAR_WEEKDAY
-	ifequal SUNDAY, Route35NationalParkGate_NoContestToday
-	ifequal MONDAY, Route35NationalParkGate_NoContestToday
-	ifequal WEDNESDAY, Route35NationalParkGate_NoContestToday
-	ifequal FRIDAY, Route35NationalParkGate_NoContestToday
-	faceplayer
-	opentext
-	checkflag ENGINE_DAILY_BUG_CONTEST
-	iftrue Route35NationalParkGate_ContestIsOver
-	scall Route35NationalParkGate_GetDayOfWeek
-	writetext Route35NationalParkGateOfficer1AskToParticipateText
-	yesorno
-	iffalse Route35NationalParkGate_DeclinedToParticipate
-	readvar VAR_PARTYCOUNT
-	ifgreater 1, Route35NationalParkGate_LeaveTheRestBehind
-	special ContestDropOffMons
-	clearevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER
-Route35NationalParkGate_OkayToProceed:
-	setflag ENGINE_BUG_CONTEST_TIMER
-	special PlayMapMusic
-	writetext Route35NationalParkGateOfficer1GiveParkBallsText
-	buttonsound
-	writetext Route35NationalParkGatePlayerReceivedParkBallsText
-	playsound SFX_ITEM
-	waitsfx
-	writetext Route35NationalParkGateOfficer1ExplainsRulesText
-	waitbutton
-	closetext
-	special GiveParkBalls
-	scall Route35NationalParkGate_EnterContest
-	playsound SFX_ENTER_DOOR
-	special FadeOutPalettes
-	waitsfx
-	special SelectRandomBugContestContestants
-	warpfacing UP, NATIONAL_PARK_BUG_CONTEST, 10, 47
-	end
-
-Route35NationalParkGate_EnterContest:
-	readvar VAR_FACING
-	ifequal LEFT, Route35NationalParkGate_FacingLeft
-	applymovement PLAYER, Route35NationalParkGatePlayerGoAroundOfficerAndEnterParkMovement
-	end
-
-Route35NationalParkGate_FacingLeft:
-	applymovement PLAYER, Route35NationalParkGatePlayerEnterParkMovement
-	end
-
-Route35NationalParkGate_LeaveTheRestBehind:
-	readvar VAR_PARTYCOUNT
-	ifless PARTY_LENGTH, Route35NationalParkGate_LessThanFullParty
-	readvar VAR_BOXSPACE
-	ifequal 0, Route35NationalParkGate_NoRoomInBox
-
-Route35NationalParkGate_LessThanFullParty:
-	special CheckFirstMonIsEgg
-	ifequal TRUE, Route35NationalParkGate_FirstMonIsEgg
-	writetext Route35NationalParkGateOfficer1AskToUseFirstMonText
-	yesorno
-	iffalse Route35NationalParkGate_DeclinedToLeaveMonsBehind
-	special ContestDropOffMons
-	iftrue Route35NationalParkGate_FirstMonIsFainted
-	setevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER
-	writetext Route35NationalParkGateOfficer1WellHoldYourMonText
-	buttonsound
-	writetext Route35NationalParkGatePlayersMonLeftWithHelperText
-	playsound SFX_GOT_SAFARI_BALLS
-	waitsfx
-	buttonsound
-	sjump Route35NationalParkGate_OkayToProceed
-
-Route35NationalParkGate_DeclinedToParticipate:
-	writetext Route35NationalParkGateOfficer1TakePartInFutureText
-	waitbutton
-	closetext
-	end
-
-Route35NationalParkGate_DeclinedToLeaveMonsBehind:
-	writetext Route35NationalParkGateOfficer1ChooseMonAndComeBackText
-	waitbutton
-	closetext
-	end
-
-Route35NationalParkGate_FirstMonIsFainted:
-	writetext Route35NationalParkGateOfficer1FirstMonCantBattleText
-	waitbutton
-	closetext
-	end
-
-Route35NationalParkGate_NoRoomInBox:
-	writetext Route35NationalParkGateOfficer1MakeRoomText
-	waitbutton
-	closetext
-	end
-
-Route35NationalParkGate_FirstMonIsEgg:
-	writetext Route35NationalParkGateOfficer1EggAsFirstMonText
-	waitbutton
-	closetext
-	end
-
-Route35NationalParkGate_ContestIsOver:
-	writetext Route35NationalParkGateOfficer1ContestIsOverText
-	waitbutton
-	closetext
 	end
 
 Route35NationalParkGate_NoContestToday:
@@ -190,8 +27,6 @@ Route35NationalParkGate_NoContestToday:
 Route35NationalParkGateOfficerScript:
 	faceplayer
 	opentext
-;	checkflag ENGINE_DAILY_BUG_CONTEST
-;	iftrue Route35NationalParkGate_ContestIsOver
 	writetext Route35NationalParkGateOfficer1WeHoldContestsText
 	waitbutton
 	closetext
@@ -448,7 +283,6 @@ Route35NationalParkGate_MapEvents:
 	db 1 ; bg events
 	bg_event  5,  0, BGEVENT_READ, BugCatchingContestExplanationSign
 
-	db 3 ; object events
-	object_event  2,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route35OfficerScriptContest, EVENT_ROUTE_35_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY
+	db 2 ; object events
 	object_event  6,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route35NationalParkGateYoungsterScript, EVENT_ROUTE_35_NATIONAL_PARK_GATE_YOUNGSTER
 	object_event  0,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route35NationalParkGateOfficerScript, EVENT_ROUTE_35_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY

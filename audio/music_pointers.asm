@@ -142,3 +142,4 @@ Music:
 	dba Music_FriendlyShop
 	dba Music_BattleCynthia
 	dba Music_KantoGymLeaderFRLG
+	dba Music_CynthiaEncounter

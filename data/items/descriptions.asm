@@ -456,8 +456,8 @@ ItemfinderDesc:
 	next "items in the area.@"
 
 ExpShareDesc:
-	db   "Shares battle Exp."
-	next "Points. (Hold)@"
+	db   "Whole party shares"
+	next "Exp. Points@"
 
 OldRodDesc:
 	db   "Use by water to"
@@ -716,12 +716,12 @@ HardStoneDesc:
 	next "type moves. (Hold)@"
 
 LuckyEggDesc:
-	db   "Party earns extra"
-	next "Exp. Points.@"
+	db   "Earns extra Exp."
+	next "points. (Hold)@"
 
 BattleCardDesc:
-	db   "Stores BP to use"
-	next "at Battle Tower.@"
+	db   "Stores Battle"
+	next "Points (Max 95)@"
 
 MachinePartDesc:
 	db   "A machine part for"

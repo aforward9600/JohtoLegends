@@ -673,11 +673,21 @@ GetLowestEvolutionStage:
 ; Instead of looking it up, we just load it from a table. This is a lot more efficient.
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
-	ld bc, FirstEvoStages - 2
+	ld bc, PreviousEvolutionStage - 2
+	push de
+.loop
+	ld d, h
+	ld e, l
 	add hl, hl
 	add hl, bc
-	ld a, BANK(FirstEvoStages)
+	ld a, BANK(PreviousEvolutionStage)
 	call GetFarHalfword
+	ld a, h
+	or l
+	jr nz, .loop
+	ld h, d
+	ld l, e
+	pop de
 	call GetPokemonIDFromIndex
 	ld [wCurPartySpecies], a
 	ret

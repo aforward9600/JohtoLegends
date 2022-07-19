@@ -799,6 +799,15 @@ wPokedexNameBuffer:: ds MON_NAME_LENGTH
 	ds 231
 
 NEXTU ; c6d0
+wMoveRelearnerSpecies:: dw ; c6d0
+wMoveRelearnerLevel:: db ; c6d2
+wMoveRelearnerMoveCount:: db ; c6d3
+wMoveRelearnerMoveList:: ds 2 * 63 ; c6d4
+wMoveRelearnerMoveListTerminator:: dw ; c752
+wMoveRelearnerCursor:: db ; c754
+wMoveRelearnerScroll:: db ; c755
+
+NEXTU ; c6d0
 ; pokegear
 wPokegearPhoneLoadNameBuffer:: db ; c6d0
 wPokegearPhoneCursorPosition:: db ; c6d1
@@ -3180,6 +3189,25 @@ w5_MobileOpponentBattleLossMessage:: ds $c ; d93e
 
 NEXTU ; d500
 wPokedexOrder:: ds 2 * (NUM_POKEMON + 1) ; enough room to expand to 1,407 entries
+
+NEXTU ; d500
+
+wMoveRelearnerStaging::
+
+	align 8
+wMoveRelearnerTeachableMoves:: flag_array NUM_ATTACKS
+wMoveRelearnerTeachableMovesEnd::
+
+	ds $100 - (2 * 63) - (NUM_ATTACKS + 7) / 8 - 4
+
+wMoveRelearnerSpeciesStaging:: dw
+wMoveRelearnerLevelStaging:: db
+wMoveRelearnerMoveCountStaging:: db
+wMoveRelearnerMoveListStaging:: ds 2 * 63
+
+wMoveRelearnerRejectedMoves:: flag_array NUM_ATTACKS
+	assert wMoveRelearnerRejectedMoves == (wMoveRelearnerTeachableMoves + $100)
+wMoveRelearnerRejectedMovesEnd::
 
 ENDU
 

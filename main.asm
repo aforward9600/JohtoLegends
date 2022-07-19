@@ -322,7 +322,7 @@ INCLUDE "engine/rtc/timeset.asm"
 INCLUDE "engine/pokegear/pokegear.asm"
 INCLUDE "engine/events/fish.asm"
 INCLUDE "engine/games/slot_machine.asm"
-INCLUDE "data/pokemon/first_stages.asm"
+INCLUDE "data/pokemon/previous_stages.asm"
 INCLUDE "engine/events/magnet_train.asm"
 
 
@@ -729,3 +729,4 @@ INCLUDE "gfx/weather_images.asm"
 INCLUDE "engine/events/poisonstep_pals.asm"
 INCLUDE "engine/link/time_capsule.asm"
 INCLUDE "engine/battle/shiny_swarm.asm"
+INCLUDE "engine/events/move_relearner.asm"

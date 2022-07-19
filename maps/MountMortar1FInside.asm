@@ -48,22 +48,15 @@ MountMortar1FInside_MapScripts:
 	return
 
 TrainerPokemaniacAllan:
-	faceplayer
-	opentext
-	writetext PokemaniacAllanSeenText
-	waitbutton
-	closetext
-	winlosstext PokemaniacAllanBeatenText, 0
-	loadtrainer POKEMANIAC, ALLAN1
-	startbattle
-	reloadmapafterbattle
+	trainer POKEMANIAC, ALLAN1, EVENT_BEAT_POKEMANIAC_ALLAN, PokemaniacAllanSeenText, PokemaniacAllanBeatenText, 0, .Script
+
+.Script:
 	opentext
 	writetext PokemaniacAllanAfterBattleText
 	waitbutton
 	closetext
 	applymovement MOUNTMORTAR1FINSIDE_SUPER_NERD1, PokemaniacMovement
 	disappear MOUNTMORTAR1FINSIDE_SUPER_NERD1
-	setevent EVENT_BEAT_POKEMANIAC_ALLAN
 	setscene SCENE_MOUNT_MORTAR_1F_INSIDE_HIKER
 	end
 	
@@ -187,7 +180,6 @@ MountMortar1FInsideHikerScript:
 	end
 
 PokemaniacMovement:
-	step RIGHT
 	step RIGHT
 	step DOWN
 	step_end
@@ -410,7 +402,7 @@ MountMortar1FInside_MapEvents:
 	object_event 10, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideHyperPotion, EVENT_MOUNT_MORTAR_1F_INSIDE_HYPER_POTION
 	object_event 25, 21, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerHikerOzzy, -1
 	object_event 35, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideNugget, EVENT_MOUNT_MORTAR_1F_INSIDE_NUGGET
-	object_event  7, 22, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerPokemaniacAllan, EVENT_BEAT_POKEMANIAC_ALLAN
+	object_event  8, 22, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPokemaniacAllan, EVENT_BEAT_POKEMANIAC_ALLAN
 	object_event 24, 28, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdMarkus, -1
 	object_event  8, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideIron, EVENT_MOUNT_MORTAR_1F_INSIDE_IRON
 	object_event 17, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideUltraBall, EVENT_MOUNT_MORTAR_1F_INSIDE_ULTRA_BALL

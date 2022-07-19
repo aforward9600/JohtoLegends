@@ -1,4 +1,4 @@
-SelectMonFromParty:
+SelectMonFromParty::
 	call DisableSpriteUpdates
 	xor a
 	ld [wPartyMenuActionText], a
