@@ -1075,3 +1075,6 @@ OlivineGym4F_Blocks:
 
 PokemonMansion1F_Blocks:
 	INCBIN "maps/PokemonMansion1F.blk"
+
+HoOhLugiaRoom_Blocks:
+	INCBIN "maps/HoOhLugiaRoom.blk"

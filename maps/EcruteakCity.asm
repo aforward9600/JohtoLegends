@@ -344,7 +344,7 @@ EcruteakCity_MapEvents:
 	warp_event 23, 21, DANCE_THEATRE, 1
 	warp_event 29, 21, ECRUTEAK_MART, 2
 	warp_event  6, 27, ECRUTEAK_GYM, 1
-	warp_event 13, 27, ECRUTEAK_ITEMFINDER_HOUSE, 1
+	warp_event 13, 27, HO_OH_LUGIA_ROOM, 1
 	warp_event  5, 16, ECRUTEAK_MOVE_TUTOR_HOUSE, 1
 	warp_event  5,  5, BURNED_TOWER_1F, 1
 

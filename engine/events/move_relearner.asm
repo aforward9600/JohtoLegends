@@ -327,7 +327,7 @@ MoveRelearner:
 	ld hl, wMoveRelearnerSpeciesStaging
 	ld de, wMoveRelearnerSpecies
 	ld bc, wMoveRelearnerMoveListTerminator - wMoveRelearnerSpecies
-	farcall CopyBytes
+	call CopyBytes
 	pop af
 	ldh [rSVBK], a
 	xor a
@@ -390,9 +390,9 @@ MoveRelearner_InitializeScreenLayout:
 	jp PlaceString
 
 .acc_string
-	db "Acc/@"
+	db "ACC/@"
 .atk_string
-	db "Atk/@"
+	db "ATK/@"
 
 MoveRelearner_DisplayMoveData:
 	hlcoord 2, 2
@@ -512,10 +512,10 @@ MoveRelearner_DisplayMoveData:
 	jr .place_arrows
 
 .cancel_string
-	db "Cancel@"
+	db "CANCEL@"
 
 .type_string
-	db "Type/@"
+	db "TYPE/@"
 
 MoveRelearner_UpdateMoveInfoBox:
 	call MoveRelearner_ClearMoveInfoBox

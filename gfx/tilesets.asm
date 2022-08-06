@@ -250,15 +250,6 @@ INCLUDE "data/tilesets/lighthouse_collision.asm"
 TilesetForestColl:
 INCLUDE "data/tilesets/forest_collision.asm"
 
-TilesetFacilityGFX:
-INCBIN "gfx/tilesets/facility.2bpp.lz"
-
-TilesetFacilityMeta:
-INCBIN "data/tilesets/facility_metatiles.bin"
-
-TilesetFacilityColl:
-INCLUDE "data/tilesets/facility_collision.asm"
-
 TilesetBattleTowerOutsideMeta:
 INCBIN "data/tilesets/battle_tower_outside_metatiles.bin"
 
@@ -366,3 +357,12 @@ INCBIN "data/tilesets/pokemon_mansion_metatiles.bin"
 
 TilesetPokemonMansionColl:
 INCLUDE "data/tilesets/pokemon_mansion_collision.asm"
+
+TilesetFacilityGFX:
+INCBIN "gfx/tilesets/facility.2bpp.lz"
+
+TilesetFacilityMeta:
+INCBIN "data/tilesets/facility_metatiles.bin"
+
+TilesetFacilityColl:
+INCLUDE "data/tilesets/facility_collision.asm"

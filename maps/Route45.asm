@@ -20,7 +20,7 @@ Route45_MapScripts:
 	callback MAPCALLBACK_TILES, .ClearRocks
 
 .ClearRocks:
-	checkevent EVENT_BEAT_MASTER
+	checkevent EVENT_SPOKE_WITH_ELM
 	iftrue .Done
 	changeblock 12, 10, $0a ; rock
 	changeblock 14, 10, $0a ; rock
