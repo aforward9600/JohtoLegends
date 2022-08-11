@@ -488,43 +488,43 @@ BlackthornCity_MapEvents:
 	db 0, 0 ; filler
 
 	db 10 ; warp events
-	warp_event 18, 11, BLACKTHORN_GYM_1F, 1
-	warp_event 13, 21, TIN_TOWER_ROOF, 1
-	warp_event 29, 23, RIVALS_HOUSE_1F, 1
-	warp_event 15, 29, BLACKTHORN_MART, 2
-	warp_event 21, 29, BLACKTHORN_POKECENTER_1F, 1
-	warp_event  9, 31, MOVE_DELETERS_HOUSE, 1
-	warp_event 36,  9, ICE_PATH_1F, 2
-	warp_event 20,  1, DRAGONS_DEN_1F, 1
-	warp_event  3, 25, PLAYERS_HOUSE_1F, 1
-	warp_event 21, 19, MASTERS_HOUSE_1F, 1
+	warp_event 20, 11, BLACKTHORN_GYM_1F, 1
+	warp_event 15, 21, TIN_TOWER_ROOF, 1
+	warp_event 31, 23, RIVALS_HOUSE_1F, 1
+	warp_event 17, 29, BLACKTHORN_MART, 2
+	warp_event 23, 29, BLACKTHORN_POKECENTER_1F, 1
+	warp_event 11, 31, MOVE_DELETERS_HOUSE, 1
+	warp_event 38,  9, ICE_PATH_1F, 2
+	warp_event 22,  1, DRAGONS_DEN_1F, 1
+	warp_event  5, 25, PLAYERS_HOUSE_1F, 1
+	warp_event 23, 19, MASTERS_HOUSE_1F, 1
 
 	db 3 ; coord events
-	coord_event  9, 35, SCENE_DEFAULT, BlackthornCity_HikerStopsYou1
-	coord_event 11, 35, SCENE_DEFAULT, BlackthornCity_HikerStopsYou2
-	coord_event 12, 35, SCENE_DEFAULT, BlackthornCity_HikerStopsYou3
+	coord_event 11, 35, SCENE_DEFAULT, BlackthornCity_HikerStopsYou1
+	coord_event 13, 35, SCENE_DEFAULT, BlackthornCity_HikerStopsYou2
+	coord_event 14, 35, SCENE_DEFAULT, BlackthornCity_HikerStopsYou3
 
 
 	db 9 ; bg events
-	bg_event 34, 24, BGEVENT_READ, BlackthornCitySign
-	bg_event 17, 13, BGEVENT_READ, BlackthornGymSign
-	bg_event  7, 31, BGEVENT_READ, MoveDeletersHouseSign
-	bg_event 21,  3, BGEVENT_READ, DragonDensSign
-	bg_event  6, 25, BGEVENT_READ, BlackthornCityPlayersHouseSign
-	bg_event 16, 29, BGEVENT_READ, BlackthornCityMartSign
-	bg_event 22, 29, BGEVENT_READ, BlackthornCityPokecenterSign
-	bg_event 19, 19, BGEVENT_READ, BlackthornCityMastersHouseSign
-	bg_event 27, 23, BGEVENT_READ, BlackthornCityRivalsHouseSign
+	bg_event 36, 24, BGEVENT_READ, BlackthornCitySign
+	bg_event 19, 13, BGEVENT_READ, BlackthornGymSign
+	bg_event  9, 31, BGEVENT_READ, MoveDeletersHouseSign
+	bg_event 23,  3, BGEVENT_READ, DragonDensSign
+	bg_event  8, 25, BGEVENT_READ, BlackthornCityPlayersHouseSign
+	bg_event 18, 29, BGEVENT_READ, BlackthornCityMartSign
+	bg_event 24, 29, BGEVENT_READ, BlackthornCityPokecenterSign
+	bg_event 21, 19, BGEVENT_READ, BlackthornCityMastersHouseSign
+	bg_event 29, 23, BGEVENT_READ, BlackthornCityRivalsHouseSign
 
 	db 11 ; object events
-	object_event 18, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornSuperNerdScript, EVENT_BLACKTHORN_CITY_SUPER_NERD_BLOCKS_GYM
-	object_event 19, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornSuperNerdScript, EVENT_BLACKTHORN_CITY_SUPER_NERD_DOES_NOT_BLOCK_GYM
-	object_event 20,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGramps1Script, EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN
-	object_event 21,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGramps2Script, EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
-	object_event 21, 30, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornBlackBeltScript, EVENT_BLACKTHORN_BLACK_BELT
-	object_event 11, 27, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornCooltrainerMScript, -1
-	object_event  4, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornYoungsterScript, -1
-	object_event 27, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SantosScript, EVENT_BLACKTHORN_CITY_SANTOS_OF_SATURDAY
-	object_event 37, 10, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornLassScript, -1
-	object_event 10, 35, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornHikerScript, EVENT_BLACKTHORN_HIKER
-	object_event 21, 14, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BLACKTHORN_CITY_RIVAL
+	object_event 20, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornSuperNerdScript, EVENT_BLACKTHORN_CITY_SUPER_NERD_BLOCKS_GYM
+	object_event 21, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornSuperNerdScript, EVENT_BLACKTHORN_CITY_SUPER_NERD_DOES_NOT_BLOCK_GYM
+	object_event 22,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGramps1Script, EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN
+	object_event 23,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGramps2Script, EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
+	object_event 23, 30, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornBlackBeltScript, EVENT_BLACKTHORN_BLACK_BELT
+	object_event 13, 27, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornCooltrainerMScript, -1
+	object_event  6, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornYoungsterScript, -1
+	object_event 29, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SantosScript, EVENT_BLACKTHORN_CITY_SANTOS_OF_SATURDAY
+	object_event 39, 10, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornLassScript, -1
+	object_event 12, 35, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornHikerScript, EVENT_BLACKTHORN_HIKER
+	object_event 23, 14, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BLACKTHORN_CITY_RIVAL

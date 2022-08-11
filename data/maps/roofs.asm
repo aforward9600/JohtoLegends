@@ -5,20 +5,21 @@
 	const ROOF_AZALEA    ; 2
 	const ROOF_OLIVINE   ; 3
 	const ROOF_GOLDENROD ; 4
+	const ROOF_MAHOGANY
 
 MapGroupRoofs:
 ; entries correspond to map groups
 ; values are indexes for Roofs (see below)
 	db -1             ;  0
 	db ROOF_OLIVINE   ;  1 (Olivine)
-	db ROOF_AZALEA    ;  2 (Mahogany)
+	db ROOF_MAHOGANY  ;  2 (Mahogany)
 	db -1             ;  3
 	db ROOF_VIOLET    ;  4 (Ecruteak)
 	db ROOF_AZALEA    ;  5 (Blackthorn)
 	db -1             ;  6
 	db -1             ;  7
 	db ROOF_AZALEA    ;  8 (Azalea)
-	db ROOF_AZALEA    ;  9 (Lake of Rage)
+	db ROOF_MAHOGANY  ;  9 (Lake of Rage)
 	db ROOF_VIOLET    ; 10 (Violet)
 	db ROOF_GOLDENROD ; 11 (Goldenrod)
 	db -1             ; 12
@@ -45,3 +46,4 @@ INCBIN "gfx/tilesets/roofs/violet.2bpp"
 INCBIN "gfx/tilesets/roofs/azalea.2bpp"
 INCBIN "gfx/tilesets/roofs/olivine.2bpp"
 INCBIN "gfx/tilesets/roofs/goldenrod.2bpp"
+INCBIN "gfx/tilesets/roofs/mahogany.2bpp"

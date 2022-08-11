@@ -20,3 +20,4 @@ Emotes:
 	emote BoulderDustGFX, 2, $fe
 	emote GrassRustleGFX, 1, $fe
 	emote SilenceEmote,   4, $f8
+	emote PuddleSplashGFX, 1, $ff

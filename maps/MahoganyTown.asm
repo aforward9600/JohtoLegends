@@ -121,24 +121,15 @@ MahoganyTownGrampsText_ClearedRocketHideout:
 	done
 
 MahoganyTownFisherText:
-	text "You can't catch"
-	line "much at the Lake"
+	text "Spring is here,"
+	line "but there's still"
 
-	para "of Rage. Magikarp,"
-	line "Magikarp, and more"
+	para "snow on the"
+	line "ground!"
 
-	para "Magikarp! At"
-	line "least, that's all"
-	cont "I catch up there."
-
-	para "My friend swears"
-	line "he caught a"
-	cont "Gyarados in the"
-	cont "lake."
-
-	para "I told him he was"
-	line "full of Tauros"
-	cont "manure!"
+	para "At least Pryce"
+	line "is at home in"
+	cont "this weather."
 	done
 
 MahoganyTownSuperNerdText:

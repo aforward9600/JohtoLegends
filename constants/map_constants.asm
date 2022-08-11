@@ -53,7 +53,7 @@ ENDM
 	map_const MAHOGANY_POKECENTER_1F,                       5,  4 ;  3
 	map_const ROUTE_42_ECRUTEAK_GATE,                       5,  4 ;  4
 	map_const ROUTE_42,                                    30,  9 ;  5
-	map_const ROUTE_44,                                    30,  9 ;  6
+	map_const ROUTE_44,                                    32,  9 ;  6
 	map_const MAHOGANY_TOWN,                               10,  9 ;  7
 	map_const FOSSIL_HOUSE,                                 4,  4 ;  8
 
@@ -176,7 +176,7 @@ ENDM
 	map_const MOVE_DELETERS_HOUSE,                          4,  4 ;  7
 	map_const ROUTE_45,                                    10, 45 ;  8
 	map_const ROUTE_46,                                    10, 18 ;  9
-	map_const BLACKTHORN_CITY,                             20, 18 ; 10
+	map_const BLACKTHORN_CITY,                             21, 18 ; 10
 	map_const MASTERS_HOUSE_1F,                             5,  7 ; 11
 	map_const MASTERS_HOUSE_2F,                             5,  6 ; 12
 	map_const RIVALS_HOUSE_2F,                              4,  3 ; 13

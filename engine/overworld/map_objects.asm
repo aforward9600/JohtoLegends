@@ -549,6 +549,7 @@ MapObjectMovementPattern:
 	dw .MovementSpinCounterclockwise ; 19
 	dw .MovementBoulderDust ; 1a
 	dw .MovementShakingGrass ; 1b
+	dw .MovementSplashingPuddle
 
 .Null_00:
 	ret
@@ -952,6 +953,7 @@ MapObjectMovementPattern:
 	ld hl, OBJECT_ACTION
 	add hl, bc
 	ld [hl], OBJECT_ACTION_GRASS_SHAKE
+._MovementGrass_Puddle_End:
 	ld hl, OBJECT_STEP_DURATION
 	add hl, de
 	ld a, [hl]
@@ -963,6 +965,14 @@ MapObjectMovementPattern:
 	add hl, bc
 	ld [hl], STEP_TYPE_TRACKING_OBJECT
 	ret
+
+.MovementSplashingPuddle:
+	call EndSpriteMovement
+	call ._MovementShadow_Grass_Emote_BoulderDust
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], OBJECT_ACTION_PUDDLE_SPLASH
+	jr ._MovementGrass_Puddle_End
 
 ._MovementShadow_Grass_Emote_BoulderDust:
 	ld hl, OBJECT_RANGE
@@ -2043,6 +2053,19 @@ ShakeGrass:
 
 .GrassObject
 	db $00, PAL_OW_TREE, SPRITEMOVEDATA_GRASS
+
+SplashPuddle:
+	push bc
+	ld de, .PuddleObject
+	call CopyTempObjectData
+	call InitTempObject
+	pop bc
+	ld de, SFX_PUDDLE
+	call PlaySFX
+	ret
+
+.PuddleObject
+	db $00, PAL_OW_BLUE, SPRITEMOVEDATA_PUDDLE
 
 ShakeScreen:
 	push bc

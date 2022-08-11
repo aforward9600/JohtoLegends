@@ -9,31 +9,25 @@ Route43MahoganyGate_MapScripts:
 Route43MahoganyGateOfficer:
 	faceplayer
 	opentext
-	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
-	iftrue .RocketsCleared
 	writetext Route43MahoganyGateOfficerText
 	waitbutton
 	closetext
 	end
 
-.RocketsCleared:
-	writetext Route43MahoganyGateOfficerRocketsClearedText
-	waitbutton
-	closetext
-	end
-
 Route43MahoganyGateOfficerText:
-	text "Only people headed"
-	line "up to Lake of Rage"
+	text "The snow at the"
+	line "Lake of Rage has"
+	cont "melted already."
 
-	para "have been through"
-	line "here lately."
-	done
+	para "Doesn't make much"
+	line "sense to me, since"
 
-Route43MahoganyGateOfficerRocketsClearedText:
-	text "Nobody goes up to"
-	line "LAKE OF RAGE these"
-	cont "days."
+	para "lakes tend to be"
+	line "cold, but I'm not"
+
+	para "a meteorologist,"
+	line "so what do I"
+	cont "know?"
 	done
 
 Route43MahoganyGate_MapEvents:

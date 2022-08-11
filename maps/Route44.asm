@@ -182,8 +182,12 @@ FisherLyleBeatenText:
 	done
 
 FisherLyleAfterBattleText:
-	text "Well, back to my"
-	line "fishin'."
+	text "Luckily the ponds"
+	line "here aren't frozen"
+	cont "anymore."
+
+	para "Ice fishin' ain't"
+	line "my thing."
 	done
 
 FisherButchSeenText:
@@ -229,13 +233,9 @@ BirdKeeperSalBeatenText:
 	done
 
 BirdKeeperSalAfterBattleText:
-	text "Despite being from"
-	line "Blackthorn, you"
-	cont "through Ice Path"
-
-	para "no problem. Maybe"
-	line "someday I can do"
-	cont "the same."
+	text "There's still snow"
+	line "here. Hopefully it"
+	cont "all melts soon."
 	done
 
 SchoolboyFinnSeenText:
@@ -306,11 +306,9 @@ BugCatcherColtonBeatenText:
 	done
 
 BugCatcherColtonAfterBattleText:
-	text "My friend is still"
-	line "in Ice Path."
-
-	para "I may have to go"
-	line "and get him soon."
+	text "I guess it's not"
+	line "much warmer out"
+	cont "here."
 	done
 
 TeacherCadiSeenText:
