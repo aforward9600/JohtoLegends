@@ -9,6 +9,11 @@ Script_AbortBugContest:
 FindItemInBallScript::
 	callasm .TryReceiveItem
 	iffalse .no_room
+	pause 10
+	callasm .SetPlayerSprite
+	readmem wBuffer2
+	writevar VAR_MOVEMENT
+	special ReplaceKrisSprite
 	disappear LAST_TALKED
 	opentext
 	writetext .text_found
@@ -16,6 +21,8 @@ FindItemInBallScript::
 	pause 60
 	itemnotify
 	closetext
+	callasm .RestorePlayerSprite
+	pause 10
 	end
 
 .no_room
@@ -54,4 +61,17 @@ FindItemInBallScript::
 	ret nc
 	ld a, $1
 	ld [wScriptVar], a
+	ret
+
+.RestorePlayerSprite:
+	push bc
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite ; UpdateSprites
+	pop bc
+	ret
+
+.SetPlayerSprite:
+	ld a, PLAYER_ITEM
+	ld [wBuffer2], a
 	ret

@@ -291,13 +291,6 @@ endr
 	ret
 
 .prizepoints
-	ld a, [wMenuSelection]
-	call Buena_getprize
-	inc hl
-	ld a, [hl]
-	ld c, "0"
-	add c
-	ld [de], a
 	ret
 
 Buena_getprize:

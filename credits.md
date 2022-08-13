@@ -29,6 +29,10 @@ Focus Sash, Power Band, SpecialSpecs, Wide Lens, Life Orb, Choice Band, Choice S
 
 New Swarming System: Dragon Arbock
 
+Puddles: Rangi
+
+Snow graphics: Prism Team
+
 New Pokemon cries: chattycrystal team
 
 Calm Mind, Sucker Punch, Dragon Dance, Quiver Dance, Grass Knot, Aqua Ring, Sleep, Knock Off, Roost effect,: chattycrystal team

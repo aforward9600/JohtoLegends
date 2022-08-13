@@ -125,6 +125,8 @@
 	const SPRITE_AMPHAROS_P
 	const SPRITE_GIOVANNI
 	const SPRITE_CYNTHIA
+	const SPRITE_CHRIS_ITEM
+	const SPRITE_KRIS_ITEM
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

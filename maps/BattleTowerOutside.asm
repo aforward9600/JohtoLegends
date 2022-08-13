@@ -55,11 +55,11 @@ BattleTowerOutsideYoungsterText_Mobile:
 	done
 
 BattleTowerOutsideYoungsterText:
-	text "Wow, the BATTLE"
-	line "TOWER is huge!"
+	text "Wow, the Battle"
+	line "Tower is huge!"
 
 	para "There must be many"
-	line "kinds of #MON"
+	line "kinds of #mon"
 	cont "in there!"
 	done
 
@@ -72,12 +72,12 @@ BattleTowerOutsideBuenaText_NotYetOpen:
 	line "anything, I guess"
 
 	para "it must be for"
-	line "#MON battles."
+	line "#mon battles."
 	done
 
 BattleTowerOutsideBuenaText:
 	text "You can use only"
-	line "three #MON."
+	line "three #mon."
 
 	para "It's so hard to"
 	line "decide which three"
@@ -114,7 +114,7 @@ BattleTowerOutsideSignText_NotYetOpen:
 	done
 
 BattleTowerOutsideSignText:
-	text "BATTLE TOWER"
+	text "Battle Tower"
 
 	para "Take the Ultimate"
 	line "Trainer Challenge!"

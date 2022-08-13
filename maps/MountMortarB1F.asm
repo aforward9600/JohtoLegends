@@ -51,16 +51,16 @@ MountMortarB1FBoulder:
 	jumpstd strengthboulder
 
 MountMortarB1FHyperPotion:
-	itemball HYPER_POTION
+	itemball SUPER_POTION
 
 MountMortarB1FCarbos:
 	itemball CARBOS
 
 MountMortarB1FFullRestore:
-	itemball FULL_RESTORE
+	itemball GREAT_BALL
 
 MountMortarB1FMaxEther:
-	itemball MAX_ETHER
+	itemball ETHER
 
 MountMortarB1FPPUp:
 	itemball PP_UP
