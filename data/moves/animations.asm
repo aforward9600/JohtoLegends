@@ -3230,6 +3230,7 @@ BattleAnim_Sharpen:
 	anim_ret
 
 BattleAnim_DefenseCurl:
+BattleAnim_GyroBall:
 	anim_1gfx ANIM_GFX_SHAPES
 	anim_obp0 $e4
 	anim_call BattleAnim_TargetObj_1Row
@@ -6253,26 +6254,6 @@ BattleAnim_PsychoCut:
 	anim_sound 6, 2, SFX_PSYCHIC
 	anim_obj ANIM_OBJ_3A, 152, 40, $0
 	anim_wait 32
-	anim_ret
-
-BattleAnim_GyroBall:
-	anim_2gfx ANIM_GFX_SHAPES, ANIM_GFX_HIT
-	anim_obp0 $e4
-	anim_call BattleAnim_TargetObj_1Row
-	anim_sound 0, 0, SFX_SHARPEN
-	anim_bgeffect ANIM_BG_18, $0, $1, $40
-	anim_obj ANIM_OBJ_DEFENSE_CURL, 48, 88, $0
-	anim_wait 96
-	anim_incobj 2
-	anim_incbgeffect ANIM_BG_18
-	anim_call BattleAnim_ShowMon_0
-	anim_call BattleAnim_TargetObj_2Row
-	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
-	anim_wait 4
-	anim_sound 0, 1, SFX_TACKLE
-	anim_obj ANIM_OBJ_00, 136, 48, $0
-	anim_wait 8
-	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
 BattleAnim_ChargeBeam:

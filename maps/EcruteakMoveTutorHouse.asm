@@ -86,7 +86,7 @@ EcruteakMoveTutorHouseMoveTutorScript:
 	end
 
 MoveTutorTV:
-	jumptext MoveTutorTVText
+	jumpstd televisionscript
 
 EcruteakMoveTutorHouseAskTeachAMoveText:
 	text "You ever wish your"

@@ -22,6 +22,9 @@ MoveDeleter:
 MoveDeletersHouseBookshelf:
 	jumpstd difficultbookshelf
 
+MoveDeleterTelevision:
+	jumpstd televisionscript
+
 MoveDeleterNoMonText:
 	text "Um… Oh, yes, I'm"
 	line "the Move Deleter."
@@ -47,9 +50,10 @@ MoveDeletersHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, MoveDeletersHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, MoveDeletersHouseBookshelf
+	bg_event  2,  1, BGEVENT_READ, MoveDeleterTelevision
 
 	db 1 ; object events
 	object_event  2,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoveDeleter, -1

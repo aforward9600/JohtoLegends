@@ -1688,3 +1688,511 @@ _TurnedOnExpShareText::
 	text "The Exp.Share was"
 	line "turned on."
 	prompt
+
+DramaticShowText::
+	text "Woman: Please!"
+	line "don't go!"
+
+	para "Man: I'm sorry,"
+	line "honey…"
+
+	para "I have to."
+
+	para "Woman: No you"
+	line "don't! We can stay"
+	cont "here together!"
+
+	para "We can start a"
+	line "family and live"
+	cont "happily!"
+
+	para "Man: We can't. Not"
+	line "yet. Our country's"
+	cont "under attack."
+
+	para "I've been called to"
+	line "defend it."
+
+	para "Woman: I know,"
+	line "but…"
+
+	para "Man: Don't worry,"
+	line "I'll be back once"
+	cont "we win the war."
+
+	para "The man turned"
+	line "away, tears in his"
+	cont "eyes."
+
+	para "She drops to her"
+	line "knees, sobbing."
+
+	para "Little do they"
+	line "know, this will be"
+	cont "the last time they"
+	cont "see each other."
+
+	para "She was left to"
+	line "take care of their"
+	cont "unborn child,"
+	cont "alone."
+
+	para "The End."
+	done
+
+WhatSwarmTodayText::
+	text "Hello everyone!"
+
+	para "Welcome to the"
+	line "Swarm Channel!"
+
+	para "Will there be a"
+	line "swarm in Johto"
+	cont "today?"
+
+	para "Let's find out!"
+	done
+
+NoSwarmTodayText::
+	text "………………………"
+
+	para "Bad luck,"
+	line "trainers…"
+
+	para "No #mon are"
+	line "swarming today…"
+
+	para "Better luck"
+	line "tomorrow!"
+	done
+
+YanmaSwarmText::
+	text "………………………"
+	
+	para "Ah!"
+
+	para "On Route 39, there"
+	line "is a swarm of"
+	cont "Yanma!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to Route 39"
+	line "and catch a Yanma!"
+	done
+
+DunsparceSwarmText::
+	text "………………………"
+	
+	para "Ah!"
+
+	para "In Dark Cave near"
+	line "Blackthorn City,"
+	cont "there is a swarm"
+	cont "of Dunsparce!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to Dark Cave"
+	line "and catch a"
+	cont "Dunsparce!"
+	done
+
+QwilfishSwarmText::
+	text "………………………"
+
+	para "Ah!"
+
+	para "In the Wild Area,"
+	line "there is a swarm"
+	cont "of Qwilfish!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to the Wild"
+	line "Area and catch a"
+	cont "Qwilfish!"
+	done
+
+EeveeSwarmText::
+	text "………………………"
+
+	para "Ah!"
+
+	para "In the Wild Area,"
+	line "there is a swarm"
+	cont "of Eevee!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to the Wild"
+	line "Area and catch an"
+	cont "Eevee!"
+	done
+
+KangaskhanSwarmText::
+	text "………………………"
+
+	para "Ah!"
+
+	para "In the Wild Area"
+	line "cave, there is a"
+	cont "swarm of"
+	cont "Kangaskhan!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to the Wild"
+	line "Area Cave and"
+	cont "catch a"
+	cont "Kangaskhan!"
+	done
+
+GibleSwarmText::
+	text "………………………"
+
+	para "Ah!"
+
+	para "In the Wild Area,"
+	line "there is a swarm"
+	cont "of Gible!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to the Wild"
+	line "Area and catch a"
+	cont "Gible!"
+	done
+
+SneaselSwarmText::
+	text "………………………"
+
+	para "Ah!"
+
+	para "In the B1F of Ice"
+	line "Path, there is a"
+	cont "swarm of Sneasel!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to Ice Path"
+	line "and catch a"
+	cont "Sneasel!"
+	done
+
+MagcargoSwarmText::
+	text "………………………"
+
+	para "Ah!"
+
+	para "In the 2F of the"
+	line "Burned Tower,"
+	cont "there is a swarm"
+	cont "of Magcargo!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to Burned"
+	line "Tower and catch a"
+	cont "Magcargo!"
+	done
+
+ScytherSwarmText::
+	text "………………………"
+
+	para "Ah!"
+
+	para "On Route 38, there"
+	line "there is a swarm"
+	cont "Scyther!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to Route 38"
+	line "and catch a"
+	cont "Scyther!"
+	done
+
+PinsirSwarmText::
+	text "………………………"
+
+	para "Ah!"
+
+	para "In the National"
+	line "Forest, there is"
+	cont "a swarm of"
+	cont "Pinsir!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to National"
+	line "Forest and catch a"
+	cont "Pinsir!"
+	done
+
+ThatsAllFolksText::
+	text "Tune in tomorrow"
+	line "for another swarm"
+	cont "update!"
+	done
+
+LullabyText::
+	text "Having trouble"
+	line "falling asleep?"
+
+	para "Have any children"
+	line "or #mon that"
+	cont "need to sleep?"
+
+	para "We've got the"
+	line "music for you!"
+
+	para "Keep our channel"
+	line "on, and you'll"
+	cont "feel your worries"
+
+	para "just wash away!"
+	done
+
+VillainousText::
+	text "Villain: Wahaha!"
+
+	para "Soon, all the"
+	line "world's cheeses"
+	cont "will be mine!"
+
+	para "Hero: Not so fast,"
+	line "Meowth Burglar!"
+
+	para "MB: Ah! I should"
+	line "have known you'd"
+	cont "show up, Growlithe"
+	cont "Man!"
+
+	para "Come to spoil my"
+	line "party, have you?"
+
+	para "GM: I always do."
+
+	para "Now, go Growlithe!"
+	line "Use Flamethrower!"
+
+	para "MB: Hah! Meowth,"
+	line "use Hydro Pump!"
+
+	para "Growlithe was hit"
+	line "by Hydro Pump and"
+	cont "fainted!"
+
+	para "GM: What! Meowth"
+	line "can't learn that"
+	cont "move!"
+
+	para "MB: Hahaha! This"
+	line "new Meowth of mine"
+	cont "is quite special!"
+
+	para "Had it made just"
+	line "to get rid of you!"
+
+	para "GM: Made? What do"
+	line "you mean you"
+	cont "villain?!"
+
+	para "MB: A professional"
+	line "doesn't reveal his"
+	cont "secrets!"
+
+	para "Later, loser!"
+
+	para "Meowth Burglar"
+	line "escapes in a hot"
+	cont "air balloon shaped"
+	cont "like a Meowth!"
+
+	para "How did the Meowth"
+	line "know Hydro Pump?"
+
+	para "How will Growlithe"
+	line "Man recover the"
+	cont "cheese?"
+
+	para "Tune in next time"
+	line "to find out!"
+	done
+
+TuneInNextTimeText::
+	text "Tune in next time"
+	line "for more great"
+	cont "entertainment!"
+	done
+
+WelcomeToPokemonTalk::
+	text "Welcome to Prof."
+	line "Oak's #mon"
+	cont "Talk!"
+
+	para "On this show, we"
+	line "talk about rare"
+	cont "#mon that can"
+	cont "be found in the"
+	cont "Johto and Kanto"
+	cont "regions!"
+	done
+
+SkarminiOakText::
+	text "Skarmini is quite"
+	line "an interesting"
+	cont "specimin."
+
+	para "Found on Route 45,"
+	line "Skarmini evolves"
+
+	para "into Skarmory,"
+	line "the Armor Bird"
+	cont "#mon."
+
+	para "It is flightless,"
+	line "and continues to"
+	cont "improve its wings"
+
+	para "by brushing them up"
+	line "against bramble."
+
+	para "The existence of"
+	line "this #mon was"
+	cont "only recently"
+	cont "discovered."
+
+	para "Perhaps someday"
+	line "species will no"
+	cont "longer require"
+	cont "this earlier form"
+	cont "to survive."
+	done
+
+CyndaquilOakText::
+	text "Cyndaquil, found"
+	line "in Dark Cave, is"
+	cont "a Fire-type that"
+	cont "sprouts fire from"
+	cont "its back."
+
+	para "It evolves into"
+	line "Quilava, and again"
+	cont "into Typhlosion."
+
+	para "Typhlosion gains"
+	line "the Ground Type"
+	cont "upon evolution."
+
+	para "It lights up the"
+	line "portion of Dark"
+	cont "Cave it is in."
+	done
+
+ChikoritaOakText::
+	text "Chikorita can be"
+	line "found on Route 43,"
+	cont "even in the"
+	cont "current snow."
+
+	para "It evolves into"
+	line "Bayleef, and again"
+	cont "into Meganium."
+
+	para "Meganium gains the"
+	line "Fairy Type upon"
+	cont "evolution."
+
+	para "The plants around"
+	line "their bodies make"
+	cont "pleasant odors,"
+
+	para "making them great"
+	line "to have around the"
+	cont "house."
+	done
+
+TotodileOakText::
+	text "Totodile can be"
+	line "found on Route 43."
+
+	para "It evolves into"
+	line "Croconaw, and"
+	cont "again into"
+	cont "Feraligatr."
+
+	para "Feraligatr gains"
+	line "the Dark Type upon"
+	cont "evolution."
+
+	para "The Totodile line"
+	line "has a strong bite,"
+
+	para "so don't put your"
+	line "hands or head into"
+	cont "their mouths!"
+
+	para "Trust me, I've"
+	line "learned from"
+	cont "experience!"
+	done
+
+CroagunkOakText::
+	text "Croagunk can be"
+	line "found at the Lake"
+	cont "of Rage."
+
+	para "Croagunk evolves"
+	line "into Toxicroak."
+
+	para "Croagunk is native"
+	line "to the Sinnoh"
+	cont "region."
+
+	para "The poison sacs on"
+	line "their cheeks can"
+	cont "be inflated with"
+
+	para "posion, which is"
+	line "then spat up on"
+	cont "its foes."
+
+	para "It's quite the"
+	line "nasty surprise!"
+	done
+
+ElectrikeOakText::
+	text "Electrike can be"
+	line "found at the Lake"
+	cont "of Rage."
+
+	para "Electrike evolves"
+	line "into Manectric."
+
+	para "Electrike are"
+	line "native to Hoenn,"
+	cont "not Johto."
+
+	para "When they gather,"
+	line "thunderstorms tend"
+	cont "to form near."
+
+	para "Don't go near"
+	line "them with anything"
+	cont "metal!"
+
+	para "You'll be in for"
+	line "a shock!"
+	done

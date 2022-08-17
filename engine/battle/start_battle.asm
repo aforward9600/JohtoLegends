@@ -89,15 +89,15 @@ PlayBattleMusic:
 	ld de, MUSIC_JOHTO_WILD_BATTLE
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jp c, .done
-	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
 	jp nz, .done
+	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
+	jp .done
 
 .kantowild
 	ld de, MUSIC_KANTO_WILD_BATTLE
 	ld a, [wTimeOfDay]
     cp NITE_F
-    jp c, .done
+    jp nz, .done
     ld de, MUSIC_KANTO_WILD_BATTLE_NIGHT
 	jp .done
 

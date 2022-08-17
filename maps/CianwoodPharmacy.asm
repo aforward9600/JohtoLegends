@@ -40,9 +40,10 @@ CianwoodPharmacy_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, CianwoodPharmacyBookshelf
 	bg_event  1,  1, BGEVENT_READ, CianwoodPharmacyBookshelf
+	bg_event  2,  1, BGEVENT_READ, CianwoodTelevision
 
 	db 2 ; object events
 	object_event  2,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodPharmacist, -1

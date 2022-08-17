@@ -62,8 +62,8 @@ GoldenrodHappinessRaterPokefanMScript:
 HappinessRatersHouseBookshelf:
 	jumpstd difficultbookshelf
 
-HappinessRatersHouseRadio:
-	jumpstd radio2
+GoldenrodTelevision:
+	jumpstd televisionscript
 
 GoldenrodHappinessRaterTeacherText:
 	text "If you treat your"
@@ -142,7 +142,7 @@ GoldenrodHappinessRater_MapEvents:
 	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, HappinessRatersHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, HappinessRatersHouseBookshelf
-	bg_event  7,  1, BGEVENT_READ, HappinessRatersHouseRadio
+	bg_event  2,  1, BGEVENT_READ, GoldenrodTelevision
 
 	db 2 ; object events
 	object_event  2,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterTeacherScript, -1

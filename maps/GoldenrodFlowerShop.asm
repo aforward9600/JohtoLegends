@@ -23,18 +23,6 @@ FlowerShopFlorinasDaughterScript:
 	closetext
 	end
 
-FlowerShopShelf1:
-; unused
-	jumpstd picturebookshelf
-
-FlowerShopShelf2:
-; unused
-	jumpstd magazinebookshelf
-
-FlowerShopRadio:
-; unused
-	jumpstd radio2
-
 GoldenrodFlowerShopFlorinasHusbandText:
 	text "My wife's current"
 	line "job keeps her"

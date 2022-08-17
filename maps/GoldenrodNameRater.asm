@@ -17,8 +17,6 @@ GoldenrodNameRater:
 GoldenrodNameRaterBookshelf:
 	jumpstd difficultbookshelf
 
-GoldenrodNameRaterRadio:
-	jumpstd radio2
 
 GoldenrodNameRater_MapEvents:
 	db 0, 0 ; filler
@@ -32,7 +30,7 @@ GoldenrodNameRater_MapEvents:
 	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, GoldenrodNameRaterBookshelf
 	bg_event  1,  1, BGEVENT_READ, GoldenrodNameRaterBookshelf
-	bg_event  7,  1, BGEVENT_READ, GoldenrodNameRaterRadio
+	bg_event  2,  1, BGEVENT_READ, GoldenrodTelevision
 
 	db 1 ; object events
 	object_event  2,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodNameRater, -1

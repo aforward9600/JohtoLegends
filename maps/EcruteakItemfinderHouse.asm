@@ -80,7 +80,7 @@ EcruteakHistoryBook:
 	end
 
 ItemFinderHouseRadio:
-	jumpstd radio2
+	jumpstd televisionscript
 
 EcruteakItemfinderAdventureText:
 	text "I leave for a few"

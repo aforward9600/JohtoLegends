@@ -56,6 +56,8 @@ StdScripts::
 	dba GymStatue4Script
 	dba NinjaHideoutClear
 	dba StaticPokemonRefresh
+	dba TelevisionScript
+	dba SwarmScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -1981,3 +1983,370 @@ StaticPokemonRefresh:
 .refreshfarfetchd:
 	clearflag ENGINE_ILEX_FOREST_FARFETCHD
 	return
+
+TelevisionScript:
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .Monday
+	ifequal TUESDAY, .Tuesday
+	ifequal WEDNESDAY, .Wednesday
+	ifequal THURSDAY, .Thursday
+	ifequal FRIDAY, .Friday
+	ifequal SATURDAY, .Saturday
+	playmusic MUSIC_POKEMON_LULLABY
+	opentext
+	checkflag ENGINE_DAILY_TELEVISION
+	iftrue .WatchNextWeek
+	farwritetext LullabyText
+	waitbutton
+	closetext
+	sjump .endchannel
+.Monday:
+	playmusic MUSIC_ROCKET_ENCOUNTER
+	opentext
+	checkflag ENGINE_DAILY_TELEVISION
+	iftrue .WatchNextWeek
+	farwritetext VillainousText
+	waitbutton
+	closetext
+	sjump .endchannel
+.Tuesday:
+	sjump SwarmScript
+	end
+.Wednesday:
+	playmusic MUSIC_POKEMON_TALK
+	opentext
+	farwritetext WelcomeToPokemonTalk
+	waitbutton
+	random 20
+	ifequal 0, .Skarmini
+	ifequal 1, .Cyndaquil
+	ifequal 2, .Chikorita
+	ifequal 3, .Totodile
+	ifequal 4, .Croagunk
+	ifequal 5, .Electrike
+	ifequal 6, .Ralts
+	ifequal 7, .Duskull
+	ifequal 8, .Wynaut
+	ifequal 9, .Budew
+	ifequal 10, .Cacnea
+	ifequal 11, .Snorunt
+	ifequal 12, .Aron
+	ifequal 13, .Gible
+	ifequal 14, .Tyrogue
+	ifequal 15, .Corsola
+	ifequal 16, .Bonsly
+	ifequal 17, .MimeJr
+	ifequal 18, .Eevee
+	ifequal 19, .Bronzor
+
+.Skarmini:
+	farwritetext SkarminiOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Cyndaquil:
+	farwritetext CyndaquilOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Chikorita:
+	farwritetext ChikoritaOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Totodile:
+	farwritetext TotodileOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Croagunk:
+	farwritetext CroagunkOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Electrike:
+	farwritetext ElectrikeOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Ralts:
+	farwritetext RaltsOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Duskull:
+	farwritetext DuskullOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Wynaut:
+	farwritetext WynautOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Budew:
+	farwritetext BudewOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Cacnea:
+	farwritetext CacneaOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Snorunt:
+	farwritetext SnoruntOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Aron:
+	farwritetext AronOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Gible:
+	farwritetext GibleOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Tyrogue:
+	farwritetext TyrogueOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Corsola:
+	farwritetext CorsolaOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Bonsly:
+	farwritetext BonslyOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.MimeJr:
+	farwritetext MimeJrOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Eevee:
+	farwritetext EeveeOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.Bronzor:
+	farwritetext BronzorOakText
+	waitbutton
+	closetext
+	sjump .EndOakTalk
+
+.EndOakTalk:
+	special FadeOutMusic
+	pause 15
+	special RestartMapMusic
+	end
+
+.Thursday:
+	playmusic MUSIC_SHOW_ME_AROUND
+	opentext
+	farwritetext ComedyShowText
+	waitbutton
+	closetext
+	sjump .endchannel
+.Friday:
+	playmusic MUSIC_ELITE_FOUR
+	opentext
+	farwritetext ChampionBattleShowText
+	waitbutton
+	closetext
+	sjump .endchannel
+.Saturday:
+	playmusic MUSIC_UNWAVERING_HEART
+	opentext
+	checkflag ENGINE_DAILY_TELEVISION
+	iftrue .WatchNextWeek
+	farwritetext DramaticShowText
+	waitbutton
+	closetext
+.endchannel
+	special FadeOutMusic
+	pause 15
+	special RestartMapMusic
+	setflag ENGINE_DAILY_TELEVISION
+	end
+
+.WatchNextWeek:
+	farwritetext TuneInNextTimeText
+	waitbutton
+	closetext
+	special FadeOutMusic
+	pause 15
+	special RestartMapMusic
+	end
+
+SwarmScript:
+	playmusic MUSIC_POKEMON_MARCH
+	opentext
+	checkflag ENGINE_SWARM
+	iftrue .skiprandomswarm
+	checkflag ENGINE_FOGBADGE
+	iftrue .Badges2Swarm
+	checkflag ENGINE_MINERALBADGE
+	iftrue .Badges4Swarm
+	farwritetext WhatSwarmTodayText
+	waitbutton
+	random 5
+	ifequal 0, .noswarm
+	ifequal 1, .yanma
+	ifequal 2, .dunsparce
+	ifequal 3, .sneasel
+	ifequal 4, .scyther
+
+.Badges2Swarm:
+	farwritetext WhatSwarmTodayText
+	waitbutton
+	random 9
+	ifequal 0, .noswarm
+	ifequal 1, .yanma
+	ifequal 2, .dunsparce
+	ifequal 3, .qwilfish
+	ifequal 4, .eevee
+	ifequal 5, .kangaskhan
+	ifequal 6, .gible
+	ifequal 7, .sneasel
+	ifequal 8, .scyther
+
+.Badges4Swarm:
+	farwritetext WhatSwarmTodayText
+	waitbutton
+	random 11
+	ifequal 0, .noswarm
+	ifequal 1, .yanma
+	ifequal 2, .dunsparce
+	ifequal 3, .qwilfish
+	ifequal 4, .eevee
+	ifequal 5, .kangaskhan
+	ifequal 6, .gible
+	ifequal 7, .sneasel
+	ifequal 8, .magcargo
+	ifequal 9, .scyther
+	ifequal 10, .pinsir
+
+.noswarm
+	setflag ENGINE_SWARM
+	farwritetext NoSwarmTodayText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.yanma
+	setflag ENGINE_SWARM
+	swarm ROUTE_39
+	farwritetext YanmaSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.dunsparce
+	setflag ENGINE_SWARM
+	swarm DARK_CAVE_NEW_ENTRANCE
+	farwritetext DunsparceSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.qwilfish
+	setflag ENGINE_SWARM
+	setval FISHSWARM_QWILFISH
+	special ActivateFishingSwarm
+	farwritetext QwilfishSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.eevee
+	setflag ENGINE_SWARM
+	swarm WILD_AREA_2_3
+	farwritetext EeveeSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.kangaskhan
+	setflag ENGINE_SWARM
+	swarm WILD_AREA_CAVE
+	farwritetext KangaskhanSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.gible
+	setflag ENGINE_SWARM
+	swarm WILD_AREA_4
+	farwritetext GibleSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.sneasel
+	setflag ENGINE_SWARM
+	swarm ICE_PATH_B1F
+	farwritetext SneaselSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.magcargo
+	setflag ENGINE_SWARM
+	swarm BURNED_TOWER_2F
+	farwritetext MagcargoSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.scyther
+	setflag ENGINE_SWARM
+	swarm NATIONAL_PARK
+	farwritetext ScytherSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.pinsir
+	setflag ENGINE_SWARM
+	swarm ROUTE_38
+	farwritetext PinsirSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.skiprandomswarm
+	farwritetext ThatsAllFolksText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.endswarmchannel
+	special FadeOutMusic
+	pause 15
+	special RestartMapMusic
+	end

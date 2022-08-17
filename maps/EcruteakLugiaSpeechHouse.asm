@@ -22,7 +22,7 @@ EcruteakLugiaSpeechHouseDaughterScript:
 	jumptextfaceplayer EcruteakLugiaSpeechHouseDaughterText
 
 LugiaSpeechHouseRadio:
-	jumpstd radio2
+	jumpstd televisionscript
 
 EcruteakLugiaSpeechHouseGrampsText:
 	text "This happened when"

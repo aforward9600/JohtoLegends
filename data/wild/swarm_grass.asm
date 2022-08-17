@@ -219,35 +219,66 @@ SwarmGrassWildMons:
 	dbw 24, DUSKULL
 	dbw 24, MAGCARGO
 
-; Scyther swarm
+; Pinsir swarm
 	map_id NATIONAL_PARK
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 23, NIDORINO
 	dbw 23, NIDORINA
-	dbw 25, SCYTHER
-	dbw 25, SCYTHER
-	dbw 24, PINSIR
-	dbw 25, SCYTHER
+	dbw 25, PINSIR
+	dbw 25, PINSIR
 	dbw 24, SCYTHER
-	dbw 25, SCYTHER
+	dbw 25, PINSIR
+	dbw 24, PINSIR
+	dbw 25, PINSIR
 	; day
 	dbw 23, NIDORINO
 	dbw 23, NIDORINA
-	dbw 25, SCYTHER
-	dbw 25, SCYTHER
-	dbw 24, PINSIR
-	dbw 25, SCYTHER
+	dbw 25, PINSIR
+	dbw 25, PINSIR
 	dbw 24, SCYTHER
-	dbw 25, SCYTHER
+	dbw 25, PINSIR
+	dbw 24, PINSIR
+	dbw 25, PINSIR
 	; nite
 	dbw 23, NIDORINO
 	dbw 23, NIDORINA
-	dbw 25, SCYTHER
-	dbw 25, SCYTHER
-	dbw 24, PINSIR
-	dbw 25, SCYTHER
+	dbw 25, PINSIR
+	dbw 25, PINSIR
 	dbw 24, SCYTHER
-	dbw 25, SCYTHER
+	dbw 25, PINSIR
+	dbw 24, PINSIR
+	dbw 25, PINSIR
+
+;Scyther swarm
+	map_id ROUTE_38
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 16, MILTANK
+	dbw 16, TAUROS
+	dbw 16, BUTTERFREE
+	dbw 17, SCYTHER
+	dbw 17, MILTANK
+	dbw 17, SCYTHER
+	dbw 18, SCYTHER
+	dbw 18, SCYTHER
+	; day
+	dbw 16, MILTANK
+	dbw 16, TAUROS
+	dbw 16, BUTTERFREE
+	dbw 17, SCYTHER
+	dbw 17, MILTANK
+	dbw 17, SCYTHER
+	dbw 18, SCYTHER
+	dbw 18, SCYTHER
+	; nite
+	dbw 16, MILTANK
+	dbw 16, TAUROS
+	dbw 16, BEEDRILL
+	dbw 17, SCYTHER
+	dbw 17, MILTANK
+	dbw 17, SCYTHER
+	dbw 18, SCYTHER
+	dbw 18, SCYTHER
 
 	db -1 ; end

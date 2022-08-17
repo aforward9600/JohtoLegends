@@ -137,9 +137,8 @@ ENDM
 	map_attributes LakeOfRage, LAKE_OF_RAGE, $05, SOUTH
 	connection south, Route43, ROUTE_43, 5
 
-	map_attributes BlackthornCity, BLACKTHORN_CITY, $71, SOUTH | WEST
-	connection south, Route45, ROUTE_45, 0
-	connection west, Route44, ROUTE_44, 9
+	map_attributes BlackthornCity, BLACKTHORN_CITY, $71, SOUTH
+	connection south, Route45, ROUTE_45, 1
 
 	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $2c, EAST
 	connection east, Route28, ROUTE_28, 9
@@ -216,12 +215,11 @@ ENDM
 	connection north, LakeOfRage, LAKE_OF_RAGE, -5
 	connection south, MahoganyTown, MAHOGANY_TOWN, 0
 
-	map_attributes Route44, ROUTE_44, $71, WEST | EAST
+	map_attributes Route44, ROUTE_44, $71, WEST
 	connection west, MahoganyTown, MAHOGANY_TOWN, 0
-	connection east, BlackthornCity, BLACKTHORN_CITY, -9
 
 	map_attributes Route45, ROUTE_45, $71, NORTH | WEST
-	connection north, BlackthornCity, BLACKTHORN_CITY, 0
+	connection north, BlackthornCity, BLACKTHORN_CITY, -1
 	connection west, Route46, ROUTE_46, 36
 
 	map_attributes Route46, ROUTE_46, $05, SOUTH | EAST

@@ -57,3 +57,5 @@
 	enum gymstatue4
 	enum ninjahideoutclear
 	enum staticpokemonrefresh
+	enum televisionscript
+	enum swarmscript

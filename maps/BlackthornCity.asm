@@ -489,7 +489,7 @@ BlackthornCity_MapEvents:
 
 	db 10 ; warp events
 	warp_event 20, 11, BLACKTHORN_GYM_1F, 1
-	warp_event 15, 21, TIN_TOWER_ROOF, 1
+	warp_event 15, 21, BLACKTHORN_DRAGON_SPEECH_HOUSE, 1
 	warp_event 31, 23, RIVALS_HOUSE_1F, 1
 	warp_event 17, 29, BLACKTHORN_MART, 2
 	warp_event 23, 29, BLACKTHORN_POKECENTER_1F, 1

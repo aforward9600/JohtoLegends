@@ -11,6 +11,7 @@ WildArea4Youngster:
 	jumptextfaceplayer DontLikeSandText
 
 WildArea4CynthiaScript:
+	playmusic MUSIC_CYNTHIA_ENCOUNTER
 	faceplayer
 	opentext
 	writetext HaveThisGibleText
@@ -33,18 +34,33 @@ WildArea4CynthiaScript:
 	setevent EVENT_WILD_AREA_CYNTHIA
 	clearevent EVENT_RUINS_OF_ALPH_CYNTHIA
 	special FadeInQuickly
+	special FadeOutMusic
+	pause 5
+	special RestartMapMusic
+	waitsfx
+	playmapmusic
 	end
 
 .DidntTakeGible
 	writetext ComeBackAnyTimeText
 	waitbutton
 	closetext
+	special FadeOutMusic
+	pause 5
+	special RestartMapMusic
+	waitsfx
+	playmapmusic
 	end
 
 .partyfullGible
 	writetext CynthiaPartyIsFullText
 	waitbutton
 	closetext
+	special FadeOutMusic
+	pause 5
+	special RestartMapMusic
+	waitsfx
+	playmapmusic
 	end
 
 WildArea4Sign:

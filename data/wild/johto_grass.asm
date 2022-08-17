@@ -159,28 +159,28 @@ JohtoGrassWildMons:
 	dbw 23, NIDORINA
 	dbw 25, LEDIAN
 	dbw 25, BUTTERFREE
-	dbw 24, PINSIR
-	dbw 25, PINSIR
 	dbw 24, SCYTHER
 	dbw 25, SCYTHER
+	dbw 24, PINSIR
+	dbw 25, PINSIR
 	; day
 	dbw 23, NIDORINO
 	dbw 23, NIDORINA
 	dbw 25, LEDIAN
 	dbw 25, BUTTERFREE
-	dbw 24, PINSIR
-	dbw 25, PINSIR
 	dbw 24, SCYTHER
 	dbw 25, SCYTHER
+	dbw 24, PINSIR
+	dbw 25, PINSIR
 	; nite
 	dbw 23, NIDORINO
 	dbw 23, NIDORINA
 	dbw 25, ARIADOS
 	dbw 25, BEEDRILL
-	dbw 24, PINSIR
-	dbw 25, PINSIR
 	dbw 24, SCYTHER
 	dbw 25, SCYTHER
+	dbw 24, PINSIR
+	dbw 25, PINSIR
 
 	map_id RUINS_OF_ALPH_OUTSIDE
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
@@ -1388,29 +1388,29 @@ JohtoGrassWildMons:
 	dbw 16, MAGNEMITE
 	dbw 16, DROWZEE
 	dbw 16, BUTTERFREE
-	dbw 17, SCYTHER
 	dbw 17, TAUROS
 	dbw 17, TAUROS
+	dbw 17, MILTANK
 	dbw 18, MILTANK
-	dbw 18, MILTANK
+	dbw 18, SCYTHER
 	; day
 	dbw 16, MAGNEMITE
 	dbw 16, DROWZEE
 	dbw 16, BUTTERFREE
-	dbw 17, SCYTHER
 	dbw 17, TAUROS
 	dbw 17, TAUROS
+	dbw 17, MILTANK
 	dbw 18, MILTANK
-	dbw 18, MILTANK
+	dbw 18, SCYTHER
 	; nite
 	dbw 16, MAGNEMITE
 	dbw 16, DROWZEE
 	dbw 16, BEEDRILL
-	dbw 17, SCYTHER
 	dbw 17, MEOWTH
 	dbw 17, MEOWTH
+	dbw 17, MURKROW
 	dbw 18, MURKROW
-	dbw 18, MURKROW
+	dbw 18, SCYTHER
 
 	map_id ROUTE_39
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite

@@ -38,8 +38,8 @@ BillsHouseBookshelf1:
 BillsHouseBookshelf2:
 	jumpstd magazinebookshelf
 
-BillsHouseRadio:
-	jumpstd radio2
+GoldenrodBillsTelevision:
+	jumpstd televisionscript
 
 BillText:
 	text "Howdy! My name is"
@@ -118,7 +118,7 @@ BillsFamilysHouse_MapEvents:
 	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, BillsHouseBookshelf2
 	bg_event  1,  1, BGEVENT_READ, BillsHouseBookshelf1
-	bg_event  7,  1, BGEVENT_READ, BillsHouseRadio
+	bg_event  2,  1, BGEVENT_READ, GoldenrodBillsTelevision
 
 	db 3 ; object events
 	object_event  2,  3, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillScript, -1

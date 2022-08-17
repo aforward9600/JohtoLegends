@@ -451,6 +451,7 @@ INCLUDE "maps/Route23.asm"
 INCLUDE "maps/SilverCavePokecenter1F.asm"
 INCLUDE "maps/Route28SteelWingHouse.asm"
 INCLUDE "maps/Route12SuperRodHouse.asm"
+INCLUDE "maps/WildAreaOutside.asm"
 
 
 SECTION "Map Scripts 25", ROMX
@@ -470,7 +471,6 @@ INCLUDE "maps/EcruteakMoveTutorHouse.asm"
 INCLUDE "maps/Route10North.asm"
 INCLUDE "maps/Route40BattleTowerGate.asm"
 INCLUDE "maps/DarkCaveNewEntrance.asm"
-INCLUDE "maps/WildAreaOutside.asm"
 INCLUDE "maps/VictoryRoadGate.asm"
 INCLUDE "maps/Route2NuggetHouse.asm"
 INCLUDE "maps/ViridianPokecenter1F.asm"

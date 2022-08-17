@@ -23,7 +23,7 @@ SpawnPoints:
 	spawn CINNABAR_ISLAND,            11, 12
 	spawn ROUTE_23,                    9,  6
 
-	spawn BLACKTHORN_CITY,            21, 30
+	spawn BLACKTHORN_CITY,            23, 30
 	spawn MAHOGANY_TOWN,              15, 14
 	spawn LAKE_OF_RAGE,               21, 29
 	spawn ECRUTEAK_CITY,              23, 28
