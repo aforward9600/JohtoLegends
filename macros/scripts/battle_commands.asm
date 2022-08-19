@@ -191,7 +191,8 @@ ENDM
 	command knockoff
 	command roost
 	command acrobatics
-;	command uturn
+	command uturn
+	command uturnanim
 ;	command wakeupslap
 ;	command awakenopponent
 

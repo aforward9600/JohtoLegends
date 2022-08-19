@@ -145,7 +145,7 @@ CheckPlayerTurn:
 	res SUBSTATUS_RECHARGE, [hl]
 	ld hl, MustRechargeText
 	call StdBattleTextbox
-	farcall CantMove
+	call CantMove
 	jp EndTurn
 
 .no_recharge
@@ -169,7 +169,7 @@ CheckPlayerTurn:
 .woke_up
 	ld hl, WokeUpText
 	call StdBattleTextbox
-	farcall CantMove
+	call CantMove
 	call UpdateBattleMonInParty
 	ld hl, UpdatePlayerHUD
 	call CallBattleCore
@@ -188,7 +188,7 @@ CheckPlayerTurn:
 	ld hl, .sleep_bypass_moves
 	call CheckMoveInList
 	jr c, .not_asleep
-	farcall CantMove
+	call CantMove
 	jp EndTurn
 
 .sleep_bypass_moves
@@ -211,7 +211,7 @@ CheckPlayerTurn:
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 
-	farcall CantMove
+	call CantMove
 	jp EndTurn
 
 .thawing_moves
@@ -229,7 +229,7 @@ CheckPlayerTurn:
 	ld hl, FlinchedText
 	call StdBattleTextbox
 
-	farcall CantMove
+	call CantMove
 	jp EndTurn
 
 .not_flinched
@@ -284,7 +284,7 @@ CheckPlayerTurn:
 	ld [hl], a
 
 	call HitConfusion
-	farcall CantMove
+	call CantMove
 	jp EndTurn
 
 .not_confused
@@ -307,7 +307,7 @@ CheckPlayerTurn:
 
 	ld hl, InfatuationText
 	call StdBattleTextbox
-	farcall CantMove
+	call CantMove
 	jp EndTurn
 
 .not_infatuated
@@ -323,7 +323,7 @@ CheckPlayerTurn:
 	jr nz, .no_disabled_move
 
 	call MoveDisabled
-	farcall CantMove
+	call CantMove
 	jp EndTurn
 
 .no_disabled_move
@@ -339,7 +339,7 @@ CheckPlayerTurn:
 
 	ld hl, FullyParalyzedText
 	call StdBattleTextbox
-	farcall CantMove
+	call CantMove
 	jp EndTurn
 
 CantMove:
@@ -374,7 +374,7 @@ CantMove:
 
 OpponentCantMove:
 	call BattleCommand_SwitchTurn
-	farcall CantMove
+	call CantMove
 	jp BattleCommand_SwitchTurn
 
 CheckEnemyTurn:
@@ -385,7 +385,7 @@ CheckEnemyTurn:
 	res SUBSTATUS_RECHARGE, [hl]
 	ld hl, MustRechargeText
 	call StdBattleTextbox
-	farcall CantMove
+	call CantMove
 	jp EndTurn
 
 .no_recharge
@@ -411,7 +411,7 @@ CheckEnemyTurn:
 .woke_up
 	ld hl, WokeUpText
 	call StdBattleTextbox
-	farcall CantMove
+	call CantMove
 	call UpdateEnemyMonInParty
 	ld hl, UpdateEnemyHUD
 	call CallBattleCore
@@ -427,7 +427,7 @@ CheckEnemyTurn:
 	ld hl, .sleep_bypass_moves
 	call CheckMoveInList
 	jr c, .not_asleep
-	farcall CantMove
+	call CantMove
 	jp EndTurn
 
 .sleep_bypass_moves
@@ -449,7 +449,7 @@ CheckEnemyTurn:
 
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
-	farcall CantMove
+	call CantMove
 	jp EndTurn
 
 .thawing_moves
@@ -467,7 +467,7 @@ CheckEnemyTurn:
 	ld hl, FlinchedText
 	call StdBattleTextbox
 
-	farcall CantMove
+	call CantMove
 	jp EndTurn
 
 .not_flinched
@@ -544,7 +544,7 @@ CheckEnemyTurn:
 	ld c, TRUE
 	call DoEnemyDamage
 	call BattleCommand_RaiseSub
-	farcall CantMove
+	call CantMove
 	jp EndTurn
 
 .not_confused
@@ -567,7 +567,7 @@ CheckEnemyTurn:
 
 	ld hl, InfatuationText
 	call StdBattleTextbox
-	farcall CantMove
+	call CantMove
 	jp EndTurn
 
 .not_infatuated
@@ -584,7 +584,7 @@ CheckEnemyTurn:
 
 	call MoveDisabled
 
-	farcall CantMove
+	call CantMove
 	jp EndTurn
 
 .no_disabled_move
@@ -600,7 +600,7 @@ CheckEnemyTurn:
 
 	ld hl, FullyParalyzedText
 	call StdBattleTextbox
-	farcall CantMove
+	call CantMove
 
 	; fallthrough
 
@@ -6704,8 +6704,6 @@ INCLUDE "engine/battle/move_effects/pursuit.asm"
 
 INCLUDE "engine/battle/move_effects/rapid_spin.asm"
 
-INCLUDE "engine/battle/move_effects/brick_break.asm"
-
 BattleCommand_HealMorn:
 ; healmorn
 	ld b, MORN_F
@@ -7100,8 +7098,6 @@ SandstormSpDefBoost:
 	ret
 
 INCLUDE "engine/battle/move_effects/aqua_ring.asm"
-
-INCLUDE "engine/battle/move_effects/roost.asm"
 
 ApplyChoiceScarfOnSpeed:
 	Call GetOpponentItem

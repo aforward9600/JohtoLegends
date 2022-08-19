@@ -398,6 +398,7 @@ MoveDescriptions1:
 	dw KnockOffDescription
 	dw UTurnDescription
 	dw AcrobaticsDescription
+	dw UTurnDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:

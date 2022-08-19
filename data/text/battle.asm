@@ -1182,3 +1182,25 @@ BattleText_UserLostSomeOfItsHP:
 	line "lost some of its"
 	cont "HP!"
 	prompt
+
+TeleportOutText:
+	text "<USER>"
+	line "teleported away!"
+	prompt
+
+UTurnOutPlayerText:
+	text "<USER>"
+	line "returned to"
+	cont "<PLAYER>!"
+	prompt
+
+UTurnOutEnemyText:
+	text "<USER>"
+	line "returned to"
+	cont "<ENEMY>!"
+	prompt
+
+TeleportInText:
+	text "<USER>"
+	line "took its place!"
+	prompt

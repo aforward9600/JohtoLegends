@@ -378,6 +378,7 @@ AlphabeticalMoveList::
 	dw VICEGRIP
 	dw VINE_WHIP
 	dw VITAL_THROW
+	dw VOLT_SWITCH
 	dw VOLT_TACKLE
 	dw WATERFALL
 	dw WATER_GUN

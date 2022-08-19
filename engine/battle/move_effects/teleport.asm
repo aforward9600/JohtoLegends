@@ -90,3 +90,102 @@ BattleCommand_Teleport:
 
 	ld hl, FledFromBattleText
 	jp StdBattleTextbox
+
+.PlayerUTurn:
+	call LoadStandardMenuHeader
+
+	farcall SetUpBattlePartyMenu_NoLoop
+
+	farcall ForcePickSwitchMonInBattle
+
+	call ClearPalettes
+	farcall _LoadBattleFontsHPBar
+	call CloseWindow
+	call ClearSprites
+
+	ld b, SCGB_BATTLE_COLORS
+	call GetSGBLayout
+	call SetPalettes
+	call BatonPass_LinkPlayerSwitch
+
+	ld hl, SwitchPlayerMon
+	call CallBattleCore
+
+	ld hl, TeleportInText
+	call StdBattleTextbox
+
+	ld hl, SpikesDamage
+	jp CallBattleCore
+
+.enemyswitch:
+	call FindAliveEnemyMons
+	jp c, BattleEffect_ButItFailed
+	call UpdateEnemyMonInParty
+	ld a, $1
+	ld [wKickCounter], a
+	call AnimateCurrentMove
+	ld hl, TeleportOutText
+	call StdBattleTextbox
+
+.enemy_uturn:
+	hlcoord 1, 0
+	lb bc, 4, 10
+	call ClearBox
+	hlcoord 13, 0
+	lb bc, 7, 7
+	call ClearBox
+	ld c, 20
+	call DelayFrames
+	ld a, [wOTPartyCount]
+	ld b, a
+	ld a, [wCurOTMon]
+	ld c, a
+
+	ld a, BATTLE_VARS_SUBSTATUS4 ; remove Substitute when switched
+	call GetBattleVarAddr
+	res SUBSTATUS_SUBSTITUTE, [hl]
+	call BattleCommand_LowerSubNoAnim
+
+	ld a, [wLinkMode]
+	and a
+	jr z, .AI_trainer ; If not a link battle
+
+	call UpdateEnemyMonInParty
+	call BatonPass_LinkPlayerSwitch
+
+	xor a
+	ld [wEnemySwitchMonIndex], a
+	ld hl, EnemySwitch_SetMode
+	call CallBattleCore
+	jr .link_switch
+
+; select enemy mon to switch to
+.AI_trainer
+	xor a
+	ld [wEnemySwitchMonIndex], a
+	ld hl, EnemySwitch_SetMode
+	call CallBattleCore
+	ld hl, ResetBattleParticipants
+	call CallBattleCore
+
+	ld hl, TeleportInText
+	call StdBattleTextbox
+	jr .new_participants
+
+.link_switch
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	res SUBSTATUS_LEECH_SEED, [hl]
+
+.new_participants
+	ld hl, BreakAttraction
+	call CallBattleCore
+	ld hl, NewEnemyMonStatus
+	call CallBattleCore
+	ld hl, ResetEnemyStatLevels
+	call CallBattleCore
+	ld hl, ResetBattleParticipants
+	call CallBattleCore
+	
+	ld hl, SpikesDamage
+	jp CallBattleCore

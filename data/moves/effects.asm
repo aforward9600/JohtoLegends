@@ -2790,26 +2790,26 @@ Acrobatics:
 	buildopponentrage
 	endmove
 
-;UTurn:
-;    checkobedience
-;    usedmovetext
-;    doturn
-;    critical
-;    damagestats
-;    damagecalc
-;    stab
-;    damagevariation
-;    checkhit
-;    moveanim
-;    failuretext
-;    applydamage
-;    criticaltext
-;    supereffectivetext
-;    checkfaint
-;    buildopponentrage
-;    kingsrock
-;  	 uturn
-;    endmove
+UTurn:
+    checkobedience
+    usedmovetext
+    doturn
+    critical
+    damagestats
+    damagecalc
+    stab
+    damagevariation
+    checkhit
+    uturnanim
+    failuretext
+    applydamage
+    criticaltext
+    supereffectivetext
+  	uturn
+    checkfaint
+    buildopponentrage
+    kingsrock
+    endmove
 
 ;WakeUpSlap:
 ;	checkobedience
