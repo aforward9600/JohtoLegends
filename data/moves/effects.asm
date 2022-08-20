@@ -2811,6 +2811,26 @@ UTurn:
     kingsrock
     endmove
 
+Coil:
+	checkobedience
+	usedmovetext
+	doturn
+	lowersub
+	attackup
+	statupanim
+	statupmessage
+	statupfailtext
+	resetmiss
+	defenseup
+	statupmessage
+	statupfailtext
+	resetmiss
+	accuracyup
+	statupmessage
+	statupfailtext
+	raisesub
+	endmove
+
 ;WakeUpSlap:
 ;	checkobedience
 ;	usedmovetext

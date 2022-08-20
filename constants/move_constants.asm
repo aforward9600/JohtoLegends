@@ -400,6 +400,7 @@
 	const U_TURN
 	const ACROBATICS
 	const VOLT_SWITCH
+	const COIL
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 

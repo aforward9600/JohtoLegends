@@ -399,6 +399,7 @@ MoveDescriptions1:
 	dw UTurnDescription
 	dw AcrobaticsDescription
 	dw UTurnDescription
+	dw CoilDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1939,3 +1940,7 @@ UTurnDescription:
 AcrobaticsDescription:
 	db   "More power when"
 	line "user has no item.@"
+
+CoilDescription:
+	db   "Raises ATK, DEF"
+	line "and Accuracy.@"

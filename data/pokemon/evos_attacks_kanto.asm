@@ -542,7 +542,7 @@ EkansEvosAttacks:
 	dbw 36, PAYBACK
 	dbw 38, BELCH
 	dbw 41, HAZE
-	dbw 44, SHARPEN
+	dbw 44, COIL
 	dbw 49, GUNK_SHOT
 	db 0 ; no more level-up moves
 
@@ -563,7 +563,7 @@ ArbokEvosAttacks:
 	dbw 44, PAYBACK
 	dbw 48, BELCH
 	dbw 51, HAZE
-	dbw 56, SHARPEN
+	dbw 56, COIL
 	dbw 63, GUNK_SHOT
 	db 0 ; no more level-up moves
 

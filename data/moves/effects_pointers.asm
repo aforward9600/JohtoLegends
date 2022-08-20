@@ -187,4 +187,5 @@ MoveEffectsPointers:
 	dw Roost
 	dw Acrobatics
 	dw UTurn
+	dw Coil
 ;	dw WakeUpSlap

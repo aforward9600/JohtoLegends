@@ -949,6 +949,7 @@ FeraligatrEvosAttacks:
 SentretEvosAttacks:
 	dbbw EVOLVE_LEVEL, 15, FURRET
 	db 0 ; no more evolutions
+	dbw 1, COIL
 	dbw 1, SCRATCH
 	dbw 1, FORESIGHT
 	dbw 4, DEFENSE_CURL
@@ -1827,7 +1828,7 @@ DunsparceEvosAttacks:
 	dbw 23, DRILL_RUN
 	dbw 26, ROOST
 	dbw 28, DRAININGKISS
-	dbw 31, DRAGON_DANCE
+	dbw 31, COIL
 	dbw 33, DIG
 	dbw 36, GLARE
 	dbw 38, DOUBLE_EDGE

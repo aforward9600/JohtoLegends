@@ -51,6 +51,7 @@ AlphabeticalMoveList::
 	dw CIRCLE_THROW
 	dw CLAMP
 	dw CLOSE_COMBAT
+	dw COIL
 	dw COMET_PUNCH
 	dw CONFUSE_RAY
 	dw CONFUSION

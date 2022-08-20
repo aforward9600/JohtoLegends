@@ -393,4 +393,5 @@ MoveNames::
 	db "U-turn@"
 	db "Acrobatics@"
 	db "Volt Switch@"
+	db "Coil@"
 ;	db "Wake Up Slap@"

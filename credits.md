@@ -37,6 +37,8 @@ New Pokemon cries: chattycrystal team
 
 Calm Mind, Sucker Punch, Dragon Dance, Quiver Dance, Grass Knot, Aqua Ring, Sleep, Knock Off, Roost effect,: chattycrystal team
 
+U-turn effect and animation and Coil animation: TheSeaTree
+
 Sucker Punch, Work Up, Aqua Jet, Muddy Water, Rock Blast, Heat Wave, Brick Break, Hurricane, Leaf Blade, Lava Plume Animation: chattycrystal team
 
 Move Steel Slice: Mskd.

@@ -419,6 +419,7 @@ BattleAnimations::
 	dw BattleAnim_UTurn
 	dw BattleAnim_Acrobatics
 	dw BattleAnim_VoltSwitch
+	dw BattleAnim_Coil
 ;	dw BattleAnim_WakeUpSlap
 	dw BattleAnim_SweetScent2
 
@@ -3113,6 +3114,22 @@ BattleAnim_CosmicPower:
 	anim_obj ANIM_OBJ_GROWTH, 48, 108, $28
 	anim_obj ANIM_OBJ_GROWTH, 48, 108, $30
 	anim_obj ANIM_OBJ_GROWTH, 48, 108, $38
+	anim_wait 64
+	anim_ret
+
+BattleAnim_Coil:
+	anim_1gfx ANIM_GFX_ROPE
+	anim_sound 0, 1, SFX_BIND
+	anim_obj ANIM_OBJ_COIL, 48, 98, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_COIL, 48, 96, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_COIL, 48, 104, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_BIND
+	anim_incobj 1
+	anim_incobj 2
+	anim_incobj 3
 	anim_wait 64
 	anim_ret
 
