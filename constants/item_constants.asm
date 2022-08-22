@@ -302,8 +302,8 @@ ENDM
 	add_mt STEEL_SLICE
 	add_mt EXTREMESPEED
 	add_mt STRENGTH_SAP
-	add_mt GYRO_BALL
-	add_mt ICICLE_CRASH
+	add_mt U_TURN
+	add_mt VOLT_SWITCH
 	add_mt MOONBLAST
 	add_mt HYPNOSIS
 	add_mt GRASS_KNOT
