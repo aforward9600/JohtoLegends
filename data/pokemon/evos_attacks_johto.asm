@@ -892,11 +892,11 @@ TotodileEvosAttacks:
 	dbw 15, SCARY_FACE
 	dbw 20, ICE_FANG
 	dbw 22, FLAIL
-	dbw 27, CRUNCH
+	dbw 27, WATERFALL
 	dbw 29, HEADBUTT
 	dbw 34, SLASH
 	dbw 36, SCREECH
-	dbw 41, THRASH
+	dbw 41, CRUNCH
 	dbw 43, AQUA_TAIL
 	dbw 48, SUPERPOWER
 	dbw 50, HYDRO_PUMP
@@ -913,11 +913,11 @@ CroconawEvosAttacks:
 	dbw 15, SCARY_FACE
 	dbw 21, ICE_FANG
 	dbw 24, FLAIL
-	dbw 30, CRUNCH
+	dbw 30, WATERFALL
 	dbw 33, HEADBUTT
 	dbw 39, SLASH
 	dbw 42, SCREECH
-	dbw 48, THRASH
+	dbw 48, CRUNCH
 	dbw 51, AQUA_TAIL
 	dbw 57, SUPERPOWER
 	dbw 60, HYDRO_PUMP
@@ -935,11 +935,9 @@ FeraligatrEvosAttacks:
 	dbw 15, SCARY_FACE
 	dbw 21, ICE_FANG
 	dbw 24, FLAIL
-	dbw 32, CRUNCH
+	dbw 32, WATERFALL
 	dbw 37, HEADBUTT
-	dbw 45, SLASH
-	dbw 50, SCREECH
-	dbw 58, THRASH
+	dbw 45, CRUNCH
 	dbw 63, AQUA_TAIL
 	dbw 71, SUPERPOWER
 	dbw 76, HYDRO_PUMP

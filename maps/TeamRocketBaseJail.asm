@@ -40,15 +40,15 @@ TeamRocketBaseJailRivalScript:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	showemote EMOTE_SHOCK, TEAMROCKETBASEJAIL_RIVAL, 15
 	readvar VAR_FACING
-	ifequal UP, .MovePlayer1
-	ifequal DOWN, .MovePlayer2
+	ifequal UP, .MovePlayerJail1
+	ifequal DOWN, .MovePlayerJail2
 	ifequal LEFT, .DontMovePlayer
 
-.MovePlayer1:
+.MovePlayerJail1:
 	applymovement PLAYER, MovePlayerJail1
 	sjump .DontMovePlayer
 
-.MovePlayer2:
+.MovePlayerJail2:
 	applymovement PLAYER, MovePlayerJail2
 .DontMovePlayer:
 	turnobject PLAYER, UP

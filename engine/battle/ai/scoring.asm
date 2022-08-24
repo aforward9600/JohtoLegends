@@ -389,6 +389,9 @@ AI_Smart:
 	dbw EFFECT_HEX,              AI_Smart_Hex
 	dbw EFFECT_HAIL,             AI_Smart_Hail
 	dbw EFFECT_HURRICANE,        AI_Smart_Thunder
+	dbw EFFECT_ROOST,            AI_Smart_Roost
+	dbw EFFECT_FAKE_OUT,         AI_Smart_Fake_Out
+	dbw EFFECT_ACROBATICS,       AI_Smart_Acrobatics
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -926,6 +929,7 @@ AI_Smart_Heal:
 AI_Smart_MorningSun:
 AI_Smart_Synthesis:
 AI_Smart_Moonlight:
+AI_Smart_Roost:
 ; 90% chance to greatly encourage this move if enemy's HP is below 25%.
 ; Discourage this move if enemy's HP is higher than 50%.
 ; Do nothing otherwise.
@@ -3285,3 +3289,25 @@ AI_CheckMoveInList:
 	pop hl
 	ld de, 2
 	jp IsInHalfwordArray
+
+AI_Smart_Fake_Out:
+; Always encourage this move on our first turn.
+	ld a, [wEnemyTurnsTaken]
+	and a
+	ret nz
+
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	ret
+
+AI_Smart_Acrobatics:
+; Encourage move when opponent has no item.
+	ld a, [wEnemyMonItem]
+	and a
+	ret nz
+
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	ret

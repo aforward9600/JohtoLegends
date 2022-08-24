@@ -44,6 +44,9 @@ AI_Redundant:
 	dbw EFFECT_SWAGGER,      .Swagger
 	dbw EFFECT_FUTURE_SIGHT, .FutureSight
 	dbw EFFECT_HAIL,         .Hail
+	dbw EFFECT_AQUA_RING,    .AquaRing
+	dbw EFFECT_ROOST,        .Roost
+	dbw EFFECT_FAKE_OUT,     .FakeOut
 	db -1
 
 .LightScreen:
@@ -178,12 +181,23 @@ AI_Redundant:
 	jr z, .Redundant
 	jr .NotRedundant
 
+.AquaRing:
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_AQUA_RING, a
+	ret
+
 .Heal:
 .MorningSun:
 .Synthesis:
 .Moonlight:
+.Roost:
 	farcall AICheckEnemyMaxHP
 	jr nc, .NotRedundant
+
+.FakeOut:
+	ld a, [wPlayerTurnsTaken]
+	and a
+	ret
 
 .Teleport:
 .Redundant:

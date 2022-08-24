@@ -428,6 +428,7 @@ INCLUDE "maps/MastersHouse2F.asm"
 
 SECTION "Map Scripts 24", ROMX
 
+INCLUDE "maps/TeamRocketBaseJail.asm"
 INCLUDE "maps/Route33.asm"
 INCLUDE "maps/Route2.asm"
 INCLUDE "maps/Route1.asm"
@@ -491,7 +492,6 @@ INCLUDE "maps/GoldenrodFlowerShop.asm"
 INCLUDE "maps/GoldenrodBikeShop.asm"
 INCLUDE "maps/GoldenrodJail.asm"
 INCLUDE "maps/GoldenrodCity.asm"
-INCLUDE "maps/TeamRocketBaseJail.asm"
 INCLUDE "maps/FossilHouse.asm"
 INCLUDE "maps/PokemonMansion1F.asm"
 INCLUDE "maps/SilverCaveOutside.asm"
