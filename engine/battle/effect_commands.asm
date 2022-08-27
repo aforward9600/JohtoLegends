@@ -353,7 +353,7 @@ CantMove:
 	and $ff ^ (1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_CHARGED)
 	ld [hl], a
 
-	call ResetFuryCutterCount
+	farcall ResetFuryCutterCount
 
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
@@ -600,7 +600,7 @@ CheckEnemyTurn:
 
 	ld hl, FullyParalyzedText
 	call StdBattleTextbox
-	call CantMove
+	farcall CantMove
 
 	; fallthrough
 

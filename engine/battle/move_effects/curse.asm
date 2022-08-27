@@ -63,6 +63,9 @@ BattleCommand_Curse:
 	call CheckSubstituteOpp
 	jr nz, .failed
 
+	call BattleCommand_CheckHit.FlyDigMoves
+	jr nz, .failed
+
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_CURSE, [hl]
