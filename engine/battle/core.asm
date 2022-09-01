@@ -6160,20 +6160,12 @@ LoadEnemyMon:
 	jp .Happiness
 
 .InitDVs:
+	farcall GetTrainerDVs
+
 	ld a, [wBattleMode]
 	dec a
-	jr z, .WildDVs
+	jp nz, .UpdateDVs
 
-; TrainerDVs
-	ld a, [wCurPartyMon]
-	ld hl, wOTPartyMon1DVs
-	call GetPartyLocation
-	ld b, [hl]
-	inc hl
-	ld c, [hl]
-	jp .UpdateDVs
-
-.WildDVs:
 ; Wild DVs
 ; Here's where the fun starts
 
@@ -6382,14 +6374,14 @@ LoadEnemyMon:
 	ld de, wEnemyMonMaxHP
 	ld b, FALSE
 	ld hl, wEnemyMonDVs - (MON_DVS - MON_EVS + 1) ; wLinkBattleRNs + 7 ; ?
-	ld a, [wBattleMode]
-	cp TRAINER_BATTLE
-	jr nz, .no_evs
-	ld a, [wCurPartyMon]
-	ld hl, wOTPartyMon1EVs - 1
-	call GetPartyLocation
-	ld b, TRUE
-.no_evs
+;	ld a, [wBattleMode]
+;	cp TRAINER_BATTLE
+;	jr nz, .no_evs
+;	ld a, [wCurPartyMon]
+;	ld hl, wOTPartyMon1EVs - 1
+;	call GetPartyLocation
+;	ld b, TRUE
+;.no_evs
 	predef CalcMonStats
 
 ; If we're in a trainer battle,
@@ -8541,6 +8533,7 @@ ExitBattle:
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
 	xor a
+;	ld [wBattleTimeOfDay], a
 	ld [wLowHealthAlarm], a
 	ld [wBattleMode], a
 	ld [wBattleType], a
