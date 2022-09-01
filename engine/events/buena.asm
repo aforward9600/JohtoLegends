@@ -262,7 +262,7 @@ Buena_PrizeMenu:
 
 .MenuData:
 	db SCROLLINGMENU_DISPLAY_ARROWS ; flags
-	db 4, 14 ; rows, columns
+	db 4, 13 ; rows, columns
 	db SCROLLINGMENU_ITEMS_NORMAL ; item format
 	dba .indices
 	dba .prizeitem
@@ -291,6 +291,19 @@ endr
 	ret
 
 .prizepoints
+	ld a, [wMenuSelection]
+	call Buena_getprize
+	inc hl
+	inc hl
+	ld a, [hli]
+	ld c, "0"
+	add c
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld c, "0"
+	add c
+	ld [de], a
 	ret
 
 Buena_getprize:
@@ -298,6 +311,8 @@ Buena_getprize:
 	ld hl, BuenaPrizeItems
 	ld b, 0
 	ld c, a
+	add hl, bc
+	add hl, bc
 	add hl, bc
 	add hl, bc
 	ret

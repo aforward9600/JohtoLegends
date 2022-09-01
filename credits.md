@@ -29,6 +29,8 @@ Focus Sash, Power Band, SpecialSpecs, Wide Lens, Life Orb, Choice Band, Choice S
 
 New Swarming System: Dragon Arbock
 
+Cardboardbox: Battle Tower Prize List fix.
+
 Puddles: Rangi
 
 Snow graphics: Prism Team
