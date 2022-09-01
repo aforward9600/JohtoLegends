@@ -10,13 +10,30 @@ MahoganyGym_MapScripts:
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_GYM_GUIDE_STOPS_YOU
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .PryceMondayGym
 
 .DummyScene0:
 	end
 
 .DummyScene1:
 	end
+
+.PryceMondayGym:
+	checkevent EVENT_BEAT_PRYCE
+	iftrue .IsItMondayGym
+	appear MAHOGANYGYM_PRYCE
+	return
+
+.IsItMondayGym:
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .PryceDisappears
+	appear MAHOGANYGYM_PRYCE
+	return
+
+.PryceDisappears:
+	disappear MAHOGANYGYM_PRYCE
+	return
 
 MahoganyGymPryceScript:
 	faceplayer
@@ -615,7 +632,7 @@ MahoganyGym_MapEvents:
 	bg_event  6, 15, BGEVENT_READ, MahoganyGymStatue
 
 	db 5 ; object events
-	object_event  5,  3, SPRITE_PRYCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyGymPryceScript, -1
+	object_event  5,  3, SPRITE_PRYCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyGymPryceScript, EVENT_MAHOGANY_GYM_PRYCE
 	object_event  5,  9, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSkierBrandy, -1
 	object_event  9, 17, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSkierPam, -1
 	object_event  2,  4, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderSonny, -1

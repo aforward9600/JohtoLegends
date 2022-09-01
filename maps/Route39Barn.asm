@@ -1,11 +1,29 @@
 	object_const_def ; object_event constants
 	const ROUTE39BARN_MOOMOO
 	const ROUTE39BARN_SAILOR
+	const ROUTE39BARN_MILTON
 
 Route39Barn_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .MiltonSunday
+
+.MiltonSunday:
+	checkevent EVENT_CLEARED_RADIO_TOWER
+	iftrue .IsItSunday
+	disappear ROUTE39BARN_MILTON
+	return
+
+.IsItSunday:
+	readvar VAR_WEEKDAY
+	ifequal SUNDAY, .AppearMilton
+	disappear ROUTE39BARN_MILTON
+	return
+
+.AppearMilton:
+	appear ROUTE39BARN_MILTON
+	return
 
 MoomooScript:
 	refreshscreen
@@ -32,6 +50,9 @@ MoomooScript:
 
 Route39BarnSailorScript:
 	jumptextfaceplayer Route39BarnSailorText
+
+Route39BarnMiltonScript:
+	jumptextfaceplayer Route39BarnMiltonText
 
 HoldingSomethingText:
 	text "Miltank: Mooo!"
@@ -76,6 +97,46 @@ Route39BarnSailorText:
 	line "business!"
 	done
 
+Route39BarnMiltonText:
+	text "Howdy there!"
+
+	para "I come back every"
+	line "week to help out!"
+
+	para "Can't let my wife"
+	line "and mother do all"
+	cont "the work!"
+
+	para "My sister Martha"
+	line "always prefered"
+	cont "working in the"
+	cont "barn."
+
+	para "Mom and Dad never"
+	line "wanted her to be"
+	cont "in the barn."
+
+	para "Always wanted her"
+	line "to be lady-like."
+
+	para "I think she"
+	line "resented that a"
+	cont "little bit."
+
+	para "She chose to be"
+	line "a Trainer instead."
+
+	para "She's a real good"
+	line "one at that."
+
+	para "If ya meet her,"
+	line "don't tell her I"
+	cont "said that!"
+
+	para "She'd have my head"
+	line "fer that!"
+	done
+
 Route39Barn_MapEvents:
 	db 0, 0 ; filler
 
@@ -87,6 +148,7 @@ Route39Barn_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event  3,  3, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoomooScript, -1
 	object_event  6,  3, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnSailorScript, -1
+	object_event  2,  3, SPRITE_MILTON, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnMiltonScript, EVENT_ROUTE_39_BARN_MILTON

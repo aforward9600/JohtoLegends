@@ -655,6 +655,9 @@ InitializeEventsScript:
 	setevent EVENT_VICTORY_ROAD_GATE_RIVAL
 	setmapscene PLAYERS_HOUSE_1F, SCENE_GRANDMA_GIVES_YOU_WATCH
 	setevent EVENT_TEAM_ROCKET_BASE_B2F_LANCE
+	setevent EVENT_BELLCHIME_PATH_ENOKI_WALK
+	setevent EVENT_BELLCHIME_PATH_ENOKI_PANIC
+	setevent EVENT_ICE_PATH_1F_PRYCE
 	return
 
 AskNumber1MScript:
@@ -2325,7 +2328,7 @@ SwarmScript:
 
 .scyther
 	setflag ENGINE_SWARM
-	swarm NATIONAL_PARK
+	swarm ROUTE_38
 	farwritetext ScytherSwarmText
 	waitbutton
 	closetext
@@ -2333,7 +2336,7 @@ SwarmScript:
 
 .pinsir
 	setflag ENGINE_SWARM
-	swarm ROUTE_38
+	swarm NATIONAL_PARK
 	farwritetext PinsirSwarmText
 	waitbutton
 	closetext

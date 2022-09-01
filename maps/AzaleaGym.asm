@@ -10,7 +10,24 @@
 AzaleaGym_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .KurtSaturdayGym
+
+.KurtSaturdayGym:
+	checkevent EVENT_BEAT_KURT
+	iftrue .IsItSaturdayGym
+	appear AZALEAGYM_KURT
+	return
+
+.IsItSaturdayGym:
+	readvar VAR_WEEKDAY
+	ifequal SATURDAY, .KurtDisappears
+	appear AZALEAGYM_KURT
+	return
+
+.KurtDisappears:
+	disappear AZALEAGYM_KURT
+	return
 
 AzaleaGymKurtScript:
 	faceplayer
@@ -458,7 +475,7 @@ AzaleaGym_MapEvents:
 	bg_event  6, 13, BGEVENT_READ, AzaleaGymStatue
 
 	db 7 ; object events
-	object_event  5,  1, SPRITE_KURT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaGymKurtScript, -1
+	object_event  5,  1, SPRITE_KURT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaGymKurtScript, EVENT_AZALEA_GYM_KURT
 	object_event  5,  7, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherMarty, -1
 	object_event  8,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherNat, -1
 	object_event  5,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherPete, -1

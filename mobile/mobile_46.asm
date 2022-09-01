@@ -3941,16 +3941,19 @@ BattleTower_UbersCheck:
 	ld a, [wPartyCount]
 .loop
 	push af
-	ld a, [de]
-	push de
 	push bc
+	push de
 	push hl
+	ld a, [de]
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
 	ld hl, .ubers
 	ld de, 2
 	call IsInHalfwordArray
 	pop hl
-	pop bc
 	pop de
+	pop bc
 	jr nc, .next
 .uber
 	ld a, [hl]

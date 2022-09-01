@@ -1191,8 +1191,6 @@ BattleTowerMons3:
 	dt 27000 ; Exp
 	db 224, 224, 174, 174, 224, 224 ; EVs
 	db 0, 0, 0, 0 ; padding
-	db 224, 224, 224, 224, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
 	dn 14, 15, 13, 12 ; DVs
 	db 15, 10, 10, 35 ; PP
 	db 100 ; Happiness
@@ -1284,8 +1282,6 @@ BattleTowerMons3:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 224, 213, 188, 224, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	db 224, 224, 224, 224, 235, 235 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 15, 13, 14, 11 ; DVs
 	db 5, 25, 15, 15 ; PP

@@ -1,11 +1,29 @@
 	object_const_def ; object_event constants
 	const KURTSHOUSE_YOUNGSTER
 	const KURTSHOUSE_SLOWPOKE
+	const KURTSHOUSE_KURT
 
 KurtsHouse_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .KurtSaturday
+
+.KurtSaturday:
+	checkevent EVENT_BEAT_KURT
+	iftrue .IsItSaturday
+	disappear KURTSHOUSE_KURT
+	return
+
+.IsItSaturday:
+	readvar VAR_WEEKDAY
+	ifequal SATURDAY, .KurtAppears
+	disappear KURTSHOUSE_KURT
+	return
+
+.KurtAppears:
+	appear KURTSHOUSE_KURT
+	return
 
 KurtsHouseYoungster:
 	faceplayer
@@ -25,6 +43,15 @@ KurtsHouseSlowpoke:
 	writetext KurtsHouseSlowpokeText
 	waitbutton
 	closetext
+	end
+
+KurtsHouseKurtScript:
+	faceplayer
+	opentext
+	writetext KurtsHouseKurtText
+	waitbutton
+	closetext
+	turnobject KURTSHOUSE_KURT, UP
 	end
 
 KurtsHouseOakPhoto:
@@ -72,6 +99,32 @@ KurtsHouseCelebiStatueText:
 	cont "tector."
 	done
 
+KurtsHouseKurtText:
+	text "Hm?"
+
+	para "Oh, it's you…"
+
+	para "I'm just tinkering"
+	line "away on some"
+	cont "# Balls."
+
+	para "It doesn't make me"
+	line "any money, but"
+	cont "it's still fun."
+
+	para "…Sigh…"
+
+	para "I miss my old"
+	line "livelihood…"
+
+	para "Being a Leader's"
+	line "not bad, but it's"
+	cont "not as fun…"
+
+	para "My son makes good"
+	line "money, at least…"
+	done
+
 KurtsHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -90,6 +143,7 @@ KurtsHouse_MapEvents:
 	bg_event  3,  1, BGEVENT_READ, KurtsHouseBookshelf
 	bg_event  4,  1, BGEVENT_READ, KurtsHouseCelebiStatue
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event  5,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KurtsHouseYoungster, -1
 	object_event  6,  3, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KurtsHouseSlowpoke, -1
+	object_event 14,  3, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KurtsHouseKurtScript, EVENT_KURTS_HOUSE_KURT_1

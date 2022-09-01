@@ -30,6 +30,7 @@ OutdoorSprites:
 	dw SaffronGroupSprites
 	dw CherrygroveGroupSprites
 	dw Route47GroupSprites
+	dw BellchimePathSprites
 
 ; Route1 and ViridianCity are connected
 ; Route2, and PewterCity are connected
@@ -327,6 +328,23 @@ CableClubGroupSprites:
 Route47GroupSprites:
 ; Route47, Route48, WildAreaOutside, WildArea
 	db SPRITE_RIVAL
+	db SPRITE_GRAMPS
+	db SPRITE_YOUNGSTER
+	db SPRITE_LASS
+	db SPRITE_HIKER
+	db SPRITE_FISHER
+	db SPRITE_TWIN
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_CYNTHIA
+	; 9 of max 9 walking sprites
+	db SPRITE_ROCK
+	db SPRITE_POKE_BALL
+	db SPRITE_FRUIT_TREE
+	db 0 ; end
+
+BellchimePathSprites:
+; Route47, Route48, WildAreaOutside, WildArea
+	db SPRITE_ENOKI
 	db SPRITE_GRAMPS
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS

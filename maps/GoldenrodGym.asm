@@ -12,13 +12,30 @@ GoldenrodGym_MapScripts:
 	scene_script .DummyScene0 ; SCENE_GOLDENRODGYM_DEFAULT
 	scene_script .DummyScene1 ; SCENE_GOLDENRODGYM_FINISHED
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .MiltonSundayGym
 
 .DummyScene0:
 	end
 
 .DummyScene1:
 	end
+
+.MiltonSundayGym:
+	checkevent EVENT_CLEARED_RADIO_TOWER
+	iftrue .IsItSundayGym
+	appear GOLDENRODGYM_MILTON
+	return
+
+.IsItSundayGym:
+	readvar VAR_WEEKDAY
+	ifequal SUNDAY, .DisappearMilton
+	appear GOLDENRODGYM_MILTON
+	return
+
+.DisappearMilton:
+	disappear GOLDENRODGYM_MILTON
+	return
 
 GoldenrodGymMiltonScript:
 	faceplayer
@@ -594,7 +611,7 @@ GoldenrodGym_MapEvents:
 	bg_event  4, 15, BGEVENT_READ, GoldenrodGymStatue
 
 	db 7 ; object events
-	object_event 11,  3, SPRITE_MILTON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodGymMiltonScript, -1
+	object_event 11,  3, SPRITE_MILTON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodGymMiltonScript, EVENT_GOLDENROD_GYM_MILTON
 	object_event  9, 13, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBreederSarah, -1
 	object_event  9,  6, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBreederBridget, -1
 	object_event  5,  1, SPRITE_BREEDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBreederEmily, -1

@@ -103,13 +103,14 @@ RockItemEncounter:
 
 .RockItems:
 	db 1, MAX_REVIVE
-	db 2, THICK_CLUB
-	db 4, NUGGET
-	db 6, STAR_PIECE
-	db 12, BIG_PEARL
-	db 24, OLD_AMBER
-	db 24, HELIX_FOSSIL
-	db 24, DOME_FOSSIL
-	db 48, PEARL
-	db 64, REVIVE
+	db 5, NUGGET
+	db 6, HELIX_FOSSIL
+	db 6, DOME_FOSSIL
+	db 7, STAR_PIECE
+	db 8, EVERSTONE
+	db 8, OLD_AMBER
+	db 10, THICK_CLUB
+	db 10, STARDUST
+	db 10, METAL_POWDER
+	db 15, HARD_STONE
 	db -1

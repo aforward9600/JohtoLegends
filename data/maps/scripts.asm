@@ -375,8 +375,7 @@ INCLUDE "maps/Route35.asm"
 INCLUDE "maps/Route43.asm"
 INCLUDE "maps/Route44.asm"
 INCLUDE "maps/Route45.asm"
-INCLUDE "maps/Route19.asm"
-INCLUDE "maps/Route25.asm"
+INCLUDE "maps/MastersHouse1F.asm"
 
 
 SECTION "Map Scripts 21", ROMX
@@ -404,7 +403,6 @@ INCLUDE "maps/Route31.asm"
 INCLUDE "maps/Route39.asm"
 INCLUDE "maps/Route40.asm"
 INCLUDE "maps/Route41.asm"
-INCLUDE "maps/MastersHouse1F.asm"
 
 
 SECTION "Map Scripts 23", ROMX
@@ -505,3 +503,5 @@ INCLUDE "maps/BurnedTower2F.asm"
 INCLUDE "maps/Route2Gate.asm"
 INCLUDE "maps/Route47.asm"
 INCLUDE "maps/HoOhLugiaRoom.asm"
+INCLUDE "maps/Route19.asm"
+INCLUDE "maps/Route25.asm"

@@ -59,13 +59,41 @@ TryToLeaveHouseScript:
 	end
 
 MaastersHouseMasterScript:
+	readvar VAR_BADGES
+	ifequal 0, .MasterNoBadges
+	ifequal 1, .Master1Badge
+	ifequal 2, .Master2Badges
+	ifequal 3, .Master3Badges
+	ifequal 4, .Master4Badges
+	ifequal 5, .Master5Badges
+	ifequal 6, .Master6Badges
+
+.MasterNoBadges:
+	checkevent EVENT_MASTERS_RIVAL_DONE
+	iftrue .MasterGoodLuck
 	checkevent EVENT_BEAT_DRAGON_KID_CLAIR
 	iftrue .BeatDragonKid1
 	checkevent EVENT_BEAT_DRAGON_KID_LANCE
 	iftrue .BeatDragonKid2
-	checkevent EVENT_MASTERS_RIVAL_DONE
-	iftrue .MasterGoodLuck
 	jumptextfaceplayer MastersHouseMasterText
+
+.Master1Badge:
+	jumptextfaceplayer MasterPryceText
+
+.Master2Badges:
+	jumptextfaceplayer MasterEnokiText
+
+.Master3Badges:
+	jumptextfaceplayer MasterChigusaText
+
+.Master4Badges:
+	jumptextfaceplayer MasterByronText
+
+.Master5Badges:
+	jumptextfaceplayer MasterMiltonText
+
+.Master6Badges:
+	jumptextfaceplayer MasterKurtText
 
 .MasterGoodLuck:
 	jumptextfaceplayer MasterGoodLuckText
@@ -635,6 +663,155 @@ TalkToGranny:
 	cont "for you."
 	done
 
+MasterPryceText:
+	text "Ah, I see you have"
+	line "battled Pryce."
+
+	para "He can be quite"
+	line "the cold man."
+
+	para "He has a soft"
+	line "spot for children"
+	cont "and Ice-types."
+
+	para "You might find him"
+	line "in Ice Path on"
+	cont "Mondays."
+
+	para "He claims it's"
+	line "good for his body."
+
+	para "I'll have to take"
+	line "his word for it."
+
+	para "I don't care for"
+	line "the cold."
+	done
+
+MasterEnokiText:
+	text "Ah, I see you have"
+	line "battled Enoki."
+
+	para "He's an old friend"
+	line "of mine."
+
+	para "He always had a"
+	line "knack for the"
+	cont "ethereal."
+	
+	para "He would always"
+	line "act like there"
+	cont "were ghosts"
+	cont "around."
+
+	para "I used to think"
+	line "he was just"
+	cont "joking."
+
+	para "Maybe he was,"
+	line "maybe he wasn't."
+
+	para "On Thursdays, he"
+	line "can be found on"
+	cont "Bellchime Path."
+	done
+
+MasterChigusaText:
+	text "Ah, I see you have"
+	line "battled Chigusa."
+
+	para "She happens to be"
+	line "the youngest Gym"
+	cont "Leader in Johto."
+
+	para "She's the only"
+	line "woman Leader as"
+	cont "well."
+
+	para "I commend her."
+
+	para "Some older folks"
+	line "may not like it,"
+
+	para "but I think it's"
+	line "great."
+
+	para "The old ways"
+	line "aren't always the"
+	cont "best."
+
+	para "On Tuesdays, you"
+	line "can find her in"
+	cont "the cave in the"
+	cont "Wild Area."
+	done
+
+MasterByronText:
+	text "Ah, I see you have"
+	line "battled Byron."
+
+	para "He's a native of"
+	line "Canalave City in"
+	cont "Sinnoh."
+
+	para "He filled a"
+	line "vacancy that"
+	cont "few could fill."
+
+	para "Perhaps someday"
+	line "he will find a"
+	cont "successor to"
+	cont "replace him."
+
+	para "On Wednesday, you"
+	line "can find him at"
+	cont "the Lighthouse."
+	done
+
+MasterMiltonText:
+	text "Ah, I see you have"
+	line "battled Milton."
+
+	para "His wrangling"
+	line "skills were second"
+	cont "to none."
+
+	para "His battling"
+	line "skills aren't half"
+	cont "bad either."
+
+	para "He's fell on hard"
+	line "times lately."
+
+	para "The embargo has"
+	line "been a problem."
+
+	para "On Sundays, you"
+	line "can find him back"
+	cont "on his farm."
+	done
+
+MasterKurtText:
+	text "Ah, I see you have"
+	line "battled Kurt."
+
+	para "His ability to"
+	line "make balls was"
+	cont "truly incredible."
+
+	para "It's a shame that"
+	line "Silph has put him"
+	cont "out of business."
+
+	para "His son still"
+	line "sells his old"
+	cont "work in Ecruteak."
+
+	para "On Saturdays, you"
+	line "can find him at"
+	cont "his house."
+	done
+
 MastersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -653,7 +830,7 @@ MastersHouse1F_MapEvents:
 	db 0 ; bg events
 
 	db 4 ; object events
-	object_event  4,  2, SPRITE_MASTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MaastersHouseMasterScript, -1
+	object_event  4,  2, SPRITE_MASTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MaastersHouseMasterScript, EVENT_MASTERS_HOUSE_MASTER
 	object_event  5,  7, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MastersHouseRivalScript, EVENT_RIVAL_AT_MASTERS_HOUSE_1
 	object_event  4,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DratiniPokeballScript, EVENT_DRATINI_POKEBALL_AT_MASTERS
 	object_event  5,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LarvitarPokeballScript, EVENT_LARVITAR_POKEBALL_AT_MASTERS

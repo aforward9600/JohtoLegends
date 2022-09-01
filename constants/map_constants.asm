@@ -162,7 +162,6 @@ ENDM
 	map_const ECRUTEAK_GYM,                                 5,  9 ;  7
 	map_const ECRUTEAK_ITEMFINDER_HOUSE,                    4,  4 ;  8
 	map_const ECRUTEAK_CITY,                               20, 18 ;  9
-	map_const BELLCHIME_PATH,                              14,  7 ; 10
 	map_const ECRUTEAK_MOVE_TUTOR_HOUSE,                    4,  4 ; 11
 
 	newgroup                                                      ;  5
@@ -507,3 +506,7 @@ ENDM
 	map_const WILD_AREA_CAVE,                               7,  7 ; 9
 	map_const WILD_AREA_4,                                  7,  7 ; 10
 	map_const WILD_AREA_5,                                  7,  7 ; 11
+
+	newgroup
+
+	map_const BELLCHIME_PATH,                              14,  7 ; 10

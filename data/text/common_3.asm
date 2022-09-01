@@ -2066,8 +2066,9 @@ SkarminiOakText::
 	line "and continues to"
 	cont "improve its wings"
 
-	para "by brushing them up"
-	line "against bramble."
+	para "by brushing them"
+	line "up against"
+	cont "bramble."
 
 	para "The existence of"
 	line "this #mon was"

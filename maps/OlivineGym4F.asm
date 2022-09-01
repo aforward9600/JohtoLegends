@@ -1,17 +1,35 @@
 	object_const_def ; object_event constants
+	const OLIVINEGYM4F_BYRON
 
 OlivineGym4F_MapScripts:
 	db 2 ; scene_scripts
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .WednesdayByron
 
 .DummyScene0:
 	end
 
 .DummyScene1:
 	end
+
+.WednesdayByron:
+	checkevent EVENT_BEAT_BYRON
+	iftrue .IsItWednesday
+	appear OLIVINEGYM4F_BYRON
+	return
+
+.IsItWednesday:
+	readvar VAR_WEEKDAY
+	ifequal WEDNESDAY, .DisappearByron
+	appear OLIVINEGYM4F_BYRON
+	return
+
+.DisappearByron:
+	disappear OLIVINEGYM4F_BYRON
+	return
 
 OlivineGym1FByronScript:
 	faceplayer
@@ -80,7 +98,7 @@ OlivineGym1FByronScript:
 	writetext ByronRematchText
 	waitbutton
 	closetext
-	winlosstext Byron1F_Beaten, Byron1F_SteelyDetermination
+	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
 	loadtrainer BYRON, BYRON1
 	startbattle
 	reloadmapafterbattle
@@ -90,7 +108,7 @@ OlivineGym1FByronScript:
 	writetext ByronRematchText
 	waitbutton
 	closetext
-	winlosstext Byron1F_Beaten, Byron1F_SteelyDetermination
+	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
 	loadtrainer BYRON, BYRON2
 	startbattle
 	reloadmapafterbattle
@@ -100,7 +118,7 @@ OlivineGym1FByronScript:
 	writetext ByronRematchText
 	waitbutton
 	closetext
-	winlosstext Byron1F_Beaten, Byron1F_SteelyDetermination
+	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
 	loadtrainer BYRON, BYRON3
 	startbattle
 	reloadmapafterbattle
@@ -110,7 +128,7 @@ OlivineGym1FByronScript:
 	writetext ByronRematchText
 	waitbutton
 	closetext
-	winlosstext Byron1F_Beaten, Byron1F_SteelyDetermination
+	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
 	loadtrainer BYRON, BYRON4
 	startbattle
 	reloadmapafterbattle
@@ -120,7 +138,7 @@ OlivineGym1FByronScript:
 	writetext ByronRematchText
 	waitbutton
 	closetext
-	winlosstext Byron1F_Beaten, Byron1F_SteelyDetermination
+	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
 	loadtrainer BYRON, BYRON5
 	startbattle
 	reloadmapafterbattle

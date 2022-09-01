@@ -254,7 +254,7 @@ SwarmGrassWildMons:
 	map_id ROUTE_38
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 16, MILTANK
+	dbw 16, SCYTHER
 	dbw 16, TAUROS
 	dbw 16, BUTTERFREE
 	dbw 17, SCYTHER
@@ -263,7 +263,7 @@ SwarmGrassWildMons:
 	dbw 18, SCYTHER
 	dbw 18, SCYTHER
 	; day
-	dbw 16, MILTANK
+	dbw 16, SCYTHER
 	dbw 16, TAUROS
 	dbw 16, BUTTERFREE
 	dbw 17, SCYTHER
@@ -272,7 +272,7 @@ SwarmGrassWildMons:
 	dbw 18, SCYTHER
 	dbw 18, SCYTHER
 	; nite
-	dbw 16, MILTANK
+	dbw 16, SCYTHER
 	dbw 16, TAUROS
 	dbw 16, BEEDRILL
 	dbw 17, SCYTHER

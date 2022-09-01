@@ -1,13 +1,34 @@
 	object_const_def ; object_event constants
 	const WILDAREACAVE_HIKER
+	const WILDAREACAVE_CHIGUSA
 
 WildAreaCave_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .ChigusaTuesday
+
+.ChigusaTuesday:
+	checkevent EVENT_WILD_AREA_RIVAL_BEAT
+	iftrue .IsItTuesday
+	disappear WILDAREACAVE_CHIGUSA
+	return
+
+.IsItTuesday:
+	readvar VAR_WEEKDAY
+	ifequal TUESDAY, .ChigusaAppear
+	disappear WILDAREACAVE_CHIGUSA
+	return
+
+.ChigusaAppear:
+	appear WILDAREACAVE_CHIGUSA
+	return
 
 WildAreaCaveHiker:
 	jumptextfaceplayer WildAreaCaveHikerText
+
+WildAreaCaveChigusaScript:
+	jumptextfaceplayer WildAreaCaveChigusaText
 
 WildAreaCaveSign:
 	jumptext WildAreaCaveSignText
@@ -25,6 +46,21 @@ WildAreaCaveHikerText:
 	line "hike over to"
 	cont "Dark Cave and find"
 	cont "one…"
+	done
+
+WildAreaCaveChigusaText:
+	text "I like to train my"
+	line "body and #mon"
+	cont "here in the caves."
+
+	para "Chuck prefers to"
+	line "to train in the"
+	cont "Gym instead."
+
+	para "The waterfalls"
+	line "around here are"
+	cont "quite elegant,"
+	cont "don't you think?"
 	done
 
 WildAreaCaveSignText:
@@ -48,5 +84,6 @@ WildAreaCave_MapEvents:
 	db 1 ; bg events
 	bg_event 3, 2, BGEVENT_READ, WildAreaCaveSign
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event  9,  5, SPRITE_HIKER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildAreaCaveHiker, -1
+	object_event 10, 10, SPRITE_CHIGUSA, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildAreaCaveChigusaScript, EVENT_WILD_AREA_CAVE_CHIGUSA

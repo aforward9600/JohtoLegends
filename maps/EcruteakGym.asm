@@ -14,7 +14,8 @@ EcruteakGym_MapScripts:
 	scene_script .ForcedToLeave ; SCENE_DEFAULT
 	scene_script .DummyScene ; SCENE_FINISHED
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .EnokiThursdayGym
 
 .ForcedToLeave:
 	prioritysjump EcruteakGymClosed
@@ -22,6 +23,28 @@ EcruteakGym_MapScripts:
 
 .DummyScene:
 	end
+
+.EnokiThursdayGym:
+	checkevent EVENT_ECRUTEAK_GYM_ENOKI
+	iffalse .IsHideoutCleared
+	disappear ECRUTEAKGYM_ENOKI
+	return
+
+.IsHideoutCleared:
+	checkevent EVENT_CLEARED_RADIO_TOWER
+	iftrue .IsItThursdayGym
+	appear ECRUTEAKGYM_ENOKI
+	return
+
+.IsItThursdayGym:
+	 readvar VAR_WEEKDAY
+	 ifequal THURSDAY, .EnokiDisappears
+	 appear ECRUTEAKGYM_ENOKI
+	 return
+
+.EnokiDisappears:
+	disappear ECRUTEAKGYM_ENOKI
+	return
 
 EcruteakGymEnokiScript:
 	faceplayer

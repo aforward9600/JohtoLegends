@@ -6,11 +6,29 @@
 	const ICEPATH1F_TWIN
 	const ICEPATH1F_LASS
 	const ICEPATH1F_SMOOCHUM
+	const ICEPATH1F_PRYCE
 
 IcePath1F_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .PryceMonday
+
+.PryceMonday:
+	checkevent EVENT_BEAT_PRYCE
+	iftrue .IsItMonday
+	disappear ICEPATH1F_PRYCE
+	return
+
+.IsItMonday:
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .PryceAppears
+	disappear ICEPATH1F_PRYCE
+	return
+
+.PryceAppears:
+	appear ICEPATH1F_PRYCE
+	return
 
 IcePath1FTMHail:
 	itemball TM_HAIL
@@ -59,6 +77,9 @@ IcePath1FSmoochumScript:
 	waitbutton
 	closetext
 	end
+
+IcePath1FPryceScript:
+	jumptextfaceplayer IcePath1FPryceText
 
 IcePath1FBrotherText1:
 	text "My sister was"
@@ -140,6 +161,20 @@ IcePath1FSmoochumText:
 	line "mooo!"
 	done
 
+IcePath1FPryceText:
+	text "This cold is"
+	line "certainly not good"
+	cont "good for my back,"
+
+	para "but it helps"
+	line "improve the power"
+	cont "of my #mon!"
+
+	para "You should just"
+	line "try standing here"
+	cont "sometime!"
+	done
+
 IcePath1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -153,7 +188,7 @@ IcePath1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 7 ; object events
+	db 8 ; object events
 	object_event 31,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FTMHail, EVENT_GOT_TM07_HAIL
 	object_event 32, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FPotion, EVENT_ICE_PATH_1F_PP_UP
 	object_event 33,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FPokeBall, EVENT_ICE_PATH_1F_POKE_BALL
@@ -161,3 +196,4 @@ IcePath1F_MapEvents:
 	object_event 21,  2, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePath1FSisterScript, -1
 	object_event 11, 15, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerHaylee, -1
 	object_event 20,  2, SPRITE_SMOOCHUM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, IcePath1FSmoochumScript, -1
+	object_event 28,  3, SPRITE_PRYCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePath1FPryceScript, EVENT_ICE_PATH_1F_PRYCE
