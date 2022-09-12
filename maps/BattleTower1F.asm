@@ -52,9 +52,6 @@ BattleTower1FRulesSign:
 	closetext
 	end
 
-BattleTower1FPrizeSign:
-	jumptext BattleTower1FPrizeSignText
-
 BattleTower1FReceptionistScript:
 	checkevent EVENT_MET_BUENA
 	iffalse .GiveBattleCard
@@ -884,15 +881,6 @@ ThatIsABattleCardText:
 BattleTower1FPrizeReceptionistText:
 	text "Welcome to the"
 	line "Prize Counter!"
-
-	para "What prizes do you"
-	line "want?"
-
-	para "You can see the"
-	line "point requirement"
-
-	para "on the screen next"
-	line "to me."
 	done
 
 BattleTower1FPrizeReceptionistNoCardText:
@@ -937,25 +925,6 @@ ComeBackWithLessPointsText:
 	cont "less points."
 	done
 
-BattleTower1FPrizeSignText:
-	text "Battle Tower"
-	line "Prize List:"
-
-	para "Rare Candy      20"
-	line "Focus Sash      20"
-
-	para "Power Band      20"
-	line "SpecialSpecs    20"
-
-	para "Wide Lens       20"
-	line "Choice Band     25"
-
-	para "Choice Specs    25"
-	line "Choice Scarf    25"
-
-	para "Life Orb        30"
-	done
-
 BattleTower1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -966,9 +935,8 @@ BattleTower1F_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 1 ; bg events
 	bg_event  6,  6, BGEVENT_READ, BattleTower1FRulesSign
-	bg_event  8,  6, BGEVENT_READ, BattleTower1FPrizeSign
 
 	db 6 ; object events
 	object_event  7,  6, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTower1FReceptionistScript, -1
