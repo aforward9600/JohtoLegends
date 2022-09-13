@@ -456,6 +456,26 @@ ChampionBattleShowText::
 
 	para "Gengar goes down!"
 
-	para "There's goes the"
+	para "There goes the"
 	line "battle!"
+	done
+
+_ObtainedTwoFruitText::
+	text "There are two"
+	line "berries!"
+	done
+
+_ObtainedThreeFruitText::
+	text "There are three"
+	line "berries!"
+	done
+
+_ObtainedFourFruitText::
+	text "There are four"
+	line "berries!"
+	done
+
+_ObtainedFiveFruitText::
+	text "There are five"
+	line "berries!"
 	done

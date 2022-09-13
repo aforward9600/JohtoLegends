@@ -4,10 +4,11 @@ _FruitBearingTreeText::
 	done
 
 _HeyItsFruitText::
-	text "Hey! It's"
+	text "Hey! Found a"
 	line "@"
 	text_ram wStringBuffer3
-	text "!"
+	text ""
+	para "tree!"
 	done
 
 _ObtainedFruitText::

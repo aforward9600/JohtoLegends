@@ -1,3 +1,7 @@
+FRUIT_TREE_3_MIN EQU 3
+FRUIT_TREE_4     EQU 4
+FRUIT_TREE_5_MAX EQU 5
+
 FruitTreeScript::
 	callasm GetCurTreeFruit
 	opentext
@@ -13,12 +17,49 @@ FruitTreeScript::
 	sjump .end
 
 .fruit
-	writetext HeyItsFruitText
+	farwritetext _HeyItsFruitText
+	callasm GetFruitTreeCount
+	ifequal FRUIT_TREE_3_MIN, .try_three
+	ifequal FRUIT_TREE_4, .try_four
+	; only possible value left it could be is FRUITE_TREE_5_MAX
+	readmem wCurFruit
+	giveitem ITEM_FROM_MEM, $5
+	iffalse .try_four
+	buttonsound
+	writetext ObtainedFiveFruitText
+	sjump .continue
+.try_four
+	readmem wCurFruit
+	giveitem ITEM_FROM_MEM, $4
+	iffalse .try_three
+	buttonsound
+	writetext ObtainedFourFruitText
+	sjump .continue
+.try_three
+	readmem wCurFruit
+	giveitem ITEM_FROM_MEM, $3
+	iffalse .try_two
+	buttonsound
+	writetext ObtainedThreeFruitText
+	sjump .continue
+.try_two
+	readmem wCurFruit
+	giveitem ITEM_FROM_MEM, $2
+	iffalse .try_one
+	buttonsound
+	writetext FruitPackIsFullText
+	buttonsound
+	writetext ObtainedTwoFruitText
+	sjump .continue
+.try_one
 	readmem wCurFruit
 	giveitem ITEM_FROM_MEM
 	iffalse .packisfull
 	buttonsound
+	writetext FruitPackIsFullText
+	buttonsound
 	writetext ObtainedFruitText
+.continue
 	callasm PickedFruitTree
 	specialsound
 	itemnotify
@@ -32,6 +73,13 @@ FruitTreeScript::
 .end
 	closetext
 	end
+
+GetFruitTreeCount:
+	ld a, 3
+	call RandomRange
+	add 3
+	ld [wScriptVar], a
+	ret
 
 GetCurTreeFruit:
 	ld a, [wCurFruitTree]
@@ -106,6 +154,22 @@ HeyItsFruitText:
 
 ObtainedFruitText:
 	text_far _ObtainedFruitText
+	text_end
+
+ObtainedTwoFruitText:
+	text_far _ObtainedTwoFruitText
+	text_end
+
+ObtainedThreeFruitText:
+	text_far _ObtainedThreeFruitText
+	text_end
+
+ObtainedFourFruitText:
+	text_far _ObtainedFourFruitText
+	text_end
+
+ObtainedFiveFruitText:
+	text_far _ObtainedFiveFruitText
 	text_end
 
 FruitPackIsFullText:
