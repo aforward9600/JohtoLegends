@@ -10,15 +10,6 @@
 ;    * for TRAINERTYPE_EVS:        db 0, 0, 0, 0, 0, 0
 ; - db -1 ; end
 
-specialtrainer: MACRO
-	if _NARG > 1
-		db TRAINERTYPE_SPECIAL | (\2)
-	else
-		db TRAINERTYPE_SPECIAL | BANK(\1)
-	endc
-	dw \1
-ENDM
-
 SECTION "Enemy Trainer Parties 1", ROMX
 
 WalkerGroup:
@@ -5587,7 +5578,7 @@ PokefanFGroup:
 	db -1 ; end
 
 	next_list_item ; POKEFANF (2)
-	db "Ethel@", TRAINERTYPE_ITEM | TRAINERTYPE_MOVES | TRAINERTYPE_DVS
+	db "Ethel@", TRAINERTYPE_ITEM_MOVES
 
 	db 15
 	dw TOGEPI
