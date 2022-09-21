@@ -28,7 +28,60 @@ KurtsHouse_MapScripts:
 KurtsHouseYoungster:
 	faceplayer
 	opentext
-	writetext KurtsHouseYoungsterText
+	writetext KurtsHouseAskTeachAMoveText
+	yesorno
+	iffalse .Refused
+	writetext KurtsHouseWhichMoveShouldITeachText
+	loadmenu .MoveMenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .UTurn
+	ifequal 2, .VoltSwitch
+	sjump .Incompatible
+
+.UTurn:
+	loadmoveindex U_TURN
+	writetext TeachSwitchMoveText2
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+
+.VoltSwitch:
+	loadmoveindex VOLT_SWITCH
+	writetext TeachSwitchMoveText2
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+
+.MoveMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 15, TEXTBOX_Y - 0
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "U Turn@"
+	db "Volt Switch@"
+	db "Cancel@"
+
+.Refused:
+	writetext YoullBeBackText
+	waitbutton
+	closetext
+	end
+
+.TeachMove:
+	writetext KurtsHouseNiceMoveText
+	buttonsound
+	writetext KurtsHouseGoodLuckText
+	waitbutton
+	closetext
+	end
+
+.Incompatible:
+	writetext KurtsHouseHowUnfortunateText
 	waitbutton
 	closetext
 	end
@@ -66,13 +119,48 @@ KurtsHouseBookshelf:
 KurtsHouseRadio:
 	jumpstd radio2
 
-KurtsHouseYoungsterText:
-	text "I'm just here"
-	line "to watch Kurt's"
-	cont "Slowpoke."
+KurtsHouseAskTeachAMoveText:
+	text "I'm just here to"
+	line "watch Kurt's"
+	cont "house."
 
-	para "Apparently his son"
-	line "has one as well."
+	para "While we're here,"
+	line "would you like me"
+	cont "to teach your"
+
+	para "#mon a neat"
+	line "switching move?"
+	done
+
+KurtsHouseWhichMoveShouldITeachText:
+	text "Which move should"
+	line "I teach?"
+	done
+
+KurtsHouseNiceMoveText:
+	text "It's a nice move,"
+	line "huh?"
+	done
+
+TeachSwitchMoveText2:
+	text "Shall I teach"
+	line "this move?"
+	done
+
+KurtsHouseGoodLuckText:
+	text "Good luck on your"
+	line "journey."
+	done
+
+YoullBeBackText:
+	text "You'll be back."
+
+	para "Someday you'll"
+	line "make a U Turn."
+	done
+
+KurtsHouseHowUnfortunateText:
+	text "Aw, fine."
 	done
 
 KurtsHouseSlowpokeText:

@@ -3,6 +3,7 @@
 	const WHIRLISLANDB2F_POKE_BALL2
 	const WHIRLISLANDB2F_POKE_BALL3
 	const WHIRLISLANDB2F_SAGE
+	const WHIRLISLANDB2F_SAGE2
 
 WhirlIslandB2F_MapScripts:
 	db 0 ; scene scripts
@@ -22,7 +23,12 @@ WhirlIslandSageScript:
 	jumptextfaceplayer WhirlIslandSageText
 
 WhirlIslandSage2Script:
+	checkevent EVENT_CLEARED_TIN_TOWER
+	iftrue .ICouldntDoAnything
 	jumptextfaceplayer WhirlIslandSage2Text
+
+.ICouldntDoAnything:
+	jumptextfaceplayer ICouldntDoAnythingText
 
 WhirlIslandSageText:
 	text "I'm sorry, but you"
@@ -33,6 +39,14 @@ WhirlIslandSageText:
 WhirlIslandSage2Text:
 	text "Welcome, young"
 	line "trainer."
+	done
+
+ICouldntDoAnythingText:
+	text "I'm sorry…"
+
+	para "I couldn't do"
+	line "anything to stop"
+	cont "them…"
 	done
 
 WhirlIslandB2F_MapEvents:

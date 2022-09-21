@@ -149,6 +149,7 @@ SherlesTriesToArrestKoga:
 	setevent EVENT_CLEARED_RADIO_TOWER
 	setevent EVENT_WHIRL_ISLAND_SAGE_2
 	setevent EVENT_GOLDENROD_TOWER_SHERLES
+	setevent EVENT_BELLCHIME_PATH_ENOKI_PANIC
 	pause 10
 	special FadeOutMusic
 	special RestartMapMusic

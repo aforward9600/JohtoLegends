@@ -8,11 +8,15 @@ WhirlIslandLugiaChamber_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .Lugia
 
 .Lugia:
-	checkevent EVENT_FOUGHT_LUGIA
+	checkevent EVENT_CAUGHT_LUGIA
 	iftrue .NoAppear
-	checkitem SILVER_WING
-	iftrue .Appear
-	sjump .NoAppear
+	checkevent EVENT_HIDEOUT_LUGIA
+	iffalse .NoAppear
+	checkevent EVENT_RIVAL_GIVES_UP_LUGIA
+	iffalse .NoAppear
+;	checkitem RAINBOW_WING
+;	iftrue .Appear
+;	sjump .NoAppear
 
 .Appear:
 	appear WHIRLISLANDLUGIACHAMBER_LUGIA

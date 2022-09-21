@@ -60,9 +60,9 @@ AzaleaGymKurtScript:
 	checkevent EVENT_GOT_TM60_X_SCISSOR
 	iftrue .GotFuryCutter
 	setevent EVENT_BEAT_TWINS_GINGER_AND_SAM
-	setevent EVENT_BEAT_BUG_CATCHER_ELMER
-	setevent EVENT_BEAT_BUG_CATCHER_AL
-	setevent EVENT_BEAT_BUG_CATCHER_BUZZY
+	setevent EVENT_BEAT_BUG_CATCHER_MARTY
+	setevent EVENT_BEAT_BUG_CATCHER_NAT
+	setevent EVENT_BEAT_BUG_CATCHER_PETE
 	writetext KurtText_HiveBadgeSpeech
 	buttonsound
 	verbosegiveitem TM_X_SCISSOR

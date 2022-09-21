@@ -25,12 +25,12 @@ EcruteakGym_MapScripts:
 	end
 
 .EnokiThursdayGym:
-	checkevent EVENT_ECRUTEAK_GYM_ENOKI
-	iffalse .IsHideoutCleared
+	checkevent EVENT_BELLCHIME_PATH_ENOKI_PANIC
+	iftrue .EnokiCanAppearGym
 	disappear ECRUTEAKGYM_ENOKI
 	return
 
-.IsHideoutCleared:
+.EnokiCanAppearGym:
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .IsItThursdayGym
 	appear ECRUTEAKGYM_ENOKI

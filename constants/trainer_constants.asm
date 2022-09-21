@@ -108,7 +108,7 @@ CHRIS EQU __enum__
 	const LT_SURGE1
 
 	trainerclass SCIENTIST ; 14
-	const ROSS
+	const MAC_2
 	const MITCH
 	const JED
 	const MAC
@@ -549,6 +549,7 @@ CHRIS EQU __enum__
 	const ARCHER_2
 	const ARCHER_3
 	const ARCHER_4
+	const ARCHER_5
 
 	trainerclass PSYCHIC_T ; 34
 	const JORDAN
@@ -620,6 +621,8 @@ CHRIS EQU __enum__
 	const ARIANA_1
 	const ARIANA_2
 	const ARIANA_3
+	const ARIANA_4
+	const ARIANA_5
 
 	trainerclass SAGE ; 38
 	const CHOW
@@ -712,6 +715,8 @@ CHRIS EQU __enum__
 	const GRUNTF_8
 	const GRUNTF_9
 	const GRUNTF_10
+	const GRUNTF_11
+	const GRUNTF_12
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
@@ -771,6 +776,7 @@ CHRIS EQU __enum__
 	trainerclass MYSTERIOUS ; 4d
 	const MIYAMOTO1
 	const MIYAMOTO2
+	const MIYAMOTO3
 
 	trainerclass TOURIST ; 4e
 	const CYNTHIA1

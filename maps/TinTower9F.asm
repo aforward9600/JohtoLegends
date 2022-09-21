@@ -1,10 +1,22 @@
 	object_const_def ; object_event constants
 	const TINTOWER9F_POKE_BALL
+	const TINTOWER9F_ARCHER
 
 TinTower9F_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
+
+TinTower9FArcher:
+	trainer ARCHER, ARCHER_4, EVENT_BEAT_TIN_TOWER_ARCHER, TinTower9FArcherSeenText, TinTower9FArcherBeatenText, 0, .Script
+
+.Script:
+	faceplayer
+	opentext
+	writetext TinTower9FArcherAfterText
+	waitbutton
+	closetext
+	end
 
 TinTower9FHPUp:
 	itemball HP_UP
@@ -17,6 +29,36 @@ TinTower9FUnusedHoOhText:
 TinTower9FUnusedLugiaText:
 ; unused
 	text "LUGIA: Gyaaan!"
+	done
+
+TinTower9FArcherSeenText:
+	text "You again, huh?"
+
+	para "I guess this was"
+	line "inevitable."
+
+	para "Let's get this"
+	line "over with."
+	done
+
+TinTower9FArcherBeatenText:
+	text "Just as I thought…"
+	done
+
+TinTower9FArcherAfterText:
+	text "Well, this is"
+	line "unfortunate."
+
+	para "I may have bought"
+	line "the boss enough"
+	cont "time."
+
+	para "Go on, and see"
+	line "for yourself."
+
+	para "Perhaps you'll get"
+	line "lucky and see"
+	cont "something amazing."
 	done
 
 TinTower9F_MapEvents:
@@ -35,5 +77,6 @@ TinTower9F_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event  9,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TinTower9FHPUp, EVENT_TIN_TOWER_9F_HP_UP
+	object_event  8,  8, SPRITE_ARCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TinTower9FArcher, EVENT_TIN_TOWER_1F_WISE_TRIO_1

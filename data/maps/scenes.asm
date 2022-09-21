@@ -104,4 +104,5 @@ MapScenes::
 	scene_var OLIVINE_GYM_2F,                              wOlivineGym2FSceneID
 	scene_var OLIVINE_GYM_3F,                              wOlivineGym3FSceneID
 	scene_var OLIVINE_GYM_4F,                              wOlivineGym4FSceneID
+	scene_var TIN_TOWER_ROOF,                              wTinTowerRoofSceneID
 	db -1 ; end

@@ -54,6 +54,7 @@ AzaleaTownRivalBattleScene1:
 	setevent EVENT_TIN_TOWER_TAKEOVER
 	setevent EVENT_TIN_TOWER_ROOF_PLAYER
 	setevent EVENT_TIN_TOWER_ROOF_HO_OH
+	clearevent EVENT_BELLCHIME_PATH_ENOKI_PANIC
 	applymovement AZALEATOWN_RIVAL, AzaleaTownRivalBattleExitMovement
 	disappear AZALEATOWN_RIVAL
 	setscene SCENE_AZALEATOWN_NOTHING
@@ -74,6 +75,7 @@ AzaleaTownRivalBattleScene1:
 	setevent EVENT_TIN_TOWER_TAKEOVER
 	setevent EVENT_TIN_TOWER_ROOF_PLAYER
 	setevent EVENT_TIN_TOWER_ROOF_HO_OH
+	clearevent EVENT_BELLCHIME_PATH_ENOKI_PANIC
 	applymovement AZALEATOWN_RIVAL, AzaleaTownRivalBattleExitMovement
 	disappear AZALEATOWN_RIVAL
 	setscene SCENE_AZALEATOWN_NOTHING
