@@ -35,7 +35,7 @@ TrainerSageChow:
 	end
 
 SproutTower1FParlyzHeal:
-	itemball PARLYZ_HEAL
+	itemball TM_SOLARBEAM
 
 SproutTower1FStatue:
 	jumptext SproutTower1FStatueText
@@ -46,7 +46,7 @@ SageChowSeenText:
 
 	para "Here, we express"
 	line "our gratitude to"
-	cont "honor all #MON."
+	cont "honor all #mon."
 	done
 
 SageChowBeatenText:
@@ -65,19 +65,20 @@ SageChowAfterBattleText:
 SproutTower1FSage1Text:
 	text "Only if you reach"
 	line "the top will you"
-	cont "obtain an HM."
+	cont "obtain an item."
+	cont "to light the dark."
 	done
 
 SproutTower1FSage2Text:
-	text "SPROUT TOWER was"
+	text "Sprout Tower was"
 	line "built long ago"
 
 	para "as a place for"
-	line "#MON training."
+	line "#mon training."
 	done
 
 SproutTower1FGrannyText:
-	text "A BELLSPROUT over"
+	text "A Bellsprout over"
 	line "100 feet tall…"
 
 	para "People say that it"
@@ -94,7 +95,7 @@ SproutTower1FTeacherText:
 	done
 
 SproutTower1FStatueText:
-	text "A #MON statue…"
+	text "A #mon statue…"
 
 	para "It looks very"
 	line "distinguished."
@@ -119,7 +120,7 @@ SproutTower1F_MapEvents:
 	db 6 ; object events
 	object_event  7,  4, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SproutTower1FSage1Script, -1
 	object_event  6,  7, SPRITE_SAGE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SproutTower1FSage2Script, -1
-	object_event 11, 12, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SproutTower1FGrannyScript, -1
-	object_event  9,  9, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SproutTower1FTeacherScript, -1
+	object_event 11, 12, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SproutTower1FGrannyScript, -1
+	object_event  9,  9, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SproutTower1FTeacherScript, -1
 	object_event  3,  5, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerSageChow, -1
 	object_event 16,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower1FParlyzHeal, EVENT_SPROUT_TOWER1F_PARLYZ_HEAL

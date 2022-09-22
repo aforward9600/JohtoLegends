@@ -2703,8 +2703,9 @@ wOlivineGym2FSceneID::                            db
 wOlivineGym3FSceneID::                            db
 wOlivineGym4FSceneID::                            db
 wTinTowerRoofSceneID::                            db
+wVioletGymSceneID::                               db
 
-	ds 25
+	ds 24
 
 ; fight counts
 wJackFightCount::    db ; d9f2

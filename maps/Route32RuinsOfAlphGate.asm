@@ -18,7 +18,7 @@ Route32RuinsOfAlphGateYoungsterScript:
 	jumptextfaceplayer Route32RuinsOfAlphGateYoungsterText
 
 Route32RuinsOfAlphGateOfficerText:
-	text "RUINS OF ALPH"
+	text "Ruins Of Alph"
 
 	para "A Look-and-Touch"
 	line "Tourist Site"
@@ -29,15 +29,15 @@ Route32RuinsOfAlphGateOfficerText:
 
 Route32RuinsOfAlphGatePokefanMText:
 	text "You're studying"
-	line "the RUINS?"
+	line "the Ruins?"
 
 	para "I see a scientist"
 	line "in the making."
 	done
 
 Route32RuinsOfAlphGateYoungsterText:
-	text "There are drawings"
-	line "on stone panels."
+	text "The panels on the"
+	line "walls are weird."
 
 	para "I tried moving"
 	line "them. I wonder"
@@ -60,4 +60,4 @@ Route32RuinsOfAlphGate_MapEvents:
 	db 3 ; object events
 	object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32RuinsOfAlphGateOfficerScript, -1
 	object_event  8,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route32RuinsOfAlphGatePokefanMScript, -1
-	object_event  1,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32RuinsOfAlphGateYoungsterScript, -1
+	object_event  1,  6, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32RuinsOfAlphGateYoungsterScript, -1

@@ -312,11 +312,12 @@ Script_UseFlash:
 	reloadmappart
 	special UpdateTimePals
 	refreshscreen
-	pokepic GOLEM
-	cry GOLEM
+	pokepic VOLTORB
+	cry VOLTORB
 	pause 10
 	closepokepic
 	closetext
+	opentext
 	writetext UnknownText_0xc8f3
 	callasm BlindingFlash
 	closetext

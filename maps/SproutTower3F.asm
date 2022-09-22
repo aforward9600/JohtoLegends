@@ -5,14 +5,15 @@
 	const SPROUTTOWER3F_SAGE4
 	const SPROUTTOWER3F_POKE_BALL1
 	const SPROUTTOWER3F_POKE_BALL2
-	const SPROUTTOWER3F_SILVER
+	const SPROUTTOWER3F_WALKER
 
 SproutTower3F_MapScripts:
 	db 2 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .WalkerFriday
 
 .DummyScene0:
 	end
@@ -20,46 +21,20 @@ SproutTower3F_MapScripts:
 .DummyScene1:
 	end
 
-SproutTower3FRivalScene:
-	turnobject PLAYER, UP
-	showemote EMOTE_SHOCK, PLAYER, 15
-	special FadeOutMusic
-	playsound SFX_TACKLE
-	playsound SFX_ELEVATOR
-	earthquake 79
-	pause 15
-	playsound SFX_TACKLE
-	playsound SFX_ELEVATOR
-	earthquake 79
-	applymovement PLAYER, MovementData_0x184a1d
-	applymovement SPROUTTOWER3F_SILVER, MovementData_0x184a22
-	opentext
-	writetext SproutTowerElderLecturesRivalText
-	waitbutton
-	closetext
-	showemote EMOTE_SHOCK, SPROUTTOWER3F_SILVER, 15
-	turnobject SPROUTTOWER3F_SILVER, DOWN
-	pause 15
-	applymovement SPROUTTOWER3F_SILVER, MovementData_0x184a24
-	playmusic MUSIC_RIVAL_ENCOUNTER
-	opentext
-	writetext SproutTowerRivalOnlyCareAboutStrongText
-	waitbutton
-	closetext
-	turnobject SPROUTTOWER3F_SILVER, UP
-	opentext
-	writetext SproutTowerRivalUsedEscapeRopeText
-	pause 15
-	closetext
-	playsound SFX_WARP_TO
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	disappear SPROUTTOWER3F_SILVER
-	waitsfx
-	special FadeInQuickly
-	setscene SCENE_FINISHED
-	special RestartMapMusic
-	end
+.WalkerFriday:
+	checkevent EVENT_BEAT_WALKER
+	iftrue .IsItFriday
+	disappear SPROUTTOWER3F_WALKER
+	return
+
+.IsItFriday:
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .WalkerAppears
+	return
+
+.WalkerAppears:
+	appear SPROUTTOWER3F_WALKER
+	return
 
 SageLiScript:
 	faceplayer
@@ -123,6 +98,9 @@ TrainerSageNeal:
 	closetext
 	end
 
+SproutTowerWalkerScript:
+	jumptextfaceplayer SproutTowerWalkerText
+
 SproutTower3FPainting:
 	jumptext SproutTower3FPaintingText
 
@@ -130,10 +108,10 @@ SproutTower3FStatue:
 	jumptext SproutTower3FStatueText
 
 SproutTower3FPotion:
-	itemball POTION
+	itemball MAX_POTION
 
 SproutTower3FEscapeRope:
-	itemball ESCAPE_ROPE
+	itemball MIRACLE_SEED
 
 MovementData_0x184a1d:
 	step UP
@@ -151,66 +129,14 @@ MovementData_0x184a24:
 	step DOWN
 	step_end
 
-SproutTowerElderLecturesRivalText:
-	text "ELDER: You are in-"
-	line "deed skilled as a"
-	cont "trainer."
-
-	para "As promised, here"
-	line "is your HM."
-
-	para "But let me say"
-	line "this: You should"
-
-	para "treat your"
-	line "#MON better."
-
-	para "The way you battle"
-	line "is far too harsh."
-
-	para "#MON are not"
-	line "tools of war…"
-	done
-
-SproutTowerRivalOnlyCareAboutStrongText:
-	text "…"
-	line "…Humph!"
-
-	para "He claims to be"
-	line "the ELDER but"
-	cont "he's weak."
-
-	para "It stands to"
-	line "reason."
-
-	para "I'd never lose to"
-	line "fools who babble"
-
-	para "about being nice"
-	line "to #MON."
-
-	para "I only care about"
-	line "strong #MON"
-	cont "that can win."
-
-	para "I really couldn't"
-	line "care less about"
-	cont "weak #MON."
-	done
-
-SproutTowerRivalUsedEscapeRopeText:
-	text "<RIVAL> used an"
-	line "ESCAPE ROPE!"
-	done
-
 SageLiSeenText:
 	text "So good of you to"
 	line "come here!"
 
-	para "SPROUT TOWER is a"
+	para "Sprout Tower is a"
 	line "place of training."
 
-	para "People and #MON"
+	para "People and #mon"
 	line "test their bonds"
 
 	para "to build a bright"
@@ -222,7 +148,7 @@ SageLiSeenText:
 	para "Allow me to check"
 	line "the ties between"
 
-	para "your #MON and"
+	para "your #mon and"
 	line "you!"
 	done
 
@@ -231,26 +157,18 @@ SageLiBeatenText:
 	done
 
 SageLiTakeThisFlashText:
-	text "You and your #-"
-	line "MON should have"
+	text "You should have no"
+	line "problem using this"
+	cont "item."
 
-	para "no problem using"
-	line "this move."
-
-	para "Take this FLASH"
-	line "HM."
+	para "Take this Voltorb"
+	line "Call."
 	done
 
 SageLiFlashExplanationText:
-	text "FLASH illuminates"
+	text "It will illuminate"
 	line "even the darkest"
 	cont "of all places."
-
-	para "But to use it out"
-	line "of battle, you"
-
-	para "need the BADGE"
-	line "from VIOLET's GYM."
 	done
 
 SageLiAfterBattleText:
@@ -262,7 +180,7 @@ SageLiAfterBattleText:
 SageJinSeenText:
 	text "I train to find"
 	line "enlightenment in"
-	cont "#MON!"
+	cont "#mon!"
 	done
 
 SageJinBeatenText:
@@ -271,7 +189,7 @@ SageJinBeatenText:
 	done
 
 SageJinAfterBattleText:
-	text "As #MON grow"
+	text "As #mon grow"
 	line "stronger, so does"
 	cont "the trainer."
 
@@ -279,13 +197,13 @@ SageJinAfterBattleText:
 	line "trainer grows"
 
 	para "stronger, so do"
-	line "the #MON."
+	line "the #mon."
 	done
 
 SageTroySeenText:
 	text "Let me see how"
 	line "much you trust"
-	cont "your #MON."
+	cont "your #mon."
 	done
 
 SageTroyBeatenText:
@@ -299,7 +217,7 @@ SageTroyAfterBattleText:
 	done
 
 SageNealSeenText:
-	text "The ELDER's HM"
+	text "The Elder's item"
 	line "lights even pitch-"
 	cont "black darkness."
 	done
@@ -317,14 +235,23 @@ SageNealAfterBattleText:
 SproutTower3FPaintingText:
 	text "It's a powerful"
 	line "painting of a"
-	cont "BELLSPROUT."
+	cont "Bellsprout."
 	done
 
 SproutTower3FStatueText:
-	text "A #MON statue…"
+	text "A #mon statue…"
 
 	para "It looks very"
 	line "distinguished."
+	done
+
+SproutTowerWalkerText:
+	text "I like this tower."
+
+	para "It makes me feel"
+	line "like I'm flying"
+	cont "with how high up"
+	cont "I am."
 	done
 
 SproutTower3F_MapEvents:
@@ -333,8 +260,7 @@ SproutTower3F_MapEvents:
 	db 1 ; warp events
 	warp_event 10, 14, SPROUT_TOWER_2F, 4
 
-	db 1 ; coord events
-	coord_event 11,  9, SCENE_DEFAULT, SproutTower3FRivalScene
+	db 0 ; coord events
 
 	db 6 ; bg events
 	bg_event  8,  1, BGEVENT_READ, SproutTower3FStatue
@@ -351,4 +277,4 @@ SproutTower3F_MapEvents:
 	object_event 11, 11, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSageNeal, -1
 	object_event  6, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower3FPotion, EVENT_SPROUT_TOWER_3F_POTION
 	object_event 14,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower3FEscapeRope, EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
-	object_event 10,  4, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_SPROUT_TOWER
+	object_event  7,  3, SPRITE_WALKER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SproutTowerWalkerScript, EVENT_SPROUT_TOWER_WALKER

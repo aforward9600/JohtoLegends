@@ -22,14 +22,15 @@ Route36RuinsOfAlphGateOfficerText:
 
 Route36RuinsOfAlphGateGrampsText:
 	text "Did you see that"
-	line "strange tree in"
-	cont "the road?"
+	line "one guy in the"
+	cont "middle of the"
+	cont "road?"
 
 	para "That may explain"
 	line "why fewer people"
 
 	para "are visiting the"
-	line "RUINS OF ALPH."
+	line "Ruins Of Alph."
 	done
 
 Route36RuinsOfAlphGate_MapEvents:

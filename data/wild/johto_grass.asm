@@ -185,32 +185,32 @@ JohtoGrassWildMons:
 	map_id RUINS_OF_ALPH_OUTSIDE
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 20, NATU
-	dbw 22, NATU
-	dbw 18, NATU
-	dbw 24, NATU
-	dbw 20, SMEARGLE
-	dbw 22, SMEARGLE
-	dbw 22, SMEARGLE
-	dbw 22, SMEARGLE
+	dbw 42, STANTLER
+	dbw 42, XATU
+	dbw 43, GIRAFARIG
+	dbw 43, XATU
+	dbw 43, GIRAFARIG
+	dbw 45, SMEARGLE
+	dbw 45, SMEARGLE
+	dbw 45, SMEARGLE
 	; day
-	dbw 20, NATU
-	dbw 22, NATU
-	dbw 18, NATU
-	dbw 24, NATU
-	dbw 20, SMEARGLE
-	dbw 22, SMEARGLE
-	dbw 22, SMEARGLE
-	dbw 22, SMEARGLE
+	dbw 42, STANTLER
+	dbw 42, XATU
+	dbw 43, GIRAFARIG
+	dbw 43, XATU
+	dbw 43, GIRAFARIG
+	dbw 45, SMEARGLE
+	dbw 45, SMEARGLE
+	dbw 45, SMEARGLE
 	; nite
-	dbw 20, NATU
-	dbw 22, NATU
-	dbw 18, NATU
-	dbw 24, NATU
-	dbw 22, WOOPER
-	dbw 22, QUAGSIRE
-	dbw 22, QUAGSIRE
-	dbw 22, QUAGSIRE
+	dbw 42, STANTLER
+	dbw 42, XATU
+	dbw 43, GIRAFARIG
+	dbw 43, XATU
+	dbw 43, GIRAFARIG
+	dbw 45, SMEARGLE
+	dbw 45, SMEARGLE
+	dbw 45, SMEARGLE
 
 	map_id RUINS_OF_ALPH_INNER_CHAMBER
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -245,92 +245,92 @@ JohtoGrassWildMons:
 	map_id UNION_CAVE_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 6, GEODUDE
-	dbw 6, SANDSHREW
-	dbw 5, ZUBAT
-	dbw 4, RATTATA
-	dbw 7, ZUBAT
-	dbw 6, ONIX
-	dbw 6, ONIX
-	dbw 6, ONIX
+	dbw 42, GRAVELER
+	dbw 42, SANDSLASH
+	dbw 42, QUAGSIRE
+	dbw 43, RATICATE
+	dbw 43, GOLBAT
+	dbw 44, ONIX
+	dbw 44, STEELIX
+	dbw 45, STEELIX
 	; day
-	dbw 6, GEODUDE
-	dbw 6, SANDSHREW
-	dbw 5, ZUBAT
-	dbw 4, RATTATA
-	dbw 7, ZUBAT
-	dbw 6, ONIX
-	dbw 6, ONIX
-	dbw 6, ONIX
+	dbw 42, GRAVELER
+	dbw 42, SANDSLASH
+	dbw 42, QUAGSIRE
+	dbw 43, RATICATE
+	dbw 43, GOLBAT
+	dbw 44, ONIX
+	dbw 44, STEELIX
+	dbw 45, STEELIX
 	; nite
-	dbw 6, GEODUDE
-	dbw 6, RATTATA
-	dbw 5, WOOPER
-	dbw 4, RATTATA
-	dbw 7, ZUBAT
-	dbw 6, ONIX
-	dbw 6, ONIX
-	dbw 6, ONIX
+	dbw 42, GRAVELER
+	dbw 42, RATICATE
+	dbw 42, QUAGSIRE
+	dbw 43, RATICATE
+	dbw 43, GOLBAT
+	dbw 44, ONIX
+	dbw 44, STEELIX
+	dbw 45, STEELIX
 
 	map_id UNION_CAVE_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 8, GEODUDE
-	dbw 6, ZUBAT
-	dbw 8, ZUBAT
-	dbw 8, ONIX
-	dbw 6, RATTATA
-	dbw 8, RATTATA
-	dbw 8, RATTATA
-	dbw 8, RATTATA
+	dbw 42, GRAVELER
+	dbw 42, GOLBAT
+	dbw 42, GOLBAT
+	dbw 43, STEELIX
+	dbw 43, RATICATE
+	dbw 44, RATICATE
+	dbw 44, RATICATE
+	dbw 45, RATICATE
 	; day
-	dbw 8, GEODUDE
-	dbw 6, ZUBAT
-	dbw 8, ZUBAT
-	dbw 8, ONIX
-	dbw 6, RATTATA
-	dbw 8, RATTATA
-	dbw 8, RATTATA
-	dbw 8, RATTATA
+	dbw 42, GRAVELER
+	dbw 42, GOLBAT
+	dbw 42, GOLBAT
+	dbw 43, STEELIX
+	dbw 43, RATICATE
+	dbw 44, RATICATE
+	dbw 44, RATICATE
+	dbw 45, RATICATE
 	; nite
-	dbw 8, GEODUDE
-	dbw 6, ZUBAT
-	dbw 8, WOOPER
-	dbw 8, ONIX
-	dbw 6, RATTATA
-	dbw 8, RATTATA
-	dbw 8, RATTATA
-	dbw 8, RATTATA
+	dbw 42, GRAVELER
+	dbw 42, GOLBAT
+	dbw 42, GOLBAT
+	dbw 43, STEELIX
+	dbw 43, RATICATE
+	dbw 44, RATICATE
+	dbw 44, RATICATE
+	dbw 45, RATICATE
 
 	map_id UNION_CAVE_B2F
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 22, ZUBAT
-	dbw 22, GOLBAT
-	dbw 22, ZUBAT
-	dbw 21, RATICATE
-	dbw 20, GEODUDE
-	dbw 23, ONIX
-	dbw 23, ONIX
-	dbw 23, ONIX
+	dbw 42, GRAVELER
+	dbw 42, GOLBAT
+	dbw 42, SANDSLASH
+	dbw 43, RATICATE
+	dbw 43, GRAVELER
+	dbw 44, STEELIX
+	dbw 44, STEELIX
+	dbw 45, STEELIX
 	; day
-	dbw 22, ZUBAT
-	dbw 22, GOLBAT
-	dbw 22, ZUBAT
-	dbw 21, RATICATE
-	dbw 20, GEODUDE
-	dbw 23, ONIX
-	dbw 23, ONIX
-	dbw 23, ONIX
+	dbw 42, GRAVELER
+	dbw 42, GOLBAT
+	dbw 42, SANDSLASH
+	dbw 43, RATICATE
+	dbw 43, GRAVELER
+	dbw 44, STEELIX
+	dbw 44, STEELIX
+	dbw 45, STEELIX
 	; nite
-	dbw 22, ZUBAT
-	dbw 22, GOLBAT
-	dbw 22, QUAGSIRE
-	dbw 21, RATICATE
-	dbw 20, GEODUDE
-	dbw 23, ONIX
-	dbw 23, ONIX
-	dbw 23, ONIX
+	dbw 42, GRAVELER
+	dbw 42, GOLBAT
+	dbw 42, QUAGSIRE
+	dbw 43, RATICATE
+	dbw 43, GRAVELER
+	dbw 44, STEELIX
+	dbw 44, STEELIX
+	dbw 45, STEELIX
 
 	map_id SLOWPOKE_WELL_B1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite

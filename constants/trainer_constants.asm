@@ -26,6 +26,7 @@ CHRIS EQU __enum__
 
 	trainerclass WALKER ; 1
 	const WALKER1
+	const WALKER2
 
 	trainerclass MILTON ; 2
 	const MILTON1
@@ -160,12 +161,12 @@ CHRIS EQU __enum__
 	const CHAD5
 
 	trainerclass BIRD_KEEPER ; 18
-	const ROD
-	const ABE
+	const RODNEY1
+	const ABEL
 	const GUNNER
 	const THAD
 	const TOBY
-	const DENIS
+	const LUCAS
 	const SAL
 	const HANK
 	const ROY

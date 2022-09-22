@@ -4,10 +4,10 @@ JohtoWaterWildMons:
 
 	map_id RUINS_OF_ALPH_OUTSIDE
 	db 2 percent ; encounter rate
-	dbw 15, WOOPER
-	dbw 20, QUAGSIRE
-	dbw 15, QUAGSIRE
-	dbw 15, QUAGSIRE
+	dbw 35, POLIWHIRL
+	dbw 35, AZUMARILL
+	dbw 40, GOLDUCK
+	dbw 40, QUAGSIRE
 
 	map_id UNION_CAVE_1F
 	db 2 percent ; encounter rate

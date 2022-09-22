@@ -209,7 +209,7 @@ AzaleaGymGuyScript:
 	end
 
 AzaleaGymStatue:
-	checkevent EVENT_CLEARED_TIN_TOWER_ROCKETS
+	checkevent EVENT_CLEARED_TIN_TOWER
 	iftrue .RivalBeatGym
 	checkflag ENGINE_HIVEBADGE
 	iftrue .Beaten

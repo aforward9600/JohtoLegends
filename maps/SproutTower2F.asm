@@ -34,11 +34,11 @@ SproutTower2FStatue:
 	jumptext SproutTower2FStatueText
 
 SproutTower2FXAccuracy:
-	itemball X_ACCURACY
+	itemball PP_UP
 
 SageNicoSeenText:
 	text "However hard we"
-	line "battle, the TOWER"
+	line "battle, the Tower"
 	cont "will stand strong."
 	done
 
@@ -51,7 +51,7 @@ SageNicoAfterBattleText:
 	text "The flexible pil-"
 	line "lar protects the"
 
-	para "TOWER, even from"
+	para "Tower, even from"
 	line "earthquakes."
 	done
 
@@ -66,7 +66,7 @@ SageEdmondBeatenText:
 
 SageEdmondAfterBattleText:
 	text "I tried to copy"
-	line "BELLSPROUT's"
+	line "Bellsprout's"
 
 	para "gentle movements"
 	line "for battle…"
@@ -76,7 +76,7 @@ SageEdmondAfterBattleText:
 	done
 
 SproutTower2FStatueText:
-	text "A #MON statue…"
+	text "A #mon statue…"
 
 	para "It looks very"
 	line "distinguished."

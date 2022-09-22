@@ -3,11 +3,38 @@
 	const VIOLETGYM_YOUNGSTER1
 	const VIOLETGYM_YOUNGSTER2
 	const VIOLETGYM_GYM_GUY
+	const VIOLETGYM_YOUNGSTER3
+	const VIOLETGYM_RIVAL
 
 VioletGym_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene1 ; SCENE_FINISHED
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .WalkerFridayGym
+
+.DummyScene0:
+	end
+
+.DummyScene1:
+	end
+
+.WalkerFridayGym:
+	checkevent EVENT_BEAT_WALKER
+	iftrue .IsItFriday
+	appear VIOLETGYM_WALKER
+	return
+
+.IsItFriday:
+	readvar VAR_WEEKDAY
+	ifequal SATURDAY, .WalkerDisappears
+	appear VIOLETGYM_WALKER
+	return
+
+.WalkerDisappears:
+	disappear VIOLETGYM_WALKER
+	return
 
 VioletGymWalkerScript:
 	faceplayer
@@ -31,15 +58,15 @@ VioletGymWalkerScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_ZEPHYRBADGE
-	readvar VAR_BADGES
-	scall VioletGymActivateRockets
+	setflag ENGINE_BEAT_WALKER
 .FightDone:
+	checkflag ENGINE_BEAT_WALKER
+	iffalse .WalkerRematch
 	checkevent EVENT_GOT_TM31_MUD_SLAP
 	iftrue .SpeechAfterTM
-	setevent EVENT_BEAT_BIRD_KEEPER_ROD
-	setevent EVENT_BEAT_BIRD_KEEPER_ABE
-	setmapscene ELMS_LAB, SCENE_ELMSLAB_NOTHING
-	specialphonecall SPECIALCALL_ASSISTANT
+	setevent EVENT_BEAT_BIRD_KEEPER_RODNEY
+	setevent EVENT_BEAT_BIRD_KEEPER_ABEL
+	setevent EVENT_BEAT_BIRD_KEEPER_LUCAS
 	writetext WalkerZephyrBadgeText
 	buttonsound
 	verbosegiveitem TM_ROOST
@@ -57,35 +84,68 @@ VioletGymWalkerScript:
 	closetext
 	end
 
-VioletGymActivateRockets:
-	ifequal 7, .RadioTowerRockets
-	ifequal 6, .GoldenrodRockets
+.WalkerRematch:
+	readvar VAR_BADGES
+	ifequal 7, .WalkerBattle1
+	ifequal 8, .WalkerBattle2
+
+.WalkerBattle1:
+	writetext WalkerReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext WalkerWinLossText, WalkerLossText
+	loadtrainer WALKER, WALKER1
+	startbattle
+	reloadmapafterbattle
+	sjump AfterWalkerRematch
+
+.WalkerBattle2:
+	writetext WalkerReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext WalkerWinLossText, WalkerLossText
+	loadtrainer WALKER, WALKER2
+	startbattle
+	reloadmapafterbattle
+	sjump AfterWalkerRematch
+
+AfterWalkerRematch:
+	opentext
+	writetext BeatenWalkerAgainText
+	waitbutton
+	closetext
+	setflag ENGINE_BEAT_WALKER
 	end
 
-.GoldenrodRockets:
-	jumpstd goldenrodrockets
-
-.RadioTowerRockets:
-	jumpstd radiotowerrockets
-
-TrainerBirdKeeperRod:
-	trainer BIRD_KEEPER, ROD, EVENT_BEAT_BIRD_KEEPER_ROD, BirdKeeperRodSeenText, BirdKeeperRodBeatenText, 0, .Script
+TrainerBirdKeeperRodney:
+	trainer BIRD_KEEPER, RODNEY1, EVENT_BEAT_BIRD_KEEPER_RODNEY, BirdKeeperRodneySeenText, BirdKeeperRodneyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperRodAfterBattleText
+	writetext BirdKeeperRodneyAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerBirdKeeperAbe:
-	trainer BIRD_KEEPER, ABE, EVENT_BEAT_BIRD_KEEPER_ABE, BirdKeeperAbeSeenText, BirdKeeperAbeBeatenText, 0, .Script
+TrainerBirdKeeperAbel:
+	trainer BIRD_KEEPER, ABEL, EVENT_BEAT_BIRD_KEEPER_ABEL, BirdKeeperAbelSeenText, BirdKeeperAbelBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperAbeAfterBattleText
+	writetext BirdKeeperAbelAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBirdKeeperLucas:
+	trainer BIRD_KEEPER, LUCAS, EVENT_BEAT_BIRD_KEEPER_LUCAS, BirdKeeperLucasSeenText, BirdKeeperLucasBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BirdKeeperLucasAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -109,10 +169,75 @@ VioletGymGuyScript:
 VioletGymStatue:
 	checkflag ENGINE_ZEPHYRBADGE
 	iftrue .Beaten
+	gettrainername STRING_BUFFER_4, WALKER, WALKER1
 	jumpstd gymstatue1
 .Beaten:
 	gettrainername STRING_BUFFER_4, WALKER, WALKER1
 	jumpstd gymstatue2
+
+VioletGymRival1:
+	turnobject PLAYER, UP
+	moveobject VIOLETGYM_RIVAL, 4, 10
+	appear VIOLETGYM_RIVAL
+	special FadeOutMusic
+	pause 30
+	applymovement VIOLETGYM_RIVAL, VioletGymRivalMovement
+	pause 15
+	opentext
+	writetext VioletGymRivalText
+	waitbutton
+	closetext
+	pause 15
+	applymovement VIOLETGYM_RIVAL, VioletGymRivalLeavesMovement1
+	turnobject PLAYER, DOWN
+	playsound SFX_EXIT_BUILDING
+	disappear VIOLETGYM_RIVAL
+	pause 15
+	waitsfx
+	special RestartMapMusic
+	setscene SCENE_FINISHED
+	end
+
+VioletGymRival2:
+	turnobject PLAYER, UP
+	moveobject VIOLETGYM_RIVAL, 5, 10
+	appear VIOLETGYM_RIVAL
+	special FadeOutMusic
+	pause 30
+	applymovement VIOLETGYM_RIVAL, VioletGymRivalMovement
+	pause 15
+	opentext
+	writetext VioletGymRivalText
+	waitbutton
+	closetext
+	pause 15
+	applymovement VIOLETGYM_RIVAL, VioletGymRivalLeavesMovement2
+	turnobject PLAYER, DOWN
+	playsound SFX_EXIT_BUILDING
+	disappear VIOLETGYM_RIVAL
+	pause 15
+	waitsfx
+	special RestartMapMusic
+	setscene SCENE_FINISHED
+	end
+
+VioletGymRivalMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+VioletGymRivalLeavesMovement1:
+	step RIGHT
+	step DOWN
+	step DOWN
+	step_end
+
+VioletGymRivalLeavesMovement2:
+	step LEFT
+	step DOWN
+	step DOWN
+	step_end
 
 WalkerIntroText:
 	text "I am Walker, "
@@ -178,32 +303,12 @@ ReceivedZephyrBadgeText:
 	done
 
 WalkerZephyrBadgeText:
-	text "ZephyrBadge"
-	line "raises the attack"
-	cont "power of #mon."
-
-	para "It also enables"
-	line "#mon to use"
-
-	para "Flash, if they"
-	line "have it, anytime."
-
-	para "Here--take this"
-	line "too."
+	text "Here--take this"
+	line "TM for yourself."
 	done
 
 WalkerTMRoostText:
-	text "By using a TM, a"
-	line "#mon will"
-
-	para "instantly learn a"
-	line "new move."
-
-	para "Don't worry about"
-	line "wasting it, they"
-	cont "can be used again."
-
-	para "TM50 contains"
+	text "TM50 contains"
 	line "Roost."
 
 	para "It will heal a"
@@ -226,47 +331,52 @@ WalkerFightDoneText:
 	line "Leader!"
 	done
 
-BirdKeeperRodSeenText:
-	text "The keyword is"
-	line "guts!"
-
-	para "Those here are"
-	line "training night and"
-
-	para "day to become bird"
-	line "#mon masters."
+BirdKeeperRodneySeenText:
+	text "I'm going to show"
+	line "you how awesome"
+	cont "bird #mon are!"
 
 	para "Come on!"
 	done
 
-BirdKeeperRodBeatenText:
+BirdKeeperRodneyBeatenText:
 	text "Gaaah!"
 	done
 
-BirdKeeperRodAfterBattleText:
-	text "Walker's skills"
-	line "are for real!"
+BirdKeeperRodneyAfterBattleText:
+	text "Walker's better"
+	line "than all of us"
+	cont "here!"
 
 	para "Don't get cocky"
 	line "just because you"
 	cont "beat me!"
 	done
 
-BirdKeeperAbeSeenText:
-	text "Let me see if you"
-	line "are good enough to"
-	cont "face Walker!"
+BirdKeeperAbelSeenText:
+	text "You think we all"
+	line "use just Normal"
+	cont "birds? Wrong!"
 	done
 
-BirdKeeperAbeBeatenText:
-	text "This can't be"
-	line "true!"
+BirdKeeperAbelBeatenText:
+	text "You're anything"
+	line "but normal!"
 	done
 
-BirdKeeperAbeAfterBattleText:
-	text "This is pathetic,"
-	line "losing to some"
-	cont "rookie trainer…"
+BirdKeeperAbelAfterBattleText:
+	text "My Aerodactyl's"
+	line "cool, huh?"
+
+	para "I found an Old"
+	line "Amber in a rock"
+
+	para "and gave it to a"
+	line "weird man on Route"
+	cont "42, and he"
+
+	para "resurrected it!"
+	line "Science is cool!"
 	done
 
 VioletGymGuyText:
@@ -296,6 +406,50 @@ VioletGymGuyWinText:
 	para "outta the sky!"
 	done
 
+WalkerReadyForARematchText:
+	text "My birds have been"
+	line "looking forward to"
+	cont "soaring the skies"
+	cont "against you again!"
+	done
+
+WalkerLossText:
+	text "We have achieved"
+	line "liftoff!"
+	done
+
+BeatenWalkerAgainText:
+	text "Shot down again,"
+	line "huh?"
+
+	para "Someday we'll"
+	line "soar again!"
+	done
+
+BirdKeeperLucasSeenText:
+	text "Sorry, this is a"
+	line "dead end!"
+	done
+
+BirdKeeperLucasBeatenText:
+	text "Looks like I hit"
+	line "a dead end!"
+	done
+
+BirdKeeperLucasAfterBattleText:
+	text "You'll have to go"
+	line "left or right to"
+	cont "reach the leader."
+	done
+
+VioletGymRivalText:
+	text "……………………………………"
+
+	para "…………<PLAYER>………"
+
+	para "………I'm sorry……"
+	done
+
 VioletGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -303,14 +457,18 @@ VioletGym_MapEvents:
 	warp_event  4, 15, VIOLET_CITY, 2
 	warp_event  5, 15, VIOLET_CITY, 2
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event  4, 14, SCENE_DEFAULT, VioletGymRival1
+	coord_event  5, 14, SCENE_DEFAULT, VioletGymRival2
 
 	db 2 ; bg events
 	bg_event  3, 13, BGEVENT_READ, VioletGymStatue
 	bg_event  6, 13, BGEVENT_READ, VioletGymStatue
 
-	db 4 ; object events
+	db 6 ; object events
 	object_event  5,  1, SPRITE_WALKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymWalkerScript, -1
-	object_event  7,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRod, -1
-	object_event  2, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperAbe, -1
+	object_event  0,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRodney, -1
+	object_event  9,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperAbel, -1
 	object_event  7, 13, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletGymGuyScript, -1
+	object_event  4,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperLucas, -1
+	object_event  4,  1, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_VIOLET_GYM_RIVAL

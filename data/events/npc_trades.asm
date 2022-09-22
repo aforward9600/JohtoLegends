@@ -12,7 +12,7 @@ ENDM
 NPCTrades:
 ; entries correspond to NPCTRADE_* constants
 	npctrade TRADE_DIALOGSET_HAPPY,     MEOWTH,     CLEFAIRY,   "Nebula@@@@@", $37, $66, SITRUS_BERRY, 37460, "Mike@@@@", TRADE_GENDER_EITHER
-	npctrade TRADE_DIALOGSET_NEWBIE,    TANGELA,    CHARMANDER, "Flameo@@@@@", $98, $88, RAWST_BERRY,  48926, "Damien@@", TRADE_GENDER_EITHER
+	npctrade TRADE_DIALOGSET_NEWBIE,    TANGELA,    RAPIDASH,   "Flameo@@@@@", $98, $88, RAWST_BERRY,  48926, "Damien@@", TRADE_GENDER_EITHER
 	npctrade TRADE_DIALOGSET_NEWBIE,    DUSKULL,    BRONZOR,    "Reflecto@@@", $96, $86, LEPPA_BERRY,  15616, "Tim@@@@@", TRADE_GENDER_EITHER
 	npctrade TRADE_DIALOGSET_GIRL,      MAGBY,      SQUIRTLE,   "Mitch@@@@@@", $98, $88, ASPEAR_BERRY, 00283, "Jenny@@@", TRADE_GENDER_EITHER
 	npctrade TRADE_DIALOGSET_GIRL,      CHINCHOU,   BULBASAUR,  "Bubsy@@@@@@", $98, $88, PECHA_BERRY,  29189, "Sarah@@@", TRADE_GENDER_EITHER

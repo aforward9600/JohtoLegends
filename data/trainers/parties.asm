@@ -15,23 +15,47 @@ SECTION "Enemy Trainer Parties 1", ROMX
 WalkerGroup:
 	next_list_item ; Walker (1)
 	db "Walker@", TRAINERTYPE_ITEM_MOVES
-	db 38
+	db 45
 	dw SKARMORY
 	db NO_ITEM
 	dw AERIAL_ACE, SPIKES, STEEL_WING, ROOST
-	db 38
+	db 45
 	dw FEAROW
 	db NO_ITEM
 	dw DRILL_PECK, DRILL_RUN, ROOST, AGILITY
-	db 39
+	db 46
 	dw XATU
 	db NO_ITEM
 	dw AIR_SLASH, AMNESIA, ROOST, PSYCHIC_M
-	db 39
+	db 46
 	dw HONCHKROW
 	db NO_ITEM
 	dw FAINT_ATTACK, ROOST, WING_ATTACK, AGILITY
-	db 40
+	db 47
+	dw PIDGEOT
+	db SITRUS_BERRY
+	dw BRAVE_BIRD, FEATHERDANCE, ROOST, GIGA_IMPACT
+	db -1 ; end
+
+	next_list_item ; Walker (2)
+	db "Walker@", TRAINERTYPE_ITEM_MOVES
+	db 48
+	dw SKARMORY
+	db NO_ITEM
+	dw AERIAL_ACE, SPIKES, STEEL_WING, ROOST
+	db 48
+	dw FEAROW
+	db NO_ITEM
+	dw DRILL_PECK, DRILL_RUN, ROOST, AGILITY
+	db 49
+	dw XATU
+	db NO_ITEM
+	dw AIR_SLASH, AMNESIA, ROOST, PSYCHIC_M
+	db 49
+	dw HONCHKROW
+	db NO_ITEM
+	dw FAINT_ATTACK, ROOST, WING_ATTACK, AGILITY
+	db 50
 	dw PIDGEOT
 	db SITRUS_BERRY
 	dw BRAVE_BIRD, FEATHERDANCE, ROOST, GIGA_IMPACT
@@ -1328,17 +1352,23 @@ SchoolboyGroup:
 
 BirdKeeperGroup:
 	next_list_item ; BIRD_KEEPER (1)
-	db "ROD@", TRAINERTYPE_NORMAL
-	db 7
-	dw PIDGEY
-	db 7
-	dw PIDGEY
+	db "Rodney@", TRAINERTYPE_NORMAL
+	db 45
+	dw PIDGEOT
+	db 45
+	dw DODRIO
+	db 46
+	dw FARFETCH_D
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (2)
-	db "ABE@", TRAINERTYPE_NORMAL
-	db 9
-	dw SPEAROW
+	db "Abel@", TRAINERTYPE_NORMAL
+	db 45
+	dw FEAROW
+	db 46
+	dw AERODACTYL
+	db 46
+	dw GLISCOR
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (3)
@@ -1376,13 +1406,13 @@ BirdKeeperGroup:
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (6)
-	db "DENIS@", TRAINERTYPE_NORMAL
-	db 18
-	dw SPEAROW
-	db 20
-	dw FEAROW
-	db 18
-	dw SPEAROW
+	db "Lucas@", TRAINERTYPE_NORMAL
+	db 45
+	dw XATU
+	db 45
+	dw SKARMORY
+	db 46
+	dw NOCTOWL
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (7) Route 44
@@ -5201,37 +5231,46 @@ ArianaGroup:
 
 SageGroup:
 	next_list_item ; SAGE (1)
-	db "CHOW@", TRAINERTYPE_NORMAL
-	db 3
+	db "Chow@", TRAINERTYPE_MOVES
+	db 45
 	dw BELLSPROUT
-	db 3
-	dw BELLSPROUT
-	db 3
-	dw BELLSPROUT
+	dw POISON_JAB, RAZOR_LEAF, SWORDS_DANCE, KNOCK_OFF
+	db 45
+	dw WEEPINBELL
+	dw SLUDGE_BOMB, RAZOR_LEAF, KNOCK_OFF, SLEEP_POWDER
+	db 45
+	dw VICTREEBEL
+	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
 	db -1 ; end
 
 	next_list_item ; SAGE (2)
-	db "NICO@", TRAINERTYPE_NORMAL
-	db 3
+	db "Nico@", TRAINERTYPE_MOVES
+	db 45
 	dw BELLSPROUT
-	db 3
-	dw BELLSPROUT
-	db 3
-	dw BELLSPROUT
+	dw POISON_JAB, RAZOR_LEAF, SWORDS_DANCE, KNOCK_OFF
+	db 45
+	dw WEEPINBELL
+	dw SLUDGE_BOMB, RAZOR_LEAF, KNOCK_OFF, SLEEP_POWDER
+	db 45
+	dw VICTREEBEL
+	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
 	db -1 ; end
 
 	next_list_item ; SAGE (3)
-	db "JIN@", TRAINERTYPE_NORMAL
-	db 6
-	dw BELLSPROUT
+	db "Jin@", TRAINERTYPE_MOVES
+	db 45
+	dw VICTREEBEL
+	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
 	db -1 ; end
 
 	next_list_item ; SAGE (4)
-	db "TROY@", TRAINERTYPE_NORMAL
-	db 7
-	dw BELLSPROUT
-	db 7
-	dw HOOTHOOT
+	db "Troy@", TRAINERTYPE_MOVES
+	db 45
+	dw VICTREEBEL
+	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
+	db 46
+	dw NOCTOWL
+	dw SHADOW_BALL, ROOST, AIR_SLASH, REFLECT
 	db -1 ; end
 
 	next_list_item ; SAGE (5)
@@ -5255,29 +5294,36 @@ SageGroup:
 	db -1 ; end
 
 	next_list_item ; SAGE (7)
-	db "EDMOND@", TRAINERTYPE_NORMAL
-	db 3
+	db "Edmond@", TRAINERTYPE_MOVES
+	db 45
 	dw BELLSPROUT
-	db 3
-	dw BELLSPROUT
-	db 3
-	dw BELLSPROUT
+	dw POISON_JAB, RAZOR_LEAF, SWORDS_DANCE, KNOCK_OFF
+	db 45
+	dw WEEPINBELL
+	dw SLUDGE_BOMB, RAZOR_LEAF, KNOCK_OFF, SLEEP_POWDER
+	db 45
+	dw VICTREEBEL
+	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
 	db -1 ; end
 
 	next_list_item ; SAGE (8)
-	db "NEAL@", TRAINERTYPE_NORMAL
-	db 6
-	dw BELLSPROUT
+	db "Neal@", TRAINERTYPE_MOVES
+	db 45
+	dw VICTREEBEL
+	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
 	db -1 ; end
 
 	next_list_item ; SAGE (9)
-	db "LI@", TRAINERTYPE_NORMAL
-	db 7
-	dw BELLSPROUT
-	db 7
-	dw BELLSPROUT
-	db 10
-	dw HOOTHOOT
+	db "Li@", TRAINERTYPE_MOVES
+	db 45
+	dw VICTREEBEL
+	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
+	db 46
+	dw VICTREEBEL
+	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
+	db 47
+	dw NOCTOWL
+	dw SHADOW_BALL, ROOST, AIR_SLASH, REFLECT
 	db -1 ; end
 
 	next_list_item ; SAGE (10)
