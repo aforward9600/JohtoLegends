@@ -16,6 +16,8 @@ RivalsDadScript:
 	end
 
 RivalsMomScript:
+	faceplayer
+	opentext
 	checkevent EVENT_ICE_PATH_B1F_RIVAL1
 	iftrue .KeepAnEyeOnThem
 	checkflag ENGINE_PLAYER_IS_FEMALE
@@ -28,8 +30,6 @@ RivalsMomScript:
 	end
 
 .Female:
-	faceplayer
-	opentext
 	writetext RivalsMom2Text
 	waitbutton
 	closetext

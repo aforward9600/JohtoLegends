@@ -40,6 +40,7 @@ Marts:
 	dw MartOlivineTMs
 	dw MartBlackthornTMs
 	dw MartAzaleaTMs
+	dw MartVioletTMs
 .End
 
 MartCherrygrove:
@@ -60,16 +61,14 @@ MartCherrygroveDex:
 	db -1 ; end
 
 MartViolet:
-	db 10 ; # items
-	db POKE_BALL
-	db POTION
+	db 8 ; # items
+	db ULTRA_BALL
+	db HYPER_POTION
 	db ESCAPE_ROPE
-	db ANTIDOTE
-	db PARLYZ_HEAL
-	db AWAKENING
-	db X_DEFEND
-	db X_ATTACK
-	db X_SPEED
+	db REVIVE
+	db FULL_HEAL
+	db MAX_REPEL
+	db MAX_POTION
 	db FLOWER_MAIL
 	db -1 ; end
 
@@ -481,9 +480,17 @@ MartBlackthornTMs:
 MartAzaleaTMs:
 	db 4
 	db TM_SUNNY_DAY
-	db TM_FLAMETHROWER
+	db TM_ROCK_SLIDE
 	db TM_BULLDOZE
 	db TM_REST
+	db -1 ; end
+
+MartVioletTMs:
+	db 4
+	db TM_THUNDERBOLT
+	db TM_ICE_BEAM
+	db TM_FLAMETHROWER
+	db TM_STEEL_WING
 	db -1 ; end
 
 DefaultMart:

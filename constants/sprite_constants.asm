@@ -182,6 +182,7 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_SWINUB
 	const SPRITE_SNEASEL
 	const SPRITE_MILTANK
+	const SPRITE_RAICHU
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
 	const_def $e0

@@ -3,9 +3,17 @@
 	const ROUTE31VIOLETGATE_COOLTRAINER_F
 
 Route31VioletGate_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene1 ; SCENE_FINISHED
 
 	db 0 ; callbacks
+
+.DummyScene0:
+	end
+
+.DummyScene1:
+	end
 
 Route31VioletGateOfficerScript:
 	jumptextfaceplayer Route31VioletGateOfficerText
@@ -13,16 +21,56 @@ Route31VioletGateOfficerScript:
 Route31VioletGateCooltrainerFScript:
 	jumptextfaceplayer Route31VioletGateCooltrainerFText
 
+Route31VioletGateStopPlayer:
+	turnobject PLAYER, UP
+	opentext
+	checkflag ENGINE_ZEPHYRBADGE
+	iftrue .YouCanGoThrough
+	writetext YouCantGoThroughText
+	waitbutton
+	closetext
+	applymovement PLAYER, Route31VioletGateStopPlayerMovement
+	end
+
+.YouCanGoThrough:
+	writetext ThatsTheZepherBadgeText
+	waitbutton
+	closetext
+	setscene SCENE_FINISHED
+	end
+
+Route31VioletGateStopPlayerMovement:
+	step LEFT
+	step_end
+
+YouCantGoThroughText:
+	text "Sorry, but you"
+	line "can't go through"
+	cont "without the"
+	cont "Zephyrbadge."
+
+	para "It's dangerous."
+	done
+
+ThatsTheZepherBadgeText:
+	text "Ah, I see you have"
+	line "the Zephyrbadge."
+
+	para "You can go through"
+	line "now."
+	done
+
 Route31VioletGateOfficerText:
 	text "Hi there!"
 	line "Did you visit"
-	cont "SPROUT TOWER?"
+	cont "Sprout Tower?"
 	done
 
 Route31VioletGateCooltrainerFText:
 	text "I came too far"
 	line "out. I'd better"
-	cont "phone home!"
+	cont "phone home from"
+	cont "the Center!"
 	done
 
 Route31VioletGate_MapEvents:
@@ -34,7 +82,9 @@ Route31VioletGate_MapEvents:
 	warp_event  9,  4, ROUTE_31, 1
 	warp_event  9,  5, ROUTE_31, 2
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event 5, 4, SCENE_DEFAULT, Route31VioletGateStopPlayer
+	coord_event 5, 5, SCENE_DEFAULT, Route31VioletGateStopPlayer
 
 	db 0 ; bg events
 

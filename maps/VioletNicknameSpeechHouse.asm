@@ -9,16 +9,77 @@ VioletNicknameSpeechHouse_MapScripts:
 	db 0 ; callbacks
 
 VioletNicknameSpeechHouseTeacherScript:
-	jumptextfaceplayer VioletNicknameSpeechHouseTeacherText
+	faceplayer
+	opentext
+	writetext VioletCityAskTeachAMoveText
+	yesorno
+	iffalse .Refused
+	writetext VioletCityWhichMoveShouldITeachText
+	loadmenu .MoveMenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .Moonblast
+	ifequal 2, .Hypnosis
+	sjump .Incompatible
+
+.Moonblast:
+	loadmoveindex MOONBLAST
+	writetext TeachMysticalMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+
+.Hypnosis:
+	loadmoveindex HYPNOSIS
+	writetext TeachMysticalMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+
+.MoveMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 15, TEXTBOX_Y - 0
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "Moonblast@"
+	db "Hypnosis@"
+	db "Cancel@"
+
+.Refused:
+	writetext VioletCityHowUnfortunateText
+	waitbutton
+	closetext
+	end
+
+.TeachMove:
+	writetext VioletCityNiceMoveText
+	buttonsound
+	writetext VioletCityGoodLuckText
+	waitbutton
+	closetext
+	end
+
+.Incompatible:
+	writetext VioletCityHowUnfortunateText
+	waitbutton
+	closetext
+	end
 
 VioletNicknameSpeechHouseLassScript:
 	jumptextfaceplayer VioletNicknameSpeechHouseLassText
 
-VioletNicknameSpeechHouseBirdScript:
-	faceplayer
+VioletNicknameSpeechHouseRaichuScript:
+	refreshscreen
+	pokepic RAICHU
+	cry RAICHU
+	waitbutton
+	closepokepic
 	opentext
-	writetext VioletNicknameSpeechHouseBirdText
-	cry PIDGEY
+	writetext VioletNicknameSpeechHouseRaichuText
 	waitbutton
 	closetext
 	end
@@ -34,12 +95,49 @@ VioletNicknameSpeechHouseTeacherText:
 	done
 
 VioletNicknameSpeechHouseLassText:
-	text "I call my PIDGEY"
-	line "STRAWBERRY!"
+	text "I call my Raichu"
+	line "Orange!"
+
+	para "Maybe my future"
+	line "child will also"
+	cont "name their #mon"
+	cont "after food!"
 	done
 
-VioletNicknameSpeechHouseBirdText:
-	text "STRAWBERRY: Pijji!"
+VioletNicknameSpeechHouseRaichuText:
+	text "Orange: Rai-rai!"
+	done
+
+VioletCityAskTeachAMoveText:
+	text "I can teach some"
+	line "mystical moves to"
+	cont "your #mon."
+	done
+
+VioletCityWhichMoveShouldITeachText:
+	text "Which move should"
+	line "I teach?"
+	done
+
+TeachMysticalMoveText:
+	text "Shall I teach"
+	line "this move?"
+	done
+
+VioletCityNiceMoveText:
+	text "A beautiful"
+	line "choice."
+	done
+
+VioletCityGoodLuckText:
+	text "It shall serve you"
+	line "well on your"
+	cont "journey."
+	done
+
+VioletCityHowUnfortunateText:
+	text "It's unfortunate"
+	line "you feel that way."
 	done
 
 VioletNicknameSpeechHouse_MapEvents:
@@ -56,4 +154,4 @@ VioletNicknameSpeechHouse_MapEvents:
 	db 3 ; object events
 	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletNicknameSpeechHouseTeacherScript, -1
 	object_event  6,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletNicknameSpeechHouseLassScript, -1
-	object_event  5,  2, SPRITE_BIRD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VioletNicknameSpeechHouseBirdScript, -1
+	object_event  5,  2, SPRITE_RAICHU, SPRITEMOVEDATA_POKEMON, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletNicknameSpeechHouseRaichuScript, -1

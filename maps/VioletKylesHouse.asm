@@ -19,15 +19,14 @@ Kyle:
 	end
 
 VioletKylesHousePokefanMText:
-	text "A #MON you get"
-	line "in a trade grows"
-	cont "quickly."
+	text "I'll be sad to see"
+	line "that Rapidash go,"
 
-	para "But if you don't"
-	line "have the right GYM"
+	para "but it's my kid's"
+	line "#mon, not mine."
 
-	para "BADGE, they may"
-	line "disobey you."
+	para "He's free to trade"
+	line "however he wants."
 	done
 
 VioletKylesHouse_MapEvents:

@@ -1760,14 +1760,20 @@ CooltrainerMGroup:
 	dw FLAMETHROWER, QUICK_ATTACK, BITE, FIRE_SPIN
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERM (8)
-	db "RYAN@", TRAINERTYPE_MOVES
-	db 25
-	dw PIDGEOT
-	dw SAND_ATTACK, QUICK_ATTACK, WHIRLWIND, WING_ATTACK
-	db 27
-	dw ELECTABUZZ
-	dw THUNDERPUNCH, LIGHT_SCREEN, SWIFT, SCREECH
+	next_list_item ; COOLTRAINERM (8) Route 32
+	db "Robert@", TRAINERTYPE_MOVES
+	db 43
+	dw MUK
+	dw POISON_JAB, SCREECH, BELCH, KNOCK_OFF
+	db 45
+	dw DELIBIRD
+	dw HAIL, BLIZZARD, DRILL_PECK, PRESENT
+	db 44
+	dw BLASTOISE
+	dw FLASH_CANNON, SURF, IRON_DEFENSE, SKULL_BASH
+	db 44
+	dw GOLEM
+	dw ROCK_SLIDE, EARTHQUAKE, ROCK_POLISH, ROCK_BLAST
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (9)
@@ -2943,10 +2949,16 @@ FisherGroup:
 	dw GYARADOS
 	db -1 ; end
 
-	next_list_item ; FISHER (2)
-	db "RALPH@", TRAINERTYPE_NORMAL
-	db 10
-	dw GOLDEEN
+	next_list_item ; FISHER (2) Route 32
+	db "Ralph@", TRAINERTYPE_NORMAL
+	db 44
+	dw QWILFISH
+	db 44
+	dw SEAKING
+	db 45
+	dw OCTILLERY
+	db 45
+	dw POLITOED
 	db -1 ; end
 
 	next_list_item ; FISHER (3)
@@ -2965,12 +2977,14 @@ FisherGroup:
 	dw SEAKING
 	db -1 ; end
 
-	next_list_item ; FISHER (5)
-	db "HENRY@", TRAINERTYPE_NORMAL
-	db 8
-	dw POLIWAG
-	db 8
-	dw POLIWAG
+	next_list_item ; FISHER (5) Route 32
+	db "Marlin@", TRAINERTYPE_NORMAL
+	db 45
+	dw FERALIGATR
+	db 46
+	dw GYARADOS
+	db 46
+	dw LANTURN
 	db -1 ; end
 
 	next_list_item ; FISHER (6)
@@ -3029,16 +3043,18 @@ FisherGroup:
 	dw LOCK_ON, PSYBEAM, AURORA_BEAM, BUBBLEBEAM
 	db -1 ; end
 
-	next_list_item ; FISHER (12)
-	db "JONAH@", TRAINERTYPE_NORMAL
-	db 25
-	dw SHELLDER
-	db 29
-	dw OCTILLERY
-	db 25
-	dw REMORAID
-	db 29
-	dw CLOYSTER
+	next_list_item ; FISHER (12) Route 32
+	db "Jonah@", TRAINERTYPE_NORMAL
+	db 42
+	dw DEWGONG
+	db 42
+	dw QUAGSIRE
+	db 42
+	dw TENTACRUEL
+	db 42
+	dw KINGDRA
+	db 43
+	dw CURSOLA
 	db -1 ; end
 
 	next_list_item ; FISHER (13)
@@ -3660,12 +3676,14 @@ SuperNerdGroup:
 	dw NASTY_PLOT, WATER_PULSE, ZEN_HEADBUTT, HIDDEN_POWER
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (4)
-	db "JAY@", TRAINERTYPE_NORMAL
-	db 22
-	dw KOFFING
-	db 22
-	dw KOFFING
+	next_list_item ; SUPER_NERD (4) Route 32
+	db "Jason@", TRAINERTYPE_NORMAL
+	db 44
+	dw WEEZING
+	db 44
+	dw ELECTRODE
+	db 44
+	dw FORRETRESS
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (5)
@@ -4725,10 +4743,14 @@ PicnickerGroup:
 	dw PIKACHU
 	db -1 ; end
 
-	next_list_item ; PICNICKER (4)
-	db "KIM@", TRAINERTYPE_NORMAL
-	db 15
-	dw VULPIX
+	next_list_item ; PICNICKER (4) Route 32
+	db "Lacy@", TRAINERTYPE_NORMAL
+	db 44
+	dw BLISSEY
+	db 44
+	dw EXEGGUTOR
+	db 45
+	dw MR__MIME
 	db -1 ; end
 
 	next_list_item ; PICNICKER (5)
@@ -4929,14 +4951,16 @@ CamperGroup:
 	dw DIGLETT
 	db -1 ; end
 
-	next_list_item ; CAMPER (2)
-	db "TODD@", TRAINERTYPE_NORMAL
-	db 11
-	dw ODDISH
-	db 11
-	dw SLUGMA
-	db 11
-	dw PSYDUCK
+	next_list_item ; CAMPER (2) Route 32
+	db "William@", TRAINERTYPE_NORMAL
+	db 44
+	dw DONPHAN
+	db 44
+	dw URSARING
+	db 44
+	dw MANTINE
+	db 44
+	dw RAPIDASH
 	db -1 ; end
 
 	next_list_item ; CAMPER (2)

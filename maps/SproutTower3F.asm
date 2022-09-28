@@ -8,18 +8,10 @@
 	const SPROUTTOWER3F_WALKER
 
 SproutTower3F_MapScripts:
-	db 2 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_FINISHED
+	db 0 ; scene scripts
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, .WalkerFriday
-
-.DummyScene0:
-	end
-
-.DummyScene1:
-	end
 
 .WalkerFriday:
 	checkevent EVENT_BEAT_WALKER

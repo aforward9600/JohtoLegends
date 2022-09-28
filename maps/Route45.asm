@@ -254,7 +254,7 @@ TrainerHikerTimothy:
 	end
 
 TrainerCooltrainermRyan:
-	trainer COOLTRAINERM, RYAN, EVENT_BEAT_COOLTRAINERM_RYAN, CooltrainermRyanSeenText, CooltrainermRyanBeatenText, 0, .Script
+	trainer COOLTRAINERM, ROBERT1, EVENT_BEAT_COOLTRAINERM_ROBERT, CooltrainermRyanSeenText, CooltrainermRyanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

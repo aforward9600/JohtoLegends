@@ -14,18 +14,18 @@ Route32Pokecenter1FNurseScript:
 Route32Pokecenter1FFishingGuruScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_OLD_ROD
-	iftrue .GotOldRod
+	checkevent EVENT_GOT_SUPER_ROD
+	iftrue .GotSuperRod
 	writetext Route32Pokecenter1FFishingGuruText_Question
 	yesorno
 	iffalse .Refused
 	writetext Route32Pokecenter1FFishingGuruText_Yes
 	buttonsound
-	verbosegiveitem OLD_ROD
+	verbosegiveitem SUPER_ROD
 	writetext Route32Pokecenter1FFishingGuruText_GiveOldRod
 	waitbutton
 	closetext
-	setevent EVENT_GOT_OLD_ROD
+	setevent EVENT_GOT_SUPER_ROD
 	end
 
 .Refused:
@@ -34,7 +34,7 @@ Route32Pokecenter1FFishingGuruScript:
 	closetext
 	end
 
-.GotOldRod:
+.GotSuperRod:
 	writetext Route32Pokecenter1FFishingGuruText_After
 	waitbutton
 	closetext
@@ -52,7 +52,7 @@ Route32Pokecenter1FFishingGuruText_Question:
 	cont "about you?"
 
 	para "Would you like one"
-	line "of my RODS?"
+	line "of my Rods?"
 	done
 
 Route32Pokecenter1FFishingGuruText_Yes:
@@ -70,7 +70,7 @@ Route32Pokecenter1FFishingGuruText_GiveOldRod:
 	line "be it the sea or a"
 
 	para "stream, try out"
-	line "your ROD."
+	line "your Rod."
 	done
 
 Route32Pokecenter1FFishingGuruText_No:
@@ -84,12 +84,15 @@ Route32Pokecenter1FFishingGuruText_After:
 	done
 
 Route32Pokecenter1FCooltrainerFText:
-	text "What should I make"
-	line "my #MON hold?"
+	text "Apparently someone"
+	line "thought there was"
+	cont "a monster in Union"
+	cont "Cave."
 
-	para "Maybe an item that"
-	line "increases ATTACK"
-	cont "power…"
+	para "Turns out it was"
+	line "just a Lapras!"
+
+	para "Whoops!"
 	done
 
 Route32Pokecenter1F_MapEvents:
@@ -107,4 +110,4 @@ Route32Pokecenter1F_MapEvents:
 	db 3 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FNurseScript, -1
 	object_event  1,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FFishingGuruScript, -1
-	object_event  6,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FCooltrainerFScript, -1
+	object_event  6,  2, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FCooltrainerFScript, -1

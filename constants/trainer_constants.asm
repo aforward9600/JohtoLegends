@@ -210,7 +210,7 @@ CHRIS EQU __enum__
 	const MIKE
 	const GAVEN1
 	const GAVEN2
-	const RYAN
+	const ROBERT1
 	const JAKE
 	const GAVEN3
 	const BLAKE
@@ -364,7 +364,7 @@ CHRIS EQU __enum__
 	const RALPH1
 	const ARNOLD
 	const KYLE
-	const HENRY
+	const MARLIN
 	const FISHER_SHANE
 	const FRED
 	const AIDAN
@@ -449,7 +449,7 @@ CHRIS EQU __enum__
 	const DEXTER
 	const IRWIN
 	const NED1
-	const JAY
+	const SUPER_NERD_JASON
 	const DAVE
 	const SAM
 	const TOM
@@ -570,7 +570,7 @@ CHRIS EQU __enum__
 	const HAYLEE
 	const GINA1
 	const CHLOE
-	const KIM
+	const LACY
 	const CINDY
 	const HOPE
 	const SHARON

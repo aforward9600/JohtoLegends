@@ -51,3 +51,4 @@ SpriteMons:
 	dw SWINUB
 	dw SNEASEL
 	dw MILTANK
+	dw RAICHU

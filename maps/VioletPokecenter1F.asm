@@ -76,8 +76,8 @@ VioletPokecenter1F_ElmsAideScript:
 	writetext UnknownText_0x69712
 	sjump .AskTakeEgg
 
-VioletPokecenter1FGameboyKidScript:
-	jumptextfaceplayer VioletPokecenter1FGameboyKidText
+VioletPokecenter1FGrannyScript:
+	jumptextfaceplayer VioletPokecenter1FGrannyText
 
 VioletPokecenter1FGentlemanScript:
 	jumptextfaceplayer VioletPokecenter1FGentlemanText
@@ -180,37 +180,29 @@ UnknownText_0x69791:
 	line "a friend far away."
 	done
 
-VioletPokecenter1FGameboyKidText:
-	text "A guy named BILL"
-	line "made the #MON"
-	cont "PC storage system."
+VioletPokecenter1FGrannyText:
+	text "I've heard of the"
+	line "cave-ins in Dark"
+	cont "Cave recently."
+
+	para "Pretty scary."
 	done
 
 VioletPokecenter1FGentlemanText:
-	text "It was around"
-	line "three years ago."
+	text "The attack on Bell"
+	line "Tower is truly"
+	cont "horrific."
 
-	para "TEAM ROCKET was up"
-	line "to no good with"
-	cont "#MON."
-
-	para "But justice pre-"
-	line "vailed--a young"
-	cont "kid broke 'em up."
+	para "I hope the police"
+	line "catch them soon."
 	done
 
 VioletPokecenter1FYoungsterText:
-	text "#MON are smart."
-	line "They won't obey a"
+	text "I want to go to"
+	line "Cherrygrove City."
 
-	para "trainer they don't"
-	line "respect."
-
-	para "Without the right"
-	line "GYM BADGES, they"
-
-	para "will just do as"
-	line "they please."
+	para "The cherry trees"
+	line "are in bloom."
 	done
 
 VioletPokecenter1F_MapEvents:
@@ -227,7 +219,7 @@ VioletPokecenter1F_MapEvents:
 
 	db 5 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletPokecenterNurse, -1
-	object_event  7,  6, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FGameboyKidScript, -1
+	object_event  7,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FGrannyScript, -1
 	object_event  1,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FGentlemanScript, -1
 	object_event  8,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FYoungsterScript, -1
 	object_event  4,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1F_ElmsAideScript, EVENT_ELMS_AIDE_IN_VIOLET_POKEMON_CENTER
