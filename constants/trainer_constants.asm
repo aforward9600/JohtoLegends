@@ -173,7 +173,7 @@ CHRIS EQU __enum__
 	const BORIS
 	const BOB
 	const JOSE1
-	const PETER
+	const PEDRO
 	const JOSE2
 	const PERRY
 	const BRET
@@ -205,7 +205,7 @@ CHRIS EQU __enum__
 	trainerclass COOLTRAINERM ; 1b
 	const FABIO
 	const AJ
-	const PAUL
+	const ADRIEN
 	const CODY
 	const MIKE
 	const GAVEN1
@@ -228,9 +228,9 @@ CHRIS EQU __enum__
 	const TERESA
 	const ARIEL
 	const EMIKO
-	const LOLA
+	const HAZEL
 	const TINA
-	const IRENE
+	const AVA
 	const KELLY
 	const JOYCE
 	const BETH1
@@ -245,11 +245,11 @@ CHRIS EQU __enum__
 	const BETH3
 	const REENA2
 	const REENA3
-	const CARA
+	const ELLA
 
 	trainerclass BEAUTY ; 1d
 	const ASHLEY
-	const JACLYN
+	const BETTY
 	const BRENDA
 	const CASSIE
 	const CAROLINE
@@ -450,7 +450,7 @@ CHRIS EQU __enum__
 	const IRWIN
 	const NED1
 	const SUPER_NERD_JASON
-	const DAVE
+	const SUPER_NERD_RICHARD
 	const SAM
 	const TOM
 	const PAT
@@ -477,7 +477,7 @@ CHRIS EQU __enum__
 	const ANTHONY1
 	const OZZY
 	const PHIL1
-	const LEONARD
+	const GUNTHER
 	const ANTHONY2
 	const BENJAMIN
 	const ERIK
@@ -491,7 +491,7 @@ CHRIS EQU __enum__
 	const SIDNEY
 	const KENNY
 	const JIM
-	const DANIEL
+	const BUBBA
 	const PARRY2
 	const PARRY3
 	const ANTHONY4
@@ -519,7 +519,7 @@ CHRIS EQU __enum__
 	trainerclass FIREBREATHER ; 30
 	const CHAZ
 	const FARREL
-	const NED
+	const BLART
 	const BURT
 	const BILL
 	const KELVIN
@@ -654,7 +654,7 @@ CHRIS EQU __enum__
 	trainerclass POKEFANM ; 3b
 	const BERNARD
 	const DEREK1
-	const ROBERT
+	const ROBERTO
 	const JOSHUA
 	const CARTER
 	const TREVOR
@@ -818,9 +818,13 @@ CHRIS EQU __enum__
 
 	trainerclass DRAGON_TAMER_F
 	const DAWNA
+	const DANI
+	const DARIA
 
 	trainerclass DRAGON_TAMER_M
 	const DREW
+	const DEVIN
+	const DAVIS
 
 	trainerclass MADAME_BOSS
 	const BOSS

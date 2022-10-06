@@ -12,142 +12,160 @@ UnionCaveB1F_MapScripts:
 
 	db 0 ; callbacks
 
-TrainerPokemaniacAndrew:
-	trainer POKEMANIAC, DAMIEN, EVENT_BEAT_POKEMANIAC_DAMIEN, PokemaniacAndrewSeenText, PokemaniacAndrewBeatenText, 0, .Script
+TrainerDragonTamerMDrew:
+	trainer DRAGON_TAMER_M, DREW, EVENT_BEAT_DRAGON_TAMER_M_DREW, DragonTamerMDrewSeenText, DragonTamerMDrewBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokemaniacAndrewAfterBattleText
+	writetext DragonTamerMDrewAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPokemaniacCalvin:
-	trainer POKEMANIAC, CALVIN, EVENT_BEAT_POKEMANIAC_CALVIN, PokemaniacCalvinSeenText, PokemaniacCalvinBeatenText, 0, .Script
+TrainerDragonTamerFDawna:
+	trainer DRAGON_TAMER_F, DAWNA, EVENT_BEAT_DRAGON_TAMER_F_DAWNA, DragonTamerFDawnaSeenText, DragonTamerFDawnaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokemaniacCalvinAfterBattleText
+	writetext DragonTamerFDawnaAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerHikerPhillip:
-	trainer HIKER, PHIL, EVENT_BEAT_HIKER_PHIL, HikerPhillipSeenText, HikerPhillipBeatenText, 0, .Script
+TrainerHikerGunther:
+	trainer HIKER, GUNTHER, EVENT_BEAT_HIKER_GUNTHER, HikerGuntherSeenText, HikerGuntherBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext HikerPhillipAfterBattleText
+	writetext HikerGuntherAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerHikerLeonard:
-	trainer HIKER, LEONARD, EVENT_BEAT_HIKER_LEONARD, HikerLeonardSeenText, HikerLeonardBeatenText, 0, .Script
+TrainerSuperNerdRichard:
+	trainer SUPER_NERD, SUPER_NERD_RICHARD, EVENT_BEAT_SUPER_NERD_RICHARD, SuperNerdRichardSeenText, SuperNerdRichardBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext HikerLeonardAfterBattleText
+	writetext SuperNerdRichardAfterBattleText
 	waitbutton
 	closetext
 	end
 
-UnionCaveB1FTMSwift:
-	itemball TM_FLAMETHROWER
+UnionCaveB1FTMIronHead:
+	itemball TM_IRON_HEAD
 
-UnionCaveB1FXDefend:
-	itemball X_DEFEND
+UnionCaveB1FSteelDagger:
+	itemball STEEL_DAGGER
 
 UnionCaveB1FBoulder:
 	jumpstd strengthboulder
 
-HikerPhillipSeenText:
-	text "It's been a while"
-	line "since I last saw"
-	cont "another person."
+HikerGuntherSeenText:
+	text "A blonde girl your"
+	line "age stomped me"
+	cont "flat!"
 
-	para "Don't be shy."
-	line "Let's battle!"
+	para "She went to the"
+	line "Ruins of Alph"
+	cont "for some research."
 	done
 
-HikerPhillipBeatenText:
-	text "Uurggh…"
+HikerGuntherBeatenText:
+	text "You stomped me"
+	line "too!"
 	done
 
-HikerPhillipAfterBattleText:
-	text "I've been lost for"
-	line "a long time…"
+HikerGuntherAfterBattleText:
+	text "She was fierce!"
 
-	para "I don't mind it"
-	line "here, but I am"
-	cont "soooo hungry!"
+	para "I'm surprised I"
+	line "was even able to"
+	cont "fight you after!"
 	done
 
-HikerLeonardSeenText:
-	text "What do you know!"
-	line "A visitor!"
+SuperNerdRichardSeenText:
+	text "A rare #mon"
+	line "shows up here"
+	cont "every Friday."
+
+	para "I already have"
+	line "one."
+
+	para "Wanna see?"
 	done
 
-HikerLeonardBeatenText:
-	text "Wahahah! You're a"
-	line "feisty one!"
+SuperNerdRichardBeatenText:
+	text "Lapras is pretty"
+	line "cool!"
 	done
 
-HikerLeonardAfterBattleText:
-	text "I live down here."
+SuperNerdRichardAfterBattleText:
+	text "Lapras are going"
+	line "extinct, so I"
+	cont "caught one for"
+	cont "myself!"
 
-	para "You can, too, if"
-	line "you'd like."
+	para "I've been studying"
+	line "them in the wild"
+	cont "as well."
 
-	para "There's plenty of"
-	line "room, you see."
+	para "Hopefully we can"
+	line "increase their"
+	cont "numbers in the"
+	cont "near future."
 	done
 
-PokemaniacAndrewSeenText:
-	text "Who's there?"
+DragonTamerMDrewSeenText:
+	text "Hey <PLAYER>! It's"
+	line "been a while!"
 
-	para "Leave me and my"
-	line "#MON alone!"
+	para "I'm here for some"
+	line "training before I"
+	cont "return to"
+	cont "Blackthorn City."
 	done
 
-PokemaniacAndrewBeatenText:
-	text "Go…"
-	line "Go away!"
+DragonTamerMDrewBeatenText:
+	text "You've gotten"
+	line "stronger!"
 	done
 
-PokemaniacAndrewAfterBattleText:
-	text "Just me and my"
-	line "#MON. I'm de-"
-	cont "lirious with joy."
+DragonTamerMDrewAfterBattleText:
+	text "Dragons truly are"
+	line "something else."
 	done
 
-PokemaniacCalvinSeenText:
-	text "I came all the way"
-	line "here to conduct my"
-	cont "#MON research."
+DragonTamerFDawnaSeenText:
+	text "What are you doing"
+	line "here <PLAYER>?"
 
-	para "Let me demonstrate"
-	line "my findings in a"
-	cont "real battle!"
+	para "I heard there was"
+	line "a Lapras in here."
+
+	para "I'm gonna catch it!"
 	done
 
-PokemaniacCalvinBeatenText:
-	text "You demonstrated"
-	line "on me!"
+DragonTamerFDawnaBeatenText:
+	text "Will I be able to"
+	line "catch it?"
 	done
 
-PokemaniacCalvinAfterBattleText:
-	text "I should compile"
-	line "and announce my"
-	cont "study findings."
+DragonTamerFDawnaAfterBattleText:
+	text "My team isn't all"
+	line "dragons, so it'd"
+	cont "be a good fit."
 
-	para "I might even be-"
-	line "come famous like"
-	cont "PROF.ELM."
+	para "I still catch the"
+	line "ire of the older"
+	cont "trainers back home"
+
+	para "for my choice in"
+	line "#mon, though…"
 	done
 
 UnionCaveB1F_MapEvents:
@@ -165,10 +183,10 @@ UnionCaveB1F_MapEvents:
 	db 0 ; bg events
 
 	db 7 ; object events
-	object_event  9,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerPhillip, -1
-	object_event 16,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerLeonard, -1
-	object_event  5, 32, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacAndrew, -1
-	object_event 17, 30, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacCalvin, -1
-	object_event  2, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB1FTMSwift, EVENT_UNION_CAVE_B1F_TM_SWIFT
+	object_event  9,  3, SPRITE_HIKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerHikerGunther, -1
+	object_event 17,  8, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdRichard, -1
+	object_event  2, 32, SPRITE_DRAGON_TAMER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 3, TrainerDragonTamerMDrew, -1
+	object_event 17, 30, SPRITE_DRAGON_TAMER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerDragonTamerFDawna, -1
+	object_event  2, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB1FTMIronHead, EVENT_UNION_CAVE_B1F_TM_IRON_HEAD
 	object_event  7, 10, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, UnionCaveB1FBoulder, -1
-	object_event 17, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB1FXDefend, EVENT_UNION_CAVE_B1F_X_DEFEND
+	object_event 17, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB1FSteelDagger, EVENT_UNION_CAVE_B1F_STEEL_DAGGER

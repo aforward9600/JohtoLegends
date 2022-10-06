@@ -133,13 +133,21 @@ TrainerCooltrainerMRobert:
 	closetext
 	end
 
-TrainerBirdKeeperPeter:
-	trainer BIRD_KEEPER, PETER, EVENT_BEAT_BIRD_KEEPER_PETER, BirdKeeperPeterSeenText, BirdKeeperPeterBeatenText, 0, .Script
+TrainerBirdKeeperPedro:
+	trainer BIRD_KEEPER, PEDRO, EVENT_BEAT_BIRD_KEEPER_PEDRO, BirdKeeperPedroSeenText, BirdKeeperPedroBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperPeterAfterText
+	checkflag ENGINE_ZEPHYRBADGE
+	iftrue .PedroAfterGym
+	writetext BirdKeeperPedroAfterText
+	waitbutton
+	closetext
+	end
+
+.PedroAfterGym:
+	writetext BirdKeeperPedroAfterGymText
 	waitbutton
 	closetext
 	end
@@ -425,22 +433,34 @@ CamperWilliamAfterText:
 	cont "along!"
 	done
 
-BirdKeeperPeterSeenText:
-	text "That BADGE! It's"
-	line "from VIOLET CITY!"
+BirdKeeperPedroSeenText:
+	text "Have you been to"
+	line "the Violet Gym?"
 
-	para "You beat FALKNER?"
+	para "Walker is the best"
+	line "Flying trainer in"
+	cont "Johto!"
 	done
 
-BirdKeeperPeterBeatenText:
-	text "I know what my"
-	line "weaknesses are."
+BirdKeeperPedroBeatenText:
+	text "I can't compare to"
+	line "him or you."
 	done
 
-BirdKeeperPeterAfterText:
-	text "I should train"
-	line "again at the GYM"
-	cont "in VIOLET CITY."
+BirdKeeperPedroAfterText:
+	text "Go and battle him,"
+	line "and you'll be in"
+	cont "for a challenge!"
+	done
+
+BirdKeeperPedroAfterGymText:
+	text "That badge!"
+
+	para "So you beat Walker"
+	line "did you?"
+
+	para "You're something"
+	line "else!"
 	done
 
 Route32UnusedText:
@@ -552,12 +572,12 @@ Route32_MapEvents:
 	object_event  8, 48, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherJonah, -1
 	object_event 11, 53, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherRalph1, -1
 	object_event 11, 45, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherMarlin, -1
-	object_event 17, 19, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSuperNerdJason, -1
+	object_event 17, 19, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerSuperNerdJason, -1
 	object_event  1, 58, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerMRobert, -1
 	object_event  3, 46, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerLacy, -1
 	object_event 11, 31, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperWilliam, -1
 	object_event  9,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32GrampsScript, -1
-	object_event 11, 82, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperPeter, -1
+	object_event 11, 82, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperPedro, -1
 	object_event  3, 68, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeTailSalesmanScript, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  6, 53, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32GreatBall, EVENT_ROUTE_32_GREAT_BALL
 	object_event 11, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32RoarTMGuyScript, -1

@@ -11,24 +11,24 @@ JohtoWaterWildMons:
 
 	map_id UNION_CAVE_1F
 	db 2 percent ; encounter rate
-	dbw 15, WOOPER
-	dbw 20, QUAGSIRE
-	dbw 15, QUAGSIRE
-	dbw 15, QUAGSIRE
+	dbw 40, GOLBAT
+	dbw 42, QUAGSIRE
+	dbw 42, TENTACRUEL
+	dbw 45, QUAGSIRE
 
 	map_id UNION_CAVE_B1F
 	db 2 percent ; encounter rate
-	dbw 15, WOOPER
-	dbw 20, QUAGSIRE
-	dbw 15, QUAGSIRE
-	dbw 15, QUAGSIRE
+	dbw 40, GOLBAT
+	dbw 42, QUAGSIRE
+	dbw 42, TENTACRUEL
+	dbw 45, QUAGSIRE
 
 	map_id UNION_CAVE_B2F
 	db 4 percent ; encounter rate
-	dbw 15, TENTACOOL
-	dbw 20, QUAGSIRE
-	dbw 20, TENTACRUEL
-	dbw 20, TENTACRUEL
+	dbw 40, GOLBAT
+	dbw 42, QUAGSIRE
+	dbw 42, TENTACRUEL
+	dbw 45, QUAGSIRE
 
 	map_id SLOWPOKE_WELL_B1F
 	db 2 percent ; encounter rate

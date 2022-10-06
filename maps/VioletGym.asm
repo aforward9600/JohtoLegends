@@ -59,6 +59,7 @@ VioletGymWalkerScript:
 	waitsfx
 	setflag ENGINE_ZEPHYRBADGE
 	setflag ENGINE_BEAT_WALKER
+	setmapscene ROUTE_31_VIOLET_GATE, SCENE_FINISHED
 .FightDone:
 	checkflag ENGINE_BEAT_WALKER
 	iffalse .WalkerRematch

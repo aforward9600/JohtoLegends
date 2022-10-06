@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const UNIONCAVEB2F_ROCKER
+	const UNIONCAVEB2F_COOLTRAINER_M
 	const UNIONCAVEB2F_COOLTRAINER_F1
 	const UNIONCAVEB2F_COOLTRAINER_F2
 	const UNIONCAVEB2F_POKE_BALL1
@@ -46,35 +46,43 @@ UnionCaveLapras:
 	reloadmapafterbattle
 	end
 
-TrainerCooltrainermNick:
-	trainer COOLTRAINERM, FABIO, EVENT_BEAT_COOLTRAINERM_FABIO, CooltrainermNickSeenText, CooltrainermNickBeatenText, 0, .Script
+TrainerCooltrainermAdrien:
+	trainer COOLTRAINERM, ADRIEN, EVENT_BEAT_COOLTRAINERM_ADRIEN, CooltrainermAdrienSeenText, CooltrainermAdrienBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainermNickAfterBattleText
+	checkevent EVENT_UNION_CAVE_B2F_HYPER_POTION
+	iftrue .AlreadyGotItem
+	writetext CooltrainermAdrienAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerCooltrainerfGwen:
-	trainer COOLTRAINERF, TERESA, EVENT_BEAT_COOLTRAINERF_TERESA, CooltrainerfGwenSeenText, CooltrainerfGwenBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext CooltrainerfGwenAfterBattleText
+.AlreadyGotItem:
+	writetext YouAlreadyGotTheItemText
 	waitbutton
 	closetext
 	end
 
-TrainerCooltrainerfEmma:
-	trainer COOLTRAINERF, EMMA, EVENT_BEAT_COOLTRAINERF_EMMA, CooltrainerfEmmaSeenText, CooltrainerfEmmaBeatenText, 0, .Script
+TrainerCooltrainerfHazel:
+	trainer COOLTRAINERF, HAZEL, EVENT_BEAT_COOLTRAINERF_HAZEL, CooltrainerfHazelSeenText, CooltrainerfHazelBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerfEmmaAfterBattleText
+	writetext CooltrainerfHazelAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainerfElla:
+	trainer COOLTRAINERF, ELLA, EVENT_BEAT_COOLTRAINERF_ELLA, CooltrainerfEllaSeenText, CooltrainerfEllaBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext CooltrainerfEllaAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -85,69 +93,79 @@ UnionCaveB2FElixer:
 UnionCaveB2FHyperPotion:
 	itemball HYPER_POTION
 
-CooltrainermNickSeenText:
-	text "There are two"
-	line "kinds of people."
-
-	para "Those who have"
-	line "style, and those"
-	cont "who don't."
-
-	para "What kind of"
-	line "person are you?"
+CooltrainermAdrienSeenText:
+	text "Sorry, but there's"
+	line "nothing here but"
+	cont "me!"
 	done
 
-CooltrainermNickBeatenText:
-	text "You've got"
-	line "dazzling style!"
+CooltrainermAdrienBeatenText:
+	text "Now you're here"
+	line "too!"
 	done
 
-CooltrainermNickAfterBattleText:
-	text "Your #MON style"
-	line "is stunning and"
-	cont "colorful, I admit."
+CooltrainermAdrienAfterBattleText:
+	text "There's an item"
+	line "down there."
 
-	para "You'll just keep"
-	line "getting better!"
+	para "I wonder what's in"
+	line "it?"
 	done
 
-CooltrainerfGwenSeenText:
-	text "I'm in training."
-	line "Care for a round?"
+CooltrainerfHazelSeenText:
+	text "You ever heard of"
+	line "Lapras?"
 	done
 
-CooltrainerfGwenBeatenText:
-	text "Aww, no! You're"
-	line "too good for me."
+CooltrainerfHazelBeatenText:
+	text "I guess I should've"
+	line "had one…"
 	done
 
-CooltrainerfGwenAfterBattleText:
-	text "I'm going to train"
-	line "by myself until I"
-	cont "improve."
+CooltrainerfHazelAfterBattleText:
+	text "It ferries people"
+	line "on its back."
+
+	para "It's also a good"
+	line "battler,"
+
+	para "despite its"
+	line "docile appearence."
 	done
 
-CooltrainerfEmmaSeenText:
-	text "If the #MON I"
-	line "liked were there,"
-	cont "I'd go anywhere."
+CooltrainerfEllaSeenText:
+	text "Some people say"
+	line "Meganium isn't"
+	cont "good, but they're"
+	cont "all wrong!"
 
-	para "That's what a real"
-	line "trainer does."
+	para "I plan on becoming"
+	line "Champion with one!"
 	done
 
-CooltrainerfEmmaBeatenText:
-	text "I'd rather pet my"
-	line "babies than this!"
+CooltrainerfEllaBeatenText:
+	text "Maybe they're"
+	line "right…"
 	done
 
-CooltrainerfEmmaAfterBattleText:
-	text "Just once a week,"
-	line "a #MON comes to"
-	cont "the water's edge."
+CooltrainerfEllaAfterBattleText:
+	text "A #mon's"
+	line "strength shouldn't"
+	cont "be measured by"
+	cont "battles alone."
 
-	para "I wanted to see"
-	line "that #MON…"
+	para "How cute it is"
+	line "should also count!"
+	done
+
+YouAlreadyGotTheItemText:
+	text "Oh, you already"
+	line "got that item down"
+	cont "there."
+
+	para "I guess I don't"
+	line "have anything else"
+	cont "to say now."
 	done
 
 UnionCaveB2F_MapEvents:
@@ -161,9 +179,9 @@ UnionCaveB2F_MapEvents:
 	db 0 ; bg events
 
 	db 6 ; object events
-	object_event 15, 19, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermNick, -1
-	object_event  5, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfGwen, -1
-	object_event  3, 30, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfEmma, -1
+	object_event 13, 20, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermAdrien, -1
+	object_event  7, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfHazel, -1
+	object_event  2, 28, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfElla, -1
 	object_event 16,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FElixer, EVENT_UNION_CAVE_B2F_ELIXER
-	object_event 12, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FHyperPotion, EVENT_UNION_CAVE_B2F_HYPER_POTION
+	object_event 17, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FHyperPotion, EVENT_UNION_CAVE_B2F_HYPER_POTION
 	object_event 11, 31, SPRITE_SURF, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, UnionCaveLapras, EVENT_UNION_CAVE_B2F_LAPRAS

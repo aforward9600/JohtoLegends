@@ -52,11 +52,11 @@ BlackthornGymMasterScript:
 .FightDone:
 	checkevent EVENT_GOT_TM24_DRAGONBREATH
 	iftrue .GotTM24
-	setevent EVENT_BEAT_COOLTRAINERM_PAUL
+	setevent EVENT_BEAT_DRAGON_TAMER_M_DEVIN
 	setevent EVENT_BEAT_COOLTRAINERM_CODY
 	setevent EVENT_BEAT_COOLTRAINERM_MIKE
 	setevent EVENT_BEAT_COOLTRAINERF_EMIKO
-	setevent EVENT_BEAT_COOLTRAINERF_LOLA
+	setevent EVENT_BEAT_DRAGON_TAMER_F_DANI
 	clearevent EVENT_MAHOGANY_MART_OWNERS
 	setevent EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN
 	clearevent EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
@@ -78,7 +78,7 @@ BlackthornGymMasterScript:
 	end
 
 TrainerCooltrainermPaul:
-	trainer COOLTRAINERM, PAUL, EVENT_BEAT_COOLTRAINERM_PAUL, CooltrainermPaulSeenText, CooltrainermPaulBeatenText, 0, .Script
+	trainer DRAGON_TAMER_M, DEVIN, EVENT_BEAT_DRAGON_TAMER_M_DEVIN, CooltrainermPaulSeenText, CooltrainermPaulBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -100,7 +100,7 @@ TrainerCooltrainermMike:
 	end
 
 TrainerCooltrainerfLola:
-	trainer COOLTRAINERF, LOLA, EVENT_BEAT_COOLTRAINERF_LOLA, CooltrainerfLolaSeenText, CooltrainerfLolaBeatenText, 0, .Script
+	trainer DRAGON_TAMER_F, DANI, EVENT_BEAT_DRAGON_TAMER_F_DANI, CooltrainerfLolaSeenText, CooltrainerfLolaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

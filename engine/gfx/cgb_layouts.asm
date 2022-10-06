@@ -52,6 +52,7 @@ LoadSGBLayoutCGB:
 	dw _CGB_MagnetTrain
 	dw _CGB_PackPals
 	dw _CGB_TrainerCard
+	dw _CGB_TrainerCardKanto
 	dw _CGB_PokedexUnownMode
 	dw _CGB_BillsPC
 	dw _CGB_UnownPuzzle
@@ -729,6 +730,107 @@ _CGB_TrainerCard:
 
 .BadgePalettes:
 INCLUDE "gfx/trainer_card/badges.pal"
+
+_CGB_TrainerCardKanto:
+	ld de, wBGPals1
+	xor a ; CHRIS
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+	ld a, KRIS
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+	ld a, CHIGUSA
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+	ld a, MILTON
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+	ld a, KURT
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+	ld a, WALKER ; CLAIR
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+	ld a, BYRON
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+	ld a, PRYCE ; CHUCK
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+	ld hl, .BadgePalettesKanto
+	ld bc, 8 palettes
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
+
+	; fill screen with opposite-gender palette for the card border
+	hlcoord 0, 0, wAttrMap
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld a, [wPlayerGender]
+	and a
+	ld a, $1 ; kris
+	jr z, .got_gender
+	ld a, $0 ; chris
+.got_gender
+	call ByteFill
+	; fill trainer sprite area with same-gender palette
+	hlcoord 14, 1, wAttrMap
+	lb bc, 7, 5
+	ld a, [wPlayerGender]
+	and a
+	ld a, $0 ; chris
+	jr z, .got_gender2
+	ld a, $1 ; kris
+.got_gender2
+	call FillBoxCGB
+	hlcoord 2, 11, wAttrMap
+	lb bc, 2, 4
+	ld a, $6 ; brock
+	call FillBoxCGB
+	hlcoord 6, 11, wAttrMap
+	lb bc, 2, 4
+	ld a, $0 ; misty / chris
+	call FillBoxCGB
+	hlcoord 10, 11, wAttrMap
+	lb bc, 2, 4
+	ld a, $3 ; lt.surge / erika
+	call FillBoxCGB
+	hlcoord 14, 11, wAttrMap
+	lb bc, 2, 4
+	ld a, $3 ; erika / lt.surge
+	call FillBoxCGB
+	hlcoord 2, 14, wAttrMap
+	lb bc, 2, 4
+	ld a, $6 ; koga
+	call FillBoxCGB
+	hlcoord 6, 14, wAttrMap
+	lb bc, 2, 4
+	ld a, $5 ; sabrina
+	call FillBoxCGB
+	hlcoord 10, 14, wAttrMap
+	lb bc, 2, 4
+	ld a, $7 ; blaine
+	call FillBoxCGB
+	hlcoord 14, 14, wAttrMap
+	lb bc, 2, 4
+	ld a, $1 ; giovanni
+	call FillBoxCGB
+	; top-right corner still uses the border's palette
+	ld a, [wPlayerGender]
+	and a
+	ld a, $1 ; kris
+	jr z, .got_gender3
+	ld a, $0 ; chris
+    .got_gender3
+	hlcoord 18, 1, wAttrMap
+	ld [hl], a
+	call ApplyAttrMap
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+.BadgePalettesKanto:
+INCLUDE "gfx/trainer_card/kanto_badges.pal"
 
 _CGB_MoveList:
 	ld de, wBGPals1

@@ -76,23 +76,24 @@ ReturnShuckle:
 	farcall SelectMonFromParty
 	jr c, .refused
 
-	ld a, [wCurPartySpecies]
-	call GetPokemonIndexFromID
-	ld a, l
-	sub LOW(GIBLE)
-	if HIGH(GIBLE) == 0
-		or h
-	else
-		jr nz, .DontReturn
-		if HIGH(GIBLE) == 1
-			dec h
-		else
-			ld a, h
-			cp HIGH(GIBLE)
-		endc
-	endc
-	jr nz, .DontReturn
-
+;	ld a, [wCurPartySpecies]
+;	call GetPokemonIndexFromID
+;	ld a, l
+;	sub LOW(GIBLE)
+;	if HIGH(GIBLE) == 0
+;		or h
+;	else
+;		jr nz, .DontReturn
+;		if HIGH(GIBLE) == 1
+;			dec h
+;		else
+;			ld a, h
+;			cp HIGH(GIBLE)
+;		endc
+;	endc
+;	jr nz, .CheckGabite
+;
+;.ReturnAfterChecking:
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1ID
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -151,3 +152,41 @@ ReturnShuckle:
 	ld a, SHUCKIE_FAINTED
 	ld [wScriptVar], a
 	ret
+
+.CheckGabite:
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(GABITE)
+	if HIGH(GABITE) == 0
+		or h
+	else
+		jr nz, .DontReturn
+		if HIGH(GABITE) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(GABITE)
+		endc
+	endc
+	jr nz, .CheckGarchomp
+;	jr z, .ReturnAfterChecking
+
+.CheckGarchomp:
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(GARCHOMP)
+	if HIGH(GARCHOMP) == 0
+		or h
+	else
+		jr nz, .DontReturn
+		if HIGH(GARCHOMP) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(GARCHOMP)
+		endc
+	endc
+	jr nz, .DontReturn
+;	jr z, .ReturnAfterChecking

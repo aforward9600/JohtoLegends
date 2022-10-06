@@ -938,6 +938,8 @@ FeraligatrEvosAttacks:
 	dbw 32, WATERFALL
 	dbw 37, HEADBUTT
 	dbw 45, CRUNCH
+	dbw 50, SCREECH
+	dbw 58, THRASH
 	dbw 63, AQUA_TAIL
 	dbw 71, SUPERPOWER
 	dbw 76, HYDRO_PUMP

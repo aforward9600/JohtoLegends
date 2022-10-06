@@ -19,7 +19,7 @@ TrainerHikerJim:
 	end
 
 TrainerPokefanmRobert:
-	trainer POKEFANM, ROBERT, EVENT_BEAT_POKEFANM_ROBERT, PokefanmRobertSeenText, PokefanmRobertBeatenText, 0, .Script
+	trainer POKEFANM, ROBERTO, EVENT_BEAT_POKEFANM_ROBERTO, PokefanmRobertSeenText, PokefanmRobertBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

@@ -13,61 +13,61 @@ UnionCave1F_MapScripts:
 
 	db 0 ; callbacks
 
-TrainerPokemaniacLarry:
-	trainer POKEMANIAC, ALVIN, EVENT_BEAT_POKEMANIAC_ALVIN, PokemaniacLarrySeenText, PokemaniacLarryBeatenText, 0, .Script
+TrainerBeautyBetty:
+	trainer BEAUTY, BETTY, EVENT_BEAT_BEAUTY_BETTY, BeautyBettySeenText, BeautyBettyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokemaniacLarryAfterBattleText
+	writetext BeautyBettyAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerHikerDaniel:
-	trainer HIKER, DANIEL, EVENT_BEAT_HIKER_DANIEL, HikerDanielSeenText, HikerDanielBeatenText, 0, .Script
+TrainerHikerBubba:
+	trainer HIKER, BUBBA, EVENT_BEAT_HIKER_BUBBA, HikerBubbaSeenText, HikerBubbaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext HikerDanielAfterBattleText
+	writetext HikerBubbaAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerFirebreatherBill:
-	trainer FIREBREATHER, BILL, EVENT_BEAT_FIREBREATHER_BILL, FirebreatherBillSeenText, FirebreatherBillBeatenText, 0, .Script
+TrainerPokeFanMRoberto:
+	trainer POKEFANM, ROBERTO, EVENT_BEAT_POKEFANM_ROBERTO, PokeFanMRobertoSeenText, PokeFanMRobertoBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext FirebreatherBillAfterBattleText
+	writetext PokeFanMRobertoAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerFirebreatherRay:
-	trainer FIREBREATHER, RAY, EVENT_BEAT_FIREBREATHER_RAY, FirebreatherRaySeenText, FirebreatherRayBeatenText, 0, .Script
+TrainerFirebreatherBlart:
+	trainer FIREBREATHER, BLART, EVENT_BEAT_FIREBREATHER_BLART, FirebreatherBlartSeenText, FirebreatherBlartBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext FirebreatherRayAfterBattleText
+	writetext FirebreatherBlartAfterBattleText
 	waitbutton
 	closetext
 	end
 
-UnionCave1FGreatBall:
-	itemball GREAT_BALL
+UnionCave1FDuskBall:
+	itemball DUSK_BALL
 
-UnionCave1FXAttack:
-	itemball X_ATTACK
+UnionCave1FLinkCable:
+	itemball LINK_CABLE
 
-UnionCave1FPotion:
-	itemball POTION
+UnionCave1FFullRestore:
+	itemball FULL_RESTORE
 
-UnionCave1FAwakening:
-	itemball AWAKENING
+UnionCave1FPearl:
+	itemball PEARL
 
 UnionCave1FUnusedSign:
 ; unused
@@ -95,91 +95,89 @@ HikerRussellAfterBattleText:
 	cont "get tougher!"
 	done
 
-PokemaniacLarrySeenText:
-	text "I roam far and"
-	line "wide in search of"
-	cont "#MON."
+BeautyBettySeenText:
+	text "What?"
 
-	para "Are you looking"
-	line "for #MON too?"
+	para "Is it unexpected"
+	line "for a lady like me"
+	cont "to be in a cave?"
 
-	para "Then you're my"
-	line "collecting rival!"
+	para "I don't need to"
+	line "conform to your"
+	cont "standards!"
 	done
 
-PokemaniacLarryBeatenText:
-	text "Ugh. My poor #-"
-	line "MON…"
+BeautyBettyBeatenText:
+	text "Sorry…"
+
+	para "I shouldn't have"
+	line "shouted…"
 	done
 
-PokemaniacLarryAfterBattleText:
-	text "Every Friday, you"
-	line "can hear #MON"
-
-	para "roars from deep"
-	line "inside the cave."
+BeautyBettyAfterBattleText:
+	text "I shouldn't have"
+	line "assumed you'd"
+	cont "think that…"
 	done
 
-HikerDanielSeenText:
-	text "Whoa! What a"
-	line "surprise!"
+HikerBubbaSeenText:
+	text "Well, it turns out"
+	line "the monster was a"
+	cont "#mon."
 
-	para "I didn't expect to"
-	line "see anyone here!"
+	para "Whoops!"
 	done
 
-HikerDanielBeatenText:
-	text "Whoa! I'm beaten"
-	line "big time!"
+HikerBubbaBeatenText:
+	text "Ah man…"
 	done
 
-HikerDanielAfterBattleText:
-	text "I was conned into"
-	line "buying a SLOWPOKE-"
-	cont "TAIL."
+HikerBubbaAfterBattleText:
+	text "I'll look like a"
+	line "fool if this gets"
+	cont "out."
 
-	para "I feel sorry for"
-	line "the poor #MON."
+	para "Please keep this a"
+	line "secret to everybody."
 	done
 
-FirebreatherBillSeenText:
-	text "ZUBAT's SUPERSONIC"
-	line "keeps confusing"
-	cont "my #MON."
+PokeFanMRobertoSeenText:
+	text "Too much sun is"
+	line "bad for my"
+	cont "#mon!"
 
-	para "I'm seriously"
-	line "upset about that!"
+	para "That's why I spend"
+	line "time in here!"
 	done
 
-FirebreatherBillBeatenText:
-	text "I flamed out!"
+PokeFanMRobertoBeatenText:
+	text "It's too dark!"
 	done
 
-FirebreatherBillAfterBattleText:
-	text "On weekends, you"
-	line "can hear strange"
+PokeFanMRobertoAfterBattleText:
+	text "Now that I think"
+	line "about it…"
 
-	para "roars from deep in"
-	line "the cave."
+	para "My Tangrowth"
+	line "likes the sun…"
 	done
 
-FirebreatherRaySeenText:
-	text "If it's light, a"
-	line "cave isn't scary."
-
-	para "If you're strong,"
-	line "#MON aren't"
-	cont "scary."
+FirebreatherBlartSeenText:
+	text "You ever seen a"
+	line "fire breathing"
+	cont "show before?"
 	done
 
-FirebreatherRayBeatenText:
-	text "FLASH!"
+FirebreatherBlartBeatenText:
+	text "Fwoosh!"
 	done
 
-FirebreatherRayAfterBattleText:
-	text "It's my #MON's"
-	line "fire that lights"
-	cont "up this cave."
+FirebreatherBlartAfterBattleText:
+	text "I guess you already"
+	line "have seen one."
+
+	para "You didn't seem"
+	line "that impressed."
 	done
 
 UnionCave1FUnusedSignText:
@@ -200,11 +198,11 @@ UnionCave1F_MapEvents:
 	db 0 ; bg events
 
 	db 8 ; object events
-	object_event  3,  6, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerHikerDaniel, -1
-	object_event  4, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacLarry, -1
-	object_event 15, 27, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherRay, -1
-	object_event 14, 19, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherBill, -1
-	object_event 17, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FGreatBall, EVENT_UNION_CAVE_1F_GREAT_BALL
-	object_event  4,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FXAttack, EVENT_UNION_CAVE_1F_X_ATTACK
-	object_event  4, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FPotion, EVENT_UNION_CAVE_1F_POTION
-	object_event 12, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FAwakening, EVENT_UNION_CAVE_1F_AWAKENING
+	object_event 11,  6, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerHikerBubba, -1
+	object_event  3, 20, SPRITE_BUENA, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyBetty, -1
+	object_event  6, 27, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherBlart, -1
+	object_event 14, 19, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerPokeFanMRoberto, -1
+	object_event 17, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FDuskBall, EVENT_UNION_CAVE_1F_DUSK_BALL
+	object_event  4,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FLinkCable, EVENT_UNION_CAVE_1F_LINK_CABLE
+	object_event  4, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FFullRestore, EVENT_UNION_CAVE_1F_FULL_RESTORE
+	object_event 12, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FPearl, EVENT_UNION_CAVE_1F_PEARL

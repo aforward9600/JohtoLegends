@@ -51,7 +51,7 @@ TrainerCooltrainermDarin:
 	end
 
 TrainerCooltrainerfCara:
-	trainer COOLTRAINERF, CARA, EVENT_BEAT_COOLTRAINERF_CARA, CooltrainerfCaraSeenText, CooltrainerfCaraBeatenText, 0, .Script
+	trainer COOLTRAINERF, ELLA, EVENT_BEAT_COOLTRAINERF_ELLA, CooltrainerfCaraSeenText, CooltrainerfCaraBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

@@ -107,6 +107,14 @@ RuinsOfAlphCynthiaScript:
 	end
 
 .superhappy
+	writetext CynthiaWouldLikeToBattleText
+	waitbutton
+	closetext
+	winlosstext CynthiaRuinsVictory, CynthiaRuinsDefeat
+	loadtrainer TOURIST, CYNTHIA2
+	startbattle
+	reloadmapafterbattle
+	opentext
 	writetext GibleIsVeryHappyText
 	waitbutton
 	closetext
@@ -237,10 +245,30 @@ GibleIsNotHereText:
 	cont "have Gible."
 	done
 
-GibleIsVeryHappyText:
+CynthiaWouldLikeToBattleText:
 	text "………………"
 
-	para "It seems I was"
+	para "I would like to"
+	line "battle with you"
+	cont "again, please."
+
+	para "This will help me"
+	line "to better"
+	cont "understand you."
+	done
+
+CynthiaRuinsVictory:
+	text "Looks like I was"
+	line "right."
+	done
+
+CynthiaRuinsDefeat:
+	text "Looks like I was"
+	line "wrong."
+	done
+
+GibleIsVeryHappyText:
+	text "It seems I was"
 	line "wise to give Gible"
 	cont "to you."
 
@@ -253,7 +281,7 @@ GibleIsVeryHappyText:
 	line "with you."
 
 	para "I hope that it"
-	line "continue to grow"
+	line "continues to grow"
 	cont "alongside the"
 	cont "trainer it loves."
 
