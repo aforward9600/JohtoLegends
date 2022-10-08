@@ -16,7 +16,7 @@ GiveShuckle:
 	jr nc, .NotGiven
 
 ; Caught data.
-	ld b, 0
+	ld b, CAUGHT_BY_GIRL
 	farcall SetGiftPartyMonCaughtData
 
 ; Holding a Berry.

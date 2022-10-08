@@ -144,10 +144,10 @@ JohtoWaterWildMons:
 
 	map_id ROUTE_32
 	db 6 percent ; encounter rate
-	dbw 15, TENTACOOL
-	dbw 20, QUAGSIRE
-	dbw 20, TENTACRUEL
-	dbw 20, POLIWHIRL
+	dbw 40, TENTACRUEL
+	dbw 45, QUAGSIRE
+	dbw 45, POLIWRATH
+	dbw 45, POLITOED
 
 	map_id ROUTE_34
 	db 6 percent ; encounter rate

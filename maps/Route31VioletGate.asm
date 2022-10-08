@@ -19,6 +19,7 @@ Route31VioletGateOfficerScript:
 	jumptextfaceplayer Route31VioletGateOfficerText
 
 Route31VioletGateCooltrainerFScript:
+	setscene SCENE_DEFAULT
 	jumptextfaceplayer Route31VioletGateCooltrainerFText
 
 Route31VioletGateStopPlayer:
@@ -33,10 +34,12 @@ Route31VioletGateStopPlayer:
 	end
 
 .YouCanGoThrough:
-	writetext ThatsTheZepherBadgeText
+	writetext ThatsTheZepherBadgeText2
+;	writetext ThatsTheZepherBadgeText
 	waitbutton
 	closetext
-	setscene SCENE_FINISHED
+	applymovement PLAYER, Route31VioletGateStopPlayerMovement
+;	setscene SCENE_FINISHED
 	end
 
 Route31VioletGateStopPlayerMovement:
@@ -58,6 +61,19 @@ ThatsTheZepherBadgeText:
 
 	para "You can go through"
 	line "now."
+	done
+
+ThatsTheZepherBadgeText2:
+	text "Ah, I see you have"
+	line "the Zephyrbadge."
+
+	para "I'm afraid this is"
+	line "the end of the"
+	cont "hack for now."
+
+	para "Come back when the"
+	line "hack is further"
+	cont "along."
 	done
 
 Route31VioletGateOfficerText:

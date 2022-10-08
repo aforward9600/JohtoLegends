@@ -5,62 +5,62 @@ JohtoGrassWildMons:
 	map_id SPROUT_TOWER_2F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 3, RATTATA
-	dbw 4, RATTATA
-	dbw 5, RATTATA
-	dbw 3, RATTATA
-	dbw 6, RATTATA
-	dbw 5, RATTATA
-	dbw 5, RATTATA
-	dbw 5, RATTATA
+	dbw 43, RATICATE
+	dbw 44, RATICATE
+	dbw 45, RATICATE
+	dbw 43, RATICATE
+	dbw 46, RATICATE
+	dbw 45, RATICATE
+	dbw 45, RATICATE
+	dbw 45, RATICATE
 	; day
-	dbw 3, RATTATA
-	dbw 4, RATTATA
-	dbw 5, RATTATA
-	dbw 3, RATTATA
-	dbw 6, RATTATA
-	dbw 5, RATTATA
-	dbw 5, RATTATA
-	dbw 5, RATTATA
+	dbw 43, RATICATE
+	dbw 44, RATICATE
+	dbw 45, RATICATE
+	dbw 43, RATICATE
+	dbw 46, RATICATE
+	dbw 45, RATICATE
+	dbw 45, RATICATE
+	dbw 45, RATICATE
 	; nite
-	dbw 3, GASTLY
-	dbw 4, GASTLY
-	dbw 5, MISDREAVUS
-	dbw 3, RATTATA
-	dbw 6, MISDREAVUS
-	dbw 5, RATTATA
-	dbw 5, RATTATA
-	dbw 5, RATTATA
+	dbw 43, GENGAR
+	dbw 44, GENGAR
+	dbw 45, RATICATE
+	dbw 43, MISDREAVUS
+	dbw 46, RATICATE
+	dbw 45, DUSCLOPS
+	dbw 45, DUSCLOPS
+	dbw 45, MISMAGIUS
 
 	map_id SPROUT_TOWER_3F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 3, RATTATA
-	dbw 4, RATTATA
-	dbw 5, RATTATA
-	dbw 3, RATTATA
-	dbw 6, RATTATA
-	dbw 5, RATTATA
-	dbw 5, RATTATA
-	dbw 5, RATTATA
+	dbw 43, RATICATE
+	dbw 44, RATICATE
+	dbw 45, RATICATE
+	dbw 43, RATICATE
+	dbw 46, RATICATE
+	dbw 45, RATICATE
+	dbw 45, RATICATE
+	dbw 45, RATICATE
 	; day
-	dbw 3, RATTATA
-	dbw 4, RATTATA
-	dbw 5, RATTATA
-	dbw 3, RATTATA
-	dbw 6, RATTATA
-	dbw 5, RATTATA
-	dbw 5, RATTATA
-	dbw 5, RATTATA
+	dbw 43, RATICATE
+	dbw 44, RATICATE
+	dbw 45, RATICATE
+	dbw 43, RATICATE
+	dbw 46, RATICATE
+	dbw 45, RATICATE
+	dbw 45, RATICATE
+	dbw 45, RATICATE
 	; nite
-	dbw 3, GASTLY
-	dbw 4, GASTLY
-	dbw 5, MISDREAVUS
-	dbw 3, RATTATA
-	dbw 6, MISDREAVUS
-	dbw 5, RATTATA
-	dbw 5, RATTATA
-	dbw 5, RATTATA
+	dbw 43, GENGAR
+	dbw 44, GENGAR
+	dbw 45, RATICATE
+	dbw 43, MISDREAVUS
+	dbw 46, RATICATE
+	dbw 45, DUSCLOPS
+	dbw 45, DUSCLOPS
+	dbw 45, MISMAGIUS
 
 	map_id BURNED_TOWER_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -1205,32 +1205,32 @@ JohtoGrassWildMons:
 	map_id ROUTE_32
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 4, EKANS
-	dbw 5, RATTATA
-	dbw 7, BELLSPROUT
-	dbw 6, HOPPIP
-	dbw 7, PIDGEY
-	dbw 7, HOPPIP
-	dbw 7, HOPPIP
-	dbw 7, HOPPIP
+	dbw 40, ARBOK
+	dbw 41, RATICATE
+	dbw 43, WEEPINBELL
+	dbw 42, AMPHAROS
+	dbw 43, PIDGEOT
+	dbw 43, TOXICROAK
+	dbw 43, JUMPLUFF
+	dbw 43, JUMPLUFF
 	; day
-	dbw 4, EKANS
-	dbw 5, RATTATA
-	dbw 7, BELLSPROUT
-	dbw 6, HOPPIP
-	dbw 7, PIDGEY
-	dbw 7, HOPPIP
-	dbw 7, HOPPIP
-	dbw 7, HOPPIP
+	dbw 40, ARBOK
+	dbw 41, RATICATE
+	dbw 43, WEEPINBELL
+	dbw 42, AMPHAROS
+	dbw 43, PIDGEOT
+	dbw 43, TOXICROAK
+	dbw 43, JUMPLUFF
+	dbw 43, JUMPLUFF
 	; nite
-	dbw 4, WOOPER
-	dbw 5, RATTATA
-	dbw 7, BELLSPROUT
-	dbw 6, ZUBAT
-	dbw 7, HOOTHOOT
-	dbw 7, GASTLY
-	dbw 7, GASTLY
-	dbw 7, GASTLY
+	dbw 40, QUAGSIRE
+	dbw 41, RATICATE
+	dbw 43, WEEPINBELL
+	dbw 42, AMPHAROS
+	dbw 43, NOCTOWL
+	dbw 43, TOXICROAK
+	dbw 43, GENGAR
+	dbw 43, GENGAR
 
 	map_id ROUTE_33
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

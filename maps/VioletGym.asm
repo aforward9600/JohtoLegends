@@ -22,13 +22,13 @@ VioletGym_MapScripts:
 
 .WalkerFridayGym:
 	checkevent EVENT_BEAT_WALKER
-	iftrue .IsItFriday
+	iftrue .IsItFridayGym
 	appear VIOLETGYM_WALKER
 	return
 
-.IsItFriday:
+.IsItFridayGym:
 	readvar VAR_WEEKDAY
-	ifequal SATURDAY, .WalkerDisappears
+	ifequal FRIDAY, .WalkerDisappears
 	appear VIOLETGYM_WALKER
 	return
 
@@ -59,7 +59,6 @@ VioletGymWalkerScript:
 	waitsfx
 	setflag ENGINE_ZEPHYRBADGE
 	setflag ENGINE_BEAT_WALKER
-	setmapscene ROUTE_31_VIOLET_GATE, SCENE_FINISHED
 .FightDone:
 	checkflag ENGINE_BEAT_WALKER
 	iffalse .WalkerRematch
@@ -467,7 +466,7 @@ VioletGym_MapEvents:
 	bg_event  6, 13, BGEVENT_READ, VioletGymStatue
 
 	db 6 ; object events
-	object_event  5,  1, SPRITE_WALKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymWalkerScript, -1
+	object_event  5,  1, SPRITE_WALKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymWalkerScript, EVENT_VIOLET_GYM_WALKER
 	object_event  0,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRodney, -1
 	object_event  9,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperAbel, -1
 	object_event  7, 13, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletGymGuyScript, -1

@@ -21,7 +21,8 @@ SproutTower3F_MapScripts:
 
 .IsItFriday:
 	readvar VAR_WEEKDAY
-	ifequal MONDAY, .WalkerAppears
+	ifequal FRIDAY, .WalkerAppears
+	disappear SPROUTTOWER3F_WALKER
 	return
 
 .WalkerAppears:

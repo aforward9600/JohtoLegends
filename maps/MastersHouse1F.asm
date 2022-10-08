@@ -67,6 +67,7 @@ MaastersHouseMasterScript:
 	ifequal 4, .Master4Badges
 	ifequal 5, .Master5Badges
 	ifequal 6, .Master6Badges
+	ifequal 7, .Master7Badges
 
 .MasterNoBadges:
 	checkevent EVENT_MASTERS_RIVAL_DONE
@@ -94,6 +95,9 @@ MaastersHouseMasterScript:
 
 .Master6Badges:
 	jumptextfaceplayer MasterKurtText
+
+.Master7Badges:
+	jumptextfaceplayer MasterWalkerText
 
 .MasterGoodLuck:
 	jumptextfaceplayer MasterGoodLuckText
@@ -810,6 +814,22 @@ MasterKurtText:
 	para "On Saturdays, you"
 	line "can find him at"
 	cont "his house."
+	done
+
+MasterWalkerText:
+	text "Ah, I see you have"
+	line "battled Walker."
+
+	para "He wishes to"
+	line "wander the world,"
+
+	para "but he adheres to"
+	line "his duties as a"
+	cont "Gym Leader."
+
+	para "On Fridays, you"
+	line "can find him at"
+	cont "Sprout Tower."
 	done
 
 MastersHouse1F_MapEvents:
