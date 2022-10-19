@@ -13,19 +13,19 @@ EcruteakPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
 EcruteakPokecenter1FPokefanMScript:
-;	jumptextfaceplayer EcruteakPokecenter1FPokefanMText
-	faceplayer
-	opentext
-	writetext WannaRelearnMove
-	yesorno
-	iffalse .cancel
-	farscall MoveRelearnerScript
-	iftrue .end
-.end
-	end
+	jumptextfaceplayer EcruteakPokecenter1FPokefanMText
+;	faceplayer
+;	opentext
+;	writetext WannaRelearnMove
+;	yesorno
+;	iffalse .cancel
+;	farscall MoveRelearnerScript
+;	iftrue .end
+;.end
+;	end
 
-.cancel
-	farsjump MoveRelearnerCancel
+;.cancel
+;	farsjump MoveRelearnerCancel
 
 EcruteakPokecenter1FCooltrainerFScript:
 	jumptextfaceplayer EcruteakPokecenter1FCooltrainerFText

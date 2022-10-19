@@ -1252,7 +1252,7 @@ PrimeapeEvosAttacks:
 	dbw 39, CLOSE_COMBAT
 	dbw 44, SCREECH
 	dbw 48, HIHORSEPOWER
-	dbw 43, OUTRAGE
+	dbw 53, OUTRAGE
 	dbw 57, SUPERPOWER
 	db 0 ; no more level-up moves
 
@@ -1328,12 +1328,12 @@ PoliwhirlEvosAttacks:
 
 PoliwrathEvosAttacks:
 	db 0 ; no more evolutions
-	dbw LEARN_EVO_MOVE, CLOSE_COMBAT
-	dbw 1, CLOSE_COMBAT
+	dbw LEARN_EVO_MOVE, SUBMISSION
+	dbw 1, SUBMISSION
 	dbw 1, WATER_GUN
 	dbw 1, HYPNOSIS
 	dbw 1, DOUBLESLAP
-	dbw 1, SUBMISSION
+	dbw 1, CLOSE_COMBAT
 	dbw 32, DYNAMICPUNCH
 	dbw 43, MIND_READER
 	dbw 53, CIRCLE_THROW

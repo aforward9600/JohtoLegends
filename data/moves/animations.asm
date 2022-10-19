@@ -5940,35 +5940,20 @@ BattleAnim_WillOWisp:
 	anim_ret
 
 BattleAnim_Moonblast:
-	anim_1gfx ANIM_GFX_SHINE
-	anim_bgp $1b
-	anim_bgeffect ANIM_BG_07, $0, $0, $0
-	anim_obj ANIM_OBJ_MOONLIGHT, 0, 40, $0
-	anim_obj ANIM_OBJ_MOONLIGHT, 16, 56, $0
-	anim_obj ANIM_OBJ_MOONLIGHT, 32, 72, $0
-	anim_obj ANIM_OBJ_MOONLIGHT, 48, 88, $0
-	anim_obj ANIM_OBJ_MOONLIGHT, 64, 104, $0
-	anim_wait 1
-	anim_sound 0, 0, SFX_MOONLIGHT
-	anim_wait 63
-	anim_1gfx ANIM_GFX_SPEED
-	anim_bgeffect ANIM_BG_06, $0, $2, $0
-	anim_bgeffect ANIM_BG_08, $0, $4, $0
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $0
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $80
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $88
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $90
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $98
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $a0
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $a8
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $b0
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $b8
-.loop
-	anim_sound 6, 2, SFX_WHIRLWIND
-	anim_wait 16
-	anim_loop 8, .loop
-	anim_wait 32
-	anim_ret
+    anim_3gfx ANIM_GFX_MOON, ANIM_GFX_HIT, ANIM_GFX_OBJECTS
+    anim_bgp $1b
+    anim_bgeffect ANIM_BG_20, $10, $1, $20
+    anim_sound 6, 2, SFX_SWEET_KISS
+    anim_obj ANIM_OBJ_MOON, 45, 104, $1
+    anim_wait 128
+    anim_sound 6, 2, SFX_METRONOME
+    anim_obj ANIM_OBJ_SWIFT, 64, 88, $4
+    anim_wait 4
+    anim_obj ANIM_OBJ_SWIFT, 64, 72, $4
+    anim_wait 4
+    anim_obj ANIM_OBJ_SWIFT, 64, 76, $4
+    anim_wait 64
+    anim_ret
 
 BattleAnim_Avalanche:
     anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_ICE

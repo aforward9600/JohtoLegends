@@ -433,10 +433,6 @@ PoliwagEggMoves:
 AbraEggMoves:
 	dw ENCORE
 	dw BARRIER
-	dw FIRE_PUNCH
-	dw ICE_PUNCH
-	dw THUNDERPUNCH
-	dw PIXIE_PUNCH
 	dw KNOCK_OFF
 	dw -1 ; end
 
@@ -444,9 +440,6 @@ MachopEggMoves:
 	dw MEDITATE
 	dw ROLLING_KICK
 	dw ENCORE
-	dw FIRE_PUNCH
-	dw ICE_PUNCH
-	dw THUNDERPUNCH
 	dw BULLET_PUNCH
 	dw COUNTER
 	dw CLOSE_COMBAT
@@ -457,7 +450,6 @@ BellsproutEggMoves:
 	dw ENCORE
 	dw SYNTHESIS
 	dw LEECH_LIFE
-	dw STRENGTH_SAP
 	dw BULLET_SEED
 	dw MAGICAL_LEAF
 	dw POWER_WHIP
@@ -482,12 +474,10 @@ PonytaEggMoves:
 	dw FLAME_WHEEL
 	dw THRASH
 	dw DOUBLE_KICK
-	dw HYPNOSIS
 	dw CHARM
 	dw QUICK_ATTACK
 	dw DOUBLE_EDGE
 	dw HORN_DRILL
-	dw HYPNOSIS
 	dw LOW_KICK
 	dw MORNING_SUN
 	dw FLARE_BLITZ
