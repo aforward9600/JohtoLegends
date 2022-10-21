@@ -103,8 +103,6 @@ GetBattleAnimOAMPointer:
 
 LoadBattleAnimGFX:
 	push hl
-	cp ANIM_GFX_POKE_BALL
-	call z, .LoadBallPalette
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -118,55 +116,76 @@ LoadBattleAnimGFX:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+	or h ; NULL means it's a Poke Ball
+	call z, .GetBall
 	pop de
 	push bc
 	call DecompressRequest2bpp
 	pop bc
 	ret
 
-.LoadBallPalette:
+.GetBall:
 	; save the current WRAM bank
 	ld a, [rSVBK]
 	push af
-	; switch to the WRAM bank of wCurItem so we can read it
+
+	; switch banks an seek for the BallColors entry matching the current item
 	ld a, Bank(wCurItem)
 	ld [rSVBK], a
-	; store the current item in b
 	ld a, [wCurItem]
 	ld b, a
-	; seek for the BallColors entry matching the current item
+	push bc
 	ld hl, BallColors
-.loop
+.palette_loop
 	ld a, [hli]
-	cp b ; did we find the current ball?
-	jr z, .done
-	cp -1 ; did we reach the end of the list?
-	jr z, .done
+	cp b
+	jr z, .palette_done
+	inc a
+	jr z, .palette_done
 rept PAL_COLOR_SIZE * 2
-	inc hl ; skip over the two RGB colors to the next entry
+	inc hl
 endr
-	jr .loop
-.done
+	jr .palette_loop
+
+.palette_done
 	; switch to the WRAM bank of wOBPals2 so we can write to it
 	ld a, BANK(wOBPals2)
 	ld [rSVBK], a
 	; load the RGB colors into the middle two colors of PAL_BATTLE_OB_RED
 	ld de, wOBPals2 palette PAL_BATTLE_OB_RED color 1
-rept PAL_COLOR_SIZE * 2 - 1
-	ld a, [hli]
-	ld [de], a
-	inc de
-endr
-	ld a, [hl]
-	ld [de], a
+	ld bc, PAL_COLOR_SIZE * 2
+	call CopyBytes
+	; load white background in PAL_BATTLE_OB_GREEN
+	ld hl, WhitePalette
+	ld de, wOBPals2 palette PAL_BATTLE_OB_GREEN color 1
+	ld bc, PAL_COLOR_SIZE
+	call CopyBytes
 	; apply the updated colors to the palette RAM
 	ld a, $1
 	ldh [hCGBPalUpdate], a
+
+	; search for appropiate Ball GFX
+	pop bc
+	ld hl, AnimBallObjGFX
+.ball_loop
+	ld a, [hli]
+	cp b
+	jr z, .ball_done
+	inc a
+	jr z, .ball_done
+	inc hl
+	inc hl
+	jr .ball_loop
+
+.ball_done
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	; load Ball's bank
+	ld b, BANK("Battle Ball Icons")
 	; restore the previous WRAM bank
 	pop af
 	ld [rSVBK], a
-	; restore the graphics index to be loaded
-	ld a, ANIM_GFX_POKE_BALL
 	ret
 
 INCLUDE "data/battle_anims/ball_colors.asm"

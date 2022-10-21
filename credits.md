@@ -43,6 +43,10 @@ U-turn effect and animation and Coil animation: TheSeaTree
 
 Sucker Punch, Work Up, Aqua Jet, Muddy Water, Rock Blast, Heat Wave, Brick Break, Hurricane, Leaf Blade, Lava Plume Animation: chattycrystal team
 
+Rangi and ElfinHilon10: Moonblast animation
+
+Unique Poke Ball sprites and animations: Idain
+
 Move Steel Slice: Mskd.
 
 Rangi for Route 47 and 48 maps and the Town Map expansion.

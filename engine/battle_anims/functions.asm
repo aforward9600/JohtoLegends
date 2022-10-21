@@ -32,6 +32,7 @@ DoBattleAnimFrame:
 	dw BattleAnimFunction_10 ; 10
 	dw BattleAnimFunction_11 ; 11
 	dw BattleAnimFunction_PokeBall ; 12
+	dw BattleAnimFunction_PokeBall_BG
 	dw BattleAnimFunction_PokeBallBlocked ; 13
 	dw BattleAnimFunction_14 ; 14
 	dw BattleAnimFunction_15 ; 15
@@ -266,6 +267,27 @@ BattleAnimFunction_02:
 	call DeinitBattleAnimation
 	ret
 
+BattleAnimFunction_PokeBall_BG:
+	call BattleAnim_AnonJumptable
+
+.anon_dw
+	dw .zero
+	dw BattleAnimFunction_PokeBall.one
+	dw BattleAnimFunction_PokeBall.two
+	dw BattleAnimFunction_PokeBall.three
+	dw BattleAnimFunction_PokeBall.four
+	dw BattleAnimFunction_PokeBall.five
+	dw BattleAnimFunction_PokeBall.six
+	dw BattleAnimFunction_PokeBall.seven
+	dw BattleAnimFunction_PokeBall.eight
+	dw BattleAnimFunction_PokeBall.nine
+	dw BattleAnimFunction_PokeBall.ten
+	dw DeinitBattleAnimation
+
+.zero
+	call GetBallAnimBGPal
+	jp BattleAnim_IncAnonJumptableIndex
+
 BattleAnimFunction_PokeBall:
 	call BattleAnim_AnonJumptable
 .anon_dw
@@ -427,6 +449,12 @@ GetBallAnimPal:
 	ld hl, BATTLEANIMSTRUCT_PALETTE
 	add hl, bc
 	ld [hl], PAL_BATTLE_OB_RED
+	ret
+
+GetBallAnimBGPal:
+	ld hl, BATTLEANIMSTRUCT_PALETTE
+	add hl, bc
+	ld [hl], PAL_BATTLE_OB_GREEN
 	ret
 
 BattleAnimFunction_10:

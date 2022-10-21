@@ -1,7 +1,5 @@
 Belch does not require a berry.
 
-Roost currently does not change the type of the user.
-
 Hyper Voice does not hit through Substitute as of now.
 
 Fly is buffed to 90 power.
@@ -69,11 +67,15 @@ Changes to Pokemon:
 
 Blastoise: Is now a Water-Steel Type.
 
-Butterfree: +20HP, +10DEF, +5SPATK, +20SPDEF. +10SPD. 460BST
+Butterfree: +20HP, +10DEF, +15SPATK, +10SPDEF. +20SPD. 460BST
 
-Beedrill: +10HP, +25ATK, +10DEF, +20SPD. 460BST
+Beedrill: +10HP, +35ATK, +10DEF, +20SPD. 460BST
 
-Pidgeot: +5ATK, +25SPATK, -9SPD. 500BST. Focus on Special Attack.
+Pidgey: -10ATK, +10SPATK. 251BST. Focus on Special Attack.
+
+Pidgeotto: -10ATK, +10SPATK. 349BST. Focus on Special Attack.
+
+Pidgeot: +21SPATK, +10SPD. 500BST. Focus on Special Attack.
 
 Raticate: +8HP, +20ATK, +10DEF, +19SPD. 470BST
 
@@ -81,15 +83,21 @@ Fearow; +10HP, +10ATK, +8SPD. 470BST
 
 Arbok: +10HP, +5ATK, +10DEF, +5SPATK, +9SPDEF, +13SPD. 500BST. Is now a Poison-Dark Type.
 
-Raichu: +10HP, +5DEF. 500BST
+Pikachu: +10DEF, +10SPDEF. 320BST
+
+Raichu: +10HP, +5DEF, +10 SPD. 500BST
 
 Sandslash: +15ATK, +20SPDEF, +15SPD. 500BST
+
+Nidoqueen: +10 ATK. 505BST.
+
+Nidoking: +10 ATK. 505BST.
 
 Cleffa: Is now a Fairy Type.
 
 Clefairy: Is now a Fairy Type.
 
-Clefable: Is now a Fairy Type.
+Clefable: +10 SPA. 483BST. Is now a Fairy Type.
 
 Ninetales: +12HP, -16ATK, +10DEF, +24SPATK, 535BST. Is now a Fire-Ghost Type.
 
@@ -97,9 +105,9 @@ Igglybuff: Is now a Normal-Fairy Type.
 
 Jigglypuff: Is now a Normal-Fairy Type.
 
-Wigglytuff: +5ATK, +23DEF, +20SPDEF. 483BST. Is now a Normal-Fairy Type.
+Wigglytuff: +5ATK, +23DEF, +10 SPA, +20SPDEF. 483BST. Is now a Normal-Fairy Type.
 
-Vileplume: +5HP, -5ATK. 490BST
+Vileplume: +5HP, -5ATK, +10 SPA. 490BST
 
 Bellossom: +5HP, -5ATK. 490BST. Is a now Grass-Fairy type.
 
@@ -109,13 +117,21 @@ Venonat: Is now a Bug-Psychic Type.
 
 Venomoth: +5HP, +5ATK, +5DEF, +10SPATK, +5SPDEF, +10SPD. 490BST. Is now a Bug-Psychic Type.
 
-Dugtrio: +6ATK, +11SPD. 442BST
+Dugtrio: +26ATK, +11SPD. 442BST
 
-Persian: +10ATK, +10DEF, +15SPATK, +5SPDEF. 500BST
+Persian: +10ATK, +30DEF, +15SPATK, +5SPDEF. 500BST
 
 Primape: +12ATK, +12SPD. 479BST
 
-Golem: +10SPD. 505BST
+Poliwrath: +10 ATK. 510BST
+
+Politoed: +10 SPA. 510BST
+
+Alakazam: +10 SPDEF. 500BST
+
+Victreebel: +10 SPDEF. 490BST
+
+Golem: +10 ATK, +10SPD. 505BST
 
 Ponyta: Evolves at Level 30.
 

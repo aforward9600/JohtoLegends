@@ -419,7 +419,6 @@ INCBIN "gfx/credits/theend.2bpp"
 
 SECTION "Move Animations", ROMX
 
-INCLUDE "engine/events/bug_contest/display_stats.asm"
 INCLUDE "engine/battle_anims/anim_commands.asm"
 INCLUDE "engine/battle_anims/core.asm"
 INCLUDE "data/battle_anims/objects.asm"
@@ -728,6 +727,7 @@ INCLUDE "engine/link/time_capsule.asm"
 INCLUDE "engine/battle/shiny_swarm.asm"
 INCLUDE "engine/events/move_relearner.asm"
 INCLUDE "engine/events/hidden_power_guru.asm"
+INCLUDE "engine/events/bug_contest/display_stats.asm"
 
 SECTION "Move Animation 2", ROMX
 
