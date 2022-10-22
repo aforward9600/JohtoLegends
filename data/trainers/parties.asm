@@ -5788,13 +5788,10 @@ PokefanFGroup:
 
 	next_list_item ; POKEFANF (2)
 	db "Ethel@", TRAINERTYPE_ITEM_MOVES
-
 	db 15
 	dw TOGEPI
 	db ORAN_BERRY
 	dw SWEET_KISS, METRONOME, CHARM, SING
-	bigdw $EAAA
-
 	db -1 ; end
 
 	next_list_item ; POKEFANF (3)

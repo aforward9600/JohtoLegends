@@ -23,7 +23,7 @@ BlackthornCity_MapScripts:
 .IcePathGuard:
 	checkscene
 	iftrue .Skip ; not SCENE_DEFAULT
-	moveobject BLACKTHORNCITY_LASS, 36, 10
+	moveobject BLACKTHORNCITY_LASS, 38, 10
 .Skip:
 	end
 
