@@ -49,6 +49,9 @@ Route47ItemBallScript:
 Route47ItemBall2Script:
 	itemball REVIVE
 
+Route47Sign:
+	jumptext Route47SignText
+
 HikerPhilSeenText:
 	text "I like the caves"
 	line "here."
@@ -108,6 +111,12 @@ CooltrainerFTeresaAfterBattleText:
 	line "gorgeous as well."
 	done
 
+Route47SignText:
+	text "Route 47"
+	line "Cianwood City -"
+	cont "Route 48"
+	done
+
 Route47_MapEvents:
 	db 0, 0 ; filler
 
@@ -118,7 +127,8 @@ Route47_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 23,  1, BGEVENT_READ, Route47Sign
 
 	db 5 ; object events
 	object_event 59, 26, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerHikerPhil, -1

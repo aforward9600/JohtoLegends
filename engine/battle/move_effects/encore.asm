@@ -10,7 +10,7 @@ BattleCommand_Encore:
 	ld de, wPlayerEncoreCount
 .ok
 	ld a, BATTLE_VARS_LAST_MOVE_OPP
-	call GetBattleVar
+	farcall GetBattleVar
 	ld b, a
 	push hl
 	ld hl, .invalid_moves
@@ -32,7 +32,7 @@ BattleCommand_Encore:
 	and a
 	jp nz, .failed
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
-	call GetBattleVarAddr
+	farcall GetBattleVarAddr
 	bit SUBSTATUS_ENCORED, [hl]
 	jp nz, .failed
 	set SUBSTATUS_ENCORED, [hl]

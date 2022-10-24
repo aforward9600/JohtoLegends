@@ -1170,7 +1170,7 @@ TogepiEvosAttacks:
 	dbw 5, METRONOME
 	dbw 9, SWEET_KISS
 	dbw 13, SING
-	dbw 17, ENCORE
+;	dbw 17, ENCORE
 	dbw 21, GROWTH
 	dbw 25, TRI_ATTACK
 	dbw 29, HEAL_BELL
@@ -1193,7 +1193,7 @@ TogeticEvosAttacks:
 	dbw 9, SWEET_KISS
 	dbw 13, SING
 	dbw 14, FAIRY_WIND
-	dbw 17, ENCORE
+;	dbw 17, ENCORE
 	dbw 21, GROWTH
 	dbw 25, TRI_ATTACK
 	dbw 29, HEAL_BELL
@@ -1339,7 +1339,7 @@ MarillEvosAttacks:
 	dbw 1, TACKLE
 	dbw 1, WATER_GUN
 	dbw 2, TAIL_WHIP
-	dbw 5, ENCORE
+;	dbw 5, ENCORE
 	dbw 7, AQUA_JET
 	dbw 10, DEFENSE_CURL
 	dbw 10, ROLLOUT
@@ -1361,7 +1361,7 @@ AzumarillEvosAttacks:
 	dbw 1, TACKLE
 	dbw 1, WATER_GUN
 	dbw 2, TAIL_WHIP
-	dbw 5, ENCORE
+;	dbw 5, ENCORE
 	dbw 7, AQUA_JET
 	dbw 10, DEFENSE_CURL
 	dbw 10, ROLLOUT
@@ -1736,7 +1736,7 @@ WynautEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, CHARM
 	dbw 1, SPLASH
-	dbw 1, ENCORE
+;	dbw 1, ENCORE
 	dbw 1, AMNESIA
 	dbw 15, COUNTER
 	dbw 15, DESTINY_BOND
@@ -1948,7 +1948,7 @@ ShuckleEvosAttacks:
 	dbw 1, CONSTRICT
 	dbw 1, WITHDRAW
 	dbw 1, ROLLOUT
-	dbw 5, ENCORE
+;	dbw 5, ENCORE
 	dbw 9, WRAP
 	dbw 16, SAFEGUARD
 	dbw 20, REST

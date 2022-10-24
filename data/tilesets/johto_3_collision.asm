@@ -38,7 +38,7 @@
 	tilecoll WATER, WATER, BUOY, BUOY ; 25
 	tilecoll WATER, WATER, WATER, WATER ; 26
 	tilecoll WATER, WATER, WATER, WATER ; 27
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 28
+	tilecoll WALL, WALL, FLOOR, WALL ; 28
 	tilecoll WALL, WALL, WALL, WALL ; 29
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 2a
 	tilecoll WATER, BUOY, WATER, WHIRLPOOL ; 2b

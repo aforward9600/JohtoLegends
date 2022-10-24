@@ -91,7 +91,7 @@ ItemEffects:
 	dw NoEffect            ; KINGS_ROCK
 	dw BitterBerryEffect   ; BITTER_BERRY
 	dw StatusHealingEffect ; MINT_BERRY
-	dw NoEffect            ; RED_APRICORN
+	dw EvoStoneEffect      ; DAWN_STONE
 	dw NoEffect            ; TINYMUSHROOM
 	dw NoEffect            ; BIG_MUSHROOM
 	dw NoEffect            ; SILVERPOWDER

@@ -6277,8 +6277,6 @@ INCLUDE "engine/battle/move_effects/splash.asm"
 
 INCLUDE "engine/battle/move_effects/disable.asm"
 
-INCLUDE "engine/battle/move_effects/pay_day.asm"
-
 INCLUDE "engine/battle/move_effects/conversion.asm"
 
 INCLUDE "engine/battle/move_effects/shell_smash.asm"
@@ -6699,6 +6697,8 @@ BattleCommand_CheckSafeguard:
 INCLUDE "engine/battle/move_effects/magnitude.asm"
 
 INCLUDE "engine/battle/move_effects/baton_pass.asm"
+
+INCLUDE "engine/battle/move_effects/pay_day.asm"
 
 INCLUDE "engine/battle/move_effects/pursuit.asm"
 
