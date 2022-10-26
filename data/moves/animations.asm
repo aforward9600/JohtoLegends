@@ -420,6 +420,7 @@ BattleAnimations::
 	dw BattleAnim_Acrobatics
 	dw BattleAnim_VoltSwitch
 	dw BattleAnim_Coil
+	dw BattleAnim_PincirFlurry
 ;	dw BattleAnim_WakeUpSlap
 	dw BattleAnim_SweetScent2
 
@@ -2844,6 +2845,7 @@ BattleAnim_DrillPeck:
 	anim_ret
 
 BattleAnim_Guillotine:
+BattleAnim_PincirFlurry:
 	anim_1gfx ANIM_GFX_CUT
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $10
 	anim_bgeffect ANIM_BG_1F, $40, $2, $0

@@ -1,6 +1,6 @@
 BattleCommand_Encore:
 ; encore
-
+	ld b,b
 	ld hl, wEnemyMonMoves
 	ld de, wEnemyEncoreCount
 	ldh a, [hBattleTurn]
@@ -10,11 +10,11 @@ BattleCommand_Encore:
 	ld de, wPlayerEncoreCount
 .ok
 	ld a, BATTLE_VARS_LAST_MOVE_OPP
-	farcall GetBattleVar
+	call GetBattleVar
 	ld b, a
 	push hl
 	ld hl, .invalid_moves
-	call CheckMoveInList
+	farcall CheckMoveInList
 	pop hl
 	jp c, .failed
 
@@ -32,7 +32,7 @@ BattleCommand_Encore:
 	and a
 	jp nz, .failed
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
-	farcall GetBattleVarAddr
+	call GetBattleVarAddr
 	bit SUBSTATUS_ENCORED, [hl]
 	jp nz, .failed
 	set SUBSTATUS_ENCORED, [hl]

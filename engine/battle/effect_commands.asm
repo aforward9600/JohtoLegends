@@ -4823,10 +4823,6 @@ GetStatName:
 	ld bc, wStringBuffer3 - wStringBuffer2
 	jp CopyBytes
 
-INCLUDE "data/battle/stat_names.asm"
-
-INCLUDE "data/battle/stat_multipliers.asm"
-
 BattleCommand_AllStatsUp:
 ; allstatsup
 
@@ -6694,16 +6690,6 @@ BattleCommand_CheckSafeguard:
 	call StdBattleTextbox
 	jp EndMoveEffect
 
-INCLUDE "engine/battle/move_effects/magnitude.asm"
-
-INCLUDE "engine/battle/move_effects/baton_pass.asm"
-
-INCLUDE "engine/battle/move_effects/pay_day.asm"
-
-INCLUDE "engine/battle/move_effects/pursuit.asm"
-
-INCLUDE "engine/battle/move_effects/rapid_spin.asm"
-
 BattleCommand_HealMorn:
 ; healmorn
 	ld b, MORN_F
@@ -7096,8 +7082,6 @@ SandstormSpDefBoost:
 	ld b, h
 	ld c, l
 	ret
-
-INCLUDE "engine/battle/move_effects/aqua_ring.asm"
 
 ApplyChoiceScarfOnSpeed:
 	Call GetOpponentItem

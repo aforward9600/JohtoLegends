@@ -75,9 +75,9 @@ endif
 
 
 johtolegendsv0.1.gbc: $(crystal_obj) pokecrystal.link
-	$(RGBLINK) -n pokecrystal.sym -m pokecrystal.map -l pokecrystal.link -o $@ $(crystal_obj)
+	$(RGBLINK) -n johtolegendsv0.1.sym -m johtolegendsv0.1.map -l pokecrystal.link -o $@ $(crystal_obj)
 	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_CRYSTAL $@
-	tools/sort_symfile.sh pokecrystal.sym
+	tools/sort_symfile.sh johtolegendsv0.1.sym
 
 %.lz: %
 	tools/lzcomp -- $< $@

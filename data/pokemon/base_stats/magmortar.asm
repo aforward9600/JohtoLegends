@@ -4,7 +4,7 @@
 	evs  0,   0,   0,   0,   3,   0
 	;   hp  atk  def  spd  sat  sdf
 
-	db FIRE, FIGHTING ; type
+	db FIRE, POISON ; type
 	db 30 ; catch rate
 	db 199 ; base exp
 	db RAWST_BERRY, RAWST_BERRY ; items

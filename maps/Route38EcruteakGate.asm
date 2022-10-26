@@ -308,7 +308,7 @@ Route38EcruteakRivalText:
 	done
 
 HeyDracoText:
-	text "Hey Draco!"
+	text "Hey <PLAYER>!"
 
 	para "Have you been to"
 	line "the Ecruteak Dance"
@@ -338,7 +338,7 @@ HeyDracoText:
 	done
 
 HeyDahliaText:
-	text "Hey Dahlia!"
+	text "Hey <PLAYER>!"
 
 	para "Have you been to"
 	line "the Ecruteak Dance"

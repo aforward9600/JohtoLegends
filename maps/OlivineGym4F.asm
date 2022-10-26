@@ -54,7 +54,6 @@ OlivineGym1FByronScript:
 	waitsfx
 	setflag ENGINE_MINERALBADGE
 	readvar VAR_BADGES
-	scall OlivineGym1FActivateRockets
 	setflag ENGINE_BEAT_BYRON
 .FightDone:
 	checkflag ENGINE_BEAT_BYRON
@@ -151,17 +150,6 @@ AfterByronRematch:
 	closetext
 	setflag ENGINE_BEAT_BYRON
 	end
-
-OlivineGym1FActivateRockets:
-	ifequal 7, .RadioTower1FRockets
-	ifequal 6, .Goldenrod1FRockets
-	end
-
-.Goldenrod1FRockets:
-	jumpstd goldenrodrockets
-
-.RadioTower1FRockets:
-	jumpstd radiotowerrockets
 
 EleventhElevator:
 	special FadeBlackQuickly

@@ -163,11 +163,6 @@ SECTION "Battle Core 2", ROMX
 INCLUDE "data/battle/effect_command_pointers.asm"
 
 
-SECTION "Battle Core 3", ROMX
-
-INCLUDE "engine/battle/effect_command_files.asm"
-
-
 SECTION "bank10", ROMX
 
 INCLUDE "data/moves/moves.asm"
@@ -732,3 +727,7 @@ INCLUDE "engine/events/bug_contest/display_stats.asm"
 SECTION "Move Animation 2", ROMX
 
 INCLUDE "data/moves/animations.asm"
+
+SECTION "Battle Core 3", ROMX
+
+INCLUDE "engine/battle/effect_command_files.asm"

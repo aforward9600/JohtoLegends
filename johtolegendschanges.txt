@@ -167,6 +167,10 @@ Mr Mime: +20HP, +20ATK, +10DEF, +10SPATK. 520BST to match Electivire and Magmort
 
 Jynx: +20HP, +20ATK, +10DEF, +10SPATK, +5SPDEF. 520 BST to match Electivire and Magmortar.
 
+Electivire: Electric/Fighting Type now.
+
+Magmortar: Fire/Poison Type now.
+
 Ditto: +72SPD. 360BST
 
 Omastar: +15HP. 510BST

@@ -400,6 +400,7 @@ MoveDescriptions1:
 	dw AcrobaticsDescription
 	dw UTurnDescription
 	dw CoilDescription
+	dw PincirFlurryDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -730,8 +731,8 @@ StringShotDescription:
 	next "the foe's Speed.@"
 
 DragonRageDescription:
-	db   "Always inflicts"
-	next "40HP damage.@"
+	db   "User attacks with"
+	next "full rage.@"
 
 FireSpinDescription:
 	db   "Traps foe in fire"
@@ -1944,3 +1945,7 @@ AcrobaticsDescription:
 CoilDescription:
 	db   "Raises ATK, DEF"
 	line "and Accuracy.@"
+
+PincirFlurryDescription:
+	db   "A barrage of"
+	line "angry pincirs.@"

@@ -759,7 +759,7 @@ CleffaEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, POUND
 	dbw 1, CHARM
-;	dbw 4, ENCORE
+	dbw 4, ENCORE
 	dbw 7, SING
 	dbw 10, SWEET_KISS
 	dbw 13, MIMIC
@@ -777,7 +777,7 @@ ClefairyEvosAttacks:
 	dbw 16, DEFENSE_CURL
 	dbw 19, AMNESIA
 	dbw 22, METRONOME
-;	dbw 25, ENCORE
+	dbw 25, ENCORE
 	dbw 28, BODY_SLAM
 	dbw 31, MOONLIGHT
 	dbw 34, COSMIC_POWER
@@ -1881,7 +1881,7 @@ SeelEvosAttacks:
 	dbw 3, GROWL
 	dbw 7, AQUA_JET
 	dbw 11, ICY_WIND
-;	dbw 12, ENCORE
+	dbw 12, ENCORE
 	dbw 17, ICE_SHARD
 	dbw 21, REST
 	dbw 23, AQUA_RING
@@ -1905,7 +1905,7 @@ DewgongEvosAttacks:
 	dbw 3, GROWL
 	dbw 7, SIGNAL_BEAM
 	dbw 11, ICY_WIND
-;	dbw 12, ENCORE
+	dbw 12, ENCORE
 	dbw 17, ICE_SHARD
 	dbw 21, REST
 	dbw 23, AQUA_RING
@@ -2799,7 +2799,7 @@ MimeJrEvosAttacks:
 	dbw 8, MEDITATE
 	dbw 11, DOUBLESLAP
 	dbw 15, MIMIC
-;	dbw 18, ENCORE
+	dbw 18, ENCORE
 	dbw 22, LIGHT_SCREEN
 	dbw 22, REFLECT
 	dbw 25, PSYBEAM
@@ -2822,7 +2822,7 @@ MrMimeEvosAttacks:
 	dbw 11, DOUBLESLAP
 	dbw 15, MIMIC
 	dbw 15, PSYWAVE
-;	dbw 18, ENCORE
+	dbw 18, ENCORE
 	dbw 22, LIGHT_SCREEN
 	dbw 22, REFLECT
 	dbw 25, PSYBEAM
@@ -2940,7 +2940,7 @@ ElekidEvosAttacks:
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
-	dbbw EVOLVE_ITEM, THUNDERSTONE, ELECTIVIRE
+	dbbw EVOLVE_ITEM, ELECTIRIZER, ELECTIVIRE
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, CROSS_CHOP
 	dbw 1, CROSS_CHOP
@@ -3002,7 +3002,7 @@ MagbyEvosAttacks:
 	db 0 ; no more level-up moves
 
 MagmarEvosAttacks:
-	dbbw EVOLVE_ITEM, FIRE_STONE, MAGMORTAR
+	dbbw EVOLVE_ITEM, MAGMARIZER, MAGMORTAR
 	db 0 ; no more evolutions
 	dbw 1, EMBER
 	dbw 1, LEER
@@ -3038,7 +3038,7 @@ MagmortarEvosAttacks:
 	dbw 42, SUNNY_DAY
 	dbw 49, FLAMETHROWER
 	dbw 55, FIRE_BLAST
-	dbw 62, AURA_SPHERE
+	dbw 62, BELCH
 	db 0 ; no more level-up moves
 
 PinsirEvosAttacks:
@@ -3056,7 +3056,7 @@ PinsirEvosAttacks:
 	dbw 33, SUBMISSION
 	dbw 36, CIRCLE_THROW
 	dbw 40, SWORDS_DANCE
-	dbw 43, THRASH
+	dbw 43, PINCIRFLURRY
 	dbw 47, SUPERPOWER
 	dbw 50, GUILLOTINE
 	db 0 ; no more level-up moves

@@ -43,6 +43,8 @@ U-turn effect and animation and Coil animation: TheSeaTree
 
 Sucker Punch, Work Up, Aqua Jet, Muddy Water, Rock Blast, Heat Wave, Brick Break, Hurricane, Leaf Blade, Lava Plume Animation: chattycrystal team
 
+Fixing Move Effects: Nayru62
+
 Rangi and ElfinHilon10: Moonblast animation
 
 Unique Poke Ball sprites and animations: Idain

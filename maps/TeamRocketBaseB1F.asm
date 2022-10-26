@@ -509,7 +509,7 @@ TeamRocketBaseB1FSecurityCamera:
 	jumptext TeamRocketBaseB1FSecurityCameraText
 
 TeamRocketBaseB1FBookshelf:
-	jumpstd teamrocketoath
+	jumptext NinjaBookText2
 
 TeamRocketBaseB1FSecretSwitch:
 	jumptext TeamRocketBaseB1FSecretSwitchText
@@ -750,6 +750,13 @@ TeamRocketBaseB1FSecretSwitchText:
 TeamRocketBaseB1FSwitchOffText:
 	text "The switch is"
 	line "turned off."
+	done
+
+NinjaBookText2:
+	text "There are a bunch"
+	line "of books about"
+	cont "ninjas on the"
+	cont "shelves here."
 	done
 
 TeamRocketBaseB1F_MapEvents:
