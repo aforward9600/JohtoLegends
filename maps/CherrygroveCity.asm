@@ -7,10 +7,7 @@
 	const CHERRYGROVECITY_CHRIS
 
 CherrygroveCity_MapScripts:
-	db 3 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_CHERRYGROVECITY_NOTHING
-	scene_script .DummyScene1 ; SCENE_CHERRYGROVECITY_MEET_RIVAL
-	scene_script .DummyScene2 ; SCENE_CHERRYGROVECITY_MEET_RIVAL_2
+	db 0 ; scene scripts
 
 	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
@@ -107,158 +104,6 @@ CherrygroveCityGuideGent:
 	writetext GuideGentNoText
 	waitbutton
 	closetext
-	end
-
-CherrygroveSilverSceneSouth:
-	moveobject CHERRYGROVECITY_KRIS, 39, 7
-CherrygroveSilverSceneNorth:
-	turnobject PLAYER, RIGHT
-	showemote EMOTE_SHOCK, PLAYER, 15
-	special FadeOutMusic
-	pause 15
-	appear CHERRYGROVECITY_KRIS
-	applymovement CHERRYGROVECITY_KRIS, CherrygroveCity_RivalWalksToYou
-	turnobject PLAYER, RIGHT
-	playmusic MUSIC_RIVAL_ENCOUNTER
-	opentext
-	writetext CherrygroveRivalText_Seen
-	waitbutton
-	closetext
-	checkevent EVENT_GOT_DRATINI_FROM_MASTER
-	iftrue .Totodile
-	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
-	iftrue .Chikorita
-	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
-	setlasttalked CHERRYGROVECITY_KRIS
-	loadtrainer RIVAL3, RIVAL3_A_DRATINI
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-	startbattle
-	dontrestartmapmusic
-	reloadmap
-	iftrue .AfterVictorious
-	sjump .AfterYourDefeat
-
-.Totodile:
-	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
-	setlasttalked CHERRYGROVECITY_KRIS
-	loadtrainer RIVAL3, RIVAL3_A_LARVITAR
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-	startbattle
-	dontrestartmapmusic
-	reloadmap
-	iftrue .AfterVictorious
-	sjump .AfterYourDefeat
-
-.Chikorita:
-	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
-	setlasttalked CHERRYGROVECITY_KRIS
-	loadtrainer RIVAL3, RIVAL3_A_DRATINI
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-	startbattle
-	dontrestartmapmusic
-	reloadmap
-	iftrue .AfterVictorious
-	sjump .AfterYourDefeat
-
-.AfterVictorious:
-	playmusic MUSIC_RIVAL_AFTER
-	opentext
-	writetext CherrygroveRivalText_YouWon
-	waitbutton
-	closetext
-	sjump .FinishRival
-
-.AfterYourDefeat:
-	playmusic MUSIC_RIVAL_AFTER
-	opentext
-	writetext CherrygroveRivalText_YouLost
-	waitbutton
-	closetext
-.FinishRival:
-	playsound SFX_TACKLE
-	applymovement PLAYER, CherrygroveCity_RivalPushesYouOutOfTheWay
-	turnobject PLAYER, LEFT
-	applymovement CHERRYGROVECITY_KRIS, CherrygroveCity_RivalExitsStageLeft
-	disappear CHERRYGROVECITY_KRIS
-	setscene SCENE_CHERRYGROVECITY_NOTHING
-	special HealParty
-	playmapmusic
-	end
-
-CherrygroveSilverSceneSouth2:
-	moveobject CHERRYGROVECITY_CHRIS, 39, 7
-CherrygroveSilverSceneNorth2:
-	turnobject PLAYER, RIGHT
-	showemote EMOTE_SHOCK, PLAYER, 15
-	special FadeOutMusic
-	pause 15
-	appear CHERRYGROVECITY_CHRIS
-	applymovement CHERRYGROVECITY_CHRIS, CherrygroveCity_RivalWalksToYou
-	turnobject PLAYER, RIGHT
-	playmusic MUSIC_RIVAL_ENCOUNTER
-	opentext
-	writetext CherrygroveRivalText_Seen
-	waitbutton
-	closetext
-	checkevent EVENT_GOT_DRATINI_FROM_MASTER
-	iftrue .Totodile2
-	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
-	iftrue .Chikorita2
-	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
-	setlasttalked CHERRYGROVECITY_CHRIS
-	loadtrainer RIVAL4, RIVAL4_A_DRATINI
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-	startbattle
-	dontrestartmapmusic
-	reloadmap
-	iftrue .AfterVictorious2
-	sjump .AfterYourDefeat2
-
-.Totodile2:
-	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
-	setlasttalked CHERRYGROVECITY_CHRIS
-	loadtrainer RIVAL4, RIVAL4_A_LARVITAR
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-	startbattle
-	dontrestartmapmusic
-	reloadmap
-	iftrue .AfterVictorious2
-	sjump .AfterYourDefeat2
-
-.Chikorita2:
-	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
-	setlasttalked CHERRYGROVECITY_CHRIS
-	loadtrainer RIVAL4, RIVAL4_A_DRATINI
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-	startbattle
-	dontrestartmapmusic
-	reloadmap
-	iftrue .AfterVictorious2
-	sjump .AfterYourDefeat2
-
-.AfterVictorious2:
-	playmusic MUSIC_RIVAL_AFTER
-	opentext
-	writetext CherrygroveRivalText_YouWon
-	waitbutton
-	closetext
-	sjump .FinishRival2
-
-.AfterYourDefeat2:
-	playmusic MUSIC_RIVAL_AFTER
-	opentext
-	writetext CherrygroveRivalText_YouLost
-	waitbutton
-	closetext
-.FinishRival2:
-	playsound SFX_TACKLE
-	applymovement PLAYER, CherrygroveCity_RivalPushesYouOutOfTheWay
-	turnobject PLAYER, LEFT
-	applymovement CHERRYGROVECITY_CHRIS, CherrygroveCity_RivalExitsStageLeft
-	disappear CHERRYGROVECITY_CHRIS
-	setscene SCENE_CHERRYGROVECITY_NOTHING
-	special HealParty
-	playmapmusic
 	end
 
 CherrygroveTeacherScript:
@@ -641,11 +486,7 @@ CherrygroveCity_MapEvents:
 	warp_event 25,  9, GUIDE_GENTS_HOUSE, 1
 	warp_event 31, 11, CHERRYGROVE_EVOLUTION_SPEECH_HOUSE, 1
 
-	db 4 ; coord events
-	coord_event 33,  6, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveSilverSceneNorth
-	coord_event 33,  7, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveSilverSceneSouth
-	coord_event 33,  6, SCENE_CHERRYGROVECITY_MEET_RIVAL_2, CherrygroveSilverSceneNorth2
-	coord_event 33,  7, SCENE_CHERRYGROVECITY_MEET_RIVAL_2, CherrygroveSilverSceneSouth2
+	db 0 ; coord events
 
 	db 4 ; bg events
 	bg_event 30,  8, BGEVENT_READ, CherrygroveCitySign

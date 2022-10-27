@@ -102,7 +102,7 @@ CianwoodGymChigusaScript:
 	ifequal 6, .ChigusaBattle4
 	ifequal 7, .ChigusaBattle5
 	ifequal 8, .ChigusaBattle6
-	end
+	sjump .ChigusaBattle6
 
 .ChigusaBattle1:
 	writetext ReadyForARematchText

@@ -91,7 +91,7 @@ OlivineGym1FByronScript:
 	ifequal 6, .ByronBattle3
 	ifequal 7, .ByronBattle4
 	ifequal 8, .ByronBattle5
-	end
+	sjump .ByronBattle5
 
 .ByronBattle1:
 	writetext ByronRematchText

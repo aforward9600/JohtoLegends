@@ -89,7 +89,7 @@ MahoganyGymPryceScript:
 	ifequal 6, .PryceBattle6
 	ifequal 7, .PryceBattle7
 	ifequal 8, .PryceBattle8
-	end
+	sjump .PryceBattle8
 
 .PryceBattle1:
 	writetext PryceText_WelcomeBack

@@ -103,7 +103,7 @@ GoldenrodGymMiltonScript:
 	ifequal 6, .MiltonBattle2
 	ifequal 7, .MiltonBattle3
 	ifequal 8, .MiltonBattle4
-	end
+	sjump .MiltonBattle4
 
 .MiltonBattle1:
 	checkevent EVENT_GOLDENROD_GYM_RIVAL_1

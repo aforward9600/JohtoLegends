@@ -88,6 +88,7 @@ VioletGymWalkerScript:
 	readvar VAR_BADGES
 	ifequal 7, .WalkerBattle1
 	ifequal 8, .WalkerBattle2
+	sjump .WalkerBattle2
 
 .WalkerBattle1:
 	writetext WalkerReadyForARematchText

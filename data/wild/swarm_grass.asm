@@ -189,35 +189,35 @@ SwarmGrassWildMons:
 	dbw 5, SNEASEL
 
 ; Magcargo swarm
-	map_id BURNED_TOWER_2F
+	map_id BURNED_TOWER_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 22, MAGCARGO
-	dbw 22, MAGCARGO
-	dbw 22, MAGBY
-	dbw 23, MAGCARGO
-	dbw 23, MAGCARGO
-	dbw 23, DUSKULL
-	dbw 24, DUSKULL
-	dbw 24, MAGCARGO
+	dbw 13, SLUGMA
+	dbw 14, MISDREAVUS
+	dbw 15, MAGBY
+	dbw 14, MISDREAVUS
+	dbw 15, MISDREAVUS
+	dbw 15, DUSKULL
+	dbw 15, DUSKULL
+	dbw 15, MISDREAVUS
 	; day
-	dbw 22, MAGCARGO
-	dbw 22, MAGCARGO
-	dbw 22, MAGBY
-	dbw 23, MAGCARGO
-	dbw 23, MAGCARGO
-	dbw 23, DUSKULL
-	dbw 24, DUSKULL
-	dbw 24, MAGCARGO
+	dbw 13, SLUGMA
+	dbw 14, MISDREAVUS
+	dbw 15, MAGBY
+	dbw 14, MISDREAVUS
+	dbw 15, MISDREAVUS
+	dbw 15, DUSKULL
+	dbw 15, DUSKULL
+	dbw 15, MISDREAVUS
 	; nite
-	dbw 22, MAGCARGO
-	dbw 22, MAGCARGO
-	dbw 22, MAGBY
-	dbw 23, MAGCARGO
-	dbw 23, MAGCARGO
-	dbw 23, DUSKULL
-	dbw 24, DUSKULL
-	dbw 24, MAGCARGO
+	dbw 13, SLUGMA
+	dbw 14, MISDREAVUS
+	dbw 15, MAGBY
+	dbw 14, MISDREAVUS
+	dbw 15, MISDREAVUS
+	dbw 15, DUSKULL
+	dbw 15, DUSKULL
+	dbw 15, MISDREAVUS
 
 ; Pinsir swarm
 	map_id NATIONAL_PARK

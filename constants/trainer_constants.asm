@@ -782,6 +782,8 @@ CHRIS EQU __enum__
 	trainerclass TOURIST ; 4e
 	const CYNTHIA1
 	const CYNTHIA2
+	const CYNTHIA4
+	const CYNTHIA5
 
 	trainerclass ENGINEER ; 4f
 	const HARVEY1

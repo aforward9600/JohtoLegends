@@ -13,7 +13,7 @@ GenerateShinySwarm:
 	cp ICE_PATH
 	jr z, .sneasel
 	cp BURNED_TOWER
-	jr z, .magcargo
+	jr z, .misdreavus
 	cp NATIONAL_PARK
 	jr z, .pinsir
 	cp ROUTE_38
@@ -153,20 +153,20 @@ GenerateShinySwarm:
 	jr nz, .skipshineswarm
 	jr .rollshiny
 
-.magcargo
+.misdreavus
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld a, l
-	sub LOW(MAGCARGO)
-	if HIGH(MAGCARGO) == 0
+	sub LOW(MISDREAVUS)
+	if HIGH(MISDREAVUS) == 0
 		or h
 	else
 		jr nz, .skipshineswarm
-		if HIGH(MAGCARGO)
+		if HIGH(MISDREAVUS)
 			dec h
 		else
 			ld a, h
-			cp HIGH(MAGCARGO)
+			cp HIGH(MISDREAVUS)
 		endc
 	endc
 	jr nz, .skipshineswarm

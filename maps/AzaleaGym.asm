@@ -85,7 +85,7 @@ AzaleaGymKurtScript:
 	ifequal 6, .KurtBattle1
 	ifequal 7, .KurtBattle2
 	ifequal 8, .KurtBattle3
-	end
+	sjump .KurtBattle3
 
 .KurtBattle1:
 	writetext KurtText_Rematch

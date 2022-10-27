@@ -2227,7 +2227,7 @@ SwarmScript:
 .Badges2Swarm:
 	farwritetext WhatSwarmTodayText
 	waitbutton
-	random 9
+	random 10
 	ifequal 0, .noswarm
 	ifequal 1, .yanma
 	ifequal 2, .dunsparce
@@ -2237,6 +2237,7 @@ SwarmScript:
 	ifequal 6, .gible
 	ifequal 7, .sneasel
 	ifequal 8, .scyther
+	ifequal 9, .misdreavus
 
 .Badges4Swarm:
 	farwritetext WhatSwarmTodayText
@@ -2250,7 +2251,7 @@ SwarmScript:
 	ifequal 5, .kangaskhan
 	ifequal 6, .gible
 	ifequal 7, .sneasel
-	ifequal 8, .magcargo
+	ifequal 8, .misdreavus
 	ifequal 9, .scyther
 	ifequal 10, .pinsir
 
@@ -2318,10 +2319,10 @@ SwarmScript:
 	closetext
 	sjump .endswarmchannel
 
-.magcargo
+.misdreavus
 	setflag ENGINE_SWARM
-	swarm BURNED_TOWER_2F
-	farwritetext MagcargoSwarmText
+	swarm BURNED_TOWER_1F
+	farwritetext MisdreavusSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel

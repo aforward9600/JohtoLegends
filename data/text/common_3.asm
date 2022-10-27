@@ -1887,22 +1887,22 @@ SneaselSwarmText::
 	cont "Sneasel!"
 	done
 
-MagcargoSwarmText::
+MisdreavusSwarmText::
 	text "………………………"
 
 	para "Ah!"
 
-	para "In the 2F of the"
+	para "In the 1F of the"
 	line "Burned Tower,"
 	cont "there is a swarm"
-	cont "of Magcargo!"
+	cont "of Misdreavus!"
 
 	para "Now's your chance,"
 	line "trainers!"
 
 	para "Head to Burned"
 	line "Tower and catch a"
-	cont "Magcargo!"
+	cont "Misdreavus!"
 	done
 
 ScytherSwarmText::

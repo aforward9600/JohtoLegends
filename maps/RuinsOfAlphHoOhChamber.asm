@@ -77,6 +77,7 @@ RuinsOfAlphHoOhChamberPuzzle:
 	end
 
 RuinsOfAlphCynthiaScript:
+	playmusic MUSIC_CYNTHIA_ENCOUNTER
 	faceplayer
 	opentext
 	writetext HowIsGibleDoingText
@@ -92,29 +93,30 @@ RuinsOfAlphCynthiaScript:
 	writetext GibleIsNotHappyText
 	waitbutton
 	closetext
+	special RestartMapMusic
+	waitsfx
+	playmapmusic
 	end
 
 .ShowMeLater
 	writetext ShowMeLaterText
 	waitbutton
 	closetext
+	special RestartMapMusic
+	waitsfx
+	playmapmusic
 	end
 
 .wrong
 	writetext GibleIsNotHereText
 	waitbutton
 	closetext
+	special RestartMapMusic
+	waitsfx
+	playmapmusic
 	end
 
 .superhappy
-	writetext CynthiaWouldLikeToBattleText
-	waitbutton
-	closetext
-	winlosstext CynthiaRuinsVictory, CynthiaRuinsDefeat
-	loadtrainer TOURIST, CYNTHIA2
-	startbattle
-	reloadmapafterbattle
-	opentext
 	writetext GibleIsVeryHappyText
 	waitbutton
 	closetext
@@ -124,7 +126,12 @@ RuinsOfAlphCynthiaScript:
 	disappear RUINSOFALPH_CYNTHIA
 	pause 15
 	setevent EVENT_RUINS_OF_ALPH_CYNTHIA
+	clearevent EVENT_CHERRYGROVE_CYNTHIA
 	special FadeInQuickly
+	pause 15
+	special RestartMapMusic
+	waitsfx
+	playmapmusic
 	end
 
 RuinsOfAlphHoOhChamberAncientReplica:
@@ -268,7 +275,9 @@ CynthiaRuinsDefeat:
 	done
 
 GibleIsVeryHappyText:
-	text "It seems I was"
+	text "………………"
+
+	para "It seems I was"
 	line "wise to give Gible"
 	cont "to you."
 
@@ -287,6 +296,10 @@ GibleIsVeryHappyText:
 
 	para "Perhaps we will"
 	line "meet again later."
+
+	para "And when we do"
+	line "meet again, I'd"
+	cont "like to battle."
 
 	para "Farewell…"
 	done

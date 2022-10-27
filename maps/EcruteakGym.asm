@@ -123,7 +123,7 @@ EcruteakGymEnokiScript:
 	ifequal 6, .EnokiBattle5
 	ifequal 7, .EnokiBattle6
 	ifequal 8, .EnokiBattle7
-	end
+	sjump .EnokiBattle7
 
 .EnokiBattle1:
 	writetext EnokiReadyForARematchText

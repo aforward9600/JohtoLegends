@@ -127,7 +127,6 @@ MrPokemonsHouse_OakScript:
 	setscene SCENE_FINISHED
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female2
-	setmapscene CHERRYGROVE_CITY, SCENE_CHERRYGROVECITY_MEET_RIVAL
 .next2
 	setmapscene ELMS_LAB, SCENE_ELMSLAB_MEET_OFFICER
 	specialphonecall SPECIALCALL_ROBBED
@@ -148,7 +147,6 @@ MrPokemonsHouse_OakScript:
 	end
 
 .Female2:
-	setmapscene CHERRYGROVE_CITY, SCENE_CHERRYGROVECITY_MEET_RIVAL_2
 	sjump .next2
 
 MrPokemonsHouse_ForeignMagazines:
