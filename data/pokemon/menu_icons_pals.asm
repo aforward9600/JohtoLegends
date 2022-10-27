@@ -173,7 +173,7 @@ MonMenuIconPals:
 	icon_pals RED,    PINK   ; FLAREON
 	icon_pals BLUE,   GREEN  ; ESPEON
 	icon_pals BROWN,  BLUE   ; UMBREON
-	icon_pals GREEN,  TEAL   ; LEAFEON
+	icon_pals GREEN,  BROWN  ; LEAFEON
 	icon_pals BLUE,   TEAL   ; GLACEON
 	icon_pals PINK,   BLUE   ; SYLVEON
 	icon_pals PINK,   BLUE   ; PORYGON
@@ -310,9 +310,9 @@ MonMenuIconPals:
 	icon_pals GREEN,  PURPLE ; LARVITAR
 	icon_pals BLUE,   PURPLE ; PUPITAR
 	icon_pals GREEN,  PURPLE ; TYRANITAR
-	icon_pals BLUE,   TEAL   ; GIBLE
-	icon_pals BLUE,   TEAL   ; GABITE
-	icon_pals BLUE,   TEAL   ; GARCHOMP
+	icon_pals BLUE,   PINK   ; GIBLE
+	icon_pals BLUE,   PINK   ; GABITE
+	icon_pals BLUE,   PINK   ; GARCHOMP
 	icon_pals BLUE,   PINK   ; BAGON
 	icon_pals BLUE,   PINK   ; SHELGON
 	icon_pals BLUE,   PINK   ; SALAMENCE

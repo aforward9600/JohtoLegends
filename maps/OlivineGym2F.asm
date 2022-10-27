@@ -39,6 +39,10 @@ OlivineGym2F_MapScripts:
 
 .ReplaceThirdElevator:
 	changeblock 8, 4, $75
+	checkevent EVENT_GYM_FIRST_ELEVATOR
+	iftrue .ReplaceFirstElevator
+	checkevent EVENT_GYM_SECOND_ELEVATOR
+	iftrue .ReplaceSecondElevator
 	checkevent EVENT_GYM_FIFTH_ELEVATOR
 	iftrue .ReplaceFifthElevator
 	return

@@ -2163,6 +2163,7 @@ MamoswineEvosAttacks:
 	dbw 46, EARTHQUAKE
 	dbw 52, BLIZZARD
 	dbw 58, SCARY_FACE
+	dbw 63, ICICLE_CRASH
 	db 0 ; no more level-up moves
 
 CorsolaEvosAttacks:
