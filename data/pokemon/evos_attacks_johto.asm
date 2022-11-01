@@ -478,7 +478,7 @@ OmanyteEvosAttacks:
 	dbw 34, PROTECT
 	dbw 37, ANCIENTPOWER
 	dbw 43, GROWTH
-	dbw 46, ROCK_BLAST
+	dbw 46, JURASSICBEAM
 	dbw 50, SHELL_SMASH
 	dbw 55, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -498,7 +498,7 @@ OmastarEvosAttacks:
 	dbw 37, PROTECT
 	dbw 43, ANCIENTPOWER
 	dbw 48, GROWTH
-	dbw 56, ROCK_BLAST
+	dbw 56, JURASSICBEAM
 	dbw 67, SHELL_SMASH
 	dbw 75, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -1585,18 +1585,18 @@ YanmaEvosAttacks:
 	dbw 1, FORESIGHT
 	dbw 6, QUICK_ATTACK
 	dbw 11, DOUBLE_TEAM
-	dbw 14, SONICBOOM
+	dbw 14, SIGNAL_BEAM
 	dbw 17, DETECT
 	dbw 22, SUPERSONIC
 	dbw 27, HYPER_VOICE
-	dbw 30, SIGNAL_BEAM
+	dbw 30, BUG_BUZZ
 	dbw 33, ANCIENTPOWER
 	dbw 38, HYPNOSIS
 	dbw 43, AIR_CUTTER
 	dbw 46, SCREECH
 	dbw 49, U_TURN
 	dbw 54, AIR_SLASH
-	dbw 57, BUG_BUZZ
+	dbw 57, SIGNAL_WAVE
 	db 0 ; no more level-up moves
 
 YanmegaEvosAttacks:
@@ -1607,17 +1607,17 @@ YanmegaEvosAttacks:
 	dbw 1, FORESIGHT
 	dbw 6, QUICK_ATTACK
 	dbw 11, DOUBLE_TEAM
-	dbw 14, SONICBOOM
+	dbw 14, SIGNAL_BEAM
 	dbw 17, DETECT
 	dbw 22, SUPERSONIC
 	dbw 27, HYPER_VOICE
-	dbw 30, SIGNAL_BEAM
+	dbw 30, BUG_BUZZ
 	dbw 38, HYPNOSIS
 	dbw 43, POWER_GEM
 	dbw 46, NASTY_PLOT
 	dbw 49, U_TURN
-	dbw 54, AIR_SLASH
-	dbw 57, BUG_BUZZ
+	dbw 54, JURASSICBEAM
+	dbw 57, SIGNAL_WAVE
 	db 0 ; no more level-up moves
 
 WooperEvosAttacks:
@@ -1874,7 +1874,7 @@ GliscorEvosAttacks:
 	dbw 27, SLASH
 	dbw 30, U_TURN
 	dbw 35, SCREECH
-	dbw 40, X_SCISSOR
+	dbw 40, PINCIRFLURRY
 	dbw 45, BRICK_BREAK
 	dbw 50, SWORDS_DANCE
 	dbw 55, GUILLOTINE

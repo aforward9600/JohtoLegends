@@ -162,16 +162,17 @@ MartGoldenrodBlackMarket1:
 	db -1 ; end
 
 MartGoldenrodBlackMarket2:
-	db 9 ; # items
+	db 10 ; # items
 	db DRAGON_SCALE
-	db RAZOR_CLAW
-	db RAZOR_FANG
 	db LINK_CABLE
-	db PROTECTOR
 	db UP_GRADE
-	db DUBIOUSDISK
 	db ROYAL_ROCK
 	db METAL_COAT
+	db RAZOR_CLAW
+	db RAZOR_FANG
+	db PROTECTOR
+	db ELECTIRIZER
+	db MAGMARIZER
 	db -1 ; end
 
 MartGoldenrodBlackMarket3:
@@ -350,10 +351,9 @@ MartCeladon2F2:
 	db -1 ; end
 
 MartCeladon3F:
-	db 4 ; # items
+	db 3 ; # items
 	db TM_GIGA_IMPACT
 	db TM_FOCUS_BLAST
-	db TM_DREAM_EATER
 	db TM_HYPER_BEAM
 	db -1 ; end
 

@@ -108,7 +108,7 @@ OlivineGym1FByronScript:
 	waitbutton
 	closetext
 	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
-	loadtrainer BYRON, BYRON2
+	loadtrainer BYRON_2, BYRON2
 	startbattle
 	reloadmapafterbattle
 	sjump AfterByronRematch
@@ -118,7 +118,7 @@ OlivineGym1FByronScript:
 	waitbutton
 	closetext
 	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
-	loadtrainer BYRON, BYRON3
+	loadtrainer BYRON_2, BYRON3
 	startbattle
 	reloadmapafterbattle
 	sjump AfterByronRematch
@@ -128,7 +128,7 @@ OlivineGym1FByronScript:
 	waitbutton
 	closetext
 	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
-	loadtrainer BYRON, BYRON4
+	loadtrainer BYRON_2, BYRON4
 	startbattle
 	reloadmapafterbattle
 	sjump AfterByronRematch
@@ -138,7 +138,7 @@ OlivineGym1FByronScript:
 	waitbutton
 	closetext
 	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
-	loadtrainer BYRON, BYRON5
+	loadtrainer BYRON_2, BYRON5
 	startbattle
 	reloadmapafterbattle
 	sjump AfterByronRematch

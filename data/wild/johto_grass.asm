@@ -427,30 +427,30 @@ JohtoGrassWildMons:
 	; morn
 	dbw  9, ZUBAT
 	dbw  9, MACHOP
-	dbw  9, ARON
+	dbw  9, DIGLETT
 	dbw 10, MARILL
 	dbw 10, GEODUDE
 	dbw 10, SANDSHREW
-	dbw 11, DIGLETT
-	dbw 11, DIGLETT
+	dbw 11, ARON
+	dbw 11, ARON
 	; day
 	dbw  9, ZUBAT
 	dbw  9, MACHOP
-	dbw  9, ARON
+	dbw  9, DIGLETT
 	dbw 10, MARILL
 	dbw 10, GEODUDE
 	dbw 10, SANDSHREW
-	dbw 11, DIGLETT
-	dbw 11, DIGLETT
+	dbw 11, ARON
+	dbw 11, ARON
 	; nite
 	dbw  9, ZUBAT
 	dbw  9, MACHOP
-	dbw  9, ARON
+	dbw  9, DIGLETT
 	dbw 10, MARILL
 	dbw 10, GEODUDE
 	dbw 10, SANDSHREW
-	dbw 11, DIGLETT
-	dbw 11, DIGLETT
+	dbw 11, ARON
+	dbw 11, ARON
 
 	map_id MOUNT_MORTAR_1F_INSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite

@@ -180,6 +180,7 @@ AlphabeticalMoveList::
 	dw IRON_HEAD
 	dw IRON_TAIL
 	dw JUMP_KICK
+	dw JURASSICBEAM
 	dw KARATE_CHOP
 	dw KINESIS
 	dw KNOCK_OFF
@@ -304,6 +305,7 @@ AlphabeticalMoveList::
 	dw SHEER_COLD
 	dw SHELL_SMASH
 	dw SIGNAL_BEAM
+	dw SIGNAL_WAVE
 	dw SILVER_WIND
 	dw SING
 	dw SKETCH

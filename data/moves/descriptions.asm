@@ -401,6 +401,8 @@ MoveDescriptions1:
 	dw UTurnDescription
 	dw CoilDescription
 	dw PincirFlurryDescription
+	dw BubblebeamDescription
+	dw SignalWaveDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1949,3 +1951,7 @@ CoilDescription:
 PincirFlurryDescription:
 	db   "A barrage of"
 	line "angry pincirs.@"
+
+SignalWaveDescription:
+	db   "Signals that can"
+	line "cause confusion.@"

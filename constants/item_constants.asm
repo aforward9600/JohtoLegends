@@ -124,7 +124,7 @@
 	const HARD_STONE   ; 7d
 	const LUCKY_EGG    ; 7e
 	const BATTLE_CARD  ; 7f
-	const MACHINE_PART ; 80
+	const STRANGE_HAIR ; 80
 	const POWER_BAND   ; 81
 	const CHOICE_SCARF ; 82
 	const STARDUST     ; 83

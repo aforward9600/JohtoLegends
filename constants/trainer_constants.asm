@@ -48,10 +48,6 @@ CHRIS EQU __enum__
 
 	trainerclass BYRON ; 6
 	const BYRON1
-	const BYRON2
-	const BYRON3
-	const BYRON4
-	const BYRON5
 
 	trainerclass CHUCK ; 7
 	const CHUCK1
@@ -757,10 +753,6 @@ CHRIS EQU __enum__
 	trainerclass CHIGUSA ; 48
 	const CHIGUSA1
 	const CHIGUSA2
-	const CHIGUSA3
-	const CHIGUSA4
-	const CHIGUSA5
-	const CHIGUSA6
 
 	trainerclass MASTER ; 49
 	const MASTER1
@@ -853,6 +845,18 @@ CHRIS EQU __enum__
 	const ENOKI5
 	const ENOKI6
 	const ENOKI7
+
+	trainerclass CHIGUSA_2
+	const CHIGUSA3
+	const CHIGUSA4
+	const CHIGUSA5
+	const CHIGUSA6
+
+	trainerclass BYRON_2
+	const BYRON2
+	const BYRON3
+	const BYRON4
+	const BYRON5
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

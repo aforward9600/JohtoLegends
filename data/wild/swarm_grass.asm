@@ -281,4 +281,35 @@ SwarmGrassWildMons:
 	dbw 18, SCYTHER
 	dbw 18, SCYTHER
 
+;Aron swarm
+	map_id MOUNT_MORTAR_1F_OUTSIDE
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw  9, ARON
+	dbw  9, MARILL
+	dbw  9, ARON
+	dbw 10, SANDSHREW
+	dbw 10, ARON
+	dbw 10, SANDSHREW
+	dbw 11, ARON
+	dbw 11, ARON
+	; day
+	dbw  9, ARON
+	dbw  9, MARILL
+	dbw  9, ARON
+	dbw 10, SANDSHREW
+	dbw 10, ARON
+	dbw 10, SANDSHREW
+	dbw 11, ARON
+	dbw 11, ARON
+	; nite
+	dbw  9, ARON
+	dbw  9, MARILL
+	dbw  9, ARON
+	dbw 10, SANDSHREW
+	dbw 10, ARON
+	dbw 10, SANDSHREW
+	dbw 11, ARON
+	dbw 11, ARON
+
 	db -1 ; end

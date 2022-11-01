@@ -165,6 +165,7 @@ MeetUpHoOh:
 	clearevent EVENT_HIDE_BASEMENT
 	clearevent EVENT_TIN_TOWER_1F_WISE_TRIO_2
 	setevent EVENT_CLEARED_TIN_TOWER
+	setevent EVENT_MART_SHERLES
 	setscene SCENE_FINISHED
 	end
 

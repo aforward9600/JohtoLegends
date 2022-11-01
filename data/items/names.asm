@@ -117,7 +117,7 @@ ItemNames::
 	db "Hard Stone@"
 	db "Lucky Egg@"
 	db "Battle Card@"
-	db "Machine Part@"
+	db "Strange Hair@"
 	db "Power Band@"
 	db "Choice Scarf@"
 	db "Stardust@"

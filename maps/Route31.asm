@@ -10,17 +10,7 @@
 Route31_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .CheckMomCall
-
-.CheckMomCall:
-	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
-	iffalse .DoMomCall
-	return
-
-.DoMomCall:
-	specialphonecall SPECIALCALL_WORRIED
-	return
+	db 0 ; callbacks
 
 TrainerBugCatcherWade1:
 	trainer BUG_CATCHER, WADE1, EVENT_BEAT_BUG_CATCHER_WADE, BugCatcherWade1SeenText, BugCatcherWade1BeatenText, 0, .Script
@@ -183,60 +173,20 @@ TrainerBugCatcherWade1:
 Route31MailRecipientScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TM50_NIGHTMARE
+	checkevent EVENT_GOT_TM56_DREAM_EATER
 	iftrue .DescribeNightmare
-	checkevent EVENT_GOT_KENYA
-	iftrue .TryGiveKenya
 	writetext Text_Route31SleepyMan
-	waitbutton
+	buttonsound
+	verbosegiveitem TM_DREAM_EATER
+	iffalse .NoRoomForItems
+	setevent EVENT_GOT_TM56_DREAM_EATER
 	closetext
 	end
 
-.TryGiveKenya:
-	writetext Text_Route31SleepyManGotMail
-	buttonsound
-	checkpokemail ReceivedSpearowMailText
-	ifequal POKEMAIL_WRONG_MAIL, .WrongMail
-	ifequal POKEMAIL_REFUSED, .Refused
-	ifequal POKEMAIL_NO_MAIL, .NoMail
-	ifequal POKEMAIL_LAST_MON, .LastMon
-	; POKEMAIL_CORRECT
-	writetext Text_Route31HandOverMailMon
-	buttonsound
-	writetext Text_Route31ReadingMail
-	buttonsound
-	setevent EVENT_GAVE_KENYA
-	verbosegiveitem TM_THUNDERBOLT
-	iffalse .NoRoomForItems
-	setevent EVENT_GOT_TM50_NIGHTMARE
 .DescribeNightmare:
 	writetext Text_Route31DescribeNightmare
 	waitbutton
 .NoRoomForItems:
-	closetext
-	end
-
-.WrongMail:
-	writetext Text_Route31WrongMail
-	waitbutton
-	closetext
-	end
-
-.NoMail:
-	writetext Text_Route31MissingMail
-	waitbutton
-	closetext
-	end
-
-.Refused:
-	writetext Text_Route31DeclinedToHandOverMail
-	waitbutton
-	closetext
-	end
-
-.LastMon:
-	writetext Text_Route31CantTakeLastMon
-	waitbutton
 	closetext
 	end
 
@@ -266,11 +216,13 @@ Route31PokeBall:
 	itemball POKE_BALL
 
 Route31CooltrainerMText:
-	text "DARK CAVE…"
+	text "Sorry, but Dark"
+	line "Cave is off-"
+	cont "limits right now."
 
-	para "If #MON could"
-	line "light it up, I'd"
-	cont "explore it."
+	para "The cave-in"
+	line "should be cleared"
+	cont "up soon."
 	done
 
 BugCatcherWade1SeenText:
@@ -300,69 +252,42 @@ Text_Route31SleepyMan:
 
 	para "I walked too far"
 	line "today looking for"
-	cont "#MON."
+	cont "#mon."
 
 	para "My feet hurt and"
 	line "I'm sleepy…"
 
-	para "If I were a wild"
-	line "#MON, I'd be"
-	cont "easy to catch…"
+	para "I took a nap, but"
+	line "then I started to"
+	cont "feel like…"
 
-	para "…Zzzz…"
-	done
+	para "Something was"
+	line "eating my dreams…"
 
-Text_Route31SleepyManGotMail:
-	text "…Zzzz… Huh?"
+	para "…Huh?"
 
-	para "What's that? You"
-	line "have MAIL for me?"
-	done
+	para "Wh-where did this"
+	line "TM come from?"
 
-Text_Route31HandOverMailMon:
-	text "<PLAYER> handed"
-	line "over the #MON"
-	cont "holding the MAIL."
-	done
-
-Text_Route31ReadingMail:
-	text "Let's see…"
-
-	para "…DARK CAVE leads"
-	line "to another road…"
-
-	para "That's good to"
-	line "know."
-
-	para "Thanks for bring-"
-	line "ing this to me."
-
-	para "My friend's a good"
-	line "guy, and you're"
-	cont "swell too!"
-
-	para "I'd like to do"
-	line "something good in"
-	cont "return too!"
-
-	para "I know! I want you"
-	line "to have this!"
+	para "H-here, you take"
+	line "it!"
 	done
 
 Text_Route31DescribeNightmare:
-	text "TM50 is NIGHTMARE."
+	text "Ugh…I don't feel"
+	line "so good now…"
 
-	para "It's a wicked move"
-	line "that steadily cuts"
+	para "Something must"
+	line "have been eating"
+	cont "my dreams…"
 
-	para "the HP of a sleep-"
-	line "ing enemy."
+	para "When Dream Eater"
+	line "is used on a"
 
-	para "Ooooh…"
-	line "That's scary…"
+	para "sleeping #mon,"
+	line "it heals the user."
 
-	para "I don't want to"
-	line "have bad dreams."
+	para "Scary, huh?"
 	done
 
 Text_Route31WrongMail:
@@ -433,7 +358,7 @@ Route31_MapEvents:
 	object_event 17,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31MailRecipientScript, -1
 	object_event  9,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31YoungsterScript, -1
 	object_event 21, 13, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherWade1, -1
-	object_event 33,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31CooltrainerMScript, -1
+	object_event 34,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31CooltrainerMScript, EVENT_DARK_CAVE_GUARD
 	object_event 16,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31FruitTree, -1
 	object_event 29,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31Potion, EVENT_ROUTE_31_POTION
 	object_event 19, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31PokeBall, EVENT_ROUTE_31_POKE_BALL

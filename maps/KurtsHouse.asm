@@ -29,6 +29,8 @@ KurtsHouseYoungster:
 	faceplayer
 	opentext
 	writetext KurtsHouseAskTeachAMoveText
+	checkmoney YOUR_MONEY, 2000
+	ifequal HAVE_LESS, .Refused
 	yesorno
 	iffalse .Refused
 	writetext KurtsHouseWhichMoveShouldITeachText
@@ -74,6 +76,7 @@ KurtsHouseYoungster:
 
 .TeachMove:
 	writetext KurtsHouseNiceMoveText
+	takemoney YOUR_MONEY, 2000
 	buttonsound
 	writetext KurtsHouseGoodLuckText
 	waitbutton
@@ -130,6 +133,8 @@ KurtsHouseAskTeachAMoveText:
 
 	para "#mon a neat"
 	line "switching move?"
+
+	para "It's only ¥2,000."
 	done
 
 KurtsHouseWhichMoveShouldITeachText:

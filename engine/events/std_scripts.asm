@@ -658,6 +658,9 @@ InitializeEventsScript:
 	setevent EVENT_BELLCHIME_PATH_ENOKI_WALK
 	setevent EVENT_BELLCHIME_PATH_ENOKI_PANIC
 	setevent EVENT_ICE_PATH_1F_PRYCE
+	setevent EVENT_RIVALS_HOUSE_RIVAL
+	setevent EVENT_RIVAL_NEW_BARK_TOWN
+	setevent EVENT_CHERRYGROVE_CYNTHIA
 	return
 
 AskNumber1MScript:
@@ -2211,49 +2214,52 @@ SwarmScript:
 	opentext
 	checkflag ENGINE_SWARM
 	iftrue .skiprandomswarm
-	checkflag ENGINE_FOGBADGE
-	iftrue .Badges2Swarm
 	checkflag ENGINE_MINERALBADGE
 	iftrue .Badges4Swarm
+	checkflag ENGINE_FOGBADGE
+	iftrue .Badges2Swarm
 	farwritetext WhatSwarmTodayText
 	waitbutton
-	random 5
+	random 6
 	ifequal 0, .noswarm
 	ifequal 1, .yanma
 	ifequal 2, .dunsparce
 	ifequal 3, .sneasel
 	ifequal 4, .scyther
+	ifequal 5, .aron
 
 .Badges2Swarm:
 	farwritetext WhatSwarmTodayText
 	waitbutton
-	random 10
-	ifequal 0, .noswarm
-	ifequal 1, .yanma
-	ifequal 2, .dunsparce
-	ifequal 3, .qwilfish
-	ifequal 4, .eevee
-	ifequal 5, .kangaskhan
-	ifequal 6, .gible
-	ifequal 7, .sneasel
-	ifequal 8, .scyther
-	ifequal 9, .misdreavus
+	random 11
+	ifequal 0,  .noswarm
+	ifequal 1,  .yanma
+	ifequal 2,  .dunsparce
+	ifequal 3,  .qwilfish
+	ifequal 4,  .eevee
+	ifequal 5,  .kangaskhan
+	ifequal 6,  .gible
+	ifequal 7,  .sneasel
+	ifequal 8,  .scyther
+	ifequal 9,  .misdreavus
+	ifequal 10, .aron
 
 .Badges4Swarm:
 	farwritetext WhatSwarmTodayText
 	waitbutton
-	random 11
-	ifequal 0, .noswarm
-	ifequal 1, .yanma
-	ifequal 2, .dunsparce
-	ifequal 3, .qwilfish
-	ifequal 4, .eevee
-	ifequal 5, .kangaskhan
-	ifequal 6, .gible
-	ifequal 7, .sneasel
-	ifequal 8, .misdreavus
-	ifequal 9, .scyther
+	random 12
+	ifequal 0,  .noswarm
+	ifequal 1,  .yanma
+	ifequal 2,  .dunsparce
+	ifequal 3,  .qwilfish
+	ifequal 4,  .eevee
+	ifequal 5,  .kangaskhan
+	ifequal 6,  .gible
+	ifequal 7,  .sneasel
+	ifequal 8,  .misdreavus
+	ifequal 9,  .scyther
 	ifequal 10, .pinsir
+	ifequal 11, .aron
 
 .noswarm
 	setflag ENGINE_SWARM
@@ -2339,6 +2345,14 @@ SwarmScript:
 	setflag ENGINE_SWARM
 	swarm NATIONAL_PARK
 	farwritetext PinsirSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.aron
+	setflag ENGINE_SWARM
+	swarm MOUNT_MORTAR_1F_OUTSIDE
+	farwritetext AronSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel

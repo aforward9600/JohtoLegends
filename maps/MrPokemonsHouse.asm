@@ -3,18 +3,9 @@
 	const MRPOKEMONSHOUSE_OAK
 
 MrPokemonsHouse_MapScripts:
-	db 2 ; scene scripts
-	scene_script .MeetMrPokemon ; SCENE_DEFAULT
-	scene_script .DummyScene ; SCENE_FINISHED
+	db 0 ; scene scripts
 
 	db 0 ; callbacks
-
-.MeetMrPokemon:
-	prioritysjump .MrPokemonEvent
-	end
-
-.DummyScene:
-	end
 
 .MrPokemonEvent:
 	showemote EMOTE_SHOCK, MRPOKEMONSHOUSE_GENTLEMAN, 15
@@ -50,28 +41,31 @@ MrPokemonsHouse_MapScripts:
 MrPokemonsHouse_MrPokemonScript:
 	faceplayer
 	opentext
-	checkitem DRAGON_SCALE
-	iftrue .RedScale
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
+	checkevent EVENT_TALKED_TO_MR_POKEMON
 	iftrue .AlwaysNewDiscoveries
 	writetext MrPokemonText_ImDependingOnYou
 	waitbutton
 	closetext
+	setevent EVENT_TALKED_TO_MR_POKEMON
 	end
 
 .AlwaysNewDiscoveries:
+	checkitem STRANGE_HAIR
+	iftrue .GiveMeThatHair
 	writetext MrPokemonText_AlwaysNewDiscoveries
 	waitbutton
 	closetext
 	end
 
-.RedScale:
+.GiveMeThatHair:
 	writetext MrPokemonText_GimmeTheScale
 	yesorno
 	iffalse .refused
-	verbosegiveitem EXP_SHARE
+	verbosegiveitem GS_BALL
 	iffalse .full
-	takeitem DRAGON_SCALE
+	takeitem STRANGE_HAIR
+	setevent EVENT_FOREST_IS_RESTLESS
+	setflag ENGINE_FOREST_IS_RESTLESS
 	sjump .AlwaysNewDiscoveries
 
 .refused
@@ -233,16 +227,34 @@ MrPokemonsHouse_MrPokemonHealText:
 	done
 
 MrPokemonText_ImDependingOnYou:
-	text "I'm depending on"
-	line "you!"
+	text "It's you!"
+
+	para "I heard you"
+	line "disappeared after"
+	cont "you left the Day"
+	cont "Care!"
+
+	para "Well, it looks"
+	line "like you're safe"
+	cont "at any rate."
+
+	para "And it looks like"
+	line "your wing is safe"
+	cont "as well."
+
+	para "I'm guessing you're"
+	line "not going to trade"
+	cont "it…"
 	done
 
 MrPokemonText_AlwaysNewDiscoveries:
-	text "Life is delight-"
-	line "ful! Always, new"
+	text "I'm always looking"
+	line "to expand my"
+	cont "collection."
 
-	para "discoveries to be"
-	line "made!"
+	para "If you find any-"
+	line "thing rare, let me"
+	cont "make an offer."
 	done
 
 MrPokemonsHouse_OakText1:
@@ -333,19 +345,32 @@ MrPokemonsHouse_OakText2:
 	done
 
 MrPokemonText_GimmeTheScale:
-	text "Hm? That SCALE!"
+	text "Hm? That Hair!"
 	line "What's that?"
-	cont "A red GYARADOS?"
+	cont "What's that from?"
 
-	para "That's rare! "
+	para "That's rare!"
 	line "I, I want it…"
 
 	para "<PLAY_G>, would you"
 	line "care to trade it?"
 
 	para "I can offer this"
-	line "EXP.SHARE I got"
-	cont "from PROF.OAK."
+	line "GS Berry."
+
+	para "I'm not sure of"
+	line "its origins, but"
+	cont "the rumors said"
+	cont "that these berries"
+	cont "summoned the"
+	cont "guardian of Ilex"
+	cont "Forest."
+
+	para "I don't know the"
+	line "validity of those"
+	cont "claims."
+
+	para "Do we have a deal?"
 	done
 
 MrPokemonText_Disappointed:
@@ -392,6 +417,5 @@ MrPokemonsHouse_MapEvents:
 	bg_event  7,  1, BGEVENT_READ, MrPokemonsHouse_BrokenComputer
 	bg_event  6,  4, BGEVENT_READ, MrPokemonsHouse_StrangeCoins
 
-	db 2 ; object events
+	db 1 ; object events
 	object_event  3,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrPokemonsHouse_MrPokemonScript, -1
-	object_event  6,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MR_POKEMONS_HOUSE_OAK

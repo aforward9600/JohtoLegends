@@ -355,11 +355,11 @@ ButterfreeEvosAttacks:
 	dbw 25, SAFEGUARD
 	dbw 29, WHIRLWIND
 	dbw 31, BUG_BUZZ
-	dbw 35, RECOVER
+	dbw 35, QUIVER_DANCE
 	dbw 37, AIR_SLASH
 	dbw 41, BATON_PASS
 	dbw 43, HURRICANE
-	dbw 47, QUIVER_DANCE
+	dbw 47, SIGNAL_WAVE
 	db 0 ; no more level-up moves
 
 WeedleEvosAttacks:
@@ -406,9 +406,9 @@ PidgeyEvosAttacks:
 	dbw 21, TWISTER
 	dbw 25, FEATHERDANCE
 	dbw 29, AGILITY
-	dbw 33, WING_ATTACK
+	dbw 33, AIR_CUTTER
 	dbw 37, ROOST
-	dbw 41, DOUBLE_EDGE
+	dbw 41, HYPER_VOICE
 	dbw 45, MIRROR_MOVE
 	dbw 49, AIR_SLASH
 	dbw 53, HURRICANE
@@ -425,9 +425,9 @@ PidgeottoEvosAttacks:
 	dbw 22, TWISTER
 	dbw 27, FEATHERDANCE
 	dbw 32, AGILITY
-	dbw 37, WING_ATTACK
+	dbw 37, AIR_CUTTER
 	dbw 42, ROOST
-	dbw 47, DOUBLE_EDGE
+	dbw 47, HYPER_VOICE
 	dbw 52, MIRROR_MOVE
 	dbw 57, AIR_SLASH
 	dbw 62, HURRICANE
@@ -435,8 +435,8 @@ PidgeottoEvosAttacks:
 
 PidgeotEvosAttacks:
 	db 0 ; no more evolutions
-	dbw LEARN_EVO_MOVE, BRAVE_BIRD
-	dbw 1, BRAVE_BIRD
+	dbw LEARN_EVO_MOVE, RAZOR_WIND
+	dbw 1, RAZOR_WIND
 	dbw 1, TACKLE
 	dbw 5, SAND_ATTACK
 	dbw 9, GUST
@@ -445,9 +445,9 @@ PidgeotEvosAttacks:
 	dbw 22, TWISTER
 	dbw 27, FEATHERDANCE
 	dbw 32, AGILITY
-	dbw 38, WING_ATTACK
+	dbw 38, AIR_CUTTER
 	dbw 44, ROOST
-	dbw 50, DOUBLE_EDGE
+	dbw 50, HYPER_VOICE
 	dbw 56, MIRROR_MOVE
 	dbw 62, AIR_SLASH
 	dbw 68, HURRICANE
@@ -1082,9 +1082,9 @@ VenomothEvosAttacks:
 	dbw 29, SLEEP_POWDER
 	dbw 37, LEECH_LIFE
 	dbw 41, ZEN_HEADBUTT
-	dbw 47, POISON_FANG
+	dbw 47, BUG_BUZZ
 	dbw 55, PSYCHIC_M
-	dbw 59, BUG_BUZZ
+	dbw 59, SIGNAL_WAVE
 	dbw 63, QUIVER_DANCE
 	db 0 ; no more level-up moves
 

@@ -395,4 +395,6 @@ MoveNames::
 	db "Volt Switch@"
 	db "Coil@"
 	db "PincirFlurry@"
+	db "JurassicBeam@"
+	db "Signal Wave@"
 ;	db "Wake Up Slap@"

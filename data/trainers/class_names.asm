@@ -92,3 +92,5 @@ TrainerClassNames::
 	db "Gym Leader@"
 	db "Gym Leader@"
 	db "Gym Leader@"
+	db "Gym Leader@"
+	db "Gym Leader@"

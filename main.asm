@@ -651,7 +651,6 @@ INCLUDE "data/items/names.asm"
 INCLUDE "engine/items/print_item_description.asm"
 INCLUDE "data/moves/names.asm"
 INCLUDE "engine/overworld/landmarks.asm"
-INCLUDE "mobile/mobile_menu.asm"
 
 
 SECTION "bank77", ROMX
@@ -664,6 +663,7 @@ INCLUDE "engine/pokemon/search.asm"
 INCLUDE "engine/events/poisonstep.asm"
 INCLUDE "engine/events/sweet_scent.asm"
 INCLUDE "engine/events/sacred_ash.asm"
+INCLUDE "mobile/mobile_menu.asm"
 
 
 SECTION "bank77_2", ROMX

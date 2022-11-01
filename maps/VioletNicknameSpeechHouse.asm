@@ -12,6 +12,8 @@ VioletNicknameSpeechHouseTeacherScript:
 	faceplayer
 	opentext
 	writetext VioletCityAskTeachAMoveText
+	checkmoney YOUR_MONEY, 2500
+	ifequal HAVE_LESS, .Refused
 	yesorno
 	iffalse .Refused
 	writetext VioletCityWhichMoveShouldITeachText
@@ -20,6 +22,7 @@ VioletNicknameSpeechHouseTeacherScript:
 	closewindow
 	ifequal 1, .Moonblast
 	ifequal 2, .Hypnosis
+	ifequal 3, .GrassKnot
 	sjump .Incompatible
 
 .Moonblast:
@@ -36,6 +39,13 @@ VioletNicknameSpeechHouseTeacherScript:
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
 
+.GrassKnot:
+	loadmoveindex GRASS_KNOT
+	writetext TeachMysticalMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 0, 0, 15, TEXTBOX_Y - 0
@@ -44,9 +54,10 @@ VioletNicknameSpeechHouseTeacherScript:
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
-	db 3 ; items
+	db 4 ; items
 	db "Moonblast@"
 	db "Hypnosis@"
+	db "Grass Knot@"
 	db "Cancel@"
 
 .Refused:
@@ -57,6 +68,7 @@ VioletNicknameSpeechHouseTeacherScript:
 
 .TeachMove:
 	writetext VioletCityNiceMoveText
+	takemoney YOUR_MONEY, 2500
 	buttonsound
 	writetext VioletCityGoodLuckText
 	waitbutton
@@ -112,6 +124,8 @@ VioletCityAskTeachAMoveText:
 	text "I can teach some"
 	line "mystical moves to"
 	cont "your #mon."
+
+	para "It's only ¥2,500."
 	done
 
 VioletCityWhichMoveShouldITeachText:
@@ -120,8 +134,7 @@ VioletCityWhichMoveShouldITeachText:
 	done
 
 TeachMysticalMoveText:
-	text "Shall I teach"
-	line "this move?"
+	text_start
 	done
 
 VioletCityNiceMoveText:

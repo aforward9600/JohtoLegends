@@ -579,7 +579,7 @@ MastersTestText:
 	done
 
 LetsStartText:
-	text "<RIVAL>:Sounds"
+	text "<RIVAL>: Sounds"
 	line "simple enough."
 	cont "This'll be fun!"
 	done
@@ -620,7 +620,7 @@ CongratulationsText:
 	done
 
 ThankYouText:
-	text "<RIVAL>:Thank you,"
+	text "<RIVAL>: Thank you,"
 	line "Master!"
 	done
 

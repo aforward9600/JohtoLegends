@@ -421,6 +421,8 @@ BattleAnimations::
 	dw BattleAnim_VoltSwitch
 	dw BattleAnim_Coil
 	dw BattleAnim_PincirFlurry
+	dw BattleAnim_JurassicBeam
+	dw BattleAnim_SignalWave
 ;	dw BattleAnim_WakeUpSlap
 	dw BattleAnim_SweetScent2
 
@@ -3002,6 +3004,7 @@ BattleAnim_Withdraw:
 	anim_ret
 
 BattleAnim_Psybeam:
+BattleAnim_SignalWave:
 	anim_1gfx ANIM_GFX_PSYCHIC
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_bgeffect ANIM_BG_08, $0, $4, $0
@@ -3830,6 +3833,7 @@ BattleAnim_Conversion:
 	anim_ret
 
 BattleAnim_Aeroblast:
+BattleAnim_JurassicBeam:
 	anim_2gfx ANIM_GFX_BEAM, ANIM_GFX_AEROBLAST
 	anim_bgp $1b
 	anim_bgeffect ANIM_BG_1F, $50, $4, $10

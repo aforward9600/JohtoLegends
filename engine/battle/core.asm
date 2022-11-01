@@ -7317,7 +7317,9 @@ GiveExperiencePoints:
 	dec a
 	call nz, BoostExp
 ; Boost experience for battle participants
-	ld a, [wGivingExperienceToExpShareHolders]
+;	ld a, [wGivingExperienceToExpShareHolders]
+;	and a
+	ld a, [wExpShareToggle]
 	and a
 	call nz, HalveExp
 ; Boost experience for Lucky Egg

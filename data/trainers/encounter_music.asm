@@ -95,3 +95,5 @@ TrainerEncounterMusic::
 	db MUSIC_OFFICER_ENCOUNTER     ; pryce3
 	db MUSIC_SAGE_ENCOUNTER        ; enoki2
 	db MUSIC_SAGE_ENCOUNTER        ; enoki3
+	db MUSIC_LASS_ENCOUNTER        ; chigusa2
+	db MUSIC_HIKER_ENCOUNTER       ; byron2

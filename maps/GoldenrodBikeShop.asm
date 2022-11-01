@@ -44,7 +44,51 @@ GoldenrodBlackMarketClerk2Script:
 	end
 
 GoldenrodBlackMarketRocketScript:
-	jumptextfaceplayer BlackMarketRocketText
+	faceplayer
+	opentext
+	checkflag ENGINE_HIVEBADGE
+	iftrue .SellDubiousDisk
+	writetext BlackMarketRocketText
+	waitbutton
+	closetext
+	end
+
+.SellDubiousDisk:
+	writetext BuyADubiousDiskText
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .RefusedDubiousDisk
+	checkmoney YOUR_MONEY, 3000
+	ifequal HAVE_LESS, NoMoneyDubiousDisk
+	giveitem DUBIOUSDISK
+	iffalse NoRoomForDubiousDisk
+	takemoney YOUR_MONEY, 3000
+	special PlaceMoneyTopRight
+	waitsfx
+	playsound SFX_TRANSACTION
+	writetext GotDubiousDiskText
+	buttonsound
+	itemnotify
+	closetext
+	end
+
+.RefusedDubiousDisk:
+	writetext RefusedDubiousDiskText
+	waitbutton
+	closetext
+	end
+
+NoMoneyDubiousDisk:
+	writetext NoMoneyDubiousDiskText
+	waitbutton
+	closetext
+	end
+
+NoRoomForDubiousDisk:
+	writetext NoRoomForDubiousDiskText
+	waitbutton
+	closetext
+	end
 
 GoldenrodBikeShopBurglarScript:
 	faceplayer
@@ -71,16 +115,16 @@ BlackMarketRocketText:
 	line "blueprints from"
 	cont "Silph. It seems"
 
-	para "to work fine, but"
-	line "that DubiousDisk."
+	para "to work fine."
 
-	para "It was made by"
-	line "someone who attem-"
-	cont "ted to further"
+	para "Right now, I'm"
+	line "working on making"
+	cont "a new form of"
+	cont "upgrade."
 
-	para "evolve Porygon."
-	line "No idea what went"
-	cont "wrong there."
+	para "Come back later,"
+	line "and I might be"
+	cont "finished."
 	done
 
 BikeShopBurglarText1:
@@ -107,6 +151,48 @@ GoldenrodBikeShopBicycleText:
 	text "It's a box of"
 	line "goods. Are they"
 	cont "stolen?"
+	done
+
+BuyADubiousDiskText:
+	text "Heh, heh, heh."
+
+	para "I did it!"
+
+	para "I made an improved"
+	line "upgrade!"
+
+	para "This'll power up"
+	line "your Porygon, no"
+	cont "problem!"
+
+	para "It can be yours"
+	line "for only ¥3,000!"
+	done
+
+RefusedDubiousDiskText:
+	text "You're gonna"
+	line "regret not"
+	cont "buyin' this!"
+	done
+
+NoMoneyDubiousDiskText:
+	text "Do I look like a"
+	line "charity worker?"
+
+	para "Come back with"
+	line "the dough!"
+	done
+
+NoRoomForDubiousDiskText:
+	text "You pullin' my leg"
+	line "here?"
+
+	para "Your Pack is full!"
+	done
+
+GotDubiousDiskText:
+	text "<PLAYER> got the"
+	line "DubiousDisk."
 	done
 
 GoldenrodBikeShop_MapEvents:

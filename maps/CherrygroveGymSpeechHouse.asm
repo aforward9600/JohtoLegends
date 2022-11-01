@@ -41,6 +41,7 @@ CherrygroveGymSpeechHouse_MapScripts:
 	special RestartMapMusic
 	waitsfx
 	playmapmusic
+	setscene SCENE_CHERRYGROVECITYHOUSE_NOTHING
 	end
 
 .CynthiaBattle2:
@@ -60,6 +61,7 @@ CherrygroveGymSpeechHouse_MapScripts:
 	special RestartMapMusic
 	waitsfx
 	playmapmusic
+	setscene SCENE_CHERRYGROVECITYHOUSE_NOTHING
 	end
 
 .RefusedCynthiaBattle1:
@@ -71,6 +73,7 @@ CherrygroveGymSpeechHouse_MapScripts:
 	special RestartMapMusic
 	waitsfx
 	playmapmusic
+	setscene SCENE_CHERRYGROVECITYHOUSE_NOTHING
 	end
 
 CherrygroveGymSpeechHouseCynthiaScript:
@@ -88,6 +91,7 @@ CherrygroveGymSpeechHouseCynthiaScript:
 	ifequal 7, .CynthiaBattle1
 	winlosstext CynthiaBeatenAgainText, 0
 	loadtrainer TOURIST, CYNTHIA5
+	startbattle
 	reloadmapafterbattle
 	opentext
 	writetext YoureAsStrongAsEverText
@@ -99,6 +103,7 @@ CherrygroveGymSpeechHouseCynthiaScript:
 .CynthiaBattle1:
 	winlosstext CynthiaBeatenAgainText, 0
 	loadtrainer TOURIST, CYNTHIA4
+	startbattle
 	reloadmapafterbattle
 	opentext
 	writetext YoureAsStrongAsEverText

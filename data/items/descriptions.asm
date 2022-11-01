@@ -118,7 +118,7 @@ ItemDescriptions:
 	dw HardStoneDesc
 	dw LuckyEggDesc
 	dw BattleCardDesc
-	dw MachinePartDesc
+	dw StrangeHairDesc
 	dw PowerBandDesc
 	dw ChoiceScarfDesc
 	dw StardustDesc
@@ -723,9 +723,9 @@ BattleCardDesc:
 	db   "Stores Battle"
 	next "Points (Max 95)@"
 
-MachinePartDesc:
-	db   "A machine part for"
-	next "the Power Plant.@"
+StrangeHairDesc:
+	db   "A mysterious pink"
+	next "#mon hair.@"
 
 PowerBandDesc:
 	db   "Increases holder's"

@@ -10,6 +10,8 @@ EcruteakMoveTutorScript:
 	faceplayer
 	opentext
 	writetext EcruteakMoveTutorAskTeachAMoveText
+	checkmoney YOUR_MONEY, 1000
+	ifequal HAVE_LESS, .Refused
 	yesorno
 	iffalse .Refused
 	writetext EcruteakMoveTutorWhichMoveShouldITeachText
@@ -64,6 +66,7 @@ EcruteakMoveTutorScript:
 
 .TeachMove:
 	writetext EcruteakMoveTutorPowerfulFistsText
+	takemoney YOUR_MONEY, 1000
 	buttonsound
 	writetext EcruteakMoveTutorFarewellText
 	waitbutton
@@ -96,6 +99,8 @@ EcruteakMoveTutorAskTeachAMoveText:
 	para "Would you like a"
 	line "#mon to learn"
 	cont "one?"
+
+	para "It's only ¥1,000."
 	done
 
 EcruteakMoveTutorVeryWellText:

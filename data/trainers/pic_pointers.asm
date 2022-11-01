@@ -94,3 +94,5 @@ TrainerPicPointers::
 	dba PrycePic
 	dba EnokiPic
 	dba EnokiPic
+	dba ChigusaPic
+	dba ByronPic

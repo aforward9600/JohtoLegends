@@ -94,3 +94,5 @@ BTTrainerClassGenders:
 	db MALE   ; PRYCE3
 	db MALE   ; ENOKI2
 	db MALE   ; ENOKI3
+	db FEMALE ; CHIGUSA2
+	db MALE   ; BYRON2

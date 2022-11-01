@@ -85,32 +85,6 @@ IlexForestFarfetchdScript:
 	reloadmapafterbattle
 	end
 
-IlexForestCharcoalMasterScript:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_SCYTHER_CALL
-	iftrue .AlreadyGotCut
-	writetext Text_CharcoalMasterIntro
-	buttonsound
-	verbosegiveitem SCYTHER_CALL
-	setevent EVENT_GOT_SCYTHER_CALL
-	writetext Text_CharcoalMasterOutro
-	waitbutton
-	closetext
-	setevent EVENT_ILEX_FOREST_FARFETCHD
-	setevent EVENT_ILEX_FOREST_APPRENTICE
-	setevent EVENT_ILEX_FOREST_CHARCOAL_MASTER
-	clearevent EVENT_CHARCOAL_KILN_FARFETCH_D
-	clearevent EVENT_CHARCOAL_KILN_APPRENTICE
-	clearevent EVENT_CHARCOAL_KILN_BOSS
-	end
-
-.AlreadyGotCut:
-	writetext Text_CharcoalMasterTalkAfter
-	waitbutton
-	closetext
-	end
-
 IlexForestDarkPulseGirlScript:
 	faceplayer
 	opentext
@@ -221,7 +195,7 @@ IlexForestShrineScript:
 	pause 20
 	clearflag ENGINE_FOREST_IS_RESTLESS
 	special CelebiShrineEvent
-	loadwildmon CELEBI, 30
+	loadwildmon CELEBI, 45
 	startbattle
 	reloadmapafterbattle
 	pause 20

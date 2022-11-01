@@ -15,9 +15,11 @@ GenerateShinySwarm:
 	cp BURNED_TOWER
 	jr z, .misdreavus
 	cp NATIONAL_PARK
-	jr z, .pinsir
+	jp z, .pinsir
 	cp ROUTE_38
 	jp z, .scyther
+	cp MT_MORTAR
+	jp z, .aron
 	jp .skipshineswarm
 
 .dunsparce
@@ -205,6 +207,25 @@ GenerateShinySwarm:
 		else
 			ld a, h
 			cp HIGH(SCYTHER)
+		endc
+	endc
+	jr nz, .skipshineswarm
+	jr .rollshiny
+
+.aron
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(ARON)
+	if HIGH(ARON) == 0
+		or h
+	else
+		jr nz, .skipshineswarm
+		if HIGH(ARON)
+			dec h
+		else
+			ld a, h
+			cp HIGH(ARON)
 		endc
 	endc
 	jr nz, .skipshineswarm

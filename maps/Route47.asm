@@ -4,6 +4,7 @@
 	const ROUTE47_COOLTRAINERF
 	const ROUTE47_POKEBALL1
 	const ROUTE47_POKEBALL2
+	const ROUTE47_POKEBALL3
 
 Route47_MapScripts:
 	db 0 ; scene scripts
@@ -48,6 +49,9 @@ Route47ItemBallScript:
 
 Route47ItemBall2Script:
 	itemball REVIVE
+
+Route47DawnStoneScript:
+	itemball DAWN_STONE
 
 Route47Sign:
 	jumptext Route47SignText
@@ -130,9 +134,10 @@ Route47_MapEvents:
 	db 1 ; bg events
 	bg_event 23,  1, BGEVENT_READ, Route47Sign
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event 59, 26, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerHikerPhil, -1
 	object_event 37, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperEmil, -1
-	object_event 23, 4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerFTeresa, -1
-	object_event 8,  6,  SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route47ItemBallScript, EVENT_GOT_TM52_ENERGY_BALL
+	object_event 23,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerFTeresa, -1
+	object_event 8,  6,  SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, Route47ItemBallScript, EVENT_GOT_TM52_ENERGY_BALL
 	object_event 39, 28, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route47ItemBall2Script, EVENT_ROUTE_47_REVIVE
+	object_event 31, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route47DawnStoneScript, EVENT_ROUTE_47_DAWN_STONE

@@ -94,3 +94,5 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; PRYCE3
 	dn  9,  8,  8,  8 ; ENOKI2
 	dn  9,  8,  8,  8 ; ENOKI3
+	dn  9,  8,  8,  8 ; CHIGUSA2
+	dn  12, 12, 8,  8 ; BYRON2

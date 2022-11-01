@@ -466,6 +466,7 @@ INCLUDE "maps/Route12.asm"
 
 SECTION "Map Scripts 26", ROMX
 
+INCLUDE "maps/GoldenrodJail.asm"
 INCLUDE "maps/EcruteakMoveTutorHouse.asm"
 INCLUDE "maps/Route10North.asm"
 INCLUDE "maps/Route40BattleTowerGate.asm"
@@ -488,7 +489,6 @@ SECTION "Map Scripts 27", ROMX
 
 INCLUDE "maps/GoldenrodFlowerShop.asm"
 INCLUDE "maps/GoldenrodBikeShop.asm"
-INCLUDE "maps/GoldenrodJail.asm"
 INCLUDE "maps/GoldenrodCity.asm"
 INCLUDE "maps/FossilHouse.asm"
 INCLUDE "maps/PokemonMansion1F.asm"

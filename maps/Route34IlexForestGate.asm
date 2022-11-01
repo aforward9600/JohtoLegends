@@ -45,6 +45,8 @@ Route34IlexForestGateTeacherScript:
 	opentext
 	checkevent EVENT_FOREST_IS_RESTLESS
 	iftrue .ForestIsRestless
+	checkmoney YOUR_MONEY, 1200
+	ifequal HAVE_LESS, .Refused
 	writetext Route34IlexForestGateTeacherText
 	yesorno
 	iffalse .Refused
@@ -59,6 +61,7 @@ Route34IlexForestGateTeacherScript:
 	end
 
 .TeachMove
+	takemoney YOUR_MONEY, 1200
 	writetext StrengthSapTutorTaught
 	waitbutton
 	closetext
@@ -114,6 +117,8 @@ Route34IlexForestGateTeacherText:
 	para "Shall I teach"
 	line "your #mon"
 	cont "Strength Sap?"
+
+	para "It's only ¥1,200."
 	done
 
 Route34IlexForestGateTeacher_GotSweetScent:

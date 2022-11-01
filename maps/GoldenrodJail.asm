@@ -18,6 +18,8 @@ GoldenrodJail_MapScripts:
 GoldenrodJailOfficerScript:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_STRANGE_HAIR
+	iftrue .ReleasedRocket
 	checkevent EVENT_GOT_PORYGON_R
 	iftrue .RocketInJail
 	writetext PlentyOfCrimeLatelyText
@@ -29,21 +31,113 @@ GoldenrodJailOfficerScript:
 	writetext GotHimselfCaughtText
 	waitbutton
 	closetext
+	checkevent EVENT_ACCEPTED_GRUNTS_REQUEST
+	iftrue .LetRocketOut
+	end
+
+.LetRocketOut:
+	opentext
+	writetext LetRocketOutText
+	waitbutton
+	closetext
+	readvar VAR_FACING
+	ifequal LEFT, .MovePlayerLeft
+	ifequal UP, .MovePlayerLeft2
+.OfficerGetsRocket:
+	applymovement GOLDENRODJAIL_OFFICER_3, OfficerGetsRocketMovement
+	disappear GOLDENRODJAIL_OFFICER_3
+	pause 30
+	playsound SFX_WALL_OPEN
+	pause 15
+	playsound SFX_WALL_OPEN
+	pause 15
+	moveobject GOLDENRODJAIL_OFFICER_3, 6, 5
+	appear GOLDENRODJAIL_OFFICER_3
+	applymovement GOLDENRODJAIL_OFFICER_3, OfficerGetsInPlaceMovement
+	pause 10
+	turnobject GOLDENRODJAIL_OFFICER_3, UP
+	pause 10
+	moveobject GOLDENRODJAIL_ROCKET, 6, 5
+	appear GOLDENRODJAIL_ROCKET
+	follow GOLDENRODJAIL_OFFICER_3, GOLDENRODJAIL_ROCKET
+	applymovement GOLDENRODJAIL_OFFICER_3, RocketFollowsOfficer
+	stopfollow
+	turnobject GOLDENRODJAIL_OFFICER_3, LEFT
+	turnobject GOLDENRODJAIL_ROCKET, LEFT
+	pause 10
+	opentext
+	writetext YoureFreeToGoText
+	waitbutton
+	closetext
+	applymovement GOLDENRODJAIL_ROCKET, RocketWalksToYouMovement
+	opentext
+	writetext HereIsTheItemText
+	buttonsound
+	giveitem STRANGE_HAIR
+	writetext ReceivedStrangeHairText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutStrangeHairInKeyItemText
+	waitbutton
+	setevent EVENT_GOT_STRANGE_HAIR
+	closetext
+	applymovement GOLDENRODJAIL_ROCKET, RocketLeavesMovement
+	playsound SFX_EXIT_BUILDING
+	disappear GOLDENRODJAIL_ROCKET
+	pause 10
+	applymovement GOLDENRODJAIL_OFFICER_3, OfficerGetsBackInPlaceMovement
+	moveobject GOLDENRODJAIL_OFFICER_3, 4, 10
+	end
+
+.MovePlayerLeft:
+	applymovement PLAYER, MovePlayerLeftMovement
+	turnobject PLAYER, RIGHT
+	sjump .OfficerGetsRocket
+
+.MovePlayerLeft2:
+	applymovement PLAYER, MovePlayerLeftMovement2
+	turnobject PLAYER, RIGHT
+	sjump .OfficerGetsRocket
+
+.ReleasedRocket:
+	writetext HopeIDidTheRightThingText
+	waitbutton
+	closetext
 	end
 
 RocketInJailTalk:
+	checkevent EVENT_GOT_STRANGE_HAIR
+	iftrue .EmptyCellTalk
 	checkevent EVENT_GOT_PORYGON_R
 	iffalse .EmptyCellTalk
 	turnobject GOLDENRODJAIL_ROCKET, DOWN
 	opentext
+	checkevent EVENT_ACCEPTED_GRUNTS_REQUEST
+	iftrue .ThanksMan
 	writetext GetMeOuttaHereText
+	yesorno
+	iffalse .ComeOnMan
+	writetext ThanksManText
 	waitbutton
 	closetext
+	setevent EVENT_ACCEPTED_GRUNTS_REQUEST
 	end
 
 .EmptyCellTalk:
 	opentext
 	writetext ItLooksEmptyText
+	waitbutton
+	closetext
+	end
+
+.ComeOnMan:
+	writetext ComeOnManText
+	waitbutton
+	closetext
+	end
+
+.ThanksMan:
+	writetext ThanksManText
 	waitbutton
 	closetext
 	end
@@ -114,6 +208,67 @@ Bookshelf5:
 Bookshelf6:
 	jumptext Bookshelf6Text
 
+OfficerGetsRocketMovement:
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step_end
+
+OfficerReturnsMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step_end
+
+RocketFollowsOfficer:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+RocketWalksToYouMovement:
+	step LEFT
+	step LEFT
+	step_end
+
+RocketLeavesMovement:
+	step DOWN
+	step LEFT
+	step DOWN
+	step_end
+
+OfficerGetsBackInPlaceMovement:
+	step LEFT
+	step LEFT
+	step UP
+	step_end
+
+OfficerGetsInPlaceMovement:
+	step DOWN
+	step_end
+
+MovePlayerLeftMovement:
+	step DOWN
+	step LEFT
+	step LEFT
+	step UP
+	step_end
+
+MovePlayerLeftMovement2:
+	step LEFT
+	step UP
+	step_end
+
 PlentyOfCrimeLatelyText:
 	text "The chief has been"
 	line "pretty busy as of"
@@ -166,11 +321,42 @@ GetMeOuttaHereText:
 
 	para "You can vouch for"
 	line "me, right?"
+
+	para "If you testify in"
+	line "my favor, I'll"
+	cont "give you another"
+	cont "gift!"
+
+	para "I swiped this rare"
+	line "thing before I"
+	cont "left."
+
+	para "I was going to"
+	line "pawn it off, but"
+	cont "if it can buy my"
+	cont "freedom, I'll give"
+	cont "it to you!"
+	done
+
+ComeOnManText:
+	text "Come on!"
+
+	para "Please?"
+	done
+
+ThanksManText:
+	text "Thanks!"
+
+	para "Convince one of"
+	line "those officers,"
+
+	para "and they should"
+	line "let me out!"
 	done
 
 ItLooksEmptyText:
 	text "This cell looks"
-	line "empty..."
+	line "empty…"
 	done
 
 DangGotCaughtText:
@@ -298,6 +484,65 @@ Bookshelf6Text:
 	line "Growlithe."
 	done
 
+LetRocketOutText:
+	text "……………Pardon?"
+
+	para "He really did"
+	line "quit?"
+
+	para "Well, can't argue"
+	line "with that!"
+
+	para "Wait right here."
+	done
+
+YoureFreeToGoText:
+	text "Well, you're free"
+	line "to go!"
+
+	para "Thank you"
+	line "officer!"
+
+	para "And thank you,"
+	line "kid!"
+
+	para "Hope to see you"
+	line "around!"
+	done
+
+HereIsTheItemText:
+	text "Psst…"
+
+	para "Here's that item."
+
+	para "They'll be pretty"
+	line "mad that's gone"
+	cont "missing."
+
+	para "I'd sell it to a"
+	line "collector."
+
+	para "See ya."
+	done
+
+ReceivedStrangeHairText:
+	text "<PLAYER> received"
+	line "Strange Hair."
+	done
+
+PutStrangeHairInKeyItemText:
+	text "<PLAYER> put the"
+	line "Strange Hair in"
+	cont "the Key Item"
+	cont "pocket."
+	done
+
+HopeIDidTheRightThingText:
+	text "I hope I did the"
+	line "right thing in"
+	cont "letting him go."
+	done
+
 GoldenrodJail_MapEvents:
 	db 0, 0 ; filler
 
@@ -319,7 +564,7 @@ GoldenrodJail_MapEvents:
 	bg_event 13,  9, BGEVENT_READ, Bookshelf6
 
 	db 10 ; object events
-	object_event  3,  7, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodJailOfficerScript, -1
+	object_event  3,  7, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodJailOfficer3Script, -1
 	object_event  4,  3, SPRITE_ROCKET, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_JAILED_ROCKET
 	object_event 10,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 16,  3, SPRITE_CLERK, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -328,4 +573,4 @@ GoldenrodJail_MapEvents:
 	object_event 20,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 20, 10, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodJailPokefanFScript, -1
 	object_event 17,  5, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodJailOfficer2Script, -1
-	object_event  4, 10, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodJailOfficer3Script, -1
+	object_event  4, 10, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodJailOfficerScript, -1

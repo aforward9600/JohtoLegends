@@ -129,7 +129,7 @@ CianwoodGymChigusaScript:
 	waitbutton
 	closetext
 	winlosstext ChigusaLossText, ChigusaWinText
-	loadtrainer CHIGUSA, CHIGUSA3
+	loadtrainer CHIGUSA_2, CHIGUSA3
 	startbattle
 	reloadmapafterbattle
 	sjump AfterChigusaRematch
@@ -139,7 +139,7 @@ CianwoodGymChigusaScript:
 	waitbutton
 	closetext
 	winlosstext ChigusaLossText, ChigusaWinText
-	loadtrainer CHIGUSA, CHIGUSA4
+	loadtrainer CHIGUSA_2, CHIGUSA4
 	startbattle
 	reloadmapafterbattle
 	sjump AfterChigusaRematch
@@ -149,7 +149,7 @@ CianwoodGymChigusaScript:
 	waitbutton
 	closetext
 	winlosstext ChigusaLossText, ChigusaWinText
-	loadtrainer CHIGUSA, CHIGUSA5
+	loadtrainer CHIGUSA_2, CHIGUSA5
 	startbattle
 	reloadmapafterbattle
 	sjump AfterChigusaRematch
@@ -159,7 +159,7 @@ CianwoodGymChigusaScript:
 	waitbutton
 	closetext
 	winlosstext ChigusaLossText, ChigusaWinText
-	loadtrainer CHIGUSA, CHIGUSA6
+	loadtrainer CHIGUSA_2, CHIGUSA6
 	startbattle
 	reloadmapafterbattle
 	sjump AfterChigusaRematch

@@ -479,3 +479,20 @@ _ObtainedFiveFruitText::
 	text "There are five"
 	line "berries!"
 	done
+
+AronSwarmText::
+	text "………………………"
+
+	para "Ah!"
+
+	para "In Mt.Mortar,"
+	line "there is a swarm"
+	cont "of Aron!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to Mt.Mortar"
+	line "and catch an"
+	cont "Aron!"
+	done
