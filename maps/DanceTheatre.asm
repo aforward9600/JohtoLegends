@@ -2,7 +2,6 @@
 	const DANCETHEATRE_KIMONO_GIRL1
 	const DANCETHEATRE_GENTLEMAN
 	const DANCETHEATRE_RHYDON
-	const DANCETHEATRE_BUG_CATCHER
 	const DANCETHEATRE_GRANNY
 	const DANCETHEATRE_TWIN1
 	const DANCETHEATRE_TWIN2
@@ -94,9 +93,6 @@ DanceTheaterRhydon:
 	waitbutton
 	closetext
 	end
-
-DanceTheatreCooltrainerMScript:
-	jumptextfaceplayer DanceTheatreCooltrainerMText
 
 DanceTheatreGrannyScript:
 	faceplayer
@@ -690,11 +686,10 @@ DanceTheatre_MapEvents:
 	bg_event  5,  6, BGEVENT_UP, DanceTheatreFancyPanel
 	bg_event  6,  6, BGEVENT_UP, DanceTheatreFancyPanel
 
-	db 11 ; object events
+	db 10 ; object events
 	object_event  5,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerKimonoGirlRui, -1
 	object_event  7, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheaterSurfGuy, -1
 	object_event  6,  8, SPRITE_RHYDON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DanceTheaterRhydon, -1
-	object_event 10, 10, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, DanceTheatreCooltrainerMScript, -1
 	object_event  1,  8, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheatreGrannyScript, -1
 	object_event  7,  5, SPRITE_TWIN, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, QuintupletNaokoScript, -1
 	object_event  8,  6, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, QuintupletSayoScript, -1

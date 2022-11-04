@@ -7,6 +7,7 @@
 	const ROUTE42_FRUIT_TREE3
 	const ROUTE42_POKE_BALL1
 	const ROUTE42_POKE_BALL2
+	const ROUTE42_TEACHER
 
 Route42_MapScripts:
 	db 2 ; scene scripts
@@ -65,6 +66,51 @@ TrainerCamperHoward:
 	opentext
 	writetext CamperHowardAfterBattleText
 	waitbutton
+	closetext
+	end
+
+TrainerTeacherCadi:
+	trainer TEACHER, CADI, EVENT_BEAT_TEACHER_CADI, TeacherCadiSeenText, TeacherCadiBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext TeacherCadiRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_BEAUTY_ENCOUNTER
+	writetext TeacherCadiLetsDoItText
+	waitbutton
+	checkflag ENGINE_FOGBADGE
+	iftrue .CadiRematch1
+	winlosstext TeacherCadiBeatenText, 0
+	loadtrainer TEACHER, CADI
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.Refused:
+	writetext TeacherCadiRefusedText
+	waitbutton
+	closetext
+	end
+
+.CadiRematch1:
+	checkflag ENGINE_MINERALBADGE
+	iftrue .CadiRematch2
+	winlosstext TeacherCadiBeatenText, 0
+	loadtrainer TEACHER, CADI2
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.CadiRematch2:
+	winlosstext TeacherCadiBeatenText, 0
+	loadtrainer TEACHER, CADI3
+	startbattle
+	reloadmapafterbattle
 	closetext
 	end
 
@@ -190,13 +236,12 @@ Route42Sign1Text:
 	para "Ecruteak City -"
 	line "Mahogany Town"
 
-	para "Psychic Jordan"
-	line "will always be"
-	cont "prepared to fight."
+	para "There's something"
+	line "scribbled here."
 
-	para "I envision seeing"
-	line "you more than"
-	cont "once."
+	para "Teacher Cadi is"
+	line "willing to fight"
+	cont "anytime!"
 	done
 
 MtMortarSign1Text:
@@ -228,6 +273,40 @@ Route42Sign2Text:
 	cont "once."
 	done
 
+TeacherCadiSeenText:
+	text "I'm taking a break"
+	line "from teaching"
+	cont "right now."
+
+	para "The mountain air"
+	line "is so refreshing."
+	done
+
+TeacherCadiBeatenText:
+	text "Looks like I got"
+	line "schooled!"
+	done
+
+TeacherCadiLetsDoItText:
+	text "Let us commence."
+	done
+
+TeacherCadiRematchText:
+	text "I'm still on a"
+	line "break, but it's"
+	cont "always a fun time"
+	cont "to battle."
+
+	para "How about a battle"
+	line "to pass the time?"
+	done
+
+TeacherCadiRefusedText:
+	text "Oh well."
+
+	para "Perhaps later."
+	done
+
 Route42_MapEvents:
 	db 0, 0 ; filler
 
@@ -248,7 +327,7 @@ Route42_MapEvents:
 	bg_event 54,  8, BGEVENT_READ, Route42Sign2
 	bg_event  7,  4, BGEVENT_ITEM, Route42HiddenMaxPotion
 
-	db 8 ; object events
+	db 9 ; object events
 	object_event 42,  8, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherFred, -1
 	object_event 49,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperHoward, -1
 	object_event 47, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPsychicJordan, -1
@@ -257,3 +336,4 @@ Route42_MapEvents:
 	object_event 29, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree3, -1
 	object_event  4, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42UltraBall, EVENT_ROUTE_42_ULTRA_BALL
 	object_event 33,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42SuperPotion, EVENT_ROUTE_42_SUPER_POTION
+	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerTeacherCadi, -1

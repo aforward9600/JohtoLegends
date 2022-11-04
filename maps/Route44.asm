@@ -4,8 +4,6 @@
 	const ROUTE44_YOUNGSTER1
 	const ROUTE44_SUPER_NERD
 	const ROUTE44_YOUNGSTER2
-	const ROUTE44_BUG_CATCHER
-	const ROUTE44_TEACHER
 	const ROUTE44_FRUIT_TREE
 	const ROUTE44_POKE_BALL1
 	const ROUTE44_POKE_BALL2
@@ -72,61 +70,16 @@ TrainerYoungsterGordy:
 	closetext
 	end
 
-TrainerBugCatcherColton:
-	trainer BUG_CATCHER, COLTON, EVENT_BEAT_BUG_CATCHER_COLTON, BugCatcherColtonSeenText, BugCatcherColtonBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext BugCatcherColtonAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerTeacherCadi:
-	trainer TEACHER, CADI, EVENT_BEAT_TEACHER_CADI, TeacherCadiSeenText, TeacherCadiBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext TeacherCadiRematchText
-	yesorno
-	iffalse .Refused
-	playmusic MUSIC_BEAUTY_ENCOUNTER
-	writetext TeacherCadiLetsDoItText
-	waitbutton
-	checkflag ENGINE_GLACIERBADGE
-	iftrue .CadiRematch1
-	winlosstext TeacherCadiBeatenText, 0
-	loadtrainer TEACHER, CADI
-	startbattle
-	reloadmapafterbattle
-	closetext
-	end
-
-.Refused:
-	writetext TeacherCadiRefusedText
-	waitbutton
-	closetext
-	end
-
-.CadiRematch1:
-	checkflag ENGINE_STORMBADGE
-	iftrue .CadiRematch2
-	winlosstext TeacherCadiBeatenText, 0
-	loadtrainer TEACHER, CADI2
-	startbattle
-	reloadmapafterbattle
-	closetext
-	end
-
-.CadiRematch2:
-	winlosstext TeacherCadiBeatenText, 0
-	loadtrainer TEACHER, CADI3
-	startbattle
-	reloadmapafterbattle
-	closetext
-	end
+;TrainerBugCatcherColton:
+;	trainer BUG_CATCHER, COLTON, EVENT_BEAT_BUG_CATCHER_COLTON, BugCatcherColtonSeenText, BugCatcherColtonBeatenText, 0, .Script
+;
+;.Script:
+;	endifjustbattled
+;	opentext
+;	writetext BugCatcherColtonAfterBattleText
+;	waitbutton
+;	closetext
+;	end
 
 Route44Sign1:
 	jumptext Route44Sign1Text
@@ -239,22 +192,24 @@ BirdKeeperSalAfterBattleText:
 	done
 
 SchoolboyFinnSeenText:
-	text "Quiet! I'm looking"
-	line "for a Tangela!"
+	text "Someone told me"
+	line "there are Tangela"
+	cont "here, but they"
+	cont "lied to me!"
 	done
 
 SchoolboyFinnBeatenText:
-	text "I just can't seem"
-	line "to find one."
+	text "I really want a"
+	line "Tangela…"
 	done
 
 SchoolboyFinnAfterBattleText:
-	text "Did you know that"
-	line "Tangela can"
-	cont "evolve? It's quite"
+	text "There's still snow"
+	line "on the ground, so"
+	cont "I guess they are"
 
-	para "bulky once it"
-	line "does."
+	para "not around right"
+	line "now…"
 	done
 
 YoungsterGordySeenText:
@@ -311,42 +266,6 @@ BugCatcherColtonAfterBattleText:
 	cont "here."
 	done
 
-TeacherCadiSeenText:
-	text "I've taken a few"
-	line "of my students"
-	cont "here to catch some"
-	cont "#mon."
-
-	para "It's a good"
-	line "experience for"
-	cont "them."
-	done
-
-TeacherCadiBeatenText:
-	text "You're too good to"
-	line "be my student!"
-	done
-
-TeacherCadiLetsDoItText:
-	text "Let us commence."
-	done
-
-TeacherCadiRematchText:
-	text "My students are"
-	line "still trying to"
-	cont "catch some #mon"
-	cont "right now."
-
-	para "How about a battle"
-	line "to pass the time?"
-	done
-
-TeacherCadiRefusedText:
-	text "Oh well."
-
-	para "Perhaps later."
-	done
-
 Route44HealRestAWhileText:
 	text "Ice Path can take"
 	line "a lot out of you."
@@ -362,13 +281,6 @@ Route44HealKeepAtItText:
 Route44Sign1Text:
 	text "Route 44"
 	line "Ice Path Ahead"
-
-	para "There's something"
-	line "scribbled here."
-
-	para "Teacher Cadi is"
-	line "willing to fight"
-	cont "anytime!"
 	done
 
 Route44Sign2Text:
@@ -376,13 +288,6 @@ Route44Sign2Text:
 
 	para "Mahogany Town -"
 	line "Blackthorn City"
-
-	para "There's something"
-	line "scribbled here."
-
-	para "Teacher Cadi is"
-	line "willing to fight"
-	cont "anytime!"
 	done
 
 Route44_MapEvents:
@@ -398,14 +303,12 @@ Route44_MapEvents:
 	bg_event  6, 10, BGEVENT_READ, Route44Sign2
 	bg_event 32,  9, BGEVENT_ITEM, Route44HiddenElixer
 
-	db 12 ; object events
-	object_event 36,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherLyle, -1
+	db 10 ; object events
+	object_event 33,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherLyle, -1
 	object_event 24, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherButch, -1
-	object_event 30,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSchoolboyFinn, -1
+	object_event 35, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSchoolboyFinn, -1
 	object_event 44,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerYoungsterGordy, -1
 	object_event 53, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperSal, -1
-	object_event 35, 15, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherColton, -1
-	object_event 40, 14, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerTeacherCadi, -1
 	object_event  9,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route44FruitTree, -1
 	object_event 35,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44Revive, EVENT_ROUTE_44_MAX_REVIVE
 	object_event 57, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44PokeBall, EVENT_ROUTE_44_ULTRA_BALL

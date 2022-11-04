@@ -45,6 +45,7 @@ CHRIS EQU __enum__
 	trainerclass PRYCE ; 5
 	const PRYCE1
 	const PRYCE2
+	const PRYCE_ALTERNATE
 
 	trainerclass BYRON ; 6
 	const BYRON1
@@ -814,11 +815,13 @@ CHRIS EQU __enum__
 	const DAWNA
 	const DANI
 	const DARIA
+	const DORA
 
 	trainerclass DRAGON_TAMER_M
 	const DREW
 	const DEVIN
 	const DAVIS
+	const DARIUS
 
 	trainerclass MADAME_BOSS
 	const BOSS
@@ -857,6 +860,9 @@ CHRIS EQU __enum__
 	const BYRON3
 	const BYRON4
 	const BYRON5
+
+	trainerclass LINK_TRAINER
+	const LINK_TRAINER_1
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

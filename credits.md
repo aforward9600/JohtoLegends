@@ -69,7 +69,7 @@ Beta Wooper back sprite made by 64BitWonder.
 
 Sneasel, Tyranitar, Dragonite, Moltres, Heracross,
 Teddiursa, Ursaring, Phanpy, Umbreon, Feraligatr,
-Houndoom- SoupPotato
+Houndoom, Slowbro- SoupPotato
 
 Idain and Bronzeswagger for Weather Icons.
 

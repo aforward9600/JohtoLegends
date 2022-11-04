@@ -96,3 +96,4 @@ BTTrainerClassGenders:
 	db MALE   ; ENOKI3
 	db FEMALE ; CHIGUSA2
 	db MALE   ; BYRON2
+	db FEMALE ; LINK_TRAINER

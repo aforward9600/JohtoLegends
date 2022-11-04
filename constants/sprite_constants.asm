@@ -206,3 +206,4 @@ SPRITE_VARS EQU const_value
 	const SPRITE_COPYCAT ; fb
 	const SPRITE_JANINE_IMPERSONATOR ; fc
 	const SPRITE_RIVAL ; fd
+	const SPRITE_LINK_TRAINER ;fe

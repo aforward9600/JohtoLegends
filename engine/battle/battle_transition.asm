@@ -746,8 +746,12 @@ INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 	ld de, ChigusaTransition
 	cp CHIGUSA
 	ret z
+	cp CHIGUSA_2
+	ret z
 	ld de, ByronTransition
 	cp BYRON
+	ret z
+	cp BYRON_2
 	ret z
 	ld de, MiltonTransition
 	cp MILTON

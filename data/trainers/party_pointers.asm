@@ -96,3 +96,4 @@ TrainerGroups:
 	dba EnokiGroup3
 	dba ChigusaGroup2
 	dba ByronGroup2
+	dba LinkTrainerGroup

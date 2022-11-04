@@ -20,9 +20,9 @@ WalkerGroup:
 	db NO_ITEM
 	dw AERIAL_ACE, SPIKES, STEEL_WING, ROOST
 	db 45
-	dw FEAROW
+	dw AERODACTYL
 	db NO_ITEM
-	dw DRILL_PECK, DRILL_RUN, ROOST, AGILITY
+	dw EARTHQUAKE, ROCK_SLIDE, ROOST, AERIAL_ACE
 	db 45
 	dw MANTINE
 	db NO_ITEM
@@ -48,9 +48,9 @@ WalkerGroup:
 	db NO_ITEM
 	dw AERIAL_ACE, SPIKES, STEEL_WING, ROOST
 	db 48
-	dw FEAROW
+	dw AERODACTYL
 	db NO_ITEM
-	dw DRILL_PECK, DRILL_RUN, ROOST, AGILITY
+	dw EARTHQUAKE, ROCK_SLIDE, ROOST, AERIAL_ACE
 	db 48
 	dw MANTINE
 	db NO_ITEM
@@ -196,7 +196,7 @@ KurtGroup:
 	db 39
 	dw YANMEGA
 	db NO_ITEM
-	dw HYPNOSIS, ANCIENTPOWER, HYPER_VOICE, X_SCISSOR
+	dw HYPNOSIS, ANCIENTPOWER, HYPER_VOICE, BUG_BUZZ
 	db 40
 	dw SCIZOR
 	db SITRUS_BERRY
@@ -224,7 +224,7 @@ KurtGroup:
 	db 46
 	dw YANMEGA
 	db NO_ITEM
-	dw HYPNOSIS, ANCIENTPOWER, HYPER_VOICE, X_SCISSOR
+	dw NASTY_PLOT, POWER_GEM, HYPER_VOICE, BUG_BUZZ
 	db 47
 	dw SCIZOR
 	db SITRUS_BERRY
@@ -251,7 +251,7 @@ KurtGroup:
 	db 49
 	dw YANMEGA
 	db NO_ITEM
-	dw HYPNOSIS, ANCIENTPOWER, HYPER_VOICE, X_SCISSOR
+	dw NASTY_PLOT, POWER_GEM, HYPER_VOICE, BUG_BUZZ
 	db 50
 	dw SCIZOR
 	db SITRUS_BERRY
@@ -310,6 +310,22 @@ PryceGroup:
 	dw SNEASEL
 	db ORAN_BERRY
 	dw FURY_SWIPES, FAINT_ATTACK, HONE_CLAWS, ICE_SHARD
+	db -1 ; end
+
+	next_list_item ; PRYCE (Alternate)
+	db "Pryce@", TRAINERTYPE_ITEM_MOVES
+	db 13
+	dw SMOOCHUM
+	db NO_ITEM
+	dw SWEET_KISS, POUND, ICY_WIND, CONFUSION
+	db 14
+	dw SWINUB
+	db NO_ITEM
+	dw MUD_SLAP, POWDER_SNOW, TACKLE, HAIL
+	db 15
+	dw SNEASEL
+	db ORAN_BERRY
+	dw SCRATCH, PURSUIT, HONE_CLAWS, ICE_SHARD
 	db -1 ; end
 
 	end_list_items
@@ -628,7 +644,7 @@ FlorinaGroup:
 
 PKMNTrainerGroup:
 	next_list_item ; CAL (1)
-	db "CAL@", TRAINERTYPE_NORMAL
+	db "Cal@", TRAINERTYPE_NORMAL
 	db 10
 	dw CHIKORITA
 	db 10
@@ -638,7 +654,7 @@ PKMNTrainerGroup:
 	db -1 ; end
 
 	next_list_item ; CAL (2)
-	db "CAL@", TRAINERTYPE_NORMAL
+	db "Cal@", TRAINERTYPE_NORMAL
 	db 30
 	dw BAYLEEF
 	db 30
@@ -648,7 +664,7 @@ PKMNTrainerGroup:
 	db -1 ; end
 
 	next_list_item ; CAL (3)
-	db "CAL@", TRAINERTYPE_NORMAL
+	db "Cal@", TRAINERTYPE_NORMAL
 	db 50
 	dw MEGANIUM
 	db 50
@@ -2696,26 +2712,31 @@ TeacherGroup:
 
 	next_list_item ; TEACHER (4) Route 44
 	db "Cadi@", TRAINERTYPE_NORMAL
-	db 7
+	db 15
 	dw HAPPINY
+	db 15
+	dw MARILL
 	db -1 ; end
 
 	next_list_item ; TEACHER (5) Route 44
 	db "Cadi@", TRAINERTYPE_NORMAL
-	db 12
-	dw HAPPINY
-	db 12
-	dw MARILL
+	db 19
+	dw CHANSEY
+	db 20
+	dw AZUMARILL
 	db -1 ; end
 
 	next_list_item ; TEACHER (6) Route 44
-	db "Cadi@", TRAINERTYPE_NORMAL
-	db 26
+	db "Cadi@", TRAINERTYPE_MOVES
+	db 29
 	dw CHANSEY
-	db 26
+	dw SOFTBOILED, METRONOME, MINIMIZE, TAKE_DOWN
+	db 29
 	dw AZUMARILL
-	db 26
-	dw JIGGLYPUFF
+	dw PLAY_ROUGH, AQUA_TAIL, GROWTH, AQUA_JET
+	db 30
+	dw WIGGLYTUFF
+	dw PIXIE_PUNCH, BRICK_BREAK, MOONLIGHT, ROUND_M
 	db -1 ; end
 
 	end_list_items
@@ -6302,6 +6323,10 @@ MasterGroup:
 	dw GARCHOMP
 	db NO_ITEM
 	dw DRAGON_CLAW, DRAGON_DANCE, IRON_TAIL, EARTHQUAKE
+	db 48
+	dw CHARIZARD
+	db NO_ITEM
+	dw FLAMETHROWER, DRAGON_PULSE, AIR_SLASH, NASTY_PLOT
 	db 49
 	dw KINGDRA
 	db NO_ITEM
@@ -6361,11 +6386,11 @@ LanceGroup:
 PasserbyGroup:
 	next_list_item ; MIYAMOTO
 	db "Miyamoto@", TRAINERTYPE_NORMAL
-	db 11
+	db 14
 	dw HOUNDOUR
-	db 11
+	db 14
 	dw ZUBAT
-	db 12
+	db 15
 	dw MEOWTH
 	db -1 ; end
 
@@ -6765,24 +6790,34 @@ DragonTamerFGroup:
 	dw TYRANITAR
 	db -1 ; end
 
-	next_list_item ; DRAGON_TAMER_F (1) Union Cave B1F
+	next_list_item ; DRAGON_TAMER_F (2) Blackthorn Gym
 	db "Dani@", TRAINERTYPE_NORMAL
-	db 44
-	dw PUPITAR
-	db 44
-	dw AMPHAROS
-	db 45
-	dw TYRANITAR
+	db 47
+	dw DRAGONAIR
+	db 47
+	dw GABITE
+	db 48
+	dw DRAGONITE
 	db -1 ; end
 
-	next_list_item ; DRAGON_TAMER_F (1) Union Cave B1F
+	next_list_item ; DRAGON_TAMER_F (3) Blackthorn Gym
 	db "Daria@", TRAINERTYPE_NORMAL
-	db 44
-	dw PUPITAR
-	db 44
-	dw AMPHAROS
-	db 45
-	dw TYRANITAR
+	db 47
+	dw GYARADOS
+	db 47
+	dw AERODACTYL
+	db 48
+	dw CHARIZARD
+	db -1 ; end
+
+	next_list_item ; DRAGON_TAMER_F (4) Blackthorn Gym
+	db "Dora@", TRAINERTYPE_NORMAL
+	db 47
+	dw GABITE
+	db 47
+	dw KINGDRA
+	db 48
+	dw GYARADOS
 	db -1 ; end
 
 	end_list_items
@@ -6798,23 +6833,33 @@ DragonTamerMGroup:
 	dw DRAGONITE
 	db -1 ; end
 
-	next_list_item ; DRAGON_TAMER_M (1) Union Cave B1F
+	next_list_item ; DRAGON_TAMER_M (2) Blackthorn Gym
 	db "Devin@", TRAINERTYPE_NORMAL
-	db 44
-	dw DRAGONAIR
-	db 44
-	dw GABITE
-	db 45
-	dw DRAGONITE
+	db 47
+	dw PUPITAR
+	db 47
+	dw AMPHAROS
+	db 48
+	dw TYRANITAR
 	db -1 ; end
 
-	next_list_item ; DRAGON_TAMER_M (1) Union Cave B1F
-	db "Dravis@", TRAINERTYPE_NORMAL
-	db 44
-	dw DRAGONAIR
-	db 44
-	dw GABITE
-	db 45
+	next_list_item ; DRAGON_TAMER_M (3) Blackthorn Gym
+	db "Davis@", TRAINERTYPE_NORMAL
+	db 47
+	dw KINGDRA
+	db 47
+	dw GYARADOS
+	db 48
+	dw TYRANITAR
+	db -1 ; end
+
+	next_list_item ; DRAGON_TAMER_M (4) Blackthorn Gym
+	db "Darius@", TRAINERTYPE_NORMAL
+	db 47
+	dw BAGON
+	db 47
+	dw SHELGON
+	db 48
 	dw DRAGONITE
 	db -1 ; end
 
@@ -7353,6 +7398,19 @@ ByronGroup2:
 	dw STEELIX
 	db SITRUS_BERRY
 	dw STEEL_SLICE, EARTHQUAKE, ROCK_SLIDE, THUNDER_FANG
+	db -1 ; end
+
+	end_list_items
+
+LinkTrainerGroup:
+	next_list_item ; CAL (1)
+	db "Kris@", TRAINERTYPE_NORMAL
+	db 10
+	dw CHIKORITA
+	db 10
+	dw CYNDAQUIL
+	db 10
+	dw TOTODILE
 	db -1 ; end
 
 	end_list_items

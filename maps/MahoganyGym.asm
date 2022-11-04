@@ -43,8 +43,11 @@ MahoganyGymPryceScript:
 	writetext PryceText_Intro
 	waitbutton
 	closetext
+	checkflag ENGINE_FLYPOINT_LAKE_OF_RAGE
+	iftrue .PryceAlternateBattle
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE, PRYCE1
+.StartPryceBattle:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_PRYCE
@@ -78,6 +81,10 @@ MahoganyGymPryceScript:
 	closetext
 	setscene SCENE_GYM_GUIDE_STOPS_YOU
 	end
+
+.PryceAlternateBattle:
+	loadtrainer PRYCE, PRYCE_ALTERNATE
+	sjump .StartPryceBattle
 
 .Rematch:
 	readvar VAR_BADGES

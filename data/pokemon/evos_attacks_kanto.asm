@@ -2536,7 +2536,7 @@ RhyperiorEvosAttacks:
 	db 0 ; no more level-up moves
 
 HappinyEvosAttacks:
-	dbbw EVOLVE_ITEM, SHINY_STONE, CHANSEY
+	dbbw EVOLVE_LEVEL, 16, CHANSEY
 	db 0 ; no more evolutions
 	dbw 1, POUND
 	dbw 1, MINIMIZE

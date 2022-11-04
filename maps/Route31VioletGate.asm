@@ -34,12 +34,18 @@ Route31VioletGateStopPlayer:
 	end
 
 .YouCanGoThrough:
-	writetext ThatsTheZepherBadgeText2
-;	writetext ThatsTheZepherBadgeText
+	writetext ThatsTheZepherBadgeText
 	waitbutton
 	closetext
-	applymovement PLAYER, Route31VioletGateStopPlayerMovement
-;	setscene SCENE_FINISHED
+	setscene SCENE_FINISHED
+	setevent EVENT_RIVAL_NEW_BARK_TOWN
+	setevent EVENT_RIVALS_HOUSE_RIVAL
+	checkevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
+	iffalse .ClearCynthia
+	end
+
+.ClearCynthia:
+	setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
 	end
 
 Route31VioletGateStopPlayerMovement:
