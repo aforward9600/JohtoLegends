@@ -54,8 +54,11 @@ EcruteakGymEnokiScript:
 	writetext EnokiIntroText
 	waitbutton
 	closetext
+	checkflag ENGINE_FLYPOINT_OLIVINE
+	iftrue .EnokiAlternateBattle
 	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI, ENOKI1
+.StartEnokiBattle:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ENOKI
@@ -113,6 +116,11 @@ EcruteakGymEnokiScript:
 .NoRoomForHex:
 	closetext
 	end
+
+.EnokiAlternateBattle:
+	winlosstext EnokiWinLossText, EnokiWinText
+	loadtrainer ENOKI, ENOKI_ALTERNATE
+	sjump .StartEnokiBattle
 
 .EnokiRematch:
 	readvar VAR_BADGES

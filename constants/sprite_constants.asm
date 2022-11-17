@@ -127,6 +127,7 @@
 	const SPRITE_CYNTHIA
 	const SPRITE_CHRIS_ITEM
 	const SPRITE_KRIS_ITEM
+	const SPRITE_BIKER_BOSS
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80
@@ -183,6 +184,8 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_SNEASEL
 	const SPRITE_MILTANK
 	const SPRITE_RAICHU
+	const SPRITE_CLEFAIRY_P
+	const SPRITE_DUSKNOIR
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
 	const_def $e0

@@ -41,6 +41,7 @@ CHRIS EQU __enum__
 
 	trainerclass ENOKI ; 4
 	const ENOKI1
+	const ENOKI_ALTERNATE
 
 	trainerclass PRYCE ; 5
 	const PRYCE1
@@ -750,6 +751,7 @@ CHRIS EQU __enum__
 	const ZELDA
 	const SABRINA2
 	const MAEVE
+	const EDALYN
 
 	trainerclass CHIGUSA ; 48
 	const CHIGUSA1
@@ -863,6 +865,9 @@ CHRIS EQU __enum__
 
 	trainerclass LINK_TRAINER
 	const LINK_TRAINER_1
+
+	trainerclass FED_LEADER
+	const PAXTON
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

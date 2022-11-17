@@ -2172,7 +2172,7 @@ BattleCommand_ApplyDamage:
 ; check if target is at full HP
 	farcall CheckOpponentFullHP
 	jr nz, .damage
-	call BattleCommand_FalseSwipe
+	farcall BattleCommand_FalseSwipe
 	ld b, 0
 	jr nc, .damage
 	callfar ConsumeHeldItem
@@ -2183,7 +2183,7 @@ BattleCommand_ApplyDamage:
 	call BattleRandom
 	cp c
 	jr nc, .damage
-	call BattleCommand_FalseSwipe
+	farcall BattleCommand_FalseSwipe
 	ld b, 0
 	jr nc, .damage
 	ld b, 2

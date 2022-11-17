@@ -227,19 +227,15 @@ CeruleanCityYoungsterText2:
 	done
 
 CeruleanCitySignText:
-	text "CERULEAN CITY"
+	text "Cerulean City"
 
 	para "A Mysterious Blue"
 	line "Aura Surrounds It"
 	done
 
 CeruleanGymSignText:
-	text "CERULEAN CITY"
-	line "#MON GYM"
-	cont "LEADER: MISTY"
-
-	para "The Tomboyish"
-	line "Mermaid"
+	text "Cerulean City"
+	line "Pool."
 	done
 
 CeruleanBikeShopSignText:
@@ -252,21 +248,19 @@ CeruleanBikeShopSignText:
 	done
 
 CeruleanPoliceSignText:
-	text "There's a notice"
-	line "here…"
+	text "The Gym's been"
+	line "burned down…"
+	done
 
-	para "Stamp out thievery"
-	line "and make the city"
-
-	para "a friendlier, more"
-	line "cheerful place!"
-
-	para "CERULEAN POLICE"
+CeruleanOriginalGymText:
+	text "The sign is"
+	line "covered in"
+	cont "graffiti…"
 	done
 
 CeruleanCapeSignText:
-	text "CERULEAN CAPE"
-	line "AHEAD"
+	text "Cerulean Cape"
+	line "Ahead"
 	done
 
 CeruleanLockedDoorText:
@@ -286,16 +280,17 @@ CeruleanCity_MapEvents:
 
 	db 0 ; coord events
 
-	db 9 ; bg events
+	db 10 ; bg events
 	bg_event 23, 23, BGEVENT_READ, CeruleanCitySign
 	bg_event 27, 25, BGEVENT_READ, CeruleanGymSign
 	bg_event 11, 29, BGEVENT_READ, CeruleanBikeShopSign
-	bg_event 25, 17, BGEVENT_READ, CeruleanPoliceSign
+	bg_event 30, 17, BGEVENT_READ, CeruleanPoliceSign
 	bg_event 23,  7, BGEVENT_READ, CeruleanCapeSign
 	bg_event 14, 29, BGEVENT_READ, CeruleanLockedDoor
 	bg_event 20, 21, BGEVENT_READ, CeruleanCityPokecenterSign
 	bg_event 26, 29, BGEVENT_READ, CeruleanCityMartSign
 	bg_event  2, 12, BGEVENT_ITEM, CeruleanCityHiddenBerserkGene
+	bg_event 25, 17, BGEVENT_READ, CeruleanOriginalGymText
 
 	db 6 ; object events
 	object_event 15, 23, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerMScript, -1

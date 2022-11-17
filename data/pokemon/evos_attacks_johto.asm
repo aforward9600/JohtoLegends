@@ -126,6 +126,7 @@ EvosAttacksPointers2::
 	dw ManectricEvosAttacks
 	dw CroagunkEvosAttacks
 	dw ToxicroakEvosAttacks
+;	dw SwabluEvosAttacks
 	dw DuskullEvosAttacks
 	dw DusclopsEvosAttacks
 	dw DusknoirEvosAttacks
@@ -2582,6 +2583,28 @@ ToxicroakEvosAttacks:
 	dbw 58, BELCH
 	dbw 62, FLATTER
 	dbw 65, CLOSE_COMBAT
+	db 0 ; no more level-up moves
+
+SwabluEvosAttacks:
+;	dbbw EVOLVE_LEVEL, 35, ALTARIA
+	db 0 ; no more evolutions
+	dbw 1, PECK
+	dbw 1, GROWL
+	dbw 3, ASTONISH
+	dbw 5, SING
+	dbw 7, FURY_ATTACK
+	dbw 9, SAFEGUARD
+	dbw 11, DISARM_VOICE
+	dbw 14, MIST
+	dbw 17, ROUND_M
+	dbw 20, WING_ATTACK
+	dbw 23, TAKE_DOWN
+	dbw 26, HEAL_BELL
+	dbw 30, MIRROR_MOVE
+	dbw 34, COTTON_SPORE
+	dbw 38, DRAGON_PULSE
+	dbw 42, PERISH_SONG
+	dbw 46, MOONBLAST
 	db 0 ; no more level-up moves
 
 DuskullEvosAttacks:

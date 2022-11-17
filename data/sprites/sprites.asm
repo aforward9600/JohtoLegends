@@ -131,3 +131,4 @@ OverworldSprites:
 	overworld_sprite CynthiaGFX, 12, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite ChrisItemGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisItemGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite BikerBossGFX, 12, WALKING_SPRITE, PAL_OW_BROWN

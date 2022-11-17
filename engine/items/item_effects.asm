@@ -157,7 +157,7 @@ ItemEffects:
 	dw PokeBallEffect      ; MOON_BALL
 	dw PokeBallEffect      ; LOVE_BALL
 	dw VitaminEffect       ; ZINC
-	dw GorgeousBoxEffect   ; GORGEOUS_BOX
+	dw NoEffect            ; SOOTHE_BELL
 	dw EvoStoneEffect      ; SUN_STONE
 	dw NoEffect            ; POLKADOT_BOW
 	dw EvoStoneEffect      ; UP_GRADE

@@ -120,7 +120,7 @@ KurtsHouseBookshelf:
 	jumpstd difficultbookshelf
 
 KurtsHouseRadio:
-	jumpstd radio2
+	jumpstd televisionscript
 
 KurtsHouseAskTeachAMoveText:
 	text "I'm just here to"

@@ -217,8 +217,8 @@ YoungsterGordySeenText:
 	line "this!"
 
 	para "I lost to the Gym"
-	line "Leader in Mahogany"
-	cont "Town!"
+	line "Leader at the"
+	cont "Lake of Rage!"
 
 	para "I've been here"
 	line "searching for some"

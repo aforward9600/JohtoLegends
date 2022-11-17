@@ -582,6 +582,8 @@ INCBIN "gfx/pokemon/croagunk/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/croagunk/shiny.pal"
 INCBIN "gfx/pokemon/toxicroak/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/toxicroak/shiny.pal"
+;INCBIN "gfx/pokemon/swablu/front.gbcpal", middle_colors
+;INCLUDE "gfx/pokemon/swablu/shiny.pal"
 INCBIN "gfx/pokemon/duskull/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/duskull/shiny.pal"
 INCBIN "gfx/pokemon/dusclops/front.gbcpal", middle_colors

@@ -276,6 +276,7 @@ PreviousEvolutionStage::
 	dw ELECTRIKE
 	dw 0
 	dw CROAGUNK
+;	dw 0
 	dw 0
 	dw DUSKULL
 	dw DUSCLOPS

@@ -276,6 +276,7 @@ PokedexDataPointerTable:
 	dba ManectricPokedexEntry
 	dba CroagunkPokedexEntry
 	dba ToxicroakPokedexEntry
+;	dba SwabluPokedexEntry
 	dba DuskullPokedexEntry
 	dba DusclopsPokedexEntry
 	dba DusknoirPokedexEntry

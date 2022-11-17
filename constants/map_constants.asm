@@ -228,6 +228,9 @@ ENDM
 	map_const ROUTE_43_GATE,                                5,  4 ;  4
 	map_const ROUTE_43,                                    10, 27 ;  5
 	map_const LAKE_OF_RAGE,                                20, 18 ;  6
+	map_const LAKE_OF_RAGE_POKECENTER_1F,                   5,  4 ;  7
+	map_const LAKE_OF_RAGE_MART,                            6,  4 ;  8
+	map_const SOOTHE_BELL_HOUSE,                            4,  4 ;  9
 
 	newgroup                                                      ; 10
 
@@ -248,6 +251,7 @@ ENDM
 	map_const ROUTE_35_NATIONAL_PARK_GATE,                  4,  4 ; 15
 	map_const ROUTE_36_RUINS_OF_ALPH_GATE,                  5,  4 ; 16
 	map_const ROUTE_36_NATIONAL_PARK_GATE,                  5,  4 ; 17
+	map_const GHOST_HOUSE,                                  4,  4 ; 18
 
 	newgroup                                                      ; 11
 

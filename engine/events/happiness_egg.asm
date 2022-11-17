@@ -108,10 +108,9 @@ StepHappiness::
 ; Raise the party's happiness by 1 point every other step cycle.
 
 	ld hl, wHappinessStepCount
+	inc [hl]
 	ld a, [hl]
-	inc a
 	and 1
-	ld [hl], a
 	ret nz
 
 	ld de, wPartyCount
@@ -127,9 +126,24 @@ StepHappiness::
 	cp EGG
 	jr z, .next
 	inc [hl]
-	jr nz, .next
-	ld [hl], $ff
+	jr nz, .doIncrement
+	dec [hl]
+	jr .next
 
+.doIncrement
+	push hl
+	push bc
+	ld bc, MON_ITEM - MON_HAPPINESS
+	add hl, bc
+	pop bc
+	ld a, [hl]
+	pop hl
+	cp SOOTHE_BELL
+	jr nz, .next
+
+	inc [hl]
+	jr nz, .next
+	dec [hl]
 .next
 	push de
 	ld de, PARTYMON_STRUCT_LENGTH

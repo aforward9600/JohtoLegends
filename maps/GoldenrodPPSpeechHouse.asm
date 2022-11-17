@@ -14,8 +14,8 @@ GoldenrodPPSpeechHouseGrampsScript:
 	faceplayer
 	opentext
 	writetext GoldenrodPPSpeechHouseGrampsDrainPunchText
-	waitbutton
-	writetext GoldenrodPPSpeechHouseGrampsDrainPunchText2
+	checkmoney YOUR_MONEY, 1800
+	ifequal HAVE_LESS, .TutorRefused
 	yesorno
 	iffalse .TutorRefused
 	loadmoveindex DRAIN_PUNCH
@@ -30,6 +30,7 @@ GoldenrodPPSpeechHouseGrampsScript:
 
 .TeachMove
 	writetext GoldenrodPPSpeechHouseGrampsDrainPunchTaught
+	takemoney YOUR_MONEY, 1800
 	waitbutton
 	closetext
 	end
@@ -41,7 +42,7 @@ GoldenrodPPSpeechHouseBookshelf1:
 	jumpstd magazinebookshelf
 
 GoldenrodPPSpeechHouseRadio:
-	jumpstd radio2
+	jumpstd televisionscript
 
 GoldenrodPPSpeechHouseYoungsterText:
 	text "See those trees"
@@ -61,12 +62,12 @@ GoldenrodPPSpeechHouseGrampsDrainPunchText:
 	line "punching move that"
 
 	para "heals the user."
-	done
 
-GoldenrodPPSpeechHouseGrampsDrainPunchText2:
-	text "Would you like me"
+	para "Would you like me"
 	line "to teach a #-"
 	cont "mon Drain Punch?"
+
+	para "It's only ¥1,800."
 	done
 
 GoldenrodPPSpeechHouseGrampsDrainPunchClear:

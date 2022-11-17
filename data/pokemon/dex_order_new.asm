@@ -37,6 +37,7 @@ NewPokedexOrder:
 	dw BUDEW
 	dw ROSELIA
 	dw ROSERADE
+;	dw SWABLU
 	dw GEODUDE
 	dw GRAVELER
 	dw GOLEM

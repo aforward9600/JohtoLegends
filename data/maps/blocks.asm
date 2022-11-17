@@ -177,6 +177,7 @@ CherrygroveGymSpeechHouse_Blocks:
 GuideGentsHouse_Blocks:
 CherrygroveEvolutionSpeechHouse_Blocks:
 Route30BerryHouse_Blocks:
+SootheBellHouse_Blocks:
 	INCBIN "maps/House1.blk"
 
 SafariZoneFuchsiaGateBeta_Blocks:
@@ -312,6 +313,7 @@ ViridianMart_Blocks:
 SaffronMart_Blocks:
 CherrygroveMart_Blocks:
 WildAreaMart_Blocks:
+LakeOfRageMart_Blocks:
 	INCBIN "maps/Mart.blk"
 
 Route10North_Blocks:
@@ -342,6 +344,7 @@ ViridianPokecenter1F_Blocks:
 SaffronPokecenter1F_Blocks:
 CherrygrovePokecenter1F_Blocks:
 WildAreaPokecenter_Blocks:
+LakeOfRagePokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter1F.blk"
 
 BetaPewterMuseumOfScience1F_Blocks:
@@ -427,6 +430,7 @@ EcruteakItemfinderHouse_Blocks:
 VioletNicknameSpeechHouse_Blocks:
 VioletKylesHouse_Blocks:
 EcruteakMoveTutorHouse_Blocks:
+GhostHouse_Blocks:
 	INCBIN "maps/House2.blk"
 
 BetaUnionCave_Blocks:

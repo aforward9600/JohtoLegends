@@ -312,4 +312,66 @@ SwarmGrassWildMons:
 	dbw 11, ARON
 	dbw 11, ARON
 
+; Ralts Swarm
+	map_id ROUTE_43
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw  8, RALTS
+	dbw  8, TOTODILE
+	dbw  8, PSYDUCK
+	dbw  9, RALTS
+	dbw  9, RALTS
+	dbw  9, RALTS
+	dbw 10, TOTODILE
+	dbw 10, TOTODILE
+	; day
+	dbw  8, RALTS
+	dbw  8, TOTODILE
+	dbw  8, PSYDUCK
+	dbw  9, RALTS
+	dbw  9, RALTS
+	dbw  9, RALTS
+	dbw 10, TOTODILE
+	dbw 10, TOTODILE
+	; nite
+	dbw  8, RALTS
+	dbw  8, TOTODILE
+	dbw  8, PSYDUCK
+	dbw  9, RALTS
+	dbw  9, RALTS
+	dbw  9, RALTS
+	dbw 10, TOTODILE
+	dbw 10, TOTODILE
+
+; Croagunk Swarm
+	map_id LAKE_OF_RAGE
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw  8, MIME__JR
+	dbw  8, CROAGUNK
+	dbw  8, ELECTRIKE
+	dbw  9, CROAGUNK
+	dbw  9, ELECTRIKE
+	dbw  9, CROAGUNK
+	dbw 10, CROAGUNK
+	dbw 10, CROAGUNK
+	; day
+	dbw  8, MIME__JR
+	dbw  8, CROAGUNK
+	dbw  8, ELECTRIKE
+	dbw  9, CROAGUNK
+	dbw  9, ELECTRIKE
+	dbw  9, CROAGUNK
+	dbw 10, CROAGUNK
+	dbw 10, CROAGUNK
+	; nite
+	dbw  8, MIME__JR
+	dbw  8, CROAGUNK
+	dbw  8, ELECTRIKE
+	dbw  9, CROAGUNK
+	dbw  9, ELECTRIKE
+	dbw  9, CROAGUNK
+	dbw 10, CROAGUNK
+	dbw 10, CROAGUNK
+
 	db -1 ; end

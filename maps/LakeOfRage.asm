@@ -9,6 +9,8 @@
 	const LAKEOFRAGE_WESLEY
 	const LAKEOFRAGE_POKE_BALL1
 	const LAKEOFRAGE_POKE_BALL2
+	const LAKEOFRAGE_GRAMPS
+	const LAKEOFRAGE_LASS2
 
 LakeOfRage_MapScripts:
 	db 2 ; scene scripts
@@ -98,6 +100,9 @@ LakeOfRageCooltrainerFScript:
 LakeOfRageSign:
 	jumptext LakeOfRageSignText
 
+LakeOfRageGymSign:
+	jumptext LakeOfRageGymText
+
 MagikarpHouseSignScript:
 	opentext
 	writetext FishingGurusHouseSignText
@@ -183,19 +188,28 @@ WesleyNotWednesdayScript:
 	end
 
 LakeOfRageElixer:
-	itemball ELIXER
+	itemball ETHER
 
 LakeOfRageTMDetect:
 	itemball TM_ROAR
 
 LakeOfRageHiddenFullRestore:
-	hiddenitem FULL_RESTORE, EVENT_LAKE_OF_RAGE_HIDDEN_FULL_RESTORE
+	hiddenitem GREAT_BALL, EVENT_LAKE_OF_RAGE_HIDDEN_FULL_RESTORE
 
 LakeOfRageHiddenRareCandy:
 	hiddenitem RARE_CANDY, EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
 
 LakeOfRageHiddenMaxPotion:
-	hiddenitem MAX_POTION, EVENT_LAKE_OF_RAGE_HIDDEN_MAX_POTION
+	hiddenitem PEARL, EVENT_LAKE_OF_RAGE_HIDDEN_MAX_POTION
+
+LakeOfRageGrampsScript:
+	jumptextfaceplayer LakeOfRageGrampsText
+
+LakeOfRageLassScript:
+	jumptextfaceplayer LakeOfRageLassText
+
+LakeOfRageMovingSign:
+	jumptext LakeOfRageMovingSignText
 
 MovementData_0x70155:
 	teleport_from
@@ -437,30 +451,87 @@ FishingGurusHouseSignText:
 	line "House"
 	done
 
+LakeOfRageGymText:
+	text "Lake of Rage"
+	line "#mon Gym"
+	cont "Leader: Pryce"
+
+	para "The Teacher of"
+	line "Winter's Harshness"
+	done
+
+LakeOfRageGrampsText:
+	text "I was born here,"
+
+	para "I lived here,"
+
+	para "but now it'll"
+	line "be gone soon."
+
+	para "They're going to"
+	line "plant a forest"
+	cont "here, so that's"
+	cont "a bit comforting."
+	done
+
+LakeOfRageLassText:
+	text "While the town's"
+	line "all moving away,"
+	cont "the weird guy in"
+
+	para "that old-looking"
+	line "house is going to"
+	cont "stay."
+
+	para "He's always going"
+	line "on about the"
+	cont "hidden power of"
+	cont "#mon."
+
+	para "I just ignore him."
+	done
+
+LakeOfRageMovingSignText:
+	text "Notice:"
+
+	para "This town will be"
+	line "bulldozed due to"
+	cont "environmental"
+	cont "changes."
+	done
+
 LakeOfRage_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
-	warp_event  7,  3, LAKE_OF_RAGE_HIDDEN_POWER_HOUSE, 1
-	warp_event 27, 31, LAKE_OF_RAGE_MAGIKARP_HOUSE, 1
+	db 6 ; warp events
+	warp_event 21,  5, LAKE_OF_RAGE_HIDDEN_POWER_HOUSE, 1
+	warp_event 35, 29, LAKE_OF_RAGE_MAGIKARP_HOUSE, 1
+	warp_event 10,  5, MAHOGANY_GYM, 1
+	warp_event  5, 19, LAKE_OF_RAGE_POKECENTER_1F, 1
+	warp_event  3,  9, LAKE_OF_RAGE_MART, 1
+	warp_event 17, 13, SOOTHE_BELL_HOUSE, 1
 
 	db 0 ; coord events
 
-	db 5 ; bg events
-	bg_event 21, 27, BGEVENT_READ, LakeOfRageSign
-	bg_event 25, 31, BGEVENT_READ, MagikarpHouseSignScript
-	bg_event 11, 28, BGEVENT_ITEM, LakeOfRageHiddenFullRestore
-	bg_event  4,  4, BGEVENT_ITEM, LakeOfRageHiddenRareCandy
+	db 7 ; bg events
+	bg_event 19, 31, BGEVENT_READ, LakeOfRageSign
+	bg_event 33, 29, BGEVENT_READ, MagikarpHouseSignScript
+	bg_event  3, 31, BGEVENT_ITEM, LakeOfRageHiddenFullRestore
+	bg_event 38, 17, BGEVENT_ITEM, LakeOfRageHiddenRareCandy
 	bg_event 31,  2, BGEVENT_ITEM, LakeOfRageHiddenMaxPotion
+	bg_event  7,  5, BGEVENT_READ, LakeOfRageGymSign
+	bg_event 11, 11, BGEVENT_READ, LakeOfRageMovingSign
 
-	db 10 ; object events
-	object_event 20, 27, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageMiyamotoScript, EVENT_LAKE_OF_RAGE_MIYAMOTO
-	object_event 20, 29, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageRivalScript, EVENT_RIVAL_AT_LAKE_OF_RAGE_1
+	db 12 ; object events
+	object_event 20, 30, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageMiyamotoScript, EVENT_LAKE_OF_RAGE_MIYAMOTO
+	object_event 20, 32, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageRivalScript, EVENT_RIVAL_AT_LAKE_OF_RAGE_1
 	object_event 36, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageSuperNerdScript, -1
-	object_event 25, 27, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageCooltrainerFScript, -1
-	object_event 32, 20, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherAidan, -1
-	object_event 28, 24, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherNoah, -1
+	object_event  9, 32, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageCooltrainerFScript, -1
+	object_event 32, 21, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherAidan, -1
+	object_event 29, 26, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherNoah, -1
 	object_event 37,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassJackie, -1
-	object_event  4,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WesleyScript, EVENT_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY
-	object_event  7, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageElixer, EVENT_LAKE_OF_RAGE_ELIXER
-	object_event 35,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, LakeOfRageTMDetect, EVENT_LAKE_OF_RAGE_TM_DETECT
+	object_event 27,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WesleyScript, EVENT_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY
+	object_event  2, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageElixer, EVENT_LAKE_OF_RAGE_ELIXER
+	object_event  8,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, LakeOfRageTMDetect, EVENT_LAKE_OF_RAGE_TM_DETECT
+	object_event  9, 10, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageGrampsScript, -1
+	object_event 12, 19, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LakeOfRageLassScript, -1

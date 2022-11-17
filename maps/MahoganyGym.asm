@@ -43,10 +43,8 @@ MahoganyGymPryceScript:
 	writetext PryceText_Intro
 	waitbutton
 	closetext
-	checkflag ENGINE_FLYPOINT_LAKE_OF_RAGE
-	iftrue .PryceAlternateBattle
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
-	loadtrainer PRYCE, PRYCE1
+	loadtrainer PRYCE, PRYCE_ALTERNATE
 .StartPryceBattle:
 	startbattle
 	reloadmapafterbattle
@@ -82,10 +80,6 @@ MahoganyGymPryceScript:
 	setscene SCENE_GYM_GUIDE_STOPS_YOU
 	end
 
-.PryceAlternateBattle:
-	loadtrainer PRYCE, PRYCE_ALTERNATE
-	sjump .StartPryceBattle
-
 .Rematch:
 	readvar VAR_BADGES
 	ifequal 1, .PryceBattle1
@@ -103,7 +97,7 @@ MahoganyGymPryceScript:
 	waitbutton
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
-	loadtrainer PRYCE, PRYCE1
+	loadtrainer PRYCE, PRYCE_ALTERNATE
 	startbattle
 	reloadmapafterbattle
 	sjump AfterPryceRematch
@@ -557,7 +551,7 @@ SkierPamAfterBattleText:
 	done
 
 MahoganyGymGuyText:
-	text "Hows it going,"
+	text "How's it going,"
 	line "champ in the"
 	cont "making?"
 
@@ -602,8 +596,8 @@ ByTheWay1Text:
 
 	para "tell you:"
 
-	para "Meet me at the"
-	line "Lake of Rage!"
+	para "Meet me in front"
+	line "of Lake of Rage!"
 
 	para "You better go see"
 	line "her."
@@ -616,8 +610,8 @@ ByTheWay2Text:
 
 	para "tell you:"
 
-	para "Meet me at the"
-	line "Lake of Rage!"
+	para "Meet me in front"
+	line "of Lake of Rage!"
 
 	para "You better go see"
 	line "him."
@@ -627,8 +621,8 @@ MahoganyGym_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  4, 17, MAHOGANY_TOWN, 3
-	warp_event  5, 17, MAHOGANY_TOWN, 3
+	warp_event  4, 17, LAKE_OF_RAGE, 3
+	warp_event  5, 17, LAKE_OF_RAGE, 3
 
 	db 2 ; coord events
 	coord_event 4, 17, SCENE_GYM_GUIDE_STOPS_YOU, GymGuyStopsYou1Script

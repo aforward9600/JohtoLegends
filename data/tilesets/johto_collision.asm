@@ -191,3 +191,4 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; be
 	tilecoll FLOOR, WALL, WALL, WALL ; bf
 	tilecoll WALL, FLOOR, WALL, WALL ; c0
+	tilecoll WALL, WALL, DOOR, WALL ; c1

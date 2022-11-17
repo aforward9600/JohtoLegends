@@ -150,7 +150,7 @@
 	const MOON_BALL    ; a5
 	const LOVE_BALL    ; a6
 	const ZINC         ; a7
-	const GORGEOUS_BOX ; a8
+	const SOOTHE_BELL  ; a8
 	const SUN_STONE    ; a9
 	const POLKADOT_BOW ; aa
 	const UP_GRADE     ; ac

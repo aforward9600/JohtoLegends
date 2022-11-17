@@ -41,6 +41,7 @@ Marts:
 	dw MartBlackthornTMs
 	dw MartAzaleaTMs
 	dw MartVioletTMs
+	dw MartLakeOfRage
 .End
 
 MartCherrygrove:
@@ -497,4 +498,15 @@ DefaultMart:
 	db 2 ; # items
 	db POKE_BALL
 	db POTION
+	db -1 ; end
+
+MartLakeOfRage:
+	db 7 ; # items
+	db POKE_BALL
+	db POTION
+	db ANTIDOTE
+	db PARLYZ_HEAL
+	db AWAKENING
+	db ESCAPE_ROPE
+	db REPEL
 	db -1 ; end

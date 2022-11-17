@@ -275,6 +275,7 @@ AnimationIdlePointers:
 	dw ManectricAnimationIdle
 	dw CroagunkAnimationIdle
 	dw ToxicroakAnimationIdle
+;	dw SwabluAnimationIdle
 	dw DuskullAnimationIdle
 	dw DusclopsAnimationIdle
 	dw DusknoirAnimationIdle

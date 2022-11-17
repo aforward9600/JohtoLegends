@@ -13,13 +13,17 @@ GenerateShinySwarm:
 	cp ICE_PATH
 	jr z, .sneasel
 	cp BURNED_TOWER
-	jr z, .misdreavus
+	jp z, .misdreavus
 	cp NATIONAL_PARK
 	jp z, .pinsir
 	cp ROUTE_38
 	jp z, .scyther
 	cp MT_MORTAR
 	jp z, .aron
+	cp ROUTE_43
+	jp z, .ralts
+	cp LAKE_OF_RAGE
+	jp z, .croagunk
 	jp .skipshineswarm
 
 .dunsparce
@@ -77,7 +81,7 @@ GenerateShinySwarm:
 		endc
 	endc
 	jr nz, .eevee
-	jr .rollshiny
+	jp .rollshiny
 
 .eevee
 	ld a, [wCurPartySpecies]
@@ -96,7 +100,7 @@ GenerateShinySwarm:
 		endc
 	endc
 	jr nz, .kangaskhan
-	jr .rollshiny
+	jp .rollshiny
 
 .kangaskhan
 	ld a, [wCurPartySpecies]
@@ -125,7 +129,7 @@ GenerateShinySwarm:
 	if HIGH(GIBLE) == 0
 		or h
 	else
-		jr nz, .skipshineswarm
+		jp nz, .skipshineswarm
 		if HIGH(GIBLE) == 1
 			dec h
 		else
@@ -133,7 +137,7 @@ GenerateShinySwarm:
 			cp HIGH(GIBLE)
 		endc
 	endc
-	jr nz, .skipshineswarm
+	jp nz, .skipshineswarm
 	jr .rollshiny
 
 .sneasel
@@ -226,6 +230,44 @@ GenerateShinySwarm:
 		else
 			ld a, h
 			cp HIGH(ARON)
+		endc
+	endc
+	jr nz, .skipshineswarm
+	jr .rollshiny
+
+.ralts
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(RALTS)
+	if HIGH(RALTS) == 0
+		or h
+	else
+		jr nz, .skipshineswarm
+		if HIGH(RALTS)
+			dec h
+		else
+			ld a, h
+			cp HIGH(RALTS)
+		endc
+	endc
+	jr nz, .skipshineswarm
+	jr .rollshiny
+
+.croagunk
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(CROAGUNK)
+	if HIGH(CROAGUNK) == 0
+		or h
+	else
+		jr nz, .skipshineswarm
+		if HIGH(CROAGUNK)
+			dec h
+		else
+			ld a, h
+			cp HIGH(CROAGUNK)
 		endc
 	endc
 	jr nz, .skipshineswarm

@@ -275,6 +275,7 @@ AnimationPointers:
 	dw ManectricAnimation
 	dw CroagunkAnimation
 	dw ToxicroakAnimation
+;	dw SwabluAnimation
 	dw DuskullAnimation
 	dw DusclopsAnimation
 	dw DusknoirAnimation

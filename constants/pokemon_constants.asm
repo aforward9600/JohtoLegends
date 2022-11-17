@@ -296,6 +296,7 @@ JOHTO_POKEMON EQU const_value
 	const MANECTRIC
 	const CROAGUNK
 	const TOXICROAK
+;	const SWABLU
 	const DUSKULL    ; f2
 	const DUSCLOPS
 	const DUSKNOIR

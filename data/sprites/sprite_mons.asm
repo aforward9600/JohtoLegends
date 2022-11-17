@@ -52,3 +52,5 @@ SpriteMons:
 	dw SNEASEL
 	dw MILTANK
 	dw RAICHU
+	dw CLEFAIRY
+	dw DUSKNOIR

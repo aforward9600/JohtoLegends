@@ -56,7 +56,8 @@ TreeMonSet_Route:
 	dbbw 50, 10, HOOTHOOT
 	dbbw 15, 10, PINECO
 	dbbw 15, 10, PINECO
-	dbbw 10, 10, EXEGGCUTE
+;	dbbw 10, 10, SWABLU
+	dbbw 10, 10, PINECO
 	dbbw  5, 10, EXEGGCUTE
 	dbbw  5, 10, EXEGGCUTE
 	db -1
@@ -64,7 +65,8 @@ TreeMonSet_Route:
 	dbbw 50, 10, HOOTHOOT
 	dbbw 15, 10, PINECO
 	dbbw 15, 10, PINECO
-	dbbw 10, 10, EXEGGCUTE
+;	dbbw 10, 10, SWABLU
+	dbbw 10, 10, PINECO
 	dbbw  5, 10, EXEGGCUTE
 	dbbw  5, 10, EXEGGCUTE
 	db -1
@@ -93,16 +95,16 @@ TreeMonSet_Lake:
 	dbbw 15, 10, VENONAT
 	dbbw 15, 10, PINECO
 	dbbw 10, 10, EXEGGCUTE
-	dbbw  5, 10, EXEGGCUTE
-	dbbw  5, 10, EXEGGCUTE
+	dbbw  5, 10, MUNCHLAX
+	dbbw  5, 10, MUNCHLAX
 	db -1
 ; rare
 	dbbw 50, 10, HOOTHOOT
 	dbbw 15, 10, PINECO
 	dbbw 15, 10, PINECO
 	dbbw 10, 10, EXEGGCUTE
-	dbbw  5, 10, EXEGGCUTE
-	dbbw  5, 10, EXEGGCUTE
+	dbbw  5, 10, MUNCHLAX
+	dbbw  5, 10, MUNCHLAX
 	db -1
 
 TreeMonSet_Forest:

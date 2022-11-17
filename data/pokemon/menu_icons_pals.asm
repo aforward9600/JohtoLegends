@@ -287,9 +287,10 @@ MonMenuIconPals:
 	icon_pals BLUE,   GRAY   ; MANECTRIC
 	icon_pals BLUE,   TEAL   ; CROAGUNK
 	icon_pals BLUE,   TEAL   ; TOXICROAK
-	icon_pals RED,    PINK   ; DUSKULL
-	icon_pals RED,    PINK   ; DUSCLOPS
-	icon_pals RED,    BLUE   ; DUSKNOIR
+;	icon_pals BLUE,   PINK   ; SWABLU
+	icon_pals GRAY,   PINK   ; DUSKULL
+	icon_pals GRAY,   PINK   ; DUSCLOPS
+	icon_pals GRAY,   BLUE   ; DUSKNOIR
 	icon_pals RED,    BLUE   ; SNORUNT
 	icon_pals BLUE,   RED    ; GLALIE
 	icon_pals RED,    PURPLE ; FROSLASS

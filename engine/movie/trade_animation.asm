@@ -959,7 +959,7 @@ TrademonStats_Egg:
 	ret
 
 .EggData:
-	db   "EGG"
+	db   "Egg"
 	next "OT/?????"
 	next "<ID>№.?????@"
 
@@ -971,9 +971,20 @@ TrademonStats_WaitBGMap:
 	ret
 
 TrademonStats_PrintSpeciesNumber:
+; input de = address to species number
+	ld a, [de]
+	call GetPokemonIndexFromID
+	ld a, h
+	ld h, l
+	ld l, a
+	push hl
+	ld hl, sp + 0
+	ld d, h
+	ld e, l
 	hlcoord 10, 0
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 3
 	call PrintNum
+	pop de
 	ld [hl], " "
 	ret
 

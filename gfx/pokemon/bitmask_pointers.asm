@@ -275,6 +275,7 @@ BitmasksPointers:
 	dw ManectricBitmasks
 	dw CroagunkBitmasks
 	dw ToxicroakBitmasks
+;	dw SwabluBitmasks
 	dw DuskullBitmasks
 	dw DusclopsBitmasks
 	dw DusknoirBitmasks

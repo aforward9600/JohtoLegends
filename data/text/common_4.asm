@@ -496,3 +496,36 @@ AronSwarmText::
 	line "and catch an"
 	cont "Aron!"
 	done
+
+RaltsSwarmText::
+	text "………………………"
+
+	para "Ah!"
+
+	para "On Route 43,"
+	line "there is a swarm"
+	cont "of Ralts!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to Route 43"
+	line "and catch a Ralts!"
+	done
+
+CroagunkSwarmText::
+	text "………………………"
+
+	para "Ah!"
+
+	para "At the Lake of"
+	line "Rage, there is a"
+	cont "swarm of Croagunk!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to the Lake"
+	line "of Rage and catch"
+	cont "a Croagunk!"
+	done

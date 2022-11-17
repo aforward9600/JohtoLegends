@@ -485,7 +485,6 @@ INCLUDE "engine/battle_anims/bg_effects.asm"
 SECTION "bank3E", ROMX
 
 INCLUDE "engine/gfx/load_font.asm"
-INCLUDE "engine/events/name_rater.asm"
 INCLUDE "engine/events/play_slow_cry.asm"
 INCLUDE "engine/pokedex/new_pokedex_entry.asm"
 INCLUDE "engine/link/time_capsule_2.asm"
@@ -723,6 +722,7 @@ INCLUDE "engine/battle/shiny_swarm.asm"
 INCLUDE "engine/events/move_relearner.asm"
 INCLUDE "engine/events/hidden_power_guru.asm"
 INCLUDE "engine/events/bug_contest/display_stats.asm"
+INCLUDE "engine/events/name_rater.asm"
 
 SECTION "Move Animation 2", ROMX
 

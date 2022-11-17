@@ -565,6 +565,8 @@ PokemonPicPointers::
 	dba CroagunkBackpic
 	dba ToxicroakFrontpic
 	dba ToxicroakBackpic
+;	dba SwabluFrontpic
+;	dba SwabluBackpic
 	dba DuskullFrontpic
 	dba DuskullBackpic
 	dba DusclopsFrontpic

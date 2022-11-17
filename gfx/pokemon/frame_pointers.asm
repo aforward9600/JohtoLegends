@@ -275,6 +275,7 @@ FramesPointers:
 	dba ManectricFrames
 	dba CroagunkFrames
 	dba ToxicroakFrames
+;	dba SwabluFrames
 	dba DuskullFrames
 	dba DusclopsFrames
 	dba DusknoirFrames

@@ -59,8 +59,8 @@ MahoganyTownSign:
 MahoganyTownRagecandybarSign:
 	jumptext MahoganyTownRagecandybarSignText
 
-MahoganyGymSign:
-	jumptext MahoganyGymSignText
+EarlsPokemonAcademyMahoganySign:
+	jumptext EarlsPokemonAcademyMahoganySignText
 
 MahoganyTownPokecenterSign:
 	jumpstd pokecentersign
@@ -149,20 +149,28 @@ MahoganyTownSuperNerdText:
 	done
 
 MahoganyTownKid1Text:
-	text "Old Man Pryce has"
-	line "been pretty cranky"
-	cont "lately. I wonder"
-	cont "why?"
+	text "I heard Old Man"
+	line "Pryce will be"
+	cont "moving his Gym to"
+	cont "Mahogany Town,"
+
+	para "and Earl will be"
+	line "moving his academy"
+	cont "to Violet City."
+
+	para "I'm fine with that"
+	line "honestly."
+
+	para "I hate school."
 	done
 
 MahoganyTownKid2Text:
-	text "Maybe Old Man"
-	line "Pryce is just"
-	cont "getting old."
+	text "Earl's lessons are"
+	line "pretty useful."
 
-	para "We wouldn't call"
-	line "him that if he"
-	cont "wasn't."
+	para "You should get"
+	line "some lessons from"
+	cont "him."
 	done
 
 MahoganyTownSignText:
@@ -178,13 +186,9 @@ MahoganyTownRagecandybarSignText:
 	cont "a Ragecandybar!"
 	done
 
-MahoganyGymSignText:
-	text "Mahogany Town"
-	line "#mon Gym"
-	cont "Leader: Pryce"
-
-	para "The Teacher of"
-	line "Winter's Harshness"
+EarlsPokemonAcademyMahoganySignText:
+	text "Earl's #mon"
+	line "Academy"
 	done
 
 MahoganyTown_MapEvents:
@@ -193,7 +197,7 @@ MahoganyTown_MapEvents:
 	db 5 ; warp events
 	warp_event 11,  7, MAHOGANY_MART_1F, 1
 	warp_event 17,  7, MAHOGANY_RED_GYARADOS_SPEECH_HOUSE, 1
-	warp_event  6, 13, MAHOGANY_GYM, 1
+	warp_event  6, 13, EARLS_POKEMON_ACADEMY, 1
 	warp_event 15, 13, MAHOGANY_POKECENTER_1F, 1
 	warp_event  9,  1, ROUTE_43_MAHOGANY_GATE, 3
 
@@ -202,7 +206,7 @@ MahoganyTown_MapEvents:
 	db 4 ; bg events
 	bg_event  1,  5, BGEVENT_READ, MahoganyTownSign
 	bg_event  9,  7, BGEVENT_READ, MahoganyTownRagecandybarSign
-	bg_event  3, 13, BGEVENT_READ, MahoganyGymSign
+	bg_event  3, 13, BGEVENT_READ, EarlsPokemonAcademyMahoganySign
 	bg_event 16, 13, BGEVENT_READ, MahoganyTownPokecenterSign
 
 	db 5 ; object events

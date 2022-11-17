@@ -281,6 +281,7 @@ PokemonCries::
 	mon_cry CRY_RAICHU,      $f27,  $080 ; MANECTRIC
 	mon_cry CRY_DIGLETT,    -$133,  $125 ; CROAGUNK
 	mon_cry CRY_SLOWKING,    $002,  $2c6 ; TOXICROAK
+;	mon_cry CRY_TOGETIC,     $010,  $017 ; SWABLU
 	mon_cry CRY_CYNDAQUIL,   $10e,  $050 ; DUSKULL
 	mon_cry CRY_NATU,        $a5e,  $160 ; DUSCLOPS
 	mon_cry CRY_MAGCARGO,   -$01a,  $2e2 ; DUSKNOIR

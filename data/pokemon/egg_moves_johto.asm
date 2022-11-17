@@ -126,6 +126,8 @@ EggMovePointers2::
 	dw ElectrikeEggMoves
 	dw NoEggMoves2
 	dw CroagunkEggMoves
+	dw NoEggMoves2
+;	dw SwabluEggMoves
 	dw DuskullEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -734,6 +736,16 @@ CroagunkEggMoves:
 	dw CROSS_CHOP
 	dw HEADBUTT
 	dw MEDITATE
+	dw -1 ; end
+
+SwabluEggMoves:
+	dw AGILITY
+	dw DRAGON_RUSH
+	dw FEATHERDANCE
+	dw HAZE
+	dw HYPER_VOICE
+	dw PURSUIT
+	dw RAGE
 	dw -1 ; end
 
 DuskullEggMoves:

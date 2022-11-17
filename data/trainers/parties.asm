@@ -263,15 +263,31 @@ KurtGroup:
 EnokiGroup:
 	next_list_item ; ENOKI (1)
 	db "Enoki@", TRAINERTYPE_ITEM_MOVES
-	db 15
+	db 18
 	dw DUSKULL
 	db NO_ITEM
 	dw HEX, SHADOW_SNEAK, FORESIGHT, WILL_O_WISP
-	db 16
+	db 18
 	dw CORSOLA
 	db NO_ITEM
 	dw NIGHT_SHADE, WILL_O_WISP, HEX, SPIKES
-	db 17
+	db 19
+	dw MISDREAVUS
+	db ORAN_BERRY
+	dw HEX, HYPNOSIS, MEAN_LOOK, DREAM_EATER
+	db -1 ; end
+
+	next_list_item ; ENOKI (ALTERNATE)
+	db "Enoki@", TRAINERTYPE_ITEM_MOVES
+	db 21
+	dw DUSKULL
+	db NO_ITEM
+	dw HEX, SHADOW_SNEAK, FORESIGHT, WILL_O_WISP
+	db 21
+	dw CORSOLA
+	db NO_ITEM
+	dw NIGHT_SHADE, WILL_O_WISP, HEX, SPIKES
+	db 22
 	dw MISDREAVUS
 	db ORAN_BERRY
 	dw HEX, HYPNOSIS, MEAN_LOOK, DREAM_EATER
@@ -282,15 +298,15 @@ EnokiGroup:
 PryceGroup:
 	next_list_item ; PRYCE (1)
 	db "Pryce@", TRAINERTYPE_ITEM_MOVES
-	db 11
+	db 13
 	dw SMOOCHUM
 	db NO_ITEM
 	dw SWEET_KISS, POUND, ICY_WIND, CONFUSION
-	db 12
+	db 13
 	dw SWINUB
 	db NO_ITEM
 	dw MUD_SLAP, POWDER_SNOW, TACKLE, HAIL
-	db 13
+	db 14
 	dw SNEASEL
 	db ORAN_BERRY
 	dw SCRATCH, PURSUIT, HONE_CLAWS, ICE_SHARD
@@ -314,15 +330,15 @@ PryceGroup:
 
 	next_list_item ; PRYCE (Alternate)
 	db "Pryce@", TRAINERTYPE_ITEM_MOVES
-	db 13
+	db 15
 	dw SMOOCHUM
 	db NO_ITEM
 	dw SWEET_KISS, POUND, ICY_WIND, CONFUSION
-	db 14
+	db 15
 	dw SWINUB
 	db NO_ITEM
 	dw MUD_SLAP, POWDER_SNOW, TACKLE, HAIL
-	db 15
+	db 16
 	dw SNEASEL
 	db ORAN_BERRY
 	dw SCRATCH, PURSUIT, HONE_CLAWS, ICE_SHARD
@@ -993,17 +1009,17 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (2) Ice Path
 	db "Timmy@", TRAINERTYPE_NORMAL
-	db 3
+	db 5
 	dw PIDGEY
-	db 4
+	db 6
 	dw RATTATA
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (3), Mount Mortar 1F Inside
 	db "Bert@", TRAINERTYPE_NORMAL
-	db 12
+	db 15
 	dw RATTATA
-	db 13
+	db 16
 	dw BELLSPROUT
 	db -1 ; end
 
@@ -1021,7 +1037,7 @@ YoungsterGroup:
 	db "Gordy@", TRAINERTYPE_NORMAL
 	db 7
 	dw RATTATA
-	db 10
+	db 9
 	dw SANDSHREW
 	db 8
 	dw SPEAROW
@@ -1400,11 +1416,11 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (7) Route 44
 	db "Sal@", TRAINERTYPE_NORMAL
-	db 5
+	db 6
 	dw PIDGEY
-	db 6
+	db 7
 	dw SPEAROW
-	db 6
+	db 8
 	dw HOOTHOOT
 	db -1 ; end
 
@@ -2323,9 +2339,9 @@ PokemaniacGroup:
 
 	next_list_item ; POKEMANIAC (15) Mount Mortar 1F Inside
 	db "Allan@", TRAINERTYPE_NORMAL
-	db 14
+	db 15
 	dw NIDORAN_M
-	db 14
+	db 16
 	dw SUNKERN
 	db -1 ; end
 
@@ -2340,11 +2356,11 @@ PokemaniacGroup:
 GruntMGroup:
 	next_list_item ; ManM (1) Tin Tower
 	db "Man@", TRAINERTYPE_NORMAL
-	db 14
+	db 18
 	dw SPEAROW
-	db 14
+	db 18
 	dw ELEKID
-	db 15
+	db 19
 	dw STARYU
 	db -1 ; end
 
@@ -2424,14 +2440,14 @@ GruntMGroup:
 	dw KOFFING
 	db -1 ; end
 
-	next_list_item ; ManM (10) Not used yet
+	next_list_item ; ManM (10) Ecruteak Tin Tower Entrance
 	db "Man@", TRAINERTYPE_NORMAL
+	db 21
+	dw FEAROW
+	db 21
+	dw ELEKID
 	db 22
-	dw ZUBAT
-	db 24
-	dw GOLBAT
-	db 22
-	dw GRIMER
+	dw STARYU
 	db -1 ; end
 
 	next_list_item ; ManM (11) Radio Tower 2F
@@ -2768,13 +2784,13 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (2) Route 44
 	db "Colton@", TRAINERTYPE_NORMAL
-	db 6
+	db 8
 	dw WEEDLE
-	db 6
+	db 8
 	dw CATERPIE
-	db 7
+	db 9
 	dw SPINARAK
-	db 7
+	db 9
 	dw LEDYBA
 	db -1 ; end
 
@@ -3010,35 +3026,35 @@ FisherGroup:
 
 	next_list_item ; FISHER (7)
 	db "Fred@", TRAINERTYPE_NORMAL
-	db 8
+	db 10
 	dw GOLDEEN
 	db -1 ; end
 
 	next_list_item ; FISHER (8)
 	db "Aidan@", TRAINERTYPE_NORMAL
-	db 10
+	db 12
 	dw TENTACOOL
 	db -1 ; end
 
 	next_list_item ; FISHER (9)
 	db "Noah@", TRAINERTYPE_NORMAL
-	db 10
+	db 12
 	dw MAGIKARP
-	db 9
+	db 11
 	dw TENTACOOL
-	db 9
+	db 11
 	dw GOLDEEN
-	db 9
+	db 10
 	dw WOOPER
 	db -1 ; end
 
 	next_list_item ; FISHER (10)
 	db "Lyle@", TRAINERTYPE_NORMAL
-	db 7
+	db 8
 	dw MAGIKARP
-	db 7
+	db 8
 	dw GOLDEEN
-	db 7
+	db 9
 	dw REMORAID
 	db -1 ; end
 
@@ -3777,9 +3793,9 @@ SuperNerdGroup:
 	dw SMOKESCREEN, TWISTER, SURF, WATERFALL
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (14)
+	next_list_item ; SUPER_NERD (14) Mount Mortar 1F Inside
 	db "Clark@", TRAINERTYPE_MOVES
-	db 13
+	db 16
 	dw SLOWPOKE
 	dw CURSE, WATER_GUN, GROWL, HEADBUTT
 	db -1 ; end
@@ -3955,11 +3971,11 @@ HikerGroup:
 
 	next_list_item ; HIKER (2) Mount Mortar 1F Inside
 	db "Ozzy@", TRAINERTYPE_NORMAL
-	db 13
+	db 15
 	dw GEODUDE
-	db 13
+	db 15
 	dw MACHOP
-	db 14
+	db 15
 	dw BONSLY
 	db -1 ; end
 
@@ -4387,11 +4403,11 @@ JugglerGroup:
 
 	next_list_item ; JUGGLER (2)
 	db "Percy@", TRAINERTYPE_NORMAL
-	db 10
+	db 11
 	dw MIME__JR
-	db 8
+	db 11
 	dw VOLTORB
-	db 9
+	db 10
 	dw IGGLYBUFF
 	db -1 ; end
 
@@ -4750,9 +4766,9 @@ PsychicGroup:
 PicnickerGroup:
 	next_list_item ; PICNICKER (1) Ice Path
 	db "Haylee@", TRAINERTYPE_NORMAL
-	db 6
+	db 7
 	dw LEDYBA
-	db 6
+	db 8
 	dw SENTRET
 	db 6
 	dw SNORUNT
@@ -4770,7 +4786,7 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (3)
 	db "Chloe@", TRAINERTYPE_NORMAL
-	db 11
+	db 12
 	dw PIKACHU
 	db -1 ; end
 
@@ -5330,21 +5346,21 @@ SageGroup:
 
 	next_list_item ; SAGE (5)
 	db "Jeffrey@", TRAINERTYPE_NORMAL
-	db 15
+	db 17
 	dw MISDREAVUS
 	db -1 ; end
 
 	next_list_item ; SAGE (6)
 	db "Ping@", TRAINERTYPE_NORMAL
-	db 13
+	db 14
 	dw GASTLY
-	db 13
+	db 14
 	dw GASTLY
-	db 13
+	db 15
 	dw GASTLY
-	db 13
+	db 15
 	dw DUSKULL
-	db 13
+	db 16
 	dw CORSOLA
 	db -1 ; end
 
@@ -5629,13 +5645,13 @@ PokefanMGroup:
 KimonoGirlGroup:
 	next_list_item ; KIMONO_GIRL (1)
 	db "Rui@", TRAINERTYPE_MOVES
-	db 14
+	db 15
 	dw VAPOREON
 	dw QUICK_ATTACK, SAND_ATTACK, GROWL, WATER_GUN
-	db 14
+	db 15
 	dw JOLTEON
 	dw QUICK_ATTACK, SAND_ATTACK, GROWL, THUNDERSHOCK
-	db 14
+	db 15
 	dw FLAREON
 	dw QUICK_ATTACK, SAND_ATTACK, GROWL, EMBER
 	db -1 ; end
@@ -6020,37 +6036,37 @@ MysticalmanGroup:
 Rival3Group:
 	next_list_item ; RIVAL3 (1)
 	db "<RIVAL>@", TRAINERTYPE_NORMAL
-	db 5
-	dw SMOOCHUM
 	db 6
+	dw SMOOCHUM
+	db 7
 	dw LARVITAR
 	db -1 ; end
 
 	next_list_item ; RIVAL3 (2)
 	db "<RIVAL>@", TRAINERTYPE_NORMAL
-	db 5
-	dw SMOOCHUM
 	db 6
+	dw SMOOCHUM
+	db 7
 	dw DRATINI
 	db -1 ; end
 
 	next_list_item ; RIVAL3 (3)
 	db "<RIVAL>@", TRAINERTYPE_NORMAL
-	db 15
+	db 17
 	dw EEVEE
-	db 15
+	db 17
 	dw SWINUB
-	db 16
+	db 18
 	dw LARVITAR
 	db -1 ; end
 
 	next_list_item ; RIVAL3 (4)
 	db "<RIVAL>@", TRAINERTYPE_NORMAL
-	db 15
+	db 17
 	dw EEVEE
-	db 15
+	db 17
 	dw SWINUB
-	db 16
+	db 18
 	dw DRATINI
 	db -1 ; end
 
@@ -6111,37 +6127,37 @@ Rival3Group:
 Rival4Group:
 	next_list_item ; RIVAL4 (1)
 	db "<RIVAL>@", TRAINERTYPE_NORMAL
-	db 5
-	dw SMOOCHUM
 	db 6
+	dw SMOOCHUM
+	db 7
 	dw LARVITAR
 	db -1 ; end
 
 	next_list_item ; RIVAL3 (2)
 	db "<RIVAL>@", TRAINERTYPE_NORMAL
-	db 5
-	dw SMOOCHUM
 	db 6
+	dw SMOOCHUM
+	db 7
 	dw DRATINI
 	db -1 ; end
 
 	next_list_item ; RIVAL4 (3)
 	db "<RIVAL>@", TRAINERTYPE_NORMAL
-	db 15
+	db 17
 	dw EEVEE
-	db 15
+	db 17
 	dw SWINUB
-	db 16
+	db 18
 	dw LARVITAR
 	db -1 ; end
 
 	next_list_item ; RIVAL4 (4)
 	db "<RIVAL>@", TRAINERTYPE_NORMAL
-	db 15
+	db 17
 	dw EEVEE
-	db 15
+	db 17
 	dw SWINUB
-	db 16
+	db 18
 	dw DRATINI
 	db -1 ; end
 
@@ -6239,15 +6255,15 @@ BreederGroup:
 HexManiacGroup:
 	next_list_item ; HEX_MANIAC (1) Ecruteak Gym
 	db "Hilda@", TRAINERTYPE_NORMAL
-	db 14
+	db 16
 	dw GASTLY
-	db 14
+	db 16
 	dw CORSOLA
 	db -1 ; end
 
 	next_list_item ; HEX_MANIAC (2) Ecruteak Gym
 	db "Zelda@", TRAINERTYPE_NORMAL
-	db 16
+	db 17
 	dw DUSKULL
 	db -1 ; end
 
@@ -6265,6 +6281,22 @@ HexManiacGroup:
 	dw UMBREON
 	db 37
 	dw DUSCLOPS
+	db -1 ; end
+
+	next_list_item ; HEX_MANIAC (5) Ghost House
+	db "Edalyn@", TRAINERTYPE_MOVES
+	db 45
+	dw NOCTOWL
+	dw AIR_SLASH, ROOST, SHADOW_BALL, HYPER_VOICE
+	db 45
+	dw GENGAR
+	dw SLUDGE_BOMB, DARK_PULSE, SHADOW_BALL, SUCKER_PUNCH
+	db 46
+	dw ARIADOS
+	dw X_SCISSOR, SUCKER_PUNCH, ZEN_HEADBUTT, AGILITY
+	db 45
+	dw HYPNO
+	dw SWAGGER, DREAM_EATER, HYPNOSIS, MOONBLAST
 	db -1 ; end
 
 	end_list_items
@@ -6386,11 +6418,11 @@ LanceGroup:
 PasserbyGroup:
 	next_list_item ; MIYAMOTO
 	db "Miyamoto@", TRAINERTYPE_NORMAL
-	db 14
-	dw HOUNDOUR
-	db 14
-	dw ZUBAT
 	db 15
+	dw HOUNDOUR
+	db 15
+	dw ZUBAT
+	db 16
 	dw MEOWTH
 	db -1 ; end
 
@@ -7411,6 +7443,25 @@ LinkTrainerGroup:
 	dw CYNDAQUIL
 	db 10
 	dw TOTODILE
+	db -1 ; end
+
+	end_list_items
+
+FedLeaderGroup:
+	next_list_item ; PAXTON
+	db "Paxton@", TRAINERTYPE_NORMAL
+	db 50
+	dw GARDEVOIR
+	db 50
+	dw WEAVILE
+	db 50
+	dw MACHAMP
+	db 50
+	dw BLASTOISE
+	db 50
+	dw MANECTRIC
+	db 50
+	dw SCIZOR
 	db -1 ; end
 
 	end_list_items

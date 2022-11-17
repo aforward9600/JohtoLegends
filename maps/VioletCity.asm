@@ -271,7 +271,7 @@ VioletCity_MapEvents:
 	db 9 ; warp events
 	warp_event  9, 17, VIOLET_MART, 2
 	warp_event 18, 17, VIOLET_GYM, 1
-	warp_event 30, 17, EARLS_POKEMON_ACADEMY, 1
+	warp_event 30, 17, GHOST_HOUSE, 1
 	warp_event  3, 15, VIOLET_NICKNAME_SPEECH_HOUSE, 1
 	warp_event 31, 25, VIOLET_POKECENTER_1F, 1
 	warp_event 21, 29, VIOLET_KYLES_HOUSE, 1

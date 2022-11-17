@@ -18,7 +18,7 @@ IlexForest_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .FarfetchDAppears
 
 .FarfetchDAppears:
-	checkflag ENGINE_ILEX_FOREST_FARFETCHD
+	checkevent EVENT_BEAT_FARFETCHD
 	iftrue .FarfetchDWillNotAppear
 	readvar VAR_WEEKDAY
 	ifequal MONDAY, .FarfetchDWillAppear
@@ -78,7 +78,6 @@ IlexForestFarfetchdScript:
 
 .CaughtFarfetchd:
 	setevent EVENT_CAUGHT_FARFETCHD
-	setflag ENGINE_ILEX_FOREST_FARFETCHD
 	end
 
 .NotBeaten:

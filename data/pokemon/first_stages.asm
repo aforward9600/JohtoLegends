@@ -276,6 +276,7 @@ FirstEvoStages::
 	dw ELECTRIKE
 	dw CROAGUNK
 	dw CROAGUNK
+;	dw SWABLU
 	dw DUSKULL
 	dw DUSKULL
 	dw DUSKULL

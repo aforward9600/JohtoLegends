@@ -97,3 +97,4 @@ BTTrainerClassGenders:
 	db FEMALE ; CHIGUSA2
 	db MALE   ; BYRON2
 	db FEMALE ; LINK_TRAINER
+	db MALE   ; FED_LEADER

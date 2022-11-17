@@ -251,7 +251,8 @@ LakeOfRageGroupSprites:
 	db SPRITE_POKEFAN_M
 	db SPRITE_LASS
 	db SPRITE_YOUNGSTER
-	; 8 of 9 walking sprites
+	db SPRITE_GRAMPS
+	; 9 of 9 walking sprites
 	db SPRITE_GYARADOS
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL

@@ -95,3 +95,4 @@ TrainerClassNames::
 	db "Gym Leader@"
 	db "Gym Leader@"
 	db "<PKMN> Trainer@"
+	db "Fed Leader@"

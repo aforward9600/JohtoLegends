@@ -98,3 +98,4 @@ TrainerEncounterMusic::
 	db MUSIC_LASS_ENCOUNTER        ; chigusa2
 	db MUSIC_HIKER_ENCOUNTER       ; byron2
 	db MUSIC_RIVAL_ENCOUNTER
+	db MUSIC_ROCKET_ENCOUNTER

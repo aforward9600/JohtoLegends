@@ -17,7 +17,7 @@ Idain, Rangi, WasabiRaptor for EVS.
 
 Rangi and Idain for Evening time.
 
-Idain for the Hidden Power Guru and Gen 6+ Exp. Share.
+Idain for the Hidden Power Guru, Soothe Bell and Gen 6+ Exp. Share.
 
 Rangi and aaaaaa123456789 for items from smashing rocks
 
@@ -69,7 +69,8 @@ Beta Wooper back sprite made by 64BitWonder.
 
 Sneasel, Tyranitar, Dragonite, Moltres, Heracross,
 Teddiursa, Ursaring, Phanpy, Umbreon, Feraligatr,
-Houndoom, Slowbro- SoupPotato
+Houndoom, Slowbro, Hitmonchan, Xatu, Pidgeot,
+Nidoking, Entei, Ho-Oh, Exeggutor, Starmie- SoupPotato
 
 Idain and Bronzeswagger for Weather Icons.
 

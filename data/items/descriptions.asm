@@ -144,7 +144,7 @@ ItemDescriptions:
 	dw MoonBallDesc
 	dw LoveBallDesc
 	dw ZincDesc
-	dw GorgeousBoxDesc
+	dw SootheBellDesc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
 	dw UpGradeDesc
@@ -827,9 +827,9 @@ ZincDesc:
 	db   "Ups Spcl.Def stat"
 	next "of one #mon.@"
 
-GorgeousBoxDesc:
-	db   "Open it and see"
-	next "what's inside.@"
+SootheBellDesc:
+	db   "Makes a #mon"
+	next "happier. (Hold)@"
 
 SunStoneDesc:
 	db   "Evolves certain"

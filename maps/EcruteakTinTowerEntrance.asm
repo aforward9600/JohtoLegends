@@ -206,8 +206,11 @@ EcruteakTinTowerEntranceRocketScript:
 	yesorno
 	iffalse .Refused
 	writetext YouAskedForItText
+	checkflag ENGINE_FLYPOINT_OLIVINE
+	iftrue .GruntAlternateBattle
 	winlosstext EcruteakTinTowerEntranceGruntLossText, 0
 	loadtrainer GRUNTM, GRUNTM_1
+.GruntStartBattle:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ROCKET_GRUNTM_1
@@ -237,6 +240,11 @@ EcruteakTinTowerEntranceRocketScript:
 	applymovement ECRUTEAKTINTOWERENTRANCE_GRUNT, GruntLeavesDownMovement
 	disappear ECRUTEAKTINTOWERENTRANCE_GRUNT
 	sjump GetScytherCall
+
+.GruntAlternateBattle:
+	winlosstext EcruteakTinTowerEntranceGruntLossText, 0
+	loadtrainer GRUNTM, GRUNTM_10
+	sjump .GruntStartBattle
 
 GetScytherCall:
 	opentext

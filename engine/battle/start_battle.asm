@@ -158,6 +158,8 @@ PlayBattleMusic:
 	ld de, MUSIC_MADAME_BOSS
 	cp MADAME_BOSS
 	jr z, .done
+	cp FED_LEADER
+	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
 	farcall IsKantoGymLeader

@@ -279,6 +279,7 @@ PokemonNames::
 	db "Manectric@"
 	db "Croagunk@@"
 	db "Toxicroak@"
+;	db "Swablu@@@@"
 	db "Duskull@@@"
 	db "Dusclops@@"
 	db "Dusknoir@@"

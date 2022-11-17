@@ -97,3 +97,4 @@ TrainerPicPointers::
 	dba ChigusaPic
 	dba ByronPic
 	dba Rival3Pic
+	dba BikerBossPic

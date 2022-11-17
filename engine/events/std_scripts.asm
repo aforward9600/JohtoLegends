@@ -1982,13 +1982,13 @@ Movement_ContestResults_WalkAfterWarp:
 	step_end
 
 StaticPokemonRefresh:
-	checkevent EVENT_CAUGHT_FARFETCHD
-	iffalse .refreshfarfetchd
+	checkevent EVENT_BEAT_FARFETCHD
+	iftrue .refreshfarfetchd
 	return
 
 .refreshfarfetchd:
-	clearflag ENGINE_ILEX_FOREST_FARFETCHD
-	return
+	clearevent EVENT_BEAT_FARFETCHD
+	sjump StaticPokemonRefresh
 
 TelevisionScript:
 	readvar VAR_WEEKDAY
@@ -2220,18 +2220,20 @@ SwarmScript:
 	iftrue .Badges2Swarm
 	farwritetext WhatSwarmTodayText
 	waitbutton
-	random 6
+	random 8
 	ifequal 0, .noswarm
 	ifequal 1, .yanma
 	ifequal 2, .dunsparce
 	ifequal 3, .sneasel
 	ifequal 4, .scyther
 	ifequal 5, .aron
+	ifequal 6, .ralts
+	ifequal 7, .croagunk
 
 .Badges2Swarm:
 	farwritetext WhatSwarmTodayText
 	waitbutton
-	random 11
+	random 13
 	ifequal 0,  .noswarm
 	ifequal 1,  .yanma
 	ifequal 2,  .dunsparce
@@ -2243,11 +2245,13 @@ SwarmScript:
 	ifequal 8,  .scyther
 	ifequal 9,  .misdreavus
 	ifequal 10, .aron
+	ifequal 11, .ralts
+	ifequal 12, .croagunk
 
 .Badges4Swarm:
 	farwritetext WhatSwarmTodayText
 	waitbutton
-	random 12
+	random 14
 	ifequal 0,  .noswarm
 	ifequal 1,  .yanma
 	ifequal 2,  .dunsparce
@@ -2260,6 +2264,8 @@ SwarmScript:
 	ifequal 9,  .scyther
 	ifequal 10, .pinsir
 	ifequal 11, .aron
+	ifequal 12, .ralts
+	ifequal 13, .croagunk
 
 .noswarm
 	setflag ENGINE_SWARM
@@ -2353,6 +2359,22 @@ SwarmScript:
 	setflag ENGINE_SWARM
 	swarm MOUNT_MORTAR_1F_OUTSIDE
 	farwritetext AronSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.ralts
+	setflag ENGINE_SWARM
+	swarm ROUTE_43
+	farwritetext RaltsSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.croagunk
+	setflag ENGINE_SWARM
+	swarm LAKE_OF_RAGE
+	farwritetext CroagunkSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel

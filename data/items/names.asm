@@ -143,7 +143,7 @@ ItemNames::
 	db "Moon Ball@"
 	db "Love Ball@"
 	db "Zinc@"
-	db "Gorgeous Box@"
+	db "Soothe Bell@"
 	db "Sun Stone@"
 	db "Polkadot Bow@"
 	db "Up-grade@"

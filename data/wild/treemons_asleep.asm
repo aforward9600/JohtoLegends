@@ -12,6 +12,7 @@ AsleepTreeMonsNite:
 	dw EXEGGCUTE
 	dw LEDYBA
 	dw AIPOM
+	dw MUNCHLAX
 	dw -1 ; end
 
 AsleepTreeMonsDay:
@@ -20,6 +21,7 @@ AsleepTreeMonsDay:
 	dw NOCTOWL
 	dw SPINARAK
 	dw HERACROSS
+	dw PINSIR
 	dw -1 ; end
 
 AsleepTreeMonsMorn:
@@ -28,4 +30,5 @@ AsleepTreeMonsMorn:
 	dw NOCTOWL
 	dw SPINARAK
 	dw HERACROSS
+	dw PINSIR
 	dw -1 ; end
