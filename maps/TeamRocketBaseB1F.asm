@@ -638,8 +638,8 @@ HideoutRivalDefeatedText:
 	done
 
 HideoutRivalLostText:
-	text "…Maybe I'm strong"
-	line "after all…"
+	text "…I'm going to lose"
+	line "again, aren't I?"
 	done
 
 DahliaSilentAgainText:

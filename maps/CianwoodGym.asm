@@ -351,8 +351,8 @@ ChigusaLossText:
 	done
 
 ChigusaWinText:
-	text "Elegance is my"
-	line "specialty!"
+	text "We can still win"
+	line "with elegance!"
 	done
 
 BeatenChigusaText:

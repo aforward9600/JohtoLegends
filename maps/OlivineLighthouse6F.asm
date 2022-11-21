@@ -407,9 +407,8 @@ Miyamoto1WinText:
 	done
 
 Miyamoto1LossText:
-	text "You're not as good"
-	line "as I thought you"
-	cont "were."
+	text "A miscalcutation,"
+	line "to be sure."
 	done
 
 WeArentDoneYetText:

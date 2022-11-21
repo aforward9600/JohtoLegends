@@ -1047,11 +1047,11 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (6)
 	db "Randy@", TRAINERTYPE_NORMAL
-	db 15
-	dw ELECTRIKE
-	db 15
-	dw ARON
 	db 16
+	dw ELECTRIKE
+	db 17
+	dw ARON
+	db 18
 	dw IVYSAUR
 	db -1 ; end
 
@@ -1197,13 +1197,13 @@ SchoolboyGroup:
 	dw DITTO
 	db -1 ; end
 
-	next_list_item ; SCHOOLBOY (10) CHAD1
+	next_list_item ; SCHOOLBOY (10) CHAD1 Route 38
 	db "Eric@", TRAINERTYPE_NORMAL
-	db 15
+	db 17
 	dw DROWZEE
-	db 15
+	db 17
 	dw MAREEP
-	db 16
+	db 18
 	dw EXEGGCUTE
 	db -1 ; end
 
@@ -2216,23 +2216,23 @@ BeautyGroup:
 	dw SENTRET
 	db -1 ; end
 
-	next_list_item ; BEAUTY (16) VALERIE
+	next_list_item ; BEAUTY (16) VALERIE Route 38
 	db "Wilma@", TRAINERTYPE_MOVES
-	db 16
+	db 18
 	dw VULPIX
 	dw EMBER, QUICK_ATTACK, FIRE_SPIN, CONFUSE_RAY
-	db 17
+	db 18
 	dw JIGGLYPUFF
 	dw DOUBLESLAP, DISABLE, PLAY_NICE, POUND
 	db -1 ; end
 
-	next_list_item ; BEAUTY (17) OLIVIA
+	next_list_item ; BEAUTY (17) OLIVIA Route 38
 	db "Fiona@", TRAINERTYPE_NORMAL
-	db 15
+	db 18
 	dw TEDDIURSA
-	db 17
+	db 19
 	dw CUBONE
-	db 16
+	db 18
 	dw MANTYKE
 	db -1 ; end
 
@@ -2366,11 +2366,11 @@ GruntMGroup:
 
 	next_list_item ; ManM (2) Olivine City
 	db "Man@", TRAINERTYPE_NORMAL
-	db 16
+	db 20
 	dw MURKROW
-	db 16
+	db 21
 	dw CACNEA
-	db 17
+	db 22
 	dw SNORUNT
 	db -1 ; end
 
@@ -3556,14 +3556,17 @@ SwimmerFGroup:
 	end_list_items
 
 SailorGroup:
-	next_list_item ; SAILOR (1) EUGENE
-	db "Sheldon@", TRAINERTYPE_NORMAL
-	db 17
-	dw POLIWAG
-	db 17
-	dw KRABBY
+	next_list_item ; SAILOR (1) EUGENE Route 39
+	db "Sheldon@", TRAINERTYPE_MOVES
 	db 18
-	dw GYARADOS
+	dw POLIWAG
+	dw BUBBLE, HYPNOSIS, RAIN_DANCE, DOUBLESLAP
+	db 19
+	dw KRABBY
+	dw MUD_SHOT, AQUA_JET, LEER, VICEGRIP
+	db 18
+	dw TYROGUE
+	dw POWERUPPUNCH, FORESIGHT, TACKLE, BULLDOZE
 	db -1 ; end
 
 	next_list_item ; SAILOR (2)
@@ -3638,9 +3641,9 @@ SailorGroup:
 
 	next_list_item ; SAILOR (10) HARRY
 	db "Larry@", TRAINERTYPE_NORMAL
-	db 16
-	dw MACHOP
 	db 17
+	dw MACHOP
+	db 18
 	dw CHINCHOU
 	db -1 ; end
 
@@ -5503,13 +5506,13 @@ PokefanMGroup:
 
 	next_list_item ; POKEFANM (2) DEREK1
 	db "Devon@", TRAINERTYPE_ITEM
-	db 16
+	db 17
 	dw PIKACHU
 	db ORAN_BERRY
-	db 16
+	db 18
 	dw PHANPY
 	db ORAN_BERRY
-	db 17
+	db 19
 	dw QUILAVA
 	db ORAN_BERRY
 	db -1 ; end
@@ -5811,14 +5814,14 @@ PokefanFGroup:
 
 	next_list_item ; POKEFANF (5) GEORGIA
 	db "Camilla@", TRAINERTYPE_ITEM
-	db 16
+	db 17
 	dw FURRET
 	db ORAN_BERRY
-	db 16
+	db 18
 	dw PIKACHU
 	db ORAN_BERRY
-	db 17
-	dw TOTODILE
+	db 19
+	dw CROCONAW
 	db ORAN_BERRY
 	db -1 ; end
 
@@ -6269,7 +6272,7 @@ HexManiacGroup:
 
 	next_list_item ; HEX_MANIAC (3) Route 39
 	db "Sabrina@", TRAINERTYPE_NORMAL
-	db 18
+	db 19
 	dw NOCTOWL
 	db -1 ; end
 

@@ -360,8 +360,7 @@ EnokiWinLossText:
 	done
 
 EnokiWinText:
-	text "Return once you've"
-	line "become stronger."
+	text "Only one remains…"
 	done
 
 BeatenEnokiText:

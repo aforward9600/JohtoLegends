@@ -325,8 +325,8 @@ RivalWildAreaWinText:
 	done
 
 RivalWildAreaLossText:
-	text "Hey, I won this"
-	line "time!"
+	text "We keep ending up"
+	line "in this position!"
 	done
 
 YouWonOnceAgainText:

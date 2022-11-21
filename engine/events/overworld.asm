@@ -414,6 +414,9 @@ UsedSurfScript:
 
 	callasm .empty_fn ; empty function
 
+	setval (PAL_NPC_BLUE << 4)
+	special SetPlayerPalette
+
 	readmem wBuffer2
 	writevar VAR_MOVEMENT
 
@@ -619,6 +622,7 @@ FlyFunction:
 	callasm FlyFromAnim
 	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
+	callasm ResetPlayerPalette
 	callasm DelayLoadingNewSprites
 	loadvar VAR_MOVEMENT, PLAYER_NORMAL
 	newloadmap MAPSETUP_FLY

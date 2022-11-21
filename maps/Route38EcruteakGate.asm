@@ -379,8 +379,8 @@ RivalEcruteakGateWinText:
 	done
 
 RivalEcruteakGateLossText:
-	text "Looks like mine"
-	line "is stronger!"
+	text "On the ropes"
+	line "again!"
 	done
 
 YouWonAgainText:

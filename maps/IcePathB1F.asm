@@ -204,8 +204,8 @@ RivalIcePathWinText:
 	done
 
 RivalIcePathLossText:
-	text "Wow, I won!"
-	line "Sweet!"
+	text "We're already on"
+	line "the ropes!"
 	done
 
 IcePathRivalText_YouWon:

@@ -445,10 +445,12 @@ KurtText_Rematch:
 	done
 
 KurtText_Respect:
-	text "Ha!"
+	text "Huh?"
 
-	para "That'll teach you"
-	line "some respect!"
+	para "only 1 left?"
+
+	para "What nonsense is"
+	line "this?"
 	done
 
 KurtText_BeatenAgain:

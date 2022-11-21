@@ -356,8 +356,7 @@ MiltonText_HooWee:
 MiltonText_Yeehaw:
 	text "Yee-haw!"
 
-	para "How's that fer a"
-	line "battle?"
+	para "Down to the wire!"
 	done
 
 MiltonText_BeatenAgain:

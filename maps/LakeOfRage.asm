@@ -56,7 +56,7 @@ LakeOfRageMiyamotoScript:
 	opentext
 	writetext HelloText
 	closetext
-	winlosstext MiyamotoLossText, 0
+	winlosstext MiyamotoLossText, MiyamotoLakeOfRageLastText
 	loadtrainer PASSERBY, MIYAMOTO
 	startbattle
 	reloadmapafterbattle
@@ -498,6 +498,11 @@ LakeOfRageMovingSignText:
 	line "bulldozed due to"
 	cont "environmental"
 	cont "changes."
+	done
+
+MiyamotoLakeOfRageLastText:
+	text "You're stronger"
+	line "than you look."
 	done
 
 LakeOfRage_MapEvents:

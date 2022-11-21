@@ -259,7 +259,7 @@ DanceTheaterCynthiaScript:
 	writetext CynthiaIntroductionText
 	waitbutton
 	closetext
-	winlosstext CynthiaBeatenText, 0
+	winlosstext CynthiaBeatenText, CynthiaDanceTheaterLastPkmnText
 	loadtrainer TOURIST, CYNTHIA1
 	startbattle
 	dontrestartmapmusic
@@ -672,6 +672,10 @@ HeadingToWildAreText:
 
 	para "See you around."
 	done
+
+CynthiaDanceTheaterLastPkmnText:
+	text "Backed into a"
+	line "corner, huh?"
 
 DanceTheatre_MapEvents:
 	db 0, 0 ; filler

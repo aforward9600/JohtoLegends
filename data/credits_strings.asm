@@ -28,7 +28,7 @@ CreditsStrings:
 	dw .Sarugakucho
 	dw .AkitoMori
 	dw .TakahiroHarada
-	dw .TohruHashimoto
+	dw .Damien
 	dw .PresentedBy
 	dw .TakehiroIzushi
 	dw .TakashiKawaguchi
@@ -154,7 +154,7 @@ CreditsStrings:
 .Sarugakucho:         db "    SARUGAKUCHO@"           ; "さるがくちょう@"
 .AkitoMori:           db "     AKITO MORI@"           ; "もり　あきと@"
 .TakahiroHarada:      db "  TAKAHIRO HARADA@"         ; "はらだ　たかひろ@"
-.TohruHashimoto:      db "  TOHRU HASHIMOTO@"         ; "はしもと　とおる@"
+.Damien:              db "       Damien@"         ; "はしもと　とおる@"
 .PresentedBy:         db "    Presented By@"        ; "まつもと　のぼる@"
 .TakehiroIzushi:      db "  TAKEHIRO IZUSHI@"         ; "いずし　たけひろ@"
 .TakashiKawaguchi:    db " TAKASHI KAWAGUCHI@"        ; "かわぐち　たかし@"

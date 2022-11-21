@@ -147,7 +147,7 @@ MahoganyGymPryceScript:
 	waitbutton
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
-	loadtrainer PRYCE_3, PRYCE6
+	loadtrainer PRYCE_2, PRYCE6
 	startbattle
 	reloadmapafterbattle
 	sjump AfterPryceRematch
@@ -356,11 +356,11 @@ PryceText_Intro:
 	line "affect how irresi-"
 	cont "stible I am to the"
 
-	para "ladies...Sorry,"
-	line "just thinking out"
-	cont "loud. I am Pryce,"
+	para "ladies…Sorry, just"
+	line "thinking out loud."
+	cont "I am Pryce, the"
 
-	para "the Gym Leader of"
+	para "Gym Leader of"
 	line "Mahogany Town,"
 	cont "although I'm sure"
 
@@ -384,8 +384,9 @@ PryceText_Blizzard:
 	done
 
 PryceText_StillGotIt:
-	text "Told ya' I still"
-	line "got it!"
+	text "Winter is harsh,"
+	line "but we can bear"
+	cont "it!"
 	done
 
 PryceText_After:
@@ -445,7 +446,7 @@ PryceText_GoodLooks:
 	para "I enter my senior"
 	line "years!"
 
-	para "...Hopefully."
+	para "…Hopefully."
 	done
 
 PryceText_WelcomeBack:

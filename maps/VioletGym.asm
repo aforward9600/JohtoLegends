@@ -44,7 +44,7 @@ VioletGymWalkerScript:
 	writetext WalkerIntroText
 	waitbutton
 	closetext
-	winlosstext WalkerWinLossText, 0
+	winlosstext WalkerWinLossText, WalkerLossText
 	loadtrainer WALKER, WALKER1
 	startbattle
 	reloadmapafterbattle
@@ -415,8 +415,8 @@ WalkerReadyForARematchText:
 	done
 
 WalkerLossText:
-	text "We have achieved"
-	line "liftoff!"
+	text "We can't fall just"
+	line "yet!"
 	done
 
 BeatenWalkerAgainText:

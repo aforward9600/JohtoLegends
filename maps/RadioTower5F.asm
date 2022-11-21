@@ -56,7 +56,7 @@ Reconverge:
 	writetext RadioTowerMiyamotoText2
 	waitbutton
 	closetext
-	winlosstext RadioTowerMiyamotoWinText, 0
+	winlosstext RadioTowerMiyamotoWinText, RadioTowerMiyamotoLastText
 	setlasttalked RADIOTOWER5F_MIYAMOTO
 	loadtrainer MYSTERIOUS, MIYAMOTO2
 	startbattle
@@ -409,6 +409,11 @@ RadioTower5FDirectorDescribeClearBellText:
 
 	para "OK, I better go to"
 	line "my OFFICE."
+	done
+
+RadioTowerMiyamotoLastText:
+	text "I underestimated"
+	line "you again."
 	done
 
 RadioTower5F_MapEvents:

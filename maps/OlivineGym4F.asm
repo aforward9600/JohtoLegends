@@ -209,9 +209,8 @@ Byron1F_Clang:
 	done
 
 Byron1F_SteelyDetermination:
-	text "Steely determin-"
-	line "ation wins every"
-	cont "time!"
+	text "Steel doesn't bend"
+	line "so easily!"
 	done
 
 Byron1F_Beaten:

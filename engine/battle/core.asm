@@ -2948,11 +2948,11 @@ LostBattle:
 	dec a ; wild?
 	jr z, .no_loss_text
 
-	ld hl, wLossTextPointer
-	ld a, [hli]
-	ld h, [hl]
-	or h
-	jr z, .no_loss_text
+;	ld hl, wLossTextPointer
+;	ld a, [hli]
+;	ld h, [hl]
+;	or h
+;	jr z, .no_loss_text
 
 ; Remove the enemy from the screen.
 	hlcoord 0, 0
@@ -3174,6 +3174,7 @@ EnemySwitch:
 	call ClearEnemyMonBox
 	call Function_BattleTextEnemySentOut
 	call Function_SetEnemyMonAndSendOutAnimation
+	call FinalPkmnAnimation
 	pop af
 	ret c
 	; If we're here, then we're switching too
@@ -3198,7 +3199,8 @@ EnemySwitch_SetMode:
 	ld [wEnemyIsSwitching], a
 	call ClearEnemyMonBox
 	call Function_BattleTextEnemySentOut
-	jp Function_SetEnemyMonAndSendOutAnimation
+	call Function_SetEnemyMonAndSendOutAnimation
+	jp FinalPkmnAnimation
 
 CheckWhetherSwitchmonIsPredetermined:
 ; returns carry if: ???
@@ -3500,6 +3502,49 @@ LoadEnemyMonToSwitchTo:
 	ld a, [hl]
 	ld [wEnemyHPAtTimeOfPlayerSwitch + 1], a
 	ret
+
+FinalPkmnAnimation:
+	ld a, [wLinkMode]
+	and a
+	ret nz
+
+	ld hl, wLossTextPointer
+	ld a, [hli]
+	ld h, [hl]
+	and h
+	ret z
+
+	farcall FindAliveEnemyMons
+	ret nz
+
+	call EmptyBattleTextbox
+	ld c, 20
+	call DelayFrames
+	hlcoord 18, 0
+	ld a, 8
+	call SlideBattlePicOut
+
+	ld a, [wTempEnemyMonSpecies]
+	push af
+	call BattleWinSlideInEnemyTrainerFrontpic
+	ld hl, wLossTextPointer
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call GetMapScriptsBank
+	call FarPrintText
+	call WaitBGMap
+	call WaitPressAorB_BlinkCursor
+	pop af
+	ld [wTempEnemyMonSpecies], a
+	call EmptyBattleTextbox
+	call WaitBGMap
+	hlcoord 18, 0
+	ld a, 8
+	call SlideBattlePicOut
+	ld c, 10
+	call DelayFrames
+	jp FinalPkmnSlideInEnemyMonFrontpic
 
 CheckWhetherToAskSwitch:
 	ld a, [wBattleHasJustStarted]
@@ -6584,6 +6629,66 @@ LoadEnemyMon:
 	ld bc, wEnemyMonStatsEnd - wEnemyMonStats
 	call CopyBytes
 
+	ret
+
+FinalPkmnSlideInEnemyMonFrontpic:
+	call FinishBattleAnim
+	farcall GetEnemyMonFrontpic
+	hlcoord 19, 0
+	ld c, 0
+
+.outer_loop
+	inc c
+	ld a, c
+	cp 9
+	ret z
+	xor a
+	ld [hBGMapMode], a
+	ld [hBGMapThird], a
+	ld d, $0
+	push bc
+	push hl
+
+.inner_loop
+	call .CopyColumn
+	inc hl
+	ld a, 7
+	add d
+	ld d, a
+	dec c
+	jr nz, .inner_loop
+
+	ld a, $1
+	ld [hBGMapMode], a
+	ld c, 4
+	call DelayFrames
+	pop hl
+	pop bc
+	dec hl
+	jr .outer_loop
+
+.CopyColumn:
+	push hl
+	push de
+	push bc
+	ld e, 7
+
+.loop
+	ld a, d
+	cp 7 * 7
+	jr c, .ok
+	ld a, " "
+.ok
+	ld [hl], a
+	ld bc, SCREEN_WIDTH
+	add hl, bc
+	inc d
+	dec e
+	jr nz, .loop
+
+	pop bc
+	pop de
+	pop hl
 	ret
 
 CheckSleepingTreeMon:

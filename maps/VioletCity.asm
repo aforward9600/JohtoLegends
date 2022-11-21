@@ -1,5 +1,4 @@
 	object_const_def ; object_event constants
-	const VIOLETCITY_EARL
 	const VIOLETCITY_LASS
 	const VIOLETCITY_YOUNGSTER
 	const VIOLETCITY_GRAMPS
@@ -17,44 +16,6 @@ VioletCity_MapScripts:
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_VIOLET
 	return
-
-VioletCityEarlScript:
-	applymovement VIOLETCITY_EARL, VioletCitySpinningEarl_MovementData
-	faceplayer
-	opentext
-	writetext Text_EarlAsksIfYouBeatFalkner
-	yesorno
-	iffalse .FollowEarl
-	sjump .PointlessJump
-
-.PointlessJump:
-	writetext Text_VeryNiceIndeed
-	waitbutton
-	closetext
-	end
-
-.FollowEarl:
-	writetext Text_FollowEarl
-	waitbutton
-	closetext
-	playmusic MUSIC_SHOW_ME_AROUND
-	follow VIOLETCITY_EARL, PLAYER
-	applymovement VIOLETCITY_EARL, VioletCityFollowEarl_MovementData
-	turnobject PLAYER, UP
-	applymovement VIOLETCITY_EARL, VioletCitySpinningEarl_MovementData
-	stopfollow
-	special RestartMapMusic
-	opentext
-	writetext Text_HereTeacherIAm
-	waitbutton
-	closetext
-	applymovement VIOLETCITY_EARL, VioletCitySpinningEarl_MovementData
-	applymovement VIOLETCITY_EARL, VioletCityFinishFollowEarl_MovementData
-	playsound SFX_ENTER_DOOR
-	disappear VIOLETCITY_EARL
-	clearevent EVENT_EARLS_ACADEMY_EARL
-	waitsfx
-	end
 
 VioletCityLassScript:
 	jumptextfaceplayer VioletCityLassText
@@ -281,17 +242,15 @@ VioletCity_MapEvents:
 
 	db 0 ; coord events
 
-	db 7 ; bg events
+	db 6 ; bg events
 	bg_event 24, 20, BGEVENT_READ, VioletCitySign
 	bg_event 15, 17, BGEVENT_READ, VioletGymSign
 	bg_event 24,  8, BGEVENT_READ, SproutTowerSign
-	bg_event 27, 17, BGEVENT_READ, EarlsPokemonAcademySign
 	bg_event 32, 25, BGEVENT_READ, VioletCityPokecenterSign
 	bg_event 10, 17, BGEVENT_READ, VioletCityMartSign
 	bg_event 37, 14, BGEVENT_ITEM, VioletCityHiddenHyperPotion
 
-	db 8 ; object events
-	object_event 13, 16, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityEarlScript, EVENT_VIOLET_CITY_EARL
+	db 7 ; object events
 	object_event 28, 28, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityLassScript, -1
 	object_event 24, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletCitySuperNerdScript, -1
 	object_event 19, 20, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityGrampsScript, -1

@@ -31,7 +31,9 @@ New Swarming System: Dragon Arbock
 
 Cardboardbox: Battle Tower Prize List fix.
 
-Puddles: Rangi
+Puddles and mid-battle quotes: Rangi
+
+Damien: Surf sprite color correction.
 
 Snow graphics: Prism Team
 

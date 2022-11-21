@@ -58,7 +58,8 @@ CreditsScript:
 	db CREDITS_WAIT, 12
 
 	db     PROGRAMMING_HELP, 0
-	db            AZUREKEYS, 2
+	db            AZUREKEYS, 1
+	db        DAMIEN_CREDIT, 2
 
 	db CREDITS_WAIT, 12
 
