@@ -387,6 +387,7 @@ AlphabeticalMoveList::
 	dw WATERFALL
 	dw WATER_GUN
 	dw WATER_PULSE
+	dw WAVE_CRASH
 	dw WHIRLPOOL
 	dw WHIRLWIND
 	dw WING_ATTACK

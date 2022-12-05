@@ -34,6 +34,7 @@ OlivineLighthouse6F_MapScripts:
 	waitbutton
 	closetext
 	winlosstext Miyamoto1WinText, Miyamoto1LossText
+	setlasttalked OLIVINELIGHTHOUSE6F_MIYAMOTO
 	loadtrainer MYSTERIOUS, MIYAMOTO
 	startbattle
 	dontrestartmapmusic

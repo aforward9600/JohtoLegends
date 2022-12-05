@@ -405,8 +405,9 @@ PidgeyEvosAttacks:
 	dbw 17, WHIRLWIND
 	dbw 21, TWISTER
 	dbw 25, FEATHERDANCE
+	dbw 27, AIR_CUTTER
 	dbw 29, AGILITY
-	dbw 33, AIR_CUTTER
+	dbw 33, AERIAL_ACE
 	dbw 37, ROOST
 	dbw 41, HYPER_VOICE
 	dbw 45, MIRROR_MOVE
@@ -423,9 +424,10 @@ PidgeottoEvosAttacks:
 	dbw 13, QUICK_ATTACK
 	dbw 17, WHIRLWIND
 	dbw 22, TWISTER
+	dbw 25, AIR_CUTTER
 	dbw 27, FEATHERDANCE
 	dbw 32, AGILITY
-	dbw 37, AIR_CUTTER
+	dbw 37, AERIAL_ACE
 	dbw 42, ROOST
 	dbw 47, HYPER_VOICE
 	dbw 52, MIRROR_MOVE
@@ -443,9 +445,10 @@ PidgeotEvosAttacks:
 	dbw 13, QUICK_ATTACK
 	dbw 17, WHIRLWIND
 	dbw 22, TWISTER
+	dbw 25, AIR_CUTTER
 	dbw 27, FEATHERDANCE
 	dbw 32, AGILITY
-	dbw 38, AIR_CUTTER
+	dbw 38, AERIAL_ACE
 	dbw 44, ROOST
 	dbw 50, HYPER_VOICE
 	dbw 56, MIRROR_MOVE
@@ -1335,8 +1338,10 @@ PoliwrathEvosAttacks:
 	dbw 1, DOUBLESLAP
 	dbw 1, CLOSE_COMBAT
 	dbw 32, DYNAMICPUNCH
+	dbw 37, CIRCLE_THROW
 	dbw 43, MIND_READER
-	dbw 53, CIRCLE_THROW
+	dbw 48, WAVE_CRASH
+	dbw 53, CLOSE_COMBAT
 	db 0 ; no more level-up moves
 
 PolitoedEvosAttacks:
@@ -1983,7 +1988,7 @@ ShellderEvosAttacks:
 	dbw 49, IRON_DEFENSE
 	dbw 52, ICE_BEAM
 	dbw 56, SHELL_SMASH
-	dbw 61, HYDRO_PUMP
+	dbw 61, WAVE_CRASH
 	db 0 ; no more level-up moves
 
 CloysterEvosAttacks:
@@ -2174,6 +2179,7 @@ KrabbyEvosAttacks:
 	dbw 39, WATERFALL
 	dbw 41, CRABHAMMER
 	dbw 45, FLAIL
+	dbw 51, WAVE_CRASH
 	db 0 ; no more level-up moves
 
 KinglerEvosAttacks:
@@ -2195,6 +2201,7 @@ KinglerEvosAttacks:
 	dbw 51, WATERFALL
 	dbw 56, CRABHAMMER
 	dbw 63, FLAIL
+	dbw 69, WAVE_CRASH
 	db 0 ; no more level-up moves
 
 VoltorbEvosAttacks:
@@ -2727,6 +2734,7 @@ GoldeenEvosAttacks:
 	dbw 37, HORN_DRILL
 	dbw 40, AQUA_TAIL
 	dbw 45, MEGAHORN
+	dbw 51, WAVE_CRASH
 	db 0 ; no more level-up moves
 
 SeakingEvosAttacks:
@@ -2746,6 +2754,7 @@ SeakingEvosAttacks:
 	dbw 40, HORN_DRILL
 	dbw 46, AQUA_TAIL
 	dbw 54, MEGAHORN
+	dbw 59, WAVE_CRASH
 	db 0 ; no more level-up moves
 
 StaryuEvosAttacks:

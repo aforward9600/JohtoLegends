@@ -342,7 +342,7 @@ CHRIS EQU __enum__
 	const STEVIE
 	const WADE1
 	const ELMER
-	const AL
+	const ARTHUR
 	const BUZZY
 	const ARNIE1
 	const NAT
@@ -727,8 +727,6 @@ CHRIS EQU __enum__
 	const RIVAL3_B_DRATINI
 	const RIVAL3_C_LARVITAR
 	const RIVAL3_C_DRATINI
-	const RIVAL3_D_LARVITAR
-	const RIVAL3_D_DRATINI
 
 	trainerclass RIVAL4 ; 45
 	const RIVAL4_A_LARVITAR
@@ -737,8 +735,6 @@ CHRIS EQU __enum__
 	const RIVAL4_B_DRATINI
 	const RIVAL4_C_LARVITAR
 	const RIVAL4_C_DRATINI
-	const RIVAL4_D_LARVITAR
-	const RIVAL4_D_DRATINI
 
 	trainerclass BREEDER ; 46
 	const EMILY

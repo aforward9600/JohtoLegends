@@ -192,7 +192,7 @@ GyaradosEvosAttacks:
 	dbw 33, SCARY_FACE
 	dbw 36, TWISTER
 	dbw 39, CRUNCH
-	dbw 42, HYDRO_PUMP
+	dbw 42, WAVE_CRASH
 	dbw 45, DRAGON_DANCE
 	dbw 48, BOUNCE
 	dbw 51, RAIN_DANCE
@@ -518,7 +518,7 @@ KabutoEvosAttacks:
 	dbw 36, MEGA_DRAIN
 	dbw 41, METAL_SOUND
 	dbw 46, ANCIENTPOWER
-	dbw 50, WATERFALL
+	dbw 50, WAVE_CRASH
 	db 0 ; no more level-up moves
 
 KabutopsEvosAttacks:
@@ -536,7 +536,7 @@ KabutopsEvosAttacks:
 	dbw 39, MEGA_DRAIN
 	dbw 45, METAL_SOUND
 	dbw 54, ANCIENTPOWER
-	dbw 63, WATERFALL
+	dbw 63, WAVE_CRASH
 	dbw 72, NIGHT_SLASH
 	db 0 ; no more level-up moves
 
@@ -689,7 +689,7 @@ DragonairEvosAttacks:
 	dbw 1, WRAP
 	dbw 1, LEER
 	dbw 5, THUNDER_WAVE
-	dbw 11, DRAGON_RAGE
+	dbw 11, TWISTER
 	dbw 15, DRACO_FANG
 	dbw 23, SLAM
 	dbw 27, AGILITY
@@ -709,7 +709,7 @@ DragoniteEvosAttacks:
 	dbw 1, WRAP
 	dbw 1, LEER
 	dbw 5, THUNDER_WAVE
-	dbw 11, DRAGON_RAGE
+	dbw 11, TWISTER
 	dbw 15, DRACO_FANG
 	dbw 21, SLAM
 	dbw 27, AGILITY
@@ -900,7 +900,7 @@ TotodileEvosAttacks:
 	dbw 41, CRUNCH
 	dbw 43, AQUA_TAIL
 	dbw 48, SUPERPOWER
-	dbw 50, HYDRO_PUMP
+	dbw 50, WAVE_CRASH
 	db 0 ; no more level-up moves
 
 CroconawEvosAttacks:
@@ -921,7 +921,7 @@ CroconawEvosAttacks:
 	dbw 48, CRUNCH
 	dbw 51, AQUA_TAIL
 	dbw 57, SUPERPOWER
-	dbw 60, HYDRO_PUMP
+	dbw 60, WAVE_CRASH
 	db 0 ; no more level-up moves
 
 FeraligatrEvosAttacks:
@@ -943,7 +943,7 @@ FeraligatrEvosAttacks:
 	dbw 58, THRASH
 	dbw 63, AQUA_TAIL
 	dbw 71, SUPERPOWER
-	dbw 76, HYDRO_PUMP
+	dbw 76, WAVE_CRASH
 	dbw 80, HYDRO_CANNON
 	db 0 ; no more level-up moves
 
@@ -1352,7 +1352,7 @@ MarillEvosAttacks:
 	dbw 31, RAIN_DANCE
 	dbw 37, DOUBLE_EDGE
 	dbw 40, SUPERPOWER
-	dbw 47, HYDRO_PUMP
+	dbw 47, WAVE_CRASH
 	db 0 ; no more level-up moves
 
 AzumarillEvosAttacks:
@@ -1374,7 +1374,7 @@ AzumarillEvosAttacks:
 	dbw 35, RAIN_DANCE
 	dbw 42, DOUBLE_EDGE
 	dbw 46, SUPERPOWER
-	dbw 55, HYDRO_PUMP
+	dbw 55, WAVE_CRASH
 	db 0 ; no more level-up moves
 
 BonslyEvosAttacks:
@@ -1638,6 +1638,7 @@ WooperEvosAttacks:
 	dbw 43, HAZE
 	dbw 47, MUDDY_WATER
 	dbw 51, AQUA_TAIL
+	dbw 56, WAVE_CRASH
 	db 0 ; no more level-up moves
 
 QuagsireEvosAttacks:
@@ -1657,6 +1658,7 @@ QuagsireEvosAttacks:
 	dbw 48, HAZE
 	dbw 53, MUDDY_WATER
 	dbw 57, AQUA_TAIL
+	dbw 62, WAVE_CRASH
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
@@ -1940,8 +1942,8 @@ QwilfishEvosAttacks:
 	dbw 45, AQUA_TAIL
 	dbw 49, POISON_JAB
 	dbw 53, DESTINY_BOND
-	dbw 57, GUNK_SHOT
-	dbw 60, LEECH_LIFE
+	dbw 57, WAVE_CRASH
+	dbw 60, GUNK_SHOT
 	db 0 ; no more level-up moves
 
 ShuckleEvosAttacks:
@@ -2585,27 +2587,27 @@ ToxicroakEvosAttacks:
 	dbw 65, CLOSE_COMBAT
 	db 0 ; no more level-up moves
 
-SwabluEvosAttacks:
+;SwabluEvosAttacks:
 ;	dbbw EVOLVE_LEVEL, 35, ALTARIA
-	db 0 ; no more evolutions
-	dbw 1, PECK
-	dbw 1, GROWL
-	dbw 3, ASTONISH
-	dbw 5, SING
-	dbw 7, FURY_ATTACK
-	dbw 9, SAFEGUARD
-	dbw 11, DISARM_VOICE
-	dbw 14, MIST
-	dbw 17, ROUND_M
-	dbw 20, WING_ATTACK
-	dbw 23, TAKE_DOWN
-	dbw 26, HEAL_BELL
-	dbw 30, MIRROR_MOVE
-	dbw 34, COTTON_SPORE
-	dbw 38, DRAGON_PULSE
-	dbw 42, PERISH_SONG
-	dbw 46, MOONBLAST
-	db 0 ; no more level-up moves
+;	db 0 ; no more evolutions
+;	dbw 1, PECK
+;	dbw 1, GROWL
+;	dbw 3, ASTONISH
+;	dbw 5, SING
+;	dbw 7, FURY_ATTACK
+;	dbw 9, SAFEGUARD
+;	dbw 11, DISARM_VOICE
+;	dbw 14, MIST
+;	dbw 17, ROUND_M
+;	dbw 20, WING_ATTACK
+;	dbw 23, TAKE_DOWN
+;	dbw 26, HEAL_BELL
+;	dbw 30, MIRROR_MOVE
+;	dbw 34, COTTON_SPORE
+;	dbw 38, DRAGON_PULSE
+;	dbw 42, PERISH_SONG
+;	dbw 46, MOONBLAST
+;	db 0 ; no more level-up moves
 
 DuskullEvosAttacks:
 	dbbw EVOLVE_LEVEL, 37, DUSCLOPS

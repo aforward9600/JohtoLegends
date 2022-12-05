@@ -397,4 +397,5 @@ MoveNames::
 	db "PincirFlurry@"
 	db "JurassicBeam@"
 	db "Signal Wave@"
+	db "Wave Crash@"
 ;	db "Wake Up Slap@"

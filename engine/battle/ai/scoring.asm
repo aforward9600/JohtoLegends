@@ -1687,6 +1687,11 @@ AI_Smart_Thief:
 	ret
 
 AI_Smart_Disable:
+; 80% chance to greatly encourage this move if the player is Encored.
+	ld a, [wPlayerSubStatus5]
+	and 1 << SUBSTATUS_ENCORED
+	jr nz, .encourage
+
 	call AICompareSpeed
 	jr nc, .asm_38df3
 
@@ -1701,6 +1706,14 @@ AI_Smart_Disable:
 	call Random
 	cp 39 percent + 1
 	ret c
+	dec [hl]
+	ret
+
+.encourage
+	call AI_80_20
+	ret c
+	dec [hl]
+	dec [hl]
 	dec [hl]
 	ret
 
@@ -1887,7 +1900,7 @@ AI_Smart_Protect:
 
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_CHARGED, a
-	jr nz, .asm_38f0d
+	jr nz, .greatly_encourage
 
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TOXIC, a
@@ -1909,6 +1922,12 @@ AI_Smart_Protect:
 .asm_38f0d
 	call AI_80_20
 	ret c
+	dec [hl]
+	ret
+
+.greatly_encourage
+	dec [hl]
+	dec [hl]
 	dec [hl]
 	ret
 
@@ -2651,10 +2670,15 @@ AI_Smart_Solarbeam:
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
-	cp WEATHER_HAIL
 	jr z, .asm_3921e
 
 	cp WEATHER_RAIN
+	ret nz
+
+	cp WEATHER_HAIL
+	ret nz
+
+	cp WEATHER_SANDSTORM
 	ret nz
 
 	call Random

@@ -403,6 +403,7 @@ MoveDescriptions1:
 	dw PincirFlurryDescription
 	dw BubblebeamDescription
 	dw SignalWaveDescription
+	dw DoubleEdgeDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:

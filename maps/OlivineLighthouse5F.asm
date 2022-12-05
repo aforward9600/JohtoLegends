@@ -220,9 +220,9 @@ LighthouseArcherBeatenText:
 	done
 
 LighthouseArcherLostText:
-	text "Well, looks like"
-	line "our intel was"
-	cont "wrong about you."
+	text "I'm not done yet!"
+
+	para "We will succeed!"
 	done
 
 LighthouseArcherAfterBattleText:

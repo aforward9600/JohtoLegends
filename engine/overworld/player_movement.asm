@@ -343,6 +343,7 @@ DoPlayerMovement::
 	ret
 
 .ExitWater:
+	call ResetPlayerPalette
 	call .GetOutOfWater
 	call PlayMapMusic
 	ld a, STEP_WALK
@@ -831,7 +832,7 @@ StopPlayerForEvent::
 ResetPlayerPalette::
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .ResetFemaleColor
+	jr nz, .ResetFemaleColor
 	ret
 .ResetFemaleColor
 	ld d, (PAL_NPC_RED << 4)

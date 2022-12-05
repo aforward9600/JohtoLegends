@@ -423,6 +423,7 @@ BattleAnimations::
 	dw BattleAnim_PincirFlurry
 	dw BattleAnim_JurassicBeam
 	dw BattleAnim_SignalWave
+	dw BattleAnim_WaveCrash
 ;	dw BattleAnim_WakeUpSlap
 	dw BattleAnim_SweetScent2
 
@@ -1398,6 +1399,30 @@ BattleAnim_Surf:
 	anim_loop 4, .loop
 	anim_incobj 1
 	anim_wait 56
+	anim_ret
+
+BattleAnim_WaveCrash:
+	anim_2gfx ANIM_GFX_BUBBLE, ANIM_GFX_HIT
+	anim_bgeffect ANIM_BG_SURF, $0, $0, $0
+	anim_obj ANIM_OBJ_SURF, 88, 104, $8
+.loop
+	anim_sound 0, 1, SFX_SURF
+	anim_wait 32
+	anim_loop 4, .loop
+	anim_incobj 1
+	anim_wait 56
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_wait 3
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_00, 128, 48, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_00, 144, 48, $0
+	anim_wait 3
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
 	anim_ret
 
 BattleAnim_VineWhip:
@@ -6003,18 +6028,18 @@ BattleAnim_RockWrecker:
 
 BattleAnim_BulletSeed:
 	anim_2gfx ANIM_GFX_PLANT, ANIM_GFX_HIT
-	anim_obj ANIM_OBJ_LEECH_SEED, 72, 72, $2
-	anim_wait 8
+	anim_obj ANIM_OBJ_BULLET_SEED, 64, 70, $10
+	anim_wait 32
 	anim_sound 0, 1, SFX_VINE_WHIP
 	anim_obj ANIM_OBJ_04, 128, 40, $0
 	anim_wait 8
-	anim_obj ANIM_OBJ_LEECH_SEED, 80, 88, $2
-	anim_wait 8
+	anim_obj ANIM_OBJ_BULLET_SEED, 64, 70, $10
+	anim_wait 32
 	anim_sound 0, 1, SFX_VINE_WHIP
 	anim_obj ANIM_OBJ_04, 136, 56, $0
 	anim_wait 8
-	anim_obj ANIM_OBJ_LEECH_SEED, 76, 80, $2
-	anim_wait 8
+	anim_obj ANIM_OBJ_BULLET_SEED, 64, 70, $10
+	anim_wait 32
 	anim_sound 0, 1, SFX_VINE_WHIP
 	anim_obj ANIM_OBJ_04, 132, 48, $0
 	anim_wait 8

@@ -102,11 +102,9 @@ LighthouseArianaBeatenText:
 	done
 
 LighthouseArianaLossText:
-	text "Heh!"
+	text "This can't be!"
 
-	para "Looks like they"
-	line "were wrong about"
-	cont "you!"
+	para "My last #mon?"
 	done
 
 LighthouseArianaAfterBattleText:

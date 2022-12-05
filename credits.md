@@ -33,7 +33,7 @@ Cardboardbox: Battle Tower Prize List fix.
 
 Puddles and mid-battle quotes: Rangi
 
-Damien: Surf sprite color correction.
+Damien: Surf sprite color correction, AI Improvements.
 
 Snow graphics: Prism Team
 

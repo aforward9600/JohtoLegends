@@ -211,6 +211,12 @@ LakeOfRageLassScript:
 LakeOfRageMovingSign:
 	jumptext LakeOfRageMovingSignText
 
+LakeOfRagePokecenterSign:
+	jumpstd pokecentersign
+
+LakeOfRageMartSign:
+	jumpstd martsign
+
 MovementData_0x70155:
 	teleport_from
 	step_end
@@ -518,7 +524,7 @@ LakeOfRage_MapEvents:
 
 	db 0 ; coord events
 
-	db 7 ; bg events
+	db 9 ; bg events
 	bg_event 19, 31, BGEVENT_READ, LakeOfRageSign
 	bg_event 33, 29, BGEVENT_READ, MagikarpHouseSignScript
 	bg_event  3, 31, BGEVENT_ITEM, LakeOfRageHiddenFullRestore
@@ -526,6 +532,8 @@ LakeOfRage_MapEvents:
 	bg_event 31,  2, BGEVENT_ITEM, LakeOfRageHiddenMaxPotion
 	bg_event  7,  5, BGEVENT_READ, LakeOfRageGymSign
 	bg_event 11, 11, BGEVENT_READ, LakeOfRageMovingSign
+	bg_event  6, 19, BGEVENT_READ, LakeOfRagePokecenterSign
+	bg_event  4,  9, BGEVENT_READ, LakeOfRageMartSign
 
 	db 12 ; object events
 	object_event 20, 30, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageMiyamotoScript, EVENT_LAKE_OF_RAGE_MIYAMOTO

@@ -1,7 +1,7 @@
 	object_const_def ; object_event constants
 	const ROUTE40_OLIVINE_RIVAL1
-	const ROUTE40_OLIVINE_RIVAL2
-	const ROUTE40_SWIMMER_GIRL1
+	const ROUTE40_BUG_CATCHER
+	const ROUTE40_LASS3
 	const ROUTE40_SWIMMER_GIRL2
 	const ROUTE40_ROCK1
 	const ROUTE40_ROCK2
@@ -29,13 +29,13 @@ Route40_MapScripts:
 	appear ROUTE40_MONICA
 	return
 
-TrainerSwimmerfKaitlyn:
-	trainer SWIMMERF, KAITLYN, EVENT_BEAT_SWIMMERF_KAITLYN, SwimmerfKaitlynSeenText, SwimmerfKaitlynBeatenText, 0, .Script
+TrainerLassArielle:
+	trainer LASS, ARIELLE, EVENT_BEAT_LASS_ARIELLE, LassArielleSeenText, LassArielleBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmerfKaitlynAfterBattleText
+	writetext LassArielleAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -62,13 +62,13 @@ TrainerSwimmermDerrick:
 	closetext
 	end
 
-TrainerSwimmermJackson:
-	trainer SWIMMERM, JACKSON, EVENT_BEAT_SWIMMERM_JACKSON, SwimmermJacksonSeenText, SwimmermJacksonBeatenText, 0, .Script
+TrainerBugCatcherArthur:
+	trainer BUG_CATCHER, ARTHUR, EVENT_BEAT_BUG_CATCHER_ARTHUR, BugCatcherArthurSeenText, BugCatcherArthurBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmermJacksonAfterBattleText
+	writetext BugCatcherArthurAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -183,19 +183,28 @@ SwimmermDerrickAfterBattleText:
 	para "ed by Sharpedo!"
 	done
 
-SwimmermJacksonSeenText:
-	text "It's pretty neat"
-	line "ride on a Lapras,"
+BugCatcherArthurSeenText:
+	text "My friends played"
+	line "a prank on me and"
+	cont "left me here!"
 
-	para "but I prefer to"
-	line "swim!"
+	para "How am I supposed"
+	line "to get back?"
 	done
 
-SwimmermJacksonBeatenText:
-	text "Swim away!"
+BugCatcherArthurBeatenText:
+	text "Maybe I can fly"
+	line "on Scyther."
 	done
 
-SwimmermJacksonAfterBattleText:
+BugCatcherArthurAfterBattleText:
+	text "They'll come back"
+	line "for me."
+
+	para "…hopefully…"
+	done
+
+BugCatcherArthurAfterBattleText2: ; unused
 	text "My friend always"
 	line "says:"
 
@@ -205,20 +214,27 @@ SwimmermJacksonAfterBattleText:
 	cont "voice."
 	done
 
-SwimmerfKaitlynSeenText:
-	text "Cianwood is quite"
-	line "a swim away."
+LassArielleSeenText:
+	text "The tide is low"
+	line "right now, so"
+
+	para "you can stand on"
+	line "the sand."
 	done
 
-SwimmerfKaitlynBeatenText:
-	text "Well, that's no"
-	line "fun!"
+LassArielleBeatenText:
+	text "That's just"
+	line "science!"
 	done
 
-SwimmerfKaitlynAfterBattleText:
-	text "You've got a Lap-"
-	line "ras to ride on,"
-	cont "so you'll be fine."
+LassArielleAfterBattleText:
+	text "We should probably"
+	line "get out of here"
+	cont "soon."
+
+	para "Don't want to be"
+	line "here when the"
+	cont "tide comes in."
 	done
 
 SwimmerfAngieSeenText:
@@ -375,10 +391,10 @@ Route40_MapEvents:
 	bg_event  7,  8, BGEVENT_ITEM, Route40HiddenHyperPotion
 
 	db 12 ; object events
-	object_event  4, 28, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerSwimmermDerrick, -1
-	object_event  9, 15, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerSwimmermJackson, -1
-	object_event 15, 25, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerSwimmerfKaitlyn, -1
-	object_event 12, 20, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfAngie, -1
+	object_event  5, 31, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerSwimmermDerrick, -1
+	object_event 13, 31, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherArthur, -1
+	object_event  8, 24, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassArielle, -1
+	object_event 12, 19, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfAngie, -1
 	object_event  7, 11, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route40Rock, -1
 	object_event  6,  9, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route40Rock, -1
 	object_event  7,  8, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route40Rock, -1
