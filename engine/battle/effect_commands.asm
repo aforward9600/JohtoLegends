@@ -1451,6 +1451,12 @@ BattleCheckTypeMatchup:
 .get_type
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar ; preserves hl, de, and bc
+	jr CheckTypeMatchup
+
+CheckTypeMatchupFarcall:: ; Needs to be called from Farcall_de to preserve hl.
+	ld a, [wTempByteValue]
+	; fallthrough
+
 CheckTypeMatchup:
 	push hl
 	push de

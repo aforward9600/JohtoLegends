@@ -686,6 +686,7 @@ INCLUDE "data/battle_tower/unknown.asm"
 INCLUDE "engine/battle/ai/scoring.asm"
 INCLUDE "engine/events/field_moves.asm"
 
+INCLUDE "engine/battle/ai/switch.asm"
 
 SECTION "Mobile News Data", ROMX
 

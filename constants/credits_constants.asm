@@ -16,7 +16,7 @@
 	const SCMIDNA
 	const NUKKIIE
 	const FROGTOES
-	const MORIKAZU_AOKI
+	const LANDESHERR
 	const CHAMBER
 	const PIKACHU_CREDITS
 	const EMI_MONSERRATE

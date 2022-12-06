@@ -35,6 +35,8 @@ Puddles and mid-battle quotes: Rangi
 
 Damien: Surf sprite color correction, AI Improvements.
 
+landesherr: AI Improvements.
+
 Snow graphics: Prism Team
 
 New Pokemon cries: chattycrystal team

@@ -16,7 +16,7 @@ CreditsStrings:
 	dw .SCMidna
 	dw .Nukkiie
 	dw .Frogtoes
-	dw .MorikazuAoki
+	dw .landesherr
 	dw .Chamber
 	dw .Pikachu
 	dw .EmiMonserrate
@@ -142,7 +142,7 @@ CreditsStrings:
 .SCMidna:             db "      SCMidna@"        ; "よしだ　ひろのぶ@"
 .Nukkiie:             db "      Nukkiie@"         ; "いわした　あすか@"
 .Frogtoes:            db "      Frogtoes@"           ; "いちのせ　ごう@"
-.MorikazuAoki:        db "   MORIKAZU AOKI@"          ; "あおき　もりかず@"
+.landesherr:          db "     landesherr@"          ; "あおき　もりかず@"
 .Chamber:             db "      Chamber@"          ; "にしの　こうじ@"
 .Pikachu:             db "     Pikachu25@"        ; "まつしま　けんじ@"
 .EmiMonserrate:       db "   Emi Monserrate@"       ; "まつみや　としのぶ@"

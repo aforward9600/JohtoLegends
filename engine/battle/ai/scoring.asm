@@ -392,6 +392,8 @@ AI_Smart:
 	dbw EFFECT_ROOST,            AI_Smart_Roost
 	dbw EFFECT_FAKE_OUT,         AI_Smart_Fake_Out
 	dbw EFFECT_ACROBATICS,       AI_Smart_Acrobatics
+	dbw EFFECT_DEFENSE_CURL,     AI_Smart_DefenseCurl
+	dbw EFFECT_U_TURN,           AI_Smart_BatonPass
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -2154,6 +2156,21 @@ AI_Smart_FuryCutter:
 
 	; fallthrough
 
+AI_Smart_DefenseCurl:
+; Encourage this move if the enemy has Rollout
+	ld b, EFFECT_ROLLOUT
+	call AIHasMoveEffect
+	ret nc
+
+; But not if already curled
+	ld a, [wEnemySubStatus2]
+	bit SUBSTATUS_CURLED, a
+	ret nz
+
+	dec [hl]
+	dec [hl]
+	ret
+
 AI_Smart_Rollout:
 ; Rollout, Fury Cutter
 
@@ -2170,6 +2187,16 @@ AI_Smart_Rollout:
 	bit PAR, a
 	jr nz, .asm_39020
 
+; If the mon has Defense Curl, and hasn't used it yet,
+; don't encourage Rollout
+	ld b, EFFECT_DEFENSE_CURL
+	call AIHasMoveEffect
+	jr nc, .no_defense_curl
+	ld a, [wEnemySubStatus2]
+	bit SUBSTATUS_CURLED, a
+	ret z
+
+.no_defense_curl
 ; 80% chance to discourage this move if the enemy's HP is below 25%,
 ; or if accuracy or evasion modifiers favour the player.
 	call AICheckEnemyQuarterHP

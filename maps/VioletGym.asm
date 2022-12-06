@@ -240,6 +240,11 @@ VioletGymRivalLeavesMovement2:
 	step DOWN
 	step_end
 
+WalkerLossText:
+	text "We can't fall just"
+	line "yet!"
+	done
+
 WalkerIntroText:
 	text "I am Walker, "
 	line "Leader of the"
@@ -412,11 +417,6 @@ WalkerReadyForARematchText:
 	line "looking forward to"
 	cont "soaring the skies"
 	cont "against you again!"
-	done
-
-WalkerLossText:
-	text "We can't fall just"
-	line "yet!"
 	done
 
 BeatenWalkerAgainText:

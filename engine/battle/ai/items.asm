@@ -51,7 +51,7 @@ SwitchOften:
 	cp $10
 	jr nz, .not_10
 	call Random
-	cp 50 percent + 1
+	cp 70 percent + 1
 	jr c, .switch
 	jp DontSwitch
 .not_10
@@ -59,14 +59,14 @@ SwitchOften:
 	cp $20
 	jr nz, .not_20
 	call Random
-	cp 79 percent - 1
+	cp 99 percent - 1
 	jr c, .switch
 	jp DontSwitch
 .not_20
 
 	; $30
 	call Random
-	cp 4 percent
+	cp 24 percent
 	jp c, DontSwitch
 
 .switch
@@ -86,7 +86,7 @@ SwitchRarely:
 	cp $10
 	jr nz, .not_10
 	call Random
-	cp 8 percent
+	cp 18 percent
 	jr c, .switch
 	jp DontSwitch
 .not_10
@@ -94,14 +94,14 @@ SwitchRarely:
 	cp $20
 	jr nz, .not_20
 	call Random
-	cp 12 percent
+	cp 32 percent
 	jr c, .switch
 	jp DontSwitch
 .not_20
 
 	; $30
 	call Random
-	cp 79 percent - 1
+	cp 99 percent - 1
 	jp c, DontSwitch
 
 .switch
@@ -120,7 +120,7 @@ SwitchSometimes:
 	cp $10
 	jr nz, .not_10
 	call Random
-	cp 20 percent - 1
+	cp 40 percent - 1
 	jr c, .switch
 	jp DontSwitch
 .not_10
@@ -128,14 +128,14 @@ SwitchSometimes:
 	cp $20
 	jr nz, .not_20
 	call Random
-	cp 50 percent + 1
+	cp 70 percent + 1
 	jr c, .switch
 	jp DontSwitch
 .not_20
 
 	; $30
 	call Random
-	cp 20 percent - 1
+	cp 40 percent - 1
 	jp c, DontSwitch
 
 .switch
@@ -752,31 +752,6 @@ EnemyUsedDireHit:
 	set SUBSTATUS_FOCUS_ENERGY, [hl]
 	ld a, DIRE_HIT
 	jp PrintText_UsedItemOn_AND_AIUpdateHUD
-
-Function3851e: ; This appears to be unused
-	ldh [hDivisor], a
-	ld hl, wEnemyMonMaxHP
-	ld a, [hli]
-	ldh [hDividend], a
-	ld a, [hl]
-	ldh [hDividend + 1], a
-	ld b, 2
-	call Divide
-	ldh a, [hQuotient + 3]
-	ld c, a
-	ldh a, [hQuotient + 2]
-	ld b, a
-	ld hl, wEnemyMonHP + 1
-	ld a, [hld]
-	ld e, a
-	ld a, [hl]
-	ld d, a
-	ld a, d
-	sub b
-	ret nz
-	ld a, e
-	sub c
-	ret
 
 EnemyUsedXAttack:
 	ld b, ATTACK

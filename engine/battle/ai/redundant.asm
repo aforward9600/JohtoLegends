@@ -47,6 +47,10 @@ AI_Redundant:
 	dbw EFFECT_AQUA_RING,    .AquaRing
 	dbw EFFECT_ROOST,        .Roost
 	dbw EFFECT_FAKE_OUT,     .FakeOut
+	dbw EFFECT_LEECH_HIT,    .LeechHit
+	dbw EFFECT_SLEEP,        .Sleep
+	dbw EFFECT_POISON,       .Poison
+	dbw EFFECT_PARALYZE,     .Paralyze
 	db -1
 
 .LightScreen:
@@ -65,6 +69,11 @@ AI_Redundant:
 	ret
 
 .Confuse:
+	; not "redundant" per se,
+	; but don't use when player is substituted
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	ret nz
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_CONFUSED, a
 	ret nz
@@ -106,8 +115,8 @@ AI_Redundant:
 .SleepTalk:
 	ld a, [wEnemyMonStatus]
 	and SLP
-	jr z, .Redundant
-	jr .NotRedundant
+	jp z, .Redundant
+	jp .NotRedundant
 
 .MeanLook:
 	ld a, [wEnemySubStatus5]
@@ -136,6 +145,11 @@ AI_Redundant:
 	jr .NotRedundant
 
 .Attract:
+	; not "redundant" per se,
+	; but don't use when player is substituted
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	ret nz
 	farcall CheckOppositeGender
 	jr c, .Redundant
 	ld a, [wPlayerSubStatus1]
@@ -166,6 +180,11 @@ AI_Redundant:
 	jr .NotRedundant
 
 .Swagger:
+	; not "redundant" per se,
+	; but don't use when player is substituted
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	ret nz
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_CONFUSED, a
 	ret
@@ -184,6 +203,16 @@ AI_Redundant:
 .AquaRing:
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_AQUA_RING, a
+	ret
+
+.Sleep:
+.Poison:
+.Paralyze:
+.LeechHit:
+	; not "redundant" per se,
+	; but don't use when player is substituted
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
 	ret
 
 .Heal:

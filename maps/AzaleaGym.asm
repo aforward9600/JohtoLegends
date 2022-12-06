@@ -447,7 +447,7 @@ KurtText_Rematch:
 KurtText_Respect:
 	text "Huh?"
 
-	para "only 1 left?"
+	para "Only 1 left?"
 
 	para "What nonsense is"
 	line "this?"
