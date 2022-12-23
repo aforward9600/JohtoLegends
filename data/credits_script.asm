@@ -97,6 +97,7 @@ CreditsScript:
 	db          LAKEOFDANCE, 1
 	db          FERROPEXOLA, 2
 	db             FROGTOES, 3
+	db       INTERNETGOBLIN, 4
 
 	db CREDITS_WAIT, 12
 

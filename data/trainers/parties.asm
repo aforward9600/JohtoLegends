@@ -15,30 +15,30 @@ SECTION "Enemy Trainer Parties 1", ROMX
 WalkerGroup:
 	next_list_item ; Walker (1)
 	db "Walker@", TRAINERTYPE_ITEM_MOVES
-	db 45
+	db 49
 	dw SKARMORY
 	db NO_ITEM
-	dw AERIAL_ACE, SPIKES, STEEL_WING, ROOST
-	db 45
+	dw DRILL_PECK, SPIKES, STEEL_WING, ROOST
+	db 49
 	dw AERODACTYL
 	db NO_ITEM
 	dw EARTHQUAKE, ROCK_SLIDE, ROOST, AERIAL_ACE
-	db 45
+	db 50
 	dw MANTINE
 	db NO_ITEM
-	dw RAIN_DANCE, AQUA_RING, AIR_SLASH, SURF
-	db 46
+	dw RAIN_DANCE, AQUA_RING, AIR_SLASH, HYDRO_PUMP
+	db 50
 	dw XATU
 	db NO_ITEM
-	dw AIR_SLASH, AMNESIA, ROOST, PSYCHIC_M
-	db 46
+	dw AIR_SLASH, MOONBLAST, ROOST, PSYCHIC_M
+	db 49
 	dw HONCHKROW
 	db NO_ITEM
-	dw FAINT_ATTACK, ROOST, WING_ATTACK, AGILITY
-	db 47
+	dw FAINT_ATTACK, ROOST, DRILL_PECK, AGILITY
+	db 51
 	dw PIDGEOT
 	db SITRUS_BERRY
-	dw RAZOR_WIND, FEATHERDANCE, ROOST, AIR_CUTTER
+	dw HYPER_VOICE, FEATHERDANCE, ROOST, AIR_CUTTER
 	db -1 ; end
 
 	next_list_item ; Walker (2)
@@ -74,78 +74,78 @@ WalkerGroup:
 MiltonGroup:
 	next_list_item ; Milton (1)
 	db "Milton@", TRAINERTYPE_ITEM_MOVES
-	db 33
+	db 32
 	dw MILTANK
 	db NO_ITEM
-	dw MILK_DRINK, SWORDS_DANCE, BODY_SLAM, ROLLOUT
-	db 33
+	dw MILK_DRINK, SWORDS_DANCE, BODY_SLAM, ZEN_HEADBUTT
+	db 32
 	dw TAUROS
 	db NO_ITEM
 	dw SWORDS_DANCE, REST, HORN_ATTACK, SCARY_FACE
-	db 34
+	db 33
 	dw URSARING
 	db NO_ITEM
-	dw SWORDS_DANCE, SLASH, SLACK_OFF, SHADOW_CLAW
-	db 34
+	dw PLAY_ROUGH, SLASH, SLACK_OFF, SHADOW_CLAW
+	db 33
 	dw GIRAFARIG
 	db NO_ITEM
 	dw PSYBEAM, SWORDS_DANCE, DOUBLE_HIT_M, STOMP
-	db 35
+	db 34
 	dw AMBIPOM
 	db SITRUS_BERRY
-	dw SWORDS_DANCE, DOUBLE_HIT_M, BATON_PASS, AGILITY
+	dw SWORDS_DANCE, DOUBLE_HIT_M, ACROBATICS, PURSUIT
 	db -1 ; end
 
 	next_list_item ; Milton (2)
 	db "Milton@", TRAINERTYPE_ITEM_MOVES
-	db 38
+	db 42
 	dw MILTANK
 	db NO_ITEM
-	dw MILK_DRINK, SWORDS_DANCE, BODY_SLAM, ROLLOUT
-	db 38
+	dw MILK_DRINK, SWORDS_DANCE, BODY_SLAM, ZEN_HEADBUTT
+	db 42
 	dw TAUROS
 	db NO_ITEM
-	dw SWORDS_DANCE, REST, HORN_ATTACK, SCARY_FACE
-	db 39
+	dw SWORDS_DANCE, REST, TAKE_DOWN, ZEN_HEADBUTT
+	db 43
 	dw URSARING
 	db NO_ITEM
-	dw SWORDS_DANCE, SLASH, SLACK_OFF, SHADOW_CLAW
-	db 39
+	dw PLAY_ROUGH, SLASH, SLACK_OFF, SHADOW_CLAW
+	db 43
 	dw GIRAFARIG
 	db NO_ITEM
-	dw PSYBEAM, SWORDS_DANCE, DOUBLE_HIT_M, STOMP
-	db 40
+	dw ZEN_HEADBUTT, SWORDS_DANCE, BATON_PASS, STOMP
+	db 44
 	dw AMBIPOM
 	db SITRUS_BERRY
-	dw SWORDS_DANCE, FAINT_ATTACK, BATON_PASS, AGILITY
+	dw SWORDS_DANCE, FAINT_ATTACK, ACROBATICS, DOUBLE_EDGE
 	db -1 ; end
 
 	next_list_item ; Milton (3)
 	db "Milton@", TRAINERTYPE_ITEM_MOVES
-	db 45
+	db 48
 	dw MILTANK
 	db NO_ITEM
-	dw MILK_DRINK, SWORDS_DANCE, BODY_SLAM, ROLLOUT
-	db 45
+	dw MILK_DRINK, SWORDS_DANCE, BODY_SLAM, ZEN_HEADBUTT
+	db 48
 	dw TAUROS
 	db NO_ITEM
-	dw SWORDS_DANCE, REST, HORN_ATTACK, SCARY_FACE
-	db 45
+	dw SWORDS_DANCE, SWAGGER, TAKE_DOWN, ZEN_HEADBUTT
+	db 48
 	dw PERSIAN
 	db NO_ITEM
 	dw SLASH, POWER_GEM, NASTY_PLOT, SWIFT
-	db 46
+	db 49
 	dw URSARING
 	db NO_ITEM
-	dw SWORDS_DANCE, SLASH, SLACK_OFF, SHADOW_CLAW
-	db 46
+	dw PLAY_ROUGH, SLASH, REST, SLEEP_TALK
+	db 49
 	dw GIRAFARIG
 	db NO_ITEM
-	dw PSYBEAM, SWORDS_DANCE, DOUBLE_HIT_M, STOMP
-	db 47
+	dw PSYCHIC_M, NASTY_PLOT, HYPER_BEAM, MOONBLAST
+	db 50
 	dw AMBIPOM
 	db SITRUS_BERRY
-	dw SWORDS_DANCE, FAINT_ATTACK, BATON_PASS, AGILITY
+	dw SWORDS_DANCE, FAINT_ATTACK, ACROBATICS, DOUBLE_EDGE
 	db -1 ; end
 
 	next_list_item ; Milton (4)
@@ -181,54 +181,54 @@ MiltonGroup:
 KurtGroup:
 	next_list_item ; KURT (1)
 	db "Kurt@", TRAINERTYPE_ITEM_MOVES
-	db 38
+	db 42
 	dw SHUCKLE
 	db NO_ITEM
 	dw SHELL_SMASH, SPIKES, ROCK_SLIDE, X_SCISSOR
-	db 38
+	db 42
 	dw PINSIR
 	db NO_ITEM
-	dw X_SCISSOR, CIRCLE_THROW, SWORDS_DANCE, BRICK_BREAK
-	db 39
+	dw PINCIRFLURRY, X_SCISSOR, SWORDS_DANCE, BRICK_BREAK
+	db 43
 	dw HERACROSS
 	db NO_ITEM
-	dw MEGAHORN, ROCK_SLIDE, BRICK_BREAK, AERIAL_ACE
-	db 39
+	dw MEGAHORN, ROCK_SLIDE, CLOSE_COMBAT, AERIAL_ACE
+	db 43
 	dw YANMEGA
 	db NO_ITEM
-	dw HYPNOSIS, ANCIENTPOWER, HYPER_VOICE, BUG_BUZZ
-	db 40
+	dw HYPNOSIS, POWER_GEM, HYPER_VOICE, BUG_BUZZ
+	db 44
 	dw SCIZOR
 	db SITRUS_BERRY
-	dw METAL_CLAW, IRON_DEFENSE, X_SCISSOR, AGILITY
+	dw METAL_CLAW, NIGHT_SLASH, X_SCISSOR, AGILITY
 	db -1 ; end
 
 	next_list_item ; KURT (2)
 	db "Kurt@", TRAINERTYPE_ITEM_MOVES
-	db 45
+	db 48
 	dw SHUCKLE
 	db NO_ITEM
 	dw SHELL_SMASH, SPIKES, ROCK_SLIDE, X_SCISSOR
-	db 45
+	db 48
 	dw PINSIR
 	db NO_ITEM
-	dw PINCIRFLURRY, CIRCLE_THROW, SWORDS_DANCE, BRICK_BREAK
-	db 45
+	dw PINCIRFLURRY, SUPERPOWER, SWORDS_DANCE, EARTHQUAKE
+	db 48
 	dw BEEDRILL
 	db NO_ITEM
-	dw GUNK_SHOT, LEECH_LIFE, AGILITY, SWORDS_DANCE
-	db 46
+	dw GUNK_SHOT, LEECH_LIFE, U_TURN, SWORDS_DANCE
+	db 49
 	dw HERACROSS
 	db NO_ITEM
 	dw MEGAHORN, ROCK_SLIDE, CLOSE_COMBAT, AERIAL_ACE
-	db 46
+	db 49
 	dw YANMEGA
 	db NO_ITEM
 	dw NASTY_PLOT, POWER_GEM, HYPER_VOICE, BUG_BUZZ
-	db 47
+	db 50
 	dw SCIZOR
 	db SITRUS_BERRY
-	dw IRON_HEAD, IRON_DEFENSE, X_SCISSOR, AGILITY
+	dw IRON_HEAD, NIGHT_SLASH, X_SCISSOR, AGILITY
 	db -1 ; end
 
 	db "Kurt@", TRAINERTYPE_ITEM_MOVES
@@ -932,18 +932,18 @@ LtSurgeGroup:
 ScientistGroup:
 	next_list_item ; SCIENTIST (1) Tin Tower 3F
 	db "Mac@", TRAINERTYPE_MOVES
-	db 39
+	db 44
 	dw DITTO
 	dw TRANSFORM, NO_MOVE, NO_MOVE, NO_MOVE
-	db 38
+	db 44
 	dw MAGNETON
 	dw MIRROR_SHOT, VOLT_SWITCH, METAL_SOUND, TRI_ATTACK
-	db 40
+	db 44
 	dw RAICHU
-	dw THUNDERBOLT, BRICK_BREAK, THUNDERPUNCH, AGILITY
-	db 41
+	dw THUNDERBOLT, BRICK_BREAK, THUNDERPUNCH, SURF
+	db 44
 	dw ELECTABUZZ
-	dw LOW_KICK, THUNDERBOLT, LIGHT_SCREEN, QUICK_ATTACK
+	dw LOW_KICK, THUNDERBOLT, LIGHT_SCREEN, THUNDER_WAVE
 	db -1 ; end
 
 	next_list_item ; SCIENTIST (2)
@@ -963,13 +963,16 @@ ScientistGroup:
 	db -1 ; end
 
 	next_list_item ; SCIENTIST (4) Radio Tower 3F
-	db "Mac@", TRAINERTYPE_NORMAL
-	db 31
+	db "Mac@", TRAINERTYPE_MOVES
+	db 33
 	dw MAGNETON
-	db 30
+	dw TRI_ATTACK, DISCHARGE, MIRROR_SHOT, METAL_SOUND
+	db 34
 	dw RAICHU
-	db 30
+	dw THUNDERBOLT, BRICK_BREAK, THUNDERPUNCH, SURF
+	db 34
 	dw ELECTABUZZ
+	dw DISCHARGE, LIGHT_SCREEN, THUNDER_WAVE, LOW_KICK
 	db -1 ; end
 
 	next_list_item ; SCIENTIST (5)
@@ -1137,7 +1140,7 @@ SchoolboyGroup:
 	dw PONYTA
 	db -1 ; end
 
-	next_list_item ; SCHOOLBOY (3)
+	next_list_item ; SCHOOLBOY (3) Route 34
 	db "Gregory@", TRAINERTYPE_NORMAL
 	db 31
 	dw CACNEA
@@ -1353,23 +1356,23 @@ SchoolboyGroup:
 BirdKeeperGroup:
 	next_list_item ; BIRD_KEEPER (1)
 	db "Rodney@", TRAINERTYPE_NORMAL
-	db 45
+	db 47
 	dw PIDGEOT
-	db 45
+	db 47
 	dw DODRIO
-	db 46
+	db 48
 	dw FARFETCH_D
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (2)
 	db "Abel@", TRAINERTYPE_MOVES
-	db 45
+	db 47
 	dw FEAROW
 	dw DRILL_PECK, DRILL_RUN, PAYBACK, ROOST
-	db 46
+	db 48
 	dw AERODACTYL
 	dw ROCK_SLIDE, FLY, CRUNCH, TAKE_DOWN
-	db 46
+	db 48
 	dw GLISCOR
 	dw EARTHQUAKE, U_TURN, BRICK_BREAK, ACROBATICS
 	db -1 ; end
@@ -1410,11 +1413,11 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (6) Violet Gym
 	db "Lucas@", TRAINERTYPE_NORMAL
-	db 45
+	db 47
 	dw XATU
-	db 45
+	db 47
 	dw SKARMORY
-	db 46
+	db 48
 	dw NOCTOWL
 	db -1 ; end
 
@@ -1468,13 +1471,13 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (13) Route 32
 	db "Pedro@", TRAINERTYPE_NORMAL
-	db 44
+	db 47
 	dw DODRIO
-	db 44
+	db 47
 	dw HONCHKROW
-	db 44
+	db 47
 	dw XATU
-	db 45
+	db 48
 	dw FEAROW
 	db -1 ; end
 
@@ -1725,15 +1728,15 @@ CooltrainerMGroup:
 	dw CROCONAW
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERM (3)
+	next_list_item ; COOLTRAINERM (3) Union Cave B2F
 	db "Adrien@", TRAINERTYPE_NORMAL
-	db 44
+	db 46
 	dw SEAKING
-	db 44
+	db 46
 	dw LICKILICKY
-	db 44
+	db 46
 	dw AGGRON
-	db 45
+	db 47
 	dw TYPHLOSION
 	db -1 ; end
 
@@ -1782,16 +1785,16 @@ CooltrainerMGroup:
 
 	next_list_item ; COOLTRAINERM (8) Route 32
 	db "Robert@", TRAINERTYPE_MOVES
-	db 43
+	db 47
 	dw MUK
 	dw POISON_JAB, SCREECH, BELCH, KNOCK_OFF
-	db 45
+	db 47
 	dw DELIBIRD
 	dw HAIL, BLIZZARD, DRILL_PECK, PRESENT
-	db 44
+	db 47
 	dw BLASTOISE
-	dw FLASH_CANNON, SURF, IRON_DEFENSE, SKULL_BASH
-	db 44
+	dw FLASH_CANNON, SURF, IRON_DEFENSE, BLIZZARD
+	db 48
 	dw GOLEM
 	dw ROCK_SLIDE, EARTHQUAKE, ROCK_POLISH, ROCK_BLAST
 	db -1 ; end
@@ -1943,28 +1946,28 @@ CooltrainerFGroup:
 
 	next_list_item ; COOLTRAINERF (3)
 	db "Emiko@", TRAINERTYPE_NORMAL
-	db 36
-	dw SEADRA
-	db 36
+	db 42
+	dw KINGDRA
+	db 42
 	dw ROSELIA
-	db 36
-	dw GRANBULL
-	db 37
+	db 42
+	dw TOGETIC
+	db 43
 	dw STEELIX
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (4) Union Cave B2F
 	db "Hazel@", TRAINERTYPE_MOVES
-	db 44
+	db 46
 	dw MANECTRIC
 	dw VOLT_SWITCH, ROAR, THUNDERBOLT, SNARL
-	db 44
+	db 46
 	dw SMEARGLE
-	dw CRUNCH, MEAN_LOOK, BODY_SLAM, RECOVER
-	db 44
+	dw CRUNCH, SPORE, BODY_SLAM, RECOVER
+	db 46
 	dw MAGMORTAR
 	dw LAVA_PLUME, THUNDERBOLT, SLUDGE_BOMB, CONFUSE_RAY
-	db 45
+	db 47
 	dw FERALIGATR
 	dw CRUNCH, WATERFALL, ICE_PUNCH, SCARY_FACE
 	db -1 ; end
@@ -2122,13 +2125,13 @@ CooltrainerFGroup:
 
 	next_list_item ; COOLTRAINERF (21) Union Cave B2F
 	db "Ella@", TRAINERTYPE_NORMAL
-	db 44
+	db 46
 	dw MANTINE
-	db 44
+	db 46
 	dw WEAVILE
-	db 44
+	db 46
 	dw GIRAFARIG
-	db 45
+	db 47
 	dw MEGANIUM
 	db -1 ; end
 
@@ -2143,16 +2146,16 @@ BeautyGroup:
 
 	next_list_item ; BEAUTY (4) Union Cave 1F
 	db "Betty@", TRAINERTYPE_MOVES
-	db 43
+	db 46
 	dw FURRET
 	dw AGILITY, SUCKER_PUNCH, SLAM, DIZZY_PUNCH
-	db 43
+	db 46
 	dw BELLOSSOM
 	dw MOONBLAST, QUIVER_DANCE, GIGA_DRAIN, MOONLIGHT
-	db 44
+	db 47
 	dw NINETALES
 	dw SHADOW_BALL, FLAMETHROWER, WILL_O_WISP, NASTY_PLOT
-	db 44
+	db 47
 	dw GARDEVOIR
 	dw PSYCHIC_M, HYPNOSIS, DRAININGKISS, THUNDERBOLT
 	db -1 ; end
@@ -2266,9 +2269,9 @@ PokemaniacGroup:
 
 	next_list_item ; POKEMANIAC (2) SLOWPOKE WELL
 	db "Damien@", TRAINERTYPE_NORMAL
-	db 36
+	db 42
 	dw SLOWPOKE
-	db 37
+	db 43
 	dw SLOWBRO
 	db -1 ; end
 
@@ -2469,68 +2472,68 @@ GruntMGroup:
 
 	next_list_item ; ManM (11) Radio Tower 2F
 	db "Man@", TRAINERTYPE_NORMAL
-	db 29
+	db 33
 	dw WEEPINBELL
-	db 29
+	db 33
 	dw ARBOK
-	db 30
+	db 34
 	dw TENTACRUEL
 	db -1 ; end
 
 	next_list_item ; ManM (12) Radio Tower 1F
 	db "Man@", TRAINERTYPE_MOVES
-	db 31
+	db 35
 	dw MAGMAR
 	dw THUNDERPUNCH, FIRE_PUNCH, BULK_UP, SLUDGE
 	db -1 ; end
 
 	next_list_item ; ManM (13) Radio Tower 2F
 	db "Man@", TRAINERTYPE_NORMAL
-	db 29
+	db 33
 	dw RATICATE
-	db 29
+	db 33
 	dw GOLBAT
-	db 29
+	db 33
 	dw DUGTRIO
 	db -1 ; end
 
 	next_list_item ; ManM (14) Radio Tower 2F
 	db "Man@", TRAINERTYPE_NORMAL
-	db 28
+	db 33
 	dw QUAGSIRE
-	db 28
+	db 33
 	dw DUNSPARCE
-	db 28
+	db 33
 	dw GLIGAR
-	db 28
+	db 33
 	dw MANTINE
 	db -1 ; end
 
 	next_list_item ; ManM (15) Radio Tower 4F
 	db "Man@", TRAINERTYPE_MOVES
-	db 30
+	db 33
 	dw SUDOWOODO
 	dw ROCK_TOMB, SANDSTORM, IRON_HEAD, MIMIC
-	db 30
+	db 33
 	dw GRANBULL
 	dw PIXIE_PUNCH, FIRE_FANG, BULLDOZE, SWORDS_DANCE
-	db 30
+	db 33
 	dw QWILFISH
 	dw SURF, POISON_JAB, REST, SLEEP_TALK
-	db 30
+	db 33
 	dw DELIBIRD
 	dw ICY_WIND, AERIAL_ACE, PRESENT, ROOST
 	db -1 ; end
 
 	next_list_item ; ManM (16) Tin Tower 2F
 	db "Man@", TRAINERTYPE_NORMAL
-	db 39
-	dw LAIRON
-	db 39
+	db 43
+	dw AGGRON
+	db 43
 	dw DUNSPARCE
-	db 40
+	db 43
 	dw FEAROW
-	db 40
+	db 44
 	dw DUSCLOPS
 	db -1 ; end
 
@@ -2578,11 +2581,11 @@ GruntMGroup:
 
 	next_list_item ; ManM (22)
 	db "Man@", TRAINERTYPE_NORMAL
-	db 41
+	db 44
 	dw DUSKNOIR
-	db 41
+	db 44
 	dw AMBIPOM
-	db 42
+	db 45
 	dw CHARIZARD
 	db -1 ; end
 
@@ -2869,11 +2872,11 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (9) AZALEA GYM
 	db "Nat@", TRAINERTYPE_NORMAL
-	db 37
+	db 42
 	dw BUTTERFREE
-	db 37
+	db 42
 	dw PINSIR
-	db 38
+	db 43
 	dw YANMA
 	db -1 ; end
 
@@ -2903,13 +2906,13 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (12) AZALEA GYM
 	db "Marty@", TRAINERTYPE_NORMAL
-	db 36
+	db 42
 	dw VENOMOTH
-	db 36
+	db 42
 	dw FORRETRESS
-	db 36
+	db 42
 	dw SCYTHER
-	db 37
+	db 42
 	dw BEEDRILL
 	db -1 ; end
 
@@ -2974,9 +2977,9 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (19) AZALEA GYM
 	db "Pete@", TRAINERTYPE_NORMAL
-	db 38
+	db 43
 	dw PARASECT
-	db 38
+	db 43
 	dw SHUCKLE
 	db -1 ; end
 
@@ -2997,13 +3000,13 @@ FisherGroup:
 
 	next_list_item ; FISHER (2) Route 32
 	db "Ralph@", TRAINERTYPE_NORMAL
-	db 44
+	db 45
 	dw QWILFISH
-	db 44
+	db 46
 	dw SEAKING
-	db 45
+	db 46
 	dw OCTILLERY
-	db 45
+	db 47
 	dw POLITOED
 	db -1 ; end
 
@@ -3025,11 +3028,11 @@ FisherGroup:
 
 	next_list_item ; FISHER (5) Route 32
 	db "Marlin@", TRAINERTYPE_NORMAL
-	db 45
+	db 46
 	dw FERALIGATR
-	db 46
+	db 47
 	dw GYARADOS
-	db 46
+	db 48
 	dw LANTURN
 	db -1 ; end
 
@@ -3091,15 +3094,15 @@ FisherGroup:
 
 	next_list_item ; FISHER (12) Route 32
 	db "Jonah@", TRAINERTYPE_NORMAL
-	db 42
+	db 45
 	dw DEWGONG
-	db 42
+	db 45
 	dw QUAGSIRE
-	db 42
+	db 46
 	dw TENTACRUEL
-	db 42
+	db 46
 	dw KINGDRA
-	db 43
+	db 47
 	dw CURSOLA
 	db -1 ; end
 
@@ -3707,45 +3710,45 @@ SuperNerdGroup:
 	dw HOUNDOUR
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (2)
+	next_list_item ; SUPER_NERD (2) Ilex Forest
 	db "Irwin@", TRAINERTYPE_NORMAL
-	db 36
-	dw ROSELIA
-	db 36
+	db 41
+	dw TOXICROAK
+	db 41
 	dw SANDSLASH
-	db 37
-	dw MUK
+	db 42
+	dw PIDGEOT
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (3) SLOWPOKE WELL
 	db "Ned@", TRAINERTYPE_MOVES
-	db 36
+	db 41
 	dw SLOWPOKE
 	dw WATER_PULSE, ZEN_HEADBUTT, SLACK_OFF, HEADBUTT
-	db 37
+	db 43
 	dw SLOWKING
 	dw NASTY_PLOT, WATER_PULSE, ZEN_HEADBUTT, HIDDEN_POWER
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (4) Route 32
 	db "Jason@", TRAINERTYPE_NORMAL
-	db 44
+	db 47
 	dw WEEZING
-	db 44
+	db 47
 	dw ELECTRODE
-	db 44
+	db 48
 	dw FORRETRESS
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (5) Union Cave B1F
 	db "Richard@", TRAINERTYPE_NORMAL
-	db 44
+	db 46
 	dw DITTO
-	db 44
+	db 46
 	dw MUK
-	db 44
+	db 46
 	dw JOLTEON
-	db 45
+	db 47
 	dw LAPRAS
 	db -1 ; end
 
@@ -3987,11 +3990,11 @@ GuitaristGroup:
 HikerGroup:
 	next_list_item ; HIKER (1)
 	db "Anthony@", TRAINERTYPE_NORMAL
-	db 36
+	db 42
 	dw GOLEM
-	db 37
+	db 42
 	dw MACHAMP
-	db 37
+	db 43
 	dw DUNSPARCE
 	db -1 ; end
 
@@ -4015,15 +4018,15 @@ HikerGroup:
 	dw GRAVELER
 	db -1 ; end
 
-	next_list_item ; HIKER (4)
+	next_list_item ; HIKER (4) Union Cave B2F
 	db "Gunther@", TRAINERTYPE_NORMAL
-	db 44
+	db 46
 	dw DUGTRIO
-	db 44
+	db 46
 	dw DUNSPARCE
-	db 44
+	db 46
 	dw CROBAT
-	db 45
+	db 47
 	dw SANDSLASH
 	db -1 ; end
 
@@ -4153,13 +4156,13 @@ HikerGroup:
 
 	next_list_item ; HIKER (18)
 	db "Bubba@", TRAINERTYPE_NORMAL
-	db 43
+	db 46
 	dw STEELIX
-	db 43
+	db 46
 	dw MACHAMP
-	db 44
+	db 46
 	dw SUDOWOODO
-	db 44
+	db 47
 	dw GALLADE
 	db -1 ; end
 
@@ -4356,18 +4359,18 @@ FirebreatherGroup:
 	dw CHARMELEON
 	db -1 ; end
 
-	next_list_item ; FIREBREATHER (3)
+	next_list_item ; FIREBREATHER (3) Union Cave 1F
 	db "Blart@", TRAINERTYPE_MOVES
-	db 43
+	db 46
 	dw WEEZING
 	dw SLUDGE_BOMB, MUD_BOMB, EXPLOSION, HAZE
-	db 43
+	db 46
 	dw ARCANINE
 	dw EXTREMESPEED, OUTRAGE, HEAT_WAVE, CRUNCH
-	db 45
+	db 46
 	dw FLAREON
 	dw FLARE_BLITZ, DOUBLE_EDGE, LAVA_PLUME, SMOG
-	db 44
+	db 47
 	dw MAGCARGO
 	dw SHELL_SMASH, BODY_SLAM, LAVA_PLUME, FLASH_CANNON
 	db -1 ; end
@@ -4598,57 +4601,57 @@ ArcherGroup:
 
 	next_list_item ; ARCHER (2)
 	db "Archer@", TRAINERTYPE_MOVES
-	db 32
+	db 36
 	dw SLOWKING
 	dw HIDDEN_POWER, ZEN_HEADBUTT, WATER_PULSE, NASTY_PLOT
-	db 32
-	dw KOFFING
+	db 36
+	dw WEEZING
 	dw MUD_BOMB, SLUDGE, SELFDESTRUCT, HAZE
-	db 32
+	db 36
 	dw HOUNDOOM
 	dw ODOR_SLEUTH, FAINT_ATTACK, SNARL, FIRE_FANG
-	db 32
+	db 36
 	dw MACHOKE
 	dw BULK_UP, BRICK_BREAK, VITAL_THROW, KNOCK_OFF
-	db 33
+	db 37
 	dw NIDOKING
-	dw POISON_JAB, BULLDOZE, STOMP, LEER
+	dw POISON_JAB, BULLDOZE, THRASH, LEER
 	db -1 ; end
 
 	next_list_item ; ARCHER (3)
 	db "Archer@", TRAINERTYPE_MOVES
-	db 34
+	db 38
 	dw SLOWKING
 	dw HIDDEN_POWER, ZEN_HEADBUTT, WATER_PULSE, NASTY_PLOT
-	db 35
+	db 38
 	dw WEEZING
 	dw MUD_BOMB, SLUDGE, SELFDESTRUCT, HAZE
-	db 34
+	db 39
 	dw HOUNDOOM
 	dw ODOR_SLEUTH, FAINT_ATTACK, SNARL, FIRE_FANG
-	db 34
+	db 39
 	dw MACHOKE
 	dw BULK_UP, BRICK_BREAK, VITAL_THROW, KNOCK_OFF
-	db 36
+	db 40
 	dw NIDOKING
 	dw POISON_JAB, BULLDOZE, STOMP, LEER
 	db -1 ; end
 
 	next_list_item ; ARCHER (4)
 	db "Archer@", TRAINERTYPE_MOVES
-	db 43
+	db 45
 	dw SLOWKING
 	dw HIDDEN_POWER, PSYCHIC_M, SURF, NASTY_PLOT
-	db 43
+	db 45
 	dw WEEZING
 	dw MUD_BOMB, SLUDGE_BOMB, SELFDESTRUCT, HAZE
-	db 44
+	db 45
 	dw HOUNDOOM
 	dw ODOR_SLEUTH, FAINT_ATTACK, SNARL, FLAMETHROWER
-	db 44
+	db 45
 	dw MACHAMP
 	dw BULK_UP, BRICK_BREAK, VITAL_THROW, KNOCK_OFF
-	db 45
+	db 46
 	dw NIDOKING
 	dw POISON_JAB, EARTH_POWER, STOMP, MEGAHORN
 	db -1 ; end
@@ -4818,11 +4821,11 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (4) Route 32
 	db "Lacy@", TRAINERTYPE_NORMAL
-	db 44
+	db 47
 	dw BLISSEY
-	db 44
+	db 47
 	dw EXEGGUTOR
-	db 45
+	db 48
 	dw MR__MIME
 	db -1 ; end
 
@@ -5026,13 +5029,13 @@ CamperGroup:
 
 	next_list_item ; CAMPER (2) Route 32
 	db "William@", TRAINERTYPE_NORMAL
-	db 44
+	db 46
 	dw DONPHAN
-	db 44
+	db 46
 	dw URSARING
-	db 44
+	db 46
 	dw MANTINE
-	db 44
+	db 47
 	dw RAPIDASH
 	db -1 ; end
 
@@ -5247,57 +5250,57 @@ ArianaGroup:
 
 	next_list_item ; EXECUTIVEF (2)
 	db "Ariana@", TRAINERTYPE_MOVES
-	db 31
+	db 35
 	dw ARBOK
 	dw POISON_JAB, SCREECH, CRUNCH, GLARE
-	db 31
+	db 35
 	dw VILEPLUME
 	dw GROWTH, SLEEP_POWDER, GIGA_DRAIN, SLUDGE_BOMB
-	db 31
+	db 35
 	dw MURKROW
 	dw WING_ATTACK, PURSUIT, HAZE, NIGHT_SHADE
-	db 31
+	db 35
 	dw KADABRA
 	dw PSYBEAM, RECOVER, CALM_MIND, DAZZLINGLEAM
-	db 32
+	db 36
 	dw NIDOQUEEN
-	dw DOUBLE_KICK, POISON_JAB, BULLDOZE, TAIL_WHIP
+	dw BODY_SLAM, POISON_JAB, BULLDOZE, TAIL_WHIP
 	db -1 ; end
 
 	next_list_item ; EXECUTIVEF (3)
 	db "Ariana@", TRAINERTYPE_MOVES
-	db 33
+	db 37
 	dw ARBOK
 	dw POISON_JAB, SCREECH, CRUNCH, GLARE
-	db 33
+	db 37
 	dw VILEPLUME
 	dw GROWTH, SLEEP_POWDER, GIGA_DRAIN, SLUDGE_BOMB
-	db 33
+	db 38
 	dw HONCHKROW
 	dw WING_ATTACK, FAINT_ATTACK, HAZE, NIGHT_SHADE
-	db 34
+	db 38
 	dw KADABRA
 	dw PSYBEAM, RECOVER, CALM_MIND, DAZZLINGLEAM
-	db 35
+	db 39
 	dw NIDOQUEEN
 	dw BODY_SLAM, POISON_JAB, BULLDOZE, TAIL_WHIP
 	db -1 ; end
 
 	next_list_item ; EXECUTIVEF (4)
 	db "Ariana@", TRAINERTYPE_MOVES
-	db 42
+	db 45
 	dw ARBOK
 	dw POISON_JAB, SCREECH, CRUNCH, GLARE
-	db 42
+	db 45
 	dw VILEPLUME
 	dw GROWTH, SLEEP_POWDER, GIGA_DRAIN, SLUDGE_BOMB
-	db 43
+	db 45
 	dw HONCHKROW
 	dw AERIAL_ACE, FAINT_ATTACK, ROOST, NIGHT_SHADE
-	db 43
+	db 45
 	dw ALAKAZAM
 	dw PSYCHIC_M, ENERGY_BALL, DAZZLINGLEAM, CALM_MIND
-	db 44
+	db 46
 	dw NIDOQUEEN
 	dw SUPERPOWER, POISON_JAB, EARTH_POWER, BULK_UP
 	db -1 ; end
@@ -5329,43 +5332,43 @@ ArianaGroup:
 SageGroup:
 	next_list_item ; SAGE (1)
 	db "Chow@", TRAINERTYPE_MOVES
-	db 45
+	db 48
 	dw BELLSPROUT
 	dw POISON_JAB, RAZOR_LEAF, SWORDS_DANCE, KNOCK_OFF
-	db 45
+	db 48
 	dw WEEPINBELL
 	dw SLUDGE_BOMB, RAZOR_LEAF, KNOCK_OFF, SLEEP_POWDER
-	db 45
+	db 48
 	dw VICTREEBEL
 	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
 	db -1 ; end
 
 	next_list_item ; SAGE (2)
 	db "Nico@", TRAINERTYPE_MOVES
-	db 45
+	db 48
 	dw BELLSPROUT
 	dw POISON_JAB, RAZOR_LEAF, SWORDS_DANCE, KNOCK_OFF
-	db 45
+	db 48
 	dw WEEPINBELL
 	dw SLUDGE_BOMB, RAZOR_LEAF, KNOCK_OFF, SLEEP_POWDER
-	db 45
+	db 48
 	dw VICTREEBEL
 	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
 	db -1 ; end
 
 	next_list_item ; SAGE (3)
 	db "Jin@", TRAINERTYPE_MOVES
-	db 45
+	db 49
 	dw VICTREEBEL
 	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
 	db -1 ; end
 
 	next_list_item ; SAGE (4)
 	db "Troy@", TRAINERTYPE_MOVES
-	db 45
+	db 48
 	dw VICTREEBEL
 	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
-	db 46
+	db 49
 	dw NOCTOWL
 	dw SHADOW_BALL, ROOST, AIR_SLASH, REFLECT
 	db -1 ; end
@@ -5392,58 +5395,58 @@ SageGroup:
 
 	next_list_item ; SAGE (7)
 	db "Edmond@", TRAINERTYPE_MOVES
-	db 45
+	db 48
 	dw BELLSPROUT
 	dw POISON_JAB, RAZOR_LEAF, SWORDS_DANCE, KNOCK_OFF
-	db 45
+	db 48
 	dw WEEPINBELL
 	dw SLUDGE_BOMB, RAZOR_LEAF, KNOCK_OFF, SLEEP_POWDER
-	db 45
+	db 48
 	dw VICTREEBEL
 	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
 	db -1 ; end
 
 	next_list_item ; SAGE (8)
 	db "Neal@", TRAINERTYPE_MOVES
-	db 45
+	db 49
 	dw VICTREEBEL
 	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
 	db -1 ; end
 
 	next_list_item ; SAGE (9)
 	db "Li@", TRAINERTYPE_MOVES
-	db 45
+	db 49
 	dw VICTREEBEL
 	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
-	db 46
+	db 49
 	dw VICTREEBEL
 	dw LEAF_BLADE, POWER_WHIP, POISON_JAB, SWORDS_DANCE
-	db 47
+	db 49
 	dw NOCTOWL
 	dw SHADOW_BALL, ROOST, AIR_SLASH, REFLECT
 	db -1 ; end
 
 	next_list_item ; SAGE (10)
 	db "Gaku@", TRAINERTYPE_NORMAL
-	db 35
+	db 41
 	dw NOCTOWL
-	db 35
+	db 42
 	dw FLAREON
 	db -1 ; end
 
 	next_list_item ; SAGE (11)
 	db "Masa@", TRAINERTYPE_NORMAL
-	db 35
+	db 41
 	dw NOCTOWL
-	db 35
+	db 42
 	dw JOLTEON
 	db -1 ; end
 
 	next_list_item ; SAGE (12)
 	db "Koji@", TRAINERTYPE_NORMAL
-	db 35
+	db 41
 	dw NOCTOWL
-	db 35
+	db 42
 	dw VAPOREON
 	db -1 ; end
 
@@ -5542,16 +5545,16 @@ PokefanMGroup:
 
 	next_list_item ; POKEFANM (3)
 	db "Roberto@", TRAINERTYPE_ITEM
-	db 44
+	db 46
 	dw QUAGSIRE
 	db SITRUS_BERRY
-	db 44
+	db 46
 	dw TANGROWTH
 	db SITRUS_BERRY
-	db 44
+	db 46
 	dw RAICHU
 	db SITRUS_BERRY
-	db 45
+	db 47
 	dw GRANBULL
 	db SITRUS_BERRY
 	db -1 ; end
@@ -5715,11 +5718,11 @@ KimonoGirlGroup:
 	end_list_items
 
 TwinsGroup:
-	next_list_item ; TWINS (1)
+	next_list_item ; TWINS (1) Azalea Gym
 	db "Sami & Sam@", TRAINERTYPE_NORMAL
-	db 38
+	db 43
 	dw ARIADOS
-	db 38
+	db 43
 	dw LEDIAN
 	db -1 ; end
 
@@ -5745,9 +5748,9 @@ TwinsGroup:
 
 	next_list_item ; TWINS (4)
 	db "Sami & Sam@", TRAINERTYPE_NORMAL
-	db 38
+	db 43
 	dw LEDIAN
-	db 38
+	db 43
 	dw ARIADOS
 	db -1 ; end
 
@@ -5962,81 +5965,84 @@ GruntFGroup:
 	db -1 ; end
 
 	next_list_item ; GruntF (6) Radio Tower 2F
-	db "Lady@", TRAINERTYPE_NORMAL
-	db 29
+	db "Lady@", TRAINERTYPE_MOVES
+	db 34
 	dw JUMPLUFF
-	db 29
+	dw GIGA_DRAIN, ACROBATICS, LEECH_SEED, SLEEP_POWDER
+	db 34
 	dw CHANSEY
-	db 29
+	dw SOFTBOILED, CHARM, DAZZLINGLEAM, ECHOED_VOICE
+	db 34
 	dw CLEFABLE
+	dw MOONBLAST, COSMIC_POWER, MOONLIGHT, BODY_SLAM
 	db -1 ; end
 
 	next_list_item ; GruntF (7) Radio Tower 2F
 	db "Lady@", TRAINERTYPE_NORMAL
-	db 32
+	db 34
 	dw NINETALES
-	db 32
+	db 34
 	dw PERSIAN
 	db -1 ; end
 
 	next_list_item ; GruntF (8) Radio Tower 3F
 	db "Lady@", TRAINERTYPE_NORMAL
-	db 31
+	db 34
 	dw RAPIDASH
-	db 31
+	db 34
 	dw SEADRA
 	db -1 ; end
 
 	next_list_item ; GruntF (9) Radio Tower 4F
 	db "Lady@", TRAINERTYPE_NORMAL
-	db 32
+	db 33
 	dw KANGASKHAN
-	db 32
+	db 33
 	dw JYNX
-	db 32
+	db 34
 	dw LEAFEON
 	db -1 ; end
 
 	next_list_item ; GruntF (10) Tin Tower 2F
 	db "Lady@", TRAINERTYPE_NORMAL
-	db 39
+	db 43
 	dw PORYGON2
-	db 39
+	db 43
 	dw TYPHLOSION
-	db 40
+	db 43
 	dw GABITE
-	db 40
+	db 44
 	dw ESPEON
 	db -1 ; end
 
 	next_list_item ; GruntF (11) Tin Tower 3F
 	db "Lady@", TRAINERTYPE_MOVES
-	db 39
+	db 43
 	dw ROSERADE
 	dw PETAL_BLIZZ, SLUDGE_BOMB, SPIKES, GRASSWHISTLE
-	db 40
+	db 43
 	dw KABUTOPS
 	dw WATERFALL, ROCK_TOMB, SLASH, AQUA_JET
-	db 39
+	db 43
 	dw TOXICROAK
 	dw POISON_JAB, LOW_SWEEP, SUCKER_PUNCH, SWAGGER
-	db 40
+	db 44
 	dw GLACEON
 	dw ICY_WIND, SHADOW_BALL, HAIL, MIRROR_COAT
 	db -1 ; end
 
 	next_list_item ; GruntF (12) Tin Tower 5F
 	db "Lady@", TRAINERTYPE_MOVES
-	db 40
+	db 44
 	dw SCYTHER
 	dw U_TURN, FLY, PURSUIT, SWORDS_DANCE
-	db 40
+	db 44
 	dw RATICATE
 	dw SUPER_FANG, SCARY_FACE, CRUNCH, SUCKER_PUNCH
-	db 41
+	db 44
 	dw OMASTAR
 	dw SPIKE_CANNON, PROTECT, WATER_PULSE, ROCK_SLIDE
-	db 41
+	db 45
 	dw HITMONCHAN
 	dw BRICK_BREAK, THUNDERPUNCH, ICE_PUNCH, BULLET_PUNCH
 	db -1 ; end
@@ -6195,10 +6201,10 @@ BreederGroup:
 
 	next_list_item ; BREEDER (2)
 	db "Nina@", TRAINERTYPE_MOVES
-	db 31
+	db 32
 	dw RATICATE
 	dw SCREECH, REVERSAL, BITE, FURY_SWIPES
-	db 32
+	db 33
 	dw TEDDIURSA
 	dw CRUNCH, PLAY_ROUGH, CLOSE_COMBAT, SLACK_OFF
 	db -1 ; end
@@ -6208,7 +6214,7 @@ BreederGroup:
 	db 32
 	dw EEVEE
 	dw FLAIL, CHARM, LEER, TAKE_DOWN
-	db 31
+	db 33
 	dw AIPOM
 	dw SCREECH, FURY_SWIPES, FAINT_ATTACK, BOUNCE
 	db -1 ; end
@@ -6245,26 +6251,26 @@ HexManiacGroup:
 
 	next_list_item ; HEX_MANIAC (4) Ilex Forest
 	db "Maeve@", TRAINERTYPE_NORMAL
-	db 36
+	db 41
 	dw PERSIAN
-	db 36
+	db 41
 	dw UMBREON
-	db 37
+	db 42
 	dw DUSCLOPS
 	db -1 ; end
 
 	next_list_item ; HEX_MANIAC (5) Ghost House
 	db "Edalyn@", TRAINERTYPE_MOVES
-	db 45
+	db 47
 	dw NOCTOWL
 	dw AIR_SLASH, ROOST, SHADOW_BALL, HYPER_VOICE
-	db 45
+	db 47
 	dw GENGAR
 	dw SLUDGE_BOMB, DARK_PULSE, SHADOW_BALL, SUCKER_PUNCH
-	db 46
+	db 48
 	dw ARIADOS
 	dw X_SCISSOR, SUCKER_PUNCH, ZEN_HEADBUTT, AGILITY
-	db 45
+	db 47
 	dw HYPNO
 	dw SWAGGER, DREAM_EATER, HYPNOSIS, MOONBLAST
 	db -1 ; end
@@ -6309,7 +6315,7 @@ ChigusaGroup:
 	db 31
 	dw GALLADE
 	db SITRUS_BERRY
-	dw SWORDS_DANCE, SLASH, CONFUSION, BRICK_BREAK 
+	dw SWORDS_DANCE, LEAF_BLADE, CONFUSION, BRICK_BREAK 
 	db -1 ; end
 
 	end_list_items
@@ -6400,51 +6406,66 @@ PasserbyGroup:
 
 MiyamotoGroup:
 	next_list_item ; MIYAMOTO1
-	db "Miyamoto@", TRAINERTYPE_NORMAL
+	db "Miyamoto@", TRAINERTYPE_MOVES
 	db 22
 	dw YANMA
+	dw SUPERSONIC, DETECT, SIGNAL_BEAM, AERIAL_ACE
 	db 23
 	dw GOLBAT
+	dw AERIAL_ACE, CONFUSE_RAY, BITE, ASTONISH
 	db 23
 	dw MEOWTH
+	dw FAINT_ATTACK, SCREECH, FURY_SWIPES, BITE
 	db 24
 	dw HOUNDOOM
+	dw FLAME_BURST, BITE, SMOG, ROAR
 	db -1 ; end
 
 	next_list_item ; MIYAMOTO2
-	db "Miyamoto@", TRAINERTYPE_NORMAL
-	db 32
-	dw YANMA
-	db 32
+	db "Miyamoto@", TRAINERTYPE_MOVES
+	db 36
+	dw YANMEGA
+	dw ANCIENTPOWER, BUG_BUZZ, HYPER_VOICE, DETECT
+	db 36
 	dw GOLBAT
-	db 32
+	dw LEECH_LIFE, POISON_FANG, AERIAL_ACE, CONFUSE_RAY
+	db 37
 	dw PERSIAN
-	db 33
+	dw SLASH, HONE_CLAWS, FAINT_ATTACK, AERIAL_ACE
+	db 37
 	dw HOUNDOOM
-	db 34
+	dw FAINT_ATTACK, FLAME_BURST, SNARL, WILL_O_WISP
+	db 38
 	dw HONCHKROW
+	dw FAINT_ATTACK, AGILITY, AERIAL_ACE, PAYBACK
 	db -1 ; end
 
 	next_list_item ; MIYAMOTO3
-	db "Miyamoto@", TRAINERTYPE_MOVES
-	db 44
-	dw YANMEGA
-	dw ANCIENTPOWER, AIR_SLASH, SIGNAL_BEAM, HYPNOSIS
-	db 44
-	dw CROBAT
-	dw CROSS_POISON, LEECH_LIFE, AERIAL_ACE, CONFUSE_RAY
-	db 45
-	dw PERSIAN
-	dw SLASH, NASTY_PLOT, POWER_GEM, FAINT_ATTACK
-	db 45
-	dw HOUNDOOM
-	dw FLAMETHROWER, DARK_PULSE, WILL_O_WISP, CRUNCH
-	db 45
-	dw HONCHKROW
-	dw DRILL_PECK, FAINT_ATTACK, ROOST, DARK_PULSE
+	db "Miyamoto@", TRAINERTYPE_ITEM_MOVES
 	db 46
+	dw YANMEGA
+	db NO_ITEM
+	dw ANCIENTPOWER, AIR_SLASH, SIGNAL_BEAM, HYPNOSIS
+	db 46
+	dw CROBAT
+	db NO_ITEM
+	dw CROSS_POISON, LEECH_LIFE, AERIAL_ACE, CONFUSE_RAY
+	db 46
+	dw PERSIAN
+	db NO_ITEM
+	dw SLASH, NASTY_PLOT, POWER_GEM, FAINT_ATTACK
+	db 46
+	dw HOUNDOOM
+	db NO_ITEM
+	dw FLAMETHROWER, DARK_PULSE, WILL_O_WISP, CRUNCH
+	db 46
+	dw HONCHKROW
+	db NO_ITEM
+	dw DRILL_PECK, FAINT_ATTACK, ROOST, DARK_PULSE
+	db 47
 	dw LICKILICKY
-	dw BELLY_DRUM, REST, SLEEP_TALK, KNOCK_OFF
+	db CHESTO_BERRY
+	dw BELLY_DRUM, REST, BODY_SLAM, KNOCK_OFF
 	db -1 ; end
 
 	end_list_items
@@ -6452,13 +6473,13 @@ MiyamotoGroup:
 CynthiaGroup:
 	next_list_item ; CYNTHIA1
 	db "Cynthia@", TRAINERTYPE_MOVES
-	db 15
+	db 16
 	dw TOGETIC
 	dw FAIRY_WIND, SING, SWEET_KISS, METRONOME
-	db 15
+	db 16
 	dw ROSELIA
 	dw MEGA_DRAIN, STUN_SPORE, ACID, GROWTH
-	db 16
+	db 17
 	dw GIBLE
 	dw TAKE_DOWN, SANDSTORM, DRACO_FANG, SAND_ATTACK
 	db -1 ; end
@@ -6571,64 +6592,68 @@ EngineerGroup:
 MahoganyNinjaMGroup:
 	next_list_item ; MNINJA_M (1)
 	db "Ninja@", TRAINERTYPE_NORMAL
-	db 32
+	db 38
 	dw QWILFISH
-	db 32
+	db 38
 	dw GLIGAR
 	db -1 ; end
 
 	next_list_item ; MNINJA_M (2)
 	db "Ninja@", TRAINERTYPE_NORMAL
-	db 32
+	db 38
 	dw JOLTEON
-	db 32
+	db 38
 	dw BEEDRILL
 	db -1 ; end
 
 	next_list_item ; MNINJA_M (3)
 	db "Ninja@", TRAINERTYPE_NORMAL
-	db 33
+	db 37
 	dw MANECTRIC
-	db 33
-	dw DUSKULL
-	db 33
+	db 37
+	dw DUSCLOPS
+	db 38
 	dw MR__MIME
 	db -1 ; end
 
 	next_list_item ; MNINJA_M (4)
 	db "Ninja@", TRAINERTYPE_MOVES
-	db 34
+	db 37
 	dw ELECTABUZZ
 	dw CHARGE_BEAM, LIGHT_SCREEN, LOW_KICK, QUICK_ATTACK
-	db 34
+	db 37
 	dw SKARMORY
 	dw ROOST, WING_ATTACK, STEEL_WING, AGILITY
-	db 34
+	db 38
 	dw DEWGONG
 	dw WATER_PULSE, AURORA_BEAM, AQUA_RING, SHEER_COLD
 	db -1 ; end
 
 	next_list_item ; MNINJA_M (5)
-	db "Ninja@", TRAINERTYPE_NORMAL
-	db 34
+	db "Ninja@", TRAINERTYPE_MOVES
+	db 38
 	dw HYPNO
-	db 34
+	dw PSYBEAM, CALM_MIND, BRICK_BREAK, MEDITATE
+	db 38
 	dw URSARING
-	db 34
+	dw SHADOW_CLAW, SLASH, PLAY_ROUGH, CHARM
+	db 38
 	dw MACHAMP
-	db 35
+	dw STRENGTH, BRICK_BREAK, KNOCK_OFF, BULK_UP
+	db 39
 	dw ARCANINE
+	dw EXTREMESPEED, CRUNCH, FLAMETHROWER, STOMP
 	db -1 ; end
 
 	next_list_item ; MNINJA_M (6)
 	db "Ninja@", TRAINERTYPE_NORMAL
-	db 34
+	db 38
 	dw JUMPLUFF
-	db 34
+	db 38
 	dw HERACROSS
-	db 34
+	db 38
 	dw RATICATE
-	db 35
+	db 39
 	dw WEEZING
 	db -1 ; end
 
@@ -6637,146 +6662,152 @@ MahoganyNinjaMGroup:
 MahoganyNinjaFGroup:
 	next_list_item ; MNINJA_F (1)
 	db "Ninja@", TRAINERTYPE_NORMAL
-	db 32
+	db 38
 	dw YANMA
-	db 32
+	db 38
 	dw ELECTRODE
 	db -1
 
 	next_list_item ; MNINJA_F (2)
 	db "Ninja@", TRAINERTYPE_NORMAL
-	db 32
+	db 38
 	dw DUGTRIO
-	db 32
+	db 38
 	dw SEADRA
 	db -1
 
 	next_list_item ; MNINJA_F (3)
 	db "Ninja@", TRAINERTYPE_NORMAL
-	db 33
+	db 37
 	dw GLALIE
-	db 33
+	db 37
 	dw CACTURNE
-	db 33
+	db 38
 	dw GARDEVOIR
 	db -1
 
 	next_list_item ; MNINJA_F (4)
 	db "Ninja@", TRAINERTYPE_NORMAL
-	db 34
+	db 37
 	dw GIRAFARIG
-	db 34
+	db 37
 	dw AMPHAROS
-	db 34
+	db 38
 	dw DODRIO
 	db -1 ; end
 
 	next_list_item ; MNINJA_F (5)
-	db "Ninja@", TRAINERTYPE_NORMAL
-	db 34
+	db "Ninja@", TRAINERTYPE_MOVES
+	db 38
 	dw PORYGON2
-	db 34
+	dw FLASH_CANNON, THUNDERBOLT, CONVERSION, RECOVER
+	db 38
 	dw ARIADOS
-	db 34
+	dw SWORDS_DANCE, SUCKER_PUNCH, X_SCISSOR, SHADOW_SNEAK
+	db 38
 	dw GOLBAT
-	db 35
-	dw MISDREAVUS
+	dw LEECH_LIFE, AERIAL_ACE, POISON_FANG, CONFUSE_RAY
+	db 39
+	dw MISMAGIUS
+	dw SHADOW_BALL, DAZZLINGLEAM, CURSE, PAIN_SPLIT
 	db -1 ; end
 
 	next_list_item ; MNINJA_F (6)
-	db "Ninja@", TRAINERTYPE_NORMAL
-	db 34
+	db "Ninja@", TRAINERTYPE_MOVES
+	db 38
 	dw GRANBULL
-	db 34
+	dw PIXIE_PUNCH, ROAR, FIRE_FANG, EARTHQUAKE
+	db 38
 	dw NINETALES
-	db 34
-	dw DEWGONG
-	db 35
+	dw SHADOW_BALL, FLAMETHROWER, EXTRASENSORY, WILL_O_WISP
+	db 38
+	dw FROSLASS
+	dw OMINOUS_WIND, ICE_BEAM, CONFUSE_RAY, DRAININGKISS
+	db 39
 	dw SUDOWOODO
+	dw ROCK_SLIDE, FAINT_ATTACK, COUNTER, LOW_KICK
 	db -1 ; end
 
 	end_list_items
 
 DepressedDahliaGroup:
 	next_list_item ; RIVAL3 (6)
-	db "<RIVAL>@", TRAINERTYPE_NORMAL
-	db 36
+	db "<RIVAL>@", TRAINERTYPE_MOVES
+	db 39
 	dw POLIWRATH
 	dw WATERFALL, SUBMISSION, ICE_PUNCH, HYPNOSIS
-	db 36
+	db 39
 	dw PILOSWINE
 	dw ICE_FANG, BULLDOZE, FURY_ATTACK, TAKE_DOWN
-	db 37
+	db 40
 	dw SYLVEON
 	dw MOONBLAST, LIGHT_SCREEN, RECOVER, DAZZLINGLEAM
-	db 37
+	db 40
 	dw MAGNETON
 	dw FLASH_CANNON, DISCHARGE, METAL_SOUND, THUNDER_WAVE
-	db 38
-	dw PUPITAR
-	dw ROCK_SLIDE, THRASH, BULLDOZE, SCARY_FACE
+	db 41
+	dw TYRANITAR
+	dw ROCK_SLIDE, CLOSE_COMBAT, BULLDOZE, SCARY_FACE
 	db -1 ; end
 
 	next_list_item ; RIVAL3 (6)
-	db "<RIVAL>@", TRAINERTYPE_NORMAL
-	db 36
+	db "<RIVAL>@", TRAINERTYPE_MOVES
+	db 39
 	dw POLIWRATH
 	dw WATERFALL, SUBMISSION, ICE_PUNCH, HYPNOSIS
-	db 36
+	db 39
 	dw PILOSWINE
 	dw ICE_FANG, BULLDOZE, FURY_ATTACK, TAKE_DOWN
-	db 37
+	db 40
 	dw SYLVEON
 	dw MOONBLAST, LIGHT_SCREEN, RECOVER, DAZZLINGLEAM
-	db 37
+	db 40
 	dw MAGNETON
 	dw FLASH_CANNON, DISCHARGE, METAL_SOUND, THUNDER_WAVE
-	db 38
-	dw DRAGONAIR
-	dw DRAGON_TAIL, AGILITY, SLAM, THUNDER_WAVE
+	db 41
+	dw DRAGONITE
+	dw DRAGON_TAIL, HURRICANE, SLAM, THUNDER_WAVE
 	db -1 ; end
 
 	end_list_items
 
 DepressedDracoGroup:
 	next_list_item ; RIVAL4 (6)
-	db "<RIVAL>@", TRAINERTYPE_NORMAL
-	db 36
+	db "<RIVAL>@", TRAINERTYPE_MOVES
+	db 39
 	dw POLIWRATH
 	dw WATERFALL, SUBMISSION, ICE_PUNCH, HYPNOSIS
-	db 36
+	db 39
 	dw PILOSWINE
 	dw ICE_FANG, BULLDOZE, FURY_ATTACK, TAKE_DOWN
-	db 37
+	db 40
 	dw SYLVEON
 	dw MOONBLAST, LIGHT_SCREEN, RECOVER, DAZZLINGLEAM
-	db 37
+	db 40
 	dw MAGNETON
 	dw FLASH_CANNON, DISCHARGE, METAL_SOUND, THUNDER_WAVE
-	db 38
-	dw PUPITAR
-	dw ROCK_SLIDE, THRASH, BULLDOZE, SCARY_FACE
+	db 41
+	dw TYRANITAR
+	dw ROCK_SLIDE, CLOSE_COMBAT, BULLDOZE, SCARY_FACE
 	db -1 ; end
 
 	next_list_item ; RIVAL4 (6)
-	db "<RIVAL>@", TRAINERTYPE_NORMAL
-	db 35
-	dw POLIWRATH
-	db 36
+	db "<RIVAL>@", TRAINERTYPE_MOVES
+	db 38
 	dw POLIWRATH
 	dw WATERFALL, SUBMISSION, ICE_PUNCH, HYPNOSIS
-	db 36
+	db 39
 	dw PILOSWINE
 	dw ICE_FANG, BULLDOZE, FURY_ATTACK, TAKE_DOWN
-	db 37
+	db 40
 	dw SYLVEON
 	dw MOONBLAST, LIGHT_SCREEN, RECOVER, DAZZLINGLEAM
-	db 37
+	db 40
 	dw MAGNETON
 	dw FLASH_CANNON, DISCHARGE, METAL_SOUND, THUNDER_WAVE
-	db 38
-	dw DRAGONAIR
-	dw DRAGON_TAIL, AGILITY, SLAM, THUNDER_WAVE
+	db 41
+	dw DRAGONITE
+	dw DRAGON_TAIL, HURRICANE, SLAM, THUNDER_WAVE
 	db -1 ; end
 
 	end_list_items
@@ -6806,11 +6837,11 @@ EinGroup:
 DragonTamerFGroup:
 	next_list_item ; DRAGON_TAMER_F (1) Union Cave B1F
 	db "Dawna@", TRAINERTYPE_NORMAL
-	db 44
+	db 47
 	dw PUPITAR
-	db 44
+	db 47
 	dw AMPHAROS
-	db 45
+	db 48
 	dw TYRANITAR
 	db -1 ; end
 
@@ -6849,11 +6880,11 @@ DragonTamerFGroup:
 DragonTamerMGroup:
 	next_list_item ; DRAGON_TAMER_M (1) Union Cave B1F
 	db "Drew@", TRAINERTYPE_NORMAL
-	db 44
+	db 47
 	dw DRAGONAIR
-	db 44
+	db 47
 	dw GABITE
-	db 45
+	db 48
 	dw DRAGONITE
 	db -1 ; end
 
@@ -6921,19 +6952,19 @@ Cynthia2Group:
 PryceGroup2:
 	next_list_item ; PRYCE (3)
 	db "Pryce@", TRAINERTYPE_ITEM_MOVES
-	db 29
+	db 27
 	dw SMOOCHUM
 	db NO_ITEM
 	dw SING, POWDER_SNOW, ICY_WIND, PSYBEAM
-	db 30
+	db 28
 	dw SWINUB
 	db NO_ITEM
-	dw BULLDOZE, ICE_FANG, ENDURE, HAIL
-	db 30
+	dw BULLDOZE, ICE_FANG, TAKE_DOWN, HAIL
+	db 28
 	dw SNORUNT
 	db NO_ITEM
-	dw ICE_FANG, BITE, HAIL, ICY_WIND
-	db 31
+	dw HEADBUTT, BITE, HAIL, ICY_WIND
+	db 29
 	dw SNEASEL
 	db SITRUS_BERRY
 	dw METAL_CLAW, FAINT_ATTACK, AGILITY, ICE_SHARD
@@ -6941,46 +6972,46 @@ PryceGroup2:
 
 	next_list_item ; PRYCE (4)
 	db "Pryce@", TRAINERTYPE_ITEM_MOVES
-	db 27
-	dw SMOOCHUM
-	db NO_ITEM
-	dw MEAN_LOOK, NASTY_PLOT, ICY_WIND, PSYBEAM
-	db 28
-	dw SWINUB
-	db NO_ITEM
-	dw BULLDOZE, ICE_FANG, TAKE_DOWN, HAIL
-	db 28
-	dw SNORUNT
-	db NO_ITEM
-	dw HEADBUTT, BITE, HAIL, ICY_WIND
-	db 29
-	dw SNEASEL
-	db SITRUS_BERRY
-	dw METAL_CLAW, THIEF, AGILITY, ICE_SHARD
-	db -1 ; end
-
-	next_list_item ; PRYCE (5)
-	db "Pryce@", TRAINERTYPE_ITEM_MOVES
 	db 30
 	dw JYNX
 	db NO_ITEM
 	dw LOVELY_KISS, NASTY_PLOT, ICY_WIND, PSYBEAM
+	db 29
+	dw SWINUB
+	db NO_ITEM
+	dw BULLDOZE, ICE_FANG, TAKE_DOWN, HAIL
 	db 30
 	dw SNORUNT
 	db NO_ITEM
 	dw HEADBUTT, BITE, HAIL, ICY_WIND
 	db 31
+	dw SNEASEL
+	db SITRUS_BERRY
+	dw METAL_CLAW, FAINT_ATTACK, AGILITY, ICE_SHARD
+	db -1 ; end
+
+	next_list_item ; PRYCE (5)
+	db "Pryce@", TRAINERTYPE_ITEM_MOVES
+	db 32
+	dw JYNX
+	db NO_ITEM
+	dw LOVELY_KISS, NASTY_PLOT, ICY_WIND, PSYBEAM
+	db 33
+	dw PILOSWINE
+	db NO_ITEM
+	dw BULLDOZE, ICE_FANG, TAKE_DOWN, HAIL
+	db 32
+	dw GLALIE
+	db NO_ITEM
+	dw PROTECT, BITE, HAIL, AVALANCHE
+	db 33
 	dw GLACEON
 	db NO_ITEM
-	dw HAIL, BARRIER, ICY_WIND, SHADOW_BALL
-	db 31
-	dw SNEASEL
-	db NO_ITEM
-	dw METAL_CLAW, THIEF, AGILITY, ICE_SHARD
-	db 32
-	dw PILOSWINE
+	dw MIRROR_COAT, ICY_WIND, BARRIER, SHADOW_BALL
+	db 34
+	dw WEAVILE
 	db SITRUS_BERRY
-	dw BULLDOZE, ICE_FANG, FURY_ATTACK, HAIL
+	dw METAL_CLAW, NIGHT_SLASH, SCREECH, ICE_SHARD
 	db -1 ; end
 
 	end_list_items
@@ -6988,51 +7019,51 @@ PryceGroup2:
 PryceGroup3:
 	next_list_item ; PRYCE (6)
 	db "Pryce@", TRAINERTYPE_ITEM_MOVES
-	db 38
+	db 42
 	dw JYNX
 	db NO_ITEM
 	dw LOVELY_KISS, NASTY_PLOT, ICY_WIND, PSYBEAM
-	db 38
+	db 42
 	dw GLALIE
 	db NO_ITEM
-	dw PROTECT, BITE, AVALANCHE, ICE_BEAM
-	db 39
+	dw PROTECT, CRUNCH, AVALANCHE, ICE_BEAM
+	db 43
 	dw GLACEON
 	db NO_ITEM
-	dw HAIL, MIRROR_COAT, ICY_WIND, SHADOW_BALL
-	db 39
+	dw HAIL, MIRROR_COAT, ICE_BEAM, SHADOW_BALL
+	db 43
 	dw WEAVILE
 	db NO_ITEM
-	dw METAL_CLAW, THIEF, AGILITY, ICE_SHARD
-	db 40
-	dw PILOSWINE
+	dw METAL_CLAW, NIGHT_SLASH, SCREECH, ICE_SHARD
+	db 44
+	dw MAMOSWINE
 	db SITRUS_BERRY
 	dw BULLDOZE, ICE_FANG, TAKE_DOWN, HAIL
 	db -1 ; end
 
 	next_list_item ; PRYCE (7)
 	db "Pryce@", TRAINERTYPE_ITEM_MOVES
-	db 45
+	db 49
 	dw JYNX
 	db NO_ITEM
 	dw LOVELY_KISS, NASTY_PLOT, ICE_BEAM, PSYCHIC_M
-	db 45
+	db 48
 	dw GLALIE
 	db NO_ITEM
-	dw PROTECT, CRUNCH, AVALANCHE, ICE_BEAM
-	db 45
+	dw HAIL, CRUNCH, AVALANCHE, BLIZZARD
+	db 49
 	dw DEWGONG
 	db NO_ITEM
-	dw WATERFALL, SHEER_COLD, ICE_BEAM, AQUA_RING
-	db 46
+	dw AQUA_TAIL, SHEER_COLD, ICE_BEAM, AQUA_RING
+	db 48
 	dw GLACEON
 	db NO_ITEM
 	dw HAIL, MIRROR_COAT, BLIZZARD, SHADOW_BALL
-	db 46
+	db 48
 	dw WEAVILE
 	db NO_ITEM
-	dw METAL_CLAW, THIEF, AGILITY, ICE_SHARD
-	db 47
+	dw METAL_CLAW, NIGHT_SLASH, SCREECH, ICICLE_CRASH
+	db 50
 	dw MAMOSWINE
 	db SITRUS_BERRY
 	dw EARTHQUAKE, ICE_FANG, THRASH, HAIL
@@ -7073,26 +7104,6 @@ SECTION "Enemy Trainer Parties 3", ROMX
 EnokiGroup2:
 	next_list_item ; ENOKI (2)
 	db "Enoki@", TRAINERTYPE_ITEM_MOVES
-	db 29
-	dw DUSKULL
-	db NO_ITEM
-	dw HEX, WILL_O_WISP, SHADOW_SNEAK, FORESIGHT
-	db 30
-	dw CORSOLA
-	db NO_ITEM
-	dw ANCIENTPOWER, WILL_O_WISP, HEX, SPITE
-	db 30
-	dw NOCTOWL
-	db NO_ITEM
-	dw HEX, AERIAL_ACE, REFLECT, LIGHT_SCREEN
-	db 31
-	dw MISDREAVUS
-	db ORAN_BERRY
-	dw HEX, HYPNOSIS, MEAN_LOOK, DREAM_EATER
-	db -1 ; end
-
-	next_list_item ; ENOKI (3)
-	db "Enoki@", TRAINERTYPE_ITEM_MOVES
 	db 27
 	dw DUSKULL
 	db NO_ITEM
@@ -7111,28 +7122,48 @@ EnokiGroup2:
 	dw HEX, WILL_O_WISP, MEAN_LOOK, PSYBEAM
 	db -1 ; end
 
-	next_list_item ; ENOKI (4)
+	next_list_item ; ENOKI (3)
 	db "Enoki@", TRAINERTYPE_ITEM_MOVES
 	db 29
 	dw DUSKULL
 	db NO_ITEM
-	dw HEX, WILL_O_WISP, CONFUSE_RAY, CURSE
-	db 29
+	dw HEX, WILL_O_WISP, SHADOW_SNEAK, FORESIGHT
+	db 30
 	dw CORSOLA
 	db NO_ITEM
-	dw ANCIENTPOWER, WILL_O_WISP, HEX, STRENGTH_SAP
+	dw ANCIENTPOWER, WILL_O_WISP, HEX, SPITE
 	db 30
 	dw NOCTOWL
 	db NO_ITEM
+	dw HEX, AERIAL_ACE, REFLECT, LIGHT_SCREEN
+	db 31
+	dw MISDREAVUS
+	db ORAN_BERRY
+	dw HEX, HYPNOSIS, MEAN_LOOK, DREAM_EATER
+	db -1 ; end
+
+	next_list_item ; ENOKI (4)
+	db "Enoki@", TRAINERTYPE_ITEM_MOVES
+	db 32
+	dw DUSKULL
+	db NO_ITEM
+	dw HEX, WILL_O_WISP, CONFUSE_RAY, CURSE
+	db 32
+	dw CORSOLA
+	db NO_ITEM
+	dw ANCIENTPOWER, WILL_O_WISP, HEX, STRENGTH_SAP
+	db 33
+	dw NOCTOWL
+	db NO_ITEM
 	dw SHADOW_BALL, AERIAL_ACE, REFLECT, LIGHT_SCREEN
-	db 30
+	db 33
 	dw NINETALES
 	db NO_ITEM
 	dw SHADOW_BALL, FLAMETHROWER, CONFUSE_RAY, EXTRASENSORY
-	db 31
+	db 34
 	dw MISMAGIUS
 	db SITRUS_BERRY
-	dw HEX, WILL_O_WISP, PAIN_SPLIT, MAGICAL_LEAF
+	dw HEX, WILL_O_WISP, MAGICAL_LEAF, DAZZLINGLEAM
 	db -1 ; end
 
 	end_list_items
@@ -7140,23 +7171,23 @@ EnokiGroup2:
 EnokiGroup3:
 	next_list_item ; ENOKI (5)
 	db "Enoki@", TRAINERTYPE_ITEM_MOVES
-	db 38
+	db 42
 	dw DUSCLOPS
 	db NO_ITEM
 	dw HEX, WILL_O_WISP, CONFUSE_RAY, CURSE
-	db 38
+	db 42
 	dw CURSOLA
 	db NO_ITEM
-	dw ANCIENTPOWER, WILL_O_WISP, HEX, STRENGTH_SAP
-	db 39
+	dw POWER_GEM, WILL_O_WISP, HEX, STRENGTH_SAP
+	db 43
 	dw NOCTOWL
 	db NO_ITEM
-	dw SHADOW_BALL, AIR_SLASH, REFLECT, LIGHT_SCREEN
-	db 39
+	dw SHADOW_BALL, AIR_SLASH, REFLECT, ROOST
+	db 43
 	dw NINETALES
 	db NO_ITEM
 	dw SHADOW_BALL, FLAMETHROWER, CONFUSE_RAY, EXTRASENSORY
-	db 40
+	db 44
 	dw MISMAGIUS
 	db SITRUS_BERRY
 	dw HEX, WILL_O_WISP, DAZZLINGLEAM, MAGICAL_LEAF
@@ -7223,67 +7254,75 @@ EnokiGroup3:
 ChigusaGroup2:
 	next_list_item ; CHIGUSA3
 	db "Chigusa@", TRAINERTYPE_ITEM_MOVES
-	db 30
+	db 32
 	dw LEDIAN
 	db NO_ITEM
 	dw QUIVER_DANCE, MACH_PUNCH, SILVER_WIND, BULK_UP
-	db 30
+	db 32
 	dw CROAGUNK
 	db NO_ITEM
-	dw BULK_UP, LOW_SWEEP, SWAGGER, FAINT_ATTACK
-	db 31
+	dw BULK_UP, LOW_SWEEP, POISON_JAB, SUCKER_PUNCH
+	db 33
+	dw HITMONLEE
+	db NO_ITEM
+	dw BULK_UP, ROCK_SLIDE, HI_JUMP_KICK, AERIAL_ACE
+	db 33
 	dw HITMONTOP
 	db NO_ITEM
-	dw BULK_UP, ROLLING_KICK, DIG, RAPID_SPIN
-	db 32
+	dw BULK_UP, TRIPLE_KICK, DIG, RAPID_SPIN
+	db 34
 	dw GALLADE
 	db SITRUS_BERRY
-	dw SWORDS_DANCE, SLASH, PSYCHO_CUT, BRICK_BREAK 
+	dw SWORDS_DANCE, LEAF_BLADE, PSYCHO_CUT, BRICK_BREAK 
 	db -1 ; end
 
 	next_list_item ; CHIGUSA4
 	db "Chigusa@", TRAINERTYPE_ITEM_MOVES
-	db 38
+	db 42
 	dw LEDIAN
 	db NO_ITEM
-	dw QUIVER_DANCE, MACH_PUNCH, SILVER_WIND, BULK_UP
-	db 38
-	dw CROAGUNK
+	dw QUIVER_DANCE, MACH_PUNCH, BUG_BUZZ, BULK_UP
+	db 42
+	dw TOXICROAK
 	db NO_ITEM
 	dw TOXIC, SUCKER_PUNCH, VENOSHOCK, LOW_SWEEP
-	db 39
+	db 43
+	dw HITMONLEE
+	db NO_ITEM
+	dw BULK_UP, ROCK_SLIDE, HI_JUMP_KICK, AERIAL_ACE
+	db 43
 	dw HITMONTOP
 	db NO_ITEM
-	dw BULK_UP, ROLLING_KICK, DIG, RAPID_SPIN
-	db 40
+	dw BULK_UP, TRIPLE_KICK, DIG, RAPID_SPIN
+	db 44
 	dw GALLADE
 	db SITRUS_BERRY
-	dw SWORDS_DANCE, SLASH, PSYCHO_CUT, BRICK_BREAK 
+	dw SWORDS_DANCE, LEAF_BLADE, PSYCHO_CUT, BRICK_BREAK 
 	db -1 ; end
 
 	next_list_item ; CHIGUSA5
 	db "Chigusa@", TRAINERTYPE_ITEM_MOVES
-	db 45
+	db 49
 	dw LEDIAN
 	db NO_ITEM
-	dw QUIVER_DANCE, MACH_PUNCH, SILVER_WIND, BULK_UP
-	db 45
+	dw QUIVER_DANCE, MACH_PUNCH, BUG_BUZZ, AURA_SPHERE
+	db 49
 	dw TOXICROAK
 	db NO_ITEM
-	dw NASTY_PLOT, TOXIC, VENOSHOCK, LOW_SWEEP
-	db 46
+	dw BULK_UP, TOXIC, POISON_JAB, LOW_SWEEP
+	db 48
 	dw HITMONCHAN
 	db NO_ITEM
 	dw BULK_UP, BRICK_BREAK, ICE_PUNCH, BULLET_PUNCH
-	db 46
+	db 48
 	dw HITMONLEE
 	db NO_ITEM
-	dw BULK_UP, ROCK_SLIDE, HI_JUMP_KICK, AERIAL_ACE
-	db 46
+	dw BULK_UP, ROCK_SLIDE, HI_JUMP_KICK, BLAZE_KICK
+	db 48
 	dw HITMONTOP
 	db NO_ITEM
-	dw BULK_UP, ROLLING_KICK, DIG, RAPID_SPIN
-	db 47
+	dw BULK_UP, TRIPLE_KICK, DIG, RAPID_SPIN
+	db 50
 	dw GALLADE
 	db SITRUS_BERRY
 	dw SWORDS_DANCE, SLASH, PSYCHO_CUT, BRICK_BREAK 
@@ -7322,23 +7361,23 @@ ChigusaGroup2:
 ByronGroup2:
 	next_list_item ; BYRON (2)
 	db "Byron@", TRAINERTYPE_ITEM_MOVES
-	db 29
+	db 32
 	dw FORRETRESS
 	db NO_ITEM
-	dw MIRROR_SHOT, SPIKES, SUBSTITUTE, REVERSAL
-	db 29
-	dw BRONZOR
+	dw STEEL_SLICE, SPIKES, SUBSTITUTE, PAYBACK
+	db 33
+	dw BRONZONG
 	db NO_ITEM
-	dw FUTURE_SIGHT, FLASH_CANNON, CONFUSION, IRON_DEFENSE
-	db 30
+	dw METAL_SOUND, FLASH_CANNON, CONFUSION, ZEN_HEADBUTT
+	db 32
 	dw OCTILLERY
 	db NO_ITEM
 	dw OCTAZOOKA, FLASH_CANNON, FLAMETHROWER, ICE_BEAM
-	db 30
+	db 33
 	dw LAIRON
 	db NO_ITEM
 	dw IRON_HEAD, ROCK_SLIDE, ROAR, PROTECT
-	db 31
+	db 34
 	dw STEELIX
 	db SITRUS_BERRY
 	dw STEEL_SLICE, BULLDOZE, ROCK_SLIDE, THUNDER_FANG
@@ -7346,54 +7385,54 @@ ByronGroup2:
 
 	next_list_item ; BYRON (3)
 	db "Byron@", TRAINERTYPE_ITEM_MOVES
-	db 38
+	db 42
 	dw FORRETRESS
 	db NO_ITEM
-	dw MIRROR_SHOT, SPIKES, SUBSTITUTE, REVERSAL
-	db 38
+	dw STEEL_SLICE, SPIKES, EXPLOSION, PAYBACK
+	db 42
 	dw BRONZONG
 	db NO_ITEM
-	dw METAL_SOUND, FLASH_CANNON, CONFUSION, IRON_DEFENSE
-	db 39
+	dw METAL_SOUND, FLASH_CANNON, EXTRASENSORY, ZEN_HEADBUTT
+	db 43
 	dw OCTILLERY
 	db NO_ITEM
-	dw OCTAZOOKA, FLASH_CANNON, FLAMETHROWER, ICE_BEAM
-	db 39
-	dw LAIRON
+	dw HYDRO_PUMP, FLASH_CANNON, FLAMETHROWER, ICE_BEAM
+	db 43
+	dw AGGRON
 	db NO_ITEM
 	dw IRON_TAIL, ROCK_SLIDE, ROAR, PROTECT
-	db 40
+	db 44
 	dw STEELIX
 	db SITRUS_BERRY
-	dw STEEL_SLICE, BULLDOZE, ROCK_SLIDE, THUNDER_FANG
+	dw IRON_TAIL, EARTHQUAKE, ROCK_SLIDE, THUNDER_FANG
 	db -1 ; end
 
 	next_list_item ; BYRON (4)
 	db "Byron@", TRAINERTYPE_ITEM_MOVES
-	db 45
+	db 48
 	dw FORRETRESS
 	db NO_ITEM
-	dw MIRROR_SHOT, RAPID_SPIN, SUBSTITUTE, REVERSAL
-	db 45
+	dw STEEL_SLICE, RAPID_SPIN, EXPLOSION, PAYBACK
+	db 48
 	dw BRONZONG
 	db NO_ITEM
-	dw METAL_SOUND, FLASH_CANNON, PSYCHIC_M, IRON_DEFENSE
-	db 45
+	dw METAL_SOUND, FLASH_CANNON, PSYCHIC_M, ZEN_HEADBUTT
+	db 48
 	dw MAGCARGO
 	db NO_ITEM
-	dw BODY_SLAM, SHELL_SMASH, LAVA_PLUME, FLASH_CANNON
-	db 46
+	dw RECOVER, SHELL_SMASH, LAVA_PLUME, FLASH_CANNON
+	db 49
 	dw OCTILLERY
 	db NO_ITEM
 	dw HYDRO_PUMP, FLASH_CANNON, FLAMETHROWER, ICE_BEAM
-	db 46
+	db 49
 	dw AGGRON
 	db NO_ITEM
-	dw IRON_TAIL, ROCK_SLIDE, ROAR, PROTECT
-	db 47
+	dw IRON_TAIL, ROCK_SLIDE, DOUBLE_EDGE, PROTECT
+	db 50
 	dw STEELIX
 	db SITRUS_BERRY
-	dw STEEL_SLICE, EARTHQUAKE, ROCK_SLIDE, THUNDER_FANG
+	dw IRON_TAIL, EARTHQUAKE, STONE_EDGE, THUNDER_FANG
 	db -1 ; end
 
 	next_list_item ; BYRON (4)

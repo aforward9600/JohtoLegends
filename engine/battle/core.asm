@@ -2955,18 +2955,18 @@ LostBattle:
 ;	jr z, .no_loss_text
 
 ; Remove the enemy from the screen.
-	hlcoord 0, 0
-	lb bc, 8, 21
-	call ClearBox
-	call BattleWinSlideInEnemyTrainerFrontpic
+;	hlcoord 0, 0
+;	lb bc, 8, 21
+;	call ClearBox
+;	call BattleWinSlideInEnemyTrainerFrontpic
 
-	ld c, 40
-	call DelayFrames
+;	ld c, 40
+;	call DelayFrames
 
-	ld a, [wDebugFlags]
-	bit DEBUG_BATTLE_F, a
-	jr nz, .skip_win_loss_text
-	call PrintWinLossText
+;	ld a, [wDebugFlags]
+;	bit DEBUG_BATTLE_F, a
+;	jr nz, .skip_win_loss_text
+;	call PrintWinLossText
 .skip_win_loss_text
 	ret
 

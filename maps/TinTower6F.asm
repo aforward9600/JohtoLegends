@@ -8,7 +8,7 @@ TinTower6F_MapScripts:
 	db 0 ; callbacks
 
 TinTower6FAriana:
-	trainer ARIANA, ARIANA_4, EVENT_BEAT_TIN_TOWER_ARIANA, TinTower6FArianaSeenText, TinTower6FArianaBeatenText, 0, .Script
+	trainer ARIANA, ARIANA_4, EVENT_BEAT_TIN_TOWER_ARIANA, TinTower6FArianaSeenText, TinTower6FArianaBeatenText, Ariana4LastPokemonText, .Script
 
 .Script:
 	faceplayer
@@ -20,6 +20,13 @@ TinTower6FAriana:
 
 TinTower6FMaxPotion:
 	itemball MAX_POTION
+
+Ariana4LastPokemonText:
+	text "Why?"
+
+	para "I can't lose again"
+	line "to you…"
+	done
 
 TinTower6FArianaSeenText:
 	text "This is really"

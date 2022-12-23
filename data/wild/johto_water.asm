@@ -4,10 +4,10 @@ JohtoWaterWildMons:
 
 	map_id RUINS_OF_ALPH_OUTSIDE
 	db 2 percent ; encounter rate
-	dbw 35, POLIWHIRL
-	dbw 35, AZUMARILL
-	dbw 40, GOLDUCK
-	dbw 40, QUAGSIRE
+	dbw 40, POLIWHIRL
+	dbw 43, AZUMARILL
+	dbw 45, GOLDUCK
+	dbw 45, QUAGSIRE
 
 	map_id UNION_CAVE_1F
 	db 2 percent ; encounter rate
@@ -152,30 +152,30 @@ JohtoWaterWildMons:
 	map_id ROUTE_34
 	db 6 percent ; encounter rate
 	dbw 27, TENTACOOL
-	dbw 22, TENTACOOL
-	dbw 27, TENTACRUEL
-	dbw 27, POLIWHIRL
+	dbw 28, TENTACOOL
+	dbw 30, TENTACRUEL
+	dbw 29, POLIWHIRL
 
 	map_id ROUTE_35
 	db 4 percent ; encounter rate
-	dbw 25, PSYDUCK
-	dbw 20, PSYDUCK
-	dbw 25, GOLDUCK
-	dbw 25, GOLDUCK
+	dbw 29, PSYDUCK
+	dbw 29, PSYDUCK
+	dbw 30, GOLDUCK
+	dbw 30, GOLDUCK
 
 	map_id ROUTE_40
 	db 6 percent ; encounter rate
-	dbw 20, TENTACOOL
-	dbw 15, CORSOLA
-	dbw 20, REMORAID
-	dbw 20, TENTACRUEL
+	dbw 21, TENTACOOL
+	dbw 22, CORSOLA
+	dbw 23, REMORAID
+	dbw 24, TENTACRUEL
 
 	map_id ROUTE_41
 	db 6 percent ; encounter rate
-	dbw 20, TENTACOOL
-	dbw 20, SHELLDER
-	dbw 20, STARYU
-	dbw 20, MANTINE
+	dbw 21, TENTACOOL
+	dbw 22, SHELLDER
+	dbw 23, STARYU
+	dbw 24, MANTINE
 
 	map_id ROUTE_42
 	db 4 percent ; encounter rate

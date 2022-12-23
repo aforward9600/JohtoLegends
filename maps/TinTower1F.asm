@@ -203,36 +203,7 @@ TinTower1FRocket3Script:
 	jumptextfaceplayer TinTower1FRocket3Text
 
 TinTower1FSage5Script:
-	faceplayer
-	opentext
-	checkevent EVENT_FOUGHT_HO_OH
-	iftrue .FoughtHoOh
-	checkevent EVENT_GOT_RAINBOW_WING
-	iftrue .GotRainbowWing
-	writetext TinTower1FSage5Text1
-	buttonsound
-	verbosegiveitem RAINBOW_WING
-	closetext
-	refreshscreen
-	earthquake 72
-	waitsfx
-	playsound SFX_STRENGTH
-	changeblock 10, 2, $20 ; stairs
-	reloadmappart
-	setevent EVENT_GOT_RAINBOW_WING
-	closetext
-	opentext
-.GotRainbowWing:
-	writetext TinTower1FSage5Text2
-	waitbutton
-	closetext
-	end
-
-.FoughtHoOh:
-	writetext TinTower1FSage5Text3
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer TinTower1FSage5Text2
 
 TinTower1FSage6Script:
 	checkevent EVENT_FOUGHT_HO_OH

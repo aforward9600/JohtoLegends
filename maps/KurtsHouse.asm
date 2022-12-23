@@ -44,6 +44,7 @@ KurtsHouseYoungster:
 .UTurn:
 	loadmoveindex U_TURN
 	writetext TeachSwitchMoveText2
+	waitbutton
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
@@ -51,6 +52,7 @@ KurtsHouseYoungster:
 .VoltSwitch:
 	loadmoveindex VOLT_SWITCH
 	writetext TeachSwitchMoveText2
+	waitbutton
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
@@ -148,8 +150,7 @@ KurtsHouseNiceMoveText:
 	done
 
 TeachSwitchMoveText2:
-	text "Shall I teach"
-	line "this move?"
+	text "Which #mon?"
 	done
 
 KurtsHouseGoodLuckText:

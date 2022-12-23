@@ -57,8 +57,6 @@ Move Steel Slice: Mskd.
 
 Rangi for Route 47 and 48 maps and the Town Map expansion.
 
-Ambipom original sprites from Chaos Rush's 64x64 project.
-
 Ambipom back sprite: ShadowOne333
 
 Lickilicky sprites by Chaos Rush.
@@ -75,6 +73,14 @@ Sneasel, Tyranitar, Dragonite, Moltres, Heracross,
 Teddiursa, Ursaring, Phanpy, Umbreon, Feraligatr,
 Houndoom, Slowbro, Hitmonchan, Xatu, Pidgeot,
 Nidoking, Entei, Ho-Oh, Exeggutor, Starmie- SoupPotato
+
+Korotora, Raitora graphics and game data: SoupPotato, GS 97 Reforged Team, Game Freak
+
+Gorotora front sprite: Helix Chamber
+
+Gorotora back sprite: Adam Shaman
+
+Ambipom Sprite and animation: InternetGoblin
 
 Idain and Bronzeswagger for Weather Icons.
 

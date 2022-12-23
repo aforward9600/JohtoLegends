@@ -35,26 +35,6 @@ TeamRocketBaseB3F_MapScripts:
 .DummyScene3:
 	end
 
-RocketBaseRival:
-	turnobject PLAYER, LEFT
-	showemote EMOTE_SHOCK, PLAYER, 15
-	special FadeOutMusic
-	appear TEAMROCKETBASEB3F_SILVER
-	applymovement TEAMROCKETBASEB3F_SILVER, RocketBaseRivalEnterMovement
-	turnobject PLAYER, LEFT
-	playmusic MUSIC_RIVAL_ENCOUNTER
-	opentext
-	writetext RocketBaseRivalText
-	waitbutton
-	closetext
-	playsound SFX_TACKLE
-	applymovement PLAYER, RocketBaseRivalShovesPlayerMovement
-	applymovement TEAMROCKETBASEB3F_SILVER, RocketBaseRivalLeaveMovement
-	disappear TEAMROCKETBASEB3F_SILVER
-	setscene SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS
-	special RestartMapMusic
-	end
-
 TeamRocketBaseB3FRocketScript:
 	opentext
 	writetext TeamRocketBaseB3FRocketText
@@ -93,7 +73,7 @@ RocketBaseBoss:
 	waitbutton
 	closetext
 .HideoutArianaBattle:
-	winlosstext ExecutiveM4BeatenText, 0
+	winlosstext Ariana3BeatenText, Ariana3LastMonText
 	setlasttalked TEAMROCKETBASEB3F_ARIANA
 	loadtrainer ARIANA, ARIANA_3
 	startbattle
@@ -167,18 +147,6 @@ HideoutArianaScript:
 	writetext RocketBaseArianaText
 	waitbutton
 	closetext
-	end
-
-SlowpokeTailGrunt:
-	trainer GRUNTF, GRUNTF_5, EVENT_BEAT_ROCKET_GRUNTF_5, GruntF5SeenText, GruntF5BeatenText, 0, GruntF5Script
-
-GruntF5Script:
-	endifjustbattled
-	opentext
-	writetext GruntF5AfterBattleText
-	waitbutton
-	closetext
-	setevent EVENT_LEARNED_SLOWPOKETAIL
 	end
 
 HideoutB3FRival:
@@ -287,19 +255,6 @@ TeamRocketBaseB3FIceHeal:
 TeamRocketBaseB3FUltraBall:
 	itemball GREAT_BALL
 
-MovementData_0x6e12a:
-	step RIGHT
-	step_end
-
-MovementData_0x6e12c:
-	step DOWN
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step_end
-
 MovementData_0x6e133:
 	step UP
 	step RIGHT
@@ -353,39 +308,10 @@ RocketBaseRivalEnterMovement:
 	step LEFT
 	step_end
 
-RocketBaseRivalLeaveMovement:
-	step LEFT
-	step LEFT
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
-RocketBaseRivalShovesPlayerMovement:
-	fix_facing
-	big_step RIGHT
-	remove_fixed_facing
-	step_end
-
-LanceGetPasswordText:
-	text "LANCE: It takes"
-	line "two passwords to"
-
-	para "get into the"
-	line "boss's quarters."
-
-	para "Those passwords"
-	line "are known only to"
-	cont "a few ROCKETS."
-
-	para "That ROCKET there"
-	line "very graciously"
-	cont "told me so."
-
-	para "<PLAY_G>, let's go"
-	line "get the passwords."
+Ariana3LastMonText:
+	text "How many times are"
+	line "you going to be so"
+	cont "annoying?!"
 	done
 
 TeamRocketBaseB3FRocketText:
@@ -393,48 +319,6 @@ TeamRocketBaseB3FRocketText:
 
 	para "(The guard here"
 	line "isn't so useful.)"
-	done
-
-RocketBaseRivalText:
-	text "…"
-
-	para "Didn't I tell you"
-	line "that I was going"
-
-	para "to destroy TEAM"
-	line "ROCKET?"
-
-	para "…Tell me, who was"
-	line "the guy in the"
-
-	para "cape who used"
-	line "dragon #MON?"
-
-	para "My #MON were no"
-	line "match at all."
-
-	para "I don't care that"
-	line "I lost. I can beat"
-
-	para "him by getting"
-	line "stronger #MON."
-
-	para "It's what he said"
-	line "that bothers me…"
-
-	para "He told me that"
-	line "I don't love and"
-
-	para "trust my #MON"
-	line "enough."
-
-	para "I'm furious that I"
-	line "lost to a bleeding"
-	cont "heart like him."
-
-	para "…Humph! I don't"
-	line "have the time for"
-	cont "the likes of you!"
 	done
 
 HideoutB3FArianaBeforeText:
@@ -496,18 +380,10 @@ HideoutB3FArianaDracoText:
 	line "Take her down!"
 	done
 
-ExecutiveM4BeatenText:
+Ariana3BeatenText:
 	text "ARGH!"
 
 	para "Not again!"
-	done
-
-ExecutiveM4AfterText:
-	text "No, I can't let"
-	line "this affect me."
-
-	para "I have to inform"
-	line "the others…"
 	done
 
 RocketBaseArianaText:
@@ -519,82 +395,8 @@ RocketBaseArianaText:
 	line "this!"
 	done
 
-GruntF5SeenText:
-	text "Do I know the"
-	line "password?"
-
-	para "Maybe."
-
-	para "But no weakling's"
-	line "going to get it!"
-	done
-
-GruntF5BeatenText:
-	text "All right. Stop."
-	line "I'll tell you."
-	done
-
-GruntF5AfterBattleText:
-	text "The password to"
-	line "the boss's room is"
-
-	para "SLOWPOKETAIL."
-
-	para "But it's useless"
-	line "unless you have"
-	cont "two passwords."
-	done
-
-ScientistRossSeenText:
-	text "I used to work for"
-	line "SILPH, but now I"
-
-	para "run research for"
-	line "TEAM ROCKET."
-
-	para "A meddlesome child"
-	line "like you needs to"
-	cont "be punished."
-	done
-
-ScientistRossBeatenText:
-	text "A mere tactical"
-	line "error cost me…"
-	done
-
-ScientistRossAfterBattleText:
-	text "A radio signal"
-	line "that drives #-"
-	cont "MON mad…"
-
-	para "My experiment is a"
-	line "complete success."
-
-	para "My promotion is"
-	line "assured. This loss"
-
-	para "means absolutely"
-	line "nothing."
-	done
-
 MNinjaM1SeenText:
 	text "…………………………"
-	done
-
-TeamRocketBaseB3FLockedDoorNeedsPasswordText:
-	text "The door's closed…"
-
-	para "It needs two"
-	line "passwords to open."
-	done
-
-TeamRocketBaseB3FLockedDoorOpenSesameText:
-	text "The door's closed…"
-
-	para "<PLAYER> entered"
-	line "the two passwords."
-
-	para "The door opened!"
 	done
 
 IllHealYouB3FText:
@@ -759,10 +561,9 @@ TeamRocketBaseB3F_MapEvents:
 	warp_event  4, 17, TEAM_ROCKET_BASE_JAIL, 1
 	warp_event  5, 17, TEAM_ROCKET_BASE_JAIL, 1
 
-	db 3 ; coord events
+	db 2 ; coord events
 	coord_event 10,  8, SCENE_DEFAULT, RocketBaseBossLeft
 	coord_event 11,  8, SCENE_DEFAULT, RocketBaseBossRight
-	coord_event  8, 10, SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER, RocketBaseRival
 
 	db 8 ; bg events
 	bg_event 10,  1, BGEVENT_READ, TeamRocketBaseB3FOathScript

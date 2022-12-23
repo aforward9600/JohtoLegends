@@ -1,198 +1,3 @@
-EnemyMonHasSuperEffectiveMove:
-; Check whether the current enemy pokemon has any super effective moves
-; against the current player pokemon. If true, set zero flag. False otherwise.
-	push hl
-	push bc
-
-	ld hl, wEnemyMonMoves
-	ld b, NUM_MOVES
-	ld c, 0
-.loop
-	; if move is None: break
-	ld a, [hli]
-	and a
-	push hl
-	jr z, .break
-
-	; if move has no power: continue
-	dec a
-	ld hl, Moves + MOVE_POWER
-	call GetMoveAttrBis
-	and a
-	jr z, .nope
-
-	; check type matchups
-	inc hl
-	call GetMoveByteBis
-	ld hl, wBattleMonType1
-
-	ld [wTempByteValue], a
-	push de
-	ld de, CheckTypeMatchupFarcall
-	ld a, BANK(CheckTypeMatchupFarcall)
-	call FarCall_de ; Far calling CheckTypeMatchupFarcall. The a value will be gotten from [hFarByte].
-	pop de
-
-	; if immune or not very effective: continue
-	ld a, [wTypeMatchup]
-	cp 10
-	jr c, .nope
-
-	ld e, 1
-	cp EFFECTIVE + 1
-	jr c, .nope
-
-	; if super-effective: load 2 and break
-	ld e, 2
-	jr .break
-
-.nope
-	pop hl
-	dec b
-	jr nz, .loop
-
-	jr .done
-
-.break
-	pop hl
-.done
-	ld a, e
-	pop bc
-	pop hl
-	cp 2 ; were there any super effective moves? (zero-flag)
-	ret
-
-CheckUndesirableStatus:
-; Check for undesirable substatuses that would go away if we switched
-; Returns Z if status is OK, NZ if undesirable
-	ld a, [wEnemyMonStatus]
-	and SLP
-	ret nz
-	ld a, [wEnemyMonStatus]
-	and FRZ
-	ret nz
-
-	ld a, [wEnemySubStatus1]
-	bit SUBSTATUS_CURSE, a
-	ret nz
-	bit SUBSTATUS_IN_LOVE, a
-	ret nz
-
-	ld a, [wEnemySubStatus3]
-	bit SUBSTATUS_CONFUSED, a
-	ret nz
-
-	ld a, [wEnemySubStatus4]
-	bit SUBSTATUS_LEECH_SEED, a
-	ret nz
-
-	ld a, [wEnemySubStatus5]
-	bit SUBSTATUS_TOXIC, a
-	ret nz
-	bit SUBSTATUS_ENCORED, a
-	ret z
-	ld a, [wLastEnemyMove]
-	dec a
-	ld hl, Moves + MOVE_POWER
-	call GetMoveAttrBis
-	and a
-	ret
-
-CheckBaseMatchup:
-; If the enemy pokemon's type combo has inferior effectiveness in attacking
-; and defending against the player's pokemon, and it has no super effective
-; moves, it is a bad matchup. (Carry flag set on good matchup)
-	push hl
-	push de
-	push bc
-; Player's pokemon types loaded to E
-	ld a, [wBattleMonType1]
-	ld b, a
-	ld hl, wEnemyMonType1
-
-	ld [wTempByteValue], a
-	push de
-	ld de, CheckTypeMatchupFarcall
-	ld a, BANK(CheckTypeMatchupFarcall)
-	call FarCall_de
-	pop de
-
-	ld a, [wTypeMatchup]
-	ld e, a
-
-	ld a, [wBattleMonType2]
-	cp b
-	jr z, .notype2_1
-	
-	ld [wTempByteValue], a
-	push de
-	ld de, CheckTypeMatchupFarcall
-	ld a, BANK(CheckTypeMatchupFarcall)
-	call FarCall_de
-	pop de
-
-	ld a, [wTypeMatchup]
-	add e
-	ld e, a
-	jr .type2found_1
-
-.notype2_1
-	ld a, e
-	add e
-	ld e, a
-.type2found_1
-; Enemy pokemon types loaded to D
-	ld a, [wEnemyMonType1]
-	ld b, a
-	ld hl, wBattleMonType1
-	
-	ld [wTempByteValue], a
-	push de
-	ld de, CheckTypeMatchupFarcall
-	ld a, BANK(CheckTypeMatchupFarcall)
-	call FarCall_de
-	pop de
-
-	ld a, [wTypeMatchup]
-	ld d, a
-
-	ld a, [wEnemyMonType2]
-	cp b
-	jr z, .notype2_2
-	
-	ld [wTempByteValue], a
-	push de
-	ld de, CheckTypeMatchupFarcall
-	ld a, BANK(CheckTypeMatchupFarcall)
-	call FarCall_de
-	pop de
-
-	ld a, [wTypeMatchup]
-	add d
-	ld d, a
-	jr .type2found_2
-
-.notype2_2
-	ld a, d
-	add d
-	ld d, a
-.type2found_2
-	ld a, e
-	cp d ; Carry flag is set if enemy type combo is overall more effective
-	pop hl
-	pop de
-	pop bc
-	ret c
-	jr z, .okay
-.possible_bad
-	call EnemyMonHasSuperEffectiveMove
-	jr z, .okay
-	ccf
-	ret
-.okay
-	scf
-	ret
-
 CheckPlayerMoveTypeMatchups:
 ; Check how well the moves you've already used
 ; fare against the enemy's Pokemon.  Used to
@@ -218,13 +23,7 @@ CheckPlayerMoveTypeMatchups:
 	jr z, .next
 
 	ld hl, wEnemyMonType
-	
-	ld [wTempByteValue], a
-	push de
-	ld de, CheckTypeMatchupFarcall
-	ld a, BANK(CheckTypeMatchupFarcall)
-	call FarCall_de
-	pop de
+	call CheckTypeMatchup
 
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1 ; 1.0 + 0.1
@@ -270,14 +69,7 @@ CheckPlayerMoveTypeMatchups:
 	ld a, [wBattleMonType1]
 	ld b, a
 	ld hl, wEnemyMonType1
-	
-	ld [wTempByteValue], a
-	push de
-	ld de, CheckTypeMatchupFarcall
-	ld a, BANK(CheckTypeMatchupFarcall)
-	call FarCall_de
-	pop de
-
+	call CheckTypeMatchup
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1 ; 1.0 + 0.1
 	jr c, .ok
@@ -286,14 +78,7 @@ CheckPlayerMoveTypeMatchups:
 	ld a, [wBattleMonType2]
 	cp b
 	jr z, .ok2
-	
-	ld [wTempByteValue], a
-	push de
-	ld de, CheckTypeMatchupFarcall
-	ld a, BANK(CheckTypeMatchupFarcall)
-	call FarCall_de
-	pop de
-
+	call CheckTypeMatchup
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1 ; 1.0 + 0.1
 	jr c, .ok2
@@ -327,14 +112,7 @@ CheckPlayerMoveTypeMatchups:
 	jr z, .loop2
 
 	ld hl, wBattleMonType1
-	
-	ld [wTempByteValue], a
-	push de
-	ld de, CheckTypeMatchupFarcall
-	ld a, BANK(CheckTypeMatchupFarcall)
-	call FarCall_de
-	pop de
-
+	call CheckTypeMatchup
 
 	ld a, [wTypeMatchup]
 	; immune
@@ -433,23 +211,6 @@ CheckAbleToSwitch:
 	ret
 
 .no_perish
-	call CheckUndesirableStatus
-	jr z, .no_bad_status
-
-	ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a
-	jr nz, .bad_matchup
-
-	call EnemyMonHasSuperEffectiveMove
-	jr nz, .bad_matchup
-
-.no_bad_status
-	call CheckBaseMatchup
-	jr c, .no_bad_matchup
-	call CheckPlayerMoveTypeMatchups
-	jr .bad_matchup
-
-.no_bad_matchup
 	call CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
 	cp 11
@@ -509,21 +270,6 @@ CheckAbleToSwitch:
 	call FindEnemyMonsWithAtLeastQuarterMaxHP
 	call FindEnemyMonsThatResistPlayer
 	call FindAliveEnemyMonsWithASuperEffectiveMove
-
-	ld a, e
-	cp $2
-	ret nz
-
-	ld a, [wEnemyAISwitchScore]
-	add $10
-	ld [wEnemySwitchMonParam], a
-	ret
-
-.bad_matchup
-	;First look for pokemon that both resist and have super effective moves
-	call FindAliveEnemyMons
-	call FindEnemyMonsWithAtLeastQuarterMaxHP
-	call FindEnemyMonsThatResistPlayer
 
 	ld a, e
 	cp $2
@@ -615,20 +361,6 @@ FindEnemyMonsImmuneToLastCounterMove:
 	ld [wCurSpecies], a
 	call GetBaseData
 
-	; and it isn't weak to the player mon
-	ld a, [wBattleMonType1]
-	ld hl, wBaseType
-	call CheckTypeMatchup
-	ld a, [wTypeMatchup]
-	cp 10 + 1
-	jr nc, .next
-	ld a, [wBattleMonType2]
-	ld hl, wBaseType
-	call CheckTypeMatchup
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE + 1
-	jr nc, .next
-
 	; the player's last move is damaging...
 	ld a, [wLastPlayerCounterMove]
 	call GetMoveTypeIfDamaging
@@ -636,13 +368,7 @@ FindEnemyMonsImmuneToLastCounterMove:
 
 	; and the Pokemon is immune to it...
 	ld hl, wBaseType
-	
-	ld [wTempByteValue], a
-	push de
-	ld de, CheckTypeMatchupFarcall
-	ld a, BANK(CheckTypeMatchupFarcall)
-	call FarCall_de
-	pop de
+	call CheckTypeMatchup
 
 	ld a, [wTypeMatchup]
 	and a
@@ -728,13 +454,7 @@ FindEnemyMonsWithASuperEffectiveMove:
 
 	; check type matchups
 	ld hl, wBattleMonType1
-
-	ld [wTempByteValue], a
-	push de
-	ld de, CheckTypeMatchupFarcall
-	ld a, BANK(CheckTypeMatchupFarcall)
-	call FarCall_de
-	pop de
+	call CheckTypeMatchup
 
 	; if immune or not very effective: continue
 	ld a, [wTypeMatchup]
@@ -829,13 +549,7 @@ FindEnemyMonsThatResistPlayer:
 .skip_move
 	ld a, [wBattleMonType1]
 	ld hl, wBaseType
-	
-	ld [wTempByteValue], a
-	push de
-	ld de, CheckTypeMatchupFarcall
-	ld a, BANK(CheckTypeMatchupFarcall)
-	call FarCall_de
-	pop de
+	call CheckTypeMatchup
 
 	ld a, [wTypeMatchup]
 	cp 10 + 1
@@ -844,14 +558,7 @@ FindEnemyMonsThatResistPlayer:
 
 .check_type
 	ld hl, wBaseType
-	
-	ld [wTempByteValue], a
-	push de
-	ld de, CheckTypeMatchupFarcall
-	ld a, BANK(CheckTypeMatchupFarcall)
-	call FarCall_de
-	pop de
-
+	call CheckTypeMatchup
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
 	jr nc, .dont_choose_mon
@@ -944,16 +651,3 @@ GetMoveTypeIfDamaging:
 	dec c
 	pop bc
 	ret
-
-GetMoveAttrBis:
-; Assuming hl = Moves + x, return attribute x of move a.
-	push bc
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	call GetMoveByteBis
-	pop bc
-	ret
-
-GetMoveByteBis:
-	ld a, BANK(Moves)
-	jp GetFarByte

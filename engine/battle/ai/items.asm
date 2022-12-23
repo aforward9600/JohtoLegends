@@ -397,27 +397,6 @@ AI_Items:
 	call EnemyUsedPotion
 	jp .Use
 
-.asm_382ae ; This appears to be unused
-	callfar AICheckEnemyMaxHP
-	jr c, .dont_use
-	push bc
-	ld de, wEnemyMonMaxHP + 1
-	ld hl, wEnemyMonHP + 1
-	ld a, [de]
-	sub [hl]
-	jr z, .check_40_percent
-	dec hl
-	dec de
-	ld c, a
-	sbc [hl]
-	and a
-	jr nz, .check_40_percent
-	ld a, c
-	cp b
-	jp c, .check_50_percent
-	callfar AICheckEnemyQuarterHP
-	jr c, .check_40_percent
-
 .check_50_percent
 	pop bc
 	ld a, [bc]
@@ -709,12 +688,6 @@ AI_Switch:
 TextJump_EnemyWithdrew:
 	text_far Text_EnemyWithdrew
 	text_end
-
-Function384d5: ; This appears to be unused
-	call AIUsedItemSound
-	call AI_HealStatus
-	ld a, FULL_HEAL_RED ; X_SPEED
-	jp PrintText_UsedItemOn_AND_AIUpdateHUD
 
 AI_HealStatus:
 	ld a, [wCurOTMon]

@@ -138,7 +138,7 @@ EcruteakGymEnokiScript:
 	waitbutton
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
-	loadtrainer ENOKI, ENOKI1
+	loadtrainer ENOKI, ENOKI_ALTERNATE
 	startbattle
 	reloadmapafterbattle
 	sjump AfterEnokiRematch

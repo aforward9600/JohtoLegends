@@ -727,9 +727,6 @@ AmbipomFrontpic:     INCBIN "gfx/pokemon/ambipom/front.animated.2bpp.lz"
 AmbipomBackpic:      INCBIN "gfx/pokemon/ambipom/back.2bpp.lz"
 LickilickyFrontpic:  INCBIN "gfx/pokemon/lickilicky/front.animated.2bpp.lz"
 LickilickyBackpic:   INCBIN "gfx/pokemon/lickilicky/back.2bpp.lz"
-YanmegaFrontpic:     INCBIN "gfx/pokemon/yanmega/front.animated.2bpp.lz"
-YanmegaBackpic:      INCBIN "gfx/pokemon/yanmega/back.2bpp.lz"
-TogekissFrontpic:    INCBIN "gfx/pokemon/togekiss/front.animated.2bpp.lz"
 
 
 SECTION "Pics 25", ROMX
@@ -757,6 +754,8 @@ ShelgonFrontpic:     INCBIN "gfx/pokemon/shelgon/front.animated.2bpp.lz"
 ShelgonBackpic:      INCBIN "gfx/pokemon/shelgon/back.2bpp.lz"
 SalamenceFrontpic:   INCBIN "gfx/pokemon/salamence/front.animated.2bpp.lz"
 SalamenceBackpic:    INCBIN "gfx/pokemon/salamence/back.2bpp.lz"
+YanmegaFrontpic:     INCBIN "gfx/pokemon/yanmega/front.animated.2bpp.lz"
+YanmegaBackpic:      INCBIN "gfx/pokemon/yanmega/back.2bpp.lz"
 
 
 SECTION "Pics 26", ROMX
@@ -870,3 +869,4 @@ StarmieFrontpic:     INCBIN "gfx/pokemon/starmie/front.animated.2bpp.lz"
 SwabluFrontpic:      INCBIN "gfx/pokemon/swablu/front.animated.2bpp.lz"
 SwabluBackpic:       INCBIN "gfx/pokemon/swablu/back.2bpp.lz"
 BikerBossPic:        INCBIN "gfx/trainers/biker_boss.2bpp.lz"
+TogekissFrontpic:    INCBIN "gfx/pokemon/togekiss/front.animated.2bpp.lz"

@@ -65,7 +65,7 @@ IlexForestFarfetchdScript:
 	cry FARFETCH_D
 	waitbutton
 	closetext
-	loadwildmon FARFETCH_D, 35
+	loadwildmon FARFETCH_D, 40
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	ifequal LOSE, .NotBeaten
@@ -194,7 +194,7 @@ IlexForestShrineScript:
 	pause 20
 	clearflag ENGINE_FOREST_IS_RESTLESS
 	special CelebiShrineEvent
-	loadwildmon CELEBI, 45
+	loadwildmon CELEBI, 50
 	startbattle
 	reloadmapafterbattle
 	pause 20

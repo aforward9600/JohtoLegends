@@ -28,6 +28,7 @@ VioletNicknameSpeechHouseTeacherScript:
 .Moonblast:
 	loadmoveindex MOONBLAST
 	writetext TeachMysticalMoveText
+	waitbutton
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
@@ -35,6 +36,7 @@ VioletNicknameSpeechHouseTeacherScript:
 .Hypnosis:
 	loadmoveindex HYPNOSIS
 	writetext TeachMysticalMoveText
+	waitbutton
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
@@ -42,6 +44,7 @@ VioletNicknameSpeechHouseTeacherScript:
 .GrassKnot:
 	loadmoveindex GRASS_KNOT
 	writetext TeachMysticalMoveText
+	waitbutton
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
@@ -134,7 +137,7 @@ VioletCityWhichMoveShouldITeachText:
 	done
 
 TeachMysticalMoveText:
-	text_start
+	text "Which #mon?"
 	done
 
 VioletCityNiceMoveText:

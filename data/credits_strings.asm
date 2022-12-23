@@ -24,7 +24,7 @@ CreditsStrings:
 	dw .TilesetDesign
 	dw .ElfinHilon
 	dw .BlueEmerald
-	dw .NclSuperMarioClub
+	dw .InternetGoblin
 	dw .Sarugakucho
 	dw .AkitoMori
 	dw .TakahiroHarada
@@ -150,7 +150,7 @@ CreditsStrings:
 .TilesetDesign:       db "   Tileset Design@"          ; "せや　のぶひろ@"
 .ElfinHilon:          db "    ElfinHilon10@"         ; "せきね　かずひと@"
 .BlueEmerald:         db "    Blue Emerald@"          ; "おおた　てつじ@"
-.NclSuperMarioClub:   db "NCL SUPER MARIO CLUB@"      ; "スーパーマりオクラブ@"
+.InternetGoblin:      db "   InternetGoblin@"      ; "スーパーマりオクラブ@"
 .Sarugakucho:         db "    SARUGAKUCHO@"           ; "さるがくちょう@"
 .AkitoMori:           db "     AKITO MORI@"           ; "もり　あきと@"
 .TakahiroHarada:      db "  TAKAHIRO HARADA@"         ; "はらだ　たかひろ@"

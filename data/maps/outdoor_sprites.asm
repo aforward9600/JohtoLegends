@@ -283,6 +283,7 @@ SilverGroupSprites:
 	db SPRITE_KRIS
 	; 5 of max 9 walking sprites
 	db SPRITE_HO_OH
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 DungeonsGroupSprites:

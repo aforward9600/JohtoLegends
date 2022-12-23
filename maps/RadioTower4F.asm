@@ -38,7 +38,7 @@ TrainerGruntM15:
 	end
 
 TrainerArcher2:
-	trainer ARCHER, ARCHER_2, EVENT_BEAT_GOLDENROD_TOWER_ARCHER, Archer2SeenText, Archer2BeatenText, 0, .Script
+	trainer ARCHER, ARCHER_2, EVENT_BEAT_GOLDENROD_TOWER_ARCHER, Archer2SeenText, Archer2BeatenText, Archer2LastMonText, .Script
 
 .Script:
 	endifjustbattled
@@ -61,6 +61,13 @@ TrainerGruntF9:
 
 RadioTower4FSurfTM:
 	itemball TM_SURF
+
+Archer2LastMonText:
+	text "Were we wrong?"
+
+	para "Is this not"
+	line "enough?"
+	done
 
 RadioTower4FEngineerText:
 	text "This is only the"

@@ -27,6 +27,7 @@ EcruteakMoveTutorHouseMoveTutorScript:
 .FireFang:
 	loadmoveindex FIRE_FANG
 	writetext TeachMoveText2
+	waitbutton
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
@@ -34,6 +35,7 @@ EcruteakMoveTutorHouseMoveTutorScript:
 .ThunderFang:
 	loadmoveindex THUNDER_FANG
 	writetext TeachMoveText2
+	waitbutton
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
@@ -41,6 +43,7 @@ EcruteakMoveTutorHouseMoveTutorScript:
 .IceFang:
 	loadmoveindex ICE_FANG
 	writetext TeachMoveText2
+	waitbutton
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
@@ -48,6 +51,7 @@ EcruteakMoveTutorHouseMoveTutorScript:
 .DracoFang:
 	loadmoveindex DRACO_FANG
 	writetext TeachMoveText2
+	waitbutton
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible

@@ -1,6 +1,6 @@
 	object_const_def ; object_event constants
 	const TEAMROCKETBASEB2F_NINJA2
-	const TEAMROCKETBASEB2F_ARIANA
+	const TEAMROCKETBASEB2F_ARCHER
 	const TEAMROCKETBASEB2F_RIVAL
 	const TEAMROCKETBASEB2F_DRAGON
 	const TEAMROCKETBASEB2F_POKE_BALL2
@@ -153,8 +153,8 @@ HideoutB2FArcherScript:
 	writetext ArcherYouAgainText
 	waitbutton
 	closetext
-	winlosstext UnknownText_0x6d45c, 0
-	setlasttalked TEAMROCKETBASEB2F_ARIANA
+	winlosstext UnknownText_0x6d45c, Archer3LastMonText
+	setlasttalked TEAMROCKETBASEB2F_ARCHER
 	loadtrainer ARCHER, ARCHER_3
 	startbattle
 	reloadmapafterbattle
@@ -294,35 +294,6 @@ TeamRocketBaseB2FReloadMap:
 	reloadmapafterbattle
 	end
 
-RocketBaseElectrodeScript:
-	turnobject PLAYER, RIGHT
-	opentext
-	writetext UnknownText_0x6d809
-	buttonsound
-	verbosegiveitem LAPRAS_CALLB
-	setevent EVENT_GOT_HM06_WHIRLPOOL
-	writetext UnknownText_0x6d8f8
-	waitbutton
-	closetext
-	opentext
-	writetext UnknownText_0x6d994
-	waitbutton
-	closetext
-	turnobject PLAYER, DOWN
-	setevent EVENT_CLEARED_ROCKET_HIDEOUT
-	clearflag ENGINE_ROCKET_SIGNAL_ON_CH20
-	setevent EVENT_ROUTE_43_GATE_ROCKETS
-	setevent EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_GYM
-	setscene SCENE_TEAMROCKETBASEB2F_NOTHING
-	clearevent EVENT_LAKE_OF_RAGE_CIVILIANS
-	setevent EVENT_TURNED_OFF_SECURITY_CAMERAS
-	setevent EVENT_SECURITY_CAMERA_1
-	setevent EVENT_SECURITY_CAMERA_2
-	setevent EVENT_SECURITY_CAMERA_3
-	setevent EVENT_SECURITY_CAMERA_4
-	setevent EVENT_SECURITY_CAMERA_5
-	end
-
 TeamRocketBaseB2FLockedDoor:
 	conditional_event EVENT_OPENED_DOOR_TO_ROCKET_HIDEOUT_TRANSMITTER, .Script
 
@@ -349,21 +320,6 @@ TeamRocketBaseB2FLockedDoor:
 	closetext
 	setevent EVENT_OPENED_DOOR_TO_ROCKET_HIDEOUT_TRANSMITTER
 	waitsfx
-	end
-
-TeamRocketBaseB2FTransmitterScript:
-	opentext
-	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
-	iftrue .Deactivated
-	writetext UnknownText_0x6dda7
-	waitbutton
-	closetext
-	end
-
-.Deactivated:
-	writetext UnknownText_0x6de03
-	waitbutton
-	closetext
 	end
 
 TeamRocketBaseB2FTMThief:
@@ -576,30 +532,9 @@ UnknownText_0x6d2ad:
 	line "there!"
 	done
 
-UnknownText_0x6d2c3:
-	text "We can't have a"
-	line "brat like you on"
-	cont "the loose."
-
-	para "It's harmful to"
-	line "TEAM ROCKET's"
-	cont "pride, you see."
-
-	para "However strong you"
-	line "may be, you can't"
-
-	para "take both of us at"
-	line "the same time."
-
-	para "Sorry, baby. Now"
-	line "get ready to be"
-	cont "thrashed."
-	done
-
-UnknownText_0x6d38c:
-	text "Hey! Don't be so"
-	line "selfish. Spread"
-	cont "the fun around."
+Archer3LastMonText:
+	text "I'm almost beaten"
+	line "again?"
 	done
 
 ArcherYouAgainText:
@@ -653,161 +588,6 @@ HeresPassword2Text:
 	para "It's useless with-"
 	line "out the other"
 	cont "password."
-	done
-
-UnknownText_0x6d5d8:
-	text "LANCE: That did"
-	line "it. We defeated"
-
-	para "all the ROCKETS"
-	line "here."
-
-	para "But I'm concerned"
-	line "about the young"
-
-	para "guy I battled in"
-	line "the process…"
-	done
-
-UnknownText_0x6d64e:
-	text "Sorry, <PLAY_G>."
-	line "I saw how well you"
-
-	para "were doing, so I"
-	line "just hung back."
-
-	para "Now all there is"
-	line "left to do is to"
-
-	para "turn off that odd"
-	line "radio signal."
-	done
-
-UnknownText_0x6d6cf:
-	text "It's this machine"
-	line "that's causing all"
-	cont "the problems."
-
-	para "I don't see a"
-	line "switch on it…"
-
-	para "We have no choice."
-	line "We have to make"
-
-	para "all the ELECTRODE"
-	line "faint."
-
-	para "That should stop"
-	line "this machine from"
-
-	para "transmitting that"
-	line "strange signal."
-
-	para "It's no fault of"
-	line "the #MON, so it"
-
-	para "makes me feel"
-	line "guilty."
-
-	para "<PLAY_G>, let's"
-	line "split the job."
-	done
-
-UnknownText_0x6d7ea:
-	text "LANCE: Leave this"
-	line "side to me."
-	done
-
-UnknownText_0x6d809:
-	text "LANCE: That odd"
-	line "signal has finally"
-	cont "stopped."
-
-	para "The LAKE should be"
-	line "back to normal."
-
-	para "You're the hero!"
-	line "Let me thank you"
-
-	para "on behalf of all"
-	line "the #MON."
-
-	para "Oh, yes. You"
-	line "should take this."
-
-	para "I found it here,"
-	line "but I don't have"
-	cont "any need for it."
-	done
-
-UnknownText_0x6d8e6:
-	text "<PLAYER> received"
-	line "HM06."
-	done
-
-UnknownText_0x6d8f8:
-	text "That's WHIRLPOOL."
-	line "Teach it to a"
-
-	para "#MON to get"
-	line "across wild water."
-
-	para "But keep this in"
-	line "mind."
-
-	para "You can use that"
-	line "out of battle only"
-
-	para "with the BADGE"
-	line "from MAHOGANY GYM."
-	done
-
-UnknownText_0x6d994:
-	text "<PLAY_G>…"
-
-	para "The journey to be-"
-	line "coming the #MON"
-
-	para "MASTER is long and"
-	line "difficult."
-
-	para "Knowing that, will"
-	line "you keep going?"
-
-	para "…"
-
-	para "I see. No, you're"
-	line "right."
-
-	para "If you would give"
-	line "up that easily,"
-
-	para "you would have"
-	line "never chased that"
-
-	para "dream in the first"
-	line "place."
-
-	para "I look forward to"
-	line "seeing you again!"
-	done
-
-LanceHealsText1:
-	text "LANCE: Are you all"
-	line "right?"
-
-	para "Your #MON are"
-	line "hurt and tired."
-
-	para "Here, give them"
-	line "some of my medi-"
-	cont "cine."
-	done
-
-LanceHealsText2:
-	text "LANCE: <PLAY_G>,"
-	line "let's give it our"
-	cont "best for #MON."
 	done
 
 GruntM17SeenText:
@@ -900,25 +680,6 @@ UnknownText_0x6dd6b:
 	line "double!"
 
 	para "The door opened!"
-	done
-
-UnknownText_0x6dda7:
-	text "It's the radio"
-	line "transmitter that's"
-
-	para "sending the"
-	line "sinister signal."
-
-	para "It's working at"
-	line "full capacity."
-	done
-
-UnknownText_0x6de03:
-	text "The radio trans-"
-	line "mitter has finally"
-
-	para "stopped its evil"
-	line "broadcast."
 	done
 
 GoldenrodWorkerHelpMeText:

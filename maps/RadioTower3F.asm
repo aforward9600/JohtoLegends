@@ -10,7 +10,7 @@ RadioTower3F_MapScripts:
 	db 0 ; callbacks
 
 TrainerAriana2:
-	trainer ARIANA, ARIANA_2, EVENT_BEAT_GOLDENROD_TOWER_ARIANA, Ariana2SeenText, Ariana2BeatenText, 0, .Script
+	trainer ARIANA, ARIANA_2, EVENT_BEAT_GOLDENROD_TOWER_ARIANA, Ariana2SeenText, Ariana2BeatenText, Ariana2LastMonText, .Script
 
 .Script:
 	endifjustbattled
@@ -45,6 +45,10 @@ TrainerScientistMac:
 	closetext
 	end
 
+Ariana2LastMonText:
+	text "Not again!"
+	done
+
 Ariana2SeenText:
 	text "You again?!"
 
@@ -58,7 +62,7 @@ Ariana2SeenText:
 	line "the lighthouse?"
 
 	para "Don't forget my"
-	line "name, Ariana!"
+	line "name: Ariana!"
 
 	para "You embarassed me"
 	line "so much!"

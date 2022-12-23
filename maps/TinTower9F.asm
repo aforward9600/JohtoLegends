@@ -8,7 +8,7 @@ TinTower9F_MapScripts:
 	db 0 ; callbacks
 
 TinTower9FArcher:
-	trainer ARCHER, ARCHER_4, EVENT_BEAT_TIN_TOWER_ARCHER, TinTower9FArcherSeenText, TinTower9FArcherBeatenText, 0, .Script
+	trainer ARCHER, ARCHER_4, EVENT_BEAT_TIN_TOWER_ARCHER, TinTower9FArcherSeenText, TinTower9FArcherBeatenText, Archer4LastMonText, .Script
 
 .Script:
 	faceplayer
@@ -16,6 +16,7 @@ TinTower9FArcher:
 	writetext TinTower9FArcherAfterText
 	waitbutton
 	closetext
+	setevent EVENT_TIN_TOWER_ROOF_ROCKET_BALL
 	end
 
 TinTower9FHPUp:
@@ -29,6 +30,11 @@ TinTower9FUnusedHoOhText:
 TinTower9FUnusedLugiaText:
 ; unused
 	text "LUGIA: Gyaaan!"
+	done
+
+Archer4LastMonText:
+	text "It seems this was"
+	line "inevitable too…"
 	done
 
 TinTower9FArcherSeenText:

@@ -6,13 +6,15 @@
 	const TINTOWERROOF_KRIS ; if female
 	const TINTOWERROOF_RIVAL
 	const TINTOWERROOF_SHERLES
+	const TINTOWERROOF_ROCKET_BALL
 
 TinTowerRoof_MapScripts:
 	db 2 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
-	db 1 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_TILES, .Moon
 	callback MAPCALLBACK_OBJECTS, .HoOh
 
 .DummyScene0:
@@ -20,6 +22,13 @@ TinTowerRoof_MapScripts:
 
 .DummyScene1:
 	end
+
+.Moon:
+	checktime NITE
+	iffalse, .NoMoon
+	changeblock  8,  0, $55 ; moon
+.NoMoon:
+	return
 
 .HoOh:
 	checkevent EVENT_CAUGHT_HO_OH
@@ -88,12 +97,40 @@ MeetUpHoOh:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	showemote EMOTE_SHOCK, TINTOWERROOF_RIVAL, 15
 	showemote EMOTE_SHOCK, TINTOWERROOF_SHERLES, 15
+	moveobject TINTOWERROOF_RIVAL, 8, 11
+	moveobject TINTOWERROOF_SHERLES, 8, 12
 	opentext
 	writetext WhatWasThatText
 	waitbutton
 	closetext
 	pause 15
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .ShowDahlia
+	appear TINTOWERROOF_CHRIS
+	sjump .HidePlayer
+.ShowDahlia
+	appear TINTOWERROOF_KRIS
+.HidePlayer
+	applymovement PLAYER, HidePlayerMovement
+	applymovement PLAYER, CameraPansToHoOhMovement
+	pause 15
+	cry HO_OH
+	pause 30
+	applymovement PLAYER, CameraPansToPlayerMovement
+	turnobject PLAYER, UP
+	applymovement PLAYER, ShowPlayerMovement
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .HideDahlia
+	disappear TINTOWERROOF_CHRIS
+	sjump .HidDoppelganger
+.HideDahlia
+	disappear TINTOWERROOF_KRIS
+.HidDoppelganger
+	pause 15
 	playsound SFX_THROW_BALL
+	appear TINTOWERROOF_ROCKET_BALL
+	applymovement TINTOWERROOF_ROCKET_BALL, PlayerHoOhMovement2
+	disappear TINTOWERROOF_ROCKET_BALL
 	pause 30
 	playsound SFX_BALL_POOF
 	pause 20
@@ -239,8 +276,42 @@ TinTowerRivalLeavesMovement:
 	step DOWN
 	step_end
 
+ShowPlayerMovement:
+	show_person
+	step_end
+
+HidePlayerMovement:
+	hide_person
+	step_end
+
+CameraPansToHoOhMovement:
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step_end
+
+CameraPansToPlayerMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
 HoOhText:
 	text "Shaoooh!"
+	done
+
+Miyamoto3LossText:
+	text "How many times"
+	line "will it come to"
+	cont "this?"
 	done
 
 WelcomeToTheRoofText:
@@ -260,12 +331,6 @@ WelcomeToTheRoofText:
 Miyamoto3WinText:
 	text "The same result"
 	line "again…"
-	done
-
-Miyamoto3LossText:
-	text "Quite the"
-	line "surprise, if I do"
-	cont "say so."
 	done
 
 ImpressiveText:
@@ -419,7 +484,7 @@ TinTowerRoof_MapEvents:
 
 	db 0 ; bg events
 
-	db 7 ; object events
+	db 8 ; object events
 	object_event  9,  9, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TinTowerHoOh, EVENT_TIN_TOWER_ROOF_HO_OH
 	object_event  9,  2, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_HO_OH_2
 	object_event  9, 10, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_WISE_TRIO_1
@@ -427,3 +492,4 @@ TinTowerRoof_MapEvents:
 	object_event  9, 11, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_PLAYER
 	object_event  8, 15, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_PLAYER
 	object_event  8, 15, SPRITE_SHERLES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_PLAYER
+	object_event  9,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_ROCKET_BALL

@@ -19,7 +19,7 @@ TinTower2FRocket1Script:
 	end
 
 TinTower2FRocket2Script:
-	trainer GRUNTM, GRUNTF_10, EVENT_BEAT_ROCKET_GRUNTF_10, GruntF10SeenText, GruntF10BeatenText, 0, .Script
+	trainer GRUNTF, GRUNTF_10, EVENT_BEAT_ROCKET_GRUNTF_10, GruntF10SeenText, GruntF10BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
