@@ -55,7 +55,7 @@ Unique Poke Ball sprites and animations: Idain
 
 Move Steel Slice: Mskd.
 
-Rangi for Route 47 and 48 maps and the Town Map expansion.
+Rangi for Route 47 and 48 maps, Cherry Tree and the Town Map expansion.
 
 Ambipom back sprite: ShadowOne333
 
@@ -96,6 +96,8 @@ Prism Team.
 Aron and Lairon sprites: Nukkiie
 
 Ein trainer sprite: Sindorman
+
+Walker sprites: Kage
 
 Dragon Tamer Male sprite: JustinNuggets
 

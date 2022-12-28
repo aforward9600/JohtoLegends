@@ -143,7 +143,8 @@ CreditsScript:
 	db      TRAINER_SPRITES, 0
 	db        JUSTINNUGGETS, 1
 	db            SINDORMAN, 2
-	db          FERROPEXOLA, 3
+	db                 KAGE, 3
+	db          FERROPEXOLA, 4
 
 	db CREDITS_WAIT, 12
 

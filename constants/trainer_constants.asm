@@ -204,7 +204,7 @@ CHRIS EQU __enum__
 	const FABIO
 	const AJ
 	const ADRIEN
-	const CODY
+	const NICK
 	const MIKE
 	const GAVEN1
 	const GAVEN2
@@ -237,7 +237,7 @@ CHRIS EQU __enum__
 	const BETH2
 	const CAROL
 	const QUINN
-	const EMMA
+	const JESSIE
 	const CYBIL
 	const JENN
 	const BETH3
@@ -332,6 +332,7 @@ CHRIS EQU __enum__
 	const CADI
 	const CADI2
 	const CADI3
+	const KAWAKAMI
 
 	trainerclass SABRINA ; 23
 	const SABRINA1

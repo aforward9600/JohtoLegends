@@ -15,16 +15,8 @@ IcePathB3FNevermeltice:
 IcePathB3FRock:
 	jumpstd smashrock
 
-TrainerBugCatcherAnton:
-	trainer BUG_CATCHER, ANTON, EVENT_BEAT_BUG_CATCHER_ANTON, BugCatcherAntonSeenText, BugCatcherAntonBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext BugCatcherAntonAfterText
-	waitbutton
-	closetext
-	end
+IcePathBugCatcher:
+	jumptextfaceplayer IcePath3FNurseRestAWhileText
 
 IcePath3FNurse:
 	faceplayer
@@ -45,25 +37,6 @@ IcePath3FNurse:
 	waitbutton
 	closetext
 	end
-
-BugCatcherAntonSeenText:
-	text "It was a mistake"
-	line "to come here. My"
-	cont "Bug-types are"
-
-	para "about to enter"
-	line "hibernation."
-	done
-
-BugCatcherAntonBeatenText:
-	text "My poor bugs..."
-	done
-
-BugCatcherAntonAfterText:
-	text "If it wasn't so"
-	line "cold, I would have"
-	cont "won that battle!"
-	done
 
 IcePath3FNurseRestAWhileText:
 	text "Oh my, your"
@@ -92,5 +65,5 @@ IcePathB3F_MapEvents:
 	db 4 ; object events
 	object_event  5,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePathB3FNevermeltice, EVENT_ICE_PATH_B3F_NEVERMELTICE
 	object_event  9,  8, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB3FRock, -1
-	object_event  6,  1, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherAnton, -1
+	object_event  6,  1, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, IcePathBugCatcher, -1
 	object_event  4,  3, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePath3FNurse, -1

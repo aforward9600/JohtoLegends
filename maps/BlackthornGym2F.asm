@@ -56,19 +56,19 @@ BlackthornGym2F_MapScripts:
 BlackthornGymBoulder:
 	jumpstd strengthboulder
 
-TrainerCooltrainermCody:
-	trainer COOLTRAINERM, CODY, EVENT_BEAT_COOLTRAINERM_CODY, CooltrainermCodySeenText, CooltrainermCodyBeatenText, 0, .Script
+TrainerDragonTamerMDarius:
+	trainer DRAGON_TAMER_M, DARIUS, EVENT_BEAT_DRAGON_TAMER_M_DARIUS, DragonTamerMDariusSeenText, DragonTamerMDariusBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainermCodyAfterBattleText
+	writetext DragonTamerMDariusAfterBattleText
 	waitbutton
 	closetext
 	end
 
 TrainerCooltrainerfFran:
-	trainer COOLTRAINERF, EMIKO, EVENT_BEAT_COOLTRAINERF_EMIKO, CooltrainerfFranSeenText, CooltrainerfFranBeatenText, 0, .Script
+	trainer DRAGON_TAMER_F, DANI, EVENT_BEAT_DRAGON_TAMER_F_DANI, CooltrainerfFranSeenText, CooltrainerfFranBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -78,18 +78,18 @@ TrainerCooltrainerfFran:
 	closetext
 	end
 
-CooltrainermCodySeenText:
+DragonTamerMDariusSeenText:
 	text "It's not as if we"
 	line "all use dragon-"
 	cont "type #MON."
 	done
 
-CooltrainermCodyBeatenText:
+DragonTamerMDariusBeatenText:
 	text "Rats! If only I"
 	line "had a dragon!"
 	done
 
-CooltrainermCodyAfterBattleText:
+DragonTamerMDariusAfterBattleText:
 	text "Members of our"
 	line "dragon-user clan"
 
@@ -138,7 +138,7 @@ BlackthornGym2F_MapEvents:
 	db 0 ; bg events
 
 	db 8 ; object events
-	object_event  4,  1, SPRITE_DRAGON_TAMER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerCooltrainermCody, -1
+	object_event  4,  1, SPRITE_DRAGON_TAMER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerDragonTamerMDarius, -1
 	object_event  4, 11, SPRITE_DRAGON_TAMER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfFran, -1
 	object_event  8,  2, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymBoulder, EVENT_BOULDER_IN_BLACKTHORN_GYM_1
 	object_event  2,  3, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymBoulder, EVENT_BOULDER_IN_BLACKTHORN_GYM_2

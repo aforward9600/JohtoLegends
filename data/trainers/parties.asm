@@ -1115,8 +1115,6 @@ YoungsterGroup:
 
 	end_list_items
 
-SECTION "Enemy Trainer Parties 2", ROMX
-
 SchoolboyGroup:
 	next_list_item ; SCHOOLBOY (1) Route 44
 	db "Finn@", TRAINERTYPE_NORMAL
@@ -1352,6 +1350,8 @@ SchoolboyGroup:
 	db -1 ; end
 
 	end_list_items
+
+SECTION "Enemy Trainer Parties 2", ROMX
 
 BirdKeeperGroup:
 	next_list_item ; BIRD_KEEPER (1)
@@ -1741,11 +1741,17 @@ CooltrainerMGroup:
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (4)
-	db "CODY@", TRAINERTYPE_NORMAL
-	db 34
-	dw HORSEA
-	db 36
-	dw SEADRA
+	db "Nick@", TRAINERTYPE_NORMAL
+	db 51
+	dw JOLTEON
+	db 51
+	dw GLALIE
+	db 51
+	dw CROBAT
+	db 51
+	dw AGGRON
+	db 52
+	dw QUAGSIRE
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (5)
@@ -2065,10 +2071,23 @@ CooltrainerFGroup:
 	dw STARMIE
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERF (15)
-	db "EMMA@", TRAINERTYPE_NORMAL
-	db 28
-	dw POLIWHIRL
+	next_list_item ; COOLTRAINERF (15) Route 31
+	db "Jessie@", TRAINERTYPE_MOVES
+	db 49
+	dw MAGMORTAR
+	dw SUNNY_DAY, SLUDGE_BOMB, LAVA_PLUME, CONFUSE_RAY
+	db 49
+	dw MAMOSWINE
+	dw EARTHQUAKE, THRASH, MIST, DOUBLE_HIT_M
+	db 49
+	dw VENUSAUR
+	dw SOLARBEAM, SUNNY_DAY, SLUDGE_BOMB, SYNTHESIS
+	db 49
+	dw KANGASKHAN
+	dw SUCKER_PUNCH, OUTRAGE, DIZZY_PUNCH, BULK_UP
+	db 50
+	dw ALAKAZAM
+	dw PSYCHIC_M, DAZZLINGLEAM, SHADOW_BALL, RECOVER
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (16)
@@ -2775,6 +2794,18 @@ TeacherGroup:
 	dw PIXIE_PUNCH, BRICK_BREAK, MOONLIGHT, ROUND_M
 	db -1 ; end
 
+	next_list_item ; TEACHER (7) Route 31
+	db "Kawakami@", TRAINERTYPE_NORMAL
+	db 49
+	dw FLAREON
+	db 49
+	dw JUMPLUFF
+	db 49
+	dw BRONZONG
+	db 50
+	dw STANTLER
+	db -1 ; end
+
 	end_list_items
 
 SabrinaGroup:
@@ -2796,10 +2827,18 @@ SabrinaGroup:
 BugCatcherGroup:
 	next_list_item ; BUG_CATCHER (1)
 	db "Anton@", TRAINERTYPE_NORMAL
-	db 6
-	dw SPINARAK
-	db 6
-	dw LEDYBA
+	db 50
+	dw ARIADOS
+	db 50
+	dw LEDIAN
+	db 50
+	dw HERACROSS
+	db 50
+	dw BUTTERFREE
+	db 50
+	dw BEEDRILL
+	db 51
+	dw VENOMOTH
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (2) Route 44

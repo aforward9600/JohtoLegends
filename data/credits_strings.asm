@@ -27,7 +27,7 @@ CreditsStrings:
 	dw .InternetGoblin
 	dw .Sarugakucho
 	dw .AkitoMori
-	dw .TakahiroHarada
+	dw .Kage
 	dw .Damien
 	dw .PresentedBy
 	dw .TakehiroIzushi
@@ -153,7 +153,7 @@ CreditsStrings:
 .InternetGoblin:      db "   InternetGoblin@"      ; "スーパーマりオクラブ@"
 .Sarugakucho:         db "    SARUGAKUCHO@"           ; "さるがくちょう@"
 .AkitoMori:           db "     AKITO MORI@"           ; "もり　あきと@"
-.TakahiroHarada:      db "  TAKAHIRO HARADA@"         ; "はらだ　たかひろ@"
+.Kage:                db "        Kage@"         ; "はらだ　たかひろ@"
 .Damien:              db "       Damien@"         ; "はしもと　とおる@"
 .PresentedBy:         db "    Presented By@"        ; "まつもと　のぼる@"
 .TakehiroIzushi:      db "  TAKEHIRO IZUSHI@"         ; "いずし　たけひろ@"
