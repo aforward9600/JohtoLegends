@@ -128,9 +128,21 @@
 	const SPRITE_CHRIS_ITEM
 	const SPRITE_KRIS_ITEM
 	const SPRITE_BIKER_BOSS
+	const SPRITE_BIRD_KEEPER
+	const SPRITE_BOARDER
+	const SPRITE_CAMPER
+	const SPRITE_FIREBREATHER
+	const SPRITE_JUGGLER
+	const SPRITE_PICNICKER
+	const SPRITE_POKEMANIAC
+	const SPRITE_PSYCHIC
+	const SPRITE_SCHOOLBOY
+	const SPRITE_SKIER
+	const SPRITE_GRAMPS_STANDING
+	const SPRITE_OFFICER_STANDING
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
-	const_def $80
+	const_def $90
 SPRITE_POKEMON EQU const_value
 	const SPRITE_UNOWN ; 80
 	const SPRITE_GEODUDE ; 81

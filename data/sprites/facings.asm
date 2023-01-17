@@ -56,17 +56,17 @@ FacingWeirdTree2: ; standing down
 
 FacingStepDown1: ; walking down 1
 	db 4 ; #
-	db  0,  0, 0, $80
-	db  0,  8, 0, $81
-	db  8,  0, RELATIVE_ATTRIBUTES, $82
-	db  8,  8, RELATIVE_ATTRIBUTES, $83
+	db  0,  0, 0, $0C
+	db  0,  8, 0, $0D
+	db  8,  0, RELATIVE_ATTRIBUTES, $0E
+	db  8,  8, RELATIVE_ATTRIBUTES, $0F
 
 FacingStepDown3: ; walking down 2
 	db 4 ; #
-	db  0,  8, X_FLIP, $80
-	db  0,  0, X_FLIP, $81
-	db  8,  8, RELATIVE_ATTRIBUTES | X_FLIP, $82
-	db  8,  0, RELATIVE_ATTRIBUTES | X_FLIP, $83
+	db  0,  8, X_FLIP, $0C
+	db  0,  0, X_FLIP, $0D
+	db  8,  8, RELATIVE_ATTRIBUTES | X_FLIP, $0E
+	db  8,  0, RELATIVE_ATTRIBUTES | X_FLIP, $0F
 
 FacingStepUp0:
 FacingStepUp2: ; standing up
@@ -78,17 +78,17 @@ FacingStepUp2: ; standing up
 
 FacingStepUp1: ; walking up 1
 	db 4 ; #
-	db  0,  0, 0, $84
-	db  0,  8, 0, $85
-	db  8,  0, RELATIVE_ATTRIBUTES, $86
-	db  8,  8, RELATIVE_ATTRIBUTES, $87
+	db  0,  0, 0, $10
+	db  0,  8, 0, $11
+	db  8,  0, RELATIVE_ATTRIBUTES, $12
+	db  8,  8, RELATIVE_ATTRIBUTES, $13
 
 FacingStepUp3: ; walking up 2
 	db 4 ; #
-	db  0,  8, X_FLIP, $84
-	db  0,  0, X_FLIP, $85
-	db  8,  8, RELATIVE_ATTRIBUTES | X_FLIP, $86
-	db  8,  0, RELATIVE_ATTRIBUTES | X_FLIP, $87
+	db  0,  8, X_FLIP, $10
+	db  0,  0, X_FLIP, $11
+	db  8,  8, RELATIVE_ATTRIBUTES | X_FLIP, $12
+	db  8,  0, RELATIVE_ATTRIBUTES | X_FLIP, $13
 
 FacingStepLeft0:
 FacingStepLeft2: ; standing left
@@ -109,18 +109,18 @@ FacingStepRight2: ; standing right
 FacingStepLeft1:
 FacingStepLeft3: ; walking left
 	db 4 ; #
-	db  0,  0, 0, $88
-	db  0,  8, 0, $89
-	db  8,  0, RELATIVE_ATTRIBUTES, $8a
-	db  8,  8, RELATIVE_ATTRIBUTES, $8b
+	db  0,  0, 0, $14
+	db  0,  8, 0, $15
+	db  8,  0, RELATIVE_ATTRIBUTES, $16
+	db  8,  8, RELATIVE_ATTRIBUTES, $17
 
 FacingStepRight1:
 FacingStepRight3: ; walking right
 	db 4 ; #
-	db  0,  8, X_FLIP, $88
-	db  0,  0, X_FLIP, $89
-	db  8,  8, RELATIVE_ATTRIBUTES | X_FLIP, $8a
-	db  8,  0, RELATIVE_ATTRIBUTES | X_FLIP, $8b
+	db  0,  8, X_FLIP, $14
+	db  0,  0, X_FLIP, $15
+	db  8,  8, RELATIVE_ATTRIBUTES | X_FLIP, $16
+	db  8,  0, RELATIVE_ATTRIBUTES | X_FLIP, $17
 
 FacingFishDown: ; fishing down
 	db 5 ; #

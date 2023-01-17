@@ -13,6 +13,7 @@ NUM_SPRITEDATA_FIELDS EQU const_value
 	const WALKING_SPRITE  ; 1
 	const STANDING_SPRITE ; 2
 	const STILL_SPRITE    ; 3
+	const POKEMON_SPRITE  ; 4
 
 ; sprite palettes
 	const_def

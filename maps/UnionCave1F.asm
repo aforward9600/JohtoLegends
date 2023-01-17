@@ -1,8 +1,8 @@
 	object_const_def ; object_event constants
 	const UNIONCAVE1F_HIKER1
-	const UNIONCAVE1F_SUPER_NERD
+	const UNIONCAVE1F_BEAUTY
 	const UNIONCAVE1F_FISHER1
-	const UNIONCAVE1F_FISHER2
+	const UNIONCAVE1F_POKEFAN_M
 	const UNIONCAVE1F_POKE_BALL1
 	const UNIONCAVE1F_POKE_BALL2
 	const UNIONCAVE1F_POKE_BALL3
@@ -173,15 +173,15 @@ FirebreatherBlartBeatenText:
 	done
 
 FirebreatherBlartAfterBattleText:
-	text "I guess you already"
-	line "have seen one."
+	text "I guess you have"
+	line "already seen one."
 
 	para "You didn't seem"
 	line "that impressed."
 	done
 
 UnionCave1FUnusedSignText:
-	text "UNION CAVE"
+	text "Union Cave"
 	done
 
 UnionCave1F_MapEvents:
@@ -200,7 +200,7 @@ UnionCave1F_MapEvents:
 	db 8 ; object events
 	object_event 11,  6, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerHikerBubba, -1
 	object_event  3, 20, SPRITE_BUENA, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyBetty, -1
-	object_event  6, 27, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherBlart, -1
+	object_event  6, 27, SPRITE_FIREBREATHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherBlart, -1
 	object_event 14, 19, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerPokeFanMRoberto, -1
 	object_event 17, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FDuskBall, EVENT_UNION_CAVE_1F_DUSK_BALL
 	object_event  4,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FLinkCable, EVENT_UNION_CAVE_1F_LINK_CABLE

@@ -33,7 +33,7 @@ Cardboardbox: Battle Tower Prize List fix.
 
 Puddles and mid-battle quotes: Rangi
 
-Damien: Surf sprite color correction, AI Improvements.
+Damien: Surf sprite color correction, AI Improvements, max walking sprite increase.
 
 landesherr: AI Improvements.
 
@@ -55,7 +55,7 @@ Unique Poke Ball sprites and animations: Idain
 
 Move Steel Slice: Mskd.
 
-Rangi for Route 47 and 48 maps, Cherry Tree and the Town Map expansion.
+Rangi and the Polished Crystal team for Route 47 and 48 maps, Cherry Tree and the Town Map expansion and many overworld sprites.
 
 Ambipom back sprite: ShadowOne333
 

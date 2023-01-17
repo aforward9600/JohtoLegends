@@ -132,3 +132,15 @@ OverworldSprites:
 	overworld_sprite ChrisItemGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisItemGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite BikerBossGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite BirdKeeperGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite BoarderGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite CamperGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite FirebreatherGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite JugglerGFX, 12, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite PicnickerGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite PokemaniacGFX, 12, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite PsychicGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite SchoolboyGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite SkierGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite GrampsStandingGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
+	overworld_sprite OfficerStandingGFX, 12, STANDING_SPRITE, PAL_OW_BLUE

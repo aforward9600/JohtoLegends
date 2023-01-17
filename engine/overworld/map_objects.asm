@@ -2972,6 +2972,8 @@ InitSprites:
 	jr z, .nope1
 	xor a
 .nope1
+	add a
+	add a
 	add [hl]
 	inc hl
 	ld [bc], a ; tile id
@@ -2984,6 +2986,21 @@ InitSprites:
 .nope2
 	and OBP_NUM | X_FLIP | Y_FLIP | PRIORITY
 	or d
+
+	push bc
+	ld b, a
+	ldh a, [hFFC1]
+	cp $40
+	ld a, b
+	jr c, .vram1
+
+;.vram0
+	;and !VRAM_BANK_1
+	res OAM_TILE_BANK, a
+
+.vram1
+	pop bc
+
 	ld [bc], a ; attributes
 	inc c
 	ldh a, [hUsedSpriteTile]
