@@ -12,8 +12,9 @@ BurnedTowerB1F_MapScripts:
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_TILES, .LadderCallback
+	callback MAPCALLBACK_OBJECTS, .EnteiAppears
 
 .DummyScene0:
 	end
@@ -26,6 +27,21 @@ BurnedTowerB1F_MapScripts:
 	iftrue .HideLadder
 	changeblock 6, 14, $02 ; floor
 .HideLadder:
+	return
+
+.EnteiAppears:
+	checkevent EVENT_CAUGHT_ENTEI
+	iftrue .EnteiWillNotAppear
+	checkevent EVENT_BEAT_ENTEI
+	iftrue .EnteiWillNotAppear
+	checkevent EVENT_BEAT_LAIR_ARCHER
+	iftrue .EnteiMayAppear
+.EnteiWillNotAppear:
+	disappear BURNEDTOWERB1F_ENTEI1
+	return
+
+.EnteiMayAppear:
+	appear BURNEDTOWERB1F_ENTEI1
 	return
 
 ReleaseTheBeasts:
@@ -89,6 +105,32 @@ ReleaseTheBeasts:
 	reloadmappart
 	closetext
 	setscene SCENE_DEFAULT
+	end
+
+EnteiBattle:
+	opentext
+	writetext EnteiCry
+	pause 15
+	cry ENTEI
+	waitbutton
+	closetext
+	loadwildmon ENTEI, 60
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	startbattle
+	ifequal LOSE, .NotBeaten
+	disappear BURNEDTOWERB1F_ENTEI1
+	reloadmapafterbattle
+	special CheckCaughtCelebi
+	iftrue .CaughtEntei
+	setevent EVENT_BEAT_ENTEI
+	end
+
+.CaughtEntei:
+	setevent EVENT_CAUGHT_ENTEI
+	end
+
+.NotBeaten:
+	reloadmapafterbattle
 	end
 
 RaikouExamine:
@@ -288,6 +330,10 @@ SuicuneExamineText:
 	text "It's Suicune."
 	done
 
+EnteiCry:
+	text "Entei: Burrurur!"
+	done
+
 BurnedTowerB1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -306,7 +352,7 @@ BurnedTowerB1F_MapEvents:
 
 	db 7 ; object events
 	object_event  7,  3, SPRITE_RAIKOU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RaikouExamine, EVENT_BURNED_TOWER_B1F_BEASTS_1
-	object_event 12,  3, SPRITE_ENTEI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EnteiExamine, EVENT_BURNED_TOWER_B1F_BEASTS_1
+	object_event 10,  3, SPRITE_ENTEI_P, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EnteiBattle, EVENT_BURNED_TOWER_B1F_ENTEI
 	object_event 10,  4, SPRITE_SUICUNE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SuicuneExamine, EVENT_BURNED_TOWER_B1F_BEASTS_1
 	object_event  7,  3, SPRITE_RAIKOU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, RaikouExamine, EVENT_BURNED_TOWER_B1F_BEASTS_2
 	object_event 12,  3, SPRITE_ENTEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, EnteiExamine, EVENT_BURNED_TOWER_B1F_BEASTS_2

@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const GUIDEGENTSHOUSE_GRAMPS
+	const GUIDEGENTSHOUSE_LASS
 
 GuideGentsHouse_MapScripts:
 	db 0 ; scene scripts
@@ -13,16 +13,25 @@ GuideGentsHouseBookshelf:
 	jumpstd magazinebookshelf
 
 GuideGentsHouseGuideGentText:
-	text "When I was a wee"
-	line "lad, I was a hot-"
-	cont "shot trainer!"
+	text "My grandfather is"
+	line "the old man at the"
+	cont "edge of the city."
 
-	para "Here's a word of"
-	line "advice: Catch lots"
-	cont "of #MON!"
+	para "He likes guiding"
+	line "people around,"
+	cont "even though he"
+	cont "doesn't get paid."
 
-	para "Treat them all"
-	line "with kindness!"
+	para "They started"
+	line "calling him the"
+	cont "Guide Gent, and"
+	cont "he liked it so"
+	cont "much, he put it on"
+	cont "the sign in front."
+
+	para "It's a little"
+	line "embarassing, but"
+	cont "he likes it."
 	done
 
 GuideGentsHouse_MapEvents:
@@ -39,4 +48,4 @@ GuideGentsHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, GuideGentsHouseBookshelf
 
 	db 1 ; object events
-	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GuideGentsHouseGuideGent, EVENT_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE
+	object_event  2,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GuideGentsHouseGuideGent, -1

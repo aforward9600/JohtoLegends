@@ -25,7 +25,7 @@ FuchsiaGymJanineScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_JANINE
 	setevent EVENT_BEAT_LASS_DANA3
-	setevent EVENT_BEAT_PICNICKER_CINDY
+	setevent EVENT_BEAT_PICNICKER_LACY
 	setevent EVENT_BEAT_CAMPER_BARRY
 	variablesprite SPRITE_FUCHSIA_GYM_2, SPRITE_LASS
 	variablesprite SPRITE_FUCHSIA_GYM_3, SPRITE_LASS
@@ -89,7 +89,7 @@ LassLindaScript:
 	end
 
 PicnickerCindyScript:
-	checkevent EVENT_BEAT_PICNICKER_CINDY
+	checkevent EVENT_BEAT_PICNICKER_LACY
 	iftrue .CindyUnmasked
 	applymovement FUCHSIAGYM_FUCHSIA_GYM_3, Movement_NinjaSpin
 	faceplayer
@@ -98,17 +98,17 @@ PicnickerCindyScript:
 .CindyUnmasked:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_PICNICKER_CINDY
+	checkevent EVENT_BEAT_PICNICKER_LACY
 	iftrue .CindyAfterScript
 	writetext PicnickerCindyBeforeText
 	waitbutton
 	closetext
 	winlosstext PicnickerCindyBeatenText, 0
-	loadtrainer PICNICKER, CINDY
+	loadtrainer PICNICKER, LACY
 	startbattle
 	iftrue .CindyBecomesJanine
 	reloadmapafterbattle
-	setevent EVENT_BEAT_PICNICKER_CINDY
+	setevent EVENT_BEAT_PICNICKER_LACY
 	end
 
 .CindyBecomesJanine:

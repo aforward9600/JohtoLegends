@@ -25,7 +25,7 @@ CherrygroveGymSpeechHouse_MapScripts:
 	closetext
 	readvar VAR_BADGES
 	ifequal 7, .CynthiaBattle2
-	winlosstext CynthiaBeatenAgainText, 0
+	winlosstext CynthiaBeatenAgainText, Cynthia2LastMonText
 	loadtrainer TOURIST, CYNTHIA5
 	startbattle
 	dontrestartmapmusic
@@ -45,7 +45,7 @@ CherrygroveGymSpeechHouse_MapScripts:
 	end
 
 .CynthiaBattle2:
-	winlosstext CynthiaBeatenAgainText, 0
+	winlosstext CynthiaBeatenAgainText, Cynthia2LastMonText
 	loadtrainer TOURIST, CYNTHIA4
 	startbattle
 	dontrestartmapmusic
@@ -81,6 +81,7 @@ CherrygroveGymSpeechHouseCynthiaScript:
 	opentext
 	checkevent EVENT_BEAT_CHERRYGROVE_CYNTHIA
 	iftrue .BeatenCherrygroveCynthia
+	playmusic MUSIC_CYNTHIA_ENCOUNTER
 	writetext CherrygroveCynthiaAskBattleText
 	yesorno
 	iffalse .RefusedCynthiaBattle
@@ -89,7 +90,7 @@ CherrygroveGymSpeechHouseCynthiaScript:
 	closetext
 	readvar VAR_BADGES
 	ifequal 7, .CynthiaBattle1
-	winlosstext CynthiaBeatenAgainText, 0
+	winlosstext CynthiaBeatenAgainText, Cynthia2LastMonText
 	loadtrainer TOURIST, CYNTHIA5
 	startbattle
 	reloadmapafterbattle
@@ -98,10 +99,13 @@ CherrygroveGymSpeechHouseCynthiaScript:
 	waitbutton
 	closetext
 	setevent EVENT_BEAT_CHERRYGROVE_CYNTHIA
+	special RestartMapMusic
+	waitsfx
+	playmapmusic
 	end
 
 .CynthiaBattle1:
-	winlosstext CynthiaBeatenAgainText, 0
+	winlosstext CynthiaBeatenAgainText, Cynthia2LastMonText
 	loadtrainer TOURIST, CYNTHIA4
 	startbattle
 	reloadmapafterbattle
@@ -136,6 +140,11 @@ CherrygroveCynthiaMovement2:
 
 CherrygroveGymSpeechHouseBookshelf:
 	jumpstd picturebookshelf
+
+Cynthia2LastMonText:
+	text "We can still win"
+	line "this!"
+	done
 
 CherrygroveCynthiaAskBattleText:
 	text "Keeping well?"

@@ -513,7 +513,6 @@ InitializeEventsScript:
 	setevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
 	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
 	setevent EVENT_INITIALIZED_EVENTS
-	setevent EVENT_ROUTE_30_YOUNGSTER_JOEY
 	setevent EVENT_BUG_CATCHING_CONTESTANT_1A
 	setevent EVENT_BUG_CATCHING_CONTESTANT_2A
 	setevent EVENT_BUG_CATCHING_CONTESTANT_3A
@@ -661,6 +660,8 @@ InitializeEventsScript:
 	setevent EVENT_RIVALS_HOUSE_RIVAL
 	setevent EVENT_RIVAL_NEW_BARK_TOWN
 	setevent EVENT_CHERRYGROVE_CYNTHIA
+	setevent EVENT_ROUTE_47_SUICUNE
+	setevent EVENT_BURNED_TOWER_B1F_ENTEI
 	return
 
 AskNumber1MScript:
@@ -670,7 +671,6 @@ AskNumber1MScript:
 	ifequal PHONE_SAILOR_HUEY, .Huey
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -698,9 +698,6 @@ AskNumber1MScript:
 	end
 .Jose:
 	farwritetext JoseAskNumber1Text
-	end
-.Joey:
-	farwritetext JoeyAskNumber1Text
 	end
 .Wade:
 	farwritetext WadeAskNumber1Text
@@ -755,7 +752,6 @@ AskNumber2MScript:
 	ifequal PHONE_SAILOR_HUEY, .Huey
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -783,9 +779,6 @@ AskNumber2MScript:
 	end
 .Jose:
 	farwritetext JoseAskNumber2Text
-	end
-.Joey:
-	farwritetext JoeyAskNumber2Text
 	end
 .Wade:
 	farwritetext WadeAskNumber2Text
@@ -846,7 +839,6 @@ NumberAcceptedMScript:
 	ifequal PHONE_SAILOR_HUEY, .Huey
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -880,11 +872,6 @@ NumberAcceptedMScript:
 	end
 .Jose:
 	farwritetext JoseNumberAcceptedText
-	waitbutton
-	closetext
-	end
-.Joey:
-	farwritetext JoeyNumberAcceptedText
 	waitbutton
 	closetext
 	end
@@ -970,7 +957,6 @@ NumberDeclinedMScript:
 	ifequal PHONE_SAILOR_HUEY, .Huey
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -1004,11 +990,6 @@ NumberDeclinedMScript:
 	end
 .Jose:
 	farwritetext JoseNumberDeclinedText
-	waitbutton
-	closetext
-	end
-.Joey:
-	farwritetext JoeyNumberDeclinedText
 	waitbutton
 	closetext
 	end
@@ -1094,7 +1075,6 @@ PhoneFullMScript:
 	ifequal PHONE_SAILOR_HUEY, .Huey
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -1128,11 +1108,6 @@ PhoneFullMScript:
 	end
 .Jose:
 	farwritetext JosePhoneFullText
-	waitbutton
-	closetext
-	end
-.Joey:
-	farwritetext JoeyPhoneFullText
 	waitbutton
 	closetext
 	end
@@ -1218,7 +1193,6 @@ RematchMScript:
 	ifequal PHONE_SAILOR_HUEY, .Huey
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -1249,11 +1223,6 @@ RematchMScript:
 	end
 .Jose:
 	farwritetext JoseRematchText
-	waitbutton
-	closetext
-	end
-.Joey:
-	farwritetext JoeyRematchText
 	waitbutton
 	closetext
 	end
@@ -1361,7 +1330,6 @@ PackFullMScript:
 	readvar VAR_CALLERID
 	ifequal PHONE_SAILOR_HUEY, .Huey
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_SCHOOLBOY_ALAN, .Alan
 	ifequal PHONE_POKEFANM_DEREK, .Derek
@@ -1378,11 +1346,6 @@ PackFullMScript:
 	end
 .Jose:
 	farwritetext JosePackFullText
-	waitbutton
-	closetext
-	end
-.Joey:
-	farwritetext JoeyPackFullText
 	waitbutton
 	closetext
 	end
@@ -1431,16 +1394,11 @@ RematchGiftMScript:
 	opentext
 	readvar VAR_CALLERID
 	ifequal PHONE_SAILOR_HUEY, .Huey
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BIRDKEEPER_VANCE, .Vance
 	ifequal PHONE_HIKER_PARRY, .Parry
 
 .Huey:
 	farwritetext HueyRematchGiftText
-	buttonsound
-	end
-.Joey:
-	farwritetext JoeyRematchGiftText
 	buttonsound
 	end
 .Vance:
@@ -1459,7 +1417,6 @@ AskNumber1FScript:
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
 	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
@@ -1478,9 +1435,6 @@ AskNumber1FScript:
 .Gina:
 	farwritetext GinaAskNumber1Text
 	end
-.Dana:
-	farwritetext DanaAskNumber1Text
-	end
 .Tiffany:
 	farwritetext TiffanyAskNumber1Text
 	end
@@ -1495,7 +1449,6 @@ AskNumber2FScript:
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
 	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
@@ -1513,9 +1466,6 @@ AskNumber2FScript:
 	end
 .Gina:
 	farwritetext GinaAskNumber2Text
-	end
-.Dana:
-	farwritetext DanaAskNumber2Text
 	end
 .Tiffany:
 	farwritetext TiffanyAskNumber2Text
@@ -1538,7 +1488,6 @@ NumberAcceptedFScript:
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
 	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
@@ -1567,11 +1516,6 @@ NumberAcceptedFScript:
 	waitbutton
 	closetext
 	end
-.Dana:
-	farwritetext DanaNumberAcceptedText
-	waitbutton
-	closetext
-	end
 .Tiffany:
 	farwritetext TiffanyNumberAcceptedText
 	waitbutton
@@ -1590,7 +1534,6 @@ NumberDeclinedFScript:
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
 	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
@@ -1619,11 +1562,6 @@ NumberDeclinedFScript:
 	waitbutton
 	closetext
 	end
-.Dana:
-	farwritetext DanaNumberDeclinedText
-	waitbutton
-	closetext
-	end
 .Tiffany:
 	farwritetext TiffanyNumberDeclinedText
 	waitbutton
@@ -1642,7 +1580,6 @@ PhoneFullFScript:
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
 	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
@@ -1671,11 +1608,6 @@ PhoneFullFScript:
 	waitbutton
 	closetext
 	end
-.Dana:
-	farwritetext DanaPhoneFullText
-	waitbutton
-	closetext
-	end
 .Tiffany:
 	farwritetext TiffanyPhoneFullText
 	waitbutton
@@ -1693,7 +1625,6 @@ RematchFScript:
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
 	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
@@ -1717,11 +1648,6 @@ RematchFScript:
 	waitbutton
 	closetext
 	end
-.Dana:
-	farwritetext DanaRematchText
-	waitbutton
-	closetext
-	end
 .Tiffany:
 	farwritetext TiffanyRematchText
 	waitbutton
@@ -1737,7 +1663,6 @@ GiftFScript:
 	readvar VAR_CALLERID
 	ifequal PHONE_POKEFAN_BEVERLY, .Beverly
 	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 
 .Beverly:
@@ -1746,10 +1671,6 @@ GiftFScript:
 	end
 .Gina:
 	farwritetext GinaGiftText
-	buttonsound
-	end
-.Dana:
-	farwritetext DanaGiftText
 	buttonsound
 	end
 .Tiffany:
@@ -1761,7 +1682,6 @@ PackFullFScript:
 	readvar VAR_CALLERID
 	ifequal PHONE_POKEFAN_BEVERLY, .Beverly
 	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
@@ -1772,11 +1692,6 @@ PackFullFScript:
 	end
 .Gina:
 	farwritetext GinaPackFullText
-	waitbutton
-	closetext
-	end
-.Dana:
-	farwritetext DanaPackFullText
 	waitbutton
 	closetext
 	end

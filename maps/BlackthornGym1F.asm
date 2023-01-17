@@ -54,7 +54,7 @@ BlackthornGymMasterScript:
 	iftrue .GotTM24
 	setevent EVENT_BEAT_DRAGON_TAMER_M_DEVIN
 	setevent EVENT_BEAT_DRAGON_TAMER_M_DARIUS
-	setevent EVENT_BEAT_COOLTRAINERM_MIKE
+	setevent EVENT_BEAT_DRAGON_TAMER_M_DAVIS
 	setevent EVENT_BEAT_COOLTRAINERF_EMIKO
 	setevent EVENT_BEAT_DRAGON_TAMER_F_DANI
 	clearevent EVENT_MAHOGANY_MART_OWNERS
@@ -88,13 +88,13 @@ TrainerCooltrainermPaul:
 	closetext
 	end
 
-TrainerCooltrainermMike:
-	trainer COOLTRAINERM, MIKE, EVENT_BEAT_COOLTRAINERM_MIKE, CooltrainermMikeSeenText, CooltrainermMikeBeatenText, 0, .Script
+TrainerDragonTamermDavis:
+	trainer DRAGON_TAMER_M, DAVIS, EVENT_BEAT_DRAGON_TAMER_M_DAVIS, DragonTamermDavisSeenText, DragonTamermDavisBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainermMikeAfterBattleText
+	writetext DragonTamermDavisAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -129,6 +129,7 @@ BlackthornGymGuyScript:
 BlackthornGymStatue:
 	checkflag ENGINE_RISINGBADGE
 	iftrue .Beaten
+	gettrainername STRING_BUFFER_4, MASTER, MASTER1
 	jumpstd gymstatue1
 .Beaten:
 	gettrainername STRING_BUFFER_4, MASTER, MASTER1
@@ -148,15 +149,14 @@ MasterIntroText:
 	para "I am the Master of"
 	line "Blackthorn City,"
 	cont "and the Gym Leader"
+	cont "as well."
 
-	para "as well. If you"
-	line "wish to be recogn-"
-	cont "ized as a Dragon"
+	para "If you wish to be"
+	line "recognized as a"
+	cont "Dragon Master,"
+	cont "then face me!"
 
-	para "Master, then face"
-	line "me!"
-
-	para "As a GYM LEADER,"
+	para "As a Gym Leader,"
 	line "I will use my full"
 
 	para "power against any"
@@ -178,8 +178,7 @@ MasterText_Complete:
 	line "Master. Now, here"
 	cont "is the Rising-"
 	cont "Badge. You've"
-
-	para "earned it."
+	cont "earned it."
 	done
 
 MasterText_ReceivedRisingBadge:
@@ -271,17 +270,17 @@ CooltrainermPaulAfterBattleText:
 	line "Not a chance!"
 	done
 
-CooltrainermMikeSeenText:
+DragonTamermDavisSeenText:
 	text "My chance of"
 	line "losing? Not even"
 	cont "one percent!"
 	done
 
-CooltrainermMikeBeatenText:
+DragonTamermDavisBeatenText:
 	text "That's odd."
 	done
 
-CooltrainermMikeAfterBattleText:
+DragonTamermDavisAfterBattleText:
 	text "I know my short-"
 	line "comings now."
 
@@ -367,7 +366,7 @@ BlackthornGym1F_MapEvents:
 
 	db 5 ; object events
 	object_event  5,  3, SPRITE_MASTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornGymMasterScript, -1
-	object_event  6,  6, SPRITE_DRAGON_TAMER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermMike, -1
+	object_event  6,  6, SPRITE_DRAGON_TAMER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerDragonTamermDavis, -1
 	object_event  1, 14, SPRITE_DRAGON_TAMER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermPaul, -1
 	object_event  9,  2, SPRITE_DRAGON_TAMER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfLola, -1
 	object_event  7, 15, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornGymGuyScript, -1

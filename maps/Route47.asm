@@ -5,11 +5,28 @@
 	const ROUTE47_POKEBALL1
 	const ROUTE47_POKEBALL2
 	const ROUTE47_POKEBALL3
+	const ROUTE47_SUICUNE
 
 Route47_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .SuicuneAppears
+
+.SuicuneAppears:
+	checkevent EVENT_CAUGHT_SUICUNE
+	iftrue .SuicuneWillNotAppear
+	checkevent EVENT_BEAT_SUICUNE
+	iftrue .SuicuneWillNotAppear
+	checkevent EVENT_BEAT_LAIR_ARIANA
+	iftrue .SuicuneMayAppear
+.SuicuneWillNotAppear:
+	disappear ROUTE47_SUICUNE
+	return
+
+.SuicuneMayAppear:
+	appear ROUTE47_SUICUNE
+	return
 
 TrainerHikerPhil:
 	trainer HIKER, PHIL1, EVENT_BEAT_HIKER_PHIL, HikerPhilSeenText, HikerPhilBeatenText, 0, .Script
@@ -42,6 +59,32 @@ TrainerCooltrainerFTeresa:
 	writetext CooltrainerFTeresaAfterBattleText
 	waitbutton
 	closetext
+	end
+
+Route47Suicune:
+	opentext
+	writetext SuicuneCry
+	pause 15
+	cry SUICUNE
+	waitbutton
+	closetext
+	loadwildmon SUICUNE, 60
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	startbattle
+	ifequal LOSE, .NotBeaten
+	disappear ROUTE47_SUICUNE
+	reloadmapafterbattle
+	special CheckCaughtCelebi
+	iftrue .CaughtSuicune
+	setevent EVENT_BEAT_SUICUNE
+	end
+
+.CaughtSuicune:
+	setevent EVENT_CAUGHT_SUICUNE
+	end
+
+.NotBeaten:
+	reloadmapafterbattle
 	end
 
 Route47ItemBallScript:
@@ -121,6 +164,10 @@ Route47SignText:
 	cont "Route 48"
 	done
 
+SuicuneCry:
+	text "Suicune: Drdrradr!"
+	done
+
 Route47_MapEvents:
 	db 0, 0 ; filler
 
@@ -134,10 +181,11 @@ Route47_MapEvents:
 	db 1 ; bg events
 	bg_event 23,  1, BGEVENT_READ, Route47Sign
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event 59, 26, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerHikerPhil, -1
 	object_event 37, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperEmil, -1
 	object_event 23,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerFTeresa, -1
 	object_event 8,  6,  SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, Route47ItemBallScript, EVENT_GOT_TM52_ENERGY_BALL
 	object_event 39, 28, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route47ItemBall2Script, EVENT_ROUTE_47_REVIVE
 	object_event 31, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route47DawnStoneScript, EVENT_ROUTE_47_DAWN_STONE
+	object_event  7,  4, SPRITE_SUICUNE_P, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route47Suicune, EVENT_ROUTE_47_SUICUNE

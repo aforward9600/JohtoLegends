@@ -50,7 +50,21 @@ TrainerCooltrainerFJessie:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerFJessieAfterText
+	writetext CooltrainerFJessieRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_BEAUTY_ENCOUNTER
+	writetext CooltrainerFJessieLetsDoItText
+	waitbutton
+	winlosstext CooltrainerFJessieBeatenText, 0
+	loadtrainer COOLTRAINERF, JESSIE
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.Refused:
+	writetext CooltrainerFJessieRefusedText
 	waitbutton
 	closetext
 	end
@@ -170,7 +184,15 @@ CooltrainerFJessieBeatenText:
 	text "I can see why!"
 	done
 
-CooltrainerFJessieAfterText:
+CooltrainerFJessieRematchText:
+	text "Want a rematch?"
+	done
+
+CooltrainerFJessieLetsDoItText:
+	text "Let's get to it!"
+	done
+
+CooltrainerFJessieRefusedText:
 	text "7 badges is no"
 	line "joke. No wonder"
 	cont "you're so strong!"
@@ -181,6 +203,10 @@ Route31SignText:
 
 	para "Violet City -"
 	line "Cherrygrove City"
+
+	para "Cooltrainer Jessie"
+	line "is waiting for"
+	cont "battle!"
 	done
 
 DarkCaveSignText:

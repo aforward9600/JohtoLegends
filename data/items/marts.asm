@@ -45,11 +45,16 @@ Marts:
 .End
 
 MartCherrygrove:
-	db 4 ; # items
-	db POTION
-	db ANTIDOTE
-	db PARLYZ_HEAL
-	db AWAKENING
+	db 9 ; # items
+	db ULTRA_BALL
+	db HYPER_POTION
+	db ESCAPE_ROPE
+	db REVIVE
+	db FULL_HEAL
+	db MAX_REPEL
+	db MAX_POTION
+	db FULL_RESTORE
+	db FLOWER_MAIL
 	db -1 ; end
 
 MartCherrygroveDex:

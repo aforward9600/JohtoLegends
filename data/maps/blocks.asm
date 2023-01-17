@@ -178,6 +178,7 @@ GuideGentsHouse_Blocks:
 CherrygroveEvolutionSpeechHouse_Blocks:
 Route30BerryHouse_Blocks:
 SootheBellHouse_Blocks:
+CherrygroveFisherHouse_Blocks:
 	INCBIN "maps/House1.blk"
 
 SafariZoneFuchsiaGateBeta_Blocks:
@@ -1082,3 +1083,12 @@ PokemonMansion1F_Blocks:
 
 HoOhLugiaRoom_Blocks:
 	INCBIN "maps/HoOhLugiaRoom.blk"
+
+RocketLairHallway1_Blocks:
+	INCBIN "maps/RocketLairHallway1.blk"
+
+RocketLairBreakRoom_Blocks:
+	INCBIN "maps/RocketLairBreakRoom.blk"
+
+RocketLairHallway2_Blocks:
+	INCBIN "maps/RocketLairHallway2.blk"

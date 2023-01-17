@@ -2148,7 +2148,6 @@ PiloswineEvosAttacks:
 
 MamoswineEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 63, ICICLE_CRASH
 	dbw LEARN_EVO_MOVE, ANCIENTPOWER
 	dbw 1, ANCIENTPOWER
 	dbw 1, ICE_FANG

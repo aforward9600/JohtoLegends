@@ -1,7 +1,7 @@
 	object_const_def ; object_event constants
 	const CHERRYGROVEMART_CLERK
-	const CHERRYGROVEMART_COOLTRAINER_M
-	const CHERRYGROVEMART_YOUNGSTER
+	const CHERRYGROVEMART_GRANNY
+	const CHERRYGROVEMART_TWIN
 
 CherrygroveMart_MapScripts:
 	db 0 ; scene scripts
@@ -14,33 +14,26 @@ CherrygroveMartClerkScript:
 	closetext
 	end
 
-CherrygroveMartCooltrainerMScript:
-	jumptextfaceplayer CherrygroveMartCooltrainerMText
+CherrygroveMartGrannyScript:
+	jumptextfaceplayer CherrygroveMartGrannyText
 
-CherrygroveMartYoungsterScript:
-	jumptextfaceplayer CherrygroveMartYoungsterText
+CherrygroveMartTwinScript:
+	jumptextfaceplayer CherrygroveMartTwinText
 
-CherrygroveMartCooltrainerMText:
-	text "They're fresh out"
-	line "of # BALLS!"
-
-	para "When will they get"
-	line "more of them?"
+CherrygroveMartGrannyText:
+	text "After a while,"
+	line "these stores don't"
+	cont "seem to have"
+	cont "anything different."
 	done
 
-CherrygroveMartYoungsterText:
-	text "When I was walking"
-	line "in the grass, a"
+CherrygroveMartTwinText:
+	text "They sell Flower"
+	line "Mail here."
 
-	para "bug #MON poi-"
-	line "soned my #MON!"
-
-	para "I just kept going,"
-	line "but then my"
-	cont "#MON fainted."
-
-	para "You should keep an"
-	line "ANTIDOTE with you."
+	para "It's perfect for"
+	line "a town with"
+	cont "cherry blossoms!"
 	done
 
 CherrygroveMart_MapEvents:
@@ -56,5 +49,5 @@ CherrygroveMart_MapEvents:
 
 	db 3 ; object events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveMartClerkScript, -1
-	object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveMartCooltrainerMScript, -1
-	object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMartYoungsterScript, -1
+	object_event  7,  6, SPRITE_GRANNY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveMartGrannyScript, -1
+	object_event  2,  5, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMartTwinScript, -1

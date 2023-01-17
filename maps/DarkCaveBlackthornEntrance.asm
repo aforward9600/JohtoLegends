@@ -42,11 +42,11 @@ DarkCaveBlackthornEntranceOfficerScript:
 	disappear DARKCAVEBLACKTHORNENTRANCE_OFFICER
 	end
 
-DarkCaveBlackthornEntranceRevive:
-	itemball REVIVE
+DarkCaveBlackthornEntranceMaxRevive:
+	itemball MAX_REVIVE
 
-DarkCaveBlackthornEntranceTMSnore:
-	itemball AWAKENING
+DarkCaveBlackthornEntranceNugget:
+	itemball NUGGET
 
 DarkCaveBlackthornEntranceBlackGlasses:
 	itemball BLACKGLASSES
@@ -118,9 +118,10 @@ IllGoSeeTheChiefText:
 DarkCaveBlackthornEntrance_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event 27,  3, DARK_CAVE_NEW_ENTRANCE, 2
 	warp_event  3, 25, DARK_CAVE_VIOLET_ENTRANCE, 2
+	warp_event  7,  1, ROCKET_LAIR_HALLWAY_1, 1
 
 	db 0 ; coord events
 
@@ -128,6 +129,6 @@ DarkCaveBlackthornEntrance_MapEvents:
 
 	db 4 ; object events
 	object_event  7,  2, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntranceOfficerScript, -1
-	object_event 21, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceRevive, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE
-	object_event  7, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMSnore, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE
+	object_event 21, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceMaxRevive, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_MAX_REVIVE
+	object_event  9, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceNugget, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_NUGGET
 	object_event 11, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceBlackGlasses, EVENT_GOT_BLACKGLASSES_IN_DARK_CAVE

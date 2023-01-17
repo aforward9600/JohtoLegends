@@ -2151,7 +2151,7 @@ BattleCommand_ApplyDamage:
 	bit SUBSTATUS_ENDURE, a
 	jr z, .check_item
 
-	call BattleCommand_FalseSwipe
+	farcall BattleCommand_FalseSwipe
 	ld b, 0
 	jr nc, .damage
 	ld b, 1

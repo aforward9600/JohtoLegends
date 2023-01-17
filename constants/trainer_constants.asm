@@ -117,20 +117,16 @@ CHRIS EQU __enum__
 	const ERIKA1
 
 	trainerclass YOUNGSTER ; 16
-	const JOEY1
+	const COTTON
 	const TIMMY
 	const ALBERT
 	const CALEB
 	const GORDY
 	const RANDY
-	const JOEY2
-	const JOEY3
 	const WARREN
 	const JIMMY
 	const OWEN
 	const JASON
-	const JOEY4
-	const JOEY5
 
 	trainerclass SCHOOLBOY ; 17
 	const FINN
@@ -188,14 +184,9 @@ CHRIS EQU __enum__
 	const LAURA
 	const SHANNON
 	const MICHELLE
-	const DANA1
 	const ELLEN
 	const CONNIE2
 	const CONNIE3
-	const DANA2
-	const DANA3
-	const DANA4
-	const DANA5
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -204,8 +195,8 @@ CHRIS EQU __enum__
 	const FABIO
 	const AJ
 	const ADRIEN
-	const NICK
-	const MIKE
+	const JACQUES
+	const EMILE
 	const GAVEN1
 	const GAVEN2
 	const ROBERT1
@@ -228,7 +219,7 @@ CHRIS EQU __enum__
 	const EMIKO
 	const HAZEL
 	const TINA
-	const AVA
+	const REESE
 	const KELLY
 	const JOYCE
 	const BETH1
@@ -333,6 +324,7 @@ CHRIS EQU __enum__
 	const CADI2
 	const CADI3
 	const KAWAKAMI
+	const CHARLENE
 
 	trainerclass SABRINA ; 23
 	const SABRINA1
@@ -570,7 +562,7 @@ CHRIS EQU __enum__
 	const GINA1
 	const CHLOE
 	const LACY
-	const CINDY
+	const BARBARA
 	const HOPE
 	const SHARON
 	const DEBRA
@@ -717,6 +709,8 @@ CHRIS EQU __enum__
 	const GRUNTF_10
 	const GRUNTF_11
 	const GRUNTF_12
+	const GRUNTF_13
+	const GRUNTF_14
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
@@ -802,10 +796,14 @@ CHRIS EQU __enum__
 	trainerclass DEPRESSED_DAHLIA ; 52
 	const DAHLIA_LARVITAR_1
 	const DAHLIA_DRATINI_1
+	const DAHLIA_LARVITAR_2
+	const DAHLIA_DRATINI_2
 
 	trainerclass DEPRESSED_DRACO ; 52
 	const DRACO_LARVITAR_1
 	const DRACO_DRATINI_1
+	const DRACO_LARVITAR_2
+	const DRACO_DRATINI_2
 
 	trainerclass EIN ; 53
 	const EIN1

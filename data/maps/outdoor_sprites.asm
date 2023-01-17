@@ -140,7 +140,7 @@ CherrygroveGroupSprites:
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
 	db SPRITE_GRAMPS
-	db SPRITE_SUPER_NERD
+	db SPRITE_BUG_CATCHER
 	db SPRITE_COOLTRAINER_F
 	; max 9 of 9 walking sprites
 	db SPRITE_POKE_BALL

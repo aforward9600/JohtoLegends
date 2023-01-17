@@ -139,10 +139,18 @@ Route45RematchGiftM:
 HikerWorkerScript:
 	faceplayer
 	opentext
+	checkevent EVENT_SPOKE_WITH_ELM
+	iftrue .RockSlideCleared
 	writetext RockSlideText
 	waitbutton
 	closetext
 	turnobject ROUTE45_HIKER1, DOWN
+	end
+
+.RockSlideCleared:
+	writetext RockSlideClearedText
+	waitbutton
+	closetext
 	end
 
 TrainerHikerMichael:
@@ -533,6 +541,15 @@ CamperQuentinAfterBattleText:
 
 	para "I never, ever lose"
 	line "there, but…"
+	done
+
+RockSlideClearedText:
+	text "These rocks are"
+	line "finally cleared!"
+
+	para "My bro in Dark"
+	line "Cave might be in a"
+	cont "better mood now."
 	done
 
 Route45SignText:

@@ -186,6 +186,10 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_RAICHU
 	const SPRITE_CLEFAIRY_P
 	const SPRITE_DUSKNOIR
+	const SPRITE_PICHU
+	const SPRITE_RAIKOU_P
+	const SPRITE_SUICUNE_P
+	const SPRITE_ENTEI_P
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
 	const_def $e0

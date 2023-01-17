@@ -9,7 +9,7 @@ DarkCaveNewEntrance_MapScripts:
 	callback MAPCALLBACK_TILES, .ClearRocks
 
 .ClearRocks:
-	checkevent EVENT_BEAT_MASTER
+	checkevent EVENT_SPOKE_WITH_ELM
 	iftrue .Done
 	changeblock  6,  2, $2a ; rock
 	changeblock  8,  2, $1d ; rock
@@ -20,10 +20,18 @@ DarkCaveNewEntrance_MapScripts:
 DarkCaveNewEntranceHikerScript:
 	faceplayer
 	opentext
+	checkevent EVENT_SPOKE_WITH_ELM
+	iftrue .DarkCaveRocksCleared
 	writetext DarkCaveNewEntranceHikerText1
 	waitbutton
 	closetext
 	turnobject DARKCAVENEWENTRANCE_HIKER, RIGHT
+	end
+
+.DarkCaveRocksCleared:
+	writetext DarkCaveNewEntranceHikerText2
+	waitbutton
+	closetext
 	end
 
 DarkCaveNewEntrancePotion:
@@ -52,18 +60,34 @@ DarkCaveNewEntranceHikerText1:
 	cont "Teddiursa are"
 	cont "trying to find"
 
-	para "find food on me,"
-	line "the Wynaut just"
-	cont "stand there and"
-	cont "stare at me,"
+	para "food on me, the"
+	line "Wynaut just stand"
+	cont "there and stare"
+	cont "at me,"
 
 	para "waiting for me to"
-	line "do something, I'm"
+	line "do something. I'm"
 	cont "tired, I'm hungry,"
 
 	para "and I want to go"
 	line "home! Stay out of"
 	cont "my way!"
+	done
+
+DarkCaveNewEntranceHikerText2:
+	text "Sorry if I yelled"
+	line "at ya before."
+
+	para "Working in this"
+	line "place has been a"
+	cont "nightmare, but it's"
+	cont "all good now!"
+
+	para "Now I can get out"
+	line "of YAAAAARGH!"
+
+	para "Dang Geodudes"
+	line "tripping me!"
 	done
 
 DarkCaveNewEntrance_MapEvents:

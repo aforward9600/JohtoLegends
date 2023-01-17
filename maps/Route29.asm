@@ -3,24 +3,16 @@
 	const ROUTE29_YOUNGSTER
 	const ROUTE29_TEACHER1
 	const ROUTE29_FRUIT_TREE
-	const ROUTE29_FISHER
 	const ROUTE29_COOLTRAINER_M2
 	const ROUTE29_TUSCANY
-	const ROUTE29_POKE_BALL
+	const ROUTE29_RAIKOU
 
 Route29_MapScripts:
-	db 2 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_ROUTE29_NOTHING
-	scene_script .DummyScene1 ; SCENE_ROUTE29_CATCH_TUTORIAL
+	db 0 ; scene scripts
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_OBJECTS, .Tuscany
-
-.DummyScene0:
-	end
-
-.DummyScene1:
-	end
+	callback MAPCALLBACK_OBJECTS, .RaikouAppears
 
 .Tuscany:
 	checkflag ENGINE_ZEPHYRBADGE
@@ -36,130 +28,66 @@ Route29_MapScripts:
 	appear ROUTE29_TUSCANY
 	return
 
-Route29Tutorial1:
-	turnobject ROUTE29_COOLTRAINER_M1, UP
-	showemote EMOTE_SHOCK, ROUTE29_COOLTRAINER_M1, 15
-	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1a
-	turnobject PLAYER, LEFT
-	setevent EVENT_DUDE_TALKED_TO_YOU
-	opentext
-	writetext CatchingTutorialIntroText
-	yesorno
-	iffalse Script_RefusedTutorial1
-	closetext
-	follow ROUTE29_COOLTRAINER_M1, PLAYER
-	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1b
-	stopfollow
-	loadwildmon RATTATA, 5
-	catchtutorial BATTLETYPE_TUTORIAL
-	turnobject ROUTE29_COOLTRAINER_M1, UP
-	opentext
-	writetext CatchingTutorialDebriefText
-	waitbutton
-	closetext
-	setscene SCENE_ROUTE29_NOTHING
-	setevent EVENT_LEARNED_TO_CATCH_POKEMON
-	end
+.RaikouAppears:
+	checkevent EVENT_CAUGHT_RAIKOU
+	iftrue .RaikouWillNotAppear
+	checkevent EVENT_BEAT_RAIKOU
+	iftrue .RaikouWillNotAppear
+	checkevent EVENT_BEAT_EIN
+	iftrue .RaikouMayAppear
+.RaikouWillNotAppear:
+	disappear ROUTE29_RAIKOU
+	return
 
-Route29Tutorial2:
-	turnobject ROUTE29_COOLTRAINER_M1, UP
-	showemote EMOTE_SHOCK, ROUTE29_COOLTRAINER_M1, 15
-	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2a
-	turnobject PLAYER, LEFT
-	setevent EVENT_DUDE_TALKED_TO_YOU
-	opentext
-	writetext CatchingTutorialIntroText
-	yesorno
-	iffalse Script_RefusedTutorial2
-	closetext
-	follow ROUTE29_COOLTRAINER_M1, PLAYER
-	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2b
-	stopfollow
-	loadwildmon RATTATA, 5
-	catchtutorial BATTLETYPE_TUTORIAL
-	turnobject ROUTE29_COOLTRAINER_M1, UP
-	opentext
-	writetext CatchingTutorialDebriefText
-	waitbutton
-	closetext
-	setscene SCENE_ROUTE29_NOTHING
-	setevent EVENT_LEARNED_TO_CATCH_POKEMON
-	end
-
-Script_RefusedTutorial1:
-	writetext CatchingTutorialDeclinedText
-	waitbutton
-	closetext
-	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1b
-	setscene SCENE_ROUTE29_NOTHING
-	end
-
-Script_RefusedTutorial2:
-	writetext CatchingTutorialDeclinedText
-	waitbutton
-	closetext
-	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2b
-	setscene SCENE_ROUTE29_NOTHING
-	end
-
-CatchingTutorialDudeScript:
-	faceplayer
-	opentext
-	readvar VAR_BOXSPACE
-	ifequal 0, .BoxFull
-	checkevent EVENT_LEARNED_TO_CATCH_POKEMON
-	iftrue .BoxFull
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iffalse .BoxFull
-	writetext CatchingTutorialRepeatText
-	yesorno
-	iffalse .Declined
-	closetext
-	loadwildmon RATTATA, 5
-	catchtutorial BATTLETYPE_TUTORIAL
-	opentext
-	writetext CatchingTutorialDebriefText
-	waitbutton
-	closetext
-	setevent EVENT_LEARNED_TO_CATCH_POKEMON
-	end
-
-.BoxFull:
-	writetext CatchingTutorialBoxFullText
-	waitbutton
-	closetext
-	end
-
-.Declined:
-	writetext CatchingTutorialDeclinedText
-	waitbutton
-	closetext
-	end
+.RaikouMayAppear:
+	appear ROUTE29_RAIKOU
+	return
 
 Route29YoungsterScript:
-	jumptextfaceplayer Route29YoungsterText
-
-Route29TeacherScript:
-	jumptextfaceplayer Route29TeacherText
-
-Route29FisherScript:
-	jumptextfaceplayer Route29FisherText
-
-Route29CooltrainerMScript:
 	faceplayer
 	opentext
-	checktime DAY
-	iftrue .day_morn
-	checktime NITE
-	iftrue .nite
-.day_morn
-	writetext Route29CooltrainerMText_WaitingForNight
+	checkevent EVENT_SPOKE_WITH_ELM
+	iftrue .YoungsterRocksCleared
+	writetext Route29YoungsterText
 	waitbutton
 	closetext
 	end
 
-.nite
-	writetext Route29CooltrainerMText_WaitingForMorning
+.YoungsterRocksCleared:
+	writetext Route29YoungsterText_RocksCleared
+	waitbutton
+	closetext
+	end
+
+TrainerTeacherCharlene:
+	trainer TEACHER, CHARLENE, EVENT_BEAT_TEACHER_CHARLENE, TeacherCharleneSeenText, TeacherCharleneBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext TeacherCharleneAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainermEmile:
+	trainer COOLTRAINERM, EMILE, EVENT_BEAT_COOLTRAINERM_EMILE, CooltrainermEmileSeenText, CooltrainermEmileBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext CooltrainermEmileAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainerfReese:
+	trainer COOLTRAINERF, REESE, EVENT_BEAT_COOLTRAINERF_REESE, CooltrainerfReeseSeenText, CooltrainerfReeseBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext CooltrainerfReeseAfterText
 	waitbutton
 	closetext
 	end
@@ -209,42 +137,31 @@ Route29Sign2:
 Route29FruitTree:
 	fruittree FRUITTREE_ROUTE_29
 
-Route29Potion:
-	itemball MASTER_BALL
+Route29Raikou:
+	opentext
+	writetext RaikouCry
+	pause 15
+	cry RAIKOU
+	waitbutton
+	closetext
+	loadwildmon RAIKOU, 60
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	startbattle
+	ifequal LOSE, .NotBeaten
+	disappear ROUTE29_RAIKOU
+	reloadmapafterbattle
+	special CheckCaughtCelebi
+	iftrue .CaughtRaikou
+	setevent EVENT_BEAT_RAIKOU
+	end
 
-DudeMovementData1a:
-	step UP
-	step UP
-	step UP
-	step UP
-	step RIGHT
-	step RIGHT
-	step_end
+.CaughtRaikou:
+	setevent EVENT_CAUGHT_RAIKOU
+	end
 
-DudeMovementData2a:
-	step UP
-	step UP
-	step UP
-	step RIGHT
-	step RIGHT
-	step_end
-
-DudeMovementData1b:
-	step LEFT
-	step LEFT
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
-
-DudeMovementData2b:
-	step LEFT
-	step LEFT
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
+.NotBeaten:
+	reloadmapafterbattle
+	end
 
 CatchingTutorialBoxFullText:
 	text "#MON hide in"
@@ -292,14 +209,21 @@ CatchingTutorialRepeatText:
 	done
 
 Route29YoungsterText:
-	text "Yo. How are your"
-	line "#MON?"
+	text "I hope those rocks"
+	line "on Route 46 get"
+	cont "cleared soon."
 
-	para "If they're weak"
-	line "and not ready for"
+	para "I wanna get to"
+	line "Blackthorn City"
+	cont "at some point."
+	done
 
-	para "battle, keep out"
-	line "of the grass."
+Route29YoungsterText_RocksCleared:
+	text "Now that the rocks"
+	line "are cleared, I can"
+	cont "get to Blackthorn."
+
+	para "Eventually."
 	done
 
 Route29TeacherText:
@@ -314,103 +238,120 @@ Route29TeacherText:
 	line "the grass."
 	done
 
-Route29FisherText:
-	text "I wanted to take a"
-	line "break, so I saved"
-
-	para "to record my"
-	line "progress."
+CooltrainermEmileSeenText:
+	text "#mon are"
+	line "awesome!"
 	done
 
-; unused
-Text_WaitingForDay:
-	text "I'm waiting for"
-	line "#MON that"
-
-	para "appear only in the"
-	line "daytime."
+CooltrainermEmileBeatenText:
+	text "Don't you agree?"
 	done
 
-Route29CooltrainerMText_WaitingForNight:
-	text "I'm waiting for"
-	line "#MON that"
-
-	para "appear only at"
-	line "night."
-	done
-
-Route29CooltrainerMText_WaitingForMorning:
-	text "I'm waiting for"
-	line "#MON that"
-
-	para "appear only in the"
-	line "morning."
+CooltrainermEmileAfterText:
+	text "I can't help but"
+	line "get excited when"
+	cont "I'm with #mon!"
 	done
 
 MeetTuscanyText:
-	text "TUSCANY: I do be-"
-	line "lieve that this is"
+	text "Hi there!"
 
-	para "the first time"
-	line "we've met?"
-
-	para "Please allow me to"
-	line "introduce myself."
-
-	para "I am TUSCANY of"
-	line "Tuesday."
+	para "I'm the Week Lady!"
 	done
 
 TuscanyGivesGiftText:
-	text "By way of intro-"
-	line "duction, please"
-
-	para "accept this gift,"
-	line "a PINK BOW."
+	text "Here, take this"
+	line "Pink Bow!"
 	done
 
 TuscanyGaveGiftText:
-	text "TUSCANY: Wouldn't"
-	line "you agree that it"
-	cont "is most adorable?"
+	text "Wouldn't you agree"
+	line "agree that it is"
+	cont "most adorable?"
 
 	para "It strengthens"
-	line "normal-type moves."
+	line "Normal-type moves."
 
 	para "I am certain it"
 	line "will be of use."
 	done
 
 TuscanyTuesdayText:
-	text "TUSCANY: Have you"
-	line "met MONICA, my"
-	cont "older sister?"
+	text "Normal-types will"
+	line "love that Pink"
+	cont "Bow!"
 
-	para "Or my younger"
-	line "brother, WESLEY?"
-
-	para "I am the second of"
-	line "seven children."
+	para "Try it out!"
 	done
 
 TuscanyNotTuesdayText:
-	text "TUSCANY: Today is"
-	line "not Tuesday. That"
+	text "Today is not"
+	line "Tuesday. That"
 	cont "is unfortunate…"
 	done
 
-Route29Sign1Text:
-	text "ROUTE 29"
+TeacherCharleneSeenText:
+	text "I'm thinking of"
+	line "learning from"
+	cont "Prof. Elm."
 
-	para "CHERRYGROVE CITY -"
-	line "NEW BARK TOWN"
+	para "Maybe he can"
+	line "help me become a"
+	cont "better teacher."
+	done
+
+TeacherCharleneBeatenText:
+	text "I could learn"
+	line "from you!"
+	done
+
+TeacherCharleneAfterText:
+	text "He's an expert of"
+	line "#mon evolution."
+
+	para "We could all learn"
+	line "a thing or two."
+	done
+
+CooltrainerfReeseSeenText:
+	text "I sometimes forget"
+	line "type advantages."
+
+	para "I used Earthquake"
+	line "against a"
+	cont "Dragonite once."
+
+	para "Whoops!"
+	done
+
+CooltrainerfReeseBeatenText:
+	text "Oh snap!"
+	done
+
+CooltrainerfReeseAfterText:
+	text "I like to sing"
+	line "songs to a melody"
+	cont "that sounds like"
+	cont "you'd hear it in"
+	cont "a #mon Center."
+	done
+
+Route29Sign1Text:
+	text "Route 29"
+
+	para "Cherrygrove City -"
+	line "New Bark Town"
 	done
 
 Route29Sign2Text:
-	text "ROUTE 29"
+	text "Route 29"
 
-	para "CHERRYGROVE CITY -"
-	line "NEW BARK TOWN"
+	para "Cherrygrove City -"
+	line "New Bark Town"
+	done
+
+RaikouCry:
+	text "Raikou: Bzzrtzrt!"
 	done
 
 Route29_MapEvents:
@@ -419,20 +360,17 @@ Route29_MapEvents:
 	db 1 ; warp events
 	warp_event 27,  1, ROUTE_29_ROUTE_46_GATE, 3
 
-	db 2 ; coord events
-	coord_event 53,  8, SCENE_ROUTE29_CATCH_TUTORIAL, Route29Tutorial1
-	coord_event 53,  9, SCENE_ROUTE29_CATCH_TUTORIAL, Route29Tutorial2
+	db 0 ; coord events
 
 	db 2 ; bg events
 	bg_event 51,  7, BGEVENT_READ, Route29Sign1
 	bg_event  3,  5, BGEVENT_READ, Route29Sign2
 
-	db 8 ; object events
-	object_event 50, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CatchingTutorialDudeScript, -1
-	object_event 27, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29YoungsterScript, -1
-	object_event 15, 11, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29TeacherScript, -1
+	db 7 ; object events
+	object_event 48, 10, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfReese, -1
+	object_event 25, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29YoungsterScript, -1
+	object_event 15, 11, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerTeacherCharlene, -1
 	object_event 12,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29FruitTree, -1
-	object_event 25,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route29FisherScript, -1
-	object_event 13,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29CooltrainerMScript, -1
+	object_event 26,  5, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermEmile, -1
 	object_event 29, 12, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TuscanyScript, EVENT_ROUTE_29_TUSCANY_OF_TUESDAY
-	object_event 48,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route29Potion, EVENT_ROUTE_29_POTION
+	object_event 48,  2, SPRITE_RAIKOU_P, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29Raikou, EVENT_ROUTE_29_RAIKOU

@@ -129,7 +129,7 @@ PlayBattleMusic:
 
 	ld de, MUSIC_MARNIE_BATTLE
 	cp RIVAL3
-	jr z, .done
+	jp z, .done
 
 	ld de, MUSIC_ROCKET_BATTLE
 	cp GRUNTM
@@ -147,6 +147,8 @@ PlayBattleMusic:
 	cp MNINJA_M
 	jr z, .done
 	cp MNINJA_F
+	jr z, .done
+	cp EIN
 	jr z, .done
 
 	ld de, MUSIC_UNWAVERING_HEART

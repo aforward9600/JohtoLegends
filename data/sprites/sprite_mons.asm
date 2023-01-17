@@ -54,3 +54,7 @@ SpriteMons:
 	dw RAICHU
 	dw CLEFAIRY
 	dw DUSKNOIR
+	dw PICHU
+	dw RAIKOU
+	dw SUICUNE
+	dw ENTEI

@@ -9,7 +9,16 @@
 Route46_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .ClearRocksRoute46
+
+.ClearRocksRoute46:
+	checkevent EVENT_SPOKE_WITH_ELM
+	iftrue .Done
+	changeblock 10, 16, $0a ; rock
+	changeblock 10, 14, $0a ; rock
+.Done:
+	return
 
 TrainerCamperTed:
 	trainer CAMPER, TED, EVENT_BEAT_CAMPER_TED, CamperTedSeenText, CamperTedBeatenText, 0, .Script
@@ -145,13 +154,18 @@ Route46RematchGiftF:
 	jumpstd rematchgiftf
 	end
 
-TrainerHikerBailey:
-	trainer HIKER, BAILEY, EVENT_BEAT_HIKER_BAILEY, HikerBaileySeenText, HikerBaileyBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+Route46HikerScript:
+	faceplayer
 	opentext
-	writetext HikerBaileyAfterBattleText
+	checkevent EVENT_SPOKE_WITH_ELM
+	iftrue .HikerRocksCleared
+	writetext Route46HikerText
+	waitbutton
+	closetext
+	end
+
+.HikerRocksCleared:
+	writetext Route46HikerText_RocksCleared
 	waitbutton
 	closetext
 	end
@@ -159,8 +173,8 @@ TrainerHikerBailey:
 Route46Sign:
 	jumptext Route46SignText
 
-Route46XSpeed:
-	itemball X_SPEED
+Route46RareCandy:
+	itemball RARE_CANDY
 
 Route46FruitTree1:
 	fruittree FRUITTREE_ROUTE_46_1
@@ -248,6 +262,20 @@ Route46SignText:
 	line "Mountain Rd. Ahead"
 	done
 
+Route46HikerText:
+	text "These rocks will"
+	line "be cleared soon."
+
+	para "Come back later."
+	done
+
+Route46HikerText_RocksCleared:
+	text "Finally got those"
+	line "rocks cleared."
+
+	para "You're good to go."
+	done
+
 Route46_MapEvents:
 	db 0, 0 ; filler
 
@@ -262,9 +290,9 @@ Route46_MapEvents:
 	bg_event  9, 27, BGEVENT_READ, Route46Sign
 
 	db 6 ; object events
-	object_event 12, 19, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerHikerBailey, -1
+	object_event 11, 18, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Route46HikerScript, -1
 	object_event  4, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperTed, -1
 	object_event  2, 13, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerErin1, -1
 	object_event  7,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree1, -1
 	object_event  8,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree2, -1
-	object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route46XSpeed, EVENT_ROUTE_46_X_SPEED
+	object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route46RareCandy, EVENT_ROUTE_46_RARE_CANDY

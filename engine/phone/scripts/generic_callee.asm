@@ -28,7 +28,6 @@ PhoneScript_AnswerPhone_Male:
 	ifequal PHONE_SAILOR_HUEY, .Huey
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -62,11 +61,6 @@ PhoneScript_AnswerPhone_Male:
 
 .Jose:
 	farwritetext UnknownText_0x1b55ae
-	buttonsound
-	end
-
-.Joey:
-	farwritetext UnknownText_0x1b589a
 	buttonsound
 	end
 
@@ -151,7 +145,6 @@ PhoneScript_AnswerPhone_Male_Day:
 	ifequal PHONE_SAILOR_HUEY, .Huey
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -185,11 +178,6 @@ PhoneScript_AnswerPhone_Male_Day:
 
 .Jose:
 	farwritetext UnknownText_0x1b55da
-	buttonsound
-	end
-
-.Joey:
-	farwritetext UnknownText_0x1b58c2
 	buttonsound
 	end
 
@@ -274,7 +262,6 @@ PhoneScript_AnswerPhone_Male_Nite:
 	ifequal PHONE_SAILOR_HUEY, .Huey
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -308,11 +295,6 @@ PhoneScript_AnswerPhone_Male_Nite:
 
 .Jose:
 	farwritetext UnknownText_0x1b55fc
-	buttonsound
-	end
-
-.Joey:
-	farwritetext UnknownText_0x1b58ea
 	buttonsound
 	end
 
@@ -402,7 +384,6 @@ PhoneScript_AnswerPhone_Female:
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
 	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
@@ -431,11 +412,6 @@ PhoneScript_AnswerPhone_Female:
 	buttonsound
 	end
 
-.Dana:
-	farwritetext UnknownText_0x1b66c8
-	buttonsound
-	end
-
 .Tiffany:
 	farwritetext UnknownText_0x1b6e7c
 	buttonsound
@@ -453,7 +429,6 @@ PhoneScript_AnswerPhone_Female_Day:
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
 	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
@@ -482,11 +457,6 @@ PhoneScript_AnswerPhone_Female_Day:
 	buttonsound
 	end
 
-.Dana:
-	farwritetext UnknownText_0x1b66ec
-	buttonsound
-	end
-
 .Tiffany:
 	farwritetext UnknownText_0x1b6ea6
 	buttonsound
@@ -504,7 +474,6 @@ PhoneScript_AnswerPhone_Female_Nite:
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
 	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
@@ -533,11 +502,6 @@ PhoneScript_AnswerPhone_Female_Nite:
 	buttonsound
 	end
 
-.Dana:
-	farwritetext UnknownText_0x1b6713
-	buttonsound
-	end
-
 .Tiffany:
 	farwritetext UnknownText_0x1b6ec9
 	buttonsound
@@ -558,7 +522,6 @@ PhoneScript_GreetPhone_Male:
 	ifequal PHONE_SAILOR_HUEY, .Huey
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -592,11 +555,6 @@ PhoneScript_GreetPhone_Male:
 
 .Jose:
 	farwritetext UnknownText_0x1b5628
-	buttonsound
-	end
-
-.Joey:
-	farwritetext UnknownText_0x1b5912
 	buttonsound
 	end
 
@@ -681,7 +639,6 @@ PhoneScript_GreetPhone_Male_Day:
 	ifequal PHONE_SAILOR_HUEY, .Huey
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -715,11 +672,6 @@ PhoneScript_GreetPhone_Male_Day:
 
 .Jose:
 	farwritetext UnknownText_0x1b564c
-	buttonsound
-	end
-
-.Joey:
-	farwritetext UnknownText_0x1b5948
 	buttonsound
 	end
 
@@ -804,7 +756,6 @@ PhoneScript_GreetPhone_Male_Nite:
 	ifequal PHONE_SAILOR_HUEY, .Huey
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -838,11 +789,6 @@ PhoneScript_GreetPhone_Male_Nite:
 
 .Jose:
 	farwritetext UnknownText_0x1b5670
-	buttonsound
-	end
-
-.Joey:
-	farwritetext UnknownText_0x1b597c
 	buttonsound
 	end
 
@@ -932,7 +878,6 @@ PhoneScript_GreetPhone_Female:
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
 	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
@@ -961,11 +906,6 @@ PhoneScript_GreetPhone_Female:
 	buttonsound
 	end
 
-.Dana:
-	farwritetext UnknownText_0x1b6738
-	buttonsound
-	end
-
 .Tiffany:
 	farwritetext UnknownText_0x1b6ef3
 	buttonsound
@@ -983,7 +923,6 @@ PhoneScript_GreetPhone_Female_Day:
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
 	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
@@ -1012,11 +951,6 @@ PhoneScript_GreetPhone_Female_Day:
 	buttonsound
 	end
 
-.Dana:
-	farwritetext UnknownText_0x1b6757
-	buttonsound
-	end
-
 .Tiffany:
 	farwritetext UnknownText_0x1b6f1c
 	buttonsound
@@ -1034,7 +968,6 @@ PhoneScript_GreetPhone_Female_Nite:
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
 	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
@@ -1063,11 +996,6 @@ PhoneScript_GreetPhone_Female_Nite:
 	buttonsound
 	end
 
-.Dana:
-	farwritetext UnknownText_0x1b6776
-	buttonsound
-	end
-
 .Tiffany:
 	farwritetext UnknownText_0x1b6f37
 	buttonsound
@@ -1083,7 +1011,6 @@ PhoneScript_Generic_Male:
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -1115,11 +1042,6 @@ PhoneScript_Generic_Male:
 
 .Jose:
 	farwritetext UnknownText_0x1b5694
-	buttonsound
-	end
-
-.Joey:
-	farwritetext UnknownText_0x1b59b2
 	buttonsound
 	end
 
@@ -1195,7 +1117,6 @@ PhoneScript_Generic_Female:
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
 	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
@@ -1221,11 +1142,6 @@ PhoneScript_Generic_Female:
 
 .Gina:
 	farwritetext UnknownText_0x1b6352
-	buttonsound
-	end
-
-.Dana:
-	farwritetext UnknownText_0x1b6795
 	buttonsound
 	end
 

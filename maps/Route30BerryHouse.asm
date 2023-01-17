@@ -9,39 +9,23 @@ Route30BerryHouse_MapScripts:
 Route30BerryHousePokefanMScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE
-	iftrue .GotBerry
-	writetext Route30BerrySpeechHouseMonEatBerriesText
-	buttonsound
-	verbosegiveitem ORAN_BERRY
-	iffalse .NoRoom
-	setevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE
-.GotBerry:
 	writetext Route30BerrySpeechHouseCheckTreesText
 	waitbutton
-.NoRoom:
 	closetext
 	end
 
 Route30BerryHouseBookshelf:
 	jumpstd magazinebookshelf
 
-Route30BerrySpeechHouseMonEatBerriesText:
-	text "You know, #MON"
-	line "eat BERRIES."
-
-	para "Well, my #MON"
-	line "got healthier by"
-	cont "eating a BERRY."
-
-	para "Here. I'll share"
-	line "one with you!"
-	done
-
 Route30BerrySpeechHouseCheckTreesText:
-	text "Check trees for"
-	line "BERRIES. They just"
-	cont "drop right off."
+	text "Mr. #mon has"
+	line "a weird berry in"
+	cont "his collection."
+
+	para "He's not that fond"
+	line "of it, since it's"
+	cont "not #mon"
+	cont "related."
 	done
 
 Route30BerryHouse_MapEvents:

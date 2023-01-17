@@ -13,8 +13,8 @@ DarkCaveVioletEntrance_MapScripts:
 
 	db 0 ; callbacks
 
-DarkCaveVioletEntrancePotion:
-	itemball POTION
+DarkCaveVioletEntranceHPUp:
+	itemball HP_UP
 
 DarkCaveVioletEntranceFullHeal:
 	itemball FULL_HEAL
@@ -22,8 +22,8 @@ DarkCaveVioletEntranceFullHeal:
 DarkCaveVioletEntranceHyperPotion:
 	itemball HYPER_POTION
 
-DarkCaveVioletEntranceDireHit:
-	itemball DIRE_HIT
+DarkCaveVioletEntranceMaxElixer:
+	itemball MAX_ELIXER
 
 DarkCaveVioletEntranceRock:
 	jumpstd smashrock
@@ -45,11 +45,11 @@ DarkCaveVioletEntrance_MapEvents:
 	bg_event 26,  3, BGEVENT_ITEM, DarkCaveVioletEntranceHiddenElixer
 
 	db 8 ; object events
-	object_event  6,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntrancePotion, EVENT_DARK_CAVE_VIOLET_ENTRANCE_POTION
+	object_event  5,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceHPUp, EVENT_DARK_CAVE_VIOLET_ENTRANCE_HP_UP
 	object_event 16, 14, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceRock, -1
 	object_event 27,  6, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceRock, -1
 	object_event  7, 14, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceRock, -1
 	object_event 36, 31, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceRock, -1
 	object_event 36, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceFullHeal, EVENT_DARK_CAVE_VIOLET_ENTRANCE_FULL_HEAL
 	object_event 35,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceHyperPotion, EVENT_DARK_CAVE_VIOLET_ENTRANCE_HYPER_POTION
-	object_event 30, 28, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceDireHit, EVENT_DARK_CAVE_VIOLET_ENTRANCE_DIRE_HIT
+	object_event 31, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceMaxElixer, EVENT_DARK_CAVE_VIOLET_ENTRANCE_MAX_ELIXER

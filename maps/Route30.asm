@@ -13,160 +13,38 @@ Route30_MapScripts:
 
 	db 0 ; callbacks
 
-TrainerYoungsterJoey:
-	trainer YOUNGSTER, JOEY1, EVENT_BEAT_YOUNGSTER_JOEY, YoungsterJoey1SeenText, YoungsterJoey1BeatenText, 0, .Script
+TrainerYoungsterCotton:
+	trainer YOUNGSTER, COTTON, EVENT_BEAT_YOUNGSTER_COTTON, YoungsterCottonSeenText, YoungsterCottonBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_YOUNGSTER_JOEY
 	endifjustbattled
 	opentext
-	checkflag ENGINE_JOEY
-	iftrue .Rematch
-	checkcellnum PHONE_YOUNGSTER_JOEY
-	iftrue .NumberAccepted
-	checkevent EVENT_JOEY_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskAgain
-	writetext YoungsterJoey1AfterText
-	buttonsound
-	setevent EVENT_JOEY_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
-	sjump .RequestNumber
-
-.AskAgain:
-	scall .AskNumber2
-.RequestNumber:
-	askforphonenumber PHONE_YOUNGSTER_JOEY
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, YOUNGSTER, JOEY1
-	scall .RegisteredNumber
-	sjump .NumberAccepted
-
-.Rematch:
-	scall .RematchStd
-	winlosstext YoungsterJoey1BeatenText, 0
-	readmem wJoeyFightCount
-	ifequal 4, .Fight4
-	ifequal 3, .Fight3
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight4:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight4
-.Fight3:
-	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .LoadFight3
-.Fight2:
-	checkflag ENGINE_FLYPOINT_OLIVINE
-	iftrue .LoadFight2
-.Fight1:
-	checkflag ENGINE_FLYPOINT_GOLDENROD
-	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer YOUNGSTER, JOEY1
-	startbattle
-	reloadmapafterbattle
-	loadmem wJoeyFightCount, 1
-	clearflag ENGINE_JOEY
-	end
-
-.LoadFight1:
-	loadtrainer YOUNGSTER, JOEY2
-	startbattle
-	reloadmapafterbattle
-	loadmem wJoeyFightCount, 2
-	clearflag ENGINE_JOEY
-	end
-
-.LoadFight2:
-	loadtrainer YOUNGSTER, JOEY3
-	startbattle
-	reloadmapafterbattle
-	loadmem wJoeyFightCount, 3
-	clearflag ENGINE_JOEY
-	end
-
-.LoadFight3:
-	loadtrainer YOUNGSTER, JOEY4
-	startbattle
-	reloadmapafterbattle
-	loadmem wJoeyFightCount, 4
-	clearflag ENGINE_JOEY
-	end
-
-.LoadFight4:
-	loadtrainer YOUNGSTER, JOEY5
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JOEY
-	checkevent EVENT_JOEY_HP_UP
-	iftrue .GiveHPUp
-	checkevent EVENT_GOT_HP_UP_FROM_JOEY
-	iftrue .done
-	scall .RematchGift
-	verbosegiveitem HP_UP
-	iffalse .PackFull
-	setevent EVENT_GOT_HP_UP_FROM_JOEY
-	sjump .NumberAccepted
-
-.done
-	end
-
-.GiveHPUp:
-	opentext
-	writetext YoungsterJoeyText_GiveHPUpAfterBattle
+	writetext YoungsterCottonAfterText
 	waitbutton
-	verbosegiveitem HP_UP
-	iffalse .PackFull
-	clearevent EVENT_JOEY_HP_UP
-	setevent EVENT_GOT_HP_UP_FROM_JOEY
-	sjump .NumberAccepted
-
-.AskNumber1:
-	jumpstd asknumber1m
+	closetext
 	end
 
-.AskNumber2:
-	jumpstd asknumber2m
-	end
-
-.RegisteredNumber:
-	jumpstd registerednumberm
-	end
-
-.NumberAccepted:
-	jumpstd numberacceptedm
-	end
-
-.NumberDeclined:
-	jumpstd numberdeclinedm
-	end
-
-.PhoneFull:
-	jumpstd phonefullm
-	end
-
-.RematchStd:
-	jumpstd rematchm
-	end
-
-.PackFull:
-	setevent EVENT_JOEY_HP_UP
-	jumpstd packfullm
-	end
-
-.RematchGift:
-	jumpstd rematchgiftm
-	end
-
-TrainerCooltrainerMNick:
-	trainer COOLTRAINERM, NICK, EVENT_BEAT_COOLTRAINERM_NICK, CooltrainerMNickSeenText, CooltrainerMNickBeatenText, 0, .Script
+TrainerCooltrainerMJacques:
+	trainer COOLTRAINERM, JACQUES, EVENT_BEAT_COOLTRAINERM_JACQUES, CooltrainerMJacquesSeenText, CooltrainerMJacquesBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerMNickAfterText
+	writetext CooltrainerMJacquesRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_HIKER_ENCOUNTER
+	writetext CooltrainerMJacquesLetsDoItText
+	waitbutton
+	winlosstext CooltrainerMJacquesBeatenText, 0
+	loadtrainer COOLTRAINERM, JACQUES
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.Refused:
+	writetext CooltrainerMJacquesRefusedText
 	waitbutton
 	closetext
 	end
@@ -197,8 +75,8 @@ MrPokemonsHouseDirectionsSign:
 MrPokemonsHouseSign:
 	jumptext MrPokemonsHouseSignText
 
-Route30UltraBall:
-	itemball ULTRA_BALL
+Route30MaxRevive:
+	itemball MAX_REVIVE
 
 Route30FruitTree1:
 	fruittree FRUITTREE_ROUTE_30_1
@@ -209,34 +87,30 @@ Route30FruitTree2:
 Route30HiddenPotion:
 	hiddenitem RARE_CANDY, EVENT_ROUTE_30_HIDDEN_RARE_CANDY
 
-YoungsterJoey1SeenText:
-	text "I just lost, so"
-	line "I'm trying to find"
-	cont "more #MON."
+YoungsterCottonSeenText:
+	text "My grandpa says he"
+	line "did something to"
+	cont "fiddy men in the"
+	cont "war."
 
-	para "Wait! You look"
-	line "weak! Come on,"
-	cont "let's battle!"
+	para "I don't know what"
+	line "he means."
 	done
 
-YoungsterJoey1BeatenText:
-	text "Ack! I lost again!"
-	line "Doggone it!"
+YoungsterCottonBeatenText:
+	text "Bwaaaah!"
 	done
 
-YoungsterJoey1AfterText:
-	text "Do I have to have"
-	line "more #MON in"
+YoungsterCottonAfterText:
+	text "My dad says he"
+	line "didn't fight in"
 
-	para "order to battle"
-	line "better?"
-
-	para "No! I'm sticking"
-	line "with this one no"
-	cont "matter what!"
+	para "the war, so I"
+	line "don't know who to"
+	cont "believe."
 	done
 
-CooltrainerMNickSeenText:
+CooltrainerMJacquesSeenText:
 	text "There's no Gym in"
 	line "Cherrygrove,"
 
@@ -244,13 +118,27 @@ CooltrainerMNickSeenText:
 	line "point going there."
 	done
 
-CooltrainerMNickBeatenText:
+CooltrainerMJacquesBeatenText:
 	text "Nice one!"
 	done
 
-CooltrainerMNickAfterText:
-	text "Although, I heard"
-	line "a really strong"
+CooltrainerMJacquesRematchText:
+	text "Cherrygrove doesn't"
+	line "really have"
+	cont "anything,"
+
+	para "so do you want to"
+	line "battle again?"
+	done
+
+CooltrainerMJacquesLetsDoItText:
+	text "Sounds good to me!"
+	done
+
+CooltrainerMJacquesRefusedText:
+	text "Well, if you won't"
+	line "battle me, I heard"
+	cont "a really strong"
 
 	para "trainer is staying"
 	line "in Cherrygrove."
@@ -304,6 +192,9 @@ Route30SignText:
 
 	para "Violet City -"
 	line "Cherrygrove City"
+
+	para "Cooltrainer Jacque"
+	line "is bored!"
 	done
 
 MrPokemonsHouseDirectionsSignText:
@@ -313,21 +204,6 @@ MrPokemonsHouseDirectionsSignText:
 
 MrPokemonsHouseSignText:
 	text "Mr.#mon's house"
-	done
-
-YoungsterJoeyText_GiveHPUpAfterBattle:
-	text "I lost again…"
-	line "Gee, you're tough!"
-
-	para "Oh yeah, I almost"
-	line "forgot that I had"
-	cont "to give you this."
-
-	para "Use it to get even"
-	line "tougher, OK?"
-
-	para "I'm going to get"
-	line "tougher too."
 	done
 
 Route30_MapEvents:
@@ -346,11 +222,11 @@ Route30_MapEvents:
 	bg_event 14,  9, BGEVENT_ITEM, Route30HiddenPotion
 
 	db 8 ; object events
-	object_event  2, 28, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterJoey, EVENT_ROUTE_30_YOUNGSTER_JOEY
-	object_event  5, 23, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerMNick, -1
+	object_event 10, 42, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterCotton, 0
+	object_event  5, 23, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerMJacques, -1
 	object_event  4,  7, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherAnton, -1
-	object_event  9, 31, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route30LassScript, -1
+	object_event 11, 32, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route30LassScript, -1
 	object_event  5, 39, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree1, -1
 	object_event 11,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree2, -1
 	object_event  2, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30YoungsterScript, -1
-	object_event  8, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30UltraBall, EVENT_ROUTE_30_ANTIDOTE
+	object_event  8, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30MaxRevive, EVENT_ROUTE_30_ANTIDOTE

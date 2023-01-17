@@ -1,6 +1,5 @@
 	object_const_def ; object_event constants
 	const CHERRYGROVEPOKECENTER1F_NURSE
-	const CHERRYGROVEPOKECENTER1F_FISHER
 	const CHERRYGROVEPOKECENTER1F_GENTLEMAN
 	const CHERRYGROVEPOKECENTER1F_TEACHER
 
@@ -12,58 +11,58 @@ CherrygrovePokecenter1F_MapScripts:
 CherrygrovePokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
-CherrygrovePokecenter1FFisherScript:
-	jumptextfaceplayer CherrygrovePokecenter1FFisherText
-
 CherrygrovePokecenter1FGentlemanScript:
-	jumptextfaceplayer CherrygrovePokecenter1FGentlemanText
-
-CherrygrovePokecenter1FTeacherScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .CommCenterOpen
-	writetext CherrygrovePokecenter1FTeacherText
+	checkevent EVENT_BEAT_MADAME_BOSS
+	iftrue .BeatRockets
+	writetext CherrygrovePokecenter1FGentlemanText
 	waitbutton
 	closetext
 	end
 
-.CommCenterOpen:
-	writetext CherrygrovePokecenter1FTeacherText_CommCenterOpen
+.BeatRockets:
+	writetext CherrygrovePokecenter1FGentlemanText2
 	waitbutton
 	closetext
 	end
 
-CherrygrovePokecenter1FFisherText:
-	text "It's great. I can"
-	line "store any number"
-
-	para "of #mon, and"
-	line "it's all free."
-	done
+CherrygrovePokecenter1FTeacherScript:
+	jumptextfaceplayer CherrygrovePokecenter1FTeacherText
 
 CherrygrovePokecenter1FGentlemanText:
-	text "That PC is free"
-	line "for any trainer"
-	cont "to use."
+	text "Shh!"
+
+	para "I'm working for"
+	line "the police!"
+
+	para "I've heard reports"
+	line "of odd people"
+	cont "dressed all in"
+	cont "black near here."
+
+	para "Let me know if"
+	line "you see anything."
+	done
+
+CherrygrovePokecenter1FGentlemanText2:
+	text "So you're the one"
+	line "who took out the"
+	cont "criminals!"
+
+	para "Great job, kid!"
 	done
 
 CherrygrovePokecenter1FTeacherText:
-	text "The COMMUNICATION"
-	line "CENTER upstairs"
-	cont "was just built."
+	text "Terrible stuff"
+	line "happening in Kanto"
+	cont "right now."
 
-	para "But they're still"
-	line "finishing it up."
-	done
+	para "It's been like that"
+	line "for a few years."
 
-CherrygrovePokecenter1FTeacherText_CommCenterOpen:
-	text "The COMMUNICATION"
-	line "CENTER upstairs"
-	cont "was just built."
-
-	para "I traded #MON"
-	line "there already!"
+	para "I hope someone can"
+	line "help them soon."
 	done
 
 CherrygrovePokecenter1F_MapEvents:
@@ -78,8 +77,7 @@ CherrygrovePokecenter1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 3 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FNurseScript, -1
-	object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FFisherScript, -1
-	object_event  8,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FGentlemanScript, -1
-	object_event  1,  6, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FTeacherScript, -1
+	object_event  5,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FGentlemanScript, -1
+	object_event  1,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FTeacherScript, -1

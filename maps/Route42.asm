@@ -236,9 +236,6 @@ Route42Sign1Text:
 	para "Ecruteak City -"
 	line "Mahogany Town"
 
-	para "There's something"
-	line "scribbled here."
-
 	para "Teacher Cadi is"
 	line "willing to fight"
 	cont "anytime!"
