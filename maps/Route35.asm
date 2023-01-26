@@ -27,24 +27,24 @@ TrainerBirdKeeperThad:
 	closetext
 	end
 
-TrainerJugglerIrwin:
-	trainer JUGGLER, IRWIN1, EVENT_BEAT_JUGGLER_IRWIN, JugglerIrwin1SeenText, JugglerIrwin1BeatenText, 0, .Script
+TrainerSuperNerdHerbert:
+	trainer SUPER_NERD, HERBERT_SUPER_NERD, EVENT_BEAT_JUGGLER_IRWIN, SuperNerdHerbertSeenText, SuperNerdHerbertBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext JugglerIrwinAfterBattleText
+	writetext SuperNerdHerbertAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerYoungsterCaleb:
-	trainer YOUNGSTER, CALEB, EVENT_BEAT_YOUNGSTER_CALEB, YoungsterCalebSeenText, YoungsterCalebBeatenText, 0, .Script
+TrainerSchoolboyCaleb:
+	trainer SCHOOLBOY, JACK2, EVENT_BEAT_YOUNGSTER_CALEB, SchoolboyCalebSeenText, SchoolboyCalebBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext YoungsterCalebAfterBattleText
+	writetext SchoolboyCalebAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -60,27 +60,27 @@ TrainerCooltrainermAJ:
 	closetext
 	end
 
-TrainerLassVivian:
-	trainer LASS, VIVIAN, EVENT_BEAT_LASS_VIVIAN, LassVivianSeenText, LassVivianBeatenText, 0, .Script
+TrainerPicnickerVivian:
+	trainer PICNICKER, VIVIAN_PICNICKER, EVENT_BEAT_LASS_VIVIAN, PicnickerVivianSeenText, PicnickerVivianBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext LassVivianRematchText
+	writetext PicnickerVivianRematchText
 	yesorno
 	iffalse .Refused
 	playmusic MUSIC_LASS_ENCOUNTER
-	writetext LassVivianLetsDoItText
+	writetext PicnickerVivianLetsDoItText
 	waitbutton
-	winlosstext LassVivianBeatenText, 0
-	loadtrainer LASS, VIVIAN
+	winlosstext PicnickerVivianBeatenText, 0
+	loadtrainer PICNICKER, VIVIAN_PICNICKER
 	startbattle
 	reloadmapafterbattle
 	closetext
 	end
 
 .Refused:
-	writetext LassVivianRefusedText
+	writetext PicnickerVivianRefusedText
 	waitbutton
 	closetext
 	end
@@ -172,7 +172,7 @@ Route35TMRollout:
 Route35FruitTree:
 	fruittree FRUITTREE_ROUTE_35
 
-YoungsterCalebSeenText:
+SchoolboyCalebSeenText:
 	text "Thanks for coming"
 	line "over here!"
 
@@ -180,11 +180,11 @@ YoungsterCalebSeenText:
 	line "pretty lonely!"
 	done
 
-YoungsterCalebBeatenText:
+SchoolboyCalebBeatenText:
 	text "Maaaannn!"
 	done
 
-YoungsterCalebAfterBattleText:
+SchoolboyCalebAfterBattleText:
 	text "Why am I over here"
 	line "by myself?"
 
@@ -215,27 +215,27 @@ CooltrainermAJAfterBattleText:
 	cont "recent years."
 	done
 
-LassVivianSeenText:
+PicnickerVivianSeenText:
 	text "I may be cute, but"
 	line "don't underest-"
 	cont "imate me!"
 	done
 
-LassVivianBeatenText:
+PicnickerVivianBeatenText:
 	text "I underestimated"
 	line "you!"
 	done
 
-LassVivianRematchText:
+PicnickerVivianRematchText:
 	text "Came back to see"
 	line "how cute I am?"
 	done
 
-LassVivianLetsDoItText:
+PicnickerVivianLetsDoItText:
 	text "I knew it!"
 	done
 
-LassVivianRefusedText:
+PicnickerVivianRefusedText:
 	text "Fine."
 
 	para "Looks can be dec-"
@@ -288,16 +288,16 @@ BirdKeeperThadAfterBattleText:
 	line "fly freely!"
 	done
 
-JugglerIrwin1SeenText:
+SuperNerdHerbertSeenText:
 	text "Round #mon are"
 	line "kinda my thing."
 	done
 
-JugglerIrwin1BeatenText:
+SuperNerdHerbertBeatenText:
 	text "Juggling style!"
 	done
 
-JugglerIrwinAfterBattleText:
+SuperNerdHerbertAfterBattleText:
 	text "I've only dropped"
 	line "my Jigglypuff"
 	cont "once, OK?"
@@ -430,14 +430,14 @@ Route35_MapEvents:
 	bg_event 11, 31, BGEVENT_READ, Route35Sign
 
 	db 11 ; object events
-	object_event  0, 11, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerYoungsterCaleb, -1
+	object_event  0, 11, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSchoolboyCaleb, -1
 	object_event  8, 21, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermAJ, -1
-	object_event  4, 17, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassVivian, -1
+	object_event  4, 17, SPRITE_PICNICKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerPicnickerVivian, -1
 	object_event  8, 27, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherRusty, -1
 	object_event 16,  7, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperThad, -1
 	object_event  2, 10, SPRITE_FIREBREATHER, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherKelvin, -1
 	object_event 14, 28, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherPalmer, -1
-	object_event  5, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerJugglerIrwin, -1
-	object_event  2,  6, SPRITE_OFFICER_STANDING, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerOfficerClancy, -1
+	object_event  5, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSuperNerdHerbert, -1
+	object_event  2,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerOfficerClancy, -1
 	object_event  2, 25, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route35FruitTree, -1
 	object_event 13, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, Route35TMRollout, EVENT_ROUTE_35_TM_ROLLOUT

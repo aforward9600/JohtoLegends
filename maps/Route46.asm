@@ -20,138 +20,26 @@ Route46_MapScripts:
 .Done:
 	return
 
-TrainerCamperTed:
-	trainer CAMPER, TED, EVENT_BEAT_CAMPER_TED, CamperTedSeenText, CamperTedBeatenText, 0, .Script
+TrainerCamperJaoquin:
+	trainer CAMPER, JAOQUIN, EVENT_BEAT_CAMPER_JAOQUIN, CamperJaoquinSeenText, CamperJaoquinBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CamperTedAfterBattleText
+	writetext CamperJaoquinAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPicnickerErin1:
-	trainer PICNICKER, ERIN1, EVENT_BEAT_PICNICKER_ERIN, PicnickerErin1SeenText, PicnickerErin1BeatenText, 0, .Script
+TrainerPicnickerBarbara:
+	trainer PICNICKER, BARBARA, EVENT_BEAT_PICNICKER_BARBARA, PicnickerBarbaraSeenText, PicnickerBarbaraBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_PICNICKER_ERIN
 	endifjustbattled
 	opentext
-	checkflag ENGINE_ERIN
-	iftrue .WantsBattle
-	checkcellnum PHONE_PICNICKER_ERIN
-	iftrue Route46NumberAcceptedF
-	checkevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskedAlready
-	writetext PicnickerErinAfterBattleText
-	buttonsound
-	setevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER
-	scall Route46AskNumber1F
-	sjump .AskForNumber
-
-.AskedAlready:
-	scall Route46AskNumber2F
-.AskForNumber:
-	askforphonenumber PHONE_PICNICKER_ERIN
-	ifequal PHONE_CONTACTS_FULL, Route46PhoneFullF
-	ifequal PHONE_CONTACT_REFUSED, Route46NumberDeclinedF
-	gettrainername STRING_BUFFER_3, PICNICKER, ERIN1
-	scall Route46RegisteredNumberF
-	sjump Route46NumberAcceptedF
-
-.WantsBattle:
-	scall Route46RematchF
-	winlosstext PicnickerErin1BeatenText, 0
-	readmem wErinFightCount
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight2:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
-.Fight1:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer PICNICKER, ERIN1
-	startbattle
-	reloadmapafterbattle
-	loadmem wErinFightCount, 1
-	clearflag ENGINE_ERIN
-	end
-
-.LoadFight1:
-	loadtrainer PICNICKER, ERIN2
-	startbattle
-	reloadmapafterbattle
-	loadmem wErinFightCount, 2
-	clearflag ENGINE_ERIN
-	end
-
-.LoadFight2:
-	loadtrainer PICNICKER, ERIN3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ERIN
-	checkevent EVENT_ERIN_CALCIUM
-	iftrue .HasCalcium
-	checkevent EVENT_GOT_CALCIUM_FROM_ERIN
-	iftrue .GotCalciumAlready
-	scall Route46RematchGiftF
-	verbosegiveitem CALCIUM
-	iffalse ErinNoRoomForCalcium
-	setevent EVENT_GOT_CALCIUM_FROM_ERIN
-	sjump Route46NumberAcceptedF
-
-.GotCalciumAlready:
-	end
-
-.HasCalcium:
-	opentext
-	writetext PicnickerErin2BeatenText
+	writetext PicnickerBarbaraAfterBattleText
 	waitbutton
-	verbosegiveitem CALCIUM
-	iffalse ErinNoRoomForCalcium
-	clearevent EVENT_ERIN_CALCIUM
-	setevent EVENT_GOT_CALCIUM_FROM_ERIN
-	sjump Route46NumberAcceptedF
-
-Route46AskNumber1F:
-	jumpstd asknumber1f
-	end
-
-Route46AskNumber2F:
-	jumpstd asknumber2f
-	end
-
-Route46RegisteredNumberF:
-	jumpstd registerednumberf
-	end
-
-Route46NumberAcceptedF:
-	jumpstd numberacceptedf
-	end
-
-Route46NumberDeclinedF:
-	jumpstd numberdeclinedf
-	end
-
-Route46PhoneFullF:
-	jumpstd phonefullf
-	end
-
-Route46RematchF:
-	jumpstd rematchf
-	end
-
-ErinNoRoomForCalcium:
-	setevent EVENT_ERIN_CALCIUM
-	jumpstd packfullf
-	end
-
-Route46RematchGiftF:
-	jumpstd rematchgiftf
+	closetext
 	end
 
 Route46HikerScript:
@@ -182,79 +70,47 @@ Route46FruitTree1:
 Route46FruitTree2:
 	fruittree FRUITTREE_ROUTE_46_2
 
-HikerBaileySeenText:
-	text "Awright! I'll show"
-	line "you the power of"
-	cont "mountain #MON!"
+CamperJaoquinSeenText:
+	text "A nice camping"
+	line "trip near Dark"
+	cont "Cave is just what"
+	cont "I needed!"
 	done
 
-HikerBaileyBeatenText:
-	text "Mercy! You showed"
-	line "me your power!"
-	done
-
-HikerBaileyAfterBattleText:
-	text "It's over. I don't"
-	line "mind. We HIKERS"
-	cont "are like that."
-	done
-
-CamperTedSeenText:
-	text "I'm raising #-"
-	line "MON too!"
-
-	para "Will you battle"
-	line "with me?"
-	done
-
-CamperTedBeatenText:
+CamperJaoquinBeatenText:
 	text "Wha…?"
 	done
 
-CamperTedAfterBattleText:
-	text "I did my best but"
-	line "came up short."
+CamperJaoquinAfterBattleText:
+	text "I've seen some"
+	line "strange people in"
+	cont "black clothes come"
+	cont "and go into the"
+	cont "cave recently."
 
-	para "No excuses--I"
-	line "admit I lost."
+	para "Maybe they're"
+	line "scientists?"
 	done
 
-PicnickerErin1SeenText:
-	text "I raise #MON"
-	line "too!"
+PicnickerBarbaraSeenText:
+	text "I don't recommend"
+	line "picnicking in Dark"
+	cont "Cave!"
 
-	para "Will you battle"
-	line "with me?"
+	para "Why?"
+
+	para "Because it's dark,"
+	line "of course!"
 	done
 
-PicnickerErin1BeatenText:
-	text "Oh, rats!"
+PicnickerBarbaraBeatenText:
+	text "Too bright!"
 	done
 
-PicnickerErinAfterBattleText:
-	text "I've been to many"
-	line "GYMS, but the GYM"
-
-	para "in GOLDENROD is my"
-	line "favorite."
-
-	para "It's filled with"
-	line "pretty flowers!"
-	done
-
-PicnickerErin2BeatenText:
-	text "Aww… I keep losing"
-	line "all the time!"
-
-	para "I'll just have to"
-	line "try harder!"
-
-	para "Anyway, thanks for"
-	line "battling me again"
-
-	para "and again. Here's"
-	line "that present from"
-	cont "the other time."
+PicnickerBarbaraAfterBattleText:
+	text "There're also some"
+	line "#mon that would"
+	cont "eat the food."
 	done
 
 Route46SignText:
@@ -291,8 +147,8 @@ Route46_MapEvents:
 
 	db 6 ; object events
 	object_event 11, 18, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Route46HikerScript, -1
-	object_event  4, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperTed, -1
-	object_event  2, 13, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerErin1, -1
+	object_event 15,  8, SPRITE_CAMPER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperJaoquin, -1
+	object_event  3, 14, SPRITE_PICNICKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerBarbara, -1
 	object_event  7,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree1, -1
 	object_event  8,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree2, -1
 	object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route46RareCandy, EVENT_ROUTE_46_RARE_CANDY

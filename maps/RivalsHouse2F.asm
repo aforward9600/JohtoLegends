@@ -40,7 +40,7 @@ RivalsHouse2FRival:
 	iftrue .RivalsHouseDahliaDratini
 	winlosstext, RivalsHouseDefeatedText, RivalsHouseLastMonText
 	setlasttalked RIVALSHOUSE2F_RIVAL
-	loadtrainer DEPRESSED_DAHLIA, DAHLIA_LARVITAR_2
+	loadtrainer DEPRESSED_DAHLIA, DAHLIA_DRATINI_2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -49,7 +49,7 @@ RivalsHouse2FRival:
 .RivalsHouseDahliaDratini:
 	winlosstext, RivalsHouseDefeatedText, RivalsHouseLastMonText
 	setlasttalked RIVALSHOUSE2F_RIVAL
-	loadtrainer DEPRESSED_DAHLIA, DAHLIA_DRATINI_2
+	loadtrainer DEPRESSED_DAHLIA, DAHLIA_LARVITAR_2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -60,7 +60,7 @@ RivalsHouse2FRival:
 	iftrue .RivalsHouseDracoDratini
 	winlosstext, RivalsHouseDefeatedText, RivalsHouseLastMonText
 	setlasttalked RIVALSHOUSE2F_RIVAL
-	loadtrainer DEPRESSED_DRACO, DRACO_LARVITAR_2
+	loadtrainer DEPRESSED_DRACO, DRACO_DRATINI_2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -69,7 +69,7 @@ RivalsHouse2FRival:
 .RivalsHouseDracoDratini:
 	winlosstext, RivalsHouseDefeatedText, RivalsHouseLastMonText
 	setlasttalked RIVALSHOUSE2F_RIVAL
-	loadtrainer DEPRESSED_DRACO, DRACO_DRATINI_2
+	loadtrainer DEPRESSED_DRACO, DRACO_LARVITAR_2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

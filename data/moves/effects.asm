@@ -2028,16 +2028,17 @@ Hex:
 	checkobedience
 	usedmovetext
 	doturn
+	hex
 	critical
 	damagestats
 	damagecalc
 	stab
-	damagevariation
-	hex
 	checkhit
+	damagevariation
 	moveanim
 	failuretext
 	applydamage
+	criticaltext
 	supereffectivetext
 	kingsrock
 	checkfaint

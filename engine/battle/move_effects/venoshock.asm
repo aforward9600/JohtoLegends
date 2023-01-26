@@ -8,4 +8,7 @@ BattleCommand_Venoshock:
 	and a
 	ret z
 ; it's (1 << PSN), so double damage
-	jp DoubleDamage
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVarAddr
+	sla [hl]
+	ret

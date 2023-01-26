@@ -83,6 +83,7 @@ EinScript:
 	applymovement HOOHLUGIAROOM_RIVAL1, RivalWalksToEin3
 	turnobject PLAYER, RIGHT
 .ContinueEin:
+	turnobject HOOHLUGIAROOM_EIN, DOWN
 	opentext
 	writetext JustSawRaikouText
 	buttonsound
@@ -261,7 +262,7 @@ ImpressiveBattlingText:
 	cont "hearts."
 
 	para "Quite unfortunate,"
-	cont "really…"
+	line "really…"
 	done
 
 IntriguingText:
@@ -349,10 +350,6 @@ ThatsARocketBallText:
 
 	para "Ein: You needn't"
 	line "worry about that."
-
-	para "It's not anything"
-	line "you'll have to."
-	cont "deal with."
 
 	para "I believe that"
 	line "those Rocket Balls"

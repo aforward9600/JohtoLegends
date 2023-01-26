@@ -162,7 +162,7 @@ NewBarkTown_MapEvents:
 	db 3 ; warp events
 	warp_event  6,  3, ELMS_LAB, 1
 	warp_event  3, 11, PLAYERS_NEIGHBORS_HOUSE, 1
-	warp_event 11, 13, ROCKET_LAIR_HALLWAY_1, 1
+	warp_event 11, 13, ELMS_HOUSE, 1
 
 	db 1 ; coord events
 	coord_event  6,  4, SCENE_DEFAULT, NewBarkTown_RivalMeetsYou

@@ -128,7 +128,7 @@ DarkCaveBlackthornEntrance_MapEvents:
 	db 0 ; bg events
 
 	db 4 ; object events
-	object_event  7,  2, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntranceOfficerScript, -1
+	object_event  7,  2, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntranceOfficerScript, EVENT_DARK_CAVE_OFFICER
 	object_event 21, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceMaxRevive, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_MAX_REVIVE
 	object_event  9, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceNugget, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_NUGGET
 	object_event 11, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceBlackGlasses, EVENT_GOT_BLACKGLASSES_IN_DARK_CAVE

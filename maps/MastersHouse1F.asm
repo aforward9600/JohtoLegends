@@ -11,7 +11,24 @@ MastersHouse1F_MapScripts:
 	scene_script .DummyScene2 ; SCENE_MASTERS_HOUSE_1F_NOTHING
 	scene_script .DummyScene3 ; SCENE_DONE_WITH_2F
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .MasterWeekends
+
+.MasterWeekends:
+	checkevent EVENT_BEAT_MASTER
+	iftrue .IsItWeekend
+	return
+
+.IsItWeekend:
+	readvar VAR_WEEKDAY
+	ifequal SATURDAY, .MasterAppears
+	ifequal SUNDAY, .MasterAppears
+	disappear MASTERSHOUSE1F_MASTER
+	return
+
+.MasterAppears:
+	appear MASTERSHOUSE1F_MASTER
+	return
 
 .MeetMaster:
 	prioritysjump WalkUpToRival

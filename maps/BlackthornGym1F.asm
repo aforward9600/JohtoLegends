@@ -8,8 +8,9 @@
 BlackthornGym1F_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_TILES, .Boulders
+	callback MAPCALLBACK_OBJECTS, .MasterGym
 
 .Boulders:
 	checkevent EVENT_BOULDER_IN_BLACKTHORN_GYM_1
@@ -26,6 +27,22 @@ BlackthornGym1F_MapScripts:
 .skip3
 	return
 
+.MasterGym:
+	checkevent EVENT_BEAT_MASTER
+	iftrue .IsItWeekendGym
+	return
+
+.IsItWeekendGym:
+	readvar VAR_WEEKDAY
+	ifequal SATURDAY, .MasterDisappears
+	ifequal SUNDAY, .MasterDisappears
+	appear BLACKTHORNGYM1F_MASTER
+	return
+
+.MasterDisappears:
+	disappear BLACKTHORNGYM1F_MASTER
+	return
+
 BlackthornGymMasterScript:
 	faceplayer
 	opentext
@@ -34,7 +51,7 @@ BlackthornGymMasterScript:
 	writetext MasterIntroText
 	waitbutton
 	closetext
-	winlosstext MasterWinText, 0
+	winlosstext MasterWinText, MasterLastMonText
 	loadtrainer MASTER, MASTER1
 	startbattle
 	reloadmapafterbattle
@@ -50,13 +67,16 @@ BlackthornGymMasterScript:
 	setflag ENGINE_RISINGBADGE
 	readvar VAR_BADGES
 .FightDone:
+	checkflag ENGINE_BEAT_MASTER
+	iftrue .Rematch
 	checkevent EVENT_GOT_TM24_DRAGONBREATH
 	iftrue .GotTM24
 	setevent EVENT_BEAT_DRAGON_TAMER_M_DEVIN
 	setevent EVENT_BEAT_DRAGON_TAMER_M_DARIUS
 	setevent EVENT_BEAT_DRAGON_TAMER_M_DAVIS
-	setevent EVENT_BEAT_COOLTRAINERF_EMIKO
+	setevent EVENT_BEAT_DRAGON_TAMER_F_DORA
 	setevent EVENT_BEAT_DRAGON_TAMER_F_DANI
+	setevent EVENT_BEAT_DRAGON_TAMER_F_DARIA
 	clearevent EVENT_MAHOGANY_MART_OWNERS
 	setevent EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN
 	clearevent EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
@@ -77,13 +97,27 @@ BlackthornGymMasterScript:
 	closetext
 	end
 
-TrainerCooltrainermPaul:
-	trainer DRAGON_TAMER_M, DEVIN, EVENT_BEAT_DRAGON_TAMER_M_DEVIN, CooltrainermPaulSeenText, CooltrainermPaulBeatenText, 0, .Script
+.Rematch:
+	writetext MasterRematchText
+	waitbutton
+	closetext
+	winlosstext MasterWinText, MasterLastMonText
+	loadtrainer MASTER, MASTER1
+	reloadmapafterbattle
+	opentext
+	writetext MasterBeatenAgainText
+	waitbutton
+	closetext
+	setflag ENGINE_BEAT_MASTER
+	end
+
+TrainerDragonTamermDevin:
+	trainer DRAGON_TAMER_M, DEVIN, EVENT_BEAT_DRAGON_TAMER_M_DEVIN, DragonTamermDevinSeenText, DragonTamermDevinBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainermPaulAfterBattleText
+	writetext DragonTamermDevinAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -99,13 +133,13 @@ TrainerDragonTamermDavis:
 	closetext
 	end
 
-TrainerCooltrainerfLola:
-	trainer DRAGON_TAMER_F, DANI, EVENT_BEAT_DRAGON_TAMER_F_DANI, CooltrainerfLolaSeenText, CooltrainerfLolaBeatenText, 0, .Script
+TrainerDragonTamerfDani:
+	trainer DRAGON_TAMER_F, DANI, EVENT_BEAT_DRAGON_TAMER_F_DANI, DragonTamerfDaniSeenText, DragonTamerfDaniBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerfLolaAfterBattleText
+	writetext DragonTamerfDaniAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -134,6 +168,12 @@ BlackthornGymStatue:
 .Beaten:
 	gettrainername STRING_BUFFER_4, MASTER, MASTER1
 	jumpstd gymstatue2
+
+MasterLastMonText:
+	text "A dragon backed"
+	line "into a corner is"
+	cont "still dangerous!"
+	done
 
 MasterIntroText:
 	text "You have returned."
@@ -245,71 +285,73 @@ BlackthornGymMasterText_League:
 
 	para "League. We are all"
 	line "rooting for you"
-
-	para "two."
+	cont "two."
 	done
 
-CooltrainermPaulSeenText:
-	text "Your first battle"
-	line "against dragons?"
+DragonTamermDevinSeenText:
+	text "Hey <PLAYER>!"
 
-	para "I'll show you how"
-	line "tough they are!"
+	para "You finally made"
+	line "it!"
+
+	para "Now I get to show"
+	line "you the true"
+	cont "power of Dragons!"
 	done
 
-CooltrainermPaulBeatenText:
-	text "My dragon #MON"
-	line "lost?"
+DragonTamermDevinBeatenText:
+	text "I guess you showed"
+	line "me the power!"
 	done
 
-CooltrainermPaulAfterBattleText:
-	text "LANCE told you"
-	line "that he'd like to"
-
-	para "see you again?"
-	line "Not a chance!"
+DragonTamermDevinAfterBattleText:
+	text "Dragons are really"
+	line "strong, huh?"
 	done
 
 DragonTamermDavisSeenText:
-	text "My chance of"
-	line "losing? Not even"
-	cont "one percent!"
+	text "This lava is"
+	line "scorching!"
+
+	para "My cape might"
+	line "catch on fire!"
 	done
 
 DragonTamermDavisBeatenText:
-	text "That's odd."
+	text "You're on fire!"
 	done
 
 DragonTamermDavisAfterBattleText:
-	text "I know my short-"
-	line "comings now."
+	text "Your battling"
+	line "skills are fire!"
 
-	para "Thanks for showing"
-	line "me!"
+	para "You should cool"
+	line "down a little!"
+
+	para "You make us look"
+	line "bad!"
 	done
 
-CooltrainerfLolaSeenText:
-	text "Dragons are sacred"
-	line "#MON."
+DragonTamerfDaniSeenText:
+	text "I've been trained"
+	line "by the Master!"
 
-	para "They are full of"
-	line "life energy."
-
-	para "If you're not"
-	line "serious, you won't"
-
-	para "be able to beat"
-	line "them."
+	para "I won't go down"
+	line "easily!"
 	done
 
-CooltrainerfLolaBeatenText:
-	text "Way to go!"
+DragonTamerfDaniBeatenText:
+	text "Right, you were"
+	line "trained too…"
 	done
 
-CooltrainerfLolaAfterBattleText:
-	text "Dragons are weak"
-	line "against dragon-"
-	cont "type moves."
+DragonTamerfDaniAfterBattleText:
+	text "Master is the"
+	line "greatest Dragon-"
+	cont "trainer in Johto."
+
+	para "Don't underestimate"
+	line "him. Got it?"
 	done
 
 BlackthornGymGuyText:
@@ -340,10 +382,22 @@ BlackthornGymGuyWinText:
 	cont "Badges! Now you"
 
 	para "can go to the"
-	line "#Mon League"
+	line "#mon League"
 	cont "and become the"
+	cont "Champion!"
+	done
 
-	para "Champion!"
+MasterRematchText:
+	text "Back to test your"
+	line "skills?"
+
+	para "Let us commence."
+	done
+
+MasterBeatenAgainText:
+	text "Perhaps you are an"
+	line "even greater"
+	cont "master than I!"
 	done
 
 BlackthornGym1F_MapEvents:
@@ -365,8 +419,8 @@ BlackthornGym1F_MapEvents:
 	bg_event  6, 15, BGEVENT_READ, BlackthornGymStatue
 
 	db 5 ; object events
-	object_event  5,  3, SPRITE_MASTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornGymMasterScript, -1
+	object_event  5,  3, SPRITE_MASTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornGymMasterScript, EVENT_BLACKTHORN_GYM_MASTER
 	object_event  6,  6, SPRITE_DRAGON_TAMER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerDragonTamermDavis, -1
-	object_event  1, 14, SPRITE_DRAGON_TAMER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermPaul, -1
-	object_event  9,  2, SPRITE_DRAGON_TAMER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfLola, -1
+	object_event  1, 14, SPRITE_DRAGON_TAMER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerDragonTamermDevin, -1
+	object_event  9,  2, SPRITE_DRAGON_TAMER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerDragonTamerfDani, -1
 	object_event  7, 15, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornGymGuyScript, -1

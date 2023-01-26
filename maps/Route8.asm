@@ -45,7 +45,7 @@ TrainerBikerZeke:
 	end
 
 TrainerSupernerdSam:
-	trainer SUPER_NERD, SAM, EVENT_BEAT_SUPER_NERD_SAM, SupernerdSamSeenText, SupernerdSamBeatenText, 0, .Script
+	trainer SUPER_NERD, HERBERT_SUPER_NERD, EVENT_BEAT_SUPER_NERD_SAM, SupernerdSamSeenText, SupernerdSamBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

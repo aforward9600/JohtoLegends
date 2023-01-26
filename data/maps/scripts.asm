@@ -456,19 +456,18 @@ INCLUDE "maps/SilverCavePokecenter1F.asm"
 INCLUDE "maps/Route28SteelWingHouse.asm"
 INCLUDE "maps/Route12SuperRodHouse.asm"
 INCLUDE "maps/WildAreaOutside.asm"
+INCLUDE "maps/RocketLairHallway1.asm"
 
 
 SECTION "Map Scripts 25", ROMX
 
 INCLUDE "maps/RocketLairHallway2.asm"
-INCLUDE "maps/RocketLairHallway1.asm"
 INCLUDE "maps/BattleTower1F.asm"
 INCLUDE "maps/BattleTowerHallway.asm"
 INCLUDE "maps/BattleTowerElevator.asm"
 INCLUDE "maps/BattleTowerBattleRoom.asm"
 INCLUDE "maps/LighthouseElevator.asm"
 INCLUDE "maps/RivalsHouse2F.asm"
-INCLUDE "maps/Route12.asm"
 
 
 SECTION "Map Scripts 26", ROMX
@@ -513,3 +512,4 @@ INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route25.asm"
 INCLUDE "maps/RocketLairBreakRoom.asm"
 INCLUDE "maps/Route10North.asm"
+INCLUDE "maps/Route12.asm"

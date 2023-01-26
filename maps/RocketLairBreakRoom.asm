@@ -29,6 +29,9 @@ BreakRoomBed:
 	special RestartMapMusic
 	end
 
+BreakRoomRefrigerator:
+	jumptext BreakRoomRefrigeratorText
+
 BreakRoomGruntText:
 	text "Beat it kid!"
 
@@ -54,6 +57,17 @@ ANiceBedText:
 	line "a nap in…"
 	done
 
+BreakRoomRefrigeratorText:
+	text "There's a container"
+	line "labeled:"
+
+	para "Ariana's. DO NOT"
+	line "TOUCH!"
+
+	para "You should leave"
+	line "it alone."
+	done
+
 RocketLairBreakRoom_MapEvents:
 	db 0, 0 ; filler
 
@@ -63,13 +77,14 @@ RocketLairBreakRoom_MapEvents:
 
 	db 0 ; coord_events
 
-	db 6 ; bg events
+	db 7 ; bg events
 	bg_event  9,  2, BGEVENT_READ, BreakRoomBed
 	bg_event  9,  3, BGEVENT_READ, BreakRoomBed
 	bg_event  9,  4, BGEVENT_READ, BreakRoomBed
 	bg_event  9,  5, BGEVENT_READ, BreakRoomBed
 	bg_event  9,  6, BGEVENT_READ, BreakRoomBed
 	bg_event  9,  7, BGEVENT_READ, BreakRoomBed
+	bg_event  1,  1, BGEVENT_READ, BreakRoomRefrigerator
 
 	db 2 ; object events
 	object_event  3,  5, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketLairBreakRoomGruntScript, EVENT_LAIR_GRUNTS

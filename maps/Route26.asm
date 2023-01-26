@@ -25,96 +25,14 @@ TrainerCooltrainermJake:
 	end
 
 TrainerCooltrainermGaven3:
-	trainer COOLTRAINERM, GAVEN3, EVENT_BEAT_COOLTRAINERM_GAVEN, CooltrainermGaven3SeenText, CooltrainermGaven3BeatenText, 0, .Script
+	trainer COOLTRAINERM, GAVEN1, EVENT_BEAT_COOLTRAINERM_GAVEN, CooltrainermGaven3SeenText, CooltrainermGaven3BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_COOLTRAINERM_GAVEN
 	endifjustbattled
 	opentext
-	checkflag ENGINE_GAVEN
-	iftrue .WantsBattle
-	checkcellnum PHONE_COOLTRAINERM_GAVEN
-	iftrue .NumberAccepted
-	checkevent EVENT_GAVEN_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskedAlready
 	writetext CooltrainermGavenAfterText
-	buttonsound
-	setevent EVENT_GAVEN_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
-	sjump .AskForNumber
-
-.AskedAlready:
-	scall .AskNumber2
-.AskForNumber:
-	askforphonenumber PHONE_COOLTRAINERM_GAVEN
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, COOLTRAINERM, GAVEN3
-	scall .RegisteredNumber
-	sjump .NumberAccepted
-
-.WantsBattle:
-	scall .Rematch
-	winlosstext CooltrainermGaven3BeatenText, 0
-	readmem wGavenFightCount
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight2:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
-.Fight1:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer COOLTRAINERM, GAVEN3
-	startbattle
-	reloadmapafterbattle
-	loadmem wGavenFightCount, 1
-	clearflag ENGINE_GAVEN
-	end
-
-.LoadFight1:
-	loadtrainer COOLTRAINERM, GAVEN1
-	startbattle
-	reloadmapafterbattle
-	loadmem wGavenFightCount, 2
-	clearflag ENGINE_GAVEN
-	end
-
-.LoadFight2:
-	loadtrainer COOLTRAINERM, GAVEN2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_GAVEN
-	end
-
-.AskNumber1:
-	jumpstd asknumber1m
-	end
-
-.AskNumber2:
-	jumpstd asknumber2m
-	end
-
-.RegisteredNumber:
-	jumpstd registerednumberm
-	end
-
-.NumberAccepted:
-	jumpstd numberacceptedm
-	end
-
-.NumberDeclined:
-	jumpstd numberdeclinedm
-	end
-
-.PhoneFull:
-	jumpstd phonefullm
-	end
-
-.Rematch:
-	jumpstd rematchm
+	waitbutton
+	closetext
 	end
 
 TrainerCooltrainerfJoyce:

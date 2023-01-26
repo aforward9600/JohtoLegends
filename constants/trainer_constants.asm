@@ -198,7 +198,7 @@ CHRIS EQU __enum__
 	const JACQUES
 	const EMILE
 	const GAVEN1
-	const GAVEN2
+	const KOSU
 	const ROBERT1
 	const JAKE
 	const GAVEN3
@@ -211,7 +211,7 @@ CHRIS EQU __enum__
 	const KEVIN
 	const STEVE
 	const ALLEN
-	const DARIN
+	const JOSEPH
 
 	trainerclass COOLTRAINERF ; 1c
 	const TERESA
@@ -220,7 +220,7 @@ CHRIS EQU __enum__
 	const HAZEL
 	const TINA
 	const REESE
-	const KELLY
+	const HARLEY
 	const JOYCE
 	const BETH1
 	const REENA1
@@ -442,7 +442,7 @@ CHRIS EQU __enum__
 	const NED1
 	const SUPER_NERD_JASON
 	const SUPER_NERD_RICHARD
-	const SAM
+	const HERBERT_SUPER_NERD
 	const TOM
 	const PAT
 	const SHAWN
@@ -563,7 +563,7 @@ CHRIS EQU __enum__
 	const CHLOE
 	const LACY
 	const BARBARA
-	const HOPE
+	const VIVIAN_PICNICKER
 	const SHARON
 	const DEBRA
 	const GINA2
@@ -596,7 +596,7 @@ CHRIS EQU __enum__
 	const SID
 	const HARVEY
 	const DALE
-	const TED
+	const JAOQUIN
 	const TODD2
 	const TODD3
 	const THOMAS
@@ -813,12 +813,14 @@ CHRIS EQU __enum__
 	const DANI
 	const DARIA
 	const DORA
+	const DEBBY
 
 	trainerclass DRAGON_TAMER_M
 	const DREW
 	const DEVIN
 	const DAVIS
 	const DARIUS
+	const DYLAN
 
 	trainerclass MADAME_BOSS
 	const BOSS

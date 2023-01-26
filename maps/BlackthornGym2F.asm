@@ -1,12 +1,13 @@
 	object_const_def ; object_event constants
-	const BLACKTHORNGYM2F_COOLTRAINER_M
-	const BLACKTHORNGYM2F_COOLTRAINER_F
+	const BLACKTHORNGYM2F_DRAGONTAMER_M
+	const BLACKTHORNGYM2F_DRAGONTAMER_F
 	const BLACKTHORNGYM2F_BOULDER1
 	const BLACKTHORNGYM2F_BOULDER2
 	const BLACKTHORNGYM2F_BOULDER3
 	const BLACKTHORNGYM2F_BOULDER4
 	const BLACKTHORNGYM2F_BOULDER5
 	const BLACKTHORNGYM2F_BOULDER6
+	const BLACKTHORNGYM2F_DRAGONTAMER_F2
 
 BlackthornGym2F_MapScripts:
 	db 0 ; scene scripts
@@ -67,60 +68,93 @@ TrainerDragonTamerMDarius:
 	closetext
 	end
 
-TrainerCooltrainerfFran:
-	trainer DRAGON_TAMER_F, DANI, EVENT_BEAT_DRAGON_TAMER_F_DANI, CooltrainerfFranSeenText, CooltrainerfFranBeatenText, 0, .Script
+TrainerDragonTamerfDaria:
+	trainer DRAGON_TAMER_F, DARIA, EVENT_BEAT_DRAGON_TAMER_F_DARIA, DragonTamerfDariaSeenText, DragonTamerfDariaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerfFranAfterBattleText
+	writetext DragonTamerfDariaAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerDragonTamerfDora:
+	trainer DRAGON_TAMER_F, DORA, EVENT_BEAT_DRAGON_TAMER_F_DORA, DragonTamerfDoraSeenText, DragonTamerfDoraBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext DragonTamerfDoraAfterBattleText
 	waitbutton
 	closetext
 	end
 
 DragonTamerMDariusSeenText:
-	text "It's not as if we"
-	line "all use dragon-"
-	cont "type #MON."
+	text "I have a few"
+	line "#mon not seen"
+	cont "often."
 	done
 
 DragonTamerMDariusBeatenText:
-	text "Rats! If only I"
-	line "had a dragon!"
+	text "Pretty cool, huh?"
 	done
 
 DragonTamerMDariusAfterBattleText:
-	text "Members of our"
-	line "dragon-user clan"
+	text "They are from the"
+	line "Hoenn region."
 
-	para "can use dragon"
-	line "#MON only after"
-
-	para "our MASTER allows"
-	line "it."
+	para "They were a gift"
+	line "from the Master."
 	done
 
-CooltrainerfFranSeenText:
-	text "I can't allow a"
-	line "nameless trainer"
-	cont "past me!"
+DragonTamerfDariaSeenText:
+	text "I'm good friends"
+	line "with Clair."
 
-	para "CLAIR would be"
-	line "livid if I did!"
+	para "We've trained"
+	line "together for some"
+	cont "time now."
 	done
 
-CooltrainerfFranBeatenText:
-	text "Awww… I lost…"
+DragonTamerfDariaBeatenText:
+	text "You're stronger"
+	line "than Clair!"
 	done
 
-CooltrainerfFranAfterBattleText:
-	text "Uh-oh… CLAIR is"
-	line "going to be mad…"
+DragonTamerfDariaAfterBattleText:
+	text "She has a bit of a"
+	line "temper when she"
+	cont "loses."
+
+	para "I guess I'm better"
+	line "than her at that!"
 	done
 
 BlackthornGym2FBoulderFellText:
 	text "The boulder fell"
 	line "through!"
+	done
+
+DragonTamerfDoraSeenText:
+	text "Lance is a pretty"
+	line "tough guy."
+
+	para "I think he could"
+	line "be Champion one"
+	cont "day."
+	done
+
+DragonTamerfDoraBeatenText:
+	text "Maybe you will be"
+	line "too!"
+	done
+
+DragonTamerfDoraAfterBattleText:
+	text "He's pretty humble,"
+	line "so he usually just"
+	cont "brushes off my"
+	cont "compliments."
 	done
 
 BlackthornGym2F_MapEvents:
@@ -137,12 +171,13 @@ BlackthornGym2F_MapEvents:
 
 	db 0 ; bg events
 
-	db 8 ; object events
+	db 9 ; object events
 	object_event  4,  1, SPRITE_DRAGON_TAMER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerDragonTamerMDarius, -1
-	object_event  4, 11, SPRITE_DRAGON_TAMER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfFran, -1
+	object_event  4, 11, SPRITE_DRAGON_TAMER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerDragonTamerfDaria, -1
 	object_event  8,  2, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymBoulder, EVENT_BOULDER_IN_BLACKTHORN_GYM_1
 	object_event  2,  3, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymBoulder, EVENT_BOULDER_IN_BLACKTHORN_GYM_2
 	object_event  6, 16, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymBoulder, EVENT_BOULDER_IN_BLACKTHORN_GYM_3
 	object_event  3,  3, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymBoulder, -1
 	object_event  6,  1, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymBoulder, -1
 	object_event  8, 14, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymBoulder, -1
+	object_event  1, 10, SPRITE_DRAGON_TAMER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerDragonTamerfDora, -1

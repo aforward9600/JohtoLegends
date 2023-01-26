@@ -2,6 +2,8 @@
 	const DRAGONSHRINE_ELDER1
 	const DRAGONSHRINE_ELDER2
 	const DRAGONSHRINE_ELDER3
+	const DRAGONSHRINE_ELDER4
+	const DRAGONSHRINE_ELDER5
 
 DragonShrine_MapScripts:
 	db 2 ; scene scripts
@@ -116,7 +118,6 @@ DragonShrine_MapScripts:
 	writetext DragonShrinePassedTestText
 	waitbutton
 	closetext
-	specialphonecall SPECIALCALL_MASTERBALL
 	setscene SCENE_FINISHED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	end
@@ -130,8 +131,6 @@ DragonShrineElder1Script:
 	iftrue .ReceivedDratini
 	checkevent EVENT_GOT_DRATINI
 	iffalse .GiveDratini
-	checkevent EVENT_BEAT_RIVAL_IN_MT_MOON
-	iftrue .BeatRivalInMtMoon
 	writetext DragonShrineClairsGrandfatherText
 	waitbutton
 	closetext
@@ -161,12 +160,6 @@ DragonShrineElder1Script:
 	closetext
 	end
 
-.BeatRivalInMtMoon:
-	writetext DragonShrineSilverIsInTrainingText
-	waitbutton
-	closetext
-	end
-
 .DontGiveDratiniYet:
 	writetext DragonShrineComeAgainText
 	waitbutton
@@ -174,7 +167,21 @@ DragonShrineElder1Script:
 	end
 
 .ReceivedDratini:
-	writetext DragonShrineSymbolicDragonText
+	writetext DragonShrineTutorText
+	yesorno
+	iffalse .ExtremeSpeedRefused
+	loadmoveindex EXTREMESPEED
+	writetext DragonShrineTutorClearText
+	special MoveTutor
+	if_equal $0, .TeachMove
+.ExtremeSpeedRefused:
+	writetext ExtremeSpeedRefusedText
+	waitbutton
+	closetext
+	end
+
+.TeachMove:
+	writetext TaughtExtremeSpeedText
 	waitbutton
 	closetext
 	end
@@ -191,6 +198,25 @@ DragonShrineElder3Script:
 	faceplayer
 	opentext
 	writetext DragonShrineElder3Text
+	waitbutton
+	closetext
+	end
+
+DragonShrineElder4Script:
+	jumptextfaceplayer DragonShrineClairsGrandfatherText
+
+DragonShrineElder5Script:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_DRATINI_FROM_MASTER
+	iftrue .RivalDragonShrine
+	writetext DontLikeLarvitarYouText
+	waitbutton
+	closetext
+	end
+
+.RivalDragonShrine:
+	writetext DontLikeLarvitarText
 	waitbutton
 	closetext
 	end
@@ -292,8 +318,7 @@ DragonShrineElderGreetingText:
 	para "Now that you are"
 	line "here, you may take"
 	cont "the Dragon Master"
-
-	para "Challenge."
+	cont "Challenge."
 
 	para "Not to worry, you"
 	line "are to answer only"
@@ -352,9 +377,8 @@ DragonShrinePassedTestText:
 
 	para "Come back later."
 	line "I will have a"
-	cont "gift befitting a"
-
-	para "Dragon Master."
+	cont "gift befitting of"
+	cont "a Dragon Master."
 	done
 
 DragonShrineComeAgainText:
@@ -399,8 +423,7 @@ DragonShrineSymbolicDragonText:
 
 	para "You should know"
 	line "this, as you are"
-
-	para "now a master."
+	cont "now a master."
 	done
 
 DragonShrineClairsGrandfatherText:
@@ -488,10 +511,10 @@ DragonShrineElder3Text:
 	text "Dragonite the"
 	line "Dragon, and"
 	cont "Tyranitar the"
+	cont "Behemoth."
 
-	para "Behemoth. These"
-	line "two have been the"
-	cont "symbols of"
+	para "These two have"
+	line "been symbols of"
 
 	para "Blackthorn for"
 	line "generations, for"
@@ -509,6 +532,65 @@ DragonShrineElder3Text:
 	line "proof of that."
 	done
 
+DragonShrineTutorText:
+	text "Good of you to"
+	line "return."
+
+	para "I can teach a"
+	line "select few"
+	cont "#mon a fast"
+	cont "move."
+
+	para "Shall I endow your"
+	line "#mon with"
+	cont "Extremespeed?"
+	done
+
+ExtremeSpeedRefusedText:
+	text "Return if you wish"
+	line "to learn it."
+	done
+
+DragonShrineTutorClearText:
+	text ""
+	done
+
+TaughtExtremeSpeedText:
+	text "There."
+
+	para "Your #mon now"
+	line "knows a useful"
+	cont "move."
+
+	para "Utilize it"
+	line "wisely."
+	done
+
+DontLikeLarvitarYouText:
+	text "You!"
+
+	para "You chose the"
+	line "behemoth?"
+
+	para "For shame!"
+
+	para "You bring"
+	line "dishonor to our"
+	cont "village!"
+	done
+
+DontLikeLarvitarText:
+	text "Your friend chose"
+	line "the behemoth,"
+	cont "correct?"
+
+	para "How foolish…"
+
+	para "To bring such"
+	line "dishonor to our"
+	cont "village…"
+	done
+
 DragonShrine_MapEvents:
 	db 0, 0 ; filler
 
@@ -520,7 +602,9 @@ DragonShrine_MapEvents:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 5 ; object events
 	object_event  5,  1, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonShrineElder1Script, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	object_event  2,  4, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonShrineElder2Script, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	object_event  7,  4, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonShrineElder3Script, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	object_event  2,  7, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonShrineElder4Script, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	object_event  7,  7, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonShrineElder5Script, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1

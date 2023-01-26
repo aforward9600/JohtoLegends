@@ -37,7 +37,9 @@ MoomooScript:
 	writetext HoldingSomethingText
 	buttonsound
 	verbosegiveitem PINK_BOW
+	iffalse .Exit
 	waitbutton
+.Exit:
 	closetext
 	setevent EVENT_GOT_PINK_BOW_FROM_MOOMOO
 	end

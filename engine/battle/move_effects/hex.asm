@@ -7,4 +7,7 @@ BattleCommand_Hex:
 	and a
 	ret z
 ; if's not 0, so double damage
-	jp DoubleDamage
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVarAddr
+	sla [hl]
+	ret

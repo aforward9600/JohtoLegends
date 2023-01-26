@@ -11,12 +11,6 @@ RocketLairHallway2_MapScripts:
 
 	db 0 ; callback
 
-RocketLairHallway2GruntF:
-	end
-
-RocketLairHallway2GruntM:
-	end
-
 LairArianaLastMonText:
 	text "Not again…"
 
@@ -33,7 +27,7 @@ TrainerLairAriana:
 	closetext
 	pause 15
 	readvar VAR_FACING
-	ifequal LEFT, .SuicuneEscapesDown
+	ifequal RIGHT, .SuicuneEscapesDown
 	playsound SFX_BALL_POOF
 	appear ROCKETLAIRHALLWAY2_SUICUNE
 	showemote EMOTE_SHOCK, ROCKETLAIRHALLWAY2_ARIANA, 15
@@ -114,6 +108,28 @@ TrainerLairArcher:
 	clearevent EVENT_BURNED_TOWER_B1F_ENTEI
 	end
 
+RocketLairHallway2GruntF:
+	trainer GRUNTF, GRUNTF_14, EVENT_BEAT_ROCKET_GRUNTF_14, RocketLairHallway2GruntFSeenText, RocketLairHallway2GruntFBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext RocketLairHallway2GruntFAfterText
+	waitbutton
+	closetext
+	end
+
+RocketLairHallway2GruntM:
+	trainer GRUNTM, GRUNTM_18, EVENT_BEAT_ROCKET_GRUNTM_18, RocketLairHallway2GruntMSeenText, RocketLairHallway2GruntMBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext RocketLairHallway2GruntMAfterText
+	waitbutton
+	closetext
+	end
+
 SuicuneLeavesMovement:
 	set_sliding
 	fast_jump_step LEFT
@@ -135,13 +151,13 @@ LairArianaSeenText:
 
 	para "I'm sick of you!"
 
-	para "I have to defeat"
-	line "you this time!"
-
 	para "I let your friend"
 	line "slip by, since"
 	cont "the boss will"
-	cont "them!"
+	cont "finish the job!"
+
+	para "I have to defeat"
+	line "you this time!"
 
 	para "If I don't, I'll be"
 	line "shipped off to the"
@@ -252,6 +268,41 @@ ArcherFinalText:
 	line "her…"
 	done
 
+RocketLairHallway2GruntFSeenText:
+	text "Your friend just"
+	line "came through here."
+	done
+
+RocketLairHallway2GruntFBeatenText:
+	text "You're both strong!"
+	done
+
+RocketLairHallway2GruntFAfterText:
+	text "I wonder if you"
+	line "kids can do it…"
+	done
+
+RocketLairHallway2GruntMSeenText:
+	text "I'm the strongest"
+	line "grunt here!"
+
+	para "I can't let you"
+	line "through!"
+	done
+
+RocketLairHallway2GruntMBeatenText:
+	text "I may be the"
+	line "strongest grunt,"
+
+	para "but you're even"
+	line "stronger!"
+	done
+
+RocketLairHallway2GruntMAfterText:
+	text "This may be it for"
+	line "us…"
+	done
+
 RocketLairHallway2_MapEvents:
 	db 0, 0 ; filler
 
@@ -266,9 +317,9 @@ RocketLairHallway2_MapEvents:
 	db 0 ; bg events
 
 	db 6 ; object events
-	object_event  6, 15, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LAIR_GRUNTS
-	object_event 16, 12, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LAIR_GRUNTS
+	object_event 16, 12, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, RocketLairHallway2GruntM, EVENT_LAIR_GRUNTS
+	object_event  6, 15, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, RocketLairHallway2GruntF, EVENT_LAIR_GRUNTS
 	object_event 13, 14, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerLairAriana, EVENT_LAIR_ARIANA
 	object_event 15,  3, SPRITE_ARCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerLairArcher, EVENT_LAIR_ARCHER
-	object_event 12, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_SUICUNE
-	object_event 15,  4, SPRITE_ENTEI, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_ENTEI
+	object_event 12, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LAIR_SUICUNE
+	object_event 15,  4, SPRITE_ENTEI, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LAIR_ENTEI

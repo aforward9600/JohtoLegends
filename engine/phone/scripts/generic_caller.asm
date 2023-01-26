@@ -57,7 +57,6 @@ Phone_GotAwayCall_Female:
 Phone_WhosBragging_Male:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
-	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -75,11 +74,6 @@ Phone_WhosBragging_Male:
 
 .Jack:
 	farwritetext JackIntelligenceText
-	buttonsound
-	end
-
-.Gaven:
-	farwritetext GavenGreaterText
 	buttonsound
 	end
 
@@ -201,7 +195,6 @@ Phone_WhosBragging_Female:
 Phone_WhoDefeatedMon_Male:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
-	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -219,11 +212,6 @@ Phone_WhoDefeatedMon_Male:
 
 .Jack:
 	farwritetext JackDefeatedMonText
-	buttonsound
-	end
-
-.Gaven:
-	farwritetext UnknownText_0x174a80
 	buttonsound
 	end
 
@@ -345,7 +333,6 @@ Phone_WhoDefeatedMon_Female:
 Phone_WhoLostAMon_Male:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
-	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -363,11 +350,6 @@ Phone_WhoLostAMon_Male:
 
 .Jack:
 	farwritetext UnknownText_0x174165
-	buttonsound
-	end
-
-.Gaven:
-	farwritetext UnknownText_0x174b2d
 	buttonsound
 	end
 
@@ -498,7 +480,6 @@ PhoneScript_RematchText_Male:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_SAILOR_HUEY, .Huey
-	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -520,11 +501,6 @@ PhoneScript_RematchText_Male:
 
 .Huey:
 	farwritetext UnknownText_0x1748ea
-	buttonsound
-	end
-
-.Gaven:
-	farwritetext UnknownText_0x174bc5
 	buttonsound
 	end
 
@@ -644,7 +620,6 @@ PhoneScript_HangupText_Male:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_SAILOR_HUEY, .Huey
-	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -668,10 +643,6 @@ PhoneScript_HangupText_Male:
 
 .Huey:
 	farwritetext UnknownText_0x174962
-	end
-
-.Gaven:
-	farwritetext UnknownText_0x174c0e
 	end
 
 .Jose:

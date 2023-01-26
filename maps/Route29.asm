@@ -10,24 +10,17 @@
 Route29_MapScripts:
 	db 0 ; scene scripts
 
-	db 2 ; callbacks
+	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, .Tuscany
-	callback MAPCALLBACK_OBJECTS, .RaikouAppears
 
 .Tuscany:
-	checkflag ENGINE_ZEPHYRBADGE
-	iftrue .DoesTuscanyAppear
-
-.TuscanyDisappears:
-	disappear ROUTE29_TUSCANY
-	return
-
-.DoesTuscanyAppear:
 	readvar VAR_WEEKDAY
 	ifnotequal TUESDAY, .TuscanyDisappears
 	appear ROUTE29_TUSCANY
-	return
+	sjump .RaikouAppears
 
+.TuscanyDisappears:
+	disappear ROUTE29_TUSCANY
 .RaikouAppears:
 	checkevent EVENT_CAUGHT_RAIKOU
 	iftrue .RaikouWillNotAppear
