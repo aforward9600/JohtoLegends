@@ -74,7 +74,10 @@ OlivineLighthouse6F_MapScripts:
 	special FadeInQuickly
 	setevent EVENT_BEAT_LIGHTHOUSE_MIYAMOTO
 	waitsfx
-	playmapmusic
+	pause 15
+	special FadeOutMusic
+	pause 15
+	special RestartMapMusic
 	opentext
 	writetext DangSmokeBombsText
 	waitbutton

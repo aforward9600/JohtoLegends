@@ -137,9 +137,10 @@ Music:
 	dba Music_MarnieBattle
 	dba Music_DahliaEncounter
 	dba Music_DahliaAfterBattle
-	dba Music_MadameBoss
+	dba Music_GiovanniBattle
 	dba Music_CinnabarIslandGBS
 	dba Music_FriendlyShop
 	dba Music_BattleCynthia
 	dba Music_KantoGymLeaderFRLG
 	dba Music_CynthiaEncounter
+	dba Music_RocketLair

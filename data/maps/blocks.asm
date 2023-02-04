@@ -1092,3 +1092,9 @@ RocketLairBreakRoom_Blocks:
 
 RocketLairHallway2_Blocks:
 	INCBIN "maps/RocketLairHallway2.blk"
+
+RocketLairHallway3_Blocks:
+	INCBIN "maps/RocketLairHallway3.blk"
+
+RocketLairBossRoom_Blocks:
+	INCBIN "maps/RocketLairBossRoom.blk"

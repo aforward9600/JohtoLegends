@@ -14,13 +14,21 @@ Route27_MapScripts:
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
 .DummyScene0:
 	end
 
 .DummyScene1:
 	end
+
+.FlyPoint:
+	checkevent EVENT_REACHED_ROUTE_23
+	iftrue .NoClearFlag
+	clearflag ENGINE_FLYPOINT_INDIGO_PLATEAU
+.NoClearFlag:
+	return
 
 FirstStepIntoKantoLeftScene:
 	turnobject ROUTE27_FISHER, LEFT
@@ -61,113 +69,11 @@ TrainerBirdKeeperJose2:
 	trainer BIRD_KEEPER, JOSE2, EVENT_BEAT_BIRD_KEEPER_JOSE2, BirdKeeperJose2SeenText, BirdKeeperJose2BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_JOSE
 	endifjustbattled
 	opentext
-	checkflag ENGINE_JOSE
-	iftrue .WantsBattle
-	checkflag ENGINE_JOSE_HAS_STAR_PIECE
-	iftrue .HasStarPiece
-	checkcellnum PHONE_BIRDKEEPER_JOSE
-	iftrue .NumberAccepted
-	checkevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskedAlready
 	writetext BirdKeeperJose2AfterBattleText
-	buttonsound
-	setevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
-	sjump .AskForNumber
-
-.AskedAlready:
-	scall .AskNumber2
-.AskForNumber:
-	askforphonenumber PHONE_BIRDKEEPER_JOSE
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, BIRD_KEEPER, JOSE2
-	scall .RegisteredNumber
-	sjump .NumberAccepted
-
-.WantsBattle:
-	scall .Rematch
-	winlosstext BirdKeeperJose2BeatenText, 0
-	readmem wJoseFightCount
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight2:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
-.Fight1:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer BIRD_KEEPER, JOSE2
-	startbattle
-	reloadmapafterbattle
-	loadmem wJoseFightCount, 1
-	clearflag ENGINE_JOSE
-	end
-
-.LoadFight1:
-	loadtrainer BIRD_KEEPER, JOSE1
-	startbattle
-	reloadmapafterbattle
-	loadmem wJoseFightCount, 2
-	clearflag ENGINE_JOSE
-	end
-
-.LoadFight2:
-	loadtrainer BIRD_KEEPER, JOSE3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JOSE
-	end
-
-.HasStarPiece:
-	scall .Gift
-	verbosegiveitem STAR_PIECE
-	iffalse .NoRoom
-	clearflag ENGINE_JOSE_HAS_STAR_PIECE
-	sjump .NumberAccepted
-
-.NoRoom:
-	sjump .PackFull
-
-.AskNumber1:
-	jumpstd asknumber1m
-	end
-
-.AskNumber2:
-	jumpstd asknumber2m
-	end
-
-.RegisteredNumber:
-	jumpstd registerednumberm
-	end
-
-.NumberAccepted:
-	jumpstd numberacceptedm
-	end
-
-.NumberDeclined:
-	jumpstd numberdeclinedm
-	end
-
-.PhoneFull:
-	jumpstd phonefullm
-	end
-
-.Rematch:
-	jumpstd rematchm
-	end
-
-.Gift:
-	jumpstd giftm
-	end
-
-.PackFull:
-	jumpstd packfullm
+	waitbutton
+	closetext
 	end
 
 TrainerCooltrainermBlake:
@@ -196,93 +102,11 @@ TrainerCooltrainerfReena:
 	trainer COOLTRAINERF, REENA1, EVENT_BEAT_COOLTRAINERF_REENA, CooltrainerfReenaSeenText, CooltrainerfReenaBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_COOLTRAINERF_REENA
 	endifjustbattled
 	opentext
-	checkflag ENGINE_REENA
-	iftrue .WantsBattle
-	checkcellnum PHONE_COOLTRAINERF_REENA
-	iftrue .NumberAccepted
-	checkevent EVENT_REENA_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskedAlready
 	writetext CooltrainerfReenaAfterBattleText
-	buttonsound
-	setevent EVENT_REENA_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
-	sjump .AskForNumber
-
-.AskedAlready:
-	scall .AskNumber2
-.AskForNumber:
-	askforphonenumber PHONE_COOLTRAINERF_REENA
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, COOLTRAINERF, REENA1
-	scall .RegisteredNumber
-	sjump .NumberAccepted
-
-.WantsBattle:
-	scall .Rematch
-	winlosstext CooltrainerfReenaBeatenText, 0
-	readmem wReenaFightCount
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight2:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
-.Fight1:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer COOLTRAINERF, REENA1
-	startbattle
-	reloadmapafterbattle
-	loadmem wReenaFightCount, 1
-	clearflag ENGINE_REENA
-	end
-
-.LoadFight1:
-	loadtrainer COOLTRAINERF, REENA2
-	startbattle
-	reloadmapafterbattle
-	loadmem wReenaFightCount, 2
-	clearflag ENGINE_REENA
-	end
-
-.LoadFight2:
-	loadtrainer COOLTRAINERF, REENA3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_REENA
-	end
-
-.AskNumber1:
-	jumpstd asknumber1f
-	end
-
-.AskNumber2:
-	jumpstd asknumber2f
-	end
-
-.RegisteredNumber:
-	jumpstd registerednumberf
-	end
-
-.NumberAccepted:
-	jumpstd numberacceptedf
-	end
-
-.NumberDeclined:
-	jumpstd numberdeclinedf
-	end
-
-.PhoneFull:
-	jumpstd phonefullf
-	end
-
-.Rematch:
-	jumpstd rematchf
+	waitbutton
+	closetext
 	end
 
 TrainerCooltrainerfMegan:
@@ -324,10 +148,22 @@ Route27FisherText:
 
 	para "You've taken your"
 	line "first step into"
-	cont "KANTO."
+	cont "Kanto!"
 
-	para "Check your #-"
-	line "GEAR MAP and see."
+	para "Well, the part"
+	line "that's not under"
+	cont "the control of"
+	cont "the Federation."
+
+	para "They're too"
+	line "cowardly to take"
+	cont "on the Elite Four."
+
+	para "The Elite Four"
+	line "aren't doing"
+	cont "anything about"
+	cont "them, so it's a"
+	cont "stalemate."
 	done
 
 CooltrainermBlakeSeenText:
@@ -459,10 +295,10 @@ BirdKeeperJose2AfterBattleText:
 	done
 
 TohjoFallsSignText:
-	text "TOHJO FALLS"
+	text "Tohjo Falls"
 
-	para "THE LINK BETWEEN"
-	line "KANTO AND JOHTO"
+	para "The Link Between"
+	line "Kanto and Johto"
 	done
 
 Route27_MapEvents:
@@ -489,4 +325,4 @@ Route27_MapEvents:
 	object_event 58, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperJose2, -1
 	object_event 60, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route27TMSolarbeam, EVENT_ROUTE_27_TM_SOLARBEAM
 	object_event 53, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route27RareCandy, EVENT_ROUTE_27_RARE_CANDY
-	object_event 21, 10, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 3, Route27FisherScript, -1
+	object_event 21, 10, SPRITE_POKEMANIAC, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route27FisherScript, -1

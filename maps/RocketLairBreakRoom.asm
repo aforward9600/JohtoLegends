@@ -1,6 +1,7 @@
 	object_const_def
 	const ROCKETLAIRBREAKROOM_GRUNTM
 	const ROCKETLAIRBREAKROOM_SCIENTIST
+	const ROCKETLAIRBREAKROOM_OFFICER
 
 RocketLairBreakRoom_MapScripts:
 	db 0 ; scene scripts
@@ -30,7 +31,26 @@ BreakRoomBed:
 	end
 
 BreakRoomRefrigerator:
+	checkevent EVENT_BEAT_MADAME_BOSS
+	iftrue .EmptyFridge
 	jumptext BreakRoomRefrigeratorText
+
+.EmptyFridge:
+	jumptext EmptyFridgeText
+
+RocketLairBreakRoomOfficerScript:
+	opentext
+	writetext MunchMunchText
+	waitbutton
+	closetext
+	pause 5
+	faceplayer
+	opentext
+	writetext ImEatingHereText
+	waitbutton
+	closetext
+	turnobject ROCKETLAIRBREAKROOM_OFFICER, UP
+	end
 
 BreakRoomGruntText:
 	text "Beat it kid!"
@@ -68,6 +88,24 @@ BreakRoomRefrigeratorText:
 	line "it alone."
 	done
 
+EmptyFridgeText:
+	text "The fridge is"
+	line "empty…"
+	done
+
+MunchMunchText:
+	text "Munch…munch…"
+
+	para "Munch…munch…"
+	done
+
+ImEatingHereText:
+	text "D'ya mind?"
+
+	para "I'm trying to eat"
+	line "here!"
+	done
+
 RocketLairBreakRoom_MapEvents:
 	db 0, 0 ; filler
 
@@ -86,6 +124,7 @@ RocketLairBreakRoom_MapEvents:
 	bg_event  9,  7, BGEVENT_READ, BreakRoomBed
 	bg_event  1,  1, BGEVENT_READ, BreakRoomRefrigerator
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event  3,  5, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketLairBreakRoomGruntScript, EVENT_LAIR_GRUNTS
 	object_event  5,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketLairBreakRoomScientistScript, EVENT_LAIR_GRUNTS
+	object_event  5,  5, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketLairBreakRoomOfficerScript, EVENT_HOOH_LUGIA_ROOM_OFFICER

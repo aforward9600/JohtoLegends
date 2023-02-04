@@ -1,6 +1,7 @@
 	object_const_def
 	const ROCKETLAIRHALLWAY1_GRUNTM
 	const ROCKETLAIRHALLWAY1_GRUNTF
+	const ROCKETLAIRHALLWAY1_SHERLES
 
 RocketLairHallway1_MapScripts:
 	db 0 ; scene scripts
@@ -46,6 +47,9 @@ RocketLairLockedDoor:
 	closetext
 .Notext:
 	end
+
+RocketLairSherlesScript:
+	jumptextfaceplayer RocketLairSherlesText
 
 RocketDoorLockedText:
 	text "The door is"
@@ -103,6 +107,31 @@ RocketLairHallway1GruntMAfterText:
 	cont "ask."
 	done
 
+RocketLairSherlesText:
+	text "Well done, kid!"
+
+	para "I guess I can't"
+	line "call you a kid"
+	cont "anymore."
+
+	para "You succeeded"
+	line "where we failed."
+
+	para "Good on ya!"
+
+	para "As for me, I think"
+	line "I'll be moving on"
+	cont "from here."
+
+	para "Heard they need a"
+	line "sheriff in Orre,"
+	cont "and maybe it'll"
+	cont "be a little"
+	cont "quieter."
+
+	para "Probably not, ha!"
+	done
+
 RocketLairHallway1_MapEvents:
 	db 0, 0 ; filler
 
@@ -118,6 +147,7 @@ RocketLairHallway1_MapEvents:
 	db 1 ; bg events
 	bg_event  5,  0, BGEVENT_READ, RocketLairLockedDoor
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event  2, 14, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, RocketLairHallway1GruntM, EVENT_LAIR_GRUNTS
 	object_event  5,  5, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, RocketLairHallway1GruntF, EVENT_LAIR_GRUNTS
+	object_event  5, 11, SPRITE_SHERLES, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketLairSherlesScript, EVENT_HOOH_LUGIA_ROOM_OFFICER

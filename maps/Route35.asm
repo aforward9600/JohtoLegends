@@ -96,13 +96,13 @@ TrainerFisherRusty:
 	closetext
 	end
 
-TrainerBugCatcherPalmer:
-	trainer BUG_CATCHER, ARNIE1, EVENT_BEAT_BUG_CATCHER_PALMER, BugCatcherPalmerSeenText, BugCatcherPalmerBeatenText, 0, .Script
+TrainerPokemaniacPalmer:
+	trainer POKEMANIAC, PALMER, EVENT_BEAT_BUG_CATCHER_PALMER, PokemaniacPalmerSeenText, PokemaniacPalmerBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BugCatcherPalmerAfterBattleText
+	writetext PokemaniacPalmerAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -303,16 +303,16 @@ SuperNerdHerbertAfterBattleText:
 	cont "once, OK?"
 	done
 
-BugCatcherPalmerSeenText:
+PokemaniacPalmerSeenText:
 	text "Wanna see my cool"
-	line "Bug #mon?"
+	line "#mon?"
 	done
 
-BugCatcherPalmerBeatenText:
+PokemaniacPalmerBeatenText:
 	text "Cool, huh?"
 	done
 
-BugCatcherPalmerAfterBattleText:
+PokemaniacPalmerAfterBattleText:
 	text "Some people think"
 	line "Venomoth is part"
 	cont "Poison-type."
@@ -436,7 +436,7 @@ Route35_MapEvents:
 	object_event  8, 27, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherRusty, -1
 	object_event 16,  7, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperThad, -1
 	object_event  2, 10, SPRITE_FIREBREATHER, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherKelvin, -1
-	object_event 14, 28, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherPalmer, -1
+	object_event 14, 28, SPRITE_POKEMANIAC, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacPalmer, -1
 	object_event  5, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSuperNerdHerbert, -1
 	object_event  2,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerOfficerClancy, -1
 	object_event  2, 25, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route35FruitTree, -1

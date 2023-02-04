@@ -21,6 +21,7 @@ SpawnPoints:
 	spawn CELADON_CITY,               29, 10
 	spawn FUCHSIA_CITY,               19, 28
 	spawn CINNABAR_ISLAND,            11, 12
+	spawn ROUTE_26,                    7,  6
 	spawn ROUTE_23,                    9,  6
 
 	spawn BLACKTHORN_CITY,            23, 30

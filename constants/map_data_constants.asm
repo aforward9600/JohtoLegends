@@ -85,6 +85,7 @@ const_value = -1
 	const SPAWN_CELADON
 	const SPAWN_FUCHSIA
 	const SPAWN_CINNABAR
+	const SPAWN_ROUTE_26
 	const SPAWN_INDIGO
 ; johto
 	const SPAWN_BLACKTHORN

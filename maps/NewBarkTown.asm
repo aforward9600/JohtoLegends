@@ -19,7 +19,6 @@ NewBarkTown_MapScripts:
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_NEW_BARK
-	clearevent EVENT_FIRST_TIME_BANKING_WITH_MOM
 	return
 
 NewBarkTown_RivalMeetsYou:

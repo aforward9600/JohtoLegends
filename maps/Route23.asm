@@ -6,6 +6,8 @@ Route23_MapScripts:
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_INDIGO_PLATEAU
+	setflag ENGINE_FLYPOINT_ROUTE_26
+	setevent EVENT_REACHED_ROUTE_23
 	return
 
 IndigoPlateauSign:

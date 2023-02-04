@@ -2259,9 +2259,9 @@ PokemaniacGroup:
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (3)
-	db "CALVIN@", TRAINERTYPE_NORMAL
-	db 26
-	dw KANGASKHAN
+	db "Palmer@", TRAINERTYPE_NORMAL
+	db 33
+	dw VENOMOTH
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (4)
@@ -7191,19 +7191,31 @@ DragonTamerMGroup:
 
 MadameBossGroup:
 	next_list_item ; MADAME_BOSS (1)
-	db "Boss@", TRAINERTYPE_NORMAL
-	db 57
+	db "Boss@", TRAINERTYPE_ITEM_MOVES
+	db 60
 	dw PORYGON_Z
-	db 57
-	dw LAPRAS
-	db 57
-	dw SNORLAX
-	db 58
+	db SITRUS_BERRY
+	dw NASTY_PLOT, THUNDERBOLT, TRI_ATTACK, PSYCHIC_M
+	db 60
+	dw MACHAMP
+	db SITRUS_BERRY
+	dw CROSS_CHOP, KNOCK_OFF, BULK_UP, STONE_EDGE
+	db 60
+	dw QUAGSIRE
+	db SITRUS_BERRY
+	dw EARTHQUAKE, WAVE_CRASH, SCREECH, ICE_PUNCH
+	db 60
 	dw ARTICUNO
-	db 58
+	db SITRUS_BERRY
+	dw ROOST, HAIL, BLIZZARD, AERIAL_ACE
+	db 60
 	dw ZAPDOS
-	db 58
+	db SITRUS_BERRY
+	dw THUNDER, AERIAL_ACE, LIGHT_SCREEN, RAIN_DANCE
+	db 60
 	dw MOLTRES
+	db SITRUS_BERRY
+	dw SUNNY_DAY, SOLARBEAM, AERIAL_ACE, FLAMETHROWER
 	db -1 ; end
 
 	end_list_items

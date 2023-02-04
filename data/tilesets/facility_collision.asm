@@ -109,3 +109,11 @@
 	tilecoll DOOR, DOOR, FLOOR, FLOOR ; 6c
 	tilecoll WALL, WALL, WALL, WALL ; 6d
 	tilecoll WALL, WALL, FLOOR, WALL ; 6e
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 6f
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 70
+	tilecoll DOOR, DOOR, FLOOR, FLOOR ; 71
+	tilecoll WALL, WALL, WALL, WALL ; 72
+	tilecoll WALL, WALL, WALL, WALL ; 73
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 74
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 75
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 76

@@ -310,6 +310,6 @@ PokemonNames::
 	db "Shelgon@@@"
 	db "Salamence@"
 	db "Lugia@@@@@"
-	db "Ho-oh@@@@@"
+	db "Ho-Oh@@@@@"
 	db "Celebi@@@@"
 	db "Missingno."

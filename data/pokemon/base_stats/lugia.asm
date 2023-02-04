@@ -5,7 +5,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db PSYCHIC, FLYING ; type
-	db 3 ; catch rate
+	db 30 ; catch rate
 	db 220 ; base exp
 	db NO_ITEM, NO_ITEM ; items
 	db GENDER_UNKNOWN ; gender ratio

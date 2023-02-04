@@ -29,7 +29,7 @@ MapScenes::
 	scene_var ELMS_LAB,                                    wElmsLabSceneID
 	scene_var PLAYERS_HOUSE_1F,                            wPlayersHouse1FSceneID
 	scene_var ROUTE_29,                                    wRoute29SceneID
-	scene_var CHERRYGROVE_GYM_SPEECH_HOUSE,           wCherrygroveCitySceneID
+	scene_var CHERRYGROVE_GYM_SPEECH_HOUSE,          	   wCherrygroveCitySceneID
 	scene_var MR_POKEMONS_HOUSE,                           wMrPokemonsHouseSceneID
 	scene_var ROUTE_32,                                    wRoute32SceneID
 	scene_var ROUTE_35_NATIONAL_PARK_GATE,                 wRoute35NationalParkGateSceneID
@@ -106,4 +106,6 @@ MapScenes::
 	scene_var OLIVINE_GYM_4F,                              wOlivineGym4FSceneID
 	scene_var TIN_TOWER_ROOF,                              wTinTowerRoofSceneID
 	scene_var VIOLET_GYM,                                  wVioletGymSceneID
+	scene_var ROCKET_LAIR_HALLWAY_3,                       wRocketLairHallwaySceneID
+	scene_var ROCKET_LAIR_BOSS_ROOM,                       wRocketLairBossRoomSceneID
 	db -1 ; end

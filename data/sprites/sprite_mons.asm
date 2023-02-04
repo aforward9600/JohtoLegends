@@ -58,3 +58,9 @@ SpriteMons:
 	dw RAIKOU
 	dw SUICUNE
 	dw ENTEI
+	dw ARTICUNO
+	dw ZAPDOS
+	dw MOLTRES
+	dw MACHAMP
+	dw PORYGON_Z
+	dw QUAGSIRE

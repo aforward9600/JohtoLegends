@@ -2396,6 +2396,10 @@ WinTrainerBattle:
 	ld a, [wBattleType]
 	cp BATTLETYPE_CANLOSE
 	jr nz, .skip_heal
+	cp BATTLETYPE_HO_OH
+	jr nz, .skip_heal
+	cp BATTLETYPE_LUGIA
+	jr nz, .skip_heal
 	predef HealParty
 .skip_heal
 	ld a, [wDebugFlags]
@@ -2615,6 +2619,10 @@ IsDepressedRival:
 
 IsEliteFour:
 	ld hl, EliteFour
+	jr IsGymLeaderCommon
+
+IsVillainBoss:
+	ld hl, VillainBosses
 	jr IsGymLeaderCommon
 
 IsGymLeader:
@@ -3779,6 +3787,10 @@ TryToRunAwayFromBattle:
 	cp BATTLETYPE_SUICUNE
 	jp z, .cant_escape
 	cp BATTLETYPE_MEWTWO
+	jp z, .cant_escape
+	cp BATTLETYPE_HO_OH
+	jp z, .cant_escape
+	cp BATTLETYPE_LUGIA
 	jp z, .cant_escape
 
 	ld a, [wLinkMode]

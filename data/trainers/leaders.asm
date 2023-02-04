@@ -36,6 +36,12 @@ KantoGymLeaders:
 	db SABRINA
 	db BLAINE
 	db GIOVANNI
+VillainBosses:
+	db ARIANA
+	db MIYAMOTO
+	db ARCHER
+	db MADAME_BOSS
+	db FED_LEADER
 	db -1
 
 DepressedRivals:

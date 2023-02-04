@@ -4,12 +4,14 @@
 	const VICTORYROADGATE_BLACK_BELT2
 	const VICTORYROADGATE_OAK
 	const VICTORYROADGATE_RIVAL
+	const VICTORYROADGATE_RIVAL_2
 
 VictoryRoadGate_MapScripts:
-	db 3 ; scene scripts
+	db 4 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_VICTORY_ROAD_GATE_GUARD
 	scene_script .DummyScene1 ; SCENE_VICTORY_ROAD_GATE_OAK
 	scene_script .DummyScene2 ; SCENE_VICTORY_ROAD_GATE_DONE
+	scene_script .DummyScene3 ; SCENE_VICTORY_ROAD_GATE_RIVAL
 
 	db 0 ; callbacks
 
@@ -20,6 +22,9 @@ VictoryRoadGate_MapScripts:
 	end
 
 .DummyScene2:
+	end
+
+.DummyScene3:
 	end
 
 VictoryRoadGateBadgeCheckScene:
@@ -46,13 +51,42 @@ VictoryRoadGateBadgeCheckScript:
 	writetext VictoryRoadGateEightBadgesText
 	waitbutton
 	closetext
-	setscene SCENE_VICTORY_ROAD_GATE_DONE
+	setscene SCENE_VICTORY_ROAD_GATE_RIVAL
 	end
 
 .WelcomeBackChampion:
 	writetext WelcomeBackChampionText
 	waitbutton
 	closetext
+	end
+
+VictoryRoadRival1:
+	moveobject VICTORYROADGATE_RIVAL_2, 9, 6
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, DOWN
+	appear VICTORYROADGATE_RIVAL_2
+	applymovement VICTORYROADGATE_RIVAL_2, PlayerWalksToOakAndRival
+	turnobject VICTORYROADGATE_RIVAL_2, RIGHT
+	turnobject, PLAYER, LEFT
+	sjump VictoryRoadRivalFinish
+
+VictoryRoadRival2:
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, DOWN
+	appear VICTORYROADGATE_RIVAL_2
+	applymovement VICTORYROADGATE_RIVAL_2, PlayerWalksToOakAndRival
+	turnobject VICTORYROADGATE_RIVAL_2, LEFT
+	turnobject, PLAYER, RIGHT
+VictoryRoadRivalFinish:
+	opentext
+	writetext WereFinallyHereText
+	waitbutton
+	closetext
+	applymovement VICTORYROADGATE_RIVAL_2, RivalGoesToVictoryRoadMovement
+	playsound SFX_EXIT_BUILDING
+	disappear VICTORYROADGATE_RIVAL_2
+	turnobject PLAYER, UP
+	setscene SCENE_VICTORY_ROAD_GATE_DONE
 	end
 
 VictoryRoadGateBadgeOakScene2:
@@ -189,6 +223,10 @@ OakMovesRight:
 OakMovesLeft:
 	step LEFT
 	step LEFT
+	step_end
+
+RivalGoesToVictoryRoadMovement:
+	step UP
 	step_end
 
 VictoryRoadGateOfficerText:
@@ -352,9 +390,10 @@ TheTwoOfYouText:
 	done
 
 BadgeNumberExplainText:
-	text "Oak:Each badge you"
-	line "give will increase"
-	cont "your badge count."
+	text "Oak: Each badge"
+	line "given will"
+	cont "increase your"
+	cont "badge count."
 
 	para "That will help you"
 	line "keep track of how"
@@ -385,8 +424,8 @@ BadgeNumberExplainText:
 	line "Champion gives me"
 	cont "that advantage."
 
-	para "You have that same"
-	line "advantage."
+	para "The same goes for"
+	line "you two as well."
 
 	para "Just go through"
 	line "this gate to the"
@@ -412,7 +451,8 @@ IllScoutText:
 	done
 
 VictoryRoadGateWelcomePlayerText:
-	text "Welcome, <PLAYER>."
+	text "Oak: Welcome,"
+	line "<PLAYER>."
 
 	para "Would you mind"
 	line "stepping over here"
@@ -421,7 +461,7 @@ VictoryRoadGateWelcomePlayerText:
 	done
 
 HeyThereYouReadyText:
-	text "Hey there,"
+	text "<RIVAL>: Hey there"
 	line "<PLAYER>!"
 
 	para "You ready to"
@@ -439,6 +479,22 @@ WelcomeBackChampionText:
 	para "Good luck!"
 	done
 
+WereFinallyHereText:
+	text "We're finally"
+	line "here, <PLAYER>."
+
+	para "We'll finally see"
+	line "who's stronger,"
+
+	para "and we'll get to"
+	line "put our Legendary"
+	cont "#mon to the"
+	cont "test."
+
+	para "See you on the"
+	line "other side."
+	done
+
 VictoryRoadGate_MapEvents:
 	db 0, 0 ; filler
 
@@ -452,17 +508,20 @@ VictoryRoadGate_MapEvents:
 	warp_event  1,  7, ROUTE_28, 2
 	warp_event  2,  7, ROUTE_28, 2
 
-	db 4 ; coord events
+	db 6 ; coord events
 	coord_event 10, 11, SCENE_VICTORY_ROAD_GATE_GUARD, VictoryRoadGateBadgeCheckScene
 	coord_event 10, 11, SCENE_VICTORY_ROAD_GATE_OAK, VictoryRoadGateBadgeOakScene
 	coord_event 11,  5, SCENE_VICTORY_ROAD_GATE_OAK, VictoryRoadGateBadgeOakScene2
 	coord_event  8,  6, SCENE_VICTORY_ROAD_GATE_OAK, VictoryRoadGateBadgeOakScene3
+	coord_event  9,  1, SCENE_VICTORY_ROAD_GATE_RIVAL, VictoryRoadRival2
+	coord_event 10,  1, SCENE_VICTORY_ROAD_GATE_RIVAL, VictoryRoadRival1
 
 	db 0 ; bg events
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event  8, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateOfficerScript, -1
 	object_event  7,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateLeftBlackBeltScript, EVENT_OPENED_MT_SILVER
 	object_event 12,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateRightBlackBeltScript, EVENT_VICTORY_ROAD_GATE_GUARD
 	object_event 10,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateOakScript, EVENT_VICTORY_ROAD_GATE_OAK
 	object_event  9,  6, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateRivalScript, EVENT_VICTORY_ROAD_GATE_RIVAL
+	object_event 10,  6, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateRivalScript, EVENT_VICTORY_ROAD_GATE_RIVAL_2

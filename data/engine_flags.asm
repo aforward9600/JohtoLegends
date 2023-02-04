@@ -83,6 +83,7 @@ EngineFlags:
 	engine_flag wVisitedSpawns, SPAWN_CELADON
 	engine_flag wVisitedSpawns, SPAWN_FUCHSIA
 	engine_flag wVisitedSpawns, SPAWN_CINNABAR
+	engine_flag wVisitedSpawns, SPAWN_ROUTE_26
 	engine_flag wVisitedSpawns, SPAWN_INDIGO ; $40
 	engine_flag wVisitedSpawns, SPAWN_NEW_BARK
 	engine_flag wVisitedSpawns, SPAWN_CHERRYGROVE

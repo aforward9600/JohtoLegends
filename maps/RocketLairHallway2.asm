@@ -5,6 +5,7 @@
 	const ROCKETLAIRHALLWAY2_ARCHER
 	const ROCKETLAIRHALLWAY2_SUICUNE
 	const ROCKETLAIRHALLWAY2_ENTEI
+	const ROCKETLAIRHALLWAY2_OFFICER
 
 RocketLairHallway2_MapScripts:
 	db 0 ; scene scripts
@@ -129,6 +130,9 @@ RocketLairHallway2GruntM:
 	waitbutton
 	closetext
 	end
+
+RocketLairHallway2OfficerScript:
+	jumptextfaceplayer RocketLairHallway2OfficerText
 
 SuicuneLeavesMovement:
 	set_sliding
@@ -303,23 +307,45 @@ RocketLairHallway2GruntMAfterText:
 	line "us…"
 	done
 
+RocketLairHallway2OfficerText:
+	text "We've freed all the"
+	line "poached #mon,"
+	cont "so that's a relief."
+
+	para "We only snagged a"
+	line "a few members, so"
+	cont "this wasn't as big"
+	cont "of a success as"
+	cont "we'd hoped."
+
+	para "Supposedly, a few"
+	line "escaped to Kanto"
+	cont "before we arrived."
+
+	para "I doubt that."
+
+	para "How could they get"
+	line "past the embargo?"
+	done
+
 RocketLairHallway2_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 4 ; warp events
 	warp_event  2, 17, ROCKET_LAIR_HALLWAY_1, 5
 	warp_event  3, 17, ROCKET_LAIR_HALLWAY_1, 5
-;	warp_event 15,  0, ROCKET_LAIR_HALLWAY_3, 1
-;	warp_event 16,  0, ROCKET_LAIR_HALLWAY_3, 2
+	warp_event 15,  0, ROCKET_LAIR_HALLWAY_3, 1
+	warp_event 16,  0, ROCKET_LAIR_HALLWAY_3, 2
 
 	db 0 ; coord_events
 
 	db 0 ; bg events
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event 16, 12, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, RocketLairHallway2GruntM, EVENT_LAIR_GRUNTS
 	object_event  6, 15, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, RocketLairHallway2GruntF, EVENT_LAIR_GRUNTS
 	object_event 13, 14, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerLairAriana, EVENT_LAIR_ARIANA
 	object_event 15,  3, SPRITE_ARCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerLairArcher, EVENT_LAIR_ARCHER
 	object_event 12, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LAIR_SUICUNE
 	object_event 15,  4, SPRITE_ENTEI, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LAIR_ENTEI
+	object_event 11, 14, SPRITE_OFFICER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketLairHallway2OfficerScript, EVENT_HOOH_LUGIA_ROOM_OFFICER

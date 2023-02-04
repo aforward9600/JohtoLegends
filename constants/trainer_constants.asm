@@ -256,7 +256,7 @@ CHRIS EQU __enum__
 	trainerclass POKEMANIAC ; 1e
 	const ALVIN
 	const DAMIEN
-	const CALVIN
+	const PALMER
 	const SHANE
 	const BEN
 	const BRENT1

@@ -5,7 +5,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db FIRE, FLYING ; type
-	db 3 ; catch rate
+	db 30 ; catch rate
 	db 220 ; base exp
 	db SACRED_ASH, SACRED_ASH ; items
 	db GENDER_UNKNOWN ; gender ratio

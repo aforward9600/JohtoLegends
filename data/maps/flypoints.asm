@@ -34,5 +34,6 @@ KANTO_FLYPOINT EQU const_value
 	flypoint SAFFRON,      SAFFRON_CITY
 	flypoint FUCHSIA,      FUCHSIA_CITY
 	flypoint CINNABAR,     CINNABAR_ISLAND
+	flypoint ROUTE_26,     VICTORY_ROAD
 	flypoint INDIGO,       INDIGO_PLATEAU
 	db -1

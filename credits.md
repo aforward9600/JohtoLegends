@@ -161,12 +161,11 @@ Mewtwo Battle - ShockSlayer
 WildAreaOutside/JohtoSafariZoneGate - Mmmmmmmmmmmmmmmmm
 WildArea/JohtoSafariZone - Mmmmmmmmmmmmmmmmm
 Route 47 - Mmmmmmmmmmmmmmmmm
-Cinnabar Mansion - Dannye
-NightTime coding and songs, Friendly Shop, Cynthia Battle and FRLG Gym Leader Song: Tritehexagon
+Cinnabar Mansion, Rocket Lair - Dannye
+NightTime coding and songs, Friendly Shop, Cynthia Battle, FRLG Gym Leader Song and Giovanni Theme: TriteHexagon
 Lugia Battle: Pigu
 Kanto Legend Battle XY: GACT and Pigu
 Ho-Oh Battle: Pigu
 Megalovania: Shockslayer, Radiation
 Unwavering Heart MIDI: LyricWulf
 Marnie's Theme/Dahlia's Theme MIDI: ryanisthebomb203
-Giovanni Battle Theme/Madame Boss Theme MIDI: CynthiaCelestic

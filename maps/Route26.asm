@@ -11,7 +11,12 @@
 Route26_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .FlyPoint
+
+.FlyPoint:
+	clearflag ENGINE_FLYPOINT_INDIGO_PLATEAU
+	return
 
 TrainerCooltrainermJake:
 	trainer COOLTRAINERM, JAKE, EVENT_BEAT_COOLTRAINERM_JAKE, CooltrainermJakeSeenText, CooltrainermJakeBeatenText, 0, .Script
@@ -168,7 +173,7 @@ Route26FruitTree:
 	fruittree FRUITTREE_ROUTE_26
 
 Route26MaxElixer:
-	itemball MAX_ELIXER
+	itemball TM_DRAGON_PULSE
 
 CooltrainermJakeSeenText:
 	text "I'm making my"
@@ -322,10 +327,10 @@ FisherScottAfterBattleText:
 	done
 
 Route26SignText:
-	text "ROUTE 26"
+	text "Route 26"
 
-	para "#MON LEAGUE"
-	line "RECEPTION GATE"
+	para "#mon League"
+	line "Reception Gate"
 	done
 
 Route26_MapEvents:

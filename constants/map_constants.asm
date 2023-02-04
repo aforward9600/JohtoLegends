@@ -183,6 +183,8 @@ ENDM
 	map_const ROCKET_LAIR_HALLWAY_1,                        5, 11 ; 15
 	map_const ROCKET_LAIR_BREAK_ROOM,                       5,  4 ; 16
 	map_const ROCKET_LAIR_HALLWAY_2,                       10,  9 ; 17
+	map_const ROCKET_LAIR_HALLWAY_3,                        5,  8 ; 18
+	map_const ROCKET_LAIR_BOSS_ROOM,                        9,  9 ; 19
 
 	newgroup                                                      ;  6
 

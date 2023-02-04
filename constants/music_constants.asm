@@ -144,6 +144,7 @@
 	const MUSIC_CYNTHIA_BATTLE
 	const MUSIC_ELITE_FOUR
 	const MUSIC_CYNTHIA_ENCOUNTER
+	const MUSIC_ROCKET_LAIR
 
 ; GetMapMusic picks music for this value (see home/map.asm)
 MUSIC_MAHOGANY_MART EQU $fc
