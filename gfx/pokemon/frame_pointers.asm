@@ -275,7 +275,6 @@ FramesPointers:
 	dba ManectricFrames
 	dba CroagunkFrames
 	dba ToxicroakFrames
-;	dba SwabluFrames
 	dba DuskullFrames
 	dba DusclopsFrames
 	dba DusknoirFrames
@@ -309,3 +308,11 @@ FramesPointers:
 	dba HoOhFrames
 	dba CelebiFrames
 	dba MissingnoFrames
+	dba SwabluFrames
+	dba AltariaFrames
+	dba KotoraFrames
+	dba RaitoraFrames
+	dba GorotoraFrames
+	dba LotadFrames
+	dba LombreFrames
+	dba LudicoloFrames

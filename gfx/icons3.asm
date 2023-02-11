@@ -28,7 +28,6 @@ Icons3:
 	dw ManectricIcon
 	dw CroagunkIcon
 	dw ToxicroakIcon
-;	dw SwabluIcon
 	dw DuskullIcon
 	dw DusclopsIcon
 	dw DusknoirIcon
@@ -62,6 +61,14 @@ Icons3:
 	dw HoOhIcon
 	dw CelebiIcon
 	dw MissingnoIcon
+	dw SwabluIcon
+	dw AltariaIcon
+	dw KotoraIcon
+	dw RaitoraIcon
+	dw GorotoraIcon
+	dw LotadIcon
+	dw LombreIcon
+	dw LudicoloIcon
 
 SwinubIcon:       INCBIN "gfx/icons/swinub.2bpp"
 PiloswineIcon:    INCBIN "gfx/icons/piloswine.2bpp"
@@ -77,7 +84,7 @@ SkarminiIcon:	  INCBIN "gfx/icons/skarmini.2bpp"
 SkarmoryIcon:	  INCBIN "gfx/icons/skarmory.2bpp"
 HoundourIcon:	  INCBIN "gfx/icons/houndour.2bpp"
 HoundoomIcon:	  INCBIN "gfx/icons/houndoom.2bpp"
-PhanpyIcon:	  INCBIN "gfx/icons/phanpy.2bpp"
+PhanpyIcon:	  	  INCBIN "gfx/icons/phanpy.2bpp"
 DonphanIcon:	  INCBIN "gfx/icons/donphan.2bpp"
 StantlerIcon:	  INCBIN "gfx/icons/stantler.2bpp"
 SmeargleIcon:	  INCBIN "gfx/icons/smeargle.2bpp"
@@ -89,7 +96,6 @@ ElectrikeIcon:	  INCBIN "gfx/icons/electrike.2bpp"
 ManectricIcon:	  INCBIN "gfx/icons/manectric.2bpp"
 CroagunkIcon:	  INCBIN "gfx/icons/croagunk.2bpp"
 ToxicroakIcon:	  INCBIN "gfx/icons/toxicroak.2bpp"
-;SwabluIcon:       INCBIN "gfx/icons/swablu.2bpp"
 DuskullIcon:	  INCBIN "gfx/icons/duskull.2bpp"
 DusclopsIcon:	  INCBIN "gfx/icons/dusclops.2bpp"
 DusknoirIcon:	  INCBIN "gfx/icons/dusknoir.2bpp"
@@ -123,3 +129,11 @@ LugiaIcon:	      INCBIN "gfx/icons/lugia.2bpp"
 HoOhIcon:	      INCBIN "gfx/icons/ho_oh.2bpp"
 CelebiIcon:	      INCBIN "gfx/icons/celebi.2bpp"
 MissingnoIcon:	  INCBIN "gfx/icons/missingno.2bpp"
+SwabluIcon:       INCBIN "gfx/icons/swablu.2bpp"
+AltariaIcon:      INCBIN "gfx/icons/altaria.2bpp"
+KotoraIcon:       INCBIN "gfx/icons/kotora.2bpp"
+RaitoraIcon:      INCBIN "gfx/icons/raitora.2bpp"
+GorotoraIcon:     INCBIN "gfx/icons/gorotora.2bpp"
+LotadIcon:        INCBIN "gfx/icons/lotad.2bpp"
+LombreIcon:       INCBIN "gfx/icons/lombre.2bpp"
+LudicoloIcon:     INCBIN "gfx/icons/ludicolo.2bpp"

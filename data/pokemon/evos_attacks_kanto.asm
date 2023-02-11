@@ -405,9 +405,8 @@ PidgeyEvosAttacks:
 	dbw 17, WHIRLWIND
 	dbw 21, TWISTER
 	dbw 25, FEATHERDANCE
-	dbw 27, AIR_CUTTER
 	dbw 29, AGILITY
-	dbw 33, AERIAL_ACE
+	dbw 33, AIR_CUTTER
 	dbw 37, ROOST
 	dbw 41, HYPER_VOICE
 	dbw 45, MIRROR_MOVE
@@ -424,10 +423,9 @@ PidgeottoEvosAttacks:
 	dbw 13, QUICK_ATTACK
 	dbw 17, WHIRLWIND
 	dbw 22, TWISTER
-	dbw 25, AIR_CUTTER
 	dbw 27, FEATHERDANCE
 	dbw 32, AGILITY
-	dbw 37, AERIAL_ACE
+	dbw 37, AIR_CUTTER
 	dbw 42, ROOST
 	dbw 47, HYPER_VOICE
 	dbw 52, MIRROR_MOVE
@@ -445,10 +443,9 @@ PidgeotEvosAttacks:
 	dbw 13, QUICK_ATTACK
 	dbw 17, WHIRLWIND
 	dbw 22, TWISTER
-	dbw 25, AIR_CUTTER
 	dbw 27, FEATHERDANCE
 	dbw 32, AGILITY
-	dbw 38, AERIAL_ACE
+	dbw 38, AIR_CUTTER
 	dbw 44, ROOST
 	dbw 50, HYPER_VOICE
 	dbw 56, MIRROR_MOVE
@@ -1136,7 +1133,7 @@ MeowthEvosAttacks:
 	dbw 1, SCRATCH
 	dbw 1, GROWL
 	dbw 6, BITE
-	dbw 9, ASTONISH
+	dbw 9, FAKE_OUT
 	dbw 14, FURY_SWIPES
 	dbw 17, SCREECH
 	dbw 22, FAINT_ATTACK
@@ -1157,7 +1154,7 @@ PersianEvosAttacks:
 	dbw 1, SCRATCH
 	dbw 1, GROWL
 	dbw 6, BITE
-	dbw 9, ASTONISH
+	dbw 9, FAKE_OUT
 	dbw 14, FURY_SWIPES
 	dbw 17, SCREECH
 	dbw 22, FAINT_ATTACK
@@ -2332,6 +2329,7 @@ TyrogueEvosAttacks:
 	dbw 1, TACKLE
 	dbw 1, FORESIGHT
 	dbw 1, FOCUS_ENERGY
+	dbw 1, FAKE_OUT
 	db 0 ; no more level-up moves
 
 HitmonleeEvosAttacks:
@@ -2651,7 +2649,7 @@ KangaskhanEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, COMET_PUNCH
 	dbw 1, LEER
-	dbw 1, POUND
+	dbw 7, FAKE_OUT
 	dbw 10, TAIL_WHIP
 	dbw 13, BITE
 	dbw 19, DOUBLE_HIT_M
@@ -2659,11 +2657,11 @@ KangaskhanEvosAttacks:
 	dbw 25, MEGA_PUNCH
 	dbw 31, HEADBUTT
 	dbw 34, DIZZY_PUNCH
-	dbw 37, FAINT_ATTACK
+	dbw 37, CRUNCH
 	dbw 43, ENDURE
 	dbw 46, OUTRAGE
 	dbw 49, SUCKER_PUNCH
-	dbw 49, REVERSAL
+	dbw 50, REVERSAL
 	db 0 ; no more level-up moves
 
 HorseaEvosAttacks:

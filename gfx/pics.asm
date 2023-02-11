@@ -870,3 +870,21 @@ SwabluFrontpic:      INCBIN "gfx/pokemon/swablu/front.animated.2bpp.lz"
 SwabluBackpic:       INCBIN "gfx/pokemon/swablu/back.2bpp.lz"
 BikerBossPic:        INCBIN "gfx/trainers/biker_boss.2bpp.lz"
 TogekissFrontpic:    INCBIN "gfx/pokemon/togekiss/front.animated.2bpp.lz"
+AltariaFrontpic:     INCBIN "gfx/pokemon/altaria/front.animated.2bpp.lz"
+AltariaBackpic:      INCBIN "gfx/pokemon/altaria/back.2bpp.lz"
+KotoraFrontpic:      INCBIN "gfx/pokemon/kotora/front.animated.2bpp.lz"
+KotoraBackpic:       INCBIN "gfx/pokemon/kotora/back.2bpp.lz"
+RaitoraFrontpic:     INCBIN "gfx/pokemon/raitora/front.animated.2bpp.lz"
+RaitoraBackpic:      INCBIN "gfx/pokemon/raitora/back.2bpp.lz"
+GorotoraFrontpic:    INCBIN "gfx/pokemon/gorotora/front.animated.2bpp.lz"
+GorotoraBackpic:     INCBIN "gfx/pokemon/gorotora/back.2bpp.lz"
+LotadFrontpic:       INCBIN "gfx/pokemon/lotad/front.animated.2bpp.lz"
+LotadBackpic:        INCBIN "gfx/pokemon/lotad/back.2bpp.lz"
+LombreFrontpic:      INCBIN "gfx/pokemon/lombre/front.animated.2bpp.lz"
+LombreBackpic:       INCBIN "gfx/pokemon/lombre/back.2bpp.lz"
+
+
+SECTION "Pics 30", ROMX
+
+LudicoloFrontpic:    INCBIN "gfx/pokemon/ludicolo/front.animated.2bpp.lz"
+LudicoloBackpic:     INCBIN "gfx/pokemon/ludicolo/back.2bpp.lz"

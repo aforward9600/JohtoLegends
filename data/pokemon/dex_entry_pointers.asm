@@ -276,7 +276,6 @@ PokedexDataPointerTable:
 	dba ManectricPokedexEntry
 	dba CroagunkPokedexEntry
 	dba ToxicroakPokedexEntry
-;	dba SwabluPokedexEntry
 	dba DuskullPokedexEntry
 	dba DusclopsPokedexEntry
 	dba DusknoirPokedexEntry
@@ -310,3 +309,11 @@ PokedexDataPointerTable:
 	dba HoOhPokedexEntry
 	dba CelebiPokedexEntry
 	dba MissingnoPokedexEntry
+	dba SwabluPokedexEntry
+	dba AltariaPokedexEntry
+	dba KotoraPokedexEntry
+	dba RaitoraPokedexEntry
+	dba GorotoraPokedexEntry
+	dba LotadPokedexEntry
+	dba LombrePokedexEntry
+	dba LudicoloPokedexEntry

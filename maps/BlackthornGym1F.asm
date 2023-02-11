@@ -65,10 +65,11 @@ BlackthornGymMasterScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_RISINGBADGE
+	setflag ENGINE_BEAT_MASTER
 	readvar VAR_BADGES
 .FightDone:
 	checkflag ENGINE_BEAT_MASTER
-	iftrue .Rematch
+	iffalse .Rematch
 	checkevent EVENT_GOT_TM24_DRAGONBREATH
 	iftrue .GotTM24
 	setevent EVENT_BEAT_DRAGON_TAMER_M_DEVIN
@@ -103,6 +104,7 @@ BlackthornGymMasterScript:
 	closetext
 	winlosstext MasterWinText, MasterLastMonText
 	loadtrainer MASTER, MASTER1
+	startbattle
 	reloadmapafterbattle
 	opentext
 	writetext MasterBeatenAgainText

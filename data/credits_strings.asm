@@ -30,8 +30,8 @@ CreditsStrings:
 	dw .Kage
 	dw .Damien
 	dw .PresentedBy
-	dw .TakehiroIzushi
-	dw .TakashiKawaguchi
+	dw .AdamShaman
+	dw .HelixChamber
 	dw .Radiation
 	dw .DragonArbock
 	dw .AzureKeys
@@ -156,8 +156,8 @@ CreditsStrings:
 .Kage:                db "        Kage@"         ; "はらだ　たかひろ@"
 .Damien:              db "       Damien@"         ; "はしもと　とおる@"
 .PresentedBy:         db "    Presented By@"        ; "まつもと　のぼる@"
-.TakehiroIzushi:      db "  TAKEHIRO IZUSHI@"         ; "いずし　たけひろ@"
-.TakashiKawaguchi:    db " TAKASHI KAWAGUCHI@"        ; "かわぐち　たかし@"
+.AdamShaman:          db "    Adam Shaman@"         ; "いずし　たけひろ@"
+.HelixChamber:        db "    Helix Chamber@"        ; "かわぐち　たかし@"
 .Radiation:           db "     Radiation@"       ; "いしはら　つねかず@"
 .DragonArbock:        db "   Dragon Arbock@"        ; "やまうち　ひろし@"
 .AzureKeys:           db "     AzureKeys@"           ; "さいき　けんじ@"

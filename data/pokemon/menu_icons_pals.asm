@@ -287,7 +287,6 @@ MonMenuIconPals:
 	icon_pals BLUE,   GRAY   ; MANECTRIC
 	icon_pals BLUE,   TEAL   ; CROAGUNK
 	icon_pals BLUE,   TEAL   ; TOXICROAK
-;	icon_pals BLUE,   PINK   ; SWABLU
 	icon_pals GRAY,   PINK   ; DUSKULL
 	icon_pals GRAY,   PINK   ; DUSCLOPS
 	icon_pals GRAY,   BLUE   ; DUSKNOIR
@@ -321,3 +320,11 @@ MonMenuIconPals:
 	icon_pals RED,    GREEN  ; HO_OH
 	icon_pals GREEN,  PINK   ; CELEBI
 	icon_pals GRAY,   GRAY   ; MISSINGO.
+	icon_pals BLUE,   PINK   ; SWABLU
+	icon_pals BLUE,   PINK   ; ALTARIA
+	icon_pals RED,    BLUE   ; KOTORA
+	icon_pals RED,    BLUE   ; RAITORA
+	icon_pals RED,    BLUE   ; GOROTORA
+	icon_pals GREEN,  BLUE   ; LOTAD
+	icon_pals GREEN,  BLUE   ; LOMBRE
+	icon_pals GREEN,  BLUE   ; LUDICOLO

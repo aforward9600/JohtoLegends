@@ -276,7 +276,6 @@ PreviousEvolutionStage::
 	dw ELECTRIKE
 	dw 0
 	dw CROAGUNK
-;	dw 0
 	dw 0
 	dw DUSKULL
 	dw DUSCLOPS
@@ -310,3 +309,11 @@ PreviousEvolutionStage::
 	dw 0
 	dw 0
 	dw 0
+	dw 0
+	dw SWABLU
+	dw 0
+	dw KOTORA
+	dw RAITORA
+	dw 0
+	dw LOTAD
+	dw LOMBRE

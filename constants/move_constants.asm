@@ -405,6 +405,7 @@
 	const JURASSICBEAM
 	const SIGNAL_WAVE
 	const WAVE_CRASH
+	const FAKE_OUT
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 

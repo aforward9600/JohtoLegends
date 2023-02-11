@@ -56,8 +56,7 @@ TreeMonSet_Route:
 	dbbw 50, 10, HOOTHOOT
 	dbbw 15, 10, PINECO
 	dbbw 15, 10, PINECO
-;	dbbw 10, 10, SWABLU
-	dbbw 10, 10, PINECO
+	dbbw 10, 10, SWABLU
 	dbbw  5, 10, EXEGGCUTE
 	dbbw  5, 10, EXEGGCUTE
 	db -1
@@ -65,8 +64,7 @@ TreeMonSet_Route:
 	dbbw 50, 10, HOOTHOOT
 	dbbw 15, 10, PINECO
 	dbbw 15, 10, PINECO
-;	dbbw 10, 10, SWABLU
-	dbbw 10, 10, PINECO
+	dbbw 10, 10, SWABLU
 	dbbw  5, 10, EXEGGCUTE
 	dbbw  5, 10, EXEGGCUTE
 	db -1

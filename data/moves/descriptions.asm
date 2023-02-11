@@ -404,6 +404,7 @@ MoveDescriptions1:
 	dw BubblebeamDescription
 	dw SignalWaveDescription
 	dw DoubleEdgeDescription
+	dw FakeOutDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1956,3 +1957,7 @@ PincirFlurryDescription:
 SignalWaveDescription:
 	db   "Signals that can"
 	line "cause confusion.@"
+
+FakeOutDescription:
+	db   "Foe flinches if"
+	line "used first turn.@"

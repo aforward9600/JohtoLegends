@@ -424,6 +424,7 @@ BattleAnimations::
 	dw BattleAnim_JurassicBeam
 	dw BattleAnim_SignalWave
 	dw BattleAnim_WaveCrash
+	dw BattleAnim_FakeOut
 ;	dw BattleAnim_WakeUpSlap
 	dw BattleAnim_SweetScent2
 
@@ -4270,6 +4271,20 @@ BattleAnim_LockOn:
 	anim_obj ANIM_OBJ_LOCK_ON, 132, 48, $31
 	anim_wait 16
 	anim_loop 2, .loop
+	anim_wait 32
+	anim_ret
+
+BattleAnim_FakeOut:
+	anim_1gfx ANIM_GFX_OBJECTS
+	anim_obj ANIM_OBJ_99, 136, 46, $e0
+	anim_obj ANIM_OBJ_99, 136, 46, $20
+	anim_wait 16
+	anim_sound 0, 0, SFX_CUT
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $2
+	anim_clearobjs
+	anim_wait 1
+	anim_sound 0, 0, SFX_RAGE
+	anim_bgeffect ANIM_BG_1F, $14, $2, $0
 	anim_wait 32
 	anim_ret
 

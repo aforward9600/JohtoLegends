@@ -127,7 +127,6 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw CroagunkEggMoves
 	dw NoEggMoves2
-;	dw SwabluEggMoves
 	dw DuskullEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -159,6 +158,14 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw SwabluEggMoves
+	dw NoEggMoves2
+	dw KotoraEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw LotadEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 
@@ -412,6 +419,7 @@ AipomEggMoves:
 	dw BOUNCE
 	dw REVENGE
 	dw WORK_UP
+	dw FAKE_OUT
 	dw -1 ; end
 
 SunkernEggMoves:
@@ -561,6 +569,7 @@ SneaselEggMoves:
 	dw PURSUIT
 	dw KNOCK_OFF
 	dw HONE_CLAWS
+	dw FAKE_OUT
 	dw -1 ; end
 
 TeddiursaEggMoves:
@@ -633,6 +642,7 @@ DelibirdEggMoves:
 	dw DESTINY_BOND
 	dw ICE_PUNCH
 	dw ICE_SHARD
+	dw FAKE_OUT
 	dw -1 ; end
 
 MantykeEggMoves:
@@ -736,16 +746,7 @@ CroagunkEggMoves:
 	dw CROSS_CHOP
 	dw HEADBUTT
 	dw MEDITATE
-	dw -1 ; end
-
-SwabluEggMoves:
-	dw AGILITY
-	dw DRAGON_RUSH
-	dw FEATHERDANCE
-	dw HAZE
-	dw HYPER_VOICE
-	dw PURSUIT
-	dw RAGE
+	dw FAKE_OUT
 	dw -1 ; end
 
 DuskullEggMoves:
@@ -825,5 +826,34 @@ BagonEggMoves:
 	dw EXTREMESPEED
 	dw HEAT_WAVE
 	dw -1 ; end
+
+SwabluEggMoves:
+	dw AGILITY
+	dw DRAGON_RUSH
+	dw FEATHERDANCE
+	dw HAZE
+	dw HYPER_VOICE
+	dw PURSUIT
+	dw RAGE
+	dw -1 ; end
+
+KotoraEggMoves:
+	dw DOUBLE_EDGE
+	dw FLAIL
+	dw LIGHT_SCREEN
+	dw PAY_DAY
+	dw ROAR
+	dw -1
+
+LotadEggMoves:
+	dw FLAIL
+	dw LEECH_SEED
+	dw WATER_GUN
+	dw RAZOR_LEAF
+	dw SWEET_SCENT
+	dw SYNTHESIS
+	dw GIGA_DRAIN
+	dw -1
+
 NoEggMoves2:
 	dw -1 ; end

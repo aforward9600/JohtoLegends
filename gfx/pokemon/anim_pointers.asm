@@ -275,7 +275,6 @@ AnimationPointers:
 	dw ManectricAnimation
 	dw CroagunkAnimation
 	dw ToxicroakAnimation
-;	dw SwabluAnimation
 	dw DuskullAnimation
 	dw DusclopsAnimation
 	dw DusknoirAnimation
@@ -309,3 +308,11 @@ AnimationPointers:
 	dw HoOhAnimation
 	dw CelebiAnimation
 	dw MissingnoAnimation
+	dw SwabluAnimation
+	dw AltariaAnimation
+	dw KotoraAnimation
+	dw RaitoraAnimation
+	dw GorotoraAnimation
+	dw LotadAnimation
+	dw LombreAnimation
+	dw LudicoloAnimation

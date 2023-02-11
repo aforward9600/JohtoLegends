@@ -75,6 +75,7 @@ CreditsScript:
 	db                RANGI, 1
 	db           CHAOS_RUSH, 2
 	db        BRONZESWAGGER, 3
+	db          ADAM_SHAMAN, 4
 
 	db CREDITS_WAIT, 12
 
@@ -90,6 +91,7 @@ CreditsScript:
 	db              SCMIDNA, 1
 	db            SHADOWONE, 2
 	db              NUKKIIE, 3
+	db        HELIX_CHAMBER, 4
 
 	db CREDITS_WAIT, 12
 

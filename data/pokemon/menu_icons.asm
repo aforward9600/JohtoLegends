@@ -307,3 +307,8 @@ MonMenuIcons:
 	db ICON_HO_OH       ; HO_OH
 	db ICON_CELEBI      ; CELEBI
 	db ICON_BLOB        ; MISSINGNO
+	db ICON_SWABLU      ; SWABLU
+	db ICON_ALTARIA     ; ALTARIA
+	db ICON_KOTORA      ; KOTORA
+	db ICON_RAITORA     ; RAITORA
+	db ICON_GOROTORA    ; GOROTORA

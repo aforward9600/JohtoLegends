@@ -565,8 +565,6 @@ PokemonPicPointers::
 	dba CroagunkBackpic
 	dba ToxicroakFrontpic
 	dba ToxicroakBackpic
-;	dba SwabluFrontpic
-;	dba SwabluBackpic
 	dba DuskullFrontpic
 	dba DuskullBackpic
 	dba DusclopsFrontpic
@@ -633,3 +631,19 @@ PokemonPicPointers::
 	dba CelebiBackpic
 	dba MissingnoFrontpic
 	dba MissingnoBackpic
+	dba SwabluFrontpic
+	dba SwabluBackpic
+	dba AltariaFrontpic
+	dba AltariaBackpic
+	dba KotoraFrontpic
+	dba KotoraBackpic
+	dba RaitoraFrontpic
+	dba RaitoraBackpic
+	dba GorotoraFrontpic
+	dba GorotoraBackpic
+	dba LotadFrontpic
+	dba LotadBackpic
+	dba LombreFrontpic
+	dba LombreBackpic
+	dba LudicoloFrontpic
+	dba LudicoloBackpic

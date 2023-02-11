@@ -126,6 +126,7 @@ INCLUDE "engine/events/kurt_selectquantity_interpretjoypad.asm"
 SECTION "bankA", ROMX
 
 INCLUDE "engine/overworld/wildmons.asm"
+INCLUDE "engine/events/pokerus/pokerus.asm"
 
 ChrisBackpic:
 INCBIN "gfx/player/chris_back.2bpp.lz"
@@ -143,7 +144,6 @@ INCLUDE "engine/link/mystery_gift_2.asm"
 INCLUDE "engine/items/tmhm.asm"
 INCLUDE "engine/pokemon/print_move_description.asm"
 INCLUDE "data/moves/descriptions.asm"
-INCLUDE "engine/events/pokerus/pokerus.asm"
 INCLUDE "engine/battle/start_battle.asm"
 
 SECTION "Enemy Trainers", ROMX
@@ -173,6 +173,7 @@ SECTION "bank11", ROMX
 
 INCLUDE "engine/events/fruit_trees.asm"
 INCLUDE "engine/battle/ai/move.asm"
+INCLUDE "engine/pokedex/pokedex.asm"
 INCLUDE "engine/pokedex/pokedex_2.asm"
 INCLUDE "engine/pokemon/mail.asm"
 INCLUDE "engine/gfx/place_graphic.asm"
@@ -496,7 +497,6 @@ SECTION "bank3F", ROMX
 INCLUDE "engine/tilesets/tileset_anims.asm"
 INCLUDE "engine/events/npc_trade.asm"
 INCLUDE "engine/events/mom_phone.asm"
-INCLUDE "engine/pokedex/pokedex.asm"
 
 
 INCLUDE "mobile/mobile_40.asm"
@@ -701,6 +701,7 @@ INCBIN "mobile/stadium/stadium2.bin"
 SECTION "16-bit ID stuff", ROMX
 
 INCLUDE "engine/16/table_functions.asm"
+INCLUDE "data/pokemon/dex_numbers.asm"
 
 ; own section
 INCLUDE "data/trainers/parties.asm"

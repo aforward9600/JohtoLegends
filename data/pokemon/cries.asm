@@ -281,7 +281,6 @@ PokemonCries::
 	mon_cry CRY_RAICHU,      $f27,  $080 ; MANECTRIC
 	mon_cry CRY_DIGLETT,    -$133,  $125 ; CROAGUNK
 	mon_cry CRY_SLOWKING,    $002,  $2c6 ; TOXICROAK
-;	mon_cry CRY_TOGETIC,     $010,  $017 ; SWABLU
 	mon_cry CRY_CYNDAQUIL,   $10e,  $050 ; DUSKULL
 	mon_cry CRY_NATU,        $a5e,  $160 ; DUSCLOPS
 	mon_cry CRY_MAGCARGO,   -$01a,  $2e2 ; DUSKNOIR
@@ -315,3 +314,11 @@ PokemonCries::
 	mon_cry CRY_AIPOM,       $000,  $180 ; HO_OH
 	mon_cry CRY_ENTEI,       $14a,  $111 ; CELEBI
 	mon_cry CRY_DROWZEE,     $000,  $000 ; MISSINGNO
+	mon_cry CRY_TOGETIC,     $010,  $017 ; SWABLU
+	mon_cry CRY_NIDORAN_M,   $045,  $155 ; ALTARIA
+	mon_cry CRY_PICHU,       $f60,  $200 ; KOTORA
+	mon_cry CRY_RAIKOU,      $db3,  $168 ; RAITORA
+	mon_cry CRY_RAIKOU,      $cb3,  $201 ; GOROTORA
+	mon_cry CRY_SPINARAK,    $ff3,  $060 ; LOTAD
+	mon_cry CRY_FEAROW,      $680,  $090 ; LOMBRE
+	mon_cry CRY_KRABBY,      $0d0,  $0fa ; LUDICOLO

@@ -275,7 +275,6 @@ AnimationIdlePointers:
 	dw ManectricAnimationIdle
 	dw CroagunkAnimationIdle
 	dw ToxicroakAnimationIdle
-;	dw SwabluAnimationIdle
 	dw DuskullAnimationIdle
 	dw DusclopsAnimationIdle
 	dw DusknoirAnimationIdle
@@ -309,3 +308,11 @@ AnimationIdlePointers:
 	dw HoOhAnimationIdle
 	dw CelebiAnimationIdle
 	dw MissingnoAnimationIdle
+	dw SwabluAnimationIdle
+	dw AltariaAnimationIdle
+	dw KotoraAnimationIdle
+	dw RaitoraAnimationIdle
+	dw GorotoraAnimationIdle
+	dw LotadAnimationIdle
+	dw LombreAnimationIdle
+	dw LudicoloAnimationIdle

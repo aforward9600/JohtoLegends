@@ -2362,7 +2362,7 @@ GruntMGroup:
 	db 18
 	dw SPEAROW
 	db 18
-	dw ELEKID
+	dw KOTORA
 	db 19
 	dw STARYU
 	db -1 ; end
@@ -2448,7 +2448,7 @@ GruntMGroup:
 	db 21
 	dw FEAROW
 	db 21
-	dw ELEKID
+	dw KOTORA
 	db 22
 	dw STARYU
 	db -1 ; end
@@ -5929,7 +5929,7 @@ PokefanFGroup:
 	dw FURRET
 	db ORAN_BERRY
 	db 18
-	dw PIKACHU
+	dw ELEKID
 	db ORAN_BERRY
 	db 19
 	dw CROCONAW
@@ -6455,9 +6455,9 @@ MasterGroup:
 	db NO_ITEM
 	dw DRAGON_CLAW, DRAGON_DANCE, IRON_HEAD, EARTHQUAKE
 	db 53
-	dw CHARIZARD
+	dw ALTARIA
 	db NO_ITEM
-	dw FLAMETHROWER, DRAGON_PULSE, AIR_SLASH, NASTY_PLOT
+	dw CALM_MIND, MOONBLAST, DRAGON_PULSE, AIR_SLASH
 	db 54
 	dw KINGDRA
 	db NO_ITEM
@@ -6493,14 +6493,14 @@ GenSurgeGroup:
 	dw RAICHU
 	db NO_ITEM
 	dw THUNDERBOLT, BRICK_BREAK, LIGHT_SCREEN, WILD_CHARGE
-	db 43
-	dw AMPHAROS
-	db NO_ITEM
-	dw THUNDERBOLT, DRAGON_PULSE, POWER_GEM, COTTON_SPORE
 	db 44
 	dw ELECTIVIRE
 	db NO_ITEM
 	dw CLOSE_COMBAT, THUNDERPUNCH, BULK_UP, FIRE_PUNCH
+	db 45
+	dw GOROTORA
+	db NO_ITEM
+	dw VOLT_TACKLE, PLAY_ROUGH, CRUNCH, SLACK_OFF
 	db -1 ; end
 
 	end_list_items
@@ -6681,7 +6681,7 @@ EngineerGroup:
 	db 31
 	dw ELECTABUZZ
 	db 32
-	dw AMPHAROS
+	dw RAITORA
 	db -1 ; end
 
 	next_list_item ; ENGINEER (2)
@@ -6814,7 +6814,7 @@ MahoganyNinjaFGroup:
 	db 37
 	dw GIRAFARIG
 	db 37
-	dw AMPHAROS
+	dw RAITORA
 	db 38
 	dw DODRIO
 	db -1 ; end

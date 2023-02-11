@@ -267,6 +267,9 @@ Glalie: +5 to all stats. 510BST
 
 Froslass: +15ATK, +15SPATK. 510BST
 
+Altaria: +5ATK, +5SPATK. 500BST
+
+Ludicolo: +5HP, +5ATK, +5DEF, +5SPD. 500BST
 
 Steel no longer resists Dark and Ghost.
 

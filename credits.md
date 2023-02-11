@@ -72,7 +72,8 @@ Beta Wooper back sprite made by 64BitWonder.
 Sneasel, Tyranitar, Dragonite, Moltres, Heracross,
 Teddiursa, Ursaring, Phanpy, Umbreon, Feraligatr,
 Houndoom, Slowbro, Hitmonchan, Xatu, Pidgeot,
-Nidoking, Entei, Ho-Oh, Exeggutor, Starmie- SoupPotato
+Nidoking, Entei, Ho-Oh, Exeggutor, Starmie,
+Bellossom, Kadabra- SoupPotato
 
 Korotora, Raitora graphics and game data: SoupPotato, GS 97 Reforged Team, Game Freak
 
@@ -90,7 +91,7 @@ Mime Jr. Back Sprite: lakeofdance
 
 Duskull, Dusclops, Dusknoir, Bronzor, Bronzong, Ralts, Kirlia, Gardevoir, Gallade,
 Budew, Roselia, Roserade, Electrike, Manectric, Cacnea, Cacturne, Croagunk,
-Toxicroak, Snorunt, Glalie, Froslass, Aggron sprites:
+Toxicroak, Snorunt, Glalie, Froslass, Aggron, Lotad, Lombre, Ludicolo sprites:
 Prism Team.
 
 Aron and Lairon sprites: Nukkiie

@@ -276,7 +276,6 @@ FirstEvoStages::
 	dw ELECTRIKE
 	dw CROAGUNK
 	dw CROAGUNK
-;	dw SWABLU
 	dw DUSKULL
 	dw DUSKULL
 	dw DUSKULL
@@ -310,3 +309,9 @@ FirstEvoStages::
 	dw HO_OH
 	dw CELEBI
 	dw MISSINGNO
+	dw SWABLU
+	dw SWABLU
+	dw KOTORA
+	dw KOTORA
+	dw KOTORA
+	

@@ -6,6 +6,7 @@ AlphabeticalPokedexOrder:
 	dw AGGRON
 	dw AIPOM
 	dw ALAKAZAM
+	dw ALTARIA
 	dw AMBIPOM
 	dw AMPHAROS
 	dw ARBOK
@@ -102,6 +103,7 @@ AlphabeticalPokedexOrder:
 	dw GOLDEEN
 	dw GOLDUCK
 	dw GOLEM
+	dw GOROTORA
 	dw GRANBULL
 	dw GRAVELER
 	dw GRIMER
@@ -136,6 +138,7 @@ AlphabeticalPokedexOrder:
 	dw KINGLER
 	dw KIRLIA
 	dw KOFFING
+	dw KOTORA
 	dw KRABBY
 	dw LAIRON
 	dw LANTURN
@@ -146,6 +149,9 @@ AlphabeticalPokedexOrder:
 	dw LEDYBA
 	dw LICKILICKY
 	dw LICKITUNG
+	dw LOMBRE
+	dw LOTAD
+	dw LUDICOLO
 	dw LUGIA
 	dw MACHAMP
 	dw MACHOKE
@@ -223,6 +229,7 @@ AlphabeticalPokedexOrder:
 	dw QWILFISH
 	dw RAICHU
 	dw RAIKOU
+	dw RAITORA
 	dw RALTS
 	dw RAPIDASH
 	dw RATICATE
@@ -269,7 +276,7 @@ AlphabeticalPokedexOrder:
 	dw SUICUNE
 	dw SUNFLORA
 	dw SUNKERN
-;	dw SWABLU
+	dw SWABLU
 	dw SYLVEON
 	dw SWINUB
 	dw TANGELA

@@ -1451,8 +1451,8 @@ JohtoGrassWildMons:
 	dbw  9, BONSLY
 	dbw  9, PICHU
 	dbw  9, PONYTA
-	dbw 10, ELECTRIKE
-	dbw 10, ELECTRIKE
+	dbw 10, ELEKID
+	dbw 10, ELEKID
 	; day
 	dbw  8, PICHU
 	dbw  8, ABRA
@@ -1460,8 +1460,8 @@ JohtoGrassWildMons:
 	dbw  9, BONSLY
 	dbw  9, PICHU
 	dbw  9, PONYTA
-	dbw 10, ELECTRIKE
-	dbw 10, ELECTRIKE
+	dbw 10, ELEKID
+	dbw 10, ELEKID
 	; nite
 	dbw  8, PICHU
 	dbw  8, ABRA
@@ -1469,8 +1469,8 @@ JohtoGrassWildMons:
 	dbw  9, BONSLY
 	dbw  9, PICHU
 	dbw  9, HOUNDOUR
-	dbw 10, ELECTRIKE
-	dbw 10, ELECTRIKE
+	dbw 10, ELEKID
+	dbw 10, ELEKID
 
 	map_id ROUTE_43
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1508,7 +1508,7 @@ JohtoGrassWildMons:
 	dbw  8, ELECTRIKE
 	dbw  8, GROWLITHE
 	dbw  8, VULPIX
-	dbw  9, ELEKID
+	dbw  9, KOTORA
 	dbw  9, PSYDUCK
 	dbw  9, MIME__JR
 	dbw 10, CROAGUNK
@@ -1517,7 +1517,7 @@ JohtoGrassWildMons:
 	dbw  8, ELECTRIKE
 	dbw  8, GROWLITHE
 	dbw  8, VULPIX
-	dbw  9, ELEKID
+	dbw  9, KOTORA
 	dbw  9, PSYDUCK
 	dbw  9, MIME__JR
 	dbw 10, CROAGUNK
@@ -1526,7 +1526,7 @@ JohtoGrassWildMons:
 	dbw  8, ELECTRIKE
 	dbw  8, HOUNDOUR
 	dbw  8, RATTATA
-	dbw  9, ELEKID
+	dbw  9, KOTORA
 	dbw  9, PSYDUCK
 	dbw  9, MIME__JR
 	dbw 10, CROAGUNK
