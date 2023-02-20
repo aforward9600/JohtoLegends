@@ -888,3 +888,13 @@ SECTION "Pics 30", ROMX
 
 LudicoloFrontpic:    INCBIN "gfx/pokemon/ludicolo/front.animated.2bpp.lz"
 LudicoloBackpic:     INCBIN "gfx/pokemon/ludicolo/back.2bpp.lz"
+FarigirafFrontpic:   INCBIN "gfx/pokemon/farigiraf/front.animated.2bpp.lz"
+FarigirafBackpic:    INCBIN "gfx/pokemon/farigiraf/back.2bpp.lz"
+WyrdeerFrontpic:     INCBIN "gfx/pokemon/wyrdeer/front.animated.2bpp.lz"
+WyrdeerBackpic:      INCBIN "gfx/pokemon/wyrdeer/back.2bpp.lz"
+UrsalunaFrontpic:    INCBIN "gfx/pokemon/ursaluna/front.animated.2bpp.lz"
+UrsalunaBackpic:     INCBIN "gfx/pokemon/ursaluna/back.2bpp.lz"
+DudunsparsFrontpic:  INCBIN "gfx/pokemon/dudunspars/front.animated.2bpp.lz"
+DudunsparsBackpic:   INCBIN "gfx/pokemon/dudunspars/back.2bpp.lz"
+AnnihilapeFrontpic:  INCBIN "gfx/pokemon/annihilape/front.animated.2bpp.lz"
+AnnihilapeBackpic:   INCBIN "gfx/pokemon/annihilape/back.2bpp.lz"

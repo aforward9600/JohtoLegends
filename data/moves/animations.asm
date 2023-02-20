@@ -425,6 +425,7 @@ BattleAnimations::
 	dw BattleAnim_SignalWave
 	dw BattleAnim_WaveCrash
 	dw BattleAnim_FakeOut
+	dw BattleAnim_HeadlongRush
 ;	dw BattleAnim_WakeUpSlap
 	dw BattleAnim_SweetScent2
 
@@ -2465,6 +2466,7 @@ BattleAnim_DoubleEdge:
 BattleAnim_GigaImpact:
 BattleAnim_WoodHammer:
 BattleAnim_HiHorsepower:
+BattleAnim_HeadlongRush:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10

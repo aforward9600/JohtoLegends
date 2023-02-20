@@ -63,6 +63,7 @@ OldPokedexOrder:
 	dw GOLDUCK
 	dw MANKEY
 	dw PRIMEAPE
+	dw ANNIHILAPE
 	dw GROWLITHE
 	dw ARCANINE
 	dw POLIWAG
@@ -235,9 +236,11 @@ OldPokedexOrder:
 	dw WYNAUT
 	dw WOBBUFFET
 	dw GIRAFARIG
+	dw FARIGIRAF
 	dw PINECO
 	dw FORRETRESS
 	dw DUNSPARCE
+	dw DUDUNSPARS
 	dw GLIGAR
 	dw GLISCOR
 	dw SNUBBULL
@@ -249,6 +252,7 @@ OldPokedexOrder:
 	dw WEAVILE
 	dw TEDDIURSA
 	dw URSARING
+	dw URSALUNA
 	dw SLUGMA
 	dw MAGCARGO
 	dw SWINUB
@@ -268,6 +272,7 @@ OldPokedexOrder:
 	dw PHANPY
 	dw DONPHAN
 	dw STANTLER
+	dw WYRDEER
 	dw SMEARGLE
 	dw MILTANK
 	dw KOTORA

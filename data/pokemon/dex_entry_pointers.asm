@@ -317,3 +317,8 @@ PokedexDataPointerTable:
 	dba LotadPokedexEntry
 	dba LombrePokedexEntry
 	dba LudicoloPokedexEntry
+	dba FarigirafPokedexEntry
+	dba WyrdeerPokedexEntry
+	dba UrsalunaPokedexEntry
+	dba DudunsparsPokdexEntry
+	dba AnnihilapePokedexEntry

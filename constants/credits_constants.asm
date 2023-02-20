@@ -25,8 +25,8 @@
 	const ELFINHILON
 	const BLUE_EMERALD
 	const INTERNETGOBLIN
-	const SARUGAKUCHO
-	const AKITO_MORI
+	const RYANS_TRYIN
+	const NUUK
 	const KAGE
 	const DAMIEN_CREDIT
 	const PRESENTED_BY

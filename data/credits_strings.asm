@@ -25,8 +25,8 @@ CreditsStrings:
 	dw .ElfinHilon
 	dw .BlueEmerald
 	dw .InternetGoblin
-	dw .Sarugakucho
-	dw .AkitoMori
+	dw .RyansTryin
+	dw .Nuuk
 	dw .Kage
 	dw .Damien
 	dw .PresentedBy
@@ -139,7 +139,7 @@ CreditsStrings:
 .SatoshiOota:         db "    SATOSHI OOTA@"          ; "おおた　さとし@"
 .SoupPotato:          db "     SoupPotato@"         ; "よしかわ　れな@"
 .ChaosRush:           db "     Chaos Rush@"           ; "おくたに　じゅん@"
-.SCMidna:             db "      SCMidna@"        ; "よしだ　ひろのぶ@"
+.SCMidna:             db "    SCMidna & Mia@"        ; "よしだ　ひろのぶ@"
 .Nukkiie:             db "      Nukkiie@"         ; "いわした　あすか@"
 .Frogtoes:            db "      Frogtoes@"           ; "いちのせ　ごう@"
 .landesherr:          db "     landesherr@"          ; "あおき　もりかず@"
@@ -151,9 +151,9 @@ CreditsStrings:
 .ElfinHilon:          db "    ElfinHilon10@"         ; "せきね　かずひと@"
 .BlueEmerald:         db "    Blue Emerald@"          ; "おおた　てつじ@"
 .InternetGoblin:      db "   InternetGoblin@"      ; "スーパーマりオクラブ@"
-.Sarugakucho:         db "    SARUGAKUCHO@"           ; "さるがくちょう@"
-.AkitoMori:           db "     AKITO MORI@"           ; "もり　あきと@"
-.Kage:                db "        Kage@"         ; "はらだ　たかひろ@"
+.RyansTryin:          db "     Ryans-Tryin@"           ; "さるがくちょう@"
+.Nuuk:                db "     Nuuk & Sea@"           ; "もり　あきと@"
+.Kage:                db "     Kage & Cure@"         ; "はらだ　たかひろ@"
 .Damien:              db "       Damien@"         ; "はしもと　とおる@"
 .PresentedBy:         db "    Presented By@"        ; "まつもと　のぼる@"
 .AdamShaman:          db "    Adam Shaman@"         ; "いずし　たけひろ@"

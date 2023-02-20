@@ -1755,6 +1755,7 @@ WobbuffetEvosAttacks:
 	db 0 ; no more level-up moves
 
 GirafarigEvosAttacks:
+	dbbw, EVOLVE_LEVEL, 32, FARIGIRAF
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, GROWL
@@ -1816,6 +1817,7 @@ ForretressEvosAttacks:
 	db 0 ; no more level-up moves
 
 DunsparceEvosAttacks:
+	dbbw EVOLVE_LEVEL, 33, DUDUNSPARS
 	db 0 ; no more evolutions
 	dbw 1, RAGE
 	dbw 1, DEFENSE_CURL
@@ -2029,18 +2031,20 @@ TeddiursaEvosAttacks:
 	dbw 1, GROWL
 	dbw 1, LICK
 	dbw 8, FURY_SWIPES
-	dbw 15, FAINT_ATTACK
-	dbw 22, SWEET_SCENT
-	dbw 25, PLAY_ROUGH
-	dbw 29, SLASH
-	dbw 36, CHARM
-	dbw 43, REST
-	dbw 43, SNORE
-	dbw 50, THRASH
-	dbw 57, CRUNCH
+	dbw 13, FAINT_ATTACK
+	dbw 17, SWEET_SCENT
+	dbw 22, SLASH
+	dbw 25, PLAY_NICE
+	dbw 29, PLAY_ROUGH
+	dbw 33, CHARM
+	dbw 37, REST
+	dbw 37, SNORE
+	dbw 39, CRUNCH
+	dbw 41, THRASH
 	db 0 ; no more level-up moves
 
 UrsaringEvosAttacks:
+	dbbw EVOLVE_LEVEL, 49, URSALUNA
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, SHADOW_CLAW
 	dbw 1, SHADOW_CLAW
@@ -2049,16 +2053,17 @@ UrsaringEvosAttacks:
 	dbw 1, GROWL
 	dbw 1, LICK
 	dbw 8, FURY_SWIPES
-	dbw 15, FAINT_ATTACK
-	dbw 22, SWEET_SCENT
-	dbw 25, PLAY_ROUGH
-	dbw 29, SLASH
-	dbw 38, CHARM
-	dbw 47, REST
-	dbw 47, SNORE
-	dbw 58, THRASH
-	dbw 63, CRUNCH
-	dbw 67, HAMMER_ARM
+	dbw 13, FAINT_ATTACK
+	dbw 17, SWEET_SCENT
+	dbw 22, SLASH
+	dbw 25, PLAY_NICE
+	dbw 29, PLAY_ROUGH
+	dbw 35, SCARY_FACE
+	dbw 41, REST
+	dbw 41, SNORE
+	dbw 48, CRUNCH
+	dbw 56, THRASH
+	dbw 64, HAMMER_ARM
 	db 0 ; no more level-up moves
 
 SlugmaEvosAttacks:
@@ -2147,6 +2152,7 @@ PiloswineEvosAttacks:
 
 MamoswineEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 63, ICICLE_CRASH
 	dbw LEARN_EVO_MOVE, ANCIENTPOWER
 	dbw 1, ANCIENTPOWER
 	dbw 1, ICE_FANG
@@ -2413,6 +2419,7 @@ DonphanEvosAttacks:
 	db 0 ; no more level-up moves
 
 StantlerEvosAttacks:
+	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, WYRDEER
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 3, LEER
@@ -2426,7 +2433,7 @@ StantlerEvosAttacks:
 	dbw 33, RECOVER
 	dbw 38, ZEN_HEADBUTT
 	dbw 43, JUMP_KICK
-	dbw 49,PROTECT
+	dbw 49, PROTECT
 	dbw 50, DREAM_EATER
 	dbw 55, GIGA_IMPACT
 	db 0 ; no more level-up moves

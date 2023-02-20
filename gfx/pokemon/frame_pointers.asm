@@ -316,3 +316,8 @@ FramesPointers:
 	dba LotadFrames
 	dba LombreFrames
 	dba LudicoloFrames
+	dba FarigirafFrames
+	dba WyrdeerFrames
+	dba UrsalunaFrames
+	dba DudunsparsFrames
+	dba AnnihilapeFrames

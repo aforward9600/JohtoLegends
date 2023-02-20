@@ -316,3 +316,8 @@ AnimationIdlePointers:
 	dw LotadAnimationIdle
 	dw LombreAnimationIdle
 	dw LudicoloAnimationIdle
+	dw FarigirafAnimationIdle
+	dw WyrdeerAnimationIdle
+	dw UrsalunaAnimationIdle
+	dw DudunsparsAnimationIdle
+	dw AnnihilapeAnimationIdle

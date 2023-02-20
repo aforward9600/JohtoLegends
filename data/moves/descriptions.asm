@@ -405,6 +405,7 @@ MoveDescriptions1:
 	dw SignalWaveDescription
 	dw DoubleEdgeDescription
 	dw FakeOutDescription
+	dw CloseCombatDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:

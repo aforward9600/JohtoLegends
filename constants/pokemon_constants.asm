@@ -337,6 +337,11 @@ JOHTO_POKEMON EQU const_value
 	const LOTAD
 	const LOMBRE
 	const LUDICOLO
+	const FARIGIRAF
+	const WYRDEER
+	const URSALUNA
+	const DUDUNSPARS
+	const ANNIHILAPE
 NUM_POKEMON EQU const_value + -1
 
 EGG EQU -3

@@ -320,3 +320,8 @@ PokemonNames::
 	db "Lotad@@@@@"
 	db "Lombre@@@@"
 	db "Ludicolo@@"
+	db "Farigiraf@"
+	db "Wyrdeer@@@"
+	db "Ursaluna@@"
+	db "Dudunspars"
+	db "Annihilape"

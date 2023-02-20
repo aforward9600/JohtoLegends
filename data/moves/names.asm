@@ -399,4 +399,5 @@ MoveNames::
 	db "Signal Wave@"
 	db "Wave Crash@"
 	db "Fake Out@"
+	db "HeadlongRush@"
 ;	db "Wake Up Slap@"

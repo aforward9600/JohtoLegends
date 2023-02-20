@@ -647,3 +647,13 @@ PokemonPicPointers::
 	dba LombreBackpic
 	dba LudicoloFrontpic
 	dba LudicoloBackpic
+	dba FarigirafFrontpic
+	dba FarigirafBackpic
+	dba WyrdeerFrontpic
+	dba WyrdeerBackpic
+	dba UrsalunaFrontpic
+	dba UrsalunaBackpic
+	dba DudunsparsFrontpic
+	dba DudunsparsBackpic
+	dba AnnihilapeFrontpic
+	dba AnnihilapeBackpic

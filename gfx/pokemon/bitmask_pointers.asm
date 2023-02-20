@@ -316,3 +316,8 @@ BitmasksPointers:
 	dw LotadBitmasks
 	dw LombreBitmasks
 	dw LudicoloBitmasks
+	dw FarigirafBitmasks
+	dw WyrdeerBitmasks
+	dw UrsalunaBitmasks
+	dw DudunsparsBitmasks
+	dw AnnihilapeBitmasks

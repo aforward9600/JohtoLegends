@@ -68,6 +68,7 @@ CreditsScript:
 	db           KOOLBOYMAN, 1
 	db           PRISM_TEAM, 2
 	db           SOUPPOTATO, 3
+	db                 NUUK, 4
 
 	db CREDITS_WAIT, 12
 
@@ -107,6 +108,7 @@ CreditsScript:
 	db      GRAPHICS_DESIGN, 1
 	db          FERROPEXOLA, 2
 	db             FROGTOES, 3
+	db          RYANS_TRYIN, 4
 
 	db CREDITS_WAIT, 12
 

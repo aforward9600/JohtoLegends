@@ -152,6 +152,7 @@ AlphabeticalMoveList::
 	dw HARDEN
 	dw HAZE
 	dw HEADBUTT
+	dw HEADLONGRUSH
 	dw HEAL_BELL
 	dw HEAT_WAVE
 	dw HEX

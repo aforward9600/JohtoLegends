@@ -9,6 +9,7 @@ AlphabeticalPokedexOrder:
 	dw ALTARIA
 	dw AMBIPOM
 	dw AMPHAROS
+	dw ANNIHILAPE
 	dw ARBOK
 	dw ARCANINE
 	dw ARIADOS
@@ -61,6 +62,7 @@ AlphabeticalPokedexOrder:
 	dw DRAGONITE
 	dw DRATINI
 	dw DROWZEE
+	dw DUDUNSPARS
 	dw DUGTRIO
 	dw DUNSPARCE
 	dw DUSCLOPS
@@ -78,6 +80,7 @@ AlphabeticalPokedexOrder:
 	dw EXEGGCUTE
 	dw EXEGGUTOR
 	dw FARFETCH_D
+	dw FARIGIRAF
 	dw FEAROW
 	dw FERALIGATR
 	dw FLAAFFY
@@ -295,6 +298,7 @@ AlphabeticalPokedexOrder:
 	dw TYROGUE
 	dw UMBREON
 	dw UNOWN
+	dw URSALUNA
 	dw URSARING
 	dw VAPOREON
 	dw VENOMOTH
@@ -313,6 +317,7 @@ AlphabeticalPokedexOrder:
 	dw WOBBUFFET
 	dw WOOPER
 	dw WYNAUT
+	dw WYRDEER
 	dw XATU
 	dw YANMA
 	dw YANMEGA

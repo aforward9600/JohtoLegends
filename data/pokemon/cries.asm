@@ -322,3 +322,8 @@ PokemonCries::
 	mon_cry CRY_SPINARAK,    $ff3,  $060 ; LOTAD
 	mon_cry CRY_FEAROW,      $680,  $090 ; LOMBRE
 	mon_cry CRY_KRABBY,      $0d0,  $0fa ; LUDICOLO
+	mon_cry CRY_GIRAFARIG,   $041,  $200 ; FARIGIRAF
+	mon_cry CRY_AIPOM,      -$160,  $180 ; STANTLER
+	mon_cry CRY_TEDDIURSA,   $640,  $0d8 ; URSALUNA
+	mon_cry CRY_DUNSPARCE,   $1c4,  $100 ; DUDUNSPARS
+	mon_cry CRY_NIDOQUEEN,   $0af,  $0c0 ; ANNIHILAPE

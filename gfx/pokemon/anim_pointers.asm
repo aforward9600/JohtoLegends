@@ -316,3 +316,8 @@ AnimationPointers:
 	dw LotadAnimation
 	dw LombreAnimation
 	dw LudicoloAnimation
+	dw FarigirafAnimation
+	dw WyrdeerAnimation
+	dw UrsalunaAnimation
+	dw DudunsparsAnimation
+	dw AnnihilapeAnimation

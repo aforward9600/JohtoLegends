@@ -1,12 +1,12 @@
 	db 0 ; species ID placeholder
 
-	db 110,  80,  80,  45,  80,  80
-	evs  2,   0,   0,   0,   0,   0
+	db 100,  70,  70,  45,  65,  65
+	evs  1,   0,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db GROUND, FAIRY ; type
 	db 190 ; catch rate
-	db 150 ; base exp
+	db 75 ; base exp
 	db NO_ITEM, NO_ITEM ; items
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch

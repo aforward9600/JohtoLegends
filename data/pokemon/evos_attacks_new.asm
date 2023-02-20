@@ -16,6 +16,11 @@ EvosAttacksPointers3::
 	dw LotadEvosAttacks
 	dw LombreEvosAttacks
 	dw LudicoloEvosAttacks
+	dw FarigirafEvosAttacks
+	dw WyrdeerEvosAttacks
+	dw UrsalunaEvosAttacks
+	dw DudunsparsEvosAttacks
+	dw AnnihilapeEvosAttacks
 
 BagonEvosAttacks:
 	dbbw EVOLVE_LEVEL, 25, SHELGON
@@ -290,4 +295,116 @@ LudicoloEvosAttacks:
 	dbw 1, GROWL
 	dbw 1, MEGA_DRAIN
 	dbw 1, AQUA_RING
+	db 0 ; no more level-up moves
+
+FarigirafEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, GROWL
+	dbw 1, CONFUSION
+	dbw 1, ASTONISH
+	dbw 5, ODOR_SLEUTH
+	dbw 10, PAYBACK
+	dbw 14, STOMP
+	dbw 19, PSYBEAM
+	dbw 23, AGILITY
+	dbw 28, DOUBLE_HIT_M
+	dbw 32, ZEN_HEADBUTT
+	dbw 37, CRUNCH
+	dbw 41, BATON_PASS
+	dbw 46, NASTY_PLOT
+	dbw 50, PSYCHIC_M
+	db 0 ; no more level-up moves
+
+WyrdeerEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 3, LEER
+	dbw 7, ASTONISH
+	dbw 10, HYPNOSIS
+	dbw 13, STOMP
+	dbw 16, SAND_ATTACK
+	dbw 21, TAKE_DOWN
+	dbw 23, CONFUSE_RAY
+	dbw 27, CALM_MIND
+	dbw 33, RECOVER
+	dbw 38, ZEN_HEADBUTT
+	dbw 43, JUMP_KICK
+	dbw 49, PROTECT
+	dbw 50, DREAM_EATER
+	dbw 55, GIGA_IMPACT
+	dbw 62, MEGAHORN
+	db 0 ; no more level-up moves
+
+UrsalunaEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, HEADLONGRUSH
+	dbw 1, HEADLONGRUSH
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 1, GROWL
+	dbw 1, LICK
+	dbw 8, FURY_SWIPES
+	dbw 13, FAINT_ATTACK
+	dbw 17, SWEET_SCENT
+	dbw 22, SLASH
+	dbw 25, PLAY_NICE
+	dbw 29, PLAY_ROUGH
+	dbw 35, SCARY_FACE
+	dbw 41, REST
+	dbw 41, SNORE
+	dbw 48, CRUNCH
+	dbw 56, THRASH
+	dbw 64, HAMMER_ARM
+	db 0 ; no more level-up moves
+
+DudunsparsEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, RAGE
+	dbw 1, DEFENSE_CURL
+	dbw 3, ROLLOUT
+	dbw 6, LICK
+	dbw 8, DISARM_VOICE
+	dbw 11, SCREECH
+	dbw 13, MUD_SLAP
+	dbw 16, SING
+	dbw 18, ANCIENTPOWER
+	dbw 21, BODY_SLAM
+	dbw 23, DRILL_RUN
+	dbw 26, ROOST
+	dbw 28, DRAININGKISS
+	dbw 31, COIL
+	dbw 33, DIG
+	dbw 39, GLARE
+	dbw 43, DOUBLE_EDGE
+	dbw 46, EARTHQUAKE
+	dbw 48, PLAY_ROUGH
+	dbw 51, DRAGON_RUSH
+	dbw 53, ENDURE
+	dbw 55, MOONBLAST
+	dbw 58, GIGA_IMPACT
+	db 0 ;  no more level-up moves
+
+AnnihilapeEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SHADOW_PUNCH
+	dbw 1, SHADOW_PUNCH
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 1, LOW_KICK
+	dbw 1, FOCUS_ENERGY
+	dbw 5, FURY_SWIPES
+	dbw 8, KARATE_CHOP
+	dbw 12, PURSUIT
+	dbw 15, SEISMIC_TOSS
+	dbw 19, SWAGGER
+	dbw 22, CROSS_CHOP
+	dbw 26, PAYBACK
+	dbw 30, LOW_SWEEP
+	dbw 35, THRASH
+	dbw 39, CLOSE_COMBAT
+	dbw 44, SCREECH
+	dbw 48, HIHORSEPOWER
+	dbw 53, OUTRAGE
+	dbw 57, SUPERPOWER
 	db 0 ; no more level-up moves

@@ -57,7 +57,13 @@ Move Steel Slice: Mskd.
 
 Rangi and the Polished Crystal team for Route 47 and 48 maps, Cherry Tree and the Town Map expansion and many overworld sprites.
 
-Ambipom back sprite: ShadowOne333
+Ambipom back sprite, Annihilape sprite: ShadowOne333
+
+Annihilape sprite: Sea and ShadowOne333
+
+Ursaluna sprites and animation: Cure, ShadowOne333, Scarlax
+
+Dudunspars sprites - Mia
 
 Lickilicky sprites by Chaos Rush.
 
@@ -66,6 +72,8 @@ Munchlax animation by SCMidna.
 Skarmini design and sprite: Ferropexola
 
 Skarmini back sprite: Frogtoes
+
+Skarmini Animation: Ryans-Tryin
 
 Beta Wooper back sprite made by 64BitWonder.
 
@@ -93,6 +101,8 @@ Duskull, Dusclops, Dusknoir, Bronzor, Bronzong, Ralts, Kirlia, Gardevoir, Gallad
 Budew, Roselia, Roserade, Electrike, Manectric, Cacnea, Cacturne, Croagunk,
 Toxicroak, Snorunt, Glalie, Froslass, Aggron, Lotad, Lombre, Ludicolo sprites:
 Prism Team.
+
+Farigiraf sprite and animation: Nuuk.
 
 Aron and Lairon sprites: Nukkiie
 
@@ -131,6 +141,9 @@ Prism Team
 
 Gen 3 and 6 minisprites:
 EeVeeEe1999
+
+Gen 4, 8 and 9 minisprites:
+Rangi
 
 Missingno minisprite:
 Emi Monserrate

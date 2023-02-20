@@ -328,3 +328,8 @@ MonMenuIconPals:
 	icon_pals GREEN,  BLUE   ; LOTAD
 	icon_pals GREEN,  BLUE   ; LOMBRE
 	icon_pals GREEN,  BLUE   ; LUDICOLO
+	icon_pals BROWN,  RED    ; FARIGIRAF
+	icon_pals GRAY,   GREEN  ; WYRDEER
+	icon_pals BROWN,  RED    ; URSALUNA
+	icon_pals BLUE,   PINK   ; DUDUNSPARS
+	icon_pals GRAY,   BLUE   ; ANNIHILAPE

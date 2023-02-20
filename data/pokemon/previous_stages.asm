@@ -317,3 +317,8 @@ PreviousEvolutionStage::
 	dw 0
 	dw LOTAD
 	dw LOMBRE
+	dw GIRAFARIG
+	dw STANTLER
+	dw URSARING
+	dw DUNSPARCE
+	dw PRIMEAPE

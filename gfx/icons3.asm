@@ -69,6 +69,11 @@ Icons3:
 	dw LotadIcon
 	dw LombreIcon
 	dw LudicoloIcon
+	dw FarigirafIcon
+	dw WyrdeerIcon
+	dw UrsalunaIcon
+	dw DudunsparsIcon
+	dw AnnihilapeIcon
 
 SwinubIcon:       INCBIN "gfx/icons/swinub.2bpp"
 PiloswineIcon:    INCBIN "gfx/icons/piloswine.2bpp"
@@ -137,3 +142,8 @@ GorotoraIcon:     INCBIN "gfx/icons/gorotora.2bpp"
 LotadIcon:        INCBIN "gfx/icons/lotad.2bpp"
 LombreIcon:       INCBIN "gfx/icons/lombre.2bpp"
 LudicoloIcon:     INCBIN "gfx/icons/ludicolo.2bpp"
+FarigirafIcon:    INCBIN "gfx/icons/farigiraf.2bpp"
+WyrdeerIcon:      INCBIN "gfx/icons/wyrdeer.2bpp"
+UrsalunaIcon:     INCBIN "gfx/icons/ursaluna.2bpp"
+DudunsparsIcon:   INCBIN "gfx/icons/dudunspars.2bpp"
+AnnihilapeIcon:   INCBIN "gfx/icons/annihilape.2bpp"
