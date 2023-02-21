@@ -1755,7 +1755,7 @@ WobbuffetEvosAttacks:
 	db 0 ; no more level-up moves
 
 GirafarigEvosAttacks:
-	dbbw, EVOLVE_LEVEL, 32, FARIGIRAF
+	dbbw EVOLVE_LEVEL, 32, FARIGIRAF
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, GROWL

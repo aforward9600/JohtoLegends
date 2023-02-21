@@ -23,7 +23,7 @@ MoveRelearnerScript::
 	end
 
 .which_mon_text
-	text "So, which #mon"
+	text "So, which #MON"
 	line "should I make"
 	cont "remember a move?"
 	prompt
@@ -35,7 +35,7 @@ MoveRelearnerScript::
 
 .done_text
 	text "Come again if your"
-	line "#mon need to"
+	line "#MON need to"
 	para "remember any other"
 	line "moves!"
 	done
@@ -45,7 +45,7 @@ MoveRelearnerScript::
 	sjump MoveRelearnerCancel.exit_failure
 
 .no_moves_text
-	text "This #mon knows"
+	text "This #MON knows"
 	line "every move it can"
 	para "learn! There's"
 	line "nothing for me to"
@@ -111,6 +111,7 @@ MoveRelearnerLoad:
 	ld a, [hli]
 	ld d, a
 	ld e, [hl]
+	ld a, b
 	pop hl
 	push de
 	push bc
@@ -202,9 +203,9 @@ MoveRelearnerLoad:
 	sub LOW(wMoveRelearnerMoveListStaging)
 	rrca
 	ld [wMoveRelearnerMoveCountStaging], a
+.done
 	ld a, BANK(wPokemonData)
 	ldh [rSVBK], a
-.done
 	ld a, d
 	ld [wScriptVar], a
 	ret

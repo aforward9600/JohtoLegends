@@ -74,6 +74,7 @@ GetTypeName:
 
 	ld a, [wNamedObjectIndexBuffer]
 	ld hl, TypeNames
+	AND TYPE_MASK
 	ld e, a
 	ld d, 0
 	add hl, de
