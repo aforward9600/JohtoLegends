@@ -513,19 +513,19 @@ RaltsSwarmText::
 	line "and catch a Ralts!"
 	done
 
-CroagunkSwarmText::
+KotoraSwarmText::
 	text "………………………"
 
 	para "Ah!"
 
 	para "At the Lake of"
 	line "Rage, there is a"
-	cont "swarm of Croagunk!"
+	cont "swarm of Kotora!"
 
 	para "Now's your chance,"
 	line "trainers!"
 
 	para "Head to the Lake"
 	line "of Rage and catch"
-	cont "a Croagunk!"
+	cont "a Kotora!"
 	done

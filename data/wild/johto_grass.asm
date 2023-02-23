@@ -1478,7 +1478,7 @@ JohtoGrassWildMons:
 	dbw  8, MAREEP
 	dbw  8, GROWLITHE
 	dbw  8, VULPIX
-	dbw  9, PSYDUCK
+	dbw  9, LOTAD
 	dbw  9, PSYDUCK
 	dbw  9, RALTS
 	dbw 10, TOTODILE
@@ -1487,7 +1487,7 @@ JohtoGrassWildMons:
 	dbw  8, MAREEP
 	dbw  8, GROWLITHE
 	dbw  8, VULPIX
-	dbw  9, PSYDUCK
+	dbw  9, LOTAD
 	dbw  9, PSYDUCK
 	dbw  9, RALTS
 	dbw 10, TOTODILE
@@ -1496,7 +1496,7 @@ JohtoGrassWildMons:
 	dbw  8, MAREEP
 	dbw  8, HOUNDOUR
 	dbw  8, RATTATA
-	dbw  9, PSYDUCK
+	dbw  9, LOTAD
 	dbw  9, PSYDUCK
 	dbw  9, RALTS
 	dbw 10, TOTODILE
@@ -1508,29 +1508,29 @@ JohtoGrassWildMons:
 	dbw  8, ELECTRIKE
 	dbw  8, GROWLITHE
 	dbw  8, VULPIX
-	dbw  9, KOTORA
+	dbw  9, CROAGUNK
 	dbw  9, PSYDUCK
 	dbw  9, MIME__JR
-	dbw 10, CROAGUNK
-	dbw 10, CROAGUNK
+	dbw 10, KOTORA
+	dbw 10, KOTORA
 	; day
 	dbw  8, ELECTRIKE
 	dbw  8, GROWLITHE
 	dbw  8, VULPIX
-	dbw  9, KOTORA
+	dbw  9, CROAGUNK
 	dbw  9, PSYDUCK
 	dbw  9, MIME__JR
-	dbw 10, CROAGUNK
-	dbw 10, CROAGUNK
+	dbw 10, KOTORA
+	dbw 10, KOTORA
 	; nite
 	dbw  8, ELECTRIKE
 	dbw  8, HOUNDOUR
 	dbw  8, RATTATA
-	dbw  9, KOTORA
+	dbw  9, CROAGUNK
 	dbw  9, PSYDUCK
 	dbw  9, MIME__JR
-	dbw 10, CROAGUNK
-	dbw 10, CROAGUNK
+	dbw 10, KOTORA
+	dbw 10, KOTORA
 
 	map_id ROUTE_44
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

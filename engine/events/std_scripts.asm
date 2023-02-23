@@ -2111,7 +2111,7 @@ SwarmScript:
 	ifequal 4, .scyther
 	ifequal 5, .aron
 	ifequal 6, .ralts
-	ifequal 7, .croagunk
+	ifequal 7, .kotora
 
 .Badges2Swarm:
 	farwritetext WhatSwarmTodayText
@@ -2129,7 +2129,7 @@ SwarmScript:
 	ifequal 9,  .misdreavus
 	ifequal 10, .aron
 	ifequal 11, .ralts
-	ifequal 12, .croagunk
+	ifequal 12, .kotora
 
 .Badges4Swarm:
 	farwritetext WhatSwarmTodayText
@@ -2148,7 +2148,7 @@ SwarmScript:
 	ifequal 10, .pinsir
 	ifequal 11, .aron
 	ifequal 12, .ralts
-	ifequal 13, .croagunk
+	ifequal 13, .kotora
 
 .noswarm
 	setflag ENGINE_SWARM
@@ -2254,10 +2254,10 @@ SwarmScript:
 	closetext
 	sjump .endswarmchannel
 
-.croagunk
+.kotora
 	setflag ENGINE_SWARM
 	swarm LAKE_OF_RAGE
-	farwritetext CroagunkSwarmText
+	farwritetext KotoraSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel

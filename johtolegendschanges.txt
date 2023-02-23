@@ -20,7 +20,7 @@ Growth increases Attack and Special Attack.
 
 Giga Drain is 75 power and 10 PP.
 
-Gyro Ball is currently level based until I can figure out the code. Animation is glitched.
+Gyro Ball is 110 power.
 
 Thrash, Outrage and Petal Dance buffed to 120.
 
@@ -120,8 +120,6 @@ Venomoth: +5HP, +5ATK, +5DEF, +10SPATK, +5SPDEF, +10SPD. 490BST. Is now a Bug-Ps
 Dugtrio: +26ATK, +11SPD. 442BST
 
 Persian: +10ATK, +30DEF, +15SPATK, +5SPDEF. 500BST
-
-Primape: +12ATK, +12SPD. 479BST
 
 Poliwrath: +10 ATK. 510BST
 
@@ -231,11 +229,9 @@ Unown: +36HP, +54ATK, +36HP, +54SPATK, +36SPDEF, +36SPD. 588BST
 
 Wobbuffet: +60HP. 465BST
 
-Girafarig: +20ATK, +5DEF, +10SPATK, +5DEF, +10SPD. 505BST
-
 Forretress: -20SPATK, +20SPDEF, +20SPD. 485BST
 
-Dunsparce: +10HP, +10ATK, +10DEF, +15SPATK, +15SPDEF. 475BST. Is now a Fairy-Ground Type.
+Dunsparce:Is now a Fairy-Ground Type.
 
 Snubbull: Is now a Fairy Type.
 
@@ -252,8 +248,6 @@ Octillery: Is now a Water-Steel Type.
 Delibird: +40HP, +10ATK, +20DEF, +30SPATK, +20SPDEF, +20SPD. 470BST
 
 Skarmory: +10HP, +10ATK. 485BST
-
-Stantler: +10DEF, +10SPATK, +10SPDEF, +10SPD. 505BST
 
 Larvitar: Family changed to Medium-Slow Growth. Evolves at Level 20.
 

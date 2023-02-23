@@ -13,19 +13,57 @@ EcruteakPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
 EcruteakPokecenter1FPokefanMScript:
-	jumptextfaceplayer EcruteakPokecenter1FPokefanMText
-;	faceplayer
-;	opentext
-;	writetext WannaRelearnMove
-;	yesorno
-;	iffalse .cancel
-;	farscall MoveRelearnerScript
-;	iftrue .end
-;.end
-;	end
+	faceplayer
+	opentext
+	writetext .introduction_text
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .cancel
+	checkmoney YOUR_MONEY, 2500
+	ifequal HAVE_LESS, .not_enough_money
+	waitsfx
+	playsound SFX_TRANSACTION
+	takemoney YOUR_MONEY, 2500
+	special PlaceMoneyTopRight
+	farscall MoveRelearnerScript
+	iftrue .end
+	givemoney YOUR_MONEY, 2500
+.end
+	end
 
-;.cancel
-;	farsjump MoveRelearnerCancel
+.introduction_text:
+	text "I can make your"
+	line "#mon remember"
+	para "the moves that"
+	line "they used to know."
+
+	para "For ¥2500, I can"
+	line "make one of your"
+	para "#mon remember a"
+	line "forgotten move."
+
+	para "What do you say?"
+	line "It's only ¥2500."
+	done
+
+.not_enough_money
+	writetext .not_enough_money_text
+	waitbutton
+	closetext
+	end
+
+.not_enough_money_text:
+	text "I'm sorry, but it"
+	line "seems like you"
+	para "can't afford that"
+	line "right now."
+
+	para "Please come again"
+	line "when you can."
+	done
+
+.cancel
+	farsjump MoveRelearnerCancel
 
 EcruteakPokecenter1FCooltrainerFScript:
 	jumptextfaceplayer EcruteakPokecenter1FCooltrainerFText
@@ -75,11 +113,6 @@ EcruteakPokecenter1FGymGuyText:
 
 	para "I smell a conspir-"
 	line "acy. I know it!"
-	done
-
-WannaRelearnMove:
-	text "Wanna relearn a"
-	line "move?"
 	done
 
 EcruteakPokecenter1F_MapEvents:

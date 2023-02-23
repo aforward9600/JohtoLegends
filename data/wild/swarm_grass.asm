@@ -348,29 +348,29 @@ SwarmGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw  8, MIME__JR
-	dbw  8, CROAGUNK
+	dbw  8, KOTORA
 	dbw  8, ELECTRIKE
-	dbw  9, CROAGUNK
+	dbw  9, KOTORA
 	dbw  9, ELECTRIKE
-	dbw  9, CROAGUNK
+	dbw  9, KOTORA
 	dbw 10, CROAGUNK
 	dbw 10, CROAGUNK
 	; day
 	dbw  8, MIME__JR
-	dbw  8, CROAGUNK
+	dbw  8, KOTORA
 	dbw  8, ELECTRIKE
-	dbw  9, CROAGUNK
+	dbw  9, KOTORA
 	dbw  9, ELECTRIKE
-	dbw  9, CROAGUNK
+	dbw  9, KOTORA
 	dbw 10, CROAGUNK
 	dbw 10, CROAGUNK
 	; nite
 	dbw  8, MIME__JR
-	dbw  8, CROAGUNK
+	dbw  8, KOTORA
 	dbw  8, ELECTRIKE
-	dbw  9, CROAGUNK
+	dbw  9, KOTORA
 	dbw  9, ELECTRIKE
-	dbw  9, CROAGUNK
+	dbw  9, KOTORA
 	dbw 10, CROAGUNK
 	dbw 10, CROAGUNK
 

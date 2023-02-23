@@ -12,7 +12,7 @@ ENDM
 
 Moves::
 ; entries correspond to constants/move_constants.asm
-	indirect_table MOVE_LENGTH - 1, 1
+	indirect_table MOVE_LENGTH  -1, 1
 	indirect_entries NUM_ATTACKS, Moves1
 	indirect_table_end
 

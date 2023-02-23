@@ -298,15 +298,15 @@ EnokiGroup:
 PryceGroup:
 	next_list_item ; PRYCE (1)
 	db "Pryce@", TRAINERTYPE_ITEM_MOVES
-	db 13
+	db 14
 	dw SMOOCHUM
 	db NO_ITEM
 	dw SWEET_KISS, POUND, ICY_WIND, CONFUSION
-	db 13
+	db 14
 	dw SWINUB
 	db NO_ITEM
 	dw MUD_SLAP, POWDER_SNOW, TACKLE, HAIL
-	db 14
+	db 15
 	dw SNEASEL
 	db ORAN_BERRY
 	dw SCRATCH, PURSUIT, HONE_CLAWS, ICE_SHARD
@@ -372,10 +372,10 @@ ByronGroup:
 ChuckGroup:
 	next_list_item ; CHUCK (1)
 	db "Chuck@", TRAINERTYPE_MOVES
-	db 27
+	db 26
 	dw PRIMEAPE
 	dw LEER, RAGE, KARATE_CHOP, FURY_SWIPES
-	db 28
+	db 27
 	dw POLIWRATH
 	dw HYPNOSIS, RAIN_DANCE, SURF, DYNAMICPUNCH
 	db -1 ; end
@@ -738,9 +738,9 @@ AgathaGroup:
 	db NO_ITEM
 	dw PERISH_SONG, SHADOW_BALL, NASTY_PLOT, STRENGTH_SAP
 	db 44
-	dw HOUNDOOM
+	dw UMBREON
 	db NO_ITEM
-	dw NASTY_PLOT, FLAMETHROWER, DARK_PULSE, WILL_O_WISP
+	dw NASTY_PLOT, DARK_PULSE, MOONLIGHT, PSYCHIC_M
 	db 45
 	dw ARBOK
 	db NO_ITEM
@@ -2123,7 +2123,7 @@ CooltrainerFGroup:
 BeautyGroup:
 	next_list_item ; BEAUTY (3) Olivine Gym 2F
 	db "Ashley@", TRAINERTYPE_NORMAL
-	db 28
+	db 29
 	dw SKARMORY
 	db -1 ; end
 
@@ -2371,9 +2371,9 @@ GruntMGroup:
 
 	next_list_item ; ManM (2) Olivine City
 	db "Man@", TRAINERTYPE_NORMAL
-	db 21
+	db 20
 	dw MURKROW
-	db 21
+	db 20
 	dw CACNEA
 	db 21
 	dw SNORUNT
@@ -2557,7 +2557,7 @@ GruntMGroup:
 	dw HYDRO_PUMP, ICE_BEAM, HYPER_VOICE, CALM_MIND
 	db 57
 	dw UMBREON
-	dw MOONLIGHT, PAYBACK, SCREECH, DOUBLE_EDGE
+	dw MOONLIGHT, PAYBACK, SCREECH, PSYCHIC_M
 	db -1 ; end
 
 	next_list_item ; ManM (19)
@@ -2667,11 +2667,11 @@ GruntMGroup:
 GentlemanGroup:
 	next_list_item ; GENTLEMAN (1) Olivine Gym 
 	db "Crofton@", TRAINERTYPE_NORMAL
-	db 27
+	db 28
 	dw MAGNEMITE
-	db 27
+	db 28
 	dw SKARMINI
-	db 27
+	db 28
 	dw MAGCARGO
 	db -1 ; end
 
@@ -2706,13 +2706,13 @@ GentlemanGroup:
 SkierGroup:
 	next_list_item ; SKIER (1)
 	db "Brandy@", TRAINERTYPE_NORMAL
-	db 11
+	db 13
 	dw SMOOCHUM
 	db -1 ; end
 
 	next_list_item ; SKIER (2)
 	db "Luann@", TRAINERTYPE_NORMAL
-	db 11
+	db 13
 	dw SNORUNT
 	db -1 ; end
 
@@ -2731,11 +2731,11 @@ SkierGroup:
 TeacherGroup:
 	next_list_item ; TEACHER (1) Olivine Gym
 	db "Abigail@", TRAINERTYPE_NORMAL
-	db 27
+	db 28
 	dw ARON
-	db 27
+	db 28
 	dw OCTILLERY
-	db 27
+	db 28
 	dw MAGNEMITE
 	db -1 ; end
 
@@ -4558,10 +4558,10 @@ BlackbeltGroup:
 
 	next_list_item ; BLACKBELT_T (2) Cianwood Gym
 	db "Shigeru@", TRAINERTYPE_MOVES
-	db 27
+	db 26
 	dw HITMONLEE
 	dw DOUBLE_KICK, BULK_UP, BRICK_BREAK, FOCUS_ENERGY
-	db 27
+	db 26
 	dw HITMONCHAN
 	dw AERIAL_ACE, MACH_PUNCH, BULK_UP, BULLET_PUNCH
 	db -1 ; end
@@ -5599,11 +5599,11 @@ BoarderGroup:
 
 	next_list_item ; BOARDER (3) Mahogany Gym
 	db "Sonny@", TRAINERTYPE_NORMAL
-	db 9
+	db 11
 	dw SHELLDER
-	db 9
+	db 11
 	dw SWINUB
-	db 10
+	db 12
 	dw DELIBIRD
 	db -1 ; end
 
@@ -5761,13 +5761,13 @@ PokefanMGroup:
 KimonoGirlGroup:
 	next_list_item ; KIMONO_GIRL (1)
 	db "Rui@", TRAINERTYPE_MOVES
-	db 15
+	db 16
 	dw VAPOREON
 	dw QUICK_ATTACK, SAND_ATTACK, GROWL, WATER_GUN
-	db 15
+	db 16
 	dw JOLTEON
 	dw QUICK_ATTACK, SAND_ATTACK, GROWL, THUNDERSHOCK
-	db 15
+	db 16
 	dw FLAREON
 	dw QUICK_ATTACK, SAND_ATTACK, GROWL, EMBER
 	db -1 ; end
@@ -5905,7 +5905,7 @@ PokefanFGroup:
 
 	next_list_item ; POKEFANF (2)
 	db "Ethel@", TRAINERTYPE_ITEM_MOVES
-	db 15
+	db 16
 	dw TOGEPI
 	db ORAN_BERRY
 	dw SWEET_KISS, METRONOME, CHARM, SING
@@ -6231,11 +6231,11 @@ Rival3Group:
 	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 27
 	dw POLIWHIRL
-	db 29
+	db 28
 	dw SWINUB
 	db 28
 	dw SYLVEON
-	db 30
+	db 29
 	dw PUPITAR
 	db -1 ; end
 
@@ -6243,11 +6243,11 @@ Rival3Group:
 	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 27
 	dw POLIWHIRL
-	db 29
+	db 28
 	dw SWINUB
 	db 28
 	dw SYLVEON
-	db 30
+	db 29
 	dw DRAGONAIR
 	db -1 ; end
 
@@ -6294,11 +6294,11 @@ Rival4Group:
 	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 27
 	dw POLIWHIRL
-	db 29
+	db 28
 	dw SWINUB
 	db 28
 	dw SYLVEON
-	db 30
+	db 29
 	dw PUPITAR
 	db -1 ; end
 
@@ -6306,11 +6306,11 @@ Rival4Group:
 	db "<RIVAL>@", TRAINERTYPE_NORMAL
 	db 27
 	dw POLIWHIRL
-	db 29
+	db 28
 	dw SWINUB
 	db 28
 	dw SYLVEON
-	db 30
+	db 29
 	dw DRAGONAIR
 	db -1 ; end
 
@@ -6405,19 +6405,19 @@ HexManiacGroup:
 ChigusaGroup:
 	next_list_item ; CHIGUSA1
 	db "Chigusa@", TRAINERTYPE_ITEM_MOVES
-	db 27
+	db 26
 	dw LEDIAN
 	db NO_ITEM
 	dw BULK_UP, QUIVER_DANCE, MACH_PUNCH, SILVER_WIND
-	db 28
+	db 27
 	dw CROAGUNK
 	db NO_ITEM
 	dw BULK_UP, SWAGGER, REVENGE, FAINT_ATTACK
-	db 28
+	db 27
 	dw HITMONTOP
 	db NO_ITEM
 	dw BULK_UP, ROLLING_KICK, DIG, RAPID_SPIN
-	db 29
+	db 28
 	dw GALLADE
 	db ORAN_BERRY
 	dw LEAF_BLADE, SLASH, CONFUSION, BRICK_BREAK 
@@ -6598,13 +6598,13 @@ MiyamotoGroup:
 CynthiaGroup:
 	next_list_item ; CYNTHIA1
 	db "Cynthia@", TRAINERTYPE_MOVES
-	db 16
+	db 17
 	dw TOGETIC
 	dw FAIRY_WIND, SING, SWEET_KISS, METRONOME
-	db 16
+	db 17
 	dw ROSELIA
 	dw MEGA_DRAIN, STUN_SPORE, ACID, GROWTH
-	db 17
+	db 18
 	dw GIBLE
 	dw TAKE_DOWN, SANDSTORM, DRACO_FANG, SAND_ATTACK
 	db -1 ; end
@@ -6698,17 +6698,17 @@ EngineerGroup:
 
 	next_list_item ; ENGINEER (3) Olivine Gym 2F
 	db "Dante@", TRAINERTYPE_NORMAL
-	db 27
+	db 28
 	dw MAGNEMITE
-	db 27
+	db 28
 	dw MAGNEMITE
-	db 27
+	db 28
 	dw SKARMINI
 	db -1 ; end
 
 	next_list_item ; ENGINEER (4) Olivine Gym 3F
 	db "Rudy@", TRAINERTYPE_NORMAL
-	db 28
+	db 29
 	dw FORRETRESS
 	db -1 ; end
 
@@ -7235,19 +7235,19 @@ Cynthia2Group:
 PryceGroup2:
 	next_list_item ; PRYCE (3)
 	db "Pryce@", TRAINERTYPE_ITEM_MOVES
-	db 27
+	db 26
 	dw SMOOCHUM
 	db NO_ITEM
 	dw SING, POWDER_SNOW, ICY_WIND, PSYBEAM
-	db 28
+	db 27
 	dw SWINUB
 	db NO_ITEM
 	dw BULLDOZE, ICE_FANG, TAKE_DOWN, HAIL
-	db 28
+	db 27
 	dw SNORUNT
 	db NO_ITEM
 	dw HEADBUTT, BITE, HAIL, ICY_WIND
-	db 29
+	db 28
 	dw SNEASEL
 	db SITRUS_BERRY
 	dw METAL_CLAW, FAINT_ATTACK, AGILITY, ICE_SHARD
@@ -7385,19 +7385,19 @@ PryceGroup3:
 EnokiGroup2:
 	next_list_item ; ENOKI (2)
 	db "Enoki@", TRAINERTYPE_ITEM_MOVES
-	db 27
+	db 26
 	dw DUSKULL
 	db NO_ITEM
 	dw HEX, WILL_O_WISP, SHADOW_SNEAK, FORESIGHT
-	db 28
+	db 27
 	dw CORSOLA
 	db NO_ITEM
 	dw ANCIENTPOWER, WILL_O_WISP, HEX, STRENGTH_SAP
-	db 28
+	db 27
 	dw NOCTOWL
 	db NO_ITEM
 	dw HEX, AERIAL_ACE, REFLECT, LIGHT_SCREEN
-	db 29
+	db 28
 	dw MISDREAVUS
 	db SITRUS_BERRY
 	dw HEX, WILL_O_WISP, MEAN_LOOK, PSYBEAM

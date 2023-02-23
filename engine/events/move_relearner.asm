@@ -73,9 +73,13 @@ MoveRelearnerCancel::
 
 .cancel_text
 	text "That's too bad."
-	line "Come back later if"
-	para "you need my"
-	line "services again."
+
+	para "Here is your"
+	line "money back."
+
+	para "Come back later if"
+	line "you need my"
+	cont "services again."
 	done
 
 MoveRelearnerLoad:
@@ -111,6 +115,7 @@ MoveRelearnerLoad:
 	ld a, [hli]
 	ld d, a
 	ld e, [hl]
+	ld a, b
 	pop hl
 	push de
 	push bc
@@ -202,9 +207,9 @@ MoveRelearnerLoad:
 	sub LOW(wMoveRelearnerMoveListStaging)
 	rrca
 	ld [wMoveRelearnerMoveCountStaging], a
+.done
 	ld a, BANK(wPokemonData)
 	ldh [rSVBK], a
-.done
 	ld a, d
 	ld [wScriptVar], a
 	ret
@@ -512,10 +517,10 @@ MoveRelearner_DisplayMoveData:
 	jr .place_arrows
 
 .cancel_string
-	db "CANCEL@"
+	db "Cancel@"
 
 .type_string
-	db "TYPE/@"
+	db "Type/@"
 
 MoveRelearner_UpdateMoveInfoBox:
 	call MoveRelearner_ClearMoveInfoBox

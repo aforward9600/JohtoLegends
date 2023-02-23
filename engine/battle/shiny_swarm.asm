@@ -23,7 +23,7 @@ GenerateShinySwarm:
 	cp ROUTE_43
 	jp z, .ralts
 	cp LAKE_OF_RAGE
-	jp z, .croagunk
+	jp z, .kotora
 	jp .skipshineswarm
 
 .dunsparce
@@ -254,20 +254,20 @@ GenerateShinySwarm:
 	jr nz, .skipshineswarm
 	jr .rollshiny
 
-.croagunk
+.kotora
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld a, l
-	sub LOW(CROAGUNK)
-	if HIGH(CROAGUNK) == 0
+	sub LOW(KOTORA)
+	if HIGH(KOTORA) == 0
 		or h
 	else
 		jr nz, .skipshineswarm
-		if HIGH(CROAGUNK)
+		if HIGH(KOTORA)
 			dec h
 		else
 			ld a, h
-			cp HIGH(CROAGUNK)
+			cp HIGH(KOTORA)
 		endc
 	endc
 	jr nz, .skipshineswarm

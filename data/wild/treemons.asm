@@ -93,7 +93,7 @@ TreeMonSet_Lake:
 	dbbw 15, 10, VENONAT
 	dbbw 15, 10, PINECO
 	dbbw 10, 10, EXEGGCUTE
-	dbbw  5, 10, MUNCHLAX
+	dbbw  5, 10, SWABLU
 	dbbw  5, 10, MUNCHLAX
 	db -1
 ; rare
@@ -101,7 +101,7 @@ TreeMonSet_Lake:
 	dbbw 15, 10, PINECO
 	dbbw 15, 10, PINECO
 	dbbw 10, 10, EXEGGCUTE
-	dbbw  5, 10, MUNCHLAX
+	dbbw  5, 10, SWABLU
 	dbbw  5, 10, MUNCHLAX
 	db -1
 

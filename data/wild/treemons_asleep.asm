@@ -13,6 +13,7 @@ AsleepTreeMonsNite:
 	dw LEDYBA
 	dw AIPOM
 	dw MUNCHLAX
+	dw SWABLU
 	dw -1 ; end
 
 AsleepTreeMonsDay:

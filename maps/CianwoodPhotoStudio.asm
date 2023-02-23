@@ -27,7 +27,6 @@ EcruteakMoveTutorScript:
 .FirePunch:
 	loadmoveindex FIRE_PUNCH
 	writetext TeachMoveText
-	waitbutton
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
@@ -35,7 +34,6 @@ EcruteakMoveTutorScript:
 .Thunderpunch:
 	loadmoveindex THUNDERPUNCH
 	writetext TeachMoveText
-	waitbutton
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
@@ -43,7 +41,6 @@ EcruteakMoveTutorScript:
 .IcePunch:
 	loadmoveindex ICE_PUNCH
 	writetext TeachMoveText
-	waitbutton
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
@@ -51,7 +48,6 @@ EcruteakMoveTutorScript:
 .PixiePunch:
 	loadmoveindex PIXIE_PUNCH
 	writetext TeachMoveText
-	waitbutton
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible

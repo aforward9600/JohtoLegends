@@ -322,9 +322,9 @@ MonMenuIconPals:
 	icon_pals GRAY,   GRAY   ; MISSINGO.
 	icon_pals BLUE,   PINK   ; SWABLU
 	icon_pals BLUE,   PINK   ; ALTARIA
-	icon_pals RED,    BLUE   ; KOTORA
-	icon_pals RED,    BLUE   ; RAITORA
-	icon_pals RED,    BLUE   ; GOROTORA
+	icon_pals RED,    BROWN  ; KOTORA
+	icon_pals RED,    BROWN  ; RAITORA
+	icon_pals RED,    BROWN  ; GOROTORA
 	icon_pals GREEN,  BLUE   ; LOTAD
 	icon_pals GREEN,  BLUE   ; LOMBRE
 	icon_pals GREEN,  BLUE   ; LUDICOLO
