@@ -13,25 +13,26 @@ ShowLinkBattleParticipants:
 	ret
 
 FindFirstAliveMonAndStartBattle:
-;	call GetMapEnvironment
-;	cp CAVE
-;	jr z, .nightpal
-;	cp INDOOR
-;	jr z, .daypal
-;	ld a, [wTimeOfDay]
-;	cp NITE_F
-;	jr z, .nightpal
+	call GetMapEnvironment
+	cp CAVE
+	jr z, .nightpal
+	cp INDOOR
+	jr z, .daypal
 
-;.daypal
-;	ld a, 0
-;	ld [wBattleTimeOfDay], a
-;	jr .timeofdaypalset
+	ld a, [wTimeOfDay]
+	cp NITE_F
+	jr z, .nightpal
 
-;.nightpal
-;	ld a, 1
-;	ld [wBattleTimeOfDay], a
+.daypal
+	ld a, 0
+	ld [wBattleTimeOfDay], a
+	jr .timeofdaypalset
 
-;.timeofdaypalset
+.nightpal
+	ld a, 1
+	ld [wBattleTimeOfDay], a
+
+.timeofdaypalset
 	xor a
 	ldh [hMapAnims], a
 	call DelayFrame

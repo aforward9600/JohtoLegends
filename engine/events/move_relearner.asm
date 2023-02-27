@@ -395,9 +395,9 @@ MoveRelearner_InitializeScreenLayout:
 	jp PlaceString
 
 .acc_string
-	db "ACC/@"
+	db "Acc/@"
 .atk_string
-	db "ATK/@"
+	db "Atk/@"
 
 MoveRelearner_DisplayMoveData:
 	hlcoord 2, 2

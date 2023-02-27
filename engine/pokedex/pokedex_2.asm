@@ -111,6 +111,7 @@ DisplayDexEntry:
 	call GetPokemonNumber
 	hlcoord 4, 8
 	call PlaceString
+
 	pop bc
 ; Check to see if we caught it.  Get out of here if we haven't.
 	ld a, [wTempSpecies]

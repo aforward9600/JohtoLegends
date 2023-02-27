@@ -155,10 +155,9 @@ GetPokemonNumber::
 	ldh a, [hROMBank]
 	push af
 	push hl
-	ld a, BANK(PokemonNames)
+	ld a, BANK(PokemonNumbers)
 	rst Bankswitch
 
-; Each name is ten characters
 	ld a, [wNamedObjectIndexBuffer]
 	call GetPokemonIndexFromID
 	ld e, l
@@ -166,10 +165,9 @@ GetPokemonNumber::
 	add hl, hl ; hl = hl * 4
 	add hl, hl ; hl = hl * 4
 	add hl, de ; hl = (hl*4) + de
-	ld de, PokemonNumbers
+	ld de, PokemonNumbers - 10
 	add hl, de
 
-; Terminator
 	ld de, wStringBuffer1
 	push de
 	ld bc, 4

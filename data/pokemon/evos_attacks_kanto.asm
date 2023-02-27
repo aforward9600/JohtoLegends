@@ -2273,6 +2273,7 @@ ExeggutorEvosAttacks:
 	dbw 1, BARRAGE
 	dbw 1, HYPNOSIS
 	dbw 1, CONFUSION
+	dbw 1, EXTRASENSORY
 	dbw 17, PSYBEAM
 	dbw 27, EGG_BOMB
 	dbw 37, WOOD_HAMMER
