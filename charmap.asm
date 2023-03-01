@@ -123,6 +123,21 @@
 	charmap "└",         $be
 	charmap "┘",         $bf
 
+	charmap "à",         $c0
+	charmap "è",         $c1
+	charmap "ù",         $c2
+	charmap "ç",         $c3
+	charmap "ä",         $c4
+	charmap "æ",         $c5
+	charmap "ü",         $c6
+	charmap "ë",         $c7
+	charmap "ï",         $c8
+	charmap "â",         $c9
+	charmap "ô",         $ca
+	charmap "û",         $cb
+	charmap "ê",         $cc
+	charmap "î",         $cd
+
 	charmap "′",         $ce
 	charmap "″",         $cf
 
@@ -136,7 +151,7 @@
 
 	charmap "■",         $d7
 	charmap "▲",         $d8
-	charmap "☎",         $d9
+	charmap "É",         $d9
 	charmap "<BOLD_V>",  $da
 	charmap "<BOLD_S>",  $db
 	charmap "<COLON>",   $dc ; colon with tinier dots than ":"
