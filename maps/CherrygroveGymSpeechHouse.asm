@@ -3,8 +3,8 @@
 
 CherrygroveGymSpeechHouse_MapScripts:
 	db 2 ; scene scripts
-	scene_script .CynthiaMeetsYou ; SCENE_CHERRYGROVECITYHOUSE_NOTHING
-	scene_script .DummyScene1 ; SCENE_CHERRYGROVECITYHOUSE_MEET_CYNTHIA
+	scene_script .DummyScene1 ; SCENE_CHERRYGROVECITYHOUSE_NOTHING
+	scene_script .CynthiaMeetsYou ; SCENE_CHERRYGROVECITYHOUSE_MEET_CYNTHIA
 
 	db 0 ; callbacks
 
@@ -128,6 +128,9 @@ CherrygroveGymSpeechHouseCynthiaScript:
 	closetext
 	end
 
+CherrygroveTelevision:
+	jumpstd televisionscript
+
 CherrygroveCynthiaMovement:
 	big_step DOWN
 	big_step DOWN
@@ -223,9 +226,10 @@ CherrygroveGymSpeechHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf
+	bg_event  2,  1, BGEVENT_READ, CherrygroveTelevision
 
 	db 1 ; object events
 	object_event  2,  4, SPRITE_CYNTHIA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveGymSpeechHouseCynthiaScript, EVENT_CHERRYGROVE_CYNTHIA

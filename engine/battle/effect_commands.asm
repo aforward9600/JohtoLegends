@@ -1571,6 +1571,8 @@ BattleCommand_CheckHit:
 	call GetBattleVar
 	cp EFFECT_ALWAYS_HIT
 	ret z
+	cp EFFECT_VITAL_THROW
+	ret z
 
 	call .StatModifiers
 

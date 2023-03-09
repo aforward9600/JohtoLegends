@@ -152,7 +152,7 @@
 	charmap "■",         $d7
 	charmap "▲",         $d8
 	charmap "É",         $d9
-	charmap "<BOLD_V>",  $da
+	charmap "œ",         $da
 	charmap "<BOLD_S>",  $db
 	charmap "<COLON>",   $dc ; colon with tinier dots than ":"
 	charmap "“",         $dd ; opening quote

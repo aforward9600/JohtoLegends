@@ -460,8 +460,8 @@ GuillotineDescription:
 	next "pincer attack.@"
 
 RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"

@@ -147,7 +147,7 @@ MahoganyGymPryceScript:
 	waitbutton
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
-	loadtrainer PRYCE_2, PRYCE6
+	loadtrainer PRYCE_3, PRYCE6
 	startbattle
 	reloadmapafterbattle
 	sjump AfterPryceRematch

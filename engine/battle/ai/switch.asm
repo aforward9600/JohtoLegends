@@ -190,7 +190,7 @@ CheckAbleToSwitch:
 	jr nz, .not_2
 
 	ld a, [wEnemyAISwitchScore]
-	add $20 ; maximum chance
+	add $30 ; maximum chance
 	ld [wEnemySwitchMonParam], a
 	ret
 

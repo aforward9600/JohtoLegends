@@ -181,6 +181,7 @@ HoOhTank:
 	applymovement HOOHLUGIAROOM_RIVAL3, Rival3LeavesHoOhRoomMovement
 	disappear HOOHLUGIAROOM_RIVAL3
 	setevent EVENT_GOT_LAPRAS_CALLC
+	setmapscene VICTORY_ROAD_GATE, SCENE_VICTORY_ROAD_GATE_GUARD
 	end
 
 LugiaTank:
@@ -243,6 +244,7 @@ LugiaTank:
 	applymovement HOOHLUGIAROOM_RIVAL2, Rival2LeavesHoOhRoomMovement
 	disappear HOOHLUGIAROOM_RIVAL2
 	setevent EVENT_GOT_LAPRAS_CALLC
+	setmapscene VICTORY_ROAD_GATE, SCENE_VICTORY_ROAD_GATE_GUARD
 	end
 
 DontBattle:

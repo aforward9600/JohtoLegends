@@ -127,6 +127,7 @@ RuinsOfAlphCynthiaScript:
 	pause 15
 	setevent EVENT_RUINS_OF_ALPH_CYNTHIA
 	clearevent EVENT_CHERRYGROVE_CYNTHIA
+	setmapscene CHERRYGROVE_GYM_SPEECH_HOUSE, SCENE_CHERRYGROVECITYHOUSE_MEET_CYNTHIA
 	special FadeInQuickly
 	pause 15
 	special RestartMapMusic

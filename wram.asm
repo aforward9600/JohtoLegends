@@ -1745,7 +1745,9 @@ wApricorns::
 wKeepSevenBiasChance:: ; used in the slots to handle the favoring of 7 symbol streaks
 wSuicuneFrame::
 	db
-	ds 2
+wTyranitarFrame::
+	db
+	ds 1
 wStartFlypoint:: db
 wEndFlypoint:: db
 

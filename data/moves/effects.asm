@@ -2480,15 +2480,15 @@ Hail:
 BrickBreak:
 	checkobedience
 	usedmovetext
-	breakscreens
 	doturn
-	checkhit
-	moveanim
+	breakscreens
 	critical
 	damagestats
 	damagecalc
 	stab
+	checkhit
 	damagevariation
+	moveanim
 	failuretext
 	applydamage
 	criticaltext
