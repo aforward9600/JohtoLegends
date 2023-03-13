@@ -321,3 +321,4 @@ AnimationPointers:
 	dw UrsalunaAnimation
 	dw DudunsparsAnimation
 	dw AnnihilapeAnimation
+	dw NownAnimation

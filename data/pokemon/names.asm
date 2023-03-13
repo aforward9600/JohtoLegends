@@ -325,3 +325,4 @@ PokemonNames::
 	db "Ursaluna@@"
 	db "Dudunspars"
 	db "Annihilape"
+	db "Nown@@@@@@"

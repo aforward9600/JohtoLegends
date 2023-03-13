@@ -321,3 +321,4 @@ AnimationIdlePointers:
 	dw UrsalunaAnimationIdle
 	dw DudunsparsAnimationIdle
 	dw AnnihilapeAnimationIdle
+	dw NownAnimationIdle

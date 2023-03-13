@@ -321,3 +321,4 @@ BitmasksPointers:
 	dw UrsalunaBitmasks
 	dw DudunsparsBitmasks
 	dw AnnihilapeBitmasks
+	dw NownBitmasks

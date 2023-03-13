@@ -140,6 +140,7 @@
 	const SPRITE_SKIER
 	const SPRITE_GRAMPS_STANDING
 	const SPRITE_OFFICER_STANDING
+	const SPRITE_NOWN_OPEN
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $90

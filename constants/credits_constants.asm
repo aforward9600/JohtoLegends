@@ -10,7 +10,7 @@
 	const BIT_EXPANSION
 	const KOOLBOYMAN
 	const PRISM_TEAM
-	const SATOSHI_OOTA
+	const CYNDERQUILL
 	const SOUPPOTATO
 	const CHAOS_RUSH
 	const SCMIDNA

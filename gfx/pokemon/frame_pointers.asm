@@ -321,3 +321,4 @@ FramesPointers:
 	dba UrsalunaFrames
 	dba DudunsparsFrames
 	dba AnnihilapeFrames
+	dba NownFrames

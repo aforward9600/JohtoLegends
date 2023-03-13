@@ -10,7 +10,7 @@ CreditsStrings:
 	dw .BitExpansion
 	dw .Koolboyman
 	dw .PrismTeam
-	dw .SatoshiOota
+	dw .CynderQuill
 	dw .SoupPotato
 	dw .ChaosRush
 	dw .SCMidna
@@ -136,7 +136,7 @@ CreditsStrings:
 .BitExpansion:        db "  16-Bit Expansion@"        ; "ふじわら　もとふみ@"
 .Koolboyman:          db "     Koolboyman@"         ; "にしだ　あつこ@"
 .PrismTeam:           db "     Prism Team@"           ; "さいとう　むねお@"
-.SatoshiOota:         db "    SATOSHI OOTA@"          ; "おおた　さとし@"
+.CynderQuill:         db "     CynderQuill@"          ; "おおた　さとし@"
 .SoupPotato:          db "     SoupPotato@"         ; "よしかわ　れな@"
 .ChaosRush:           db "     Chaos Rush@"           ; "おくたに　じゅん@"
 .SCMidna:             db "    SCMidna & Mia@"        ; "よしだ　ひろのぶ@"

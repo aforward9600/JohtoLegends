@@ -318,7 +318,6 @@ INCLUDE "engine/pokegear/pokegear.asm"
 INCLUDE "engine/events/fish.asm"
 INCLUDE "engine/games/slot_machine.asm"
 INCLUDE "data/pokemon/previous_stages.asm"
-INCLUDE "engine/events/magnet_train.asm"
 
 
 SECTION "Phone Scripts 1", ROMX
@@ -686,6 +685,7 @@ INCLUDE "engine/events/field_moves.asm"
 SECTION "Mobile News Data", ROMX
 
 INCLUDE "mobile/news/news.asm"
+INCLUDE "engine/events/magnet_train.asm"
 
 
 SECTION "Crystal Events", ROMX

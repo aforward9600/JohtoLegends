@@ -150,6 +150,7 @@ ENDM
 	map_const LIGHTHOUSE_ELEVATOR,                          2,  2 ; 93
 	map_const BURNED_TOWER_2F,                             10,  9 ; 94
 	map_const TEAM_ROCKET_BASE_JAIL,                        5,  9 ; 95
+	map_const NOWN_ROOM,                                    4, 11 ; 96
 
 	newgroup                                                      ;  4
 

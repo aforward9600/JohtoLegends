@@ -93,6 +93,7 @@ CreditsScript:
 	db            SHADOWONE, 2
 	db              NUKKIIE, 3
 	db        HELIX_CHAMBER, 4
+	db          CYNDERQUILL, 5
 
 	db CREDITS_WAIT, 12
 

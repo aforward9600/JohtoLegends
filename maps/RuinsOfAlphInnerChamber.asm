@@ -8,7 +8,8 @@ RuinsOfAlphInnerChamber_MapScripts:
 	scene_script .DummyScene0 ; SCENE_RUINSOFALPHINNERCHAMBER_NOTHING
 	scene_script .UnownAppear ; SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .NownRoomDoor
 
 .DummyScene0:
 	end
@@ -26,6 +27,15 @@ RuinsOfAlphInnerChamber_MapScripts:
 	setevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS
 	clearevent EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER
 	end
+
+.NownRoomDoor:
+	checkevent EVENT_OPENED_NOWN_ROOM
+	iftrue .OpenWall
+	changeblock 6, 0, $36 ; wall
+	return
+
+.OpenWall:
+	return
 
 RuinsOfAlphInnerChamberFisherScript:
 	jumptextfaceplayer RuinsOfAlphInnerChamberFisherText
@@ -77,7 +87,7 @@ RuinsOfAlphInnerChamberStatueText:
 RuinsOfAlphInnerChamber_MapEvents:
 	db 0, 0 ; filler
 
-	db 9 ; warp events
+	db 11 ; warp events
 	warp_event 10, 13, RUINS_OF_ALPH_OUTSIDE, 5
 	warp_event  3, 15, RUINS_OF_ALPH_HO_OH_CHAMBER, 3
 	warp_event  4, 15, RUINS_OF_ALPH_HO_OH_CHAMBER, 4
@@ -87,6 +97,8 @@ RuinsOfAlphInnerChamber_MapEvents:
 	warp_event  4, 21, RUINS_OF_ALPH_OMANYTE_CHAMBER, 4
 	warp_event 15, 24, RUINS_OF_ALPH_AERODACTYL_CHAMBER, 3
 	warp_event 16, 24, RUINS_OF_ALPH_AERODACTYL_CHAMBER, 4
+	warp_event  6,  0, NOWN_ROOM, 2
+	warp_event  7,  0, NOWN_ROOM, 3
 
 	db 0 ; coord events
 

@@ -322,3 +322,4 @@ PokedexDataPointerTable:
 	dba UrsalunaPokedexEntry
 	dba DudunsparsPokdexEntry
 	dba AnnihilapePokedexEntry
+	dba NownPokedexEntry

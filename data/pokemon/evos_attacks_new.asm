@@ -21,6 +21,7 @@ EvosAttacksPointers3::
 	dw UrsalunaEvosAttacks
 	dw DudunsparsEvosAttacks
 	dw AnnihilapeEvosAttacks
+	dw NownEvosAttack
 
 BagonEvosAttacks:
 	dbbw EVOLVE_LEVEL, 25, SHELGON
@@ -407,4 +408,23 @@ AnnihilapeEvosAttacks:
 	dbw 48, HIHORSEPOWER
 	dbw 53, OUTRAGE
 	dbw 57, SUPERPOWER
+	db 0 ; no more level-up moves
+
+NownEvosAttack:
+	db 0 ; no more evolutions
+	dbw 1, CONFUSION
+	dbw 1, HIDDEN_POWER
+	dbw 1, LEER
+	dbw 1, LIGHT_SCREEN
+	dbw 1, REFLECT
+	dbw 35, DAZZLINGLEAM
+	dbw 40, MIRROR_COAT
+	dbw 45, EXTRASENSORY
+	dbw 50, RECOVER
+	dbw 55, PSYCHIC_M
+	dbw 60, AURA_SPHERE
+	dbw 65, HYPNOSIS
+	dbw 70, DREAM_EATER
+	dbw 75, COSMIC_POWER
+	dbw 80, HYPER_BEAM
 	db 0 ; no more level-up moves

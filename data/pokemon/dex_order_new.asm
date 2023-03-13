@@ -322,4 +322,5 @@ NewPokedexOrder:
 	dw MEWTWO
 	dw MEW
 	dw CELEBI
+	dw NOWN
 	dw MISSINGNO

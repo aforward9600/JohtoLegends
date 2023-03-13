@@ -327,3 +327,4 @@ PokemonCries::
 	mon_cry CRY_TEDDIURSA,   $640,  $0d8 ; URSALUNA
 	mon_cry CRY_DUNSPARCE,   $1c4,  $100 ; DUDUNSPARS
 	mon_cry CRY_NIDOQUEEN,   $0af,  $0c0 ; ANNIHILAPE
+	mon_cry CRY_HOOTHOOT,    $162,  $100 ; NOWN

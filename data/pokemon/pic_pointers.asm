@@ -657,3 +657,5 @@ PokemonPicPointers::
 	dba DudunsparsBackpic
 	dba AnnihilapeFrontpic
 	dba AnnihilapeBackpic
+	dba NownFrontpic
+	dba NownBackpic

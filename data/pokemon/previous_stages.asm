@@ -322,3 +322,4 @@ PreviousEvolutionStage::
 	dw URSARING
 	dw DUNSPARCE
 	dw PRIMEAPE
+	dw 0

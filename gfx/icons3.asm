@@ -74,6 +74,7 @@ Icons3:
 	dw UrsalunaIcon
 	dw DudunsparsIcon
 	dw AnnihilapeIcon
+	dw NownIcon
 
 SwinubIcon:       INCBIN "gfx/icons/swinub.2bpp"
 PiloswineIcon:    INCBIN "gfx/icons/piloswine.2bpp"
@@ -147,3 +148,4 @@ WyrdeerIcon:      INCBIN "gfx/icons/wyrdeer.2bpp"
 UrsalunaIcon:     INCBIN "gfx/icons/ursaluna.2bpp"
 DudunsparsIcon:   INCBIN "gfx/icons/dudunspars.2bpp"
 AnnihilapeIcon:   INCBIN "gfx/icons/annihilape.2bpp"
+NownIcon:         INCBIN "gfx/icons/nown.2bpp"

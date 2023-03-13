@@ -100,10 +100,28 @@ RuinsOfAlphResearchCenterScientist1Script:
 	end
 
 .GotAllUnown:
+	checkevent EVENT_OPENED_NOWN_ROOM
+	iftrue .AlreadyOpenedNownRoom
 	writetext RuinsOfAlphResearchCenterScientist1Text_GotAllUnown
 	waitbutton
 	closetext
+	pause 10
+	showemote EMOTE_SHOCK, RUINSOFALPHRESEARCHCENTER_SCIENTIST1, 15
+	pause 10
+	playsound SFX_STRENGTH
+	earthquake 80
+	opentext
+	writetext RuinsOfAlphEarthquakeText
+	waitbutton
+	closetext
 	clearevent EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
+	setevent EVENT_OPENED_NOWN_ROOM
+	end
+
+.AlreadyOpenedNownRoom:
+	writetext RuinsOfAlphResearchCenterScientist1Text_GotAllUnown
+	waitbutton
+	closetext
 	end
 
 RuinsOfAlphResearchCenterScientist2Script:
@@ -344,6 +362,16 @@ RuinsOfAlphResearchCenterScientist2Text_GotAllUnown:
 
 	para "The mystery"
 	line "deepens…"
+	done
+
+RuinsOfAlphEarthquakeText:
+	text "What was that?"
+
+	para "An earthquake?"
+
+	para "I hope the ruins"
+	line "weren't damaged"
+	cont "at all…"
 	done
 
 RuinsOfAlphResearchCenterComputerText:

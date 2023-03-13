@@ -520,3 +520,4 @@ SECTION "Map Scripts 28", ROMX
 INCLUDE "maps/CinnabarPokecenter1F.asm"
 INCLUDE "maps/Route19FuchsiaGate.asm"
 INCLUDE "maps/SeafoamGym.asm"
+INCLUDE "maps/NownRoom.asm"

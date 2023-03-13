@@ -144,3 +144,4 @@ OverworldSprites:
 	overworld_sprite SkierGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite GrampsStandingGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite OfficerStandingGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite NownOpenSpriteGFX, 12, STANDING_SPRITE, PAL_OW_SILVER

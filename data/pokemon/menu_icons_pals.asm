@@ -333,3 +333,4 @@ MonMenuIconPals:
 	icon_pals BROWN,  RED    ; URSALUNA
 	icon_pals BLUE,   PINK   ; DUDUNSPARS
 	icon_pals GRAY,   BLUE   ; ANNIHILAPE
+	icon_pals GRAY,   BLUE   ; NOWN

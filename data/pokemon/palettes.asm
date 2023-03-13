@@ -674,3 +674,5 @@ INCLUDE "gfx/pokemon/dudunspars/normal.pal"
 INCLUDE "gfx/pokemon/dudunspars/shiny.pal"
 INCLUDE "gfx/pokemon/annihilape/normal.pal"
 INCLUDE "gfx/pokemon/annihilape/shiny.pal"
+INCBIN  "gfx/pokemon/nown/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/nown/shiny.pal"

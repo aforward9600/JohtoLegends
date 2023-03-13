@@ -128,6 +128,8 @@ Lance Trainer Sprite base: MegamanOmega
 
 Armored Mewtwo sprites and icon: Rangi
 
+Nown Sprite and animation: CynderQuill
+
 Minisprites 1-251 and Gen 4:
 Chamber
 Solo993

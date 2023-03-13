@@ -322,4 +322,5 @@ OldPokedexOrder:
 	dw LUGIA
 	dw HO_OH
 	dw CELEBI
+	dw NOWN
 	dw MISSINGNO

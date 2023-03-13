@@ -342,6 +342,7 @@ JOHTO_POKEMON EQU const_value
 	const URSALUNA
 	const DUDUNSPARS
 	const ANNIHILAPE
+	const NOWN
 NUM_POKEMON EQU const_value + -1
 
 EGG EQU -3
