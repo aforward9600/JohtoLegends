@@ -6,8 +6,8 @@ TohjoFalls_MapScripts:
 
 	db 0 ; callbacks
 
-TohjoFallsMoonStone:
-	itemball MOON_STONE
+TohjoFallsLuckyEgg:
+	itemball LUCKY_EGG
 
 TohjoFalls_MapEvents:
 	db 0, 0 ; filler
@@ -21,4 +21,4 @@ TohjoFalls_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TohjoFallsMoonStone, EVENT_TOHJO_FALLS_MOON_STONE
+	object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TohjoFallsLuckyEgg, EVENT_TOHJO_FALLS_MOON_STONE

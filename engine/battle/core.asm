@@ -2583,6 +2583,10 @@ PlayVictoryMusic:
 	ld de, MUSIC_GYM_VICTORY
 	call IsGymLeader
 	jr c, .play_music
+
+	ld de, MUSIC_GYM_VICTORY
+	call IsVillainBoss
+	jr c, .play_music
 	ld de, MUSIC_TRAINER_VICTORY
 
 .play_music
@@ -6416,7 +6420,12 @@ LoadEnemyMon:
 
 .Happiness:
 ; Set happiness
+	ld a, [wBattleMode]
+	dec a
+	ld a, $ff
+	jr nz, .load_happiness
 	ld a, BASE_HAPPINESS
+.load_happiness
 	ld [wEnemyMonHappiness], a
 ; Set level
 	ld a, [wCurPartyLevel]

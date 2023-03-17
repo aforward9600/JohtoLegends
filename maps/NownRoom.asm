@@ -44,11 +44,9 @@ AStrangeStatueText:
 NownRoom_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
-	warp_event  2, 21, RUINS_OF_ALPH_INNER_CHAMBER, 10
-	warp_event  3, 21, RUINS_OF_ALPH_INNER_CHAMBER, 10
-	warp_event  4, 21, RUINS_OF_ALPH_INNER_CHAMBER, 11
-	warp_event  5, 21, RUINS_OF_ALPH_INNER_CHAMBER, 11
+	db 2 ; warp events
+	warp_event  3, 21, NOWN_PUZZLE_ROOM, 3
+	warp_event  4, 21, NOWN_PUZZLE_ROOM, 3
 
 	db 0 ; coord events
 

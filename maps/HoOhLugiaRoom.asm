@@ -439,8 +439,7 @@ MyHypothesisWasWrongText:
 	cont "more work."
 
 	para "Perhaps it has"
-	line "to do with"
-	cont "trust?"
+	line "to do with trust?"
 	done
 
 JustSawRaikouText:

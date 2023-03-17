@@ -166,7 +166,7 @@ CHRIS EQU __enum__
 	const ROY
 	const BORIS
 	const BOB
-	const JOSE1
+	const CARL
 	const PEDRO
 	const JOSE2
 	const PERRY
@@ -202,8 +202,8 @@ CHRIS EQU __enum__
 	const ROBERT1
 	const JAKE
 	const GAVEN3
-	const BLAKE
-	const BRIAN
+	const COREY1
+	const ALM
 	const ERICK
 	const ANDY
 	const TYLER
@@ -224,7 +224,7 @@ CHRIS EQU __enum__
 	const JOYCE
 	const BETH1
 	const REENA1
-	const MEGAN
+	const MARIA
 	const BETH2
 	const CAROL
 	const QUINN
@@ -553,7 +553,7 @@ CHRIS EQU __enum__
 	const MARK
 	const PHIL
 	const RICHARD
-	const GILBERT
+	const HOUDINI
 	const JARED
 	const RODNEY
 

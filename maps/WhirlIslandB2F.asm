@@ -23,12 +23,27 @@ WhirlIslandSageScript:
 	jumptextfaceplayer WhirlIslandSageText
 
 WhirlIslandSage2Script:
+	checkevent EVENT_CAUGHT_LUGIA
+	iftrue .SafeWithYou
+	checkevent EVENT_RIVAL_GIVES_UP_LUGIA
+	iftrue .ItsWaitingForYou
+	checkevent EVENT_CAUGHT_HO_OH
+	iftrue .SafeWithYourFriend
 	checkevent EVENT_CLEARED_TIN_TOWER
 	iftrue .ICouldntDoAnything
 	jumptextfaceplayer WhirlIslandSage2Text
 
 .ICouldntDoAnything:
 	jumptextfaceplayer ICouldntDoAnythingText
+
+.SafeWithYou:
+	jumptextfaceplayer SafeWithYouText
+
+.SafeWithYourFriend:
+	jumptextfaceplayer SafeWithYourFriendText
+
+.ItsWaitingForYou:
+	jumptextfaceplayer ItsWaitingForYouText
 
 WhirlIslandSageText:
 	text "I'm sorry, but you"
@@ -47,6 +62,28 @@ ICouldntDoAnythingText:
 	para "I couldn't do"
 	line "anything to stop"
 	cont "them…"
+	done
+
+SafeWithYouText:
+	text "Lugia is safe with"
+	line "you."
+
+	para "I can feel it."
+	done
+
+SafeWithYourFriendText:
+	text "Lugia is safe with"
+	line "your friend."
+
+	para "I can feel it."
+	done
+
+ItsWaitingForYouText:
+	text "Lugia is waiting"
+	line "for you."
+
+	para "Don't disappoint"
+	line "it."
 	done
 
 WhirlIslandB2F_MapEvents:

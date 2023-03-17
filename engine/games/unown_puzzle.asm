@@ -827,6 +827,7 @@ LoadUnownPuzzlePiecesGFX:
 	dw OmanytePuzzleLZ
 	dw AerodactylPuzzleLZ
 	dw HoOhPuzzleLZ
+	dw NownPuzzleLZ
 
 UnownPuzzleCursorGFX:
 INCBIN "gfx/unown_puzzle/cursor.2bpp"
@@ -845,3 +846,6 @@ INCBIN "gfx/unown_puzzle/kabuto.2bpp.lz"
 
 OmanytePuzzleLZ:
 INCBIN "gfx/unown_puzzle/omanyte.2bpp.lz"
+
+NownPuzzleLZ:
+	INCBIN "gfx/unown_puzzle/nown.2bpp.lz"

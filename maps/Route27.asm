@@ -14,21 +14,13 @@ Route27_MapScripts:
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	db 0 ; callbacks
 
 .DummyScene0:
 	end
 
 .DummyScene1:
 	end
-
-.FlyPoint:
-	checkevent EVENT_REACHED_ROUTE_23
-	iftrue .NoClearFlag
-	clearflag ENGINE_FLYPOINT_INDIGO_PLATEAU
-.NoClearFlag:
-	return
 
 FirstStepIntoKantoLeftScene:
 	turnobject ROUTE27_FISHER, LEFT
@@ -54,46 +46,46 @@ FirstStepIntoKantoScene_Continue:
 Route27FisherScript:
 	jumptextfaceplayer Route27FisherText
 
-TrainerPsychicGilbert:
-	trainer PSYCHIC_T, GILBERT, EVENT_BEAT_PSYCHIC_GILBERT, PsychicGilbertSeenText, PsychicGilbertBeatenText, 0, .Script
+TrainerPsychicHoudini:
+	trainer PSYCHIC_T, HOUDINI, EVENT_BEAT_PSYCHIC_HOUDINI, PsychicHoudiniSeenText, PsychicHoudiniBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PsychicGilbertAfterBattleText
+	writetext PsychicHoudiniAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerBirdKeeperJose2:
-	trainer BIRD_KEEPER, JOSE2, EVENT_BEAT_BIRD_KEEPER_JOSE2, BirdKeeperJose2SeenText, BirdKeeperJose2BeatenText, 0, .Script
+TrainerBirdKeeperCarl:
+	trainer BIRD_KEEPER, CARL, EVENT_BEAT_BIRD_KEEPER_CARL, BirdKeeperCarlSeenText, BirdKeeperCarlBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperJose2AfterBattleText
+	writetext BirdKeeperCarlAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerCooltrainermBlake:
-	trainer COOLTRAINERM, BLAKE, EVENT_BEAT_COOLTRAINERM_BLAKE, CooltrainermBlakeSeenText, CooltrainermBlakeBeatenText, 0, .Script
+TrainerCooltrainermCorey:
+	trainer COOLTRAINERM, COREY1, EVENT_BEAT_COOLTRAINERM_COREY, CooltrainermCoreySeenText, CooltrainermCoreyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainermBlakeAfterBattleText
+	writetext CooltrainermCoreyAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerCooltrainermBrian:
-	trainer COOLTRAINERM, BRIAN, EVENT_BEAT_COOLTRAINERM_BRIAN, CooltrainermBrianSeenText, CooltrainermBrianBeatenText, 0, .Script
+TrainerCooltrainermAlm:
+	trainer COOLTRAINERM, ALM, EVENT_BEAT_COOLTRAINERM_ALM, CooltrainermAlmSeenText, CooltrainermAlmBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainermBrianAfterBattleText
+	writetext CooltrainermAlmAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -109,13 +101,13 @@ TrainerCooltrainerfReena:
 	closetext
 	end
 
-TrainerCooltrainerfMegan:
-	trainer COOLTRAINERF, MEGAN, EVENT_BEAT_COOLTRAINERF_MEGAN, CooltrainerfMeganSeenText, CooltrainerfMeganBeatenText, 0, .Script
+TrainerCooltrainerfMaria:
+	trainer COOLTRAINERF, MARIA, EVENT_BEAT_COOLTRAINERF_MARIA, CooltrainerfMariaSeenText, CooltrainerfMariaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerfMeganAfterBattleText
+	writetext CooltrainerfMariaAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -124,7 +116,7 @@ TohjoFallsSign:
 	jumptext TohjoFallsSignText
 
 Route27TMSolarbeam:
-	itemball TM_SOLARBEAM
+	itemball MAX_REPEL
 
 Route27RareCandy:
 	itemball RARE_CANDY
@@ -166,132 +158,116 @@ Route27FisherText:
 	cont "stalemate."
 	done
 
-CooltrainermBlakeSeenText:
-	text "You look pretty"
-	line "strong."
-	cont "Let me battle you!"
+CooltrainermCoreySeenText:
+	text "You got past that"
+	line "whirlpool?"
 	done
 
-CooltrainermBlakeBeatenText:
+CooltrainermCoreyBeatenText:
 	text "Yow!"
 	done
 
-CooltrainermBlakeAfterBattleText:
-	text "If you prevail on"
-	line "this harsh trek,"
+CooltrainermCoreyAfterBattleText:
+	text "Lapras can't get"
+	line "rid of whirlpools"
+	cont "without a certain"
+	cont "call."
 
-	para "the truth will be"
-	line "revealed!"
-
-	para "Heh, sorry, I just"
-	line "wanted to say"
-	cont "something cool."
+	para "Isn't that weird?"
 	done
 
-CooltrainermBrianSeenText:
-	text "Hm? You're good,"
-	line "aren't you?"
+CooltrainermAlmSeenText:
+	text "Hold it!"
+
+	para "I'm gonna be"
+	line "the new champion!"
 	done
 
-CooltrainermBrianBeatenText:
-	text "Just as I thought!"
+CooltrainermAlmBeatenText:
+	text "Looks like I'm not…"
 	done
 
-CooltrainermBrianAfterBattleText:
-	text "A good trainer can"
-	line "recognize other"
-	cont "good trainers."
+CooltrainermAlmAfterBattleText:
+	text "The old Champion"
+	line "vacated not long"
+	cont "after the Feds"
+	cont "took over Kanto."
+
+	para "Wonder what"
+	line "happened to him?"
 	done
 
 CooltrainerfReenaSeenText:
-	text "You shouldn't"
-	line "underestimate the"
+	text "This Route is one"
+	line "of the last"
+	cont "challenges before"
+	cont "the League."
 
-	para "wild #MON in"
-	line "these parts."
+	para "We're all pretty"
+	line "tough!"
 	done
 
 CooltrainerfReenaBeatenText:
-	text "Oh! You're much"
-	line "too strong!"
+	text "You're tough, too!"
 	done
 
 CooltrainerfReenaAfterBattleText:
-	text "You're just a kid,"
-	line "but you're not to"
-
-	para "be underestimated"
-	line "either."
+	text "I think you'll do"
+	line "just fine!"
 	done
 
-CooltrainerfMeganSeenText:
-	text "It's rare to see"
-	line "anyone come here."
-
-	para "Are you training"
-	line "on your own?"
+CooltrainerfMariaSeenText:
+	text "I'll see if you're"
+	line "ready for the"
+	cont "League!"
 	done
 
-CooltrainerfMeganBeatenText:
-	text "Oh! You're really"
-	line "strong!"
+CooltrainerfMariaBeatenText:
+	text "I'd say you are!"
 	done
 
-CooltrainerfMeganAfterBattleText:
-	text "I'm checking out"
-	line "pre- and post-"
-	cont "evolution #MON."
+CooltrainerfMariaAfterBattleText:
+	text "Looks like I'm not"
+	line "ready yet."
 
-	para "Evolution really"
-	line "does make #MON"
-	cont "stronger."
-
-	para "But evolved forms"
-	line "also learn moves"
-	cont "later on."
+	para "Soon I will be!"
 	done
 
-PsychicGilbertSeenText:
-	text "Don't say a thing!"
+PsychicHoudiniSeenText:
+	text "My disappearing"
+	line "act will mystify"
+	cont "you!"
 
-	para "Let me guess what"
-	line "you're thinking."
-
-	para "Mmmmmmm…"
-
-	para "I got it! You're"
-	line "on the #MON"
-	cont "LEAGUE challenge!"
+	para "Behold!!"
 	done
 
-PsychicGilbertBeatenText:
-	text "You're too much!"
+PsychicHoudiniBeatenText:
+	text "My #mon"
+	line "disappeared!"
 	done
 
-PsychicGilbertAfterBattleText:
-	text "With your skills,"
-	line "you'll do well at"
-	cont "the LEAGUE."
-
-	para "That's what my"
-	line "premonition says."
+PsychicHoudiniAfterBattleText:
+	text "I wish my battling"
+	line "skills were as"
+	cont "good as my"
+	cont "illusion skills."
 	done
 
-BirdKeeperJose2SeenText:
-	text "Tweet! Tweet!"
-	line "Tetweet!"
+BirdKeeperCarlSeenText:
+	text "My birds and I"
+	line "will make it to"
+	cont "the #mon League"
+	cont "and win!"
 	done
 
-BirdKeeperJose2BeatenText:
-	text "Tweet!"
+BirdKeeperCarlBeatenText:
+	text "We didn't make it!"
 	done
 
-BirdKeeperJose2AfterBattleText:
-	text "BIRD KEEPERS like"
-	line "me mimic bird"
-
-	para "whistles to com-"
-	line "mand #MON."
+BirdKeeperCarlAfterBattleText:
+	text "Perhaps someday"
+	line "we will, but not"
+	cont "today."
 	done
 
 TohjoFallsSignText:
@@ -317,12 +293,12 @@ Route27_MapEvents:
 	bg_event 25,  7, BGEVENT_READ, TohjoFallsSign
 
 	db 9 ; object events
-	object_event 48,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermBlake, -1
-	object_event 58,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainermBrian, -1
-	object_event 72, 10, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainerfReena, -1
-	object_event 37,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfMegan, -1
-	object_event 65,  7, SPRITE_PSYCHIC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicGilbert, -1
-	object_event 58, 13, SPRITE_POKEMANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperJose2, -1
+	object_event 58, 13, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermCorey, -1
+	object_event 62,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainermAlm, -1
+	object_event 78, 10, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainerfReena, -1
+	object_event 37,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfMaria, -1
+	object_event 73,  7, SPRITE_PSYCHIC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 3, TrainerPsychicHoudini, -1
+	object_event 51,  5, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperCarl, -1
 	object_event 60, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route27TMSolarbeam, EVENT_ROUTE_27_TM_SOLARBEAM
 	object_event 53, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route27RareCandy, EVENT_ROUTE_27_RARE_CANDY
 	object_event 21, 10, SPRITE_POKEMANIAC, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route27FisherScript, -1

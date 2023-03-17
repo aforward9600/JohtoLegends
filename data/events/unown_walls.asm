@@ -30,6 +30,22 @@ UnownWalls:
 ; UNOWNWORDS_HO_OH
 	; db      $0e, $2c, $64, $2c, $0e, -1
 	unownwall "H", "O", "-", "O", "H"
+; UNOWNWORDS_DO_NOT
+	unownwall "D", "O", "-", "N", "O", "T"
+; UNOWNWORDS_FINISH
+	unownwall "F", "I", "N", "I", "S", "H"
+; UNOWNWORDS_PUZZLE
+	unownwall "P", "U", "Z", "Z", "L", "E"
+; UNOWNWORDS_HORROR
+	unownwall "H", "O", "R", "R", "O", "R"
+; UNOWNWORDS_WITHIN
+	unownwall "W", "I", "T", "H", "I", "N"
+; UNOWNWORDS_GATHER
+	unownwall "G", "A", "T", "H", "E", "R"
+; UNOWNWORDS_EVERY
+	unownwall "E", "V", "E", "R", "Y"
+; UNOWNWORDS_UNOWN
+	unownwall "U", "N", "O", "W", "N"
 
 MenuHeaders_UnownWalls:
 ; UNOWNWORDS_ESCAPE
@@ -42,5 +58,29 @@ MenuHeaders_UnownWalls:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 4, 4, 15, 9
 ; UNOWNWORDS_HO_OH
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 4, 4, 15, 9
+; UNOWNWORDS_DO_NOT
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 3, 4, 16, 9
+; UNOWNWORDS_FINISH
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 3, 4, 16, 9
+; UNOWNWORDS_PUZZLE
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 3, 4, 16, 9
+; UNOWNWORDS_HORROR
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 3, 4, 16, 9
+; UNOWNWORDS_WITHIN
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 3, 4, 16, 9
+; UNOWNWORDS_GATHER
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 3, 4, 16, 9
+; UNOWNWORDS_EVERY
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 4, 4, 15, 9
+; UNOWNWORDS_UNOWN
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 4, 4, 15, 9

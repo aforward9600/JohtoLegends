@@ -100,7 +100,7 @@ TuscanyScript:
 .MetTuscany:
 	writetext TuscanyGivesGiftText
 	buttonsound
-	verbosegiveitem PINK_BOW
+	verbosegiveitem POLKADOT_BOW
 	iffalse TuscanyDoneScript
 	setevent EVENT_GOT_PINK_BOW_FROM_TUSCANY
 	writetext TuscanyGaveGiftText
@@ -254,7 +254,7 @@ MeetTuscanyText:
 
 TuscanyGivesGiftText:
 	text "Here, take this"
-	line "Pink Bow!"
+	line "Polkadot Bow!"
 	done
 
 TuscanyGaveGiftText:
@@ -263,7 +263,7 @@ TuscanyGaveGiftText:
 	cont "most adorable?"
 
 	para "It strengthens"
-	line "Normal-type moves."
+	line "Fairy-type moves."
 
 	para "I am certain it"
 	line "will be of use."

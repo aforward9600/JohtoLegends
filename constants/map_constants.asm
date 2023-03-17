@@ -151,6 +151,7 @@ ENDM
 	map_const BURNED_TOWER_2F,                             10,  9 ; 94
 	map_const TEAM_ROCKET_BASE_JAIL,                        5,  9 ; 95
 	map_const NOWN_ROOM,                                    4, 11 ; 96
+	map_const NOWN_PUZZLE_ROOM,                             4,  5 ; 97
 
 	newgroup                                                      ;  4
 

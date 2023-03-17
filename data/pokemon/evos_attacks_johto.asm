@@ -1969,6 +1969,9 @@ ShuckleEvosAttacks:
 
 HeracrossEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, NIGHT_SLASH
+	dbw 1, FURY_CUTTER
+	dbw 1, TACKLE
 	dbw 1, LEER
 	dbw 1, HORN_ATTACK
 	dbw 7, ENDURE

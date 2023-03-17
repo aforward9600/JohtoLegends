@@ -280,6 +280,7 @@ NUM_FRUIT_TREES EQU const_value + -1
 	const UNOWNPUZZLE_OMANYTE    ; 1
 	const UNOWNPUZZLE_AERODACTYL ; 2
 	const UNOWNPUZZLE_HO_OH      ; 3
+	const UNOWNPUZZLE_NOWN       ; 4
 NUM_UNOWN_PUZZLES EQU const_value
 
 ; DisplayUnownWords setval arguments
@@ -289,6 +290,14 @@ NUM_UNOWN_PUZZLES EQU const_value
 	const UNOWNWORDS_LIGHT  ; 1
 	const UNOWNWORDS_WATER  ; 2
 	const UNOWNWORDS_HO_OH  ; 3
+	const UNOWNWORDS_DO_NOT
+	const UNOWNWORDS_FINISH
+	const UNOWNWORDS_PUZZLE
+	const UNOWNWORDS_HORROR
+	const UNOWNWORDS_WITHIN
+	const UNOWNWORDS_GATHER
+	const UNOWNWORDS_EVERY
+	const UNOWNWORDS_UNOWN
 
 ; MoveTutor setval arguments
 	const_def 1
