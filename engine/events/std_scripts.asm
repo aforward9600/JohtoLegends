@@ -487,7 +487,6 @@ BugContestResults_CopyContestantsToResults:
 	end
 
 InitializeEventsScript:
-	setevent EVENT_EARLS_ACADEMY_EARL
 	setevent EVENT_GOLDENROD_TOWER_TAKEOVER
 	setevent EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
 	setevent EVENT_RADIO_TOWER_CIVILIANS_AFTER
@@ -662,6 +661,9 @@ InitializeEventsScript:
 	setevent EVENT_CHERRYGROVE_CYNTHIA
 	setevent EVENT_ROUTE_47_SUICUNE
 	setevent EVENT_BURNED_TOWER_B1F_ENTEI
+	setevent EVENT_VICTORY_ROAD_GATE_RIVAL_2
+	setmapscene VICTORY_ROAD_GATE, SCENE_VICTORY_ROAD_GATE_GUARD
+	setevent EVENT_VICTORY_ROAD_GATE_GUARD_2
 	return
 
 AskNumber1MScript:

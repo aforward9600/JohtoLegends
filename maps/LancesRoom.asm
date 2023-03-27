@@ -30,6 +30,14 @@ LancesRoom_MapScripts:
 	iffalse .KeepExitClosed
 	changeblock 4, 0, $0b ; open door
 .KeepExitClosed:
+	checkevent EVENT_CURRENTLY_CHAMPION
+	iftrue .DisappearSprites
+	return
+
+.DisappearSprites:
+	disappear LANCESROOM_CYNTHIA
+	disappear LANCESROOM_RIVAL
+	disappear LANCESROOM_OAK
 	return
 
 .LancesDoorLocksBehindYou:
@@ -46,40 +54,119 @@ LancesRoom_MapScripts:
 
 Script_ApproachLanceFromLeft:
 	special FadeOutMusic
+	checkevent EVENT_CURRENTLY_CHAMPION
+	iftrue .MoveToChampionSpot1
 	applymovement PLAYER, MovementData_ApproachLanceFromLeft
 	sjump LancesRoomLanceScript
+
+.MoveToChampionSpot1:
+	applymovement PLAYER, MoveToChampionSpotFromLeft
+	sjump LancesRoomChallengerScript
 
 Script_ApproachLanceFromRight:
 	special FadeOutMusic
 	applymovement PLAYER, MovementData_ApproachLanceFromRight
+	checkevent EVENT_CURRENTLY_CHAMPION
+	iftrue .MoveToChampionSpot2
+	sjump LancesRoomLanceScript
+
+.MoveToChampionSpot2:
+	applymovement PLAYER, MoveToChampionSpotFromRight
+	sjump LancesRoomChallengerScript
+
 LancesRoomLanceScript:
 	turnobject LANCESROOM_RIVAL, LEFT
 	opentext
 	writetext LooksLikeImTheChampionText
 	waitbutton
 	closetext
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .ChampionFemale
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .DahliaDragoniteBattle
+	checkevent EVENT_GOT_SILVER_WING
+	iftrue .DahliaTyranitarHoOh
 	winlosstext ChampionWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL
 	loadtrainer CHAMPION_DAHLIA, CHAMP_DAHLIA_1
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	setevent EVENT_BEAT_CHAMPION_LANCE
-	sjump .AfterChampionBattle
+	sjump AfterChampionBattle
+
+.DahliaTyranitarHoOh
+	winlosstext ChampionWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL
+	loadtrainer CHAMPION_DAHLIA, CHAMP_DAHLIA_3
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump AfterChampionBattle
 
 .DahliaDragoniteBattle
+	checkevent EVENT_GOT_SILVER_WING
+	iftrue .DahliaDragoniteHoOh
 	winlosstext ChampionWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL
 	loadtrainer CHAMPION_DAHLIA, CHAMP_DAHLIA_2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	setevent EVENT_BEAT_CHAMPION_LANCE
-	sjump .AfterChampionBattle
+	sjump AfterChampionBattle
 
-.AfterChampionBattle
+.DahliaDragoniteHoOh
+	winlosstext ChampionWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL
+	loadtrainer CHAMPION_DAHLIA, CHAMP_DAHLIA_4
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump AfterChampionBattle
+
+.ChampionFemale
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
+	iftrue .DracoDragoniteBattle
+	checkevent EVENT_GOT_SILVER_WING
+	iftrue .DracoTyranitarHoOh
+	winlosstext ChampionWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL
+	loadtrainer CHAMPION_DRACO, CHAMP_DRACO_1
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump AfterChampionBattle
+
+.DracoTyranitarHoOh
+	winlosstext ChampionWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL
+	loadtrainer CHAMPION_DRACO, CHAMP_DRACO_3
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump AfterChampionBattle
+
+.DracoDragoniteBattle
+	checkevent EVENT_GOT_SILVER_WING
+	iftrue .DracoDragoniteHoOh
+	winlosstext ChampionWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL
+	loadtrainer CHAMPION_DRACO, CHAMP_DRACO_2
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump AfterChampionBattle
+
+.DracoDragoniteHoOh
+	winlosstext ChampionWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL
+	loadtrainer CHAMPION_DRACO, CHAMP_DRACO_4
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump AfterChampionBattle
+
+AfterChampionBattle:
+	setevent EVENT_BEAT_CHAMPION_LANCE
 	opentext
 	writetext ChampionBattleAfterText
 	waitbutton
@@ -89,19 +176,24 @@ LancesRoomLanceScript:
 	reloadmappart
 	closetext
 	setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
-	musicfadeout MUSIC_BEAUTY_ENCOUNTER, 16
+	musicfadeout MUSIC_PALLET_TOWN, 16
 	pause 30
 	showemote EMOTE_SHOCK, LANCESROOM_RIVAL, 15
 	turnobject LANCESROOM_RIVAL, DOWN
+	showemote EMOTE_SHOCK, LANCESROOM_RIVAL2, 15
+	turnobject LANCESROOM_RIVAL2, DOWN
 	pause 10
 	turnobject PLAYER, DOWN
 	moveobject LANCESROOM_OAK2, 4, 7
 	appear LANCESROOM_OAK2
 	applymovement LANCESROOM_OAK2, LancesRoomMovementData_OakCongratulatesYou
 	opentext
+	checkevent EVENT_CURRENTLY_CHAMPION
+	iftrue .OakCongrats
 	writetext OakCongratulatesYouText
 	waitbutton
 	closetext
+.ConveneOak:
 	turnobject LANCESROOM_OAK2, RIGHT
 	opentext
 	writetext OakCongratulatesRivalText
@@ -114,6 +206,7 @@ LancesRoomLanceScript:
 	applymovement LANCESROOM_OAK2, LancesRoomMovementData_OakPositionsSelfToGuidePlayerAway
 	turnobject PLAYER, UP
 	turnobject LANCESROOM_RIVAL, UP
+	turnobject LANCESROOM_RIVAL2, UP
 	opentext
 	writetext OakComeWithMeText
 	waitbutton
@@ -129,7 +222,256 @@ LancesRoomLanceScript:
 	special FadeOutPalettes
 	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
+	setevent EVENT_CURRENTLY_CHAMPION
+	setevent EVENT_CHAMPION_RIVAL
 	end
+
+.OakCongrats:
+	writetext OakCongratsText
+	waitbutton
+	closetext
+	sjump .ConveneOak
+
+LancesRoomChallengerScript:
+	checkevent EVENT_BEAT_CHERRYGROVE_CYNTHIA
+	iffalse .CynthiaCanAppear
+.CynthiaDoesNotAppear:
+	pause 30
+	appear LANCESROOM_RIVAL2
+	applymovement LANCESROOM_RIVAL2, LancesRoom_EnterMovement
+	turnobject LANCESROOM_RIVAL2, LEFT
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext ImBackPlayerText
+	waitbutton
+	closetext
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .ChallengerFemale
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
+	iftrue .DahliaDragoniteBattle
+	checkevent EVENT_GOT_SILVER_WING
+	iftrue .DahliaTyranitarHoOh
+	winlosstext ChallengerWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL2
+	loadtrainer CHALLENGER_DAHLIA, CHALLENGER_DAHLIA_1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	ifequal LOSE, .AfterChampionLoss
+	sjump .AfterChampionBattle
+
+.DahliaTyranitarHoOh
+	winlosstext ChallengerWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL2
+	loadtrainer CHALLENGER_DAHLIA, CHALLENGER_DAHLIA_3
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	ifequal LOSE, .AfterChampionLoss
+	sjump .AfterChampionBattle
+
+.DahliaDragoniteBattle
+	checkevent EVENT_GOT_SILVER_WING
+	iftrue .DahliaDragoniteHoOh
+	winlosstext ChallengerWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL2
+	loadtrainer CHALLENGER_DAHLIA, CHALLENGER_DAHLIA_2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	ifequal LOSE, .AfterChampionLoss
+	sjump .AfterChampionBattle
+
+.DahliaDragoniteHoOh
+	winlosstext ChallengerWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL2
+	loadtrainer CHALLENGER_DAHLIA, CHALLENGER_DAHLIA_4
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	ifequal LOSE, .AfterChampionLoss
+	sjump .AfterChampionBattle
+
+.ChallengerFemale
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
+	iftrue .DracoDragoniteBattle
+	checkevent EVENT_GOT_SILVER_WING
+	iftrue .DracoTyranitarHoOh
+	winlosstext ChallengerWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL2
+	loadtrainer CHALLENGER_DRACO, CHALLENGER_DRACO_1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	ifequal LOSE, .AfterChampionLoss
+	sjump .AfterChampionBattle
+
+.DracoTyranitarHoOh
+	winlosstext ChallengerWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL2
+	loadtrainer CHALLENGER_DRACO, CHALLENGER_DRACO_3
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	ifequal LOSE, .AfterChampionLoss
+	sjump .AfterChampionBattle
+
+.DracoDragoniteBattle
+	checkevent EVENT_GOT_SILVER_WING
+	iftrue .DracoDragoniteHoOh
+	winlosstext ChallengerWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL2
+	loadtrainer CHALLENGER_DRACO, CHALLENGER_DRACO_2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	ifequal LOSE, .AfterChampionLoss
+	sjump .AfterChampionBattle
+
+.DracoDragoniteHoOh
+	winlosstext ChallengerWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL2
+	loadtrainer CHALLENGER_DRACO, CHALLENGER_DRACO_4
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	ifequal LOSE, .AfterChampionLoss
+	sjump .AfterChampionBattle
+
+.AfterChampionBattle:
+	sjump AfterChampionBattle
+
+.CynthiaCanAppear:
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .CynthiaAppears
+	ifequal WEDNESDAY, .CynthiaAppears
+	sjump .CynthiaDoesNotAppear
+
+.AfterChampionLoss:
+	pause 15
+	opentext
+	writetext BetterLuckNextTimeText
+	waitbutton
+	closetext
+	special HealParty
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	pause 30
+	warp ROUTE_23, 9, 6
+	turnobject PLAYER, DOWN
+	blackoutmod ROUTE_23
+	clearevent EVENT_CURRENTLY_CHAMPION
+	clearevent EVENT_CHAMPION_RIVAL
+	setevent EVENT_CHALLENGER_RIVAL
+	end
+
+.CynthiaAppears:
+	pause 30
+	musicfadeout MUSIC_CYNTHIA_ENCOUNTER, 16
+	appear LANCESROOM_CYNTHIA2
+	applymovement LANCESROOM_CYNTHIA2, LancesRoom_EnterMovement
+	turnobject LANCESROOM_CYNTHIA2, LEFT
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext ChallengerCynthiaText
+	waitbutton
+	closetext
+	winlosstext CynthiaWinText, CynthiaLastMonText
+	setlasttalked LANCESROOM_CYNTHIA2
+	loadtrainer CHALLENGER_CYNTHIA, CHALLENGER_CYNTHIA_1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	ifequal LOSE, .AfterCynthiaLoss
+; Winning and Losing code not working for Cynthia
+.AfterCynthiaBattle:
+	opentext
+	writetext CynthiaBattleAfterText
+	waitbutton
+	closetext
+	playsound SFX_ENTER_DOOR
+	changeblock 4, 0, $0b ; open door
+	reloadmappart
+	closetext
+	setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
+	musicfadeout MUSIC_PALLET_TOWN, 16
+	pause 30
+	showemote EMOTE_SHOCK, LANCESROOM_CYNTHIA, 15
+	turnobject LANCESROOM_CYNTHIA, DOWN
+	showemote EMOTE_SHOCK, LANCESROOM_CYNTHIA2, 15
+	turnobject LANCESROOM_CYNTHIA2, DOWN
+	pause 10
+	turnobject PLAYER, DOWN
+	moveobject LANCESROOM_OAK2, 4, 7
+	appear LANCESROOM_OAK2
+	applymovement LANCESROOM_OAK2, LancesRoomMovementData_OakCongratulatesYou
+	opentext
+	writetext OakCongratsText
+	waitbutton
+	closetext
+	turnobject LANCESROOM_OAK2, RIGHT
+	opentext
+	writetext OakCongratulatesCynthiaText
+	waitbutton
+	closetext
+	opentext
+	writetext CynthiaThanksOakText
+	waitbutton
+	closetext
+	applymovement LANCESROOM_OAK2, LancesRoomMovementData_OakPositionsSelfToGuidePlayerAway
+	turnobject PLAYER, UP
+	turnobject LANCESROOM_CYNTHIA, UP
+	turnobject LANCESROOM_CYNTHIA2, UP
+	opentext
+	writetext OakComeWithMeText
+	waitbutton
+	closetext
+	follow LANCESROOM_OAK2, PLAYER
+	applymovement LANCESROOM_OAK2, LancesRoomMovementData_LanceLeadsPlayerToHallOfFame
+	stopfollow
+	playsound SFX_EXIT_BUILDING
+	disappear LANCESROOM_OAK2
+	applymovement PLAYER, LancesRoomMovementData_PlayerExits
+	playsound SFX_EXIT_BUILDING
+	disappear PLAYER
+	special FadeOutPalettes
+	pause 15
+	warpfacing UP, HALL_OF_FAME, 4, 13
+	setevent EVENT_CURRENTLY_CHAMPION
+	setevent EVENT_CHAMPION_CYNTHIA
+	end
+
+.AfterCynthiaLoss:
+	pause 15
+	opentext
+	writetext LooksLikeImTheNewChampionText
+	waitbutton
+	closetext
+	special HealParty
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	pause 30
+	warp ROUTE_23, 9, 6
+	turnobject PLAYER, DOWN
+	blackoutmod ROUTE_23
+	clearevent EVENT_CURRENTLY_CHAMPION
+	clearevent EVENT_CHAMPION_CYNTHIA
+	setevent EVENT_CHALLENGER_CYNTHIA
+	end
+
+CynthiaLastMonText:
+	text "This is nostalgic,"
+	line "isn't it?"
+	done
 
 LancesRoom_EnterMovement:
 	step UP
@@ -208,6 +550,19 @@ LancesRoomMovementData_MaryRunsBackAndForth:
 	turn_head UP
 	step_end
 
+MoveToChampionSpotFromLeft:
+	step UP
+	step UP
+	turn_head DOWN
+	step_end
+
+MoveToChampionSpotFromRight:
+	step UP
+	step UP
+	step LEFT
+	turn_head DOWN
+	step_end
+
 LooksLikeImTheChampionText:
 	text "<PLAY_G>!"
 
@@ -272,9 +627,12 @@ ChampionWinText:
 	done
 
 ChampionLoseText:
-	text "…Looks like I'm"
-	line "the strongest"
-	cont "trainer after all…"
+	text "…Is this it?"
+
+	para "After all our"
+	line "hard work?"
+	done
+
 ChampionBattleAfterText:
 	text "……………………………"
 
@@ -361,10 +719,134 @@ OakComeWithMeText:
 	line "come with me?"
 	done
 
-UnknownText_0x1813c5:
-	text "MARY: Oh, wait!"
-	line "We haven't done"
-	cont "the interview!"
+ImBackPlayerText:
+	text "<PLAYER>, I'm back."
+
+	para "I'm here to take"
+	line "back the title."
+
+	para "Ready?"
+	done
+
+ChallengerWinText:
+	text "…It's over."
+
+	para "But it's an odd"
+	line "feeling."
+
+	para "I'm not angry that"
+	line "I lost. In fact, I"
+	cont "feel happy."
+
+	para "Happy that I"
+	line "I battled my"
+	cont "best friend!"
+	done
+
+BetterLuckNextTimeText:
+	text "…I…"
+
+	para "…I did it…"
+
+	para "I'm the champion"
+	line "again!"
+
+	para "<PLAYER>, come back"
+	line "when you want"
+	cont "another chance!"
+
+	para "I'll be waiting!"
+	done
+
+ChallengerCynthiaText:
+	text "We meet again."
+
+	para "I decided to"
+	line "collect the 8"
+	cont "Badges of Johto"
+	cont "while I'm here."
+
+	para "Figured I'd give"
+	line "you a nice"
+	cont "challenge,"
+	cont "Champion."
+
+	para "What do you say?"
+
+	para "Up for another"
+	line "battle?"
+
+	para "Don't expect me to"
+	line "go easy on you!"
+	done
+
+CynthiaWinText:
+	text "There's a reason"
+	line "you're the"
+	cont "Champion here."
+	done
+
+CynthiaBattleAfterText:
+	text "Congratulations"
+	line "are in order."
+
+	para "Time and time"
+	line "again, you've"
+
+	para "proven what a"
+	line "great trainer you"
+	cont "are."
+
+	para "I hope someday to"
+	line "be as strong as"
+	cont "you are."
+	done
+
+OakCongratulatesCynthiaText:
+	text "I must give my"
+	line "congrats to you as"
+	cont "well, Cynthia!"
+
+	para "I've heard good"
+	line "things from Prof."
+	cont "Rowen!"
+
+	para "It takes great"
+	line "skill to get this"
+	cont "far!"
+	done
+
+CynthiaThanksOakText:
+	text "Thank you, Prof."
+	line "Oak."
+
+	para "I will be sure"
+	line "to let Prof."
+	cont "Rowen know of"
+	cont "your praise."
+	done
+
+OakCongratsText:
+	text "Prof.Oak: Hello"
+	line "<PLAYER>!"
+
+	para "Congratulations on"
+	line "defending your"
+	cont "title!"
+
+	para "I knew you had it"
+	line "in you!"
+	done
+
+LooksLikeImTheNewChampionText:
+	text "Looks like I'm"
+	line "the new Champion."
+
+	para "It was a good"
+	line "battle."
+
+	para "Come back if you"
+	line "want another try."
 	done
 
 LancesRoom_MapEvents:

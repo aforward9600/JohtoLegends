@@ -98,3 +98,7 @@ TrainerGroups:
 	dba ByronGroup2
 	dba LinkTrainerGroup
 	dba FedLeaderGroup
+	dba ChampionDracoGroup
+	dba ChampionDahliaGroup
+	dba ChampionDahliaGroup
+	dba ChallengerCynthiaGroup

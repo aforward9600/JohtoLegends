@@ -98,3 +98,7 @@ TrainerPicPointers::
 	dba ByronPic
 	dba Rival3Pic
 	dba BikerBossPic
+	dba ChampionDracoPic
+	dba ChampionDahliaPic
+	dba ChampionDracoPic
+	dba CynthiaPic

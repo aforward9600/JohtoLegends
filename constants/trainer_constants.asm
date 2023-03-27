@@ -200,8 +200,8 @@ CHRIS EQU __enum__
 	const GAVEN1
 	const KOSU
 	const ROBERT1
-	const JAKE
-	const GAVEN3
+	const JUAN
+	const GAVEN3 ; unused
 	const COREY1
 	const ALM
 	const ERICK
@@ -221,7 +221,7 @@ CHRIS EQU __enum__
 	const TINA
 	const REESE
 	const HARLEY
-	const JOYCE
+	const MARY1
 	const BETH1
 	const REENA1
 	const MARIA
@@ -865,6 +865,27 @@ CHRIS EQU __enum__
 
 	trainerclass FED_LEADER
 	const PAXTON
+
+	trainerclass CHAMPION_DRACO
+	const CHAMP_DRACO_1
+	const CHAMP_DRACO_2
+	const CHAMP_DRACO_3
+	const CHAMP_DRACO_4
+
+	trainerclass CHALLENGER_DAHLIA
+	const CHALLENGER_DAHLIA_1
+	const CHALLENGER_DAHLIA_2
+	const CHALLENGER_DAHLIA_3
+	const CHALLENGER_DAHLIA_4
+
+	trainerclass CHALLENGER_DRACO
+	const CHALLENGER_DRACO_1
+	const CHALLENGER_DRACO_2
+	const CHALLENGER_DRACO_3
+	const CHALLENGER_DRACO_4
+
+	trainerclass CHALLENGER_CYNTHIA
+	const CHALLENGER_CYNTHIA_1
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

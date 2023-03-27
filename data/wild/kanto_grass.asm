@@ -125,32 +125,32 @@ KantoGrassWildMons:
 	map_id VICTORY_ROAD
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 34, GRAVELER
-	dbw 32, RHYHORN
-	dbw 33, ONIX
-	dbw 34, GOLBAT
-	dbw 35, SANDSLASH
-	dbw 35, RHYDON
-	dbw 35, RHYDON
-	dbw 35, RHYDON
+	dbw 62, GOLEM
+	dbw 61, RHYHORN
+	dbw 62, STEELIX
+	dbw 63, CROBAT
+	dbw 62, SANDSLASH
+	dbw 62, BRONZONG
+	dbw 62, RHYDON
+	dbw 62, RHYDON
 	; day
-	dbw 34, GRAVELER
-	dbw 32, RHYHORN
-	dbw 33, ONIX
-	dbw 34, GOLBAT
-	dbw 35, SANDSLASH
-	dbw 35, RHYDON
-	dbw 35, RHYDON
-	dbw 35, RHYDON
+	dbw 62, GOLEM
+	dbw 61, RHYHORN
+	dbw 62, STEELIX
+	dbw 63, CROBAT
+	dbw 62, SANDSLASH
+	dbw 62, BRONZONG
+	dbw 62, RHYDON
+	dbw 62, RHYDON
 	; nite
-	dbw 34, GOLBAT
-	dbw 34, GRAVELER
-	dbw 32, ONIX
-	dbw 36, GRAVELER
-	dbw 38, GRAVELER
-	dbw 40, GRAVELER
-	dbw 40, GRAVELER
-	dbw 40, GRAVELER
+	dbw 62, GOLEM
+	dbw 61, RHYHORN
+	dbw 62, STEELIX
+	dbw 63, CROBAT
+	dbw 62, SANDSLASH
+	dbw 62, BRONZONG
+	dbw 62, RHYDON
+	dbw 62, RHYDON
 
 	map_id TOHJO_FALLS
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -815,62 +815,62 @@ KantoGrassWildMons:
 	map_id ROUTE_26
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 28, DODUO
-	dbw 28, SANDSLASH
-	dbw 32, PONYTA
-	dbw 30, RATICATE
-	dbw 30, DODUO
-	dbw 30, ARBOK
-	dbw 30, ARBOK
-	dbw 30, ARBOK
+	dbw 58, DODRIO
+	dbw 58, SANDSLASH
+	dbw 62, RAPIDASH
+	dbw 60, RATICATE
+	dbw 60, TOXICROAK
+	dbw 60, ARBOK
+	dbw 60, ARBOK
+	dbw 60, ARBOK
 	; day
-	dbw 28, DODUO
-	dbw 28, SANDSLASH
-	dbw 32, PONYTA
-	dbw 30, RATICATE
-	dbw 30, DODUO
-	dbw 30, ARBOK
-	dbw 30, ARBOK
-	dbw 30, ARBOK
+	dbw 58, DODRIO
+	dbw 58, SANDSLASH
+	dbw 62, RAPIDASH
+	dbw 60, RATICATE
+	dbw 60, TOXICROAK
+	dbw 60, ARBOK
+	dbw 60, ARBOK
+	dbw 60, ARBOK
 	; nite
-	dbw 28, NOCTOWL
-	dbw 28, RATICATE
-	dbw 32, NOCTOWL
-	dbw 30, RATICATE
-	dbw 30, QUAGSIRE
-	dbw 30, QUAGSIRE
-	dbw 30, QUAGSIRE
-	dbw 30, QUAGSIRE
+	dbw 58, NOCTOWL
+	dbw 58, RATICATE
+	dbw 62, NOCTOWL
+	dbw 60, RATICATE
+	dbw 60, TOXICROAK
+	dbw 60, QUAGSIRE
+	dbw 60, QUAGSIRE
+	dbw 60, QUAGSIRE
 
 	map_id ROUTE_27
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 28, DODUO
-	dbw 28, ARBOK
-	dbw 30, RATICATE
-	dbw 30, DODUO
-	dbw 32, PONYTA
-	dbw 30, DODRIO
-	dbw 30, DODRIO
-	dbw 30, DODRIO
+	dbw 58, DODRIO
+	dbw 58, ARBOK
+	dbw 60, RATICATE
+	dbw 60, DODRIO
+	dbw 62, RAPIDASH
+	dbw 60, TOXICROAK
+	dbw 60, TOXICROAK
+	dbw 60, TOXICROAK
 	; day
-	dbw 28, DODUO
-	dbw 28, ARBOK
-	dbw 30, RATICATE
-	dbw 30, DODUO
-	dbw 32, PONYTA
-	dbw 30, DODRIO
-	dbw 30, DODRIO
-	dbw 30, DODRIO
+	dbw 58, DODRIO
+	dbw 58, ARBOK
+	dbw 60, RATICATE
+	dbw 60, DODRIO
+	dbw 62, RAPIDASH
+	dbw 60, TOXICROAK
+	dbw 60, TOXICROAK
+	dbw 60, TOXICROAK
 	; nite
-	dbw 28, QUAGSIRE
-	dbw 28, NOCTOWL
-	dbw 30, RATICATE
-	dbw 30, QUAGSIRE
-	dbw 32, NOCTOWL
-	dbw 32, NOCTOWL
-	dbw 32, NOCTOWL
-	dbw 32, NOCTOWL
+	dbw 58, QUAGSIRE
+	dbw 58, NOCTOWL
+	dbw 60, RATICATE
+	dbw 60, QUAGSIRE
+	dbw 62, NOCTOWL
+	dbw 62, TOXICROAK
+	dbw 62, TOXICROAK
+	dbw 62, TOXICROAK
 
 	map_id ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

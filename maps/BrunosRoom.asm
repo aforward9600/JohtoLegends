@@ -48,7 +48,7 @@ MarthaScript_Battle:
 	writetext MarthaScript_MarthaBeforeText
 	waitbutton
 	closetext
-	winlosstext MarthaScript_MarthaBeatenText, 0
+	winlosstext MarthaScript_MarthaBeatenText, MarthaLastMonText
 	loadtrainer MARTHA, MARTHA1
 	startbattle
 	reloadmapafterbattle
@@ -77,6 +77,10 @@ MarthasRoom_EnterMovement:
 	step UP
 	step UP
 	step_end
+
+MarthaLastMonText:
+	text "Hold on now!"
+	done
 
 MarthaScript_MarthaBeforeText:
 	text "Howdy! Err...I"
@@ -127,7 +131,7 @@ MarthaScript_MarthaBeatenText:
 
 MarthaScript_MarthaDefeatText:
 	text "Well done there!"
-	line "my brother was"
+	line "My brother was"
 	cont "right about you!"
 
 	para "If I ever have any"

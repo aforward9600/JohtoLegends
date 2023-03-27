@@ -855,7 +855,8 @@ MastersHouse1F_MapEvents:
 	db 3 ; warp events
 	warp_event  4, 13, BLACKTHORN_CITY, 10
 	warp_event  5, 13, BLACKTHORN_CITY, 10
-	warp_event  4,  1, MASTERS_HOUSE_2F, 1
+	warp_event  4,  1, LANCES_ROOM, 1
+;	warp_event  4,  1, MASTERS_HOUSE_2F, 1
 
 	db 5 ; coord events
 	coord_event 2,  8, SCENE_CANT_LEAVE_HOUSE, TryToLeaveHouseScript

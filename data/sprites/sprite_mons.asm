@@ -64,3 +64,4 @@ SpriteMons:
 	dw MACHAMP
 	dw PORYGON_Z
 	dw QUAGSIRE
+	dw ABRA

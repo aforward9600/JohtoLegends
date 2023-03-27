@@ -36,22 +36,9 @@ BlackthornPokecenter1FFisherText:
 	done
 
 BlackthornPokecenter1FCooltrainerFText:
-	text "I hear they're"
-	line "going to remodel"
-	cont "all the #mon"
-
-	para "Centers in Johto"
-	line "to have a second"
-	cont "floor. No idea"
-
-	para "what will be in"
-	line "them."
-
-	para "Doesn't sound like"
-	line "the ones in Kanto"
-	cont "will get the same"
-	cont "treatment right"
-	cont "now."
+	text "You can trade and"
+	line "battle #mon"
+	cont "upstairs."
 	done
 
 BlackthornPokecenter1F_MapEvents:

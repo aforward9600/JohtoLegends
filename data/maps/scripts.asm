@@ -163,6 +163,7 @@ INCLUDE "maps/Route26HealHouse.asm"
 INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
 INCLUDE "maps/Route27SandstormHouse.asm"
 INCLUDE "maps/Route29Route46Gate.asm"
+INCLUDE "maps/VictoryRoadGate.asm"
 
 
 SECTION "Map Scripts 10", ROMX
@@ -475,7 +476,6 @@ INCLUDE "maps/GoldenrodJail.asm"
 INCLUDE "maps/EcruteakMoveTutorHouse.asm"
 INCLUDE "maps/Route40BattleTowerGate.asm"
 INCLUDE "maps/DarkCaveNewEntrance.asm"
-INCLUDE "maps/VictoryRoadGate.asm"
 INCLUDE "maps/Route2NuggetHouse.asm"
 INCLUDE "maps/ViridianPokecenter1F.asm"
 INCLUDE "maps/TrainerHouseB1F.asm"

@@ -48,7 +48,7 @@ FlorinaScript_Battle:
 	writetext FlorinaScript_FlorinaBeforeText
 	waitbutton
 	closetext
-	winlosstext FlorinaScript_FlorinaBeatenText, 0
+	winlosstext FlorinaScript_FlorinaBeatenText, FlorinaLastMonText
 	loadtrainer FLORINA, FLORINA1
 	startbattle
 	reloadmapafterbattle
@@ -77,6 +77,10 @@ FlorinasRoom_EnterMovement:
 	step UP
 	step UP
 	step_end
+
+FlorinaLastMonText:
+	text "We can't wilt yet!"
+	done
 
 FlorinaScript_FlorinaBeforeText:
 	text "Welcome to #mon"

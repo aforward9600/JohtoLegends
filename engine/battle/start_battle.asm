@@ -125,7 +125,15 @@ PlayBattleMusic:
 	ld de, MUSIC_CHAMPION_BATTLE
 	cp CHAMPION_DAHLIA
 	jp z, .done
-	cp RED
+	cp CHAMPION_DRACO
+	jp z, .done
+	cp CHALLENGER_DAHLIA
+	jp z, .done
+	cp CHALLENGER_DRACO
+	jp z, .done
+
+	ld de, MUSIC_CYNTHIA_BATTLE
+	cp CHALLENGER_CYNTHIA
 	jp z, .done
 
 	ld de, MUSIC_MARNIE_BATTLE

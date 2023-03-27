@@ -42,6 +42,7 @@ Marts:
 	dw MartAzaleaTMs
 	dw MartVioletTMs
 	dw MartLakeOfRage
+	dw MartCherrygroveTMs
 .End
 
 MartCherrygrove:
@@ -514,4 +515,14 @@ MartLakeOfRage:
 	db AWAKENING
 	db ESCAPE_ROPE
 	db REPEL
+	db -1 ; end
+
+MartCherrygroveTMs:
+	db 6 ; # items
+	db TM_PSYCHIC_M
+	db TM_STONE_EDGE
+	db TM_NASTY_PLOT
+	db TM_FOCUS_BLAST
+	db TM_TOXIC
+	db TM_ENERGY_BALL
 	db -1 ; end

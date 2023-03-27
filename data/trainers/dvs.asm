@@ -98,3 +98,7 @@ TrainerClassDVs:
 	dn 12, 12,  8,  8 ; BYRON2
 	dn 15, 15, 15, 15 ; LINK_TRAINER
 	dn 15, 15, 15, 15 ; FED_LEADER
+	dn 13, 12, 13, 13 ; CHAMPION
+	dn 13, 12, 13, 13 ; CHALLENGER
+	dn 13, 12, 13, 13 ; CHALLENGER
+	dn  7,  8,  8,  8 ; TOURIST

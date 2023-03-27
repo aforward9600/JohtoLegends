@@ -48,7 +48,7 @@ AgathaScript_Battle:
 	writetext AgathaScript_AgathaBeforeText
 	waitbutton
 	closetext
-	winlosstext AgathaScript_AgathaBeatenText, 0
+	winlosstext AgathaScript_AgathaBeatenText, AgathaLastMonText
 	loadtrainer AGATHA, AGATHA1
 	startbattle
 	reloadmapafterbattle
@@ -77,6 +77,13 @@ AgathasRoom_EnterMovement:
 	step UP
 	step UP
 	step_end
+
+AgathaLastMonText:
+	text "Can it be?"
+
+	para "One as strong as"
+	line "he was?"
+	done
 
 AgathaScript_AgathaBeforeText:
 	text "I am Agatha of the"
@@ -109,10 +116,10 @@ AgathaScript_AgathaBeforeText:
 	line "to fiddle around"
 	cont "with research."
 
-	para "He's wrong! #-"
-	line "mon are for battl-"
-	cont "ing. I'll teach"
-	cont "this to you!"
+	para "He's wrong! #mon"
+	line "are for battling."
+	cont "I'll teach this"
+	cont "to you!"
 	done
 
 AgathaScript_AgathaBeatenText:

@@ -48,7 +48,7 @@ SurgeScript_Battle:
 	writetext SurgeScript_SurgeBeforeText
 	waitbutton
 	closetext
-	winlosstext SurgeScript_SurgeBeatenText, 0
+	winlosstext SurgeScript_SurgeBeatenText, GeneralSurgeLastMonText
 	loadtrainer GEN_SURGE, GEN_SURGE1
 	startbattle
 	reloadmapafterbattle
@@ -78,8 +78,14 @@ SurgesRoom_EnterMovement:
 	step UP
 	step_end
 
+GeneralSurgeLastMonText:
+	text "Don't give up 'til"
+	line "you see the whites"
+	cont "of their eyes!"
+	done
+
 SurgeScript_SurgeBeforeText:
-	text "Attention!..."
+	text "Attention…"
 	line "At ease!"
 
 	para "I am General Surge"
@@ -119,23 +125,21 @@ SurgeScript_SurgeBeatenText:
 	done
 
 SurgeScript_SurgeDefeatText:
-	text "Surprised to see"
-	line "my Zapdos? Caught"
-	cont "it during the war."
+	text "That battle will"
+	line "go down in the"
+	cont "history books!"
 
-	para "Saved me a few"
-	line "times. You may"
-	cont "find one yourself"
-	cont "one day."
+	para "Just like the"
+	line "battle of Seafoam"
+	cont "where I…"
 
-	para "What? You think"
-	line "there's only one"
-	cont "in the world? Ha!"
+	para "…Ah, nevermind."
 
-	para "There's multiple,"
-	line "you just need to"
-	cont "look. Go on, the"
-	cont "next member is"
+	para "That's not"
+	line "important now."
+
+	para "Go on, the"
+	line "next member is"
 	cont "waiting."
 	done
 

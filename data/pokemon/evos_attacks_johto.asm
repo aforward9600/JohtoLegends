@@ -740,6 +740,9 @@ MewtwoEvosAttacks:
 	dbw 86, MIST
 	dbw 93, SAFEGUARD
 	dbw 100, HYPER_BEAM
+	dbw 100, PSYCHIC_M
+	dbw 100, MOONBLAST
+	dbw 100, AURA_SPHERE
 	db 0 ; no more level-up moves
 
 MewEvosAttacks:

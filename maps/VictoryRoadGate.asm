@@ -5,6 +5,7 @@
 	const VICTORYROADGATE_OAK
 	const VICTORYROADGATE_RIVAL
 	const VICTORYROADGATE_RIVAL_2
+	const VICTORYROADGATE_BLACK_BELT3
 
 VictoryRoadGate_MapScripts:
 	db 4 ; scene scripts
@@ -173,6 +174,9 @@ VictoryRoadGateRivalScript:
 	closetext
 	turnobject VICTORYROADGATE_RIVAL, UP
 	end
+
+VictoryRoadGateRightBlackBeltEndScript:
+	jumptextfaceplayer VictoryRoadGateRightBlackBeltEndText
 
 VictoryRoadGateStepDownMovement:
 	step DOWN
@@ -495,6 +499,20 @@ WereFinallyHereText:
 	line "other side."
 	done
 
+VictoryRoadGateRightBlackBeltEndText:
+	text "Sorry, but this is"
+	line "the end of the"
+	cont "current version of"
+
+	para "#mon Johto"
+	line "Legends."
+
+	para "Please return for"
+	line "the next update."
+
+	para "Thank you."
+	done
+
 VictoryRoadGate_MapEvents:
 	db 0, 0 ; filler
 
@@ -518,10 +536,11 @@ VictoryRoadGate_MapEvents:
 
 	db 0 ; bg events
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event  8, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateOfficerScript, -1
 	object_event  7,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateLeftBlackBeltScript, EVENT_OPENED_MT_SILVER
 	object_event 12,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateRightBlackBeltScript, EVENT_VICTORY_ROAD_GATE_GUARD
 	object_event 10,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateOakScript, EVENT_VICTORY_ROAD_GATE_OAK
 	object_event  9,  6, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateRivalScript, EVENT_VICTORY_ROAD_GATE_RIVAL
 	object_event 10,  6, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateRivalScript, EVENT_VICTORY_ROAD_GATE_RIVAL_2
+	object_event 16,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateRightBlackBeltEndScript, EVENT_VICTORY_ROAD_GATE_GUARD_2

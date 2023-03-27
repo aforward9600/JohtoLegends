@@ -209,6 +209,7 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_MACHAMP
 	const SPRITE_PORYGON_Z
 	const SPRITE_QUAGSIRE
+	const SPRITE_ABRA
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
 	const_def $e0

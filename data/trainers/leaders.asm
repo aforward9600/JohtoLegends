@@ -24,7 +24,10 @@ EliteFour:
 	db MARTHA
 	db AGATHA
 	db CHAMPION_DAHLIA
-	db RED
+	db CHAMPION_DRACO
+	db CHALLENGER_DAHLIA
+	db CHALLENGER_DRACO
+	db CHALLENGER_CYNTHIA
 	db GEN_SURGE
 ; fallthrough
 KantoGymLeaders:
