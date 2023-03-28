@@ -18,9 +18,8 @@ Route38EcruteakGate_MapScripts:
 Route38EcruteakGateOfficerScript:
 	jumptextfaceplayer Route38EcruteakGateOfficerText
 
-Route38EcruteakGateRivalScript:
-	jumptextfaceplayer Route38EcruteakRivalText
-
+EcruteakGateRival2:
+	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement3
 EcruteakGateRival1:
 	special FadeOutMusic
 	pause 10
@@ -29,46 +28,9 @@ EcruteakGateRival1:
 	playmusic MUSIC_DAHLIA_ENCOUNTER
 	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement1
 	opentext
-	checkevent EVENT_GOT_EEVEE
-	iftrue .RivalBattle1
-	writetext HeyDracoText
-	waitbutton
-	closetext
-	applymovement PLAYER, MovementBack
-	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement2
-	turnobject ROUTE38ECRUTEAKGATE_RIVAL, RIGHT
-	special FadeOutMusic
-	pause 10
-	special RestartMapMusic
-	waitsfx
-	playmapmusic
-	end
-
-.Female1:
-	playmusic MUSIC_RIVAL_ENCOUNTER
-	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement1
-	opentext
-	checkevent EVENT_GOT_EEVEE
-	iftrue .RivalBattle1
-	writetext HeyDahliaText
-	waitbutton
-	closetext
-	applymovement PLAYER, MovementBack
-	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement2
-	turnobject ROUTE38ECRUTEAKGATE_RIVAL, RIGHT
-	special FadeOutMusic
-	pause 10
-	special RestartMapMusic
-	waitsfx
-	playmapmusic
-	end
-
-.RivalBattle1:
 	writetext GotAnEeveeText
 	waitbutton
 	closetext
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female3
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .Larvitar
 	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
@@ -88,6 +50,23 @@ EcruteakGateRival1:
 	reloadmapafterbattle
 	sjump .AfterVictorious
 
+.Female1:
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement1
+	opentext
+	writetext GotAnEeveeMaleText
+	waitbutton
+	closetext
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
+	iftrue .Larvitar2
+	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
+	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
+	loadtrainer RIVAL4, RIVAL4_B_LARVITAR
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .AfterVictorious2
+
 .AfterVictorious:
 	playmusic MUSIC_DAHLIA_AFTER_BATTLE
 	opentext
@@ -103,17 +82,6 @@ EcruteakGateRival1:
 	playmapmusic
 	end
 
-.Female3:
-	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
-	iftrue .Larvitar2
-	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
-	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
-	loadtrainer RIVAL4, RIVAL4_B_LARVITAR
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterVictorious2
-
 .Larvitar2:
 	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
 	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
@@ -124,122 +92,6 @@ EcruteakGateRival1:
 	sjump .AfterVictorious2
 
 .AfterVictorious2:
-	playmusic MUSIC_RIVAL_AFTER
-	opentext
-	writetext YouWonAgainText
-	waitbutton
-	closetext
-	applymovement ROUTE38ECRUTEAKGATE_RIVAL, DahliaLeavesMovement
-	playsound SFX_EXIT_BUILDING
-	disappear ROUTE38ECRUTEAKGATE_RIVAL
-	setevent EVENT_ECRUTEAK_GATE_RIVAL_1
-	setscene SCENE_DEFAULT
-	waitsfx
-	playmapmusic
-	end
-
-EcruteakGateRival2:
-	special FadeOutMusic
-	pause 10
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female2
-	playmusic MUSIC_DAHLIA_ENCOUNTER
-	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement3
-	opentext
-	checkevent EVENT_GOT_EEVEE
-	iftrue .RivalBattle2
-	writetext HeyDracoText
-	waitbutton
-	closetext
-	applymovement PLAYER, MovementBack
-	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement4
-	turnobject ROUTE38ECRUTEAKGATE_RIVAL, RIGHT
-	special FadeOutMusic
-	pause 10
-	special RestartMapMusic
-	waitsfx
-	playmapmusic
-	end
-.Female2:
-	playmusic MUSIC_RIVAL_ENCOUNTER
-	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement3
-	opentext
-	checkevent EVENT_GOT_EEVEE
-	iftrue .RivalBattle2
-	writetext HeyDahliaText
-	waitbutton
-	closetext
-	applymovement PLAYER, MovementBack
-	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement4
-	turnobject ROUTE38ECRUTEAKGATE_RIVAL, RIGHT
-	special FadeOutMusic
-	pause 10
-	special RestartMapMusic
-	waitsfx
-	playmapmusic
-	end
-
-.RivalBattle2:
-	writetext GotAnEeveeText
-	waitbutton
-	closetext
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female4
-	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
-	iftrue .Larvitar3
-	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
-	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
-	loadtrainer RIVAL3, RIVAL3_B_LARVITAR
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterVictorious3
-
-.Larvitar3:
-	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
-	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
-	loadtrainer RIVAL3, RIVAL3_B_DRATINI
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterVictorious3
-
-.AfterVictorious3:
-	playmusic MUSIC_DAHLIA_AFTER_BATTLE
-	opentext
-	writetext YouWonAgainText
-	waitbutton
-	closetext
-	applymovement ROUTE38ECRUTEAKGATE_RIVAL, DahliaLeavesMovement
-	playsound SFX_EXIT_BUILDING
-	disappear ROUTE38ECRUTEAKGATE_RIVAL
-	setevent EVENT_ECRUTEAK_GATE_RIVAL_1
-	setscene SCENE_DEFAULT
-	waitsfx
-	playmapmusic
-	end
-
-.Female4:
-	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
-	iftrue .Larvitar4
-	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
-	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
-	loadtrainer RIVAL4, RIVAL4_B_LARVITAR
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterVictorious4
-
-.Larvitar4:
-	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
-	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
-	loadtrainer RIVAL4, RIVAL4_B_DRATINI
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterVictorious4
-
-.AfterVictorious4:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext YouWonAgainText
@@ -266,8 +118,6 @@ Movement2:
 
 Movement3:
 	step DOWN
-	step RIGHT
-	step RIGHT
 	step_end
 
 Movement4:
@@ -303,20 +153,13 @@ Route38EcruteakGateOfficerText:
 	line "way to get here."
 	done
 
-Route38EcruteakRivalText:
-	text "Test"
-	done
+GotAnEeveeText:
+	text "Hey, <PLAYER>!"
 
-HeyDracoText:
-	text "Hey <PLAYER>!"
-
-	para "Have you been to"
-	line "the Ecruteak Dance"
-	cont "House yet?"
-
-	para "You can get a"
-	line "#mon from the"
-	cont "Kimono Girl there!"
+	para "I got an Eevee"
+	line "from the Kimono"
+	cont "girl at the Dance"
+	cont "Theatre!"
 
 	para "She's really nice,"
 	line "and pretty too!"
@@ -333,20 +176,19 @@ HeyDracoText:
 
 	para "Stop it. You're"
 	line "making me blush."
-	cont "I-I-I'll see you"
-	cont "later!"
+
+	para "P-please stop"
+	line "talking and just"
+	cont "battle me!"
 	done
 
-HeyDahliaText:
-	text "Hey <PLAYER>!"
+GotAnEeveeMaleText:
+	text "Hey, <PLAYER>!"
 
-	para "Have you been to"
-	line "the Ecruteak Dance"
-	cont "House yet?"
-
-	para "You can get a"
-	line "#mon from the"
-	cont "Kimono Girl there!"
+	para "I got an Eevee"
+	line "from the Kimono"
+	cont "girl at the Dance"
+	cont "Theatre!"
 
 	para "She's really nice,"
 	line "and pretty too!"
@@ -359,18 +201,10 @@ HeyDahliaText:
 
 	para "Stop it. I'm not"
 	line "blushing. I'm not!"
-	cont "I-I-I'll see you"
-	cont "later!"
-	done
 
-GotAnEeveeText:
-	text "Hey, <PLAYER>!"
-
-	para "Looks like you got"
-	line "an Eevee too!"
-
-	para "Wanna see whose is"
-	line "stronger?"
+	para "P-please stop"
+	line "talking and just"
+	cont "battle me!"
 	done
 
 RivalEcruteakGateWinText:
@@ -420,4 +254,4 @@ Route38EcruteakGate_MapEvents:
 
 	db 2 ; object events
 	object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route38EcruteakGateOfficerScript, -1
-	object_event  4,  4, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route38EcruteakGateRivalScript, EVENT_ECRUTEAK_GATE_RIVAL_1
+	object_event  4,  4, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GATE_RIVAL_1
