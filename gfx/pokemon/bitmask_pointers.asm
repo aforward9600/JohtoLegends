@@ -61,6 +61,7 @@ BitmasksPointers:
 	dw GolduckBitmasks
 	dw MankeyBitmasks
 	dw PrimeapeBitmasks
+	dw AnnihilapeBitmasks
 	dw GrowlitheBitmasks
 	dw ArcanineBitmasks
 	dw PoliwagBitmasks
@@ -233,9 +234,11 @@ BitmasksPointers:
 	dw WynautBitmasks
 	dw WobbuffetBitmasks
 	dw GirafarigBitmasks
+	dw FarigirafBitmasks
 	dw PinecoBitmasks
 	dw ForretressBitmasks
 	dw DunsparceBitmasks
+	dw DudunsparsBitmasks
 	dw GligarBitmasks
 	dw GliscorBitmasks
 	dw SnubbullBitmasks
@@ -247,6 +250,7 @@ BitmasksPointers:
 	dw WeavileBitmasks
 	dw TeddiursaBitmasks
 	dw UrsaringBitmasks
+	dw UrsalunaBitmasks
 	dw SlugmaBitmasks
 	dw MagcargoBitmasks
 	dw SwinubBitmasks
@@ -266,8 +270,12 @@ BitmasksPointers:
 	dw PhanpyBitmasks
 	dw DonphanBitmasks
 	dw StantlerBitmasks
+	dw WyrdeerBitmasks
 	dw SmeargleBitmasks
 	dw MiltankBitmasks
+	dw KotoraBitmasks
+	dw RaitoraBitmasks
+	dw GorotoraBitmasks
 	dw BudewBitmasks
 	dw RoseliaBitmasks
 	dw RoseradeBitmasks
@@ -275,9 +283,14 @@ BitmasksPointers:
 	dw ManectricBitmasks
 	dw CroagunkBitmasks
 	dw ToxicroakBitmasks
+	dw SwabluBitmasks
+	dw AltariaBitmasks
 	dw DuskullBitmasks
 	dw DusclopsBitmasks
 	dw DusknoirBitmasks
+	dw LotadBitmasks
+	dw LombreBitmasks
+	dw LudicoloBitmasks
 	dw SnoruntBitmasks
 	dw GlalieBitmasks
 	dw FroslassBitmasks
@@ -307,18 +320,5 @@ BitmasksPointers:
 	dw LugiaBitmasks
 	dw HoOhBitmasks
 	dw CelebiBitmasks
-	dw MissingnoBitmasks
-	dw SwabluBitmasks
-	dw AltariaBitmasks
-	dw KotoraBitmasks
-	dw RaitoraBitmasks
-	dw GorotoraBitmasks
-	dw LotadBitmasks
-	dw LombreBitmasks
-	dw LudicoloBitmasks
-	dw FarigirafBitmasks
-	dw WyrdeerBitmasks
-	dw UrsalunaBitmasks
-	dw DudunsparsBitmasks
-	dw AnnihilapeBitmasks
 	dw NownBitmasks
+	dw MissingnoBitmasks

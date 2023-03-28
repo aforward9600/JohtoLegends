@@ -61,6 +61,7 @@ FramesPointers:
 	dba GolduckFrames
 	dba MankeyFrames
 	dba PrimeapeFrames
+	dba AnnihilapeFrames
 	dba GrowlitheFrames
 	dba ArcanineFrames
 	dba PoliwagFrames
@@ -233,9 +234,11 @@ FramesPointers:
 	dba WynautFrames
 	dba WobbuffetFrames
 	dba GirafarigFrames
+	dba FarigirafFrames
 	dba PinecoFrames
 	dba ForretressFrames
 	dba DunsparceFrames
+	dba DudunsparsFrames
 	dba GligarFrames
 	dba GliscorFrames
 	dba SnubbullFrames
@@ -247,6 +250,7 @@ FramesPointers:
 	dba WeavileFrames
 	dba TeddiursaFrames
 	dba UrsaringFrames
+	dba UrsalunaFrames
 	dba SlugmaFrames
 	dba MagcargoFrames
 	dba SwinubFrames
@@ -266,8 +270,12 @@ FramesPointers:
 	dba PhanpyFrames
 	dba DonphanFrames
 	dba StantlerFrames
+	dba WyrdeerFrames
 	dba SmeargleFrames
 	dba MiltankFrames
+	dba KotoraFrames
+	dba RaitoraFrames
+	dba GorotoraFrames
 	dba BudewFrames
 	dba RoseliaFrames
 	dba RoseradeFrames
@@ -275,9 +283,14 @@ FramesPointers:
 	dba ManectricFrames
 	dba CroagunkFrames
 	dba ToxicroakFrames
+	dba SwabluFrames
+	dba AltariaFrames
 	dba DuskullFrames
 	dba DusclopsFrames
 	dba DusknoirFrames
+	dba LotadFrames
+	dba LombreFrames
+	dba LudicoloFrames
 	dba SnoruntFrames
 	dba GlalieFrames
 	dba FroslassFrames
@@ -307,18 +320,5 @@ FramesPointers:
 	dba LugiaFrames
 	dba HoOhFrames
 	dba CelebiFrames
-	dba MissingnoFrames
-	dba SwabluFrames
-	dba AltariaFrames
-	dba KotoraFrames
-	dba RaitoraFrames
-	dba GorotoraFrames
-	dba LotadFrames
-	dba LombreFrames
-	dba LudicoloFrames
-	dba FarigirafFrames
-	dba WyrdeerFrames
-	dba UrsalunaFrames
-	dba DudunsparsFrames
-	dba AnnihilapeFrames
 	dba NownFrames
+	dba MissingnoFrames

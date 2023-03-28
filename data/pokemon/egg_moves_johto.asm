@@ -85,9 +85,11 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw GirafarigEggMoves
+	dw NoEggMoves2
 	dw PinecoEggMoves
 	dw NoEggMoves2
 	dw DunsparceEggMoves
+	dw NoEggMoves2
 	dw GligarEggMoves
 	dw NoEggMoves2
 	dw SnubbullEggMoves
@@ -98,6 +100,7 @@ EggMovePointers2::
 	dw SneaselEggMoves
 	dw NoEggMoves2
 	dw TeddiursaEggMoves
+	dw NoEggMoves2
 	dw NoEggMoves2
 	dw SlugmaEggMoves
 	dw NoEggMoves2
@@ -119,7 +122,11 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw StantlerEggMoves
 	dw NoEggMoves2
+	dw NoEggMoves2
 	dw MiltankEggMoves
+	dw KotoraEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw BudewEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -127,7 +134,12 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw CroagunkEggMoves
 	dw NoEggMoves2
+	dw SwabluEggMoves
+	dw NoEggMoves2
 	dw DuskullEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw LotadEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw SnoruntEggMoves
@@ -154,19 +166,6 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw BagonEggMoves
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw SwabluEggMoves
-	dw NoEggMoves2
-	dw KotoraEggMoves
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw LotadEggMoves
-	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2

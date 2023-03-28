@@ -61,6 +61,7 @@ AnimationIdlePointers:
 	dw GolduckAnimationIdle
 	dw MankeyAnimationIdle
 	dw PrimeapeAnimationIdle
+	dw AnnihilapeAnimationIdle
 	dw GrowlitheAnimationIdle
 	dw ArcanineAnimationIdle
 	dw PoliwagAnimationIdle
@@ -233,9 +234,11 @@ AnimationIdlePointers:
 	dw WynautAnimationIdle
 	dw WobbuffetAnimationIdle
 	dw GirafarigAnimationIdle
+	dw FarigirafAnimationIdle
 	dw PinecoAnimationIdle
 	dw ForretressAnimationIdle
 	dw DunsparceAnimationIdle
+	dw DudunsparsAnimationIdle
 	dw GligarAnimationIdle
 	dw GliscorAnimationIdle
 	dw SnubbullAnimationIdle
@@ -247,6 +250,7 @@ AnimationIdlePointers:
 	dw WeavileAnimationIdle
 	dw TeddiursaAnimationIdle
 	dw UrsaringAnimationIdle
+	dw UrsalunaAnimationIdle
 	dw SlugmaAnimationIdle
 	dw MagcargoAnimationIdle
 	dw SwinubAnimationIdle
@@ -266,8 +270,12 @@ AnimationIdlePointers:
 	dw PhanpyAnimationIdle
 	dw DonphanAnimationIdle
 	dw StantlerAnimationIdle
+	dw WyrdeerAnimationIdle
 	dw SmeargleAnimationIdle
 	dw MiltankAnimationIdle
+	dw KotoraAnimationIdle
+	dw RaitoraAnimationIdle
+	dw GorotoraAnimationIdle
 	dw BudewAnimationIdle
 	dw RoseliaAnimationIdle
 	dw RoseradeAnimationIdle
@@ -275,9 +283,14 @@ AnimationIdlePointers:
 	dw ManectricAnimationIdle
 	dw CroagunkAnimationIdle
 	dw ToxicroakAnimationIdle
+	dw SwabluAnimationIdle
+	dw AltariaAnimationIdle
 	dw DuskullAnimationIdle
 	dw DusclopsAnimationIdle
 	dw DusknoirAnimationIdle
+	dw LotadAnimationIdle
+	dw LombreAnimationIdle
+	dw LudicoloAnimationIdle
 	dw SnoruntAnimationIdle
 	dw GlalieAnimationIdle
 	dw FroslassAnimationIdle
@@ -307,18 +320,5 @@ AnimationIdlePointers:
 	dw LugiaAnimationIdle
 	dw HoOhAnimationIdle
 	dw CelebiAnimationIdle
-	dw MissingnoAnimationIdle
-	dw SwabluAnimationIdle
-	dw AltariaAnimationIdle
-	dw KotoraAnimationIdle
-	dw RaitoraAnimationIdle
-	dw GorotoraAnimationIdle
-	dw LotadAnimationIdle
-	dw LombreAnimationIdle
-	dw LudicoloAnimationIdle
-	dw FarigirafAnimationIdle
-	dw WyrdeerAnimationIdle
-	dw UrsalunaAnimationIdle
-	dw DudunsparsAnimationIdle
-	dw AnnihilapeAnimationIdle
 	dw NownAnimationIdle
+	dw MissingnoAnimationIdle

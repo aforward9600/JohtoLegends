@@ -106,12 +106,8 @@ DisplayDexEntry:
 	ld e, l
 	pop hl
 	push bc
-;	lb bc, PRINTNUM_LEADINGZEROS | 2, 3
-;	call PrintNum
-	call GetPokemonNumber
-	hlcoord 4, 8
-	call PlaceString
-
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 3
+	call PrintNum
 	pop bc
 ; Check to see if we caught it.  Get out of here if we haven't.
 	ld a, [wTempSpecies]

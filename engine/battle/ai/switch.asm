@@ -24,7 +24,6 @@ CheckPlayerMoveTypeMatchups:
 
 	ld hl, wEnemyMonType
 	call CheckTypeMatchup
-
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1 ; 1.0 + 0.1
 	jr nc, .super_effective

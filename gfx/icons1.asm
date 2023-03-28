@@ -64,6 +64,7 @@ Icons1:
 	dw GolduckIcon
 	dw MankeyIcon
 	dw PrimeapeIcon
+	dw AnnihilapeIcon
 	dw GrowlitheIcon
 	dw ArcanineIcon
 	dw PoliwagIcon
@@ -126,7 +127,6 @@ Icons1:
 	dw WeezingIcon
 	dw RhyhornIcon
 	dw RhydonIcon
-	dw RhyperiorIcon
 
 EggIcon:          INCBIN "gfx/icons/egg.2bpp"
 BulbasaurIcon:    INCBIN "gfx/icons/bulbasaur.2bpp"
@@ -191,6 +191,7 @@ PsyduckIcon:      INCBIN "gfx/icons/psyduck.2bpp"
 GolduckIcon:      INCBIN "gfx/icons/golduck.2bpp"
 MankeyIcon:       INCBIN "gfx/icons/mankey.2bpp"
 PrimeapeIcon:     INCBIN "gfx/icons/primeape.2bpp"
+AnnihilapeIcon:   INCBIN "gfx/icons/annihilape.2bpp"
 GrowlitheIcon:    INCBIN "gfx/icons/growlithe.2bpp"
 ArcanineIcon:     INCBIN "gfx/icons/arcanine.2bpp"
 PoliwagIcon:      INCBIN "gfx/icons/poliwag.2bpp"
@@ -253,4 +254,3 @@ KoffingIcon:      INCBIN "gfx/icons/koffing.2bpp"
 WeezingIcon:      INCBIN "gfx/icons/weezing.2bpp"
 RhyhornIcon:      INCBIN "gfx/icons/rhyhorn.2bpp"
 RhydonIcon:       INCBIN "gfx/icons/rhydon.2bpp"
-RhyperiorIcon:    INCBIN "gfx/icons/rhyperior.2bpp"

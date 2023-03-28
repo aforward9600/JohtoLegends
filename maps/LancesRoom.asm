@@ -254,22 +254,22 @@ LancesRoomChallengerScript:
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DAHLIA, CHALLENGER_DAHLIA_1
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
-	reloadmap
-	ifequal LOSE, .AfterChampionLoss
+	reloadmapafterbattle
+;	ifequal LOSE, .AfterChampionLoss
 	sjump .AfterChampionBattle
 
 .DahliaTyranitarHoOh
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DAHLIA, CHALLENGER_DAHLIA_3
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
-	reloadmap
-	ifequal LOSE, .AfterChampionLoss
+	reloadmapafterbattle
+;	ifequal LOSE, .AfterChampionLoss
 	sjump .AfterChampionBattle
 
 .DahliaDragoniteBattle
@@ -278,22 +278,22 @@ LancesRoomChallengerScript:
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DAHLIA, CHALLENGER_DAHLIA_2
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
-	reloadmap
-	ifequal LOSE, .AfterChampionLoss
+	reloadmapafterbattle
+;	ifequal LOSE, .AfterChampionLoss
 	sjump .AfterChampionBattle
 
 .DahliaDragoniteHoOh
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DAHLIA, CHALLENGER_DAHLIA_4
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
-	reloadmap
-	ifequal LOSE, .AfterChampionLoss
+	reloadmapafterbattle
+;	ifequal LOSE, .AfterChampionLoss
 	sjump .AfterChampionBattle
 
 .ChallengerFemale
@@ -304,22 +304,22 @@ LancesRoomChallengerScript:
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DRACO, CHALLENGER_DRACO_1
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
-	reloadmap
-	ifequal LOSE, .AfterChampionLoss
+	reloadmapafterbattle
+;	ifequal LOSE, .AfterChampionLoss
 	sjump .AfterChampionBattle
 
 .DracoTyranitarHoOh
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DRACO, CHALLENGER_DRACO_3
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
-	reloadmap
-	ifequal LOSE, .AfterChampionLoss
+	reloadmapafterbattle
+;	ifequal LOSE, .AfterChampionLoss
 	sjump .AfterChampionBattle
 
 .DracoDragoniteBattle
@@ -328,22 +328,22 @@ LancesRoomChallengerScript:
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DRACO, CHALLENGER_DRACO_2
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
-	reloadmap
-	ifequal LOSE, .AfterChampionLoss
+	reloadmapafterbattle
+;	ifequal LOSE, .AfterChampionLoss
 	sjump .AfterChampionBattle
 
 .DracoDragoniteHoOh
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DRACO, CHALLENGER_DRACO_4
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
-	reloadmap
-	ifequal LOSE, .AfterChampionLoss
+	reloadmapafterbattle
+;	ifequal LOSE, .AfterChampionLoss
 	sjump .AfterChampionBattle
 
 .AfterChampionBattle:
@@ -355,23 +355,23 @@ LancesRoomChallengerScript:
 	ifequal WEDNESDAY, .CynthiaAppears
 	sjump .CynthiaDoesNotAppear
 
-.AfterChampionLoss:
-	pause 15
-	opentext
-	writetext BetterLuckNextTimeText
-	waitbutton
-	closetext
-	special HealParty
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	pause 30
-	warp ROUTE_23, 9, 6
-	turnobject PLAYER, DOWN
-	blackoutmod ROUTE_23
-	clearevent EVENT_CURRENTLY_CHAMPION
-	clearevent EVENT_CHAMPION_RIVAL
-	setevent EVENT_CHALLENGER_RIVAL
-	end
+;.AfterChampionLoss:
+;	pause 15
+;	opentext
+;	writetext BetterLuckNextTimeText
+;	waitbutton
+;	closetext
+;	special HealParty
+;	special FadeBlackQuickly
+;	special ReloadSpritesNoPalettes
+;	pause 30
+;	warp ROUTE_23, 9, 6
+;	turnobject PLAYER, DOWN
+;	blackoutmod ROUTE_23
+;	clearevent EVENT_CURRENTLY_CHAMPION
+;	clearevent EVENT_CHAMPION_RIVAL
+;	setevent EVENT_CHALLENGER_RIVAL
+;	end
 
 .CynthiaAppears:
 	pause 30
@@ -387,11 +387,11 @@ LancesRoomChallengerScript:
 	winlosstext CynthiaWinText, CynthiaLastMonText
 	setlasttalked LANCESROOM_CYNTHIA2
 	loadtrainer CHALLENGER_CYNTHIA, CHALLENGER_CYNTHIA_1
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
 	reloadmap
-	ifequal LOSE, .AfterCynthiaLoss
+;	ifequal LOSE, .AfterCynthiaLoss
 ; Winning and Losing code not working for Cynthia
 .AfterCynthiaBattle:
 	opentext
@@ -450,23 +450,23 @@ LancesRoomChallengerScript:
 	setevent EVENT_CHAMPION_CYNTHIA
 	end
 
-.AfterCynthiaLoss:
-	pause 15
-	opentext
-	writetext LooksLikeImTheNewChampionText
-	waitbutton
-	closetext
-	special HealParty
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	pause 30
-	warp ROUTE_23, 9, 6
-	turnobject PLAYER, DOWN
-	blackoutmod ROUTE_23
-	clearevent EVENT_CURRENTLY_CHAMPION
-	clearevent EVENT_CHAMPION_CYNTHIA
-	setevent EVENT_CHALLENGER_CYNTHIA
-	end
+;.AfterCynthiaLoss:
+;	pause 15
+;	opentext
+;	writetext LooksLikeImTheNewChampionText
+;	waitbutton
+;	closetext
+;	special HealParty
+;	special FadeBlackQuickly
+;	special ReloadSpritesNoPalettes
+;	pause 30
+;	warp ROUTE_23, 9, 6
+;	turnobject PLAYER, DOWN
+;	blackoutmod ROUTE_23
+;	clearevent EVENT_CURRENTLY_CHAMPION
+;	clearevent EVENT_CHAMPION_CYNTHIA
+;	setevent EVENT_CHALLENGER_CYNTHIA
+;	end
 
 CynthiaLastMonText:
 	text "This is nostalgic,"

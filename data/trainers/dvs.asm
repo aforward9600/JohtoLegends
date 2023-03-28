@@ -78,7 +78,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; LANCE
 	dn  7,  8,  8,  8 ; PASSERBY
 	dn  7,  8,  8,  8 ; MIYAMOTO
-	dn  7,  8,  8,  8 ; TOURIST
+	dn 13, 12, 13, 13 ; TOURIST
 	dn  9,  8,  8,  8 ; ENGINEER
 	dn 10,  8, 11,  8 ; MNINJA_M
 	dn  8, 10, 11,  8 ; MNINJA_F
@@ -88,7 +88,7 @@ TrainerClassDVs:
 	dn  7, 12, 12,  8 ; DRAGON_TAMER_F
 	dn 13,  8, 12,  8 ; DRAGON_TAMER_M
 	dn 14, 14, 14, 14 ; MADAME_BOSS
-	dn  7,  8,  8,  8 ; CYNTHIA
+	dn 13, 12, 13, 13 ; CYNTHIA
 	dn  7,  8,  8,  8 ; FLORINA_2
 	dn  9,  8,  8,  8 ; PRYCE2
 	dn  9,  8,  8,  8 ; PRYCE3
@@ -101,4 +101,4 @@ TrainerClassDVs:
 	dn 13, 12, 13, 13 ; CHAMPION
 	dn 13, 12, 13, 13 ; CHALLENGER
 	dn 13, 12, 13, 13 ; CHALLENGER
-	dn  7,  8,  8,  8 ; TOURIST
+	dn 13, 12, 13, 13 ; TOURIST

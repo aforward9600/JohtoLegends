@@ -19,7 +19,7 @@ SECTION "Evolutions and Attacks Pointers", ROMX
 EvosAttacksPointers::
 	indirect_table 2, 1
 	indirect_entries PINSIR, EvosAttacksPointers1
-	indirect_entries GARCHOMP, EvosAttacksPointers2
+	indirect_entries AGGRON, EvosAttacksPointers2
 	indirect_entries NUM_POKEMON, EvosAttacksPointers3
 	indirect_table_end
 

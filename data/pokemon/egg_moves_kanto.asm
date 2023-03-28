@@ -63,6 +63,7 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw MankeyEggMoves
 	dw NoEggMoves1
+	dw NoEggMoves1
 	dw GrowlitheEggMoves
 	dw NoEggMoves1
 	dw PoliwagEggMoves

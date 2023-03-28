@@ -81,6 +81,7 @@
 	const GOLDUCK    ; 37
 	const MANKEY     ; 38
 	const PRIMEAPE   ; 39
+	const ANNIHILAPE
 	const GROWLITHE  ; 3a
 	const ARCANINE   ; 3b
 	const POLIWAG    ; 3c
@@ -254,9 +255,11 @@ JOHTO_POKEMON EQU const_value
 	const WYNAUT
 	const WOBBUFFET  ; ca
 	const GIRAFARIG  ; cb
+	const FARIGIRAF
 	const PINECO     ; cc
 	const FORRETRESS ; cd
 	const DUNSPARCE  ; ce
+	const DUDUNSPARS
 	const GLIGAR     ; cf
 	const GLISCOR
 	const SNUBBULL   ; d1
@@ -268,6 +271,7 @@ JOHTO_POKEMON EQU const_value
 	const WEAVILE
 	const TEDDIURSA  ; d8
 	const URSARING   ; d9
+	const URSALUNA
 	const SLUGMA     ; da
 	const MAGCARGO   ; db
 	const SWINUB     ; dc
@@ -287,8 +291,12 @@ JOHTO_POKEMON EQU const_value
 	const PHANPY     ; e7
 	const DONPHAN    ; e8
 	const STANTLER   ; ea
+	const WYRDEER
 	const SMEARGLE   ; eb
 	const MILTANK    ; f1
+	const KOTORA
+	const RAITORA
+	const GOROTORA
 	const BUDEW
 	const ROSELIA
 	const ROSERADE
@@ -296,9 +304,14 @@ JOHTO_POKEMON EQU const_value
 	const MANECTRIC
 	const CROAGUNK
 	const TOXICROAK
+	const SWABLU
+	const ALTARIA
 	const DUSKULL    ; f2
 	const DUSCLOPS
 	const DUSKNOIR
+	const LOTAD
+	const LOMBRE
+	const LUDICOLO
 	const SNORUNT
 	const GLALIE
 	const FROSLASS
@@ -328,21 +341,9 @@ JOHTO_POKEMON EQU const_value
 	const LUGIA      ; f9
 	const HO_OH      ; fa
 	const CELEBI     ; fb
-	const MISSINGNO
-	const SWABLU
-	const ALTARIA
-	const KOTORA
-	const RAITORA
-	const GOROTORA
-	const LOTAD
-	const LOMBRE
-	const LUDICOLO
-	const FARIGIRAF
-	const WYRDEER
-	const URSALUNA
-	const DUDUNSPARS
-	const ANNIHILAPE
 	const NOWN
+	const MISSINGNO
+
 NUM_POKEMON EQU const_value + -1
 
 EGG EQU -3

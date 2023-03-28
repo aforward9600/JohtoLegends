@@ -134,6 +134,8 @@ PokemonPicPointers::
 	dba MankeyBackpic
 	dba PrimeapeFrontpic
 	dba PrimeapeBackpic
+	dba AnnihilapeFrontpic
+	dba AnnihilapeBackpic
 	dba GrowlitheFrontpic
 	dba GrowlitheBackpic
 	dba ArcanineFrontpic
@@ -481,12 +483,16 @@ PokemonPicPointers::
 	dba WobbuffetBackpic
 	dba GirafarigFrontpic
 	dba GirafarigBackpic
+	dba FarigirafFrontpic
+	dba FarigirafBackpic
 	dba PinecoFrontpic
 	dba PinecoBackpic
 	dba ForretressFrontpic
 	dba ForretressBackpic
 	dba DunsparceFrontpic
 	dba DunsparceBackpic
+	dba DudunsparsFrontpic
+	dba DudunsparsBackpic
 	dba GligarFrontpic
 	dba GligarBackpic
 	dba GliscorFrontpic
@@ -509,6 +515,8 @@ PokemonPicPointers::
 	dba TeddiursaBackpic
 	dba UrsaringFrontpic
 	dba UrsaringBackpic
+	dba UrsalunaFrontpic
+	dba UrsalunaBackpic
 	dba SlugmaFrontpic
 	dba SlugmaBackpic
 	dba MagcargoFrontpic
@@ -547,10 +555,18 @@ PokemonPicPointers::
 	dba DonphanBackpic
 	dba StantlerFrontpic
 	dba StantlerBackpic
+	dba WyrdeerFrontpic
+	dba WyrdeerBackpic
 	dba SmeargleFrontpic
 	dba SmeargleBackpic
 	dba MiltankFrontpic
 	dba MiltankBackpic
+	dba KotoraFrontpic
+	dba KotoraBackpic
+	dba RaitoraFrontpic
+	dba RaitoraBackpic
+	dba GorotoraFrontpic
+	dba GorotoraBackpic
 	dba BudewFrontpic
 	dba BudewBackpic
 	dba RoseliaFrontpic
@@ -565,12 +581,22 @@ PokemonPicPointers::
 	dba CroagunkBackpic
 	dba ToxicroakFrontpic
 	dba ToxicroakBackpic
+	dba SwabluFrontpic
+	dba SwabluBackpic
+	dba AltariaFrontpic
+	dba AltariaBackpic
 	dba DuskullFrontpic
 	dba DuskullBackpic
 	dba DusclopsFrontpic
 	dba DusclopsBackpic
 	dba DusknoirFrontpic
 	dba DusknoirBackpic
+	dba LotadFrontpic
+	dba LotadBackpic
+	dba LombreFrontpic
+	dba LombreBackpic
+	dba LudicoloFrontpic
+	dba LudicoloBackpic
 	dba SnoruntFrontpic
 	dba SnoruntBackpic
 	dba GlalieFrontpic
@@ -629,33 +655,7 @@ PokemonPicPointers::
 	dba HoOhBackpic
 	dba CelebiFrontpic
 	dba CelebiBackpic
-	dba MissingnoFrontpic
-	dba MissingnoBackpic
-	dba SwabluFrontpic
-	dba SwabluBackpic
-	dba AltariaFrontpic
-	dba AltariaBackpic
-	dba KotoraFrontpic
-	dba KotoraBackpic
-	dba RaitoraFrontpic
-	dba RaitoraBackpic
-	dba GorotoraFrontpic
-	dba GorotoraBackpic
-	dba LotadFrontpic
-	dba LotadBackpic
-	dba LombreFrontpic
-	dba LombreBackpic
-	dba LudicoloFrontpic
-	dba LudicoloBackpic
-	dba FarigirafFrontpic
-	dba FarigirafBackpic
-	dba WyrdeerFrontpic
-	dba WyrdeerBackpic
-	dba UrsalunaFrontpic
-	dba UrsalunaBackpic
-	dba DudunsparsFrontpic
-	dba DudunsparsBackpic
-	dba AnnihilapeFrontpic
-	dba AnnihilapeBackpic
 	dba NownFrontpic
 	dba NownBackpic
+	dba MissingnoFrontpic
+	dba MissingnoBackpic

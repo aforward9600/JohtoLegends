@@ -1695,14 +1695,8 @@ Pokedex_PrintNumberIfOldMode:
 	ld a, d
 	ld de, wPokedexDisplayNumber
 	ld [de], a
-;	lb bc, PRINTNUM_LEADINGZEROS | 2, 3
-;	call PrintNum
-
-	push hl
-	call GetPokemonNumber
-	pop hl
-	call PlaceString
-
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 3
+	call PrintNum
 	pop de
 	pop hl
 	ret
@@ -1963,7 +1957,7 @@ INCLUDE "data/pokemon/dex_order_alpha.asm"
 
 INCLUDE "data/pokemon/dex_order_new.asm"
 
-INCLUDE "data/pokemon/dex_order_old.asm"
+;INCLUDE "data/pokemon/dex_order_old.asm"
 
 Pokedex_DisplayModeDescription:
 	xor a

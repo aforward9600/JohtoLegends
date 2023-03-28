@@ -51,7 +51,7 @@ SwitchOften:
 	cp $10
 	jr nz, .not_10
 	call Random
-	cp 70 percent + 1
+	cp 50 percent + 1
 	jr c, .switch
 	jp DontSwitch
 .not_10
@@ -59,14 +59,14 @@ SwitchOften:
 	cp $20
 	jr nz, .not_20
 	call Random
-	cp 99 percent - 1
+	cp 79 percent - 1
 	jr c, .switch
 	jp DontSwitch
 .not_20
 
 	; $30
 	call Random
-	cp 24 percent
+	cp 4 percent
 	jp c, DontSwitch
 
 .switch
@@ -86,7 +86,7 @@ SwitchRarely:
 	cp $10
 	jr nz, .not_10
 	call Random
-	cp 18 percent
+	cp 8 percent
 	jr c, .switch
 	jp DontSwitch
 .not_10
@@ -94,14 +94,14 @@ SwitchRarely:
 	cp $20
 	jr nz, .not_20
 	call Random
-	cp 32 percent
+	cp 12 percent
 	jr c, .switch
 	jp DontSwitch
 .not_20
 
 	; $30
 	call Random
-	cp 99 percent - 1
+	cp 79 percent - 1
 	jp c, DontSwitch
 
 .switch
@@ -120,7 +120,7 @@ SwitchSometimes:
 	cp $10
 	jr nz, .not_10
 	call Random
-	cp 40 percent - 1
+	cp 20 percent - 1
 	jr c, .switch
 	jp DontSwitch
 .not_10
@@ -128,14 +128,14 @@ SwitchSometimes:
 	cp $20
 	jr nz, .not_20
 	call Random
-	cp 70 percent + 1
+	cp 50 percent + 1
 	jr c, .switch
 	jp DontSwitch
 .not_20
 
 	; $30
 	call Random
-	cp 40 percent - 1
+	cp 20 percent - 1
 	jp c, DontSwitch
 
 .switch

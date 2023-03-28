@@ -63,6 +63,7 @@ EvosAttacksPointers1::
 	dw GolduckEvosAttacks
 	dw MankeyEvosAttacks
 	dw PrimeapeEvosAttacks
+	dw AnnihilapeEvosAttacks
 	dw GrowlitheEvosAttacks
 	dw ArcanineEvosAttacks
 	dw PoliwagEvosAttacks
@@ -1237,6 +1238,30 @@ PrimeapeEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, RAGE
 	dbw 1, RAGE
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 1, LOW_KICK
+	dbw 1, FOCUS_ENERGY
+	dbw 5, FURY_SWIPES
+	dbw 8, KARATE_CHOP
+	dbw 12, PURSUIT
+	dbw 15, SEISMIC_TOSS
+	dbw 19, SWAGGER
+	dbw 22, CROSS_CHOP
+	dbw 26, PAYBACK
+	dbw 30, LOW_SWEEP
+	dbw 35, THRASH
+	dbw 39, CLOSE_COMBAT
+	dbw 44, SCREECH
+	dbw 48, HIHORSEPOWER
+	dbw 53, OUTRAGE
+	dbw 57, SUPERPOWER
+	db 0 ; no more level-up moves
+
+AnnihilapeEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SHADOW_PUNCH
+	dbw 1, SHADOW_PUNCH
 	dbw 1, SCRATCH
 	dbw 1, LEER
 	dbw 1, LOW_KICK

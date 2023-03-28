@@ -2,6 +2,9 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw UrsalunaIcon
+	dw SlugmaIcon
+	dw MagcargoIcon
 	dw SwinubIcon
 	dw PiloswineIcon
 	dw MamoswineIcon
@@ -19,8 +22,12 @@ Icons3:
 	dw PhanpyIcon
 	dw DonphanIcon
 	dw StantlerIcon
+	dw WyrdeerIcon
 	dw SmeargleIcon
 	dw MiltankIcon
+	dw KotoraIcon
+	dw RaitoraIcon
+	dw GorotoraIcon
 	dw BudewIcon
 	dw RoseliaIcon
 	dw RoseradeIcon
@@ -28,9 +35,14 @@ Icons3:
 	dw ManectricIcon
 	dw CroagunkIcon
 	dw ToxicroakIcon
+	dw SwabluIcon
+	dw AltariaIcon
 	dw DuskullIcon
 	dw DusclopsIcon
 	dw DusknoirIcon
+	dw LotadIcon
+	dw LombreIcon
+	dw LudicoloIcon
 	dw SnoruntIcon
 	dw GlalieIcon
 	dw FroslassIcon
@@ -60,22 +72,12 @@ Icons3:
 	dw LugiaIcon
 	dw HoOhIcon
 	dw CelebiIcon
-	dw MissingnoIcon
-	dw SwabluIcon
-	dw AltariaIcon
-	dw KotoraIcon
-	dw RaitoraIcon
-	dw GorotoraIcon
-	dw LotadIcon
-	dw LombreIcon
-	dw LudicoloIcon
-	dw FarigirafIcon
-	dw WyrdeerIcon
-	dw UrsalunaIcon
-	dw DudunsparsIcon
-	dw AnnihilapeIcon
 	dw NownIcon
+	dw MissingnoIcon
 
+UrsalunaIcon:     INCBIN "gfx/icons/ursaluna.2bpp"
+SlugmaIcon:       INCBIN "gfx/icons/slugma.2bpp"
+MagcargoIcon:     INCBIN "gfx/icons/magcargo.2bpp"
 SwinubIcon:       INCBIN "gfx/icons/swinub.2bpp"
 PiloswineIcon:    INCBIN "gfx/icons/piloswine.2bpp"
 MamoswineIcon:	  INCBIN "gfx/icons/mamoswine.2bpp"
@@ -93,8 +95,12 @@ HoundoomIcon:	  INCBIN "gfx/icons/houndoom.2bpp"
 PhanpyIcon:	  	  INCBIN "gfx/icons/phanpy.2bpp"
 DonphanIcon:	  INCBIN "gfx/icons/donphan.2bpp"
 StantlerIcon:	  INCBIN "gfx/icons/stantler.2bpp"
+WyrdeerIcon:      INCBIN "gfx/icons/wyrdeer.2bpp"
 SmeargleIcon:	  INCBIN "gfx/icons/smeargle.2bpp"
 MiltankIcon:	  INCBIN "gfx/icons/miltank.2bpp"
+KotoraIcon:       INCBIN "gfx/icons/kotora.2bpp"
+RaitoraIcon:      INCBIN "gfx/icons/raitora.2bpp"
+GorotoraIcon:     INCBIN "gfx/icons/gorotora.2bpp"
 BudewIcon:        INCBIN "gfx/icons/budew.2bpp"
 RoseliaIcon:	  INCBIN "gfx/icons/roselia.2bpp"
 RoseradeIcon:	  INCBIN "gfx/icons/roserade.2bpp"
@@ -102,9 +108,14 @@ ElectrikeIcon:	  INCBIN "gfx/icons/electrike.2bpp"
 ManectricIcon:	  INCBIN "gfx/icons/manectric.2bpp"
 CroagunkIcon:	  INCBIN "gfx/icons/croagunk.2bpp"
 ToxicroakIcon:	  INCBIN "gfx/icons/toxicroak.2bpp"
+SwabluIcon:       INCBIN "gfx/icons/swablu.2bpp"
+AltariaIcon:      INCBIN "gfx/icons/altaria.2bpp"
 DuskullIcon:	  INCBIN "gfx/icons/duskull.2bpp"
 DusclopsIcon:	  INCBIN "gfx/icons/dusclops.2bpp"
 DusknoirIcon:	  INCBIN "gfx/icons/dusknoir.2bpp"
+LotadIcon:        INCBIN "gfx/icons/lotad.2bpp"
+LombreIcon:       INCBIN "gfx/icons/lombre.2bpp"
+LudicoloIcon:     INCBIN "gfx/icons/ludicolo.2bpp"
 SnoruntIcon:	  INCBIN "gfx/icons/snorunt.2bpp"
 GlalieIcon:	      INCBIN "gfx/icons/glalie.2bpp"
 FroslassIcon:	  INCBIN "gfx/icons/froslass.2bpp"
@@ -134,18 +145,5 @@ SalamenceIcon:	  INCBIN "gfx/icons/salamence.2bpp"
 LugiaIcon:	      INCBIN "gfx/icons/lugia.2bpp"
 HoOhIcon:	      INCBIN "gfx/icons/ho_oh.2bpp"
 CelebiIcon:	      INCBIN "gfx/icons/celebi.2bpp"
-MissingnoIcon:	  INCBIN "gfx/icons/missingno.2bpp"
-SwabluIcon:       INCBIN "gfx/icons/swablu.2bpp"
-AltariaIcon:      INCBIN "gfx/icons/altaria.2bpp"
-KotoraIcon:       INCBIN "gfx/icons/kotora.2bpp"
-RaitoraIcon:      INCBIN "gfx/icons/raitora.2bpp"
-GorotoraIcon:     INCBIN "gfx/icons/gorotora.2bpp"
-LotadIcon:        INCBIN "gfx/icons/lotad.2bpp"
-LombreIcon:       INCBIN "gfx/icons/lombre.2bpp"
-LudicoloIcon:     INCBIN "gfx/icons/ludicolo.2bpp"
-FarigirafIcon:    INCBIN "gfx/icons/farigiraf.2bpp"
-WyrdeerIcon:      INCBIN "gfx/icons/wyrdeer.2bpp"
-UrsalunaIcon:     INCBIN "gfx/icons/ursaluna.2bpp"
-DudunsparsIcon:   INCBIN "gfx/icons/dudunspars.2bpp"
-AnnihilapeIcon:   INCBIN "gfx/icons/annihilape.2bpp"
 NownIcon:         INCBIN "gfx/icons/nown.2bpp"
+MissingnoIcon:	  INCBIN "gfx/icons/missingno.2bpp"

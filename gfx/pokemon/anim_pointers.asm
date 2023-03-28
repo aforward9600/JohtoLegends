@@ -61,6 +61,7 @@ AnimationPointers:
 	dw GolduckAnimation
 	dw MankeyAnimation
 	dw PrimeapeAnimation
+	dw AnnihilapeAnimation
 	dw GrowlitheAnimation
 	dw ArcanineAnimation
 	dw PoliwagAnimation
@@ -233,9 +234,11 @@ AnimationPointers:
 	dw WynautAnimation
 	dw WobbuffetAnimation
 	dw GirafarigAnimation
+	dw FarigirafAnimation
 	dw PinecoAnimation
 	dw ForretressAnimation
 	dw DunsparceAnimation
+	dw DudunsparsAnimation
 	dw GligarAnimation
 	dw GliscorAnimation
 	dw SnubbullAnimation
@@ -247,6 +250,7 @@ AnimationPointers:
 	dw WeavileAnimation
 	dw TeddiursaAnimation
 	dw UrsaringAnimation
+	dw UrsalunaAnimation
 	dw SlugmaAnimation
 	dw MagcargoAnimation
 	dw SwinubAnimation
@@ -266,8 +270,12 @@ AnimationPointers:
 	dw PhanpyAnimation
 	dw DonphanAnimation
 	dw StantlerAnimation
+	dw WyrdeerAnimation
 	dw SmeargleAnimation
 	dw MiltankAnimation
+	dw KotoraAnimation
+	dw RaitoraAnimation
+	dw GorotoraAnimation
 	dw BudewAnimation
 	dw RoseliaAnimation
 	dw RoseradeAnimation
@@ -275,9 +283,14 @@ AnimationPointers:
 	dw ManectricAnimation
 	dw CroagunkAnimation
 	dw ToxicroakAnimation
+	dw SwabluAnimation
+	dw AltariaAnimation
 	dw DuskullAnimation
 	dw DusclopsAnimation
 	dw DusknoirAnimation
+	dw LotadAnimation
+	dw LombreAnimation
+	dw LudicoloAnimation
 	dw SnoruntAnimation
 	dw GlalieAnimation
 	dw FroslassAnimation
@@ -307,18 +320,5 @@ AnimationPointers:
 	dw LugiaAnimation
 	dw HoOhAnimation
 	dw CelebiAnimation
-	dw MissingnoAnimation
-	dw SwabluAnimation
-	dw AltariaAnimation
-	dw KotoraAnimation
-	dw RaitoraAnimation
-	dw GorotoraAnimation
-	dw LotadAnimation
-	dw LombreAnimation
-	dw LudicoloAnimation
-	dw FarigirafAnimation
-	dw WyrdeerAnimation
-	dw UrsalunaAnimation
-	dw DudunsparsAnimation
-	dw AnnihilapeAnimation
 	dw NownAnimation
+	dw MissingnoAnimation

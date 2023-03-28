@@ -2,6 +2,7 @@ SECTION "Mon Icons 2", ROMX
 
 Icons2:
 
+	dw RhyperiorIcon
 	dw HappinyIcon
 	dw ChanseyIcon
 	dw BlisseyIcon
@@ -111,9 +112,11 @@ Icons2:
 	dw WynautIcon
 	dw WobbuffetIcon
 	dw GirafarigIcon
+	dw FarigirafIcon
 	dw PinecoIcon
 	dw ForretressIcon
 	dw DunsparceIcon
+	dw DudunsparsIcon
 	dw GligarIcon
 	dw GliscorIcon
 	dw SnubbullIcon
@@ -125,9 +128,8 @@ Icons2:
 	dw WeavileIcon
 	dw TeddiursaIcon
 	dw UrsaringIcon
-	dw SlugmaIcon
-	dw MagcargoIcon
 
+RhyperiorIcon:    INCBIN "gfx/icons/rhyperior.2bpp"
 HappinyIcon:      INCBIN "gfx/icons/happiny.2bpp"
 ChanseyIcon:      INCBIN "gfx/icons/chansey.2bpp"
 BlisseyIcon:      INCBIN "gfx/icons/blissey.2bpp"
@@ -237,9 +239,11 @@ UnownIcon:        INCBIN "gfx/icons/unown.2bpp"
 WynautIcon:       INCBIN "gfx/icons/wynaut.2bpp"
 WobbuffetIcon:    INCBIN "gfx/icons/wobbuffet.2bpp"
 GirafarigIcon:    INCBIN "gfx/icons/girafarig.2bpp"
+FarigirafIcon:    INCBIN "gfx/icons/farigiraf.2bpp"
 PinecoIcon:       INCBIN "gfx/icons/pineco.2bpp"
 ForretressIcon:   INCBIN "gfx/icons/forretress.2bpp"
 DunsparceIcon:    INCBIN "gfx/icons/dunsparce.2bpp"
+DudunsparsIcon:   INCBIN "gfx/icons/dudunspars.2bpp"
 GligarIcon:       INCBIN "gfx/icons/gligar.2bpp"
 GliscorIcon:      INCBIN "gfx/icons/gliscor.2bpp"
 SnubbullIcon:     INCBIN "gfx/icons/snubbull.2bpp"
@@ -251,5 +255,3 @@ SneaselIcon:	  INCBIN "gfx/icons/sneasel.2bpp"
 WeavileIcon:	  INCBIN "gfx/icons/weavile.2bpp"
 TeddiursaIcon:    INCBIN "gfx/icons/teddiursa.2bpp"
 UrsaringIcon:     INCBIN "gfx/icons/ursaring.2bpp"
-SlugmaIcon:       INCBIN "gfx/icons/slugma.2bpp"
-MagcargoIcon:     INCBIN "gfx/icons/magcargo.2bpp"
