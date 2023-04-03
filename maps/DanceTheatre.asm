@@ -392,8 +392,8 @@ DanceTheatreGrannyText:
 	cont "and get a reward"
 	cont "from her,"
 
-	para "then I'll give"
-	line "something useful."
+	para "then I'll give you"
+	line "a useful tip."
 	done
 
 DanceTheatreFancyPanelText:
@@ -463,6 +463,7 @@ HeadingToWildAreText:
 CynthiaDanceTheaterLastPkmnText:
 	text "Backed into a"
 	line "corner, huh?"
+	done
 
 SeeMySonText:
 	text "You defeated Rui."
@@ -501,11 +502,11 @@ DanceTheatre_MapEvents:
 	db 10 ; object events
 	object_event  5,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerKimonoGirlRui, -1
 	object_event  7, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheaterSurfGuy, -1
-	object_event  6,  8, SPRITE_RHYDON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DanceTheaterRhydon, -1
+	object_event  6,  8, SPRITE_RHYDON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GRAY, OBJECTTYPE_SCRIPT, 0, DanceTheaterRhydon, -1
 	object_event  1,  8, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheatreGrannyScript, -1
-	object_event  7,  5, SPRITE_TWIN, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, QuintupletNaokoScript, -1
-	object_event  8,  6, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, QuintupletSayoScript, -1
-	object_event  9,  5, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, QuintupletZukiScript, -1
-	object_event 10,  6, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, QuintupletKuniScript, -1
-	object_event 11,  5, SPRITE_TWIN, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, QuintupletMikiScript, -1
+	object_event  7,  6, SPRITE_TWIN, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, QuintupletNaokoScript, -1
+	object_event  8,  7, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, QuintupletSayoScript, -1
+	object_event  9,  6, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, QuintupletZukiScript, -1
+	object_event 10,  7, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, QuintupletKuniScript, -1
+	object_event 11,  6, SPRITE_TWIN, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, QuintupletMikiScript, -1
 	object_event  3, 10, SPRITE_CYNTHIA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, DanceTheaterCynthiaScript, EVENT_DANCE_THEATER_CYNTHIA

@@ -124,4 +124,4 @@
 	tilecoll LADDER, LADDER, FLOOR, FLOOR ; 7b
 	tilecoll LADDER, LADDER, FLOOR, FLOOR ; 7c
 	tilecoll WALL, WALL, WALL, WALL ; 7d
-	tilecoll FLOOR, PIT, FLOOR, PIT ; 7e
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 7e

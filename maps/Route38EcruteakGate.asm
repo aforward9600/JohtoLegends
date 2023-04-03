@@ -22,7 +22,6 @@ EcruteakGateRival2:
 	applymovement ROUTE38ECRUTEAKGATE_RIVAL, Movement3
 EcruteakGateRival1:
 	special FadeOutMusic
-	pause 10
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female1
 	playmusic MUSIC_DAHLIA_ENCOUNTER

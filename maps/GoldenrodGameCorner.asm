@@ -1,9 +1,9 @@
 GOLDENRODGAMECORNER_TM25_COINS EQU 5500
 GOLDENRODGAMECORNER_TM14_COINS EQU 5500
 GOLDENRODGAMECORNER_TM38_COINS EQU 5500
-GOLDENRODGAMECORNER_ABRA_COINS      EQU 100
-GOLDENRODGAMECORNER_CUBONE_COINS    EQU 800
-GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 1500
+GOLDENRODGAMECORNER_ABRA_COINS      EQU 800
+GOLDENRODGAMECORNER_CUBONE_COINS    EQU 1500
+GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 3000
 
 	object_const_def ; object_event constants
 	const GOLDENRODGAMECORNER_CLERK
@@ -191,16 +191,16 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	getmonname STRING_BUFFER_3, ABRA
+	getmonname STRING_BUFFER_3, BRONZOR
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	loadmonindex 1, ABRA
+	loadmonindex 1, BRONZOR
 	special GameCornerPrizeMonCheckDex
-	givepoke ABRA, 5
+	givepoke BRONZOR, 5
 	takecoins GOLDENRODGAMECORNER_ABRA_COINS
 	sjump .loop
 
@@ -227,16 +227,16 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	getmonname STRING_BUFFER_3, WOBBUFFET
+	getmonname STRING_BUFFER_3, BAGON
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	loadmonindex 3, WOBBUFFET
+	loadmonindex 3, BAGON
 	special GameCornerPrizeMonCheckDex
-	givepoke WOBBUFFET, 15
+	givepoke BAGON, 15
 	takecoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
 	sjump .loop
 
@@ -249,9 +249,9 @@ GoldenrodGameCornerPrizeMonVendorScript:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "Abra        100@"
-	db "Cubone      800@"
-	db "Wobbuffet  1500@"
+	db "Bronzor     800@"
+	db "Cubone     1500@"
+	db "Bagon      3000@"
 	db "Cancel@"
 
 GoldenrodGameCornerPharmacistScript:
@@ -441,14 +441,15 @@ GoldenrodGameCornerGrannyText:
 	done
 
 GoldenrodGameCornerGentlemanText:
-	text "I taught Thunder"
-	line "to my #mon."
+	text "I hear that the"
+	line "#mon you get as"
 
-	para "It was hard to get"
-	line "enough coins for"
+	para "prizes here are"
+	line "poached."
 
-	para "it, but it was"
-	line "worth it."
+	para "I don't know if it's"
+	line "true, but it's a"
+	cont "chilling thought."
 	done
 
 GoldenrodGameCornerPokefanM2Text:
