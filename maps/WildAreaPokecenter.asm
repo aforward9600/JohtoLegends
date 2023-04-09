@@ -59,9 +59,10 @@ WildAreaPokecenterCooltrainerFText:
 WildAreaPokecenter_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event  3,  7, WILD_AREA_OUTSIDE, 1
 	warp_event  4,  7, WILD_AREA_OUTSIDE, 1
+	warp_event  0,  7, POKECENTER_2F, 1
 
 	db 0 ; coord events
 

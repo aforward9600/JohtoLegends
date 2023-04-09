@@ -151,3 +151,11 @@
 	tilecoll WALL, WALL, WALL, WALL ; 96
 	tilecoll WALL, WALL, WALL, WALL ; 97
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 98
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 99
+	tilecoll WALL, WALL, WALL, WALL ; 9a
+	tilecoll FLOOR, WALL, FLOOR, CUT_TREE ; 9b
+	tilecoll WALL, WALL, DOOR, WALL ; 9c
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9d
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9e
+	tilecoll HOP_DOWN, FLOOR, WALL, FLOOR ; 9f
+	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; a0

@@ -186,63 +186,61 @@ CeladonCityLassText:
 	done
 
 CeladonCitySignText:
-	text "CELADON CITY"
+	text "Celadon City"
 
 	para "The City of"
 	line "Rainbow Dreams"
 	done
 
 CeladonGymSignText:
-	text "CELADON CITY"
-	line "#MON GYM"
-	cont "LEADER: ERIKA"
+	text "Celadon City"
+	line "#mon Gym"
+	cont "Leader: …"
 
-	para "The Nature-Loving"
-	line "Princess"
+	para "The rest of the"
+	line "text is illegible…"
 	done
 
 CeladonCityDeptStoreSignText:
 	text "Find What You"
-	line "Need at CELADON"
-	cont "DEPT.STORE!"
+	line "Need at Celadon"
+	cont "Dept.Store!"
 	done
 
 CeladonCityMansionSignText:
-	text "CELADON MANSION"
+	text "Celadon Mansion"
 	done
 
 CeladonCityGameCornerSignText:
-	text "The Playground for"
-	line "Everybody--CELADON"
-	cont "GAME CORNER"
+	text "Celadon City"
+	line "Botanical Garden"
 	done
 
 CeladonCityTrainerTipsText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
-	para "GUARD SPEC."
-	line "protects #MON"
+	para "Guard Spec."
+	line "protects #mon"
 
-	para "against SPECIAL"
+	para "against Special"
 	line "attacks such as"
 	cont "fire and water."
 
 	para "Get your items at"
-	line "CELADON DEPT."
-	cont "STORE!"
+	line "Celadon Dept."
+	cont "Store!"
 	done
 
 CeladonCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 9 ; warp events
+	db 8 ; warp events
 	warp_event  4,  9, CELADON_DEPT_STORE_1F, 1
 	warp_event 16,  9, CELADON_MANSION_1F, 1
 	warp_event 16,  3, CELADON_MANSION_1F, 3
 	warp_event 17,  3, CELADON_MANSION_1F, 3
 	warp_event 29,  9, CELADON_POKECENTER_1F, 1
-	warp_event 18, 19, CELADON_GAME_CORNER, 1
-	warp_event 23, 19, CELADON_GAME_CORNER_PRIZE_ROOM, 1
+	warp_event 20, 19, CELADON_GAME_CORNER, 1
 	warp_event 10, 29, CELADON_GYM, 1
 	warp_event 25, 29, CELADON_CAFE, 1
 
@@ -250,10 +248,10 @@ CeladonCity_MapEvents:
 
 	db 8 ; bg events
 	bg_event 23, 21, BGEVENT_READ, CeladonCitySign
-	bg_event 11, 31, BGEVENT_READ, CeladonGymSign
+	bg_event 19, 21, BGEVENT_READ, CeladonGymSign
 	bg_event  6,  9, BGEVENT_READ, CeladonCityDeptStoreSign
 	bg_event 13,  9, BGEVENT_READ, CeladonCityMansionSign
-	bg_event 19, 21, BGEVENT_READ, CeladonCityGameCornerSign
+	bg_event 11, 31, BGEVENT_READ, CeladonCityGameCornerSign
 	bg_event 29, 21, BGEVENT_READ, CeladonCityTrainerTips
 	bg_event 30,  9, BGEVENT_READ, CeladonCityPokecenterSign
 	bg_event 37, 21, BGEVENT_ITEM, CeladonCityHiddenPpUp

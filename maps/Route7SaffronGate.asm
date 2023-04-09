@@ -49,8 +49,8 @@ Route7SaffronGate_MapEvents:
 	db 4 ; warp events
 	warp_event  0,  4, ROUTE_7, 1
 	warp_event  0,  5, ROUTE_7, 2
-	warp_event  9,  4, SAFFRON_CITY, 10
-	warp_event  9,  5, SAFFRON_CITY, 11
+	warp_event  9,  4, SAFFRON_CITY, 9
+	warp_event  9,  5, SAFFRON_CITY, 10
 
 	db 0 ; coord events
 

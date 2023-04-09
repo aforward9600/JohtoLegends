@@ -38,8 +38,8 @@ TreeMonMaps:
 	treemon_map BLACKTHORN_CITY,           TREEMON_SET_CITY
 	treemon_map SILVER_CAVE_OUTSIDE,       TREEMON_SET_CITY
 	treemon_map ILEX_FOREST,               TREEMON_SET_FOREST
-	treemon_map ROUTE_47,                  TREEMON_SET_ROUTE
-	treemon_map ROUTE_48,                  TREEMON_SET_ROUTE
+	treemon_map ROUTE_47,                  TREEMON_SET_ROUTE_47
+	treemon_map ROUTE_48,                  TREEMON_SET_ROUTE_47
 	treemon_map LAKE_OF_RAGE,              TREEMON_SET_LAKE
 	db -1
 

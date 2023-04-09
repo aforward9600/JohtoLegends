@@ -96,9 +96,6 @@ SilphCoSign:
 MrPsychicsHouseSign:
 	jumptext MrPsychicsHouseSignText
 
-SaffronCityMagnetTrainStationSign:
-	jumptext SaffronCityMagnetTrainStationSignText
-
 SaffronCityPokecenterSign:
 	jumpstd pokecentersign
 
@@ -227,52 +224,46 @@ SaffronCityLass2Text:
 	done
 
 SaffronCitySignText:
-	text "SAFFRON CITY"
+	text "Saffron City"
 
 	para "Shining, Golden"
 	line "Land of Commerce"
 	done
 
 SaffronGymSignText:
-	text "SAFFRON CITY"
-	line "#MON GYM"
-	cont "LEADER: SABRINA"
+	text "Saffron City"
+	line "#mon Gym"
+	cont "Leader: Koichi"
 
 	para "The Master of"
-	line "Psychic #MON!"
+	line "Fighting #mon!"
 	done
 
 FightingDojoSignText:
-	text "Everyone Welcome!"
-	line "FIGHTING DOJO"
+	text "Psychic Institute"
+
+	para "Train your mind."
 	done
 
 SilphCoSignText:
-	text "SILPH CO."
-	line "OFFICE BUILDING"
+	text "Silph Co."
+	line "Office Building"
 	done
 
 MrPsychicsHouseSignText:
-	text "MR.PSYCHIC'S"
-	line "HOUSE"
-	done
-
-SaffronCityMagnetTrainStationSignText:
-	text "SAFFRON CITY"
-	line "MAGNET TRAIN"
-	cont "STATION"
+	text "Mr. Psychic's"
+	line "House"
 	done
 
 SaffronCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 15 ; warp events
+	db 14 ; warp events
 	warp_event 26,  3, FIGHTING_DOJO, 1
 	warp_event 34,  3, SAFFRON_GYM, 1
 	warp_event 25, 11, SAFFRON_MART, 2
 	warp_event  9, 29, SAFFRON_POKECENTER_1F, 1
 	warp_event 27, 29, MR_PSYCHICS_HOUSE, 1
-	warp_event  8,  3, SAFFRON_MAGNET_TRAIN_STATION, 2
 	warp_event 18, 21, SILPH_CO_1F, 1
 	warp_event  9, 11, COPYCATS_HOUSE_1F, 1
 	warp_event 18,  3, ROUTE_5_SAFFRON_GATE, 3
@@ -285,13 +276,12 @@ SaffronCity_MapEvents:
 
 	db 0 ; coord events
 
-	db 8 ; bg events
+	db 7 ; bg events
 	bg_event 21,  5, BGEVENT_READ, SaffronCitySign
-	bg_event 33,  5, BGEVENT_READ, SaffronGymSign
-	bg_event 25,  5, BGEVENT_READ, FightingDojoSign
+	bg_event 25,  5, BGEVENT_READ, SaffronGymSign
+	bg_event 33,  5, BGEVENT_READ, FightingDojoSign
 	bg_event 15, 21, BGEVENT_READ, SilphCoSign
 	bg_event 25, 29, BGEVENT_READ, MrPsychicsHouseSign
-	bg_event 11,  5, BGEVENT_READ, SaffronCityMagnetTrainStationSign
 	bg_event 10, 29, BGEVENT_READ, SaffronCityPokecenterSign
 	bg_event 26, 11, BGEVENT_READ, SaffronCityMartSign
 

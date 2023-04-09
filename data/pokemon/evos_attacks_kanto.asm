@@ -2303,6 +2303,7 @@ ExeggutorEvosAttacks:
 	dbw 27, EGG_BOMB
 	dbw 37, WOOD_HAMMER
 	dbw 47, SOLARBEAM
+	dbw 57, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 CuboneEvosAttacks:
