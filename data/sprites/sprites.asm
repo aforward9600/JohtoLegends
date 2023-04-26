@@ -82,7 +82,7 @@ OverworldSprites:
 	overworld_sprite PharmacistSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite MonsterSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite FairySpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite BirdSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite LarvitarStillSpriteGFX, 4, STILL_SPRITE, PAL_OW_GREEN
 	overworld_sprite DragonSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite BigOnixSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite N64SpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
@@ -142,6 +142,13 @@ OverworldSprites:
 	overworld_sprite PsychicGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SchoolboyGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SkierGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite GrampsStandingGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
-	overworld_sprite OfficerStandingGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite NownOpenSpriteGFX, 12, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite BigSalamenceSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite DratiniStillSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
+	overworld_sprite RattataStillSpriteGFX, 4, STILL_SPRITE, PAL_OW_PINK
+	overworld_sprite BulbasaurStillSpriteGFX, 4, STILL_SPRITE, PAL_OW_GREEN
+	overworld_sprite ChikoritaStillSpriteGFX, 4, STILL_SPRITE, PAL_OW_GREEN
+	overworld_sprite SquirtleStillSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
+	overworld_sprite TotodileStillSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
+	overworld_sprite SwabluStillSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
+	overworld_sprite LotadStillSpriteGFX, 4, STILL_SPRITE, PAL_OW_GREEN

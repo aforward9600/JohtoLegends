@@ -98,6 +98,7 @@ ENDM
 	deco  BIG_SNORLAX_DOLL
 	deco  BIG_ONIX_DOLL
 	deco  BIG_LAPRAS_DOLL
+	deco  BIG_SALAMENCE_DOLL
 ; FindOwnedOrnaments.ornaments values (see engine/overworld/decorations.asm)
 	const DOLLS
 	deco  PIKACHU_DOLL
@@ -111,16 +112,18 @@ ENDM
 	deco  DIGLETT_DOLL
 	deco  STARMIE_DOLL
 	deco  MAGIKARP_DOLL
-	deco  ODDISH_DOLL
+	deco  KOTORA_DOLL
 	deco  GENGAR_DOLL
-	deco  SHELLDER_DOLL
-	deco  GRIMER_DOLL
-	deco  VOLTORB_DOLL
-	deco  WEEDLE_DOLL
+	deco  CYNDAQUIL_DOLL
+	deco  SWABLU_DOLL
+	deco  LOTAD_DOLL
+	deco  CHIKORITA_DOLL
 	deco  UNOWN_DOLL
-	deco  GEODUDE_DOLL
-	deco  MACHOP_DOLL
-	deco  TENTACOOL_DOLL
+	deco  SKARMINI_DOLL
+	deco  TOTODILE_DOLL
+	deco  RATTATA_DOLL
+	deco  DRATINI_DOLL
+	deco  LARVITAR_DOLL
 NUM_NON_TROPHY_DECOS EQU __enum__
 	deco  GOLD_TROPHY_DOLL
 	deco  SILVER_TROPHY_DOLL

@@ -251,6 +251,8 @@ SetFacingBigDoll:
 	jr z, .ok
 	cp SPRITE_BIG_LAPRAS
 	jr z, .ok
+	cp SPRITE_BIG_SALAMENCE
+	jr z, .ok
 	ld d, FACING_BIG_DOLL_ASYM ; asymmetric
 
 .ok

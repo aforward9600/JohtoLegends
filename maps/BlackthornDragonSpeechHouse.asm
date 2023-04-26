@@ -8,7 +8,42 @@ BlackthornDragonSpeechHouse_MapScripts:
 	db 0 ; callbacks
 
 BlackthornDragonSpeechHouseGrannyScript:
-	jumptextfaceplayer BlackthornDragonSpeechHouseGrannyText
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_DOLL_FROM_OLD_LADY
+	iftrue .GotADoll
+	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
+	iftrue .GetADoll
+	writetext ComeBackWithAPokemonText
+	waitbutton
+	closetext
+	end
+
+.GetADoll:
+	writetext TakeThisDollText
+	buttonsound
+	waitsfx
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
+	iftrue .GetLarvitarDoll
+	setevent EVENT_DECO_DRATINI_DOLL
+	getmonname STRING_BUFFER_3, DRATINI
+	writetext PlayerReceivedStarterDollText
+	sjump .FinishGettingDoll
+
+.GetLarvitarDoll:
+	setevent EVENT_DECO_LARVITAR_DOLL
+	getmonname STRING_BUFFER_3, LARVITAR
+	writetext PlayerReceivedStarterDollText
+.FinishGettingDoll:
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	setevent EVENT_GOT_DOLL_FROM_OLD_LADY
+.GotADoll:
+	writetext TreatDollWellText
+	waitbutton
+	closetext
+	end
 
 BlackthornDragonSpeechHouseDratiniScript:
 	refreshscreen
@@ -50,6 +85,35 @@ BlackthornDragonSpeechHouseGrannyText:
 
 BlackthornDragonSpeechHouseDratiniText:
 	text "Dratini: Draa!"
+	done
+
+PlayerReceivedStarterDollText:
+	text "<PLAYER> received"
+	line "@"
+	text_ram wStringBuffer3
+	text " Doll!"
+	done
+
+ComeBackWithAPokemonText:
+	text "Come back after you"
+	line "have a #mon."
+
+	para "I'll have a gift"
+	line "for you."
+	done
+
+TakeThisDollText:
+	text "What a cute"
+	line "#mon!"
+
+	para "Take this doll to"
+	line "decorate your"
+	cont "room!"
+	done
+
+TreatDollWellText:
+	text "Treat that doll"
+	line "well!"
 	done
 
 BlackthornDragonSpeechHouse_MapEvents:

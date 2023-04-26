@@ -610,20 +610,19 @@ LooksLikeImTheChampionText:
 	done
 
 ChampionWinText:
-	text "…It's over."
+	text "…I…"
 
-	para "But it's an odd"
-	line "feeling."
+	para "…I lost again…"
 
-	para "I'm not angry that"
-	line "I lost. In fact, I"
-	cont "feel happy."
+	para "…I guess this is"
+	line "just how it is,"
+	cont "huh?"
 
-	para "Happy that I"
-	line "I saw my best"
-	cont "friend become the"
+	para "…I must have the"
+	line "shortest reign as"
+	cont "Champion…"
 
-	para "new Champion!"
+	para "…Heh…"
 	done
 
 ChampionLoseText:
@@ -729,18 +728,19 @@ ImBackPlayerText:
 	done
 
 ChallengerWinText:
-	text "…It's over."
+	text "…I…"
 
-	para "But it's an odd"
-	line "feeling."
+	para "…I lost again…"
 
-	para "I'm not angry that"
-	line "I lost. In fact, I"
-	cont "feel happy."
+	para "…I guess this is"
+	line "just how it is,"
+	cont "huh?"
 
-	para "Happy that I"
-	line "I battled my"
-	cont "best friend!"
+	para "…I must just"
+	line "be destined to be"
+	cont "a former Champion…"
+
+	para "…Heh…"
 	done
 
 BetterLuckNextTimeText:

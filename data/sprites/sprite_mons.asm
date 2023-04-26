@@ -1,11 +1,11 @@
 SpriteMons:
 ; entries correspond to SPRITE_* constants past SPRITE_POKEMON
 	dw UNOWN
-	dw GEODUDE
+	dw SKARMINI
 	dw GROWLITHE
 	dw WEEDLE
-	dw SHELLDER
-	dw ODDISH
+	dw CYNDAQUIL
+	dw KOTORA
 	dw GENGAR
 	dw ZUBAT
 	dw MAGIKARP
