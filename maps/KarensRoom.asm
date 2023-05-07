@@ -53,6 +53,7 @@ AgathaScript_Battle:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_AGATHA
+	setevent EVENT_DECO_CARPET_1
 	opentext
 	writetext AgathaScript_AgathaDefeatText
 	waitbutton

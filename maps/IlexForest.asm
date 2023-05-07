@@ -196,10 +196,12 @@ IlexForestShrineScript:
 	special CelebiShrineEvent
 	loadwildmon CELEBI, 50
 	startbattle
+	ifequal LOSE, .NotBeaten
 	reloadmapafterbattle
 	pause 20
 	special CheckCaughtCelebi
 	iffalse .DidntCatchCelebi
+	setevent EVENT_CAUGHT_CELEBI
 	appear ILEXFOREST_KURT
 	applymovement ILEXFOREST_KURT, MovementData_0x6ef4e
 	opentext
@@ -209,6 +211,13 @@ IlexForestShrineScript:
 	applymovement ILEXFOREST_KURT, MovementData_0x6ef53
 	disappear ILEXFOREST_KURT
 .DidntCatchCelebi:
+	setevent EVENT_BEAT_CELEBI
+	giveitem GS_BALL
+	end
+
+.NotBeaten:
+	reloadmapafterbattle
+	giveitem GS_BALL
 	end
 
 MovementData_0x6ef4e:

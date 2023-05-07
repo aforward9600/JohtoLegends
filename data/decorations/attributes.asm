@@ -46,8 +46,8 @@ DecorationAttributes:
 	decoration DECO_DOLL,    1,              SET_UP_DOLL,       EVENT_DECO_CHARMANDER_DOLL,      SPRITE_CHARMANDER
 	decoration DECO_DOLL,    2,              SET_UP_DOLL,       EVENT_DECO_SQUIRTLE_DOLL,        SPRITE_SQUIRTLE_STILL
 	decoration DECO_DOLL,    9,              SET_UP_DOLL,       EVENT_DECO_POLIWAG_DOLL,         SPRITE_POLIWAG
-	decoration DECO_DOLL,    8,              SET_UP_DOLL,       EVENT_DECO_DIGLETT_DOLL,         SPRITE_DIGLETT
-	decoration DECO_DOLL,    18,             SET_UP_DOLL,       EVENT_DECO_STARMIE_DOLL,         SPRITE_STARMIE
+	decoration DECO_DOLL,    8,              SET_UP_DOLL,       EVENT_DECO_DIGLETT_DOLL,         SPRITE_DIGLETT_STILL
+	decoration DECO_DOLL,    18,             SET_UP_DOLL,       EVENT_DECO_STARMIE_DOLL,         SPRITE_STARMIE_STILL
 	decoration DECO_DOLL,    19,             SET_UP_DOLL,       EVENT_DECO_MAGIKARP_DOLL,        SPRITE_MAGIKARP
 	decoration DECO_DOLL,    7,              SET_UP_DOLL,       EVENT_DECO_KOTORA_DOLL,          SPRITE_KOTORA
 	decoration DECO_DOLL,    15,             SET_UP_DOLL,       EVENT_DECO_GENGAR_DOLL,          SPRITE_GENGAR

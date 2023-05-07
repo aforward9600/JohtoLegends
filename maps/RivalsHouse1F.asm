@@ -10,6 +10,8 @@ RivalsHouse1F_MapScripts:
 RivalsDadScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_CHAMPION_LANCE
+	iftrue .CongratsDad
 	checkevent EVENT_BEAT_RIVALS_HOUSE_RIVAL
 	iftrue .RivalIsGone
 	checkevent EVENT_RIVALS_HOUSE_RIVAL
@@ -31,9 +33,19 @@ RivalsDadScript:
 	closetext
 	end
 
+.CongratsDad:
+	writetext CongratsDadText
+	waitbutton
+	closetext
+	end
+
 RivalsMomScript:
 	faceplayer
 	opentext
+	checkevent EVENT_DECO_POSTER_1
+	iftrue .CongratsMom
+	checkevent EVENT_BEAT_CHAMPION_LANCE
+	iftrue .HaveAPoster
 	checkevent EVENT_ICE_PATH_B1F_RIVAL1
 	iftrue .KeepAnEyeOnThem
 	checkflag ENGINE_PLAYER_IS_FEMALE
@@ -65,6 +77,21 @@ RivalsMomScript:
 	closetext
 	end
 
+.HaveAPoster:
+	writetext HaveAPosterText
+	buttonsound
+	waitsfx
+	setevent EVENT_DECO_POSTER_1
+	writetext PlayerReceivedPikachuPosterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+.CongratsMom:
+	writetext CongratsMomText
+	waitbutton
+	closetext
+	end
+
 RivalsHouseBookshelf:
 	jumpstd magazinebookshelf
 
@@ -78,7 +105,7 @@ RivalsDadText:
 
 	para "to my eye!"
 
-	para "Sniff..."
+	para "Sniff…"
 	done
 
 RivalsMom1Text:
@@ -137,6 +164,47 @@ HopeTheyreOkText:
 	para "I hope nothing"
 	line "serious has"
 	cont "happened."
+	done
+
+CongratsDadText:
+	text "Way to go,"
+	line "<PLAYER>!"
+
+	para "I'm proud of you"
+	line "and <RIVAL>!"
+
+	para "Oh, it's enough"
+	line "to bring a tear"
+
+	para "to my eye!"
+
+	para "Sniff…"
+	done
+
+HaveAPosterText:
+	text "Oh, <PLAYER>!"
+
+	para "Congratulations"
+	line "on becoming"
+	cont "Champion!"
+
+	para "Here, have this"
+	line "decoration for"
+	cont "your room!"
+
+	para "It'll look nice!"
+	done
+
+PlayerReceivedPikachuPosterText:
+	text "<PLAYER> received"
+	line "Pikachu Poster!"
+	done
+
+CongratsMomText:
+	text "Once again,"
+	line "congratulations"
+	cont "on becoming"
+	cont "Champion!"
 	done
 
 RivalsHouse1F_MapEvents:

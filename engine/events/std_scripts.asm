@@ -58,6 +58,7 @@ StdScripts::
 	dba StaticPokemonRefresh
 	dba TelevisionScript
 	dba SwarmScript
+	dba GetDecoEvent
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -1866,13 +1867,60 @@ Movement_ContestResults_WalkAfterWarp:
 	turn_head UP
 	step_end
 
+GetDecoEvent:
+	setevent EVENT_DECO_TOTODILE_DOLL
+	setevent EVENT_DECO_GENGAR_DOLL
+	setevent EVENT_DECO_BULBASAUR_DOLL
+	setevent EVENT_DECO_CHARMANDER_DOLL
+	setevent EVENT_DECO_CHIKORITA_DOLL
+	setevent EVENT_DECO_CYNDAQUIL_DOLL
+	setevent EVENT_DECO_SQUIRTLE_DOLL
+	setevent EVENT_DECO_BIG_SALAMENCE_DOLL
+	setevent EVENT_DECO_PLANT_3
+	setevent EVENT_DECO_CARPET_1
+	setevent EVENT_DECO_PIKACHU_DOLL
+	setevent EVENT_DECO_POSTER_3
+	setevent EVENT_DECO_SILVER_TROPHY
+	return
+
 StaticPokemonRefresh:
 	checkevent EVENT_BEAT_FARFETCHD
 	iftrue .refreshfarfetchd
+	checkevent EVENT_BEAT_RAIKOU
+	iftrue .refreshraikou
+	checkevent EVENT_BEAT_ENTEI
+	iftrue .refreshentei
+	checkevent EVENT_BEAT_SUICUNE
+	iftrue .refreshsuicune
+	checkevent EVENT_BEAT_DUSKNOIR
+	iftrue .refreshdusknoir
+	checkevent EVENT_BEAT_CELEBI
+	iftrue .refreshcelebi
 	return
 
 .refreshfarfetchd:
 	clearevent EVENT_BEAT_FARFETCHD
+	sjump StaticPokemonRefresh
+
+.refreshraikou:
+	clearevent EVENT_BEAT_RAIKOU
+	sjump StaticPokemonRefresh
+
+.refreshentei:
+	clearevent EVENT_BEAT_ENTEI
+	sjump StaticPokemonRefresh
+
+.refreshsuicune:
+	clearevent EVENT_BEAT_SUICUNE
+	sjump StaticPokemonRefresh
+
+.refreshdusknoir:
+	clearevent EVENT_BEAT_DUSKNOIR
+	sjump StaticPokemonRefresh
+
+.refreshcelebi:
+	setevent EVENT_FOREST_IS_RESTLESS
+	clearevent EVENT_BEAT_CELEBI
 	sjump StaticPokemonRefresh
 
 TelevisionScript:

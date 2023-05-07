@@ -59,3 +59,4 @@
 	enum staticpokemonrefresh
 	enum televisionscript
 	enum swarmscript
+	enum getdecoevent

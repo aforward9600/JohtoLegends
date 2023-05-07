@@ -44,6 +44,7 @@ OlivineGym1FByronScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BYRON
+	setevent EVENT_DECO_CHARMANDER_DOLL
 	opentext
 	writetext Byron1F_Beaten
 	waitbutton

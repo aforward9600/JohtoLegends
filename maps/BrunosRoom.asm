@@ -53,6 +53,7 @@ MarthaScript_Battle:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_MARTHA
+	setevent EVENT_DECO_POSTER_3
 	opentext
 	writetext MarthaScript_MarthaDefeatText
 	waitbutton

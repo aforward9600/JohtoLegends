@@ -42,6 +42,7 @@ AzaleaGymKurtScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_KURT
+	setevent EVENT_DECO_CYNDAQUIL_DOLL
 	opentext
 	writetext BeatenKurtText
 	waitbutton

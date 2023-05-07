@@ -10,12 +10,10 @@ LakeOfRageMagikarpHouse_MapScripts:
 MagikarpLengthRaterScript:
 	faceplayer
 	opentext
-	checkevent EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY
-	iftrue .GetReward
+	checkevent EVENT_DECO_MAGIKARP_DOLL
+	iftrue .GotReward
 	checkevent EVENT_LAKE_OF_RAGE_ASKED_FOR_MAGIKARP
 	iftrue .AskedForMagikarp
-	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
-	iftrue .ClearedRocketHideout
 	checkevent EVENT_LAKE_OF_RAGE_EXPLAINED_WEIRD_MAGIKARP
 	iftrue .ExplainedHistory
 	writetext MagikarpLengthRaterText_LakeOfRageHistory
@@ -53,17 +51,16 @@ MagikarpLengthRaterScript:
 .GetReward:
 	writetext MagikarpLengthRaterText_Memento
 	buttonsound
-	verbosegiveitem ELIXER
-	iffalse .NoRoom
-	writetext MagikarpLengthRaterText_Bonus
+	waitsfx
+	setevent EVENT_DECO_MAGIKARP_DOLL
+	writetext PlayerGotMagikarpDollText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+.GotReward:
+	writetext MagikarpLengthRaterText_Doll
 	waitbutton
 	closetext
-	clearevent EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY
-	end
-
-.NoRoom:
-	closetext
-	setevent EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY
 	end
 
 .TooShort:
@@ -275,6 +272,19 @@ OldRodText_No:
 OldRodText_After:
 	text "Yo, kid. How are"
 	line "they biting?"
+	done
+
+PlayerGotMagikarpDollText:
+	text "<PLAYER> received"
+	line "Magikarp Doll!"
+	done
+
+MagikarpLengthRaterText_Doll:
+	text "That's a Magikarp"
+	line "Doll!"
+
+	para "Display it with"
+	line "pride!"
 	done
 
 LakeOfRageMagikarpHouse_MapEvents:

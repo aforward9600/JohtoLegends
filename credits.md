@@ -130,6 +130,8 @@ Armored Mewtwo sprites and icon: Rangi
 
 Nown Sprite and animation: CynderQuill
 
+Happiny sprite and animation: Rangi & ShadowOne333
+
 Minisprites 1-251 and Gen 4:
 Chamber
 Solo993

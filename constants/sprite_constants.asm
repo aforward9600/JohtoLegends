@@ -148,6 +148,8 @@
 	const SPRITE_TOTODILE_STILL ; 90
 	const SPRITE_SWABLU_STILL
 	const SPRITE_LOTAD_STILL
+	const SPRITE_STARMIE_STILL
+	const SPRITE_DIGLETT_STILL
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $99

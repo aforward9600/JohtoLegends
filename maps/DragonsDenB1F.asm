@@ -23,8 +23,18 @@ TrainerCooltrainermJoseph:
 	trainer COOLTRAINERM, JOSEPH, EVENT_BEAT_COOLTRAINERM_JOSEPH, CooltrainermJosephSeenText, CooltrainermJosephBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
+	checkevent EVENT_DECO_RATTATA_DOLL
+	iftrue .GotRattataDoll
+	writetext CooltrainermJosephRattataDollText
+	buttonsound
+	waitsfx
+	setevent EVENT_DECO_RATTATA_DOLL
+	writetext PlayerReceivedRattataDollText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+.GotRattataDoll:
 	writetext CooltrainermJosephAfterBattleText
 	waitbutton
 	closetext
@@ -125,7 +135,7 @@ CooltrainermJosephBeatenText:
 	done
 
 CooltrainermJosephAfterBattleText:
-	text "My Raticate is"
+	text "That doll is"
 	line "pretty good, don't"
 	cont "you think?"
 	done
@@ -184,6 +194,25 @@ Text_NoRoomForDragonFang:
 	text "But <PLAYER> can't"
 	line "carry any more"
 	cont "items."
+	done
+
+CooltrainermJosephRattataDollText:
+	text "No one's ever been"
+	line "able to defeat my"
+	cont "top percentage"
+	cont "Raticate before!"
+
+	para "You're good!"
+
+	para "Here, have my"
+	line "Rattata Doll as a"
+	cont "token of my"
+	cont "respect!"
+	done
+
+PlayerReceivedRattataDollText:
+	text "<PLAYER> received"
+	line "Rattata Doll!"
 	done
 
 DragonsDenB1F_MapEvents:

@@ -52,6 +52,7 @@ CianwoodGymChigusaScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CHIGUSA
+	setevent EVENT_DECO_BULBASAUR_DOLL
 	opentext
 	writetext BeatenChigusaText
 	waitbutton

@@ -62,6 +62,7 @@ EcruteakGymEnokiScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ENOKI
+	setevent EVENT_DECO_GENGAR_DOLL
 	opentext
 	writetext BeatenEnokiText
 	waitbutton

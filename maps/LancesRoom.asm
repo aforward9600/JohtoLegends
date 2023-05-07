@@ -30,14 +30,6 @@ LancesRoom_MapScripts:
 	iffalse .KeepExitClosed
 	changeblock 4, 0, $0b ; open door
 .KeepExitClosed:
-	checkevent EVENT_CURRENTLY_CHAMPION
-	iftrue .DisappearSprites
-	return
-
-.DisappearSprites:
-	disappear LANCESROOM_CYNTHIA
-	disappear LANCESROOM_RIVAL
-	disappear LANCESROOM_OAK
 	return
 
 .LancesDoorLocksBehindYou:
@@ -50,6 +42,17 @@ LancesRoom_MapScripts:
 	closetext
 	setscene SCENE_LANCESROOM_APPROACH_LANCE
 	setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
+	checkevent EVENT_CURRENTLY_CHAMPION
+	iftrue .DisappearSprites
+	end
+
+.DisappearSprites:
+	disappear LANCESROOM_CYNTHIA
+	disappear LANCESROOM_RIVAL
+	disappear LANCESROOM_OAK
+	disappear LANCESROOM_RIVAL2
+	disappear LANCESROOM_CYNTHIA2
+	disappear LANCESROOM_OAK2
 	end
 
 Script_ApproachLanceFromLeft:
@@ -75,6 +78,8 @@ Script_ApproachLanceFromRight:
 	sjump LancesRoomChallengerScript
 
 LancesRoomLanceScript:
+;	checkevent EVENT_CHAMPION_CYNTHIA
+;	iffalse LancesRoomChallengerScript.ChampionCynthia
 	turnobject LANCESROOM_RIVAL, LEFT
 	opentext
 	writetext LooksLikeImTheChampionText
@@ -384,13 +389,14 @@ LancesRoomChallengerScript:
 	writetext ChallengerCynthiaText
 	waitbutton
 	closetext
+.CynthiaReconverge:
 	winlosstext CynthiaWinText, CynthiaLastMonText
 	setlasttalked LANCESROOM_CYNTHIA2
 	loadtrainer CHALLENGER_CYNTHIA, CHALLENGER_CYNTHIA_1
 ;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
-	reloadmap
+	reloadmapafterbattle
 ;	ifequal LOSE, .AfterCynthiaLoss
 ; Winning and Losing code not working for Cynthia
 .AfterCynthiaBattle:
@@ -448,25 +454,37 @@ LancesRoomChallengerScript:
 	warpfacing UP, HALL_OF_FAME, 4, 13
 	setevent EVENT_CURRENTLY_CHAMPION
 	setevent EVENT_CHAMPION_CYNTHIA
+	setevent EVENT_CHALLENGER_CYNTHIA
 	end
 
-;.AfterCynthiaLoss:
-;	pause 15
-;	opentext
-;	writetext LooksLikeImTheNewChampionText
-;	waitbutton
-;	closetext
-;	special HealParty
-;	special FadeBlackQuickly
-;	special ReloadSpritesNoPalettes
-;	pause 30
-;	warp ROUTE_23, 9, 6
-;	turnobject PLAYER, DOWN
-;	blackoutmod ROUTE_23
-;	clearevent EVENT_CURRENTLY_CHAMPION
-;	clearevent EVENT_CHAMPION_CYNTHIA
-;	setevent EVENT_CHALLENGER_CYNTHIA
-;	end
+.AfterCynthiaLoss:
+	pause 15
+	opentext
+	writetext LooksLikeImTheNewChampionText
+	waitbutton
+	closetext
+	special HealParty
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	pause 30
+	warp ROUTE_23, 9, 6
+	turnobject PLAYER, DOWN
+	blackoutmod ROUTE_23
+	clearevent EVENT_CURRENTLY_CHAMPION
+	clearevent EVENT_CHAMPION_CYNTHIA
+	setevent EVENT_CHALLENGER_CYNTHIA
+	end
+
+.ChampionCynthia:
+	turnobject LANCESROOM_CYNTHIA, LEFT
+	pause 15
+	musicfadeout MUSIC_CYNTHIA_ENCOUNTER, 16
+	opentext
+	writetext CynthiaRematchText
+	waitbutton
+	closetext
+	setlasttalked LANCESROOM_CYNTHIA
+	sjump .CynthiaReconverge
 
 CynthiaLastMonText:
 	text "This is nostalgic,"
@@ -847,6 +865,15 @@ LooksLikeImTheNewChampionText:
 
 	para "Come back if you"
 	line "want another try."
+	done
+
+CynthiaRematchText:
+	text "Here for a"
+	line "rematch?"
+
+	para "Let's see if you"
+	line "can reclaim your"
+	cont "title!"
 	done
 
 LancesRoom_MapEvents:

@@ -50,6 +50,7 @@ GoldenrodGymMiltonScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MILTON
+	setevent EVENT_DECO_CHIKORITA_DOLL
 	scall GoldenrodRockets
 	opentext
 	writetext BeatenMiltonText

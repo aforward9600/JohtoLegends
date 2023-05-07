@@ -53,6 +53,7 @@ FlorinaScript_Battle:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_FLORINA
+	setevent EVENT_DECO_PLANT_3
 	opentext
 	writetext FlorinaScript_FlorinaDefeatText
 	waitbutton

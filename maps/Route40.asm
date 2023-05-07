@@ -44,8 +44,18 @@ TrainerSwimmerfAngie:
 	trainer SWIMMERF, ANGIE, EVENT_BEAT_SWIMMERF_ANGIE, SwimmerfAngieSeenText, SwimmerfAngieBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
+	checkevent EVENT_DECO_STARMIE_DOLL
+	iftrue .GotStarmieDoll
+	setevent EVENT_DECO_STARMIE_DOLL
+	writetext GiveStarmieDollText
+	buttonsound
+	waitsfx
+	writetext PlayerGotStarmieDollText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+.GotStarmieDoll:
 	writetext SwimmerfAngieAfterBattleText
 	waitbutton
 	closetext
@@ -376,6 +386,19 @@ Route40SignText:
 
 	para "Cianwood City -"
 	line "Olivine City"
+	done
+
+GiveStarmieDollText:
+	text "Here, take this"
+	line "doll!"
+
+	para "It's Starmie, my"
+	line "favorite #mon!"
+	done
+
+PlayerGotStarmieDollText:
+	text "<PLAYER> received"
+	line "Starmie Doll!"
 	done
 
 Route40_MapEvents:

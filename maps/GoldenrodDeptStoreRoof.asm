@@ -16,8 +16,8 @@ GoldenrodDeptStoreRoof_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .CheckSaleChangeClerk
 
 .CheckSaleChangeBlock:
-	checkflag ENGINE_GOLDENROD_DEPT_STORE_SALE_IS_ON
-	iftrue .SaleIsOn
+	readvar VAR_WEEKDAY
+	ifequal THURSDAY, .SaleIsOn
 	return
 
 .SaleIsOn:
@@ -26,8 +26,8 @@ GoldenrodDeptStoreRoof_MapScripts:
 	return
 
 .CheckSaleChangeClerk:
-	checkflag ENGINE_GOLDENROD_DEPT_STORE_SALE_IS_ON
-	iftrue .ChangeClerk
+	readvar VAR_WEEKDAY
+	ifequal THURSDAY, .ChangeClerk
 	setevent EVENT_GOLDENROD_SALE_OFF
 	clearevent EVENT_GOLDENROD_SALE_ON
 	return
@@ -38,8 +38,109 @@ GoldenrodDeptStoreRoof_MapScripts:
 	return
 
 GoldenrodDeptStoreRoofClerkScript:
+	faceplayer
 	opentext
-	pokemart MARTTYPE_ROOFTOP, 0
+	writetext RooftopSaleStartText
+	waitbutton
+RooftopSaleLoopScript:
+	writetext RooftopSaleText
+	special PlaceMoneyTopRight
+	loadmenu RooftopSaleMenu
+	verticalmenu
+	closewindow
+	ifequal 1, .KotoraDoll
+	ifequal 2, .PikachuBed
+	ifequal 3, .MagnaPlant
+	ifequal 4, .YellowCarpet
+	jump RooftopSaleCancel
+
+.KotoraDoll:
+	checkevent EVENT_DECO_KOTORA_DOLL
+	iftrue .AlreadyHaveDeco
+	checkmoney YOUR_MONEY, 2800
+	ifequal HAVE_LESS, RooftopSaleNotEnoughMoney
+	writetext RooftopSale_AreYouSureText
+	yesorno
+	iffalse RooftopSaleCancel
+	setevent EVENT_DECO_KOTORA_DOLL
+	takemoney YOUR_MONEY, 2800
+	jump RooftopSale_FinishScript
+	end
+
+.PikachuBed:
+	checkevent EVENT_DECO_BED_4
+	iftrue .AlreadyHaveDeco
+	checkmoney YOUR_MONEY, 3400
+	ifequal HAVE_LESS, RooftopSaleNotEnoughMoney
+	writetext RooftopSale_AreYouSureText
+	yesorno
+	iffalse RooftopSaleCancel
+	setevent EVENT_DECO_BED_4
+	takemoney YOUR_MONEY, 3400
+	jump RooftopSale_FinishScript
+	end
+
+.MagnaPlant:
+	checkevent EVENT_DECO_PLANT_1
+	iftrue .AlreadyHaveDeco
+	checkmoney YOUR_MONEY, 2500
+	ifequal HAVE_LESS, RooftopSaleNotEnoughMoney
+	writetext RooftopSale_AreYouSureText
+	yesorno
+	iffalse RooftopSaleCancel
+	setevent EVENT_DECO_PLANT_1
+	takemoney YOUR_MONEY, 2500
+	jump RooftopSale_FinishScript
+	end
+
+.YellowCarpet:
+	checkevent EVENT_DECO_CARPET_3
+	iftrue .AlreadyHaveDeco
+	checkmoney YOUR_MONEY, 3300
+	ifequal HAVE_LESS, RooftopSaleNotEnoughMoney
+	writetext RooftopSale_AreYouSureText
+	yesorno
+	iffalse RooftopSaleCancel
+	setevent EVENT_DECO_CARPET_3
+	takemoney YOUR_MONEY, 3300
+	jump RooftopSale_FinishScript
+	end
+
+.AlreadyHaveDeco:
+	writetext AlreadyHaveDecoText
+	waitbutton
+	jump RooftopSaleLoopScript
+
+RooftopSaleMenu:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, 18, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "Kotora Doll  ¥2800@"
+	db "Pikachu Bed  ¥3400@"
+	db "Magna Plant  ¥2500@"
+	db "Yell. Carpet ¥3300@"
+
+RooftopSale_FinishScript:
+	waitsfx
+	playsound SFX_TRANSACTION
+	writetext YouGotDecoText
+	waitbutton
+	jump RooftopSaleLoopScript
+
+RooftopSaleCancel:
+	writetext RooftopSaleComeAgainText
+	waitbutton
+	closetext
+	end
+
+RooftopSaleNotEnoughMoney:
+	writetext NotEnoughMoneyRooftopSaleText
+	waitbutton
 	closetext
 	end
 
@@ -90,7 +191,106 @@ Binoculars3:
 	jumptext Binoculars3Text
 
 PokeDollVendingMachine:
-	jumptext PokeDollVendingMachineText
+	opentext
+PokeDollVendingMachineLoopScript:
+	writetext PokeDollVendingMachineText
+	special PlaceMoneyTopRight
+	loadmenu PokeDollVendingMachineMenu
+	verticalmenu
+	closewindow
+	ifequal 1, .Clefairy
+	ifequal 2, .Swablu
+	ifequal 3, .Poliwag
+	ifequal 4, .Skarmini
+	jump PokeDollVendingMachineCancel
+
+.Clefairy:
+	checkevent EVENT_DECO_CLEFAIRY_DOLL
+	iftrue .AlreadyHaveDecorItem
+	checkmoney YOUR_MONEY, 2000
+	ifequal HAVE_LESS, PokeDollVendingMachineNotEnoughMoney
+	writetext PokeDollVendingMachine_AreYouSureText
+	yesorno
+	iffalse PokeDollVendingMachineCancel
+	setevent EVENT_DECO_CLEFAIRY_DOLL
+	takemoney YOUR_MONEY, 2000
+	jump PokeDollVendingMachine_FinishScript
+	end
+
+.Swablu:
+	checkevent EVENT_DECO_SWABLU_DOLL
+	iftrue .AlreadyHaveDecorItem
+	checkmoney YOUR_MONEY, 3000
+	ifequal HAVE_LESS, PokeDollVendingMachineNotEnoughMoney
+	writetext PokeDollVendingMachine_AreYouSureText
+	yesorno
+	iffalse PokeDollVendingMachineCancel
+	setevent EVENT_DECO_SWABLU_DOLL
+	takemoney YOUR_MONEY, 3000
+	jump PokeDollVendingMachine_FinishScript
+	end
+
+.Poliwag:
+	checkevent EVENT_DECO_POLIWAG_DOLL
+	iftrue .AlreadyHaveDecorItem
+	checkmoney YOUR_MONEY, 4000
+	ifequal HAVE_LESS, PokeDollVendingMachineNotEnoughMoney
+	writetext PokeDollVendingMachine_AreYouSureText
+	yesorno
+	iffalse PokeDollVendingMachineCancel
+	setevent EVENT_DECO_POLIWAG_DOLL
+	takemoney YOUR_MONEY, 4000
+	jump PokeDollVendingMachine_FinishScript
+	end
+
+.Skarmini:
+	checkevent EVENT_DECO_SKARMINI_DOLL
+	iftrue .AlreadyHaveDecorItem
+	checkmoney YOUR_MONEY, 1500
+	ifequal HAVE_LESS, PokeDollVendingMachineNotEnoughMoney
+	writetext PokeDollVendingMachine_AreYouSureText
+	yesorno
+	iffalse PokeDollVendingMachineCancel
+	setevent EVENT_DECO_SKARMINI_DOLL
+	takemoney YOUR_MONEY, 1500
+	jump PokeDollVendingMachine_FinishScript
+	end
+
+.AlreadyHaveDecorItem:
+	writetext AlreadyHaveDecorItemText
+	waitbutton
+	jump PokeDollVendingMachineLoopScript
+
+PokeDollVendingMachineMenu:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, 17, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "Clefairy  ¥2000@"
+	db "Swablu    ¥3000@"
+	db "Poliwag   ¥4000@"
+	db "Skarmini  ¥1500@"
+
+PokeDollVendingMachine_FinishScript:
+	waitsfx
+	playsound SFX_TRANSACTION
+	writetext YouGotDollText
+	waitbutton
+	jump PokeDollVendingMachineLoopScript
+
+PokeDollVendingMachineCancel:
+	closetext
+	end
+
+PokeDollVendingMachineNotEnoughMoney:
+	writetext NotEnoughMoneyText
+	waitbutton
+	closetext
+	end
 
 GoldenrodDeptStoreRoofPokefanFText:
 	text "Whew, I'm tired."
@@ -150,17 +350,9 @@ GoldenrodDeptStoreRoofTeacherText:
 	done
 
 GoldenrodDeptStoreRoofBugCatcherText:
-	text "My #mon always"
-	line "get paralyzed or"
-
-	para "poisoned when the"
-	line "chips are down…"
-
-	para "So I came to buy"
-	line "some Full Heal."
-
-	para "I wonder if"
-	line "there's any left?"
+	text "I want a Pikachu"
+	line "Bed, but I can't"
+	cont "afford it."
 	done
 
 Binoculars1Text:
@@ -202,11 +394,65 @@ PokeDollVendingMachineText:
 	text "A vending machine"
 	line "for #mon dolls?"
 
-	para "Insert money, then"
-	line "turn the crank…"
+	para "Which one do you"
+	line "want?"
+	done
 
-	para "But it's almost"
-	line "empty…"
+PokeDollVendingMachine_AreYouSureText:
+	text "This one?"
+	done
+
+NotEnoughMoneyText:
+	text "Not enough money…"
+	done
+
+YouGotDollText:
+	text "A doll popped out!"
+	done
+
+AlreadyHaveDecorItemText:
+	text "You've already got"
+	line "this doll!"
+	done
+
+RooftopSaleStartText:
+	text "Welcome to the"
+	line "Thursday Sale!"
+	
+	para "Got some nice"
+	line "decorations on"
+	cont "sale!"
+	done
+
+RooftopSaleText:
+	text "What're ya looking"
+	line "for?"
+	done
+
+NotEnoughMoneyRooftopSaleText:
+	text "You can't afford"
+	line "this!"
+	done
+
+RooftopSale_AreYouSureText:
+	text "You sure?"
+	done
+
+RooftopSaleComeAgainText:
+	text "Come again!"
+	done
+
+YouGotDecoText:
+	text "Thanks!"
+
+	para "I'll send this to"
+	line "your house!"
+	done
+
+AlreadyHaveDecoText:
+	text "I can't sell you"
+	line "what you already"
+	cont "have!"
 	done
 
 GoldenrodDeptStoreRoof_MapEvents:

@@ -49,6 +49,7 @@ VioletGymWalkerScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_WALKER
+	setevent EVENT_DECO_SQUIRTLE_DOLL
 	opentext
 	writetext BeatenWalkerText
 	waitbutton

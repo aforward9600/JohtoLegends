@@ -272,27 +272,11 @@ RivalConfronts3:
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	setevent EVENT_HIDEOUT_NINJA
-	setevent EVENT_HIDEOUT_NINJA2
-	setevent EVENT_HIDEOUT_NINJA3
-	setevent EVENT_HIDEOUT_NINJA4
-	setevent EVENT_HIDEOUT_NINJA5
-	setevent EVENT_HIDEOUT_NINJA6
-	setevent EVENT_HIDEOUT_NINJA7
-	setevent EVENT_HIDEOUT_NINJA8
-	setevent EVENT_HIDEOUT_NINJA9
-	setevent EVENT_HIDEOUT_NINJA10
-	setevent EVENT_HIDEOUT_NINJA11
-	setevent EVENT_HIDEOUT_NINJA12
-	setevent EVENT_HIDEOUT_BF1_MIYAMOTO
+	scall NinjaHideoutClear
 	disappear TEAMROCKETBASEB1F_NINJA1
 	disappear TEAMROCKETBASEB1F_NINJA2
 	disappear TEAMROCKETBASEB1F_NINJA3
 	disappear TEAMROCKETBASEB1F_NINJA4
-	setevent EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE
-	setevent EVENT_TEAM_ROCKET_BASE_POPULATION
-	clearevent EVENT_MART_RIVAL
-	setevent EVENT_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART
 	disappear TEAMROCKETBASEB1F_MIYAMOTO
 	pause 15
 	special FadeInQuickly
@@ -349,27 +333,11 @@ RivalConfronts3:
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	setevent EVENT_HIDEOUT_NINJA
-	setevent EVENT_HIDEOUT_NINJA2
-	setevent EVENT_HIDEOUT_NINJA3
-	setevent EVENT_HIDEOUT_NINJA4
-	setevent EVENT_HIDEOUT_NINJA5
-	setevent EVENT_HIDEOUT_NINJA6
-	setevent EVENT_HIDEOUT_NINJA7
-	setevent EVENT_HIDEOUT_NINJA8
-	setevent EVENT_HIDEOUT_NINJA9
-	setevent EVENT_HIDEOUT_NINJA10
-	setevent EVENT_HIDEOUT_NINJA11
-	setevent EVENT_HIDEOUT_NINJA12
-	setevent EVENT_HIDEOUT_BF1_MIYAMOTO
+	scall NinjaHideoutClear
 	disappear TEAMROCKETBASEB1F_NINJA1
 	disappear TEAMROCKETBASEB1F_NINJA2
 	disappear TEAMROCKETBASEB1F_NINJA3
 	disappear TEAMROCKETBASEB1F_NINJA4
-	setevent EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE
-	setevent EVENT_TEAM_ROCKET_BASE_POPULATION
-	clearevent EVENT_MART_RIVAL
-	setevent EVENT_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART
 	disappear TEAMROCKETBASEB1F_MIYAMOTO
 	pause 15
 	special FadeInQuickly
@@ -436,6 +404,9 @@ WarpPanelBroke:
 	waitbutton
 	closetext
 	end
+
+NinjaHideoutClear:
+	jumpstd ninjahideoutclear
 
 TrainerMNinjaM5:
 	trainer MNINJA_M, MNINJA_M5, EVENT_HIDEOUT_NINJA9, MNinjaM5SeenText, MNinjaM5SeenText, 0, .Script

@@ -53,6 +53,7 @@ SurgeScript_Battle:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_GEN_SURGE
+	setevent EVENT_DECO_PIKACHU_DOLL
 	opentext
 	writetext SurgeScript_SurgeDefeatText
 	waitbutton

@@ -56,6 +56,7 @@ BlackthornGymMasterScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER
+	setevent EVENT_DECO_BIG_SALAMENCE_DOLL
 	opentext
 	writetext MasterText_Complete
 	waitbutton

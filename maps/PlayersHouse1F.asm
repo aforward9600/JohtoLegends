@@ -3,6 +3,7 @@
 	const PLAYERSHOUSE1F_GRANNY2
 	const PLAYERSHOUSE1F_GRANNY3
 	const PLAYERSHOUSE1F_GRANNY4
+	const PLAYERSHOUSE1F_GRANNY5
 	const PLAYERSHOUSE1F_POKEFAN_F
 
 PlayersHouse1F_MapScripts:
@@ -98,13 +99,9 @@ MeetMomScript:
 	waitbutton
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .FromRight
+	iftrue .Finish
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	iffalse .FromLeft
-	sjump .Finish
-
-.FromRight:
-	applymovement PLAYERSHOUSE1F_GRANNY1, MomTurnsBackMovement
 	sjump .Finish
 
 .FromLeft:
@@ -124,28 +121,17 @@ MeetGrandmaTalkedScript:
 	playmusic MUSIC_MOM
 	sjump MeetGrandmaScript
 
-GearName:
-	db "#Gear@"
-
-PlayersHouse1FReceiveItemStd:
-	jumpstd receiveitem
-	end
-
 MomScript:
 	faceplayer
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
-	checkscene SCENE_PLAYERS_HOUSE_NOTHING
-	iftrue .GrannySpeaks
-	checkscene SCENE_GRANDMA_GIVES_YOU_WATCH
-	iftrue MeetMomTalkedScript ; SCENE_DEFAULT
-	checkscene SCENE_GRANDMA_TELLS_YOU_ABOUT_OAK
-	iftrue MeetGrandmaTalkedScript
+	checkscene
+	ifequal SCENE_PLAYERS_HOUSE_NOTHING, .GrannySpeaks
+	ifequal SCENE_GRANDMA_TELLS_YOU_ABOUT_OAK, MeetGrandmaTalkedScript
+	ifequal SCENE_GRANDMA_GIVES_YOU_WATCH, MeetMomTalkedScript ; SCENE_DEFAULT
 .GrannySpeaks
 	opentext
-	checkevent EVENT_FIRST_TIME_BANKING_WITH_MOM
-	iftrue .FirstTimeBanking
-	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
-	iftrue .BankOfMom
+	checkevent EVENT_BEAT_CHAMPION_LANCE
+	iftrue .BeatLeague
 	checkevent EVENT_MASTERS_RIVAL_DONE
 	iftrue .GaveMysteryEgg
 	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
@@ -153,6 +139,13 @@ MomScript:
 	writetext HurryUpElmIsWaitingText
 	waitbutton
 	closetext
+	end
+
+.BeatLeague:
+	writetext GrandmaCongratsText
+	waitbutton
+	closetext
+	scall GetDecoEvent
 	end
 
 .GotAPokemon:
@@ -168,9 +161,6 @@ MomScript:
 	end
 
 .GaveMysteryEgg:
-	setevent EVENT_FIRST_TIME_BANKING_WITH_MOM
-.BankOfMom:
-	setevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
 	writetext OhWaitText
 	buttonsound
 	waitsfx
@@ -187,6 +177,9 @@ MomScript:
 	setmapscene BLACKTHORN_CITY, SCENE_BLACKTHORN_CITY_NOTHING
 	setmapscene ICE_PATH_B1F, SCENE_ICE_PATH_B1F_RIVAL
 	end
+
+GetDecoEvent:
+	jumpstd getdecoevent
 
 MeetGrandmaLeftScript:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -217,14 +210,12 @@ MeetGrandmaScript:
 	setmapscene VICTORY_ROAD_GATE, SCENE_VICTORY_ROAD_GATE_OAK
 	setscene SCENE_PLAYERS_HOUSE_NOTHING
 	setevent EVENT_GOT_RIVALS_MESSAGE
+	setevent EVENT_PLAYERS_HOUSE_MOM_1
+	clearevent EVENT_PLAYERS_HOUSE_MOM_2
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .FromRight2
+	iftrue .Finish2
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	iffalse .FromLeft2
-	sjump .Finish2
-
-.FromRight2:
-	applymovement PLAYERSHOUSE1F_GRANNY1, MomTurnsBackMovement
 	sjump .Finish2
 
 .FromLeft2:
@@ -246,7 +237,7 @@ MeetGrandmaScript:
 NeighborScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_ELITE_FOUR
+	checkevent EVENT_BEAT_CHAMPION_LANCE
 	iftrue .CongratulationsOnBeingChampion
 	checktime MORN
 	iftrue .MornScript
@@ -254,6 +245,11 @@ NeighborScript:
 	iftrue .DayScript
 	checktime NITE
 	iftrue .NiteScript
+
+.NiteScript:
+	writetext NeighborNiteIntroText
+	buttonsound
+	sjump .Main
 
 .MornScript:
 	writetext NeighborMornIntroText
@@ -265,38 +261,27 @@ NeighborScript:
 	buttonsound
 	sjump .Main
 
-.NiteScript:
-	writetext NeighborNiteIntroText
-	buttonsound
-	sjump .Main
-
 .Main:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Main2
 	writetext NeighborText
-	waitbutton
-	closetext
-	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
-	end
+	sjump .EndNeighborScript
 
 .Main2:
 	writetext NeighborText2
-	waitbutton
-	closetext
-	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
-	end
+	sjump .EndNeighborScript
 
 .CongratulationsOnBeingChampion:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .CongratsFemale
 	writetext CongratulationsOnBeingChampionText
-	waitbutton
-	closetext
-	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
-	end
+	sjump .EndNeighborScript
 
 .CongratsFemale:
 	writetext CongratsFemaleText
+	sjump .EndNeighborScript
+
+.EndNeighborScript:
 	waitbutton
 	closetext
 	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
@@ -320,10 +305,6 @@ MomTurnsTowardPlayerMovement:
 
 MomWalksToPlayerMovement:
 	slow_step RIGHT
-	step_end
-
-MomTurnsBackMovement:
-	turn_head LEFT
 	step_end
 
 MomWalksBackMovement:
@@ -596,6 +577,33 @@ GrandmaJournalText:
 	para "don't forget, I'm"
 	line "always here for"
 	cont "you."
+
+	para "…Oh, just one more"
+	line "thing!"
+
+	para "For every badge"
+	line "collect, I'll buy"
+	cont "you a doll for"
+	cont "your room!"
+
+	para "No need to thank"
+	line "me!"
+
+	para "Just think of it"
+	line "as a congrats!"
+
+	para "Just pick up the"
+	line "phone and dial up"
+	cont "the Abra Delivery"
+	cont "Service!"
+
+	para "They'll bring and"
+	line "take anything you"
+	cont "need!"
+
+	para "I'm done now."
+
+	para "Time to head out!"
 	done
 
 DahliaCameByText:
@@ -692,6 +700,14 @@ CongratsFemaleText:
 	cont "her father!"
 
 	para "Hohoho!"
+	done
+
+GrandmaCongratsText:
+	text "Good job on"
+	line "becoming Champion!"
+
+	para "I know your"
+	line "would be so proud!"
 	done
 
 PlayersHouse1F_MapEvents:

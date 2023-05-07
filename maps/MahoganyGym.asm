@@ -49,6 +49,7 @@ MahoganyGymPryceScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_PRYCE
+	setevent EVENT_DECO_TOTODILE_DOLL
 	opentext
 	writetext PryceText_After
 	waitbutton
