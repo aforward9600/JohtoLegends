@@ -19,41 +19,10 @@ OlivineLighthouse5F_MapScripts:
 .DummyScene1:
 	end
 
-ArcherWalks1:
-	playmusic MUSIC_ROCKET_ENCOUNTER
-	showemote EMOTE_SHOCK, OLIVINELIGHTHOUSE5F_ARCHER, 15
-	applymovement OLIVINELIGHTHOUSE5F_ARCHER, ArcherWalks1Movement
-	sjump ArcherBattle
-ArcherWalks2:
-	playmusic MUSIC_ROCKET_ENCOUNTER
-	showemote EMOTE_SHOCK, OLIVINELIGHTHOUSE5F_ARCHER, 15
-	applymovement OLIVINELIGHTHOUSE5F_ARCHER, ArcherWalks2Movement
-	sjump ArcherBattle
-ArcherWalks3:
-	playmusic MUSIC_ROCKET_ENCOUNTER
-	showemote EMOTE_SHOCK, OLIVINELIGHTHOUSE5F_ARCHER, 15
-	applymovement OLIVINELIGHTHOUSE5F_ARCHER, ArcherWalks3Movement
-	sjump ArcherBattle
-ArcherWalks4:
-	playmusic MUSIC_ROCKET_ENCOUNTER
-	showemote EMOTE_SHOCK, OLIVINELIGHTHOUSE5F_ARCHER, 15
-	applymovement OLIVINELIGHTHOUSE5F_ARCHER, ArcherWalks4Movement
-	sjump ArcherBattle
-ArcherWalks5:
-	playmusic MUSIC_ROCKET_ENCOUNTER
-	showemote EMOTE_SHOCK, OLIVINELIGHTHOUSE5F_ARCHER, 15
-	sjump ArcherBattle
-ArcherBattle:
-	turnobject PLAYER, RIGHT
-	opentext
-	writetext LighthouseArcherSeenText
-	waitbutton
-	closetext
-	winlosstext LighthouseArcherBeatenText, LighthouseArcherLostText
-	loadtrainer ARCHER, ARCHER_1
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_LIGHTHOUSE_ARCHER
+TrainerLighthouseArcher:
+	trainer ARCHER, ARCHER_1, EVENT_BEAT_LIGHTHOUSE_ARCHER, LighthouseArcherSeenText, LighthouseArcherBeatenText, LighthouseArcherLostText, .Script
+
+.Script:
 	opentext
 	writetext LighthouseArcherAfterBattleText
 	waitbutton
@@ -80,32 +49,6 @@ TrainerLighthouse5FRocketF:
 	endifjustbattled
 	opentext
 	writetext Lighthouse5FRocketFAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerLighthouseArcher:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_LIGHTHOUSE_ARCHER
-	iftrue .BeatenArcher
-	writetext LighthouseArcherSeenText
-	waitbutton
-	closetext
-	winlosstext LighthouseArcherBeatenText, LighthouseArcherLostText
-	loadtrainer ARCHER, ARCHER_1
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_LIGHTHOUSE_ARCHER
-	opentext
-	writetext LighthouseArcherAfterBattleText
-	waitbutton
-	closetext
-	setscene SCENE_FINISHED
-	end
-
-.BeatenArcher:
-	writetext LighthouseArcherAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -281,17 +224,13 @@ OlivineLighthouse5F_MapEvents:
 	warp_event  9,  7, OLIVINE_LIGHTHOUSE_4F, 3
 	warp_event  6, 15, OLIVINE_LIGHTHOUSE_4F, 7
 
-	db 4 ; coord events
-	coord_event  7, 14, SCENE_DEFAULT, ArcherWalks2
-	coord_event  8, 14, SCENE_DEFAULT, ArcherWalks3
-	coord_event  9, 14, SCENE_DEFAULT, ArcherWalks4
-	coord_event 10, 14, SCENE_DEFAULT, ArcherWalks5
+	db 0 ; coord events
 
 	db 1 ; bg events
 	bg_event  3, 13, BGEVENT_ITEM, OlivineLighthouse5FHiddenHyperPotion
 
 	db 7 ; object events
-	object_event 11, 14, SPRITE_ARCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 3, TrainerLighthouseArcher, EVENT_LIGHTHOUSE_ROCKETS
+	object_event 11, 14, SPRITE_ARCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerLighthouseArcher, EVENT_LIGHTHOUSE_ROCKETS
 	object_event  6, 10, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerLighthouse5FRocket, EVENT_LIGHTHOUSE_ROCKETS
 	object_event 14,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerLighthouse5FRocketF, EVENT_LIGHTHOUSE_ROCKETS
 	object_event 17, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OlivineLighthouse5FSuperRepel, EVENT_OLIVINE_LIGHTHOUSE_5F_SUPER_REPEL

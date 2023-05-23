@@ -149,6 +149,12 @@ HideoutArianaScript:
 	closetext
 	end
 
+Ariana3LastMonText:
+	text "How many times are"
+	line "you going to be so"
+	cont "annoying?!"
+	done
+
 HideoutB3FRival:
 	faceplayer
 	opentext
@@ -307,12 +313,6 @@ RocketBaseRivalEnterMovement:
 	step LEFT
 	step LEFT
 	step_end
-
-Ariana3LastMonText:
-	text "How many times are"
-	line "you going to be so"
-	cont "annoying?!"
-	done
 
 TeamRocketBaseB3FRocketText:
 	text "zzzz… zzzz…"

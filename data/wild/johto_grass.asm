@@ -423,7 +423,7 @@ JohtoGrassWildMons:
 	dbw 40, PARASECT
 
 	map_id MOUNT_MORTAR_1F_OUTSIDE
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw  9, ZUBAT
 	dbw  9, MACHOP
@@ -453,7 +453,7 @@ JohtoGrassWildMons:
 	dbw 11, ARON
 
 	map_id MOUNT_MORTAR_1F_INSIDE
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw  9, SANDSHREW
 	dbw  9, ZUBAT

@@ -157,7 +157,6 @@ TinTower1F_MapScripts:
 	applymovement TINTOWER1F_SAGE3, MovementData_0x1851fe
 	turnobject PLAYER, RIGHT
 	opentext
-	writetext TinTowerEusineSuicuneText
 	waitbutton
 	closetext
 	applymovement TINTOWER1F_EUSINE, MovementData_0x1851f1
@@ -168,15 +167,6 @@ TinTower1F_MapScripts:
 	pause 20
 	playmapmusic
 	end
-
-TinTower1FSage1Script:
-	jumptextfaceplayer TinTower1FSage1Text
-
-TinTower1FSage2Script:
-	jumptextfaceplayer TinTower1FSage2Text
-
-TinTower1FSage3Script:
-	jumptextfaceplayer TinTower1FSage3Text
 
 TinTower1FRocket1Script:
 	faceplayer
@@ -189,6 +179,18 @@ TinTower1FRocket1Script:
 
 TinTower1FRivalScript:
 	faceplayer
+	opentext
+	writetext IllHealYouBellTowerText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	special StubbedTrainerRankings_Healings
+	playmusic MUSIC_HEAL
+	special HealParty
+	pause 60
+	special FadeInQuickly
+	special RestartMapMusic
 	opentext
 	writetext TinTower1FRivalText
 	waitbutton
@@ -206,12 +208,7 @@ TinTower1FSage5Script:
 	jumptextfaceplayer TinTower1FSage5Text2
 
 TinTower1FSage6Script:
-	checkevent EVENT_FOUGHT_HO_OH
-	iftrue .FoughtHoOh
 	jumptextfaceplayer TinTower1FSage6Text1
-
-.FoughtHoOh:
-	jumptextfaceplayer TinTower1FSage6Text2
 
 TinTower1FPoliwrathScript:
 	refreshscreen
@@ -352,111 +349,11 @@ MovementData_0x1851fe:
 	step UP
 	step_end
 
-TinTowerEusineSuicuneText:
-	text "EUSINE: Awesome!"
-	line "Too awesome, even!"
+IllHealYouBellTowerText:
+	text "You doing OK?"
 
-	para "I've never seen a"
-	line "battle that great."
-
-	para "That was truly"
-	line "inspiring to see."
-
-	para "SUICUNE was tough,"
-	line "but you were even"
-
-	para "more incredible,"
-	line "<PLAYER>."
-
-	para "I heard SUICUNE's"
-	line "mystic power"
-
-	para "summons a rainbow-"
-	line "colored #MON."
-
-	para "Maybe, just maybe,"
-	line "what went on today"
-
-	para "will cause that"
-	line "#MON to appear."
-
-	para "I'm going to study"
-	line "the legends more."
-
-	para "Thanks for showing"
-	line "me that fantastic"
-	cont "battle."
-
-	para "Later, <PLAYER>!"
-	done
-
-TinTower1FSage1Text:
-	text "According to"
-	line "legend…"
-
-	para "When the souls of"
-	line "#MON and humans"
-
-	para "commune, from the"
-	line "heavens descends a"
-
-	para "#MON of rainbow"
-	line "colors…"
-
-	para "Could it mean the"
-	line "legendary #MON"
-
-	para "are testing us"
-	line "humans?"
-	done
-
-TinTower1FSage2Text:
-	text "When the BRASS"
-	line "TOWER burned down,"
-
-	para "three nameless"
-	line "#MON were said"
-
-	para "to have perished."
-	line "It was tragic."
-
-	para "However…"
-
-	para "A rainbow-colored"
-	line "#MON…"
-
-	para "In other words…"
-
-	para "HO-OH descended"
-	line "from the sky and"
-
-	para "gave new life to"
-	line "the three #MON."
-
-	para "They are…"
-
-	para "SUICUNE, ENTEI and"
-	line "RAIKOU."
-
-	para "That is what they"
-	line "say."
-	done
-
-TinTower1FSage3Text:
-	text "The two TOWERS are"
-	line "said to have been"
-
-	para "built to foster"
-	line "friendship and"
-
-	para "hope between #-"
-	line "MON and people."
-
-	para "That was 700 years"
-	line "ago, but the ideal"
-
-	para "still remains"
-	line "important today."
+	para "Here, I'll heal"
+	line "your #mon."
 	done
 
 TinTower1FRocket2Text:
@@ -548,103 +445,7 @@ TinTowerEusineHoOhText:
 
 	para "However…"
 
-	para "About 150 years"
-	line "ago, a lightning"
-
-	para "bolt struck one of"
-	line "the towers."
-
-	para "It was engulfed in"
-	line "flames that raged"
-	cont "for three days."
-
-	para "A sudden downpour"
-	line "finally put out"
-	cont "the blaze."
-
-	para "And that is how"
-	line "the Burned Tower"
-	cont "came to be."
-
-	para "What became of"
-	line "those #mon?"
-
-	para "Ho-Oh left this"
-	line "Tower, waiting for"
-	cont "one worthy of its"
-	cont "power."
-
-	para "The #mon of"
-	line "Brass Tower, Lugia"
-	cont "left for the Whirl"
-	cont "Islands, where we"
-	cont "guard its resting"
-	cont "place."
-
-	para "Even though you"
-	line "possess a wing of"
-	cont "Legendary origin,"
-
-	para "it still isn't"
-	line "enough to face"
-	cont "them."
-
-	para "Someday, you may"
-	line "be able to face"
-	cont "them."
-
-	para "Do what you will"
-	line "with this"
-	cont "knowledge."
-	done
-
-TinTowerEusineHoOhTextFemale:
-	text "Welcome, young"
-	line "trainer."
-
-	para "Your friend,"
-	line "Draco told me"
-	cont "you'd come."
-
-	para "You wish to know"
-	line "the history of the"
-	cont "Legendary #mon,"
-
-	para "and I shall tell"
-	line "you."
-
-	para "In the past, there"
-	line "were two nine-tier"
-	cont "towers here."
-
-	para "The Brass Tower,"
-	line "which was said to"
-
-	para "awaken #mon,"
-	line "and the Bell"
-	cont "Tower, where"
-
-	para "#mon were said"
-	line "to rest."
-
-	para "The view from the"
-	line "tops of the towers"
-
-	para "must have been"
-	line "magnificent."
-
-	para "At the time, an"
-	line "immense, silver-"
-
-	para "colored #mon"
-	line "was said to make"
-
-	para "its roost atop the"
-	line "Brass Tower."
-
-	para "However…"
-
-	para "About 150 years"
+	para "About 135 years"
 	line "ago, a lightning"
 
 	para "bolt struck one of"
@@ -697,64 +498,6 @@ TinTowerEusineHoOhTextFemale:
 TinTowerSageText:
 	text "Good luck on your"
 	line "journey."
-	done
-
-TinTower1FSage4Text2:
-	text "The legendary"
-	line "#MON are said"
-
-	para "to embody three"
-	line "powers…"
-
-	para "The lightning that"
-	line "struck the TOWER."
-
-	para "The fire that"
-	line "burned the TOWER."
-
-	para "And the rain that"
-	line "put out the fire…"
-	done
-
-TinTower1FSage5Text3:
-	text "When the legendary"
-	line "#MON appeared…"
-
-	para "They struck terror"
-	line "in those who saw"
-	cont "their rise."
-
-	para "And…"
-
-	para "Some even took to"
-	line "futile attacks."
-
-	para "The legendary"
-	line "#MON, knowing"
-
-	para "their own power,"
-	line "fled, ignoring the"
-	cont "frightened people."
-	done
-
-TinTower1FSage6Text2:
-	text "Of the legendary"
-	line "#MON, SUICUNE"
-
-	para "is said to be the"
-	line "closest to HO-OH."
-
-	para "I hear there may"
-	line "also be a link to"
-
-	para "#MON known as"
-	line "UNOWN."
-
-	para "The #MON UNOWN"
-	line "must be sharing a"
-
-	para "cooperative bond"
-	line "with SUICUNE."
 	done
 
 TinTower1FRocket1Text:
@@ -810,9 +553,6 @@ TinTower1F_MapEvents:
 	db 0 ; bg events
 
 	db 9 ; object events
-	;object_event  9,  9, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_SUICUNE
-	;object_event  7,  9, SPRITE_RAIKOU, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_RAIKOU
-	;object_event 12,  9, SPRITE_ENTEI, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_ENTEI
 	object_event  9,  1, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TinTowerEusine, EVENT_TIN_TOWER_1F_EUSINE
 	object_event 10, 11, SPRITE_PERSIAN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TinTower1FPersianScript, EVENT_TIN_TOWER_1F_WISE_TRIO_1
 	object_event  9, 11, SPRITE_POLIWRATH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TinTower1FPoliwrathScript, EVENT_TIN_TOWER_1F_WISE_TRIO_1

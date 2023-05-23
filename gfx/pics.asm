@@ -787,9 +787,7 @@ GenSurgePic:         INCBIN "gfx/trainers/gen_surge.2bpp.lz"
 UrsaringFrontpic:    INCBIN "gfx/pokemon/ursaring/front.animated.2bpp.lz"
 MoltresFrontpic:     INCBIN "gfx/pokemon/moltres/front.animated.2bpp.lz"
 HoundoomFrontpic:    INCBIN "gfx/pokemon/houndoom/front.animated.2bpp.lz"
-LancePic:            INCBIN "gfx/trainers/lance.2bpp.lz"
-PasserbyPic:         INCBIN "gfx/trainers/miyamoto.2bpp.lz"
-EngineerPic:         INCBIN "gfx/trainers/engineer.2bpp.lz"
+
 
 SECTION "Pics 27", ROMX
 
@@ -901,3 +899,6 @@ AnnihilapeBackpic:   INCBIN "gfx/pokemon/annihilape/back.2bpp.lz"
 NownFrontpic:        INCBIN "gfx/pokemon/nown/front.animated.2bpp.lz"
 NownBackpic:         INCBIN "gfx/pokemon/nown/back.2bpp.lz"
 ChampionDracoPic:    INCBIN "gfx/trainers/champion_draco.2bpp.lz"
+LancePic:            INCBIN "gfx/trainers/lance.2bpp.lz"
+PasserbyPic:         INCBIN "gfx/trainers/miyamoto.2bpp.lz"
+EngineerPic:         INCBIN "gfx/trainers/engineer.2bpp.lz"

@@ -132,6 +132,8 @@ MomScript:
 	opentext
 	checkevent EVENT_BEAT_CHAMPION_LANCE
 	iftrue .BeatLeague
+	checkevent EVENT_GOT_JOURNAL
+	iftrue .FirstTimeBanking
 	checkevent EVENT_MASTERS_RIVAL_DONE
 	iftrue .GaveMysteryEgg
 	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
@@ -582,8 +584,8 @@ GrandmaJournalText:
 	line "thing!"
 
 	para "For every badge"
-	line "collect, I'll buy"
-	cont "you a doll for"
+	line "you collect, I'll"
+	cont "buy you a doll for"
 	cont "your room!"
 
 	para "No need to thank"
@@ -707,7 +709,8 @@ GrandmaCongratsText:
 	line "becoming Champion!"
 
 	para "I know your"
-	line "would be so proud!"
+	line "parents would be"
+	cont "so proud!"
 	done
 
 PlayersHouse1F_MapEvents:

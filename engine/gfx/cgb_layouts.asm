@@ -961,7 +961,7 @@ _CGB_Pokepic:
 	sub c
 	inc a
 	ld c, a
-	ld a, $0
+	ld a, $7
 	call FillBoxCGB
 	call ApplyAttrMap
 	ret

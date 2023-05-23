@@ -206,6 +206,7 @@ EcruteakTinTowerEntranceRocketScript:
 	yesorno
 	iffalse .Refused
 	writetext YouAskedForItText
+	waitbutton
 	checkflag ENGINE_FLYPOINT_OLIVINE
 	iftrue .GruntAlternateBattle
 	winlosstext EcruteakTinTowerEntranceGruntLossText, 0

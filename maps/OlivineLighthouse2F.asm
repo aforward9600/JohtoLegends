@@ -46,6 +46,18 @@ Lighthouse2FRocketScript:
 Lighthouse2FRivalScript:
 	faceplayer
 	opentext
+	writetext IllHealYouLighthouseText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	special StubbedTrainerRankings_Healings
+	playmusic MUSIC_HEAL
+	special HealParty
+	pause 60
+	special FadeInQuickly
+	special RestartMapMusic
+	opentext
 	writetext GoOnAheadText
 	waitbutton
 	closetext
@@ -149,6 +161,14 @@ Lighthouse2FGentlemanText:
 
 	para "I wonder what"
 	line "happened?"
+	done
+
+IllHealYouLighthouseText:
+	text "Hey, are your"
+	line "#mon doing"
+	cont "alright?"
+
+	para "I'll heal them!"
 	done
 
 OlivineLighthouse2F_MapEvents:

@@ -829,21 +829,21 @@ UnknownText_0x1c0ec6::
 	prompt
 
 _EmptyMailboxText::
-	text "There's no MAIL"
+	text "There's no Mail"
 	line "here."
 	prompt
 
 ClearedMailPutAwayText::
-	text "The cleared MAIL"
+	text "The cleared Mail"
 	line "was put away."
 	prompt
 
 MailPackFullText::
-	text "The PACK is full."
+	text "The Pack is full."
 	prompt
 
 MailMessageLostText::
-	text "The MAIL's message"
+	text "The Mail's message"
 	line "will be lost. OK?"
 	done
 
@@ -902,10 +902,10 @@ UnknownText_0x1c1024::
 
 UnknownText_0x1c102b::
 	text "There is a #mon"
-	line "holding MAIL."
+	line "holding Mail."
 
 	para "Please remove the"
-	line "MAIL."
+	line "Mail."
 	prompt
 
 UnknownText_0x1c1062::
@@ -1008,7 +1008,7 @@ ContestJudging_ThirdPlaceScoreText::
 
 UnknownText_0x1c1203::
 	text "Let me measure"
-	line "that MAGIKARP."
+	line "that Magikarp."
 
 	para "…Hm, it measures"
 	line "@"
@@ -1017,7 +1017,7 @@ UnknownText_0x1c1203::
 	prompt
 
 UnknownText_0x1c123a::
-	text "CURRENT RECORD"
+	text "Current Record"
 
 	para "@"
 	text_ram wStringBuffer1
@@ -1266,11 +1266,11 @@ _OakRating12::
 	done
 
 _OakRating13::
-	text "Wow. You've found"
+	text "Wow! You've found"
 	line "more #mon than"
 
 	para "the last Journal"
-	line "research project."
+	line "research project!"
 	done
 
 _OakRating14::

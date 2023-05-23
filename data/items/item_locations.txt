@@ -1,0 +1,85 @@
+Item Locations
+
+Pink Bow: Route 39 Barn
+Polkadot Bow: Route 29
+Mystic Water: Cherrygrove City
+Miracle Seed: Sprout Tower
+Nevermeltice: Ice Path
+Twistedspoon: Bell Tower
+Charcoal: Azalea Town
+Magnet: Route 37
+Hard Stone: Route 36
+Spell Tag: Blackthorn City
+Soft Sand: Route 34
+Dragon Fang: Dragon's Den
+Blackglasses: Dark Cave
+Steel Dagger: Union Cave
+Blackbelt: Lake of Rage
+Sharp Beak: Route 40
+Poison Barb: Route 32
+Silver Powder: National Forest
+Lucky Egg: Tohjo Falls
+Amulet Coin: Goldenrod Department Basement
+Quick Claw: National Forest
+Oran Berry: Route 46, Route 44, Route 37
+Sitrus Berry: Route 48, Route 42, Route 38
+Pecha Berry: Route 30, Route 33, Azalea Town, Route 2
+Chesto Berry: Pewter City, Route 37, Route 39
+Rawst Berry: Route 26, Route 36, Pewter City
+Aspear Berry: Route 31, Route 37, Fuchsia City
+Cherri Berry: Violet City, Route 46, Route 8
+Persim Berry: Route 31, Route 43, Route 29
+Leppa Berry: Route 35, Route 45, Route 42
+Lum Berry: Route 42, Route 30, Route 11
+
+Decoration Locations:
+Dratini Doll: Old lady in Blackthorn City if Dratini is your starter.
+Larvitar Doll: Old lady in Blackthorn City if Larvitar is your starter.
+Totodile Doll: Defeat Pryce.
+Gengar Doll: Defeat Enoki.
+Bulbasaur Doll: Defeat Chigusa.
+Charmander Doll: Defeat Byron.
+Chikorita Doll: Defeat Milton.
+Cyndaquil Doll: Defeat Kurt.
+Squirtle Doll: Defeat Walker.
+Salamence Doll: Defeat Master.
+Starmie Doll: Defeat Swimmer Angie on Route 40.
+Rattata Doll: Defeat Cooltrainer Joseph in Dragons Den.
+Pikachu Doll: Defeat Elite Four Surge
+Magikarp Doll: Show a large Magikarp to the fisher in the house at the Lake of Rage.
+Clefairy Doll: Goldenrod Dept Store Roof vending machine.
+Skarmini Doll: Goldenrod Dept Store Roof vending machine.
+Clefairy Doll: Goldenrod Dept Store Roof vending machine.
+Swablu Doll: Goldenrod Dept Store Roof vending machine.
+Poliwag Doll: Goldenrod Dept Store Roof vending machine.
+Unown Doll: Collect all Unown forms and speak to a scientist at Ruins of Alph.
+Onix Doll: Defeat Flint.
+Surfing Pikachu Doll: Defeat Pvt. Surge.
+Lotad Doll: Defeat Erika.
+Snorlax Doll: Defeat or catch Snorlax in Fuchsia City, and talk to the guy nearby.
+Diglett Doll: Talk with an NPC in Diglett's Cave.
+Lapras Doll: Show a Lapras to Bill's grandfather.
+Kotora Doll: Goldenrod Dept Store Roof sale.
+Jigglypuff Doll: ???
+Pink Bed: Defeat Koga.
+Polkadot Bed: Defeat Sabrina.
+Pikachu Bed: Goldenrod Dept Store Roof sale.
+Red Carpet: Defeat Agatha.
+Blue Carpet: Defeat Sensational Sisters.
+Green Carpet: Defeat Giovanni.
+Yellow Carpet: Goldenrod Dept Store Roof sale.
+Jumbo Plant: Defeat Florina.
+Tropic Plant: Defeat Blaine.
+Magna Plant: Goldenrod Dept Store Roof sale.
+Pikachu Poster: Get from Rival's mom after becoming Champion.
+Clefairy Poster: Mt. Moon.
+Jigglypuff Poster: Defeat Martha.
+NES: Buy from a man in Violet City.
+SNES: Buy from a man in Violet City.
+N64: Buy from a man in Violet City.
+Virtual Boy: Buy from a man in Violet City.
+Silver Trophy: Defeat the Champion.
+Gold Trophy: ???
+
+
+

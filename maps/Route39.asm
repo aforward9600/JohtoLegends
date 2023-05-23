@@ -208,13 +208,13 @@ PokefanfCamillaSeenText:
 	done
 
 PokefanfCamillaBeatenText:
-	text "Totodile is"
+	text "Croconaw is"
 	line "adorable!"
 	done
 
 PokefanfCamillaAfterBattleText:
 	text "Don't you agree?"
-	line "Totodile is just"
+	line "Croconaw is just"
 	cont "cutest!"
 	done
 
@@ -231,7 +231,7 @@ BugCatcherStevieSeenText:
 
 BugCatcherStevieBeatenText:
 	text "My bugs weren't"
-	line "strong enough..."
+	line "strong enough…"
 	done
 
 BugCatcherStevieRematchText:

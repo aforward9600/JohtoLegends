@@ -254,20 +254,15 @@ Byron1F_FlashCannonSpeech:
 
 Byron1F_Sunnyshore:
 	text "I'll need to find"
-	line "a suitable replac-"
-	cont "ement if I want to"
+	line "a suitable"
+	cont "replacement if I"
 
-	para "return home."
-	line "There's a family"
-	cont "of strong Steel"
+	para "want to return"
+	line "home."
 
-	para "trainers in Sunny-"
-	line "shore City in"
-	cont "Sinnoh. Perhaps"
+	para "Maybe a cute girl!"
 
-	para "one of them can"
-	line "take my place som-"
-	cont "day! Hahahaha!"
+	para "Whaddya think?"
 	done
 
 ByronRematchText:

@@ -95,8 +95,9 @@ PlayerReceivedStarterDollText:
 	done
 
 ComeBackWithAPokemonText:
-	text "Come back after you"
-	line "have a #mon."
+	text "Come back after"
+	line "you have a"
+	cont "#mon."
 
 	para "I'll have a gift"
 	line "for you."

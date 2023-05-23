@@ -15,7 +15,7 @@ MagikarpLengthRaterScript:
 	checkevent EVENT_LAKE_OF_RAGE_ASKED_FOR_MAGIKARP
 	iftrue .AskedForMagikarp
 	checkevent EVENT_LAKE_OF_RAGE_EXPLAINED_WEIRD_MAGIKARP
-	iftrue .ExplainedHistory
+	iftrue .ClearedRocketHideout
 	writetext MagikarpLengthRaterText_LakeOfRageHistory
 	waitbutton
 	closetext
@@ -155,13 +155,7 @@ MagikarpLengthRaterText_MenInBlack:
 	done
 
 MagikarpLengthRaterText_WorldsLargestMagikarp:
-	text "Lake Of Rage is"
-	line "back to normal."
-
-	para "The Magikarp have"
-	line "returned."
-
-	para "I may yet realize"
+	text "I may yet realize"
 	line "my dream of see-"
 	cont "ing the world's"
 	cont "largest Magikarp."

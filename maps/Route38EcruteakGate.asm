@@ -165,13 +165,13 @@ GotAnEeveeText:
 
 	para "I hope I can be"
 	line "that pretty"
-	cont "someday..."
+	cont "someday…"
 
-	para "...What? You're"
+	para "…What? You're"
 	line "saying that I'm"
 	cont "already pretty?"
 
-	para "Hehehe..."
+	para "Hehehe…"
 
 	para "Stop it. You're"
 	line "making me blush."
@@ -192,11 +192,11 @@ GotAnEeveeMaleText:
 	para "She's really nice,"
 	line "and pretty too!"
 
-	para "...What? You're"
+	para "…What? You're"
 	line "saying I have a"
 	cont "crush?"
 
-	para "Uh..."
+	para "Uh…"
 
 	para "Stop it. I'm not"
 	line "blushing. I'm not!"
@@ -207,8 +207,8 @@ GotAnEeveeMaleText:
 	done
 
 RivalEcruteakGateWinText:
-	text "I guess yours is"
-	line "is stronger."
+	text "I guess I was"
+	line "blushing"
 	done
 
 RivalEcruteakGateLossText:

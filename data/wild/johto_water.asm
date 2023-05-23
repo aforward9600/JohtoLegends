@@ -200,10 +200,10 @@ JohtoWaterWildMons:
 
 	map_id ROUTE_45
 	db 2 percent ; encounter rate
-	dbw 20, MAGIKARP
-	dbw 15, MAGIKARP
-	dbw 5, MAGIKARP
-	dbw 5, MAGIKARP
+	dbw 40, MAGIKARP
+	dbw 45, MAGIKARP
+	dbw 45, DRATINI
+	dbw 50, GYARADOS
 
 	map_id NEW_BARK_TOWN
 	db 6 percent ; encounter rate
@@ -256,10 +256,10 @@ JohtoWaterWildMons:
 
 	map_id BLACKTHORN_CITY
 	db 4 percent ; encounter rate
-	dbw 15, MAGIKARP
-	dbw 10, MAGIKARP
-	dbw 5, MAGIKARP
-	dbw 5, MAGIKARP
+	dbw 40, MAGIKARP
+	dbw 45, MAGIKARP
+	dbw 45, DRATINI
+	dbw 50, GYARADOS
 
 	map_id SILVER_CAVE_OUTSIDE
 	db 2 percent ; encounter rate

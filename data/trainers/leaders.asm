@@ -43,7 +43,7 @@ KantoGymLeaders:
 
 VillainBosses:
 	db ARIANA
-	db MIYAMOTO
+	db MYSTERIOUS
 	db ARCHER
 	db MADAME_BOSS
 	db FED_LEADER

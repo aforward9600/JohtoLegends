@@ -142,6 +142,18 @@ SherlesAppearsGoldenrodTower:
 RadioTower1FRivalScript:
 	faceplayer
 	opentext
+	writetext IllHealYouGoldenrodTowerText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	special StubbedTrainerRankings_Healings
+	playmusic MUSIC_HEAL
+	special HealParty
+	pause 60
+	special FadeInQuickly
+	special RestartMapMusic
+	opentext
 	writetext RadioTower1FRivalText
 	waitbutton
 	closetext
@@ -591,6 +603,10 @@ YouAgainText:
 
 	para "Stay out of this,"
 	line "got it?"
+	done
+
+IllHealYouGoldenrodTowerText:
+	text "Need some healing?"
 	done
 
 RadioTower1F_MapEvents:

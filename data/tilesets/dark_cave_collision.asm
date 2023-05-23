@@ -64,3 +64,4 @@
 	tilecoll FLOOR, FLOOR, PIT, FLOOR ; 3f
 	tilecoll WALL, WALL, WALL, WALL ; 40
 	tilecoll HOP_LEFT, FLOOR, HOP_LEFT, FLOOR ; 41
+	tilecoll FLOOR, FLOOR, FLOOR, LADDER ; 42

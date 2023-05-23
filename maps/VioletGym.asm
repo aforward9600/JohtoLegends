@@ -119,6 +119,11 @@ AfterWalkerRematch:
 	setflag ENGINE_BEAT_WALKER
 	end
 
+WalkerLossText:
+	text "We can't fall just"
+	line "yet!"
+	done
+
 TrainerBirdKeeperRodney:
 	trainer BIRD_KEEPER, RODNEY1, EVENT_BEAT_BIRD_KEEPER_RODNEY, BirdKeeperRodneySeenText, BirdKeeperRodneyBeatenText, 0, .Script
 
@@ -240,11 +245,6 @@ VioletGymRivalLeavesMovement2:
 	step DOWN
 	step DOWN
 	step_end
-
-WalkerLossText:
-	text "We can't fall just"
-	line "yet!"
-	done
 
 WalkerIntroText:
 	text "I am Walker, "

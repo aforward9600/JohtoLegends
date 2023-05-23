@@ -200,6 +200,11 @@ UnusedTilesetAnim_fc1af:
 
 TilesetCaveAnim:
 TilesetDarkCaveAnim:
+	dw NULL,  LavaBubbleAnim2
+	dw NULL,  WaitTileAnimation
+	dw NULL,  LavaBubbleAnim1
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
 	dw vTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileRightLeft
@@ -207,13 +212,11 @@ TilesetDarkCaveAnim:
 	dw vTiles2 tile $14, WriteTileFromBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  AnimateWaterPalette
-	dw NULL,  LavaBubbleAnim2
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $40, WriteTileToBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw NULL,  LavaBubbleAnim2
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown

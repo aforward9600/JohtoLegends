@@ -1725,7 +1725,7 @@ BattleCommand_CheckHit:
 
 	bit SUBSTATUS_FLYING, a
 	ld hl, .FlyMoves
-	jr z, .check_move_in_list
+	jr nz, .check_move_in_list
 	ld hl, .DigMoves
 .check_move_in_list
 	; returns z (and a = 0) if the current move is in a given list, or nz (and a = 1) if not

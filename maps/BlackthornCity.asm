@@ -357,9 +357,9 @@ ThatsExpShareText:
 	para "a #mon that is"
 	line "not in battle!"
 
-	para "Just give it to a"
-	line "#mon, and watch"
-	cont "the experience"
+	para "Just use it, and"
+	line "watch the"
+	cont "experience"
 
 	para "roll in!"
 	done
