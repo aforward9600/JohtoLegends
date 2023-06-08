@@ -41,6 +41,7 @@ TreeMonMaps:
 	treemon_map ROUTE_47,                  TREEMON_SET_ROUTE_47
 	treemon_map ROUTE_48,                  TREEMON_SET_ROUTE_47
 	treemon_map LAKE_OF_RAGE,              TREEMON_SET_LAKE
+	treemon_map VIRIDIAN_FOREST,           TREEMON_SET_FOREST
 	db -1
 
 RockMonMaps:

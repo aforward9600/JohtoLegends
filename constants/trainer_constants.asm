@@ -201,7 +201,7 @@ CHRIS EQU __enum__
 	const KOSU
 	const ROBERT1
 	const JUAN
-	const GAVEN3 ; unused
+	const GARY
 	const COREY1
 	const ALM
 	const ERICK
@@ -227,7 +227,7 @@ CHRIS EQU __enum__
 	const MARIA
 	const BETH2
 	const CAROL
-	const QUINN
+	const CARA
 	const JESSIE
 	const CYBIL
 	const JENN
@@ -339,12 +339,12 @@ CHRIS EQU __enum__
 	const BUZZY
 	const ARNIE1
 	const NAT
-	const WADE2
-	const WADE3
+	const THOR
+	const OLLY
 	const MARTY
 	const ARNIE2
 	const ARNIE3
-	const WADE4
+	const DOM
 	const WADE5
 	const ARNIE4
 	const ARNIE5
@@ -489,8 +489,8 @@ CHRIS EQU __enum__
 	const ANTHONY5
 
 	trainerclass BIKER ; 2d
-	const BIKER_BENNY
-	const KAZU
+	const BUFORD
+	const BIKER_BRANDON
 	const DWAYNE
 	const HARRIS
 	const ZEKE
@@ -776,6 +776,8 @@ CHRIS EQU __enum__
 	const OSWALD
 	const DANTE
 	const RUDY
+	const GABE
+	const BERNIE
 
 	trainerclass MNINJA_M ; 50
 	const MNINJA_M1
@@ -886,6 +888,9 @@ CHRIS EQU __enum__
 
 	trainerclass CHALLENGER_CYNTHIA
 	const CHALLENGER_CYNTHIA_1
+
+	trainerclass DELINQUENT
+	const KAREN
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

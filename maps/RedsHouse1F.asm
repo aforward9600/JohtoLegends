@@ -13,12 +13,11 @@ RedsHouse1F_MapScripts:
 RedsMom:
 	faceplayer
 	opentext
-	checkevent EVENT_MET_REDS_MOM
+	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .MetAlready
 	writetext RedsMomText1
 	waitbutton
 	closetext
-	setevent EVENT_MET_REDS_MOM
 	end
 .MetAlready:
 	writetext RedsMomText2
@@ -33,43 +32,46 @@ RedsHouse1FBookshelf:
 	jumpstd picturebookshelf
 
 RedsMomText1:
-	text "Hi!"
+	text "Hi…"
 
-	para "RED's been away"
-	line "for a long time."
+	para "My boyfriend is"
+	line "travelling right"
+	cont "now out of the"
+	cont "region…"
 
-	para "He hasn't called"
-	line "either, so I have"
+	para "What if he tries"
+	line "to come back and"
+	cont "he can't?"
 
-	para "no idea where he"
-	line "is or what he's"
-	cont "been doing."
-
-	para "They say that no"
-	line "word is proof that"
-
-	para "he's doing fine,"
-	line "but I do worry"
-	cont "about him."
+	para "Ohhh…"
 	done
 
 RedsMomText2:
-	text "I worry about RED"
-	line "getting hurt or"
+	text "I just got a"
+	line "letter!"
 
-	para "sick, but he's a"
-	line "boy. I'm proud"
+	para "My boyfriend will"
+	line "be home soon, and"
+	cont "just in time for"
+	cont "the embargo to"
+	cont "lift!"
 
-	para "that he is doing"
-	line "what he wants to"
+	para "Yes!"
 
-	para "do."
+	para "Maybe now he'll be"
+	line "ready to start a"
+	cont "family…"
 	done
 
 RedsHouse1FTVText:
-	text "They have programs"
-	line "that aren't shown"
-	cont "in JOHTO…"
+	text "In other news…"
+
+	para "Our studio will run"
+	line "out of funds at"
+	cont "this rate."
+
+	para "We can only hope"
+	line "for a miracle…"
 	done
 
 RedsHouse1F_MapEvents:
@@ -88,4 +90,4 @@ RedsHouse1F_MapEvents:
 	bg_event  2,  1, BGEVENT_READ, RedsHouse1FTV
 
 	db 1 ; object events
-	object_event  5,  3, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RedsMom, -1
+	object_event  5,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RedsMom, -1

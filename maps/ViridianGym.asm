@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const VIRIDIANGYM_BLUE
+	const VIRIDIANGYM_GIOVANNI
 	const VIRIDIANGYM_GYM_GUY
 
 ViridianGym_MapScripts:
@@ -15,11 +15,11 @@ ViridianGymBlueScript:
 	writetext LeaderBlueBeforeText
 	waitbutton
 	closetext
-	winlosstext LeaderBlueWinText, 0
+	winlosstext LeaderBlueWinText, GiovanniLastMonText
 	loadtrainer GIOVANNI, GIOVANNI1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_BLUE
+	setevent EVENT_BEAT_GIOVANNI
 	opentext
 	writetext Text_ReceivedEarthBadge
 	playsound SFX_GET_BADGE
@@ -28,6 +28,20 @@ ViridianGymBlueScript:
 	writetext LeaderBlueAfterText
 	waitbutton
 	closetext
+	setevent EVENT_TRAINERS_IN_CERULEAN_GYM
+	setevent EVENT_PEWTER_GYM_FLINT
+	setevent EVENT_CELADON_GYM_ERIKA
+	setevent EVENT_VERMILION_GYM_SURGE
+	setevent EVENT_FUCSHIA_GYM_KOGA
+	setevent EVENT_SAFFRON_GYM_SABRINA
+	setevent EVENT_FIGHTING_DOJO_MASTER
+	setevent EVENT_CINNABAR_GYM_BLAINE
+	setevent EVENT_DECO_CARPET_4
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear VIRIDIANGYM_GIOVANNI
+	pause 15
+	special FadeInQuickly
 	end
 
 .FightDone:
@@ -39,7 +53,7 @@ ViridianGymBlueScript:
 ViridianGymGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_BLUE
+	checkevent EVENT_BEAT_GIOVANNI
 	iftrue .ViridianGymGuyWinScript
 	writetext ViridianGymGuyText
 	waitbutton
@@ -52,80 +66,80 @@ ViridianGymGuyScript:
 	closetext
 	end
 
-ViridianGymStatue:
-	checkflag ENGINE_EARTHBADGE
-	iftrue .Beaten
-	jumpstd gymstatue1
+GiovanniLastMonText:
+	text "This raw strength…"
 
-.Beaten:
-	gettrainername STRING_BUFFER_4, GIOVANNI, GIOVANNI1
-	jumpstd gymstatue2
+	para "I see…"
+	done
 
 LeaderBlueBeforeText:
-	text "BLUE: Yo! Finally"
-	line "got here, huh?"
+	text "Giovanni: I must"
+	line "apologize for the"
+	cont "lack of room."
 
-	para "I wasn't in the"
-	line "mood at CINNABAR,"
+	para "This is the best"
+	line "place in the city"
+	cont "to battle."
 
-	para "but now I'm ready"
-	line "to battle you."
+	para "So, you want me to"
+	line "be a Gym Leader?"
 
-	para "…"
+	para "…Heh."
 
-	para "You're telling me"
-	line "you conquered all"
-	cont "the GYMS in JOHTO?"
+	para "Very well then."
 
-	para "Heh! JOHTO's GYMS"
-	line "must be pretty"
-	cont "pathetic then."
+	para "I must say, it's"
+	line "been a while since"
+	cont "I've been excited"
+	cont "to battle."
 
-	para "Hey, don't worry"
-	line "about it."
+	para "Yes, quite a while"
+	line "indeed…"
 
-	para "I'll know if you"
-	line "are good or not by"
+	para "…Sorry, lost in a"
+	line "memory there for a"
+	cont "second."
 
-	para "battling you right"
-	line "now."
-
-	para "Ready, JOHTO"
-	line "CHAMP?"
+	para "I, Giovanni,"
+	line "accept this test!"
 	done
 
 LeaderBlueWinText:
-	text "BLUE: What?"
-
-	para "How the heck did I"
-	line "lose to you?"
-
-	para "…"
-
-	para "Tch, all right…"
-	line "Here, take this--"
-	cont "it's EARTHBADGE."
+	text "Giovanni: I see"
+	line "how you became a"
+	cont "Chamion!"
 	done
 
 Text_ReceivedEarthBadge:
-	text "<PLAYER> received"
-	line "EARTHBADGE."
+	text "Giovanni received"
+	line "Earthbadge."
 	done
 
 LeaderBlueAfterText:
-	text "BLUE: …"
+	text "Giovanni: …So this"
+	line "was the badge of"
+	cont "my predecessor…"
 
-	para "All right, I was"
-	line "wrong. You're the"
+	para "I like it."
 
-	para "real deal. You are"
-	line "a good trainer."
+	para "Green, like the"
+	line "plants that grow"
+	cont "upon the earth."
 
-	para "But I'm going to"
-	line "beat you someday."
+	para "Alright, you've"
+	line "assembled the"
+	cont "strongest trainers"
+	cont "in Kanto."
 
-	para "Don't you forget"
-	line "it!"
+	para "It's time we ended"
+	line "this little war."
+
+	para "I will gather the"
+	line "rest and meet you"
+	cont "their hideout in"
+	cont "Celadon City."
+
+	para "Don't be late!"
 	done
 
 LeaderBlueEpilogueText:
@@ -176,10 +190,8 @@ ViridianGym_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
-	bg_event  3, 13, BGEVENT_READ, ViridianGymStatue
-	bg_event  6, 13, BGEVENT_READ, ViridianGymStatue
+	db 0 ; bg events
 
 	db 2 ; object events
-	object_event  5,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_VIRIDIAN_GYM_BLUE
-	object_event  7, 13, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymGuyScript, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  5,  3, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  7, 13, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymGuyScript, EVENT_VIRIDIAN_GYM_TRAINERS

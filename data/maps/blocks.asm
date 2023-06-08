@@ -1102,3 +1102,6 @@ RocketLairBossRoom_Blocks:
 
 NownRoom_Blocks:
 	INCBIN "maps/NownRoom.blk"
+
+ViridianForest_Blocks:
+	INCBIN "maps/ViridianForest.blk"

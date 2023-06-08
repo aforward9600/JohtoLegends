@@ -176,7 +176,32 @@ VictoryRoadGateRivalScript:
 	end
 
 VictoryRoadGateRightBlackBeltEndScript:
-	jumptextfaceplayer VictoryRoadGateRightBlackBeltEndText
+	faceplayer
+	opentext
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue .GuardDoesntMove
+	writetext VictoryRoadGateGoOnThroughText
+	waitbutton
+	closetext
+	readvar VAR_FACING
+	ifequal UP, .MoveGuardRight
+	applymovement VICTORYROADGATE_BLACK_BELT3, VictoryRoadGateStepDownMovement
+	turnobject VICTORYROADGATE_BLACK_BELT3, UP
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	end
+
+.MoveGuardRight:
+	applymovement VICTORYROADGATE_BLACK_BELT3, OakMovesRight
+	turnobject VICTORYROADGATE_BLACK_BELT3, LEFT
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	end
+
+.GuardDoesntMove:
+	writetext VictoryRoadGateGoOnThroughText
+	waitbutton
+	closetext
+	end
+;	jumptextfaceplayer VictoryRoadGateRightBlackBeltEndText
 
 VictoryRoadGateStepDownMovement:
 	step DOWN
@@ -196,10 +221,12 @@ OakLeavesGateMovement:
 	step RIGHT
 	step RIGHT
 	step RIGHT
+	step RIGHT
 	step_end
 
 RivalLeavesVictoryRoadGateMovement:
 	step UP
+	step RIGHT
 	step RIGHT
 	step RIGHT
 	step RIGHT
@@ -378,9 +405,11 @@ TheTwoOfYouText:
 
 	para "They belonged to"
 	line "the previous Gym"
-	cont "Leaders, and find"
-	cont "new Leaders to"
-	cont "take them."
+	cont "Leaders."
+
+	para "You need to find"
+	line "new Leaders and"
+	cont "give them away."
 
 	para "I believe that you"
 	line "can rebuild the"
@@ -422,14 +451,10 @@ BadgeNumberExplainText:
 
 	para "Oak: Well, being"
 	line "me has its"
-	cont "advantages."
+	cont "privileges."
 
-	para "Being a former"
-	line "Champion gives me"
-	cont "that advantage."
-
-	para "The same goes for"
-	line "you two as well."
+	para "I'd say you have"
+	line "it too!"
 
 	para "Just go through"
 	line "this gate to the"
@@ -511,6 +536,14 @@ VictoryRoadGateRightBlackBeltEndText:
 	line "the next update."
 
 	para "Thank you."
+	done
+
+VictoryRoadGateGoOnThroughText:
+	text "Welcome to Kanto,"
+	line "Champion <PLAYER>."
+
+	para "Please proceed"
+	line "with caution."
 	done
 
 VictoryRoadGate_MapEvents:

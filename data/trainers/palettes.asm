@@ -107,6 +107,7 @@ INCLUDE "gfx/trainers/chris.pal"
 INCLUDE "gfx/player/kris.pal"
 INCLUDE "gfx/trainers/chris.pal"
 INCBIN "gfx/trainers/cynthia.gbcpal", middle_colors
+INCBIN "gfx/trainers/delinquent.gbcpal", middle_colors
 
 KrisPalette:
 INCLUDE "gfx/player/kris.pal"

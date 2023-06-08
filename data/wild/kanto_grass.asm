@@ -5,32 +5,32 @@ KantoGrassWildMons:
 	map_id DIGLETTS_CAVE
 	db 4 percent, 2 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 3, DIGLETT
-	dbw 6, DIGLETT
-	dbw 12, DIGLETT
-	dbw 24, DIGLETT
-	dbw 24, DUGTRIO
-	dbw 24, DUGTRIO
-	dbw 24, DUGTRIO
-	dbw 24, DUGTRIO
+	dbw 66, DIGLETT
+	dbw 67, DIGLETT
+	dbw 68, DIGLETT
+	dbw 69, DIGLETT
+	dbw 66, DUGTRIO
+	dbw 67, DUGTRIO
+	dbw 68, DUGTRIO
+	dbw 69, DUGTRIO
 	; day
-	dbw 2, DIGLETT
-	dbw 4, DIGLETT
-	dbw 8, DIGLETT
-	dbw 16, DIGLETT
-	dbw 16, DUGTRIO
-	dbw 16, DUGTRIO
-	dbw 16, DUGTRIO
-	dbw 16, DUGTRIO
+	dbw 66, DIGLETT
+	dbw 67, DIGLETT
+	dbw 68, DIGLETT
+	dbw 69, DIGLETT
+	dbw 66, DUGTRIO
+	dbw 67, DUGTRIO
+	dbw 68, DUGTRIO
+	dbw 69, DUGTRIO
 	; nite
-	dbw 4, DIGLETT
-	dbw 8, DIGLETT
-	dbw 16, DIGLETT
-	dbw 32, DIGLETT
-	dbw 32, DUGTRIO
-	dbw 32, DUGTRIO
-	dbw 32, DUGTRIO
-	dbw 32, DUGTRIO
+	dbw 66, DIGLETT
+	dbw 67, DIGLETT
+	dbw 68, DIGLETT
+	dbw 69, DIGLETT
+	dbw 66, DUGTRIO
+	dbw 67, DUGTRIO
+	dbw 68, DUGTRIO
+	dbw 69, DUGTRIO
 
 	map_id MOUNT_MOON
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -185,62 +185,62 @@ KantoGrassWildMons:
 	map_id ROUTE_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 2, PIDGEY
-	dbw 2, RATTATA
-	dbw 3, SENTRET
-	dbw 3, PIDGEY
-	dbw 6, FURRET
-	dbw 4, PIDGEY
-	dbw 4, PIDGEY
-	dbw 4, PIDGEY
+	dbw 67, SUNFLORA
+	dbw 67, TANGROWTH
+	dbw 67, MR__MIME
+	dbw 68, PIDGEOT
+	dbw 68, FURRET
+	dbw 69, AZUMARILL
+	dbw 5, BULBASAUR
+	dbw 6, BULBASAUR
 	; day
-	dbw 2, PIDGEY
-	dbw 2, RATTATA
-	dbw 3, SENTRET
-	dbw 3, PIDGEY
-	dbw 6, FURRET
-	dbw 4, PIDGEY
-	dbw 4, PIDGEY
-	dbw 4, PIDGEY
+	dbw 67, SUNFLORA
+	dbw 67, TANGROWTH
+	dbw 67, MR__MIME
+	dbw 68, PIDGEOT
+	dbw 68, FURRET
+	dbw 69, AZUMARILL
+	dbw 5, BULBASAUR
+	dbw 6, BULBASAUR
 	; nite
-	dbw 2, HOOTHOOT
-	dbw 2, RATTATA
-	dbw 3, RATTATA
-	dbw 3, HOOTHOOT
-	dbw 6, RATICATE
-	dbw 4, HOOTHOOT
-	dbw 4, HOOTHOOT
-	dbw 4, HOOTHOOT
+	dbw 67, VILEPLUME
+	dbw 67, TANGROWTH
+	dbw 67, MR__MIME
+	dbw 68, NOCTOWL
+	dbw 68, RATICATE
+	dbw 69, AZUMARILL
+	dbw 5, BULBASAUR
+	dbw 6, BULBASAUR
 
 	map_id ROUTE_2
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 3, CATERPIE
-	dbw 3, LEDYBA
-	dbw 5, PIDGEY
-	dbw 7, BUTTERFREE
-	dbw 7, LEDIAN
-	dbw 4, PIKACHU
-	dbw 4, PIKACHU
-	dbw 4, PIKACHU
+	dbw 65, NIDORINA
+	dbw 65, NIDORINO
+	dbw 66, PIDGEOT
+	dbw 65, URSALUNA
+	dbw 67, LEDIAN
+	dbw 67, PIKACHU
+	dbw 68, PIKACHU
+	dbw 69, PIKACHU
 	; day
-	dbw 3, CATERPIE
-	dbw 3, PIDGEY
-	dbw 5, PIDGEY
-	dbw 7, BUTTERFREE
-	dbw 7, PIDGEOTTO
-	dbw 4, PIKACHU
-	dbw 4, PIKACHU
-	dbw 4, PIKACHU
+	dbw 65, NIDORINA
+	dbw 65, NIDORINO
+	dbw 66, PIDGEOT
+	dbw 65, URSALUNA
+	dbw 67, LEDIAN
+	dbw 67, PIKACHU
+	dbw 68, PIKACHU
+	dbw 69, PIKACHU
 	; nite
-	dbw 3, HOOTHOOT
-	dbw 3, SPINARAK
-	dbw 5, HOOTHOOT
-	dbw 7, NOCTOWL
-	dbw 7, ARIADOS
-	dbw 4, NOCTOWL
-	dbw 4, NOCTOWL
-	dbw 4, NOCTOWL
+	dbw 65, NIDORINA
+	dbw 65, NIDORINO
+	dbw 66, NOCTOWL
+	dbw 65, DONPHAN
+	dbw 67, ARIADOS
+	dbw 67, PIKACHU
+	dbw 68, PIKACHU
+	dbw 69, PIKACHU
 
 	map_id ROUTE_3
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -901,5 +901,35 @@ KantoGrassWildMons:
 	dbw 42, GOLBAT
 	dbw 42, GOLBAT
 	dbw 42, GOLBAT
+
+	map_id VIRIDIAN_FOREST
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 64, BUTTERFREE
+	dbw 65, VENOMOTH
+	dbw 64, LEDIAN
+	dbw 65, PARASECT
+	dbw 67, SCYTHER
+	dbw 65, YANMEGA
+	dbw 66, PIKACHU
+	dbw 66, HERACROSS
+	; day
+	dbw 64, BUTTERFREE
+	dbw 65, VENOMOTH
+	dbw 64, LEDIAN
+	dbw 65, PARASECT
+	dbw 67, SCYTHER
+	dbw 65, YANMEGA
+	dbw 66, PIKACHU
+	dbw 66, HERACROSS
+	; nite
+	dbw 64, BEEDRILL
+	dbw 65, VENOMOTH
+	dbw 64, ARIADOS
+	dbw 65, PARASECT
+	dbw 67, SCYTHER
+	dbw 65, YANMEGA
+	dbw 66, PIKACHU
+	dbw 66, PINSIR
 
 	db -1 ; end

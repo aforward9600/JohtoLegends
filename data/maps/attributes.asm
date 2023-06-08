@@ -724,3 +724,4 @@ ENDM
 	map_attributes RocketLairBossRoom, ROCKET_LAIR_BOSS_ROOM, $00, 0
 	map_attributes NownRoom, NOWN_ROOM, $00, 0
 	map_attributes NownPuzzleRoom, NOWN_PUZZLE_ROOM, $00, 0
+	map_attributes ViridianForest, VIRIDIAN_FOREST, $00, 0

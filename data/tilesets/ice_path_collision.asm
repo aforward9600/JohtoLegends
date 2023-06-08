@@ -70,3 +70,9 @@
 	tilecoll ICE, WALL, ICE, WALL ; 45
 	tilecoll LADDER, FLOOR, FLOOR, FLOOR ; 46
 	tilecoll WALL, WALL, LADDER, FLOOR ; 47
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 48
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 49
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 4a
+	tilecoll UP_WALL, UP_WALL, FLOOR, LADDER ; 4b
+	tilecoll UP_WALL, UP_WALL, FLOOR, LADDER ; 4c
+	tilecoll WATER, WATER, WATER, WATER ; 4d

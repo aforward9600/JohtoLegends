@@ -60,7 +60,7 @@ SpriteMons:
 	dw ENTEI
 	dw ARTICUNO
 	dw ZAPDOS
-	dw MOLTRES
+	dw SPEAROW
 	dw MACHAMP
 	dw PORYGON_Z
 	dw QUAGSIRE

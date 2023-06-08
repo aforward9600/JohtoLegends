@@ -2,7 +2,7 @@
 	const VIRIDIANPOKECENTER1F_NURSE
 	const VIRIDIANPOKECENTER1F_COOLTRAINER_M
 	const VIRIDIANPOKECENTER1F_COOLTRAINER_F
-	const VIRIDIANPOKECENTER1F_BUG_CATCHER
+	const VIRIDIANPOKECENTER1F_RIVAL
 
 ViridianPokecenter1F_MapScripts:
 	db 0 ; scene scripts
@@ -12,61 +12,73 @@ ViridianPokecenter1F_MapScripts:
 ViridianPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
-ViridianPokecenter1FCooltrainerMScript:
+ViridianPokecenter1FTwinScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BLUE_IN_CINNABAR
+	checkevent EVENT_BEAT_GIOVANNI
 	iftrue .BlueReturned
-	writetext ViridianPokecenter1FCooltrainerMText
+	writetext ViridianPokecenter1FTwinText
 	waitbutton
 	closetext
 	end
 
 .BlueReturned:
-	writetext ViridianPokecenter1FCooltrainerMText_BlueReturned
+	writetext ViridianPokecenter1FTwinText_BlueReturned
 	waitbutton
 	closetext
 	end
 
-ViridianPokecenter1FCooltrainerFScript:
-	jumptextfaceplayer ViridianPokecenter1FCooltrainerFText
+ViridianPokecenter1FSchoolboyScript:
+	jumptextfaceplayer ViridianPokecenter1FSchoolboyText
 
-ViridianPokecenter1FBugCatcherScript:
-	jumptextfaceplayer ViridianPokecenter1FBugCatcherText
+ViridianPokecenter1FRivalScript:
+	jumptextfaceplayer ViridianPokecenter1FRivalText
 
-ViridianPokecenter1FCooltrainerMText:
-	text "Where in the world"
-	line "is VIRIDIAN's GYM"
-
-	para "LEADER? I wanted"
-	line "to challenge him."
+ViridianPokecenter1FTwinText:
+	text "I wanna go out-"
+	line "side, but those"
+	cont "meanies won't let"
+	cont "me!"
 	done
 
-ViridianPokecenter1FCooltrainerMText_BlueReturned:
-	text "There are no GYM"
-	line "TRAINERS at the"
-	cont "VIRIDIAN GYM."
+ViridianPokecenter1FTwinText_BlueReturned:
+	text "Yay!"
 
-	para "The LEADER claims"
-	line "his policy is to"
+	para "I can go outside"
+	cont "again!"
 
-	para "win without having"
-	line "any underlings."
+	para "But now I don't"
+	line "wanna."
 	done
 
-ViridianPokecenter1FCooltrainerFText:
-	text "I heard that the"
-	line "GYM in CINNABAR is"
-	cont "gone."
+ViridianPokecenter1FSchoolboyText:
+	text "I hear Palette"
+	line "Town is untouched"
+	cont "by the Feds."
 
-	para "I wonder what be-"
-	line "came of BLAINE,"
-	cont "the GYM LEADER."
+	para "Considering who"
+	line "lives there, it"
+	cont "makes sense."
 	done
 
-ViridianPokecenter1FBugCatcherText:
-	text "My dream is to be-"
-	line "come a GYM LEADER."
+ViridianPokecenter1FRivalText:
+	text "I heard a rich and"
+	line "powerful trainer"
+	cont "owns the storage"
+	cont "building here."
+
+	para "He might prove to"
+	line "be a great ally."
+
+	para "Thing is, no one"
+	line "really sees him."
+
+	para "I also heard he"
+	line "owns a mansion on"
+	cont "Cinnabar Island"
+	cont "that burned down."
+
+	para "Maybe try there?"
 	done
 
 ViridianPokecenter1F_MapEvents:
@@ -83,6 +95,6 @@ ViridianPokecenter1F_MapEvents:
 
 	db 4 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FNurseScript, -1
-	object_event  8,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerMScript, -1
-	object_event  5,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerFScript, -1
-	object_event  1,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FBugCatcherScript, -1
+	object_event  8,  4, SPRITE_TWIN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FTwinScript, -1
+	object_event  5,  3, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FSchoolboyScript, -1
+	object_event  1,  6, SPRITE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FRivalScript, EVENT_KANTO_POKECENTER_RIVAL

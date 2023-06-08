@@ -102,3 +102,4 @@ TrainerPicPointers::
 	dba ChampionDahliaPic
 	dba ChampionDracoPic
 	dba CynthiaPic
+	dba DelinquentPic

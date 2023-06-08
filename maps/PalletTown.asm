@@ -21,50 +21,33 @@ PalletTownFisherScript:
 PalletTownSign:
 	jumptext PalletTownSignText
 
-RedsHouseSign:
-	jumptext RedsHouseSignText
-
 OaksLabSign:
 	jumptext OaksLabSignText
 
-BluesHouseSign:
-	jumptext BluesHouseSignText
-
 PalletTownTeacherText:
-	text "I'm raising #-"
-	line "MON too."
-
-	para "They serve as my"
-	line "private guards."
+	text "I hope everything"
+	line "gets sorted out"
+	cont "soon…"
 	done
 
 PalletTownFisherText:
-	text "Technology is"
-	line "incredible!"
-
-	para "You can now trade"
-	line "#MON across"
-	cont "time like e-mail."
+	text "Having a former"
+	line "Champion here has"
+	cont "made the Feds"
+	cont "think twice about"
+	cont "coming here!"
 	done
 
 PalletTownSignText:
-	text "PALLET TOWN"
+	text "Pallet Town"
 
 	para "A Tranquil Setting"
 	line "of Peace & Purity"
 	done
 
-RedsHouseSignText:
-	text "RED'S HOUSE"
-	done
-
 OaksLabSignText:
-	text "OAK #MON"
-	line "RESEARCH LAB"
-	done
-
-BluesHouseSignText:
-	text "BLUE'S HOUSE"
+	text "Oak #mon"
+	line "Research Lab"
 	done
 
 PalletTown_MapEvents:
@@ -77,12 +60,10 @@ PalletTown_MapEvents:
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 2 ; bg events
 	bg_event  7,  9, BGEVENT_READ, PalletTownSign
-	bg_event  3,  5, BGEVENT_READ, RedsHouseSign
 	bg_event 13, 13, BGEVENT_READ, OaksLabSign
-	bg_event 11,  5, BGEVENT_READ, BluesHouseSign
 
 	db 2 ; object events
-	object_event  3,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownTeacherScript, -1
-	object_event 12, 14, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PalletTownFisherScript, -1
+	object_event  3,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownTeacherScript, -1
+	object_event 12, 14, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PalletTownFisherScript, -1

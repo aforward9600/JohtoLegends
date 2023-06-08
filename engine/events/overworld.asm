@@ -869,6 +869,7 @@ dig_incave:
 	applymovement PLAYER, .DigOut
 	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
+	callasm ResetPlayerPalette
 	loadvar VAR_MOVEMENT, PLAYER_NORMAL
 	newloadmap MAPSETUP_DOOR
 	playsound SFX_WARP_FROM

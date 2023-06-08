@@ -41,7 +41,7 @@ Route2NuggetHouseFisherText:
 	done
 
 Route2NuggetHouseFisherText_GotNugget:
-	text "That's a NUGGET."
+	text "That's a Nugget."
 
 	para "I can't give you"
 	line "any nuggets of"

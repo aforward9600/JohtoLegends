@@ -64,8 +64,8 @@ GameFreakGraphicArtistScript:
 	closetext
 	end
 
-GameFreakProgrammerScript:
-	jumptextfaceplayer GameFreakProgrammerText
+Ax6Script:
+	jumptextfaceplayer Ax6Text
 
 GameFreakCharacterDesignerScript:
 	jumptextfaceplayer GameFreakCharacterDesignerText
@@ -144,12 +144,17 @@ GameFreakGraphicArtistErrorText:
 	cont "cel printing."
 	done
 
-GameFreakProgrammerText:
-	text "Who, me? I'm the"
-	line "PROGRAMMER."
+Ax6Text:
+	text "Who, me? I'm ax6!"
 
-	para "Play the slot"
-	line "machines!"
+	para "I made the 16-bit"
+	line "modifications to"
+	cont "#mon Crystal!"
+
+	para "You'd only have 253"
+	line "#mon and 254"
+	cont "moves without my"
+	cont "work!"
 	done
 
 GameFreakCharacterDesignerText:
@@ -163,29 +168,57 @@ GameFreakCharacterDesignerText:
 	done
 
 CeladonMansion3FDevRoomSignText:
-	text "GAME FREAK"
-	line "DEVELOPMENT ROOM"
+	text "Johto Legends"
+	line "Development Room"
 	done
 
 CeladonMansion3FDrawingText:
-	text "It's a detailed"
-	line "drawing of a"
-	cont "pretty girl."
+	text "Dear <PLAYER>,"
+
+	para "I'm sorry I can't"
+	line "be in the"
+	cont "Development Room."
+
+	para "I am currently out"
+	line "on business."
+
+	para "I'm certain we'll"
+	line "meet in your"
+	cont "travels."
+
+	para "When we meet, we"
+	line "will see who is"
+	cont "more powerful."
+
+	para "I look forward to"
+	line "it."
+
+	para "Sincerely,"
+	line "Ferropexola."
 	done
 
 CeladonMansion3FGameProgramText:
-	text "It's the game"
-	line "program. Messing"
+	text "Note to self:"
 
-	para "with it could put"
-	line "a bug in the game!"
+	para "Nerf Geodude."
+
+	para "DemICE was having"
+	line "entirely too much"
+	cont "fun with it."
 	done
 
 CeladonMansion3FReferenceMaterialText:
-	text "It's crammed with"
-	line "reference materi-"
-	cont "als. There's even"
-	cont "a # DOLL."
+	text "It's a picture of"
+	line "an angry nerd with"
+	cont "the caption:"
+
+	para "What were they"
+	line "thinking?"
+
+	para "Seems like someone"
+	line "is annoyed at"
+	cont "their own design"
+	cont "choices."
 	done
 
 CeladonMansion3F_MapEvents:
@@ -208,5 +241,5 @@ CeladonMansion3F_MapEvents:
 	db 4 ; object events
 	object_event  3,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GameFreakGameDesignerScript, -1
 	object_event  3,  4, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GameFreakGraphicArtistScript, -1
-	object_event  0,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GameFreakProgrammerScript, -1
+	object_event  0,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Ax6Script, -1
 	object_event  0,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GameFreakCharacterDesignerScript, -1

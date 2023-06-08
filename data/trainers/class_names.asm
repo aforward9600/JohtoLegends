@@ -100,3 +100,4 @@ TrainerClassNames::
 	db "Challenger@"
 	db "Challenger@"
 	db "<PKMN> Trainer@"
+	db "Delinquent@"

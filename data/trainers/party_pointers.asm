@@ -102,3 +102,4 @@ TrainerGroups:
 	dba ChampionDahliaGroup
 	dba ChampionDahliaGroup
 	dba ChallengerCynthiaGroup
+	dba DelinquentGroup

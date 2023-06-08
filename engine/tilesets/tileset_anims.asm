@@ -226,6 +226,8 @@ TilesetDarkCaveAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetIcePathAnim:
+	dw vTiles2 tile $14, AnimateWaterTile
+	dw NULL,  WaitTileAnimation
 	dw vTiles2 tile $35, WriteTileToBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileRightLeft

@@ -272,15 +272,12 @@ MartBlackthornJournal:
 	db -1 ; end
 
 MartViridian:
-	db 9 ; # items
+	db 6 ; # items
 	db ULTRA_BALL
 	db HYPER_POTION
 	db FULL_HEAL
 	db REVIVE
-	db ANTIDOTE
-	db PARLYZ_HEAL
-	db AWAKENING
-	db BURN_HEAL
+	db FULL_RESTORE
 	db FLOWER_MAIL
 	db -1 ; end
 

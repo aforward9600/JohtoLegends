@@ -38,9 +38,10 @@ Oak:
 	end
 
 .OpenMtSilver:
-	writetext OakOpenMtSilverText
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .TrulyOpenMountSilver
+	writetext OakGotAllBadgesText
 	buttonsound
-	setevent EVENT_OPENED_MT_SILVER
 	sjump .CheckPokedex
 
 .Complain:
@@ -51,6 +52,12 @@ Oak:
 .AhGood:
 	writetext OakYesKantoBadgesText
 	buttonsound
+	sjump .CheckPokedex
+
+.TrulyOpenMountSilver:
+	writetext OakOpenMtSilverText
+	buttonsound
+	setevent EVENT_OPENED_MT_SILVER
 	sjump .CheckPokedex
 
 OaksAssistant1Script:
@@ -78,22 +85,23 @@ OaksLabPC:
 	jumptext OaksLabPCText
 
 OakWelcomeKantoText:
-	text "OAK: Ah, <PLAY_G>!"
+	text "Oak: Ah, <PLAY_G>!"
 	line "It's good of you"
 
-	para "to come all this"
-	line "way to KANTO."
+	para "to come see me!"
 
-	para "What do you think"
-	line "of the trainers"
+	para "You've got a"
+	line "daunting task"
 
-	para "out here?"
-	line "Pretty tough, huh?"
+	para "ahead of you!"
+
+	para "Don't get"
+	line "discouraged!"
 	done
 
 OakLabDexCheckText:
-	text "How is your #-"
-	line "DEX coming?"
+	text "How is your"
+	line "Journal coming?"
 
 	para "Let's see…"
 	done
@@ -105,119 +113,129 @@ OakLabGoodbyeText:
 	done
 
 OakOpenMtSilverText:
-	text "OAK: Wow! That's"
-	line "excellent!"
+	text "Oak: Well done,"
+	line "<PLAYER>!"
 
-	para "You collected the"
-	line "BADGES of GYMS in"
-	cont "KANTO. Well done!"
+	para "Well done indeed!"
+	line "The Federation has"
+	cont "lost control!"
 
-	para "I was right in my"
-	line "assessment of you."
+	para "With new Leaders"
+	line "in place, Kanto"
+	cont "can rejoin the"
+	cont "League!"
 
-	para "Tell you what,"
-	line "<PLAY_G>. I'll make"
+	para "The embargo should"
+	line "lift shortly."
 
-	para "arrangements so"
-	line "that you can go to"
-	cont "MT.SILVER."
+	para "I can't begin to"
+	line "tell you how much"
+	cont "we owe you and"
+	cont "<RIVAL>!"
 
-	para "MT.SILVER is a big"
-	line "mountain that is"
+	para "It's not much of a"
+	line "reward, but now"
+	cont "you'll be able to"
+	cont "go to Mt.Silver."
 
-	para "home to many wild"
-	line "#MON."
+	para "It's the tallest"
+	line "peak in both Kanto"
+	cont "and Johto."
 
-	para "It's too dangerous"
-	line "for your average"
+	para "Who knows what you"
+	line "will find there?"
 
-	para "trainer, so it's"
-	line "off limits. But"
+	para "Once again, thank"
+	line "you for your"
+	cont "efforts."
 
-	para "we can make an"
-	line "exception in your"
-	cont "case, <PLAY_G>."
+	para "…Oh, and please"
+	line "take this."
 
-	para "Go up to INDIGO"
-	line "PLATEAU. You can"
+	para "I had this made"
+	line "especially for"
+	cont "you!"
 
-	para "reach MT.SILVER"
-	line "from there."
+	para "I had almost"
+	line "forgot about it in"
+	cont "the excitement!"
 	done
 
 OakNoKantoBadgesText:
-	text "OAK: Hmm? You're"
-	line "not collecting"
-	cont "KANTO GYM BADGES?"
+	text "Oak: Hmm? You"
+	line "haven't found any"
+	cont "candidates yet?"
 
-	para "The GYM LEADERS in"
-	line "KANTO are as tough"
+	para "Well, no one said"
+	line "it would be easy,"
+	cont "now did they?"
 
-	para "as any you battled"
-	line "in JOHTO."
+	para "Relax!"
 
-	para "I recommend that"
-	line "you challenge"
-	cont "them."
+	para "You've got <RIVAL>"
+	line "helping you!"
+
+	para "That's better than"
+	line "anyone else, I'd"
+	cont "say!"
 	done
 
 OakYesKantoBadgesText:
-	text "OAK: Ah, you're"
-	line "collecting KANTO"
-	cont "GYM BADGES."
+	text "Oak: Ah, starting"
+	line "to find candidates"
+	cont "are you?"
 
-	para "I imagine that"
-	line "it's hard, but the"
+	para "This region is"
+	line "depending on you"
+	cont "and <RIVAL>!"
 
-	para "experience is sure"
-	line "to help you."
+	para "Don't hesitate to"
+	line "ask <RIVAL> for"
+	cont "help sometime!"
 
-	para "Come see me when"
-	line "you get them all."
+	para "Good luck!"
 
-	para "I'll have a gift"
-	line "for you."
-
-	para "Keep trying hard,"
-	line "<PLAY_G>!"
+	para "Come and see me"
+	line "when you finish"
+	cont "your mission!"
 	done
 
 OaksAssistant1Text:
-	text "The PROF's #MON"
-	line "TALK radio program"
+	text "The Prof's #mon"
+	line "Talk TV program"
 
 	para "isn't aired here"
-	line "in KANTO."
+	line "in Kanto."
 
-	para "It's a shame--I'd"
-	line "like to hear it."
+	para "Understandable,"
+	line "given the current"
+	cont "circumstances…"
 	done
 
 OaksAssistant2Text:
 	text "Thanks to your"
-	line "work on the #-"
-	cont "DEX, the PROF's"
+	line "work on the"
+	cont "Journal, the Prof's"
 
 	para "research is coming"
 	line "along great."
 	done
 
 OaksAssistant3Text:
-	text "Don't tell anyone,"
-	line "but PROF.OAK'S"
-
-	para "#MON TALK isn't"
-	line "a live broadcast."
+	text "Hopefully I can"
+	line "travel to Johto"
+	cont "for research one"
+	cont "day…"
 	done
 
 OaksLabPoster1Text:
-	text "Press START to"
-	line "open the MENU."
+	text "Press Start to"
+	line "open the Menu."
 	done
 
 OaksLabPoster2Text:
-	text "The SAVE option is"
-	line "on the MENU."
+	text "The Save option is"
+	line "on the Menu."
 
 	para "Use it in a timely"
 	line "manner."
@@ -234,24 +252,33 @@ OaksLabPCText:
 
 	para "…"
 
-	para "PROF.OAK, how is"
+	para "Prof.Oak, how is"
 	line "your research"
 	cont "coming along?"
 
-	para "I'm still plugging"
-	line "away."
+	para "I'll be starting on"
+	line "mine soon."
 
-	para "I heard rumors"
-	line "that <PLAY_G> is"
+	para "The lab is all"
+	line "done and primed"
+	cont "for science!"
 
-	para "getting quite a"
-	line "reputation."
+	para "Hope to see you"
+	line "again someday."
 
-	para "I'm delighted to"
-	line "hear that."
+	para "Elm in New Bark"
+	line "Town 8-)"
+	done
 
-	para "ELM in NEW BARK"
-	line "TOWN 8-)"
+OakGotAllBadgesText:
+	text "Oak: Oh, I see you"
+	line "have found all of"
+	cont "candidates!"
+
+	para "Wonderful!"
+
+	para "Now it's time to"
+	line "take back Kanto!"
 	done
 
 OaksLab_MapEvents:

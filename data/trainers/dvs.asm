@@ -102,3 +102,4 @@ TrainerClassDVs:
 	dn 13, 12, 13, 13 ; CHALLENGER
 	dn 13, 12, 13, 13 ; CHALLENGER
 	dn 13, 12, 13, 13 ; TOURIST
+	dn 10,  9,  9,  9 ; DELINQUENT

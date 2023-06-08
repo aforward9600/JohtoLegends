@@ -2,7 +2,6 @@
 	const VIRIDIANNICKNAMESPEECHHOUSE_POKEFAN_M
 	const VIRIDIANNICKNAMESPEECHHOUSE_LASS
 	const VIRIDIANNICKNAMESPEECHHOUSE_SPEARY
-	const VIRIDIANNICKNAMESPEECHHOUSE_RATTEY
 
 ViridianNicknameSpeechHouse_MapScripts:
 	db 0 ; scene scripts
@@ -16,47 +15,39 @@ ViridianNicknameSpeechHouseLassScript:
 	jumptextfaceplayer ViridianNicknameSpeechHouseLassText
 
 Speary:
-	opentext
-	writetext SpearyText
+	refreshscreen
+	pokepic SPEAROW
 	cry SPEAROW
 	waitbutton
-	closetext
-	end
-
-Rattey:
+	closepokepic
 	opentext
-	writetext RatteyText
-	cry RATTATA
+	writetext SpearyText
 	waitbutton
 	closetext
 	end
 
 ViridianNicknameSpeechHousePokefanMText:
-	text "Do you put a lot"
-	line "of thought into"
+	text "I love my Spearow,"
+	line "but with my wife"
+	cont "expecting, I don't"
+	cont "think Spearow can"
+	cont "defend us alone."
 
-	para "naming your"
-	line "#MON?"
-
-	para "Giving them good"
-	line "nicknames adds to"
-
-	para "the fun of trading"
-	line "with others."
+	para "Maybe I need a"
+	line "Rattata too!"
 	done
 
 ViridianNicknameSpeechHouseLassText:
-	text "They're SPEARY--"
-	line "a SPEAROW--and"
-	cont "RATTEY--a RATTATA."
+	text "I'm really nervous"
+	line "about bringing a"
+	cont "child into this"
+	cont "world…"
+
+	para "Especially now…"
 	done
 
 SpearyText:
-	text "SPEARY: Ch-chun!"
-	done
-
-RatteyText:
-	text "RATTEY: Kikiii!"
+	text "Spearow: Ch-chun!"
 	done
 
 ViridianNicknameSpeechHouse_MapEvents:
@@ -70,8 +61,7 @@ ViridianNicknameSpeechHouse_MapEvents:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 3 ; object events
 	object_event  2,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianNicknameSpeechHousePokefanMScript, -1
-	object_event  5,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianNicknameSpeechHouseLassScript, -1
-	object_event  5,  2, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Speary, -1
-	object_event  6,  3, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Rattey, -1
+	object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianNicknameSpeechHouseLassScript, -1
+	object_event  5,  2, SPRITE_SPEAROW, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Speary, -1

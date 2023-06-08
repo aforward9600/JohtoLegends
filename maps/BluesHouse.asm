@@ -1,5 +1,6 @@
 	object_const_def ; object_event constants
 	const BLUESHOUSE_DAISY
+	const BLUESHOUSE_BLUESMOM
 
 BluesHouse_MapScripts:
 	db 0 ; scene scripts
@@ -7,139 +8,50 @@ BluesHouse_MapScripts:
 	db 0 ; callbacks
 
 DaisyScript:
+	jumptextfaceplayer HiImDaisyText
+
+DaisysMomScript:
 	faceplayer
 	opentext
-	readvar VAR_HOUR
-	ifequal 15, .ThreePM
-	writetext DaisyHelloText
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .DaisysMomScript2
+	writetext DaisysMomText
+	waitbutton
+	closetext
+	end
+.DaisysMomScript2:
+	writetext DaisysMomText2
 	waitbutton
 	closetext
 	end
 
-.ThreePM:
-	checkflag ENGINE_DAISYS_GROOMING
-	iftrue .AlreadyGroomedMon
-	writetext DaisyOfferGroomingText
-	yesorno
-	iffalse .Refused
-	writetext DaisyWhichMonText
-	waitbutton
-	special DaisysGrooming
-	ifequal $0, .Refused
-	ifequal $1, .CantGroomEgg
-	setflag ENGINE_DAISYS_GROOMING
-	writetext DaisyAlrightText
-	waitbutton
-	closetext
-	special FadeOutPalettes
-	playmusic MUSIC_HEAL
-	pause 60
-	special FadeInPalettes
-	special RestartMapMusic
-	opentext
-	writetext GroomedMonLooksContentText
-	special PlayCurMonCry
-	buttonsound
-	writetext DaisyAllDoneText
-	waitbutton
-	closetext
-	end
-
-.AlreadyGroomedMon:
-	writetext DaisyAlreadyGroomedText
-	waitbutton
-	closetext
-	end
-
-.Refused:
-	writetext DaisyRefusedText
-	waitbutton
-	closetext
-	end
-
-.CantGroomEgg:
-	writetext DaisyCantGroomEggText
-	waitbutton
-	closetext
-	end
-
-DaisyHelloText:
-	text "DAISY: Hi! My kid"
-	line "brother is the GYM"
-
-	para "LEADER in VIRIDIAN"
-	line "CITY."
-
-	para "But he goes out"
-	line "of town so often,"
-
-	para "it causes problems"
-	line "for the trainers."
+HiImDaisyText:
+	text "Hi! I'm Daisy!"
 	done
 
-DaisyOfferGroomingText:
-	text "DAISY: Hi! Good"
-	line "timing. I'm about"
-	cont "to have some tea."
+DaisysMomText:
+	text "My boyfriend is on"
+	line "a journey with his"
+	cont "childhood friend"
+	cont "from next door."
 
-	para "Would you like to"
-	line "join me?"
+	para "I'm not too worried"
+	line "about him."
 
-	para "Oh, your #MON"
-	line "are a bit dirty."
+	para "They're both strong"
+	line "trainers."
 
-	para "Would you like me"
-	line "to groom one?"
+	para "Getting back is a"
+	line "different issue…"
 	done
 
-DaisyWhichMonText:
-	text "DAISY: Which one"
-	line "should I groom?"
-	done
+DaisysMomText2:
+	text "I just got word."
 
-DaisyAlrightText:
-	text "DAISY: OK, I'll"
-	line "get it looking"
-	cont "nice in no time."
-	done
+	para "They're both on"
+	line "their way back."
 
-GroomedMonLooksContentText:
-	text_ram wStringBuffer3
-	text " looks"
-	line "content."
-	done
-
-DaisyAllDoneText:
-	text "DAISY: There you"
-	line "go! All done."
-
-	para "See? Doesn't it"
-	line "look nice?"
-
-	para "It's such a cute"
-	line "#MON."
-	done
-
-DaisyAlreadyGroomedText:
-	text "DAISY: I always"
-	line "have tea around"
-
-	para "this time. Come"
-	line "join me."
-	done
-
-DaisyRefusedText:
-	text "DAISY: You don't"
-	line "want to have one"
-
-	para "groomed? OK, we'll"
-	line "just have tea."
-	done
-
-DaisyCantGroomEggText:
-	text "DAISY: Oh, sorry."
-	line "I honestly can't"
-	cont "groom an EGG."
+	para "Thank goodness."
 	done
 
 BluesHouse_MapEvents:
@@ -153,5 +65,6 @@ BluesHouse_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  2,  3, SPRITE_DAISY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DaisyScript, -1
+	db 2 ; object events
+	object_event  6,  4, SPRITE_TWIN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DaisyScript, -1
+	object_event  2,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DaisysMomScript, -1

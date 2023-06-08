@@ -150,6 +150,7 @@
 	const SPRITE_LOTAD_STILL
 	const SPRITE_STARMIE_STILL
 	const SPRITE_DIGLETT_STILL
+	const SPRITE_GLACEON
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $99
@@ -214,7 +215,7 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_ENTEI_P ; d0
 	const SPRITE_ARTICUNO ; d1
 	const SPRITE_ZAPDOS ; d2
-	const SPRITE_MOLTRES_P ; d3
+	const SPRITE_SPEAROW ; d3
 	const SPRITE_MACHAMP ; d4
 	const SPRITE_PORYGON_Z ; d5
 	const SPRITE_QUAGSIRE ; d6

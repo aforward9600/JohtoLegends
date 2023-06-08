@@ -10,17 +10,19 @@ Route2GateScientistScript:
 	jumptextfaceplayer Route2GateScientistText
 
 Route2GateScientistText:
-	text "Are you <PLAY_G>?"
+	text "Ah, you must be"
+	line "<PLAYER>, correct?"
 
-	para "I work as PROF."
-	line "OAK's AIDE."
+	para "I work as Prof."
+	line "Oak's aide."
 
-	para "I had no idea that"
-	line "you were out here."
+	para "I'm supposed to be"
+	line "out observing, but"
+	cont "I'm taking a break."
 
-	para "PROF.OAK's LAB is"
-	line "nearby in PALLET"
-	cont "TOWN."
+	para "Diglett's Cave is"
+	line "full of Diglett"
+	cont "not not much else."
 	done
 
 Route2Gate_MapEvents:

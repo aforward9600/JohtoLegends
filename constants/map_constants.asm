@@ -456,6 +456,7 @@ ENDM
 	map_const ROUTE_2_NUGGET_HOUSE,                         4,  4 ; 11
 	map_const ROUTE_2_GATE,                                 5,  4 ; 12
 	map_const VICTORY_ROAD_GATE,                           10,  9 ; 13
+	map_const VIRIDIAN_FOREST,                             17, 23 ; 14
 
 	newgroup                                                      ; 24
 
