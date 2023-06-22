@@ -62,6 +62,6 @@ SpriteMons:
 	dw ZAPDOS
 	dw SPEAROW
 	dw MACHAMP
-	dw PORYGON_Z
+	dw IGGLYBUFF
 	dw QUAGSIRE
 	dw ABRA

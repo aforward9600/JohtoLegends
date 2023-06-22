@@ -161,3 +161,8 @@
 	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; a0
 	tilecoll WARP_CARPET_UP, WARP_CARPET_UP, FLOOR, FLOOR ; a1
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; a2
+	tilecoll WALL, FLOOR, WALL, FLOOR ; a3
+	tilecoll WALL, WATER, WALL, WATER ; a4
+	tilecoll WALL, WALL, WALL, DOOR ; a5
+	tilecoll WALL, WALL, WALL, WALL ; a6
+	tilecoll WALL, WALL, WALL, WALL ; a7

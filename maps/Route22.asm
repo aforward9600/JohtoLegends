@@ -19,6 +19,7 @@ TrainerBikerBuford:
 	setevent EVENT_VIRIDIAN_CITY_CIVILLIANS
 	clearevent EVENT_VIRIDIAN_GYM_BLUE
 	setevent EVENT_VIRIDIAN_GYM_TRAINERS
+	setevent EVENT_PEWTER_CITY_CIVILLIANS
 ;	setevent EVENT_SET_FLAGS_IN_KANTO
 .IgnoreFlags:
 	end

@@ -16,8 +16,8 @@ LoadSpecialMapPalette:
 	jr z, .ice_path
 	cp TILESET_HOUSE
 	jr z, .house
-	cp TILESET_RADIO_TOWER
-	jr z, .radio_tower
+;	cp TILESET_RADIO_TOWER
+;	jr z, .radio_tower
 	cp TILESET_MANSION
 	jr z, .mansion_mobile
 	cp TILESET_TOWER
@@ -53,10 +53,10 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
-.radio_tower
-	call LoadRadioTowerPalette
-	scf
-	ret
+;.radio_tower
+;	call LoadRadioTowerPalette
+;	scf
+;	ret
 
 .mansion_mobile
 	call LoadMansionPalette
@@ -145,16 +145,16 @@ LoadHousePalette:
 HousePalette:
 INCLUDE "gfx/tilesets/house.pal"
 
-LoadRadioTowerPalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, RadioTowerPalette
-	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
+;LoadRadioTowerPalette:
+;	ld a, BANK(wBGPals1)
+;	ld de, wBGPals1
+;	ld hl, RadioTowerPalette
+;	ld bc, 8 palettes
+;	call FarCopyWRAM
+;	ret
 
-RadioTowerPalette:
-INCLUDE "gfx/tilesets/radio_tower.pal"
+;RadioTowerPalette:
+;INCLUDE "gfx/tilesets/radio_tower.pal"
 
 MansionPalette1:
 INCLUDE "gfx/tilesets/mansion_1.pal"

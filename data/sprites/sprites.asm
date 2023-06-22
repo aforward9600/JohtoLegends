@@ -33,7 +33,7 @@ OverworldSprites:
 	overworld_sprite FlintSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite AgathaSpriteGFX, 12, STANDING_SPRITE, PAL_OW_PINK
 	overworld_sprite MarthaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite MistySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite MistySpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite LanceSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite SurgeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite ErikaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
@@ -155,3 +155,4 @@ OverworldSprites:
 	overworld_sprite StarmieStillSpriteGFX, 4, STILL_SPRITE, PAL_OW_PINK
 	overworld_sprite DiglettStillSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite GlaceonSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite BrockSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK

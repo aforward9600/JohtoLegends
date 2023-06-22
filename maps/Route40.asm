@@ -44,7 +44,6 @@ TrainerSwimmerfAngie:
 	trainer SWIMMERF, ANGIE, EVENT_BEAT_SWIMMERF_ANGIE, SwimmerfAngieSeenText, SwimmerfAngieBeatenText, 0, .Script
 
 .Script:
-	pause 15
 	opentext
 	checkevent EVENT_DECO_STARMIE_DOLL
 	iftrue .GotStarmieDoll

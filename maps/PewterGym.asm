@@ -23,6 +23,8 @@ PewterGymBrockScript:
 	setevent EVENT_BEAT_BROCK
 	setevent EVENT_BEAT_ENGINEER_GABE
 	setevent EVENT_BEAT_ENGINEER_BERNIE
+	setevent EVENT_DECO_BIG_ONIX_DOLL
+	clearevent EVENT_PEWTER_CITY_CIVILLIANS
 	opentext
 	writetext ReceivedBoulderBadgeText
 	playsound SFX_GET_BADGE

@@ -32,7 +32,20 @@ ViridianPokecenter1FSchoolboyScript:
 	jumptextfaceplayer ViridianPokecenter1FSchoolboyText
 
 ViridianPokecenter1FRivalScript:
-	jumptextfaceplayer ViridianPokecenter1FRivalText
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_GIOVANNI
+	iftrue .ViridianPokecenterRivalAfter
+	writetext ViridianPokecenter1FRivalText
+	waitbutton
+	closetext
+	end
+
+.ViridianPokecenterRivalAfter:
+	writetext ViridianPokecenter1FRivalAfterText
+	waitbutton
+	closetext
+	end
 
 ViridianPokecenter1FTwinText:
 	text "I wanna go out-"
@@ -79,6 +92,17 @@ ViridianPokecenter1FRivalText:
 	cont "that burned down."
 
 	para "Maybe try there?"
+	done
+
+ViridianPokecenter1FRivalAfterText:
+	text "So, Giovanni, huh?"
+
+	para "He's seems pretty"
+	line "mysterious to me."
+
+	para "Well, we need all"
+	line "the help we can"
+	cont "get."
 	done
 
 ViridianPokecenter1F_MapEvents:

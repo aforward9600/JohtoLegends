@@ -816,6 +816,7 @@ CHRIS EQU __enum__
 	const DARIA
 	const DORA
 	const DEBBY
+	const DORIS_TAMER
 
 	trainerclass DRAGON_TAMER_M
 	const DREW
@@ -823,6 +824,7 @@ CHRIS EQU __enum__
 	const DAVIS
 	const DARIUS
 	const DYLAN
+	const DARBY
 
 	trainerclass MADAME_BOSS
 	const BOSS

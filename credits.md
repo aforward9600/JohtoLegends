@@ -116,13 +116,13 @@ Dragon Tamer Female base sprite: Rangi
 
 Ariana, Archer and Giovanni trainer and overworld sprite: SirWhibbles
 
-Ampharos overworld sprite: Prism Team
+Ampharos and Glaceon overworld sprite: Prism Team
 
 Gible line sprites: Blue Emerald
 
 Lance and Cynthia overworld sprites: Rangi and the Polished Crystal Team.
 
-Clair Trainer Sprite base: Solo993
+Clair Trainer Sprite base, Gen 5 Black Belt sprite: Solo993
 
 Lance Trainer Sprite base: MegamanOmega
 

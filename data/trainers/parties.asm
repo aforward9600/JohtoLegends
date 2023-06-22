@@ -7293,6 +7293,22 @@ DragonTamerFGroup:
 	dw DRAGON_DANCE, DRAGON_CLAW, FLY, DOUBLE_EDGE
 	db -1 ; end
 
+	next_list_item ; DRAGON_TAMER_F (6) Mount Moon
+	db "Doris@", TRAINERTYPE_MOVES
+	db 70
+	dw GARCHOMP
+	dw SWORDS_DANCE, EARTHQUAKE, DRAGON_CLAW, CRUNCH
+	db 70
+	dw AMPHAROS
+	dw THUNDERBOLT, DRAGON_PULSE, COTTON_SPORE, POWER_GEM
+	db 70
+	dw ALTARIA
+	dw DRAGON_PULSE, MOONBLAST, AIR_SLASH, NASTY_PLOT
+	db 71
+	dw DUDUNSPARS
+	dw EARTHQUAKE, PLAY_ROUGH, COIL, ROOST
+	db -1 ; end
+
 	end_list_items
 
 DragonTamerMGroup:
@@ -7345,7 +7361,7 @@ DragonTamerMGroup:
 	dw HURRICANE, RAIN_DANCE, ROOST, DRAGON_RUSH
 	db -1 ; end
 
-	next_list_item ; DRAGON_TAMER_M (4) Dragon's Den
+	next_list_item ; DRAGON_TAMER_M (5) Dragon's Den
 	db "Dylan@", TRAINERTYPE_NORMAL
 	db 54
 	dw AMPHAROS
@@ -7353,6 +7369,22 @@ DragonTamerMGroup:
 	dw KINGDRA
 	db 55
 	dw TYRANITAR
+	db -1 ; end
+
+	next_list_item ; DRAGON_TAMER_M (6) ; Mount Moon
+	db "Darby@", TRAINERTYPE_MOVES
+	db 70
+	dw DRAGONITE
+	dw DRAGON_DANCE, DRAGON_CLAW, EXTREMESPEED, EARTHQUAKE
+	db 70
+	dw KINGDRA
+	dw HYDRO_PUMP, ICE_BEAM, DRAGON_PULSE, AGILITY
+	db 70
+	dw SALAMENCE
+	dw DRAGON_DANCE, DRAGON_CLAW, EARTHQUAKE, AERIAL_ACE
+	db 71
+	dw NIDOKING
+	dw EARTHQUAKE, POISON_JAB, BRICK_BREAK, HORN_DRILL
 	db -1 ; end
 
 	end_list_items

@@ -208,7 +208,7 @@ ENDM
 	map_const CERULEAN_GYM,                                 5,  8 ;  6
 	map_const CERULEAN_MART,                                6,  4 ;  7
 	map_const ROUTE_10_POKECENTER_1F,                       5,  4 ;  8
-	map_const POWER_PLANT,                                 10,  9 ; 10
+	map_const POWER_PLANT,                                 20, 18 ; 10
 	map_const BILLS_HOUSE,                                  4,  4 ; 11
 	map_const ROUTE_4,                                     20,  9 ; 12
 	map_const ROUTE_9,                                     30,  9 ; 13
@@ -334,7 +334,7 @@ ENDM
 	map_const OLIVINE_PORT_PASSAGE,                        10,  9 ;  8
 	map_const VERMILION_PORT_PASSAGE,                      10,  9 ;  9
 	map_const MOUNT_MOON_SQUARE,                           15,  9 ; 10
-	map_const MOUNT_MOON_GIFT_SHOP,                         4,  6 ; 11
+	map_const MOUNT_MOON_GIFT_SHOP,                         7,  4 ; 11
 
 	newgroup                                                      ; 16
 
