@@ -419,12 +419,8 @@ CooltrainermKevinAfterBattleText:
 	done
 
 BillsHouseSignText:
-	text "SEA COTTAGE"
-	line "BILL'S HOUSE"
-	done
-
-; unused
-	text "BILL'S HOUSE"
+	text "Abra Delivery"
+	line "Service"
 	done
 
 Route25_MapEvents:

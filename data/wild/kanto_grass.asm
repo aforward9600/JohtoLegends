@@ -932,4 +932,35 @@ KantoGrassWildMons:
 	dbw 66, PIKACHU
 	dbw 66, PINSIR
 
+	map_id POWER_PLANT
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 69, PIKACHU
+	dbw 69, ELECTRODE
+	dbw 69, AMPHAROS
+	dbw 69, MAGNETON
+	dbw 70, ELECTABUZZ
+	dbw 70, RAICHU
+	dbw 70, MAGNEZONE
+	dbw 71, ELECTIVIRE
+	; day
+	dbw 69, PIKACHU
+	dbw 69, ELECTRODE
+	dbw 69, AMPHAROS
+	dbw 69, MAGNETON
+	dbw 70, ELECTABUZZ
+	dbw 70, RAICHU
+	dbw 70, MAGNEZONE
+	dbw 71, ELECTIVIRE
+	; nite
+	dbw 64, BEEDRILL
+	dbw 69, PIKACHU
+	dbw 69, ELECTRODE
+	dbw 69, AMPHAROS
+	dbw 69, MAGNETON
+	dbw 70, ELECTABUZZ
+	dbw 70, RAICHU
+	dbw 70, MAGNEZONE
+	dbw 71, ELECTIVIRE
+
 	db -1 ; end

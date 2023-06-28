@@ -1,354 +1,136 @@
 	object_const_def ; object_event constants
-	const POWERPLANT_OFFICER1
-	const POWERPLANT_GYM_GUY1
-	const POWERPLANT_GYM_GUY2
-	const POWERPLANT_OFFICER2
-	const POWERPLANT_GYM_GUY3
-	const POWERPLANT_MANAGER
-	const POWERPLANT_FOREST
+	const POWERPLANT_ZAPDOS
+	const POWERPLANT_ENGINEER1
+	const POWERPLANT_ENGINEER2
+	const POWERPLANT_POKE_BALL1
+	const POWERPLANT_POKE_BALL2
+	const POWERPLANT_POKE_BALL3
+	const POWERPLANT_ELECTRODE1
+	const POWERPLANT_ELECTRODE2
+	const POWERPLANT_POKE_BALL4
 
 PowerPlant_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-PowerPlantOfficerScript:
+PowerPlantZapdosScript:
+	opentext
+	writetext ZapdosCry
+	pause 15
+	cry ZAPDOS
+	waitbutton
+	closetext
+	loadwildmon ZAPDOS, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+	startbattle
+	ifequal LOSE, .NotBeaten
+	disappear POWERPLANT_ZAPDOS
+	reloadmapafterbattle
+	special CheckCaughtCelebi
+	iftrue .CaughtZapdos
+	setevent EVENT_BEAT_ZAPDOS
+	end
+
+.CaughtZapdos:
+	setevent EVENT_CAUGHT_ZAPDOS
+	end
+
+.NotBeaten:
+	reloadmapafterbattle
+	end
+
+PowerPlantEngineerScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	checkevent EVENT_MET_MANAGER_AT_POWER_PLANT
-	iftrue .MetManager
-	writetext PowerPlantOfficer1AThiefBrokeInText
+	checkevent EVENT_POWER_PLANT_ZAPDOS
+	iftrue .ZapdosGone
+	writetext PowerPlantEngineerText
 	waitbutton
 	closetext
 	end
 
-.MetManager:
-	writetext PowerPlantOfficer1CouldIAskForYourCooperationText
+.ZapdosGone:
+	writetext PowerPlantEngineerText2
 	waitbutton
 	closetext
 	end
 
-.ReturnedMachinePart:
-	writetext PowerPlantOfficer1HaveToBeefUpSecurityText
-	waitbutton
-	closetext
+PowerPlantEngineer2Script:
+	jumptextfaceplayer PowerPlantEngineerText3
+
+PowerPlantElectirizer:
+	itemball ELECTIRIZER
+
+PowerPlantMaxElixer:
+	itemball MAX_ELIXER
+
+PowerPlantRareCandy:
+	itemball RARE_CANDY
+
+PowerPlantPPUp:
+	itemball PP_UP
+
+PowerPlantElectrode1:
+	cry ELECTRODE
+	loadwildmon ELECTRODE, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	ifequal LOSE, .NotBeaten
+	disappear POWERPLANT_ELECTRODE1
+	reloadmapafterbattle
 	end
 
-PowerPlantGymGuy1Script:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext PowerPlantGymGuy1SomeoneStoleAPartText
-	waitbutton
-	closetext
+.NotBeaten:
+	reloadmapafterbattle
 	end
 
-.ReturnedMachinePart:
-	writetext PowerPlantGymGuy1GeneratorUpAndRunningText
-	waitbutton
-	closetext
+PowerPlantElectrode2:
+	cry ELECTRODE
+	loadwildmon ELECTRODE, 70
+	startbattle
+	ifequal LOSE, .NotBeaten
+	disappear POWERPLANT_ELECTRODE2
+	reloadmapafterbattle
 	end
 
-PowerPlantGymGuy2Script:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext PowerPlantGymGuy2PowerPlantUpAndRunningText
-	waitbutton
-	closetext
+.NotBeaten:
+	reloadmapafterbattle
 	end
 
-.ReturnedMachinePart:
-	writetext PowerPlantGymGuy2GeneratorIsRunningAgainText
-	waitbutton
-	closetext
-	end
-
-PowerPlantOfficer2Script:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext PowerPlantOfficer2ManagerHasBeenSadAndFuriousText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext PowerPlantOfficer2ManagerHasBeenCheerfulText
-	waitbutton
-	closetext
-	end
-
-PowerPlantGymGuy4Script:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext PowerPlantGymGuy4MagnetTrainConsumesElectricityText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext PowerPlantGymGuy4WeCanGetMagnetTrainRunningText
-	waitbutton
-	closetext
-	end
-
-PowerPlantManager:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	checkevent EVENT_MET_MANAGER_AT_POWER_PLANT
-	iftrue .MetManager
-	writetext PowerPlantManagerWhoWouldRuinMyGeneratorText
-	waitbutton
-	closetext
-	setevent EVENT_MET_MANAGER_AT_POWER_PLANT
-	clearevent EVENT_CERULEAN_GYM_ROCKET
-	clearevent EVENT_FOUND_MACHINE_PART_IN_CERULEAN_GYM
-	setmapscene CERULEAN_GYM, SCENE_CERULEANGYM_GRUNT_RUNS_OUT
-	setscene SCENE_POWERPLANT_GUARD_GETS_PHONE_CALL
-	end
-
-.MetManager:
-	writetext PowerPlantManagerIWontForgiveCulpritText
-	waitbutton
-	closetext
-	end
-
-.FoundMachinePart:
-	writetext PowerPlantManagerThatsThePartText
-	setevent EVENT_RETURNED_MACHINE_PART
-	clearevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
-	setevent EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
-	setevent EVENT_ROUTE_24_ROCKET
-	setevent EVENT_RESTORED_POWER_TO_KANTO
-	clearevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
-.ReturnedMachinePart:
-	checkevent EVENT_GOT_TM07_ZAP_CANNON
-	iftrue .GotZapCannon
-	writetext PowerPlantManagerTakeThisTMText
-	buttonsound
-	verbosegiveitem TM_WILD_CHARGE
-	iffalse .NoRoom
-	setevent EVENT_GOT_TM07_ZAP_CANNON
-	writetext PowerPlantManagerTM07IsZapCannonText
-	waitbutton
-.NoRoom:
-	closetext
-	end
-
-.GotZapCannon:
-	writetext PowerPlantManagerMyBelovedGeneratorText
-	waitbutton
-	closetext
-	end
-
-Forest:
-	faceplayer
-	opentext
-	trade NPC_TRADE_FOREST
-	waitbutton
-	closetext
-	end
-
-PowerPlantBookshelf:
-	jumpstd difficultbookshelf
-
-PowerPlantOfficer1ApproachGymGuy2Movement:
-	step RIGHT
-	step RIGHT
-	step UP
-	step UP
-	step_end
-
-PowerPlantOfficer1ReturnToPostMovement:
-	step DOWN
-	step DOWN
-	step LEFT
-	step LEFT
-	turn_head DOWN
-	step_end
-
-PowerPlantOfficer1AThiefBrokeInText:
-	text "A thief broke into"
-	line "the POWER PLANT…"
-
-	para "What is the world"
-	line "coming to?"
+ZapdosCry:
+	text "Zapdos: Gyaoo!"
 	done
 
-PowerPlantOfficer1CeruleanShadyCharacterText:
-	text "I just got word"
-	line "from CERULEAN."
+PowerPlantEngineerText3:
+	text "Even when Zapdos"
+	line "isn't here,"
 
-	para "It appears that a"
-	line "shady character"
+	para "the other #mon"
+	line "generate enough"
+	cont "electricity to"
+	cont "power Kanto."
 
-	para "has been loitering"
-	line "around."
+	para "Hopefully someday"
+	line "we'll have the"
+	cont "place running."
 	done
 
-PowerPlantOfficer1CouldIAskForYourCooperationText:
-	text "Could I ask for"
-	line "your cooperation?"
+PowerPlantEngineerText:
+	text "Zapdos disappeared"
+	line "a while ago, but"
+	cont "now it's back."
+
+	para "It produces a lot"
+	line "of electricity for"
+	cont "the region since"
+	cont "the plant shut"
+	cont "down."
 	done
 
-PowerPlantOfficer1HaveToBeefUpSecurityText:
-	text "We'll have to beef"
-	line "up our security"
-	cont "presence."
-	done
-
-PowerPlantGymGuy1SomeoneStoleAPartText:
-	text "Someone made off"
-	line "with a part that's"
-
-	para "essential for the"
-	line "generator."
-
-	para "Without it, the"
-	line "new generator's"
-	cont "useless!"
-	done
-
-PowerPlantGymGuy1GeneratorUpAndRunningText:
-	text "The generator's up"
-	line "and running. It's"
-
-	para "making electricity"
-	line "to spare."
-	done
-
-PowerPlantGymGuy2PowerPlantUpAndRunningText:
-	text "This POWER PLANT"
-	line "had been abandoned"
-	cont "in the past."
-
-	para "We got it back up"
-	line "and running to"
-
-	para "provide power to"
-	line "the MAGNET TRAIN."
-	done
-
-PowerPlantGymGuy2GeneratorIsRunningAgainText:
-	text "The generator's"
-	line "running again!"
-	done
-
-PowerPlantOfficer2ManagerHasBeenSadAndFuriousText:
-	text "The POWER PLANT's"
-	line "MANAGER is up"
-	cont "ahead."
-
-	para "But since someone"
-	line "wrecked the gener-"
-	cont "ator, he's been"
-	cont "both sad and"
-	cont "furious…"
-	done
-
-PowerPlantOfficer2ManagerHasBeenCheerfulText:
-	text "Since the gener-"
-	line "ator's been fixed,"
-
-	para "the MANAGER has"
-	line "been cheerful."
-	done
-
-PowerPlantGymGuy4MagnetTrainConsumesElectricityText:
-	text "The MAGNET TRAIN"
-	line "consumes a lot of"
-	cont "electricity."
-
-	para "It can't move if"
-	line "the new generator"
-	cont "isn't operating."
-	done
-
-PowerPlantGymGuy4WeCanGetMagnetTrainRunningText:
-	text "All right! We can"
-	line "finally get the"
-
-	para "MAGNET TRAIN"
-	line "running again."
-	done
-
-PowerPlantManagerWhoWouldRuinMyGeneratorText:
-	text "MANAGER: I, I, I'm"
-	line "ready to blast"
-	cont "someone!"
-
-	para "Who would dare"
-	line "ruin my generator?"
-
-	para "I spent so much"
-	line "time on it!"
-
-	para "If I catch him,"
-	line "he's going to get"
-
-	para "a taste of my ZAP"
-	line "CANNON!"
-	done
-
-PowerPlantManagerIWontForgiveCulpritText:
-	text "MANAGER: I won't"
-	line "forgive him!"
-
-	para "The culprit can"
-	line "cry and apologize,"
-
-	para "but I'll still"
-	line "hammer him!"
-
-	para "Gahahahah!"
-	done
-
-PowerPlantManagerThatsThePartText:
-	text "MANAGER: Ah! Yeah!"
-
-	para "That's the missing"
-	line "PART from my be-"
-	cont "loved generator!"
-	cont "You found it?"
-	done
-
-PowerPlantManagerTakeThisTMText:
-	text "Wahah! Thanks!"
-
-	para "Here! Take this TM"
-	line "as a reward!"
-	done
-
-PowerPlantManagerTM07IsZapCannonText:
-	text "MANAGER: TM07 is"
-	line "my ZAP CANNON."
-
-	para "It's a powerful"
-	line "technique!"
-
-	para "It's not what any-"
-	line "one would consider"
-
-	para "accurate, but it"
-	line "packs a wallop!"
-	done
-
-PowerPlantManagerMyBelovedGeneratorText:
-	text "MANAGER: My be-"
-	line "loved generator!"
-
-	para "Keep pumping the"
-	line "electricity out!"
+PowerPlantEngineerText2:
+	text "Zapdos is gone"
+	line "again…"
 	done
 
 PowerPlant_MapEvents:
@@ -361,15 +143,15 @@ PowerPlant_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
-	bg_event  0,  1, BGEVENT_READ, PowerPlantBookshelf
-	bg_event  1,  1, BGEVENT_READ, PowerPlantBookshelf
+	db 0 ; bg events
 
-	db 0 ; object events
-;	object_event  4, 14, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PowerPlantOfficerScript, -1
-;	object_event  2,  9, SPRITE_GYM_GUY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PowerPlantGymGuy1Script, -1
-;	object_event  6, 11, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PowerPlantGymGuy2Script, -1
-;	object_event  9,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PowerPlantOfficer2Script, -1
-;	object_event  7,  2, SPRITE_GYM_GUY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PowerPlantGymGuy4Script, -1
-;	object_event 14, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlantManager, -1
-;	object_event  5,  5, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Forest, -1
+	db 9 ; object events
+	object_event  4,  9, SPRITE_ZAPDOS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlantZapdosScript, EVENT_POWER_PLANT_ZAPDOS
+	object_event  6, 13, SPRITE_ENGINEER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlantEngineerScript, -1
+	object_event 17, 26, SPRITE_ENGINEER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlantEngineer2Script, -1
+	object_event 21, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PowerPlantElectirizer, EVENT_POWER_PLANT_ELECTIRIZER
+	object_event 37, 32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PowerPlantMaxElixer, EVENT_POWER_PLANT_MAX_ELIXER
+	object_event 22, 34, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PowerPlantRareCandy, EVENT_POWER_PLANT_RARE_CANDY
+	object_event 34,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PowerPlantElectrode1, EVENT_POWER_PLANT_ELECTRODE_1
+	object_event 25, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PowerPlantElectrode2, EVENT_POWER_PLANT_ELECTRODE_2
+	object_event 28,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PowerPlantPPUp, EVENT_POWER_PLANT_PP_UP

@@ -88,6 +88,9 @@ PlayBattleMusic:
 	cp BATTLETYPE_LUGIA
 	ld de, MUSIC_LUGIA_BATTLE
 	jp z, .done
+	cp BATTLETYPE_LEGENDARY
+	ld de, MUSIC_KANTO_LEGEND_BATTLE_XY
+	jp z, .done
 	cp BATTLETYPE_SUICUNE
 	ld de, MUSIC_SUICUNE_BATTLE
 	jp z, .done

@@ -1,8 +1,9 @@
 	object_const_def ; object_event constants
 	const BILLSHOUSE_GRAMPS
+	const BILLSHOUSE_ABRA
 
 	const_def 1 ; locked Pokémon ID table entries, used for species checking
-	const BILLSHOUSE_INDEX_LICKITUNG
+	const BILLSHOUSE_INDEX_LAPRAS
 	const BILLSHOUSE_INDEX_ODDISH
 	const BILLSHOUSE_INDEX_STARYU
 	const BILLSHOUSE_INDEX_GROWLITHE
@@ -16,7 +17,7 @@ BillsHouse_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .LoadReservedIDs
 
 .LoadReservedIDs:
-	loadmonindex BILLSHOUSE_INDEX_LICKITUNG, LICKITUNG
+	loadmonindex BILLSHOUSE_INDEX_LAPRAS, LAPRAS
 	loadmonindex BILLSHOUSE_INDEX_ODDISH, ODDISH
 	loadmonindex BILLSHOUSE_INDEX_STARYU, STARYU
 	loadmonindex BILLSHOUSE_INDEX_GROWLITHE, GROWLITHE
@@ -27,27 +28,15 @@ BillsHouse_MapScripts:
 BillsGrandpa:
 	faceplayer
 	opentext
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .JustShowedSomething
-	checkevent EVENT_GOT_THUNDERSTONE_FROM_BILLS_GRANDPA
-	iftrue .GotThunderstone
+	checkevent EVENT_DECO_BIG_LAPRAS_DOLL
+	iftrue .AlreadyGotLaprasDoll
 	checkevent EVENT_MET_BILLS_GRANDPA
 	iftrue .MetGrandpa
 	writetext BillsGrandpaIntroText
 	buttonsound
 	setevent EVENT_MET_BILLS_GRANDPA
 .MetGrandpa:
-	checkevent EVENT_SHOWED_PICHU_TO_BILLS_GRANDPA
-	iftrue .ShowedPichu
-	checkevent EVENT_SHOWED_GROWLITHE_VULPIX_TO_BILLS_GRANDPA
-	iftrue .ShowedGrowlitheVulpix
-	checkevent EVENT_SHOWED_STARYU_TO_BILLS_GRANDPA
-	iftrue .ShowedStaryu
-	checkevent EVENT_SHOWED_ODDISH_TO_BILLS_GRANDPA
-	iftrue .ShowedOddish
-	checkevent EVENT_SHOWED_LICKITUNG_TO_BILLS_GRANDPA
-	iftrue .ShowedLickitung
-	writetext BillsGrandpaLickitungText
+	writetext BillsGrandpaLaprasText
 	buttonsound
 	writetext BillsGrandpaAskToSeeMonText
 	yesorno
@@ -56,137 +45,20 @@ BillsGrandpa:
 	special BillsGrandfather
 	iffalse .SaidNo
 	checkmaplockedmons
-	ifnotequal BILLSHOUSE_INDEX_LICKITUNG, .WrongPokemon
+	ifnotequal BILLSHOUSE_INDEX_LAPRAS, .WrongPokemon
 	scall .CorrectPokemon
-	setevent EVENT_SHOWED_LICKITUNG_TO_BILLS_GRANDPA
-	sjump .ShowedLickitung
-
-.GotEverstone:
-	writetext BillsGrandpaOddishText
+	setevent EVENT_SHOWED_LAPRAS_TO_BILLS_GRANDPA
+.ShowedLapras:
+	setevent EVENT_DECO_BIG_LAPRAS_DOLL
+	writetext BillsGrandpaTokenOfAppreciationText
 	buttonsound
-	writetext BillsGrandpaAskToSeeMonText
-	yesorno
-	iffalse .SaidNo
-	scall .ExcitedToSee
-	special BillsGrandfather
-	iffalse .SaidNo
-	checkmaplockedmons
-	ifnotequal BILLSHOUSE_INDEX_ODDISH, .WrongPokemon
-	scall .CorrectPokemon
-	setevent EVENT_SHOWED_ODDISH_TO_BILLS_GRANDPA
-	sjump .ShowedOddish
-
-.GotLeafStone:
-	writetext BillsGrandpaStaryuText
+	waitsfx
+	writetext PlayerGotLaprasDollText
+	playsound SFX_CAUGHT_MON
+	waitsfx
 	buttonsound
-	writetext BillsGrandpaAskToSeeMonText
-	yesorno
-	iffalse .SaidNo
-	scall .ExcitedToSee
-	special BillsGrandfather
-	iffalse .SaidNo
-	checkmaplockedmons
-	ifnotequal BILLSHOUSE_INDEX_STARYU, .WrongPokemon
-	scall .CorrectPokemon
-	setevent EVENT_SHOWED_STARYU_TO_BILLS_GRANDPA
-	sjump .ShowedStaryu
-
-.GotWaterStone:
-	checkver
-	iftrue .AskVulpix
-	writetext BillsGrandpaGrowlitheText
-	buttonsound
-	writetext BillsGrandpaAskToSeeMonText
-	yesorno
-	iffalse .SaidNo
-	scall .ExcitedToSee
-	special BillsGrandfather
-	iffalse .SaidNo
-	checkmaplockedmons
-	ifnotequal BILLSHOUSE_INDEX_GROWLITHE, .WrongPokemon
-	scall .CorrectPokemon
-	setevent EVENT_SHOWED_GROWLITHE_VULPIX_TO_BILLS_GRANDPA
-	sjump .ShowedGrowlitheVulpix
-
-.AskVulpix:
-	writetext BillsGrandpaVulpixText
-	buttonsound
-	writetext BillsGrandpaAskToSeeMonText
-	yesorno
-	iffalse .SaidNo
-	scall .ExcitedToSee
-	special BillsGrandfather
-	iffalse .SaidNo
-	checkmaplockedmons
-	ifnotequal BILLSHOUSE_INDEX_VULPIX, .WrongPokemon
-	scall .CorrectPokemon
-	setevent EVENT_SHOWED_GROWLITHE_VULPIX_TO_BILLS_GRANDPA
-	sjump .ShowedGrowlitheVulpix
-
-.GotFireStone:
-	writetext BillsGrandpaPichuText
-	buttonsound
-	writetext BillsGrandpaAskToSeeMonText
-	yesorno
-	iffalse .SaidNo
-	scall .ExcitedToSee
-	special BillsGrandfather
-	iffalse .SaidNo
-	checkmaplockedmons
-	ifnotequal BILLSHOUSE_INDEX_PICHU, .WrongPokemon
-	scall .CorrectPokemon
-	setevent EVENT_SHOWED_PICHU_TO_BILLS_GRANDPA
-	sjump .ShowedPichu
-
-.ShowedLickitung:
-	checkevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
-	iftrue .GotEverstone
-	scall .ReceiveItem
-	verbosegiveitem EVERSTONE
-	iffalse .BagFull
-	setevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	closetext
-	end
-
-.ShowedOddish:
-	checkevent EVENT_GOT_LEAF_STONE_FROM_BILLS_GRANDPA
-	iftrue .GotLeafStone
-	scall .ReceiveItem
-	verbosegiveitem LEAF_STONE
-	iffalse .BagFull
-	setevent EVENT_GOT_LEAF_STONE_FROM_BILLS_GRANDPA
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	closetext
-	end
-
-.ShowedStaryu:
-	checkevent EVENT_GOT_WATER_STONE_FROM_BILLS_GRANDPA
-	iftrue .GotWaterStone
-	scall .ReceiveItem
-	verbosegiveitem WATER_STONE
-	iffalse .BagFull
-	setevent EVENT_GOT_WATER_STONE_FROM_BILLS_GRANDPA
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	closetext
-	end
-
-.ShowedGrowlitheVulpix:
-	checkevent EVENT_GOT_FIRE_STONE_FROM_BILLS_GRANDPA
-	iftrue .GotFireStone
-	scall .ReceiveItem
-	verbosegiveitem FIRE_STONE
-	iffalse .BagFull
-	setevent EVENT_GOT_FIRE_STONE_FROM_BILLS_GRANDPA
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	closetext
-	end
-
-.ShowedPichu:
-	scall .ReceiveItem
-	verbosegiveitem THUNDERSTONE
-	iffalse .BagFull
-	setevent EVENT_GOT_THUNDERSTONE_FROM_BILLS_GRANDPA
+	writetext ThanksForShowingLaprasText
+	waitbutton
 	closetext
 	end
 
@@ -217,8 +89,8 @@ BillsGrandpa:
 	closetext
 	end
 
-.GotThunderstone:
-	writetext BillsGrandpaShownAllThePokemonText
+.AlreadyGotLaprasDoll:
+	writetext HowsYourJourneyGoingText
 	waitbutton
 	closetext
 	end
@@ -233,20 +105,63 @@ BillsGrandpa:
 	closetext
 	end
 
+BillsHouseAbra:
+	refreshscreen
+	pokepic ABRA
+	cry ABRA
+	waitbutton
+	closepokepic
+	opentext
+	writetext BillsHouseAbraText
+	waitbutton
+	closetext
+	end
+
 BillsGrandpaIntroText:
-	text "Hm? You know BILL?"
-	line "He's my grandson."
+	text "Hm? You're <PLAYER>,"
+	line "correct?"
 
-	para "He's in JOHTO. He"
-	line "does something"
+	para "Hah! I thought so!"
 
-	para "with PCs, so I'm"
-	line "house-sitting."
+	para "I run the Abra"
+	line "Delivery Serice!"
+
+	para "I still do work in"
+	line "Johto, despite the"
+	cont "embargo."
+
+	para "The Federation"
+	line "entrusts me with"
+	cont "their #mon as"
+	cont "well,"
+
+	para "so they don't harm"
+	line "me."
+
+	para "I could just"
+	line "Teleport away with"
+	cont "the #mon if it"
+	cont "came down to it!"
+
+	para "Ho ho ho!"
+	done
+
+BillsGrandpaLaprasText:
+	text "By the way, have"
+	line "you ever seen a"
+	cont "Lapras?"
+
+	para "I've always wanted"
+	line "to see a real one."
+
+	para "If you have one,"
+	line "could you please"
+	cont "show me?"
 	done
 
 BillsGrandpaAskToSeeMonText:
-	text "If you have that"
-	line "#MON, may I see"
+	text "If you have a"
+	line "Lapras, may I see"
 	cont "it, please?"
 	done
 
@@ -262,9 +177,7 @@ BillsGrandpaYouDontHaveItTextText:
 
 BillsGrandpaShownPokemonText:
 	text "Ah, so that is"
-	line "@"
-	text_ram wStringBuffer3
-	text "?"
+	line "Lapras?"
 
 	para "Isn't it cute!"
 	line "That's so kind of"
@@ -276,6 +189,33 @@ BillsGrandpaTokenOfAppreciationText:
 
 	para "This is a token of"
 	line "my appreciation."
+
+	para "It's a big Lapras"
+	line "Doll!"
+
+	para "It's so cute!"
+	done
+
+HowsYourJourneyGoingText:
+	text "Have you met my"
+	line "grandson, Bill?"
+
+	para "He lives in"
+	line "Goldenrod City."
+
+	para "Quite the little"
+	line "genius, he is."
+
+	para "Says he's going to"
+	line "make an electronic"
+	cont "#mon storage!"
+
+	para "Looks like I'll"
+	line "have some"
+	cont "competition!"
+
+	para "Or maybe I can"
+	line "retire by then!"
 	done
 
 BillsGrandpaComeAgainText:
@@ -283,10 +223,9 @@ BillsGrandpaComeAgainText:
 	line "sometime."
 	done
 
-BillsGrandpaShownAllThePokemonText:
+ThanksForShowingLaprasText:
 	text "Thanks for showing"
-	line "me so many cute"
-	cont "#MON."
+	line "me a Lapras!"
 
 	para "I really enjoyed"
 	line "myself. I'm glad"
@@ -298,81 +237,17 @@ BillsGrandpaShownAllThePokemonText:
 BillsGrandpaWrongPokemonText:
 	text "Hm?"
 
-	para "That's not the"
-	line "#MON that I was"
-	cont "told about."
+	para "That's not a"
+	line "Lapras."
 	done
 
-BillsGrandpaLickitungText:
-	text "My grandson BILL"
-	line "told me about a"
-
-	para "#MON that has a"
-	line "long tongue."
+PlayerGotLaprasDollText:
+	text "<PLAYER> got a"
+	line "Lapras Doll!"
 	done
 
-BillsGrandpaOddishText:
-	text "Ah, my grandson"
-	line "mentioned a round,"
-
-	para "green #MON that"
-	line "has leaves growing"
-	cont "on its head."
-	done
-
-BillsGrandpaStaryuText:
-	text "Do you know of a"
-	line "sea #MON that"
-
-	para "has a red sphere"
-	line "in its body?"
-
-	para "You know, the one"
-	line "that's shaped like"
-	cont "a star?"
-
-	para "I heard that it"
-	line "appears at night."
-
-	para "I would surely"
-	line "like to see it."
-	done
-
-BillsGrandpaGrowlitheText:
-	text "BILL told me about"
-	line "a #MON that is"
-
-	para "very loyal to its"
-	line "trainer."
-
-	para "It's supposed to"
-	line "ROAR well."
-	done
-
-BillsGrandpaVulpixText:
-	text "I heard about a"
-	line "cute #MON that"
-	cont "has six tails."
-
-	para "I would love to"
-	line "hug a cute #MON"
-	cont "like that."
-	done
-
-BillsGrandpaPichuText:
-	text "Do you know that"
-	line "hugely popular"
-	cont "#MON?"
-
-	para "The #MON that"
-	line "has a yellow body"
-	cont "and red cheeks."
-
-	para "I would love to"
-	line "see what it looks"
-
-	para "like before it"
-	line "evolves."
+BillsHouseAbraText:
+	text "Abra: Aabra…"
 	done
 
 BillsHouse_MapEvents:
@@ -386,5 +261,6 @@ BillsHouse_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BillsGrandpa, -1
+	object_event  4,  1, SPRITE_ABRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BillsHouseAbra, -1

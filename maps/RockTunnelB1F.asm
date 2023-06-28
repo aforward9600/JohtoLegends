@@ -9,7 +9,7 @@ RockTunnelB1F_MapScripts:
 	db 0 ; callbacks
 
 RockTunnelB1FIron:
-	itemball IRON
+	itemball THICK_CLUB
 
 RockTunnelB1FPPUp:
 	itemball PP_UP
