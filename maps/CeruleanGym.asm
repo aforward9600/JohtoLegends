@@ -7,54 +7,9 @@
 	const CERULEANGYM_GYM_GUY
 
 CeruleanGym_MapScripts:
-	db 2 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_CERULEANGYM_NOTHING
-	scene_script .GruntRunsOut ; SCENE_CERULEANGYM_GRUNT_RUNS_OUT
+	db 0 ; scene scripts
 
 	db 0 ; callbacks
-
-.DummyScene0:
-	end
-
-.GruntRunsOut:
-	prioritysjump .GruntRunsOutScript
-	end
-
-.GruntRunsOutScript:
-	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntRunsDownMovement
-	playsound SFX_TACKLE
-	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntRunsIntoYouMovement
-	playmusic MUSIC_ROCKET_ENCOUNTER
-	opentext
-	writetext CeruleanGymGruntIntroText
-	waitbutton
-	closetext
-	showemote EMOTE_SHOCK, CERULEANGYM_ROCKET, 15
-	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntBacksAwayMovement
-	opentext
-	writetext CeruleanGymGruntBigMistakeText
-	waitbutton
-	closetext
-	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntMovesCloseMovement
-	opentext
-	writetext CeruleanGymGruntByeText
-	waitbutton
-	closetext
-	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntRunsOutMovement
-	playsound SFX_EXIT_BUILDING
-	disappear CERULEANGYM_ROCKET
-	setevent EVENT_MET_ROCKET_GRUNT_AT_CERULEAN_GYM
-	clearevent EVENT_ROUTE_24_ROCKET
-	clearevent EVENT_ROUTE_25_MISTY_BOYFRIEND
-	setscene SCENE_CERULEANGYM_NOTHING
-	setmapscene ROUTE_25, SCENE_ROUTE25_MISTYS_DATE
-	setmapscene POWER_PLANT, SCENE_POWERPLANT_NOTHING
-	waitsfx
-	special RestartMapMusic
-	pause 15
-	turnobject PLAYER, DOWN
-	pause 15
-	end
 
 CeruleanGymMistyScript:
 	faceplayer
@@ -366,14 +321,12 @@ CeruleanGym_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
-	bg_event  2, 13, BGEVENT_READ, CeruleanGymStatue1
-	bg_event  6, 13, BGEVENT_READ, CeruleanGymStatue2
+	db 0 ; bg events
 
 	db 6 ; object events
-	object_event  4, 10, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CERULEAN_GYM_ROCKET
-	object_event  5,  3, SPRITE_MISTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanGymMistyScript, EVENT_TRAINERS_IN_CERULEAN_GYM
+	object_event  3,  3, SPRITE_SENSATIONAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CERULEAN_GYM_LEADERS
+	object_event  5,  3, SPRITE_SENSATIONAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanGymMistyScript, EVENT_CERULEAN_GYM_LEADERS
 	object_event  4,  6, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfDiana, EVENT_TRAINERS_IN_CERULEAN_GYM
 	object_event  1,  9, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerSwimmerfBriana, EVENT_TRAINERS_IN_CERULEAN_GYM
 	object_event  8,  9, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermParker, EVENT_TRAINERS_IN_CERULEAN_GYM
-	object_event  7, 13, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanGymGuyScript, EVENT_TRAINERS_IN_CERULEAN_GYM
+	object_event  4,  3, SPRITE_SENSATIONAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanGymGuyScript, EVENT_CERULEAN_GYM_LEADERS

@@ -498,6 +498,8 @@ CHRIS EQU __enum__
 	const RILEY
 	const JOEL
 	const GLENN
+	const FOREST
+	const CALVIN
 
 	trainerclass BLAINE ; 2e
 	const BLAINE1
@@ -893,6 +895,7 @@ CHRIS EQU __enum__
 
 	trainerclass DELINQUENT
 	const KAREN
+	const TRACY
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

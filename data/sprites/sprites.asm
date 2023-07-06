@@ -156,3 +156,4 @@ OverworldSprites:
 	overworld_sprite DiglettStillSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite GlaceonSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BrockSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite SensationalSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
