@@ -725,3 +725,4 @@ ENDM
 	map_attributes NownRoom, NOWN_ROOM, $00, 0
 	map_attributes NownPuzzleRoom, NOWN_PUZZLE_ROOM, $00, 0
 	map_attributes ViridianForest, VIRIDIAN_FOREST, $00, 0
+	map_attributes CeruleanBikeShop, CERULEAN_BIKE_SHOP, $00, 0

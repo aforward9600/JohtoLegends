@@ -19,7 +19,7 @@ TrainerGroups:
 	dba KogaGroup
 	dba ChampionDahliaGroup
 	dba FlintGroup
-	dba MistyGroup
+	dba Sensational1Group
 	dba LtSurgeGroup
 	dba ScientistGroup
 	dba ErikaGroup
@@ -103,3 +103,5 @@ TrainerGroups:
 	dba ChampionDahliaGroup
 	dba ChallengerCynthiaGroup
 	dba DelinquentGroup
+	dba Sensational2Group
+	dba Sensational3Group

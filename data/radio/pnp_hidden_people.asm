@@ -9,7 +9,7 @@ PnP_HiddenPeople:
 	; fallthrough
 PnP_HiddenPeople_BeatE4:
 	db FLINT
-	db MISTY
+	db SENSATIONAL1
 	db LT_SURGE
 	db ERIKA
 	db JANINE

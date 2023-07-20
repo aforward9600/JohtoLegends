@@ -100,8 +100,8 @@ CHRIS EQU __enum__
 	trainerclass FLINT ; 11
 	const FLINT1
 
-	trainerclass MISTY ; 12
-	const MISTY1
+	trainerclass SENSATIONAL1 ; 12
+	const VIOLET1
 
 	trainerclass LT_SURGE ; 13
 	const LT_SURGE1
@@ -398,7 +398,7 @@ CHRIS EQU __enum__
 	const SETH
 	const JAMES
 	const LEWIS
-	const PARKER
+	const TANNER
 
 	trainerclass SWIMMERF ; 27
 	const ANGIE
@@ -418,8 +418,8 @@ CHRIS EQU __enum__
 	const LORI
 	const JODY
 	const NIKKI
-	const DIANA
-	const BRIANA
+	const AQUA
+	const SHEILA
 
 	trainerclass SAILOR ; 28
 	const EUGENE
@@ -896,6 +896,12 @@ CHRIS EQU __enum__
 	trainerclass DELINQUENT
 	const KAREN
 	const TRACY
+
+	trainerclass SENSATIONAL2
+	const DAISY
+
+	trainerclass SENSATIONAL3
+	const LILY
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

@@ -519,6 +519,7 @@ INCLUDE "maps/FastShipB1F.asm"
 INCLUDE "maps/CherrygroveFisherHouse.asm"
 INCLUDE "maps/LakeOfRagePokecenter1F.asm"
 INCLUDE "maps/LakeOfRageMart.asm"
+INCLUDE "maps/CeruleanBikeShop.asm"
 
 
 SECTION "Map Scripts 29", ROMX

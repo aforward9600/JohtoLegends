@@ -756,21 +756,24 @@ AgathaGroup:
 KogaGroup:
 	next_list_item ; KOGA (1)
 	db "Koga@", TRAINERTYPE_MOVES
-	db 40
+	db 75
+	dw TENTACRUEL
+	dw HYDRO_PUMP, BELCH, TOXIC, HEX
+	db 75
 	dw ARIADOS
-	dw DOUBLE_TEAM, SPIDER_WEB, BATON_PASS, GIGA_DRAIN
-	db 41
-	dw VENOMOTH
-	dw SUPERSONIC, GUST, PSYCHIC_M, TOXIC
-	db 43
-	dw FORRETRESS
-	dw PROTECT, SWIFT, EXPLOSION, SPIKES
-	db 42
+	dw GUNK_SHOT, LEECH_LIFE, CRUNCH, SUCKER_PUNCH
+	db 75
+	dw BEEDRILL
+	dw GUNK_SHOT, LEECH_LIFE, AGILITY, PAYBACK
+	db 75
 	dw MUK
-	dw MINIMIZE, ACID_ARMOR, SLUDGE_BOMB, TOXIC
-	db 44
+	dw KNOCK_OFF, ACID_ARMOR, GUNK_SHOT, TOXIC
+	db 75
+	dw WEEZING
+	dw EXPLOSION, BELCH, DESTINY_BOND, GYRO_BALL
+	db 76
 	dw CROBAT
-	dw DOUBLE_TEAM, QUICK_ATTACK, WING_ATTACK, TOXIC
+	dw DOUBLE_TEAM, POISON_FANG, BRAVE_BIRD, TOXIC
 	db -1 ; end
 
 	end_list_items
@@ -891,28 +894,28 @@ FlintGroup:
 
 	end_list_items
 
-MistyGroup:
-	next_list_item ; MISTY (1)
-	db "MISTY@", TRAINERTYPE_MOVES
-	db 42
-	dw GOLDUCK
-	dw SURF, DISABLE, PSYCH_UP, PSYCHIC_M
-	db 42
+Sensational1Group:
+	next_list_item ; SENSATIONAL1 (1)
+	db "Violet@", TRAINERTYPE_MOVES
+	db 70
+	dw CLOYSTER
+	dw WAVE_CRASH, SPIKES, SHELL_SMASH, ICICLE_SPEAR
+	db 70
+	dw AZUMARILL
+	dw WAVE_CRASH, PLAY_ROUGH, BELLY_DRUM, ICE_PUNCH
+	db 70
 	dw QUAGSIRE
-	dw SURF, AMNESIA, EARTHQUAKE, RAIN_DANCE
-	db 44
-	dw LAPRAS
-	dw SURF, PERISH_SONG, BLIZZARD, RAIN_DANCE
-	db 47
-	dw STARMIE
-	dw SURF, CONFUSE_RAY, RECOVER, ICE_BEAM
+	dw WAVE_CRASH, ICE_PUNCH, EARTHQUAKE, RAIN_DANCE
+	db 71
+	dw BLASTOISE
+	dw HYDRO_PUMP, FLASH_CANNON, IRON_DEFENSE, ICE_BEAM
 	db -1 ; end
 
 	end_list_items
 
 LtSurgeGroup:
 	next_list_item ; LT_SURGE (1)
-	db "LT.SURGE@", TRAINERTYPE_MOVES
+	db "Pvt.Surge@", TRAINERTYPE_MOVES
 	db 44
 	dw RAICHU
 	dw THUNDER_WAVE, QUICK_ATTACK, THUNDERBOLT, THUNDER
@@ -2933,16 +2936,25 @@ TeacherGroup:
 
 SabrinaGroup:
 	next_list_item ; SABRINA (1)
-	db "SABRINA@", TRAINERTYPE_MOVES
-	db 46
+	db "Sabrina@", TRAINERTYPE_MOVES
+	db 74
 	dw ESPEON
-	dw SAND_ATTACK, QUICK_ATTACK, SWIFT, PSYCHIC_M
-	db 46
+	dw SAND_ATTACK, CALM_MIND, SHADOW_BALL, PSYCHIC_M
+	db 74
 	dw MR__MIME
-	dw BARRIER, REFLECT, BATON_PASS, PSYCHIC_M
-	db 48
+	dw BARRIER, MOONBLAST, BATON_PASS, PSYCHIC_M
+	db 74
+	dw GARDEVOIR
+	dw MOONBLAST, THUNDERBOLT, CALM_MIND, PSYCHIC_M
+	db 74
+	dw WYRDEER
+	dw GIGA_IMPACT, MEGAHORN, ZEN_HEADBUTT, JUMP_KICK
+	db 74
+	dw VENOMOTH
+	dw SIGNAL_WAVE, SLEEP_POWDER, PSYCHIC_M, QUIVER_DANCE
+	db 75
 	dw ALAKAZAM
-	dw RECOVER, FUTURE_SIGHT, PSYCHIC_M, REFLECT
+	dw RECOVER, SHADOW_BALL, PSYCHIC_M, MOONBLAST
 	db -1 ; end
 
 	end_list_items
@@ -3582,13 +3594,16 @@ SwimmerMGroup:
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (21)
-	db "PARKER@", TRAINERTYPE_NORMAL
-	db 32
-	dw HORSEA
-	db 32
-	dw HORSEA
-	db 35
-	dw SEADRA
+	db "Tanner@", TRAINERTYPE_MOVES
+	db 70
+	dw TENTACRUEL
+	dw HYDRO_PUMP, VENOSHOCK, TOXIC, ACID_ARMOR
+	db 70
+	dw LUDICOLO
+	dw ENERGY_BALL, HYDRO_PUMP, FAKE_OUT, ICE_BEAM
+	db 71
+	dw KINGDRA
+	dw HYDRO_PUMP, ICE_BEAM, DRAGON_PULSE, AGILITY
 	db -1 ; end
 
 	end_list_items
@@ -3728,16 +3743,17 @@ SwimmerFGroup:
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (18)
-	db "DIANA@", TRAINERTYPE_NORMAL
-	db 37
-	dw GOLDUCK
+	db "Aqua@", TRAINERTYPE_MOVES
+	db 71
+	dw LAPRAS
+	dw HYDRO_PUMP, PSYCHIC_M, ICE_BEAM, THUNDERBOLT
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (19)
-	db "BRIANA@", TRAINERTYPE_NORMAL
-	db 35
-	dw SEAKING
-	db 35
+	db "Sheila@", TRAINERTYPE_NORMAL
+	db 70
+	dw DEWGONG
+	db 70
 	dw SEAKING
 	db -1 ; end
 
@@ -4388,7 +4404,7 @@ HikerGroup:
 	end_list_items
 
 BikerGroup:
-	next_list_item ; BIKER (1)
+	next_list_item ; BIKER (1) Route 22
 	db "Buford@", TRAINERTYPE_MOVES
 	db 67
 	dw CLOYSTER
@@ -6170,15 +6186,17 @@ RedGroup:
 GiovanniGroup:
 	next_list_item ; BLUE (1)
 	db "Giovanni@", TRAINERTYPE_NORMAL
-	db 56
+	db 78
 	dw DUGTRIO
-	db 54
+	db 78
+	dw PERSIAN
+	db 78
 	dw NIDOKING
-	db 56
+	db 78
 	dw NIDOQUEEN
-	db 58
+	db 78
 	dw GLISCOR
-	db 58
+	db 79
 	dw RHYPERIOR
 	db -1 ; end
 
@@ -8173,5 +8191,43 @@ DelinquentGroup:
 	db 71
 	dw MILTANK
 	db -1
+
+	end_list_items
+
+Sensational2Group:
+	next_list_item ; SENSATIONAL2 (1)
+	db "Daisy@", TRAINERTYPE_MOVES
+	db 70
+	dw POLITOED
+	dw MUD_BOMB, HYDRO_PUMP, ICE_BEAM, RAIN_DANCE
+	db 70
+	dw VAPOREON
+	dw HYDRO_PUMP, ICE_BEAM, SLEEP_TALK, REST
+	db 70
+	dw GOLDUCK
+	dw HYDRO_PUMP, NASTY_PLOT, PSYCHIC_M, ICE_BEAM
+	db 71
+	dw FERALIGATR
+	dw WAVE_CRASH, NIGHT_SLASH, ICE_PUNCH, DRAGON_DANCE
+	db -1 ; end
+
+	end_list_items
+
+Sensational3Group:
+	next_list_item ; SENSATIONAL3 (1)
+	db "Lily@", TRAINERTYPE_MOVES
+	db 70
+	dw LAPRAS
+	dw HYDRO_PUMP, ICE_BEAM, SING, PSYCHIC_M
+	db 70
+	dw LUDICOLO
+	dw HYDRO_PUMP, ENERGY_BALL, AQUA_RING, FAKE_OUT
+	db 70
+	dw GYARADOS
+	dw WAVE_CRASH, ICE_FANG, EARTHQUAKE, DRAGON_DANCE
+	db 71
+	dw STARMIE
+	dw HYDRO_PUMP, THUNDERBOLT, PSYCHIC_M, RECOVER
+	db -1 ; end
 
 	end_list_items

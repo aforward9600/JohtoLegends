@@ -28,7 +28,9 @@ ViridianGymBlueScript:
 	writetext LeaderBlueAfterText
 	waitbutton
 	closetext
-	setevent EVENT_CERULEAN_GYM_LEADERS
+	setevent EVENT_CERULEAN_GYM_DAISY
+	setevent EVENT_CERULEAN_GYM_LILY
+	setevent EVENT_CERULEAN_GYM_VIOLET
 	setevent EVENT_PEWTER_GYM_FLINT
 	setevent EVENT_CELADON_GYM_ERIKA
 	setevent EVENT_VERMILION_GYM_SURGE

@@ -32,13 +32,15 @@ EliteFour:
 ; fallthrough
 KantoGymLeaders:
 	db FLINT
-	db MISTY
+	db SENSATIONAL1
 	db LT_SURGE
 	db ERIKA
 	db JANINE
 	db SABRINA
 	db BLAINE
 	db GIOVANNI
+	db SENSATIONAL2
+	db SENSATIONAL3
 	db -1
 
 VillainBosses:

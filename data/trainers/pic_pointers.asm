@@ -19,7 +19,7 @@ TrainerPicPointers::
 	dba KogaPic
 	dba ChampionDahliaPic
 	dba FlintPic
-	dba MistyPic
+	dba VioletPic
 	dba LtSurgePic
 	dba ScientistPic
 	dba ErikaPic
@@ -103,3 +103,5 @@ TrainerPicPointers::
 	dba ChampionDracoPic
 	dba CynthiaPic
 	dba DelinquentPic
+	dba DaisyPic
+	dba LilyPic

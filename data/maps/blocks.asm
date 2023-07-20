@@ -1105,3 +1105,6 @@ NownRoom_Blocks:
 
 ViridianForest_Blocks:
 	INCBIN "maps/ViridianForest.blk"
+
+CeruleanBikeShop_Blocks:
+	INCBIN "maps/CeruleanBikeShop.blk"

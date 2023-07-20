@@ -1,54 +1,54 @@
 	object_const_def ; object_event constants
-	const ROUTE3_FISHER1
-	const ROUTE3_YOUNGSTER1
-	const ROUTE3_YOUNGSTER2
-	const ROUTE3_FISHER2
+	const ROUTE3_DELINQUENT1
+	const ROUTE3_BIKER1
+	const ROUTE3_BIKER2
+	const ROUTE3_DELINQUENT2
 
 Route3_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-TrainerFirebreatherOtis:
-	trainer FIREBREATHER, CHAZ, EVENT_BEAT_FIREBREATHER_CHAZ, FirebreatherOtisSeenText, FirebreatherOtisBeatenText, 0, .Script
+TrainerDelinquentKaren:
+	trainer DELINQUENT, KAREN, EVENT_BEAT_DELINQUENT_KAREN, DelinquentKarenSeenText, DelinquentKarenBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext FirebreatherOtisAfterBattleText
+	writetext DelinquentKarenAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerYoungsterWarren:
-	trainer YOUNGSTER, WARREN, EVENT_BEAT_YOUNGSTER_WARREN, YoungsterWarrenSeenText, YoungsterWarrenBeatenText, 0, .Script
+TrainerBikerForest:
+	trainer BIKER, FOREST, EVENT_BEAT_BIKER_FOREST, BikerForestSeenText, BikerForestBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext YoungsterWarrenAfterBattleText
+	writetext BikerForestAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerYoungsterJimmy:
-	trainer YOUNGSTER, JIMMY, EVENT_BEAT_YOUNGSTER_JIMMY, YoungsterJimmySeenText, YoungsterJimmyBeatenText, 0, .Script
+TrainerBikerCalvin:
+	trainer BIKER, CALVIN, EVENT_BEAT_BIKER_CALVIN, BikerCalvinSeenText, BikerCalvinBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext YoungsterJimmyAfterBattleText
+	writetext BikerCalvinAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerFirebreatherBurt:
-	trainer FIREBREATHER, BURT, EVENT_BEAT_FIREBREATHER_BURT, FirebreatherBurtSeenText, FirebreatherBurtBeatenText, 0, .Script
+TrainerDelinquentTracy:
+	trainer DELINQUENT, TRACY, EVENT_BEAT_DELINQUENT_TRACY, DelinquentTracySeenText, DelinquentTracyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext FirebreatherBurtAfterBattleText
+	writetext DelinquentTracyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -56,75 +56,93 @@ TrainerFirebreatherBurt:
 Route3MtMoonSquareSign:
 	jumptext Route3MtMoonSquareSignText
 
-FirebreatherOtisSeenText:
-	text "Ah! The weather's"
-	line "as fine as ever."
+DelinquentKarenSeenText:
+	text "We're supposed to"
+	line "go into Mt.Moon to"
+	cont "look for someone,"
+
+	para "but we don't really"
+	line "feel like it."
 	done
 
-FirebreatherOtisBeatenText:
-	text "It's sunny, but"
-	line "I'm all wet…"
+DelinquentKarenBeatenText:
+	text "Guess I really"
+	line "wasn't feeling it…"
 	done
 
-FirebreatherOtisAfterBattleText:
-	text "When it rains,"
-	line "it's hard to get"
-	cont "ignition…"
+DelinquentKarenAfterBattleText:
+	text "We won't go in"
+	line "since the Clefairy"
+	cont "kicked our butts."
+
+	para "…Eh, forget I said"
+	line "anything, got it?"
 	done
 
-YoungsterWarrenSeenText:
-	text "Hmmm… I don't know"
-	line "what to do…"
+BikerForestSeenText:
+	text "Get outta here!"
+
+	para "These mountains"
+	line "belong to us!"
 	done
 
-YoungsterWarrenBeatenText:
-	text "I knew I'd lose…"
+BikerForestBeatenText:
+	text "I suppose you can"
+	para "stay…"
 	done
 
-YoungsterWarrenAfterBattleText:
-	text "You looked strong."
+BikerForestAfterBattleText:
+	text "Yeah, whatever!"
 
-	para "I was afraid to"
-	line "take you on…"
+	para "You can stay…"
 	done
 
-YoungsterJimmySeenText:
-	text "I can run like the"
-	line "wind!"
+BikerCalvinSeenText:
+	text "The wind in my"
+	line "hair is great!"
+
+	para "I love being a"
+	line "Biker!"
 	done
 
-YoungsterJimmyBeatenText:
-	text "Blown away!"
+BikerCalvinBeatenText:
+	text "I don't love"
+	line "losing, though."
 	done
 
-YoungsterJimmyAfterBattleText:
-	text "I wear shorts the"
-	line "whole year round."
+BikerCalvinAfterBattleText:
+	text "The Feds?"
 
-	para "That's my fashion"
-	line "policy."
+	para "I just ride around"
+	line "with them and act"
+	cont "like them."
+
+	para "I don't do much of"
+	line "the heavy lifting."
 	done
 
-FirebreatherBurtSeenText:
-	text "Step right up and"
-	line "take a look!"
+DelinquentTracySeenText:
+	text "What do you think"
+	line "of my green hair?"
+
+	para "Pretty cool, huh?"
 	done
 
-FirebreatherBurtBeatenText:
-	text "Yow! That's hot!"
+DelinquentTracyBeatenText:
+	text "I think it's"
+	line "pretty cool…"
 	done
 
-FirebreatherBurtAfterBattleText:
-	text "The greatest fire-"
-	line "breather in KANTO,"
-	cont "that's me."
+DelinquentTracyAfterBattleText:
+	text "You should dye"
+	line "your hair."
 
-	para "But not the best"
-	line "trainer…"
+	para "It would look"
+	line "great!"
 	done
 
 Route3MtMoonSquareSignText:
-	text "MT.MOON SQUARE"
+	text "Mt.Moon Square"
 
 	para "Just go up the"
 	line "stairs."
@@ -142,7 +160,7 @@ Route3_MapEvents:
 	bg_event 49, 13, BGEVENT_READ, Route3MtMoonSquareSign
 
 	db 4 ; object events
-	object_event 26, 12, SPRITE_DAISY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherOtis, -1
-	object_event 10,  7, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterWarren, -1
-	object_event 16,  3, SPRITE_BIKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerYoungsterJimmy, -1
-	object_event 49,  5, SPRITE_DAISY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherBurt, -1
+	object_event 26, 12, SPRITE_DAISY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerDelinquentKaren, -1
+	object_event 10,  7, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBikerForest, -1
+	object_event 16,  3, SPRITE_BIKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerBikerCalvin, -1
+	object_event 49,  5, SPRITE_DAISY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerDelinquentTracy, -1
