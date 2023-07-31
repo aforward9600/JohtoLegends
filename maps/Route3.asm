@@ -3,6 +3,7 @@
 	const ROUTE3_BIKER1
 	const ROUTE3_BIKER2
 	const ROUTE3_DELINQUENT2
+	const ROUTE3_GRAMPS
 
 Route3_MapScripts:
 	db 0 ; scene scripts
@@ -55,6 +56,9 @@ TrainerDelinquentTracy:
 
 Route3MtMoonSquareSign:
 	jumptext Route3MtMoonSquareSignText
+
+Route3GrampsScript:
+	jumptextfaceplayer Route3GrampsText
 
 DelinquentKarenSeenText:
 	text "We're supposed to"
@@ -148,6 +152,16 @@ Route3MtMoonSquareSignText:
 	line "stairs."
 	done
 
+Route3GrampsText:
+	text "I was planning on"
+	line "building a #mon"
+	cont "Center here,"
+
+	para "but recent events"
+	line "have put those"
+	cont "plans on hold."
+	done
+
 Route3_MapEvents:
 	db 0, 0 ; filler
 
@@ -159,8 +173,9 @@ Route3_MapEvents:
 	db 1 ; bg events
 	bg_event 49, 13, BGEVENT_READ, Route3MtMoonSquareSign
 
-	db 4 ; object events
+	db 5 ; object events
 	object_event 26, 12, SPRITE_DAISY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerDelinquentKaren, -1
 	object_event 10,  7, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBikerForest, -1
 	object_event 16,  3, SPRITE_BIKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerBikerCalvin, -1
-	object_event 49,  5, SPRITE_DAISY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerDelinquentTracy, -1
+	object_event 43, 14, SPRITE_DAISY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerDelinquentTracy, -1
+	object_event 48,  4, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route3GrampsScript, -1

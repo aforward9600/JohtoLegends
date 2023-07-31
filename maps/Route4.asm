@@ -9,35 +9,35 @@ Route4_MapScripts:
 
 	db 0 ; callbacks
 
-TrainerBirdKeeperHank:
-	trainer BIRD_KEEPER, HANK, EVENT_BEAT_BIRD_KEEPER_HANK, BirdKeeperHankSeenText, BirdKeeperHankBeatenText, 0, .Script
+TrainerBikerRiver:
+	trainer BIKER, RIVER, EVENT_BEAT_BIKER_RIVER, BikerRiverSeenText, BikerRiverBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperHankAfterBattleText
+	writetext BikerRiverAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPicnickerHope:
-	trainer PICNICKER, VIVIAN_PICNICKER, EVENT_BEAT_PICNICKER_HOPE, PicnickerHopeSeenText, PicnickerHopeBeatenText, 0, .Script
+TrainerRoughneckTerrance:
+	trainer ROUGHNECK, TERRANCE, EVENT_BEAT_ROUGHNECK_TERRANCE, RoughneckTerranceSeenText, RoughneckTerranceBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PicnickerHopeAfterBattleText
+	writetext RoughneckTerranceAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPicnickerSharon:
-	trainer PICNICKER, SHARON, EVENT_BEAT_PICNICKER_SHARON, PicnickerSharonSeenText, PicnickerSharonBeatenText, 0, .Script
+TrainerDelinquentSharon:
+	trainer DELINQUENT, SHARON, EVENT_BEAT_DELINQUENT_SHARON, DelinquentSharonSeenText, DelinquentSharonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PicnickerSharonAfterBattleText
+	writetext DelinquentSharonAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -51,68 +51,60 @@ Route4HPUp:
 Route4HiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_ROUTE_4_HIDDEN_ULTRA_BALL
 
-BirdKeeperHankSeenText:
-	text "I'm raising my"
-	line "#MON. Want to"
-	cont "battle with me?"
+BikerRiverSeenText:
+	text "Bikes aren't made"
+	line "for rough terrain"
+	cont "like this!"
 	done
 
-BirdKeeperHankBeatenText:
-	text "Ack! I lost that"
-	line "one…"
+BikerRiverBeatenText:
+	text "Ack! I fell"
+	line "over!"
 	done
 
-BirdKeeperHankAfterBattleText:
-	text "If you have a"
-	line "specific #MON"
+BikerRiverAfterBattleText:
+	text "I scraped my knee!"
 
-	para "that you want to"
-	line "raise, put it out"
-
-	para "first, then switch"
-	line "it right away."
-
-	para "That's how to do"
-	line "it."
+	para "That hurt like"
+	line "heck!"
 	done
 
-PicnickerHopeSeenText:
-	text "I have a feeling"
-	line "that I can win."
-
-	para "Let's see if I'm"
-	line "right!"
+RoughneckTerranceSeenText:
+	text "Get outta here,"
+	line "punk!"
 	done
 
-PicnickerHopeBeatenText:
-	text "Aww, you are too"
-	line "strong."
+RoughneckTerranceBeatenText:
+	text "Looks like I got"
+	line "punked!"
 	done
 
-PicnickerHopeAfterBattleText:
-	text "I heard CLEFAIRY"
-	line "appear at MT.MOON."
+RoughneckTerranceAfterBattleText:
+	text "Yeah, keep on"
+	line "moving!"
 
-	para "But where could"
-	line "they be?"
+	para "I went easy on ya!"
 	done
 
-PicnickerSharonSeenText:
-	text "Um…"
-	line "I…"
+DelinquentSharonSeenText:
+	text "Hey there!"
+
+	para "Up for a fight?"
 	done
 
-PicnickerSharonBeatenText:
-	text "…"
+DelinquentSharonBeatenText:
+	text "Not what I was"
+	line "hoping for…"
 	done
 
-PicnickerSharonAfterBattleText:
-	text "……I'll go train"
-	line "some more…"
+DelinquentSharonAfterBattleText:
+	text "Looks like I'll be"
+	line "staying out of"
+	cont "your way."
 	done
 
 MtMoonSquareSignText:
-	text "MT.MOON SQUARE"
+	text "Mt.Moon Square"
 
 	para "Just go up the"
 	line "stairs."
@@ -131,7 +123,7 @@ Route4_MapEvents:
 	bg_event 10,  3, BGEVENT_ITEM, Route4HiddenUltraBall
 
 	db 4 ; object events
-	object_event 17,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperHank, -1
-	object_event  9,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerHope, -1
-	object_event 21,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerSharon, -1
+	object_event 17,  9, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBikerRiver, -1
+	object_event  9,  8, SPRITE_ROUGHNECK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 4, TrainerRoughneckTerrance, -1
+	object_event 21,  6, SPRITE_DAISY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerDelinquentSharon, -1
 	object_event 26,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4HPUp, EVENT_ROUTE_4_HP_UP

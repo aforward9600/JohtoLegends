@@ -529,3 +529,46 @@ KotoraSwarmText::
 	line "of Rage and catch"
 	cont "a Kotora!"
 	done
+
+MooMooMilk_IntroText::
+	text "Howdy!"
+
+	para "Would ya like some"
+	line "MooMoo Milk?"
+
+	para "Give it to #mon"
+	line "to restore HP!"
+	done
+
+MooMooMilk_ComeAgainText::
+	text "Y'all come back"
+	line "now!"
+	done
+
+MooMooMilk_HowManyText::
+	text "How many bottles?"
+	done
+
+MooMooMilk_CostsThisMuchText::
+	text "That'll be"
+	line "¥@"
+	text_decimal hMoneyTemp, 3, 6
+	text ", Sugar."
+	done
+
+MooMooMilk_InsufficientFundsText::
+	text "Sorry, hun."
+
+	para "Looks like you"
+	line "don't have enough."
+	done
+
+MooMooMilk_BagFullText::
+	text "I reckon yer"
+	line "Pack's full."
+	done
+
+MooMooMilk_HereYouGoText::
+	text "Here ya go, honey!"
+	line "Drink up'n enjoy!"
+	done

@@ -1,7 +1,7 @@
 	object_const_def ; object_event constants
 	const CERULEANPOKECENTER1F_NURSE
 	const CERULEANPOKECENTER1F_SUPER_NERD
-	const CERULEANPOKECENTER1F_GYM_GUY
+	const CERULEANPOKECENTER1F_RIVAL
 
 CeruleanPokecenter1F_MapScripts:
 	db 0 ; scene scripts
@@ -11,53 +11,81 @@ CeruleanPokecenter1F_MapScripts:
 CeruleanPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
-CeruleanPokecenter1FSuperNerdScript:
-	special Mobile_DummyReturnFalse
-	iftrue .mobile
-	jumptextfaceplayer CeruleanPokecenter1FSuperNerdText
+CeruleanPokecenter1FCooltrainerM:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_SENSATIONAL_SISTERS
+	iftrue .CeruleanPokecenter1FCooltrainerMAfter
+	writetext CeruleanPokecenter1FCooltrainerMText1
+	waitbutton
+	closetext
+	end
 
-.mobile
-	jumptextfaceplayer CeruleanPokecenter1FSuperNerdText_Mobile
+.CeruleanPokecenter1FCooltrainerMAfter:
+	writetext CeruleanPokecenter1FCooltrainerMText2
+	waitbutton
+	closetext
+	end
 
-CeruleanPokecenter1FGymGuyScript:
-	jumptextfaceplayer CeruleanPokecenter1FGymGuyText
+CeruleanPokecenter1FRival:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_SENSATIONAL_SISTERS
+	iftrue .CeruleanPokecenter1FRivalAfter
+	writetext CeruleanPokecenter1FRivalText1
+	waitbutton
+	closetext
+	end
 
-CeruleanPokecenter1FSuperNerdText:
-	text "For battles, I'd"
-	line "much rather use"
+.CeruleanPokecenter1FRivalAfter:
+	writetext CeruleanPokecenter1FRivalText2
+	waitbutton
+	closetext
+	end
 
-	para "#MON I've been"
-	line "raising, even if"
+CeruleanPokecenter1FCooltrainerMText1:
+	text "Dang it!"
 
-	para "they're weaker"
-	line "than some newly"
-	cont "caught #MON."
+	para "If my #mon"
+	line "weren't knocked"
+	cont "out, I'd show"
+	cont "those Feds!"
 	done
 
-CeruleanPokecenter1FSuperNerdText_Mobile:
-	text "Do you battle by"
-	line "mobile phone?"
+CeruleanPokecenter1FCooltrainerMText2:
+	text "Looks like those"
+	line "Feds are running"
+	cont "scared of some"
+	cont "children!"
 
-	para "If time runs out"
-	line "during a battle,"
-
-	para "waiting to see who"
-	line "won is really"
-	cont "nerve wracking."
+	para "Hah! Wimps!"
 	done
 
-CeruleanPokecenter1FGymGuyText:
-	text "The MAGNET TRAIN"
-	line "travels at over"
+CeruleanPokecenter1FRivalText1:
+	text "I hear that the"
+	line "best trainers in"
+	cont "the city are some"
+	cont "young triplets."
 
-	para "340 mph. It goes"
-	line "between KANTO and"
+	para "That's kinda sad,"
+	line "don't you think?"
 
-	para "JOHTO in almost no"
-	line "time at all."
+	para "They like to play"
+	line "hide-and-seek, so"
+	cont "look around."
 
-	para "It really makes"
-	line "JOHTO accessible."
+	para "You should easily"
+	line "find them."
+	done
+
+CeruleanPokecenter1FRivalText2:
+	text "To think the Feds"
+	line "are responsible"
+	cont "for their parents'"
+	cont "deaths…"
+
+	para "Let's avenge them"
+	line "together, OK?"
 	done
 
 CeruleanPokecenter1F_MapEvents:
@@ -74,5 +102,5 @@ CeruleanPokecenter1F_MapEvents:
 
 	db 3 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenter1FNurseScript, -1
-	object_event  8,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenter1FSuperNerdScript, -1
-	object_event  1,  5, SPRITE_GYM_GUY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenter1FGymGuyScript, -1
+	object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenter1FCooltrainerM, -1
+	object_event  2,  7, SPRITE_RIVAL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenter1FRival, EVENT_KANTO_POKECENTER_RIVAL

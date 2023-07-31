@@ -13,7 +13,7 @@ Route6SaffronGate_MapScripts:
 Route6SaffronGuardScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
+	checkevent EVENT_BEAT_SABRINA
 	iftrue .ReturnedPart
 	writetext Route6SaffronGuardWelcomeText
 	waitbutton
@@ -27,32 +27,19 @@ Route6SaffronGuardScript:
 	end
 
 Route6SaffronGuardWelcomeText:
-	text "Welcome to SAFFRON"
-	line "CITY, home of the"
-	cont "MAGNET TRAIN!"
+	text "Watch out for the"
+	line "Feds."
 
-	para "…That's what I'd"
-	line "normally say, but"
-
-	para "the MAGNET TRAIN"
-	line "isn't running now."
-
-	para "It's not getting"
-	line "any electricity"
-
-	para "because there's"
-	line "something wrong"
-
-	para "with the POWER"
-	line "PLANT."
+	para "They're a nasty"
+	line "bunch."
 	done
 
 Route6SaffronGuardMagnetTrainText:
-	text "The MAGNET TRAIN"
-	line "is the most famous"
+	text "We've got two Gym"
+	line "Leaders for now?"
 
-	para "thing about SAF-"
-	line "FRON."
+	para "What a time to be"
+	line "alive."
 	done
 
 Route6SaffronGate_MapEvents:

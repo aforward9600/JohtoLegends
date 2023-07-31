@@ -176,32 +176,32 @@ VictoryRoadGateRivalScript:
 	end
 
 VictoryRoadGateRightBlackBeltEndScript:
-	faceplayer
-	opentext
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .GuardDoesntMove
-	writetext VictoryRoadGateGoOnThroughText
-	waitbutton
-	closetext
-	readvar VAR_FACING
-	ifequal UP, .MoveGuardRight
-	applymovement VICTORYROADGATE_BLACK_BELT3, VictoryRoadGateStepDownMovement
-	turnobject VICTORYROADGATE_BLACK_BELT3, UP
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	end
+;	faceplayer
+;	opentext
+;	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+;	iftrue .GuardDoesntMove
+;	writetext VictoryRoadGateGoOnThroughText
+;	waitbutton
+;	closetext
+;	readvar VAR_FACING
+;	ifequal UP, .MoveGuardRight
+;	applymovement VICTORYROADGATE_BLACK_BELT3, VictoryRoadGateStepDownMovement
+;	turnobject VICTORYROADGATE_BLACK_BELT3, UP
+;	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+;	end
 
-.MoveGuardRight:
-	applymovement VICTORYROADGATE_BLACK_BELT3, OakMovesRight
-	turnobject VICTORYROADGATE_BLACK_BELT3, LEFT
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	end
+;.MoveGuardRight:
+;	applymovement VICTORYROADGATE_BLACK_BELT3, OakMovesRight
+;	turnobject VICTORYROADGATE_BLACK_BELT3, LEFT
+;	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+;	end
 
-.GuardDoesntMove:
-	writetext VictoryRoadGateGoOnThroughText
-	waitbutton
-	closetext
-	end
-;	jumptextfaceplayer VictoryRoadGateRightBlackBeltEndText
+;.GuardDoesntMove:
+;	writetext VictoryRoadGateGoOnThroughText
+;	waitbutton
+;	closetext
+;	end
+	jumptextfaceplayer VictoryRoadGateRightBlackBeltEndText
 
 VictoryRoadGateStepDownMovement:
 	step DOWN

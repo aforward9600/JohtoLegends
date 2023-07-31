@@ -500,6 +500,8 @@ CHRIS EQU __enum__
 	const GLENN
 	const FOREST
 	const CALVIN
+	const RIVER
+	const CHANCE
 
 	trainerclass BLAINE ; 2e
 	const BLAINE1
@@ -566,7 +568,7 @@ CHRIS EQU __enum__
 	const LACY
 	const BARBARA
 	const VIVIAN_PICNICKER
-	const SHARON
+	const SHARON1
 	const DEBRA
 	const GINA2
 	const ERIN1
@@ -896,12 +898,25 @@ CHRIS EQU __enum__
 	trainerclass DELINQUENT
 	const KAREN
 	const TRACY
+	const SHARON
+	const SHERRY
 
 	trainerclass SENSATIONAL2
 	const DAISY
 
 	trainerclass SENSATIONAL3
 	const LILY
+
+	trainerclass ROUGHNECK
+	const TERRANCE
+	const PHILLIP
+
+	trainerclass SOLDIER
+	const DWIGHT
+	const SHERMAN
+	const ULYSSES
+	const DOUGLAS
+	const GRANT
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

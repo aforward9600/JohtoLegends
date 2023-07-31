@@ -21,26 +21,23 @@ CeruleanMart_CooltrainerF:
 	jumptextfaceplayer CeruleanMart_CooltrainerFText
 
 CeruleanMart_CooltrainerMText:
-	text "You'll run into"
-	line "many trainers on"
+	text "These shops never"
+	line "have the good"
+	cont "stuff!"
 
-	para "the way to CERU-"
-	line "LEAN's CAPE."
+	para "It's always potions"
+	line "and junk!"
 
-	para "They want to see"
-	line "how they stack"
-
-	para "up against other"
-	line "trainers."
+	para "Where're the video"
+	line "games?"
 	done
 
 CeruleanMart_CooltrainerFText:
-	text "MISTY is about the"
-	line "only person in"
+	text "Stealing would be"
+	line "good for my image,"
 
-	para "town who can beat"
-	line "the trainers at"
-	cont "CERULEAN's CAPE."
+	para "but my conscience"
+	line "won't let me."
 	done
 
 CeruleanMart_MapEvents:
@@ -56,5 +53,5 @@ CeruleanMart_MapEvents:
 
 	db 3 ; object events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanMart_Clerk, -1
-	object_event  1,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanMart_CooltrainerM, -1
-	object_event  7,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanMart_CooltrainerF, -1
+	object_event  1,  6, SPRITE_ROUGHNECK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, CeruleanMart_CooltrainerM, -1
+	object_event  7,  2, SPRITE_DAISY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanMart_CooltrainerF, -1

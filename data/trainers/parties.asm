@@ -916,21 +916,24 @@ Sensational1Group:
 LtSurgeGroup:
 	next_list_item ; LT_SURGE (1)
 	db "Pvt.Surge@", TRAINERTYPE_MOVES
-	db 44
+	db 73
+	dw ELECTRODE
+	dw EXPLOSION, VOLT_TACKLE, GYRO_BALL, SUCKER_PUNCH
+	db 73
+	dw AMPHAROS
+	dw THUNDERBOLT, DRAGON_PULSE, POWER_GEM, COTTON_SPORE
+	db 73
+	dw MAGNEZONE
+	dw VOLT_SWITCH, FLASH_CANNON, REFLECT, TRI_ATTACK
+	db 73
+	dw ELECTIVIRE
+	dw CLOSE_COMBAT, VOLT_TACKLE, ICE_PUNCH, IRON_TAIL
+	db 73
+	dw JOLTEON
+	dw SHADOW_BALL, THUNDERBOLT, FLASH_CANNON, VOLT_SWITCH
+	db 74
 	dw RAICHU
-	dw THUNDER_WAVE, QUICK_ATTACK, THUNDERBOLT, THUNDER
-	db 40
-	dw ELECTRODE
-	dw SCREECH, DOUBLE_TEAM, SWIFT, EXPLOSION
-	db 40
-	dw MAGNETON
-	dw LOCK_ON, DOUBLE_TEAM, SWIFT, ZAP_CANNON
-	db 40
-	dw ELECTRODE
-	dw SCREECH, DOUBLE_TEAM, SWIFT, EXPLOSION
-	db 46
-	dw ELECTABUZZ
-	dw QUICK_ATTACK, THUNDERPUNCH, LIGHT_SCREEN, THUNDER
+	dw SURF, THUNDERBOLT, BRICK_BREAK, NASTY_PLOT
 	db -1 ; end
 
 	end_list_items
@@ -1340,8 +1343,6 @@ SchoolboyGroup:
 
 	end_list_items
 
-SECTION "Enemy Trainer Parties 2", ROMX
-
 BirdKeeperGroup:
 	next_list_item ; BIRD_KEEPER (1)
 	db "Rodney@", TRAINERTYPE_NORMAL
@@ -1522,6 +1523,8 @@ BirdKeeperGroup:
 	db -1 ; end
 
 	end_list_items
+
+SECTION "Enemy Trainer Parties 2", ROMX
 
 LassGroup:
 	next_list_item ; LASS (1)
@@ -4523,6 +4526,30 @@ BikerGroup:
 	db 71
 	dw GRANBULL
 	dw OUTRAGE, CRUNCH, PLAY_ROUGH, EARTHQUAKE
+	db -1 ; end
+
+	next_list_item ; BIKER (12) Route 4
+	db "River@", TRAINERTYPE_NORMAL
+	db 70
+	dw MR__MIME
+	db 70
+	dw GOROTORA
+	db 70
+	dw MAGCARGO
+	db 71
+	dw TOXICROAK
+	db -1 ; end
+
+	next_list_item ; BIKER (13) Route 25
+	db "Chance@", TRAINERTYPE_NORMAL
+	db 71
+	dw SANDSLASH
+	db 71
+	dw KINGLER
+	db 71
+	dw XATU
+	db 72
+	dw HERACROSS
 	db -1 ; end
 
 	end_list_items
@@ -8190,7 +8217,33 @@ DelinquentGroup:
 	dw MAMOSWINE
 	db 71
 	dw MILTANK
-	db -1
+	db -1 ; end
+
+	next_list_item ; DELINQUENT3 (Route 4)
+	db "Sharon@", TRAINERTYPE_NORMAL
+	db 70
+	dw ARIADOS
+	db 70
+	dw NOCTOWL
+	db 70
+	dw MUK
+	db 70
+	dw DEWGONG
+	db 71
+	dw FARIGIRAF
+	db -1 ; end
+
+	next_list_item ; DELINQUENT4 (Route 25)
+	db "Sherry@", TRAINERTYPE_NORMAL
+	db 71
+	dw WEAVILE
+	db 71
+	dw GENGAR
+	db 71
+	dw KANGASKHAN
+	db 72
+	dw RHYPERIOR
+	db -1 ; end
 
 	end_list_items
 
@@ -8228,6 +8281,111 @@ Sensational3Group:
 	db 71
 	dw STARMIE
 	dw HYDRO_PUMP, THUNDERBOLT, PSYCHIC_M, RECOVER
+	db -1 ; end
+
+	end_list_items
+
+RoughneckGroup:
+	next_list_item ; ROUGHNECK (1) Route 4
+	db "Terrance@", TRAINERTYPE_NORMAL
+	db 70
+	dw ARBOK
+	db 70
+	dw JUMPLUFF
+	db 70
+	dw ALAKAZAM
+	db 71
+	dw DODRIO
+	db -1 ; end
+
+	next_list_item ; ROUGHNECK (2) Route 25
+	db "Phillip@", TRAINERTYPE_MOVES
+	db 71
+	dw DONPHAN
+	dw EARTHQUAKE, RAPID_SPIN, STONE_EDGE, KNOCK_OFF
+	db 71
+	dw WYRDEER
+	dw GIGA_IMPACT, ZEN_HEADBUTT, MEGAHORN, PROTECT
+	db 71
+	dw VILEPLUME
+	dw PETAL_DANCE, MOONBLAST, SLUDGE_BOMB, MOONLIGHT
+	db 72
+	dw FARFETCH_D
+	dw BRAVE_BIRD, LEAF_BLADE, NIGHT_SLASH, ROOST
+	db -1 ; end
+
+	end_list_items
+
+SoldierGroup:
+	next_list_item ; SOLDIER(1) Route 6
+	db "Dwight@", TRAINERTYPE_MOVES
+	db 72
+	dw ELECTRODE
+	dw VOLT_TACKLE, GYRO_BALL, EXPLOSION, SUCKER_PUNCH
+	db 72
+	dw MANECTRIC
+	dw GRASS_KNOT, THUNDERBOLT, SNARL, PROTECT
+	db 72
+	dw MACHAMP
+	dw BULK_UP, CROSS_CHOP, KNOCK_OFF, STRENGTH
+	db 73
+	dw OCTILLERY
+	dw FLASH_CANNON, HYDRO_PUMP, GUNK_SHOT, ICE_BEAM
+	db -1 ; end
+
+	next_list_item ; SOLDIER(2) Route 6
+	db "Sherman@", TRAINERTYPE_MOVES
+	db 72
+	dw LANTURN
+	dw HYDRO_PUMP, AQUA_RING, THUNDERBOLT, ICE_BEAM
+	db 72
+	dw RAICHU
+	dw SURF, THUNDERBOLT, BRICK_BREAK, VOLT_TACKLE
+	db 72
+	dw ANNIHILAPE
+	dw BULK_UP, CROSS_CHOP, SHADOW_PUNCH, HIHORSEPOWER
+	db 73
+	dw AMBIPOM
+	dw DOUBLE_EDGE, ACROBATICS, SWORDS_DANCE, FAINT_ATTACK
+	db -1 ; end
+
+	next_list_item ; SOLDIER(3) Vermillion Gym
+	db "Ulysses@", TRAINERTYPE_MOVES
+	db 72
+	dw AMPHAROS
+	dw THUNDERBOLT, DRAGON_PULSE, THUNDER_WAVE, FLASH_CANNON
+	db 72
+	dw MAGNEZONE
+	dw FLASH_CANNON, THUNDERBOLT, TRI_ATTACK, THUNDER_WAVE
+	db 73
+	dw JOLTEON
+	dw THUNDERBOLT, FLASH_CANNON, SHADOW_BALL, THUNDER_WAVE
+	db -1 ; end
+
+	next_list_item ; SOLDIER(4) Vermillion Gym
+	db "Douglas@", TRAINERTYPE_MOVES
+	db 72
+	dw RAICHU
+	dw THUNDERBOLT, SURF, THUNDER_WAVE, NASTY_PLOT
+	db 72
+	dw ELECTIVIRE
+	dw CLOSE_COMBAT, BULK_UP, VOLT_TACKLE, ICE_PUNCH
+	db 73
+	dw LANTURN
+	dw THUNDERBOLT, ICE_BEAM, HYDRO_PUMP, AQUA_RING
+	db -1 ; end
+
+	next_list_item ; SOLDIER(5) Vermillion Gym
+	db "Grant@", TRAINERTYPE_MOVES
+	db 72
+	dw ELECTRODE
+	dw EXPLOSION, GYRO_BALL, VOLT_TACKLE, SUCKER_PUNCH
+	db 72
+	dw MANECTRIC
+	dw GRASS_KNOT, THUNDERBOLT, SNARL, ROAR
+	db 73
+	dw GOROTORA
+	dw THUNDERBOLT, NIGHT_SLASH, PLAY_ROUGH, SLACK_OFF
 	db -1 ; end
 
 	end_list_items

@@ -355,8 +355,8 @@ FossilHouse_MapEvents:
 	db 5 ; bg events
 	bg_event  0,  1, BGEVENT_READ, FossilHouse_ScienceMagazines
 	bg_event  1,  1, BGEVENT_READ, FossilHouse_ScienceMagazines
-	bg_event  6,  1, BGEVENT_READ, MrPokemonsHouse_BrokenComputer
-	bg_event  7,  1, BGEVENT_READ, MrPokemonsHouse_BrokenComputer
+	bg_event  6,  1, BGEVENT_READ, FossilHouse_BrokenComputer
+	bg_event  7,  1, BGEVENT_READ, FossilHouse_BrokenComputer
 	bg_event  6,  4, BGEVENT_READ, FossilHouse_ComputerScreen
 
 	db 4 ; object events

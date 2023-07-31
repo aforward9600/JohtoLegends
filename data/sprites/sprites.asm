@@ -157,3 +157,4 @@ OverworldSprites:
 	overworld_sprite GlaceonSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BrockSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite SensationalSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite RoughneckSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK

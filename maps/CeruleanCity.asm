@@ -1,8 +1,8 @@
 	object_const_def ; object_event constants
-	const CERULEANCITY_COOLTRAINER_M
+	const CERULEANCITY_BIKER
 	const CERULEANCITY_SUPER_NERD
 	const CERULEANCITY_SLOWPOKE
-	const CERULEANCITY_COOLTRAINER_F
+	const CERULEANCITY_DELINQUENT
 	const CERULEANCITY_FISHER
 	const CERULEANCITY_DAISY
 	const CERULEANCITY_VIOLET
@@ -18,73 +18,46 @@ CeruleanCity_MapScripts:
 	setflag ENGINE_FLYPOINT_CERULEAN
 	return
 
-CeruleanCityCooltrainerMScript:
+CeruleanCityBikerScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext CeruleanCityCooltrainerMText1
+	checkevent EVENT_BEAT_SENSATIONAL_SISTERS
+	iftrue .CeruleanCityBiker2
+	writetext CeruleanCityBikerText1
 	waitbutton
 	closetext
 	end
 
-.ReturnedMachinePart:
-	writetext CeruleanCityCooltrainerMText2
+.CeruleanCityBiker2:
+	writetext CeruleanCityBikerText2
 	waitbutton
 	closetext
 	end
 
-CeruleanCitySuperNerdScript:
-	jumptextfaceplayer CeruleanCitySuperNerdText
+CeruleanCityPokefanMScript:
+	jumptextfaceplayer CeruleanCityPokefanMText
 
-CeruleanCitySlowbro:
-	opentext
-	writetext CeruleanCitySlowbroText
-	cry SLOWBRO
-	waitbutton
-	closetext
-	end
+CeruleanCityPokefanFScript:
+	jumptextfaceplayer CeruleanCityPokefanFText
 
-CeruleanCityCooltrainerFScript:
+CeruleanCityDelinquentScript:
 	faceplayer
 	opentext
-	writetext CeruleanCityCooltrainerFText1
+	checkevent EVENT_BEAT_SENSATIONAL_SISTERS
+	iftrue .CeruleanCityDelinquent2
+	writetext CeruleanCityDelinquentText1
 	waitbutton
 	closetext
-	turnobject CERULEANCITY_COOLTRAINER_F, LEFT
-	opentext
-	writetext CeruleanCityCooltrainerFText2
-	waitbutton
-	closetext
-	opentext
-	writetext CeruleanCitySlowbroText
-	cry SLOWBRO
-	waitbutton
-	closetext
-	opentext
-	writetext CeruleanCityCooltrainerFText3
+	end
+
+.CeruleanCityDelinquent2:
+	writetext CeruleanCityDelinquentText2
 	waitbutton
 	closetext
 	end
 
 CeruleanCityFisherScript:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	checkevent EVENT_MET_ROCKET_GRUNT_AT_CERULEAN_GYM
-	iftrue .MetCeruleanRocket
-.ReturnedMachinePart:
-	writetext CeruleanCityFisherText
-	waitbutton
-	closetext
-	end
-
-.MetCeruleanRocket:
-	writetext CeruleanCityFisherRocketTipText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer CeruleanCityFisherText
 
 CeruleanCityDaisyScript:
 	faceplayer
@@ -161,68 +134,68 @@ CeruleanCityMartSign:
 CeruleanCityHiddenBerserkGene:
 	hiddenitem BERSERK_GENE, EVENT_FOUND_BERSERK_GENE_IN_CERULEAN_CITY
 
-CeruleanCityCooltrainerMText1:
-	text "KANTO's POWER"
-	line "PLANT?"
+CeruleanCityBikerText1:
+	text "The pool's the"
+	line "place to be!"
 
-	para "It's near the end"
-	line "of ROUTE 9, the"
-
-	para "road that heads"
-	line "east from here."
-
-	para "I think there was"
-	line "an accident of"
-	cont "some sort there."
+	para "I get a nice view"
+	line "of the ladies!"
 	done
 
-CeruleanCityCooltrainerMText2:
-	text "You're collecting"
-	line "every single kind"
-	cont "of #MON?"
+CeruleanCityBikerText2:
+	text "I'm not going to"
+	line "the pool now."
 
-	para "That must be quite"
-	line "a challenge, but"
-	cont "it sounds fun too."
+	para "The kids there are"
+	line "too tough."
 	done
 
-CeruleanCitySuperNerdText:
-	text "The CAPE in the"
-	line "north is a good"
+CeruleanCityPokefanMText:
+	text "It feels good to"
+	line "go outside!"
 
-	para "place for dates."
-	line "Girls like it!"
+	para "It's been a"
+	line "while!"
 	done
 
-CeruleanCitySlowbroText:
-	text "SLOWBRO: Yarah?"
+CeruleanCityPokefanFText:
+	text "Those young girls"
+	line "will do great"
+	cont "things for us!"
+
+	para "I wish we had the"
+	line "strength to take"
+	cont "on the Feds"
+	cont "ourselves."
 	done
 
-CeruleanCityCooltrainerFText1:
-	text "My SLOWBRO and I"
-	line "make an awesome"
-	cont "combination!"
+CeruleanCityDelinquentText1:
+	text "That one Biker"
+	line "always stares at"
+	cont "me at the pool."
+
+	para "I'm gonna clock"
+	line "him if he keeps"
+	cont "it up."
 	done
 
-CeruleanCityCooltrainerFText2:
-	text "SLOWBRO, show me"
-	line "your CONFUSION!"
-	done
+CeruleanCityDelinquentText2:
+	text "Those girls…"
 
-CeruleanCityCooltrainerFText3:
-	text "…"
+	para "I think I"
+	line "remember them."
+
+	para "It's probably"
+	line "time to skip"
+	cont "town…"
 	done
 
 CeruleanCityFisherText:
-	text "I'm a huge fan of"
-	line "CERULEAN GYM's"
-	cont "MISTY."
-	done
+	text "Looks like I can"
+	line "start fishin'"
+	cont "again!"
 
-CeruleanCityFisherRocketTipText:
-	text "I saw this shady"
-	line "guy go off toward"
-	cont "CERULEAN's CAPE."
+	para "Yeehaw!"
 	done
 
 CeruleanCityDaisyText:
@@ -365,11 +338,11 @@ CeruleanCity_MapEvents:
 	bg_event 25, 17, BGEVENT_READ, CeruleanOriginalGymSign
 
 	db 8 ; object events
-	object_event 15, 23, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerMScript, -1
-	object_event 23, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerdScript, -1
-	object_event 20, 24, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCitySlowbro, -1
-	object_event 21, 24, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerFScript, -1
-	object_event 30, 26, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityFisherScript, -1
+	object_event 11, 23, SPRITE_BIKER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityBikerScript, -1
+	object_event 23, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCityPokefanMScript, EVENT_CERULEAN_CITY_CIVILLIANS
+	object_event  7, 27, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCityPokefanFScript, EVENT_CERULEAN_CITY_CIVILLIANS
+	object_event 20, 25, SPRITE_DAISY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityDelinquentScript, -1
+	object_event 30, 26, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityFisherScript, EVENT_CERULEAN_CITY_CIVILLIANS
 	object_event 11, 10, SPRITE_SENSATIONAL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityDaisyScript, EVENT_CERULEAN_CITY_DAISY
 	object_event  5, 33, SPRITE_SENSATIONAL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityVioletScript, EVENT_CERULEAN_CITY_VIOLET
 	object_event 27,  8, SPRITE_SENSATIONAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityLilyScript, EVENT_CERULEAN_CITY_LILY

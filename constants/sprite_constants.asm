@@ -153,6 +153,7 @@
 	const SPRITE_GLACEON
 	const SPRITE_BROCK
 	const SPRITE_SENSATIONAL
+	const SPRITE_ROUGHNECK
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $99

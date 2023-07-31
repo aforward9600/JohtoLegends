@@ -110,6 +110,8 @@ INCBIN "gfx/trainers/cynthia.gbcpal", middle_colors
 INCBIN "gfx/trainers/delinquent.gbcpal", middle_colors
 INCLUDE "gfx/trainers/daisy.pal"
 INCLUDE "gfx/trainers/lily.pal"
+INCBIN "gfx/trainers/roughneck.gbcpal", middle_colors
+INCBIN "gfx/trainers/soldier.gbcpal", middle_colors
 
 KrisPalette:
 INCLUDE "gfx/player/kris.pal"

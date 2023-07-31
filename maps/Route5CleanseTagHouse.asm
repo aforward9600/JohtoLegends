@@ -1,6 +1,5 @@
 	object_const_def ; object_event constants
 	const ROUTE5CLEANSETAGHOUSE_GRANNY
-	const ROUTE5CLEANSETAGHOUSE_TEACHER
 
 Route5CleanseTagHouse_MapScripts:
 	db 0 ; scene scripts
@@ -24,38 +23,23 @@ Route5CleanseTagHouseGrannyScript:
 	closetext
 	end
 
-Route5CleanseTagHouseTeacherScript:
-	jumptextfaceplayer Route5CleanseTagHouseTeacherText
-
 HouseForSaleBookshelf:
 	jumpstd difficultbookshelf
 
 Route5CleanseTagHouseGrannyText1:
-	text "Eeyaaaah!"
+	text "Ever wanted to"
+	line "ward off wild"
+	cont "#mon?"
 
-	para "I sense a sinister"
-	line "shadow hovering"
-	cont "over you."
-
-	para "Take this to ward"
-	line "it off!"
+	para "Take this Cleanse"
+	line "Tag."
 	done
 
 Route5CleanseTagHouseGrannyText2:
-	text "You were in mortal"
-	line "danger, but you"
-	cont "are protected now."
-	done
-
-Route5CleanseTagHouseTeacherText:
-	text "My grandma is into"
-	line "warding off what"
-
-	para "she believes to be"
-	line "evil spirits."
-
-	para "I'm sorry that she"
-	line "startled you."
+	text "Maybe I should set"
+	line "up a daycare here"
+	cont "for any upstart"
+	cont "trainers."
 	done
 
 Route5CleanseTagHouse_MapEvents:
@@ -71,6 +55,5 @@ Route5CleanseTagHouse_MapEvents:
 	bg_event  0,  1, BGEVENT_READ, HouseForSaleBookshelf
 	bg_event  1,  1, BGEVENT_READ, HouseForSaleBookshelf
 
-	db 2 ; object events
-	object_event  2,  5, SPRITE_GRANNY, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route5CleanseTagHouseGrannyScript, -1
-	object_event  5,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route5CleanseTagHouseTeacherScript, -1
+	db 1 ; object events
+	object_event  2,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route5CleanseTagHouseGrannyScript, -1

@@ -105,3 +105,5 @@ TrainerClassDVs:
 	dn 10,  9,  9,  9 ; DELINQUENT
 	dn  7,  8,  8,  8 ; DAISY
 	dn  7,  8,  8,  8 ; LILY
+	dn  9,  8,  8,  8 ; ROUGHNECK
+	dn  9,  8,  8,  8 ; SOLDIER

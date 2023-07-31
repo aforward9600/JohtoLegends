@@ -1,9 +1,8 @@
 	object_const_def ; object_event constants
 	const VERMILIONGYM_SURGE
-	const VERMILIONGYM_GENTLEMAN
-	const VERMILIONGYM_ROCKER
-	const VERMILIONGYM_SUPER_NERD
-	const VERMILIONGYM_GYM_GUY
+	const VERMILIONGYM_SOLDIER1
+	const VERMILIONGYM_SOLDIER2
+	const VERMILIONGYM_SOLDIER3
 
 VermilionGym_MapScripts:
 	db 0 ; scene scripts
@@ -18,14 +17,14 @@ VermilionGymSurgeScript:
 	writetext LtSurgeIntroText
 	waitbutton
 	closetext
-	winlosstext LtSurgeWinLossText, 0
+	winlosstext LtSurgeWinLossText, LtSurgeLastMonText
 	loadtrainer LT_SURGE, LT_SURGE1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_LTSURGE
-	setevent EVENT_BEAT_GENTLEMAN_GREGORY
-	setevent EVENT_BEAT_GUITARIST_VINCENT
-	setevent EVENT_BEAT_JUGGLER_HORTON
+	setevent EVENT_BEAT_SOLDIER_ULYSSES
+	setevent EVENT_BEAT_SOLDIER_DOUGLAS
+	setevent EVENT_BEAT_SOLDIER_GRANT
 	opentext
 	writetext ReceivedThunderBadgeText
 	playsound SFX_GET_BADGE
@@ -37,225 +36,234 @@ VermilionGymSurgeScript:
 	end
 
 .FightDone:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .LtSurgeStay
 	writetext LtSurgeFightDoneText
 	waitbutton
 	closetext
 	end
 
-TrainerGentlemanGregory:
-	trainer GENTLEMAN, GREGORY, EVENT_BEAT_GENTLEMAN_GREGORY, GentlemanGregorySeenText, GentlemanGregoryBeatenText, 0, .Script
+.LtSurgeStay:
+	writetext LtSurgeStayText
+	waitbutton
+	closetext
+	end
+
+LtSurgeLastMonText:
+	text "Never give up!"
+
+	para "Never surrender!"
+	done
+
+TrainerSoldierUlysses:
+	trainer SOLDIER, ULYSSES, EVENT_BEAT_SOLDIER_ULYSSES, SoldierUlyssesSeenText, SoldierUlyssesBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GentlemanGregoryAfterBattleText
+	writetext SoldierUlyssesAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerGuitaristVincent:
-	trainer GUITARIST, VINCENT, EVENT_BEAT_GUITARIST_VINCENT, GuitaristVincentSeenText, GuitaristVincentBeatenText, 0, .Script
+TrainerSoldierDouglas:
+	trainer SOLDIER, DOUGLAS, EVENT_BEAT_SOLDIER_DOUGLAS, SoldierDouglasSeenText, SoldierDouglasBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GuitaristVincentAfterBattleText
+	writetext SoldierDouglasAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerJugglerHorton:
-	trainer JUGGLER, HORTON, EVENT_BEAT_JUGGLER_HORTON, JugglerHortonSeenText, JugglerHortonBeatenText, 0, .Script
+TrainerSoldierGrant:
+	trainer SOLDIER, GRANT, EVENT_BEAT_SOLDIER_GRANT, SoldierGrantSeenText, SoldierGrantBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext JugglerHortonAfterBattleText
+	writetext SoldierGrantAfterBattleText
 	waitbutton
 	closetext
 	end
 
-VermilionGymGuyScript:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_LTSURGE
-	iftrue .VermilionGymGuyWinScript
-	writetext VermilionGymGuyText
-	waitbutton
-	closetext
-	end
-
-.VermilionGymGuyWinScript:
-	writetext VermilionGymGuyWinText
-	waitbutton
-	closetext
-	end
-
-VermilionGymTrashCan:
-	jumptext VermilionGymTrashCanText
-
-VermilionGymStatue:
-	checkflag ENGINE_THUNDERBADGE
-	iftrue .Beaten
-	jumpstd gymstatue1
-.Beaten:
-	gettrainername STRING_BUFFER_4, LT_SURGE, LT_SURGE1
-	jumpstd gymstatue2
+VermilionGymBed:
+	jumptext VermilionGymBedText
 
 LtSurgeIntroText:
-	text "SURGE: Hey, you"
-	line "little tyke!"
+	text "Pvt.Surge: Just my"
+	line "luck!"
 
-	para "I have to hand it"
-	line "to you. It may not"
+	para "We end the war,"
+	line "and now we can't"
+	cont "get home!"
 
-	para "be very smart to"
-	line "challenge me, but"
-	cont "it takes guts!"
+	para "Even with the Feds"
+	line "kicked out of the"
+	cont "city, the boats"
+	cont "still won't sail!"
 
-	para "When it comes to"
-	line "electric #MON,"
-	cont "I'm number one!"
+	para "Our forces aren't"
+	line "big enough to take"
+	cont "them on,"
 
-	para "I've never lost on"
-	line "the battlefield."
+	para "and we need to"
+	line "defend the city."
 
-	para "I'll zap you just"
-	line "like I did my"
-	cont "enemies in war!"
+	para "And just when I"
+	line "was going to get"
+	cont "my promotion…"
+
+	para "So, who are you?"
+
+	para "…The Champion, eh?"
+
+	para "Well, anyone who"
+	line "can beat my old"
+	cont "man is alright by"
+	cont "me!"
+
+	para "You need something"
+	line "from me?"
+
+	para "…Looking for a new"
+	line "Gym Leader to take"
+	cont "on the Feds?"
+
+	para "Well, count me in!"
+
+	para "With the Champion"
+	line "and 8 Gym Leaders,"
+
+	para "there's no way we"
+	line "can lose!"
+
+	para "Let's see how tough"
+	line "you are!"
 	done
 
 LtSurgeWinLossText:
-	text "SURGE: Arrrgh!"
-	line "You are strong!"
+	text "Pvt.Surge: Arrrgh!"
+	line "I'm having a"
+	cont "flashback!"
 
-	para "OK, kid. You get"
-	line "THUNDERBADGE!"
+	para "I can see why my"
+	line "old man lost to"
+	cont "you!"
 	done
 
 ReceivedThunderBadgeText:
-	text "<PLAYER> received"
-	line "THUNDERBADGE."
+	text "Pvt.Surge received"
+	line "ThunderBadge."
 	done
 
 LtSurgeThunderBadgeText:
-	text "SURGE: THUNDER-"
-	line "BADGE increases"
-	cont "#MON's speed. "
+	text "A ThunderBadge…"
 
-	para "Consider it proof"
-	line "that you defeated"
+	para "Perfect for me,"
+	line "wouldn't you say?"
 
-	para "me. You wear it"
-	line "proudly, hear?"
+	para "I'll answer the"
+	line "the call to duty"
+	cont "when you're ready!"
 	done
 
 LtSurgeFightDoneText:
-	text "SURGE: Hey, kid!"
-	line "Still slugging and"
-	cont "chugging away?"
+	text "I'll answer the"
+	line "the call to duty"
+	cont "when you're ready!"
 
-	para "My #MON and I"
-	line "are still at it!"
+	para "Let's rock!"
 	done
 
-GentlemanGregorySeenText:
-	text "You're here to"
-	line "defeat LT.SURGE?"
+LtSurgeStayText:
+	text "I think after I"
+	line "get my promotion,"
+	cont "I'll settle down"
+	cont "here and be the"
+	cont "Gym Leader."
 
-	para "Not if I can help"
-	line "it!"
+	para "I've grown fond of"
+	line "this place."
 	done
 
-GentlemanGregoryBeatenText:
-	text "Sorry I failed"
-	line "you, LT.SURGE,"
-	cont "sir!"
+SoldierUlyssesSeenText:
+	text "Do you have busi-"
+	line "ness with our"
+	cont "commander?"
 	done
 
-GentlemanGregoryAfterBattleText:
-	text "When I was still"
-	line "in the army, LT."
-
-	para "SURGE saved my"
-	line "life."
+SoldierUlyssesBeatenText:
+	text "I have failed!"
 	done
 
-GuitaristVincentSeenText:
-	text "LT.SURGE recog-"
-	line "nized my potential"
+SoldierUlyssesAfterBattleText:
+	text "He's a private,"
+	line "same as the rest"
+	cont "of us,"
 
-	para "with electric"
-	line "#MON."
+	para "but he really"
+	line "stepped up during"
+	cont "the war after we"
+	cont "lost our previous"
+	cont "commander."
 
-	para "Think you can beat"
-	line "me?"
+	para "He was due for a"
+	line "promotion before"
+	cont "this whole mess."
 	done
 
-GuitaristVincentBeatenText:
-	text "Ooh, how shocking!"
+SoldierDouglasSeenText:
+	text "Are you an enemy"
+	line "combatant?"
 	done
 
-GuitaristVincentAfterBattleText:
-	text "If the GYM's traps"
-	line "were working, you"
-
-	para "would have been"
-	line "toast…"
+SoldierDouglasBeatenText:
+	text "Combatant indeed!"
 	done
 
-JugglerHortonSeenText:
-	text "I'm going to take"
-	line "you down! Prepare"
-	cont "to be shocked!"
+SoldierDouglasAfterBattleText:
+	text "After the war, we"
+	line "decided to help"
+	cont "out the citizens"
+	cont "of Vermilion."
+
+	para "We've kept them"
+	line "safe since the"
+	cont "initial attack."
+
+	para "I think they've"
+	line "warmed up to us."
 	done
 
-JugglerHortonBeatenText:
-	text "Gwaaah!"
-	line "I was overpowered…"
+SoldierGrantSeenText:
+	text "Don't take another"
+	line "step!"
+
+	para "You're trespassing!"
 	done
 
-JugglerHortonAfterBattleText:
-	text "Don't get too com-"
-	line "fortable about"
-
-	para "beating me…"
-	line "LT.SURGE is tough."
+SoldierGrantBeatenText:
+	text "You stepped all"
+	line "over me!"
 	done
 
-VermilionGymGuyText:
-	text "Yo! CHAMP in"
-	line "making!"
+SoldierGrantAfterBattleText:
+	text "Sorry if I came"
+	line "off as rude."
 
-	para "You lucked out"
-	line "this time."
-
-	para "LT.SURGE is very"
-	line "cautious. He has"
-
-	para "traps set all over"
-	line "the GYM."
-
-	para "But--he-heh--the"
-	line "traps aren't"
-	cont "active right now."
-
-	para "You'll have no"
-	line "problem getting to"
-	cont "LT.SURGE."
+	para "We need to keep on"
+	line "our toes with the"
+	cont "Feds about."
 	done
 
-VermilionGymGuyWinText:
-	text "Whew! That was an"
-	line "electrifying bout!"
+VermilionGymBedText:
+	text "It's a soldier's"
+	line "bed."
 
-	para "It sure made me"
-	line "nervous."
-	done
-
-VermilionGymTrashCanText:
-	text "Nope! Nothing here"
-	line "but trash."
+	para "You probably don't"
+	line "want to nap here."
 	done
 
 VermilionGym_MapEvents:
@@ -267,28 +275,30 @@ VermilionGym_MapEvents:
 
 	db 0 ; coord events
 
-	db 17 ; bg events
-	bg_event  1,  7, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  3,  7, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  5,  7, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  7,  7, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  9,  7, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  1,  9, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  3,  9, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  5,  9, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  7,  9, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  9,  9, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  1, 11, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  3, 11, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  5, 11, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  7, 11, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  9, 11, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  3, 15, BGEVENT_READ, VermilionGymStatue
-	bg_event  6, 15, BGEVENT_READ, VermilionGymStatue
+	db 20 ; bg events
+	bg_event  3, 12, BGEVENT_READ, VermilionGymBed
+	bg_event  3, 13, BGEVENT_READ, VermilionGymBed
+	bg_event  7, 12, BGEVENT_READ, VermilionGymBed
+	bg_event  7, 13, BGEVENT_READ, VermilionGymBed
+	bg_event  1, 14, BGEVENT_READ, VermilionGymBed
+	bg_event  3,  8, BGEVENT_READ, VermilionGymBed
+	bg_event  3,  9, BGEVENT_READ, VermilionGymBed
+	bg_event  7,  8, BGEVENT_READ, VermilionGymBed
+	bg_event  7,  9, BGEVENT_READ, VermilionGymBed
+	bg_event  1, 10, BGEVENT_READ, VermilionGymBed
+	bg_event  1, 11, BGEVENT_READ, VermilionGymBed
+	bg_event  5, 10, BGEVENT_READ, VermilionGymBed
+	bg_event  5, 11, BGEVENT_READ, VermilionGymBed
+	bg_event  9, 10, BGEVENT_READ, VermilionGymBed
+	bg_event  9, 11, BGEVENT_READ, VermilionGymBed
+	bg_event  1, 15, BGEVENT_READ, VermilionGymBed
+	bg_event  5, 14, BGEVENT_READ, VermilionGymBed
+	bg_event  5, 15, BGEVENT_READ, VermilionGymBed
+	bg_event  9, 14, BGEVENT_READ, VermilionGymBed
+	bg_event  9, 15, BGEVENT_READ, VermilionGymBed
 
-	db 5 ; object events
-	object_event  5,  2, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionGymSurgeScript, -1
-	object_event  8,  8, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerGentlemanGregory, -1
-	object_event  4,  7, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 3, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristVincent, -1
-	object_event  0, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerJugglerHorton, -1
-	object_event  7, 15, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, VermilionGymGuyScript, -1
+	db 4 ; object events
+	object_event  5,  2, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionGymSurgeScript, EVENT_VERMILION_GYM_SURGE
+	object_event  3, 15, SPRITE_ENGINEER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerSoldierUlysses, -1
+	object_event  8, 11, SPRITE_ENGINEER, SPRITEMOVEDATA_STANDING_DOWN, 3, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSoldierDouglas, -1
+	object_event  4,  7, SPRITE_ENGINEER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSoldierGrant, -1

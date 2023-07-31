@@ -6,114 +6,36 @@ Route24_MapScripts:
 
 	db 0 ; callbacks
 
-Route24RocketScript:
+Route24RoughneckScript:
 	faceplayer
-	playmusic MUSIC_ROCKET_ENCOUNTER
 	opentext
-	writetext Route24RocketSeenText
+	checkevent EVENT_BEAT_SENSATIONAL_SISTERS
+	iftrue .Route24RoughneckAfter
+	writetext Route24RoughneckText1
 	waitbutton
 	closetext
-	winlosstext Route24RocketBeatenText, -1
-	loadtrainer GRUNTM, GRUNTM_31
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmusic MUSIC_ROCKET_ENCOUNTER
-	opentext
-	writetext Route24RocketAfterBattleText
-	buttonsound
-	special FadeOutMusic
-	writetext Route24RocketDisappearsText
-	waitbutton
-	closetext
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	disappear ROUTE24_ROCKET
-	pause 25
-	special FadeInQuickly
-	playmapmusic
 	end
 
-Route24RocketSeenText:
-	text "Hey, kid! Me am a"
-	line "TEAM ROCKET member"
-	cont "kind of guy!"
+.Route24RoughneckAfter:
+	writetext Route24RoughneckText2
+	waitbutton
+	closetext
+	end
 
-	para "Come from another"
-	line "country, a trainer"
-	cont "number one, me!"
+Route24RoughneckText1:
+	text "Sorry, but I'm not"
+	line "up to battling"
+	cont "today."
 
-	para "Think I did, if"
-	line "stop the energy,"
-
-	para "be big panic for"
-	line "here people!"
-
-	para "Secret it is my"
-	line "mission, so tell"
-	cont "you I not!"
-
-	para "But! If win you do"
-	line "versus me, a man I"
-
-	para "be and mine secret"
-	line "to you I tell."
-
-	para "Hey, kid! Battle"
-	line "begin we do!"
+	para "I'm just enjoying"
+	line "the fresh air."
 	done
 
-Route24RocketBeatenText:
-	text "Ayieeeh! No, no,"
-	line "no, believe it I"
-	cont "can't!"
-
-	para "Strong very much"
-	line "be you! Match I am"
-	cont "not to you!"
-	done
-
-Route24RocketAfterBattleText:
-	text "OK. Tell you mine"
-	line "secret will I."
-
-	para "MACHINE PART steal"
-	line "by me, hide it I"
-
-	para "did in GYM of the"
-	line "CERULEAN."
-
-	para "Inside water put"
-	line "it I did. Look for"
-
-	para "in water center of"
-	line "GYM at."
-
-	para "But you forget me"
-	line "not!"
-
-	para "Beat you for sure"
-	line "will TEAM ROCKET."
-
-	para "Come from JOHTO"
-	line "will they, mine"
-
-	para "friends, yes. Will"
-	line "revenge they are."
-	done
-
-Route24RocketDisappearsText:
-	text "…"
-
-	para "You say what? TEAM"
-	line "ROCKET bye-bye a"
-
-	para "go-go? Broken it"
-	line "is says you?"
-
-	para "Oh, no! Should I"
-	line "do what now on"
-	cont "from, me?"
+Route24RoughneckText2:
+	text "You know, maybe I"
+	line "should quit the"
+	cont "Feds and find a"
+	cont "new career."
 	done
 
 Route24_MapEvents:
@@ -126,4 +48,4 @@ Route24_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  8,  7, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24RocketScript, EVENT_ROUTE_24_ROCKET
+	object_event  8,  7, SPRITE_ROUGHNECK, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24RoughneckScript, -1

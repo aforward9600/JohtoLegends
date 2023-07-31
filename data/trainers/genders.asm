@@ -105,3 +105,5 @@ BTTrainerClassGenders:
 	db FEMALE ; DELINQUENT
 	db FEMALE ; DAISY
 	db FEMALE ; LILY
+	db MALE   ; ROUGHNECK
+	db MALE   ; SOLDIER

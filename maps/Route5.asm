@@ -12,29 +12,17 @@ Route5PokefanMScript:
 Route5UndergroundPathSign:
 	jumptext Route5UndergroundPathSignText
 
-HouseForSaleSign:
-	jumptext HouseForSaleSignText
-
 Route5PokefanMText:
-	text "The road is closed"
-	line "until the problem"
-
-	para "at the POWER PLANT"
-	line "is solved."
+	text "Take this path to"
+	line "avoid Saffron City"
+	cont "if you'd like."
 	done
 
 Route5UndergroundPathSignText:
-	text "UNDERGROUND PATH"
+	text "Underground Path"
 
-	para "CERULEAN CITY -"
-	line "VERMILION CITY"
-	done
-
-HouseForSaleSignText:
-	text "What's this?"
-
-	para "House for Sale…"
-	line "Nobody lives here."
+	para "Cerulean City -"
+	line "Vermilion City"
 	done
 
 Route5_MapEvents:
@@ -48,9 +36,8 @@ Route5_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 1 ; bg events
 	bg_event 17, 17, BGEVENT_READ, Route5UndergroundPathSign
-	bg_event 10, 11, BGEVENT_READ, HouseForSaleSign
 
 	db 1 ; object events
-	object_event 17, 16, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route5PokefanMScript, EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
+	object_event 13, 15, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route5PokefanMScript, -1

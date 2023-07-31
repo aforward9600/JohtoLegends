@@ -25,6 +25,7 @@ OpenMartDialog::
 	dw ShadyShop
 	dw TMSShop
 	dw BallsShop
+	dw MooMooMilk
 
 MartDialog:
 	ld a, MARTTYPE_STANDARD
@@ -102,6 +103,16 @@ BallsShop:
 	call MartTextbox
 	call BuyMenu
 	ld hl, Text_BallsShop_ComeAgain
+	call MartTextbox
+	ret
+
+MooMooMilk:
+	call FarReadMart
+	call LoadStandardMenuHeader
+	ld hl, Text_MooMooMilk_Intro
+	call MartTextbox
+	call BuyMenu
+	ld hl, Text_MooMooMilk_ComeAgain
 	call MartTextbox
 	ret
 
@@ -470,6 +481,7 @@ GetMartDialogGroup:
 	dwb .ShadyPointers, 0
 	dwb .TMSShopPointers, 0
 	dwb .BallsShopPointers, 0
+	dwb .MooMooMilkPointers, 0
 
 .StandardMartPointers:
 	dw Text_Mart_HowMany
@@ -525,6 +537,14 @@ GetMartDialogGroup:
 	dw Text_BallsShop_InsufficientFunds
 	dw Text_BallsShop_BagFull
 	dw Text_BallsShop_HereYouGo
+	dw BuyMenuLoop
+
+.MooMooMilkPointers:
+	dw Text_MooMooMilk_HowMany
+	dw Text_MooMooMilk_CostsThisMuch
+	dw Text_MooMooMilk_InsufficientFunds
+	dw Text_MooMooMilk_BagFull
+	dw Text_MooMooMilk_HereYouGo
 	dw BuyMenuLoop
 
 BuyMenuLoop:
@@ -1080,3 +1100,31 @@ MartTextbox:
 	call JoyWaitAorB
 	call ExitMenu
 	ret
+
+Text_MooMooMilk_Intro:
+	text_far MooMooMilk_IntroText
+	text_end
+
+Text_MooMooMilk_ComeAgain:
+	text_far MooMooMilk_ComeAgainText
+	text_end
+
+Text_MooMooMilk_HowMany:
+	text_far MooMooMilk_HowManyText
+	text_end
+
+Text_MooMooMilk_CostsThisMuch:
+	text_far MooMooMilk_CostsThisMuchText
+	text_end
+
+Text_MooMooMilk_InsufficientFunds:
+	text_far MooMooMilk_InsufficientFundsText
+	text_end
+
+Text_MooMooMilk_BagFull:
+	text_far MooMooMilk_BagFullText
+	text_end
+
+Text_MooMooMilk_HereYouGo:
+	text_far MooMooMilk_HereYouGoText
+	text_end

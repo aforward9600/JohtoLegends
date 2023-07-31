@@ -14,6 +14,7 @@ AsleepTreeMonsNite:
 	dw AIPOM
 	dw MUNCHLAX
 	dw SWABLU
+	dw PIDGEOT
 	dw -1 ; end
 
 AsleepTreeMonsDay:
@@ -23,6 +24,7 @@ AsleepTreeMonsDay:
 	dw SPINARAK
 	dw HERACROSS
 	dw PINSIR
+	dw VENOMOTH
 	dw -1 ; end
 
 AsleepTreeMonsMorn:
@@ -32,4 +34,5 @@ AsleepTreeMonsMorn:
 	dw SPINARAK
 	dw HERACROSS
 	dw PINSIR
+	dw VENOMOTH
 	dw -1 ; end

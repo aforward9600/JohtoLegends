@@ -1,92 +1,98 @@
 	object_const_def ; object_event constants
-	const ROUTE6_POKEFAN_M1
-	const ROUTE6_POKEFAN_M2
-	const ROUTE6_POKEFAN_M3
+	const ROUTE6_SOLDIER1
+	const ROUTE6_SOLDIER2
+	const ROUTE6_TEACHER
 
 Route6_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-TrainerPokefanmRex:
-	trainer POKEFANM, REX, EVENT_BEAT_POKEFANM_REX, PokefanmRexSeenText, PokefanmRexBeatenText, 0, .Script
+TrainerSoldierDwight:
+	trainer SOLDIER, DWIGHT, EVENT_BEAT_SOLDIER_DWIGHT, SoldierDwightSeenText, SoldierDwightBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokefanmRexAfterBattleText
+	writetext SoldierDwightAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPokefanmAllan:
-	trainer POKEFANM, ALLAN, EVENT_BEAT_POKEFANM_ALLAN, PokefanmAllanSeenText, PokefanmAllanBeatenText, 0, .Script
+TrainerSoldierSherman:
+	trainer SOLDIER, SHERMAN, EVENT_BEAT_SOLDIER_SHERMAN, SoldierShermanSeenText, SoldierShermanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokefanmAllanAfterBattleText
+	writetext SoldierShermanAfterBattleText
 	waitbutton
 	closetext
 	end
 
-Route6PokefanMScript:
-	jumptextfaceplayer Route6PokefanMText
+Route6Teacher:
+	jumptextfaceplayer Route6TeacherText
 
 Route6UndergroundPathSign:
 	jumptext Route6UndergroundPathSignText
 
-Route6PokefanMText:
-	text "The road is closed"
-	line "until the problem"
+Route6TeacherText:
+	text "I don't know who's"
+	line "scarier,"
 
-	para "at the POWER PLANT"
-	line "is solved."
+	para "the Feds, or the"
+	line "soldiers."
 	done
 
 Route6UndergroundPathSignText:
-	text "UNDERGROUND PATH"
+	text "Underground Path"
 
-	para "CERULEAN CITY -"
-	line "VERMILION CITY"
+	para "Cerulean City -"
+	line "Vermilion City"
 	done
 
-PokefanmRexSeenText:
-	text "My PHANPY is the"
-	line "cutest in the"
-	cont "world."
+SoldierDwightSeenText:
+	text "Halt!"
+
+	para "Identify yourself!"
 	done
 
-PokefanmRexBeatenText:
-	text "My PHANPY!"
+SoldierDwightBeatenText:
+	text "KIA!"
 	done
 
-PokefanmRexAfterBattleText:
-	text "Look how adorable"
-	line "my PHANPY acts!"
+SoldierDwightAfterBattleText:
+	text "The Champion?"
 
-	para "Isn't it cute"
-	line "enough to make"
-	cont "your heart melt?"
+	para "My mistake!"
+
+	para "We're patrolling"
+	line "the perimeter for"
+	cont "Federation thugs!"
+
+	para "All clear so far!"
 	done
 
-PokefanmAllanSeenText:
-	text "My TEDDIURSA is"
-	line "the cutest in the"
-	cont "world."
+SoldierShermanSeenText:
+	text "Perimeter has been"
+	line "breached!"
+
+	para "Target acquired!"
 	done
 
-PokefanmAllanBeatenText:
-	text "My TEDDIURSA!"
+SoldierShermanBeatenText:
+	text "Looks like I was"
+	line "the target!"
 	done
 
-PokefanmAllanAfterBattleText:
-	text "Look how adorable"
-	line "my TEDDIURSA acts!"
+SoldierShermanAfterBattleText:
+	text "We chased the Feds"
+	line "out of here a few"
+	cont "years ago."
 
-	para "Isn't it cute"
-	line "enough to make"
-	cont "your heart melt?"
+	para "We're stuck here,"
+	line "so we make the"
+	cont "best of it."
 	done
 
 Route6_MapEvents:
@@ -102,6 +108,6 @@ Route6_MapEvents:
 	bg_event 19,  5, BGEVENT_READ, Route6UndergroundPathSign
 
 	db 3 ; object events
-	object_event 17,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 2, Route6PokefanMScript, EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
-	object_event  9, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanmRex, -1
-	object_event 10, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanmAllan, -1
+	object_event 16,  9, SPRITE_ENGINEER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSoldierDwight, -1
+	object_event  9, 15, SPRITE_ENGINEER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSoldierSherman, -1
+	object_event  2,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route6Teacher, -1

@@ -53,6 +53,7 @@ CeruleanGymVioletScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_SENSATIONAL_SISTERS
+	clearevent EVENT_CERULEAN_CITY_CIVILLIANS
 	setevent EVENT_BEAT_SWIMMERF_AQUA
 	setevent EVENT_BEAT_SWIMMERF_SHEILA
 	setevent EVENT_BEAT_SWIMMERM_TANNER

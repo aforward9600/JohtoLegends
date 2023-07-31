@@ -15,18 +15,26 @@ CeruleanTradeSpeechHouseGrannyScript:
 CeruleanTradeSpeechHouseGrampsScript:
 	jumptextfaceplayer CeruleanTradeSpeechHouseGrampsText
 
-CeruleanTradeSpeechHouseRhydonScript:
+CeruleanTradeSpeechHouseJynxScript:
+	refreshscreen
+	pokepic JYNX
+	cry JYNX
+	waitbutton
+	closepokepic
 	opentext
-	writetext CeruleanTradeSpeechHouseRhydonText
-	cry KANGASKHAN
+	writetext CeruleanTradeSpeechHouseJynxText
 	waitbutton
 	closetext
 	end
 
-CeruleanTradeSpeechHouseZubatScript:
+CeruleanTradeSpeechHouseBulbasaurScript:
+	refreshscreen
+	pokepic BULBASAUR
+	cry BULBASAUR
+	waitbutton
+	closepokepic
 	opentext
-	writetext CeruleanTradeSpeechHouseZubatText
-	cry ZUBAT
+	writetext CeruleanTradeSpeechHouseBulbasaurText
 	waitbutton
 	closetext
 	end
@@ -34,21 +42,26 @@ CeruleanTradeSpeechHouseZubatScript:
 CeruleanTradeSpeechHouseGrannyText:
 	text "My husband lives"
 	line "happily with #-"
-	cont "MON he got through"
+	cont "mon he got through"
 	cont "trades."
+
+	para "Although lately,"
+	line "he's been more"
+	cont "afraid of having"
+	cont "them stolen."
 	done
 
 CeruleanTradeSpeechHouseGrampsText:
-	text "Ah… I'm so happy…"
+	text "They'll never take"
+	line "Zynx away from me!"
 	done
 
-CeruleanTradeSpeechHouseRhydonText:
-	text "KANGASKHAN: Garu"
-	line "garuu."
+CeruleanTradeSpeechHouseJynxText:
+	text "Zynx: Jynx jynx!"
 	done
 
-CeruleanTradeSpeechHouseZubatText:
-	text "ZUBAT: Zuba zubaa."
+CeruleanTradeSpeechHouseBulbasaurText:
+	text "Bulbasaur: Bulba!"
 	done
 
 CeruleanTradeSpeechHouse_MapEvents:
@@ -65,5 +78,5 @@ CeruleanTradeSpeechHouse_MapEvents:
 	db 4 ; object events
 	object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseGrannyScript, -1
 	object_event  1,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseGrampsScript, -1
-	object_event  5,  2, SPRITE_RHYDON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseRhydonScript, -1
-	object_event  5,  6, SPRITE_ZUBAT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseZubatScript, -1
+	object_event  5,  2, SPRITE_JYNX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseJynxScript, -1
+	object_event  5,  6, SPRITE_BULBASAUR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseBulbasaurScript, -1

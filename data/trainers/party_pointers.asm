@@ -105,3 +105,5 @@ TrainerGroups:
 	dba DelinquentGroup
 	dba Sensational2Group
 	dba Sensational3Group
+	dba RoughneckGroup
+	dba SoldierGroup

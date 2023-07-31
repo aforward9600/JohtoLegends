@@ -8,6 +8,7 @@
 	const MARTTYPE_SHADY
 	const MARTTYPE_TMS
 	const MARTTYPE_BALLS
+	const MARTTYPE_MOOMOO_MILK
 
 ; Marts indexes (see data/items/marts.asm)
 	const_def
@@ -54,3 +55,4 @@
 	const MART_VIOLET_TMS
 	const MART_LAKE_OF_RAGE
 	const MART_CHERRYGROVE_TMS
+	const MART_MOOMOO_MILK

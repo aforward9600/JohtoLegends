@@ -147,3 +147,21 @@ TreeMonSet_Route_47:
 	dbbw  5, 20, AIPOM
 	dbbw  5, 20, AIPOM
 	db -1
+
+TreeMonSet_ViridianForest:
+; common
+	dbbw 50, 60, PIDGEOT
+	dbbw 15, 60, BEEDRILL
+	dbbw 15, 60, BUTTERFREE
+	dbbw 10, 60, VENOMOTH
+	dbbw  5, 60, PINSIR
+	dbbw  5, 60, HERACROSS
+	db -1
+; rare
+	dbbw 50, 60, PIDGEOT
+	dbbw 15, 60, BEEDRILL
+	dbbw 15, 60, BUTTERFREE
+	dbbw 10, 60, VENOMOTH
+	dbbw  5, 60, PINSIR
+	dbbw  5, 60, HERACROSS
+	db -1

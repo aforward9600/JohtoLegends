@@ -43,6 +43,7 @@ Marts:
 	dw MartVioletTMs
 	dw MartLakeOfRage
 	dw MartCherrygroveTMs
+	dw MartMooMooMilk
 .End
 
 MartCherrygrove:
@@ -522,4 +523,9 @@ MartCherrygroveTMs:
 	db TM_FOCUS_BLAST
 	db TM_TOXIC
 	db TM_ENERGY_BALL
+	db -1 ; end
+
+MartMooMooMilk:
+	db 1 ; # items
+	db MOOMOO_MILK
 	db -1 ; end

@@ -105,3 +105,5 @@ TrainerPicPointers::
 	dba DelinquentPic
 	dba DaisyPic
 	dba LilyPic
+	dba RoughneckPic
+	dba SoldierPic

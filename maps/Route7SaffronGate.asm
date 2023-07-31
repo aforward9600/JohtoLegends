@@ -9,7 +9,7 @@ Route7SaffronGate_MapScripts:
 Route7SaffronGuardScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
+	checkevent EVENT_BEAT_SABRINA
 	iftrue .ReturnedPart
 	writetext Route7SaffronGuardPowerPlantText
 	waitbutton
@@ -23,24 +23,18 @@ Route7SaffronGuardScript:
 	end
 
 Route7SaffronGuardPowerPlantText:
-	text "Did you hear about"
-	line "the accident at"
-	cont "the POWER PLANT?"
+	text "I don't think the"
+	line "citizens can"
+	cont "forgive Koichi for"
+	cont "surrending."
 
-	para "It's located in"
-	line "the East, close to"
-	cont "LAVENDER TOWN."
+	para "Now the city is"
+	line "overrun."
 	done
 
 Route7SaffronGuardSeriousText:
-	text "I take my GUARD"
-	line "job seriously."
-
-	para "Hey! You have a"
-	line "#DEX."
-
-	para "OK. You can go"
-	line "through."
+	text "Maybe we can trust"
+	line "Koichi again."
 	done
 
 Route7SaffronGate_MapEvents:

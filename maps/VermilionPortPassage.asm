@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const VERMILIONPORTPASSAGE_TEACHER
+	const VERMILIONPORTPASSAGE_SAILOR
 
 VermilionPortPassage_MapScripts:
 	db 0 ; scene scripts
@@ -10,10 +10,11 @@ VermilionPortPassageTeacherScript:
 	jumptextfaceplayer VermilionPortPassageTeacherText
 
 VermilionPortPassageTeacherText:
-	text "The FAST SHIP"
-	line "sails on Wednes-"
-	cont "days and Sundays"
-	cont "every week."
+	text "There's no point in"
+	line "going to the port."
+
+	para "No ships leave the"
+	line "port."
 	done
 
 VermilionPortPassage_MapEvents:
@@ -31,4 +32,4 @@ VermilionPortPassage_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event 17,  1, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortPassageTeacherScript, -1
+	object_event 17,  1, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortPassageTeacherScript, -1
