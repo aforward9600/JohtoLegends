@@ -4,7 +4,7 @@
 	evs  1,   0,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
-if DEF(FAITHFUL)
+if DEF(_FAITHFUL)
 	db NORMAL, NORMAL ;type
 else
 	db GROUND, FAIRY ; type

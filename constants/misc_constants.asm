@@ -13,7 +13,11 @@ FEMALE EQU 1
 	const CHECK_FLAG
 
 ; G/S version ID: 0 = Gold, 1 = Silver (used by checkver)
+IF DEF(_NORMAL)
 GS_VERSION EQU 0
+ELIF DEF(_FAITHFUL)
+GS_VERSION EQU 1
+ENDC
 
 ; save file corruption check values
 SAVE_CHECK_VALUE_1 EQU 99

@@ -4,7 +4,7 @@
 	evs  0,   0,   0,   0,   0,   1
 	;   hp  atk  def  spd  sat  sdf
 
-if DEF(FAITHFUL)
+if DEF(_FAITHFUL)
 	db BUG, POISON ; type
 else
 	db BUG, PSYCHIC ; type

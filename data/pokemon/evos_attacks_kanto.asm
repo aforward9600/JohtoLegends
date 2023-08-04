@@ -1000,8 +1000,16 @@ VileplumeEvosAttacks:
 
 BellossomEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_FAITHFUL)
+	dbw LEARN_EVO_MOVE, MAGICAL_LEAF
+else
 	dbw LEARN_EVO_MOVE, MOONBLAST
+endc
+if DEF(_FAITHFUL)
+	dbw 1, MAGICAL_LEAF
+else
 	dbw 1, MOONBLAST
+endc
 	dbw 1, ABSORB
 	dbw 1, SWEET_SCENT
 	dbw 1, STUN_SPORE
@@ -1083,9 +1091,17 @@ VenomothEvosAttacks:
 	dbw 29, SLEEP_POWDER
 	dbw 37, LEECH_LIFE
 	dbw 41, ZEN_HEADBUTT
+if DEF(_FAITHFUL)
+	dbw 47, POISON_FANG
+else
 	dbw 47, BUG_BUZZ
+endc
 	dbw 55, PSYCHIC_M
+if DEF(_FAITHFUL)
+	dbw 59, BUG_BUZZ
+else
 	dbw 59, SIGNAL_WAVE
+endc
 	dbw 63, QUIVER_DANCE
 	db 0 ; no more level-up moves
 
@@ -3073,7 +3089,11 @@ MagmortarEvosAttacks:
 	dbw 42, SUNNY_DAY
 	dbw 49, FLAMETHROWER
 	dbw 55, FIRE_BLAST
+if DEF(_FAITHFUL)
+	dbw 62, HYPER_BEAM
+else
 	dbw 62, BELCH
+endc
 	db 0 ; no more level-up moves
 
 PinsirEvosAttacks:

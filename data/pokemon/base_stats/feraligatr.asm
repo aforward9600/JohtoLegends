@@ -4,7 +4,7 @@
 	evs  0,   2,   1,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
-if DEF(FAITHFUL)
+if DEF(_FAITHFUL)
 	db WATER, WATER ; type
 else
 	db WATER, DARK ; type

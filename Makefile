@@ -60,7 +60,7 @@ tools:
 	$(MAKE) -C tools/
 
 
-$(crystal_obj): RGBASMFLAGS =
+$(crystal_obj): RGBASMFLAGS = -D _NORMAL
 $(johtolegendsfaithful_obj): RGBASMFLAGS = -D _FAITHFUL
 
 # The dep rules have to be explicit or else missing files won't be reported.
@@ -90,7 +90,7 @@ johtolegendsv0.1.gbc: $(crystal_obj) pokecrystal.link
 
 johtolegendsfaithful.gbc: $(johtolegendsfaithful_obj) pokecrystal.link
 	$(RGBLINK) -n johtolegendsfaithful.sym -m johtolegendsfaithful.map -l pokecrystal.link -o $@ $(johtolegendsfaithful_obj)
-	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -n 1 -p 0 -r 3 -t PM_CRYSTAL $@
+	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_CRYSTAL $@
 	tools/sort_symfile.sh johtolegendsfaithful.sym
 
 %.lz: hash = $(shell tools/md5 $(*D)/$(*F) | sed "s/\(.\{8\}\).*/\1/")

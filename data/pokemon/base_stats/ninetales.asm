@@ -4,7 +4,7 @@
 	evs  0,   0,   0,   1,   1,   0
 	;   hp  atk  def  spd  sat  sdf
 
-if DEF(FAITHFUL)
+if DEF(_FAITHFUL)
 	db FIRE, FIRE ; type
 else
 	db FIRE, GHOST ; type

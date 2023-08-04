@@ -867,7 +867,9 @@ QuilavaEvosAttacks:
 
 TyphlosionEvosAttacks:
 	db 0 ; no more evolutions
+if !DEF(_FAITHFUL)
 	dbw LEARN_EVO_MOVE, EARTH_POWER
+endc
 	dbw 1, EARTH_POWER
 	dbw 1, TACKLE
 	dbw 1, LEER
@@ -882,7 +884,11 @@ TyphlosionEvosAttacks:
 	dbw 48, FLAMETHROWER
 	dbw 56, INFERNO
 	dbw 61, ROLLOUT
+if DEF(_FAITHFUL)
+	dbw 69, DOUBLE_EDGE
+else
 	dbw 69, EARTHQUAKE
+endc
 	dbw 74, FIRE_BLAST
 	dbw 82, BLAST_BURN
 	db 0 ; no more level-up moves
@@ -898,11 +904,19 @@ TotodileEvosAttacks:
 	dbw 15, SCARY_FACE
 	dbw 20, ICE_FANG
 	dbw 22, FLAIL
+if DEF(_FAITHFUL)
+	dbw 27, CRUNCH
+else
 	dbw 27, WATERFALL
+endc
 	dbw 29, HEADBUTT
+if DEF(_FAITHFUL)
 	dbw 34, SLASH
+else
+	dbw 34, CRUNCH
+endc
 	dbw 36, SCREECH
-	dbw 41, CRUNCH
+	dbw 41, THRASH
 	dbw 43, AQUA_TAIL
 	dbw 48, SUPERPOWER
 	dbw 50, WAVE_CRASH
@@ -919,11 +933,19 @@ CroconawEvosAttacks:
 	dbw 15, SCARY_FACE
 	dbw 21, ICE_FANG
 	dbw 24, FLAIL
+if DEF(_FAITHFUL)
+	dbw 30, CRUNCH
+else
 	dbw 30, WATERFALL
+endc
 	dbw 33, HEADBUTT
+if DEF(_FAITHFUL)
 	dbw 39, SLASH
+else
+	dbw 39, CRUNCH
+endc
 	dbw 42, SCREECH
-	dbw 48, CRUNCH
+	dbw 48, THRASH
 	dbw 51, AQUA_TAIL
 	dbw 57, SUPERPOWER
 	dbw 60, WAVE_CRASH
@@ -931,7 +953,9 @@ CroconawEvosAttacks:
 
 FeraligatrEvosAttacks:
 	db 0 ; no more evolutions
+if !DEF(_FAITHFUL)
 	dbw LEARN_EVO_MOVE, NIGHT_SLASH
+endc
 	dbw 1, NIGHT_SLASH
 	dbw 1, SCRATCH
 	dbw 1, LEER
@@ -941,9 +965,17 @@ FeraligatrEvosAttacks:
 	dbw 15, SCARY_FACE
 	dbw 21, ICE_FANG
 	dbw 24, FLAIL
+if DEF(_FAITHFUL)
+	dbw 32, CRUNCH
+else
 	dbw 32, WATERFALL
+endc
 	dbw 37, HEADBUTT
+if DEF(_FAITHFUL)
+	dbw 45, SLASH
+else
 	dbw 45, CRUNCH
+endc
 	dbw 50, SCREECH
 	dbw 58, THRASH
 	dbw 63, AQUA_TAIL
@@ -1004,13 +1036,21 @@ HoothootEvosAttacks:
 	dbw 13, ECHOED_VOICE
 	dbw 16, ZEN_HEADBUTT
 	dbw 19, LIGHT_SCREEN
+if DEF(_FAITHFUL)
+	dbw 22, EXTRASENSORY
+else
 	dbw 22, NIGHT_SHADE
+endc
 	dbw 25, TAKE_DOWN
 	dbw 28, REFLECT
 	dbw 31, AIR_SLASH
 	dbw 34, HYPER_VOICE
 	dbw 37, ROOST
+if DEF(_FAITHFUL)
+	dbw 40, MOONBLAST
+else
 	dbw 40, SHADOW_BALL
+endc
 	dbw 43, PSYCH_UP
 	dbw 46, DREAM_EATER
 	db 0 ; no more level-up moves
@@ -1028,13 +1068,21 @@ NoctowlEvosAttacks:
 	dbw 13, ECHOED_VOICE
 	dbw 16, ZEN_HEADBUTT
 	dbw 19, LIGHT_SCREEN
+if DEF(_FAITHFUL)
+	dbw 23, EXTRASENSORY
+else
 	dbw 23, NIGHT_SHADE
+endc
 	dbw 27, TAKE_DOWN
 	dbw 31, REFLECT
 	dbw 35, AIR_SLASH
 	dbw 39, HYPER_VOICE
 	dbw 43, ROOST
+if DEF(_FAITHFUL)
+	dbw 47, MOONBLAST
+else
 	dbw 47, SHADOW_BALL
+endc
 	dbw 51, PSYCH_UP
 	dbw 55, DREAM_EATER
 	dbw 60, HURRICANE
@@ -1075,9 +1123,17 @@ LedianEvosAttacks:
 	dbw 29, BATON_PASS
 	dbw 33, AGILITY
 	dbw 38, BUG_BUZZ
+if DEF(_FAITHFUL)
+	dbw 42, AIR_SLASH
+else
 	dbw 42, AURA_SPHERE
+endc
 	dbw 47, DOUBLE_EDGE
+if DEF(_FAITHFUL)
+	dbw 50, HURRICANE
+else
 	dbw 50, CLOSE_COMBAT
+endc
 	db 0 ; no more level-up moves
 
 SpinarakEvosAttacks:
@@ -1097,7 +1153,11 @@ SpinarakEvosAttacks:
 	dbw 33, AGILITY
 	dbw 36, X_SCISSOR
 	dbw 40, ZEN_HEADBUTT
+if DEF(_FAITHFUL)
+	dbw 43, POISON_JAB
+else
 	dbw 43, CRUNCH
+endc
 	dbw 47, CROSS_POISON
 	dbw 23, LEECH_LIFE
 	dbw 54, GUNK_SHOT
@@ -1121,7 +1181,11 @@ AriadosEvosAttacks:
 	dbw 37, AGILITY
 	dbw 41, X_SCISSOR
 	dbw 46, ZEN_HEADBUTT
+if DEF(_FAITHFUL)
+	dbw 50, POISON_JAB
+else
 	dbw 50, CRUNCH
+endc
 	dbw 55, CROSS_POISON
 	dbw 58, LEECH_LIFE
 	dbw 63, GUNK_SHOT
@@ -1555,17 +1619,28 @@ SunkernEvosAttacks:
 	dbw 16, RAZOR_LEAF
 	dbw 19, PROTECT
 	dbw 22, GIGA_DRAIN
+if DEF(_FAITHFUL)
+	dbw 25, BULLET_SEED
+else
 	dbw 25, AGILITY
+endc
 	dbw 28, SYNTHESIS
+if DEF(_FAITHFUL)
+	dbw 31, DAZZLINGLEAM
+else
 	dbw 31, EARTH_POWER
+endc
 	dbw 34, SOLARBEAM
+	dbw 37, DOUBLE_EDGE
 	dbw 40, SUNNY_DAY
 	dbw 43, SEED_BOMB
 	db 0 ; no more level-up moves
 
 SunfloraEvosAttacks:
 	db 0 ; no more evolutions
+if !DEF(_FAITHFUL)
 	dbw LEARN_EVO_MOVE, FLAME_BURST
+endc
 	dbw 1, FLAME_BURST
 	dbw 1, ABSORB
 	dbw 1, GROWTH
@@ -1575,12 +1650,25 @@ SunfloraEvosAttacks:
 	dbw 16, RAZOR_LEAF
 	dbw 19, PROTECT
 	dbw 22, GIGA_DRAIN
+if DEF(_FAITHFUL)
+	dbw 25, BULLET_SEED
+else
 	dbw 25, AGILITY
+endc
 	dbw 28, PETAL_DANCE
+if DEF(_FAITHFUL)
+	dbw 31, DAZZLINGLEAM
+else
 	dbw 31, FLAMETHROWER
+endc
 	dbw 34, SOLARBEAM
+	dbw 37, DOUBLE_EDGE
 	dbw 40, SUNNY_DAY
+if DEF(_FAITHFUL)
+	dbw 43, SOLAR_BLADE
+else
 	dbw 43, FIRE_BLAST
+endc
 	dbw 50, PETAL_BLIZZ
 	db 0 ; no more level-up moves
 
@@ -1591,18 +1679,34 @@ YanmaEvosAttacks:
 	dbw 1, FORESIGHT
 	dbw 6, QUICK_ATTACK
 	dbw 11, DOUBLE_TEAM
+if DEF(_FAITHFUL)
+	dbw 14, SONICBOOM
+else
 	dbw 14, SIGNAL_BEAM
+endc
 	dbw 17, DETECT
 	dbw 22, SUPERSONIC
 	dbw 27, HYPER_VOICE
+if DEF(_FAITHFUL)
+	dbw 30, PURSUIT
+else
 	dbw 30, BUG_BUZZ
+endc
 	dbw 33, ANCIENTPOWER
 	dbw 38, HYPNOSIS
+if DEF(_FAITHFUL)
+	dbw 43, WING_ATTACK
+else
 	dbw 43, AIR_CUTTER
+endc
 	dbw 46, SCREECH
 	dbw 49, U_TURN
 	dbw 54, AIR_SLASH
+if DEF(_FAITHFUL)
+	dbw 57, BUG_BUZZ
+else
 	dbw 57, SIGNAL_WAVE
+endc
 	db 0 ; no more level-up moves
 
 YanmegaEvosAttacks:
@@ -1613,17 +1717,41 @@ YanmegaEvosAttacks:
 	dbw 1, FORESIGHT
 	dbw 6, QUICK_ATTACK
 	dbw 11, DOUBLE_TEAM
+if DEF(_FAITHFUL)
+	dbw 14, SONICBOOM
+else
 	dbw 14, SIGNAL_BEAM
+endc
 	dbw 17, DETECT
 	dbw 22, SUPERSONIC
 	dbw 27, HYPER_VOICE
+if DEF(_FAITHFUL)
+	dbw 30, PURSUIT
+else
 	dbw 30, BUG_BUZZ
+endc
 	dbw 38, HYPNOSIS
+if DEF(_FAITHFUL)
+	dbw 43, SLASH
+else
 	dbw 43, POWER_GEM
+endc
+if DEF(_FAITHFUL)
+	dbw 46, SCREECH
+else
 	dbw 46, NASTY_PLOT
+endc
 	dbw 49, U_TURN
+if DEF(_FAITHFUL)
+	dbw 54, AIR_SLASH
+else
 	dbw 54, JURASSICBEAM
+endc
+if DEF(_FAITHFUL)
+	dbw 57, BUG_BUZZ
+else
 	dbw 57, SIGNAL_WAVE
+endc
 	db 0 ; no more level-up moves
 
 WooperEvosAttacks:
@@ -1848,7 +1976,11 @@ DunsparceEvosAttacks:
 	dbw 1, DEFENSE_CURL
 	dbw 3, ROLLOUT
 	dbw 6, LICK
+if DEF(_FAITHFUL)
+	dbw 8, PURSUIT
+else
 	dbw 8, DISARM_VOICE
+endc
 	dbw 11, SCREECH
 	dbw 13, MUD_SLAP
 	dbw 16, SING
@@ -1856,16 +1988,28 @@ DunsparceEvosAttacks:
 	dbw 21, BODY_SLAM
 	dbw 23, DRILL_RUN
 	dbw 26, ROOST
+if DEF(_FAITHFUL)
+	dbw 28, TAKE_DOWN
+else
 	dbw 28, DRAININGKISS
+endc
 	dbw 31, COIL
 	dbw 33, DIG
 	dbw 36, GLARE
 	dbw 38, DOUBLE_EDGE
 	dbw 41, EARTHQUAKE
+if DEF(_FAITHFUL)
+	dbw 43, AIR_SLASH
+else
 	dbw 43, PLAY_ROUGH
+endc
 	dbw 46, DRAGON_RUSH
 	dbw 48, ENDURE
+if DEF(_FAITHFUL)
+	dbw 51, FLAIL
+else
 	dbw 51, MOONBLAST
+endc
 	dbw 54, GIGA_IMPACT
 	db 0 ; no more level-up moves
 
@@ -1875,7 +2019,11 @@ DudunsparsEvosAttacks:
 	dbw 1, DEFENSE_CURL
 	dbw 3, ROLLOUT
 	dbw 6, LICK
+if DEF(_FAITHFUL)
+	dbw 8, PURSUIT
+else
 	dbw 8, DISARM_VOICE
+endc
 	dbw 11, SCREECH
 	dbw 13, MUD_SLAP
 	dbw 16, SING
@@ -1883,16 +2031,28 @@ DudunsparsEvosAttacks:
 	dbw 21, BODY_SLAM
 	dbw 23, DRILL_RUN
 	dbw 26, ROOST
+if DEF(_FAITHFUL)
+	dbw 28, TAKE_DOWN
+else
 	dbw 28, DRAININGKISS
+endc
 	dbw 31, COIL
 	dbw 33, DIG
 	dbw 39, GLARE
 	dbw 43, DOUBLE_EDGE
 	dbw 46, EARTHQUAKE
+if DEF(_FAITHFUL)
+	dbw 48, AIR_SLASH
+else
 	dbw 48, PLAY_ROUGH
+endc
 	dbw 51, DRAGON_RUSH
 	dbw 53, ENDURE
+if DEF(_FAITHFUL)
+	dbw 55, FLAIL
+else
 	dbw 55, MOONBLAST
+endc
 	dbw 58, GIGA_IMPACT
 	db 0 ;  no more level-up moves
 
@@ -2154,7 +2314,11 @@ SlugmaEvosAttacks:
 	dbw 20, HAZE
 	dbw 22, ANCIENTPOWER
 	dbw 27, FLAME_BURST
+if DEF(_FAITHFUL)
+	dbw 29, ROCK_SLIDE
+else
 	dbw 29, STEEL_SLICE
+endc
 	dbw 34, LAVA_PLUME
 	dbw 36, AMNESIA
 	dbw 41, BODY_SLAM
@@ -2175,8 +2339,16 @@ MagcargoEvosAttacks:
 	dbw 20, HAZE
 	dbw 22, ANCIENTPOWER
 	dbw 27, FLAME_BURST
+if DEF(_FAITHFUL)
+	dbw 30, ROCK_SLIDE
+else
 	dbw 30, STEEL_SLICE
+endc
+if DEF(_FAITHFUL)
+	dbw 33, POWER_GEM
+else
 	dbw 33, FLASH_CANNON
+endc
 	dbw 36, LAVA_PLUME
 	dbw 39, AMNESIA
 	dbw 43, BODY_SLAM
@@ -2714,7 +2886,7 @@ ManectricEvosAttacks:
 	db 0 ; no more level-up moves
 
 CroagunkEvosAttacks:
-	dbbw EVOLVE_LEVEL, 37, TOXICROAK
+	dbbw EVOLVE_LEVEL, 25, TOXICROAK
 	db 0 ; no more evolutions
 	dbw 1, ASTONISH
 	dbw 3, MUD_SLAP
@@ -2745,9 +2917,9 @@ ToxicroakEvosAttacks:
 	dbw 17, FAINT_ATTACK
 	dbw 22, REVENGE
 	dbw 24, SWAGGER
-	dbw 29, LOW_SWEEP
-	dbw 31, SUCKER_PUNCH
-	dbw 36, VENOSHOCK
+	dbw 31, LOW_SWEEP
+	dbw 36, SUCKER_PUNCH
+	dbw 38, VENOSHOCK
 	dbw 41, NASTY_PLOT
 	dbw 49, POISON_JAB
 	dbw 54, SLUDGE_BOMB

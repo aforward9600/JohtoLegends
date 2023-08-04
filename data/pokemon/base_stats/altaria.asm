@@ -4,7 +4,7 @@
 	evs  0,   0,   0,   0,   0,   2
 	;   hp  atk  def  spd  sat  sdf
 
-if DEF(FAITHFUL)
+if DEF(_FAITHFUL)
 	db DRAGON, FLYING ; type
 else
 	db DRAGON, FAIRY ; type

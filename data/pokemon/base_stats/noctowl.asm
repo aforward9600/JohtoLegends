@@ -4,7 +4,7 @@
 	evs  2,   0,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
-if DEF(FAITHFUL)
+if DEF(_FAITHFUL)
 	db NORMAL, FLYING ; type
 else
 	db GHOST, FLYING ; type
