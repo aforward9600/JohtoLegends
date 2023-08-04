@@ -4,7 +4,11 @@
 	evs  0,   0,   0,   0,   1,   1
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(FAITHFUL)
+	db GHOST, GHOST ; type
+else
 	db GHOST, FAIRY ; type
+endc
 	db 45 ; catch rate
 	db 187 ; base exp
 	db NO_ITEM, SPELL_TAG ; items

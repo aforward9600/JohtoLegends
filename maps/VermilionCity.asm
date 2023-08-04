@@ -1,10 +1,11 @@
 	object_const_def ; object_event constants
-	const VERMILIONCITY_TEACHER
+	const VERMILIONCITY_SCHOOLBOY
 	const VERMILIONCITY_GRAMPS
 	const VERMILIONCITY_MACHOP
 	const VERMILIONCITY_SUPER_NERD
-	const VERMILIONCITY_POKEFAN_M
+	const VERMILIONCITY_LASS
 	const VERMILIONCITY_SAILOR
+	const VERMILIONCITY_SOLDIER
 
 VermilionCity_MapScripts:
 	db 0 ; scene scripts
@@ -16,8 +17,8 @@ VermilionCity_MapScripts:
 	setflag ENGINE_FLYPOINT_VERMILION
 	return
 
-VermilionCityTeacherScript:
-	jumptextfaceplayer VermilionCityTeacherText
+VermilionCitySchoolboyScript:
+	jumptextfaceplayer VermilionCitySchoolboyText
 
 VermilionMachopOwner:
 	jumptextfaceplayer VermilionMachopOwnerText
@@ -40,66 +41,33 @@ VermilionCitySuperNerdScript:
 VermilionCitySailorScript:
 	jumptextfaceplayer VermilionCitySailorText
 
-VermilionSnorlax:
-	opentext
-	special SnorlaxAwake
-	iftrue .Awake
-	writetext UnknownText_0x1aab64
-	waitbutton
-	closetext
-	end
+VermilionCitySoldierScript:
+	jumptextfaceplayer VermilionCitySoldierText
 
-.Awake:
-	writetext UnknownText_0x1aab84
-	pause 15
-	cry SNORLAX
-	closetext
-	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
-	loadwildmon SNORLAX, 50
-	startbattle
+;VermilionSnorlax:
+;	opentext
+;	special SnorlaxAwake
+;	iftrue .Awake
+;	writetext UnknownText_0x1aab64
+;	waitbutton
+;	closetext
+;	end
+
+;.Awake:
+;	writetext UnknownText_0x1aab84
+;	pause 15
+;	cry SNORLAX
+;	closetext
+;	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+;	loadwildmon SNORLAX, 50
+;	startbattle
 ;	disappear VERMILIONCITY_BIG_SNORLAX
-	setevent EVENT_FOUGHT_SNORLAX
-	reloadmapafterbattle
-	end
+;	setevent EVENT_FOUGHT_SNORLAX
+;	reloadmapafterbattle
+;	end
 
-VermilionGymBadgeGuy:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_HP_UP_FROM_VERMILION_GUY
-	iftrue .AlreadyGotItem
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, .AllBadges
-	ifgreater 13, .MostBadges
-	ifgreater 9, .SomeBadges
-	writetext UnknownText_0x1aabc8
-	waitbutton
-	closetext
-	end
-
-.SomeBadges:
-	writetext UnknownText_0x1aac2b
-	waitbutton
-	closetext
-	end
-
-.MostBadges:
-	writetext UnknownText_0x1aac88
-	waitbutton
-	closetext
-	end
-
-.AllBadges:
-	writetext UnknownText_0x1aacf3
-	buttonsound
-	verbosegiveitem HP_UP
-	iffalse .Done
-	setevent EVENT_GOT_HP_UP_FROM_VERMILION_GUY
-.AlreadyGotItem:
-	writetext UnknownText_0x1aad4a
-	waitbutton
-.Done:
-	closetext
-	end
+VermilionCityLassScript:
+	jumptextfaceplayer VermilionCityLassText
 
 VermilionCitySign:
 	jumptext VermilionCitySignText
@@ -128,14 +96,13 @@ VermilionCityHiddenFullHeal:
 VermilionCityBarracksSign:
 	jumptext VermilionCityBarracksSignText
 
-VermilionCityTeacherText:
-	text "VERMILION PORT is"
-	line "KANTO's seaside"
-	cont "gateway."
+VermilionCitySchoolboyText:
+	text "I wanna join the"
+	line "army when I grow"
+	cont "up!"
 
-	para "Luxury liners from"
-	line "around the world"
-	cont "dock here."
+	para "I'll save everyone"
+	line "and look cool!"
 	done
 
 VermilionMachopOwnerText:
@@ -161,12 +128,17 @@ VermilionMachopText2:
 	done
 
 VermilionCitySuperNerdText:
-	text "There are eight"
-	line "GYMS in KANTO."
+	text "All these houses"
+	line "are just going to"
+	cont "collapse."
 
-	para "That big building"
-	line "is VERMILION's"
-	cont "#MON GYM."
+	para "We should probably"
+	line "get to fixing them"
+	cont "up soon."
+
+	para "The soldiers will"
+	line "save us from any"
+	cont "further damage."
 	done
 
 UnknownText_0x1aab64:
@@ -182,61 +154,6 @@ UnknownText_0x1aab84:
 	para "…"
 
 	para "SNORLAX woke up!"
-	done
-
-UnknownText_0x1aabc8:
-	text "Skilled trainers"
-	line "gather in KANTO."
-
-	para "GYM LEADERS are"
-	line "especially strong."
-
-	para "They won't be easy"
-	line "to defeat."
-	done
-
-UnknownText_0x1aac2b:
-	text "You've started to"
-	line "collect KANTO GYM"
-	cont "BADGES?"
-
-	para "Don't you agree"
-	line "that the trainers"
-	cont "here are tough?"
-	done
-
-UnknownText_0x1aac88:
-	text "I guess you'll be"
-	line "finished with your"
-
-	para "conquest of KANTO"
-	line "GYMS soon."
-
-	para "Let me know if"
-	line "you get all eight"
-	cont "BADGES."
-	done
-
-UnknownText_0x1aacf3:
-	text "Congratulations!"
-
-	para "You got all the"
-	line "KANTO GYM BADGES."
-
-	para "I've got a reward"
-	line "for your efforts."
-	done
-
-UnknownText_0x1aad4a:
-	text "Having a variety"
-	line "of #MON types"
-
-	para "should give you an"
-	line "edge in battle."
-
-	para "I'm sure the KANTO"
-	line "GYM BADGES will"
-	cont "help you."
 	done
 
 VermilionCitySignText:
@@ -288,6 +205,27 @@ VermilionCitySailorText:
 	line "mad!"
 	done
 
+VermilionCitySoldierText:
+	text "Left, right, left,"
+	line "right."
+
+	para "All clear for now!"
+	done
+
+VermilionCityLassText:
+	text "When the soldiers"
+	line "first came, we all"
+	cont "hated them."
+
+	para "After the Feds"
+	line "burned down the"
+	cont "Gym, they helped"
+	cont "kick them out."
+
+	para "Now they're our"
+	line "protectors."
+	done
+
 VermilionCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -316,10 +254,11 @@ VermilionCity_MapEvents:
 	bg_event 12, 19, BGEVENT_ITEM, VermilionCityHiddenFullHeal
 	bg_event  5, 19, BGEVENT_READ, VermilionCityBarracksSign
 
-	db 6 ; object events
-	object_event 18,  9, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityTeacherScript, -1
+	db 7 ; object events
+	object_event 18, 12, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCitySchoolboyScript, -1
 	object_event 29,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionMachopOwner, -1
 	object_event 27,  5, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VermilionMachop, -1
-	object_event 34,  8, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionSnorlax, EVENT_VERMILION_CITY_SNORLAX
-	object_event 31, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionGymBadgeGuy, -1
+	object_event 21,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCitySuperNerdScript, -1
+	object_event 28, 12, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionCityLassScript, -1
 	object_event 24, 24, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCitySailorScript, -1
+	object_event  8, 21, SPRITE_ENGINEER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionCitySoldierScript, -1

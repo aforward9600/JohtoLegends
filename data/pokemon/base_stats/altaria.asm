@@ -4,7 +4,11 @@
 	evs  0,   0,   0,   0,   0,   2
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(FAITHFUL)
 	db DRAGON, FLYING ; type
+else
+	db DRAGON, FAIRY ; type
+endc
 	db 45 ; catch rate
 	db 172 ; base exp
 	db NO_ITEM, NO_ITEM ; items

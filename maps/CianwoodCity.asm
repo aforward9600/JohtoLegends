@@ -123,7 +123,7 @@ ChucksWifeEasierToFlyText:
 	line "maybe he'll stop"
 	cont "being so focused."
 
-	para "If you beat, him"
+	para "If you beat him,"
 	line "come and see me."
 	cont "I'll give you a"
 	cont "gift."

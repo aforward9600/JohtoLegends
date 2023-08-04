@@ -131,7 +131,7 @@ OlivineGym1FStatue:
 	jumpstd gymstatue3
 .RivalBeaten:
 	gettrainername STRING_BUFFER_4, BYRON, BYRON1
-	jumpstd gymstatue1
+	jumpstd gymstatue5
 
 FirstElevator:
 	special FadeBlackQuickly

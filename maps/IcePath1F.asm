@@ -164,7 +164,7 @@ IcePath1FSmoochumText:
 IcePath1FPryceText:
 	text "This cold is"
 	line "certainly not good"
-	cont "good for my back,"
+	cont "for my back,"
 
 	para "but it helps"
 	line "improve the power"

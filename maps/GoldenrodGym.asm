@@ -249,7 +249,7 @@ GoldenrodGymStatue:
 	jumpstd gymstatue3
 .RivalBeatGym:
 	gettrainername STRING_BUFFER_4, MILTON, MILTON1
-	jumpstd gymstatue2
+	jumpstd gymstatue5
 
 TowerInvaded1:
 	moveobject, GOLDENRODGYM_DAHLIA, 3, 17

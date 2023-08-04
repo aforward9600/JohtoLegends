@@ -534,6 +534,13 @@ Route34SignText:
 
 	para "Ilex Forest"
 	line "somewhere between"
+
+	para "There's something"
+	line "scribbled here…"
+
+	para "Cooltrainer Tina"
+	line "is always up for a"
+	cont "battle!"
 	done
 
 Route34TrainerTipsText:

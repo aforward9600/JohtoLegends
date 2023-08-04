@@ -4,7 +4,11 @@
 	evs  0,   0,   0,   0,   3,   0
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(FAITHFUL)
+	db FIRE, FIRE ; type
+else
 	db FIRE, POISON ; type
+endc
 	db 30 ; catch rate
 	db 199 ; base exp
 	db RAWST_BERRY, RAWST_BERRY ; items

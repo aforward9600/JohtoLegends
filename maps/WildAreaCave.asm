@@ -35,7 +35,7 @@ WildAreaCaveSign:
 
 WildAreaCaveHikerText:
 	text "I've always wanted"
-	line "a Dunsparce, but"
+	line "a Kangaskhan, but"
 	cont "it feels like it's"
 
 	para "only a 1 percent"
@@ -43,9 +43,9 @@ WildAreaCaveHikerText:
 	cont "one."
 
 	para "Maybe I should"
-	line "hike over to"
-	cont "Dark Cave and find"
-	cont "one…"
+	line "watch the Swarm"
+	cont "Channel and see if"
+	cont "one will show up."
 	done
 
 WildAreaCaveChigusaText:

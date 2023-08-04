@@ -237,6 +237,8 @@ MahoganyGymGuyScript:
 	opentext
 	checkevent EVENT_BEAT_PRYCE
 	iftrue .MahoganyGymGuyWinScript
+	checkver
+	iftrue .Faithful
 	writetext MahoganyGymGuyText
 	waitbutton
 	closetext
@@ -244,6 +246,12 @@ MahoganyGymGuyScript:
 
 .MahoganyGymGuyWinScript:
 	writetext MahoganyGymGuyWinText
+	waitbutton
+	closetext
+	end
+
+.Faithful:
+	writetext MahoganyGymGuyFaithfulText
 	waitbutton
 	closetext
 	end
@@ -617,6 +625,33 @@ ByTheWay2Text:
 
 	para "You better go see"
 	line "him."
+	done
+
+MahoganyGymGuyFaithfulText:
+	text "How's it going,"
+	line "champ in the"
+	cont "making?"
+
+	para "I'm the Gym Guide"
+	line "and I'm here to"
+	cont "help you out with"
+
+	para "your Challenge!"
+	line "Pryce loves his"
+	cont "Ice-Types, and"
+
+	para "he's quite ornery"
+	line "if you mention his"
+	cont "age!"
+	
+	para "Ice-Types are weak"
+	line "against Fire,"
+	cont "Rock, Steel, and"
+
+	para "Fighting Types!"
+	line "Dragon and Ground"
+	cont "Types don't do the"
+	cont "greatest."
 	done
 
 MahoganyGym_MapEvents:

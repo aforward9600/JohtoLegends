@@ -59,6 +59,7 @@ StdScripts::
 	dba TelevisionScript
 	dba SwarmScript
 	dba GetDecoEvent
+	dba GymStatue5Script
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -2322,4 +2323,14 @@ SwarmScript:
 	special FadeOutMusic
 	pause 15
 	special RestartMapMusic
+	end
+
+GymStatue5Script:
+	getcurlandmarkname STRING_BUFFER_3
+	opentext
+	farwritetext GymStatue_CityGymText
+	buttonsound
+	farwritetext GymStatue_WinningTrainers5Text
+	waitbutton
+	closetext
 	end

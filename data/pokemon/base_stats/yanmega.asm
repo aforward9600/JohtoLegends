@@ -4,7 +4,11 @@
 	evs  0,   0,   0,   0,   2,   0
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(FAITHFUL)
+	db BUG, FLYING ; type
+else
 	db BUG, ROCK ; type
+endc
 	db 30 ; catch rate
 	db 180 ; base exp
 	db NO_ITEM, NO_ITEM ; items

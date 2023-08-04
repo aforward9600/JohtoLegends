@@ -242,7 +242,7 @@ CianwoodGymStatue:
 	jumpstd gymstatue3
 .RivalBeaten:
 	gettrainername STRING_BUFFER_4, CHIGUSA, CHIGUSA1
-	jumpstd gymstatue2
+	jumpstd gymstatue5
 
 CianwoodGymDahliaScript:
 	faceplayer

@@ -4,7 +4,11 @@
 	evs  0,   0,   0,   1,   1,   0
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(FAITHFUL)
+	db BUG, POISON ; type
+else
 	db BUG, PSYCHIC ; type
+endc
 	db 75 ; catch rate
 	db 138 ; base exp
 	db NO_ITEM, NO_ITEM ; items

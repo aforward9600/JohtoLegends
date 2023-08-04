@@ -220,7 +220,7 @@ AzaleaGymStatue:
 	jumpstd gymstatue3
 .RivalBeatGym:
 	gettrainername STRING_BUFFER_4, KURT, KURT1
-	jumpstd gymstatue2
+	jumpstd gymstatue5
 
 KurtText_DangSilph:
 	text "Humph. I'm Kurt,"

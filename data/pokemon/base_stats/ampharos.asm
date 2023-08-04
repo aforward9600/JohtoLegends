@@ -4,7 +4,11 @@
 	evs  0,   0,   0,   0,   3,   0
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(FAITHFUL)
+	db ELECTRIC, ELECTRIC ; type
+else
 	db ELECTRIC, DRAGON ; type
+endc
 	db 45 ; catch rate
 	db 194 ; base exp
 	db NO_ITEM, NO_ITEM ; items

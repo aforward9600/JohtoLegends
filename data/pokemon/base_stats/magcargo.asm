@@ -4,7 +4,11 @@
 	evs  0,   0,   2,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(FAITHFUL)
+	db FIRE, ROCK ; type
+else
 	db FIRE, STEEL ; type
+endc
 	db 75 ; catch rate
 	db 154 ; base exp
 	db NO_ITEM, NO_ITEM ; items

@@ -13,11 +13,14 @@ DiglettsCaveHiddenMaxRevive:
 	hiddenitem MAX_REVIVE, EVENT_DIGLETTS_CAVE_HIDDEN_MAX_REVIVE
 
 DiglettsCavePokefanMText:
-	text "A bunch of DIGLETT"
-	line "popped out of the"
+	text "The Diglett here"
+	line "are a natural Fed"
+	cont "repellent!"
 
-	para "ground! That was"
-	line "shocking."
+	para "They cause their"
+	line "bikes to tip over!"
+
+	para "It's fun to watch!"
 	done
 
 DiglettsCave_MapEvents:
@@ -37,4 +40,4 @@ DiglettsCave_MapEvents:
 	bg_event  6, 11, BGEVENT_ITEM, DiglettsCaveHiddenMaxRevive
 
 	db 1 ; object events
-	object_event  3, 31, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DiglettsCavePokefanMScript, -1
+	object_event  3, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DiglettsCavePokefanMScript, -1

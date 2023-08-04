@@ -4,7 +4,11 @@
 	evs  0,   1,   0,   0,   1,   0
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(FAITHFUL)
+	db WATER, WATER ; type
+else
 	db WATER, STEEL ; type
+endc
 	db 75 ; catch rate
 	db 164 ; base exp
 	db NO_ITEM, NO_ITEM ; items

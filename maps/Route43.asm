@@ -360,7 +360,7 @@ AskEggText:
 	line "Care on Route 34,"
 
 	para "but hatching eggs"
-	line "isn't something"
+	line "isn't something I'm"
 	cont "good at…"
 	done
 

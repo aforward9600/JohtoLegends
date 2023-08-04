@@ -122,9 +122,9 @@ CacneaOakText::
 	line "areas such as"
 	cont "deserts."
 
-	para "Any Cacnea found in"
-	line "the wild in Johto"
-	cont "are relocated to"
+	para "Any Cacnea found"
+	line "in the wild are"
+	cont "relocated to"
 	cont "the Wild Area."
 
 	para "Getting a hug from"

@@ -4,7 +4,11 @@
 	evs  0,   0,   1,   0,   0,   2
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(FAITHFUL)
+	db GRASS, GRASS ; type
+else
 	db GRASS, FAIRY ; type
+endc
 	db 45 ; catch rate
 	db 208 ; base exp
 	db NO_ITEM, NO_ITEM ; items

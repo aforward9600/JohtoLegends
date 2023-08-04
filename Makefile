@@ -1,4 +1,4 @@
-roms := johtolegendsv0.1.gbc
+roms := johtolegendsv0.1.gbc johtolegendsfaithful.gbc
 
 crystal_obj := \
 audio.o \
@@ -15,6 +15,8 @@ engine/overworld/events.o \
 gfx/pics.o \
 gfx/sprites.o \
 lib/mobile/main.o
+
+johtolegendsfaithful_obj := $(crystal_obj:.o=faithful.o)
 
 ### Build tools
 
@@ -34,26 +36,32 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all clean tidy tools
+.PHONY: all faithful clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
 all: johtolegendsv0.1.gbc
+faithful: johtolegendsfaithful.gbc
 
 clean: tidy
 	find gfx \( -name "*.[12]bpp" -o -name "*.lz" -o -name "*.gbcpal" \) -delete
 	find gfx/pokemon -mindepth 1 ! -path "gfx/pokemon/unown/*" \( -name "bitmask.asm" -o -name "frames.asm" -o -name "front.animated.tilemap" -o -name "front.dimensions" \) -delete
+	$(MAKE) clean -C tools/
 
 tidy:
-	rm -f $(roms) $(crystal_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
+	rm -f $(roms) $(crystal_obj) $(johtolegendsfaithful_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
 	$(MAKE) clean -C tools/
+
+compare: $(roms)
+	@$(SHA1) -c roms.sha1
 
 tools:
 	$(MAKE) -C tools/
 
 
 $(crystal_obj): RGBASMFLAGS =
+$(johtolegendsfaithful_obj): RGBASMFLAGS = -D _FAITHFUL
 
 # The dep rules have to be explicit or else missing files won't be reported.
 # As a side effect, they're evaluated immediately instead of when the rule is invoked.
@@ -69,6 +77,7 @@ ifeq (,$(filter clean tools,$(MAKECMDGOALS)))
 
 $(info $(shell $(MAKE) -C tools))
 
+$(foreach obj, $(johtolegendsfaithful_obj), $(eval $(call DEP,$(obj),$(obj:faithful.o=.asm))))
 $(foreach obj, $(crystal_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 
 endif
@@ -79,8 +88,17 @@ johtolegendsv0.1.gbc: $(crystal_obj) pokecrystal.link
 	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_CRYSTAL $@
 	tools/sort_symfile.sh johtolegendsv0.1.sym
 
+johtolegendsfaithful.gbc: $(johtolegendsfaithful_obj) pokecrystal.link
+	$(RGBLINK) -n johtolegendsfaithful.sym -m johtolegendsfaithful.map -l pokecrystal.link -o $@ $(johtolegendsfaithful_obj)
+	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -n 1 -p 0 -r 3 -t PM_CRYSTAL $@
+	tools/sort_symfile.sh johtolegendsfaithful.sym
+
+%.lz: hash = $(shell tools/md5 $(*D)/$(*F) | sed "s/\(.\{8\}\).*/\1/")
 %.lz: %
-	tools/lzcomp -- $< $@
+	$(eval filename := $@.$(hash))
+	$(if $(wildcard $(filename)),\
+		cp $(filename) $@,\
+		tools/lzcomp -- $< $@)
 
 
 ### Pokemon pic animation rules

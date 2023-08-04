@@ -409,3 +409,12 @@ RegisteredNumber2Text:
 	text_ram wStringBuffer3
 	text "'s number."
 	done
+
+GymStatue_WinningTrainers5Text:
+	text "Leader: @"
+	text_ram wStringBuffer4
+	text_start
+	para "Winning Trainers:"
+	line "<PLAYER>"
+	cont "<RIVAL>"
+	done
