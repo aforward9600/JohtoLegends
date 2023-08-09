@@ -3548,6 +3548,7 @@ CheckWhetherToAskSwitch:
 	ld a, [wBattleHasJustStarted]
 	dec a
 	jp z, .return_nc
+if !DEF(_CHALLENGE)
 	ld a, [wPartyCount]
 	dec a
 	jp z, .return_nc
@@ -3567,6 +3568,7 @@ CheckWhetherToAskSwitch:
 	ld [wCurPartyMon], a
 	jr c, .return_nc
 	scf
+endc
 	ret
 
 .return_nc
@@ -5048,6 +5050,16 @@ BattleMenu_Pack:
 	ld a, [wLinkMode]
 	and a
 	jp nz, .ItemsCantBeUsed
+
+if DEF(_CHALLENGE)
+	ld a, [wBattleType]
+	cp BATTLETYPE_CANLOSE
+	jp z, .ItemsCantBeUsed
+
+	ld a, [wBattleMode]
+	dec a
+	jp nz, .ItemsCantBeUsed
+endc
 
 	ld a, [wInBattleTowerBattle]
 	and a
@@ -7300,6 +7312,19 @@ GiveExperiencePoints:
 	ld b, a
 	jr .ev_loop
 .evs_done
+if DEF(_CHALLENGE)
+	pop bc
+	ld hl, MON_LEVEL
+	add hl, bc
+	ld a, [wLevelCap]
+	push bc
+	ld b, a
+	ld a, [hl]
+	cp b
+	pop bc
+	jp nc, .next_mon
+	push bc
+endc
 	pop bc
 	ld hl, MON_LEVEL
 	add hl, bc
@@ -7402,7 +7427,13 @@ GiveExperiencePoints:
 	ld [wCurSpecies], a
 	call GetBaseData
 	push bc
+if !DEF(_CHALLENGE)
 	ld d, MAX_LEVEL
+endc
+if DEF(_CHALLENGE)
+	ld a, [wLevelCap]
+	ld d, a
+endc
 	callfar CalcExpAtLevel
 	pop bc
 	ld hl, MON_EXP + 2
@@ -7437,8 +7468,19 @@ GiveExperiencePoints:
 	pop bc
 	ld hl, MON_LEVEL
 	add hl, bc
+if DEF(_CHALLENGE)
+	ld a, [wLevelCap]
+	push bc
+	ld b, a
+endc
 	ld a, [hl]
+if !DEF(_CHALLENGE)
 	cp MAX_LEVEL
+endc
+if DEF(_CHALLENGE)
+	cp b
+	pop bc
+endc
 	jp nc, .next_mon
 	cp d
 	jp z, .next_mon
@@ -7708,8 +7750,19 @@ AnimateExpBar:
 	cp [hl]
 	jp nz, .finish
 
+if DEF(_CHALLENGE)
+	ld a, [wLevelCap]
+	push bc
+	ld b, a
+endc
 	ld a, [wBattleMonLevel]
+if !DEF(_CHALLENGE)
 	cp MAX_LEVEL
+endc
+if DEF(_CHALLENGE)
+	cp b
+	pop bc
+endc
 	jp nc, .finish
 
 	ldh a, [hProduct + 3]
@@ -7746,7 +7799,13 @@ AnimateExpBar:
 	ld [hl], a
 
 .NoOverflow:
+if !DEF(_CHALLENGE)
 	ld d, MAX_LEVEL
+endc
+if DEF(_CHALLENGE)
+	ld a, [wLevelCap]
+	ld d, a
+endc
 	callfar CalcExpAtLevel
 	ldh a, [hProduct + 1]
 	ld b, a
@@ -7781,8 +7840,19 @@ AnimateExpBar:
 	ld d, a
 
 .LoopLevels:
+if DEF(_CHALLENGE)
+	ld a, [wLevelCap]
+	push bc
+	ld b, a
+endc
 	ld a, e
+if !DEF(_CHALLENGE)
 	cp MAX_LEVEL
+endc
+if DEF(_CHALLENGE)
+	cp b
+	pop bc
+endc
 	jr nc, .FinishExpBar
 	cp d
 	jr z, .FinishExpBar

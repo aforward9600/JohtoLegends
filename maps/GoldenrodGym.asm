@@ -61,6 +61,7 @@ GoldenrodGymMiltonScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_PLAINBADGE
+	loadmem wLevelCap, 44
 	readvar VAR_BADGES
 	setflag ENGINE_BEAT_MILTON
 .FightDone:

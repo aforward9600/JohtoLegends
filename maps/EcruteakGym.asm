@@ -72,6 +72,7 @@ EcruteakGymEnokiScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_FOGBADGE
+	loadmem wLevelCap, 28
 	readvar VAR_BADGES
 	scall EcruteakGymActivateRockets
 	setflag ENGINE_BEAT_ENOKI

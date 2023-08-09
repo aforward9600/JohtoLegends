@@ -62,6 +62,7 @@ CianwoodGymChigusaScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_STORMBADGE
+	loadmem wLevelCap, 31
 	readvar VAR_BADGES
 	scall CianwoodGymActivateRockets
 	setscene SCENE_FINISHED

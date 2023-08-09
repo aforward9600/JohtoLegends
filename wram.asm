@@ -2725,7 +2725,7 @@ wRalphFightCount::   db
 wLizFightCount::     db
 wAnthonyFightCount:: db
 wToddFightCount::    db
-wGinaFightCount::    db
+wLevelCap::          db
 wArnieFightCount::   db
 wAlanFightCount::    db
 wDanaFightCount::    db

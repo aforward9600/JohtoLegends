@@ -118,6 +118,7 @@ CreditsScript:
 	db           PRISM_TEAM, 2
 	db              CHAMBER, 3
 	db                 SOLO, 4
+	db             LUIGITKO, 5
 
 	db CREDITS_WAIT, 12
 

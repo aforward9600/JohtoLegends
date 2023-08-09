@@ -5,8 +5,20 @@ CalcLevel:
 	ld d, 1
 .next_level
 	inc d
+if DEF(_CHALLENGE)
+	ld a, [wLevelCap]
+	inc a
+	push bc
+	ld b, a
+endc
 	ld a, d
+if !DEF(_CHALLENGE)
 	cp LOW(MAX_LEVEL + 1)
+endc
+if DEF(_CHALLENGE)
+	cp b
+	pop bc
+endc
 	jr z, .got_level
 	call CalcExpAtLevel
 	push hl

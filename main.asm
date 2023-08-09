@@ -694,10 +694,6 @@ INCLUDE "engine/events/battle_tower/load_trainer.asm"
 INCLUDE "engine/events/odd_egg.asm"
 
 
-SECTION "Mobile Stadium 2", ROMX
-
-INCBIN "mobile/stadium/stadium2.bin"
-
 SECTION "16-bit ID stuff", ROMX
 
 INCLUDE "engine/16/table_functions.asm"

@@ -2886,7 +2886,7 @@ ManectricEvosAttacks:
 	db 0 ; no more level-up moves
 
 CroagunkEvosAttacks:
-	dbbw EVOLVE_LEVEL, 25, TOXICROAK
+	dbbw EVOLVE_LEVEL, 28, TOXICROAK
 	db 0 ; no more evolutions
 	dbw 1, ASTONISH
 	dbw 3, MUD_SLAP

@@ -222,6 +222,11 @@ endc
 	inc hl
 	ld [hl], LOW(MOM_MONEY)
 
+if DEF(_CHALLENGE)
+	ld a, 15
+	ld [wLevelCap], a
+endc
+
 	call InitializeNPCNames
 
 	farcall InitDecorations

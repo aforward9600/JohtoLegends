@@ -1461,9 +1461,9 @@ ScriptCall:
 	ret
 
 CallCallback::
-	ld a, [wScriptBank]
-	or $80
-	ld [wScriptBank], a
+;	ld a, [wScriptBank]
+;	or $80
+;	ld [wScriptBank], a
 	jp ScriptCall
 
 Script_sjump:
@@ -2730,7 +2730,7 @@ ExitScriptSubroutine:
 	add hl, de
 	ld a, [hli]
 	ld b, a
-	and " "
+;	and " "
 	ld [wScriptBank], a
 	ld a, [hli]
 	ld e, a

@@ -59,6 +59,7 @@ MahoganyGymPryceScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_GLACIERBADGE
+	loadmem wLevelCap, 22
 	readvar VAR_BADGES
 	scall MahoganyGymActivateRockets
 	setflag ENGINE_BEAT_PRYCE
@@ -237,8 +238,9 @@ MahoganyGymGuyScript:
 	opentext
 	checkevent EVENT_BEAT_PRYCE
 	iftrue .MahoganyGymGuyWinScript
-	checkver
-	iftrue .Faithful
+if DEF(_FAITHFUL)
+	writetext MahoganyGymGuyFaithfulText
+endc
 	writetext MahoganyGymGuyText
 	waitbutton
 	closetext
@@ -246,12 +248,6 @@ MahoganyGymGuyScript:
 
 .MahoganyGymGuyWinScript:
 	writetext MahoganyGymGuyWinText
-	waitbutton
-	closetext
-	end
-
-.Faithful:
-	writetext MahoganyGymGuyFaithfulText
 	waitbutton
 	closetext
 	end

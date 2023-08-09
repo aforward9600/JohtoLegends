@@ -213,6 +213,7 @@ MeetGrandmaScript:
 	setscene SCENE_PLAYERS_HOUSE_NOTHING
 	setevent EVENT_GOT_RIVALS_MESSAGE
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
+	loadmem wLevelCap, 80
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .Finish2

@@ -59,6 +59,7 @@ VioletGymWalkerScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_ZEPHYRBADGE
+	loadmem wLevelCap, 55
 	setflag ENGINE_BEAT_WALKER
 .FightDone:
 	checkflag ENGINE_BEAT_WALKER

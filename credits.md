@@ -142,6 +142,7 @@ Pikachu25
 Ryta
 Koolboyman
 Prism Team
+LuigiTKO
 
 Gen 3 and 6 minisprites:
 EeVeeEe1999

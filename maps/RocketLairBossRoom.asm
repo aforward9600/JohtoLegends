@@ -190,6 +190,7 @@ MadameBossBattle:
 	iftrue .RemoveRival3
 	clearevent EVENT_HOOH_LUGIA_ROOM_RIVAL3
 	setevent EVENT_TIN_TOWER_1F_WISE_TRIO_2
+	loadmem wLevelCap, 66
 	end
 
 .RemoveRival3:

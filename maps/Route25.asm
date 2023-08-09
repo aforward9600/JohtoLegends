@@ -31,7 +31,7 @@ TrainerBikerChance:
 	end
 
 TrainerRoughneckPhillip:
-	trainer CAMPER, LLOYD, EVENT_BEAT_ROUGHNECK_PHILLIP, RoughneckPhillipSeenText, RoughneckPhillipBeatenText, 0, .Script
+	trainer ROUGHNECK, PHILLIP, EVENT_BEAT_ROUGHNECK_PHILLIP, RoughneckPhillipSeenText, RoughneckPhillipBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

@@ -67,6 +67,7 @@ BlackthornGymMasterScript:
 	waitsfx
 	setflag ENGINE_RISINGBADGE
 	setflag ENGINE_BEAT_MASTER
+	loadmem wLevelCap, 60
 	readvar VAR_BADGES
 .FightDone:
 	checkflag ENGINE_BEAT_MASTER

@@ -52,6 +52,7 @@ AzaleaGymKurtScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_HIVEBADGE
+	loadmem wLevelCap, 51
 	readvar VAR_BADGES
 	setmapscene AZALEA_TOWN, SCENE_AZALEATOWN_RIVAL_BATTLE
 	setflag ENGINE_BEAT_KURT

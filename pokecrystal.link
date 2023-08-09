@@ -310,8 +310,6 @@ ROMX $7d
 ROMX $7e
 	"Crystal Events"
 ROMX $7f
-	org $7de0
-	"Mobile Stadium 2"
 WRAM0
 	"Stack"
 	"Audio RAM"

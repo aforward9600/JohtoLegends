@@ -54,6 +54,7 @@ OlivineGym1FByronScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_MINERALBADGE
+	loadmem wLevelCap, 34
 	readvar VAR_BADGES
 	setflag ENGINE_BEAT_BYRON
 .FightDone:
