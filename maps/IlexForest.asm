@@ -474,7 +474,7 @@ SuperNerdIrwinAfterBattleText:
 
 CooltrainerFEmikoSeenText:
 	text "Have you heard the"
-	line "the legend of the"
+	line "legend of the"
 	cont "Guardian of the"
 	cont "Forest?"
 	done

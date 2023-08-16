@@ -113,17 +113,17 @@ RooftopSaleLoopScript:
 
 RooftopSaleMenu:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, 18, TEXTBOX_Y - 1
+	menu_coords 0, 2, 19, TEXTBOX_Y - 1
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "Kotora Doll  ¥2800@"
-	db "Pikachu Bed  ¥3400@"
-	db "Magna Plant  ¥2500@"
-	db "Yell. Carpet ¥3300@"
+	db "Kotora Doll ¥2800@"
+	db "Pikachu Bed ¥3400@"
+	db "Magna Plant ¥2500@"
+	db "Y. Carpet   ¥3300@"
 
 RooftopSale_FinishScript:
 	waitsfx

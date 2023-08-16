@@ -11,6 +11,7 @@
 	const CIANWOODCITY_LASS1
 	const CIANWOODCITY_STANDING_YOUNGSTER2
 	const CIANWOODCITY_POKE_BALL
+	const CIANWOODCITY_SCHOOLBOY2
 
 CianwoodCity_MapScripts:
 	db 2 ; scene scripts
@@ -56,6 +57,14 @@ CianwoodCityChucksWife:
 	writetext ChucksWifeChubbyText
 	waitbutton
 .Done:
+	closetext
+	end
+
+ForestTrade:
+	faceplayer
+	opentext
+	trade NPC_TRADE_FOREST
+	waitbutton
 	closetext
 	end
 
@@ -277,7 +286,7 @@ CianwoodCity_MapEvents:
 	bg_event  4, 19, BGEVENT_ITEM, CianwoodCityHiddenRevive
 	bg_event  5, 29, BGEVENT_ITEM, CianwoodCityHiddenMaxEther
 
-	db 12 ; object events
+	db 13 ; object events
 	object_event 21, 37, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityYoungster, -1
 	object_event 17, 33, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityPokefanM, -1
 	object_event 12, 37, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodCityLassScript, -1
@@ -290,3 +299,4 @@ CianwoodCity_MapEvents:
 	object_event 10, 46, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
 	object_event  4, 24, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CliffsEdgeGateGuardScript, EVENT_CLIFFS_EDGE_GATE_GUARD
 	object_event 10, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, CianwoodCityItemBallScript, EVENT_CIANWOOD_CITY_ITEM_BALL
+	object_event 18, 44, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ForestTrade, -1

@@ -201,6 +201,9 @@ MainMenuJoypadLoop:
 	jr z, .b_button
 	cp A_BUTTON
 	jr z, .a_button
+	ld de, .build_string
+	hlcoord 1, 12
+	call PlaceString
 	jr .loop
 
 .a_button
@@ -211,6 +214,15 @@ MainMenuJoypadLoop:
 .b_button
 	scf
 	ret
+
+.build_string:
+if DEF(_CHALLENGE)
+	db "V0.4.2 Challenge@"
+elif DEF(_FAITHFUL)
+	db "V0.4.2 Faithful@"
+else
+	db "V0.4.2 Original@"
+endc
 
 MainMenu_PrintCurrentTimeAndDay:
 	ld a, [wSaveFileExists]

@@ -7,7 +7,7 @@
 	db ELECTRIC, ELECTRIC ; type
 	db 75 ; catch rate
 	db 122 ; base exp
-	db NO_ITEM, ORAN_BERRY ; items
+	db NO_ITEM, LIGHT_BALL ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/raichu/front.dimensions"

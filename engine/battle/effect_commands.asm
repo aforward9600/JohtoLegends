@@ -2807,6 +2807,12 @@ LightBallBoost:
 	ld bc, PIKACHU
 	ld d, LIGHT_BALL
 	call SpeciesItemBoost
+	if RAICHU == (PIKACHU + 1)
+		inc bc
+	else
+		ld bc, RAICHU
+	endc
+	call DoubleStatIfSpeciesHoldingItem
 	pop de
 	pop bc
 	ret
@@ -6271,8 +6277,6 @@ EndRechargeOpp:
 	res SUBSTATUS_RECHARGE, [hl]
 	pop hl
 	ret
-
-INCLUDE "engine/battle/move_effects/rage.asm"
 
 INCLUDE "engine/battle/move_effects/mimic.asm"
 

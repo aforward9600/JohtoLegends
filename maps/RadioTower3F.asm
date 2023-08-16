@@ -162,8 +162,8 @@ RadioTower3FRocketText:
 
 	para "I should, but I'm"
 	line "still trying to"
-	cont "out how to get"
-	cont "around here."
+	cont "figure out how to"
+	cont "get around here."
 
 	para "These jumps are"
 	line "confusing."

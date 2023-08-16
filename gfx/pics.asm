@@ -20,133 +20,433 @@ SECTION "Trainer Pic Pointers", ROMX
 INCLUDE "data/trainers/pic_pointers.asm"
 
 
-SECTION "Pics 1", ROMX
+SECTION "Ho-Oh Front", ROMX
 
 HoOhFrontpic:        INCBIN "gfx/pokemon/ho_oh/front.animated.2bpp.lz"
+
+SECTION "Machamp Front", ROMX
+
 MachampFrontpic:     INCBIN "gfx/pokemon/machamp/front.animated.2bpp.lz"
+
+SECTION "Ninetales Front", ROMX
+
 NinetalesFrontpic:   INCBIN "gfx/pokemon/ninetales/front.animated.2bpp.lz"
+
+SECTION "Feraligatr Front", ROMX
+
 FeraligatrFrontpic:  INCBIN "gfx/pokemon/feraligatr/front.animated.2bpp.lz"
+
+SECTION "Nidoking Front", ROMX
+
 NidokingFrontpic:    INCBIN "gfx/pokemon/nidoking/front.animated.2bpp.lz"
+
+SECTION "Raikou Front", ROMX
+
 RaikouFrontpic:      INCBIN "gfx/pokemon/raikou/front.animated.2bpp.lz"
+
+SECTION "Lugia Front", ROMX
+
 LugiaFrontpic:       INCBIN "gfx/pokemon/lugia/front.animated.2bpp.lz"
+
+SECTION "Articuno Front", ROMX
+
 ArticunoFrontpic:    INCBIN "gfx/pokemon/articuno/front.animated.2bpp.lz"
+
+SECTION "Tauros Front", ROMX
+
 TaurosFrontpic:      INCBIN "gfx/pokemon/tauros/front.animated.2bpp.lz"
+
+SECTION "Venusaur Front", ROMX
+
 VenusaurFrontpic:    INCBIN "gfx/pokemon/venusaur/front.animated.2bpp.lz"
+
+SECTION "Entei Front", ROMX
+
 EnteiFrontpic:       INCBIN "gfx/pokemon/entei/front.animated.2bpp.lz"
 
 
-SECTION "Pics 2", ROMX
+SECTION "Blastoise Front", ROMX
 
 BlastoiseFrontpic:   INCBIN "gfx/pokemon/blastoise/front.animated.2bpp.lz"
+
+SECTION "Rapidash Front", ROMX
+
 RapidashFrontpic:    INCBIN "gfx/pokemon/rapidash/front.animated.2bpp.lz"
+
+SECTION "Meganium Front", ROMX
+
 MeganiumFrontpic:    INCBIN "gfx/pokemon/meganium/front.animated.2bpp.lz"
+
+SECTION "Nidoqueen Front", ROMX
+
 NidoqueenFrontpic:   INCBIN "gfx/pokemon/nidoqueen/front.animated.2bpp.lz"
+
+SECTION "Hitmonlee Front", ROMX
+
 HitmonleeFrontpic:   INCBIN "gfx/pokemon/hitmonlee/front.animated.2bpp.lz"
+
+SECTION "Scizor Front", ROMX
+
 ScizorFrontpic:      INCBIN "gfx/pokemon/scizor/front.animated.2bpp.lz"
+
+SECTION "Beedrill Front", ROMX
+
 BeedrillFrontpic:    INCBIN "gfx/pokemon/beedrill/front.animated.2bpp.lz"
+
+SECTION "Arcanine Front", ROMX
+
 ArcanineFrontpic:    INCBIN "gfx/pokemon/arcanine/front.animated.2bpp.lz"
+
+SECTION "Tyranitar Front", ROMX
+
 TyranitarFrontpic:   INCBIN "gfx/pokemon/tyranitar/front.animated.2bpp.lz"
+
+SECTION "Zapdos Front", ROMX
+
 ZapdosFrontpic:      INCBIN "gfx/pokemon/zapdos/front.animated.2bpp.lz"
+
+SECTION "Arbok Front", ROMX
+
 ArbokFrontpic:       INCBIN "gfx/pokemon/arbok/front.animated.2bpp.lz"
+
+SECTION "Mewtwo Front", ROMX
+
 MewtwoFrontpic:      INCBIN "gfx/pokemon/mewtwo/front.animated.2bpp.lz"
+
+SECTION "Fearow Front", ROMX
+
 FearowFrontpic:      INCBIN "gfx/pokemon/fearow/front.animated.2bpp.lz"
+
+SECTION "Charizard Front", ROMX
+
 CharizardFrontpic:   INCBIN "gfx/pokemon/charizard/front.animated.2bpp.lz"
+
+SECTION "Quilava Front", ROMX
+
 QuilavaFrontpic:     INCBIN "gfx/pokemon/quilava/front.animated.2bpp.lz"
 
 
-SECTION "Pics 3", ROMX
+SECTION "Steelix Front", ROMX
 
 SteelixFrontpic:     INCBIN "gfx/pokemon/steelix/front.animated.2bpp.lz"
+
+SECTION "Alakazam Front", ROMX
+
 AlakazamFrontpic:    INCBIN "gfx/pokemon/alakazam/front.animated.2bpp.lz"
+
+SECTION "Gyarados Front", ROMX
+
 GyaradosFrontpic:    INCBIN "gfx/pokemon/gyarados/front.animated.2bpp.lz"
+
+SECTION "Kangaskhan Front", ROMX
+
 KangaskhanFrontpic:  INCBIN "gfx/pokemon/kangaskhan/front.animated.2bpp.lz"
+
+SECTION "Rhydon Front", ROMX
+
 RhydonFrontpic:      INCBIN "gfx/pokemon/rhydon/front.animated.2bpp.lz"
+
+SECTION "Golduck Front", ROMX
+
 GolduckFrontpic:     INCBIN "gfx/pokemon/golduck/front.animated.2bpp.lz"
+
+SECTION "Rhyhorn Front", ROMX
+
 RhyhornFrontpic:     INCBIN "gfx/pokemon/rhyhorn/front.animated.2bpp.lz"
+
+SECTION "Pidgeot Front", ROMX
+
 PidgeotFrontpic:     INCBIN "gfx/pokemon/pidgeot/front.animated.2bpp.lz"
+
+SECTION "Slowbro Front", ROMX
+
 SlowbroFrontpic:     INCBIN "gfx/pokemon/slowbro/front.animated.2bpp.lz"
+
+SECTION "Butterfree Front", ROMX
+
 ButterfreeFrontpic:  INCBIN "gfx/pokemon/butterfree/front.animated.2bpp.lz"
+
+SECTION "Weezing Front", ROMX
+
 WeezingFrontpic:     INCBIN "gfx/pokemon/weezing/front.animated.2bpp.lz"
+
+SECTION "Cloyster Front", ROMX
+
 CloysterFrontpic:    INCBIN "gfx/pokemon/cloyster/front.animated.2bpp.lz"
+
+SECTION "Skarmory Front", ROMX
+
 SkarmoryFrontpic:    INCBIN "gfx/pokemon/skarmory/front.animated.2bpp.lz"
+
+SECTION "Dewgong Front", ROMX
+
 DewgongFrontpic:     INCBIN "gfx/pokemon/dewgong/front.animated.2bpp.lz"
+
+SECTION "Victreebel Front", ROMX
+
 VictreebelFrontpic:  INCBIN "gfx/pokemon/victreebel/front.animated.2bpp.lz"
+
+SECTION "Raichu Front", ROMX
+
 RaichuFrontpic:      INCBIN "gfx/pokemon/raichu/front.animated.2bpp.lz"
+
+SECTION "Primeape Front", ROMX
+
 PrimeapeFrontpic:    INCBIN "gfx/pokemon/primeape/front.animated.2bpp.lz"
+
+SECTION "Omastar Front", ROMX
+
 OmastarBackpic:      INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
 
 
-SECTION "Pics 4", ROMX
+SECTION "Dodrio Front", ROMX
 
 DodrioFrontpic:      INCBIN "gfx/pokemon/dodrio/front.animated.2bpp.lz"
+
+SECTION "Slowking Front", ROMX
+
 SlowkingFrontpic:    INCBIN "gfx/pokemon/slowking/front.animated.2bpp.lz"
+
+SECTION "Hitmontop Front", ROMX
+
 HitmontopFrontpic:   INCBIN "gfx/pokemon/hitmontop/front.animated.2bpp.lz"
+
+SECTION "Onix Front", ROMX
+
 OnixFrontpic:        INCBIN "gfx/pokemon/onix/front.animated.2bpp.lz"
+
+SECTION "Blissey Front", ROMX
+
 BlisseyFrontpic:     INCBIN "gfx/pokemon/blissey/front.animated.2bpp.lz"
+
+SECTION "Machoke Front", ROMX
+
 MachokeFrontpic:     INCBIN "gfx/pokemon/machoke/front.animated.2bpp.lz"
+
+SECTION "Dragonite Front", ROMX
+
 DragoniteFrontpic:   INCBIN "gfx/pokemon/dragonite/front.animated.2bpp.lz"
+
+SECTION "Poliwrath Front", ROMX
+
 PoliwrathFrontpic:   INCBIN "gfx/pokemon/poliwrath/front.animated.2bpp.lz"
+
+SECTION "Scyther Front", ROMX
+
 ScytherFrontpic:     INCBIN "gfx/pokemon/scyther/front.animated.2bpp.lz"
+
+SECTION "Aerodactyl Front", ROMX
+
 AerodactylFrontpic:  INCBIN "gfx/pokemon/aerodactyl/front.animated.2bpp.lz"
+
+SECTION "Seaking Front", ROMX
+
 SeakingFrontpic:     INCBIN "gfx/pokemon/seaking/front.animated.2bpp.lz"
+
+SECTION "Muk Front", ROMX
+
 MukFrontpic:         INCBIN "gfx/pokemon/muk/front.animated.2bpp.lz"
+
+SECTION "Croconaw Front", ROMX
+
 CroconawFrontpic:    INCBIN "gfx/pokemon/croconaw/front.animated.2bpp.lz"
+
+SECTION "Hypno Front", ROMX
+
 HypnoFrontpic:       INCBIN "gfx/pokemon/hypno/front.animated.2bpp.lz"
+
+SECTION "Nidorino Front", ROMX
+
 NidorinoFrontpic:    INCBIN "gfx/pokemon/nidorino/front.animated.2bpp.lz"
+
+SECTION "Sandslash Front", ROMX
+
 SandslashFrontpic:   INCBIN "gfx/pokemon/sandslash/front.animated.2bpp.lz"
+
+SECTION "Jolteon Front", ROMX
+
 JolteonFrontpic:     INCBIN "gfx/pokemon/jolteon/front.animated.2bpp.lz"
+
+SECTION "Donphan Front", ROMX
+
 DonphanFrontpic:     INCBIN "gfx/pokemon/donphan/front.animated.2bpp.lz"
+
+SECTION "Pinsir Front", ROMX
+
 PinsirFrontpic:      INCBIN "gfx/pokemon/pinsir/front.animated.2bpp.lz"
+
+SECTION "Unown E Front", ROMX
+
 UnownEFrontpic:      INCBIN "gfx/pokemon/unown_e/front.animated.2bpp.lz"
 
 
-SECTION "Pics 5", ROMX
+SECTION "Golbat Front", ROMX
 
 GolbatFrontpic:      INCBIN "gfx/pokemon/golbat/front.animated.2bpp.lz"
+
+SECTION "Kingler Front", ROMX
+
 KinglerFrontpic:     INCBIN "gfx/pokemon/kingler/front.animated.2bpp.lz"
+
+SECTION "Exeggcute Front", ROMX
+
 ExeggcuteFrontpic:   INCBIN "gfx/pokemon/exeggcute/front.animated.2bpp.lz"
+
+SECTION "Magcargo Front", ROMX
+
 MagcargoFrontpic:    INCBIN "gfx/pokemon/magcargo/front.animated.2bpp.lz"
+
+SECTION "Persian Front", ROMX
+
 PersianFrontpic:     INCBIN "gfx/pokemon/persian/front.animated.2bpp.lz"
+
+SECTION "Stantler Front", ROMX
+
 StantlerFrontpic:    INCBIN "gfx/pokemon/stantler/front.animated.2bpp.lz"
+
+SECTION "Raticate Front", ROMX
+
 RaticateFrontpic:    INCBIN "gfx/pokemon/raticate/front.animated.2bpp.lz"
+
+SECTION "Venomoth Front", ROMX
+
 VenomothFrontpic:    INCBIN "gfx/pokemon/venomoth/front.animated.2bpp.lz"
+
+SECTION "Politoed Front", ROMX
+
 PolitoedFrontpic:    INCBIN "gfx/pokemon/politoed/front.animated.2bpp.lz"
+
+SECTION "Electabuzz Front", ROMX
+
 ElectabuzzFrontpic:  INCBIN "gfx/pokemon/electabuzz/front.animated.2bpp.lz"
+
+SECTION "Mantine Front", ROMX
+
 MantineFrontpic:     INCBIN "gfx/pokemon/mantine/front.animated.2bpp.lz"
+
+SECTION "Lickitung Front", ROMX
+
 LickitungFrontpic:   INCBIN "gfx/pokemon/lickitung/front.animated.2bpp.lz"
+
+SECTION "Kingdra Front", ROMX
+
 KingdraFrontpic:     INCBIN "gfx/pokemon/kingdra/front.animated.2bpp.lz"
+
+SECTION "Charmeleon Front", ROMX
+
 CharmeleonFrontpic:  INCBIN "gfx/pokemon/charmeleon/front.animated.2bpp.lz"
+
+SECTION "Kadabra Front", ROMX
+
 KadabraFrontpic:     INCBIN "gfx/pokemon/kadabra/front.animated.2bpp.lz"
+
+SECTION "Exeggutor Front", ROMX
+
 ExeggutorFrontpic:   INCBIN "gfx/pokemon/exeggutor/front.animated.2bpp.lz"
+
+SECTION "Azumarill Front", ROMX
+
 AzumarillFrontpic:   INCBIN "gfx/pokemon/azumarill/front.animated.2bpp.lz"
+
+SECTION "Parasect Front", ROMX
+
 ParasectFrontpic:    INCBIN "gfx/pokemon/parasect/front.animated.2bpp.lz"
+
+SECTION "Mr Mime Front", ROMX
+
 MrMimeFrontpic:      INCBIN "gfx/pokemon/mr__mime/front.animated.2bpp.lz"
+
+SECTION "Heracross Front", ROMX
+
 HeracrossFrontpic:   INCBIN "gfx/pokemon/heracross/front.animated.2bpp.lz"
 
 
-SECTION "Pics 6", ROMX
+SECTION "Ariados Front", ROMX
 
 AriadosFrontpic:     INCBIN "gfx/pokemon/ariados/front.animated.2bpp.lz"
+
+SECTION "Noctowl Front", ROMX
+
 NoctowlFrontpic:     INCBIN "gfx/pokemon/noctowl/front.animated.2bpp.lz"
+
+SECTION "Wartortle Front", ROMX
+
 WartortleFrontpic:   INCBIN "gfx/pokemon/wartortle/front.animated.2bpp.lz"
+
+SECTION "Lapras Front", ROMX
+
 LaprasFrontpic:      INCBIN "gfx/pokemon/lapras/front.animated.2bpp.lz"
+
+SECTION "Golem Front", ROMX
+
 GolemFrontpic:       INCBIN "gfx/pokemon/golem/front.animated.2bpp.lz"
+
+SECTION "Poliwhirl Front", ROMX
+
 PoliwhirlFrontpic:   INCBIN "gfx/pokemon/poliwhirl/front.animated.2bpp.lz"
+
+SECTION "Kabutops Front", ROMX
+
 KabutopsFrontpic:    INCBIN "gfx/pokemon/kabutops/front.animated.2bpp.lz"
+
+SECTION "Ampharos Front", ROMX
+
 AmpharosFrontpic:    INCBIN "gfx/pokemon/ampharos/front.animated.2bpp.lz"
+
+SECTION "Nidorina Front", ROMX
+
 NidorinaFrontpic:    INCBIN "gfx/pokemon/nidorina/front.animated.2bpp.lz"
+
+SECTION "Flareon Front", ROMX
+
 FlareonFrontpic:     INCBIN "gfx/pokemon/flareon/front.animated.2bpp.lz"
+
+SECTION "Farfetch'd Front", ROMX
+
 FarfetchDFrontpic:   INCBIN "gfx/pokemon/farfetch_d/front.animated.2bpp.lz"
+
+SECTION "Vileplume Front", ROMX
+
 VileplumeFrontpic:   INCBIN "gfx/pokemon/vileplume/front.animated.2bpp.lz"
+
+SECTION "Bayleef Front", ROMX
+
 BayleefFrontpic:     INCBIN "gfx/pokemon/bayleef/front.animated.2bpp.lz"
+
+SECTION "Magmar Front", ROMX
+
 MagmarFrontpic:      INCBIN "gfx/pokemon/magmar/front.animated.2bpp.lz"
+
+SECTION "Tentacruel Front", ROMX
+
 TentacruelFrontpic:  INCBIN "gfx/pokemon/tentacruel/front.animated.2bpp.lz"
+
+SECTION "Elekid Front", ROMX
+
 ElekidFrontpic:      INCBIN "gfx/pokemon/elekid/front.animated.2bpp.lz"
+
+SECTION "Jumpluff Front", ROMX
+
 JumpluffFrontpic:    INCBIN "gfx/pokemon/jumpluff/front.animated.2bpp.lz"
+
+SECTION "Marowak Front", ROMX
+
 MarowakFrontpic:     INCBIN "gfx/pokemon/marowak/front.animated.2bpp.lz"
+
+SECTION "Vulpix Front", ROMX
+
 VulpixFrontpic:      INCBIN "gfx/pokemon/vulpix/front.animated.2bpp.lz"
+
+SECTION "Gligar Front", ROMX
+
 GligarFrontpic:      INCBIN "gfx/pokemon/gligar/front.animated.2bpp.lz"
+
+SECTION "Dunsparce Front", ROMX
+
 DunsparceFrontpic:   INCBIN "gfx/pokemon/dunsparce/front.animated.2bpp.lz"
+
+SECTION "Gastly Front", ROMX
+
 GastlyFrontpic:      INCBIN "gfx/pokemon/gastly/front.animated.2bpp.lz"
 
 

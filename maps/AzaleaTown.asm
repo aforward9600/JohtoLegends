@@ -357,9 +357,12 @@ AzaleaTownYoungsterText:
 	para "impossible to get"
 	line "through."
 
-	para "The Charcoal Man's"
-	line "#mon can Cut"
-	cont "down trees."
+	para "…Oh, I see you"
+	line "have a Scyther"
+	cont "call."
+
+	para "That makes getting"
+	line "through a breeze!"
 	done
 
 AzaleaTownSlowpokeText1:
