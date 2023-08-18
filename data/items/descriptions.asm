@@ -677,7 +677,7 @@ RageCandyBarDesc:
 
 GSBallDesc:
 	db   "The mysterious"
-	next "Ball.@"
+	next "Berry.@"
 
 DuskBallDesc:
 	db   "Catches #mon"

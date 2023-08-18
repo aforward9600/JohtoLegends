@@ -56,14 +56,14 @@ YouCantGoThroughText:
 	text "Sorry, but you"
 	line "can't go through"
 	cont "without the"
-	cont "Zephyrbadge."
+	cont "ZephyrBadge."
 
 	para "It's dangerous."
 	done
 
 ThatsTheZepherBadgeText:
 	text "Ah, I see you have"
-	line "the Zephyrbadge."
+	line "the ZephyrBadge."
 
 	para "You can go through"
 	line "now."
@@ -71,7 +71,7 @@ ThatsTheZepherBadgeText:
 
 ThatsTheZepherBadgeText2:
 	text "Ah, I see you have"
-	line "the Zephyrbadge."
+	line "the ZephyrBadge."
 
 	para "I'm afraid this is"
 	line "the end of the"

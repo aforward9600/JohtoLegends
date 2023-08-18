@@ -74,6 +74,11 @@ LakeOfRageMiyamotoScript:
 	setevent EVENT_MOUNT_MORTAR_HIKER_2
 	end
 
+MiyamotoLakeOfRageLastText:
+	text "You're stronger"
+	line "than you look."
+	done
+
 LakeOfRageRivalScript:
 	faceplayer
 	opentext
@@ -504,11 +509,6 @@ LakeOfRageMovingSignText:
 	line "bulldozed due to"
 	cont "environmental"
 	cont "changes."
-	done
-
-MiyamotoLakeOfRageLastText:
-	text "You're stronger"
-	line "than you look."
 	done
 
 LakeOfRage_MapEvents:

@@ -371,25 +371,25 @@ MastersHouse1F_WalkUpMovement:
 	step UP
 	step UP
 	turn_head RIGHT
-	step_end
+	step_resume
 
 MastersHouse1F_MastersMovement:
 	step DOWN
 	step DOWN
-	step_end
+	step_resume
 
 MastersHouse1F_CantLeaveMovement:
 	step UP
-	step_end
+	step_resume
 
 MastersHouse1F_RivalLarvitarMovement:
 	step UP
-	step_end
+	step_resume
 
 MastersHouse1F_RivalDratiniMovement:
 	step LEFT
 	step UP
-	step_end
+	step_resume
 
 HeadUpstairs1Movement:
 	step UP
@@ -398,7 +398,7 @@ HeadUpstairs1Movement:
 	step UP
 	step UP
 	step LEFT
-	step_end
+	step_resume
 
 HeadUpstairs2Movement:
 	step UP
@@ -408,7 +408,7 @@ HeadUpstairs2Movement:
 	step UP
 	step UP
 	step LEFT
-	step_end
+	step_resume
 
 PlayerMovesToRivalMovement:
 	step DOWN
@@ -418,7 +418,7 @@ PlayerMovesToRivalMovement:
 	step DOWN
 	step LEFT
 	step DOWN
-	step_end
+	step_resume
 
 RivalLeaves1Movement:
 	step DOWN
@@ -426,17 +426,17 @@ RivalLeaves1Movement:
 	step DOWN
 	step DOWN
 	step DOWN
-	step_end
+	step_resume
 
 MastersLastMovement:
 	step DOWN
 	step DOWN
 	step DOWN
-	step_end
+	step_resume
 
 MasterLastMovement:
 	step DOWN
-	step_end
+	step_resume
 
 HeySleepyHeadText:
 	text "Hey sleepy head!"

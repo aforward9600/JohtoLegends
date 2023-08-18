@@ -77,7 +77,7 @@ SurgesRoom_EnterMovement:
 	step UP
 	step UP
 	step UP
-	step_end
+	step_resume
 
 GeneralSurgeLastMonText:
 	text "Don't give up 'til"

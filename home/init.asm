@@ -150,8 +150,7 @@ Init::
 
 	ldh a, [hCGB]
 	and a
-	jr z, .no_double_speed
-	call NormalSpeed
+	call nz, DoubleSpeed
 .no_double_speed
 
 	xor a

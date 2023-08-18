@@ -1866,7 +1866,7 @@ Movement_ContestResults_WalkAfterWarp:
 	step RIGHT
 	step DOWN
 	turn_head UP
-	step_end
+	step_resume
 
 GetDecoEvent:
 	setevent EVENT_DECO_TOTODILE_DOLL

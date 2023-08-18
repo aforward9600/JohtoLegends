@@ -77,7 +77,7 @@ AgathasRoom_EnterMovement:
 	step UP
 	step UP
 	step UP
-	step_end
+	step_resume
 
 AgathaLastMonText:
 	text "Can it be?"

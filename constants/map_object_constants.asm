@@ -215,7 +215,7 @@ NUM_SPRITEMOVEDATA EQU const_value
 	const STEP_TYPE_07              ; 07
 	const STEP_TYPE_NPC_JUMP        ; 08
 	const STEP_TYPE_PLAYER_JUMP     ; 09
-	const STEP_TYPE_HALF_STEP       ; 0a
+	const STEP_TYPE_TURN            ; 0a
 	const STEP_TYPE_BUMP            ; 0b
 	const STEP_TYPE_TELEPORT_FROM   ; 0c
 	const STEP_TYPE_TELEPORT_TO     ; 0d
@@ -252,6 +252,7 @@ NUM_SPRITEMOVEDATA EQU const_value
 	const OBJECT_ACTION_GRASS_SHAKE   ; 0f
 	const OBJECT_ACTION_SKYFALL       ; 10
 	const OBJECT_ACTION_PUDDLE_SPLASH
+	const OBJECT_ACTION_RUN
 
 ; Facings indexes (see data/sprites/facings.asm)
 	const_def
@@ -294,6 +295,7 @@ NUM_SPRITEMOVEDATA EQU const_value
 	const_def
 	const STEP_SLOW          ; 0
 	const STEP_WALK          ; 1
+	const STEP_RUN
 	const STEP_BIKE          ; 2
 	const STEP_LEDGE         ; 3
 	const STEP_ICE           ; 4

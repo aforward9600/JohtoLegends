@@ -277,8 +277,6 @@ DoPlayerMovement::
 	jr nc, .ice
 
 ; Downhill riding is slower when not moving down.
-	call .RunCheck
-	jr z, .fast
 	call .BikeCheck
 	jr nz, .walk
 
@@ -302,6 +300,9 @@ DoPlayerMovement::
 	ret
 
 .walk
+	ld a, [wCurInput]
+	and B_BUTTON
+	jr nz, .run
 	ld a, STEP_WALK
 	call .DoStep
 	scf
@@ -313,8 +314,10 @@ DoPlayerMovement::
 	scf
 	ret
 
-; unused
-	xor a
+.run
+	ld a, STEP_RUN
+	call .DoStep
+	scf
 	ret
 
 .bump
@@ -323,7 +326,15 @@ DoPlayerMovement::
 
 .TrySurf:
 	call .CheckSurfPerms
+	push af
 	ld [wWalkingIntoLand], a
+	ld a, [wPlayerStepType]
+	cp STEP_TYPE_TURN
+	jr nz, .not_surf_turning
+	xor a
+	ld [wWalkingIntoLand], a
+.not_surf_turning
+	pop af
 	jr c, .surf_bump
 
 	call .CheckNPC
@@ -337,7 +348,7 @@ DoPlayerMovement::
 	and a
 	jr nz, .ExitWater
 
-	ld a, STEP_WALK
+	ld a, STEP_RUN
 	call .DoStep
 	scf
 	ret
@@ -346,7 +357,7 @@ DoPlayerMovement::
 	call ResetPlayerPalette
 	call .GetOutOfWater
 	call PlayMapMusic
-	ld a, STEP_WALK
+	ld a, STEP_RUN
 	call .DoStep
 	ld a, 6
 	scf
@@ -475,7 +486,8 @@ DoPlayerMovement::
 ; entries correspond to STEP_* constants
 	dw .SlowStep
 	dw .NormalStep
-	dw .FastStep
+	dw .RunStep
+	dw .BikeStep
 	dw .JumpStep
 	dw .SlideStep
 	dw .TurningStep
@@ -492,11 +504,16 @@ DoPlayerMovement::
 	step UP
 	step LEFT
 	step RIGHT
-.FastStep:
+.RunStep:
 	big_step DOWN
 	big_step UP
 	big_step LEFT
 	big_step RIGHT
+.BikeStep:
+	bike_step DOWN
+	bike_step UP
+	bike_step LEFT
+	bike_step RIGHT
 .JumpStep:
 	jump_step DOWN
 	jump_step UP
@@ -737,15 +754,6 @@ ENDM
 	cp PLAYER_SKATE
 	ret
 
-.RunCheck:
-	ld a, [wPlayerState]
-	cp PLAYER_NORMAL
-	ret nz
-	ldh a, [hJoypadDown]
-	and B_BUTTON
-	cp B_BUTTON
-	ret
-
 .CheckWalkable:
 ; Return 0 if tile a is land. Otherwise, return carry.
 
@@ -837,4 +845,148 @@ ResetPlayerPalette::
 .ResetFemaleColor
 	ld d, (PAL_NPC_RED << 4)
 	farcall _SetPlayerPalette
+	ret
+
+CheckTrainerRun:
+; Check if any trainer on the map sees the player.
+; Skip the player object.
+	ld a, 1
+	ld de, wMapObjects + OBJECT_LENGTH
+.loop
+; Have them face the player if the object:
+	push af
+	push de
+; Has a sprite
+	ld hl, MAPOBJECT_SPRITE
+	add hl, de
+	ld a, [hl]
+	and a
+	jr z, .next
+; Is a trainer
+	ld hl, MAPOBJECT_COLOR
+	add hl, de
+	ld a, [hl]
+	and $f
+	cp $2
+	jr nz, .next
+; Is visible on the map
+	ld hl, MAPOBJECT_OBJECT_STRUCT_ID
+	add hl, de
+	ld a, [hl]
+	cp -1
+	jr z, .next
+; Spins around
+	ld hl, MAPOBJECT_MOVEMENT
+	add hl, de
+	ld a, [hl]
+	cp $3
+	jr z, .spinner
+	cp $a
+	jr z, .spinner
+	cp $1e
+	jr z, .spinner
+	cp $1f
+	jr nz, .next
+.spinner
+; You're within their sight range
+	ld hl, MAPOBJECT_OBJECT_STRUCT_ID
+	add hl, de
+	ld a, [hl]
+	call GetObjectStruct
+	call AnyFacingPlayerDistance_bc
+	ld hl, MAPOBJECT_RANGE
+	add hl, de
+	ld a, [hl]
+	cp c
+	jr c, .next
+; Get them to face you
+	ld a, b
+	push af
+	ld hl, MAPOBJECT_OBJECT_STRUCT_ID
+	add hl, de
+	ld a, [hl]
+	call GetObjectStruct
+	pop af
+	call SetSpriteDirection
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	ld a, [hl]
+	cp $40
+	jr nc, .next
+	ld a, $40
+	ld [hl], a
+.next
+	pop de
+	ld hl, OBJECT_LENGTH
+	add hl, de
+	ld d, h
+	ld e, l
+	pop af
+	inc a
+	cp NUM_OBJECTS
+	jr nz, .loop
+	xor a
+	ret
+AnyFacingPlayerDistance_bc::
+; Returns distance in c and direction in b.
+	push de
+	call .AnyFacingPlayerDistance
+	ld b, d
+	ld c, e
+	pop de
+	ret
+.AnyFacingPlayerDistance
+	ld hl, OBJECT_NEXT_MAP_X ; x
+	add hl, bc
+	ld d, [hl]
+	ld hl, OBJECT_NEXT_MAP_Y ; y
+	add hl, bc
+	ld e, [hl]
+	ld a, [$ffa4]
+	bit 7, a
+	jr nz, .down
+	bit 6, a
+	jr nz, .up
+	bit 5, a
+	jr nz, .left
+	bit 4, a
+	jr nz, .right
+.down
+	lb bc, 1, 0
+	jr .got_vector
+.up
+	lb bc, -1, 0
+	jr .got_vector
+.left
+	lb bc, 0, -1
+	jr .got_vector
+.right
+	lb bc, 0, 1
+.got_vector
+	ld a, [wPlayerStandingMapX]
+	add c
+	sub d
+	ld l, OW_RIGHT
+	jr nc, .check_y
+	cpl
+	inc a
+	ld l, OW_LEFT
+.check_y
+	ld d, a
+	ld a, [wPlayerStandingMapY]
+	add b
+	sub e
+	ld h, OW_DOWN
+	jr nc, .compare
+	cpl
+	inc a
+	ld h, OW_UP
+.compare
+	cp d
+	ld e, a
+	ld a, d
+	ld d, h
+	ret nc
+	ld e, a
+	ld d, l
 	ret

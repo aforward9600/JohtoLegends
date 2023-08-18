@@ -131,10 +131,7 @@ DragonShrineElder1Script:
 	iftrue .ReceivedDratini
 	checkevent EVENT_GOT_DRATINI
 	iffalse .GiveDratini
-	writetext DragonShrineClairsGrandfatherText
-	waitbutton
-	closetext
-	end
+	sjump .ReceivedDratini
 
 .GiveDratini:
 	writetext DragonShrineTakeThisDratiniText
@@ -298,7 +295,7 @@ DragonShrinePlayerWalkInMovement:
 
 DragonShrineElderStepDownMovement:
 	slow_step DOWN
-	step_end
+	step_resume
 
 DragonShrineElderGreetingText:
 	text "Hm… Good to see"

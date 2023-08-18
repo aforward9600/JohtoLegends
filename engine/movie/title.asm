@@ -264,7 +264,6 @@ SuicuneFrameIterator:
 	call LoadSuicuneFrame
 	ld a, $1
 	ldh [hBGMapMode], a
-	ld a, $3
 	ldh [hBGMapThird], a
 	ret
 

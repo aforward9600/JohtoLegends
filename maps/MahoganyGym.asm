@@ -336,13 +336,13 @@ GoesBackMovement1:
 	step RIGHT
 	step UP
 	step UP
-	step_end
+	step_resume
 
 GoesBackMovement2:
 	step RIGHT
 	step UP
 	step UP
-	step_end
+	step_resume
 
 PryceText_Intro:
 	text "Hurrmph! I heard"

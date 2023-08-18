@@ -172,7 +172,7 @@ AfterBattleMovement1:
 	step LEFT
 	step LEFT
 	step LEFT
-	step_end
+	step_resume
 
 AfterBattleMovement2:
 	step DOWN
@@ -181,7 +181,7 @@ AfterBattleMovement2:
 	step RIGHT
 	step RIGHT
 	step RIGHT
-	step_end
+	step_resume
 
 LeavingRoomMovement1:
 	step RIGHT
@@ -191,7 +191,7 @@ LeavingRoomMovement1:
 	step UP
 	step UP
 	step UP
-	step_end
+	step_resume
 
 LeavingRoomMovement2:
 	step LEFT
@@ -201,7 +201,7 @@ LeavingRoomMovement2:
 	step UP
 	step UP
 	step UP
-	step_end
+	step_resume
 
 ClairHiText:
 	text "Hi <PLAYER>!"

@@ -238,6 +238,9 @@ Options_BattleStyle:
 	ld hl, wOptions
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
+if DEF(_CHALLENGE)
+	jr nz, .NonePressed
+endc
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
@@ -269,8 +272,13 @@ Options_BattleStyle:
 	and a
 	ret
 
+if DEF(_CHALLENGE)
+.Shift: db "Set  @"
+.Set:   db "@"
+else
 .Shift: db "Shift@"
 .Set:   db "Set  @"
+endc
 
 Options_Sound:
 	ld hl, wOptions

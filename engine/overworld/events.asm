@@ -140,56 +140,38 @@ UnusedWait30Frames:
 	ret
 
 HandleMap:
-	call ResetOverworldDelay
 	call HandleMapTimeAndJoypad
-	farcall HandleCmdQueue ; no need to farcall
+	call HandleCmdQueue ; no need to farcall
 	call MapEvents
 
 ; Not immediately entering a connected map will cause problems.
 	ld a, [wMapStatus]
 	cp MAPSTATUS_HANDLE
 	ret nz
-
 	call HandleMapObjects
 	call NextOverworldFrame
 	call HandleMapBackground
 	call CheckPlayerState
+	xor a
 	ret
 
 MapEvents:
 	ld a, [wMapEventStatus]
-	ld hl, .jumps
-	rst JumpTable
-	ret
-
-.jumps
-; entries correspond to MAPEVENTS_* constants
-	dw .events
-	dw .no_events
-
-.events
+	and a
+	ret nz
 	call PlayerEvents
 	call DisableEvents
 	farcall ScriptEvents
 	ret
 
-.no_events
-	ret
-
-MaxOverworldDelay:
-	db 2
-
-ResetOverworldDelay:
-	ld a, [MaxOverworldDelay]
-	ld [wOverworldDelay], a
-	ret
-
 NextOverworldFrame:
-	ld a, [wOverworldDelay]
-	and a
-	ret z
-	ld c, a
-	call DelayFrames
+	; If we haven't already performed a delay outside DelayFrame as a result
+	; of a busy LY overflow, perform that now.
+	ld a, [hDelayFrameLY]
+	inc a
+	jp nz, DelayFrame
+	xor a
+	ld [hDelayFrameLY], a
 	ret
 
 HandleMapTimeAndJoypad:
@@ -1017,7 +999,7 @@ FallIntoMapScript:
 
 MovementData_0x96c48:
 	skyfall
-	step_end
+	step_resume
 
 LandAfterPitfallScript:
 	earthquake 16
@@ -1027,7 +1009,7 @@ EdgeWarpScript: ; 4
 	reloadandreturn MAPSETUP_CONNECTION
 
 ChangeDirectionScript: ; 9
-	deactivatefacing 3
+	callasm ReleaseAllMapObjects
 	callasm EnableWildEncounters
 	end
 

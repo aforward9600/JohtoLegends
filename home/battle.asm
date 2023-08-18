@@ -107,8 +107,7 @@ UpdateEnemyMonInParty::
 
 RefreshBattleHuds::
 	call UpdateBattleHuds
-	ld c, 3
-	call DelayFrames
+	call Delay2
 	jp WaitBGMap
 
 UpdateBattleHuds::

@@ -228,7 +228,7 @@ BlackthornHikerScript:
 
 HikerMovesYouMovement:
 	step UP
-	step_end
+	step_resume
 
 Text_ClairIsOut:
 	text "I am sorry."

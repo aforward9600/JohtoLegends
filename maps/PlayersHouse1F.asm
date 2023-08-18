@@ -304,7 +304,7 @@ FridgeScript:
 
 MomTurnsTowardPlayerMovement:
 	turn_head RIGHT
-	step_end
+	step_resume
 
 MomWalksToPlayerMovement:
 	slow_step RIGHT
@@ -312,7 +312,7 @@ MomWalksToPlayerMovement:
 
 MomWalksBackMovement:
 	slow_step LEFT
-	step_end
+	step_resume
 
 WhatWasHerNameText:
 	text "You're finally"

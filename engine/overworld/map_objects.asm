@@ -26,7 +26,7 @@ DeleteMapObject::
 	pop bc
 	ret
 
-Function437b:
+HandleCurNPCStep:
 	call .CheckObjectStillVisible
 	ret c
 	call .HandleStepType
@@ -37,12 +37,23 @@ Function437b:
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
 	res OBJ_FLAGS2_6, [hl]
+	ld a, [hMapObjectIndexBuffer]
+	and a
+	jr nz, .notPlayer
+; hardcode for crossing over connections
+	ld a, [wYCoord]
+	inc a
+	jr z, .yes
+	ld a, [wXCoord]
+	inc a
+	jr z, .yes
+.notPlayer
 	ld a, [wXCoord]
 	ld e, a
 	ld hl, OBJECT_NEXT_MAP_X
 	add hl, bc
 	ld a, [hl]
-	add 1
+	inc a
 	sub e
 	jr c, .ok
 	cp MAPOBJECT_SCREEN_WIDTH
@@ -52,7 +63,7 @@ Function437b:
 	ld hl, OBJECT_NEXT_MAP_Y
 	add hl, bc
 	ld a, [hl]
-	add 1
+	inc a
 	sub e
 	jr c, .ok
 	cp MAPOBJECT_SCREEN_HEIGHT
@@ -68,7 +79,7 @@ Function437b:
 	ld hl, OBJECT_INIT_X
 	add hl, bc
 	ld a, [hl]
-	add 1
+	inc a
 	sub e
 	jr c, .ok2
 	cp MAPOBJECT_SCREEN_WIDTH
@@ -78,7 +89,7 @@ Function437b:
 	ld hl, OBJECT_INIT_Y
 	add hl, bc
 	ld a, [hl]
-	add 1
+	inc a
 	sub e
 	jr c, .ok2
 	cp MAPOBJECT_SCREEN_HEIGHT
@@ -112,7 +123,7 @@ Function437b:
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
 	bit OBJ_FLAGS2_5, [hl]
-	jr nz, .bit5
+	ret nz
 	cp STEP_TYPE_SLEEP
 	jr z, .one
 	jr .ok3
@@ -122,7 +133,7 @@ Function437b:
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
 	bit OBJ_FLAGS2_5, [hl]
-	jr nz, .bit5
+	ret nz
 .one
 	call MapObjectMovementPattern
 	ld hl, OBJECT_STEP_TYPE
@@ -135,9 +146,6 @@ Function437b:
 .ok3
 	ld hl, StepTypesJumptable
 	rst JumpTable
-	ret
-
-.bit5
 	ret
 
 .HandleObjectAction:
@@ -327,6 +335,14 @@ GetNextTile:
 
 AddStepVector:
 	call GetStepVector
+	jr nc, .okay
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	ld a, [hl]
+	and %1
+	jr nz, .okay
+	lb de, 0, 0
+.okay
 	ld hl, OBJECT_SPRITE_X
 	add hl, bc
 	ld a, [hl]
@@ -351,27 +367,47 @@ GetStepVector:
 	ld h, 0
 	ld de, StepVectors
 	add hl, de
-	ld d, [hl]
-	inc hl
-	ld e, [hl]
-	inc hl
+	ld a, [hli]
+	ld d, a
+	ld a, [hli]
+	ld e, a
 	ld a, [hli]
 	ld h, [hl]
+	push af
+	push hl
+	ld hl, OBJECT_DIRECTION_WALKING
+	add hl, bc
+	ld a, [hl]
+	cp (STEP_SLOW << 2 | RIGHT) + 1
+	jr c, .slowStep
+	pop hl
+	pop af
+	and a
+	ret
+.slowStep
+	pop hl
+	pop af
+	scf
 	ret
 
 StepVectors:
 ; x,  y, duration, speed
 	; slow
+	db  0,  1, 32, 1
+	db  0, -1, 32, 1
+	db -1,  0, 32, 1
+	db  1,  0, 32, 1
+	; normal
 	db  0,  1, 16, 1
 	db  0, -1, 16, 1
 	db -1,  0, 16, 1
 	db  1,  0, 16, 1
-	; normal
+	; running shoes
 	db  0,  2,  8, 2
 	db  0, -2,  8, 2
 	db -2,  0,  8, 2
 	db  2,  0,  8, 2
-	; fast
+	; bike
 	db  0,  4,  4, 4
 	db  0, -4,  4, 4
 	db -4,  0,  4, 4
@@ -801,10 +837,7 @@ MapObjectMovementPattern:
 	ld hl, OBJECT_ACTION
 	add hl, bc
 	ld [hl], OBJECT_ACTION_STAND
-	ld hl, OBJECT_RANGE
-	add hl, bc
-	ld a, [hl]
-	ld a, $10
+	ld a, $20
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
 	ld [hl], a
@@ -857,7 +890,7 @@ MapObjectMovementPattern:
 	ld a, [hl]
 	inc a
 	add a
-	add 0
+	add a
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
 	ld [hl], a
@@ -914,6 +947,7 @@ MapObjectMovementPattern:
 	ld a, [hl]
 	inc a
 	add a
+	add a
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
 	ld [hl], a
@@ -958,6 +992,7 @@ MapObjectMovementPattern:
 	add hl, de
 	ld a, [hl]
 	add -1
+	add a
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
 	ld [hl], a
@@ -1056,13 +1091,15 @@ MapObjectMovementPattern:
 RandomStepDuration_Slow:
 	call Random
 	ldh a, [hRandomAdd]
-	and %01111111
+	and %11111110
+	jr z, RandomStepDuration_Slow
 	jr SetRandomStepDuration
 
 RandomStepDuration_Fast:
 	call Random
 	ldh a, [hRandomAdd]
-	and %00011111
+	and %00111110
+	jr z, RandomStepDuration_Fast
 SetRandomStepDuration:
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
@@ -1214,7 +1251,7 @@ TeleportFrom:
 	ld [hl], 0
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
-	ld [hl], 16
+	ld [hl], 32
 	call IncrementObjectStructField1c
 .DoSpin:
 	ld hl, OBJECT_ACTION
@@ -1233,10 +1270,10 @@ TeleportFrom:
 	ld [hl], 0
 	ld hl, OBJECT_1F
 	add hl, bc
-	ld [hl], $10
+	ld [hl], $20
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
-	ld [hl], 16
+	ld [hl], 32
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
 	res OVERHEAD_F, [hl]
@@ -1285,7 +1322,7 @@ TeleportTo:
 	ld [hl], OBJECT_ACTION_00
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
-	ld [hl], 16
+	ld [hl], 32
 	call IncrementObjectStructField1c
 	ret
 
@@ -1304,7 +1341,7 @@ TeleportTo:
 	ld [hl], 0
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
-	ld [hl], 16
+	ld [hl], 32
 	call IncrementObjectStructField1c
 	ret
 
@@ -1331,7 +1368,7 @@ TeleportTo:
 .InitFinalSpin:
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
-	ld [hl], 16
+	ld [hl], 32
 	call IncrementObjectStructField1c
 	ret
 
@@ -1603,10 +1640,10 @@ PlayerOrNPCTurnStep:
 	ld hl, OBJECT_STEP_FRAME
 	add hl, bc
 	ld a, [hl]
-	ld [hl], 2
+	ld [hl], 4
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
-	ld [hl], 2
+	ld [hl], 4
 	call IncrementObjectStructField1c
 .step1
 	ld hl, OBJECT_STEP_DURATION
@@ -1623,7 +1660,7 @@ PlayerOrNPCTurnStep:
 	ld [hl], a
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
-	ld [hl], 2
+	ld [hl], 4
 	call IncrementObjectStructField1c
 .step2
 	ld hl, OBJECT_STEP_DURATION
@@ -1694,6 +1731,7 @@ StepTypeTrackingObject:
 	ld a, [hl]
 	and a
 	ret z
+	dec [hl]
 	dec [hl]
 	ret nz
 .nope
@@ -1942,7 +1980,7 @@ ApplyMovementToFollower:
 	ret z
 	cp movement_step_end
 	ret z
-	cp movement_step_4b
+	cp movement_step_resume
 	ret z
 	cp movement_step_bump
 	ret z
@@ -2005,7 +2043,7 @@ GetFollowerNextMovementByte:
 .nope
 	ld a, -1
 	ld [wObjectFollow_Follower], a
-	ld a, movement_step_end
+	ld a, movement_step_resume
 	scf
 	ret
 
@@ -2246,14 +2284,14 @@ Function565c:
 	call Function56a3
 	jr c, SetFacing_Standing
 	call Function5688
-	farcall Function4440
+	call Function4440
 	xor a
 	ret
 
 Function5673:
 	call Function56a3
 	jr c, SetFacing_Standing
-	farcall Function4440 ; no need to farcall
+	call Function4440 ; no need to farcall
 	xor a
 	ret
 
@@ -2293,7 +2331,7 @@ Function56a3:
 	cp d
 	jr z, .equal_x
 	jr nc, .nope
-	add MAPOBJECT_SCREEN_WIDTH - 1
+	add SCREEN_WIDTH / 2 + 1
 	cp d
 	jr c, .nope
 .equal_x
@@ -2301,7 +2339,7 @@ Function56a3:
 	cp e
 	jr z, .equal_y
 	jr nc, .nope
-	add MAPOBJECT_SCREEN_HEIGHT - 1
+	add SCREEN_HEIGHT / 2 + 1
 	cp e
 	jr c, .nope
 .equal_y
@@ -2423,26 +2461,12 @@ Function56cd:
 
 HandleNPCStep::
 	call .ResetStepVector
-	call .DoStepsForAllObjects
-	ret
-
-.ResetStepVector:
-	xor a
-	ld [wPlayerStepVectorX], a
-	ld [wPlayerStepVectorY], a
-	ld [wPlayerStepFlags], a
-	ld a, STANDING
-	ld [wPlayerStepDirection], a
-	ret
-
-.DoStepsForAllObjects:
 	ld bc, wObjectStructs
 	xor a
 .loop
 	ldh [hMapObjectIndexBuffer], a
 	call DoesObjectHaveASprite
-	jr z, .next
-	call Function437b
+	call nz, HandleCurNPCStep
 .next
 	ld hl, OBJECT_STRUCT_LENGTH
 	add hl, bc
@@ -2452,6 +2476,19 @@ HandleNPCStep::
 	inc a
 	cp NUM_OBJECT_STRUCTS
 	jr nz, .loop
+	ret
+
+.ResetStepVector
+	xor a
+	ld [wPlayerStepVectorX], a
+	ld [wPlayerStepVectorY], a
+	ld a, [wPlayerStepFlags]
+	bit 6, a
+	ld a, $0
+	ld [wPlayerStepFlags], a
+	ret nz
+	dec a
+	ld [wPlayerStepDirection], a
 	ret
 
 RefreshPlayerSprite:
@@ -2470,11 +2507,8 @@ RefreshPlayerSprite:
 .TryResetPlayerAction:
 	ld hl, wPlayerSpriteSetupFlags
 	bit PLAYERSPRITESETUP_RESET_ACTION_F, [hl]
-	jr nz, .ok
-	ret
-
-.ok
-	ld a, OBJECT_ACTION_00
+	ret z
+	xor a ; OBJECT_ACTION_00
 	ld [wPlayerAction], a
 	ret
 
@@ -2489,7 +2523,7 @@ RefreshPlayerSprite:
 	jr ContinueSpawnFacing
 
 SpawnInFacingDown:
-	ld a, 0
+	xor a ; DOWN
 ContinueSpawnFacing:
 	ld bc, wPlayerStruct
 	call SetSpriteDirection
@@ -2499,12 +2533,6 @@ _SetPlayerPalette:
 	ld a, d
 	and 1 << 7
 	ret z
-	ld bc, 0 ; debug?
-	ld hl, OBJECT_FACING
-	add hl, bc
-	ld a, [hl]
-	or d
-	ld [hl], a
 	ld a, d
 	swap a
 	and PALETTE_MASK
@@ -2567,7 +2595,7 @@ ResetFollower:
 	cp -1
 	ret z
 	call GetObjectStruct
-	farcall Function58e3 ; no need to bankswitch
+	call Function58e3 ; no need to bankswitch
 	ld a, -1
 	ld [wObjectFollow_Follower], a
 	ret
@@ -2636,7 +2664,7 @@ _SetFlagsForMovement_2::
 	res OBJ_FLAGS2_5, [hl]
 	ret
 
-Function58b9::
+ReleaseAllMapObjects::
 	push bc
 	ld bc, wObjectStructs
 	xor a

@@ -1456,8 +1456,12 @@ CalcMonStatC:
 	push hl
 	push de
 	push bc
+if DEF(_CHALLENGE)
+	ld d, 0
+else
 	ld a, b
 	ld d, a
+endc
 	push hl
 	ld hl, wBaseStats
 	dec hl ; has to be decreased, because 'c' begins with 1
