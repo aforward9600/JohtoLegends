@@ -163,7 +163,7 @@ BugCatcherAntonAfterText:
 
 	para "You know of any"
 	line "Bug Catchers"
-	cont "than me?"
+	cont "stronger than me?"
 
 	para "I doubt it."
 	done

@@ -116,8 +116,8 @@ CooltrainermGaven3BeatenText:
 
 CooltrainermGavenAfterText:
 	text "I just need to"
-	line "working on my"
-	cont "team's strengths!"
+	line "work on my team's"
+	cont "strengths!"
 
 	para "Then we'll be"
 	line "unstoppable!"
@@ -216,4 +216,4 @@ Route26_MapEvents:
 	object_event 16, 80, SPRITE_PSYCHIC, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route26PsychicScript, -1
 	object_event  8, 98, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route26FisherScript, -1
 	object_event 14, 54, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26FruitTree, -1
-	object_event  9, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER
+	object_event  9, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER

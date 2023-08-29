@@ -7,7 +7,7 @@
 	const SPRITE_GAMEBOY_KID ; 03
 	const SPRITE_SILVER ; 04
 	const SPRITE_OAK ; 05
-	const SPRITE_RED ; 06
+	const SPRITE_BURGLAR ; 06
 	const SPRITE_BLUE ; 07
 	const SPRITE_BILL ; 08
 	const SPRITE_ELDER ; 09

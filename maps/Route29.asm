@@ -259,7 +259,7 @@ TuscanyGivesGiftText:
 
 TuscanyGaveGiftText:
 	text "Wouldn't you agree"
-	line "agree that it is"
+	line "that it is the"
 	cont "most adorable?"
 
 	para "It strengthens"

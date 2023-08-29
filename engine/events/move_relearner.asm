@@ -223,9 +223,12 @@ MoveRelearner_MarkToLevel:
 	call GetFarByte
 	and a
 	ret z
+	cp LEARN_EVO_MOVE
+	jr z, .continue_mark
 	dec a
 	cp c
 	ret nc
+.continue_mark
 	inc hl
 	push hl
 	ld a, d

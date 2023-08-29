@@ -665,7 +665,7 @@ Text_BattleTowerRules:
 
 Text_BattleTower_LeftWithoutSaving:
 	text "Excuse me!"
-	line "You didn't SAVE"
+	line "You didn't save"
 
 	para "before exiting"
 	line "the Battle Room."
@@ -707,13 +707,13 @@ Text_SaveBeforeEnteringBattleRoom:
 	done
 
 Text_SaveAndEndTheSession:
-	text "SAVE and end the"
+	text "Save and end the"
 	line "session?"
 	done
 
 Text_SaveBeforeReentry:
 	text "Your record will"
-	line "be SAVED before"
+	line "be saved before"
 
 	para "you go back into"
 	line "the previous Room."
@@ -730,7 +730,7 @@ Text_RegisterRecordOnFile_Mobile:
 
 	para "file. Would you"
 	line "like to register"
-	cont "it at the CENTER?"
+	cont "it at the Center?"
 	done
 
 Text_WeveBeenWaitingForYou:
@@ -757,7 +757,7 @@ Text_TooMuchTimeElapsedNoRegister:
 	para "register your"
 	line "current record at"
 
-	para "the CENTER because"
+	para "the Center because"
 	line "too much time has"
 
 	para "elapsed since the"

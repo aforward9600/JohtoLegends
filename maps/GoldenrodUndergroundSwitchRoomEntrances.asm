@@ -238,7 +238,7 @@ TrainerBurglarDuncan:
 	end
 
 TrainerBurglarEddie:
-	trainer BURGLAR, EDDIE, EVENT_BEAT_BURGLAR_EDDIE, BurglarEddieSeenText, BurglarEddieBeatenText, 0, .Script
+	trainer BURGLAR, MARV, EVENT_BEAT_BURGLAR_MARV, BurglarEddieSeenText, BurglarEddieBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

@@ -321,7 +321,7 @@ RosaMovesMovement:
 	step DOWN
 	step DOWN
 	step DOWN
-	step_end
+	step_resume
 
 ByronLeavesMovement1:
 	step DOWN

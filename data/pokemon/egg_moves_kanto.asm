@@ -657,6 +657,7 @@ HappinyEggMoves:
 	dw PRESENT
 	dw METRONOME
 	dw HEAL_BELL
+	dw SEISMIC_TOSS
 	dw -1 ; end
 
 TangelaEggMoves:

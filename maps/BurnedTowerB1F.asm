@@ -151,7 +151,7 @@ EnokiMovement1:
 
 PlayerMovement1:
 	step LEFT
-	step_end
+	step_resume
 
 EnokiMovement2:
 	step UP

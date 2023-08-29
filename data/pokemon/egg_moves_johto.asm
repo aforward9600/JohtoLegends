@@ -410,6 +410,7 @@ HoppipEggMoves:
 	dw PAY_DAY
 	dw SEED_BOMB
 	dw STRENGTH_SAP
+	dw AGILITY
 	dw -1 ; end
 
 AipomEggMoves:
@@ -533,6 +534,7 @@ SnubbullEggMoves:
 	dw THUNDER_FANG
 	dw MIMIC
 	dw SNORE
+	dw SEISMIC_TOSS
 	dw -1 ; end
 
 QwilfishEggMoves:

@@ -114,6 +114,8 @@ Dragon Tamer Male sprite: JustinNuggets
 
 Dragon Tamer Female base sprite: Rangi
 
+Agatha and Oak sprites: Tetra
+
 Ariana, Archer and Giovanni trainer and overworld sprite: SirWhibbles
 
 Ampharos and Glaceon overworld sprite: Prism Team

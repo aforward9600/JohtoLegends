@@ -726,3 +726,6 @@ ENDM
 	map_attributes NownPuzzleRoom, NOWN_PUZZLE_ROOM, $00, 0
 	map_attributes ViridianForest, VIRIDIAN_FOREST, $00, 0
 	map_attributes CeruleanBikeShop, CERULEAN_BIKE_SHOP, $00, 0
+	map_attributes PokemonMansion2F, POKEMON_MANSION_2F, $00, 0
+	map_attributes PokemonMansion3F, POKEMON_MANSION_3F, $00, 0
+	map_attributes PokemonMansionB1F, POKEMON_MANSION_B1F, $00, 0

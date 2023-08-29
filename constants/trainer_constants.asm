@@ -508,7 +508,7 @@ CHRIS EQU __enum__
 
 	trainerclass BURGLAR ; 2f
 	const LOCKE
-	const EDDIE
+	const MARV
 	const COREY
 
 	trainerclass FIREBREATHER ; 30

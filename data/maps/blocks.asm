@@ -1108,3 +1108,12 @@ ViridianForest_Blocks:
 
 CeruleanBikeShop_Blocks:
 	INCBIN "maps/CeruleanBikeShop.blk"
+
+PokemonMansion2F_Blocks:
+	INCBIN "maps/PokemonMansion2F.blk"
+
+PokemonMansion3F_Blocks:
+	INCBIN "maps/PokemonMansion3F.blk"
+
+PokemonMansionB1F_Blocks:
+	INCBIN "maps/PokemonMansionB1F.blk"

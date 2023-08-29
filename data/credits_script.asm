@@ -143,6 +143,7 @@ CreditsScript:
 	db          SIRWHIBBLES, 2
 	db                RANGI, 3
 	db         MEGAMANOMEGA, 4
+	db                TETRA, 5
 
 	db CREDITS_WAIT, 12
 

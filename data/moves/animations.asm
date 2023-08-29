@@ -521,6 +521,7 @@ BattleAnim_ThrowPokeBall:
 	anim_jump .Loop
 
 .Click:
+	anim_sound 0, 1, SFX_PECK
     anim_obj ANIM_OBJ_9A, 120, 48, $2c
     anim_obj ANIM_OBJ_9A, 152, 48, $34
     anim_wait 8

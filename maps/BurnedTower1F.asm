@@ -151,7 +151,7 @@ BurnedTowerMovement_PlayerWalksToSilver:
 
 BurnedTowerMovement_SilverWalksToPlayer:
 	step RIGHT
-	step_end
+	step_resume
 
 BurnedTower1FMovement_PlayerStartsToFall:
 	skyfall_top
@@ -163,7 +163,7 @@ BurnedTower1FEusineMovement:
 	step LEFT
 	step LEFT
 	step DOWN
-	step_end
+	step_resume
 
 BurnedTower1F_PlayerMovesRight:
 	step RIGHT

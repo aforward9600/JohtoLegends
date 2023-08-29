@@ -283,17 +283,17 @@ TinTowerEntranceSherlesScript:
 
 MovementData_0x980c7:
 	fix_facing
-	big_step LEFT
+	step LEFT
 	remove_fixed_facing
 	turn_head DOWN
-	step_resume
+	step_end
 
 MovementData_0x980cc:
 	fix_facing
-	big_step RIGHT
+	step RIGHT
 	remove_fixed_facing
 	turn_head DOWN
-	step_resume
+	step_end
 
 GruntLeavesMovement:
 	step LEFT

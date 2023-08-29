@@ -53,7 +53,7 @@ CreditsStrings:
 	dw .HiroakiTamura
 	dw .LuigiTKO
 	dw .MiyukiSato
-	dw .GakuziNomoto
+	dw .Tetra
 	dw .AiMashima
 	dw .MikihiroIshikawa
 	dw .HideyukiHashimoto
@@ -181,7 +181,7 @@ CreditsStrings:
 .HiroakiTamura:       db "   HIROAKI TAMURA@"         ; "たむら　ひろあき@"
 .LuigiTKO:            db "  	LuigiTKO@"        ; "さかぐち　のりあき@"
 .MiyukiSato:          db "    MIYUKI SATO@"           ; "さとう　みゆき@"
-.GakuziNomoto:        db "   GAKUZI NOMOTO@"          ; "のもと　がくじ@"
+.Tetra:               db "       Tetra@"          ; "のもと　がくじ@"
 .AiMashima:           db "     AI MASHIMA@"           ; "ましま　あい@"
 .MikihiroIshikawa:    db " MIKIHIRO ISHIKAWA@"        ; "いしかわ　みきひろ@"
 .HideyukiHashimoto:   db " HIDEYUKI HASHIMOTO@"       ; "はしもと　ひでゆき@"

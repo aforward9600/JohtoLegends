@@ -300,7 +300,7 @@ SherlesMovesIntoPlaceMovement:
 	step RIGHT
 	step RIGHT
 	step RIGHT
-	step_end
+	step_resume
 
 RainbowOrSilverWingMenu:
 	db MENU_BACKUP_TILES ; flags
