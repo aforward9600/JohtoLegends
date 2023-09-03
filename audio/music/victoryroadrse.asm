@@ -1,11 +1,11 @@
 ; Music by Monstarules
-Music_VictoryRoad:
-	musicheader 4, 1, Music_VictoryRoad_Ch1
-	musicheader 1, 2, Music_VictoryRoad_Ch2
-	musicheader 1, 3, Music_VictoryRoad_Ch3
-	musicheader 1, 4, Music_VictoryRoad_Ch4
+Music_VictoryRoadRSE:
+	musicheader 4, 1, Music_VictoryRoadRSE_Ch1
+	musicheader 1, 2, Music_VictoryRoadRSE_Ch2
+	musicheader 1, 3, Music_VictoryRoadRSE_Ch3
+	musicheader 1, 4, Music_VictoryRoadRSE_Ch4
 
-Music_VictoryRoad_Ch1:
+Music_VictoryRoadRSE_Ch1:
 	tempo $8F
 	volume $77
 	stereopanning $77
@@ -56,7 +56,7 @@ Music_VictoryRoad_Ch1:
 	note B_, 1
 	octave 3
 	note C_, 1
-Music_VictoryRoad_Ch1_loop:
+Music_VictoryRoadRSE_Ch1_loop:
 	intensity $94
 	note E_, 4
 	note C#, 2
@@ -327,9 +327,9 @@ Music_VictoryRoad_Ch1_loop:
 	note B_, 1
 	octave 3
 	note C_, 1
-	loopchannel 0, Music_VictoryRoad_Ch1_loop
+	loopchannel 0, Music_VictoryRoadRSE_Ch1_loop
 
-Music_VictoryRoad_Ch2:
+Music_VictoryRoadRSE_Ch2:
 	octave 4
 	notetype $C, $4F
 	note D#, 8
@@ -374,7 +374,7 @@ Music_VictoryRoad_Ch2:
 	note B_, 1
 	note A#, 1
 	note A_, 1
-Music_VictoryRoad_Ch2_loop:
+Music_VictoryRoadRSE_Ch2_loop:
 	intensity $C4
 	vibrato $08, $24
 	note C#, 10
@@ -718,9 +718,9 @@ Music_VictoryRoad_Ch2_loop:
 	note C#, 1
 	note C_, 1
 	octave 3
-	loopchannel 0, Music_VictoryRoad_Ch2_loop
+	loopchannel 0, Music_VictoryRoadRSE_Ch2_loop
 
-Music_VictoryRoad_Ch3:
+Music_VictoryRoadRSE_Ch3:
 	dutycycle 6
 	tone $0001
 	octave 2
@@ -763,7 +763,7 @@ Music_VictoryRoad_Ch3:
 	note G#, 1
 	intensity $16
 	note G#, 2
-Music_VictoryRoad_Ch3_loop:
+Music_VictoryRoadRSE_Ch3_loop:
 	octave 2
 	notetype $8, $16
 	note C#, 2
@@ -1007,13 +1007,13 @@ Music_VictoryRoad_Ch3_loop:
 	note B_, 1
 	intensity $16
 	note B_, 2
-	loopchannel 0, Music_VictoryRoad_Ch3_loop
+	loopchannel 0, Music_VictoryRoadRSE_Ch3_loop
 
-Music_VictoryRoad_Ch4:
+Music_VictoryRoadRSE_Ch4:
 	notetype $C
 	note __, 16
 	togglenoise 3
-Music_VictoryRoad_Ch4_loop:
+Music_VictoryRoadRSE_Ch4_loop:
 	notetype $8
 	note B_, 4
 	note C#, 1
@@ -1292,4 +1292,4 @@ Music_VictoryRoad_Ch4_loop:
 	note D#, 2
 	note D#, 2
 	note D#, 2
-	loopchannel 0, Music_VictoryRoad_Ch4_loop
+	loopchannel 0, Music_VictoryRoadRSE_Ch4_loop

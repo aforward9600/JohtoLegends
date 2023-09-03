@@ -444,9 +444,9 @@ CHRIS EQU __enum__
 	const SUPER_NERD_RICHARD
 	const HERBERT_SUPER_NERD
 	const TOM
-	const PAT
-	const SHAWN
-	const TERU
+	const ALBERT_SUPER_NERD
+	const JOSEF
+	const DAISUKE
 	const RUSS
 	const NORTON
 	const HUGH
@@ -509,7 +509,10 @@ CHRIS EQU __enum__
 	trainerclass BURGLAR ; 2f
 	const LOCKE
 	const MARV
-	const COREY
+	const BURGLAR_HARRY
+	const BURGLAR_ERIK
+	const ARSENE
+	const KIDD
 
 	trainerclass FIREBREATHER ; 30
 	const CHAZ

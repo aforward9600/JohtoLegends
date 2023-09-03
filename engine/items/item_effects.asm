@@ -163,7 +163,7 @@ ItemEffects:
 	dw EvoStoneEffect      ; UP_GRADE
 	dw RestoreHPEffect     ; BERRY
 	dw RestoreHPEffect     ; GOLD_BERRY
-	dw SquirtbottleEffect  ; SQUIRTBOTTLE
+	dw NoEffect            ; SQUIRTBOTTLE
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
 	dw EvoStoneEffect      ; DUSK_STONE

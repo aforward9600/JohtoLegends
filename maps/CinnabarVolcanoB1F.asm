@@ -1,0 +1,48 @@
+	object_const_def ; object_event constants
+	const CINNABARVOLCANOB1F_BOULDER1
+	const CINNABARVOLCANOB1F_BOULDER2
+	const CINNABARVOLCANOB1F_BOULDER3
+	const CINNABARVOLCANOB1F_BOULDER4
+	const CINNABARVOLCANOB1F_BOULDER5
+	const CINNABARVOLCANOB1F_BOULDER6
+	const CINNABARVOLCANOB1F_BOULDER7
+	const CINNABARVOLCANOB1F_BOULDER8
+	const CINNABARVOLCANOB1F_POKE_BALL1
+	const CINNABARVOLCANOB1F_POKE_BALL2
+
+CinnabarVolcanoB1F_MapScripts:
+	db 0 ; scene scripts
+
+	db 0 ; callbacks
+
+CinnabarVolcanoB1FBoulder:
+	jumpstd strengthboulder
+
+CinnabarVolcanoB1FMagmarizer:
+	itemball MAGMARIZER
+
+CinnabarVolcanoB1FNugget:
+	itemball NUGGET
+
+CinnabarVolcanoB1F_MapEvents:
+	db 0, 0 ; filler
+
+	db 2 ; warp events
+	warp_event  3,  3, CINNABAR_VOLCANO_1F, 2
+	warp_event 11,  3, CINNABAR_VOLCANO_B2F, 1
+
+	db 0 ; coord events
+
+	db 0 ; bg events
+
+	db 10 ; object events
+	object_event  4,  9, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarVolcanoB1FBoulder, -1
+	object_event 12, 14, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarVolcanoB1FBoulder, -1
+	object_event 19,  9, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarVolcanoB1FBoulder, -1
+	object_event  9,  3, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarVolcanoB1FBoulder, -1
+	object_event 12, 15, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarVolcanoB1FBoulder, -1
+	object_event  6, 14, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarVolcanoB1FBoulder, -1
+	object_event 20, 12, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarVolcanoB1FBoulder, -1
+	object_event 21, 12, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarVolcanoB1FBoulder, -1
+	object_event 13, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CinnabarVolcanoB1FMagmarizer, EVENT_CINNABAR_VOLCANO_B1F_MAGMARIZER
+	object_event 10,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CinnabarVolcanoB1FNugget, EVENT_CINNABAR_VOLCANO_B1F_NUGGET

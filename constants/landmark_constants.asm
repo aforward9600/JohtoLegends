@@ -99,6 +99,8 @@ KANTO_LANDMARK EQU const_value
 	const SEAFOAM_ISLANDS   ; 54
 	const CINNABAR_ISLAND   ; 55
 	const POKEMON_MANSION
+	const CINNABAR_VOLCANO
+	const UNKNOWN_2
 	const ROUTE_21          ; 56
 	const ROUTE_22          ; 57
 	const VICTORY_ROAD      ; 58

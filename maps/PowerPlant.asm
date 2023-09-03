@@ -12,7 +12,20 @@
 PowerPlant_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .Zapdos
+
+.Zapdos:
+	checkevent EVENT_CAUGHT_ZAPDOS
+	iftrue .ZapdosWillNotAppear
+	checkevent EVENT_BEAT_ZAPDOS
+	iftrue .ZapdosWillNotAppear
+	appear POWERPLANT_ZAPDOS
+	return
+
+.ZapdosWillNotAppear:
+	disappear POWERPLANT_ZAPDOS
+	return
 
 PowerPlantZapdosScript:
 	opentext

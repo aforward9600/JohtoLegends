@@ -941,7 +941,7 @@ KantoGrassWildMons:
 	dbw 69, MAGNETON
 	dbw 70, ELECTABUZZ
 	dbw 70, RAICHU
-	dbw 70, MAGNEZONE
+	dbw 70, JOLTEON
 	dbw 71, ELECTIVIRE
 	; day
 	dbw 69, PIKACHU
@@ -950,17 +950,46 @@ KantoGrassWildMons:
 	dbw 69, MAGNETON
 	dbw 70, ELECTABUZZ
 	dbw 70, RAICHU
-	dbw 70, MAGNEZONE
+	dbw 70, JOLTEON
 	dbw 71, ELECTIVIRE
 	; nite
-	dbw 64, BEEDRILL
 	dbw 69, PIKACHU
 	dbw 69, ELECTRODE
 	dbw 69, AMPHAROS
 	dbw 69, MAGNETON
 	dbw 70, ELECTABUZZ
 	dbw 70, RAICHU
-	dbw 70, MAGNEZONE
+	dbw 70, JOLTEON
 	dbw 71, ELECTIVIRE
+
+	map_id CINNABAR_VOLCANO_1F
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 64, WEEZING
+	dbw 65, MAGCARGO
+	dbw 64, MAGMAR
+	dbw 65, MUK
+	dbw 67, FLAREON
+	dbw 65, RAPIDASH
+	dbw 66, TYPHLOSION
+	dbw 66, MAGMORTAR
+	; day
+	dbw 64, WEEZING
+	dbw 65, MAGCARGO
+	dbw 64, MAGMAR
+	dbw 65, MUK
+	dbw 67, FLAREON
+	dbw 65, RAPIDASH
+	dbw 66, TYPHLOSION
+	dbw 66, MAGMORTAR
+	; nite
+	dbw 64, WEEZING
+	dbw 65, MAGCARGO
+	dbw 64, MAGMAR
+	dbw 65, MUK
+	dbw 67, FLAREON
+	dbw 65, RAPIDASH
+	dbw 66, TYPHLOSION
+	dbw 66, MAGMORTAR
 
 	db -1 ; end

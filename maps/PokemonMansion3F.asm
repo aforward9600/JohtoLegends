@@ -1,6 +1,8 @@
 	object_const_def ; object_event constants
 	const POKEMONMANSION3F_DIARY1
 	const POKEMONMANSION3F_DIARY2
+	const POKEMONMANSION3F_SCIENTIST
+	const POKEMONMANSION3F_BURGLAR
 
 PokemonMansion3F_MapScripts:
 	db 0 ; scene scripts
@@ -52,11 +54,28 @@ PokemonMansion3FAbraStatue:
 	closetext
 	end
 
+TrainerBurglarHarry:
+	trainer BURGLAR, BURGLAR_HARRY, EVENT_BEAT_BURGLAR_HARRY, BurglarHarrySeenText, BurglarHarryBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BurglarHarryAfterBattleText
+	waitbutton
+	closetext
+	end
+
+PokemonMansion3FScientist:
+	jumptextfaceplayer PokemonMansion3FScientistText
+
 PokemonMansion3FDiary:
 	jumptext PokemonMansion3FDiaryText
 
 PokemonMansion3FDiary2:
 	jumptext PokemonMansion3FDiary2Text
+
+PokemonMansion3FHiddenNugget:
+	hiddenitem NUGGET, EVENT_POKEMON_MANSION_3F_HIDDEN_NUGGET
 
 PokemonMansionPressTheButton3FText:
 	text "A secret switch!"
@@ -133,6 +152,29 @@ PokemonMansion3FDiary2Text:
 	para "Dr. F"
 	done
 
+PokemonMansion3FScientistText:
+	text "This place used to"
+	line "be beautiful."
+
+	para "Now look at it…"
+	done
+
+BurglarHarrySeenText:
+	text "You seen any good"
+	line "loot?"
+	done
+
+BurglarHarryBeatenText:
+	text "My loot!"
+	done
+
+BurglarHarryAfterBattleText:
+	text "All I've seen are"
+	line "some old books!"
+
+	para "Where's the gold?"
+	done
+
 PokemonMansion3F_MapEvents:
 	db 0, 0 ; filler
 
@@ -146,9 +188,12 @@ PokemonMansion3F_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event 10, 5, BGEVENT_READ, PokemonMansion3FAbraStatue
+	db 2 ; bg events
+	bg_event 10,  5, BGEVENT_READ, PokemonMansion3FAbraStatue
+	bg_event  1, 10, BGEVENT_ITEM, PokemonMansion3FHiddenNugget
 
-	db 2 ; object events
+	db 4 ; object events
 	object_event  6, 12, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, PokemonMansion3FDiary, -1
 	object_event 19,  4, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, PokemonMansion3FDiary2, -1
+	object_event 26, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonMansion3FScientist, -1
+	object_event  5, 14, SPRITE_BURGLAR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerBurglarHarry, -1

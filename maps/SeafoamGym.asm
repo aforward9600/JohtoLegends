@@ -16,10 +16,10 @@ SeafoamGymBlaineScript:
 	opentext
 	checkflag ENGINE_VOLCANOBADGE
 	iftrue .FightDone
-	writetext BlaineIntroText
+	writetext BlaineIntroText2
 	waitbutton
 	closetext
-	winlosstext BlaineWinLossText, 0
+	winlosstext BlaineWinLossText2, 0
 	loadtrainer BLAINE, BLAINE1
 	startbattle
 	iftrue .ReturnAfterBattle
@@ -28,17 +28,17 @@ SeafoamGymBlaineScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BLAINE
 	opentext
-	writetext ReceivedVolcanoBadgeText
+	writetext ReceivedVolcanoBadgeText2
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_VOLCANOBADGE
-	writetext BlaineAfterBattleText
+	writetext BlaineAfterBattleText2
 	waitbutton
 	closetext
 	end
 
 .FightDone:
-	writetext BlaineFightDoneText
+	writetext BlaineFightDoneText2
 	waitbutton
 	closetext
 	end
@@ -60,7 +60,7 @@ SeafoamGymGuyScript:
 	closetext
 	end
 
-BlaineIntroText:
+BlaineIntroText2:
 	text "BLAINE: Waaah!"
 
 	para "My GYM in CINNABAR"
@@ -88,7 +88,7 @@ BlaineIntroText:
 	line "have BURN HEAL!"
 	done
 
-BlaineWinLossText:
+BlaineWinLossText2:
 	text "BLAINE: Awesome."
 	line "I've burned out…"
 
@@ -96,12 +96,12 @@ BlaineWinLossText:
 	line "VOLCANOBADGE!"
 	done
 
-ReceivedVolcanoBadgeText:
+ReceivedVolcanoBadgeText2:
 	text "<PLAYER> received"
 	line "VOLCANOBADGE."
 	done
 
-BlaineAfterBattleText:
+BlaineAfterBattleText2:
 	text "BLAINE: I did lose"
 	line "this time, but I'm"
 
@@ -115,7 +115,7 @@ BlaineAfterBattleText:
 	line "a rematch."
 	done
 
-BlaineFightDoneText:
+BlaineFightDoneText2:
 	text "BLAINE: My fire"
 	line "#MON will be"
 

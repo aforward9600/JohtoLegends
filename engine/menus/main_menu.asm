@@ -217,11 +217,11 @@ MainMenuJoypadLoop:
 
 .build_string:
 if DEF(_CHALLENGE)
-	db "V0.4.2 Challenge@"
+	db "V0.4.3 Challenge@"
 elif DEF(_FAITHFUL)
-	db "V0.4.2 Faithful@"
+	db "V0.4.3 Faithful@"
 else
-	db "V0.4.2 Original@"
+	db "V0.4.3 Original@"
 endc
 
 MainMenu_PrintCurrentTimeAndDay:

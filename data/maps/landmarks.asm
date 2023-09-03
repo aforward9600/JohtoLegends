@@ -101,6 +101,8 @@ Landmarks:
 	landmark  68, 132, SeafoamIslandsName
 	landmark  52, 132, CinnabarIslandName
 	landmark  51, 131, PokemonMansionName
+	landmark  51, 132, CinnabarVolcanoName
+	landmark  52, 132, UnknownName2
 	landmark  52, 120, Route21Name
 	landmark  36,  68, Route22Name
 	landmark  28,  52, VictoryRoadName
@@ -221,3 +223,5 @@ WildAreaName:        db "Wild Area@"
 Route47Name:         db "Route 47@"
 Route48Name:         db "Route 48@"
 CliffCaveName:       db "Cliff Cave@"
+CinnabarVolcanoName: db "Cinnabar¯Volcano@"
+UnknownName2:        db "???@"

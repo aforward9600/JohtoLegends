@@ -65,3 +65,4 @@ SpriteMons:
 	dw IGGLYBUFF
 	dw QUAGSIRE
 	dw ABRA
+	dw MISSINGNO

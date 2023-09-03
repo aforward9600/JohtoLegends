@@ -1,5 +1,9 @@
 	object_const_def ; object_event constants
 	const POKEMONMANSIONB1F_DIARY
+	const POKEMONMANSIONB1F_SCIENTIST
+	const POKEMONMANSIONB1F_GUARD
+	const POKEMONMANSIONB1F_BLAINE
+	const POKEMONMANSIONB1F_SCIENTIST2
 
 PokemonMansionB1F_MapScripts:
 	db 0 ; scene scripts
@@ -49,8 +53,8 @@ PokemonMansionB1FAbraStatue:
 	changeblock 16, 16, $0e ; Floor
 	changeblock 26, 16, $54 ; Shutter
 	changeblock 12, 22, $5f ; Shutter
-	changeblock 18, 24, $77 ; Open Eyes
-	changeblock 20,  2, $77 ; Open Eyes
+	changeblock 18, 24, $77 ; Close Eyes
+	changeblock 20,  2, $77 ; Close Eyes
 	reloadmappart
 	end
 
@@ -59,6 +63,9 @@ PokemonMansionB1FAbraStatue:
 	waitbutton
 	closetext
 	end
+
+CinnabarVolcanoGuardScript:
+	jumptextfaceplayer CinnabarVolcanoGuardText
 
 PokemonMansionB1FTank:
 	jumptext PokemonMansionB1FTankText
@@ -151,6 +158,89 @@ PokemonMansionB1FRecording:
 	pause 30
 	special RestartMapMusic
 	end
+
+PokemonMansionB1FScientist:
+	opentext
+	writetext PokemonMansionB1FScientistText
+	waitbutton
+	closetext
+	pause 15
+	showemote EMOTE_SHOCK, POKEMONMANSIONB1F_SCIENTIST, 15
+	pause 15
+	faceplayer
+	opentext
+	writetext PokemonMansionB1FScientistText2
+	waitbutton
+	closetext
+	turnobject POKEMONMANSIONB1F_SCIENTIST, UP
+	end
+
+PokemonMansionBlaineScript:
+	checkevent EVENT_CINNABAR_VOLCANO_GUARD
+	iftrue .CheckForFlameDown
+	opentext
+	writetext PokemonMansionBlaineText1
+	waitbutton
+	closetext
+	pause 15
+	showemote EMOTE_SHOCK, POKEMONMANSIONB1F_BLAINE, 15
+	pause 15
+	faceplayer
+	opentext
+	writetext PokemonMansionBlaineText2
+	waitbutton
+	closetext
+	disappear POKEMONMANSIONB1F_GUARD
+	turnobject POKEMONMANSIONB1F_BLAINE, UP
+	end
+
+.CheckForFlameDown:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_FLAME_DOWN
+	iftrue .GotFlameDown
+	writetext PokemonMansionBlaineText3
+	waitbutton
+	closetext
+	turnobject POKEMONMANSIONB1F_BLAINE, UP
+	end
+
+.GotFlameDown:
+	writetext PokemonMansionBlaineText4
+	waitbutton
+	closetext
+	setevent EVENT_OPENED_CINNABAR_GYM
+	takeitem FLAME_DOWN
+	readvar VAR_FACING
+	ifequal LEFT, .BlaineLeavesLeft
+	applymovement POKEMONMANSIONB1F_BLAINE, BlaineLeavesRightMovement
+	disappear POKEMONMANSIONB1F_BLAINE
+	end
+
+.BlaineLeavesLeft:
+	applymovement POKEMONMANSIONB1F_BLAINE, BlaineLeavesLeftMovement
+	disappear POKEMONMANSIONB1F_BLAINE
+	end
+
+PokemonMansionB1FScientist2:
+	jumptextfaceplayer PokemonMansionB1FScientistText3
+
+BlaineLeavesLeftMovement:
+	step LEFT
+	step LEFT
+	step UP
+	step UP
+	step UP
+	step UP
+	step_end
+
+BlaineLeavesRightMovement:
+	step RIGHT
+	step UP
+	step UP
+	step UP
+	step UP
+	step_end
 
 PokemonMansionPressTheButtonB1FText:
 	text "A secret switch!"
@@ -268,13 +358,159 @@ TheTapeEndedText:
 	text "……The tape ended……"
 	done
 
+PokemonMansionB1FScientistText:
+	text "I can't believe"
+	line "they both escaped…"
+
+	para "Why didn't 'M(00)"
+	line "corrupt anything?"
+	done
+
+PokemonMansionB1FScientistText2:
+	text "Hey!"
+
+	para "Quit eavesdropping"
+	line "on my conversation"
+	cont "with myself!"
+	done
+
+CinnabarVolcanoGuardText:
+	text "Sorry, but you"
+	line "can't go in here."
+
+	para "The fire collapsed"
+	line "this part of the"
+	cont "wall, and it leads"
+	cont "to an underground"
+	cont "volcano!"
+	done
+
+PokemonMansionBlaineText1:
+	text "???: He's shutting"
+	line "us down now…"
+
+	para "After everything"
+	line "we achieved…"
+
+	para "Now what am I"
+	line "going to do?"
+
+	para "Fuji…"
+
+	para "I hope you're happy"
+	line "wherever you are…"
+	done
+
+PokemonMansionBlaineText2:
+	text "???: Who are you?"
+
+	para "………Ah, I know you."
+
+	para "Yes, you're the"
+	line "Champion."
+
+	para "How could I not"
+	line "know you?"
+
+	para "You saved Johto"
+	line "from a shady"
+	cont "group."
+
+	para "How do I know?"
+
+	para "News travels fast."
+
+	para "I am Blaine, a"
+	line "researcher, or a"
+	cont "former researcher"
+	cont "here, I should"
+	cont "say…"
+
+	para "So, what is it"
+	line "that you want?"
+
+	para "………You're looking"
+	line "for a new Gym"
+	cont "Leader to take on"
+	cont "the Federation?"
+
+	para "…Well, I suppose I"
+	line "am unemployed now."
+
+	para "Tell you what, I'll"
+	line "battle you on one"
+	cont "condition."
+
+	para "You see that hole"
+	line "in the wall back"
+	cont "there?"
+
+	para "Go in there, and"
+	line "get me some Flame"
+	cont "Down."
+
+	para "I'd like to use it"
+	line "for some personal"
+	cont "tests."
+
+	para "It can be found on"
+	line "a #mon covered"
+	cont "in flames."
+
+	para "Come back when you"
+	line "have it."
+	done
+
+PokemonMansionBlaineText3:
+	text "Blaine: Catch or"
+	line "defeat the #mon"
+	cont "to claim the down."
+	done
+
+PokemonMansionBlaineText4:
+	text "Blaine: You really"
+	line "did it."
+
+	para "Impressive."
+
+	para "Yes, this is it."
+
+	para "The natural warmth"
+	line "is impressive."
+
+	para "I shall meet you"
+	line "at the Gym."
+
+	para "Yes, I was the Gym"
+	line "Leader a while"
+	cont "ago."
+
+	para "I got absorbed in"
+	line "my work here years"
+	cont "ago, so I had"
+	cont "neglected my job."
+
+	para "Looks like it's"
+	line "time I made up for"
+	cont "lost time."
+	done
+
+PokemonMansionB1FScientistText3:
+	text "Where's that tape?"
+
+	para "I need to get rid"
+	line "of it now!"
+
+	para "That information"
+	line "cannot get out!"
+	done
+
 PokemonMansionB1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
+	db 2 ; warp events
 	warp_event 23, 22, POKEMON_MANSION_1F, 8
-;	warp_event  4,  0, CINNABAR_VOLCANO_1F, 1
-;	warp_event  5,  0, CINNABAR_VOLCANO_1F, 2
+	warp_event  4,  0, CINNABAR_VOLCANO_1F, 1
 
 	db 0 ; coord events
 
@@ -287,5 +523,9 @@ PokemonMansionB1F_MapEvents:
 	bg_event  5, 13, BGEVENT_READ, PokemonMansionB1FTank
 	bg_event 10,  2, BGEVENT_READ, PokemonMansionB1FRecording
 
-	db 1 ; object events
+	db 5 ; object events
 	object_event 17, 20, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, PokemonMansionB1FDiary, -1
+	object_event  4, 24, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PokemonMansionB1FScientist, -1
+	object_event  4,  1, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CinnabarVolcanoGuardScript, EVENT_CINNABAR_VOLCANO_GUARD
+	object_event  5, 14, SPRITE_BLAINE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PokemonMansionBlaineScript, EVENT_POKEMON_MANSION_BLAINE
+	object_event 16, 12, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonMansionB1FScientist2, -1

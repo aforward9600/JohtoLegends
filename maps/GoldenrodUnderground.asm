@@ -123,7 +123,7 @@ TrainerSupernerdEric:
 	end
 
 TrainerSupernerdTeru:
-	trainer SUPER_NERD, TERU, EVENT_BEAT_SUPER_NERD_TERU, SupernerdTeruSeenText, SupernerdTeruBeatenText, 0, .Script
+	trainer SUPER_NERD, DAISUKE, EVENT_BEAT_SUPER_NERD_DAISUKE, SupernerdTeruSeenText, SupernerdTeruBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

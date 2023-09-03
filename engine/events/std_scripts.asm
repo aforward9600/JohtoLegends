@@ -1897,6 +1897,10 @@ StaticPokemonRefresh:
 	iftrue .refreshdusknoir
 	checkevent EVENT_BEAT_CELEBI
 	iftrue .refreshcelebi
+	checkevent EVENT_BEAT_MOLTRES
+	iftrue .refreshmoltres
+	checkevent EVENT_BEAT_ZAPDOS
+	iftrue .refreshzapdos
 	return
 
 .refreshfarfetchd:
@@ -1922,6 +1926,14 @@ StaticPokemonRefresh:
 .refreshcelebi:
 	setevent EVENT_FOREST_IS_RESTLESS
 	clearevent EVENT_BEAT_CELEBI
+	sjump StaticPokemonRefresh
+
+.refreshmoltres:
+	clearevent EVENT_BEAT_MOLTRES
+	sjump StaticPokemonRefresh
+
+.refreshzapdos:
+	clearevent EVENT_BEAT_ZAPDOS
 	sjump StaticPokemonRefresh
 
 TelevisionScript:

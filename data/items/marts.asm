@@ -529,3 +529,14 @@ MartMooMooMilk:
 	db 1 ; # items
 	db MOOMOO_MILK
 	db -1 ; end
+
+MartCinnabarIsland:
+	db 7
+	db HYPER_POTION
+	db FULL_RESTORE
+	db FULL_HEAL
+	db ULTRA_BALL
+	db ESCAPE_ROPE
+	db REVIVE
+	db MAX_REPEL
+	db -1

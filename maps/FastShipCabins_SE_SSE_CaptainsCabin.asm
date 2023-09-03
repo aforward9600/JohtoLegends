@@ -205,7 +205,7 @@ TrainerPokefanfGeorgia:
 	end
 
 TrainerSupernerdShawn:
-	trainer SUPER_NERD, SHAWN, EVENT_BEAT_SUPER_NERD_SHAWN, SupernerdShawnSeenText, SupernerdShawnBeatenText, 0, .Script
+	trainer SUPER_NERD, JOSEF, EVENT_BEAT_SUPER_NERD_JOSEF, SupernerdShawnSeenText, SupernerdShawnBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

@@ -149,7 +149,7 @@ ItemNames::
 	db "Up-grade@"
 	db "Oran Berry@"
 	db "Sitrus Berry@"
-	db "Squirtbottle@"
+	db "Flame Down@"
 	db "Bug Ball@"
 	db "Rainbow Wing@"
 	db "Dusk Stone@"

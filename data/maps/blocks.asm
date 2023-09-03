@@ -315,6 +315,7 @@ SaffronMart_Blocks:
 CherrygroveMart_Blocks:
 WildAreaMart_Blocks:
 LakeOfRageMart_Blocks:
+CinnabarIslandMart_Blocks:
 	INCBIN "maps/Mart.blk"
 
 Route10North_Blocks:
@@ -1117,3 +1118,18 @@ PokemonMansion3F_Blocks:
 
 PokemonMansionB1F_Blocks:
 	INCBIN "maps/PokemonMansionB1F.blk"
+
+CinnabarVolcano1F_Blocks:
+	INCBIN "maps/CinnabarVolcano1F.blk"
+
+CinnabarVolcanoB1F_Blocks:
+	INCBIN "maps/CinnabarVolcanoB1F.blk"
+
+CinnabarVolcanoB2F_Blocks:
+	INCBIN "maps/CinnabarVolcanoB2F.blk"
+
+CinnabarIslandGym_Blocks:
+	INCBIN "maps/CinnabarIslandGym.blk"
+
+GlitchCity_Blocks:
+	INCBIN "maps/GlitchCity.blk"

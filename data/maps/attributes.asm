@@ -729,3 +729,9 @@ ENDM
 	map_attributes PokemonMansion2F, POKEMON_MANSION_2F, $00, 0
 	map_attributes PokemonMansion3F, POKEMON_MANSION_3F, $00, 0
 	map_attributes PokemonMansionB1F, POKEMON_MANSION_B1F, $00, 0
+	map_attributes CinnabarVolcano1F, CINNABAR_VOLCANO_1F, $00, 0
+	map_attributes CinnabarVolcanoB1F, CINNABAR_VOLCANO_B1F, $00, 0
+	map_attributes CinnabarVolcanoB2F, CINNABAR_VOLCANO_B2F, $00, 0
+	map_attributes CinnabarIslandMart, CINNABAR_ISLAND_MART, $00, 0
+	map_attributes CinnabarIslandGym, CINNABAR_ISLAND_GYM, $00, 0
+	map_attributes GlitchCity, GLITCH_CITY, $00, 0

@@ -1019,6 +1019,7 @@ Script_StrengthFromMenu:
 Script_UsedStrength:
 	callasm SetStrengthFlag
 	writetext .UsedStrength
+	pause 15
 	readmem wBuffer6
 	refreshscreen
 	pokepic MACHAMP

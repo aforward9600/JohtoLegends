@@ -201,6 +201,12 @@ ENDM
 	map_const POKEMON_MANSION_2F,                          15, 14 ; 10
 	map_const POKEMON_MANSION_3F,                          15,  9 ; 11
 	map_const POKEMON_MANSION_B1F,                         15, 14 ; 12
+	map_const CINNABAR_VOLCANO_1F,                         10, 10 ; 13
+	map_const CINNABAR_VOLCANO_B1F,                        12, 12 ; 14
+	map_const CINNABAR_VOLCANO_B2F,                         5, 10 ; 15
+	map_const CINNABAR_ISLAND_MART,                         6,  4 ; 16
+	map_const CINNABAR_ISLAND_GYM,                         10,  9 ; 17
+	map_const GLITCH_CITY,                                 10, 10 ; 18
 
 	newgroup                                                      ;  7
 

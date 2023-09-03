@@ -7,10 +7,15 @@ Route20_MapScripts:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .ClearRocks
+	callback MAPCALLBACK_TILES, .GlitchCity
 
-.ClearRocks:
-	setevent EVENT_CINNABAR_ROCKS_CLEARED
+.GlitchCity:
+	readvar VAR_WEEKDAY
+	ifequal WEDNESDAY, .GlitchCityOpens
+	return
+
+.GlitchCityOpens:
+	changeblock 0, 2, $ab ; portal
 	return
 
 TrainerSwimmerfNicole:
@@ -113,8 +118,9 @@ CinnabarGymSignText:
 Route20_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
+	db 2 ; warp events
 	warp_event 38,  7, SEAFOAM_GYM, 1
+	warp_event  0,  2, GLITCH_CITY, 1
 
 	db 0 ; coord events
 

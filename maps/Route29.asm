@@ -150,6 +150,10 @@ Route29Raikou:
 
 .CaughtRaikou:
 	setevent EVENT_CAUGHT_RAIKOU
+	opentext
+	writetext TeacherCharleneAfterText
+	waitbutton
+	closetext
 	end
 
 .NotBeaten:

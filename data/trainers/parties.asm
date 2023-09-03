@@ -3781,7 +3781,7 @@ endc
 	dw RATTATA
 	db -1 ; end
 
-	next_list_item ; ManM (22)
+	next_list_item ; ManM (22) Tin Tower 4f
 	db "Man@", TRAINERTYPE_NORMAL
 	db 44
 	dw DUSKNOIR
@@ -5172,7 +5172,7 @@ endc
 	dw LAPRAS
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (6)
+	next_list_item ; SUPER_NERD (6) Route 35
 	db "Herbert@", TRAINERTYPE_NORMAL
 	db 30
 	dw GLOOM
@@ -5194,32 +5194,39 @@ endc
 	dw MAGNEMITE
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (8)
-	db "PAT@", TRAINERTYPE_NORMAL
-	db 36
-	dw PORYGON
+	next_list_item ; SUPER_NERD (8) Cinnabar Gym
+	db "Albert@", TRAINERTYPE_NORMAL
+	db 70
+	dw CHARIZARD
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (9)
-	db "SHAWN@", TRAINERTYPE_NORMAL
-	db 31
-	dw MAGNEMITE
-	db 33
-	dw MUK
-	db 31
-	dw MAGNEMITE
+	next_list_item ; SUPER_NERD (9) Cinnabar Gym
+	db "Josef@", TRAINERTYPE_MOVES
+	db 69
+	dw MAGCARGO
+	dw FLASH_CANNON, FLAMETHROWER, SHELL_SMASH, ROCK_SLIDE
+	db 69
+	dw NINETALES
+	dw NASTY_PLOT, FLAMETHROWER, SHADOW_BALL, EXTRASENSORY
+	db 69
+	dw MAGMORTAR
+	dw SLUDGE_BOMB, FIRE_BLAST, THUNDERBOLT, WILL_O_WISP
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (10)
-	db "TERU@", TRAINERTYPE_NORMAL
-	db 7
-	dw MAGNEMITE
-	db 11
-	dw VOLTORB
-	db 7
-	dw MAGNEMITE
-	db 9
-	dw MAGNEMITE
+	next_list_item ; SUPER_NERD (10) Cinnabar Gym
+	db "Daisuke@", TRAINERTYPE_MOVES
+	db 69
+	dw FLAREON
+	dw FLARE_BLITZ, EARTHQUAKE, DOUBLE_EDGE, IRON_HEAD
+	db 69
+	dw SUNFLORA
+	dw GIGA_DRAIN, FLAMETHROWER, SUNNY_DAY, SLUDGE_BOMB
+	db 69
+	dw HOUNDOOM
+	dw DARK_PULSE, NASTY_PLOT, FLAMETHROWER, THUNDER_FANG
+	db 69
+	dw TYPHLOSION
+	dw EARTH_POWER, FLAMETHROWER, GRASS_KNOT, WILL_O_WISP
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (11)
@@ -5855,23 +5862,23 @@ endc
 BlaineGroup:
 	next_list_item ; BLAINE (1)
 	db "Blaine@", TRAINERTYPE_ITEM_MOVES
-	db 69
+	db 71
 	dw NINETALES
 	db NO_ITEM
 	dw SHADOW_BALL, FIRE_BLAST, NASTY_PLOT, PSYCHIC_M
-	db 69
+	db 71
 	dw FLAREON
 	db NO_ITEM
 	dw FLARE_BLITZ, EARTHQUAKE, DOUBLE_EDGE, WILL_O_WISP
-	db 69
+	db 71
 	dw TYPHLOSION
 	db NO_ITEM
 	dw EARTH_POWER, FIRE_BLAST, SUNNY_DAY, SOLARBEAM
-	db 69
+	db 71
 	dw RAPIDASH
 	db NO_ITEM
 	dw FLARE_BLITZ, SOLAR_BLADE, BOUNCE, MEGAHORN
-	db 69
+	db 71
 	dw MAGMORTAR
 	db NO_ITEM
 if DEF(_FAITHFUL)
@@ -5879,9 +5886,9 @@ if DEF(_FAITHFUL)
 else
 	dw THUNDERBOLT, FIRE_BLAST, BELCH, CONFUSE_RAY
 endc
-	db 70
+	db 72
 	dw ARCANINE
-	db NO_ITEM
+	db SITRUS_BERRY
 	dw EXTREMESPEED, FLARE_BLITZ, PLAY_ROUGH, CRUNCH
 	db -1 ; end
 
@@ -5898,7 +5905,7 @@ BurglarGroup:
 	dw SLUGMA
 	db -1 ; end
 
-	next_list_item ; BURGLAR (2)
+	next_list_item ; BURGLAR (2) Pokemon Mansion
 	db "Marv@", TRAINERTYPE_MOVES
 	db 71
 	dw ARCANINE
@@ -5908,16 +5915,48 @@ BurglarGroup:
 	dw SUNNY_DAY, SOLAR_BLADE, FLARE_BLITZ, SMART_STRIKE
 	db -1 ; end
 
-	next_list_item ; BURGLAR (3)
-	db "COREY@", TRAINERTYPE_NORMAL
-	db 25
-	dw KOFFING
-	db 28
-	dw MAGMAR
-	db 25
-	dw KOFFING
-	db 30
-	dw KOFFING
+	next_list_item ; BURGLAR (3) Pokemon Mansion
+	db "Harry@", TRAINERTYPE_NORMAL
+	db 71
+	dw CHARIZARD
+	db 71
+	dw WEAVILE
+	db -1 ; end
+
+	next_list_item ; BURGLAR (4) Cinnabar Gym
+	db "Erik@", TRAINERTYPE_NORMAL
+	db 70
+	dw CHARIZARD
+	db 70
+	dw RAPIDASH
+	db 71
+	dw WEEZING
+	db -1 ; end
+
+	next_list_item ; BURGLAR (5) Cinnabar Gym
+	db "Arsene@", TRAINERTYPE_MOVES
+	db 70
+	dw PERSIAN
+	dw SLASH, PLAY_ROUGH, NIGHT_SLASH, GIGA_IMPACT
+	db 70
+	dw FLAREON
+	dw FLARE_BLITZ, EARTHQUAKE, IRON_HEAD, THUNDER_FANG
+	db 71
+	dw MUK
+	dw GUNK_SHOT, ACID_ARMOR, KNOCK_OFF, MUD_BOMB
+	db -1 ; end
+
+	next_list_item ; BURGLAR (6) Cinnabar Gym
+	db "Kidd@", TRAINERTYPE_MOVES
+	db 70
+	dw ARCANINE
+	dw EXTREMESPEED, FLARE_BLITZ, CRUNCH, OUTRAGE
+	db 70
+	dw ELECTRODE
+	dw EXPLOSION, VOLT_TACKLE, SUCKER_PUNCH, GYRO_BALL
+	db 71
+	dw WEEZING
+	dw BELCH, FIRE_BLAST, EXPLOSION, DESTINY_BOND
 	db -1 ; end
 
 	end_list_items

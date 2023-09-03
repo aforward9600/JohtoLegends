@@ -19,6 +19,7 @@ PokemonMansion1F_MapScripts:
 	changeblock 16,  6, $0e ; Floor
 	changeblock 20, 16, $0e ; Floor
 	changeblock 26,  4, $14 ; Shutter
+	changeblock  2,  4, $02 ; Open Eyes
 	return
 
 PokemonMansion1FAbraStatue:

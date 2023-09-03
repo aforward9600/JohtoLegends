@@ -150,7 +150,7 @@ ItemDescriptions:
 	dw UpGradeDesc
 	dw BerryDesc
 	dw GoldBerryDesc
-	dw SquirtBottleDesc
+	dw FlameDownDesc
 	dw ParkBallDesc
 	dw RainbowWingDesc
 	dw DuskStoneDesc
@@ -851,9 +851,9 @@ GoldBerryDesc:
 	db   "A self-restore"
 	next "item. (30HP, Hold)@"
 
-SquirtBottleDesc:
-	db   "A bottle used for"
-	next "watering plants.@"
+FlameDownDesc:
+	db   "Down from Moltres."
+	next "Feels nice & warm.@"
 
 ParkBallDesc:
 	db   "The Bug-Catching"

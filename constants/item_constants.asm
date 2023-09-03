@@ -156,40 +156,40 @@
 	const UP_GRADE     ; ac
 	const ORAN_BERRY   ; ad
 	const SITRUS_BERRY ; ae
-	const SQUIRTBOTTLE ; af
+	const FLAME_DOWN   ; af
 	const PARK_BALL    ; b1
 	const RAINBOW_WING ; b2
 	const DUSK_STONE   ; be
 	const ICE_STONE    ; bf
 	const SHINY_STONE  ; c0
-	const DUBIOUSDISK
-	const LINK_CABLE
-	const ELECTIRIZER
-	const MAGMARIZER
-	const RAZOR_CLAW
-	const RAZOR_FANG
-	const PROTECTOR
-	const STEEL_DAGGER
-	const ROYAL_ROCK
-	const SCYTHER_CALL
-	const GOLEM_CALL
-	const VOLTORB_CALL
-	const MACHAMP_CALL
-	const SNUBBULLCALL
-	const LAPRAS_CALLA
-	const LAPRAS_CALLB
-	const LAPRAS_CALLC
-	const PIDGEOT_CALL
-	const EVIOLITE
-	const SURF_MAIL    ; b5
-	const LITEBLUEMAIL ; b6
-	const PORTRAITMAIL ; b7
-	const LOVELY_MAIL  ; b8
-	const EON_MAIL     ; b9
-	const MORPH_MAIL   ; ba
-	const BLUESKY_MAIL ; bb
-	const MUSIC_MAIL   ; bc
-	const MIRAGE_MAIL  ; bd
+	const DUBIOUSDISK  ; c1
+	const LINK_CABLE   ; c2
+	const ELECTIRIZER  ; c3
+	const MAGMARIZER   ; c4
+	const RAZOR_CLAW   ; c5
+	const RAZOR_FANG   ; c6
+	const PROTECTOR    ; c7
+	const STEEL_DAGGER ; c8
+	const ROYAL_ROCK   ; c9
+	const SCYTHER_CALL ; ca
+	const GOLEM_CALL   ; cb
+	const VOLTORB_CALL ; cc
+	const MACHAMP_CALL ; cd
+	const SNUBBULLCALL ; ce
+	const LAPRAS_CALLA ; cf
+	const LAPRAS_CALLB ; d0
+	const LAPRAS_CALLC ; d1
+	const PIDGEOT_CALL ; d2
+	const EVIOLITE     ; d3
+	const SURF_MAIL    ; d4
+	const LITEBLUEMAIL ; d5
+	const PORTRAITMAIL ; d6
+	const LOVELY_MAIL  ; d7
+	const EON_MAIL     ; d8
+	const MORPH_MAIL   ; d9
+	const BLUESKY_MAIL ; da
+	const MUSIC_MAIL   ; db
+	const MIRAGE_MAIL  ; dc
 
 add_tm: MACRO
 if !DEF(TM01)

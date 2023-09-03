@@ -223,6 +223,7 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_IGGLYBUFF ; d5
 	const SPRITE_QUAGSIRE ; d6
 	const SPRITE_ABRA ; d7
+	const SPRITE_MISSINGNO
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
 	const_def $e0
