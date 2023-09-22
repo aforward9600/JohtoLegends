@@ -173,7 +173,7 @@ BattleAnimOAMData:
 	dbbw $1e,  9, .OAMData_a4 ; BATTLEANIMOAMSET_A9
 	dbbw $24,  9, .OAMData_a4 ; BATTLEANIMOAMSET_AA
 	dbbw $2a,  9, .OAMData_a4 ; BATTLEANIMOAMSET_AB
-	dbbw $03,  4, .OAMData_ac ; BATTLEANIMOAMSET_AC
+	dbbw $00,  4, .OAMData_ac ; BATTLEANIMOAMSET_AC
 	dbbw $12,  4, .OAMData_03 ; BATTLEANIMOAMSET_AD
 	dbbw $10,  4, .OAMData_04 ; BATTLEANIMOAMSET_AE
 	dbbw $16,  1, .OAMData_0f ; BATTLEANIMOAMSET_AF
@@ -217,6 +217,13 @@ BattleAnimOAMData:
 	dbbw $00,  6, .OAMData_d5 ; BATTLEANIMOAMSET_D5
 	dbbw $00, 14, .OAMData_d6 ; BATTLEANIMOAMSET_D6
 	dbbw $00, 12, .OAMData_d7 ; BATTLEANIMOAMSET_D7
+	dbbw $10,  2, .OAMData_11 ; BATTLEANIMOAMSET_D8
+	dbbw $00, 16, .OAMData_e1  ; BATTLEANIMOAMSET_E1
+	dbbw $08, 16, .OAMData_e1  ; BATTLEANIMOAMSET_E2
+	dbbw $10, 16, .OAMData_e1  ; BATTLEANIMOAMSET_E3
+	dbbw $18, 16, .OAMData_e1  ; BATTLEANIMOAMSET_E4
+	dbbw $15,  4, .OAMData_e5  ; BATTLEANIMOAMSET_E5
+	dbbw $02,  2, .OAMData_e6  ; BATTLEANIMOAMSET_E6
 
 .OAMData_11:
 	dsprite  -1, 0,  -1, 4, $00, $0
@@ -1083,3 +1090,31 @@ BattleAnimOAMData:
 	dsprite  -2, 0,   6, 4, $00, $0
 	dsprite  -4, 0,   8, 4, $00, $0
 	dsprite  -2, 0,  10, 4, $00, $0
+
+.OAMData_e1:
+	dsprite  -2,  -2, 0, 0, $00, $0
+	dsprite  -1,  -2, 0, 0, $01, $0
+	dsprite   0,  -2, 0, 0, $02, $0
+	dsprite   1,  -2, 0, 0, $03, $0
+	dsprite  -2,  -1, 0, 0, $04, $0
+	dsprite  -1,  -1, 0, 0, $05, $0
+	dsprite   0,  -1, 0, 0, $06, $0
+	dsprite   1,  -1, 0, 0, $07, $0
+	dsprite  -2,   0, 0, 0, $07, X_FLIP | Y_FLIP
+	dsprite  -1,   0, 0, 0, $06, X_FLIP | Y_FLIP
+	dsprite   0,   0, 0, 0, $05, X_FLIP | Y_FLIP
+	dsprite   1,   0, 0, 0, $04, X_FLIP | Y_FLIP
+	dsprite  -2,   1, 0, 0, $03, X_FLIP | Y_FLIP
+	dsprite  -1,   1, 0, 0, $02, X_FLIP | Y_FLIP
+	dsprite   0,   1, 0, 0, $01, X_FLIP | Y_FLIP
+	dsprite   1,   1, 0, 0, $00, X_FLIP | Y_FLIP
+
+.OAMData_e6:
+	dsprite  -1,  -1, 4, 4, $00, $0
+	dsprite   0,   0, 2, 2, $00, $0
+
+.OAMData_e5:
+	dsprite  -1,  -1, 0, 0, $00, $0
+	dsprite   0,  -1, 0, 0, $00, X_FLIP
+	dsprite  -1,   0, 0, 0, $01, $0
+	dsprite   0,   0, 0, 0, $01, X_FLIP

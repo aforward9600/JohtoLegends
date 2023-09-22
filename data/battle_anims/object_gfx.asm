@@ -50,6 +50,14 @@ AnimObjGFX:
 	anim_obj_gfx  1, NULL
 	anim_obj_gfx  1, NULL
 	anim_obj_gfx 16, AnimObjGlobeGFX
+	anim_obj_gfx 18, AnimObjFocusBlastGFX
+	anim_obj_gfx 24, AnimObjSwirlGFX
+	anim_obj_gfx  4, AnimObjWindBGGFX
+	anim_obj_gfx 13, AnimObjBigGlowClearGFX
+	anim_obj_gfx 32, AnimObjVortexGFX
+	anim_obj_gfx 16, AnimObjAuraSphereGFX
+	anim_obj_gfx  9, AnimObjGlowGFX
+	anim_obj_gfx  5, AnimObjMisc2GFX
 
 AnimBallObjGFX:
 	dbw POKE_BALL, 		AnimObjPokeBallGFX

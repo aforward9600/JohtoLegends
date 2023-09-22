@@ -227,7 +227,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_MUD_BOMB
 	const ANIM_OBJ_WILL_O_WISP
 	const ANIM_OBJ_HAIL
-	const ANIM_OBJ_AURA_SPHERE
+	const ANIM_OBJ_AURA_SPHERE_OLD
 	const ANIM_OBJ_SOLAR_BLADE
 	const ANIM_OBJ_DRAININGKISS
 	const ANIM_OBJ_WATER_HIT
@@ -242,6 +242,17 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_MOON
 	const ANIM_OBJ_BULLET_SEED
 	const ANIM_OBJ_SLUDGE_WAVE
+	const ANIM_OBJ_FOCUS_BLAST
+	const ANIM_OBJ_SWIRL
+	const ANIM_OBJ_VORTEX
+	const ANIM_OBJ_AURA_SPHERE
+	const ANIM_OBJ_SWIRL_SHORT
+	const ANIM_OBJ_SMALL_GLOW
+	const ANIM_OBJ_FEATHER_DANCE
+	const ANIM_OBJ_DROPLET_R
+	const ANIM_OBJ_DROPLET_L
+	const ANIM_OBJ_TEARS_1
+	const ANIM_OBJ_TEARS_2
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
 	const_def
@@ -287,7 +298,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLEANIMFUNC_26
 	const BATTLEANIMFUNC_27
 	const BATTLEANIMFUNC_28
-	const BATTLEANIMFUNC_SPRIAL_DESCENT
+	const BATTLEANIMFUNC_SPIRAL_DESCENT
 	const BATTLEANIMFUNC_POISON_GAS
 	const BATTLEANIMFUNC_HORN
 	const BATTLEANIMFUNC_2C
@@ -326,6 +337,8 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLEANIMFUNC_4D
 	const BATTLEANIMFUNC_4E
 	const BATTLEANIMFUNC_4F
+	const BATTLEANIMFUNC_RADIAL_SPIN
+	const BATTLEANIMFUNC_RADIAL_MOVE_OUT_SLOW
 
 ; BattleAnimFrameData indexes (see data/battle_anims/framesets.asm)
 	const_def
@@ -514,6 +527,14 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLEANIMFRAMESET_B6
 	const BATTLEANIMFRAMESET_B7
 	const BATTLEANIMFRAMESET_B8
+	const BATTLEANIMFRAMESET_FOCUS_BLAST
+	const BATTLEANIMFRAMESET_SWIRL
+	const BATTLEANIMFRAMESET_VORTEX
+	const BATTLEANIMFRAMESET_SWIRL_SHORT
+	const BATTLEANIMFRAMESET_SMALL_GLOW
+	const BATTLEANIMFRAMESET_DROPLET_R
+	const BATTLEANIMFRAMESET_DROPLET_L
+	const BATTLEANIMFRAMESET_BA
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
 	const_def
@@ -733,6 +754,14 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLEANIMOAMSET_D5
 	const BATTLEANIMOAMSET_D6
 	const BATTLEANIMOAMSET_D7
+	const BATTLEANIMOAMSET_D8
+	const BATTLEANIMOAMSET_E1
+	const BATTLEANIMOAMSET_E2
+	const BATTLEANIMOAMSET_E3
+	const BATTLEANIMOAMSET_E4
+	const BATTLEANIMOAMSET_E5
+	const BATTLEANIMOAMSET_E6
+NUM_BATTLEANIMOAMSETS EQU const_value
 
 ; BattleBGEffects indexes (see engine/battle_anims/bg_effects.asm)
 	const_def 1
@@ -741,7 +770,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_BG_WHITE_HUES
 	const ANIM_BG_BLACK_HUES
 	const ANIM_BG_ALTERNATE_HUES
-	const ANIM_BG_06
+	const ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW
 	const ANIM_BG_07
 	const ANIM_BG_08
 	const ANIM_BG_HIDE_MON
@@ -760,7 +789,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_BG_16
 	const ANIM_BG_17
 	const ANIM_BG_18
-	const ANIM_BG_19
+	const ANIM_BG_FADE_MON_TO_BLACK_REPEATING
 	const ANIM_BG_1A
 	const ANIM_BG_1B
 	const ANIM_BG_1C
@@ -835,6 +864,14 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_GFX_PLAYERHEAD
 	const ANIM_GFX_ENEMYFEET
 	const ANIM_GFX_MOON
+	const ANIM_GFX_FOCUS_BLAST
+	const ANIM_GFX_SWIRL
+	const ANIM_GFX_WIND_BG
+	const ANIM_GFX_BIG_GLOW_CLEAR
+	const ANIM_GFX_VORTEX
+	const ANIM_GFX_AURA_SPHERE
+	const ANIM_GFX_GLOW
+	const ANIM_GFX_MISC_2
 
 ; battle_bg_effect struct members (see macros/wram.asm)
 	const_def
@@ -855,6 +892,10 @@ NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BATTLE_BG_5         ; 5
 	const PAL_BATTLE_BG_6         ; 6
 	const PAL_BATTLE_BG_TEXT      ; 7
+; sentinel palette indices that denote "user" or "target" for battle pics
+; (anim_setbgpal applies them to the relevant obj palettes too)
+	const PAL_BATTLE_BG_USER       ; 8
+	const PAL_BATTLE_BG_TARGET     ; 9
 
 ; animation object palettes
 	const_def
@@ -866,3 +907,29 @@ NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BATTLE_OB_GREEN  ; 5
 	const PAL_BATTLE_OB_BLUE   ; 6
 	const PAL_BATTLE_OB_BROWN  ; 7
+
+; custom bg/obj palettes (see gfx/battle_anims/custom.pal)
+; the first 6 matches PAL_BATTLE_OB_GRAY/YELLOW/...
+	const_def
+	const PAL_BTLCUSTOM_GRAY            ; 0
+	const PAL_BTLCUSTOM_YELLOW          ; 1
+	const PAL_BTLCUSTOM_RED             ; 2
+	const PAL_BTLCUSTOM_GREEN           ; 3
+	const PAL_BTLCUSTOM_BLUE            ; 4
+	const PAL_BTLCUSTOM_BROWN           ; 5
+	const PAL_BTLCUSTOM_PURPLE          ; 6
+	const PAL_BTLCUSTOM_ICE             ; 7
+	const PAL_BTLCUSTOM_FIRE            ; 8
+	const PAL_BTLCUSTOM_GLOBE           ; 9
+	const PAL_BTLCUSTOM_WATER           ; a
+	const PAL_BTLCUSTOM_BUBBLE          ; b
+	const PAL_BTLCUSTOM_DRAGONBREATH    ; c
+	const PAL_BTLCUSTOM_DRAGON_RAGE     ; d
+	const PAL_BTLCUSTOM_AURORA          ; e
+	const PAL_BTLCUSTOM_SPORE           ; f
+	const PAL_BTLCUSTOM_PEACH           ; 10
+	const PAL_BTLCUSTOM_GLOW_GREEN      ; 11
+	const PAL_BTLCUSTOM_GLOW_YELLOW     ; 12
+NUM_CUSTOM_BATTLE_PALETTES EQU const_value
+
+PAL_BTLCUSTOM_DEFAULT EQU -1

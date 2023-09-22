@@ -441,7 +441,7 @@ BattleBGEffect_BattlerObj_1Row:
 	ld [wBattleObjectTempYCoord], a
 	xor a
 	ld [wBattleObjectTempParam], a
-	call _QueueBattleAnimation
+	farcall _QueueBattleAnimation
 	pop bc
 	ret
 
@@ -508,7 +508,7 @@ BattleBGEffect_BattlerObj_2Row:
 	ld [wBattleObjectTempYCoord], a
 	xor a
 	ld [wBattleObjectTempParam], a
-	call _QueueBattleAnimation
+	farcall _QueueBattleAnimation
 	pop bc
 	ret
 
@@ -535,10 +535,6 @@ BattleBGEffect_BattlerObj_2Row:
 	xor a
 	ldh [hBGMapMode], a
 	call EndBattleBGEffect
-	ret
-
-_QueueBattleAnimation:
-	callfar QueueBattleAnimation
 	ret
 
 BattleBGEffect_27:

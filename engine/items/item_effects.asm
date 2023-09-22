@@ -527,6 +527,12 @@ PokeBallEffect:
 	jr z, .is_celebi
 	cp BATTLETYPE_LUGIA
 	jr z, .is_celebi
+	cp BATTLETYPE_SUICUNE
+	jr z, .is_celebi
+	cp BATTLETYPE_LEGENDARY
+	jr z, .is_celebi
+	cp BATTLETYPE_MEWTWO
+	jr z, .is_celebi
 	cp BATTLETYPE_CELEBI
 	jr nz, .not_celebi
 .is_celebi

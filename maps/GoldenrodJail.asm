@@ -251,7 +251,7 @@ OfficerGetsBackInPlaceMovement:
 	step LEFT
 	step LEFT
 	step UP
-	step_end
+	step_resume
 
 OfficerGetsInPlaceMovement:
 	step DOWN

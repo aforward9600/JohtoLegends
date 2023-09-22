@@ -185,6 +185,14 @@ BattleAnimFrameData:
 	dw .Frameset_b6 ; BATTLEANIMFRAMESET_B6
 	dw .Frameset_b7 ; BATTLEANIMFRAMESET_B7
 	dw .Frameset_b8 ; BATTLEANIMFRAMESET_B8
+	dw .Frameset_FocusBlast ; BATTLEANIMFRAMESET_FOCUS_BLAST
+	dw .Frameset_Swirl ; BATTLEANIMFRAMESET_SWIRL
+	dw .Frameset_Vortex ; BATTLEANIMFRAMESET_VORTEX
+	dw .Frameset_SwirlShort ; BATTLEANIMFRAMESET_SWIRL_SHORT
+	dw .Frameset_SmallGlow  ; BATTLEANIMFRAMESET_SMALL_GLOW
+	dw .Frameset_DropletR
+	dw .Frameset_DropletL
+	dw .Frameset_ba
 
 .Frameset_00:
 	frame BATTLEANIMOAMSET_00,  6
@@ -1266,3 +1274,55 @@ BattleAnimFrameData:
 .Frameset_b8:
 	frame BATTLEANIMOAMSET_D7,  8
 	endanim
+
+.Frameset_FocusBlast:
+	frame BATTLEANIMFRAMESET_00,  1
+	frame BATTLEANIMFRAMESET_07,  1
+	endanim
+
+.Frameset_Swirl:
+	frame BATTLEANIMOAMSET_CD,  1
+	frame BATTLEANIMOAMSET_BA,  1
+	frame BATTLEANIMOAMSET_CE,  1
+	frame BATTLEANIMOAMSET_94,  1
+	frame BATTLEANIMOAMSET_CD,  1, OAM_X_FLIP, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_BA,  1, OAM_X_FLIP, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_CE,  1, OAM_X_FLIP, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_94,  1, OAM_X_FLIP, OAM_Y_FLIP
+	dorestart
+
+.Frameset_Vortex:
+	frame BATTLEANIMOAMSET_E1, 1
+	frame BATTLEANIMOAMSET_E2, 1
+	frame BATTLEANIMOAMSET_E3, 1
+	frame BATTLEANIMOAMSET_E4, 1
+	dorestart
+
+.Frameset_SwirlShort:
+	frame BATTLEANIMOAMSET_CD,  1
+	frame BATTLEANIMOAMSET_BA,  1
+	frame BATTLEANIMOAMSET_CE,  1
+	frame BATTLEANIMOAMSET_94,  1
+	frame BATTLEANIMOAMSET_CD,  1, OAM_X_FLIP, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_BA,  1, OAM_X_FLIP, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_CE,  1, OAM_X_FLIP, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_94,  1, OAM_X_FLIP, OAM_Y_FLIP
+	delanim
+
+.Frameset_SmallGlow:
+	frame BATTLEANIMOAMSET_54,  1
+	frame BATTLEANIMOAMSET_53,  1
+	dorestart
+
+.Frameset_DropletR:
+	frame BATTLEANIMOAMSET_E6, 16
+	delanim
+
+.Frameset_DropletL:
+	frame BATTLEANIMOAMSET_E6, 16, OAM_X_FLIP
+	delanim
+
+.Frameset_ba:
+	dowait 6
+	frame BATTLEANIMOAMSET_D8, 16
+	delanim

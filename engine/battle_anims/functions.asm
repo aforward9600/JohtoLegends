@@ -94,6 +94,8 @@ DoBattleAnimFrame:
 	dw BattleAnimFunction_4D ; 4d
 	dw BattleAnimFunction_4E ; 4e
 	dw BattleAnimFunction_4F ; 4f
+	dw BattleAnimFunction_RadialSpin
+	dw BattleAnimFunction_RadialMoveOutSlow
 
 BattleAnimFunction_Null:
 	call BattleAnim_AnonJumptable
@@ -4164,3 +4166,81 @@ BattleAnim_AbsCosinePrecise:
 
 BattleAnimSineWave:
 	sine_table 32
+
+BattleAnimFunction_RadialSpin:
+	ld hl, BATTLEANIMSTRUCT_0F
+	add hl, bc
+	ld a, [hl]
+	ld d, $10
+	push af
+	push de
+	call Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	pop de
+	pop af
+	call Cosine
+	ld hl, BATTLEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_0F
+	add hl, bc
+	push hl
+	ld a, [hli]
+	ld e, [hl]
+	ld d, a
+	ld hl, 500 ; speed
+	add hl, de
+	ld a, h
+	ld e, l
+	pop hl
+	ld [hli], a
+	ld [hl], e
+	ret
+
+BattleAnimFunction_RadialMoveOutSlow:
+	call BattleAnim_AnonJumptable
+
+	dw .initialize
+	dw .step
+
+.initialize
+	ld hl, BATTLEANIMSTRUCT_10
+	add hl, bc
+	xor a
+	ld [hld], a
+	ld [hl], a ; initial position = 0
+	call BattleAnim_IncAnonJumptableIndex
+.step
+	ld hl, BATTLEANIMSTRUCT_0F
+	add hl, bc
+	push hl
+	ld a, [hli]
+	ld e, [hl]
+	ld d, a
+	ld hl, 1 ; speed
+	add hl, de
+	ld a, h
+	ld e, l
+	pop hl
+	ld [hli], a
+	ld [hl], e
+	cp 120 ; final position
+	jp nc, DeinitBattleAnimation
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld e, [hl]
+	push de
+	ld a, e
+	call Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	pop de
+	ld a, e
+	call Cosine
+	ld hl, BATTLEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld [hl], a
+	ret

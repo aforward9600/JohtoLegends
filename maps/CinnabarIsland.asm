@@ -13,8 +13,8 @@ CinnabarIsland_MapScripts:
 	return
 
 .CinnabarGym:
-;	checkevent EVENT_OPENED_CINNABAR_GYM
-;	iffalse .CloseGym
+	checkevent EVENT_OPENED_CINNABAR_GYM
+	iffalse .CloseGym
 	return
 
 .CloseGym:
