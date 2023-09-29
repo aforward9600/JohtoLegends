@@ -176,6 +176,8 @@ Aqua Tail, Calm Mind, Bulk Up, X-Scissor
 
 Charge Beam: ElfinHilon10
 
+Sour: Featherdance, some effects for Focus Blast, Aura Sphere and Fake Tears.
+
 Music:
 Pokemon Stadium 2 Anthem - ShockSlayer
 Mewtwo Battle - ShockSlayer

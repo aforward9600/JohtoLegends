@@ -9195,6 +9195,8 @@ endc
 
 	end_list_items
 
+SECTION "Enemy Trainer Parties 3", ROMX
+
 MahoganyNinjaMGroup:
 	next_list_item ; MNINJA_M (1)
 	db "Ninja@", TRAINERTYPE_NORMAL
@@ -9277,8 +9279,6 @@ endc
 	db -1 ; end
 
 	end_list_items
-
-SECTION "Enemy Trainer Parties 3", ROMX
 
 MahoganyNinjaFGroup:
 	next_list_item ; MNINJA_F (1)

@@ -519,12 +519,17 @@ PrintTempMonStatsDVs:
 	ld de, wTempMonPadding
 	lb bc, 2, 3
 	call .PrintDVEVs
-	
+
+if DEF(_CHALLENGE)
+	lb bc, 2, 3
+	ld de, $f6
+else
 	ld de, wTempMonAtkEV
 	ld a, [de]
 	ld [wTempMonPadding + 1], a
 	ld de, wTempMonPadding
 	lb bc, 2, 3
+endc
 	call .PrintDVEVs
 	
 	lb bc, 2, 3
@@ -538,12 +543,17 @@ PrintTempMonStatsDVs:
 	ld de, wTempMonPadding
 	lb bc, 2, 3
 	call .PrintDVEVs
-	
+
+if DEF(_CHALLENGE)
+	lb bc, 2, 3
+	ld de, $f6
+else
 	ld de, wTempMonDefEV
 	ld a, [de]
 	ld [wTempMonPadding + 1], a
 	ld de, wTempMonPadding
 	lb bc, 2, 3
+endc
 	call .PrintDVEVs
 	
 	lb bc, 2, 3
@@ -557,12 +567,17 @@ PrintTempMonStatsDVs:
 	ld de, wTempMonPadding
 	lb bc, 2, 3
 	call .PrintDVEVs
-	
+
+if DEF(_CHALLENGE)
+	lb bc, 2, 3
+	ld de, $f6
+else
 	ld de, wTempMonSpclAtkEV
 	ld a, [de]
 	ld [wTempMonPadding + 1], a
 	ld de, wTempMonPadding
 	lb bc, 2, 3
+endc
 	call .PrintDVEVs
 	
 	lb bc, 2, 3
@@ -576,12 +591,17 @@ PrintTempMonStatsDVs:
 	ld de, wTempMonPadding
 	lb bc, 2, 3
 	call .PrintDVEVs
-	
+
+if DEF(_CHALLENGE)
+	lb bc, 2, 3
+	ld de, $f6
+else
 	ld de, wTempMonSpclDefEV
 	ld a, [de]
 	ld [wTempMonPadding + 1], a
 	ld de, wTempMonPadding
 	lb bc, 2, 3
+endc
 	call .PrintDVEVs
 	
 	lb bc, 2, 3
@@ -596,12 +616,17 @@ PrintTempMonStatsDVs:
 	ld de, wTempMonPadding
 	lb bc, 2, 3
 	call .PrintDVEVs
-	
+
+if DEF(_CHALLENGE)
+	lb bc, 2, 3
+	ld de, $f6
+else
 	ld de, wTempMonSpdEV
 	lb bc, 2, 3
 	ld a, [de]
 	ld [wTempMonPadding + 1], a
 	ld de, wTempMonPadding
+endc
 	call .PrintDVEVs
 	
 	xor a
@@ -643,12 +668,17 @@ PrintTempMonHPDVs:
 	ld de, wTempMonPadding
 	lb bc, 2, 3
 	call .PrintHPDVEVs
-	
+
+if DEF(_CHALLENGE)
+	lb bc, 2, 3
+	ld de, $f6
+else
 	ld de, wTempMonHPEV
 	ld a, [de]
 	ld [wTempMonPadding + 1], a
 	ld de, wTempMonPadding
 	lb bc, 2, 3
+endc
 	call .PrintHPDVEVs
 	ret
 
