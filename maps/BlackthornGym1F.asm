@@ -101,6 +101,8 @@ BlackthornGymMasterScript:
 	end
 
 .Rematch:
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .PostGameMaster
 	writetext MasterRematchText
 	waitbutton
 	closetext
@@ -108,6 +110,17 @@ BlackthornGymMasterScript:
 	loadtrainer MASTER, MASTER1
 	startbattle
 	reloadmapafterbattle
+	sjump .AfterMasterRematch
+
+.PostGameMaster:
+	writetext MasterPostGameText
+	waitbutton
+	closetext
+	winlosstext MasterWinText, MasterLastMonText
+	loadtrainer MASTER, MASTER2
+	startbattle
+	reloadmapafterbattle
+.AfterMasterRematch:
 	opentext
 	writetext MasterBeatenAgainText
 	waitbutton
@@ -402,6 +415,25 @@ MasterBeatenAgainText:
 	text "Perhaps you are an"
 	line "even greater"
 	cont "master than I!"
+	done
+
+MasterPostGameText:
+	text "I am so proud of"
+	line "you, <PLAYER>."
+
+	para "You conquered the"
+	line "#mon League,"
+
+	para "and returned a"
+	line "Champion."
+
+	para "Please do me the"
+	line "honor and battle"
+	cont "me."
+
+	para "Give your old"
+	line "master a good"
+	cont "battle."
 	done
 
 BlackthornGym1F_MapEvents:

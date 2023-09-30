@@ -2,7 +2,6 @@ SECTION "Map Scripts 1", ROMX
 
 INCLUDE "maps/GoldenrodGym.asm"
 INCLUDE "maps/GoldenrodHappinessRater.asm"
-INCLUDE "maps/GoldenrodPPSpeechHouse.asm"
 INCLUDE "maps/GoldenrodNameRater.asm"
 INCLUDE "maps/GoldenrodDeptStore1F.asm"
 INCLUDE "maps/GoldenrodDeptStore2F.asm"
@@ -21,6 +20,7 @@ INCLUDE "maps/OlivineGym4F.asm"
 
 SECTION "Map Scripts 2", ROMX
 
+INCLUDE "maps/GoldenrodPPSpeechHouse.asm"
 INCLUDE "maps/RuinsOfAlphOutside.asm"
 INCLUDE "maps/RuinsOfAlphHoOhChamber.asm"
 INCLUDE "maps/RuinsOfAlphKabutoChamber.asm"

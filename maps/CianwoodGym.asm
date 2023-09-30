@@ -97,6 +97,8 @@ CianwoodGymChigusaScript:
 	end
 
 .Rematch:
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .PostGameChigusa
 	readvar VAR_BADGES
 	ifequal 3, .ChigusaBattle1
 	ifequal 4, .ChigusaBattle2
@@ -162,6 +164,16 @@ CianwoodGymChigusaScript:
 	closetext
 	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA_2, CHIGUSA6
+	startbattle
+	reloadmapafterbattle
+	sjump AfterChigusaRematch
+
+.PostGameChigusa:
+	writetext PostGameChigusaText
+	waitbutton
+	closetext
+	winlosstext ChigusaLossText, ChigusaWinText
+	loadtrainer CHIGUSA, CHIGUSA7
 	startbattle
 	reloadmapafterbattle
 	sjump AfterChigusaRematch
@@ -582,6 +594,14 @@ CianwoodGymRivalText:
 	text "I didn't think"
 	line "this Leader would"
 	cont "be so tough!"
+	done
+
+PostGameChigusaText:
+	text "Wow, you're the"
+	line "new Champion!"
+
+	para "Let's see your"
+	line "elegance now!"
 	done
 
 CianwoodGym_MapEvents:

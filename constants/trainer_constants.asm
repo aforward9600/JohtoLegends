@@ -27,17 +27,20 @@ CHRIS EQU __enum__
 	trainerclass WALKER ; 1
 	const WALKER1
 	const WALKER2
+	const WALKER3
 
 	trainerclass MILTON ; 2
 	const MILTON1
 	const MILTON2
 	const MILTON3
 	const MILTON4
+	const MILTON5
 
 	trainerclass KURT ; 3
 	const KURT1
 	const KURT2
 	const KURT3
+	const KURT4
 
 	trainerclass ENOKI ; 4
 	const ENOKI1
@@ -757,6 +760,7 @@ CHRIS EQU __enum__
 
 	trainerclass MASTER ; 49
 	const MASTER1
+	const MASTER2
 
 	trainerclass GEN_SURGE ; 4a
 	const GEN_SURGE1
@@ -848,6 +852,7 @@ CHRIS EQU __enum__
 	const PRYCE6
 	const PRYCE7
 	const PRYCE8
+	const PRYCE9
 
 	trainerclass ENOKI_2
 	const ENOKI2
@@ -858,18 +863,21 @@ CHRIS EQU __enum__
 	const ENOKI5
 	const ENOKI6
 	const ENOKI7
+	const ENOKI8
 
 	trainerclass CHIGUSA_2
 	const CHIGUSA3
 	const CHIGUSA4
 	const CHIGUSA5
 	const CHIGUSA6
+	const CHIGUSA7
 
 	trainerclass BYRON_2
 	const BYRON2
 	const BYRON3
 	const BYRON4
 	const BYRON5
+	const BYRON6
 
 	trainerclass LINK_TRAINER
 	const LINK_TRAINER_1

@@ -125,6 +125,8 @@ EcruteakGymEnokiScript:
 	sjump .StartEnokiBattle
 
 .EnokiRematch:
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .PostGameEnoki
 	readvar VAR_BADGES
 	ifequal 2, .EnokiBattle1
 	ifequal 3, .EnokiBattle2
@@ -201,6 +203,16 @@ EcruteakGymEnokiScript:
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI_3, ENOKI7
+	startbattle
+	reloadmapafterbattle
+	sjump AfterEnokiRematch
+
+.PostGameEnoki:
+	writetext PostGameEnokiText
+	waitbutton
+	closetext
+	winlosstext EnokiWinLossText, EnokiWinText
+	loadtrainer ENOKI_3, ENOKI8
 	startbattle
 	reloadmapafterbattle
 	sjump AfterEnokiRematch
@@ -621,6 +633,23 @@ EcruteakGymEusineText:
 
 	para "We're close to"
 	line "finding Suicune!"
+	done
+
+PostGameEnokiText:
+	text "Congratulations on"
+	line "becoming Champion."
+
+	para "I knew you could"
+	line "do it, from the"
+	cont "moment I met you."
+
+	para "May I have this"
+	line "battle?"
+
+	para "Not everyone gets"
+	line "the pleasure of"
+	cont "battling a"
+	cont "Champion."
 	done
 
 EcruteakGym_MapEvents:

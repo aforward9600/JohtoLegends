@@ -87,6 +87,8 @@ OlivineGym1FByronScript:
 	end
 
 .RematchByron:
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .PostGameByron
 	readvar VAR_BADGES
 	ifequal 4, .ByronBattle1
 	ifequal 5, .ByronBattle2
@@ -144,6 +146,21 @@ OlivineGym1FByronScript:
 	startbattle
 	reloadmapafterbattle
 	sjump AfterByronRematch
+
+.PostGameByron:
+	writetext PostGameByronText
+	waitbutton
+	closetext
+	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
+	loadtrainer BYRON_2, BYRON6
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext BeatenByronAgainText2
+	waitbutton
+	closetext
+	setflag ENGINE_BEAT_BYRON
+	end
 
 AfterByronRematch:
 	opentext
@@ -284,6 +301,28 @@ BeatenByronAgainText:
 	para "Maybe you can be"
 	line "a Gym Leader some-"
 	cont "day!"
+	done
+
+PostGameByronText:
+	text "Looks like I was"
+	line "helpful to you!"
+
+	para "You don't get to"
+	line "be Champion by"
+	cont "being soft!"
+
+	para "I toughened you up"
+	line "before, and now I"
+	cont "want to see how"
+	cont "good you are!"
+	done
+
+BeatenByronAgainText2:
+	text "You're quite the"
+	line "tough Champion!"
+
+	para "Tough as steel"
+	line "I'd say!"
 	done
 
 OlivineGym4F_MapEvents:

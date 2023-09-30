@@ -83,6 +83,8 @@ MahoganyGymPryceScript:
 	end
 
 .Rematch:
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .PostGamePryce
 	readvar VAR_BADGES
 	ifequal 1, .PryceBattle1
 	ifequal 2, .PryceBattle2
@@ -170,6 +172,16 @@ MahoganyGymPryceScript:
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE_3, PRYCE8
+	startbattle
+	reloadmapafterbattle
+	sjump AfterPryceRematch
+
+.PostGamePryce:
+	writetext PryceText_WelcomeBackChampion
+	waitbutton
+	closetext
+	winlosstext PryceText_Blizzard, PryceText_StillGotIt
+	loadtrainer PRYCE_3, PRYCE9
 	startbattle
 	reloadmapafterbattle
 	sjump AfterPryceRematch
@@ -648,6 +660,18 @@ MahoganyGymGuyFaithfulText:
 	line "Dragon and Ground"
 	cont "Types don't do the"
 	cont "greatest."
+	done
+
+PryceText_WelcomeBackChampion:
+	text "So, you're the"
+	line "Chamion now!"
+
+	para "Pretty cool, if I"
+	line "do say so!"
+
+	para "Fancy showing this"
+	line "'old man' your new"
+	cont "strength?"
 	done
 
 MahoganyGym_MapEvents:

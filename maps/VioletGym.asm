@@ -87,6 +87,8 @@ VioletGymWalkerScript:
 	end
 
 .WalkerRematch:
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .PostGameWalker
 	readvar VAR_BADGES
 	ifequal 7, .WalkerBattle1
 	ifequal 8, .WalkerBattle2
@@ -112,6 +114,14 @@ VioletGymWalkerScript:
 	reloadmapafterbattle
 	sjump AfterWalkerRematch
 
+.PostGameWalker:
+	writetext PostGameWalkerText
+	waitbutton
+	closetext
+	winlosstext WalkerWinLossText, WalkerLossText
+	loadtrainer WALKER, WALKER3
+	startbattle
+	reloadmapafterbattle
 AfterWalkerRematch:
 	opentext
 	writetext BeatenWalkerAgainText
@@ -451,6 +461,15 @@ VioletGymRivalText:
 	para "…………<PLAYER>………"
 
 	para "………I'm sorry……"
+	done
+
+PostGameWalkerText:
+	text "Here to soar yet"
+	line "again, Champion?"
+
+	para "Let us meet in"
+	line "battle among the"
+	cont "clouds!"
 	done
 
 VioletGym_MapEvents:

@@ -83,6 +83,8 @@ AzaleaGymKurtScript:
 	end
 
 .Rematch:
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .PostGameKurt
 	readvar VAR_BADGES
 	ifequal 6, .KurtBattle1
 	ifequal 7, .KurtBattle2
@@ -115,6 +117,16 @@ AzaleaGymKurtScript:
 	closetext
 	winlosstext KurtText_NoRespect, KurtText_Respect
 	loadtrainer KURT, KURT3
+	startbattle
+	reloadmapafterbattle
+	sjump AfterKurtRematch
+
+.PostGameKurt:
+	writetext KurtText_PostGame
+	waitbutton
+	closetext
+	winlosstext KurtText_NoRespect, KurtText_Respect
+	loadtrainer KURT, KURT4
 	startbattle
 	reloadmapafterbattle
 	sjump AfterKurtRematch
@@ -463,6 +475,18 @@ KurtText_BeatenAgain:
 	para "You might be"
 	line "stronger than"
 	cont "before."
+	done
+
+KurtText_PostGame:
+	text "Champion, huh?"
+
+	para "That doesn't mean"
+	line "much to me!"
+
+	para "I'm still your"
+	line "elder, so I'd hope"
+	cont "you'd still have"
+	cont "respect!"
 	done
 
 AzaleaGym_MapEvents:
