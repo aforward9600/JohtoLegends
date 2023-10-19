@@ -105,3 +105,4 @@ TrainerClassNames::
 	db "Sensational@"
 	db "Roughneck@"
 	db "Soldier@"
+	db "Karate King@"

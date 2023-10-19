@@ -131,9 +131,6 @@ CeruleanCityPokecenterSign:
 CeruleanCityMartSign:
 	jumpstd martsign
 
-CeruleanCityHiddenBerserkGene:
-	hiddenitem BERSERK_GENE, EVENT_FOUND_BERSERK_GENE_IN_CERULEAN_CITY
-
 CeruleanCityBikerText1:
 	text "The pool's the"
 	line "place to be!"
@@ -326,7 +323,7 @@ CeruleanCity_MapEvents:
 
 	db 0 ; coord events
 
-	db 9 ; bg events
+	db 8 ; bg events
 	bg_event 23, 23, BGEVENT_READ, CeruleanCitySign
 	bg_event 27, 25, BGEVENT_READ, CeruleanGymSign
 	bg_event 11, 29, BGEVENT_READ, CeruleanBikeShopSign
@@ -334,7 +331,6 @@ CeruleanCity_MapEvents:
 	bg_event 23,  7, BGEVENT_READ, CeruleanCapeSign
 	bg_event 20, 21, BGEVENT_READ, CeruleanCityPokecenterSign
 	bg_event 26, 29, BGEVENT_READ, CeruleanCityMartSign
-	bg_event  2, 12, BGEVENT_ITEM, CeruleanCityHiddenBerserkGene
 	bg_event 25, 17, BGEVENT_READ, CeruleanOriginalGymSign
 
 	db 8 ; object events

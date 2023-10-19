@@ -146,6 +146,8 @@
 	const MUSIC_CYNTHIA_ENCOUNTER
 	const MUSIC_ROCKET_LAIR
 	const MUSIC_VICTORY_ROAD_RSE
+	const MUSIC_SILPH_CO
+	const MUSIC_POKEMON_TOWER
 
 ; GetMapMusic picks music for this value (see home/map.asm)
 MUSIC_MAHOGANY_MART EQU $fc

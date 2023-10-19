@@ -11,11 +11,22 @@ VermilionDiglettsCaveSpeechHouseGentlemanScript:
 
 VermilionDiglettsCaveSpeechHouseGentlemanText:
 	text "Over many years,"
-	line "DIGLETT dug a"
+	line "Diglett dug a"
 	cont "large tunnel."
 
 	para "That tunnel goes"
 	line "to a distant town."
+
+	para "The Feds used it"
+	line "as a shortcut to"
+	cont "that distant town."
+
+	para "The town is most"
+	line "likely under their"
+	cont "control now."
+
+	para "It's sad to think"
+	line "about."
 	done
 
 VermilionDiglettsCaveSpeechHouse_MapEvents:

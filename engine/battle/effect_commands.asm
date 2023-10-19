@@ -6071,8 +6071,6 @@ BattleCommand_Charge:
 
 INCLUDE "engine/battle/move_effects/focus_energy.asm"
 
-INCLUDE "engine/battle/move_effects/grass_knot.asm"
-
 ;INCLUDE "engine/battle/move_effects/wake_up_slap.asm"
 
 BattleCommand_ConfuseTarget:
@@ -6830,8 +6828,13 @@ GetUserItem:
 	jr z, .go
 	ld hl, wEnemyMonItem
 .go
+	push hl
+	call IsOpponentItemUsable
+	pop hl
 	ld b, [hl]
-	jp GetItemHeldEffect
+	jr z, GetItemHeldEffect
+	ld bc, 0
+	ret
 
 GetOpponentItem:
 ; Return the effect of the opponent's item in bc, and its id at hl.
@@ -6842,7 +6845,14 @@ GetOpponentItem:
 	ld hl, wBattleMonItem
 .go
 	ld b, [hl]
-	jp GetItemHeldEffect
+
+	; Check if item is usable
+	push hl
+	call IsOpponentItemUsable
+	pop hl
+	jr z, GetItemHeldEffect
+	ld bc, 0
+	ret
 
 GetItemHeldEffect:
 ; Return the effect of item b in bc.

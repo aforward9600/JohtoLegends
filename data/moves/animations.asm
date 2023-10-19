@@ -426,24 +426,14 @@ BattleAnimations::
 	dw BattleAnim_WaveCrash
 	dw BattleAnim_FakeOut
 	dw BattleAnim_HeadlongRush
+	dw BattleAnim_DualWingbeat
+	dw BattleAnim_TwinBeam
+	dw BattleAnim_Catastrophe
+	dw BattleAnim_Psyshield
 ;	dw BattleAnim_WakeUpSlap
-	dw BattleAnim_SweetScent2
 
 BattleAnim_0:
 BattleAnim_MirrorMove:
-	anim_ret
-
-BattleAnim_SweetScent2:
-	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_MISC
-	anim_obj ANIM_OBJ_FLOWER, 64, 96, $2
-	anim_wait 2
-	anim_obj ANIM_OBJ_FLOWER, 64, 80, $2
-	anim_wait 64
-	anim_obj ANIM_OBJ_COTTON, 136, 40, $15
-	anim_obj ANIM_OBJ_COTTON, 136, 40, $2a
-	anim_obj ANIM_OBJ_COTTON, 136, 40, $3f
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_wait 128
 	anim_ret
 
 BattleAnim_ThrowPokeBall:
@@ -2172,6 +2162,21 @@ BattleAnim_Fissure:
 	anim_loop 4, .loop
 	anim_ret
 
+BattleAnim_Catastrophe:
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $40
+	anim_bgeffect ANIM_BG_1F, $60, $4, $0
+.loop
+	anim_sound 0, 1, SFX_EMBER
+	anim_wait 24
+	anim_loop 4, .loop
+	anim_1gfx ANIM_GFX_EXPLOSION
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $24
+	anim_if_param_equal $1, .loop
+	anim_call BattleAnim_Selfdestruct_branch_cbb8f
+	anim_wait 16
+	anim_ret
+	anim_ret
+
 BattleAnim_Growl:
 BattleAnim_EchoedVoice:
 	anim_1gfx ANIM_GFX_NOISE
@@ -2299,6 +2304,20 @@ BattleAnim_LightScreen:
 	anim_wait 4
 	anim_obj ANIM_OBJ_SHINY, 72, 80, $38
 	anim_wait 64
+	anim_ret
+
+BattleAnim_Psyshield:
+	anim_call BattleAnim_LightScreen
+	anim_wait 32
+	anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_00, 136, 48, $0
+	anim_wait 8
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
 	anim_ret
 
 BattleAnim_Amnesia:
@@ -3041,6 +3060,7 @@ BattleAnim_Withdraw:
 
 BattleAnim_Psybeam:
 BattleAnim_SignalWave:
+BattleAnim_TwinBeam:
 	anim_1gfx ANIM_GFX_PSYCHIC
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_08, $0, $4, $0
@@ -3612,6 +3632,7 @@ BattleAnim_WorkUp:
 	anim_jump BattleAnim_ShowMon_0
 
 BattleAnim_WingAttack:
+BattleAnim_DualWingbeat:
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_WING_ATTACK
 	anim_obj ANIM_OBJ_01, 148, 56, $0

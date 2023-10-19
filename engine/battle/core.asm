@@ -4597,6 +4597,10 @@ HandleStatBoostingHeldItems:
 	push bc
 	ld a, [bc]
 	ld b, a
+	push hl
+	call IsUserItemUsable
+	pop hl
+	jr nz, .finish
 	callfar GetItemHeldEffect
 	ld hl, HeldStatUpItems
 .loop

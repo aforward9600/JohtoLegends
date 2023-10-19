@@ -445,8 +445,18 @@ SpecialMapMusic::
 	ret
 
 .surf
+	ld a, [wMapTileset]
+	cp TILESET_ICE_PATH
+	jr z, .NoSurfMusic
+	ld a, [wMapTileset]
+	cp TILESET_CAVE
+	jr z, .NoSurfMusic
 	ld de, MUSIC_SURF
 	scf
+	ret
+
+.NoSurfMusic
+	and a
 	ret
 
 .contest

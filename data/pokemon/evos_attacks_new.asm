@@ -131,7 +131,7 @@ TyranitarEvosAttacks:
 	dbw 50, CRUNCH
 	dbw 57, EARTHQUAKE
 	dbw 63, STONE_EDGE
-	dbw 73, HYPER_BEAM
+	dbw 73, CATASTROPHE
 	dbw 82, GIGA_IMPACT
 	db 0 ; no more level-up moves
 
@@ -235,6 +235,7 @@ SalamenceEvosAttacks:
 	dbw 35, ZEN_HEADBUTT
 	dbw 42, SCARY_FACE
 	dbw 49, FLAMETHROWER
+	dbw 54, DUALWINGBEAT
 	dbw 63, DOUBLE_EDGE
 	dbw 69, OUTRAGE
 	db 0 ; no more level-up moves
@@ -248,7 +249,7 @@ LugiaEvosAttacks:
 	dbw 29, RAIN_DANCE
 	dbw 37, HYDRO_PUMP
 	dbw 43, AEROBLAST
-	dbw 50, FAINT_ATTACK
+	dbw 50, PSYCHIC_M
 	dbw 57, ANCIENTPOWER
 	dbw 65, SAFEGUARD
 	dbw 71, RECOVER
@@ -267,7 +268,7 @@ HoOhEvosAttacks:
 	dbw 29, SUNNY_DAY
 	dbw 37, FIRE_BLAST
 	dbw 43, SACRED_FIRE
-	dbw 50, FAINT_ATTACK
+	dbw 50, DUALWINGBEAT
 	dbw 57, ANCIENTPOWER
 	dbw 65, SAFEGUARD
 	dbw 71, RECOVER

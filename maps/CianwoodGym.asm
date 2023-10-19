@@ -75,7 +75,6 @@ CianwoodGymChigusaScript:
 	checkevent EVENT_GOT_TM08_BULK_UP
 	iftrue .AlreadyGotTM
 	setevent EVENT_BEAT_BLACKBELT_YOSHI
-	setevent EVENT_BEAT_BLACKBELT_LAO
 	setevent EVENT_BEAT_BLACKBELT_NOB
 	setevent EVENT_BEAT_BLACKBELT_LUNG
 	setevent EVENT_BEAT_CHUCK
@@ -173,7 +172,7 @@ CianwoodGymChigusaScript:
 	waitbutton
 	closetext
 	winlosstext ChigusaLossText, ChigusaWinText
-	loadtrainer CHIGUSA, CHIGUSA7
+	loadtrainer CHIGUSA_2, CHIGUSA7
 	startbattle
 	reloadmapafterbattle
 	sjump AfterChigusaRematch

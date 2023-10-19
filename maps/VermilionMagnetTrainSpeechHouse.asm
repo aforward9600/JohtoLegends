@@ -17,18 +17,21 @@ VermilionMagnetTrainSpeechHouseBookshelf:
 	jumpstd picturebookshelf
 
 VermilionMagnetTrainSpeechHousePokefanFText:
-	text "Do you know about"
-	line "the MAGNET TRAIN?"
+	text "I often wonder"
+	line "what happened to"
+	cont "the Gym Leader."
 
-	para "It's a railway"
-	line "that goes to GOL-"
-	cont "DENROD in JOHTO."
+	para "Did he escape?"
+
+	para "I can only hope"
+	line "so."
 	done
 
 VermilionMagnetTrainSpeechHouseYoungsterText:
-	text "I want to go to"
-	line "SAFFRON to see"
-	cont "the MAGNET TRAIN."
+	text "My husband died in"
+	line "the war, so I'm not"
+	cont "very fond of the"
+	cont "foreign soldiers."
 	done
 
 VermilionMagnetTrainSpeechHouse_MapEvents:
@@ -45,5 +48,5 @@ VermilionMagnetTrainSpeechHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, VermilionMagnetTrainSpeechHouseBookshelf
 
 	db 2 ; object events
-	object_event  2,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionMagnetTrainSpeechHousePokefanFScript, -1
-	object_event  0,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionMagnetTrainSpeechHouseYoungsterScript, -1
+	object_event  2,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionMagnetTrainSpeechHousePokefanFScript, -1
+	object_event  0,  3, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionMagnetTrainSpeechHouseYoungsterScript, -1

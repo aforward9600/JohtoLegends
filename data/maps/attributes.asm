@@ -735,3 +735,12 @@ ENDM
 	map_attributes CinnabarIslandMart, CINNABAR_ISLAND_MART, $00, 0
 	map_attributes CinnabarIslandGym, CINNABAR_ISLAND_GYM, $00, 0
 	map_attributes GlitchCity, GLITCH_CITY, $00, 0
+	map_attributes SeafoamIsland1F, SEAFOAM_ISLAND_1F, $00, 0
+	map_attributes SeafoamIslandB1F, SEAFOAM_ISLAND_B1F, $00, 0
+	map_attributes SeafoamIslandB2F, SEAFOAM_ISLAND_B2F, $00, 0
+	map_attributes SeafoamIslandB3F, SEAFOAM_ISLAND_B3F, $00, 0
+	map_attributes SeafoamIslandB4F, SEAFOAM_ISLAND_B4F, $00, 0
+	map_attributes CeruleanCave1F, CERULEAN_CAVE_1F, $00, 0
+	map_attributes CeruleanCaveB1F, CERULEAN_CAVE_B1F, $00, 0
+	map_attributes CeruleanCave2F, CERULEAN_CAVE_2F, $00, 0
+

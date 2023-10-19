@@ -66,3 +66,7 @@ SpriteMons:
 	dw QUAGSIRE
 	dw ABRA
 	dw MISSINGNO
+	dw MEWTWO
+	dw CHANSEY
+	dw MAROWAK
+	db MEW

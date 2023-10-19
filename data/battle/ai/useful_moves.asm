@@ -35,4 +35,5 @@ UsefulMoves:
 	dw FRENZY_PLANT
 	dw BLAST_BURN
 	dw HYDRO_CANNON
+	dw PSYSHIELD
 	dw -1 ; end

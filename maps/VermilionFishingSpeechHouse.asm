@@ -17,27 +17,25 @@ FishingDudesHouseBookshelf:
 	jumpstd picturebookshelf
 
 FishingDudeText:
-	text "I am the FISHING"
-	line "DUDE, the elder of"
-	cont "the FISHING BROS."
+	text "I am the Fishing"
+	line "Dude, the elder of"
+	cont "the Fishing Bros."
 
 	para "Have you met the"
-	line "FISHING GURU at"
-	cont "LAKE OF RAGE?"
+	line "Fishing Guru at"
+	cont "Lake Of Rage?"
 
 	para "He dreams about"
 	line "seeing the world's"
-	cont "greatest MAGIKARP."
+	cont "greatest Magikarp."
 
-	para "If you don't mind,"
-	line "could you show him"
+	para "I haven't spoken"
+	line "to him since the"
+	cont "embargo started."
 
-	para "any MAGIKARP you"
-	line "catch?"
-
-	para "Who knows, you may"
-	line "catch the MAGIKARP"
-	cont "of his dreams."
+	para "I wonder if he's"
+	line "seen the Magikarp"
+	cont "he's always sought."
 	done
 
 FishingDudesHousePhotoText:

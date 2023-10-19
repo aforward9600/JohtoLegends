@@ -17,7 +17,7 @@ Idain, Rangi, WasabiRaptor for EVS.
 
 Rangi and Idain for Evening time.
 
-Idain for the Hidden Power Guru, Soothe Bell and Gen 6+ Exp. Share.
+Idain for the Hidden Power Guru, Soothe Bell and Gen 6+ Exp. Share and correctly colored Pokepics
 
 Rangi and aaaaaa123456789 for items from smashing rocks
 
@@ -74,6 +74,8 @@ Skarmini design and sprite: Ferropexola
 Skarmini back sprite: Frogtoes
 
 Skarmini Animation: Ryans-Tryin
+
+New Ledian Sprite: Rangi
 
 Beta Wooper back sprite made by 64BitWonder.
 

@@ -45,9 +45,12 @@ FlorinaScript_Battle:
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_FLORINA
 	iftrue FlorinaScript_AfterBattle
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue RematchFlorina
 	writetext FlorinaScript_FlorinaBeforeText
 	waitbutton
 	closetext
+BattleFlorina:
 	winlosstext FlorinaScript_FlorinaBeatenText, FlorinaLastMonText
 	loadtrainer FLORINA, FLORINA1
 	startbattle
@@ -65,6 +68,12 @@ FlorinaScript_Battle:
 	setevent EVENT_FLORINAS_ROOM_EXIT_OPEN
 	waitsfx
 	end
+
+RematchFlorina:
+	writetext FlorinaScript_FlorinaBeforeText2
+	waitbutton
+	closetext
+	sjump BattleFlorina
 
 FlorinaScript_AfterBattle:
 	writetext FlorinaScript_FlorinaDefeatText
@@ -128,6 +137,20 @@ FlorinaScript_FlorinaDefeatText:
 
 	para "challenging, so"
 	line "go on."
+	done
+
+FlorinaScript_FlorinaBeforeText2:
+	text "Florina: Welcome"
+	line "back to the"
+	cont "#mon League,"
+	cont "Champion <PLAYER>."
+
+	para "I am your first"
+	line "opponent yet"
+	cont "again."
+
+	para "Shall we battle"
+	line "among the flowers?"
 	done
 
 WillsRoom_MapEvents:

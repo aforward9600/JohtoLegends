@@ -15,24 +15,34 @@ SaffronMartClerkScript:
 	end
 
 SaffronMartCooltrainerMScript:
+	checkevent EVENT_BEAT_SABRINA
+	iftrue .SaffronMartCooltrainerM2
 	jumptextfaceplayer SaffronMartCooltrainerMText
+
+.SaffronMartCooltrainerM2:
+	jumptextfaceplayer SaffronMartCooltrainerMText2
 
 SaffronMartCooltrainerFScript:
 	jumptextfaceplayer SaffronMartCooltrainerFText
 
 SaffronMartCooltrainerMText:
-	text "There's a big"
-	line "RADIO TOWER in"
-	cont "LAVENDER."
+	text "I would've fought"
+	line "the Feds alongside"
+	cont "Koichi if he hadn't"
+	cont "surrendered."
+	done
+
+SaffronMartCooltrainerMText2:
+	text "Let's hope Koichi"
+	line "doesn't flake"
+	cont "this time."
 	done
 
 SaffronMartCooltrainerFText:
-	text "I want to become"
-	line "stronger, but I'm"
-	cont "not good yet…"
+	text "Same-old same-old…"
 
-	para "Could you show me"
-	line "how sometime?"
+	para "Every day's the"
+	line "same here…"
 	done
 
 SaffronMart_MapEvents:
@@ -48,5 +58,5 @@ SaffronMart_MapEvents:
 
 	db 3 ; object events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SaffronMartClerkScript, -1
-	object_event  7,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SaffronMartCooltrainerMScript, -1
-	object_event  7,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronMartCooltrainerFScript, -1
+	object_event  7,  2, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SaffronMartCooltrainerMScript, -1
+	object_event  7,  6, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronMartCooltrainerFScript, -1

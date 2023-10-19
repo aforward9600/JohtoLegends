@@ -2736,7 +2736,7 @@ wTiffanyFightCount:: db
 wVanceFightCount::   db
 wWiltonFightCount::  db
 wParryFightCount::   db
-wErinFightCount::    db
+wBattleAnimBank::    db
 ; da0e
 
 	ds 100

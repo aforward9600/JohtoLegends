@@ -2,7 +2,7 @@
 	const SAFFRONPOKECENTER1F_NURSE
 	const SAFFRONPOKECENTER1F_TEACHER
 	const SAFFRONPOKECENTER1F_FISHER
-	const SAFFRONPOKECENTER1F_YOUNGSTER
+	const SAFFRONPOKECENTER1F_RIVAL
 
 SaffronPokecenter1F_MapScripts:
 	db 0 ; scene scripts
@@ -12,18 +12,18 @@ SaffronPokecenter1F_MapScripts:
 SaffronPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
-SaffronPokecenter1FTeacherScript:
-	special Mobile_DummyReturnFalse
+SaffronPokecenter1FGrannyScript:
+	checkevent EVENT_BEAT_SABRINA
 	iftrue .mobile
 	jumptextfaceplayer SaffronPokecenter1FTeacherText
 
 .mobile
 	jumptextfaceplayer SaffronPokecenter1FTeacherMobileText
 
-SaffronPokecenter1FFisherScript:
+SaffronPokecenter1FPokefanMScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
+	checkevent EVENT_BEAT_SABRINA
 	iftrue .SolvedKantoPowerCrisis
 	writetext SaffronPokecenter1FFisherText
 	waitbutton
@@ -36,77 +36,102 @@ SaffronPokecenter1FFisherScript:
 	closetext
 	end
 
-SaffronPokecenter1FYoungsterScript:
-	jumptextfaceplayer SaffronPokecenter1FYoungsterText
+SaffronPokecenter1FRival:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_SABRINA
+	iftrue .RivalBeatSabrina
+	checkevent EVENT_BEAT_KOICHI
+	iftrue .RivalBeatKoichi
+	writetext SaffronPokecenter1FRivalText1
+	waitbutton
+	closetext
+	end
+
+.RivalBeatSabrina:
+	writetext SaffronPokecenter1FRivalText2
+	waitbutton
+	closetext
+	end
+
+.RivalBeatKoichi:
+	writetext SaffronPokecenter1FRivalText3
+	waitbutton
+	closetext
+	end
 
 SaffronPokecenter1FTeacherText:
-	text "What are JOHTO's"
-	line "#MON CENTERS"
-	cont "like?"
+	text "Our city wasn't"
+	line "damaged like the"
+	cont "other towns,"
 
-	para "…Oh, I see. So"
-	line "they're not much"
-
-	para "different from the"
-	line "ones in KANTO."
-
-	para "I can go to JOHTO"
-	line "without worrying,"
-	cont "then!"
+	para "but Koichi has"
+	line "lost so much"
+	cont "respect from us."
 	done
 
 SaffronPokecenter1FTeacherMobileText:
-	text "What are JOHTO's"
-	line "#MON CENTERS"
-	cont "like?"
+	text "Looks like Koichi"
+	line "has finally come"
+	cont "to his senses."
 
-	para "…Oh, I see."
-	line "So they let you"
-
-	para "link with people"
-	line "far away?"
-
-	para "Then I'll get my"
-	line "friend in JOHTO to"
-
-	para "catch a MARILL and"
-	line "trade it to me!"
+	para "He'll have to earn"
+	line "our respect back."
 	done
 
 SaffronPokecenter1FFisherText:
-	text "I just happened to"
-	line "come through ROCK"
+	text "Stupid Feds!"
 
-	para "TUNNEL. There was"
-	line "some commotion at"
-	cont "the POWER PLANT."
+	para "Koichi should have"
+	line "knocked them"
+	cont "senseless!"
 	done
 
 SaffronPokecenter1FFisherReturnedMachinePartText:
-	text "Caves collapse"
-	line "easily."
+	text "Come on, Koichi!"
 
-	para "Several caves have"
-	line "disappeared in the"
-
-	para "past few years,"
-	line "like the one out-"
-	cont "side CERULEAN."
-
-	para "As a pro HIKER,"
-	line "that's common"
-	cont "knowledge."
+	para "Knock some sense"
+	line "into those Feds!"
 	done
 
-SaffronPokecenter1FYoungsterText:
-	text "SILPH CO.'s HEAD"
-	line "OFFICE and the"
+SaffronPokecenter1FRivalText1:
+	text "Gym Leader Koichi"
+	line "surrendered when"
+	cont "the Feds first"
+	cont "came."
 
-	para "MAGNET TRAIN STA-"
-	line "TION--they're the"
+	para "He's probably the"
+	line "best option."
 
-	para "places to see in"
-	line "SAFFRON."
+	para "I heard that a"
+	line "strong psychic is"
+	cont "at the Psychic"
+	cont "Institute,"
+
+	para "but there is a"
+	line "guard at the door."
+
+	para "No idea what to do"
+	line "about that."
+	done
+
+SaffronPokecenter1FRivalText2:
+	text "Now that the"
+	line "Psychic Institute"
+	cont "is open, maybe you"
+	cont "should check it"
+	cont "out."
+	done
+
+SaffronPokecenter1FRivalText3:
+	text "Looks like we have"
+	line "two Leaders on our"
+	cont "side."
+
+	para "You should really"
+	line "only choose one"
+	cont "after this is all"
+	cont "over."
 	done
 
 SaffronPokecenter1F_MapEvents:
@@ -123,6 +148,6 @@ SaffronPokecenter1F_MapEvents:
 
 	db 4 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SaffronPokecenter1FNurseScript, -1
-	object_event  7,  2, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronPokecenter1FTeacherScript, -1
-	object_event  8,  6, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronPokecenter1FFisherScript, -1
-	object_event  1,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronPokecenter1FYoungsterScript, -1
+	object_event  7,  2, SPRITE_GRANNY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronPokecenter1FGrannyScript, -1
+	object_event  8,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronPokecenter1FPokefanMScript, -1
+	object_event  1,  4, SPRITE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SaffronPokecenter1FRival, EVENT_KANTO_POKECENTER_RIVAL

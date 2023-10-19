@@ -108,19 +108,20 @@ SwimmermCameronAfterBattleText:
 	done
 
 CinnabarGymSignText:
-	text "What does this"
-	line "sign say?"
+	text "Seafoam Islands"
 
-	para "CINNABAR GYM"
-	line "LEADER: BLAINE"
+	para "The bitter cold"
+	line "turns away all but"
+	cont "the strongest."
 	done
 
 Route20_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
-	warp_event 38,  7, SEAFOAM_GYM, 1
+	db 3 ; warp events
+	warp_event 38,  7, SEAFOAM_ISLAND_1F, 1
 	warp_event  0,  2, GLITCH_CITY, 1
+	warp_event 30,  5, SEAFOAM_ISLAND_1F, 2
 
 	db 0 ; coord events
 

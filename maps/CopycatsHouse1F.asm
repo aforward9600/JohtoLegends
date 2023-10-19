@@ -9,12 +9,25 @@ CopycatsHouse1F_MapScripts:
 	db 0 ; callbacks
 
 CopycatsHouse1FPokefanMScript:
-	jumptextfaceplayer CopycatsHouse1FPokefanMText
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_SABRINA
+	iftrue .ReturnedMachinePart
+	writetext CopycatsHouse1FPokefanMText
+	waitbutton
+	closetext
+	end
+
+.ReturnedMachinePart:
+	writetext CopycatsHouse1FPokefanMText2
+	waitbutton
+	closetext
+	end
 
 CopycatsHouse1FPokefanFScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
+	checkevent EVENT_BEAT_SABRINA
 	iftrue .ReturnedMachinePart
 	writetext CopycatsHouse1FPokefanFText
 	waitbutton
@@ -22,67 +35,66 @@ CopycatsHouse1FPokefanFScript:
 	end
 
 .ReturnedMachinePart:
-	writetext CopycatsHouse1FPokefanFText_ReturnedMachinePart
+	writetext CopycatsHouse1FPokefanFText2
 	waitbutton
 	closetext
 	end
 
 CopycatsHouse1FBlisseyScript:
+	refreshscreen
+	pokepic CHANSEY
+	cry CHANSEY
+	waitbutton
+	closepokepic
 	opentext
 	writetext CopycatsHouse1FBlisseyText
-	cry BLISSEY
 	waitbutton
 	closetext
 	end
 
 CopycatsHouse1FPokefanMText:
-	text "My daughter likes"
-	line "to mimic people."
+	text "We want to have a"
+	line "child someday,"
 
-	para "Her mimicry has"
-	line "earned her the"
+	para "but these Feds"
+	line "make it too"
+	cont "dangerous to"
+	cont "start a family."
+	done
 
-	para "nickname COPYCAT"
-	line "around here."
+CopycatsHouse1FPokefanMText2:
+	text "Maybe we can start"
+	line "our family soon."
 	done
 
 CopycatsHouse1FPokefanFText:
-	text "My daughter is so"
-	line "self-centered…"
-
-	para "She only has a few"
-	line "friends."
+	text "I wouldn't want to"
+	line "raise a daughter"
+	cont "in this region"
+	cont "right now…"
 	done
 
-CopycatsHouse1FPokefanFText_ReturnedMachinePart:
-	text "She recently lost"
-	line "the # DOLL that"
-
-	para "a boy gave her"
-	line "three years ago."
-
-	para "Ever since then,"
-	line "she's gotten even"
-	cont "better at mimicry…"
+CopycatsHouse1FPokefanFText2:
+	text "I really hope we"
+	line "have a girl."
 	done
 
 CopycatsHouse1FBlisseyText:
-	text "BLISSEY: Bliisii!"
+	text "Chansey: Chans!"
 	done
 
 CopycatsHouse1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
+	db 2 ; warp events
 	warp_event  2,  7, SAFFRON_CITY, 7
 	warp_event  3,  7, SAFFRON_CITY, 7
-	warp_event  2,  0, COPYCATS_HOUSE_2F, 1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 3 ; object events
-	object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CopycatsHouse1FPokefanMScript, -1
-	object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CopycatsHouse1FPokefanFScript, -1
-	object_event  6,  6, SPRITE_CLEFAIRY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CopycatsHouse1FBlisseyScript, -1
+	object_event  2,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CopycatsHouse1FPokefanMScript, -1
+	object_event  5,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CopycatsHouse1FPokefanFScript, -1
+	object_event  6,  6, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CopycatsHouse1FBlisseyScript, -1

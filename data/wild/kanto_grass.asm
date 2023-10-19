@@ -992,4 +992,304 @@ KantoGrassWildMons:
 	dbw 66, TYPHLOSION
 	dbw 66, MAGMORTAR
 
+	map_id CINNABAR_VOLCANO_B1F
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 64, WEEZING
+	dbw 65, MAGCARGO
+	dbw 64, MAGMAR
+	dbw 65, MUK
+	dbw 67, FLAREON
+	dbw 65, RAPIDASH
+	dbw 66, TYPHLOSION
+	dbw 66, MAGMORTAR
+	; day
+	dbw 64, WEEZING
+	dbw 65, MAGCARGO
+	dbw 64, MAGMAR
+	dbw 65, MUK
+	dbw 67, FLAREON
+	dbw 65, RAPIDASH
+	dbw 66, TYPHLOSION
+	dbw 66, MAGMORTAR
+	; nite
+	dbw 64, WEEZING
+	dbw 65, MAGCARGO
+	dbw 64, MAGMAR
+	dbw 65, MUK
+	dbw 67, FLAREON
+	dbw 65, RAPIDASH
+	dbw 66, TYPHLOSION
+	dbw 66, MAGMORTAR
+
+	map_id CINNABAR_VOLCANO_B2F
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 64, WEEZING
+	dbw 65, MAGCARGO
+	dbw 64, MAGMAR
+	dbw 65, MUK
+	dbw 67, FLAREON
+	dbw 65, RAPIDASH
+	dbw 66, TYPHLOSION
+	dbw 66, MAGMORTAR
+	; day
+	dbw 64, WEEZING
+	dbw 65, MAGCARGO
+	dbw 64, MAGMAR
+	dbw 65, MUK
+	dbw 67, FLAREON
+	dbw 65, RAPIDASH
+	dbw 66, TYPHLOSION
+	dbw 66, MAGMORTAR
+	; nite
+	dbw 64, WEEZING
+	dbw 65, MAGCARGO
+	dbw 64, MAGMAR
+	dbw 65, MUK
+	dbw 67, FLAREON
+	dbw 65, RAPIDASH
+	dbw 66, TYPHLOSION
+	dbw 66, MAGMORTAR
+
+	map_id CERULEAN_CAVE_1F
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 67, RHYDON
+	dbw 67, GOLEM
+	dbw 68, ELECTRODE
+	dbw 67, CROBAT
+	dbw 67, MAROWAK
+	dbw 68, CHANSEY
+	dbw 69, BLISSEY
+	dbw 69, DITTO
+	; day
+	dbw 67, RHYDON
+	dbw 67, GOLEM
+	dbw 68, ELECTRODE
+	dbw 67, CROBAT
+	dbw 67, MAROWAK
+	dbw 68, CHANSEY
+	dbw 69, BLISSEY
+	dbw 69, DITTO
+	; nite
+	dbw 67, RHYDON
+	dbw 67, GOLEM
+	dbw 68, ELECTRODE
+	dbw 67, CROBAT
+	dbw 67, MAROWAK
+	dbw 68, CHANSEY
+	dbw 69, BLISSEY
+	dbw 69, DITTO
+
+	map_id CERULEAN_CAVE_2F
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 67, RHYDON
+	dbw 67, GOLEM
+	dbw 68, ELECTRODE
+	dbw 67, CROBAT
+	dbw 67, MAROWAK
+	dbw 68, CHANSEY
+	dbw 69, BLISSEY
+	dbw 69, DITTO
+	; day
+	dbw 67, RHYDON
+	dbw 67, GOLEM
+	dbw 68, ELECTRODE
+	dbw 67, CROBAT
+	dbw 67, MAROWAK
+	dbw 68, CHANSEY
+	dbw 69, BLISSEY
+	dbw 69, DITTO
+	; nite
+	dbw 67, RHYDON
+	dbw 67, GOLEM
+	dbw 68, ELECTRODE
+	dbw 67, CROBAT
+	dbw 67, MAROWAK
+	dbw 68, CHANSEY
+	dbw 69, BLISSEY
+	dbw 69, DITTO
+
+	map_id CERULEAN_CAVE_B1F
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 67, RHYDON
+	dbw 67, GOLEM
+	dbw 68, ELECTRODE
+	dbw 67, CROBAT
+	dbw 67, MAROWAK
+	dbw 68, CHANSEY
+	dbw 69, BLISSEY
+	dbw 69, DITTO
+	; day
+	dbw 67, RHYDON
+	dbw 67, GOLEM
+	dbw 68, ELECTRODE
+	dbw 67, CROBAT
+	dbw 67, MAROWAK
+	dbw 68, CHANSEY
+	dbw 69, BLISSEY
+	dbw 69, DITTO
+	; nite
+	dbw 67, RHYDON
+	dbw 67, GOLEM
+	dbw 68, ELECTRODE
+	dbw 67, CROBAT
+	dbw 67, MAROWAK
+	dbw 68, CHANSEY
+	dbw 69, BLISSEY
+	dbw 69, DITTO
+
+	map_id SEAFOAM_ISLAND_1F
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 67, DEWGONG
+	dbw 67, GLALIE
+	dbw 68, DELIBIRD
+	dbw 67, CROBAT
+	dbw 67, JYNX
+	dbw 68, MAMOSWINE
+	dbw 69, WEAVILE
+	dbw 69, LAPRAS
+	; day
+	dbw 67, DEWGONG
+	dbw 67, GLALIE
+	dbw 68, DELIBIRD
+	dbw 67, CROBAT
+	dbw 67, JYNX
+	dbw 68, MAMOSWINE
+	dbw 69, WEAVILE
+	dbw 69, LAPRAS
+	; nite
+	dbw 67, DEWGONG
+	dbw 67, FROSLASS
+	dbw 68, DELIBIRD
+	dbw 67, CROBAT
+	dbw 67, JYNX
+	dbw 68, MAMOSWINE
+	dbw 69, WEAVILE
+	dbw 69, LAPRAS
+
+	map_id SEAFOAM_ISLAND_B1F
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 67, DEWGONG
+	dbw 67, GLALIE
+	dbw 68, DELIBIRD
+	dbw 67, CROBAT
+	dbw 67, JYNX
+	dbw 68, MAMOSWINE
+	dbw 69, WEAVILE
+	dbw 69, LAPRAS
+	; day
+	dbw 67, DEWGONG
+	dbw 67, GLALIE
+	dbw 68, DELIBIRD
+	dbw 67, CROBAT
+	dbw 67, JYNX
+	dbw 68, MAMOSWINE
+	dbw 69, WEAVILE
+	dbw 69, LAPRAS
+	; nite
+	dbw 67, DEWGONG
+	dbw 67, FROSLASS
+	dbw 68, DELIBIRD
+	dbw 67, CROBAT
+	dbw 67, JYNX
+	dbw 68, MAMOSWINE
+	dbw 69, WEAVILE
+	dbw 69, LAPRAS
+
+	map_id SEAFOAM_ISLAND_B2F
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 67, DEWGONG
+	dbw 67, GLALIE
+	dbw 68, DELIBIRD
+	dbw 67, CROBAT
+	dbw 67, JYNX
+	dbw 68, MAMOSWINE
+	dbw 69, WEAVILE
+	dbw 69, LAPRAS
+	; day
+	dbw 67, DEWGONG
+	dbw 67, GLALIE
+	dbw 68, DELIBIRD
+	dbw 67, CROBAT
+	dbw 67, JYNX
+	dbw 68, MAMOSWINE
+	dbw 69, WEAVILE
+	dbw 69, LAPRAS
+	; nite
+	dbw 67, DEWGONG
+	dbw 67, FROSLASS
+	dbw 68, DELIBIRD
+	dbw 67, CROBAT
+	dbw 67, JYNX
+	dbw 68, MAMOSWINE
+	dbw 69, WEAVILE
+	dbw 69, LAPRAS
+
+	map_id SEAFOAM_ISLAND_B3F
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 67, DEWGONG
+	dbw 67, GLALIE
+	dbw 68, DELIBIRD
+	dbw 67, CROBAT
+	dbw 67, JYNX
+	dbw 68, MAMOSWINE
+	dbw 69, WEAVILE
+	dbw 69, LAPRAS
+	; day
+	dbw 67, DEWGONG
+	dbw 67, GLALIE
+	dbw 68, DELIBIRD
+	dbw 67, CROBAT
+	dbw 67, JYNX
+	dbw 68, MAMOSWINE
+	dbw 69, WEAVILE
+	dbw 69, LAPRAS
+	; nite
+	dbw 67, DEWGONG
+	dbw 67, FROSLASS
+	dbw 68, DELIBIRD
+	dbw 67, CROBAT
+	dbw 67, JYNX
+	dbw 68, MAMOSWINE
+	dbw 69, WEAVILE
+	dbw 69, LAPRAS
+
+	map_id SEAFOAM_ISLAND_B4F
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 67, DEWGONG
+	dbw 67, GLALIE
+	dbw 68, DELIBIRD
+	dbw 67, CROBAT
+	dbw 67, JYNX
+	dbw 68, MAMOSWINE
+	dbw 69, WEAVILE
+	dbw 69, LAPRAS
+	; day
+	dbw 67, DEWGONG
+	dbw 67, GLALIE
+	dbw 68, DELIBIRD
+	dbw 67, CROBAT
+	dbw 67, JYNX
+	dbw 68, MAMOSWINE
+	dbw 69, WEAVILE
+	dbw 69, LAPRAS
+	; nite
+	dbw 67, DEWGONG
+	dbw 67, FROSLASS
+	dbw 68, DELIBIRD
+	dbw 67, CROBAT
+	dbw 67, JYNX
+	dbw 68, MAMOSWINE
+	dbw 69, WEAVILE
+	dbw 69, LAPRAS
+
 	db -1 ; end

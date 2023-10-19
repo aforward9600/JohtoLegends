@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const LAVENDERSPEECHHOUSE_POKEFAN_F
+	const LAVENDERSPEECHHOUSE_GRANNY
 
 LavenderSpeechHouse_MapScripts:
 	db 0 ; scene scripts
@@ -13,17 +13,12 @@ LavenderSpeechHouseBookshelf:
 	jumpstd picturebookshelf
 
 LavenderSpeechHousePokefanFText:
-	text "LAVENDER is a"
-	line "tiny, quiet town"
+	text "I can't even pay"
+	line "my respects to my"
+	cont "poor departed"
+	cont "Sandshrew."
 
-	para "at the foot of the"
-	line "mountains."
-
-	para "It's gotten a bit"
-	line "busier since the"
-
-	para "RADIO TOWER was"
-	line "built."
+	para "Curse those Feds!"
 	done
 
 LavenderSpeechHouse_MapEvents:
@@ -40,4 +35,4 @@ LavenderSpeechHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, LavenderSpeechHouseBookshelf
 
 	db 1 ; object events
-	object_event  2,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderSpeechHousePokefanFScript, -1
+	object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderSpeechHousePokefanFScript, -1

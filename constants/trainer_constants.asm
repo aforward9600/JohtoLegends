@@ -539,9 +539,9 @@ CHRIS EQU __enum__
 	const HIDEO
 	const YOSHI
 	const SATORU
-	const LAO
+	const HIROSHI
 	const NOB
-	const KIYO
+	const TANABE
 	const LUNG
 	const KENJI3
 	const WAI
@@ -555,7 +555,7 @@ CHRIS EQU __enum__
 
 	trainerclass PSYCHIC_T ; 34
 	const JORDAN
-	const FRANKLIN
+	const CHRIS_PSYCHIC
 	const HERMAN
 	const FIDEL
 	const GREG
@@ -564,7 +564,7 @@ CHRIS EQU __enum__
 	const PHIL
 	const RICHARD
 	const HOUDINI
-	const JARED
+	const JEREMY_PSYCHIC
 	const RODNEY
 
 	trainerclass PICNICKER ; 35
@@ -753,6 +753,8 @@ CHRIS EQU __enum__
 	const SABRINA2
 	const MAEVE
 	const EDALYN
+	const BECKY
+	const LILLITH
 
 	trainerclass CHIGUSA ; 48
 	const CHIGUSA1
@@ -928,6 +930,9 @@ CHRIS EQU __enum__
 	const ULYSSES
 	const DOUGLAS
 	const GRANT
+
+	trainerclass KARATE_KING
+	const KOICHI
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

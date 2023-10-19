@@ -407,6 +407,10 @@
 	const WAVE_CRASH
 	const FAKE_OUT
 	const HEADLONGRUSH
+	const DUALWINGBEAT
+	const TWIN_BEAM
+	const CATASTROPHE
+	const PSYSHIELD
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 
@@ -432,7 +436,7 @@ const_value = -$17 ;fix if more negative values are added
 	const ANIM_IN_SANDSTORM      ;  -c (fff5)
 	const ANIM_IN_NIGHTMARE      ;  -b (fff6)
 	const ANIM_IN_WHIRLPOOL      ;  -a (fff7)
-	const ANIM_IN_HAIL			 ;	-9
+	const ANIM_IN_HAIL           ;	-9
 ; battle anims
 	const ANIM_MISS              ;  -8 (fff8)
 	const ANIM_ENEMY_DAMAGE      ;  -7 (fff9)

@@ -13,4 +13,10 @@ MetronomeExcepts:
 	dw DESTINY_BOND
 	dw SLEEP_TALK
 	dw THIEF
+	dw BELCH
+	dw MIRROR_MOVE
+	dw SNARL
+	dw SNORE
+	dw TRANSFORM
+	dw TWIN_BEAM
 	dw -1

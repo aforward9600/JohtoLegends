@@ -553,7 +553,7 @@ AerodactylEvosAttacks:
 	dbw 25, ANCIENTPOWER
 	dbw 33, CRUNCH
 	dbw 41, TAKE_DOWN
-	dbw 49, FLY
+	dbw 49, DUALWINGBEAT
 	dbw 57, IRON_HEAD
 	dbw 65, ROCK_SLIDE
 	dbw 73, GIGA_IMPACT
@@ -612,7 +612,7 @@ ArticunoEvosAttacks:
 	dbw 22, MIND_READER
 	dbw 29, ANCIENTPOWER
 	dbw 36, AGILITY
-	dbw 43, ICY_WIND
+	dbw 43, DUALWINGBEAT
 	dbw 50, REFLECT
 	dbw 57, HAIL
 	dbw 64, SAFEGUARD
@@ -717,6 +717,7 @@ DragoniteEvosAttacks:
 	dbw 27, AGILITY
 	dbw 33, DRAGON_TAIL
 	dbw 39, AQUA_TAIL
+	dbw 45, DUALWINGBEAT
 	dbw 50, DRAGON_RUSH
 	dbw 56, SAFEGUARD
 	dbw 61, DRAGON_DANCE
@@ -1910,6 +1911,8 @@ GirafarigEvosAttacks:
 
 FarigirafEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, TWIN_BEAM
+	dbw 1, TWIN_BEAM
 	dbw 1, TACKLE
 	dbw 1, GROWL
 	dbw 1, CONFUSION
@@ -2006,7 +2009,7 @@ endc
 	dbw 46, DRAGON_RUSH
 	dbw 48, ENDURE
 if DEF(_FAITHFUL)
-	dbw 51, FLAIL
+	dbw 51, DUALWINGBEAT
 else
 	dbw 51, MOONBLAST
 endc
@@ -2049,7 +2052,7 @@ endc
 	dbw 51, DRAGON_RUSH
 	dbw 53, ENDURE
 if DEF(_FAITHFUL)
-	dbw 55, FLAIL
+	dbw 55, DUALWINGBEAT
 else
 	dbw 55, MOONBLAST
 endc
@@ -2556,7 +2559,7 @@ SkarminiEvosAttacks:
 	dbw 27, STEEL_WING
 	dbw 28, SPIKES
 	dbw 30, AGILITY
-	dbw 33, WING_ATTACK
+	dbw 33, DUALWINGBEAT
 	dbw 36, SLASH
 	dbw 39, SCREECH
 	dbw 42, DRILL_PECK
@@ -2579,7 +2582,7 @@ SkarmoryEvosAttacks:
 	dbw 27, STEEL_WING
 	dbw 28, SPIKES
 	dbw 31, AGILITY
-	dbw 34, WING_ATTACK
+	dbw 34, DUALWINGBEAT
 	dbw 39, SLASH
 	dbw 42, SCREECH
 	dbw 45, DRILL_PECK
@@ -2607,6 +2610,7 @@ HoundourEvosAttacks:
 	dbw 49, DARK_PULSE
 	dbw 52, NASTY_PLOT
 	dbw 56, INFERNO
+	dbw 61, CATASTROPHE
 	db 0 ; no more level-up moves
 
 HoundoomEvosAttacks:
@@ -2629,6 +2633,7 @@ HoundoomEvosAttacks:
 	dbw 56, DARK_PULSE
 	dbw 60, NASTY_PLOT
 	dbw 65, INFERNO
+	dbw 69, CATASTROPHE
 	db 0 ; no more level-up moves
 
 PhanpyEvosAttacks:
@@ -2688,6 +2693,8 @@ StantlerEvosAttacks:
 
 WyrdeerEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, PSYSHIELD
+	dbw 1, PSYSHIELD
 	dbw 1, TACKLE
 	dbw 3, LEER
 	dbw 7, ASTONISH
@@ -2803,6 +2810,7 @@ GorotoraEvosAttacks:
 	dbw 55, THUNDER
 	dbw 58, MEAN_LOOK
 	dbw 63, VOLT_TACKLE
+	dbw 69, CATASTROPHE
 	db 0 ; no more level-up moves
 
 BudewEvoseAttacks:

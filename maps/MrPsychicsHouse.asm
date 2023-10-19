@@ -38,10 +38,10 @@ MrPsychicText1:
 	done
 
 MrPsychicText2:
-	text "TM29 is PSYCHIC."
+	text "TM29 is Psychic."
 
 	para "It may lower the"
-	line "target's SPCL.DEF."
+	line "target's Spcl.Def."
 	done
 
 MrPsychicsHouse_MapEvents:

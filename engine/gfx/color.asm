@@ -1464,3 +1464,12 @@ INCLUDE "gfx/beta_poker/beta_poker.pal"
 
 SlotMachinePals:
 INCLUDE "gfx/slots/slots.pal"
+
+LoadPokemonPalette:
+	ld a, [wCurPartySpecies]
+	; hl = palette
+	call GetMonPalettePointer
+	; load palette into de (set by caller)
+	ld bc, PAL_COLOR_SIZE * 2
+	ld a, BANK(wBGPals1)
+	jp FarCopyWRAM

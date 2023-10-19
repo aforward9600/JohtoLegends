@@ -51,63 +51,31 @@ PokemonFanClubReceptionistScript:
 	jumptextfaceplayer PokemonFanClubReceptionistText
 
 PokemonFanClubClefairyGuyScript:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_LOST_ITEM_FROM_FAN_CLUB
-	iftrue .GotLostItem
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .FoundClefairyDoll
-	writetext PokemonFanClubClefairyGuyClefairyIsSoAdorableText
-	waitbutton
-	closetext
-	end
-
-.FoundClefairyDoll:
-	writetext PokemonFanClubClefairyGuyMakingDoWithADollIFoundText
-	checkevent EVENT_MET_COPYCAT_FOUND_OUT_ABOUT_LOST_ITEM
-	iftrue .MetCopycat
-	waitbutton
-	closetext
-	end
-
-.MetCopycat:
-	buttonsound
-	writetext PokemonFanClubClefairyGuyTakeThisDollBackToGirlText
-	buttonsound
-	waitsfx
-	giveitem CHOICE_SPECS
-	iffalse .NoRoom
-	disappear POKEMONFANCLUB_FAIRY
-	writetext PokemonFanClubPlayerReceivedDollText
-	playsound SFX_KEY_ITEM
-	waitsfx
-	itemnotify
-	setevent EVENT_GOT_LOST_ITEM_FROM_FAN_CLUB
-	closetext
-	end
-
-.GotLostItem:
-	writetext PokemonFanClubClefairyGuyGoingToGetARealClefairyText
-	waitbutton
-	closetext
-	end
-
-.NoRoom:
-	writetext PokemonFanClubClefairyGuyPackIsJammedFullText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer PokemonFanClubClefairyGuyClefairyIsSoAdorableText
 
 PokemonFanClubTeacherScript:
 	jumptextfaceplayer PokemonFanClubTeacherText
 
 PokemonFanClubClefairyDollScript:
-	jumptext PokemonFanClubClefairyDollText
+	refreshscreen
+	pokepic CLEFFA
+	cry CLEFFA
+	waitbutton
+	closepokepic
+	opentext
+	writetext PokemonFanClubClefairyDollText
+	waitbutton
+	closetext
+	end
 
 PokemonFanClubBayleefScript:
+	refreshscreen
+	pokepic POLIWAG
+	cry POLIWAG
+	waitbutton
+	closepokepic
 	opentext
 	writetext PokemonFanClubBayleefText
-	cry BAYLEEF
 	waitbutton
 	closetext
 	end
@@ -119,20 +87,20 @@ PokemonFanClubBraggingSign:
 	jumptext PokemonFanClubBraggingSignText
 
 PokemonFanClubChairmanDidYouVisitToHearAboutMyMonText:
-	text "I'm the CHAIRMAN"
-	line "of the #MON FAN"
-	cont "CLUB."
+	text "I'm the Chairman"
+	line "of the #mon Fan"
+	cont "Club."
 
 	para "I've raised over"
-	line "150 #MON."
+	line "150 #mon."
 
 	para "I'm very fussy"
 	line "when it comes to"
-	cont "#MON."
+	cont "#mon."
 
 	para "Did you visit just"
 	line "to hear about my"
-	cont "#MON?"
+	cont "#mon?"
 	done
 
 PokemonFanClubChairmanRapidashText:
@@ -140,7 +108,7 @@ PokemonFanClubChairmanRapidashText:
 	line "Then listen up!"
 
 	para "So… my favorite"
-	line "RAPIDASH…"
+	line "Rapidash…"
 
 	para "It… cute… lovely…"
 	line "smart… unbearably…"
@@ -168,12 +136,12 @@ PokemonFanClubChairmanIWantYouToHaveThisText:
 	done
 
 PokemonFanClubChairmanItsARareCandyText:
-	text "It's a RARE CANDY"
-	line "that makes #MON"
+	text "It's a Rare Candy"
+	line "that makes #mon"
 	cont "stronger."
 
 	para "I prefer making my"
-	line "#MON stronger"
+	line "#mon stronger"
 
 	para "by battling, so"
 	line "you can have it."
@@ -184,7 +152,7 @@ PokemonFanClubChairmanMoreTalesToTellText:
 
 	para "Did you come see"
 	line "me about my #-"
-	cont "MON again?"
+	cont "mon again?"
 
 	para "No? Oh… I had more"
 	line "tales to tell…"
@@ -198,89 +166,43 @@ PokemonFanClubChairmanHowDisappointingText:
 	done
 
 PokemonFanClubReceptionistText:
-	text "Our CHAIRMAN is"
+	text "Our Chairman is"
 	line "very vocal when it"
-	cont "comes to #MON…"
+	cont "comes to #mon…"
+
+	para "He's also very"
+	line "ignorant of every-"
+	cont "thing going on in"
+	cont "Kanto right now."
+
+	para "I guess he has his"
+	line "#mon to"
+	cont "distract him."
 	done
 
 PokemonFanClubClefairyGuyClefairyIsSoAdorableText:
-	text "I love the way"
-	line "CLEFAIRY waggles"
+	text "Hey! Don't tell"
+	line "any of the other"
+	cont "Feds I spend my"
+	cont "free time here."
 
-	para "its finger when"
-	line "it's trying to use"
-
-	para "METRONOME."
-	line "It's so adorable!"
-	done
-
-PokemonFanClubClefairyGuyMakingDoWithADollIFoundText:
-	text "I love CLEFAIRY,"
-	line "but I could never"
-
-	para "catch one. So I'm"
-	line "making do with a"
-
-	para "# DOLL that I"
-	line "found."
-	done
-
-PokemonFanClubClefairyGuyTakeThisDollBackToGirlText:
-	text "Oh, I see now. The"
-	line "girl who lost this"
-
-	para "# DOLL is sad…"
-
-	para "OK. Could you take"
-	line "this # DOLL"
-
-	para "back to that poor"
-	line "little girl?"
-
-	para "I'll befriend a"
-	line "real CLEFAIRY on"
-
-	para "my own one day."
-	line "No worries!"
-	done
-
-PokemonFanClubPlayerReceivedDollText:
-	text "<PLAYER> received"
-	line "# DOLL."
-	done
-
-PokemonFanClubClefairyGuyGoingToGetARealClefairyText:
-	text "You watch. I'm"
-	line "going to get a"
-
-	para "real CLEFAIRY as"
-	line "my friend."
-	done
-
-PokemonFanClubClefairyGuyPackIsJammedFullText:
-	text "Your PACK is"
-	line "jammed full."
+	para "I love my Zubat!"
 	done
 
 PokemonFanClubTeacherText:
 	text "Look at my darling"
-	line "BAYLEEF!"
+	line "Poliwag!"
 
-	para "The leaf on its"
-	line "head is so cute!"
+	para "The swirl on its"
+	line "belly is so cute!"
 	done
 
 PokemonFanClubClefairyDollText:
-	text "It's a CLEFAIRY!"
-	line "Huh?"
-
-	para "Oh, right. It's a"
-	line "CLEFAIRY #"
-	cont "DOLL."
+	text "Zubat: Scree!"
 	done
 
 PokemonFanClubBayleefText:
-	text "BAYLEEF: Li liif!"
+	text "Poliwag: Poli!"
 	done
 
 PokemonFanClubListenSignText:
@@ -310,7 +232,7 @@ PokemonFanClub_MapEvents:
 	db 6 ; object events
 	object_event  3,  1, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonFanClubChairmanScript, -1
 	object_event  4,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PokemonFanClubReceptionistScript, -1
-	object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonFanClubClefairyGuyScript, -1
-	object_event  7,  2, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonFanClubTeacherScript, -1
-	object_event  2,  4, SPRITE_FAIRY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonFanClubClefairyDollScript, EVENT_VERMILION_FAN_CLUB_DOLL
-	object_event  7,  3, SPRITE_BULBASAUR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PokemonFanClubBayleefScript, -1
+	object_event  2,  3, SPRITE_ROUGHNECK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonFanClubClefairyGuyScript, -1
+	object_event  7,  2, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonFanClubTeacherScript, -1
+	object_event  2,  4, SPRITE_ZUBAT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonFanClubClefairyDollScript, EVENT_VERMILION_FAN_CLUB_DOLL
+	object_event  7,  3, SPRITE_POLIWAG, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PokemonFanClubBayleefScript, -1

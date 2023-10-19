@@ -145,3 +145,5 @@ Music:
 	dba Music_CynthiaEncounter
 	dba Music_RocketLair
 	dba Music_VictoryRoadRSE
+	dba Music_SilphCo
+	dba Music_PokemonTower

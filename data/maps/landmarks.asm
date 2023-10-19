@@ -70,6 +70,7 @@ Landmarks:
 	landmark  76,  52, MtMoonName
 	landmark  88,  52, Route4Name
 	landmark 100,  52, CeruleanCityName
+	landmark  89,  52, CeruleanCaveName
 	landmark 100,  44, Route24Name
 	landmark 108,  36, Route25Name
 	landmark 100,  60, Route5Name

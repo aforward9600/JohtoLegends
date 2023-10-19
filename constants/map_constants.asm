@@ -207,6 +207,11 @@ ENDM
 	map_const CINNABAR_ISLAND_MART,                         6,  4 ; 16
 	map_const CINNABAR_ISLAND_GYM,                         10,  9 ; 17
 	map_const GLITCH_CITY,                                 10, 10 ; 18
+	map_const SEAFOAM_ISLAND_1F,                           17, 12 ; 19
+	map_const SEAFOAM_ISLAND_B1F,                          17, 12 ; 20
+	map_const SEAFOAM_ISLAND_B2F,                          17, 11 ; 21
+	map_const SEAFOAM_ISLAND_B3F,                          15,  9 ; 22
+	map_const SEAFOAM_ISLAND_B4F,                          17,  9 ; 23
 
 	newgroup                                                      ;  7
 
@@ -226,6 +231,9 @@ ENDM
 	map_const ROUTE_25,                                    30,  9 ; 16
 	map_const CERULEAN_CITY,                               20, 18 ; 17
 	map_const CERULEAN_BIKE_SHOP,                           4,  4 ; 18
+	map_const CERULEAN_CAVE_1F,                            15, 10 ; 19
+	map_const CERULEAN_CAVE_B1F,                           15,  9 ; 20
+	map_const CERULEAN_CAVE_2F,                           15,  9 ; 21
 
 	newgroup                                                      ;  8
 
@@ -384,7 +392,7 @@ ENDM
 	map_const LAVENDER_NAME_RATER,                          4,  4 ;  9
 	map_const LAVENDER_MART,                                6,  4 ; 10
 	map_const SOUL_HOUSE,                                   5,  4 ; 11
-	map_const LAV_RADIO_TOWER_1F,                          10,  4 ; 12
+	map_const LAV_RADIO_TOWER_1F,                          11,  9 ; 12
 	map_const ROUTE_8_SAFFRON_GATE,                         5,  4 ; 13
 	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ; 14
 

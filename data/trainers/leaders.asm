@@ -41,6 +41,7 @@ KantoGymLeaders:
 	db GIOVANNI
 	db SENSATIONAL2
 	db SENSATIONAL3
+	db KARATE_KING
 	db -1
 
 VillainBosses:

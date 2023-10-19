@@ -109,6 +109,7 @@ if DEF(_CHALLENGE)
 	dn 12, 10, 10, 10 ; LILY
 	dn 12, 10, 10, 10 ; ROUGHNECK
 	dn 12, 10, 10, 10 ; SOLDIER
+	dn 15, 14, 13, 13 ; KARATE_KING
 else
 	dn  9, 10,  7,  7 ; WALKER
 	dn  8,  8,  8,  8 ; MILTON
@@ -216,4 +217,5 @@ else
 	dn  7,  8,  8,  8 ; LILY
 	dn  9,  8,  8,  8 ; ROUGHNECK
 	dn  9,  8,  8,  8 ; SOLDIER
+	dn 15, 12, 11, 11 ; KARATE_KING
 endc

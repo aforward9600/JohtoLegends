@@ -12,18 +12,26 @@ VermilionPokecenter1F_MapScripts:
 VermilionPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
-VermilionPokecenter1FFishingGuruScript:
+VermilionPokecenter1FTwinScript:
 	faceplayer
 	opentext
-	checkevent EVENT_FOUGHT_SNORLAX
-	iftrue .FoughtSnorlax
-	writetext VermilionPokecenter1FFishingGuruText
+	writetext VermilionPokecenter1FTwinText
 	waitbutton
 	closetext
 	end
 
-.FoughtSnorlax:
-	writetext VermilionPokecenter1FFishingGuruText_FoughtSnorlax
+VermilionPokecenterRivalScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_LTSURGE
+	iftrue .VermilionPokecenterRivalAfter
+	writetext VermilionPokecenterRivalText
+	waitbutton
+	closetext
+	end
+
+.VermilionPokecenterRivalAfter:
+	writetext VermilionPokecenterRivalText2
 	waitbutton
 	closetext
 	end
@@ -31,47 +39,71 @@ VermilionPokecenter1FFishingGuruScript:
 VermilionPokecenter1FSailorScript:
 	jumptextfaceplayer VermilionPokecenter1FSailorText
 
-VermilionPokecenter1FBugCatcherScript:
-	jumptextfaceplayer VermilionPokecenter1FBugCatcherText
+VermilionPokecenter1FSoldierScript:
+	jumptextfaceplayer VermilionPokecenter1FSoldierText
 
-VermilionPokecenter1FFishingGuruText:
-	text "A sleeping #MON"
-	line "is lying in front"
-	cont "of DIGLETT'S CAVE."
+VermilionPokecenter1FTwinText:
+	text "Wow, you actually"
+	line "have badges?"
 
-	para "It's a fantastic"
-	line "opportunity to get"
+	para "I thought the Gym"
+	line "Leaders were gone?"
 
-	para "it, but how do you"
-	line "wake it up?"
-	done
+	para "…Oh, they're from"
+	line "Johto?"
 
-VermilionPokecenter1FFishingGuruText_FoughtSnorlax:
-	text "There used to be a"
-	line "sleeping #MON"
-
-	para "lying in front of"
-	line "DIGLETT'S CAVE."
-
-	para "But it seems to"
-	line "have disappeared."
+	para "What's a Johto?"
 	done
 
 VermilionPokecenter1FSailorText:
-	text "The FAST SHIP is a"
-	line "great place to"
+	text "I was in the navy"
+	line "but now I can't get"
+	cont "back home."
 
-	para "meet and battle"
-	line "trainers."
+	para "At least I have"
+	line "some of my friends"
+	cont "here."
 	done
 
-VermilionPokecenter1FBugCatcherText:
-	text "Oh? You have some"
-	line "BADGES I've never"
-	cont "seen before."
+VermilionPokecenter1FSoldierText:
+	text "Kanto's #mon"
+	line "healthcare is"
+	cont "great!"
 
-	para "Oh, I get it. You"
-	line "got them in JOHTO."
+	para "I hope we can get"
+	line "it running back"
+	cont "home soon."
+	done
+
+VermilionPokecenterRivalText:
+	text "<RIVAL>: The old"
+	line "Gym Leader isn't"
+	cont "here anymore."
+
+	para "From what I've"
+	line "heard, there's a"
+	cont "foreign soldier"
+	cont "at the barracks"
+	cont "who's pretty"
+	cont "powerful."
+
+	para "He also one of the"
+	line "ones who defended"
+	cont "the city after the"
+	cont "Gym burned down."
+	done
+
+VermilionPokecenterRivalText2:
+	text "<RIVAL>: Having a"
+	line "seasoned soldier"
+	cont "on our side will"
+	cont "be great!"
+
+	para "Let's hope the rest"
+	line "of the soldiers"
+	cont "can defend the"
+	cont "city while he's"
+	cont "gone."
 	done
 
 VermilionPokecenter1F_MapEvents:
@@ -86,8 +118,9 @@ VermilionPokecenter1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 5 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPokecenter1FNurseScript, -1
-	object_event  7,  2, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionPokecenter1FFishingGuruScript, -1
-	object_event  6,  5, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VermilionPokecenter1FSailorScript, -1
-	object_event  1,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionPokecenter1FBugCatcherScript, -1
+	object_event  7,  2, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionPokecenter1FTwinScript, -1
+	object_event  6,  5, SPRITE_ENGINEER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionPokecenter1FSoldierScript, -1
+	object_event  1,  5, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VermilionPokecenter1FSailorScript, -1
+	object_event  2,  7, SPRITE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPokecenterRivalScript, EVENT_KANTO_POKECENTER_RIVAL

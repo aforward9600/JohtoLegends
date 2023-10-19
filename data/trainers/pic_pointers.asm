@@ -107,3 +107,4 @@ TrainerPicPointers::
 	dba LilyPic
 	dba RoughneckPic
 	dba SoldierPic
+	dba KarateKingPic

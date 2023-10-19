@@ -366,3 +366,14 @@ INCBIN "data/tilesets/kanto_metatiles.bin"
 
 TilesetKantoColl:
 INCLUDE "data/tilesets/kanto_collision.asm"
+
+SECTION "Tileset Data 11", ROMX
+
+TilesetKanto2GFX:
+INCBIN "gfx/tilesets/kanto_2.2bpp.lz"
+
+TilesetKanto2Meta:
+INCBIN "data/tilesets/kanto_2_metatiles.bin"
+
+TilesetKanto2Coll:
+INCLUDE "data/tilesets/kanto_2_collision.asm"

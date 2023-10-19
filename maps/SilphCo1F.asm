@@ -1,6 +1,9 @@
 	object_const_def ; object_event constants
 	const SILPHCO1F_RECEPTIONIST
 	const SILPHCO1F_OFFICER
+	const SILPHCO1F_GENTLEMAN
+	const SILPHCO1F_SCIENTIST
+	const SILPHCO1F_GENTLEMAN2
 
 SilphCo1F_MapScripts:
 	db 0 ; scene scripts
@@ -11,46 +14,98 @@ SilphCoReceptionistScript:
 	jumptextfaceplayer SilphCoReceptionistText
 
 SilphCoOfficerScript:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_UP_GRADE
-	iftrue .GotUpGrade
-	writetext SilphCoOfficerText
-	buttonsound
-	verbosegiveitem UP_GRADE
-	iffalse .NoRoom
-	setevent EVENT_GOT_UP_GRADE
-.GotUpGrade:
-	writetext SilphCoOfficerText_GotUpGrade
-	waitbutton
-.NoRoom:
-	closetext
-	end
+	jumptextfaceplayer SilphCoOfficerText
+
+SilphCo1FGentlemanScript:
+	jumptextfaceplayer SilphCo1FGentlemanText
+
+SilphCo1FScientistScript:
+	jumptextfaceplayer SilphCo1FScientistText
+
+SilphCo1FGentlemanScript2:
+	jumptextfaceplayer SilphCo1FGentlemanText2
+
+SilphElevator:
+	jumptext SilphElevatorText
 
 SilphCoReceptionistText:
 	text "Welcome. This is"
-	line "SILPH CO.'s HEAD"
-	cont "OFFICE BUILDING."
+	line "Silph Co.'s Head"
+	cont "Office Building."
 	done
 
 SilphCoOfficerText:
-	text "Only employees are"
-	line "permitted to go"
-	cont "upstairs."
+	text "I'm sorry, but due"
+	line "to some recent"
+	cont "incidents, no"
+	cont "unauthorized"
+	cont "personnel are"
+	cont "allowed on the"
+	cont "upper floors."
 
-	para "But since you came"
-	line "such a long way,"
-
-	para "have this neat"
-	line "little souvenir."
+	para "We apologize for"
+	line "the inconvenience."
 	done
 
-SilphCoOfficerText_GotUpGrade:
-	text "It's SILPH CO.'s"
-	line "latest product."
+SilphElevatorText:
+	text "There's a note:"
 
-	para "It's not for sale"
-	line "anywhere yet."
+	para "Authorized"
+	line "personnel only."
+	done
+
+SilphCo1FGentlemanText:
+	text "Silph has been"
+	line "mostly spared from"
+	cont "the Feds' wrath."
+
+	para "The rumor is that"
+	line "the President is"
+	cont "paying them off to"
+	cont "prevent them from"
+	cont "vandalizing and"
+	cont "looting."
+
+	para "It's sad, but"
+	line "necessary."
+	done
+
+SilphCo1FScientistText:
+	text "Don't tell anyone,"
+	line "but we were the"
+	cont "victim of a break-"
+	cont "in a while ago."
+
+	para "Several digital-"
+	line "made #mon were"
+	cont "stolen by some"
+	cont "people in black."
+
+	para "Not only that, but"
+	line "several prototype"
+	cont "Upgrades were also"
+	cont "stolen."
+
+	para "Not to mention the"
+	line "ultimate ball"
+	cont "prototype."
+
+	para "We can't really"
+	line "investigate well,"
+	cont "due to the Feds."
+
+	para "They may be a part"
+	line "of it."
+	done
+
+SilphCo1FGentlemanText2:
+	text "I hope we can get"
+	line "back to normal"
+	cont "soon."
+
+	para "The amount of"
+	line "security makes me"
+	cont "uncomfortable."
 	done
 
 SilphCo1F_MapEvents:
@@ -62,8 +117,12 @@ SilphCo1F_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 21,  0, BGEVENT_READ, SilphElevator
 
-	db 2 ; object events
+	db 5 ; object events
 	object_event  6,  2, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoReceptionistScript, -1
 	object_event 27,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoOfficerScript, -1
+	object_event 27, 15, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilphCo1FGentlemanScript, -1
+	object_event  1, 13, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilphCo1FScientistScript, -1
+	object_event 16,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilphCo1FGentlemanScript2, -1

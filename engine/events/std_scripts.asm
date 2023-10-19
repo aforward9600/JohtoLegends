@@ -1901,6 +1901,12 @@ StaticPokemonRefresh:
 	iftrue .refreshmoltres
 	checkevent EVENT_BEAT_ZAPDOS
 	iftrue .refreshzapdos
+	checkevent EVENT_BEAT_SNORLAX
+	iftrue .refreshsnorlax
+	checkevent EVENT_BEAT_MISSINGNO
+	iftrue .refreshmissingno
+	checkevent EVENT_BEAT_MEWTWO
+	iftrue .refreshmewtwo
 	return
 
 .refreshfarfetchd:
@@ -1934,6 +1940,19 @@ StaticPokemonRefresh:
 
 .refreshzapdos:
 	clearevent EVENT_BEAT_ZAPDOS
+	sjump StaticPokemonRefresh
+
+.refreshsnorlax:
+	clearevent EVENT_BEAT_SNORLAX
+	clearevent EVENT_VERMILION_CITY_SNORLAX
+	sjump StaticPokemonRefresh
+
+.refreshmewtwo:
+	clearevent EVENT_BEAT_MEWTWO
+	sjump StaticPokemonRefresh
+
+.refreshmissingno:
+	clearevent EVENT_BEAT_MISSINGNO
 	sjump StaticPokemonRefresh
 
 TelevisionScript:

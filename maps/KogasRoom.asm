@@ -45,9 +45,12 @@ SurgeScript_Battle:
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_GEN_SURGE
 	iftrue SurgeScript_AfterBattle
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue SurgeRematch
 	writetext SurgeScript_SurgeBeforeText
 	waitbutton
 	closetext
+SurgeBattle:
 	winlosstext SurgeScript_SurgeBeatenText, GeneralSurgeLastMonText
 	loadtrainer GEN_SURGE, GEN_SURGE1
 	startbattle
@@ -65,6 +68,12 @@ SurgeScript_Battle:
 	setevent EVENT_GEN_SURGES_ROOM_EXIT_OPEN
 	waitsfx
 	end
+
+SurgeRematch:
+	writetext SurgeScript_SurgeBeforeText2
+	waitbutton
+	closetext
+	sjump SurgeBattle
 
 SurgeScript_AfterBattle:
 	writetext SurgeScript_SurgeDefeatText
@@ -142,6 +151,24 @@ SurgeScript_SurgeDefeatText:
 	para "Go on, the"
 	line "next member is"
 	cont "waiting."
+	done
+
+SurgeScript_SurgeBeforeText2:
+	text "Surge: Attention…"
+	line "At ease!"
+
+	para "You're returned,"
+	line "<PLAYER>!"
+
+	para "I knew you'd be"
+	line "back!"
+
+	para "You've got the"
+	line "heart of a warrior"
+	cont "in you!"
+
+	para "Let me see your"
+	line "war face!"
 	done
 
 KogasRoom_MapEvents:

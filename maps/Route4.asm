@@ -45,6 +45,9 @@ TrainerDelinquentSharon:
 MtMoonSquareSign:
 	jumptext MtMoonSquareSignText
 
+CeruleanCaveSign:
+	jumptext CeruleanCaveSignText
+
 Route4HPUp:
 	itemball HP_UP
 
@@ -110,17 +113,31 @@ MtMoonSquareSignText:
 	line "stairs."
 	done
 
+CeruleanCaveSignText:
+	text "Cerulean Cave"
+
+	para "A creature beyond"
+	line "strength lies"
+	cont "within."
+
+	para "Only enter if you"
+	line "don't value your"
+	cont "life."
+	done
+
 Route4_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
+	db 2 ; warp events
 	warp_event  2,  5, MOUNT_MOON, 2
+	warp_event 38,  3, CERULEAN_CAVE_1F, 1
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event  3,  7, BGEVENT_READ, MtMoonSquareSign
 	bg_event 10,  3, BGEVENT_ITEM, Route4HiddenUltraBall
+	bg_event 37,  3, BGEVENT_READ, CeruleanCaveSign
 
 	db 4 ; object events
 	object_event 17,  9, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBikerRiver, -1

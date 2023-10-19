@@ -400,4 +400,8 @@ MoveNames::
 	db "Wave Crash@"
 	db "Fake Out@"
 	db "HeadlongRush@"
+	db "DualWingbeat@"
+	db "Twin Beam@"
+	db "Catastrophe@"
+	db "Psyshield@"
 ;	db "Wake Up Slap@"

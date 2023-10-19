@@ -171,3 +171,4 @@
 	tilecoll WALL, WALL, WALL, WALL ; aa
 	tilecoll WARP_PANEL, WATER, WATER, WATER ; ab
 	tilecoll WATER, WATER, WARP_PANEL, WATER ; ac
+	tilecoll FLOOR, FLOOR, WALL, WALL ; ad

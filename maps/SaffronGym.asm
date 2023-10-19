@@ -1,10 +1,9 @@
 	object_const_def ; object_event constants
 	const SAFFRONGYM_SABRINA
-	const SAFFRONGYM_GRANNY1
+	const SAFFRONGYM_HEX_MANIAC1
 	const SAFFRONGYM_YOUNGSTER1
-	const SAFFRONGYM_GRANNY2
+	const SAFFRONGYM_HEX_MANIAC2
 	const SAFFRONGYM_YOUNGSTER2
-	const SAFFRONGYM_GYM_GUY
 
 SaffronGym_MapScripts:
 	db 0 ; scene scripts
@@ -19,15 +18,15 @@ SaffronGymSabrinaScript:
 	writetext SabrinaIntroText
 	waitbutton
 	closetext
-	winlosstext SabrinaWinLossText, 0
+	winlosstext SabrinaWinLossText, SabrinaLastMonText
 	loadtrainer SABRINA, SABRINA1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_SABRINA
-	setevent EVENT_BEAT_MEDIUM_REBECCA
-	setevent EVENT_BEAT_MEDIUM_DORIS
-	setevent EVENT_BEAT_PSYCHIC_FRANKLIN
-	setevent EVENT_BEAT_PSYCHIC_JARED
+	setevent EVENT_BEAT_HEX_MANIAC_BECKY
+	setevent EVENT_BEAT_HEX_MANIAC_LILLITH
+	setevent EVENT_BEAT_PSYCHIC_CHRIS
+	setevent EVENT_BEAT_PSYCHIC_JEREMY
 	opentext
 	writetext ReceivedMarshBadgeText
 	playsound SFX_GET_BADGE
@@ -44,248 +43,201 @@ SaffronGymSabrinaScript:
 	closetext
 	end
 
-TrainerMediumRebecca:
-	trainer MEDIUM, REBECCA, EVENT_BEAT_MEDIUM_REBECCA, MediumRebeccaSeenText, MediumRebeccaBeatenText, 0, .Script
+SabrinaLastMonText:
+	text "I did not foresee"
+	line "this…"
+	done
+
+TrainerHexManiacBecky:
+	trainer HEX_MANIAC, BECKY, EVENT_BEAT_HEX_MANIAC_BECKY, HexManiacBeckySeenText, HexManiacBeckyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext MediumRebeccaAfterBattleText
+	writetext HexManiacBeckyAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPsychicFranklin:
-	trainer PSYCHIC_T, FRANKLIN, EVENT_BEAT_PSYCHIC_FRANKLIN, PsychicFranklinSeenText, PsychicFranklinBeatenText, 0, .Script
+TrainerPsychicChris:
+	trainer PSYCHIC_T, CHRIS_PSYCHIC, EVENT_BEAT_PSYCHIC_CHRIS, PsychicChrisSeenText, PsychicChrisBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PsychicFranklinAfterBattleText
+	writetext PsychicChrisAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerMediumDoris:
-	trainer MEDIUM, DORIS, EVENT_BEAT_MEDIUM_DORIS, MediumDorisSeenText, MediumDorisBeatenText, 0, .Script
+TrainerHexManiacLillith:
+	trainer HEX_MANIAC, LILLITH, EVENT_BEAT_HEX_MANIAC_LILLITH, HexManiacLillithSeenText, HexManiacLillithBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext MediumDorisAfterBattleText
+	writetext HexManiacLillithAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPsychicJared:
-	trainer PSYCHIC_T, JARED, EVENT_BEAT_PSYCHIC_JARED, PsychicJaredSeenText, PsychicJaredBeatenText, 0, .Script
+TrainerPsychicJeremy:
+	trainer PSYCHIC_T, JEREMY_PSYCHIC, EVENT_BEAT_PSYCHIC_JEREMY, PsychicJeremySeenText, PsychicJeremyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PsychicJaredAfterBattleText
+	writetext PsychicJeremyAfterBattleText
 	waitbutton
 	closetext
 	end
-
-SaffronGymGuyScript:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_SABRINA
-	iftrue .SaffronGymGuyWinScript
-	writetext SaffronGymGuyText
-	waitbutton
-	closetext
-	end
-
-.SaffronGymGuyWinScript:
-	writetext SaffronGymGuyWinText
-	waitbutton
-	closetext
-	end
-
-SaffronGymStatue:
-	checkflag ENGINE_MARSHBADGE
-	iftrue .Beaten
-	jumpstd gymstatue1
-.Beaten:
-	gettrainername STRING_BUFFER_4, SABRINA, SABRINA1
-	jumpstd gymstatue2
 
 SabrinaIntroText:
-	text "SABRINA: I knew"
+	text "Sabrina: I knew"
 	line "you were coming…"
 
-	para "Three years ago I"
-	line "had a vision of"
-	cont "your arrival."
+	para "You, who has"
+	line "conquered the"
+	cont "#mon League."
 
-	para "You're after my"
-	line "BADGE."
+	para "You seek my power"
+	line "to fight the Feds."
 
-	para "I don't enjoy bat-"
-	line "tling, but it's my"
+	para "While I don't"
+	line "enjoy battling,"
 
-	para "duty as a LEADER"
-	line "to confer BADGES"
+	para "I despise harming"
+	line "innocents."
 
-	para "on anyone who has"
-	line "proven him- or"
-	cont "herself worthy."
+	para "The Federation's"
+	line "reign of tyranny"
+	cont "must end."
 
-	para "Since you wish it,"
-	line "I will show you my"
-	cont "psychic powers!"
+	para "If you must test"
+	line "my power, then so"
+	cont "so be it!"
 	done
 
 SabrinaWinLossText:
-	text "SABRINA: Your"
+	text "Sabrina: Your"
 	line "power…"
 
 	para "It far exceeds"
 	line "what I foresaw…"
 
-	para "Maybe it isn't"
-	line "possible to fully"
-
-	para "predict what the"
-	line "future holds…"
-
-	para "OK, you win. You"
-	line "earned yourself"
-	cont "MARSHBADGE."
+	para "This is the power"
+	line "of a Champion…"
 	done
 
 ReceivedMarshBadgeText:
-	text "<PLAYER> received"
-	line "MARSHBADGE."
+	text "Sabrina received"
+	line "MarshBadge."
 	done
 
 SabrinaMarshBadgeText:
-	text "SABRINA: MARSH-"
-	line "BADGE draws out"
+	text "Sabrina: Quite a"
+	line "pretty badge."
 
-	para "your subliminal"
-	line "powers…"
+	para "Not at all what I"
+	line "expected from"
+	cont "Koichi."
 
-	para "Although I failed"
-	line "to accurately pre-"
-	cont "dict your power,"
-	cont "this much I know"
-	cont "to be true."
+	para "Regardless, I will"
+	line "be sure to use my"
+	cont "psychic power in"
+	cont "the fight against"
+	cont "the Federation."
 
-	para "You will become a"
-	line "celebrated and"
-	cont "beloved CHAMPION!"
+	para "Call upon me, and"
+	line "we shall not lose."
 	done
 
 SabrinaFightDoneText:
-	text "SABRINA: Your love"
-	line "for your #MON"
+	text "Sabrina: …I am"
+	line "meditating to"
+	cont "become stronger."
 
-	para "overwhelmed my"
-	line "psychic power…"
-
-	para "The power of love,"
-	line "I think, is also a"
-
-	para "kind of psychic"
-	line "power…"
+	para "Please do not"
+	line "disturb me until"
+	cont "it is time."
 	done
 
-MediumRebeccaSeenText:
-	text "The power of all"
-	line "those you defeated"
-	cont "comes to me!"
+HexManiacBeckySeenText:
+	text "Come and show me"
+	line "your power!"
 	done
 
-MediumRebeccaBeatenText:
-	text "Strong…"
-	line "Far too strong…"
+HexManiacBeckyBeatenText:
+	text "It's over 9,000!"
 	done
 
-MediumRebeccaAfterBattleText:
+HexManiacBeckyAfterBattleText:
 	text "What is the source"
 	line "of your power?"
 	done
 
-PsychicFranklinSeenText:
-	text "Psychic power is"
-	line "the power of your"
-	cont "soul."
+PsychicChrisSeenText:
+	text "Hmmm…"
+
+	para "Yes, I see…"
+
+	para "…Whah!"
+
+	para "Geez, you scared"
+	line "me!"
 	done
 
-PsychicFranklinBeatenText:
-	text "Your soul has more"
-	line "power than mine!"
+PsychicChrisBeatenText:
+	text "You're scary!"
 	done
 
-PsychicFranklinAfterBattleText:
-	text "You made your soul"
-	line "stronger, not just"
-	cont "your abilities."
+PsychicChrisAfterBattleText:
+	text "I was meditating"
+	line "as you interrupted"
+	cont "me."
+
+	para "That's why I"
+	line "jumped."
 	done
 
-MediumDorisSeenText:
+HexManiacLillithSeenText:
 	text "Fufufufu…"
 	line "I see it clearly."
 
-	para "I can see into"
-	line "your soul!"
+	para "I can see your"
+	line "future!"
 	done
 
-MediumDorisBeatenText:
-	text "Though I read you,"
-	line "I still lost…"
+HexManiacLillithBeatenText:
+	text "I couldn't see my"
+	line "future…"
 	done
 
-MediumDorisAfterBattleText:
-	text "Darn! I forgot"
-	line "that I predicted I"
-	cont "would lose to you."
+HexManiacLillithAfterBattleText:
+	text "Now your future is"
+	line "cloudy to me."
 	done
 
-PsychicJaredSeenText:
-	text "The FIGHTING DOJO"
-	line "next door was once"
-	cont "this city's GYM."
+PsychicJeremySeenText:
+	text "We aren't bothered"
+	line "by the Feds here."
+
+	para "Our powers are"
+	line "terrifying."
 	done
 
-PsychicJaredBeatenText:
-	text "I was no match…"
+PsychicJeremyBeatenText:
+	text "You're terrifying"
+	line "too…"
 	done
 
-PsychicJaredAfterBattleText:
-	text "KARATE KING, the"
-	line "master of the"
+PsychicJeremyAfterBattleText:
+	text "If one of us had"
+	line "been the Leader,"
 
-	para "FIGHTING DOJO, was"
-	line "just destroyed by"
-	cont "SABRINA."
-	done
-
-SaffronGymGuyText:
-	text "Yo, CHAMP in"
-	line "making!"
-
-	para "A trainer as"
-	line "skilled as you"
-
-	para "doesn't need to be"
-	line "told how to deal"
-
-	para "with psychic-type"
-	line "#MON, right?"
-
-	para "I expect great"
-	line "things from you!"
-
-	para "Good luck!"
-	done
-
-SaffronGymGuyWinText:
-	text "That was another"
-	line "fantastic battle!"
+	para "the Feds wouldn't"
+	line "have taken over"
+	cont "Saffron City."
 	done
 
 SaffronGym_MapEvents:
@@ -327,13 +279,11 @@ SaffronGym_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  8, 15, BGEVENT_READ, SaffronGymStatue
+	db 0 ; bg events
 
-	db 6 ; object events
-	object_event  9,  8, SPRITE_SABRINA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronGymSabrinaScript, -1
-	object_event 17, 16, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerMediumRebecca, -1
-	object_event  3, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicFranklin, -1
-	object_event  3,  4, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerMediumDoris, -1
-	object_event 17,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPsychicJared, -1
-	object_event  9, 14, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronGymGuyScript, -1
+	db 5 ; object events
+	object_event  9,  8, SPRITE_SABRINA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronGymSabrinaScript, EVENT_SAFFRON_GYM_SABRINA
+	object_event 17, 16, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 3, TrainerHexManiacBecky, -1
+	object_event  3, 16, SPRITE_PSYCHIC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicChris, -1
+	object_event  3,  4, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerHexManiacLillith, -1
+	object_event 17,  4, SPRITE_PSYCHIC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPsychicJeremy, -1

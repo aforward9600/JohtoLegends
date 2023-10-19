@@ -517,6 +517,7 @@ GligarEggMoves:
 	dw CROSS_POISON
 	dw DOUBLE_EDGE
 	dw NIGHT_SLASH
+	dw DUALWINGBEAT
 	dw -1 ; end
 
 SnubbullEggMoves:
@@ -650,6 +651,7 @@ DelibirdEggMoves:
 	dw ICE_PUNCH
 	dw ICE_SHARD
 	dw FAKE_OUT
+	dw DUALWINGBEAT
 	dw -1 ; end
 
 MantykeEggMoves:
@@ -842,6 +844,7 @@ SwabluEggMoves:
 	dw HYPER_VOICE
 	dw PURSUIT
 	dw RAGE
+	dw DUALWINGBEAT
 	dw -1 ; end
 
 KotoraEggMoves:

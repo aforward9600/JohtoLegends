@@ -14,35 +14,36 @@ LavenderMartClerkScript:
 	closetext
 	end
 
-LavenderMartPokefanMScript:
-	jumptextfaceplayer LavenderMartPokefanMText
+LavenderMartRoughneckScript:
+	jumptextfaceplayer LavenderMartRoughneckText
 
 LavenderMartRockerScript:
 	jumptextfaceplayer LavenderMartRockerText
 
-LavenderMartPokefanMText:
-	text "REPEL is a neces-"
-	line "sity if you are"
+LavenderMartRoughneckText:
+	text "Tch."
 
-	para "going to explore a"
-	line "cave."
+	para "There's nothing"
+	line "good to steal"
+	cont "here."
 
-	para "Even though I like"
-	line "exploring, I still"
+	para "Maybe I should"
+	line "liven this place"
+	cont "up a little."
 
-	para "haven't made it to"
-	line "all the caves."
+	para "…Nah."
+
+	para "It ain't worth the"
+	line "effort."
 	done
 
 LavenderMartRockerText:
-	text "I heard about a"
-	line "craftsman who"
+	text "I oughtta knock"
+	line "that Fed around a"
+	cont "little."
 
-	para "makes custom BALLS"
-	line "in the JOHTO town"
-
-	para "of AZALEA. I wish"
-	line "I had some."
+	para "I know he's up to"
+	line "no good!"
 	done
 
 LavenderMart_MapEvents:
@@ -58,5 +59,5 @@ LavenderMart_MapEvents:
 
 	db 3 ; object events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderMartClerkScript, -1
-	object_event  6,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderMartPokefanMScript, -1
-	object_event  9,  2, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderMartRockerScript, -1
+	object_event  6,  6, SPRITE_ROUGHNECK, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderMartRoughneckScript, EVENT_SAFFRON_CITY_FEDS
+	object_event  9,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderMartRockerScript, -1

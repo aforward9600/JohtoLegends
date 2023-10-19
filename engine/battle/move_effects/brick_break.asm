@@ -21,5 +21,4 @@ BattleCommand_BreakScreens:
 	and 1 << SCREENS_LIGHT_SCREEN
 	ret z
 	ld hl, BrokeLightScreenText
-	push de
 	jp StdBattleTextbox

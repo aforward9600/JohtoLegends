@@ -46,6 +46,7 @@ AlphabeticalMoveList::
 	dw BULLET_PUNCH
 	dw BULLET_SEED
 	dw CALM_MIND
+	dw CATASTROPHE
 	dw CHARGE_BEAM
 	dw CHARM
 	dw CIRCLE_THROW
@@ -96,6 +97,7 @@ AlphabeticalMoveList::
 	dw DRILL_PECK
 	dw DRILL_RUN
 	dw DUAL_CHOP
+	dw DUALWINGBEAT
 	dw DYNAMICPUNCH
 	dw EARTH_POWER
 	dw EARTHQUAKE
@@ -261,6 +263,7 @@ AlphabeticalMoveList::
 	dw PSYCHIC_M
 	dw PSYCHO_CUT
 	dw PSYCH_UP
+	dw PSYSHIELD
 	dw PSYWAVE
 	dw PURSUIT
 	dw QUICK_ATTACK
@@ -377,6 +380,7 @@ AlphabeticalMoveList::
 	dw TRANSFORM
 	dw TRI_ATTACK
 	dw TRIPLE_KICK
+	dw TWIN_BEAM
 	dw TWINEEDLE
 	dw TWISTER
 	dw U_TURN

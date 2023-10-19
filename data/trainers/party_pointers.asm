@@ -107,3 +107,4 @@ TrainerGroups:
 	dba Sensational3Group
 	dba RoughneckGroup
 	dba SoldierGroup
+	dba KarateKingGroup

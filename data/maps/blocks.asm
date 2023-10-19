@@ -867,7 +867,7 @@ MrFujisHouse_Blocks:
 	INCBIN "maps/MrFujisHouse.blk"
 
 LavRadioTower1F_Blocks:
-	INCBIN "maps/LavRadioTower1F.blk"
+	INCBIN "maps/PokemonTower1F.blk"
 
 SilverCaveItemRooms_Blocks:
 	INCBIN "maps/SilverCaveItemRooms.blk"
@@ -1133,3 +1133,27 @@ CinnabarIslandGym_Blocks:
 
 GlitchCity_Blocks:
 	INCBIN "maps/GlitchCity.blk"
+
+SeafoamIsland1F_Blocks:
+	INCBIN "maps/SeafoamIsland1F.blk"
+
+SeafoamIslandB1F_Blocks:
+	INCBIN "maps/SeafoamIslandB1F.blk"
+
+SeafoamIslandB2F_Blocks:
+	INCBIN "maps/SeafoamIslandB2F.blk"
+
+SeafoamIslandB3F_Blocks:
+	INCBIN "maps/SeafoamIslandB3F.blk"
+
+SeafoamIslandB4F_Blocks:
+	INCBIN "maps/SeafoamIslandB4F.blk"
+
+CeruleanCave1F_Blocks:
+	INCBIN "maps/CeruleanCave1F.blk"
+
+CeruleanCaveB1F_Blocks:
+	INCBIN "maps/CeruleanCaveB1F.blk"
+
+CeruleanCave2F_Blocks:
+	INCBIN "maps/CeruleanCave2F.blk"

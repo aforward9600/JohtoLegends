@@ -406,6 +406,10 @@ MoveDescriptions1:
 	dw DoubleEdgeDescription
 	dw FakeOutDescription
 	dw CloseCombatDescription
+	dw DoubleHitMDescription
+	dw DoubleHitMDescription
+	dw CatastropheDescription
+	dw PsyshieldDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1962,3 +1966,11 @@ SignalWaveDescription:
 FakeOutDescription:
 	db   "Foe flinches if"
 	line "used first turn.@"
+
+CatastropheDescription:
+	db	 "A disaster that"
+	line "confuses the foe.@"
+
+PsyshieldDescription:
+	db	 "A barrier attack"
+	line "that raises Def.@"

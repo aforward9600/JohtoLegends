@@ -897,7 +897,7 @@ ZubatEvosAttacks:
 	dbw 31, LEECH_LIFE
 	dbw 35, HAZE
 	dbw 37, VENOSHOCK
-	dbw 41, AIR_SLASH
+	dbw 41, DUALWINGBEAT
 	dbw 43, GUNK_SHOT
 	db 0 ; no more level-up moves
 
@@ -919,7 +919,7 @@ GolbatEvosAttacks:
 	dbw 35, LEECH_LIFE
 	dbw 40, HAZE
 	dbw 43, VENOSHOCK
-	dbw 48, AIR_SLASH
+	dbw 48, DUALWINGBEAT
 	dbw 51, GUNK_SHOT
 	db 0 ; no more level-up moves
 
@@ -940,8 +940,9 @@ CrobatEvosAttacks:
 	dbw 35, LEECH_LIFE
 	dbw 40, HAZE
 	dbw 43, VENOSHOCK
-	dbw 48, AIR_SLASH
+	dbw 48, DUALWINGBEAT
 	dbw 51, GUNK_SHOT
+	dbw 56, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 OddishEvosAttacks:
@@ -1870,7 +1871,7 @@ FarfetchDEvosAttacks:
 	dbw 37, ACROBATICS
 	dbw 43, ROOST
 	dbw 45, FALSE_SWIPE
-	dbw 49, AIR_SLASH
+	dbw 49, DUALWINGBEAT
 	dbw 55, LEAF_BLADE
 	dbw 60, BRAVE_BIRD
 	db 0 ; no more level-up moves
@@ -2903,7 +2904,7 @@ ScytherEvosAttacks:
 	dbw 41, X_SCISSOR
 	dbw 45, NIGHT_SLASH
 	dbw 49, DOUBLE_HIT_M
-	dbw 50, AIR_SLASH
+	dbw 50, DUALWINGBEAT
 	dbw 57, SWORDS_DANCE
 	dbw 60, BOUNCE
 	db 0 ; no more level-up moves

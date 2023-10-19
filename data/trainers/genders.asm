@@ -107,3 +107,4 @@ BTTrainerClassGenders:
 	db FEMALE ; LILY
 	db MALE   ; ROUGHNECK
 	db MALE   ; SOLDIER
+	db MALE   ; KARATE_KING
