@@ -62,6 +62,7 @@ CeruleanGymVioletScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_CASCADEBADGE
+	setevent EVENT_DECO_CARPET_2
 	writetext MistyFightDoneText
 	sjump .EndViolet
 

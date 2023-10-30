@@ -1,8 +1,6 @@
 IrwinRumorScript:
 	checkevent EVENT_OPENED_MT_SILVER
 	iftrue .MtSilver
-	checkevent EVENT_FOUGHT_SNORLAX
-	iftrue .Snorlax
 	checkevent EVENT_GOT_PASS_FROM_COPYCAT
 	iftrue .TrainPass
 	checkflag ENGINE_MARSHBADGE

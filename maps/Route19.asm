@@ -9,20 +9,7 @@
 Route19_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, .ClearRocks
-
-.ClearRocks:
-	checkevent EVENT_CINNABAR_ROCKS_CLEARED
-	iftrue .Done
-	changeblock  6,  6, $7a ; rock
-	changeblock  8,  6, $7a ; rock
-	changeblock 10,  6, $7a ; rock
-	changeblock 12,  8, $7a ; rock
-	changeblock  4,  8, $7a ; rock
-	changeblock 10, 10, $7a ; rock
-.Done:
-	return
+	db 0 ; callbacks
 
 TrainerSwimmerfDawn:
 	trainer SWIMMERF, DAWN, EVENT_BEAT_SWIMMERF_DAWN, SwimmerfDawnSeenText, SwimmerfDawnBeatenText, 0, .Script

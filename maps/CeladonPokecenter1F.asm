@@ -22,53 +22,21 @@ CeladonPokecenter1FCooltrainerFScript:
 CeladonPokecenter1FPharmacistScript:
 	jumptextfaceplayer CeladonPokecenter1FPharmacistText
 
-CeladonEusine:
+CeladonPokecenter1FRival:
 	faceplayer
 	opentext
-	writetext CeladonEusineText1
-	buttonsound
-	loadmonindex 1, SUICUNE
-	special MonCheck
-	iffalse .NoSuicune
-	special BeastsCheck
-	iftrue .HoOh
-	writetext NoBeastsText
+	checkevent EVENT_BEAT_ERIKA
+	iftrue .CeladonPokecenter1FRival2
+	writetext CeladonPokecenter1FRivalText1
 	waitbutton
-.NoSuicune:
 	closetext
 	end
 
-.HoOh:
-	writetext EusineLeavesCeladonText
+.CeladonPokecenter1FRival2:
+	writetext CeladonPokecenter1FRivalText2
 	waitbutton
 	closetext
-	readvar VAR_FACING
-	ifequal UP, .Location1
-	applymovement CELADONPOKECENTER1F_EUSINE, .Movement1
-	sjump .Continue
-
-.Location1:
-	applymovement CELADONPOKECENTER1F_EUSINE, .Movement2
-.Continue:
-	disappear CELADONPOKECENTER1F_EUSINE
-	playsound SFX_EXIT_BUILDING
-	waitsfx
 	end
-
-.Movement2:
-	step LEFT
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
-
-.Movement1:
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
 
 CeladonPokecenter1FCooltrainerFText:
 	text "ERIKA is a master"
@@ -143,6 +111,35 @@ NoBeastsText:
 	line "you, <PLAYER>!"
 	done
 
+CeladonPokecenter1FRivalText1:
+	text "<RIVAL>: This city"
+	line "got it the worst."
+
+	para "The Gym Leader is"
+	line "gone, but from"
+	cont "what I've heard,"
+
+	para "a strong trainer"
+	line "tends to the"
+	cont "greenhouse in the"
+	cont "southwest corner"
+	cont "of the city."
+
+	para "We should check"
+	line "there first."
+	done
+
+CeladonPokecenter1FRivalText2:
+	text "<RIVAL>: Erika's a"
+	line "bit of an airhead,"
+	cont "don't you think?"
+
+	para "Let's hope she"
+	line "doesn't fall asleep"
+	cont "during the final"
+	cont "battle."
+	done
+
 CeladonPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -160,4 +157,4 @@ CeladonPokecenter1F_MapEvents:
 	object_event  1,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FGentlemanScript, -1
 	object_event  0,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FPharmacistScript, -1
 	object_event  8,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FCooltrainerFScript, -1
-	object_event  4,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonEusine, EVENT_KANTO_POKECENTER_RIVAL
+	object_event  4,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FRival, EVENT_KANTO_POKECENTER_RIVAL

@@ -934,5 +934,13 @@ CHRIS EQU __enum__
 	trainerclass KARATE_KING
 	const KOICHI
 
+	trainerclass FNINJA_M
+	const FNINJA_M_1
+	const FNINJA_M_2
+
+	trainerclass FNINJA_F
+	const FNINJA_F_1
+	const FNINJA_F_2
+
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

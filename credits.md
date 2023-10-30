@@ -75,7 +75,11 @@ Skarmini back sprite: Frogtoes
 
 Skarmini Animation: Ryans-Tryin
 
-New Ledian Sprite: Rangi
+New Ledian Sprite and Munchlax credits sprite: Rangi
+
+Azurill credits sprite: FrenchOrange & Ferropexola
+
+Kanto grass colors: FrenchOrange
 
 Beta Wooper back sprite made by 64BitWonder.
 

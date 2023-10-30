@@ -60,6 +60,7 @@ CinnabarGymBlaine:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_VOLCANOBADGE
+	setevent EVENT_DECO_PLANT_2
 	writetext BlaineVolcanoBadgeText
 	waitbutton
 	closetext

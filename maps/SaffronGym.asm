@@ -35,6 +35,7 @@ SaffronGymSabrinaScript:
 	writetext SabrinaMarshBadgeText
 	waitbutton
 	closetext
+	setevent EVENT_DECO_BED_3
 	end
 
 .FightDone:

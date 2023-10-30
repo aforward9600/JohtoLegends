@@ -32,30 +32,34 @@ WardensHomeBookshelf:
 	jumpstd picturebookshelf
 
 WardensGranddaughterText1:
-	text "My grandpa is the"
-	line "SAFARI ZONE WAR-"
-	cont "DEN."
+	text "My father is the"
+	line "Safari Zone"
+	cont "Warden."
 
 	para "At least he was…"
 
-	para "He decided to go"
-	line "on a vacation and"
+	para "The vandalism of"
+	line "the Safari Zone"
+	cont "took a toll on his"
+	cont "mental state……"
 
-	para "took off overseas"
-	line "all by himself."
+	para "He went to Johto"
+	line "a while back to"
+	cont "clear his mind."
 
-	para "He quit running"
-	line "SAFARI ZONE just"
-	cont "like that."
+	para "He had enough"
+	line "money to get to"
+	cont "Johto, even with"
+	cont "the embargo up."
 	done
 
 WardensGranddaughterText2:
-	text "Many people were"
-	line "disappointed that"
+	text "I hope he's doing"
+	line "well."
 
-	para "SAFARI ZONE closed"
-	line "down, but Grandpa"
-	cont "is so stubborn…"
+	para "I haven't heard"
+	line "from him in a"
+	cont "while…"
 	done
 
 WardenPhotoText:
@@ -63,14 +67,14 @@ WardenPhotoText:
 	line "grinning old man"
 
 	para "who's surrounded"
-	line "by #MON."
+	line "by #mon."
 	done
 
 SafariZonePhotoText:
 	text "It's a photo of a"
 	line "huge grassy plain"
 
-	para "with rare #MON"
+	para "with rare #mon"
 	line "frolicking in it."
 	done
 

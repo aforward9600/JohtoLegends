@@ -120,8 +120,7 @@ LavenderTown_MapEvents:
 	db 0, 0 ; filler
 
 	db 6 ; warp events
-	warp_event  3,  5, FUCHSIA_CITY, 1
-;	warp_event  3,  5, LAVENDER_POKECENTER_1F, 1
+	warp_event  3,  5, LAVENDER_POKECENTER_1F, 1
 	warp_event  7,  9, MR_FUJIS_HOUSE, 1
 	warp_event  3, 13, LAVENDER_SPEECH_HOUSE, 1
 	warp_event  7, 13, LAVENDER_NAME_RATER, 1

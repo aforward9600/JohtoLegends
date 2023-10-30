@@ -30,6 +30,7 @@ VermilionGymSurgeScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_THUNDERBADGE
+	setevent EVENT_DECO_SURFING_PIKACHU_DOLL
 	writetext LtSurgeThunderBadgeText
 	waitbutton
 	closetext

@@ -9,38 +9,21 @@ Route19FuchsiaGate_MapScripts:
 Route19FuchsiaGateOfficerScript:
 	faceplayer
 	opentext
-	checkevent EVENT_CINNABAR_ROCKS_CLEARED
-	iftrue .RocksCleared
 	writetext Route19FuchsiaGateOfficerText
 	waitbutton
 	closetext
 	end
 
-.RocksCleared:
-	writetext Route19FuchsiaGateOfficerText_RocksCleared
-	waitbutton
-	closetext
-	end
-
 Route19FuchsiaGateOfficerText:
-	text "CINNABAR's volcano"
-	line "erupted."
+	text "The good thing"
+	line "about the water"
+	cont "routes?"
 
-	para "It hurled boulders"
-	line "that cut off ROUTE"
-	cont "19 indefinitely."
+	para "The Feds don't"
+	line "bother with them."
 
-	para "I wonder if the"
-	line "people of CINNABAR"
-	cont "are safe…"
-	done
-
-Route19FuchsiaGateOfficerText_RocksCleared:
-	text "No CINNABAR citi-"
-	line "zens were injured"
-
-	para "by the eruption."
-	line "That's great!"
+	para "Maybe they can't"
+	line "swim?"
 	done
 
 Route19FuchsiaGate_MapEvents:

@@ -1,10 +1,17 @@
 	object_const_def ; object_event constants
-	const FUCHSIACITY_YOUNGSTER
-	const FUCHSIACITY_POKEFAN_M
-	const FUCHSIACITY_TEACHER
+	const FUCHSIACITY_ROUGHNECK
+	const FUCHSIACITY_LASS
+	const FUCHSIACITY_GRAMPS
 	const FUCHSIACITY_FRUIT_TREE
 	const FUCHSIACITY_SNORLAX
 	const FUCHSIACITY_POKEFAN_M_2
+	const FUCHSIACITY_FISHING_GURU
+	const FUCHSIACITY_BIKER
+	const FUCHSIACITY_LAPRAS
+	const FUCHSIACITY_DELINQUENT
+	const FUCHSIACITY_LASS2
+	const FUCHSIACITY_YOUNGSTER
+	const FUCHSIACITY_TEACHER
 
 FuchsiaCity_MapScripts:
 	db 0 ; scene scripts
@@ -16,11 +23,32 @@ FuchsiaCity_MapScripts:
 	setflag ENGINE_FLYPOINT_FUCHSIA
 	return
 
-FuchsiaCityYoungster:
-	jumptextfaceplayer FuchsiaCityYoungsterText
+FuchsiaCityRoughneck:
+	checkevent EVENT_BEAT_KOGA
+	iftrue .FuchsiaCityRoughneck2
+	jumptextfaceplayer FuchsiaCityRoughneckText
 
-FuchsiaCityPokefanM:
-	jumptextfaceplayer FuchsiaCityPokefanMText
+.FuchsiaCityRoughneck2:
+	jumptextfaceplayer FuchsiaCityRoughneckText2
+
+FuchsiaCityLass:
+	checkevent EVENT_FUCHSIA_CITY_LAPRAS
+	iffalse .FuchsiaCityLass2Script
+	jumptextfaceplayer FuchsiaCityLassText
+
+.FuchsiaCityLass2Script:
+	jumptextfaceplayer FuchsiaCityLassText2
+
+FuchsiaCityLass2:
+	jumptextfaceplayer FuchsiaCityLass2Text
+
+FuchsiaCityGramps:
+	checkevent EVENT_BEAT_KOGA
+	iftrue .FuchsiaCityGramps2
+	jumptextfaceplayer FuchsiaCityGrampsText
+
+.FuchsiaCityGramps2:
+	jumptextfaceplayer FuchsiaCityGrampsText2
 
 FuchsiaCityTeacher:
 	jumptextfaceplayer FuchsiaCityTeacherText
@@ -111,6 +139,28 @@ FuchsiaCityPokefanM2:
 	closetext
 	end
 
+FuchsiaCityFishingGuru:
+	jumptextfaceplayer FuchsiaCityFishingGuruText
+
+FuchsiaCityBiker:
+	checkevent EVENT_BEAT_KOGA
+	iftrue .FuchsiaCityBiker2
+	jumptextfaceplayer FuchsiaCityBikerText
+
+.FuchsiaCityBiker2:
+	jumptextfaceplayer FuchsiaCityBikerText2
+
+FuchsiaCityDelinquentScript:
+	checkevent EVENT_BEAT_KOGA
+	iftrue .FuchsiaCityDelinquentScript2
+	jumptextfaceplayer FuchsiaCityDelinquentText
+
+.FuchsiaCityDelinquentScript2:
+	jumptextfaceplayer FuchsiaCityDelinquentText2
+
+FuchsiaCityYoungster:
+	jumptextfaceplayer FuchsiaCityYoungsterText
+
 FuchsiaCitySign:
 	jumptext FuchsiaCitySignText
 
@@ -141,30 +191,72 @@ FuchsiaCityMartSign:
 FuchsiaCityFruitTree:
 	fruittree FRUITTREE_FUCHSIA_CITY
 
-FuchsiaCityYoungsterText:
-	text "One of the ELITE"
-	line "FOUR used to be"
+FuchsiaCityRoughneckText:
+	text "Hehehe!"
 
-	para "the LEADER of"
-	line "FUCHSIA's GYM."
+	para "The Leader was"
+	line "so easy to take"
+	cont "out!"
+
+	para "You'd think a"
+	line "ninja would have"
+	cont "put up more of a"
+	cont "fight!"
 	done
 
-FuchsiaCityPokefanMText:
-	text "KOGA's daughter"
-	line "succeeded him as"
 
-	para "the GYM LEADER"
-	line "after he joined"
-	cont "the ELITE FOUR."
+FuchsiaCityRoughneckText2:
+	text "That new guy's"
+	line "gonna be more of a"
+	cont "problem then the"
+	cont "old ninja…"
+	done
+
+FuchsiaCityLassText:
+	text "All the #mon"
+	line "were poached or"
+	cont "escaped from the"
+	cont "zoo when the Feds"
+	cont "attacked…"
+
+	para "I hope they're"
+	line "alright…"
 	done
 
 FuchsiaCityTeacherText:
-	text "The SAFARI ZONE is"
-	line "closed… It's sad,"
+	text "Perhaps the old"
+	line "Gym can be turned"
+	cont "into something"
+	cont "different."
 
-	para "considering it's"
-	line "FUCHSIA's main"
-	cont "attraction."
+	para "Like an office for"
+	line "the Safari Zone."
+
+	para "Sounds good, yes."
+	done
+
+FuchsiaCityGrampsText:
+	text "Those ninjas are"
+	line "no use!"
+
+	para "We're just waitin'"
+	line "around for them to"
+	cont "do something about"
+	cont "these ruffians,"
+	cont "and nothing's been"
+	cont "done yet!"
+
+	para "Useless!"
+	done
+
+FuchsiaCityGrampsText2:
+	text "Those ninjas are"
+	line "so useful, don't"
+	cont "you agree?"
+
+	para "The town'll be"
+	line "clear in no time"
+	cont "with them around!"
 	done
 
 FuchsiaCitySignText:
@@ -296,6 +388,73 @@ SnorlaxIsBackText:
 	line "rid of it again?"
 	done
 
+FuchsiaCityFishingGuruText:
+	text "The Feds broke"
+	line "down my fences,"
+
+	para "and now they keep"
+	line "using my pond to"
+	cont "swim in!"
+
+	para "My pond is for"
+	line "#mon, not for"
+	cont "people!"
+	done
+
+FuchsiaCityBikerText:
+	text "I stole the Lapras"
+	line "from the zoo!"
+
+	para "You can't have it"
+	line "back!"
+	done
+
+FuchsiaCityBikerText2:
+	text "I should probably"
+	line "put this Lapras"
+	cont "back…"
+	done
+
+FuchsiaCityDelinquentText:
+	text "We trashed that"
+	line "fishing nerd's"
+	cont "house up good!"
+
+	para "That'll teach him"
+	line "not to diss our"
+	cont "style!"
+	done
+
+FuchsiaCityDelinquentText2:
+	text "I'm not doin'"
+	line "nothin', I swear!"
+	done
+
+FuchsiaCityLass2Text:
+	text "We should probably"
+	line "get to fixing"
+	cont "these fences."
+
+	para "They look pretty"
+	line "pitiful."
+	done
+
+FuchsiaCityLassText2:
+	text "The Lapras was"
+	line "returned to the"
+	cont "zoo."
+
+	para "Hopefully the"
+	line "others will be"
+	cont "returned."
+	done
+
+FuchsiaCityYoungsterText:
+	text "When I grow up, I"
+	line "want to be a ninja"
+	cont "just like Koga!"
+	done
+
 FuchsiaCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -325,10 +484,17 @@ FuchsiaCity_MapEvents:
 	bg_event  6, 13, BGEVENT_READ, FuchsiaCityMartSign
 	bg_event 24, 13, BGEVENT_READ, FuchsiaGymBurnedSign
 
-	db 6 ; object events
-	object_event 23, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityYoungster, -1
-	object_event 13,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityPokefanM, -1
-	object_event 16, 14, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FuchsiaCityTeacher, -1
-	object_event  8,  1, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCityFruitTree, -1
-	object_event 30,  3, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCitySnorlax, EVENT_VERMILION_CITY_SNORLAX
-	object_event 26,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCityPokefanM2, -1
+	db 13 ; object events
+	object_event 23, 18, SPRITE_ROUGHNECK, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityRoughneck, EVENT_SAFFRON_CITY_FEDS
+	object_event 11,  9, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FuchsiaCityLass, -1
+	object_event 16, 14, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityGramps, -1
+	object_event  2,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCityFruitTree, -1
+	object_event 30,  4, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCitySnorlax, EVENT_VERMILION_CITY_SNORLAX
+	object_event 32,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCityPokefanM2, -1
+	object_event 31, 22, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCityFishingGuru, -1
+	object_event 11, 20, SPRITE_BIKER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityBiker, EVENT_SAFFRON_CITY_FEDS
+	object_event  8, 17, SPRITE_SURF, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FUCHSIA_CITY_LAPRAS
+	object_event 31, 31, SPRITE_DAISY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityDelinquentScript, EVENT_SAFFRON_CITY_FEDS
+	object_event 27, 31, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCityLass2, EVENT_SAFFRON_CITY_CIVILLIANS
+	object_event 15, 21, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCityYoungster, EVENT_SAFFRON_CITY_CIVILLIANS
+	object_event 22, 18, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCityTeacher, EVENT_SAFFRON_CITY_CIVILLIANS

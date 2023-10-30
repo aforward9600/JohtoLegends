@@ -47,7 +47,7 @@ UnknownText_0x1ec12a:
 	done
 
 UnknownText_0x1ec14d:
-	text "Heh, your #MON"
+	text "Heh, your #mon"
 	line "look pretty cool."
 	done
 
@@ -62,7 +62,7 @@ UnknownText_0x1ec190:
 	done
 
 UnknownText_0x1ec1ae:
-	text "#MON every day!"
+	text "#mon every day!"
 	line "I love battling!"
 	done
 
@@ -214,13 +214,13 @@ UnknownText_0x1ec532:
 	done
 
 UnknownText_0x1ec54b:
-	text "Those #MON"
+	text "Those #mon"
 	line "aren't enough!"
 	done
 
 UnknownText_0x1ec565:
 	text "I want your"
-	line "#MON. Please?"
+	line "#mon. Please?"
 	done
 
 UnknownText_0x1ec580:
@@ -254,7 +254,7 @@ UnknownText_0x1ec60d:
 	done
 
 UnknownText_0x1ec631:
-	text "My #MON skills"
+	text "My #mon skills"
 	line "are phenomenal!"
 	done
 
@@ -323,17 +323,17 @@ UnknownText_0x1ec7d8:
 	text "I'm scared about"
 	line "what might happen."
 
-	para "My #MON are way"
+	para "My #mon are way"
 	line "too strong."
 	done
 
 UnknownText_0x1ec818:
-	text "See? My #MON"
+	text "See? My #mon"
 	line "were too strong."
 	done
 
 UnknownText_0x1ec837:
-	text "Graa! My #MON"
+	text "Graa! My #mon"
 	line "were total wimps!"
 	done
 
@@ -388,7 +388,7 @@ UnknownText_0x1ec969:
 	done
 
 UnknownText_0x1ec986:
-	text "Yeah! My #MON"
+	text "Yeah! My #mon"
 	line "rule!"
 	done
 
@@ -413,7 +413,7 @@ UnknownText_0x1ec9f7:
 	done
 
 UnknownText_0x1eca0a:
-	text "Look! My #MON"
+	text "Look! My #mon"
 	line "are really cute!"
 	done
 
@@ -459,22 +459,22 @@ UnknownText_0x1ecafa:
 
 UnknownText_0x1ecb19:
 	text "Oh, you have some"
-	line "rare #MON."
+	line "rare #mon."
 	done
 
 UnknownText_0x1ecb37:
 	text "May I have one of"
-	line "your #MON?"
+	line "your #mon?"
 	done
 
 UnknownText_0x1ecb55:
 	text "…I want one of"
-	line "your #MON."
+	line "your #mon."
 	done
 
 UnknownText_0x1ecb70:
 	text "Want to hear about"
-	line "my cute #MON?"
+	line "my cute #mon?"
 	done
 
 UnknownText_0x1ecb92:
@@ -578,7 +578,7 @@ UnknownText_0x1ecdcf:
 	done
 
 UnknownText_0x1ecded:
-	text "BATTLE TOWER is a"
+	text "Battle Tower is a"
 	line "tough place!"
 	done
 

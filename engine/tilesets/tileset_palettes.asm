@@ -22,6 +22,8 @@ LoadSpecialMapPalette:
 	jr z, .mansion_mobile
 	cp TILESET_TOWER
 	jr z, .tower
+	cp TILESET_KANTO
+	jr z, .kanto
 	jr .do_nothing
 
 .darkness
@@ -87,9 +89,23 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
+.kanto
+	ld hl, KantoPalette
+	ld a, [wTimeOfDayPal]
+	maskbits NUM_DAYTIMES
+	ld bc, 8 palettes
+	call AddNTimes
+	ld de, wBGPals1
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	scf
+	ret
+
 .do_nothing
 	and a
 	ret
+
+INCLUDE "gfx/tilesets/kanto.pal"
 
 LoadDarknessPalette:
 	ld a, BANK(wBGPals1)

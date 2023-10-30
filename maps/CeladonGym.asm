@@ -12,6 +12,14 @@ CeladonGym_MapScripts:
 	db 0 ; callbacks
 
 CeladonGymErikaScript:
+	showemote EMOTE_SLEEP, CELADONGYM_ERIKA, 30
+	pause 10
+	showemote EMOTE_SLEEP, CELADONGYM_ERIKA, 30
+	pause 10
+	showemote EMOTE_SLEEP, CELADONGYM_ERIKA, 30
+	pause 10
+	showemote EMOTE_SHOCK, CELADONGYM_ERIKA, 15
+	pause 10
 	faceplayer
 	opentext
 	checkflag ENGINE_RAINBOWBADGE
@@ -19,7 +27,7 @@ CeladonGymErikaScript:
 	writetext ErikaBeforeBattleText
 	waitbutton
 	closetext
-	winlosstext ErikaBeatenText, 0
+	winlosstext ErikaBeatenText, ErikaLastMonText
 	loadtrainer ERIKA, ERIKA1
 	startbattle
 	reloadmapafterbattle
@@ -38,14 +46,32 @@ CeladonGymErikaScript:
 	iftrue .GotGigaDrain
 	writetext ErikaExplainTMText
 	buttonsound
-	verbosegiveitem TM_GIGA_DRAIN
+	checkitem TM_ENERGY_BALL
+	iftrue .AlreadyGotEnergyBall
+	verbosegiveitem TM_ENERGY_BALL
 	iffalse .GotGigaDrain
 	setevent EVENT_GOT_TM19_GIGA_DRAIN
+	setevent EVENT_DECO_LOTAD_DOLL
 .GotGigaDrain:
 	writetext ErikaAfterBattleText
 	waitbutton
 	closetext
 	end
+
+.AlreadyGotEnergyBall:
+	writetext AlreadyGotEnergyBallText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_TM19_GIGA_DRAIN
+	setevent EVENT_DECO_LOTAD_DOLL
+	sjump .GotGigaDrain
+
+ErikaLastMonText:
+	text "Erika: My last"
+	line "#mon?"
+
+	para "I hardly noticed…"
+	done
 
 TrainerLassMichelle:
 	trainer LASS, MICHELLE, EVENT_BEAT_LASS_MICHELLE, LassMichelleSeenText, LassMichelleBeatenText, 0, .Script
@@ -111,158 +137,202 @@ CeladonGymStatue:
 	jumpstd gymstatue2
 
 ErikaBeforeBattleText:
-	text "ERIKA: Hello…"
-	line "Lovely weather,"
+	text "Erika: Oh…"
+	line "My apologies…"
 
-	para "isn't it?"
-	line "It's so pleasant…"
+	para "I really dozed off"
+	line "there for a while…"
 
-	para "…I'm afraid I may"
-	line "doze off…"
+	para "My name is Erika."
 
-	para "My name is ERIKA."
-	line "I am the LEADER of"
-	cont "CELADON GYM."
+	para "I'm the greenhouse"
+	line "owner here…"
 
-	para "…Oh? All the way"
-	line "from JOHTO, you"
-	cont "say? How nice…"
+	para "Is there something"
+	line "you needed from"
+	cont "me?"
 
-	para "Oh. I'm sorry, I"
-	line "didn't realize"
+	para "…You're looking"
+	line "for a Gym Leader?"
 
-	para "that you wished to"
-	line "challenge me."
+	para "I'm afraid we don't"
+	line "have one anymore…"
 
-	para "Very well, but I"
-	line "shall not lose."
+	para "We're not sure"
+	line "where they went…"
+
+	para "…You want to fight"
+	line "the Feds?"
+
+	para "It's a nice goal…"
+
+	para "…If you need a"
+	line "replacement, then"
+	cont "perhaps I could be"
+	cont "of assistence?"
+
+	para "…I'm not that bad"
+	line "of a trainer, if I"
+	cont "do say so…"
+
+	para "How about it?"
 	done
 
 ErikaBeatenText:
-	text "ERIKA: Oh!"
-	line "I concede defeat…"
+	text "Erika: Wait…"
 
-	para "You are remarkably"
-	line "strong…"
+	para "You're the #mon"
+	line "League Champion?"
 
-	para "I shall give you"
-	line "RAINBOWBADGE…"
+	para "That explains your"
+	line "strength…"
 	done
 
 PlayerReceivedRainbowBadgeText:
-	text "<PLAYER> received"
-	line "RAINBOWBADGE."
+	text "Erika received"
+	line "RainbowBadge."
 	done
 
 ErikaExplainTMText:
-	text "ERIKA: That was a"
-	line "delightful match."
+	text "Erika: This Badge"
+	line "is so pretty…"
 
-	para "I felt inspired."
-	line "Please, I wish you"
-	cont "to have this TM."
+	para "I'll be tending to"
+	line "the gardens here"
+	cont "until it's time."
 
-	para "It is GIGA DRAIN."
+	para "Oh, you should"
+	line "probably take this"
+	cont "TM I had lying"
+	cont "around."
 
-	para "It is a wonderful"
-	line "move that drains"
+	para "It's Energy Ball."
 
-	para "half the damage it"
-	line "inflicts to heal"
-	cont "your #MON."
-
-	para "Please use it if"
-	line "it pleases you…"
+	para "It can lower the"
+	line "opponent's Sp.Def…"
 	done
 
 ErikaAfterBattleText:
-	text "ERIKA: Losing"
-	line "leaves a bitter"
-	cont "aftertaste…"
+	text "Erika: Mm…"
 
-	para "But knowing that"
-	line "there are strong"
+	para "Flowers need water"
+	line "everyday to grow"
+	cont "strong…"
 
-	para "trainers spurs me"
-	line "to do better…"
+	para "Just like #mon"
+	line "need love…"
 	done
 
 LassMichelleSeenText:
-	text "Do you think a"
-	line "girls-only GYM"
-	cont "is rare?"
+	text "Don't just barge in"
+	line "here!"
+
+	para "We don't know if"
+	line "you're a Fed or"
+	cont "not!"
 	done
 
 LassMichelleBeatenText:
-	text "Oh, bleah!"
+	text "Help!"
 	done
 
 LassMichelleAfterBattleText:
-	text "I just got care-"
-	line "less, that's all!"
+	text "I guess you're not"
+	line "one of those Feds."
+
+	para "You're too clean!"
 	done
 
 PicnickerTanyaSeenText:
-	text "Oh, a battle?"
-	line "That's kind of"
-	cont "scary, but OK!"
+	text "Those Feds are"
+	line "such idiots!"
+
+	para "They took over a"
+	line "whole city, but a"
+	cont "little tree stops"
+	cont "them from getting"
+	cont "in here!"
 	done
 
 PicnickerTanyaBeatenText:
-	text "Oh, that's it?"
+	text "You're no idiot!"
 	done
 
 PicnickerTanyaAfterBattleText:
-	text "Oh, look at all"
-	line "your BADGES. No"
+	text "That tree outside"
+	line "blocks the path to"
+	cont "our greenhouse."
 
-	para "wonder I couldn't"
-	line "win!"
+	para "They still haven't"
+	line "gotten past it!"
 	done
 
 BeautyJuliaSeenText:
-	text "Were you looking"
-	line "at these flowers"
-	cont "or at me?"
+	text "Do you have any"
+	line "business with the"
+	cont "lady of the"
+	cont "greenhouse?"
 	done
 
 BeautyJuliaBeatenText:
-	text "How annoying!"
+	text "I guess you do!"
 	done
 
 BeautyJuliaAfterBattleText:
-	text "How do I go about"
-	line "becoming ladylike"
-	cont "like ERIKA?"
+	text "Lady Erika doesn't"
+	line "waking from a nap"
+	cont "unless it's really"
+	cont "important."
 	done
 
 TwinsJoAndZoe1SeenText:
-	text "We'll show you"
-	line "#MON moves that"
-	cont "ERIKA taught us!"
+	text "Lady Erika is so"
+	line "kind!"
+
+	para "She teaches us how"
+	line "to battle when she"
+	cont "isn't napping!"
 	done
 
 TwinsJoAndZoe1BeatenText:
-	text "Oh… We lost…"
+	text "Wah!"
 	done
 
 TwinsJoAndZoe1AfterBattleText:
-	text "ERIKA will get you"
-	line "back for us!"
+	text "Can you teach us"
+	line "too?"
 	done
 
 TwinsJoAndZoe2SeenText:
-	text "We're going to"
-	line "protect ERIKA!"
+	text "Back off!"
+
+	para "This is our"
+	line "greenhouse!"
 	done
 
 TwinsJoAndZoe2BeatenText:
-	text "We couldn't win…"
+	text "No! Go away!"
 	done
 
 TwinsJoAndZoe2AfterBattleText:
-	text "ERIKA is much,"
-	line "much stronger!"
+	text "I guess you're not"
+	line "so bad…"
+
+	para "Hurt the flowers,"
+	line "and Lady Erika"
+	cont "will beat you!"
+	done
+
+AlreadyGotEnergyBallText:
+	text "Erika: …Oh?"
+
+	para "You already have"
+	line "that TM?"
+
+	para "Very well…"
+
+	para "I'll be here when"
+	line "you need me…"
 	done
 
 CeladonGym_MapEvents:
@@ -281,7 +351,7 @@ CeladonGym_MapEvents:
 	db 6 ; object events
 	object_event  5,  3, SPRITE_ERIKA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGymErikaScript, -1
 	object_event  7,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassMichelle, -1
-	object_event  2,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerTanya, -1
+	object_event  2,  8, SPRITE_PICNICKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerTanya, -1
 	object_event  3,  5, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyJulia, -1
 	object_event  4, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsJoAndZoe1, -1
 	object_event  5, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsJoAndZoe2, -1

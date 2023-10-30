@@ -1727,18 +1727,44 @@ endc
 
 Sensational1Group:
 	next_list_item ; SENSATIONAL1 (1)
-	db "Violet@", TRAINERTYPE_MOVES
+	db "Violet@", TRAINERTYPE_ITEM_MOVES
 	db 70
 	dw CLOYSTER
+if DEF(_CHALLENGE)
+	db LEFTOVERS
+else
+	db NO_ITEM
+endc
 	dw WAVE_CRASH, SPIKES, SHELL_SMASH, ICICLE_SPEAR
 	db 70
 	dw AZUMARILL
+if DEF(_CHALLENGE)
+	db POWER_BAND
+else
+	db NO_ITEM
+endc
 	dw WAVE_CRASH, PLAY_ROUGH, BELLY_DRUM, ICE_PUNCH
+if DEF(_CHALLENGE)
+	db 70
+	dw LEDIAN
+	db SILVERPOWDER
+	dw X_SCISSOR, CLOSE_COMBAT, BATON_PASS, BULK_UP
+endc
 	db 70
 	dw QUAGSIRE
+if DEF(_CHALLENGE)
+	db QUICK_CLAW
+else
+	db NO_ITEM
+endc
 	dw WAVE_CRASH, ICE_PUNCH, EARTHQUAKE, RAIN_DANCE
 	db 71
 	dw BLASTOISE
+if DEF(_CHALLENGE)
+	db SPECIALSPECS
+else
+	db SITRUS_BERRY
+endc
 	dw HYDRO_PUMP, FLASH_CANNON, IRON_DEFENSE, ICE_BEAM
 	db -1 ; end
 
@@ -1746,7 +1772,7 @@ Sensational1Group:
 
 LtSurgeGroup:
 	next_list_item ; LT_SURGE (1)
-	db "Pvt.Surge@", TRAINERTYPE_ITEM_MOVES
+	db "Surge@", TRAINERTYPE_ITEM_MOVES
 	db 73
 	dw ELECTRODE
 if DEF(_CHALLENGE)
@@ -2635,13 +2661,20 @@ endc
 	db -1 ; end
 
 	next_list_item ; LASS (9)
-	db "MICHELLE@", TRAINERTYPE_NORMAL
-	db 32
-	dw SKIPLOOM
-	db 33
-	dw HOPPIP
-	db 34
+	db "Lorrie@", TRAINERTYPE_MOVES
+	db 73
+	dw VENUSAUR
+	dw SLUDGE_BOMB, GIGA_DRAIN, STRENGTH_SAP, EARTHQUAKE
+	db 73
+	dw SUNFLORA
+if DEF(_FAITHFUL)
+	dw FIRE_BLAST, DAZZLINGLEAM, SUNNY_DAY, SOLARBEAM
+else
+	dw FIRE_BLAST, EARTH_POWER, SUNNY_DAY, SOLARBEAM
+endc
+	db 74
 	dw JUMPLUFF
+	dw GIGA_DRAIN, ACROBATICS, U_TURN, SLEEP_POWDER
 	db -1 ; end
 
 	next_list_item ; LASS (10)
@@ -3486,13 +3519,16 @@ endc
 	db -1 ; end
 
 	next_list_item ; BEAUTY (14)
-	db "JULIA@", TRAINERTYPE_NORMAL
-	db 32
-	dw PARAS
-	db 32
-	dw EXEGGCUTE
-	db 35
+	db "Vicky@", TRAINERTYPE_MOVES
+	db 73
 	dw PARASECT
+	dw LEECH_LIFE, SOLAR_BLADE, SUNNY_DAY, SPORE
+	db 73
+	dw MEGANIUM
+	dw GIGA_DRAIN, MOONBLAST, STRENGTH_SAP, FRENZY_PLANT
+	db 74
+	dw ROSERADE
+	dw SLUDGE_BOMB, GIGA_DRAIN, GROWTH, SHADOW_BALL
 	db -1 ; end
 
 	next_list_item ; BEAUTY (15)
@@ -4206,24 +4242,56 @@ endc
 
 SabrinaGroup:
 	next_list_item ; SABRINA (1)
-	db "Sabrina@", TRAINERTYPE_MOVES
+	db "Sabrina@", TRAINERTYPE_ITEM_MOVES
 	db 74
 	dw ESPEON
+if DEF(_CHALLENGE)
+	db SITRUS_BERRY
+else
+	db NO_ITEM
+endc
 	dw SAND_ATTACK, CALM_MIND, SHADOW_BALL, PSYCHIC_M
 	db 74
+if DEF(_CHALLENGE)
+	dw ANNIHILAPE
+	db POWER_BAND
+	dw CLOSE_COMBAT, SHADOW_PUNCH, ROCK_SLIDE, BULK_UP
+else
 	dw MR__MIME
+	db NO_ITEM
 	dw BARRIER, MOONBLAST, BATON_PASS, PSYCHIC_M
+endc
 	db 74
 	dw GARDEVOIR
+if DEF(_CHALLENGE)
+	db SPECIALSPECS
+else
+	db NO_ITEM
+endc
 	dw MOONBLAST, THUNDERBOLT, CALM_MIND, PSYCHIC_M
 	db 74
 	dw WYRDEER
+if DEF(_CHALLENGE)
+	db BRIGHTPOWDER
+else
+	db NO_ITEM
+endc
 	dw GIGA_IMPACT, MEGAHORN, ZEN_HEADBUTT, JUMP_KICK
 	db 74
 	dw VENOMOTH
+if DEF(_CHALLENGE)
+	db SILVERPOWDER
+else
+	db NO_ITEM
+endc
 	dw SIGNAL_WAVE, SLEEP_POWDER, PSYCHIC_M, QUIVER_DANCE
 	db 75
 	dw ALAKAZAM
+if DEF(_CHALLENGE)
+	db LIFE_ORB
+else
+	db SITRUS_BERRY
+endc
 	dw RECOVER, SHADOW_BALL, PSYCHIC_M, MOONBLAST
 	db -1 ; end
 
@@ -6045,23 +6113,45 @@ BlaineGroup:
 	db "Blaine@", TRAINERTYPE_ITEM_MOVES
 	db 71
 	dw NINETALES
+if DEF(_CHALLENGE)
+	db SPECIALSPECS
+else
 	db NO_ITEM
+endc
 	dw SHADOW_BALL, FIRE_BLAST, NASTY_PLOT, PSYCHIC_M
 	db 71
 	dw FLAREON
+if DEF(_CHALLENGE)
+	db POWER_BAND
+else
 	db NO_ITEM
+endc
 	dw FLARE_BLITZ, EARTHQUAKE, DOUBLE_EDGE, WILL_O_WISP
 	db 71
 	dw TYPHLOSION
+if DEF(_CHALLENGE)
+	db SOFT_SAND
+else
 	db NO_ITEM
+endc
 	dw EARTH_POWER, FIRE_BLAST, SUNNY_DAY, SOLARBEAM
 	db 71
+if DEF(_CHALLENGE)
+	dw SUNFLORA
+	db QUICK_CLAW
+	dw SUNNY_DAY, SOLARBEAM, FIRE_BLAST, EARTH_POWER
+else
 	dw RAPIDASH
 	db NO_ITEM
 	dw FLARE_BLITZ, SOLAR_BLADE, BOUNCE, MEGAHORN
+endc
 	db 71
 	dw MAGMORTAR
+if DEF(_CHALLENGE)
+	db LEFTOVERS
+else
 	db NO_ITEM
+endc
 if DEF(_FAITHFUL)
 	dw THUNDERBOLT, FIRE_BLAST, SLUDGE_BOMB, CONFUSE_RAY
 else
@@ -6069,7 +6159,11 @@ else
 endc
 	db 72
 	dw ARCANINE
+if DEF(_CHALLENGE)
+	db LIFE_ORB
+else
 	db SITRUS_BERRY
+endc
 	dw EXTREMESPEED, FLARE_BLITZ, PLAY_ROUGH, CRUNCH
 	db -1 ; end
 
@@ -6943,9 +7037,13 @@ PicnickerGroup:
 	db -1 ; end
 
 	next_list_item ; PICNICKER (19)
-	db "TANYA@", TRAINERTYPE_NORMAL
-	db 37
+	db "Tammy@", TRAINERTYPE_MOVES
+	db 74
 	dw EXEGGUTOR
+	dw PSYCHIC_M, GIGA_DRAIN, SLEEP_POWDER, STOMP
+	db 74
+	dw VILEPLUME
+	dw SLUDGE_BOMB, GIGA_DRAIN, MOONLIGHT, MOONBLAST
 	db -1 ; end
 
 	next_list_item ; PICNICKER (20)
@@ -7942,19 +8040,23 @@ endc
 	db -1 ; end
 
 	next_list_item ; TWINS (5)
-	db "JO & ZOE@", TRAINERTYPE_NORMAL
-	db 35
-	dw VICTREEBEL
-	db 35
-	dw VILEPLUME
+	db "Fran & Jan@", TRAINERTYPE_MOVES
+	db 74
+	dw LEAFEON
+	dw DIG, SUNNY_DAY, SOLAR_BLADE, X_SCISSOR
+	db 74
+	dw BELLOSSOM
+	dw GIGA_DRAIN, MOONBLAST, STRENGTH_SAP, SLUDGE_BOMB
 	db -1 ; end
 
 	next_list_item ; TWINS (6)
-	db "JO & ZOE@", TRAINERTYPE_NORMAL
-	db 35
-	dw VILEPLUME
-	db 35
-	dw VICTREEBEL
+	db "Fran & Jan@", TRAINERTYPE_MOVES
+	db 74
+	dw BELLOSSOM
+	dw GIGA_DRAIN, MOONBLAST, STRENGTH_SAP, SLUDGE_BOMB
+	db 74
+	dw LEAFEON
+	dw DIG, SUNNY_DAY, SOLAR_BLADE, X_SCISSOR
 	db -1 ; end
 
 	next_list_item ; TWINS (7)
@@ -8074,19 +8176,53 @@ RedGroup:
 
 GiovanniGroup:
 	next_list_item ; BLUE (1)
-	db "Giovanni@", TRAINERTYPE_NORMAL
+	db "Giovanni@", TRAINERTYPE_ITEM_MOVES
 	db 78
 	dw DUGTRIO
+if DEF(_CHALLENGE)
+	db POWER_BAND
+else
+	db NO_ITEM
+endc
+	dw EARTHQUAKE, ROCK_SLIDE, SLASH, SAND_ATTACK
 	db 78
+if DEF(_CHALLENGE)
+	dw ELECTIVIRE
+	db QUICK_CLAW
+	dw VOLT_TACKLE, CLOSE_COMBAT, BULK_UP, ICE_PUNCH
+else
 	dw PERSIAN
+	db NO_ITEM
+	dw SLASH, PLAY_ROUGH, NIGHT_SLASH, HONE_CLAWS
+endc
 	db 78
 	dw NIDOKING
+if DEF(_CHALLENGE)
+	db BRIGHTPOWDER
+else
+	db NO_ITEM
+endc
+	dw EARTHQUAKE, POISON_JAB, FLATTER, BRICK_BREAK
 	db 78
 	dw NIDOQUEEN
+if DEF(_CHALLENGE)
+	db LEFTOVERS
+else
+	db NO_ITEM
+endc
+	dw EARTHQUAKE, POISON_JAB, SUPERPOWER, CRUNCH
 	db 78
 	dw GLISCOR
+	db NO_ITEM
+	dw EARTHQUAKE, ACROBATICS, BRICK_BREAK, X_SCISSOR
 	db 79
 	dw RHYPERIOR
+if DEF(_CHALLENGE)
+	db LIFE_ORB
+else
+	db SITRUS_BERRY
+endc
+	dw EARTHQUAKE, STONE_EDGE, ROCK_WRECKER, MEGAHORN
 	db -1 ; end
 
 	end_list_items
@@ -9180,6 +9316,8 @@ endc
 
 	end_list_items
 
+SECTION "Enemy Trainer Parties 3", ROMX
+
 CynthiaGroup:
 	next_list_item ; CYNTHIA1
 	db "Cynthia@", TRAINERTYPE_MOVES
@@ -9455,8 +9593,6 @@ endc
 	db -1 ; end
 
 	end_list_items
-
-SECTION "Enemy Trainer Parties 3", ROMX
 
 MahoganyNinjaMGroup:
 	next_list_item ; MNINJA_M (1)
@@ -12006,18 +12142,44 @@ endc
 
 Sensational2Group:
 	next_list_item ; SENSATIONAL2 (1)
-	db "Daisy@", TRAINERTYPE_MOVES
+	db "Daisy@", TRAINERTYPE_ITEM_MOVES
 	db 70
 	dw POLITOED
-	dw MUD_BOMB, HYDRO_PUMP, ICE_BEAM, RAIN_DANCE
+if DEF(_CHALLENGE)
+	db CHOICE_SCARF
+else
+	db NO_ITEM
+endc
+	dw FOCUS_BLAST, HYDRO_PUMP, ICE_BEAM, PSYCHIC_M
 	db 70
 	dw VAPOREON
+if DEF(_CHALLENGE)
+	db LEFTOVERS
+else
+	db NO_ITEM
+endc
 	dw HYDRO_PUMP, ICE_BEAM, SLEEP_TALK, REST
+if DEF(_CHALLENGE)
+	db 70
+	dw URSALUNA
+	db QUICK_CLAW
+	dw HEADLONGRUSH, RETURN, CRUNCH, SLACK_OFF
+endc
 	db 70
 	dw GOLDUCK
+if DEF(_CHALLENGE)
+	db SPECIALSPECS
+else
+	db NO_ITEM
+endc
 	dw HYDRO_PUMP, NASTY_PLOT, PSYCHIC_M, ICE_BEAM
 	db 71
 	dw FERALIGATR
+if DEF(_CHALLENGE)
+	db LIFE_ORB
+else
+	db SITRUS_BERRY
+endc
 	dw WAVE_CRASH, NIGHT_SLASH, ICE_PUNCH, DRAGON_DANCE
 	db -1 ; end
 
@@ -12025,18 +12187,44 @@ Sensational2Group:
 
 Sensational3Group:
 	next_list_item ; SENSATIONAL3 (1)
-	db "Lily@", TRAINERTYPE_MOVES
+	db "Lily@", TRAINERTYPE_ITEM_MOVES
 	db 70
 	dw LAPRAS
+if DEF(_CHALLENGE)
+	db LEFTOVERS
+else
+	db NO_ITEM
+endc
 	dw HYDRO_PUMP, ICE_BEAM, SING, PSYCHIC_M
 	db 70
 	dw LUDICOLO
-	dw HYDRO_PUMP, ENERGY_BALL, AQUA_RING, FAKE_OUT
+if DEF(_CHALLENGE)
+	db SITRUS_BERRY
+else
+	db NO_ITEM
+endc
+	dw HYDRO_PUMP, ENERGY_BALL, ICE_BEAM, AQUA_RING
+if DEF(_CHALLENGE)
+	db 70
+	dw DONPHAN
+	db QUICK_CLAW
+	dw EARTHQUAKE, RAPID_SPIN, ROCK_SLIDE, KNOCK_OFF
+endc
 	db 70
 	dw GYARADOS
+if DEF(_CHALLENGE)
+	db POWER_BAND
+else
+	db NO_ITEM
+endc
 	dw WAVE_CRASH, ICE_FANG, EARTHQUAKE, DRAGON_DANCE
 	db 71
 	dw STARMIE
+if DEF(_CHALLENGE)
+	db SPECIALSPECS
+else
+	db SITRUS_BERRY
+endc
 	dw HYDRO_PUMP, THUNDERBOLT, PSYCHIC_M, RECOVER
 	db -1 ; end
 
@@ -12215,5 +12403,47 @@ KarateKingGroup:
 	dw MACHAMP
 	dw CROSS_CHOP, EARTHQUAKE, STONE_EDGE, KNOCK_OFF
 	db -1 ; end
+
+	end_list_items
+
+FuchsiaNinjaMGroup:
+	next_list_item ; FNINJA_M (1)
+	db "Ninja@", TRAINERTYPE_NORMAL
+	db 75
+	dw QWILFISH
+	db 75
+	dw GLISCOR
+	db -1 ; end
+
+	next_list_item ; FNINJA_M (2)
+	db "Ninja@", TRAINERTYPE_MOVES
+	db 75
+	dw NIDOKING
+	dw EARTHQUAKE, POISON_JAB, MEGAHORN, BULK_UP
+	db 75
+	dw SCIZOR
+	dw IRON_HEAD, X_SCISSOR, SWORDS_DANCE, BULLET_PUNCH
+	db -1 ; end
+
+	end_list_items
+
+FuchsiaNinjaFGroup:
+	next_list_item ; FNINJA_F (1)
+	db "Ninja@", TRAINERTYPE_NORMAL
+	db 75
+	dw YANMEGA
+	db 75
+	dw TENTACRUEL
+	db -1
+
+	next_list_item ; FNINJA_F (2)
+	db "Ninja@", TRAINERTYPE_MOVES
+	db 75
+	dw NIDOQUEEN
+	dw EARTHQUAKE, POISON_JAB, SUPERPOWER, BULK_UP
+	db 75
+	dw ARIADOS
+	dw GUNK_SHOT, X_SCISSOR, CRUNCH, SPIDER_WEB
+	db -1
 
 	end_list_items

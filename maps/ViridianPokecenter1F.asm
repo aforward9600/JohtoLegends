@@ -39,6 +39,7 @@ ViridianPokecenter1FRivalScript:
 	writetext ViridianPokecenter1FRivalText
 	waitbutton
 	closetext
+	setevent EVENT_TALKED_WITH_RIVAL_IN_VIRIDIAN
 	end
 
 .ViridianPokecenterRivalAfter:

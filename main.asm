@@ -187,6 +187,10 @@ SECTION "Crystal Features 1", ROMX
 
 INCLUDE "engine/menus/init_gender.asm"
 INCLUDE "engine/items/pack_kris.asm"
+
+
+SECTION "Crystal Layouts", ROMX
+
 INCLUDE "engine/gfx/crystal_layouts.asm"
 
 

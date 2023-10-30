@@ -223,24 +223,24 @@ GetMagnetTrainBGTiles:
 
 MagnetTrainBGTiles:
 ; Alternating tiles for each line of the Magnet Train tilemap.
-	db $4c, $4d ; bush
-	db $5c, $5d ; bush
-	db $4c, $4d ; bush
-	db $5c, $5d ; bush
-	db $08, $08 ; fence
-	db $18, $18 ; fence
-	db $1f, $1f ; track
-	db $31, $31 ; track
-	db $11, $11 ; track
-	db $11, $11 ; track
-	db $0d, $0d ; track
-	db $31, $31 ; track
-	db $04, $04 ; fence
-	db $18, $18 ; fence
-	db $4c, $4d ; bush
-	db $5c, $5d ; bush
-	db $4c, $4d ; bush
-	db $5c, $5d ; bush
+	db $14, $14 ; bush
+	db $14, $14 ; bush
+	db $14, $14 ; bush
+	db $14, $14 ; bush
+	db $14, $14 ; fence
+	db $14, $14 ; fence
+	db $14, $14 ; track
+	db $14, $14 ; track
+	db $14, $14 ; track
+	db $14, $14 ; track
+	db $14, $14 ; track
+	db $14, $14 ; track
+	db $14, $14 ; fence
+	db $14, $14 ; fence
+	db $14, $14 ; bush
+	db $14, $14 ; bush
+	db $14, $14 ; bush
+	db $14, $14 ; bush
 
 MagnetTrain_InitLYOverrides:
 	ld hl, wLYOverrides
@@ -262,7 +262,7 @@ SetMagnetTrainPals:
 	; bushes
 	hlbgcoord 0, 0
 	ld bc, 4 * BG_MAP_WIDTH
-	ld a, PAL_BG_GREEN
+	ld a, PAL_BG_WATER
 	call ByteFill
 
 	; train
@@ -274,7 +274,7 @@ SetMagnetTrainPals:
 	; more bushes
 	hlbgcoord 0, 14
 	ld bc, 4 * BG_MAP_WIDTH
-	ld a, PAL_BG_GREEN
+	ld a, PAL_BG_WATER
 	call ByteFill
 
 	; train window

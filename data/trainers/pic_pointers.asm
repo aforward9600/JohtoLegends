@@ -108,3 +108,5 @@ TrainerPicPointers::
 	dba RoughneckPic
 	dba SoldierPic
 	dba KarateKingPic
+	dba MahoganyNinjaMPic
+	dba MahoganyNinjaFPic

@@ -115,8 +115,17 @@ NationalParkEngineerScript:
 NationalParkEngineer2Script:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_RAZOR_CLAW_IN_NATIONAL_FOREST
+	iftrue .GotRazorClaw
 	writetext NationalParkEngineer2Text
+	buttonsound
+	verbosegiveitem RAZOR_CLAW
+	iffalse .NoRoom
+	setevent EVENT_GOT_RAZOR_CLAW_IN_NATIONAL_FOREST
+.GotRazorClaw:
+	writetext AlreadyHaveRazorClawText
 	waitbutton
+.NoRoom:
 	closetext
 	end
 
@@ -411,6 +420,15 @@ ConstructionGoingOnText:
 	done
 
 NationalParkEngineer2Text:
+	text "My buddy got this"
+	line "weird claw in Ice"
+	cont "Path, but I don't"
+	cont "have a use for it."
+
+	para "You want it?"
+	done
+
+AlreadyHaveRazorClawText:
 	text "I'd say this park"
 	line "is going to be a"
 	cont "nice sight when"

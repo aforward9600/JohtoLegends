@@ -50,7 +50,7 @@ CreditsStrings:
 	dw .Planning
 	dw .KeitaNakamura
 	dw .HirotakaUemura
-	dw .HiroakiTamura
+	dw .FrenchOrange@
 	dw .LuigiTKO
 	dw .MiyukiSato
 	dw .Tetra
@@ -178,8 +178,8 @@ CreditsStrings:
                     next " & DEVELOPMENT DEPT.@"
 .KeitaNakamura:       db "   KEITA NAKAMURA@"         ; "なかむら　けいた@"
 .HirotakaUemura:      db "  HIROTAKA UEMURA@"         ; "うえむら　ひろたか@"
-.HiroakiTamura:       db "   HIROAKI TAMURA@"         ; "たむら　ひろあき@"
-.LuigiTKO:            db "  	LuigiTKO@"        ; "さかぐち　のりあき@"
+.FrenchOrange@:       db "    FrenchOrange@"         ; "たむら　ひろあき@"
+.LuigiTKO:            db "      LuigiTKO@"        ; "さかぐち　のりあき@"
 .MiyukiSato:          db "    MIYUKI SATO@"           ; "さとう　みゆき@"
 .Tetra:               db "       Tetra@"          ; "のもと　がくじ@"
 .AiMashima:           db "     AI MASHIMA@"           ; "ましま　あい@"

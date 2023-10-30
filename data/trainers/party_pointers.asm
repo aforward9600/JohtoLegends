@@ -108,3 +108,5 @@ TrainerGroups:
 	dba RoughneckGroup
 	dba SoldierGroup
 	dba KarateKingGroup
+	dba FuchsiaNinjaMGroup
+	dba FuchsiaNinjaFGroup

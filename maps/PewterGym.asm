@@ -30,13 +30,23 @@ PewterGymBrockScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_BOULDERBADGE
+	setevent EVENT_DECO_BIG_ONIX_DOLL
 	writetext BrockBoulderBadgeText
 	waitbutton
 	closetext
 	end
 
 .FightDone:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .FlintAfterScript
 	writetext BrockFightDoneText
+	waitbutton
+	closetext
+	end
+
+
+.FlintAfterScript:
+	writetext FlintMySonText
 	waitbutton
 	closetext
 	end
@@ -270,6 +280,17 @@ PewterGymGuyWinText:
 
 	para "inspiring. I mean"
 	line "that seriously."
+	done
+
+FlintMySonText:
+	text "My son will get to"
+	line "grow up in a world"
+	cont "not gripped by"
+	cont "fear."
+
+	para "I haven't felt"
+	line "this hopeful in a"
+	cont "while."
 	done
 
 PewterGym_MapEvents:

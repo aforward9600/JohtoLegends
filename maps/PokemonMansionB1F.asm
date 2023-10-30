@@ -4,12 +4,22 @@
 	const POKEMONMANSIONB1F_GUARD
 	const POKEMONMANSIONB1F_BLAINE
 	const POKEMONMANSIONB1F_SCIENTIST2
+	const POKEMONMANSIONB1F_SCIENTIST3
+	const POKEMONMANSIONB1F_GIOVANNI
 
 PokemonMansionB1F_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene1 ; SCENE_FINISHED
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, .ShuttersB1F
+
+.DummyScene0:
+	end
+
+.DummyScene1:
+	end
 
 .ShuttersB1F:
 	checkevent EVENT_POKEMON_MANSION_SWITCH
@@ -225,6 +235,52 @@ PokemonMansionBlaineScript:
 PokemonMansionB1FScientist2:
 	jumptextfaceplayer PokemonMansionB1FScientistText3
 
+PokemonMansionB1FScientist3:
+	faceplayer
+	opentext
+	checkscene SCENE_DEFAULT
+	iftrue .PokemonMansionB1FScientist32
+	writetext PokemonMansionB1FScientist3Text
+	waitbutton
+	closetext
+	end
+
+.PokemonMansionB1FScientist32:
+	writetext PokemonMansionB1FScientist3Text2
+	waitbutton
+	closetext
+	end
+
+ScientistStopsYou:
+	opentext
+	checkevent EVENT_TALKED_WITH_RIVAL_IN_VIRIDIAN
+	iftrue .GiovanniTalks
+	turnobject POKEMONMANSIONB1F_SCIENTIST3, DOWN
+	turnobject PLAYER, UP
+	writetext PokemonMansionB1FScientist3Text
+	waitbutton
+	closetext
+	applymovement PLAYER, ScientistStopsYouMovement
+	turnobject POKEMONMANSIONB1F_SCIENTIST3, UP
+	end
+
+.GiovanniTalks:
+	writetext ThatsItThenText
+	waitbutton
+	closetext
+	applymovement POKEMONMANSIONB1F_GIOVANNI, GiovanniLeavesTheBasementMovement
+	opentext
+	writetext GiovanniOutOfMyWayText
+	waitbutton
+	closetext
+	applymovement PLAYER, PlayerMovesOutOfGiovannisWayMovement
+	pause 10
+	applymovement POKEMONMANSIONB1F_GIOVANNI, GiovanniLeavesTheBasementMovement2
+	disappear POKEMONMANSIONB1F_GIOVANNI
+	clearevent EVENT_CINNABAR_MANSION_1F_GIOVANNI
+	setscene SCENE_FINISHED
+	end
+
 BlaineLeavesLeftMovement:
 	step LEFT
 	step LEFT
@@ -240,6 +296,40 @@ BlaineLeavesRightMovement:
 	step UP
 	step UP
 	step UP
+	step_end
+
+ScientistStopsYouMovement:
+	step UP
+	step_resume
+
+GiovanniLeavesTheBasementMovement:
+	step UP
+	step UP
+	step UP
+	step LEFT
+	step UP
+	step_end
+
+PlayerMovesOutOfGiovannisWayMovement:
+	turn_head DOWN
+	fix_facing
+	step UP
+	step UP
+	remove_fixed_facing
+	turn_head RIGHT
+	fix_facing
+	step LEFT
+	remove_fixed_facing
+	step_resume
+
+GiovanniLeavesTheBasementMovement2:
+	step UP
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
 	step_end
 
 PokemonMansionPressTheButtonB1FText:
@@ -505,6 +595,45 @@ PokemonMansionB1FScientistText3:
 	line "cannot get out!"
 	done
 
+PokemonMansionB1FScientist3Text:
+	text "Please don't go"
+	line "back there."
+
+	para "Our boss is busy"
+	line "talking with our"
+	cont "financier."
+	done
+
+PokemonMansionB1FScientist3Text2:
+	text "You can go on"
+	line "through."
+
+	para "Not much to do"
+	line "there now."
+	done
+
+ThatsItThenText:
+	text "???: So, that's it"
+	line "then?"
+
+	para "All of that time"
+	line "and money, and I"
+	cont "get nothing?"
+
+	para "Looks like I'll"
+	line "have to finance a"
+	cont "more profitable"
+	cont "venue!"
+
+	para "Thanks for"
+	line "nothing!"
+	done
+
+GiovanniOutOfMyWayText:
+	text "???: Get out of my"
+	line "way."
+	done
+
 PokemonMansionB1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -512,7 +641,8 @@ PokemonMansionB1F_MapEvents:
 	warp_event 23, 22, POKEMON_MANSION_1F, 8
 	warp_event  4,  0, CINNABAR_VOLCANO_1F, 1
 
-	db 0 ; coord events
+	db 1 ; coord events
+	coord_event 5, 8, SCENE_DEFAULT, ScientistStopsYou
 
 	db 7 ; bg events
 	bg_event 18, 25, BGEVENT_READ, PokemonMansionB1FAbraStatue
@@ -523,9 +653,11 @@ PokemonMansionB1F_MapEvents:
 	bg_event  5, 13, BGEVENT_READ, PokemonMansionB1FTank
 	bg_event 10,  2, BGEVENT_READ, PokemonMansionB1FRecording
 
-	db 5 ; object events
+	db 7 ; object events
 	object_event 17, 20, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, PokemonMansionB1FDiary, -1
 	object_event  4, 24, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PokemonMansionB1FScientist, -1
 	object_event  4,  1, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CinnabarVolcanoGuardScript, EVENT_CINNABAR_VOLCANO_GUARD
 	object_event  5, 14, SPRITE_BLAINE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PokemonMansionBlaineScript, EVENT_POKEMON_MANSION_BLAINE
 	object_event 16, 12, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonMansionB1FScientist2, -1
+	object_event  4,  7, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonMansionB1FScientist3, -1
+	object_event  6, 13, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CINNABAR_MANSION_B1F_GIOVANNI

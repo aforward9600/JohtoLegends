@@ -35,7 +35,7 @@ KantoGymLeaders:
 	db SENSATIONAL1
 	db LT_SURGE
 	db ERIKA
-	db JANINE
+	db KOGA
 	db SABRINA
 	db BLAINE
 	db GIOVANNI

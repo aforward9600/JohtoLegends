@@ -9,17 +9,27 @@ MrPsychicsHouse_MapScripts:
 MrPsychic:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_TM29_PSYCHIC
+	iftrue .AlreadyGivenItem
 	checkitem TM_PSYCHIC_M
 	iftrue .AlreadyGotItem
 	writetext MrPsychicText1
 	buttonsound
 	verbosegiveitem TM_PSYCHIC_M
 	iffalse .Done
-.AlreadyGotItem:
+	setevent EVENT_GOT_TM29_PSYCHIC
+.AlreadyGivenItem:
 	writetext MrPsychicText2
 	waitbutton
 .Done:
 	closetext
+	end
+
+.AlreadyGotItem:
+	writetext MrPsychicText3
+	waitbutton
+	closetext
+	setevent EVENT_GOT_TM29_PSYCHIC
 	end
 
 MrPsychicsHouseBookshelf:
@@ -42,6 +52,16 @@ MrPsychicText2:
 
 	para "It may lower the"
 	line "target's Spcl.Def."
+	done
+
+MrPsychicText3:
+	text "What!"
+
+	para "You already have"
+	line "this TM?"
+
+	para "Why didn't I know"
+	line "that?"
 	done
 
 MrPsychicsHouse_MapEvents:

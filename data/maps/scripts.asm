@@ -119,7 +119,6 @@ INCLUDE "maps/Route16Gate.asm"
 INCLUDE "maps/Route7SaffronGate.asm"
 INCLUDE "maps/Route17Route18Gate.asm"
 INCLUDE "maps/SootheBellHouse.asm"
-INCLUDE "maps/GhostHouse.asm"
 
 
 SECTION "Map Scripts 8", ROMX
@@ -549,3 +548,4 @@ SECTION "Map Scripts 30", ROMX
 INCLUDE "maps/FuchsiaMart.asm"
 INCLUDE "maps/FuchsiaGym.asm"
 INCLUDE "maps/FuchsiaPokecenter1F.asm"
+INCLUDE "maps/GhostHouse.asm"

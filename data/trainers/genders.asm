@@ -108,3 +108,5 @@ BTTrainerClassGenders:
 	db MALE   ; ROUGHNECK
 	db MALE   ; SOLDIER
 	db MALE   ; KARATE_KING
+	db MALE   ; FNINJA_M
+	db FEMALE ; FNINJA_F

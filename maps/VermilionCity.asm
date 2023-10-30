@@ -44,28 +44,6 @@ VermilionCitySailorScript:
 VermilionCitySoldierScript:
 	jumptextfaceplayer VermilionCitySoldierText
 
-;VermilionSnorlax:
-;	opentext
-;	special SnorlaxAwake
-;	iftrue .Awake
-;	writetext UnknownText_0x1aab64
-;	waitbutton
-;	closetext
-;	end
-
-;.Awake:
-;	writetext UnknownText_0x1aab84
-;	pause 15
-;	cry SNORLAX
-;	closetext
-;	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
-;	loadwildmon SNORLAX, 50
-;	startbattle
-;	disappear VERMILIONCITY_BIG_SNORLAX
-;	setevent EVENT_FOUGHT_SNORLAX
-;	reloadmapafterbattle
-;	end
-
 VermilionCityLassScript:
 	jumptextfaceplayer VermilionCityLassText
 

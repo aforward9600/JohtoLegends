@@ -22,68 +22,60 @@ FuchsiaPokecenter1FCooltrainerMScript:
 FuchsiaPokecenter1FCooltrainerFScript:
 	jumptextfaceplayer FuchsiaPokecenter1FCooltrainerFText
 
-FuchsiaPokecenter1FJanineImpersonatorScript:
+FuchsiaPokecenter1FRivalScript:
 	faceplayer
 	opentext
-	writetext FuchsiaPokecenter1FJanineImpersonatorText1
+	checkevent EVENT_BEAT_KOGA
+	iftrue .FuchsiaPokecenter1FRival2
+	writetext FuchsiaPokecenter1FRivalText1
 	waitbutton
 	closetext
-	applymovement FUCHSIAPOKECENTER1F_JANINE_IMPERSONATOR, FuchsiaPokecenter1FJanineImpersonatorSpinMovement
-	faceplayer
-	variablesprite SPRITE_JANINE_IMPERSONATOR, SPRITE_JANINE
-	special LoadUsedSpritesGFX
-	opentext
-	writetext FuchsiaPokecenter1FJanineImpersonatorText2
-	waitbutton
-	closetext
-	applymovement FUCHSIAPOKECENTER1F_JANINE_IMPERSONATOR, FuchsiaPokecenter1FJanineImpersonatorSpinMovement
-	faceplayer
-	variablesprite SPRITE_JANINE_IMPERSONATOR, SPRITE_LASS
-	special LoadUsedSpritesGFX
 	end
 
-FuchsiaPokecenter1FJanineImpersonatorSpinMovement:
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	step_end
+.FuchsiaPokecenter1FRival2:
+	writetext FuchsiaPokecenter1FRivalText2
+	waitbutton
+	closetext
+	end
 
 FuchsiaPokecenter1FCooltrainerMText:
-	text "Hey! You have a"
-	line "brand new kind of"
-	cont "#DEX."
+	text "Woosh!"
 
-	para "Did PROF.OAK give"
-	line "that to you?"
+	para "I'm a ninja! Fear"
+	line "me!"
 	done
 
 FuchsiaPokecenter1FCooltrainerFText:
-	text "I got quite a"
-	line "shock at the GYM."
+	text "Those ninjas look"
+	line "a little scary,"
 
-	para "There were all"
-	line "these girls who"
-	cont "looked identical."
+	para "but they're"
+	line "actually nice."
+
+	para "You should visit"
+	line "them."
 	done
 
-FuchsiaPokecenter1FJanineImpersonatorText1:
-	text "I'm JANINE! Hocus-"
-	line "pocus… Poof!"
+FuchsiaPokecenter1FRivalText1:
+	text "<RIVAL>: I heard"
+	line "the ninja who got"
+	cont "us out of that"
+	cont "cell is here."
+
+	para "He's at the ninja"
+	line "clan building on"
+	cont "the West side of"
+	cont "town."
+
+	para "I think he'd be the"
+	line "perfect candidate,"
+
+	para "wouldn't you say?"
 	done
 
-FuchsiaPokecenter1FJanineImpersonatorText2:
-	text "See? I look just"
-	line "like her now!"
+FuchsiaPokecenter1FRivalText2:
+	text "<RIVAL>: Ninjas"
+	line "are so cool."
 	done
 
 FuchsiaPokecenter1F_MapEvents:
@@ -100,6 +92,6 @@ FuchsiaPokecenter1F_MapEvents:
 
 	db 4 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FuchsiaPokecenter1FNurseScript, -1
-	object_event  8,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaPokecenter1FCooltrainerMScript, -1
-	object_event  1,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaPokecenter1FCooltrainerFScript, -1
-	object_event  5,  3, SPRITE_JANINE_IMPERSONATOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FuchsiaPokecenter1FJanineImpersonatorScript, -1
+	object_event  8,  4, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaPokecenter1FCooltrainerMScript, -1
+	object_event  1,  4, SPRITE_TWIN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaPokecenter1FCooltrainerFScript, -1
+	object_event  2,  7, SPRITE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaPokecenter1FRivalScript, EVENT_KANTO_POKECENTER_RIVAL

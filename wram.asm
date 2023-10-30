@@ -2709,8 +2709,9 @@ wTinTowerRoofSceneID::                            db
 wVioletGymSceneID::                               db
 wRocketLairHallwaySceneID::                       db
 wRocketLairBossRoomSceneID::                      db
+wPokemonMansionB1FSceneID::                       db
 
-	ds 22
+	ds 21
 
 ; fight counts
 wJackFightCount::    db ; d9f2

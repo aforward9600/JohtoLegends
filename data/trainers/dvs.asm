@@ -110,6 +110,8 @@ if DEF(_CHALLENGE)
 	dn 12, 10, 10, 10 ; ROUGHNECK
 	dn 12, 10, 10, 10 ; SOLDIER
 	dn 15, 14, 13, 13 ; KARATE_KING
+	dn 12, 10, 13, 10 ; FNINJA_M
+	dn 10, 12, 13, 10 ; FNINJA_F
 else
 	dn  9, 10,  7,  7 ; WALKER
 	dn  8,  8,  8,  8 ; MILTON
@@ -218,4 +220,6 @@ else
 	dn  9,  8,  8,  8 ; ROUGHNECK
 	dn  9,  8,  8,  8 ; SOLDIER
 	dn 15, 12, 11, 11 ; KARATE_KING
+	dn 10,  8, 11,  8 ; FNINJA_M
+	dn  8, 10, 11,  8 ; FNINJA_F
 endc

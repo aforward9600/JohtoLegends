@@ -77,6 +77,7 @@ CreditsScript:
 	db           CHAOS_RUSH, 2
 	db        BRONZESWAGGER, 3
 	db          ADAM_SHAMAN, 4
+	db          CYNDERQUILL, 5
 
 	db CREDITS_WAIT, 12
 
@@ -93,7 +94,7 @@ CreditsScript:
 	db            SHADOWONE, 2
 	db              NUKKIIE, 3
 	db        HELIX_CHAMBER, 4
-	db          CYNDERQUILL, 5
+	db         FRENCHORANGE, 5
 
 	db CREDITS_WAIT, 12
 
