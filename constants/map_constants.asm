@@ -439,6 +439,7 @@ ENDM
 	map_const ROUTE_16_GATE,                                5,  4 ; 24
 	map_const ROUTE_7_SAFFRON_GATE,                         5,  4 ; 25
 	map_const ROUTE_17_ROUTE_18_GATE,                       5,  4 ; 26
+	map_const FED_HIDEOUT_1F,                              10,  7 ; 27
 
 	newgroup                                                      ; 22
 

@@ -333,6 +333,7 @@ TilesetOmanyteWordRoomAnim:
 TilesetAerodactylWordRoomAnim:
 TilesetPokemonMansionAnim:
 TilesetTrainStationAnim:
+TilesetFedHideoutAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

@@ -743,4 +743,4 @@ ENDM
 	map_attributes CeruleanCave1F, CERULEAN_CAVE_1F, $00, 0
 	map_attributes CeruleanCaveB1F, CERULEAN_CAVE_B1F, $00, 0
 	map_attributes CeruleanCave2F, CERULEAN_CAVE_2F, $00, 0
-
+	map_attributes FedHideout1F, FED_HIDEOUT_1F, $00, 0

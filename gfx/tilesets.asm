@@ -377,3 +377,12 @@ INCBIN "data/tilesets/kanto_2_metatiles.bin"
 
 TilesetKanto2Coll:
 INCLUDE "data/tilesets/kanto_2_collision.asm"
+
+TilesetFedHideoutGFX:
+INCBIN "gfx/tilesets/fed_hideout.2bpp.lz"
+
+TilesetFedHideoutMeta:
+INCBIN "data/tilesets/fed_hideout_metatiles.bin"
+
+TilesetFedHideoutColl:
+INCLUDE "data/tilesets/fed_hideout_collision.asm"

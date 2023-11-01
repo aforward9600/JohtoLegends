@@ -272,6 +272,10 @@ DoPlayerMovement::
 	cp 2
 	jr z, .bump
 
+	ld a, [wUnusedBCDNumber]
+	and a
+	jr nz, .spin
+
 	ld a, [wPlayerStandingTile]
 	call CheckIceTile
 	jr nc, .ice
@@ -320,8 +324,17 @@ DoPlayerMovement::
 	scf
 	ret
 
+.spin
+	ld de, SFX_SQUEAK
+	call PlaySFX
+	ld a, STEP_SPIN
+	call .DoStep
+	scf
+	ret
+
 .bump
 	xor a
+	ld [wUnusedBCDNumber], a
 	ret
 
 .TrySurf:
@@ -493,6 +506,7 @@ DoPlayerMovement::
 	dw .TurningStep
 	dw .BackJumpStep
 	dw .FinishFacing
+	dw .SpinStep
 
 .SlowStep:
 	slow_step DOWN
@@ -539,6 +553,11 @@ DoPlayerMovement::
 	db $80 | UP
 	db $80 | LEFT
 	db $80 | RIGHT
+.SpinStep:
+	turn_in_down
+	turn_in_up
+	turn_in_left
+	turn_in_right
 
 .StandInPlace:
 	ld a, 0
@@ -559,6 +578,12 @@ DoPlayerMovement::
 .CheckForced:
 ; When sliding on ice, input is forced to remain in the same direction.
 
+	call CheckSpinning
+	jr z, .not_spinning
+	dec a
+	jr .force
+
+.not_spinning
 	call CheckStandingOnIce
 	ret nc
 
@@ -566,6 +591,7 @@ DoPlayerMovement::
 	cp 0
 	ret z
 
+.force
 	maskbits NUM_DIRECTIONS
 	ld e, a
 	ld d, 0
@@ -824,6 +850,44 @@ CheckStandingOnIce::
 
 .not_ice
 	and a
+	ret
+
+CheckSpinning::
+	ld a, [wPlayerStandingTile]
+	cp COLL_STOP_SPIN
+	jr z, .stop_spin
+	call CheckSpinTile
+	jr z, .start_spin
+	ld a, [wUnusedBCDNumber]
+	and a
+	ret
+
+.start_spin
+	ld a, c
+	inc a
+	ld [wUnusedBCDNumber], a
+	and a
+	ret
+
+.stop_spin
+	xor a
+	ld [wUnusedBCDNumber], a
+	ret
+
+CheckSpinTile:
+	cp COLL_SPIN_UP
+	ld c, UP
+	ret z
+	cp COLL_SPIN_DOWN
+	ld c, DOWN
+	ret z
+	cp COLL_SPIN_LEFT
+	ld c, LEFT
+	ret z
+	cp COLL_SPIN_RIGHT
+	ld c, RIGHT
+	ret z
+	ld c, STANDING
 	ret
 
 StopPlayerForEvent::

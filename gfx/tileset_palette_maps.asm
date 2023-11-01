@@ -120,6 +120,9 @@ INCLUDE "gfx/tilesets/pokemon_mansion_palette_map.asm"
 TilesetKanto2PalMap:
 INCLUDE "gfx/tilesets/kanto_2_palette_map.asm"
 
+TilesetFedHideoutPalMap:
+INCLUDE "gfx/tilesets/fed_hideout_palette_map.asm"
+
 ; unused
 rept 26
 	db $06

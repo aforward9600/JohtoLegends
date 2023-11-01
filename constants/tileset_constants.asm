@@ -40,6 +40,7 @@
 	const TILESET_JOHTO_3              ; 26
 	const TILESET_POKEMON_MANSION     ; 
 	const TILESET_KANTO_2
+	const TILESET_FED_HIDEOUT
 
 ; bg palette values (see gfx/tilesets/*_palette_map.asm)
 ; TilesetBGPalette indexes (see gfx/tilesets/bg_tiles.pal)

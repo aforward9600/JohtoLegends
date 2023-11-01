@@ -1157,3 +1157,6 @@ CeruleanCaveB1F_Blocks:
 
 CeruleanCave2F_Blocks:
 	INCBIN "maps/CeruleanCave2F.blk"
+
+FedHideout1F_Blocks:
+	INCBIN "maps/FedHideout1F.blk"
