@@ -3,7 +3,7 @@
 	const CELADONPOKECENTER1F_GENTLEMAN
 	const CELADONPOKECENTER1F_PHARMACIST
 	const CELADONPOKECENTER1F_COOLTRAINER_F
-	const CELADONPOKECENTER1F_EUSINE
+	const CELADONPOKECENTER1F_RIVAL
 
 CeladonPokecenter1F_MapScripts:
 	db 0 ; scene scripts
@@ -13,14 +13,14 @@ CeladonPokecenter1F_MapScripts:
 CeladonPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
-CeladonPokecenter1FGentlemanScript:
-	jumpstd happinesschecknpc
+CeladonPokecenter1FPokefanMScript:
+	jumpstd CeladonPokecenter1FPokefanMText
 
-CeladonPokecenter1FCooltrainerFScript:
-	jumptextfaceplayer CeladonPokecenter1FCooltrainerFText
+CeladonPokecenter1FCooltrainerMScript:
+	jumptextfaceplayer CeladonPokecenter1FCooltrainerMText
 
-CeladonPokecenter1FPharmacistScript:
-	jumptextfaceplayer CeladonPokecenter1FPharmacistText
+CeladonPokecenter1FTeacherScript:
+	jumptextfaceplayer CeladonPokecenter1FTeacherText
 
 CeladonPokecenter1FRival:
 	faceplayer
@@ -38,77 +38,29 @@ CeladonPokecenter1FRival:
 	closetext
 	end
 
-CeladonPokecenter1FCooltrainerFText:
-	text "ERIKA is a master"
-	line "of grass #MON."
+CeladonPokecenter1FCooltrainerMText:
+	text "I wouldn't go near"
+	line "that building at"
+	cont "the center of the"
+	cont "city."
 
-	para "She'll make you"
-	line "pay if you don't"
-	cont "watch yourself."
+	para "The Feds took over"
+	line "the Gym and made"
+	cont "it their hideout."
 	done
 
-CeladonPokecenter1FPharmacistText:
-	text "TEAM ROCKET's"
-	line "hideout is in the"
-
-	para "basement of the"
-	line "GAME CORNER."
-
-	para "Oh, wait. That was"
-	line "three years ago."
+CeladonPokecenter1FTeacherText:
+	text "Our city is so"
+	line "torn up…"
 	done
 
-CeladonEusineText1:
-	text "EUSINE: Hi!"
+CeladonPokecenter1FPokefanMText:
+	text "We could all use a"
+	line "little happiness"
+	cont "in these time."
 
-	para "I'm back visiting"
-	line "my hometown."
-
-	para "It's been quite a"
-	line "while."
-	done
-
-EusineLeavesCeladonText:
-	text "<PLAYER>, have you"
-	line "heard?"
-
-	para "There have been"
-	line "fresh rumors of a"
-
-	para "rainbow-colored"
-	line "#MON appearing"
-	cont "at TIN TOWER."
-
-	para "I've just had my"
-	line "party healed, so"
-
-	para "now I'm headed to"
-	line "ECRUTEAK."
-
-	para "I'll be seeing"
-	line "you, <PLAYER>!"
-	done
-
-NoBeastsText:
-	text "Oh, by the way,"
-	line "<PLAYER>."
-
-	para "Have you caught"
-	line "the legendary"
-
-	para "#MON RAIKOU and"
-	line "ENTEI?"
-
-	para "<……><……><……>"
-
-	para "Okay…"
-
-	para "If you catch even"
-	line "one, I hope that"
-	cont "you'll inform me."
-
-	para "I'm counting on"
-	line "you, <PLAYER>!"
+	para "Too bad I don't"
+	line "have any…"
 	done
 
 CeladonPokecenter1FRivalText1:
@@ -154,7 +106,7 @@ CeladonPokecenter1F_MapEvents:
 
 	db 5 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FNurseScript, -1
-	object_event  1,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FGentlemanScript, -1
-	object_event  0,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FPharmacistScript, -1
-	object_event  8,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FCooltrainerFScript, -1
+	object_event  1,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FPokefanMScript, -1
+	object_event  0,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FCooltrainerMScript, -1
+	object_event  8,  6, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FTeacherScript, -1
 	object_event  4,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FRival, EVENT_KANTO_POKECENTER_RIVAL

@@ -228,9 +228,10 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_CHANSEY
 	const SPRITE_MAROWAK
 	const SPRITE_MEW
+	const SPRITE_NIDORAN_F
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
-	const_def $e3
+	const_def $e4
 	const SPRITE_DAY_CARE_MON_1 ; e1
 	const SPRITE_DAY_CARE_MON_2 ; e2
 

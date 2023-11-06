@@ -1,9 +1,13 @@
 	object_const_def ; object_event constants
 	const CELADONCAFE_SUPER_NERD
-	const CELADONCAFE_FISHER1
-	const CELADONCAFE_FISHER2
-	const CELADONCAFE_FISHER3
+	const CELADONCAFE_ROUGHNECK1
+	const CELADONCAFE_DAISY1
+	const CELADONCAFE_ROUGHNECK2
+	const CELADONCAFE_DAISY2
+	const CELADONCAFE_FISHER
 	const CELADONCAFE_TEACHER
+	const CELADONCAFE_BUG_CATCHER
+	const CELADONCAFE_POKEFANF
 
 CeladonCafe_MapScripts:
 	db 0 ; scene scripts
@@ -13,7 +17,15 @@ CeladonCafe_MapScripts:
 CeladonCafeChef:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .CeladonCafeChef2
 	writetext ChefText_Eatathon
+	waitbutton
+	closetext
+	end
+
+.CeladonCafeChef2:
+	writetext SuperNerdText_FedsGone
 	waitbutton
 	closetext
 	end
@@ -25,10 +37,19 @@ CeladonCafeFisher1:
 	closetext
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .CeladonCafeFisher
 	writetext Fisher1Text_Concentration
 	waitbutton
 	closetext
-	turnobject CELADONCAFE_FISHER1, LEFT
+	turnobject CELADONCAFE_ROUGHNECK1, LEFT
+	end
+
+.CeladonCafeFisher:
+	writetext FisherText_Text1
+	waitbutton
+	closetext
+	turnobject CELADONCAFE_FISHER, RIGHT
 	end
 
 CeladonCafeFisher2:
@@ -38,10 +59,19 @@ CeladonCafeFisher2:
 	closetext
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .CeladonCafeTeacher1
 	writetext Fisher2Text_Quantity
 	waitbutton
 	closetext
-	turnobject CELADONCAFE_FISHER2, RIGHT
+	turnobject CELADONCAFE_DAISY1, RIGHT
+	end
+
+.CeladonCafeTeacher1:
+	writetext TeacherText_Finally
+	waitbutton
+	closetext
+	turnobject CELADONCAFE_TEACHER, LEFT
 	end
 
 CeladonCafeFisher3:
@@ -51,38 +81,41 @@ CeladonCafeFisher3:
 	closetext
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .CeladonCafeBugCatcher
 	writetext Fisher3Text_GoldenrodIsBest
 	waitbutton
 	closetext
-	turnobject CELADONCAFE_FISHER3, RIGHT
+	turnobject CELADONCAFE_ROUGHNECK2, RIGHT
+	end
+
+.CeladonCafeBugCatcher:
+	writetext BugCatcherText_Restaurant
+	waitbutton
+	closetext
+	turnobject CELADONCAFE_BUG_CATCHER, RIGHT
 	end
 
 CeladonCafeTeacher:
-	checkitem COIN_CASE
-	iftrue .HasCoinCase
 	opentext
 	writetext TeacherText_CrunchCrunch
 	waitbutton
 	closetext
 	faceplayer
 	opentext
-	writetext TeacherText_NoCoinCase
-	waitbutton
-	closetext
-	turnobject CELADONCAFE_TEACHER, LEFT
-	end
-
-.HasCoinCase:
-	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .CeladonCafePokefanF
 	writetext TeacherText_KeepEating
 	waitbutton
 	closetext
-	turnobject CELADONCAFE_TEACHER, RIGHT
-	opentext
-	writetext TeacherText_MoreChef
+	turnobject CELADONCAFE_DAISY2, LEFT
+	end
+
+.CeladonCafePokefanF:
+	writetext PokefanFText_MyBoy
 	waitbutton
 	closetext
-	turnobject CELADONCAFE_TEACHER, LEFT
+	turnobject CELADONCAFE_POKEFANF, LEFT
 	end
 
 EatathonContestPoster:
@@ -117,13 +150,17 @@ CeladonCafeTrashcan:
 	jumpstd trashcan
 
 ChefText_Eatathon:
-	text "Hi!"
+	text "Ugh…"
 
-	para "We're holding an"
-	line "eatathon contest."
+	para "I hate these guys"
+	line "so much!"
 
-	para "We can't serve you"
-	line "right now. Sorry."
+	para "They eat all my"
+	line "food, scare away"
+	cont "other customers,"
+	cont "and they don't tip!"
+
+	para "What jerks!"
 	done
 
 Fisher1Text_Snarfle:
@@ -131,10 +168,8 @@ Fisher1Text_Snarfle:
 	done
 
 Fisher1Text_Concentration:
-	text "Don't talk to me!"
-
-	para "You'll break my"
-	line "concentration!"
+	text "You can't have my"
+	line "food! Go away!"
 	done
 
 Fisher2Text_GulpChew:
@@ -142,11 +177,12 @@ Fisher2Text_GulpChew:
 	done
 
 Fisher2Text_Quantity:
-	text "I take quantity"
-	line "over quality!"
+	text "This place is a"
+	line "dump, but it's the"
+	cont "best food in town."
 
-	para "I'm happy when I'm"
-	line "full!"
+	para "Take what you get,"
+	line "I guess."
 	done
 
 Fisher3Text_MunchMunch:
@@ -154,32 +190,22 @@ Fisher3Text_MunchMunch:
 	done
 
 Fisher3Text_GoldenrodIsBest:
-	text "The food is good"
-	line "here, but GOLDEN-"
-	cont "ROD has the best"
-	cont "food anywhere."
+	text "I'm gonna sic my"
+	line "#mon on you if"
+	cont "you don't get"
+	cont "outta here!"
 	done
 
 TeacherText_CrunchCrunch:
 	text "Crunch… Crunch…"
 	done
 
-TeacherText_NoCoinCase:
-	text "Nobody here will"
-	line "give you a COIN"
-
-	para "CASE. You should"
-	line "look in JOHTO."
-	done
-
 TeacherText_KeepEating:
-	text "Crunch… Crunch…"
+	text "This stuff is too"
+	line "greasy!"
 
-	para "I can keep eating!"
-	done
-
-TeacherText_MoreChef:
-	text "More, CHEF!"
+	para "I'm watching my"
+	line "figure after all!"
 	done
 
 EatathonContestPosterText:
@@ -191,6 +217,15 @@ EatathonContestPosterText:
 
 	para "muncher gets it"
 	line "all for free!"
+
+	para "There's a notice at"
+	line "the bottom."
+
+	para "Contest on hold"
+	line "due to unfortunate"
+	cont "circumstances."
+
+	para "Aw man!"
 	done
 
 FoundLeftoversText:
@@ -203,6 +238,44 @@ FoundLeftoversText:
 NoRoomForLeftoversText:
 	text "But <PLAYER> can't"
 	line "hold another item…"
+	done
+
+FisherText_Text1:
+	text "This food is the"
+	line "best in Kanto!"
+
+	para "It's been so long"
+	line "since I've had a"
+	cont "bite!"
+	done
+
+TeacherText_Finally:
+	text "Finally, good food"
+	line "again!"
+
+	para "The Feds won't"
+	line "bother us again!"
+	done
+
+BugCatcherText_Restaurant:
+	text "Where's my toy?"
+	done
+
+PokefanFText_MyBoy:
+	text "I don't have the"
+	line "heart to tell my"
+	cont "son that there are"
+	cont "no toys here."
+	done
+
+SuperNerdText_FedsGone:
+	text "Those awful Feds"
+	line "are gone, and now"
+	cont "my regulars are"
+	cont "back!"
+
+	para "Things are looking"
+	line "up for me!"
 	done
 
 CeladonCafe_MapEvents:
@@ -218,9 +291,13 @@ CeladonCafe_MapEvents:
 	bg_event  5,  0, BGEVENT_READ, EatathonContestPoster
 	bg_event  7,  1, BGEVENT_READ, CeladonCafeTrashcan
 
-	db 5 ; object events
+	db 9 ; object events
 	object_event  9,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonCafeChef, -1
-	object_event  4,  6, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisher1, -1
-	object_event  1,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisher2, -1
-	object_event  1,  2, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisher3, -1
-	object_event  4,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeTeacher, -1
+	object_event  4,  6, SPRITE_ROUGHNECK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisher1, EVENT_SAFFRON_CITY_FEDS
+	object_event  1,  7, SPRITE_DAISY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisher2, EVENT_SAFFRON_CITY_FEDS
+	object_event  1,  2, SPRITE_ROUGHNECK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisher3, EVENT_SAFFRON_CITY_FEDS
+	object_event  4,  3, SPRITE_DAISY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCafeTeacher, EVENT_SAFFRON_CITY_FEDS
+	object_event  1,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisher1, EVENT_SAFFRON_CITY_CIVILLIANS
+	object_event  4,  2, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisher2, EVENT_SAFFRON_CITY_CIVILLIANS
+	object_event  1,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisher3, EVENT_SAFFRON_CITY_CIVILLIANS
+	object_event  4,  7, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeTeacher, EVENT_SAFFRON_CITY_CIVILLIANS

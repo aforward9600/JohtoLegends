@@ -44,12 +44,33 @@ PewterGymBrockScript:
 	closetext
 	end
 
-
 .FlintAfterScript:
+	checkflag ENGINE_JACK
+	iffalse .Rematch
 	writetext FlintMySonText
 	waitbutton
 	closetext
 	end
+
+.Rematch:
+	writetext FlintRematchText
+	waitbutton
+	closetext
+	winlosstext FlintWinLossText, FlintLastMonText
+	loadtrainer FLINT, FLINT1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext FlintAfterRematchText
+	waitbutton
+	closetext
+	setflag ENGINE_JACK
+	end
+
+FlintLastMonText:
+	text "Rock hard determi-"
+	line "nation will win!"
+	done
 
 TrainerEngineerGabe:
 	trainer ENGINEER, GABE, EVENT_BEAT_ENGINEER_GABE, EngineerGabeSeenText, EngineerGabeBeatenText, 0, .Script
@@ -62,26 +83,16 @@ TrainerEngineerGabe:
 	closetext
 	end
 
-PewterGymGuyScript:
-	faceplayer
+TrainerEngineerBernie:
+	trainer ENGINEER, BERNIE, EVENT_BEAT_ENGINEER_BERNIE, EngineerBernieSeenText, EngineerBernieBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
 	opentext
-	checkevent EVENT_BEAT_BROCK
-	iftrue .PewterGymGuyWinScript
-	writetext PewterGymGuyText
+	writetext EngineerBernieAfterBattleText
 	waitbutton
 	closetext
 	end
-
-.PewterGymGuyWinScript:
-	writetext PewterGymGuyWinText
-	waitbutton
-	closetext
-	end
-
-FlintLastMonText:
-	text "Rock hard determi-"
-	line "nation will win!"
-	done
 
 BrockIntroText:
 	text "???: Hm?"
@@ -251,37 +262,6 @@ EngineerBernieAfterBattleText:
 	line "told you that."
 	done
 
-PewterGymGuyText:
-	text "Yo! CHAMP in"
-	line "making! You're"
-
-	para "really rocking."
-	line "Are you battling"
-
-	para "the GYM LEADERS of"
-	line "KANTO?"
-
-	para "They're strong and"
-	line "dedicated people,"
-
-	para "just like JOHTO's"
-	line "GYM LEADERS."
-	done
-
-PewterGymGuyWinText:
-	text "Yo! CHAMP in"
-	line "making! That GYM"
-
-	para "didn't give you"
-	line "much trouble."
-
-	para "The way you took"
-	line "charge was really"
-
-	para "inspiring. I mean"
-	line "that seriously."
-	done
-
 FlintMySonText:
 	text "My son will get to"
 	line "grow up in a world"
@@ -291,6 +271,25 @@ FlintMySonText:
 	para "I haven't felt"
 	line "this hopeful in a"
 	cont "while."
+	done
+
+FlintRematchText:
+	text "Flint: Mining is"
+	line "fine, but battling"
+	cont "is where I'm at my"
+	cont "most comfortable."
+
+	para "Time to keep up"
+	line "with my skills!"
+	done
+
+FlintAfterRematchText:
+	text "Flint: Looks like"
+	line "I'll have to keep"
+	cont "on improving to"
+	cont "make sure I can"
+	cont "keep up as a Gym"
+	cont "Leader."
 	done
 
 PewterGym_MapEvents:
@@ -307,4 +306,4 @@ PewterGym_MapEvents:
 	db 3 ; object events
 	object_event  5,  1, SPRITE_FLINT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, PewterGymBrockScript, EVENT_PEWTER_GYM_FLINT
 	object_event  2,  5, SPRITE_ENGINEER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerEngineerGabe, -1
-	object_event  6,  9, SPRITE_ENGINEER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, PewterGymGuyScript, -1
+	object_event  6,  9, SPRITE_ENGINEER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, TrainerEngineerBernie, -1

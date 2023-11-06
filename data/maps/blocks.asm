@@ -1160,3 +1160,18 @@ CeruleanCave2F_Blocks:
 
 FedHideout1F_Blocks:
 	INCBIN "maps/FedHideout1F.blk"
+
+FedHideoutB1F_Blocks:
+	INCBIN "maps/FedHideoutB1F.blk"
+
+FedHideoutB2F_Blocks:
+	INCBIN "maps/FedHideoutB2F.blk"
+
+FedHideoutB3F_Blocks:
+	INCBIN "maps/FedHideoutB3F.blk"
+
+FedHideoutB4F_Blocks:
+	INCBIN "maps/FedHideoutB4F.blk"
+
+FedHideoutElevator_Blocks:
+	INCBIN "maps/FedHideoutElevator.blk"

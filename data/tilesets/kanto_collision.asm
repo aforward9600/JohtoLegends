@@ -186,3 +186,5 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; b9
 	tilecoll HOP_DOWN, WALL, WALL, WALL ; ba
 	tilecoll WALL, CUT_TREE, WALL, FLOOR ; bb
+	tilecoll WALL, WALL, WALL, WALL ; bc
+	tilecoll WALL, WALL, WALL, WALL ; bd

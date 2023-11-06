@@ -21,10 +21,12 @@ LoadSpecialMapPalette:
 	cp TILESET_MANSION
 	jr z, .mansion_mobile
 	cp TILESET_TOWER
-	jr z, .tower
+	jp z, .tower
 	cp TILESET_KANTO
-	jr z, .kanto
-	jr .do_nothing
+	jp z, .kanto
+	cp TILESET_MART
+	jp z, .mart
+	jp .do_nothing
 
 .darkness
 	call LoadDarknessPalette
@@ -61,7 +63,23 @@ LoadSpecialMapPalette:
 ;	ret
 
 .mansion_mobile
+	ld a, [wEnvironment]
+	and $7
+	cp DUNGEON
+	jr z, .LoadMansionRoofPalette
 	call LoadMansionPalette
+	scf
+	ret
+
+.LoadMansionRoofPalette
+	ld hl, MansionRoofPalette
+	ld a, [wTimeOfDayPal]
+	maskbits NUM_DAYTIMES
+	ld bc, 8 palettes
+	call AddNTimes
+	ld de, wBGPals1
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
 	scf
 	ret
 
@@ -101,11 +119,21 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
+.mart
+	ld a, [wEnvironment]
+	and $7
+	cp DUNGEON
+	jr z, .LoadMansionRoofPalette
+	and a
+	ret
+
 .do_nothing
 	and a
 	ret
 
 INCLUDE "gfx/tilesets/kanto.pal"
+
+INCLUDE "gfx/tilesets/mansion_roof.pal"
 
 LoadDarknessPalette:
 	ld a, BANK(wBGPals1)

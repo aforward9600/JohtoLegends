@@ -2083,6 +2083,12 @@ FlyMapScroll:
 	ld a, [hl]
 	and D_DOWN
 	jr nz, .ScrollPrev
+	ld a, [hl]
+	and D_LEFT
+	jp nz, .JohtoMap
+	ld a, [hl]
+	and D_RIGHT
+	jr nz, .KantoMap
 	ret
 
 .ScrollNext:
@@ -2112,6 +2118,65 @@ FlyMapScroll:
 	call CheckIfVisitedFlypoint
 	jr z, .ScrollPrev
 .Finally:
+	call TownMapBubble
+	call WaitBGMap
+	xor a
+	ldh [hBGMapMode], a
+	ret
+
+.KantoMap:
+	ldh a, [hWY]
+	and a
+	ret z
+	ld c, SPAWN_INDIGO
+	call HasVisitedSpawn
+	and a
+	ret z
+	ld a, FLY_PALLET
+	ld [wStartFlypoint], a
+; ...and end at Indigo Plateau
+	ld a, FLY_INDIGO
+	ld [wEndFlypoint], a
+; Because Indigo Plateau is the first flypoint the player
+; visits, it's made the default flypoint.
+	ld [wTownMapPlayerIconLandmark], a
+	call FillKantoMap
+	call ClearSprites
+	call TownMapMon
+	xor a
+	ld b, $9c
+	ldh [hWY], a
+	ld a, b
+	ldh [hBGMapAddress + 1], a
+	call TownMapBubble
+	call WaitBGMap
+	xor a
+	ldh [hBGMapMode], a
+	ret
+
+.JohtoMap:
+	ldh a, [hWY]
+	cp $90
+	ret z
+	ld c, SPAWN_INDIGO
+	call HasVisitedSpawn
+	and a
+	ret z
+	ld a, FLY_BLACKTHORN
+	ld [wTownMapPlayerIconLandmark], a
+; Flypoints begin at New Bark Town...
+	ld [wStartFlypoint], a
+; ..and end at Silver Cave.
+	ld a, FLY_MT_SILVER
+	ld [wEndFlypoint], a
+	call FillJohtoMap
+	call ClearSprites
+	call TownMapMon
+	ld a, $90
+	ld b, $98
+	ldh [hWY], a
+	ld a, b
+	ldh [hBGMapAddress + 1], a
 	call TownMapBubble
 	call WaitBGMap
 	xor a
@@ -2244,7 +2309,7 @@ FlyMap:
 .CheckRegion:
 ; The first 46 locations are part of Johto. The rest are in Kanto.
 	cp KANTO_LANDMARK
-	jr nc, .KantoFlyMap
+	jr nc, .NoKanto
 .JohtoFlyMap:
 ; Note that .NoKanto should be modified in tandem with this branch
 	push af
@@ -2257,10 +2322,15 @@ FlyMap:
 	ld a, FLY_MT_SILVER
 	ld [wEndFlypoint], a
 ; Fill out the map
+	call FillKantoMap
+	call TownMapBubble
+	call TownMapPals
+	hlbgcoord 0, 0, vBGMap1
+	call TownMapBGUpdate
 	call FillJohtoMap
 	call .MapHud
 	pop af
-	call TownMapPlayerIcon
+;	call TownMapPlayerIcon
 	ret
 
 .KantoFlyMap:
@@ -2289,6 +2359,11 @@ FlyMap:
 ; visits, it's made the default flypoint.
 	ld [wTownMapPlayerIconLandmark], a
 ; Fill out the map
+	call FillJohtoMap
+	call TownMapBubble
+	call TownMapPals
+	hlbgcoord 0, 0, vBGMap1
+	call TownMapBGUpdate
 	call FillKantoMap
 	call .MapHud
 	pop af
@@ -2298,6 +2373,7 @@ FlyMap:
 .NoKanto:
 ; If Indigo Plateau hasn't been visited, we use Johto's map instead
 
+	push af
 ; Start from New Bark Town
 	ld a, FLY_BLACKTHORN
 	ld [wTownMapPlayerIconLandmark], a
@@ -2306,12 +2382,18 @@ FlyMap:
 ; ..and end at Silver Cave
 	ld a, FLY_MT_SILVER
 	ld [wEndFlypoint], a
+	call FillKantoMap
+	call TownMapBubble
+	call TownMapPals
+	hlbgcoord 0, 0, vBGMap1
+	call TownMapBGUpdate
 	call FillJohtoMap
 	pop af
 .MapHud:
 	call TownMapBubble
 	call TownMapPals
 	hlbgcoord 0, 0 ; BG Map 0
+.FinishHud:
 	call TownMapBGUpdate
 	call TownMapMon
 	ld a, c
@@ -2775,7 +2857,7 @@ INCBIN "gfx/pokegear/dexmap_nest_icon.2bpp"
 FlyMapLabelBorderGFX:
 INCBIN "gfx/pokegear/flymap_label_border.1bpp"
 
-Unreferenced_Function92311:
+EntireFlyMap:
 	xor a
 	ld [wTownMapPlayerIconLandmark], a
 	call ClearBGPalettes
@@ -2856,10 +2938,10 @@ Unreferenced_Function92311:
 .HandleDPad:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and D_DOWN | D_RIGHT
+	and D_UP | D_RIGHT
 	jr nz, .down_right
 	ld a, [hl]
-	and D_UP | D_LEFT
+	and D_DOWN | D_LEFT
 	jr nz, .up_left
 	ret
 
@@ -2886,12 +2968,16 @@ Unreferenced_Function92311:
 	cp KANTO_FLYPOINT
 	jr c, .johto
 	call FillKantoMap
+	call ClearSprites
+	call TownMapMon
 	xor a
 	ld b, $9c
 	jr .finish
 
 .johto
 	call FillJohtoMap
+	call ClearSprites
+	call TownMapMon
 	ld a, $90
 	ld b, $98
 .finish

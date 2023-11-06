@@ -18,33 +18,54 @@ CeladonMansion2FComputerText:
 
 	para "…"
 
-	para "Someone was in the"
-	line "middle of compos-"
-	cont "ing an e-mail."
+	para "There's an email"
+	line "here…"
 
-	para "…I hope you'll"
-	line "come visit KANTO."
+	para "…Your mother's"
+	line "defeat is most"
+	cont "unfortunate…"
 
-	para "I think you'll be"
-	line "surprised at how"
+	para "We lost all the"
+	line "ground we gained"
+	cont "in Johto…"
 
-	para "much things have"
-	line "changed here."
+	para "Things don't look"
+	line "like they're going"
+	cont "well here in Kanto"
+	cont "either…"
 
-	para "You'll also see"
-	line "many #MON that"
+	para "Chaos is what she"
+	line "wanted, but maybe"
+	cont "order is needed"
+	cont "right now."
 
-	para "aren't native to"
-	line "JOHTO."
+	para "I leave Kanto in"
+	line "your hands, great"
+	cont "leader."
 
-	para "To the PRODUCER"
+	para "With the boss in"
+	line "prison, you're the"
+	cont "best person for"
+	cont "the job."
+
+	para "Do what you see"
+	line "fit for us."
+
+	para "I will be heading"
+	line "on my next"
+	cont "mission soon."
+
+	para "I will be in"
+	line "contact over the"
+	cont "radio. Later."
+
+	para "-M"
 
 	para "…"
 	done
 
 CeladonMansion2FMeetingRoomSignText:
-	text "GAME FREAK"
-	line "MEETING ROOM"
+	text "Vacant Room"
 	done
 
 CeladonMansion2F_MapEvents:

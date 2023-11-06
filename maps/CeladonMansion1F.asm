@@ -13,25 +13,37 @@ CeladonMansionManager:
 	jumptextfaceplayer CeladonMansionManagerText
 
 CeladonMansion1FMeowth:
+	refreshscreen
+	pokepic MEOWTH
+	cry MEOWTH
+	waitbutton
+	closepokepic
 	opentext
 	writetext CeladonMansion1FMeowthText
-	cry MEOWTH
 	waitbutton
 	closetext
 	end
 
 CeladonMansion1FClefairy:
+	refreshscreen
+	pokepic CLEFAIRY
+	cry CLEFAIRY
+	waitbutton
+	closepokepic
 	opentext
 	writetext CeladonMansion1FClefairyText
-	cry CLEFAIRY
 	waitbutton
 	closetext
 	end
 
 CeladonMansion1FNidoranF:
+	refreshscreen
+	pokepic NIDORAN_F
+	cry NIDORAN_F
+	waitbutton
+	closepokepic
 	opentext
 	writetext CeladonMansion1FNidoranFText
-	cry NIDORAN_F
 	waitbutton
 	closetext
 	end
@@ -43,33 +55,36 @@ CeladonMansion1FBookshelf:
 	jumpstd picturebookshelf
 
 CeladonMansionManagerText:
-	text "My dear #MON"
-	line "keep me company,"
+	text "Those Feds tried"
+	line "to bust in here"
+	cont "one time, and I"
 
-	para "so I don't ever"
-	line "feel lonely."
+	para "had my #mon"
+	line "attack!"
 
-	para "MEOWTH even brings"
-	line "money home."
+	para "They act all tough"
+	line "until they fight"
+	cont "someone tougher"
+	cont "than them!"
 	done
 
 CeladonMansion1FMeowthText:
-	text "MEOWTH: Meow!"
+	text "Meowth: Meow!"
 	done
 
 CeladonMansion1FClefairyText:
-	text "CLEFAIRY: Clef"
+	text "Clefairy: Clef"
 	line "cleff!"
 	done
 
 CeladonMansion1FNidoranFText:
-	text "NIDORAN: Kya"
+	text "Nidoran: Kya"
 	line "kyaoo!"
 	done
 
 CeladonMansionManagersSuiteSignText:
-	text "CELADON MANSION"
-	line "MANAGER'S SUITE"
+	text "Celadon Mansion"
+	line "Manager's Suite"
 	done
 
 CeladonMansion1F_MapEvents:
@@ -91,6 +106,6 @@ CeladonMansion1F_MapEvents:
 
 	db 4 ; object events
 	object_event  1,  5, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonMansionManager, -1
-	object_event  2,  6, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonMansion1FMeowth, -1
+	object_event  2,  6, SPRITE_MEOWTH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonMansion1FMeowth, -1
 	object_event  3,  4, SPRITE_CLEFAIRY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonMansion1FClefairy, -1
-	object_event  4,  4, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonMansion1FNidoranF, -1
+	object_event  4,  4, SPRITE_NIDORAN_F, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonMansion1FNidoranF, -1

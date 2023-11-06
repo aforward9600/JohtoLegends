@@ -33,6 +33,9 @@ GameFreakGameDesignerScript:
 	setevent EVENT_ENABLE_DIPLOMA_PRINTING
 	end
 
+mountvesuviusScript:
+	jumptextfaceplayer mountvesuviusText
+
 GameFreakGraphicArtistScript:
 	faceplayer
 	opentext
@@ -66,6 +69,9 @@ GameFreakGraphicArtistScript:
 
 Ax6Script:
 	jumptextfaceplayer Ax6Text
+
+CardboardBoxScript:
+	jumptextfaceplayer CardboardBoxText
 
 GameFreakCharacterDesignerScript:
 	jumptextfaceplayer GameFreakCharacterDesignerText
@@ -157,6 +163,33 @@ Ax6Text:
 	cont "work!"
 	done
 
+CardboardBoxText:
+	text "I'm cardboardbox!"
+
+	para "We would have a"
+	line "lot of game-"
+	cont "breaking glitches"
+	cont "without me!"
+
+	para "I got the Physical"
+	line "Special Split to"
+	cont "work with 16-bit,"
+	cont "as well as the"
+	cont "evolution moves!"
+	done
+
+mountvesuviusText:
+	text "I'm mountvesuvius!"
+
+	para "I helped fix a few"
+	line "issues Ferropexola"
+	cont "wasn't smart enough"
+	cont "to handle!"
+
+	para "…Don't tell him I"
+	line "said that!"
+	done
+
 GameFreakCharacterDesignerText:
 	text "Aren't the TWINS"
 	line "adorable?"
@@ -239,7 +272,7 @@ CeladonMansion3F_MapEvents:
 	bg_event  1,  3, BGEVENT_UP, CeladonMansion3FReferenceMaterial
 
 	db 4 ; object events
-	object_event  3,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GameFreakGameDesignerScript, -1
-	object_event  3,  4, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GameFreakGraphicArtistScript, -1
+	object_event  3,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, mountvesuviusScript, -1
+	object_event  3,  4, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CardboardBoxScript, -1
 	object_event  0,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Ax6Script, -1
 	object_event  0,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GameFreakCharacterDesignerScript, -1

@@ -440,6 +440,11 @@ ENDM
 	map_const ROUTE_7_SAFFRON_GATE,                         5,  4 ; 25
 	map_const ROUTE_17_ROUTE_18_GATE,                       5,  4 ; 26
 	map_const FED_HIDEOUT_1F,                              10,  7 ; 27
+	map_const FED_HIDEOUT_B1F,                             11, 14 ; 28
+	map_const FED_HIDEOUT_B2F,                             15, 11 ; 29
+	map_const FED_HIDEOUT_B3F,                             11, 12 ; 30
+	map_const FED_HIDEOUT_B4F,                             11, 12 ; 31
+	map_const FED_HIDEOUT_ELEVATOR,                         3,  4 ; 32
 
 	newgroup                                                      ; 22
 

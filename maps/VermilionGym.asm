@@ -45,9 +45,26 @@ VermilionGymSurgeScript:
 	end
 
 .LtSurgeStay:
+	checkflag ENGINE_GAVEN
+	iffalse .LtSurgeRematch
 	writetext LtSurgeStayText
 	waitbutton
 	closetext
+	end
+
+.LtSurgeRematch:
+	writetext LtSurgeRematchText
+	waitbutton
+	closetext
+	winlosstext LtSurgeWinLossText, LtSurgeLastMonText
+	loadtrainer LT_SURGE, LT_SURGE1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext LtSurgeRematchAfterText
+	waitbutton
+	closetext
+	setflag ENGINE_GAVEN
 	end
 
 LtSurgeLastMonText:
@@ -265,6 +282,24 @@ VermilionGymBedText:
 
 	para "You probably don't"
 	line "want to nap here."
+	done
+
+LtSurgeRematchText:
+	text "Pvt.Surge: Hey"
+	line "Champion!"
+
+	para "As a soldier, I"
+	line "never stop with my"
+	cont "training!"
+
+	para "Wanna see?"
+	done
+
+LtSurgeRematchAfterText:
+	text "Pvt.Surge: I gotta"
+	line "continue training"
+	cont "my #mon and my"
+	cont "body!"
 	done
 
 VermilionGym_MapEvents:

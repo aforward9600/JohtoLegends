@@ -69,4 +69,5 @@ SpriteMons:
 	dw MEWTWO
 	dw CHANSEY
 	dw MAROWAK
-	db MEW
+	dw MEW
+	dw NIDORAN_F

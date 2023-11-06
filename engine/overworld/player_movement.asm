@@ -554,10 +554,10 @@ DoPlayerMovement::
 	db $80 | LEFT
 	db $80 | RIGHT
 .SpinStep:
-	turn_in_down
-	turn_in_up
-	turn_in_left
-	turn_in_right
+	fast_slide_step DOWN
+	fast_slide_step UP
+	fast_slide_step LEFT
+	fast_slide_step RIGHT
 
 .StandInPlace:
 	ld a, 0

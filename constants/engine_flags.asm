@@ -130,14 +130,14 @@
 ; wCelebiEvent
 	const ENGINE_FOREST_IS_RESTLESS
 ; wDailyRematchFlags
-	const ENGINE_JACK
-	const ENGINE_HUEY
-	const ENGINE_GAVEN
-	const ENGINE_BETH
-	const ENGINE_JOSE
-	const ENGINE_REENA
-	const ENGINE_JOEY
-	const ENGINE_WADE
+	const ENGINE_JACK ; Flint Rematch
+	const ENGINE_HUEY ; Sensational Sisters Rematch
+	const ENGINE_GAVEN ; Surge Rematch
+	const ENGINE_BETH ; Erika Rematch
+	const ENGINE_JOSE ; Koga Rematch
+	const ENGINE_REENA ; Sabrina Rematch
+	const ENGINE_JOEY ; Blain Rematch
+	const ENGINE_WADE ; Giovanni Rematch
 	const ENGINE_RALPH
 	const ENGINE_LIZ
 	const ENGINE_ANTHONY

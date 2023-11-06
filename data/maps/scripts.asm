@@ -118,7 +118,6 @@ INCLUDE "maps/Route16FuchsiaSpeechHouse.asm"
 INCLUDE "maps/Route16Gate.asm"
 INCLUDE "maps/Route7SaffronGate.asm"
 INCLUDE "maps/Route17Route18Gate.asm"
-INCLUDE "maps/SootheBellHouse.asm"
 
 
 SECTION "Map Scripts 8", ROMX
@@ -550,3 +549,9 @@ INCLUDE "maps/FuchsiaGym.asm"
 INCLUDE "maps/FuchsiaPokecenter1F.asm"
 INCLUDE "maps/GhostHouse.asm"
 INCLUDE "maps/FedHideout1F.asm"
+INCLUDE "maps/FedHideoutB1F.asm"
+INCLUDE "maps/FedHideoutB2F.asm"
+INCLUDE "maps/FedHideoutB3F.asm"
+INCLUDE "maps/FedHideoutB4F.asm"
+INCLUDE "maps/FedHideoutElevator.asm"
+INCLUDE "maps/SootheBellHouse.asm"
