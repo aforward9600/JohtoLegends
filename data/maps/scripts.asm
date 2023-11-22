@@ -311,6 +311,7 @@ INCLUDE "maps/TradeCenter.asm"
 INCLUDE "maps/Colosseum.asm"
 INCLUDE "maps/TimeCapsule.asm"
 INCLUDE "maps/WildAreaPokecenter.asm"
+INCLUDE "maps/EmbeddedTower.asm"
 
 
 SECTION "Map Scripts 18", ROMX
@@ -490,8 +491,6 @@ INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route25.asm"
 INCLUDE "maps/RocketLairBreakRoom.asm"
 INCLUDE "maps/Route10North.asm"
-INCLUDE "maps/NownRoom.asm"
-INCLUDE "maps/NownPuzzleRoom.asm"
 
 
 SECTION "Map Scripts 28", ROMX
@@ -514,6 +513,8 @@ INCLUDE "maps/CherrygroveFisherHouse.asm"
 INCLUDE "maps/LakeOfRagePokecenter1F.asm"
 INCLUDE "maps/LakeOfRageMart.asm"
 INCLUDE "maps/CeruleanBikeShop.asm"
+INCLUDE "maps/NownRoom.asm"
+INCLUDE "maps/NownPuzzleRoom.asm"
 
 
 SECTION "Map Scripts 29", ROMX

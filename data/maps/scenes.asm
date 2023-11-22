@@ -109,4 +109,6 @@ MapScenes::
 	scene_var ROCKET_LAIR_HALLWAY_3,                       wRocketLairHallwaySceneID
 	scene_var ROCKET_LAIR_BOSS_ROOM,                       wRocketLairBossRoomSceneID
 	scene_var POKEMON_MANSION_B1F,                         wPokemonMansionB1FSceneID
+	scene_var FED_HIDEOUT_B4F,                             wFedHideoutB4FSceneID
+	scene_var ROUTE_47,                                    wRoute47SceneID
 	db -1 ; end

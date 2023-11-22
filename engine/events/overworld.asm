@@ -679,6 +679,7 @@ Script_WaterfallFromMenu:
 
 Script_UsedWaterfall:
 	writetext .Text_UsedWaterfall
+	waitbutton
 	refreshscreen
 	pokepic LAPRAS
 	cry LAPRAS

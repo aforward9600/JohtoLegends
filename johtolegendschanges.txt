@@ -75,7 +75,7 @@ Pidgey: -10ATK, +10SPATK. 251BST. Focus on Special Attack.
 
 Pidgeotto: -10ATK, +10SPATK. 349BST. Focus on Special Attack.
 
-Pidgeot: +21SPATK, +10SPD. 500BST. Focus on Special Attack.
+Pidgeot: +10ATK, +21SPATK, +10SPD. 510BST. Mixed Attacker.
 
 Raticate: +8HP, +20ATK, +10DEF, +19SPD. 470BST
 
@@ -109,7 +109,7 @@ Wigglytuff: +5ATK, +23DEF, +10 SPA, +20SPDEF. 483BST. Is now a Normal-Fairy Type
 
 Vileplume: +5HP, -5ATK, +10 SPA. 490BST
 
-Bellossom: +5HP, -5ATK. 490BST. Is a now Grass-Fairy type.
+Bellossom: +5HP, -5ATK, +10DEF. 490BST. Is a now Grass-Fairy type.
 
 Parasect: +30HP, +10ATK, +10DEF, +20SPATK, +10SPDEF, +10SPD. 495.
 
@@ -233,6 +233,8 @@ Forretress: -20SPATK, +20SPDEF, +20SPD. 485BST
 
 Dunsparce:Is now a Fairy-Ground Type.
 
+Dundunspars:Is now a Fairy-Ground Type.
+
 Snubbull: Is now a Fairy Type.
 
 Granbull: +5HP, 15SPDEF, +25SPD. 495BST. Is now a Fairy Type.
@@ -255,13 +257,17 @@ Pupitar: +10HP, +10ATK, +10DEF, +10SPATK, +10SPDEF, +10SPD. 470BST Evolves at Le
 
 Manectric: +24SPATK, +24SPD. 523BST
 
+Croagunk: Evolves at Level 28.
+
 Cacturne: +15DEF, +15SPDEF. 505BST
+
+Snorunt: Evolves at Level 32 into Glalie.
 
 Glalie: +5 to all stats. 510BST
 
 Froslass: +15ATK, +15SPATK. 510BST
 
-Altaria: +5ATK, +5SPATK. 500BST
+Altaria: +5ATK, +5SPATK. 500BST. Now a Dragon-Fairy type.
 
 Ludicolo: +5HP, +5ATK, +5DEF, +5SPD. 500BST
 

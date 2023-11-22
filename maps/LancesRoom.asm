@@ -827,7 +827,7 @@ OakCongratulatesCynthiaText:
 
 	para "I've heard good"
 	line "things from Prof."
-	cont "Rowen!"
+	cont "Rowan!"
 
 	para "It takes great"
 	line "skill to get this"
@@ -840,7 +840,7 @@ CynthiaThanksOakText:
 
 	para "I will be sure"
 	line "to let Prof."
-	cont "Rowen know of"
+	cont "Rowan know of"
 	cont "your praise."
 	done
 

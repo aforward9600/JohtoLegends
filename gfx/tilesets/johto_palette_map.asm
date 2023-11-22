@@ -29,3 +29,4 @@
 	tilepal 1, RED, RED, RED, RED, RED, RED, RED, RED
 	tilepal 1, TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, TEXT
 	tilepal 1, RED, RED, RED, RED, RED, BROWN, BROWN, RED
+	tilepal 1, BROWN, BROWN

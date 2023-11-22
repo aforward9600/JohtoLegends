@@ -2710,8 +2710,10 @@ wVioletGymSceneID::                               db
 wRocketLairHallwaySceneID::                       db
 wRocketLairBossRoomSceneID::                      db
 wPokemonMansionB1FSceneID::                       db
+wFedHideoutB4FSceneID::                           db
+wRoute47SceneID::                                 db
 
-	ds 21
+	ds 19
 
 ; fight counts
 wJackFightCount::    db ; d9f2

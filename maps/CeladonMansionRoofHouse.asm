@@ -9,7 +9,7 @@ CeladonMansionRoofHouse_MapScripts:
 CeladonMansionRoofHousePharmacistScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TM03_CURSE
+	checkevent EVENT_DECO_JIGGLYPUFF_DOLL
 	iftrue .GotCurse
 	writetext CeladonMansionRoofHousePharmacistIntroText
 	buttonsound
@@ -22,14 +22,17 @@ CeladonMansionRoofHousePharmacistScript:
 
 .Night:
 	writetext CeladonMansionRoofHousePharmacistStoryText
+	setevent EVENT_DECO_JIGGLYPUFF_DOLL
 	buttonsound
-	verbosegiveitem TM_CURSE
-	iffalse .NoRoom
-	setevent EVENT_GOT_TM03_CURSE
+	waitsfx
+	writetext GotJigglypuffDollText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	pause 15
 .GotCurse:
 	writetext CeladonMansionRoofHousePharmacistCurseText
 	waitbutton
-.NoRoom:
 	closetext
 	end
 
@@ -53,65 +56,71 @@ CeladonMansionRoofHousePharmacistStoryText:
 	text "Once upon a time,"
 	line "there was a little"
 
-	para "boy who was given"
-	line "a new BICYCLE…"
+	para "girl who was given"
+	line "a new Doll…"
 
-	para "He wanted to try"
-	line "it right away…"
+	para "She loved the doll"
+	line "so much, but at"
+	cont "night, she felt"
+	cont "watched…"
 
-	para "He was having so"
-	line "much fun that he"
+	para "While at the park"
+	line "one day, she lost"
+	cont "her doll…"
 
-	para "didn't notice the"
-	line "sun had set…"
+	para "She was totally"
+	line "devastated…"
 
-	para "While riding home"
-	line "in the pitch-black"
+	para "One night, she had"
+	line "woken up to see"
+	cont "the doll at the"
+	cont "end of her bed…"
 
-	para "night, the bike"
-	line "suddenly slowed!"
+	para "It was all dirty…"
 
-	para "The pedals became"
-	line "heavy!"
+	para "It seemed to look"
+	line "straight at her…"
 
-	para "When he stopped"
-	line "pedaling, the bike"
+	para "Then, it spoke…"
 
-	para "began slipping"
-	line "backwards!"
+	para "'Why did you leave"
+	line "me alone?'"
 
-	para "It was as if the"
-	line "bike were cursed"
+	para "She screamed and"
+	line "ran to her parents"
+	cont "in terror…"
 
-	para "and trying to drag"
-	line "him into oblivion!"
+	para "When they reached"
+	line "her room, the doll"
+	cont "was gone…"
 
-	para "…"
+	para "All that was left"
+	line "was a dirty spot"
+	cont "on the bed…"
 
-	para "…"
+	para "What happened to"
+	line "the cursed doll?"
 
-	para "SHRIEEEEK!"
+	para "Why, it's right"
+	line "here!"
 
-	para "The boy had been"
-	line "riding uphill on"
-	cont "CYCLING ROAD!"
+	para "Now it is your"
+	line "burden to bear!"
+	done
 
-	para "…"
-	line "Ba-dum ba-dum!"
-
-	para "For listening so"
-	line "patiently, you may"
-	cont "take this--TM03!"
+GotJigglypuffDollText:
+	text "<PLAYER> received"
+	line "Jigglypuff Doll!"
 	done
 
 CeladonMansionRoofHousePharmacistCurseText:
-	text "TM03 is CURSE."
+	text "…What?"
 
-	para "It's a terrifying"
-	line "move that slowly"
+	para "Jigglypuff isn't"
+	line "scary enough?"
 
-	para "whittles down the"
-	line "victim's HP."
+	para "Everyone's a"
+	line "critic!"
 	done
 
 CeladonMansionRoofHouse_MapEvents:
@@ -126,4 +135,4 @@ CeladonMansionRoofHouse_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  3,  2, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofHousePharmacistScript, -1
+	object_event  3,  2, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofHousePharmacistScript, -1

@@ -180,11 +180,13 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL ; b3
 	tilecoll WALL, FLOOR, WALL, FLOOR ; b4
 	tilecoll WALL, FLOOR, WALL, FLOOR ; b5
-	tilecoll WALL, HOP_LEFT, WALL, HOP_LEFT ; b6
-	tilecoll HOP_RIGHT, WALL, HOP_RIGHT, WALL ; b7
+	tilecoll WALL, UP_WALL, WALL, FLOOR ; b6
+	tilecoll UP_WALL, WALL, FLOOR, WALL ; b7
 	tilecoll FLOOR, WALL, FLOOR, WALL ; b8
-	tilecoll WALL, WALL, FLOOR, FLOOR ; b9
+	tilecoll WALL, UP_WALL, WALL, FLOOR ; b9
 	tilecoll HOP_DOWN, WALL, WALL, WALL ; ba
 	tilecoll WALL, CUT_TREE, WALL, FLOOR ; bb
 	tilecoll WALL, WALL, WALL, WALL ; bc
 	tilecoll WALL, WALL, WALL, WALL ; bd
+	tilecoll WALL, UP_WALL, WALL, FLOOR ; be
+	tilecoll UP_WALL, WALL, FLOOR, WALL ; bf

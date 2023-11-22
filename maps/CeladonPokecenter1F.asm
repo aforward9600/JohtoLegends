@@ -14,7 +14,7 @@ CeladonPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
 CeladonPokecenter1FPokefanMScript:
-	jumpstd CeladonPokecenter1FPokefanMText
+	jumptextfaceplayer CeladonPokecenter1FPokefanMText
 
 CeladonPokecenter1FCooltrainerMScript:
 	jumptextfaceplayer CeladonPokecenter1FCooltrainerMText

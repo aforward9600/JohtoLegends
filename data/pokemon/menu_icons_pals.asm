@@ -16,7 +16,7 @@ MonMenuIconPals:
 	icon_pals TEAL,   GREEN  ; VENUSAUR
 	icon_pals RED,    BROWN  ; CHARMANDER
 	icon_pals RED,    BROWN  ; CHARMELEON
-	icon_pals RED,    PURPLE ; CHARIZARD
+	icon_pals RED,    GRAY   ; CHARIZARD
 	icon_pals BLUE,   TEAL   ; SQUIRTLE
 	icon_pals BLUE,   TEAL   ; WARTORTLE
 	icon_pals BLUE,   TEAL   ; BLASTOISE
@@ -36,7 +36,7 @@ MonMenuIconPals:
 	icon_pals PURPLE, TEAL   ; EKANS
 	icon_pals PURPLE, GREEN  ; ARBOK
 	icon_pals RED,    RED    ; PICHU
-	icon_pals RED,    RED    ; PIKACHU
+	icon_pals RED,    TEAL   ; PIKACHU
 	icon_pals RED,    BROWN  ; RAICHU
 	icon_pals BROWN,  GRAY   ; SANDSHREW
 	icon_pals BROWN,  RED    ; SANDSLASH
@@ -99,9 +99,9 @@ MonMenuIconPals:
 	icon_pals RED,    PURPLE ; SLOWPOKE
 	icon_pals RED,    PURPLE ; SLOWBRO
 	icon_pals RED,    PURPLE ; SLOWKING
-	icon_pals BROWN,  GRAY   ; MAGNEMITE
-	icon_pals BROWN,  GRAY   ; MAGNETON
-	icon_pals BROWN,  GRAY   ; MAGNEZONE
+	icon_pals GRAY,   BROWN  ; MAGNEMITE
+	icon_pals GRAY,   BROWN  ; MAGNETON
+	icon_pals GRAY,   BROWN  ; MAGNEZONE
 	icon_pals BROWN,  BLUE   ; FARFETCH_D
 	icon_pals BROWN,  PINK   ; DODUO
 	icon_pals BROWN,  PINK   ; DODRIO
@@ -233,14 +233,14 @@ MonMenuIconPals:
 	icon_pals PURPLE, PINK   ; AIPOM
 	icon_pals PURPLE, PINK   ; AMBIPOM
 	icon_pals GREEN,  TEAL   ; SUNKERN
-	icon_pals GREEN,  BROWN  ; SUNFLORA
+	icon_pals GREEN,  RED    ; SUNFLORA
 	icon_pals RED,    BLUE   ; YANMA
 	icon_pals BLUE,   TEAL   ; YANMEGA
 	icon_pals BLUE,   PINK   ; WOOPER
 	icon_pals BLUE,   PINK   ; QUAGSIRE
 	icon_pals BLUE,   PURPLE ; MURKROW
 	icon_pals BLUE,   PURPLE ; HONCHKROW
-	icon_pals RED,    BROWN  ; MISDREAVUS
+	icon_pals RED,    BLUE   ; MISDREAVUS
 	icon_pals PINK,   BLUE   ; MISMAGIUS
 	icon_pals BROWN,  BROWN  ; UNOWN
 	icon_pals BLUE,   PURPLE ; WYNAUT
@@ -260,8 +260,8 @@ MonMenuIconPals:
 	icon_pals BLUE,   PURPLE ; HERACROSS
 	icon_pals RED,    PINK   ; SNEASEL
 	icon_pals RED,    PINK   ; WEAVILE
-	icon_pals BROWN,  GREEN  ; TEDDIURSA
-	icon_pals BROWN,  GREEN  ; URSARING
+	icon_pals BROWN,  RED    ; TEDDIURSA
+	icon_pals BROWN,  GRAY   ; URSARING
 	icon_pals BROWN,  RED    ; URSALUNA
 	icon_pals RED,    GRAY   ; SLUGMA
 	icon_pals RED,    BLUE   ; MAGCARGO

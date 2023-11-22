@@ -372,15 +372,17 @@ ENDM
 	connection north, Route10North, ROUTE_10_NORTH, 0
 	connection south, LavenderTown, LAVENDER_TOWN, 0
 
-	map_attributes Route47, ROUTE_47, $35, NORTH
+	map_attributes Route47, ROUTE_47, $03, NORTH
 	connection north, Route48, ROUTE_48, -1
 
-	map_attributes Route48, ROUTE_48, $35, NORTH | SOUTH
+	map_attributes Route48, ROUTE_48, $03, NORTH | SOUTH
 	connection north, WildAreaOutside, WILD_AREA_OUTSIDE, 2
 	connection south, Route47, ROUTE_47, 1
 
 	map_attributes WildAreaOutside, WILD_AREA_OUTSIDE, $35, SOUTH
 	connection south, Route48, ROUTE_48, -2
+
+	map_attributes Route47Underpass, ROUTE_47_UNDERPASS, $03, 0
 
 	map_attributes Route23, ROUTE_23, $0f, 0
 	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
@@ -749,3 +751,4 @@ ENDM
 	map_attributes FedHideoutB3F, FED_HIDEOUT_B3F, $00, 0
 	map_attributes FedHideoutB4F, FED_HIDEOUT_B4F, $00, 0
 	map_attributes FedHideoutElevator, FED_HIDEOUT_ELEVATOR, $00, 0
+	map_attributes EmbeddedTower, EMBEDDED_TOWER, $00, 0

@@ -1922,4 +1922,34 @@ JohtoGrassWildMons:
 	dbw 25, BAGON
 	dbw 50, SHELGON
 
+	map_id ROUTE_47_UNDERPASS
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 60, MILTANK
+	dbw 60, TAUROS
+	dbw 60, POLIWRATH
+	dbw 60, POLITOED
+	dbw 60, GIRAFARIG
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	dbw 60, BLISSEY
+	; day
+	dbw 60, MILTANK
+	dbw 60, TAUROS
+	dbw 60, POLIWRATH
+	dbw 60, POLITOED
+	dbw 60, GIRAFARIG
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	dbw 60, BLISSEY
+	; nite
+	dbw 60, HOUNDOOM
+	dbw 60, HONCHKROW
+	dbw 60, POLIWRATH
+	dbw 60, POLITOED
+	dbw 60, XATU
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	dbw 60, BLISSEY
+
 	db -1 ; end

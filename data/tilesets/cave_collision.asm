@@ -65,8 +65,8 @@
 	tilecoll WALL, WALL, WALL, WALL ; 40
 	tilecoll WALL, WALL, WALL, WALL ; 41
 	tilecoll WALL, WALL, WALL, WALL ; 42
-	tilecoll WALL, WALL, WALL, WALL ; 43
-	tilecoll WALL, WALL, WALL, WALL ; 44
+	tilecoll UP_WALL, WALL, FLOOR, WALL ; 43
+	tilecoll WALL, UP_WALL, WALL, FLOOR ; 44
 	tilecoll WALL, WALL, WALL, WALL ; 45
 	tilecoll WALL, WALL, WALL, WALL ; 46
 	tilecoll WALL, WALL, WALL, WALL ; 47
@@ -130,3 +130,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 81
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 82
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 83
+	tilecoll WALL, WALL, WALL, WALL ; 84
+	tilecoll WALL, WALL, WALL, WALL ; 85
+	tilecoll WATER, WATER, WATERFALL, WATERFALL ; 86
+	tilecoll FLOOR, WALL, LADDER, FLOOR ; 87

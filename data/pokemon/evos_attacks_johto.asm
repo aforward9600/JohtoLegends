@@ -283,7 +283,7 @@ JolteonEvosAttacks:
 	dbw 13, QUICK_ATTACK
 	dbw 17, DOUBLE_KICK
 	dbw 20, THUNDER_FANG
-	dbw 25, PIN_MISSILE
+	dbw 25, SIGNAL_BEAM
 	dbw 29, AGILITY
 	dbw 33, THUNDER_WAVE
 	dbw 37, DISCHARGE
