@@ -663,6 +663,9 @@ CheckMapCanWaterfall:
 	and $c
 	cp FACE_UP
 	jr nz, .failed
+	ld a, [wPlayerState]
+	cp PLAYER_SURF
+	jr nz, .failed
 	ld a, [wTileUp]
 	call CheckWaterfallTile
 	jr nz, .failed

@@ -8,12 +8,12 @@
 	const ROUTE47_SUICUNE
 
 Route47_MapScripts:
-Route47Underpass_MapScripts:
 	db 2 ; scene scripts
 	scene_script .Dummy0 ; SCENE_DEFAULT
 	scene_script .Dummy1 ; SCENE_FINISHED
 
-	db 1 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_TILES, .MakeBridgesPriority
 	callback MAPCALLBACK_OBJECTS, .SuicuneAppears
 
 .Dummy0:
@@ -21,6 +21,38 @@ Route47Underpass_MapScripts:
 
 .Dummy1:
 	end
+
+.MakeBridgesPriority:
+	checkscene
+	iffalse .DontChangeBridges
+	changeblock 44, 24, $55
+	changeblock 46, 24, $55
+	changeblock 48, 24, $55
+	changeblock 44, 18, $5c
+	changeblock 46, 18, $5c
+	changeblock 48, 18, $5c
+	changeblock 20, 24, $5c
+	changeblock 22, 24, $5c
+	changeblock 24, 24, $5c
+	changeblock 20, 16, $55
+	changeblock 22, 16, $55
+	changeblock 24, 16, $55
+	return
+
+.DontChangeBridges:
+	changeblock 44, 24, $17
+	changeblock 46, 24, $17
+	changeblock 48, 24, $17
+	changeblock 44, 18, $17
+	changeblock 46, 18, $17
+	changeblock 48, 18, $17
+	changeblock 20, 24, $17
+	changeblock 22, 24, $17
+	changeblock 24, 24, $17
+	changeblock 20, 16, $17
+	changeblock 22, 16, $17
+	changeblock 24, 16, $17
+	return
 
 .SuicuneAppears:
 	checkevent EVENT_CAUGHT_SUICUNE
@@ -218,14 +250,13 @@ Route47SuperNerdText:
 	done
 
 Route47_MapEvents:
-Route47Underpass_MapEvents:
 	db 0, 0 ; filler
 
 	db 5 ; warp events
 	warp_event 67, 21, CLIFFS_EDGE_GATE, 4
 	warp_event 53, 21, CLIFF_CAVE, 1
 	warp_event 52, 17, CLIFF_CAVE, 4
-	warp_event 53, 27, CLIFF_CAVE, 7
+	warp_event 53, 27, CLIFF_CAVE_B1F, 2
 	warp_event 11, 23, EMBEDDED_TOWER, 1
 
 	db 0 ; coord events

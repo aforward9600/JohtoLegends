@@ -312,6 +312,7 @@ INCLUDE "maps/Colosseum.asm"
 INCLUDE "maps/TimeCapsule.asm"
 INCLUDE "maps/WildAreaPokecenter.asm"
 INCLUDE "maps/EmbeddedTower.asm"
+INCLUDE "maps/CliffCaveB1F.asm"
 
 
 SECTION "Map Scripts 18", ROMX

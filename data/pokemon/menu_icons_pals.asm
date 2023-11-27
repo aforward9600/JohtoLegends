@@ -134,7 +134,7 @@ MonMenuIconPals:
 	icon_pals PINK,   RED    ; LICKILICKY
 	icon_pals PURPLE, BLUE   ; KOFFING
 	icon_pals PURPLE, BLUE   ; WEEZING
-	icon_pals BROWN,  RED    ; RHYHORN
+	icon_pals BROWN,  PINK   ; RHYHORN
 	icon_pals BROWN,  GRAY   ; RHYDON
 	icon_pals BROWN,  RED    ; RHYPERIOR
 	icon_pals PINK,   PURPLE ; HAPPINY
@@ -154,8 +154,8 @@ MonMenuIconPals:
 	icon_pals PINK,   GREEN  ; MR_MIME
 	icon_pals GREEN,  RED    ; SCYTHER
 	icon_pals RED,    GREEN  ; SCIZOR
-	icon_pals RED,    PINK   ; SMOOCHUM
-	icon_pals RED,    PINK   ; JYNX
+	icon_pals RED,    GREEN  ; SMOOCHUM
+	icon_pals RED,    GREEN  ; JYNX
 	icon_pals RED,    PINK   ; ELEKID
 	icon_pals RED,    GREEN  ; ELECTABUZZ
 	icon_pals RED,    GREEN  ; ELECTIVIRE
@@ -266,7 +266,7 @@ MonMenuIconPals:
 	icon_pals RED,    GRAY   ; SLUGMA
 	icon_pals RED,    BLUE   ; MAGCARGO
 	icon_pals BROWN,  BLUE   ; SWINUB
-	icon_pals BROWN,  RED    ; PILOSWINE
+	icon_pals BROWN,  BLUE   ; PILOSWINE
 	icon_pals BROWN,  RED    ; MAMOSWINE
 	icon_pals PINK,   PURPLE ; CORSOLA
 	icon_pals PINK,   PURPLE ; CURSOLA
@@ -322,7 +322,7 @@ MonMenuIconPals:
 	icon_pals BLUE,   TEAL   ; SUICUNE
 	icon_pals GREEN,  PURPLE ; LARVITAR
 	icon_pals BLUE,   PURPLE ; PUPITAR
-	icon_pals GREEN,  PURPLE ; TYRANITAR
+	icon_pals GREEN,  GRAY   ; TYRANITAR
 	icon_pals BLUE,   PINK   ; GIBLE
 	icon_pals BLUE,   PINK   ; GABITE
 	icon_pals BLUE,   PINK   ; GARCHOMP

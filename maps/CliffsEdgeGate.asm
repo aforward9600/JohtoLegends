@@ -6,7 +6,12 @@
 CliffsEdgeGate_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .MakeBridgesPriorityGate
+
+.MakeBridgesPriorityGate:
+	setmapscene ROUTE_47, SCENE_DEFAULT
+	return
 
 CliffsEdgeGateEngineer1Script:
 	jumptextfaceplayer CliffsEdgeGateEngineer1Text

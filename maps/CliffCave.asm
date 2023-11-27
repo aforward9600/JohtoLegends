@@ -4,7 +4,12 @@
 CliffCave_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .MakeBridgesSolid
+
+.MakeBridgesSolid:
+	setmapscene ROUTE_47, SCENE_DEFAULT
+	return
 
 CliffCaveSuperNerdScript:
 	jumptextfaceplayer CliffCaveSuperNerdText
@@ -19,14 +24,12 @@ CliffCaveSuperNerdText:
 CliffCave_MapEvents:
 	db 0, 0 ; filler
 
-	db 7 ; warp events
+	db 5 ; warp events
 	warp_event  5,  5, ROUTE_47, 2
 	warp_event  3,  3, CLIFF_CAVE, 3
 	warp_event 17,  3, CLIFF_CAVE, 2
 	warp_event 19,  7, ROUTE_47, 3
-	warp_event  6,  3, CLIFF_CAVE, 6
-	warp_event 11, 13, CLIFF_CAVE, 5
-	warp_event 11, 19, ROUTE_47_UNDERPASS, 4
+	warp_event  6,  3, CLIFF_CAVE_B1F, 1
 
 	db 0 ; coord events
 

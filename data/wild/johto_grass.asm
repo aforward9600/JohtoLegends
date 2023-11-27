@@ -1922,7 +1922,7 @@ JohtoGrassWildMons:
 	dbw 25, BAGON
 	dbw 50, SHELGON
 
-	map_id ROUTE_47_UNDERPASS
+	map_id ROUTE_47
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 60, MILTANK

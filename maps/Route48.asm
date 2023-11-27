@@ -6,7 +6,12 @@
 Route48_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .MakeBridgesPriorityRoute48
+
+.MakeBridgesPriorityRoute48:
+	setmapscene ROUTE_47, SCENE_DEFAULT
+	return
 
 TrainerFirebreatherFarrel:
 	trainer FIREBREATHER, FARREL, EVENT_BEAT_FIREBREATHER_FARREL, FirebreatherFarrelSeenText, FirebreatherFarrelBeatenText, 0, .Script

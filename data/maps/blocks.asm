@@ -1176,8 +1176,8 @@ FedHideoutB4F_Blocks:
 FedHideoutElevator_Blocks:
 	INCBIN "maps/FedHideoutElevator.blk"
 
-Route47Underpass_Blocks:
-	INCBIN "maps/Route47Underpass.blk"
+CliffCaveB1F_Blocks:
+	INCBIN "maps/CliffCaveB1F.blk"
 
 EmbeddedTower_Blocks:
 	INCBIN "maps/EmbeddedTower.blk"

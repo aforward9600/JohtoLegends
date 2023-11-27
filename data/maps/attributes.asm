@@ -382,8 +382,6 @@ ENDM
 	map_attributes WildAreaOutside, WILD_AREA_OUTSIDE, $35, SOUTH
 	connection south, Route48, ROUTE_48, -2
 
-	map_attributes Route47Underpass, ROUTE_47_UNDERPASS, $03, 0
-
 	map_attributes Route23, ROUTE_23, $0f, 0
 	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
 	map_attributes SproutTower2F, SPROUT_TOWER_2F, $00, 0
@@ -752,3 +750,4 @@ ENDM
 	map_attributes FedHideoutB4F, FED_HIDEOUT_B4F, $00, 0
 	map_attributes FedHideoutElevator, FED_HIDEOUT_ELEVATOR, $00, 0
 	map_attributes EmbeddedTower, EMBEDDED_TOWER, $00, 0
+	map_attributes CliffCaveB1F, CLIFF_CAVE_B1F, $00, 0
