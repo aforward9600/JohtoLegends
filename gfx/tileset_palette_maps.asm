@@ -123,6 +123,9 @@ INCLUDE "gfx/tilesets/kanto_2_palette_map.asm"
 TilesetFedHideoutPalMap:
 INCLUDE "gfx/tilesets/fed_hideout_palette_map.asm"
 
+TilesetSummitPalMap:
+INCLUDE "gfx/tilesets/summit_palette_map.asm"
+
 ; unused
 rept 26
 	db $06

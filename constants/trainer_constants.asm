@@ -207,7 +207,7 @@ CHRIS EQU __enum__
 	const GARY
 	const COREY1
 	const ALM
-	const ERICK
+	const BUMI
 	const ANDY
 	const TYLER
 	const SEAN
@@ -229,7 +229,7 @@ CHRIS EQU __enum__
 	const REENA1
 	const MARIA
 	const BETH2
-	const CAROL
+	const SOL
 	const CARA
 	const JESSIE
 	const CYBIL
@@ -506,6 +506,8 @@ CHRIS EQU __enum__
 	const RIVER
 	const CHANCE
 	const SPIKE
+	const BLUNO
+	const ROSSO
 
 	trainerclass BLAINE ; 2e
 	const BLAINE1
@@ -917,6 +919,7 @@ CHRIS EQU __enum__
 	const TABITHA
 	const JILLIAN
 	const BERTHA
+	const KATHY
 
 	trainerclass SENSATIONAL2
 	const DAISY

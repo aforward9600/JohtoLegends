@@ -38,7 +38,7 @@ MapGroupRoofs:
 	db -1             ; 25
 	db ROOF_NEW_BARK  ; 26 (Cherrygrove)
 	db ROOF_GOLDENROD ; 27 (Route 47)
-	db ROOF_VIOLET
+	db ROOF_MAHOGANY
 
 Roofs:
 ; entries correspond to ROOF_* constants

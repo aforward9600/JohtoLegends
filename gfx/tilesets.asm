@@ -386,3 +386,12 @@ INCBIN "data/tilesets/fed_hideout_metatiles.bin"
 
 TilesetFedHideoutColl:
 INCLUDE "data/tilesets/fed_hideout_collision.asm"
+
+TilesetSummitGFX:
+INCBIN "gfx/tilesets/summit.2bpp.lz"
+
+TilesetSummitMeta:
+INCBIN "data/tilesets/summit_metatiles.bin"
+
+TilesetSummitColl:
+INCLUDE "data/tilesets/summit_collision.asm"

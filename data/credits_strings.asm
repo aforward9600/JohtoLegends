@@ -69,7 +69,7 @@ CreditsStrings:
 	dw .Mmmmmmmmmmmmmmmmm
 	dw .TerukiMurakawa
 	dw .KazuyoshiOsawa
-	dw .KimikoNakamichi
+	dw .CrystalClearTeam
 	dw .End
 	dw .Unknown
 	dw .Staff
@@ -199,7 +199,7 @@ CreditsStrings:
 .Mmmmmmmmmmmmmmmmm:   db " Mmmmmmmmmmmmmmmmm@"
 .TerukiMurakawa:      db "  TERUKI MURAKAWA@"
 .KazuyoshiOsawa:      db "  KAZUYOSHI OSAWA@"
-.KimikoNakamichi:     db "  KIMIKO NAKAMICHI@"
+.CrystalClearTeam:    db " Crystal Clear Team@"
 .Staff:               db "      #mon"                 ; "ポケットモンスター"
                     next "   Johto Legends"           ; "　　クりスタル　バージョン"
                     next "      Credits@"             ; "　　　　スタッフ@"

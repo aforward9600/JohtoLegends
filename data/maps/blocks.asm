@@ -247,6 +247,7 @@ Route39_Blocks:
 	INCBIN "maps/Route39.blk"
 
 PlayersHouse1F_Blocks:
+GoldCrystalHouse_Blocks:
 	INCBIN "maps/PlayersHouse1F.blk"
 
 Route38EcruteakGate_Blocks:
@@ -1181,3 +1182,12 @@ CliffCaveB1F_Blocks:
 
 EmbeddedTower_Blocks:
 	INCBIN "maps/EmbeddedTower.blk"
+
+SilverCaveRestRoom_Blocks:
+	INCBIN "maps/SilverCaveRestRoom.blk"
+
+SilverCaveSummitOutside_Blocks:
+	INCBIN "maps/SilverCaveSummitOutside.blk"
+
+MtSilverSummit_Blocks:
+	INCBIN "maps/MtSilverSummit.blk"

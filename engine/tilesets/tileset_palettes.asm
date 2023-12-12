@@ -26,6 +26,10 @@ LoadSpecialMapPalette:
 	jp z, .kanto
 	cp TILESET_MART
 	jp z, .mart
+	cp TILESET_CAVE
+	jp z, .cave
+	cp TILESET_SUMMIT
+	jp z, .summit
 	jp .do_nothing
 
 .darkness
@@ -47,7 +51,7 @@ LoadSpecialMapPalette:
 	ld a, [wEnvironment]
 	and $7
 	cp INDOOR ; Hall of Fame
-	jr z, .do_nothing
+	jp z, .do_nothing
 	call LoadIcePathPalette
 	scf
 	ret
@@ -127,6 +131,27 @@ LoadSpecialMapPalette:
 	and a
 	ret
 
+.cave
+	ld a, [wEnvironment]
+	and $7
+	cp CAVE ; Hall of Fame
+	jr z, .do_nothing
+	call LoadIcePathPalette
+	scf
+	ret
+
+.summit:
+	ld hl, SummitPalette
+	ld a, [wTimeOfDayPal]
+	maskbits NUM_DAYTIMES
+	ld bc, 8 palettes
+	call AddNTimes
+	ld de, wBGPals1
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	scf
+	ret
+
 .do_nothing
 	and a
 	ret
@@ -134,6 +159,19 @@ LoadSpecialMapPalette:
 INCLUDE "gfx/tilesets/kanto.pal"
 
 INCLUDE "gfx/tilesets/mansion_roof.pal"
+
+INCLUDE "gfx/tilesets/summit.pal"
+
+LoadCaveRoomPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, CaveRoomPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+CaveRoomPalette:
+INCLUDE "gfx/tilesets/cave_room.pal"
 
 LoadDarknessPalette:
 	ld a, BANK(wBGPals1)

@@ -161,6 +161,7 @@ CreditsScript:
 	db          SIRWHIBBLES, 2
 	db                RANGI, 3
 	db          FERROPEXOLA, 4
+	db         MEGAMANOMEGA, 5
 
 	db CREDITS_WAIT, 12
 
@@ -189,6 +190,7 @@ CreditsScript:
 	db           GAME_FREAK, 1
 	db          FERROPEXOLA, 2
 	db                RANGI, 3
+	db           PRISM_TEAM, 4
 
 	db CREDITS_WAIT, 12
 

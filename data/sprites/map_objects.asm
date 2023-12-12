@@ -98,10 +98,10 @@ SpriteMovementData::
 	db 0 ; palette flags
 
 ; SPRITEMOVEDATA_0C
-	db SPRITEMOVEFN_08 ; movement function
+	db SPRITEMOVEFN_BOUNCE ; movement function
 	db DOWN ; facing
-	db OBJECT_ACTION_STAND ; action
-	db 0 ; flags1
+	db OBJECT_ACTION_BOUNCE ; action
+	db WONT_DELETE | FIXED_FACING | SLIDING | MOVE_ANYWHERE ; flags1
 	db 0 ; flags2
 	db 0 ; palette flags
 

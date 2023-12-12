@@ -217,9 +217,10 @@ RivalsHouse1F_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, RivalsHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, RivalsHouseBookshelf
+	bg_event  2,  1, BGEVENT_READ, MoveDeleterTelevision
 
 	db 2 ; object events
 	object_event  5,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RivalsDadScript, -1

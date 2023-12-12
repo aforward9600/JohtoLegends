@@ -3,10 +3,10 @@ SECTION "Sprites 1", ROMX
 ChrisSpriteGFX::               INCBIN "gfx/sprites/chris.2bpp"
 ChrisBikeSpriteGFX::           INCBIN "gfx/sprites/chris_bike.2bpp"
 GameboyKidSpriteGFX::          INCBIN "gfx/sprites/gameboy_kid.2bpp"
-SilverSpriteGFX::              INCBIN "gfx/sprites/silver.2bpp"
+GoldSpriteGFX::                INCBIN "gfx/sprites/gold.2bpp"
 OakSpriteGFX::                 INCBIN "gfx/sprites/oak.2bpp"
 BurglarSpriteGFX::             INCBIN "gfx/sprites/burglar.2bpp"
-BlueSpriteGFX::                INCBIN "gfx/sprites/blue.2bpp"
+CrystalSpriteGFX::             INCBIN "gfx/sprites/crystal.2bpp"
 BillSpriteGFX::                INCBIN "gfx/sprites/bill.2bpp"
 ElderSpriteGFX::               INCBIN "gfx/sprites/elder.2bpp"
 JanineSpriteGFX::              INCBIN "gfx/sprites/janine.2bpp"
@@ -160,3 +160,9 @@ GlaceonSpriteGFX::             INCBIN "gfx/sprites/glaceon.2bpp"
 BrockSpriteGFX::               INCBIN "gfx/sprites/brock.2bpp"
 SensationalSpriteGFX::         INCBIN "gfx/sprites/sensational.2bpp"
 RoughneckSpriteGFX::           INCBIN "gfx/sprites/roughneck.2bpp"
+MewWalkSpriteGFX::             INCBIN "gfx/sprites/mew.2bpp"
+
+
+SECTION "Sprites 4", ROMX
+
+FireSpriteGFX::                INCBIN "gfx/sprites/fire.2bpp"

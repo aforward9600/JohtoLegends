@@ -132,11 +132,13 @@ Lance and Cynthia overworld sprites: Rangi and the Polished Crystal Team.
 
 Clair Trainer Sprite base, Gen 5 Black Belt sprite: Solo993
 
-Lance Trainer Sprite base: MegamanOmega
+Lance Trainer Sprite base and Mew overworld sprite: MegamanOmega
 
 Armored Mewtwo sprites and icon: Rangi
 
 Nown Sprite and animation: CynderQuill
+
+Sleeping bag and campfire graphics: Prism Team
 
 Happiny, Mime Jr. sprite and animation: Rangi & ShadowOne333
 

@@ -334,6 +334,7 @@ TilesetAerodactylWordRoomAnim:
 TilesetPokemonMansionAnim:
 TilesetTrainStationAnim:
 TilesetFedHideoutAnim:
+TilesetSummitAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

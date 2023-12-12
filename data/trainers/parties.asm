@@ -2985,13 +2985,13 @@ endc
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (13)
-	db "ERICK@", TRAINERTYPE_NORMAL
-	db 10
-	dw BULBASAUR
-	db 10
-	dw CHARMANDER
-	db 10
-	dw SQUIRTLE
+	db "Bumi@", TRAINERTYPE_NORMAL
+	db 76
+	dw DUGTRIO
+	db 76
+	dw GARCHOMP
+	db 76
+	dw QUAGSIRE
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (14)
@@ -3315,13 +3315,13 @@ endc
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (13)
-	db "CAROL@", TRAINERTYPE_NORMAL
-	db 35
-	dw ELECTRODE
-	db 35
-	dw STARMIE
-	db 35
-	dw NINETALES
+	db "Sol@", TRAINERTYPE_NORMAL
+	db 76
+	dw SANDSLASH
+	db 76
+	dw DONPHAN
+	db 77
+	dw GLISCOR
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (14)
@@ -6115,6 +6115,42 @@ endc
 	db 75
 	dw GOROTORA
 	db -1
+
+	next_list_item ; BIKER (15) Fed Hideout B4F
+	db "Bluno@", TRAINERTYPE_MOVES
+	db 77
+	dw MUK
+	dw GUNK_SHOT, TOXIC, KNOCK_OFF, ICE_PUNCH
+	db 77
+	dw GALLADE
+	dw ZEN_HEADBUTT, CLOSE_COMBAT, LEAF_BLADE, BULK_UP
+	db 77
+	dw MAGCARGO
+if DEF(_FAITHFUL)
+	dw POWER_GEM, FIRE_BLAST, SHELL_SMASH, EARTH_POWER
+else
+	dw FLASH_CANNON, FIRE_BLAST, SHELL_SMASH, EARTH_POWER
+endc
+	db 78
+	dw FERALIGATR
+	dw WAVE_CRASH, CRUNCH, ICE_PUNCH, EARTHQUAKE
+	db -1 ; end
+
+	next_list_item ; BIKER (16) Fed Hideout B4F
+	db "Rosso@", TRAINERTYPE_MOVES
+	db 77
+	dw WEEZING
+	dw BELCH, EXPLOSION, DESTINY_BOND, FIRE_BLAST
+	db 77
+	dw MR__MIME
+	dw PSYCHIC_M, MOONBLAST, MAGICAL_LEAF, CALM_MIND
+	db 77
+	dw CACTURNE
+	dw NASTY_PLOT, DARK_PULSE, ENERGY_BALL, SUCKER_PUNCH
+	db 78
+	dw TYPHLOSION
+	dw FIRE_BLAST, EARTHQUAKE, THUNDERPUNCH, GRASS_KNOT
+	db -1 ; end
 
 	end_list_items
 
@@ -12185,6 +12221,26 @@ endc
 	db 76
 	dw ALAKAZAM
 	dw MOONBLAST, CALM_MIND, SHADOW_BALL, PSYCHIC_M
+	db -1 ; end
+
+	next_list_item ; DELINQUENT8 (Fed Hideout B4F)
+	db "Kathy@", TRAINERTYPE_MOVES
+	db 76
+	dw YANMEGA
+if DEF(_FAITHFUL)
+	dw BUG_BUZZ, AIR_SLASH, U_TURN, HYPNOSIS
+else
+	dw SIGNAL_WAVE, JURASSICBEAM, NASTY_PLOT, HYPNOSIS
+endc
+	db 76
+	dw NIDOQUEEN
+	dw POISON_JAB, EARTHQUAKE, SUPERPOWER, BODY_SLAM
+	db 76
+	dw SKARMORY
+	dw STEEL_WING, DRILL_PECK, ROOST, NIGHT_SLASH
+	db 77
+	dw MISMAGIUS
+	dw SHADOW_BALL, MAGICAL_LEAF, MOONBLAST, HYPNOSIS
 	db -1 ; end
 
 	end_list_items

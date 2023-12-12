@@ -18,7 +18,6 @@ FedHideout1FRoughneck1:
 	writetext FedHideout1FRoughneck1Text
 	waitbutton
 	closetext
-	setevent EVENT_GOT_ELEVATOR_PASSWORD
 	setevent EVENT_FED_HIDEOUT_GIOVANNI
 	setevent EVENT_FED_HIDEOUT_PLAYER
 	end
@@ -48,6 +47,8 @@ TrainerBikerSpike:
 	trainer BIKER, SPIKE, EVENT_BEAT_BIKER_SPIKE, BikerSpikeSeenText, BikerSpikeBeatenText, 0, .Script
 
 .Script:
+	setevent EVENT_FED_HIDEOUT_GIOVANNI
+	setevent EVENT_FED_HIDEOUT_PLAYER
 	endifjustbattled
 	opentext
 	writetext BikerSpikeAfterText

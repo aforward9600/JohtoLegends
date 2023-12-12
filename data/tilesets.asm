@@ -54,3 +54,4 @@ Tilesets::
 	tileset TilesetPokemonMansion
 	tileset TilesetKanto2
 	tileset TilesetFedHideout
+	tileset TilesetSummit

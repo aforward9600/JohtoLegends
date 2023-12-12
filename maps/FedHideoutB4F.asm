@@ -7,6 +7,9 @@
 	const FEDHIDEOUTB4F_ROUGHNECK
 	const FEDHIDEOUTB4F_DRACO ; if player is male
 	const FEDHIDEOUTB4F_DAHLIA ; if player is female
+	const FEDHIDEOUTB4F_DELINQUENT2
+	const FEDHIDEOUTB4F_BIKER1
+	const FEDHIDEOUTB4F_BIKER2
 
 FedHideoutB4F_MapScripts:
 	db 2 ; scene scripts
@@ -81,6 +84,7 @@ BikerBossMovement2:
 	clearevent EVENT_VIRIDIAN_CITY_CIVILLIANS
 	clearevent EVENT_CERULEAN_CITY_CIVILLIANS
 	clearevent EVENT_PEWTER_CITY_CIVILLIANS
+	setevent EVENT_KANTO_POKECENTER_RIVAL
 	setscene SCENE_FINISHED
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
@@ -116,6 +120,8 @@ BikerBossMovement2:
 	pause 15
 	turnobject FEDHIDEOUTB4F_GIOVANNI1, LEFT
 	pause 15
+	special FadeOutMusic
+	pause 60
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	opentext
 	writetext GiovanniGoodText
@@ -170,6 +176,37 @@ FedHideoutB4FRoughneck:
 	waitbutton
 	closetext
 	turnobject FEDHIDEOUTB4F_ROUGHNECK, LEFT
+	end
+
+TrainerDelinquentKathy:
+	trainer DELINQUENT, KATHY, EVENT_BEAT_DELINQUENT_KATHY, DelinquentKathySeenText, DelinquentKathyBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext DelinquentKathyAfterText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_ELEVATOR_PASSWORD
+	end
+
+TrainerBikerBluno:
+	trainer BIKER, BLUNO, EVENT_BEAT_BIKER_BLUNO, BikerBlunoSeenText, BikerBlunoBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext BikerBlunoAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerBikerRosso:
+	trainer BIKER, ROSSO, EVENT_BEAT_BIKER_ROSSO, BikerRossoSeenText, BikerRossoBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext BikerRossoAfterText
+	waitbutton
+	closetext
 	end
 
 PlayerMovesToBikerBoss1Movement:
@@ -564,7 +601,81 @@ FedHideoutB4FRoughneckText:
 	para "He shouldn't even"
 	line "have the password!"
 
-	para "…Wait…Is this?"
+	para "…Wait…is this?"
+	done
+
+DelinquentKathySeenText:
+	text "You can't use the"
+	line "elevator, huh?"
+
+	para "Well, that's too"
+	line "bad, buddy!"
+
+	para "I know what the"
+	line "password is,"
+
+	para "but you're not"
+	line "getting it!"
+	done
+
+DelinquentKathyBeatenText:
+	text "Alright, alright!"
+
+	para "I'll tell you the"
+	line "password if you"
+	cont "leave me alone!"
+	done
+
+DelinquentKathyAfterText:
+	text "The password is:"
+
+	para "REDGREEN1996"
+
+	para "You happy now?"
+	done
+
+BikerRossoSeenText:
+	text "We'll defend the"
+	line "boss's life with"
+	cont "our lives!"
+	done
+
+BikerRossoBeatenText:
+	text "Well, maybe not"
+	line "OUR lives…"
+	done
+
+BikerRossoAfterText:
+	text "It might be worth"
+	line "it to go back to"
+	cont "Orre…"
+
+	para "Maybe I can find"
+	line "work there…"
+	done
+
+BikerBlunoSeenText:
+	text "I'm the last line"
+	line "of defense!"
+
+	para "I can't lose!"
+	done
+
+BikerBlunoBeatenText:
+	text "I lost…"
+	done
+
+BikerBlunoAfterText:
+	text "Maybe you're right,"
+	line "Rosso…"
+
+	para "Maybe we should"
+	line "head back to"
+	cont "Orre…"
+
+	para "I think things are"
+	line "going to get ugly"
+	cont "for us soon…"
 	done
 
 FedHideoutB4F_MapEvents:
@@ -581,7 +692,7 @@ FedHideoutB4F_MapEvents:
 
 	db 0 ; bg events
 
-	db 8 ; object events
+	db 11 ; object events
 	object_event 17,  3, SPRITE_BIKER_BOSS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FED_HIDEOUT_LEADER
 	object_event 17, 11, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FED_HIDEOUT_GIOVANNI
 	object_event  5, 12, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FedHideoutB4FRival, EVENT_FED_HIDEOUT_NPCS
@@ -590,3 +701,6 @@ FedHideoutB4F_MapEvents:
 	object_event  7, 19, SPRITE_ROUGHNECK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FedHideoutB4FRoughneck, EVENT_FED_HIDEOUT_NPCS
 	object_event 17,  6, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FED_HIDEOUT_PLAYER
 	object_event 17,  6, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FED_HIDEOUT_PLAYER
+	object_event  4,  2, SPRITE_DAISY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerDelinquentKathy, EVENT_FED_HIDEOUT_NPCS
+	object_event 15, 12, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerBikerRosso, EVENT_FED_HIDEOUT_NPCS
+	object_event 18, 12, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBikerBluno, EVENT_FED_HIDEOUT_NPCS

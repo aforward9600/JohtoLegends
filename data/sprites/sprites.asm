@@ -9,10 +9,10 @@ OverworldSprites:
 	overworld_sprite ChrisSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ChrisBikeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite GameboyKidSpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
-	overworld_sprite SilverSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite GoldSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite OakSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite BurglarSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite BlueSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite CrystalSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BillSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite ElderSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite JanineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
@@ -158,3 +158,5 @@ OverworldSprites:
 	overworld_sprite BrockSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite SensationalSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite RoughneckSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite MewWalkSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite FireSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED

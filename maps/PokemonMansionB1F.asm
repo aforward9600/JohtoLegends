@@ -239,7 +239,7 @@ PokemonMansionB1FScientist3:
 	faceplayer
 	opentext
 	checkscene
-	iffalse .PokemonMansionB1FScientist32
+	iftrue .PokemonMansionB1FScientist32
 	writetext PokemonMansionB1FScientist3Text
 	waitbutton
 	closetext

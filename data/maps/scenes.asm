@@ -111,4 +111,6 @@ MapScenes::
 	scene_var POKEMON_MANSION_B1F,                         wPokemonMansionB1FSceneID
 	scene_var FED_HIDEOUT_B4F,                             wFedHideoutB4FSceneID
 	scene_var ROUTE_47,                                    wRoute47SceneID
+	scene_var MT_SILVER_SUMMIT,                            wMtSilverSummitID
+	scene_var GOLD_CRYSTAL_HOUSE,                          wGoldCrystalHouseID
 	db -1 ; end

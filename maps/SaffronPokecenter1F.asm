@@ -23,6 +23,8 @@ SaffronPokecenter1FGrannyScript:
 SaffronPokecenter1FPokefanMScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .SaffronPokecenter1FPokefanM2
 	checkevent EVENT_BEAT_SABRINA
 	iftrue .SolvedKantoPowerCrisis
 	writetext SaffronPokecenter1FFisherText
@@ -32,6 +34,12 @@ SaffronPokecenter1FPokefanMScript:
 
 .SolvedKantoPowerCrisis:
 	writetext SaffronPokecenter1FFisherReturnedMachinePartText
+	waitbutton
+	closetext
+	end
+
+.SaffronPokecenter1FPokefanM2:
+	writetext SaffronPokecenter1FPokefanMText2
 	waitbutton
 	closetext
 	end
@@ -132,6 +140,12 @@ SaffronPokecenter1FRivalText3:
 	line "only choose one"
 	cont "after this is all"
 	cont "over."
+	done
+
+SaffronPokecenter1FPokefanMText2:
+	text "I guess Koichi is"
+	line "good for something"
+	cont "after all."
 	done
 
 SaffronPokecenter1F_MapEvents:

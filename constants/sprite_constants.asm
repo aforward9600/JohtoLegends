@@ -5,10 +5,10 @@
 	const SPRITE_CHRIS ; 01
 	const SPRITE_CHRIS_BIKE ; 02
 	const SPRITE_GAMEBOY_KID ; 03
-	const SPRITE_SILVER ; 04
+	const SPRITE_GOLD ; 04
 	const SPRITE_OAK ; 05
 	const SPRITE_BURGLAR ; 06
-	const SPRITE_BLUE ; 07
+	const SPRITE_CRYSTAL ; 07
 	const SPRITE_BILL ; 08
 	const SPRITE_ELDER ; 09
 	const SPRITE_JANINE ; 0a
@@ -154,9 +154,11 @@
 	const SPRITE_BROCK
 	const SPRITE_SENSATIONAL
 	const SPRITE_ROUGHNECK
+	const SPRITE_MEW_WALK
+	const SPRITE_FIRE
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
-	const_def $99
+	const_def $9b
 SPRITE_POKEMON EQU const_value
 	const SPRITE_UNOWN ; 99
 	const SPRITE_SKARMINI ; 9a
@@ -231,7 +233,7 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_NIDORAN_F
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
-	const_def $e4
+	const_def $e6
 	const SPRITE_DAY_CARE_MON_1 ; e1
 	const SPRITE_DAY_CARE_MON_2 ; e2
 

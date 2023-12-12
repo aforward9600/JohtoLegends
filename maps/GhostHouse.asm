@@ -100,7 +100,7 @@ GhostHouseDusknoirScript:
 	cry DUSKNOIR
 	waitbutton
 	closetext
-	loadwildmon DRATINI, 45
+	loadwildmon DUSKNOIR, 45
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	ifequal LOSE, .NotBeaten

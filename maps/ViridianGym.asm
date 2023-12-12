@@ -1,6 +1,7 @@
 	object_const_def ; object_event constants
 	const VIRIDIANGYM_GIOVANNI
-	const VIRIDIANGYM_GYM_GUY
+	const VIRIDIANGYM_COOLTRAINERF
+	const VIRIDIANGYM_COOLTRAINERM
 
 ViridianGym_MapScripts:
 	db 0 ; scene scripts
@@ -20,6 +21,8 @@ ViridianGymBlueScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GIOVANNI
+	setevent EVENT_BEAT_COOLTRAINERF_SOL
+	setevent EVENT_BEAT_COOLTRAINERM_BUMI
 	opentext
 	writetext Text_ReceivedEarthBadge
 	playsound SFX_GET_BADGE
@@ -52,18 +55,24 @@ ViridianGymBlueScript:
 	closetext
 	end
 
-ViridianGymGuyScript:
-	faceplayer
+TrainerCooltrainerFSol:
+	trainer COOLTRAINERF, SOL, EVENT_BEAT_COOLTRAINERF_SOL, CooltrainerFSolSeenText, CooltrainerFSolBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
 	opentext
-	checkevent EVENT_BEAT_GIOVANNI
-	iftrue .ViridianGymGuyWinScript
-	writetext ViridianGymGuyText
+	writetext CooltrainerFSolAfterText
 	waitbutton
 	closetext
 	end
 
-.ViridianGymGuyWinScript:
-	writetext ViridianGymGuyWinText
+TrainerCooltrainerMBumi:
+	trainer COOLTRAINERM, BUMI, EVENT_BEAT_COOLTRAINERM_BUMI, CooltrainerMBumiSeenText, CooltrainerMBumiBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext CooltrainerMBumiAfterText
 	waitbutton
 	closetext
 	end
@@ -145,42 +154,66 @@ LeaderBlueAfterText:
 	done
 
 LeaderBlueEpilogueText:
-	text "BLUE: Listen, you."
+	text "Giovanni: The Fed"
+	line "hideout has been"
+	cont "cleaned up of any"
+	cont "vermin."
 
-	para "You'd better not"
-	line "lose until I beat"
-	cont "you. Got it?"
+	para "I decided to buy"
+	line "it and renovate it"
+	cont "into a casino."
+
+	para "After the cities"
+	line "are restored, of"
+	cont "course."
+
+	para "I figured people"
+	line "could use some"
+	cont "levity in their"
+	cont "lives after this"
+	cont "whole ordeal."
 	done
 
-ViridianGymGuyText:
-	text "Yo, CHAMP in"
-	line "making!"
+CooltrainerFSolSeenText:
+	text "I work here part-"
+	line "time just moving"
+	cont "boxes around."
 
-	para "How's it going?"
-	line "Looks like you're"
-	cont "on a roll."
-
-	para "The GYM LEADER is"
-	line "a guy who battled"
-
-	para "the CHAMPION three"
-	line "years ago."
-
-	para "He's no pushover."
-
-	para "Give it everything"
-	line "you've got!"
+	para "It's not glamorous,"
+	line "but hey, money is"
+	cont "money."
 	done
 
-ViridianGymGuyWinText:
-	text "Man, you are truly"
-	line "tough…"
+CooltrainerFSolBeatenText:
+	text "My money!"
+	done
 
-	para "That was a heck of"
-	line "an inspirational"
+CooltrainerFSolAfterText:
+	text "That's why I don't"
+	line "like losing."
 
-	para "battle. It brought"
-	line "tears to my eyes."
+	para "It's a waste of"
+	line "money!"
+	done
+
+CooltrainerMBumiSeenText:
+	text "I'm strengthening"
+	line "my body by moving"
+	cont "these boxes."
+
+	para "Gotta be strong in"
+	line "body and #mon!"
+	done
+
+CooltrainerMBumiBeatenText:
+	text "Or was it strong"
+	line "in body and mind?"
+	done
+
+CooltrainerMBumiAfterText:
+	text "I guess my mind's"
+	line "another thing I"
+	cont "gotta work on."
 	done
 
 ViridianGym_MapEvents:
@@ -194,6 +227,7 @@ ViridianGym_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event  5,  3, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_VIRIDIAN_GYM_BLUE
-	object_event  7, 13, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymGuyScript, EVENT_VIRIDIAN_GYM_TRAINERS
+	object_event  5, 12, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerFSol, EVENT_VIRIDIAN_GYM_TRAINERS
+	object_event  4,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerMBumi, EVENT_VIRIDIAN_GYM_TRAINERS

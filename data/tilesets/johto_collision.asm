@@ -159,7 +159,7 @@
 	tilecoll TALL_GRASS, TALL_GRASS, HEADBUTT_TREE, TALL_GRASS ; 9e
 	tilecoll FLOOR, WALL, WALL, WALL ; 9f
 	tilecoll WALL, WALL, WALL, WALL ; a0
-	tilecoll WALL, WALL, WALL, WALL ; a1
+	tilecoll FLOOR, FLOOR, WALL, WALL ; a1
 	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; a2
 	tilecoll WALL, WALL, WALL, WALL ; a3
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a4
@@ -169,25 +169,25 @@
 	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; a8
 	tilecoll WALL, HOP_DOWN_LEFT, WALL, WALL ; a9
 	tilecoll HOP_DOWN, FLOOR, WALL, FLOOR ; aa
-	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE, FLOOR ; ab
+	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; ab
 	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; ac
 	tilecoll FLOOR, FLOOR, CAVE, WALL ; ad
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; ae
-	tilecoll WALL, FLOOR, WALL, FLOOR ; af
+	tilecoll WALL, WALL, CAVE, WALL ; af
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; b0
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; b1
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; b2
-	tilecoll FLOOR, HEADBUTT_TREE, FLOOR, HEADBUTT_TREE ; b3
-	tilecoll FLOOR, FLOOR, HEADBUTT_TREE, HEADBUTT_TREE ; b4
+	tilecoll UP_WALL, WALL, FLOOR, WALL ; b3
+	tilecoll WALL, WALL, WALL, WALL ; b4
 	tilecoll FLOOR, HEADBUTT_TREE, FLOOR, FLOOR ; b5
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; b6
-	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, FLOOR, FLOOR ; b7
+	tilecoll WALL, WALL, WALL, WALL ; b7
 	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; b8
-	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, FLOOR, HEADBUTT_TREE ; b9
+	tilecoll WALL, WALL, WALL, WALL ; b9
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; ba
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; bb
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; bc
-	tilecoll FLOOR, FLOOR, WALL, FLOOR ; bd
+	tilecoll WALL, FLOOR, WALL, FLOOR ; bd
 	tilecoll FLOOR, FLOOR, WALL, WALL ; be
 	tilecoll FLOOR, WALL, WALL, WALL ; bf
 	tilecoll WALL, FLOOR, WALL, WALL ; c0
@@ -198,3 +198,5 @@
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; c5
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; c6
 	tilecoll WALL, WALL, WALL, WALL ; c7
+	tilecoll FLOOR, WALL, WALL, WALL ; c8
+	tilecoll WALL, WALL, WALL, WALL ; c9

@@ -24,7 +24,7 @@ TrainerCooltrainermSean:
 	end
 
 TrainerCooltrainerfCarol:
-	trainer COOLTRAINERF, CAROL, EVENT_BEAT_COOLTRAINERF_CAROL, CooltrainerfCarolSeenText, CooltrainerfCarolBeatenText, 0, .Script
+	trainer COOLTRAINERF, SOL, EVENT_BEAT_COOLTRAINERF_SOL, CooltrainerfCarolSeenText, CooltrainerfCarolBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

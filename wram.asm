@@ -2712,8 +2712,10 @@ wRocketLairBossRoomSceneID::                      db
 wPokemonMansionB1FSceneID::                       db
 wFedHideoutB4FSceneID::                           db
 wRoute47SceneID::                                 db
+wMtSilverSummitID::                               db
+wGoldCrystalHouseID::                             db
 
-	ds 19
+	ds 17
 
 ; fight counts
 wJackFightCount::    db ; d9f2

@@ -56,6 +56,7 @@ ENDM
 	map_const ROUTE_44,                                    30,  9 ;  6
 	map_const MAHOGANY_TOWN,                               10,  9 ;  7
 	map_const FOSSIL_HOUSE,                                 4,  4 ;  8
+	map_const SILVER_CAVE_SUMMIT_OUTSIDE,                  16, 17 ;  9
 
 	newgroup                                                      ;  3
 
@@ -152,6 +153,7 @@ ENDM
 	map_const TEAM_ROCKET_BASE_JAIL,                        5,  9 ; 95
 	map_const NOWN_ROOM,                                    4, 11 ; 96
 	map_const NOWN_PUZZLE_ROOM,                             4,  5 ; 97
+	map_const SILVER_CAVE_REST_ROOM,                        5,  4 ; 98
 
 	newgroup                                                      ;  4
 
@@ -548,4 +550,6 @@ ENDM
 
 	newgroup
 
-	map_const BELLCHIME_PATH,                              14,  7 ; 10
+	map_const BELLCHIME_PATH,                              14,  7 ; 1
+	map_const MT_SILVER_SUMMIT,                             7, 10 ; 2
+	map_const GOLD_CRYSTAL_HOUSE,                           5,  4 ; 3
