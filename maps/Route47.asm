@@ -25,33 +25,41 @@ Route47_MapScripts:
 .MakeBridgesPriority:
 	checkscene
 	iffalse .DontChangeBridges
+	changeblock 42, 24, $63
 	changeblock 44, 24, $55
 	changeblock 46, 24, $55
 	changeblock 48, 24, $55
+	changeblock 50, 24, $62
 	changeblock 44, 18, $5c
 	changeblock 46, 18, $5c
 	changeblock 48, 18, $5c
 	changeblock 20, 24, $5c
 	changeblock 22, 24, $5c
 	changeblock 24, 24, $5c
+	changeblock 18, 16, $63
 	changeblock 20, 16, $55
 	changeblock 22, 16, $55
 	changeblock 24, 16, $55
+	changeblock 26, 16, $64
 	return
 
 .DontChangeBridges:
+	changeblock 42, 24, $18
 	changeblock 44, 24, $17
 	changeblock 46, 24, $17
 	changeblock 48, 24, $17
 	changeblock 44, 18, $17
+	changeblock 50, 24, $16
 	changeblock 46, 18, $17
 	changeblock 48, 18, $17
 	changeblock 20, 24, $17
 	changeblock 22, 24, $17
 	changeblock 24, 24, $17
+	changeblock 18, 16, $18
 	changeblock 20, 16, $17
 	changeblock 22, 16, $17
 	changeblock 24, 16, $17
+	changeblock 26, 16, $38
 	return
 
 .SuicuneAppears:

@@ -15,7 +15,7 @@ OverworldSprites:
 	overworld_sprite CrystalSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BillSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite ElderSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite JanineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite OfficerJennySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KurtSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite MomSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite BlaineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
@@ -154,7 +154,7 @@ OverworldSprites:
 	overworld_sprite LotadStillSpriteGFX, 4, STILL_SPRITE, PAL_OW_GREEN
 	overworld_sprite StarmieStillSpriteGFX, 4, STILL_SPRITE, PAL_OW_PINK
 	overworld_sprite DiglettStillSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
-	overworld_sprite GlaceonSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite ScientistFSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BrockSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite SensationalSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite RoughneckSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK

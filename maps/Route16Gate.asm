@@ -34,28 +34,29 @@ Route16GateCannotPassMovement:
 	step_end
 
 Route16GateOfficerText:
-	text "CYCLING ROAD"
+	text "Cycling Road"
 	line "starts here."
 
-	para "It's all downhill,"
-	line "so it's totally"
-	cont "exhilarating."
+	para "I wouldn't go that"
+	line "way, honestly."
 
-	para "It's a great sort"
-	line "of feeling that"
+	para "It's a downhill"
+	line "ride, and it's"
+	cont "crawling with Fed"
+	cont "goons."
 
-	para "you can't get from"
-	line "a ship or train."
+	para "Enter at your own"
+	line "risk."
 	done
 
 Route16GateCannotPassText:
 	text "Hey! Whoa! Stop!"
 
 	para "You can't go out"
-	line "on the CYCLING"
+	line "on the Cycling"
 
-	para "ROAD without a"
-	line "BICYCLE."
+	para "Road without a"
+	line "Bicycle."
 	done
 
 Route16Gate_MapEvents:

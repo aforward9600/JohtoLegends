@@ -116,8 +116,6 @@ INCLUDE "maps/CeladonGym.asm"
 INCLUDE "maps/CeladonCafe.asm"
 INCLUDE "maps/Route16FuchsiaSpeechHouse.asm"
 INCLUDE "maps/Route16Gate.asm"
-INCLUDE "maps/Route7SaffronGate.asm"
-INCLUDE "maps/Route17Route18Gate.asm"
 
 
 SECTION "Map Scripts 8", ROMX
@@ -137,6 +135,8 @@ INCLUDE "maps/VermilionPortPassage.asm"
 INCLUDE "maps/MountMoonSquare.asm"
 INCLUDE "maps/MountMoonGiftShop.asm"
 INCLUDE "maps/TinTowerRoof.asm"
+INCLUDE "maps/Route17Route18Gate.asm"
+INCLUDE "maps/Route7SaffronGate.asm"
 
 
 SECTION "Map Scripts 9", ROMX

@@ -13,11 +13,15 @@ Route16FuchsiaSpeechHouseBookshelf:
 	jumpstd picturebookshelf
 
 Route16FuchsiaSpeechHouseSuperNerdText:
-	text "If you cruise down"
-	line "CYCLING ROAD, you"
+	text "What did you just"
+	line "do?!"
 
-	para "will end up in"
-	line "FUCHSIA CITY."
+	para "You cut down that"
+	line "tree!"
+
+	para "That was my only"
+	line "protection against"
+	cont "the Federation!"
 	done
 
 Route16FuchsiaSpeechHouse_MapEvents:
@@ -34,4 +38,4 @@ Route16FuchsiaSpeechHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, Route16FuchsiaSpeechHouseBookshelf
 
 	db 1 ; object events
-	object_event  2,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route16FuchsiaSpeechHouseSuperNerdScript, -1
+	object_event  2,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route16FuchsiaSpeechHouseSuperNerdScript, -1

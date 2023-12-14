@@ -34,19 +34,27 @@ Route17Route18GateCannotPassMovement:
 	step_end
 
 Route17Route18GateOfficerText:
-	text "CYCLING ROAD"
+	text "Cycling Road"
 	line "Uphill Starts Here"
+
+	para "Not only do you"
+	line "have to cycle up"
+	cont "hill,"
+
+	para "you have to avoid"
+	line "getting mugged by"
+	cont "Feds."
 	done
 
 Route17Route18GateCannotPassText:
 	text "Hang on! Don't you"
-	line "have a BICYCLE?"
+	line "have a Bicycle?"
 
-	para "The CYCLING ROAD"
+	para "The Cycling Road"
 	line "is beyond here."
 
 	para "You have to have a"
-	line "BICYCLE to go on."
+	line "Bicycle to go on."
 	done
 
 Route17Route18Gate_MapEvents:

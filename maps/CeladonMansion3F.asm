@@ -14,7 +14,7 @@ GameFreakGameDesignerScript:
 	opentext
 	writetext GameFreakGameDesignerText
 	readvar VAR_DEXUNCAUGHT
-	ifless 3, .CompletedPokedex ; ignore Mew and Celebi
+	iffalse .CompletedPokedex ; ignore Mew and Celebi
 	waitbutton
 	closetext
 	end
@@ -88,21 +88,36 @@ CeladonMansion3FGameProgram:
 CeladonMansion3FReferenceMaterial:
 	jumptext CeladonMansion3FReferenceMaterialText
 
+RangiScript:
+	jumptextfaceplayer RangiText
+
 GameFreakGameDesignerText:
 	text "Is that right?"
 
-	para "I'm the GAME"
-	line "DESIGNER!"
+	para "I'm the Game"
+	line "Designer!"
 
 	para "Filling up your"
-	line "#DEX is tough,"
+	line "Journal is tough,"
 	cont "but don't give up!"
+
+	para "There is something"
+	line "that seems odd to"
+	cont "me."
+
+	para "I only remember"
+	line "251 #mon in"
+	cont "this game."
+
+	para "Where did all of"
+	line "these other ones"
+	cont "come from?"
 	done
 
 GameFreakGameDesignerCompletedPokedexText:
 	text "Wow! Excellent!"
 	line "You completed your"
-	cont "#DEX!"
+	cont "Journal!"
 
 	para "Congratulations!"
 	done
@@ -132,7 +147,7 @@ GameFreakGraphicArtistPrintDiplomaText:
 	line "ARTIST."
 
 	para "Oh, you completed"
-	line "your #DEX?"
+	line "your #dex?"
 
 	para "Want me to print"
 	line "out your DIPLOMA?"
@@ -141,7 +156,7 @@ GameFreakGraphicArtistPrintDiplomaText:
 GameFreakGraphicArtistRefusedText:
 	text "Give me a shout if"
 	line "you want your"
-	cont "DIPLOMA printed."
+	cont "Diploma printed."
 	done
 
 GameFreakGraphicArtistErrorText:
@@ -254,6 +269,22 @@ CeladonMansion3FReferenceMaterialText:
 	cont "choices."
 	done
 
+RangiText:
+	text "Hi, I'm Rangi!"
+
+	para "I helped Ferro out"
+	line "with some of the"
+	cont "code."
+
+	para "#mon Polished"
+	line "Crystal was a big"
+	cont "inspiration for"
+	cont "Johto Legends, so"
+	cont "you should play it"
+	cont "when you get the"
+	cont "chance!"
+	done
+
 CeladonMansion3F_MapEvents:
 	db 0, 0 ; filler
 
@@ -271,8 +302,9 @@ CeladonMansion3F_MapEvents:
 	bg_event  1,  6, BGEVENT_UP, CeladonMansion3FGameProgram
 	bg_event  1,  3, BGEVENT_UP, CeladonMansion3FReferenceMaterial
 
-	db 4 ; object events
-	object_event  3,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, mountvesuviusScript, -1
+	db 5 ; object events
+	object_event  4,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, mountvesuviusScript, -1
 	object_event  3,  4, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CardboardBoxScript, -1
 	object_event  0,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Ax6Script, -1
-	object_event  0,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GameFreakCharacterDesignerScript, -1
+	object_event  0,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GameFreakGameDesignerScript, -1
+	object_event  1,  5, SPRITE_SCIENTIST_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RangiScript, -1

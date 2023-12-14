@@ -160,8 +160,6 @@ CreditsScript:
 	db           GAME_FREAK, 1
 	db          SIRWHIBBLES, 2
 	db                RANGI, 3
-	db          FERROPEXOLA, 4
-	db         MEGAMANOMEGA, 5
 
 	db CREDITS_WAIT, 12
 
@@ -173,24 +171,25 @@ CreditsScript:
 ; Update the banner.
 	db CREDITS_SCENE, 2 ; Ditto
 
+	db    OVERWORLD_SPRITES, 0
+	db          FERROPEXOLA, 1
+	db         MEGAMANOMEGA, 2
+	db         FRENCHORANGE, 3
+
+	db CREDITS_WAIT, 12
+
 	db   STORY_AND_DIALOGUE, 1
 	db          FERROPEXOLA, 2
 	db           GAME_FREAK, 3
 
 	db CREDITS_WAIT, 12
 
-	db           MAP_DESIGN, 0
-	db           GAME_FREAK, 1
-	db          FERROPEXOLA, 2
-	db                RANGI, 3
-
-	db CREDITS_WAIT, 12
-
 	db       TILESET_DESIGN, 0
-	db           GAME_FREAK, 1
-	db          FERROPEXOLA, 2
-	db                RANGI, 3
-	db           PRISM_TEAM, 4
+	db           MAP_DESIGN, 1
+	db           GAME_FREAK, 2
+	db          FERROPEXOLA, 3
+	db                RANGI, 4
+	db           PRISM_TEAM, 5
 
 	db CREDITS_WAIT, 12
 
@@ -210,6 +209,7 @@ CreditsScript:
 	db      MOVE_ANIMATIONS, 0
 	db          FERROPEXOLA, 1
 	db       CHATTY_CRYSTAL, 2
+	db           SOUPPOTATO, 3
 
 	db CREDITS_WAIT, 12
 

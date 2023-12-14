@@ -9,6 +9,11 @@ CeladonDeptStore1F_MapScripts:
 	db 0 ; callbacks
 
 CeladonDeptStore1FReceptionistScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .CeladonDeptStore1FReceptionist2
+	jumptextfaceplayer CeladonDeptStore1FReceptionistText2
+
+.CeladonDeptStore1FReceptionist2:
 	jumptextfaceplayer CeladonDeptStore1FReceptionistText
 
 CeladonDeptStore1FGentlemanScript:
@@ -25,11 +30,21 @@ CeladonDeptStore1FElevatorButton:
 
 CeladonDeptStore1FReceptionistText:
 	text "Hello! Welcome to"
-	line "CELADON DEPT."
-	cont "STORE!"
+	line "Celadon Dept."
+	cont "Store!"
 
 	para "The directory is"
 	line "on the wall."
+	done
+
+CeladonDeptStore1FReceptionistText2:
+	text "Please don't hurt"
+	line "me!"
+
+	para "…Wait, you're not a"
+	line "Fed, are you?"
+
+	para "…Sorry…"
 	done
 
 CeladonDeptStore1FGentlemanText:
@@ -55,20 +70,20 @@ CeladonDeptStore1FTeacherText:
 	done
 
 CeladonDeptStore1FDirectoryText:
-	text "1F: SERVICE"
-	line "    COUNTER"
+	text "1F: Service"
+	line "    Counter"
 
-	para "2F: TRAINER'S"
-	line "    MARKET"
+	para "2F: Trainer's"
+	line "    Market"
 
-	para "3F: TM SHOP"
+	para "3F: TM Shop"
 
-	para "4F: WISEMAN GIFTS"
+	para "4F: Wiseman Gifts"
 
-	para "5F: DRUG STORE"
+	para "5F: Drug Store"
 
-	para "6F: ROOFTOP"
-	line "    SQUARE"
+	para "6F: Rooftop"
+	line "    Square"
 	done
 
 CeladonDeptStore1F_MapEvents:

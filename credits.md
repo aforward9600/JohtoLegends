@@ -81,6 +81,8 @@ Azurill credits sprite: FrenchOrange & Ferropexola
 
 Kanto grass colors: FrenchOrange
 
+Officer Jenny sprite: FrenchOrange
+
 Beta Wooper back sprite made by 64BitWonder.
 
 Sneasel, Tyranitar, Dragonite, Moltres, Heracross,
@@ -124,11 +126,11 @@ Agatha and Oak sprites: Tetra
 
 Ariana, Archer and Giovanni trainer and overworld sprite: SirWhibbles
 
-Ampharos and Glaceon overworld sprite: Prism Team
+Ampharos and overworld sprite: Prism Team
 
 Gible line sprites: Blue Emerald
 
-Lance and Cynthia overworld sprites: Rangi and the Polished Crystal Team.
+Lance, Female Scientist and Cynthia overworld sprites: Rangi and the Polished Crystal Team.
 
 Clair Trainer Sprite base, Gen 5 Black Belt sprite: Solo993
 
