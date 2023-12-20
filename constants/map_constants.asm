@@ -553,3 +553,4 @@ ENDM
 	map_const BELLCHIME_PATH,                              14,  7 ; 1
 	map_const MT_SILVER_SUMMIT,                             7, 10 ; 2
 	map_const GOLD_CRYSTAL_HOUSE,                           5,  4 ; 3
+	map_const SILVER_CAVE_MEW_ROOM,                         6,  5 ; 4

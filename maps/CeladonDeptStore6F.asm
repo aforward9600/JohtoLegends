@@ -5,6 +5,8 @@ CELADONDEPTSTORE6F_LEMONADE_PRICE    EQU 350
 	object_const_def ; object_event constants
 	const CELADONDEPTSTORE6F_SUPER_NERD
 	const CELADONDEPTSTORE6F_YOUNGSTER
+	const CELADONDEPTSTORE6F_ROUGHNECK
+	const CELADONDEPTSTORE6F_DELINQUENT
 
 CeladonDeptStore6F_MapScripts:
 	db 0 ; scene scripts
@@ -21,6 +23,12 @@ CeladonDeptStore6FSuperNerdScript:
 
 CeladonDeptStore6FYoungsterScript:
 	jumptextfaceplayer CeladonDeptStore6FYoungsterText
+
+CeladonDeptStore6FDelinquentScript:
+	jumptextfaceplayer CeladonDeptStore6FDelinquentText
+
+CeladonDeptStore6FRoughneckScript:
+	jumptextfaceplayer CeladonDeptStore6FRoughneckText
 
 CeladonDeptStore6FVendingMachine:
 	opentext
@@ -127,24 +135,42 @@ CeladonVendingNoSpaceText:
 	done
 
 CeladonDeptStore6FSuperNerdText:
-	text "A vending machine"
-	line "with a prize rou-"
-	cont "lette…"
+	text "Ah, refreshing"
+	line "Lemonade!"
 
-	para "You never see"
-	line "those anymore."
+	para "You should buy"
+	line "some."
 	done
 
 CeladonDeptStore6FYoungsterText:
-	text "Aww! There's no"
-	line "games here!"
+	text "I've been stuck"
+	line "drinking tap water"
+	cont "since the takeover"
+	cont "a while ago!"
 
-	para "I wanted to play…"
+	para "Now I can get my"
+	line "soda again!"
+	done
+
+CeladonDeptStore6FRoughneckText:
+	text "I can't steal from"
+	line "the machines here!"
+
+	para "Stupid vending"
+	line "machines!"
+	done
+
+CeladonDeptStore6FDelinquentText:
+	text "Fresh Water is so"
+	line "great!"
+
+	para "Makes me want to"
+	line "just steal some!"
 	done
 
 CeladonDeptStore6FDirectoryText:
-	text "6F: ROOFTOP SQUARE"
-	line "VENDING MACHINES"
+	text "6F: Rooftop Square"
+	line "Vending Machines"
 	done
 
 CeladonDeptStore6F_MapEvents:
@@ -164,6 +190,8 @@ CeladonDeptStore6F_MapEvents:
 	bg_event 10,  1, BGEVENT_UP, CeladonDeptStore6FVendingMachine
 	bg_event 11,  1, BGEVENT_UP, CeladonDeptStore6FVendingMachine
 
-	db 2 ; object events
-	object_event  9,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore6FSuperNerdScript, -1
-	object_event 12,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore6FYoungsterScript, -1
+	db 4 ; object events
+	object_event  9,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore6FSuperNerdScript, EVENT_SAFFRON_CITY_CIVILLIANS
+	object_event 12,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore6FYoungsterScript, EVENT_SAFFRON_CITY_CIVILLIANS
+	object_event 10,  2, SPRITE_ROUGHNECK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore6FRoughneckScript, EVENT_SAFFRON_CITY_FEDS
+	object_event 12,  6, SPRITE_DAISY, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore6FDelinquentScript, EVENT_SAFFRON_CITY_FEDS

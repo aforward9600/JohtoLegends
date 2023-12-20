@@ -935,62 +935,62 @@ JohtoGrassWildMons:
 	map_id SILVER_CAVE_ROOM_1
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 43, GRAVELER
-	dbw 44, URSARING
-	dbw 42, ONIX
-	dbw 45, MAGMAR
-	dbw 45, GOLBAT
-	dbw 20, LARVITAR
-	dbw 15, LARVITAR
-	dbw 15, LARVITAR
+	dbw 73, GOLEM
+	dbw 73, URSARING
+	dbw 73, STEELIX
+	dbw 74, MAGMORTAR
+	dbw 74, CROBAT
+	dbw 74, PUPITAR
+	dbw 75, PUPITAR
+	dbw 75, TYRANITAR
 	; day
-	dbw 43, GRAVELER
-	dbw 44, URSARING
-	dbw 42, ONIX
-	dbw 45, MAGMAR
-	dbw 45, GOLBAT
-	dbw 20, LARVITAR
-	dbw 15, LARVITAR
-	dbw 15, LARVITAR
+	dbw 73, GOLEM
+	dbw 73, URSARING
+	dbw 73, STEELIX
+	dbw 74, MAGMORTAR
+	dbw 74, CROBAT
+	dbw 74, PUPITAR
+	dbw 75, PUPITAR
+	dbw 75, TYRANITAR
 	; nite
-	dbw 43, GRAVELER
-	dbw 44, GOLBAT
-	dbw 42, ONIX
-	dbw 42, GOLBAT
-	dbw 45, GOLDUCK
-	dbw 46, GOLBAT
-	dbw 46, GOLBAT
-	dbw 15, LARVITAR
+	dbw 73, GOLEM
+	dbw 73, CROBAT
+	dbw 73, STEELIX
+	dbw 74, GOLDUCK
+	dbw 74, CROBAT
+	dbw 74, PUPITAR
+	dbw 75, PUPITAR
+	dbw 75, TYRANITAR
 
 	map_id SILVER_CAVE_ROOM_2
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 48, GOLBAT
-	dbw 48, MACHOKE
-	dbw 47, URSARING
-	dbw 46, PARASECT
-	dbw 48, PARASECT
-	dbw 15, LARVITAR
-	dbw 20, LARVITAR
-	dbw 20, LARVITAR
+	dbw 74, CROBAT
+	dbw 74, MACHAMP
+	dbw 74, URSARING
+	dbw 75, PARASECT
+	dbw 75, SNEASEL
+	dbw 75, PUPITAR
+	dbw 76, PUPITAR
+	dbw 76, TYRANITAR
 	; day
-	dbw 48, GOLBAT
-	dbw 48, MACHOKE
-	dbw 47, URSARING
-	dbw 46, PARASECT
-	dbw 48, PARASECT
-	dbw 15, LARVITAR
-	dbw 20, LARVITAR
-	dbw 20, LARVITAR
+	dbw 74, CROBAT
+	dbw 74, MACHAMP
+	dbw 74, URSARING
+	dbw 75, PARASECT
+	dbw 75, SNEASEL
+	dbw 75, PUPITAR
+	dbw 76, PUPITAR
+	dbw 76, TYRANITAR
 	; nite
-	dbw 48, GOLBAT
-	dbw 48, GOLDUCK
-	dbw 46, GOLBAT
-	dbw 46, PARASECT
-	dbw 48, PARASECT
-	dbw 45, MISDREAVUS
-	dbw 45, MISDREAVUS
-	dbw 45, MISDREAVUS
+	dbw 74, CROBAT
+	dbw 74, MACHAMP
+	dbw 74, GOLDUCK
+	dbw 75, GOLDUCK
+	dbw 75, SNEASEL
+	dbw 75, MISDREAVUS
+	dbw 76, MISDREAVUS
+	dbw 76, MISMAGIUS
 
 	map_id SILVER_CAVE_ROOM_3
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -1025,32 +1025,32 @@ JohtoGrassWildMons:
 	map_id SILVER_CAVE_ITEM_ROOMS
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 48, GOLBAT
-	dbw 46, GOLBAT
-	dbw 50, GOLBAT
-	dbw 46, PARASECT
-	dbw 48, PARASECT
-	dbw 50, PARASECT
-	dbw 52, PARASECT
-	dbw 52, PARASECT
+	dbw 75, CROBAT
+	dbw 75, CROBAT
+	dbw 75, CROBAT
+	dbw 76, PARASECT
+	dbw 76, PARASECT
+	dbw 76, PARASECT
+	dbw 77, PARASECT
+	dbw 77, PARASECT
 	; day
-	dbw 48, GOLBAT
-	dbw 46, GOLBAT
-	dbw 50, GOLBAT
-	dbw 46, PARASECT
-	dbw 48, PARASECT
-	dbw 50, PARASECT
-	dbw 52, PARASECT
-	dbw 52, PARASECT
+	dbw 75, CROBAT
+	dbw 75, CROBAT
+	dbw 75, CROBAT
+	dbw 76, PARASECT
+	dbw 76, PARASECT
+	dbw 76, PARASECT
+	dbw 77, PARASECT
+	dbw 77, PARASECT
 	; nite
-	dbw 45, MISDREAVUS
-	dbw 48, GOLBAT
-	dbw 50, GOLBAT
-	dbw 46, PARASECT
-	dbw 48, PARASECT
-	dbw 50, PARASECT
-	dbw 52, PARASECT
-	dbw 52, PARASECT
+	dbw 75, MISDREAVUS
+	dbw 75, CROBAT
+	dbw 75, CROBAT
+	dbw 76, PARASECT
+	dbw 76, PARASECT
+	dbw 76, PARASECT
+	dbw 77, PARASECT
+	dbw 77, MISMAGIUS
 
 	map_id DARK_CAVE_VIOLET_ENTRANCE
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
@@ -1625,32 +1625,32 @@ JohtoGrassWildMons:
 	map_id SILVER_CAVE_OUTSIDE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 41, TANGELA
-	dbw 42, PONYTA
-	dbw 42, ARBOK
-	dbw 44, RAPIDASH
-	dbw 41, DODUO
-	dbw 43, DODRIO
-	dbw 43, DODRIO
-	dbw 43, DODRIO
+	dbw 73, TANGELA
+	dbw 73, TANGROWTH
+	dbw 73, RAPIDASH
+	dbw 74, ARBOK
+	dbw 74, SKARMORY
+	dbw 74, DODRIO
+	dbw 75, DODRIO
+	dbw 75, DODRIO
 	; day
-	dbw 41, TANGELA
-	dbw 42, PONYTA
-	dbw 42, ARBOK
-	dbw 44, RAPIDASH
-	dbw 41, DODUO
-	dbw 43, DODRIO
-	dbw 43, DODRIO
-	dbw 43, DODRIO
+	dbw 73, TANGELA
+	dbw 73, TANGROWTH
+	dbw 73, RAPIDASH
+	dbw 74, ARBOK
+	dbw 74, SKARMORY
+	dbw 74, DODRIO
+	dbw 75, DODRIO
+	dbw 75, DODRIO
 	; nite
-	dbw 41, TANGELA
-	dbw 42, POLIWHIRL
-	dbw 42, GOLBAT
-	dbw 44, POLIWHIRL
-	dbw 40, GOLBAT
-	dbw 44, GOLBAT
-	dbw 44, GOLBAT
-	dbw 44, GOLBAT
+	dbw 73, TANGELA
+	dbw 73, TANGROWTH
+	dbw 73, POLIWRATH
+	dbw 74, POLITOED
+	dbw 74, CROBAT
+	dbw 74, CROBAT
+	dbw 75, CROBAT
+	dbw 75, CROBAT
 
 	map_id DARK_CAVE_NEW_ENTRANCE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1951,5 +1951,35 @@ JohtoGrassWildMons:
 	dbw 60, CHANSEY
 	dbw 60, CHANSEY
 	dbw 60, BLISSEY
+
+	map_id SILVER_CAVE_SUMMIT_OUTSIDE
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 76, GOLDUCK
+	dbw 76, URSARING
+	dbw 76, GLALIE
+	dbw 77, GLALIE
+	dbw 77, GLALIE
+	dbw 77, SNEASEL
+	dbw 78, SNEASEL
+	dbw 78, WEAVILE
+	; day
+	dbw 76, GOLDUCK
+	dbw 76, URSARING
+	dbw 76, GLALIE
+	dbw 77, GLALIE
+	dbw 77, GLALIE
+	dbw 77, SNEASEL
+	dbw 78, SNEASEL
+	dbw 78, WEAVILE
+	; nite
+	dbw 76, MISDREAVUS
+	dbw 76, MISDREAVUS
+	dbw 76, FROSLASS
+	dbw 77, FROSLASS
+	dbw 77, FROSLASS
+	dbw 77, SNEASEL
+	dbw 78, SNEASEL
+	dbw 78, WEAVILE
 
 	db -1 ; end

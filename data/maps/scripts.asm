@@ -110,12 +110,8 @@ INCLUDE "maps/CeladonMansion3F.asm"
 INCLUDE "maps/CeladonMansionRoof.asm"
 INCLUDE "maps/CeladonMansionRoofHouse.asm"
 INCLUDE "maps/CeladonPokecenter1F.asm"
-INCLUDE "maps/CeladonGameCorner.asm"
-INCLUDE "maps/CeladonGameCornerPrizeRoom.asm"
 INCLUDE "maps/CeladonGym.asm"
 INCLUDE "maps/CeladonCafe.asm"
-INCLUDE "maps/Route16FuchsiaSpeechHouse.asm"
-INCLUDE "maps/Route16Gate.asm"
 
 
 SECTION "Map Scripts 8", ROMX
@@ -137,6 +133,8 @@ INCLUDE "maps/MountMoonGiftShop.asm"
 INCLUDE "maps/TinTowerRoof.asm"
 INCLUDE "maps/Route17Route18Gate.asm"
 INCLUDE "maps/Route7SaffronGate.asm"
+INCLUDE "maps/Route16FuchsiaSpeechHouse.asm"
+INCLUDE "maps/Route16Gate.asm"
 
 
 SECTION "Map Scripts 9", ROMX
@@ -561,3 +559,10 @@ INCLUDE "maps/SilverCaveRestRoom.asm"
 INCLUDE "maps/SilverCaveSummitOutside.asm"
 INCLUDE "maps/MtSilverSummit.asm"
 INCLUDE "maps/GoldCrystalHouse.asm"
+
+
+SECTION "Map Scripts 31", ROMX
+
+INCLUDE "maps/CeladonGameCorner.asm"
+INCLUDE "maps/CeladonGameCornerPrizeRoom.asm"
+INCLUDE "maps/SilverCaveMewRoom.asm"

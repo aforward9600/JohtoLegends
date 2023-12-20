@@ -2714,8 +2714,9 @@ wFedHideoutB4FSceneID::                           db
 wRoute47SceneID::                                 db
 wMtSilverSummitID::                               db
 wGoldCrystalHouseID::                             db
+wSilverCaveMewRoomID::                            db
 
-	ds 17
+	ds 16
 
 ; fight counts
 wJackFightCount::    db ; d9f2

@@ -875,32 +875,32 @@ KantoGrassWildMons:
 	map_id ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 39, TANGELA
-	dbw 40, PONYTA
-	dbw 40, RAPIDASH
-	dbw 42, ARBOK
-	dbw 41, DODUO
-	dbw 43, DODRIO
-	dbw 43, DODRIO
-	dbw 43, DODRIO
+	dbw 73, TANGELA
+	dbw 73, TANGROWTH
+	dbw 73, RAPIDASH
+	dbw 74, ARBOK
+	dbw 74, SKARMORY
+	dbw 74, DODRIO
+	dbw 75, DODRIO
+	dbw 75, DODRIO
 	; day
-	dbw 39, TANGELA
-	dbw 40, PONYTA
-	dbw 40, RAPIDASH
-	dbw 42, ARBOK
-	dbw 41, DODUO
-	dbw 43, DODRIO
-	dbw 43, DODRIO
-	dbw 43, DODRIO
+	dbw 73, TANGELA
+	dbw 73, TANGROWTH
+	dbw 73, RAPIDASH
+	dbw 74, ARBOK
+	dbw 74, SKARMORY
+	dbw 74, DODRIO
+	dbw 75, DODRIO
+	dbw 75, DODRIO
 	; nite
-	dbw 39, TANGELA
-	dbw 40, POLIWHIRL
-	dbw 40, GOLBAT
-	dbw 40, POLIWHIRL
-	dbw 42, GOLBAT
-	dbw 42, GOLBAT
-	dbw 42, GOLBAT
-	dbw 42, GOLBAT
+	dbw 73, TANGELA
+	dbw 73, TANGROWTH
+	dbw 73, POLIWRATH
+	dbw 74, POLITOED
+	dbw 74, CROBAT
+	dbw 74, CROBAT
+	dbw 75, CROBAT
+	dbw 75, CROBAT
 
 	map_id VIRIDIAN_FOREST
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

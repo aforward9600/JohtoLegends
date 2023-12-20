@@ -14,6 +14,15 @@ SilverCaveSummitOutside_MapScripts:
 
 .MewCaveAppears:
 	changeblock 8, 22, $af
+	checkevent EVENT_BEAT_MEW
+	iftrue .MewWillNotAppear
+	checkevent EVENT_CAUGHT_MEW
+	iftrue .MewWillNotAppear
+	setmapscene SILVER_CAVE_MEW_ROOM, SCENE_MEW_APPEARS
+	return
+
+.MewWillNotAppear:
+	setmapscene SILVER_CAVE_MEW_ROOM, SCENE_MEW_GONE
 	return
 
 MtSilverSummitRival:
@@ -56,9 +65,10 @@ RivalComeWithMeText:
 SilverCaveSummitOutside_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event 18, 27, SILVER_CAVE_ITEM_ROOMS, 3
 	warp_event  6, 15, MT_SILVER_SUMMIT, 1
+	warp_event  8, 23, SILVER_CAVE_MEW_ROOM, 1
 
 	db 0 ; coord events
 

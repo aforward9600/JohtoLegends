@@ -1907,6 +1907,8 @@ StaticPokemonRefresh:
 	iftrue .refreshmissingno
 	checkevent EVENT_BEAT_MEWTWO
 	iftrue .refreshmewtwo
+	checkevent EVENT_BEAT_MEW
+	iftrue .refreshmew
 	return
 
 .refreshfarfetchd:
@@ -1953,6 +1955,10 @@ StaticPokemonRefresh:
 
 .refreshmissingno:
 	clearevent EVENT_BEAT_MISSINGNO
+	sjump StaticPokemonRefresh
+
+.refreshmew:
+	clearevent EVENT_BEAT_MEW
 	sjump StaticPokemonRefresh
 
 TelevisionScript:

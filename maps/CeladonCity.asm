@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const CELADONCITY_FISHER
+	const CELADONCITY_YOUNGSTER3
 	const CELADONCITY_POLIWAG
 	const CELADONCITY_TEACHER1
 	const CELADONCITY_GRAMPS1
@@ -7,7 +7,7 @@
 	const CELADONCITY_YOUNGSTER1
 	const CELADONCITY_YOUNGSTER2
 	const CELADONCITY_TEACHER2
-	const CELADONCITY_LASS
+	const CELADONCITY_BIKER
 
 CeladonCity_MapScripts:
 	db 0 ; scene scripts
@@ -23,9 +23,13 @@ CeladonCityFisherScript:
 	jumptextfaceplayer CeladonCityFisherText
 
 CeladonCityPoliwrath:
+	refreshscreen
+	pokepic POLIWAG
+	cry POLIWAG
+	waitbutton
+	closepokepic
 	opentext
 	writetext CeladonCityPoliwrathText
-	cry POLIWRATH
 	waitbutton
 	closetext
 	end
@@ -37,7 +41,12 @@ CeladonCityGramps1Script:
 	jumptextfaceplayer CeladonCityGramps1Text
 
 CeladonCityGramps2Script:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .CeladonCityGramps2
 	jumptextfaceplayer CeladonCityGramps2Text
+
+.CeladonCityGramps2:
+	jumptextfaceplayer CeladonCityGramps3Text
 
 CeladonCityYoungster1Script:
 	jumptextfaceplayer CeladonCityYoungster1Text
@@ -48,8 +57,8 @@ CeladonCityYoungster2Script:
 CeladonCityTeacher2Script:
 	jumptextfaceplayer CeladonCityTeacher2Text
 
-CeladonCityLassScript:
-	jumptextfaceplayer CeladonCityLassText
+CeladonCityBikerScript:
+	jumptextfaceplayer CeladonCityBikerText
 
 CeladonCitySign:
 	jumptext CeladonCitySignText
@@ -76,16 +85,19 @@ CeladonCityHiddenPpUp:
 	hiddenitem PP_UP, EVENT_CELADON_CITY_HIDDEN_PP_UP
 
 CeladonCityFisherText:
-	text "This POLIWRATH is"
-	line "my partner."
+	text "This Poliwag is my"
+	line "partner."
 
 	para "I wonder if it'll"
 	line "ever evolve into a"
-	cont "frog #MON."
+	cont "frog #mon."
+
+	para "I've got a Water"
+	line "Stone for it."
 	done
 
 CeladonCityPoliwrathText:
-	text "POLIWRATH: Croak!"
+	text "Poliwag: Poli!"
 	done
 
 CeladonCityTeacher1Text:
@@ -100,26 +112,33 @@ CeladonCityTeacher1Text:
 	done
 
 CeladonCityGramps1Text:
-	text "GRIMER have been"
-	line "appearing lately."
+	text "I had hoped I"
+	line "would be safe from"
+	cont "from the Feds."
 
-	para "See that pond out"
-	line "in front of the"
-
-	para "house? GRIMER live"
-	line "there now."
-
-	para "Where did they"
-	line "come from? This is"
-	cont "a serious problem…"
+	para "Looking at my"
+	line "windows, it would"
+	cont "appear not…"
 	done
 
 CeladonCityGramps2Text:
-	text "Nihihi! This GYM"
-	line "is great! Only"
+	text "The Feds are such"
+	line "idiots!"
 
-	para "girls are allowed"
-	line "here!"
+	para "This greenhouse is"
+	line "protected by a"
+	cont "tree that those"
+	cont "morons can't seem"
+	cont "to cut down!"
+	done
+
+CeladonCityGramps3Text:
+	text "Nihihi! Now that"
+	line "those Feds are"
+	cont "gone, I can get"
+	cont "back to looking"
+	cont "at the ladies in"
+	cont "the greenhouse!"
 	done
 
 CeladonCityYoungster1Text:
@@ -158,31 +177,12 @@ CeladonCityTeacher2Text:
 	line "a sales clerk."
 	done
 
-CeladonCityLassText_Mobile:
-; unused
-	text "I love being"
-	line "surrounded by tall"
-	cont "buildings!"
+CeladonCityBikerText:
+	text "This city is such"
+	line "a dump!"
 
-	para "Isn't it true that"
-	line "GOLDENROD #MON"
-
-	para "CENTER was made"
-	line "much, much bigger?"
-
-	para "That is so neat!"
-	line "I wish we had a"
-
-	para "place like that in"
-	line "KANTO…"
-	done
-
-CeladonCityLassText:
-	text "Looking at the"
-	line "ground while I was"
-
-	para "walking made me"
-	line "dizzy."
+	para "…Oh yeah. That was"
+	line "our fault. Heh!"
 	done
 
 CeladonCitySignText:
@@ -257,12 +257,12 @@ CeladonCity_MapEvents:
 	bg_event 37, 21, BGEVENT_ITEM, CeladonCityHiddenPpUp
 
 	db 9 ; object events
-	object_event 26, 11, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityFisherScript, -1
-	object_event 27, 11, SPRITE_POLIWAG, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityPoliwrath, -1
-	object_event 20, 24, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityTeacher1Script, -1
+	object_event 26, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityFisherScript, EVENT_SAFFRON_CITY_CIVILLIANS
+	object_event 27, 11, SPRITE_POLIWAG, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityPoliwrath, EVENT_SAFFRON_CITY_CIVILLIANS
+	object_event 20, 24, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityTeacher1Script, EVENT_SAFFRON_CITY_CIVILLIANS
 	object_event 14, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonCityGramps1Script, -1
 	object_event  8, 31, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityGramps2Script, -1
-	object_event 18, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster1Script, -1
-	object_event 24, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster2Script, -1
-	object_event  6, 14, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityTeacher2Script, -1
-	object_event  7, 22, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityLassScript, -1
+	object_event 18, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster1Script, EVENT_SAFFRON_CITY_CIVILLIANS
+	object_event 24, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster2Script, EVENT_SAFFRON_CITY_CIVILLIANS
+	object_event  6, 14, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityTeacher2Script, EVENT_SAFFRON_CITY_CIVILLIANS
+	object_event  7, 22, SPRITE_BIKER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityBikerScript, EVENT_SAFFRON_CITY_FEDS

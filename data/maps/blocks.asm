@@ -1191,3 +1191,6 @@ SilverCaveSummitOutside_Blocks:
 
 MtSilverSummit_Blocks:
 	INCBIN "maps/MtSilverSummit.blk"
+
+SilverCaveMewRoom_Blocks:
+	INCBIN "maps/SilverCaveMewRoom.blk"

@@ -11,8 +11,14 @@ a conspiracy to take over the region from the shadows.
 Features
 
 Thanks to the expansion, we were able to go beyond the usual 256 limit, and
-now there are 311 Pokémon from Generations 1-4 and 6. There is also 386 moves,
-ranging from Generations 1-7, and a few original moves.
+now there are 323 Pokémon from Generations 1-4, 6, 8, and 9, as well as several
+Fakemon. There are also 405 moves, ranging from Generations 1-9, and a few
+original moves.
+
+There are three versions: Original, Faithful and Challenge. Faithful version
+does not have the type-changes, nor the Physical/Special Split. Challenge
+Mode has level-caps, the inability to use items in trainer battles, no EVs,
+and higher IVs for opponents.
 
 Moves have been altered to fit their more modern versions.
 
@@ -47,9 +53,17 @@ Download a ROM of Crystal with the name: Pokemon - Crystal Version (UE) (V1.1) [
 
 It has to be v1.1 for the patch to work.
 
-Below is a link to the current patch, Version 0.1 Beta.
+Below is a link to the current patch, Version 0.4.5.2 Beta.
 
-https://www.mediafire.com/file/a9deoyf5loctcc4/johtolegendsv0.1.ips/file
+https://www.mediafire.com/file/u0zbpjjljsl8tco/johtolegendsv0.4.5.2.ips/file
+
+Faithful:
+
+https://www.mediafire.com/file/j1glh9ab5qkmn7y/johtolegendsfaithfulv0.4.5.2.ips/file
+
+Challenge:
+
+https://www.mediafire.com/file/t07xrbb3z8mrul3/johtolegendschallengev0.4.5.2.ips/file
 
 Patch the ROM with the patch, and it is all set.
 
