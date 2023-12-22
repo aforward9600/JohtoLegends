@@ -117,7 +117,6 @@ MailGFXPointers:
 	dbw PORTRAITMAIL, LoadPortraitMailGFX
 	dbw LOVELY_MAIL,  LoadLovelyMailGFX
 	dbw EON_MAIL,     LoadEonMailGFX
-	dbw MORPH_MAIL,   LoadMorphMailGFX
 	dbw BLUESKY_MAIL, LoadBlueSkyMailGFX
 	dbw MUSIC_MAIL,   LoadMusicMailGFX
 	dbw MIRAGE_MAIL,  LoadMirageMailGFX
@@ -316,81 +315,6 @@ LovelyEonMail_PlaceIcons:
 	hlcoord 16, 12
 	ld [hl], a
 	ret
-
-LoadMorphMailGFX:
-	push bc
-	ld hl, vTiles2 tile $31
-	ld bc, 5 * 8
-	call MailGFX_GenerateMonochromeTilesColor2
-	ld de, MorphMailBorderCornerGFX + 3 * 8
-	ld c, 1 * 8
-	call LoadMailGFX_Color2
-	ld de, MorphMailBorderCornerGFX
-	ld c, 1 * 8
-	call LoadMailGFX_Color2
-	ld de, MorphMailBorderGFX
-	ld c, 1 * 8
-	call LoadMailGFX_Color2
-	ld de, EonMailBorder1GFX
-	ld c, 1 * 8
-	call LoadMailGFX_Color1
-	ld de, MorphMailDividerGFX
-	ld c, 1 * 8
-	call LoadMailGFX_Color2
-	ld de, MailDittoGFX
-	ld c, 6 * 8
-	call LoadMailGFX_Color3
-	call DrawMailBorder2
-	ld a, $31
-	hlcoord 1, 1
-	call Mail_Draw2x2Graphic
-	hlcoord 17, 15
-	call Mail_Draw2x2Graphic
-	hlcoord 1, 3
-	ld [hl], a
-	hlcoord 3, 1
-	ld [hl], a
-	hlcoord 16, 16
-	ld [hl], a
-	hlcoord 18, 14
-	ld [hl], a
-	ld a, $36
-	hlcoord 1, 4
-	ld [hl], a
-	hlcoord 2, 3
-	ld [hl], a
-	hlcoord 3, 2
-	ld [hl], a
-	hlcoord 4, 1
-	ld [hl], a
-	inc a
-	hlcoord 15, 16
-	ld [hl], a
-	hlcoord 16, 15
-	ld [hl], a
-	hlcoord 17, 14
-	ld [hl], a
-	hlcoord 18, 13
-	ld [hl], a
-	inc a
-	hlcoord 2, 15
-	ld b, $e
-	call Mail_DrawRowLoop
-	inc a
-	hlcoord 2, 11
-	call Mail_Draw16TileRow
-	hlcoord 2, 5
-	call Mail_Draw16TileRow
-	inc a
-	hlcoord 6, 1
-	call Mail_Draw13TileRow
-	hlcoord 1, 16
-	call Mail_Draw13TileRow
-	inc a
-	hlcoord 3, 13
-	call Mail_Draw3x2Graphic
-	pop hl
-	jp MailGFX_PlaceMessage
 
 LoadBlueSkyMailGFX:
 	push bc

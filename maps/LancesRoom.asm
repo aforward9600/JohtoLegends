@@ -455,6 +455,7 @@ LancesRoomChallengerScript:
 	setevent EVENT_CURRENTLY_CHAMPION
 	setevent EVENT_CHAMPION_CYNTHIA
 	setevent EVENT_CHALLENGER_CYNTHIA
+	setevent EVENT_BEAT_CHALLENGER_CYNTHIA
 	end
 
 .AfterCynthiaLoss:

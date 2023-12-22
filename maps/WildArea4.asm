@@ -14,6 +14,8 @@ WildArea4CynthiaScript:
 	playmusic MUSIC_CYNTHIA_ENCOUNTER
 	faceplayer
 	opentext
+	checkevent EVENT_PASSWORD_SINGULAR
+	iftrue .CantGetGible
 	writetext HaveThisGibleText
 	yesorno
 	iffalse .DidntTakeGible
@@ -56,6 +58,25 @@ WildArea4CynthiaScript:
 	writetext CynthiaPartyIsFullText
 	waitbutton
 	closetext
+	special FadeOutMusic
+	pause 5
+	special RestartMapMusic
+	waitsfx
+	playmapmusic
+	end
+
+.CantGetGible:
+	writetext CantGetGibleText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_SHUCKIE
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear WILDAREA4_CYNTHIA
+	pause 15
+	setevent EVENT_WILD_AREA_CYNTHIA
+	clearevent EVENT_RUINS_OF_ALPH_CYNTHIA
+	special FadeInQuickly
 	special FadeOutMusic
 	pause 5
 	special RestartMapMusic
@@ -154,6 +175,19 @@ WildArea4SignText:
 	para "A man-made desert"
 	line "for #mon to"
 	cont "enjoy."
+	done
+
+CantGetGibleText:
+	text "We meet again."
+
+	para "I'd like to stay"
+	line "and chat, but I"
+	cont "have to get going"
+	cont "to the Ruins of"
+	cont "Alph."
+
+	para "Hope to see you"
+	line "there."
 	done
 
 WildArea4_MapEvents:

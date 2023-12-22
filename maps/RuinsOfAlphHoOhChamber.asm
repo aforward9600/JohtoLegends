@@ -80,6 +80,8 @@ RuinsOfAlphCynthiaScript:
 	playmusic MUSIC_CYNTHIA_ENCOUNTER
 	faceplayer
 	opentext
+	checkevent EVENT_PASSWORD_SINGULAR
+	iftrue .DontHaveGible
 	writetext HowIsGibleDoingText
 	yesorno
 	iffalse .ShowMeLater
@@ -118,6 +120,25 @@ RuinsOfAlphCynthiaScript:
 
 .superhappy
 	writetext GibleIsVeryHappyText
+	waitbutton
+	closetext
+	setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear RUINSOFALPH_CYNTHIA
+	pause 15
+	setevent EVENT_RUINS_OF_ALPH_CYNTHIA
+	clearevent EVENT_CHERRYGROVE_CYNTHIA
+	setmapscene CHERRYGROVE_GYM_SPEECH_HOUSE, SCENE_CHERRYGROVECITYHOUSE_MEET_CYNTHIA
+	special FadeInQuickly
+	pause 15
+	special RestartMapMusic
+	waitsfx
+	playmapmusic
+	end
+
+.DontHaveGible:
+	writetext DontHaveGibleText
 	waitbutton
 	closetext
 	setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
@@ -314,6 +335,33 @@ ShowMeLaterText:
 	para "Please return"
 	line "later when you"
 	cont "are ready."
+	done
+
+DontHaveGibleText:
+	text "Hello again,"
+	line "<PLAYER>."
+
+	para "I'm here studying"
+	line "the Ruins of Alph."
+
+	para "This place is"
+	line "quite fascinating."
+
+	para "There are similar"
+	line "ruins in Solaceon"
+	cont "Town near my home-"
+	cont "town."
+
+	para "I believe I have"
+	line "satisfied my"
+	cont "curiosity for now."
+
+	para "I'll be heading to"
+	line "Cherrygrove City"
+	cont "if you want to say"
+	cont "hello."
+
+	para "See you later."
 	done
 
 RuinsOfAlphHoOhChamber_MapEvents:

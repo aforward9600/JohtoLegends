@@ -418,6 +418,19 @@ GentlemanFrankAfterText:
 	text "Just go away, and"
 	line "forget this"
 	cont "happened, OK?"
+
+	para "If you do, I'll"
+	line "tell you a secret."
+
+	para "Do you know how to"
+	line "say baby in a"
+	cont "another language?"
+
+	para "BAMBINO."
+
+	para "Try using that in"
+	line "a conversation to"
+	cont "sound cultured."
 	done
 
 OfficerKeithAfterText:

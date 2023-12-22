@@ -134,6 +134,8 @@ DragonShrineElder1Script:
 	sjump .ReceivedDratini
 
 .GiveDratini:
+	checkevent EVENT_PASSWORD_SINGULAR
+	iftrue .CantGetBagon
 	writetext DragonShrineTakeThisDratiniText
 	waitbutton
 	readvar VAR_PARTYCOUNT
@@ -179,6 +181,14 @@ DragonShrineElder1Script:
 
 .TeachMove:
 	writetext TaughtExtremeSpeedText
+	waitbutton
+	closetext
+	end
+
+.CantGetBagon:
+	writetext CantGetBagonText
+	setevent EVENT_GOT_DRATINI
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
 	waitbutton
 	closetext
 	end
@@ -586,6 +596,16 @@ DontLikeLarvitarText:
 	para "To bring such"
 	line "dishonor to our"
 	cont "village…"
+	done
+
+CantGetBagonText:
+	text "Unfortunately, I"
+	line "cannot give you"
+	cont "this special Bagon"
+	cont "while you're on"
+	cont "your solo run."
+
+	para "Please understand…"
 	done
 
 DragonShrine_MapEvents:

@@ -188,8 +188,25 @@ ItemEffects:
 	dw LaprasCallCEffect   ; LAPRAS_CALLC
 	dw PidgeotCallEffect   ; PIDGEOT_CALL
 	dw NoEffect            ; EVIOLITE
+	dw NoEffect            ; SURF_MAIL
+	dw NoEffect            ; LITEBLUEMAIL
+	dw NoEffect            ; PORTRAITMAIL
+	dw NoEffect            ; LOVELY_MAIL
+	dw NoEffect            ; EON_MAIL
+	dw CandyPouchEffect    ; CANDY_POUCH
 
 PokeBallEffect:
+; Check if the solo password is active.
+	push de
+	push hl
+	ld de, SoloPassword
+	ld hl, wMomsName
+	ld c, 4
+	call CompareBytes
+	jp z, CantUsePokeBallMessage
+	pop hl
+	pop de
+
 	ld a, [wBattleMode]
 	dec a
 	jp nz, UseBallInTrainerBattle
@@ -715,6 +732,9 @@ PokeBallEffect:
 	ld hl, wParkBallsRemaining
 	dec [hl]
 	ret
+
+SoloPassword:
+	db "SINGULAR"
 
 BallMultiplierFunctionTable:
 ; table of routines that increase or decrease the catch rate based on
@@ -2732,6 +2752,16 @@ Ball_BoxIsFullMessage:
 	ld [wItemEffectSucceeded], a
 	ret
 
+CantUsePokeBallMessage:
+	pop hl
+	pop de
+	ld hl, CantUsePokeBallMessageText
+	call PrintText
+
+	ld a, $2
+	ld [wItemEffectSucceeded], a
+	ret
+
 CantUseOnEggMessage:
 	ld hl, CantUseOnEggText
 	jr CantUseItemMessage
@@ -2824,6 +2854,10 @@ GotOnTheItemText:
 GotOffTheItemText:
 	; got off@ the @ .
 	text_far UnknownText_0x1c5e90
+	text_end
+
+CantUsePokeBallMessageText:
+	text_far CantUsePokeBallMessageTextFar
 	text_end
 
 ApplyPPUp:
@@ -3103,3 +3137,102 @@ ExpShareToggleOff:
 ExpShareToggleOn:
 	text_far _TurnedOnExpShareText
 	text_end
+
+CandyPouchEffect:
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+
+	jp c, RareCandy_StatBooster_ExitMenu
+
+	call RareCandy_StatBooster_GetParameters
+
+	ld a, MON_LEVEL
+	call GetPartyParamLocation
+
+if DEF(_CHALLENGE)
+	ld a, [wLevelCap]
+	ld b, a
+endc
+	ld a, [hl]
+if !DEF(_CHALLENGE)
+	cp MAX_LEVEL
+endc
+if DEF(_CHALLENGE)
+	cp b
+endc
+	jp nc, NoEffectMessage
+
+	inc a
+	ld [hl], a
+	ld [wCurPartyLevel], a
+	push de
+	ld d, a
+	farcall CalcExpAtLevel
+
+	pop de
+	ld a, MON_EXP
+	call GetPartyParamLocation
+
+	ldh a, [hMultiplicand + 0]
+	ld [hli], a
+	ldh a, [hMultiplicand + 1]
+	ld [hli], a
+	ldh a, [hMultiplicand + 2]
+	ld [hl], a
+
+	ld a, MON_MAXHP
+	call GetPartyParamLocation
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	push bc
+	call UpdateStatsAfterItem
+
+	ld a, MON_MAXHP + 1
+	call GetPartyParamLocation
+
+	pop bc
+	ld a, [hld]
+	sub c
+	ld c, a
+	ld a, [hl]
+	sbc b
+	ld b, a
+	dec hl
+	ld a, [hl]
+	add c
+	ld [hld], a
+	ld a, [hl]
+	adc b
+	ld [hl], a
+	farcall LevelUpHappinessMod
+
+	ld a, PARTYMENUTEXT_LEVEL_UP
+	call ItemActionText
+
+	xor a ; PARTYMON
+	ld [wMonType], a
+	predef CopyMonToTempMon
+
+	hlcoord 9, 0
+	ld b, 10
+	ld c, 9
+	call Textbox
+
+	hlcoord 11, 1
+	ld bc, 4
+	predef PrintTempMonStats
+
+	call WaitPressAorB_BlinkCursor
+
+	xor a ; PARTYMON
+	ld [wMonType], a
+	ld a, [wCurPartySpecies]
+	ld [wEvolutionOldSpecies], a
+	ld [wTempSpecies], a
+	predef LearnLevelMoves
+
+	xor a
+	ld [wForceEvolution], a
+	farcall EvolvePokemon
+	ret

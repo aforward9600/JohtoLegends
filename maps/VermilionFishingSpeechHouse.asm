@@ -7,7 +7,12 @@ VermilionFishingSpeechHouse_MapScripts:
 	db 0 ; callbacks
 
 FishingDude:
+	checkevent EVENT_DECO_MAGIKARP_DOLL
+	iftrue .MagikarpPassword
 	jumptextfaceplayer FishingDudeText
+
+.MagikarpPassword:
+	jumptextfaceplayer MagikarpPasswordText
 
 FishingDudesHousePhoto:
 	jumptext FishingDudesHousePhotoText
@@ -44,6 +49,17 @@ FishingDudesHousePhotoText:
 
 	para "They're having a"
 	line "great time…"
+	done
+
+MagikarpPasswordText:
+	text "Have you ever"
+	line "heard of a person"
+	cont "starting their"
+	cont "journey with just"
+	cont "a Magikarp?"
+
+	para "Boy, that would be"
+	line "STUPID, huh?"
 	done
 
 VermilionFishingSpeechHouse_MapEvents:

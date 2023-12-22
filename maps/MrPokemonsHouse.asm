@@ -52,6 +52,8 @@ MrPokemonsHouse_MrPokemonScript:
 .AlwaysNewDiscoveries:
 	checkitem STRANGE_HAIR
 	iftrue .GiveMeThatHair
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .MythicalPassword
 	writetext MrPokemonText_AlwaysNewDiscoveries
 	waitbutton
 	closetext
@@ -72,6 +74,12 @@ MrPokemonsHouse_MrPokemonScript:
 	writetext MrPokemonText_Disappointed
 	waitbutton
 .full
+	closetext
+	end
+
+.MythicalPassword:
+	writetext MythicalPasswordText
+	waitbutton
 	closetext
 	end
 
@@ -399,6 +407,22 @@ MrPokemonsHouse_StrangeCoinsText:
 
 	para "Maybe they're from"
 	line "another country…"
+	done
+
+MythicalPasswordText:
+	text "I often wonder"
+	line "about this Strange"
+	cont "Hair…"
+
+	para "Where did it come"
+	line "from?"
+
+	para "Perhaps a MYTHICAL"
+	line "#mon dropped it"
+	cont "somewhere?"
+
+	para "It's quite a"
+	line "mystery…"
 	done
 
 MrPokemonsHouse_MapEvents:

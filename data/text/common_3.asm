@@ -2197,3 +2197,9 @@ ElectrikeOakText::
 	para "You'll be in for"
 	line "a shock!"
 	done
+
+CantUsePokeBallMessageTextFar::
+	text "You can't use a"
+	line "Ball in a solo"
+	cont "run!"
+	prompt

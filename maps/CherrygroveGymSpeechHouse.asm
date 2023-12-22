@@ -79,6 +79,8 @@ CherrygroveGymSpeechHouse_MapScripts:
 CherrygroveGymSpeechHouseCynthiaScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_CHALLENGER_CYNTHIA
+	iftrue .PsuedoPassword
 	checkevent EVENT_BEAT_CHERRYGROVE_CYNTHIA
 	iftrue .BeatenCherrygroveCynthia
 	playmusic MUSIC_CYNTHIA_ENCOUNTER
@@ -124,6 +126,12 @@ CherrygroveGymSpeechHouseCynthiaScript:
 
 .RefusedCynthiaBattle:
 	writetext CynthiaSomeOtherTimeText
+	waitbutton
+	closetext
+	end
+
+.PsuedoPassword:
+	writetext PsuedoPasswordText
 	waitbutton
 	closetext
 	end
@@ -215,6 +223,43 @@ CherrygroveCynthiaMeetingText:
 
 	para "Mind battling me"
 	line "again?"
+	done
+
+PsuedoPasswordText:
+	text "Cynthia: Hello,"
+	line "<PLAYER>."
+
+	para "Our battle at the"
+	line "League was quite"
+	cont "the experience,"
+	cont "wasn't it?"
+
+	para "Tell me, do you"
+	line "ever think about"
+	cont "what it would be"
+	cont "like if you had"
+	cont "started your"
+	cont "journey with a"
+	cont "different #mon?"
+
+	para "I think about it"
+	line "sometimes."
+
+	para "What if you had"
+	line "started with a"
+	cont "Bagon or Gible?"
+
+	para "Is that something"
+	line "you think about at"
+	cont "all?"
+
+	para "To start with a"
+	line "different #mon,"
+	cont "like a PSUEDO"
+	cont "start."
+
+	para "It's interesting,"
+	line "isn't it?"
 	done
 
 CherrygroveGymSpeechHouse_MapEvents:

@@ -41,6 +41,7 @@ ViridianGymBlueScript:
 	setevent EVENT_SAFFRON_GYM_SABRINA
 	setevent EVENT_FIGHTING_DOJO_MASTER
 	setevent EVENT_CINNABAR_GYM_BLAINE
+	setevent EVENT_CELADON_CITY_GUARD
 	setevent EVENT_DECO_CARPET_4
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes

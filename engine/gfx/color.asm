@@ -29,11 +29,30 @@ CheckShininess:
 	cp  SHINY_SPD_VAL << 4
 	jr nz, .NotShiny
 
+; Check if the shiny password is active.
+	push de
+	push hl
+	ld de, ShinyPassword
+	ld hl, wGreensName
+	ld c, 4
+	call CompareBytes
+	jr z, .AltSpecial
+	pop hl
+	pop de
+
 ; Special
 	ld a, [hl]
 	and $f
 	cp  SHINY_SPC_VAL
 	jr nz, .NotShiny
+	jr .Shiny
+
+.AltSpecial
+	pop hl
+	pop de
+	ld a, [hl]
+	and SHINY_ATK_BIT << 4
+	jr z, .NotShiny
 
 .Shiny:
 	scf
@@ -42,6 +61,9 @@ CheckShininess:
 .NotShiny:
 	and a
 	ret
+
+ShinyPassword:
+	db "MASUDA"
 
 Unused_CheckShininess:
 ; Return carry if the DVs at hl are all 10 or higher.

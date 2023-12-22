@@ -180,6 +180,28 @@ PokemonMansionB1FScientist:
 	faceplayer
 	opentext
 	writetext PokemonMansionB1FScientistText2
+	loadmonindex 1, MEWTWO
+	special FindPartyMonThatSpeciesYourTrainerID
+	iftrue HaveMewtwoMansion
+	loadmonindex 2, MISSINGNO
+	special FindPartyMonThatSpeciesYourTrainerID
+	iftrue HaveMissingno
+	waitbutton
+	closetext
+	turnobject POKEMONMANSIONB1F_SCIENTIST, UP
+	end
+
+HaveMewtwoMansion:
+	waitbutton
+	writetext YouHaveMewtwoText
+	waitbutton
+	closetext
+	turnobject POKEMONMANSIONB1F_SCIENTIST, UP
+	end
+
+HaveMissingno:
+	waitbutton
+	writetext YouHaveMissingnoText
 	waitbutton
 	closetext
 	turnobject POKEMONMANSIONB1F_SCIENTIST, UP
@@ -632,6 +654,32 @@ ThatsItThenText:
 GiovanniOutOfMyWayText:
 	text "???: Get out of my"
 	line "way."
+	done
+
+YouHaveMewtwoText:
+	text "…Wait, is that…?"
+
+	para "How do you have"
+	line "Mewtwo?"
+
+	para "That EXPERIMENT"
+	line "is responsible"
+	cont "for this!"
+
+	para "Get out of here!"
+	done
+
+YouHaveMissingnoText:
+	text "…Wait, is that…?"
+
+	para "How do you have"
+	line "Missingno.?"
+
+	para "That EXPERIMENT"
+	line "is responsible"
+	cont "for this!"
+
+	para "Get out of here!"
 	done
 
 PokemonMansionB1F_MapEvents:

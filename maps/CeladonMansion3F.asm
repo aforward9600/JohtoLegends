@@ -127,12 +127,23 @@ GameFreakGameDesignerPauseForDiplomaText:
 	done
 
 GameFreakGameDesignerAfterDiplomaText:
-	text "The GRAPHIC ARTIST"
-	line "will print out a"
-	cont "DIPLOMA for you."
+	text "As a reward, I'm"
+	line "going to tell you"
+	cont "a secret!"
 
-	para "You should go show"
-	line "it off."
+	para "Apparently, in the"
+	line "future, a method"
+	cont "to find Shiny"
+	cont "#mon more"
+	cont "easily will be"
+	cont "discovered!"
+
+	para "It's called the"
+	line "MASUDA Method!"
+
+	para "I don't think it"
+	line "will work in this"
+	cont "game, however."
 	done
 
 GameFreakGraphicArtistText:

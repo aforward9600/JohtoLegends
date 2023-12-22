@@ -185,7 +185,6 @@ INCLUDE "maps/DanceTheatre.asm"
 INCLUDE "maps/EcruteakMart.asm"
 INCLUDE "maps/EcruteakGym.asm"
 INCLUDE "maps/EcruteakItemfinderHouse.asm"
-INCLUDE "maps/ViridianGym.asm"
 
 
 SECTION "Map Scripts 12", ROMX
@@ -315,8 +314,6 @@ INCLUDE "maps/CliffCaveB1F.asm"
 
 SECTION "Map Scripts 18", ROMX
 
-INCLUDE "maps/Route36.asm"
-INCLUDE "maps/FuchsiaCity.asm"
 INCLUDE "maps/BlackthornGym1F.asm"
 INCLUDE "maps/BlackthornGym2F.asm"
 INCLUDE "maps/BlackthornDragonSpeechHouse.asm"
@@ -332,7 +329,6 @@ INCLUDE "maps/GuideGentsHouse.asm"
 INCLUDE "maps/CherrygroveEvolutionSpeechHouse.asm"
 INCLUDE "maps/Route30BerryHouse.asm"
 INCLUDE "maps/MrPokemonsHouse.asm"
-INCLUDE "maps/Route31VioletGate.asm"
 
 
 SECTION "Map Scripts 19", ROMX
@@ -357,8 +353,6 @@ SECTION "Map Scripts 20", ROMX
 
 INCLUDE "maps/Route35.asm"
 INCLUDE "maps/Route43.asm"
-INCLUDE "maps/Route44.asm"
-INCLUDE "maps/Route45.asm"
 INCLUDE "maps/MastersHouse1F.asm"
 INCLUDE "maps/HoOhLugiaRoom.asm"
 
@@ -566,3 +560,9 @@ SECTION "Map Scripts 31", ROMX
 INCLUDE "maps/CeladonGameCorner.asm"
 INCLUDE "maps/CeladonGameCornerPrizeRoom.asm"
 INCLUDE "maps/SilverCaveMewRoom.asm"
+INCLUDE "maps/Route44.asm"
+INCLUDE "maps/Route45.asm"
+INCLUDE "maps/Route31VioletGate.asm"
+INCLUDE "maps/Route36.asm"
+INCLUDE "maps/FuchsiaCity.asm"
+INCLUDE "maps/ViridianGym.asm"

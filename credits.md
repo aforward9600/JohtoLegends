@@ -9,6 +9,8 @@ KDLPro for the status appearance change.
 
 Dark Zeta, Celadonk and cardboardbox for Evolution moves for Pokecrystal16.
 
+Celadonk for the Password System.
+
 Rangi, DGamers-64 and Vendily for the fourth stat page.
 
 Mountvesuvius for Strength Sap and HM Key Items.

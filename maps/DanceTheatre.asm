@@ -18,6 +18,8 @@ DanceTheatre_MapScripts:
 TrainerKimonoGirlRui:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_CHAMPION_LANCE
+	iftrue .CommencePassword
 	checkevent EVENT_GOT_EEVEE
 	iftrue .GotEevee
 	checkevent EVENT_BEAT_KIMONO_GIRL_RUI
@@ -32,6 +34,8 @@ TrainerKimonoGirlRui:
 	setevent EVENT_BEAT_KIMONO_GIRL_RUI
 	opentext
 .GiveEevee:
+	checkevent EVENT_PASSWORD_SINGULAR
+	iftrue .CantGetEevee
 	writetext GiveEeveeText
 	buttonsound
 	waitsfx
@@ -50,6 +54,19 @@ TrainerKimonoGirlRui:
 
 .NoRoom:
 	writetext NoRoomText
+	waitbutton
+	closetext
+	end
+
+.CantGetEevee:
+	writetext CantGetEeveeText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_EEVEE
+	end
+
+.CommencePassword:
+	writetext CommencePasswordText
 	waitbutton
 	closetext
 	end
@@ -484,6 +501,43 @@ YouSawMySonText:
 
 	para "Did you evolve"
 	line "your Eevee?"
+	done
+
+CantGetEeveeText:
+	text "Rui: Normally, I"
+	line "would give you an"
+	cont "Eevee as a reward"
+	cont "for defeating me,"
+
+	para "but since you are"
+	line "on a solo journey,"
+	cont "I cannot."
+
+	para "I truly apologize"
+	line "for that."
+	done
+
+CommencePasswordText:
+	text "Rui: Oh, hello."
+
+	para "Congratulations on"
+	line "becoming Champion."
+
+	para "Have you ever"
+	line "wondered about"
+	cont "starting your"
+	cont "journey with an"
+	cont "adorable #mon,"
+	cont "like Eevee or"
+	cont "Pikachu?"
+
+	para "Wouldn't it be"
+	line "great to COMMENCE"
+	cont "with a #mon"
+	cont "like that?"
+
+	para "It would be quite"
+	line "interesting."
 	done
 
 DanceTheatre_MapEvents:

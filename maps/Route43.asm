@@ -107,6 +107,8 @@ TrainerPokemaniacJarvis:
 TogepiEggGiver:
 	faceplayer
 	opentext
+	checkevent EVENT_PASSWORD_SINGULAR
+	iftrue .NoTogepiEgg
 	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
 	iftrue .TakeCareOfIt
 	writetext AskEggText
@@ -141,6 +143,12 @@ TogepiEggGiver:
 
 .GivenTogepiEgg:
 	jumpstd receivetogepiegg
+	end
+
+.NoTogepiEgg:
+	writetext NoTogepiEggText
+	waitbutton
+	closetext
 	end
 
 Route43Sign1:
@@ -378,6 +386,18 @@ NoEggForYouText:
 	text "Fine then!"
 
 	para "No egg for you!"
+	done
+
+NoTogepiEggText:
+	text "I'd like to offer"
+	line "you a nice egg in"
+	cont "these tryin'"
+	cont "times,"
+
+	para "but I can't do that"
+	line "in a solo run."
+
+	para "Sorry."
 	done
 
 Route43_MapEvents:

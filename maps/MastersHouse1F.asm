@@ -65,6 +65,8 @@ WalkUpToRival:
 	waitbutton
 	setscene SCENE_CANT_LEAVE_HOUSE
 	closetext
+	scall MasterPasswordCheck
+	scall MasterPasswordCheck2
 	end
 
 TryToLeaveHouseScript:
@@ -76,17 +78,8 @@ TryToLeaveHouseScript:
 	end
 
 MaastersHouseMasterScript:
-	readvar VAR_BADGES
-	ifequal 0, .MasterNoBadges
-	ifequal 1, .Master1Badge
-	ifequal 2, .Master2Badges
-	ifequal 3, .Master3Badges
-	ifequal 4, .Master4Badges
-	ifequal 5, .Master5Badges
-	ifequal 6, .Master6Badges
-	ifequal 7, .Master7Badges
-
-.MasterNoBadges:
+	checkevent EVENT_BEAT_MASTER
+	iftrue .MasterBeaten
 	checkevent EVENT_MASTERS_RIVAL_DONE
 	iftrue .MasterGoodLuck
 	checkevent EVENT_BEAT_DRAGON_KID_CLAIR
@@ -94,27 +87,6 @@ MaastersHouseMasterScript:
 	checkevent EVENT_BEAT_DRAGON_KID_LANCE
 	iftrue .BeatDragonKid2
 	jumptextfaceplayer MastersHouseMasterText
-
-.Master1Badge:
-	jumptextfaceplayer MasterPryceText
-
-.Master2Badges:
-	jumptextfaceplayer MasterEnokiText
-
-.Master3Badges:
-	jumptextfaceplayer MasterChigusaText
-
-.Master4Badges:
-	jumptextfaceplayer MasterByronText
-
-.Master5Badges:
-	jumptextfaceplayer MasterMiltonText
-
-.Master6Badges:
-	jumptextfaceplayer MasterKurtText
-
-.Master7Badges:
-	jumptextfaceplayer MasterWalkerText
 
 .MasterGoodLuck:
 	jumptextfaceplayer MasterGoodLuckText
@@ -125,6 +97,9 @@ MaastersHouseMasterScript:
 .BeatDragonKid2:
 	jumptextfaceplayer HmText
 
+.MasterBeaten:
+	jumptextfaceplayer MasterBeatenText
+
 MastersHouseRivalScript:
 	jumptextfaceplayer MastersHouseRivalText
 
@@ -133,6 +108,18 @@ MastersHouseRival2Script:
 
 DratiniPokeballScript:
 	refreshscreen
+	checkevent EVENT_PASSWORD_PSEUDOSWAP
+	iftrue ChooseBagon
+	checkevent EVENT_PASSWORD_MYTHICAL
+	iftrue ChooseMew
+	checkevent EVENT_PASSWORD_EXPERIMENT
+	iftrue ChooseMewtwo
+	checkevent EVENT_PASSWORD_COMMENCE
+	iftrue ChooseEevee
+	checkevent EVENT_PASSWORD_STUPID
+	iftrue ChooseMagikarp
+	checkevent EVENT_PASSWORD_BAMBINO
+	iftrue ChooseElekid
 	pokepic DRATINI
 	cry DRATINI
 	waitbutton
@@ -155,8 +142,158 @@ DratiniPokeballScript:
 	closetext
 	sjump RivalLarvitarScript
 
+ChooseBagon:
+	pokepic BAGON
+	cry BAGON
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakeBagonText
+	yesorno
+	iffalse DidntChooseDratiniScript
+	disappear MASTERSHOUSE1F_POKE_BALL1
+	setevent EVENT_GOT_DRATINI_FROM_MASTER
+	writetext ChoseBagonText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, BAGON
+	writetext RecievedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke BAGON, 5, ORAN_BERRY
+	closetext
+	sjump RivalLarvitarScript
+
+ChooseMew:
+	pokepic MEW
+	cry MEW
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakeMewText
+	yesorno
+	iffalse DidntChooseDratiniScript
+	disappear MASTERSHOUSE1F_POKE_BALL1
+	setevent EVENT_GOT_DRATINI_FROM_MASTER
+	writetext ChoseMewText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, MEW
+	writetext RecievedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke MEW, 5, ORAN_BERRY
+	closetext
+	sjump RivalLarvitarScript
+
+ChooseEevee:
+	pokepic EEVEE
+	cry EEVEE
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakeEeveeText
+	yesorno
+	iffalse DidntChooseDratiniScript
+	disappear MASTERSHOUSE1F_POKE_BALL1
+	setevent EVENT_GOT_DRATINI_FROM_MASTER
+	writetext ChoseEeveeText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, EEVEE
+	writetext RecievedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke EEVEE, 5, ORAN_BERRY
+	closetext
+	sjump RivalLarvitarScript
+
+ChooseMagikarp:
+	pokepic MAGIKARP
+	cry MAGIKARP
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakeMagikarpText
+	yesorno
+	iffalse DidntChooseDratiniScript
+	disappear MASTERSHOUSE1F_POKE_BALL1
+	setevent EVENT_GOT_DRATINI_FROM_MASTER
+	writetext ChoseMagikarpText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, MAGIKARP
+	writetext RecievedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke MAGIKARP, 5, ORAN_BERRY
+	closetext
+	sjump RivalLarvitarScript
+
+ChooseElekid:
+	pokepic ELEKID
+	cry ELEKID
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakeElekidText
+	yesorno
+	iffalse DidntChooseDratiniScript
+	disappear MASTERSHOUSE1F_POKE_BALL1
+	setevent EVENT_GOT_DRATINI_FROM_MASTER
+	writetext ChoseElekidText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, ELEKID
+	writetext RecievedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke ELEKID, 5, ORAN_BERRY
+	closetext
+	sjump RivalLarvitarScript
+
+ChooseMewtwo:
+	pokepic MEWTWO
+	cry MEWTWO
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakeMewtwoText
+	yesorno
+	iffalse DidntChooseDratiniScript
+	disappear MASTERSHOUSE1F_POKE_BALL1
+	setevent EVENT_GOT_DRATINI_FROM_MASTER
+	writetext ChoseMewtwoText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, MEWTWO
+	writetext RecievedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke MEWTWO, 5, ORAN_BERRY
+	closetext
+	sjump RivalLarvitarScript
+
 LarvitarPokeballScript:
 	refreshscreen
+	checkevent EVENT_PASSWORD_PSEUDOSWAP
+	iftrue ChooseGible
+	checkevent EVENT_PASSWORD_MYTHICAL
+	iftrue ChooseCelebi
+	checkevent EVENT_PASSWORD_EXPERIMENT
+	iftrue ChooseMissingno
+	checkevent EVENT_PASSWORD_COMMENCE
+	iftrue ChoosePikachu
+	checkevent EVENT_PASSWORD_BAMBINO
+	iftrue ChooseMagby
+	checkevent EVENT_PASSWORD_STUPID
+	iftrue ChooseMagikarp2
 	pokepic LARVITAR
 	cry LARVITAR
 	waitbutton
@@ -176,6 +313,144 @@ LarvitarPokeballScript:
 	waitsfx
 	buttonsound
 	givepoke LARVITAR, 5, ORAN_BERRY
+	closetext
+	sjump RivalDratiniScript
+
+ChooseCelebi:
+	pokepic CELEBI
+	cry CELEBI
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakeCelebiText
+	yesorno
+	iffalse DidntChooseDratiniScript
+	disappear MASTERSHOUSE1F_POKE_BALL2
+	setevent EVENT_GOT_LARVITAR_FROM_MASTER
+	writetext ChoseCelebiText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, CELEBI
+	writetext RecievedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke CELEBI, 5, ORAN_BERRY
+	closetext
+	sjump RivalDratiniScript
+
+ChooseGible:
+	pokepic GIBLE
+	cry GIBLE
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakeGibleText
+	yesorno
+	iffalse DidntChooseLarvitarScript
+	disappear MASTERSHOUSE1F_POKE_BALL2
+	setevent EVENT_GOT_LARVITAR_FROM_MASTER
+	writetext ChoseGibleText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, GIBLE
+	writetext RecievedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke GIBLE, 5, ORAN_BERRY
+	closetext
+	sjump RivalDratiniScript
+
+ChooseMissingno:
+	pokepic MISSINGNO
+	cry MISSINGNO
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakeMissingnoText
+	yesorno
+	iffalse DidntChooseLarvitarScript
+	disappear MASTERSHOUSE1F_POKE_BALL2
+	setevent EVENT_GOT_LARVITAR_FROM_MASTER
+	writetext ChoseMissingnoText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, MISSINGNO
+	writetext RecievedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke MISSINGNO, 5, ORAN_BERRY
+	closetext
+	sjump RivalDratiniScript
+
+ChooseMagby:
+	pokepic MAGBY
+	cry MAGBY
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakeMagbyText
+	yesorno
+	iffalse DidntChooseLarvitarScript
+	disappear MASTERSHOUSE1F_POKE_BALL2
+	setevent EVENT_GOT_LARVITAR_FROM_MASTER
+	writetext ChoseMagbyText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, MAGBY
+	writetext RecievedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke MAGBY, 5, ORAN_BERRY
+	closetext
+	sjump RivalDratiniScript
+
+ChoosePikachu:
+	pokepic PIKACHU
+	cry PIKACHU
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakePikachuText
+	yesorno
+	iffalse DidntChooseLarvitarScript
+	disappear MASTERSHOUSE1F_POKE_BALL2
+	setevent EVENT_GOT_LARVITAR_FROM_MASTER
+	writetext ChosePikachuText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, PIKACHU
+	writetext RecievedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke PIKACHU, 5, ORAN_BERRY
+	closetext
+	sjump RivalDratiniScript
+
+ChooseMagikarp2:
+	pokepic MAGIKARP
+	cry MAGIKARP
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakeMagikarpText
+	yesorno
+	iffalse DidntChooseLarvitarScript
+	disappear MASTERSHOUSE1F_POKE_BALL2
+	setevent EVENT_GOT_LARVITAR_FROM_MASTER
+	writetext ChoseMagikarpText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, MAGIKARP
+	writetext RecievedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke MAGIKARP, 5, ORAN_BERRY
 	closetext
 	sjump RivalDratiniScript
 
@@ -324,7 +599,10 @@ WalkUpToRival2:
 	turnobject PLAYER, UP
 	applymovement MASTERSHOUSE1F_MASTER, MastersLastMovement
 	opentext
+	checkevent EVENT_LOST_FIRST_BATTLE
+	iftrue .MasterUnfortunate
 	writetext CongratulationsText
+.MasterFinish:
 	waitbutton
 	closetext
 	opentext
@@ -356,12 +634,208 @@ WalkUpToRival2:
 	turnobject PLAYER, UP
 	opentext
 	writetext TalkToGranny
+	waitbutton
+	checkevent EVENT_PASSWORD_CHEATER
+	iftrue .GiveCandyPouch
 	closetext
 	end
+
+.GiveCandyPouch
+	writetext TakeCandyPouchText
+	buttonsound
+	verbosegiveitem CANDY_POUCH
+	closetext
+	end
+
+.MasterUnfortunate:
+	writetext MasterUnfortunateText
+	sjump .MasterFinish
 
 Rival_ReceiveTheBalls:
 	jumpstd receiveitem
 	end
+
+MasterPasswordCheck2:
+	checkevent EVENT_PASSWORD_SET_2
+	iftrue .stop
+	setevent EVENT_PASSWORD_SET_2
+	callasm .candypouch
+	iftrue .candypouch2
+	callasm .singular
+	iftrue .singular2
+.stop
+	end
+
+.candypouch:
+	xor a
+	ld [wScriptVar], a
+	ld de, CandyPouchPassword
+	ld hl, wMomsName ; check inputted password
+	ld c, 4
+	call CompareBytes
+	ret nz
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.candypouch2:
+	setevent EVENT_PASSWORD_CHEATER
+	end
+
+.singular:
+	xor a
+	ld [wScriptVar], a
+	ld de, SingularPassword
+	ld hl, wMomsName ; check inputted password
+	ld c, 4
+	call CompareBytes
+	ret nz
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.singular2:
+	setevent EVENT_PASSWORD_SINGULAR
+	end
+
+CandyPouchPassword:
+	db "CHEATER"
+
+SingularPassword:
+	db "SINGULAR"
+
+MasterPasswordCheck:
+	checkevent EVENT_PASSWORD_SET
+	iftrue .stop
+	setevent EVENT_PASSWORD_SET
+	callasm .pseudoswap
+	iftrue .pseudoswap2
+	callasm .mythical
+	iftrue .mythical2
+	callasm .experiment
+	iftrue .experiment2
+	callasm .stupid
+	iftrue .stupid2
+	callasm .commence
+	iftrue .commence2
+	callasm .bambino
+	iftrue .bambino2
+.stop
+	end
+
+.pseudoswap:
+	xor a
+	ld [wScriptVar], a
+	ld de, PseudoSwapPassword
+	ld hl, wGreensName ; check inputted password
+	ld c, 4
+	call CompareBytes
+	ret nz
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.pseudoswap2:
+	setevent EVENT_PASSWORD_PSEUDOSWAP
+	end
+
+.mythical:
+	xor a
+	ld [wScriptVar], a
+	ld de, MythicalPassword
+	ld hl, wGreensName ; check inputted password
+	ld c, 4
+	call CompareBytes
+	ret nz
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.mythical2:
+	setevent EVENT_PASSWORD_MYTHICAL
+	end
+
+.experiment:
+	xor a
+	ld [wScriptVar], a
+	ld de, ExperimentPassword
+	ld hl, wGreensName ; check inputted password
+	ld c, 4
+	call CompareBytes
+	ret nz
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.experiment2:
+	setevent EVENT_PASSWORD_EXPERIMENT
+	end
+
+.stupid:
+	xor a
+	ld [wScriptVar], a
+	ld de, StupidPassword
+	ld hl, wGreensName ; check inputted password
+	ld c, 4
+	call CompareBytes
+	ret nz
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.stupid2:
+	setevent EVENT_PASSWORD_STUPID
+	end
+
+.commence:
+	xor a
+	ld [wScriptVar], a
+	ld de, CommencePassword
+	ld hl, wGreensName ; check inputted password
+	ld c, 4
+	call CompareBytes
+	ret nz
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.commence2:
+	setevent EVENT_PASSWORD_COMMENCE
+	end
+
+.bambino:
+	xor a
+	ld [wScriptVar], a
+	ld de, BambinoPassword
+	ld hl, wGreensName ; check inputted password
+	ld c, 4
+	call CompareBytes
+	ret nz
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.bambino2:
+	setevent EVENT_PASSWORD_BAMBINO
+	end
+
+PseudoSwapPassword:
+	db "PSEUDO"
+
+MythicalPassword:
+	db "MYTHICAL"
+
+ExperimentPassword:
+	db "EXPERIMENT"
+
+StupidPassword:
+	db "STUPID"
+
+CommencePassword:
+	db "COMMENCE"
+
+BambinoPassword:
+	db "BAMBINO"
 
 MastersHouse1F_WalkUpMovement:
 	step UP
@@ -684,169 +1158,356 @@ TalkToGranny:
 	cont "for you."
 	done
 
-MasterPryceText:
-	text "Ah, I see you have"
-	line "battled Pryce."
+MasterBeatenText:
+	text "Master: You've both"
+	line "done so well."
 
-	para "He can be quite"
-	line "the cold man."
-
-	para "He has a soft"
-	line "spot for children"
-	cont "and Ice-types."
-
-	para "You might find him"
-	line "in Ice Path on"
-	cont "Mondays."
-
-	para "He claims it's"
-	line "good for his body."
-
-	para "I'll have to take"
-	line "his word for it."
-
-	para "I don't care for"
-	line "the cold."
+	para "I am proud of you."
 	done
 
-MasterEnokiText:
-	text "Ah, I see you have"
-	line "battled Enoki."
+;MasterPryceText:
+;	text "Ah, I see you have"
+;	line "battled Pryce."
 
-	para "He's an old friend"
-	line "of mine."
+;	para "He can be quite"
+;	line "the cold man."
 
-	para "He always had a"
-	line "knack for the"
-	cont "ethereal."
+;	para "He has a soft"
+;	line "spot for children"
+;	cont "and Ice-types."
+
+;	para "You might find him"
+;	line "in Ice Path on"
+;	cont "Mondays."
+
+;	para "He claims it's"
+;	line "good for his body."
+
+;	para "I'll have to take"
+;	line "his word for it."
+
+;	para "I don't care for"
+;	line "the cold."
+;	done
+
+;MasterEnokiText:
+;	text "Ah, I see you have"
+;	line "battled Enoki."
+
+;	para "He's an old friend"
+;	line "of mine."
+
+;	para "He always had a"
+;	line "knack for the"
+;	cont "ethereal."
 	
-	para "He would always"
-	line "act like there"
-	cont "were ghosts"
-	cont "around."
+;	para "He would always"
+;	line "act like there"
+;	cont "were ghosts"
+;	cont "around."
 
-	para "I used to think"
-	line "he was just"
-	cont "joking."
+;	para "I used to think"
+;	line "he was just"
+;	cont "joking."
 
-	para "Maybe he was,"
-	line "maybe he wasn't."
+;	para "Maybe he was,"
+;	line "maybe he wasn't."
 
-	para "On Thursdays, he"
-	line "can be found on"
-	cont "Bellchime Path."
+;	para "On Thursdays, he"
+;	line "can be found on"
+;	cont "Bellchime Path."
+;	done
+
+;MasterChigusaText:
+;	text "Ah, I see you have"
+;	line "battled Chigusa."
+
+;	para "She happens to be"
+;	line "the youngest Gym"
+;	cont "Leader in Johto."
+
+;	para "She's the only"
+;	line "woman Leader as"
+;	cont "well."
+
+;	para "I commend her."
+
+;	para "Some older folks"
+;	line "may not like it,"
+
+;	para "but I think it's"
+;	line "great."
+
+;	para "The old ways"
+;	line "aren't always the"
+;	cont "best."
+
+;	para "On Tuesdays, you"
+;	line "can find her in"
+;	cont "the cave in the"
+;	cont "Wild Area."
+;	done
+
+;MasterByronText:
+;	text "Ah, I see you have"
+;	line "battled Byron."
+
+;	para "He's a native of"
+;	line "Canalave City in"
+;	cont "Sinnoh."
+
+;	para "He filled a"
+;	line "vacancy that"
+;	cont "few could fill."
+
+;	para "Perhaps someday"
+;	line "he will find a"
+;	cont "successor to"
+;	cont "replace him."
+
+;	para "On Wednesday, you"
+;	line "can find him at"
+;	cont "the Lighthouse."
+;	done
+
+;MasterMiltonText:
+;	text "Ah, I see you have"
+;	line "battled Milton."
+
+;	para "His wrangling"
+;	line "skills were second"
+;	cont "to none."
+
+;	para "His battling"
+;	line "skills aren't half"
+;	cont "bad either."
+
+;	para "He's fell on hard"
+;	line "times lately."
+
+;	para "The embargo has"
+;	line "been a problem."
+
+;	para "On Sundays, you"
+;	line "can find him back"
+;	cont "on his farm."
+;	done
+
+;MasterKurtText:
+;	text "Ah, I see you have"
+;	line "battled Kurt."
+
+;	para "His ability to"
+;	line "make balls was"
+;	cont "truly incredible."
+
+;	para "It's a shame that"
+;	line "Silph has put him"
+;	cont "out of business."
+
+;	para "His son still"
+;	line "sells his old"
+;	cont "work in Ecruteak."
+
+;	para "On Saturdays, you"
+;	line "can find him at"
+;	cont "his house."
+;	done
+
+;MasterWalkerText:
+;	text "Ah, I see you have"
+;	line "battled Walker."
+
+;	para "He wishes to"
+;	line "wander the world,"
+
+;	para "but he adheres to"
+;	line "his duties as a"
+;	cont "Gym Leader."
+
+;	para "On Fridays, you"
+;	line "can find him at"
+;	cont "Sprout Tower."
+;	done
+
+TakeBagonText:
+	text "Master: Will you"
+	line "take Bagon, the"
+	cont "hard-headed"
+	cont "#mon?"
 	done
 
-MasterChigusaText:
-	text "Ah, I see you have"
-	line "battled Chigusa."
-
-	para "She happens to be"
-	line "the youngest Gym"
-	cont "Leader in Johto."
-
-	para "She's the only"
-	line "woman Leader as"
-	cont "well."
-
-	para "I commend her."
-
-	para "Some older folks"
-	line "may not like it,"
-
-	para "but I think it's"
-	line "great."
-
-	para "The old ways"
-	line "aren't always the"
-	cont "best."
-
-	para "On Tuesdays, you"
-	line "can find her in"
-	cont "the cave in the"
-	cont "Wild Area."
+ChoseBagonText:
+	text "A good choice. I"
+	line "bred that from my"
+	cont "own Salamence."
 	done
 
-MasterByronText:
-	text "Ah, I see you have"
-	line "battled Byron."
-
-	para "He's a native of"
-	line "Canalave City in"
-	cont "Sinnoh."
-
-	para "He filled a"
-	line "vacancy that"
-	cont "few could fill."
-
-	para "Perhaps someday"
-	line "he will find a"
-	cont "successor to"
-	cont "replace him."
-
-	para "On Wednesday, you"
-	line "can find him at"
-	cont "the Lighthouse."
+TakeCelebiText:
+	text "Master: Will you"
+	line "take Celebi, the"
+	cont "time-traveller?"
 	done
 
-MasterMiltonText:
-	text "Ah, I see you have"
-	line "battled Milton."
-
-	para "His wrangling"
-	line "skills were second"
-	cont "to none."
-
-	para "His battling"
-	line "skills aren't half"
-	cont "bad either."
-
-	para "He's fell on hard"
-	line "times lately."
-
-	para "The embargo has"
-	line "been a problem."
-
-	para "On Sundays, you"
-	line "can find him back"
-	cont "on his farm."
+ChoseCelebiText:
+	text "Master: Don't ask"
+	line "me how I got that."
 	done
 
-MasterKurtText:
-	text "Ah, I see you have"
-	line "battled Kurt."
-
-	para "His ability to"
-	line "make balls was"
-	cont "truly incredible."
-
-	para "It's a shame that"
-	line "Silph has put him"
-	cont "out of business."
-
-	para "His son still"
-	line "sells his old"
-	cont "work in Ecruteak."
-
-	para "On Saturdays, you"
-	line "can find him at"
-	cont "his house."
+TakeEeveeText:
+	text "Master: Will you"
+	line "take Eevee, the"
+	cont "#mon of many"
+	cont "destinies?"
 	done
 
-MasterWalkerText:
-	text "Ah, I see you have"
-	line "battled Walker."
+ChoseEeveeText:
+	text "Master: Its new"
+	line "form is all up to"
+	cont "you."
+	done
 
-	para "He wishes to"
-	line "wander the world,"
+TakeMewtwoText:
+	text "Master: Will you"
+	line "take Mewtwo, the"
+	cont "strongest #mon?"
+	done
 
-	para "but he adheres to"
-	line "his duties as a"
-	cont "Gym Leader."
+ChoseMewtwoText:
+	text "Master: I think"
+	line "you're not taking"
+	cont "this seriously."
+	done
 
-	para "On Fridays, you"
-	line "can find him at"
-	cont "Sprout Tower."
+TakeElekidText:
+	text "Master: Will you"
+	line "take Elekid, the"
+	cont "lightening baby?"
+	done
+
+ChoseElekidText:
+	text "Master: Nurture it"
+	line "and it will be a"
+	cont "great ally."
+	done
+
+TakeMagikarpText:
+	text "Master: Will you"
+	line "take Magikarp, the"
+	cont "weak fish?"
+	done
+
+ChoseMagikarpText:
+	text "Master: Good luck."
+
+	para "You're going to"
+	line "need it."
+	done
+
+TakePikachuText:
+	text "Master: Will you"
+	line "take Pikachu, the"
+	cont "wildly popular"
+	cont "mouse #mon?"
+	done
+
+ChosePikachuText:
+	text "Master: You'll be"
+	line "popular too with"
+	cont "this #mon!"
+	done
+
+TakeGibleText:
+	text "Master: Will you"
+	line "take Gible, the"
+	cont "biting #mon?"
+	done
+
+ChoseGibleText:
+	text "A good choice. I"
+	line "bred that from my"
+	cont "own Garchomp."
+	done
+
+TakeMagbyText:
+	text "Master: Will you"
+	line "take Magby, the"
+	cont "small, but strong"
+	cont "fire #mon?"
+	done
+
+ChoseMagbyText:
+	text "Master: Treat this"
+	line "#mon with"
+	cont "respect, and it"
+	cont "will respect you."
+	done
+
+TakeMewText:
+	text "Master: Will you"
+	line "take Mew, the"
+	cont "ancestor to all"
+	cont "#mon?"
+	done
+
+ChoseMewText:
+	text "Master: You are"
+	line "not even meant to"
+	cont "have this #mon"
+	cont "until the post-"
+	cont "game."
+	done
+
+TakeMissingnoText:
+	text "Master: Will you"
+	line "take Missingno.,"
+	cont "the glitch?"
+	done
+
+ChoseMissingnoText:
+	text "Master: That thing"
+	line "shouldn't even be"
+	cont "in our world."
+	done
+
+TakeCandyPouchText:
+	text "By the way, I see"
+	line "that you put in"
+	cont "the password for"
+	cont "CHEATER."
+
+	para "Humph. Have you no"
+	line "shame?"
+
+	para "I am bound by the"
+	line "laws of the coding"
+	cont "to give you this."
+
+	para "Let us never speak"
+	line "of this again."
+	done
+
+MasterUnfortunateText:
+	text "Master: It is most"
+	line "unfortunate that"
+	cont "you were not able"
+	cont "to complete your"
+	cont "test, but given"
+	cont "your current"
+	cont "circumstances, I"
+	cont "shall let it go."
+
+	para "Patience is the"
+	line "key to raising"
+	cont "Magikarp."
+
+	para "Go forth, and come"
+	line "back once you have"
+	cont "earned seven"
+
+	para "Gym Badges. Then I"
+	line "shall test you one"
+	cont "last time."
 	done
 
 MastersHouse1F_MapEvents:

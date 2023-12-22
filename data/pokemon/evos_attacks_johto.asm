@@ -178,8 +178,8 @@ MagikarpEvosAttacks:
 	dbbw EVOLVE_LEVEL, 20, GYARADOS
 	db 0 ; no more evolutions
 	dbw 1, SPLASH
-	dbw 15, TACKLE
-	dbw 25, FLAIL
+	dbw 5, TACKLE
+	dbw 15, FLAIL
 	db 0 ; no more level-up moves
 
 GyaradosEvosAttacks:

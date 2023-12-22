@@ -179,7 +179,7 @@ ItemNames::
 	db "Portraitmail@"
 	db "Lovely Mail@"
 	db "Eon Mail@"
-	db "Morph Mail@"
+	db "Candy Pouch@"
 	db "Bluesky Mail@"
 	db "Music Mail@"
 	db "Mirage Mail@"

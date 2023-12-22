@@ -34,6 +34,8 @@ EcruteakPorygonGuy:
 	opentext
 	checkevent EVENT_GOT_PORYGON_R
 	iftrue .GotPorygon
+	checkevent EVENT_PASSWORD_SINGULAR
+	iftrue .CantGivePorygon
 	writetext HereTakeItText
 	buttonsound
 	waitsfx
@@ -54,6 +56,15 @@ EcruteakPorygonGuy:
 
 .NoRoom:
 	writetext EcruteakNoRoomText
+	waitbutton
+	closetext
+	end
+
+.CantGivePorygon:
+	writetext CantGivePorygonText
+	setevent EVENT_GOT_PORYGON_R
+	clearevent EVENT_ITEMFINDER_GUY
+	clearevent EVENT_JAILED_ROCKET
 	waitbutton
 	closetext
 	end
@@ -195,6 +206,19 @@ EcruteakThreeMonText:
 
 	para "wind off into the"
 	line "grassland."
+	done
+
+CantGivePorygonText:
+	text "You can't take this"
+	line "Porygon off my"
+	cont "hands?"
+
+	para "Dang. Looks like"
+	line "I'll have to pawn"
+	cont "it off on someone"
+	cont "else."
+
+	para "Thanks anyway."
 	done
 
 EcruteakItemfinderHouse_MapEvents:

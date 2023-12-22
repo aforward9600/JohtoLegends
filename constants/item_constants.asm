@@ -186,7 +186,7 @@
 	const PORTRAITMAIL ; d6
 	const LOVELY_MAIL  ; d7
 	const EON_MAIL     ; d8
-	const MORPH_MAIL   ; d9
+	const CANDY_POUCH  ; d9
 	const BLUESKY_MAIL ; da
 	const MUSIC_MAIL   ; db
 	const MIRAGE_MAIL  ; dc

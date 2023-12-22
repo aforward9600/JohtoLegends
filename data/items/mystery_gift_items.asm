@@ -13,7 +13,6 @@ MysteryGiftItems:
 	db X_SPECIAL
 	db X_ACCURACY
 	db EON_MAIL
-	db MORPH_MAIL
 	db MUSIC_MAIL
 	db LUM_BERRY
 	db SITRUS_BERRY

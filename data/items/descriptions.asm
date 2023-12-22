@@ -180,7 +180,7 @@ ItemDescriptions:
 	dw PortraitMailDesc
 	dw LovelyMailDesc
 	dw EonMailDesc
-	dw MorphMailDesc
+	dw CandyPouchDesc
 	dw BlueSkyMailDesc
 	dw MusicMailDesc
 	dw MewMailDesc
@@ -974,9 +974,9 @@ EonMailDesc:
 	db   "Eevee-print Mail."
 	next "(Hold)@"
 
-MorphMailDesc:
-	db   "Ditto-print Mail."
-	next "(Hold)@"
+CandyPouchDesc:
+	db   "Endlessly gives"
+	next "out Rare Candy.@"
 
 BlueSkyMailDesc:
 	db   "Sky-print Mail."

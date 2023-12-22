@@ -171,6 +171,8 @@ GoldenrodGameCornerTMVendorMenuHeader:
 GoldenrodGameCornerPrizeMonVendorScript:
 	faceplayer
 	opentext
+	checkevent EVENT_PASSWORD_SINGULAR
+	iftrue .CannotGetPrize
 	writetext GoldenrodGameCornerPrizeVendorIntroText
 	waitbutton
 	checkitem COIN_CASE
@@ -253,6 +255,12 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	db "Cubone     1500@"
 	db "Bagon      3000@"
 	db "Cancel@"
+
+.CannotGetPrize:
+	writetext CannotGetPrizeText
+	waitbutton
+	closetext
+	end
 
 GoldenrodGameCornerPharmacistScript:
 	faceplayer
@@ -494,6 +502,16 @@ GoldenrodGameCornerLeftTheirDrinkText:
 
 	para "I still remember"
 	line "those PSAs."
+	done
+
+CannotGetPrizeText:
+	text "I'm sorry."
+
+	para "It's solo run rules"
+	line "to not allow the"
+	cont "customer to claim"
+	cont "a prize from this"
+	cont "counter."
 	done
 
 GoldenrodGameCorner_MapEvents:

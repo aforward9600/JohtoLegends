@@ -80,12 +80,45 @@ AreYouABoyOrAreYouAGirl:
 	farcall Mobile_AlwaysReturnNotCarry ; some mobile stuff
 	jr c, .ok
 	farcall InitGender
+	ld hl, TextJump_PasswordOption
+	call PrintText
+	call YesNoBox
+	jr c, .SecondPassword
+
+	call RotateFourPalettesLeft
+	call ClearTileMap
+
+	ld b, NAME_PASSWORD
+	ld de, wGreensName
+	farcall NamingScreen
+
+.SecondPassword:
+	ld hl, TextJump_PasswordOption2
+	call PrintText
+	call YesNoBox
+	ret c
+
+	call RotateFourPalettesLeft
+	call ClearTileMap
+
+	ld b, NAME_PASSWORD
+	ld de, wMomsName
+	farcall NamingScreen
+
 	ret
 
 .ok
 	ld c, 0
 	farcall InitMobileProfile ; mobile
 	ret
+
+TextJump_PasswordOption:
+	text_far Text_PasswordOption
+	text_end
+
+TextJump_PasswordOption2:
+	text_far Text_PasswordOption2
+	text_end
 
 ResetWRAM:
 	xor a

@@ -12,6 +12,8 @@ FossilHouse_MapScripts:
 ScientistScript:
 	faceplayer
 	opentext
+	checkevent EVENT_PASSWORD_SINGULAR
+	iftrue .CantGetFossil
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .YouNoPatient
 	checkevent EVENT_GAVE_OLD_AMBER
@@ -156,6 +158,12 @@ ScientistScript:
 
 .NoRoom:
 	writetext FossilNoRoomText
+	waitbutton
+	closetext
+	end
+
+.CantGetFossil:
+	writetext CantGetFossilText
 	waitbutton
 	closetext
 	end
@@ -341,6 +349,16 @@ FossilHouse_ComputerScreenText:
 
 	para "the computer"
 	line "screen…"
+	done
+
+CantGetFossilText:
+	text "Ah! So sorry am I!"
+
+	para "A solo run you are"
+	line "on!"
+
+	para "No fossil can I"
+	line "revive!"
 	done
 
 FossilHouse_MapEvents:

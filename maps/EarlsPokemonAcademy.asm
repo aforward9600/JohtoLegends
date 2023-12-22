@@ -37,7 +37,12 @@ AcademyEarl:
 	end
 
 EarlsPokemonAcademyYoungster1Script:
+	checkevent EVENT_BEAT_CHAMPION_LANCE
+	iftrue .SoloPassword
 	jumptextfaceplayer EarlsPokemonAcademyYoungster1Text
+
+.SoloPassword:
+	jumptextfaceplayer SoloPasswordText
 
 EarlsPokemonAcademyGameboyKid1Script:
 	faceplayer
@@ -421,6 +426,19 @@ AcademyStickerMachineText:
 	line "prints data out as"
 
 	para "stickers!"
+	done
+
+SoloPasswordText:
+	text "Apparently, there"
+	line "are people out"
+	cont "there that will"
+	cont "take on the"
+	cont "#mon League"
+	cont "Challenge with a"
+	cont "SINGULAR #mon!"
+
+	para "That sounds"
+	line "irritating to me."
 	done
 
 EarlsPokemonAcademy_MapEvents:

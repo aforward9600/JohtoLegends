@@ -1559,3 +1559,13 @@ _OakText5::
 	para "Students such as"
 	line "you."
 	prompt
+
+Text_PasswordOption::
+	text "Enter a starter"
+	line "password?"
+	prompt
+
+Text_PasswordOption2::
+	text "Enter a different"
+	line "password?"
+	prompt
