@@ -110,3 +110,4 @@ TrainerGroups:
 	dba KarateKingGroup
 	dba FuchsiaNinjaMGroup
 	dba FuchsiaNinjaFGroup
+	dba FerropexolaGroup

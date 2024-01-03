@@ -29,6 +29,7 @@ EliteFour:
 	db CHALLENGER_DRACO
 	db CHALLENGER_CYNTHIA
 	db GEN_SURGE
+	db FERROPEXOLA_TRAINER
 ; fallthrough
 KantoGymLeaders:
 	db FLINT

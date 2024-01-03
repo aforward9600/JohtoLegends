@@ -1,71 +1,133 @@
 	object_const_def ; object_event constants
-	const ROUTE28STEELWINGHOUSE_CELEBRITY
-	const ROUTE28STEELWINGHOUSE_FEAROW
+	const ROUTE27SANDSTORMHOUSE_FERROPEXOLA
 
 Route28SteelWingHouse_MapScripts:
-	db 1 ; scene scripts
-	scene_script .DummyScene
+	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-.DummyScene:
-	end
-
-Celebrity:
+FerropexolaScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TM47_STEEL_WING
-	iftrue .AlreadyGotItem
-	writetext CelebrityText1
-	buttonsound
-	verbosegiveitem TM_STEEL_WING
-	iffalse .Done
-	setevent EVENT_GOT_TM47_STEEL_WING
-.Done:
+	checkevent EVENT_BEAT_FERROPEXOLA
+	iftrue .FerropexolaRematch
+	writetext FerropexolaWelcomeText
+	waitbutton
 	closetext
-	end
-.AlreadyGotItem:
-	writetext CelebrityText2
+	winlosstext FerropexolaLossText, FerropexolaLastMonText
+	loadtrainer FERROPEXOLA_TRAINER, FERROPEXOLA1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_FERROPEXOLA
+	opentext
+	writetext FerropexolaCongratsText
 	waitbutton
 	closetext
 	end
 
-CelebritysFearow:
+.FerropexolaRematch:
+	writetext FerropexolaRematchText
+	yesorno
+	iffalse .Refused
+	writetext FerropexolaLetsFightText
+	waitbutton
+	closetext
+	winlosstext FerropexolaLossText, FerropexolaLastMonText
+	loadtrainer FERROPEXOLA_TRAINER, FERROPEXOLA1
+	startbattle
+	reloadmapafterbattle
 	opentext
-	writetext CelebritysFearowText
-	cry FEAROW
+	writetext FerropexolaCongratsText
 	waitbutton
 	closetext
 	end
+
+.Refused:
+	writetext FerropexolaComeBackText
+	waitbutton
+	closetext
+	end
+
+FerropexolaLastMonText:
+	text "This has gotten"
+	line "intersting!"
+	done
 
 CelebrityHouseBookshelf:
 	jumpstd magazinebookshelf
 
-CelebrityText1:
-	text "Oh, dear."
-	line "You've found me."
+FerropexolaWelcomeText:
+	text "???: Welcome,"
+	line "<PLAYER>."
 
-	para "Please don't tell"
-	line "anyone about me."
+	para "How do I know your"
+	line "name?"
 
-	para "I'll give you this"
-	line "for keeping my"
-	cont "secret. Please?"
+	para "I am Ferropexola."
+
+	para "I'm the lead"
+	line "designer for this"
+	cont "ROM hack."
+
+	para "I've been waiting a"
+	line "long time for this"
+	cont "moment."
+
+	para "You may have been"
+	line "waiting just as"
+	cont "long."
+
+	para "I want to see just"
+	line "how strong you've"
+	cont "become over the"
+	cont "course of your"
+	cont "adventure."
+
+	para "Let's battle!"
 	done
 
-CelebrityText2:
-	text "It's tough being a"
-	line "top celebrity."
+FerropexolaLossText:
+	text "Ferropexola:…"
 
-	para "Everywhere I go,"
-	line "people chase me."
+	para "Truly incredible…"
 
-	para "I just want to be"
-	line "left alone…"
+	para "I'd dare say that"
+	line "you're the most"
+	cont "powerful trainer"
+	cont "in the game."
 	done
 
-CelebritysFearowText:
-	text "FEAROW: Feero!"
+FerropexolaCongratsText:
+	text "Ferropexola: Well,"
+	line "my hat's off to"
+	cont "you, if I were"
+	cont "wearing one."
+
+	para "Congratulations!"
+
+	para "Come back any time"
+	line "for another battle"
+	cont "if you want."
+
+	para "I'll be here."
+	done
+
+FerropexolaRematchText:
+	text "Ferropexola: Back"
+	line "for a rematch?"
+	done
+
+FerropexolaLetsFightText:
+	text "Let's do it!"
+	done
+
+FerropexolaComeBackText:
+	text "Come back any time"
+	line "you like."
+
+	para "I've got no where"
+	line "else to be right"
+	cont "now."
 	done
 
 Route28SteelWingHouse_MapEvents:
@@ -81,6 +143,5 @@ Route28SteelWingHouse_MapEvents:
 	bg_event  0,  1, BGEVENT_READ, CelebrityHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, CelebrityHouseBookshelf
 
-	db 2 ; object events
-	object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Celebrity, -1
-	object_event  6,  5, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CelebritysFearow, -1
+	db 1 ; object events
+	object_event  2,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FerropexolaScript, -1

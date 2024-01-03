@@ -108,3 +108,4 @@ TrainerClassNames::
 	db "Karate King@"
 	db "Fuchsia@"
 	db "Fuchsia@"
+	db "Ferropexola@"

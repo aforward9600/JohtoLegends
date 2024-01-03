@@ -12,7 +12,7 @@ LoadSGBLayout:
 	ld l, a
 	ld h, 0
 	add hl, hl
-	ld de, .Jumptable
+	ld de, SGBLayoutJumptable
 	add hl, de
 	ld a, [hli]
 	ld h, [hl]
@@ -21,7 +21,7 @@ LoadSGBLayout:
 	push de
 	jp hl
 
-.Jumptable:
+SGBLayoutJumptable:
 	dw .SGB_BattleGrayscale
 	dw .SGB_BattleColors
 	dw .SGB_PokegearPals

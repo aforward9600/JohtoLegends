@@ -2651,13 +2651,16 @@ endc
 	db -1 ; end
 
 	next_list_item ; LASS (8)
-	db "SHANNON@", TRAINERTYPE_NORMAL
-	db 29
-	dw PARAS
-	db 29
-	dw PARAS
-	db 32
-	dw PARASECT
+	db "Usagi@", TRAINERTYPE_MOVES
+	db 71
+	dw CLEFABLE
+	dw MOONBLAST, CALM_MIND, FIRE_BLAST, THUNDERBOLT
+	db 71
+	dw WEAVILE
+	dw ICICLE_CRASH, NIGHT_SLASH, BRICK_BREAK, HONE_CLAWS
+	db 72
+	dw URSALUNA
+	dw HEADLONGRUSH, CRUNCH, RETURN, PLAY_ROUGH
 	db -1 ; end
 
 	next_list_item ; LASS (9)
@@ -3308,10 +3311,19 @@ endc
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (12)
-	db "BETH@", TRAINERTYPE_MOVES
-	db 39
-	dw RAPIDASH
-	dw STOMP, FIRE_SPIN, FURY_ATTACK, AGILITY
+	db "Terra@", TRAINERTYPE_MOVES
+	db 73
+	dw CHARIZARD
+	dw HEAT_WAVE, AIR_SLASH, DRAGON_PULSE, INFERNO
+	db 73
+	dw MAGNEZONE
+	dw THUNDERBOLT, TRI_ATTACK, FLASH_CANNON, THUNDER_WAVE
+	db 73
+	dw BELLOSSOM
+	dw MOONBLAST, GIGA_DRAIN, QUIVER_DANCE, SLUDGE_BOMB
+	db 73
+	dw NIDOQUEEN
+	dw EARTHQUAKE, POISON_JAB, SUPERPOWER, BULK_UP
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (13)
@@ -4609,9 +4621,10 @@ endc
 	db -1 ; end
 
 	next_list_item ; FISHER (3)
-	db "ARNOLD@", TRAINERTYPE_NORMAL
-	db 34
-	dw TENTACRUEL
+	db "Foster@", TRAINERTYPE_MOVES
+	db 74
+	dw KINGLER
+	dw WAVE_CRASH, EARTHQUAKE, CRABHAMMER, PROTECT
 	db -1 ; end
 
 	next_list_item ; FISHER (4)
@@ -5031,12 +5044,12 @@ endc
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (18)
-	db "SETH@", TRAINERTYPE_NORMAL
-	db 29
-	dw QUAGSIRE
-	db 29
+	db "Charlie@", TRAINERTYPE_NORMAL
+	db 70
+	dw TENTACRUEL
+	db 70
 	dw OCTILLERY
-	db 32
+	db 71
 	dw QUAGSIRE
 	db -1 ; end
 
@@ -5215,15 +5228,19 @@ endc
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (17)
-	db "NIKKI@", TRAINERTYPE_NORMAL
-	db 28
-	dw SEEL
-	db 28
-	dw SEEL
-	db 28
-	dw SEEL
-	db 28
+	db "Janice@", TRAINERTYPE_MOVES
+	db 70
+	dw STARMIE
+	dw HYDRO_PUMP, PSYCHIC_M, ICE_BEAM, THUNDERBOLT
+	db 70
+	dw QWILFISH
+	dw GUNK_SHOT, WAVE_CRASH, DESTINY_BOND, TOXIC
+	db 71
+	dw SEAKING
+	dw POISON_JAB, WAVE_CRASH, MEGAHORN, AGILITY
+	db 70
 	dw DEWGONG
+	dw MEGAHORN, HAIL, AQUA_TAIL, ICE_SHARD
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (18)
@@ -12605,6 +12622,31 @@ FuchsiaNinjaFGroup:
 	db 75
 	dw ARIADOS
 	dw GUNK_SHOT, X_SCISSOR, CRUNCH, SPIDER_WEB
+	db -1
+
+	end_list_items
+
+FerropexolaGroup:
+	next_list_item ; FERROPEXOLA1
+	db "@", TRAINERTYPE_ITEM
+	db 100
+	dw CORSOLA
+	db EVIOLITE
+	db 100
+	dw SKARMORY
+	db FOCUS_SASH
+	db 100
+	dw BLISSEY
+	db LEFTOVERS
+	db 100
+	dw SHUCKLE
+	db LEFTOVERS
+	db 100
+	dw GARCHOMP
+	db LIFE_ORB
+	db 100
+	dw SNORLAX
+	db LEFTOVERS
 	db -1
 
 	end_list_items

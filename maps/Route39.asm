@@ -166,10 +166,10 @@ SailorSheldonAfterBattleText:
 
 	para "Unova's tariffs"
 	line "are too high, and"
-	cont "Kalos, Alola and"
-	cont "Galar are too far"
-	cont "for an average"
-	cont "haul."
+	cont "Kalos, Alola,"
+	cont "Galar and Paldea"
+	cont "are too far for an"
+	cont "average haul."
 
 	para "Orre would be"
 	line "easier if they had"
@@ -284,10 +284,19 @@ HexManiacSabrinaLetsDoItText:
 	done
 
 HexManiacSabrinaAfterBattleText:
-	text "Will I not fight"
-	line "in the light?"
+	text "This world has too"
+	line "much color."
 
-	para "I just might."
+	para "I would prefer it"
+	line "to be duller."
+
+	para "The world would"
+	line "look like my home."
+
+	para "I'd like everything"
+	line "to be"
+
+	para "MONOCHROME."
 	done
 
 Route39SignText:

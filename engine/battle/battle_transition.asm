@@ -648,10 +648,73 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	ldh [hBGMapMode], a
 	call DelayFrame
 	call DelayFrame
-	jr .nextscene
+	jp .nextscene
 
 .cgb
+	ld hl, .prycepals
+	ld a, [wOtherTrainerClass]
+	cp PRYCE
+	jp z, .load_rocket_pals
+	cp PRYCE_2
+	jp z, .load_rocket_pals
+	cp PRYCE_3
+	jr z, .load_rocket_pals
+	ld hl, .enokipals
+	ld a, [wOtherTrainerClass]
+	cp ENOKI
+	jr z, .load_rocket_pals
+	cp ENOKI_2
+	jr z, .load_rocket_pals
+	cp ENOKI_3
+	jr z, .load_rocket_pals
+	ld hl, .chigusapals
+	ld a, [wOtherTrainerClass]
+	cp CHIGUSA
+	jr z, .load_rocket_pals
+	cp CHIGUSA_2
+	jr z, .load_rocket_pals
+	ld hl, .byronpals
+	ld a, [wOtherTrainerClass]
+	cp BYRON
+	jr z, .load_rocket_pals
+	cp BYRON_2
+	jr z, .load_rocket_pals
+	ld hl, .miltonpals
+	ld a, [wOtherTrainerClass]
+	cp MILTON
+	jr z, .load_rocket_pals
+	ld hl, .kurtpals
+	ld a, [wOtherTrainerClass]
+	cp KURT
+	jr z, .load_rocket_pals
+	ld hl, .walkerpals
+	ld a, [wOtherTrainerClass]
+	cp WALKER
+	jr z, .load_rocket_pals
+	ld hl, .masterpals
+	ld a, [wOtherTrainerClass]
+	cp MASTER
+	jr z, .load_rocket_pals
+	ld hl, .rocketpals
+	ld a, [wOtherTrainerClass]
+	cp GRUNTM
+	jr z, .load_rocket_pals
+	cp GRUNTF
+	jr z, .load_rocket_pals
+	cp ARCHER
+	jr z, .load_rocket_pals
+	cp ARIANA
+	jr z, .load_rocket_pals
+	cp SCIENTIST
+	jr z, .load_rocket_pals
+	cp EIN
+	jr z, .load_rocket_pals
+	cp MYSTERIOUS
+	jr z, .load_rocket_pals
+	cp MADAME_BOSS
+	jr z, .load_rocket_pals
 	ld hl, .pals
+.load_rocket_pals
 	ld a, [wTimeOfDayPal]
 	cp DARKNESS_PALSET
 	jr nz, .not_dark
@@ -707,6 +770,33 @@ INCLUDE "gfx/overworld/trainer_battle.pal"
 .darkpals
 INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 
+.rocketpals
+INCLUDE "gfx/overworld/rocket_battle.pal"
+
+.prycepals
+INCLUDE "gfx/overworld/pryce_battle.pal"
+
+.enokipals
+INCLUDE "gfx/overworld/enoki_battle.pal"
+
+.chigusapals
+INCLUDE "gfx/overworld/chigusa_battle.pal"
+
+.byronpals
+INCLUDE "gfx/overworld/byron_battle.pal"
+
+.miltonpals
+INCLUDE "gfx/overworld/milton_battle.pal"
+
+.kurtpals
+INCLUDE "gfx/overworld/kurt_battle.pal"
+
+.walkerpals
+INCLUDE "gfx/overworld/walker_battle.pal"
+
+.masterpals
+INCLUDE "gfx/overworld/master_battle.pal"
+
 .loadpokeballgfx
 	ld de, TeamRocketTransition
 	ld a, [wOtherTrainerClass]
@@ -721,6 +811,10 @@ INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 	cp SCIENTIST
 	ret z
 	cp MYSTERIOUS
+	ret z
+	cp MADAME_BOSS
+	ret z
+	cp EIN
 	ret z
 	ld de, LanceTransition
 	cp DRAGON_KID
@@ -790,22 +884,22 @@ popo
 TeamRocketTransition:
 pusho
 opt b.X ; . = 0, X = 0
-	bigdw %...............X
-	bigdw %..............X.
-	bigdw %...XXXX......XX.
-	bigdw %..XXXXXX....XX..
-	bigdw %.XXX..XXX...XX..
-	bigdw %XXX....XXX.XX...
-	bigdw %XX......XXXXX...
-	bigdw %XX.......XXX....
-	bigdw %XX.......XX......
-	bigdw %XX......XXXX....
-	bigdw %XXX....XXX.XX...
-	bigdw %.XXX..XXX..XX...
-	bigdw %..XXXXXX....X..X
-	bigdw %...XXXX.....XXXX
-	bigdw %.............XX.
-	bigdw %................
+	bigdw %XXXXXXXXXXXX....
+	bigdw %XXXXXXXXXXXXXX..
+	bigdw %XXXXXXXXXXXXXXX.
+	bigdw %XXXXXXXXXXXXXXX.
+	bigdw %XXXXX.....XXXXXX
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX.....XXXXXX
+	bigdw %XXXXXXXXXXXXXXX.
+	bigdw %XXXXXXXXXXXXXXX.
+	bigdw %XXXXXXXXXXXXXX..
+	bigdw %XXXXXXXXXXXXX...
+	bigdw %XXXXX....XXXXX..
+	bigdw %XXXXX....XXXXX..
+	bigdw %XXXXX.....XXXXX.
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX......XXXXX
 popo
 
 RivalTransition:

@@ -125,6 +125,10 @@ PlayBattleMusic:
 	jp .done
 
 .trainermusic
+	ld de, MUSIC_MEGALOVANIA
+	cp FERROPEXOLA_TRAINER
+	jp z, .done
+
 	ld de, MUSIC_CHAMPION_BATTLE
 	cp CHAMPION_DAHLIA
 	jp z, .done

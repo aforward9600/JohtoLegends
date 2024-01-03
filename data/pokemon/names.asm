@@ -242,7 +242,7 @@ PokemonNames::
 	db "Pineco@@@@"
 	db "Forretress"
 	db "Dunsparce@"
-	db "Dudunspars"
+	db "Dud<COLON>sparce"
 	db "Gligar@@@@"
 	db "Gliscor@@@"
 	db "Snubbull@@"

@@ -692,6 +692,16 @@ GetForestTreeFrame:
 AnimateFlowerTile:
 ; No parameters.
 
+	push de
+	push hl
+	ld de, MonochromeFlowersPassword
+	ld hl, wMomsName
+	ld c, 4
+	call CompareBytes
+	jr z, .MonochromeFlowers
+	pop hl
+	pop de
+
 ; Save sp in bc (see WriteTile).
 	ld hl, sp+0
 	ld b, h
@@ -717,6 +727,33 @@ AnimateFlowerTile:
 	ld hl, vTiles2 tile $03
 
 	jp WriteTile
+
+.MonochromeFlowers
+	pop hl
+	pop de
+
+	; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; Alternate tile graphic every other frame
+	ld a, [wTileAnimationTimer]
+	and %10
+
+	swap a
+	ld e, a
+	ld d, 0
+	ld hl, FlowerTileFrames
+	add hl, de
+	ld sp, hl
+
+	ld hl, vTiles2 tile $03
+
+	jp WriteTile
+
+MonochromeFlowersPassword:
+	db "MONOCHROME"
 
 AnimateFlowerTile2:
 ; No parameters.
@@ -980,6 +1017,16 @@ endr
 AnimateWaterPalette:
 ; Transition between color values 0-2 for color 0 in palette 3.
 
+	push de
+	push hl
+	ld de, MonochromeWaterPassword
+	ld hl, wMomsName
+	ld c, 4
+	call CompareBytes
+	jr z, .DontAnimateWaterTile
+	pop hl
+	pop de
+
 ; No palette changes on DMG.
 	ldh a, [hCGB]
 	and a
@@ -1041,8 +1088,27 @@ AnimateWaterPalette:
 	ldh [rSVBK], a
 	ret
 
+.DontAnimateWaterTile:
+	pop hl
+	pop de
+	ret
+
+MonochromeWaterPassword:
+	db "MONOCHROME"
+
 FlickeringCaveEntrancePalette:
 ; No palette changes on DMG.
+
+	push de
+	push hl
+	ld de, MonochromeCavePassword
+	ld hl, wMomsName
+	ld c, 4
+	call CompareBytes
+	jr z, .DontAnimateCave
+	pop hl
+	pop de
+
 	ldh a, [hCGB]
 	and a
 	ret z
@@ -1080,6 +1146,14 @@ FlickeringCaveEntrancePalette:
 	pop af
 	ldh [rSVBK], a
 	ret
+
+.DontAnimateCave:
+	pop hl
+	pop de
+	ret
+
+MonochromeCavePassword:
+	db "MONOCHROME"
 
 TowerPillarTilePointer1:  dw vTiles2 tile $2d, TowerPillarTile1
 TowerPillarTilePointer2:  dw vTiles2 tile $2f, TowerPillarTile2

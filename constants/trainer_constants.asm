@@ -185,7 +185,7 @@ CHRIS EQU __enum__
 	const CONNIE1
 	const LINDA
 	const LAURA
-	const SHANNON
+	const USAGI
 	const MICHELLE
 	const ELLEN
 	const CONNIE2
@@ -228,7 +228,7 @@ CHRIS EQU __enum__
 	const BETH1
 	const REENA1
 	const MARIA
-	const BETH2
+	const TERRA
 	const SOL
 	const CARA
 	const JESSIE
@@ -951,6 +951,9 @@ CHRIS EQU __enum__
 	trainerclass FNINJA_F
 	const FNINJA_F_1
 	const FNINJA_F_2
+
+	trainerclass FERROPEXOLA_TRAINER
+	const FERROPEXOLA1
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

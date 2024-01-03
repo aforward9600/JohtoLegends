@@ -17,7 +17,7 @@ Mountvesuvius for Strength Sap and HM Key Items.
 
 Idain, Rangi, WasabiRaptor for EVS.
 
-Rangi and Idain for Evening time.
+Rangi and Idain for Evening time and SGB palettes for maps.
 
 Idain for the Hidden Power Guru, Soothe Bell and Gen 6+ Exp. Share and correctly colored Pokepics
 

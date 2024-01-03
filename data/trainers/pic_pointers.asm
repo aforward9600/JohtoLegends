@@ -110,3 +110,4 @@ TrainerPicPointers::
 	dba KarateKingPic
 	dba MahoganyNinjaMPic
 	dba MahoganyNinjaFPic
+	dba FerropexolaPic

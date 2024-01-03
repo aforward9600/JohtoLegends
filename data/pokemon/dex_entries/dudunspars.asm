@@ -1,7 +1,7 @@
 	db "Land Snake@" ; species name
 	dw 1409, 1045 ; height, weight
 
-	db   "Dudunspars will"
+	db   "Dudunsparce will"
 	next "put #mon that"
 	next "wander into its"
 
