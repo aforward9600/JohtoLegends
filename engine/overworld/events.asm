@@ -991,11 +991,28 @@ WarpToNewMapScript:
 
 FallIntoMapScript:
 	newloadmap MAPSETUP_FALL
+	callasm CheckIfPlayerIsSurfing
+	iffalse .AfterBlue
+	setval (PAL_NPC_BLUE << 4)
+	special SetPlayerPalette
+.AfterBlue:
 	playsound SFX_KINESIS
 	applymovement PLAYER, MovementData_0x96c48
 	playsound SFX_STRENGTH
 	scall LandAfterPitfallScript
 	end
+
+CheckIfPlayerIsSurfing:
+	ld a, [wPlayerState]
+	and $c
+	cp PLAYER_SURF
+	ld a, $1
+	jr z, .MakeSurfBlue
+	xor a
+
+.MakeSurfBlue:
+	ld [wScriptVar], a
+	ret
 
 MovementData_0x96c48:
 	skyfall

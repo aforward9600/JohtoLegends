@@ -511,10 +511,6 @@ INCLUDE "maps/NownPuzzleRoom.asm"
 
 SECTION "Map Scripts 29", ROMX
 
-INCLUDE "maps/FastShip1F.asm"
-INCLUDE "maps/FastShipCabins_NNW_NNE_NE.asm"
-INCLUDE "maps/FastShipCabins_SW_SSW_NW.asm"
-INCLUDE "maps/FastShipCabins_SE_SSE_CaptainsCabin.asm"
 INCLUDE "maps/PokemonMansion2F.asm"
 INCLUDE "maps/PokemonMansion3F.asm"
 INCLUDE "maps/PokemonMansionB1F.asm"
@@ -532,7 +528,6 @@ INCLUDE "maps/SeafoamIslandB4F.asm"
 INCLUDE "maps/CeruleanCave1F.asm"
 INCLUDE "maps/CeruleanCaveB1F.asm"
 INCLUDE "maps/CeruleanCave2F.asm"
-INCLUDE "maps/SafariZoneMainOffice.asm"
 
 
 SECTION "Map Scripts 30", ROMX
@@ -566,3 +561,12 @@ INCLUDE "maps/Route36.asm"
 INCLUDE "maps/FuchsiaCity.asm"
 INCLUDE "maps/ViridianGym.asm"
 INCLUDE "maps/Route27SandstormHouse.asm"
+INCLUDE "maps/SafariZoneMainOffice.asm"
+
+
+SECTION "Map Scripts 32", ROMX
+
+INCLUDE "maps/FastShipCabins_SE_SSE_CaptainsCabin.asm"
+INCLUDE "maps/FastShip1F.asm"
+INCLUDE "maps/FastShipCabins_NNW_NNE_NE.asm"
+INCLUDE "maps/FastShipCabins_SW_SSW_NW.asm"

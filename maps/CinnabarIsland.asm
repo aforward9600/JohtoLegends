@@ -115,4 +115,4 @@ CinnabarIsland_MapEvents:
 	bg_event 18,  3, BGEVENT_READ, CinnabarGymDoor
 
 	db 1 ; object events
-	object_event 13,  6, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandGrampsScript, EVENT_BLUE_IN_CINNABAR
+	object_event 13,  6, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandGrampsScript, -1

@@ -191,27 +191,6 @@ KantoWaterWildMons:
 	dbw 68, SLOWBRO
 	dbw 68, SLOWKING
 
-	map_id SEAFOAM_ISLAND_1F
-	db 6 percent
-	dbw 65, DEWGONG
-	dbw 65, CLOYSTER
-	dbw 68, GOLDUCK
-	dbw 68, SLOWBRO
-
-	map_id SEAFOAM_ISLAND_B1F
-	db 6 percent
-	dbw 65, DEWGONG
-	dbw 65, CLOYSTER
-	dbw 68, GOLDUCK
-	dbw 68, SLOWBRO
-
-	map_id SEAFOAM_ISLAND_B2F
-	db 6 percent
-	dbw 65, DEWGONG
-	dbw 65, CLOYSTER
-	dbw 68, GOLDUCK
-	dbw 68, SLOWBRO
-
 	map_id SEAFOAM_ISLAND_B3F
 	db 6 percent
 	dbw 65, DEWGONG

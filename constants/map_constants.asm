@@ -212,7 +212,7 @@ ENDM
 	map_const SEAFOAM_ISLAND_1F,                           17, 12 ; 19
 	map_const SEAFOAM_ISLAND_B1F,                          17, 12 ; 20
 	map_const SEAFOAM_ISLAND_B2F,                          17, 11 ; 21
-	map_const SEAFOAM_ISLAND_B3F,                          15,  9 ; 22
+	map_const SEAFOAM_ISLAND_B3F,                          15, 10 ; 22
 	map_const SEAFOAM_ISLAND_B4F,                          17,  9 ; 23
 
 	newgroup                                                      ;  7
