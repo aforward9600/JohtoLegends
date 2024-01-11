@@ -326,19 +326,31 @@ ChooseWildEncounter:
 ; Check if we buff the wild mon, and by how much.
 	call Random
 	cp 35 percent
-	jr c, .ok
+	jr c, .waterdone
 	inc b
 	cp 65 percent
-	jr c, .ok
+	jr c, .waterdone
 	inc b
 	cp 85 percent
-	jr c, .ok
+	jr c, .waterdone
 	inc b
 	cp 95 percent
-	jr c, .ok
+	jr c, .waterdone
 	inc b
+	jr .waterdone
 ; Store the level
 .ok
+	call Random
+	cp 35 percent
+	jr c, .waterdone
+	inc b
+	cp 65 percent
+	jr c, .waterdone
+	inc b
+	cp 85 percent
+	jr c, .waterdone
+	inc b
+.waterdone
 	ld a, b
 	ld [wCurPartyLevel], a
 

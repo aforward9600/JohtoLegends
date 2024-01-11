@@ -169,8 +169,8 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; a8
 	tilecoll WALL, WALL, WALL, WALL ; a9
 	tilecoll WALL, WALL, WALL, WALL ; aa
-	tilecoll WARP_PANEL, WATER, WATER, WATER ; ab
-	tilecoll WATER, WATER, WARP_PANEL, WATER ; ac
+	tilecoll LADDER, WATER, WATER, WATER ; ab
+	tilecoll WATER, WATER, LADDER, WATER ; ac
 	tilecoll FLOOR, FLOOR, WALL, WALL ; ad
 	tilecoll FLOOR, FLOOR, WALL, WALL ; ae
 	tilecoll WALL, FLOOR, WALL, WALL ; af

@@ -179,8 +179,6 @@ CheckReplaceKrisSprite:
 	call GetMapEnvironment
 	cp INDOOR
 	jr z, .checkbiking
-	cp ENVIRONMENT_5
-	jr z, .checkbiking
 	cp DUNGEON
 	jr z, .checkbiking
 	jr .nope

@@ -64,67 +64,61 @@ TrainerCooltrainerFTerra:
 	end
 
 CinnabarGymSign:
-	setevent EVENT_SEAFOAM_ISLAND_BOULDER_B1F_1
-	setevent EVENT_SEAFOAM_ISLAND_BOULDER_B1F_2
-	setevent EVENT_SEAFOAM_ISLAND_BOULDER_B2F_1
-	setevent EVENT_SEAFOAM_ISLAND_BOULDER_B2F_2
-	setevent EVENT_SEAFOAM_ISLAND_BOULDER_B3F_1
-	setevent EVENT_SEAFOAM_ISLAND_BOULDER_B3F_2
-	setevent EVENT_SEAFOAM_ISLAND_BOULDER_B4F_2
-	setevent EVENT_SEAFOAM_ISLAND_BOULDER_B4F_1
 	jumptext CinnabarGymSignText
 
 SwimmerfNicoleSeenText:
-	text "I feel so much"
-	line "lighter in water."
+	text "The w-w-ater's s-so"
+	line "c-cold!"
 	done
 
 SwimmerfNicoleBeatenText:
-	text "Oh, no!"
+	text "Brrrrrrr!"
 	done
 
 SwimmerfNicoleAfterBattleText:
-	text "Swimming exercises"
-	line "your full body."
+	text "T-t-that's what I"
+	line "g-get for swimming"
 
-	para "It's really good"
-	line "for you."
+	para "n-near S-seafoam"
+	line "Islands!"
 	done
 
 SwimmerfLoriSeenText:
-	text "What an impressive"
-	line "collection of GYM"
-
-	para "BADGES. We should"
-	line "battle!"
+	text "I feel so alive!"
 	done
 
 SwimmerfLoriBeatenText:
-	text "No!"
+	text "Ah! I'm drowning!"
 	done
 
 SwimmerfLoriAfterBattleText:
-	text "SURF is no longer"
-	line "the only HM move"
-	cont "you use in water."
+	text "Whew! That was"
+	line "close!"
+
+	para "Always be cautious"
+	line "in the ocean!"
 	done
 
 SwimmermCameronSeenText:
-	text "I guess it's im-"
-	line "possible to swim"
+	text "I heard about a"
+	line "Legendary #mon"
 
-	para "all the way to"
-	line "JOHTO."
+	para "in Seafoam Islands"
+	line "but I'm not"
+	cont "interested in it."
+
+	para "It's not a"
+	line "swimming #mon!"
 	done
 
 SwimmermCameronBeatenText:
-	text "Aiyah!"
+	text "Gracious!"
 	done
 
 SwimmermCameronAfterBattleText:
-	text "Besides the sea, I"
-	line "can also swim in"
-	cont "ponds and rivers."
+	text "It's a bird, so it's"
+	line "not interesting to"
+	cont "me."
 	done
 
 CinnabarGymSignText:

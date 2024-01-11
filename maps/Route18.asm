@@ -18,13 +18,13 @@ TrainerBirdKeeperBoris:
 	closetext
 	end
 
-TrainerBirdKeeperBob:
-	trainer BIRD_KEEPER, BOB, EVENT_BEAT_BIRD_KEEPER_BOB, BirdKeeperBobSeenText, BirdKeeperBobBeatenText, 0, .Script
+TrainerRoughneckMoe:
+	trainer ROUGHNECK, MOE, EVENT_BEAT_ROUGHNECK_MOE, RoughneckMoeSeenText, RoughneckMoeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperBobAfterBattleText
+	writetext RoughneckMoeAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -33,11 +33,10 @@ Route18Sign:
 	jumptext Route18SignText
 
 BirdKeeperBorisSeenText:
-	text "If you're looking"
-	line "for #MON, you"
+	text "This area is mine!"
 
-	para "have to look in"
-	line "the tall grass."
+	para "Go get your own"
+	line "territory!"
 	done
 
 BirdKeeperBorisBeatenText:
@@ -45,34 +44,37 @@ BirdKeeperBorisBeatenText:
 	done
 
 BirdKeeperBorisAfterBattleText:
-	text "Since you're so"
-	line "strong, it must be"
-	cont "fun to battle."
+	text "Sorry, I thought"
+	line "you were a Fed."
+
+	para "You're welcome to"
+	line "stay if you want."
 	done
 
-BirdKeeperBobSeenText:
-	text "CYCLING ROAD is a"
-	line "quick shortcut to"
-	cont "CELADON."
+RoughneckMoeSeenText:
+	text "You're not gettin'"
+	line "past me!"
 	done
 
-BirdKeeperBobBeatenText:
-	text "…Whew!"
+RoughneckMoeBeatenText:
+	text "You definitely got"
+	line "past me!"
 	done
 
-BirdKeeperBobAfterBattleText:
-	text "If you don't have"
-	line "a BICYCLE, you're"
+RoughneckMoeAfterBattleText:
+	text "I'll let you off"
+	line "with a warning for"
+	cont "now."
 
-	para "not allowed to use"
-	line "the shortcut."
+	para "Next time will be"
+	line "different!"
 	done
 
 Route18SignText:
-	text "ROUTE 18"
+	text "Route 18"
 
-	para "CELADON CITY -"
-	line "FUCHSIA CITY"
+	para "Celadon City -"
+	line "Fuchsia City"
 	done
 
 Route18_MapEvents:
@@ -88,5 +90,5 @@ Route18_MapEvents:
 	bg_event  9,  5, BGEVENT_READ, Route18Sign
 
 	db 2 ; object events
-	object_event  9, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperBoris, -1
-	object_event 13,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperBob, -1
+	object_event  9, 12, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperBoris, -1
+	object_event 13,  6, SPRITE_ROUGHNECK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 3, TrainerRoughneckMoe, -1

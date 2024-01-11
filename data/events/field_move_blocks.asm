@@ -42,6 +42,7 @@ CutTreeBlockPointers:
 .forest:
 ; facing block, replacement block, animation
 	db $0f, $17, 0
+	db $28, $01, 1
 	db -1 ; end
 
 WhirlpoolBlockPointers:

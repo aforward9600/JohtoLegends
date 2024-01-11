@@ -140,7 +140,12 @@ FuchsiaCityPokefanM2:
 	end
 
 FuchsiaCityFishingGuru:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .FuchsiaCityFishingGuru2
 	jumptextfaceplayer FuchsiaCityFishingGuruText
+
+.FuchsiaCityFishingGuru2:
+	jumptextfaceplayer FuchsiaCityFishingGuruText2
 
 FuchsiaCityBiker:
 	checkevent EVENT_BEAT_KOGA
@@ -399,6 +404,13 @@ FuchsiaCityFishingGuruText:
 	para "My pond is for"
 	line "#mon, not for"
 	cont "people!"
+	done
+
+FuchsiaCityFishingGuruText2:
+	text "Now that those"
+	line "hooligans are gone"
+	cont "I can fix up my"
+	cont "fences!"
 	done
 
 FuchsiaCityBikerText:

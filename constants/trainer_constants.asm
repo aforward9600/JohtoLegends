@@ -416,7 +416,7 @@ CHRIS EQU __enum__
 	const MARY
 	const KATIE
 	const DAWN
-	const TARA
+	const HARLENE
 	const NICOLE
 	const LORI
 	const JODY
@@ -501,7 +501,7 @@ CHRIS EQU __enum__
 	const RILEY
 	const JOEL
 	const GLENN
-	const FOREST
+	const FOREST_BIKER
 	const CALVIN
 	const RIVER
 	const CHANCE
@@ -662,7 +662,7 @@ CHRIS EQU __enum__
 	const JOSHUA
 	const CARTER
 	const TREVOR
-	const BRANDON
+	const TRENTON
 	const JEREMY
 	const COLIN
 	const DEREK2
@@ -933,6 +933,9 @@ CHRIS EQU __enum__
 	const KYLE_2
 	const CAMERON_2
 	const GUIDO
+	const CURLY
+	const MOE
+	const LARRY_ROUGHNECK
 
 	trainerclass SOLDIER
 	const DWIGHT

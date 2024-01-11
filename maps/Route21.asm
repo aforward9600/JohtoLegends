@@ -89,7 +89,7 @@ SwimmerfNikkiAfterBattleText:
 
 	para "Not to mention all"
 	line "of the emissions"
-	cont "from their bikes."
+	cont "from their bikes…"
 	done
 
 FisherArnoldSeenText:

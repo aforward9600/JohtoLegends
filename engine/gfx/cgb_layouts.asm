@@ -770,6 +770,15 @@ _CGB_UnownPuzzle:
 	ret
 
 _CGB_TrainerCard:
+	push de
+	push hl
+	ld de, MonochromePassword
+	ld hl, wMomsName
+	ld c, 4
+	call CompareBytes
+	jp nz, .MonochromeTrainerCard
+	pop hl
+	pop de
 	ld de, wBGPals1
 	xor a ; CHRIS
 	call GetTrainerPalettePointer
@@ -800,6 +809,7 @@ _CGB_TrainerCard:
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 
+.MonochromeTrainerCardResume:
 	; fill screen with opposite-gender palette for the card border
 	hlcoord 0, 0, wAttrMap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
@@ -867,8 +877,29 @@ _CGB_TrainerCard:
 	ldh [hCGBPalUpdate], a
 	ret
 
+.MonochromeTrainerCard:
+	pop hl
+	pop de
+	ld de, wBGPals1
+	ld a, PREDEFPAL_DIPLOMA
+	call GetPredefPal
+	call LoadHLPaletteIntoDE
+	ld hl, .SGBTrainerCardPals
+	ld de, wOBPals1
+	call LoadHLPaletteIntoDE
+	ld hl, .SGBTrainerCardPals
+	ld de, wOBPals1 palette 1
+	call LoadHLPaletteIntoDE
+	call WipeAttrMap
+	call ApplyAttrMap
+	call ApplyPals
+	ret
+
 .BadgePalettes:
 INCLUDE "gfx/trainer_card/badges.pal"
+
+.SGBTrainerCardPals:
+INCLUDE "gfx/trainer_card/sgb_trainer_card.pal"
 
 _CGB_TrainerCardKanto:
 	ld de, wBGPals1
@@ -1019,6 +1050,15 @@ _CGB_PokedexSearchOption:
 
 _CGB_PackPals:
 ; pack pals
+	push de
+	push hl
+	ld de, MonochromePassword
+	ld hl, wMomsName
+	ld c, 4
+	call CompareBytes
+	jr z, .MonochromePack
+	pop hl
+	pop de
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
 	jr z, .tutorial_male
@@ -1032,6 +1072,12 @@ _CGB_PackPals:
 
 .tutorial_male
 	ld hl, .ChrisPackPals
+	jr .got_gender
+
+.MonochromePack
+	pop hl
+	pop de
+	ld hl, .SGBPackPals
 
 .got_gender
 	ld de, wBGPals1
@@ -1064,6 +1110,9 @@ _CGB_PackPals:
 	ld a, $1
 	ldh [hCGBPalUpdate], a
 	ret
+
+.SGBPackPals:
+INCLUDE "gfx/pack/sgb_pack.pal"
 
 .ChrisPackPals:
 INCLUDE "gfx/pack/pack.pal"

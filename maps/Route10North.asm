@@ -10,7 +10,12 @@ Route10PokecenterSign:
 	jumpstd pokecentersign
 
 PowerPlantSignText:
-	text "KANTO POWER PLANT"
+	text "Kanto Power Plant"
+
+	para "Keep out!"
+
+	para "Dangerous wild"
+	line "#mon!"
 	done
 
 Route10North_MapEvents:

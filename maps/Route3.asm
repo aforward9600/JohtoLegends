@@ -22,7 +22,7 @@ TrainerDelinquentKaren:
 	end
 
 TrainerBikerForest:
-	trainer BIKER, FOREST, EVENT_BEAT_BIKER_FOREST, BikerForestSeenText, BikerForestBeatenText, 0, .Script
+	trainer BIKER, FOREST_BIKER, EVENT_BEAT_BIKER_FOREST, BikerForestSeenText, BikerForestBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

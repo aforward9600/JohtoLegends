@@ -1565,32 +1565,32 @@ JohtoGrassWildMons:
 	map_id ROUTE_45
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 3, PIDGEY
-	dbw 3, SENTRET
-	dbw 3, GEODUDE
-	dbw 3, SKARMINI
-	dbw 4, PHANPY
-	dbw 4, SKARMINI
-	dbw 5, GEODUDE
-	dbw 5, PHANPY
+	dbw 2, PIDGEY
+	dbw 2, SENTRET
+	dbw 2, GEODUDE
+	dbw 2, SKARMINI
+	dbw 2, PHANPY
+	dbw 2, SKARMINI
+	dbw 2, GEODUDE
+	dbw 2, PHANPY
 	; day
-	dbw 3, PIDGEY
-	dbw 3, SENTRET
-	dbw 3, GEODUDE
-	dbw 3, SKARMINI
-	dbw 4, PHANPY
-	dbw 4, SKARMINI
-	dbw 5, GEODUDE
-	dbw 5, PHANPY
+	dbw 2, PIDGEY
+	dbw 2, SENTRET
+	dbw 2, GEODUDE
+	dbw 2, SKARMINI
+	dbw 2, PHANPY
+	dbw 2, SKARMINI
+	dbw 2, GEODUDE
+	dbw 2, PHANPY
 	; nite
-	dbw 3, HOOTHOOT
-	dbw 3, RATTATA
-	dbw 3, GEODUDE
-	dbw 3, SKARMINI
-	dbw 4, PHANPY
-	dbw 4, SKARMINI
-	dbw 5, GEODUDE
-	dbw 5, PHANPY
+	dbw 2, HOOTHOOT
+	dbw 2, RATTATA
+	dbw 2, GEODUDE
+	dbw 2, SKARMINI
+	dbw 2, PHANPY
+	dbw 2, SKARMINI
+	dbw 2, GEODUDE
+	dbw 2, PHANPY
 
 	map_id ROUTE_46
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

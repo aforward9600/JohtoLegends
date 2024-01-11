@@ -7,24 +7,24 @@ Route10South_MapScripts:
 
 	db 0 ; callbacks
 
-TrainerHikerJim:
-	trainer HIKER, JIM, EVENT_BEAT_HIKER_JIM, HikerJimSeenText, HikerJimBeatenText, 0, .Script
+TrainerRoughneckLarry:
+	trainer ROUGHNECK, LARRY_ROUGHNECK, EVENT_BEAT_ROUGHNECK_LARRY, RoughneckLarrySeenText, RoughneckLarryBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext HikerJimAfterBattleText
+	writetext RoughneckLarryAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPokefanmRobert:
-	trainer POKEFANM, ROBERTO, EVENT_BEAT_POKEFANM_ROBERTO, PokefanmRobertSeenText, PokefanmRobertBeatenText, 0, .Script
+TrainerPokefanmTrenton:
+	trainer POKEFANM, TRENTON, EVENT_BEAT_POKEFANM_TRENTON, PokefanmTrentonSeenText, PokefanmTrentonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokefanmRobertAfterBattleText
+	writetext PokefanmTrentonAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -32,45 +32,46 @@ TrainerPokefanmRobert:
 Route10Sign:
 	jumptext Route10SignText
 
-HikerJimSeenText:
-	text "Hahahah!"
+RoughneckLarrySeenText:
+	text "Lavender Town is"
+	line "ours!"
 	done
 
-HikerJimBeatenText:
-	text "Hahaha-hachoo!"
+RoughneckLarryBeatenText:
+	text "Yeesh!"
 	done
 
-HikerJimAfterBattleText:
-	text "Hay fever is"
-	line "making me sneeze!"
-	cont "Ahahah-CHOO!"
+RoughneckLarryAfterBattleText:
+	text "Ugh…"
+
+	para "If the ghosts had"
+	line "not scared me so"
+	cont "bad, I coulda won!"
 	done
 
-PokefanmRobertSeenText:
-	text "You like #MON,"
-	line "don't you?"
-
-	para "Me too!"
+PokefanmTrentonSeenText:
+	text "I won't let those"
+	line "nasty Feds take my"
+	cont "darling #mon!"
 	done
 
-PokefanmRobertBeatenText:
-	text "I'd have to say"
-	line "that's my loss."
+PokefanmTrentonBeatenText:
+	text "Please don't take"
+	line "my #mon!"
 	done
 
-PokefanmRobertAfterBattleText:
-	text "Look what you did"
-	line "to my #MON…"
+PokefanmTrentonAfterBattleText:
+	text "You're not going to"
+	line "take my #mon?"
 
-	para "I won't forget"
-	line "this…"
+	para "That's a relief!"
 	done
 
 Route10SignText:
-	text "ROUTE 10"
+	text "Route 10"
 
-	para "CERULEAN CITY -"
-	line "LAVENDER TOWN"
+	para "Cerulean City -"
+	line "Lavender Town"
 	done
 
 Route10South_MapEvents:
@@ -85,5 +86,5 @@ Route10South_MapEvents:
 	bg_event  5,  3, BGEVENT_READ, Route10Sign
 
 	db 2 ; object events
-	object_event 17,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerJim, -1
-	object_event  8, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmRobert, -1
+	object_event 17,  3, SPRITE_ROUGHNECK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 3, TrainerRoughneckLarry, -1
+	object_event  8, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmTrenton, -1

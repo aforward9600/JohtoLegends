@@ -18,7 +18,7 @@ Route10Pokecenter1FGentlemanScript:
 Route10Pokecenter1FGymGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
+	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .ReturnedMachinePart
 	writetext Route10Pokecenter1FGymGuyText
 	waitbutton
@@ -35,7 +35,7 @@ Route10Pokecenter1FCooltrainerFScript:
 	jumptextfaceplayer Route10Pokecenter1FCooltrainerFText
 
 Route10Pokecenter1FGentlemanText:
-	text "A #MON CENTER"
+	text "A #mon Center"
 	line "near a cave?"
 
 	para "That's mighty"
@@ -43,28 +43,19 @@ Route10Pokecenter1FGentlemanText:
 	done
 
 Route10Pokecenter1FGymGuyText:
-	text "The POWER PLANT's"
-	line "MANAGER is looking"
+	text "Luckily there're no"
+	line "Feds around here."
 
-	para "for a strong #-"
-	line "MON trainer."
-
-	para "He needs help"
-	line "getting back"
-
-	para "something that"
-	line "was stolen."
+	para "I had to sneak"
+	line "past some on Route"
+	cont "9 to get here."
 	done
 
 Route10Pokecenter1FGymGuyText_ReturnedMachinePart:
-	text "I hear TEAM ROCKET"
-	line "got back together"
-
-	para "in JOHTO but fell"
-	line "apart right away."
-
-	para "I didn't know any-"
-	line "thing about that."
+	text "Looks like I don't"
+	line "have to worry"
+	cont "about the Feds on"
+	cont "my way home."
 	done
 
 Route10Pokecenter1FCooltrainerFText:
@@ -74,8 +65,16 @@ Route10Pokecenter1FCooltrainerFText:
 	para "the roof of a big"
 	line "building."
 
-	para "That's the POWER"
-	line "PLANT."
+	para "That's the Power"
+	line "Plant."
+
+	para "I've heard that"
+	line "there is a strong"
+	cont "#mon there."
+
+	para "I'd try to catch it"
+	line "if I wasn't scared"
+	cont "of going there."
 	done
 
 Route10Pokecenter1F_MapEvents:
@@ -92,6 +91,6 @@ Route10Pokecenter1F_MapEvents:
 
 	db 4 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route10Pokecenter1FNurseScript, -1
-	object_event  7,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route10Pokecenter1FGentlemanScript, -1
-	object_event  7,  2, SPRITE_GYM_GUY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route10Pokecenter1FGymGuyScript, -1
-	object_event  1,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route10Pokecenter1FCooltrainerFScript, -1
+	object_event  7,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route10Pokecenter1FGentlemanScript, -1
+	object_event  7,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route10Pokecenter1FGymGuyScript, -1
+	object_event  1,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route10Pokecenter1FCooltrainerFScript, -1

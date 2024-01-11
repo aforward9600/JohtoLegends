@@ -602,9 +602,9 @@ Credits_TheEnd:
 CreditsBorderGFX:    INCBIN "gfx/credits/border.2bpp"
 
 CreditsMonsGFX: ; used only for BANK(CreditsMonsGFX)
-CreditsPichuGFX:     INCBIN "gfx/credits/pichu.2bpp"
-CreditsSmoochumGFX:  INCBIN "gfx/credits/azurill.2bpp"
-CreditsDittoGFX:     INCBIN "gfx/credits/munchlax.2bpp"
+CreditsPichuGFX:     INCBIN "gfx/credits/wynaut.2bpp"
+CreditsSmoochumGFX:  INCBIN "gfx/credits/munchlax.2bpp"
+CreditsDittoGFX:     INCBIN "gfx/credits/azurill.2bpp"
 CreditsIgglybuffGFX: INCBIN "gfx/credits/igglybuff.2bpp"
 
 INCLUDE "data/credits_script.asm"

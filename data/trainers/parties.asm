@@ -2468,12 +2468,12 @@ endc
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (10)
-	db "BORIS@", TRAINERTYPE_NORMAL
-	db 30
-	dw DODUO
-	db 28
-	dw DODUO
-	db 32
+	db "Bart@", TRAINERTYPE_NORMAL
+	db 74
+	dw PIDGEOT
+	db 73
+	dw XATU
+	db 74
 	dw DODRIO
 	db -1 ; end
 
@@ -4860,12 +4860,12 @@ endc
 	end_list_items
 
 SwimmerMGroup:
-	next_list_item ; SWIMMERM (1)
-	db "HAROLD@", TRAINERTYPE_NORMAL
-	db 32
-	dw REMORAID
-	db 30
-	dw SEADRA
+	next_list_item ; SWIMMERM (1) Route 19
+	db "Bobby@", TRAINERTYPE_NORMAL
+	db 73
+	dw BLASTOISE
+	db 73
+	dw KINGDRA
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (2) Route 40
@@ -5019,12 +5019,14 @@ endc
 	dw GOLDEEN
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (15)
-	db "TUCKER@", TRAINERTYPE_NORMAL
-	db 30
-	dw SHELLDER
-	db 34
+	next_list_item ; SWIMMERM (15) Route 19
+	db "Tom@", TRAINERTYPE_MOVES
+	db 73
+	dw DEWGONG
+	dw SHEER_COLD, FAKE_OUT, ICE_BEAM, AQUA_TAIL
+	db 73
 	dw CLOYSTER
+	dw ICICLE_CRASH, SHELL_SMASH, RAPID_SPIN, WAVE_CRASH
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (16)
@@ -5038,9 +5040,9 @@ endc
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (17)
-	db "CAMERON@", TRAINERTYPE_NORMAL
-	db 34
-	dw MARILL
+	db "Casey@", TRAINERTYPE_NORMAL
+	db 72
+	dw GYARADOS
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (18)
@@ -5191,34 +5193,40 @@ endc
 	dw DEWGONG
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (12)
-	db "DAWN@", TRAINERTYPE_NORMAL
-	db 34
-	dw SEAKING
+	next_list_item ; SWIMMERF (12) Route 19
+	db "Darlene@", TRAINERTYPE_NORMAL
+	db 74
+	dw TENTACRUEL
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (13)
-	db "TARA@", TRAINERTYPE_NORMAL
-	db 20
-	dw SEAKING
+	next_list_item ; SWIMMERF (13) Route 19
+	db "Harlene@", TRAINERTYPE_MOVES
+	db 73
+	dw FERALIGATR
+	dw CRUNCH, SUPERPOWER, AQUA_TAIL, ICE_PUNCH
+	db 73
+	dw LUDICOLO
+	dw HYDRO_PUMP, ICE_BEAM, GIGA_DRAIN, AQUA_RING
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (14)
-	db "NICOLE@", TRAINERTYPE_NORMAL
-	db 29
-	dw MARILL
-	db 29
-	dw MARILL
-	db 32
-	dw LAPRAS
+	db "Nikki@", TRAINERTYPE_NORMAL
+	db 70
+	dw QUAGSIRE
+	db 70
+	dw VAPOREON
+	db 71
+	dw AZUMARILL
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (15)
-	db "LORI@", TRAINERTYPE_NORMAL
-	db 32
-	dw STARMIE
-	db 32
-	dw STARMIE
+	db "Laura@", TRAINERTYPE_MOVES
+	db 71
+	dw LAPRAS
+	dw PERISH_SONG, ICE_BEAM, HYDRO_PUMP, THUNDERBOLT
+	db 72
+	dw LANTURN
+	dw RAIN_DANCE, ICE_BEAM, HYDRO_PUMP, THUNDERBOLT
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (16)
@@ -6018,28 +6026,28 @@ BikerGroup:
 	dw KOFFING
 	db -1 ; end
 
-	next_list_item ; BIKER (6)
-	db "CHARLES@", TRAINERTYPE_NORMAL
-	db 30
-	dw KOFFING
-	db 30
-	dw CHARMELEON
-	db 30
+	next_list_item ; BIKER (6) Route 17
+	db "Carmine@", TRAINERTYPE_NORMAL
+	db 75
+	dw BLISSEY
+	db 74
+	dw CHARIZARD
+	db 75
 	dw WEEZING
 	db -1 ; end
 
-	next_list_item ; BIKER (7)
-	db "RILEY@", TRAINERTYPE_NORMAL
-	db 34
-	dw WEEZING
+	next_list_item ; BIKER (7) Route 17
+	db "Bimmy@", TRAINERTYPE_NORMAL
+	db 76
+	dw MACHAMP
 	db -1 ; end
 
-	next_list_item ; BIKER (8)
-	db "JOEL@", TRAINERTYPE_NORMAL
-	db 32
-	dw MAGMAR
-	db 32
-	dw MAGMAR
+	next_list_item ; BIKER (8) Route 17
+	db "Jimmy@", TRAINERTYPE_NORMAL
+	db 75
+	dw SUDOWOODO
+	db 75
+	dw MAGMORTAR
 	db -1 ; end
 
 	next_list_item ; BIKER (9)
@@ -7930,10 +7938,10 @@ endc
 	db -1 ; end
 
 	next_list_item ; POKEFANM (7)
-	db "BRANDON@", TRAINERTYPE_ITEM
-	db 13
-	dw SNUBBULL
-	db ORAN_BERRY
+	db "Trenton@", TRAINERTYPE_ITEM
+	db 75
+	dw GRANBULL
+	db SITRUS_BERRY
 	db -1 ; end
 
 	next_list_item ; POKEFANM (8)
@@ -9224,6 +9232,8 @@ endc
 
 	end_list_items
 
+SECTION "Enemy Trainer Parties 3", ROMX
+
 MiyamotoGroup:
 	next_list_item ; MIYAMOTO1
 	db "Miyamoto@", TRAINERTYPE_ITEM_MOVES
@@ -9378,8 +9388,6 @@ endc
 	db -1 ; end
 
 	end_list_items
-
-SECTION "Enemy Trainer Parties 3", ROMX
 
 CynthiaGroup:
 	next_list_item ; CYNTHIA1
@@ -12443,6 +12451,39 @@ endc
 	db 77
 	dw CLEFABLE
 	dw MOONBLAST, CALM_MIND, FIRE_BLAST, MOONLIGHT
+	db -1 ; end
+
+	next_list_item ; ROUGHNECK (6) Route 17
+	db "Curly@", TRAINERTYPE_MOVES
+	db 74
+	dw SCIZOR
+	db 74
+	dw ELECTIVIRE
+	db 74
+	dw MILTANK
+	db -1 ; end
+
+	next_list_item ; ROUGHNECK (7) Route 18
+	db "Moe@", TRAINERTYPE_MOVES
+	db 74
+	dw DELIBIRD
+	dw BLIZZARD, HAIL, DRILL_PECK, STEEL_WING
+	db 74
+	dw RHYPERIOR
+	dw ROCK_WRECKER, MEGAHORN, EARTHQUAKE, HAMMER_ARM
+	db 74
+	dw KINGLER
+	dw WAVE_CRASH, EARTHQUAKE, GIGA_IMPACT, SWORDS_DANCE
+	db -1 ; end
+
+	next_list_item ; ROUGHNECK (8) Route 10
+	db "Larry@", TRAINERTYPE_NORMAL
+	db 73
+	dw GLISCOR
+	db 73
+	dw HERACROSS
+	db 73
+	dw ARBOK
 	db -1 ; end
 
 	end_list_items

@@ -1,7 +1,7 @@
 map: MACRO
 ;\1: map name: for the MapAttributes pointer (see data/maps/attributes.asm)
 ;\2: tileset: a TILESET_* constant
-;\3: environment: TOWN, ROUTE, INDOOR, CAVE, ENVIRONMENT_5, GATE, or DUNGEON
+;\3: environment: TOWN, ROUTE, INDOOR, CAVE, FOREST, GATE, or DUNGEON
 ;\4: location: from constants/landmark_constants.asm
 ;\5: music: a MUSIC_* constant
 ;\6: phone service flag: TRUE to prevent phone calls
@@ -478,7 +478,7 @@ MapGroup_Viridian:
 	map Route2NuggetHouse, TILESET_HOUSE, INDOOR, ROUTE_2, MUSIC_VIRIDIAN_CITY, FALSE, PALETTE_DAY, FISHGROUP_SHORE
 	map Route2Gate, TILESET_GATE, GATE, ROUTE_2, MUSIC_ROUTE_1, FALSE, PALETTE_DAY, FISHGROUP_SHORE
 	map VictoryRoadGate, TILESET_GATE, GATE, ROUTE_26, MUSIC_INDIGO_PLATEAU, FALSE, PALETTE_DAY, FISHGROUP_SHORE
-	map ViridianForest, TILESET_FOREST, ROUTE, VIRIDIAN_FOREST, MUSIC_ROUTE_2, FALSE, PALETTE_NITE, FISHGROUP_DRATINI
+	map ViridianForest, TILESET_FOREST, FOREST, VIRIDIAN_FOREST, MUSIC_ROUTE_2, FALSE, PALETTE_NITE, FISHGROUP_DRATINI
 
 MapGroup_NewBark:
 	map Route26, TILESET_JOHTO, ROUTE, ROUTE_26, MUSIC_ROUTE_26, FALSE, PALETTE_AUTO, FISHGROUP_OCEAN
