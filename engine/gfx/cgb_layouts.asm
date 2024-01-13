@@ -249,6 +249,15 @@ _CGB_PokegearPals:
 	ret
 
 _CGB_StatsScreenHPPals:
+	push de
+	push hl
+	ld de, MonochromePassword
+	ld hl, wMomsName
+	ld c, 4
+	call CompareBytes
+	jp z, .MonochromeStats
+	pop hl
+	pop de
 	ld de, wBGPals1
 	ld a, [wCurHPPal]
 	ld l, a
@@ -265,6 +274,7 @@ _CGB_StatsScreenHPPals:
 	ld hl, ExpBarPalette
 	call LoadPalette_White_Col1_Col2_Black ; exp palette
 	ld hl, StatsScreenPagePals
+.MonochromeStatsResume:
 	ld de, wBGPals1 palette 3
 	ld bc, 4 palettes ; pink, green, blue and orange page palettes
 	ld a, BANK(wBGPals1)
@@ -307,11 +317,38 @@ _CGB_StatsScreenHPPals:
 	ldh [hCGBPalUpdate], a
 	ret
 
+.MonochromeStats:
+	pop hl
+	pop de
+	ld de, wBGPals1
+	ld a, [wCurHPPal]
+	ld l, a
+	ld h, $0
+	add hl, hl
+	add hl, hl
+	ld bc, HPBarPals
+	add hl, bc
+	call LoadPalette_White_Col1_Col2_Black ; hp palette
+	ld a, [wCurPartySpecies]
+	ld bc, wTempMonDVs
+	call GetPlayerOrMonPalettePointer
+	call LoadPalette_White_Col1_Col2_Black ; mon palette
+	ld hl, ExpBarPalette
+	call LoadPalette_White_Col1_Col2_Black ; exp palette
+	ld hl, StatsScreenPagePalsSGB
+	jp .MonochromeStatsResume
+
 StatsScreenPagePals:
 INCLUDE "gfx/stats/pages.pal"
 
 StatsScreenPals:
 INCLUDE "gfx/stats/stats.pal"
+
+StatsScreenPalsSGB:
+INCLUDE "gfx/stats/stats_sgb.pal"
+
+StatsScreenPagePalsSGB:
+INCLUDE "gfx/stats/pages_sgb.pal"
 
 _CGB_Pokedex:
 	ld de, wBGPals1
@@ -353,6 +390,15 @@ INCLUDE "gfx/pokedex/question_mark.pal"
 INCLUDE "gfx/pokedex/cursor.pal"
 
 _CGB_BillsPC:
+	push de
+	push hl
+	ld de, MonochromePassword
+	ld hl, wMomsName
+	ld c, 4
+	call CompareBytes
+	jp nz, .MonochromeBillsPC
+	pop hl
+	pop de
 	ld de, wBGPals1
 	ld a, PREDEFPAL_POKEDEX
 	call GetPredefPal
@@ -361,6 +407,7 @@ _CGB_BillsPC:
 	cp $ff
 	jr nz, .GetMonPalette
 	ld hl, .BillsPCOrangePalette
+.MonochromeBillsPCResume:
 	call LoadHLPaletteIntoDE
 	jr .Resume
 
@@ -403,8 +450,24 @@ _CGB_BillsPC:
 	ldh [hCGBPalUpdate], a
 	ret
 
+.MonochromeBillsPC:
+	pop hl
+	pop de
+	ld de, wBGPals1
+	ld a, PREDEFPAL_POKEDEX
+	call GetPredefPal
+	call LoadHLPaletteIntoDE
+	ld a, [wCurPartySpecies]
+	cp $ff
+	jr nz, .GetMonPalette
+	ld hl, .BillsPCGreyPalette
+	jp .MonochromeBillsPCResume
+
 .BillsPCOrangePalette:
 INCLUDE "gfx/pc/orange.pal"
+
+.BillsPCGreyPalette:
+INCLUDE "gfx/pc/grey.pal"
 
 _CGB_PokedexUnownMode:
 	ld de, wBGPals1
@@ -427,7 +490,17 @@ _CGB_PokedexUnownMode:
 	ret
 
 _CGB_SlotMachine:
+	push de
+	push hl
+	ld de, MonochromePassword
+	ld hl, wMomsName
+	ld c, 4
+	call CompareBytes
+	jp z, .MonochromeSlots
+	pop hl
+	pop de
 	ld hl, SlotMachinePals
+.MonochromeSlotsResume:
 	ld de, wBGPals1
 	ld bc, 16 palettes
 	ld a, BANK(wBGPals1)
@@ -478,6 +551,15 @@ _CGB_SlotMachine:
 	ld a, $1
 	ldh [hCGBPalUpdate], a
 	ret
+
+.MonochromeSlots:
+	pop hl
+	pop de
+	ld hl, .SlotsPalette
+	jp .MonochromeSlotsResume
+
+.SlotsPalette:
+INCLUDE "gfx/slots/slots_sgb.pal"
 
 _CGB_BetaTitleScreen:
 	ld hl, PalPacket_BetaTitleScreen + 1
@@ -776,7 +858,7 @@ _CGB_TrainerCard:
 	ld hl, wMomsName
 	ld c, 4
 	call CompareBytes
-	jp nz, .MonochromeTrainerCard
+	jp z, .MonochromeTrainerCard
 	pop hl
 	pop de
 	ld de, wBGPals1
@@ -881,27 +963,32 @@ _CGB_TrainerCard:
 	pop hl
 	pop de
 	ld de, wBGPals1
-	ld a, PREDEFPAL_DIPLOMA
-	call GetPredefPal
-	call LoadHLPaletteIntoDE
-	ld hl, .SGBTrainerCardPals
-	ld de, wOBPals1
-	call LoadHLPaletteIntoDE
-	ld hl, .SGBTrainerCardPals
-	ld de, wOBPals1 palette 1
-	call LoadHLPaletteIntoDE
-	call WipeAttrMap
-	call ApplyAttrMap
-	call ApplyPals
-	ret
+	ld hl, SGBTrainerCardPals
+	ld bc, 8 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	ld hl, SGBTrainerCardPals
+	ld bc, 8 palettes
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
+	jp .MonochromeTrainerCardResume
 
 .BadgePalettes:
 INCLUDE "gfx/trainer_card/badges.pal"
 
-.SGBTrainerCardPals:
+SGBTrainerCardPals:
 INCLUDE "gfx/trainer_card/sgb_trainer_card.pal"
 
 _CGB_TrainerCardKanto:
+	push de
+	push hl
+	ld de, MonochromePassword
+	ld hl, wMomsName
+	ld c, 4
+	call CompareBytes
+	jp z, .MonochromeTrainerCardKanto
+	pop hl
+	pop de
 	ld de, wBGPals1
 	xor a ; CHRIS
 	call GetTrainerPalettePointer
@@ -932,6 +1019,7 @@ _CGB_TrainerCardKanto:
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 
+.MonochromeTrainerCardKantoResume:
 	; fill screen with opposite-gender palette for the card border
 	hlcoord 0, 0, wAttrMap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
@@ -998,6 +1086,20 @@ _CGB_TrainerCardKanto:
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret
+
+.MonochromeTrainerCardKanto:
+	pop hl
+	pop de
+	ld de, wBGPals1
+	ld hl, SGBTrainerCardPals
+	ld bc, 8 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	ld hl, SGBTrainerCardPals
+	ld bc, 8 palettes
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
+	jp .MonochromeTrainerCardKantoResume
 
 .BadgePalettesKanto:
 INCLUDE "gfx/trainer_card/kanto_badges.pal"

@@ -398,9 +398,19 @@ ApplyHPBarPals:
 	ret
 
 LoadStatsScreenPals:
+;	push de SGB colors work, but causes all pages to be blue otherwise
+;	push hl
+;	ld de, MonochromePasswordColor
+;	ld hl, wMomsName
+;	ld c, 4
+;	call CompareBytes
+;	jr z, .MonochromeStatsColor
+;	pop hl
+;	pop de
 	call CheckCGB
 	ret z
 	ld hl, StatsScreenPals
+.MonochromeStatsColorResume:
 	ld b, 0
 	add hl, bc
 	add hl, bc
@@ -419,6 +429,15 @@ LoadStatsScreenPals:
 	call ApplyPals
 	ld a, $1
 	ret
+
+.MonochromeStatsColor:
+	pop hl
+	pop de
+	ld hl, StatsScreenPalsSGB
+	jr .MonochromeStatsColorResume
+
+MonochromePasswordColor:
+	db "MONOCHROME"
 
 LoadMailPalettes:
 	ld l, e

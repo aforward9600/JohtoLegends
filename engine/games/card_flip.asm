@@ -1596,6 +1596,16 @@ CardFlip_InitAttrPals:
 	ld a, $1
 	call CardFlip_FillBox
 
+	push de
+	push hl
+	ld de, MonochromePasswordFlip
+	ld hl, wMomsName
+	ld c, 4
+	call CompareBytes
+	jr z, .MonochromeFlip
+	pop hl
+	pop de
+
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBGPals1)
@@ -1608,8 +1618,29 @@ CardFlip_InitAttrPals:
 	ldh [rSVBK], a
 	ret
 
+.MonochromeFlip:
+	pop hl
+	pop de
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+	ld hl, .palettesSGB
+	ld de, wBGPals1
+	ld bc, 9 palettes
+	call CopyBytes
+	pop af
+	ldh [rSVBK], a
+	ret
+
 .palettes
 INCLUDE "gfx/card_flip/card_flip.pal"
+
+.palettesSGB:
+INCLUDE "gfx/card_flip/card_flip_sgb.pal"
+
+MonochromePasswordFlip:
+	db "MONOCHROME"
 
 CardFlipLZ03:
 INCBIN "gfx/card_flip/card_flip_3.2bpp.lz"

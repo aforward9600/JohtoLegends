@@ -75,17 +75,77 @@ _TitleScreen:
 ; 'CRYSTAL VERSION'
 	hlbgcoord 5, 8
 	ld bc, NAME_LENGTH ; length of version text
-	ld a, 1
+	ld a, 7
 	call ByteFill
 
 ; Suicune gfx
 	hlbgcoord 0, 11
-	ld bc, 7 * BG_MAP_WIDTH ; the rest of the screen
-	ld a, 0 | VRAM_BANK_1
+	ld bc, 8 ; the rest of the screen
+	ld a, 1 | VRAM_BANK_1
+	call ByteFill
+
+	hlbgcoord 0, 12
+	ld bc, 8 ; the rest of the screen
+	ld a, 1 | VRAM_BANK_1
+	call ByteFill
+
+	hlbgcoord 0, 13
+	ld bc, 8 ; the rest of the screen
+	ld a, 1 | VRAM_BANK_1
+	call ByteFill
+
+	hlbgcoord 0, 14
+	ld bc, 8 ; the rest of the screen
+	ld a, 1 | VRAM_BANK_1
+	call ByteFill
+
+	hlbgcoord 0, 15
+	ld bc, 8 ; the rest of the screen
+	ld a, 1 | VRAM_BANK_1
+	call ByteFill
+
+	hlbgcoord 0, 16
+	ld bc, 8 ; the rest of the screen
+	ld a, 1 | VRAM_BANK_1
+	call ByteFill
+
+	hlbgcoord 0, 17
+	ld bc, 8 ; the rest of the screen
+	ld a, 1 | VRAM_BANK_1
 	call ByteFill
 
 	hlbgcoord 11, 11
-	ld bc, 7 * BG_MAP_WIDTH ; the rest of the screen
+	ld bc, 8 ; the rest of the screen
+	ld a, 0 | VRAM_BANK_1
+	call ByteFill
+
+	hlbgcoord 11, 12
+	ld bc, 8 ; the rest of the screen
+	ld a, 0 | VRAM_BANK_1
+	call ByteFill
+
+	hlbgcoord 11, 13
+	ld bc, 8 ; the rest of the screen
+	ld a, 0 | VRAM_BANK_1
+	call ByteFill
+
+	hlbgcoord 11, 14
+	ld bc, 8 ; the rest of the screen
+	ld a, 0 | VRAM_BANK_1
+	call ByteFill
+
+	hlbgcoord 11, 15
+	ld bc, 8 ; the rest of the screen
+	ld a, 0 | VRAM_BANK_1
+	call ByteFill
+
+	hlbgcoord 11, 16
+	ld bc, 8 ; the rest of the screen
+	ld a, 0 | VRAM_BANK_1
+	call ByteFill
+
+	hlbgcoord 11, 17
+	ld bc, 8 ; the rest of the screen
 	ld a, 0 | VRAM_BANK_1
 	call ByteFill
 
