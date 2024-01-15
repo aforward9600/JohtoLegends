@@ -230,6 +230,15 @@ InitPartyMenuBGPal0:
 	ret
 
 _CGB_PokegearPals:
+	push de
+	push hl
+	ld de, MonochromePassword
+	ld hl, wMomsName
+	ld c, 4
+	call CompareBytes
+	jr z, .MonochromePokegear
+	pop hl
+	pop de
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr z, .male
@@ -247,6 +256,22 @@ _CGB_PokegearPals:
 	ld a, $1
 	ldh [hCGBPalUpdate], a
 	ret
+
+.MonochromePokegear:
+	pop de
+	pop hl
+	ld hl, .Palette
+	ld de, wBGPals1
+	ld bc, 6 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	call ApplyPals
+	ld a, $1
+	ldh [hCGBPalUpdate], a
+	ret
+
+.Palette:
+INCLUDE "gfx/pokegear/sgb.pal"
 
 _CGB_StatsScreenHPPals:
 	push de
@@ -351,6 +376,15 @@ StatsScreenPagePalsSGB:
 INCLUDE "gfx/stats/pages_sgb.pal"
 
 _CGB_Pokedex:
+	push de
+	push hl
+	ld de, MonochromePassword
+	ld hl, wMomsName
+	ld c, 4
+	call CompareBytes
+	jp z, .MonochromePokedex
+	pop hl
+	pop de
 	ld de, wBGPals1
 	ld a, PREDEFPAL_POKEDEX
 	call GetPredefPal
@@ -383,11 +417,49 @@ _CGB_Pokedex:
 	ldh [hCGBPalUpdate], a
 	ret
 
+.MonochromePokedex:
+	pop hl
+	pop de
+	ld de, wBGPals1
+	ld a, PREDEFPAL_POKEDEX
+	call GetPredefPal
+	call LoadHLPaletteIntoDE ; dex interface palette
+	ld a, [wCurPartySpecies]
+	cp $ff
+	jr nz, .is_pokemon_sgb
+	ld hl, .PokedexCursorSGBPalette
+	call LoadHLPaletteIntoDE ; green question mark palette
+	jr .got_palette_sgb
+
+.is_pokemon_sgb
+	call GetMonPalettePointer
+	call LoadPalette_White_Col1_Col2_Black ; mon palette
+.got_palette_sgb
+	call WipeAttrMap
+	hlcoord 1, 1, wAttrMap
+	lb bc, 7, 7
+	ld a, $1 ; green question mark palette
+	call FillBoxCGB
+	call InitPartyMenuOBPals
+	ld hl, .PokedexCursorSGBPalette
+	ld de, wOBPals1 palette 7 ; green cursor palette
+	ld bc, 1 palettes
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
+	call ApplyAttrMap
+	call ApplyPals
+	ld a, $1
+	ldh [hCGBPalUpdate], a
+	ret
+
 .PokedexQuestionMarkPalette:
 INCLUDE "gfx/pokedex/question_mark.pal"
 
 .PokedexCursorPalette:
 INCLUDE "gfx/pokedex/cursor.pal"
+
+.PokedexCursorSGBPalette:
+INCLUDE "gfx/pokedex/cursor_sgb.pal"
 
 _CGB_BillsPC:
 	push de
@@ -396,7 +468,7 @@ _CGB_BillsPC:
 	ld hl, wMomsName
 	ld c, 4
 	call CompareBytes
-	jp nz, .MonochromeBillsPC
+	jp z, .MonochromeBillsPC
 	pop hl
 	pop de
 	ld de, wBGPals1
