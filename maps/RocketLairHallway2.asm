@@ -228,7 +228,7 @@ LairArcherSeenText:
 	cont "Islands."
 
 	para "I'd rather avoid"
-	line "that embaressment,"
+	line "that embarassment,"
 	cont "so let's end this."
 	done
 

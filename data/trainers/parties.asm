@@ -5503,14 +5503,14 @@ endc
 	dw EARTH_POWER, FLAMETHROWER, GRASS_KNOT, WILL_O_WISP
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (11)
-	db "RUSS@", TRAINERTYPE_NORMAL
-	db 27
-	dw MAGNEMITE
-	db 27
-	dw MAGNEMITE
-	db 27
-	dw MAGNEMITE
+	next_list_item ; SUPER_NERD (11) Route 9
+	db "Russ@", TRAINERTYPE_NORMAL
+	db 73
+	dw MUK
+	db 73
+	dw ALTARIA
+	db 73
+	dw MAGNEZONE
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (12)
@@ -6050,13 +6050,13 @@ BikerGroup:
 	dw MAGMORTAR
 	db -1 ; end
 
-	next_list_item ; BIKER (9)
-	db "GLENN@", TRAINERTYPE_NORMAL
-	db 28
-	dw KOFFING
-	db 30
-	dw MAGMAR
-	db 32
+	next_list_item ; BIKER (9) Route 9
+	db "Al@", TRAINERTYPE_NORMAL
+	db 73
+	dw TAUROS
+	db 73
+	dw PIDGEOT
+	db 73
 	dw WEEZING
 	db -1 ; end
 
@@ -6175,6 +6175,19 @@ endc
 	db 78
 	dw TYPHLOSION
 	dw FIRE_BLAST, EARTHQUAKE, THUNDERPUNCH, GRASS_KNOT
+	db -1 ; end
+
+	next_list_item ; BIKER Route 9
+	db "Antonio@", TRAINERTYPE_ITEM
+	db 73
+	dw AMBIPOM
+	db NO_ITEM
+	db 73
+	dw SLOWKING
+	db NO_ITEM
+	db 73
+	dw MAROWAK
+	db THICK_CLUB
 	db -1 ; end
 
 	end_list_items
@@ -12268,6 +12281,46 @@ endc
 	dw SHADOW_BALL, MAGICAL_LEAF, MOONBLAST, HYPNOSIS
 	db -1 ; end
 
+	next_list_item ; DELINQUENT9 (Route 9)
+	db "Marcy@", TRAINERTYPE_ITEM_MOVES
+	db 73
+	dw VICTREEBEL
+	db NO_ITEM
+	dw POWER_WHIP, POISON_JAB, SLEEP_POWDER, GROWTH
+	db 73
+	dw RAICHU
+if DEF(_CHALLENGE)
+	db LIGHT_BALL
+else
+	db NO_ITEM
+endc
+	dw THUNDERBOLT, SURF, THUNDER_WAVE, GRASS_KNOT
+	db 73
+	dw ARCANINE
+	dw EXTREMESPEED, FLARE_BLITZ, PLAY_ROUGH, WILL_O_WISP
+	db -1 ; end
+
+	next_list_item ; DELINQUENT10 (Route 9)
+	db "Makoto@", TRAINERTYPE_MOVES
+	db 73
+	dw PORYGON_Z
+	dw PSYCHIC_M, TRI_ATTACK, NASTY_PLOT, THUNDERBOLT
+	db 73
+	dw SCIZOR
+	dw STEEL_SLICE, X_SCISSOR, SWORDS_DANCE, NIGHT_SLASH
+	db 73
+	dw HONCHKROW
+	dw SUCKER_PUNCH, BRAVE_BIRD, ROOST, SWAGGER
+	db -1 ; end
+
+	next_list_item ; DELINQUENT11 (Route 8)
+	db "Carol@", TRAINERTYPE_NORMAL
+	db 74
+	dw ESPEON
+	db 74
+	dw PERSIAN
+	db -1 ; end
+
 	end_list_items
 
 Sensational2Group:
@@ -12486,6 +12539,16 @@ endc
 	dw ARBOK
 	db -1 ; end
 
+	next_list_item ; ROUGHNECK (9) Route 9
+	db "Carter@", TRAINERTYPE_NORMAL
+	db 73
+	dw HOUNDOOM
+	db 73
+	dw DUGTRIO
+	db 73
+	dw CROBAT
+	db -1 ; end
+
 	end_list_items
 
 SoldierGroup:
@@ -12669,25 +12732,31 @@ FuchsiaNinjaFGroup:
 
 FerropexolaGroup:
 	next_list_item ; FERROPEXOLA1
-	db "@", TRAINERTYPE_ITEM
+	db "@", TRAINERTYPE_ITEM_MOVES
+	db 100
+	dw SKARMORY
+	dw SPIKES, WHIRLWIND, DRILL_PECK, IRON_HEAD
+	db FOCUS_SASH
 	db 100
 	dw CORSOLA
 	db EVIOLITE
-	db 100
-	dw SKARMORY
-	db FOCUS_SASH
+	dw STRENGTH_SAP, NIGHT_SHADE, WILL_O_WISP, POWER_GEM
 	db 100
 	dw BLISSEY
 	db LEFTOVERS
+	dw SOFTBOILED, REFLECT, ICE_BEAM, HEAL_BELL
 	db 100
 	dw SHUCKLE
 	db LEFTOVERS
+	dw TOXIC, SANDSTORM, REST, ROCK_SLIDE
 	db 100
 	dw GARCHOMP
 	db LIFE_ORB
+	dw EARTHQUAKE, DRAGON_CLAW, IRON_HEAD, SWORDS_DANCE
 	db 100
 	dw SNORLAX
 	db LEFTOVERS
+	dw EARTHQUAKE, BODY_SLAM, REST, SLEEP_TALK
 	db -1
 
 	end_list_items

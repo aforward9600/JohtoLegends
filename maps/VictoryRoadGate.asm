@@ -550,8 +550,7 @@ VictoryRoadGate_MapEvents:
 	db 0, 0 ; filler
 
 	db 8 ; warp events
-	warp_event 17,  7, SEAFOAM_ISLAND_1F, 1
-;	warp_event 17,  7, ROUTE_22, 1
+	warp_event 17,  7, ROUTE_22, 1
 	warp_event 18,  7, ROUTE_22, 1
 	warp_event  9, 17, ROUTE_26, 1
 	warp_event 10, 17, ROUTE_26, 1

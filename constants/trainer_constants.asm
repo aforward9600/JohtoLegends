@@ -500,7 +500,7 @@ CHRIS EQU __enum__
 	const CHARLES
 	const RILEY
 	const JOEL
-	const GLENN
+	const AL
 	const FOREST_BIKER
 	const CALVIN
 	const RIVER
@@ -508,6 +508,7 @@ CHRIS EQU __enum__
 	const SPIKE
 	const BLUNO
 	const ROSSO
+	const ANTONIO
 
 	trainerclass BLAINE ; 2e
 	const BLAINE1
@@ -920,6 +921,9 @@ CHRIS EQU __enum__
 	const JILLIAN
 	const BERTHA
 	const KATHY
+	const MARCY
+	const MAKOTO
+	const CAROL
 
 	trainerclass SENSATIONAL2
 	const DAISY
@@ -936,6 +940,7 @@ CHRIS EQU __enum__
 	const CURLY
 	const MOE
 	const LARRY_ROUGHNECK
+	const CARTER_ROUGHNECK
 
 	trainerclass SOLDIER
 	const DWIGHT

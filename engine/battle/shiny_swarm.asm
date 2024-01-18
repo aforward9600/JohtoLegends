@@ -11,7 +11,7 @@ GenerateShinySwarm:
 	cp WILD_AREA_OUTSIDE
 	jr z, .wildarea
 	cp ICE_PATH
-	jr z, .sneasel
+	jp z, .sneasel
 	cp BURNED_TOWER
 	jp z, .misdreavus
 	cp NATIONAL_PARK
@@ -24,6 +24,10 @@ GenerateShinySwarm:
 	jp z, .ralts
 	cp LAKE_OF_RAGE
 	jp z, .kotora
+	cp ILEX_FOREST
+	jp z, .parasect
+	cp UNION_CAVE
+	jp z, .gligar
 	jp .skipshineswarm
 
 .dunsparce
@@ -119,7 +123,7 @@ GenerateShinySwarm:
 		endc
 	endc
 	jr nz, .gible
-	jr .rollshiny
+	jp .rollshiny
 
 .gible
 	ld a, [wCurPartySpecies]
@@ -138,7 +142,7 @@ GenerateShinySwarm:
 		endc
 	endc
 	jp nz, .skipshineswarm
-	jr .rollshiny
+	jp .rollshiny
 
 .sneasel
 	ld a, [wCurPartySpecies]
@@ -156,7 +160,7 @@ GenerateShinySwarm:
 			cp HIGH(SNEASEL)
 		endc
 	endc
-	jr nz, .skipshineswarm
+	jp nz, .skipshineswarm
 	jr .rollshiny
 
 .misdreavus
@@ -175,7 +179,7 @@ GenerateShinySwarm:
 			cp HIGH(MISDREAVUS)
 		endc
 	endc
-	jr nz, .skipshineswarm
+	jp nz, .skipshineswarm
 	jr .rollshiny
 
 .pinsir
@@ -268,6 +272,44 @@ GenerateShinySwarm:
 		else
 			ld a, h
 			cp HIGH(KOTORA)
+		endc
+	endc
+	jr nz, .skipshineswarm
+	jr .rollshiny
+
+.parasect
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(PARASECT)
+	if HIGH(PARASECT) == 0
+		or h
+	else
+		jr nz, .skipshineswarm
+		if HIGH(PARASECT)
+			dec h
+		else
+			ld a, h
+			cp HIGH(PARASECT)
+		endc
+	endc
+	jr nz, .skipshineswarm
+	jr .rollshiny
+
+.gligar
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(GLIGAR)
+	if HIGH(GLIGAR) == 0
+		or h
+	else
+		jr nz, .skipshineswarm
+		if HIGH(GLIGAR)
+			dec h
+		else
+			ld a, h
+			cp HIGH(GLIGAR)
 		endc
 	endc
 	jr nz, .skipshineswarm

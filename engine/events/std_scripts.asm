@@ -2184,44 +2184,10 @@ SwarmScript:
 	opentext
 	checkflag ENGINE_SWARM
 	iftrue .skiprandomswarm
-	checkflag ENGINE_MINERALBADGE
-	iftrue .Badges4Swarm
-	checkflag ENGINE_FOGBADGE
-	iftrue .Badges2Swarm
 	farwritetext WhatSwarmTodayText
 	waitbutton
-	random 8
-	ifequal 0, .noswarm
-	ifequal 1, .yanma
-	ifequal 2, .dunsparce
-	ifequal 3, .sneasel
-	ifequal 4, .scyther
-	ifequal 5, .aron
-	ifequal 6, .ralts
-	ifequal 7, .kotora
-
-.Badges2Swarm:
-	farwritetext WhatSwarmTodayText
-	waitbutton
-	random 13
-	ifequal 0,  .noswarm
-	ifequal 1,  .yanma
-	ifequal 2,  .dunsparce
-	ifequal 3,  .qwilfish
-	ifequal 4,  .eevee
-	ifequal 5,  .kangaskhan
-	ifequal 6,  .gible
-	ifequal 7,  .sneasel
-	ifequal 8,  .scyther
-	ifequal 9,  .misdreavus
-	ifequal 10, .aron
-	ifequal 11, .ralts
-	ifequal 12, .kotora
-
-.Badges4Swarm:
-	farwritetext WhatSwarmTodayText
-	waitbutton
-	random 14
+.SwarmReroll:
+	random 16
 	ifequal 0,  .noswarm
 	ifequal 1,  .yanma
 	ifequal 2,  .dunsparce
@@ -2236,6 +2202,8 @@ SwarmScript:
 	ifequal 11, .aron
 	ifequal 12, .ralts
 	ifequal 13, .kotora
+	ifequal 14, .parasect
+	ifequal 15, .gligar
 
 .noswarm
 	setflag ENGINE_SWARM
@@ -2247,7 +2215,9 @@ SwarmScript:
 .yanma
 	setflag ENGINE_SWARM
 	swarm ROUTE_39
-	farwritetext YanmaSwarmText
+	getlandmarkname STRING_BUFFER_5, ROUTE_39
+	getmonname STRING_BUFFER_3, YANMA
+	farwritetext RouteSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel
@@ -2255,40 +2225,58 @@ SwarmScript:
 .dunsparce
 	setflag ENGINE_SWARM
 	swarm DARK_CAVE_NEW_ENTRANCE
-	farwritetext DunsparceSwarmText
+	getlandmarkname STRING_BUFFER_5, DARK_CAVE
+	getmonname STRING_BUFFER_3, DUNSPARCE
+	farwritetext CaveSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel
 
 .qwilfish
+	checkflag ENGINE_FOGBADGE
+	iffalse .SwarmReroll
 	setflag ENGINE_SWARM
 	setval FISHSWARM_QWILFISH
 	special ActivateFishingSwarm
-	farwritetext QwilfishSwarmText
+	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
+	getmonname STRING_BUFFER_3, QWILFISH
+	farwritetext CaveSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel
 
 .eevee
+	checkflag ENGINE_FOGBADGE
+	iffalse .SwarmReroll
 	setflag ENGINE_SWARM
 	swarm WILD_AREA_2_3
-	farwritetext EeveeSwarmText
+	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
+	getmonname STRING_BUFFER_3, EEVEE
+	farwritetext CaveSwarmVowelText
 	waitbutton
 	closetext
 	sjump .endswarmchannel
 
 .kangaskhan
+	checkflag ENGINE_FOGBADGE
+	iffalse .SwarmReroll
 	setflag ENGINE_SWARM
 	swarm WILD_AREA_CAVE
-	farwritetext KangaskhanSwarmText
+	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
+	getmonname STRING_BUFFER_3, KANGASKHAN
+	farwritetext CaveSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel
 
 .gible
+	checkflag ENGINE_FOGBADGE
+	iffalse .SwarmReroll
 	setflag ENGINE_SWARM
 	swarm WILD_AREA_4
-	farwritetext GibleSwarmText
+	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
+	getmonname STRING_BUFFER_3, GIBLE
+	farwritetext CaveSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel
@@ -2296,15 +2284,21 @@ SwarmScript:
 .sneasel
 	setflag ENGINE_SWARM
 	swarm ICE_PATH_B1F
-	farwritetext SneaselSwarmText
+	getlandmarkname STRING_BUFFER_5, ICE_PATH
+	getmonname STRING_BUFFER_3, SNEASEL
+	farwritetext CaveSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel
 
 .misdreavus
+	checkflag ENGINE_FOGBADGE
+	iffalse .SwarmReroll
 	setflag ENGINE_SWARM
 	swarm BURNED_TOWER_1F
-	farwritetext MisdreavusSwarmText
+	getlandmarkname STRING_BUFFER_5, BURNED_TOWER
+	getmonname STRING_BUFFER_3, MISDREAVUS
+	farwritetext CaveSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel
@@ -2312,12 +2306,16 @@ SwarmScript:
 .scyther
 	setflag ENGINE_SWARM
 	swarm ROUTE_38
-	farwritetext ScytherSwarmText
+	getlandmarkname STRING_BUFFER_5, ROUTE_38
+	getmonname STRING_BUFFER_3, SCYTHER
+	farwritetext RouteSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel
 
 .pinsir
+	checkflag ENGINE_MINERALBADGE
+	iffalse .SwarmReroll
 	setflag ENGINE_SWARM
 	swarm NATIONAL_PARK
 	farwritetext PinsirSwarmText
@@ -2328,7 +2326,9 @@ SwarmScript:
 .aron
 	setflag ENGINE_SWARM
 	swarm MOUNT_MORTAR_1F_OUTSIDE
-	farwritetext AronSwarmText
+	getlandmarkname STRING_BUFFER_5, MT_MORTAR
+	getmonname STRING_BUFFER_3, ARON
+	farwritetext CaveSwarmVowelText
 	waitbutton
 	closetext
 	sjump .endswarmchannel
@@ -2336,7 +2336,9 @@ SwarmScript:
 .ralts
 	setflag ENGINE_SWARM
 	swarm ROUTE_43
-	farwritetext RaltsSwarmText
+	getlandmarkname STRING_BUFFER_5, ROUTE_43
+	getmonname STRING_BUFFER_3, RALTS
+	farwritetext RouteSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel
@@ -2344,7 +2346,31 @@ SwarmScript:
 .kotora
 	setflag ENGINE_SWARM
 	swarm LAKE_OF_RAGE
-	farwritetext KotoraSwarmText
+	farwritetext LakeOfRageSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.parasect
+	checkflag ENGINE_HIVEBADGE
+	iffalse .SwarmReroll
+	setflag ENGINE_SWARM
+	swarm ILEX_FOREST
+	getlandmarkname STRING_BUFFER_5, ILEX_FOREST
+	getmonname STRING_BUFFER_3, PARASECT
+	farwritetext CaveSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.gligar
+	checkflag ENGINE_HIVEBADGE
+	iffalse .SwarmReroll
+	setflag ENGINE_SWARM
+	swarm UNION_CAVE_1F
+	getlandmarkname STRING_BUFFER_5, UNION_CAVE
+	getmonname STRING_BUFFER_3, GLIGAR
+	farwritetext CaveSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel

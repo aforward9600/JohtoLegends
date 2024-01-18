@@ -1766,160 +1766,98 @@ NoSwarmTodayText::
 	line "tomorrow!"
 	done
 
-YanmaSwarmText::
+RouteSwarmText::
 	text "………………………"
 	
 	para "Ah!"
 
-	para "On Route 39, there"
-	line "is a swarm of"
-	cont "Yanma!"
+	para "On @"
+	text_ram wStringBuffer5
+	text ","
+	line "there is a swarm"
+	cont "of @"
+	text_ram wStringBuffer3
+	text "!"
 
 	para "Now's your chance,"
 	line "trainers!"
 
-	para "Head to Route 39"
-	line "and catch a Yanma!"
+	para "Head to @"
+	text_ram wStringBuffer5
+	text ","
+	line "and catch a"
+	cont "@"
+	text_ram wStringBuffer3
+	text "!"
 	done
 
-DunsparceSwarmText::
+CaveSwarmText::
 	text "………………………"
 	
 	para "Ah!"
 
-	para "In Dark Cave near"
-	line "Blackthorn City,"
-	cont "there is a swarm"
-	cont "of Dunsparce!"
-
-	para "Now's your chance,"
-	line "trainers!"
-
-	para "Head to Dark Cave"
-	line "and catch a"
-	cont "Dunsparce!"
-	done
-
-QwilfishSwarmText::
-	text "………………………"
-
-	para "Ah!"
-
-	para "In the Wild Area,"
+	para "In @"
+	text_ram wStringBuffer5
+	text ","
 	line "there is a swarm"
-	cont "of Qwilfish!"
+	cont "of @"
+	text_ram wStringBuffer3
+	text "!"
 
 	para "Now's your chance,"
 	line "trainers!"
 
-	para "Head to the Wild"
-	line "Area and catch a"
-	cont "Qwilfish!"
+	para "Head over to"
+	line "@"
+	text_ram wStringBuffer5
+	text ","
+	cont "and catch a"
+	cont "@"
+	text_ram wStringBuffer3
+	text "!"
 	done
 
-EeveeSwarmText::
+CaveSwarmVowelText::
 	text "………………………"
-
+	
 	para "Ah!"
 
-	para "In the Wild Area,"
+	para "In @"
+	text_ram wStringBuffer5
+	text ","
 	line "there is a swarm"
-	cont "of Eevee!"
+	cont "of @"
+	text_ram wStringBuffer3
+	text "!"
 
 	para "Now's your chance,"
 	line "trainers!"
 
-	para "Head to the Wild"
-	line "Area and catch an"
-	cont "Eevee!"
+	para "Head over to"
+	line "@"
+	text_ram wStringBuffer5
+	text ","
+	cont "and catch an"
+	cont "@"
+	text_ram wStringBuffer3
+	text "!"
 	done
 
-KangaskhanSwarmText::
+LakeOfRageSwarmText::
 	text "………………………"
-
+	
 	para "Ah!"
 
-	para "In the Wild Area"
-	line "cave, there is a"
-	cont "swarm of"
-	cont "Kangaskhan!"
-
-	para "Now's your chance,"
-	line "trainers!"
-
-	para "Head to the Wild"
-	line "Area Cave and"
-	cont "catch a"
-	cont "Kangaskhan!"
-	done
-
-GibleSwarmText::
-	text "………………………"
-
-	para "Ah!"
-
-	para "In the Wild Area,"
+	para "At Lake of Rage,"
 	line "there is a swarm"
-	cont "of Gible!"
+	cont "Kotora!"
 
 	para "Now's your chance,"
 	line "trainers!"
 
-	para "Head to the Wild"
-	line "Area and catch a"
-	cont "Gible!"
-	done
-
-SneaselSwarmText::
-	text "………………………"
-
-	para "Ah!"
-
-	para "In the B1F of Ice"
-	line "Path, there is a"
-	cont "swarm of Sneasel!"
-
-	para "Now's your chance,"
-	line "trainers!"
-
-	para "Head to Ice Path"
-	line "and catch a"
-	cont "Sneasel!"
-	done
-
-MisdreavusSwarmText::
-	text "………………………"
-
-	para "Ah!"
-
-	para "In the 1F of the"
-	line "Burned Tower,"
-	cont "there is a swarm"
-	cont "of Misdreavus!"
-
-	para "Now's your chance,"
-	line "trainers!"
-
-	para "Head to Burned"
-	line "Tower and catch a"
-	cont "Misdreavus!"
-	done
-
-ScytherSwarmText::
-	text "………………………"
-
-	para "Ah!"
-
-	para "On Route 38, there"
-	line "there is a swarm"
-	cont "Scyther!"
-
-	para "Now's your chance,"
-	line "trainers!"
-
-	para "Head to Route 38"
-	line "and catch a"
-	cont "Scyther!"
+	para "Head to the Lake"
+	line "of Rage and catch"
+	cont "a Kotora!"
 	done
 
 PinsirSwarmText::

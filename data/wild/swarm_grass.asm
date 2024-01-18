@@ -37,32 +37,32 @@ SwarmGrassWildMons:
 	map_id ROUTE_39
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 16, YANMA
-	dbw 16, YANMA
-	dbw 16, BUTTERFREE
-	dbw 16, YANMA
-	dbw 16, YANMA
-	dbw 16, MILTANK
-	dbw 16, TAUROS
-	dbw 16, YANMA
+	dbw 15, YANMA
+	dbw 15, MILTANK
+	dbw 15, BUTTERFREE
+	dbw 15, TAUROS
+	dbw 15, YANMA
+	dbw 15, TAUROS
+	dbw 15, YANMA
+	dbw 15, YANMA
 	; day
-	dbw 16, YANMA
-	dbw 16, YANMA
-	dbw 16, BUTTERFREE
-	dbw 16, YANMA
-	dbw 16, YANMA
-	dbw 16, MILTANK
-	dbw 16, TAUROS
-	dbw 16, YANMA
+	dbw 15, YANMA
+	dbw 15, MILTANK
+	dbw 15, BUTTERFREE
+	dbw 15, TAUROS
+	dbw 15, YANMA
+	dbw 15, TAUROS
+	dbw 15, YANMA
+	dbw 15, YANMA
 	; nite
-	dbw 16, YANMA
-	dbw 16, YANMA
-	dbw 16, BEEDRILL
-	dbw 16, YANMA
-	dbw 16, YANMA
-	dbw 16, MEOWTH
-	dbw 16, MURKROW
-	dbw 16, YANMA
+	dbw 15, YANMA
+	dbw 15, MURKROW
+	dbw 15, BEEDRILL
+	dbw 15, MEOWTH
+	dbw 15, YANMA
+	dbw 15, MEOWTH
+	dbw 15, YANMA
+	dbw 15, YANMA
 
 ; Eevee swarm
 	map_id WILD_AREA_2_3
@@ -70,29 +70,29 @@ SwarmGrassWildMons:
 	; morn
 	dbw 15, EEVEE
 	dbw 15, EEVEE
-	dbw 15, SNUBBULL
-	dbw 15, EEVEE
-	dbw 15, EEVEE
 	dbw 15, MUNCHLAX
 	dbw 15, RHYHORN
+	dbw 15, EEVEE
+	dbw 15, SNUBBULL
+	dbw 15, EEVEE
 	dbw 15, EEVEE
 	; day
 	dbw 15, EEVEE
 	dbw 15, EEVEE
-	dbw 15, SNUBBULL
-	dbw 15, EEVEE
-	dbw 15, EEVEE
 	dbw 15, MUNCHLAX
 	dbw 15, RHYHORN
+	dbw 15, EEVEE
+	dbw 15, SNUBBULL
+	dbw 15, EEVEE
 	dbw 15, EEVEE
 	; night
 	dbw 15, EEVEE
 	dbw 15, EEVEE
-	dbw 15, SNUBBULL
-	dbw 15, EEVEE
-	dbw 15, EEVEE
 	dbw 15, MUNCHLAX
 	dbw 15, RHYHORN
+	dbw 15, EEVEE
+	dbw 15, SNUBBULL
+	dbw 15, EEVEE
 	dbw 15, EEVEE
 
 ; Kangaskhan swarm
@@ -102,28 +102,28 @@ SwarmGrassWildMons:
 	dbw 15, KANGASKHAN
 	dbw 15, KANGASKHAN
 	dbw 15, SMEARGLE
-	dbw 15, KANGASKHAN
-	dbw 15, KANGASKHAN
 	dbw 15, GLIGAR
 	dbw 15, BRONZOR
+	dbw 15, KANGASKHAN
+	dbw 15, KANGASKHAN
 	dbw 15, KANGASKHAN
 	; day
 	dbw 15, KANGASKHAN
 	dbw 15, KANGASKHAN
 	dbw 15, SMEARGLE
-	dbw 15, KANGASKHAN
-	dbw 15, KANGASKHAN
 	dbw 15, GLIGAR
 	dbw 15, BRONZOR
+	dbw 15, KANGASKHAN
+	dbw 15, KANGASKHAN
 	dbw 15, KANGASKHAN
 	; nite
 	dbw 15, KANGASKHAN
 	dbw 15, KANGASKHAN
 	dbw 15, SMEARGLE
-	dbw 15, KANGASKHAN
-	dbw 15, KANGASKHAN
 	dbw 15, GLIGAR
 	dbw 15, BRONZOR
+	dbw 15, KANGASKHAN
+	dbw 15, KANGASKHAN
 	dbw 15, KANGASKHAN
 
 ; Gible swarm
@@ -133,29 +133,29 @@ SwarmGrassWildMons:
 	dbw 15, GIBLE
 	dbw 15, GIBLE
 	dbw 15, CHANSEY
-	dbw 15, GIBLE
-	dbw 15, GIBLE
-	dbw 15, MURKROW
 	dbw 15, STANTLER
 	dbw 15, GIBLE
+	dbw 15, MURKROW
+	dbw 15, MURKROW
+	dbw 15, MURKROW
 	; morn
 	dbw 15, GIBLE
 	dbw 15, GIBLE
 	dbw 15, CHANSEY
-	dbw 15, GIBLE
-	dbw 15, GIBLE
-	dbw 15, MURKROW
 	dbw 15, STANTLER
 	dbw 15, GIBLE
+	dbw 15, MURKROW
+	dbw 15, MURKROW
+	dbw 15, MURKROW
 	; nite
 	dbw 15, GIBLE
 	dbw 15, GIBLE
 	dbw 15, CHANSEY
-	dbw 15, GIBLE
-	dbw 15, GIBLE
-	dbw 15, MURKROW
 	dbw 15, STANTLER
 	dbw 15, GIBLE
+	dbw 15, MURKROW
+	dbw 15, MURKROW
+	dbw 15, MURKROW
 
 ; Sneasel swarm
 	map_id ICE_PATH_B1F
@@ -223,8 +223,8 @@ SwarmGrassWildMons:
 	map_id NATIONAL_PARK
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 22, NIDORINO
 	dbw 22, NIDORINA
+	dbw 22, NIDORINO
 	dbw 22, PINSIR
 	dbw 22, PINSIR
 	dbw 22, SCYTHER
@@ -232,8 +232,8 @@ SwarmGrassWildMons:
 	dbw 22, PINSIR
 	dbw 22, PINSIR
 	; day
-	dbw 22, NIDORINO
 	dbw 22, NIDORINA
+	dbw 22, NIDORINO
 	dbw 22, PINSIR
 	dbw 22, PINSIR
 	dbw 22, SCYTHER
@@ -241,8 +241,8 @@ SwarmGrassWildMons:
 	dbw 22, PINSIR
 	dbw 22, PINSIR
 	; nite
-	dbw 22, NIDORINO
 	dbw 22, NIDORINA
+	dbw 22, NIDORINO
 	dbw 22, PINSIR
 	dbw 22, PINSIR
 	dbw 22, SCYTHER
@@ -254,32 +254,32 @@ SwarmGrassWildMons:
 	map_id ROUTE_38
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 15, SCYTHER
-	dbw 15, TAUROS
-	dbw 15, BUTTERFREE
-	dbw 15, SCYTHER
-	dbw 15, MILTANK
-	dbw 15, SCYTHER
-	dbw 15, SCYTHER
-	dbw 15, SCYTHER
+	dbw 14, SCYTHER
+	dbw 14, TAUROS
+	dbw 14, BUTTERFREE
+	dbw 14, SCYTHER
+	dbw 14, MILTANK
+	dbw 14, SCYTHER
+	dbw 14, SCYTHER
+	dbw 14, SCYTHER
 	; day
-	dbw 15, SCYTHER
-	dbw 15, TAUROS
-	dbw 15, BUTTERFREE
-	dbw 15, SCYTHER
-	dbw 15, MILTANK
-	dbw 15, SCYTHER
-	dbw 15, SCYTHER
-	dbw 15, SCYTHER
+	dbw 14, SCYTHER
+	dbw 14, TAUROS
+	dbw 14, BUTTERFREE
+	dbw 14, SCYTHER
+	dbw 14, MILTANK
+	dbw 14, SCYTHER
+	dbw 14, SCYTHER
+	dbw 14, SCYTHER
 	; nite
-	dbw 15, SCYTHER
-	dbw 15, TAUROS
-	dbw 15, BEEDRILL
-	dbw 15, SCYTHER
-	dbw 15, MILTANK
-	dbw 15, SCYTHER
-	dbw 15, SCYTHER
-	dbw 15, SCYTHER
+	dbw 14, SCYTHER
+	dbw 14, MEOWTH
+	dbw 14, BEEDRILL
+	dbw 14, SCYTHER
+	dbw 14, MURKROW
+	dbw 14, SCYTHER
+	dbw 14, SCYTHER
+	dbw 14, SCYTHER
 
 ;Aron swarm
 	map_id MOUNT_MORTAR_1F_OUTSIDE
@@ -373,5 +373,66 @@ SwarmGrassWildMons:
 	dbw  7, KOTORA
 	dbw  7, CROAGUNK
 	dbw  7, CROAGUNK
+
+	map_id ILEX_FOREST
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 37, PARASECT
+	dbw 37, PARASECT
+	dbw 37, BUTTERFREE
+	dbw 37, BEEDRILL
+	dbw 37, LEDIAN
+	dbw 37, PARASECT
+	dbw 37, PARASECT
+	dbw 37, PARASECT
+	; day
+	dbw 37, PARASECT
+	dbw 37, PARASECT
+	dbw 37, BUTTERFREE
+	dbw 37, BEEDRILL
+	dbw 37, LEDIAN
+	dbw 37, PARASECT
+	dbw 37, PARASECT
+	dbw 37, PARASECT
+	; nite
+	dbw 37, PARASECT
+	dbw 37, PARASECT
+	dbw 37, GLOOM
+	dbw 37, GOLDUCK
+	dbw 37, VENOMOTH
+	dbw 37, PARASECT
+	dbw 37, PARASECT
+	dbw 37, PARASECT
+
+; Gligar Swarm
+	map_id UNION_CAVE_1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 44, GLIGAR
+	dbw 44, STEELIX
+	dbw 44, GLIGAR
+	dbw 44, GOLEM
+	dbw 44, CROBAT
+	dbw 44, CROBAT
+	dbw 44, GLIGAR
+	dbw 44, GLIGAR
+	; day
+	dbw 44, GLIGAR
+	dbw 44, STEELIX
+	dbw 44, GLIGAR
+	dbw 44, GOLEM
+	dbw 44, CROBAT
+	dbw 44, CROBAT
+	dbw 44, GLIGAR
+	dbw 44, GLIGAR
+	; nite
+	dbw 44, GLIGAR
+	dbw 44, STEELIX
+	dbw 44, GLIGAR
+	dbw 44, GOLEM
+	dbw 44, CROBAT
+	dbw 44, CROBAT
+	dbw 44, GLIGAR
+	dbw 44, GLIGAR
 
 	db -1 ; end

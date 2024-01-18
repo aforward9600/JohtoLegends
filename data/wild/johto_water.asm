@@ -271,7 +271,7 @@ JohtoWaterWildMons:
 	map_id ROUTE_47
 	db 6 percent ; encounter rate
 	dbw 20, TENTACOOL
-	dbw 20, GOLDEEN
+	dbw 20, REMORAID
 	dbw 19, MAGIKARP
 	dbw 25, QWILFISH
 
