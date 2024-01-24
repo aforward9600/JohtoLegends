@@ -1538,27 +1538,27 @@ JohtoGrassWildMons:
 	dbw 5, BELLSPROUT
 	dbw 5, ODDISH
 	dbw 5, POLIWAG
-	dbw 5, SLOWPOKE
-	dbw 5, BUDEW
 	dbw 5, EKANS
+	dbw 5, BUDEW
+	dbw 5, SLOWPOKE
 	dbw 5, CHIKORITA
 	dbw 5, CHIKORITA
 	; day
 	dbw 5, BELLSPROUT
 	dbw 5, ODDISH
 	dbw 5, POLIWAG
-	dbw 5, SLOWPOKE
-	dbw 5, BUDEW
 	dbw 5, EKANS
+	dbw 5, BUDEW
+	dbw 5, SLOWPOKE
 	dbw 5, CHIKORITA
 	dbw 5, CHIKORITA
 	; nite
 	dbw 5, BELLSPROUT
 	dbw 5, ODDISH
 	dbw 5, POLIWAG
-	dbw 5, SLOWPOKE
-	dbw 5, BUDEW
 	dbw 5, EKANS
+	dbw 5, BUDEW
+	dbw 5, SLOWPOKE
 	dbw 5, HOOTHOOT
 	dbw 5, HOOTHOOT
 

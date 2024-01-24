@@ -190,9 +190,9 @@ MonMenuIconPals:
 	icon_pals BLUE,   TEAL   ; ARTICUNO
 	icon_pals BROWN,  RED    ; ZAPDOS
 	icon_pals RED,    PINK   ; MOLTRES
-	icon_pals BLUE,   PURPLE ; DRATINI
-	icon_pals BLUE,   PURPLE ; DRAGONAIR
-	icon_pals RED,    GRAY   ; DRAGONITE
+	icon_pals BLUE,   PINK   ; DRATINI
+	icon_pals BLUE,   PINK   ; DRAGONAIR
+	icon_pals RED,    PINK   ; DRAGONITE
 	icon_pals GRAY,   GRAY   ; MEWTWO
 	icon_pals PINK,   BLUE   ; MEW
 	icon_pals GREEN,  RED    ; CHIKORITA

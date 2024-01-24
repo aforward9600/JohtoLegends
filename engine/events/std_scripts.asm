@@ -1908,6 +1908,10 @@ StaticPokemonRefresh:
 	iftrue .refreshmewtwo
 	checkevent EVENT_BEAT_MEW
 	iftrue .refreshmew
+	checkevent EVENT_BEAT_LUGIA
+	iftrue .refreshlugia
+	checkevent EVENT_BEAT_HO_OH
+	iftrue .refreshhooh
 	return
 
 .refreshfarfetchd:
@@ -1958,6 +1962,14 @@ StaticPokemonRefresh:
 
 .refreshmew:
 	clearevent EVENT_BEAT_MEW
+	sjump StaticPokemonRefresh
+
+.refreshlugia:
+	clearevent EVENT_BEAT_LUGIA
+	sjump StaticPokemonRefresh
+
+.refreshhooh:
+	clearevent EVENT_BEAT_HO_OH
 	sjump StaticPokemonRefresh
 
 TelevisionScript:
@@ -2187,7 +2199,7 @@ SwarmScript:
 	farwritetext WhatSwarmTodayText
 	waitbutton
 .SwarmReroll:
-	random 16
+	random 21
 	ifequal 0,  .noswarm
 	ifequal 1,  .yanma
 	ifequal 2,  .dunsparce
@@ -2204,6 +2216,11 @@ SwarmScript:
 	ifequal 13, .kotora
 	ifequal 14, .parasect
 	ifequal 15, .gligar
+	ifequal 16, .toxicroak
+	ifequal 17, .murkrow
+	ifequal 18, .ditto
+	ifequal 19, .slowpoke
+	ifequal 20, .ponyta
 
 .noswarm
 	setflag ENGINE_SWARM
@@ -2371,6 +2388,60 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, UNION_CAVE
 	getmonname STRING_BUFFER_3, GLIGAR
 	farwritetext CaveSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.toxicroak
+	checkflag ENGINE_HIVEBADGE
+	iffalse .SwarmReroll
+	setflag ENGINE_SWARM
+	swarm ROUTE_32
+	getlandmarkname STRING_BUFFER_5, ROUTE_32
+	getmonname STRING_BUFFER_3, TOXICROAK
+	farwritetext RouteSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.murkrow
+	setflag ENGINE_SWARM
+	swarm ROUTE_37
+	getlandmarkname STRING_BUFFER_5, ROUTE_37
+	getmonname STRING_BUFFER_3, MURKROW
+	farwritetext RouteSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.ditto
+	checkflag ENGINE_MINERALBADGE
+	iffalse .SwarmReroll
+	setflag ENGINE_SWARM
+	swarm ROUTE_35
+	getlandmarkname STRING_BUFFER_5, ROUTE_35
+	getmonname STRING_BUFFER_3, DITTO
+	farwritetext RouteSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.slowpoke
+	setflag ENGINE_SWARM
+	swarm ROUTE_44
+	getlandmarkname STRING_BUFFER_5, ROUTE_44
+	getmonname STRING_BUFFER_3, SLOWPOKE
+	farwritetext RouteSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.ponyta
+	setflag ENGINE_SWARM
+	swarm ROUTE_42
+	getlandmarkname STRING_BUFFER_5, ROUTE_42
+	getmonname STRING_BUFFER_3, PONYTA
+	farwritetext RouteSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel

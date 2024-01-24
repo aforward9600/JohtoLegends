@@ -60,11 +60,13 @@ MtSilverSummit_MapScripts:
 	checkevent EVENT_GOT_SILVER_WING
 	iftrue .ReleasedHoOh
 	writetext ReleasedLugiaText
+	setevent EVENT_RIVAL_GIVES_UP_LUGIA
 	waitbutton
 	sjump .ReconvergeFinalScene
 
 .ReleasedHoOh:
 	writetext ReleasedHoOhText
+	setevent EVENT_RIVAL_GIVES_UP_HO_OH
 	waitbutton
 .ReconvergeFinalScene:
 	writetext GoingToReleaseText

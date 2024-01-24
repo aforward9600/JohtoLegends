@@ -8,15 +8,15 @@ WhirlIslandLugiaChamber_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .Lugia
 
 .Lugia:
+	checkevent EVENT_BEAT_LUGIA
+	iftrue .NoAppear
 	checkevent EVENT_CAUGHT_LUGIA
 	iftrue .NoAppear
 	checkevent EVENT_HIDEOUT_LUGIA
 	iffalse .NoAppear
 	checkevent EVENT_RIVAL_GIVES_UP_LUGIA
 	iffalse .NoAppear
-;	checkitem RAINBOW_WING
-;	iftrue .Appear
-;	sjump .NoAppear
+	return
 
 .Appear:
 	appear WHIRLISLANDLUGIACHAMBER_LUGIA
@@ -31,13 +31,24 @@ Lugia:
 	opentext
 	writetext LugiaText
 	cry LUGIA
-	pause 15
+	waitbutton
 	closetext
-	setevent EVENT_FOUGHT_LUGIA
-	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
-	loadwildmon LUGIA, 60
+	loadwildmon LUGIA, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_LUGIA
 	startbattle
+	ifequal LOSE, .NotBeaten
 	disappear WHIRLISLANDLUGIACHAMBER_LUGIA
+	reloadmapafterbattle
+	special CheckCaughtCelebi
+	iftrue .CaughtLugia
+	setevent EVENT_BEAT_LUGIA
+	end
+
+.CaughtLugia:
+	setevent EVENT_CAUGHT_LUGIA
+	end
+
+.NotBeaten:
 	reloadmapafterbattle
 	end
 

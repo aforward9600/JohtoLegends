@@ -158,6 +158,8 @@ Koolboyman
 Prism Team
 LuigiTKO
 
+Substitute sprite: LuigiTKO
+
 Gen 3 and 6 minisprites:
 EeVeeEe1999
 

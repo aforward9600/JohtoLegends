@@ -435,4 +435,157 @@ SwarmGrassWildMons:
 	dbw 44, GLIGAR
 	dbw 44, GLIGAR
 
+; Toxicroak swarm
+	map_id ROUTE_32
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 44, TOXICROAK
+	dbw 44, TOXICROAK
+	dbw 44, JUMPLUFF
+	dbw 44, PIDGEOT
+	dbw 44, AMPHAROS
+	dbw 44, PIDGEOT
+	dbw 44, AMPHAROS
+	dbw 44, AMPHAROS
+	; day
+	dbw 44, TOXICROAK
+	dbw 44, TOXICROAK
+	dbw 44, JUMPLUFF
+	dbw 44, PIDGEOT
+	dbw 44, AMPHAROS
+	dbw 44, PIDGEOT
+	dbw 44, AMPHAROS
+	dbw 44, AMPHAROS
+	; nite
+	dbw 44, TOXICROAK
+	dbw 44, TOXICROAK
+	dbw 44, GENGAR
+	dbw 44, PIDGEOT
+	dbw 44, AMPHAROS
+	dbw 44, PIDGEOT
+	dbw 44, AMPHAROS
+	dbw 44, AMPHAROS
+
+; Murkrow swarm
+	map_id ROUTE_37
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 12, MURKROW
+	dbw 12, MURKROW
+	dbw 12, MIME__JR
+	dbw 12, MEOWTH
+	dbw 12, JIGGLYPUFF
+	dbw 12, JIGGLYPUFF
+	dbw 12, MIME__JR
+	dbw 12, MIME__JR
+	; day
+	dbw 12, MURKROW
+	dbw 12, MURKROW
+	dbw 12, MIME__JR
+	dbw 12, MEOWTH
+	dbw 12, JIGGLYPUFF
+	dbw 12, JIGGLYPUFF
+	dbw 12, MIME__JR
+	dbw 12, MIME__JR
+	; nite
+	dbw 12, MURKROW
+	dbw 12, MURKROW
+	dbw 12, MIME__JR
+	dbw 12, MEOWTH
+	dbw 12, JIGGLYPUFF
+	dbw 12, JIGGLYPUFF
+	dbw 12, MIME__JR
+	dbw 12, MIME__JR
+
+; Ditto swarm
+	map_id ROUTE_35
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 27, DITTO
+	dbw 27, DITTO
+	dbw 27, YANMA
+	dbw 27, KADABRA
+	dbw 27, JIGGLYPUFF
+	dbw 27, YANMA
+	dbw 27, KADABRA
+	dbw 27, KADABRA
+	; day
+	dbw 27, DITTO
+	dbw 27, DITTO
+	dbw 27, YANMA
+	dbw 27, KADABRA
+	dbw 27, JIGGLYPUFF
+	dbw 27, YANMA
+	dbw 27, KADABRA
+	dbw 27, KADABRA
+	; nite
+	dbw 27, DITTO
+	dbw 27, DITTO
+	dbw 27, YANMA
+	dbw 27, KADABRA
+	dbw 27, JIGGLYPUFF
+	dbw 27, YANMA
+	dbw 27, KADABRA
+	dbw 27, KADABRA
+
+	map_id ROUTE_44
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 5, SLOWPOKE
+	dbw 5, SLOWPOKE
+	dbw 5, CHIKORITA
+	dbw 5, EKANS
+	dbw 5, BUDEW
+	dbw 5, BUDEW
+	dbw 5, CHIKORITA
+	dbw 5, CHIKORITA
+	; day
+	dbw 5, SLOWPOKE
+	dbw 5, SLOWPOKE
+	dbw 5, CHIKORITA
+	dbw 5, EKANS
+	dbw 5, BUDEW
+	dbw 5, BUDEW
+	dbw 5, CHIKORITA
+	dbw 5, CHIKORITA
+	; nite
+	dbw 5, SLOWPOKE
+	dbw 5, SLOWPOKE
+	dbw 5, CHIKORITA
+	dbw 5, EKANS
+	dbw 5, BUDEW
+	dbw 5, BUDEW
+	dbw 5, CHIKORITA
+	dbw 5, CHIKORITA
+
+	map_id ROUTE_42
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw  7, PONYTA
+	dbw  7, PONYTA
+	dbw  7, ELEKID
+	dbw  7, BONSLY
+	dbw  7, HOUNDOUR
+	dbw  7, HOUNDOUR
+	dbw  7, ELEKID
+	dbw  7, ELEKID
+	; day
+	dbw  7, PONYTA
+	dbw  7, PONYTA
+	dbw  7, ELEKID
+	dbw  7, BONSLY
+	dbw  7, HOUNDOUR
+	dbw  7, HOUNDOUR
+	dbw  7, ELEKID
+	dbw  7, ELEKID
+	; nite
+	dbw  7, PONYTA
+	dbw  7, PONYTA
+	dbw  7, ELEKID
+	dbw  7, BONSLY
+	dbw  7, HOUNDOUR
+	dbw  7, HOUNDOUR
+	dbw  7, ELEKID
+	dbw  7, ELEKID
+
 	db -1 ; end

@@ -237,6 +237,10 @@ TinTower1FPersianScript:
 TinTowerEusine:
 	faceplayer
 	opentext
+	checkevent EVENT_CAUGHT_HO_OH
+	iftrue .HoOhIsYours
+	checkevent EVENT_BEAT_MADAME_BOSS
+	iftrue .HoOhIsFree
 	checkevent EVENT_CLEARED_TIN_TOWER
 	iftrue .HoOhIsGone
 	checkevent EVENT_OPEN_ILEX_FOREST
@@ -265,6 +269,18 @@ TinTowerEusine:
 
 .HoOhIsGone:
 	writetext HoOhIsGoneText
+	waitbutton
+	closetext
+	end
+
+.HoOhIsFree:
+	writetext HoOhIsFreeText
+	waitbutton
+	closetext
+	end
+
+.HoOhIsYours:
+	writetext HoOhIsYoursText
 	waitbutton
 	closetext
 	end
@@ -538,6 +554,22 @@ HoOhIsGoneText:
 
 	para "I hope we can"
 	line "free it…"
+	done
+
+HoOhIsFreeText:
+	text "Ho-Oh is free now…"
+
+	para "Hopefully it will"
+	line "return some day…"
+	done
+
+HoOhIsYoursText:
+	text "Ho-Oh is yours"
+	line "now…"
+
+	para "I know you will"
+	line "take good care of"
+	cont "it…"
 	done
 
 TinTower1F_MapEvents:

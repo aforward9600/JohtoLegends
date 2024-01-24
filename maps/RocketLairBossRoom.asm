@@ -76,6 +76,7 @@ PlayerWalksToBoss:
 	disappear ROCKETLAIRBOSSROOM_MOLTRES
 	disappear ROCKETLAIRBOSSROOM_QUAGSIRE
 	disappear ROCKETLAIRBOSSROOM_ZAPDOS
+	setevent EVENT_TIN_TOWER_1F_WISE_TRIO_2
 	sjump MadameBossBattle
 
 PlayerWalksToBoss3:
