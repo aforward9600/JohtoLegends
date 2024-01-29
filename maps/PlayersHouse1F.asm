@@ -354,7 +354,8 @@ DahliasLookingForYouText:
 	para "Here is a watch."
 	line "It will help you"
 	cont "keep track of time"
-	cont "and location."
+
+	para "and location."
 	done
 
 MomGivesPokegearText:
@@ -380,8 +381,9 @@ ComeHomeForDSTText:
 	para "By the way, for"
 	line "the watch, press"
 	cont "Left or Right to"
-	cont "switch between the"
-	cont "clock and map."
+
+	para "switch between the"
+	line "clock and map."
 
 	para "See? Even I can"
 	line "understand it."
@@ -427,7 +429,8 @@ DracosLookingForYouText:
 	para "Here is a watch."
 	line "It will help you"
 	cont "keep track of time"
-	cont "and location."
+
+	para "and location."
 	done
 
 HurryUpElmIsWaitingText:
@@ -534,7 +537,8 @@ OhWaitText:
 	text "So, you've got"
 	line "your #mon and"
 	cont "you're leaving on"
-	cont "an adventure…"
+
+	para "an adventure…"
 
 	para "Good luck to you,"
 	line "and you're always"
@@ -587,7 +591,8 @@ GrandmaJournalText:
 	para "For every badge"
 	line "you collect, I'll"
 	cont "buy you a doll for"
-	cont "your room!"
+
+	para "your room!"
 
 	para "No need to thank"
 	line "me!"
@@ -598,7 +603,8 @@ GrandmaJournalText:
 	para "Just pick up the"
 	line "phone and dial up"
 	cont "the Abra Delivery"
-	cont "Service!"
+
+	para "Service!"
 
 	para "They'll bring and"
 	line "take anything you"
@@ -631,7 +637,8 @@ DahliaCameByText:
 	para "I don't know what"
 	line "she wants, but"
 	cont "you better not"
-	cont "keep her waiting!"
+
+	para "keep her waiting!"
 	done
 
 DracoCameByText:
@@ -656,7 +663,8 @@ DracoCameByText:
 	para "I don't know what"
 	line "he wants, but"
 	cont "you better not"
-	cont "keep him waiting!"
+
+	para "keep him waiting!"
 	done
 
 CongratulationsOnBeingChampionText:
@@ -672,12 +680,14 @@ CongratulationsOnBeingChampionText:
 	para "She's taking the"
 	line "loss better than"
 	cont "I thought she"
-	cont "would."
+
+	para "would."
 
 	para "She certainly"
 	line "doesn't get her"
 	cont "humility from"
-	cont "her father!"
+
+	para "her father!"
 
 	para "Hohoho!"
 	done
@@ -695,12 +705,14 @@ CongratsFemaleText:
 	para "He's taking the"
 	line "loss better than"
 	cont "I thought he"
-	cont "would."
+
+	para "would."
 
 	para "He certainly"
 	line "doesn't get his"
 	cont "humility from"
-	cont "her father!"
+
+	para "her father!"
 
 	para "Hohoho!"
 	done

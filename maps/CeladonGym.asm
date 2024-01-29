@@ -22,6 +22,8 @@ CeladonGymErikaScript:
 	pause 10
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .ErikaRematch
 	checkflag ENGINE_RAINBOWBADGE
 	iftrue .FightDone
 	writetext ErikaBeforeBattleText
@@ -65,6 +67,29 @@ CeladonGymErikaScript:
 	setevent EVENT_GOT_TM19_GIGA_DRAIN
 	setevent EVENT_DECO_LOTAD_DOLL
 	sjump .GotGigaDrain
+
+.ErikaRematch:
+	checkflag ENGINE_BETH
+	iffalse .ErikaPost
+	writetext ErikaRematchText
+	waitbutton
+	closetext
+	winlosstext ErikaBeatenText, ErikaLastMonText
+	loadtrainer ERIKA, ERIKA1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext ErikaRematchDefeatText
+	waitbutton
+	closetext
+	setflag ENGINE_BETH
+	end
+
+.ErikaPost:
+	writetext ErikaPostText
+	waitbutton
+	closetext
+	end
 
 ErikaLastMonText:
 	text "Erika: My last"
@@ -333,6 +358,45 @@ AlreadyGotEnergyBallText:
 
 	para "I'll be here when"
 	line "you need me…"
+	done
+
+ErikaRematchText:
+	text "Erika:…Oh, hello"
+	line "again, <PLAYER>…"
+
+	para "I must have dozed"
+	line "off again…"
+
+	para "Some plants will"
+	line "do that to you…"
+
+	para "…Would you like to"
+	line "battle again?"
+
+	para "I could use the"
+	line "practice…"
+	done
+
+ErikaRematchDefeatText:
+	text "Erika: …Oh, did I"
+	line "lose again?"
+
+	para "…Oh well…"
+
+	para "…It was still a"
+	line "good time…"
+
+	para "…As far as I can"
+	line "tell…"
+	done
+
+ErikaPostText:
+	text "Erika: …Looks like"
+	line "we'll have a lot"
+	cont "of cleaning up to"
+	cont "do in the city…"
+
+	para "Maybe after a nap…"
 	done
 
 CeladonGym_MapEvents:

@@ -339,7 +339,8 @@ DahliaTheyWereToughText:
 	text "<RIVAL>: Master"
 	line "wasn't joking"
 	cont "about his"
-	cont "grandchildren!"
+
+	para "grandchildren!"
 
 	para "But, we won, so"
 	line "let's go back to"
@@ -364,7 +365,8 @@ LostToLanceText:
 	text "Lance: Train up a"
 	line "bit and maybe it'll"
 	cont "be different next"
-	cont "time!"
+
+	para "time!"
 	done
 
 MastersHouse2F_MapEvents:

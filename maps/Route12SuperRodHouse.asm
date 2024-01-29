@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const ROUTE12SUPERRODHOUSE_FISHING_GURU
+	const ROUTE12SUPERRODHOUSE_ROCKER
 
 Route12SuperRodHouse_MapScripts:
 	db 0 ; scene scripts
@@ -9,26 +9,16 @@ Route12SuperRodHouse_MapScripts:
 Route12SuperRodHouseFishingGuruScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_SUPER_ROD
+	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .GotSuperRod
 	writetext OfferSuperRodText
-	yesorno
-	iffalse .Refused
-	writetext GiveSuperRodText
-	buttonsound
-	verbosegiveitem SUPER_ROD
-	iffalse .NoRoom
-	setevent EVENT_GOT_SUPER_ROD
-.GotSuperRod:
-	writetext GaveSuperRodText
 	waitbutton
 	closetext
 	end
 
-.Refused:
-	writetext DontWantSuperRodText
+.GotSuperRod:
+	writetext GaveSuperRodText
 	waitbutton
-.NoRoom:
 	closetext
 	end
 
@@ -37,44 +27,21 @@ SuperRodHouseBookshelf:
 	jumpstd picturebookshelf
 
 OfferSuperRodText:
-	text "I'm the FISHING"
-	line "GURU's younger"
-	cont "brother."
+	text "It used to be so"
+	line "quiet out here."
 
-	para "I can see that you"
-	line "like fishing."
+	para "Ever since the"
+	line "revolution,"
+	cont "it's been noisy!"
 
-	para "There's no doubt"
-	line "in my mind at all!"
-
-	para "So? I know I'm"
-	line "right."
-	done
-
-GiveSuperRodText:
-	text "Yes, yes. Just as"
-	line "I thought!"
-
-	para "Here, fishing fan!"
-	line "Take this--it's a"
-	cont "SUPER ROD."
+	para "I just want some"
+	line "peace!"
 	done
 
 GaveSuperRodText:
-	text "Try your hand at"
-	line "fishing wherever"
-	cont "there is water."
-
-	para "Remember--you can"
-	line "catch different"
-
-	para "#MON using"
-	line "different RODS."
-	done
-
-DontWantSuperRodText:
-	text "Huh? My own eyes"
-	line "deceived me?"
+	text "Maybe the peace"
+	line "and quiet will"
+	cont "return soon."
 	done
 
 Route12SuperRodHouse_MapEvents:
@@ -89,4 +56,4 @@ Route12SuperRodHouse_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  5,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route12SuperRodHouseFishingGuruScript, -1
+	object_event  5,  3, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route12SuperRodHouseFishingGuruScript, -1

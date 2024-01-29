@@ -23,7 +23,8 @@ PlayersNeighborMText:
 	text "Now that Elm's lab"
 	line "is finished, I"
 	cont "think things will"
-	cont "quiet down."
+
+	para "quiet down."
 
 	para "This looks like a"
 	line "nice place to"

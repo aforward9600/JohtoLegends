@@ -2792,19 +2792,19 @@ endc
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (5)
-	db "Emile@", TRAINERTYPE_NORMAL
+	db "Josh@", TRAINERTYPE_NORMAL
 	db 52
 	dw FEAROW
 	db 52
 	dw PERSIAN
 	db 52
-	dw MR__MIME
+	dw KADABRA
 	db 52
-	dw ESPEON
+	dw HOUNDOOM
 	db 52
 	dw WEEZING
 	db 53
-	dw FERALIGATR
+	dw BLASTOISE
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (6) Route 26

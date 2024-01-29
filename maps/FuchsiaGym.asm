@@ -11,10 +11,12 @@ FuchsiaGym_MapScripts:
 	db 0 ; callbacks
 
 FuchsiaGymKogaScript:
-	checkflag ENGINE_SOULBADGE
-	iftrue .FightDone
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .KogaPost
+	checkflag ENGINE_SOULBADGE
+	iftrue .FightDone
 	writetext KogaText_Welcome
 	waitbutton
 	closetext
@@ -34,8 +36,6 @@ FuchsiaGymKogaScript:
 	setflag ENGINE_SOULBADGE
 	sjump .AfterBattle
 .FightDone:
-	faceplayer
-	opentext
 .AfterBattle:
 	checkevent EVENT_GOT_TM06_TOXIC
 	iftrue .AfterTM
@@ -60,6 +60,29 @@ FuchsiaGymKogaScript:
 	setevent EVENT_GOT_TM06_TOXIC
 	setevent EVENT_DECO_BED_2
 	sjump .AfterTM
+
+.KogaPost:
+	checkflag ENGINE_JOSE
+	iffalse .KogaRematch
+	writetext KogaPostGameText
+	waitbutton
+	closetext
+	end
+
+.KogaRematch:
+	writetext KogaRematchText
+	waitbutton
+	closetext
+	winlosstext KogaText_LossText, KogaText_LastMonText
+	loadtrainer KOGA, KOGA1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext KogaRematchAfterText
+	waitbutton
+	closetext
+	setflag ENGINE_JOSE
+	end
 
 KogaText_LastMonText:
 	text "A ninja is always"
@@ -404,6 +427,39 @@ AlreadyGotTMText:
 
 	para "You're full of"
 	line "surprises."
+	done
+
+KogaPostGameText:
+	text "Koga: My cousin"
+	line "has been avenged."
+
+	para "Thank you, my"
+	line "friend."
+	done
+
+KogaRematchText:
+	text "Koga: It is good"
+	line "to see you, my"
+	cont "friend."
+
+	para "Shall we engage in"
+	line "friendly combat?"
+
+	para "I must keep honing"
+	line "my skills to"
+	cont "protect the city."
+	done
+
+KogaRematchAfterText:
+	text "Koga: I shall keep"
+	line "improving."
+
+	para "I must remain"
+	line "strong."
+
+	para "You must continue"
+	line "strengthening"
+	cont "yourself as well."
 	done
 
 FuchsiaGym_MapEvents:

@@ -189,9 +189,10 @@ SwimmermDerrickBeatenText:
 SwimmermDerrickAfterBattleText:
 	text "I hear in other"
 	line "regions, some"
-	cont "people are attack-"
+	cont "people are"
 
-	para "ed by Sharpedo!"
+	para "attacked by"
+	line "Sharpedo!"
 	done
 
 BugCatcherArthurSeenText:
@@ -222,7 +223,8 @@ BugCatcherArthurAfterBattleText2: ; unused
 	para "Just keep swim-"
 	line "ming. Usually in"
 	cont "a sing-songy"
-	cont "voice."
+
+	para "voice."
 	done
 
 LassArielleSeenText:
@@ -262,7 +264,8 @@ SwimmerfAngieAfterBattleText:
 	text "Pollution caused"
 	line "them to lose their"
 	cont "beautiful pink"
-	cont "color."
+
+	para "color."
 
 	para "There have been"
 	line "efforts in the"
@@ -298,7 +301,8 @@ Route40PokefanMText_Mobile:
 	text "Hm! Look at all"
 	line "those serious-"
 	cont "looking trainers"
-	cont "streaming in."
+
+	para "streaming in."
 
 	para "What? What?"
 	done

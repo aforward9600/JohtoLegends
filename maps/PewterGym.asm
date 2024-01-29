@@ -129,13 +129,15 @@ BrockIntroText:
 	para "When I heard what"
 	line "the Feds did in"
 	cont "Cerulean, I knew"
-	cont "we'd be next."
+
+	para "we'd be next."
 
 	para "I couldn't risk the"
 	line "lives of my wife"
 	cont "and son, so I sent"
-	cont "them away, and"
-	cont "disguised myself."
+
+	para "them away, and"
+	line "disguised myself."
 
 	para "Now I work as a"
 	line "miner to keep the"
@@ -144,14 +146,16 @@ BrockIntroText:
 	para "I feel terrible"
 	line "about abandoning"
 	cont "my post, but I did"
-	cont "what I needed to"
-	cont "for my family."
+
+	para "what I needed to"
+	line "for my family."
 
 	para "If I were to join"
 	line "forces with the"
 	cont "Champion, and"
-	cont "others, then maybe"
-	cont "we have a chance…"
+
+	para "others, then maybe"
+	line "we have a chance…"
 
 	para "You want to see"
 	line "how strong I am?"
@@ -171,8 +175,9 @@ FlintWinLossText:
 
 	para "but I think I'm"
 	line "still strong"
-	cont "enough to protect"
-	cont "others!"
+
+	para "enough to protect"
+	line "others!"
 	done
 
 ReceivedBoulderBadgeText:
@@ -287,8 +292,9 @@ FlintAfterRematchText:
 	text "Flint: Looks like"
 	line "I'll have to keep"
 	cont "on improving to"
-	cont "make sure I can"
-	cont "keep up as a Gym"
+
+	para "make sure I can"
+	line "keep up as a Gym"
 	cont "Leader."
 	done
 

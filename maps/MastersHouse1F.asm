@@ -915,10 +915,10 @@ MasterLastMovement:
 HeySleepyHeadText:
 	text "Hey sleepy head!"
 	line "about time you"
-	cont "woke up! Don't"
 
-	para "worry, we didn't"
-	line "start without you!"
+	para "woke up! Don't"
+	line "worry, we didn't"
+	cont "start without you!"
 	done
 
 GoodOfYouText:
@@ -1334,7 +1334,8 @@ TakeBagonText:
 	text "Master: Will you"
 	line "take Bagon, the"
 	cont "hard-headed"
-	cont "#mon?"
+
+	para "#mon?"
 	done
 
 ChoseBagonText:
@@ -1358,7 +1359,8 @@ TakeEeveeText:
 	text "Master: Will you"
 	line "take Eevee, the"
 	cont "#mon of many"
-	cont "destinies?"
+
+	para "destinies?"
 	done
 
 ChoseEeveeText:
@@ -1408,7 +1410,8 @@ TakePikachuText:
 	text "Master: Will you"
 	line "take Pikachu, the"
 	cont "wildly popular"
-	cont "mouse #mon?"
+
+	para "mouse #mon?"
 	done
 
 ChosePikachuText:
@@ -1433,29 +1436,33 @@ TakeMagbyText:
 	text "Master: Will you"
 	line "take Magby, the"
 	cont "small, but strong"
-	cont "fire #mon?"
+
+	para "fire #mon?"
 	done
 
 ChoseMagbyText:
 	text "Master: Treat this"
 	line "#mon with"
 	cont "respect, and it"
-	cont "will respect you."
+
+	para "will respect you."
 	done
 
 TakeMewText:
 	text "Master: Will you"
 	line "take Mew, the"
 	cont "ancestor to all"
-	cont "#mon?"
+
+	para "#mon?"
 	done
 
 ChoseMewText:
 	text "Master: You are"
 	line "not even meant to"
 	cont "have this #mon"
-	cont "until the post-"
-	cont "game."
+
+	para "until the post-"
+	line "game."
 	done
 
 TakeMissingnoText:
@@ -1474,10 +1481,10 @@ TakeCandyPouchText:
 	text "By the way, I see"
 	line "that you put in"
 	cont "the password for"
-	cont "CHEATER."
 
-	para "Humph. Have you no"
-	line "shame?"
+	para "CHEATER."
+	line "Humph. Have you no"
+	cont "shame?"
 
 	para "I am bound by the"
 	line "laws of the coding"
@@ -1491,11 +1498,13 @@ MasterUnfortunateText:
 	text "Master: It is most"
 	line "unfortunate that"
 	cont "you were not able"
-	cont "to complete your"
-	cont "test, but given"
+
+	para "to complete your"
+	line "test, but given"
 	cont "your current"
-	cont "circumstances, I"
-	cont "shall let it go."
+
+	para "circumstances, I"
+	line "shall let it go."
 
 	para "Patience is the"
 	line "key to raising"

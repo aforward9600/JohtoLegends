@@ -70,8 +70,9 @@ PewterPokecenter1FRivalText:
 	text "I heard a rumor"
 	line "about a strong"
 	cont "trainer in the"
-	cont "quarry on the"
-	cont "northside of town."
+
+	para "quarry on the"
+	line "northside of town."
 
 	para "Might want to"
 	line "check there."

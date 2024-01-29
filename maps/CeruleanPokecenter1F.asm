@@ -49,14 +49,16 @@ CeruleanPokecenter1FCooltrainerMText1:
 	para "If my #mon"
 	line "weren't knocked"
 	cont "out, I'd show"
-	cont "those Feds!"
+
+	para "those Feds!"
 	done
 
 CeruleanPokecenter1FCooltrainerMText2:
 	text "Looks like those"
 	line "Feds are running"
 	cont "scared of some"
-	cont "children!"
+
+	para "children!"
 
 	para "Hah! Wimps!"
 	done
@@ -65,7 +67,8 @@ CeruleanPokecenter1FRivalText1:
 	text "I hear that the"
 	line "best trainers in"
 	cont "the city are some"
-	cont "young triplets."
+
+	para "young triplets."
 
 	para "That's kinda sad,"
 	line "don't you think?"
@@ -82,7 +85,8 @@ CeruleanPokecenter1FRivalText2:
 	text "To think the Feds"
 	line "are responsible"
 	cont "for their parents'"
-	cont "deaths…"
+
+	para "deaths…"
 
 	para "Let's avenge them"
 	line "together, OK?"

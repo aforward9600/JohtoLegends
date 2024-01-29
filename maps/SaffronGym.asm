@@ -13,6 +13,8 @@ SaffronGym_MapScripts:
 SaffronGymSabrinaScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .SabrinaPost
 	checkflag ENGINE_MARSHBADGE
 	iftrue .FightDone
 	writetext SabrinaIntroText
@@ -42,6 +44,29 @@ SaffronGymSabrinaScript:
 	writetext SabrinaFightDoneText
 	waitbutton
 	closetext
+	end
+
+.SabrinaPost:
+	checkflag ENGINE_REENA
+	iffalse .SabrinaRematch
+	writetext SabrinaPostText
+	waitbutton
+	closetext
+	end
+
+.SabrinaRematch:
+	writetext SabrinaRematchText
+	waitbutton
+	closetext
+	winlosstext SabrinaWinLossText, SabrinaLastMonText
+	loadtrainer SABRINA, SABRINA1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext SabrinaAfterRematchText
+	waitbutton
+	closetext
+	setflag ENGINE_REENA
 	end
 
 SabrinaLastMonText:
@@ -239,6 +264,61 @@ PsychicJeremyAfterBattleText:
 	para "the Feds wouldn't"
 	line "have taken over"
 	cont "Saffron City."
+	done
+
+SabrinaPostText:
+	text "Sabrina: I foresee"
+	line "a better future"
+	cont "for Kanto."
+
+	para "Better than the"
+	line "one I saw for the"
+	cont "last two years."
+
+	para "Yet, there is"
+	line "something that"
+	cont "bothers me…"
+
+	para "A new shadow will"
+	line "cover the region…"
+
+	para "And a hero of red"
+	line "will rise to the"
+	cont "challenge."
+
+	para "That is all I can"
+	line "see for now."
+
+	para "Let's hope this"
+	line "future can also"
+	cont "be changed."
+	done
+
+SabrinaRematchText:
+	text "Sabrina: I foresaw"
+	line "this reunion."
+
+	para "There is no need"
+	line "for further words."
+
+	para "I can only hope"
+	line "this battle goes"
+	cont "differently than I"
+	cont "envisioned."
+	done
+
+SabrinaAfterRematchText:
+	text "Sabrina: …Most"
+	line "unfortunate…"
+
+	para "I was not able to"
+	line "change the outcome"
+	cont "of our battle."
+
+	para "Perhaps someday a"
+	line "battle between us"
+	cont "will not go the"
+	cont "way I foresee."
 	done
 
 SaffronGym_MapEvents:

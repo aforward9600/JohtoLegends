@@ -11,15 +11,31 @@ CeruleanGym_MapScripts:
 
 	db 0 ; callbacks
 
+VioletLastMonText:
+	text "Not yet!"
+	done
+
+DaisyLastMonText:
+	text "Last one already?"
+
+	para "Man!"
+	done
+
+LilyLastMonText:
+	text "…Last one, huh?"
+	done
+
 CeruleanGymVioletScript:
 	faceplayer
 	opentext
+	readvar VAR_FACING
+	ifequal DOWN, .PleaseGetOnTheDock
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .SensationalRematch
 	checkflag ENGINE_CASCADEBADGE
 	iftrue .FightDone
 	checkevent EVENT_CERULEAN_GYM_LILY
 	iftrue .FindLily
-	readvar VAR_FACING
-	ifequal DOWN, .PleaseGetOnTheDock
 	writetext VioletIntroText
 	waitbutton
 	closetext
@@ -47,7 +63,7 @@ CeruleanGymVioletScript:
 	writetext LilyIntroText
 	waitbutton
 	closetext
-	winlosstext LilyWinLossText, LilyLastMonText
+	winlosstext LilyWinLossText2, LilyLastMonText
 	loadtrainer SENSATIONAL3, LILY
 	setlasttalked CERULEANGYM_LILY
 	startbattle
@@ -82,23 +98,56 @@ CeruleanGymVioletScript:
 	turnobject CERULEANGYM_VIOLET, DOWN
 	end
 
-VioletLastMonText:
-	text "Not yet!"
-	done
+.SensationalRematch:
+	checkflag ENGINE_HUEY
+	iffalse .VioletPost
+	writetext VioletRematchText
+	waitbutton
+	closetext
+	winlosstext VioletWinLossText, VioletLastMonText
+	loadtrainer SENSATIONAL1, VIOLET1
+	setlasttalked CERULEANGYM_VIOLET
+	startbattle
+	reloadmapafterbattle
+	pause 10
+	turnobject PLAYER, LEFT
+	opentext
+	writetext DaisyIntroText
+	waitbutton
+	closetext
+	winlosstext DaisyWinLossText, DaisyLastMonText
+	loadtrainer SENSATIONAL2, DAISY
+	setlasttalked CERULEANGYM_DAISY
+	startbattle
+	reloadmapafterbattle
+	pause 10
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext LilyRematchText
+	waitbutton
+	closetext
+	winlosstext LilyWinLossText, LilyLastMonText
+	loadtrainer SENSATIONAL3, LILY
+	setlasttalked CERULEANGYM_LILY
+	startbattle
+	reloadmapafterbattle
+	writetext LilyAfterRematchText
+	waitbutton
+	closetext
+	setflag ENGINE_HUEY
+	end
 
-DaisyLastMonText:
-	text "Last one already?"
-
-	para "Man!"
-	done
-
-LilyLastMonText:
-	text "…Last one, huh?"
-	done
+.VioletPost:
+	writetext VioletAfterRematchText
+	waitbutton
+	closetext
+	end
 
 CeruleanGymDaisyScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .DaisyRematch
 	checkevent EVENT_CERULEAN_GYM_LILY
 	iffalse .CeruleanGymDaisy2
 	checkevent EVENT_BEAT_SENSATIONAL_SISTERS
@@ -123,9 +172,27 @@ CeruleanGymDaisyScript:
 	turnobject CERULEANGYM_DAISY, DOWN
 	end
 
+.DaisyRematch:
+	checkflag ENGINE_HUEY
+	iffalse .DaisyPost
+	writetext CeruleanGymDaisyText4
+	waitbutton
+	closetext
+	turnobject CERULEANGYM_DAISY, DOWN
+	end
+
+.DaisyPost:
+	writetext CeruleanGymDaisyText5
+	waitbutton
+	closetext
+	turnobject CERULEANGYM_DAISY, DOWN
+	end
+
 CeruleanGymLilyScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .LilyRematch
 	checkevent EVENT_BEAT_SENSATIONAL_SISTERS
 	iftrue .LilyAfter
 	writetext CeruleanGymLilyText1
@@ -136,6 +203,22 @@ CeruleanGymLilyScript:
 
 .LilyAfter:
 	writetext CeruleanGymLilyText2
+	waitbutton
+	closetext
+	turnobject CERULEANGYM_LILY, DOWN
+	end
+
+.LilyRematch:
+	checkflag ENGINE_HUEY
+	iffalse .LilyPost
+	writetext CeruleanGymLilyText3
+	waitbutton
+	closetext
+	turnobject CERULEANGYM_LILY, DOWN
+	end
+
+.LilyPost:
+	writetext CeruleanGymLilyText4
 	waitbutton
 	closetext
 	turnobject CERULEANGYM_LILY, DOWN
@@ -389,6 +472,73 @@ LilyIntroText:
 
 	para "Hit me with your"
 	line "best shot!"
+	done
+
+CeruleanGymDaisyText4:
+	text "Daisy: You want a"
+	line "rematch?"
+
+	para "Talk to Violet and"
+	line "we'll get started!"
+	done
+
+CeruleanGymLilyText3:
+	text "Lily: Speak with"
+	line "Violet if you want"
+	cont "to face us again."
+	done
+
+CeruleanGymDaisyText5:
+	text "Daisy: I think I'll"
+	line "go swimming today!"
+	done
+
+CeruleanGymLilyText4:
+	text "Lily: Thank you,"
+	line "<PLAYER>."
+
+	para "For everything."
+	done
+
+VioletAfterRematchText:
+	text "Violet: We beat"
+	line "those guys pretty"
+	cont "bad, huh?"
+	done
+
+VioletRematchText:
+	text "Violet: Here for a"
+	line "rematch, huh?"
+
+	para "We'll be happy to"
+	line "play with you!"
+	done
+
+LilyRematchText:
+	text "Lily: I'm feeling"
+	line "much better than"
+	cont "I was during our"
+	cont "first battle."
+
+	para "I think I'll do"
+	line "better this time!"
+	done
+
+LilyAfterRematchText:
+	text "Lily: I lost, but"
+	line "I don't feel bad"
+	cont "about it."
+
+	para "It feels good to"
+	line "have fun again."
+
+	para "Thank you <PLAYER>."
+	done
+
+LilyWinLossText2:
+	text "Lily: It's been a"
+	line "while since I've"
+	cont "felt this good."
 	done
 
 CeruleanGym_MapEvents:

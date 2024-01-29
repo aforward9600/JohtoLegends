@@ -1,0 +1,455 @@
+Wild Pokémon Documentation
+
+(Evening encounters are the same as night, water and fishing have their own levels)
+
+Route 45
+
+Levels 2-5
+
+Morning/Day: Pidgey 30%, Sentret 20%, Geodude 19%, Skarmini 20%, Phanpy 11%
+Night: Hoothoot 30%, Rattata 20%, Geodude 19%, Skarmini 20%, Phanpy 11%
+Water: Magikarp 80%, Dratini 15%, Gyarados 5%
+Old Rod: Magikarp 100%
+Good Rod: Magikarp 90%, Dratini 10%
+Super Rod: Magikarp 60%, Dratini 30%, Dragonair 10%
+
+
+Dark Cave Blackthorn Entrance
+
+Levels 2-5
+
+All Times: Zubat 30%, Cleffa 20%, Wooper 20%, Wynaut 15%, Teddiursa 10%, Cyndaquil 5%
+Swarm: Dunsparce 45%, Geodude 30%, Zubat 15%, Cyndaquil 10%
+
+
+Ice Path 1F
+
+Levels 3-6
+
+All Times: Swinub 40%, Seel 30%, Zubat 25%, Snorunt 5%
+
+
+Ice Path B1F
+
+Levels 3-6
+
+All Times: Swinub 40%, Zubat 20%, Seel 15%, Delibird 15%, Smoochum 9%, Sneasel 1%
+Swarm: Sneasel 76%, Delibird 15%, Zubat 5%, Smoochum 4%
+
+
+Ice Path B2F
+
+Levels 3-6
+
+All Times: Swinub 40%, Zubat 25%, Seel 15%, Delibird 15%, Smoochum 5%
+
+
+Route 44
+
+Levels 5-8
+
+Morning/Day: Bellsprout 30%, Oddish 20%, Poliwag 15%, Ekans 15%, Budew 10%, Slowpoke 5%, Chikorita 5%
+Night: Bellsprout 30%, Oddish 20%, Poliwag 15%, Ekans 15%, Budew 10%, Slowpoke 5%, Hoothoot 5%
+Water: Poliwag 80%, Poliwhirl 20%
+Old Rod: Magikarp 85%, Poliwag 15%
+Good Rod: Poliwag 65%, Magikarp 35%
+Super Rod: Poliwag 80%, Magikarp 20%
+Swarm: Slowpoke 50%, Chikorita 20%, Ekans 15%, Budew 15%
+
+Route 43
+
+Levels 7-10
+
+Morning/Day: Mareep 30%, Growlithe 20%, Vulpix 15%, Lotad 15%, Psyduck 10%, Ralts 5%, Totodile 5%
+Night: Mareep 30%, Houndour 20%, Rattata 15%, Lotad 15%, Psyduck 10%, Ralts 5%, Totodile 5%
+Water: Poliwag 80%, Poliwhirl 20%
+Old Rod: Magikarp 85%, Poliwag 15%
+Good Rod: Poliwag 65%, Magikarp 35%
+Super Rod: Poliwag 80%, Magikarp 20%
+Swarm: Ralts 60%, Totodile 25%, Psyduck 15%
+
+
+Lake of Rage
+
+Levels 7-10
+
+Morning/Day: Electrike 30%, Growlithe 20%, Vulpix 15%, Croagunk 15%, Psyduck 10%, Mime Jr. 5%, Kotora 5%
+Night: Electrike 30%, Houndour 20%, Rattata 15%, Croagunk 15%, Psyduck 10%, Mime Jr. 5%, Kotora 5%
+Water: Magikarp 80%, Gyarados 20%
+Old Rod: Magikarp 100%
+Good Rod: Magikarp 90%, Gyarados 10%
+Super Rod: Magikarp 70%, Gyarados 30%
+Swarm: Kotora 40%, Mime Jr. 30%, Electrike 25%, Croagunk 5%
+
+
+Route 42
+
+Levels 7-10
+
+Morning/Day: Pichu 40%, Abra 20%, Rattata 15%, Bonsly 15%, Ponyta 5%, Elekid 5%
+Night: Pichu 40%, Abra 20%, Rattata 15%, Bonsly 15%, Houndour 5%, Elekid 5%
+Water: Goldeen 80%, Seaking 20%
+Old Rod: Magikarp 85%, Goldeen 15%
+Good Rod: Goldeen 65%, Magikarp 35%
+Super Rod: Goldeen 70%, Magikarp 20%, Seaking 10%
+Swarm: Ponyta 50%, Elekid 20%, Bonsly 15%, Houndour 15%
+
+
+Mt Mortar 1F Outside
+
+Levels 8-11
+
+All Times: Zubat 30%, Machop 20%, Diglett 15%, Marill 15%, Geodude 10%, Sandshrew 5%, Aron 5%
+Water: Goldeen 60%, Marill 20%, Seaking 20%
+Old Rod: Magikarp 85%, Goldeen 15%
+Good Rod: Goldeen 65%, Magikarp 35%
+Super Rod: Goldeen 70%, Magikarp 20%, Seaking 10%
+Swarm: Aron 60%, Marill 20%, Sandshrew 20%
+
+
+Mt Mortar 1F Inside
+
+Levels 8-11
+
+All Times: Sandshrew 30%, Zubat 20%, Machop 15%, Marill 15%, Tyrogue 15%, Diglett 5%
+
+
+Mt Mortar 2F Inside
+
+Levels 18-21
+
+All Times: Zubat 50%, Golbat 15%, Mankey 15%, Tyrogue 10%, Raticate 5%, Onix 5%
+Water: Goldeen 60%, Marill 20%, Seaking 20%
+Old Rod: Magikarp 85%, Goldeen 15%
+Good Rod: Goldeen 65%, Magikarp 35%
+Super Rod: Goldeen 70%, Magikarp 20%, Seaking 10%
+
+Mt Mortar B1F
+
+Levels 18-21
+
+All Times: Zubat 50%, Golbat 15%, Mankey 15%, Tyrogue 10%, Raticate 5%, Onix 5%
+Water: Goldeen 60%, Marill 20%, Seaking 20%
+Old Rod: Magikarp 85%, Goldeen 15%
+Good Rod: Goldeen 65%, Magikarp 35%
+Super Rod: Goldeen 70%, Magikarp 20%, Seaking 10%
+
+
+Ecruteak City
+
+Water: Poliwag 80%, Poliwhirl 20%
+Old Rod: Magikarp 85%, Poliwag 15%
+Good Rod: Poliwag 65%, Magikarp 35%
+Super Rod: Poliwag 80%, Magikarp 20%
+
+
+Burned Tower 1F/B1F
+
+Levels 12-15
+
+Morning/Day: Magby 30%, Koffing 20%, Rattata 15%, Zubat 15%, Grimer 10%, Duskull 5%, Slugma 5%
+Night: Rattata 45%, Koffing 20%, Zubat 15%, Grimer 10%, Duskull 5%, Misdreavus 5%
+Swarm: Misdreavus 46%, Slugma 30%, Magby 15%, Duskull 9%
+
+
+Burned Tower 2F
+
+Levels 21-24
+
+Morning/Day: Magby 30%, Koffing 20%, Slugma 19%, Zubat 15%, Grimer 10%, Duskull 5%, Magcargo 1%
+Night: Raticate 45%, Koffing 20%, Zubat 15%, Grimer 10%, Duskull 5%, Misdreavus 4%, Haunter 1%
+
+
+Route 37
+
+Levels 12-15
+
+Morning: Ledyba 30%, NidoranF 20%, Pidgey 15%, NidoranM 15%, Mime Jr. 10%, Jigglypuff 5%, Farfetch'd 5%
+Day: Doduo 30%, NidoranF 20%, Pidgey 15%, NidoranM 15%, Mime Jr. 10%, Jigglypuff 5%, Meowth 5%
+Night: Spinarak 30%, NidoranF 20%, Hoothoot 15%, NidoranM 15%, Mime Jr. 10%, Jigglypuff 5%, Murkrow 5%
+Swarm: Murkrow 50%, Mime Jr. 20%, Jigglypuff 15%, Meowth 15%
+
+
+Route 38
+
+Levels 14-17
+
+Morning/Day: Magnemite 30%, Drowzee 20%, Miltank 15%, Tauros 15%, Butterfree 15%, Scyther 5%
+Night: Magnemite 30%, Drowzee 20%, Murkrow 15%, Meowth 15%, Beedrill 15%, Scyther 5%
+Swarm: Scyther 55%, Tauros 20%, Butterfree 15%, Miltank 10%
+Swarm Night: Scyther 55%, Meowth 20%, Beedrill 15%, Murkrow 10%
+
+
+Route 39
+
+Levels 15-18
+
+Morning/Day: Magnemite 30%, Drowzee 20%, Tauros 15%, Butterfree 15%, Roselia 10%, Miltank 9%, Yanma 1%
+Night: Magnemite 30%, Drowzee 20%, Murkrow 15%, Beedrill 15%, Roselia 10%, Meowth 9%, Yanma 1%
+Swarm: Yanma 45%, Miltank 20%, Tauros 20%, Butterfree 15%
+Swarm Night: Yanma 45%, Meowth 20%, Murkrow 20%, Beedrill 15%
+
+
+Olivine City
+
+Water: Tentacool 80%, Tentacruel 20%
+Old Rod: Magikarp 85%, Krabby 15%
+Good Rod: Krabby 55%, Magikarp 35%, Staryu 10%
+Super Rod: Krabby 60%, Staryu 30%, Kingler 10%
+
+
+Route 40
+
+Water: Tentacool 60%, Corsola 20%, Remoraid 15%, Tentacruel 5%
+Old Rod: Magikarp 85%, Krabby 15%
+Good Rod: Krabby 55%, Magikarp 35%, Staryu 10%
+Super Rod: Krabby 60%, Staryu 30%, Kingler 10%
+
+
+Route 41
+
+Water: Tentacool 60%, Shellder 20%, Staryu 15%, Mantine 5%
+Old Rod: Magikarp 85%, Tentacool 15%
+Good Rod: Magikarp 35%, Tentacool 35%, Chinchou 20%, Shellder 10%
+Super Rod: Chinchou 40%, Shellder 30%, Tentacruel 20%, Lanturn 10%
+
+
+Cianwood City
+
+Water: Tentacool 60%, Shellder 20%, Staryu 15%, Mantine 5%
+Old Rod: Magikarp 85%, Krabby 15%
+Good Rod: Krabby 55%, Magikarp 35%, Staryu 10%
+Super Rod: Krabby 60%, Staryu 30%, Kingler 10%
+
+
+Route 47
+
+Levels 60-63
+
+Morning/Day: Miltank 30%, Tauros 20%, Poliwrath 15%, Politoed 15%, Girafarig 10%, Chansey 9%, Blissey 1%
+Night: Houndoom 30%, Honchkrow 20%, Poliwrath 15%, Politoed 15%, Xatu 10%, Chansey 9%, Blissey 1%
+Water: Tentacool 60%, Remoraid 20%, Magikarp 15%, Qwilfish 5%
+Old Rod: Magikarp 85%, Tentacool 15%
+Good Rod: Magikarp 35%, Tentacool 35%, Chinchou 20%, Shellder 10%
+Super Rod: Chinchou 40%, Shellder 30%, Tentacruel 20%, Lanturn 10%
+
+
+Route 48
+
+Levels 24-27
+
+Morning/Day: Skiploom 30%, Vulpix 20%, Growlithe 15%, Diglett 15%, Farfetch'd 10%, Tauros 5%, Girafarig 5%
+Night: Fearow 30%, Vulpix 20%, Growlithe 15%, Diglett 15%, Farfetch'd 10%, Tauros 5%, Girafarig 5%
+
+
+Cliff's Cave
+
+Levels 23-26
+
+Morning/Day: Zubat 30%, Machop 20%, Wooper 15%, Geodude 15%, Onix 10%, Kingler 5%, Quagsire 4%, Steelix 1%
+Night: Zubat 30%, Machop 20%, Misdreavus 15%, Geodude 15%, Onix 10%, Kingler 5%, Golbat 4%, Steelix 1%
+
+Wild Area 1
+
+Levels 15-18
+
+All Times: Clefairy 30%, Jigglypuff 20%, NidoranF 15%, Sunkern 15%, Venonat 10%, Mankey 5%, Doduo 4%, Drowzee 1%
+
+
+Wild Area 2
+
+Levels 15-18
+
+All Times: Exeggcute 30%, Ledyba 20%, Spinarak 15%, NidoranM 15%, Snubbull 10%, Munchlax 5%, Rhyhorn 4%, Eevee 1%
+Swarm: Eevee 65%, Munchlax 15%, Rhyhorn 15%, Snubbull 5%
+
+
+Wild Area 3
+
+Water: Slowpoke 60%, Staryu 20%, Shellder 15%, Lapras 5%
+Old Rod: Magikarp 70%, Tentacool 15%, Krabby 15%
+Good Rod: Magikarp 35%, Goldeen 35%, Poliwag 20%, Remoraid 10%
+Super Rod: Tentacruel 40%, Kingler 30%, Octillery 20%, Qwilfish 10%
+Swarm Old Rod: Magikarp 85%, Qwilfish 15%
+Swarm Good Rod: Qwilfish 65%, Horsea 35%
+Swarm Super Rod: Qwilfish 100%
+
+
+Wild Area 4
+
+Levels 15-18
+
+All Times: Growlithe 30%, Houndour 20%, Cacnea 15%, Chansey 15%, Natu 10%, Murkrow 5%, Stantler 4%, Gible 1%
+Swarm: Gible 60%, Chansey 15%, Stantler 15%, Murkrow 10%
+
+
+Wild Area 5
+
+Levels 15-18
+
+All Times: Oddish 30%, Bellsprout 20%, Sunkern 15%, Tangela 15%, Hoppip 10%, Shuckle 5%, Cacnea 4%, Roselia 1%
+
+
+Wild Area Cave
+
+Levels 15-18
+
+All Times: Bronzor 30%, Smeargle 20%, Paras 15%, Wobbuffet 15%, Cubone 10%, Gligar 5%, Misdreavus 4%, Kangaskhan 1%
+Swarm: Kangaskhan 60%, Smeargle 15%, Gligar 15%, Bronzor 10%
+
+
+Route 36
+
+Levels 27-30
+
+Morning/Day: Drowzee 30%, Pidgeotto 20%, Weepinbell 15%, Gloom 15%, Doduo 15%, Ekans 4%, Arbok 1%
+Night: Drowzee 30%, Pidgeotto 20%, Weepinbell 15%, Gloom 15%, Noctowl 15%, Houndour 4%, Houndoom 1%
+
+
+National Forest
+
+Levels 27-30
+
+Morning/Day: Nidorino 30%, Nidorina 20%, Ledian 15%, Butterfree 15%, Scyther 15%, Pinsir 5%
+Night: Nidorino 30%, Nidorina 20%, Ariados 15%, Beedrill 15%, Scyther 15%, Pinsir 5%
+Swarm: Pinsir 40%, Nidorina 30%, Nidorino 20%, Scyther 10%
+
+
+Route 35
+
+Levels 27-30
+
+Morning/Day: Snubbull 30%, Pidgeotto 20%, Growlithe 15%, Kadabra 15%, Jigglypuff 10%, Ditto 5%, Yanma 5%
+Night: Drowzee 30%, Noctowl 20%, Psyduck 15%, Kadabra 15%, Jigglypuff 10%, Ditto 5%, Yanma 5%
+Water: Psyduck 80%, Golduck 20%
+Old Rod: Magikarp 85%, Krabby 15%
+Good Rod: Krabby 55%, Magikarp 35%, Staryu 10%
+Super Rod: Krabby 60%, Staryu 30%, Kingler 10%
+Swarm: Ditto 50%, Yanma 20%, Kadabra 20%, Jigglypuff 10%
+
+
+Goldenrod City
+
+Old Rod: Magikarp 85%, Krabby 15%
+Good Rod: Krabby 55%, Magikarp 35%, Staryu 10%
+Super Rod: Krabby 60%, Staryu 30%, Kingler 10%
+
+
+Route 34
+
+Levels 28-31
+
+Morning/Day: Granbull 30%, Hypno 20%, Pidgeotto 15%, Jigglypuff 15%, Kirlia 10%, Ditto 10%
+Night: Granbull 30%, Hypno 35%, Jigglypuff 15%, Kirlia 10%, Ditto 10%
+Water: Tentacool 80%, Tentacruel 15%, Poliwhirl 5%
+Old Rod: Magikarp 85%, Krabby 15%
+Good Rod: Krabby 55%, Magikarp 35%, Staryu 10%
+Super Rod: Krabby 60%, Staryu 30%, Kingler 10%
+
+
+Ilex Forest
+
+Levels 37-40
+
+Morning/Day: Ledian 40%, Pidgeot 20%, Butterfree 15%, Beedrill 15%, Parasect 10%
+Night: Ariados 30%, Noctowl 20%, Gloom 15%, Golduck 15%, Venomoth 10%, Parasect 10%
+Water: Psyduck 80%, Golduck 20%
+Old Rod: Magikarp 85%, Poliwag 15%
+Good Rod: Poliwag 65%, Magikarp 35%
+Super Rod: Magikarp 60%, Poliwag 40%
+
+
+Route 33
+
+Levels 37-40
+
+Morning/Day: Furret 30%, Fearow 20%, Graveler 15%, Arbok 15%, Cacturne 10%, Jumpluff 10%
+Night: Raticate 30%, Noctowl 20%, Graveler 15%, Arbok 15%, Misdreavus 10%, Golbat 9%, Crobat 1%
+
+
+Union Cave 1F
+
+Levels 44-47
+
+Morning/Day: Graveler 30%, Sandslash 20%, Quagsire 15%, Raticate 15%, Golbat 10%, Onix 5%, Steelix 5%
+Night: Graveler 30%, Raticate 35%, Quagsire 15%, Golbat 10%, Onix 5%, Steelix 5%
+Water: Golbat 60%, Quagsire 25%, Tentacruel 15%
+Old Rod: Magikarp 85%, Krabby 15%
+Good Rod: Krabby 55%, Magikarp 35%, Staryu 10%
+Super Rod: Krabby 60%, Staryu 30%, Kingler 10%
+Swarm: Gligar 50%, Steelix 20%, Golem 15%, Golem 15%
+
+
+Union Cave B1F
+
+Levels 44-47
+
+All Times: Golbat 35%, Graveler 30%, Raticate 20%, Steelix 15%
+Water: Golbat 60%, Quagsire 25%, Tentacruel 15%
+Old Rod: Magikarp 85%, Krabby 15%
+Good Rod: Krabby 55%, Magikarp 35%, Staryu 10%
+Super Rod: Krabby 60%, Staryu 30%, Kingler 10%
+
+
+Union Cave B2F
+
+Levels 44-47
+
+Morning/Day: Graveler 40%, Golbat 20%, Sandslash 15%, Raticate 15%, Steelix 9%, Crobat 1%
+Night: Graveler 40%, Golbat 20%, Quagsire 15%, Raticate 15%, Steelix 9%, Crobat 1%
+Water: Golbat 60%, Quagsire 25%, Tentacruel 15%
+Old Rod: Magikarp 85%, Krabby 15%
+Good Rod: Krabby 55%, Magikarp 35%, Staryu 10%
+Super Rod: Krabby 60%, Staryu 30%, Kingler 10%
+
+Headbutt Trees
+
+
+Lake of Rage, Route 43
+
+Level 10
+
+Hoothoot 50%, Venonat 15%, Pineco 15%, Exeggcute 10%, Swablu 5%, Munchlax 5%
+
+
+Routes 28, 40, 41, 42, 46, New Bark Town, Cherrygrove City, Violet City, Cianwood City,
+Goldenrod City, Olivine City, Ecruteak City, Mahogany Town, Blackthorn City, Mt Silver
+
+Level 10
+
+Spearow 50%, Aipom 20%, Venonat 15%, Pineco 15%
+
+
+Routes 29, 30, 31, 34, 35, 36, 37, 38, 39, 44
+
+Level 10
+
+Hoothoot 50%, Pineco 30%, Swablu 10%, Exeggcute 10%
+
+
+Route 33, Azalea Town
+
+Level 10
+
+Spearow 50%, Venonat 15%, Aipom 20%, Pineco 15%
+
+
+Routes 47, 48
+
+Level 20
+
+Spearow 50%, Ekans 15%, Heracross 15%, Pinsir 10%, Aipom 10%
+
+
+Routes 26, 27, 33
+
+Level 10
+
+Hoothoot 50%, Pineco 30%, Exeggcute 20%
+
+
+Ilex Forest
+
+Level 30
+
+Noctowl 50%, Pineco 30%, Forretress 10%, Butterfree 5%, Beedrill 5%
