@@ -16,7 +16,7 @@ Oak:
 	faceplayer
 	opentext
 	checkevent EVENT_OPENED_MT_SILVER
-	iftrue .CheckPokedex
+	iftrue .CheckRematch
 	checkevent EVENT_TALKED_TO_OAK_IN_KANTO
 	iftrue .CheckBadges
 	writetext OakWelcomeKantoText
@@ -28,6 +28,9 @@ Oak:
 	ifequal NUM_JOHTO_BADGES, .Complain
 	sjump .AhGood
 
+.CheckRematch:
+	checkflag ENGINE_RALPH
+	iffalse .BattleOak
 .CheckPokedex:
 	writetext OakLabDexCheckText
 	waitbutton
@@ -58,7 +61,43 @@ Oak:
 	writetext OakOpenMtSilverText
 	buttonsound
 	setevent EVENT_OPENED_MT_SILVER
-	sjump .CheckPokedex
+	setevent EVENT_DECO_SILVER_TROPHY
+	waitsfx
+	writetext PlayerGotSilverTrophy
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	pause 15
+	writetext OnceAgainThankYouText
+	waitbutton
+	closetext
+	end
+
+.BattleOak:
+	writetext BattleOakText
+	waitbutton
+	closetext
+	winlosstext OakWinText, OakLastMonText
+	loadtrainer POKEMON_PROF, OAK
+	startbattle
+	reloadmapafterbattle
+	opentext
+;	checkevent EVENT_DECO_GOLD_TROPHY
+;	iftrue .FinishOakBattle
+;	writetext OakGivesGoldTrophyText
+;	buttonsound
+;	waitsfx
+;	writetext PlayerGotGoldTrophyText
+;	playsound SFX_CAUGHT_MON
+;	waitsfx
+;	buttonsound
+;	pause 15
+.FinishOakBattle:
+	writetext OakBeatText
+	waitbutton
+	closetext
+	setflag ENGINE_RALPH
+	end
 
 OaksAssistant1Script:
 	jumptextfaceplayer OaksAssistant1Text
@@ -159,6 +198,15 @@ OakOpenMtSilverText:
 	para "I had almost"
 	line "forgot about it in"
 	cont "the excitement!"
+
+	para "It's a Silver"
+	line "Trophy!"
+
+	para "Put it on your"
+	line "table and show it"
+	cont "off!"
+
+	para "You've earned it!"
 	done
 
 OakNoKantoBadgesText:
@@ -279,6 +327,56 @@ OakGotAllBadgesText:
 
 	para "Now it's time to"
 	line "take back Kanto!"
+	done
+
+OnceAgainThankYouText:
+	text "Oak: Once again,"
+	line "thank you!"
+	done
+
+PlayerGotSilverTrophy:
+	text "<PLAYER> got the"
+	line "Silver Trophy!"
+	done
+
+BattleOakText:
+	text "Oak: Good to see"
+	line "you <PLAYER>!"
+
+	para "You know, I used"
+	line "to be quite the"
+	cont "trainer in my"
+	cont "heyday."
+
+	para "Care to test your"
+	line "might against the"
+	cont "former Champion?"
+	done
+
+OakWinText:
+	text "Oak: The savior of"
+	line "Kanto indeed!"
+	done
+
+OakLastMonText:
+	text "Oak: I haven't felt"
+	line "this rush in a"
+	cont "long time!"
+	done
+
+OakBeatText:
+	text "Oak: Your skills"
+	line "surpass even my"
+	cont "best expectations!"
+
+	para "There is no doubt"
+	line "in my mind that"
+	cont "you're the best"
+	cont "trainer in the"
+	cont "world!"
+
+	para "Never let anyone"
+	line "say different!"
 	done
 
 OaksLab_MapEvents:

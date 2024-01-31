@@ -18,11 +18,19 @@ FerropexolaScript:
 	loadtrainer FERROPEXOLA_TRAINER, FERROPEXOLA1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_FERROPEXOLA
-	opentext
-	writetext FerropexolaCongratsText
+	writetext FerropexolaGoldTrophyText
+	buttonsound
+	waitsfx
+	writetext PlayerGotGoldTrophyText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	pause 15
+	writetext FerropexolaComeBackText
 	waitbutton
 	closetext
+	setevent EVENT_DECO_GOLD_TROPHY
+	setevent EVENT_BEAT_FERROPEXOLA
 	end
 
 .FerropexolaRematch:
@@ -37,6 +45,12 @@ FerropexolaScript:
 	startbattle
 	reloadmapafterbattle
 	opentext
+	writetext FerropexolaCongratsText
+	waitbutton
+	closetext
+	end
+
+.FerropexolaAfterBattle:
 	writetext FerropexolaCongratsText
 	waitbutton
 	closetext
@@ -128,6 +142,25 @@ FerropexolaComeBackText:
 	para "I've got no where"
 	line "else to be right"
 	cont "now."
+	done
+
+FerropexolaGoldTrophyText:
+	text "Ferropexola: You've"
+	line "done well!"
+
+	para "It takes quite a"
+	line "bit of skill to"
+	cont "defeat me!"
+
+	para "Have this Gold"
+	line "Trophy!"
+
+	para "You've earned it!"
+	done
+
+PlayerGotGoldTrophyText:
+	text "<PLAYER> got the"
+	line "Gold Trophy!"
 	done
 
 Route28SteelWingHouse_MapEvents:

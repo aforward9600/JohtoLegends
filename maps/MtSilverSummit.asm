@@ -57,6 +57,8 @@ MtSilverSummit_MapScripts:
 	turnobject MTSILVERSUMMIT_RIVAL, UP
 	pause 60
 	opentext
+	checkevent EVENT_COMPLETED_EPILOGUE
+	iftrue .LastEpilogue
 	checkevent EVENT_GOT_SILVER_WING
 	iftrue .ReleasedHoOh
 	writetext ReleasedLugiaText
@@ -70,6 +72,21 @@ MtSilverSummit_MapScripts:
 	waitbutton
 .ReconvergeFinalScene:
 	writetext GoingToReleaseText
+	waitbutton
+	closetext
+	setscene SCENE_FINISHED
+	setevent EVENT_EPILOGUE_GOLD
+	setevent EVENT_EPILOGUE_CRYSTAL
+	setevent EVENT_COMPLETED_EPILOGUE
+	setmapscene GOLD_CRYSTAL_HOUSE, SCENE_DEFAULT
+	pause 90
+	special FadeBlackQuickly
+	pause 15
+	warpfacing UP, GOLD_CRYSTAL_HOUSE, 6, 4
+	return
+
+.LastEpilogue:
+	writetext ThisIsNiceText
 	waitbutton
 	closetext
 	setscene SCENE_FINISHED
@@ -143,6 +160,36 @@ GoingToReleaseText:
 
 	para "……You really are a"
 	line "good person, huh?"
+
+	para "…I'm glad you're"
+	line "here with me."
+
+	para "…………………………"
+
+	para "Let's just stay"
+	line "here a little"
+	cont "while longer…"
+
+	para "…Together…"
+	done
+
+ThisIsNiceText:	
+	text "…This was quite"
+	line "the journey, huh?"
+
+	para "Who could have"
+	line "guessed that we'd"
+	cont "save Kanto…"
+
+	para "And now we're here,"
+	line "at the top of the"
+	cont "world…"
+
+	para "It's cold, but when"
+	line "I'm with you,"
+
+	para "it doesn't bother"
+	line "me…"
 
 	para "…I'm glad you're"
 	line "here with me."

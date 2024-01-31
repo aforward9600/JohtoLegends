@@ -290,8 +290,8 @@ SabrinaPostText:
 	line "see for now."
 
 	para "Let's hope this"
-	line "future can also"
-	cont "be changed."
+	line "future also is"
+	cont "not set."
 	done
 
 SabrinaRematchText:

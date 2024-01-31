@@ -11,6 +11,8 @@ ViridianGym_MapScripts:
 ViridianGymBlueScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .GiovanniPost
 	checkflag ENGINE_EARTHBADGE
 	iftrue .FightDone
 	writetext LeaderBlueBeforeText
@@ -56,6 +58,35 @@ ViridianGymBlueScript:
 	closetext
 	end
 
+.GiovanniPost:
+	checkflag ENGINE_WADE
+	iffalse .GiovanniRematch
+	writetext GiovanniPostText
+	waitbutton
+	closetext
+	end
+
+.GiovanniRematch:
+	writetext GiovanniRematchText
+	waitbutton
+	closetext
+	winlosstext LeaderBlueWinText, GiovanniLastMonText
+	loadtrainer GIOVANNI, GIOVANNI1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext GiovanniAfterRematchText
+	waitbutton
+	closetext
+	setflag ENGINE_WADE
+	end
+
+GiovanniLastMonText:
+	text "This raw strength…"
+
+	para "I see…"
+	done
+
 TrainerCooltrainerFSol:
 	trainer COOLTRAINERF, SOL, EVENT_BEAT_COOLTRAINERF_SOL, CooltrainerFSolSeenText, CooltrainerFSolBeatenText, 0, .Script
 
@@ -77,12 +108,6 @@ TrainerCooltrainerMBumi:
 	waitbutton
 	closetext
 	end
-
-GiovanniLastMonText:
-	text "This raw strength…"
-
-	para "I see…"
-	done
 
 LeaderBlueBeforeText:
 	text "Giovanni: I must"
@@ -215,6 +240,39 @@ CooltrainerMBumiAfterText:
 	text "I guess my mind's"
 	line "another thing I"
 	cont "gotta work on."
+	done
+
+GiovanniPostText:
+	text "Giovanni: I just"
+	line "bought the old"
+	cont "Federation lair"
+	cont "from Celadon City."
+
+	para "I plan on opening"
+	line "a Game Corner once"
+	cont "the city recovers."
+
+	para "I figured that the"
+	line "people could use"
+	cont "some levity in"
+	cont "their lives."
+	done
+
+GiovanniRematchText:
+	text "Giovanni: Here for"
+	line "a rematch?"
+
+	para "Don't hold back!"
+	done
+
+GiovanniAfterRematchText:
+	text "Giovanni: You"
+	line "really didn't hold"
+	cont "back!"
+
+	para "Perhaps someday, I"
+	line "can be compared to"
+	cont "you!"
 	done
 
 ViridianGym_MapEvents:

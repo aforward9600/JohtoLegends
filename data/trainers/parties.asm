@@ -2792,19 +2792,25 @@ endc
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (5)
-	db "Josh@", TRAINERTYPE_NORMAL
-	db 52
-	dw FEAROW
-	db 52
-	dw PERSIAN
+	db "Jrose@", TRAINERTYPE_NICKNAME
 	db 52
 	dw KADABRA
+	db "Kadabra@"
 	db 52
-	dw HOUNDOOM
+	dw GYARADOS
+	db "Karpe Diem@"
 	db 52
-	dw WEEZING
+	dw SHUCKLE
+	db "Shuckle@"
+	db 52
+	dw DITTO
+	db "Ditto@"
+	db 52
+	dw GIRAFARIG
+	db "Girafarig@"
 	db 53
-	dw BLASTOISE
+	dw UMBREON
+	db "Umbreon@"
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (6) Route 26
@@ -3147,19 +3153,25 @@ endc
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (6)
-	db "Reese@", TRAINERTYPE_NORMAL
+	db "Reese@", TRAINERTYPE_NICKNAME
 	db 52
 	dw QUAGSIRE
+	db "Mr. No Arms@"
 	db 52
 	dw FARIGIRAF
+	db "RickNMorty@"
 	db 52
 	dw AMPHAROS
+	db "Peeram@"
 	db 52
-	dw FURRET
+	dw TOGEKISS
+	db "Wesker@"
 	db 52
 	dw HERACROSS
+	db "Derpules@"
 	db 53
 	dw TYPHLOSION
+	db "Fiyarrhea@"
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (7) Route 45

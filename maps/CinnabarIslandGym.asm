@@ -44,6 +44,8 @@ CinnabarIslandGym_MapScripts:
 CinnabarGymBlaine:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .BlainePost
 	checkflag ENGINE_VOLCANOBADGE
 	iftrue .FightDone
 	writetext BlaineIntroText
@@ -71,6 +73,30 @@ CinnabarGymBlaine:
 	waitbutton
 	closetext
 	end
+
+.BlainePost:
+	checkflag ENGINE_JOEY
+	iffalse .BlaineRematch
+	writetext BlainePostText
+	waitbutton
+	closetext
+	end
+
+.BlaineRematch:
+	writetext BlaineRematchText
+	waitbutton
+	closetext
+	winlosstext BlaineWinLossText, BlaineLastMonText
+	loadtrainer BLAINE, BLAINE1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext BlaineAfterRematchText
+	waitbutton
+	closetext
+	setflag ENGINE_JOEY
+	end
+	
 
 BlaineLastMonText:
 	text "We're still hot!"
@@ -862,6 +888,57 @@ BurglarKiddAfterBattleText:
 
 	para "Didn't expect"
 	line "that, did you?"
+	done
+
+BlainePostText:
+	text "Blaine: Once, when"
+	line "I was lost in the"
+	cont "mountains,"
+
+	para "Moltres descended"
+	line "and guided me down"
+	cont "the mountain."
+
+	para "It would later"
+	line "settle in the"
+	cont "Cinnabar Volcano."
+
+	para "I could've caught"
+	line "it, but I decided"
+	cont "to leave it be."
+
+	para "Moltres gave me a"
+	line "different view of"
+	cont "#mon."
+
+	para "I just wish I had"
+	line "stayed on that"
+	cont "path…"
+
+	para "The things I have"
+	line "done…"
+
+	para "I will never"
+	line "forget what I've"
+	cont "done…"
+	done
+
+BlaineRematchText:
+	text "Blaine: I've been"
+	line "looking forward to"
+	cont "a hot rematch!"
+
+	para "You'd better have a"
+	line "Burn Heal!"
+	done
+
+BlaineAfterRematchText:
+	text "Blaine: Quite the"
+	line "smoking match!"
+
+	para "I'd take my wig off"
+	line "to you, but that"
+	cont "would be weird!"
 	done
 
 CinnabarIslandGym_MapEvents:
