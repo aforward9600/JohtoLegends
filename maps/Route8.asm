@@ -45,7 +45,7 @@ TrainerBikerZeke:
 	end
 
 TrainerSupernerdSam:
-	trainer SUPER_NERD, HERBERT_SUPER_NERD, EVENT_BEAT_SUPER_NERD_SAM, SupernerdSamSeenText, SupernerdSamBeatenText, 0, .Script
+	trainer DELINQUENT, CAROL, EVENT_BEAT_DELINQUENT_CAROL, SupernerdSamSeenText, SupernerdSamBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -84,8 +84,8 @@ Route8FruitTree:
 	fruittree FRUITTREE_ROUTE_8
 
 BikerDwayneSeenText:
-	text "We're the KANTO"
-	line "#MON FEDERATION"
+	text "We're the Kanto"
+	line "#mon Federation"
 	cont "trainer group."
 
 	para "We'll drive you"
@@ -97,16 +97,16 @@ BikerDwayneBeatenText:
 	done
 
 BikerDwayneAfterBattleText:
-	text "The KANTO #MON"
-	line "FEDERATION will"
+	text "The Kanto #mon"
+	line "Federation will"
 	cont "never fall!"
 	done
 
 BikerHarrisSeenText:
 	text "The cops shut down"
-	line "our UNDERGROUND"
+	line "our Underground"
 
-	para "PATH! That really"
+	para "Path! That really"
 	line "fries me!"
 	done
 
@@ -116,13 +116,13 @@ BikerHarrisBeatenText:
 
 BikerHarrisAfterBattleText:
 	text "Wiped out by some"
-	line "punk from JOHTO…"
+	line "punk from Johto…"
 	done
 
 BikerZekeSeenText:
-	text "We're the KANTO"
-	line "#MON FEDERA-"
-	cont "TION!"
+	text "We're the Kanto"
+	line "#mon Federa-"
+	cont "tion!"
 	cont "Right on!"
 	done
 
@@ -137,18 +137,22 @@ BikerZekeAfterBattleText:
 	done
 
 SupernerdSamSeenText:
-	text "How does the MAG-"
-	line "NET TRAIN work?"
+	text "Those idiots are"
+	line "always apologizing"
+	cont "to people."
+
+	para "How are we going"
+	line "to keep up our"
+	cont "tough image?"
 	done
 
 SupernerdSamBeatenText:
-	text "I just want to see"
-	line "the MAGNET TRAIN…"
+	text "Ah! I'm so sorry!"
 	done
 
 SupernerdSamAfterBattleText:
-	text "The power of mag-"
-	line "nets is awesome!"
+	text "Great, now they"
+	line "got me doing it!"
 	done
 
 Route8SupernerdText:

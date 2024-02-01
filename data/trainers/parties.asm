@@ -6013,29 +6013,29 @@ BikerGroup:
 	db -1 ; end
 
 	next_list_item ; BIKER (3)
-	db "DWAYNE@", TRAINERTYPE_NORMAL
-	db 27
-	dw KOFFING
-	db 28
-	dw KOFFING
-	db 29
-	dw KOFFING
-	db 30
-	dw KOFFING
+	db "Dwayne@", TRAINERTYPE_NORMAL
+	db 72
+	dw RATICATE
+	db 72
+	dw GOLEM
+	db 72
+	dw GENGAR
+	db 72
+	dw CHARIZARD
 	db -1 ; end
 
 	next_list_item ; BIKER (4)
-	db "HARRIS@", TRAINERTYPE_NORMAL
-	db 34
-	dw FLAREON
+	db "Harris@", TRAINERTYPE_NORMAL
+	db 74
+	dw DRAGONITE
 	db -1 ; end
 
 	next_list_item ; BIKER (5)
-	db "ZEKE@", TRAINERTYPE_NORMAL
-	db 32
-	dw KOFFING
-	db 32
-	dw KOFFING
+	db "Zeke@", TRAINERTYPE_NORMAL
+	db 73
+	dw BUTTERFREE
+	db 73
+	dw GLALIE
 	db -1 ; end
 
 	next_list_item ; BIKER (6) Route 17

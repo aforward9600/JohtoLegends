@@ -91,7 +91,7 @@ Sneasel, Tyranitar, Dragonite, Moltres, Heracross,
 Teddiursa, Ursaring, Phanpy, Umbreon, Feraligatr,
 Houndoom, Slowbro, Hitmonchan, Xatu, Pidgeot,
 Nidoking, Entei, Ho-Oh, Exeggutor, Starmie,
-Bellossom, Kadabra- SoupPotato
+Bellossom, Kadabra Delibird back sprite- SoupPotato
 
 Korotora, Raitora graphics and game data: SoupPotato, GS 97 Reforged Team, Game Freak
 

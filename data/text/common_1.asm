@@ -352,6 +352,8 @@ _PlayedTheConsoleText::
 	line "@"
 	text_ram wStringBuffer3
 	text "."
+
+	para "…Okay, time to go!"
 	done
 
 _LookGiantDecoText::

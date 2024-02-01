@@ -195,3 +195,13 @@
 	tilecoll WALL, WALL, WALL, WALL ; c2
 	tilecoll WALL, WALL, WALL, WALL ; c3
 	tilecoll WALL, WALL, WALL, WALL ; c4
+	tilecoll WALL, WALL, WALL, WALL ; c5
+	tilecoll WALL, WALL, WALL, WALL ; c6
+	tilecoll WALL, WALL, WALL, WALL ; c7
+	tilecoll FLOOR, FLOOR, UP_WALL, UP_WALL ; c8
+	tilecoll FLOOR, FLOOR, UP_WALL, UP_WALL ; c9
+	tilecoll WALL, FLOOR, WALL, FLOOR ; ca
+	tilecoll WALL, FLOOR, WALL, FLOOR ; cb
+	tilecoll FLOOR, FLOOR, WALL, WALL ; cc
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cd
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; ce

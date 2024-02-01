@@ -177,4 +177,4 @@ Route28SteelWingHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, CelebrityHouseBookshelf
 
 	db 1 ; object events
-	object_event  2,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FerropexolaScript, -1
+	object_event  2,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FerropexolaScript, EVENT_FERROPEXOLA

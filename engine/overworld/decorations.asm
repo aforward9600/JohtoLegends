@@ -1065,7 +1065,19 @@ DecorationDesc_RightOrnament:
 
 DecorationDesc_Console:
 	ld a, [wDecoConsole]
-	jr DecorationDesc_OrnamentOrConsole
+	ld c, a
+	ld de, wStringBuffer3
+	call GetDecorationName_c_de
+	ld b, BANK(.OrnamentConsoleScript2)
+	ld de, .OrnamentConsoleScript2
+	ret
+
+.OrnamentConsoleScript2:
+	jumptext .OrnamentConsoleScript2Text
+
+.OrnamentConsoleScript2Text:
+	text_far _PlayedTheConsoleText
+	text_end
 
 DecorationDesc_OrnamentOrConsole:
 	ld c, a

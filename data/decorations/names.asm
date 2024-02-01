@@ -6,7 +6,7 @@ DecorationNames:
 	db "TropicPlant@"
 	db "JumboPlant@"
 	db "Town Map@"
-	db "NES@"
+	db "Famicom@"
 	db "Super NES@"
 	db "Nintendo 64@"
 	db "Virtual Boy@"
