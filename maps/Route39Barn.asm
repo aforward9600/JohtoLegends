@@ -51,7 +51,12 @@ MoomooScript:
 	end
 
 Route39BarnSailorScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .Route39BarnSailor2
 	jumptextfaceplayer Route39BarnSailorText
+
+.Route39BarnSailor2
+	jumptextfaceplayer Route39BarnSailorText2
 
 Route39BarnMiltonScript:
 	jumptextfaceplayer Route39BarnMiltonText
@@ -137,6 +142,18 @@ Route39BarnMiltonText:
 
 	para "She'd have my head"
 	line "fer that!"
+	done
+
+Route39BarnSailorText2:
+	text "While I'll be happy"
+	line "to sail again,"
+
+	para "I'm going to be a"
+	line "little sad to"
+	cont "leave the farm."
+
+	para "Makes a man almost"
+	line "tear up!"
 	done
 
 Route39Barn_MapEvents:

@@ -1,66 +1,51 @@
 	object_const_def ; object_event constants
 	const ROUTE13_YOUNGSTER1
-	const ROUTE13_YOUNGSTER2
-	const ROUTE13_POKEFAN_M1
-	const ROUTE13_POKEFAN_M2
-	const ROUTE13_POKEFAN_M3
+	const ROUTE13_BIKER
+	const ROUTE13_ROUGHNECK
+	const ROUTE13_DELINQUENT
+	const ROUTE13_POKEFAN_M
+	const ROUTE13_BIKER2
 
 Route13_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-TrainerPokefanmAlex:
-	trainer POKEFANM, ALEX, EVENT_BEAT_POKEFANM_ALEX, PokefanmAlexSeenText, PokefanmAlexBeatenText, 0, .Script
+Route13PokefanMScript:
+	jumptextfaceplayer Route13PokefanMText
+
+TrainerRoughneckKandori:
+	trainer ROUGHNECK, KANDORI, EVENT_BEAT_ROUGHNECK_KANDORI, RoughneckKandoriSeenText, RoughneckKandoriBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokefanmAlexAfterBattleText
+	writetext RoughneckKandoriAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPokefanmJoshua:
-	trainer POKEFANM, JOSHUA, EVENT_BEAT_POKEFANM_JOSHUA, PokefanmJoshuaSeenText, PokefanmJoshuaBeatenText, 0, .Script
+TrainerBikerKevin:
+	trainer BIKER, BIKER_KEVIN, EVENT_BEAT_BIKER_KEVIN, BikerKevinSeenText, BikerKevinBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokefanmJoshuaAfterBattleText
+	writetext BikerKevinAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerBirdKeeperPerry:
-	trainer BIRD_KEEPER, PERRY, EVENT_BEAT_BIRD_KEEPER_PERRY, BirdKeeperPerrySeenText, BirdKeeperPerryBeatenText, 0, .Script
+Route13YoungsterScript:
+	jumptextfaceplayer Route13YoungsterText
+
+TrainerDelinquentElly:
+	trainer DELINQUENT, ELLY, EVENT_BEAT_DELINQUENT_ELLY, DelinquentEllySeenText, DelinquentEllyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperPerryAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerBirdKeeperBret:
-	trainer BIRD_KEEPER, BRET, EVENT_BEAT_BIRD_KEEPER_BRET, BirdKeeperBretSeenText, BirdKeeperBretBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext BirdKeeperBretAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerHikerKenny:
-	trainer HIKER, KENNY, EVENT_BEAT_HIKER_KENNY, HikerKennySeenText, HikerKennyBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext HikerKennyAfterBattleText
+	writetext DelinquentEllyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -74,119 +59,122 @@ Route13Sign:
 Route13DirectionsSign:
 	jumptext Route13DirectionsSignText
 
+Route13BikerScript:
+	jumptextfaceplayer Route13BikerText
+
 Route13HiddenCalcium:
 	hiddenitem CALCIUM, EVENT_ROUTE_13_HIDDEN_CALCIUM
 
-PokefanmAlexSeenText:
-	text "Bow down before my"
-	line "regal #MON!"
+RoughneckKandoriSeenText:
+	text "You lookin' for a"
+	line "bad time?"
+
+	para "I'll knock ya out"
+	line "real good!"
 	done
 
-PokefanmAlexBeatenText:
-	text "How… How dare you"
-	line "mock royalty!"
+RoughneckKandoriBeatenText:
+	text "Argh! Knocked out!"
 	done
 
-PokefanmAlexAfterBattleText:
-	text "Doesn't everyone"
-	line "wish to someday be"
-	cont "a king?"
+RoughneckKandoriAfterBattleText:
+	text "You got lucky this"
+	line "time!"
 	done
 
-PokefanmJoshuaSeenText:
-	text "Nihihi! Would you"
-	line "like to battle my"
-	cont "PIKACHU gang?"
+BikerKevinSeenText:
+	text "You ever maneuver"
+	line "a bike through a"
+	cont "maze?"
+
+	para "It's not fun!"
 	done
 
-PokefanmJoshuaBeatenText:
-	text "PI-PIKACHU!"
+BikerKevinBeatenText:
+	text "That wasn't fun"
+	line "either!"
 	done
 
-PokefanmJoshuaAfterBattleText:
-	text "You look like you"
-	line "have many #MON,"
+BikerKevinAfterBattleText:
+	text "We should burn"
+	line "this maze down!"
 
-	para "but PIKACHU is"
-	line "still the best."
+	para "Just like we did"
+	line "to Silence Bridge!"
 	done
 
-BirdKeeperPerrySeenText:
-	text "Agility is the key"
-	line "attribute of bird"
-	cont "#MON."
+DelinquentEllySeenText:
+	text "I jump these trees"
+	line "every day for"
+	cont "exercise."
+
+	para "It's good for my"
+	line "legs."
 	done
 
-BirdKeeperPerryBeatenText:
-	text "You beat me with"
-	line "your speed…"
+DelinquentEllyBeatenText:
+	text "Don't you think so?"
 	done
 
-BirdKeeperPerryAfterBattleText:
-	text "Your #MON are"
-	line "remarkably well-"
-	cont "trained."
-	done
-
-BirdKeeperBretSeenText:
-	text "Check out my #-"
-	line "MON. Just look at"
-
-	para "their coloring and"
-	line "their plumage."
-	done
-
-BirdKeeperBretBeatenText:
-	text "Shoot!"
-	line "Not good enough!"
-	done
-
-BirdKeeperBretAfterBattleText:
-	text "If you groom them,"
-	line "#MON get happy."
-	done
-
-HikerKennySeenText:
-	text "I should go to"
-	line "ROCK TUNNEL to get"
-	cont "myself an ONIX."
-	done
-
-HikerKennyBeatenText:
-	text "I lost…"
-	done
-
-HikerKennyAfterBattleText:
-	text "Geological fea-"
-	line "tures don't appear"
-	cont "to change."
-
-	para "But they actually"
-	line "change, little by"
-	cont "little."
+DelinquentEllyAfterBattleText:
+	text "I don't like bikes,"
+	line "so this is how I"
+	cont "better my legs."
 	done
 
 Route13TrainerTipsText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
 	para "Look! Right there,"
 	line "at the left side"
-	cont "of the post."
+	cont "of the tree."
 	done
 
 Route13SignText:
-	text "ROUTE 13"
+	text "Route 13"
 
-	para "NORTH TO SILENCE"
-	line "BRIDGE"
+	para "North to Silence"
+	line "Bridge"
+
+	para "There's some"
+	line "graffiti here."
+
+	para "No bridge for you"
+	line "losers!"
 	done
 
 Route13DirectionsSignText:
-	text "NORTH TO LAVENDER"
-	line "TOWN"
+	text "North to Lavender"
+	line "Town"
 
-	para "WEST TO FUCHSIA"
-	line "CITY"
+	para "West to Fuchsia"
+	line "City"
+	done
+
+Route13PokefanMText:
+	text "The bridge to"
+	line "Lavender Town"
+	cont "was destroyed."
+
+	para "What jerks!"
+	done
+
+Route13YoungsterText:
+	text "The routes to"
+	line "Fuchsia City and"
+	cont "the maze are"
+
+	para "crawling with"
+	line "Feds."
+
+	para "Watch out."
+	done
+
+Route13BikerText:
+	text "Buzz off, kid!"
+
+	para "I can't find my"
+	line "way out of here!"
 	done
 
 Route13_MapEvents:
@@ -202,9 +190,10 @@ Route13_MapEvents:
 	bg_event 17, 13, BGEVENT_READ, Route13DirectionsSign
 	bg_event 30, 13, BGEVENT_ITEM, Route13HiddenCalcium
 
-	db 5 ; object events
-	object_event 42,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperPerry, -1
-	object_event 43,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperBret, -1
-	object_event 32,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmJoshua, -1
-	object_event 14, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerHikerKenny, -1
-	object_event 25,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanmAlex, -1
+	db 6 ; object events
+	object_event  9, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route13YoungsterScript, -1
+	object_event 42,  7, SPRITE_BIKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBikerKevin, -1
+	object_event 32,  8, SPRITE_ROUGHNECK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 3, TrainerRoughneckKandori, -1
+	object_event 14, 10, SPRITE_DAISY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerDelinquentElly, -1
+	object_event 47, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route13PokefanMScript, -1
+	object_event 26,  6, SPRITE_BIKER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route13BikerScript, -1

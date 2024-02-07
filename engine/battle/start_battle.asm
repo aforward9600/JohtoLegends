@@ -121,6 +121,8 @@ PlayBattleMusic:
 	jp z, .done
 	cp CHALLENGER_DRACO
 	jp z, .done
+	cp POKEMON_PROF
+	jp z, .done
 
 	ld de, MUSIC_CYNTHIA_BATTLE
 	cp CHALLENGER_CYNTHIA

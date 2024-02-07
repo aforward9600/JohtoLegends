@@ -1,7 +1,7 @@
 	object_const_def ; object_event constants
 	const ROUTE14_POKEFAN_M1
 	const ROUTE14_YOUNGSTER
-	const ROUTE14_POKEFAN_M2
+	const ROUTE14_DELINQUENT
 	const ROUTE14_KIM
 
 Route14_MapScripts:
@@ -12,105 +12,98 @@ Route14_MapScripts:
 Kim:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_DRATINI_FROM_MASTER
+	iftrue .LarvitarTrade
 	trade NPC_TRADE_KIM
 	waitbutton
 	closetext
 	end
 
-TrainerPokefanmCarter:
-	trainer POKEFANM, CARTER, EVENT_BEAT_POKEFANM_CARTER, PokefanmCarterSeenText, PokefanmCarterBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext PokefanmCarterAfterBattleText
+.LarvitarTrade:
+	trade NPC_TRADE_KIM_2
 	waitbutton
 	closetext
 	end
 
-TrainerBirdKeeperRoy:
-	trainer BIRD_KEEPER, ROY, EVENT_BEAT_BIRD_KEEPER_ROY, BirdKeeperRoySeenText, BirdKeeperRoyBeatenText, 0, .Script
+TrainerBikerJamie:
+	trainer BIKER, JAMIE, EVENT_BEAT_BIKER_JAMIE, BikerJamieSeenText, BikerJamieBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperRoyAfterBattleText
+	writetext BikerJamieAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPokefanmTrevor:
-	trainer POKEFANM, TREVOR, EVENT_BEAT_POKEFANM_TREVOR, PokefanmTrevorSeenText, PokefanmTrevorBeatenText, 0, .Script
+TrainerRoughneckDirk:
+	trainer ROUGHNECK, DIRK, EVENT_BEAT_ROUGHNECK_DIRK, RoughneckDirkSeenText, RoughneckDirkBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokefanmTrevorAfterBattleText
+	writetext RoughneckDirkAfterBattleText
 	waitbutton
 	closetext
 	end
 
-PokefanmCarterSeenText:
-	text "Let me tell you,"
-	line "I had a hard time"
+TrainerDelinquentAyase:
+	trainer DELINQUENT, AYASE, EVENT_BEAT_DELINQUENT_AYASE, DelinquentAyaseSeenText, DelinquentAyaseBeatenText, 0, .Script
 
-	para "catching my prized"
-	line "#MON."
+.Script:
+	endifjustbattled
+	opentext
+	writetext DelinquentAyaseAfterBattleText
+	waitbutton
+	closetext
+	end
+
+BikerJamieSeenText:
+	text "That maze is"
+	line "annoying while I'm"
+	cont "on my bike."
 	done
 
-PokefanmCarterBeatenText:
+BikerJamieBeatenText:
 	text "Awaaah!"
 	done
 
-PokefanmCarterAfterBattleText:
-	text "SQUIRTLE, CHARMAN-"
-	line "DER and BULBASAUR…"
-
-	para "I think that's a"
-	line "well-balanced mix."
+BikerJamieAfterBattleText:
+	text "You're annoying"
+	line "too!"
 	done
 
-BirdKeeperRoySeenText:
-	text "My dream is to fly"
-	line "with my beloved"
-	cont "bird #MON."
+RoughneckDirkSeenText:
+	text "Yeah, I'm bad!"
+
+	para "What about it?"
 	done
 
-BirdKeeperRoyBeatenText:
-	text "I can dream, but I"
-	line "can't ever fly…"
+RoughneckDirkBeatenText:
+	text "I'm really bad…"
 	done
 
-BirdKeeperRoyAfterBattleText:
-	text "You have #MON"
-	line "that know the HM"
+RoughneckDirkAfterBattleText:
+	text "I'm a bad guy, and"
+	line "I'm bad at battles."
 
-	para "move FLY, don't"
-	line "you? I envy you."
+	para "Sucks, huh?"
 	done
 
-PokefanmTrevorSeenText:
-	text "Hi. Did you know…?"
-
-	para "#MON get more"
-	line "friendly if you"
-
-	para "train them in a"
-	line "place that they"
-	cont "remember."
+DelinquentAyaseSeenText:
+	text "I'm soooooo bored!"
 	done
 
-PokefanmTrevorBeatenText:
-	text "Where did I meet"
-	line "this PSYDUCK?"
+DelinquentAyaseBeatenText:
+	text "I'd rather be bored"
+	line "than a loser!"
 	done
 
-PokefanmTrevorAfterBattleText:
-	text "If only there were"
-	line "an easy way to"
+DelinquentAyaseAfterBattleText:
+	text "Go away!"
 
-	para "identify where I"
-	line "got my #MON…"
+	para "You're throwing off"
+	line "my groove!"
 	done
 
 Route14_MapEvents:
@@ -123,7 +116,7 @@ Route14_MapEvents:
 	db 0 ; bg events
 
 	db 4 ; object events
-	object_event 11, 15, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmCarter, -1
-	object_event 11, 27, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRoy, -1
-	object_event  6, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmTrevor, -1
-	object_event  7,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 4, Kim, -1
+	object_event 11, 15, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerBikerJamie, -1
+	object_event 11, 27, SPRITE_ROUGHNECK, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 3, TrainerRoughneckDirk, -1
+	object_event  6, 11, SPRITE_DAISY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerDelinquentAyase, -1
+	object_event  6,  3, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 4, Kim, -1

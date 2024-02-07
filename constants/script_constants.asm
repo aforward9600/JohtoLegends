@@ -226,7 +226,6 @@ NUM_FRUIT_TREES EQU const_value + -1
 	const DECODESC_RIGHT_DOLL ; 2
 	const DECODESC_BIG_DOLL   ; 3
 	const DECODESC_CONSOLE    ; 4
-	const DECODESC_CONSOLE_2  ; 5
 
 ; swarm arguments
 ; StoreSwarmMapIndices arguments

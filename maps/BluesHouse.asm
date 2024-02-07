@@ -63,7 +63,8 @@ BluesHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event  2,  1, BGEVENT_READ, RedsHouse1FTV
 
 	db 2 ; object events
 	object_event  6,  4, SPRITE_TWIN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DaisyScript, -1

@@ -55,7 +55,15 @@ TrainerSailorSheldon:
 .Script:
 	endifjustbattled
 	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .SailorSheldonAfterBattle2
 	writetext SailorSheldonAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.SailorSheldonAfterBattle2
+	writetext SailorSheldonAfterBattleText2
 	waitbutton
 	closetext
 	end
@@ -335,6 +343,16 @@ Route39TrainerTipsText:
 	para "Use SnubbullCall"
 	line "on any tree you"
 	cont "see!"
+	done
+
+SailorSheldonAfterBattleText2:
+	text "Sounds like the"
+	line "embargo should be"
+	cont "lifted soon!"
+
+	para "I'll be sailing the"
+	line "seven seas again"
+	cont "in no time!"
 	done
 
 Route39_MapEvents:

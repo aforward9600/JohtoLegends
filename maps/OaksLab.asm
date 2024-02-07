@@ -61,13 +61,6 @@ Oak:
 	writetext OakOpenMtSilverText
 	buttonsound
 	setevent EVENT_OPENED_MT_SILVER
-	setevent EVENT_DECO_SILVER_TROPHY
-	waitsfx
-	writetext PlayerGotSilverTrophy
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	buttonsound
-	pause 15
 	writetext OnceAgainThankYouText
 	waitbutton
 	closetext
@@ -186,27 +179,7 @@ OakOpenMtSilverText:
 
 	para "Once again, thank"
 	line "you for your"
-	cont "efforts."
-
-	para "…Oh, and please"
-	line "take this."
-
-	para "I had this made"
-	line "especially for"
-	cont "you!"
-
-	para "I had almost"
-	line "forgot about it in"
-	cont "the excitement!"
-
-	para "It's a Silver"
-	line "Trophy!"
-
-	para "Put it on your"
-	line "table and show it"
-	cont "off!"
-
-	para "You've earned it!"
+	cont "efforts!"
 	done
 
 OakNoKantoBadgesText:

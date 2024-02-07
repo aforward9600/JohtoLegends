@@ -33,24 +33,16 @@ TrainerFisherMartin:
 	closetext
 	end
 
-TrainerFisherStephen:
-	trainer FISHER, STEPHEN, EVENT_BEAT_FISHER_STEPHEN, FisherStephenSeenText, FisherStephenBeatenText, 0, .Script
+Route12Fisher:
+	jumptextfaceplayer Route12FisherText
+
+TrainerYoungsterBarney:
+	trainer YOUNGSTER, BARNEY_YOUNGSTER, EVENT_BEAT_FISHER_BARNEY, YoungsterBarneySeenText, YoungsterBarneyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherStephenAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerFisherBarney:
-	trainer FISHER, BARNEY, EVENT_BEAT_FISHER_BARNEY, FisherBarneySeenText, FisherBarneyBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext FisherBarneyAfterBattleText
+	writetext YoungsterBarneyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -71,9 +63,8 @@ Route12HiddenElixer:
 	hiddenitem ELIXER, EVENT_ROUTE_12_HIDDEN_ELIXER
 
 FisherMartinSeenText:
-	text "Patience is the"
-	line "key to both fish-"
-	cont "ing and #MON."
+	text "I gotta keep"
+	line "fishing!"
 	done
 
 FisherMartinBeatenText:
@@ -81,87 +72,74 @@ FisherMartinBeatenText:
 	done
 
 FisherMartinAfterBattleText:
-	text "I'm too impatient"
-	line "for fishing…"
+	text "It keeps my mind"
+	line "off of all the"
+	cont "problems…"
 	done
 
-FisherStephenSeenText:
-	text "I feel so content,"
-	line "fishing while lis-"
-	cont "tening to some"
-	cont "tunes on my radio."
+Route12FisherText:
+	text "These docks used"
+	line "to be the best"
+	cont "place in Kanto to"
+	cont "fish…"
+
+	para "Those Fed punks!"
 	done
 
-FisherStephenBeatenText:
-	text "My stupid radio"
-	line "distracted me!"
+YoungsterBarneySeenText:
+	text "The Feds hated the"
+	line "docks here so bad,"
+
+	para "they burned them"
+	line "all!"
+
+	para "It's a bad idea to"
+	line "ride a bike on"
+	cont "docks!"
 	done
 
-FisherStephenAfterBattleText:
-	text "Have you checked"
-	line "out KANTO's radio"
-
-	para "programs? We get a"
-	line "good variety here."
+YoungsterBarneyBeatenText:
+	text "The poor docks…"
 	done
 
-FisherBarneySeenText:
-	text "What's most impor-"
-	line "tant in our every-"
-	cont "day lives?"
-	done
-
-FisherBarneyBeatenText:
-	text "The answer is"
-	line "coming up next!"
-	done
-
-FisherBarneyAfterBattleText:
-	text "I think electric-"
-	line "ity is the most"
-
-	para "important thing in"
-	line "our daily lives."
-
-	para "If it weren't,"
-	line "people wouldn't"
-
-	para "have made such a"
-	line "fuss when the"
-
-	para "POWER PLANT went"
-	line "out of commission."
+YoungsterBarneyAfterBattleText:
+	text "These docks will"
+	line "take forever to"
+	cont "fix…"
 	done
 
 FisherKyleSeenText:
-	text "Do you remember?"
+	text "I don't dare stand"
+	line "on the docks"
+	cont "anymore."
+
+	para "Not a good idea to"
+	line "stand on burnt"
+	cont "wood."
 	done
 
 FisherKyleBeatenText:
-	text "You do remember?"
+	text "Smokin'!"
 	done
 
 FisherKyleAfterBattleText:
-	text "The tug you feel"
-	line "on the ROD when"
+	text "At least there's"
+	line "some land here."
 
-	para "you hook a #-"
-	line "MON…"
-
-	para "That's the best"
-	line "feeling ever for"
-	cont "an angler like me."
+	para "Otherwise, this"
+	line "route would be"
+	cont "empty."
 	done
 
 Route12SignText:
-	text "ROUTE 12"
+	text "Route 12"
 
-	para "NORTH TO LAVENDER"
-	line "TOWN"
+	para "North To Lavender"
+	line "Town"
 	done
 
 FishingSpotSignText:
-	text "FISHING SPOT"
+	text "Fishing Spot"
 	done
 
 Route12_MapEvents:
@@ -178,9 +156,9 @@ Route12_MapEvents:
 	bg_event 14, 13, BGEVENT_ITEM, Route12HiddenElixer
 
 	db 6 ; object events
-	object_event  5, 13, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherMartin, -1
-	object_event 14, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherStephen, -1
-	object_event 10, 38, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 5, TrainerFisherBarney, -1
-	object_event  6,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherKyle, -1
+	object_event 10, 21, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherMartin, -1
+	object_event  9, 26, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route12Fisher, -1
+	object_event  5, 34, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterBarney, -1
+	object_event  8,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerFisherKyle, -1
 	object_event  5, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12Calcium, EVENT_ROUTE_12_CALCIUM
 	object_event  5, 51, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12Nugget, EVENT_ROUTE_12_NUGGET

@@ -26,7 +26,12 @@ RedsMom:
 	end
 
 RedsHouse1FTV:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .RedsHouse1FTV2
 	jumptext RedsHouse1FTVText
+
+.RedsHouse1FTV2:
+	jumptext RedsHouse1FTVText2
 
 RedsHouse1FBookshelf:
 	jumpstd picturebookshelf
@@ -72,6 +77,34 @@ RedsHouse1FTVText:
 
 	para "We can only hope"
 	line "for a miracle…"
+	done
+
+RedsHouse1FTVText2:
+	text "Breaking news!"
+
+	para "The Federation boss"
+	line "has been defeated!"
+
+	para "There is no sight"
+	line "of him!"
+
+	para "He was taken down"
+	line "by the current"
+	cont "Champion and their"
+	cont "friends!"
+
+	para "The #mon League"
+	line "has confirmed that"
+	cont "they will accept"
+	cont "Kanto back into"
+	cont "League!"
+
+	para "The embargo should"
+	line "soon be over!"
+
+	para "We will continue"
+	line "to monitor the"
+	cont "situation!"
 	done
 
 RedsHouse1F_MapEvents:

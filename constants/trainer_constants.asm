@@ -126,7 +126,7 @@ CHRIS EQU __enum__
 	const CALEB
 	const GORDY
 	const RANDY
-	const WARREN
+	const BARNEY_YOUNGSTER
 	const JIMMY
 	const OWEN
 	const JASON
@@ -165,7 +165,7 @@ CHRIS EQU __enum__
 	const TOBY
 	const LUCAS
 	const SAL
-	const HANK
+	const TERRY
 	const ROY
 	const BORIS
 	const BOB
@@ -321,7 +321,7 @@ CHRIS EQU __enum__
 
 	trainerclass TEACHER ; 22
 	const ABIGAIL
-	const HILLARY
+	const ISAKO
 	const SHIRLEY
 	const CADI
 	const CADI2
@@ -509,6 +509,9 @@ CHRIS EQU __enum__
 	const BLUNO
 	const ROSSO
 	const ANTONIO
+	const BIKER_KEVIN
+	const JAMIE
+	const BURGESS
 
 	trainerclass BLAINE ; 2e
 	const BLAINE1
@@ -924,6 +927,9 @@ CHRIS EQU __enum__
 	const MARCY
 	const MAKOTO
 	const CAROL
+	const ELLY
+	const AYASE
+	const CHIE
 
 	trainerclass SENSATIONAL2
 	const DAISY
@@ -941,6 +947,9 @@ CHRIS EQU __enum__
 	const MOE
 	const LARRY_ROUGHNECK
 	const CARTER_ROUGHNECK
+	const KANDORI
+	const DIRK
+	const KANJI
 
 	trainerclass SOLDIER
 	const DWIGHT

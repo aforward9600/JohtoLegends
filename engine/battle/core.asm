@@ -2270,7 +2270,12 @@ FaintYourPokemon:
 	jp StdBattleTextbox
 
 FaintEnemyPokemon:
+	call StopDangerSound
 	call WaitSFX
+	ld a, $f0
+	ld [wCryTracks], a
+	ld a, [wTempEnemyMonSpecies]
+	call PlayStereoCry
 	ld de, SFX_KINESIS
 	call PlaySFX
 	call EnemyMonFaintedAnimation

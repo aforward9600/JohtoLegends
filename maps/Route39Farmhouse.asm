@@ -17,7 +17,12 @@ FarmerFScript_SellMilk:
 	end
 
 Route39FarmhouseGrannyScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .Route39FarmhouseGranny2
 	jumptextfaceplayer GrannyText_InTrouble
+
+.Route39FarmhouseGranny2:
+	jumptextfaceplayer GrannyText_GoodJob
 
 FarmhouseBookshelf:
 	jumpstd picturebookshelf
@@ -43,6 +48,19 @@ GrannyText_InTrouble:
 	line "I'd kick all their"
 	cont "butts so we could"
 	cont "sell milk again!"
+	done
+
+GrannyText_GoodJob:
+	text "I've heard you were"
+	line "the one who took"
+	cont "on those idiots in"
+	cont "Kanto."
+
+	para "Good on you!"
+
+	para "We can start"
+	line "selling milk there"
+	cont "again!"
 	done
 
 Route39Farmhouse_MapEvents:

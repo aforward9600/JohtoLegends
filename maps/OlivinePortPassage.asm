@@ -7,7 +7,12 @@ OlivinePortPassage_MapScripts:
 	db 0 ; callbacks
 
 OlivinePortPassagePokefanMScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .OlivinePortPassagePokefanM2
 	jumptextfaceplayer OlivinePortPassagePokefanMText
+
+.OlivinePortPassagePokefanM2
+	jumptextfaceplayer OlivinePortPassagePokefanMText2
 
 OlivinePortPassagePokefanMText:
 	text "You're wasting"
@@ -27,6 +32,13 @@ OlivinePortPassagePokefanMText:
 
 	para "Businesses are"
 	line "hurting here!"
+	done
+
+OlivinePortPassagePokefanMText2:
+	text "With the embargo"
+	line "lifted, our"
+	cont "businesses can"
+	cont "thrive again!"
 	done
 
 OlivinePortPassage_MapEvents:

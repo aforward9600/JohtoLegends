@@ -7,6 +7,7 @@
 	const CERULEANCITY_DAISY
 	const CERULEANCITY_VIOLET
 	const CERULEANCITY_LILY
+	const CERULEANCITY_FISHER2
 
 CeruleanCity_MapScripts:
 	db 0 ; scene scripts
@@ -121,6 +122,9 @@ CeruleanCapeSign:
 
 CeruleanLockedDoor:
 	jumptext CeruleanLockedDoorText
+
+CeruleanCityFisherScript2:
+	jumptextfaceplayer CeruleanCityFisherText2
 
 CeruleanOriginalGymSign:
 	jumptext CeruleanOriginalGymText
@@ -310,6 +314,12 @@ CeruleanLockedDoorText:
 	text "It's locked…"
 	done
 
+CeruleanCityFisherText2:
+	text "Man, we got a lot"
+	line "work to do fixing"
+	cont "up this bridge…"
+	done
+
 CeruleanCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -333,7 +343,7 @@ CeruleanCity_MapEvents:
 	bg_event 26, 29, BGEVENT_READ, CeruleanCityMartSign
 	bg_event 25, 17, BGEVENT_READ, CeruleanOriginalGymSign
 
-	db 8 ; object events
+	db 9 ; object events
 	object_event 11, 23, SPRITE_BIKER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityBikerScript, EVENT_SAFFRON_CITY_FEDS
 	object_event 23, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCityPokefanMScript, EVENT_CERULEAN_CITY_CIVILLIANS
 	object_event  7, 27, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCityPokefanFScript, EVENT_CERULEAN_CITY_CIVILLIANS
@@ -342,3 +352,4 @@ CeruleanCity_MapEvents:
 	object_event 11, 10, SPRITE_SENSATIONAL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityDaisyScript, EVENT_CERULEAN_CITY_DAISY
 	object_event  5, 33, SPRITE_SENSATIONAL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityVioletScript, EVENT_CERULEAN_CITY_VIOLET
 	object_event 27,  8, SPRITE_SENSATIONAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityLilyScript, EVENT_CERULEAN_CITY_LILY
+	object_event 21,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityFisherScript2, EVENT_CERULEAN_CITY_CIVILLIANS

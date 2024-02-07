@@ -2059,9 +2059,10 @@ endc
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (9)
-	db "WARREN@", TRAINERTYPE_NORMAL
-	db 35
+	db "Barney@", TRAINERTYPE_MOVES
+	db 77
 	dw FEAROW
+	dw DRILL_PECK, RETURN, DRILL_RUN, ROOST
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (10)
@@ -2452,10 +2453,10 @@ endc
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (8)
-	db "HANK@", TRAINERTYPE_NORMAL
-	db 12
-	dw PIDGEY
-	db 34
+	db "Terry@", TRAINERTYPE_NORMAL
+	db 74
+	dw XATU
+	db 74
 	dw PIDGEOT
 	db -1 ; end
 
@@ -2830,7 +2831,11 @@ if DEF(_CHALLENGE)
 else
 	db NO_ITEM
 endc
+if DEF(_FAITHFUL)
+	dw DYNAMICPUNCH, EARTHQUAKE, BULLET_PUNCH, BULK_UP
+else
 	dw DYNAMICPUNCH, THUNDERPUNCH, BULLET_PUNCH, BULK_UP
+endc
 	db 62
 	dw JYNX
 if DEF(_CHALLENGE)
@@ -2899,7 +2904,11 @@ endc
 	dw WAVE_CRASH, BOUNCE, EARTHQUAKE, DRAGON_DANCE
 	db 62
 	dw ALAKAZAM
+if DEF(_FAITHFUL)
+	dw PSYCHIC_M, RECOVER, CALM_MIND, ICE_PUNCH
+else
 	dw PSYCHIC_M, RECOVER, CALM_MIND, SHADOW_BALL
+endc
 	db 62
 	dw ARCANINE
 	dw FLARE_BLITZ, PLAY_ROUGH, EXTREMESPEED, CRUNCH
@@ -2911,7 +2920,11 @@ endc
 	dw EARTHQUAKE, SUCKER_PUNCH, ROCK_SLIDE, SLASH
 	db 63
 	dw VAPOREON
+if DEF(_FAITHFUL)
+	dw HYDRO_PUMP, ICE_BEAM, ACID_ARMOR, BITE
+else
 	dw HYDRO_PUMP, ICE_BEAM, ACID_ARMOR, SHADOW_BALL
+endc
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (10) Route 2
@@ -3181,7 +3194,11 @@ endc
 	dw NASTY_PLOT, HYDRO_PUMP, PSYCHIC_M, ICE_BEAM
 	db 52
 	dw MAGCARGO
+if DEF(_FAITHFUL)
+	dw SHELL_SMASH, FLAMETHROWER, RECOVER, ROCK_SLIDE
+else
 	dw SHELL_SMASH, FLAMETHROWER, RECOVER, FLASH_CANNON
+endc
 	db 52
 	dw WOBBUFFET
 	dw COUNTER, DESTINY_BOND, MIRROR_COAT, SAFEGUARD
@@ -3376,7 +3393,11 @@ endc
 	dw SUCKER_PUNCH, OUTRAGE, DIZZY_PUNCH, BULK_UP
 	db 50
 	dw ALAKAZAM
+if DEF(_FAITHFUL)
+	dw PSYCHIC_M, DAZZLINGLEAM, FIRE_PUNCH, RECOVER
+else
 	dw PSYCHIC_M, DAZZLINGLEAM, SHADOW_BALL, RECOVER
+endc
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (16)
@@ -4194,11 +4215,13 @@ endc
 	db -1 ; end
 
 	next_list_item ; TEACHER (2)
-	db "HILLARY@", TRAINERTYPE_NORMAL
-	db 32
-	dw AIPOM
-	db 36
-	dw CUBONE
+	db "Isako@", TRAINERTYPE_MOVES
+	db 75
+	dw AMBIPOM
+	dw RETURN, ACROBATICS, SWORDS_DANCE, FAINT_ATTACK
+	db 75
+	dw BLISSEY
+	dw SOFTBOILED, ICE_BEAM, REFLECT, THUNDERBOLT
 	db -1 ; end
 
 	next_list_item ; TEACHER (3)
@@ -4274,7 +4297,11 @@ if DEF(_CHALLENGE)
 else
 	db NO_ITEM
 endc
+if DEF(_FAITHFUL)
+	dw SAND_ATTACK, CALM_MIND, BITE, PSYCHIC_M
+else
 	dw SAND_ATTACK, CALM_MIND, SHADOW_BALL, PSYCHIC_M
+endc
 	db 74
 if DEF(_CHALLENGE)
 	dw ANNIHILAPE
@@ -4316,7 +4343,11 @@ if DEF(_CHALLENGE)
 else
 	db SITRUS_BERRY
 endc
+if DEF(_FAITHFUL)
+	dw RECOVER, FIRE_PUNCH, PSYCHIC_M, MOONBLAST
+else
 	dw RECOVER, SHADOW_BALL, PSYCHIC_M, MOONBLAST
+endc
 	db -1 ; end
 
 	end_list_items
@@ -4640,13 +4671,16 @@ endc
 	db -1 ; end
 
 	next_list_item ; FISHER (4)
-	db "KYLE@", TRAINERTYPE_NORMAL
-	db 28
+	db "Willy@", TRAINERTYPE_MOVES
+	db 75
+	dw QWILFISH
+	dw GUNK_SHOT, WAVE_CRASH, TOXIC, DESTINY_BOND
+	db 75
+	dw POLIWRATH
+	dw ICE_PUNCH, WAVE_CRASH, CLOSE_COMBAT, BULK_UP
+	db 75
 	dw SEAKING
-	db 31
-	dw POLIWHIRL
-	db 31
-	dw SEAKING
+	dw WAVE_CRASH, MEGAHORN, POISON_JAB, HORN_DRILL
 	db -1 ; end
 
 	next_list_item ; FISHER (5) Route 32
@@ -4746,11 +4780,11 @@ endc
 	db -1 ; end
 
 	next_list_item ; FISHER (13)
-	db "MARTIN@", TRAINERTYPE_NORMAL
-	db 32
-	dw REMORAID
-	db 32
-	dw REMORAID
+	db "Manfred@", TRAINERTYPE_NORMAL
+	db 75
+	dw MANTINE
+	db 75
+	dw OCTILLERY
 	db -1 ; end
 
 	next_list_item ; FISHER (14)
@@ -5490,7 +5524,11 @@ endc
 	db "Josef@", TRAINERTYPE_MOVES
 	db 69
 	dw MAGCARGO
+if DEF(_FAITHFUL)
+	dw ROCK_SLIDE, FLAMETHROWER, SHELL_SMASH, RECOVER
+else
 	dw FLASH_CANNON, FLAMETHROWER, SHELL_SMASH, ROCK_SLIDE
+endc
 	db 69
 	dw NINETALES
 	dw NASTY_PLOT, FLAMETHROWER, SHADOW_BALL, EXTRASENSORY
@@ -6202,6 +6240,38 @@ endc
 	db THICK_CLUB
 	db -1 ; end
 
+	next_list_item ; BIKER Route 13
+	db "Kevin@", TRAINERTYPE_NORMAL
+	db 74
+	dw AGGRON
+	db 74
+	dw TANGROWTH
+	db 74
+	dw KINGDRA
+	db 74
+	dw SNORLAX
+	db -1 ; end
+
+	next_list_item ; BIKER Route 14
+	db "Jamie@", TRAINERTYPE_NORMAL
+	db 74
+	dw MACHAMP
+	db 74
+	dw MUK
+	db 74
+	dw PORYGON_Z
+	db -1 ; end
+
+	next_list_item ; BIKER Route 15
+	db "Burgess@", TRAINERTYPE_NORMAL
+	db 74
+	dw KABUTOPS
+	db 74
+	dw AZUMARILL
+	db 74
+	dw CACTURNE
+	db -1 ; end
+
 	end_list_items
 
 BlaineGroup:
@@ -6360,7 +6430,11 @@ FirebreatherGroup:
 	dw FLARE_BLITZ, DOUBLE_EDGE, LAVA_PLUME, SMOG
 	db 47
 	dw MAGCARGO
+if DEF(_FAITHFUL)
+	dw SHELL_SMASH, BODY_SLAM, LAVA_PLUME, ROCK_SLIDE
+else
 	dw SHELL_SMASH, BODY_SLAM, LAVA_PLUME, FLASH_CANNON
+endc
 	db -1 ; end
 
 	next_list_item ; FIREBREATHER (4)
@@ -8475,7 +8549,11 @@ endc
 	dw SPIKE_CANNON, PROTECT, WATER_PULSE, ROCK_SLIDE
 	db 45
 	dw HITMONCHAN
+if DEF(_FAITHFUL)
+	dw BRICK_BREAK, BULLET_PUNCH, ROCK_SLIDE, BULK_UP
+else
 	dw BRICK_BREAK, THUNDERPUNCH, ICE_PUNCH, BULLET_PUNCH
+endc
 	db -1 ; end
 
 	next_list_item ; GruntF (13) Rocket Lair
@@ -8529,7 +8607,11 @@ endc
 	dw TOXIC, VENOSHOCK, HYDRO_PUMP, HEX
 	db 56
 	dw ESPEON
+if DEF(_FAITHFUL)
+	dw NASTY_PLOT, MORNING_SUN, PSYCHIC_M, BITE
+else
 	dw NASTY_PLOT, MORNING_SUN, PSYCHIC_M, SHADOW_BALL
+endc
 	db 56
 	dw WYRDEER
 	dw GIGA_IMPACT, JUMP_KICK, ZEN_HEADBUTT, RECOVER
@@ -9164,6 +9246,8 @@ endc
 
 	end_list_items
 
+SECTION "Enemy Trainer Parties 3", ROMX
+
 GenSurgeGroup:
 	next_list_item ; GEN_SURGE
 	db "Surge@", TRAINERTYPE_ITEM_MOVES
@@ -9256,8 +9340,6 @@ endc
 	db -1 ; end
 
 	end_list_items
-
-SECTION "Enemy Trainer Parties 3", ROMX
 
 MiyamotoGroup:
 	next_list_item ; MIYAMOTO1
@@ -11451,7 +11533,11 @@ if DEF(_CHALLENGE)
 else
 	db NO_ITEM
 endc
+if DEF(_FAITHFUL)
+	dw BULK_UP, ROCK_SLIDE, HI_JUMP_KICK, EARTHQUAKE
+else
 	dw BULK_UP, ROCK_SLIDE, HI_JUMP_KICK, BLAZE_KICK
+endc
 	db 50
 	dw HITMONTOP
 if DEF(_CHALLENGE)
@@ -11510,7 +11596,11 @@ if DEF(_CHALLENGE)
 else
 	db NO_ITEM
 endc
+if DEF(_FAITHFUL)
+	dw BULK_UP, ROCK_SLIDE, HI_JUMP_KICK, EARTHQUAKE
+else
 	dw BULK_UP, ROCK_SLIDE, HI_JUMP_KICK, BLAZE_KICK
+endc
 	db 54
 	dw HITMONTOP
 if DEF(_CHALLENGE)
@@ -11569,7 +11659,11 @@ if DEF(_CHALLENGE)
 else
 	db NO_ITEM
 endc
+if DEF(_FAITHFUL)
+	dw BULK_UP, ROCK_SLIDE, CLOSE_COMBAT, EARTHQUAKE
+else
 	dw BULK_UP, ROCK_SLIDE, CLOSE_COMBAT, BLAZE_KICK
+endc
 	db 67
 	dw HITMONTOP
 if DEF(_CHALLENGE)
@@ -12257,7 +12351,11 @@ endc
 	dw FRENZY_PLANT, MOONBLAST, SLEEP_POWDER, STRENGTH_SAP
 	db 75
 	dw ESPEON
+if DEF(_FAITHFUL)
+	dw PSYCHIC_M, BITE, NASTY_PLOT, MORNING_SUN
+else
 	dw PSYCHIC_M, SHADOW_BALL, NASTY_PLOT, MORNING_SUN
+endc
 	db -1 ; end
 
 	next_list_item ; DELINQUENT7 (Fed Hideout B3F)
@@ -12270,7 +12368,11 @@ endc
 	dw WAVE_CRASH, POISON_JAB, MEGAHORN, AGILITY
 	db 76
 	dw ALAKAZAM
+if DEF(_FAITHFUL)
+	dw MOONBLAST, CALM_MIND, FIRE_PUNCH, PSYCHIC_M
+else
 	dw MOONBLAST, CALM_MIND, SHADOW_BALL, PSYCHIC_M
+endc
 	db -1 ; end
 
 	next_list_item ; DELINQUENT8 (Fed Hideout B4F)
@@ -12331,6 +12433,44 @@ endc
 	dw ESPEON
 	db 74
 	dw PERSIAN
+	db -1 ; end
+
+	next_list_item ; DELINQUENT12 (Route 13)
+	db "Elly@", TRAINERTYPE_NORMAL
+	db 73
+	dw GOROTORA
+	db 73
+	dw ALTARIA
+	db 73
+	dw LICKILICKY
+	db -1 ; end
+
+	next_list_item ; DELINQUENT13 (Route 14)
+	db "Ayase@", TRAINERTYPE_NORMAL
+	db 74
+	dw JYNX
+	db 74
+	dw SCIZOR
+	db -1 ; end
+
+	next_list_item ; DELINQUENT14 (Route 15)
+	db "Chie@", TRAINERTYPE_ITEM_MOVES
+	db 74
+	dw UMBREON
+	db NO_ITEM
+	dw DARK_PULSE, NASTY_PLOT, MOONLIGHT, PSYCHIC_M
+	db 74
+	dw RAICHU
+if DEF(_CHALLENGE)
+	db LIGHT_BALL
+else
+	db NO_ITEM
+endc
+	dw THUNDERBOLT, NASTY_PLOT, GRASS_KNOT, SURF
+	db 74
+	dw FARIGIRAF
+	db NO_ITEM
+	dw PSYCHIC_M, NASTY_PLOT, HYPER_BEAM, MOONBLAST
 	db -1 ; end
 
 	end_list_items
@@ -12561,6 +12701,32 @@ endc
 	dw CROBAT
 	db -1 ; end
 
+	next_list_item ; ROUGHNECK (10) Route 13
+	db "Kandori@", TRAINERTYPE_NORMAL
+	db 73
+	dw SANDSLASH
+	db 73
+	dw YANMEGA
+	db 73
+	dw WEAVILE
+	db -1 ; end
+
+	next_list_item ; ROUGHNECK (11) Route 14
+	db "Dirk@", TRAINERTYPE_NORMAL
+	db 74
+	dw LANTURN
+	db 74
+	dw GOLEM
+	db -1 ; end
+
+	next_list_item ; ROUGHNECK (12) Route 15
+	db "Kanji@", TRAINERTYPE_NORMAL
+	db 75
+	dw WEAVILE
+	db 75
+	dw HYPNO
+	db -1 ; end
+
 	end_list_items
 
 SoldierGroup:
@@ -12683,13 +12849,25 @@ KarateKingGroup:
 	dw EARTHQUAKE, CLOSE_COMBAT, DETECT, ROCK_SLIDE
 	db 74
 	dw STEELIX
+if DEF(_FAITHFUL)
+	dw IRON_TAIL, EARTHQUAKE, ROCK_SLIDE, CURSE
+else
 	dw IRON_TAIL, EARTHQUAKE, FIRE_FANG, CURSE
+endc
 	db 74
 	dw HITMONLEE
+if DEF(_FAITHFUL)
+	dw CLOSE_COMBAT, EARTHQUAKE, BULK_UP, AERIAL_ACE
+else
 	dw CLOSE_COMBAT, BLAZE_KICK, BULK_UP, AERIAL_ACE
+endc
 	db 74
 	dw HITMONCHAN
+if DEF(_FAITHFUL)
+	dw CLOSE_COMBAT, ROCK_SLIDE, BULLET_PUNCH, EARTHQUAKE
+else
 	dw CLOSE_COMBAT, ICE_PUNCH, BULLET_PUNCH, EARTHQUAKE
+endc
 	db 74
 	dw POLIWRATH
 	dw WAVE_CRASH, CLOSE_COMBAT, ICE_PUNCH, HYPNOSIS
