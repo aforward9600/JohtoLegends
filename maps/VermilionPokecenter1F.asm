@@ -87,10 +87,9 @@ VermilionPokecenterRivalText:
 	cont "who's pretty"
 	cont "powerful."
 
-	para "He also one of the"
-	line "ones who defended"
-	cont "the city after the"
-	cont "Gym burned down."
+	para "He's also one of"
+	line "the ones who"
+	cont "defended the city."
 	done
 
 VermilionPokecenterRivalText2:

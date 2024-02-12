@@ -71,9 +71,9 @@ RedsMomText2:
 RedsHouse1FTVText:
 	text "In other news…"
 
-	para "Our studio will run"
-	line "out of funds at"
-	cont "this rate."
+	para "Our studio will"
+	line "run out of funds"
+	cont "at this rate."
 
 	para "We can only hope"
 	line "for a miracle…"

@@ -1449,7 +1449,7 @@ JohtoGrassWildMons:
 	dbw  7, ABRA
 	dbw  7, RATTATA
 	dbw  7, BONSLY
-	dbw  7, PICHU
+	dbw  7, NATU
 	dbw  7, PONYTA
 	dbw  7, ELEKID
 	dbw  7, ELEKID
@@ -1458,7 +1458,7 @@ JohtoGrassWildMons:
 	dbw  7, ABRA
 	dbw  7, RATTATA
 	dbw  7, BONSLY
-	dbw  7, PICHU
+	dbw  7, NATU
 	dbw  7, PONYTA
 	dbw  7, ELEKID
 	dbw  7, ELEKID
@@ -1467,7 +1467,7 @@ JohtoGrassWildMons:
 	dbw  7, ABRA
 	dbw  7, RATTATA
 	dbw  7, BONSLY
-	dbw  7, PICHU
+	dbw  7, NATU
 	dbw  7, HOUNDOUR
 	dbw  7, ELEKID
 	dbw  7, ELEKID

@@ -282,7 +282,7 @@ ViridianCityBikerText3:
 	line "so cool?"
 
 	para "Well, you can't"
-	line "it!"
+	line "have it!"
 	done
 
 ViridianCityBikerText4:

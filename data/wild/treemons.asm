@@ -9,6 +9,7 @@ TreeMons:
 	dw TreeMonSet_Forest
 	dw TreeMonSet_Rock
 	dw TreeMonSet_Route_47
+	dw TreeMonSet_Viridian_Forest
 
 ; Two tables each (common, rare).
 ; Structure:
@@ -148,7 +149,7 @@ TreeMonSet_Route_47:
 	dbbw  5, 20, AIPOM
 	db -1
 
-TreeMonSet_ViridianForest:
+TreeMonSet_Viridian_Forest:
 ; common
 	dbbw 50, 60, PIDGEOT
 	dbbw 15, 60, BEEDRILL

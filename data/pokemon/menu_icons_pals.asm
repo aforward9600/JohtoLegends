@@ -154,7 +154,7 @@ MonMenuIconPals:
 	icon_pals PINK,   GREEN  ; MR_MIME
 	icon_pals GREEN,  RED    ; SCYTHER
 	icon_pals RED,    GREEN  ; SCIZOR
-	icon_pals RED,    GREEN  ; SMOOCHUM
+	icon_pals PINK,   GREEN  ; SMOOCHUM
 	icon_pals RED,    GREEN  ; JYNX
 	icon_pals RED,    PINK   ; ELEKID
 	icon_pals RED,    GREEN  ; ELECTABUZZ

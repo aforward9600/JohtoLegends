@@ -176,36 +176,43 @@ VictoryRoadGateRivalScript:
 	end
 
 VictoryRoadGateRightBlackBeltEndScript:
-;	faceplayer
-;	opentext
-;	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-;	iftrue .GuardDoesntMove
-;	writetext VictoryRoadGateGoOnThroughText
-;	waitbutton
-;	closetext
-;	readvar VAR_FACING
-;	ifequal UP, .MoveGuardRight
-;	applymovement VICTORYROADGATE_BLACK_BELT3, VictoryRoadGateStepDownMovement
-;	turnobject VICTORYROADGATE_BLACK_BELT3, UP
-;	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-;	end
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .PreElite4Guard
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue .GuardDoesntMove
+	writetext VictoryRoadGateGoOnThroughText
+	waitbutton
+	closetext
+	readvar VAR_FACING
+	ifequal UP, .MoveGuardRight
+	applymovement VICTORYROADGATE_BLACK_BELT3, VictoryRoadGateStepDownMovement
+	turnobject VICTORYROADGATE_BLACK_BELT3, UP
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	end
 
-;.MoveGuardRight:
-;	applymovement VICTORYROADGATE_BLACK_BELT3, OakMovesRight
-;	turnobject VICTORYROADGATE_BLACK_BELT3, LEFT
-;	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-;	end
+.MoveGuardRight:
+	applymovement VICTORYROADGATE_BLACK_BELT3, OakMovesRight
+	turnobject VICTORYROADGATE_BLACK_BELT3, LEFT
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	end
 
-;.GuardDoesntMove:
-;	writetext VictoryRoadGateGoOnThroughText
-;	waitbutton
-;	closetext
-;	end
-	jumptextfaceplayer VictoryRoadGateRightBlackBeltEndText
+.GuardDoesntMove:
+	writetext VictoryRoadGateGoOnThroughText
+	waitbutton
+	closetext
+	end
+
+.PreElite4Guard:
+	writetext VictoryRoadGateRightBlackBeltText
+	waitbutton
+	closetext
+	end
 
 VictoryRoadGateStepDownMovement:
 	step DOWN
-	step_end
+	step_resume
 
 PlayerWalksToOakAndRival:
 	step UP
@@ -249,7 +256,7 @@ PlayerWalksToOakAndRival3:
 
 OakMovesRight:
 	step RIGHT
-	step_end
+	step_resume
 
 OakMovesLeft:
 	step LEFT

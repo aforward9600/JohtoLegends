@@ -86,8 +86,8 @@ Route 42
 
 Levels 7-10
 
-Morning/Day: Pichu 40%, Abra 20%, Rattata 15%, Bonsly 15%, Ponyta 5%, Elekid 5%
-Night: Pichu 40%, Abra 20%, Rattata 15%, Bonsly 15%, Houndour 5%, Elekid 5%
+Morning/Day: Pichu 30%, Abra 20%, Rattata 15%, Bonsly 15%, Natu 10%, Ponyta 5%, Elekid 5%
+Night: Pichu 30%, Abra 20%, Rattata 15%, Bonsly 15%, Natu 10%, Houndour 5%, Elekid 5%
 Water: Goldeen 80%, Seaking 20%
 Old Rod: Magikarp 85%, Goldeen 15%
 Good Rod: Goldeen 65%, Magikarp 35%
