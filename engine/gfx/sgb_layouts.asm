@@ -556,7 +556,7 @@ endr
 	ret
 
 .forest
-	ld a, PREDEFPAL_VERMILION
+	ld a, PREDEFPAL_00
 	ret
 
 .gate

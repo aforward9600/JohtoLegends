@@ -128,7 +128,7 @@ MovementData_0x1a0a66:
 
 MovementData_0x1a0a69:
 	step LEFT
-	step_end
+	step_resume
 
 Route27FisherHeyText:
 	text "Hey!"

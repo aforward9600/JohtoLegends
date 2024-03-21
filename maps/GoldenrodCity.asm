@@ -175,7 +175,7 @@ DirectorStepsBackMovement:
 	step DOWN
 	step RIGHT
 	step RIGHT
-	step_end
+	step_resume
 
 GoldenrodCityPokefanMText:
 	text "See that building"

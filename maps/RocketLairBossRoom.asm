@@ -650,7 +650,7 @@ WeFinallyDidItText:
 	cont "be returned to"
 	cont "the wild."
 
-	para "That's a relief"
+	para "That's a relief!"
 
 	para "Now we can get"
 	line "that key."

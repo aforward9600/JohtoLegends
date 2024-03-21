@@ -316,7 +316,7 @@ RainbowOrSilverWingMenu:
 
 DirectorMovesUpMovement:
 	step UP
-	step_end
+	step_resume
 
 RadioTower1FRivalText:
 	text "Don't worry, I got"

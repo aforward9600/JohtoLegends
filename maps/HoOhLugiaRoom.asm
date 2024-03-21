@@ -150,6 +150,8 @@ HoOhTank:
 	startbattle
 	special CheckCaughtCelebi
 	iftrue .CaughtHoOh
+	checkevent EVENT_PASSWORD_SINGULAR
+	iftrue .CaughtHoOh
 	reloadmap
 	iftrue .WonHoOh
 	special HealParty
@@ -212,6 +214,8 @@ LugiaTank:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_LUGIA
 	startbattle
 	special CheckCaughtCelebi
+	iftrue .CaughtLugia
+	checkevent EVENT_PASSWORD_SINGULAR
 	iftrue .CaughtLugia
 	reloadmap
 	iftrue .WonLugia

@@ -3169,7 +3169,7 @@ endc
 	db "Reese@", TRAINERTYPE_NICKNAME
 	db 52
 	dw QUAGSIRE
-	db "Mr. No Arms@"
+	db "Mr No Arms@"
 	db 52
 	dw FARIGIRAF
 	db "RickNMorty@"

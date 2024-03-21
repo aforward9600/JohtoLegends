@@ -118,6 +118,7 @@ SCGB_RAM EQU -1
 	const PREDEFPAL_UNOWN_PUZZLE
 	const PREDEFPAL_GAMEFREAK_LOGO_OB
 	const PREDEFPAL_GAMEFREAK_LOGO_BG
+	const PREDEFPAL_ROUTE_47
 
 ; SGB system command codes
 ; http://gbdev.gg8.se/wiki/articles/SGB_Functions#SGB_System_Command_Table

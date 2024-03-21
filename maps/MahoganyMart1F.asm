@@ -215,7 +215,7 @@ SherlesMovesIntoPlaceAgainMovement:
 	step DOWN
 	step LEFT
 	step LEFT
-	step_end
+	step_resume
 
 RivalLeavesMartMovement:
 	step DOWN
@@ -390,6 +390,9 @@ MaybeWeShouldLeaveText:
 	para "I'm going to Bell"
 	line "Tower, like Mr."
 	cont "#mon said."
+
+	para "You should head"
+	line "there next."
 
 	para "See you."
 	done
