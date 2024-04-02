@@ -159,7 +159,7 @@ PokemonMansion1FDiaryText:
 PokemonMansion1FDiary2Text:
 	text "Diary: Date XX"
 
-	para "The anomoly has an"
+	para "The anomaly has an"
 	line "almost impossible"
 	cont "physiology."
 

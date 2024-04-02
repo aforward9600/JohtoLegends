@@ -16,9 +16,6 @@ WhirlIslandLugiaChamber_MapScripts:
 	iffalse .NoAppear
 	checkevent EVENT_RIVAL_GIVES_UP_LUGIA
 	iffalse .NoAppear
-	return
-
-.Appear:
 	appear WHIRLISLANDLUGIACHAMBER_LUGIA
 	return
 

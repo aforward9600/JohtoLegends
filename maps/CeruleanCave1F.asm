@@ -20,7 +20,7 @@ CeruleanCave1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 8 ; warp events
-	warp_event 25, 17, ROUTE_5, 2
+	warp_event 25, 17, ROUTE_4, 2
 	warp_event  0,  6, CERULEAN_CAVE_B1F, 1
 	warp_event  1,  3, CERULEAN_CAVE_2F, 1
 	warp_event  7,  1, CERULEAN_CAVE_2F, 2

@@ -36,6 +36,8 @@ ViridianPokecenter1FRivalScript:
 	opentext
 	checkevent EVENT_BEAT_GIOVANNI
 	iftrue .ViridianPokecenterRivalAfter
+	readvar VAR_BADGES
+	ifequal 15, .ViridianPokecenter1FRival2
 	writetext ViridianPokecenter1FRivalText
 	waitbutton
 	closetext
@@ -44,6 +46,12 @@ ViridianPokecenter1FRivalScript:
 
 .ViridianPokecenterRivalAfter:
 	writetext ViridianPokecenter1FRivalAfterText
+	waitbutton
+	closetext
+	end
+
+.ViridianPokecenter1FRival2:
+	writetext ViridianPokecenter1FRivalText2
 	waitbutton
 	closetext
 	end
@@ -76,6 +84,22 @@ ViridianPokecenter1FSchoolboyText:
 	done
 
 ViridianPokecenter1FRivalText:
+	text "I heard a rich and"
+	line "powerful trainer"
+	cont "owns the storage"
+	cont "building here."
+
+	para "He might prove to"
+	line "be a great ally."
+
+	para "Thing is, no one"
+	line "really sees him."
+
+	para "Maybe we'll have to"
+	line "check back later."
+	done
+
+ViridianPokecenter1FRivalText2:
 	text "I heard a rich and"
 	line "powerful trainer"
 	cont "owns the storage"

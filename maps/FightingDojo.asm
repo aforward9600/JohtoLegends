@@ -215,7 +215,7 @@ FightingDojo_MapEvents:
 
 	db 4 ; bg events
 	bg_event  4,  0, BGEVENT_READ, FightingDojoSign1
-	bg_event  5,  0, BGEVENT_READ, FightingDojoSign2Text
+	bg_event  5,  0, BGEVENT_READ, FightingDojoSign2
 	bg_event  2,  9, BGEVENT_READ, SaffronGymStatue
 	bg_event  7,  9, BGEVENT_READ, SaffronGymStatue
 

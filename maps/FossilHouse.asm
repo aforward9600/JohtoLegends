@@ -171,7 +171,7 @@ ScientistScript:
 KimScript:
 	faceplayer
 	opentext
-	trade NPC_TRADE_KIM
+	trade NPC_TRADE_EMY
 	waitbutton
 	closetext
 	end

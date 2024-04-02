@@ -14,8 +14,8 @@ TrainerBikerBuford:
 	writetext BikerBufordAfterText
 	waitbutton
 	closetext
-;	checkevent EVENT_SET_FLAGS_IN_KANTO
-;	iftrue .IgnoreFlags
+	checkevent EVENT_SET_FLAGS_IN_KANTO
+	iftrue .IgnoreFlags
 	setevent EVENT_VIRIDIAN_CITY_CIVILLIANS
 	setevent EVENT_CINNABAR_MANSION_1F_GIOVANNI
 	setevent EVENT_FED_HIDEOUT_GIOVANNI
@@ -39,7 +39,7 @@ TrainerBikerBuford:
 	setevent EVENT_SEAFOAM_ISLAND_BOULDER_B3F_2
 	setevent EVENT_SEAFOAM_ISLAND_BOULDER_B4F_2
 	setevent EVENT_SEAFOAM_ISLAND_BOULDER_B4F_1
-;	setevent EVENT_SET_FLAGS_IN_KANTO
+	setevent EVENT_SET_FLAGS_IN_KANTO
 .IgnoreFlags:
 	end
 

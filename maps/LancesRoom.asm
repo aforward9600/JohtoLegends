@@ -252,6 +252,10 @@ LancesRoomChallengerScript:
 	closetext
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .ChallengerFemale
+	checkevent EVENT_RIVAL_GIVES_UP_LUGIA
+	iftrue .DahliaSkarmory
+	checkevent EVENT_RIVAL_GIVES_UP_HO_OH
+	iftrue .DahliaSkarmory
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .DahliaDragoniteBattle
 	checkevent EVENT_GOT_SILVER_WING
@@ -259,23 +263,27 @@ LancesRoomChallengerScript:
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DAHLIA, CHALLENGER_DAHLIA_1
-;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-;	ifequal LOSE, .AfterChampionLoss
-	sjump .AfterChampionBattle
+	sjump .StartBattle
+
+.DahliaSkarmory:
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
+	iftrue .DahliaTyranitarSkarmory
+	winlosstext ChallengerWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL2
+	loadtrainer CHALLENGER_DAHLIA, CHALLENGER_DAHLIA_5
+	sjump .StartBattle
+
+.DahliaTyranitarSkarmory:
+	winlosstext ChallengerWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL2
+	loadtrainer CHALLENGER_DAHLIA, CHALLENGER_DAHLIA_6
+	sjump .StartBattle
 
 .DahliaTyranitarHoOh
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DAHLIA, CHALLENGER_DAHLIA_3
-;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-;	ifequal LOSE, .AfterChampionLoss
-	sjump .AfterChampionBattle
+	sjump .StartBattle
 
 .DahliaDragoniteBattle
 	checkevent EVENT_GOT_SILVER_WING
@@ -283,25 +291,19 @@ LancesRoomChallengerScript:
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DAHLIA, CHALLENGER_DAHLIA_2
-;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-;	ifequal LOSE, .AfterChampionLoss
-	sjump .AfterChampionBattle
+	sjump .StartBattle
 
 .DahliaDragoniteHoOh
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DAHLIA, CHALLENGER_DAHLIA_4
-;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-;	ifequal LOSE, .AfterChampionLoss
-	sjump .AfterChampionBattle
+	sjump .StartBattle
 
 .ChallengerFemale
+	checkevent EVENT_RIVAL_GIVES_UP_LUGIA
+	iftrue .DracoSkarmory
+	checkevent EVENT_RIVAL_GIVES_UP_HO_OH
+	iftrue .DracoSkarmory
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .DracoDragoniteBattle
 	checkevent EVENT_GOT_SILVER_WING
@@ -309,23 +311,27 @@ LancesRoomChallengerScript:
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DRACO, CHALLENGER_DRACO_1
-;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-;	ifequal LOSE, .AfterChampionLoss
-	sjump .AfterChampionBattle
+	sjump .StartBattle
+
+.DracoSkarmory:
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
+	iftrue .DracoSkarmoryDragonite
+	winlosstext ChallengerWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL2
+	loadtrainer CHALLENGER_DRACO, CHALLENGER_DRACO_5
+	sjump .StartBattle
+
+.DracoSkarmoryDragonite:
+	winlosstext ChallengerWinText, ChampionLoseText
+	setlasttalked LANCESROOM_RIVAL2
+	loadtrainer CHALLENGER_DRACO, CHALLENGER_DRACO_6
+	sjump .StartBattle
 
 .DracoTyranitarHoOh
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DRACO, CHALLENGER_DRACO_3
-;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-;	ifequal LOSE, .AfterChampionLoss
-	sjump .AfterChampionBattle
+	sjump .StartBattle
 
 .DracoDragoniteBattle
 	checkevent EVENT_GOT_SILVER_WING
@@ -333,25 +339,20 @@ LancesRoomChallengerScript:
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DRACO, CHALLENGER_DRACO_2
-;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-;	ifequal LOSE, .AfterChampionLoss
-	sjump .AfterChampionBattle
+	sjump .StartBattle
 
 .DracoDragoniteHoOh
 	winlosstext ChallengerWinText, ChampionLoseText
 	setlasttalked LANCESROOM_RIVAL2
 	loadtrainer CHALLENGER_DRACO, CHALLENGER_DRACO_4
+	sjump .StartBattle
+
+.StartBattle:
 ;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 ;	ifequal LOSE, .AfterChampionLoss
-	sjump .AfterChampionBattle
-
-.AfterChampionBattle:
 	sjump AfterChampionBattle
 
 .CynthiaCanAppear:

@@ -45,6 +45,7 @@ ViridianGymBlueScript:
 	setevent EVENT_CINNABAR_GYM_BLAINE
 	setevent EVENT_CELADON_CITY_GUARD
 	setevent EVENT_DECO_CARPET_4
+	setevent EVENT_KANTO_POKECENTER_RIVAL
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
 	disappear VIRIDIANGYM_GIOVANNI

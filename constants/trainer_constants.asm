@@ -99,6 +99,8 @@ CHRIS EQU __enum__
 	const CHAMP_DAHLIA_2
 	const CHAMP_DAHLIA_3
 	const CHAMP_DAHLIA_4
+	const CHAMP_DAHLIA_5
+	const CHAMP_DAHLIA_6
 
 	trainerclass FLINT ; 11
 	const FLINT1
@@ -512,6 +514,7 @@ CHRIS EQU __enum__
 	const BIKER_KEVIN
 	const JAMIE
 	const BURGESS
+	const BLAZER
 
 	trainerclass BLAINE ; 2e
 	const BLAINE1
@@ -899,18 +902,24 @@ CHRIS EQU __enum__
 	const CHAMP_DRACO_2
 	const CHAMP_DRACO_3
 	const CHAMP_DRACO_4
+	const CHAMP_DRACO_5
+	const CHAMP_DRACO_6
 
 	trainerclass CHALLENGER_DAHLIA
 	const CHALLENGER_DAHLIA_1
 	const CHALLENGER_DAHLIA_2
 	const CHALLENGER_DAHLIA_3
 	const CHALLENGER_DAHLIA_4
+	const CHALLENGER_DAHLIA_5
+	const CHALLENGER_DAHLIA_6
 
 	trainerclass CHALLENGER_DRACO
 	const CHALLENGER_DRACO_1
 	const CHALLENGER_DRACO_2
 	const CHALLENGER_DRACO_3
 	const CHALLENGER_DRACO_4
+	const CHALLENGER_DRACO_5
+	const CHALLENGER_DRACO_6
 
 	trainerclass CHALLENGER_CYNTHIA
 	const CHALLENGER_CYNTHIA_1
@@ -930,6 +939,7 @@ CHRIS EQU __enum__
 	const ELLY
 	const AYASE
 	const CHIE
+	const YUKARI
 
 	trainerclass SENSATIONAL2
 	const DAISY
@@ -957,6 +967,7 @@ CHRIS EQU __enum__
 	const ULYSSES
 	const DOUGLAS
 	const GRANT
+	const MCCLELLAN
 
 	trainerclass KARATE_KING
 	const KOICHI

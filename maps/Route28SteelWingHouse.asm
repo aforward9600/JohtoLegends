@@ -18,6 +18,7 @@ FerropexolaScript:
 	loadtrainer FERROPEXOLA_TRAINER, FERROPEXOLA1
 	startbattle
 	reloadmapafterbattle
+	opentext
 	writetext FerropexolaGoldTrophyText
 	buttonsound
 	waitsfx

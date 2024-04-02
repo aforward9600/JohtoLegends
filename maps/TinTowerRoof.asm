@@ -39,9 +39,6 @@ TinTowerRoof_MapScripts:
 	iffalse .NoAppear
 	checkevent EVENT_RIVAL_GIVES_UP_HO_OH
 	iffalse .NoAppear
-	return
-
-.Appear:
 	checkevent EVENT_TIN_TOWER_1F_WISE_TRIO_1
 	iffalse .NoAppear
 	appear TINTOWERROOF_HO_OH

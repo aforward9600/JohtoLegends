@@ -1662,6 +1662,110 @@ endc
 	dw OUTRAGE, DRAGON_DANCE, DUALWINGBEAT, EARTHQUAKE
 	db -1 ; end
 
+	next_list_item ; CHAMPION_DAHLIA (3)
+	db "<RIVAL>@", TRAINERTYPE_ITEM_MOVES
+	db 67
+	dw POLIWRATH
+if DEF(_CHALLENGE)
+	db BLACKBELT
+else
+	db NO_ITEM
+endc
+	dw ICE_PUNCH, CLOSE_COMBAT, HYPNOSIS, WAVE_CRASH
+	db 67
+	dw SYLVEON
+if DEF(_CHALLENGE)
+	db LEFTOVERS
+else
+	db NO_ITEM
+endc
+	dw MOONBLAST, LIGHT_SCREEN, RECOVER, SHADOW_BALL
+	db 67
+	dw MAMOSWINE
+if DEF(_CHALLENGE)
+	db QUICK_CLAW
+else
+	db NO_ITEM
+endc
+	dw EARTHQUAKE, ICICLE_CRASH, STONE_EDGE, HAIL
+	db 67
+	dw RAICHU
+if DEF(_CHALLENGE)
+	db LIGHT_BALL
+else
+	db NO_ITEM
+endc
+	dw THUNDERBOLT, SURF, NASTY_PLOT, GRASS_KNOT
+	db 67
+	dw SKARMORY
+if DEF(_CHALLENGE)
+	db LEFTOVERS
+else
+	db NO_ITEM
+endc
+	dw DRILL_PECK, NIGHT_SLASH, IRON_HEAD, ROOST
+	db 68
+	dw TYRANITAR
+if DEF(_CHALLENGE)
+	db LIFE_ORB
+else
+	db SITRUS_BERRY
+endc
+	dw STONE_EDGE, CRUNCH, CLOSE_COMBAT, EARTHQUAKE
+	db -1 ; end
+
+	next_list_item ; CHAMPION_DAHLIA (4)
+	db "<RIVAL>@", TRAINERTYPE_ITEM_MOVES
+	db 67
+	dw POLIWRATH
+if DEF(_CHALLENGE)
+	db BLACKBELT
+else
+	db NO_ITEM
+endc
+	dw ICE_PUNCH, CLOSE_COMBAT, HYPNOSIS, WAVE_CRASH
+	db 67
+	dw SYLVEON
+if DEF(_CHALLENGE)
+	db LEFTOVERS
+else
+	db NO_ITEM
+endc
+	dw MOONBLAST, LIGHT_SCREEN, RECOVER, SHADOW_BALL
+	db 67
+	dw MAMOSWINE
+if DEF(_CHALLENGE)
+	db QUICK_CLAW
+else
+	db NO_ITEM
+endc
+	dw EARTHQUAKE, ICICLE_CRASH, STONE_EDGE, HAIL
+	db 67
+	dw RAICHU
+if DEF(_CHALLENGE)
+	db LIGHT_BALL
+else
+	db NO_ITEM
+endc
+	dw THUNDERBOLT, SURF, NASTY_PLOT, GRASS_KNOT
+	db 67
+	dw SKARMORY
+if DEF(_CHALLENGE)
+	db LEFTOVERS
+else
+	db NO_ITEM
+endc
+	dw DRILL_PECK, NIGHT_SLASH, IRON_HEAD, ROOST
+	db 68
+	dw DRAGONITE
+if DEF(_CHALLENGE)
+	db LIFE_ORB
+else
+	db SITRUS_BERRY
+endc
+	dw OUTRAGE, DRAGON_DANCE, DUALWINGBEAT, EARTHQUAKE
+	db -1 ; end
+
 	end_list_items
 
 FlintGroup:
@@ -1709,7 +1813,7 @@ elif DEF(_FAITHFUL)
 	db NO_ITEM
 	dw BUG_BUZZ, AIR_SLASH, NASTY_PLOT, HYPER_VOICE
 else
-	db YANMEGA
+	dw YANMEGA
 	db NO_ITEM
 	dw SIGNAL_WAVE, JURASSICBEAM, NASTY_PLOT, HYPER_VOICE
 endc
@@ -5329,11 +5433,11 @@ SailorGroup:
 	db -1 ; end
 
 	next_list_item ; SAILOR (2)
-	db "HUEY@", TRAINERTYPE_NORMAL
-	db 18
-	dw POLIWAG
-	db 18
-	dw POLIWHIRL
+	db "Hewbert@", TRAINERTYPE_NORMAL
+	db 73
+	dw MACHAMP
+	db 73
+	dw KINGLER
 	db -1 ; end
 
 	next_list_item ; SAILOR (3)
@@ -6270,6 +6374,14 @@ endc
 	dw AZUMARILL
 	db 74
 	dw CACTURNE
+	db -1 ; end
+
+	next_list_item ; BIKER Route 11
+	db "Blazer@", TRAINERTYPE_NORMAL
+	db 73
+	dw CHARIZARD
+	db 73
+	dw SANDSLASH
 	db -1 ; end
 
 	end_list_items
@@ -9135,6 +9247,8 @@ endc
 
 	end_list_items
 
+SECTION "Enemy Trainer Parties 3", ROMX
+
 MasterGroup:
 	next_list_item ; MASTER1
 	db "Master@", TRAINERTYPE_ITEM_MOVES
@@ -9245,8 +9359,6 @@ endc
 	db -1 ; end
 
 	end_list_items
-
-SECTION "Enemy Trainer Parties 3", ROMX
 
 GenSurgeGroup:
 	next_list_item ; GEN_SURGE
@@ -11965,17 +12077,17 @@ LinkTrainerGroup:
 FedLeaderGroup:
 	next_list_item ; PAXTON
 	db "Paxton@", TRAINERTYPE_NORMAL
-	db 50
+	db 79
 	dw GARDEVOIR
-	db 50
+	db 79
 	dw WEAVILE
-	db 50
+	db 79
 	dw MACHAMP
-	db 50
+	db 79
 	dw BLASTOISE
-	db 50
+	db 79
 	dw MANECTRIC
-	db 50
+	db 80
 	dw SCIZOR
 	db -1 ; end
 
@@ -12180,6 +12292,110 @@ else
 	db NO_ITEM
 endc
 	dw SACRED_FIRE, DUALWINGBEAT, EARTHQUAKE, ROOST
+	db 68
+	dw DRAGONITE
+if DEF(_CHALLENGE)
+	db LIFE_ORB
+else
+	db SITRUS_BERRY
+endc
+	dw OUTRAGE, DRAGON_DANCE, DUALWINGBEAT, EARTHQUAKE
+	db -1 ; end
+
+	next_list_item ; CHAMPION_DRACO (3)
+	db "<RIVAL>@", TRAINERTYPE_ITEM_MOVES
+	db 67
+	dw POLIWRATH
+if DEF(_CHALLENGE)
+	db BLACKBELT
+else
+	db NO_ITEM
+endc
+	dw ICE_PUNCH, CLOSE_COMBAT, HYPNOSIS, WAVE_CRASH
+	db 67
+	dw SYLVEON
+if DEF(_CHALLENGE)
+	db LEFTOVERS
+else
+	db NO_ITEM
+endc
+	dw MOONBLAST, LIGHT_SCREEN, RECOVER, SHADOW_BALL
+	db 67
+	dw MAMOSWINE
+if DEF(_CHALLENGE)
+	db QUICK_CLAW
+else
+	db NO_ITEM
+endc
+	dw EARTHQUAKE, ICICLE_CRASH, STONE_EDGE, HAIL
+	db 67
+	dw RAICHU
+if DEF(_CHALLENGE)
+	db LIGHT_BALL
+else
+	db NO_ITEM
+endc
+	dw THUNDERBOLT, SURF, NASTY_PLOT, GRASS_KNOT
+	db 67
+	dw SKARMORY
+if DEF(_CHALLENGE)
+	db LEFTOVERS
+else
+	db NO_ITEM
+endc
+	dw DRILL_PECK, NIGHT_SLASH, IRON_HEAD, ROOST
+	db 68
+	dw TYRANITAR
+if DEF(_CHALLENGE)
+	db LIFE_ORB
+else
+	db SITRUS_BERRY
+endc
+	dw STONE_EDGE, CRUNCH, CLOSE_COMBAT, EARTHQUAKE
+	db -1 ; end
+
+	next_list_item ; CHAMPION_DRACO (4)
+	db "<RIVAL>@", TRAINERTYPE_ITEM_MOVES
+	db 67
+	dw POLIWRATH
+if DEF(_CHALLENGE)
+	db BLACKBELT
+else
+	db NO_ITEM
+endc
+	dw ICE_PUNCH, CLOSE_COMBAT, HYPNOSIS, WAVE_CRASH
+	db 67
+	dw SYLVEON
+if DEF(_CHALLENGE)
+	db LEFTOVERS
+else
+	db NO_ITEM
+endc
+	dw MOONBLAST, LIGHT_SCREEN, RECOVER, SHADOW_BALL
+	db 67
+	dw MAMOSWINE
+if DEF(_CHALLENGE)
+	db QUICK_CLAW
+else
+	db NO_ITEM
+endc
+	dw EARTHQUAKE, ICICLE_CRASH, STONE_EDGE, HAIL
+	db 67
+	dw RAICHU
+if DEF(_CHALLENGE)
+	db LIGHT_BALL
+else
+	db NO_ITEM
+endc
+	dw THUNDERBOLT, SURF, NASTY_PLOT, GRASS_KNOT
+	db 67
+	dw SKARMORY
+if DEF(_CHALLENGE)
+	db LEFTOVERS
+else
+	db NO_ITEM
+endc
+	dw DRILL_PECK, NIGHT_SLASH, IRON_HEAD, ROOST
 	db 68
 	dw DRAGONITE
 if DEF(_CHALLENGE)
@@ -12411,6 +12627,7 @@ endc
 	dw THUNDERBOLT, SURF, THUNDER_WAVE, GRASS_KNOT
 	db 73
 	dw ARCANINE
+	db NO_ITEM
 	dw EXTREMESPEED, FLARE_BLITZ, PLAY_ROUGH, WILL_O_WISP
 	db -1 ; end
 
@@ -12471,6 +12688,12 @@ endc
 	dw FARIGIRAF
 	db NO_ITEM
 	dw PSYCHIC_M, NASTY_PLOT, HYPER_BEAM, MOONBLAST
+	db -1 ; end
+
+	next_list_item ; DELINQUENT15 Route 11
+	db "Yukari@", TRAINERTYPE_NORMAL
+	db 74
+	dw PIDGEOT
 	db -1 ; end
 
 	end_list_items
@@ -12642,6 +12865,7 @@ endc
 	dw THUNDERBOLT, SURF, NASTY_PLOT, GRASS_KNOT
 	db 75
 	dw AERODACTYL
+	db NO_ITEM
 	dw DUALWINGBEAT, STONE_EDGE, EARTHQUAKE, ROCK_WRECKER
 	db -1 ; end
 
@@ -12659,7 +12883,7 @@ endc
 	db -1 ; end
 
 	next_list_item ; ROUGHNECK (6) Route 17
-	db "Curly@", TRAINERTYPE_MOVES
+	db "Curly@", TRAINERTYPE_NORMAL
 	db 74
 	dw SCIZOR
 	db 74
@@ -12837,6 +13061,16 @@ endc
 	db 73
 	dw GOROTORA
 	dw THUNDERBOLT, NIGHT_SLASH, PLAY_ROUGH, SLACK_OFF
+	db -1 ; end
+
+	next_list_item ; SOLDIER(6) Route 11
+	db "McClellan@",  TRAINERTYPE_NORMAL
+	db 72
+	dw GOLEM
+	db 72
+	dw OCTILLERY
+	db 72
+	dw WEEZING
 	db -1 ; end
 
 	end_list_items

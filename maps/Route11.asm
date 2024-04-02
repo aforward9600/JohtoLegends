@@ -1,8 +1,8 @@
 	object_const_def ; object_event constants
-	const ROUTE11_YOUNGSTER1
-	const ROUTE11_YOUNGSTER2
-	const ROUTE11_YOUNGSTER3
-	const ROUTE11_YOUNGSTER4
+	const ROUTE11_DAISY
+	const ROUTE11_SAILOR
+	const ROUTE11_BIKER
+	const ROUTE11_SOLDIER
 	const ROUTE11_FRUIT_TREE
 
 Route11_MapScripts:
@@ -10,46 +10,46 @@ Route11_MapScripts:
 
 	db 0 ; callbacks
 
-TrainerYoungsterOwen:
-	trainer YOUNGSTER, OWEN, EVENT_BEAT_YOUNGSTER_OWEN, YoungsterOwenSeenText, YoungsterOwenBeatenText, 0, .Script
+TrainerDelinquentYukari:
+	trainer DELINQUENT, YUKARI, EVENT_BEAT_YOUNGSTER_OWEN, DelinquentYukariSeenText, DelinquentYukariBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext YoungsterOwenAfterBattleText
+	writetext DelinquentYukariAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerYoungsterJason:
-	trainer YOUNGSTER, JASON, EVENT_BEAT_YOUNGSTER_JASON, YoungsterJasonSeenText, YoungsterJasonBeatenText, 0, .Script
+TrainerSailorHewbert:
+	trainer SAILOR, HUEY1, EVENT_BEAT_YOUNGSTER_JASON, SailorHewbertSeenText, SailorHewbertBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext YoungsterJasonAfterBattleText
+	writetext SailorHewbertAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPsychicHerman:
-	trainer PSYCHIC_T, HERMAN, EVENT_BEAT_PSYCHIC_HERMAN, PsychicHermanSeenText, PsychicHermanBeatenText, 0, .Script
+TrainerBikerBlazer:
+	trainer BIKER, BLAZER, EVENT_BEAT_PSYCHIC_HERMAN, BikerBlazerSeenText, BikerBlazerBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PsychicHermanAfterBattleText
+	writetext BikerBlazerAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPsychicFidel:
-	trainer PSYCHIC_T, FIDEL, EVENT_BEAT_PSYCHIC_FIDEL, PsychicFidelSeenText, PsychicFidelBeatenText, 0, .Script
+TrainerSoldierMcClellan:
+	trainer SOLDIER, MCCLELLAN, EVENT_BEAT_PSYCHIC_FIDEL, SoldierMcClellanSeenText, SoldierMcClellanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PsychicFidelAfterBattleText
+	writetext SoldierMcClellanAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -63,84 +63,75 @@ Route11FruitTree:
 Route11HiddenRevive:
 	hiddenitem REVIVE, EVENT_ROUTE_11_HIDDEN_REVIVE
 
-YoungsterOwenSeenText:
-	text "There's no cheat-"
-	line "ing in #MON."
+SoldierMcClellanSeenText:
+	text "Halt!"
 
-	para "Let's keep it fair"
-	line "and square!"
+	para "No Feds allowed"
+	line "in town!"
 	done
 
-YoungsterOwenBeatenText:
-	text "Huh? How did this"
-	line "happen?"
+SoldierMcClellanBeatenText:
+	text "Man down!"
+	line "Man down!"
 	done
 
-YoungsterOwenAfterBattleText:
-	text "I fought fair and"
-	line "square with honor."
+SoldierMcClellanAfterBattleText:
+	text "Ah, you're not a"
+	line "Fed!"
 
-	para "I don't regret"
-	line "this at all."
+	para "My mistake!"
 	done
 
-YoungsterJasonSeenText:
-	text "It itches and"
-	line "tickles a bit when"
+BikerBlazerSeenText:
+	text "Stupid soldiers!"
 
-	para "I wear shorts in"
-	line "the grass."
+	para "Vermillion should"
+	line "be ours!"
 	done
 
-YoungsterJasonBeatenText:
-	text "Aiyaaah!"
-	line "I got stomped!"
+BikerBlazerBeatenText:
+	text "Stupid trainer!"
 	done
 
-YoungsterJasonAfterBattleText:
-	text "I'm going to catch"
-	line "more #MON in"
-	cont "the grass."
+BikerBlazerAfterBattleText:
+	text "Everything's stupid"
+	line "and I hate it!"
 	done
 
-PsychicHermanSeenText:
-	text "…"
+SailorHewbertSeenText:
+	text "Hold it, evil-"
+	line "doer!"
 	done
 
-PsychicHermanBeatenText:
-	text "…"
+SailorHewbertBeatenText:
+	text "Thar she blows!"
 	done
 
-PsychicHermanAfterBattleText:
-	text "…"
+SailorHewbertAfterBattleText:
+	text "Since I can't sail"
+	line "the seas, I just"
+	cont "decided to guard"
+	cont "Vermillion City!"
 
-	para "I lost while I had"
-	line "my eyes closed…"
+	para "Might as well make"
+	line "myself useful!"
 	done
 
-PsychicFidelSeenText:
-	text "I can see it…"
-
-	para "Everything to see"
-	line "about you…"
+DelinquentYukariSeenText:
+	text "Buzz off, kid!"
 	done
 
-PsychicFidelBeatenText:
-	text "I couldn't foresee"
-	line "your power…"
+DelinquentYukariBeatenText:
+	text "Whatever!"
 	done
 
-PsychicFidelAfterBattleText:
-	text "Strength in con-"
-	line "viction…"
-
-	para "You're strong be-"
-	line "cause you believe"
-	cont "in your #MON."
+DelinquentYukariAfterBattleText:
+	text "I'm not in the mood"
+	line "to deal with you!"
 	done
 
 Route11SignText:
-	text "ROUTE 11"
+	text "Route 11"
 	done
 
 Route11_MapEvents:
@@ -155,8 +146,8 @@ Route11_MapEvents:
 	bg_event 32,  5, BGEVENT_ITEM, Route11HiddenRevive
 
 	db 5 ; object events
-	object_event 22, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterOwen, -1
-	object_event 20,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterJason, -1
-	object_event 28,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicHerman, -1
-	object_event  8,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicFidel, -1
+	object_event 22, 14, SPRITE_DAISY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerDelinquentYukari, -1
+	object_event 20,  4, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSailorHewbert, -1
+	object_event 28,  7, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBikerBlazer, -1
+	object_event  8,  6, SPRITE_ENGINEER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSoldierMcClellan, -1
 	object_event 32,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route11FruitTree, -1

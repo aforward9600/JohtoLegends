@@ -234,18 +234,6 @@ TwelthElevator1F:
 	end
 
 ResetElevators:
-	clearevent EVENT_GYM_FIRST_ELEVATOR
-	clearevent EVENT_GYM_SECOND_ELEVATOR
-	clearevent EVENT_GYM_THIRD_ELEVATOR
-	clearevent EVENT_GYM_FOURTH_ELEVATOR
-	clearevent EVENT_GYM_FIFTH_ELEVATOR
-	clearevent EVENT_GYM_SIXTH_ELEVATOR
-	clearevent EVENT_GYM_SEVENTH_ELEVATOR
-	clearevent EVENT_GYM_EIGHTH_ELEVATOR
-	clearevent EVENT_GYM_NINTH_ELEVATOR
-	clearevent EVENT_GYM_TENTH_ELEVATOR
-	clearevent EVENT_GYM_ELEVENTH_ELEVATOR
-	clearevent EVENT_GYM_TWELTH_ELEVATOR
 	end
 
 GentlemanCrofton1FSeenText:

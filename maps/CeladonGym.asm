@@ -46,6 +46,7 @@ CeladonGymErikaScript:
 .FightDone:
 	checkevent EVENT_GOT_TM19_GIGA_DRAIN
 	iftrue .GotGigaDrain
+	opentext
 	writetext ErikaExplainTMText
 	buttonsound
 	checkitem TM_ENERGY_BALL

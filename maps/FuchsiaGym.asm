@@ -39,6 +39,7 @@ FuchsiaGymKogaScript:
 .AfterBattle:
 	checkevent EVENT_GOT_TM06_TOXIC
 	iftrue .AfterTM
+	opentext
 	writetext KogaText_ToxicSpeech
 	buttonsound
 	checkitem TM_TOXIC
@@ -229,7 +230,7 @@ KogaText_Welcome:
 	line "further!"
 
 	para "I, ninja master"
-	line "Koga, except this"
+	line "Koga, accept this"
 	cont "burden!"
 
 	para "Come and test me!"

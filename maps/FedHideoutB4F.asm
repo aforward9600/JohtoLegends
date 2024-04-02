@@ -85,6 +85,7 @@ BikerBossMovement2:
 	clearevent EVENT_CERULEAN_CITY_CIVILLIANS
 	clearevent EVENT_PEWTER_CITY_CIVILLIANS
 	setevent EVENT_KANTO_POKECENTER_RIVAL
+	setevent EVENT_BEAT_BIKER_BOSS
 	setscene SCENE_FINISHED
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes

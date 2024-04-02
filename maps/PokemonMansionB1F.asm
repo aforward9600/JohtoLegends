@@ -275,18 +275,6 @@ PokemonMansionB1FScientist3:
 
 ScientistStopsYou:
 	opentext
-	checkevent EVENT_TALKED_WITH_RIVAL_IN_VIRIDIAN
-	iftrue .GiovanniTalks
-	turnobject POKEMONMANSIONB1F_SCIENTIST3, DOWN
-	turnobject PLAYER, UP
-	writetext PokemonMansionB1FScientist3Text
-	waitbutton
-	closetext
-	applymovement PLAYER, ScientistStopsYouMovement
-	turnobject POKEMONMANSIONB1F_SCIENTIST3, UP
-	end
-
-.GiovanniTalks:
 	writetext ThatsItThenText
 	waitbutton
 	closetext

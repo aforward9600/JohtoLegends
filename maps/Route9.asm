@@ -170,7 +170,8 @@ DelinquentMakotoSeenText:
 	done
 
 DelinquentMakotoBeatenText:
-	text "This is boring too…"
+	text "This is boring"
+	line "too…"
 	done
 
 DelinquentMakotoAfterBattleText:
