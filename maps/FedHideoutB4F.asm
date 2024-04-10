@@ -134,6 +134,7 @@ BikerBossMovement2:
 	applymovement PLAYER, PlayerAppearsMovement
 	special ReloadSpritesNoPalettes
 	pause 45
+	loadmem wLevelCap, 100
 	warp CELADON_CITY, 20, 20
 	blackoutmod CELADON_CITY
 	end

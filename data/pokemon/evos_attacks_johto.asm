@@ -470,7 +470,7 @@ PorygonZEvosAttacks:
 OmanyteEvosAttacks:
 	dbbw EVOLVE_LEVEL, 30, OMASTAR
 	db 0 ; no more evolutions
-	dbw 1, CONSTRICT
+	dbw 1, TACKLE
 	dbw 1, WITHDRAW
 	dbw 7, BITE
 	dbw 10, WATER_GUN
@@ -490,7 +490,7 @@ OmastarEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, SPIKE_CANNON
 	dbw 1, SPIKE_CANNON
-	dbw 1, CONSTRICT
+	dbw 1, TACKLE
 	dbw 1, WITHDRAW
 	dbw 7, BITE
 	dbw 10, WATER_GUN

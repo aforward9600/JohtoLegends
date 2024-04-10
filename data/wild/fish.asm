@@ -28,7 +28,7 @@ FishGroups:
 .Shore_Good:
 	dbbw  35 percent,     20, MAGIKARP
 	dbbw  70 percent,     20, KRABBY
-	dbbw  90 percent + 1, 20, KRABBY
+	dbbw  90 percent + 1, 20, HORSEA
 	dbbw 100 percent,      0, TIME_GROUP
 .Shore_Super:
 	dbbw  40 percent,     40, KRABBY

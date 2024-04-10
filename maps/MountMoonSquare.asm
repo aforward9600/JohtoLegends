@@ -86,34 +86,44 @@ PlayerWalksUpToDancingClefairies:
 	step_end
 
 ClefairyDanceStep1:
-	slow_step DOWN
-	slow_jump_step DOWN
+;	slow_step DOWN
+;	slow_jump_step DOWN
+	step DOWN
+	jump_step DOWN
 	step_end
 
 ClefairyDanceStep2:
-	slow_jump_step RIGHT
+;	slow_jump_step RIGHT
+	jump_step RIGHT
 	step_end
 
 ClefairyDanceStep3:
-	slow_step UP
-	slow_jump_step UP
+;	slow_step UP
+;	slow_jump_step UP
+	step UP
+	jump_step UP
 	step_end
 
 ClefairyDanceStep4:
-	slow_jump_step LEFT
+;	slow_jump_step LEFT
+	jump_step LEFT
 	step_end
 
 ClefairyDanceStep5:
-	slow_step DOWN
-	slow_jump_step DOWN
+;	slow_step DOWN
+;	slow_jump_step DOWN
+	step DOWN
+	jump_step DOWN
 	step_end
 
 ClefairyDanceStep6:
-	slow_step DOWN
+;	slow_step DOWN
+	step DOWN
 	step_end
 
 ClefairyDanceStep7:
-	slow_step RIGHT
+;	slow_step RIGHT
+	step RIGHT
 	step_end
 
 ClefairyFleeMovement:

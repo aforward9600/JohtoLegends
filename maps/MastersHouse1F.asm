@@ -120,6 +120,8 @@ DratiniPokeballScript:
 	iftrue ChooseMagikarp
 	checkevent EVENT_PASSWORD_BAMBINO
 	iftrue ChooseElekid
+	checkevent EVENT_PASSWORD_EXTINCT
+	iftrue ChooseOmanyte
 	pokepic DRATINI
 	cry DRATINI
 	waitbutton
@@ -280,6 +282,29 @@ ChooseMewtwo:
 	closetext
 	sjump RivalLarvitarScript
 
+ChooseOmanyte:
+	pokepic OMANYTE
+	cry OMANYTE
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakeOmanyteText
+	yesorno
+	iffalse DidntChooseDratiniScript
+	disappear MASTERSHOUSE1F_POKE_BALL1
+	setevent EVENT_GOT_DRATINI_FROM_MASTER
+	writetext ChoseOmanyteText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, OMANYTE
+	writetext RecievedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke OMANYTE, 5, ORAN_BERRY
+	closetext
+	sjump RivalLarvitarScript
+
 LarvitarPokeballScript:
 	refreshscreen
 	checkevent EVENT_PASSWORD_PSEUDOSWAP
@@ -294,6 +319,8 @@ LarvitarPokeballScript:
 	iftrue ChooseMagby
 	checkevent EVENT_PASSWORD_STUPID
 	iftrue ChooseMagikarp2
+	checkevent EVENT_PASSWORD_EXTINCT
+	iftrue ChooseKabuto
 	pokepic LARVITAR
 	cry LARVITAR
 	waitbutton
@@ -453,6 +480,29 @@ ChooseMagikarp2:
 	givepoke MAGIKARP, 5, ORAN_BERRY
 	closetext
 	sjump RivalDratiniScript
+
+ChooseKabuto:
+	pokepic KABUTO
+	cry KABUTO
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakeKabutoText
+	yesorno
+	iffalse DidntChooseLarvitarScript
+	disappear MASTERSHOUSE1F_POKE_BALL1
+	setevent EVENT_GOT_DRATINI_FROM_MASTER
+	writetext ChoseKabutoText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, KABUTO
+	writetext RecievedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke KABUTO, 5, ORAN_BERRY
+	closetext
+	sjump RivalLarvitarScript
 
 DidntChooseDratiniScript:
 	writetext DidntChooseDratiniText
@@ -720,6 +770,8 @@ MasterPasswordCheck:
 	iftrue .commence2
 	callasm .bambino
 	iftrue .bambino2
+	callasm .fossil
+	iftrue .fossil2
 .stop
 	end
 
@@ -819,6 +871,22 @@ MasterPasswordCheck:
 	setevent EVENT_PASSWORD_BAMBINO
 	end
 
+.fossil:
+	xor a
+	ld [wScriptVar], a
+	ld de, FossilPassword
+	ld hl, wGreensName ; check inputted password
+	ld c, 4
+	call CompareBytes
+	ret nz
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.fossil2:
+	setevent EVENT_PASSWORD_EXTINCT
+	end
+
 PseudoSwapPassword:
 	db "PSEUDO"
 
@@ -836,6 +904,9 @@ CommencePassword:
 
 BambinoPassword:
 	db "BAMBINO"
+
+FossilPassword:
+	db "EXTINCT"
 
 MastersHouse1F_WalkUpMovement:
 	step UP
@@ -1517,6 +1588,27 @@ MasterUnfortunateText:
 	para "Gym Badges. Then I"
 	line "shall test you one"
 	cont "last time."
+	done
+
+TakeOmanyteText:
+	text "Master: Will you"
+	line "take Omanyte, the"
+	cont "Spiral #mon?"
+	done
+
+ChoseOmanyteText:
+	text "Praise Helix."
+	done
+
+TakeKabutoText:
+	text "Master: Will you"
+	line "take Kabuto, the"
+	cont "Shellfish #mon?"
+	done
+
+ChoseKabutoText:
+	text "You're making a"
+	line "mistake."
 	done
 
 MastersHouse1F_MapEvents:

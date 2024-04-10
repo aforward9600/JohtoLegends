@@ -2041,6 +2041,7 @@ CloysterEvosAttacks:
 	dbw 1, PROTECT
 	dbw 13, SPIKE_CANNON
 	dbw 28, ICICLE_CRASH
+	dbw 61, EXPLOSION
 	db 0 ; no more level-up moves
 
 GastlyEvosAttacks:

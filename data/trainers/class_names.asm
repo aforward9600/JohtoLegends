@@ -45,7 +45,7 @@ TrainerClassNames::
 	db "Guitarist@"
 	db "Hiker@"
 	db "Biker@"
-	db "Leader@"
+	db "Researcher@"
 	db "Burglar@"
 	db "Firebreather@"
 	db "Juggler@"

@@ -1,4 +1,4 @@
-roms := johtolegendsv0.1.gbc johtolegendsfaithful.gbc johtolegendschallenge.gbc
+roms := johtolegendsv0.1.gbc johtolegendsfaithful.gbc johtolegendschallenge.gbc johtolegendsfr.gbc johtolegendsfaithfulfr.gbc johtolegendschallengefr.gbc
 
 crystal_obj := \
 audio.o \
@@ -18,6 +18,9 @@ lib/mobile/main.o
 
 johtolegendsfaithful_obj := $(crystal_obj:.o=faithful.o)
 johtolegendschallenge_obj := $(crystal_obj:.o=challenge.o)
+johtolegendsfr_obj := $(crystal_obj:.o=french.o)
+johtolegendsfaithfulfr_obj := $(crystal_obj:.o=faithfulfr.o)
+johtolegendschallengefr_obj := $(crystal_obj:.o=challengefr.o)
 
 ### Build tools
 
@@ -37,7 +40,7 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all faithful challenge clean tidy tools
+.PHONY: all faithful challenge french faithfulfrench challengefrench clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
@@ -45,6 +48,9 @@ RGBLINK ?= $(RGBDS)rgblink
 all: johtolegendsv0.1.gbc
 faithful: johtolegendsfaithful.gbc
 challenge: johtolegendschallenge.gbc
+french: johtolegendsfr.gbc
+faithfulfrench: johtolegendsfaithfulfr.gbc
+challengefrench: johtolegendschallengefr.gbc
 
 clean: tidy
 	find gfx \( -name "*.[12]bpp" -o -name "*.lz" -o -name "*.gbcpal" \) -delete
@@ -52,7 +58,7 @@ clean: tidy
 	$(MAKE) clean -C tools/
 
 tidy:
-	rm -f $(roms) $(crystal_obj) $(johtolegendsfaithful_obj) $(johtolegendschallenge_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
+	rm -f $(roms) $(crystal_obj) $(johtolegendsfaithful_obj) $(johtolegendschallenge_obj) $(johtolegendsfr_obj) $(johtolegendsfaithfulfr_obj) $(johtolegendschallengefr_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
 	$(MAKE) clean -C tools/
 
 compare: $(roms)
@@ -65,6 +71,9 @@ tools:
 $(crystal_obj): RGBASMFLAGS = -D _NORMAL
 $(johtolegendsfaithful_obj): RGBASMFLAGS = -D _FAITHFUL
 $(johtolegendschallenge_obj): RGBASMFLAGS = -D _CHALLENGE
+$(johtolegendsfr_obj): RGBASMFLAGS = -D _FRENCH
+$(johtolegendsfaithfulfr_obj): RGBASMFLAGS = -D _FAITHFULFRENCH -D _FAITHFUL -D _FRENCH
+$(johtolegendschallengefr_obj): RGBASMFLAGS = -D _CHALLENGEFRENCH -D _CHALLENGE -D _FRENCH
 
 # The dep rules have to be explicit or else missing files won't be reported.
 # As a side effect, they're evaluated immediately instead of when the rule is invoked.
@@ -82,6 +91,9 @@ $(info $(shell $(MAKE) -C tools))
 
 $(foreach obj, $(johtolegendsfaithful_obj), $(eval $(call DEP,$(obj),$(obj:faithful.o=.asm))))
 $(foreach obj, $(johtolegendschallenge_obj), $(eval $(call DEP,$(obj),$(obj:challenge.o=.asm))))
+$(foreach obj, $(johtolegendsfr_obj), $(eval $(call DEP,$(obj),$(obj:french.o=.asm))))
+$(foreach obj, $(johtolegendsfaithfulfr_obj), $(eval $(call DEP,$(obj),$(obj:faithfulfr.o=.asm))))
+$(foreach obj, $(johtolegendschallengefr_obj), $(eval $(call DEP,$(obj),$(obj:challengefr.o=.asm))))
 $(foreach obj, $(crystal_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 
 endif
@@ -101,6 +113,21 @@ johtolegendschallenge.gbc: $(johtolegendschallenge_obj) pokecrystal.link
 	$(RGBLINK) -n johtolegendschallenge.sym -m johtolegendschallenge.map -l pokecrystal.link -o $@ $(johtolegendschallenge_obj)
 	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_CRYSTAL $@
 	tools/sort_symfile.sh johtolegendschallenge.sym
+
+johtolegendsfr.gbc: $(johtolegendsfr_obj) pokecrystal.link
+	$(RGBLINK) -n johtolegendsfr.sym -m johtolegendsfr.map -l pokecrystal.link -o $@ $(johtolegendsfr_obj)
+	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_CRYSTAL $@
+	tools/sort_symfile.sh johtolegendsfr.sym
+
+johtolegendsfaithfulfr.gbc: $(johtolegendsfaithfulfr_obj) pokecrystal.link
+	$(RGBLINK) -n johtolegendsfaithfulfr.sym -m johtolegendsfaithfulfr.map -l pokecrystal.link -o $@ $(johtolegendsfaithfulfr_obj)
+	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_CRYSTAL $@
+	tools/sort_symfile.sh johtolegendsfaithfulfr.sym
+
+johtolegendschallengefr.gbc: $(johtolegendschallengefr_obj) pokecrystal.link
+	$(RGBLINK) -n johtolegendschallengefr.sym -m johtolegendschallengefr.map -l pokecrystal.link -o $@ $(johtolegendschallengefr_obj)
+	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_CRYSTAL $@
+	tools/sort_symfile.sh johtolegendschallengefr.sym
 
 %.lz: hash = $(shell tools/md5 $(*D)/$(*F) | sed "s/\(.\{8\}\).*/\1/")
 %.lz: %

@@ -19,7 +19,7 @@ DragonTamerMDarby:
 	end
 
 DragonTamerFDoris:
-	trainer DRAGON_TAMER_F, DORIS_TAMER, EVENT_BEAT_DRAGON_TAMER_M_DARBY, DragonTamerFDorisSeenText, DragonTamerFDorisBeatenText, 0, .Script
+	trainer DRAGON_TAMER_F, DORIS_TAMER, EVENT_BEAT_DRAGON_TAMER_F_DORIS, DragonTamerFDorisSeenText, DragonTamerFDorisBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

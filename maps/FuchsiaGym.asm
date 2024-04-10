@@ -48,6 +48,7 @@ FuchsiaGymKogaScript:
 	iffalse .AfterTM
 	setevent EVENT_GOT_TM06_TOXIC
 	setevent EVENT_DECO_BED_2
+	opentext
 .AfterTM:
 	writetext KogaText_Ready
 	waitbutton
@@ -55,6 +56,7 @@ FuchsiaGymKogaScript:
 	end
 
 .AlreadyGotTM:
+	opentext
 	writetext AlreadyGotTMText
 	waitbutton
 	closetext

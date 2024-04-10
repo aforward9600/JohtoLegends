@@ -201,6 +201,9 @@ FossilHouse_BrokenComputer:
 FossilHouse_ComputerScreen:
 	jumptext FossilHouse_ComputerScreenText
 
+FossilHouse_FossilPasswordMagazine:
+	jumptext FossilHouse_FossilPasswordMagazineText
+
 FossilHouseScientistText:
 	text "Hi, hi!"
 	line "A scientist, I am!"
@@ -361,6 +364,18 @@ CantGetFossilText:
 	line "revive!"
 	done
 
+FossilHouse_FossilPasswordMagazineText:
+	text "Many species of"
+	line "#mon have gone"
+	cont "EXTINCT over the"
+	cont "years,"
+
+	para "but we are on the"
+	line "verge of being"
+	cont "to bring them back"
+	cont "to life!"
+	done
+
 FossilHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -371,7 +386,7 @@ FossilHouse_MapEvents:
 	db 0 ; coord events
 
 	db 5 ; bg events
-	bg_event  0,  1, BGEVENT_READ, FossilHouse_ScienceMagazines
+	bg_event  0,  1, BGEVENT_READ, FossilHouse_FossilPasswordMagazine
 	bg_event  1,  1, BGEVENT_READ, FossilHouse_ScienceMagazines
 	bg_event  6,  1, BGEVENT_READ, FossilHouse_BrokenComputer
 	bg_event  7,  1, BGEVENT_READ, FossilHouse_BrokenComputer
