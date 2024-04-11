@@ -44,9 +44,9 @@ CeladonGymErikaScript:
 	waitsfx
 	setflag ENGINE_RAINBOWBADGE
 .FightDone:
+	opentext
 	checkevent EVENT_GOT_TM19_GIGA_DRAIN
 	iftrue .GotGigaDrain
-	opentext
 	writetext ErikaExplainTMText
 	buttonsound
 	checkitem TM_ENERGY_BALL
@@ -67,6 +67,7 @@ CeladonGymErikaScript:
 	closetext
 	setevent EVENT_GOT_TM19_GIGA_DRAIN
 	setevent EVENT_DECO_LOTAD_DOLL
+	opentext
 	sjump .GotGigaDrain
 
 .ErikaRematch:

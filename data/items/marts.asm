@@ -531,7 +531,7 @@ MartMooMooMilk:
 	db -1 ; end
 
 MartCinnabarIsland:
-	db 7
+	db 8
 	db HYPER_POTION
 	db FULL_RESTORE
 	db FULL_HEAL
@@ -539,4 +539,5 @@ MartCinnabarIsland:
 	db ESCAPE_ROPE
 	db REVIVE
 	db MAX_REPEL
+	db PP_UP
 	db -1

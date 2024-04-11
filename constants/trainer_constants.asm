@@ -79,6 +79,7 @@ CHRIS EQU __enum__
 
 	trainerclass FLORINA ; b
 	const FLORINA1
+	const FLORINA2
 
 	trainerclass CAL ; c
 	const CAL1
@@ -87,9 +88,11 @@ CHRIS EQU __enum__
 
 	trainerclass MARTHA ; d
 	const MARTHA1
+	const MARTHA2
 
 	trainerclass AGATHA ; e
 	const AGATHA1
+	const AGATHA2
 
 	trainerclass KOGA ; f
 	const KOGA1
@@ -174,8 +177,6 @@ CHRIS EQU __enum__
 	const CARL
 	const PEDRO
 	const JOSE2
-	const PERRY
-	const BRET
 	const JOSE3
 	const VANCE2
 	const VANCE3
@@ -189,7 +190,6 @@ CHRIS EQU __enum__
 	const LAURA
 	const USAGI
 	const MICHELLE
-	const ELLEN
 	const CONNIE2
 	const CONNIE3
 
@@ -210,12 +210,7 @@ CHRIS EQU __enum__
 	const COREY1
 	const ALM
 	const BUMI
-	const ANDY
-	const TYLER
 	const SEAN
-	const KEVIN
-	const STEVE
-	const ALLEN
 	const JOSEPH
 
 	trainerclass COOLTRAINERF ; 1c
@@ -234,9 +229,6 @@ CHRIS EQU __enum__
 	const SOL
 	const CARA
 	const JESSIE
-	const CYBIL
-	const JENN
-	const BETH3
 	const REENA2
 	const REENA3
 	const ELLA
@@ -776,6 +768,7 @@ CHRIS EQU __enum__
 
 	trainerclass GEN_SURGE ; 4a
 	const GEN_SURGE1
+	const GEN_SURGE2
 
 	trainerclass DRAGON_KID ; 4b
 	const LANCE1
@@ -923,6 +916,7 @@ CHRIS EQU __enum__
 
 	trainerclass CHALLENGER_CYNTHIA
 	const CHALLENGER_CYNTHIA_1
+	const CHALLENGER_CYNTHIA_2
 
 	trainerclass DELINQUENT
 	const KAREN

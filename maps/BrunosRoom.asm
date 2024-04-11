@@ -53,6 +53,7 @@ MarthaScript_Battle:
 MarthaBattle:
 	winlosstext MarthaScript_MarthaBeatenText, MarthaLastMonText
 	loadtrainer MARTHA, MARTHA1
+MarthaReconvene:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_MARTHA
@@ -69,10 +70,17 @@ MarthaBattle:
 	waitsfx
 	end
 
+Martha2:
+	winlosstext MarthaScript_MarthaBeatenText, MarthaLastMonText
+	loadtrainer MARTHA, MARTHA2
+	sjump MarthaReconvene
+
 MarthaRematch:
 	writetext MarthaScript_MarthaBeforeText2
 	waitbutton
 	closetext
+	checkevent EVENT_COMPLETED_EPILOGUE
+	iftrue Martha2
 	sjump MarthaBattle
 
 MarthaScript_AfterBattle:

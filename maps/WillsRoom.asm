@@ -53,6 +53,7 @@ FlorinaScript_Battle:
 BattleFlorina:
 	winlosstext FlorinaScript_FlorinaBeatenText, FlorinaLastMonText
 	loadtrainer FLORINA, FLORINA1
+FlorinaReconvene:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_FLORINA
@@ -73,7 +74,14 @@ RematchFlorina:
 	writetext FlorinaScript_FlorinaBeforeText2
 	waitbutton
 	closetext
+	checkevent EVENT_COMPLETED_EPILOGUE
+	iftrue Florina2
 	sjump BattleFlorina
+
+Florina2:
+	winlosstext FlorinaScript_FlorinaBeatenText, FlorinaLastMonText
+	loadtrainer FLORINA, FLORINA2
+	sjump FlorinaReconvene
 
 FlorinaScript_AfterBattle:
 	writetext FlorinaScript_FlorinaDefeatText

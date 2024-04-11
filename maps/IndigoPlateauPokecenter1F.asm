@@ -50,25 +50,7 @@ IndigoPlateauPokecenter1FCooltrainerMScript:
 	jumptextfaceplayer IndigoPlateauPokecenter1FCooltrainerMText
 
 TeleportGuyScript:
-	faceplayer
-	opentext
-	writetext TeleportGuyText1
-	yesorno
-	iffalse .No
-	writetext TeleportGuyYesText
-	waitbutton
-	closetext
-	playsound SFX_WARP_TO
-	special FadeOutPalettes
-	waitsfx
-	warp BLACKTHORN_CITY, 5, 26
-	end
-
-.No:
-	writetext TeleportGuyNoText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer TeleportGuyText1
 
 AbraScript:
 	refreshscreen
@@ -122,56 +104,6 @@ IndigoPlateauPokecenter1FCooltrainerMText:
 	line "start all over!"
 	done
 
-PlateauRivalText1:
-	text "Hold it."
-
-	para "You're going to"
-	line "take the #MON"
-
-	para "LEAGUE challenge"
-	line "now?"
-
-	para "That's not going"
-	line "to happen."
-
-	para "My super-well-"
-	line "trained #MON"
-
-	para "are going to pound"
-	line "you."
-
-	para "<PLAYER>!"
-	line "I challenge you!"
-	done
-
-PlateauRivalWinText:
-	text "…"
-
-	para "OK--I lost…"
-	done
-
-PlateauRivalText2:
-	text "…Darn… I still"
-	line "can't win…"
-
-	para "I… I have to think"
-	line "more about my"
-	cont "#MON…"
-
-	para "Humph! Try not to"
-	line "lose!"
-	done
-
-PlateauRivalLoseText:
-	text "…"
-
-	para "Whew…"
-	line "With my partners,"
-
-	para "I'm going to be"
-	line "the CHAMPION!"
-	done
-
 TeleportGuyText1:
 	text "Ah! You're chal-"
 	line "lenging the Elite"
@@ -188,19 +120,10 @@ TeleportGuyText1:
 	para "It can Teleport"
 	line "you home."
 
-	para "Would you like to"
-	line "go home now?"
-	done
+	para "…Oh, you can just"
+	line "fly there."
 
-TeleportGuyYesText:
-	text "OK, OK. Picture"
-	line "your house in your"
-	cont "mind…"
-	done
-
-TeleportGuyNoText:
-	text "OK, OK. The best"
-	line "of luck to you!"
+	para "…Nevermind…"
 	done
 
 AbraText:

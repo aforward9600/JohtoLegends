@@ -146,7 +146,11 @@ INCLUDE "engine/events/move_deleter.asm"
 INCLUDE "engine/link/mystery_gift_2.asm"
 INCLUDE "engine/items/tmhm.asm"
 INCLUDE "engine/pokemon/print_move_description.asm"
+if DEF(_FRENCH)
+INCLUDE "data/moves/description_french.asm"
+else
 INCLUDE "data/moves/descriptions.asm"
+endc
 INCLUDE "engine/battle/start_battle.asm"
 
 SECTION "Enemy Trainers", ROMX
@@ -253,7 +257,11 @@ INCLUDE "engine/pokemon/switchpartymons.asm"
 INCLUDE "engine/gfx/load_pics.asm"
 INCLUDE "engine/pokemon/move_mon_wo_mail.asm"
 INCLUDE "data/pokemon/base_stats.asm"
+if DEF(_FRENCH)
+INCLUDE "data/pokemon/names_french.asm"
+else
 INCLUDE "data/pokemon/names.asm"
+endc
 
 UnknownEggPic::
 ; Another egg pic. This is shifted up a few pixels.
@@ -285,7 +293,11 @@ SECTION "bank20", ROMX
 INCLUDE "engine/overworld/player_movement.asm"
 INCLUDE "engine/events/engine_flags.asm"
 INCLUDE "engine/overworld/variables.asm"
+if DEF(_FRENCH)
+INCLUDE "data/text/battle_french.asm"
+else
 INCLUDE "data/text/battle.asm"
+endc
 
 
 SECTION "bank21", ROMX
@@ -625,9 +637,17 @@ INCLUDE "data/phone/text/unused.asm"
 
 SECTION "Miscellaneous Text", ROMX
 
+if DEF(_FRENCH)
+INCLUDE "data/items/names_french.asm"
+else
 INCLUDE "data/items/names.asm"
+endc
 INCLUDE "engine/items/print_item_description.asm"
+if DEF(_FRENCH)
+INCLUDE "data/moves/names_french.asm"
+else
 INCLUDE "data/moves/names.asm"
+endc
 INCLUDE "engine/overworld/landmarks.asm"
 
 

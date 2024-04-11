@@ -53,6 +53,7 @@ SurgeScript_Battle:
 SurgeBattle:
 	winlosstext SurgeScript_SurgeBeatenText, GeneralSurgeLastMonText
 	loadtrainer GEN_SURGE, GEN_SURGE1
+SurgeReconvene:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_GEN_SURGE
@@ -69,10 +70,17 @@ SurgeBattle:
 	waitsfx
 	end
 
+Surge2:
+	winlosstext SurgeScript_SurgeBeatenText, GeneralSurgeLastMonText
+	loadtrainer GEN_SURGE, GEN_SURGE2
+	sjump SurgeReconvene
+
 SurgeRematch:
 	writetext SurgeScript_SurgeBeforeText2
 	waitbutton
 	closetext
+	checkevent EVENT_COMPLETED_EPILOGUE
+	iftrue Surge2
 	sjump SurgeBattle
 
 SurgeScript_AfterBattle:

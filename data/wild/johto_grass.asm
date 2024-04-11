@@ -1567,7 +1567,7 @@ JohtoGrassWildMons:
 	; morn
 	dbw 2, PIDGEY
 	dbw 2, SENTRET
-	dbw 2, GEODUDE
+	dbw 2, LEDYBA
 	dbw 2, SKARMINI
 	dbw 2, PHANPY
 	dbw 2, SKARMINI
@@ -1576,7 +1576,7 @@ JohtoGrassWildMons:
 	; day
 	dbw 2, PIDGEY
 	dbw 2, SENTRET
-	dbw 2, GEODUDE
+	dbw 2, LEDYBA
 	dbw 2, SKARMINI
 	dbw 2, PHANPY
 	dbw 2, SKARMINI
@@ -1585,7 +1585,7 @@ JohtoGrassWildMons:
 	; nite
 	dbw 2, HOOTHOOT
 	dbw 2, RATTATA
-	dbw 2, GEODUDE
+	dbw 2, SPINARAK
 	dbw 2, SKARMINI
 	dbw 2, PHANPY
 	dbw 2, SKARMINI
@@ -1777,7 +1777,7 @@ JohtoGrassWildMons:
 	; morn
 	dbw 15, EXEGGCUTE
 	dbw 15, LEDYBA
-	dbw 15, SPINARAK
+	dbw 15, LICKITUNG
 	dbw 15, NIDORAN_M
 	dbw 15, SNUBBULL
 	dbw 15, MUNCHLAX
@@ -1786,7 +1786,7 @@ JohtoGrassWildMons:
 	; day
 	dbw 15, EXEGGCUTE
 	dbw 15, LEDYBA
-	dbw 15, SPINARAK
+	dbw 15, LICKITUNG
 	dbw 15, NIDORAN_M
 	dbw 15, SNUBBULL
 	dbw 15, MUNCHLAX
@@ -1794,8 +1794,8 @@ JohtoGrassWildMons:
 	dbw 15, EEVEE
 	; nite
 	dbw 15, EXEGGCUTE
-	dbw 15, LEDYBA
 	dbw 15, SPINARAK
+	dbw 15, LICKITUNG
 	dbw 15, NIDORAN_M
 	dbw 15, SNUBBULL
 	dbw 15, MUNCHLAX

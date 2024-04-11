@@ -119,7 +119,8 @@ DelinquentJillianAfterText:
 	done
 
 RoughneckCameronSeenText:
-	text "It's just one days…"
+	text "It's just one of"
+	line "those days…"
 	done
 
 RoughneckCameronBeatText:

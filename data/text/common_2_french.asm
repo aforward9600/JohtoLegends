@@ -1507,7 +1507,7 @@ _OakText1::
 	line "l'attente."
 
 	para "Vous pouvez m'app-"
-	line "eler le Maître."
+	line "elez Maître."
 
 	para "I am the elder of"
 	line "Blackthorn City,"

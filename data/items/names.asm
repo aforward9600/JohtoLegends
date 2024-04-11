@@ -70,7 +70,7 @@ ItemNames::
 	db "Gold Leaf@"
 	db "Soft Sand@"
 	db "Sharp Beak@"
-	db "Cherri Berry@"
+	db "Cheri Berry@"
 	db "Aspear Berry@"
 	db "Rawst Berry@"
 	db "Poison Barb@"

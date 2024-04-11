@@ -1512,7 +1512,7 @@ _OakText1::
 	line "world of #mon!"
 
 	para "You may call me"
-	line "the Master."
+	line "Master."
 
 	para "I am the elder of"
 	line "Blackthorn City,"

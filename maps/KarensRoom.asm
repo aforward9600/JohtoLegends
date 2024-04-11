@@ -53,6 +53,7 @@ AgathaScript_Battle:
 AgathaBattle:
 	winlosstext AgathaScript_AgathaBeatenText, AgathaLastMonText
 	loadtrainer AGATHA, AGATHA1
+AgathaReconvene:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_AGATHA
@@ -75,7 +76,14 @@ AgathaRematch:
 	writetext AgathaScript_AgathaBeforeText2
 	waitbutton
 	closetext
+	checkevent EVENT_COMPLETED_EPILOGUE
+	iftrue Agatha2
 	sjump AgathaBattle
+
+Agatha2:
+	winlosstext AgathaScript_AgathaBeatenText, AgathaLastMonText
+	loadtrainer AGATHA, AGATHA2
+	sjump AgathaReconvene
 
 AgathaScript_AfterBattle:
 	writetext AgathaScript_AgathaDefeatText

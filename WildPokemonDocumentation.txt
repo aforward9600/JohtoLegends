@@ -6,8 +6,8 @@ Route 45
 
 Levels 2-5
 
-Morning/Day: Pidgey 30%, Sentret 20%, Geodude 19%, Skarmini 20%, Phanpy 11%
-Night: Hoothoot 30%, Rattata 20%, Geodude 19%, Skarmini 20%, Phanpy 11%
+Morning/Day: Pidgey 30%, Sentret 20%, Skarmini 20%, Ledyba, 15%, Phanpy 11%, Geodude 4%
+Night: Hoothoot 30%, Rattata 20%, Skarmini 20%, Spinarak 15%, Phanpy 11%, Geodude 4%
 Water: Magikarp 80%, Dratini 15%, Gyarados 5%
 Old Rod: Magikarp 100%
 Good Rod: Magikarp 90%, Dratini 10%
@@ -260,7 +260,8 @@ Wild Area 2
 
 Levels 15-18
 
-All Times: Exeggcute 30%, Ledyba 20%, Spinarak 15%, NidoranM 15%, Snubbull 10%, Munchlax 5%, Rhyhorn 4%, Eevee 1%
+Day: Exeggcute 30%, Ledyba 20%, Lickitung 15%, NidoranM 15%, Snubbull 10%, Munchlax 5%, Rhyhorn 4%, Eevee 1%
+Night: Exeggcute 30%, Spinarak 20%, Lickitung 15%, NidoranM 15%, Snubbull 10%, Munchlax 5%, Rhyhorn 4%, Eevee 1%
 Swarm: Eevee 65%, Munchlax 15%, Rhyhorn 15%, Snubbull 5%
 
 

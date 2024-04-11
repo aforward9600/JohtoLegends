@@ -62,6 +62,7 @@ FuchsiaGymKogaScript:
 	closetext
 	setevent EVENT_GOT_TM06_TOXIC
 	setevent EVENT_DECO_BED_2
+	opentext
 	sjump .AfterTM
 
 .KogaPost:

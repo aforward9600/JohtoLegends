@@ -43,7 +43,11 @@ GetLandmarkName::
 	pop hl
 	ret
 
+if DEF(_FRENCH)
+INCLUDE "data/maps/landmarks_french.asm"
+else
 INCLUDE "data/maps/landmarks.asm"
+endc
 
 RegionCheck:
 ; Checks if the player is in Kanto or Johto.

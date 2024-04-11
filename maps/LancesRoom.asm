@@ -390,6 +390,8 @@ LancesRoomChallengerScript:
 	writetext ChallengerCynthiaText
 	waitbutton
 	closetext
+	checkevent EVENT_COMPLETED_EPILOGUE
+	iftrue .Cynthia2
 .CynthiaReconverge:
 	winlosstext CynthiaWinText, CynthiaLastMonText
 	setlasttalked LANCESROOM_CYNTHIA2
@@ -458,6 +460,16 @@ LancesRoomChallengerScript:
 	setevent EVENT_CHALLENGER_CYNTHIA
 	setevent EVENT_BEAT_CHALLENGER_CYNTHIA
 	end
+
+.Cynthia2:
+	winlosstext CynthiaWinText, CynthiaLastMonText
+	setlasttalked LANCESROOM_CYNTHIA2
+	loadtrainer CHALLENGER_CYNTHIA, CHALLENGER_CYNTHIA_2
+;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .AfterCynthiaBattle
 
 .AfterCynthiaLoss:
 	pause 15

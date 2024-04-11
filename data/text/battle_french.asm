@@ -90,7 +90,7 @@ HailBuffetsText:
 
 PerishCountText:
 	text "Compte Requiem de"
-	line <USER>"
+	line "<USER>"
 	line "est de @"
 	text_decimal wDeciramBuffer, 1, 1
 	text "!"
@@ -1049,6 +1049,11 @@ StartPerishText:
 SandstormBrewedText:
 	text "Une Tempêtesable"
 	line "se prépare!"
+	prompt
+
+HailStartsText:
+	text "Une Grêle se"
+	line "prépare!"
 	prompt
 
 BracedItselfText:
