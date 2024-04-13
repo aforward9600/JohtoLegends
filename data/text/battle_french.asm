@@ -187,7 +187,8 @@ BattleText_EnemyMonFainted:
 	prompt
 
 GotMoneyForWinningText:
-	text "<PLAYER> remporte@"
+	text "<PLAYER> remporte"
+	line "@"
 	text_decimal wBattleReward, 3, 6
 	text_start
 	line "¥!"

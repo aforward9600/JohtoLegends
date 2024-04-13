@@ -11,6 +11,8 @@ FightingDojo_MapScripts:
 FightingDojoKoichi:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .AlreadyBeatBikerBossKoichi
 	checkevent EVENT_BEAT_SABRINA
 	iftrue .AlreadyBeatSabrina
 	checkevent EVENT_BEAT_KOICHI
@@ -26,18 +28,50 @@ FightingDojoKoichi:
 	setevent EVENT_SAFFRON_CITY_BLACK_BELT
 	opentext
 	writetext YoureGivingMeBadgeText
+	buttonsound
+	verbosegiveitem TM_DYNAMICPUNCH
+	iffalse .NoRoomForDynamicpunch
+	setevent EVENT_GOT_TM01_DYNAMICPUNCH
 	waitbutton
 	closetext
 	end
 
 .AlreadyBeatKoichi:
+	checkevent EVENT_GOT_TM01_DYNAMICPUNCH
+	iffalse .GetTM01
 	writetext GoAndFaceSabrinaText
 	waitbutton
 	closetext
 	end
 
 .AlreadyBeatSabrina:
+	checkevent EVENT_GOT_TM01_DYNAMICPUNCH
+	iffalse .GetTM01
 	writetext KoichiAfterText
+	waitbutton
+	closetext
+	end
+
+.NoRoomForDynamicpunch:
+	writetext NoRoomForDynamicpunchText
+	waitbutton
+	closetext
+	end
+
+.AlreadyBeatBikerBossKoichi:
+	checkevent EVENT_GOT_TM01_DYNAMICPUNCH
+	iffalse .GetTM01
+	writetext KoichiAfterEpilogueText
+	waitbutton
+	closetext
+	end
+
+.GetTM01:
+	writetext HereIsTM01Text
+	buttonsound
+	verbosegiveitem TM_DYNAMICPUNCH
+	iffalse .NoRoomForDynamicpunch
+	setevent EVENT_GOT_TM01_DYNAMICPUNCH
 	waitbutton
 	closetext
 	end
@@ -152,6 +186,22 @@ YoureGivingMeBadgeText:
 	line "myself."
 
 	para "Go on."
+
+	para "…Oh, wait! Before"
+	line "you go, have this!"
+
+	para "I used to give"
+	line "these out whenever"
+	cont "a challenger beat"
+	cont "me."
+
+	para "It's TM01,"
+	line "Dynamicpunch!"
+
+	para "It doesn't hit"
+	line "very often, but it"
+	cont "confuses when it"
+	cont "does!"
 	done
 
 GoAndFaceSabrinaText:
@@ -203,6 +253,57 @@ BlackbeltTanabeAfterText:
 	text "I have nothing"
 	line "else to say."
 	done
+
+NoRoomForDynamicpunchText:
+	text "There is no room"
+	line "for this!"
+	done
+
+HereIsTM01Text:
+	text "Koichi: Welcome"
+	line "back, Champion."
+
+	para "I apologize for"
+	line "not giving you"
+	cont "this before."
+
+	para "I honestly just"
+	line "forgot."
+
+	para "This is TM01,"
+	line "Dynamicpunch!"
+
+	para "It doesn't hit too"
+	line "often, but when it"
+	cont "does, it confuses!"
+	done
+
+KoichiAfterEpilogueText:
+	text "Koichi: I still"
+	line "feel like I haven't"
+	cont "redeemed myself"
+	cont "yet."
+
+	para "I do not deserve"
+	line "to be Gym Leader"
+	cont "at the present."
+
+	para "I shall dedicate"
+	line "myself to my"
+	cont "training,"
+
+	para "and when I am"
+	line "strong enough,"
+
+	para "I shall engage in"
+	line "combat with the"
+	cont "young Sabrina,"
+
+	para "and together, we"
+	line "shall decide who"
+	cont "is worthy!"
+	done
+	
 
 FightingDojo_MapEvents:
 	db 0, 0 ; filler

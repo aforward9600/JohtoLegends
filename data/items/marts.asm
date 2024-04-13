@@ -149,7 +149,7 @@ MartGoldenrod4F:
 
 MartGoldenrod5F:
 	db 4 ; # items
-	db TM_SAFEGUARD
+	db TM_ACROBATICS
 	db TM_LIGHT_SCREEN
 	db TM_REFLECT
 	db TM_PROTECT
@@ -470,7 +470,7 @@ MartOlivineTMs:
 	db 4
 	db TM_CURSE
 	db TM_BRICK_BREAK
-	db TM_ATTRACT
+	db TM_SAFEGUARD
 	db TM_POISON_JAB
 	db -1 ; end
 
@@ -479,7 +479,7 @@ MartBlackthornTMs:
 	db TM_DOUBLE_TEAM
 	db TM_SUBSTITUTE
 	db TM_SLEEP_TALK
-	db TM_ACROBATICS
+	db TM_ATTRACT
 	db -1 ; end
 
 MartAzaleaTMs:

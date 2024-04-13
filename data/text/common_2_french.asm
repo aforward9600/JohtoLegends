@@ -1,125 +1,128 @@
 UnknownText_0x1c0000::
-	text "Oh, no picture?"
-	line "Come again, OK?"
+	text "Pas de photo?"
+	line "A plus tard!"
 	done
 
 UnknownText_0x1c0021::
-	text "An Egg? My talent"
-	line "is worth more…"
+	text "Un Oeuf? Je peux"
+	line "pas faire de l'art"
+	cont "avec ça..."
 	done
 
 UnknownText_0x1c0043::
-	text "Hello, hello! I'm"
-	line "the Name Rater."
+	text "B'jour! Je suis le"
+	line "Specialiste des"
 
-	para "I rate the names"
-	line "of #mon."
+	para "Noms. Je donne mon"
+	line "avis sur les noms"
+	cont "des #mon."
 
-	para "Would you like me"
-	line "to rate names?"
+	para "Veux-tu que je te"
+	line "donne mon avis sur"
+	cont "tes noms?"
 	done
 
 UnknownText_0x1c00a0::
-	text "Which #mon's"
-	line "nickname should I"
-	cont "rate for you?"
+	text "Le nom de quel"
+	line "#mon veux-tu"
+	cont "que j'étudie?"
 	prompt
 
 UnknownText_0x1c00cd::
-	text "Hm… @"
+	text "Hmm… @"
 	text_ram wStringBuffer1
-	text "…"
-	line "That's a fairly"
-	cont "decent name."
+	text "."
+	line "C'est un nom"
+	cont "ma foi correct."
 
-	para "But, how about a"
-	line "slightly better"
-	cont "nickname?"
+	para "Mais pourquoi ne"
+	line "pas lui donner"
+	cont "plus de pêche?"
 
-	para "Want me to give it"
-	line "a better name?"
+	para "Veux-tu lui donner"
+	line "un autre nom?"
 	done
 
 UnknownText_0x1c0142::
-	text "All right. What"
-	line "name should we"
-	cont "give it, then?"
+	text "OK. Comment"
+	line "allons-nous le"
+	cont "nommer?"
 	prompt
 
 UnknownText_0x1c0171::
-	text "That's a better"
-	line "name than before!"
+	text "C'est bien mieux"
+	line "qu'avant!"
 
-	para "Well done!"
+	para "Bien joué!"
 	done
 
 UnknownText_0x1c019e::
-	text "OK, then. Come"
-	line "again sometime."
+	text "OK. Reviens une"
+	line "autre fois."
 	done
 
 UnknownText_0x1c01be::
-	text "Hm… @"
+	text "Hmm... @"
 	text_ram wStringBuffer1
 	text "?"
-	line "What a great name!"
-	cont "It's perfect."
+	line "C'est un super"
+	cont "nom! Terrible!"
 
-	para "Treat @"
+	para "Prends bien soin"
+	line "de @"
 	text_ram wStringBuffer1
-	text_start
-	line "with loving care."
+	text "."
 	done
 
 UnknownText_0x1c0208::
-	text "Whoa… That's just"
-	line "an Egg."
+	text "Whoa! C'est juste"
+	line "un Oeuf."
 	done
 
 UnknownText_0x1c0222::
-	text "It might look the"
-	line "same as before,"
+	text "Ca ressemble un"
+	line "peu à l'ancien..."
 
-	para "but this new name"
-	line "is much better!"
+	para "Mais c'est mieux"
+	line "qu'avant!"
 
-	para "Well done!"
+	para "Bien joué!"
 	done
 
 UnknownText_0x1c0272::
-	text "All right. This"
-	line "#mon is now"
-	cont "named @"
+	text "Parfait. Ce"
+	line "#mon s'appelle"
+	cont "donc @"
 	text_ram wStringBuffer1
 	text "."
 	prompt
 
 Text_Gained::
 	text_ram wStringBuffer1
-	text " gained@"
+	text " gagne@"
 	text_end
 
 Text_ABoostedStringBuffer2ExpPoints::
 	text_start
-	line "a boosted"
+	line "un bonus de"
 	cont "@"
 	text_decimal wStringBuffer2, 2, 4
-	text " Exp. Points!"
+	text " Points Exp!"
 	prompt
 
 Text_ExpPointsFromShareText::
 	text_start
 	line "@"
 	text_decimal wStringBuffer2, 2, 4
-	text " Exp. Points"
-	cont "from Exp.Share!"
+	text " Points Exp"
+	cont "de Multi Exp!"
 	prompt
 
 Text_StringBuffer2ExpPoints::
 	text_start
 	line "@"
 	text_decimal wStringBuffer2, 2, 4
-	text " Exp. Points!"
+	text " Points Exp!"
 	prompt
 
 Text_GoMon::
@@ -127,17 +130,17 @@ Text_GoMon::
 	text_end
 
 Text_DoItMon::
-	text "Do it! @"
+	text "Fonce! @"
 	text_end
 
 Text_GoForItMon::
-	text "Go for it,"
+	text "En avant,"
 	line "@"
 	text_end
 
 Text_YourFoesWeakGetmMon::
-	text "Your foe's weak!"
-	line "Get'm, @"
+	text "Attaque,"
+	line "@"
 	text_end
 
 Text_BattleMonNick01::
@@ -151,27 +154,23 @@ Text_BattleMonNickComma::
 	text_end
 
 Text_ThatsEnoughComeBack::
-	text " that's"
-	line "enough! Come back!@"
+	text " reviens!@"
 	text_end
 
 Text_OKComeBack::
-	text " OK!"
-	line "Come back!@"
+	text "ça suffit!@"
 	text_end
 
 Text_GoodComeBack::
-	text " good!"
-	line "Come back!@"
+	text " reviens!@"
 	text_end
 
 Text_ComeBack::
-	text " come"
-	line "back!"
+	text " reviens!"
 	done
 
 UnknownText_0x1c0373::
-	text "Booted up a TM."
+	text "CT activeé."
 	prompt
 
 UnknownText_0x1c0384::
@@ -179,79 +178,81 @@ UnknownText_0x1c0384::
 	prompt
 
 UnknownText_0x1c0396::
-	text "It contained"
+	text "Elle contient"
 	line "@"
 	text_ram wStringBuffer2
 	text "."
 
-	para "Teach @"
+	para "Apprendre @"
 	text_ram wStringBuffer2
 	text_start
-	line "to a #mon?"
+	line "à un #mon?"
 	done
 
 UnknownText_0x1c03c2::
 	text_ram wStringBuffer2
-	text " is"
-	line "not compatible"
-	cont "with @"
+	text " n-est"
+	line "pas compatible"
+	cont "avec @"
 	text_ram wStringBuffer1
 	text "."
 
-	para "It can't learn"
-	line "@"
+	para "Il ne peut pas"
+	line "apprendre"
+	cont "@"
 	text_ram wStringBuffer2
 	text "."
 	prompt
 
 UnknownText_0x1c03fa::
-	text "You have no room"
-	line "for any more"
+	text "Plus de place"
+	line "pour"
 	cont "@"
 	text_ram wStringBuffer1
-	text "S."
+	text "."
 	prompt
 
 UnknownText_0x1c0421::
-	text "You received"
+	text "Vous obtenez"
 	line "@"
 	text_ram wStringBuffer1
 	text "!"
 	prompt
 
 UnknownText_0x1c0436::
-	text "The link has been"
-	line "cancelled."
+	text "La connexion a"
+	line "été perdue."
 	prompt
 
 UnknownText_0x1c0454::
-	text "Communication"
-	line "error."
+	text "Erreur"
+	line "communication"
 	prompt
 
 UnknownText_0x1c046a::
-	text "Must retrieve GIFT"
-	line "at #mon CENTER."
+	text "Cadeau à récupérer"
+	line "au Centre #mon."
 	prompt
 
 UnknownText_0x1c048e::
-	text "Your friend isn't"
-	line "ready."
+	text "Votre ami(e) n'est"
+	line "pas prêt(e)."
 	prompt
 
 UnknownText_0x1c04a7::
-	text "Sorry--only five"
-	line "GIFTS a day."
+	text "Seulement 5"
+	line "Cadeaux par jour."
 	prompt
 
 UnknownText_0x1c04c6::
-	text "Sorry. One GIFT"
-	line "a day per person."
+	text "Seulement 1 Cadeau"
+	line "par jour et par"
+	cont "personne."
 	prompt
 
 UnknownText_0x1c04e9::
 	text_ram wMysteryGiftPartnerName
-	text " sent"
+	text " envoie"
 	line "@"
 	text_ram wStringBuffer1
 	text "."
@@ -259,43 +260,45 @@ UnknownText_0x1c04e9::
 
 UnknownText_0x1c04fa::
 	text_ram wMysteryGiftPartnerName
-	text " sent"
+	text " envoie"
 	line "@"
 	text_ram wStringBuffer1
 	text_start
-	cont "to @"
+	cont "chez @"
 	text_ram wMysteryGiftPlayerName
-	text "'s home."
+	text "."
 	prompt
 
 UnknownText_0x1c051a::
-	text "Received"
+	text "La Carte vanant de"
 	line "@"
 	text_ram wc850
-	text "'s CARD."
+	text " a bien été"
+	line "reçue!"
 	prompt
 
 UnknownText_0x1c0531::
+	text "La Carte vanant de"
 	text_ram wc850
-	text "'s CARD was"
-	line "listed as no.@"
+	line " a été"
+	cont "classée au no.@"
 	text_decimal wDeciramBuffer, 1, 2
 	text "."
 	prompt
 
 UnknownText_0x1c0555::
-	text "The CARD was not"
-	line "registered."
+	text "Cette Carte n'a pas"
+	line "été enregistrée."
 	prompt
 
 UnknownText_0x1c0573::
-	text "The link has been"
-	line "cancelled."
+	text "La connexion a"
+	line "été perdue."
 	prompt
 
 UnknownText_0x1c0591::
-	text "Communication"
-	line "error."
+	text "Erreur"
+	line "communication."
 	prompt
 
 _BadgeRequiredText::
@@ -304,8 +307,8 @@ _BadgeRequiredText::
 	prompt
 
 UnknownText_0x1c05c8::
-	text "Can't use that"
-	line "here."
+	text "Impossible d'uti-"
+	line "liser ça ici."
 	prompt
 
 UnknownText_0x1c05dd::
@@ -314,8 +317,8 @@ UnknownText_0x1c05dd::
 	prompt
 
 UnknownText_0x1c05ec::
-	text "There's nothing to"
-	line "cut here."
+	text "Il n'y a rien"
+	line "à couper ici."
 	prompt
 
 UnknownText_0x1c0609::
@@ -352,8 +355,8 @@ UnknownText_0x1c068e::
 	done
 
 UnknownText_0x1c06a3::
-	text "Wow, it's a huge"
-	line "waterfall."
+	text "Oh! Une énorme"
+	line "cascade."
 	done
 
 UnknownText_0x1c06bf::
@@ -363,31 +366,29 @@ UnknownText_0x1c06bf::
 
 UnknownText_0x1c06de::
 	text_ram wStringBuffer2
-	text " used"
-	line "Dig!"
+	text_start
+	line " lance Tunnel!"
 	done
 
 UnknownText_0x1c06ed::
-	text "<PLAYER> used an"
-	line "Escape Rope."
+	text "<PLAYER> utilise"
+	line "une Corde Sortie."
 	done
 
 UnknownText_0x1c0705::
-	text "Can't use that"
-	line "here."
+	text "Impossible d'uti-"
+	line "liser ça ici."
 	done
 
 UnknownText_0x1c071a::
-	text "Return to the last"
-	line "#mon Center."
+	text "Retour au dernier"
+	line "Centre #mon."
 	done
 
 UnknownText_0x1c073b::
-	text "Can't use that"
-	line "here."
-
-	para ""
-	done
+	text "Impossible d'uti-"
+	line "liser ça ici."
+	prompt
 
 UnknownText_0x1c0751::
 	text "Machamp is using"
@@ -395,31 +396,33 @@ UnknownText_0x1c0751::
 	prompt
 
 UnknownText_0x1c0774::
-	text "Machamp used"
-	line "Strength!"
+	text "Mackogneur lance"
+	line "Force!"
 	done
 
 UnknownText_0x1c0788::
-	text "Machamp can"
-	line "move boulders."
+	text "Mackogneur peut"
+	line "déplacer les"
+	cont "rochers."
 	prompt
 
 UnknownText_0x1c07a0::
-	text "A #mon may be"
-	line "able to move this."
+	text "Un #mon peut"
+	line "déplacer ça."
 
 	para "Want to call"
 	line "Machamp?"
 	done
 
 UnknownText_0x1c07d8::
-	text "Boulders may now"
-	line "be moved!"
+	text "Les rochers peu-"
+	line "vent être mainte-"
+	cont "nant déplacés!"
 	done
 
 UnknownText_0x1c07f4::
-	text "A #mon may be"
-	line "able to move this."
+	text "Un #mon peut"
+	line "déplacer ceci."
 	done
 
 UnknownText_0x1c0816::
@@ -428,33 +431,33 @@ UnknownText_0x1c0816::
 	prompt
 
 UnknownText_0x1c082b::
-	text "It's a vicious"
-	line "whirlpool!"
+	text "C'est un terrible"
+	line "siphon!"
 
-	para "A #mon may be"
-	line "able to pass it."
+	para "Un #mon peut"
+	line "le traverser."
 	done
 
 UnknownText_0x1c0864::
-	text "A whirlpool is in"
-	line "the way."
+	text "Un siphon est sur"
+	line "la route."
 
 	para "Want Lapras to"
 	line "use Whirlpool?"
 	done
 
 UnknownText_0x1c0897::
-	text "Snubbull did a"
-	line "Headbutt!"
+	text "Snubbull donne"
+	line "un Coup d'Boule!"
 	prompt
 
 UnknownText_0x1c08ac::
-	text "Nope. Nothing…"
+	text "Non. Rien…"
 	done
 
 UnknownText_0x1c08bc::
-	text "A #mon could be"
-	line "in this tree."
+	text "Un #MON peut"
+	line "être dans l'arbre."
 
 	para "Want to call"
 	line "Snubbull?"
@@ -466,13 +469,13 @@ UnknownText_0x1c08f0::
 	prompt
 
 UnknownText_0x1c0906::
-	text "Maybe a #mon"
-	line "can break this."
+	text "Un #mon peut"
+	line "le briser."
 	done
 
 UnknownText_0x1c0924::
-	text "This rock looks"
-	line "breakable."
+	text "Ce rocher a l'air"
+	line "cassable."
 
 	para "Want to have Golem"
 	line "smash the rock?"
@@ -480,80 +483,82 @@ UnknownText_0x1c0924::
 
 UnknownText_0x1c0958::
 	text "Oh!"
-	line "A bite!"
+	line "Ca mord!"
 	prompt
 
 UnknownText_0x1c0965::
-	text "Not even a nibble!"
+	text "Rein du tout!"
 	prompt
 
 UnknownText_0x1c0979::
-	text "Looks like there's"
-	line "nothing here."
+	text "Il n'y a rein"
+	line "dans le coin."
 	prompt
 
 UnknownText_0x1c099a::
-	text "You can't get off"
-	line "here!"
+	text "Vous ne pouvez"
+	line "pas descendre ici!"
 	done
 
 UnknownText_0x1c09b2::
-	text "<PLAYER> got on the"
+	text "<PLAYER> monte sur:"
 	line "@"
 	text_ram wStringBuffer2
 	text "."
 	done
 
 UnknownText_0x1c09c7::
-	text "<PLAYER> got off"
-	line "the @"
+	text "<PLAYER> descend"
+	line "de @"
 	text_ram wStringBuffer2
 	text "."
 	done
 
 UnknownText_0x1c09dd::
-	text "This tree can be"
-	line "cut!"
+	text "Cet arbre peut"
+	line "être coupe!"
 
 	para "Want to call"
 	line "Scyther?"
 	done
 
 UnknownText_0x1c0a05::
-	text "This tree can be"
-	line "cut!"
+	text "Cet arbre peut"
+	line "être coupe!"
 	done
 
 UnknownText_0x1c0a1c::
-	text "<PLAYER> found"
+	text "<PLAYER> trouve"
 	line "@"
 	text_ram wStringBuffer3
 	text "!"
 	done
 
 UnknownText_0x1c0a2c::
-	text "But <PLAYER> can't"
-	line "carry any more"
-	cont "items."
+	text "Mais <PLAYER> ne"
+	line "peut plus rien"
+	cont "porter!"
 	done
 
 UnknownText_0x1c0a4e::
-	text "<PLAYER> is out of"
-	line "useable #mon!"
+	text "<PLAYER> n'a plus"
+	line "de #mon en"
+	cont "forme!"
 
-	para "<PLAYER> whited"
-	line "out!"
+	para "<PLAYER> est"
+	line "hors-jeu!"
 	done
 
 UnknownText_0x1c0a77::
-	text "Yes! Itemfinder"
-	line "indicates there's"
-	cont "an item nearby."
+	text "Le Cherch'Objet"
+	line "indique la présen-"
+	cont "ce d'un objet!"
 	prompt
 
 UnknownText_0x1c0aa9::
-	text "Nope! Itemfinder"
-	line "isn't responding."
+	text "Le Cherch'Objet"
+	line "n'a rien trouvé..."
+	cont "Dommage!"
 	prompt
 
 UnknownText_0x1c0acc::
@@ -565,13 +570,13 @@ UnknownText_0x1c0acc::
 
 UnknownText_0x1c0b03::
 	text_ram wStringBuffer3
-	text " used"
-	line "Sweet Scent!"
+	text_start
+	line "lance Doux Parfum!"
 	done
 
 UnknownText_0x1c0b1a::
-	text "Looks like there's"
-	line "nothing here…"
+	text "Il n'y a rien"
+	line "dans le coin..."
 	done
 
 UnknownText_0x1c0b3b::
@@ -583,67 +588,67 @@ UnknownText_0x1c0b3b::
 	done
 
 UnknownText_0x1c0b65::
-	text "<PLAYER>'s #mon"
-	line "were all healed!"
+	text "Les #mon de"
+	line "<PLAYER> sont tous"
+	cont "soignés!"
 	done
 
 Text_AnEGGCantHoldAnItem::
-	text "An Egg can't hold"
-	line "an item."
+	text "Un Oeuf ne peut"
+	line "rien porter."
 	prompt
 
 UnknownText_0x1c0b9a::
-	text "No items."
+	text "Aucun objet."
 	done
 
 UnknownText_0x1c0ba5::
-	text "Throw away how"
-	line "many?"
+	text "En jeter"
+	line "combien?"
 	done
 
 UnknownText_0x1c0bbb::
-	text "Throw away @"
+	text "Jeter @"
 	text_decimal wItemQuantityChangeBuffer, 1, 2
 	text_start
 	line "@"
 	text_ram wStringBuffer2
-	text "(s)?"
+	text "?"
 	done
 
 UnknownText_0x1c0bd8::
-	text "Threw away"
-	line "@"
 	text_ram wStringBuffer2
-	text "(s)."
+	text_start
+	line "à la poubelle!"
 	prompt
 
 UnknownText_0x1c0bee::
-	text "Granny: <PLAYER>!"
-	line "Are you certain"
-	cont "this is the time"
-	cont "to use that?"
+	text "Grand-mère:"
+	line "<PLAYER>!"
+
+	para "Ce n'est pas le"
+	line "moment d'utiliser"
+	cont "ce truc!"
 	prompt
 
 Text_YouDontHaveAMon::
-	text "You don't have a"
-	line "#mon!"
+	text "Vous n'avez pas"
+	line "de #mon!"
 	prompt
 
 UnknownText_0x1c0c2e::
-	text "Registered the"
-	line "@"
 	text_ram wStringBuffer2
-	text "."
+	text_start "enregistré(e)."
 	prompt
 
 UnknownText_0x1c0c45::
-	text "You can't register"
-	line "that item."
+	text "On ne peut enre-"
+	line "gistrer cet objet."
 	prompt
 
 UnknownText_0x1c0c63::
-	text "Where should this"
-	line "be moved to?"
+	text "Où déplacer"
+	line "ceci?"
 	done
 
 UnknownText_0x1c0c83::

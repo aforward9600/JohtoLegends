@@ -31,7 +31,7 @@ Route7UndergroundPathSignText:
 	line "here…"
 
 	para "The police can't do"
-	line "do nothing to us!"
+	line "nothing to us!"
 
 	para "Feds rule!"
 	done

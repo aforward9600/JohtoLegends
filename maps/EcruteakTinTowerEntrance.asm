@@ -60,6 +60,7 @@ EcruteakTinTowerEntrance_CoordEvent1:
 	appear ECRUTEAKTINTOWERENTRANCE_SAGE1
 	pause 5
 	disappear ECRUTEAKTINTOWERENTRANCE_SAGE2
+	callasm UpdateSprites
 	end
 
 EcruteakTinTowerEntrance_CoordEvent2:
@@ -70,6 +71,7 @@ EcruteakTinTowerEntrance_CoordEvent2:
 	appear ECRUTEAKTINTOWERENTRANCE_SAGE2
 	pause 5
 	disappear ECRUTEAKTINTOWERENTRANCE_SAGE1
+	callasm UpdateSprites
 	end
 
 EcruteakTinTowerEntrance_CoordEvent_DontMove:

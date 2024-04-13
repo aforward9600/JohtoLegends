@@ -103,10 +103,17 @@ DisplayMoneyAndCoinBalance:
 	call PrintNum
 	ret
 
+if DEF(_FRENCH)
+MoneyString:
+	db "Arg.@"
+CoinString:
+	db "Jeton@"
+else
 MoneyString:
 	db "Money@"
 CoinString:
 	db "Coin@"
+endc
 ShowMoney_TerminatorString:
 	db "@"
 
@@ -196,6 +203,16 @@ StartMenu_PrintBugContestStatus:
 
 .Balls_JP:
 	db "ボール　　　こ@"
+if DEF(_FRENCH)
+.CAUGHT:
+	db "Pris@"
+.Balls_EN:
+	db "Balls:@"
+.None:
+	db "Aucun@"
+.LEVEL:
+	db "Niveau@"
+else
 .CAUGHT:
 	db "Caught@"
 .Balls_EN:
@@ -204,6 +221,7 @@ StartMenu_PrintBugContestStatus:
 	db "None@"
 .LEVEL:
 	db "Level@"
+endc
 
 FindApricornsInBag:
 ; Checks the bag for Apricorns.

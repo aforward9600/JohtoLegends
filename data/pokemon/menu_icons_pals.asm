@@ -235,7 +235,7 @@ MonMenuIconPals:
 	icon_pals GREEN,  TEAL   ; SUNKERN
 	icon_pals GREEN,  RED    ; SUNFLORA
 	icon_pals RED,    BLUE   ; YANMA
-	icon_pals BLUE,   TEAL   ; YANMEGA
+	icon_pals GREEN,  TEAL   ; YANMEGA
 	icon_pals BLUE,   PINK   ; WOOPER
 	icon_pals BLUE,   PINK   ; QUAGSIRE
 	icon_pals BLUE,   PURPLE ; MURKROW
