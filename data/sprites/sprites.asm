@@ -160,3 +160,4 @@ OverworldSprites:
 	overworld_sprite RoughneckSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite MewWalkSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite FireSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite SensationalBlondeGFX, 12, WALKING_SPRITE, PAL_OW_RED

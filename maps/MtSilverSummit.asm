@@ -66,6 +66,12 @@ MtSilverSummit_MapScripts:
 	waitbutton
 	sjump .ReconvergeFinalScene
 
+.LastEpilogue:
+	writetext ThisIsNiceText
+	waitbutton
+	closetext
+	sjump .ReconvergeFinalSceneAgain
+
 .ReleasedHoOh:
 	writetext ReleasedHoOhText
 	setevent EVENT_RIVAL_GIVES_UP_HO_OH
@@ -74,25 +80,11 @@ MtSilverSummit_MapScripts:
 	writetext GoingToReleaseText
 	waitbutton
 	closetext
+.ReconvergeFinalSceneAgain:
 	setscene SCENE_FINISHED
 	setevent EVENT_EPILOGUE_GOLD
 	setevent EVENT_EPILOGUE_CRYSTAL
 	setevent EVENT_COMPLETED_EPILOGUE
-	clearevent EVENT_FERROPEXOLA
-	setmapscene GOLD_CRYSTAL_HOUSE, SCENE_DEFAULT
-	pause 90
-	special FadeBlackQuickly
-	pause 15
-	warpfacing UP, GOLD_CRYSTAL_HOUSE, 6, 4
-	return
-
-.LastEpilogue:
-	writetext ThisIsNiceText
-	waitbutton
-	closetext
-	setscene SCENE_FINISHED
-	setevent EVENT_EPILOGUE_GOLD
-	setevent EVENT_EPILOGUE_CRYSTAL
 	clearevent EVENT_FERROPEXOLA
 	setmapscene GOLD_CRYSTAL_HOUSE, SCENE_DEFAULT
 	pause 90

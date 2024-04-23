@@ -149,7 +149,7 @@ CeruleanGymDaisyScript:
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .DaisyRematch
 	checkevent EVENT_CERULEAN_GYM_LILY
-	iffalse .CeruleanGymDaisy2
+	iftrue .CeruleanGymDaisy2
 	checkevent EVENT_BEAT_SENSATIONAL_SISTERS
 	iftrue .DaisyAfter
 	writetext CeruleanGymDaisyText3
@@ -553,7 +553,7 @@ CeruleanGym_MapEvents:
 	db 0 ; bg events
 
 	db 6 ; object events
-	object_event  3,  3, SPRITE_SENSATIONAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanGymDaisyScript, EVENT_CERULEAN_GYM_DAISY
+	object_event  3,  3, SPRITE_SENSATIONAL_BLONDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanGymDaisyScript, EVENT_CERULEAN_GYM_DAISY
 	object_event  5,  3, SPRITE_SENSATIONAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanGymLilyScript, EVENT_CERULEAN_GYM_LILY
 	object_event  4,  6, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfDiana, EVENT_TRAINERS_IN_CERULEAN_GYM
 	object_event  1,  9, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerSwimmerfBriana, EVENT_TRAINERS_IN_CERULEAN_GYM

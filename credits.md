@@ -82,7 +82,7 @@ Skarmini Animation: Ryans-Tryin
 
 New Ledian Sprite and Munchlax credits sprite: Rangi
 
-Azurill credits sprite: FrenchOrange & Ferropexola
+Azurill and Dahlia credits sprite: FrenchOrange & Ferropexola
 
 Kanto grass colors: FrenchOrange
 

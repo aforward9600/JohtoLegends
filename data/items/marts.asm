@@ -44,6 +44,7 @@ Marts:
 	dw MartLakeOfRage
 	dw MartCherrygroveTMs
 	dw MartMooMooMilk
+	dw MartCinnabarIsland
 .End
 
 MartCherrygrove:

@@ -488,7 +488,19 @@ endr
 	ret
 
 GetCreditsPalette:
+;	bit 6, b ; Hall Of Fame
+;	ld a, $0
+;	jr z, .GetMtSilverPalettes
 	call .GetPalAddress
+
+	push hl
+	ld a, 0
+	call .UpdatePals
+	pop hl
+	ret
+
+.GetMtSilverPalettes:
+	call .MtSilverPalettes
 
 	push hl
 	ld a, 0
@@ -506,6 +518,20 @@ GetCreditsPalette:
 	ld e, a
 	ld d, 0
 	ld hl, CreditsPalettes
+	add hl, de
+	add hl, de ; * 3
+	add hl, de
+	ret
+
+.MtSilverPalettes:
+	ld a, [wCreditsBorderMon] ; scene
+	and %11
+	add a
+	add a ; * 8
+	add a
+	ld e, a
+	ld d, 0
+	ld hl, CreditsMtSilverPalettes
 	add hl, de
 	add hl, de ; * 3
 	add hl, de
@@ -537,7 +563,13 @@ GetCreditsPalette:
 CreditsPalettes:
 INCLUDE "gfx/credits/credits.pal"
 
+CreditsMtSilverPalettes:
+INCLUDE "gfx/credits/creditsmtsilver.pal"
+
 Credits_LoadBorderGFX:
+;	bit 6, b ; Hall Of Fame
+;	ld a, $0
+;	jr nz, .MtSilverFrames
 	ld hl, wCreditsBorderFrame
 	ld a, [hl]
 	cp $ff
@@ -567,7 +599,41 @@ Credits_LoadBorderGFX:
 	ld hl, wCreditsBlankFrame2bpp
 	ret
 
+.MtSilverFrames
+	ld hl, wCreditsBorderFrame
+	ld a, [hl]
+	cp $ff
+	jr z, .initsilver
+
+	and %11
+	ld e, a
+	inc a
+	and %11
+	ld [hl], a
+	ld a, [wCreditsBorderMon]
+	and %11
+	add a
+	add a
+	add e
+	add a
+	ld e, a
+	ld d, 0
+	ld hl, .MtSilverFramesFrames
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ret
+
+.initsilver
+	ld hl, wCreditsBlankFrame2bpp
+	ret
+
 .Frames:
+;	dw CreditsDahliaGFX
+;	dw CreditsDahliaGFX
+;	dw CreditsDahliaGFX     + 16 tiles
+;	dw CreditsDahliaGFX     + 16 tiles
 	dw CreditsPichuGFX
 	dw CreditsPichuGFX     + 16 tiles
 	dw CreditsPichuGFX     + 32 tiles
@@ -576,6 +642,10 @@ Credits_LoadBorderGFX:
 	dw CreditsSmoochumGFX  + 16 tiles
 	dw CreditsSmoochumGFX  + 32 tiles
 	dw CreditsSmoochumGFX  + 48 tiles
+;	dw CreditsDahliaGFX     + 32 tiles
+;	dw CreditsDahliaGFX     + 32 tiles
+;	dw CreditsDahliaGFX     + 48 tiles
+;	dw CreditsDahliaGFX     + 48 tiles
 	dw CreditsDittoGFX
 	dw CreditsDittoGFX     + 16 tiles
 	dw CreditsDittoGFX     + 32 tiles
@@ -584,6 +654,24 @@ Credits_LoadBorderGFX:
 	dw CreditsIgglybuffGFX + 16 tiles
 	dw CreditsIgglybuffGFX + 32 tiles
 	dw CreditsIgglybuffGFX + 48 tiles
+
+.MtSilverFramesFrames:
+	dw CreditsDahliaGFX
+	dw CreditsDahliaGFX
+	dw CreditsDahliaGFX     + 16 tiles
+	dw CreditsDahliaGFX     + 16 tiles
+	dw CreditsDracoGFX
+	dw CreditsDracoGFX
+	dw CreditsDracoGFX  + 16 tiles
+	dw CreditsDracoGFX  + 16 tiles
+	dw CreditsDahliaGFX     + 32 tiles
+	dw CreditsDahliaGFX     + 32 tiles
+	dw CreditsDahliaGFX     + 48 tiles
+	dw CreditsDahliaGFX     + 48 tiles
+	dw CreditsDracoGFX + 32 tiles
+	dw CreditsDracoGFX + 32 tiles
+	dw CreditsDracoGFX + 48 tiles
+	dw CreditsDracoGFX + 48 tiles
 
 Credits_TheEnd:
 	ld a, $40
@@ -606,6 +694,8 @@ CreditsPichuGFX:     INCBIN "gfx/credits/wynaut.2bpp"
 CreditsSmoochumGFX:  INCBIN "gfx/credits/munchlax.2bpp"
 CreditsDittoGFX:     INCBIN "gfx/credits/azurill.2bpp"
 CreditsIgglybuffGFX: INCBIN "gfx/credits/igglybuff.2bpp"
+CreditsDahliaGFX:    INCBIN "gfx/credits/dahliatest.2bpp"
+CreditsDracoGFX:     INCBIN "gfx/credits/draco.2bpp"
 
 INCLUDE "data/credits_script.asm"
 INCLUDE "data/credits_strings.asm"

@@ -166,3 +166,4 @@ MewWalkSpriteGFX::             INCBIN "gfx/sprites/mew.2bpp"
 SECTION "Sprites 4", ROMX
 
 FireSpriteGFX::                INCBIN "gfx/sprites/fire.2bpp"
+SensationalBlondeGFX::         INCBIN "gfx/sprites/sensational_blonde.2bpp"

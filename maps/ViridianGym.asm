@@ -145,7 +145,7 @@ LeaderBlueBeforeText:
 LeaderBlueWinText:
 	text "Giovanni: I see"
 	line "how you became a"
-	cont "Chamion!"
+	cont "Champion!"
 	done
 
 Text_ReceivedEarthBadge:

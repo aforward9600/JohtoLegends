@@ -856,10 +856,10 @@ MultiHit:
 	criticaltext
 	cleartext
 	supereffectivelooptext
-	kingsrock
 	checkfaint
 	buildopponentrage
 	endloop
+	kingsrock
 	raisesub
 	endmove
 
@@ -883,12 +883,12 @@ PoisonMultiHit:
 	criticaltext
 	cleartext
 	supereffectivelooptext
-	kingsrock
 	checkfaint
 	buildopponentrage
 	endloop
 	raisesub
 	poisontarget
+	kingsrock
 	endmove
 
 FlinchHit:
@@ -1412,11 +1412,11 @@ TripleKick:
 	criticaltext
 	cleartext
 	supereffectivelooptext
-	kingsrock
 	checkfaint
 	buildopponentrage
 	kickcounter
 	endloop
+	kingsrock
 	raisesub
 	endmove
 
