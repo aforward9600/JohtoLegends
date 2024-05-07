@@ -32,7 +32,12 @@ MountMoonGiftShopClerkScript:
 	end
 
 MountMoonGiftShopLassScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .MountMoonGiftShopLass2
 	jumptextfaceplayer MountMoonGiftShopLassText
+
+.MountMoonGiftShopLass2:
+	jumptextfaceplayer MountMoonGiftShopLassText2
 
 MountMoonGiftShopBrockScript:
 	jumptextfaceplayer MountMoonGiftShopBrockText
@@ -87,6 +92,17 @@ MountMoonGiftShopBrockText:
 
 	para "I hope daddy comes"
 	line "home soon."
+	done
+
+MountMoonGiftShopLassText2:
+	text "It looks like"
+	line "Brock and I can"
+	cont "return to Pewter"
+	cont "City soon."
+
+	para "It will be nice"
+	line "to live life"
+	cont "normally again."
 	done
 
 MountMoonGiftShop_MapEvents:

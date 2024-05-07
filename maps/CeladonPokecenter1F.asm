@@ -17,7 +17,12 @@ CeladonPokecenter1FPokefanMScript:
 	jumptextfaceplayer CeladonPokecenter1FPokefanMText
 
 CeladonPokecenter1FCooltrainerMScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .CeladonPokecenter1FCooltrainerM2
 	jumptextfaceplayer CeladonPokecenter1FCooltrainerMText
+
+.CeladonPokecenter1FCooltrainerM2:
+	jumptextfaceplayer CeladonPokecenter1FCooltrainerMText2
 
 CeladonPokecenter1FTeacherScript:
 	jumptextfaceplayer CeladonPokecenter1FTeacherText
@@ -47,6 +52,12 @@ CeladonPokecenter1FCooltrainerMText:
 	para "The Feds took over"
 	line "the Gym and made"
 	cont "it their hideout."
+	done
+
+CeladonPokecenter1FCooltrainerMText2:
+	text "I wonder what will"
+	line "become of the old"
+	cont "Fed hideout?"
 	done
 
 CeladonPokecenter1FTeacherText:

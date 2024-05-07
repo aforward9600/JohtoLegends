@@ -488,9 +488,11 @@ endr
 	ret
 
 GetCreditsPalette:
-;	bit 6, b ; Hall Of Fame
-;	ld a, $0
-;	jr z, .GetMtSilverPalettes
+	push hl
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	jr nz, .GetMtSilverPalettes
+	pop hl
 	call .GetPalAddress
 
 	push hl
@@ -500,6 +502,7 @@ GetCreditsPalette:
 	ret
 
 .GetMtSilverPalettes:
+	pop hl
 	call .MtSilverPalettes
 
 	push hl
@@ -567,9 +570,11 @@ CreditsMtSilverPalettes:
 INCLUDE "gfx/credits/creditsmtsilver.pal"
 
 Credits_LoadBorderGFX:
-;	bit 6, b ; Hall Of Fame
-;	ld a, $0
-;	jr nz, .MtSilverFrames
+	push hl
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	jr nz, .MtSilverFrames
+	pop hl
 	ld hl, wCreditsBorderFrame
 	ld a, [hl]
 	cp $ff
@@ -600,6 +605,7 @@ Credits_LoadBorderGFX:
 	ret
 
 .MtSilverFrames
+	pop hl
 	ld hl, wCreditsBorderFrame
 	ld a, [hl]
 	cp $ff

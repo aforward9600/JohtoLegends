@@ -13,7 +13,12 @@ PalletTown_MapScripts:
 	return
 
 PalletTownTeacherScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .PalletTownTeacher2
 	jumptextfaceplayer PalletTownTeacherText
+
+.PalletTownTeacher2:
+	jumptextfaceplayer PalletTownTeacherText2
 
 PalletTownFisherScript:
 	jumptextfaceplayer PalletTownFisherText
@@ -28,6 +33,13 @@ PalletTownTeacherText:
 	text "I hope everything"
 	line "gets sorted out"
 	cont "soon…"
+	done
+
+PalletTownTeacherText2:
+	text "I'm thankful for"
+	line "Prof.Oak keeping"
+	cont "the Feds away from"
+	cont "our quiet town."
 	done
 
 PalletTownFisherText:

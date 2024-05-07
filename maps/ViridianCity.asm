@@ -82,21 +82,7 @@ ViridianCityGrampsNearGym:
 	end
 
 ViridianCityDreamEaterFisher:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_TM42_DREAM_EATER
-	iftrue .GotDreamEater
-	writetext ViridianCityDreamEaterFisherText
-	buttonsound
-	verbosegiveitem TM_FOCUS_BLAST
-	iffalse .NoRoomForDreamEater
-	setevent EVENT_GOT_TM42_DREAM_EATER
-.GotDreamEater:
-	writetext ViridianCityDreamEaterFisherGotDreamEaterText
-	waitbutton
-.NoRoomForDreamEater:
-	closetext
-	end
+	jumptextfaceplayer ViridianCityDreamEaterFisherText
 
 ViridianCityYoungsterScript:
 	jumptextfaceplayer ViridianCityYoungsterText
@@ -134,7 +120,7 @@ ViridianCityCoffeeGrampsQuestionText:
 	line "like much now, but"
 
 	para "I was an expert at"
-	line "catching #MON."
+	line "catching #mon."
 
 	para "Do you believe me?"
 	done
@@ -145,6 +131,12 @@ ViridianCityCoffeeGrampsBelievedText:
 
 	para "of the ordinary,"
 	line "let me tell you!"
+
+	para "Of course, with"
+	line "this old knee of"
+	cont "mine, I couldn't do"
+	cont "anything against"
+	cont "those Feds!"
 	done
 
 ViridianCityCoffeeGrampsDoubtedText:
@@ -195,35 +187,20 @@ ViridianCityDreamEaterFisherText:
 	line "off in the sun."
 
 	para "…I had this dream"
-	line "about a DROWZEE"
+	line "about a Drowzee"
 
 	para "eating my dream."
 	line "Weird, huh?"
 
-	para "Huh?"
-	line "What's this?"
+	para "Oh well…"
 
-	para "Where did this TM"
-	line "come from?"
-
-	para "This is spooky!"
-	line "Here, you can have"
-	cont "this TM."
-	done
-
-ViridianCityDreamEaterFisherGotDreamEaterText:
-	text "TM42 contains"
-	line "DREAM EATER…"
-
-	para "…Zzzzz…"
+	para "Back to sleep!"
 	done
 
 ViridianCityYoungsterText:
-	text "I heard that there"
-	line "are many items on"
-
-	para "the ground in"
-	line "VIRIDIAN FOREST."
+	text "I can go and see"
+	line "Prof. Oak again"
+	cont "now!"
 	done
 
 ViridianCitySignText:

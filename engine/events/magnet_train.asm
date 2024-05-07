@@ -223,24 +223,24 @@ GetMagnetTrainBGTiles:
 
 MagnetTrainBGTiles:
 ; Alternating tiles for each line of the Magnet Train tilemap.
-	db $14, $14 ; bush
-	db $14, $14 ; bush
-	db $14, $14 ; bush
-	db $14, $14 ; bush
-	db $14, $14 ; fence
-	db $14, $14 ; fence
-	db $14, $14 ; track
-	db $14, $14 ; track
-	db $14, $14 ; track
-	db $14, $14 ; track
-	db $14, $14 ; track
-	db $14, $14 ; track
-	db $14, $14 ; fence
-	db $14, $14 ; fence
-	db $14, $14 ; bush
-	db $14, $14 ; bush
-	db $14, $14 ; bush
-	db $14, $14 ; bush
+	db $0b, $0b ; bush
+	db $0b, $0b ; bush
+	db $0b, $0b ; bush
+	db $0b, $0b ; bush
+	db $0b, $0b ; fence
+	db $0b, $0b ; fence
+	db $0b, $0b ; track
+	db $0b, $0b ; track
+	db $0b, $0b ; track
+	db $0b, $0b ; track
+	db $0b, $0b ; track
+	db $0b, $0b ; track
+	db $0b, $0b ; fence
+	db $0b, $0b ; fence
+	db $0b, $0b ; bush
+	db $0b, $0b ; bush
+	db $0b, $0b ; bush
+	db $0b, $0b ; bush
 
 MagnetTrain_InitLYOverrides:
 	ld hl, wLYOverrides

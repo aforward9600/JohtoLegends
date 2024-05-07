@@ -7,7 +7,12 @@ PewterSnoozeSpeechHouse_MapScripts:
 	db 0 ; callbacks
 
 PewterSnoozeSpeechHouseGrampsScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .PewterSnoozeSpeechHouseGramps2
 	jumptextfaceplayer PewterSnoozeSpeechHouseGrampsText
+
+.PewterSnoozeSpeechHouseGramps2:
+	jumptextfaceplayer PewterSnoozeSpeechHouseGrampsText2
 
 PewterSnoozeSpeechHouseBookshelf:
 	jumpstd picturebookshelf
@@ -23,6 +28,15 @@ PewterSnoozeSpeechHouseGrampsText:
 
 	para "but recently it's"
 	line "too dangerous."
+	done
+
+PewterSnoozeSpeechHouseGrampsText2:
+	text "I suppose it's good"
+	line "for my husband to"
+	cont "be outside."
+
+	para "It will help him"
+	line "stay in shape."
 	done
 
 PewterSnoozeSpeechHouse_MapEvents:

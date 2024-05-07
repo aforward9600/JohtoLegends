@@ -18,7 +18,12 @@ ViridianMartLassScript:
 	jumptextfaceplayer ViridianMartLassText
 
 ViridianMartCooltrainerMScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .ViridianMartCooltrainerMScript2
 	jumptextfaceplayer ViridianMartCooltrainerMText
+
+.ViridianMartCooltrainerMScript2:
+	jumptextfaceplayer ViridianMartCooltrainerMText2
 
 ViridianMartLassText:
 	text "Hope there's"
@@ -40,6 +45,16 @@ ViridianMartCooltrainerMText:
 	para "Ya never know when"
 	line "one of those goons"
 	cont "will jump you."
+	done
+
+ViridianMartCooltrainerMText2:
+	text "With the Feds all"
+	line "gone, I don't need"
+	cont "to buy items!"
+
+	para "Eh, on second"
+	line "thought, I probably"
+	cont "should anyway."
 	done
 
 ViridianMart_MapEvents:

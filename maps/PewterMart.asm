@@ -15,7 +15,12 @@ PewterMartClerkScript:
 	end
 
 PewterMartYoungsterScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .PewterMartYoungster2
 	jumptextfaceplayer PewterMartYoungsterText
+
+.PewterMartYoungster2:
+	jumptextfaceplayer PewterMartYoungsterText2
 
 PewterMartSuperNerdScript:
 	jumptextfaceplayer PewterMartSuperNerdText
@@ -27,6 +32,12 @@ PewterMartYoungsterText:
 
 	para "They usually just"
 	line "extort them."
+	done
+
+PewterMartYoungsterText2:
+	text "Looks like the"
+	line "Marts won't be"
+	cont "extorted any more."
 	done
 
 PewterMartSuperNerdText:

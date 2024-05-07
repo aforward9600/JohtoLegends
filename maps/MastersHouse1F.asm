@@ -730,6 +730,8 @@ MasterPasswordCheck2:
 
 .candypouch2:
 	setevent EVENT_PASSWORD_CHEATER
+	setevent EVENT_STRONGEST_PASSWORD
+	setflag ENGINE_ACTIVATED_MAX_DVS
 	end
 
 .singular:

@@ -9,10 +9,20 @@ ViridianNicknameSpeechHouse_MapScripts:
 	db 0 ; callbacks
 
 ViridianNicknameSpeechHousePokefanMScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .ViridianNicknameSpeechHousePokefanMScript2
 	jumptextfaceplayer ViridianNicknameSpeechHousePokefanMText
 
+.ViridianNicknameSpeechHousePokefanMScript2:
+	jumptextfaceplayer ViridianNicknameSpeechHousePokefanMText2
+
 ViridianNicknameSpeechHouseLassScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .ViridianNicknameSpeechHouseLassScript2
 	jumptextfaceplayer ViridianNicknameSpeechHouseLassText
+
+.ViridianNicknameSpeechHouseLassScript2:
+	jumptextfaceplayer ViridianNicknameSpeechHouseLassText2
 
 Speary:
 	refreshscreen
@@ -37,6 +47,11 @@ ViridianNicknameSpeechHousePokefanMText:
 	line "Rattata too!"
 	done
 
+ViridianNicknameSpeechHousePokefanMText2:
+	text "I think I'll still"
+	line "get that Rattata!"
+	done
+
 ViridianNicknameSpeechHouseLassText:
 	text "I'm really nervous"
 	line "about bringing a"
@@ -44,6 +59,12 @@ ViridianNicknameSpeechHouseLassText:
 	cont "world…"
 
 	para "Especially now…"
+	done
+
+ViridianNicknameSpeechHouseLassText2:
+	text "Looks like it'll be"
+	line "safer to raise a"
+	cont "child now."
 	done
 
 SpearyText:

@@ -102,11 +102,12 @@ PewterCityFruitTree2:
 	fruittree FRUITTREE_PEWTER_CITY_2
 
 PewterCityCooltrainerFText:
-	text "The Gym Leader's"
-	line "back!"
+	text "I think we should"
+	line "restore the old"
+	cont "Gym."
 
-	para "Those Feds are"
-	line "gonna pay!"
+	para "Maybe make it into"
+	line "a museum."
 	done
 
 PewterCityBugCatcherText:
@@ -123,6 +124,16 @@ PewterCityBugCatcherText:
 	
 	para "if I was strong"
 	line "enough…"
+	done
+
+PewterCityBugCatcherText2:
+	text "The Feds are gone,"
+	line "but my garden is"
+	cont "still ruined…"
+
+	para "It's gonna take"
+	line "years to fix"
+	cont "this!"
 	done
 
 PewterCityGrampsText:

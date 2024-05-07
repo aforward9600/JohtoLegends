@@ -86,6 +86,7 @@ MtSilverSummit_MapScripts:
 	setevent EVENT_EPILOGUE_CRYSTAL
 	setevent EVENT_COMPLETED_EPILOGUE
 	clearevent EVENT_FERROPEXOLA
+	setflag ENGINE_SAFARI_ZONE
 	setmapscene GOLD_CRYSTAL_HOUSE, SCENE_DEFAULT
 	pause 90
 	special FadeBlackQuickly

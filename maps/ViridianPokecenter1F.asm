@@ -74,9 +74,9 @@ ViridianPokecenter1FTwinText_BlueReturned:
 	done
 
 ViridianPokecenter1FSchoolboyText:
-	text "I hear Palette"
-	line "Town is untouched"
-	cont "by the Feds."
+	text "I hear Pallet Town"
+	line "is untouched by"
+	cont "the Feds."
 
 	para "Considering who"
 	line "lives there, it"

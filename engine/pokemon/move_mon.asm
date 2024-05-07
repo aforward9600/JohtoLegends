@@ -200,10 +200,22 @@ endr
 	and a
 	jr nz, .copywildmonDVs
 
+	push hl
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_UNUSED_5_F, [hl]
+	jr nz, .MaxDVsPasswordGifts
+	pop hl
+
 	call Random
 	ld b, a
 	call Random
 	ld c, a
+	jr .initializeDVs
+
+.MaxDVsPasswordGifts:
+	pop hl
+	ld b, $ff
+	ld c, $ff
 .initializeDVs
 	ld a, b
 	ld [de], a
@@ -373,6 +385,9 @@ endr
 .done
 	scf ; When this function returns, the carry flag indicates success vs failure.
 	ret
+
+MaxDVsPasswordGift:
+	db "STRONGEST"
 
 FillPP:
 	push bc

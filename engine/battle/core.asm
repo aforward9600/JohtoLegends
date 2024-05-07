@@ -6315,10 +6315,22 @@ LoadEnemyMon:
 
 .skipshine:
 ; Generate new random DVs
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_UNUSED_5_F, [hl]
+	jr nz, .MaxDVs
 	call BattleRandom
 	ld b, a
 	call BattleRandom
 	ld c, a
+	jr .UpdateDVs
+
+.MaxDVs:
+;	call BattleRandom
+;	ld [hld], a
+	ld b, $ff
+;	call BattleRandom
+;	ld [hl], a
+	ld c, $ff
 
 .UpdateDVs:
 ; Input DVs in register bc
@@ -6666,6 +6678,9 @@ LoadEnemyMon:
 	call ApplyStatusEffectOnEnemyStats
 
 	ret
+
+DVsPassword:
+	db "STRONGEST"
 
 FinalPkmnSlideInEnemyMonFrontpic:
 	call FinishBattleAnim

@@ -78,7 +78,15 @@ TrainerEngineerGabe:
 .Script:
 	endifjustbattled
 	opentext
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .EngineerGabeAfterBattle2
 	writetext EngineerGabeAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.EngineerGabeAfterBattle2:
+	writetext EngineerGabeAfterBattleText2
 	waitbutton
 	closetext
 	end
@@ -244,6 +252,15 @@ EngineerGabeAfterBattleText:
 	cont "a depressing funk…"
 	done
 
+EngineerGabeAfterBattleText2:
+	text "Looks like we can"
+	line "start constructing"
+	cont "new buildings now."
+
+	para "My life has a"
+	line "purpose again!"
+	done
+
 EngineerBernieSeenText:
 	text "Hi-hoooo!"
 	done
@@ -268,10 +285,10 @@ EngineerBernieAfterBattleText:
 	done
 
 FlintMySonText:
-	text "My son will get to"
-	line "grow up in a world"
-	cont "not gripped by"
-	cont "fear."
+	text "Flint: My son will"
+	line "get to grow up in"
+	cont "a world not"
+	cont "gripped by fear."
 
 	para "I haven't felt"
 	line "this hopeful in a"
