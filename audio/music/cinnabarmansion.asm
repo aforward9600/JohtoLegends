@@ -46,7 +46,7 @@ Music_CinnabarMansion_branch_7ed19:
 
 Music_CinnabarMansion_Ch2: ; 7ed40 (1f:6d40)
 	dutycycle 2
-	
+	tone $0001
 	vibrato 10, 36
 	notetype 12, 194
 

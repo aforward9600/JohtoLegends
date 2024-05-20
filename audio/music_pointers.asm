@@ -147,3 +147,4 @@ Music:
 	dba Music_VictoryRoadRSE
 	dba Music_SilphCo
 	dba Music_PokemonTower
+	dba Music_OakBattle

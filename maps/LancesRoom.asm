@@ -68,9 +68,9 @@ Script_ApproachLanceFromLeft:
 
 Script_ApproachLanceFromRight:
 	special FadeOutMusic
-	applymovement PLAYER, MovementData_ApproachLanceFromRight
 	checkevent EVENT_CURRENTLY_CHAMPION
 	iftrue .MoveToChampionSpot2
+	applymovement PLAYER, MovementData_ApproachLanceFromRight
 	sjump LancesRoomLanceScript
 
 .MoveToChampionSpot2:

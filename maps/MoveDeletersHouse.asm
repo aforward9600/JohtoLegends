@@ -23,7 +23,7 @@ MoveDeleter:
 MaxDVsSetter:
 	faceplayer
 	opentext
-	checkevent EVENT_STRONGEST_PASSWORD
+	checkevent EVENT_PASSWORD_CHEATER
 	iftrue .SetDVs
 	writetext StrongestPasswordText
 	waitbutton

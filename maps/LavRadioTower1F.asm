@@ -17,7 +17,12 @@ LavRadioTower1FOfficerScript:
 	jumptextfaceplayer LavRadioTower1FOfficerText
 
 LavRadioTower1FSuperNerd1Script:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .LavRadioTower1FSuperNerd2
 	jumptextfaceplayer LavRadioTower1FSuperNerd1Text
+
+.LavRadioTower1FSuperNerd2:
+	jumptextfaceplayer LavRadioTower1FSuperNerd1Text2
 
 LavRadioTower1FGentlemanScript:
 	jumptextfaceplayer LavRadioTower1FGentlemanText
@@ -69,6 +74,17 @@ LavRadioTower1FSuperNerd2Text:
 	line "understand…"
 
 	para "…Sniff…"
+	done
+
+LavRadioTower1FSuperNerd1Text2:
+	text "While I didn't get"
+	line "to take revenge"
+	cont "for Nidoqueen,"
+
+	para "Someone else did…"
+
+	para "I just hope she"
+	line "can rest in peace…"
 	done
 
 LavRadioTower1F_MapEvents:
