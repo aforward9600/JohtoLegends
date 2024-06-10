@@ -144,7 +144,6 @@ CharcoalKiln_Blocks:
 LakeOfRageHiddenPowerHouse_Blocks:
 LakeOfRageMagikarpHouse_Blocks:
 GoldenrodHappinessRater_Blocks:
-BillsFamilysHouse_Blocks:
 GoldenrodPPSpeechHouse_Blocks:
 GoldenrodNameRater_Blocks:
 VermilionFishingSpeechHouse_Blocks:
@@ -180,6 +179,9 @@ Route30BerryHouse_Blocks:
 SootheBellHouse_Blocks:
 CherrygroveFisherHouse_Blocks:
 	INCBIN "maps/House1.blk"
+
+BillsFamilysHouse_Blocks:
+	INCBIN "maps/BillsHouse.blk"
 
 SafariZoneFuchsiaGateBeta_Blocks:
 Route19FuchsiaGate_Blocks:

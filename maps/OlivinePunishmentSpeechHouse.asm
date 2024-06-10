@@ -67,7 +67,7 @@ OlivinePunishmentSpeechHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-;	warp_event  2,  7, SILVER_CAVE_SUMMIT_OUTSIDE, 1
+;	warp_event  2,  7, SEAFOAM_ISLAND_B4F, 1
 ;	warp_event  3,  7, LANCES_ROOM, 1
 	warp_event  2,  7, OLIVINE_CITY, 4
 	warp_event  3,  7, OLIVINE_CITY, 4

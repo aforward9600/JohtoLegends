@@ -60,13 +60,13 @@ CeruleanCaveB1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event  3,  5, CERULEAN_CAVE_1F, 2
+	warp_event  5,  7, CERULEAN_CAVE_1F, 2
 
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event 27, 13, BGEVENT_ITEM, CeruleanCaveHiddenBerserkGene
+	bg_event 29, 15, BGEVENT_ITEM, CeruleanCaveHiddenBerserkGene
 
 	db 2 ; object events
-	object_event 27, 13, SPRITE_MEWTWO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, MewtwoScript, EVENT_CERULEAN_CAVE_MEWTWO
-	object_event 19,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CeruleanCaveB1FMaxRevive, EVENT_CERULEAN_CAVE_B1F_MAX_REVIVE
+	object_event 29, 15, SPRITE_MEWTWO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, MewtwoScript, EVENT_CERULEAN_CAVE_MEWTWO
+	object_event 21,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CeruleanCaveB1FMaxRevive, EVENT_CERULEAN_CAVE_B1F_MAX_REVIVE

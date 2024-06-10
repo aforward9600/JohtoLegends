@@ -20,13 +20,14 @@ SeafoamIslandB3FFastCurrent:
 	return
 
 .CalmB3FWaterCallback:
-	changeblock 18,  6, $4d
-	changeblock 18,  8, $4d
-	changeblock 18, 10, $4d
+	changeblock 16, 12, $4d
 	changeblock 18, 12, $4d
+	changeblock 20,  8, $4d
+	changeblock 20, 10, $4d
 	changeblock 20, 12, $4d
-	changeblock 14, 10, $4d
-	changeblock 22, 12, $4d
+	changeblock 20, 14, $4d
+	changeblock 22, 14, $4d
+	changeblock 24, 14, $4d
 	return
 
 .CheckBoulder:
@@ -35,13 +36,14 @@ SeafoamIslandB3FFastCurrent:
 	checkevent EVENT_SEAFOAM_ISLAND_BOULDER_B3F_2
 	iftrue .NeedBoulder3F
 .CalmB3FWater:
-	changeblock 18,  6, $4d
-	changeblock 18,  8, $4d
-	changeblock 18, 10, $4d
+	changeblock 16, 12, $4d
 	changeblock 18, 12, $4d
+	changeblock 20,  8, $4d
+	changeblock 20, 10, $4d
 	changeblock 20, 12, $4d
-	changeblock 14, 10, $4d
-	changeblock 22, 12, $4d
+	changeblock 20, 14, $4d
+	changeblock 22, 14, $4d
+	changeblock 24, 14, $4d
 	reloadmappart
 	setevent EVENT_SEAFOAM_ISLAND_BOULDER_B3F_FALLEN
 .NeedBoulder3F:
@@ -104,26 +106,26 @@ SeafoamIslandB3F_MapEvents:
 	db 0, 0 ; filler
 
 	db 11 ; warp events
-	warp_event  5, 13, SEAFOAM_ISLAND_B2F, 4
-	warp_event 25,  3, SEAFOAM_ISLAND_B2F, 5
-	warp_event 25, 15, SEAFOAM_ISLAND_B2F, 6
-	warp_event  9,  9, SEAFOAM_ISLAND_B4F, 1
-	warp_event 25,  5, SEAFOAM_ISLAND_B4F, 2
-	warp_event 18,  7, SEAFOAM_ISLAND_B2F, 9
-	warp_event 19,  7, SEAFOAM_ISLAND_B2F, 10
-	warp_event 20, 15, SEAFOAM_ISLAND_B4F, 3
-	warp_event 21, 15, SEAFOAM_ISLAND_B4F, 4
-	warp_event  3, 18, SEAFOAM_ISLAND_B4F, 5
-	warp_event  6, 18, SEAFOAM_ISLAND_B4F, 6
+	warp_event  7, 15, SEAFOAM_ISLAND_B2F, 4
+	warp_event 27,  5, SEAFOAM_ISLAND_B2F, 5
+	warp_event 27, 17, SEAFOAM_ISLAND_B2F, 6
+	warp_event 11, 11, SEAFOAM_ISLAND_B4F, 1
+	warp_event 27,  7, SEAFOAM_ISLAND_B4F, 2
+	warp_event 20,  9, SEAFOAM_ISLAND_B2F, 9
+	warp_event 21,  9, SEAFOAM_ISLAND_B2F, 10
+	warp_event 22, 17, SEAFOAM_ISLAND_B4F, 3
+	warp_event 23, 17, SEAFOAM_ISLAND_B4F, 4
+	warp_event  5, 20, SEAFOAM_ISLAND_B4F, 5
+	warp_event  8, 20, SEAFOAM_ISLAND_B4F, 6
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 6 ; object events
-	object_event 18,  6, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB3FBoulderWater, EVENT_SEAFOAM_ISLAND_BOULDER_B3F_1
-	object_event 19,  6, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB3FBoulderWater, EVENT_SEAFOAM_ISLAND_BOULDER_B3F_2
-	object_event  2, 17, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB3FBoulder, EVENT_SEAFOAM_ISLAND_BOULDER_B3F_3
-	object_event  8, 16, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB3FBoulder, EVENT_SEAFOAM_ISLAND_BOULDER_B3F_4
-	object_event  9, 16, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB3FBoulder, -1
-	object_event  4, 16, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB3FBoulder, -1
+	object_event 20,  8, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB3FBoulderWater, EVENT_SEAFOAM_ISLAND_BOULDER_B3F_1
+	object_event 21,  8, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB3FBoulderWater, EVENT_SEAFOAM_ISLAND_BOULDER_B3F_2
+	object_event  4, 19, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB3FBoulder, EVENT_SEAFOAM_ISLAND_BOULDER_B3F_3
+	object_event 10, 18, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB3FBoulder, EVENT_SEAFOAM_ISLAND_BOULDER_B3F_4
+	object_event 11, 18, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB3FBoulder, -1
+	object_event  6, 18, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB3FBoulder, -1

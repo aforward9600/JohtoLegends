@@ -140,7 +140,7 @@ ENDM
 	map_attributes BlackthornCity, BLACKTHORN_CITY, $71, SOUTH
 	connection south, Route45, ROUTE_45, 1
 
-	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $2c, EAST
+	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $71, EAST
 	connection east, Route28, ROUTE_28, 9
 
 	map_attributes Route26, ROUTE_26, $05, WEST
@@ -150,7 +150,7 @@ ENDM
 	connection west, NewBarkTown, NEW_BARK_TOWN, 0
 	connection east, Route26, ROUTE_26, -45
 
-	map_attributes Route28, ROUTE_28, $2c, WEST
+	map_attributes Route28, ROUTE_28, $71, WEST
 	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -9
 
 	map_attributes Route29, ROUTE_29, $05, NORTH | WEST | EAST
@@ -735,14 +735,14 @@ ENDM
 	map_attributes CinnabarIslandMart, CINNABAR_ISLAND_MART, $00, 0
 	map_attributes CinnabarIslandGym, CINNABAR_ISLAND_GYM, $00, 0
 	map_attributes GlitchCity, GLITCH_CITY, $00, 0
-	map_attributes SeafoamIsland1F, SEAFOAM_ISLAND_1F, $00, 0
-	map_attributes SeafoamIslandB1F, SEAFOAM_ISLAND_B1F, $00, 0
-	map_attributes SeafoamIslandB2F, SEAFOAM_ISLAND_B2F, $00, 0
-	map_attributes SeafoamIslandB3F, SEAFOAM_ISLAND_B3F, $00, 0
-	map_attributes SeafoamIslandB4F, SEAFOAM_ISLAND_B4F, $00, 0
-	map_attributes CeruleanCave1F, CERULEAN_CAVE_1F, $00, 0
-	map_attributes CeruleanCaveB1F, CERULEAN_CAVE_B1F, $00, 0
-	map_attributes CeruleanCave2F, CERULEAN_CAVE_2F, $00, 0
+	map_attributes SeafoamIsland1F, SEAFOAM_ISLAND_1F, $02, 0
+	map_attributes SeafoamIslandB1F, SEAFOAM_ISLAND_B1F, $02, 0
+	map_attributes SeafoamIslandB2F, SEAFOAM_ISLAND_B2F, $02, 0
+	map_attributes SeafoamIslandB3F, SEAFOAM_ISLAND_B3F, $02, 0
+	map_attributes SeafoamIslandB4F, SEAFOAM_ISLAND_B4F, $02, 0
+	map_attributes CeruleanCave1F, CERULEAN_CAVE_1F, $09, 0
+	map_attributes CeruleanCaveB1F, CERULEAN_CAVE_B1F, $09, 0
+	map_attributes CeruleanCave2F, CERULEAN_CAVE_2F, $09, 0
 	map_attributes FedHideout1F, FED_HIDEOUT_1F, $00, 0
 	map_attributes FedHideoutB1F, FED_HIDEOUT_B1F, $00, 0
 	map_attributes FedHideoutB2F, FED_HIDEOUT_B2F, $00, 0

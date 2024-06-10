@@ -14,7 +14,7 @@
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 0d
 	tilecoll WALL, TOWN_MAP, FLOOR, FLOOR ; 0e
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0f
-	tilecoll WALL, WALL, PC, WALL ; 10
+	tilecoll WALL, WALL, FLOOR, WALL ; 10
 	tilecoll WALL, WALL, WALL, FLOOR ; 11
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 12
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 13

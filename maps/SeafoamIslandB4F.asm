@@ -19,8 +19,8 @@ SeafoamIslandB4F_MapScripts:
 
 .CalmWaterB4FCallback:
 	changeblock 6, 14, $4d
-	changeblock 6, 12, $4d
-	changeblock 8, 12, $4d
+	changeblock 6, 16, $4d
+	changeblock 8, 14, $4d
 	return
 
 .CheckBoulderB4F:
@@ -30,8 +30,8 @@ SeafoamIslandB4F_MapScripts:
 	iftrue .NeedsBoulderB4F
 .CalmWaterB4F:
 	changeblock 6, 14, $4d
-	changeblock 6, 12, $4d
-	changeblock 8, 12, $4d
+	changeblock 6, 16, $4d
+	changeblock 8, 14, $4d
 	reloadmappart
 	setevent EVENT_SEAFOAM_ISLAND_BOULDER_B4F_FALLEN
 .NeedsBoulderB4F:
@@ -140,19 +140,19 @@ SeafoamIslandB4F_MapEvents:
 	db 0, 0 ; filler
 
 	db 6 ; warp events
-	warp_event 13,  7, SEAFOAM_ISLAND_B3F, 4
-	warp_event 27,  3, SEAFOAM_ISLAND_B3F, 5
-	warp_event 22, 17, SEAFOAM_ISLAND_B3F, 8
-	warp_event 23, 17, SEAFOAM_ISLAND_B3F, 9
-	warp_event  6, 15, SEAFOAM_ISLAND_B3F, 10
-	warp_event  7, 15, SEAFOAM_ISLAND_B3F, 11
+	warp_event 13,  9, SEAFOAM_ISLAND_B3F, 4
+	warp_event 27,  5, SEAFOAM_ISLAND_B3F, 5
+	warp_event 22, 19, SEAFOAM_ISLAND_B3F, 8
+	warp_event 23, 19, SEAFOAM_ISLAND_B3F, 9
+	warp_event  6, 17, SEAFOAM_ISLAND_B3F, 10
+	warp_event  7, 17, SEAFOAM_ISLAND_B3F, 11
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 4 ; object events
-	object_event  9,  1, SPRITE_ARTICUNO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ArticunoScript, EVENT_SEAFOAM_ISLAND_ARTICUNO
-	object_event  9,  6, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandBirdkeeperScript, -1
-	object_event  6, 16, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB4FBoulder, EVENT_SEAFOAM_ISLAND_BOULDER_B4F_1
-	object_event  7, 16, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB4FBoulder, EVENT_SEAFOAM_ISLAND_BOULDER_B4F_2
+	object_event  9,  3, SPRITE_ARTICUNO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ArticunoScript, EVENT_SEAFOAM_ISLAND_ARTICUNO
+	object_event  9,  8, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandBirdkeeperScript, -1
+	object_event  6, 18, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB4FBoulder, EVENT_SEAFOAM_ISLAND_BOULDER_B4F_1
+	object_event  7, 18, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandB4FBoulder, EVENT_SEAFOAM_ISLAND_BOULDER_B4F_2

@@ -41,6 +41,21 @@ BillsHouseBookshelf2:
 GoldenrodBillsTelevision:
 	jumpstd televisionscript
 
+BillsFamilyComputer:
+	opentext
+	readvar VAR_FACING
+	ifequal RIGHT, .CantReadComputer
+	writetext BillsFamilyComputerText
+	waitbutton
+	closetext
+	end
+
+.CantReadComputer:
+	writetext CantReadComputerText
+	waitbutton
+	closetext
+	end
+
 BillText:
 	text "Howdy! My name is"
 	line "Bill!"
@@ -106,6 +121,27 @@ BillsSecretText:
 	line "told you!"
 	done
 
+CantReadComputerText:
+	text "You can't read the"
+	line "screen from here!"
+	done
+
+BillsFamilyComputerText:
+	text "Personal computers"
+	line "are pretty rare"
+	cont "right now."
+
+	para "What's on the"
+	line "screen?"
+
+	para "#mon Digital"
+	line "Storage System"
+
+	para "Looks like it's"
+	line "pretty early in"
+	cont "development."
+	done
+
 BillsFamilysHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -115,10 +151,11 @@ BillsFamilysHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 4 ; bg events
 	bg_event  0,  1, BGEVENT_READ, BillsHouseBookshelf2
 	bg_event  1,  1, BGEVENT_READ, BillsHouseBookshelf1
 	bg_event  2,  1, BGEVENT_READ, GoldenrodBillsTelevision
+	bg_event  7,  1, BGEVENT_READ, BillsFamilyComputer
 
 	db 3 ; object events
 	object_event  2,  3, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillScript, -1
