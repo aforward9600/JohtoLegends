@@ -9,7 +9,7 @@ KDLPro for the status appearance change.
 
 Dark Zeta, Celadonk and cardboardbox for Evolution moves for Pokecrystal16.
 
-Celadonk for the Password System.
+Celadonk for the Password System and some cries.
 
 Rangi, DGamers-64 and Vendily for the fourth stat page.
 

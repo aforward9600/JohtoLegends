@@ -37,7 +37,7 @@ HallOfFame_MapScripts:
 	clearevent EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME
 	special HealParty
 	setevent EVENT_DECO_SILVER_TROPHY
-	clearflag ENGINE_SAFARI_ZONE
+	clearevent EVENT_SET_PLAYER_CREDITS
 	checkevent EVENT_GOT_RIVALS_MESSAGE
 	iftrue .SkipRivalMessage
 	setmapscene PLAYERS_HOUSE_1F, SCENE_GRANDMA_TELLS_YOU_ABOUT_OAK

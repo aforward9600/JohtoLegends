@@ -86,6 +86,17 @@ BikerBossMovement2:
 	clearevent EVENT_PEWTER_CITY_CIVILLIANS
 	setevent EVENT_KANTO_POKECENTER_RIVAL
 	setevent EVENT_BEAT_BIKER_BOSS
+	clearevent EVENT_CERULEAN_GYM_DAISY
+	clearevent EVENT_CERULEAN_GYM_LILY
+	clearevent EVENT_CERULEAN_GYM_VIOLET
+	clearevent EVENT_PEWTER_GYM_FLINT
+	clearevent EVENT_CELADON_GYM_ERIKA
+	clearevent EVENT_VERMILION_GYM_SURGE
+	clearevent EVENT_FUCHSIA_GYM_KOGA
+	clearevent EVENT_SAFFRON_GYM_SABRINA
+	clearevent EVENT_FIGHTING_DOJO_MASTER
+	clearevent EVENT_CINNABAR_GYM_BLAINE
+	clearevent EVENT_VIRIDIAN_GYM_BLUE
 	setscene SCENE_FINISHED
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes

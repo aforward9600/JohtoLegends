@@ -21,6 +21,23 @@ CeladonCity_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
 .FlyPoint:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .ResetKantoGymLeaders
+	setflag ENGINE_FLYPOINT_CELADON
+	return
+
+.ResetKantoGymLeaders:
+	clearevent EVENT_CERULEAN_GYM_DAISY
+	clearevent EVENT_CERULEAN_GYM_LILY
+	clearevent EVENT_CERULEAN_GYM_VIOLET
+	clearevent EVENT_PEWTER_GYM_FLINT
+	clearevent EVENT_CELADON_GYM_ERIKA
+	clearevent EVENT_VERMILION_GYM_SURGE
+	clearevent EVENT_FUCHSIA_GYM_KOGA
+	clearevent EVENT_SAFFRON_GYM_SABRINA
+	clearevent EVENT_FIGHTING_DOJO_MASTER
+	clearevent EVENT_CINNABAR_GYM_BLAINE
+	clearevent EVENT_VIRIDIAN_GYM_BLUE
 	setflag ENGINE_FLYPOINT_CELADON
 	return
 
