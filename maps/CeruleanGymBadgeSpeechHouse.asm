@@ -7,13 +7,18 @@ CeruleanGymBadgeSpeechHouse_MapScripts:
 
 	db 0 ; callbacks
 
-CeruleanGymBadgeSpeechHousePokefanMScript:
-	jumptextfaceplayer CeruleanGymBadgeSpeechHousePokefanMText
+MistysGrandmotherScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .MistysGrandmother2
+	jumptextfaceplayer MistysGrandmotherText1
+
+.MistysGrandmother2:
+	jumptextfaceplayer MistysGrandmotherText2
 
 BabyMistyScript:
 	jumptextfaceplayer BabyMistyText
 
-CeruleanGymBadgeSpeechHousePokefanMText:
+MistysGrandmotherText1:
 	text "After the deaths"
 	line "of their parents,"
 
@@ -34,6 +39,14 @@ CeruleanGymBadgeSpeechHousePokefanMText:
 	cont "any fear."
 	done
 
+MistysGrandmotherText2:
+	text "My granddaughters"
+	line "can play outside"
+	cont "in peace again."
+
+	para "What a relief."
+	done
+
 BabyMistyText:
 	text "Misty:…………………………"
 
@@ -52,5 +65,5 @@ CeruleanGymBadgeSpeechHouse_MapEvents:
 	db 0 ; bg events
 
 	db 2 ; object events
-	object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanGymBadgeSpeechHousePokefanMScript, -1
+	object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MistysGrandmotherScript, -1
 	object_event  5,  6, SPRITE_MISTY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BabyMistyScript, -1

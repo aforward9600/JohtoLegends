@@ -2199,7 +2199,7 @@ SwarmScript:
 	farwritetext WhatSwarmTodayText
 	waitbutton
 .SwarmReroll:
-	random 21
+	random 24
 	ifequal 0,  .noswarm
 	ifequal 1,  .yanma
 	ifequal 2,  .dunsparce
@@ -2221,6 +2221,9 @@ SwarmScript:
 	ifequal 18, .ditto
 	ifequal 19, .slowpoke
 	ifequal 20, .ponyta
+	ifequal 21, .cyndaquil
+	ifequal 22, .chikorita
+	ifequal 23, .totodile
 
 .noswarm
 	setflag ENGINE_SWARM
@@ -2441,6 +2444,39 @@ SwarmScript:
 	swarm ROUTE_42
 	getlandmarkname STRING_BUFFER_5, ROUTE_42
 	getmonname STRING_BUFFER_3, PONYTA
+	farwritetext RouteSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.cyndaquil
+	setflag ENGINE_ALT_SWARM
+	setflag ENGINE_SWARM
+	swarm DARK_CAVE_NEW_ENTRANCE
+	getlandmarkname STRING_BUFFER_5, DARK_CAVE
+	getmonname STRING_BUFFER_3, CYNDAQUIL
+	farwritetext CaveSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.chikorita
+	setflag ENGINE_ALT_SWARM
+	setflag ENGINE_SWARM
+	swarm ROUTE_44
+	getlandmarkname STRING_BUFFER_5, ROUTE_44
+	getmonname STRING_BUFFER_3, CHIKORITA
+	farwritetext RouteSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.totodile
+	setflag ENGINE_ALT_SWARM
+	setflag ENGINE_SWARM
+	swarm ROUTE_43
+	getlandmarkname STRING_BUFFER_5, ROUTE_43
+	getmonname STRING_BUFFER_3, TOTODILE
 	farwritetext RouteSwarmText
 	waitbutton
 	closetext

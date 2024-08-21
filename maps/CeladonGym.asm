@@ -72,7 +72,7 @@ CeladonGymErikaScript:
 
 .ErikaRematch:
 	checkflag ENGINE_BETH
-	iffalse .ErikaPost
+	iftrue .ErikaPost
 	writetext ErikaRematchText
 	waitbutton
 	closetext

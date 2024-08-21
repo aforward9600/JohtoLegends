@@ -45,7 +45,12 @@ CinnabarPokecenter1FRival:
 	end
 
 CinnabarPokecenter1FFisherScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .CinnabarPokecenter1FFisher2
 	jumptextfaceplayer CinnabarPokecenter1FFisherText
+
+.CinnabarPokecenter1FFisher2:
+	jumptextfaceplayer CinnabarPokecenter1FFisherText2
 
 CinnabarPokecenter1FCooltrainerFText:
 	text "The Gym's been shut"
@@ -74,6 +79,13 @@ CinnabarPokecenter1FFisherText:
 	line "embargo lifts soon"
 	cont "so I can start"
 	cont "researching."
+	done
+
+CinnabarPokecenter1FFisherText2:
+	text "The embargo will"
+	line "lift soon and I'll"
+	cont "be able to resume"
+	cont "my research!"
 	done
 
 CinnabarPokecenter1FRivalText:

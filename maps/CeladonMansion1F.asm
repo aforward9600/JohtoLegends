@@ -10,7 +10,12 @@ CeladonMansion1F_MapScripts:
 	db 0 ; callbacks
 
 CeladonMansionManager:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .CeladonMansionManager2
 	jumptextfaceplayer CeladonMansionManagerText
+
+.CeladonMansionManager2:
+	jumptextfaceplayer CeladonMansionManagerText2
 
 CeladonMansion1FMeowth:
 	refreshscreen
@@ -66,6 +71,14 @@ CeladonMansionManagerText:
 	line "until they fight"
 	cont "someone tougher"
 	cont "than them!"
+	done
+
+CeladonMansionManagerText2:
+	text "Now that those"
+	line "hooligans are"
+	cont "gone, I can"
+	cont "start renting"
+	cont "again!"
 	done
 
 CeladonMansion1FMeowthText:

@@ -528,6 +528,7 @@ SwarmGrassWildMons:
 	dbw 27, KADABRA
 	dbw 27, KADABRA
 
+;Slowpoke swarm
 	map_id ROUTE_44
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
@@ -558,6 +559,7 @@ SwarmGrassWildMons:
 	dbw 5, CHIKORITA
 	dbw 5, CHIKORITA
 
+;Ponyta swarm
 	map_id ROUTE_42
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn

@@ -100,7 +100,7 @@ CeruleanGymVioletScript:
 
 .SensationalRematch:
 	checkflag ENGINE_HUEY
-	iffalse .VioletPost
+	iftrue .VioletPost
 	writetext VioletRematchText
 	waitbutton
 	closetext

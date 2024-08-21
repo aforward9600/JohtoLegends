@@ -9,7 +9,7 @@ GenerateShinySwarm:
 	cp ROUTE_39
 	jr z, .yanma
 	cp WILD_AREA_OUTSIDE
-	jr z, .wildarea
+	jp z, .wildarea
 	cp ICE_PATH
 	jp z, .sneasel
 	cp BURNED_TOWER
@@ -41,6 +41,9 @@ GenerateShinySwarm:
 	jp .skipshineswarm
 
 .dunsparce
+	ld hl, wSwarmFlags
+	bit SWARMFLAGS_ALT_SWARM_F, [hl]
+	jr nz, .cyndaquil
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld a, l
@@ -54,6 +57,25 @@ GenerateShinySwarm:
 		else
 			ld a, h
 			cp HIGH(DUNSPARCE)
+		endc
+	endc
+	jp nz, .skipshineswarm
+	jp .rollshiny
+
+.cyndaquil
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(CYNDAQUIL)
+	if HIGH(CYNDAQUIL) == 0
+		or h
+	else
+		jr nz, .skipshineswarm
+		if HIGH(CYNDAQUIL)
+			dec h
+		else
+			ld a, h
+			cp HIGH(CYNDAQUIL)
 		endc
 	endc
 	jp nz, .skipshineswarm
@@ -250,6 +272,9 @@ GenerateShinySwarm:
 	jp .rollshiny
 
 .ralts
+	ld hl, wSwarmFlags
+	bit SWARMFLAGS_ALT_SWARM_F, [hl]
+	jr nz, .totodile
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld a, l
@@ -266,7 +291,26 @@ GenerateShinySwarm:
 		endc
 	endc
 	jp nz, .skipshineswarm
-	jr .rollshiny
+	jp .rollshiny
+
+.totodile
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(TOTODILE)
+	if HIGH(TOTODILE) == 0
+		or h
+	else
+		jp nz, .skipshineswarm
+		if HIGH(TOTODILE)
+			dec h
+		else
+			ld a, h
+			cp HIGH(TOTODILE)
+		endc
+	endc
+	jp nz, .skipshineswarm
+	jp .rollshiny
 
 .kotora
 	ld a, [wCurPartySpecies]
@@ -303,7 +347,7 @@ GenerateShinySwarm:
 			cp HIGH(PARASECT)
 		endc
 	endc
-	jr nz, .skipshineswarm
+	jp nz, .skipshineswarm
 	jr .rollshiny
 
 .gligar
@@ -383,6 +427,9 @@ GenerateShinySwarm:
 	jr .rollshiny
 
 .slowpoke
+	ld hl, wSwarmFlags
+	bit SWARMFLAGS_ALT_SWARM_F, [hl]
+	jr nz, .chikorita
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld a, l
@@ -396,6 +443,25 @@ GenerateShinySwarm:
 		else
 			ld a, h
 			cp HIGH(SLOWPOKE)
+		endc
+	endc
+	jr nz, .skipshineswarm
+	jr .rollshiny
+
+.chikorita
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(CHIKORITA)
+	if HIGH(CHIKORITA) == 0
+		or h
+	else
+		jr nz, .skipshineswarm
+		if HIGH(CHIKORITA)
+			dec h
+		else
+			ld a, h
+			cp HIGH(CHIKORITA)
 		endc
 	endc
 	jr nz, .skipshineswarm
@@ -437,10 +503,18 @@ GenerateShinySwarm:
 
 .skipshineswarm:
 ; Generate new random DVs
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_UNUSED_5_F, [hl]
+	jr nz, .MaxDVs
 	call BattleRandom
 	ld b, a
 	call BattleRandom
 	ld c, a
+	jr .UpdateDVsSwarm
+
+.MaxDVs:
+	ld b, $ff
+	ld c, $ff
 
 .UpdateDVsSwarm:
 ; Input DVs in register bc

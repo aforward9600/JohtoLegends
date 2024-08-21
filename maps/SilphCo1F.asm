@@ -20,7 +20,12 @@ SilphCo1FGentlemanScript:
 	jumptextfaceplayer SilphCo1FGentlemanText
 
 SilphCo1FScientistScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .SilphCo1FScientist2
 	jumptextfaceplayer SilphCo1FScientistText
+
+.SilphCo1FScientist2:
+	jumptextfaceplayer SilphCo1FScientistText2
 
 SilphCo1FGentlemanScript2:
 	jumptextfaceplayer SilphCo1FGentlemanText2
@@ -96,6 +101,33 @@ SilphCo1FScientistText:
 
 	para "They may be a part"
 	line "of it."
+	done
+
+SilphCo1FScientistText2:
+	text "Don't tell anyone,"
+	line "but we were the"
+	cont "victim of a break-"
+	cont "in a while ago."
+
+	para "Several digital-"
+	line "made #mon were"
+	cont "stolen by some"
+	cont "people in black."
+
+	para "Not only that, but"
+	line "several prototype"
+	cont "Upgrades were also"
+	cont "stolen."
+
+	para "Not to mention the"
+	line "ultimate ball"
+	cont "prototype."
+
+	para "Most of the Feds"
+	line "are gone now, so"
+	cont "there's no point in"
+	cont "investigating"
+	cont "them."
 	done
 
 SilphCo1FGentlemanText2:

@@ -7,7 +7,12 @@ LavenderSpeechHouse_MapScripts:
 	db 0 ; callbacks
 
 LavenderSpeechHousePokefanFScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .LavenderSpeechHousePokefanF2
 	jumptextfaceplayer LavenderSpeechHousePokefanFText
+
+.LavenderSpeechHousePokefanF2:
+	jumptextfaceplayer LavenderSpeechHousePokefanFText2
 
 LavenderSpeechHouseBookshelf:
 	jumpstd picturebookshelf
@@ -19,6 +24,12 @@ LavenderSpeechHousePokefanFText:
 	cont "Sandshrew."
 
 	para "Curse those Feds!"
+	done
+
+LavenderSpeechHousePokefanFText2:
+	text "Now I can pay my"
+	line "respects to"
+	cont "Sandshrew."
 	done
 
 LavenderSpeechHouse_MapEvents:

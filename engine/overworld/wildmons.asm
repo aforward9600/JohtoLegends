@@ -429,7 +429,14 @@ LoadWildMonDataPointer:
 	jr z, _WaterWildmonLookup
 
 _GrassWildmonLookup:
+	ld hl, SwarmGrassWildMonsAlt
+	push hl
+	ld hl, wSwarmFlags
+	bit SWARMFLAGS_ALT_SWARM_F, [hl]
+	pop hl
+	jr nz, .nextgrass
 	ld hl, SwarmGrassWildMons
+.nextgrass
 	ld bc, GRASS_WILDDATA_LENGTH
 	call _SwarmWildmonCheck
 	ret c
@@ -1002,3 +1009,4 @@ INCLUDE "data/wild/kanto_grass.asm"
 INCLUDE "data/wild/kanto_water.asm"
 INCLUDE "data/wild/swarm_grass.asm"
 INCLUDE "data/wild/swarm_water.asm"
+INCLUDE "data/wild/swarm_grass_alt.asm"

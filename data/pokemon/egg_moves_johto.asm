@@ -70,8 +70,8 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw AipomEggMoves
-	dw SunkernEggMoves
 	dw NoEggMoves2
+	dw SunkernEggMoves
 	dw NoEggMoves2
 	dw YanmaEggMoves
 	dw NoEggMoves2

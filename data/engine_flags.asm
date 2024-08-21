@@ -206,4 +206,4 @@ EngineFlags:
 
 	engine_flag wSwarmFlags, SWARMFLAGS_DUNSPARCE_SWARM_F ; $a0
 	engine_flag wSwarmFlags, SWARMFLAGS_DAILY_TELEVISION_F
-	engine_flag wSwarmFlags, SWARMFLAGS_QWILFISH_SWARM_F
+	engine_flag wSwarmFlags, SWARMFLAGS_ALT_SWARM_F

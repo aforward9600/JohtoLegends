@@ -18,7 +18,12 @@ CeruleanMart_CooltrainerM:
 	jumptextfaceplayer CeruleanMart_CooltrainerMText
 
 CeruleanMart_CooltrainerF:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .CeruleanMart_CooltrainerF2
 	jumptextfaceplayer CeruleanMart_CooltrainerFText
+
+.CeruleanMart_CooltrainerF2:
+	jumptextfaceplayer CeruleanMart_CooltrainerFText2
 
 CeruleanMart_CooltrainerMText:
 	text "These shops never"
@@ -38,6 +43,11 @@ CeruleanMart_CooltrainerFText:
 
 	para "but my conscience"
 	line "won't let me."
+	done
+
+CeruleanMart_CooltrainerFText2:
+	text "I wasn't gonna"
+	line "steal anything!"
 	done
 
 CeruleanMart_MapEvents:

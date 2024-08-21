@@ -8,7 +8,12 @@ CeruleanBikeShop_MapScripts:
 	db 0 ; callbacks
 
 CeruleanBikeShopBikerScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .CeruleanBikeShopBiker2
 	jumptextfaceplayer CeruleanBikeShopBikerText
+
+.CeruleanBikeShopBiker2:
+	jumptextfaceplayer CeruleanBikeShopBikerText2
 
 CeruleanBikeShopOwnerScript:
 	faceplayer
@@ -44,6 +49,17 @@ CeruleanBikeShopBikerText:
 
 	para "We get all our"
 	line "bikes here!"
+	done
+
+CeruleanBikeShopBikerText2:
+	text "A bunch of my"
+	line "friends skipped"
+	cont "town after the"
+	cont "Boss lost."
+
+	para "That's gonna hurt"
+	line "this guy's business"
+	cont "pretty bad."
 	done
 
 HaveABikeText:
