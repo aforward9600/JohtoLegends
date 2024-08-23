@@ -61,7 +61,7 @@ Route 43
 Levels 7-10
 
 Morning/Day: Mareep 30%, Growlithe 20%, Vulpix 15%, Lotad 15%, Psyduck 10%, Ralts 5%, Totodile 5%
-Night: Mareep 30%, Houndour 20%, Rattata 15%, Lotad 15%, Psyduck 10%, Ralts 5%, Totodile 5%
+Night: Mareep 30%, Houndour 20%, Rattata 15%, Lotad 15%, Psyduck 10%, Gastly 5%, Totodile 5%
 Water: Poliwag 80%, Poliwhirl 20%
 Old Rod: Magikarp 85%, Poliwag 15%
 Good Rod: Poliwag 65%, Magikarp 35%

@@ -1498,7 +1498,7 @@ JohtoGrassWildMons:
 	dbw  7, RATTATA
 	dbw  7, LOTAD
 	dbw  7, PSYDUCK
-	dbw  7, RALTS
+	dbw  7, GASTLY
 	dbw  7, TOTODILE
 	dbw  7, TOTODILE
 

@@ -2199,7 +2199,7 @@ SwarmScript:
 	farwritetext WhatSwarmTodayText
 	waitbutton
 .SwarmReroll:
-	random 24
+	random 28
 	ifequal 0,  .noswarm
 	ifequal 1,  .yanma
 	ifequal 2,  .dunsparce
@@ -2224,6 +2224,10 @@ SwarmScript:
 	ifequal 21, .cyndaquil
 	ifequal 22, .chikorita
 	ifequal 23, .totodile
+	ifequal 24, .elekid
+	ifequal 25, .smoochum
+	ifequal 26, .magby
+	ifequal 27, .tyrogue
 
 .noswarm
 	setflag ENGINE_SWARM
@@ -2311,6 +2315,17 @@ SwarmScript:
 	closetext
 	sjump .endswarmchannel
 
+.smoochum
+	setflag ENGINE_ALT_SWARM
+	setflag ENGINE_SWARM
+	swarm ICE_PATH_B1F
+	getlandmarkname STRING_BUFFER_5, ICE_PATH
+	getmonname STRING_BUFFER_3, SMOOCHUM
+	farwritetext CaveSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
 .misdreavus
 	checkflag ENGINE_FOGBADGE
 	iffalse .SwarmReroll
@@ -2318,6 +2333,19 @@ SwarmScript:
 	swarm BURNED_TOWER_1F
 	getlandmarkname STRING_BUFFER_5, BURNED_TOWER
 	getmonname STRING_BUFFER_3, MISDREAVUS
+	farwritetext CaveSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.magby
+	checkflag ENGINE_FOGBADGE
+	iffalse .SwarmReroll
+	setflag ENGINE_ALT_SWARM
+	setflag ENGINE_SWARM
+	swarm BURNED_TOWER_1F
+	getlandmarkname STRING_BUFFER_5, BURNED_TOWER
+	getmonname STRING_BUFFER_3, MAGBY
 	farwritetext CaveSwarmText
 	waitbutton
 	closetext
@@ -2348,6 +2376,17 @@ SwarmScript:
 	swarm MOUNT_MORTAR_1F_OUTSIDE
 	getlandmarkname STRING_BUFFER_5, MT_MORTAR
 	getmonname STRING_BUFFER_3, ARON
+	farwritetext CaveSwarmVowelText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.tyrogue
+	setflag ENGINE_ALT_SWARM
+	setflag ENGINE_SWARM
+	swarm MOUNT_MORTAR_1F_OUTSIDE
+	getlandmarkname STRING_BUFFER_5, MT_MORTAR
+	getmonname STRING_BUFFER_3, TYROGUE
 	farwritetext CaveSwarmVowelText
 	waitbutton
 	closetext
@@ -2444,6 +2483,17 @@ SwarmScript:
 	swarm ROUTE_42
 	getlandmarkname STRING_BUFFER_5, ROUTE_42
 	getmonname STRING_BUFFER_3, PONYTA
+	farwritetext RouteSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.elekid
+	setflag ENGINE_ALT_SWARM
+	setflag ENGINE_SWARM
+	swarm ROUTE_42
+	getlandmarkname STRING_BUFFER_5, ROUTE_42
+	getmonname STRING_BUFFER_3, ELEKID
 	farwritetext RouteSwarmText
 	waitbutton
 	closetext

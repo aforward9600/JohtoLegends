@@ -188,7 +188,7 @@ SwarmGrassWildMons:
 	dbw 2, SMOOCHUM
 	dbw 2, SNEASEL
 
-; Magcargo swarm
+; Misdreavus swarm
 	map_id BURNED_TOWER_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
