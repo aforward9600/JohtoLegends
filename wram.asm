@@ -390,6 +390,16 @@ wBattleMonNick:: ds MON_NAME_LENGTH ; c621
 
 wBattleMon:: battle_struct wBattleMon ; c62c
 
+	ds 4
+wIntroJumptableIndex:: db
+wIntroBGMapPointer:: dw
+wIntroTilemapPointer:: dw
+wIntroTilesPointer:: dw
+wIntroFrameCounter1:: db
+wIntroFrameCounter2:: db
+wIntroSpriteStateFlag:: db
+
+
 	ds 2
 
 wWildMon:: db ; c64e
@@ -3101,8 +3111,6 @@ wOBPals2:: ds 8 palettes ; d0c0
 wLYOverrides:: ds SCREEN_HEIGHT_PX ; d100
 wLYOverridesEnd:: ; d190
 
-	ds 1
-
 wMagnetTrain:: ; used only for BANK(wMagnetTrain)
 wMagnetTrainDirection:: db
 wMagnetTrainInitPosition:: db
@@ -3110,9 +3118,11 @@ wMagnetTrainHoldPosition:: db
 wMagnetTrainFinalPosition:: db
 wMagnetTrainPlayerSpriteInitX:: db
 
-	ds 106
+	ds 11
 
-wLYOverridesBackup:: ds SCREEN_HEIGHT_PX ; d200
+wLYOverrides2:: ds SCREEN_HEIGHT_PX - 48
+wLYOverridesBackup:: ds SCREEN_HEIGHT_PX - 96
+wLYOverrides2End:: ds SCREEN_HEIGHT_PX - 48
 wLYOverridesBackupEnd::
 
 

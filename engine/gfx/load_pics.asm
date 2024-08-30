@@ -60,6 +60,18 @@ GetMonFrontpic:
 	ldh [rSVBK], a
 	jp CloseSRAM
 
+Intro_GetMonFrontpic:
+	ld a, [wCurPartySpecies]
+	ld [wCurSpecies], a
+	call IsAPokemon
+	ret c
+	ldh a, [rSVBK]
+	push af
+	call _GetFrontpic
+	pop af
+	ldh [rSVBK], a
+	jp CloseSRAM
+
 GetAnimatedFrontpic:
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a

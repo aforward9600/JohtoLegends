@@ -159,13 +159,13 @@ Unreferenced_Function8b07:
 	call CheckCGB
 	ret z
 ; CGB only
-	ld hl, .BGPal
+	ld hl, .MagikarpBGPal
 	ld de, wBGPals1
 	ld bc, 1 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 
-	ld hl, .OBPal
+	ld hl, .MagikarpOBPal
 	ld de, wOBPals1
 	ld bc, 1 palettes
 	ld a, BANK(wOBPals1)
@@ -176,17 +176,11 @@ Unreferenced_Function8b07:
 	ldh [hCGBPalUpdate], a
 	ret
 
-.BGPal:
-	RGB 31, 31, 31
-	RGB 18, 23, 31
-	RGB 15, 20, 31
-	RGB 00, 00, 00
+.MagikarpBGPal:
+INCLUDE "gfx/intro/gs_magikarp_bg.pal"
 
-.OBPal:
-	RGB 31, 31, 31
-	RGB 31, 31, 12
-	RGB 08, 16, 28
-	RGB 00, 00, 00
+.MagikarpOBPal:
+INCLUDE "gfx/intro/gs_magikarp_ob.pal"
 
 Unreferenced_Function8b3f:
 	call CheckCGB
@@ -227,7 +221,7 @@ Unreferenced_Function8b67:
 	call GetPredefPal
 	jp LoadHLPaletteIntoDE
 
-Unreferenced_Function8b81:
+Intro_LoadMonPalette:
 	call CheckCGB
 	jr nz, .cgb
 	ldh a, [hSGB]

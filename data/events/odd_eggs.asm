@@ -111,8 +111,8 @@ OddEggs:
 	dw 04096 ; OT ID
 	dt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
-	db 13, 13, 13, 13 ; padding
-	dn 0, 0, 0, 0 ; DVs
+	db 0, 0, 0, 0 ; padding
+	dn 13, 13, 13, 13 ; DVs
 	db 35, 20, 5, 10 ; PP
 	db 20 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data

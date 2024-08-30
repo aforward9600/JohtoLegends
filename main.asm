@@ -497,10 +497,12 @@ SECTION "bank39", ROMX
 CopyrightGFX::
 INCBIN "gfx/splash/copyright.2bpp"
 
-INCLUDE "engine/menus/options_menu.asm"
 INCLUDE "engine/movie/crystal_intro.asm"
 INCLUDE "engine/battle_anims/bg_effects.asm"
 
+
+SECTION "Options Menu", ROMX
+INCLUDE "engine/menus/options_menu.asm"
 
 SECTION "bank3E", ROMX
 

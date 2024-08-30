@@ -1,7 +1,8 @@
 _TitleScreen:
 	call ClearBGPalettes
-	call ClearSprites
 	call ClearTileMap
+	call DisableLCD
+	call ClearSprites
 
 ; Turn BG Map update off
 	xor a
@@ -14,8 +15,15 @@ _TitleScreen:
 	ld [hli], a ; wTitleScreenTimer
 	ld [hl], a  ; wTitleScreenTimer + 1
 
-; Turn LCD off
-	call DisableLCD
+	ldh [hMapAnims], a
+	ldh [hSCY], a
+	ldh [hSCX], a
+
+	ld hl, vTiles0
+	ld bc, $200 tiles
+	xor a
+	call ByteFill
+	farcall ClearSpriteAnims
 
 ; VRAM bank 1
 	ld a, 1
