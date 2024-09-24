@@ -409,10 +409,10 @@ IntroSceneJumper:
 	dw IntroScene17
 ;	dw IntroScene18
 
-NextIntroScene:
-	ld hl, wIntroJumptableIndex
-	inc [hl]
-	ret
+;NextIntroScene:
+;	ld hl, wIntroJumptableIndex
+;	inc [hl]
+;	ret
 
 ; This is used to skip the cutscene if the intro doesn't
 ; work out.
@@ -725,7 +725,7 @@ Intro_InitBubble:
 	inc hl
 	ld d, [hl]
 	ld a, SPRITE_ANIM_INDEX_GS_INTRO_BUBBLE
-	call InitSpriteAnimStruct
+	call _InitSpriteAnimStruct
 	ret
 
 .pixel_table
@@ -770,7 +770,7 @@ Intro_InitMagikarps:
 
 .InitAnim:
 	ld a, SPRITE_ANIM_INDEX_GS_INTRO_MAGIKARP
-	call InitSpriteAnimStruct
+	call _InitSpriteAnimStruct
 	ret
 
 Intro_InitShellders:
@@ -781,9 +781,8 @@ Intro_InitShellders:
 	depixel 16, 15
 
 .InitAnim:
-	ld b,b
 	ld a, SPRITE_ANIM_INDEX_GS_INTRO_SHELLDER
-	call InitSpriteAnimStruct
+	call _InitSpriteAnimStruct
 	ret
 
 Intro_InitLapras:
@@ -792,13 +791,13 @@ Intro_InitLapras:
 	ret nz
 	depixel 16, 24
 	ld a, SPRITE_ANIM_INDEX_GS_INTRO_LAPRAS
-	call InitSpriteAnimStruct
+	call _InitSpriteAnimStruct
 	ret
 
 Intro_UnusedInitAerodactyl: ; unreferenced
 	depixel 2, 0
 	ld a, SPRITE_ANIM_INDEX_UNUSED_INTRO_AERODACTYL
-	call InitSpriteAnimStruct
+	call _InitSpriteAnimStruct
 	ret
 
 Intro_UpdateTilemapAndBGMap:
@@ -1111,28 +1110,28 @@ Intro_InitNote:
 	jr z, .invisible
 	depixel 11, 6, 4, 0
 	ld a, SPRITE_ANIM_INDEX_GS_INTRO_NOTE
-	call InitSpriteAnimStruct
+	call _InitSpriteAnimStruct
 	ret
 
 .invisible
 	depixel 10, 6, 4, 0
 	ld a, SPRITE_ANIM_INDEX_GS_INTRO_INVISIBLE_NOTE
-	call InitSpriteAnimStruct
+	call _InitSpriteAnimStruct
 	ret
 
 Intro_InitJigglypuff:
 	depixel 14, 6
 	ld a, SPRITE_ANIM_INDEX_GS_INTRO_JIGGLYPUFF
-	call InitSpriteAnimStruct
+	call _InitSpriteAnimStruct
 	ret
 
 Intro_InitPikachu:
 	depixel 14, 24
 	ld a, SPRITE_ANIM_INDEX_GS_INTRO_PIKACHU
-	call InitSpriteAnimStruct
+	call _InitSpriteAnimStruct
 	depixel 14, 24
 	ld a, SPRITE_ANIM_INDEX_GS_INTRO_PIKACHU_TAIL
-	call InitSpriteAnimStruct
+	call _InitSpriteAnimStruct
 	ret
 
 IntroScene10:
@@ -1396,7 +1395,7 @@ Intro_ChikoritaAppears:
 	call PlaySFX
 	depixel 22, 1
 	ld a, SPRITE_ANIM_INDEX_GS_INTRO_CHIKORITA
-	call InitSpriteAnimStruct
+	call _InitSpriteAnimStruct
 	ret
 
 Intro_CyndaquilAppears:
@@ -1404,7 +1403,7 @@ Intro_CyndaquilAppears:
 	call PlaySFX
 	depixel 22, 20
 	ld a, SPRITE_ANIM_INDEX_GS_INTRO_CYNDAQUIL
-	call InitSpriteAnimStruct
+	call _InitSpriteAnimStruct
 	ret
 
 Intro_TotodileAppears:
@@ -1412,7 +1411,7 @@ Intro_TotodileAppears:
 	call PlaySFX
 	depixel 22, 1
 	ld a, SPRITE_ANIM_INDEX_GS_INTRO_TOTODILE
-	call InitSpriteAnimStruct
+	call _InitSpriteAnimStruct
 	ret
 
 Intro_FlashMonPalette:
@@ -1527,7 +1526,7 @@ Intro_AnimateFireball:
 	ret nz
 	depixel 12, 10, 4, 4
 	ld a, SPRITE_ANIM_INDEX_GS_INTRO_FIREBALL
-	call InitSpriteAnimStruct
+	call _InitSpriteAnimStruct
 	ld hl, hSCX
 	dec [hl]
 	ld hl, wGlobalAnimXOffset

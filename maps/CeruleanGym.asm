@@ -131,6 +131,7 @@ CeruleanGymVioletScript:
 	setlasttalked CERULEANGYM_LILY
 	startbattle
 	reloadmapafterbattle
+	opentext
 	writetext LilyAfterRematchText
 	waitbutton
 	closetext
