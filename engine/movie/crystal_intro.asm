@@ -1154,15 +1154,15 @@ IntroScene10:
 	ld bc, vTiles1 - vTiles0
 	call Decompress
 
-	ld c, CHIKORITA
+	ld hl, Intro_DratiniGFX
 	ld de, vTiles0 tile $10
-	farcall Intro_GetMonFrontpic
-	ld c, CYNDAQUIL
+	call Decompress
+	ld hl, Intro_LarvitarGFX
 	ld de, vTiles0 tile $29
-	farcall Intro_GetMonFrontpic
-	ld c, TOTODILE
+	call Decompress
+	ld hl, Intro_BagonGFX
 	ld de, vTiles0 tile $42
-	farcall Intro_GetMonFrontpic
+	call Decompress
 
 	ld hl, wSpriteAnimDict
 	ld a, $1
@@ -1429,29 +1429,31 @@ Intro_FlashSilhouette:
 	ret
 
 Intro_LoadChikoritaPalette:
-	ld c, CHIKORITA
+	ld hl, DRATINI
+	call GetPokemonIDFromIndex
+	ld [wCurSpecies], a
 	farcall Intro_LoadMonPalette
 	ret
 
 Intro_LoadCyndaquilPalette:
-	ld c, CYNDAQUIL
+	ld hl, LARVITAR
+	call GetPokemonIDFromIndex
+	ld [wCurSpecies], a
 	farcall Intro_LoadMonPalette
 	ret
 
 Intro_LoadTotodilePalette:
-	ld c, TOTODILE
+	ld hl, BAGON
+	call GetPokemonIDFromIndex
+	ld [wCurSpecies], a
 	farcall Intro_LoadMonPalette
 	ret
 
 Intro_LoadCharizardPalette:
-	ldh a, [hCGB]
-	and a
-	ld c, CYNDAQUIL
-	jr nz, .got_mon
-	ld c, CHARIZARD
-.got_mon
+	ld hl, CHARIZARD
+	call GetPokemonIDFromIndex
+	ld [wCurSpecies], a
 	farcall Intro_LoadMonPalette
-	ret
 
 DrawIntroCharizardGraphic:
 	push af
@@ -1650,3 +1652,12 @@ INCBIN "gfx/intro/fire2.2bpp.lz"
 
 Intro_FireGFX3:
 INCBIN "gfx/intro/fire3.2bpp.lz"
+
+Intro_DratiniGFX:
+INCBIN "gfx/intro/intro_dratini.2bpp.lz"
+
+Intro_LarvitarGFX:
+INCBIN "gfx/intro/intro_larvitar.2bpp.lz"
+
+Intro_BagonGFX:
+INCBIN "gfx/intro/intro_bagon.2bpp.lz"

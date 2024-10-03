@@ -1054,7 +1054,7 @@ TakeLarvitarText:
 	done
 
 DidntChooseDratiniText:
-	text "Master: are you"
+	text "Master: Are you"
 	line "sure? It is of"
 	cont "great importance"
 

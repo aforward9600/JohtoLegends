@@ -248,7 +248,7 @@ Intro_LoadMonPalette:
 
 .cgb
 	ld de, wOBPals1
-	ld a, c
+	ld a, [wCurSpecies]
 	call GetMonPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ret

@@ -282,69 +282,30 @@ SpriteAnimOAMData:
 .OAMData_GSIntroStarter:
 	db 25
 	dsprite -3,  4, -3,  4, $00, 0
-	dsprite -2,  4, -3,  4, $01, 0
-	dsprite -1,  4, -3,  4, $02, 0
-	dsprite  0,  4, -3,  4, $03, 0
-	dsprite  1,  4, -3,  4, $04, 0
-	dsprite -3,  4, -2,  4, $05, 0
+	dsprite -3,  4, -2,  4, $01, 0
+	dsprite -3,  4, -1,  4, $02, 0
+	dsprite -3,  4,  0,  4, $03, 0
+	dsprite -3,  4,  1,  4, $04, 0
+	dsprite -2,  4, -3,  4, $05, 0
 	dsprite -2,  4, -2,  4, $06, 0
-	dsprite -1,  4, -2,  4, $07, 0
-	dsprite  0,  4, -2,  4, $08, 0
-	dsprite  1,  4, -2,  4, $09, 0
-	dsprite -3,  4, -1,  4, $0a, 0
-	dsprite -2,  4, -1,  4, $0b, 0
+	dsprite -2,  4, -1,  4, $07, 0
+	dsprite -2,  4,  0,  4, $08, 0
+	dsprite -2,  4,  1,  4, $09, 0
+	dsprite -1,  4, -3,  4, $0a, 0
+	dsprite -1,  4, -2,  4, $0b, 0
 	dsprite -1,  4, -1,  4, $0c, 0
-	dsprite  0,  4, -1,  4, $0d, 0
-	dsprite  1,  4, -1,  4, $0e, 0
-	dsprite -3,  4,  0,  4, $0f, 0
-	dsprite -2,  4,  0,  4, $10, 0
-	dsprite -1,  4,  0,  4, $11, 0
+	dsprite -1,  4,  0,  4, $0d, 0
+	dsprite -1,  4,  1,  4, $0e, 0
+	dsprite  0,  4, -3,  4, $0f, 0
+	dsprite  0,  4, -2,  4, $10, 0
+	dsprite  0,  4, -1,  4, $11, 0
 	dsprite  0,  4,  0,  4, $12, 0
-	dsprite  1,  4,  0,  4, $13, 0
-	dsprite -3,  4,  1,  4, $14, 0
-	dsprite -2,  4,  1,  4, $15, 0
-	dsprite -1,  4,  1,  4, $16, 0
-	dsprite  0,  4,  1,  4, $17, 0
+	dsprite  0,  4,  1,  4, $13, 0
+	dsprite  1,  4, -3,  4, $14, 0
+	dsprite  1,  4, -2,  4, $15, 0
+	dsprite  1,  4, -1,  4, $16, 0
+	dsprite  1,  4,  0,  4, $17, 0
 	dsprite  1,  4,  1,  4, $18, 0
-
-; unused
-	db 36
-	dsprite -3,  0, -3,  0, $00, 0
-	dsprite -3,  0, -2,  0, $01, 0
-	dsprite -3,  0, -1,  0, $02, 0
-	dsprite -3,  0,  0,  0, $03, 0
-	dsprite -3,  0,  1,  0, $04, 0
-	dsprite -3,  0,  2,  0, $05, 0
-	dsprite -2,  0, -3,  0, $06, 0
-	dsprite -2,  0, -2,  0, $07, 0
-	dsprite -2,  0, -1,  0, $08, 0
-	dsprite -2,  0,  0,  0, $09, 0
-	dsprite -2,  0,  1,  0, $0a, 0
-	dsprite -2,  0,  2,  0, $0b, 0
-	dsprite -1,  0, -3,  0, $0c, 0
-	dsprite -1,  0, -2,  0, $0d, 0
-	dsprite -1,  0, -1,  0, $0e, 0
-	dsprite -1,  0,  0,  0, $0f, 0
-	dsprite -1,  0,  1,  0, $10, 0
-	dsprite -1,  0,  2,  0, $11, 0
-	dsprite  0,  0, -3,  0, $12, 0
-	dsprite  0,  0, -2,  0, $13, 0
-	dsprite  0,  0, -1,  0, $14, 0
-	dsprite  0,  0,  0,  0, $15, 0
-	dsprite  0,  0,  1,  0, $16, 0
-	dsprite  0,  0,  2,  0, $17, 0
-	dsprite  1,  0, -3,  0, $18, 0
-	dsprite  1,  0, -2,  0, $19, 0
-	dsprite  1,  0, -1,  0, $1a, 0
-	dsprite  1,  0,  0,  0, $1b, 0
-	dsprite  1,  0,  1,  0, $1c, 0
-	dsprite  1,  0,  2,  0, $1d, 0
-	dsprite  2,  0, -3,  0, $1e, 0
-	dsprite  2,  0, -2,  0, $1f, 0
-	dsprite  2,  0, -1,  0, $20, 0
-	dsprite  2,  0,  0,  0, $21, 0
-	dsprite  2,  0,  1,  0, $22, 0
-	dsprite  2,  0,  2,  0, $23, 0
 
 .OAMData_RedWalk:
 	db 4

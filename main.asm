@@ -498,6 +498,9 @@ CopyrightGFX::
 INCBIN "gfx/splash/copyright.2bpp"
 
 INCLUDE "engine/movie/crystal_intro.asm"
+
+SECTION "BG Effects", ROMX
+
 INCLUDE "engine/battle_anims/bg_effects.asm"
 
 
