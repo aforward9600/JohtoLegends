@@ -45,7 +45,7 @@ SurgeScript_Battle:
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_GEN_SURGE
 	iftrue SurgeScript_AfterBattle
-	checkevent EVENT_BEAT_ELITE_FOUR
+	checkevent EVENT_COMPLETED_EPILOGUE
 	iftrue SurgeRematch
 	writetext SurgeScript_SurgeBeforeText
 	waitbutton
@@ -79,9 +79,7 @@ SurgeRematch:
 	writetext SurgeScript_SurgeBeforeText2
 	waitbutton
 	closetext
-	checkevent EVENT_COMPLETED_EPILOGUE
-	iftrue Surge2
-	sjump SurgeBattle
+	sjump Surge2
 
 SurgeScript_AfterBattle:
 	writetext SurgeScript_SurgeDefeatText

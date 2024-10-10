@@ -387,7 +387,7 @@ endr
 	ret
 
 MaxDVsPasswordGift:
-	db "STRONGEST"
+	db "CHEATER"
 
 FillPP:
 	push bc
@@ -1680,7 +1680,9 @@ GivePoke::
 .failed
 	ld a, [wCurPartySpecies]
 	ld [wTempEnemyMonSpecies], a
-	callfar LoadEnemyMon
+
+	callfar LoadEnemyMonOutsideBattle
+
 	call SendMonIntoBox
 	jp nc, .FailedToGiveMon
 	ld a, BOXMON
@@ -1850,4 +1852,80 @@ InitNickname:
 	ld a, $4 ; ExitAllMenus is in bank 0, XXX could this be in bank 4 in pokered?
 	ld hl, ExitAllMenus
 	rst FarCall
+	ret
+
+LoadEnemyMonOutsideBattle:
+; Clear the whole enemy mon struct (wEnemyMon)
+	xor a
+	ld hl, wEnemyMonSpecies
+	ld bc, wEnemyMonEnd - wEnemyMon
+	call ByteFill
+
+; species
+	ld a, [wTempEnemyMonSpecies]
+	ld [wEnemyMonSpecies], a
+	ld [wCurSpecies], a
+	ld [wCurPartySpecies], a
+	ld [wNamedObjectIndexBuffer], a
+
+; base stats
+	call GetBaseData
+
+; held item
+	ld a, [wCurItem]
+	ld [wEnemyMonItem], a
+
+; dvs
+	call Random
+	ld b, a
+	call Random
+	ld c, a
+
+	ld hl, wEnemyMonDVs
+	ld a, b
+	ld [hli], a
+	ld [hl], c
+
+; hp
+	ld de, wEnemyMonMaxHP
+	ld b, FALSE
+	ld hl, wEnemyMonDVs - (MON_DVS - MON_EVS + 1)
+	predef CalcMonStats
+
+	ld a, [wEnemyMonMaxHP]
+	ld [hli], a
+	ld a, [wEnemyMonMaxHP + 1]
+	ld [hl], a
+
+; moves
+	ld de, wEnemyMonMoves
+	xor a
+	ld h, d
+	ld l, e
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	ld [wEvolutionOldSpecies], a
+	predef FillMoves
+
+; pp
+	ld hl, wEnemyMonMoves
+	ld de, wEnemyMonPP
+	predef FillPP
+
+; name
+	call GetPokemonName
+	ld hl, wStringBuffer1
+	ld de, wEnemyMonNick
+	ld bc, MON_NAME_LENGTH
+	call CopyBytes
+
+; seen flag
+	ld a, [wTempEnemyMonSpecies]
+	dec a
+	ld c, a
+	ld b, SET_FLAG
+	ld hl, wPokedexSeen
+	predef SmallFarFlagAction
 	ret

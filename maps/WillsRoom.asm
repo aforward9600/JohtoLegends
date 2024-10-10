@@ -45,7 +45,7 @@ FlorinaScript_Battle:
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_FLORINA
 	iftrue FlorinaScript_AfterBattle
-	checkevent EVENT_BEAT_ELITE_FOUR
+	checkevent EVENT_COMPLETED_EPILOGUE
 	iftrue RematchFlorina
 	writetext FlorinaScript_FlorinaBeforeText
 	waitbutton
@@ -74,11 +74,6 @@ RematchFlorina:
 	writetext FlorinaScript_FlorinaBeforeText2
 	waitbutton
 	closetext
-	checkevent EVENT_COMPLETED_EPILOGUE
-	iftrue Florina2
-	sjump BattleFlorina
-
-Florina2:
 	winlosstext FlorinaScript_FlorinaBeatenText, FlorinaLastMonText
 	loadtrainer FLORINA, FLORINA2
 	sjump FlorinaReconvene

@@ -1,4 +1,4 @@
-	db "MEGATON@" ; species name
+	db "Megaton@" ; species name
 	dw 407, 6620 ; height, weight
 
 	db   "Its rock-like body"

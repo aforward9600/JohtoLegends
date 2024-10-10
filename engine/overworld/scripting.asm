@@ -237,6 +237,7 @@ ScriptCommandTable:
 	dw Script_checkmaplockedmons         ; ab
 	dw Script_loadmoveindex              ; ac
 	dw Script_partyselect
+	dw Script_StarterPokepic
 
 StartScript:
 	ld hl, wScriptFlags
@@ -2918,3 +2919,13 @@ AppendTMHMMoveName::
 	inc hl
 	ld de, wStringBuffer1
 	jp CopyName2
+
+Script_StarterPokepic:
+;	call LoadScriptPokemonID
+;	ld [wCurPartySpecies], a
+	ld hl, wPartySpecies
+	ld a, [hl]
+	call GetPokemonIndexFromID
+	ld [wCurPartySpecies], a
+	farcall StarterPokepic
+	ret

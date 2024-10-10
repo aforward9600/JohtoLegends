@@ -6338,7 +6338,6 @@ LoadEnemyMon:
 	ld a, b
 	ld [hli], a
 	ld [hl], c
-
 .next
 
 ; We've still got more to do if we're dealing with a wild monster
@@ -6680,7 +6679,7 @@ LoadEnemyMon:
 	ret
 
 DVsPassword:
-	db "STRONGEST"
+	db "CHEATER"
 
 FinalPkmnSlideInEnemyMonFrontpic:
 	call FinishBattleAnim

@@ -13,7 +13,7 @@ GiveShuckle:
 	ld [wCurPartyLevel], a
 
 	predef TryAddMonToParty
-	jr nc, .NotGiven
+	jp nc, .NotGiven
 
 ; Caught data.
 	ld b, CAUGHT_BY_GIRL
@@ -48,6 +48,59 @@ GiveShuckle:
 
 ; OT.
 	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMonOT
+	call SkipNames
+	ld de, SpecialShuckleOT
+	call CopyName2
+
+; Engine flag for this event.
+	ld hl, wDailyFlags1
+	set DAILYFLAGS1_GOT_SHUCKIE_TODAY_F, [hl]
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.TryBox:
+	ld a, [wCurPartySpecies]
+	ld [wTempEnemyMonSpecies], a
+	ld a, 1
+	ld [wBattleMode], a
+	callfar LoadEnemyMon
+	farcall SendMonIntoBox
+	jr nc, .NotGiven
+	ld b, CAUGHT_BY_GIRL
+	farcall SetGiftMonCaughtData
+
+; Holding a Berry.
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [wCurPartyMon]
+	dec a
+	push af
+	push bc
+	ld hl, wCurItem
+	call AddNTimes
+	ld [hl], ORAN_BERRY
+	pop bc
+	pop af
+
+; OT ID.
+	ld hl, wPartyMon1ID
+	call AddNTimes
+	ld a, HIGH(MANIA_OT_ID)
+	ld [hli], a
+	ld [hl], LOW(MANIA_OT_ID)
+
+; Nickname.
+	ld a, [wCurPartyMon]
+	dec a
+	ld hl, wPartyMonNicknames
+	call SkipNames
+	ld de, SpecialShuckleNick
+	call CopyName2
+
+; OT.
+	ld a, [wCurPartyMon]
 	dec a
 	ld hl, wPartyMonOT
 	call SkipNames

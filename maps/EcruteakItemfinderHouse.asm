@@ -41,6 +41,7 @@ EcruteakPorygonGuy:
 	waitsfx
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .NoRoom
+.GetPorygon
 	writetext GotPorygonText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -55,6 +56,11 @@ EcruteakPorygonGuy:
 	end
 
 .NoRoom:
+	readvar VAR_BOXSPACE
+	ifequal 0, .BoxFullPorygon
+	sjump .GetPorygon
+
+.BoxFullPorygon:
 	writetext EcruteakNoRoomText
 	waitbutton
 	closetext

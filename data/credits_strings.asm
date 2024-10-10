@@ -68,7 +68,7 @@ CreditsStrings:
 	dw .ErikJohnson
 	dw .Mmmmmmmmmmmmmmmmm
 	dw .TerukiMurakawa
-	dw .KazuyoshiOsawa
+	dw .GreatOracleLewot
 	dw .CrystalClearTeam
 	dw .End
 	dw .Unknown
@@ -198,7 +198,7 @@ CreditsStrings:
 .ErikJohnson:         db "    ERIK JOHNSON@"
 .Mmmmmmmmmmmmmmmmm:   db " Mmmmmmmmmmmmmmmmm@"
 .TerukiMurakawa:      db "  TERUKI MURAKAWA@"
-.KazuyoshiOsawa:      db "  KAZUYOSHI OSAWA@"
+.GreatOracleLewot:    db " Grate Oracle Lewot@"
 .CrystalClearTeam:    db " Crystal Clear Team@"
 .Staff:               db "      #mon"                 ; "ポケットモンスター"
                     next "   Johto Legends"           ; "　　クりスタル　バージョン"

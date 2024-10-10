@@ -192,7 +192,8 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	checkcoins GOLDENRODGAMECORNER_ABRA_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	ifequal PARTY_LENGTH, .BronzorBox
+.GetBronzor:
 	getmonname STRING_BUFFER_3, BRONZOR
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
@@ -202,15 +203,21 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	waitbutton
 	loadmonindex 1, BRONZOR
 	special GameCornerPrizeMonCheckDex
-	givepoke BRONZOR, 5
+	givepoke BRONZOR, 15
 	takecoins GOLDENRODGAMECORNER_ABRA_COINS
 	sjump .loop
+
+.BronzorBox:
+	readvar VAR_BOXSPACE
+	ifequal 0, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	sjump .GetBronzor
 
 .Cubone:
 	checkcoins GOLDENRODGAMECORNER_CUBONE_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	ifequal PARTY_LENGTH, .CuboneBox
+.GetCubone:
 	getmonname STRING_BUFFER_3, CUBONE
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
@@ -224,11 +231,17 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	takecoins GOLDENRODGAMECORNER_CUBONE_COINS
 	sjump .loop
 
+.CuboneBox:
+	readvar VAR_BOXSPACE
+	ifequal 0, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	sjump .GetCubone
+
 .Wobbuffet:
 	checkcoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	ifequal PARTY_LENGTH, .BagonBox
+.GetBagon:
 	getmonname STRING_BUFFER_3, BAGON
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
@@ -241,6 +254,11 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	givepoke BAGON, 15
 	takecoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
 	sjump .loop
+
+.BagonBox:
+	readvar VAR_BOXSPACE
+	ifequal 0, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	sjump .GetBagon
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags

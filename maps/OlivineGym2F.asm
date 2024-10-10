@@ -48,7 +48,7 @@ OlivineGym2F_MapScripts:
 	return
 
 .ReplaceFourthElevator:
-	changeblock 12, 10, $88
+	changeblock 12, 10, $6b
 	checkevent EVENT_GYM_THIRD_ELEVATOR
 	iftrue .ReplaceThirdElevator
 	return

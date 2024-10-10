@@ -1084,3 +1084,8 @@ ENDM
 partyselect: MACRO
 	db partyselect_command
 ENDM
+
+	enum starter_pokepic_command ; $56
+starterpokepic: MACRO
+	db starter_pokepic_command
+ENDM

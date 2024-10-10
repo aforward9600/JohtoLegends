@@ -797,18 +797,20 @@ wBackupDexListingCursor:: db
 wBackupDexListingPage:: dw
 wDexCurLocation:: db
 wPokedexStatus:: db
+wPokedexShinyToggle:: db
 wPokedexDisplayNumber:: dw
 wDexLastSeenIndex:: db ; index into wPokedexSeen containing the last non-zero value
 wDexLastSeenValue:: db ; value at index
 wDexTempCounter:: dw
 wPokedexDataEnd::
 
+
 wPrevDexEntry:: dw
 wPrevDexEntryBackup:: dw
 wPrevDexEntryJumptableIndex:: db
 
 wPokedexNameBuffer:: ds MON_NAME_LENGTH
-	ds 231
+	ds 230
 
 NEXTU ; c6d0
 wMoveRelearnerSpecies:: dw ; c6d0

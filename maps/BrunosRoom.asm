@@ -45,7 +45,7 @@ MarthaScript_Battle:
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_MARTHA
 	iftrue MarthaScript_AfterBattle
-	checkevent EVENT_BEAT_ELITE_FOUR
+	checkevent EVENT_COMPLETED_EPILOGUE
 	iftrue MarthaRematch
 	writetext MarthaScript_MarthaBeforeText
 	waitbutton
@@ -79,9 +79,7 @@ MarthaRematch:
 	writetext MarthaScript_MarthaBeforeText2
 	waitbutton
 	closetext
-	checkevent EVENT_COMPLETED_EPILOGUE
-	iftrue Martha2
-	sjump MarthaBattle
+	sjump Martha2
 
 MarthaScript_AfterBattle:
 	writetext MarthaScript_MarthaDefeatText

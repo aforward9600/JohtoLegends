@@ -1,4 +1,4 @@
-	db "ROCK@" ; species name
+	db "Rock@" ; species name
 	dw 303, 2320 ; height, weight
 
 	db   "It travels by rol-"

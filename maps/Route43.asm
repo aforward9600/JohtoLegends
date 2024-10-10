@@ -116,6 +116,7 @@ TogepiEggGiver:
 	iffalse .RefusedEgg
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .PartyFull
+.GetTogepiEgg:
 	giveegg TOGEPI, 5
 	getstring STRING_BUFFER_4, .eggname
 	scall .GivenTogepiEgg
@@ -136,6 +137,11 @@ TogepiEggGiver:
 	end
 
 .PartyFull:
+;	readvar VAR_BOXSPACE
+;	ifequal 0, .BoxFullEgg
+;	sjump .GetTogepiEgg
+
+;.BoxFullEgg:
 	writetext YouAintGotRoomText
 	waitbutton
 	closetext

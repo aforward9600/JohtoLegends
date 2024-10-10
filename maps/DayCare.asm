@@ -359,7 +359,7 @@ DahliaMrPokemonText:
 
 	para "Mr. #mon, can"
 	line "you tell me about"
-	cont "my feater as well?"
+	cont "my feather as well?"
 	done
 
 DracoMrPokemonText:
@@ -379,7 +379,7 @@ DracoMrPokemonText:
 
 	para "Mr. #mon, can"
 	line "you tell me about"
-	cont "my feater as well?"
+	cont "my feather as well?"
 	done
 
 MrPokemonLegendaryText:

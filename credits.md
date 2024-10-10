@@ -11,6 +11,8 @@ Dark Zeta, Celadonk and cardboardbox for Evolution moves for Pokecrystal16.
 
 Celadonk for the Password System and some cries.
 
+Grate Oracle Lewot for the gift Pokemon issue fix.
+
 Rangi, DGamers-64 and Vendily for the fourth stat page.
 
 Mountvesuvius for Strength Sap and HM Key Items.
@@ -30,6 +32,8 @@ Vulcandth and Rangi: Level Caught Design Flaw Fix
 Focus Sash, Power Band, SpecialSpecs, Wide Lens, Life Orb, Choice Band, Choice Scarf and Choice Specs coding: AzureKeys
 
 New Swarming System: Dragon Arbock
+
+Shiny Pokemon in Pokedex: ShockSlayer & Idain
 
 Cardboardbox: Battle Tower Prize List fix.
 

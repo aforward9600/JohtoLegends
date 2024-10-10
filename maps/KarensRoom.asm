@@ -45,7 +45,7 @@ AgathaScript_Battle:
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_AGATHA
 	iftrue AgathaScript_AfterBattle
-	checkevent EVENT_BEAT_ELITE_FOUR
+	checkevent EVENT_COMPLETED_EPILOGUE
 	iftrue AgathaRematch
 	writetext AgathaScript_AgathaBeforeText
 	waitbutton
@@ -76,11 +76,6 @@ AgathaRematch:
 	writetext AgathaScript_AgathaBeforeText2
 	waitbutton
 	closetext
-	checkevent EVENT_COMPLETED_EPILOGUE
-	iftrue Agatha2
-	sjump AgathaBattle
-
-Agatha2:
 	winlosstext AgathaScript_AgathaBeatenText, AgathaLastMonText
 	loadtrainer AGATHA, AGATHA2
 	sjump AgathaReconvene

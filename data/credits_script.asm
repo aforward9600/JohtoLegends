@@ -61,6 +61,7 @@ CreditsScript:
 	db            AZUREKEYS, 1
 	db        DAMIEN_CREDIT, 2
 	db           LANDESHERR, 3
+	db   GRATE_ORACLE_LEWOT, 4
 
 	db CREDITS_WAIT, 12
 

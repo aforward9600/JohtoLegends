@@ -113,7 +113,8 @@ ScientistScript:
 	buttonsound
 	waitsfx
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
+	ifequal PARTY_LENGTH, .AerodactylBox
+.GetAerodactyl:
 	writetext GotAerodactylText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -124,12 +125,18 @@ ScientistScript:
 	closetext
 	end
 
+.AerodactylBox:
+	readvar VAR_BOXSPACE
+	ifequal 0, .NoRoom
+	sjump .GetAerodactyl
+
 .Omanyte:
 	writetext OmanyteText
 	buttonsound
 	waitsfx
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
+	ifequal PARTY_LENGTH, .OmanyteBox
+.GetOmanyte:
 	writetext GotOmanyteText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -140,12 +147,18 @@ ScientistScript:
 	closetext
 	end
 
+.OmanyteBox:
+	readvar VAR_BOXSPACE
+	ifequal 0, .NoRoom
+	sjump .GetOmanyte
+
 .Kabuto:
 	writetext KabutoText
 	buttonsound
 	waitsfx
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
+	ifequal PARTY_LENGTH, .KabutoBox
+.GetKabuto:
 	writetext GotKabutoText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -155,6 +168,11 @@ ScientistScript:
 	waitbutton
 	closetext
 	end
+
+.KabutoBox:
+	readvar VAR_BOXSPACE
+	ifequal 0, .NoRoom
+	sjump .GetKabuto
 
 .NoRoom:
 	writetext FossilNoRoomText

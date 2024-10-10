@@ -18,8 +18,6 @@ DanceTheatre_MapScripts:
 TrainerKimonoGirlRui:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_CHAMPION_LANCE
-	iftrue .CommencePassword
 	checkevent EVENT_GOT_EEVEE
 	iftrue .GotEevee
 	checkevent EVENT_BEAT_KIMONO_GIRL_RUI
@@ -41,18 +39,26 @@ TrainerKimonoGirlRui:
 	waitsfx
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .NoRoom
+.GetEevee:
 	writetext GotEeveeText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	givepoke EEVEE, 15
 	setevent EVENT_GOT_EEVEE
 .GotEevee:
+	checkevent EVENT_BEAT_CHAMPION_LANCE
+	iftrue .CommencePassword
 	writetext TrainerKimonoGirlRuiAfterBattleText
 	waitbutton
 	closetext
 	end
 
 .NoRoom:
+	readvar VAR_BOXSPACE
+	ifequal 0, .BoxFullEevee
+	sjump .GetEevee
+
+.BoxFullEevee:
 	writetext NoRoomText
 	waitbutton
 	closetext
