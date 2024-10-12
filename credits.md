@@ -94,13 +94,14 @@ Officer Jenny sprite: FrenchOrange
 
 Beta Wooper back sprite made by 64BitWonder.
 
-Sneasel, Tyranitar, Dragonite, Moltres, Heracross,
-Teddiursa, Ursaring, Phanpy, Umbreon, Feraligatr,
-Houndoom, Slowbro, Hitmonchan, Xatu, Pidgeot,
-Nidoking, Entei, Ho-Oh, Exeggutor, Starmie,
-Bellossom, Kadabra Delibird back sprite- SoupPotato
+Charizard, Grimer, Muk, Sneasel, Tyranitar, Dragonite, Moltres, Heracross,
+Kingdra, Kangaskhan, Yanma, Teddiursa, Ursaring, Phanpy, Umbreon, Feraligatr,
+Aerodactyl, Celebi, Houndour, Houndoom, Slowbro, Hitmonchan, Xatu, Pidgeot,
+Azumarill, Crobat, Fearow, Nidoking, Entei, Ho-Oh, Exeggutor, Starmie,
+Forretress, Granbull, Meganium, Bellossom, Kadabra & Delibird back sprite- SoupPotato
 
-Korotora, Raitora graphics and game data: SoupPotato, GS 97 Reforged Team, Game Freak
+Korotora, Raitora, Kurstraw & Pangshi graphics and game data:
+SoupPotato, GS 97 Reforged Team, Game Freak
 
 Gorotora front sprite: Helix Chamber
 
