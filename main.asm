@@ -203,8 +203,6 @@ INCLUDE "engine/gfx/crystal_layouts.asm"
 
 SECTION "Tileset Palettes", ROMX
 
-INCLUDE "engine/tilesets/map_palettes.asm"
-INCLUDE "gfx/tileset_palette_maps.asm"
 INCLUDE "engine/events/move_tutor.asm"
 
 SECTION "bank13", ROMX

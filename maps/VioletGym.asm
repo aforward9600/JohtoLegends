@@ -36,6 +36,11 @@ VioletGym_MapScripts:
 	disappear VIOLETGYM_WALKER
 	return
 
+WalkerLossText2:
+	text "We can't fall just"
+	line "yet!"
+	done
+
 VioletGymWalkerScript:
 	faceplayer
 	opentext
@@ -44,7 +49,7 @@ VioletGymWalkerScript:
 	writetext WalkerIntroText
 	waitbutton
 	closetext
-	winlosstext WalkerWinLossText, WalkerLossText
+	winlosstext WalkerWinLossText, WalkerLossText2
 	loadtrainer WALKER, WALKER1
 	startbattle
 	reloadmapafterbattle

@@ -327,6 +327,7 @@ TilesetPokemonMansionAnim:
 TilesetTrainStationAnim:
 TilesetFedHideoutAnim:
 TilesetSummitAnim:
+TilesetTowerRoofAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

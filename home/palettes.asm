@@ -314,11 +314,3 @@ ReloadSpritesNoPalettes::
 	ld a, 1
 	ldh [hCGBPalUpdate], a
 	jp DelayFrame
-
-FarCallSwapTextboxPalettes::
-	homecall SwapTextboxPalettes
-	ret
-
-FarCallScrollBGMapPalettes::
-	homecall ScrollBGMapPalettes
-	ret
