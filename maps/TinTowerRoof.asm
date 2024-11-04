@@ -2,22 +2,25 @@
 	const TINTOWERROOF_HO_OH
 	const TINTOWERROOF_HO_OH_2
 	const TINTOWERROOF_MIYAMOTO
-	const TINTOWERROOF_CHRIS ; if male
-	const TINTOWERROOF_KRIS ; if female
 	const TINTOWERROOF_RIVAL
 	const TINTOWERROOF_SHERLES
 	const TINTOWERROOF_ROCKET_BALL
 
 TinTowerRoof_MapScripts:
-	db 2 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_FINISHED
+	db 3 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_TIN_TOWER_MIYAMOTO
+	scene_script .AfterHoOhScene ; SCENE_TIN_TOWER_AFTER_HO_OH
+	scene_script .DummyScene1 ; SCENE_TIN_TOWER_NOTHING
 
 	db 2 ; callbacks
 	callback MAPCALLBACK_TILES, .Moon
 	callback MAPCALLBACK_OBJECTS, .HoOh
 
 .DummyScene0:
+	end
+
+.AfterHoOhScene:
+	prioritysjump AfterHoOhSceneJump
 	end
 
 .DummyScene1:
@@ -31,6 +34,8 @@ TinTowerRoof_MapScripts:
 	return
 
 .HoOh:
+	moveobject TINTOWERROOF_RIVAL, 8, 11
+	moveobject TINTOWERROOF_SHERLES, 8, 12
 	checkevent EVENT_BEAT_HO_OH
 	iftrue .NoAppear
 	checkevent EVENT_CAUGHT_HO_OH
@@ -74,6 +79,8 @@ MeetUpHoOh:
 	waitbutton
 	closetext
 	pause 15
+	moveobject TINTOWERROOF_RIVAL, 8, 15
+	moveobject TINTOWERROOF_SHERLES, 8, 15
 	appear TINTOWERROOF_RIVAL
 	applymovement TINTOWERROOF_RIVAL, TinTowerRivalMovement
 	opentext
@@ -101,28 +108,15 @@ MeetUpHoOh:
 	waitbutton
 	closetext
 	pause 15
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .ShowDahlia
-	appear TINTOWERROOF_CHRIS
-	sjump .HidePlayer
-.ShowDahlia
-	appear TINTOWERROOF_KRIS
-.HidePlayer
-	applymovement PLAYER, HidePlayerMovement
-	applymovement PLAYER, CameraPansToHoOhMovement
+	special FadeOutPalettes
+	warp DRACO_SCENE, 4, 9
+	end
+
+AfterHoOhSceneJump:
 	pause 15
 	cry HO_OH
 	pause 30
-	applymovement PLAYER, CameraPansToPlayerMovement
 	turnobject PLAYER, UP
-	applymovement PLAYER, ShowPlayerMovement
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .HideDahlia
-	disappear TINTOWERROOF_CHRIS
-	sjump .HidDoppelganger
-.HideDahlia
-	disappear TINTOWERROOF_KRIS
-.HidDoppelganger
 	pause 15
 	playsound SFX_THROW_BALL
 	appear TINTOWERROOF_ROCKET_BALL
@@ -185,7 +179,9 @@ MeetUpHoOh:
 	applymovement TINTOWERROOF_RIVAL, TinTowerRivalLeavesMovement
 	disappear TINTOWERROOF_RIVAL
 	waitsfx
-	playmapmusic
+	special FadeOutMusic
+	pause 15
+	special RestartMapMusic
 	setevent EVENT_BELLCHIME_PATH_ENOKI_PANIC
 	clearevent EVENT_TIN_TOWER_TAKEOVER
 	setevent EVENT_TIN_TOWER_1F_WISE_TRIO_1
@@ -200,7 +196,8 @@ MeetUpHoOh:
 	clearevent EVENT_TIN_TOWER_1F_WISE_TRIO_2
 	setevent EVENT_CLEARED_TIN_TOWER
 	setevent EVENT_MART_SHERLES
-	setscene SCENE_FINISHED
+	setscene SCENE_TIN_TOWER_NOTHING
+	return
 	end
 
 TinTowerHoOh:
@@ -475,17 +472,15 @@ TinTowerRoof_MapEvents:
 	warp_event  9, 17, TIN_TOWER_9F, 4
 
 	db 2 ; coord events
-	coord_event  8, 16, SCENE_DEFAULT, MiyamotoCatchesHoOhLeft
-	coord_event  9, 16, SCENE_DEFAULT, MiyamotoCatchesHoOhRight
+	coord_event  8, 16, SCENE_TIN_TOWER_MIYAMOTO, MiyamotoCatchesHoOhLeft
+	coord_event  9, 16, SCENE_TIN_TOWER_MIYAMOTO, MiyamotoCatchesHoOhRight
 
 	db 0 ; bg events
 
-	db 8 ; object events
+	db 6 ; object events
 	object_event  9,  9, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TinTowerHoOh, EVENT_TIN_TOWER_ROOF_HO_OH
 	object_event  9,  2, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_HO_OH_2
 	object_event  9, 10, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_WISE_TRIO_1
-	object_event  9, 11, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_PLAYER
-	object_event  9, 11, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_PLAYER
 	object_event  8, 15, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_PLAYER
 	object_event  8, 15, SPRITE_SHERLES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_PLAYER
 	object_event  9,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_ROCKET_BALL

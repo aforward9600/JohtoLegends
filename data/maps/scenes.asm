@@ -114,4 +114,5 @@ MapScenes::
 	scene_var MT_SILVER_SUMMIT,                            wMtSilverSummitID
 	scene_var GOLD_CRYSTAL_HOUSE,                          wGoldCrystalHouseID
 	scene_var SILVER_CAVE_MEW_ROOM,                        wSilverCaveMewRoomID
+	scene_var DRACO_SCENE,                                 wDracoSceneID
 	db -1 ; end

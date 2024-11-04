@@ -55,6 +55,15 @@ PlayersHouseBookScript:
 	writetext PlayersHouseBookText
 	waitbutton
 	closetext
+	special FadeOutPalettes
+;	applymovement PLAYER, HidePlayerHouse
+	warp TIN_TOWER_9F, 9, 9
+	clearevent EVENT_TIN_TOWER_1F_WISE_TRIO_1
+;	blackoutmod DRACO_SCENE
+	end
+
+HidePlayerHouse:
+	hide_object
 	end
 
 PlayersHouseBookshelfScript:

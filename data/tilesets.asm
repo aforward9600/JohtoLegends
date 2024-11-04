@@ -53,3 +53,4 @@ Tilesets::
 	tileset TilesetFedHideout
 	tileset TilesetSummit
 	tileset TilesetTowerRoof
+	tileset TilesetDracoScene

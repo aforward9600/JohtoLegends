@@ -406,6 +406,7 @@ ENDM
 	map_const ROUTE_28_STEEL_WING_HOUSE,                    4,  4 ;  4
 	map_const TIN_TOWER_ROOF,                              10, 11 ; 12
 	map_const RADIO_TOWER_5F,                               9,  4 ; 21
+	map_const DRACO_SCENE,                                  5,  7 ; 5
 
 	newgroup                                                      ; 20
 

@@ -2721,8 +2721,9 @@ wRoute47SceneID::                                 db
 wMtSilverSummitID::                               db
 wGoldCrystalHouseID::                             db
 wSilverCaveMewRoomID::                            db
+wDracoSceneID::                                   db
 
-	ds 16
+	ds 15
 
 ; fight counts
 wJackFightCount::    db ; d9f2

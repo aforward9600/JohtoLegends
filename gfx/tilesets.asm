@@ -535,10 +535,24 @@ TilesetTowerRoofAttr::
 INCBIN "data/tilesets/tower_roof_attributes.bin"
 
 TilesetTowerRoofGFX:
-INCBIN "gfx/tilesets/tower.2bpp.lz"
+INCBIN "gfx/tilesets/tower_roof.2bpp.lz"
 
 TilesetTowerRoofMeta:
-INCBIN "data/tilesets/tower_metatiles.bin"
+INCBIN "data/tilesets/tower_roof_metatiles.bin"
 
 TilesetTowerRoofColl:
-INCLUDE "data/tilesets/tower_collision.asm"
+INCLUDE "data/tilesets/tower_roof_collision.asm"
+
+SECTION "Tileset Data 17", ROMX
+
+TilesetDracoSceneAttr::
+INCBIN "data/tilesets/draco_scene_attributes.bin"
+
+TilesetDracoSceneGFX:
+INCBIN "gfx/tilesets/draco_scene.2bpp.lz"
+
+TilesetDracoSceneMeta:
+INCBIN "data/tilesets/draco_scene_metatiles.bin"
+
+TilesetDracoSceneColl:
+INCLUDE "data/tilesets/draco_scene_collision.asm"

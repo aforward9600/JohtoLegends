@@ -1196,3 +1196,6 @@ MtSilverSummit_Blocks:
 
 SilverCaveMewRoom_Blocks:
 	INCBIN "maps/SilverCaveMewRoom.ablk"
+
+DracoScene_Blocks:
+	INCBIN "maps/DracoScene.ablk"

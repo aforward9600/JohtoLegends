@@ -328,6 +328,7 @@ TilesetTrainStationAnim:
 TilesetFedHideoutAnim:
 TilesetSummitAnim:
 TilesetTowerRoofAnim:
+TilesetDracoSceneAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
