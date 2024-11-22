@@ -513,14 +513,14 @@ _TradingText16::
 
 ; Oak's Pokémon Talk
 
-_OPT_IntroText1::
+_JunichiMasudaSoloText::
 	text_start
-	line "MARY: PROF.OAK'S"
+	line "Junichi Masuda"
 	done
 
-_OPT_IntroText2::
+_GoIchinoseText::
 	text_start
-	line "#mon TALK!"
+	line "Go Ichinose"
 	done
 
 _OPT_IntroText3::
@@ -731,17 +731,17 @@ _PokedexShowText::
 
 _BenIntroText1::
 	text_start
-	line "BEN: #mon MUSIC"
+	line "Hajime Wakai"
 	done
 
 _BenIntroText2::
 	text_start
-	line "CHANNEL!"
+	line "ShockSlayer"
 	done
 
 _BenIntroText3::
 	text_start
-	line "It's me, DJ BEN!"
+	line "Go Ichinose"
 	done
 
 _FernIntroText1::

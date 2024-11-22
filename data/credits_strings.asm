@@ -55,7 +55,7 @@ CreditsStrings:
 	dw .MiyukiSato
 	dw .Tetra
 	dw .AiMashima
-	dw .MikihiroIshikawa
+	dw .RamenPixel
 	dw .HideyukiHashimoto
 	dw .Shockslayer
 	dw .MoveAnimations
@@ -183,7 +183,7 @@ CreditsStrings:
 .MiyukiSato:          db "    MIYUKI SATO@"           ; "さとう　みゆき@"
 .Tetra:               db "       Tetra@"          ; "のもと　がくじ@"
 .AiMashima:           db "     AI MASHIMA@"           ; "ましま　あい@"
-.MikihiroIshikawa:    db " MIKIHIRO ISHIKAWA@"        ; "いしかわ　みきひろ@"
+.RamenPixel:          db "     Ramen Pixel@"        ; "いしかわ　みきひろ@"
 .HideyukiHashimoto:   db " HIDEYUKI HASHIMOTO@"       ; "はしもと　ひでゆき@"
 .Shockslayer:         db "    Shockslayer@"         ; "やまと　さとし@"
 .MoveAnimations:      db "  Move Animations@"        ; "みやもと　しげる@"

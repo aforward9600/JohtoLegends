@@ -4,16 +4,16 @@ PlayRadioShow:
 	cp POKE_FLUTE_RADIO
 	jr nc, .ok
 ; If Team Rocket is not occupying the radio tower, we don't need to be here.
-	ld a, [wStatusFlags2]
-	bit STATUSFLAGS2_ROCKETS_IN_RADIO_TOWER_F, a
-	jr z, .ok
+;	ld a, [wStatusFlags2]
+;	bit STATUSFLAGS2_ROCKETS_IN_RADIO_TOWER_F, a
+;	jr z, .ok
 ; If we're in Kanto, we don't need to be here.
-	call IsInJohto
-	and a
-	jr nz, .ok
+;	call IsInJohto
+;	and a
+;	jr nz, .ok
 ; Team Rocket broadcasts on all stations.
-	ld a, ROCKET_RADIO
-	ld [wCurRadioLine], a
+;	ld a, ROCKET_RADIO
+;	ld [wCurRadioLine], a
 .ok
 ; Jump to the currently loaded station.  The index to which we need to jump is in wCurRadioLine.
 	ld a, [wCurRadioLine]
@@ -182,22 +182,19 @@ RadioScroll:
 	jp ClearBottomLine
 
 OaksPKMNTalk1:
-	ld a, 5
-	ld [wOaksPKMNTalkSegmentCounter], a
-	call StartRadioStation
-	ld hl, OPT_IntroText1
+	call StartPokemonMusicChannel
+	ld hl, JunichiMasudaSoloText
 	ld a, OAKS_POKEMON_TALK_2
 	jp NextRadioLine
+	ret
 
 OaksPKMNTalk2:
-	ld hl, OPT_IntroText2
+	ld hl, GoIchinoseText
 	ld a, OAKS_POKEMON_TALK_3
 	jp NextRadioLine
 
 OaksPKMNTalk3:
-	ld hl, OPT_IntroText3
-	ld a, OAKS_POKEMON_TALK_4
-	jp NextRadioLine
+	ret
 
 OaksPKMNTalk4:
 ; Choose a random route, and a random Pokemon from that route.
@@ -284,14 +281,14 @@ OaksPKMNTalk6:
 	ld a, OAKS_POKEMON_TALK_7
 	jp NextRadioLine
 
-OPT_IntroText1:
+JunichiMasudaSoloText:
 	; MARY: PROF.OAK'S
-	text_far _OPT_IntroText1
+	text_far _JunichiMasudaSoloText
 	text_end
 
-OPT_IntroText2:
+GoIchinoseText:
 	; #MON TALK!
-	text_far _OPT_IntroText2
+	text_far _GoIchinoseText
 	text_end
 
 OPT_IntroText3:
@@ -666,34 +663,13 @@ ClearBottomLine:
 	jp ByteFill
 
 PokedexShow1:
-	call StartRadioStation
-.loop
-	call Random
-	ld e, a
-	call Random
-	and $f
-	ld d, a
-	cp HIGH(NUM_POKEMON)
-	jr c, .ok
-	jr nz, .loop
-	ld a, e
-	cp LOW(NUM_POKEMON)
-	jr nc, .loop
-.ok
-	inc de
-	push de
-	call CheckCaughtMonIndex
-	pop hl
-	jr z, .loop
-	call GetPokemonIDFromIndex
-	ld [wCurPartySpecies], a
-	ld [wNamedObjectIndexBuffer], a
-	call GetPokemonName
-	ld hl, PokedexShowText
+	call StartPokemonMusicChannel
+	ld hl, JunichiMasudaSoloText
 	ld a, POKEDEX_SHOW_2
 	jp NextRadioLine
 
 PokedexShow2:
+	ret
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	dec hl
@@ -828,22 +804,24 @@ BenMonMusic1:
 	ld hl, BenIntroText1
 	ld a, POKEMON_MUSIC_2
 	jp NextRadioLine
+	ret
 
 BenMonMusic2:
 	ld hl, BenIntroText2
 	ld a, POKEMON_MUSIC_3
+	push af
 	jp NextRadioLine
+	ret
 
 BenMonMusic3:
-	ld hl, BenIntroText3
-	ld a, POKEMON_MUSIC_4
-	jp NextRadioLine
+	ret
 
 FernMonMusic1:
-	call StartPokemonMusicChannel
-	ld hl, FernIntroText1
-	ld a, LETS_ALL_SING_2
-	jp NextRadioLine
+	ret
+;	call StartPokemonMusicChannel
+;	ld hl, FernIntroText1
+;	ld a, LETS_ALL_SING_2
+;	jp NextRadioLine
 
 FernMonMusic2:
 	ld hl, FernIntroMusic2
@@ -881,13 +859,13 @@ BenFernMusic7:
 StartPokemonMusicChannel:
 	call RadioTerminator
 	call PrintText
-	ld de, MUSIC_POKEMON_MARCH
-	call GetWeekday
-	and 1
-	jr z, .SunTueThurSun
-	ld de, MUSIC_POKEMON_LULLABY
-.SunTueThurSun:
-	callfar RadioMusicRestartDE
+;	ld de, MUSIC_NONE
+;	call GetWeekday
+;	and 1
+;	jr z, .SunTueThurSun
+;	ld de, MUSIC_POKEMON_LULLABY
+;.SunTueThurSun:
+;	callfar RadioMusicRestartDE
 	ret
 
 BenIntroText1:
@@ -941,19 +919,13 @@ BenFernText3B:
 	text_end
 
 LuckyNumberShow1:
-	call StartRadioStation
-	callfar CheckLuckyNumberShowFlag
-	jr nz, .dontreset
-	callfar ResetLuckyNumberShowFlag
-.dontreset
-	ld hl, LC_Text1
+	call StartPokemonMusicChannel
+	ld hl, GoIchinoseText
 	ld a, LUCKY_NUMBER_SHOW_2
 	jp NextRadioLine
 
 LuckyNumberShow2:
-	ld hl, LC_Text2
-	ld a, LUCKY_NUMBER_SHOW_3
-	jp NextRadioLine
+	ret
 
 LuckyNumberShow3:
 	ld hl, LC_Text3

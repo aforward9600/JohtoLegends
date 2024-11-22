@@ -733,6 +733,7 @@ TownMap_GetKantoLandmarkLimits:
 	ret
 
 PokegearRadio_Init:
+	call NoRadioMusic
 	call InitPokegearTilemap
 	depixel 4, 10, 4, 4
 	ld a, SPRITE_ANIM_INDEX_RADIO_TUNING_KNOB
@@ -1374,18 +1375,21 @@ AnimateTuningKnob:
 	call .TuningKnob
 	pop bc
 	ld a, [wRadioTuningKnob]
-	ld hl, SPRITEANIMSTRUCT_XOFFSET
-	add hl, bc
-	ld [hl], a
+;	ld hl, SPRITEANIMSTRUCT_XOFFSET
+;	add hl, bc
+;	ld [hl], a
 	ret
 
 .TuningKnob:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and D_DOWN
-	jr nz, .down
+	and A_BUTTON
+	jp nz, MusicPlayer
 	ld a, [hl]
 	and D_UP
+	jr nz, .down
+	ld a, [hl]
+	and D_DOWN
 	jr nz, .up
 	ret
 
@@ -1444,6 +1448,44 @@ UpdateRadioStation:
 	ldh [hBGMapMode], a
 	ret
 
+MusicPlayer:
+	ld hl, wRadioTuningKnob
+	ld d, [hl]
+	ld hl, MusicPlayerData
+.musicplayerloop
+	ld a, [hli]
+	cp -1
+	jr z, .musicplayernostation
+	cp d
+	jr z, .musicplayerfoundstation
+	inc hl
+	inc hl
+	jr .musicplayerloop
+
+.musicplayernostation
+	call NoRadioStation
+	ret
+
+.musicplayerfoundstation
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld de, .musicplayerreturnafterstation
+	push de
+	jp hl
+
+.musicplayerreturnafterstation
+	ld a, [wPokegearRadioChannelBank]
+	and a
+	ret z
+	xor a
+;	ldh [hBGMapMode], a
+;	hlcoord 2, 9
+;	call PlaceString
+;	ld a, $1
+;	ldh [hBGMapMode], a
+	ret
+
 ; unused
 	ld [wPokegearRadioChannelBank], a
 	ld a, [hli]
@@ -1452,12 +1494,60 @@ UpdateRadioStation:
 	ld [wPokegearRadioChannelAddr + 1], a
 	ret
 
+MusicPlayerData:
+; entries correspond to constants/radio_constants.asm
+
+; frequency value given here = 4 × ingame_frequency − 2
+	dbw  0, .NewBarkTownMusic
+	dbw  2, .CherrygroveCityMusic
+	dbw  4, .VioletCityMusic
+	dbw  6, .AzaleaTownMusic
+	dbw 28, .GSIntroPlayMusic
+	dbw 32, .GSIntroPlayMusic
+	dbw 40, .GSIntroPlayMusic
+	dbw 52, .GSIntroPlayMusic
+	dbw 64, .GSIntroPlayMusic
+	dbw 72, .GSIntroPlayMusic
+	dbw 78, .GSIntroPlayMusic
+	dbw 80, .GSIntroPlayMusic
+;	dbw 80, .AnthemPlayMusic
+	db -1
+
+.AzaleaTownMusic:
+	ld de, MUSIC_AZALEA_TOWN
+	callfar RadioMusicRestartDE
+	ret
+
+.GSIntroPlayMusic:
+.AnthemPlayMusic:
+	ld de, MUSIC_ANTHEM
+	callfar RadioMusicRestartDE
+	ret
+
+.CherrygroveCityMusic:
+	ld de, MUSIC_CHERRYGROVE_CITY
+	callfar RadioMusicRestartDE
+	ret
+
+.NewBarkTownMusic:
+	ld de, MUSIC_NEW_BARK_TOWN
+	callfar RadioMusicRestartDE
+	ret
+
+.VioletCityMusic:
+	ld de, MUSIC_VIOLET_CITY
+	callfar RadioMusicRestartDE
+	ret
+
 RadioChannels:
 ; entries correspond to constants/radio_constants.asm
 
 ; frequency value given here = 4 × ingame_frequency − 2
-	dbw 16, .PKMNTalkAndPokedexShow
-	dbw 28, .PokemonMusic
+	dbw  0, .NewBarkTownMusic
+	dbw  2, .CherrygroveCityMusic
+	dbw  4, .VioletCityMusic
+	dbw  6, .AzaleaTownMusic
+	dbw 28, .IntroMusic
 	dbw 32, .LuckyChannel
 	dbw 40, .BuenasPassword
 	dbw 52, .RuinsOfAlphRadio
@@ -1465,23 +1555,39 @@ RadioChannels:
 	dbw 72, .LetsAllSing
 	dbw 78, .PokeFluteRadio
 	dbw 80, .EvolutionRadio
+;	dbw 80, .AnthemMusic
 	db -1
 
 .PKMNTalkAndPokedexShow:
-; Pokédex Show in the morning
+	jp LoadStation_NewBarkTownMusic
 
-; Oak's Pokémon Talk in the afternoon and evening
-	call .InJohto
-	jr nc, .NoSignal
-	ld a, [wTimeOfDay]
-	and a
-	jp z, LoadStation_PokedexShow
-	jp LoadStation_OaksPokemonTalk
+.IntroMusic:
+.AzaleaTownMusic:
+	jp LoadStation_AzaleaTown
 
-.PokemonMusic:
-	call .InJohto
-	jr nc, .NoSignal
-	jp LoadStation_PokemonMusic
+.CherrygroveCityMusic:
+	jp LoadStation_CherrygroveCityMusic
+
+.NewBarkTownMusic:
+	jp LoadStation_NewBarkTownMusic
+
+.VioletCityMusic:
+	jp LoadStation_VioletCityMusic
+
+;	call JoyTextDelay
+;	ld hl, hJoyPressed
+;	ld a, [hl]
+;	and A_BUTTON
+;	jr nz, .pressedA
+;	ret
+
+;.pressedA:
+;	push de
+;	ld a, RESTART_MAP_MUSIC
+;	ld [wPokegearRadioMusicPlaying], a
+;	ld de, MUSIC_GS_OPENING
+;	call PlayMusic
+;	ret
 
 .LuckyChannel:
 	call .InJohto
@@ -1559,17 +1665,39 @@ RadioChannels:
 	scf
 	ret
 
-LoadStation_OaksPokemonTalk:
+LoadStation_NewBarkTownMusic:
 	xor a ; OAKS_POKEMON_TALK
 	ld [wCurRadioLine], a
 	ld [wNumRadioLinesPrinted], a
 	ld a, BANK(PlayRadioShow)
 	ld hl, PlayRadioShow
 	call Radio_BackUpFarCallParams
-	ld de, OaksPKMNTalkName
+	ld de, NewBarkTownPlayerName
 	ret
 
-LoadStation_PokedexShow:
+LoadStation_VioletCityMusic:
+	ld a, LUCKY_CHANNEL
+	ld [wCurRadioLine], a
+	xor a
+	ld [wNumRadioLinesPrinted], a
+	ld a, BANK(PlayRadioShow)
+	ld hl, PlayRadioShow
+	call Radio_BackUpFarCallParams
+	ld de, VioletCityPlayerName
+	ret
+
+LoadStation_AzaleaTown:
+	ld a, LUCKY_CHANNEL
+	ld [wCurRadioLine], a
+	xor a
+	ld [wNumRadioLinesPrinted], a
+	ld a, BANK(PlayRadioShow)
+	ld hl, PlayRadioShow
+	call Radio_BackUpFarCallParams
+	ld de, AzaleaTownMusicName
+	ret
+
+LoadStation_CherrygroveCityMusic:
 	ld a, POKEDEX_SHOW
 	ld [wCurRadioLine], a
 	xor a
@@ -1577,18 +1705,7 @@ LoadStation_PokedexShow:
 	ld a, BANK(PlayRadioShow)
 	ld hl, PlayRadioShow
 	call Radio_BackUpFarCallParams
-	ld de, PokedexShowName
-	ret
-
-LoadStation_PokemonMusic:
-	ld a, POKEMON_MUSIC
-	ld [wCurRadioLine], a
-	xor a
-	ld [wNumRadioLinesPrinted], a
-	ld a, BANK(PlayRadioShow)
-	ld hl, PlayRadioShow
-	call Radio_BackUpFarCallParams
-	ld de, PokemonMusicName
+	ld de, CherrygroveCityPlayerName
 	ret
 
 LoadStation_LuckyChannel:
@@ -1749,15 +1866,16 @@ NoRadioName:
 	call Textbox
 	ret
 
-OaksPKMNTalkName:     db "OAK's <PK><MN> Talk@"
-PokedexShowName:      db "#DEX Show@"
-PokemonMusicName:     db "#MON Music@"
-LuckyChannelName:     db "Lucky Channel@"
-UnownStationName:     db "?????@"
+NewBarkTownPlayerName:     db "New Bark Town   @"
+VioletCityPlayerName:      db "Violet City     @"
+AzaleaTownMusicName:       db "Azalea Town     @"
+CherrygroveCityPlayerName: db "Cherrygrove City@"
+LuckyChannelName:          db "Lucky Channel@"
+UnownStationName:          db "?????@"
 
-PlacesAndPeopleName:  db "Places & People@"
-LetsAllSingName:      db "Let's All Sing!@"
-PokeFluteStationName: db "# FLUTE@"
+PlacesAndPeopleName:       db "Places & People@"
+LetsAllSingName:           db "Let's All Sing!@"
+PokeFluteStationName:      db "# FLUTE@"
 
 _TownMap:
 	ld hl, wOptions
@@ -1973,27 +2091,18 @@ PlayRadio:
 .StationPointers:
 ; entries correspond to MAPRADIO_* constants
 	dw .OakOrPnP
-	dw LoadStation_OaksPokemonTalk
-	dw LoadStation_PokedexShow
-	dw LoadStation_PokemonMusic
+	dw LoadStation_CherrygroveCityMusic
+	dw LoadStation_VioletCityMusic
+	dw LoadStation_AzaleaTown
 	dw LoadStation_LuckyChannel
 	dw LoadStation_UnownRadio
 	dw LoadStation_PlacesAndPeople
 	dw LoadStation_LetsAllSing
 	dw LoadStation_RocketRadio
+;	dw LoadStation_AnthemMusic
 
 .OakOrPnP:
-	call IsInJohto
-	and a
-	jr nz, .kanto
-	call UpdateTime
-	ld a, [wTimeOfDay]
-	and a
-	jp z, LoadStation_PokedexShow
-	jp LoadStation_OaksPokemonTalk
-
-.kanto
-	jp LoadStation_PlacesAndPeople
+	jp LoadStation_NewBarkTownMusic
 
 PokegearMap:
 	ld a, e
