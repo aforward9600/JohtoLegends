@@ -538,7 +538,7 @@ _OPT_OakText1::
 
 _OPT_OakText2::
 	text_start
-	line "may be seen around"
+	line "Montarules"
 	done
 
 _OPT_OakText3::
@@ -550,9 +550,12 @@ _OPT_OakText3::
 
 _OPT_MaryText1::
 	text_start
-	line "MARY: @"
-	text_ram wStringBuffer1
-	text "'s"
+	line "Hitomi Sato"
+	done
+
+_TriteHexagonText::
+	text_start
+	line "TriteHexagon"
 	done
 
 OPT_SweetAdorably::
@@ -746,12 +749,12 @@ _BenIntroText3::
 
 _FernIntroText1::
 	text_start
-	line "FERN: #MUSIC!"
+	line "Junichi Masuda"
 	done
 
 _FernIntroText2::
 	text_start
-	line "With DJ FERN!"
+	line "Dannye"
 	done
 
 _BenFernText1::
@@ -855,12 +858,12 @@ _LC_DragText2::
 
 _PnP_Text1::
 	text_start
-	line "PLACES AND PEOPLE!"
+	line "Hitomi Sato"
 	done
 
 _PnP_Text2::
 	text_start
-	line "Brought to you by"
+	line "Mmmmmm"
 	done
 
 _PnP_Text3::
@@ -968,12 +971,12 @@ _PnP_Text5::
 
 _RocketRadioText1::
 	text_start
-	line "… …Ahem, we are"
+	line "Junichi Masuda"
 	done
 
 _RocketRadioText2::
 	text_start
-	line "TEAM ROCKET!"
+	line "ryanisthebomb203"
 	done
 
 _RocketRadioText3::
@@ -983,17 +986,17 @@ _RocketRadioText3::
 
 _RocketRadioText4::
 	text_start
-	line "of preparation, we"
+	line "Junichi Masuda"
 	done
 
 _RocketRadioText5::
 	text_start
-	line "have risen again"
+	line "Go Ichinose"
 	done
 
 _RocketRadioText6::
 	text_start
-	line "from the ashes!"
+	line "TriteHexagon"
 	done
 
 _RocketRadioText7::
@@ -1005,16 +1008,12 @@ _RocketRadioText7::
 
 _RocketRadioText8::
 	text_start
-	line "hear?@"
-	text_pause
-	text " We did it!"
+	line "Go Ichinose"
 	done
 
 _RocketRadioText9::
 	text_start
-	line "@"
-	text_pause
-	text "Where is our boss?"
+	line "Pigu"
 	done
 
 _RocketRadioText10::
@@ -1026,7 +1025,7 @@ _RocketRadioText10::
 
 _BuenaRadioText1::
 	text_start
-	line "BUENA: BUENA here!"
+	line "Morikazu Aoki"
 	done
 
 _BuenaRadioText2::
@@ -1036,14 +1035,12 @@ _BuenaRadioText2::
 
 _BuenaRadioText3::
 	text_start
-	line "Let me think… It's"
+	line "Go Ichinose"
 	done
 
 _BuenaRadioText4::
 	text_start
-	line "@"
-	text_ram wStringBuffer1
-	text "!"
+	line "TriteHexagon"
 	done
 
 _BuenaRadioText5::
@@ -1053,12 +1050,12 @@ _BuenaRadioText5::
 
 _BuenaRadioText6::
 	text_start
-	line "I'm in GOLDENROD's"
+	line "Shota Kageyama"
 	done
 
 _BuenaRadioText7::
 	text_start
-	line "RADIO TOWER!"
+	line "GACT"
 	done
 
 _BuenaRadioMidnightText1::
@@ -1068,22 +1065,22 @@ _BuenaRadioMidnightText1::
 
 _BuenaRadioMidnightText2::
 	text_start
-	line "It's midnight! I"
+	line "Kenta Nagata"
 	done
 
 _BuenaRadioMidnightText3::
 	text_start
-	line "have to shut down!"
+	line "Hajime Wakai"
 	done
 
 _BuenaRadioMidnightText4::
 	text_start
-	line "Thanks for tuning"
+	line "Toru Minegishi"
 	done
 
 _BuenaRadioMidnightText5::
 	text_start
-	line "in to the end! But"
+	line "ShockSlayer"
 	done
 
 _BuenaRadioMidnightText6::
@@ -1093,12 +1090,12 @@ _BuenaRadioMidnightText6::
 
 _BuenaRadioMidnightText7::
 	text_start
-	line "late! Presented to"
+	line "Radiation"
 	done
 
 _BuenaRadioMidnightText8::
 	text_start
-	line "you by DJ BUENA!"
+	line "ShockSlayer"
 	done
 
 _BuenaRadioMidnightText9::
@@ -1106,7 +1103,7 @@ _BuenaRadioMidnightText9::
 	done
 
 _BuenaRadioMidnightText10::
-	text "…"
+	text "Pigu"
 	done
 
 _BuenaOffTheAirText::
