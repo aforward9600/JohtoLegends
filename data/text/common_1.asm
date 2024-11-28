@@ -1045,7 +1045,7 @@ _BuenaRadioText4::
 
 _BuenaRadioText5::
 	text_start
-	line "Don't forget it!"
+	line "LyricWulf"
 	done
 
 _BuenaRadioText6::

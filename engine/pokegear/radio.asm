@@ -194,7 +194,9 @@ OaksPKMNTalk2:
 	jp NextRadioLine
 
 OaksPKMNTalk3:
-	ret
+	ld hl, JunichiMasudaSoloText
+	ld a, OAKS_POKEMON_TALK_2
+	jp NextRadioLine
 
 OaksPKMNTalk4:
 	call StartPokemonMusicChannel
@@ -210,10 +212,9 @@ OaksPKMNTalk5:
 	jp NextRadioLine
 
 OaksPKMNTalk6:
-	ret
-;	ld hl, OPT_OakText3
-;	ld a, OAKS_POKEMON_TALK_7
-;	jp NextRadioLine
+	ld hl, GoIchinoseText
+	ld a, OAKS_POKEMON_TALK_5
+	jp PrintRadioLine
 
 JunichiMasudaSoloText:
 	; MARY: PROF.OAK'S
@@ -266,7 +267,9 @@ TriteHexagonText:
 	text_end
 
 OaksPKMNTalk9:
-	ret
+	ld hl, OPT_MaryText1
+	ld a, OAKS_POKEMON_TALK_8
+	jp NextRadioLine
 
 OaksPKMNTalk10:
 	farcall RadioMusicRestartPokemonChannel
@@ -510,17 +513,16 @@ BenMonMusic1:
 	ld hl, BenIntroText1
 	ld a, POKEMON_MUSIC_2
 	jp NextRadioLine
-	ret
 
 BenMonMusic2:
 	ld hl, BenIntroText2
 	ld a, POKEMON_MUSIC_3
-	push af
 	jp NextRadioLine
-	ret
 
 BenMonMusic3:
-	ret
+	ld hl, BenIntroText1
+	ld a, POKEMON_MUSIC_2
+	jp NextRadioLine
 
 FernMonMusic1:
 	call StartPokemonMusicChannel
@@ -534,10 +536,9 @@ FernMonMusic2:
 	jp NextRadioLine
 
 BenFernMusic4:
-	ret
-;	ld hl, BenFernText1
-;	ld a, POKEMON_MUSIC_5
-;	jp NextRadioLine
+	ld hl, FernIntroText1
+	ld a, LETS_ALL_SING_2
+	jp NextRadioLine
 
 BenFernMusic5:
 	call GetWeekday
@@ -786,7 +787,9 @@ PeoplePlaces2:
 	jp NextRadioLine
 
 PeoplePlaces3:
-	ret
+	ld hl, PnP_Text1
+	ld a, PLACES_AND_PEOPLE_2
+	jp NextRadioLine
 
 PnP_Text1:
 	; PLACES AND PEOPLE!
@@ -1052,7 +1055,9 @@ RocketRadio2:
 	jp NextRadioLine
 
 RocketRadio3:
-	ret
+	ld hl, RocketRadioText1
+	ld a, ROCKET_RADIO_2
+	jp NextRadioLine
 
 RocketRadio4:
 	call StartPokemonMusicChannel
@@ -1071,7 +1076,9 @@ RocketRadio6:
 	jp NextRadioLine
 
 RocketRadio7:
-	ret
+	ld hl, RocketRadioText4
+	ld a, ROCKET_RADIO_5
+	jp NextRadioLine
 
 RocketRadio8:
 	call StartPokemonMusicChannel
@@ -1085,7 +1092,9 @@ RocketRadio9:
 	jp NextRadioLine
 
 RocketRadio10:
-	ret
+	ld hl, RocketRadioText8
+	ld a, ROCKET_RADIO_9
+	jp NextRadioLine
 
 RocketRadioText1:
 	; … …Ahem, we are
@@ -1280,7 +1289,9 @@ GetBuenasPassword:
 INCLUDE "data/radio/buenas_passwords.asm"
 
 BuenasPassword5:
-	ret
+	ld hl, BuenaRadioText3
+	ld a, BUENAS_PASSWORD_4
+	jp NextRadioLine
 
 BuenasPassword6:
 	call StartPokemonMusicChannel
@@ -1303,11 +1314,13 @@ BuenasPasswordAfterMidnight:
 
 BuenasPassword8:
 	ld hl, BuenaRadioMidnightText10
-	ld a, BUENAS_PASSWORD_6
+	ld a, BUENAS_PASSWORD_9
 	jp NextRadioLine
 
 BuenasPassword9:
-	ret
+	ld hl, BuenaRadioText6
+	ld a, BUENAS_PASSWORD_7
+	jp NextRadioLine
 
 BuenasPassword10:
 	call StartPokemonMusicChannel
@@ -1331,7 +1344,9 @@ BuenasPassword13:
 	jp NextRadioLine
 
 BuenasPassword14:
-	ret
+	ld hl, BuenaRadioMidnightText2
+	ld a, BUENAS_PASSWORD_11
+	jp NextRadioLine
 
 BuenasPassword15:
 	call StartPokemonMusicChannel
@@ -1345,7 +1360,9 @@ BuenasPassword16:
 	jp NextRadioLine
 
 BuenasPassword17:
-	ret
+	ld hl, BuenaRadioMidnightText7
+	ld a, BUENAS_PASSWORD_16
+	jp NextRadioLine
 
 BuenasPassword18:
 	ld hl, BuenaRadioMidnightText10
@@ -1353,36 +1370,19 @@ BuenasPassword18:
 	jp NextRadioLine
 
 BuenasPassword19:
-	ld hl, BuenaRadioMidnightText10
+	call StartPokemonMusicChannel
+	ld hl, BuenaRadioText6
 	ld a, BUENAS_PASSWORD_20
 	jp NextRadioLine
 
 BuenasPassword20:
-	ldh a, [hBGMapMode]
-	push af
-	farcall NoRadioMusic
-	farcall NoRadioName
-	pop af
-	ldh [hBGMapMode], a
-	ld hl, wDailyFlags2
-	res DAILYFLAGS2_BUENAS_PASSWORD_F, [hl]
-	ld a, BUENAS_PASSWORD
-	ld [wCurRadioLine], a
-	xor a
-	ld [wNumRadioLinesPrinted], a
-	ld hl, BuenaOffTheAirText
+	ld hl, BuenaRadioText5
 	ld a, BUENAS_PASSWORD_21
 	jp NextRadioLine
 
 BuenasPassword21:
-	ld a, BUENAS_PASSWORD
-	ld [wCurRadioLine], a
-	xor a
-	ld [wNumRadioLinesPrinted], a
-	call BuenasPasswordCheckTime
-	jp nc, BuenasPassword1
-	ld hl, BuenaOffTheAirText
-	ld a, BUENAS_PASSWORD_21
+	ld hl, BuenaRadioText6
+	ld a, BUENAS_PASSWORD_20
 	jp NextRadioLine
 
 BuenasPasswordCheckTime:
