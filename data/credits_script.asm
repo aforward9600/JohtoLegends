@@ -159,7 +159,8 @@ CreditsScript:
 	db      TRAINER_SPRITES, 0
 	db         FRENCHORANGE, 1
 	db          RAMEN_PIXEL, 2
-	db          FERROPEXOLA, 3
+	db               CDRX73, 3
+	db          FERROPEXOLA, 4
 
 	db CREDITS_WAIT, 12
 

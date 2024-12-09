@@ -56,7 +56,7 @@ CreditsStrings:
 	dw .Tetra
 	dw .AiMashima
 	dw .RamenPixel
-	dw .HideyukiHashimoto
+	dw .CDRX73
 	dw .Shockslayer
 	dw .MoveAnimations
 	dw .Pigu
@@ -184,7 +184,7 @@ CreditsStrings:
 .Tetra:               db "       Tetra@"          ; "のもと　がくじ@"
 .AiMashima:           db "     AI MASHIMA@"           ; "ましま　あい@"
 .RamenPixel:          db "     Ramen Pixel@"        ; "いしかわ　みきひろ@"
-.HideyukiHashimoto:   db " HIDEYUKI HASHIMOTO@"       ; "はしもと　ひでゆき@"
+.CDRX73:              db "       CDRX73@"       ; "はしもと　ひでゆき@"
 .Shockslayer:         db "    Shockslayer@"         ; "やまと　さとし@"
 .MoveAnimations:      db "  Move Animations@"        ; "みやもと　しげる@"
 .End:                 db "        END@"               ; "おしまい@"

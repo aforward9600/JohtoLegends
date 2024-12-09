@@ -38,6 +38,7 @@ MeetMomRightScript:
 .OnRight:
 	applymovement PLAYERSHOUSE1F_GRANNY1, MomWalksToPlayerMovement
 MeetMomScript:
+	scall GrandmaPasswordCheck
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .GrannyGirl
 	opentext
@@ -182,6 +183,59 @@ MomScript:
 
 GetDecoEvent:
 	jumpstd getdecoevent
+
+GrandmaPasswordCheck:
+	checkevent EVENT_PASSWORD_SET_2
+	iftrue .stop
+	setevent EVENT_PASSWORD_SET_2
+	callasm .candypouch
+	iftrue .candypouch2
+	callasm .singular
+	iftrue .singular2
+
+.stop
+	end
+
+.candypouch:
+	xor a
+	ld [wScriptVar], a
+	ld de, CandyPouchPassword
+	ld hl, wMomsName ; check inputted password
+	ld c, 4
+	call CompareBytes
+	ret nz
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.candypouch2:
+	setevent EVENT_PASSWORD_CHEATER
+	setevent EVENT_STRONGEST_PASSWORD
+	setflag ENGINE_ACTIVATED_MAX_DVS
+	end
+
+
+.singular:
+	xor a
+	ld [wScriptVar], a
+	ld de, SingularPassword
+	ld hl, wMomsName ; check inputted password
+	ld c, 4
+	call CompareBytes
+	ret nz
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.singular2:
+	setevent EVENT_PASSWORD_SINGULAR
+	end
+
+CandyPouchPassword:
+	db "CHEATER"
+
+SingularPassword:
+	db "SINGULAR"
 
 MeetGrandmaLeftScript:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1

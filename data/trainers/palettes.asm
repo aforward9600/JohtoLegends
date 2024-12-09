@@ -41,7 +41,7 @@ INCBIN "gfx/trainers/grunt_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/gentleman.gbcpal", middle_colors
 INCBIN "gfx/trainers/skier.gbcpal", middle_colors
 INCBIN "gfx/trainers/teacher.gbcpal", middle_colors
-INCLUDE "gfx/trainers/sabrina.pal"
+INCBIN "gfx/trainers/sabrina.gbcpal", middle_colors
 INCBIN "gfx/trainers/bug_catcher.gbcpal", middle_colors
 INCBIN "gfx/trainers/fisher.gbcpal", middle_colors
 INCBIN "gfx/trainers/swimmer_m.gbcpal", middle_colors

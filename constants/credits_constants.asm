@@ -56,7 +56,7 @@
 	const TETRA
 	const AI_MASHIMA
 	const RAMEN_PIXEL
-	const HIDEYUKI_HASHIMOTO
+	const CDRX73
 	const SHOCKSLAYER
 	const MOVE_ANIMATIONS
 	const PIGU

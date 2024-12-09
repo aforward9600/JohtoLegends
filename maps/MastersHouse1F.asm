@@ -66,7 +66,6 @@ WalkUpToRival:
 	setscene SCENE_CANT_LEAVE_HOUSE
 	closetext
 	scall MasterPasswordCheck
-	scall MasterPasswordCheck2
 	end
 
 TryToLeaveHouseScript:
@@ -704,57 +703,6 @@ WalkUpToRival2:
 Rival_ReceiveTheBalls:
 	jumpstd receiveitem
 	end
-
-MasterPasswordCheck2:
-	checkevent EVENT_PASSWORD_SET_2
-	iftrue .stop
-	setevent EVENT_PASSWORD_SET_2
-	callasm .candypouch
-	iftrue .candypouch2
-	callasm .singular
-	iftrue .singular2
-.stop
-	end
-
-.candypouch:
-	xor a
-	ld [wScriptVar], a
-	ld de, CandyPouchPassword
-	ld hl, wMomsName ; check inputted password
-	ld c, 4
-	call CompareBytes
-	ret nz
-	ld a, 1
-	ld [wScriptVar], a
-	ret
-
-.candypouch2:
-	setevent EVENT_PASSWORD_CHEATER
-	setevent EVENT_STRONGEST_PASSWORD
-	setflag ENGINE_ACTIVATED_MAX_DVS
-	end
-
-.singular:
-	xor a
-	ld [wScriptVar], a
-	ld de, SingularPassword
-	ld hl, wMomsName ; check inputted password
-	ld c, 4
-	call CompareBytes
-	ret nz
-	ld a, 1
-	ld [wScriptVar], a
-	ret
-
-.singular2:
-	setevent EVENT_PASSWORD_SINGULAR
-	end
-
-CandyPouchPassword:
-	db "CHEATER"
-
-SingularPassword:
-	db "SINGULAR"
 
 MasterPasswordCheck:
 	checkevent EVENT_PASSWORD_SET
