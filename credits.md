@@ -39,6 +39,8 @@ Cardboardbox: Battle Tower Prize List fix.
 
 Puddles and mid-battle quotes: Rangi
 
+Better Move Menu: rodmcosta
+
 Damien: Surf sprite color correction, AI Improvements, max walking sprite increase.
 
 landesherr: AI Improvements.
