@@ -52,7 +52,7 @@ CreditsStrings:
 	dw .HirotakaUemura
 	dw .FrenchOrange@
 	dw .LuigiTKO
-	dw .MiyukiSato
+	dw .rodmcosta
 	dw .Tetra
 	dw .AiMashima
 	dw .RamenPixel
@@ -180,7 +180,7 @@ CreditsStrings:
 .HirotakaUemura:      db "  HIROTAKA UEMURA@"         ; "うえむら　ひろたか@"
 .FrenchOrange@:       db "    FrenchOrange@"         ; "たむら　ひろあき@"
 .LuigiTKO:            db "      LuigiTKO@"        ; "さかぐち　のりあき@"
-.MiyukiSato:          db "    MIYUKI SATO@"           ; "さとう　みゆき@"
+.rodmcosta:           db "      rodmcosta@"           ; "さとう　みゆき@"
 .Tetra:               db "       Tetra@"          ; "のもと　がくじ@"
 .AiMashima:           db "     AI MASHIMA@"           ; "ましま　あい@"
 .RamenPixel:          db "     Ramen Pixel@"        ; "いしかわ　みきひろ@"

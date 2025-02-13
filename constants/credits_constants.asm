@@ -52,7 +52,7 @@
 	const HIROTAKA_UEMURA
 	const FRENCHORANGE
 	const LUIGITKO
-	const MIYUKI_SATO
+	const RODMCOSTA
 	const TETRA
 	const AI_MASHIMA
 	const RAMEN_PIXEL

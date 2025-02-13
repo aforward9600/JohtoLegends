@@ -1717,8 +1717,8 @@ RapidashEvosAttacks:
 	db 0 ; no more level-up moves
 
 SlowpokeEvosAttacks:
-	dbbw EVOLVE_LEVEL, 37, SLOWBRO
 	dbbw EVOLVE_ITEM, ROYAL_ROCK, SLOWKING
+	dbbw EVOLVE_LEVEL, 37, SLOWBRO
 	db 0 ; no more evolutions
 	dbw 1, CURSE
 	dbw 1, TACKLE

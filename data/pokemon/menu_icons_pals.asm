@@ -240,8 +240,8 @@ MonMenuIconPals:
 	icon_pals BLUE,   PINK   ; QUAGSIRE
 	icon_pals BLUE,   PURPLE ; MURKROW
 	icon_pals BLUE,   PURPLE ; HONCHKROW
-	icon_pals RED,    BLUE   ; MISDREAVUS
-	icon_pals PINK,   BLUE   ; MISMAGIUS
+	icon_pals PINK,   BLUE   ; MISDREAVUS
+	icon_pals PURPLE, BLUE   ; MISMAGIUS
 	icon_pals BROWN,  BROWN  ; UNOWN
 	icon_pals BLUE,   PURPLE ; WYNAUT
 	icon_pals BLUE,   PURPLE ; WOBBUFFET

@@ -113,7 +113,7 @@ BattleCommand_Thief:
 	ret
 
 .ResetChoice
-	call GetUserItem
+	farcall GetUserItem
 	ld a, b
 	cp HELD_CHOICE_BOOST
 	ret nz
@@ -121,8 +121,8 @@ BattleCommand_Thief:
 	cp SPEED
 	jr nz, .reset_encore_count
 ; Recalculate Stats if Choice Scarf is stolen
-	call CalcPlayerStats
-	call CalcEnemyStats
+	farcall CalcPlayerStats
+	farcall CalcEnemyStats
 
 .reset_encore_count
 	ld hl, wEnemyEncoreCount

@@ -1755,9 +1755,11 @@ BattleCommand_CheckHit:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_THUNDER
+	jr z, .PerfectThunder
 	cp EFFECT_HURRICANE
 	ret nz
 
+.PerfectThunder
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
 	ret
@@ -2873,6 +2875,8 @@ EnemyAttackDamage:
 	ld d, a
 	and a
 	ret z
+
+	ld b,b
 
 	ld a, [hl]
 	cp SPECIAL

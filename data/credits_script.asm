@@ -62,6 +62,7 @@ CreditsScript:
 	db        DAMIEN_CREDIT, 2
 	db           LANDESHERR, 3
 	db   GRATE_ORACLE_LEWOT, 4
+	db            RODMCOSTA, 5
 
 	db CREDITS_WAIT, 12
 

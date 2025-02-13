@@ -91,8 +91,8 @@ EvolveAfterBattle_MasterLoop:
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
 
-	cp EVOLVE_HOLD
-	jr z, .hold
+;	cp EVOLVE_HOLD
+;	jr z, .hold
 
 ; EVOLVE_STAT
 	call GetNextEvoAttackByte
@@ -122,16 +122,16 @@ EvolveAfterBattle_MasterLoop:
 	jp nz, .skip_evolution_species
 	jp .proceed
 
-.hold
-	ld a, [hli]
-	ld b, a
-	ld a, [wTempMonItem]
-	cp b
-	jp nz, .skip_evolution_species
-
-	xor a
-	ld [wTempMonItem], a
-	jp .proceed
+;.hold
+;	ld a, [hli]
+;	ld b, a
+;	ld a, [wTempMonItem]
+;	cp b
+;	jp nz, .skip_evolution_species
+;
+;	xor a
+;	ld [wTempMonItem], a
+;	jp .proceed
 
 .happiness
 	ld a, [wTempMonHappiness]
