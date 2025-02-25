@@ -816,7 +816,6 @@ Function4a6ab:
 	call ClearBGPalettes
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
-	farcall Function11c1ab
 	pop bc
 	call LoadFontsExtra
 	jp Function4a4c4

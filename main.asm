@@ -574,7 +574,6 @@ INCLUDE "engine/events/battle_tower/trainer_text.asm"
 
 SECTION "bank5B", ROMX
 
-INCLUDE "mobile/mobile_5b.asm"
 INCLUDE "engine/link/link_trade.asm"
 INCLUDE "engine/link/link.asm"
 INCLUDE "engine/battle/link_result.asm"

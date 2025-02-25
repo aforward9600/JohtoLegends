@@ -1297,7 +1297,6 @@ Function17d833:
 	add hl, de
 	ld e, l
 	ld d, h
-	farcall Function11c08f
 	call Function17e349
 	ret
 
@@ -3812,7 +3811,6 @@ Function17f154:
 	ld c, l
 	ld b, h
 	pop de
-	farcall Function11c08f
 	ld c, l
 	ld b, h
 	pop de
@@ -4202,7 +4200,6 @@ Function17f3c9:
 	call CopyBytes
 	pop de
 	ld c, $0
-	farcall Function11c075
 	push hl
 	ld hl, wc708
 	ld de, wcd36
