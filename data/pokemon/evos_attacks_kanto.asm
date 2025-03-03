@@ -310,6 +310,7 @@ BlastoiseEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, FLASH_CANNON
 	dbw 1, FLASH_CANNON
+	dbw 1, AURA_SPHERE
 	dbw 1, TACKLE
 	dbw 4, TAIL_WHIP
 	dbw 7, WATER_GUN
