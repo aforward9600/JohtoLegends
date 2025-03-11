@@ -32,6 +32,8 @@ LoadSpecialMapPalette:
 	jp z, .summit
 	cp TILESET_DRACO_SCENE
 	jp z, .draco_scene
+	cp TILESET_DAHLIA_SCENE
+	jp z, .dahlia_scene
 	jp .do_nothing
 
 .darkness
@@ -166,6 +168,18 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
+.dahlia_scene:
+	ld hl, DahliaScenePalette
+	ld a, [wTimeOfDayPal]
+	maskbits NUM_DAYTIMES
+	ld bc, 8 palettes
+	call AddNTimes
+	ld de, wBGPals1
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	scf
+	ret
+
 .do_nothing
 	and a
 	ret
@@ -177,6 +191,8 @@ INCLUDE "gfx/tilesets/mansion_roof.pal"
 INCLUDE "gfx/tilesets/summit.pal"
 
 INCLUDE "gfx/tilesets/draco_scene.pal"
+
+INCLUDE "gfx/tilesets/dahlia_scene.pal"
 
 LoadCaveRoomPalette:
 	ld a, BANK(wBGPals1)

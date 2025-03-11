@@ -329,6 +329,7 @@ TilesetFedHideoutAnim:
 TilesetSummitAnim:
 TilesetTowerRoofAnim:
 TilesetDracoSceneAnim:
+TilesetDahliaSceneAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

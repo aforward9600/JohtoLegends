@@ -54,3 +54,4 @@ Tilesets::
 	tileset TilesetSummit
 	tileset TilesetTowerRoof
 	tileset TilesetDracoScene
+	tileset TilesetDahliaScene

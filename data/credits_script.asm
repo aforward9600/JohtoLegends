@@ -105,6 +105,7 @@ CreditsScript:
 	db          FERROPEXOLA, 2
 	db             FROGTOES, 3
 	db       INTERNETGOBLIN, 4
+	db         SAGE_CREDITS, 5
 
 	db CREDITS_WAIT, 12
 

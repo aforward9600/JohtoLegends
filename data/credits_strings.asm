@@ -48,7 +48,7 @@ CreditsStrings:
 	dw .YuichiroIto
 	dw .TakaoShimizu
 	dw .Planning
-	dw .KeitaNakamura
+	dw .Sage
 	dw .HirotakaUemura
 	dw .FrenchOrange@
 	dw .LuigiTKO
@@ -176,7 +176,7 @@ CreditsStrings:
 .Planning:            db " SPECIAL PRODUCTION"
                     next "      PLANNING"             ; "きかくかいはつぶ@"
                     next " & DEVELOPMENT DEPT.@"
-.KeitaNakamura:       db "   KEITA NAKAMURA@"         ; "なかむら　けいた@"
+.Sage:                db "        Sage@"         ; "なかむら　けいた@"
 .HirotakaUemura:      db "  HIROTAKA UEMURA@"         ; "うえむら　ひろたか@"
 .FrenchOrange@:       db "    FrenchOrange@"         ; "たむら　ひろあき@"
 .LuigiTKO:            db "      LuigiTKO@"        ; "さかぐち　のりあき@"

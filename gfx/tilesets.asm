@@ -556,3 +556,15 @@ INCBIN "data/tilesets/draco_scene_metatiles.bin"
 
 TilesetDracoSceneColl:
 INCLUDE "data/tilesets/draco_scene_collision.asm"
+
+TilesetDahliaSceneAttr::
+INCBIN "data/tilesets/dahlia_scene_attributes.bin"
+
+TilesetDahliaSceneGFX:
+INCBIN "gfx/tilesets/dahlia_scene.2bpp.lz"
+
+TilesetDahliaSceneMeta:
+INCBIN "data/tilesets/dahlia_scene_metatiles.bin"
+
+TilesetDahliaSceneColl:
+INCLUDE "data/tilesets/dahlia_scene_collision.asm"

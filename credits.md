@@ -68,11 +68,15 @@ Move Steel Slice: Mskd.
 Rangi and the Polished Crystal team for Route 47 and 48 maps, Cherry Tree and the Town Map expansion and many overworld sprites,
 Wynaut sprites and animations, Yanmega back sprite.
 
+Overqwil sprites: Polished Crystal Team
+
 Ambipom back sprite, Annihilape sprite: ShadowOne333
 
 Annihilape sprite: Sea and ShadowOne333
 
 Ursaluna sprites and animation: Cure, ShadowOne333, Scarlax
+
+Kleavor sprites: Cure
 
 Dudunspars sprites - Mia
 
@@ -93,6 +97,8 @@ Azurill and Dahlia credits sprite: FrenchOrange & Ferropexola
 Kanto grass colors: FrenchOrange
 
 Officer Jenny sprite: FrenchOrange
+
+Smoochum and Quilava sprites: FrenchOrange
 
 Beta Wooper back sprite made by 64BitWonder.
 
@@ -121,6 +127,8 @@ Duskull, Dusclops, Dusknoir, Bronzor, Bronzong, Ralts, Kirlia, Gardevoir, Gallad
 Budew, Roselia, Roserade, Electrike, Manectric, Cacnea, Cacturne, Croagunk,
 Toxicroak, Snorunt, Glalie, Froslass, Aggron, Lotad, Lombre, Ludicolo sprites:
 Prism Team.
+
+Gyarados sprites: Sage
 
 Farigiraf sprite and animation: Nuuk.
 
