@@ -3,418 +3,42 @@
 
 ; Copies certain values at the time the player enters the Hall of Fame.
 StubbedTrainerRankings_HallOfFame2::
-	ret
-	ld a, BANK(sTrainerRankingGameTimeHOF)
-	call GetSRAMBank
-
-	ld hl, wGameTimeHours
-	ld de, sTrainerRankingGameTimeHOF
-	ld bc, 4
-	call CopyBytes
-
-	ld hl, sTrainerRankingStepCount
-	ld de, sTrainerRankingStepCountHOF
-	ld bc, 4
-	call CopyBytes
-
-	; sTrainerRankingHealings is only a 3-byte value.
-	; One extraneous byte is copied from sTrainerRankingMysteryGift.
-	ld hl, sTrainerRankingHealings
-	ld de, sTrainerRankingHealingsHOF
-	ld bc, 4
-	call CopyBytes
-
-	ld hl, sTrainerRankingBattles
-	ld de, sTrainerRankingBattlesHOF
-	ld bc, 3
-	call CopyBytes
-
-	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
-
 StubbedTrainerRankings_MagikarpLength:
-	ret
-	ld a, BANK(sTrainerRankingLongestMagikarp)
-	call GetSRAMBank
-	ld de, wBuffer1
-	ld hl, sTrainerRankingLongestMagikarp
-
-	; Is this Magikarp the longest measured?
-	ld a, [de]
-	cp [hl]
-	jr z, .isLowByteHigher
-	jr nc, .newRecordLongest
-	jr .checkShortest
-
-.isLowByteHigher
-	inc hl
-	inc de
-	ld a, [de]
-	cp [hl]
-	dec hl
-	dec de
-	jr c, .checkShortest
-
-.newRecordLongest
-	ld a, [de]
-	inc de
-	ld [hli], a
-	ld a, [de]
-	dec de
-	ld [hl], a
-
-.checkShortest
-	; First, check if the record for shortest Magikarp is 0.
-	; This seems unnecessary, because the value is initialized to 100.0 cm.
-	ld hl, sTrainerRankingShortestMagikarp
-	ld a, [hli]
-	or [hl]
-	dec hl
-	jr z, .newRecordShortest
-
-	; Now check if this Magikarp is the shortest
-	ld a, [de]
-	cp [hl]
-	jr z, .isLowByteLower
-	jr c, .newRecordShortest
-	jr .done
-
-.isLowByteLower
-	inc hl
-	inc de
-	ld a, [de]
-	cp [hl]
-	jr nc, .done
-	dec hl
-	dec de
-
-.newRecordShortest
-	ld a, [de]
-	inc de
-	ld [hli], a
-	ld a, [de]
-	ld [hl], a
-
-.done
-	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
-
 StubbedTrainerRankings_BugContestScore:
-	ret
-	ld a, BANK(sTrainerRankingBugContestScore)
-	call GetSRAMBank
-	ldh a, [hProduct]
-	ld hl, sTrainerRankingBugContestScore
-	cp [hl]
-	jr z, .isLowByteHigher
-	jr nc, .newHighScore
-	jr .done
-
-.isLowByteHigher
-	inc hl
-	ldh a, [hMultiplicand]
-	cp [hl]
-	jr c, .done
-	dec hl
-
-.newHighScore
-	ldh a, [hProduct]
-	ld [hli], a
-	ldh a, [hMultiplicand]
-	ld [hl], a
-
-.done
-	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
-
 StubbedTrainerRankings_AddToSlotsWinStreak:
-	ret
-	ld a, BANK(sTrainerRankingCurrentSlotsStreak)
-	call GetSRAMBank
-
-	; Increment the current streak
-	ld hl, sTrainerRankingCurrentSlotsStreak + 1
-	inc [hl]
-	jr nz, .noCarry
-	dec hl
-	inc [hl]
-	inc hl
-
-.noCarry
-	dec hl
-	; Now check if this is a new record for longest streak
-	ld a, [sTrainerRankingLongestSlotsStreak]
-	cp [hl]
-	jr z, .isLowByteHigher
-	jr c, .newRecordStreak
-	jr .done
-
-.isLowByteHigher
-	inc hl
-	ld a, [sTrainerRankingLongestSlotsStreak + 1]
-	cp [hl]
-	jr nc, .done
-	dec hl
-
-.newRecordStreak
-	ld a, [hli]
-	ld [sTrainerRankingLongestSlotsStreak], a
-	ld a, [hl]
-	ld [sTrainerRankingLongestSlotsStreak + 1], a
-
-.done
-	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
-
 StubbedTrainerRankings_EndSlotsWinStreak:
-	ret
-	ld a, BANK(sTrainerRankingCurrentSlotsStreak)
-	call GetSRAMBank
-	ld hl, sTrainerRankingCurrentSlotsStreak
-	xor a
-	ld [hli], a
-	ld [hl], a
-	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
-
 StubbedTrainerRankings_AddToSlotsPayouts:
-	ret
-	ld a, BANK(sTrainerRankingTotalSlotsPayouts)
-	call GetSRAMBank
-	ld hl, sTrainerRankingTotalSlotsPayouts + 3
-	ld a, e
-	add [hl]
-	ld [hld], a
-	ld a, d
-	adc [hl]
-	ld [hld], a
-	jr nc, .done
-	inc [hl]
-	jr nz, .done
-	dec hl
-	inc [hl]
-	jr nz, .done
-	ld a, $ff
-	ld [hli], a
-	ld [hli], a
-	ld [hli], a
-	ld [hl], a
-
-.done
-	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
-
 StubbedTrainerRankings_AddToBattlePayouts:
-	ret
-	ld a, BANK(sTrainerRankingTotalBattlePayouts)
-	call GetSRAMBank
-	ld hl, sTrainerRankingTotalBattlePayouts + 3
-	ld a, [bc]
-	dec bc
-	add [hl]
-	ld [hld], a
-	ld a, [bc]
-	dec bc
-	adc [hl]
-	ld [hld], a
-	ld a, [bc]
-	adc [hl]
-	ld [hld], a
-	jr nc, .done
-	inc [hl]
-	jr nz, .done
-	ld a, $ff
-	ld [hli], a
-	ld [hli], a
-	ld [hli], a
-	ld [hl], a
-
-.done
-	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
-
 StubbedTrainerRankings_StepCount:
-	ret
-	ld hl, sTrainerRankingStepCount
-	jp StubbedTrainerRankings_Increment4Byte
-
-Unreferenced_StubbedTrainerRankings_BattleTowerWins:
-	ret
-	ld a, $5
-	call GetSRAMBank
-	ld a, [$aa8d]
-	and a
-	call CloseSRAM
-	ret nz
-	ld hl, sTrainerRankingBattleTowerWins
-	jp StubbedTrainerRankings_Increment2Byte
-
 StubbedTrainerRankings_TMsHMsTaught:
-	ret
-	ld hl, sTrainerRankingTMsHMsTaught
-	jp StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_Battles:
-	ret
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL ; Exclude the Dude’s tutorial battle
-	ret z
-	ld hl, sTrainerRankingBattles
-	jp StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_WildBattles:
-	ret
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL ; Exclude the Dude’s tutorial battle
-	ret z
-	ld hl, sTrainerRankingWildBattles
-	jp StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_TrainerBattles:
-	ret
-	ld hl, sTrainerRankingTrainerBattles
-	jp StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_Unused1:
-	ret
-	ld hl, sTrainerRankingUnused1
-	jp StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_HallOfFame::
-	ret
-	ld hl, sTrainerRankingHOFEntries
-	jp StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_WildMonsCaught:
-	ret
-	ld hl, sTrainerRankingWildMonsCaught
-	jp StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_HookedEncounters:
-	ret
-	ld hl, sTrainerRankingHookedEncounters
-	jp StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_EggsHatched:
-	ret
-	ld hl, sTrainerRankingEggsHatched
-	jp StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_MonsEvolved:
-	ret
-	ld hl, sTrainerRankingMonsEvolved
-	jp StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_FruitPicked:
-	ret
-	ld hl, sTrainerRankingFruitPicked
-	jp StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_Healings:
-	ret
-	ld hl, sTrainerRankingHealings
-	jp StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_MysteryGift:
-	ret
-	ld hl, sTrainerRankingMysteryGift
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_Trades:
-	ret
-	ld hl, sTrainerRankingTrades
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_Fly:
-	ret
-	ld hl, sTrainerRankingFly
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_Surf:
-	ret
-	ld hl, sTrainerRankingSurf
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_Waterfall:
-	ret
-	ld hl, sTrainerRankingWaterfall
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_WhiteOuts:
-	ret
-	ld hl, sTrainerRankingWhiteOuts
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_LuckyNumberShow:
-	ret
-	ld hl, sTrainerRankingLuckyNumberShow
-	jr StubbedTrainerRankings_Increment2Byte
-
 StubbedTrainerRankings_PhoneCalls:
-	ret
-	ld hl, sTrainerRankingPhoneCalls
-	jr StubbedTrainerRankings_Increment3Byte
-
-StubbedTrainerRankings_Unused2:
-	ret
-	ld hl, sTrainerRankingUnused2
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_LinkBattles:
-	ret
-	ld hl, sTrainerRankingLinkBattles
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_Splash:
-	ret
-	; Only counts if it’s the player’s turn
-	ldh a, [hBattleTurn]
-	and a
-	ret nz
-	ld hl, sTrainerRankingSplash
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_TreeEncounters:
-	ret
-	ld hl, sTrainerRankingTreeEncounters
-	jr StubbedTrainerRankings_Increment3Byte
-
-StubbedTrainerRankings_Unused3:
-	ret
-	ld hl, sTrainerRankingUnused3
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_ColosseumWins: ; win
-	ret
-	ld hl, sTrainerRankingColosseumWins
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_ColosseumLosses: ; lose
-	ret
-	ld hl, sTrainerRankingColosseumLosses
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_ColosseumDraws: ; draw
-	ret
-	ld hl, sTrainerRankingColosseumDraws
-	jr StubbedTrainerRankings_Increment3Byte
-
 ; Counts uses of both Selfdestruct and Explosion.
 StubbedTrainerRankings_Selfdestruct:
 	ret
-	; Only counts if it’s the player’s turn
-	ldh a, [hBattleTurn]
-	and a
-	ret nz
-	ld hl, sTrainerRankingSelfdestruct
-	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_Increment4Byte:
 	push bc

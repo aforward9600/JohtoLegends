@@ -662,8 +662,59 @@ endc
 	next "@"
 
 PrintTempMonHPDVs:
+;	ld a, [wTempMonDVs]
+;    and $f
+;	ld [wTempMonPadding + 1], a
 	ld a, [wTempMonDVs]
-    and $f
+	and $f0
+	swap a
+	ld [wTempMonPadding + 1], a
+	ld c, 0
+	and 1
+	jr z, .atk_not_odd
+	ld a, 0
+	add 8
+	ld b, 0
+	ld c, a
+.atk_not_odd
+	push bc
+	ld a, [wTempMonDVs]
+	and $f
+	ld [wTempMonPadding + 1], a
+	pop bc
+	and 1
+	jr z, .def_not_odd
+	ld a, c
+	add 4
+	ld b, 0
+	ld c, a
+.def_not_odd
+	push bc
+	ld a, [wTempMonDVs + 1]
+	and $f0
+	swap a
+	ld [wTempMonPadding + 1], a
+	pop bc
+	and 1
+	jr z, .speed_not_odd
+	ld a, c
+	add 2
+	ld b, 0
+	ld c, a
+.speed_not_odd
+	push bc
+	ld a, [wTempMonDVs + 1]
+	and $f
+	ld [wTempMonPadding + 1], a
+	pop bc
+	and 1
+	jr z, .spc_not_odd
+	ld a, c
+	add 1
+	ld b, 0
+	ld c, a
+.spc_not_odd
+	ld a, c
 	ld [wTempMonPadding + 1], a
 	ld de, wTempMonPadding
 	lb bc, 2, 3
