@@ -2722,8 +2722,9 @@ wMtSilverSummitID::                               db
 wGoldCrystalHouseID::                             db
 wSilverCaveMewRoomID::                            db
 wDracoSceneID::                                   db
+wDahliaSceneID::                                  db
 
-	ds 15
+	ds 14
 
 ; fight counts
 wJackFightCount::    db ; d9f2

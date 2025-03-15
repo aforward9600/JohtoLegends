@@ -757,3 +757,4 @@ ENDM
 	map_attributes GoldCrystalHouse, GOLD_CRYSTAL_HOUSE, $00, 0
 	map_attributes SilverCaveMewRoom, SILVER_CAVE_MEW_ROOM, $00, 0
 	map_attributes DracoScene, DRACO_SCENE, $00, 0
+	map_attributes DahliaScene, DAHLIA_SCENE, $00, 0

@@ -9,9 +9,9 @@
 	const TINTOWERROOF_ROCKET_BALL
 
 TinTowerRoof_MapScripts:
-	db 2 ; scene scripts
+	db 3 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_TIN_TOWER_MIYAMOTO
-;	scene_script .AfterHoOhScene ; SCENE_TIN_TOWER_AFTER_HO_OH
+	scene_script .AfterHoOhScene ; SCENE_TIN_TOWER_AFTER_HO_OH
 	scene_script .DummyScene1 ; SCENE_TIN_TOWER_NOTHING
 
 	db 2 ; callbacks
@@ -21,9 +21,9 @@ TinTowerRoof_MapScripts:
 .DummyScene0:
 	end
 
-;.AfterHoOhScene:
-;	prioritysjump AfterHoOhSceneJump
-;	end
+.AfterHoOhScene:
+	prioritysjump AfterHoOhSceneJump
+	end
 
 .DummyScene1:
 	end
@@ -36,8 +36,8 @@ TinTowerRoof_MapScripts:
 	return
 
 .HoOh:
-;	moveobject TINTOWERROOF_RIVAL, 8, 11
-;	moveobject TINTOWERROOF_SHERLES, 8, 12
+	moveobject TINTOWERROOF_RIVAL, 8, 11
+	moveobject TINTOWERROOF_SHERLES, 8, 12
 	checkevent EVENT_BEAT_HO_OH
 	iftrue .NoAppear
 	checkevent EVENT_CAUGHT_HO_OH
@@ -81,8 +81,8 @@ MeetUpHoOh:
 	waitbutton
 	closetext
 	pause 15
-;	moveobject TINTOWERROOF_RIVAL, 8, 15
-;	moveobject TINTOWERROOF_SHERLES, 8, 15
+	moveobject TINTOWERROOF_RIVAL, 8, 15
+	moveobject TINTOWERROOF_SHERLES, 8, 15
 	appear TINTOWERROOF_RIVAL
 	applymovement TINTOWERROOF_RIVAL, TinTowerRivalMovement
 	opentext
@@ -119,15 +119,23 @@ MeetUpHoOh:
 .HidePlayer
 	applymovement PLAYER, HidePlayerMovement
 	applymovement PLAYER, CameraPansToHoOhMovement
-;	special FadeOutPalettes
-;	warp DRACO_SCENE, 4, 9
-;	end
+	pause 30
+	cry HO_OH
+	pause 30
+	special FadeOutPalettes
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DracoScene
+	warp DAHLIA_SCENE, 4, 9
+	end
+.DracoScene
+	warp DRACO_SCENE, 4, 9
+	end
 
-;AfterHoOhSceneJump:
+AfterHoOhSceneJump:
 	pause 15
 	cry HO_OH
 	pause 30
-	applymovement PLAYER, CameraPansToPlayerMovement
+;	applymovement PLAYER, CameraPansToPlayerMovement
 	turnobject PLAYER, UP
 	applymovement PLAYER, ShowPlayerMovement
 	checkflag ENGINE_PLAYER_IS_FEMALE

@@ -115,4 +115,5 @@ MapScenes::
 	scene_var GOLD_CRYSTAL_HOUSE,                          wGoldCrystalHouseID
 	scene_var SILVER_CAVE_MEW_ROOM,                        wSilverCaveMewRoomID
 	scene_var DRACO_SCENE,                                 wDracoSceneID
+	scene_var DAHLIA_SCENE,                                wDahliaSceneID
 	db -1 ; end

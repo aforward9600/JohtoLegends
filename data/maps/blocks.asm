@@ -1199,3 +1199,6 @@ SilverCaveMewRoom_Blocks:
 
 DracoScene_Blocks:
 	INCBIN "maps/DracoScene.ablk"
+
+DahliaScene_Blocks:
+	INCBIN "maps/DahliaScene.ablk"

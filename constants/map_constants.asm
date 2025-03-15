@@ -404,9 +404,10 @@ ENDM
 	map_const SILVER_CAVE_OUTSIDE,                         20, 18 ;  2
 	map_const SILVER_CAVE_POKECENTER_1F,                    5,  4 ;  3
 	map_const ROUTE_28_STEEL_WING_HOUSE,                    4,  4 ;  4
-	map_const TIN_TOWER_ROOF,                              10, 11 ; 12
-	map_const RADIO_TOWER_5F,                               9,  4 ; 21
-	map_const DRACO_SCENE,                                  5,  7 ; 5
+	map_const TIN_TOWER_ROOF,                              10, 11 ;  5
+	map_const RADIO_TOWER_5F,                               9,  4 ;  6
+	map_const DRACO_SCENE,                                  5,  7 ;  7
+	map_const DAHLIA_SCENE,                                 5,  7 ;  8
 
 	newgroup                                                      ; 20
 
