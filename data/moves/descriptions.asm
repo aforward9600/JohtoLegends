@@ -411,6 +411,7 @@ MoveDescriptions1:
 	dw CatastropheDescription
 	dw PsyshieldDescription
 	dw MeteorMashDescription
+	dw ForcePalmDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1969,13 +1970,17 @@ FakeOutDescription:
 	line "used first turn.@"
 
 CatastropheDescription:
-	db	 "A disaster that"
+	db   "A disaster that"
 	line "confuses the foe.@"
 
 PsyshieldDescription:
-	db	 "A barrier attack"
+	db   "A barrier attack"
 	line "that raises Def.@"
 
 MeteorMashDescription:
 	db   "Meteor-like punch."
 	line "May raise Attack.@"
+
+ForcePalmDescription:
+	db   "A shock wave that"
+	line "can paralyze.@"

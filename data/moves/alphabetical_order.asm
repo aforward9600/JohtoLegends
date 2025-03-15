@@ -132,6 +132,7 @@ AlphabeticalMoveList::
 	dw FLY
 	dw FOCUS_BLAST
 	dw FOCUS_ENERGY
+	dw FORCE_PALM
 	dw FORESIGHT
 	dw FRENZY_PLANT
 	dw FURY_ATTACK

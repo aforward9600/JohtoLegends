@@ -431,6 +431,7 @@ BattleAnimations::
 	dw BattleAnim_Catastrophe
 	dw BattleAnim_Psyshield
 	dw BattleAnim_MeteorMash
+	dw BattleAnim_ForcePalm
 ;	dw BattleAnim_WakeUpSlap
 
 BattleAnim_0:
@@ -783,6 +784,7 @@ BattleAnim_Shake:
 	anim_wait 40
 	anim_ret
 
+BattleAnim_ForcePalm:
 BattleAnim_Pound:
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_POUND
