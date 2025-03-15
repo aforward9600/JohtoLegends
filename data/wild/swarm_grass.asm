@@ -590,4 +590,34 @@ SwarmGrassWildMons:
 	dbw  7, ELEKID
 	dbw  7, ELEKID
 
+	map_id ROUTE_47
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 60, CHANSEY
+	dbw 60, BLISSEY
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	; day
+	dbw 60, CHANSEY
+	dbw 60, BLISSEY
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	; nite
+	dbw 60, CHANSEY
+	dbw 60, BLISSEY
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+	dbw 60, CHANSEY
+
 	db -1 ; end

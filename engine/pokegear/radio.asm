@@ -202,13 +202,13 @@ OaksPKMNTalk4:
 	call StartPokemonMusicChannel
 	ld hl, GoIchinoseText
 	ld a, OAKS_POKEMON_TALK_5
-	jp PrintRadioLine
+	jp NextRadioLine
 
 INCLUDE "data/radio/oaks_pkmn_talk_routes.asm"
 
 OaksPKMNTalk5:
 	ld hl, OPT_OakText2
-	ld a, OAKS_POKEMON_TALK_6
+	ld a, OAKS_POKEMON_TALK_4
 	jp NextRadioLine
 
 OaksPKMNTalk6:

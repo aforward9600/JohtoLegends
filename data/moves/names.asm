@@ -404,4 +404,5 @@ MoveNames::
 	db "Twin Beam@"
 	db "Catastrophe@"
 	db "Psyshield@"
+	db "Meteor Mash@"
 ;	db "Wake Up Slap@"

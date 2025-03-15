@@ -38,6 +38,8 @@ GenerateShinySwarm:
 	jp z, .slowpoke
 	cp ROUTE_42
 	jp z, .ponyta
+	cp ROUTE_47
+	jp z, .chansey
 	jp .skipshineswarm
 
 .dunsparce
@@ -433,7 +435,7 @@ GenerateShinySwarm:
 		endc
 	endc
 	jp nz, .skipshineswarm
-	jr .rollshiny
+	jp .rollshiny
 
 .toxicroak
 	ld a, [wCurPartySpecies]
@@ -451,7 +453,7 @@ GenerateShinySwarm:
 			cp HIGH(TOXICROAK)
 		endc
 	endc
-	jr nz, .skipshineswarm
+	jp nz, .skipshineswarm
 	jr .rollshiny
 
 .murkrow
@@ -569,6 +571,25 @@ GenerateShinySwarm:
 		else
 			ld a, h
 			cp HIGH(ELEKID)
+		endc
+	endc
+	jr nz, .skipshineswarm
+	jr .rollshiny
+
+.chansey
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(CHANSEY)
+	if HIGH(CHANSEY) == 0
+		or h
+	else
+		jr nz, .skipshineswarm
+		if HIGH(CHANSEY)
+			dec h
+		else
+			ld a, h
+			cp HIGH(CHANSEY)
 		endc
 	endc
 	jr nz, .skipshineswarm

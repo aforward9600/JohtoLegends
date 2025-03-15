@@ -410,6 +410,7 @@ MoveDescriptions1:
 	dw DoubleHitMDescription
 	dw CatastropheDescription
 	dw PsyshieldDescription
+	dw MeteorMashDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1974,3 +1975,7 @@ CatastropheDescription:
 PsyshieldDescription:
 	db	 "A barrier attack"
 	line "that raises Def.@"
+
+MeteorMashDescription:
+	db   "Meteor-like punch."
+	line "May raise Attack.@"

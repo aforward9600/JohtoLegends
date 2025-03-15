@@ -411,6 +411,7 @@
 	const TWIN_BEAM
 	const CATASTROPHE
 	const PSYSHIELD
+	const METEOR_MASH
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 

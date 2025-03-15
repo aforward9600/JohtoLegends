@@ -662,9 +662,6 @@ endc
 	next "@"
 
 PrintTempMonHPDVs:
-;	ld a, [wTempMonDVs]
-;    and $f
-;	ld [wTempMonPadding + 1], a
 	ld a, [wTempMonDVs]
 	and $f0
 	swap a

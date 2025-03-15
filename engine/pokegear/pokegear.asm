@@ -735,8 +735,8 @@ TownMap_GetKantoLandmarkLimits:
 PokegearRadio_Init:
 	call NoRadioMusic
 	call InitPokegearTilemap
-;	depixel 4, 10, 4, 4
-;	ld a, SPRITE_ANIM_INDEX_RADIO_TUNING_KNOB
+	depixel 4, 10, 4, 4
+	ld a, SPRITE_ANIM_INDEX_RADIO_TUNING_KNOB
 	call _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
 	add hl, bc

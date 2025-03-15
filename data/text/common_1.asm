@@ -538,7 +538,7 @@ _OPT_OakText1::
 
 _OPT_OakText2::
 	text_start
-	line "Montarules"
+	line "Montsarules"
 	done
 
 _OPT_OakText3::
