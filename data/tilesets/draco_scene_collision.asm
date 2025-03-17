@@ -3,7 +3,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 02
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 03
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 04
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 05
+	tilecoll FLOOR, FLOOR, SILENT_WARP, FLOOR ; 05
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 06
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 07
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 08
@@ -11,7 +11,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0a
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0b
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0c
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0d
+	tilecoll FLOOR, FLOOR, WARP_CARPET_UP, FLOOR ; 0d
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0e
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0f
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 10
@@ -29,8 +29,10 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1c
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1d
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1e
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1f
+	tilecoll SILENT_WARP, FLOOR, FLOOR, FLOOR ; 1f
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 20
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 21
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 22
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 23
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 24
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 25

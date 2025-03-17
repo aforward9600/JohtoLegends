@@ -895,6 +895,9 @@ Script_waitsfx:
 Script_warpsound:
 ; script command 0x87
 
+	ld a, [wPlayerStandingTile]
+	cp COLL_SILENT_WARP
+	ret z
 	farcall GetWarpSFX
 	call PlaySFX
 	ret

@@ -3,7 +3,7 @@ CheckWarpCollision::
 	ld a, [wPlayerStandingTile]
 	cp COLL_PIT
 	jr z, .warp
-	cp COLL_PIT_68
+	cp COLL_SILENT_WARP
 	jr z, .warp
 	and $f0
 	cp HI_NYBBLE_WARPS

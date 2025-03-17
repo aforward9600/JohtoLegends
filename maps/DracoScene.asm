@@ -13,7 +13,6 @@ DracoScene_MapScripts:
 
 .DracoSceneMovementScript:
 	applymovement PLAYER, HidePlayerMovementDracoScene
-;	moveobject PLAYER, 4, 9
 	pause 30
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .FemaleDracoScene
@@ -22,24 +21,24 @@ DracoScene_MapScripts:
 	pause 50
 	cry HO_OH
 	pause 50
+	special FadeOutMusic
+	pause 30
 	special FadeOutPalettes
-	warp TIN_TOWER_ROOF, 9, 11
+	applymovement PLAYER, ShowPlayerMovementDracoScene
 	turnobject PLAYER, UP
 	setmapscene TIN_TOWER_ROOF, SCENE_TIN_TOWER_AFTER_HO_OH
-;	blackoutmod TIN_TOWER_ROOF
+	warpcheck
 	sjump .DracoSceneFinish
 
 .FemaleDracoScene:
 	pause 50
 	pause 50
-	special FadeOutPalettes
-;	warp TIN_TOWER_ROOF, 9, 11
-    warp DAHLIA_SCENE, 4, 9
+	applymovement PLAYER, PlayerMovesLeftDracoScene
 	turnobject PLAYER, UP
-;	blackoutmod TIN_TOWER_ROOF
-;	blackoutmod DAHLIA_SCENE
+	special FadeOutPalettes
+	warpcheck
 .DracoSceneFinish
-	return
+	end
 
 .DummyScene0:
 	end
@@ -60,6 +59,11 @@ PlayerMovesUpDracoScene:
 	slow_step UP
 	step_end
 
+PlayerMovesLeftDracoScene:
+	slow_step LEFT
+	slow_step LEFT
+	step_end
+
 DracoSceneSilenceText:
 	text "<PLAYER>:…………………………"
 	done
@@ -73,7 +77,10 @@ DracoSceneRivalText:
 DracoScene_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 3 ; warp events
+	warp_event  6,  4, TIN_TOWER_ROOF, 2
+	warp_event  4,  9, DAHLIA_SCENE, 3
+	warp_event  6,  9, DAHLIA_SCENE, 3
 
 	db 0 ; coord events
 

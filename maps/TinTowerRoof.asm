@@ -2,8 +2,6 @@
 	const TINTOWERROOF_HO_OH
 	const TINTOWERROOF_HO_OH_2
 	const TINTOWERROOF_MIYAMOTO
-	const TINTOWERROOF_CHRIS
-	const TINTOWERROOF_KRIS
 	const TINTOWERROOF_RIVAL
 	const TINTOWERROOF_SHERLES
 	const TINTOWERROOF_ROCKET_BALL
@@ -110,15 +108,16 @@ MeetUpHoOh:
 	waitbutton
 	closetext
 	pause 15
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .ShowDahlia
-	appear TINTOWERROOF_CHRIS
-	sjump .HidePlayer
-.ShowDahlia
-	appear TINTOWERROOF_KRIS
+;	checkflag ENGINE_PLAYER_IS_FEMALE
+;	iftrue .ShowDahlia
+;	appear TINTOWERROOF_CHRIS
+;	sjump .HidePlayer
+;.ShowDahlia
+;	appear TINTOWERROOF_KRIS
 .HidePlayer
-	applymovement PLAYER, HidePlayerMovement
-	applymovement PLAYER, CameraPansToHoOhMovement
+;	applymovement PLAYER, HidePlayerMovement
+;	playmusic MUSIC_TIN_TOWER
+;	applymovement PLAYER, CameraPansToHoOhMovement
 	pause 30
 	cry HO_OH
 	pause 30
@@ -128,7 +127,7 @@ MeetUpHoOh:
 	warp DAHLIA_SCENE, 4, 9
 	end
 .DracoScene
-	warp DRACO_SCENE, 4, 9
+	warp DRACO_SCENE, 6, 9
 	end
 
 AfterHoOhSceneJump:
@@ -137,13 +136,13 @@ AfterHoOhSceneJump:
 	pause 30
 ;	applymovement PLAYER, CameraPansToPlayerMovement
 	turnobject PLAYER, UP
-	applymovement PLAYER, ShowPlayerMovement
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .HideDahlia
-	disappear TINTOWERROOF_CHRIS
-	sjump .HidDoppelganger
-.HideDahlia
-	disappear TINTOWERROOF_KRIS
+;	applymovement PLAYER, ShowPlayerMovement
+;	checkflag ENGINE_PLAYER_IS_FEMALE
+;	iftrue .HideDahlia
+;	disappear TINTOWERROOF_CHRIS
+;	sjump .HidDoppelganger
+;.HideDahlia
+;	disappear TINTOWERROOF_KRIS
 .HidDoppelganger
 	pause 15
 	playsound SFX_THROW_BALL
@@ -496,8 +495,9 @@ LetsLeaveItToTheCopsText:
 TinTowerRoof_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
+	db 2 ; warp events
 	warp_event  9, 17, TIN_TOWER_9F, 4
+	warp_event  9, 11, DRACO_SCENE, 2
 
 	db 2 ; coord events
 	coord_event  8, 16, SCENE_TIN_TOWER_MIYAMOTO, MiyamotoCatchesHoOhLeft
@@ -505,12 +505,10 @@ TinTowerRoof_MapEvents:
 
 	db 0 ; bg events
 
-	db 8 ; object events
+	db 6 ; object events
 	object_event  9,  9, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TinTowerHoOh, EVENT_TIN_TOWER_ROOF_HO_OH
 	object_event  9,  2, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_HO_OH_2
 	object_event  9, 10, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_WISE_TRIO_1
-	object_event  9, 11, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_PLAYER
-	object_event  9, 11, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_PLAYER
 	object_event  8, 15, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_PLAYER
 	object_event  8, 15, SPRITE_SHERLES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_PLAYER
 	object_event  9,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_ROOF_ROCKET_BALL

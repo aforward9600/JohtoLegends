@@ -63,7 +63,7 @@ COLL_PIT               EQU $60
 COLL_VIRTUAL_BOY       EQU $61 ; garbage
 COLL_64                EQU $64 ; garbage
 COLL_65                EQU $65 ; garbage
-COLL_PIT_68            EQU $68 ; unused
+COLL_SILENT_WARP       EQU $68
 COLL_WARP_CARPET_DOWN  EQU $70
 COLL_DOOR              EQU $71
 COLL_LADDER            EQU $72

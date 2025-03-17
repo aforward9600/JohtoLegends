@@ -22,24 +22,24 @@ DahliaScene_MapScripts:
 	pause 50
 	cry HO_OH
 	pause 50
+	special FadeOutMusic
+	pause 30
 	special FadeOutPalettes
-	warp TIN_TOWER_ROOF, 9, 11
+	applymovement PLAYER, ShowPlayerMovementDahliaScene
 	turnobject PLAYER, UP
 	setmapscene TIN_TOWER_ROOF, SCENE_TIN_TOWER_AFTER_HO_OH
-;	blackoutmod TIN_TOWER_ROOF
+	warpcheck
 	sjump .DahliaSceneFinish
 
 .MaleDahliaScene:
 	pause 50
 	pause 50
-	special FadeOutPalettes
-;	warp TIN_TOWER_ROOF, 9, 11
-    warp DRACO_SCENE, 4, 9
+	applymovement PLAYER, PlayerMovesRightDahliaScene
 	turnobject PLAYER, UP
-;	blackoutmod TIN_TOWER_ROOF
-;	blackoutmod DRACO_SCENE
+	special FadeOutPalettes
+	warpcheck
 .DahliaSceneFinish
-	return
+	end
 
 .DummyScene0:
 	end
@@ -60,6 +60,11 @@ PlayerMovesUpDahliaScene:
 	slow_step UP
 	step_end
 
+PlayerMovesRightDahliaScene:
+	slow_step RIGHT
+	slow_step RIGHT
+	step_end
+
 DahliaSceneSilenceText:
 	text "<PLAYER>:…………………………"
 	done
@@ -73,7 +78,10 @@ DahliaSceneRivalText:
 DahliaScene_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 3 ; warp events
+	warp_event  4,  4, TIN_TOWER_ROOF, 2
+	warp_event  6,  9, DRACO_SCENE, 3
+	warp_event  4,  9, DRACO_SCENE, 3
 
 	db 0 ; coord events
 
