@@ -51,6 +51,7 @@ AI_Redundant:
 	dbw EFFECT_SLEEP,        .Sleep
 	dbw EFFECT_POISON,       .Poison
 	dbw EFFECT_PARALYZE,     .Paralyze
+	dbw EFFECT_BURN,         .Burn
 	db -1
 
 .LightScreen:
@@ -69,16 +70,14 @@ AI_Redundant:
 	ret
 
 .Confuse:
-	; not "redundant" per se,
-	; but don't use when player is substituted
-	ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a
-	ret nz
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_CONFUSED, a
 	ret nz
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
+	ret nz
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
 	ret
 
 .Transform:
@@ -99,6 +98,9 @@ AI_Redundant:
 .LeechSeed:
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_LEECH_SEED, a
+	ret nz
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
 	ret
 
 .Disable:
@@ -205,6 +207,7 @@ AI_Redundant:
 	bit SUBSTATUS_AQUA_RING, a
 	ret
 
+.Burn:
 .Sleep:
 .Poison:
 .Paralyze:

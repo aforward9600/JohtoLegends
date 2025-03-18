@@ -32,7 +32,6 @@ StallMoves:
 	dw SHARPEN
 	dw CONVERSION
 	dw SUBSTITUTE
-	dw FLAME_WHEEL
 	dw SWAGGER
 	dw COSMIC_POWER
 	dw METAL_SOUND
@@ -50,4 +49,6 @@ StallMoves:
 	dw WORK_UP
 	dw FLATTER
 	dw GRASSWHISTLE
+	dw WILL_O_WISP
+	dw COIL
 	dw -1 ; end

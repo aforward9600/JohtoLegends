@@ -36,4 +36,6 @@ UsefulMoves:
 	dw BLAST_BURN
 	dw HYDRO_CANNON
 	dw PSYSHIELD
+	dw CATASTROPHE
+	dw CONFUSE_RAY
 	dw -1 ; end
