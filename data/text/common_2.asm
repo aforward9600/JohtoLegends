@@ -19,6 +19,11 @@ UnknownText_0x1c0043::
 	line "to rate names?"
 	done
 
+_TeamGainedExpText::
+	text "The rest of the"
+	line "team gained Exp!"
+	prompt
+
 UnknownText_0x1c00a0::
 	text "Which #mon's"
 	line "nickname should I"

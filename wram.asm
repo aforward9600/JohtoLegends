@@ -686,9 +686,10 @@ wEnemyFutureSightCount:: db ; c71e
 
 wGivingExperienceToExpShareHolders:: db ; c71f
 
-wBackupEnemyMonBaseStats:: ds 5 ; c720
-wBackupEnemyMonCatchRate:: db ; c725
-wBackupEnemyMonBaseExp:: db ; c726
+wExpShare:: db
+wExpShareText:: db
+
+	ds 7
 
 wPlayerFutureSightDamage:: dw ; c727
 wEnemyFutureSightDamage:: dw ; c729

@@ -2228,11 +2228,17 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	; fallthrough
 
 ApplyExperienceAfterEnemyCaught:
+	xor a
+	ld [wExpShare], a
+	ld [wExpShareText], a
 	ld a, [wBattleParticipantsNotFainted]
 	ld d, a
 	push de
 	call GiveExperiencePoints
 	pop de
+
+	ld a, 1
+	ld [wExpShare], a
 
 	ld a, [wExpShareToggle]
 	and a
@@ -7415,8 +7421,21 @@ endc
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMonNicknames
 	call GetNick
+	ld a, [wExpShare]
+	and a
+	jr nz, .ExpShareON
 	ld hl, Text_MonGainedExpPoint
+	jr .Text
+.ExpShareON
+	ld a, [wExpShareText]
+	and a
+	jr nz, .AfterText
+	inc a
+	ld [wExpShareText], a
+	ld hl, Text_TeamGainedExpPoint
+.Text
 	call BattleTextbox
+.AfterText
 	ld a, [wStringBuffer2 + 1]
 	ldh [hQuotient + 3], a
 	ld a, [wStringBuffer2]
@@ -7674,6 +7693,15 @@ endc
 
 .done
 	jp ResetBattleParticipants
+
+Text_TeamGainedExpPoint:
+	text_asm
+	ld hl, TeamGainExpPointText
+	ret
+
+TeamGainExpPointText:
+	text_far _TeamGainedExpText
+	text_end
 
 IsEvsGreaterThan510:
 ; Total EVs in bc. Set Carry flag if bc > 510

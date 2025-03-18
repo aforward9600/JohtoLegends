@@ -210,7 +210,6 @@ AzaleaGroupSprites:
 	; 9 of max 9 walking sprites
 	db SPRITE_FRUIT_TREE, STILL_SPRITE
 	db SPRITE_SLOWPOKE, STILL_SPRITE
-	db SPRITE_KURT_OUTSIDE, STANDING_SPRITE ; non-walking version of SPRITE_KURT
 	db 0 ; end
 
 GoldenrodGroupSprites:
