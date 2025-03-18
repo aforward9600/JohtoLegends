@@ -56,8 +56,6 @@ MeetMomScript:
 	setscene SCENE_PLAYERS_HOUSE_NOTHING
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
-	setflag ENGINE_GLACIERBADGE
-	setflag ENGINE_RAINBOWBADGE
 	writetext MomGivesPokegearText
 	buttonsound
 	special SetDayOfWeek

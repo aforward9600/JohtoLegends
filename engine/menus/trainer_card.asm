@@ -196,7 +196,7 @@ TrainerCard_Page3_LoadGFX:
 	ld d, 6
 	call TrainerCard_InitBorder
 	call WaitBGMap
-	ld b, SCGB_TRAINER_CARD
+	ld b, SCGB_TRAINER_CARD_KANTO
 	call GetSGBLayout
 	call SetPalettes
 	call WaitBGMap
@@ -651,12 +651,12 @@ TrainerCard_KantoBadgesOAM:
 	dw wKantoBadges
 
 	; Boulderbadge
-	db $68, $18, 5, 5, 5, 5
+	db $68, $18, 0, 0, 0, 0
 	db $00, $20 | (1 << 7), $24, $20
 	db $00, $20 | (1 << 7), $24, $20
 
 	; Cascadebadge
-	db $68, $38, 6, 6, 6, 6
+	db $68, $38, 1, 1, 1, 1
 	db $04, $20 | (1 << 7), $24, $20
 	db $04, $20 | (1 << 7), $24, $20
 
@@ -666,28 +666,28 @@ TrainerCard_KantoBadgesOAM:
 	db $08, $20 | (1 << 7), $24, $20
 
 	; Rainbowbadge
-	db $68, $78, 0, 0, 0, 0
+	db $68, $78, 4, 6, 1, 3
 	db $0c, $20 | (1 << 7), $24, $20
 	db $0c, $20 | (1 << 7), $24, $20
 
 	; Soulbadge
-	db $80, $18, 1, 1, 1, 1
+	db $80, $18, 4, 4, 4, 4
 	db $10, $20 | (1 << 7), $24, $20
 	db $10, $20 | (1 << 7), $24, $20
 
 	; Marshbadge
-	db $80, $38, 2, 2, 2, 2
+	db $80, $38, 5, 5, 5, 5
 	db $14, $20 | (1 << 7), $24, $20
 	db $14, $20 | (1 << 7), $24, $20
 
 	; Volcanobadge
-	db $80, $58, 1, 1, 1, 1
+	db $80, $58, 6, 6, 6, 6
 	db $18, $20 | (1 << 7), $24, $20
 	db $18, $20 | (1 << 7), $24, $20
 
 	; Earthbadge
 	; X-flips on alternate cycles.
-	db $80, $78, 0, 0, 0, 0
+	db $80, $78, 7, 7, 7, 7
 	db $1c,            $20 | (1 << 7), $24, $20
 	db $1c | (1 << 7), $20 | (1 << 7), $24, $20
 

@@ -10,6 +10,8 @@ FindItemInBallScript::
 	callasm .TryReceiveItem
 	iffalse .no_room
 	pause 10
+	callasm .CheckPlayerBike
+	iftrue .DontSwitchSprite
 	callasm .SetPlayerSprite
 	readmem wBuffer2
 	writevar VAR_MOVEMENT
@@ -43,6 +45,25 @@ FindItemInBallScript::
 	; But   can't carry any more items.
 	text_far UnknownText_0x1c0a2c
 	text_end
+
+.CheckPlayerBike
+	ld a, [wPlayerState]
+	cp PLAYER_BIKE
+	ret z
+	ld a, $0
+	ld [wScriptVar], a
+	ret
+
+.DontSwitchSprite
+	disappear LAST_TALKED
+	opentext
+	writetext .text_found
+	playsound SFX_ITEM
+	pause 60
+	itemnotify
+	closetext
+	pause 10
+	end
 
 .TryReceiveItem:
 	xor a
