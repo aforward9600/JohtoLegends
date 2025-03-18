@@ -203,6 +203,17 @@ GiveTakePartyMonItem:
 	cp EGG
 	jr z, .cancel
 
+	call GetPartyItemLocation
+	ld a, [hl]
+	and a
+	ld de, .noItemString
+	jr z, .not_holding_anything
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	ld de, wStringBuffer1
+.not_holding_anything
+	hlcoord 1, 16
+	call PlaceString
 	ld hl, GiveTakeItemMenuData
 	call LoadMenuHeader
 	call VerticalMenu
@@ -215,8 +226,10 @@ GiveTakePartyMonItem:
 	ld bc, MON_NAME_LENGTH
 	call CopyBytes
 	ld a, [wMenuCursorY]
-	cp 1
-	jr nz, .take
+	cp 2
+	jr z, .take
+	cp 3
+	jr z, .swap
 
 	call LoadStandardMenuHeader
 	call ClearPalettes
@@ -232,9 +245,17 @@ GiveTakePartyMonItem:
 	ld a, 3
 	ret
 
+.swap
+	call SwapPartyItem
+	ld a, 3
+	ret
+
 .cancel
 	ld a, 3
 	ret
+
+.noItemString:
+	db "No held item@"
 
 .GiveItem:
 	farcall DepositSellInitPackBuffers
@@ -265,6 +286,54 @@ GiveTakePartyMonItem:
 
 .quit
 	ret
+
+SwapPartyItem:
+	ld a, [wPartyCount]
+	cp 2
+	jr c, .DontSwap
+	ld a, [wCurPartyMon]
+	inc a
+	ld [wSwitchMon], a
+	farcall HoldSwitchmonIcon
+	farcall InitPartyMenuNoCancel
+	ld a, 4
+	ld [wPartyMenuActionText], a
+	farcall WritePartyMenuTilemap
+	farcall PrintPartyMenuText
+	hlcoord 0, 1
+	ld bc, 20 * 2
+	ld a, [wSwitchMon]
+	dec a
+	call AddNTimes
+	ld [hl], "▷"
+	call WaitBGMap
+	call SetPalettes
+	call DelayFrame
+	farcall PartyMenuSelect
+	bit 1, b
+	jr c, .DontSwap
+	call GetPartyItemLocation
+	ld a, [hl]
+	push hl
+	push af
+	ld a, [wSwitchMon]
+	dec a
+	ld [wCurPartyMon], a
+	call GetPartyItemLocation
+	ld a, [hl]
+	ld b, a
+	pop af
+	ld [hl], a
+	pop hl
+	ld a, b
+	ld [hl], a
+	xor a
+	ld [wPartyMenuActionText], a
+	jp CancelPokemonAction
+.DontSwap
+	xor a
+	ld [wPartyMenuActionText], a
+	jp CancelPokemonAction
 
 TryGiveItemToPartymon:
 	call SpeechTextbox
@@ -375,15 +444,16 @@ TakePartyItem:
 
 GiveTakeItemMenuData:
 	db MENU_SPRITE_ANIMS | MENU_BACKUP_TILES ; flags
-	menu_coords 12, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	menu_coords 13, 10, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .Items
 	db 1 ; default option
 
 .Items:
 	db STATICMENU_CURSOR ; flags
-	db 2 ; # items
+	db 3 ; # items
 	db "Give@"
 	db "Take@"
+	db "Swap@"
 
 TookAndMadeHoldText:
 	text_far UnknownText_0x1c1b2c

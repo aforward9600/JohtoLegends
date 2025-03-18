@@ -422,7 +422,7 @@ ThatsRightText:
 	para "You actually think"
 	line "I care?"
 
-	para "Newflash: I don't."
+	para "Newsflash: I don't."
 
 	para "#mon are merely"
 	line "tools, and they"

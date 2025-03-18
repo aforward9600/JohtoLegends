@@ -38,6 +38,7 @@ CreditsScript:
 	db            DARK_ZETA, 2
 	db             CELADONK, 3
 	db            PIACARROT, 4
+	db              RAJA239, 5
 
 	db CREDITS_WAIT, 12
 

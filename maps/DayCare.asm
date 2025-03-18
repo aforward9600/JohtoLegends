@@ -229,7 +229,7 @@ Text_DayCareManTalksAboutEggTicket:
 
 DayCareManText_GiveOddEgg:
 	text "I'm the Day-Care"
-	line "MAN."
+	line "Man."
 
 	para "Do you know about"
 	line "Eggs?"
@@ -359,7 +359,7 @@ DahliaMrPokemonText:
 
 	para "Mr. #mon, can"
 	line "you tell me about"
-	cont "my feather as well?"
+	cont "my mine as well?"
 	done
 
 DracoMrPokemonText:
@@ -379,7 +379,7 @@ DracoMrPokemonText:
 
 	para "Mr. #mon, can"
 	line "you tell me about"
-	cont "my feather as well?"
+	cont "my mine as well?"
 	done
 
 MrPokemonLegendaryText:

@@ -1405,7 +1405,7 @@ NEXTU ; cf64
 ; trainer card badges
 wTrainerCardBadgeFrameCounter:: db
 wTrainerCardBadgeTileID:: db
-wTrainerCardBadgeAttributes:: db
+wTrainerCardBadgePaletteAddr:: dw
 
 NEXTU ; cf64
 ; card flip data
@@ -1528,7 +1528,7 @@ wMenuCursorX:: db ; cfaa
 wCursorOffCharacter:: db ; cfab
 wCursorCurrentTile:: dw ; cfac
 
-	ds 3
+	ds 2
 
 wOverworldDelay:: db ; cfb1
 wTextDelayFrames:: db ; cfb2

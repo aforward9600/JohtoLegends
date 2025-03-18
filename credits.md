@@ -23,6 +23,8 @@ Rangi and Idain for Evening time and SGB palettes for maps.
 
 Idain for the Hidden Power Guru, Soothe Bell and Gen 6+ Exp. Share and correctly colored Pokepics
 
+RaJa239 for programming help.
+
 Rangi and aaaaaa123456789 for items from smashing rocks
 
 Dark Zeta, PiaCarrot, and cardboardbox for new evolution moves and fixing the glitch

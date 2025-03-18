@@ -69,13 +69,23 @@ TrainerCooltrainermJrose:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainermJroseAfterText
+	writetext CooltrainermJroseRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_HIKER_ENCOUNTER
+	writetext CooltrainermJroseLetsDoItText
 	waitbutton
-	closetext
 	winlosstext CooltrainermJroseBeatenText, 0
 	loadtrainer COOLTRAINERM, EMILE
 	startbattle
 	reloadmapafterbattle
+	closetext
+	end
+
+.Refused:
+	writetext CooltrainermJroseAfterText
+	waitbutton
+	closetext
 	end
 
 TrainerCooltrainerfReese:
@@ -233,6 +243,15 @@ Route29TeacherText:
 
 	para "walking through"
 	line "the grass."
+	done
+
+CooltrainermJroseLetsDoItText:
+	text "Time to battle!"
+	done
+
+CooltrainermJroseRematchText:
+	text "Care for a"
+	line "rematch?"
 	done
 
 CooltrainermJroseSeenText:

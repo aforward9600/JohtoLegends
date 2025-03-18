@@ -41,7 +41,7 @@ VioletMartCooltrainerMText:
 
 	para "I guess that's"
 	line "just what happens"
-	cont "the further you go."
+	cont "further on."
 	done
 
 VioletMart_MapEvents:

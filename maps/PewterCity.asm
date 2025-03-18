@@ -33,6 +33,7 @@ PewterCityGrampsScript:
 	checkevent EVENT_BEAT_BROCK
 	iftrue .GotSilverWing
 	writetext PewterCityGrampsText
+	waitbutton
 	closetext
 	end
 

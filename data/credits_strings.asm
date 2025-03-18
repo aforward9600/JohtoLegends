@@ -49,7 +49,7 @@ CreditsStrings:
 	dw .TakaoShimizu
 	dw .Planning
 	dw .Sage
-	dw .HirotakaUemura
+	dw .RaJa239
 	dw .FrenchOrange@
 	dw .LuigiTKO
 	dw .rodmcosta
@@ -177,7 +177,7 @@ CreditsStrings:
                     next "      PLANNING"             ; "きかくかいはつぶ@"
                     next " & DEVELOPMENT DEPT.@"
 .Sage:                db "        Sage@"         ; "なかむら　けいた@"
-.HirotakaUemura:      db "  HIROTAKA UEMURA@"         ; "うえむら　ひろたか@"
+.RaJa239:             db "       RaJa239@"         ; "うえむら　ひろたか@"
 .FrenchOrange@:       db "    FrenchOrange@"         ; "たむら　ひろあき@"
 .LuigiTKO:            db "      LuigiTKO@"        ; "さかぐち　のりあき@"
 .rodmcosta:           db "      rodmcosta@"           ; "さとう　みゆき@"
