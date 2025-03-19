@@ -515,9 +515,9 @@ SpriteAnimOAMData:
 
 .OAMData_RadioTuningKnob:
 	db 3
-	dsprite -2,  4, -1,  4, $00, 0 | OBP_NUM
-	dsprite -1,  4, -1,  4, $00, 0 | OBP_NUM
-	dsprite  0,  4, -1,  4, $00, 0 | OBP_NUM
+	dsprite -2,  4, -1,  4, $60, 0 | OBP_NUM
+	dsprite -1,  4, -1,  4, $60, 0 | OBP_NUM
+	dsprite  0,  4, -1,  4, $60, 0 | OBP_NUM
 
 .OAMData_Unused4B:
 	db 6
