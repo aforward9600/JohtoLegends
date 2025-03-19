@@ -271,3 +271,79 @@ Function24aab:
 	or c
 	jr nz, .loop
 	ret
+
+SortItemsInBag:
+	ld a, [wScrollingMenuCursorPosition]
+	push af
+
+	ld b, 0
+.outerLoop
+	ld a, b
+	push bc
+	call ItemSwitch_GetNthItem
+	ld a, [hl]
+	inc a
+	pop bc
+	jr z, .done
+.innerLoop
+	ld a, b
+	call GetSortingItemIndex
+	ld c, a
+	inc a
+	jr z, .done
+
+	ld a, b
+	inc a
+	call GetSortingItemIndex
+
+	inc a
+	jr z, .done
+
+	dec a
+	cp c
+	jr nc, .sortingOK
+
+	push bc
+	ld a, b
+	ld [wScrollingMenuCursorPosition], a
+	call SwitchItemsInBag
+	ld [wScrollingMenuCursorPosition], a
+	call SwitchItemsInBag
+	pop bc
+
+	ld a, b
+	and a
+	jr z, .innerLoop
+
+	dec b
+	jr .innerLoop
+.sortingOK
+	inc b
+	jr .outerLoop
+.done
+	pop af
+	ld [wScrollingMenuCursorPosition], a
+	ret
+
+GetSortingItemIndex:
+	push bc
+	call ItemSwitch_GetNthItem
+	ld a, [hl]
+	ld b, a
+	inc a
+	jr z, .done
+	ld c, [hl]
+	ld b, 0
+	ld hl, ItemNameOrder
+.lookupLoop
+	ld a, [hli]
+	cp a, c
+	jr z, .done
+	inc b
+	jr .lookupLoop
+.done
+	ld a, b
+	pop bc
+	ret
+
+INCLUDE "data/items/sorting_order.asm"
