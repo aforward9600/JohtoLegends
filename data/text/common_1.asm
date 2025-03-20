@@ -523,29 +523,9 @@ _GoIchinoseText::
 	line "Go Ichinose"
 	done
 
-_OPT_IntroText3::
-	text_start
-	line "With me, MARY!"
-	done
-
-_OPT_OakText1::
-	text_start
-	line "OAK: @"
-	text_ram wMonOrItemNameBuffer
-	text_end
-
-	text_end ; unused
-
 _OPT_OakText2::
 	text_start
 	line "Montsarules"
-	done
-
-_OPT_OakText3::
-	text_start
-	line "@"
-	text_ram wStringBuffer1
-	text "."
 	done
 
 _OPT_MaryText1::
@@ -557,178 +537,6 @@ _TriteHexagonText::
 	text_start
 	line "TriteHexagon"
 	done
-
-OPT_SweetAdorably::
-	text_start
-	line "sweet and adorably"
-	done
-
-OPT_WigglySlickly::
-	text_start
-	line "wiggly and slickly"
-	done
-
-OPT_AptlyNamed::
-	text_start
-	line "aptly named and"
-	done
-
-OPT_UndeniablyKindOf::
-	text_start
-	line "undeniably kind of"
-	done
-
-OPT_Unbearably::
-	text_start
-	line "so, so unbearably"
-	done
-
-OPT_WowImpressively::
-	text_start
-	line "wow, impressively"
-	done
-
-OPT_AlmostPoisonously::
-	text_start
-	line "almost poisonously"
-	done
-
-OPT_Sensually::
-	text_start
-	line "ooh, so sensually"
-	done
-
-OPT_Mischievously::
-	text_start
-	line "so mischievously"
-	done
-
-OPT_Topically::
-	text_start
-	line "so very topically"
-	done
-
-OPT_Addictively::
-	text_start
-	line "sure addictively"
-	done
-
-OPT_LooksInWater::
-	text_start
-	line "looks in water is"
-	done
-
-OPT_EvolutionMustBe::
-	text_start
-	line "evolution must be"
-	done
-
-OPT_Provocatively::
-	text_start
-	line "provocatively"
-	done
-
-OPT_FlippedOut::
-	text_start
-	line "so flipped out and"
-	done
-
-OPT_HeartMeltingly::
-	text_start
-	line "heart-meltingly"
-	done
-
-OPT_Cute::
-	text_start
-	line "cute."
-	done
-
-OPT_Weird::
-	text_start
-	line "weird."
-	done
-
-OPT_Pleasant::
-	text_start
-	line "pleasant."
-	done
-
-OPT_BoldSortOf::
-	text_start
-	line "bold, sort of."
-	done
-
-OPT_Frightening::
-	text_start
-	line "frightening."
-	done
-
-OPT_SuaveDebonair::
-	text_start
-	line "suave & debonair!"
-	done
-
-OPT_Powerful::
-	text_start
-	line "powerful."
-	done
-
-OPT_Exciting::
-	text_start
-	line "exciting."
-	done
-
-OPT_Groovy::
-	text_start
-	line "groovy!"
-	done
-
-OPT_Inspiring::
-	text_start
-	line "inspiring."
-	done
-
-OPT_Friendly::
-	text_start
-	line "friendly."
-	done
-
-OPT_HotHotHot::
-	text_start
-	line "hot, hot, hot!"
-	done
-
-OPT_Stimulating::
-	text_start
-	line "stimulating."
-	done
-
-OPT_Guarded::
-	text_start
-	line "guarded."
-	done
-
-OPT_Lovely::
-	text_start
-	line "lovely."
-	done
-
-OPT_Speedy::
-	text_start
-	line "speedy."
-	done
-
-_OPT_PokemonChannelText::
-	text "#mon"
-	done
-
-_PokedexShowText::
-	text_start
-	line "@"
-	text_ram wStringBuffer1
-	text_end
-
-	text_end ; unused
 
 ; Pokémon Music Channel / Pokémusic
 
@@ -757,103 +565,6 @@ _FernIntroText2::
 	line "Dannye"
 	done
 
-_BenFernText1::
-	text_start
-	line "Today's @"
-	text_today
-	text ","
-	done
-
-_BenFernText2A::
-	text_start
-	line "so let us jam to"
-	done
-
-_BenFernText2B::
-	text_start
-	line "so chill out to"
-	done
-
-_BenFernText3A::
-	text_start
-	line "#mon March!"
-	done
-
-_BenFernText3B::
-	text_start
-	line "#mon Lullaby!"
-	done
-
-; Lucky Channel
-
-_LC_Text1::
-	text_start
-	line "REED: Yeehaw! How"
-	done
-
-_LC_Text2::
-	text_start
-	line "y'all doin' now?"
-	done
-
-_LC_Text3::
-	text_start
-	line "Whether you're up"
-	done
-
-_LC_Text4::
-	text_start
-	line "or way down low,"
-	done
-
-_LC_Text5::
-	text_start
-	line "don't you miss the"
-	done
-
-_LC_Text6::
-	text_start
-	line "LUCKY NUMBER SHOW!"
-	done
-
-_LC_Text7::
-	text_start
-	line "This week's Lucky"
-	done
-
-_LC_Text8::
-	text_start
-	line "Number is @"
-	text_pause
-	text_ram wStringBuffer1
-	text "!"
-	done
-
-_LC_Text9::
-	text_start
-	line "I'll repeat that!"
-	done
-
-_LC_Text10::
-	text_start
-	line "Match it and go to"
-	done
-
-_LC_Text11::
-	text_start
-	line "the RADIO TOWER!"
-	done
-
-_LC_DragText1::
-	text_start
-	line "…Repeating myself"
-	done
-
-_LC_DragText2::
-	text_start
-	line "gets to be a drag…"
-	done
-
 ; Places and People
 
 _PnP_Text1::
@@ -866,109 +577,6 @@ _PnP_Text2::
 	line "Mmmmmm"
 	done
 
-_PnP_Text3::
-	text_start
-	line "me, DJ LILY!"
-	done
-
-_PnP_Text4::
-	text_start
-	line "@"
-	text_ram wStringBuffer2
-	text " @"
-	text_ram wStringBuffer1
-	text_end
-
-	text_end ; unused
-
-_PnP_cute::
-	text_start
-	line "is cute."
-	done
-
-_PnP_lazy::
-	text_start
-	line "is sort of lazy."
-	done
-
-_PnP_happy::
-	text_start
-	line "is always happy."
-	done
-
-_PnP_noisy::
-	text_start
-	line "is quite noisy."
-	done
-
-_PnP_precocious::
-	text_start
-	line "is precocious."
-	done
-
-_PnP_bold::
-	text_start
-	line "is somewhat bold."
-	done
-
-_PnP_picky::
-	text_start
-	line "is too picky!"
-	done
-
-_PnP_sortofok::
-	text_start
-	line "is sort of OK."
-	done
-
-_PnP_soso::
-	text_start
-	line "is just so-so."
-	done
-
-_PnP_great::
-	text_start
-	line "is actually great."
-	done
-
-_PnP_mytype::
-	text_start
-	line "is just my type."
-	done
-
-_PnP_cool::
-	text_start
-	line "is so cool, no?"
-	done
-
-_PnP_inspiring::
-	text_start
-	line "is inspiring!"
-	done
-
-_PnP_weird::
-	text_start
-	line "is kind of weird."
-	done
-
-_PnP_rightforme::
-	text_start
-	line "is right for me?"
-	done
-
-_PnP_odd::
-	text_start
-	line "is definitely odd!"
-	done
-
-_PnP_Text5::
-	text_start
-	line "@"
-	text_ram wStringBuffer1
-	text_end
-
-	text_end ; unused
-
 _RocketRadioText1::
 	text_start
 	line "Junichi Masuda"
@@ -977,11 +585,6 @@ _RocketRadioText1::
 _RocketRadioText2::
 	text_start
 	line "ryanisthebomb203"
-	done
-
-_RocketRadioText3::
-	text_start
-	line "After three years"
 	done
 
 _RocketRadioText4::
@@ -999,13 +602,6 @@ _RocketRadioText6::
 	line "TriteHexagon"
 	done
 
-_RocketRadioText7::
-	text_start
-	line "GIOVANNI! @"
-	text_pause
-	text "Can you"
-	done
-
 _RocketRadioText8::
 	text_start
 	line "Go Ichinose"
@@ -1016,21 +612,9 @@ _RocketRadioText9::
 	line "Pigu"
 	done
 
-_RocketRadioText10::
-	text_start
-	line "@"
-	text_pause
-	text "Is he listening?"
-	done
-
 _BuenaRadioText1::
 	text_start
 	line "Morikazu Aoki"
-	done
-
-_BuenaRadioText2::
-	text_start
-	line "Today's password!"
 	done
 
 _BuenaRadioText3::
@@ -1058,11 +642,6 @@ _BuenaRadioText7::
 	line "GACT"
 	done
 
-_BuenaRadioMidnightText1::
-	text_start
-	line "BUENA: Oh my…"
-	done
-
 _BuenaRadioMidnightText2::
 	text_start
 	line "Kenta Nagata"
@@ -1083,11 +662,6 @@ _BuenaRadioMidnightText5::
 	line "ShockSlayer"
 	done
 
-_BuenaRadioMidnightText6::
-	text_start
-	line "don't stay up too"
-	done
-
 _BuenaRadioMidnightText7::
 	text_start
 	line "Radiation"
@@ -1098,17 +672,8 @@ _BuenaRadioMidnightText8::
 	line "ShockSlayer"
 	done
 
-_BuenaRadioMidnightText9::
-	text "I'm outta here!"
-	done
-
 _BuenaRadioMidnightText10::
 	text "Pigu"
-	done
-
-_BuenaOffTheAirText::
-	text_start
-	line ""
 	done
 
 Text_EnemyWithdrew::

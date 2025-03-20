@@ -2876,98 +2876,27 @@ LoadStation_IndigoPlateauMusic:
 	ret
 
 LoadStation_LuckyChannel:
-	ld a, LUCKY_CHANNEL
-	ld [wCurRadioLine], a
-	xor a
-	ld [wNumRadioLinesPrinted], a
-	ld a, BANK(PlayRadioShow)
-	ld hl, PlayRadioShow
-	call Radio_BackUpFarCallParams
-	ld de, LuckyChannelName
 	ret
 
 LoadStation_BuenasPassword:
-	ld a, BUENAS_PASSWORD
-	ld [wCurRadioLine], a
-	xor a
-	ld [wNumRadioLinesPrinted], a
-	ld a, BANK(PlayRadioShow)
-	ld hl, PlayRadioShow
-	call Radio_BackUpFarCallParams
-	ld de, NotBuenasPasswordName
-	ld a, [wStatusFlags2]
-	bit STATUSFLAGS2_ROCKETS_IN_RADIO_TOWER_F, a
-	ret z
-	ld de, BuenasPasswordName
 	ret
 
-BuenasPasswordName:    db "BUENA'S PASSWORD@"
-NotBuenasPasswordName: db "@"
-
 LoadStation_UnownRadio:
-	ld a, UNOWN_RADIO
-	ld [wCurRadioLine], a
-	xor a
-	ld [wNumRadioLinesPrinted], a
-	ld a, BANK(PlayRadioShow)
-	ld hl, PlayRadioShow
-	call Radio_BackUpFarCallParams
-	ld de, UnownStationName
 	ret
 
 LoadStation_PlacesAndPeople:
-	ld a, PLACES_AND_PEOPLE
-	ld [wCurRadioLine], a
-	xor a
-	ld [wNumRadioLinesPrinted], a
-	ld a, BANK(PlayRadioShow)
-	ld hl, PlayRadioShow
-	call Radio_BackUpFarCallParams
-	ld de, PlacesAndPeopleName
 	ret
 
 LoadStation_LetsAllSing:
-	ld a, LETS_ALL_SING
-	ld [wCurRadioLine], a
-	xor a
-	ld [wNumRadioLinesPrinted], a
-	ld a, BANK(PlayRadioShow)
-	ld hl, PlayRadioShow
-	call Radio_BackUpFarCallParams
-	ld de, LetsAllSingName
 	ret
 
 LoadStation_RocketRadio:
-	ld a, ROCKET_RADIO
-	ld [wCurRadioLine], a
-	xor a
-	ld [wNumRadioLinesPrinted], a
-	ld a, BANK(PlayRadioShow)
-	ld hl, PlayRadioShow
-	call Radio_BackUpFarCallParams
-	ld de, LetsAllSingName
 	ret
 
 LoadStation_PokeFluteRadio:
-	ld a, POKE_FLUTE_RADIO
-	ld [wCurRadioLine], a
-	xor a
-	ld [wNumRadioLinesPrinted], a
-	ld a, BANK(PlayRadioShow)
-	ld hl, PlayRadioShow
-	call Radio_BackUpFarCallParams
-	ld de, PokeFluteStationName
 	ret
 
 LoadStation_EvolutionRadio:
-	ld a, EVOLUTION_RADIO
-	ld [wCurRadioLine], a
-	xor a
-	ld [wNumRadioLinesPrinted], a
-	ld a, BANK(PlayRadioShow)
-	ld hl, PlayRadioShow
-	call Radio_BackUpFarCallParams
-	ld de, UnownStationName
 	ret
 
 Unreferenced_LoadStation:

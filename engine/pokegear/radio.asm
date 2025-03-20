@@ -226,24 +226,9 @@ GoIchinoseText:
 	text_far _GoIchinoseText
 	text_end
 
-OPT_IntroText3:
-	; With me, MARY!
-	text_far _OPT_IntroText3
-	text_end
-
-OPT_OakText1:
-	; OAK: @ @
-	text_far _OPT_OakText1
-	text_end
-
 OPT_OakText2:
 	; may be seen around
 	text_far _OPT_OakText2
-	text_end
-
-OPT_OakText3:
-	; @ .
-	text_far _OPT_OakText3
 	text_end
 
 OaksPKMNTalk7:
@@ -272,82 +257,19 @@ OaksPKMNTalk9:
 	jp NextRadioLine
 
 OaksPKMNTalk10:
-	farcall RadioMusicRestartPokemonChannel
-	ld hl, OPT_RestartText
-	call PrintText
-	call WaitBGMap
-	ld hl, OPT_PokemonChannelText
-	call PrintText
-	ld a, OAKS_POKEMON_TALK_11
-	ld [wCurRadioLine], a
-	ld a, 100
-	ld [wRadioTextDelay], a
 	ret
-
-OPT_PokemonChannelText:
-	; #MON
-	text_far _OPT_PokemonChannelText
-	text_end
-
-OPT_RestartText:
-	text_end
 
 OaksPKMNTalk11:
-	ld hl, wRadioTextDelay
-	dec [hl]
-	ret nz
-	hlcoord 9, 14
-	ld de, .pokemon_string
-	ld a, OAKS_POKEMON_TALK_12
-	jp PlaceRadioString
-
-.pokemon_string
-	db "#MON@"
-
-OaksPKMNTalk12:
-	ld hl, wRadioTextDelay
-	dec [hl]
-	ret nz
-	hlcoord 1, 16
-	ld de, .pokemon_channel_string
-	ld a, OAKS_POKEMON_TALK_13
-	jp PlaceRadioString
-
-.pokemon_channel_string
-	db "#MON Channel@"
-
-OaksPKMNTalk13:
-	ld hl, wRadioTextDelay
-	dec [hl]
-	ret nz
-	hlcoord 12, 16
-	ld de, .terminator
-	ld a, OAKS_POKEMON_TALK_14
-	jp PlaceRadioString
-
-.terminator
-	db "@"
-
-OaksPKMNTalk14:
-	ld hl, wRadioTextDelay
-	dec [hl]
-	ret nz
-	ld de, MUSIC_POKEMON_TALK
-	callfar RadioMusicRestartDE
-	ld hl, .terminator
-	call PrintText
-	ld a, OAKS_POKEMON_TALK_4
-	ld [wNextRadioLine], a
-	xor a
-	ld [wNumRadioLinesPrinted], a
-	ld a, RADIO_SCROLL
-	ld [wCurRadioLine], a
-	ld a, 10
-	ld [wRadioTextDelay], a
 	ret
 
-.terminator
-	db "@"
+OaksPKMNTalk12:
+	ret
+
+OaksPKMNTalk13:
+	ret
+
+OaksPKMNTalk14:
+	ret
 
 PlaceRadioString:
 	ld [wCurRadioLine], a
@@ -379,71 +301,24 @@ PokedexShow1:
 
 PokedexShow2:
 	ret
-	ld a, [wCurPartySpecies]
-	call GetPokemonIndexFromID
-	dec hl
-	ld b, h
-	ld c, l
-	add hl, hl
-	add hl, bc
-	ld bc, PokedexDataPointerTable
-	add hl, bc
-	ld a, BANK(PokedexDataPointerTable)
-	call GetFarByte
-	ld b, a
-	inc hl
-	ld a, BANK(PokedexDataPointerTable)
-	call GetFarHalfword
-	ld a, b
-	push af
-	push hl
-	call CopyDexEntryPart1
-	dec hl
-	ld [hl], "<DONE>"
-	ld hl, wPokedexShowPointerAddr
-	call CopyRadioTextToRAM
-	pop hl
-	pop af
-	call CopyDexEntryPart2
-rept 4
-	inc hl
-endr
-	ld a, l
-	ld [wPokedexShowPointerAddr], a
-	ld a, h
-	ld [wPokedexShowPointerAddr + 1], a
-	ld a, POKEDEX_SHOW_3
-	jp PrintRadioLine
 
 PokedexShow3:
-	call CopyDexEntry
-	ld a, POKEDEX_SHOW_4
-	jp PrintRadioLine
+	ret
 
 PokedexShow4:
-	call CopyDexEntry
-	ld a, POKEDEX_SHOW_5
-	jp PrintRadioLine
+	ret
 
 PokedexShow5:
-	call CopyDexEntry
-	ld a, POKEDEX_SHOW_6
-	jp PrintRadioLine
+	ret
 
 PokedexShow6:
-	call CopyDexEntry
-	ld a, POKEDEX_SHOW_7
-	jp PrintRadioLine
+	ret
 
 PokedexShow7:
-	call CopyDexEntry
-	ld a, POKEDEX_SHOW_8
-	jp PrintRadioLine
+	ret
 
 PokedexShow8:
-	call CopyDexEntry
-	ld a, POKEDEX_SHOW
-	jp PrintRadioLine
+	ret
 
 CopyDexEntry:
 	ld a, [wPokedexShowPointerAddr]
@@ -503,11 +378,6 @@ CopyDexEntryPart2:
 	ld [wPokedexShowPointerBank], a
 	ret
 
-PokedexShowText:
-	; @ @
-	text_far _PokedexShowText
-	text_end
-
 BenMonMusic1:
 	call StartPokemonMusicChannel
 	ld hl, BenIntroText1
@@ -541,24 +411,10 @@ BenFernMusic4:
 	jp NextRadioLine
 
 BenFernMusic5:
-	call GetWeekday
-	and 1
-	ld hl, BenFernText2A
-	jr z, .SunTueThurSun
-	ld hl, BenFernText2B
-.SunTueThurSun:
-	ld a, POKEMON_MUSIC_6
-	jp NextRadioLine
+	ret
 
 BenFernMusic6:
-	call GetWeekday
-	and 1
-	ld hl, BenFernText3A
-	jr z, .SunTueThurSun
-	ld hl, BenFernText3B
-.SunTueThurSun:
-	ld a, POKEMON_MUSIC_7
-	jp NextRadioLine
+	ret
 
 BenFernMusic7:
 	ret
@@ -600,31 +456,6 @@ FernIntroMusic2:
 	text_far _FernIntroText2
 	text_end
 
-BenFernText1:
-	; Today's @ ,
-	text_far _BenFernText1
-	text_end
-
-BenFernText2A:
-	; so let us jam to
-	text_far _BenFernText2A
-	text_end
-
-BenFernText2B:
-	; so chill out to
-	text_far _BenFernText2B
-	text_end
-
-BenFernText3A:
-	; #MON March!
-	text_far _BenFernText3A
-	text_end
-
-BenFernText3B:
-	; #MON Lullaby!
-	text_far _BenFernText3B
-	text_end
-
 LuckyNumberShow1:
 	call StartPokemonMusicChannel
 	ld hl, GoIchinoseText
@@ -635,145 +466,43 @@ LuckyNumberShow2:
 	ret
 
 LuckyNumberShow3:
-	ld hl, LC_Text3
-	ld a, LUCKY_NUMBER_SHOW_4
-	jp NextRadioLine
+	ret
 
 LuckyNumberShow4:
-	ld hl, LC_Text4
-	ld a, LUCKY_NUMBER_SHOW_5
-	jp NextRadioLine
+	ret
 
 LuckyNumberShow5:
-	ld hl, LC_Text5
-	ld a, LUCKY_NUMBER_SHOW_6
-	jp NextRadioLine
+	ret
 
 LuckyNumberShow6:
-	ld hl, LC_Text6
-	ld a, LUCKY_NUMBER_SHOW_7
-	jp NextRadioLine
+	ret
 
 LuckyNumberShow7:
-	ld hl, LC_Text7
-	ld a, LUCKY_NUMBER_SHOW_8
-	jp NextRadioLine
+	ret
 
 LuckyNumberShow8:
-	ld hl, wStringBuffer1
-	ld de, wLuckyIDNumber
-	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
-	call PrintNum
-	ld a, "@"
-	ld [wStringBuffer1 + 5], a
-	ld hl, LC_Text8
-	ld a, LUCKY_NUMBER_SHOW_9
-	jp NextRadioLine
+	ret
 
 LuckyNumberShow9:
-	ld hl, LC_Text9
-	ld a, LUCKY_NUMBER_SHOW_10
-	jp NextRadioLine
+	ret
 
 LuckyNumberShow10:
-	ld hl, LC_Text7
-	ld a, LUCKY_NUMBER_SHOW_11
-	jp NextRadioLine
+	ret
 
 LuckyNumberShow11:
-	ld hl, LC_Text8
-	ld a, LUCKY_NUMBER_SHOW_12
-	jp NextRadioLine
+	ret
 
 LuckyNumberShow12:
-	ld hl, LC_Text10
-	ld a, LUCKY_NUMBER_SHOW_13
-	jp NextRadioLine
+	ret
 
 LuckyNumberShow13:
-	ld hl, LC_Text11
-	call Random
-	and a
-	ld a, LUCKY_CHANNEL
-	jr nz, .okay
-	ld a, LUCKY_NUMBER_SHOW_14
-.okay
-	jp NextRadioLine
+	ret
 
 LuckyNumberShow14:
-	ld hl, LC_DragText1
-	ld a, LUCKY_NUMBER_SHOW_15
-	jp NextRadioLine
+	ret
 
 LuckyNumberShow15:
-	ld hl, LC_DragText2
-	ld a, LUCKY_CHANNEL
-	jp NextRadioLine
-
-LC_Text1:
-	; REED: Yeehaw! How
-	text_far _LC_Text1
-	text_end
-
-LC_Text2:
-	; y'all doin' now?
-	text_far _LC_Text2
-	text_end
-
-LC_Text3:
-	; Whether you're up
-	text_far _LC_Text3
-	text_end
-
-LC_Text4:
-	; or way down low,
-	text_far _LC_Text4
-	text_end
-
-LC_Text5:
-	; don't you miss the
-	text_far _LC_Text5
-	text_end
-
-LC_Text6:
-	; LUCKY NUMBER SHOW!
-	text_far _LC_Text6
-	text_end
-
-LC_Text7:
-	; This week's Lucky
-	text_far _LC_Text7
-	text_end
-
-LC_Text8:
-	; Number is @ !
-	text_far _LC_Text8
-	text_end
-
-LC_Text9:
-	; I'll repeat that!
-	text_far _LC_Text9
-	text_end
-
-LC_Text10:
-	; Match it and go to
-	text_far _LC_Text10
-	text_end
-
-LC_Text11:
-	; the RADIO TOWER!
-	text_far _LC_Text11
-	text_end
-
-LC_DragText1:
-	; …Repeating myself
-	text_far _LC_DragText1
-	text_end
-
-LC_DragText2:
-	; gets to be a drag…
-	text_far _LC_DragText2
-	text_end
+	ret
 
 PeoplePlaces1:
 	call StartPokemonMusicChannel
@@ -801,247 +530,21 @@ PnP_Text2:
 	text_far _PnP_Text2
 	text_end
 
-PnP_Text3:
-	; me, DJ LILY!
-	text_far _PnP_Text3
-	text_end
-
 PeoplePlaces4: ; People
-	call Random
-	maskbits NUM_TRAINER_CLASSES
-	inc a
-	cp NUM_TRAINER_CLASSES - 1
-	jr nc, PeoplePlaces4
-	push af
-	ld hl, PnP_HiddenPeople
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_HALL_OF_FAME_F, a
-	jr z, .ok
-	ld hl, PnP_HiddenPeople_BeatE4
-	ld a, [wKantoBadges]
-	cp %11111111 ; all badges
-	jr nz, .ok
-	ld hl, PnP_HiddenPeople_BeatKanto
-.ok
-	pop af
-	ld c, a
-	ld de, 1
-	push bc
-	call IsInArray
-	pop bc
-	jr c, PeoplePlaces4
-	push bc
-	callfar GetTrainerClassName
-	ld de, wStringBuffer1
-	call CopyName1
-	pop bc
-	ld b, 1
-	callfar GetTrainerName
-	ld hl, PnP_Text4
-	ld a, PLACES_AND_PEOPLE_5
-	jp NextRadioLine
+	ret
 
 INCLUDE "data/radio/pnp_hidden_people.asm"
 
-PnP_Text4:
-	; @  @ @
-	text_far _PnP_Text4
-	text_end
-
 PeoplePlaces5:
-	; 0-15 are all valid indexes into .Adjectives,
-	; so no need for a retry loop
-	call Random
-	maskbits NUM_PNP_PEOPLE_ADJECTIVES
-	ld e, a
-	ld d, 0
-	ld hl, .Adjectives
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	call Random
-	cp 4 percent
-	ld a, PLACES_AND_PEOPLE
-	jr c, .ok
-	call Random
-	cp 49 percent - 1
-	ld a, PLACES_AND_PEOPLE_4 ; People
-	jr c, .ok
-	ld a, PLACES_AND_PEOPLE_6 ; Places
-.ok
-	jp NextRadioLine
-
-.Adjectives:
-; there are NUM_PNP_PEOPLE_ADJECTIVES entries
-	dw PnP_cute
-	dw PnP_lazy
-	dw PnP_happy
-	dw PnP_noisy
-	dw PnP_precocious
-	dw PnP_bold
-	dw PnP_picky
-	dw PnP_sortofok
-	dw PnP_soso
-	dw PnP_great
-	dw PnP_mytype
-	dw PnP_cool
-	dw PnP_inspiring
-	dw PnP_weird
-	dw PnP_rightforme
-	dw PnP_odd
-
-PnP_cute:
-	; is cute.
-	text_far _PnP_cute
-	text_end
-
-PnP_lazy:
-	; is sort of lazy.
-	text_far _PnP_lazy
-	text_end
-
-PnP_happy:
-	; is always happy.
-	text_far _PnP_happy
-	text_end
-
-PnP_noisy:
-	; is quite noisy.
-	text_far _PnP_noisy
-	text_end
-
-PnP_precocious:
-	; is precocious.
-	text_far _PnP_precocious
-	text_end
-
-PnP_bold:
-	; is somewhat bold.
-	text_far _PnP_bold
-	text_end
-
-PnP_picky:
-	; is too picky!
-	text_far _PnP_picky
-	text_end
-
-PnP_sortofok:
-	; is sort of OK.
-	text_far _PnP_sortofok
-	text_end
-
-PnP_soso:
-	; is just so-so.
-	text_far _PnP_soso
-	text_end
-
-PnP_great:
-	; is actually great.
-	text_far _PnP_great
-	text_end
-
-PnP_mytype:
-	; is just my type.
-	text_far _PnP_mytype
-	text_end
-
-PnP_cool:
-	; is so cool, no?
-	text_far _PnP_cool
-	text_end
-
-PnP_inspiring:
-	; is inspiring!
-	text_far _PnP_inspiring
-	text_end
-
-PnP_weird:
-	; is kind of weird.
-	text_far _PnP_weird
-	text_end
-
-PnP_rightforme:
-	; is right for me?
-	text_far _PnP_rightforme
-	text_end
-
-PnP_odd:
-	; is definitely odd!
-	text_far _PnP_odd
-	text_end
+	ret
 
 PeoplePlaces6: ; Places
-	call Random
-	cp (PnP_HiddenPlaces.End - PnP_HiddenPlaces) / 2
-	jr nc, PeoplePlaces6
-	ld hl, PnP_HiddenPlaces
-	ld c, a
-	ld b, 0
-	add hl, bc
-	add hl, bc
-	ld b, [hl]
-	inc hl
-	ld c, [hl]
-	call GetWorldMapLocation
-	ld e, a
-	farcall GetLandmarkName
-	ld hl, PnP_Text5
-	ld a, PLACES_AND_PEOPLE_7
-	jp NextRadioLine
+	ret
 
 INCLUDE "data/radio/pnp_hidden_places.asm"
 
-PnP_Text5:
-	; @ @
-	text_far _PnP_Text5
-	text_end
-
 PeoplePlaces7:
-	; 0-15 are all valid indexes into .Adjectives,
-	; so no need for a retry loop
-	call Random
-	maskbits NUM_PNP_PLACES_ADJECTIVES
-	ld e, a
-	ld d, 0
-	ld hl, .Adjectives
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	call CopyRadioTextToRAM
-	call Random
-	cp 4 percent
-	ld a, PLACES_AND_PEOPLE
-	jr c, .ok
-	call Random
-	cp 49 percent - 1
-	ld a, PLACES_AND_PEOPLE_4 ; People
-	jr c, .ok
-	ld a, PLACES_AND_PEOPLE_6 ; Places
-.ok
-	jp PrintRadioLine
-
-.Adjectives:
-; there are NUM_PNP_PLACES_ADJECTIVES entries
-	dw PnP_cute
-	dw PnP_lazy
-	dw PnP_happy
-	dw PnP_noisy
-	dw PnP_precocious
-	dw PnP_bold
-	dw PnP_picky
-	dw PnP_sortofok
-	dw PnP_soso
-	dw PnP_great
-	dw PnP_mytype
-	dw PnP_cool
-	dw PnP_inspiring
-	dw PnP_weird
-	dw PnP_rightforme
-	dw PnP_odd
+	ret
 
 RocketRadio1:
 	call StartPokemonMusicChannel
@@ -1106,11 +609,6 @@ RocketRadioText2:
 	text_far _RocketRadioText2
 	text_end
 
-RocketRadioText3:
-	; After three years
-	text_far _RocketRadioText3
-	text_end
-
 RocketRadioText4:
 	; of preparation, we
 	text_far _RocketRadioText4
@@ -1126,11 +624,6 @@ RocketRadioText6:
 	text_far _RocketRadioText6
 	text_end
 
-RocketRadioText7:
-	; GIOVANNI! @ Can you
-	text_far _RocketRadioText7
-	text_end
-
 RocketRadioText8:
 	; hear?@  We did it!
 	text_far _RocketRadioText8
@@ -1139,11 +632,6 @@ RocketRadioText8:
 RocketRadioText9:
 	; @ Where is our boss?
 	text_far _RocketRadioText9
-	text_end
-
-RocketRadioText10:
-	; @ Is he listening?
-	text_far _RocketRadioText10
 	text_end
 
 PokeFluteRadio:
@@ -1365,9 +853,7 @@ BuenasPassword17:
 	jp NextRadioLine
 
 BuenasPassword18:
-	ld hl, BuenaRadioMidnightText10
-	ld a, BUENAS_PASSWORD_19
-	jp NextRadioLine
+	ret
 
 BuenasPassword19:
 	call StartPokemonMusicChannel
@@ -1385,23 +871,12 @@ BuenasPassword21:
 	ld a, BUENAS_PASSWORD_20
 	jp NextRadioLine
 
-BuenasPasswordCheckTime:
-	call UpdateTime
-	ldh a, [hHours]
-	cp NITE_HOUR
-	ret
-
 BuenasPasswordChannelName:
 	db "BUENA'S PASSWORD@"
 
 BuenaRadioText1:
 	; BUENA: BUENA here!
 	text_far _BuenaRadioText1
-	text_end
-
-BuenaRadioText2:
-	; Today's password!
-	text_far _BuenaRadioText2
 	text_end
 
 BuenaRadioText3:
@@ -1429,11 +904,6 @@ BuenaRadioText7:
 	text_far _BuenaRadioText7
 	text_end
 
-BuenaRadioMidnightText1:
-	; BUENA: Oh my…
-	text_far _BuenaRadioMidnightText1
-	text_end
-
 BuenaRadioMidnightText2:
 	; It's midnight! I
 	text_far _BuenaRadioMidnightText2
@@ -1454,11 +924,6 @@ BuenaRadioMidnightText5:
 	text_far _BuenaRadioMidnightText5
 	text_end
 
-BuenaRadioMidnightText6:
-	; don't stay up too
-	text_far _BuenaRadioMidnightText6
-	text_end
-
 BuenaRadioMidnightText7:
 	; late! Presented to
 	text_far _BuenaRadioMidnightText7
@@ -1469,19 +934,9 @@ BuenaRadioMidnightText8:
 	text_far _BuenaRadioMidnightText8
 	text_end
 
-BuenaRadioMidnightText9:
-	; I'm outta here!
-	text_far _BuenaRadioMidnightText9
-	text_end
-
 BuenaRadioMidnightText10:
 	; …
 	text_far _BuenaRadioMidnightText10
-	text_end
-
-BuenaOffTheAirText:
-	;
-	text_far _BuenaOffTheAirText
 	text_end
 
 CopyRadioTextToRAM:
