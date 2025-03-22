@@ -188,12 +188,15 @@ ItemEffects:
 	dw LaprasCallCEffect   ; LAPRAS_CALLC
 	dw PidgeotCallEffect   ; PIDGEOT_CALL
 	dw NoEffect            ; EVIOLITE
-	dw NoEffect            ; SURF_MAIL
-	dw NoEffect            ; LITEBLUEMAIL
-	dw NoEffect            ; PORTRAITMAIL
-	dw NoEffect            ; LOVELY_MAIL
+	dw EVLoweringBerryEffect ; POMEG_BERRY
+	dw EVLoweringBerryEffect ; KELPSY_BERRY
+	dw EVLoweringBerryEffect ; QUALOT_BERRY
+	dw EVLoweringBerryEffect ; HONDEW_BERRY
 	dw NoEffect            ; EON_MAIL
 	dw CandyPouchEffect    ; CANDY_POUCH
+	dw EVLoweringBerryEffect ; GREPA_BERRY
+	dw EVLoweringBerryEffect ; TAMATO_BERRY
+	dw NoEffect            ; MIRAGE_MAIL
 
 PokeBallEffect:
 ; Check if the solo password is active.
@@ -1291,6 +1294,102 @@ NoEffectMessage:
 	call PrintText
 	jp ClearPalettes
 
+EVLoweringBerryEffect:
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+
+	jp c, RareCandy_StatBooster_ExitMenu
+
+	ld a, MON_HAPPINESS
+	call GetPartyParamLocation
+	ld a, [hl]
+	inc a
+	push af
+
+	call RareCandy_StatBooster_GetParameters
+
+	call GetEVLowerRelativePointer
+
+	ld a, MON_EVS
+	call GetPartyParamLocation
+
+;	ld d, 10
+;	push bc
+;	push hl
+;	ld e, 6
+;	ld bc, 0
+;.count_evs
+;	ld a, [hli]
+;	add c
+;	ld c, a
+;	jr nc, .cont
+;	inc b
+;.cont
+;	dec e
+;	jr nz, .count_evs
+;	ld a, d
+;	add c
+;	ld c, a
+;	adc b
+;	sub c
+;	ld b, a
+;	ld e, d
+;.decrease_evs_gained
+;	ld a, [hl]
+;	cp 9
+;	jr nz, .check_ev_overflow
+;	push hl
+;	farcall IsEvsGreaterThan510
+;	jr nc, .check_ev_overflow
+;	dec e
+;	dec bc
+;	jr .decrease_evs_gained
+;.check_ev_overflow
+;	pop hl
+;	pop bc
+
+;	ld a, e
+;	and a
+;	jr z, NoEffectMessage
+
+	add hl, bc
+	pop af
+	or [hl]
+	jp z, NoEffectMessage
+;	ld a, [hl]
+;	cp 0
+;	jr c, NoEffectMessage
+
+;	sub e
+	sub 10
+	jr nc, .ev_value_ok
+	xor a
+.ev_value_ok
+	ld [hl], a
+	call UpdateStatsAfterItem
+
+	call GetEVLowerRelativePointer
+
+	ld hl, StatStrings
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld de, wStringBuffer2
+	ld bc, ITEM_NAME_LENGTH
+	call CopyBytes
+
+	call Play_SFX_FULL_HEAL
+
+	ld hl, Text_StatRose
+	call PrintText
+
+	ld c, HAPPINESS_EVLOWERINGBERRY
+	farcall ChangeHappiness
+
+	jp UseDisposableItem
+
 UpdateStatsAfterItem:
 	ld a, MON_MAXHP
 	call GetPartyParamLocation
@@ -1349,6 +1448,30 @@ Table_eeeb:
 	db CARBOS,  MON_SPD_EV - MON_EVS
 	db CALCIUM, MON_SAT_EV - MON_EVS
 	db ZINC,    MON_SDF_EV - MON_EVS
+
+GetEVLowerRelativePointer:
+	ld a, [wCurItem]
+	ld hl, EVLoweringTable
+.next
+	cp [hl]
+	inc hl
+	jr z, .got_it
+	inc hl
+	jr .next
+
+.got_it
+	ld a, [hl]
+	ld c, a
+	ld b, 0
+	ret
+
+EVLoweringTable:
+	db POMEG_BERRY,   MON_HP_EV - MON_EVS
+	db KELPSY_BERRY, MON_ATK_EV - MON_EVS
+	db QUALOT_BERRY,    MON_DEF_EV - MON_EVS
+	db TAMATO_BERRY,  MON_SPD_EV - MON_EVS
+	db HONDEW_BERRY, MON_SAT_EV - MON_EVS
+	db GREPA_BERRY,    MON_SDF_EV - MON_EVS
 
 RareCandy_StatBooster_GetParameters:
 	ld a, [wCurPartySpecies]
@@ -2671,25 +2794,6 @@ SacredAshEffect:
 	ret nz
 	call UseDisposableItem
 	ret
-
-NormalBoxEffect:
-	ld c, DECOFLAG_SILVER_TROPHY_DOLL
-	jr OpenBox
-
-GorgeousBoxEffect:
-	ld c, DECOFLAG_GOLD_TROPHY_DOLL
-OpenBox:
-	farcall SetSpecificDecorationFlag
-
-	ld hl, .text
-	call PrintText
-
-	jp UseDisposableItem
-
-.text
-	; There was a trophy inside!
-	text_far UnknownText_0x1c5d03
-	text_end
 
 NoEffect:
 	jp IsntTheTimeMessage

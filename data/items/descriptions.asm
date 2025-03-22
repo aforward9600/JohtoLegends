@@ -175,14 +175,14 @@ ItemDescriptions:
 	dw LaprasCallCDesc
 	dw PidgeotCallDesc
 	dw EvioliteDesc
-	dw SurfMailDesc
-	dw LiteBlueMailDesc
-	dw PortraitMailDesc
-	dw LovelyMailDesc
+	dw PomegBerryDesc
+	dw KelpsyBerryDesc
+	dw QualotBerryDesc
+	dw HondewBerryDesc
 	dw EonMailDesc
 	dw CandyPouchDesc
-	dw BlueSkyMailDesc
-	dw MusicMailDesc
+	dw GrepaBerryDesc
+	dw TamatoBerryDesc
 	dw MewMailDesc
 	dw QuestionMarkDesc
 	dw QuestionMarkDesc
@@ -954,21 +954,21 @@ EvioliteDesc:
 QuestionMarkDesc:
 	db   "?@"
 
-SurfMailDesc:
-	db   "Lapras-print Mail."
-	next "(Hold)@"
+PomegBerryDesc:
+	db   "Lowers HP &"
+	next "boosts happiness.@"
 
-LiteBlueMailDesc:
-	db   "Dratini-print"
-	next "Mail. (Hold)@"
+KelpsyBerryDesc:
+	db   "Lowers Attack &"
+	next "boosts happiness.@"
 
-PortraitMailDesc:
-	db   "Mail featuring the"
-	next "holder's likeness.@"
+QualotBerryDesc:
+	db   "Lowers Defense &"
+	next "boosts happiness.@"
 
-LovelyMailDesc:
-	db   "Heart-print Mail."
-	next "(Hold)@"
+HondewBerryDesc:
+	db   "Lowers Sp.Atk &"
+	next "boosts happiness.@"
 
 EonMailDesc:
 	db   "Eevee-print Mail."
@@ -978,13 +978,13 @@ CandyPouchDesc:
 	db   "Endlessly gives"
 	next "out Rare Candy.@"
 
-BlueSkyMailDesc:
-	db   "Sky-print Mail."
-	next "(Hold)@"
+GrepaBerryDesc:
+	db   "Lowers Sp.Def &"
+	next "boosts happiness.@"
 
-MusicMailDesc:
-	db   "Natu-print Mail."
-	next "(Hold)@"
+TamatoBerryDesc:
+	db   "Lowers Speed &"
+	next "boosts happiness.@"
 
 MewMailDesc:
 	db   "Mew-print Mail."

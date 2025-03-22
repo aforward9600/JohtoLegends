@@ -87,6 +87,29 @@ NamingScreen:
 .Pokemon:
 	ld a, [wCurPartySpecies]
 	ld [wTempIconSpecies], a
+
+	ld a, [wMonType]
+	and a
+	jr z, .party_mon
+
+	ld hl, sBoxMon1DVs
+	ld a, BANK(sBox)
+	call OpenSRAM
+	jr .start
+
+.party_mon
+	ld a, MON_DVS
+	call GetPartyParamLocation
+.start
+	ld de, wTempMonDVs
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+	ld a, [wMonType]
+	cp BOXMON
+	call z, CloseSRAM
 	ld hl, LoadMenuMonIcon
 	ld a, BANK(LoadMenuMonIcon)
 	ld e, MONICON_NAMINGSCREEN
@@ -113,6 +136,12 @@ NamingScreen:
 	ld [hl], a
 .genderless
 	call .StoreMonIconParams
+	ld bc, wTempMonDVs
+	farcall CheckShininess
+	ret nc
+	ld a, "<BOLD_S>"
+	hlcoord 17, 2
+	ld [hl], a
 	ret
 
 .NicknameStrings:
