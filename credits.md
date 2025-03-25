@@ -17,6 +17,8 @@ Rangi, DGamers-64 and Vendily for the fourth stat page.
 
 Mountvesuvius for Strength Sap and HM Key Items.
 
+Running Shoes: Grate Oracle Lewot, Victoria Lacroix, Tom Wang, Seasick
+
 Idain, Rangi, WasabiRaptor for EVS.
 
 Rangi and Idain for Evening time and SGB palettes for maps.

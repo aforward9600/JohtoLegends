@@ -868,9 +868,7 @@ QuilavaEvosAttacks:
 
 TyphlosionEvosAttacks:
 	db 0 ; no more evolutions
-if !DEF(_FAITHFUL)
 	dbw LEARN_EVO_MOVE, EARTH_POWER
-endc
 	dbw 1, EARTH_POWER
 	dbw 1, TACKLE
 	dbw 1, LEER
@@ -886,6 +884,8 @@ endc
 	dbw 56, INFERNO
 	dbw 61, ROLLOUT
 if DEF(_FAITHFUL)
+	dbw 69, DOUBLE_EDGE
+elif DEF(_NOPSS)
 	dbw 69, DOUBLE_EDGE
 else
 	dbw 69, EARTHQUAKE
@@ -907,11 +907,15 @@ TotodileEvosAttacks:
 	dbw 22, FLAIL
 if DEF(_FAITHFUL)
 	dbw 27, CRUNCH
+elif DEF(_NOPSS)
+	dbw 27, CRUNCH
 else
 	dbw 27, WATERFALL
 endc
 	dbw 29, HEADBUTT
 if DEF(_FAITHFUL)
+	dbw 34, SLASH
+elif DEF(_NOPSS)
 	dbw 34, SLASH
 else
 	dbw 34, CRUNCH
@@ -936,11 +940,15 @@ CroconawEvosAttacks:
 	dbw 24, FLAIL
 if DEF(_FAITHFUL)
 	dbw 30, CRUNCH
+elif DEF(_NOPSS)
+	dbw 30, CRUNCH
 else
 	dbw 30, WATERFALL
 endc
 	dbw 33, HEADBUTT
 if DEF(_FAITHFUL)
+	dbw 39, SLASH
+elif DEF(_NOPSS)
 	dbw 39, SLASH
 else
 	dbw 39, CRUNCH
@@ -954,9 +962,7 @@ endc
 
 FeraligatrEvosAttacks:
 	db 0 ; no more evolutions
-if !DEF(_FAITHFUL)
 	dbw LEARN_EVO_MOVE, NIGHT_SLASH
-endc
 	dbw 1, NIGHT_SLASH
 	dbw 1, SCRATCH
 	dbw 1, LEER
@@ -968,11 +974,15 @@ endc
 	dbw 24, FLAIL
 if DEF(_FAITHFUL)
 	dbw 32, CRUNCH
+elif DEF(_NOPSS)
+	dbw 32, CRUNCH
 else
 	dbw 32, WATERFALL
 endc
 	dbw 37, HEADBUTT
 if DEF(_FAITHFUL)
+	dbw 45, SLASH
+elif DEF(_NOPSS)
 	dbw 45, SLASH
 else
 	dbw 45, CRUNCH
@@ -1039,6 +1049,8 @@ HoothootEvosAttacks:
 	dbw 19, LIGHT_SCREEN
 if DEF(_FAITHFUL)
 	dbw 22, EXTRASENSORY
+elif DEF(_NOPSS)
+	dbw 22, EXTRASENSORY
 else
 	dbw 22, NIGHT_SHADE
 endc
@@ -1048,6 +1060,8 @@ endc
 	dbw 34, HYPER_VOICE
 	dbw 37, ROOST
 if DEF(_FAITHFUL)
+	dbw 40, MOONBLAST
+elif DEF(_NOPSS)
 	dbw 40, MOONBLAST
 else
 	dbw 40, SHADOW_BALL
@@ -1071,6 +1085,8 @@ NoctowlEvosAttacks:
 	dbw 19, LIGHT_SCREEN
 if DEF(_FAITHFUL)
 	dbw 23, EXTRASENSORY
+elif DEF(_NOPSS)
+	dbw 23, EXTRASENSORY
 else
 	dbw 23, NIGHT_SHADE
 endc
@@ -1080,6 +1096,8 @@ endc
 	dbw 39, HYPER_VOICE
 	dbw 43, ROOST
 if DEF(_FAITHFUL)
+	dbw 47, MOONBLAST
+elif DEF(_NOPSS)
 	dbw 47, MOONBLAST
 else
 	dbw 47, SHADOW_BALL
@@ -1126,11 +1144,15 @@ LedianEvosAttacks:
 	dbw 38, BUG_BUZZ
 if DEF(_FAITHFUL)
 	dbw 42, AIR_SLASH
+elif DEF(_NOPSS)
+	dbw 42, AIR_SLASH
 else
 	dbw 42, AURA_SPHERE
 endc
 	dbw 47, DOUBLE_EDGE
 if DEF(_FAITHFUL)
+	dbw 50, HURRICANE
+elif DEF(_NOPSS)
 	dbw 50, HURRICANE
 else
 	dbw 50, CLOSE_COMBAT
@@ -1155,6 +1177,8 @@ SpinarakEvosAttacks:
 	dbw 36, X_SCISSOR
 	dbw 40, ZEN_HEADBUTT
 if DEF(_FAITHFUL)
+	dbw 43, POISON_JAB
+elif DEF(_NOPSS)
 	dbw 43, POISON_JAB
 else
 	dbw 43, CRUNCH
@@ -1183,6 +1207,8 @@ AriadosEvosAttacks:
 	dbw 41, X_SCISSOR
 	dbw 46, ZEN_HEADBUTT
 if DEF(_FAITHFUL)
+	dbw 50, POISON_JAB
+elif DEF(_NOPSS)
 	dbw 50, POISON_JAB
 else
 	dbw 50, CRUNCH
@@ -1622,11 +1648,15 @@ SunkernEvosAttacks:
 	dbw 22, GIGA_DRAIN
 if DEF(_FAITHFUL)
 	dbw 25, BULLET_SEED
+elif DEF(_NOPSS)
+	dbw 25, BULLET_SEED
 else
 	dbw 25, AGILITY
 endc
 	dbw 28, SYNTHESIS
 if DEF(_FAITHFUL)
+	dbw 31, DAZZLINGLEAM
+elif DEF(_NOPSS)
 	dbw 31, DAZZLINGLEAM
 else
 	dbw 31, EARTH_POWER
@@ -1639,10 +1669,16 @@ endc
 
 SunfloraEvosAttacks:
 	db 0 ; no more evolutions
-if !DEF(_FAITHFUL)
+if DEF(_FAITHFUL)
+	dbw LEARN_EVO_MOVE, MAGICAL_LEAF
+	dbw 1, MAGICAL_LEAF
+elif DEF(_NOPSS)
+	dbw LEARN_EVO_MOVE, MAGICAL_LEAF
+	dbw 1, MAGICAL_LEAF
+else
 	dbw LEARN_EVO_MOVE, FLAME_BURST
-endc
 	dbw 1, FLAME_BURST
+endc
 	dbw 1, ABSORB
 	dbw 1, GROWTH
 	dbw 7, SING
@@ -1653,11 +1689,15 @@ endc
 	dbw 22, GIGA_DRAIN
 if DEF(_FAITHFUL)
 	dbw 25, BULLET_SEED
+elif DEF(_NOPSS)
+	dbw 25, BULLET_SEED
 else
 	dbw 25, AGILITY
 endc
 	dbw 28, PETAL_DANCE
 if DEF(_FAITHFUL)
+	dbw 31, DAZZLINGLEAM
+elif DEF(_NOPSS)
 	dbw 31, DAZZLINGLEAM
 else
 	dbw 31, FLAMETHROWER
@@ -1666,6 +1706,8 @@ endc
 	dbw 37, DOUBLE_EDGE
 	dbw 40, SUNNY_DAY
 if DEF(_FAITHFUL)
+	dbw 43, SOLAR_BLADE
+elif DEF(_NOPSS)
 	dbw 43, SOLAR_BLADE
 else
 	dbw 43, FIRE_BLAST
@@ -1682,6 +1724,8 @@ YanmaEvosAttacks:
 	dbw 11, DOUBLE_TEAM
 if DEF(_FAITHFUL)
 	dbw 14, SONICBOOM
+elif DEF(_NOPSS)
+	dbw 14, SONICBOOM
 else
 	dbw 14, SIGNAL_BEAM
 endc
@@ -1690,12 +1734,16 @@ endc
 	dbw 27, HYPER_VOICE
 if DEF(_FAITHFUL)
 	dbw 30, PURSUIT
+elif DEF(_NOPSS)
+	dbw 30, PURSUIT
 else
 	dbw 30, BUG_BUZZ
 endc
 	dbw 33, ANCIENTPOWER
 	dbw 38, HYPNOSIS
 if DEF(_FAITHFUL)
+	dbw 43, WING_ATTACK
+elif DEF(_NOPSS)
 	dbw 43, WING_ATTACK
 else
 	dbw 43, AIR_CUTTER
@@ -1704,6 +1752,8 @@ endc
 	dbw 49, U_TURN
 	dbw 54, AIR_SLASH
 if DEF(_FAITHFUL)
+	dbw 57, BUG_BUZZ
+elif DEF(_NOPSS)
 	dbw 57, BUG_BUZZ
 else
 	dbw 57, SIGNAL_WAVE
@@ -1720,6 +1770,8 @@ YanmegaEvosAttacks:
 	dbw 11, DOUBLE_TEAM
 if DEF(_FAITHFUL)
 	dbw 14, SONICBOOM
+elif DEF(_NOPSS)
+	dbw 14, SONICBOOM
 else
 	dbw 14, SIGNAL_BEAM
 endc
@@ -1728,16 +1780,22 @@ endc
 	dbw 27, HYPER_VOICE
 if DEF(_FAITHFUL)
 	dbw 30, PURSUIT
+elif DEF(_NOPSS)
+	dbw 30, PURSUIT
 else
 	dbw 30, BUG_BUZZ
 endc
 	dbw 38, HYPNOSIS
 if DEF(_FAITHFUL)
 	dbw 43, SLASH
+elif DEF(_NOPSS)
+	dbw 43, SLASH
 else
 	dbw 43, POWER_GEM
 endc
 if DEF(_FAITHFUL)
+	dbw 46, SCREECH
+elif DEF(_NOPSS)
 	dbw 46, SCREECH
 else
 	dbw 46, NASTY_PLOT
@@ -1745,10 +1803,14 @@ endc
 	dbw 49, U_TURN
 if DEF(_FAITHFUL)
 	dbw 54, AIR_SLASH
+elif DEF(_NOPSS)
+	dbw 54, AIR_SLASH
 else
 	dbw 54, JURASSICBEAM
 endc
 if DEF(_FAITHFUL)
+	dbw 57, BUG_BUZZ
+elif DEF(_NOPSS)
 	dbw 57, BUG_BUZZ
 else
 	dbw 57, SIGNAL_WAVE
@@ -1981,6 +2043,8 @@ DunsparceEvosAttacks:
 	dbw 6, LICK
 if DEF(_FAITHFUL)
 	dbw 8, PURSUIT
+elif DEF(_NOPSS)
+	dbw 8, PURSUIT
 else
 	dbw 8, DISARM_VOICE
 endc
@@ -1993,6 +2057,8 @@ endc
 	dbw 26, ROOST
 if DEF(_FAITHFUL)
 	dbw 28, TAKE_DOWN
+elif DEF(_NOPSS)
+	dbw 28, TAKE_DOWN
 else
 	dbw 28, DRAININGKISS
 endc
@@ -2003,12 +2069,16 @@ endc
 	dbw 41, EARTHQUAKE
 if DEF(_FAITHFUL)
 	dbw 43, AIR_SLASH
+elif DEF(_NOPSS)
+	dbw 43, AIR_SLASH
 else
 	dbw 43, PLAY_ROUGH
 endc
 	dbw 46, DRAGON_RUSH
 	dbw 48, ENDURE
 if DEF(_FAITHFUL)
+	dbw 51, DUALWINGBEAT
+elif DEF(_NOPSS)
 	dbw 51, DUALWINGBEAT
 else
 	dbw 51, MOONBLAST
@@ -2024,6 +2094,8 @@ DudunsparsEvosAttacks:
 	dbw 6, LICK
 if DEF(_FAITHFUL)
 	dbw 8, PURSUIT
+elif DEF(_NOPSS)
+	dbw 8, PURSUIT
 else
 	dbw 8, DISARM_VOICE
 endc
@@ -2036,6 +2108,8 @@ endc
 	dbw 26, ROOST
 if DEF(_FAITHFUL)
 	dbw 28, TAKE_DOWN
+elif DEF(_NOPSS)
+	dbw 28, TAKE_DOWN
 else
 	dbw 28, DRAININGKISS
 endc
@@ -2046,12 +2120,16 @@ endc
 	dbw 46, EARTHQUAKE
 if DEF(_FAITHFUL)
 	dbw 48, AIR_SLASH
+elif DEF(_NOPSS)
+	dbw 48, AIR_SLASH
 else
 	dbw 48, PLAY_ROUGH
 endc
 	dbw 51, DRAGON_RUSH
 	dbw 53, ENDURE
 if DEF(_FAITHFUL)
+	dbw 55, DUALWINGBEAT
+elif DEF(_NOPSS)
 	dbw 55, DUALWINGBEAT
 else
 	dbw 55, MOONBLAST
@@ -2319,6 +2397,8 @@ SlugmaEvosAttacks:
 	dbw 27, FLAME_BURST
 if DEF(_FAITHFUL)
 	dbw 29, ROCK_SLIDE
+elif DEF(_NOPSS)
+	dbw 29, ROCK_SLIDE
 else
 	dbw 29, STEEL_SLICE
 endc
@@ -2344,10 +2424,14 @@ MagcargoEvosAttacks:
 	dbw 27, FLAME_BURST
 if DEF(_FAITHFUL)
 	dbw 30, ROCK_SLIDE
+elif DEF(_NOPSS)
+	dbw 30, ROCK_SLIDE
 else
 	dbw 30, STEEL_SLICE
 endc
 if DEF(_FAITHFUL)
+	dbw 33, POWER_GEM
+elif DEF(_NOPSS)
 	dbw 33, POWER_GEM
 else
 	dbw 33, FLASH_CANNON

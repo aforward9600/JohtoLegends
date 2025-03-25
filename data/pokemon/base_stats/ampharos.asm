@@ -6,6 +6,8 @@
 
 if DEF(_FAITHFUL)
 	db ELECTRIC, ELECTRIC ; type
+elif DEF(_NOPSS)
+	db ELECTRIC, ELECTRIC ; type
 else
 	db ELECTRIC, DRAGON ; type
 endc

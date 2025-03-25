@@ -1581,6 +1581,8 @@ BattleTowerMons4:
 	db KINGS_ROCK
 if DEF(_FAITHFUL)
 	dw PSYCHIC_M, THUNDERPUNCH, RECOVER, FIRE_PUNCH
+elif DEF(_NOPSS)
+	dw PSYCHIC_M, THUNDERPUNCH, RECOVER, FIRE_PUNCH
 else
 	dw PSYCHIC_M, MOONBLAST, RECOVER, SHADOW_BALL
 endc
@@ -1591,6 +1593,8 @@ endc
 	db 0, 0, 0, 0 ; padding
 	dn 13, 13, 14, 15 ; DVs
 if DEF(_FAITHFUL)
+	db 10, 15, 20, 15 ; PP
+elif DEF(_NOPSS)
 	db 10, 15, 20, 15 ; PP
 else
 	db 10, 15, 20, 20

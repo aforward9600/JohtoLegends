@@ -6,6 +6,8 @@
 
 if DEF(_FAITHFUL)
 	db GRASS, GRASS ; type
+elif DEF(_NOPSS)
+	db GRASS, GRASS ; type
 else
 	db GRASS, FAIRY ; type
 endc

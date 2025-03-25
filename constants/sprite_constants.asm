@@ -157,9 +157,11 @@
 	const SPRITE_MEW_WALK
 	const SPRITE_FIRE
 	const SPRITE_SENSATIONAL_BLONDE
+	const SPRITE_CHRIS_RUN
+	const SPRITE_KRIS_RUN
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
-	const_def $9c
+	const_def $9f
 SPRITE_POKEMON EQU const_value
 	const SPRITE_UNOWN ; 99
 	const SPRITE_SKARMINI ; 9a

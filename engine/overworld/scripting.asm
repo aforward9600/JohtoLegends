@@ -1838,13 +1838,7 @@ GetVarAction:
 
 Script_checkver:
 ; script command 0x18
-
-	ld a, [.gs_version]
-	ld [wScriptVar], a
 	ret
-
-.gs_version:
-	db GS_VERSION
 
 Script_getmonname:
 ; script command 0x40

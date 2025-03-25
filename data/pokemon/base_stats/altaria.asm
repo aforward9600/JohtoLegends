@@ -6,6 +6,8 @@
 
 if DEF(_FAITHFUL)
 	db DRAGON, FLYING ; type
+elif DEF(_NOPSS)
+	db DRAGON, FLYING ; type
 else
 	db DRAGON, FAIRY ; type
 endc

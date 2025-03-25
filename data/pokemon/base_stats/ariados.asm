@@ -6,6 +6,8 @@
 
 if DEF(_FAITHFUL)
 	db BUG, POISON ; type
+elif DEF(_NOPSS)
+	db BUG, POISON ; type
 else
 	db BUG, DARK ; type
 endc

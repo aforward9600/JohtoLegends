@@ -6,6 +6,8 @@
 
 if DEF(_FAITHFUL)
 	db FIRE, FIRE ; type
+elif DEF(_NOPSS)
+	db FIRE, FIRE ; type
 else
 	db FIRE, GHOST ; type
 endc

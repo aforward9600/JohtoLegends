@@ -47,6 +47,7 @@ CreditsScript:
 	db                IDAIN, 2
 	db               KDLPRO, 3
 	db            VULCANDTH, 4
+	db             TOM_WANG, 5
 
 	db CREDITS_WAIT, 12
 
@@ -55,6 +56,7 @@ CreditsScript:
 	db              VENDILY, 2
 	db       CHATTY_CRYSTAL, 3
 	db        DRAGON_ARBOCK, 4
+	db     VICTORIA_LACROIX, 5
 
 	db CREDITS_WAIT, 12
 
@@ -179,6 +181,7 @@ CreditsScript:
 	db           GAME_FREAK, 1
 	db          SIRWHIBBLES, 2
 	db                RANGI, 3
+	db              SEASICK, 4
 
 	db CREDITS_WAIT, 12
 
@@ -186,6 +189,7 @@ CreditsScript:
 	db          FERROPEXOLA, 1
 	db         MEGAMANOMEGA, 2
 	db         FRENCHORANGE, 3
+	db             TOM_WANG, 4
 
 	db CREDITS_WAIT, 12
 

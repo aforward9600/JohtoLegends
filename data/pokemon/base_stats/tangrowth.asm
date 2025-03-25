@@ -4,7 +4,9 @@
 	evs  0,   0,   2,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
-if DEF(FAITHFUL)
+if DEF(_FAITHFUL)
+	db GRASS, GRASS ; type
+elif DEF(_NOPSS)
 	db GRASS, GRASS ; type
 else
 	db GRASS, ROCK ; type

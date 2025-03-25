@@ -6,6 +6,8 @@
 
 if DEF(_FAITHFUL)
 	db GHOST, GHOST ; type
+elif DEF(_NOPSS)
+	db GHOST, GHOST ; type
 else
 	db GHOST, FAIRY ; type
 endc

@@ -268,6 +268,13 @@ PlayerEvents:
 	xor a
 	ld [wLandmarkSignTimer], a
 
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .ok2
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	farcall ReplaceKrisSprite
+
 .ok2
 	scf
 	ret

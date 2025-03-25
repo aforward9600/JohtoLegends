@@ -167,3 +167,5 @@ SECTION "Sprites 4", ROMX
 
 FireSpriteGFX::                INCBIN "gfx/sprites/fire.2bpp"
 SensationalBlondeGFX::         INCBIN "gfx/sprites/sensational_blonde.2bpp"
+ChrisRunSpriteGFX::            INCBIN "gfx/sprites/chris_run.2bpp"
+KrisRunSpriteGFX::             INCBIN "gfx/sprites/kris_run.2bpp"

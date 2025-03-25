@@ -6,6 +6,8 @@
 
 if DEF(_FAITHFUL)
 	db NORMAL, FLYING ; type
+elif DEF(_NOPSS)
+	db NORMAL, FLYING ; type
 else
 	db GHOST, FLYING ; type
 endc

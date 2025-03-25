@@ -6,6 +6,8 @@
 
 if DEF(_FAITHFUL)
 	db BUG, FLYING ; type
+elif DEF(_NOPSS)
+	db BUG, FLYING ; type
 else
 	db BUG, FIGHTING ; type
 endc

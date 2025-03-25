@@ -35,9 +35,9 @@ CreditsStrings:
 	dw .Radiation
 	dw .DragonArbock
 	dw .AzureKeys
-	dw .AtsushiTada
-	dw .NaokoKawakami
-	dw .HiroyukiZinnai
+	dw .Seasick
+	dw .TomWang
+	dw .VictoriaLacroix
 	dw .KunimiKawamura
 	dw .DarkZeta
 	dw .Celadonk
@@ -161,9 +161,9 @@ CreditsStrings:
 .Radiation:           db "     Radiation@"       ; "いしはら　つねかず@"
 .DragonArbock:        db "   Dragon Arbock@"        ; "やまうち　ひろし@"
 .AzureKeys:           db "     AzureKeys@"           ; "さいき　けんじ@"
-.AtsushiTada:         db "    ATSUSHI TADA@"          ; "ただ　あつし@"
-.NaokoKawakami:       db "   NAOKO KAWAKAMI@"         ; "かわかみ　なおこ@"
-.HiroyukiZinnai:      db "  HIROYUKI ZINNAI@"         ; "じんない　ひろゆき@"
+.Seasick:             db "      Seasick@"          ; "ただ　あつし@"
+.TomWang:             db "      Tom Wang@"         ; "かわかみ　なおこ@"
+.VictoriaLacroix:     db "  Victoria Lacroix@"         ; "じんない　ひろゆき@"
 .KunimiKawamura:      db "  KUNIMI KAWAMURA@"         ; "かわむら　くにみ@"
 .DarkZeta:            db "     Dark Zeta@"            ; "そがべ　ひさし@"
 .Celadonk:            db "     Celadonk@"             ; "かがや　けいた@"

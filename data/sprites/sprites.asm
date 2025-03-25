@@ -161,3 +161,5 @@ OverworldSprites:
 	overworld_sprite MewWalkSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite FireSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite SensationalBlondeGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite ChrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite KrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED

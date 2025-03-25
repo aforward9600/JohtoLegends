@@ -5,7 +5,9 @@
 	;   hp  atk  def  spd  sat  sdf
 
 if DEF(_FAITHFUL)
-	db NORMAL, NORMAL ;type
+	db NORMAL, NORMAL ; type
+elif DEF(_NOPSS)
+	db NORMAL, NORMAL ; type
 else
 	db GROUND, FAIRY ; type
 endc

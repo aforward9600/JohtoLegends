@@ -252,6 +252,8 @@ MahoganyGymGuyScript:
 	iftrue .MahoganyGymGuyWinScript
 if DEF(_FAITHFUL)
 	writetext MahoganyGymGuyFaithfulText
+elif DEF(_NOPSS)
+	writetext MahoganyGymGuyFaithfulText
 endc
 	writetext MahoganyGymGuyText
 	waitbutton

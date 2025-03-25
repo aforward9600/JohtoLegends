@@ -6,6 +6,8 @@
 
 if DEF(_FAITHFUL)
 	db FIRE, ROCK ; type
+elif DEF(_NOPSS)
+	db FIRE, ROCK ; type
 else
 	db FIRE, STEEL ; type
 endc

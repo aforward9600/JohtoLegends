@@ -234,6 +234,8 @@ elif DEF(_FAITHFULFRENCH)
 	db "V0.6.7 Fidèle@"
 elif DEF(_FAITHFUL)
 	db "V0.6.7 Faithful@"
+elif DEF(_NOPSS)
+	db "V0.6.7 No PSS@"
 elif DEF(_FRENCH)
 	db "V0.6.7 Originale@"
 elif DEF(_NORMAL)

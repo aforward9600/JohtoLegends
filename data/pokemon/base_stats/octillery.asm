@@ -6,6 +6,8 @@
 
 if DEF(_FAITHFUL)
 	db WATER, WATER ; type
+elif DEF(_NOPSS)
+	db WATER, WATER ; type
 else
 	db WATER, STEEL ; type
 endc
