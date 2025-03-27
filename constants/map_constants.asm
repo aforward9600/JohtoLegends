@@ -468,7 +468,7 @@ ENDM
 	map_const BATTLE_TOWER_HALLWAY,                        11,  2 ; 14
 	map_const ROUTE_40_BATTLE_TOWER_GATE,                   5,  4 ; 15
 	map_const BATTLE_TOWER_OUTSIDE,                        10, 14 ; 16
-	map_const CLIFFS_EDGE_GATE,                            13, 12 ; 17
+	map_const CLIFFS_EDGE_GATE,                            12, 11 ; 17
 
 	newgroup                                                      ; 23
 

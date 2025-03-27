@@ -522,3 +522,10 @@ MooMooMilk_HereYouGoText::
 	text "Here ya go, honey!"
 	line "Drink up'n enjoy!"
 	done
+
+HappinessRoseButStatsFell::
+	text "Happiness rose but"
+	line "@"
+	text_ram wStringBuffer2
+	text " fell."
+	prompt

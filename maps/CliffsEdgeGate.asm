@@ -61,17 +61,17 @@ CliffsEdgeGate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event 23,  9, CIANWOOD_CITY, 8
-	warp_event 15,  7, CLIFFS_EDGE_GATE, 3
-	warp_event  8,  7, CLIFFS_EDGE_GATE, 2
-	warp_event  4, 18, ROUTE_47, 1
+	warp_event 21,  7, CIANWOOD_CITY, 8
+	warp_event 13,  5, CLIFFS_EDGE_GATE, 3
+	warp_event  6,  5, CLIFFS_EDGE_GATE, 2
+	warp_event  6, 16, ROUTE_47, 1
 
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event 21,  6, BGEVENT_READ, CliffsEdgeGateSign
+	bg_event 19,  4, BGEVENT_READ, CliffsEdgeGateSign
 
 	db 3 ; object events
-	object_event 20,  9, SPRITE_ENGINEER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CliffsEdgeGateEngineer1Script, -1
-	object_event 14,  8, SPRITE_ENGINEER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CliffsEdgeGateEngineer2Script, -1
-	object_event 12, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CliffsEdgeGateItemScript, EVENT_CLIFFS_EDGE_GATE_ITEM
+	object_event 18,  7, SPRITE_ENGINEER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CliffsEdgeGateEngineer1Script, -1
+	object_event 12,  6, SPRITE_ENGINEER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CliffsEdgeGateEngineer2Script, -1
+	object_event 10, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CliffsEdgeGateItemScript, EVENT_CLIFFS_EDGE_GATE_ITEM

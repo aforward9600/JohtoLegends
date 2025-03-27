@@ -12,10 +12,10 @@
 	const AZALEATOWN_AZALEA_ROCKET3
 
 AzaleaTown_MapScripts:
-	db 3 ; scene scripts
+	db 2 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_AZALEATOWN_NOTHING
 	scene_script .DummyScene1 ; SCENE_AZALEATOWN_RIVAL_BATTLE
-	scene_script .DummyScene2 ; SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL
+;	scene_script .DummyScene2 ; SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .Flypoint
@@ -91,20 +91,7 @@ AzaleaTownRocket2Script:
 	jumptextfaceplayer AzaleaTownRocket2Text
 
 AzaleaTownGrampsScript:
-	faceplayer
-	opentext
-	checkevent EVENT_CLEARED_SLOWPOKE_WELL
-	iftrue .ClearedWell
-	writetext AzaleaTownGrampsTextBefore
-	waitbutton
-	closetext
-	end
-
-.ClearedWell:
-	writetext AzaleaTownGrampsTextAfter
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer AzaleaTownGrampsTextBefore
 
 AzaleaTownTeacherScript:
 	jumptextfaceplayer AzaleaTownTeacherText
@@ -172,13 +159,6 @@ AzaleaTownRivalBattleExitMovement:
 	step RIGHT
 	step RIGHT
 	step RIGHT
-	step_end
-
-AzaleaTownPlayerLeavesKurtsHouseMovement:
-	step LEFT
-	step LEFT
-	step UP
-	turn_head LEFT
 	step_end
 
 AzaleaTownRivalBeforeText:
@@ -284,17 +264,6 @@ AzaleaTownGrampsTextBefore:
 	cont "Slowpoke."
 	done
 
-AzaleaTownGrampsTextAfter:
-	text "The Slowpoke have"
-	line "returned."
-
-	para "Knowing them, they"
-	line "could've just been"
-
-	para "goofing off some-"
-	line "where."
-	done
-
 AzaleaTownTeacherText:
 	text "Did you come to"
 	line "get Kurt to make"
@@ -338,24 +307,6 @@ AzaleaTownSlowpokeText2:
 
 WoosterText:
 	text "Wooster: Gugyoo…"
-	done
-
-AzaleaTownKurtText1:
-	text "ILEX FOREST is"
-	line "restless!"
-
-	para "What is going on?"
-	done
-
-AzaleaTownKurtText2:
-	text "<PLAYER>, here's"
-	line "your GS BALL back!"
-	done
-
-AzaleaTownKurtText3:
-	text "Could you go see"
-	line "why ILEX FOREST is"
-	cont "so restless?"
 	done
 
 AzaleaTownSignText:

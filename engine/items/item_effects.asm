@@ -1313,50 +1313,11 @@ EVLoweringBerryEffect:
 	ld a, MON_EVS
 	call GetPartyParamLocation
 
-;	ld d, 10
-;	push bc
-;	push hl
-;	ld e, 6
-;	ld bc, 0
-;.count_evs
-;	ld a, [hli]
-;	add c
-;	ld c, a
-;	jr nc, .cont
-;	inc b
-;.cont
-;	dec e
-;	jr nz, .count_evs
-;	ld a, d
-;	add c
-;	ld c, a
-;	adc b
-;	sub c
-;	ld b, a
-;	ld e, d
-;.decrease_evs_gained
-;	ld a, [hl]
-;	cp 9
-;	jr nz, .check_ev_overflow
-;	push hl
-;	farcall IsEvsGreaterThan510
-;	jr nc, .check_ev_overflow
-;	dec e
-;	dec bc
-;	jr .decrease_evs_gained
-;.check_ev_overflow
-;	pop hl
-;	pop bc
-
-;	ld a, e
-;	and a
-;	jr z, NoEffectMessage
-
 	add hl, bc
 	pop af
 	or [hl]
 	jp z, NoEffectMessage
-;	ld a, [hl]
+	ld a, [hl]
 ;	cp 0
 ;	jr c, NoEffectMessage
 
@@ -1382,7 +1343,7 @@ EVLoweringBerryEffect:
 
 	call Play_SFX_FULL_HEAL
 
-	ld hl, Text_StatRose
+	ld hl, Text_HappinessRoseButStatFell
 	call PrintText
 
 	ld c, HAPPINESS_EVLOWERINGBERRY
@@ -1408,6 +1369,10 @@ RareCandy_StatBooster_ExitMenu:
 Text_StatRose:
 	; 's @  rose.
 	text_far UnknownText_0x1c5b9a
+	text_end
+
+Text_HappinessRoseButStatFell:
+	text_far HappinessRoseButStatsFell
 	text_end
 
 StatStrings:

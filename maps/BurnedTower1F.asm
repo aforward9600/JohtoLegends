@@ -130,9 +130,6 @@ BurnedTower1FEusineScript:
 BurnedTower1FEnokiScript:
 	jumptextfaceplayer BurnedTower1FEnokiText
 
-BurnedTower1FMortyScript:
-	jumptextfaceplayer BurnedTower1FMortyText
-
 BurnedTower1FRock:
 	jumpstd smashrock
 
@@ -283,24 +280,6 @@ BurnedTower1FEnokiText:
 	cont "near the center."
 	done
 
-BurnedTower1FMortyText:
-	text "MORTY: ECRUTEAK's"
-	line "GYM LEADER has to"
-
-	para "study what are"
-	line "said to be the"
-
-	para "legendary #MON"
-	line "--SUICUNE, ENTEI"
-	cont "and RAIKOU."
-
-	para "EUSINE is here, so"
-	line "I've decided to"
-
-	para "investigate the"
-	line "TOWER with him."
-	done
-
 BurnedTower1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -330,7 +309,7 @@ BurnedTower1F_MapEvents:
 	db 6 ; object events
 	object_event 15,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTower1FRock, -1
 	object_event  8,  9, SPRITE_EUSINE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEusineScript, EVENT_BURNED_TOWER_MORTY
-	object_event  7,  9, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BurnedTower1FMortyScript, EVENT_BURNED_TOWER_MORTY
+	object_event  7,  9, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURNED_TOWER_MORTY
 	object_event 14,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, BurnedTower1FHPUp, EVENT_BURNED_TOWER_1F_HP_UP
 	object_event 12, 12, SPRITE_ENOKI, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEnokiScript, EVENT_BURNED_TOWER_1F_EUSINE
 	object_event  9, 15, SPRITE_ENOKI, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURNED_TOWER_1F_ENOKI_2

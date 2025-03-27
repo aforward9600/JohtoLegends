@@ -40,14 +40,6 @@ MahoganyRedGyaradosSpeechHouseHeracrossScript:
 	closetext
 	end
 
-MahoganyRedGyaradosSpeechHouseUnusedBookshelf1:
-; unused
-	jumpstd picturebookshelf
-
-MahoganyRedGyaradosSpeechHouseUnusedBookshelf2:
-; unused
-	jumpstd magazinebookshelf
-
 MahoganyTelevision:
 	jumpstd televisionscript
 
@@ -85,14 +77,6 @@ SnubbullCallDoneText:
 	line "using Snubbulls"
 	cont "to catch more"
 	cont "#mon!"
-	done
-
-MahoganyRedGyaradosSpeechHouseTeacherText_RocketsInRadioTower:
-	text "I've been hearing"
-	line "laughter on the"
-
-	para "radio…"
-	line "It's creepy."
 	done
 
 MahoganyRedGyaradosSpeechHouseHeracrossText:

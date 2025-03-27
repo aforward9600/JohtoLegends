@@ -33,19 +33,6 @@ AzaleaPokecenter1FGentlemanText:
 	line "like a Slowpoke."
 	done
 
-AzaleaPokecenter1FUnusedText:
-; unreferenced
-	text "This BILL guy"
-	line "created the system"
-
-	para "for storing"
-	line "#MON in a PC."
-
-	para "BILL's PC can"
-	line "store up to 20"
-	cont "#MON per BOX."
-	done
-
 AzaleaPokecenter1FFishingGuruText:
 	text "Slowpoke are neat,"
 	line "don't you think?"

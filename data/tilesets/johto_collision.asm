@@ -172,7 +172,7 @@
 	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; ab
 	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; ac
 	tilecoll FLOOR, FLOOR, CAVE, WALL ; ad
-	tilecoll FLOOR, FLOOR, WALL, FLOOR ; ae
+	tilecoll HOP_DOWN, FLOOR, WALL, FLOOR ; ae
 	tilecoll WALL, WALL, CAVE, WALL ; af
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; b0
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; b1
@@ -203,4 +203,3 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ca
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cb
 	tilecoll FLOOR, HOP_DOWN, FLOOR, WALL ; cc
-	tilecoll HOP_DOWN, FLOOR, WALL, FLOOR ; cd
