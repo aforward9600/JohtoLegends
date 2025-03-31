@@ -106,22 +106,6 @@ SproutTower3FPotion:
 SproutTower3FEscapeRope:
 	itemball MIRACLE_SEED
 
-MovementData_0x184a1d:
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
-MovementData_0x184a22:
-	step UP
-	step_end
-
-MovementData_0x184a24:
-	step RIGHT
-	step DOWN
-	step_end
-
 SageLiSeenText:
 	text "So good of you to"
 	line "come here!"
@@ -206,7 +190,7 @@ SageTroyBeatenText:
 
 SageTroyAfterBattleText:
 	text "It is not far to"
-	line "the ELDER."
+	line "the Elder."
 	done
 
 SageNealSeenText:

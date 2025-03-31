@@ -37,48 +37,6 @@ SlowpokeWellB1FBoulder:
 SlowpokeWellB1FSuperPotion:
 	itemball FULL_HEAL
 
-SlowpokeWellB1FKurtText:
-	text "KURT: Hey there,"
-	line "<PLAYER>!"
-
-	para "The guard up top"
-	line "took off when I"
-	cont "shouted at him."
-
-	para "But then I took a"
-	line "tumble down the"
-	cont "WELL."
-
-	para "I slammed down"
-	line "hard on my back,"
-	cont "so I can't move."
-
-	para "Rats! If I were"
-	line "fit, my #MON"
-
-	para "would've punished"
-	line "them…"
-
-	para "Ah, it can't be"
-	line "helped."
-
-	para "<PLAYER>, show them"
-	line "how gutsy you are"
-	cont "in my place!"
-	done
-
-KurtLeaveSlowpokeWellText:
-	text "KURT: Way to go,"
-	line "<PLAYER>!"
-
-	para "TEAM ROCKET has"
-	line "taken off."
-
-	para "My back's better"
-	line "too. Let's get out"
-	cont "of here."
-	done
-
 SuperNerdNedSeenText:
 	text "Have you ever"
 	line "observed a"
@@ -116,34 +74,6 @@ SuperNerdNedAfterBattleText:
 	line "#mon Professor!"
 	done
 
-GruntM1SeenText:
-	text "What do you want?"
-
-	para "If you interrupt"
-	line "our work, don't"
-	cont "expect any mercy!"
-	done
-
-GruntM1BeatenText:
-	text "You did OK today,"
-	line "but wait till next"
-	cont "time!"
-	done
-
-TrainerGruntM1WhenTalkText:
-	text "Yeah, TEAM ROCKET"
-	line "was broken up"
-	cont "three years ago."
-
-	para "But we continued"
-	line "our activities"
-	cont "underground."
-
-	para "Now you can have"
-	line "fun watching us"
-	cont "stir up trouble!"
-	done
-
 PokemaniacDamienSeenText:
 	text "You want a"
 	line "Slowpoke?"
@@ -166,11 +96,6 @@ PokemaniacDamienAfterBattleText:
 
 	para "That would just"
 	line "be selfish!"
-	done
-
-SlowpokeWellB1FTaillessSlowpokeText:
-	text "A SLOWPOKE with"
-	line "its TAIL cut off…"
 	done
 
 SlowpokeWellB1F_MapEvents:

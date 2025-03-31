@@ -2571,6 +2571,8 @@ UnevolvedEviolite:
 	pop hl
 	ret z
 
+	ld b,b
+
 ; check if the defender's item is Eviolite
 	push bc
 	call GetOpponentItem

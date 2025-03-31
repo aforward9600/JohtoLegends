@@ -133,19 +133,20 @@ AbraText:
 IndigoPlateauPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
-	warp_event  5, 13, ROUTE_23, 1
-	warp_event  6, 13, ROUTE_23, 2
-	warp_event  0, 13, POKECENTER_2F, 1
-	warp_event 14,  3, WILLS_ROOM, 1
+	db 5 ; warp events
+	warp_event  8, 17, ROUTE_23, 1
+	warp_event  9, 17, ROUTE_23, 2
+	warp_event  0, 17, POKECENTER_2F, 1
+	warp_event  9,  0, WILLS_ROOM, 1
+	warp_event  8,  0, WILLS_ROOM, 4
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 5 ; object events
-	object_event  3,  7, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FNurseScript, -1
-	object_event 11,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FClerkScript, -1
-	object_event 11, 11, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerMScript, -1
-	object_event  1,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, -1
-	object_event  0,  9, SPRITE_ABRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, -1
+	object_event  3, 13, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FNurseScript, -1
+	object_event 14, 13, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FClerkScript, -1
+	object_event 13, 16, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerMScript, -1
+	object_event  2,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, -1
+	object_event  1,  7, SPRITE_ABRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, -1
