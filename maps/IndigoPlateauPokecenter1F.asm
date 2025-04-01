@@ -4,6 +4,7 @@
 	const INDIGOPLATEAUPOKECENTER1F_COOLTRAINER_M
 	const INDIGOPLATEAUPOKECENTER1F_GRAMPS
 	const INDIGOPLATEAUPOKECENTER1F_ABRA
+	const INDIGOPLATEAUPOKECENTER1F_COOLTRAINER_F
 
 IndigoPlateauPokecenter1F_MapScripts:
 	db 0 ; scene scripts
@@ -51,6 +52,15 @@ IndigoPlateauPokecenter1FCooltrainerMScript:
 
 TeleportGuyScript:
 	jumptextfaceplayer TeleportGuyText1
+
+IndigoPlateauPokeCenter1FCooltrainerFScript:
+	faceplayer
+	opentext
+	writetext IndigoPlateauPokeCenter1FCooltrainerFText
+	waitbutton
+	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_4F
+	closetext
+	end
 
 AbraScript:
 	refreshscreen
@@ -130,6 +140,12 @@ AbraText:
 	text "Abra: Aabra…"
 	done
 
+IndigoPlateauPokeCenter1FCooltrainerFText:
+	text "Looks like your"
+	line "#mon could use"
+	cont "some vitamins."
+	done
+
 IndigoPlateauPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -144,9 +160,10 @@ IndigoPlateauPokecenter1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event  3, 13, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FNurseScript, -1
 	object_event 14, 13, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FClerkScript, -1
 	object_event 13, 16, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerMScript, -1
-	object_event  2,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, -1
-	object_event  1,  7, SPRITE_ABRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, -1
+	object_event  1,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, -1
+	object_event  0,  7, SPRITE_ABRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, -1
+	object_event 13,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokeCenter1FCooltrainerFScript, -1

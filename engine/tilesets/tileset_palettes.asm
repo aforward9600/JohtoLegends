@@ -19,7 +19,7 @@ LoadSpecialMapPalette:
 ;	cp TILESET_RADIO_TOWER
 ;	jr z, .radio_tower
 	cp TILESET_MANSION
-	jr z, .mansion_mobile
+	jp z, .mansion_mobile
 	cp TILESET_TOWER
 	jp z, .tower
 	cp TILESET_KANTO
@@ -34,6 +34,8 @@ LoadSpecialMapPalette:
 	jp z, .draco_scene
 	cp TILESET_DAHLIA_SCENE
 	jp z, .dahlia_scene
+	cp TILESET_TOWER_ROOF
+	jp z, .tower_roof
 	jp .do_nothing
 
 .darkness
@@ -180,6 +182,18 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
+.tower_roof:
+	ld hl, TowerRoofPalette
+	ld a, [wTimeOfDayPal]
+	maskbits NUM_DAYTIMES
+	ld bc, 8 palettes
+	call AddNTimes
+	ld de, wBGPals1
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	scf
+	ret
+
 .do_nothing
 	and a
 	ret
@@ -193,6 +207,8 @@ INCLUDE "gfx/tilesets/summit.pal"
 INCLUDE "gfx/tilesets/draco_scene.pal"
 
 INCLUDE "gfx/tilesets/dahlia_scene.pal"
+
+INCLUDE "gfx/tilesets/tower_roof.pal"
 
 LoadCaveRoomPalette:
 	ld a, BANK(wBGPals1)

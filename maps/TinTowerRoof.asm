@@ -497,7 +497,7 @@ TinTowerRoof_MapEvents:
 
 	db 2 ; warp events
 	warp_event  9, 17, TIN_TOWER_9F, 4
-	warp_event  9, 11, DRACO_SCENE, 2
+	warp_event  9, 11, HO_OH_TOWER_SCENE, 1
 
 	db 2 ; coord events
 	coord_event  8, 16, SCENE_TIN_TOWER_MIYAMOTO, MiyamotoCatchesHoOhLeft

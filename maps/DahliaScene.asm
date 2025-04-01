@@ -3,7 +3,7 @@
 DahliaScene_MapScripts:
 	db 2 ; scene scripts
 	scene_script .DahliaSceneMovement ; SCENE_DEFAULT
-	scene_script .DahliaSceneMovement ; SCENE_FINISHED
+	scene_script .DummyScene0 ; SCENE_FINISHED
 
 	db 0 ; callbacks
 
@@ -22,12 +22,10 @@ DahliaScene_MapScripts:
 	pause 50
 	cry HO_OH
 	pause 50
-	special FadeOutMusic
 	pause 30
 	special FadeOutPalettes
 	applymovement PLAYER, ShowPlayerMovementDahliaScene
 	turnobject PLAYER, UP
-	setmapscene TIN_TOWER_ROOF, SCENE_TIN_TOWER_AFTER_HO_OH
 	warpcheck
 	sjump .DahliaSceneFinish
 
@@ -65,21 +63,11 @@ PlayerMovesRightDahliaScene:
 	slow_step RIGHT
 	step_end
 
-DahliaSceneSilenceText:
-	text "<PLAYER>:…………………………"
-	done
-
-DahliaSceneRivalText:
-	text "<RIVAL>:…Ho-Oh…"
-	line "…The Legendary"
-	line "#mon…"
-	done
-
 DahliaScene_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  4,  4, TIN_TOWER_ROOF, 2
+	warp_event  4,  4, HO_OH_TOWER_SCENE, 2
 	warp_event  6,  9, DRACO_SCENE, 3
 	warp_event  4,  9, DRACO_SCENE, 3
 

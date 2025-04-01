@@ -1202,3 +1202,6 @@ DracoScene_Blocks:
 
 DahliaScene_Blocks:
 	INCBIN "maps/DahliaScene.ablk"
+
+HoOhTowerScene_Blocks:
+	INCBIN "maps/HoOhTowerScene.ablk"

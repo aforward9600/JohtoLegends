@@ -70,7 +70,7 @@ SwarmGrassWildMonsAlt:
 	dbw  7, RALTS
 	dbw  7, PSYDUCK
 	dbw  7, RALTS
-	dbw  7, RALTS
+	dbw  7, TOTODILE
 	dbw  7, TOTODILE
 	dbw  7, TOTODILE
 	dbw  7, TOTODILE
@@ -79,7 +79,7 @@ SwarmGrassWildMonsAlt:
 	dbw  7, RALTS
 	dbw  7, PSYDUCK
 	dbw  7, RALTS
-	dbw  7, RALTS
+	dbw  7, TOTODILE
 	dbw  7, TOTODILE
 	dbw  7, TOTODILE
 	dbw  7, TOTODILE
@@ -88,7 +88,7 @@ SwarmGrassWildMonsAlt:
 	dbw  7, RALTS
 	dbw  7, PSYDUCK
 	dbw  7, RALTS
-	dbw  7, RALTS
+	dbw  7, TOTODILE
 	dbw  7, TOTODILE
 	dbw  7, TOTODILE
 	dbw  7, TOTODILE

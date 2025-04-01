@@ -2724,8 +2724,9 @@ wGoldCrystalHouseID::                             db
 wSilverCaveMewRoomID::                            db
 wDracoSceneID::                                   db
 wDahliaSceneID::                                  db
+wHoOhTowerSceneID::                               db
 
-	ds 14
+	ds 13
 
 ; fight counts
 wJackFightCount::    db ; d9f2

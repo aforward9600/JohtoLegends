@@ -19,7 +19,8 @@ Dark Cave Blackthorn Entrance
 Levels 2-5
 
 All Times: Zubat 30%, Cleffa 20%, Wooper 20%, Wynaut 15%, Teddiursa 10%, Cyndaquil 5%
-Swarm: Dunsparce 45%, Geodude 30%, Zubat 15%, Cyndaquil 10%
+Dunsparce Swarm: Dunsparce 45%, Geodude 30%, Zubat 15%, Cyndaquil 10%
+Cyndaquil Swarm: Cyndaquil 40%, Cleffa 25%, Dunsparce 20%, Zubat 15%
 
 
 Ice Path 1F
@@ -34,7 +35,8 @@ Ice Path B1F
 Levels 3-6
 
 All Times: Swinub 40%, Zubat 20%, Seel 15%, Delibird 15%, Smoochum 9%, Sneasel 1%
-Swarm: Sneasel 76%, Delibird 15%, Zubat 5%, Smoochum 4%
+Sneasel Swarm: Sneasel 76%, Delibird 15%, Zubat 5%, Smoochum 4%
+Smoochum Swarm: Smoochum 54%, Sneasel 26%, Delibird 15%, Zubat 5%
 
 
 Ice Path B2F
@@ -54,7 +56,9 @@ Water: Poliwag 80%, Poliwhirl 20%
 Old Rod: Magikarp 85%, Poliwag 15%
 Good Rod: Poliwag 65%, Magikarp 35%
 Super Rod: Poliwag 80%, Magikarp 20%
-Swarm: Slowpoke 50%, Chikorita 20%, Ekans 15%, Budew 15%
+Slowpoke Swarm: Slowpoke 50%, Chikorita 20%, Ekans 15%, Budew 15%
+Chikorita Swarm: Chikorita 50%, Slowpoke 20%, Ekans 15%, Budew 15%
+
 
 Route 43
 
@@ -66,7 +70,8 @@ Water: Poliwag 80%, Poliwhirl 20%
 Old Rod: Magikarp 85%, Poliwag 15%
 Good Rod: Poliwag 65%, Magikarp 35%
 Super Rod: Poliwag 80%, Magikarp 20%
-Swarm: Ralts 60%, Totodile 25%, Psyduck 15%
+Ralts Swarm: Ralts 60%, Totodile 25%, Psyduck 15%
+Totodile Swarm: Totodile 45%, Ralts 35%, Psyduck 20%
 
 
 Lake of Rage
@@ -92,7 +97,8 @@ Water: Goldeen 80%, Seaking 20%
 Old Rod: Magikarp 85%, Goldeen 15%
 Good Rod: Goldeen 65%, Magikarp 35%
 Super Rod: Goldeen 70%, Magikarp 20%, Seaking 10%
-Swarm: Ponyta 50%, Elekid 20%, Bonsly 15%, Houndour 15%
+Ponyta Swarm: Ponyta 50%, Elekid 20%, Bonsly 15%, Houndour 15%
+Elekid Swarm: Elekid 65%, Bonsly 15%, Houndour 15%, Ponyta 5%
 
 
 Mt Mortar 1F Outside
@@ -104,7 +110,8 @@ Water: Goldeen 60%, Marill 20%, Seaking 20%
 Old Rod: Magikarp 85%, Goldeen 15%
 Good Rod: Goldeen 65%, Magikarp 35%
 Super Rod: Goldeen 70%, Magikarp 20%, Seaking 10%
-Swarm: Aron 60%, Marill 20%, Sandshrew 20%
+Aron Swarm: Aron 60%, Marill 20%, Sandshrew 20%
+Tyrogue Swarm: Tyrogue 35%, Marill 20%, Sandshrew 20%, Aron 15%, Diglett 10%
 
 
 Mt Mortar 1F Inside
@@ -149,7 +156,8 @@ Levels 12-15
 
 Morning/Day: Magby 30%, Koffing 20%, Rattata 15%, Zubat 15%, Grimer 10%, Duskull 5%, Slugma 5%
 Night: Rattata 45%, Koffing 20%, Zubat 15%, Grimer 10%, Duskull 5%, Misdreavus 5%
-Swarm: Misdreavus 46%, Slugma 30%, Magby 15%, Duskull 9%
+Misdreavus Swarm: Misdreavus 46%, Slugma 30%, Magby 15%, Duskull 9%
+Magby Swarm: Magby 50%, Slugma 30%, Misdreavus 11%, Duskull 9%
 
 
 Burned Tower 2F
@@ -232,6 +240,7 @@ Water: Tentacool 60%, Remoraid 20%, Magikarp 15%, Qwilfish 5%
 Old Rod: Magikarp 85%, Tentacool 15%
 Good Rod: Magikarp 35%, Tentacool 35%, Chinchou 20%, Shellder 10%
 Super Rod: Chinchou 40%, Shellder 30%, Tentacruel 20%, Lanturn 10%
+Swarm: Chansey 80%, Blissey 20%
 
 
 Route 48
@@ -359,6 +368,27 @@ Old Rod: Magikarp 85%, Poliwag 15%
 Good Rod: Poliwag 65%, Magikarp 35%
 Super Rod: Magikarp 60%, Poliwag 40%
 
+Slowpoke Well B1F
+
+Levels 37-40
+
+All times: Zubat 50%, Golbat 25%, Slowpoke 24%, Slowbro 1%
+Water: Slowpoke 80%, Slowbro 20%
+Old Rod: Magikarp 85%, Goldeen 15%
+Good Rod: Goldeen 65%, Magikarp 35%
+Super Rod: Goldeen 70%, Magikarp 20%, Seaking 10%
+
+
+Slowpoke Well B2F
+
+Levels 37-40
+
+All times: Zubat 50%, Golbat 25%, Slowpoke 24%, Slowking 1%
+Water: Slowpoke 80%, Slowking 20%
+Old Rod: Magikarp 85%, Goldeen 15%
+Good Rod: Goldeen 65%, Magikarp 35%
+Super Rod: Goldeen 70%, Magikarp 20%, Seaking 10%
+
 
 Route 33
 
@@ -402,6 +432,106 @@ Water: Golbat 60%, Quagsire 25%, Tentacruel 15%
 Old Rod: Magikarp 85%, Krabby 15%
 Good Rod: Krabby 55%, Magikarp 35%, Staryu 10%
 Super Rod: Krabby 60%, Staryu 30%, Kingler 10%
+
+Route 32
+
+Levels 44-47
+
+Morning/Day: Arbok 30%, Raticate 20%, Weepinbell 15%, Ampharos 15%, Pidgeot 10%, Toxicroak 5%, Jumpluff 5%
+Night: Quagsire 30%, Raticate 20%, Weepinbell 15%, Ampharos 15%, Noctowl 10%, Toxicroak 5%, Gengar 5%
+Water: Tentacruel 60%, Quagsire 20%, Poliwrath 15%, Politoed 5%
+Old Rod: Magikarp 70%, Tentacool 15%, Krabby 15%
+Good Rod: Magikarp 35%, Goldeen 35%, Poliwag 20%, Remoraid 10%
+Super Rod: Tentacruel 40%, Kingler 30%, Octillery 20%, Qwilfish 10%
+Swarm Morning/Day: Toxicroak 50%, Pidgeot 20%, Jumpluff 15%, Ampharos 15%
+Swarm Night: oxicroak 50%, Pidgeot 20%, Gengar 15%, Ampharos 15%
+
+
+Ruins of Alph Outside
+
+Levels 44-47
+
+All times: Xatu 35%, Stantler 30%, Girafarig 25%, Smeargle 10%
+Water: Poliwhirl 60%, Azumarill 20%, Golduck 15%, Quagsire 5%
+Old Rod: Magikarp 85%, Poliwag 15%
+Good Rod: Poliwag 65%, Magikarp 35%
+Super Rod: Magikarp 60%, Poliwag 40%
+
+
+Violet City
+
+Levels 45-50
+
+Water: Golduck 80%, Poliwhirl 20%
+Old Rod: Magikarp 85%, Poliwag 15%
+Good Rod: Poliwag 65%, Magikarp 35%
+Super Rod: Magikarp 60%, Poliwag 40%
+
+
+Sprout Tower
+
+Levels 44-47
+
+Morning/Day: Raticate 100%
+Night: Gengar 50%, Raticate 25%, Midreavus 15%, Dusclops 9%, Mismagius 1%
+
+
+Route 31
+
+Levels 48-51
+
+Morning/Day: Ledian 30%, Butterfree 20%, Weepinbell 15%, Pidgeot 15%, Beedrill 10%, Jumpluff 10%
+Night: Ariados 30%, Poliwhirl 20%, Weepinbell 15%, Noctowl 15%, Crobat 10%, Gengar 10%
+Water: Golduck 80%, Poliwhirl 20%
+Old Rod: Magikarp 85%, Poliwag 15%
+Good Rod: Poliwag 65%, Magikarp 35%
+Super Rod: Magikarp 60%, Poliwag 40%
+
+Cherrygrove City
+
+Levels 45-50
+
+Water: Seadra 60%, Seaking 20%, Cursola 15%, Tentacruel 5%
+Old Rod: Magikarp 85%, Krabby 15%
+Good Rod Day: Magikarp 35%, Krabby 35%, Horsea 20%, Corsola 10%
+Good Rod Night: Magikarp 35%, Krabby 35%, Horsea 20%, Staryu 10%
+Super Rod Day: Krabby 40%, Corsola 30%, Krabby 20%, Kingler 10%
+Super Rod Night: Krabby 40%, Staryu 30%, Krabby 20%, Kingler 10%
+
+
+Route 30
+
+Levels 49-52
+
+Morning/Day: Butterfree 35%, Xatu 30%, Pidgeot 15%, Beedrill 10%, Jumpluff 10%
+Night: Noctowl 45%, Xatu 30%, Poliwhirl 15%, Crowbat 10%
+Water: Golduck 80%, Poliwhirl 20%
+Old Rod: Magikarp 85%, Poliwag 15%
+Good Rod: Poliwag 65%, Magikarp 35%
+Super Rod: Magikarp 60%, Poliwag 40%
+
+
+Route 29
+
+Levels 49-52
+
+Morning/Day: Ampharos 30%, Fearow 20%, Pidgeot 15%, Gardevoir 15%, Raticate 10%, Jumpluff 10%
+Night: Raticate 35%, Ampharos 30%, Murkrow 20%, Gardevoir 15%, Noctowl 10%
+
+
+Route 46
+
+
+Dark Cave Violet/Blackthorn Entrance
+
+Levels 50-53
+
+All times: Crobat 30%, Wobbuffet 20%, Golem 15%, Clefairy 15%, Ursaring 10%, Houndoom 5%, Dunsparce 5%
+Water: Magikarp 95%, Gyarados 5%
+Old Rod: Magikarp 85%, Krabby 15%
+Good Rod: Krabby 55%, Magikarp 35%, Staryu 10%
+Super Rod: Krabby 60%, Staryu 30%, Kingler 10%
+
 
 Headbutt Trees
 

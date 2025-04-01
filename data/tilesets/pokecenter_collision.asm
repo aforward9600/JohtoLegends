@@ -48,3 +48,5 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 2f
 	tilecoll WALL, WALL, FLOOR, WALL ; 30
 	tilecoll DOOR, DOOR, FLOOR, FLOOR ; 31
+	tilecoll WALL, WALL, WALL, WALL ; 32
+	tilecoll WALL, TOWN_MAP, WALL, FLOOR ; 33
