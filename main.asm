@@ -176,6 +176,10 @@ SECTION "Battle Core 2", ROMX
 INCLUDE "data/battle/effect_command_pointers.asm"
 
 
+SECTION "Battle Core 4", ROMX
+
+INCLUDE "engine/battle/core2.asm"
+
 SECTION "bank10", ROMX
 
 INCLUDE "data/moves/moves.asm"
@@ -276,11 +280,9 @@ SECTION "Crystal Phone Text", ROMX
 
 INCLUDE "data/phone/text/irwin_caller.asm"
 INCLUDE "data/phone/text/arnie_caller.asm"
-INCLUDE "data/phone/text/alan_caller.asm"
 INCLUDE "data/phone/text/dana_caller.asm"
 INCLUDE "data/phone/text/chad_caller.asm"
 INCLUDE "data/phone/text/derek_caller.asm"
-INCLUDE "data/phone/text/tully_caller.asm"
 INCLUDE "data/phone/text/brent_caller.asm"
 INCLUDE "data/phone/text/tiffany_caller.asm"
 INCLUDE "data/phone/text/vance_caller.asm"
@@ -369,11 +371,9 @@ INCLUDE "data/phone/text/todd_overworld.asm"
 INCLUDE "data/phone/text/gina_overworld.asm"
 INCLUDE "data/phone/text/irwin_overworld.asm"
 INCLUDE "data/phone/text/arnie_overworld.asm"
-INCLUDE "data/phone/text/alan_overworld.asm"
 INCLUDE "data/phone/text/dana_overworld.asm"
 INCLUDE "data/phone/text/chad_overworld.asm"
 INCLUDE "data/phone/text/derek_overworld.asm"
-INCLUDE "data/phone/text/tully_overworld.asm"
 INCLUDE "data/phone/text/brent_overworld.asm"
 INCLUDE "data/phone/text/tiffany_overworld.asm"
 INCLUDE "data/phone/text/vance_overworld.asm"
@@ -401,7 +401,6 @@ INCLUDE "engine/phone/scripts/mom.asm"
 INCLUDE "engine/phone/scripts/bill.asm"
 INCLUDE "engine/phone/scripts/elm.asm"
 INCLUDE "engine/phone/scripts/jack.asm"
-INCLUDE "engine/phone/scripts/beverly.asm"
 INCLUDE "engine/phone/scripts/huey.asm"
 INCLUDE "engine/phone/scripts/beth.asm"
 INCLUDE "engine/phone/scripts/jose.asm"
@@ -414,10 +413,8 @@ INCLUDE "engine/phone/scripts/todd.asm"
 INCLUDE "engine/phone/scripts/gina.asm"
 INCLUDE "engine/phone/scripts/irwin.asm"
 INCLUDE "engine/phone/scripts/arnie.asm"
-INCLUDE "engine/phone/scripts/alan.asm"
 INCLUDE "engine/phone/scripts/chad.asm"
 INCLUDE "engine/phone/scripts/derek.asm"
-INCLUDE "engine/phone/scripts/tully.asm"
 INCLUDE "engine/phone/scripts/brent.asm"
 INCLUDE "engine/phone/scripts/tiffany.asm"
 INCLUDE "engine/phone/scripts/vance.asm"
@@ -594,7 +591,6 @@ SECTION "Crystal Phone Text 2", ROMX
 
 INCLUDE "data/phone/text/bike_shop.asm"
 INCLUDE "data/phone/text/jack_caller.asm"
-INCLUDE "data/phone/text/beverly_caller.asm"
 INCLUDE "data/phone/text/huey_caller.asm"
 INCLUDE "data/phone/text/gaven_caller.asm"
 INCLUDE "data/phone/text/beth_caller.asm"
@@ -628,7 +624,6 @@ SECTION "Phone Text 2", ROMX
 
 INCLUDE "data/text/std_text.asm"
 INCLUDE "data/phone/text/jack_overworld.asm"
-INCLUDE "data/phone/text/beverly_overworld.asm"
 INCLUDE "data/phone/text/huey_overworld.asm"
 INCLUDE "data/phone/text/gaven_overworld.asm"
 INCLUDE "data/phone/text/beth_overworld.asm"
@@ -645,7 +640,6 @@ SECTION "Special Phone Text", ROMX
 INCLUDE "data/phone/text/mom.asm"
 INCLUDE "data/phone/text/bill.asm"
 INCLUDE "data/phone/text/elm.asm"
-INCLUDE "data/phone/text/alan_callee.asm"
 INCLUDE "data/phone/text/unused.asm"
 
 

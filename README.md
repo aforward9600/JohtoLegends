@@ -12,12 +12,12 @@ Features
 
 Thanks to the expansion, we were able to go beyond the usual 256 limit, and
 now there are 323 Pokémon from Generations 1-4, 6, 8, and 9, as well as several
-Fakemon. There are also 405 moves, ranging from Generations 1-9, and a few
+Fakemon. There are also 406 moves, ranging from Generations 1-9, and a few
 original moves.
 
-There are three versions: Original, Faithful and Challenge. Faithful version
-does not have the type-changes, nor the Physical/Special Split. Challenge
-Mode has level-caps, the inability to use items in trainer battles, no EVs,
+There are four versions: Original, Faithful, No PSS and Challenge. Faithful version
+does not have the type-changes, while No PSS also does not have the type changes
+nor the Physical/Special Split. Challenge Mode has level-caps, the inability to use items in trainer battles, no EVs,
 and higher IVs for opponents.
 
 Moves have been altered to fit their more modern versions.
@@ -26,7 +26,11 @@ Physical/Special Split.
 
 Added the Fairy-type, Running Shoes, B2W2 Repel system, infinite use TMs.
 
+Visible DVs and EVs on the stats screen.
+
 Pokémon Glazed inspired rematch system with certain trainers.
+
+New swarms with increased shiny odds.
 
 Increased and altered base stats for Pokémon that originally had sub-500 BST.
 
@@ -43,6 +47,8 @@ New music.
 
 New trainer sprites and classes.
 
+A new bag pocket for Berries as well as the EV lowering berries.
+
 A list of major gameplay changes can be found in the file 
 
 
@@ -53,27 +59,31 @@ Download a ROM of Crystal with the name: Pokemon - Crystal Version (UE) (V1.1) [
 
 It has to be v1.1 for the patch to work.
 
-Below is a link to the current patch, Version 0.4.5.2 Beta.
+Below is a link to the current patch, Version 0.6.8 Beta.
 
-https://www.mediafire.com/file/u0zbpjjljsl8tco/johtolegendsv0.4.5.2.ips/file
+https://www.mediafire.com/file/hqq7j43o8v464a4/johtolegendsv0.6.8.ips/file
 
 Faithful:
 
-https://www.mediafire.com/file/j1glh9ab5qkmn7y/johtolegendsfaithfulv0.4.5.2.ips/file
+https://www.mediafire.com/file/n98dtodl98c8vnq/johtolegendsfaithfulv0.6.8.ips/file
+
+No PSS
+
+https://www.mediafire.com/file/fw8ckc33omav7br/johtolegendsnopssv0.6.8.ips/file
 
 Challenge:
 
-https://www.mediafire.com/file/t07xrbb3z8mrul3/johtolegendschallengev0.4.5.2.ips/file
+https://www.mediafire.com/file/18qo45iz4gncvah/johtolegendschallengev0.6.8.ips/file
 
 Patch the ROM with the patch, and it is all set.
+
+If you want to build it yourself, follow the regular steps for cloning a repository
+and use rgbds v0.4.1.
 
 Please use an accurate emulator, such as BGB64 or mGBA. BGB64 is a debugger, and
 thus you will need to run without breaks, and can be done by pressing
 Shift + F9. Otherwise, you will be interrupted constantly. Emulators such as
 VBA and MyOldBoy will not emulate the hack correctly.
-
-If you are knowledgeable on downloading Github depositories, then feel free
-to clone and make the ROM from the repository.
 
 https://github.com/aforward9600/JohtoLegends
 

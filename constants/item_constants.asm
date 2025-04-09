@@ -100,7 +100,7 @@
 	const LIFE_ORB     ; 63
 	const CHOICE_BAND  ; 65
 	const BLACKGLASSES ; 66
-	const SLOWPOKETAIL ; 67 unused
+	const MACHO_BRACE  ; 67
 	const PINK_BOW     ; 68
 	const STICK        ; 69
 	const SMOKE_BALL   ; 6a

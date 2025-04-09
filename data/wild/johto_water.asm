@@ -74,24 +74,24 @@ JohtoWaterWildMons:
 
 	map_id WHIRL_ISLAND_SW
 	db 4 percent ; encounter rate
-	dbw 20, TENTACOOL
-	dbw 15, HORSEA
-	dbw 20, TENTACRUEL
-	dbw 20, TENTACRUEL
+	dbw 30, TENTACOOL
+	dbw 25, HORSEA
+	dbw 30, TENTACRUEL
+	dbw 30, TENTACRUEL
 
 	map_id WHIRL_ISLAND_B2F
 	db 4 percent ; encounter rate
-	dbw 15, HORSEA
-	dbw 20, HORSEA
-	dbw 20, TENTACRUEL
-	dbw 20, TENTACRUEL
+	dbw 25, HORSEA
+	dbw 30, HORSEA
+	dbw 30, TENTACRUEL
+	dbw 30, TENTACRUEL
 
 	map_id WHIRL_ISLAND_LUGIA_CHAMBER
 	db 4 percent ; encounter rate
-	dbw 20, HORSEA
-	dbw 20, TENTACRUEL
-	dbw 20, SEADRA
-	dbw 20, SEADRA
+	dbw 30, HORSEA
+	dbw 30, TENTACRUEL
+	dbw 30, SEADRA
+	dbw 30, SEADRA
 
 	map_id SILVER_CAVE_ROOM_2
 	db 2 percent ; encounter rate

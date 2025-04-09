@@ -113,6 +113,7 @@ ItemNameOrder:
 	db LIGHT_BALL
 	db LUCKY_EGG
 	db LUCKY_PUNCH
+	db MACHO_BRACE
 	db MAGNET
 	db METAL_POWDER
 	db MIRACLE_SEED
@@ -152,7 +153,6 @@ ItemNameOrder:
 	db PEARL
 	db BIG_PEARL
 	db NUGGET
-	db SLOWPOKETAIL
 
 	; Mail
 	db EON_MAIL

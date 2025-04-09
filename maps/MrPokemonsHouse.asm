@@ -7,37 +7,6 @@ MrPokemonsHouse_MapScripts:
 
 	db 0 ; callbacks
 
-.MrPokemonEvent:
-	showemote EMOTE_SHOCK, MRPOKEMONSHOUSE_GENTLEMAN, 15
-	turnobject MRPOKEMONSHOUSE_GENTLEMAN, DOWN
-	opentext
-	writetext MrPokemonIntroText1
-	waitbutton
-	closetext
-	applymovement PLAYER, MrPokemonsHouse_PlayerWalksToMrPokemon
-	opentext
-	writetext MrPokemonIntroText2
-	buttonsound
-	waitsfx
-	giveitem FOCUS_SASH
-	writetext MrPokemonsHouse_GotEggText
-	playsound SFX_KEY_ITEM
-	waitsfx
-	itemnotify
-	setevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
-	blackoutmod CHERRYGROVE_CITY
-	writetext MrPokemonIntroText3
-	buttonsound
-	turnobject MRPOKEMONSHOUSE_GENTLEMAN, RIGHT
-	writetext MrPokemonIntroText4
-	buttonsound
-	turnobject MRPOKEMONSHOUSE_GENTLEMAN, DOWN
-	turnobject MRPOKEMONSHOUSE_OAK, LEFT
-	writetext MrPokemonIntroText5
-	waitbutton
-	closetext
-	sjump MrPokemonsHouse_OakScript
-
 MrPokemonsHouse_MrPokemonScript:
 	faceplayer
 	opentext

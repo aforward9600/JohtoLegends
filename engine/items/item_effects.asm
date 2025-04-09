@@ -107,7 +107,7 @@ ItemEffects:
 	dw NoEffect            ; LIFE_ORB
 	dw NoEffect            ; CHOICE_BAND
 	dw NoEffect            ; BLACKGLASSES
-	dw NoEffect            ; SLOWPOKETAIL
+	dw NoEffect            ; MACHO_BRACE
 	dw NoEffect            ; PINK_BOW
 	dw NoEffect            ; STICK
 	dw NoEffect            ; SMOKE_BALL
@@ -1260,7 +1260,7 @@ VitaminEffect:
 
 	add hl, bc
 	ld a, [hl]
-	cp 100
+	cp 200
 	jr nc, NoEffectMessage
 
 	add e

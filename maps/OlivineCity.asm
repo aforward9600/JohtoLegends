@@ -112,6 +112,26 @@ OlivineRocketScript:
 
 OlivineCitySailor2Script:
 	jumptextfaceplayer OlivineCitySailor2Text
+;	faceplayer
+;	opentext
+;	checkevent EVENT_GOT_MACHO_BRACE
+;	iftrue .AfterMachoBrace
+;	writetext MachoBraceText
+;	buttonsound
+;	verbosegiveitem MACHO_BRACE
+;	iffalse .NoRoom
+;	setevent EVENT_GOT_MACHO_BRACE
+;.AfterMachoBrace
+;	writetext OlivineCitySailor2Text
+;	waitbutton
+;	closetext
+;	end
+
+;.NoRoom:
+;	writetext NoRoomMachoBraceText
+;	waitbutton
+;	closetext
+;	end
 
 OlivineCitySign:
 	jumptext OlivineCitySignText
@@ -206,6 +226,21 @@ OlivineCityStandingYoungsterPokedexText:
 	line "awesome."
 	done
 
+MachoBraceText:
+	text "Wanna make your"
+	line "#mon tougher?"
+
+	para "Give this to them"
+	line "and you'll see"
+	cont "results!"
+	done
+
+NoRoomMachoBraceText:
+	text "Hey! There's no"
+	line "room in your pack"
+	cont "for this!"
+	done
+
 OlivineCitySailor2Text:
 	text "The sea is sweet!"
 
@@ -216,6 +251,12 @@ OlivineCitySailor2Text:
 	line "Yo-ho! Blow the"
 	cont "man down!…"
 	done
+;	text "How's that Macho"
+;	line "Brace treatin' ya?"
+
+;	para "You feeling any"
+;	line "stronger yet?"
+;	done
 
 DoingMaintenanceText:
 	text "Sorry, but we're"

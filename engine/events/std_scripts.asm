@@ -717,7 +717,6 @@ AskNumber1MScript:
 	farwritetext ArnieAskNumber1Text
 	end
 .Alan:
-	farwritetext AlanAskNumber1Text
 	end
 .Chad:
 	farwritetext ChadAskNumber1Text
@@ -726,7 +725,6 @@ AskNumber1MScript:
 	farwritetext DerekAskNumber1Text
 	end
 .Tully:
-	farwritetext TullyAskNumber1Text
 	end
 .Brent:
 	farwritetext BrentAskNumber1Text
@@ -794,7 +792,6 @@ AskNumber2MScript:
 	farwritetext ArnieAskNumber2Text
 	end
 .Alan:
-	farwritetext AlanAskNumber2Text
 	end
 .Chad:
 	farwritetext ChadAskNumber2Text
@@ -803,7 +800,6 @@ AskNumber2MScript:
 	farwritetext DerekAskNumber2Text
 	end
 .Tully:
-	farwritetext TullyAskNumber2Text
 	end
 .Brent:
 	farwritetext BrentAskNumber2Text
@@ -895,9 +891,6 @@ NumberAcceptedMScript:
 	closetext
 	end
 .Alan:
-	farwritetext AlanNumberAcceptedText
-	waitbutton
-	closetext
 	end
 .Chad:
 	farwritetext ChadNumberAcceptedText
@@ -910,9 +903,6 @@ NumberAcceptedMScript:
 	closetext
 	end
 .Tully:
-	farwritetext TullyNumberAcceptedText
-	waitbutton
-	closetext
 	end
 .Brent:
 	farwritetext BrentNumberAcceptedText
@@ -1007,9 +997,6 @@ NumberDeclinedMScript:
 	closetext
 	end
 .Alan:
-	farwritetext AlanNumberDeclinedText
-	waitbutton
-	closetext
 	end
 .Chad:
 	farwritetext ChadNumberDeclinedText
@@ -1022,9 +1009,6 @@ NumberDeclinedMScript:
 	closetext
 	end
 .Tully:
-	farwritetext TullyNumberDeclinedText
-	waitbutton
-	closetext
 	end
 .Brent:
 	farwritetext BrentNumberDeclinedText
@@ -1119,9 +1103,6 @@ PhoneFullMScript:
 	closetext
 	end
 .Alan:
-	farwritetext AlanPhoneFullText
-	waitbutton
-	closetext
 	end
 .Chad:
 	farwritetext ChadPhoneFullText
@@ -1134,9 +1115,6 @@ PhoneFullMScript:
 	closetext
 	end
 .Tully:
-	farwritetext TullyPhoneFullText
-	waitbutton
-	closetext
 	end
 .Brent:
 	farwritetext BrentPhoneFullText
@@ -1223,9 +1201,6 @@ RematchMScript:
 	closetext
 	end
 .Alan:
-	farwritetext AlanRematchText
-	waitbutton
-	closetext
 	end
 .Chad:
 	farwritetext ChadRematchText
@@ -1233,9 +1208,6 @@ RematchMScript:
 	closetext
 	end
 .Tully:
-	farwritetext TullyRematchText
-	waitbutton
-	closetext
 	end
 .Brent:
 	farwritetext BrentRematchText
@@ -1277,16 +1249,12 @@ GiftMScript:
 	buttonsound
 	end
 .Alan:
-	farwritetext AlanGiftText
-	buttonsound
 	end
 .Derek:
 	farwritetext DerekGiftText
 	buttonsound
 	end
 .Tully:
-	farwritetext TullyGiftText
-	buttonsound
 	end
 .Wilton:
 	farwritetext WiltonGiftText
@@ -1326,9 +1294,6 @@ PackFullMScript:
 	closetext
 	end
 .Alan:
-	farwritetext AlanPackFullText
-	waitbutton
-	closetext
 	end
 .Derek:
 	farwritetext DerekPackFullText
@@ -1336,9 +1301,6 @@ PackFullMScript:
 	closetext
 	end
 .Tully:
-	farwritetext TullyPackFullText
-	waitbutton
-	closetext
 	end
 .Vance:
 	farwritetext VancePackFullText
@@ -1392,7 +1354,6 @@ AskNumber1FScript:
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
-	farwritetext BeverlyAskNumber1Text
 	end
 .Beth:
 	farwritetext BethAskNumber1Text
@@ -1424,7 +1385,6 @@ AskNumber2FScript:
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
-	farwritetext BeverlyAskNumber2Text
 	end
 .Beth:
 	farwritetext BethAskNumber2Text
@@ -1463,9 +1423,6 @@ NumberAcceptedFScript:
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
-	farwritetext BeverlyNumberAcceptedText
-	waitbutton
-	closetext
 	end
 .Beth:
 	farwritetext BethNumberAcceptedText
@@ -1509,9 +1466,6 @@ NumberDeclinedFScript:
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
-	farwritetext BeverlyNumberDeclinedText
-	waitbutton
-	closetext
 	end
 .Beth:
 	farwritetext BethNumberDeclinedText
@@ -1555,9 +1509,6 @@ PhoneFullFScript:
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
-	farwritetext BeverlyPhoneFullText
-	waitbutton
-	closetext
 	end
 .Beth:
 	farwritetext BethPhoneFullText
@@ -1637,8 +1588,6 @@ GiftFScript:
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 
 .Beverly:
-	farwritetext BeverlyGiftText
-	buttonsound
 	end
 .Gina:
 	farwritetext GinaGiftText
@@ -1657,9 +1606,6 @@ PackFullFScript:
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
-	farwritetext BeverlyPackFullText
-	waitbutton
-	closetext
 	end
 .Gina:
 	farwritetext GinaPackFullText

@@ -2760,7 +2760,10 @@ wBattleAnimBank::    db
 wEventFlags:: flag_array NUM_EVENTS ; da72
 ; db6c
 
-	ds 6
+wPokerusBuffer::     db
+wMachoBraceBuffer::  db
+
+	ds 4
 
 wCurBox:: db ; db72
 

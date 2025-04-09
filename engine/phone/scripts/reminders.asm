@@ -1,25 +1,19 @@
 JackWantsBattleScript:
-	farwritetext UnknownText_0x174638
 	end
 
 HueyWantsBattleScript:
-	farwritetext UnknownText_0x1749c7
 	end
 
 UnknownScript_0xa0a37:
-	farwritetext UnknownText_0x174c49
 	end
 
 BethBattleReminderScript:
-	farwritetext BethForgetDealText
 	end
 
 UnknownScript_0xa0a41:
-	farwritetext UnknownText_0x17520a
 	end
 
 UnknownScript_0xa0a46:
-	farwritetext UnknownText_0x1754e5
 	end
 
 UnknownScript_0xa0a4b:
@@ -55,7 +49,6 @@ UnknownScript_0xa0a6e:
 	end
 
 UnknownScript_0xa0a73:
-	farwritetext UnknownText_0x64ed4
 	end
 
 UnknownScript_0xa0a78:
@@ -67,7 +60,6 @@ UnknownScript_0xa0a7d:
 	end
 
 UnknownScript_0xa0a82:
-	farwritetext UnknownText_0x66043
 	end
 
 UnknownScript_0xa0a87:

@@ -108,8 +108,6 @@ Phone_WhosBragging_Male:
 	end
 
 .Alan:
-	farwritetext AlanGettingStrongerText
-	buttonsound
 	end
 
 .Chad:
@@ -123,8 +121,6 @@ Phone_WhosBragging_Male:
 	end
 
 .Tully:
-	farwritetext TullyGrownText
-	buttonsound
 	end
 
 .Brent:
@@ -158,8 +154,6 @@ Phone_WhosBragging_Female:
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
-	farwritetext UnknownText_0x174688
-	buttonsound
 	end
 
 .Beth:
@@ -246,8 +240,6 @@ Phone_WhoDefeatedMon_Male:
 	end
 
 .Alan:
-	farwritetext UnknownText_0x64cf3
-	buttonsound
 	end
 
 .Chad:
@@ -261,8 +253,6 @@ Phone_WhoDefeatedMon_Male:
 	end
 
 .Tully:
-	farwritetext UnknownText_0x65e42
-	buttonsound
 	end
 
 .Brent:
@@ -296,8 +286,6 @@ Phone_WhoDefeatedMon_Female:
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
-	farwritetext UnknownText_0x1746c3
-	buttonsound
 	end
 
 .Beth:
@@ -384,8 +372,6 @@ Phone_WhoLostAMon_Male:
 	end
 
 .Alan:
-	farwritetext UnknownText_0x64d4f
-	buttonsound
 	end
 
 .Chad:
@@ -399,8 +385,6 @@ Phone_WhoLostAMon_Male:
 	end
 
 .Tully:
-	farwritetext UnknownText_0x65eac
-	buttonsound
 	end
 
 .Brent:
@@ -434,8 +418,6 @@ Phone_WhoLostAMon_Female:
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
-	farwritetext UnknownText_0x174734
-	buttonsound
 	end
 
 .Beth:
@@ -535,8 +517,6 @@ PhoneScript_RematchText_Male:
 	end
 
 .Alan:
-	farwritetext UnknownText_0x64da4
-	buttonsound
 	end
 
 .Chad:
@@ -545,8 +525,6 @@ PhoneScript_RematchText_Male:
 	end
 
 .Tully:
-	farwritetext UnknownText_0x65f17
-	buttonsound
 	end
 
 .Brent:
@@ -674,7 +652,6 @@ PhoneScript_HangupText_Male:
 	end
 
 .Alan:
-	farwritetext UnknownText_0x64e1f
 	end
 
 .Chad:
@@ -686,7 +663,6 @@ PhoneScript_HangupText_Male:
 	end
 
 .Tully:
-	farwritetext UnknownText_0x65f6e
 	end
 
 .Brent:
@@ -720,7 +696,6 @@ PhoneScript_HangupText_Female:
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
-	farwritetext UnknownText_0x1747ac
 	end
 
 .Beth:
@@ -825,7 +800,6 @@ PhoneScript_FoundItem_Male:
 	end
 
 .Alan:
-	farwritetext UnknownText_0x64e2f
 	end
 
 .Derek:
@@ -833,7 +807,6 @@ PhoneScript_FoundItem_Male:
 	end
 
 .Tully:
-	farwritetext UnknownText_0x65f88
 	end
 
 .Wilton:
@@ -847,7 +820,6 @@ PhoneScript_FoundItem_Female:
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 
 .Beverly:
-	farwritetext BeverlyFoundNuggetText
 	end
 
 .Gina:

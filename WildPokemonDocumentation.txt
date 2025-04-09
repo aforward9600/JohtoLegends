@@ -2,6 +2,8 @@ Wild Pokémon Documentation
 
 (Evening encounters are the same as night, water and fishing have their own levels)
 
+Johto:
+
 Route 45
 
 Levels 2-5
@@ -357,6 +359,19 @@ Good Rod: Krabby 55%, Magikarp 35%, Staryu 10%
 Super Rod: Krabby 60%, Staryu 30%, Kingler 10%
 
 
+Whirl Islands
+
+Levels 30-34
+
+Morning/Day: Krabby 45%, Seel 24%, Zubat 20%, Golbat 10%, Dewgong 1%
+Night: Krabby 60%, Zubat 20%, Golbat 19%, Dewgong 1%
+Water SW: Tentacool 60%, Horsea 20%, Tentacruel 20%
+Water B2F: Horsea 80%, Tentacruel 20%
+Water Lugia Chamber: Horsea 60%, Tentacruel 20%, Seadra 20%
+Old Rod: Magikarp 85%, Krabby 15%
+Good Rod: Krabby 55%, Magikarp 35%, Horsea 10%
+Super Rod: Krabby 40%, Horsea 30%, Kingler 20%, Seadra 10%
+
 Ilex Forest
 
 Levels 37-40
@@ -521,6 +536,22 @@ Night: Raticate 35%, Ampharos 30%, Murkrow 20%, Gardevoir 15%, Noctowl 10%
 
 Route 46
 
+Levels 50-56
+
+Morning/Day: Golem 30%, Fearow 20%, Skarmory 15%, Rhydon 15%, Donphan 10%, Gligar 10%
+Night: Golem 30%, Noctowl 20%, Skarmory 15%, Rhydon 15%, Donphan 10%, Gligar 10%
+
+
+Dragon's Den
+
+Levels 20-53
+
+All Times: Dratini 30%, Larvitar 20%, Dragonair 15%, Pupitar 15%, Bagon 9%, Shelgon 1%
+Water: Magikarp 80%, Dratini 15%, Gyarados 5%
+Old Rod: Magikarp 100%
+Good Rod: Magikarp 90%, Dratini 10%
+Super Rod: Magikarp 60%, Dratini 30%, Dragonair 10%
+
 
 Dark Cave Violet/Blackthorn Entrance
 
@@ -532,6 +563,150 @@ Old Rod: Magikarp 85%, Krabby 15%
 Good Rod: Krabby 55%, Magikarp 35%, Staryu 10%
 Super Rod: Krabby 60%, Staryu 30%, Kingler 10%
 
+
+Route 27
+
+Levels 58-65
+
+Morning/Day: Dodrio 45%, Arbok 20%, Raticate 15%, Rapidash 10%, Toxicroak 10%
+Night: Quagsire 45%, Noctowl 30%, Raticate 15%, Toxicroak 10%
+Water: Seadra 60%, Seaking 20%, Cursola 15%, Tentacruel 5%
+Old Rod: Magikarp 85%, Tentacool 15%
+Good Rod: Magikarp 35%, Tentacool 35%, Chinchou 20%, Shellder 10%
+Super Rod: Chinchou 40%, Shellder 30%, Tentacruel 20%, Lanturn 10%
+
+Tohjo Falls
+
+Levels 49-52
+
+All Times: Golbat 45%, Raticate 30%, Slowpoke 20%, Slowbro 4%, Slowking 1%
+Water: Seadra 60%, Seaking 20%, Cursola 15%, Tentacruel 5%
+Old Rod: Magikarp 85%, Goldeen 15%
+Good Rod: Goldeen 65%, Magikarp 35%
+Super Rod: Goldeen 70%, Magikarp 20%, Seaking 10%
+
+
+Route 26
+
+Levels 58-65
+
+Morning/Day: Dodrio 30%, Sandslash 20%, Rapidash 15%, Raticate 15%, Toxicroak 10%, Arbok 10%
+Night: Noctowl 45%, Raticate 35%, Toxicroak 10%, Quagsire 10%
+Water: Seadra 60%, Seaking 20%, Cursola 15%, Tentacruel 5%
+Old Rod: Magikarp 85%, Tentacool 15%
+Good Rod: Magikarp 35%, Tentacool 35%, Chinchou 20%, Shellder 10%
+Super Rod: Chinchou 40%, Shellder 30%, Tentacruel 20%, Lanturn 10%
+
+
+Victory Road:
+
+Levels 59-62
+
+All Times: Golem 30%, Rhyhorn 20%, Steelix 15%, Crobat 15%, Sandslash 10%, Bronzong 5%, Rhydon 5%
+
+
+Route 22
+
+Levels 63-66
+
+All Times: Fearow 45%, Raticate 30%, Dodrio 15%, Rapidash 10%
+Water: Poliwag 80%, Poliwhirl
+Old Rod: Magikarp 85%, Poliwag 15%
+Good Rod: Poliwag 65%, Magikarp 35%
+Super Rod: Poliwag 80%, Magikarp 20%
+
+
+Viridian City
+
+Levels 65-68
+
+Water: Poliwhirl 60%, Seaking 20%, Azumarill 15%, Politoed 5%
+Old Rod: Magikarp 85%, Poliwag 15%
+Good Rod: Poliwag 65%, Magikarp 35%
+Super Rod: Poliwag 80%, Magikarp 20%
+
+
+Route 1
+
+Levels 66-69
+
+Morning/Day: Sunflora 30%, Tangrowth 20%, Mr. Mime 15%, Pidgeot 15%, Furret 10%, Azumarill 5%, Bulbasaur 5%
+Night: Vileplume 30%, Tangrowth 20%, Mr. Mime 15%, Noctowl 15%, Raticate 10%, Azumarill 5%, Bulbasaur 5%
+
+
+Pallet Town
+
+Levels 63-66
+
+Water: Tentacool 80%, Tentacruel 20%
+Old Rod: Magikarp 85%, Tentacool 15%
+Good Rod: Magikarp 35%, Tentacool 35%, Chinchou 20%, Shellder 10%
+Super Rod: Chinchou 40%, Shellder 30%, Tentacruel 20%, Lanturn 10%
+
+
+Route 2
+
+Levels 66-69
+
+Morning/Day: Nidorina 30%, Nidorino 20%, Pidgeot 15%, Ursaluna 15%, Ledian 10%, Pikachu 10%
+Night:  Nidorina 30%, Nidorino 20%, Noctowl 15%, Donphan 15%, Ledian 10%, Pikachu 10%
+
+
+Viridian Forest
+
+Levels 63-66
+
+Morning/Day: Butterfree 30%, Venomoth 20%, Ledian 15%, Parasect 15%, Scyther 10%, Yanmega 5%, Pikachu 4%, Heracross 1%
+Night: Beedrill 30%, Venomoth 20%, Ariados 15%, Parasect 15%, Scyther 10%, Yanmega 5%, Pikachu 4%, Pinsir 1%
+
+
+Diglett's Cave
+
+Levels 66-69
+
+All times: Diglett 80%, Dugtrio 20%
+
+
+Route 3
+
+Levels 67-70
+
+Morning/Day: Sandslash 30%, Arbok 30%, Jigglypuff 30%, Nidoqueen 5%, Nidoking 5%
+Night: Sandslash 30%, Arbok 30%, Jigglypuff 30%, Clefairy 5%, Clefable 5%
+
+
+Mount Moon
+
+Levels 67-70
+
+All times: Golbat 30%, Graveler 20%, Sandslash 15%, Parasect 15%, Golem 10%, Clefairy 9%, Clefable 1%
+
+
+Route 4
+
+Levels 67-70
+
+Morning/Day: Sandslash 30%, Arbok 30%, Jigglypuff 30%, Nidoqueen 5%, Nidoking 5%
+Night: Sandslash 30%, Arbok 30%, Jigglypuff 30%, Clefairy 5%, Clefable 5%
+Water: Goldeen 80%, Seaking 20%
+Old Rod: Magikarp 85%, Goldeen 15%
+Good Rod: Goldeen 65%, Magikarp 35%
+Super Rod: Goldeen 70%, Magikarp 20%, Seaking 10%
+
+
+Route 24
+
+
+Cerulean Cave
+
+Levels 66-69
+
+All times: Rhydon 30%, Golem 20%, Electrode 15%, Crobat 15%, Marowak 10%, Chansey 5%, Blissey 4%, Ditto 1%
+Water 1F: Psyduck 60%, Slowpoke 20%, Golduck 15%, Slowbro 5%
+Water B1F: Psyduck 60%, Slowpoke 20%, Golduck 15%, Slowking 5%
+Old Rod: Magikarp 85%, Krabby 15%
+Good Rod: Krabby 55%, Magikarp 35%, Horsea 10%
+Super Rod: Krabby 40%, Horsea 30%, Kingler 20%, Seadra 10%
 
 Headbutt Trees
 
@@ -584,3 +759,37 @@ Ilex Forest
 Level 30
 
 Noctowl 50%, Pineco 30%, Forretress 10%, Butterfree 5%, Beedrill 5%
+
+
+Viridian Forest
+
+Level 60
+
+Pidgeot 50%, Beedrill 15%, Butterfree 15%, Venomoth 10%, Pinsir 5%, Heracross 5%
+
+Trades
+
+Fossil House Route 42: Bulbasaur for Smoochum
+Fossil House Route 42: Charmander for Elekid
+Fossil House Route 42: Squirtle for Magby
+Olivine City: Bronzor for Duskull
+Cianwood City: Pikachu with Light Ball for Phanpy
+Goldenrod Dept Store 5F: Clefairy for Meowth
+Violet City: Rapidash for Tangela
+Pewter City Pokemon Center: Blissey for Heracross
+Route 14: Dratini for Bagon or Larvitar for Gible
+
+
+Gift Pokemon
+
+Route 43: Togepi egg
+Route 42: Kabuto for Dome Fossil
+Route 42: Omanyte for Helix Fossil
+Route 42: Aerodactyl for Old Amber
+Ecruteak City: Porygon
+Ecruteak Dance Theatre: Eevee
+Wild Area: Gible
+Goldenrod Game Corner: Bronzor
+Goldenrod Game Corner: Cubone
+Goldenrod Game Corner: Bagon
+Day Care Odd Egg: Pichu, Cleffa, Igglybuff, Munchlax, Azurill, Happiny, Tyrogue

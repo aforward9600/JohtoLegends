@@ -93,7 +93,7 @@ ItemNames::
 	db "Life Orb@"
 	db "Choice Band@"
 	db "Blackglasses@"
-	db "Slowpoketail@"
+	db "Macho Brace@"
 	db "Pink Bow@"
 	db "Stick@"
 	db "Smoke Ball@"

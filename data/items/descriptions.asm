@@ -94,7 +94,7 @@ ItemDescriptions:
 	dw LifeOrbDesc
 	dw ChoiceBandDesc
 	dw BlackGlassesDesc
-	dw SlowpokeTailDesc
+	dw MachoBraceDesc
 	dw PinkBowDesc
 	dw StickDesc
 	dw SmokeBallDesc
@@ -627,9 +627,9 @@ BlackGlassesDesc:
 	db   "Powers up dark-"
 	next "type moves. (Hold)@"
 
-SlowpokeTailDesc:
-	db   "Very tasty. Sell"
-	next "high.@"
+MachoBraceDesc:
+	db   "Doubles EV gain,"
+	next "drops speed.(Hold)@"
 
 PinkBowDesc:
 	db   "Powers up normal-"

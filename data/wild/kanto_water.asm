@@ -205,4 +205,18 @@ KantoWaterWildMons:
 	dbw 68, GOLDUCK
 	dbw 68, SLOWBRO
 
+	map_id CERULEAN_CAVE_1F
+	db 6 percent
+	dbw 65, PSYDUCK
+	dbw 65, SLOWPOKE
+	dbw 65, GOLDUCK
+	dbw 65, SLOWBRO
+
+	map_id CERULEAN_CAVE_B1F
+	db 6 percent
+	dbw 65, PSYDUCK
+	dbw 65, SLOWPOKE
+	dbw 65, GOLDUCK
+	dbw 65, SLOWKING
+
 	db -1 ; end

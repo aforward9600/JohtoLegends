@@ -5035,6 +5035,9 @@ CalcPlayerStats:
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
 
+;	ld hl, MachoBraceEffectOnSpeed
+;	call CallBattleCore
+
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
 
@@ -5054,6 +5057,9 @@ CalcEnemyStats:
 
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
+
+;	ld hl, MachoBraceEffectOnSpeed
+;	call CallBattleCore
 
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
