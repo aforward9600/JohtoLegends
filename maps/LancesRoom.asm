@@ -78,8 +78,6 @@ Script_ApproachLanceFromRight:
 	sjump LancesRoomChallengerScript
 
 LancesRoomLanceScript:
-;	checkevent EVENT_CHAMPION_CYNTHIA
-;	iffalse LancesRoomChallengerScript.ChampionCynthia
 	turnobject LANCESROOM_RIVAL, LEFT
 	opentext
 	writetext LooksLikeImTheChampionText
@@ -221,7 +219,7 @@ AfterChampionBattle:
 	stopfollow
 	playsound SFX_EXIT_BUILDING
 	disappear LANCESROOM_OAK2
-	applymovement PLAYER, LancesRoomMovementData_PlayerExits
+	applymovement PLAYER, LancesRoomMovementData_LanceLeadsPlayerToHallOfFame
 	playsound SFX_EXIT_BUILDING
 	disappear PLAYER
 	special FadeOutPalettes
@@ -348,11 +346,9 @@ LancesRoomChallengerScript:
 	sjump .StartBattle
 
 .StartBattle:
-;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-;	ifequal LOSE, .AfterChampionLoss
 	sjump AfterChampionBattle
 
 .CynthiaCanAppear:
@@ -360,24 +356,6 @@ LancesRoomChallengerScript:
 	ifequal MONDAY, .CynthiaAppears
 	ifequal WEDNESDAY, .CynthiaAppears
 	sjump .CynthiaDoesNotAppear
-
-;.AfterChampionLoss:
-;	pause 15
-;	opentext
-;	writetext BetterLuckNextTimeText
-;	waitbutton
-;	closetext
-;	special HealParty
-;	special FadeBlackQuickly
-;	special ReloadSpritesNoPalettes
-;	pause 30
-;	warp ROUTE_23, 9, 6
-;	turnobject PLAYER, DOWN
-;	blackoutmod ROUTE_23
-;	clearevent EVENT_CURRENTLY_CHAMPION
-;	clearevent EVENT_CHAMPION_RIVAL
-;	setevent EVENT_CHALLENGER_RIVAL
-;	end
 
 .CynthiaAppears:
 	pause 30
@@ -396,12 +374,9 @@ LancesRoomChallengerScript:
 	winlosstext CynthiaWinText, CynthiaLastMonText
 	setlasttalked LANCESROOM_CYNTHIA2
 	loadtrainer CHALLENGER_CYNTHIA, CHALLENGER_CYNTHIA_1
-;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-;	ifequal LOSE, .AfterCynthiaLoss
-; Winning and Losing code not working for Cynthia
 .AfterCynthiaBattle:
 	opentext
 	writetext CynthiaBattleAfterText
@@ -449,7 +424,7 @@ LancesRoomChallengerScript:
 	stopfollow
 	playsound SFX_EXIT_BUILDING
 	disappear LANCESROOM_OAK2
-	applymovement PLAYER, LancesRoomMovementData_PlayerExits
+	applymovement PLAYER, LancesRoomMovementData_LanceLeadsPlayerToHallOfFame
 	playsound SFX_EXIT_BUILDING
 	disappear PLAYER
 	special FadeOutPalettes
@@ -465,40 +440,10 @@ LancesRoomChallengerScript:
 	winlosstext CynthiaWinText, CynthiaLastMonText
 	setlasttalked LANCESROOM_CYNTHIA2
 	loadtrainer CHALLENGER_CYNTHIA, CHALLENGER_CYNTHIA_2
-;	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .AfterCynthiaBattle
-
-.AfterCynthiaLoss:
-	pause 15
-	opentext
-	writetext LooksLikeImTheNewChampionText
-	waitbutton
-	closetext
-	special HealParty
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	pause 30
-	warp ROUTE_23, 9, 6
-	turnobject PLAYER, DOWN
-	blackoutmod ROUTE_23
-	clearevent EVENT_CURRENTLY_CHAMPION
-	clearevent EVENT_CHAMPION_CYNTHIA
-	setevent EVENT_CHALLENGER_CYNTHIA
-	end
-
-.ChampionCynthia:
-	turnobject LANCESROOM_CYNTHIA, LEFT
-	pause 15
-	musicfadeout MUSIC_CYNTHIA_ENCOUNTER, 16
-	opentext
-	writetext CynthiaRematchText
-	waitbutton
-	closetext
-	setlasttalked LANCESROOM_CYNTHIA
-	sjump .CynthiaReconverge
 
 CynthiaLastMonText:
 	text "This is nostalgic,"
@@ -531,21 +476,6 @@ LancesRoomMovementData_OakCongratulatesYou:
 	step UP
 	step_end
 
-LancesRoomMovementData_OakWalksIn:
-	step UP
-	step UP
-	step_end
-
-LancesRoomMovementData_MaryYieldsToOak:
-	step LEFT
-	turn_head RIGHT
-	step_end
-
-LancesRoomMovementData_MaryInterviewChampion:
-	big_step UP
-	turn_head RIGHT
-	step_end
-
 LancesRoomMovementData_OakPositionsSelfToGuidePlayerAway:
 	step LEFT
 	step UP
@@ -556,30 +486,6 @@ LancesRoomMovementData_OakPositionsSelfToGuidePlayerAway:
 
 LancesRoomMovementData_LanceLeadsPlayerToHallOfFame:
 	step UP
-	step_end
-
-LancesRoomMovementData_PlayerExits:
-	step UP
-	step_end
-
-LancesRoomMovementData_MaryTriesToFollow:
-	step UP
-	step RIGHT
-	turn_head UP
-	step_end
-
-LancesRoomMovementData_MaryRunsBackAndForth:
-	big_step RIGHT
-	big_step RIGHT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step LEFT
-	big_step LEFT
-	turn_head UP
 	step_end
 
 MoveToChampionSpotFromLeft:

@@ -2548,30 +2548,20 @@ UnevolvedEviolite:
 	ld a, [wTempEnemyMonSpecies]
 
 .got_species
-; check if the defender has any evolutions
-; hl := EvosAttacksPointers + (species - 1) * 2
-	dec a
 	push hl
 	push bc
-	ld c, a
-	ld b, 0
+	call GetPokemonIndexFromID
+	ld b,b
+	ld b, h
+	ld c, l
 	ld hl, EvosAttacksPointers
-	add hl, bc
-	add hl, bc
-; hl := the species' entry from EvosAttacksPointers
 	ld a, BANK(EvosAttacksPointers)
-	call GetFarHalfword
-; a := the first byte of the species' *EvosAttacks data
-	ld a, BANK("Evolutions and Attacks 1")
-	ld a, BANK("Evolutions and Attacks 2")
-	call GetFarByte
-; if a == 0, there are no evolutions, so don't boost stats
-	and a
+	call LoadDoubleIndirectPointer
+	farcall GetFarByte
 	pop bc
 	pop hl
+	and a
 	ret z
-
-	ld b,b
 
 ; check if the defender's item is Eviolite
 	push bc
@@ -2580,6 +2570,8 @@ UnevolvedEviolite:
 	cp HELD_EVIOLITE
 	pop bc
 	ret nz
+
+;	ld b,b
 
 ; boost the relevant defense stat in bc by 50%
 	ld a, c
@@ -2877,8 +2869,6 @@ EnemyAttackDamage:
 	ld d, a
 	and a
 	ret z
-
-	ld b,b
 
 	ld a, [hl]
 	cp SPECIAL

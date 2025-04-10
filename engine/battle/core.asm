@@ -6526,7 +6526,7 @@ MachoBraceEffectOnSpeed:
 
 	cp HELD_MACHO_BRACE
 	ret nz
-	ld b,b
+;	ld b,b
 	jr ApplyPrzEffectOnSpeed.SpeedDrop
 
 ApplyPrzEffectOnSpeed:
@@ -6920,7 +6920,6 @@ GiveExperiencePoints:
 ;	push af
 ;	ld a, [wPokerusBuffer]
 	jr z, .no_pokerus_boost
-;	ld b,b
 ;	pop af
 	add a
 ;	jr .after_pokerus_boost
