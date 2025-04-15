@@ -43,10 +43,12 @@
 	tilecoll WALL, WALL, WALL, WALL ; 2a
 	tilecoll WALL, WALL, WALL, WALL ; 2b
 	tilecoll WALL, WALL, WALL, WALL ; 2c
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2d
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 2d
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 2e
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 2f
 	tilecoll WALL, WALL, FLOOR, WALL ; 30
 	tilecoll DOOR, DOOR, FLOOR, FLOOR ; 31
 	tilecoll WALL, WALL, WALL, WALL ; 32
 	tilecoll WALL, TOWN_MAP, WALL, FLOOR ; 33
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 34
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 35

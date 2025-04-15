@@ -37,16 +37,21 @@ Tileset0Anim:
 TilesetJohtoModernAnim:
 TilesetKantoAnim:
 TilesetKanto2Anim:
-	dw vTiles2 tile $14, AnimateWaterTile
+	dw vTiles2 tile $14, AnimateWaterTile, vTiles2 tile $64, AnimateSeaTile
 	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateWaterPalette
-	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  AnimateWaterPalette
+;	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
-	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
+	dw vTiles2 tile $66, WriteTileToBuffer
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw vTiles2 tile $66, WriteTileFromBuffer
 	dw NULL,  DoneTileAnimation
 
 TilesetFacilityAnim:
@@ -89,9 +94,23 @@ TilesetForestAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetJohtoAnim:
-	dw vTiles2 tile $14, AnimateWaterTile
+;	dw vTiles2 tile $14, AnimateWaterTile
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  AnimateWaterPalette
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  AnimateFlowerTile
+;	dw WhirlpoolFrames1, AnimateWhirlpoolTile
+;	dw WhirlpoolFrames2, AnimateWhirlpoolTile
+;	dw WhirlpoolFrames3, AnimateWhirlpoolTile
+;	dw WhirlpoolFrames4, AnimateWhirlpoolTile
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  StandingTileFrame8
+;	dw NULL,  DoneTileAnimation
+	dw vTiles2 tile $14, AnimateWaterTile, vTiles2 tile $64, AnimateSeaTile
 	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
@@ -99,8 +118,14 @@ TilesetJohtoAnim:
 	dw WhirlpoolFrames2, AnimateWhirlpoolTile
 	dw WhirlpoolFrames3, AnimateWhirlpoolTile
 	dw WhirlpoolFrames4, AnimateWhirlpoolTile
+;	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
+	dw vTiles2 tile $66, WriteTileToBuffer
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw vTiles2 tile $66, WriteTileFromBuffer
 	dw NULL,  DoneTileAnimation
 
 TilesetRoute47Anim:
@@ -248,7 +273,7 @@ TilesetIcePathAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetJohto3Anim:
-	dw vTiles2 tile $14, AnimateWaterTile
+	dw vTiles2 tile $14, AnimateWaterTile, vTiles2 tile $64, AnimateSeaTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -525,6 +550,41 @@ AnimateWaterTile:
 
 WaterTileFrames:
 	INCBIN "gfx/tilesets/water/water.2bpp"
+
+AnimateSeaTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(SeaTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(SeaTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+SeaTileFrames:
+	INCBIN "gfx/tilesets/water/sea.2bpp"
 
 ForestTreeLeftAnimation:
 	ld hl, sp+0

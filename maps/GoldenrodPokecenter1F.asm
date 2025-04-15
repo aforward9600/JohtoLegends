@@ -47,7 +47,6 @@ GoldenrodPokecenter1FPokefanF:
 	end
 
 .NoRoom:
-	giveitem EON_MAIL
 	writetext GoldenrodPokecenter1FPokefanFAnotherTimeThenText
 	waitbutton
 	closetext

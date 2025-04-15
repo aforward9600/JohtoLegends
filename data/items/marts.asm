@@ -45,6 +45,8 @@ Marts:
 	dw MartCherrygroveTMs
 	dw MartMooMooMilk
 	dw MartCinnabarIsland
+	dw MartBerries1
+	dw MartBerries2
 .End
 
 MartCherrygrove:
@@ -538,4 +540,28 @@ MartCinnabarIsland:
 	db REVIVE
 	db MAX_REPEL
 	db PP_UP
+	db -1
+
+MartBerries1:
+	db 9
+	db ORAN_BERRY
+	db SITRUS_BERRY
+	db CHESTO_BERRY
+	db CHERRI_BERRY
+	db PECHA_BERRY
+	db RAWST_BERRY
+	db ASPEAR_BERRY
+	db PERSIM_BERRY
+	db LUM_BERRY
+	db -1
+
+MartBerries2:
+	db 7
+	db LEPPA_BERRY
+	db POMEG_BERRY
+	db KELPSY_BERRY
+	db QUALOT_BERRY
+	db HONDEW_BERRY
+	db GREPA_BERRY
+	db TAMATO_BERRY
 	db -1

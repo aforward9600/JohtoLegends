@@ -3,7 +3,7 @@
 HoOhTowerScene_MapScripts:
 	db 2 ; scene scripts
 	scene_script .HoOhTowerSceneMovement ; SCENE_DEFAULT
-	scene_script .DummyScene0 ; SCENE_FINISHED
+	scene_script .HoOhTowerSceneMovement ; SCENE_FINISHED
 
 	db 0 ; callbacks
 
@@ -56,7 +56,7 @@ HoOhTowerScene_MapEvents:
 
 	db 2 ; warp events
 	warp_event  4,  5, TIN_TOWER_ROOF, 2
-	warp_event  4, 14, DRACO_SCENE, 3
+	warp_event  4, 14, DRACO_SCENE, 1
 
 	db 0 ; coord events
 

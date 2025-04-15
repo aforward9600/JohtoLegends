@@ -10,16 +10,30 @@ GoldenrodFlowerShop_MapScripts:
 FlowerShopFlorinasHusbandScript:
 	faceplayer
 	opentext
+	checkevent EVENT_CURRENTLY_CHAMPION
+	iftrue .BerryMart1
 	writetext GoldenrodFlowerShopFlorinasHusbandText
 	waitbutton
+	closetext
+	end
+
+.BerryMart1
+	pokemart MARTTYPE_BERRIES_1, MART_BERRIES_1
 	closetext
 	end
 
 FlowerShopFlorinasDaughterScript:
 	faceplayer
 	opentext
+	checkevent EVENT_CURRENTLY_CHAMPION
+	iftrue .BerryMart2
 	writetext GoldenrodFlowerShopFlorinasDaughterText
 	waitbutton
+	closetext
+	end
+
+.BerryMart2
+	pokemart MARTTYPE_BERRIES_2, MART_BERRIES_2
 	closetext
 	end
 

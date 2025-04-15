@@ -83,7 +83,7 @@ GoldenrodDeptStore1FLuckyNumber:
 	playsound SFX_2ND_PLACE
 	waitsfx
 	buttonsound
-	giveitem RARE_CANDY
+	giveitem EON_MAIL
 	iffalse .BagFull
 	itemnotify
 	setflag ENGINE_LUCKY_NUMBER_SHOW
@@ -221,8 +221,8 @@ DeptStore1FLuckyNumberOkayMatchText:
 	cont "three numbers!"
 
 	para "You've won second"
-	line "prize, a Rare"
-	cont "Candy!"
+	line "prize, an Eon"
+	cont "Mail!"
 	done
 
 DeptStore1FLuckyNumberWeakMatchText:

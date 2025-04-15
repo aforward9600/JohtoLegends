@@ -101,3 +101,6 @@
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 64
 	tilecoll WALL, WALL, FLOOR, WALL ; 65
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 66
+	tilecoll WATER, WATER, WATER, WATER ; 67
+	tilecoll WATER, WATER, BUOY, BUOY ; 68
+	tilecoll WATER, BUOY, WATER, BUOY ; 69

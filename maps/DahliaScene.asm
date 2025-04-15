@@ -3,7 +3,7 @@
 DahliaScene_MapScripts:
 	db 2 ; scene scripts
 	scene_script .DahliaSceneMovement ; SCENE_DEFAULT
-	scene_script .DummyScene0 ; SCENE_FINISHED
+	scene_script .DahliaSceneMovement ; SCENE_FINISHED
 
 	db 0 ; callbacks
 
@@ -27,7 +27,7 @@ DahliaScene_MapScripts:
 	applymovement PLAYER, ShowPlayerMovementDahliaScene
 	turnobject PLAYER, UP
 	warpcheck
-	sjump .DahliaSceneFinish
+	end
 
 .MaleDahliaScene:
 	pause 50

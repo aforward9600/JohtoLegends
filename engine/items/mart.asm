@@ -26,6 +26,8 @@ OpenMartDialog::
 	dw TMSShop
 	dw BallsShop
 	dw MooMooMilk
+	dw Berries1
+	dw Berries2
 
 MartDialog:
 	ld a, MARTTYPE_STANDARD
@@ -113,6 +115,26 @@ MooMooMilk:
 	call MartTextbox
 	call BuyMenu
 	ld hl, Text_MooMooMilk_ComeAgain
+	call MartTextbox
+	ret
+
+Berries1:
+	call FarReadMart
+	call LoadStandardMenuHeader
+	ld hl, Text_Berries1_Intro
+	call MartTextbox
+	call BuyMenu
+	ld hl, Text_Berries1_ComeAgain
+	call MartTextbox
+	ret
+
+Berries2:
+	call FarReadMart
+	call LoadStandardMenuHeader
+	ld hl, Text_Berries2_Intro
+	call MartTextbox
+	call BuyMenu
+	ld hl, Text_Berries2_ComeAgain
 	call MartTextbox
 	ret
 
@@ -482,6 +504,8 @@ GetMartDialogGroup:
 	dwb .TMSShopPointers, 0
 	dwb .BallsShopPointers, 0
 	dwb .MooMooMilkPointers, 0
+	dwb .Berries1Pointers, 0
+	dwb .Berries2Pointers, 0
 
 .StandardMartPointers:
 	dw Text_Mart_HowMany
@@ -545,6 +569,22 @@ GetMartDialogGroup:
 	dw Text_MooMooMilk_InsufficientFunds
 	dw Text_MooMooMilk_BagFull
 	dw Text_MooMooMilk_HereYouGo
+	dw BuyMenuLoop
+
+.Berries1Pointers:
+	dw Text_Berries1_HowMany
+	dw Text_Berries1_CostsThisMuch
+	dw Text_Berries1_InsufficientFunds
+	dw Text_Berries1_BagFull
+	dw Text_Berries1_HereYouGo
+	dw BuyMenuLoop
+
+.Berries2Pointers:
+	dw Text_Berries2_HowMany
+	dw Text_Berries2_CostsThisMuch
+	dw Text_Berries2_InsufficientFunds
+	dw Text_Berries2_BagFull
+	dw Text_Berries2_HereYouGo
 	dw BuyMenuLoop
 
 BuyMenuLoop:
@@ -1127,4 +1167,60 @@ Text_MooMooMilk_BagFull:
 
 Text_MooMooMilk_HereYouGo:
 	text_far MooMooMilk_HereYouGoText
+	text_end
+
+Text_Berries1_Intro:
+	text_far Berries1_IntroText
+	text_end
+
+Text_Berries1_ComeAgain:
+	text_far Berries1_ComeAgainText
+	text_end
+
+Text_Berries1_HowMany:
+	text_far Berries1_HowManyText
+	text_end
+
+Text_Berries1_CostsThisMuch:
+	text_far Berries1_CostsThisMuchText
+	text_end
+
+Text_Berries1_InsufficientFunds:
+	text_far Berries1_InsufficientFundsText
+	text_end
+
+Text_Berries1_BagFull:
+	text_far Berries1_BagFullText
+	text_end
+
+Text_Berries1_HereYouGo:
+	text_far Berries1_HereYouGoText
+	text_end
+
+Text_Berries2_Intro:
+	text_far Berries2_IntroText
+	text_end
+
+Text_Berries2_ComeAgain:
+	text_far Berries2_ComeAgainText
+	text_end
+
+Text_Berries2_HowMany:
+	text_far Berries2_HowManyText
+	text_end
+
+Text_Berries2_CostsThisMuch:
+	text_far Berries2_CostsThisMuchText
+	text_end
+
+Text_Berries2_InsufficientFunds:
+	text_far Berries2_InsufficientFundsText
+	text_end
+
+Text_Berries2_BagFull:
+	text_far Berries2_BagFullText
+	text_end
+
+Text_Berries2_HereYouGo:
+	text_far Berries2_HereYouGoText
 	text_end

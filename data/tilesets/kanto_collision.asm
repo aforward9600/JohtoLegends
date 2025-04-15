@@ -215,3 +215,21 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d6
 	tilecoll FLOOR, WATER, WATER, WATER ; d7
 	tilecoll FLOOR, FLOOR, WATER, WATER ; d8
+	tilecoll WATER, WATER, WATER, WATER ; d9
+	tilecoll WATER, WATER, WATER, WATER ; da
+	tilecoll WATER, WATER, WATER, WATER ; db
+	tilecoll WATER, WATER, WATER, WATER ; dc
+	tilecoll WATER, WATER, WATER, WATER ; dd
+	tilecoll WATER, WATER, WATER, WATER ; de
+	tilecoll WATER, WATER, WATER, WATER ; df
+	tilecoll WATER, WATER, WATER, WATER ; e0
+	tilecoll WATER, WATER, WATER, WATER ; e1
+	tilecoll WATER, WALL, WATER, WALL ; e2
+	tilecoll WATER, WALL, WATER, WALL ; e3
+	tilecoll WATER, WATER, WALL, WALL ; e4
+	tilecoll WATER, WALL, WALL, WALL ; e5
+	tilecoll WALL, WATER, WALL, WATER ; e6
+	tilecoll WALL, WATER, WALL, WALL ; e7
+	tilecoll WALL, WATER, WALL, WATER ; e8
+	tilecoll WATER, WATER, WATER, WATER ; e9
+	tilecoll FLOOR, WATER, FLOOR, WATER ; ea

@@ -9,6 +9,8 @@
 	const MARTTYPE_TMS
 	const MARTTYPE_BALLS
 	const MARTTYPE_MOOMOO_MILK
+	const MARTTYPE_BERRIES_1
+	const MARTTYPE_BERRIES_2
 
 ; Marts indexes (see data/items/marts.asm)
 	const_def
@@ -57,3 +59,5 @@
 	const MART_CHERRYGROVE_TMS
 	const MART_MOOMOO_MILK
 	const MART_CINNABAR_ISLAND
+	const MART_BERRIES_1
+	const MART_BERRIES_2

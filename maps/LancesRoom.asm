@@ -237,7 +237,7 @@ AfterChampionBattle:
 
 LancesRoomChallengerScript:
 	checkevent EVENT_BEAT_CHERRYGROVE_CYNTHIA
-	iffalse .CynthiaCanAppear
+	iftrue .CynthiaCanAppear
 .CynthiaDoesNotAppear:
 	pause 30
 	appear LANCESROOM_RIVAL2

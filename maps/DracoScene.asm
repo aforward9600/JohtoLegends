@@ -3,7 +3,7 @@
 DracoScene_MapScripts:
 	db 2 ; scene scripts
 	scene_script .DracoSceneMovement ; SCENE_DEFAULT
-	scene_script .DummyScene0 ; SCENE_FINISHED
+	scene_script .DracoSceneMovement ; SCENE_FINISHED
 
 	db 0 ; callbacks
 
@@ -26,7 +26,7 @@ DracoScene_MapScripts:
 	applymovement PLAYER, ShowPlayerMovementDracoScene
 	turnobject PLAYER, UP
 	warpcheck
-	sjump .DracoSceneFinish
+	end
 
 .FemaleDracoScene:
 	pause 50
@@ -35,7 +35,6 @@ DracoScene_MapScripts:
 	turnobject PLAYER, UP
 	special FadeOutPalettes
 	warpcheck
-.DracoSceneFinish
 	end
 
 .DummyScene0:

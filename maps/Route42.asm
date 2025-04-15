@@ -218,7 +218,7 @@ PsychicJordanLetsDoItText:
 	done
 
 PsychicJordanRematchText:
-	text "I forsaw your"
+	text "I foresaw your"
 	line "return."
 
 	para "Shall we battle?"
@@ -227,7 +227,7 @@ PsychicJordanRematchText:
 PsychicJordanRefusedText:
 	text "You will return."
 
-	para "I forsee it."
+	para "I foresee it."
 	done
 
 Route42Sign1Text:
