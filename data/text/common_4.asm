@@ -603,3 +603,11 @@ Berries2_BagFullText::
 Berries2_HereYouGoText::
 	text "Thanks a bunch!"
 	done
+
+Text_AreYouAGirlText::
+	text "Are you a girl?"
+	done
+
+Text_AreYouABoyText::
+	text "Are you a boy?"
+	done

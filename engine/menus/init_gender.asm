@@ -21,8 +21,27 @@ InitCrystalData:
 
 INCLUDE "mobile/mobile_12.asm"
 
-InitGender:
+InitGenderScreenPrep:
+	ld a, $10
+	ld [wMusicFade], a
+	ld a, MUSIC_NONE
+	ld [wMusicFadeID], a
+	ld a, $0
+	ld [wMusicFadeID + 1], a
+	ld c, 8
+	call DelayFrames
+	call ClearBGPalettes
+	call InitCrystalData
+	call LoadFontsExtra
 	call InitGenderScreen
+	call LoadGenderScreenPal
+	call LoadGenderScreenLightBlueTile
+	call WaitBGMap2
+	call SetPalettes
+	ret
+
+InitGender:
+;	call InitGenderScreen
 	call LoadGenderScreenPal
 	call LoadGenderScreenLightBlueTile
 	call WaitBGMap2
@@ -39,6 +58,38 @@ InitGender:
 	ld [wPlayerGender], a
 	ld c, 10
 	call DelayFrames
+
+;	xor a
+	call ClearTileMap
+	farcall DrawIntroPlayerPic
+
+	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	farcall Intro_RotatePalettesLeftFrontpic
+
+	ld a, [wPlayerGender]
+	cp 0
+	jr nz, .AreYouAGirl
+	ld hl, AreYouABoyText
+	call PrintText
+	call YesNoBox
+	jr c, .RestartGender
+	ret
+
+.RestartGender:
+	ld c, 10
+	call DelayFrames
+	farcall RotateThreePalettesRight
+	call ClearTileMap
+	ld c, 10
+	call DelayFrames
+	jr InitGender
+
+.AreYouAGirl
+	ld hl, AreYouAGirlText
+	call PrintText
+	call YesNoBox
+	jr c, .RestartGender
 	ret
 
 .MenuHeader:
@@ -58,18 +109,26 @@ TextJump_AreYouABoyOrAreYouAGirl:
 	text_far Text_AreYouABoyOrAreYouAGirl
 	text_end
 
+AreYouAGirlText:
+	text_far Text_AreYouAGirlText
+	text_end
+
+AreYouABoyText:
+	text_far Text_AreYouABoyText
+	text_end
+
 InitGenderScreen:
-	ld a, $10
-	ld [wMusicFade], a
-	ld a, MUSIC_NONE
-	ld [wMusicFadeID], a
-	ld a, $0
-	ld [wMusicFadeID + 1], a
-	ld c, 8
-	call DelayFrames
-	call ClearBGPalettes
-	call InitCrystalData
-	call LoadFontsExtra
+;	ld a, $10
+;	ld [wMusicFade], a
+;	ld a, MUSIC_NONE
+;	ld [wMusicFadeID], a
+;	ld a, $0
+;	ld [wMusicFadeID + 1], a
+;	ld c, 8
+;	call DelayFrames
+;	call ClearBGPalettes
+;	call InitCrystalData
+;	call LoadFontsExtra
 	hlcoord 0, 0
 	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
 	ld a, $0

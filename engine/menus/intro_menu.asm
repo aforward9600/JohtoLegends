@@ -79,7 +79,7 @@ NewGame:
 AreYouABoyOrAreYouAGirl:
 	farcall Mobile_AlwaysReturnNotCarry ; some mobile stuff
 	jr c, .ok
-	farcall InitGender
+	farcall InitGenderScreenPrep
 	ld hl, TextJump_PasswordOption
 	call PrintText
 	call YesNoBox
@@ -748,13 +748,17 @@ OakSpeech:
 	call RotateThreePalettesRight
 	call ClearTileMap
 
-	xor a
-	ld [wCurPartySpecies], a
-	farcall DrawIntroPlayerPic
+	farcall InitGender
 
-	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
-	call GetSGBLayout
-	call Intro_RotatePalettesLeftFrontpic
+;	xor a
+;	ld [wCurPartySpecies], a
+;	farcall DrawIntroPlayerPic
+
+;	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+;	call GetSGBLayout
+;	call Intro_RotatePalettesLeftFrontpic
+
+;	ld hl, 
 
 	ld hl, OakText6
 	call PrintText
