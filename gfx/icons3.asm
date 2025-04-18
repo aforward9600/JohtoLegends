@@ -2,6 +2,8 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw TeddiursaIcon
+	dw UrsaringIcon
 	dw UrsalunaIcon
 	dw SlugmaIcon
 	dw MagcargoIcon
@@ -54,6 +56,8 @@ Icons3:
 	dw KirliaIcon
 	dw GardevoirIcon
 	dw GalladeIcon
+	dw ShroomishIcon
+	dw BreloomIcon
 	dw AronIcon
 	dw LaironIcon
 	dw AggronIcon
@@ -75,6 +79,8 @@ Icons3:
 	dw NownIcon
 	dw MissingnoIcon
 
+TeddiursaIcon:    INCBIN "gfx/icons/teddiursa.2bpp"
+UrsaringIcon:     INCBIN "gfx/icons/ursaring.2bpp"
 UrsalunaIcon:     INCBIN "gfx/icons/ursaluna.2bpp"
 SlugmaIcon:       INCBIN "gfx/icons/slugma.2bpp"
 MagcargoIcon:     INCBIN "gfx/icons/magcargo.2bpp"
@@ -127,6 +133,8 @@ RaltsIcon:	      INCBIN "gfx/icons/ralts.2bpp"
 KirliaIcon:	      INCBIN "gfx/icons/kirlia.2bpp"
 GardevoirIcon:	  INCBIN "gfx/icons/gardevoir.2bpp"
 GalladeIcon:	  INCBIN "gfx/icons/gallade.2bpp"
+ShroomishIcon:    INCBIN "gfx/icons/shroomish.2bpp"
+BreloomIcon:      INCBIN "gfx/icons/breloom.2bpp"
 AronIcon:	      INCBIN "gfx/icons/aron.2bpp"
 LaironIcon:	      INCBIN "gfx/icons/lairon.2bpp"
 AggronIcon:	      INCBIN "gfx/icons/aggron.2bpp"

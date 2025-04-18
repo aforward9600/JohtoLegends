@@ -143,6 +143,7 @@ PokedexDataPointerTable:
 	dba MrMimePokedexEntry
 	dba ScytherPokedexEntry
 	dba ScizorPokedexEntry
+	dba KleavorPokedexEntry
 	dba SmoochumPokedexEntry
 	dba JynxPokedexEntry
 	dba ElekidPokedexEntry
@@ -245,6 +246,7 @@ PokedexDataPointerTable:
 	dba SnubbullPokedexEntry
 	dba GranbullPokedexEntry
 	dba QwilfishPokedexEntry
+	dba OverqwilPokedexEntry
 	dba ShucklePokedexEntry
 	dba HeracrossPokedexEntry
 	dba SneaselPokedexEntry
@@ -303,6 +305,8 @@ PokedexDataPointerTable:
 	dba KirliaPokedexEntry
 	dba GardevoirPokedexEntry
 	dba GalladePokedexEntry
+	dba ShroomishPokedexEntry
+	dba BreloomPokedexEntry
 	dba AronPokedexEntry
 	dba LaironPokedexEntry
 	dba AggronPokedexEntry

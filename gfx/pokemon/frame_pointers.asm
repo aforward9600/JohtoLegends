@@ -142,6 +142,7 @@ FramesPointers:
 	dba MrMimeFrames
 	dba ScytherFrames
 	dba ScizorFrames
+	dba KleavorFrames
 	dba SmoochumFrames
 	dba JynxFrames
 	dba ElekidFrames
@@ -244,6 +245,7 @@ FramesPointers:
 	dba SnubbullFrames
 	dba GranbullFrames
 	dba QwilfishFrames
+	dba OverqwilFrames
 	dba ShuckleFrames
 	dba HeracrossFrames
 	dba SneaselFrames
@@ -302,6 +304,8 @@ FramesPointers:
 	dba KirliaFrames
 	dba GardevoirFrames
 	dba GalladeFrames
+	dba ShroomishFrames
+	dba BreloomFrames
 	dba AronFrames
 	dba LaironFrames
 	dba AggronFrames

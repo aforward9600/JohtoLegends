@@ -296,6 +296,8 @@ PokemonPicPointers::
 	dba ScytherBackpic
 	dba ScizorFrontpic
 	dba ScizorBackpic
+	dba KleavorFrontpic
+	dba KleavorBackpic
 	dba SmoochumFrontpic
 	dba SmoochumBackpic
 	dba JynxFrontpic
@@ -503,6 +505,8 @@ PokemonPicPointers::
 	dba GranbullBackpic
 	dba QwilfishFrontpic
 	dba QwilfishBackpic
+	dba OverqwilFrontpic
+	dba OverqwilBackpic
 	dba ShuckleFrontpic
 	dba ShuckleBackpic
 	dba HeracrossFrontpic
@@ -619,6 +623,10 @@ PokemonPicPointers::
 	dba GardevoirBackpic
 	dba GalladeFrontpic
 	dba GalladeBackpic
+	dba ShroomishFrontpic
+	dba ShroomishBackpic
+	dba BreloomFrontpic
+	dba BreloomBackpic
 	dba AronFrontpic
 	dba AronBackpic
 	dba LaironFrontpic

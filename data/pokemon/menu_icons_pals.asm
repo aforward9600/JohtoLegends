@@ -154,6 +154,7 @@ MonMenuIconPals:
 	icon_pals PINK,   GREEN  ; MR_MIME
 	icon_pals GREEN,  RED    ; SCYTHER
 	icon_pals RED,    GREEN  ; SCIZOR
+	icon_pals BROWN,  GREEN  ; KLEAVOR
 	icon_pals PINK,   GREEN  ; SMOOCHUM
 	icon_pals RED,    GREEN  ; JYNX
 	icon_pals RED,    PINK   ; ELEKID
@@ -256,6 +257,7 @@ MonMenuIconPals:
 	icon_pals PINK,   BLUE   ; SNUBBULL
 	icon_pals PURPLE, TEAL   ; GRANBULL
 	icon_pals BLUE,   RED    ; QWILFISH
+	icon_pals PURPLE, GRAY   ; OVERQWIL
 	icon_pals RED,    BLUE   ; SHUCKLE
 	icon_pals BLUE,   PURPLE ; HERACROSS
 	icon_pals RED,    PINK   ; SNEASEL
@@ -314,6 +316,8 @@ MonMenuIconPals:
 	icon_pals GREEN,  BLUE   ; KIRLIA
 	icon_pals GREEN,  BLUE   ; GARDEVOIR
 	icon_pals GREEN,  BLUE   ; GALLADE
+	icon_pals GREEN,  RED    ; SHROOMISH
+	icon_pals GREEN,  RED    ; BRELOOM
 	icon_pals GRAY,   TEAL   ; ARON
 	icon_pals GRAY,   TEAL   ; LAIRON
 	icon_pals GRAY,   TEAL   ; AGGRON

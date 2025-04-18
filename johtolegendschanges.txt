@@ -271,6 +271,8 @@ Altaria: +5ATK, +5SPATK. 500BST. Now a Dragon-Fairy type.
 
 Ludicolo: +5HP, +5ATK, +5DEF, +5SPD. 500BST
 
+Breloom: +10HP, +5DEF, +10SPDEF, +15SPD. 500BST
+
 Aggron: Steel/Dragon type.
 
 Steel no longer resists Dark and Ghost.

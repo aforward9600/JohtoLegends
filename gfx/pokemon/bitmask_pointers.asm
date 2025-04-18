@@ -142,6 +142,7 @@ BitmasksPointers:
 	dw MrMimeBitmasks
 	dw ScytherBitmasks
 	dw ScizorBitmasks
+	dw KleavorBitmasks
 	dw SmoochumBitmasks
 	dw JynxBitmasks
 	dw ElekidBitmasks
@@ -244,6 +245,7 @@ BitmasksPointers:
 	dw SnubbullBitmasks
 	dw GranbullBitmasks
 	dw QwilfishBitmasks
+	dw OverqwilBitmasks
 	dw ShuckleBitmasks
 	dw HeracrossBitmasks
 	dw SneaselBitmasks
@@ -302,6 +304,8 @@ BitmasksPointers:
 	dw KirliaBitmasks
 	dw GardevoirBitmasks
 	dw GalladeBitmasks
+	dw ShroomishBitmasks
+	dw BreloomBitmasks
 	dw AronBitmasks
 	dw LaironBitmasks
 	dw AggronBitmasks

@@ -20,6 +20,7 @@ Icons2:
 	dw MrMimeIcon
 	dw ScytherIcon
 	dw ScizorIcon
+	dw KleavorIcon
 	dw SmoochumIcon
 	dw JynxIcon
 	dw ElekidIcon
@@ -122,12 +123,11 @@ Icons2:
 	dw SnubbullIcon
 	dw GranbullIcon
 	dw QwilfishIcon
+	dw OverqwilIcon
 	dw ShuckleIcon
 	dw HeracrossIcon
 	dw SneaselIcon
 	dw WeavileIcon
-	dw TeddiursaIcon
-	dw UrsaringIcon
 
 RhyperiorIcon:    INCBIN "gfx/icons/rhyperior.2bpp"
 HappinyIcon:      INCBIN "gfx/icons/happiny.2bpp"
@@ -147,6 +147,7 @@ MimeJrIcon:       INCBIN "gfx/icons/mime__jr.2bpp"
 MrMimeIcon:       INCBIN "gfx/icons/mr__mime.2bpp"
 ScytherIcon:      INCBIN "gfx/icons/scyther.2bpp"
 ScizorIcon:       INCBIN "gfx/icons/scizor.2bpp"
+KleavorIcon:      INCBIN "gfx/icons/kleavor.2bpp"
 SmoochumIcon:     INCBIN "gfx/icons/smoochum.2bpp"
 JynxIcon:         INCBIN "gfx/icons/jynx.2bpp"
 ElekidIcon:       INCBIN "gfx/icons/elekid.2bpp"
@@ -249,9 +250,8 @@ GliscorIcon:      INCBIN "gfx/icons/gliscor.2bpp"
 SnubbullIcon:     INCBIN "gfx/icons/snubbull.2bpp"
 GranbullIcon:	  INCBIN "gfx/icons/granbull.2bpp"
 QwilfishIcon:     INCBIN "gfx/icons/qwilfish.2bpp"
+OverqwilIcon:     INCBIN "gfx/icons/overqwil.2bpp"
 ShuckleIcon:      INCBIN "gfx/icons/shuckle.2bpp"
 HeracrossIcon:    INCBIN "gfx/icons/heracross.2bpp"
 SneaselIcon:	  INCBIN "gfx/icons/sneasel.2bpp"
 WeavileIcon:	  INCBIN "gfx/icons/weavile.2bpp"
-TeddiursaIcon:    INCBIN "gfx/icons/teddiursa.2bpp"
-UrsaringIcon:     INCBIN "gfx/icons/ursaring.2bpp"

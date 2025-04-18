@@ -144,6 +144,7 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw ScytherEggMoves
 	dw NoEggMoves1
+	dw NoEggMoves1
 	dw SmoochumEggMoves
 	dw NoEggMoves1
 	dw ElekidEggMoves

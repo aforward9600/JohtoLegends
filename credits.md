@@ -84,6 +84,8 @@ Ursaluna sprites and animation: Cure, ShadowOne333, Scarlax
 
 Kleavor sprites: Cure
 
+Kleavor footprint: Rangi
+
 Dudunspars sprites - Mia
 
 Lickilicky sprites by Chaos Rush.

@@ -39,6 +39,8 @@ NewPokedexOrder:
 	dw ROSERADE
 	dw SWABLU
 	dw ALTARIA
+	dw SHROOMISH
+	dw BRELOOM
 	dw GEODUDE
 	dw GRAVELER
 	dw GOLEM
@@ -162,6 +164,7 @@ NewPokedexOrder:
 	dw SLOWKING
 	dw SCYTHER
 	dw SCIZOR
+	dw KLEAVOR
 	dw PINSIR
 	dw HERACROSS
 	dw CUBONE
@@ -262,6 +265,7 @@ NewPokedexOrder:
 	dw PONYTA
 	dw RAPIDASH
 	dw QWILFISH
+	dw OVERQWIL
 	dw SLUGMA
 	dw MAGCARGO
 	dw GOLDEEN

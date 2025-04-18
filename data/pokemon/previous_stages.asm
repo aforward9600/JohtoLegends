@@ -245,6 +245,7 @@ PreviousEvolutionStage::
 	dw 0
 	dw SNUBBULL
 	dw 0
+	dw QWILFISH
 	dw 0
 	dw 0
 	dw 0
@@ -303,6 +304,8 @@ PreviousEvolutionStage::
 	dw RALTS
 	dw KIRLIA
 	dw KIRLIA
+	dw 0
+	dw SHROOMISH
 	dw 0
 	dw ARON
 	dw LAIRON

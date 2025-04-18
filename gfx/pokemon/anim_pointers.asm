@@ -142,6 +142,7 @@ AnimationPointers:
 	dw MrMimeAnimation
 	dw ScytherAnimation
 	dw ScizorAnimation
+	dw KleavorAnimation
 	dw SmoochumAnimation
 	dw JynxAnimation
 	dw ElekidAnimation
@@ -244,6 +245,7 @@ AnimationPointers:
 	dw SnubbullAnimation
 	dw GranbullAnimation
 	dw QwilfishAnimation
+	dw OverqwilAnimation
 	dw ShuckleAnimation
 	dw HeracrossAnimation
 	dw SneaselAnimation
@@ -302,6 +304,8 @@ AnimationPointers:
 	dw KirliaAnimation
 	dw GardevoirAnimation
 	dw GalladeAnimation
+	dw ShroomishAnimation
+	dw BreloomAnimation
 	dw AronAnimation
 	dw LaironAnimation
 	dw AggronAnimation

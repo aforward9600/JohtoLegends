@@ -95,6 +95,7 @@ EggMovePointers2::
 	dw SnubbullEggMoves
 	dw NoEggMoves2
 	dw QwilfishEggMoves
+	dw NoEggMoves2
 	dw ShuckleEggMoves
 	dw HeracrossEggMoves
 	dw SneaselEggMoves
@@ -152,6 +153,8 @@ EggMovePointers2::
 	dw RaltsEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw NoEggMoves2
+	dw ShroomishEggMoves
 	dw NoEggMoves2
 	dw AronEggMoves
 	dw NoEggMoves2
@@ -789,6 +792,13 @@ RaltsEggMoves:
 	dw MEAN_LOOK
 	dw SHADOW_SNEAK
 	dw KNOCK_OFF
+	dw -1 ; end
+
+ShroomishEggMoves:
+	dw BULLET_SEED
+	dw CHARM
+	dw DRAIN_PUNCH
+	dw SEED_BOMB
 	dw -1 ; end
 
 AronEggMoves:

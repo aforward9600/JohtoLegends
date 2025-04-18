@@ -480,6 +480,45 @@ SECTION "Yanma Frontpic", ROMX
 
 YanmaFrontpic:       INCBIN "gfx/pokemon/yanma/front.animated.2bpp.lz"
 
+SECTION "Overqwil Frontpic", ROMX
+
+OverqwilFrontpic:    INCBIN "gfx/pokemon/overqwil/front.animated.2bpp.lz"
+
+
+SECTION "Overqwil Backpic", ROMX
+
+OverqwilBackpic:     INCBIN "gfx/pokemon/overqwil/back.2bpp.lz"
+
+
+SECTION "Kleavor Frontpic", ROMX
+
+KleavorFrontpic:     INCBIN "gfx/pokemon/kleavor/front.animated.2bpp.lz"
+
+
+SECTION "Kleavor Backpic", ROMX
+
+KleavorBackpic:      INCBIN "gfx/pokemon/kleavor/back.2bpp.lz"
+
+
+SECTION "Shroomish Frontpic", ROMX
+
+ShroomishFrontpic:   INCBIN "gfx/pokemon/shroomish/front.animated.2bpp.lz"
+
+
+SECTION "Shroomish Backpic", ROMX
+
+ShroomishBackpic:    INCBIN "gfx/pokemon/shroomish/back.2bpp.lz"
+
+
+SECTION "Breloom Frontpic", ROMX
+
+BreloomFrontpic:     INCBIN "gfx/pokemon/breloom/front.animated.2bpp.lz"
+
+
+SECTION "Breloom Backpic", ROMX
+
+BreloomBackpic:      INCBIN "gfx/pokemon/breloom/back.2bpp.lz"
+
 
 SECTION "Pics 8", ROMX
 

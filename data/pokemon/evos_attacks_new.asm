@@ -1,6 +1,9 @@
 SECTION "Evolution and Attacks 3", ROMX
 
 EvosAttacksPointers3::
+	dw AronEvosAttacks
+	dw LaironEvosAttacks
+	dw AggronEvosAttacks
 	dw RaikouEvosAttacks
 	dw EnteiEvosAttacks
 	dw SuicuneEvosAttacks
@@ -18,6 +21,96 @@ EvosAttacksPointers3::
 	dw CelebiEvosAttacks
 	dw NownEvosAttack
 	dw MissingnoEvosAttacks
+
+AronEvosAttacks:
+	dbbw EVOLVE_LEVEL, 32, LAIRON
+	db 0 ; no more evolutions
+	dbw 1, HARDEN
+	dbw 1, TACKLE
+	dbw 4, MUD_SLAP
+	dbw 7, HEADBUTT
+	dbw 10, METAL_CLAW
+	dbw 13, ROCK_TOMB
+	dbw 16, PROTECT
+	dbw 19, ROAR
+	dbw 22, IRON_HEAD
+	dbw 25, ROCK_SLIDE
+	dbw 28, TAKE_DOWN
+	dbw 31, METAL_SOUND
+	dbw 34, IRON_TAIL
+	dbw 37, IRON_DEFENSE
+	dbw 40, DOUBLE_EDGE
+	dbw 43, ROCK_POLISH
+	dbw 46, STEEL_SLICE
+	dbw 49, STONE_EDGE
+	db 0 ; no more level-up moves
+
+LaironEvosAttacks:
+	dbbw EVOLVE_LEVEL, 42, AGGRON
+	db 0 ; no more evolutions
+	dbw 1, HARDEN
+	dbw 1, TACKLE
+	dbw 4, MUD_SLAP
+	dbw 7, HEADBUTT
+	dbw 10, METAL_CLAW
+	dbw 13, ROCK_TOMB
+	dbw 16, PROTECT
+	dbw 19, ROAR
+	dbw 22, IRON_HEAD
+	dbw 25, ROCK_SLIDE
+	dbw 28, TAKE_DOWN
+	dbw 31, METAL_SOUND
+	dbw 35, IRON_TAIL
+	dbw 39, IRON_DEFENSE
+	dbw 43, DOUBLE_EDGE
+	dbw 47, ROCK_POLISH
+	dbw 51, STEEL_SLICE
+	dbw 55, STONE_EDGE
+	db 0 ; no more level-up moves
+
+AggronEvosAttacks:
+	db 0 ; no more evolutions
+if DEF(_FAITHFUL)
+	dbw LEARN_EVO_MOVE, STONE_EDGE
+	dbw 1, STONE_EDGE
+elif DEF(_NOPSS)
+	dbw LEARN_EVO_MOVE, STONE_EDGE
+	dbw 1, STONE_EDGE
+else
+	dbw LEARN_EVO_MOVE, DRAGON_RUSH
+	dbw 1, DRAGON_RUSH
+endc
+	dbw 1, HARDEN
+	dbw 1, TACKLE
+	dbw 4, MUD_SLAP
+	dbw 7, HEADBUTT
+	dbw 10, METAL_CLAW
+	dbw 13, ROCK_TOMB
+	dbw 16, PROTECT
+	dbw 19, ROAR
+	dbw 22, IRON_HEAD
+	dbw 25, ROCK_SLIDE
+	dbw 28, TAKE_DOWN
+	dbw 31, METAL_SOUND
+	dbw 35, IRON_TAIL
+	dbw 39, IRON_DEFENSE
+	dbw 45, DOUBLE_EDGE
+if DEF(_FAITHFUL)
+	dbw 51, ROCK_POLISH
+elif DEF(_NOPSS)
+	dbw 51, ROCK_POLISH
+else
+	dbw 51, DRAGON_DANCE
+endc
+	dbw 57, STEEL_SLICE
+if DEF(_FAITHFUL)
+	dbw 63, ROCK_WRECKER
+elif DEF(_NOPSS)
+	dbw 63, ROCK_WRECKER
+else
+	dbw 63, OUTRAGE
+endc
+	db 0 ; no more level-up moves
 
 RaikouEvosAttacks:
 	db 0 ; no more evolutions

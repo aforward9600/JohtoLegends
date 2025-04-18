@@ -144,6 +144,7 @@ EvosAttacksPointers1::
 	dw MrMimeEvosAttacks
 	dw ScytherEvosAttacks
 	dw ScizorEvosAttacks
+	dw KleavorEvosAttacks
 	dw SmoochumEvosAttacks
 	dw JynxEvosAttacks
 	dw ElekidEvosAttacks
@@ -152,7 +153,6 @@ EvosAttacksPointers1::
 	dw MagbyEvosAttacks
 	dw MagmarEvosAttacks
 	dw MagmortarEvosAttacks
-	dw PinsirEvosAttacks
 
 BulbasaurEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, IVYSAUR
@@ -2899,6 +2899,7 @@ MrMimeEvosAttacks:
 
 ScytherEvosAttacks:
 	dbbw EVOLVE_ITEM, METAL_COAT, SCIZOR
+	dbbw EVOLVE_ITEM, ROYAL_ROCK, KLEAVOR
 	db 0 ; no more evolutions
 	dbw 1, QUICK_ATTACK
 	dbw 1, LEER
@@ -2938,6 +2939,29 @@ ScizorEvosAttacks:
 	dbw 45, NIGHT_SLASH
 	dbw 49, DOUBLE_HIT_M
 	dbw 50, IRON_HEAD
+	dbw 57, SWORDS_DANCE
+	dbw 61, DOUBLE_TEAM
+	db 0 ; no more level-up moves
+
+KleavorEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, ROCK_TOMB
+	dbw 1, ROCK_TOMB
+	dbw 1, QUICK_ATTACK
+	dbw 1, LEER
+	dbw 5, FOCUS_ENERGY
+	dbw 9, PURSUIT
+	dbw 13, FALSE_SWIPE
+	dbw 17, HARDEN
+	dbw 21, ROCK_TOMB
+	dbw 25, FURY_CUTTER
+	dbw 29, SLASH
+	dbw 33, ROCK_SLIDE
+	dbw 37, ROCK_POLISH
+	dbw 41, X_SCISSOR
+	dbw 45, NIGHT_SLASH
+	dbw 49, DOUBLE_HIT_M
+	dbw 50, ROCK_WRECKER
 	dbw 57, SWORDS_DANCE
 	dbw 61, DOUBLE_TEAM
 	db 0 ; no more level-up moves
@@ -3107,24 +3131,4 @@ elif DEF(_NOPSS)
 else
 	dbw 62, BELCH
 endc
-	db 0 ; no more level-up moves
-
-PinsirEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, VICEGRIP
-	dbw 1, FOCUS_ENERGY
-	dbw 4, BIND
-	dbw 8, SEISMIC_TOSS
-	dbw 11, HARDEN
-	dbw 15, REVENGE
-	dbw 18, VITAL_THROW
-	dbw 22, DOUBLE_HIT_M
-	dbw 26, BRICK_BREAK
-	dbw 29, X_SCISSOR
-	dbw 33, SUBMISSION
-	dbw 36, CIRCLE_THROW
-	dbw 40, SWORDS_DANCE
-	dbw 43, PINCIRFLURRY
-	dbw 47, SUPERPOWER
-	dbw 50, GUILLOTINE
 	db 0 ; no more level-up moves

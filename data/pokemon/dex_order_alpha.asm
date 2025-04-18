@@ -25,6 +25,7 @@ AlphabeticalPokedexOrder:
 	dw BLASTOISE
 	dw BLISSEY
 	dw BONSLY
+	dw BRELOOM
 	dw BRONZONG
 	dw BRONZOR
 	dw BUDEW
@@ -140,6 +141,7 @@ AlphabeticalPokedexOrder:
 	dw KINGDRA
 	dw KINGLER
 	dw KIRLIA
+	dw KLEAVOR
 	dw KOFFING
 	dw KOTORA
 	dw KRABBY
@@ -205,6 +207,7 @@ AlphabeticalPokedexOrder:
 	dw OMANYTE
 	dw OMASTAR
 	dw ONIX
+	dw OVERQWIL
 	dw PARAS
 	dw PARASECT
 	dw PERSIAN
@@ -255,6 +258,7 @@ AlphabeticalPokedexOrder:
 	dw SENTRET
 	dw SHELGON
 	dw SHELLDER
+	dw SHROOMISH
 	dw SHUCKLE
 	dw SKARMINI
 	dw SKARMORY

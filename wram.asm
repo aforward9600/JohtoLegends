@@ -2755,7 +2755,7 @@ wParryFightCount::   db
 wBattleAnimBank::    db
 ; da0e
 
-	ds 100
+	ds 70
 
 wEventFlags:: flag_array NUM_EVENTS ; da72
 ; db6c

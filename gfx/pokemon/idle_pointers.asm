@@ -142,6 +142,7 @@ AnimationIdlePointers:
 	dw MrMimeAnimationIdle
 	dw ScytherAnimationIdle
 	dw ScizorAnimationIdle
+	dw KleavorAnimationIdle
 	dw SmoochumAnimationIdle
 	dw JynxAnimationIdle
 	dw ElekidAnimationIdle
@@ -244,6 +245,7 @@ AnimationIdlePointers:
 	dw SnubbullAnimationIdle
 	dw GranbullAnimationIdle
 	dw QwilfishAnimationIdle
+	dw OverqwilAnimationIdle
 	dw ShuckleAnimationIdle
 	dw HeracrossAnimationIdle
 	dw SneaselAnimationIdle
@@ -302,6 +304,8 @@ AnimationIdlePointers:
 	dw KirliaAnimationIdle
 	dw GardevoirAnimationIdle
 	dw GalladeAnimationIdle
+	dw ShroomishAnimationIdle
+	dw BreloomAnimationIdle
 	dw AronAnimationIdle
 	dw LaironAnimationIdle
 	dw AggronAnimationIdle

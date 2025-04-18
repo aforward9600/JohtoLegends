@@ -144,6 +144,7 @@ OldPokedexOrder:
 	dw MR__MIME
 	dw SCYTHER
 	dw SCIZOR
+	dw KLEAVOR
 	dw SMOOCHUM
 	dw JYNX
 	dw ELEKID
@@ -246,6 +247,7 @@ OldPokedexOrder:
 	dw SNUBBULL
 	dw GRANBULL
 	dw QWILFISH
+	dw OVERQWIL
 	dw SHUCKLE
 	dw HERACROSS
 	dw SNEASEL

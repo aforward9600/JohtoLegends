@@ -476,6 +476,10 @@ INCBIN "gfx/font/font_inversed.1bpp"
 SECTION "Pic Animations 3", ROMX
 
 INCLUDE "gfx/pokemon/johto_frames.asm"
+
+
+SECTION "Unown Animations", ROMX
+
 INCLUDE "gfx/pokemon/unown_frame_pointers.asm"
 INCLUDE "gfx/pokemon/unown_frames.asm"
 INCLUDE "gfx/pokemon/unown_bitmask_pointers.asm"

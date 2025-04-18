@@ -1,6 +1,7 @@
 SECTION "Evolutions and Attacks 2", ROMX
 
 EvosAttacksPointers2::
+	dw PinsirEvosAttacks
 	dw TaurosEvosAttacks
 	dw MagikarpEvosAttacks
 	dw GyaradosEvosAttacks
@@ -94,6 +95,7 @@ EvosAttacksPointers2::
 	dw SnubbullEvosAttacks
 	dw GranbullEvosAttacks
 	dw QwilfishEvosAttacks
+	dw OverqwilEvosAttacks
 	dw ShuckleEvosAttacks
 	dw HeracrossEvosAttacks
 	dw SneaselEvosAttacks
@@ -152,9 +154,29 @@ EvosAttacksPointers2::
 	dw KirliaEvosAttacks
 	dw GardevoirEvosAttacks
 	dw GalladeEvosAttacks
-	dw AronEvosAttacks
-	dw LaironEvosAttacks
-	dw AggronEvosAttacks
+	dw ShroomishEvosAttacks
+	dw BreloomEvosAttacks
+
+PinsirEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, VICEGRIP
+	dbw 1, FOCUS_ENERGY
+	dbw 4, BIND
+	dbw 8, SEISMIC_TOSS
+	dbw 11, HARDEN
+	dbw 15, REVENGE
+	dbw 18, VITAL_THROW
+	dbw 22, DOUBLE_HIT_M
+	dbw 26, BRICK_BREAK
+	dbw 29, X_SCISSOR
+	dbw 33, SUBMISSION
+	dbw 36, CIRCLE_THROW
+	dbw 40, SWORDS_DANCE
+	dbw 43, PINCIRFLURRY
+	dbw 47, SUPERPOWER
+	dbw 50, GUILLOTINE
+	db 0 ; no more level-up moves
+
 
 TaurosEvosAttacks:
 	db 0 ; no more evolutions
@@ -2218,6 +2240,7 @@ GranbullEvosAttacks:
 	db 0 ; no more level-up moves
 
 QwilfishEvosAttacks:
+	dbbw EVOLVE_LEVEL, 29, OVERQWIL
 	db 0 ; no more evolutions
 	dbw 1, SPIKES
 	dbw 1, TACKLE
@@ -2234,6 +2257,31 @@ QwilfishEvosAttacks:
 	dbw 37, PIN_MISSILE
 	dbw 41, TAKE_DOWN
 	dbw 45, AQUA_TAIL
+	dbw 49, POISON_JAB
+	dbw 53, DESTINY_BOND
+	dbw 57, WAVE_CRASH
+	dbw 60, GUNK_SHOT
+	db 0 ; no more level-up moves
+
+OverqwilEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, BITE
+	dbw 1, BITE
+	dbw 1, SPIKES
+	dbw 1, TACKLE
+	dbw 1, POISON_STING
+	dbw 1, WATER_GUN
+	dbw 9, HARDEN
+	dbw 9, MINIMIZE
+	dbw 13, AQUA_JET
+	dbw 17, ROLLOUT
+	dbw 21, TOXIC
+	dbw 25, DEFENSE_CURL
+	dbw 29, REVENGE
+	dbw 33, KNOCK_OFF
+	dbw 37, PIN_MISSILE
+	dbw 41, TAKE_DOWN
+	dbw 45, CRUNCH
 	dbw 49, POISON_JAB
 	dbw 53, DESTINY_BOND
 	dbw 57, WAVE_CRASH
@@ -3410,70 +3458,40 @@ GalladeEvosAttacks:
 	dbw 58, ZEN_HEADBUTT
 	db 0 ; no more level-up moves
 
-AronEvosAttacks:
-	dbbw EVOLVE_LEVEL, 32, LAIRON
+ShroomishEvosAttacks:
+	dbbw EVOLVE_LEVEL, 23, BRELOOM
 	db 0 ; no more evolutions
-	dbw 1, HARDEN
+	dbw 1, ABSORB
 	dbw 1, TACKLE
-	dbw 4, MUD_SLAP
-	dbw 7, HEADBUTT
-	dbw 10, METAL_CLAW
-	dbw 13, ROCK_TOMB
-	dbw 16, PROTECT
-	dbw 19, ROAR
-	dbw 22, IRON_HEAD
-	dbw 25, ROCK_SLIDE
-	dbw 28, TAKE_DOWN
-	dbw 31, METAL_SOUND
-	dbw 34, IRON_TAIL
-	dbw 37, IRON_DEFENSE
-	dbw 40, DOUBLE_EDGE
-	dbw 43, ROCK_POLISH
-	dbw 46, STEEL_SLICE
-	dbw 49, STONE_EDGE
+	dbw 5, STUN_SPORE
+	dbw 8, LEECH_SEED
+	dbw 12, MEGA_DRAIN
+	dbw 15, HEADBUTT
+	dbw 19, POISONPOWDER
+	dbw 22, BULLET_SEED
+	dbw 26, GIGA_DRAIN
+	dbw 29, GROWTH
+	dbw 33, TOXIC
+	dbw 36, SEED_BOMB
+	dbw 40, SPORE
 	db 0 ; no more level-up moves
 
-LaironEvosAttacks:
-	dbbw EVOLVE_LEVEL, 42, AGGRON
+BreloomEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, HARDEN
+	dbw LEARN_EVO_MOVE, MACH_PUNCH
+	dbw 1, MACH_PUNCH
+	dbw 1, ABSORB
 	dbw 1, TACKLE
-	dbw 4, MUD_SLAP
-	dbw 7, HEADBUTT
-	dbw 10, METAL_CLAW
-	dbw 13, ROCK_TOMB
-	dbw 16, PROTECT
-	dbw 19, ROAR
-	dbw 22, IRON_HEAD
-	dbw 25, ROCK_SLIDE
-	dbw 28, TAKE_DOWN
-	dbw 31, METAL_SOUND
-	dbw 35, IRON_TAIL
-	dbw 39, IRON_DEFENSE
-	dbw 43, DOUBLE_EDGE
-	dbw 47, ROCK_POLISH
-	dbw 51, STEEL_SLICE
-	dbw 55, STONE_EDGE
-	db 0 ; no more level-up moves
-
-AggronEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, HARDEN
-	dbw 1, TACKLE
-	dbw 4, MUD_SLAP
-	dbw 7, HEADBUTT
-	dbw 10, METAL_CLAW
-	dbw 13, ROCK_TOMB
-	dbw 16, PROTECT
-	dbw 19, ROAR
-	dbw 22, IRON_HEAD
-	dbw 25, ROCK_SLIDE
-	dbw 28, TAKE_DOWN
-	dbw 31, METAL_SOUND
-	dbw 35, IRON_TAIL
-	dbw 39, IRON_DEFENSE
-	dbw 45, DOUBLE_EDGE
-	dbw 51, ROCK_POLISH
-	dbw 57, STEEL_SLICE
-	dbw 63, STONE_EDGE
+	dbw 5, STUN_SPORE
+	dbw 8, LEECH_SEED
+	dbw 12, MEGA_DRAIN
+	dbw 15, HEADBUTT
+	dbw 19, POISONPOWDER
+	dbw 22, COUNTER
+	dbw 28, FORCE_PALM
+	dbw 33, MIND_READER
+;	dbw 39, SKY_UPPERCUT
+	dbw 44, SEED_BOMB
+	dbw 50, DYNAMICPUNCH
+	dbw 56, SPORE
 	db 0 ; no more level-up moves

@@ -162,6 +162,7 @@
 	const MR__MIME   ; 7a
 	const SCYTHER    ; 7b
 	const SCIZOR     ; d4
+	const KLEAVOR
 	const SMOOCHUM   ; ee
 	const JYNX       ; 7c
 	const ELEKID     ; ef
@@ -170,8 +171,8 @@
 	const MAGBY      ; f0
 	const MAGMAR     ; 7e
 	const MAGMORTAR
-	const PINSIR     ; 7f
 JOHTO_POKEMON EQU const_value
+	const PINSIR     ; 7f
 	const TAUROS     ; 80
 	const MAGIKARP   ; 81
 	const GYARADOS   ; 82
@@ -265,6 +266,7 @@ JOHTO_POKEMON EQU const_value
 	const SNUBBULL   ; d1
 	const GRANBULL   ; d2
 	const QWILFISH   ; d3
+	const OVERQWIL
 	const SHUCKLE    ; d5
 	const HERACROSS  ; d6
 	const SNEASEL    ; d7
@@ -323,6 +325,8 @@ JOHTO_POKEMON EQU const_value
 	const KIRLIA
 	const GARDEVOIR
 	const GALLADE
+	const SHROOMISH
+	const BRELOOM
 	const ARON
 	const LAIRON
 	const AGGRON
