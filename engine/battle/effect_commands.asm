@@ -1742,6 +1742,7 @@ BattleCommand_CheckHit:
 	dw THUNDER
 	dw TWISTER
 	dw HURRICANE
+	dw SKY_UPPERCUT
 	dw -1
 
 .DigMoves:

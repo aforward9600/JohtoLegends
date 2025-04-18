@@ -406,4 +406,5 @@ MoveNames::
 	db "Psyshield@"
 	db "Meteor Mash@"
 	db "Force Palm@"
+	db "Sky Uppercut@"
 ;	db "Wake Up Slap@"

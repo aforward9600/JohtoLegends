@@ -783,7 +783,8 @@ ClefairyEvosAttacks:
 	dbw 28, BODY_SLAM
 	dbw 31, MOONLIGHT
 	dbw 34, COSMIC_POWER
-	dbw 37, MOONBLAST
+	dbw 37, METEOR_MASH
+	dbw 40, MOONBLAST
 	db 0 ; no more level-up moves
 
 ClefableEvosAttacks:
@@ -798,6 +799,7 @@ ClefableEvosAttacks:
 	dbw 1, MOONBLAST
 	dbw 1, COSMIC_POWER
 	dbw 1, BODY_SLAM
+	dbw 1, METEOR_MASH
 	db 0 ; no more level-up moves
 
 VulpixEvosAttacks:
@@ -2421,7 +2423,7 @@ HitmonchanEvosAttacks:
 	dbw 36, THUNDERPUNCH
 	dbw 36, ICE_PUNCH
 	dbw 36, FIRE_PUNCH
-	dbw 41, BRICK_BREAK
+	dbw 41, SKY_UPPERCUT
 	dbw 46, MEGA_PUNCH
 	dbw 50, DETECT
 	dbw 56, DYNAMICPUNCH

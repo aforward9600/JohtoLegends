@@ -318,6 +318,7 @@ AlphabeticalMoveList::
 	dw SKETCH
 	dw SKULL_BASH
 	dw SKY_ATTACK
+	dw SKY_UPPERCUT
 	dw SLACK_OFF
 	dw SLAM
 	dw SLASH

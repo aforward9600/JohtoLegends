@@ -432,6 +432,7 @@ BattleAnimations::
 	dw BattleAnim_Psyshield
 	dw BattleAnim_MeteorMash
 	dw BattleAnim_ForcePalm
+	dw BattleAnim_SkyUppercut
 ;	dw BattleAnim_WakeUpSlap
 
 BattleAnim_0:
@@ -3443,6 +3444,7 @@ BattleAnim_Barrier:
 	anim_wait 32
 	anim_ret
 
+BattleAnim_SkyUppercut:
 BattleAnim_Waterfall:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_2Row

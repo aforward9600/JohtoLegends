@@ -412,6 +412,7 @@ MoveDescriptions1:
 	dw PsyshieldDescription
 	dw MeteorMashDescription
 	dw ForcePalmDescription
+	dw SkyUppercutDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1984,3 +1985,7 @@ MeteorMashDescription:
 ForcePalmDescription:
 	db   "A shock wave that"
 	line "can paralyze.@"
+
+SkyUppercutDescription:
+	db   "An uppercut thrown"
+	line "to the sky.@"

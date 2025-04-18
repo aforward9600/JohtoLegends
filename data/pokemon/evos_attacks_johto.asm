@@ -2174,7 +2174,7 @@ GligarEvosAttacks:
 	dbw 30, U_TURN
 	dbw 35, SCREECH
 	dbw 40, X_SCISSOR
-	dbw 45, BRICK_BREAK
+	dbw 45, SKY_UPPERCUT
 	dbw 50, SWORDS_DANCE
 	dbw 55, GUILLOTINE
 	dbw 60, EARTHQUAKE
@@ -2194,7 +2194,7 @@ GliscorEvosAttacks:
 	dbw 30, U_TURN
 	dbw 35, SCREECH
 	dbw 40, PINCIRFLURRY
-	dbw 45, BRICK_BREAK
+	dbw 45, SKY_UPPERCUT
 	dbw 50, SWORDS_DANCE
 	dbw 55, GUILLOTINE
 	dbw 60, EARTHQUAKE
@@ -3490,7 +3490,7 @@ BreloomEvosAttacks:
 	dbw 22, COUNTER
 	dbw 28, FORCE_PALM
 	dbw 33, MIND_READER
-;	dbw 39, SKY_UPPERCUT
+	dbw 39, SKY_UPPERCUT
 	dbw 44, SEED_BOMB
 	dbw 50, DYNAMICPUNCH
 	dbw 56, SPORE

@@ -149,7 +149,6 @@ SECTION "bankB", ROMX
 INCLUDE "engine/battle/trainer_huds.asm"
 INCLUDE "engine/battle/ai/redundant.asm"
 INCLUDE "engine/events/move_deleter.asm"
-INCLUDE "engine/link/mystery_gift_2.asm"
 INCLUDE "engine/items/tmhm.asm"
 INCLUDE "engine/pokemon/print_move_description.asm"
 if DEF(_FRENCH)
@@ -165,6 +164,10 @@ INCLUDE "engine/battle/ai/items.asm"
 INCLUDE "engine/battle/read_trainer_attributes.asm"
 INCLUDE "engine/battle/read_trainer_party.asm"
 
+
+SECTION "Mystery Gift", ROMX
+
+INCLUDE "engine/link/mystery_gift_2.asm"
 
 SECTION "Battle Core", ROMX
 
