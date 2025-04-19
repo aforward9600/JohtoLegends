@@ -327,6 +327,9 @@ PokemonCries::
 	mon_cry CRY_NIDORAN_F,   $f26,  $0c0 ; BAGON
 	mon_cry CRY_NIDORAN_F,   $e15,  $200 ; SHELGON
 	mon_cry CRY_RAICHU,      $f1f,  $130 ; SALAMENCE
+	mon_cry CRY_CYNDAQUIL,   $40c,  $140 ; BELDUM
+	mon_cry CRY_SLOWKING,    $6af,  $17a ; METANG
+	mon_cry CRY_METAPOD,     $def,  $25a ; METAGROSS
 	mon_cry CRY_TYPHLOSION,  $000,  $100 ; LUGIA
 	mon_cry CRY_AIPOM,       $000,  $180 ; HO_OH
 	mon_cry CRY_ENTEI,       $14a,  $111 ; CELEBI

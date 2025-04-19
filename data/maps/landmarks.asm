@@ -35,6 +35,7 @@ Landmarks:
 	landmark  20,  99, CliffsEdgeGateName
 	landmark  12, 100, Route47Name
 	landmark  11, 100, CliffCaveName
+	landmark   4, 102, EmbeddedTowerName
 	landmark   4,  92, Route48Name
 	landmark   4,  84, WildAreaName
 	landmark  68,  52, Route37Name
@@ -226,3 +227,4 @@ Route48Name:         db "Route 48@"
 CliffCaveName:       db "Cliff Cave@"
 CinnabarVolcanoName: db "Cinnabar¯Volcano@"
 UnknownName2:        db "???@"
+EmbeddedTowerName:   db "Embedded¯Tower@"

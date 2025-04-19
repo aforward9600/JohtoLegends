@@ -342,6 +342,9 @@ JOHTO_POKEMON EQU const_value
 	const BAGON      ; f9
 	const SHELGON    ; fa
 	const SALAMENCE  ; fb
+	const BELDUM
+	const METANG
+	const METAGROSS
 	const LUGIA      ; f9
 	const HO_OH      ; fa
 	const CELEBI     ; fb

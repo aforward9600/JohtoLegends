@@ -2145,7 +2145,7 @@ SwarmScript:
 	farwritetext WhatSwarmTodayText
 	waitbutton
 .SwarmReroll:
-	random 29
+	random 30
 	ifequal 0,  .noswarm
 	ifequal 1,  .yanma
 	ifequal 2,  .dunsparce
@@ -2175,6 +2175,7 @@ SwarmScript:
 	ifequal 26, .magby
 	ifequal 27, .tyrogue
 	ifequal 28, .chansey
+	ifequal 29, .beldum
 
 .noswarm
 	setflag ENGINE_SWARM
@@ -2487,6 +2488,16 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ROUTE_47
 	getmonname STRING_BUFFER_3, CHANSEY
 	farwritetext RouteSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.beldum
+	checkflag ENGINE_LAPRAS_CALLB
+	iffalse .SwarmReroll
+	setflag ENGINE_SWARM
+	swarm EMBEDDED_TOWER
+	farwritetext EmbeddedTowerSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel

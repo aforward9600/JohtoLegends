@@ -321,6 +321,9 @@ BitmasksPointers:
 	dw BagonBitmasks
 	dw ShelgonBitmasks
 	dw SalamenceBitmasks
+	dw BeldumBitmasks
+	dw MetangBitmasks
+	dw MetagrossBitmasks
 	dw LugiaBitmasks
 	dw HoOhBitmasks
 	dw CelebiBitmasks

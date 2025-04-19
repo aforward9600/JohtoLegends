@@ -321,6 +321,9 @@ FramesPointers:
 	dba BagonFrames
 	dba ShelgonFrames
 	dba SalamenceFrames
+	dba BeldumFrames
+	dba MetangFrames
+	dba MetagrossFrames
 	dba LugiaFrames
 	dba HoOhFrames
 	dba CelebiFrames

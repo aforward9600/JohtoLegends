@@ -321,6 +321,9 @@ AnimationIdlePointers:
 	dw BagonAnimationIdle
 	dw ShelgonAnimationIdle
 	dw SalamenceAnimationIdle
+	dw BeldumAnimationIdle
+	dw MetangAnimationIdle
+	dw MetagrossAnimationIdle
 	dw LugiaAnimationIdle
 	dw HoOhAnimationIdle
 	dw CelebiAnimationIdle

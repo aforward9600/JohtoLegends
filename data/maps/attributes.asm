@@ -372,7 +372,7 @@ ENDM
 	connection north, Route10North, ROUTE_10_NORTH, 0
 	connection south, LavenderTown, LAVENDER_TOWN, 0
 
-	map_attributes Route47, ROUTE_47, $03, NORTH
+	map_attributes Route47, ROUTE_47, $67, NORTH
 	connection north, Route48, ROUTE_48, -1
 
 	map_attributes Route48, ROUTE_48, $03, NORTH | SOUTH

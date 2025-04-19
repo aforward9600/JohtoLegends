@@ -611,3 +611,20 @@ Text_AreYouAGirlText::
 Text_AreYouABoyText::
 	text "Are you a boy?"
 	done
+
+EmbeddedTowerSwarmText::
+	text "………………………"
+	
+	para "Ah!"
+
+	para "At Embedded Tower,"
+	line "there is a swarm"
+	cont "of Beldum!"
+
+	para "Now's your chance,"
+	line "trainers!"
+
+	para "Head to Embedded"
+	line "Tower and catch"
+	cont "a Beldum!"
+	done

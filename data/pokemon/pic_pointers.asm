@@ -657,6 +657,12 @@ PokemonPicPointers::
 	dba ShelgonBackpic
 	dba SalamenceFrontpic
 	dba SalamenceBackpic
+	dba BeldumFrontpic
+	dba BeldumBackpic
+	dba MetangFrontpic
+	dba MetangBackpic
+	dba MetagrossFrontpic
+	dba MetagrossBackpic
 	dba LugiaFrontpic
 	dba LugiaBackpic
 	dba HoOhFrontpic

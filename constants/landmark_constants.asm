@@ -31,6 +31,7 @@
 	const CLIFFS_EDGE_GATE
 	const ROUTE_47          ; 61
 	const CLIFF_CAVE
+	const EMBEDDED_TOWER
 	const ROUTE_48          ; 62
 	const WILD_AREA_OUTSIDE ; 60
 	const ROUTE_37          ; 15

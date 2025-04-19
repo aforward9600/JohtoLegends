@@ -171,11 +171,11 @@ HoOhTank:
 	opentext
 	writetext ICaughtLugiaText
 	buttonsound
-	getitemname STRING_BUFFER_4, LAPRAS_CALLC
-	scall GivesRocketBall
-	giveitem LAPRAS_CALLC
+	writetext LearnWaterfallText
 	buttonsound
-	itemnotify
+	playsound SFX_GET_TM
+	waitsfx
+	setflag ENGINE_LAPRAS_CALLC
 	writetext ThatsALaprasCallText
 	waitbutton
 	closetext
@@ -236,11 +236,11 @@ LugiaTank:
 	opentext
 	writetext ICaughtHoOhText
 	buttonsound
-	getitemname STRING_BUFFER_4, LAPRAS_CALLC
-	scall GivesRocketBall
-	giveitem LAPRAS_CALLC
+	writetext LearnWaterfallText
 	buttonsound
-	itemnotify
+	playsound SFX_GET_TM
+	waitsfx
+	setflag ENGINE_LAPRAS_CALLC
 	writetext ThatsALaprasCallText
 	waitbutton
 	closetext
@@ -662,21 +662,22 @@ ICaughtLugiaText:
 
 	para "We both are."
 
-	para "Here, take this."
+	para "Here, I'll teach"
+	line "you the last"
+	cont "tune for Lapras."
 
 	para "It will help you"
 	line "get there."
 	done
 
+LearnWaterfallText:
+	text "You learned a new"
+	line "tune!"
+	done
+	
+
 ThatsALaprasCallText:
-	text "It's another Lapras"
-	line "Call."
-
-	para "This one will tell"
-	line "Lapras to go up"
-	cont "waterfalls."
-
-	para "You'll need it to"
+	text "You'll need it to"
 	line "get through Tojo"
 	cont "Falls."
 

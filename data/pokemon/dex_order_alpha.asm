@@ -20,6 +20,7 @@ AlphabeticalPokedexOrder:
 	dw BAGON
 	dw BAYLEEF
 	dw BEEDRILL
+	dw BELDUM
 	dw BELLOSSOM
 	dw BELLSPROUT
 	dw BLASTOISE
@@ -179,6 +180,8 @@ AlphabeticalPokedexOrder:
 	dw MAROWAK
 	dw MEGANIUM
 	dw MEOWTH
+	dw METAGROSS
+	dw METANG
 	dw METAPOD
 	dw MEW
 	dw MEWTWO

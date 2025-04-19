@@ -169,7 +169,7 @@ ItemNames::
 	db "Voltorb Call@"
 	db "Machamp Call@"
 	db "SnubbullCall@"
-	db "Lapras CallA@"
+	db "Lapras Call@"
 	db "Lapras CallB@"
 	db "Lapras CallC@"
 	db "Pidgeot Call@"

@@ -80,8 +80,8 @@ Lake of Rage
 
 Levels 7-10
 
-Morning/Day: Electrike 30%, Growlithe 20%, Vulpix 15%, Croagunk 15%, Psyduck 10%, Mime Jr. 5%, Kotora 5%
-Night: Electrike 30%, Houndour 20%, Rattata 15%, Croagunk 15%, Psyduck 10%, Mime Jr. 5%, Kotora 5%
+Morning/Day: Electrike 30%, Growlithe 20%, Vulpix 15%, Croagunk 15%, Shroomish 10%, Mime Jr. 5%, Kotora 5%
+Night: Electrike 30%, Houndour 20%, Rattata 15%, Croagunk 15%, Shroomish 10%, Mime Jr. 5%, Kotora 5%
 Water: Magikarp 80%, Gyarados 20%
 Old Rod: Magikarp 100%
 Good Rod: Magikarp 90%, Gyarados 10%
@@ -174,7 +174,7 @@ Route 37
 
 Levels 12-15
 
-Morning: Ledyba 30%, NidoranF 20%, Pidgey 15%, NidoranM 15%, Mime Jr. 10%, Jigglypuff 5%, Farfetch'd 5%
+Morning: Ledyba 30%, NidoranF 20%, Shroomish 15%, NidoranM 15%, Mime Jr. 10%, Jigglypuff 5%, Farfetch'd 5%
 Day: Doduo 30%, NidoranF 20%, Pidgey 15%, NidoranM 15%, Mime Jr. 10%, Jigglypuff 5%, Meowth 5%
 Night: Spinarak 30%, NidoranF 20%, Hoothoot 15%, NidoranM 15%, Mime Jr. 10%, Jigglypuff 5%, Murkrow 5%
 Swarm: Murkrow 50%, Mime Jr. 20%, Jigglypuff 15%, Meowth 15%
@@ -371,6 +371,14 @@ Water Lugia Chamber: Horsea 60%, Tentacruel 20%, Seadra 20%
 Old Rod: Magikarp 85%, Krabby 15%
 Good Rod: Krabby 55%, Magikarp 35%, Horsea 10%
 Super Rod: Krabby 40%, Horsea 30%, Kingler 20%, Seadra 10%
+
+
+Embedded Tower
+
+Levels 18-38
+
+All times: Golbat 30%, Misdreavus 20%, Lairon 15%, Bronzong 15%, Smeargle 14%, Beldum 5%, Metang 1%
+Swarm: Beldum 90%, Metang 10%
 
 Ilex Forest
 

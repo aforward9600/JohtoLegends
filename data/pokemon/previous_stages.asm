@@ -322,6 +322,9 @@ PreviousEvolutionStage::
 	dw BAGON
 	dw SHELGON
 	dw 0
+	dw BELDUM
+	dw METANG
+	dw 0
 	dw 0
 	dw 0
 	dw 0

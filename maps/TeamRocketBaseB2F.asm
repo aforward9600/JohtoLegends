@@ -10,7 +10,6 @@
 	const TEAMROCKETBASEB2F_NINJA
 	const TEAMROCKETBASEB2F_NINJA4
 	const TEAMROCKETBASEB2F_POKE_BALL
-	const TEAMROCKETBASEB2F_POKE_BALL_2
 
 TeamRocketBaseB2F_MapScripts:
 	db 4 ; scene scripts
@@ -82,6 +81,11 @@ RocketBaseCantLeaveScript:
 	takeitem SILVER_WING
 .HaveYouSeenHer:
 	opentext
+	writetext LearnWhirlpoolText
+	buttonsound
+	playsound SFX_GET_TM
+	waitsfx
+	setflag ENGINE_LAPRAS_CALLB
 	writetext HaveYouSeenHerText
 	waitbutton
 	closetext
@@ -131,6 +135,11 @@ RocketBaseCantLeaveScriptDown:
 	takeitem SILVER_WING
 .HaveYouSeenHer:
 	opentext
+	writetext LearnWhirlpoolText
+	buttonsound
+	playsound SFX_GET_TM
+	waitsfx
+	setflag ENGINE_LAPRAS_CALLB
 	writetext HaveYouSeenHerText
 	waitbutton
 	closetext
@@ -812,6 +821,20 @@ GaveBackRainbowWingText:
 	line "the Rainbow Wing."
 	done
 
+LearnWhirlpoolText:
+	text "Oh, as a thanks,"
+	line "I can teach you a"
+	cont "new tune for your"
+	cont "Lapras Call!"
+
+	para "You'll be able to"
+	line "get rid of"
+	cont "whirlpools now!"
+
+	para "You learned a new"
+	line "tune!"
+	done
+
 HaveYouSeenHerText:
 	text "By the way, have"
 	line "you ran into,"
@@ -852,7 +875,7 @@ TeamRocketBaseB2F_MapEvents:
 	bg_event 15, 12, BGEVENT_IFNOTSET, TeamRocketBaseB2FLockedDoor
 	bg_event 26,  7, BGEVENT_ITEM, TeamRocketBaseB2FHiddenFullHeal
 
-	db 12 ; object events
+	db 11 ; object events
 	object_event 25, 13, SPRITE_NINJA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 3, TrainerMNinjaF4, EVENT_HIDEOUT_NINJA7
 	object_event 25,  9, SPRITE_ARCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, HideoutB2FArcherScript, EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE
 	object_event  1, 16, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B2F_LANCE
@@ -864,4 +887,3 @@ TeamRocketBaseB2F_MapEvents:
 	object_event  4,  1, SPRITE_NINJA, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_TRAINER, 1, TrainerMNinjaM3, EVENT_HIDEOUT_NINJA5
 	object_event 21, 14, SPRITE_NINJA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_TRAINER, 4, TrainerMNinjaM4, EVENT_HIDEOUT_NINJA8
 	object_event  3, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB2FTMThief, EVENT_TEAM_ROCKET_BASE_B2F_TM_THIEF
-	object_event 20,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB2FLaprasCallB, EVENT_GOT_HM06_WHIRLPOOL

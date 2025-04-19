@@ -1850,7 +1850,7 @@ LakeOfRageSwarmText::
 
 	para "At Lake of Rage,"
 	line "there is a swarm"
-	cont "Kotora!"
+	cont "of Kotora!"
 
 	para "Now's your chance,"
 	line "trainers!"

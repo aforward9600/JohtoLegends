@@ -717,11 +717,14 @@ Script_UsedWaterfall:
 	text_end
 
 TryWaterfallOW::
-	ld a, LAPRAS_CALLC
-	ld [wCurItem], a
-	ld hl, wNumItems
-	call CheckItem
-	jr nc, .failed
+	ld de, ENGINE_LAPRAS_CALLC
+	call CheckEngineFlag
+	jr c, .failed
+;	ld a, LAPRAS_CALLC
+;	ld [wCurItem], a
+;	ld hl, wNumItems
+;	call CheckItem
+;	jr nc, .failed
 	call CheckMapCanWaterfall
 	jr c, .failed
 	ld a, BANK(Script_AskWaterfall)
@@ -1209,11 +1212,14 @@ DisappearWhirlpool:
 	ret
 
 TryWhirlpoolOW::
-	ld a, LAPRAS_CALLB
-	ld [wCurItem], a
-	ld hl, wNumItems
-	call CheckItem
-	jr nc, .failed
+	ld de, ENGINE_LAPRAS_CALLB
+	call CheckEngineFlag
+	jr c, .failed
+;	ld a, LAPRAS_CALLB
+;	ld [wCurItem], a
+;	ld hl, wNumItems
+;	call CheckItem
+;	jr nc, .failed
 	call TryWhirlpoolMenu
 	jr c, .failed
 	ld a, BANK(Script_AskWhirlpoolOW)

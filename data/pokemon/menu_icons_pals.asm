@@ -333,6 +333,9 @@ MonMenuIconPals:
 	icon_pals BLUE,   PINK   ; BAGON
 	icon_pals BLUE,   PINK   ; SHELGON
 	icon_pals BLUE,   PINK   ; SALAMENCE
+	icon_pals BLUE,   GRAY   ; BELDUM
+	icon_pals BLUE,   GRAY   ; METANG
+	icon_pals BLUE,   GRAY   ; METAGROSS
 	icon_pals BLUE,   RED    ; LUGIA
 	icon_pals RED,    GREEN  ; HO_OH
 	icon_pals GREEN,  PINK   ; CELEBI

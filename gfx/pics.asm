@@ -520,6 +520,36 @@ SECTION "Breloom Backpic", ROMX
 BreloomBackpic:      INCBIN "gfx/pokemon/breloom/back.2bpp.lz"
 
 
+SECTION "Beldum Frontpic", ROMX
+
+BeldumFrontpic:      INCBIN "gfx/pokemon/beldum/front.animated.2bpp.lz"
+
+
+SECTION "Beldum Backpic", ROMX
+
+BeldumBackpic:       INCBIN "gfx/pokemon/beldum/back.2bpp.lz"
+
+
+SECTION "Metang Frontpic", ROMX
+
+MetangFrontpic:      INCBIN "gfx/pokemon/metang/front.animated.2bpp.lz"
+
+
+SECTION "Metang Backpic", ROMX
+
+MetangBackpic:       INCBIN "gfx/pokemon/metang/back.2bpp.lz"
+
+
+SECTION "Metagross Frontpic", ROMX
+
+MetagrossFrontpic:   INCBIN "gfx/pokemon/metagross/front.animated.2bpp.lz"
+
+
+SECTION "Metagross Backpic", ROMX
+
+MetagrossBackpic:    INCBIN "gfx/pokemon/metagross/back.2bpp.lz"
+
+
 SECTION "Pics 8", ROMX
 
 SeelFrontpic:        INCBIN "gfx/pokemon/seel/front.animated.2bpp.lz"

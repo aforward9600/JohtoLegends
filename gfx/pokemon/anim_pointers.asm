@@ -321,6 +321,9 @@ AnimationPointers:
 	dw BagonAnimation
 	dw ShelgonAnimation
 	dw SalamenceAnimation
+	dw BeldumAnimation
+	dw MetangAnimation
+	dw MetagrossAnimation
 	dw LugiaAnimation
 	dw HoOhAnimation
 	dw CelebiAnimation

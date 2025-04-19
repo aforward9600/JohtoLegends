@@ -16,6 +16,9 @@ EvosAttacksPointers3::
 	dw BagonEvosAttacks
 	dw ShelgonEvosAttacks
 	dw SalamenceEvosAttacks
+	dw BeldumEvosAttacks
+	dw MetangEvosAttacks
+	dw MetagrossEvosAttacks
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
@@ -331,6 +334,51 @@ SalamenceEvosAttacks:
 	dbw 54, DUALWINGBEAT
 	dbw 63, DOUBLE_EDGE
 	dbw 69, OUTRAGE
+	db 0 ; no more level-up moves
+
+BeldumEvosAttacks:
+	dbbw EVOLVE_LEVEL, 20, METANG
+	db 0 ; no more evolutions
+	dbw 1, TAKE_DOWN
+	db 0 ; no more level-up moves
+
+MetangEvosAttacks:
+	dbbw EVOLVE_LEVEL, 45, METAGROSS
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, CONFUSION
+	dbw LEARN_EVO_MOVE, METAL_CLAW
+	dbw 1, CONFUSION
+	dbw 1, METAL_CLAW
+	dbw 1, TAKE_DOWN
+	dbw 23, PURSUIT
+	dbw 26, BULLET_PUNCH
+	dbw 29, FORESIGHT
+	dbw 32, ZEN_HEADBUTT
+	dbw 35, SCARY_FACE
+	dbw 38, PSYCHIC_M
+	dbw 41, AGILITY
+	dbw 44, METEOR_MASH
+	dbw 47, IRON_DEFENSE
+	dbw 50, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+MetagrossEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, HAMMER_ARM
+	dbw 1, HAMMER_ARM
+	dbw 1, CONFUSION
+	dbw 1, METAL_CLAW
+	dbw 1, TAKE_DOWN
+	dbw 23, PURSUIT
+	dbw 26, BULLET_PUNCH
+	dbw 29, FORESIGHT
+	dbw 32, ZEN_HEADBUTT
+	dbw 35, SCARY_FACE
+	dbw 38, PSYCHIC_M
+	dbw 41, AGILITY
+	dbw 44, METEOR_MASH
+	dbw 52, IRON_DEFENSE
+	dbw 60, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 LugiaEvosAttacks:

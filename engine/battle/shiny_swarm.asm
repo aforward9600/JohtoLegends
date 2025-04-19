@@ -40,6 +40,8 @@ GenerateShinySwarm:
 	jp z, .ponyta
 	cp ROUTE_47
 	jp z, .chansey
+	cp EMBEDDED_TOWER
+	jp z, .beldum
 	jp .skipshineswarm
 
 .dunsparce
@@ -472,7 +474,7 @@ GenerateShinySwarm:
 			cp HIGH(MURKROW)
 		endc
 	endc
-	jr nz, .skipshineswarm
+	jp nz, .skipshineswarm
 	jr .rollshiny
 
 .ditto
@@ -594,6 +596,24 @@ GenerateShinySwarm:
 	endc
 	jr nz, .skipshineswarm
 	jr .rollshiny
+
+.beldum
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(BELDUM)
+	if HIGH(BELDUM) == 0
+		or h
+	else
+		jr nz, .skipshineswarm
+		if HIGH(BELDUM)
+			dec h
+		else
+			ld a, h
+			cp HIGH(BELDUM)
+		endc
+	endc
+	jr nz, .skipshineswarm
 
 .rollshiny
 	call Random

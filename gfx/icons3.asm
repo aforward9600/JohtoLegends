@@ -73,6 +73,9 @@ Icons3:
 	dw BagonIcon
 	dw ShelgonIcon
 	dw SalamenceIcon
+	dw BeldumIcon
+	dw MetangIcon
+	dw MetagrossIcon
 	dw LugiaIcon
 	dw HoOhIcon
 	dw CelebiIcon
@@ -150,6 +153,9 @@ GarchompIcon:     INCBIN "gfx/icons/garchomp.2bpp"
 BagonIcon:	      INCBIN "gfx/icons/bagon.2bpp"
 ShelgonIcon:	  INCBIN "gfx/icons/shelgon.2bpp"
 SalamenceIcon:	  INCBIN "gfx/icons/salamence.2bpp"
+BeldumIcon:       INCBIN "gfx/icons/beldum.2bpp"
+MetangIcon:       INCBIN "gfx/icons/metang.2bpp"
+MetagrossIcon:    INCBIN "gfx/icons/metagross.2bpp"
 LugiaIcon:	      INCBIN "gfx/icons/lugia.2bpp"
 HoOhIcon:	      INCBIN "gfx/icons/ho_oh.2bpp"
 CelebiIcon:	      INCBIN "gfx/icons/celebi.2bpp"

@@ -620,4 +620,34 @@ SwarmGrassWildMons:
 	dbw 60, CHANSEY
 	dbw 60, CHANSEY
 
+	map_id EMBEDDED_TOWER
+	db 10 percent, 10 percent, 10 percent
+	; morn
+	dbw 18, BELDUM
+	dbw 18, BELDUM
+	dbw 18, BELDUM
+	dbw 18, BELDUM
+	dbw 18, BELDUM
+	dbw 35, METANG
+	dbw 35, METANG
+	dbw 35, METANG
+	; day
+	dbw 18, BELDUM
+	dbw 18, BELDUM
+	dbw 18, BELDUM
+	dbw 18, BELDUM
+	dbw 18, BELDUM
+	dbw 35, METANG
+	dbw 35, METANG
+	dbw 35, METANG
+	; nite
+	dbw 18, BELDUM
+	dbw 18, BELDUM
+	dbw 18, BELDUM
+	dbw 18, BELDUM
+	dbw 18, BELDUM
+	dbw 35, METANG
+	dbw 35, METANG
+	dbw 35, METANG
+
 	db -1 ; end

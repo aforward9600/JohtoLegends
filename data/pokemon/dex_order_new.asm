@@ -297,6 +297,9 @@ NewPokedexOrder:
 	dw KABUTO
 	dw KABUTOPS
 	dw AERODACTYL
+	dw BELDUM
+	dw METANG
+	dw METAGROSS
 	dw BULBASAUR
 	dw IVYSAUR
 	dw VENUSAUR
