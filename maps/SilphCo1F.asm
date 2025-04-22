@@ -4,6 +4,7 @@
 	const SILPHCO1F_GENTLEMAN
 	const SILPHCO1F_SCIENTIST
 	const SILPHCO1F_GENTLEMAN2
+	const SILPHCO1F_GENTLEMAN3
 
 SilphCo1F_MapScripts:
 	db 0 ; scene scripts
@@ -32,6 +33,50 @@ SilphCo1FGentlemanScript2:
 
 SilphElevator:
 	jumptext SilphElevatorText
+
+DevonStoneScript:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_SHINY_BELDUM
+	iftrue .AlreadyGotBeldum
+	checkevent EVENT_PASSWORD_SINGULAR
+	iftrue .CantGiveBeldum
+	writetext DevonStoneText1
+	buttonsound
+	waitsfx
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+.GetBeldum
+	writetext GotBeldumText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke BELDUM, 5
+	loadmem wPartyMon1DVs+0, $ea
+	loadmem wPartyMon1DVs+1, $aa
+	setevent EVENT_GOT_SHINY_BELDUM
+.AlreadyGotBeldum
+	writetext DevonStoneText2
+	waitbutton
+	closetext
+	end
+
+.NoRoom:
+	readvar VAR_BOXSPACE
+	ifequal 0, .BoxFullBeldum
+	sjump .GetBeldum
+
+.BoxFullBeldum:
+	writetext NoRoomBeldumText
+	waitbutton
+	closetext
+	end
+
+.CantGiveBeldum:
+	writetext CantGiveBeldumText
+	setevent EVENT_GOT_SHINY_BELDUM
+	waitbutton
+	closetext
+	end
 
 SilphCoReceptionistText:
 	text "Welcome. This is"
@@ -140,6 +185,92 @@ SilphCo1FGentlemanText2:
 	cont "uncomfortable."
 	done
 
+DevonStoneText1:
+	text "My name is Devon"
+	line "Stone."
+
+	para "I am the owner of"
+	line "Devon Corporation"
+	cont "in Hoenn."
+
+	para "I came here a few"
+	line "years ago to set"
+	cont "up a deal with"
+	cont "Silph to sell"
+
+	para "#-Balls in"
+	line "Hoenn when I got"
+	cont "caught up in this"
+	cont "embargo."
+
+	para "I haven't seen my"
+	line "son Steven since"
+	cont "this madness"
+	cont "began."
+
+	para "We still exchange"
+	line "letters through"
+	cont "my Skarmory."
+
+	para "At least I have"
+	line "some stones to"
+	cont "give him when I"
+	cont "return."
+
+	para "…Ah, you're the"
+	line "Champion, and you"
+	cont "are working to"
+	cont "get rid of these"
+	cont "ruffians?"
+
+	para "Wonderful! I may"
+	line "get to see my son"
+	cont "yet again!"
+
+	para "Here, take this"
+	line "Beldum!"
+
+	para "I brought it with"
+	line "as a bargaining"
+	cont "chip for Silph's"
+
+	para "President, but the"
+	line "deal went through"
+	cont "without needing"
+	cont "it."
+
+	para "Please take it!"
+	done
+
+DevonStoneText2:
+	text "Devon: The thought"
+	line "of going home and"
+	cont "seeing my son"
+	cont "again fills me"
+	cont "hope again."
+	done
+
+GotBeldumText:
+	text "<PLAYER> received"
+	line "a Beldum!"
+	done
+
+NoRoomBeldumText:
+	text "Well, this is a"
+	line "predicament!"
+
+	para "You have no room"
+	line "for this!"
+	done
+
+CantGiveBeldumText:
+	text "Ah, my apologies."
+
+	para "I did not realize"
+	line "that you cannot"
+	cont "accept this gift."
+	done
+
 SilphCo1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -152,9 +283,10 @@ SilphCo1F_MapEvents:
 	db 1 ; bg events
 	bg_event 21,  0, BGEVENT_READ, SilphElevator
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event  6,  2, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoReceptionistScript, -1
 	object_event 27,  1, SPRITE_OFFICER_JENNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoOfficerScript, -1
 	object_event 27, 15, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilphCo1FGentlemanScript, -1
 	object_event  1, 13, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilphCo1FScientistScript, -1
 	object_event 16,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilphCo1FGentlemanScript2, -1
+	object_event 29, 12, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DevonStoneScript, -1

@@ -462,7 +462,7 @@ JohtoGrassWildMons:
 	dbw  8, TYROGUE
 	dbw  8, TYROGUE
 	dbw  8, DIGLETT
-	dbw  8, DIGLETT
+	dbw  8, BELDUM
 	; day
 	dbw  8, SANDSHREW
 	dbw  8, ZUBAT
@@ -471,7 +471,7 @@ JohtoGrassWildMons:
 	dbw  8, TYROGUE
 	dbw  8, TYROGUE
 	dbw  8, DIGLETT
-	dbw  8, DIGLETT
+	dbw  8, BELDUM
 	; nite
 	dbw  8, SANDSHREW
 	dbw  8, ZUBAT
@@ -480,7 +480,7 @@ JohtoGrassWildMons:
 	dbw  8, TYROGUE
 	dbw  8, TYROGUE
 	dbw  8, DIGLETT
-	dbw  8, DIGLETT
+	dbw  8, BELDUM
 
 	map_id MOUNT_MORTAR_2F_INSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite

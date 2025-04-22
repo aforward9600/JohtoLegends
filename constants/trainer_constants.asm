@@ -116,10 +116,7 @@ CHRIS EQU __enum__
 
 	trainerclass SCIENTIST ; 14
 	const MAC_2
-	const MITCH
-	const JED
 	const MAC
-	const RICH
 
 	trainerclass ERIKA ; 15
 	const ERIKA1
@@ -132,35 +129,14 @@ CHRIS EQU __enum__
 	const GORDY
 	const RANDY
 	const BARNEY_YOUNGSTER
-	const JIMMY
-	const OWEN
-	const JASON
 
 	trainerclass SCHOOLBOY ; 17
 	const FINN
 	const PIERCE
 	const ALAN1
-	const JOHNNY
 	const DANNY
-	const TOMMY
-	const DUDLEY
-	const JOE
-	const BILLY
 	const CHAD1
-	const NATE
-	const RICKY
 	const JACK2
-	const JACK3
-	const ALAN2
-	const ALAN3
-	const CHAD2
-	const CHAD3
-	const JACK4
-	const JACK5
-	const ALAN4
-	const ALAN5
-	const CHAD4
-	const CHAD5
 
 	trainerclass BIRD_KEEPER ; 18
 	const RODNEY1
@@ -171,15 +147,10 @@ CHRIS EQU __enum__
 	const LUCAS
 	const SAL
 	const TERRY
-	const ROY
 	const BORIS
-	const BOB
 	const CARL
 	const PEDRO
 	const JOSE2
-	const JOSE3
-	const VANCE2
-	const VANCE3
 
 	trainerclass LASS ; 19
 	const JACKIE
@@ -190,8 +161,6 @@ CHRIS EQU __enum__
 	const LAURA
 	const USAGI
 	const MICHELLE
-	const CONNIE2
-	const CONNIE3
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -210,12 +179,10 @@ CHRIS EQU __enum__
 	const COREY1
 	const ALM
 	const BUMI
-	const SEAN
 	const JOSEPH
 
 	trainerclass COOLTRAINERF ; 1c
 	const TERESA
-	const ARIEL
 	const EMIKO
 	const HAZEL
 	const TINA
@@ -230,23 +197,12 @@ CHRIS EQU __enum__
 	const CARA
 	const JESSIE
 	const REENA2
-	const REENA3
 	const ELLA
 
 	trainerclass BEAUTY ; 1d
 	const ASHLEY
 	const BETTY
-	const BRENDA
-	const CASSIE
-	const CAROLINE
-	const CARLENE
-	const JESSICA
-	const RACHAEL
-	const ANGELICA
-	const KENDRA
-	const VERONICA
 	const JULIA
-	const THERESA
 	const VALERIE
 	const OLIVIA
 
