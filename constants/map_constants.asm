@@ -167,6 +167,9 @@ ENDM
 	map_const ECRUTEAK_ITEMFINDER_HOUSE,                    4,  4 ;  8
 	map_const ECRUTEAK_CITY,                               20, 18 ;  9
 	map_const ECRUTEAK_MOVE_TUTOR_HOUSE,                    4,  4 ; 11
+	map_const ROUTE_35,                                    10, 18 ;  2
+	map_const ROUTE_36,                                    30,  9 ;  3
+	map_const ROUTE_37,                                    10,  9 ;  4
 
 	newgroup                                                      ;  5
 
@@ -262,9 +265,6 @@ ENDM
 	newgroup                                                      ; 10
 
 	map_const ROUTE_32,                                    10, 45 ;  1
-	map_const ROUTE_35,                                    10, 18 ;  2
-	map_const ROUTE_36,                                    30,  9 ;  3
-	map_const ROUTE_37,                                    10,  9 ;  4
 	map_const VIOLET_CITY,                                 20, 18 ;  5
 	map_const VIOLET_MART,                                  6,  4 ;  6
 	map_const VIOLET_GYM,                                   5,  8 ;  7
@@ -279,6 +279,7 @@ ENDM
 	map_const ROUTE_36_RUINS_OF_ALPH_GATE,                  5,  4 ; 16
 	map_const ROUTE_36_NATIONAL_PARK_GATE,                  5,  4 ; 17
 	map_const GHOST_HOUSE,                                  4,  4 ; 18
+	map_const ROUTE_36_VIOLET_GATE,                         5,  4 ; 19
 
 	newgroup                                                      ; 11
 

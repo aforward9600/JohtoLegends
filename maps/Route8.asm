@@ -55,17 +55,6 @@ TrainerSupernerdSam:
 	closetext
 	end
 
-;TrainerSupernerdTom:
-;	trainer SUPER_NERD, TOM, EVENT_BEAT_SUPER_NERD_TOM, SupernerdTomSeenText, SupernerdTomBeatenText, 0, .Script
-
-;.Script:
-;	endifjustbattled
-;	opentext
-;	writetext SupernerdTomAfterBattleText
-;	waitbutton
-;	closetext
-;	end
-
 Route8Supernerd:
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .Route8Supernerd2
@@ -171,22 +160,6 @@ Route8SupernerdText2:
 	cont "City is easy to"
 	cont "get to now."
 	done
-
-;SupernerdTomSeenText:
-;	text "Hm… You've got"
-;	line "many GYM BADGES."
-;	done
-
-;SupernerdTomBeatenText:
-;	text "Just as I thought…"
-;	line "You're tough!"
-;	done
-
-;SupernerdTomAfterBattleText:
-;	text "GYM BADGES give"
-;	line "you advantages in"
-;	cont "battles."
-;	done
 
 Route8LockedDoorText:
 	text "It's locked…"

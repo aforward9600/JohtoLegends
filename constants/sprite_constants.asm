@@ -224,7 +224,7 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_ARTICUNO ; d1
 	const SPRITE_ZAPDOS ; d2
 	const SPRITE_SPEAROW ; d3
-	const SPRITE_MACHAMP ; d4
+	const SPRITE_POLITOED ; d4
 	const SPRITE_IGGLYBUFF ; d5
 	const SPRITE_QUAGSIRE ; d6
 	const SPRITE_ABRA ; d7

@@ -6,6 +6,7 @@
 	const ECRUTEAKCITY_FISHER
 	const ECRUTEAKCITY_YOUNGSTER
 	const ECRUTEAKCITY_GRAMPS3
+	const ECRUTEAKCITY_POLITOED
 
 EcruteakCity_MapScripts:
 	db 2 ; scene scripts
@@ -28,6 +29,8 @@ EcruteakCity_MapScripts:
 EcruteakCityGramps1Script:
 	faceplayer
 	opentext
+	checkevent EVENT_CURRENTLY_CHAMPION
+	iftrue .OldManPolitoed
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .Toldyou
 	writetext EcruteakCityGramps1Text
@@ -37,6 +40,12 @@ EcruteakCityGramps1Script:
 
 .Toldyou:
 	writetext EcruteakCityGrampsToldYouText
+	waitbutton
+	closetext
+	end
+
+.OldManPolitoed:
+	writetext OldManPolitoedText
 	waitbutton
 	closetext
 	end
@@ -58,9 +67,37 @@ EcruteakCityMotherScript:
 	closetext
 	end
 
+EcruteakPolitoedScript:
+	opentext
+	writetext PolitoedText
+	pause 15
+	cry POLITOED
+	waitbutton
+	closetext
+	loadwildmon POLITOED, 60
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	ifequal LOSE, .NotBeaten
+	disappear ECRUTEAKCITY_POLITOED
+	reloadmapafterbattle
+	special CheckCaughtCelebi
+	iftrue .CaughtPolitoed
+	setevent EVENT_BEAT_POLITOED
+	end
+
+.CaughtPolitoed:
+	setevent EVENT_CAUGHT_POLITOED
+	end
+
+.NotBeaten:
+	reloadmapafterbattle
+	end
+
 EcruteakCityFisherScript:
 	faceplayer
 	opentext
+	checkevent EVENT_CURRENTLY_CHAMPION
+	iftrue .OldManHome
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .CalmDown
 	writetext EcruteakCityFisherText
@@ -70,6 +107,12 @@ EcruteakCityFisherScript:
 
 .CalmDown:
 	writetext EcruteakCityFisherText_CalmDown
+	waitbutton
+	closetext
+	end
+
+.OldManHome:
+	writetext OldManHomeText
 	waitbutton
 	closetext
 	end
@@ -330,6 +373,28 @@ EcruteakCityGrampsToldYouText:
 	cont "you hooligans!"
 	done
 
+OldManPolitoedText:
+	text "Did you see that"
+	line "Politoed?!"
+
+	para "I told you they"
+	line "were putting"
+	cont "chemicals in the"
+	cont "water!"
+
+	para "This proves it!"
+	done
+
+OldManHomeText:
+	text "…I really need to"
+	line "put him in a home…"
+	done
+
+PolitoedText:
+	text "Poli poli!"
+	line "Toed toed!"
+	done
+
 EcruteakCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -360,7 +425,7 @@ EcruteakCity_MapEvents:
 	bg_event 30, 21, BGEVENT_READ, EcruteakCityMartSign
 	bg_event 23, 14, BGEVENT_ITEM, EcruteakCityHiddenHyperPotion
 
-	db 7 ; object events
+	db 8 ; object events
 	object_event 18, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps1Script, -1
 	object_event 20, 21, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps2Script, -1
 	object_event 30, 16, SPRITE_PICNICKER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass1Script, -1
@@ -368,3 +433,4 @@ EcruteakCity_MapEvents:
 	object_event 19, 15, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1
 	object_event 11, 20, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCityYoungsterScript, -1
 	object_event  3,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS
+	object_event 25, 13, SPRITE_POLITOED, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakPolitoedScript, EVENT_ECRUTEAK_CITY_POLITOED

@@ -230,7 +230,7 @@ EarlsPokemonAcademySignText:
 VioletCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 9 ; warp events
+	db 11 ; warp events
 	warp_event  9, 17, VIOLET_MART, 2
 	warp_event 18, 17, VIOLET_GYM, 1
 	warp_event 30, 17, GHOST_HOUSE, 1
@@ -240,6 +240,8 @@ VioletCity_MapEvents:
 	warp_event 23,  5, SPROUT_TOWER_1F, 1
 	warp_event 39, 24, ROUTE_31_VIOLET_GATE, 1
 	warp_event 39, 25, ROUTE_31_VIOLET_GATE, 2
+	warp_event  4,  8, ROUTE_36_VIOLET_GATE, 1
+	warp_event  4,  9, ROUTE_36_VIOLET_GATE, 2
 
 	db 0 ; coord events
 

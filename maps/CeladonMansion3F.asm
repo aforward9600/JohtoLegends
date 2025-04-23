@@ -68,13 +68,50 @@ GameFreakGraphicArtistScript:
 	end
 
 Ax6Script:
-	jumptextfaceplayer Ax6Text
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_SHINY_DITTO
+	iftrue .AlreadyGotDitto
+	checkevent EVENT_ENABLE_DIPLOMA_PRINTING
+	iftrue .GetShinyDitto
+.AlreadyGotDitto
+	writetext Ax6Text
+	waitbutton
+	closetext
+	end
+
+.GetShinyDitto:
+	writetext GiveShinyDittoText
+	buttonsound
+	waitsfx
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRooom
+.GetDitto
+	writetext GotDittoText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke DITTO, 50
+	loadmem wPartyMon1DVs+0, $ea
+	loadmem wPartyMon1DVs+1, $aa
+	setevent EVENT_GOT_SHINY_DITTO
+	writetext TakeCareOfDittoText
+	waitbutton
+	closetext
+	end
+
+.NoRooom:
+	readvar VAR_BOXSPACE
+	ifequal 0, .BoxFullBeldum
+	sjump .GetDitto
+
+.BoxFullBeldum:
+	writetext NoRoomDittoText
+	waitbutton
+	closetext
+	end
 
 CardboardBoxScript:
 	jumptextfaceplayer CardboardBoxText
-
-GameFreakCharacterDesignerScript:
-	jumptextfaceplayer GameFreakCharacterDesignerText
 
 CeladonMansion3FDevRoomSign:
 	jumptext CeladonMansion3FDevRoomSignText
@@ -144,6 +181,17 @@ GameFreakGameDesignerAfterDiplomaText:
 	para "I don't think it"
 	line "will work in this"
 	cont "game, however."
+
+	para "If you want some-"
+	line "thing that will"
+	cont "help you get"
+	cont "Shiny #mon more"
+	cont "often,"
+
+	para "talk to ax6 and"
+	line "you'll get one,"
+	cont "if you haven't"
+	cont "already!"
 	done
 
 GameFreakGraphicArtistText:
@@ -216,16 +264,6 @@ mountvesuviusText:
 	line "said that!"
 	done
 
-GameFreakCharacterDesignerText:
-	text "Aren't the TWINS"
-	line "adorable?"
-
-	para "JASMINE's pretty"
-	line "too."
-
-	para "Oh, I love them!"
-	done
-
 CeladonMansion3FDevRoomSignText:
 	text "Johto Legends"
 	line "Development Room"
@@ -294,6 +332,39 @@ RangiText:
 	cont "you should play it"
 	cont "when you get the"
 	cont "chance!"
+	done
+
+GiveShinyDittoText:
+	text "I see that you"
+	line "completed your"
+	cont "Journal."
+
+	para "Ferropexola would"
+	line "like to give his"
+	cont "congrats with"
+	cont "this."
+
+	para "Use it well."
+	done
+
+GotDittoText:
+	text "<PLAYER> received"
+	line "a Ditto!"
+	done
+
+TakeCareOfDittoText:
+	text "Take good care of"
+	line "Ditto, although I"
+	cont "already know what"
+	cont "you're planning on"
+	cont "using it for."
+
+	para "I won't judge you."
+	done
+
+NoRoomDittoText:
+	text "Make room and you"
+	line "can have it."
 	done
 
 CeladonMansion3F_MapEvents:

@@ -61,7 +61,7 @@ SpriteMons:
 	dw ARTICUNO
 	dw ZAPDOS
 	dw SPEAROW
-	dw MACHAMP
+	dw POLITOED
 	dw IGGLYBUFF
 	dw QUAGSIRE
 	dw ABRA

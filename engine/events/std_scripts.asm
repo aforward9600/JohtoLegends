@@ -665,6 +665,7 @@ InitializeEventsScript:
 	setevent EVENT_VICTORY_ROAD_GATE_RIVAL_2
 	setmapscene VICTORY_ROAD_GATE, SCENE_VICTORY_ROAD_GATE_GUARD
 	setevent EVENT_VICTORY_ROAD_GATE_GUARD_2
+	setevent EVENT_ECRUTEAK_CITY_POLITOED
 	return
 
 AskNumber1MScript:
@@ -1858,6 +1859,8 @@ StaticPokemonRefresh:
 	iftrue .refreshlugia
 	checkevent EVENT_BEAT_HO_OH
 	iftrue .refreshhooh
+	checkevent EVENT_BEAT_POLITOED
+	iftrue .refreshpolitoed
 	return
 
 .refreshfarfetchd:
@@ -1916,6 +1919,11 @@ StaticPokemonRefresh:
 
 .refreshhooh:
 	clearevent EVENT_BEAT_HO_OH
+	sjump StaticPokemonRefresh
+
+.refreshpolitoed:
+	clearevent EVENT_ECRUTEAK_CITY_POLITOED
+	clearevent EVENT_BEAT_POLITOED
 	sjump StaticPokemonRefresh
 
 TelevisionScript:

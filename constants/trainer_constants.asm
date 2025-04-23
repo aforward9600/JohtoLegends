@@ -62,17 +62,6 @@ CHRIS EQU __enum__
 
 	trainerclass RIVAL1 ; 9
 	const RIVAL1_2_CHIKORITA
-	const RIVAL1_2_CYNDAQUIL
-	const RIVAL1_2_TOTODILE
-	const RIVAL1_3_CHIKORITA
-	const RIVAL1_3_CYNDAQUIL
-	const RIVAL1_3_TOTODILE
-	const RIVAL1_4_CHIKORITA
-	const RIVAL1_4_CYNDAQUIL
-	const RIVAL1_4_TOTODILE
-	const RIVAL1_5_CHIKORITA
-	const RIVAL1_5_CYNDAQUIL
-	const RIVAL1_5_TOTODILE
 
 	trainerclass POKEMON_PROF ; a
 	const OAK
@@ -210,17 +199,8 @@ CHRIS EQU __enum__
 	const ALVIN
 	const DAMIEN
 	const PALMER
-	const SHANE
-	const BEN
 	const BRENT1
-	const RON
-	const ETHAN
-	const BRENT2
 	const JARVIS2
-	const ISSAC
-	const DONALD
-	const ZACH
-	const BRENT4
 	const ALLAN1
 	const JARVIS
 
@@ -232,8 +212,6 @@ CHRIS EQU __enum__
 	const GRUNTM_5
 	const GRUNTM_6
 	const GRUNTM_7
-	const GRUNTM_8
-	const GRUNTM_9
 	const GRUNTM_10
 	const GRUNTM_11
 	const GRUNTM_12
@@ -243,26 +221,11 @@ CHRIS EQU __enum__
 	const GRUNTM_16
 	const GRUNTM_17
 	const GRUNTM_18
-	const GRUNTM_19
-	const GRUNTM_20
-	const GRUNTM_21
 	const GRUNTM_22
-	const GRUNTM_23
-	const GRUNTM_24
-	const GRUNTM_25
-	const GRUNTM_26
-	const GRUNTM_27
-	const GRUNTM_28
-	const GRUNTM_29
-	const GRUNTM_30
-	const GRUNTM_31
 
 	trainerclass GENTLEMAN ; 20
 	const CROFTON
 	const FRANK
-	const GREGORY
-	const VIRGIL
-	const ALFRED
 
 	trainerclass SKIER ; 21
 	const BRANDY
@@ -272,7 +235,6 @@ CHRIS EQU __enum__
 	trainerclass TEACHER ; 22
 	const ABIGAIL
 	const ISAKO
-	const SHIRLEY
 	const CADI
 	const CADI2
 	const CADI3
@@ -295,12 +257,7 @@ CHRIS EQU __enum__
 	const THOR
 	const OLLY
 	const MARTY
-	const ARNIE2
-	const ARNIE3
 	const DOM
-	const WADE5
-	const ARNIE4
-	const ARNIE5
 	const PETE
 
 	trainerclass FISHER ; 25
@@ -314,21 +271,9 @@ CHRIS EQU __enum__
 	const AIDAN
 	const NOAH
 	const LYLE1
-	const EDGAR
 	const JONAH
 	const MARTIN
-	const STEPHEN
-	const BARNEY
-	const RALPH2
-	const RALPH3
-	const TULLY2
-	const TULLY3
 	const BUTCH
-	const SCOTT
-	const WILTON3
-	const RALPH4
-	const RALPH5
-	const TULLY4
 
 	trainerclass SWIMMERM ; 26
 	const HAROLD
@@ -339,18 +284,9 @@ CHRIS EQU __enum__
 	const BERKE
 	const KIRK
 	const MATHEW
-	const HAL
-	const PATON
-	const DARYL
-	const WALTER
-	const TONY
-	const JEROME
 	const TUCKER
-	const RICK
 	const CAMERON
 	const SETH
-	const JAMES
-	const LEWIS
 	const TANNER
 
 	trainerclass SWIMMERF ; 27
@@ -361,15 +297,10 @@ CHRIS EQU __enum__
 	const DENISE
 	const KARA
 	const WENDY
-	const LISA
-	const JILL
-	const MARY
-	const KATIE
 	const DAWN
 	const HARLENE
 	const NICOLE
 	const LORI
-	const JODY
 	const NIKKI
 	const AQUA
 	const SHEILA
@@ -377,17 +308,7 @@ CHRIS EQU __enum__
 	trainerclass SAILOR ; 28
 	const EUGENE
 	const HUEY1
-	const TERRELL
-	const KENT
-	const ERNEST
-	const JEFF
-	const GARRETT
-	const KENNETH
-	const STANLY
 	const HARRY
-	const HUEY2
-	const HUEY3
-	const HUEY4
 
 	trainerclass SUPER_NERD ; 29
 	const DEXTER
@@ -396,26 +317,17 @@ CHRIS EQU __enum__
 	const SUPER_NERD_JASON
 	const SUPER_NERD_RICHARD
 	const HERBERT_SUPER_NERD
-	const TOM
 	const ALBERT_SUPER_NERD
 	const JOSEF
 	const DAISUKE
 	const RUSS
-	const NORTON
-	const HUGH
 	const MARKUS
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA
-	const RIVAL2_1_CYNDAQUIL
-	const RIVAL2_1_TOTODILE
-	const RIVAL2_2_CHIKORITA
-	const RIVAL2_2_CYNDAQUIL
-	const RIVAL2_2_TOTODILE
 
 	trainerclass GUITARIST ; 2b
 	const CLYDE
-	const VINCENT
 
 	trainerclass HIKER ; 2c
 	const ANTHONY1
@@ -423,23 +335,8 @@ CHRIS EQU __enum__
 	const PHIL1
 	const GUNTHER
 	const ANTHONY2
-	const BENJAMIN
-	const ERIK
-	const MICHAEL
 	const PARRY1
-	const TIMOTHY
-	const BAILEY
-	const ANTHONY3
-	const TIM
-	const NOLAND
-	const SIDNEY
-	const KENNY
-	const JIM
 	const BUBBA
-	const PARRY2
-	const PARRY3
-	const ANTHONY4
-	const ANTHONY5
 
 	trainerclass BIKER ; 2d
 	const BUFORD
@@ -479,16 +376,11 @@ CHRIS EQU __enum__
 	const CHAZ
 	const FARREL
 	const BLART
-	const BURT
-	const BILL
 	const KELVIN
-	const RAY
-	const LYLE
 
 	trainerclass JUGGLER ; 31
 	const IRWIN1
 	const PERCY
-	const HORTON
 	const IRWIN2
 	const IRWIN3
 	const IRWIN4
@@ -502,7 +394,6 @@ CHRIS EQU __enum__
 	const TANABE
 	const LUNG
 	const KENJI3
-	const WAI
 
 	trainerclass ARCHER ; 33
 	const ARCHER_1
@@ -514,16 +405,9 @@ CHRIS EQU __enum__
 	trainerclass PSYCHIC_T ; 34
 	const JORDAN
 	const CHRIS_PSYCHIC
-	const HERMAN
-	const FIDEL
-	const GREG
-	const NORMAN
 	const MARK
-	const PHIL
-	const RICHARD
 	const HOUDINI
 	const JEREMY_PSYCHIC
-	const RODNEY
 
 	trainerclass PICNICKER ; 35
 	const HAYLEE
@@ -532,50 +416,16 @@ CHRIS EQU __enum__
 	const LACY
 	const BARBARA
 	const VIVIAN_PICNICKER
-	const SHARON1
-	const DEBRA
-	const GINA2
 	const ERIN1
-	const LIZ2
-	const LIZ3
-	const HEIDI
-	const EDNA
-	const GINA3
-	const TIFFANY1
-	const TIFFANY2
-	const ERIN2
 	const TANYA
 	const TIFFANY3
-	const ERIN3
-	const LIZ4
-	const LIZ5
-	const GINA4
-	const GINA5
-	const TIFFANY4
 
 	trainerclass CAMPER ; 36
 	const CAMPER_GARRET
 	const TODD1
 	const HOWARD
 	const EMIL
-	const BARRY
-	const LLOYD
-	const DEAN
-	const SID
-	const HARVEY
-	const DALE
 	const JAOQUIN
-	const TODD2
-	const TODD3
-	const THOMAS
-	const LEROY
-	const DAVID
-	const JOHN
-	const JERRY
-	const SPENCER
-	const TODD4
-	const TODD5
-	const QUENTIN
 
 	trainerclass ARIANA ; 37
 	const ARIANA_1
@@ -600,10 +450,6 @@ CHRIS EQU __enum__
 
 	trainerclass MEDIUM ; 39
 	const BETHANY
-	const MARGRET
-	const ETHEL
-	const REBECCA
-	const DORIS
 
 	trainerclass BOARDER ; 3a
 	const GARETH
@@ -614,45 +460,21 @@ CHRIS EQU __enum__
 	const BERNARD
 	const DEREK1
 	const ROBERTO
-	const JOSHUA
-	const CARTER
-	const TREVOR
 	const TRENTON
-	const JEREMY
-	const COLIN
-	const DEREK2
-	const DEREK3
-	const ALEX
-	const REX
-	const ALLAN
 
 	trainerclass KIMONO_GIRL ; 3c
 	const RUI
-	const NAOKO2
-	const SAYO
-	const ZUKI
-	const KUNI
-	const MIKI
 
 	trainerclass TWINS ; 3d
 	const GINGERANDSAM1
-	const ANNANDANNE1
-	const ANNANDANNE2
 	const GINGERANDSAM2
 	const JOANDZOE1
 	const JOANDZOE2
-	const MEGANDPEG1
-	const MEGANDPEG2
-	const LEAANDPIA1
-	const LEAANDPIA2
 
 	trainerclass POKEFANF ; 3e
 	const BEVERLY1
 	const ETHEL1
-	const BEVERLY2
-	const BEVERLY3
 	const GEORGIA
-	const JAIME
 
 	trainerclass RED ; 3f
 	const RED1
