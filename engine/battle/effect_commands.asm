@@ -2552,7 +2552,6 @@ UnevolvedEviolite:
 	push hl
 	push bc
 	call GetPokemonIndexFromID
-	ld b,b
 	ld b, h
 	ld c, l
 	ld hl, EvosAttacksPointers
@@ -2571,8 +2570,6 @@ UnevolvedEviolite:
 	cp HELD_EVIOLITE
 	pop bc
 	ret nz
-
-;	ld b,b
 
 ; boost the relevant defense stat in bc by 50%
 	ld a, c

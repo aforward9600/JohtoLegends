@@ -111,27 +111,27 @@ OlivineRocketScript:
 	end
 
 OlivineCitySailor2Script:
-	jumptextfaceplayer OlivineCitySailor2Text
-;	faceplayer
-;	opentext
-;	checkevent EVENT_GOT_MACHO_BRACE
-;	iftrue .AfterMachoBrace
-;	writetext MachoBraceText
-;	buttonsound
-;	verbosegiveitem MACHO_BRACE
-;	iffalse .NoRoom
-;	setevent EVENT_GOT_MACHO_BRACE
-;.AfterMachoBrace
-;	writetext OlivineCitySailor2Text
-;	waitbutton
-;	closetext
-;	end
+;	jumptextfaceplayer OlivineCitySailor2Text
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_MACHO_BRACE
+	iftrue .AfterMachoBrace
+	writetext MachoBraceText
+	buttonsound
+	verbosegiveitem MACHO_BRACE
+	iffalse .NoRoom
+	setevent EVENT_GOT_MACHO_BRACE
+.AfterMachoBrace
+	writetext OlivineCitySailor2Text
+	waitbutton
+	closetext
+	end
 
-;.NoRoom:
-;	writetext NoRoomMachoBraceText
-;	waitbutton
-;	closetext
-;	end
+.NoRoom:
+	writetext NoRoomMachoBraceText
+	waitbutton
+	closetext
+	end
 
 OlivineCitySign:
 	jumptext OlivineCitySignText

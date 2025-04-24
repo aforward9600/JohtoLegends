@@ -183,9 +183,6 @@ GetMysteryGiftItem:
 	text_end
 
 BugContestJudging:
-	farcall _BugContestJudging
-	ld a, b
-	ld [wScriptVar], a
 	ret
 
 MapRadio:

@@ -6514,19 +6514,16 @@ ApplyStatusEffectOnStats:
 	ldh [hBattleTurn], a
 	farcall ApplyChoiceScarfOnSpeed
 	call ApplyPrzEffectOnSpeed
-;	call MachoBraceEffectOnSpeed
+	call MachoBraceEffectOnSpeed
 	jp ApplyBrnEffectOnAttack
 
 MachoBraceEffectOnSpeed:
-	call GetUserItem
-
-	ld a, b
-	and a
-	ret z
-
-	cp HELD_MACHO_BRACE
+	ld a, MON_ITEM
+	call GetPartyParamLocation
+	ld a, [hl]
+	cp MACHO_BRACE
 	ret nz
-;	ld b,b
+	ld b,b
 	jr ApplyPrzEffectOnSpeed.SpeedDrop
 
 ApplyPrzEffectOnSpeed:
@@ -6874,31 +6871,28 @@ GiveExperiencePoints:
 
 ; Give EVs
 ; e = 0 for no Pokerus, 1 for Pokerus
-;	lb de, 0, 0
 	ld hl, MON_PKRUS
 	add hl, bc
 	ld a, [hl]
 	and a
 	jr z, .no_pokerus
-	inc e
-;	ld a, 1
-;	jr .got_pokerus
+	ld a, 1
+	jr .got_pokerus
 .no_pokerus
-;	ld a, 0
-;.got_pokerus
-;	ld [wPokerusBuffer], a
+	ld a, 0
+.got_pokerus
+	ld [wPokerusBuffer], a
 	ld a, MON_ITEM
 	call GetPartyParamLocation
 	ld a, [hl]
 	cp MACHO_BRACE
 	jr nz, .no_macho_brace
-	inc d
-;	ld a, 1
-;	jr .got_macho_brace
+	ld a, 1
+	jr .got_macho_brace
 .no_macho_brace
-;	ld a, 0
-;.got_macho_brace
-;	ld [wMachoBraceBuffer], a
+	ld a, 0
+.got_macho_brace
+	ld [wMachoBraceBuffer], a
 	ld hl, MON_EVS
 	add hl, bc
 	push bc
@@ -6912,32 +6906,22 @@ GiveExperiencePoints:
 	ld b, a
 	ld c, 6 ; six EVs
 .ev_loop
+	ld a, [wPokerusBuffer]
+	ld e, a
+	ld a, [wMachoBraceBuffer]
+	ld d, a
 	rlc b
 	rlc b
 	ld a, b
 	and %11
 	bit 0, e
-;	push af
-;	ld a, [wPokerusBuffer]
 	jr z, .no_pokerus_boost
-;	pop af
 	add a
-;	jr .after_pokerus_boost
 .no_pokerus_boost
-;	pop af
-;.after_pokerus_boost
-;	push af
-;	ld a, [wMachoBraceBuffer]
-;	jr nz, .no_macho_brace_boost
-;	pop af
-;	and %11
 	bit 0, d
 	jr z, .no_macho_brace_boost
 	add a
-;	jr .after_macho_brace_boost
 .no_macho_brace_boost
-;	pop af
-;.after_macho_brace_boost
 ; Make sure total EVs never surpass 510
 	push bc
 	push hl
