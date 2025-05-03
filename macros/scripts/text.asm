@@ -1,4 +1,5 @@
 text   EQUS "db TX_START,"    ; Start writing text.
+next1  EQUS "db \"<LNBRK>\"," ; Move one screen row down
 next   EQUS "db \"<NEXT>\","  ; Move a line down.
 line   EQUS "db \"<LINE>\","  ; Start writing at the bottom line.
 page   EQUS "db \"@\","       ; Start a new Pokédex page.

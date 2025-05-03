@@ -668,3 +668,8 @@ INCLUDE "data/moves/animations.asm"
 SECTION "Battle Core 3", ROMX
 
 INCLUDE "engine/battle/effect_command_files.asm"
+
+SECTION "Abilities", ROMX
+
+INCLUDE "data/abilities/names.asm"
+INCLUDE "data/abilities/descriptions.asm"
