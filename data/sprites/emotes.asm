@@ -21,3 +21,4 @@ Emotes:
 	emote GrassRustleGFX, 1, $fe
 	emote SilenceEmote,   4, $f8
 	emote PuddleSplashGFX, 1, $ff
+	emote SandGFX,         1, $fb

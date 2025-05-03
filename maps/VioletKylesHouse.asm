@@ -22,7 +22,7 @@ ConsoleSalesLoopScript:
 	ifequal 2, .SNES
 	ifequal 3, .N64
 	ifequal 4, .VirtualBoy
-	jump ConsoleSalesCancel
+	sjump ConsoleSalesCancel
 
 .Famicom:
 	checkevent EVENT_DECO_FAMICOM

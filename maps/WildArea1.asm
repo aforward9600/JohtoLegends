@@ -88,7 +88,7 @@ WildArea1_MapEvents:
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event 5, 10, BGEVENT_READ, WildArea1Sign
+	bg_event 4, 10, BGEVENT_READ, WildArea1Sign
 
 	db 1 ; object events
 	object_event  6,  7, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BaobaScript, -1

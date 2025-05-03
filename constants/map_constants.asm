@@ -29,7 +29,6 @@ ENDM
 	newgroup                                                      ;  1
 
 	map_const OLIVINE_POKECENTER_1F,                        5,  4 ;  1
-	map_const OLIVINE_GYM,                                  5,  8 ;  2
 	map_const OLIVINE_TIMS_HOUSE,                           4,  4 ;  3
 	map_const OLIVINE_PUNISHMENT_SPEECH_HOUSE,              4,  4 ;  5
 	map_const OLIVINE_GOOD_ROD_HOUSE,                       4,  4 ;  6
@@ -308,6 +307,7 @@ ENDM
 	map_const ROUTE_34_ILEX_FOREST_GATE,                    5,  4 ; 23
 	map_const DAY_CARE,                                     5,  4 ; 24
 	map_const GOLDENROD_JAIL,                              11,  7 ; 25
+	map_const BERRY_CAFE,                                   7,  4 ; 26
 
 	newgroup                                                      ; 12
 
@@ -545,10 +545,10 @@ ENDM
 	map_const WILD_AREA_POKECENTER,                         5,  4 ; 5
 	map_const WILD_AREA_MART,                               6,  4 ; 6
 	map_const WILD_AREA_1,                                  7,  7 ; 7
-	map_const WILD_AREA_2_3,                               14, 14 ; 8
+	map_const WILD_AREA_2_3,                               13, 12 ; 8
 	map_const WILD_AREA_CAVE,                               7,  7 ; 9
 	map_const WILD_AREA_4,                                  7,  7 ; 10
-	map_const WILD_AREA_5,                                  7,  7 ; 11
+	map_const WILD_AREA_5,                                  6,  6 ; 11
 	map_const CLIFF_CAVE_B1F,                               5,  6 ; 12
 	map_const EMBEDDED_TOWER,                              11, 12 ; 13
 

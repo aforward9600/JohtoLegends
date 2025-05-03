@@ -2762,8 +2762,9 @@ wEventFlags:: flag_array NUM_EVENTS ; da72
 
 wPokerusBuffer::     db
 wMachoBraceBuffer::  db
+wBerryCafeBuffer::   db
 
-	ds 4
+	ds 3
 
 wCurBox:: db ; db72
 

@@ -189,7 +189,6 @@ INCLUDE "maps/EcruteakItemfinderHouse.asm"
 SECTION "Map Scripts 12", ROMX
 
 INCLUDE "maps/OlivinePokecenter1F.asm"
-INCLUDE "maps/OlivineGym.asm"
 INCLUDE "maps/OlivineTimsHouse.asm"
 INCLUDE "maps/OlivinePunishmentSpeechHouse.asm"
 INCLUDE "maps/OlivineGoodRodHouse.asm"
@@ -574,3 +573,4 @@ INCLUDE "maps/DahliaScene.asm"
 INCLUDE "maps/HoOhTowerScene.asm"
 INCLUDE "maps/SilphCo1F.asm"
 INCLUDE "maps/Route36VioletGate.asm"
+INCLUDE "maps/BerryCafe.asm"

@@ -703,11 +703,18 @@ NormalStep:
 	call CheckPuddleTile
 	jr z, .splash_puddle
 
+	call CheckSandTile
+	jr z, .sand
+
 	call CheckGrassTile
 	jr c, .skip_grass
 
 .shake_grass
 	call ShakeGrass
+	jr .skip_grass
+
+.sand
+	call SandKick
 	jr .skip_grass
 
 .splash_puddle

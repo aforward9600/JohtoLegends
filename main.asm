@@ -479,6 +479,7 @@ INCLUDE "engine/link/time_capsule_2.asm"
 SECTION "Magikarp Event", ROMX
 
 INCLUDE "engine/events/magikarp.asm"
+INCLUDE "engine/events/hidden_power_change.asm"
 
 
 SECTION "bank3F", ROMX

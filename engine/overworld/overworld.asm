@@ -173,6 +173,8 @@ LoadUsedSpritesGFX:
 	farcall LoadEmote
 	ld c, EMOTE_PUDDLE_SPLASH
 	farcall LoadEmote
+	ld c, EMOTE_SAND
+	farcall LoadEmote
 	ret
 
 SafeGetSprite:

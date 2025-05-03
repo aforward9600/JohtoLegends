@@ -465,7 +465,6 @@ ENDM
 	map_attributes DragonShrine, DRAGON_SHRINE, $00, 0
 	map_attributes TohjoFalls, TOHJO_FALLS, $09, 0
 	map_attributes OlivinePokecenter1F, OLIVINE_POKECENTER_1F, $00, 0
-	map_attributes OlivineGym, OLIVINE_GYM, $00, 0
 	map_attributes OlivineTimsHouse, OLIVINE_TIMS_HOUSE, $00, 0
 	map_attributes OlivinePunishmentSpeechHouse, OLIVINE_PUNISHMENT_SPEECH_HOUSE, $00, 0
 	map_attributes OlivineGoodRodHouse, OLIVINE_GOOD_ROD_HOUSE, $00, 0
@@ -760,3 +759,4 @@ ENDM
 	map_attributes DahliaScene, DAHLIA_SCENE, $00, 0
 	map_attributes HoOhTowerScene, HO_OH_TOWER_SCENE, $00, 0
 	map_attributes Route36VioletGate, ROUTE_36_VIOLET_GATE, $00, 0
+	map_attributes BerryCafe, BERRY_CAFE, $00, 0

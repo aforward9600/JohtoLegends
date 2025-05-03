@@ -6514,17 +6514,8 @@ ApplyStatusEffectOnStats:
 	ldh [hBattleTurn], a
 	farcall ApplyChoiceScarfOnSpeed
 	call ApplyPrzEffectOnSpeed
-	call MachoBraceEffectOnSpeed
+	farcall MachoBraceEffectOnSpeed
 	jp ApplyBrnEffectOnAttack
-
-MachoBraceEffectOnSpeed:
-	ld a, MON_ITEM
-	call GetPartyParamLocation
-	ld a, [hl]
-	cp MACHO_BRACE
-	ret nz
-	ld b,b
-	jr ApplyPrzEffectOnSpeed.SpeedDrop
 
 ApplyPrzEffectOnSpeed:
 	ldh a, [hBattleTurn]
@@ -6533,7 +6524,6 @@ ApplyPrzEffectOnSpeed:
 	ld a, [wBattleMonStatus]
 	and 1 << PAR
 	ret z
-.SpeedDrop:
 	ld hl, wBattleMonSpeed + 1
 	ld a, [hld]
 	ld b, a
@@ -6875,11 +6865,9 @@ GiveExperiencePoints:
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr z, .no_pokerus
+	; if z, then a == 0 already
+	jr z, .got_pokerus
 	ld a, 1
-	jr .got_pokerus
-.no_pokerus
-	ld a, 0
 .got_pokerus
 	ld [wPokerusBuffer], a
 	ld a, MON_ITEM

@@ -152,7 +152,7 @@ HandleCurNPCStep:
 	ld hl, OBJECT_FLAGS1
 	add hl, bc
 	bit INVISIBLE_F, [hl]
-	jr nz, SetFacingStanding
+	jp nz, SetFacingStanding
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
 	bit OBJ_FLAGS2_6, [hl]
@@ -586,6 +586,7 @@ MapObjectMovementPattern:
 	dw .MovementBoulderDust ; 1a
 	dw .MovementShakingGrass ; 1b
 	dw .MovementSplashingPuddle
+	dw .MovementSand
 
 .Null_00:
 	ret
@@ -1008,6 +1009,14 @@ MapObjectMovementPattern:
 	add hl, bc
 	ld [hl], OBJECT_ACTION_PUDDLE_SPLASH
 	jr ._MovementGrass_Puddle_End
+
+.MovementSand:
+ 	call EndSpriteMovement
+ 	call ._MovementShadow_Grass_Emote_BoulderDust
+ 	ld hl, OBJECT_ACTION
+ 	add hl, bc
+ 	ld [hl], OBJECT_ACTION_SAND
+ 	jr ._MovementGrass_Puddle_End
 
 ._MovementShadow_Grass_Emote_BoulderDust:
 	ld hl, OBJECT_RANGE
@@ -2104,6 +2113,19 @@ SplashPuddle:
 
 .PuddleObject
 	db $00, PAL_OW_BLUE, SPRITEMOVEDATA_PUDDLE
+
+SandKick:
+ 	push bc
+ 	ld de, .SandObject
+ 	call CopyTempObjectData
+ 	call InitTempObject
+ 	pop bc
+ 	ld de, SFX_PECK
+ 	call PlaySFX
+ 	ret
+ 
+ .SandObject
+ 	db $00, PAL_OW_BROWN, SPRITEMOVEDATA_SAND
 
 ShakeScreen:
 	push bc

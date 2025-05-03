@@ -48,5 +48,10 @@ GetHiddenPowerType::
 	jr c, .done
 	add UNUSED_TYPES_END - UNUSED_TYPES
 .done
+; Skip Dragon
+	cp DRAGON
+	jr c, .skip_dragon
+	inc a
+.skip_dragon
 	ld e, a
 	ret

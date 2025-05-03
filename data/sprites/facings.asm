@@ -34,6 +34,8 @@ Facings:
 	dw FacingGrass2
 	dw FacingSplash1
 	dw FacingSplash2
+	dw FacingSand1
+	dw FacingSand2
 .End
 	dw 0
 
@@ -249,3 +251,14 @@ FacingSplash2:
 	db 2 ; #
 	db  9, -1, ABSOLUTE_TILE_ID, $ff
 	db  9,  9, ABSOLUTE_TILE_ID | X_FLIP, $ff
+
+
+FacingSand1:
+ 	db 2 ; #
+ 	db  8,  0, ABSOLUTE_TILE_ID, $ff
+ 	db  8,  8, ABSOLUTE_TILE_ID | X_FLIP, $fb
+ 
+FacingSand2:
+ 	db 2 ; #
+ 	db  9, -1, ABSOLUTE_TILE_ID, $ff
+ 	db  9,  9, ABSOLUTE_TILE_ID | X_FLIP, $fb

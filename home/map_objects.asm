@@ -136,6 +136,10 @@ CheckPuddleTile::
 	cp COLL_PUDDLE
 	ret
 
+CheckSandTile::
+	cp COLL_SAND
+	ret
+
 CheckCutTreeTile::
 	cp COLL_CUT_TREE
 	ret z

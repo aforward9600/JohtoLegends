@@ -35,7 +35,7 @@ Vulcandth and Rangi: Level Caught Design Flaw Fix
 
 Vulcandth: Eviolite
 
-Focus Sash, Power Band, SpecialSpecs, Wide Lens, Life Orb, Choice Band, Choice Scarf and Choice Specs coding: AzureKeys
+Check item quantity, Focus Sash, Power Band, SpecialSpecs, Wide Lens, Life Orb, Choice Band, Choice Scarf and Choice Specs coding: AzureKeys
 
 New Swarming System: Dragon Arbock
 

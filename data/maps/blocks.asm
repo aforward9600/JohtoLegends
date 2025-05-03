@@ -718,9 +718,6 @@ EcruteakGym_Blocks:
 MahoganyGym_Blocks:
 	INCBIN "maps/MahoganyGym.ablk"
 
-OlivineGym_Blocks:
-	INCBIN "maps/OlivineGym.ablk"
-
 BetaUnknownGym_Blocks:
 	INCBIN "maps/unused/BetaUnknownGym.ablk"
 
@@ -1206,3 +1203,6 @@ DahliaScene_Blocks:
 
 HoOhTowerScene_Blocks:
 	INCBIN "maps/HoOhTowerScene.ablk"
+
+BerryCafe_Blocks:
+	INCBIN "maps/BerryCafe.ablk"

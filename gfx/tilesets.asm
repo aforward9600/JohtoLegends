@@ -310,15 +310,6 @@ INCLUDE "data/tilesets/cave_collision.asm"
 
 SECTION "Tileset Data 9", ROMX
 
-TilesetRoute47GFX:
-INCBIN "gfx/tilesets/route_47.2bpp.lz"
-
-TilesetRoute47Meta:
-INCBIN "data/tilesets/route_47_metatiles.bin"
-
-TilesetRoute47Coll:
-INCLUDE "data/tilesets/route_47_collision.asm"
-
 TilesetUndergroundGFX:
 INCBIN "gfx/tilesets/underground.2bpp.lz"
 
@@ -500,9 +491,6 @@ INCBIN "data/tilesets/port_attributes.bin"
 
 TilesetRadioTowerAttr::
 INCBIN "data/tilesets/radio_tower_attributes.bin"
-
-TilesetRoute47Attr::
-INCBIN "data/tilesets/route_47_attributes.bin"
 
 TilesetRuinsOfAlphAttr::
 INCBIN "data/tilesets/ruins_of_alph_attributes.bin"

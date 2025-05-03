@@ -202,8 +202,8 @@ WildArea4_MapEvents:
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event 9, 2, BGEVENT_READ, WildArea4Sign
+	bg_event 9, 3, BGEVENT_READ, WildArea4Sign
 
 	db 2 ; object events
-	object_event  4,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, WildArea4Youngster, -1
-	object_event  8,  5, SPRITE_CYNTHIA, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, WildArea4CynthiaScript, EVENT_WILD_AREA_CYNTHIA
+	object_event  5,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, WildArea4Youngster, -1
+	object_event  8,  6, SPRITE_CYNTHIA, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, WildArea4CynthiaScript, EVENT_WILD_AREA_CYNTHIA

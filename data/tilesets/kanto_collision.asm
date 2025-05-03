@@ -239,3 +239,4 @@
 	tilecoll WALL, WALL, WALL, WALL ; ee
 	tilecoll WALL, WALL, WALL, DOOR ; ef
 	tilecoll WALL, WALL, WALL, DOOR ; f0
+	tilecoll WALL, WALL, WALL, WALL ; f1

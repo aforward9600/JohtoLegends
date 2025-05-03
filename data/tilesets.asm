@@ -46,7 +46,6 @@ Tilesets::
 	tileset TilesetKabutoWordRoom
 	tileset TilesetOmanyteWordRoom
 	tileset TilesetAerodactylWordRoom
-	tileset TilesetRoute47
 	tileset TilesetJohto3
 	tileset TilesetPokemonMansion
 	tileset TilesetKanto2
