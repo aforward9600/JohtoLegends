@@ -11,6 +11,8 @@
 	db GENDER_F12_5 ; gender ratio
 	db 35 ; step cycles to hatch
 	INCBIN "gfx/pokemon/vaporeon/front.dimensions"
+	db WATER_ABSORB, WATER_ABSORB, HYDRATION ; wBaseAbility1, wBaseAbility2, wBaseAbility3
+	db 0 ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_GROUND ; egg groups
 

@@ -11,6 +11,8 @@
 	db GENDER_UNKNOWN ; gender ratio
 	db 120 ; step cycles to hatch
 	INCBIN "gfx/pokemon/celebi/front.dimensions"
+	db NATURAL_CURE, NATURAL_CURE, NATURAL_CURE ; wBaseAbility1, wBaseAbility2, wBaseAbility3
+	db 0 ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 

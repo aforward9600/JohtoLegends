@@ -11,6 +11,8 @@
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/gliscor/front.dimensions"
+	db HYPER_CUTTER, SAND_VEIL, POISON_HEAL ; wBaseAbility1, wBaseAbility2, wBaseAbility3
+	db 0 ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_BUG, EGG_BUG ; egg groups
 

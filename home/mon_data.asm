@@ -33,6 +33,15 @@ GetBaseData::
 	ld hl, wBasePicSize
 	ld [hl], b
 
+	ld hl, wBaseAbility1
+	ld a, e
+	ld [hli], a
+	ld a, d
+	ld [hli], a
+	ld a, e
+	ld [hli], a
+	ld [hl], d
+
 .end
 ; Replace Pokedex # with species
 	ld a, [wCurSpecies]

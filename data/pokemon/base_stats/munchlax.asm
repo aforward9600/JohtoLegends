@@ -11,6 +11,8 @@
 	db GENDER_F12_5 ; gender ratio
 	db 40 ; step cycles to hatch
 	INCBIN "gfx/pokemon/munchlax/front.dimensions"
+	db PICKUP, THICK_FAT, GLUTTONY ; wBaseAbility1, wBaseAbility2, wBaseAbility3
+	db 0 ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 

@@ -11,6 +11,8 @@
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/aipom/front.dimensions"
+	db RUN_AWAY, PICKUP, SKILL_LINK ; wBaseAbility1, wBaseAbility2, wBaseAbility3
+	db 0 ; Padding left-over from the unused back pic
 	db GROWTH_FAST ; growth rate
 	dn EGG_GROUND, EGG_GROUND ; egg groups
 

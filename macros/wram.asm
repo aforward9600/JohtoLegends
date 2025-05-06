@@ -19,7 +19,8 @@ box_struct: MACRO
 \1SpclDefEV::      db
 \1CaughtTime::
 \1Padding2::       db
-\1Padding::        ds 3
+\1CaughtAbility::  db
+\1Padding::        ds 2
 \1DVs::            dw
 \1PP::             ds NUM_MOVES
 \1Happiness::      db

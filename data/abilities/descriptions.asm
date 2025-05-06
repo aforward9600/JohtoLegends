@@ -136,6 +136,9 @@ AbilityDescriptions:
 	dw MagmaArmorDesc
 	dw SuctionCupsDesc
 	dw HeatProofDesc
+	dw MegaLauncherDesc
+	dw StrongJawDesc
+	dw ToughClawsDesc
 
 NoAbilityDesc:
 	db    "No ability."
@@ -672,3 +675,15 @@ CompetitiveDesc:
 WonderSkinDesc:
 	db    "Status moves are"
 	next1 "likely to miss.@"
+
+MegaLauncherDesc:
+	db    "Powers up aura &"
+	next1 "pulse moves.@"
+
+StrongJawDesc:
+	db    "Powers up biting"
+	next1 "moves.@"
+
+ToughClawsDesc:
+	db    "Powers up claw"
+	next1 "moves.@"

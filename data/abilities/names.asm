@@ -135,3 +135,6 @@ AbilityNames::
 	db "Magma Armor@"
 	db "Suction Cups@"
 	db "Heat Proof@"
+	db "Mega Launcher@"
+	db "Strong Jaw@"
+	db "Tough Claws@"

@@ -11,6 +11,8 @@
 	db GENDER_F50 ; gender ratio
 	db 22 ; step cycles to hatch
 	INCBIN "gfx/pokemon/dusknoir/front.dimensions"
+	db PRESSURE, PRESSURE, FRISK ; wBaseAbility1, wBaseAbility2, wBaseAbility3
+	db 0 ; Padding left-over from the unused back pic
 	db GROWTH_FAST ; growth rate
 	dn EGG_INDETERMINATE, EGG_INDETERMINATE ; egg groups
 

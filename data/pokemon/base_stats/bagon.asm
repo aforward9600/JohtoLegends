@@ -11,6 +11,8 @@
 	db GENDER_F50 ; gender ratio
 	db 40 ; step cycles to hatch
 	INCBIN "gfx/pokemon/bagon/front.dimensions"
+	db ROCK_HEAD, ROCK_HEAD, SHEER_FORCE ; wBaseAbility1, wBaseAbility2, wBaseAbility3
+	db 0 ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_DRAGON, EGG_DRAGON ; egg groups
 

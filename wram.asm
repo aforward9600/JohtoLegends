@@ -2243,6 +2243,10 @@ wBaseItem2:: db ; d242
 wBaseGender:: db ; d243
 wBaseEggSteps:: db ; d245
 wBasePicSize:: db ; d247
+wBaseAbility1:: db
+wBaseAbility2:: db
+wBaseAbility3:: db
+wBasePadding:: db
 wBaseGrowthRate:: db ; d24c
 wBaseEggGroups:: db ; d24d
 wBaseTMHM:: flag_array NUM_TM_HM_TUTOR ; d24e

@@ -20,6 +20,10 @@ BASE_ITEM_2             EQUS "(wBaseItem2 - wCurBaseData)"
 BASE_GENDER             EQUS "(wBaseGender - wCurBaseData)"
 BASE_EGG_STEPS          EQUS "(wBaseEggSteps - wCurBaseData)"
 BASE_PIC_SIZE           EQUS "(wBasePicSize - wCurBaseData)"
+BASE_ABILITY1           EQUS "(wBaseAbility1 - wCurBaseData)"
+BASE_ABILITY2           EQUS "(wBaseAbility2 - wCurBaseData)"
+BASE_ABILITY3           EQUS "(wBaseAbility3 - wCurBaseData)"
+BASE_PADDING            EQUS "(wBasePadding - wCurBaseData)"
 BASE_GROWTH_RATE        EQUS "(wBaseGrowthRate - wCurBaseData)"
 BASE_EGG_GROUPS         EQUS "(wBaseEggGroups - wCurBaseData)"
 BASE_TMHM               EQUS "(wBaseTMHM - wCurBaseData)"
@@ -76,7 +80,8 @@ MON_SPD_EV             EQUS "(wPartyMon1SpdEV - wPartyMon1)"
 MON_SAT_EV             EQUS "(wPartyMon1SpclAtkEV - wPartyMon1)"
 MON_SDF_EV             EQUS "(wPartyMon1SpclDefEV - wPartyMon1)"
 MON_CAUGHTTIME         EQUS "(wPartyMon1CaughtTime - wPartyMon1)"
-MON_PADDING            EQUS "(wPartyMon1Padding - wPartyMon1)"
+MON_PADDING1           EQUS "(wPartyMon1Padding - wPartyMon1)"
+MON_ABILITY            EQUS "(wPartyMon1CaughtAbility - wPartyMon1)"
 MON_PADDING2           EQUS "(wPartyMon1Padding2 - wPartyMon1)"
 MON_DVS                EQUS "(wPartyMon1DVs - wPartyMon1)"
 MON_PP                 EQUS "(wPartyMon1PP - wPartyMon1)"
@@ -105,6 +110,14 @@ REDMON_STRUCT_LENGTH EQU 44
 
 CAUGHT_TIME_MASK    EQU %11000000
 CAUGHT_PADDING_MASK EQU %00111111
+
+CAUGHT_ABILITY_MASK         EQU %11000000
+CAUGHT_ABILITY_PADDING_MASK EQU %00111111
+ 
+CAUGHT_ABILITY_1      EQU 0
+CAUGHT_ABILITY_2      EQU 1
+CAUGHT_HIDDEN_ABILITY EQU 2
+ 
 
 CAUGHT_GENDER_MASK   EQU %10000000
 CAUGHT_LOCATION_MASK EQU %01111111

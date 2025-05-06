@@ -11,6 +11,8 @@
 	db GENDER_F0 ; gender ratio
 	db 25 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hitmonchan/front.dimensions"
+	db KEEN_EYE, IRON_FIST, INNER_FOCUS ; wBaseAbility1, wBaseAbility2, wBaseAbility3
+	db 0 ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_HUMANSHAPE, EGG_HUMANSHAPE ; egg groups
 

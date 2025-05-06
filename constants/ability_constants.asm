@@ -137,5 +137,8 @@
 	const MAGMA_ARMOR  ; 86
 	const SUCTION_CUPS ; 87
 	const HEAT_PROOF   ; 88
+	const MEGA_LAUNCHER ; 89
+	const STRONG_JAW   ; 8a
+	const TOUGH_CLAWS  ; 8b
 
 NUM_ABILITIES EQU const_value + -1

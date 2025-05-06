@@ -11,6 +11,8 @@
 	db GENDER_UNKNOWN ; gender ratio
 	db 40 ; step cycles to hatch
 	INCBIN "gfx/pokemon/beldum/front.dimensions"
+	db CLEAR_BODY, CLEAR_BODY, ANALYTIC ; wBaseAbility1, wBaseAbility2, wBaseAbility3
+	db 0 ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate
 	dn EGG_MINERAL, EGG_MINERAL ; egg groups
 
