@@ -167,7 +167,7 @@ endr
 
 	; Initialize stat experience.
 	xor a
-	ld b, MON_DVS - MON_EVS
+	ld b, MON_ABILITY - MON_EVS
 .loop
 	ld [de], a
 	inc de
@@ -181,6 +181,11 @@ endr
 	jr z, .registerpokedex
 
 	push hl
+	ld a, [wEnemyMonAbility]
+	ld [de], a
+	inc de
+	inc de
+	inc de
 	farcall GetTrainerDVs
 	pop hl
 	jr .initializeDVs
@@ -199,6 +204,12 @@ endr
 	ld a, [wBattleMode]
 	and a
 	jr nz, .copywildmonDVs
+
+	call GetGiftMonAbility
+	ld [de], a
+	inc de
+	inc de
+	inc de
 
 	push hl
 	ld hl, wStatusFlags2
@@ -281,6 +292,11 @@ endr
 	jr .initstats
 
 .copywildmonDVs
+	ld a, [wEnemyAbility]
+	ld [de], a
+	inc de
+	inc de
+	inc de
 	ld a, [wEnemyMonDVs]
 	ld [de], a
 	inc de
@@ -1681,7 +1697,7 @@ GivePoke::
 	ld a, [wCurPartySpecies]
 	ld [wTempEnemyMonSpecies], a
 
-	callfar LoadEnemyMonOutsideBattle
+	call LoadEnemyMonOutsideBattle
 
 	call SendMonIntoBox
 	jp nc, .FailedToGiveMon
@@ -1854,6 +1870,26 @@ InitNickname:
 	rst FarCall
 	ret
 
+GetGiftMonAbility:
+	call Random
+	cp 10 percent + 1
+	jr c, .HiddenAbility
+
+	call Random
+	cp 50 percent + 1
+	jr c, .secondability
+
+	ld a, 0
+	ret
+
+.secondability:
+	ld a, 1
+	ret
+
+.HiddenAbility:
+	ld a, 2
+	ret
+
 LoadEnemyMonOutsideBattle:
 ; Clear the whole enemy mon struct (wEnemyMon)
 	xor a
@@ -1867,6 +1903,9 @@ LoadEnemyMonOutsideBattle:
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 	ld [wNamedObjectIndexBuffer], a
+	farcall SetEnemyAbility
+	ld a, [wEnemyMonAbility]
+	ld [wEnemyAbility], a
 
 ; base stats
 	call GetBaseData
@@ -1928,4 +1967,20 @@ LoadEnemyMonOutsideBattle:
 	ld b, SET_FLAG
 	ld hl, wPokedexSeen
 	predef SmallFarFlagAction
+	ret
+
+GetWildAbility:
+	ld a, [wEnemyAbility]
+	and CAUGHT_ABILITY_MASK
+	cp 0
+	jr z, .ability_1
+	cp BASE_ABILITY2
+	jr z, .Ability2
+	ld a, 2
+	ret
+.Ability2
+	ld a, 1
+	ret
+.ability_1
+	ld a, 0
 	ret

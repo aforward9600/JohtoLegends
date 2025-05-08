@@ -102,6 +102,7 @@ battle_struct: MACRO
 \1Type::
 \1Type1::     db
 \1Type2::     db
+\1Ability::   db
 \1StructEnd::
 ENDM
 

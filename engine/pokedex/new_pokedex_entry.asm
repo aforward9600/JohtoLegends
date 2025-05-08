@@ -2,6 +2,8 @@ NewPokedexEntry:
 	ldh a, [hMapAnims]
 	push af
 	xor a
+	ld [wPokedexShinyToggle], a
+	xor a
 	ldh [hMapAnims], a
 	call LowVolume
 	call ClearBGPalettes

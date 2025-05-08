@@ -671,5 +671,5 @@ INCLUDE "engine/battle/effect_command_files.asm"
 
 SECTION "Abilities", ROMX
 
-INCLUDE "data/abilities/names.asm"
-INCLUDE "data/abilities/descriptions.asm"
+INCLUDE "engine/abilities/ability_prints.asm"
+INCLUDE "engine/abilities/battle_abilities.asm"

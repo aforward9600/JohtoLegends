@@ -455,6 +455,8 @@ PokeBallEffect:
 	ld [wCurPartySpecies], a
 	ld a, [wEnemyMonLevel]
 	ld [wCurPartyLevel], a
+	ld a, [wEnemyMonAbility]
+	ld [wEnemyAbility], a
 	farcall LoadEnemyMon
 
 	pop af

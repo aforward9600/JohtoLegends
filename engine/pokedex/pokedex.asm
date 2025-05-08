@@ -113,6 +113,8 @@ InitPokedex:
 Pokedex_ClearLockedIDs:
 	xor a
 	ld l, LOCKED_MON_ID_DEX_SELECTED
+	xor a
+	ld [wPokedexShinyToggle], a
 	jp LockPokemonID
 
 Pokedex_CheckUnlockedUnownMode:

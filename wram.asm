@@ -503,6 +503,7 @@ wEnemySubStatus5:: ; c671
 ; see wPlayerSubStatus5
 	db
 
+wPlayerAbility:: db
 wPlayerRolloutCount:: db ; c672
 wPlayerConfuseCount:: db ; c673
 wPlayerToxicCount:: db ; c674
@@ -512,6 +513,7 @@ wPlayerPerishCount:: db ; c677
 wPlayerFuryCutterCount:: db ; c678
 wPlayerProtectCount:: db ; c679
 
+wEnemyAbility:: db
 wEnemyRolloutCount:: db ; c67a
 wEnemyConfuseCount:: db ; c67b
 wEnemyToxicCount:: db ; c67c
