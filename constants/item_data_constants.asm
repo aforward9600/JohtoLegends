@@ -60,7 +60,7 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const HELD_BERRY
 	const HELD_MACHO_BRACE
 	const HELD_LEFTOVERS
-	const HELD_4
+	const HELD_SITRUS_BERRY
 	const HELD_5
 	const HELD_RESTORE_PP
 	const HELD_7

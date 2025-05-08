@@ -787,12 +787,10 @@ StatsScreen_LoadGFX:
 .OrangePage:
 	call .placeCaughtLocation
 	ld de, MetAtMapString
-;	hlcoord 1, 9
-	hlcoord 1, 12
+	hlcoord 1, 9
 	call PlaceString
 	call .placeCaughtLevel
-;	call .placeHappiness
-	farcall PrintAbility
+	call .placeHappiness
 	ret
 
 .placeCaughtLocation
@@ -806,8 +804,7 @@ StatsScreen_LoadGFX:
 	ld e, a
 	farcall GetLandmarkName
 	ld de, wStringBuffer1
-;	hlcoord 2, 10
-	hlcoord 4, 13
+	hlcoord 2, 10
 	call PlaceString
 	ld a, [wTempMonCaughtTime]
 	and CAUGHT_TIME_MASK
@@ -821,15 +818,13 @@ StatsScreen_LoadGFX:
 	ld e, l
 	call CopyName1
 	ld de, wStringBuffer2
-;	hlcoord 2, 11
-	hlcoord 4, 14
+	hlcoord 2, 11
 	call PlaceString
 	ret
 
 .unknown_location:
 	ld de, MetUnknownMapString
-;	hlcoord 2, 10
-	hlcoord 4, 13
+	hlcoord 2, 10
 	call PlaceString
 	ret
 
@@ -850,17 +845,14 @@ StatsScreen_LoadGFX:
 
 .print
 	ld [wDeciramBuffer], a
-;	hlcoord 3, 13
-	hlcoord 5, 16
+	hlcoord 3, 13
 	ld de, wDeciramBuffer
 	lb bc, PRINTNUM_RIGHTALIGN | 1, 3
 	call PrintNum
 	ld de, MetAtLevelString
-;	hlcoord 1, 12
-	hlcoord 1, 15
+	hlcoord 1, 12
 	call PlaceString
-;	hlcoord 2, 13
-	hlcoord 4, 16
+	hlcoord 2, 13
 	ld [hl], "<LV>"
 	ret
 

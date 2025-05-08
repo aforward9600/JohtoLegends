@@ -848,8 +848,8 @@ BerryDesc:
 	next "item. (10HP, Hold)@"
 
 GoldBerryDesc:
-	db   "A self-restore"
-	next "item. (30HP, Hold)@"
+	db   "Self-restore item."
+	next "(1/4 max HP, Hold)@"
 
 FlameDownDesc:
 	db   "Down from Moltres."
