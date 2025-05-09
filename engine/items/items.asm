@@ -37,12 +37,7 @@ _ReceiveItem::
 	jp PutItemInPocket
 
 .TMHM:
-	ld h, d
-	ld l, e
-	ld a, [wCurItem]
-	ld c, a
-	call GetTMHMNumber
-	jp ReceiveTMHM
+	ret
 
 _TossItem::
 	call DoesHLEqualNumItems
@@ -73,12 +68,7 @@ _TossItem::
 	jp RemoveItemFromPocket
 
 .TMHM:
-	ld h, d
-	ld l, e
-	ld a, [wCurItem]
-	ld c, a
-	call GetTMHMNumber
-	jp TossTMHM
+	ret
 
 .KeyItem:
 	ld h, d
@@ -121,12 +111,7 @@ _CheckItem::
 	jp CheckTheItem
 
 .TMHM:
-	ld h, d
-	ld l, e
-	ld a, [wCurItem]
-	ld c, a
-	call GetTMHMNumber
-	jp CheckTMHM
+	ret
 
 .KeyItem:
 	ld h, d
@@ -428,75 +413,6 @@ CheckKeyItems:
 
 .done
 	scf
-	ret
-
-ReceiveTMHM:
-	dec c
-	ld b, 0
-	ld hl, wTMsHMs
-	add hl, bc
-	ld a, [wItemQuantityChangeBuffer]
-	add [hl]
-	cp 100
-	jr nc, .toomany
-	ld [hl], a
-	scf
-	ret
-
-.toomany
-	and a
-	ret
-
-TossTMHM:
-	dec c
-	ld b, 0
-	ld hl, wTMsHMs
-	add hl, bc
-	ld a, [wItemQuantityChangeBuffer]
-	ld b, a
-	ld a, [hl]
-	sub b
-	jr c, .nope
-	ld [hl], a
-	ld [wItemQuantityBuffer], a
-	jr nz, .yup
-	ld a, [wTMHMPocketScrollPosition]
-	and a
-	jr z, .yup
-	dec a
-	ld [wTMHMPocketScrollPosition], a
-
-.yup
-	scf
-	ret
-
-.nope
-	and a
-	ret
-
-CheckTMHM:
-	dec c
-	ld b, $0
-	ld hl, wTMsHMs
-	add hl, bc
-	ld a, [hl]
-	and a
-	ret z
-	scf
-	ret
-
-GetTMHMNumber::
-; Return the number of a TM/HM by item id c.
-	ld a, c
-	sub TM01 - 1
-	ld c, a
-	ret
-
-GetNumberedTMHM:
-; Return the item id of a TM/HM by number c.
-	ld a, c
-	add a, TM01 - 1
-	ld c, a
 	ret
 
 _CheckTossableItem::

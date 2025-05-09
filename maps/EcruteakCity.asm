@@ -147,8 +147,7 @@ EcruteakCityMotherWalks:
 	opentext
 	writetext ThankYouForSavingDaughterText
 	buttonsound
-	verbosegiveitem TM_CALM_MIND
-	iffalse .BagFull
+	verbosegivetmhm TM_CALM_MIND
 	writetext ThatsCalmMindText
 	waitbutton
 	closetext
@@ -157,9 +156,6 @@ EcruteakCityMotherWalks:
 	setevent EVENT_ECRUTEAK_CITY_MOTHER
 	clearevent EVENT_AFTER_RESCUING_BURNED_TOWER_GIRL
 	setscene SCENE_DEFAULT
-	end
-
-.BagFull:
 	closetext
 	end
 

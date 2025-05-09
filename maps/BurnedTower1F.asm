@@ -140,7 +140,8 @@ BurnedTower1FHiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_BURNED_TOWER_1F_HIDDEN_ULTRA_BALL
 
 BurnedTower1FHPUp:
-	itemball TM_WILL_O_WISP
+	itemball POTION
+;	itemball TM_WILL_O_WISP
 
 BurnedTowerMovement_PlayerWalksToSilver:
 	step LEFT

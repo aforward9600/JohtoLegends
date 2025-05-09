@@ -11,17 +11,15 @@ MrPsychic:
 	opentext
 	checkevent EVENT_GOT_TM29_PSYCHIC
 	iftrue .AlreadyGivenItem
-	checkitem TM_PSYCHIC_M
+	checktmhm TM_PSYCHIC_M
 	iftrue .AlreadyGotItem
 	writetext MrPsychicText1
 	buttonsound
-	verbosegiveitem TM_PSYCHIC_M
-	iffalse .Done
+	verbosegivetmhm TM_PSYCHIC_M
 	setevent EVENT_GOT_TM29_PSYCHIC
 .AlreadyGivenItem:
 	writetext MrPsychicText2
 	waitbutton
-.Done:
 	closetext
 	end
 

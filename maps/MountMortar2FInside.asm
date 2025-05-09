@@ -30,7 +30,8 @@ MountMortar2FInsideRareCandy:
 	itemball RARE_CANDY
 
 MountMortar2FInsideTMDefenseCurl:
-	itemball TM_VENOSHOCK
+	itemball POTION
+;	itemball TM_VENOSHOCK
 
 MountMortar2FInsideDragonScale:
 	itemball DRAGON_SCALE

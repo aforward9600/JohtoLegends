@@ -87,8 +87,7 @@ EcruteakGymEnokiScript:
 	setevent EVENT_BEAT_HEX_MANIAC_ZELDA
 	writetext EnokiText_FogBadgeSpeech
 	buttonsound
-	verbosegiveitem TM_HEX
-	iffalse .NoRoomForHex
+	verbosegivetmhm TM_HEX
 	setevent EVENT_GOT_TM04_HEX
 	writetext EnokiText_HexSpeech
 	waitbutton
@@ -115,7 +114,6 @@ EcruteakGymEnokiScript:
 .GotShadowBall:
 	writetext EnokiFightDoneText
 	waitbutton
-.NoRoomForHex:
 	closetext
 	end
 

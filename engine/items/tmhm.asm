@@ -7,38 +7,10 @@ TMHMPocket:
 	ret nc
 	call PlaceHollowCursor
 	call WaitBGMap
-	ld a, [wCurItem]
-	dec a
+	ld a, [wCurTMHM]
 	ld [wCurItemQuantity], a
-	ld hl, wTMsHMs
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
 	ld [wItemQuantityBuffer], a
-	call .ConvertItemToTMHMNumber
 	scf
-	ret
-
-.ConvertItemToTMHMNumber:
-	ld a, [wCurItem]
-	ld c, a
-	callfar GetNumberedTMHM
-	ld a, c
-	ld [wCurItem], a
-	ret
-
-ConvertCurItemIntoCurTMHM:
-	ld a, [wCurItem]
-	ld c, a
-	callfar GetTMHMNumber
-	ld a, c
-	ld [wTempTMHM], a
-	ret
-
-GetTMHMItemMove:
-	call ConvertCurItemIntoCurTMHM
-	predef GetTMHMMove
 	ret
 
 AskTeachTMHM:
@@ -46,16 +18,16 @@ AskTeachTMHM:
 	ld a, [hl]
 	push af
 	res NO_TEXT_SCROLL, [hl]
-	ld a, [wCurItem]
+	ld a, [wCurTMHM]
 	cp TM01
 	jr c, .NotTMHM
-	call GetTMHMItemMove
+	predef GetTMHMMove
 	ld a, [wTempTMHM]
 	ld [wPutativeTMHMMove], a
 	call GetMoveName
 	call CopyName1
 	ld hl, Text_BootedTM ; Booted up a TM
-	ld a, [wCurItem]
+	ld a, [wCurTMHM]
 	cp HM01
 	jr c, .TM
 	ld hl, Text_BootedHM ; Booted up an HM
@@ -247,7 +219,7 @@ TMHM_ShowTMMoveDescription:
 	ld b, 4
 	ld c, SCREEN_WIDTH - 2
 	call Textbox
-	ld a, [wCurItem]
+	ld a, [wCurTMHM]
 	cp NUM_TMS + NUM_HMS + 1
 	jr nc, TMHM_JoypadLoop
 	ld [wTempTMHM], a
@@ -286,7 +258,7 @@ TMHM_CheckHoveringOverCancel:
 	jr nz, .loop
 	ld a, c
 .okay
-	ld [wCurItem], a
+	ld [wCurTMHM], a
 	cp -1
 	ret
 
@@ -442,8 +414,17 @@ TMHM_GetCurrentPocketPosition:
 	inc b
 	ld c, 0
 .loop
+	push bc
+	push de
+	ld a, c
+	ld e, a
+	ld d, 0
+	ld b, CHECK_FLAG
+	call FlagAction
+	ld a, c
+	pop de
+	pop bc
 	inc c
-	ld a, [hli]
 	and a
 	jr z, .loop
 	dec b
@@ -468,7 +449,7 @@ TMHM_PlaySFX_ReadText2:
 	ret
 
 Unreferenced_Function2cadf:
-	call ConvertCurItemIntoCurTMHM
+;	call ConvertCurItemIntoCurTMHM
 	call .CheckHaveRoomForTMHM
 	ld hl, .NoRoomText
 	jr nc, .print
@@ -505,7 +486,18 @@ CountTMsHMs:
 	ld c, NUM_TMS + NUM_HMS
 	ld hl, wTMsHMs
 .loop
-	ld a, [hli]
+
+	push bc
+	push de
+	ld a, c
+	dec a
+	ld e, a
+	ld d, 0
+	ld b, CHECK_FLAG
+	call FlagAction
+	ld a, c
+	pop de
+	pop bc
 	and a
 	jr z, .skip
 	inc b

@@ -238,6 +238,11 @@ ScriptCommandTable:
 	dw Script_loadmoveindex              ; ac
 	dw Script_partyselect
 	dw Script_StarterPokepic
+	dw Script_givetmhm
+	dw Script_checktmhm
+	dw Script_verbosegivetmhm
+	dw Script_tmhmnotify
+	dw Script_tmhmtotext
 
 StartScript:
 	ld hl, wScriptFlags
@@ -508,8 +513,8 @@ Script_verbosegiveitem:
 	ld de, wStringBuffer1
 	ld a, STRING_BUFFER_4
 	call CopyConvertedText
-	ld de, wStringBuffer4 + STRLEN("TM##")
-	call AppendTMHMMoveName
+;	ld de, wStringBuffer4 + STRLEN("TM##")
+;	call AppendTMHMMoveName
 	ld b, BANK(GiveItemScript)
 	ld de, GiveItemScript
 	jp ScriptCall
@@ -618,10 +623,27 @@ GetPocketName:
 
 INCLUDE "data/items/pocket_names.asm"
 
+GetTMHMPocketName:
+	ld hl, .TMHMPocket
+	ld d, h
+	ld l, e
+	ld hl, wStringBuffer3
+	call CopyName2
+	ret
+
+.TMHMPocket:
+	db "TM Pocket@"
+
 CurItemName:
 	ld a, [wCurItem]
 	ld [wNamedObjectIndexBuffer], a
 	call GetItemName
+	ret
+
+wCurTMHMName:
+	ld a, [wCurTMHM]
+	ld [wd265], a
+	call GetTMHMName
 	ret
 
 PutItemInPocketText:
@@ -2902,7 +2924,7 @@ AppendTMHMMoveName::
 	push de
 ; a = TM/HM number
 	ld c, a
-	farcall GetTMHMNumber
+	farcall GetTMHMName
 	ld a, c
 ; a = move ID
 	ld [wTempTMHM], a
@@ -2928,3 +2950,103 @@ Script_StarterPokepic:
 	ld [wCurPartySpecies], a
 	farcall StarterPokepic
 	ret
+
+Script_givetmhm:
+; script command 0xae
+; parameters:
+;     tmhm (TMHMLabelByte)
+
+	call GetScriptByte
+	ld [wCurTMHM], a
+	call ReceiveTMHM
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+
+ReceiveTMHM: ; d3c4
+	ld a, [wCurTMHM]
+	ld e, a
+	ld d, 0
+	ld b, SET_FLAG
+	ld hl, wTMsHMs
+	call FlagAction
+	scf
+	ret
+
+Script_checktmhm:
+; script command 0xaf
+; parameters:
+;     tmhm (TMHMLabelByte)
+
+	xor a
+	ld [wScriptVar], a
+	call GetScriptByte
+	ld [wCurTMHM], a
+	call CheckTMHM
+	ret nc
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+
+CheckTMHM: ; d3fb
+	ld a, [wCurTMHM]
+	ld e, a
+	ld d, 0
+	ld b, CHECK_FLAG
+	ld hl, wTMsHMs
+	call FlagAction
+	ret z
+	scf
+	ret
+
+Script_verbosegivetmhm:
+; script command 0xb0
+; parameters:
+;     tmhm (TMHMLabelByte)
+
+	call Script_givetmhm
+	call wCurTMHMName
+	ld de, wStringBuffer1
+	ld a, STRING_BUFFER_4
+	call CopyConvertedText
+	ld hl, wTempTMHM
+	inc [hl]
+	predef GetTMHMMove
+	ld b, BANK(GiveTMHMScript)
+	ld de, GiveTMHMScript
+	jp ScriptCall
+
+GiveTMHMScript:
+	writetext ReceivedItemText
+	waitsfx
+	specialsound
+	waitbutton
+	tmhmnotify
+	end
+
+Script_tmhmnotify:
+; script command 0xb1
+
+	call GetTMHMPocketName
+	call wCurTMHMName
+	ld b, BANK(PutItemInPocketText)
+	ld hl, PutItemInPocketText
+	call MapTextbox
+	ret
+; 96fd5
+
+Script_tmhmtotext:
+; script command 0xb2
+; parameters:
+;     tmhm (TMHMLabelByte); use 0 to draw from ScriptVar
+;     memory (SingleByteParam)
+
+	call GetScriptByte
+	and a
+	jr nz, .ok
+	ld a, [wScriptVar]
+.ok
+	ld [wNamedObjectIndexBuffer], a
+	call GetTMHMName
+	ld de, wStringBuffer1
+	jp GetStringBuffer

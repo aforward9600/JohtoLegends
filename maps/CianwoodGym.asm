@@ -80,8 +80,7 @@ CianwoodGymChigusaScript:
 	setevent EVENT_BEAT_CHUCK
 	writetext ChigusaExplainBadgeText
 	buttonsound
-	verbosegiveitem TM_BULK_UP
-	iffalse .BagFull
+	verbosegivetmhm TM_BULK_UP
 	setevent EVENT_GOT_TM08_BULK_UP
 	writetext ChigusaExplainTMText
 	waitbutton
@@ -91,7 +90,6 @@ CianwoodGymChigusaScript:
 .AlreadyGotTM:
 	writetext ChigusaAfterText
 	waitbutton
-.BagFull:
 	closetext
 	end
 

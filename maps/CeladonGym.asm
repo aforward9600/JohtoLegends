@@ -49,10 +49,9 @@ CeladonGymErikaScript:
 	iftrue .GotGigaDrain
 	writetext ErikaExplainTMText
 	buttonsound
-	checkitem TM_ENERGY_BALL
+	checktmhm TM_ENERGY_BALL
 	iftrue .AlreadyGotEnergyBall
-	verbosegiveitem TM_ENERGY_BALL
-	iffalse .GotGigaDrain
+	verbosegivetmhm TM_ENERGY_BALL
 	setevent EVENT_GOT_TM19_GIGA_DRAIN
 	setevent EVENT_DECO_LOTAD_DOLL
 .GotGigaDrain:

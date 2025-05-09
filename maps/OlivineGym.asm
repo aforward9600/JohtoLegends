@@ -38,8 +38,7 @@ OlivineGymByronScript:
 	iftrue .GotIronTail
 	writetext Byron_BadgeSpeech
 	buttonsound
-	verbosegiveitem TM_FLASH_CANNON
-	iffalse .NoRoomForFlashCannon
+	verbosegivetmhm TM_FLASH_CANNON
 	setevent EVENT_GOT_TM42_FLASH_CANNON
 	setevent EVENT_ROCK_SMASH_GUY
 	clearevent EVENT_ROUTE_36_GUY
@@ -51,7 +50,6 @@ OlivineGymByronScript:
 .GotIronTail:
 	writetext Byron_Sunnyshore
 	waitbutton
-.NoRoomForFlashCannon:
 	closetext
 	end
 

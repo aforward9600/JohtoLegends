@@ -43,13 +43,11 @@ Route32RoarTMGuyScript:
 	iftrue .AlreadyHaveRoar
 	writetext Text_RoarIntro
 	buttonsound
-	verbosegiveitem TM_IRON_TAIL
-	iffalse .Finish
+	verbosegivetmhm TM_IRON_TAIL
 	setevent EVENT_GOT_TM05_ROAR
 .AlreadyHaveRoar:
 	writetext Text_RoarOutro
 	waitbutton
-.Finish:
 	closetext
 	end
 

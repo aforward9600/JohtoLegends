@@ -31,8 +31,7 @@ Route31MailRecipientScript:
 	iftrue .DescribeNightmare
 	writetext Text_Route31SleepyMan
 	buttonsound
-	verbosegiveitem TM_DREAM_EATER
-	iffalse .NoRoomForItems
+	verbosegivetmhm TM_DREAM_EATER
 	setevent EVENT_GOT_TM56_DREAM_EATER
 	closetext
 	end
@@ -40,7 +39,6 @@ Route31MailRecipientScript:
 .DescribeNightmare:
 	writetext Text_Route31DescribeNightmare
 	waitbutton
-.NoRoomForItems:
 	closetext
 	end
 

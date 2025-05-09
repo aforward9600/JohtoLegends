@@ -161,7 +161,8 @@ NationalParkEther:
 	itemball SILVERPOWDER
 
 NationalParkTMDig:
-	itemball TM_DIG
+	itemball POTION
+;	itemball TM_DIG
 
 NationalParkHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL

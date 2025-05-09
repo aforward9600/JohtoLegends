@@ -137,7 +137,8 @@ Route47Suicune:
 	end
 
 Route47ItemBallScript:
-	itemball TM_GIGA_DRAIN
+	itemball POTION
+;	itemball TM_GIGA_DRAIN
 
 Route47ItemBall2Script:
 	itemball REVIVE

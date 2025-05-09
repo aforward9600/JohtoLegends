@@ -60,7 +60,8 @@ TrainerGruntF9:
 	end
 
 RadioTower4FSurfTM:
-	itemball TM_SURF
+	itemball POTION
+;	itemball TM_SURF
 
 Archer2LastMonText:
 	text "Were we wrong?"

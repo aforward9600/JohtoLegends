@@ -92,7 +92,7 @@ DanceTheaterSurfGuy:
 	iftrue .WildChargeExplanation
 	writetext SurfGuyLikeADanceText
 	buttonsound
-	verbosegiveitem TM_WILD_CHARGE
+	verbosegivetmhm TM_WILD_CHARGE
 	setevent EVENT_GOT_TM09_WILD_CHARGE
 	writetext SurfGuyWildChargeExplanationText
 	waitbutton

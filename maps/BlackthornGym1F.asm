@@ -85,8 +85,7 @@ BlackthornGymMasterScript:
 	clearevent EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
 	writetext MasterText_BadgeExplain
 	buttonsound
-	verbosegiveitem TM_DRAGON_CLAW
-	iffalse .NoRoomforDragonClaw
+	verbosegivetmhm TM_DRAGON_CLAW
 	setevent EVENT_GOT_TM24_DRAGONBREATH
 	writetext BlackthornGymMasterText_DescribeTM24
 	waitbutton
@@ -96,7 +95,6 @@ BlackthornGymMasterScript:
 .GotTM24:
 	writetext BlackthornGymMasterText_League
 	waitbutton
-.NoRoomforDragonClaw:
 	closetext
 	end
 

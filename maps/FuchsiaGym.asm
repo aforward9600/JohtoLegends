@@ -42,10 +42,9 @@ FuchsiaGymKogaScript:
 	opentext
 	writetext KogaText_ToxicSpeech
 	buttonsound
-	checkitem TM_TOXIC
+	checktmhm TM_TOXIC
 	iftrue .AlreadyGotTM
-	verbosegiveitem TM_TOXIC
-	iffalse .AfterTM
+	verbosegivetmhm TM_TOXIC
 	setevent EVENT_GOT_TM06_TOXIC
 	setevent EVENT_DECO_BED_2
 	opentext

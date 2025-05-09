@@ -5,9 +5,9 @@ PrintItemDescription:
 	cp TM01
 	jr c, .not_a_tm
 
-	ld [wCurItem], a
+	ld [wCurTMHM], a
 	push de
-	farcall GetTMHMItemMove
+	farcall GetTMHMMove
 	pop hl
 	ld a, [wTempTMHM]
 	ld [wCurSpecies], a

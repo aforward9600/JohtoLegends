@@ -1094,3 +1094,33 @@ ENDM
 starterpokepic: MACRO
 	db starter_pokepic_command
 ENDM
+
+	enum givetmhm_command
+givetmhm: MACRO
+	db givetmhm_command
+	db \1 ; tmhm
+ENDM
+
+	enum checktmhm_command
+checktmhm: MACRO
+	db checktmhm_command
+	db \1 ; tmhm
+ENDM
+
+	enum verbosegivetmhm_command
+verbosegivetmhm: MACRO
+	db verbosegivetmhm_command
+	db \1 ; tmhm
+ENDM
+
+	enum tmhmnotify_command
+tmhmnotify: MACRO
+	db tmhmnotify_command
+ENDM
+
+	enum tmhmtotext_command
+tmhmtotext: MACRO
+	db tmhmtotext_command
+	db \1 ; tmhm
+	db \2 ; memory
+ENDM

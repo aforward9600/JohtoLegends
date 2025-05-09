@@ -75,8 +75,7 @@ GoldenrodGymMiltonScript:
 	setevent EVENT_BEAT_BREEDER_EMILY
 	writetext MiltonText_PlainBadgeSpeech
 	buttonsound
-	verbosegiveitem TM_SWORDS_DANCE
-	iffalse .NoRoomForAttract
+	verbosegivetmhm TM_SWORDS_DANCE
 	setevent EVENT_GOT_TM45_ATTRACT
 	writetext MiltonAttractText
 	waitbutton
@@ -90,7 +89,6 @@ GoldenrodGymMiltonScript:
 	iffalse .ToughKid
 	writetext MiltonSisterText
 	waitbutton
-.NoRoomForAttract:
 	closetext
 	end
 

@@ -29,8 +29,7 @@ FightingDojoKoichi:
 	opentext
 	writetext YoureGivingMeBadgeText
 	buttonsound
-	verbosegiveitem TM_DYNAMICPUNCH
-	iffalse .NoRoomForDynamicpunch
+	verbosegivetmhm TM_DYNAMICPUNCH
 	setevent EVENT_GOT_TM01_DYNAMICPUNCH
 	waitbutton
 	closetext
@@ -52,12 +51,6 @@ FightingDojoKoichi:
 	closetext
 	end
 
-.NoRoomForDynamicpunch:
-	writetext NoRoomForDynamicpunchText
-	waitbutton
-	closetext
-	end
-
 .AlreadyBeatBikerBossKoichi:
 	checkevent EVENT_GOT_TM01_DYNAMICPUNCH
 	iffalse .GetTM01
@@ -69,8 +62,7 @@ FightingDojoKoichi:
 .GetTM01:
 	writetext HereIsTM01Text
 	buttonsound
-	verbosegiveitem TM_DYNAMICPUNCH
-	iffalse .NoRoomForDynamicpunch
+	verbosegivetmhm TM_DYNAMICPUNCH
 	setevent EVENT_GOT_TM01_DYNAMICPUNCH
 	waitbutton
 	closetext

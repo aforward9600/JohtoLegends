@@ -493,7 +493,8 @@ TeamRocketBaseB1FNugget:
 	itemball NUGGET
 
 TeamRocketBaseB1FSludgeBomb:
-	itemball TM_SLUDGE_BOMB
+	itemball POTION
+;	itemball TM_SLUDGE_BOMB
 
 TeamRocketBaseB1FRazorFang:
 	itemball RAZOR_FANG
