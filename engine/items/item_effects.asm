@@ -124,8 +124,8 @@ ItemEffects:
 	dw NoEffect            ; MIRACLE_SEED
 	dw NoEffect            ; THICK_CLUB
 	dw NoEffect            ; FOCUS_BAND
-	dw EnergypowderEffect  ; ENERGYPOWDER
-	dw EnergyRootEffect    ; ENERGY_ROOT
+	dw NoEffect            ; FLAME_ORB
+	dw NoEffect            ; TOXIC_ORB
 	dw HealPowderEffect    ; HEAL_POWDER
 	dw RevivalHerbEffect   ; REVIVAL_HERB
 	dw NoEffect            ; HARD_STONE
@@ -1824,10 +1824,6 @@ Restore4thHPEffect:
 	call ItemRestore4thHP
 	jp StatusHealer_Jumptable
 
-EnergypowderEffect:
-	ld c, HAPPINESS_BITTERPOWDER
-	jr EnergypowderEnergyRootCommon
-
 ItemRestore4thHP:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
@@ -1854,23 +1850,6 @@ ItemRestore4thHP:
 	call UseDisposableItem
 	ld a, 0
 	ret
-
-EnergyRootEffect:
-	ld c, HAPPINESS_ENERGYROOT
-
-EnergypowderEnergyRootCommon:
-	push bc
-	call ItemRestoreHP
-	pop bc
-	cp 0
-	jr nz, .skip_happiness
-
-	farcall ChangeHappiness
-	call LooksBitterMessage
-	ld a, 0
-
-.skip_happiness
-	jp StatusHealer_Jumptable
 
 ItemRestoreHP:
 	ld b, PARTYMENUACTION_HEALING_ITEM

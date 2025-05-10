@@ -58,8 +58,6 @@ RegionCheck:
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
-	cp FAST_SHIP ; S.S. Aqua
-	jr z, .johto
 	cp SPECIAL_MAP
 	jr nz, .checkagain
 

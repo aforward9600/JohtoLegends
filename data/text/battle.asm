@@ -1204,3 +1204,15 @@ TeleportInText:
 	text "<USER>"
 	line "took its place!"
 	prompt
+
+ToxicOrbText:
+	text "<TARGET> was"
+	line "badly poisoned by"
+	cont "its Toxic Orb!"
+	prompt
+
+FlameOrbText:
+	text "<TARGET> was"
+	line "burned by its"
+	cont "Flame Orb!"
+	prompt

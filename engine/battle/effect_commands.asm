@@ -4040,6 +4040,16 @@ BattleCommand_BurnTarget:
 	ret nz
 	call SafeCheckSafeguard
 	ret nz
+
+	call BurnOpponent
+
+	ld hl, WasBurnedText
+	call StdBattleTextbox
+
+	farcall UseHeldStatusHealingItem
+	ret
+
+BurnOpponent:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	set BRN, [hl]
@@ -4048,13 +4058,7 @@ BattleCommand_BurnTarget:
 	call CallBattleCore
 	ld de, ANIM_BRN
 	call PlayOpponentBattleAnim
-	call RefreshBattleHuds
-
-	ld hl, WasBurnedText
-	call StdBattleTextbox
-
-	farcall UseHeldStatusHealingItem
-	ret
+	jp RefreshBattleHuds
 
 Defrost:
 	ld a, [hl]

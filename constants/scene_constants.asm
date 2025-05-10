@@ -157,11 +157,6 @@ SCENE_FINISHED EQU 1
 	const_def 1
 	const SCENE_VERMILIONPORT_LEAVE_SHIP ; 1
 
-; wFastShip1FSceneID
-	const_def 1
-	const SCENE_FASTSHIP1F_ENTER_SHIP   ; 1
-	const SCENE_FASTSHIP1F_MEET_GRANDPA ; 2
-
 ; wMastersHouse1FSceneID
 	const_def 1
 	const SCENE_CANT_LEAVE_HOUSE ; 1

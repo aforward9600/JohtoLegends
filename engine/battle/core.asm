@@ -260,6 +260,7 @@ HandleBetweenTurnEffects:
 	jr z, .CheckEnemyFirst
 	call CheckFaint_PlayerThenEnemy
 	ret c
+	call HandleFlameToxicOrb
 	call HandleFutureSight
 	call CheckFaint_PlayerThenEnemy
 	ret c
@@ -277,6 +278,7 @@ HandleBetweenTurnEffects:
 .CheckEnemyFirst:
 	call CheckFaint_EnemyThenPlayer
 	ret c
+	call HandleFlameToxicOrb
 	call HandleFutureSight
 	call CheckFaint_EnemyThenPlayer
 	ret c
@@ -1295,6 +1297,85 @@ SwitchTurnCore:
 	ldh a, [hBattleTurn]
 	xor 1
 	ldh [hBattleTurn], a
+	ret
+
+HandleFlameToxicOrb:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .enemy_first
+
+.player_first
+	call SetEnemyTurn
+	call .OrbCheck
+	call SetPlayerTurn
+	jr .OrbCheck
+
+.enemy_first
+	call SetPlayerTurn
+	call .OrbCheck
+	call SetEnemyTurn
+
+.OrbCheck
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	cp 0
+	ret nz
+	callfar GetOpponentItem
+	ld a, b
+	cp HELD_FLAME_ORB
+	jr z, .FlameOrb
+	cp HELD_TOXIC_ORB
+	ret nz
+	call GetOpponentType
+	cp POISON
+	ret z
+	cp STEEL
+	ret z
+	ld a, [de]
+	cp POISON
+	ret z
+	cp STEEL
+	ret z
+	call SwitchTurnCore
+	ld de, ANIM_PSN
+	call Call_PlayBattleAnim
+	call SwitchTurnCore
+	ld a, BATTLE_VARS_SUBSTATUS5_OPP
+	call GetBattleVarAddr
+	ldh a, [hBattleTurn]
+	and a
+	ld de, wEnemyToxicCount
+	jr z, .ok
+	ld de, wPlayerToxicCount
+.ok
+	set SUBSTATUS_TOXIC, [hl]
+	xor a
+	ld [de], a
+	farcall PoisonOpponent
+	call RefreshBattleHuds
+	ld hl, ToxicOrbText
+	jp StdBattleTextbox
+
+.FlameOrb
+	call GetOpponentType
+	cp FIRE
+	ret z
+	ld a, [de]
+	cp FIRE
+	ret z
+	farcall BurnOpponent
+	ld hl, FlameOrbText
+	jp StdBattleTextbox
+
+GetOpponentType:
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
 	ret
 
 HandleWeather:

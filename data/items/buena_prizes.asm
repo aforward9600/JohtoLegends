@@ -5,6 +5,8 @@ BuenaPrizeItems:
 	db POWER_BAND,   20, 2, 0
 	db SPECIALSPECS, 20, 2, 0
 	db WIDE_LENS,    20, 2, 0
+	db FLAME_ORB,    25, 2, 0
+	db TOXIC_ORB,    25, 2, 0
 	db CHOICE_BAND,  25, 2, 5
 	db CHOICE_SPECS, 25, 2, 5
 	db CHOICE_SCARF, 25, 2, 5

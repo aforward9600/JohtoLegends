@@ -111,8 +111,8 @@ ItemDescriptions:
 	dw MiracleSeedDesc
 	dw ThickClubDesc
 	dw FocusBandDesc
-	dw EnergyPowderDesc
-	dw EnergyRootDesc
+	dw FlameOrbDesc
+	dw ToxicOrbDesc
 	dw HealPowderDesc
 	dw RevivalHerbDesc
 	dw HardStoneDesc
@@ -695,13 +695,13 @@ FocusBandDesc:
 	db   "May prevent faint-"
 	next "ing. (Hold)@"
 
-EnergyPowderDesc:
-	db   "Restores #mon"
-	next "HP by 50. Bitter.@"
+FlameOrbDesc:
+	db   "A bizarre orb that"
+	next "burns. (Hold)@"
 
-EnergyRootDesc:
-	db   "Restores #mon"
-	next "HP by 200. Bitter.@"
+ToxicOrbDesc:
+	db   "A bizarre orb that"
+	next "poisons. (Hold)@"
 
 HealPowderDesc:
 	db   "Cures all status"

@@ -15,20 +15,26 @@ CianwoodPharmacist:
 	jumptextfaceplayer CianwoodPharmacistText
 
 PharmacyGrannyScript:
-	faceplayer
-	opentext
-	pokemart MARTTYPE_BITTER, MART_UNDERGROUND
-	closetext
-	end
+	jumptextfaceplayer CianwoodPharmacyGrandmaText
 
 CianwoodPharmacyBookshelf:
 	jumpstd difficultbookshelf
 
 CianwoodPharmacistText:
 	text "My grandma has a"
-	line "SecretPotion, and"
+	line "Secret Potion, and"
 	cont "she's going to"
 	cont "teach me someday."
+	done
+
+CianwoodPharmacyGrandmaText:
+	text "I wish that boy"
+	line "would stop talking"
+	cont "about the Secret"
+	cont "Potion."
+
+	para "It's supposed to be"
+	line "a secret!"
 	done
 
 CianwoodPharmacy_MapEvents:

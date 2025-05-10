@@ -219,9 +219,8 @@ OlivinePortSailorAfterBikerText:
 OlivinePort_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 1 ; warp events
 	warp_event 11,  7, OLIVINE_PORT_PASSAGE, 5
-	warp_event  7, 23, FAST_SHIP_1F, 1
 
 	db 0 ; coord events
 

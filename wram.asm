@@ -2624,7 +2624,6 @@ wTimeCapsuleSceneID::                             db ; d975
 wPowerPlantSceneID::                              db ; d976
 wCeruleanGymSceneID::                             db ; d977
 wRoute25SceneID::                                 db ; d978
-wTrainerHouseB1FSceneID::                         db ; d979
 wVictoryRoadGateSceneID::                         db ; d97a
 wSaffronMagnetTrainStationSceneID::               db ; d97b
 wRoute16GateSceneID::                             db ; d97c
@@ -2691,8 +2690,6 @@ wDragonsDenB1FSceneID::                           db ; d9b8
 wDragonShrineSceneID::                            db ; d9b9
 wOlivinePortSceneID::                             db ; d9ba
 wVermilionPortSceneID::                           db ; d9bb
-wFastShip1FSceneID::                              db ; d9bc
-wFastShipB1FSceneID::                             db ; d9bd
 wMountMoonSquareSceneID::                         db ; d9be
 wMobileTradeRoomSceneID::                         db ; d9bf
 wMobileBattleRoomSceneID::                        db ; d9c0
@@ -2733,7 +2730,7 @@ wDracoSceneID::                                   db
 wDahliaSceneID::                                  db
 wHoOhTowerSceneID::                               db
 
-	ds 13
+	ds 16
 
 ; fight counts
 wJackFightCount::    db ; d9f2

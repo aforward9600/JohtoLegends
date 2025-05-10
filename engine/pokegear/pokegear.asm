@@ -124,8 +124,6 @@ Pokegear_LoadGFX:
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
-	cp FAST_SHIP
-	jr z, .ssaqua
 	farcall GetPlayerIcon
 	push de
 	ld h, d
@@ -204,8 +202,6 @@ TownMap_InitCursorAndPlayerIconPositions:
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
-	cp FAST_SHIP
-	jr z, .FastShip
 	cp SPECIAL_MAP
 	jr nz, .LoadLandmark
 	ld a, [wBackupMapGroup]
@@ -318,8 +314,6 @@ InitPokegearTilemap:
 
 .Map:
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp FAST_SHIP
-	jr z, .johto
 	cp KANTO_LANDMARK
 	jr nc, .kanto
 .johto
@@ -525,8 +519,6 @@ Pokegear_UpdateClock:
 
 PokegearMap_CheckRegion:
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp FAST_SHIP
-	jr z, .johto
 	cp KANTO_LANDMARK
 	jr nc, .kanto
 .johto
@@ -2368,8 +2360,6 @@ RadioChannels:
 
 ; otherwise clear carry
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp FAST_SHIP
-	jr z, .johto
 	cp KANTO_LANDMARK
 	jr c, .johto
 .kanto
@@ -3913,8 +3903,6 @@ Pokedex_GetArea:
 ; not in the same region as what's currently
 ; on the screen.
 	ld a, [wTownMapPlayerIconLandmark]
-	cp FAST_SHIP
-	jr z, .johto
 	cp KANTO_LANDMARK
 	jr c, .johto
 .kanto
@@ -3941,8 +3929,6 @@ Pokedex_GetArea:
 
 .GetPlayerOrFastShipIcon:
 	ld a, [wTownMapPlayerIconLandmark]
-	cp FAST_SHIP
-	jr z, .FastShip
 	farcall GetPlayerIcon
 	ret
 

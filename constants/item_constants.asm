@@ -117,10 +117,10 @@
 	const MIRACLE_SEED ; 75
 	const THICK_CLUB   ; 76
 	const FOCUS_BAND   ; 77
-	const ENERGYPOWDER ; 79
-	const ENERGY_ROOT  ; 7a
-	const HEAL_POWDER  ; 7b
-	const REVIVAL_HERB ; 7c
+	const FLAME_ORB    ; 79
+	const TOXIC_ORB    ; 7a
+	const HEAL_POWDER  ; 7b unused
+	const REVIVAL_HERB ; 7c unused
 	const HARD_STONE   ; 7d
 	const LUCKY_EGG    ; 7e
 	const BATTLE_CARD  ; 7f

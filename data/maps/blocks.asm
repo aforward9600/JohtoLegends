@@ -418,12 +418,6 @@ CeladonMansionRoof_Blocks:
 BetaHouse_Blocks:
 	INCBIN "maps/unused/BetaHouse.ablk"
 
-CeladonGameCorner_Blocks:
-	INCBIN "maps/CeladonGameCorner.ablk"
-
-CeladonGameCornerPrizeRoom_Blocks:
-	INCBIN "maps/CeladonGameCornerPrizeRoom.ablk"
-
 Colosseum_Blocks:
 	INCBIN "maps/Colosseum.ablk"
 
@@ -790,24 +784,6 @@ Route35NationalParkGate_Blocks:
 Route36NationalParkGate_Blocks:
 	INCBIN "maps/Route36NationalParkGate.ablk"
 
-FastShip1F_Blocks:
-	INCBIN "maps/FastShip1F.ablk"
-
-FastShipB1F_Blocks:
-	INCBIN "maps/FastShipB1F.ablk"
-
-BetaFastShipInsideCutOut_Blocks:
-	INCBIN "maps/unused/BetaFastShipInsideCutOut.ablk"
-
-FastShipCabins_NNW_NNE_NE_Blocks:
-	INCBIN "maps/FastShipCabins_NNW_NNE_NE.ablk"
-
-FastShipCabins_SW_SSW_NW_Blocks:
-	INCBIN "maps/FastShipCabins_SW_SSW_NW.ablk"
-
-FastShipCabins_SE_SSE_CaptainsCabin_Blocks:
-	INCBIN "maps/FastShipCabins_SE_SSE_CaptainsCabin.ablk"
-
 OlivinePort_Blocks:
 	INCBIN "maps/OlivinePort.ablk"
 
@@ -848,12 +824,6 @@ SilphCo1F_Blocks:
 
 ViridianGym_Blocks:
 	INCBIN "maps/ViridianGym.ablk"
-
-TrainerHouse1F_Blocks:
-	INCBIN "maps/TrainerHouse1F.ablk"
-
-TrainerHouseB1F_Blocks:
-	INCBIN "maps/TrainerHouseB1F.ablk"
 
 RedsHouse1F_Blocks:
 	INCBIN "maps/RedsHouse1F.ablk"

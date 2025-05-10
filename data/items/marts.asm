@@ -434,11 +434,13 @@ MartIndigoPlateau:
 	db -1 ; end
 
 MartUnderground:
-	db 4 ; # items
-	db ENERGYPOWDER
-	db ENERGY_ROOT
-	db HEAL_POWDER
-	db REVIVAL_HERB
+	db 1
+	db POTION
+;	db 4 ; # items
+;	db ENERGYPOWDER
+;	db ENERGY_ROOT
+;	db HEAL_POWDER
+;	db REVIVAL_HERB
 	db -1 ; end
 
 MartWildArea:

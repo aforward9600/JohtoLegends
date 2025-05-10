@@ -10,8 +10,6 @@ HealingHPAmounts:
 	dbw MOOMOO_MILK,  100
 	dbw ORAN_BERRY,    10
 	dbw SITRUS_BERRY,  30
-	dbw ENERGYPOWDER,  50
-	dbw ENERGY_ROOT,  200
 	dbw RAGECANDYBAR,  20
 	dbw BERRY_JUICE,   20
 	dbw -1, 0 ; end

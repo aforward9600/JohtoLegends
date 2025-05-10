@@ -347,11 +347,6 @@ ENDM
 
 	map_const OLIVINE_PORT,                                10, 18 ;  1
 	map_const VERMILION_PORT,                              10, 18 ;  2
-	map_const FAST_SHIP_1F,                                16,  9 ;  3
-	map_const FAST_SHIP_CABINS_NNW_NNE_NE,                  4, 16 ;  4
-	map_const FAST_SHIP_CABINS_SW_SSW_NW,                   4, 16 ;  5
-	map_const FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN,       5, 17 ;  6
-	map_const FAST_SHIP_B1F,                               16,  8 ;  7
 	map_const OLIVINE_PORT_PASSAGE,                        10,  9 ;  8
 	map_const VERMILION_PORT_PASSAGE,                      10,  9 ;  9
 	map_const MOUNT_MOON_SQUARE,                           15,  9 ; 10
@@ -437,8 +432,6 @@ ENDM
 	map_const CELADON_MANSION_ROOF,                         4,  5 ; 15
 	map_const CELADON_MANSION_ROOF_HOUSE,                   4,  4 ; 16
 	map_const CELADON_POKECENTER_1F,                        5,  4 ; 17
-	map_const CELADON_GAME_CORNER,                         10,  7 ; 19
-	map_const CELADON_GAME_CORNER_PRIZE_ROOM,               3,  3 ; 20
 	map_const CELADON_GYM,                                  5,  9 ; 21
 	map_const CELADON_CAFE,                                 6,  4 ; 22
 	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 23
@@ -479,8 +472,6 @@ ENDM
 	map_const VIRIDIAN_CITY,                               20, 18 ;  3
 	map_const VIRIDIAN_GYM,                                 5,  9 ;  4
 	map_const VIRIDIAN_NICKNAME_SPEECH_HOUSE,               4,  4 ;  5
-	map_const TRAINER_HOUSE_1F,                             5,  7 ;  6
-	map_const TRAINER_HOUSE_B1F,                            5,  8 ;  7
 	map_const VIRIDIAN_MART,                                6,  4 ;  8
 	map_const VIRIDIAN_POKECENTER_1F,                       5,  4 ;  9
 	map_const ROUTE_2_NUGGET_HOUSE,                         4,  4 ; 11

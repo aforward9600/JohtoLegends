@@ -42,8 +42,6 @@ ItemNameOrder:
 	db MAX_REVIVE
 
 	; Bitter Medicine
-	db ENERGY_ROOT
-	db ENERGYPOWDER
 	db HEAL_POWDER
 	db REVIVAL_HERB
 
@@ -104,6 +102,7 @@ ItemNameOrder:
 	db DRAGON_FANG
 	db EVERSTONE
 	db EVIOLITE
+	db FLAME_ORB
 	db FOCUS_BAND
 	db FOCUS_SASH
 	db HARD_STONE
@@ -135,6 +134,7 @@ ItemNameOrder:
 	db STEEL_DAGGER
 	db STICK
 	db THICK_CLUB
+	db TOXIC_ORB
 	db TWISTEDSPOON
 	db WIDE_LENS
 

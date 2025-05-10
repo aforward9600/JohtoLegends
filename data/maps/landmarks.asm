@@ -114,7 +114,6 @@ Landmarks:
 	landmark  20, 100, Route27Name
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
-	landmark 140, 116, FastShipName
 
 NewBarkTownName:     db "New Bark¯Town@"
 CherrygroveCityName: db "Cherrygrove¯City@"
@@ -214,7 +213,6 @@ Route46Name:         db "Route 46@"
 DarkCaveName:        db "Dark Cave@"
 IlexForestName:      db "Ilex¯Forest@"
 BurnedTowerName:     db "Burned¯Tower@"
-FastShipName:        db "Fast Ship@"
 ViridianForestName:  db "Viridian¯Forest@"
 DiglettsCaveName:    db "Diglett's¯Cave@"
 TohjoFallsName:      db "Tohjo Falls@"

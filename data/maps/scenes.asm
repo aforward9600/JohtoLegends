@@ -12,7 +12,6 @@ MapScenes::
 	scene_var POWER_PLANT,                                 wPowerPlantSceneID
 	scene_var CERULEAN_GYM,                                wCeruleanGymSceneID
 	scene_var ROUTE_25,                                    wRoute25SceneID
-	scene_var TRAINER_HOUSE_B1F,                           wTrainerHouseB1FSceneID
 	scene_var VICTORY_ROAD_GATE,                           wVictoryRoadGateSceneID
 	scene_var SAFFRON_MAGNET_TRAIN_STATION,                wSaffronMagnetTrainStationSceneID
 	scene_var ROUTE_16_GATE,                               wRoute16GateSceneID
@@ -78,8 +77,6 @@ MapScenes::
 	scene_var DRAGON_SHRINE,                               wDragonShrineSceneID
 	scene_var OLIVINE_PORT,                                wOlivinePortSceneID
 	scene_var VERMILION_PORT,                              wVermilionPortSceneID
-	scene_var FAST_SHIP_1F,                                wFastShip1FSceneID
-	scene_var FAST_SHIP_B1F,                               wFastShipB1FSceneID
 	scene_var MOUNT_MOON_SQUARE,                           wMountMoonSquareSceneID
 	scene_var MASTERS_HOUSE_1F,                            wMastersHouse1FSceneID
 	scene_var MASTERS_HOUSE_2F,                            wMastersHouse2FSceneID
