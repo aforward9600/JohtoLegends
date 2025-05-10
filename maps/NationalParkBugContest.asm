@@ -113,8 +113,7 @@ NationalParkBugContestEther:
 	itemball SILVERPOWDER
 
 NationalParkBugContestTMDig:
-	itemball POTION
-;	itemball TM_DIG
+	itemball TM_DIG
 
 NationalParkBugContestHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL

@@ -152,13 +152,11 @@ MartGoldenrod4F:
 	db -1 ; end
 
 MartGoldenrod5F:
-	db 1
-	db POTION
-;	db 4 ; # items
-;	db TM_ACROBATICS
-;	db TM_LIGHT_SCREEN
-;	db TM_REFLECT
-;	db TM_PROTECT
+	db 4 ; # items
+	db TM_ACROBATICS
+	db TM_LIGHT_SCREEN
+	db TM_REFLECT
+	db TM_PROTECT
 	db -1 ; end
 
 MartGoldenrodBlackMarket1:
@@ -360,12 +358,10 @@ MartCeladon2F2:
 	db -1 ; end
 
 MartCeladon3F:
-	db 1
-	db POTION
-;	db 3 ; # items
-;	db TM_GIGA_IMPACT
-;	db TM_FOCUS_BLAST
-;	db TM_HYPER_BEAM
+	db 3 ; # items
+	db TM_GIGA_IMPACT
+	db TM_FOCUS_BLAST
+	db TM_HYPER_BEAM
 	db -1 ; end
 
 MartCeladon4F:
@@ -471,43 +467,35 @@ MartEcruteakBalls:
 	db -1 ; end
 
 MartOlivineTMs:
-	db 1
-	db POTION
-;	db 4
-;	db TM_CURSE
-;	db TM_BRICK_BREAK
-;	db TM_SAFEGUARD
-;	db TM_POISON_JAB
+	db 4
+	db TM_CURSE
+	db TM_BRICK_BREAK
+	db TM_SAFEGUARD
+	db TM_POISON_JAB
 	db -1 ; end
 
 MartBlackthornTMs:
-	db 1
-	db POTION
-;	db 4
-;	db TM_DOUBLE_TEAM
-;	db TM_SUBSTITUTE
-;	db TM_SLEEP_TALK
-;	db TM_ATTRACT
+	db 4
+	db TM_DOUBLE_TEAM
+	db TM_SUBSTITUTE
+	db TM_SLEEP_TALK
+	db TM_ATTRACT
 	db -1 ; end
 
 MartAzaleaTMs:
-	db 1
-	db POTION
-;	db 4
-;	db TM_SUNNY_DAY
-;	db TM_ROCK_SLIDE
-;	db TM_BULLDOZE
-;	db TM_REST
+	db 4
+	db TM_SUNNY_DAY
+	db TM_ROCK_SLIDE
+	db TM_BULLDOZE
+	db TM_REST
 	db -1 ; end
 
 MartVioletTMs:
-	db 1
-	db POTION
-;	db 4
-;	db TM_THUNDERBOLT
-;	db TM_ICE_BEAM
-;	db TM_FLAMETHROWER
-;	db TM_STEEL_WING
+	db 4
+	db TM_THUNDERBOLT
+	db TM_ICE_BEAM
+	db TM_FLAMETHROWER
+	db TM_STEEL_WING
 	db -1 ; end
 
 DefaultMart:
@@ -528,15 +516,13 @@ MartLakeOfRage:
 	db -1 ; end
 
 MartCherrygroveTMs:
-	db 1
-	db POTION
-;	db 6 ; # items
-;	db TM_PSYCHIC_M
-;	db TM_STONE_EDGE
-;	db TM_NASTY_PLOT
-;	db TM_FOCUS_BLAST
-;	db TM_TOXIC
-;	db TM_ENERGY_BALL
+	db 6 ; # items
+	db TM_PSYCHIC_M
+	db TM_STONE_EDGE
+	db TM_NASTY_PLOT
+	db TM_FOCUS_BLAST
+	db TM_TOXIC
+	db TM_ENERGY_BALL
 	db -1 ; end
 
 MartMooMooMilk:

@@ -167,8 +167,7 @@ Route35Sign:
 	jumptext Route35SignText
 
 Route35TMRollout:
-	itemball POTION
-;	itemball TM_AERIAL_ACE
+	itemball TM_AERIAL_ACE
 
 Route35FruitTree:
 	fruittree FRUITTREE_ROUTE_35

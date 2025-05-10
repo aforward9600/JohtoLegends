@@ -75,7 +75,7 @@ GoldenrodGymMiltonScript:
 	setevent EVENT_BEAT_BREEDER_EMILY
 	writetext MiltonText_PlainBadgeSpeech
 	buttonsound
-	verbosegivetmhm TM_SWORDS_DANCE
+	verbosegiveitem TM_SWORDS_DANCE
 	setevent EVENT_GOT_TM45_ATTRACT
 	writetext MiltonAttractText
 	waitbutton

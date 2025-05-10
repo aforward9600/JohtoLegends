@@ -48,7 +48,7 @@ CianwoodCityChucksWife:
 .BeatChuck:
 	writetext ChucksWifeGiveHMText
 	buttonsound
-	verbosegivetmhm TM_FLY
+	verbosegiveitem TM_FLY
 	setevent EVENT_GOT_TM_FLY
 	writetext ChucksWifeFlySpeechText
 	buttonsound
@@ -100,8 +100,7 @@ CianwoodCityRock:
 	jumpstd smashrock
 
 CianwoodCityItemBallScript:
-	itemball POTION
-;	itemball TM_ROCK_TOMB
+	itemball TM_ROCK_TOMB
 
 CianwoodCityHiddenRevive:
 	hiddenitem REVIVE, EVENT_CIANWOOD_CITY_HIDDEN_REVIVE

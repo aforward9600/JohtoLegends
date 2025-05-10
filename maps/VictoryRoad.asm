@@ -17,8 +17,7 @@ VictoryRoad_MapScripts:
 	end
 
 VictoryRoadTMEarthquake:
-	itemball POTION
-;	itemball TM_EARTHQUAKE
+	itemball TM_EARTHQUAKE
 
 VictoryRoadMaxRevive:
 	itemball MAX_REVIVE

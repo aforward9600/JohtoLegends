@@ -147,7 +147,7 @@ EcruteakCityMotherWalks:
 	opentext
 	writetext ThankYouForSavingDaughterText
 	buttonsound
-	verbosegivetmhm TM_CALM_MIND
+	verbosegiveitem TM_CALM_MIND
 	writetext ThatsCalmMindText
 	waitbutton
 	closetext

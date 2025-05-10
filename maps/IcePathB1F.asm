@@ -127,8 +127,7 @@ IcePathB1FAntidote:
 	itemball ICE_STONE
 
 IcePathB1FWaterfall:
-	itemball POTION
-;	itemball TM_WATERFALL
+	itemball TM_WATERFALL
 
 TrainerYoungsterTimmy:
 	trainer YOUNGSTER, TIMMY, EVENT_BEAT_YOUNGSTER_TIMMY, YoungsterTimmySeenText, YoungsterTimmyBeatenText, 0, .Script

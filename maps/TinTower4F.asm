@@ -22,8 +22,7 @@ TinTower4FGrunt:
 	end
 
 TinTower4FUltraBall:
-	itemball POTION
-;	itemball TM_SHADOW_BALL
+	itemball TM_SHADOW_BALL
 
 TinTower4FPPUp:
 	itemball PP_UP

@@ -63,8 +63,7 @@ OlivineLighthouse5FSuperRepel:
 	itemball REPEL
 
 OlivineLighthouse5FTMSwagger:
-	itemball POTION
-;	itemball TM_DAZZLINGLEAM
+	itemball TM_DAZZLINGLEAM
 
 OlivineLighthouse5FHiddenHyperPotion:
 	hiddenitem SUPER_POTION, EVENT_OLIVINE_LIGHTHOUSE_5F_HIDDEN_HYPER_POTION

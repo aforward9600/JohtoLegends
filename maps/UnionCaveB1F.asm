@@ -57,8 +57,7 @@ TrainerSuperNerdRichard:
 	end
 
 UnionCaveB1FTMIronHead:
-	itemball POTION
-;	itemball TM_IRON_HEAD
+	itemball TM_IRON_HEAD
 
 UnionCaveB1FSteelDagger:
 	itemball STEEL_DAGGER

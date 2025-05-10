@@ -70,8 +70,7 @@ Route26FruitTree:
 	fruittree FRUITTREE_ROUTE_26
 
 Route26MaxElixer:
-	itemball POTION
-;	itemball TM_DRAGON_PULSE
+	itemball TM_DRAGON_PULSE
 
 CooltrainermJuanSeenText:
 	text "Vaporeon is one"

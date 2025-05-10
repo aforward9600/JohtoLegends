@@ -28,8 +28,7 @@ SlowpokeWellB2FGymGuyScript:
 	end
 
 SlowpokeWellB2FTMRainDance:
-	itemball POTION
-;	itemball TM_RAIN_DANCE
+	itemball TM_RAIN_DANCE
 
 SlowpokeWellB2FGymGuyText:
 	text "Dang it!"

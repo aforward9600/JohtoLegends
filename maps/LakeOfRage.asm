@@ -196,8 +196,7 @@ LakeOfRageElixer:
 	itemball ETHER
 
 LakeOfRageTMDetect:
-	itemball POTION
-;	itemball TM_ROAR
+	itemball TM_ROAR
 
 LakeOfRageHiddenFullRestore:
 	hiddenitem GREAT_BALL, EVENT_LAKE_OF_RAGE_HIDDEN_FULL_RESTORE

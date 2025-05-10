@@ -76,7 +76,7 @@ VioletGymWalkerScript:
 	setevent EVENT_BEAT_BIRD_KEEPER_LUCAS
 	writetext WalkerZephyrBadgeText
 	buttonsound
-	verbosegivetmhm TM_ROOST
+	verbosegiveitem TM_ROOST
 	setevent EVENT_GOT_TM31_MUD_SLAP
 	writetext WalkerTMRoostText
 	waitbutton

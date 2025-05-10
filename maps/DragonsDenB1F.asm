@@ -71,8 +71,7 @@ DragonShrineSignpost:
 	jumptext DragonShrineSignpostText
 
 DragonsDenB1FTMDragonDance:
-	itemball POTION
-;	itemball TM_DRAGON_DANCE
+	itemball TM_DRAGON_DANCE
 
 DragonsDenB1FMaxElixer:
 	itemball MAX_ELIXER

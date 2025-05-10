@@ -2570,7 +2570,7 @@ wBadges::
 wJohtoBadges:: flag_array NUM_JOHTO_BADGES ; d857
 wKantoBadges:: flag_array NUM_KANTO_BADGES ; d858
 
-wTMsHMs:: flag_array NUM_TMS + NUM_HMS ; d859
+wTMsHMs:: ds NUM_TMS + NUM_HMS ; d859
 wTMsHMsEnd::
 
 wNumItems:: db ; d892

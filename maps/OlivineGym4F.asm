@@ -64,7 +64,7 @@ OlivineGym1FByronScript:
 	iftrue .GotIronTail
 	writetext Byron1F_BadgeSpeech
 	buttonsound
-	verbosegivetmhm TM_FLASH_CANNON
+	verbosegiveitem TM_FLASH_CANNON
 	setevent EVENT_GOT_TM42_FLASH_CANNON
 	setevent EVENT_ROCK_SMASH_GUY
 	clearevent EVENT_ROUTE_36_GUY

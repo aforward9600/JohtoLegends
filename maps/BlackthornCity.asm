@@ -58,12 +58,8 @@ BlackthornSuperNerdScript:
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .ClearedRadioTower
 	writetext Text_ClairIsOut
-	buttonsound
-	verbosegivetmhm TM_SWORDS_DANCE
 	waitbutton
 	closetext
-;	waitbutton
-;	closetext
 	end
 
 .ClearedRadioTower:

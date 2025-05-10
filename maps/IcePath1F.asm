@@ -31,8 +31,7 @@ IcePath1F_MapScripts:
 	return
 
 IcePath1FTMHail:
-	itemball POTION
-;	itemball TM_HAIL
+	itemball TM_HAIL
 
 IcePath1FPotion:
 	itemball POTION

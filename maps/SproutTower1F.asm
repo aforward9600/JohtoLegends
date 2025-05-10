@@ -35,8 +35,7 @@ TrainerSageChow:
 	end
 
 SproutTower1FParlyzHeal:
-	itemball POTION
-;	itemball TM_SOLARBEAM
+	itemball TM_SOLARBEAM
 
 SproutTower1FStatue:
 	jumptext SproutTower1FStatueText

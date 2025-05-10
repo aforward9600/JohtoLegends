@@ -67,7 +67,7 @@ AzaleaGymKurtScript:
 	setevent EVENT_BEAT_BUG_CATCHER_PETE
 	writetext KurtText_HiveBadgeSpeech
 	buttonsound
-	verbosegivetmhm TM_X_SCISSOR
+	verbosegiveitem TM_X_SCISSOR
 	setevent EVENT_GOT_TM60_X_SCISSOR
 	writetext KurtText_XScissorSpeech
 	waitbutton

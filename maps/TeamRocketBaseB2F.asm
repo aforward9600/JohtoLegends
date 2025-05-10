@@ -332,8 +332,7 @@ TeamRocketBaseB2FLockedDoor:
 	end
 
 TeamRocketBaseB2FTMThief:
-	itemball POTION
-;	itemball TM_THIEF
+	itemball TM_THIEF
 
 TeamRocketBaseB2FLaprasCallB:
 	itemball LAPRAS_CALLB

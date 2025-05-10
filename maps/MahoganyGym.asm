@@ -73,7 +73,7 @@ MahoganyGymPryceScript:
 	setevent EVENT_BEAT_BOARDER_SONNY
 	writetext PryceText_GlacierBadgeSpeech
 	buttonsound
-	verbosegivetmhm TM_ICY_WIND
+	verbosegiveitem TM_ICY_WIND
 	setevent EVENT_GOT_TM16_ICY_WIND
 	writetext PryceText_IcyWindSpeech
 	waitbutton

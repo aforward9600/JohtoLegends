@@ -91,7 +91,7 @@ IlexForestDarkPulseGirlScript:
 	iftrue .AlreadyGotHeadbutt
 	writetext Text_DarkPulseIntro
 	buttonsound
-	verbosegivetmhm TM_DARK_PULSE
+	verbosegiveitem TM_DARK_PULSE
 	setevent EVENT_GOT_TM63_DARK_PULSE
 	closetext
 	end

@@ -513,8 +513,8 @@ Script_verbosegiveitem:
 	ld de, wStringBuffer1
 	ld a, STRING_BUFFER_4
 	call CopyConvertedText
-;	ld de, wStringBuffer4 + STRLEN("TM##")
-;	call AppendTMHMMoveName
+	ld de, wStringBuffer4 + STRLEN("TM##")
+	call AppendTMHMMoveName
 	ld b, BANK(GiveItemScript)
 	ld de, GiveItemScript
 	jp ScriptCall
@@ -640,7 +640,7 @@ CurItemName:
 	call GetItemName
 	ret
 
-wCurTMHMName:
+CurTMHMName:
 	ld a, [wCurTMHM]
 	ld [wd265], a
 	call GetTMHMName
@@ -2924,7 +2924,7 @@ AppendTMHMMoveName::
 	push de
 ; a = TM/HM number
 	ld c, a
-	farcall GetTMHMName
+	farcall GetTMHMNumber
 	ld a, c
 ; a = move ID
 	ld [wTempTMHM], a
@@ -3005,9 +3005,9 @@ Script_verbosegivetmhm:
 ;     tmhm (TMHMLabelByte)
 
 	call Script_givetmhm
-	call wCurTMHMName
+	call CurTMHMName
 	ld de, wStringBuffer1
-	ld a, STRING_BUFFER_4
+	ld a, 1
 	call CopyConvertedText
 	ld hl, wTempTMHM
 	inc [hl]
@@ -3028,7 +3028,7 @@ Script_tmhmnotify:
 ; script command 0xb1
 
 	call GetTMHMPocketName
-	call wCurTMHMName
+	call CurTMHMName
 	ld b, BANK(PutItemInPocketText)
 	ld hl, PutItemInPocketText
 	call MapTextbox

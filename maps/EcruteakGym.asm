@@ -87,7 +87,7 @@ EcruteakGymEnokiScript:
 	setevent EVENT_BEAT_HEX_MANIAC_ZELDA
 	writetext EnokiText_FogBadgeSpeech
 	buttonsound
-	verbosegivetmhm TM_HEX
+	verbosegiveitem TM_HEX
 	setevent EVENT_GOT_TM04_HEX
 	writetext EnokiText_HexSpeech
 	waitbutton

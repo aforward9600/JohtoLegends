@@ -29,7 +29,7 @@ FightingDojoKoichi:
 	opentext
 	writetext YoureGivingMeBadgeText
 	buttonsound
-	verbosegivetmhm TM_DYNAMICPUNCH
+	verbosegiveitem TM_DYNAMICPUNCH
 	setevent EVENT_GOT_TM01_DYNAMICPUNCH
 	waitbutton
 	closetext
@@ -62,7 +62,7 @@ FightingDojoKoichi:
 .GetTM01:
 	writetext HereIsTM01Text
 	buttonsound
-	verbosegivetmhm TM_DYNAMICPUNCH
+	verbosegiveitem TM_DYNAMICPUNCH
 	setevent EVENT_GOT_TM01_DYNAMICPUNCH
 	waitbutton
 	closetext

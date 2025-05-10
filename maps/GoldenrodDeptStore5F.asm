@@ -46,9 +46,9 @@ GoldenrodDeptStore5FReceptionistScript:
 .VeryHappy:
 	writetext GoldenrodDeptStore5FReceptionistThisMoveShouldBePerfectText
 	buttonsound
-	checktmhm TM_RETURN
+	checkitem TM_RETURN
 	iftrue .AlreadyGotTM
-	verbosegivetmhm TM_RETURN
+	verbosegiveitem TM_RETURN
 	setflag ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN
 	closetext
 	end
