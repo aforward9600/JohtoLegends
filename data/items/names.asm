@@ -88,7 +88,7 @@ ItemNames::
 	db "Cleanse Tag@"
 	db "Mystic Water@"
 	db "Twistedspoon@"
-	db "Badge Pouch@"
+	db "Light Clay@"
 	db "Blackbelt@"
 	db "Life Orb@"
 	db "Choice Band@"

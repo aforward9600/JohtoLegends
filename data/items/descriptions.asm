@@ -89,7 +89,7 @@ ItemDescriptions:
 	dw CleanseTagDesc
 	dw MysticWaterDesc
 	dw TwistedSpoonDesc
-	dw BadgePouchDesc
+	dw LightClayDesc
 	dw BlackbeltDesc
 	dw LifeOrbDesc
 	dw ChoiceBandDesc
@@ -607,9 +607,9 @@ TwistedSpoonDesc:
 	db   "Powers up psychic-"
 	next "type moves. (Hold)@"
 
-BadgePouchDesc:
-	db   "A pouch of Kanto"
-	next "League Badges.@"
+LightClayDesc:
+	db   "Extends barrier"
+	next "moves. (Hold)@"
 
 BlackbeltDesc:
 	db   "Boosts fighting-"

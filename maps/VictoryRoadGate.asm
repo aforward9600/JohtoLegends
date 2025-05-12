@@ -130,8 +130,10 @@ VictoryRoadGateBadgeOakSceneReconverge:
 	turnobject VICTORYROADGATE_OAK, DOWN
 	opentext
 	writetext TheTwoOfYouText
-	buttonsound
-	verbosegiveitem BADGE_POUCH
+	waitbutton
+	writetext GivePlayerBadgesText
+	playsound SFX_GET_BADGE
+	waitsfx
 	writetext BadgeNumberExplainText
 	waitbutton
 	closetext
@@ -427,6 +429,11 @@ TheTwoOfYouText:
 	cont "take back Kanto"
 	cont "from those"
 	cont "ruffians!"
+	done
+
+GivePlayerBadgesText:
+	text "<PLAYER> received"
+	line "a bunch of badges!"
 	done
 
 BadgeNumberExplainText:

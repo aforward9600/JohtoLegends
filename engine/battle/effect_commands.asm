@@ -3782,10 +3782,6 @@ BattleCommand_PoisonTarget:
 	ret z
 	call CheckIfTargetIsPoisonType
 	ret z
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_POISON
-	ret z
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -3820,16 +3816,6 @@ BattleCommand_Poison:
 	ld hl, AlreadyPoisonedText
 	and 1 << PSN
 	jp nz, .failed
-
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_POISON
-	jr nz, .do_poison
-	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
-	ld hl, ProtectedByText
-	jr .failed
 
 .do_poison
 	ld hl, AvoidStatusText
@@ -6448,7 +6434,9 @@ ResetActorDisable:
 
 BattleCommand_Screen:
 ; screen
-
+	call GetUserItem
+	ld a, b
+	push af
 	ld hl, wPlayerScreens
 	ld bc, wPlayerLightScreenCount
 	ldh a, [hBattleTurn]
@@ -6466,7 +6454,15 @@ BattleCommand_Screen:
 	bit SCREENS_LIGHT_SCREEN, [hl]
 	jr nz, .failed
 	set SCREENS_LIGHT_SCREEN, [hl]
+	pop af
+	cp HELD_LIGHT_CLAY
+	jr z, .LightClayLightScreen
 	ld a, 5
+	jr .AfterLightScreen
+
+.LightClayLightScreen
+	ld a, 8
+.AfterLightScreen
 	ld [bc], a
 	ld hl, LightScreenEffectText
 	jr .good
@@ -6479,7 +6475,15 @@ BattleCommand_Screen:
 	; LightScreenCount -> ReflectCount
 	inc bc
 
+	pop af
+	cp HELD_LIGHT_CLAY
+	jr z, .LightClayReflect
 	ld a, 5
+	jr .AfterReflect
+
+.LightClayReflect
+	ld a, 8
+.AfterReflect
 	ld [bc], a
 	ld hl, ReflectEffectText
 
@@ -6488,6 +6492,7 @@ BattleCommand_Screen:
 	jp StdBattleTextbox
 
 .failed
+	pop af
 	call AnimateFailedMove
 	jp PrintButItFailed
 

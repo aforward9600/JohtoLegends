@@ -95,7 +95,7 @@
 	const CLEANSE_TAG  ; 5e
 	const MYSTIC_WATER ; 5f
 	const TWISTEDSPOON ; 60
-	const BADGE_POUCH  ; 61 unused
+	const LIGHT_CLAY   ; 61
 	const BLACKBELT    ; 62
 	const LIFE_ORB     ; 63
 	const CHOICE_BAND  ; 65

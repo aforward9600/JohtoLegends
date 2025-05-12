@@ -110,6 +110,7 @@ ItemNameOrder:
 	db LEFTOVERS
 	db LIFE_ORB
 	db LIGHT_BALL
+	db LIGHT_CLAY
 	db LUCKY_EGG
 	db LUCKY_PUNCH
 	db MACHO_BRACE
@@ -208,7 +209,6 @@ ItemNameOrder:
 	db CANDY_POUCH
 	db COIN_CASE
 	db ITEMFINDER
-	db BADGE_POUCH
 	db BATTLE_CARD
 
 	; Rods
