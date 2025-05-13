@@ -102,7 +102,7 @@ ItemEffects:
 	dw NoEffect            ; CLEANSE_TAG
 	dw NoEffect            ; MYSTIC_WATER
 	dw NoEffect            ; TWISTEDSPOON
-	dw NoEffect            ; WHT_APRICORN
+	dw NoEffect            ; LIGHT_CLAY
 	dw NoEffect            ; BLACKBELT
 	dw NoEffect            ; LIFE_ORB
 	dw NoEffect            ; CHOICE_BAND
@@ -126,7 +126,7 @@ ItemEffects:
 	dw NoEffect            ; FOCUS_BAND
 	dw NoEffect            ; FLAME_ORB
 	dw NoEffect            ; TOXIC_ORB
-	dw HealPowderEffect    ; HEAL_POWDER
+	dw NoEffect            ; POWER_HERB
 	dw RevivalHerbEffect   ; REVIVAL_HERB
 	dw NoEffect            ; HARD_STONE
 	dw NoEffect            ; LUCKY_EGG

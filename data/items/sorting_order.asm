@@ -42,7 +42,6 @@ ItemNameOrder:
 	db MAX_REVIVE
 
 	; Bitter Medicine
-	db HEAL_POWDER
 	db REVIVAL_HERB
 
 	; Stat altering Items
@@ -122,7 +121,6 @@ ItemNameOrder:
 	db PINK_BOW
 	db POISON_BARB
 	db POLKADOT_BOW
-	db POWER_BAND
 	db QUICK_CLAW
 	db SCOPE_LENS
 	db SHARP_BEAK
@@ -137,6 +135,7 @@ ItemNameOrder:
 	db THICK_CLUB
 	db TOXIC_ORB
 	db TWISTEDSPOON
+	db WEATHER_ROCK
 	db WIDE_LENS
 
 	; Fossils

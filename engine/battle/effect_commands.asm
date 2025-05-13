@@ -3711,19 +3711,6 @@ CheckForStatusIfAlreadyHasAny:
 
 BattleCommand_SleepTarget:
 ; sleeptarget
-
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_SLEEP
-	jr nz, .not_protected_by_item
-
-	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
-	ld hl, ProtectedByText
-	jr .fail
-
-.not_protected_by_item
 	call CheckForStatusIfAlreadyHasAny
 	jr nz, .fail
 
@@ -4017,10 +4004,6 @@ BattleCommand_BurnTarget:
 	ret z
 	call CheckMoveTypeMatchesTarget ; Don't burn a Fire-type
 	ret z
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_BURN
-	ret z
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -4090,10 +4073,6 @@ BattleCommand_FreezeTarget:
 	ret z
 	call CheckMoveTypeMatchesTarget ; Don't freeze an Ice-type
 	ret z
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_FREEZE
-	ret z
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -4138,10 +4117,6 @@ BattleCommand_ParalyzeTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_PARALYZE
-	ret z
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -4172,10 +4147,6 @@ BattleCommand_SleepHit:
 	ret nz
 	ld a, [wTypeModifier]
 	and $7f
-	ret z
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_SLEEP
 	ret z
 	ld a, [wEffectFailed]
 	and a
@@ -4224,18 +4195,6 @@ BattleCommand_Burn:
 	jr z, .didnt_affect
 	call CheckMoveTypeMatchesTarget ; Don't burn a Fire-type
 	jr z, .didnt_affect
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_BURN
-	jr nz, .no_item_protection
-	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
-	call AnimateFailedMove
-	ld hl, ProtectedByText
-	jp StdBattleTextbox
-
-.no_item_protection
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .failed
@@ -6066,10 +6025,6 @@ INCLUDE "engine/battle/move_effects/focus_energy.asm"
 BattleCommand_ConfuseTarget:
 ; confusetarget
 
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_CONFUSE
-	ret z
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -6086,18 +6041,6 @@ BattleCommand_ConfuseTarget:
 BattleCommand_Confuse:
 ; confuse
 
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_CONFUSE
-	jr nz, .no_item_protection
-	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
-	call AnimateFailedMove
-	ld hl, ProtectedByText
-	jp StdBattleTextbox
-
-.no_item_protection
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_CONFUSED, [hl]
@@ -6174,18 +6117,6 @@ BattleCommand_Paralyze:
 	ld a, [wTypeModifier]
 	and $7f
 	jr z, .didnt_affect
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_PARALYZE
-	jr nz, .no_item_protection
-	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
-	call AnimateFailedMove
-	ld hl, ProtectedByText
-	jp StdBattleTextbox
-
-.no_item_protection
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .failed

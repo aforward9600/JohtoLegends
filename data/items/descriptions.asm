@@ -113,7 +113,7 @@ ItemDescriptions:
 	dw FocusBandDesc
 	dw FlameOrbDesc
 	dw ToxicOrbDesc
-	dw HealPowderDesc
+	dw WeatherRockDesc
 	dw RevivalHerbDesc
 	dw HardStoneDesc
 	dw LuckyEggDesc
@@ -703,9 +703,9 @@ ToxicOrbDesc:
 	db   "A bizarre orb that"
 	next "poisons. (Hold)@"
 
-HealPowderDesc:
-	db   "Cures all status"
-	next "problems. Bitter.@"
+WeatherRockDesc:
+	db   "Extends weather"
+	next "moves. (Hold)@"
 
 RevivalHerbDesc:
 	db   "Revives fainted"

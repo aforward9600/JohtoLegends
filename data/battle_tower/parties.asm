@@ -11,7 +11,7 @@ BattleTowerMons1:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 0, 0, 0, 252, 252, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 0, 0, 0 ; padding second one is ability
 	dn 13, 13, 11, 13 ; DVs
 	db 15, 5, 15, 20 ; PP
 	db 100 ; Happiness

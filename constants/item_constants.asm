@@ -119,7 +119,7 @@
 	const FOCUS_BAND   ; 77
 	const FLAME_ORB    ; 79
 	const TOXIC_ORB    ; 7a
-	const HEAL_POWDER  ; 7b unused
+	const WEATHER_ROCK ; 7b
 	const REVIVAL_HERB ; 7c unused
 	const HARD_STONE   ; 7d
 	const LUCKY_EGG    ; 7e
