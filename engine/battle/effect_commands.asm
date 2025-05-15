@@ -1557,6 +1557,9 @@ BattleCommand_CheckHit:
 	call .FlyDigMoves
 	jp nz, .Miss
 
+	call .AirBalloon
+	jp z, .Miss
+
 	call .ThunderRain
 	ret z
 
@@ -1693,6 +1696,28 @@ BattleCommand_CheckHit:
 	ld hl, .DigMoves
 	jr nz, .check_move_in_list
 	ld a, 1
+	and a
+	ret
+
+.AirBalloon:
+	call GetOpponentItem
+	ld a, b
+	cp HELD_AIR_BALLOON
+	ret nz
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp GROUND
+	ret nz
+	ld c, 40
+	call DelayFrames
+
+	ld hl, AirBalloonText
+	call StdBattleTextbox
+	ld c, 40
+	call DelayFrames
+
+	ld a, 0
 	and a
 	ret
 
@@ -2454,6 +2479,15 @@ BattleCommand_BuildOpponentRage:
 	and a
 	ret nz
 
+	call GetOpponentItem
+	ld a, [hl]
+	cp AIR_BALLOON
+	jr nz, .no_air_balloon
+	callfar ConsumeHeldItem
+	ld hl, AirBalloonPoppedText
+	jp StdBattleTextbox
+
+.no_air_balloon
 	ld a, BATTLE_VARS_SUBSTATUS4_OPP
 	call GetBattleVar
 	bit SUBSTATUS_RAGE, a

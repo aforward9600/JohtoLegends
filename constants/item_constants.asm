@@ -120,7 +120,7 @@
 	const FLAME_ORB    ; 79
 	const TOXIC_ORB    ; 7a
 	const WEATHER_ROCK ; 7b
-	const REVIVAL_HERB ; 7c unused
+	const AIR_BALLOON  ; 7c
 	const HARD_STONE   ; 7d
 	const LUCKY_EGG    ; 7e
 	const BATTLE_CARD  ; 7f

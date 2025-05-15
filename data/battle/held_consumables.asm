@@ -19,4 +19,5 @@ ConsumableEffects:
 	db HELD_FOCUS_SASH
 	db HELD_ESCAPE
 	db HELD_CRITICAL_UP
+	db HELD_AIR_BALLOON
 	db -1

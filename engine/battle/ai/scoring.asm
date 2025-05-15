@@ -175,12 +175,30 @@ AI_Types:
 	ld b, wEnemyMonMovesEnd - wEnemyMonMoves + 1
 .checkmove
 	dec b
-	jr z, .checkrain
+	jp z, .checkrain
 
 	inc hl
 	ld a, [de]
 	and a
-	jr z, .checkrain
+	jp z, .checkrain
+
+	push hl
+	push bc
+	push de
+	ld hl, wBattleMonItem
+	ld b, [hl]
+	farcall GetItemHeldEffect
+	ld a, b
+	cp HELD_AIR_BALLOON
+	jr nz, .skip_air_ballon
+	call AI_80_20
+	jr c, .skip_air_ballon
+	jp .CheckGroundMove
+
+.skip_air_ballon
+	pop hl
+	pop bc
+	pop de
 
 	inc de
 	call AIGetEnemyMove
@@ -247,13 +265,13 @@ AI_Types:
 	pop de
 	pop hl
 	and a
-	jr z, .checkmove
+	jp z, .checkmove
 	inc [hl]
-	jr .checkmove
+	jp .checkmove
 
 .immune
 	call AIDiscourageMove
-	jr .checkmove
+	jp .checkmove
 
 .checkrain
 	ld a, [wBattleWeather]
@@ -319,6 +337,68 @@ AI_Types:
 
 	dec [hl]
 	jr .checkmove4
+
+.CheckGroundMove
+	pop hl
+	pop bc
+	pop de
+	ld hl, wBuffer1 - 1
+	ld de, wEnemyMonMoves
+	ld b, wEnemyMonMovesEnd - wEnemyMonMoves + 1
+;.checkmove5
+	inc hl
+	dec c
+	ret z
+
+	ld a, [de]
+	inc de
+	and a
+	ret z
+
+	inc de
+	call AIGetEnemyMove
+
+	push hl
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
+	cp GROUND
+	pop hl
+	jp z, AIDiscourageMove
+	ret
+
+;	push hl
+;	push de
+;	push bc
+;	ld hl, GroundMoves
+;	ld de, 1
+;	call IsInArray
+
+;	pop bc
+;	pop de
+;	pop hl
+;	jr nc, .checkmove5
+
+;	dec [hl]
+;	jr .checkmove5
+
+;GroundMoves:
+;	dw DIG
+;	dw EARTHQUAKE
+;	dw MUD_SHOT
+;	dw MUD_SLAP
+;	dw MUD_BOMB
+;	dw FISSURE
+;	dw BONE_CLUB
+;	dw BONEMERANG
+;	dw BONE_RUSH
+;	dw MAGNITUDE
+;	dw BULLDOZE
+;	dw DRILL_RUN
+;	dw EARTH_POWER
+;	dw HIHORSEPOWER
+;	dw SAND_TOMB
+;	dw HEADLONGRUSH
+;	dw -1
 
 AI_Offensive:
 ; Greatly discourage non-damaging moves.

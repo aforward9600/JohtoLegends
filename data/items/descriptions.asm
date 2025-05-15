@@ -114,7 +114,7 @@ ItemDescriptions:
 	dw FlameOrbDesc
 	dw ToxicOrbDesc
 	dw WeatherRockDesc
-	dw RevivalHerbDesc
+	dw AirBalloonDesc
 	dw HardStoneDesc
 	dw LuckyEggDesc
 	dw BattleCardDesc
@@ -707,9 +707,9 @@ WeatherRockDesc:
 	db   "Extends weather"
 	next "moves. (Hold)@"
 
-RevivalHerbDesc:
-	db   "Revives fainted"
-	next "#mon. Bitter.@"
+AirBalloonDesc:
+	db   "Floats until"
+	next "popped. (Hold)@"
 
 HardStoneDesc:
 	db   "Powers up rock-"

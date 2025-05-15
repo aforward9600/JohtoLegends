@@ -113,7 +113,7 @@ ItemNames::
 	db "Flame Orb@"
 	db "Toxic Orb@"
 	db "Weather Rock@"
-	db "Revival Herb@"
+	db "Air Balloon@"
 	db "Hard Stone@"
 	db "Lucky Egg@"
 	db "Battle Card@"

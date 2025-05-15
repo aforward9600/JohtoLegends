@@ -41,9 +41,6 @@ ItemNameOrder:
 	db REVIVE
 	db MAX_REVIVE
 
-	; Bitter Medicine
-	db REVIVAL_HERB
-
 	; Stat altering Items
 	db DIRE_HIT
 	db GUARD_SPEC
@@ -88,6 +85,7 @@ ItemNameOrder:
 	db WATER_STONE
 
 	; Battle Held Items
+	db AIR_BALLOON
 	db AMULET_COIN
 	db BERSERK_GENE
 	db BLACKBELT

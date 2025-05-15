@@ -126,8 +126,8 @@ ItemEffects:
 	dw NoEffect            ; FOCUS_BAND
 	dw NoEffect            ; FLAME_ORB
 	dw NoEffect            ; TOXIC_ORB
-	dw NoEffect            ; POWER_HERB
-	dw RevivalHerbEffect   ; REVIVAL_HERB
+	dw NoEffect            ; WEATHER_ROCK
+	dw NoEffect            ; AIR_BALLOON
 	dw NoEffect            ; HARD_STONE
 	dw NoEffect            ; LUCKY_EGG
 	dw BattleCardEffect    ; BATTLE_CARD

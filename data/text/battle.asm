@@ -1216,3 +1216,14 @@ FlameOrbText:
 	line "burned by its"
 	cont "Flame Orb!"
 	prompt
+
+AirBalloonText:
+	text "<TARGET>'s Air"
+	line "Balloon lets it"
+	cont "float!"
+	prompt
+
+AirBalloonPoppedText:
+	text "<TARGET>'s Air"
+	line "Balloon popped!"
+	prompt
