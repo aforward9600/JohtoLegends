@@ -347,6 +347,9 @@ BoxAddressTable1:
 	dba sBox12
 	dba sBox13
 	dba sBox14
+	dba sBox15
+	dba sBox16
+	dba sBox17
 
 BoxPokemonIndexesAddressTable:
 	dba sBox1PokemonIndexes
@@ -363,6 +366,9 @@ BoxPokemonIndexesAddressTable:
 	dba sBox12PokemonIndexes
 	dba sBox13PokemonIndexes
 	dba sBox14PokemonIndexes
+	dba sBox15PokemonIndexes
+	dba sBox16PokemonIndexes
+	dba sBox17PokemonIndexes
 
 UpdateOTPointer:
 	push hl

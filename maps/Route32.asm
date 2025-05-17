@@ -16,9 +16,6 @@
 
 Route32_MapScripts:
 	db 0 ; scene scripts
-;	scene_script .DummyScene0 ; SCENE_DEFAULT
-;	scene_script .DummyScene1 ; SCENE_ROUTE32_OFFER_SLOWPOKETAIL
-;	scene_script .DummyScene2 ; SCENE_ROUTE32_NOTHING
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, .Frieda

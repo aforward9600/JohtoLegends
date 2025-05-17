@@ -283,6 +283,16 @@ sBox12PokemonIndexes:: ds 2 * MONS_PER_BOX
 sBox13PokemonIndexes:: ds 2 * MONS_PER_BOX
 sBox14PokemonIndexes:: ds 2 * MONS_PER_BOX
 
+SECTION "Boxes 15-17", SRAM
+
+sBox15:: box sBox15
+sBox16:: box sBox16
+sBox17:: box sBox17
+
+sBox15PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox16PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox17PokemonIndexes:: ds 2 * MONS_PER_BOX
+
 SECTION "SRAM Mobile 1", SRAM
 
 	ds $13

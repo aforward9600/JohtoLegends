@@ -7,13 +7,9 @@
 	const ELMSLAB_OAK
 
 ElmsLab_MapScripts:
-	db 6 ; scene scripts
+	db 2 ; scene scripts
 	scene_script .MeetElm ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_ELMSLAB_CANT_LEAVE
-	scene_script .DummyScene2 ; SCENE_ELMSLAB_NOTHING
-	scene_script .DummyScene3 ; SCENE_ELMSLAB_MEET_OFFICER
-	scene_script .DummyScene4 ; SCENE_ELMSLAB_UNUSED
-	scene_script .DummyScene5 ; SCENE_ELMSLAB_AIDE_GIVES_POTION
+	scene_script .DummyScene1 ; SCENE_FINISHED
 
 	db 0 ; callbacks
 
@@ -21,18 +17,6 @@ ElmsLab_MapScripts:
 	end
 
 .DummyScene1:
-	end
-
-.DummyScene2:
-	end
-
-.DummyScene3:
-	end
-
-.DummyScene4:
-	end
-
-.DummyScene5:
 	end
 
 ProfElmScript:
@@ -104,7 +88,7 @@ ElmsLabOakScript:
 	closetext
 	applymovement ELMSLAB_OAK, OfficerLeavesMovement
 	disappear ELMSLAB_OAK
-	setscene SCENE_ELMSLAB_NOTHING
+	setscene SCENE_FINISHED
 	special RestartMapMusic
 	pause 15
 	end

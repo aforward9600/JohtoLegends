@@ -2229,6 +2229,9 @@ GetBoxPointer:
 	dba sBox12
 	dba sBox13
 	dba sBox14
+	dba sBox15
+	dba sBox16
+	dba sBox17
 
 BillsPC_ApplyPalettes:
 	ld b, a
@@ -2451,6 +2454,9 @@ GetBoxCount:
 	dba sBox12
 	dba sBox13
 	dba sBox14
+	dba sBox15
+	dba sBox16
+	dba sBox17
 
 BillsPC_PrintBoxName:
 	hlcoord 0, 0

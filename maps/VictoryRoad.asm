@@ -10,12 +10,6 @@ VictoryRoad_MapScripts:
 
 	db 0 ; callbacks
 
-.DummyScene0:
-	end
-
-.DummyScene1:
-	end
-
 VictoryRoadTMEarthquake:
 	itemball TM_EARTHQUAKE
 

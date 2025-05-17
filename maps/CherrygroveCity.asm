@@ -11,15 +11,6 @@ CherrygroveCity_MapScripts:
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
-.DummyScene0:
-	end
-
-.DummyScene1:
-	end
-
-.DummyScene2:
-	end
-
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_CHERRYGROVE
 	return

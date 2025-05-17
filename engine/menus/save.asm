@@ -1336,6 +1336,9 @@ BoxAddresses:
 	dbww BANK(sBox12), sBox12, sBox12End
 	dbww BANK(sBox13), sBox13, sBox13End
 	dbww BANK(sBox14), sBox14, sBox14End
+	dbww BANK(sBox15), sBox15, sBox15End
+	dbww BANK(sBox16), sBox16, sBox16End
+	dbww BANK(sBox17), sBox17, sBox17End
 
 	; index addresses
 	dba sBox1PokemonIndexes
@@ -1352,6 +1355,9 @@ BoxAddresses:
 	dba sBox12PokemonIndexes
 	dba sBox13PokemonIndexes
 	dba sBox14PokemonIndexes
+	dba sBox15PokemonIndexes
+	dba sBox16PokemonIndexes
+	dba sBox17PokemonIndexes
 
 Checksum:
 	ld de, 0

@@ -52,61 +52,6 @@ MrPokemonsHouse_MrPokemonScript:
 	closetext
 	end
 
-MrPokemonsHouse_OakScript:
-	playmusic MUSIC_PROF_OAK
-	applymovement MRPOKEMONSHOUSE_OAK, MrPokemonsHouse_OakWalksToPlayer
-	turnobject PLAYER, RIGHT
-	opentext
-	writetext MrPokemonsHouse_OakText1
-	buttonsound
-	waitsfx
-	writetext MrPokemonsHouse_GetDexText
-	playsound SFX_ITEM
-	waitsfx
-	setflag ENGINE_POKEDEX
-	writetext MrPokemonsHouse_OakText2
-	waitbutton
-	closetext
-	turnobject PLAYER, DOWN
-	applymovement MRPOKEMONSHOUSE_OAK, MrPokemonsHouse_OakExits
-	playsound SFX_EXIT_BUILDING
-	disappear MRPOKEMONSHOUSE_OAK
-	waitsfx
-	special RestartMapMusic
-	pause 15
-	turnobject PLAYER, UP
-	opentext
-	writetext MrPokemonsHouse_MrPokemonHealText
-	waitbutton
-	closetext
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playmusic MUSIC_HEAL
-	special StubbedTrainerRankings_Healings
-	special HealParty
-	pause 60
-	special FadeInQuickly
-	special RestartMapMusic
-	opentext
-	writetext MrPokemonText_ImDependingOnYou
-	waitbutton
-	closetext
-	setevent EVENT_RIVAL_NEW_BARK_TOWN
-	setevent EVENT_RIVAL_NEW_BARK_TOWN_2
-	setevent EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
-	clearevent EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR
-	setscene SCENE_FINISHED
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female2
-.next2
-	setmapscene ELMS_LAB, SCENE_ELMSLAB_MEET_OFFICER
-	specialphonecall SPECIALCALL_ROBBED
-	clearevent EVENT_COP_IN_ELMS_LAB
-	end
-
-.Female2:
-	sjump .next2
-
 MrPokemonsHouse_ForeignMagazines:
 	jumptext MrPokemonsHouse_ForeignMagazinesText
 

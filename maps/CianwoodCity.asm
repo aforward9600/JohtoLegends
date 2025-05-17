@@ -14,18 +14,10 @@
 	const CIANWOODCITY_SCHOOLBOY2
 
 CianwoodCity_MapScripts:
-	db 2 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_CIANWOODCITY_NOTHING
-	scene_script .DummyScene1 ; SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
+	db 0 ; scene scripts
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPointAndSuicune
-
-.DummyScene0:
-	end
-
-.DummyScene1:
-	end
 
 .FlyPointAndSuicune:
 	setflag ENGINE_FLYPOINT_CIANWOOD

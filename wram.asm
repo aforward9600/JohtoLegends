@@ -2621,14 +2621,10 @@ wPokecenter2FSceneID::                            db ; d972
 wTradeCenterSceneID::                             db ; d973
 wColosseumSceneID::                               db ; d974
 wTimeCapsuleSceneID::                             db ; d975
-wPowerPlantSceneID::                              db ; d976
-wCeruleanGymSceneID::                             db ; d977
-wRoute25SceneID::                                 db ; d978
 wVictoryRoadGateSceneID::                         db ; d97a
 wSaffronMagnetTrainStationSceneID::               db ; d97b
 wRoute16GateSceneID::                             db ; d97c
 wRoute17Route18GateSceneID::                      db ; d97d
-wIndigoPlateauPokecenter1FSceneID::               db ; d97e
 wWillsRoomSceneID::                               db ; d97f
 wKogasRoomSceneID::                               db ; d980
 wBrunosRoomSceneID::                              db ; d981
@@ -2639,10 +2635,7 @@ wRoute27SceneID::                                 db ; d985
 wNewBarkTownSceneID::                             db ; d986
 wElmsLabSceneID::                                 db ; d987
 wPlayersHouse1FSceneID::                          db ; d988
-wRoute29SceneID::                                 db ; d989
 wCherrygroveCitySceneID::                         db ; d98a
-wMrPokemonsHouseSceneID::                         db ; d98b
-wRoute32SceneID::                                 db ; d98c
 wRoute35NationalParkGateSceneID::                 db ; d98d
 wRoute36SceneID::                                 db ; d98e
 wRoute36NationalParkGateSceneID::                 db ; d98f
@@ -2650,16 +2643,11 @@ wAzaleaTownSceneID::                              db ; d990
 wGoldenrodGymSceneID::                            db ; d991
 wGoldenrodMagnetTrainStationSceneID::             db ; d992
 wGoldenrodPokecenter1FSceneID::                   db ; d993
-wOlivineCitySceneID::                             db ; d994
 wRoute34SceneID::                                 db ; d995
 wRoute34IlexForestGateSceneID::                   db ; d996
 wEcruteakTinTowerEntranceSceneID::                db ; d997
 wWiseTriosRoomSceneID::                           db ; d998
-wEcruteakPokecenter1FSceneID::                    db ; d999
 wEcruteakGymSceneID::                             db ; d99a
-wMahoganyTownSceneID::                            db ; d99b
-wRoute42SceneID::                                 db ; d99c
-wCianwoodCitySceneID::                            db ; d99d
 wBattleTower1FSceneID::                           db ; d99e
 wBattleTowerBattleRoomSceneID::                   db ; d99f
 wBattleTowerElevatorSceneID::                     db ; d9a0
@@ -2683,16 +2671,12 @@ wMahoganyMart1FSceneID::                          db ; d9b1
 wTeamRocketBaseB1FSceneID::                       db ; d9b2
 wTeamRocketBaseB2FSceneID::                       db ; d9b3
 wTeamRocketBaseB3FSceneID::                       db ; d9b4
-wGoldenrodUndergroundSwitchRoomEntrancesSceneID:: db ; d9b5
 wSilverCaveRoom3SceneID::                         db ; d9b6
-wVictoryRoadSceneID::                             db ; d9b7
 wDragonsDenB1FSceneID::                           db ; d9b8
 wDragonShrineSceneID::                            db ; d9b9
 wOlivinePortSceneID::                             db ; d9ba
 wVermilionPortSceneID::                           db ; d9bb
 wMountMoonSquareSceneID::                         db ; d9be
-wMobileTradeRoomSceneID::                         db ; d9bf
-wMobileBattleRoomSceneID::                        db ; d9c0
 wMastersHouse1FSceneID::                          db
 wMastersHouse2FSceneID::                          db
 wBlackthornCitySceneID::                          db
@@ -2708,7 +2692,6 @@ wOlivineLighthouse1FSceneID::                     db
 wCianwoodGymSceneID::                             db
 wWildAreaOutsideSceneID::                         db
 wNationalParkSceneID::                            db
-wNationalParkBugContestID::                       db
 wEcruteakCitySceneID::                            db
 wGoldenrodCitySceneID::                           db
 wRadioTower1FSceneID::                            db
@@ -2730,36 +2713,14 @@ wDracoSceneID::                                   db
 wDahliaSceneID::                                  db
 wHoOhTowerSceneID::                               db
 
-	ds 16
+	ds 33
 
 ; fight counts
-wJackFightCount::    db ; d9f2
-wHueyFightCount::    db
-wGavenFightCount::   db
-wBethFightCount::    db
-wJoseFightCount::    db
-wReenaFightCount::   db
-wJoeyFightCount::    db
-wWadeFightCount::    db
-wRalphFightCount::   db
-wLizFightCount::     db
-wAnthonyFightCount:: db
-wToddFightCount::    db
 wLevelCap::          db
-wArnieFightCount::   db
-wAlanFightCount::    db
-wDanaFightCount::    db
-wChadFightCount::    db
-wTullyFightCount::   db
-wBrentFightCount::   db
-wTiffanyFightCount:: db
-wVanceFightCount::   db
-wWiltonFightCount::  db
-wParryFightCount::   db
 wBattleAnimBank::    db
 ; da0e
 
-	ds 70
+	ds 55
 
 wEventFlags:: flag_array NUM_EVENTS ; da72
 ; db6c

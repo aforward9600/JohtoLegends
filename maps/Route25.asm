@@ -7,17 +7,9 @@
 	const ROUTE25_POKE_BALL
 
 Route25_MapScripts:
-	db 2 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_ROUTE25_NOTHING
-	scene_script .DummyScene1 ; SCENE_ROUTE25_MISTYS_DATE
+	db 0 ; scene scripts
 
 	db 0 ; callbacks
-
-.DummyScene0:
-	end
-
-.DummyScene1:
-	end
 
 TrainerBikerChance:
 	trainer BIKER, CHANCE, EVENT_BEAT_BIKER_CHANCE, BikerChanceSeenText, BikerChanceBeatenText, 0, .Script
