@@ -235,7 +235,7 @@ CheckForLuckyNumberWinners:
 	dba sBox14
 	dba sBox15
 	dba sBox16
-	dba sBox17
+;	dba sBox17
 
 .BoxSpeciesBankAddresses:
 	dba sBox1PokemonIndexes
@@ -254,7 +254,7 @@ CheckForLuckyNumberWinners:
 	dba sBox14PokemonIndexes
 	dba sBox15PokemonIndexes
 	dba sBox16PokemonIndexes
-	dba sBox17PokemonIndexes
+;	dba sBox17PokemonIndexes
 
 .FoundPartymonText:
 	; Congratulations! We have a match with the ID number of @  in your party.
