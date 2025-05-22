@@ -501,11 +501,7 @@ ContText::
 	ld de, .cont
 	ld b, h
 	ld c, l
-	call PlaceString
-	ld h, b
-	ld l, c
-	pop de
-	jp NextChar
+	jp PlaceCommandCharacter
 
 .cont: db "<_CONT>@"
 

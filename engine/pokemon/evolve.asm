@@ -236,9 +236,7 @@ EvolveAfterBattle_MasterLoop:
 	call GetFarHalfword
 	call GetPokemonIDFromIndex
 	ld [wEvolutionNewSpecies], a
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMonNicknames
-	call GetNick
+	call GetCurNick
 	call CopyName1
 	ld hl, Text_WhatEvolving
 	call PrintText

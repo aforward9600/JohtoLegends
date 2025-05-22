@@ -348,9 +348,7 @@ HandleFutureSight:
 	ld a, EFFECTIVE
 	ld [wTypeModifier], a
 	callfar DoMove
-	xor a
-	ld [wCurDamage], a
-	ld [wCurDamage + 1], a
+	call ResetDamage
 
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVarAddr
@@ -1557,50 +1555,18 @@ SubtractHP:
 	ret
 
 GetSixteenthMaxHP:
-	call GetQuarterMaxHP
-	; quarter result
-	srl c
-	srl c
-	; round up
-	ld a, c
-	and a
-	jr nz, .ok
-	inc c
-.ok
-	ret
+	call GetEighthMaxHP
+	jr HalveBC
 
 GetEighthMaxHP:
 ; output: bc
 	call GetQuarterMaxHP
-; assumes nothing can have 1024 or more hp
-; halve result
-	srl c
-; round up
-	ld a, c
-	and a
-	jr nz, .end
-	inc c
-.end
-	ret
+	jr HalveBC
 
 GetQuarterMaxHP:
 ; output: bc
-	call GetMaxHP
-
-; quarter result
-	srl b
-	rr c
-	srl b
-	rr c
-
-; assumes nothing can have 1024 or more hp
-; round up
-	ld a, c
-	and a
-	jr nz, .end
-	inc c
-.end
-	ret
+	call GetHalfMaxHP
+	jr HalveBC
 
 GetThirdMaxHP:
 ; Assumes HP<768
@@ -1625,11 +1591,11 @@ GetHalfMaxHP:
 ; output: bc
 	call GetMaxHP
 
-; halve result
+HalveBC:
 	srl b
 	rr c
 
-; floor = 1
+FloorBC:
 	ld a, c
 	or b
 	jr nz, .end
@@ -1668,6 +1634,20 @@ CheckUserHasEnoughHP:
 	and a
 	jr z, .ok
 	ld hl, wEnemyMonHP + 1
+.ok
+	ld a, c
+	sub [hl]
+	dec hl
+	ld a, b
+	sbc [hl]
+	ret
+
+CheckOpponentHasEnoughHP:
+	ld hl, wEnemyMonHP + 1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wBattleMonHP + 1
 .ok
 	ld a, c
 	sub [hl]
@@ -4071,84 +4051,16 @@ HandleHPHealingItem:
 	pop bc
 	ld c, a
 .proceed
-	ld de, wEnemyMonHP + 1
-	ld hl, wEnemyMonMaxHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .go
-	ld de, wBattleMonHP + 1
-	ld hl, wBattleMonMaxHP
-
-.go
-; If, and only if, Pokemon's HP is less than half max, use the item.
-; Store current HP in Buffer 3/4
 	push bc
-	ld a, [de]
-	ld [wBuffer3], a
-	add a
-	ld c, a
-	dec de
-	ld a, [de]
-	inc de
-	ld [wBuffer4], a
-	adc a
-	ld b, a
-	ld a, b
-	cp [hl]
-	ld a, c
+	call SwitchTurnCore
+	call GetHalfMaxHP
+	call SwitchTurnCore
+	call CheckOpponentHasEnoughHP
 	pop bc
-	jr z, .equal
-	jr c, .less
-	ret
-
-.equal
-	inc hl
-	cp [hl]
-	dec hl
-	ret nc
-
-.less
+	ret c
 	call ItemRecoveryAnim
-	; store max HP in wBuffer1/2
-	ld a, [hli]
-	ld [wBuffer2], a
-	ld a, [hl]
-	ld [wBuffer1], a
-	ld a, [de]
-	add c
-	ld [wBuffer5], a
-	ld c, a
-	dec de
-	ld a, [de]
-	adc 0
-	ld [wBuffer6], a
-	ld b, a
-	ld a, [hld]
-	cp c
-	ld a, [hl]
-	sbc b
-	jr nc, .okay
-	ld a, [hli]
-	ld [wBuffer6], a
-	ld a, [hl]
-	ld [wBuffer5], a
-
-.okay
-	ld a, [wBuffer6]
-	ld [de], a
-	inc de
-	ld a, [wBuffer5]
-	ld [de], a
-	ldh a, [hBattleTurn]
-	ld [wWhichHPBar], a
-	and a
-	hlcoord 2, 2
-	jr z, .got_hp_bar_coords
-	hlcoord 10, 9
-
-.got_hp_bar_coords
-	ld [wWhichHPBar], a
-	predef AnimateHPBar
+	ld b, 0
+	call RestoreHP
 UseOpponentItem:
 	call RefreshBattleHuds
 	callfar GetOpponentItem
@@ -4196,13 +4108,12 @@ UsePinchBerry:
 	jp PinchBerryStatUp
 
 PinchBerryAnimation:
-	ld de, ANIM_BERRY_RECOVER
-	farcall FarPlayBattleAnimation
 	callfar GetUserItem
 	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
 	call GetItemName
 	callfar BattleCommand_SwitchTurn
+	call ItemRecoveryAnim
 	callfar ConsumeHeldItem
 	callfar BattleCommand_SwitchTurn
 	ld hl, PinchBerryText
@@ -7118,9 +7029,7 @@ endc
 	ld [wStringBuffer2 + 1], a
 	ldh a, [hQuotient + 2]
 	ld [wStringBuffer2], a
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMonNicknames
-	call GetNick
+	call GetCurNick
 	ld a, [wExpShare]
 	and a
 	jr nz, .ExpShareON

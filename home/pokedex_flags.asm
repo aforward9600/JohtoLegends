@@ -31,7 +31,7 @@ FlagActionBaseOne:
 	dec de
 	jp FlagAction
 
-GetPokemonFlagIndex:
+GetPokemonFlagIndex::
 	call GetPokemonIndexFromID
 	ld d, h
 	ld e, l

@@ -1,8 +1,6 @@
 LearnMove:
 	call LoadTileMapToTempTileMap
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMonNicknames
-	call GetNick
+	call GetCurNick
 	ld hl, wStringBuffer1
 	ld de, wMonOrItemNameBuffer
 	ld bc, MON_NAME_LENGTH

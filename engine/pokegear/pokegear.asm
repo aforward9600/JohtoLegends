@@ -3920,10 +3920,7 @@ Pokedex_GetArea:
 	ret
 
 .clear
-	ld hl, wVirtualOAM
-	ld bc, wVirtualOAMEnd - wVirtualOAM
-	xor a
-	call ByteFill
+	call ClearSprites
 	scf
 	ret
 

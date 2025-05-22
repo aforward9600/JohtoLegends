@@ -689,19 +689,13 @@ BattleAnimCmd_IncObj:
 	ld d, [hl]
 	ld a, [wBattleAnimByte]
 	cp d
-	jr z, .found
+	jp z, BattleAnim_IncAnonJumptableIndex
 	ld hl, BATTLEANIMSTRUCT_LENGTH
 	add hl, bc
 	ld c, l
 	ld b, h
 	dec e
 	jr nz, .loop
-	ret
-
-.found
-	ld hl, BATTLEANIMSTRUCT_ANON_JT_INDEX
-	add hl, bc
-	inc [hl]
 	ret
 
 BattleAnimCmd_IncBGEffect:
