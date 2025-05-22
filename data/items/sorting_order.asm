@@ -142,8 +142,6 @@ ItemNameOrder:
 	db OLD_AMBER
 
 	; Other Items
-	db SILVER_LEAF
-	db GOLD_LEAF
 	db TINYMUSHROOM
 	db BIG_MUSHROOM
 	db STARDUST
@@ -154,7 +152,6 @@ ItemNameOrder:
 
 	; Mail
 	db EON_MAIL
-	db FLOWER_MAIL
 
 	; Pokeballs
 	db POKE_BALL
@@ -188,14 +185,17 @@ ItemNameOrder:
 	db HONDEW_BERRY
 	db GREPA_BERRY
 	db TAMATO_BERRY
+	db LIECHI_BERRY
+	db GANLON_BERRY
+	db SALAC_BERRY
+	db PETAYA_BERRY
+	db APICOT_BERRY
 
 	; Pokemon Calls
 	db PIDGEOT_CALL
 	db SNUBBULLCALL
 	db SCYTHER_CALL
 	db LAPRAS_CALLA
-	db LAPRAS_CALLB
-	db LAPRAS_CALLC
 	db GOLEM_CALL
 	db MACHAMP_CALL
 	db VOLTORB_CALL

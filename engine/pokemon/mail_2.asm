@@ -111,7 +111,6 @@ ReadAnyMail:
 	ret
 
 MailGFXPointers:
-	dbw FLOWER_MAIL,  LoadFlowerMailGFX
 	dbw EON_MAIL,     LoadEonMailGFX
 	db -1
 

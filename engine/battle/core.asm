@@ -294,7 +294,6 @@ HandleBetweenTurnEffects:
 
 .NoMoreFaintingConditions:
 	farcall Core2_NewTurnEndEffects
-	call HandleStatBoostingHeldItems
 	call HandleHealingItems
 	call UpdateBattleMonInParty
 	call LoadTileMapToTempTileMap
@@ -1661,25 +1660,6 @@ GetMaxHP:
 	ld a, [hl]
 	ld [wBuffer1], a
 	ld c, a
-	ret
-
-Unreferenced_GetHalfHP:
-	ld hl, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wEnemyMonHP
-.ok
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	ld c, a
-	srl b
-	rr c
-	ld a, [hli]
-	ld [wBuffer2], a
-	ld a, [hl]
-	ld [wBuffer1], a
 	ret
 
 CheckUserHasEnoughHP:
@@ -4045,20 +4025,24 @@ HandleHealingItems:
 	call HandleHPHealingItem
 	call UseHeldStatusHealingItem
 	call UseConfusionHealingItem
+	call UsePinchBerry
 	call SetEnemyTurn
 	call HandleHPHealingItem
 	call UseHeldStatusHealingItem
-	jp UseConfusionHealingItem
+	call UseConfusionHealingItem
+	jp UsePinchBerry
 
 .player_1
 	call SetEnemyTurn
 	call HandleHPHealingItem
 	call UseHeldStatusHealingItem
 	call UseConfusionHealingItem
+	call UsePinchBerry
 	call SetPlayerTurn
 	call HandleHPHealingItem
 	call UseHeldStatusHealingItem
-	jp UseConfusionHealingItem
+	call UseConfusionHealingItem
+	jp UsePinchBerry
 
 HandleHPHealingItem:
 	callfar GetOpponentItem
@@ -4174,6 +4158,62 @@ UseOpponentItem:
 	callfar ConsumeHeldItem
 	ld hl, RecoveredUsingText
 	jp StdBattleTextbox
+
+UsePinchBerry:
+	call GetQuarterMaxHP
+	call CheckUserHasEnoughHP
+	ret c
+	callfar GetUserItem
+	ld a, b
+	cp HELD_ATTACK_UP
+	jr z, .LiechiBerry
+	cp HELD_DEFENSE_UP
+	jr z, .GanlonBerry
+	cp HELD_SPEED_UP
+	jr z, .SalacBerry
+	cp HELD_SP_ATTACK_UP
+	jr z, .PetayaBerry
+	cp HELD_SP_DEFENSE_UP
+	ret nz
+	call PinchBerryAnimation
+	farcall BattleCommand_SpecialDefenseUp
+	jp PinchBerryStatUp
+.SalacBerry
+	call PinchBerryAnimation
+	farcall BattleCommand_SpeedUp
+	jp PinchBerryStatUp
+.LiechiBerry
+	call PinchBerryAnimation
+	farcall BattleCommand_AttackUp
+	jp PinchBerryStatUp
+.GanlonBerry
+	call PinchBerryAnimation
+	farcall BattleCommand_DefenseUp
+	jp PinchBerryStatUp
+.PetayaBerry
+	call PinchBerryAnimation
+	farcall BattleCommand_SpecialAttackUp
+	jp PinchBerryStatUp
+
+PinchBerryAnimation:
+	ld de, ANIM_BERRY_RECOVER
+	farcall FarPlayBattleAnimation
+	callfar GetUserItem
+	ld a, [hl]
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	callfar BattleCommand_SwitchTurn
+	callfar ConsumeHeldItem
+	callfar BattleCommand_SwitchTurn
+	ld hl, PinchBerryText
+	jp StdBattleTextbox
+
+PinchBerryStatUp:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	farcall BattleCommand_StatUpMessage
+	ret
 
 ItemRecoveryAnim:
 	push hl
@@ -4291,78 +4331,6 @@ UseConfusionHealingItem:
 	xor a
 	ld [bc], a
 	ld [hl], a
-	ret
-
-HandleStatBoostingHeldItems:
-; The effects handled here are not used in-game.
-	ldh a, [hSerialConnectionStatus]
-	cp USING_EXTERNAL_CLOCK
-	jr z, .player_1
-	call .DoPlayer
-	jp .DoEnemy
-
-.player_1
-	call .DoEnemy
-	jp .DoPlayer
-
-.DoPlayer:
-	call GetPartymonItem
-	ld a, $0
-	jp .HandleItem
-
-.DoEnemy:
-	call GetOTPartymonItem
-	ld a, $1
-.HandleItem:
-	ldh [hBattleTurn], a
-	ld d, h
-	ld e, l
-	push de
-	push bc
-	ld a, [bc]
-	ld b, a
-	push hl
-	call IsUserItemUsable
-	pop hl
-	jr nz, .finish
-	callfar GetItemHeldEffect
-	ld hl, HeldStatUpItems
-.loop
-	ld a, [hli]
-	cp -1
-	jr z, .finish
-	inc hl
-	inc hl
-	cp b
-	jr nz, .loop
-	pop bc
-	ld a, [bc]
-	ld [wNamedObjectIndexBuffer], a
-	push bc
-	dec hl
-	dec hl
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, BANK(BattleCommand_AttackUp)
-	rst FarCall
-	pop bc
-	pop de
-	ld a, [wFailedMessage]
-	and a
-	ret nz
-	xor a
-	ld [bc], a
-	ld [de], a
-	call GetItemName
-	ld hl, BattleText_UsersStringBuffer1Activated
-	call StdBattleTextbox
-	callfar BattleCommand_StatUpMessage
-	ret
-
-.finish
-	pop bc
-	pop de
 	ret
 
 INCLUDE "data/battle/held_stat_up.asm"
@@ -6566,17 +6534,6 @@ CheckUnownLetter:
 
 INCLUDE "data/wild/unlocked_unowns.asm"
 
-Unreferenced_SwapBattlerLevels:
-	push bc
-	ld a, [wBattleMonLevel]
-	ld b, a
-	ld a, [wEnemyMonLevel]
-	ld [wBattleMonLevel], a
-	ld a, b
-	ld [wEnemyMonLevel], a
-	pop bc
-	ret
-
 BattleWinSlideInEnemyTrainerFrontpic:
 	xor a
 	ld [wTempEnemyMonSpecies], a
@@ -6840,20 +6797,6 @@ _LoadBattleFontsHPBar:
 _LoadHPBar:
 	callfar LoadHPBar
 	ret
-
-Unreferenced_LoadHPExpBarGFX:
-	ld de, EnemyHPBarBorderGFX
-	ld hl, vTiles2 tile $6c
-	lb bc, BANK(EnemyHPBarBorderGFX), 4
-	call Get1bpp
-	ld de, HPExpBarBorderGFX
-	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 6
-	call Get1bpp
-	ld de, ExpBarGFX
-	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 8
-	jp Get2bpp
 
 EmptyBattleTextbox:
 	ld hl, .empty
@@ -7934,45 +7877,9 @@ TextJump_GoodComeBack:
 	text_far Text_GoodComeBack
 	text_end
 
-Unreferenced_TextJump_ComeBack:
-; this function doesn't seem to be used
-	ld hl, TextJump_ComeBack
-	ret
-
 TextJump_ComeBack:
 	text_far Text_ComeBack
 	text_end
-
-Unreferenced_HandleSafariAngerEatingStatus:
-	ld hl, wSafariMonEating
-	ld a, [hl]
-	and a
-	jr z, .angry
-	dec [hl]
-	ld hl, BattleText_WildMonIsEating
-	jr .finish
-
-.angry
-	dec hl ; wSafariMonAngerCount
-	ld a, [hl]
-	and a
-	ret z
-	dec [hl]
-	ld hl, BattleText_WildMonIsAngry
-	jr nz, .finish
-	push hl
-	ld a, [wEnemyMonSpecies]
-	ld [wCurSpecies], a
-	call GetBaseData
-	ld a, [wBaseCatchRate]
-	ld [wEnemyMonCatchRate], a
-	pop hl
-
-.finish
-	push hl
-	call Call_LoadTempTileMapToTileMap
-	pop hl
-	jp StdBattleTextbox
 
 FillInExpBar:
 	push hl
@@ -8200,10 +8107,6 @@ StartBattle:
 	scf
 	ret
 
-Unreferenced_DoBattle:
-	call DoBattle
-	ret
-
 BattleIntro:
 	farcall StubbedTrainerRankings_Battles ; mobile
 	call LoadTrainerOrWildMonPic
@@ -8384,54 +8287,6 @@ InitEnemyWildmon:
 	hlcoord 12, 0
 	lb bc, 7, 7
 	predef PlaceGraphic
-	ret
-
-Unreferenced_Function3f662:
-	ld hl, wEnemyMonMoves
-	ld de, wListMoves_MoveIndicesBuffer
-	ld b, NUM_MOVES
-.loop
-	ld a, [de]
-	inc de
-	ld [hli], a
-	and a
-	jr z, .clearpp
-
-	push bc
-	push hl
-
-	push hl
-	ld l, a
-	ld a, MOVE_PP
-	call GetMoveAttribute
-	pop hl
-
-	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
-	add hl, bc
-	ld [hl], a
-
-	pop hl
-	pop bc
-
-	dec b
-	jr nz, .loop
-	ret
-
-.clear
-	xor a
-	ld [hli], a
-
-.clearpp
-	push bc
-	push hl
-	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
-	add hl, bc
-	xor a
-	ld [hl], a
-	pop hl
-	pop bc
-	dec b
-	jr nz, .clear
 	ret
 
 ExitBattle:

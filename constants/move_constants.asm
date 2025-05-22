@@ -424,7 +424,7 @@ NUM_ATTACKS EQU const_value + -1
 ; Battle animations use the same constants as the moves
 	const ANIM_SWEET_SCENT_2     ; fc
 ; Animations with negative IDs will play even when animations are disabled
-const_value = -$17 ;fix if more negative values are added
+const_value = -$1b ;fix if more negative values are added
 	const ANIM_THROW_POKE_BALL   ; -17 (ffea)
 	const ANIM_SEND_OUT_MON      ; -16 (ffeb)
 	const ANIM_RETURN_MON        ; -15 (ffec)
@@ -440,6 +440,10 @@ const_value = -$17 ;fix if more negative values are added
 	const ANIM_IN_NIGHTMARE      ;  -b (fff6)
 	const ANIM_IN_WHIRLPOOL      ;  -a (fff7)
 	const ANIM_IN_HAIL           ;	-9
+	const ANIM_IN_RAIN
+	const ANIM_IN_SUN
+	const ANIM_BERRY_RECOVER
+	const ANIM_PERISH_BODY
 ; battle anims
 	const ANIM_MISS              ;  -8 (fff8)
 	const ANIM_ENEMY_DAMAGE      ;  -7 (fff9)

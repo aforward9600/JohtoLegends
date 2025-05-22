@@ -728,8 +728,8 @@ DragonairEvosAttacks:
 
 DragoniteEvosAttacks:
 	db 0 ; no more evolutions
-	dbw LEARN_EVO_MOVE, HURRICANE
-	dbw 1, HURRICANE
+	dbw LEARN_EVO_MOVE, AIR_SLASH
+	dbw 1, AIR_SLASH
 	dbw 1, WRAP
 	dbw 1, LEER
 	dbw 5, THUNDER_WAVE

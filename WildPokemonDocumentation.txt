@@ -184,8 +184,8 @@ Route 38
 
 Levels 14-17
 
-Morning/Day: Magnemite 30%, Drowzee 20%, Miltank 15%, Tauros 15%, Butterfree 15%, Scyther 5%
-Night: Magnemite 30%, Drowzee 20%, Murkrow 15%, Meowth 15%, Beedrill 15%, Scyther 5%
+Morning/Day: Magnemite 30%, Drowzee 20%, Miltank 15%, Tauros 15%, Caterpie 15%, Scyther 5%
+Night: Magnemite 30%, Drowzee 20%, Murkrow 15%, Meowth 15%, Weedle 15%, Scyther 5%
 Swarm: Scyther 55%, Tauros 20%, Butterfree 15%, Miltank 10%
 Swarm Night: Scyther 55%, Meowth 20%, Beedrill 15%, Murkrow 10%
 
@@ -194,8 +194,8 @@ Route 39
 
 Levels 15-18
 
-Morning/Day: Magnemite 30%, Drowzee 20%, Tauros 15%, Butterfree 15%, Roselia 10%, Miltank 9%, Yanma 1%
-Night: Magnemite 30%, Drowzee 20%, Murkrow 15%, Beedrill 15%, Roselia 10%, Meowth 9%, Yanma 1%
+Morning/Day: Magnemite 30%, Drowzee 20%, Tauros 15%, Caterpie 15%, Roselia 10%, Miltank 9%, Yanma 1%
+Night: Magnemite 30%, Drowzee 20%, Murkrow 15%, Weedle 15%, Roselia 10%, Meowth 9%, Yanma 1%
 Swarm: Yanma 45%, Miltank 20%, Tauros 20%, Butterfree 15%
 Swarm Night: Yanma 45%, Meowth 20%, Murkrow 20%, Beedrill 15%
 

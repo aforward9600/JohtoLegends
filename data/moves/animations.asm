@@ -15,6 +15,10 @@
 	dw BattleAnim_InNightmare
 	dw BattleAnim_InWhirlpool
 	dw BattleAnim_InHail
+	dw BattleAnim_InRain
+	dw BattleAnim_InSun
+	dw BattleAnim_BerryRecover
+	dw BattleAnim_PerishBody
 	dw BattleAnim_Miss
 	dw BattleAnim_EnemyDamage
 	dw BattleAnim_EnemyStatDown
@@ -1960,6 +1964,7 @@ BattleAnim_DoubleTeam:
 	anim_ret
 
 BattleAnim_Recover:
+BattleAnim_BerryRecover:
 	anim_1gfx ANIM_GFX_BUBBLE
 	anim_call BattleAnim_TargetObj_1Row
 	anim_sound 0, 0, SFX_FULL_HEAL
@@ -4269,6 +4274,7 @@ BattleAnim_DestinyBond_branch_cb104:
 	anim_ret
 
 BattleAnim_PerishSong:
+BattleAnim_PerishBody:
 	anim_1gfx ANIM_GFX_NOISE
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
@@ -5143,6 +5149,7 @@ BattleAnim_Twister:
 	anim_ret
 
 BattleAnim_RainDance:
+BattleAnim_InRain:
 	anim_1gfx ANIM_GFX_WATER
 	anim_bgp $f8
 	anim_obp0 $7c
@@ -5156,6 +5163,7 @@ BattleAnim_RainDance:
 	anim_ret
 
 BattleAnim_SunnyDay:
+BattleAnim_InSun:
 	anim_1gfx ANIM_GFX_WATER
 	anim_bgp $90
 	anim_sound 0, 1, SFX_MORNING_SUN

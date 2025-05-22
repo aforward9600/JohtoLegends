@@ -54,7 +54,7 @@ ItemDescriptions:
 	dw ExpShareDesc
 	dw OldRodDesc
 	dw GoodRodDesc
-	dw SilverLeafDesc
+	dw LiechiBerryDesc
 	dw SuperRodDesc
 	dw PPUpDesc
 	dw EtherDesc
@@ -68,7 +68,7 @@ ItemDescriptions:
 	dw MoomooMilkDesc
 	dw QuickClawDesc
 	dw PsnCureBerryDesc
-	dw GoldLeafDesc
+	dw GanlonBerryDesc
 	dw SoftSandDesc
 	dw SharpBeakDesc
 	dw PrzCureBerryDesc
@@ -135,7 +135,7 @@ ItemDescriptions:
 	dw BerserkGeneDesc
 	dw SacredAshDesc
 	dw HeavyBallDesc
-	dw FlowerMailDesc
+	dw PetayaBerryDesc
 	dw LevelBallDesc
 	dw LureBallDesc
 	dw FastBallDesc
@@ -171,8 +171,8 @@ ItemDescriptions:
 	dw MachampCallDesc
 	dw SnubbullCallDesc
 	dw LaprasCallADesc
-	dw LaprasCallBDesc
-	dw LaprasCallCDesc
+	dw SalacBerryDesc
+	dw ApicotBerryDesc
 	dw PidgeotCallDesc
 	dw EvioliteDesc
 	dw PomegBerryDesc
@@ -467,9 +467,9 @@ GoodRodDesc:
 	db   "A good Rod for"
 	next "catching #mon.@"
 
-SilverLeafDesc:
-	db   "A strange, silver-"
-	next "colored leaf.@"
+LiechiBerryDesc:
+	db   "Ups Attack in a"
+	next "pinch. (Hold)@"
 
 SuperRodDesc:
 	db   "The best Rod for"
@@ -523,9 +523,9 @@ PsnCureBerryDesc:
 	db   "A self-cure for"
 	next "poison. (Hold)@"
 
-GoldLeafDesc:
-	db   "A strange, gold-"
-	next "colored leaf.@"
+GanlonBerryDesc:
+	db   "Ups Defense in a"
+	next "pinch. (Hold)@"
 
 SoftSandDesc:
 	db   "Powers up ground-"
@@ -791,9 +791,9 @@ HeavyBallDesc:
 	db   "A Ball for catch-"
 	next "ing heavy #mon.@"
 
-FlowerMailDesc:
-	db   "Flower-print Mail."
-	next "(Hold)@"
+PetayaBerryDesc:
+	db   "Ups Sp.Attack in a"
+	next "pinch. (Hold)@"
 
 LevelBallDesc:
 	db   "A Ball for lower-"
@@ -935,13 +935,13 @@ LaprasCallADesc:
 	db   "Calls a Lapras to"
 	next "ferry you.@"
 
-LaprasCallBDesc:
-	db   "Commands Lapras to"
-	next "use Whirlpool.@"
+SalacBerryDesc:
+	db   "Ups Speed in a"
+	next "pinch. (Hold)@"
 
-LaprasCallCDesc:
-	db   "Commands Lapras to"
-	next "climb waterfalls.@"
+ApicotBerryDesc:
+	db   "Ups Sp.Defense in"
+	next "a pinch. (Hold)@"
 
 PidgeotCallDesc:
 	db   "Calls a Pidgeot to"

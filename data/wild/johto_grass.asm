@@ -1389,8 +1389,8 @@ JohtoGrassWildMons:
 	dbw 14, DROWZEE
 	dbw 14, MILTANK
 	dbw 14, TAUROS
-	dbw 14, BUTTERFREE
-	dbw 14, BUTTERFREE
+	dbw 14, CATERPIE
+	dbw 14, CATERPIE
 	dbw 14, SCYTHER
 	dbw 14, SCYTHER
 	; day
@@ -1398,8 +1398,8 @@ JohtoGrassWildMons:
 	dbw 14, DROWZEE
 	dbw 14, MILTANK
 	dbw 14, TAUROS
-	dbw 14, BUTTERFREE
-	dbw 14, BUTTERFREE
+	dbw 14, CATERPIE
+	dbw 14, CATERPIE
 	dbw 14, SCYTHER
 	dbw 14, SCYTHER
 	; nite
@@ -1407,8 +1407,8 @@ JohtoGrassWildMons:
 	dbw 14, DROWZEE
 	dbw 14, MEOWTH
 	dbw 14, MURKROW
-	dbw 14, BEEDRILL
-	dbw 14, BEEDRILL
+	dbw 14, WEEDLE
+	dbw 14, WEEDLE
 	dbw 14, SCYTHER
 	dbw 14, SCYTHER
 
@@ -1417,7 +1417,7 @@ JohtoGrassWildMons:
 	; morn
 	dbw 15, MAGNEMITE
 	dbw 15, DROWZEE
-	dbw 15, BUTTERFREE
+	dbw 15, CATERPIE
 	dbw 15, TAUROS
 	dbw 15, ROSELIA
 	dbw 15, MILTANK
@@ -1426,7 +1426,7 @@ JohtoGrassWildMons:
 	; day
 	dbw 15, MAGNEMITE
 	dbw 15, DROWZEE
-	dbw 15, BUTTERFREE
+	dbw 15, CATERPIE
 	dbw 15, TAUROS
 	dbw 15, ROSELIA
 	dbw 15, MILTANK
@@ -1435,7 +1435,7 @@ JohtoGrassWildMons:
 	; nite
 	dbw 15, MAGNEMITE
 	dbw 15, DROWZEE
-	dbw 15, BEEDRILL
+	dbw 15, WEEDLE
 	dbw 15, MURKROW
 	dbw 15, ROSELIA
 	dbw 15, MEOWTH

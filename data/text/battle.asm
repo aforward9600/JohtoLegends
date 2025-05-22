@@ -309,6 +309,14 @@ RecoveredUsingText:
 	text "!"
 	prompt
 
+PinchBerryText:
+	text "<USER>"
+	line "consumed its"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
 BattleText_UsersStringBuffer1Activated:
 	text "<USER>'s"
 	line "@"

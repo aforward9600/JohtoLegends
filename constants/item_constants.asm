@@ -60,7 +60,7 @@
 	const EXP_SHARE    ; 39
 	const OLD_ROD      ; 3a
 	const GOOD_ROD     ; 3b
-	const SILVER_LEAF  ; 3c unused
+	const LIECHI_BERRY ; 3c
 	const SUPER_ROD    ; 3d
 	const PP_UP        ; 3e
 	const ETHER        ; 3f
@@ -74,7 +74,7 @@
 	const MOOMOO_MILK  ; 48
 	const QUICK_CLAW   ; 49
 	const PECHA_BERRY  ; 4a
-	const GOLD_LEAF    ; 4b unused
+	const GANLON_BERRY ; 4b
 	const SOFT_SAND    ; 4c
 	const SHARP_BEAK   ; 4d
 	const CHERRI_BERRY ; 4e
@@ -141,7 +141,7 @@
 	const BERSERK_GENE ; 98
 	const SACRED_ASH   ; 9c
 	const HEAVY_BALL   ; 9d
-	const FLOWER_MAIL  ; 9e unused
+	const PETAYA_BERRY ; 9e
 	const LEVEL_BALL   ; 9f
 	const LURE_BALL    ; a0
 	const FAST_BALL    ; a1
@@ -177,8 +177,8 @@
 	const MACHAMP_CALL ; cd
 	const SNUBBULLCALL ; ce
 	const LAPRAS_CALLA ; cf
-	const LAPRAS_CALLB ; d0 unused
-	const LAPRAS_CALLC ; d1 unused
+	const SALAC_BERRY  ; d0
+	const APICOT_BERRY ; d1
 	const PIDGEOT_CALL ; d2
 	const EVIOLITE     ; d3
 	const POMEG_BERRY  ; d4

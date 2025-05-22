@@ -50,7 +50,7 @@ Marts:
 .End
 
 MartCherrygrove:
-	db 9 ; # items
+	db 8 ; # items
 	db ULTRA_BALL
 	db HYPER_POTION
 	db ESCAPE_ROPE
@@ -59,7 +59,6 @@ MartCherrygrove:
 	db MAX_REPEL
 	db MAX_POTION
 	db FULL_RESTORE
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartCherrygroveDex:
@@ -72,7 +71,7 @@ MartCherrygroveDex:
 	db -1 ; end
 
 MartViolet:
-	db 8 ; # items
+	db 7 ; # items
 	db ULTRA_BALL
 	db HYPER_POTION
 	db ESCAPE_ROPE
@@ -80,11 +79,10 @@ MartViolet:
 	db FULL_HEAL
 	db MAX_REPEL
 	db MAX_POTION
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartAzalea:
-	db 10 ; # items
+	db 9 ; # items
 	db CHARCOAL
 	db GREAT_BALL
 	db ULTRA_BALL
@@ -94,7 +92,6 @@ MartAzalea:
 	db SUPER_REPEL
 	db REVIVE
 	db FULL_HEAL
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartCianwood:
@@ -119,7 +116,7 @@ MartGoldenrod2F1:
 	db -1 ; end
 
 MartGoldenrod2F2:
-	db 8 ; # items
+	db 7 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ESCAPE_ROPE
@@ -127,7 +124,6 @@ MartGoldenrod2F2:
 	db REVIVE
 	db FULL_HEAL
 	db POKE_DOLL
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartGoldenrod3F:
@@ -210,7 +206,7 @@ MartGoldenrodBlackMarket4:
 	db -1 ; end
 
 MartOlivine:
-	db 9 ; # items
+	db 8 ; # items
 	db POKE_BALL
 	db POTION
 	db SUPER_POTION
@@ -219,11 +215,10 @@ MartOlivine:
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartEcruteak:
-	db 10 ; # items
+	db 9 ; # items
 	db POKE_BALL
 	db POTION
 	db ESCAPE_ROPE
@@ -233,7 +228,6 @@ MartEcruteak:
 	db X_DEFEND
 	db X_ATTACK
 	db X_SPEED
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartMahogany1:
@@ -245,7 +239,7 @@ MartMahogany1:
 	db -1 ; end
 
 MartMahogany2:
-	db 9 ; # items
+	db 8 ; # items
 	db RAGECANDYBAR
 	db GREAT_BALL
 	db SUPER_POTION
@@ -254,7 +248,6 @@ MartMahogany2:
 	db PARLYZ_HEAL
 	db SUPER_REPEL
 	db REVIVE
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartBlackthorn:
@@ -277,13 +270,12 @@ MartBlackthornJournal:
 	db -1 ; end
 
 MartViridian:
-	db 6 ; # items
+	db 5 ; # items
 	db ULTRA_BALL
 	db HYPER_POTION
 	db FULL_HEAL
 	db REVIVE
 	db FULL_RESTORE
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartPewter:
@@ -391,18 +383,17 @@ MartCeladon5F2:
 	db -1 ; end
 
 MartFuchsia:
-	db 7 ; # items
+	db 6 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
 	db HYPER_POTION
 	db FULL_HEAL
 	db MAX_REPEL
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartSaffron:
-	db 8 ; # items
+	db 7 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db HYPER_POTION
@@ -410,7 +401,6 @@ MartSaffron:
 	db FULL_HEAL
 	db X_ATTACK
 	db X_DEFEND
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartMtMoon:
