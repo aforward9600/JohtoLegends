@@ -223,10 +223,6 @@ DisplayDexEntry:
 	call FarString
 	ret
 
-UnreferencedPOKeString:
-; unused
-	db "#@"
-
 GetDexEntryPointer:
 ; return dex entry pointer b:de
 	push hl

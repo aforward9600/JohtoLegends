@@ -989,12 +989,6 @@ StrengthFunction:
 .TryStrength:
 	jr .UseStrength
 
-.Unreferenced_AlreadyUsing:
-	ld hl, .JumpText
-	call MenuTextboxBackup
-	ld a, $80
-	ret
-
 .JumpText:
 	text_far UnknownText_0x1c0751
 	text_end
@@ -1660,11 +1654,6 @@ UnknownText_0xd0a9:
 	text_far UnknownText_0x1c0965
 	text_end
 
-UnknownText_0xd0ae: ; unused
-	; Looks like there's nothing here.
-	text_far UnknownText_0x1c0979
-	text_end
-
 BikeFunction:
 	call .TryBike
 	and $7f
@@ -1768,10 +1757,6 @@ Script_GetOnBike_Register:
 	closetext
 	special ReplaceKrisSprite
 	end
-
-; unused
-	nop
-	ret
 
 Script_GetOffBike:
 	reloadmappart

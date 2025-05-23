@@ -129,9 +129,6 @@ LoadObjectsRunCallback_02:
 	farcall InitializeVisibleSprites
 	ret
 
-; unused
-	ret
-
 DelayClearingOldSprites:
 	ld hl, wPlayerSpriteSetupFlags
 	set PLAYERSPRITESETUP_RESET_ACTION_F, [hl]

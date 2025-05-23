@@ -576,37 +576,6 @@ PlacePrinterStatusString:
 	ld [wPrinterStatus], a
 	ret
 
-Unreferenced_Function847bd:
-	ld a, [wPrinterStatus]
-	and a
-	ret z
-	push af
-	xor a
-	ldh [hBGMapMode], a
-	hlcoord 2, 4
-	lb bc, 13, 16
-	call ClearBox
-	pop af
-	ld e, a
-	ld d, 0
-	ld hl, PrinterStatusStringPointers
-	add hl, de
-	add hl, de
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	hlcoord 4, 7
-	ld a, BANK(GBPrinterStrings)
-	call FarString
-	hlcoord 4, 15
-	ld de, String_PressBToCancel
-	call PlaceString
-	ld a, $1
-	ldh [hBGMapMode], a
-	xor a
-	ld [wPrinterStatus], a
-	ret
-
 String_PressBToCancel:
 	db "Press B to Cancel@"
 

@@ -1,0 +1,8 @@
+warning: overflow.asm(24): [-Wdiv]
+    Division of min value by -1
+warning: overflow.asm(25): [-Wdiv]
+    Division of min value by -1
+warning: overflow.asm(39): [-Wlarge-constant]
+    Integer constant '4294967296' is too large
+warning: overflow.asm(42): [-Wlarge-constant]
+    Graphics constant '`333333333' is too long

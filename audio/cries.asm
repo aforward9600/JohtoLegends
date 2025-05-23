@@ -1017,36 +1017,6 @@ Cry_Weepinbell:
 	musicheader 1, 6, Cry_Weepinbell_Ch6
 	musicheader 1, 8, Cry_Weepinbell_Ch8
 
-Unused_Cry_Ch5:
-	sound_duty 0, 0, 3, 3
-	sound __, 16, $e0, $0780
-	sound __, 16, $f0, $0784
-	sound __, 16, $c3, $05e0
-	sound __, 16, $c4, $0600
-	sound __, 11, $6c, $0780
-	sound __,  9, $71, $0784
-	endchannel
-
-Unused_Cry_Ch6:
-	sound_duty 1, 1, 0, 0
-	sound __, 16, $a0, $0741
-	sound __, 16, $b0, $0743
-	sound __, 16, $93, $05b1
-	sound __, 16, $94, $05c1
-	sound __, 11, $4c, $0741
-	sound __,  9, $31, $0746
-	endchannel
-
-Unused_Cry_Ch8:
-	noise __,  3, $f2, $4c
-	noise __,  7, $e0, $3a
-	noise __, 16, $d0, $3a
-	noise __,  9, $d0, $2c
-	noise __,  7, $e6, $4c
-	noise __, 13, $7d, $4c
-	noise __, 16, $d3, $4c
-	endchannel
-
 Cry_Raichu_Ch5:
 	sound_duty 0, 0, 3, 3
 	sound __, 16, $f7, $07a0

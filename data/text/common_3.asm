@@ -165,33 +165,6 @@ UnknownText_0x1c445a::
 	line "tomorrow."
 	done
 
-UnknownText_0x1c449c::
-	text "Try again using"
-	line "the same settings?"
-	done
-
-UnknownText_0x1c44c0::
-	text "There is less than"
-	line "1 min. left today!"
-	done
-
-UnknownText_0x1c44e7::
-	text "No time left for"
-	line "linking today."
-	done
-
-UnknownText_0x1c4508::
-	text "Pick three #mon"
-	line "for battle."
-	done
-
-UnknownText_0x1c4525::
-	text "Today's remaining"
-	line "time is @"
-	text_decimal wStringBuffer2, 1, 2
-	text " min."
-	done
-
 UnknownText_0x1c454b::
 	text "Would you like to"
 	line "save the game?"
@@ -446,8 +419,6 @@ UnknownText_0x1c4b92::
 	line "Your @"
 	text_ram wStringBuffer2
 	text_end
-
-	text_end ; unused
 
 UnknownText_0x1c4baf::
 	text_start
@@ -944,8 +915,6 @@ UnknownText_0x1c5660::
 	text_waitbutton
 	text_end
 
-	text_end ; unused
-
 UnknownText_0x1c5678::
 	text "Which move should"
 	next "be forgotten?"
@@ -992,8 +961,6 @@ UnknownText_0x1c5740::
 	text "1, 2 and…@"
 	text_pause
 	text_end
-
-	text_end ; unused
 
 UnknownText_0x1c574e::
 	text " Poof!@"
@@ -1053,8 +1020,6 @@ UnknownText_0x1c581a::
 UnknownText_0x1c5821::
 	text_today
 	text_end
-
-	text_end ; unused
 
 UnknownText_0x1c5824::
 	text "<……>"
@@ -1223,13 +1188,9 @@ UnknownText_0x1c5b17::
 	sound_caught_mon
 	text_end
 
-	text_end ; unused
-
 Text_Waitbutton_2::
 	text_waitbutton
 	text_end
-
-	text_end ; unused
 
 UnknownText_0x1c5b38::
 	text_ram wMonOrItemNameBuffer
@@ -1245,8 +1206,6 @@ UnknownText_0x1c5b53::
 	sound_slot_machine_start
 	text_waitbutton
 	text_end
-
-	text_end ; unused
 
 UnknownText_0x1c5b7f::
 	text "Give a nickname to"
@@ -1293,8 +1252,6 @@ UnknownText_0x1c5c44::
 	text_waitbutton
 	text_end
 
-	text_end ; unused
-
 UnknownText_0x1c5c5e::
 	text "You now have"
 	line "@"
@@ -1307,8 +1264,6 @@ UnknownText_0x1c5c7b::
 	line "@"
 	text_decimal wCoins, 2, 4
 	text_end
-
-	text_end ; unused
 
 Text_RaiseThePPOfWhichMove::
 	text "Raise the PP of"

@@ -1,0 +1,91 @@
+.\"
+.\" This file is part of RGBDS.
+.\"
+.\" Copyright (c) 2017-2018, Antonio Nino Diaz and RGBDS contributors.
+.\"
+.\" SPDX-License-Identifier: MIT
+.\"
+.Dd November 26, 2019
+.Dt RGBLINK 5
+.Os
+.Sh NAME
+.Nm rgblink
+.Nd linker script file format
+.Sh DESCRIPTION
+The linker script is an external file that allows the user to specify the order of sections at link time and in a centralized manner.
+.Pp
+A linker script consists on a series of banks followed by a list of sections and, optionally, commands.
+They can be lowercase or uppercase, it is ignored.
+Any line can contain a comment starting with
+.Ql \&;
+that ends at the end of the line:
+.Pp
+.Bd -literal -offset indent
+ROMX $F ; This is a comment
+  "Functions to read array"
+  ALIGN 8
+  "Array aligned to 256 bytes"
+
+WRAMX 2
+  "Some variables"
+.Ed
+.Pp
+Numbers can be in decimal or hexadecimal format
+.Pq the prefix is Ql $ .
+It is an error if any section name or command is found before setting a bank.
+.Pp
+Files can be included by using the
+.Ic INCLUDE
+keyword, followed by a string with the path of the file that has to be included.
+.Pp
+The possible bank types are:
+.Cm ROM0 , ROMX , VRAM , SRAM , WRAM0 , WRAMX , OAM
+and
+.Cm HRAM .
+Unless there is a single bank, which can occur with types
+.Cm ROMX , VRAM , SRAM
+and
+.Cm WRAMX ,
+it is needed to specify a bank number after the type.
+.Pp
+When a new bank statement is found, sections found after it will be placed right from the beginning of that bank.
+If the linker script switches to a different bank and then comes back to a previous one, it will continue from the last address that was used.
+.Pp
+The only two commands are
+.Ic ORG
+and
+.Ic ALIGN :
+.Bl -bullet
+.It
+.Ic ORG
+sets the address in which new sections will be placed.
+It can not be lower than the current address.
+.It
+.Ic ALIGN
+will increase the address until it is aligned to the specified boundary
+.Po it tries to set to 0 the number of bits specified after the command:
+.Ql ALIGN 8
+will align to $100
+.Pc .
+.El
+.Pp
+.Sy Note:
+The bank, alignment, address and type of sections can be specified both in the source code and in the linker script.
+For a section to be able to be placed with the linker script, the bank, address and alignment must be left unassigned in the source code or be compatible with what is specified in the linker script.
+For example,
+.Ql ALIGN[8]
+in the source code is compatible with
+.Ql ORG $F00
+in the linker script.
+.Sh SEE ALSO
+.Xr rgbasm 1 ,
+.Xr rgblink 1 ,
+.Xr rgbfix 1 ,
+.Xr rgbds 5 ,
+.Xr rgbds 7
+.Sh HISTORY
+.Nm
+was originally written by Carsten S\(/orensen as part of the ASMotor package,
+and was later packaged in RGBDS by Justin Lloyd. It is now maintained by a
+number of contributors at
+.Lk https://github.com/rednex/rgbds .

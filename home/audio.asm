@@ -273,11 +273,6 @@ VolumeOff::
 	ld [wVolume], a
 	ret
 
-Unused_FadeOutMusic::
-	ld a, 4
-	ld [wMusicFade], a
-	ret
-
 FadeInMusic::
 	ld a, 4 | (1 << MUSIC_FADE_IN_F)
 	ld [wMusicFade], a

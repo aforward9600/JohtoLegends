@@ -156,9 +156,6 @@ TeachTMHM:
 	and a
 	ret
 
-.unused
-	ld a, 2
-	ld [wItemEffectSucceeded], a
 .learned_move
 	scf
 	ret
@@ -417,19 +414,6 @@ TMHMPocket_GetCurrentLineCoord:
 	jr nz, .loop
 	ret
 
-Unreferenced_Function2ca95:
-	pop hl
-	ld bc, 3
-	add hl, bc
-	predef GetTMHMMove
-	ld a, [wTempTMHM]
-	ld [wPutativeTMHMMove], a
-	call GetMoveName
-	push hl
-	call PlaceString
-	pop hl
-	ret
-
 TMHM_String_Cancel:
 	db "Cancel@"
 
@@ -463,39 +447,6 @@ TMHM_PlaySFX_ReadText2:
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX
 	pop de
-	ret
-
-Unreferenced_Function2cadf:
-	call ConvertCurItemIntoCurTMHM
-	call .CheckHaveRoomForTMHM
-	ld hl, .NoRoomText
-	jr nc, .print
-	ld hl, .ReceivedText
-.print
-	jp PrintText
-
-.NoRoomText:
-	; You have no room for any more @ S.
-	text_far UnknownText_0x1c03fa
-	text_end
-
-.ReceivedText:
-	; You received @ !
-	text_far UnknownText_0x1c0421
-	text_end
-
-.CheckHaveRoomForTMHM:
-	ld a, [wTempTMHM]
-	dec a
-	ld hl, wTMsHMs
-	ld b, 0
-	ld c, a
-	add hl, bc
-	ld a, [hl]
-	inc a
-	cp NUM_TMS * 2
-	ret nc
-	ld [hl], a
 	ret
 
 CountTMsHMs:

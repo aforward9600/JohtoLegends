@@ -110,10 +110,6 @@ MagikarpLengthOldRodScript:
 	closetext
 	end
 
-LakeOfRageMagikarpHouseUnusedRecordSign:
-; unused
-	jumptext LakeOfRageMagikarpHouseUnusedRecordText
-
 LakeOfRageTelevision:
 	jumpstd televisionscript
 
@@ -215,18 +211,6 @@ MagikarpLengthRaterText_Refused:
 	para "enough to show me?"
 	line "Maybe next time."
 	done
-
-LakeOfRageMagikarpHouseUnusedRecordText:
-	text "Current Record"
-
-	para "@"
-	text_ram wStringBuffer3
-	text " caught by"
-	line "@"
-	text_ram wStringBuffer4
-	text_end
-
-	text_end ; unused
 
 OldRodText_Question:
 	text "This is a great"

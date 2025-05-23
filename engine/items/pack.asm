@@ -542,34 +542,6 @@ TossMenu:
 .finish
 	ret
 
-Unreferenced_ResetPocketCursorPositions:
-	ld a, [wCurPocket]
-	and a ; ITEM_POCKET
-	jr z, .items
-	dec a ; BALL_POCKET
-	jr z, .balls
-	dec a ; KEY_ITEM_POCKET
-	jr z, .key
-	ret
-
-.balls
-	xor a
-	ld [wBallsPocketCursor], a
-	ld [wBallsPocketScrollPosition], a
-	ret
-
-.items
-	xor a
-	ld [wItemsPocketCursor], a
-	ld [wItemsPocketScrollPosition], a
-	ret
-
-.key
-	xor a
-	ld [wKeyItemsPocketCursor], a
-	ld [wKeyItemsPocketScrollPosition], a
-	ret
-
 RegisterItem:
 	farcall CheckSelectableItem
 	ld a, [wItemAttributeParamBuffer]
@@ -929,10 +901,6 @@ TMHMSubmenu:
 	ret
 
 .Unused:
-	call DoItemEffect
-	ld a, [wItemEffectSucceeded]
-	and a
-	jr nz, .ReturnToBattle
 	ret
 
 .BattleField:
@@ -1573,13 +1541,6 @@ Pack_GetItemName:
 	ld [wNamedObjectIndexBuffer], a
 	call GetItemName
 	call CopyName1
-	ret
-
-Unreferenced_Pack_ClearTilemap:
-	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	ld a, " "
-	call ByteFill
 	ret
 
 ClearPocketList:

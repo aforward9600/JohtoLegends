@@ -24,16 +24,6 @@ TinTower9FArcher:
 TinTower9FHPUp:
 	itemball HP_UP
 
-TinTower9FUnusedHoOhText:
-; unused
-	text "HO-OH: Shaoooh!"
-	done
-
-TinTower9FUnusedLugiaText:
-; unused
-	text "LUGIA: Gyaaan!"
-	done
-
 Archer4LastMonText:
 	text "It seems this was"
 	line "inevitable too…"

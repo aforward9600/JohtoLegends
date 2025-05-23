@@ -1202,11 +1202,3 @@ ENDM
 	dec b
 	jr nz, .row
 	ret
-
-Unreferenced_Function8c7c9:
-	ld a, $1
-	ldh [hBGMapMode], a
-	call WaitBGMap
-	xor a
-	ldh [hBGMapMode], a
-	ret

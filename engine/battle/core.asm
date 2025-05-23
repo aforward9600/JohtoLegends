@@ -182,9 +182,6 @@ BattleTurn:
 
 	call IsMobileBattle
 	jr nz, .not_disconnected
-	farcall Function100da5
-	farcall StartMobileInactivityTimer
-	farcall Function100dd8
 	jp c, .quit
 .not_disconnected
 
@@ -1967,7 +1964,6 @@ HandleEnemySwitch:
 	and a
 	jr z, .not_linked
 
-	call LinkBattleSendReceiveAction
 	ld a, [wBattleAction]
 	cp BATTLEACTION_FORFEIT
 	ret z
@@ -2059,7 +2055,6 @@ WinTrainerBattle:
 	ld c, 40
 	call DelayFrames
 	ld c, $4 ; win
-	farcall Mobile_PrintOpponentBattleMessage
 	ret
 
 .battle_tower
@@ -2410,7 +2405,6 @@ ForcePlayerMonChoice:
 	jr z, .skip_link
 	ld a, BATTLEPLAYERACTION_USEITEM
 	ld [wBattlePlayerAction], a
-	call LinkBattleSendReceiveAction
 
 .skip_link
 	xor a ; BATTLEPLAYERACTION_USEMOVE
@@ -2525,12 +2519,8 @@ JumpToPartyMenuAndPrintText:
 
 SelectBattleMon:
 	call IsMobileBattle
-	jr z, .mobile
+	ret z
 	farcall PartyMenuSelect
-	ret
-
-.mobile
-	farcall Mobile_PartyMenuSelect
 	ret
 
 PickPartyMonInBattle:
@@ -2693,7 +2683,6 @@ LostBattle:
 	call DelayFrames
 
 	ld c, $3 ; lost
-	farcall Mobile_PrintOpponentBattleMessage
 	scf
 	ret
 
@@ -3577,7 +3566,6 @@ TryToRunAwayFromBattle:
 	ld [wCurMoveNum], a
 	xor a
 	ld [wCurPlayerMove], a
-	call LinkBattleSendReceiveAction
 	call Call_LoadTempTileMapToTileMap
 	call CheckMobileBattleError
 	jr c, .mobile
@@ -4637,7 +4625,6 @@ LoadBattleMenu2:
 	ret
 
 .mobile
-	farcall Function100b12
 	ld a, [wcd2b]
 	and a
 	ret z
@@ -4814,12 +4801,8 @@ BattleMenuPKMN_Loop:
 
 .GetMenu:
 	call IsMobileBattle
-	jr z, .mobile
+	ret z
 	farcall BattleMonMenu
-	ret
-
-.mobile
-	farcall MobileBattleMonMenu
 	ret
 
 Battle_StatsScreen:
@@ -4905,7 +4888,6 @@ PlayerSwitch:
 	and a
 	jr z, .not_linked
 	call LoadStandardMenuHeader
-	call LinkBattleSendReceiveAction
 	call CloseWindow
 
 .not_linked
@@ -5081,7 +5063,6 @@ CheckAmuletCoin:
 MoveSelectionScreen:
 	call IsMobileBattle
 	jr nz, .not_mobile
-	farcall MobileMoveSelectionScreen
 	ret
 
 .not_mobile
@@ -5553,7 +5534,6 @@ ParseEnemyAction:
 	call LoadTileMapToTempTileMap
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
-	call z, LinkBattleSendReceiveAction
 	call Call_LoadTempTileMapToTileMap
 	ld a, [wBattleAction]
 	cp BATTLEACTION_STRUGGLE
@@ -5739,10 +5719,6 @@ CheckEnemyLockedIn:
 
 	ld hl, wEnemySubStatus1
 	bit SUBSTATUS_ROLLOUT, [hl]
-	ret
-
-LinkBattleSendReceiveAction:
-	farcall _LinkBattleSendReceiveAction
 	ret
 
 LoadEnemyMon:
@@ -9080,7 +9056,6 @@ BattleStartMessage:
 	ret nz
 
 	ld c, $2 ; start
-	farcall Mobile_PrintOpponentBattleMessage
 
 	ret
 

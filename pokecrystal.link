@@ -170,16 +170,10 @@ ROMX $3e
 ROMX $3f
 	"bank3F"
 ROMX $40
-	"mobile_40"
-	"tetsuji"
-	"bank40_2"
-	"ascii 10186f"
-	"bank40_3"
 ROMX $41
 	"bank41"
 	"Enemy Trainer Parties 1"
 ROMX $42
-	"Mobile 42"
 	"Intro Logo"
 	"Credits"
 ROMX $43
@@ -239,7 +233,6 @@ ROMX $5e
 	"UpdateBattleHUDs"
 	"Songs 5"
 	"Crystal Sound Effects"
-	"Mobile 5E"
 ROMX $5f
 	"Mobile 5F"
 ROMX $60

@@ -261,10 +261,6 @@ Route34Guard1:
 Route34Guard2:
 	jumptextfaceplayer TakingPicturesText
 
-Route34IlexForestSign:
-; unused
-	jumptext Route34IlexForestSignText
-
 Route34Sign:
 	jumptext Route34SignText
 
@@ -531,12 +527,6 @@ CooltrainerfKateAfterText:
 
 	para "here. You sure"
 	line "startled us."
-	done
-
-Route34IlexForestSignText:
-; unused
-	text "Ilex Forest"
-	line "through the gate"
 	done
 
 Route34SignText:

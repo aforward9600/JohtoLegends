@@ -327,13 +327,6 @@ UpdateChannels:
 	ldh [rNR21], a
 	ret
 
-.asm_e81db ; unused
-	ld a, [wCurTrackFrequency]
-	ldh [rNR23], a
-	ld a, [wCurTrackFrequency + 1]
-	ldh [rNR24], a
-	ret
-
 .asm_e81e6
 	ld a, [wCurTrackDuty]
 	ld d, a
@@ -377,13 +370,6 @@ UpdateChannels:
 	jr nz, .asm_e824d
 	bit NOTE_VIBRATO_OVERRIDE, [hl]
 	jr nz, .asm_e823a
-	ret
-
-.asm_e822f ; unused
-	ld a, [wCurTrackFrequency]
-	ldh [rNR33], a
-	ld a, [wCurTrackFrequency + 1]
-	ldh [rNR34], a
 	ret
 
 .asm_e823a
@@ -476,11 +462,6 @@ endr
 	jr nz, .ch4rest
 	bit NOTE_NOISE_SAMPLING, [hl]
 	jr nz, .asm_e82d4
-	ret
-
-.asm_e82c1 ; unused
-	ld a, [wCurTrackFrequency]
-	ldh [rNR43], a
 	ret
 
 .ch4rest
@@ -1387,19 +1368,19 @@ MusicCommands:
 	dw Music_ToggleSFX ; sound on/off
 	dw Music_SlidePitchTo ; pitch wheel
 	dw Music_Vibrato ; vibrato
-	dw MusicE2 ; unused
+	dw MusicE2
 	dw Music_ToggleNoise ; music noise sampling
 	dw Music_Panning ; force panning
 	dw Music_Volume ; volume
 	dw Music_Tone ; tone
-	dw MusicE7 ; unused
-	dw MusicE8 ; unused
+	dw MusicE7 ; nothing
+	dw MusicE8 ; nothing
 	dw Music_TempoRelative ; global tempo
 	dw Music_RestartChannel ; restart current channel from header
 	dw Music_NewSong ; new song
 	dw Music_SFXPriorityOn ; sfx priority on
 	dw Music_SFXPriorityOff ; sfx priority off
-	dw MusicEE ; unused
+	dw MusicEE
 	dw Music_StereoPanning ; stereo panning
 	dw Music_SFXToggleNoise ; sfx noise sampling
 	dw MusicF1 ; nothing
@@ -1418,6 +1399,8 @@ MusicCommands:
 	dw Music_CallChannel ; call
 	dw Music_EndChannel ; return
 
+MusicE7:
+MusicE8:
 MusicF1:
 MusicF2:
 MusicF3:
@@ -1670,7 +1653,6 @@ MusicEE:
 	ret
 
 MusicE2:
-; seems to have been dummied out
 ; params: 1
 	call GetMusicByte
 	ld hl, CHANNEL_FIELD2C
@@ -1781,18 +1763,6 @@ Music_Tone:
 	ld [hl], a
 	ret
 
-MusicE7:
-; unused
-; params: 1
-	ld hl, CHANNEL_FLAGS2
-	add hl, bc
-	set SOUND_UNKN_0E, [hl]
-	call GetMusicByte
-	ld hl, CHANNEL_FIELD29
-	add hl, bc
-	ld [hl], a
-	ret
-
 Music_SoundDuty:
 ; sequence of 4 duty cycles to be looped
 ; params: 1 (4 2-bit duty cycle arguments)
@@ -1809,18 +1779,6 @@ Music_SoundDuty:
 	; update duty cycle
 	and $c0 ; only uses top 2 bits
 	ld hl, CHANNEL_DUTY_CYCLE
-	add hl, bc
-	ld [hl], a
-	ret
-
-MusicE8:
-; unused
-; params: 1
-	ld hl, CHANNEL_FLAGS2
-	add hl, bc
-	set SOUND_UNKN_0D, [hl]
-	call GetMusicByte
-	ld hl, CHANNEL_FIELD2A
 	add hl, bc
 	ld [hl], a
 	ret

@@ -40,8 +40,8 @@ DoAnimFrame:
 	dw .FlyTo
 	dw .GSIntroHoOh
 	dw .EZChatCursor
-	dw .MobileTradeSentPulse
-	dw .MobileTradeOTPulse
+	dw .Null
+	dw .Null
 	dw GSIntroBubble
 	dw GSIntroShellder
 	dw .Celebi
@@ -407,7 +407,6 @@ DoAnimFrame:
 	ret
 
 .UnusedCursor
-	callfar ret_e00ed
 	ret
 
 .PokegearArrow
@@ -743,14 +742,6 @@ DoAnimFrame:
 	ld hl, SPRITEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ret
-
-.MobileTradeSentPulse
-	farcall Function108bc7
-	ret
-
-.MobileTradeOTPulse
-	farcall Function108be0
 	ret
 
 .EZChatCursor

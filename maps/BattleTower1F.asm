@@ -192,74 +192,10 @@ Script_BattleTowerHopeToServeYouAgain:
 	closetext
 	end
 
-UnreferencedScript_0x9e4b6:
-	special BattleTowerMobileError
-	closetext
-	end
-
 Script_WaitButton:
 	waitbutton
 	closetext
 	end
-
-UnreferencedScript_0x9e4be:
-	writetext Text_SaveBeforeEnteringBattleRoom
-	yesorno
-	iffalse Script_Menu_ChallengeExplanationCancel
-	special TryQuickSave
-	iffalse Script_Menu_ChallengeExplanationCancel
-	setval BATTLETOWERACTION_SET_EXPLANATION_READ
-	special BattleTowerAction
-	special Function1700ba
-	ifequal $a, Script_Menu_ChallengeExplanationCancel
-	ifnotequal $0, Script_MobileError
-	writetext Text_ReceivedAListOfLeadersOnTheHonorRoll
-	turnobject BATTLETOWER1F_RECEPTIONIST, LEFT
-	writetext Text_PleaseConfirmOnThisMonitor
-	waitbutton
-	turnobject BATTLETOWER1F_RECEPTIONIST, DOWN
-	closetext
-	end
-
-UnreferencedScript_0x9e4ea:
-	setval BATTLETOWERACTION_LEVEL_CHECK
-	special BattleTowerAction
-	ifnotequal $0, Script_AMonLevelExceeds
-	setval BATTLETOWERACTION_UBERS_CHECK
-	special BattleTowerAction
-	ifnotequal $0, Script_MayNotEnterABattleRoomUnderL70
-	special CheckForBattleTowerRules
-	ifnotequal FALSE, Script_WaitButton
-	setval BATTLETOWERACTION_05
-	special BattleTowerAction
-	ifequal $0, .zero
-	writetext Text_CantBeRegistered_PreviousRecordDeleted
-	sjump continue
-
-.zero
-	writetext Text_CantBeRegistered
-continue:
-	yesorno
-	iffalse Script_Menu_ChallengeExplanationCancel
-	writetext Text_SaveBeforeReentry
-	yesorno
-	iffalse Script_Menu_ChallengeExplanationCancel
-	setscene SCENE_DEFAULT
-	special TryQuickSave
-	iffalse Script_Menu_ChallengeExplanationCancel
-	setscene SCENE_FINISHED
-	setval BATTLETOWERACTION_06
-	special BattleTowerAction
-	setval BATTLETOWERACTION_12
-	special BattleTowerAction
-	writetext Text_RightThisWayToYourBattleRoom
-	waitbutton
-	sjump Script_ResumeBattleTowerChallenge
-
-UnreferencedScript_0x9e53b:
-	writetext Text_FiveDayBattleLimit_Mobile
-	waitbutton
-	sjump Script_BattleTowerHopeToServeYouAgain
 
 Script_AMonLevelExceeds:
 	writetext Text_AMonLevelExceeds

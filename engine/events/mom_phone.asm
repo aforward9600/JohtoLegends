@@ -204,8 +204,6 @@ endr
 
 INCLUDE "data/items/mom_phone.asm"
 
-	db 0, 0, 0 ; unused
-
 _MomText_HiHowAreYou:
 	; Hi,  ! How are you?
 	text_far _MomShoppingText1
@@ -236,9 +234,5 @@ _MomText_ItsInRoom:
 	text_far _MomShoppingText6
 	text_end
 
-	db 0 ; unused
-
 DummyPredef3A:
 	ret
-
-	ret ; unused

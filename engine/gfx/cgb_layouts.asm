@@ -143,12 +143,7 @@ SetBattlePal_Exp:
 	jp LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_EXP
 
 SetBattlePal_Text:
-	; Mobile Adapter connectivity changes bg pal 7.
-	farcall Function100dc0 ; is a mobile adapter session active?
 	ld hl, PartyMenuBGPalette
-	jr nc, .got_pal
-	ld hl, PartyMenuBGMobilePalette
-.got_pal
 	ld bc, 1 palettes
 	ld a, BANK(wBGPals1)
 	jp FarCopyWRAM
@@ -205,12 +200,8 @@ _CGB_FinishBattleScreenLayout:
 	ret
 
 InitPartyMenuBGPal7:
-	farcall Function100dc0
 Mobile_InitPartyMenuBGPal7:
 	ld hl, PartyMenuBGPalette
-	jr nc, .not_mobile
-	ld hl, PartyMenuBGMobilePalette
-.not_mobile
 	ld de, wBGPals1 palette 7
 	ld bc, 1 palettes
 	ld a, BANK(wBGPals1)
@@ -218,11 +209,7 @@ Mobile_InitPartyMenuBGPal7:
 	ret
 
 InitPartyMenuBGPal0:
-	farcall Function100dc0
 	ld hl, PartyMenuBGPalette
-	jr nc, .not_mobile
-	ld hl, PartyMenuBGMobilePalette
-.not_mobile
 	ld de, wBGPals1 palette 0
 	ld bc, 1 palettes
 	ld a, BANK(wBGPals1)
@@ -523,10 +510,6 @@ _CGB_BillsPC:
 	call LoadHLPaletteIntoDE
 	jr .asm_901a
 
-.unused
-	ld bc, wTempMonDVs
-	call GetPlayerOrMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
 .asm_901a
 	call WipeAttrMap
 	hlcoord 1, 1, wAttrMap

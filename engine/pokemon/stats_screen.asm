@@ -80,14 +80,11 @@ StatsScreenMobile:
 	; stupid interns
 	ld [wcf64], a ; PINK_PAGE
 .loop
-	farcall Mobile_SetOverworldDelay
 	ld a, [wJumptableIndex]
 	and $ff ^ (1 << 7)
 	ld hl, StatsScreenPointerTable
 	rst JumpTable
 	call StatsScreen_WaitAnim
-	farcall MobileComms_CheckInactivityTimer
-	jr c, .exit
 	ld a, [wJumptableIndex]
 	bit 7, a
 	jr z, .loop
@@ -444,18 +441,6 @@ StatsScreen_InitUpperHalf:
 	dw wOTPartyMonNicknames
 	dw sBoxMonNicknames
 	dw wBufferMonNick
-
-Unreferenced_Function4df7f:
-	hlcoord 7, 0
-	ld bc, SCREEN_WIDTH
-	ld d, SCREEN_HEIGHT
-.loop
-	ld a, $31 ; vertical divider
-	ld [hl], a
-	add hl, bc
-	dec d
-	jr nz, .loop
-	ret
 
 StatsScreen_PlaceHorizontalDivider:
 	hlcoord 0, 7
@@ -1102,10 +1087,6 @@ StatsScreen_LoadTextboxSpaceGFX:
 	pop de
 	pop hl
 	ret
-
-Unreferenced_4e32a:
-; A blank space tile?
-	ds 16
 
 EggStatsScreen:
 	xor a

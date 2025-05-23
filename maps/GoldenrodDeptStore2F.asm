@@ -39,27 +39,6 @@ GoldenrodDeptStore2FDirectory:
 GoldenrodDeptStore2FElevatorButton:
 	jumpstd elevatorbutton
 
-GoldenrodDeptStore2FUnusedText1:
-; unused
-	text "We intend to sell"
-	line "items for #MON"
-	cont "to hold."
-
-	para "This is a free"
-	line "gift. Have a #-"
-	cont "MON hold it."
-	done
-
-GoldenrodDeptStore2FUnusedText2:
-; unused
-	text "By giving #MON"
-	line "items to hold, I"
-
-	para "bet trainers will"
-	line "develop new battle"
-	cont "techniques."
-	done
-
 GoldenrodDeptStore2FYoungsterText:
 	text "You got a Watch?!"
 
