@@ -2288,7 +2288,7 @@ endc
 	next_list_item ; BIRD_KEEPER (7) Route 44
 	db "Sal@", TRAINERTYPE_ITEM
 	db 6
-	dw HOPPIP
+	dw ZUBAT
 	db NO_ITEM
 	db 7
 	dw SPEAROW
@@ -2298,12 +2298,8 @@ else
 	db NO_ITEM
 endc
 	db 8
-	dw HOOTHOOT
-if DEF(_CHALLENGE)
-	db WIDE_LENS
-else
+	dw PIDGEY
 	db NO_ITEM
-endc
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (8)
@@ -2360,6 +2356,26 @@ endc
 	db "Carl@", TRAINERTYPE_NORMAL
 	db 34
 	dw FARFETCH_D
+	db -1 ; end
+
+	next_list_item ; BIRD_KEEPER (7) Route 44
+	db "Sal@", TRAINERTYPE_NORMAL
+	db 19
+	dw ZUBAT
+	db 18
+	dw SKIPLOOM
+	db 18
+	dw PIDGEOTTO
+	db -1 ; end
+
+	next_list_item ; BIRD_KEEPER (7) Route 44
+	db "Sal@", TRAINERTYPE_NORMAL
+	db 32
+	dw CROBAT
+	db 32
+	dw JUMPLUFF
+	db 36
+	dw PIDGEOT
 	db -1 ; end
 
 	end_list_items
@@ -3260,7 +3276,7 @@ endc
 	dw LICKITUNG
 	db NO_ITEM
 	db 14
-	dw SUNKERN
+	dw WYNAUT
 	db NO_ITEM
 	db 14
 	dw ARON
@@ -3623,20 +3639,24 @@ endc
 	dw HAPPINY
 	db 15
 	dw MARILL
+	db 15
+	dw IGGLYBUFF
 	db -1 ; end
 
 	next_list_item ; TEACHER (5) Route 44
 	db "Cadi@", TRAINERTYPE_NORMAL
 	db 19
 	dw CHANSEY
-	db 20
+	db 19
 	dw AZUMARILL
+	db 20
+	dw JIGGLYPUFF
 	db -1 ; end
 
 	next_list_item ; TEACHER (6) Route 44
 	db "Cadi@", TRAINERTYPE_MOVES
 	db 29
-	dw CHANSEY
+	dw BLISSEY
 	dw SOFTBOILED, METRONOME, MINIMIZE, TAKE_DOWN
 	db 29
 	dw AZUMARILL
@@ -5548,7 +5568,7 @@ PsychicGroup:
 	next_list_item ; PSYCHIC_T (1) Route 42
 	db "Jordan@", TRAINERTYPE_MOVES
 	db 9
-	dw WYNAUT
+	dw NATU
 	dw CHARM, SPLASH, ENCORE, AMNESIA
 	db 9
 	dw RALTS
@@ -5609,6 +5629,32 @@ PsychicGroup:
 	db 74
 	dw SLOWKING
 	dw SURF, PSYCHIC_M, ICE_BEAM, CALM_MIND
+	db -1 ; end
+
+	next_list_item ; PSYCHIC_T (1) Route 42
+	db "Jordan@", TRAINERTYPE_MOVES
+	db 15
+	dw ESPEON
+	dw CONFUSION, SAND_ATTACK, QUICK_ATTACK, GROWL
+	db 15
+	dw RALTS
+	dw DISARM_VOICE, DOUBLE_TEAM, CONFUSION, GROWL
+	db 16
+	dw KADABRA
+	dw HIDDEN_POWER, TELEPORT, CONFUSION, KINESIS
+	db -1 ; end
+
+	next_list_item ; PSYCHIC_T (1) Route 42
+	db "Jordan@", TRAINERTYPE_MOVES
+	db 30
+	dw ESPEON
+	dw PSYBEAM, SAND_ATTACK, SHADOW_BALL, SWIFT
+	db 31
+	dw GARDEVOIR
+	dw PSYCHIC_M, MOONLIGHT, DRAININGKISS, CALM_MIND
+	db 29
+	dw ALAKAZAM
+	dw HIDDEN_POWER, HYPNOSIS, PSYBEAM, REFLECT
 	db -1 ; end
 
 	end_list_items

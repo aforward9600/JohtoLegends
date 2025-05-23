@@ -140,6 +140,8 @@ CHRIS EQU __enum__
 	const CARL
 	const PEDRO
 	const JOSE2
+	const SAL2
+	const SAL3
 
 	trainerclass LASS ; 19
 	const JACKIE
@@ -408,6 +410,8 @@ CHRIS EQU __enum__
 	const MARK
 	const HOUDINI
 	const JEREMY_PSYCHIC
+	const JORDAN_2
+	const JORDAN_3
 
 	trainerclass PICNICKER ; 35
 	const HAYLEE

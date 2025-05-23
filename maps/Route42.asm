@@ -38,11 +38,24 @@ TrainerPsychicJordan:
 	writetext PsychicJordanLetsDoItText
 	waitbutton
 	winlosstext PsychicJordanBeatenText, 0
+	checkflag ENGINE_FOGBADGE
+	iftrue .JordanRematch2
 	loadtrainer PSYCHIC_T, JORDAN
+.StartJordanBattle
 	startbattle
 	reloadmapafterbattle
 	closetext
 	end
+
+.JordanRematch2
+	checkflag ENGINE_MINERALBADGE
+	iftrue .JordanRematch3
+	loadtrainer PSYCHIC_T, JORDAN_2
+	sjump .StartJordanBattle
+
+.JordanRematch3
+	loadtrainer PSYCHIC_T, JORDAN_2
+	sjump .StartJordanBattle
 
 .Refused:
 	writetext PsychicJordanRefusedText
@@ -73,10 +86,11 @@ TrainerTeacherCadi:
 	playmusic MUSIC_BEAUTY_ENCOUNTER
 	writetext TeacherCadiLetsDoItText
 	waitbutton
+	winlosstext TeacherCadiBeatenText, 0
 	checkflag ENGINE_FOGBADGE
 	iftrue .CadiRematch1
-	winlosstext TeacherCadiBeatenText, 0
 	loadtrainer TEACHER, CADI
+.StartCadiBattle:
 	startbattle
 	reloadmapafterbattle
 	closetext
@@ -91,20 +105,12 @@ TrainerTeacherCadi:
 .CadiRematch1:
 	checkflag ENGINE_MINERALBADGE
 	iftrue .CadiRematch2
-	winlosstext TeacherCadiBeatenText, 0
 	loadtrainer TEACHER, CADI2
-	startbattle
-	reloadmapafterbattle
-	closetext
-	end
+	sjump .StartCadiBattle
 
 .CadiRematch2:
-	winlosstext TeacherCadiBeatenText, 0
 	loadtrainer TEACHER, CADI3
-	startbattle
-	reloadmapafterbattle
-	closetext
-	end
+	sjump .StartCadiBattle
 
 Route42Sign1:
 	jumptext Route42Sign1Text

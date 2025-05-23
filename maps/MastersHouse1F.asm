@@ -490,7 +490,7 @@ ChooseKabuto:
 	yesorno
 	iffalse DidntChooseLarvitarScript
 	disappear MASTERSHOUSE1F_POKE_BALL1
-	setevent EVENT_GOT_DRATINI_FROM_MASTER
+	setevent EVENT_GOT_LARVITAR_FROM_MASTER
 	writetext ChoseKabutoText
 	buttonsound
 	waitsfx
@@ -501,7 +501,7 @@ ChooseKabuto:
 	buttonsound
 	givepoke KABUTO, 5, ORAN_BERRY
 	closetext
-	sjump RivalLarvitarScript
+	sjump RivalDratiniScript
 
 DidntChooseDratiniScript:
 	writetext DidntChooseDratiniText

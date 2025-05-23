@@ -21,10 +21,37 @@ TrainerBirdKeeperSal:
 .Script:
 	endifjustbattled
 	opentext
+	writetext BirdKeeperSalRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_YOUNGSTER_ENCOUNTER
+	writetext BirdKeeperSalYesText
+	waitbutton
+	winlosstext BirdKeeperSalBeatenText, 0
+	checkflag ENGINE_FOGBADGE
+	iftrue .SalRematch2
+	loadtrainer BIRD_KEEPER, SAL
+.StartSalBattle
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.Refused
 	writetext BirdKeeperSalAfterBattleText
 	waitbutton
 	closetext
 	end
+
+.SalRematch2:
+	checkflag ENGINE_PLAINBADGE
+	iftrue .SalRematch3
+	loadtrainer BIRD_KEEPER, SAL2
+	sjump .StartSalBattle
+
+.SalRematch3:
+	loadtrainer BIRD_KEEPER, SAL3
+	sjump .StartSalBattle
 
 TrainerSchoolboyFinn:
 	trainer SCHOOLBOY, FINN, EVENT_BEAT_SCHOOLBOY_FINN, SchoolboyFinnSeenText, SchoolboyFinnBeatenText, 0, .Script
@@ -69,17 +96,6 @@ TrainerYoungsterGordy:
 	waitbutton
 	closetext
 	end
-
-;TrainerBugCatcherColton:
-;	trainer BUG_CATCHER, COLTON, EVENT_BEAT_BUG_CATCHER_COLTON, BugCatcherColtonSeenText, BugCatcherColtonBeatenText, 0, .Script
-;
-;.Script:
-;	endifjustbattled
-;	opentext
-;	writetext BugCatcherColtonAfterBattleText
-;	waitbutton
-;	closetext
-;	end
 
 Route44Sign1:
 	jumptext Route44Sign1Text
@@ -288,6 +304,19 @@ Route44Sign2Text:
 
 	para "Mahogany Town -"
 	line "Blackthorn City"
+
+	para "Bird Keeper Sal"
+	line "is always willing"
+	cont "to fly."
+	done
+
+BirdKeeperSalRematchText:
+	text "Ready to fight my"
+	line "birds again?"
+	done
+
+BirdKeeperSalYesText:
+	text "Let's soar!"
 	done
 
 Route44_MapEvents:
