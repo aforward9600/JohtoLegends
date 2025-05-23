@@ -98,10 +98,9 @@ vibrato: MACRO
 	db \2 ; extent
 ENDM
 
-	enum unknownmusic0xe2_cmd ; $e2
-unknownmusic0xe2: MACRO
-	db unknownmusic0xe2_cmd
-	db \1 ; unknown
+	enum music0xe2_cmd ; $e2
+music0xe2: MACRO
+	db music0xe2_cmd
 ENDM
 
 	enum togglenoise_cmd ; $e3
@@ -128,16 +127,14 @@ tone: MACRO
 	bigdw \1 ; tone
 ENDM
 
-	enum unknownmusic0xe7_cmd ; $e7
-unknownmusic0xe7: MACRO
-	db unknownmusic0xe7_cmd
-	db \1 ; unknown
+	enum music0xe7_cmd ; $e7
+music0xe7: MACRO
+	db music0xe7_cmd
 ENDM
 
-	enum unknownmusic0xe8_cmd ; $e8
-unknownmusic0xe8: MACRO
-	db unknownmusic0xe8_cmd
-	db \1 ; unknown
+	enum music0xe8_cmd ; $e8
+music0xe8: MACRO
+	db music0xe8_cmd
 ENDM
 
 	enum tempo_relative_cmd ; $e9

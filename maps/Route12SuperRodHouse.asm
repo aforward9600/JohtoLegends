@@ -22,10 +22,6 @@ Route12SuperRodHouseFishingGuruScript:
 	closetext
 	end
 
-SuperRodHouseBookshelf:
-; unused
-	jumpstd picturebookshelf
-
 OfferSuperRodText:
 	text "It used to be so"
 	line "quiet out here."

@@ -1263,15 +1263,6 @@ PokegearPhoneContactSubmenu:
 	dw .Call
 	dw .Cancel
 
-; unused
-	ldh a, [hHours]
-	cp 12
-	jr c, .am
-	sub 12
-	ld [wTempByteValue], a
-	scf
-	ret
-
 .am
 	ld [wTempByteValue], a
 	and a
@@ -1476,14 +1467,6 @@ MusicPlayer:
 ;	call PlaceString
 ;	ld a, $1
 ;	ldh [hBGMapMode], a
-	ret
-
-; unused
-	ld [wPokegearRadioChannelBank], a
-	ld a, [hli]
-	ld [wPokegearRadioChannelAddr], a
-	ld a, [hli]
-	ld [wPokegearRadioChannelAddr + 1], a
 	ret
 
 MusicPlayerData:
@@ -2887,9 +2870,6 @@ LoadStation_PokeFluteRadio:
 	ret
 
 LoadStation_EvolutionRadio:
-	ret
-
-Unreferenced_LoadStation:
 	ret
 
 RadioMusicRestartDE:

@@ -314,8 +314,6 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	db   "Journal"
 	next "Play Time@"
 
-	db "@" ; unused
-
 .Badges:
 	db "  Badges▶@"
 

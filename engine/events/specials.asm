@@ -15,9 +15,6 @@ Special::
 
 INCLUDE "data/special_pointers.asm"
 
-DummySpecial_c224:
-	ret
-
 SetPlayerPalette:
 	ld a, [wScriptVar]
 	ld d, a
@@ -35,11 +32,6 @@ GameCornerPrizeMonCheckDex:
 	ld [wNamedObjectIndexBuffer], a
 	farcall NewPokedexEntry
 	call ExitAllMenus
-	ret
-
-UnusedSetSeenMon:
-	ld a, [wScriptVar]
-	call SetSeenMon
 	ret
 
 FindPartyMonAboveLevel:

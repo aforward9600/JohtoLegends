@@ -93,26 +93,6 @@ CelebiEvent_CountDown:
 	set 7, [hl]
 	ret
 
-CelebiEvent_SpawnLeaf:
-; unused
-	ld hl, wcf65
-	ld a, [hl]
-	inc [hl]
-	and $7
-	ret nz
-	ld a, [hl]
-	and $18
-	sla a
-	add $40
-	ld d, a
-	ld e, $0
-	ld a, SPRITE_ANIM_INDEX_FLY_LEAF ; fly land
-	call _InitSpriteAnimStruct
-	ld hl, SPRITEANIMSTRUCT_TILE_ID
-	add hl, bc
-	ld [hl], $80
-	ret
-
 SpecialCelebiLeafGFX:
 INCBIN "gfx/overworld/cut_grass.2bpp"
 

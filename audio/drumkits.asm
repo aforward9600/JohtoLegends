@@ -96,7 +96,6 @@ Drumkit5:
 	dw Kick2
 
 Drum00:
-; unused
 	noise C#,  1, $11, $00
 	endchannel
 

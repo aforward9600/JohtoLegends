@@ -146,37 +146,6 @@ BillsPC_DepositMenu:
 	and a
 	ret
 
-Unreferenced_Functione512:
-	ld a, [wPartyCount]
-	and a
-	jr z, .no_mon
-	cp 2
-	jr c, .only_one_mon
-	and a
-	ret
-
-.no_mon
-	ld hl, .Text_NoMon
-	call MenuTextboxBackup
-	scf
-	ret
-
-.only_one_mon
-	ld hl, .Text_ItsYourLastMon
-	call MenuTextboxBackup
-	scf
-	ret
-
-.Text_NoMon:
-	; You don't have a single #MON!
-	text_far UnknownText_0x1c1062
-	text_end
-
-.Text_ItsYourLastMon:
-	; You can't deposit your last #MON!
-	text_far UnknownText_0x1c1080
-	text_end
-
 CheckCurPartyMonFainted:
 	ld hl, wPartyMon1HP
 	ld de, PARTYMON_STRUCT_LENGTH
@@ -214,24 +183,6 @@ BillsPC_WithdrawMenu:
 	call CloseWindow
 	and a
 	ret
-
-Unreferenced_Functione56d:
-	ld a, [wPartyCount]
-	cp PARTY_LENGTH
-	jr nc, .asm_e576
-	and a
-	ret
-
-.asm_e576
-	ld hl, UnknownText_0xe57e
-	call MenuTextboxBackup
-	scf
-	ret
-
-UnknownText_0xe57e:
-	; You can't take any more #MON.
-	text_far UnknownText_0x1c10a2
-	text_end
 
 BillsPC_ChangeBoxMenu:
 	farcall _ChangeBox

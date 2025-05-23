@@ -60,13 +60,6 @@ GameFreakGraphicArtistScript:
 	closetext
 	end
 
-.CancelPrinting:
-; unused
-	writetext GameFreakGraphicArtistErrorText
-	waitbutton
-	closetext
-	end
-
 Ax6Script:
 	faceplayer
 	opentext

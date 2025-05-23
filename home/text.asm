@@ -215,7 +215,6 @@ else
 endc
 ENDM
 
-	dict "<MOBILE>",  MobileScriptChar
 	dict "<LINE>",    LineChar
 	dict "<LNBRK>",   LineBreak
 	dict "<NEXT>",    NextLineChar
@@ -255,12 +254,6 @@ ENDM
 	ld [hli], a
 	call PrintLetterDelay
 	jp NextChar
-
-MobileScriptChar::
-	ld c, l
-	ld b, h
-	farcall RunMobileScript
-	jp PlaceNextChar
 
 print_name: MACRO
 	push de

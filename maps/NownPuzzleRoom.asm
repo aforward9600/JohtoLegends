@@ -127,11 +127,6 @@ NownPuzzleRoomWallPatternLeftText:
 	line "on the walls…"
 	done
 
-NownPuzzleRoomUnownText:
-; unused
-	text "It's UNOWN text!"
-	done
-
 NownPuzzleRoomWallPatternRightText:
 	text "Patterns appeared"
 	line "on the walls…"

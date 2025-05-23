@@ -5,8 +5,7 @@
 Colosseum_MapScripts:
 	db 3 ; scene scripts
 	scene_script .InitializeColosseum ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_FINISHED
-	scene_script .DummyScene2 ; unused
+	end
 
 	db 2 ; callbacks
 	callback MAPCALLBACK_OBJECTS, .SetWhichChris
@@ -14,12 +13,6 @@ Colosseum_MapScripts:
 
 .InitializeColosseum:
 	prioritysjump .InitializeAndPreparePokecenter2F
-	end
-
-.DummyScene1:
-	end
-
-.DummyScene2:
 	end
 
 .SetWhichChris:

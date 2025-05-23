@@ -906,17 +906,6 @@ SellMenu:
 	and a
 	ret
 
-.Unreferenced_NothingToSell:
-	ld hl, .NothingToSellText
-	call MenuTextboxBackup
-	and a
-	ret
-
-.NothingToSellText:
-	; You don't have anything to sell.
-	text_far UnknownText_0x1c4f12
-	text_end
-
 .TryToSellItem:
 	farcall CheckItemMenu
 	ld a, [wItemAttributeParamBuffer]
@@ -990,9 +979,6 @@ Text_Mart_ICanPayThisMuch:
 	; I can pay you ¥@ . Is that OK?
 	text_far UnknownText_0x1c4f3e
 	text_end
-
-.UnusedString15f7d:
-	db "！ダミー！@"
 
 Text_Mart_HowMayIHelpYou:
 	; Welcome! How may I help you?

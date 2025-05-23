@@ -48,20 +48,6 @@ ElmsPichuText:
 	text "Pichu: Piiii!"
 	done
 
-ElmsHouseLabFoodText:
-; unused
-	text "There's some food"
-	line "here. It must be"
-	cont "for the LAB."
-	done
-
-ElmsHousePokemonFoodText:
-; unused
-	text "There's some food"
-	line "here. This must be"
-	cont "for #MON."
-	done
-
 ElmsHousePCText:
 	text "#mon. Where do"
 	line "they come from? "

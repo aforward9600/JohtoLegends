@@ -1350,10 +1350,6 @@ InitMysteryGiftLayout:
 	ld b,  5
 	jr .gfx_loop
 
-.Unreferenced_Load6GFX:
-	ld b,  6
-	jr .gfx_loop
-
 .Load16GFX:
 	ld b, 16
 
@@ -1428,7 +1424,6 @@ Function105688:
 	ld hl, Text_ReceivedCard
 	call PrintText
 	ld de, wMysteryGiftTrainerData
-	farcall Function8ac70
 	ld a, c
 	ld [wDeciramBuffer], a
 	ld hl, Text_CardNotRegistered

@@ -701,10 +701,6 @@ MonMenu_Fly:
 	ld a, $0
 	ret
 
-.Unreferenced:
-	ld a, $1
-	ret
-
 MonMenu_Flash:
 	farcall OWFlash
 	ld a, [wFieldMoveSucceeded]

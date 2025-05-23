@@ -69,10 +69,6 @@ UnionCave1FFullRestore:
 UnionCave1FPearl:
 	itemball PEARL
 
-UnionCave1FUnusedSign:
-; unused
-	jumptext UnionCave1FUnusedSignText
-
 HikerRussellSeenText:
 	text "You're headed to"
 	line "AZALEA, are you?"
@@ -178,10 +174,6 @@ FirebreatherBlartAfterBattleText:
 
 	para "You didn't seem"
 	line "that impressed."
-	done
-
-UnionCave1FUnusedSignText:
-	text "Union Cave"
 	done
 
 UnionCave1F_MapEvents:

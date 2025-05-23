@@ -56,13 +56,6 @@ LinkReceptionistScript_Trade:
 	writetext Text_TradeReceptionistIntro
 	yesorno
 	iffalse .Cancel
-	special Mobile_DummyReturnFalse ; always returns false
-	iffalse .NoMobile
-	writetext Text_TradeReceptionistMobile
-	special AskMobileOrCable
-	iffalse .Cancel
-	ifequal $1, .Mobile
-.NoMobile:
 	special SetBitsForLinkTradeRequest
 	writetext Text_PleaseWait
 	special WaitForLinkedFriend
@@ -134,7 +127,6 @@ LinkReceptionistScript_Trade:
 	iffalse .Mobile_DidNotSave
 	special TryQuickSave
 	iffalse .Mobile_DidNotSave
-	special Function1011f1
 	writetext Text_PleaseComeIn2
 	waitbutton
 	closetext
@@ -157,13 +149,7 @@ LinkReceptionistScript_Battle:
 	writetext Text_BattleReceptionistIntro
 	yesorno
 	iffalse .Cancel
-	special Mobile_DummyReturnFalse ; always returns false
-	iffalse .NoMobile
-	writetext Text_BattleReceptionistMobile
-	special AskMobileOrCable
-	iffalse .Cancel
-	ifequal $1, .Mobile
-.NoMobile:
+
 	special SetBitsForBattleRequest
 	writetext Text_PleaseWait
 	special WaitForLinkedFriend
@@ -217,57 +203,6 @@ LinkReceptionistScript_Battle:
 	special WaitForOtherPlayerToExit
 .Cancel:
 	closetext
-	end
-
-.Mobile:
-	scall .SelectThreeMons
-	iffalse .Mobile_Abort
-	scall .Mobile_TrySave
-	iftrue .Mobile_Abort
-	scall BattleTradeMobile_WalkIn
-	warpcheck
-	end
-
-.Mobile_Abort:
-	end
-
-.Mobile_TrySave:
-	writetext Text_MustSaveGame
-	yesorno
-	iffalse .Mobile_DidNotSave
-	special Function103780
-	iffalse .Mobile_DidNotSave
-	special Function1011f1
-	writetext Text_PleaseComeIn2
-	waitbutton
-	closetext
-	setval FALSE
-	end
-
-.Mobile_DidNotSave:
-	writetext Text_PleaseComeAgain
-	closetext
-	setval TRUE
-	end
-
-.SelectThreeMons:
-	special Mobile_SelectThreeMons
-	iffalse .Mobile_DidNotSelect
-	ifequal $1, .Mobile_OK
-	ifequal $2, .Mobile_OK
-	ifequal $3, .Mobile_InvalidParty
-	sjump .Mobile_DidNotSelect
-
-.Mobile_InvalidParty:
-	writetext Text_BrokeStadiumRules
-	waitbutton
-.Mobile_DidNotSelect:
-	closetext
-	setval FALSE
-	end
-
-.Mobile_OK:
-	setval TRUE
 	end
 
 Script_LeftCableTradeCenter:

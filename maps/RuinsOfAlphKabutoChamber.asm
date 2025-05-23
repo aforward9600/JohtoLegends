@@ -200,33 +200,9 @@ UnknownText_0x589b8:
 	cont "this wall here…"
 	done
 
-RuinsOfAlphKabutoChamberUnusedText:
-; unused
-	text "The patterns on"
-	line "the wall appear to"
-	cont "be words!"
-
-	para "And those sliding"
-	line "stone panels seem"
-
-	para "to be signals of"
-	line "some kind."
-
-	para "I think they make"
-	line "#MON appear,"
-
-	para "but it's not clear"
-	line "yet…"
-	done
-
 RuinsOfAlphKabutoChamberWallPatternLeftText:
 	text "Patterns appeared"
 	line "on the walls…"
-	done
-
-RuinsOfAlphKabutoChamberUnownText:
-; unused
-	text "It's UNOWN text!"
 	done
 
 RuinsOfAlphKabutoChamberWallPatternRightText:

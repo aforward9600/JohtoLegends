@@ -177,10 +177,6 @@ RuinsOfAlphResearchCenterPrinter:
 	closetext
 	end
 
-RuinsOfAlphResearchCenterPhoto:
-; unreferenced
-	jumptext RuinsOfAlphResearchCenterProfSilktreePhotoText
-
 RuinsOfAlphResearchCenterBookshelf:
 	jumptext RuinsOfAlphResearchCenterAcademicBooksText
 
@@ -315,36 +311,6 @@ RuinsOfAlphResearchCenterScientist2Text_UnownAppeared:
 	cont "kinds of them…"
 	done
 
-RuinsOfAlphResearchCenterUnusedText1:
-; unused
-	text "We think something"
-	line "caused the cryptic"
-
-	para "patterns to appear"
-	line "in the Ruins."
-
-	para "We've focused our"
-	line "studies on that."
-	done
-
-RuinsOfAlphResearchCenterUnusedText2:
-; unused
-	text "According to my"
-	line "research…"
-
-	para "Those mysterious"
-	line "patterns appeared"
-
-	para "when the #COM"
-	line "CENTER was built."
-
-	para "It must mean that"
-	line "radio waves have"
-
-	para "some sort of a"
-	line "link…"
-	done
-
 RuinsOfAlphResearchCenterScientist2Text_GotAllUnown:
 	text "You caught all the"
 	line "Unown! Impressive!"
@@ -401,15 +367,6 @@ RuinsOfAlphResearchCenterPrinterText_DoesntWork:
 RuinsOfAlphResearchCenterUnownPrinterText:
 	text "Unown may be"
 	line "printed out."
-	done
-
-RuinsOfAlphResearchCenterProfSilktreePhotoText:
-; unused
-	text "It's a photo of"
-	line "the Research"
-
-	para "Center'S founder,"
-	line "PROF.SILKTREE."
 	done
 
 RuinsOfAlphResearchCenterAcademicBooksText:

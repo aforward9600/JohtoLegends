@@ -98,8 +98,6 @@ _GrewToLevelText::
 	text_waitbutton
 	text_end
 
-	text_end ; unused
-
 _CameToItsSensesText::
 	text_ram wStringBuffer1
 	text " came"
@@ -446,8 +444,6 @@ _TradingText8::
 	text_ram wOTTrademonSpeciesName
 	text_end
 
-	text_end ; unused
-
 _TradingText9::
 	text "for @"
 	text_ram wPlayerTrademonSenderName
@@ -463,8 +459,6 @@ _TradingText10::
 	line "trade @"
 	text_ram wPlayerTrademonSpeciesName
 	text_end
-
-	text_end ; unused
 
 _TradingText11::
 	text "for @"
@@ -926,8 +920,6 @@ _ReceiveItemText::
 	text_waitbutton
 	text_end
 
-	text_end ; unused
-
 _NoCoinsText::
 	text "You have no coins."
 	prompt
@@ -956,8 +948,6 @@ UnknownText_0x1bd445::
 	sound_dex_fanfare_80_109
 	text_pause
 	text_end
-
-	text_end ; unused
 
 _NPCTradeIntroText1::
 	text "I collect #mon."

@@ -993,10 +993,3 @@ DayCareMonCompatibilityText:
 	; It shows interest in @ .
 	text_far UnknownText_0x1c0ec6
 	text_end
-
-Unreferenced_DayCareMonPrintEmptyString:
-	ld hl, .string
-	ret
-
-.string
-	db "@"

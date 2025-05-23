@@ -131,7 +131,6 @@ BattleTowerRoomMenu_InitRAM:
 	ldh [hMobileReceive], a
 	ldh [hMobile], a
 	ei
-	farcall Stubbed_Function106462
 	farcall Function106464
 	farcall Function115d99
 	farcall Function11615a
@@ -1754,7 +1753,6 @@ Function11a9ce:
 	call ClearBGPalettes
 	call ReloadTilesetAndPalettes
 	call ExitMenu
-	farcall Stubbed_Function106462
 	farcall Function106464
 	farcall FinishExitMenu
 	call UpdateSprites
@@ -3056,35 +3054,6 @@ Function11b397:
 	inc de
 	jr .loop
 
-Unreferenced_Function11b3b6:
-.loop
-	ld a, [hl]
-	cp -1
-	ret z
-	ld a, [wcd4d]
-	and $7
-	swap a
-	add [hl]
-	inc hl
-	ld [de], a
-	inc de
-	ld a, [hli]
-	ld [de], a
-	inc de
-	push hl
-	ld l, c
-	ld h, b
-	ld a, [wcd4e]
-	add [hl]
-	inc bc
-	ld [de], a
-	inc de
-	pop hl
-	ld a, $5
-	ld [de], a
-	inc de
-	jr .loop
-
 Function11b3d9:
 	ld de, wVirtualOAMSprite28
 	push de
@@ -3156,285 +3125,6 @@ Function11b3d9:
 	ld [hli], a
 	xor a
 	ld [hl], a
-	ret
-
-Function11b444:
-; special
-	call Mobile46_InitJumptable
-	call Mobile46_RunJumptable
-	ret
-
-Mobile46_InitJumptable:
-	xor a
-	ld [wJumptableIndex], a
-	ld [wcf64], a
-	ld [wcf65], a
-	ld [wcf66], a
-	call UpdateTime
-	ret
-
-Mobile46_RunJumptable:
-.loop
-	call .IterateJumptable
-	call DelayFrame
-	ld a, [wJumptableIndex]
-	cp 4
-	jr nz, .loop
-	ret
-
-.IterateJumptable:
-	jumptable .Jumptable, wJumptableIndex
-
-.Jumptable:
-	dw Function11b483
-	dw Function11b570
-	dw Function11b5c0
-	dw Function11b5e0
-	dw Function11b5e7 ; unused
-
-Function11b483:
-	call .InitRAM
-	ld hl, wPlayerName
-	ld a, NAME_LENGTH_JAPANESE - 1
-.loop1
-	push af
-	ld a, [hli]
-	ld [bc], a
-	inc bc
-	pop af
-	dec a
-	and a
-	jr nz, .loop1
-
-	ld de, PARTYMON_STRUCT_LENGTH
-	ld hl, wPartyMon1Species
-	ld a, [wcd82]
-	dec a
-	push af
-.loop2
-	and a
-	jr z, .okay
-	add hl, de
-	dec a
-	jr .loop2
-
-.okay
-	push bc
-	ld a, PARTYMON_STRUCT_LENGTH
-.loop3
-	push af
-	ld a, [hli]
-	ld [bc], a
-	inc bc
-	pop af
-	dec a
-	and a
-	jr nz, .loop3
-
-	pop de
-	push bc
-	ld a, [de]
-	ld [wCurSpecies], a
-	call GetBaseData
-	ld hl, MON_LEVEL
-	add hl, de
-	ld a, [hl]
-	ld [wCurPartyLevel], a
-	ld hl, MON_MAXHP
-	add hl, de
-	push hl
-	ld hl, MON_EVS - 1
-	add hl, de
-	pop de
-	push de
-	ld b, TRUE
-	predef CalcMonStats
-	pop de
-	ld h, d
-	ld l, e
-	dec hl
-	dec hl
-	ld a, [de]
-	ld [hli], a
-	inc de
-	ld a, [de]
-	ld [hl], a
-	pop bc
-	ld de, NAME_LENGTH
-	ld hl, wPartyMonOT
-	pop af
-	push af
-.loop4
-	and a
-	jr z, .okay2
-	add hl, de
-	dec a
-	jr .loop4
-
-.okay2
-	ld a, NAME_LENGTH - 1
-.loop5
-	push af
-	ld a, [hli]
-	ld [bc], a
-	inc bc
-	pop af
-	dec a
-	and a
-	jr nz, .loop5
-	ld de, NAME_LENGTH
-	ld hl, wPartyMonNicknames
-	pop af
-	push af
-.loop6
-	and a
-	jr z, .okay3
-	add hl, de
-	dec a
-	jr .loop6
-
-.okay3
-	ld a, NAME_LENGTH - 1
-.loop7
-	push af
-	ld a, [hli]
-	ld [bc], a
-	inc bc
-	pop af
-	dec a
-	and a
-	jr nz, .loop7
-	ld de, MAIL_STRUCT_LENGTH
-	ld hl, sPartyMail
-	pop af
-.loop8
-	and a
-	jr z, .okay4
-	add hl, de
-	dec a
-	jr .loop8
-
-.okay4
-	ld a, BANK(sPartyMail)
-	call GetSRAMBank
-	ld a, MAIL_STRUCT_LENGTH
-.loop9
-	push af
-	ld a, [hli]
-	ld [bc], a
-	inc bc
-	pop af
-	dec a
-	and a
-	jr nz, .loop9
-	call CloseSRAM
-	jp Function11ad8a
-
-.InitRAM:
-	ld bc, $c626
-	ld a, [wPlayerID]
-	ld [wcd2a], a
-	ld [bc], a
-	inc bc
-
-	ld a, [wPlayerID + 1]
-	ld [wcd2b], a
-	ld [bc], a
-	inc bc
-
-	ld a, [wSecretID]
-	ld [wcd2c], a
-	ld [bc], a
-	inc bc
-
-	ld a, [wSecretID + 1]
-	ld [wcd2d], a
-	ld [bc], a
-	inc bc
-
-	ld a, [wcd2e]
-	ld [bc], a
-	inc bc
-
-	ld a, [wcd2f]
-	ld [bc], a
-	inc bc
-
-	ld a, [wcd30]
-	ld [bc], a
-	inc bc
-
-	ld a, [wd265]
-	ld [bc], a
-	inc bc
-	ret
-
-Function11b570:
-	ld a, [wScriptVar]
-	and a
-	jr nz, .exit
-	call .SaveData
-	jp Function11ad8a
-
-.exit
-	ld a, $4
-	ld [wJumptableIndex], a
-	ret
-
-.SaveData:
-	ld a, $3
-	ldh [rSVBK], a
-
-	ld hl, w3_d800
-	ld de, $c608
-	ld bc, w3_d88f - w3_d800
-	call CopyBytes
-
-	ld a, $1
-	ldh [rSVBK], a
-	ld a, $5
-	call GetSRAMBank
-
-	ld de, $a800
-	ld a, $1
-	ld [de], a
-	inc de
-	ld hl, $c608
-	ld bc, w3_d88f - w3_d800
-	call CopyBytes
-
-	push de
-	pop hl
-
-	ldh a, [hRTCMinutes]
-	ld [hli], a
-	ldh a, [hRTCHours]
-	ld [hli], a
-	ldh a, [hRTCDayLo]
-	ld [hli], a
-	ldh a, [hRTCDayHi]
-	ld [hl], a
-
-	call CloseSRAM
-	ret
-
-Function11b5c0:
-	ld a, [wcd82]
-	dec a
-	ld [wCurPartyMon], a
-	xor a ; REMOVE_PARTY
-	ld [wPokemonWithdrawDepositParameter], a
-	farcall RemoveMonFromPartyOrBox
-	farcall Function170807
-	farcall SaveAfterLinkTrade
-	jp Function11ad8a
-
-Function11b5e0:
-	xor a
-	ld [wScriptVar], a
-	jp Function11ad8a
-
-Function11b5e7:
 	ret
 
 Function11b6b4:
@@ -3601,7 +3291,6 @@ Function11b7e5:
 	ld [wOTTrademonCaughtData], a
 	call SpeechTextbox
 	call FadeToMenu
-	farcall MobileTradeAnimation_ReceiveGetmonFromGTS
 	farcall Function17d1f1
 	ld a, $1
 	ld [wForceEvolution], a

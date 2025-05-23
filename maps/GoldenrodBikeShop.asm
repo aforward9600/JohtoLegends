@@ -9,9 +9,6 @@ GoldenrodBikeShop_MapScripts:
 
 	db 0 ; callbacks
 
-.UnreferencedDummyScene:
-	end
-
 GoldenrodBikeShopBicycle:
 	jumptext GoldenrodBikeShopBicycleText
 

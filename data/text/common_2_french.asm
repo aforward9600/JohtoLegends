@@ -327,8 +327,6 @@ UnknownText_0x1c0609::
 	text_waitbutton
 	text_end
 
-	text_end ; unused
-
 _UsedSurfText::
 	text "Lapras appeared"
 	line "and let you ride!"
@@ -671,8 +669,6 @@ UnknownText_0x1c0cc6::
 	text_ram wStringBuffer2
 	text_end
 
-	text_end ; unused
-
 UnknownText_0x1c0cd0::
 	text_pause
 	text "<SCROLL>went way up!"
@@ -687,8 +683,6 @@ UnknownText_0x1c0ceb::
 	line "@"
 	text_ram wStringBuffer2
 	text_end
-
-	text_end ; unused
 
 UnknownText_0x1c0cf5::
 	text_pause
@@ -774,8 +768,6 @@ UnknownText_0x1c0dba::
 	sound_caught_mon
 	text_waitbutton
 	text_end
-
-	text_end ; unused
 
 UnknownText_0x1c0dd8::
 	text "Give a nickname to"
@@ -883,8 +875,6 @@ UnknownText_0x1c0fbc::
 	line "Animation type @"
 	text_ram wStringBuffer2
 	text_end
-
-	text_end ; unused
 
 UnknownText_0x1c0fdd::
 	text "#mon number?"
@@ -1031,8 +1021,6 @@ UnknownText_0x1c123a::
 	text_ram wMagikarpRecordHoldersName
 	text_waitbutton
 	text_end
-
-	text_end ; unused
 
 UnknownText_0x1c1261::
 	text "Congratulations!"
@@ -1529,8 +1517,6 @@ _OakText2::
 _OakText3::
 	text_waitbutton
 	text_end
-
-	text_end ; unused
 
 _OakText4::
 	text "Humains et #mon"

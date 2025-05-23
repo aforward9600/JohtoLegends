@@ -372,8 +372,6 @@ BattleText_StringBuffer1GrewToLevel:
 	sound_dex_fanfare_50_79
 	text_end
 
-	text_end ; unused
-
 BattleText_WildMonIsEating:
 	text "Wild @"
 	text_ram wEnemyMonNick

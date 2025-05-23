@@ -210,13 +210,6 @@ RestartClock:
 	ld [wBuffer2], a
 	ret
 
-.unreferenced
-; unused
-	ld a, [wBuffer3]
-	ld b, a
-	call Coord2Tile
-	ret
-
 .PlaceChars:
 	push de
 	call RestartClock_GetWraparoundTime
@@ -230,11 +223,3 @@ RestartClock:
 	add hl, bc
 	ld [hl], e
 	ret
-
-UnreferencedString_HourJP:
-; unused
-	db "じ@" ; HR
-
-UnreferencedString_MinuteJP:
-; unused
-	db "ふん@" ; MIN

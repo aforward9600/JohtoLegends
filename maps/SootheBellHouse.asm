@@ -40,14 +40,6 @@ SootheBellHouseClefairyScript:
 	closetext
 	end
 
-SootheBellBookshelf1:
-; unused
-	jumpstd picturebookshelf
-
-SootheBellBookshelf2:
-; unused
-	jumpstd magazinebookshelf
-
 SootheBellTelevision:
 	jumpstd televisionscript
 

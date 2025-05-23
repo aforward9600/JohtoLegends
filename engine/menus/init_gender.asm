@@ -19,8 +19,6 @@ InitCrystalData:
 	ld [wd479], a
 	ret
 
-INCLUDE "mobile/mobile_12.asm"
-
 InitGenderScreenPrep:
 	ld a, $10
 	ld [wMusicFade], a

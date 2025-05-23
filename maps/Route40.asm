@@ -88,12 +88,7 @@ Route40Lass1Script:
 	jumptextfaceplayer Route40Lass1Text
 
 Route40PokefanMScript:
-	special Mobile_DummyReturnFalse
-	iftrue .mobile
 	jumptextfaceplayer Route40PokefanMText
-
-.mobile
-	jumptextfaceplayer Route40PokefanMText_Mobile
 
 Route40Lass2Script:
 	jumptextfaceplayer Route40Lass2Text
@@ -214,17 +209,6 @@ BugCatcherArthurAfterBattleText:
 	line "for me."
 
 	para "…hopefully…"
-	done
-
-BugCatcherArthurAfterBattleText2: ; unused
-	text "My friend always"
-	line "says:"
-
-	para "Just keep swim-"
-	line "ming. Usually in"
-	cont "a sing-songy"
-
-	para "voice."
 	done
 
 LassArielleSeenText:
