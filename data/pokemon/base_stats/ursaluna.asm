@@ -7,7 +7,7 @@
 	db GROUND, NORMAL ; type
 	db 20 ; catch rate
 	db 246 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db ORAN_BERRY, SITRUS_BERRY ; items
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/ursaluna/front.dimensions"

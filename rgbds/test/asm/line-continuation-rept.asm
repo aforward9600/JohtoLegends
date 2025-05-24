@@ -1,8 +1,0 @@
-m: MACRO
-ENDM
-
-REPT 1
-	m ENDR
-
-REPT 1
-	m \ ENDR

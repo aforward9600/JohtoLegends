@@ -1,3 +1,0 @@
-ERROR: local-without-parent.asm(2):
-    Local label '.test' in main scope
-error: Assembly aborted (1 errors)!

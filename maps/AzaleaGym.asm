@@ -95,8 +95,6 @@ AzaleaGymKurtScript:
 	closetext
 	winlosstext KurtText_NoRespect, KurtText_Respect
 	loadtrainer KURT, KURT1
-	startbattle
-	reloadmapafterbattle
 	sjump AfterKurtRematch
 
 .KurtBattle2:
@@ -105,8 +103,6 @@ AzaleaGymKurtScript:
 	closetext
 	winlosstext KurtText_NoRespect, KurtText_Respect
 	loadtrainer KURT, KURT2
-	startbattle
-	reloadmapafterbattle
 	sjump AfterKurtRematch
 
 .KurtBattle3:
@@ -115,8 +111,6 @@ AzaleaGymKurtScript:
 	closetext
 	winlosstext KurtText_NoRespect, KurtText_Respect
 	loadtrainer KURT, KURT3
-	startbattle
-	reloadmapafterbattle
 	sjump AfterKurtRematch
 
 .PostGameKurt:
@@ -125,28 +119,15 @@ AzaleaGymKurtScript:
 	closetext
 	winlosstext KurtText_NoRespect, KurtText_Respect
 	loadtrainer KURT, KURT4
+AfterKurtRematch:
 	startbattle
 	reloadmapafterbattle
-	sjump AfterKurtRematch
-
-AfterKurtRematch:
 	opentext
 	writetext KurtText_BeatenAgain
 	waitbutton
 	closetext
 	setflag ENGINE_BEAT_KURT
 	end
-
-AzaleaGymActivateRockets:
-	ifequal 7, .RadioTowerRockets
-	ifequal 6, .GoldenrodRockets
-	end
-
-.GoldenrodRockets:
-	jumpstd goldenrodrockets
-
-.RadioTowerRockets:
-	jumpstd radiotowerrockets
 
 TrainerTwinsGingerandsam1:
 	trainer TWINS, GINGERANDSAM1, EVENT_BEAT_TWINS_GINGER_AND_SAM, TwinsGingerandsam1SeenText, TwinsGingerandsam1BeatenText, 0, .AfterScript

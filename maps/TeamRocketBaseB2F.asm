@@ -335,7 +335,7 @@ TeamRocketBaseB2FTMThief:
 	itemball TM_THIEF
 
 TeamRocketBaseB2FLaprasCallB:
-	itemball LIGHT_CLAY
+	itemball SMOKE_BALL
 
 TeamRocketBaseB2FHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_TEAM_ROCKET_BASE_B2F_HIDDEN_FULL_HEAL

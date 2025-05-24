@@ -106,8 +106,6 @@ BlackthornGymMasterScript:
 	closetext
 	winlosstext MasterWinText, MasterLastMonText
 	loadtrainer MASTER, MASTER1
-	startbattle
-	reloadmapafterbattle
 	sjump .AfterMasterRematch
 
 .PostGameMaster:
@@ -116,9 +114,9 @@ BlackthornGymMasterScript:
 	closetext
 	winlosstext MasterWinText, MasterLastMonText
 	loadtrainer MASTER, MASTER2
+.AfterMasterRematch:
 	startbattle
 	reloadmapafterbattle
-.AfterMasterRematch:
 	opentext
 	writetext MasterBeatenAgainText
 	waitbutton

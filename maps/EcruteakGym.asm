@@ -74,7 +74,6 @@ EcruteakGymEnokiScript:
 	setflag ENGINE_FOGBADGE
 	loadmem wLevelCap, 28
 	readvar VAR_BADGES
-	scall EcruteakGymActivateRockets
 	setflag ENGINE_BEAT_ENOKI
 .FightDone:
 	checkflag ENGINE_BEAT_ENOKI
@@ -141,8 +140,6 @@ EcruteakGymEnokiScript:
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI, ENOKI_ALTERNATE
-	startbattle
-	reloadmapafterbattle
 	sjump AfterEnokiRematch
 
 .EnokiBattle2:
@@ -151,8 +148,6 @@ EcruteakGymEnokiScript:
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI_2, ENOKI2
-	startbattle
-	reloadmapafterbattle
 	sjump AfterEnokiRematch
 
 .EnokiBattle3:
@@ -161,8 +156,6 @@ EcruteakGymEnokiScript:
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI_2, ENOKI3
-	startbattle
-	reloadmapafterbattle
 	sjump AfterEnokiRematch
 
 .EnokiBattle4:
@@ -171,8 +164,6 @@ EcruteakGymEnokiScript:
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI_2, ENOKI4
-	startbattle
-	reloadmapafterbattle
 	sjump AfterEnokiRematch
 
 .EnokiBattle5:
@@ -181,8 +172,6 @@ EcruteakGymEnokiScript:
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI_3, ENOKI5
-	startbattle
-	reloadmapafterbattle
 	sjump AfterEnokiRematch
 
 .EnokiBattle6:
@@ -191,8 +180,6 @@ EcruteakGymEnokiScript:
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI_3, ENOKI6
-	startbattle
-	reloadmapafterbattle
 	sjump AfterEnokiRematch
 
 .EnokiBattle7:
@@ -201,8 +188,6 @@ EcruteakGymEnokiScript:
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI_3, ENOKI7
-	startbattle
-	reloadmapafterbattle
 	sjump AfterEnokiRematch
 
 .PostGameEnoki:
@@ -211,28 +196,15 @@ EcruteakGymEnokiScript:
 	closetext
 	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI_3, ENOKI8
+AfterEnokiRematch:
 	startbattle
 	reloadmapafterbattle
-	sjump AfterEnokiRematch
-
-AfterEnokiRematch:
 	opentext
 	writetext BeatenEnokiAgainText
 	waitbutton
 	closetext
 	setflag ENGINE_BEAT_ENOKI
 	end
-
-EcruteakGymActivateRockets:
-	ifequal 7, .RadioTowerRockets
-	ifequal 6, .GoldenrodRockets
-	end
-
-.GoldenrodRockets:
-	jumpstd goldenrodrockets
-
-.RadioTowerRockets:
-	jumpstd radiotowerrockets
 
 EcruteakGymClosed:
 	applymovement PLAYER, EcruteakGymPlayerStepUpMovement

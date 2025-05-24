@@ -50,3 +50,17 @@ PrintAbility:
 	db "Ability:@"
 INCLUDE "data/abilities/names.asm"
 INCLUDE "data/abilities/descriptions.asm"
+
+Ability_LoadAbilityName:
+    ld hl, AbilityNames
+	call GetNthString
+    ld d, h
+    ld e, l
+    ld hl, wStringBuffer1
+.loop
+	ld a, [de]
+	inc de
+	ld [hli], a
+	cp "@"
+	jr nz, .loop
+    ret

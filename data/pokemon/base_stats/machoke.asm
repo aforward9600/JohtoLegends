@@ -7,7 +7,7 @@
 	db FIGHTING, FIGHTING ; type
 	db 90 ; catch rate
 	db 146 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, FOCUS_BAND ; items
 	db GENDER_F25 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/machoke/front.dimensions"

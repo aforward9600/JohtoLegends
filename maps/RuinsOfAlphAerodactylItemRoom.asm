@@ -16,12 +16,10 @@ RuinsOfAlphAerodactylItemRoomMoonStone:
 	itemball MOON_STONE
 
 RuinsOfAlphAerodactylItemRoomHealPowder:
-	itemball POTION
-;	itemball HEAL_POWDER
+	itemball AIR_BALLOON
 
 RuinsOfAlphAerodactylItemRoomEnergyRoot:
-	itemball POTION
-;	itemball ENERGY_ROOT
+	itemball METAL_POWDER
 
 RuinsOfAlphAerodactylItemRoomAncientReplica:
 	jumptext RuinsOfAlphAerodactylItemRoomAncientReplicaText

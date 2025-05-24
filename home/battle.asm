@@ -9,17 +9,6 @@ UserPartyAttr::
 	pop af
 	jr OTPartyAttr
 
-OpponentPartyAttr::
-	push af
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ot
-	pop af
-	jr BattlePartyAttr
-.ot
-	pop af
-	jr OTPartyAttr
-
 BattlePartyAttr::
 ; Get attribute a from the party struct of the active battle mon. 
 	push bc
@@ -254,4 +243,80 @@ GetBattleAnimByte::
 	pop hl
 
 	ld a, [wBattleAnimByte]
+	ret
+
+GetTargetAbility::
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .CheckTargetEnemyAbility
+	ld a, [wPlayerAbility]
+	ret
+
+.CheckTargetEnemyAbility
+	ld a, [wEnemyAbility]
+	ret
+
+GetUserAbility::
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .CheckUserPlayerAbility
+	ld a, [wEnemyAbility]
+	ret
+
+.CheckUserPlayerAbility
+	ld a, [wPlayerAbility]
+	ret
+
+CheckTargetNeutralGasMoldBreaker::
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .CheckTargetEnemyAbility
+	ld a, [wPlayerAbility]
+	cp NEUTRAL_GAS
+	ret z
+	cp MOLD_BREAKER
+	ret
+
+.CheckTargetEnemyAbility:
+	ld a, [wEnemyAbility]
+	cp NEUTRAL_GAS
+	ret z
+	cp MOLD_BREAKER
+	ret
+
+CheckUserNeutralGasMoldBreaker::
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .CheckUserPlayerAbility
+	ld a, [wEnemyAbility]
+	cp NEUTRAL_GAS
+	ret z
+	cp MOLD_BREAKER
+	ret
+
+.CheckUserPlayerAbility:
+	ld a, [wPlayerAbility]
+	cp NEUTRAL_GAS
+	ret z
+	cp MOLD_BREAKER
+	ret
+
+CompareMove::
+	; checks if the move ID in a matches the move in bc
+	push hl
+	call GetMoveIndexFromID
+	ld a, h
+	cp b
+	ld a, l
+	pop hl
+	ret nz
+	cp c
+	ret
+
+CheckNeutralGas::
+	ld a, [wEnemyAbility]
+	cp NEUTRAL_GAS
+	ret z
+	ld a, [wPlayerAbility]
+	cp NEUTRAL_GAS
 	ret

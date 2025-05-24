@@ -1,8 +1,0 @@
-IF !DEF(SECOND)
-SECOND equs "4"
-ENDC
-
-SECTION UNION "conflicting banks", WRAMX, BANK[SECOND]
-	db
-
-	PURGE SECOND

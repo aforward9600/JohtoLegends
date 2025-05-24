@@ -123,8 +123,6 @@ GoldenrodGymMiltonScript:
 	closetext
 	winlosstext MiltonText_HooWee, MiltonText_Yeehaw
 	loadtrainer MILTON, MILTON1
-	startbattle
-	reloadmapafterbattle
 	sjump AfterMiltonRematch
 
 .MiltonBattle2:
@@ -135,8 +133,6 @@ GoldenrodGymMiltonScript:
 	closetext
 	winlosstext MiltonText_HooWee, MiltonText_Yeehaw
 	loadtrainer MILTON, MILTON2
-	startbattle
-	reloadmapafterbattle
 	sjump AfterMiltonRematch
 
 .MiltonBattle3:
@@ -147,8 +143,6 @@ GoldenrodGymMiltonScript:
 	closetext
 	winlosstext MiltonText_HooWee, MiltonText_Yeehaw
 	loadtrainer MILTON, MILTON3
-	startbattle
-	reloadmapafterbattle
 	sjump AfterMiltonRematch
 
 .MiltonBattle4:
@@ -159,8 +153,6 @@ GoldenrodGymMiltonScript:
 	closetext
 	winlosstext MiltonText_HooWee, MiltonText_Yeehaw
 	loadtrainer MILTON, MILTON4
-	startbattle
-	reloadmapafterbattle
 	sjump AfterMiltonRematch
 
 .PostGameMilton:
@@ -169,9 +161,9 @@ GoldenrodGymMiltonScript:
 	closetext
 	winlosstext MiltonText_HooWee, MiltonText_Yeehaw
 	loadtrainer MILTON, MILTON5
+AfterMiltonRematch:
 	startbattle
 	reloadmapafterbattle
-AfterMiltonRematch:
 	opentext
 	writetext MiltonText_BeatenAgain
 	waitbutton

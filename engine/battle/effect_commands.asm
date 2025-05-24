@@ -7021,18 +7021,6 @@ _CheckBattleScene:
 	pop hl
 	ret
 
-CompareMove:
-	; checks if the move ID in a matches the move in bc
-	push hl
-	call GetMoveIndexFromID
-	ld a, h
-	cp b
-	ld a, l
-	pop hl
-	ret nz
-	cp c
-	ret
-
 CheckMoveInList:
 	; checks if the move ID in a belongs to a list of moves in hl
 	push bc

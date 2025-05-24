@@ -61,7 +61,6 @@ MahoganyGymPryceScript:
 	setflag ENGINE_GLACIERBADGE
 	loadmem wLevelCap, 22
 	readvar VAR_BADGES
-	scall MahoganyGymActivateRockets
 	setflag ENGINE_BEAT_PRYCE
 .FightDone:
 	checkflag ENGINE_BEAT_PRYCE
@@ -101,8 +100,6 @@ MahoganyGymPryceScript:
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE, PRYCE_ALTERNATE
-	startbattle
-	reloadmapafterbattle
 	sjump AfterPryceRematch
 
 .PryceBattle2:
@@ -111,8 +108,6 @@ MahoganyGymPryceScript:
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE, PRYCE2
-	startbattle
-	reloadmapafterbattle
 	sjump AfterPryceRematch
 
 .PryceBattle3:
@@ -121,8 +116,6 @@ MahoganyGymPryceScript:
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE_2, PRYCE3
-	startbattle
-	reloadmapafterbattle
 	sjump AfterPryceRematch
 
 .PryceBattle4:
@@ -131,8 +124,6 @@ MahoganyGymPryceScript:
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE_2, PRYCE4
-	startbattle
-	reloadmapafterbattle
 	sjump AfterPryceRematch
 
 .PryceBattle5:
@@ -141,8 +132,6 @@ MahoganyGymPryceScript:
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE_2, PRYCE5
-	startbattle
-	reloadmapafterbattle
 	sjump AfterPryceRematch
 
 .PryceBattle6:
@@ -151,8 +140,6 @@ MahoganyGymPryceScript:
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE_3, PRYCE6
-	startbattle
-	reloadmapafterbattle
 	sjump AfterPryceRematch
 
 .PryceBattle7:
@@ -161,8 +148,6 @@ MahoganyGymPryceScript:
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE_3, PRYCE7
-	startbattle
-	reloadmapafterbattle
 	sjump AfterPryceRematch
 
 .PryceBattle8:
@@ -171,8 +156,6 @@ MahoganyGymPryceScript:
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE_3, PRYCE8
-	startbattle
-	reloadmapafterbattle
 	sjump AfterPryceRematch
 
 .PostGamePryce:
@@ -181,17 +164,9 @@ MahoganyGymPryceScript:
 	closetext
 	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE_3, PRYCE9
+AfterPryceRematch:
 	startbattle
 	reloadmapafterbattle
-	sjump AfterPryceRematch
-
-PryceScript_Defeat:
-	writetext PryceText_GoodLooks
-	waitbutton
-	closetext
-	end
-
-AfterPryceRematch:
 	opentext
 	writetext PryceText_BeatenAgain
 	waitbutton
@@ -199,16 +174,11 @@ AfterPryceRematch:
 	setflag ENGINE_BEAT_PRYCE
 	end
 
-MahoganyGymActivateRockets:
-	ifequal 7, .RadioTowerRockets
-	ifequal 6, .GoldenrodRockets
+PryceScript_Defeat:
+	writetext PryceText_GoodLooks
+	waitbutton
+	closetext
 	end
-
-.GoldenrodRockets:
-	jumpstd goldenrodrockets
-
-.RadioTowerRockets:
-	jumpstd radiotowerrockets
 
 TrainerSkierBrandy:
 	trainer SKIER, BRANDY, EVENT_BEAT_SKIER_BRANDY, SkierBrandySeenText, SkierBrandyBeatenText, 0, .Script

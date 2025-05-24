@@ -64,7 +64,6 @@ CianwoodGymChigusaScript:
 	setflag ENGINE_STORMBADGE
 	loadmem wLevelCap, 31
 	readvar VAR_BADGES
-	scall CianwoodGymActivateRockets
 	setscene SCENE_FINISHED
 	setmapscene WILD_AREA_OUTSIDE, SCENE_WILD_AREA_RIVAL
 	setevent EVENT_WILD_AREA_OUTSIDE_RIVAL1
@@ -111,8 +110,6 @@ CianwoodGymChigusaScript:
 	closetext
 	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA, CHIGUSA1
-	startbattle
-	reloadmapafterbattle
 	sjump AfterChigusaRematch
 
 .ChigusaBattle2:
@@ -121,8 +118,6 @@ CianwoodGymChigusaScript:
 	closetext
 	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA, CHIGUSA2
-	startbattle
-	reloadmapafterbattle
 	sjump AfterChigusaRematch
 
 .ChigusaBattle3:
@@ -141,8 +136,6 @@ CianwoodGymChigusaScript:
 	closetext
 	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA_2, CHIGUSA4
-	startbattle
-	reloadmapafterbattle
 	sjump AfterChigusaRematch
 
 .ChigusaBattle5:
@@ -151,8 +144,6 @@ CianwoodGymChigusaScript:
 	closetext
 	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA_2, CHIGUSA5
-	startbattle
-	reloadmapafterbattle
 	sjump AfterChigusaRematch
 
 .ChigusaBattle6:
@@ -161,8 +152,6 @@ CianwoodGymChigusaScript:
 	closetext
 	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA_2, CHIGUSA6
-	startbattle
-	reloadmapafterbattle
 	sjump AfterChigusaRematch
 
 .PostGameChigusa:
@@ -171,28 +160,15 @@ CianwoodGymChigusaScript:
 	closetext
 	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA_2, CHIGUSA7
+AfterChigusaRematch:
 	startbattle
 	reloadmapafterbattle
-	sjump AfterChigusaRematch
-
-AfterChigusaRematch:
 	opentext
 	writetext BeatenChigusaAgainText
 	waitbutton
 	closetext
 	setflag ENGINE_BEAT_CHIGUSA
 	end
-
-CianwoodGymActivateRockets:
-	ifequal 7, .RadioTowerRockets
-	ifequal 6, .GoldenrodRockets
-	end
-
-.GoldenrodRockets:
-	jumpstd goldenrodrockets
-
-.RadioTowerRockets:
-	jumpstd radiotowerrockets
 
 TrainerBlackbeltYoshi:
 	trainer BLACKBELT_T, YOSHI, EVENT_BEAT_BLACKBELT_YOSHI, BlackbeltYoshiSeenText, BlackbeltYoshiBeatenText, 0, .Script

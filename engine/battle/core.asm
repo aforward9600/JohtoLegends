@@ -5789,22 +5789,37 @@ LoadEnemyMon:
 
 ; Failing that, it's all up to chance
 ;  Effective chances:
-;    75% None
-;    23% Item1
-;     2% Item2
+;    45% None
+;    50% Item1
+;     5% Item2
 
-; 25% chance of getting an item
-	call BattleRandom
-	cp 75 percent + 1
-	ld a, NO_ITEM
-	jr c, .UpdateItem
+	call GetLeadAbility
+	cp COMPOUNDEYES
+	jr z, .compoundeyes
+	cp SUPER_LUCK
+	jr z, .compoundeyes
 
-; From there, an 8% chance for Item2
+; 50% chance of getting item 1, 5% for item 2
 	call BattleRandom
-	cp 8 percent ; 8% of 25% = 2% Item2
+	cp 5 percent
+	ld a, [wBaseItem2]
+	jr nc, .UpdateItem
+	cp 50 percent + 1
 	ld a, [wBaseItem1]
 	jr nc, .UpdateItem
+	ld a, NO_ITEM
+	jr .UpdateItem
+
+.compoundeyes:
+; 60% chance of getting item 1, 20% for item 2
+	call BattleRandom
+	cp 20 percent
 	ld a, [wBaseItem2]
+	jr nc, .UpdateItem
+	cp 60 percent + 1
+	ld a, [wBaseItem1]
+	jr nc, .UpdateItem
+	ld a, NO_ITEM
 
 .UpdateItem:
 	ld [wEnemyMonItem], a

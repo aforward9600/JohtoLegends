@@ -7,7 +7,7 @@
 	db GROUND, GROUND ; type
 	db 255 ; catch rate
 	db 93 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, QUICK_CLAW ; items
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/sandshrew/front.dimensions"

@@ -103,8 +103,6 @@ VioletGymWalkerScript:
 	closetext
 	winlosstext WalkerWinLossText, WalkerLossText
 	loadtrainer WALKER, WALKER1
-	startbattle
-	reloadmapafterbattle
 	sjump AfterWalkerRematch
 
 .WalkerBattle2:
@@ -113,8 +111,6 @@ VioletGymWalkerScript:
 	closetext
 	winlosstext WalkerWinLossText, WalkerLossText
 	loadtrainer WALKER, WALKER2
-	startbattle
-	reloadmapafterbattle
 	sjump AfterWalkerRematch
 
 .PostGameWalker:
@@ -123,9 +119,9 @@ VioletGymWalkerScript:
 	closetext
 	winlosstext WalkerWinLossText, WalkerLossText
 	loadtrainer WALKER, WALKER3
+AfterWalkerRematch:
 	startbattle
 	reloadmapafterbattle
-AfterWalkerRematch:
 	opentext
 	writetext BeatenWalkerAgainText
 	waitbutton

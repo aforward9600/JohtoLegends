@@ -7,7 +7,7 @@
 	db POISON, POISON ; type
 	db 60 ; catch rate
 	db 173 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, SMOKE_BALL ; items
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/weezing/front.dimensions"

@@ -1,1 +1,0 @@
-assert BANK(@) == 1

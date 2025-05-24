@@ -16,14 +16,10 @@ RuinsOfAlphKabutoItemRoomPsncureberry:
 	itemball PECHA_BERRY
 
 RuinsOfAlphKabutoItemRoomHealPowder:
-	itemball CHERRI_BERRY
-;	itemball WHITE_HERB
-;	itemball HEAL_POWDER
+	itemball BRIGHTPOWDER
 
 RuinsOfAlphKabutoItemRoomEnergypowder:
-	itemball CHESTO_BERRY
-;	itemball POWER_HERB
-;	itemball ENERGYPOWDER
+	itemball LIGHT_CLAY
 
 RuinsOfAlphKabutoItemRoomAncientReplica:
 	jumptext RuinsOfAlphKabutoItemRoomAncientReplicaText

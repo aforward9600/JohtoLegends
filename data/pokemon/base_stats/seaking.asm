@@ -7,7 +7,7 @@
 	db WATER, WATER ; type
 	db 60 ; catch rate
 	db 170 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, MYSTIC_WATER ; items
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/seaking/front.dimensions"

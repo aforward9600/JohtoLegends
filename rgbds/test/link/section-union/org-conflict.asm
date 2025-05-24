@@ -1,8 +1,0 @@
-IF !DEF(SECOND)
-ADDR = $BEEF
-ELSE
-ADDR = $BABE
-ENDC
-
-SECTION UNION "conflicting address", SRAM[ADDR]
-	db

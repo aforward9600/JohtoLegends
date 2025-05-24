@@ -87,3 +87,14 @@ BattleCommand_Spite:
 
 .failed
 	jp PrintDidntAffect2
+
+OpponentPartyAttr:
+	push af
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ot
+	pop af
+	jp BattlePartyAttr
+.ot
+	pop af
+	jp OTPartyAttr
