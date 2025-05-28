@@ -202,9 +202,8 @@ CHRIS EQU __enum__
 	const DAMIEN
 	const PALMER
 	const BRENT1
-	const JARVIS2
-	const ALLAN1
 	const JARVIS
+	const ALLAN1
 
 	trainerclass GRUNTM ; 1f
 	const GRUNTM_1
@@ -383,9 +382,6 @@ CHRIS EQU __enum__
 	trainerclass JUGGLER ; 31
 	const IRWIN1
 	const PERCY
-	const IRWIN2
-	const IRWIN3
-	const IRWIN4
 
 	trainerclass BLACKBELT_T ; 32
 	const HIDEO
@@ -415,12 +411,12 @@ CHRIS EQU __enum__
 
 	trainerclass PICNICKER ; 35
 	const HAYLEE
-	const GINA1
+	const GINA1 ; Chloe 2
 	const CHLOE
 	const LACY
 	const BARBARA
 	const VIVIAN_PICNICKER
-	const ERIN1
+	const ERIN1 ; Chloe 3
 	const TANYA
 	const TIFFANY3
 
@@ -430,6 +426,8 @@ CHRIS EQU __enum__
 	const HOWARD
 	const EMIL
 	const JAOQUIN
+	const GARRET2
+	const GARRET3
 
 	trainerclass ARIANA ; 37
 	const ARIANA_1
@@ -479,6 +477,7 @@ CHRIS EQU __enum__
 	const BEVERLY1
 	const ETHEL1
 	const GEORGIA
+	const ETHEL2
 
 	trainerclass RED ; 3f
 	const RED1

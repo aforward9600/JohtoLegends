@@ -35,7 +35,10 @@ TrainerPokefanFEthel:
 	writetext PokefanFEthelLetsDoItText
 	waitbutton
 	winlosstext PokefanFEthelBeatenText, 0
+	checkflag ENGINE_STORMBADGE
+	iftrue .EthelRematch
 	loadtrainer POKEFANF, ETHEL1
+.StartEthelBattle
 	startbattle
 	reloadmapafterbattle
 	closetext
@@ -46,6 +49,16 @@ TrainerPokefanFEthel:
 	waitbutton
 	closetext
 	end
+
+.EthelRematch:
+	checkflag ENGINE_PLAINBADGE
+	iftrue .EthelRematch2
+	loadtrainer POKEFANF, BEVERLY1
+	sjump .StartEthelBattle
+
+.EthelRematch2:
+	loadtrainer POKEFANF, ETHEL2
+	sjump .StartEthelBattle
 
 SunnyScript:
 	faceplayer

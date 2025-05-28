@@ -3297,14 +3297,6 @@ endc
 	dw LOMBRE
 	db -1 ; end
 
-	next_list_item ; POKEMANIAC (16)
-	db "Jarvis@", TRAINERTYPE_NORMAL
-	db 11
-	dw LICKITUNG
-	db 11
-	dw SUNKERN
-	db -1 ; end
-
 	end_list_items
 
 GruntMGroup:
@@ -5671,17 +5663,23 @@ PicnickerGroup:
 	db -1 ; end
 
 	next_list_item ; PICNICKER (2)
-	db "GINA@", TRAINERTYPE_NORMAL
-	db 9
-	dw HOPPIP
+	db "Chloe@", TRAINERTYPE_NORMAL
+	db 29
+	dw NIDORINO
+	db 29
+	dw ARCANINE
+	db 29
+	dw WEEPINBELL
 	db -1 ; end
 
 	next_list_item ; PICNICKER (3)
 	db "Chloe@", TRAINERTYPE_NORMAL
 	db 12
-	dw KOTORA
+	dw NIDORAN_M
 	db 12
-	dw AZURILL
+	dw GROWLITHE
+	db 12
+	dw BELLSPROUT
 	db -1 ; end
 
 	next_list_item ; PICNICKER (4) Route 32
@@ -5725,10 +5723,17 @@ PicnickerGroup:
 	dw SWORDS_DANCE, BONEMERANG, HEADBUTT, ROCK_TOMB
 	db -1 ; end
 
-	next_list_item ; PICNICKER (10)
-	db "ERIN@", TRAINERTYPE_NORMAL
-	db 16
-	dw PONYTA
+	next_list_item ; PICNICKER (2)
+	db "Chloe@", TRAINERTYPE_MOVES
+	db 32
+	dw NIDOKING
+	dw BULLDOZE, POISON_JAB, MEGAHORN, BULK_UP
+	db 32
+	dw ELECTIVIRE
+	dw THUNDERPUNCH, CROSS_CHOP, THUNDER_WAVE, ICE_PUNCH
+	db 32
+	dw VICTREEBEL
+	dw KNOCK_OFF, SLEEP_POWDER, POWER_WHIP, POISON_JAB
 	db -1 ; end
 
 	next_list_item ; PICNICKER (19)
@@ -5752,9 +5757,16 @@ PicnickerGroup:
 
 CamperGroup:
 	next_list_item ; CAMPER (1)
-	db "Garret@", TRAINERTYPE_NORMAL
+	db "Garret@", TRAINERTYPE_MOVES
+	db 10
+	dw GEODUDE
+	dw ROLLOUT, ROCK_POLISH, MUD_SLAP, DEFENSE_CURL
 	db 11
-	dw DIGLETT
+	dw SANDSHREW
+	dw FURY_CUTTER, RAPID_SPIN, DEFENSE_CURL, ROLLOUT
+	db 9
+	dw METAPOD
+	dw TACKLE, HARDEN, STRING_SHOT, NO_MOVE
 	db -1 ; end
 
 	next_list_item ; CAMPER (2) Route 32
@@ -5811,6 +5823,32 @@ endc
 	db 53
 	dw ANNIHILAPE
 	dw ICE_PUNCH, HIHORSEPOWER, CLOSE_COMBAT, SHADOW_PUNCH
+	db -1 ; end
+
+	next_list_item ; CAMPER (1)
+	db "Garret@", TRAINERTYPE_MOVES
+	db 29
+	dw GRAVELER
+	dw SELFDESTRUCT, BULLDOZE, ROCK_TOMB, ROCK_POLISH
+	db 29
+	dw SANDSLASH
+	dw SLASH, MAGNITUDE, RAPID_SPIN, ROLLOUT
+	db 29
+	dw MAGCARGO
+	dw SHELL_SMASH, FLAME_BURST, ANCIENTPOWER, FLASH_CANNON
+	db -1 ; end
+
+	next_list_item ; CAMPER (1)
+	db "Garret@", TRAINERTYPE_MOVES
+	db 42
+	dw GOLEM
+	dw SELFDESTRUCT, EARTHQUAKE, ROCK_SLIDE, GYRO_BALL
+	db 42
+	dw AGGRON
+	dw IRON_TAIL, IRON_DEFENSE, EARTHQUAKE, STONE_EDGE
+	db 42
+	dw POLIWRATH
+	dw WATERFALL, SUBMISSION, ICE_PUNCH, HYPNOSIS
 	db -1 ; end
 
 	end_list_items
@@ -6347,9 +6385,19 @@ endc
 
 PokefanFGroup:
 	next_list_item ; POKEFANF (1)
-	db "BEVERLY@", TRAINERTYPE_NORMAL
-	db 14
-	dw SNUBBULL
+	db "Ethel@", TRAINERTYPE_ITEM_MOVES
+	db 29
+	dw TOGETIC
+	db ORAN_BERRY
+	dw FAIRY_WIND, TRI_ATTACK, GROWTH, EXTRASENSORY
+	db 29
+	dw MANTINE
+	db ORAN_BERRY
+	dw PROTECT, WING_ATTACK, CONFUSE_RAY, WATER_PULSE
+	db 29
+	dw UMBREON
+	db ORAN_BERRY
+	dw SCREECH, PAYBACK, CONFUSE_RAY, SAND_ATTACK
 	db -1 ; end
 
 	next_list_item ; POKEFANF (2)
@@ -6357,7 +6405,15 @@ PokefanFGroup:
 	db 16
 	dw TOGEPI
 	db ORAN_BERRY
-	dw SWEET_KISS, METRONOME, CHARM, SING
+	dw SWEET_KISS, METRONOME, CHARM, EXTRASENSORY
+	db 16
+	dw MANTYKE
+	db ORAN_BERRY
+	dw HEADBUTT, WING_ATTACK, CONFUSE_RAY, BUBBLEBEAM
+	db 16
+	dw HOPPIP
+	db ORAN_BERRY
+	dw GUST, SLEEP_POWDER, ABSORB, SYNTHESIS
 	db -1 ; end
 
 	next_list_item ; POKEFANF (5) GEORGIA
@@ -6371,6 +6427,22 @@ PokefanFGroup:
 	db 19
 	dw CROCONAW
 	db ORAN_BERRY
+	db -1 ; end
+
+	next_list_item ; POKEFANF (1)
+	db "Ethel@", TRAINERTYPE_ITEM_MOVES
+	db 33
+	dw LUDICOLO
+	db ORAN_BERRY
+	dw GIGA_DRAIN, SURF, QUIVER_DANCE, FAKE_OUT
+	db 33
+	dw POLITOED
+	db ORAN_BERRY
+	dw SURF, RAIN_DANCE, HYPNOSIS, ICY_WIND
+	db 34
+	dw BELLOSSOM
+	db ORAN_BERRY
+	dw MOONBLAST, MOONLIGHT, GIGA_DRAIN, SLEEP_POWDER
 	db -1 ; end
 
 	end_list_items

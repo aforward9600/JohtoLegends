@@ -31,6 +31,33 @@ TrainerCamperGarret:
 .Script:
 	endifjustbattled
 	opentext
+	writetext CamperGarretRematchText
+	yesorno
+	iffalse .NoGarretRematch
+	playmusic MUSIC_YOUNGSTER_ENCOUNTER
+	writetext CamperGarretYesText
+	waitbutton
+	winlosstext CamperGarretBeatenText, 0
+	checkflag ENGINE_PLAINBADGE
+	iftrue .GarretRematch
+	loadtrainer CAMPER, CAMPER_GARRET
+.StartCamperGarretBattle:
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.GarretRematch:
+	checkflag ENGINE_HIVEBADGE
+	iftrue .GarretRematch2
+	loadtrainer CAMPER, GARRET2
+	sjump .StartCamperGarretBattle
+
+.GarretRematch2:
+	loadtrainer CAMPER, GARRET3
+	sjump .StartCamperGarretBattle
+
+.NoGarretRematch:
 	writetext CamperGarretAfterBattleText
 	waitbutton
 	closetext
@@ -53,10 +80,37 @@ TrainerPicnickerChloe:
 .Script:
 	endifjustbattled
 	opentext
+	writetext PicnickerChloeRematchText
+	yesorno
+	iffalse .Refused
+	playmusic MUSIC_LASS_ENCOUNTER
+	writetext PicnickerChloeYesText
+	waitbutton
+	winlosstext PicnickerChloeBeatenText, 0
+	checkflag ENGINE_STORMBADGE
+	iftrue .ChloeRematch
+	loadtrainer PICNICKER, CHLOE
+.StartChloeBattle
+	startbattle
+	reloadmapafterbattle
+	closetext
+	end
+
+.Refused:
 	writetext PicnickerChloeAfterBattleText
 	waitbutton
 	closetext
 	end
+
+.ChloeRematch:
+	checkflag ENGINE_MINERALBADGE
+	iftrue .ChloeRematch2
+	loadtrainer PICNICKER, GINA1
+	sjump .StartChloeBattle
+
+.ChloeRematch2:
+	loadtrainer PICNICKER, ERIN1
+	sjump .StartChloeBattle
 
 TrainerFisherShane:
 	trainer FISHER, FISHER_SHANE, EVENT_BEAT_FISHER_SHANE, FisherShaneSeenText, FisherShaneBeatenText, 0, .Script
@@ -75,32 +129,8 @@ TrainerPokemaniacJarvis:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokemaniacJarvisRematchText
-	yesorno
-	iffalse .Refused
-	playmusic MUSIC_POKEMANIAC_ENCOUNTER
-	writetext PokemaniacJarvisLetsDoItText
+	writetext PokemaniacJarvisAfterText
 	waitbutton
-	checkflag ENGINE_GLACIERBADGE
-	iftrue .JarvisRematch2
-	winlosstext PokemaniacJarvisBeatenText, 0
-	loadtrainer POKEMANIAC, JARVIS
-	startbattle
-	reloadmapafterbattle
-	closetext
-	end
-
-.Refused:
-	writetext PokemaniacJarvisRefusedText
-	waitbutton
-	closetext
-	end
-
-.JarvisRematch2:
-	winlosstext PokemaniacJarvisBeatenText, 0
-	loadtrainer POKEMANIAC, JARVIS2
-	startbattle
-	reloadmapafterbattle
 	closetext
 	end
 
@@ -298,25 +328,25 @@ PokemaniacJarvisBeatenText:
 	line "#mon!"
 	done
 
-PokemaniacJarvisRematchText:
-	text "Come back to show"
-	line "me your rare"
-	cont "#mon?"
+PokemaniacJarvisAfterText:
+	text "I've heard that a"
+	line "strange, cat-like"
+	cont "#mon at the"
+	cont "Lake of Rage, and"
+	cont "I want it!"
 	done
 
-PokemaniacJarvisLetsDoItText:
-	text "Show me the"
-	line "#mon!"
+PicnickerChloeRematchText:
+	text "You're more fun to"
+	line "battle than my"
+	cont "boyfriend!"
+
+	para "Care for another"
+	line "match?"
 	done
 
-PokemaniacJarvisRefusedText:
-	text "Aw, come on!"
-	done
-
-PicnickerTiffanyClefairyText:
-	text "Isn't my Clefairy"
-	line "just the most"
-	cont "adorable thing?"
+PicnickerChloeYesText:
+	text "Yes! Sweet!"
 	done
 
 Route43Sign1Text:
@@ -337,10 +367,15 @@ Route43Sign2Text:
 	para "Lake Of Rage -"
 	line "Mahogany Town"
 
-	para "Pokemaniac Jarvis"
-	line "is looking for"
-	cont "rare #mon to"
-	cont "battle."
+	para "Picnicker Chloe is"
+	line "looking for some-"
+	cont "one stronger than"
+	cont "her boyfriend."
+
+	para "Camper Garret is"
+	line "looking to spice"
+	cont "up his camping"
+	cont "trip."
 	done
 
 Route43TrainerTipsText:
@@ -404,6 +439,19 @@ NoTogepiEggText:
 	line "in a solo run."
 
 	para "Sorry."
+	done
+
+CamperGarretRematchText:
+	text "I still need to"
+	line "defeat you to"
+	cont "prove myself to my"
+	cont "girlfriend!"
+
+	para "Battle me!"
+	done
+
+CamperGarretYesText:
+	text "I'll prove myself!"
 	done
 
 Route43_MapEvents:
