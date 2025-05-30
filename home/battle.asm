@@ -320,3 +320,27 @@ CheckNeutralGas::
 	ld a, [wPlayerAbility]
 	cp NEUTRAL_GAS
 	ret
+
+BattleJumptable::
+; hl = jumptable, a = target. Returns z if no jump was made, nz otherwise
+	; Maybe make this a common function? Maybe one exist?
+	push bc
+	ld b, a
+.loop
+	ld a, [hli]
+	cp -1
+	jr z, .end
+	cp b
+	jr z, .got_target
+	inc hl
+	inc hl
+	jr .loop
+.got_target
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call _hl_
+	or 1
+.end
+	pop bc
+	ret

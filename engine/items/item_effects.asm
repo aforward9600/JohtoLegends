@@ -455,7 +455,14 @@ PokeBallEffect:
 	ld [wCurPartySpecies], a
 	ld a, [wEnemyMonLevel]
 	ld [wCurPartyLevel], a
+	ld de, ENGINE_ABILITIES_OFF
+	farcall CheckEngineFlag
+	jr nc, .NoAbility
 	ld a, [wEnemyMonAbility]
+	jr .GotAbility
+.NoAbility
+	ld a, NO_ABILITY
+.GotAbility
 	ld [wEnemyAbility], a
 	farcall LoadEnemyMon
 

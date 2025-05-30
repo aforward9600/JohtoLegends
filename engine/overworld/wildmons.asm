@@ -201,10 +201,10 @@ FindNest:
 
 TryWildEncounter::
 ; Try to trigger a wild encounter.
-	call .EncounterRate
-	jr nc, .no_battle
 	call ChooseWildEncounter
 	jr nz, .no_battle
+	call .EncounterRate
+	jr nc, .no_battle
 	call CheckRepelEffect
 	jr nc, .no_battle
 	xor a
@@ -222,6 +222,8 @@ TryWildEncounter::
 	call GetMapEncounterRate
 	call ApplyMusicEffectOnEncounterRate
 	call ApplyCleanseTagEffectOnEncounterRate
+	call SetBattlerLevel
+	call ApplyAbilityEffectsOnEncounterMon
 	call Random
 	cp b
 	ret
@@ -275,18 +277,48 @@ ApplyCleanseTagEffectOnEncounterRate::
 	srl b
 	ret
 
+SetBattlerLevel:
+	push bc
+	ld hl, wPartyMon1HP
+	ld bc, PARTYMON_STRUCT_LENGTH - 1
+
+.loop
+	ld a, [hli]
+	or [hl]
+	jr nz, .ok
+	add hl, bc
+	jr .loop
+
+.ok
+	pop bc
+rept 4
+	dec hl
+endr
+	ld c, [hl]
+	ret
+
 ChooseWildEncounter:
+	ld c, $ff
+_ChooseWildEncounter:
+	push bc
 	call LoadWildMonDataPointer
+	pop bc
 	jp nc, .nowildbattle
-	call CheckEncounterRoamMon
+
+	push bc
+	ld a, c
+	add 1
+	call c, CheckEncounterRoamMon
+	pop bc
 	jp c, .startwildbattle
 
 	inc hl
 	inc hl
 	inc hl
+	push bc
 	call CheckOnWater
 	ld de, WaterMonProbTable
-	jr z, .watermon
+	jr z, .got_table
 	inc hl
 	inc hl
 	call GetTimeOfDayNotEve
@@ -294,30 +326,95 @@ ChooseWildEncounter:
 	call AddNTimes
 	ld de, GrassMonProbTable
 
-.watermon
-; hl contains the pointer to the wild mon data, let's save that to the stack
+.got_table
+	pop bc
+	ld b, 0
+	inc hl
+	push af
+
+.encounter_loop
 	push hl
 .randomloop
-	call Random
-	cp 100
-	jr nc, .randomloop
-	inc a ; 1 <= a <= 100
-	ld b, a
-	ld h, d
-	ld l, e
-; This next loop chooses which mon to load up.
-.prob_bracket_loop
-	ld a, [hli]
-	cp b
-	jr nc, .got_it
-	inc hl
-	jr .prob_bracket_loop
+	push bc
+	inc c
+	jr z, .type_check_done
 
-.got_it
-	ld c, [hl]
-	ld b, 0
+
+	ld a, [hli]
+	ld c, a
+	ld b, [hl]
+	ld a, BANK(BaseData)
+	ld hl, BaseData
+	call LoadIndirectPointer
+	ld bc, BASE_TYPES
+	add hl, bc
+	ld b, a
+	call GetFarByte
+	inc hl
+	ld c, a
+	ld a, b
+	call GetFarByte
+	ld l, c
+	pop bc
+	push bc
+	cp c
+	jr z, .type_check_done
+	ld a, l
+	cp c
+	jr nz, .next
+
+.type_check_done
+	pop bc
+
+	push bc
+	ld a, [de]
+	ld c, a
+	add b
+	ld b, a
+	call RandomRange
+	cp c
+	ld a, b
+	pop bc
+	ld b, a
+	push bc
+	jr nc, .next
+
+	pop bc
 	pop hl
-	add hl, bc ; this selects our mon
+	pop af
+	ld a, e
+	push af
+	push hl
+	push bc
+.next
+	pop bc
+	pop hl
+
+	inc hl
+	inc hl
+	inc hl
+	inc de
+
+	ld a, [de]
+	and a
+	jr nz, .encounter_loop
+
+	ld a, b
+	and a
+	pop bc
+
+	jp z, .nowildbattle
+
+	ld a, b
+	sub e
+	ld e, a
+	ld d, $ff
+
+	add hl, de
+	add hl, de
+	add hl, de
+
+	dec hl
 	ld a, [hli]
 	ld b, a
 ; If the Pokemon is encountered by surfing, we need to give the levels some variety.
@@ -398,30 +495,94 @@ CheckRepelEffect::
 	ld a, [wRepelEffect]
 	and a
 	jr z, .encounter
-; Get the first Pokemon in your party that isn't fainted.
-	ld hl, wPartyMon1HP
-	ld bc, PARTYMON_STRUCT_LENGTH - 1
-.loop
-	ld a, [hli]
-	or [hl]
-	jr nz, .ok
-	add hl, bc
-	jr .loop
-
-.ok
-; to PartyMonLevel
-rept 4
-	dec hl
-endr
+	call SetBattlerLevel
 
 	ld a, [wCurPartyLevel]
-	cp [hl]
-	jr nc, .encounter
-	and a
+	cp c
+.encounter
+	ccf
 	ret
 
-.encounter
-	scf
+ApplyAbilityEffectsOnEncounterMon:
+	call GetLeadAbility
+	and a
+	ret z
+	ld hl, .AbilityEffects
+	jp BattleJumptable
+	ret
+
+.AbilityEffects:
+	dbw ARENA_TRAP,   .ArenaTrap
+	dbw FLASH_FIRE,   .FlashFire
+	dbw HUSTLE,       .Hustle
+	dbw ILLUMINATE,   .Illuminate
+	dbw INTIMIDATE,   .Intimidate
+	dbw KEEN_EYE,     .KeenEye
+	dbw MAGNET_PULL,  .MagnetPull
+	dbw PRESSURE,     .Pressure
+	dbw STATIC,       .Static
+	dbw STENCH,       .Stench
+	dbw VITAL_SPIRIT, .VitalSpirit
+	dbw QUICK_FEET,   .QuickFeet
+	dbw INFILTRATOR,  .Infiltrator
+	db -1, -1
+
+.ArenaTrap:
+.Illuminate:
+.double_encounter_rate
+	sla b
+	ret nc
+	ld b, $ff
+	ret
+
+.Stench:
+.QuickFeet:
+.Infiltrator:
+.halve_encounter_rate
+	srl b
+.avoid_rate_underflow
+	ld a, b
+	and a
+	ret nz
+	ld b, 1
+	ret
+
+.Hustle:
+.Pressure:
+.VitalSpirit:
+	call Random
+	rrca
+	ret c
+	ld a, c
+	cp 100
+	ret nc
+	inc c
+	ret
+
+.Intimidate:
+.KeenEye:
+	ld a, [wCurPartyLevel]
+	add 5
+	cp c
+	ret nc
+	jr .halve_encounter_rate
+
+.FlashFire:
+	push bc
+	ld c, FIRE
+	jr .force_wildtype
+.MagnetPull:
+	push bc
+	ld c, STEEL
+	jr .force_wildtype
+.Static:
+	push bc
+	ld c, ELECTRIC
+.force_wildtype
+	call Random
+	add a
+	call nc, _ChooseWildEncounter
+	pop bc
 	ret
 
 LoadWildMonDataPointer:

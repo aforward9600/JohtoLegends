@@ -204,7 +204,7 @@ ENDM
 ; see data/moves/tmhm_moves.asm for moves
 	add_tm DYNAMICPUNCH ; c2
 	add_tm DRAGON_CLAW  ; c3
-	add_tm CURSE        ; c4
+	add_tm SHADOW_CLAW  ; c4
 	add_tm HEX	        ; c5
 	add_tm ROAR         ; c6
 	add_tm TOXIC        ; c7

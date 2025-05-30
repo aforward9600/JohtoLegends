@@ -1,20 +1,21 @@
-mon_prob: MACRO
-; percent, index
-	db \1, \2 * 3
-ENDM
-
 GrassMonProbTable:
-	mon_prob 30,  0 ; 30% chance
-	mon_prob 50,  1 ; 20% chance
-	mon_prob 65,  2 ; 15% chance
-	mon_prob 80,  3 ; 15% chance
-	mon_prob 90,  4 ; 10% chance
-	mon_prob 95,  5 ;  5% chance
-	mon_prob 99,  6 ;  4% chance
-	mon_prob 100, 7 ;  1% chance
+	table_width 1, GrassMonProbTable
+	db 30
+	db 20
+	db 15
+	db 15
+	db 10
+	db 5
+	db 4
+	db 1
+	assert_table_length NUM_GRASSMON
+	db 0
 
 WaterMonProbTable:
-	mon_prob 60,  0 ; 60% chance
-	mon_prob 80,  1 ; 20% chance
-	mon_prob 95,  2 ; 15% chance
-	mon_prob 100, 3 ;  5% chance
+	table_width 1, WaterMonProbTable
+	db 60
+	db 20
+	db 15
+	db 5
+	assert_table_length NUM_WATERMON
+	db 0

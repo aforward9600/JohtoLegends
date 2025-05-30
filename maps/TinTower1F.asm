@@ -12,35 +12,14 @@
 TinTower1F_MapScripts:
 	db 0 ; scene scripts
 
-	db 2 ; callbacks
-;	callback MAPCALLBACK_OBJECTS, .NPCsCallback
+	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, .StairsCallback
-	callback MAPCALLBACK_NEWMAP, .LoadReservedIDs
-
-;.NPCsCallback:
-;	checkevent EVENT_GOT_RAINBOW_WING
-;	iftrue .GotRainbowWing
-;	checkevent EVENT_BEAT_ELITE_FOUR
-;	iffalse .FaceBeasts
-;	special BeastsCheck
-;	iffalse .FaceBeasts
-;	clearevent EVENT_TIN_TOWER_1F_WISE_TRIO_2
-;	setevent EVENT_TIN_TOWER_1F_WISE_TRIO_1
-;.GotRainbowWing:
-;	checkevent EVENT_FOUGHT_HO_OH
-;	iffalse .Done
-;	appear TINTOWER1F_EUSINE
-;.Done:
-;	return
 
 .StairsCallback:
 	checkevent EVENT_OPEN_TIN_TOWER
 	iftrue .DontHideStairs
 	changeblock 10, 2, $09 ; floor
 .DontHideStairs:
-	return
-
-.LoadReservedIDs:
 	return
 
 TinTower1FRocket1Script:
@@ -159,86 +138,6 @@ TinTowerEusine:
 	waitbutton
 	closetext
 	end
-
-TinTowerPlayerMovement1:
-	slow_step UP
-	slow_step UP
-	slow_step UP
-	slow_step UP
-	step_end
-
-TinTowerRaikouMovement1:
-	set_sliding
-	fast_jump_step DOWN
-	remove_sliding
-	step_end
-
-TinTowerRaikouMovement2:
-	set_sliding
-	fast_jump_step DOWN
-	fast_jump_step RIGHT
-	fast_jump_step DOWN
-	remove_sliding
-	step_end
-
-TinTowerEnteiMovement1:
-	set_sliding
-	fast_jump_step DOWN
-	remove_sliding
-	step_end
-
-TinTowerEnteiMovement2:
-	set_sliding
-	fast_jump_step DOWN
-	fast_jump_step LEFT
-	fast_jump_step DOWN
-	remove_sliding
-	step_end
-
-TinTowerSuicuneMovement:
-	set_sliding
-	fast_jump_step DOWN
-	remove_sliding
-	step_end
-
-TinTowerPlayerMovement2:
-	fix_facing
-	big_step DOWN
-	remove_fixed_facing
-	step_end
-
-MovementData_0x1851ec:
-	step UP
-	step UP
-	step UP
-	turn_head LEFT
-	step_end
-
-MovementData_0x1851f1:
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
-
-MovementData_0x1851f5:
-	step UP
-	step UP
-	step LEFT
-	step LEFT
-	turn_head UP
-	step_end
-
-MovementData_0x1851fb:
-	step UP
-	step UP
-	step_end
-
-MovementData_0x1851fe:
-	step UP
-	step RIGHT
-	step RIGHT
-	step UP
-	step_end
 
 IllHealYouBellTowerText:
 	text "You doing OK?"

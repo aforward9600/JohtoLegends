@@ -33,7 +33,7 @@ GetPartyNick:
 	call CopyName2
 	ret
 
-CheckEngineFlag:
+CheckEngineFlag::
 ; Check engine flag de
 ; Return carry if flag is not set
 	ld b, CHECK_FLAG

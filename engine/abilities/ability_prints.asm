@@ -4,6 +4,10 @@ CalcAbility_StatsScreen:
 	push hl
 	push bc
 
+	ld de, ENGINE_ABILITIES_OFF
+	farcall CheckEngineFlag
+	jr nc, .NoAbility
+
 	; Target the relevant mon.
 	ld a, [wCurPartyMon]
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -15,6 +19,12 @@ CalcAbility_StatsScreen:
 	add hl, bc
 	ld c, a
 	call GetAbility
+	pop bc
+	pop hl
+	ret
+
+.NoAbility:
+	ld a, NO_ABILITY
 	pop bc
 	pop hl
 	ret

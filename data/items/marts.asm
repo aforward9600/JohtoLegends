@@ -460,7 +460,7 @@ MartEcruteakBalls:
 
 MartOlivineTMs:
 	db 4
-	db TM_CURSE
+	db TM_SHADOW_CLAW
 	db TM_BRICK_BREAK
 	db TM_SAFEGUARD
 	db TM_POISON_JAB

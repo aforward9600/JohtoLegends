@@ -1,14 +1,29 @@
 SetPlayerAbility::
+
+	ld de, ENGINE_ABILITIES_OFF
+	farcall CheckEngineFlag
+	jr nc, .NoAbility
+
 	ld a, [wCurBattleMon]
 	ld hl, wPartyMon1CaughtAbility
 	call GetPartyLocation
 	ld a, [wBattleMonSpecies]
 	ld c, a
 	call GetAbility
+.FinishPlayerAbility:
 	ld [wPlayerAbility], a
 	ret
 
+.NoAbility:
+	ld a, NO_ABILITY
+	jr .FinishPlayerAbility
+
 SetEnemyAbility::
+
+	ld de, ENGINE_ABILITIES_OFF
+	farcall CheckEngineFlag
+	jr nc, .NoAbility
+
 	ld a, [wBattleMode]
 	dec a
 	jr z, .WildAbilities
@@ -39,5 +54,10 @@ SetEnemyAbility::
 	ld a, [wEnemyMonSpecies]
 	ld c, a
 	call GetAbility
+.FullyFinishEnemyAbility:
 	ld [wEnemyAbility], a
 	ret
+
+.NoAbility:
+	ld a, NO_ABILITY
+	jr .FullyFinishEnemyAbility
