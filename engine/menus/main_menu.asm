@@ -45,25 +45,21 @@ if DEF(_FRENCH)
 	db "Continuer@"
 	db "Nouveau Jeu@"
 	db "Options@"
-	db "Cadeau Mystere@"
 else
 .Strings:
 	db "Continue@"
 	db "New Game@"
 	db "Option@"
-	db "Mystery Gift@"
 endc
 
 .Jumptable:
 	dw MainMenu_Continue
 	dw MainMenu_NewGame
 	dw MainMenu_Options
-	dw MainMenu_MysteryGift
 
 CONTINUE       EQU 0
 NEW_GAME       EQU 1
 OPTION         EQU 2
-MYSTERY_GIFT   EQU 3
 
 MainMenuItems:
 
@@ -80,28 +76,6 @@ ContinueMenu:
 	db OPTION
 	db -1
 
-MysteryMenu:
-	db 4
-	db CONTINUE
-	db NEW_GAME
-	db OPTION
-	db MYSTERY_GIFT
-	db -1
-
-MysteryStudiumMenu:
-	db 5
-	db CONTINUE
-	db NEW_GAME
-	db OPTION
-	db -1
-
-StudiumMenu:
-	db 4
-	db CONTINUE
-	db NEW_GAME
-	db OPTION
-	db -1
-
 MainMenu_GetWhichMenu:
 	nop
 	nop
@@ -113,42 +87,7 @@ MainMenu_GetWhichMenu:
 	ret
 
 .next
-	ldh a, [hCGB]
-	cp $1
-	ld a, $1
-	ret nz
-	ld a, BANK(sNumDailyMysteryGiftPartnerIDs)
-	call GetSRAMBank
-	ld a, [sNumDailyMysteryGiftPartnerIDs]
-	cp -1
-	call CloseSRAM
-	jr nz, .mystery_gift
-	; This check makes no difference.
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_MAIN_MENU_MOBILE_CHOICES_F, a
 	ld a, $1 ; Continue
-	jr z, .ok
-	jr .ok
-
-.ok
-	jr .ok2
-
-.ok2
-	ld a, $1 ; Continue
-	ret
-
-.mystery_gift
-	; This check makes no difference.
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_MAIN_MENU_MOBILE_CHOICES_F, a
-	jr z, .ok3
-	jr .ok3
-
-.ok3
-	jr .ok4
-
-.ok4
-	ld a, $6 ; Mystery Gift
 	ret
 
 MainMenuJoypadLoop:
