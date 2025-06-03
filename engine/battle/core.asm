@@ -114,7 +114,7 @@ DoBattle:
 .not_linked_2
 	farcall SetEnemyAbility
 	farcall SetPlayerAbility
-;	farcall SentOutAbilityBoth
+	farcall SentOutAbilityBoth
 	jp BattleTurn
 
 .tutorial_debug
@@ -1998,7 +1998,7 @@ EnemyPartyMonEntrance:
 	call ResetBattleParticipants
 	call SetEnemyTurn
 	farcall SetEnemyAbility
-;	farcall SentOutAbility
+	farcall SentOutAbility
 	call SpikesDamage
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
@@ -2452,7 +2452,7 @@ ForcePlayerMonChoice:
 	call LoadTileMapToTempTileMap
 	call SetPlayerTurn
 	farcall SetPlayerAbility
-;	farcall SentOutAbility
+	farcall SentOutAbility
 	call SpikesDamage
 	ld a, $1
 	and a
@@ -2475,7 +2475,7 @@ PlayerPartyMonEntrance:
 	call LoadTileMapToTempTileMap
 	call SetPlayerTurn
 	farcall SetPlayerAbility
-;	farcall SentOutAbility
+	farcall SentOutAbility
 	jp SpikesDamage
 
 CheckMobileBattleError:
@@ -4933,7 +4933,7 @@ EnemyMonEntrance:
 	callfar AI_Switch
 	call SetEnemyTurn
 	farcall SetEnemyAbility
-;	farcall SentOutAbility
+	farcall SentOutAbility
 	jp SpikesDamage
 
 BattleMonEntrance:
@@ -4968,7 +4968,7 @@ BattleMonEntrance:
 	call LoadTileMapToTempTileMap
 	call SetPlayerTurn
 	farcall SetPlayerAbility
-;	farcall SentOutAbility
+	farcall SentOutAbility
 	call SpikesDamage
 	ld a, $2
 	ld [wMenuCursorY], a
@@ -5001,7 +5001,7 @@ PassedBattleMonEntrance:
 .GetPlayerAbilityPassed
 	farcall SetPlayerAbility
 .GotEnemyAbilityPassed
-;	farcall SentOutAbility
+	farcall SentOutAbility
 	jp SpikesDamage
 
 PassedBattleMonEntranceUTurn:
@@ -5031,7 +5031,7 @@ PassedBattleMonEntranceUTurn:
 .GetPlayerAbilityUTurn
 	farcall SetPlayerAbility
 .GotEnemyAbilityUTurn
-;	farcall SentOutAbility
+	farcall SentOutAbility
 	jp SpikesDamage
 
 BattleMenu_Run:

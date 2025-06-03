@@ -1233,3 +1233,143 @@ AirBalloonPoppedText:
 	text "<TARGET>'s Air"
 	line "Balloon popped!"
 	prompt
+
+IntimidateText:
+	text "<USER>'s"
+	line "Intimidate lowered"
+	cont "<TARGET>'s"
+	cont "Attack!"
+	prompt
+
+AttackNotLoweredText:
+	text "<TARGET>'s"
+	line "Attack was not"
+	cont "lowered!"
+	prompt
+
+DownloadText:
+	text "<USER>'s"
+	line "Download raised"
+	cont "its Sp.Attack!"
+	prompt
+
+EnemyTraceText:
+	text "<USER>"
+	line "traced <TARGET>'s"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
+PlayerTraceText:
+	text "<USER> traced"
+	line "<TARGET>'s"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
+FriskText:
+	text "<USER>"
+	line "frisked the foe"
+	cont "and found one"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
+ScreenCleanText:
+	text "<USER>"
+	line "cleaned screens!"
+	prompt
+
+UnnerveText:
+	text "<TARGET> is"
+	line "too nervous to"
+	cont "eat Berries!"
+	prompt
+
+NeutralGasText:
+	text "<USER>'s"
+	line "Neutral Gas has"
+	cont "surpressed"
+	cont "<TARGET>'s"
+	cont "ability!"
+	prompt
+
+PressureText:
+	text "<USER> is"
+	line "exerting its"
+	cont "pressure!"
+	prompt
+
+BattleText_MoldBreaker:
+	text "<USER> is"
+	line "breaking the mold!"
+	prompt
+
+CloudNineText:
+	text "The effects of"
+	line "weather have"
+	cont "disappeard!"
+	prompt
+
+JustifiedText:
+	text "<TARGET>'s"
+	line "Justified raised"
+	cont "its Attack stat!"
+	prompt
+
+DefiantText:
+	text "<TARGET>'s"
+	line "Defiant sharply"
+	cont "raised Attack!"
+	prompt
+
+SteadfastText:
+	text "<USER>'s"
+	line "Steadfast raised"
+	cont "its Speed!"
+	prompt
+
+DefiantUserText:
+	text "<USER>'s"
+	line "Defiant sharply"
+	cont "raised Attack!"
+	prompt
+
+ArenaTrapText:
+	text "<TARGET>'s"
+	line "Arena Trap"
+	cont "prevents esacape!"
+	prompt
+
+MagnetPullText:
+	text "<TARGET>'s"
+	line "Magnet Pull"
+	cont "prevents esacape!"
+	prompt
+
+SturdyText:
+	text "<TARGET>"
+	line "hung on with"
+	cont "Sturdy!"
+	prompt
+
+UnburdenText:
+	text "<TARGET>'s"
+	line "Unburden greatly"
+	cont "raised Speed!"
+	prompt
+
+WeakArmorSpeedText:
+	text "<TARGET>'s"
+	line "Weak Armor sharply"
+	cont "raised its Speed!"
+	prompt
+
+RattledText:
+	text "<TARGET> was"
+	line "rattled and its"
+	cont "Speed rose!"
+	prompt
