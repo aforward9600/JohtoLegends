@@ -106,7 +106,7 @@ EnemyAbilityFirst:
 
 PlayerAbilityFirst:
 	ld a, [wPlayerAbility]
-DoEntranceAbilities
+DoEntranceAbilities:
 	ld de, 3
 	ld hl, .FirstAbilities
 	call IsInArray
