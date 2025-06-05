@@ -1,6 +1,18 @@
 BattleCommand_Thief:
 ; thief
 
+	call CheckNeutralGas
+	jr z, .SkipAbilities
+
+	call GetUserAbility
+	cp MOLD_BREAKER
+	jr z, .SkipAbilities
+
+	call GetTargetAbility
+	cp STICKY_HOLD
+	ret z
+
+.SkipAbilities
 	ldh a, [hBattleTurn]
 	and a
 	jr nz, .enemy

@@ -1648,8 +1648,6 @@ HealStatus:
 	ld [wBattleMonStatus], a
 	ld hl, wPlayerSubStatus5
 	res SUBSTATUS_TOXIC, [hl]
-	ld hl, wPlayerSubStatus1
-	res SUBSTATUS_NIGHTMARE, [hl]
 	call GetItemHealingAction
 	ld a, c
 	cp %11111111

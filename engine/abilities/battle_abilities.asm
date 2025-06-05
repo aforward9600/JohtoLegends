@@ -1006,3 +1006,195 @@ HustleCheck:
 	cp STATUS
 	ret nc
 	ret
+
+ApplySpeedAbilities::
+	call CheckNeutralGas
+	ret z
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .EnemySpeedAbilities
+	ld a, [wPlayerAbility]
+	jr .ConveneSpeedAbility
+.EnemySpeedAbilities
+	ld a, [wEnemyAbility]
+.ConveneSpeedAbility
+	ld de, 3
+	ld hl, .SpeedAbilities
+	call IsInArray
+	jp nc, .NoSpeedAbility
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp hl
+
+.SpeedAbilities:
+	dbw QUICK_FEET,   .QuickFeet
+	dbw SWIFT_SWIM,   .SwiftSwim
+	dbw CHLOROPHYLL,  .Chlorophyll
+	dbw SAND_RUSH,    .SandRush
+	dbw UNBURDEN,     .Unburden
+	db -1
+
+.SwiftSwim:
+	call CheckCloudNine
+	ret z
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	ret nz
+	jp DoubleUserSpeed
+
+.Chlorophyll:
+	call CheckCloudNine
+	ret z
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret nz
+	jp DoubleUserSpeed
+
+.SandRush:
+	call CheckCloudNine
+	ret z
+	ld a, [wBattleWeather]
+	cp WEATHER_SANDSTORM
+	ret nz
+	jp DoubleUserSpeed
+
+.Unburden:
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_UNBURDEN, [hl]
+	ret z
+	jp DoubleUserSpeed
+
+.QuickFeet:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .enemy
+	ld a, [wBattleMonStatus]
+	and 1 << PSN | 1 << BRN | 1 << PAR
+	ret z
+	jr FiftyPercentSpeedBoost
+
+.enemy:
+	ld a, [wEnemyMonStatus]
+	and 1 << PSN | 1 << BRN | 1 << PAR
+	ret z
+	jr FiftyPercentSpeedBoost
+
+.NoSpeedAbility:
+	ret
+
+FiftyPercentSpeedBoost:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .enemy
+; load wBattleMonSpeed into hMultiplicand
+	ld hl, wBattleMonSpeed
+	xor a
+	ldh [hMultiplicand + 0], a
+	ld a, [hli]
+	ldh [hMultiplicand + 1], a
+	ld a, [hl]
+	ldh [hMultiplicand + 2], a
+; Multiply by 150
+	ld a, 50
+	add 100
+	ldh [hMultiplier], a
+	call Multiply
+; Divide by 100
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+; load hQuotient back into wBattleMonSpeed
+	ldh a, [hQuotient + 2]
+	ld hl, wBattleMonSpeed
+	ld [hli], a
+	ldh a, [hQuotient + 3]
+	ld [hl], a
+	ret
+
+.enemy
+; load wEnemyMonSpeed into hMultiplicand
+	ld hl, wEnemyMonSpeed
+	xor a
+	ldh [hMultiplicand + 0], a
+	ld a, [hli]
+	ldh [hMultiplicand + 1], a
+	ld a, [hl]
+	ldh [hMultiplicand + 2], a
+; Multiply by 150
+	ld a, 50
+	add 100
+	ldh [hMultiplier], a
+	call Multiply
+; Divide by 100
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+; load hQuotient back into wEnemyMonSpeed
+	ldh a, [hQuotient + 2]
+	ld hl, wEnemyMonSpeed
+	ld [hli], a
+	ldh a, [hQuotient + 3]
+	ld [hl], a
+	ret
+
+DoubleUserSpeed:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .EnemySpeed
+; load wBattleMonSpeed into hMultiplicand
+	ld hl, wBattleMonSpeed
+	xor a
+	ldh [hMultiplicand + 0], a
+	ld a, [hli]
+	ldh [hMultiplicand + 1], a
+	ld a, [hl]
+	ldh [hMultiplicand + 2], a
+; Multiply by 200
+	ld a, 100
+	add 100
+	ldh [hMultiplier], a
+	call Multiply
+; Divide by 100
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+; load hQuotient back into wBattleMonSpeed
+	ldh a, [hQuotient + 2]
+	ld hl, wBattleMonSpeed
+	ld [hli], a
+	ldh a, [hQuotient + 3]
+	ld [hl], a
+	ret
+
+.EnemySpeed:
+; load wEnemyMonSpeed into hMultiplicand
+	ld hl, wEnemyMonSpeed
+	xor a
+	ldh [hMultiplicand + 0], a
+	ld a, [hli]
+	ldh [hMultiplicand + 1], a
+	ld a, [hl]
+	ldh [hMultiplicand + 2], a
+; Multiply by 200
+	ld a, 100
+	add 100
+	ldh [hMultiplier], a
+	call Multiply
+; Divide by 100
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+; load hQuotient back into wEnemyMonSpeed
+	ldh a, [hQuotient + 2]
+	ld hl, wEnemyMonSpeed
+	ld [hli], a
+	ldh a, [hQuotient + 3]
+	ld [hl], a
+	ret

@@ -1,4 +1,5 @@
 BattleCommand_Splash:
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 	farcall StubbedTrainerRankings_Splash
-	jp PrintNothingHappened
+	farcall PrintNothingHappened
+	ret

@@ -175,8 +175,6 @@ CheckPlayerTurn:
 	call CallBattleCore
 	ld a, $1
 	ldh [hBGMapMode], a
-	ld hl, wPlayerSubStatus1
-	res SUBSTATUS_NIGHTMARE, [hl]
 	jr .not_asleep
 
 .fast_asleep
@@ -417,8 +415,6 @@ CheckEnemyTurn:
 	call CallBattleCore
 	ld a, $1
 	ldh [hBGMapMode], a
-	ld hl, wEnemySubStatus1
-	res SUBSTATUS_NIGHTMARE, [hl]
 	jr .not_asleep
 
 .fast_asleep
@@ -2245,6 +2241,16 @@ BattleCommand_ApplyDamage:
 
 .focus_band_text
 	ld hl, HungOnText
+	call StdBattleTextbox
+	call CheckNeutralGas
+	ret z
+	call GetUserAbility
+	cp UNBURDEN
+	ret nz
+	ld a, BATTLE_VARS_SUBSTATUS1
+	call GetBattleVarAddr
+	set SUBSTATUS_UNBURDEN, [hl]
+	ld hl, UnburdenText
 	jp StdBattleTextbox
 
 .update_damage_taken
@@ -6253,8 +6259,6 @@ INCLUDE "engine/battle/move_effects/mimic.asm"
 
 INCLUDE "engine/battle/move_effects/leech_seed.asm"
 
-INCLUDE "engine/battle/move_effects/splash.asm"
-
 INCLUDE "engine/battle/move_effects/disable.asm"
 
 INCLUDE "engine/battle/move_effects/conversion.asm"
@@ -6656,8 +6660,6 @@ BattleCommand5d:
 INCLUDE "engine/battle/move_effects/attract.asm"
 
 INCLUDE "engine/battle/move_effects/return.asm"
-
-INCLUDE "engine/battle/move_effects/present.asm"
 
 INCLUDE "engine/battle/move_effects/safeguard.asm"
 

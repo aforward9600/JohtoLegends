@@ -1,9 +1,6 @@
 BattleCommand_HealBell:
 ; healbell
 
-	ld a, BATTLE_VARS_SUBSTATUS1
-	call GetBattleVarAddr
-	res SUBSTATUS_NIGHTMARE, [hl]
 	ld de, wPartyMon1Status
 	ldh a, [hBattleTurn]
 	and a

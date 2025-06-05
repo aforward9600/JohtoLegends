@@ -10,6 +10,19 @@ BattleCommand_KnockOffPower:
 
 BattleCommand_KnockOff:
 ; knock off opponent's item
+
+	call CheckNeutralGas
+	jr z, .SkipAbilities
+
+	call GetUserAbility
+	cp MOLD_BREAKER
+	jr z, .SkipAbilities
+
+	call GetTargetAbility
+	cp STICKY_HOLD
+	ret z
+
+.SkipAbilities:
 	call CheckKnockOff
 	ret nz
 

@@ -74,7 +74,7 @@ BattleCommand_Disable:
 .failed
 	jp FailMove
 
-CursedBodyAbility:
+CursedBodyAbility::
 ; disable
 
 	ld a, [wAttackMissed]
