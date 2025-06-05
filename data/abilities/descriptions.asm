@@ -140,6 +140,8 @@ AbilityDescriptions:
 	dw StrongJawDesc
 	dw ToughClawsDesc
 	dw SlowStartDesc
+	dw DragonsMawDesc
+	dw TransistorDesc
 
 NoAbilityDesc:
 	db    "No ability."
@@ -692,3 +694,11 @@ ToughClawsDesc:
 SlowStartDesc:
 	db    "Lower stats for"
 	next1 "first 5 turns.@"
+
+DragonsMawDesc:
+	db    "Raise power by"
+	next1 "50 percent.@"
+
+TransistorDesc:
+	db    "Raise power by"
+	next1 "30 percent.@"

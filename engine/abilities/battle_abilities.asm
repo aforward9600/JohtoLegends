@@ -637,3 +637,372 @@ CheckContactAbilities:
 	farcall BattleCommand_SwitchTurn
 .NoContactAilities:
 	ret
+
+CheckBoostingAbilities:
+	call CheckNeutralGas
+	ret z
+	call GetUserAbility
+	cp MOLD_BREAKER
+	jr z, .AfterMarvelScale
+	call GetTargetAbility
+	cp MARVEL_SCALE
+	jr z, .MarvelScale
+	cp THICK_FAT
+	jp z, .ThickFat
+	cp DRY_SKIN
+	jp z, .DrySkin
+	cp HEAT_PROOF
+	jp z, .HeatProof
+.AfterMarvelScale
+	call GetUserAbility
+	ld de, 3
+	ld hl, .BoostingAbilities
+	call IsInArray
+	jp nc, .NoBoostingAbilities
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp hl
+
+.BoostingAbilities:
+	dbw GUTS,            .Guts
+	dbw SHARPNESS,       .Sharpness
+	dbw OVERGROW,        .Overgrow
+	dbw BLAZE,           .Blaze
+	dbw TORRENT,         .Torrent
+	dbw RECKLESS,        .Reckless
+	dbw SAND_FORCE,      .SandForce
+	dbw IRON_FIST,       .IronFist
+	dbw SWARM,           .Swarm
+	dbw TECHNICIAN,      .Technician
+	dbw RIVALRY,         .Rivalry
+	dbw HUSTLE,          .Hustle
+	dbw PIXILATE,        .Pixilate
+	dbw HUGE_POWER,      .HugePower
+	dbw REFRIGERATE,     .Refrigerate
+	dbw ANALYTIC,        .Analytic
+	dbw TRANSISTOR,      .Transistor
+	dbw DRAGONS_MAW,     .DragonsMaw
+	db -1
+
+.Guts:
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVar
+	and 1 << PSN | 1 << BRN | 1 << PAR
+	ret z
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp SPECIAL
+	ret nc
+	jp FiftyPercentBoost
+
+.MarvelScale:
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	cp 0
+	ret z
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp SPECIAL
+	ret nc
+	call FiftyPercentNerf
+	jr .AfterMarvelScale
+
+.ThickFat:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp FIRE
+	jr z, .ThickFatNerf
+	cp ICE
+	jr z, .ThickFatNerf
+	jp .AfterMarvelScale
+
+.ThickFatNerf:
+	call FiftyPercentNerf
+	jp .AfterMarvelScale
+
+.DrySkin:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp FIRE
+	jp nz, .AfterMarvelScale
+	call TwentyFivePercentBoost
+	jp .AfterMarvelScale
+
+.HeatProof:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp FIRE
+	jp nz, .AfterMarvelScale
+	call FiftyPercentNerf
+	jp .AfterMarvelScale
+
+.IronFist:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .PlayerIronFist
+	ld a, [wCurEnemyMove]
+	jr .FinishIronFist
+
+.PlayerIronFist
+	ld a, [wCurPlayerMove]
+.FinishIronFist
+	ld hl, PunchingMoves
+	call CheckMoveInListAbilities
+	ret nc
+	jp TwentyPercentBoost
+
+.SandForce:
+	ld a, [wBattleWeather]
+	cp WEATHER_SANDSTORM
+	ret nz
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp ROCK
+	jr z, .SandForceBoost
+	cp GROUND
+	jr z, .SandForceBoost
+	cp STEEL
+	ret nz
+.SandForceBoost:
+	jp ThirtyPercentBoost
+
+.Hustle:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp SPECIAL
+	ret nc
+	jp FiftyPercentBoost
+
+.Reckless:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_RECOIL_HIT
+	ret nz
+	jp TwentyPercentBoost
+
+.Sharpness:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .PlayerSharpness
+	ld a, [wCurEnemyMove]
+	jr .FinishSharpness
+
+.PlayerSharpness
+	ld a, [wCurPlayerMove]
+.FinishSharpness
+	ld hl, SharpnessMoves
+	call CheckMoveInListAbilities
+	ret nc
+	jp FiftyPercentBoost
+
+.Overgrow:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp GRASS
+	jr z, .PinchHPCheck
+	ret
+
+.Blaze:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp FIRE
+	jr z, .PinchHPCheck
+	ret
+.Torrent:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp WATER
+	jr z, .PinchHPCheck
+	ret
+
+.Swarm:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp BUG
+	jr z, .PinchHPCheck
+	ret
+
+.PinchHPCheck:
+	call GetThirdMaxHP
+	call CheckUserHasEnoughHP
+	ret c
+	jp FiftyPercentBoost
+
+.HugePower:
+	jp HundredPercentBoost
+
+.Pixilate:
+	ld b, FAIRY
+	jr .FinishTypeChange
+.Refrigerate:
+	ld b, ICE
+	jr .FinishTypeChange
+.FinishTypeChange:
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVar
+	cp 0
+	ret z
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	and TYPE_MASK
+	and a
+	ret nz
+	ld [hl], b
+	jp TwentyPercentBoost
+
+.Technician:
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVar
+	cp 60
+	jr z, .TechnicianBoost
+	jr c, .TechnicianBoost
+	ret
+
+.TechnicianBoost:
+	jp FiftyPercentBoost
+
+.Rivalry:
+	farcall CheckOppositeGender
+	ret c
+	jr z, TwentyFivePercentBoost
+	jp TwentyFivePercentNerf
+
+.Analytic:
+	farcall CheckOpponentWentFirst
+	jr nz, ThirtyPercentBoost
+	ret
+
+.Transistor:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp ELECTRIC
+	jr z, ThirtyPercentBoost
+	ret
+
+.DragonsMaw:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp DRAGON
+	jr z, FiftyPercentBoost
+.NoBoostingAbilities:
+	ret
+
+TwentyFivePercentBoost:
+	ld a, 25
+	jr FinishBoost
+HundredPercentBoost:
+	ld a, 100
+	jr FinishBoost
+ThirtyPercentBoost:
+	ld a, 30
+	jr FinishBoost
+TwentyPercentBoost:
+	ld a, 20
+	jr FinishBoost
+FiftyPercentBoost:
+	ld a, 50
+FinishBoost:
+	add 100
+	ldh [hMultiplier], a
+	call Multiply
+
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ret
+
+TwentyFivePercentNerf:
+	ld a, 75
+	ldh [hMultiplier], a
+	call Multiply
+
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ret
+
+FiftyPercentNerf:
+	ld a, 50
+	ldh [hMultiplier], a
+	call Multiply
+
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ret
+
+EffectiveDefensiveAbilities:
+	call GetUserAbility
+	cp TINTED_LENS
+	jr z, .TintedLens
+.ReturnToDefensiveAbilities:
+	call GetTargetAbility
+	cp SOLID_ROCK
+	jr z, .SolidRock
+	cp FILTER
+	jr z, .SolidRock
+	ret
+
+.TintedLens:
+	ld a, [wTypeModifier]
+	and $7f
+	cp 5
+	jr nz, .ReturnToDefensiveAbilities
+	jp HundredPercentBoost
+
+.SolidRock:
+	ld a, [wTypeModifier]
+	and $7f
+	cp 20
+	ret nz
+	jp TwentyFivePercentNerf
+
+SharpnessMoves:
+	dw CROSS_POISON
+	dw CUT
+	dw RAZOR_LEAF
+	dw SLASH
+	dw LEAF_BLADE
+	dw STEEL_SLICE
+	dw -1
+
+INCLUDE "data/moves/punching_moves.asm"
+
+CheckMoveInListAbilities:
+	; checks if the move ID in a belongs to a list of moves in hl
+	push bc
+	push de
+	push hl
+	call GetMoveIndexFromID
+	ld b, h
+	ld c, l
+	pop hl
+	ld de, 2
+	call IsInHalfwordArray
+	pop de
+	pop bc
+	ret
+
+HustleCheck:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp SPECIAL
+	ret nc
+	cp STATUS
+	ret nc
+	ret

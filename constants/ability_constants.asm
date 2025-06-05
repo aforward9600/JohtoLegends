@@ -141,5 +141,7 @@
 	const STRONG_JAW   ; 8a
 	const TOUGH_CLAWS  ; 8b
 	const SLOW_START   ; 8c
+	const DRAGONS_MAW  ; 8d
+	const TRANSISTOR   ; 8e
 
 NUM_ABILITIES EQU const_value + -1

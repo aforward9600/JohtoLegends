@@ -139,3 +139,5 @@ AbilityNames::
 	db "Strong Jaw@"
 	db "Tough Claws@"
 	db "Slow Start@"
+	db "Dragon's Maw@"
+	db "Transistor@"

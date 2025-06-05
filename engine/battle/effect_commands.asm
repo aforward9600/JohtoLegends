@@ -3098,6 +3098,9 @@ BattleCommand_DamageCalc:
 	call Divide
 
 ; Item boosts
+
+	farcall CheckBoostingAbilities
+
 	call GetUserItem
 
 	ld a, b
