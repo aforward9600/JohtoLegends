@@ -1411,3 +1411,15 @@ AftermathText:
 	line "Aftermath damaged"
 	cont "<USER>!"
 	prompt
+
+SlowStartText:
+	text "<USER> is"
+	line "off to a slow"
+	cont "start!"
+	prompt
+
+SlowStartEndText:
+	text "<USER>'s"
+	line "Slow Start has"
+	cont "ended!"
+	prompt

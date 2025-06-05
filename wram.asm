@@ -512,6 +512,7 @@ wPlayerEncoreCount:: db ; c676
 wPlayerPerishCount:: db ; c677
 wPlayerFuryCutterCount:: db ; c678
 wPlayerProtectCount:: db ; c679
+wPlayerSlowStartCount:: db
 
 wEnemyAbility:: db
 wEnemyRolloutCount:: db ; c67a
@@ -522,6 +523,7 @@ wEnemyEncoreCount:: db ; c67e
 wEnemyPerishCount:: db ; c67f
 wEnemyFuryCutterCount:: db ; c680
 wEnemyProtectCount:: db ; c681
+wEnemySlowStartCount:: db
 
 wPlayerDamageTaken:: dw ; c682
 wEnemyDamageTaken:: dw ; c684

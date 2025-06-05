@@ -139,6 +139,7 @@ AbilityDescriptions:
 	dw MegaLauncherDesc
 	dw StrongJawDesc
 	dw ToughClawsDesc
+	dw SlowStartDesc
 
 NoAbilityDesc:
 	db    "No ability."
@@ -687,3 +688,7 @@ StrongJawDesc:
 ToughClawsDesc:
 	db    "Powers up claw"
 	next1 "moves.@"
+
+SlowStartDesc:
+	db    "Lower stats for"
+	next1 "first 5 turns.@"

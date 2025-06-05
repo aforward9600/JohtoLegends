@@ -137,6 +137,7 @@ DoEntranceAbilities:
 	dbw DRIZZLE,          .Drizzle
 	dbw SANDSTREAM,       .Sandstream
 	dbw DOWNLOAD,         .Download
+	dbw SLOW_START,       .SlowStart
 	db -1
 
 .Intimidate:
@@ -277,6 +278,28 @@ DoEntranceAbilities:
 	ld de, ANIM_IN_SANDSTORM
 	farcall FarPlayBattleAnimation
 	ld hl, SandstormBrewedText
+	jp StdBattleTextbox
+
+.SlowStart:
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	set SUBSTATUS_SLOW_START, [hl]
+	ld a, 5
+	push af
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .PlayerSlowStart
+	pop af
+	ld [wEnemySlowStartCount], a
+	jr .FinishSlowStart
+
+.PlayerSlowStart:
+	pop af
+	ld [wPlayerSlowStartCount], a
+.FinishSlowStart:
+	farcall CalcPlayerStats
+	call MoveDelayAbility
+	ld hl, SlowStartText
 	jp StdBattleTextbox
 
 .Download:

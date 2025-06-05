@@ -270,6 +270,8 @@ HandleBetweenTurnEffects:
 	call HandlePerishSong
 	call CheckFaint_PlayerThenEnemy
 	ret c
+	call HandleSlowStart
+;	farcall HandleEndMoveAbility
 	jr .NoMoreFaintingConditions
 
 .CheckEnemyFirst:
@@ -288,6 +290,8 @@ HandleBetweenTurnEffects:
 	call HandlePerishSong
 	call CheckFaint_EnemyThenPlayer
 	ret c
+	call HandleSlowStart
+;	farcall HandleEndMoveAbility
 
 .NoMoreFaintingConditions:
 	farcall Core2_NewTurnEndEffects
@@ -1149,6 +1153,40 @@ ResidualDamage:
 	call DelayFrames
 	xor a
 	ret
+
+HandleSlowStart:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .EnemyFirst
+	call SetPlayerTurn
+	call .do_it
+	call SetEnemyTurn
+	jp .do_it
+
+.EnemyFirst:
+	call SetEnemyTurn
+	call .do_it
+	call SetPlayerTurn
+
+.do_it
+	ld hl, wPlayerSlowStartCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .PlayerSlowStart
+	ld hl, wEnemySlowStartCount
+.PlayerSlowStart
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVar
+	bit SUBSTATUS_SLOW_START, a
+	ret z
+	dec [hl]
+	ld a, [hl]
+	ret nz
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	res SUBSTATUS_SLOW_START, [hl]
+	ld hl, SlowStartEndText
+	jp StdBattleTextbox
 
 HandlePerishSong:
 	ldh a, [hSerialConnectionStatus]
@@ -6506,9 +6544,12 @@ ApplyStatusEffectOnEnemyStats:
 ApplyStatusEffectOnStats:
 	ldh [hBattleTurn], a
 	farcall ApplyChoiceScarfOnSpeed
+;	farcall ApplySpeedAbilities
 	call ApplyPrzEffectOnSpeed
+	call ApplySlowStartOnSpeed
 	farcall MachoBraceEffectOnSpeed
-	jp ApplyBrnEffectOnAttack
+	call ApplyBrnEffectOnAttack
+	jp ApplySlowStartOnAttack
 
 ApplyPrzEffectOnSpeed:
 	ldh a, [hBattleTurn]
@@ -6591,6 +6632,92 @@ ApplyBrnEffectOnAttack:
 	or b
 	jr nz, .enemy_ok
 	ld b, $1 ; min attack
+
+.enemy_ok
+	ld [hl], b
+	ret
+
+ApplySlowStartOnAttack:
+	call CheckNeutralGas
+	ret z
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .enemy
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SLOW_START, a
+	ret z
+	ld hl, wBattleMonAttack + 1
+	ld a, [hld]
+	ld b, a
+	ld a, [hl]
+	srl a
+	rr b
+	ld [hli], a
+	or b
+	jr nz, .player_ok
+	ld b, $1 ; min attack
+
+.player_ok
+	ld [hl], b
+	ret
+
+.enemy
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_SLOW_START, a
+	ret z
+	ld hl, wEnemyMonAttack + 1
+	ld a, [hld]
+	ld b, a
+	ld a, [hl]
+	srl a
+	rr b
+	ld [hli], a
+	or b
+	jr nz, .enemy_ok
+	ld b, $1 ; min attack
+
+.enemy_ok
+	ld [hl], b
+	ret
+
+ApplySlowStartOnSpeed:
+	call CheckNeutralGas
+	ret z
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .enemy
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SLOW_START, a
+	ret z
+	ld hl, wBattleMonSpeed + 1
+	ld a, [hld]
+	ld b, a
+	ld a, [hl]
+	srl a
+	rr b
+	ld [hli], a
+	or b
+	jr nz, .player_ok
+	ld b, $1 ; min speed
+
+.player_ok
+	ld [hl], b
+	ret
+
+.enemy
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_SLOW_START, a
+	ret z
+	ld hl, wEnemyMonSpeed + 1
+	ld a, [hld]
+	ld b, a
+	ld a, [hl]
+	srl a
+	rr b
+	ld [hli], a
+	or b
+	jr nz, .enemy_ok
+	ld b, $1 ; min speed
 
 .enemy_ok
 	ld [hl], b

@@ -140,5 +140,6 @@
 	const MEGA_LAUNCHER ; 89
 	const STRONG_JAW   ; 8a
 	const TOUGH_CLAWS  ; 8b
+	const SLOW_START   ; 8c
 
 NUM_ABILITIES EQU const_value + -1

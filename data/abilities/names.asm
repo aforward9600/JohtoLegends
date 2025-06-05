@@ -138,3 +138,4 @@ AbilityNames::
 	db "Mega Launcher@"
 	db "Strong Jaw@"
 	db "Tough Claws@"
+	db "Slow Start@"
