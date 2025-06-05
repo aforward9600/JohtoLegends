@@ -48,7 +48,7 @@ BattleText_WildFled:
 	prompt
 
 BattleText_EnemyFled:
-	text "Enemy @"
+	text "Foe @"
 	text_ram wEnemyMonNick
 	text_start
 	line "fled!"
@@ -175,7 +175,7 @@ BattleText_HailEnds:
 	prompt
 
 BattleText_EnemyMonFainted:
-	text "Enemy @"
+	text "Foe @"
 	text_ram wEnemyMonNick
 	text_start
 	line "fainted!"
@@ -1362,14 +1362,52 @@ UnburdenText:
 	cont "raised Speed!"
 	prompt
 
+RattledText:
+	text "<TARGET> was"
+	line "rattled and its"
+	cont "Speed rose!"
+	prompt
+
+CuteCharmText:
+	text "<USER>"
+	line "fell in love due"
+	cont "to Cute Charm!"
+	prompt
+
+RoughSkinText:
+	text "<USER> was"
+	line "damaged by"
+	cont "Rough Skin!"
+	prompt
+
 WeakArmorSpeedText:
 	text "<TARGET>'s"
 	line "Weak Armor sharply"
 	cont "raised its Speed!"
 	prompt
 
-RattledText:
-	text "<TARGET> was"
-	line "rattled and its"
-	cont "Speed rose!"
+WeakArmorDefenseText:
+	text "<TARGET>'s"
+	line "Weak Armor lowered"
+	cont "its Defense!"
+	prompt
+
+BattleText_Damp:
+	text "<TARGET>'s"
+	line "Damp prevented the"
+	cont "attack!"
+	prompt
+
+WaterAbsorbText:
+	text "<TARGET>"
+	line "healed itself with"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
+AftermathText:
+	text "<TARGET>'s"
+	line "Aftermath damaged"
+	cont "<USER>!"
 	prompt

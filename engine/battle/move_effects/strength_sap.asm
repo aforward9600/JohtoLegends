@@ -17,22 +17,22 @@ BattleCommand_StrengthSap:
     call StrengthSap_AttackDown
     and a
     jr nz, .fail
-    call AnimateCurrentMove
-    call BattleCommand_StatDownMessage
+    farcall AnimateCurrentMove
+    farcall BattleCommand_StatDownMessage
     jr .restorehp
 .fail
-    call BattleCommand_StatDownFailText
+    farcall BattleCommand_StatDownFailText
     pop bc
     ret
 
 .restorehp
 ; restore HP by value of opponents attack before it was lowered
     pop bc
-    call BattleCommand_SwitchTurn
+    farcall BattleCommand_SwitchTurn
     ld hl, RestoreHP
     ld a, BANK("Battle Core")
     rst FarCall
-    call BattleCommand_SwitchTurn
+    farcall BattleCommand_SwitchTurn
     call UpdateUserInParty
     call RefreshBattleHuds
     ld hl, RegainedHealthText
@@ -50,6 +50,17 @@ StrengthSap_AttackDown:
     bit SUBSTATUS_MIST, a
     jp nz, .mist
 
+	call CheckNeutralGas
+	jr z, .SkipHyperCutter
+	call GetUserAbility
+	cp MOLD_BREAKER
+	jr z, .SkipHyperCutter
+	call GetTargetAbility
+	cp HYPER_CUTTER
+	jr z, .AttackDropSkip
+	cp CLEAR_BODY
+	jr z, .AttackDropSkip
+.SkipHyperCutter
     ld hl, wEnemyStatLevels
     ldh a, [hBattleTurn]
     and a
@@ -85,7 +96,7 @@ StrengthSap_AttackDown:
     ld hl, wBattleMonAttack + 1
     ld de, wPlayerStats
 .DoEnemy
-    call TryLowerStat
+    call TryLowerStat2
     pop hl
     jr z, .CouldntLower
 
@@ -115,3 +126,7 @@ StrengthSap_AttackDown:
     ld a, 1
     ld [wAttackMissed], a
     ret
+
+.AttackDropSkip
+	farcall AnimateCurrentMove
+	jp BattleCommand_StrengthSap.restorehp

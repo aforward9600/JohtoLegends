@@ -33,7 +33,8 @@ SetEnemyAbility::
 
 .WildAbilities
 	call Random
-	jr z, .HiddenAbility
+	cp 10 percent + 1
+	jr c, .HiddenAbility
 
 	call Random
 	cp 50 percent + 1
@@ -102,10 +103,15 @@ SentOutAbility::
 
 EnemyAbilityFirst:
 	ld a, [wEnemyAbility]
+	cp NEUTRAL_GAS
+	jp z, EnemyNeutralGas
 	jr DoEntranceAbilities
 
 PlayerAbilityFirst:
 	ld a, [wPlayerAbility]
+	ld a, [wPlayerAbility]
+	cp NEUTRAL_GAS
+	jp z, PlayerNeutralGas
 DoEntranceAbilities:
 	ld de, 3
 	ld hl, .FirstAbilities
@@ -118,84 +124,22 @@ DoEntranceAbilities:
 	jp hl
 
 .FirstAbilities:
-	dbw INTIMIDATE,       .EnemyIntimidate
-	dbw TRACE,            .EnemyTrace
-	dbw MOLD_BREAKER,     .EnemyMoldBreaker
-	dbw PRESSURE,         .EnemyPressure
-	dbw SCREEN_CLEAN,     .EnemyScreenClean
-	dbw FRISK,            .EnemyFrisk
-	dbw UNNERVE,          .EnemyUnnerve
-	dbw CLOUD_NINE,       .EnemyCloudNine
-	dbw DROUGHT,          .EnemyDrought
-	dbw SNOW_WARNING,     .EnemySnowWarning
-	dbw DRIZZLE,          .EnemyDrizzle
-	dbw SANDSTREAM,       .EnemySandstream
-	dbw DOWNLOAD,         .EnemyDownload
+	dbw INTIMIDATE,       .Intimidate
+	dbw TRACE,            .Trace
+	dbw MOLD_BREAKER,     .MoldBreaker
+	dbw PRESSURE,         .Pressure
+	dbw SCREEN_CLEAN,     .ScreenClean
+	dbw FRISK,            .Frisk
+	dbw UNNERVE,          .Unnerve
+	dbw CLOUD_NINE,       .CloudNine
+	dbw DROUGHT,          .Drought
+	dbw SNOW_WARNING,     .SnowWarning
+	dbw DRIZZLE,          .Drizzle
+	dbw SANDSTREAM,       .Sandstream
+	dbw DOWNLOAD,         .Download
 	db -1
 
-.EnemyIntimidate:
-	jp EnemyIntimidate
-
-.EnemyTrace:
-	jp EnemyTrace
-
-.EnemyMoldBreaker:
-	jp MoldBreakerAbilityText
-
-.EnemyPressure:
-	jp PressureAbility
-
-.EnemyScreenClean:
-	jp ScreenClean
-
-.EnemyFrisk:
-	jp FriskAbility
-
-.EnemyUnnerve:
-	jp UnnerveAbility
-
-.EnemyCloudNine:
-	jp CloudNineAbility
-
-.EnemyDrought:
-	jp DroughtScript
-
-.EnemySnowWarning:
-	jp SnowWarningScript
-
-.EnemyDrizzle:
-	jp DrizzleScript
-
-.EnemySandstream:
-	jp SandstreamScript
-
-.EnemyDownload:
-	call DownloadAbility
-.NoFirstAbility:
-	ret
-
-INCLUDE "data/abilities/no_intimidate_abilities.asm"
-
-EnemyNeutralGas:
-	farcall BattleCommand_SwitchTurn
-	call MoveDelayAbility
-	ld hl, NeutralGasText
-	call StdBattleTextbox
-	farcall BattleCommand_SwitchTurn
-	ret
-
-PlayerNeutralGas:
-	call MoveDelayAbility
-	ld hl, NeutralGasText
-	jp StdBattleTextbox
-
-MoveDelayAbility:
-; movedelay
-; Wait 40 frames.
-	ld c, 40
-	jp DelayFrames
-
-EnemyIntimidate:
+.Intimidate:
 	call GetTargetAbility
 	ld hl, NoIntimidateAbilities
 	ld de, 1
@@ -215,12 +159,7 @@ EnemyIntimidate:
 	ld hl, AttackNotLoweredText
 	jp StdBattleTextbox
 
-DownloadAbility:
-	farcall BattleCommand_SpecialAttackUp
-	ld hl, DownloadText
-	jp StdBattleTextbox
-
-EnemyTrace:
+.Trace:
 	call GetTargetAbility
 	cp TRACE
 	ret z
@@ -247,51 +186,17 @@ EnemyTrace:
 	ld hl, PlayerTraceText
 	jp StdBattleTextbox
 
-DrizzleScript:
-	ld a, WEATHER_RAIN
-	ld [wBattleWeather], a
-	ld a, 5
-	ld [wWeatherCount], a
-	ld de, ANIM_IN_RAIN
-	farcall FarPlayBattleAnimation
-	ld hl, DownpourText
-	jp StdBattleTextbox
-
-DroughtScript:
-	ld a, WEATHER_SUN
-	ld [wBattleWeather], a
-	ld de, ANIM_IN_SUN
-	farcall FarPlayBattleAnimation
-	ld hl, SunGotBrightText
-	jp StdBattleTextbox
-
-SnowWarningScript:
-	ld a, WEATHER_HAIL
-	ld [wBattleWeather], a
-	ld de, ANIM_IN_HAIL
-	farcall FarPlayBattleAnimation
-	ld hl, HailStartsText
-	jp StdBattleTextbox
-
-SandstreamScript:
-	ld a, WEATHER_SANDSTORM
-	ld [wBattleWeather], a
-	ld de, ANIM_IN_SANDSTORM
-	farcall FarPlayBattleAnimation
-	ld hl, SandstormBrewedText
-	jp StdBattleTextbox
-
-MoldBreakerAbilityText:
+.MoldBreaker:
 	call MoveDelayAbility
 	ld hl, BattleText_MoldBreaker
 	jp StdBattleTextbox
 
-PressureAbility:
+.Pressure:
 	call MoveDelayAbility
 	ld hl, PressureText
 	jp StdBattleTextbox
 
-ScreenClean:
+.ScreenClean:
 	ld hl, wEnemyScreens
 	ld a, [hl]
 	res SCREENS_REFLECT, [hl]
@@ -317,12 +222,7 @@ ScreenClean:
 	ld hl, ScreenCleanText
 	jp StdBattleTextbox
 
-UnnerveAbility:
-	call MoveDelayAbility
-	ld hl, UnnerveText
-	jp StdBattleTextbox
-
-FriskAbility:
+.Frisk:
 	farcall GetOpponentItem
 	ld a, [hl]
 	and a
@@ -335,10 +235,77 @@ FriskAbility:
 	ld hl, FriskText
 	jp StdBattleTextbox
 
-CloudNineAbility:
+.Unnerve:
+	call MoveDelayAbility
+	ld hl, UnnerveText
+	jp StdBattleTextbox
+
+.CloudNine:
 	call MoveDelayAbility
 	ld hl, CloudNineText
 	jp StdBattleTextbox
+
+.Drought:
+	ld a, WEATHER_SUN
+	ld [wBattleWeather], a
+	ld de, ANIM_IN_SUN
+	farcall FarPlayBattleAnimation
+	ld hl, SunGotBrightText
+	jp StdBattleTextbox
+
+.SnowWarning:
+	ld a, WEATHER_HAIL
+	ld [wBattleWeather], a
+	ld de, ANIM_IN_HAIL
+	farcall FarPlayBattleAnimation
+	ld hl, HailStartsText
+	jp StdBattleTextbox
+
+.Drizzle:
+	ld a, WEATHER_RAIN
+	ld [wBattleWeather], a
+	ld a, 5
+	ld [wWeatherCount], a
+	ld de, ANIM_IN_RAIN
+	farcall FarPlayBattleAnimation
+	ld hl, DownpourText
+	jp StdBattleTextbox
+
+.Sandstream:
+	ld a, WEATHER_SANDSTORM
+	ld [wBattleWeather], a
+	ld de, ANIM_IN_SANDSTORM
+	farcall FarPlayBattleAnimation
+	ld hl, SandstormBrewedText
+	jp StdBattleTextbox
+
+.Download:
+	farcall BattleCommand_SpecialAttackUp
+	ld hl, DownloadText
+	call StdBattleTextbox
+.NoFirstAbility:
+	ret
+
+INCLUDE "data/abilities/no_intimidate_abilities.asm"
+
+EnemyNeutralGas:
+	farcall BattleCommand_SwitchTurn
+	call MoveDelayAbility
+	ld hl, NeutralGasText
+	call StdBattleTextbox
+	farcall BattleCommand_SwitchTurn
+	ret
+
+PlayerNeutralGas:
+	call MoveDelayAbility
+	ld hl, NeutralGasText
+	jp StdBattleTextbox
+
+MoveDelayAbility:
+; movedelay
+; Wait 40 frames.
+	ld c, 40
+	jp DelayFrames
 
 RattledAbility:
 	farcall BattleCommand_SwitchTurn
@@ -373,11 +340,277 @@ DefiantAbility:
 	ld hl, DefiantText
 	jp StdBattleTextbox
 
-DefiantUserAbility:
-	farcall BattleCommand_AttackUp2
+CheckContactAbilities:
+	call CheckNeutralGas
+	ret z
+	call GetTargetAbility
+	cp CURSED_BODY
+	jr z, .cursedbody
+	cp RATTLED
+	jr z, .rattled
+	cp JUSTIFIED
+	jp z, .justified
+.AfterCursedBody
+	ld a, BATTLE_VARS_LAST_MOVE
+	call GetBattleVar
+	cp PHYSICAL
+	ret c
+	call GetUserAbility
+	cp POISON_TOUCH
+	jr z, .PoisonTouch
+	cp STENCH
+	jr z, .Stench
+.ReconveneContact:
+	call GetTargetAbility
+	ld de, 3
+	ld hl, .ContactAbilities
+	call IsInArray
+	jp nc, .NoContactAilities
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp hl
+
+.PoisonTouch:
+	call GetTargetAbility
+	cp SHIELD_DUST
+	jr z, .ReconveneContact
+	call BattleRandom
+	cp 30 percent + 1
+	ret nc
+	farcall BattleCommand_PoisonTarget
+	jr .ReconveneContact
+
+.Stench:
+	call GetTargetAbility
+	cp SHIELD_DUST
+	jr z, .ReconveneContact
+	call BattleRandom
+	cp 10 percent + 1
+	ret nc
+	farcall BattleCommand_FlinchTarget
+	jr .ReconveneContact
+
+.cursedbody:
+	call BattleRandom
+	cp 30 percent + 1
+	ret nc
+	farcall BattleCommand_SwitchTurn
+	farcall CursedBodyAbility
+	farcall BattleCommand_SwitchTurn
+	jr .AfterCursedBody
+
+.rattled:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp BUG
+	jr z, .ActivateRattle
+	cp DARK
+	jr z, .ActivateRattle
+	cp GHOST
+	jp nz, .AfterCursedBody
+.ActivateRattle
+	call RattledAbility
+	jp .AfterCursedBody
+
+.justified:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp DARK
+	jp nz, .AfterCursedBody
+	call JustifiedAbility
+	jp .AfterCursedBody
+
+.ContactAbilities:
+	dbw STATIC,       .Static
+	dbw POISON_POINT, .PoisonPoint
+	dbw FLAME_BODY,   .FlameBody
+	dbw ROUGH_SKIN,   .RoughSkin
+	dbw CUTE_CHARM,   .CuteCharm
+	dbw EFFECT_SPORE, .EffectSpore
+	dbw PERISH_BODY,  .PerishBody
+	dbw AFTERMATH,    .Aftermath
+	dbw WEAK_ARMOR,   .WeakArmor
+	dbw PICKPOCKET,   .Pickpocket
+	db -1
+
+.Static
+	call BattleRandom
+	cp 30 percent + 1
+	ret nc
+	farcall BattleCommand_SwitchTurn
+	farcall BattleCommand_ParalyzeTarget
+	farcall BattleCommand_SwitchTurn
+	ret
+
+.PoisonPoint:
+	call BattleRandom
+	cp 30 percent + 1
+	ret nc
+	farcall BattleCommand_SwitchTurn
+	farcall BattleCommand_PoisonTarget
+	farcall BattleCommand_SwitchTurn
+	ret
+
+.FlameBody:
+	ld hl, wBattleMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .GotPlayerType
+	ld hl, wEnemyMonType1
+.GotPlayerType
+	ld a, [hli]
+	cp FIRE
+	ret z
+	ld a, [hl]
+	cp FIRE
+	ret z
+	call BattleRandom
+	cp 30 percent + 1
+	ret nc
+	farcall BattleCommand_SwitchTurn
+	farcall BattleCommand_BurnTarget
+	farcall BattleCommand_SwitchTurn
+	ret
+
+.EffectSpore:
+	call GetUserAbility
+	cp OVERCOAT
+	ret z
+	farcall BattleCommand_SwitchTurn
+	call BattleRandom
+	cp 30 percent + 1
+	ret nc
+	call BattleRandom
+	cp 33 percent + 1
+	jr c, .EffectSporePoison
+	call BattleRandom
+	cp 50 percent + 1
+	jr c, .EffectSporeSleep
+	farcall BattleCommand_ParalyzeTarget
+	jr .FinishEffectSpore
+
+.EffectSporePoison:
+	farcall BattleCommand_PoisonTarget
+	jr .FinishEffectSpore
+
+.EffectSporeSleep:
+	farcall BattleCommand_SleepHit
+.FinishEffectSpore:
+	farcall BattleCommand_SwitchTurn
+	ret
+
+.RoughSkin:
+	farcall GetEighthMaxHP
+	farcall SubtractHPFromUser
+	ld hl, RoughSkinText
+	jp StdBattleTextbox
+
+.PerishBody:
+	ld hl, wPlayerSubStatus1
+	ld de, wEnemySubStatus1
+	bit SUBSTATUS_PERISH, [hl]
+	jr z, .ok
+
+	ld a, [de]
+	bit SUBSTATUS_PERISH, a
+	jp nz, .NoContactAilities
+
+.ok:
+	bit SUBSTATUS_PERISH, [hl]
+	jr nz, .enemy
+
+	set SUBSTATUS_PERISH, [hl]
+	ld a, 4
+	ld [wPlayerPerishCount], a
+
+.enemy
+	ld a, [de]
+	bit SUBSTATUS_PERISH, a
+	jr nz, .done
+
+	set SUBSTATUS_PERISH, a
+	ld [de], a
+	ld a, 4
+	ld [wEnemyPerishCount], a
+
+.done
+	ld de, ANIM_PERISH_BODY
+	farcall FarPlayBattleAnimation
+	ld hl, StartPerishText
+	jp StdBattleTextbox
+
+.Aftermath:
+	call GetUserAbility
+	cp DAMP
+	ret z
+	farcall BattleCommand_SwitchTurn
+	farcall HasUserFainted
+	ret nz
+	farcall BattleCommand_SwitchTurn
+	farcall GetQuarterMaxHP
+	farcall SubtractHPFromUser
+	ld hl, AftermathText
+	jp StdBattleTextbox
+
+.CuteCharm:
+	call BattleRandom
+	cp 30 percent + 1
+	ret nc
+	call GetUserAbility
+	cp OBLIVIOUS
+	ret z
+	farcall BattleCommand_SwitchTurn
+	farcall CheckOppositeGender
+	jp c, .NoContactAilities
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_IN_LOVE, [hl]
+	jp nz, .NoContactAilities
+	set SUBSTATUS_IN_LOVE, [hl]
+	farcall BattleCommand_SwitchTurn
+	ld de, ANIM_IN_LOVE
+	farcall FarPlayBattleAnimation
+	ld hl, CuteCharmText
+	jp StdBattleTextbox
+
+.WeakArmor:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .HasEnemyFainted
+	farcall HasPlayerFainted
+	ret z
+.ContinueWeakArmor
+	farcall BattleCommand_DefenseDown
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .TrySpeedUp
+	ld hl, WeakArmorDefenseText
+	call StdBattleTextbox
+.TrySpeedUp
+	farcall BattleCommand_SwitchTurn
+	farcall BattleCommand_SpeedUp2
+	farcall BattleCommand_SwitchTurn
 	ld a, [wAttackMissed]
 	and a
 	ret nz
-	call MoveDelayAbility
-	ld hl, DefiantUserText
+	ld hl, WeakArmorSpeedText
 	jp StdBattleTextbox
+
+.HasEnemyFainted:
+	farcall HasEnemyFainted
+	ret z
+	jr .ContinueWeakArmor
+
+.Pickpocket:
+	call GetUserAbility
+	cp STICKY_HOLD
+	ret z
+	farcall BattleCommand_SwitchTurn
+	farcall BattleCommand_Thief
+	farcall BattleCommand_SwitchTurn
+.NoContactAilities:
+	ret

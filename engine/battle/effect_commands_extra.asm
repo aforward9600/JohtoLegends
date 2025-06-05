@@ -314,3 +314,46 @@ BattleCommand_DoubleMinimizeDamage:
 	ld [hli], a
 	ld [hl], a
 	ret
+
+TryLowerStat2:
+; Lower stat c from stat struct hl (buffer de).
+
+	push bc
+	sla c
+	ld b, 0
+	add hl, bc
+	; add de, c
+	ld a, c
+	add e
+	ld e, a
+	jr nc, .no_carry
+	inc d
+.no_carry
+	pop bc
+
+; The lowest possible stat is 1.
+	ld a, [hld]
+	sub 1
+	jr nz, .not_min
+	ld a, [hl]
+	and a
+	ret z
+
+.not_min
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .Player
+
+	farcall BattleCommand_SwitchTurn
+	farcall CalcPlayerStats
+	farcall BattleCommand_SwitchTurn
+	jr .end
+
+.Player:
+	farcall BattleCommand_SwitchTurn
+	farcall CalcEnemyStats
+	farcall BattleCommand_SwitchTurn
+.end
+	ld a, 1
+	and a
+	ret

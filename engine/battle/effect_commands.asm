@@ -5803,6 +5803,21 @@ BattleCommand_HeldFlinch:
 	and a
 	ret nz
 
+	farcall CheckContactAbilities
+
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_SUPER_FANG
+	ret z
+	cp EFFECT_PSYWAVE
+	ret z
+	cp EFFECT_STATIC_DAMAGE
+	ret z
+	cp EFFECT_COUNTER
+	ret z
+	cp EFFECT_OHKO
+	ret z
+
 	call GetUserItem
 	ld a, b
 	cp HELD_FLINCH
@@ -6242,8 +6257,6 @@ INCLUDE "engine/battle/move_effects/disable.asm"
 INCLUDE "engine/battle/move_effects/conversion.asm"
 
 INCLUDE "engine/battle/move_effects/shell_smash.asm"
-
-INCLUDE "engine/battle/move_effects/strength_sap.asm"
 
 INCLUDE "engine/battle/move_effects/sucker_punch.asm"
 
