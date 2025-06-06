@@ -646,7 +646,7 @@ CheckBoostingAbilities:
 	jr z, .AfterMarvelScale
 	call GetTargetAbility
 	cp MARVEL_SCALE
-	jr z, .MarvelScale
+	jp z, .MarvelScale
 	cp THICK_FAT
 	jp z, .ThickFat
 	cp DRY_SKIN
@@ -684,6 +684,8 @@ CheckBoostingAbilities:
 	dbw ANALYTIC,        .Analytic
 	dbw TRANSISTOR,      .Transistor
 	dbw DRAGONS_MAW,     .DragonsMaw
+	dbw TOUGH_CLAWS,     .ToughClaws
+	dbw STRONG_JAW,      .StrongJaw
 	db -1
 
 .Guts:
@@ -697,6 +699,28 @@ CheckBoostingAbilities:
 	ret nc
 	jp FiftyPercentBoost
 
+.ToughClaws:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp SPECIAL
+	ret nc
+	jp ThirtyPercentBoost
+
+.StrongJaw:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .PlayerStrongJaw
+	ld a, [wCurEnemyMove]
+	jr .FinishStrongJaw
+
+.PlayerStrongJaw
+	ld a, [wCurPlayerMove]
+.FinishStrongJaw
+	ld hl, StrongJawMoves
+	call CheckMoveInListAbilities
+	ret nc
+	jp FiftyPercentBoost
+
 .MarvelScale:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
@@ -707,7 +731,7 @@ CheckBoostingAbilities:
 	cp SPECIAL
 	ret nc
 	call FiftyPercentNerf
-	jr .AfterMarvelScale
+	jp .AfterMarvelScale
 
 .ThickFat:
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -979,6 +1003,16 @@ SharpnessMoves:
 	dw SLASH
 	dw LEAF_BLADE
 	dw STEEL_SLICE
+	dw -1
+
+StrongJawMoves:
+	dw BITE
+	dw CRUNCH
+	dw FIRE_FANG
+	dw HYPER_FANG
+	dw ICE_FANG
+	dw POISON_FANG
+	dw THUNDER_FANG
 	dw -1
 
 INCLUDE "data/moves/punching_moves.asm"
