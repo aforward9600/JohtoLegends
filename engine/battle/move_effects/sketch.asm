@@ -1,17 +1,19 @@
 BattleCommand_Sketch:
 ; sketch
 
-	call ClearLastMove
+	farcall ClearLastMove
 ; Don't sketch during a link battle
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked
-	call AnimateFailedMove
+	farcall AnimateFailedMove
 	jp PrintNothingHappened
 
 .not_linked
 ; If the opponent has a substitute up, fail.
-	call CheckSubstituteOpp
+	ld a, BATTLE_VARS_SUBSTATUS4_OPP
+	call GetBattleVar
+	bit SUBSTATUS_SUBSTITUTE, a
 	jp nz, .fail
 ; If the user is transformed, fail.
 	ld a, BATTLE_VARS_SUBSTATUS5
@@ -112,11 +114,12 @@ BattleCommand_Sketch:
 	ld [hl], a
 .done_copy
 	call GetMoveName
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 
 	ld hl, SketchedText
 	jp StdBattleTextbox
 
 .fail
-	call AnimateFailedMove
-	jp PrintDidntAffect
+	farcall AnimateFailedMove
+	farcall PrintDidntAffect
+	ret

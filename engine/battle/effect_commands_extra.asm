@@ -359,3 +359,8 @@ TryLowerStat2:
 	ld a, 1
 	and a
 	ret
+
+PrintNothingHappened:
+; 'but nothing happened!'
+	ld hl, NothingHappenedText
+	jp StdBattleTextbox

@@ -1423,3 +1423,28 @@ SlowStartEndText:
 	line "Slow Start has"
 	cont "ended!"
 	prompt
+
+BouncedBackText:
+	text "<USER>"
+	line "bounced the"
+	cont "@"
+	text_ram wStringBuffer1
+	text " back!"
+	prompt
+
+ObliviousText:
+	text "<TARGET> was"
+	line "immune to Attract!"
+	prompt
+
+OwnTempoText:
+	text "<TARGET>'s"
+	line "Own Tempo prevents"
+	cont "confusion!"
+	prompt
+
+SwaggerOwnTempoText:
+	text "<USER>'s"
+	line "Own Tempo prevents"
+	cont "confusion!"
+	prompt

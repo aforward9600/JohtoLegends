@@ -1573,6 +1573,9 @@ BattleCommand_CheckHit:
 	cp EFFECT_VITAL_THROW
 	ret z
 
+	cp EFFECT_PLAY_NICE
+	ret z
+
 	call .StatModifiers
 
 	ld a, [wPlayerMoveStruct + MOVE_ACC]
@@ -6137,6 +6140,8 @@ BattleCommand_FinishConfusingTarget:
 	jr z, .got_effect
 	cp EFFECT_SWAGGER
 	jr z, .got_effect
+	cp EFFECT_FLATTER
+	jr z, .got_effect
 	call AnimateCurrentMove
 
 .got_effect
@@ -6486,11 +6491,6 @@ PrintDoesntAffect:
 	ld hl, DoesntAffectText
 	jp StdBattleTextbox
 
-PrintNothingHappened:
-; 'but nothing happened!'
-	ld hl, NothingHappenedText
-	jp StdBattleTextbox
-
 TryPrintButItFailed:
 	ld a, [wAlreadyFailed]
 	and a
@@ -6652,10 +6652,6 @@ INCLUDE "engine/battle/move_effects/sandstorm.asm"
 INCLUDE "engine/battle/move_effects/hail.asm"
 
 INCLUDE "engine/battle/move_effects/rollout.asm"
-
-BattleCommand5d:
-; unused
-	ret
 
 INCLUDE "engine/battle/move_effects/attract.asm"
 

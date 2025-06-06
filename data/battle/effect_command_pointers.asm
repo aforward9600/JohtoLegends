@@ -94,7 +94,7 @@ BattleCommandPointers:
 	effectfn BattleCommand_Endure
 	effectfn BattleCommand_CheckCurl
 	effectfn BattleCommand_RolloutPower
-	effectfn BattleCommand5d
+	effectfn BattleCommand_MagicBounce
 	effectfn BattleCommand_FuryCutter
 	effectfn BattleCommand_Attract
 	effectfn BattleCommand_HappinessPower
