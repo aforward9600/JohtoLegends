@@ -17,6 +17,7 @@ Landmarks:
 	landmark 109,  45, UnknownName
 	landmark 108,  36, Route43Name
 	landmark 108,  28, LakeOfRageName
+	landmark 107,  27, InfantGroveName
 	landmark  92,  44, Route42Name
 	landmark  84,  44, MtMortarName
 	landmark  68,  44, EcruteakCityName
@@ -226,3 +227,4 @@ CliffCaveName:       db "Cliff Cave@"
 CinnabarVolcanoName: db "Cinnabar¯Volcano@"
 UnknownName2:        db "???@"
 EmbeddedTowerName:   db "Embedded¯Tower@"
+InfantGroveName:     db "Infant Grove@"

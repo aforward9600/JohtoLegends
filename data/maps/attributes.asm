@@ -134,8 +134,12 @@ ENDM
 	connection west, Route42, ROUTE_42, 0
 	connection east, Route44, ROUTE_44, 0
 
-	map_attributes LakeOfRage, LAKE_OF_RAGE, $05, SOUTH
+	map_attributes LakeOfRage, LAKE_OF_RAGE, $05, NORTH | SOUTH
+	connection north, InfantGrove, INFANT_GROVE, 14
 	connection south, Route43, ROUTE_43, 5
+
+	map_attributes InfantGrove, INFANT_GROVE, $05, SOUTH
+	connection south, LakeOfRage, LAKE_OF_RAGE, -14
 
 	map_attributes BlackthornCity, BLACKTHORN_CITY, $71, SOUTH
 	connection south, Route45, ROUTE_45, 1

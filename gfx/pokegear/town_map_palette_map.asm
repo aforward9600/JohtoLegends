@@ -28,6 +28,6 @@ ENDM
 	townmappals CITY,     CITY,     CITY,     CITY,     CITY,     CITY,     CITY,     CITY
 	townmappals CITY,     CITY,     CITY,     CITY,     CITY,     CITY,     CITY,     CITY
 	townmappals EARTH,    EARTH,    EARTH,    EARTH,    EARTH,    EARTH,    EARTH,    EARTH
-	townmappals EARTH,    EARTH,    CITY,     CITY,     CITY,     CITY,     CITY,     CITY
+	townmappals EARTH,    EARTH,    CITY,     CITY,     CITY,     CITY,     EARTH,    EARTH
 	townmappals EARTH,    EARTH,    EARTH,    EARTH,    EARTH,    EARTH,    EARTH,    EARTH
 	townmappals EARTH,    EARTH,    CITY,     CITY,     CITY,     CITY,     CITY,     CITY

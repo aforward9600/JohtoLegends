@@ -2012,34 +2012,34 @@ JohtoGrassWildMons:
 	dbw 23, GOLBAT
 	dbw 23, STEELIX
 
-	map_id EMBEDDED_TOWER
+	map_id INFANT_GROVE
 	db 10 percent, 10 percent, 10 percent
 	; morn
-	dbw 35, GOLBAT
-	dbw 35, MISDREAVUS
-	dbw 35, LAIRON
-	dbw 35, BRONZONG
-	dbw 35, SMEARGLE
-	dbw 18, BELDUM
-	dbw 35, SMEARGLE
-	dbw 35, METANG
+	dbw 5, PICHU
+	dbw 5, IGGLYBUFF
+	dbw 5, HAPPINY
+	dbw 5, AZURILL
+	dbw 5, MIME__JR
+	dbw 5, BONSLY
+	dbw 5, CLEFFA
+	dbw 5, TOGEPI
 	; day
-	dbw 35, GOLBAT
-	dbw 35, MISDREAVUS
-	dbw 35, LAIRON
-	dbw 35, BRONZONG
-	dbw 35, SMEARGLE
-	dbw 18, BELDUM
-	dbw 35, SMEARGLE
-	dbw 35, METANG
+	dbw 5, PICHU
+	dbw 5, IGGLYBUFF
+	dbw 5, HAPPINY
+	dbw 5, AZURILL
+	dbw 5, MIME__JR
+	dbw 5, BONSLY
+	dbw 5, CLEFFA
+	dbw 5, TOGEPI
 	; nite
-	dbw 35, GOLBAT
-	dbw 35, MISDREAVUS
-	dbw 35, LAIRON
-	dbw 35, BRONZONG
-	dbw 35, SMEARGLE
-	dbw 18, BELDUM
-	dbw 35, SMEARGLE
-	dbw 35, METANG
+	dbw 5, PICHU
+	dbw 5, IGGLYBUFF
+	dbw 5, HAPPINY
+	dbw 5, AZURILL
+	dbw 5, MIME__JR
+	dbw 5, BONSLY
+	dbw 5, CLEFFA
+	dbw 5, TOGEPI
 
 	db -1 ; end

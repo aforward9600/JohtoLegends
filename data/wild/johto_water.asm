@@ -282,4 +282,11 @@ JohtoWaterWildMons:
 	dbw 15, SHELLDER
 	dbw 15, LAPRAS
 
+	map_id INFANT_GROVE
+	db 10 percent ; encounter rate
+	dbw 5, MANTYKE
+	dbw 5, MANTYKE
+	dbw 5, MANTYKE
+	dbw 5, MANTYKE
+
 	db -1 ; end

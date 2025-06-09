@@ -40,18 +40,19 @@ TilesetKanto2Anim:
 	dw vTiles2 tile $14, AnimateWaterTile, vTiles2 tile $64, AnimateSeaTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
-;	dw NULL,  WaitTileAnimation
-;	dw NULL,  AnimateWaterPalette
-;	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
-;	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
-	dw vTiles2 tile $66, WriteTileToBuffer
+	dw vTiles2 tile $40, WriteTileToBuffer
+	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileDown
-	dw vTiles2 tile $66, WriteTileFromBuffer
+	dw NULL,  WaitTileAnimation
+	dw vTiles2 tile $40, WriteTileFromBuffer
 	dw NULL,  DoneTileAnimation
 
 TilesetFacilityAnim:

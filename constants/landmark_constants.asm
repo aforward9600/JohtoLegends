@@ -13,6 +13,7 @@
 	const UNKNOWN
 	const ROUTE_43          ; 25
 	const LAKE_OF_RAGE      ; 26
+	const INFANT_GROVE
 	const ROUTE_42          ; 22
 	const MT_MORTAR         ; 23
 	const ECRUTEAK_CITY     ; 16

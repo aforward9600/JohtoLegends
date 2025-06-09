@@ -1047,3 +1047,6 @@ HoOhTowerScene_Blocks:
 
 BerryCafe_Blocks:
 	INCBIN "maps/BerryCafe.ablk"
+
+InfantGrove_Blocks:
+	INCBIN "maps/InfantGrove.ablk"

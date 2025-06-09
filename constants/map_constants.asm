@@ -260,6 +260,7 @@ ENDM
 	map_const LAKE_OF_RAGE_POKECENTER_1F,                   5,  4 ;  7
 	map_const LAKE_OF_RAGE_MART,                            6,  4 ;  8
 	map_const SOOTHE_BELL_HOUSE,                            4,  4 ;  9
+	map_const INFANT_GROVE,                                 5,  6 ;  10
 
 	newgroup                                                      ; 10
 

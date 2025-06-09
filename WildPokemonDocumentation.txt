@@ -170,6 +170,17 @@ Morning/Day: Magby 30%, Koffing 20%, Slugma 19%, Zubat 15%, Grimer 10%, Duskull 
 Night: Raticate 45%, Koffing 20%, Zubat 15%, Grimer 10%, Duskull 5%, Misdreavus 4%, Haunter 1%
 
 
+Infant Grove
+
+Levels 5-8
+
+All times: Pichu 30%, Igglybuff 20%, 15%, 15%, 10%, 5%, 4%, Togepi 1%
+Water: Mantyke 100%
+Old Rod: Magikarp 85%, Poliwag 15%
+Good Rod: Poliwag 65%, Magikarp 35%
+Super Rod: Poliwag 80%, Magikarp 20%
+
+
 Route 37
 
 Levels 12-15
