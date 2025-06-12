@@ -115,6 +115,10 @@ Landmarks:
 	landmark  20, 100, Route27Name
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
+	landmark   4,  44, OneIslandName
+	landmark   4,  60, TreasureBeachName
+	landmark  12,  40, KindleRoadName
+	landmark  12,  20, MtEmberName
 
 NewBarkTownName:     db "New Bark¯Town@"
 CherrygroveCityName: db "Cherrygrove¯City@"
@@ -227,4 +231,8 @@ CliffCaveName:       db "Cliff Cave@"
 CinnabarVolcanoName: db "Cinnabar¯Volcano@"
 UnknownName2:        db "???@"
 EmbeddedTowerName:   db "Embedded¯Tower@"
-InfantGroveName:     db "Infant Grove@"
+InfantGroveName:     db "Infant¯Grove@"
+OneIslandName:       db "One Island@"
+TreasureBeachName:   db "Treasure¯Beach@"
+KindleRoadName:      db "Kindle Road@"
+MtEmberName:         db "Mt. Ember@"

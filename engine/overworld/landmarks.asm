@@ -77,8 +77,13 @@ RegionCheck:
 	jr c, .kanto
 
 .johto
+	cp SEVII_LANDMARK
+	jr nc, .sevii
 	ld e, JOHTO_REGION
 	ret
 .kanto
 	ld e, KANTO_REGION
+	ret
+.sevii
+	ld e, SEVII_ISLANDS
 	ret

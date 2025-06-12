@@ -15,6 +15,8 @@ NUM_POKEGEAR_CARDS EQU const_value
 	const POKEGEARSTATE_JOHTOMAPJOYPAD  ; 4
 	const POKEGEARSTATE_KANTOMAPINIT    ; 5
 	const POKEGEARSTATE_KANTOMAPJOYPAD  ; 6
+	const POKEGEARSTATE_SEVIIMAPINIT
+	const POKEGEARSTATE_SEVIIMAPJOYPAD
 	const POKEGEARSTATE_RADIOINIT       ; b
 	const POKEGEARSTATE_RADIOJOYPAD     ; c
 	const POKEGEARSTATE_PHONEINIT       ; 7
@@ -432,6 +434,8 @@ PokegearJumptable:
 	dw PokegearMap_JohtoMap
 	dw PokegearMap_Init
 	dw PokegearMap_KantoMap
+	dw PokegearMap_Init
+	dw PokegearMap_SeviiMap
 	dw PokegearRadio_Init
 	dw PokegearRadio_Joypad
 	dw PokegearPhone_Init
@@ -521,6 +525,8 @@ PokegearMap_CheckRegion:
 	ld a, [wPokegearMapPlayerIconLandmark]
 	cp KANTO_LANDMARK
 	jr nc, .kanto
+	cp SEVII_ISLANDS
+	jr nc, .sevii
 .johto
 	ld a, POKEGEARSTATE_JOHTOMAPINIT
 	jr .done
@@ -528,6 +534,9 @@ PokegearMap_CheckRegion:
 
 .kanto
 	ld a, POKEGEARSTATE_KANTOMAPINIT
+	jr .done
+.sevii
+	ld a, POKEGEARSTATE_SEVIIMAPINIT
 .done
 	ld [wJumptableIndex], a
 	call ExitPokegearRadio_HandleMusic
@@ -549,6 +558,10 @@ PokegearMap_Init:
 
 PokegearMap_KantoMap:
 	call TownMap_GetKantoLandmarkLimits
+	jr PokegearMap_ContinueMap
+
+PokegearMap_SeviiMap:
+	call TownMap_GetSeviiLandmarkLimits
 	jr PokegearMap_ContinueMap
 
 PokegearMap_JohtoMap:
@@ -722,6 +735,11 @@ TownMap_GetKantoLandmarkLimits:
 .not_hof
 	ld d, ROUTE_28
 	ld e, VICTORY_ROAD
+	ret
+
+TownMap_GetSeviiLandmarkLimits:
+	ld d, MT_EMBER
+	ld e, ONE_ISLAND
 	ret
 
 PokegearRadio_Init:
@@ -3072,15 +3090,22 @@ _TownMap:
 
 .dmg
 	ld a, [wTownMapPlayerIconLandmark]
+	cp SEVII_LANDMARK
+	jr nc, .sevii
 	cp KANTO_LANDMARK
 	jr nc, .kanto
-	ld d, KANTO_LANDMARK - 1
-	ld e, 1
+	ld d, SILVER_CAVE
+	ld e, SPECIAL_MAP
 	call .loop
 	jr .resume
 
 .kanto
 	call TownMap_GetKantoLandmarkLimits
+	call .loop
+	jr .resume
+
+.sevii
+	call TownMap_GetSeviiLandmarkLimits
 	call .loop
 
 .resume
@@ -3157,11 +3182,16 @@ _TownMap:
 	ld a, [wTownMapPlayerIconLandmark]
 	cp KANTO_LANDMARK
 	jr nc, .kanto2
+	cp SEVII_LANDMARK
+	jr nc, .sevii2
 	ld e, JOHTO_REGION
 	jr .okay_tilemap
 
 .kanto2
 	ld e, KANTO_REGION
+	jr .okay_tilemap
+.sevii2
+	ld e, SEVII_ISLANDS
 .okay_tilemap
 	farcall PokegearMap
 	ld a, [wTownMapCursorLandmark]
@@ -3248,8 +3278,10 @@ PlayRadio:
 
 PokegearMap:
 	ld a, e
-	and a
-	jr nz, .kanto
+	cp KANTO_REGION
+	jr z, .kanto
+	cp SEVII_ISLANDS
+	jr z, .sevii
 	call LoadTownMapGFX
 	call FillJohtoMap
 	ret
@@ -3257,6 +3289,11 @@ PokegearMap:
 .kanto
 	call LoadTownMapGFX
 	call FillKantoMap
+	ret
+
+.sevii
+	call LoadTownMapGFX
+	call FillSeviiMap
 	ret
 
 _FlyMap:
@@ -3334,12 +3371,25 @@ FlyMapScroll:
 	ld a, [hl]
 	and D_DOWN
 	jr nz, .ScrollPrev
+	push hl
+	ld a, [wBackupMapGroup]
+	ld b, a
+	ld a, [wBackupMapNumber]
+	ld c, a
+	call GetWorldMapLocation
+	cp SEVII_LANDMARK
+	jr nc, .sevii
+	pop hl
 	ld a, [hl]
 	and D_LEFT
 	jp nz, .JohtoMap
 	ld a, [hl]
 	and D_RIGHT
 	jr nz, .KantoMap
+	ret
+
+.sevii:
+	pop hl
 	ret
 
 .ScrollNext:
@@ -3559,6 +3609,8 @@ FlyMap:
 	call GetWorldMapLocation
 .CheckRegion:
 ; The first 46 locations are part of Johto. The rest are in Kanto.
+	cp SEVII_LANDMARK
+	jp nc, .seviiislandsmap
 	cp KANTO_LANDMARK
 	jr nc, .NoKanto
 .JohtoFlyMap:
@@ -3651,6 +3703,23 @@ FlyMap:
 	ld [wTownMapCursorCoordinates], a
 	ld a, b
 	ld [wTownMapCursorCoordinates + 1], a
+	ret
+
+.seviiislandsmap:
+	push af
+; Start from New Bark Town
+	ld a, FLY_ONE_ISLAND
+	ld [wTownMapPlayerIconLandmark], a
+; Flypoints begin at New Bark Town...
+	ld [wStartFlypoint], a
+; ..and end at Silver Cave.
+	ld a, FLY_ONE_ISLAND
+	ld [wEndFlypoint], a
+; Fill out the map
+	call FillSeviiMap
+	call .MapHud
+	pop af
+	call TownMapPlayerIcon
 	ret
 
 Pokedex_GetArea:
@@ -3948,6 +4017,10 @@ FillJohtoMap:
 
 FillKantoMap:
 	ld de, KantoMap
+	jr FillTownMap
+
+FillSeviiMap:
+	ld de, SeviiMap
 FillTownMap:
 	hlcoord 0, 0
 .loop
@@ -4095,6 +4168,9 @@ INCBIN "gfx/pokegear/johto.bin"
 
 KantoMap:
 INCBIN "gfx/pokegear/kanto.bin"
+
+SeviiMap:
+INCBIN "gfx/pokegear/sevii_islands.bin"
 
 PokedexNestIconGFX:
 INCBIN "gfx/pokegear/dexmap_nest_icon.2bpp"

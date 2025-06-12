@@ -114,12 +114,19 @@ KANTO_LANDMARK EQU const_value
 	const TOHJO_FALLS       ; 5d
 	const ROUTE_28          ; 5e
 
+SEVII_LANDMARK EQU const_value
+	const ONE_ISLAND
+	const TREASURE_BEACH
+	const KINDLE_ROAD
+	const MT_EMBER
+
 ; used in CaughtData
 GIFT_LOCATION  EQU $7e
 EVENT_LOCATION EQU $7f
 
 ; Regions
 	const_def
-	const JOHTO_REGION ; 0
-	const KANTO_REGION ; 1
+	const JOHTO_REGION  ; 0
+	const KANTO_REGION  ; 1
+	const SEVII_ISLANDS ; 2
 NUM_REGIONS EQU const_value

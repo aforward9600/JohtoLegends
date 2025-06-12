@@ -17,6 +17,7 @@ Landmarks:
 	landmark 109,  45, UnknownName
 	landmark 108,  36, Route43Name
 	landmark 108,  28, LakeOfRageName
+	landmark 107,  27, InfantGroveName
 	landmark  92,  44, Route42Name
 	landmark  84,  44, MtMortarName
 	landmark  68,  44, EcruteakCityName
@@ -110,6 +111,10 @@ Landmarks:
 	landmark  20, 100, Route27Name
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
+	landmark   4,  44, OneIslandName
+	landmark   4,  60, TreasureBeachName
+	landmark  12,  40, KindleRoadName
+	landmark  12,  20, MtEmberName
 
 NewBarkTownName:     db "Bourg Geon@"
 CherrygroveCityName: db "Ville¯Griotte@"
@@ -220,3 +225,8 @@ Route47Name:         db "Route 47@"
 Route48Name:         db "Route 48@"
 CliffCaveName:       db "Grotte¯Falaise@"
 CinnabarVolcanoName: db "Cramois¯Volcan@"
+InfantGroveName:     db "Infant¯Grove@"
+OneIslandName:       db "One Island@"
+TreasureBeachName:   db "Treasure¯Beach@"
+KindleRoadName:      db "Kindle Road@"
+MtEmberName:         db "Mt. Ember@"

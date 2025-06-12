@@ -39,4 +39,5 @@ SpawnPoints:
 	spawn NEW_BARK_TOWN,              13,  6
 	spawn SILVER_CAVE_OUTSIDE,        23, 20
 	spawn TEAM_ROCKET_BASE_JAIL,       5,  6
+	spawn ROUTE_46,                    9,  8
 	spawn N_A,                        -1, -1

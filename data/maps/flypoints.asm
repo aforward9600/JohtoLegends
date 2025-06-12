@@ -36,4 +36,7 @@ KANTO_FLYPOINT EQU const_value
 	flypoint CINNABAR,     CINNABAR_ISLAND
 	flypoint ROUTE_26,     VICTORY_ROAD
 	flypoint INDIGO,       INDIGO_PLATEAU
+
+SEVII_FLYPOINT EQU const_value
+	flypoint ONE_ISLAND,   ROUTE_46
 	db -1

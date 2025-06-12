@@ -103,4 +103,5 @@ const_value = -1
 	const SPAWN_NEW_BARK
 	const SPAWN_MT_SILVER
 	const SPAWN_UNKNOWN
+	const SPAWN_ONE_ISLAND
 NUM_SPAWNS EQU const_value
