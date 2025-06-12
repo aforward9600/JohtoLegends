@@ -1544,6 +1544,11 @@ BattleCommand_CheckHit:
 	call .Protect
 	jp nz, .Miss
 
+	farcall PranksterCheck
+	ld a, [wAttackMissed]
+	and a
+	jp nz, .Miss
+
 	call .DrainSub
 	jp z, .Miss
 

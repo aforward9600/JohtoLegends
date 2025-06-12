@@ -77,17 +77,17 @@ SentOutAbilityBoth::
 	jr z, .speed_tie
 	jr nc, .player_goes_first
 .enemy_goes_first
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	call EnemyAbilityFirst
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	call PlayerAbilityFirst
 	ret
 
 .player_goes_first
 	call PlayerAbilityFirst
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	call EnemyAbilityFirst
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	ret
 
 .speed_tie
@@ -312,11 +312,11 @@ DoEntranceAbilities:
 INCLUDE "data/abilities/no_intimidate_abilities.asm"
 
 EnemyNeutralGas:
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	call MoveDelayAbility
 	ld hl, NeutralGasText
 	call StdBattleTextbox
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	ret
 
 PlayerNeutralGas:
@@ -331,9 +331,9 @@ MoveDelayAbility:
 	jp DelayFrames
 
 RattledAbility:
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_SpeedUp
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	ld a, [wAttackMissed]
 	and a
 	ret nz
@@ -342,9 +342,9 @@ RattledAbility:
 	jp StdBattleTextbox
 
 JustifiedAbility:
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_AttackUp
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	ld a, [wAttackMissed]
 	and a
 	ret nz
@@ -353,9 +353,9 @@ JustifiedAbility:
 	jp StdBattleTextbox
 
 DefiantAbility:
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_AttackUp2
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	ld a, [wAttackMissed]
 	and a
 	ret nz
@@ -419,9 +419,9 @@ CheckContactAbilities:
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	farcall CursedBodyAbility
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	jr .AfterCursedBody
 
 .rattled:
@@ -464,18 +464,18 @@ CheckContactAbilities:
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_ParalyzeTarget
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	ret
 
 .PoisonPoint:
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_PoisonTarget
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	ret
 
 .FlameBody:
@@ -494,16 +494,16 @@ CheckContactAbilities:
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_BurnTarget
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	ret
 
 .EffectSpore:
 	call GetUserAbility
 	cp OVERCOAT
 	ret z
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
@@ -523,7 +523,7 @@ CheckContactAbilities:
 .EffectSporeSleep:
 	farcall BattleCommand_SleepHit
 .FinishEffectSpore:
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	ret
 
 .RoughSkin:
@@ -570,10 +570,10 @@ CheckContactAbilities:
 	call GetUserAbility
 	cp DAMP
 	ret z
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	farcall HasUserFainted
 	ret nz
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	farcall GetQuarterMaxHP
 	farcall SubtractHPFromUser
 	ld hl, AftermathText
@@ -586,7 +586,7 @@ CheckContactAbilities:
 	call GetUserAbility
 	cp OBLIVIOUS
 	ret z
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	farcall CheckOppositeGender
 	jp c, .NoContactAilities
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
@@ -594,7 +594,7 @@ CheckContactAbilities:
 	bit SUBSTATUS_IN_LOVE, [hl]
 	jp nz, .NoContactAilities
 	set SUBSTATUS_IN_LOVE, [hl]
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	ld de, ANIM_IN_LOVE
 	farcall FarPlayBattleAnimation
 	ld hl, CuteCharmText
@@ -614,9 +614,9 @@ CheckContactAbilities:
 	ld hl, WeakArmorDefenseText
 	call StdBattleTextbox
 .TrySpeedUp
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_SpeedUp2
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	ld a, [wAttackMissed]
 	and a
 	ret nz
@@ -632,9 +632,9 @@ CheckContactAbilities:
 	call GetUserAbility
 	cp STICKY_HOLD
 	ret z
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_Thief
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurnAbilities
 .NoContactAilities:
 	ret
 
@@ -1231,4 +1231,12 @@ DoubleUserSpeed:
 	ld [hli], a
 	ldh a, [hQuotient + 3]
 	ld [hl], a
+	ret
+
+BattleCommand_SwitchTurnAbilities:
+; switchturn
+
+	ldh a, [hBattleTurn]
+	xor 1
+	ldh [hBattleTurn], a
 	ret

@@ -346,15 +346,15 @@ TryLowerStat2:
 	and a
 	jr z, .Player
 
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurn2
 	farcall CalcPlayerStats
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurn2
 	jr .end
 
 .Player:
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurn2
 	farcall CalcEnemyStats
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurn2
 .end
 	ld a, 1
 	and a
@@ -364,3 +364,96 @@ PrintNothingHappened:
 ; 'but nothing happened!'
 	ld hl, NothingHappenedText
 	jp StdBattleTextbox
+
+BattleCommand_SwitchTurn2:
+; switchturn
+
+	ldh a, [hBattleTurn]
+	xor 1
+	ldh [hBattleTurn], a
+	ret
+
+PranksterCheck:
+	call CheckNeutralGas
+	jr nz, .ContinuePrankster
+	ld a, 0
+	ld [wAttackMissed], a
+	ret
+
+.ContinuePrankster
+	call GetUserAbility
+	cp PRANKSTER
+	jr z, .CheckForStatus
+.OverwritePriority
+	ld a, 0
+	ld [wAttackMissed], a
+	ret
+
+.CheckForStatus
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp STATUS
+	jr c, .OverwritePriority
+;	ld a, BATTLE_VARS_MOVE_EFFECT
+;	call GetBattleVar
+;	ld hl, PranksterEffects
+;	ld de, 1
+;	call IsInArray
+;	jr nc, .OverwritePriority
+	ld hl, wBattleMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .GotPlayerType
+	ld hl, wEnemyMonType1
+.GotPlayerType
+	ld a, [hli]
+	cp DARK
+	jr z, .IsDarkType
+	ld a, [hl]
+	cp DARK
+	jr z, .IsDarkType
+	jr .OverwritePriority
+
+.IsDarkType
+	ld a, 1
+	ld [wAttackMissed], a
+	ret
+
+;PranksterEffects:
+;	db EFFECT_SLEEP
+;	db EFFECT_ATTACK_DOWN
+;	db EFFECT_ATTACK_DOWN_2
+;	db EFFECT_DEFENSE_DOWN
+;	db EFFECT_DEFENSE_DOWN_2
+;	db EFFECT_SPEED_DOWN
+;	db EFFECT_SPEED_DOWN_2
+;	db EFFECT_SP_ATK_DOWN
+;	db EFFECT_SP_DEF_DOWN
+;	db EFFECT_SP_DEF_DOWN_2
+;	db EFFECT_ACCURACY_DOWN
+;	db EFFECT_EVASION_DOWN
+;	db EFFECT_EVASION_DOWN_2
+;	db EFFECT_TOXIC
+;	db EFFECT_TRAP_TARGET
+;	db EFFECT_CONFUSE
+;	db EFFECT_POISON
+;	db EFFECT_PARALYZE
+;	db EFFECT_MIMIC
+;	db EFFECT_LEECH_SEED
+;	db EFFECT_DISABLE
+;	db EFFECT_ENCORE
+;	db EFFECT_PAIN_SPLIT
+;	db EFFECT_LOCK_ON
+;	db EFFECT_DESTINY_BOND
+;	db EFFECT_SPITE
+;	db EFFECT_MEAN_LOOK
+;	db EFFECT_FORESIGHT
+;	db EFFECT_SWAGGER
+;	db EFFECT_ATTRACT
+;	db EFFECT_SKILL_SWAP
+;	db EFFECT_PSYCH_UP
+;	db EFFECT_STRENGTH_SAP
+;	db EFFECT_PLAY_NICE
+;	db EFFECT_FLATTER
+;	db EFFECT_BURN
+;	db -1

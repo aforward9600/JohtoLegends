@@ -1,6 +1,6 @@
 	tilecoll WALL, WALL, WALL, WALL ; 00
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 01
-	tilecoll WALL, WALL, WALL, DOOR ; 02
+	tilecoll WALL, WALL, WALL, WALL ; 02
 	tilecoll WALL, WALL, WALL, WALL ; 03
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 04
 	tilecoll LADDER, LADDER, LADDER, LADDER ; 05
@@ -10,13 +10,13 @@
 	tilecoll WALL, WALL, WALL, WALL ; 09
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0a
 	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 0b
-	tilecoll WALL, WALL, WALL, WALL ; 0c
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 0c
 	tilecoll WALL, WALL, WALL, WALL ; 0d
 	tilecoll WALL, WALL, WALL, WALL ; 0e
 	tilecoll WALL, WALL, WALL, WALL ; 0f
 	tilecoll WALL, WALL, WALL, WALL ; 10
 	tilecoll WALL, WALL, WALL, WALL ; 11
-	tilecoll WALL, WALL, DOOR, WALL ; 12
+	tilecoll WALL, WALL, WALL, WALL ; 12
 	tilecoll WALL, WALL, WALL, WALL ; 13
 	tilecoll WALL, WATER, WALL, WALL ; 14
 	tilecoll WATER, WALL, WALL, WALL ; 15
@@ -54,8 +54,8 @@
 	tilecoll FLOOR, CUT_TREE, WALL, FLOOR ; 35
 	tilecoll WALL, WALL, FLOOR, WALL ; 36
 	tilecoll WALL, WALL, WALL, WALL ; 37
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 38
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 39
+	tilecoll WALL, WALL, WALL, WALL ; 38
+	tilecoll WALL, WALL, WALL, WALL ; 39
 	tilecoll WALL, WALL, DOOR, WALL ; 3a
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; 3b
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; 3c
@@ -79,8 +79,8 @@
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; 4e
 	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; 4f
 	tilecoll FLOOR, UP_WALL, WALL, FLOOR ; 50
-	tilecoll WALL, WALL, WALL, WALL ; 51
-	tilecoll WALL, WALL, WALL, WALL ; 52
+	tilecoll WATER, WATER, WATER, WATER ; 51
+	tilecoll WATER, WATER, WATER, WATER ; 52
 	tilecoll WALL, WALL, WALL, DOOR ; 53
 	tilecoll WALL, WALL, WALL, WALL ; 54
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 55
@@ -91,12 +91,12 @@
 	tilecoll WALL, HOP_DOWN_LEFT, WALL, WALL ; 5a
 	tilecoll HOP_DOWN_RIGHT, WALL, WALL, WALL ; 5b
 	tilecoll FLOOR, HOP_DOWN, FLOOR, WALL ; 5c
-	tilecoll WALL, WALL, FLOOR, HOP_DOWN ; 5d
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 5d
 	tilecoll WALL, WALL, FLOOR, WALL ; 5e
 	tilecoll HOP_DOWN, WALL, WALL, WALL ; 5f
 	tilecoll FLOOR, HOP_DOWN, WALL, WALL ; 60
 	tilecoll WALL, WALL, WALL, WALL ; 61
-	tilecoll WALL, WALL, WALL, FLOOR ; 62
+	tilecoll WALL, WALL, WALL, WALL ; 62
 	tilecoll WALL, WALL, WALL, WALL ; 63
 	tilecoll WATER, WATER, WATER, WATER ; 64
 	tilecoll WATER, WATER, WATER, WATER ; 65
@@ -104,8 +104,8 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 67
 	tilecoll WALL, WALL, WALL, WALL ; 68
 	tilecoll WALL, WALL, WALL, WALL ; 69
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 6a
-	tilecoll FLOOR, FLOOR, HOP_DOWN, HOP_DOWN ; 6b
+	tilecoll WALL, WALL, WALL, WALL ; 6a
+	tilecoll WALL, WALL, WALL, WALL ; 6b
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 6c
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 6d
 	tilecoll WALL, WALL, WALL, WALL ; 6e
@@ -144,10 +144,10 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 8f
 	tilecoll HOP_DOWN_LEFT, HOP_DOWN, WALL, WALL ; 90
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; 91
-	tilecoll WALL, WALL, FLOOR, WALL ; 92
+	tilecoll WALL, UP_WALL, WALL, FLOOR ; 92
 	tilecoll WALL, WALL, WATER, WATER ; 93
 	tilecoll WATER, WATER, WALL, WALL ; 94
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 95
+	tilecoll WALL, WALL, WALL, WALL ; 95
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 96
 	tilecoll WALL, WALL, WALL, WALL ; 97
 	tilecoll WALL, WALL, WALL, WALL ; 98
@@ -155,7 +155,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 9a
 	tilecoll WALL, WATER, WALL, WATER ; 9b
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; 9c
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9d
+	tilecoll UP_WALL, WALL, FLOOR, WALL ; 9d
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 9e
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9f
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a0
@@ -170,5 +170,5 @@
 	tilecoll FLOOR, WALL, WALL, WALL ; a9
 	tilecoll WALL, WALL, WALL, WALL ; aa
 	tilecoll FLOOR, FLOOR, WALL, WALL ; ab
-	tilecoll LADDER, LADDER, LADDER, WARP_CARPET_DOWN ; ac
-	tilecoll LADDER, LADDER, WARP_CARPET_DOWN, LADDER ; ad
+	tilecoll WATER, LADDER, WATER, WARP_CARPET_DOWN ; ac
+	tilecoll LADDER, WATER, WARP_CARPET_DOWN, WATER ; ad

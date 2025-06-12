@@ -24,7 +24,7 @@ BattleCommand_MagicBounce:
 	call GetBattleVar
 	ld b, a
 	push bc
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurn2
 
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVarAddr
@@ -47,7 +47,7 @@ BattleCommand_MagicBounce:
 	pop af
 	ld [hl], a
 	farcall UpdateMoveData
-	farcall BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurn2
 	ret
 
 .SwaggerCheck

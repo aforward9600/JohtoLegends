@@ -53,7 +53,6 @@ MeetMomScript:
 	waitsfx
 	setflag ENGINE_POKEGEAR
 	setflag ENGINE_MAP_CARD
-	giveitem SCYTHER_CALL
 	setscene SCENE_PLAYERS_HOUSE_NOTHING
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
@@ -785,8 +784,7 @@ PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  6,  7, LAKE_OF_RAGE, 1
-;	warp_event  6,  7, BLACKTHORN_CITY, 9
+	warp_event  6,  7, BLACKTHORN_CITY, 9
 	warp_event  7,  7, BLACKTHORN_CITY, 9
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
 

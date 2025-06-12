@@ -28,11 +28,11 @@ BattleCommand_StrengthSap:
 .restorehp
 ; restore HP by value of opponents attack before it was lowered
     pop bc
-    farcall BattleCommand_SwitchTurn
+    call BattleCommand_SwitchTurn2
     ld hl, RestoreHP
     ld a, BANK("Battle Core")
     rst FarCall
-    farcall BattleCommand_SwitchTurn
+    call BattleCommand_SwitchTurn2
     call UpdateUserInParty
     call RefreshBattleHuds
     ld hl, RegainedHealthText
