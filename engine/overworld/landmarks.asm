@@ -69,19 +69,19 @@ RegionCheck:
 	call GetWorldMapLocation
 
 .checkagain
-	cp KANTO_LANDMARK
-	jr c, .johto
-
-; Victory Road area is considered to be Johto.
-	cp VICTORY_ROAD
-	jr c, .kanto
-
-.johto
 	cp SEVII_LANDMARK
 	jr nc, .sevii
+
+	cp KANTO_LANDMARK
+	jr nc, .kanto
+
+.johto
 	ld e, JOHTO_REGION
 	ret
 .kanto
+; Victory Road area is considered to be Johto.
+	cp VICTORY_ROAD
+	jr nc, .johto
 	ld e, KANTO_REGION
 	ret
 .sevii

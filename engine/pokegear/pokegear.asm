@@ -316,6 +316,8 @@ InitPokegearTilemap:
 
 .Map:
 	ld a, [wPokegearMapPlayerIconLandmark]
+	cp SEVII_LANDMARK
+	jr nc, .sevii
 	cp KANTO_LANDMARK
 	jr nc, .kanto
 .johto
@@ -324,6 +326,10 @@ InitPokegearTilemap:
 
 .kanto
 	ld e, 1
+	jr .ok
+
+.sevii
+	ld e, 2
 .ok
 	farcall PokegearMap
 	ld a, [wPokegearMapCursorLandmark]
@@ -522,15 +528,15 @@ Pokegear_UpdateClock:
 	text_end
 
 PokegearMap_CheckRegion:
+	ld b,b
 	ld a, [wPokegearMapPlayerIconLandmark]
+	cp SEVII_LANDMARK
+	jr nc, .sevii
 	cp KANTO_LANDMARK
 	jr nc, .kanto
-	cp SEVII_ISLANDS
-	jr nc, .sevii
 .johto
 	ld a, POKEGEARSTATE_JOHTOMAPINIT
 	jr .done
-	ret
 
 .kanto
 	ld a, POKEGEARSTATE_KANTOMAPINIT
@@ -567,6 +573,7 @@ PokegearMap_SeviiMap:
 PokegearMap_JohtoMap:
 	ld d, SILVER_CAVE
 	ld e, BLACKTHORN_CITY
+	ld b,b
 PokegearMap_ContinueMap:
 	ld hl, hJoyLast
 	ld a, [hl]
@@ -3095,20 +3102,17 @@ _TownMap:
 	cp KANTO_LANDMARK
 	jr nc, .kanto
 	ld d, SILVER_CAVE
-	ld e, SPECIAL_MAP
-	call .loop
+	ld e, BLACKTHORN_CITY
 	jr .resume
 
 .kanto
 	call TownMap_GetKantoLandmarkLimits
-	call .loop
 	jr .resume
 
 .sevii
 	call TownMap_GetSeviiLandmarkLimits
-	call .loop
-
 .resume
+	call .loop
 	pop af
 	ld [wVramState], a
 	pop af
@@ -3180,10 +3184,10 @@ _TownMap:
 
 .InitTilemap:
 	ld a, [wTownMapPlayerIconLandmark]
-	cp KANTO_LANDMARK
-	jr nc, .kanto2
 	cp SEVII_LANDMARK
 	jr nc, .sevii2
+	cp KANTO_LANDMARK
+	jr nc, .kanto2
 	ld e, JOHTO_REGION
 	jr .okay_tilemap
 
@@ -3278,10 +3282,10 @@ PlayRadio:
 
 PokegearMap:
 	ld a, e
-	cp KANTO_REGION
-	jr z, .kanto
-	cp SEVII_ISLANDS
+	cp 2
 	jr z, .sevii
+	cp 1
+	jr z, .kanto
 	call LoadTownMapGFX
 	call FillJohtoMap
 	ret

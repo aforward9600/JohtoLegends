@@ -17,6 +17,9 @@ IsInJohto::
 	call GetWorldMapLocation
 
 .CheckRegion:
+	cp SEVII_LANDMARK
+	jr nc, .sevii
+
 	cp KANTO_LANDMARK
 	jr nc, .Kanto
 
@@ -26,4 +29,8 @@ IsInJohto::
 
 .Kanto:
 	ld a, 1
+	ret
+
+.sevii:
+	ld a, 2
 	ret
