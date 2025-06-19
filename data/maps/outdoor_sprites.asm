@@ -31,6 +31,7 @@ OutdoorSprites:
 	dw CherrygroveGroupSprites
 	dw Route47GroupSprites
 	dw BellchimePathSprites
+	dw SeviiIslandsSprites
 
 ; Route1 and ViridianCity are connected
 ; Route2, and PewterCity are connected
@@ -408,6 +409,24 @@ Route47GroupSprites:
 	db 0 ; end
 
 BellchimePathSprites:
+; Route47, Route48, WildAreaOutside, WildArea
+	db SPRITE_ENOKI, WALKING_SPRITE
+	db SPRITE_GRAMPS, WALKING_SPRITE
+	db SPRITE_YOUNGSTER, WALKING_SPRITE
+	db SPRITE_LASS, WALKING_SPRITE
+	db SPRITE_HIKER, WALKING_SPRITE
+	db SPRITE_FISHER, WALKING_SPRITE
+	db SPRITE_TWIN, WALKING_SPRITE
+	db SPRITE_COOLTRAINER_F, WALKING_SPRITE
+	db SPRITE_CYNTHIA, WALKING_SPRITE
+	db SPRITE_RIVAL, WALKING_SPRITE
+	; 9 of max 9 walking sprites
+	db SPRITE_ROCK, STILL_SPRITE
+	db SPRITE_POKE_BALL, STILL_SPRITE
+	db SPRITE_FRUIT_TREE, STILL_SPRITE
+	db 0 ; end
+
+SeviiIslandsSprites:
 ; Route47, Route48, WildAreaOutside, WildArea
 	db SPRITE_ENOKI, WALKING_SPRITE
 	db SPRITE_GRAMPS, WALKING_SPRITE

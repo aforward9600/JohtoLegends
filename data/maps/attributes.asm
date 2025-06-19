@@ -755,3 +755,14 @@ ENDM
 	map_attributes HoOhTowerScene, HO_OH_TOWER_SCENE, $00, 0
 	map_attributes Route36VioletGate, ROUTE_36_VIOLET_GATE, $00, 0
 	map_attributes BerryCafe, BERRY_CAFE, $00, 0
+	map_attributes OneIslandPort, ONE_ISLAND_PORT, $00, 0
+
+	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
+	connection south, TreasureBeach, TREASURE_BEACH, 1
+	connection east, KindleRoad, KINDLE_ROAD, -38
+
+	map_attributes TreasureBeach, TREASURE_BEACH, $43, NORTH
+	connection north, OneIsland, ONE_ISLAND, -1
+
+	map_attributes KindleRoad, KINDLE_ROAD, $43, WEST
+	connection west, OneIsland, ONE_ISLAND, 38

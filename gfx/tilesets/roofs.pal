@@ -142,3 +142,8 @@
 	RGB 31,31,31, 23,27,27 ; morn/day
 	RGB 15,14,25, 10,09,17 ; nite
 	RGB 31,24,17, 18,22,22 ; eve
+
+; group 29 (Sevii Islands)
+	RGB 11,10,16, 05,06,07 ; morn/day
+	RGB 03,04,08, 00,00,00 ; nite
+	RGB 09,08,12, 04,04,05 ; eve

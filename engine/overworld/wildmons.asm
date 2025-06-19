@@ -60,10 +60,19 @@ FindNest:
 	ret
 
 .kanto
+	cp 2
+	jr z, .sevii
 	decoord 0, 0
 	ld hl, KantoGrassWildMons
 	call .FindGrass
 	ld hl, KantoWaterWildMons
+	jp .FindWater
+
+.sevii
+	decoord 0, 0
+	ld hl, SeviiGrassWildMons
+	call .FindGrass
+	ld hl, SeviiWaterWildMons
 	jp .FindWater
 
 .FindGrass:
@@ -603,6 +612,7 @@ _GrassWildmonLookup:
 	ret c
 	ld hl, JohtoGrassWildMons
 	ld de, KantoGrassWildMons
+	ld bc, SeviiGrassWildMons
 	call _JohtoWildmonCheck
 	ld bc, GRASS_WILDDATA_LENGTH
 	jp _NormalWildmonOK
@@ -614,16 +624,26 @@ _WaterWildmonLookup:
 	ret c
 	ld hl, JohtoWaterWildMons
 	ld de, KantoWaterWildMons
+	ld bc, SeviiWaterWildMons
 	call _JohtoWildmonCheck
 	ld bc, WATER_WILDDATA_LENGTH
 	jr _NormalWildmonOK
 
 _JohtoWildmonCheck:
+	push bc
 	call IsInJohto
 	and a
+	pop bc
 	ret z
+	cp 2
+	jr z, .sevii
 	ld h, d
 	ld l, e
+	ret
+
+.sevii
+	ld h, b
+	ld h, c
 	ret
 
 _SwarmWildmonCheck:
@@ -1171,3 +1191,5 @@ INCLUDE "data/wild/kanto_water.asm"
 INCLUDE "data/wild/swarm_grass.asm"
 INCLUDE "data/wild/swarm_water.asm"
 INCLUDE "data/wild/swarm_grass_alt.asm"
+INCLUDE "data/wild/sevii_grass.asm"
+INCLUDE "data/wild/sevii_water.asm"

@@ -550,3 +550,9 @@ ENDM
 	map_const MT_SILVER_SUMMIT,                             7, 10 ; 2
 	map_const GOLD_CRYSTAL_HOUSE,                           5,  4 ; 3
 	map_const SILVER_CAVE_MEW_ROOM,                         6,  5 ; 4
+
+	newgroup
+	map_const ONE_ISLAND_PORT,                              5,  9 ; 1
+	map_const ONE_ISLAND,                                  12, 11 ; 2
+	map_const TREASURE_BEACH,                               9, 13 ; 3
+	map_const KINDLE_ROAD,                                 14, 48 ; 4

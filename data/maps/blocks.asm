@@ -1050,3 +1050,15 @@ BerryCafe_Blocks:
 
 InfantGrove_Blocks:
 	INCBIN "maps/InfantGrove.ablk"
+
+OneIslandPort_Blocks:
+	INCBIN "maps/SeviiPort.ablk"
+
+OneIsland_Blocks:
+	INCBIN "maps/OneIsland.ablk"
+
+TreasureBeach_Blocks:
+	INCBIN "maps/TreasureBeach.ablk"
+
+KindleRoad_Blocks:
+	INCBIN "maps/KindleRoad.ablk"
