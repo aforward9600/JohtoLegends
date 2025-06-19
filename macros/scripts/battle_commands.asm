@@ -193,6 +193,9 @@ ENDM
 	command acrobatics
 	command uturn
 	command uturnanim
+	command gyroball
+	command sheerforce
+	command defensiveabilities
 ;	command wakeupslap
 ;	command awakenopponent
 

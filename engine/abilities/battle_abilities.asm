@@ -1240,3 +1240,197 @@ BattleCommand_SwitchTurnAbilities:
 	xor 1
 	ldh [hBattleTurn], a
 	ret
+
+CheckDefensiveAbilities:
+	call CheckNeutralGas
+	ret z
+	call GetUserAbility
+	cp MOLD_BREAKER
+	ret z 
+	call GetTargetAbility
+	ld de, 3
+	ld hl, .DefensiveAbilities
+	call IsInArray
+	jp nc, .NoDefensiveAbilities
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp hl
+
+.DefensiveAbilities:
+	dbw FLASH_FIRE,      .FlashFire
+	dbw WATER_ABSORB,    .WaterAbsorb
+	dbw LEVITATE,        .Levitate
+	dbw VOLT_ABSORB,     .VoltAbsorb
+	dbw DRY_SKIN,        .DrySkin
+	dbw SOUNDPROOF,      .Soundproof
+	dbw MOTOR_DRIVE,     .MotorDrive
+	dbw LIGHTNINGROD,    .Lightningrod
+	dbw SAP_SIPPER,      .SapSipper
+	db -1
+
+.FlashFire:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp FIRE
+	ret nz
+	farcall BattleCommand_SwitchTurn
+	farcall BattleCommand_AttackUp
+	farcall BattleCommand_SwitchTurn
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	call MoveDelayAbility
+	ld hl, FlashFireText
+	call StdBattleTextbox
+	farcall EndMoveEffect
+	ret
+
+.Levitate:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp GROUND
+	ret nz
+	call MoveDelayAbility
+	ld hl, LevitateText
+	call StdBattleTextbox
+	farcall EndMoveEffect
+	ret
+
+.SapSipper:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp GRASS
+	ret nz
+	farcall BattleCommand_SwitchTurn
+	farcall BattleCommand_AttackUp
+	farcall BattleCommand_SwitchTurn
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	call MoveDelayAbility
+	ld hl, SapSipperText
+	call StdBattleTextbox
+	farcall EndMoveEffect
+	ret
+
+.Lightningrod:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp ELECTRIC
+	ret nz
+	farcall BattleCommand_SwitchTurn
+	farcall BattleCommand_SpecialAttackUp
+	farcall BattleCommand_SwitchTurn
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	call MoveDelayAbility
+	ld hl, LightningRodText
+	call StdBattleTextbox
+	farcall EndMoveEffect
+	ret
+
+.MotorDrive:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp ELECTRIC
+	ret nz
+	farcall BattleCommand_SwitchTurn
+	farcall BattleCommand_SpeedUp
+	farcall BattleCommand_SwitchTurn
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	call MoveDelayAbility
+	ld hl, MotorDriveText
+	call StdBattleTextbox
+	farcall EndMoveEffect
+	ret
+
+.Soundproof:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .PlayerSoundproof
+	ld a, [wCurEnemyMove]
+	jr .FinishSoundproof
+
+.PlayerSoundproof
+	ld a, [wCurPlayerMove]
+.FinishSoundproof
+	ld hl, SoundMoves
+	call CheckMoveInListAbilities
+	ret nc
+	call MoveDelayAbility
+	ld hl, SoundproofText
+	call StdBattleTextbox
+	farcall EndMoveEffect
+	ret
+
+.DrySkin:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp WATER
+	ret nz
+	call CheckFullHPDefenseAbilities
+	farcall EndMoveEffect
+	ret
+
+.WaterAbsorb:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp WATER
+	ret nz
+	call CheckFullHPDefenseAbilities
+	farcall EndMoveEffect
+	ret
+
+.VoltAbsorb:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp ELECTRIC
+	ret nz
+	call CheckFullHPDefenseAbilities
+	farcall EndMoveEffect
+.NoDefensiveAbilities
+	ret
+
+CheckFullHPDefenseAbilities:
+	ld hl, wEnemyMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld hl, wBattleMonHP
+.got_hp
+; Don't restore if we're already at max HP
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .restore
+	ld a, [hl]
+	cp c
+	jr z, .NoRestore
+
+.restore
+	farcall GetQuarterMaxHP
+	farcall RestoreHP
+.NoRestore
+	call MoveDelayAbility
+	call GetTargetAbility
+	call Ability_LoadAbilityName
+	ld a, b
+	and a
+	ld hl, WaterAbsorbText
+	jp StdBattleTextbox

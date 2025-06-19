@@ -1,0 +1,19 @@
+SoundMoves:
+	dw BUG_BUZZ
+	dw DISARM_VOICE
+	dw ECHOED_VOICE
+	dw GRASSWHISTLE
+	dw GROWL
+	dw HEAL_BELL
+	dw HOWL
+	dw HYPER_VOICE
+	dw METAL_SOUND
+	dw PERISH_SONG
+	dw ROAR
+	dw ROUND_M
+	dw SCREECH
+	dw SING
+	dw SNARL
+	dw SNORE
+	dw SUPERSONIC
+	dw -1

@@ -1340,13 +1340,9 @@ DefiantUserText:
 
 ArenaTrapText:
 	text "<TARGET>'s"
-	line "Arena Trap"
-	cont "prevents esacape!"
-	prompt
-
-MagnetPullText:
-	text "<TARGET>'s"
-	line "Magnet Pull"
+	line "@"
+	text_ram wStringBuffer1
+	text_start
 	cont "prevents esacape!"
 	prompt
 
@@ -1447,4 +1443,40 @@ SwaggerOwnTempoText:
 	text "<USER>'s"
 	line "Own Tempo prevents"
 	cont "confusion!"
+	prompt
+
+FlashFireText:
+	text "<TARGET>'s"
+	line "Attack raised with"
+	cont "Flash Fire!"
+	prompt
+
+SapSipperText:
+	text "<TARGET>'s"
+	line "Attack raised with"
+	cont "Sap Sipper!"
+	prompt
+
+SoundproofText:
+	text "<TARGET>'s"
+	line "Soundproof"
+	cont "protected it!"
+	prompt
+
+LevitateText:
+	text "<TARGET>'s"
+	line "Levitate makes"
+	cont "Ground moves miss!"
+	prompt
+
+LightningRodText:
+	text "<TARGET>'s"
+	line "Sp.Atk raised with"
+	cont "Lightning Rod!"
+	prompt
+
+MotorDriveText:
+	text "<TARGET>'s"
+	line "Speed raised with"
+	cont "Motor Drive!"
 	prompt

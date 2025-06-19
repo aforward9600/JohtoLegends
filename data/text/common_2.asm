@@ -671,11 +671,11 @@ UnknownText_0x1c0cc6::
 
 UnknownText_0x1c0cd0::
 	text_pause
-	text "<SCROLL>went way up!"
+	text "<SCROLL>sharply rose!"
 	prompt
 
 UnknownText_0x1c0ce0::
-	text " went up!"
+	text " rose!"
 	prompt
 
 UnknownText_0x1c0ceb::

@@ -5778,6 +5778,16 @@ BattleCommand_FakeOut:
 	call PrintButItFailed
 	jp EndMoveEffect
 
+BattleCommand_DefensiveAbilities:
+	farcall CheckDefensiveAbilities
+	ret
+
+BattleCommand_GyroBall:
+	ret
+
+BattleCommand_SheerForce:
+	ret
+
 BattleCommand_FlinchTarget:
 	call CheckSubstituteOpp
 	ret nz

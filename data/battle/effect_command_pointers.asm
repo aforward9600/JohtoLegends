@@ -193,5 +193,8 @@ BattleCommandPointers:
 	effectfn BattleCommand_Acrobatics
 	effectfn BattleCommand_UTurn
 	effectfn BattleCommand_UTurnAnim
+	effectfn BattleCommand_GyroBall
+	effectfn BattleCommand_SheerForce
+	effectfn BattleCommand_DefensiveAbilities
 ;	effectfn BattleCommand_WakeUpSlap
 ;	effectfn BattleCommand_AwakenOpponent

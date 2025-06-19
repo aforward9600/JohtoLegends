@@ -13,6 +13,7 @@ VitalThrow:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -29,6 +30,7 @@ DoSleep:
 	doturn
 	checkhit
 	magicbounce
+	defensiveabilities
 	checksafeguard
 	sleeptarget
 	endmove
@@ -43,6 +45,7 @@ PoisonHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -65,6 +68,7 @@ LeechHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -86,6 +90,7 @@ BurnHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -130,6 +135,7 @@ ParalyzeHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -154,6 +160,7 @@ Selfdestruct:
 	checkhit
 	selfdestruct
 	moveanimnosub
+	defensiveabilities
 	failuretext
 	applydamage
 	criticaltext
@@ -195,6 +202,7 @@ AttackUp:
 	checkobedience
 	usedmovetext
 	doturn
+	defensiveabilities
 	attackup
 	lowersub
 	statupanim
@@ -367,6 +375,7 @@ AttackDown:
 	doturn
 	checkhit
 	magicbounce
+	defensiveabilities
 	attackdown
 	lowersub
 	statdownanim
@@ -423,6 +432,7 @@ SpecialDefenseDown:
 	doturn
 	checkhit
 	magicbounce
+	defensiveabilities
 	specialdefensedown
 	lowersub
 	statdownanim
@@ -479,6 +489,7 @@ DefenseDown2:
 	doturn
 	checkhit
 	magicbounce
+	defensiveabilities
 	defensedown2
 	lowersub
 	statdownanim
@@ -567,6 +578,7 @@ AttackDownHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -590,6 +602,7 @@ DefenseDownHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -614,6 +627,7 @@ SpeedDownHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -637,6 +651,7 @@ SpecialAttackDownHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -660,6 +675,7 @@ SpecialDefenseDownHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -683,6 +699,7 @@ AccuracyDownHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -729,6 +746,7 @@ DefenseUpHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -752,6 +770,7 @@ AttackUpHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -830,6 +849,7 @@ Rampage:
 	rampage
 	usedmovetext
 	checkhit
+	defensiveabilities
 	critical
 	damagestats
 	damagecalc
@@ -852,6 +872,7 @@ ForceSwitch:
 	doturn
 	checkhit
 	magicbounce
+	defensiveabilities
 	forceswitch
 	endmove
 
@@ -862,6 +883,7 @@ MultiHit:
 	startloop
 	lowersub
 	checkhit
+	defensiveabilities
 	critical
 	damagestats
 	damagecalc
@@ -888,6 +910,7 @@ PoisonMultiHit:
 	startloop
 	lowersub
 	checkhit
+	defensiveabilities
 	effectchance
 	critical
 	damagestats
@@ -919,6 +942,7 @@ FlinchHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -937,6 +961,7 @@ OHKOHit:
 	doturn
 	stab
 	ohko
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -957,6 +982,7 @@ RecoilHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -988,6 +1014,7 @@ DoConfuse:
 	doturn
 	checkhit
 	magicbounce
+	defensiveabilities
 	checksafeguard
 	confuse
 	endmove
@@ -1002,6 +1029,7 @@ ConfuseHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -1046,6 +1074,7 @@ TriAttack:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -1064,6 +1093,7 @@ DoPoison:
 	doturn
 	checkhit
 	magicbounce
+	defensiveabilities
 	stab
 	checksafeguard
 	poison
@@ -1076,6 +1106,7 @@ DoParalyze:
 	stab
 	checkhit
 	magicbounce
+	defensiveabilities
 	checksafeguard
 	paralyze
 	endmove
@@ -1175,6 +1206,7 @@ LeechSeed:
 	doturn
 	checkhit
 	magicbounce
+	defensiveabilities
 	leechseed
 	endmove
 
@@ -1244,6 +1276,7 @@ TrapTarget:
 	usedmovetext
 	doturn
 	checkhit
+	defensiveabilities
 	critical
 	damagestats
 	damagecalc
@@ -1269,6 +1302,7 @@ StaticDamage:
 	doturn
 	constantdamage
 	checkhit
+	defensiveabilities
 	resettypematchup
 	moveanim
 	failuretext
@@ -1285,6 +1319,7 @@ Reversal:
 	constantdamage
 	stab
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -1334,6 +1369,7 @@ Snore:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	snore
 	moveanim
@@ -1417,6 +1453,7 @@ HealBell:
 	checkobedience
 	usedmovetext
 	doturn
+	defensiveabilities
 	healbell
 	endmove
 
@@ -1488,6 +1525,7 @@ FlameWheel:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -1536,6 +1574,7 @@ PerishSong:
 	checkobedience
 	usedmovetext
 	doturn
+	defensiveabilities
 	perishsong
 	endmove
 
@@ -1603,6 +1642,7 @@ FuryCutter:
 	damagecalc
 	stab
 	checkhit
+	defensiveabilities
 	furycutter
 	damagevariation
 	moveanim
@@ -1707,6 +1747,7 @@ Magnitude:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	doubleundergrounddamage
 	moveanim
 	failuretext
@@ -1801,6 +1842,7 @@ HiddenPower:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -1909,6 +1951,7 @@ Twister:
 	damagevariation
 	doubleflyingdamage
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -1932,6 +1975,7 @@ Earthquake:
 	damagevariation
 	doubleundergrounddamage
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -2017,6 +2061,7 @@ Solarbeam:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -2036,6 +2081,7 @@ Thunder:
 	damagecalc
 	thunderaccuracy
 	checkhit
+	defensiveabilities
 	effectchance
 	stab
 	damagevariation
@@ -2145,6 +2191,7 @@ FireFang:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -2193,6 +2240,7 @@ ThunderFang:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -2285,6 +2333,7 @@ FlareBlitz:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -2452,6 +2501,7 @@ StrengthSap:
     doturn
     checkhit
 	magicbounce
+	defensiveabilities
     strengthsap
     endmove
 
@@ -2492,6 +2542,7 @@ SpeedUpHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -2586,6 +2637,7 @@ SpecialDefenseDown2Hit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -2609,6 +2661,7 @@ VoltTackle:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -2686,6 +2739,7 @@ SpecialAttackUpHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -2730,6 +2784,7 @@ GrassKnot:
 	damagecalc
 	stab
 	checkhit
+	defensiveabilities
 	damagevariation
 	moveanim
 	failuretext
@@ -2774,6 +2829,7 @@ DoBurn:
 	stab
 	checkhit
 	magicbounce
+	defensiveabilities
 	checksafeguard
 	burn
 	endmove
@@ -2837,6 +2893,7 @@ UTurn:
     stab
     damagevariation
     checkhit
+	defensiveabilities
     uturnanim
     failuretext
     applydamage

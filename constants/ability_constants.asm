@@ -1,10 +1,10 @@
 ; Ability constants
 	const_def
 	const NO_ABILITY   ; 00
-	const OVERGROW     ; 01
-	const BLAZE        ; 02
-	const TORRENT      ; 03
-	const THICK_FAT    ; 04
+	const OVERGROW     ; 01x
+	const BLAZE        ; 02x
+	const TORRENT      ; 03x
+	const THICK_FAT    ; 04x
 	const RECKLESS     ; 05
 	const SOLAR_POWER  ; 06
 	const DAMP         ; 07
