@@ -55,6 +55,7 @@ PoisonHit:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	poisontarget
 	endmove
 
@@ -100,6 +101,7 @@ BurnHit:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	burntarget
 	endmove
 
@@ -122,6 +124,7 @@ FreezeHit:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	freezetarget
 	endmove
 
@@ -145,6 +148,7 @@ ParalyzeHit:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	paralyzetarget
 	endmove
 
@@ -513,17 +517,6 @@ SpeedDown2:
 	endmove
 
 SpecialAttackDown2:
-	checkobedience
-	usedmovetext
-	doturn
-	checkhit
-	magicbounce
-	specialattackdown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
 	endmove
 
 SpecialDefenseDown2:
@@ -588,6 +581,7 @@ AttackDownHit:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	attackdown
 	statdownmessage
 	endmove
@@ -613,6 +607,7 @@ DefenseDownHit:
 	checkfaint
 	buildopponentrage
 ;	effectchance ; bug: duplicate effectchance shouldn't be here
+	sheerforce
 	defensedown
 	statdownmessage
 	endmove
@@ -637,6 +632,7 @@ SpeedDownHit:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	speeddown
 	statdownmessage
 	endmove
@@ -661,6 +657,7 @@ SpecialAttackDownHit:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	specialattackdown
 	statdownmessage
 	endmove
@@ -685,6 +682,7 @@ SpecialDefenseDownHit:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	specialdefensedown
 	statdownmessage
 	endmove
@@ -709,31 +707,12 @@ AccuracyDownHit:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	accuracydown
 	statdownmessage
 	endmove
 
 EvasionDownHit:
-	checkobedience
-	usedmovetext
-	doturn
-	critical
-	damagestats
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	effectchance
-	moveanim
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	kingsrock
-	checkfaint
-	buildopponentrage
-	evasiondown
-	statdownmessage
 	endmove
 
 DefenseUpHit:
@@ -753,11 +732,12 @@ DefenseUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	defenseup
-	statupmessage
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
+	defenseup
+	statupmessage
 	endmove
 
 AttackUpHit:
@@ -777,11 +757,12 @@ AttackUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	attackup
-	statupmessage
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
+	attackup
+	statupmessage
 	endmove
 
 AllUpHit:
@@ -800,11 +781,11 @@ AllUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-;	sheerforce
-	allstatsup
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
+	allstatsup
 	endmove
 
 PayDay:
@@ -929,6 +910,7 @@ PoisonMultiHit:
 	buildopponentrage
 	endloop
 	raisesub
+	sheerforce
 	poisontarget
 	endmove
 
@@ -952,6 +934,7 @@ FlinchHit:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	flinchtarget
 	endmove
 
@@ -1039,6 +1022,7 @@ ConfuseHit:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	confusetarget
 	endmove
 
@@ -1083,6 +1067,7 @@ TriAttack:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	tristatuschance
 	endmove
 
@@ -1132,6 +1117,7 @@ SkyAttack:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	flinchtarget
 	endmove
 
@@ -1380,6 +1366,7 @@ Snore:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	flinchtarget
 	endmove
 
@@ -1536,6 +1523,7 @@ FlameWheel:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	burntarget
 	endmove
 
@@ -1733,6 +1721,7 @@ SacredFire:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	burntarget
 	endmove
 
@@ -1803,11 +1792,12 @@ RapidSpin:
 	criticaltext
 	supereffectivetext
 	clearhazards
-	speedup
-	statupmessage
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
+	speedup
+	statupmessage
 	endmove
 
 MorningSun:
@@ -1886,6 +1876,7 @@ FakeOut:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	sheerforce
 	flinchtarget
 	endmove
 
@@ -1961,6 +1952,7 @@ Twister:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	flinchtarget
 	endmove
 
@@ -2045,6 +2037,7 @@ Stomp:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	flinchtarget
 	endmove
 
@@ -2093,6 +2086,7 @@ Thunder:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	paralyzetarget
 	endmove
 
@@ -2178,6 +2172,7 @@ Hurricane:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	confusetarget
 	endmove
 
@@ -2201,6 +2196,7 @@ FireFang:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	burntarget
 	effectchance
 	flinchtarget
@@ -2225,6 +2221,7 @@ IceFang:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	freezetarget
 	effectchance
 	flinchtarget
@@ -2250,6 +2247,7 @@ ThunderFang:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	paralyzetarget
 	effectchance
 	flinchtarget
@@ -2274,6 +2272,7 @@ DracoFang:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	confusetarget
 	effectchance
 	flinchtarget
@@ -2298,6 +2297,8 @@ AllDownHit:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
+;	statdropprevent
 	allstatsdown
 	endmove
 
@@ -2320,6 +2321,7 @@ SleepHit:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	sleephit
 	endmove
 
@@ -2344,6 +2346,7 @@ FlareBlitz:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	burntarget
 	endmove
 
@@ -2549,11 +2552,12 @@ SpeedUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	speedup
-	statupmessage
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
+	speedup
+	statupmessage
 	endmove
 
 Hail:
@@ -2604,6 +2608,7 @@ Blizzard:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	freezetarget
 	endmove
 
@@ -2647,6 +2652,7 @@ SpecialDefenseDown2Hit:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	specialdefensedown2
 	statdownmessage
 	endmove
@@ -2672,6 +2678,7 @@ VoltTackle:
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
 	paralyzetarget
 	endmove
 
@@ -2746,11 +2753,12 @@ SpecialAttackUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	specialattackup
-	statupmessage
 	kingsrock
 	checkfaint
 	buildopponentrage
+	sheerforce
+	specialattackup
+	statupmessage
 	endmove
 
 SuckerPunch:
