@@ -115,6 +115,30 @@ Landmarks:
 	landmark   4,  60, TreasureBeachName
 	landmark  12,  40, KindleRoadName
 	landmark  12,  20, MtEmberName
+	landmark  68,  36, TwoIslandName
+	landmark  68,  28, CapeBrinkName
+	landmark 148,  28, ThreeIslandName
+	landmark 128,  28, BondBridgeName
+	landmark 108,  28, BerryForestName
+	landmark  44,  68, FourIslandName
+	landmark  52,  68, IcefallCaveName
+	landmark 124,  76, FiveIslandName
+	landmark 116,  68, WaterLabyrinthName
+	landmark 124,  60, ResortGorgeousName
+	landmark 140,  60, LostCaveName
+	landmark 136,  76, FiveIsleMeadowName
+	landmark 140,  92, MemorialIslandName
+	landmark 108, 108, SixIslandName
+	landmark 116, 104, WaterPathName
+	landmark 100,  92, GreenPathName
+	landmark  76,  82, OutcaseIslandName
+	landmark  76,  76, AlteringCaveName
+	landmark 108, 124, RuinValleyName
+	landmark  12, 100, SevenIslandName
+	landmark  20, 116, SevaultCanyonName
+	landmark  20, 140, TanobiRuinsName
+	landmark  12,  92, SacredPathName
+	landmark  12,  84, OnaganTempleName
 
 NewBarkTownName:     db "Bourg Geon@"
 CherrygroveCityName: db "Ville¯Griotte@"

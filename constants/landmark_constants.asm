@@ -117,6 +117,30 @@ SEVII_LANDMARK EQU const_value
 	const TREASURE_BEACH    ; 6f
 	const KINDLE_ROAD       ; 70
 	const MT_EMBER          ; 71
+	const TWO_ISLAND        ; 72
+	const CAPE_BRINK        ; 73
+	const THREE_ISLAND      ; 74
+	const BOND_BRIDGE       ; 75
+	const BERRY_FOREST      ; 76
+	const FOUR_ISLAND       ; 77
+	const ICEFALL_CAVE      ; 78
+	const FIVE_ISLAND       ; 79
+	const WATER_LABYRINTH   ; 7a
+	const RESORT_GORGEOUS   ; 7b
+	const LOST_CAVE         ; 7c
+	const FIVE_ISLE_MEADOW  ; 7d
+	const MEMORIAL_ISLAND   ; 7e
+	const SIX_ISLAND        ; 7f
+	const WATER_PATH        ; 80
+	const GREEN_PATH        ; 81
+	const OUTCAST_ISLAND    ; 82
+	const ALTERING_CAVE     ; 83
+	const RUIN_VALLEY       ; 84
+	const SEVEN_ISLAND      ; 85
+	const SEVAULT_CANYON    ; 86
+	const TANOBI_RUINS      ; 87
+	const SACRED_PATH       ; 88
+	const ONAGAN_TEMPLE     ; 89
 
 ; used in CaughtData
 GIFT_LOCATION  EQU $fd

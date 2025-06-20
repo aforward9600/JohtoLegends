@@ -745,7 +745,7 @@ TownMap_GetKantoLandmarkLimits:
 	ret
 
 TownMap_GetSeviiLandmarkLimits:
-	ld d, MT_EMBER
+	ld d, ONAGAN_TEMPLE
 	ld e, ONE_ISLAND
 	ret
 

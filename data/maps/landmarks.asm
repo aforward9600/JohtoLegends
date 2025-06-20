@@ -115,10 +115,34 @@ Landmarks:
 	landmark  20, 100, Route27Name
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
-	landmark   4,  44, OneIslandName
-	landmark   4,  60, TreasureBeachName
-	landmark  12,  40, KindleRoadName
-	landmark  12,  20, MtEmberName
+	landmark  12,  44, OneIslandName
+	landmark  12,  60, TreasureBeachName
+	landmark  20,  40, KindleRoadName
+	landmark  20,  20, MtEmberName
+	landmark  68,  36, TwoIslandName
+	landmark  68,  28, CapeBrinkName
+	landmark 148,  28, ThreeIslandName
+	landmark 128,  28, BondBridgeName
+	landmark 108,  28, BerryForestName
+	landmark  44,  68, FourIslandName
+	landmark  52,  68, IcefallCaveName
+	landmark 124,  76, FiveIslandName
+	landmark 116,  68, WaterLabyrinthName
+	landmark 124,  60, ResortGorgeousName
+	landmark 140,  60, LostCaveName
+	landmark 136,  76, FiveIsleMeadowName
+	landmark 140,  92, MemorialIslandName
+	landmark 108, 108, SixIslandName
+	landmark 116, 104, WaterPathName
+	landmark 100,  92, GreenPathName
+	landmark  76,  82, OutcastIslandName
+	landmark  76,  76, AlteringCaveName
+	landmark 108, 124, RuinValleyName
+	landmark  12, 100, SevenIslandName
+	landmark  20, 116, SevaultCanyonName
+	landmark  20, 140, TanobiRuinsName
+	landmark  12,  92, SacredPathName
+	landmark  12,  84, OnaganTempleName
 
 NewBarkTownName:     db "New Bark¯Town@"
 CherrygroveCityName: db "Cherrygrove¯City@"
@@ -236,3 +260,27 @@ OneIslandName:       db "One Island@"
 TreasureBeachName:   db "Treasure¯Beach@"
 KindleRoadName:      db "Kindle Road@"
 MtEmberName:         db "Mt. Ember@"
+TwoIslandName:       db "Two Island@"
+CapeBrinkName:       db "Cape Brink@"
+ThreeIslandName:     db "Three¯Island@"
+BondBridgeName:      db "Bond Bridge@"
+BerryForestName:     db "Berry¯Forest@"
+FourIslandName:      db "Four Island@"
+IcefallCaveName:     db "Icefall¯Cave@"
+FiveIslandName:      db "Five Island@"
+WaterLabyrinthName:  db "Water¯Labyrinth@"
+ResortGorgeousName:  db "Resort¯Gorgeous@"
+LostCaveName:        db "Lost Cave@"
+FiveIsleMeadowName:  db "Five Isle¯Meadow@"
+MemorialIslandName:  db "Memorial¯Island@"
+SixIslandName:       db "Six Island@"
+WaterPathName:       db "Water Path@"
+GreenPathName:       db "Green Path@"
+OutcastIslandName:   db "Outcast¯Island@"
+AlteringCaveName:    db "Altering¯Cave@"
+RuinValleyName:      db "Ruin Valley@"
+SevenIslandName:     db "Seven¯Island@"
+SevaultCanyonName:   db "Sevault¯Canyon@"
+TanobiRuinsName:     db "Tanobi¯Ruins@"
+SacredPathName:      db "Sacred Path@"
+OnaganTempleName:    db "Onagan¯Temple@"

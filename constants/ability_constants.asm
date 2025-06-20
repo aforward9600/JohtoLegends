@@ -11,7 +11,7 @@
 	const SWIFT_SWIM   ; 08x
 	const KEEN_EYE     ; 09
 	const SKILL_LINK   ; 0a
-	const SHEER_FORCE  ; 0b
+	const SHEER_FORCE  ; 0bx
 	const VITAL_SPIRIT ; 0c
 	const RUN_AWAY     ; 0d
 	const INTIMIDATE   ; 0ex
