@@ -686,6 +686,7 @@ CheckBoostingAbilities:
 	dbw DRAGONS_MAW,     .DragonsMaw
 	dbw TOUGH_CLAWS,     .ToughClaws
 	dbw STRONG_JAW,      .StrongJaw
+	dbw MEGA_LAUNCHER,   .MegaLauncher
 	db -1
 
 .Guts:
@@ -707,16 +708,25 @@ CheckBoostingAbilities:
 	jp ThirtyPercentBoost
 
 .StrongJaw:
+	ld hl, StrongJawMoves
+	jr .NextMoveBoost
+
+.MegaLauncher:
+	ld hl, MegaLauncherMoves
+	jr .NextMoveBoost
+
+.Sharpness:
+	ld hl, SharpnessMoves
+.NextMoveBoost
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .PlayerStrongJaw
+	jr z, .PlayerMoveBoost
 	ld a, [wCurEnemyMove]
-	jr .FinishStrongJaw
+	jr .FinishMoveBoost
 
-.PlayerStrongJaw
+.PlayerMoveBoost
 	ld a, [wCurPlayerMove]
-.FinishStrongJaw
-	ld hl, StrongJawMoves
+.FinishMoveBoost
 	call CheckMoveInListAbilities
 	ret nc
 	jp FiftyPercentBoost
@@ -809,21 +819,6 @@ CheckBoostingAbilities:
 	cp EFFECT_RECOIL_HIT
 	ret nz
 	jp TwentyPercentBoost
-
-.Sharpness:
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .PlayerSharpness
-	ld a, [wCurEnemyMove]
-	jr .FinishSharpness
-
-.PlayerSharpness
-	ld a, [wCurPlayerMove]
-.FinishSharpness
-	ld hl, SharpnessMoves
-	call CheckMoveInListAbilities
-	ret nc
-	jp FiftyPercentBoost
 
 .Overgrow:
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1003,6 +998,13 @@ SharpnessMoves:
 	dw SLASH
 	dw LEAF_BLADE
 	dw STEEL_SLICE
+	dw -1
+
+MegaLauncherMoves:
+	dw AURA_SPHERE
+	dw DARK_PULSE
+	dw DRAGON_PULSE
+	dw WATER_PULSE
 	dw -1
 
 StrongJawMoves:
