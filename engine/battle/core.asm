@@ -271,7 +271,7 @@ HandleBetweenTurnEffects:
 	call CheckFaint_PlayerThenEnemy
 	ret c
 	call HandleSlowStart
-;	farcall HandleEndMoveAbility
+	farcall HandleEndMoveAbility
 	jr .NoMoreFaintingConditions
 
 .CheckEnemyFirst:
@@ -291,7 +291,7 @@ HandleBetweenTurnEffects:
 	call CheckFaint_EnemyThenPlayer
 	ret c
 	call HandleSlowStart
-;	farcall HandleEndMoveAbility
+	farcall HandleEndMoveAbility
 
 .NoMoreFaintingConditions:
 	farcall Core2_NewTurnEndEffects
@@ -1034,6 +1034,10 @@ ResidualDamage:
 	ld de, ANIM_BRN
 .got_anim
 
+	call GetUserAbility
+	cp SHED_SKIN
+	jr z, .ShedSkinHeal
+
 	push de
 	call StdBattleTextbox
 	pop de
@@ -1067,6 +1071,16 @@ ResidualDamage:
 .did_toxic
 
 	call SubtractHPFromUser
+	jr .did_psn_brn
+
+.ShedSkinHeal:
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	ld a, [hl]
+	ld [hl], 0
+	ld hl, ShedSkinText
+	call StdBattleTextbox
+
 .did_psn_brn
 
 	call HasUserFainted
@@ -3874,12 +3888,25 @@ SpikesDamage:
 	ld hl, wPlayerScreens
 	ld de, wBattleMonType
 	ld bc, UpdatePlayerHUD
+	call CheckNeutralGas
+	jr z, .SkipSpikesAbility
+	ld a, [wPlayerAbility]
+	cp LEVITATE
+	ret z
+	cp MAGIC_GUARD
+	ret z
+.SkipSpikesAbility
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .ok
 	ld hl, wEnemyScreens
 	ld de, wEnemyMonType
 	ld bc, UpdateEnemyHUD
+	ld a, [wEnemyAbility]
+	cp LEVITATE
+	ret z
+	cp MAGIC_GUARD
+	ret z
 .ok
 
 	bit SCREENS_SPIKES, [hl]
@@ -6539,6 +6566,12 @@ ApplyPrzEffectOnSpeed:
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .enemy
+	call CheckNeutralGas
+	jr z, .SkipQuickFeet
+	ld a, [wPlayerAbility]
+	cp QUICK_FEET
+	ret z
+.SkipQuickFeet
 	ld a, [wBattleMonStatus]
 	and 1 << PAR
 	ret z
@@ -6560,6 +6593,11 @@ ApplyPrzEffectOnSpeed:
 	ret
 
 .enemy
+	call CheckNeutralGas
+	jr z, .SkipQuickFeetEnemy
+	cp QUICK_FEET
+	ret z
+.SkipQuickFeetEnemy
 	ld a, [wEnemyMonStatus]
 	and 1 << PAR
 	ret z
@@ -6584,6 +6622,12 @@ ApplyBrnEffectOnAttack:
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .enemy
+	call CheckNeutralGas
+	jr z, .SkipGuts
+	ld a, [wPlayerAbility]
+	cp GUTS
+	ret z
+.SkipGuts
 	ld a, [wBattleMonStatus]
 	and 1 << BRN
 	ret z
@@ -6603,6 +6647,12 @@ ApplyBrnEffectOnAttack:
 	ret
 
 .enemy
+	call CheckNeutralGas
+	jr z, .SkipGutsEnemy
+	ld a, [wEnemyAbility]
+	cp GUTS
+	ret z
+.SkipGutsEnemy
 	ld a, [wEnemyMonStatus]
 	and 1 << BRN
 	ret z

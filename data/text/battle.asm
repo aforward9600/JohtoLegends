@@ -1480,3 +1480,19 @@ MotorDriveText:
 	line "Speed raised with"
 	cont "Motor Drive!"
 	prompt
+
+DrySkinHurtText:
+	text "<USER> was"
+	line "hurt by Dry Skin!"
+	prompt
+
+SpeedBoostText:
+	text "<USER>'s"
+	line "Speed Boost raised"
+	cont "its Speed!"
+	prompt
+
+ShedSkinText:
+	text "<USER>"
+	line "shed its skin!"
+	prompt

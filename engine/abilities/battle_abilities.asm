@@ -1436,3 +1436,128 @@ CheckFullHPDefenseAbilities:
 	and a
 	ld hl, WaterAbsorbText
 	jp StdBattleTextbox
+
+HandleEndMoveAbility:
+	ld de, wBattleMonSpeed
+	ld hl, wEnemyMonSpeed
+	ld c, 2
+	call CompareBytes
+	jr z, .speed_tie
+	jr nc, .player_goes_first
+.enemy_goes_first
+	call SetEnemyTurn
+	call .do_it
+	call SetPlayerTurn
+	jr .do_it
+
+.speed_tie
+	call BattleRandom
+	cp 50 percent + 1
+	jr c, .player_goes_first
+	jr .enemy_goes_first
+
+.player_goes_first
+	call SetPlayerTurn
+	call .do_it
+	call SetEnemyTurn
+
+.do_it
+	call CheckNeutralGas
+	ret z
+	call GetUserAbility
+	ld de, 3
+	ld hl, .EndTurnAbilities
+	call IsInArray
+	jp nc, .NoEndTurnAbilities
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp hl
+
+.EndTurnAbilities:
+	dbw RAIN_DISH,       .RainDish
+	dbw DRY_SKIN,        .DrySkin
+	dbw SPEED_BOOST,     .SpeedBoost
+	dbw SHED_SKIN,       .ShedSkin
+	db -1
+
+.RainDish:
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	ret nz
+	jp CheckFullHPAbilities
+
+.DrySkin:
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	jr z, .DrySkinRain
+	cp WEATHER_SUN
+	ret nz
+	farcall GetEighthMaxHP
+	farcall SubtractHPFromUser
+	ld hl, DrySkinHurtText
+	jp StdBattleTextbox
+
+.DrySkinRain:
+	jp CheckFullHPAbilities
+
+.SpeedBoost:
+	push bc
+	farcall BattleCommand_SpeedUp
+	pop bc
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	ld hl, SpeedBoostText
+	jp StdBattleTextbox
+
+.ShedSkin:
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVar
+	and 1 << SLP | 1 << FRZ | 1 << PAR
+	ret z
+	call BattleRandom
+	cp 30 percent + 1
+	ret nc
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	ld a, [hl]
+	ld [hl], 0
+	ld hl, ShedSkinText
+	call StdBattleTextbox
+.NoEndTurnAbilities:
+	ret
+
+CheckFullHPAbilities:
+	ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld hl, wEnemyMonHP
+
+.got_hp
+; Don't restore if we're already at max HP
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .restore
+	ld a, [hl]
+	cp c
+	ret z
+
+.restore
+	farcall GetEighthMaxHP
+	farcall SwitchTurnCore
+	farcall RestoreHP
+	farcall SwitchTurnCore
+	call MoveDelayAbility
+	call GetUserAbility
+	call Ability_LoadAbilityName
+	ld a, b
+	and a
+	ld hl, WaterAbsorbText
+	jp StdBattleTextbox

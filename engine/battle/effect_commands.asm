@@ -5785,10 +5785,13 @@ BattleCommand_DefensiveAbilities:
 BattleCommand_GyroBall:
 	ret
 
-BattleCommand_SheerForce:
-	ret
-
 BattleCommand_FlinchTarget:
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipFlinchAbility
+	call GetTargetAbility
+	cp INNER_FOCUS
+	ret z
+.SkipFlinchAbility
 	call CheckSubstituteOpp
 	ret nz
 
@@ -5854,6 +5857,14 @@ BattleCommand_HeldFlinch:
 	ret
 
 .flinch:
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipAbilities
+	call GetTargetAbility
+	cp INNER_FOCUS
+	ret z
+	cp SHIELD_DUST
+	ret z
+.SkipAbilities
 	call CheckSubstituteOpp
 	ret nz
 	call BattleCommand_CheckFaint
@@ -5873,6 +5884,17 @@ BattleCommand_HeldFlinch:
 	ret
 
 .lifeorb:
+	call CheckNeutralGas
+	jr z, .continuelifeorb
+	call GetUserAbility
+	cp MAGIC_GUARD
+	ret z
+	cp SHEER_FORCE
+	jr nz, .continuelifeorb
+	farcall SheerForceEffectCheck
+	ret c
+
+.continuelifeorb
 	call .checkfaint
 	ret z
 	xor a
