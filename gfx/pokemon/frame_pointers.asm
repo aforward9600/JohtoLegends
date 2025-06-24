@@ -332,3 +332,6 @@ FramesPointers:
 	dba RegirockFrames
 	dba RegiceFrames
 	dba RegisteelFrames
+	dba RegielekiFrames
+	dba RegidragoFrames
+	dba RegigigasFrames

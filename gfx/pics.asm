@@ -1316,3 +1316,33 @@ RegisteelFrontpic:   INCBIN "gfx/pokemon/registeel/front.animated.2bpp.lz"
 SECTION "Registeel Backpic", ROMX
 
 RegisteelBackpic:    INCBIN "gfx/pokemon/registeel/back.2bpp.lz"
+
+
+SECTION "Regieleki Frontpic", ROMX
+
+RegielekiFrontpic:   INCBIN "gfx/pokemon/regieleki/front.animated.2bpp.lz"
+
+
+SECTION "Regieleki Backpic", ROMX
+
+RegielekiBackpic:    INCBIN "gfx/pokemon/regieleki/back.2bpp.lz"
+
+
+SECTION "Regidrago Frontpic", ROMX
+
+RegidragoFrontpic:   INCBIN "gfx/pokemon/regidrago/front.animated.2bpp.lz"
+
+
+SECTION "Regidrago Backpic", ROMX
+
+RegidragoBackpic:    INCBIN "gfx/pokemon/regidrago/back.2bpp.lz"
+
+
+SECTION "Regigigas Frontpic", ROMX
+
+RegigigasFrontpic:   INCBIN "gfx/pokemon/regigigas/front.animated.2bpp.lz"
+
+
+SECTION "Regigigas Backpic", ROMX
+
+RegigigasBackpic:    INCBIN "gfx/pokemon/regigigas/back.2bpp.lz"

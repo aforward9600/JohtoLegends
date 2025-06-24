@@ -332,3 +332,6 @@ BitmasksPointers:
 	dw RegirockBitmasks
 	dw RegiceBitmasks
 	dw RegisteelBitmasks
+	dw RegielekiBitmasks
+	dw RegidragoBitmasks
+	dw RegigigasBitmasks

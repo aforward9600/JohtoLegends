@@ -336,3 +336,6 @@ PokemonNames::
 	db "Regirock@@"
 	db "Regice@@@@"
 	db "Registeel@"
+	db "Regieleki@"
+	db "Regidrago@"
+	db "Regigigas@"

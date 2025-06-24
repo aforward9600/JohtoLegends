@@ -334,3 +334,6 @@ NewPokedexOrder:
 	dw REGIROCK
 	dw REGICE
 	dw REGISTEEL
+	dw REGIELEKI
+	dw REGIDRAGO
+	dw REGIGIGAS

@@ -332,3 +332,6 @@ AnimationIdlePointers:
 	dw RegirockAnimationIdle
 	dw RegiceAnimationIdle
 	dw RegisteelAnimationIdle
+	dw RegielekiAnimationIdle
+	dw RegidragoAnimationIdle
+	dw RegigigasAnimationIdle

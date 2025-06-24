@@ -332,3 +332,6 @@ AnimationPointers:
 	dw RegirockAnimation
 	dw RegiceAnimation
 	dw RegisteelAnimation
+	dw RegielekiAnimation
+	dw RegidragoAnimation
+	dw RegigigasAnimation

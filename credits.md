@@ -136,7 +136,7 @@ Budew, Roselia, Roserade, Electrike, Manectric, Cacnea, Cacturne, Croagunk,
 Toxicroak, Snorunt, Glalie, Froslass, Aggron, Lotad, Lombre, Ludicolo sprites:
 Prism Team.
 
-Gyarados sprites: Sage
+Gyarados, Regigigas, Regieleki and Regidrago sprites: Sage
 
 Farigiraf sprite and animation: Nuuk.
 
@@ -176,7 +176,7 @@ Sleeping bag and campfire graphics: Prism Team
 
 Happiny, Mime Jr. sprite and animation: Rangi & ShadowOne333
 
-Minisprites 1-251 and Gen 4:
+Minisprites 1-251, Gen 4 and Gen 8:
 Chamber
 Solo993
 Blue Emerald

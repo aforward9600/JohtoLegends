@@ -344,3 +344,6 @@ MonMenuIconPals:
 	icon_pals RED,    BROWN  ; REGIROCK
 	icon_pals BLUE,   TEAL   ; REGICE
 	icon_pals GRAY,   TEAL   ; REGISTEEL
+	icon_pals BLUE,   GRAY   ; REGIELEKI
+	icon_pals RED,    BLUE   ; REGIDRAGO
+	icon_pals GREEN,  BLUE   ; REGIGIGAS

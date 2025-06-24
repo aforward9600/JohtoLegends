@@ -132,6 +132,7 @@ AbilityNames::
 	db "Poison Heal@"
 	db "Contrary@"
 	db "Pickpocket@"
+	db "Bulletproof@"
 	db "Magma Armor@"
 	db "Suction Cups@"
 	db "Heat Proof@"

@@ -27,6 +27,9 @@ EvosAttacksPointers3::
 	dw RegirockEvosAttacks
 	dw RegiceEvosAttacks
 	dw RegisteelEvosAttacks
+	dw RegielekiEvosAttacks
+	dw RegidragoEvosAttacks
+	dw RegigigasEvosAttacks
 
 AronEvosAttacks:
 	dbbw EVOLVE_LEVEL, 32, LAIRON
@@ -520,4 +523,55 @@ RegisteelEvosAttacks:
 	dbw 55, ZAP_CANNON
 	dbw 61, SUPERPOWER
 	dbw 67, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+RegielekiEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, EXPLOSION
+	dbw 1, RAPID_SPIN
+	dbw 7, THUNDERSHOCK
+	dbw 13, CHARGE_BEAM
+	dbw 19, BULLDOZE
+	dbw 25, CURSE
+	dbw 31, ANCIENTPOWER
+	dbw 37, AGILITY
+	dbw 43, THUNDERBOLT
+	dbw 49, EXTREMESPEED
+	dbw 55, LOCK_ON
+	dbw 55, ZAP_CANNON
+	dbw 61, AURA_SPHERE
+	dbw 67, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+RegidragoEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, EXPLOSION
+	dbw 1, VICEGRIP
+	dbw 7, TWISTER
+	dbw 13, CHARGE_BEAM
+	dbw 19, BULLDOZE
+	dbw 25, CURSE
+	dbw 31, ANCIENTPOWER
+	dbw 37, DRAGON_DANCE
+	dbw 43, DRAGON_CLAW
+	dbw 49, HAMMER_ARM
+	dbw 55, LOCK_ON
+	dbw 55, ZAP_CANNON
+	dbw 61, OUTRAGE
+	dbw 67, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+RegigigasEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, DIZZY_PUNCH
+	dbw 1, KNOCK_OFF
+	dbw 1, CONFUSE_RAY
+	dbw 1, FORESIGHT
+	dbw 25, REVENGE
+	dbw 40, PROTECT
+	dbw 50, ZEN_HEADBUTT
+	dbw 65, PAYBACK
+	dbw 75, BODY_SLAM
+	dbw 90, SUPERPOWER
+	dbw 100, GIGA_IMPACT
 	db 0 ; no more level-up moves
