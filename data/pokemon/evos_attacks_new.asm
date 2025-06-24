@@ -24,6 +24,9 @@ EvosAttacksPointers3::
 	dw CelebiEvosAttacks
 	dw NownEvosAttack
 	dw MissingnoEvosAttacks
+	dw RegirockEvosAttacks
+	dw RegiceEvosAttacks
+	dw RegisteelEvosAttacks
 
 AronEvosAttacks:
 	dbbw EVOLVE_LEVEL, 32, LAIRON
@@ -462,4 +465,59 @@ MissingnoEvosAttacks:
 	dbw 1, HURRICANE
 	dbw 1, BRAVE_BIRD
 	dbw 1, GIGA_IMPACT
+	db 0 ; no more level-up moves
+
+RegirockEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, EXPLOSION
+	dbw 1, STOMP
+	dbw 7, ROCK_THROW
+	dbw 13, CHARGE_BEAM
+	dbw 19, BULLDOZE
+	dbw 25, CURSE
+	dbw 31, ANCIENTPOWER
+	dbw 37, IRON_DEFENSE
+	dbw 43, STONE_EDGE
+	dbw 49, HAMMER_ARM
+	dbw 55, LOCK_ON
+	dbw 55, ZAP_CANNON
+	dbw 61, SUPERPOWER
+	dbw 67, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+RegiceEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, EXPLOSION
+	dbw 1, STOMP
+	dbw 7, ICY_WIND
+	dbw 13, CHARGE_BEAM
+	dbw 19, BULLDOZE
+	dbw 25, CURSE
+	dbw 31, ANCIENTPOWER
+	dbw 37, AMNESIA
+	dbw 43, ICE_BEAM
+	dbw 49, HAMMER_ARM
+	dbw 55, LOCK_ON
+	dbw 55, ZAP_CANNON
+	dbw 61, SUPERPOWER
+	dbw 67, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+RegisteelEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, EXPLOSION
+	dbw 1, STOMP
+	dbw 7, METAL_CLAW
+	dbw 13, CHARGE_BEAM
+	dbw 19, BULLDOZE
+	dbw 25, CURSE
+	dbw 31, ANCIENTPOWER
+	dbw 37, IRON_DEFENSE
+	dbw 37, AMNESIA
+	dbw 43, IRON_HEAD
+	dbw 49, HAMMER_ARM
+	dbw 55, LOCK_ON
+	dbw 55, ZAP_CANNON
+	dbw 61, SUPERPOWER
+	dbw 67, HYPER_BEAM
 	db 0 ; no more level-up moves

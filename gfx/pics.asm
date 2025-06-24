@@ -1286,3 +1286,33 @@ RoughneckPic:        INCBIN "gfx/trainers/roughneck.2bpp.lz"
 SoldierPic:          INCBIN "gfx/trainers/soldier.2bpp.lz"
 KarateKingPic:       INCBIN "gfx/trainers/karate_king.2bpp.lz"
 FerropexolaPic:      INCBIN "gfx/trainers/ferropexola.2bpp.lz"
+
+
+SECTION "Regirock Frontpic", ROMX
+
+RegirockFrontpic:    INCBIN "gfx/pokemon/regirock/front.animated.2bpp.lz"
+
+
+SECTION "Regirock Backpic", ROMX
+
+RegirockBackpic:     INCBIN "gfx/pokemon/regirock/back.2bpp.lz"
+
+
+SECTION "Regice Frontpic", ROMX
+
+RegiceFrontpic:      INCBIN "gfx/pokemon/regice/front.animated.2bpp.lz"
+
+
+SECTION "Regice Backpic", ROMX
+
+RegiceBackpic:       INCBIN "gfx/pokemon/regice/back.2bpp.lz"
+
+
+SECTION "Registeel Frontpic", ROMX
+
+RegisteelFrontpic:   INCBIN "gfx/pokemon/registeel/front.animated.2bpp.lz"
+
+
+SECTION "Registeel Backpic", ROMX
+
+RegisteelBackpic:    INCBIN "gfx/pokemon/registeel/back.2bpp.lz"

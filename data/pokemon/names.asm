@@ -333,3 +333,6 @@ PokemonNames::
 	db "Celebi@@@@"
 	db "Nown@@@@@@"
 	db "Missingno."
+	db "Regirock@@"
+	db "Regice@@@@"
+	db "Registeel@"

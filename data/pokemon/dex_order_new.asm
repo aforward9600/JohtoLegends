@@ -331,3 +331,6 @@ NewPokedexOrder:
 	dw CELEBI
 	dw NOWN
 	dw MISSINGNO
+	dw REGIROCK
+	dw REGICE
+	dw REGISTEEL

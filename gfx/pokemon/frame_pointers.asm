@@ -329,3 +329,6 @@ FramesPointers:
 	dba CelebiFrames
 	dba NownFrames
 	dba MissingnoFrames
+	dba RegirockFrames
+	dba RegiceFrames
+	dba RegisteelFrames

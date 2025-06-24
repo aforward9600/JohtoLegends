@@ -341,3 +341,6 @@ MonMenuIconPals:
 	icon_pals GREEN,  PINK   ; CELEBI
 	icon_pals GRAY,   BLUE   ; NOWN
 	icon_pals GRAY,   GRAY   ; MISSINGO.
+	icon_pals RED,    BROWN  ; REGIROCK
+	icon_pals BLUE,   TEAL   ; REGICE
+	icon_pals GRAY,   TEAL   ; REGISTEEL

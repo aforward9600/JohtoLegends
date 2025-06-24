@@ -329,3 +329,6 @@ BitmasksPointers:
 	dw CelebiBitmasks
 	dw NownBitmasks
 	dw MissingnoBitmasks
+	dw RegirockBitmasks
+	dw RegiceBitmasks
+	dw RegisteelBitmasks

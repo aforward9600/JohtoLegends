@@ -81,6 +81,9 @@ Icons3:
 	dw CelebiIcon
 	dw NownIcon
 	dw MissingnoIcon
+	dw RegirockIcon
+	dw RegiceIcon
+	dw RegisteelIcon
 
 TeddiursaIcon:    INCBIN "gfx/icons/teddiursa.2bpp"
 UrsaringIcon:     INCBIN "gfx/icons/ursaring.2bpp"
@@ -161,3 +164,6 @@ HoOhIcon:	      INCBIN "gfx/icons/ho_oh.2bpp"
 CelebiIcon:	      INCBIN "gfx/icons/celebi.2bpp"
 NownIcon:         INCBIN "gfx/icons/nown.2bpp"
 MissingnoIcon:	  INCBIN "gfx/icons/missingno.2bpp"
+RegirockIcon:     INCBIN "gfx/icons/regirock.2bpp"
+RegiceIcon:       INCBIN "gfx/icons/regice.2bpp"
+RegisteelIcon:    INCBIN "gfx/icons/registeel.2bpp"

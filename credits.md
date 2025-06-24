@@ -154,6 +154,8 @@ Agatha and Oak sprites: Tetra
 
 Sabrina sprite: CDRX73
 
+Regice, Regirock, and Registeel sprites: Bloodless and Scarlax
+
 Ariana, Archer and Giovanni trainer and overworld sprite: SirWhibbles
 
 Ampharos and overworld sprite: Prism Team

@@ -350,6 +350,9 @@ JOHTO_POKEMON EQU const_value
 	const CELEBI     ; fb
 	const NOWN
 	const MISSINGNO
+	const REGIROCK
+	const REGICE
+	const REGISTEEL
 
 NUM_POKEMON EQU const_value + -1
 

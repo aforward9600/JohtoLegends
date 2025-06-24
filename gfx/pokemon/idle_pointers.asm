@@ -329,3 +329,6 @@ AnimationIdlePointers:
 	dw CelebiAnimationIdle
 	dw NownAnimationIdle
 	dw MissingnoAnimationIdle
+	dw RegirockAnimationIdle
+	dw RegiceAnimationIdle
+	dw RegisteelAnimationIdle

@@ -690,3 +690,9 @@ INCBIN  "gfx/pokemon/nown/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/nown/shiny.pal"
 INCLUDE "gfx/pokemon/missingno/normal.pal"
 INCLUDE "gfx/pokemon/missingno/shiny.pal"
+INCBIN "gfx/pokemon/regirock/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/regirock/shiny.pal"
+INCBIN "gfx/pokemon/regice/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/regice/shiny.pal"
+INCBIN "gfx/pokemon/registeel/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/registeel/shiny.pal"

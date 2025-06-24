@@ -143,6 +143,7 @@ PreviousEvolutionStage::
 	dw MIME__JR
 	dw 0
 	dw SCYTHER
+	dw SCYTHER
 	dw 0
 	dw SMOOCHUM
 	dw 0
@@ -324,6 +325,9 @@ PreviousEvolutionStage::
 	dw 0
 	dw BELDUM
 	dw METANG
+	dw 0
+	dw 0
+	dw 0
 	dw 0
 	dw 0
 	dw 0

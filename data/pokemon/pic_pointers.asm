@@ -673,3 +673,9 @@ PokemonPicPointers::
 	dba NownBackpic
 	dba MissingnoFrontpic
 	dba MissingnoBackpic
+	dba RegirockFrontpic
+	dba RegirockBackpic
+	dba RegiceFrontpic
+	dba RegiceBackpic
+	dba RegisteelFrontpic
+	dba RegisteelBackpic

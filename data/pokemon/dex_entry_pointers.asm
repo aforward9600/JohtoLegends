@@ -330,3 +330,6 @@ PokedexDataPointerTable:
 	dba CelebiPokedexEntry
 	dba NownPokedexEntry
 	dba MissingnoPokedexEntry
+	dba RegirockPokedexEntry
+	dba RegicePokedexEntry
+	dba RegisteelPokedexEntry

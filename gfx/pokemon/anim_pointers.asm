@@ -329,3 +329,6 @@ AnimationPointers:
 	dw CelebiAnimation
 	dw NownAnimation
 	dw MissingnoAnimation
+	dw RegirockAnimation
+	dw RegiceAnimation
+	dw RegisteelAnimation
