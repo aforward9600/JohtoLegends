@@ -1062,3 +1062,6 @@ TreasureBeach_Blocks:
 
 KindleRoad_Blocks:
 	INCBIN "maps/KindleRoad.ablk"
+
+MtEmber_Blocks:
+	INCBIN "maps/MtEmber.ablk"

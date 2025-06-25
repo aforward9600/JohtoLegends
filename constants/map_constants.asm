@@ -55,7 +55,7 @@ ENDM
 	map_const ROUTE_44,                                    30,  9 ;  6
 	map_const MAHOGANY_TOWN,                               10,  9 ;  7
 	map_const FOSSIL_HOUSE,                                 4,  4 ;  8
-	map_const SILVER_CAVE_SUMMIT_OUTSIDE,                  16, 17 ;  9
+	map_const SILVER_CAVE_SUMMIT_OUTSIDE,                  16, 12 ;  9
 
 	newgroup                                                      ;  3
 
@@ -146,7 +146,7 @@ ENDM
 	map_const SAFARI_ZONE_FUCHSIA_GATE_BETA,                5,  4 ; 89
 	map_const SAFARI_ZONE_BETA,                            10, 18 ; 90
 	map_const VICTORY_ROAD,                                10, 36 ; 91
-	map_const DARK_CAVE_NEW_ENTRANCE,                       6,  4 ; 92
+	map_const DARK_CAVE_NEW_ENTRANCE,                       6,  3 ; 92
 	map_const LIGHTHOUSE_ELEVATOR,                          2,  2 ; 93
 	map_const BURNED_TOWER_2F,                             10,  9 ; 94
 	map_const TEAM_ROCKET_BASE_JAIL,                        5,  9 ; 95
@@ -211,11 +211,11 @@ ENDM
 	map_const CINNABAR_ISLAND_MART,                         6,  4 ; 16
 	map_const CINNABAR_ISLAND_GYM,                         10,  9 ; 17
 	map_const GLITCH_CITY,                                 10, 10 ; 18
-	map_const SEAFOAM_ISLAND_1F,                           17, 12 ; 19
-	map_const SEAFOAM_ISLAND_B1F,                          17, 11 ; 20
-	map_const SEAFOAM_ISLAND_B2F,                          17, 11 ; 21
+	map_const SEAFOAM_ISLAND_1F,                           15,  9 ; 19
+	map_const SEAFOAM_ISLAND_B1F,                          15, 10 ; 20
+	map_const SEAFOAM_ISLAND_B2F,                          15,  9 ; 21
 	map_const SEAFOAM_ISLAND_B3F,                          17, 13 ; 22
-	map_const SEAFOAM_ISLAND_B4F,                          17, 12 ; 23
+	map_const SEAFOAM_ISLAND_B4F,                          15, 12 ; 23
 
 	newgroup                                                      ;  7
 
@@ -346,8 +346,8 @@ ENDM
 
 	newgroup                                                      ; 15
 
-	map_const OLIVINE_PORT,                                10, 18 ;  1
-	map_const VERMILION_PORT,                              10, 18 ;  2
+	map_const OLIVINE_PORT,                                10, 14 ;  1
+	map_const VERMILION_PORT,                              10, 12 ;  2
 	map_const OLIVINE_PORT_PASSAGE,                        10,  9 ;  8
 	map_const VERMILION_PORT_PASSAGE,                      10,  9 ;  9
 	map_const MOUNT_MOON_SQUARE,                           15,  9 ; 10
@@ -556,3 +556,4 @@ ENDM
 	map_const ONE_ISLAND,                                  12, 11 ; 2
 	map_const TREASURE_BEACH,                               9, 13 ; 3
 	map_const KINDLE_ROAD,                                 14, 48 ; 4
+	map_const MT_EMBER,                                     8, 14 ; 5

@@ -56,18 +56,18 @@ SeafoamIsland1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 7 ; warp events
-	warp_event 28, 17, ROUTE_20, 1
-	warp_event  6, 17, ROUTE_20, 3
-	warp_event  9,  7, SEAFOAM_ISLAND_B1F, 1
-	warp_event 27,  5, SEAFOAM_ISLAND_B1F, 2
-	warp_event 25, 17, SEAFOAM_ISLAND_B1F, 3
-	warp_event 19,  8, SEAFOAM_ISLAND_B1F, 7
-	warp_event 27,  8, SEAFOAM_ISLAND_B1F, 8
+	warp_event 26, 15, ROUTE_20, 1
+	warp_event  4, 15, ROUTE_20, 3
+	warp_event  7,  5, SEAFOAM_ISLAND_B1F, 1
+	warp_event 25,  3, SEAFOAM_ISLAND_B1F, 2
+	warp_event 23, 15, SEAFOAM_ISLAND_B1F, 3
+	warp_event 17,  6, SEAFOAM_ISLAND_B1F, 7
+	warp_event 25,  6, SEAFOAM_ISLAND_B1F, 8
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 2 ; object events
-	object_event 17, 13, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIsland1FBoulder, EVENT_SEAFOAM_ISLAND_BOULDER_1F_1
-	object_event 26, 10, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIsland1FBoulder, EVENT_SEAFOAM_ISLAND_BOULDER_1F_2
+	object_event 15, 11, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIsland1FBoulder, EVENT_SEAFOAM_ISLAND_BOULDER_1F_1
+	object_event 24,  8, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIsland1FBoulder, EVENT_SEAFOAM_ISLAND_BOULDER_1F_2

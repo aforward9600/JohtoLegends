@@ -450,7 +450,7 @@ endr
 	pop hl
 	ld a, [wCurTrackIntensity]
 	and $f0
-	sla a
+	add a
 	ldh [rNR32], a
 	ret
 

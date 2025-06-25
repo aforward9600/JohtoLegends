@@ -1968,9 +1968,9 @@ BattleBGEffect_1c:
 	ret nz
 	ld a, e
 	and $18
-	sla a
+	add a
 	swap a
-	sla a
+	add a
 	ld e, a
 	ld d, $0
 	push bc
@@ -2047,9 +2047,9 @@ BattleBGEffect_1c:
 	ret nz
 	ld a, e
 	and $18
-	sla a
+	add a
 	swap a
-	sla a
+	add a
 	ld e, a
 	ld d, 0
 	call BGEffect_CheckBattleTurn

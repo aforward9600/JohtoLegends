@@ -1,16 +1,16 @@
 	object_const_def ; object_event constants
 
-KindleRoad_MapScripts:
+MtEmber_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-KindleRoad_MapEvents:
+MtEmber_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 10,  5, MT_EMBER, 1
-	warp_event 11,  5, MT_EMBER, 2
+	warp_event  6, 23, KINDLE_ROAD, 1
+	warp_event  7, 23, KINDLE_ROAD, 2
 
 	db 0 ; coord events
 

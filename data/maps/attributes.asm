@@ -756,6 +756,7 @@ ENDM
 	map_attributes Route36VioletGate, ROUTE_36_VIOLET_GATE, $00, 0
 	map_attributes BerryCafe, BERRY_CAFE, $00, 0
 	map_attributes OneIslandPort, ONE_ISLAND_PORT, $00, 0
+	map_attributes MtEmber, MT_EMBER, $10, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1

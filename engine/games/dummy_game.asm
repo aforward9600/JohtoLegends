@@ -419,8 +419,8 @@ DummyGame_GetDistributionOfTiles:
 
 DummyGame_PlaceCard:
 	ld a, [wDummyGameLastCardPicked]
-	sla a
-	sla a
+	add a
+	add a
 	add 4
 	ld [hli], a
 	inc a

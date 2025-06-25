@@ -185,8 +185,8 @@ DoAnimFrame:
 	ld hl, SPRITEANIMSTRUCT_0D
 	add hl, bc
 	ld a, [hl]
-	sla a
-	sla a
+	add a
+	add a
 	ld d, $2
 
 	ld hl, SPRITEANIMSTRUCT_0C
@@ -1008,7 +1008,7 @@ GSIntroNote:
 	ld a, [hl]
 	and $1
 	swap a
-	sla a
+	add a
 
 	ld hl, SPRITEANIMSTRUCT_0C
 	add hl, bc
@@ -1251,7 +1251,7 @@ GSIntroFireball:
 	add hl, bc
 	ld a, [hl]
 	and $4
-	sla a
+	add a
 	ld e, a
 	ld a, [hl]
 	and $3

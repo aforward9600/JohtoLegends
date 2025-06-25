@@ -36,12 +36,35 @@ _AnimateTileset::
 Tileset0Anim:
 TilesetJohtoModernAnim:
 TilesetKantoAnim:
+	dw vTiles2 tile $14, AnimateWaterTile, vTiles2 tile $64, AnimateSeaTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateFlowerTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw vTiles2 tile $40, WriteTileToBuffer
+	dw NULL,  WaitTileAnimation
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  WaitTileAnimation
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  WaitTileAnimation
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  WaitTileAnimation
+	dw vTiles2 tile $40, WriteTileFromBuffer
+	dw NULL,  DoneTileAnimation
+
 TilesetKanto2Anim:
 	dw vTiles2 tile $14, AnimateWaterTile, vTiles2 tile $64, AnimateSeaTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  LavaBubbleAnim2
+	dw NULL,  WaitTileAnimation
+	dw NULL,  LavaBubbleAnim1
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw vTiles2 tile $40, WriteTileToBuffer

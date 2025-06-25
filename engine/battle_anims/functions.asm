@@ -1368,9 +1368,9 @@ Functioncd7ab:
 	add hl, bc
 	ld a, [hl]
 	and $f
-	sla a
-	sla a
-	sla a
+	add a
+	add a
+	add a
 	ld hl, BATTLEANIMSTRUCT_0F
 	add hl, bc
 	ld [hl], a

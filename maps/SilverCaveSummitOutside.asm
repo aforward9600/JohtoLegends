@@ -66,13 +66,13 @@ SilverCaveSummitOutside_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event 18, 27, SILVER_CAVE_ITEM_ROOMS, 3
-	warp_event  6, 15, MT_SILVER_SUMMIT, 1
-	warp_event  8, 23, SILVER_CAVE_MEW_ROOM, 1
+	warp_event 18, 17, SILVER_CAVE_ITEM_ROOMS, 3
+	warp_event  6,  5, MT_SILVER_SUMMIT, 1
+	warp_event  8, 13, SILVER_CAVE_MEW_ROOM, 1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  6, 16, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtSilverSummitRival, -1
+	object_event  6,  6, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtSilverSummitRival, -1
