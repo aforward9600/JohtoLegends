@@ -2624,7 +2624,6 @@ wTradeCenterSceneID::                             db ; d973
 wColosseumSceneID::                               db ; d974
 wTimeCapsuleSceneID::                             db ; d975
 wVictoryRoadGateSceneID::                         db ; d97a
-wSaffronMagnetTrainStationSceneID::               db ; d97b
 wRoute16GateSceneID::                             db ; d97c
 wRoute17Route18GateSceneID::                      db ; d97d
 wWillsRoomSceneID::                               db ; d97f
@@ -2643,7 +2642,6 @@ wRoute36SceneID::                                 db ; d98e
 wRoute36NationalParkGateSceneID::                 db ; d98f
 wAzaleaTownSceneID::                              db ; d990
 wGoldenrodGymSceneID::                            db ; d991
-wGoldenrodMagnetTrainStationSceneID::             db ; d992
 wGoldenrodPokecenter1FSceneID::                   db ; d993
 wRoute34SceneID::                                 db ; d995
 wRoute34IlexForestGateSceneID::                   db ; d996
@@ -2714,6 +2712,8 @@ wSilverCaveMewRoomID::                            db
 wDracoSceneID::                                   db
 wDahliaSceneID::                                  db
 wHoOhTowerSceneID::                               db
+wOneIslandPortSceneID::                           db
+wKindleRoadSceneID::                              db
 
 	ds 33
 

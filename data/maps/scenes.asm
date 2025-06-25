@@ -10,7 +10,6 @@ MapScenes::
 	scene_var COLOSSEUM,                                   wColosseumSceneID
 	scene_var TIME_CAPSULE,                                wTimeCapsuleSceneID
 	scene_var VICTORY_ROAD_GATE,                           wVictoryRoadGateSceneID
-	scene_var SAFFRON_MAGNET_TRAIN_STATION,                wSaffronMagnetTrainStationSceneID
 	scene_var ROUTE_16_GATE,                               wRoute16GateSceneID
 	scene_var ROUTE_17_ROUTE_18_GATE,                      wRoute17Route18GateSceneID
 	scene_var WILLS_ROOM,                                  wWillsRoomSceneID
@@ -29,7 +28,6 @@ MapScenes::
 	scene_var ROUTE_36_NATIONAL_PARK_GATE,                 wRoute36NationalParkGateSceneID
 	scene_var AZALEA_TOWN,                                 wAzaleaTownSceneID
 	scene_var GOLDENROD_GYM,                               wGoldenrodGymSceneID
-	scene_var GOLDENROD_MAGNET_TRAIN_STATION,              wGoldenrodMagnetTrainStationSceneID
 	scene_var GOLDENROD_POKECENTER_1F,                     wGoldenrodPokecenter1FSceneID
 	scene_var ROUTE_34,                                    wRoute34SceneID ; unused
 	scene_var ROUTE_34_ILEX_FOREST_GATE,                   wRoute34IlexForestGateSceneID ; unused
@@ -100,4 +98,6 @@ MapScenes::
 	scene_var DRACO_SCENE,                                 wDracoSceneID
 	scene_var DAHLIA_SCENE,                                wDahliaSceneID
 	scene_var HO_OH_TOWER_SCENE,                           wHoOhTowerSceneID
+	scene_var ONE_ISLAND_PORT,                             wOneIslandPortSceneID
+	scene_var KINDLE_ROAD,                                 wKindleRoadSceneID
 	db -1 ; end

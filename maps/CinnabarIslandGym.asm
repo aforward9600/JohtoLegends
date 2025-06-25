@@ -16,28 +16,28 @@ CinnabarIslandGym_MapScripts:
 .GymShutters:
 	checkevent EVENT_ANSWERED_QUESTION_1
 	iftrue .Skip1
-	changeblock 16, 6, $55 ; Left Shutter
-	changeblock 19, 6, $56 ; Right Shutter
+	changeblock 16, 6, $10 ; Left Shutter
+	changeblock 19, 6, $11 ; Right Shutter
 .Skip1:
 	checkevent EVENT_ANSWERED_QUESTION_2
 	iftrue .Skip2
-	changeblock 12, 6, $53 ; Shutter2
+	changeblock 12, 6, $13 ; Shutter2
 .Skip2:
 	checkevent EVENT_ANSWERED_QUESTION_3
 	iftrue .Skip3
-	changeblock 12, 12, $53 ; Shutter3
+	changeblock 12, 12, $13 ; Shutter3
 .Skip3:
 	checkevent EVENT_ANSWERED_QUESTION_4
 	iftrue .Skip4
-	changeblock 6, 16, $54 ; Shutter4
+	changeblock 6, 16, $14 ; Shutter4
 .Skip4:
 	checkevent EVENT_ANSWERED_QUESTION_5
 	iftrue .Skip5
-	changeblock 4, 12, $53 ; Shutter5
+	changeblock 4, 12, $13 ; Shutter5
 .Skip5:
 	checkevent EVENT_ANSWERED_QUESTION_6
 	iftrue .Skip6
-	changeblock 4, 6, $53 ;Shutter6
+	changeblock 4, 6, $13 ;Shutter6
 .Skip6:
 	return
 
@@ -110,8 +110,8 @@ TrainerSuperNerdAlbert:
 	iftrue .BeatAlbert
 	pause 30
 	playsound SFX_ENTER_DOOR
-	changeblock 16, 6, $4d ; Left Shutter
-	changeblock 19, 6, $4e ; Right Shutter
+	changeblock 16, 6, $0e ; Left Shutter
+	changeblock 19, 6, $12 ; Right Shutter
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_1
 	end
@@ -131,7 +131,7 @@ TrainerSuperNerdDaisuke:
 	iftrue .BeatDaisuke
 	pause 30
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 12, $40 ; Shutter3
+	changeblock 4, 12, $01 ; Shutter3
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_5
 	end
@@ -151,7 +151,7 @@ TrainerSuperNerdJosef:
 	iftrue .BeatJosef
 	pause 30
 	playsound SFX_ENTER_DOOR
-	changeblock 12, 12, $40 ; Shutter3
+	changeblock 12, 12, $01 ; Shutter3
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_3
 	end
@@ -171,7 +171,7 @@ TrainerBurglarErik:
 	iftrue .BeatErik
 	pause 30
 	playsound SFX_ENTER_DOOR
-	changeblock 12, 6, $40 ; Shutter2
+	changeblock 12, 6, $01 ; Shutter2
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_2
 	end
@@ -191,7 +191,7 @@ TrainerBurglarKidd:
 	iftrue .BeatKidd
 	pause 30
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 6, $40 ; Shutter6
+	changeblock 4, 6, $01 ; Shutter6
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_6
 	end
@@ -211,7 +211,7 @@ TrainerBurglarArsene:
 	iftrue .BeatErik
 	pause 30
 	playsound SFX_ENTER_DOOR
-	changeblock 6, 16, $40 ; Shutter4
+	changeblock 6, 16, $01 ; Shutter4
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_4
 	end
@@ -238,8 +238,8 @@ Question1:
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
-	changeblock 16, 6, $4d ; Left Shutter
-	changeblock 19, 6, $4e ; Right Shutter
+	changeblock 16, 6, $0e ; Left Shutter
+	changeblock 19, 6, $12 ; Right Shutter
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_1
 	setevent EVENT_BEAT_SUPER_NERD_ALBERT
@@ -284,8 +284,8 @@ Question1:
 	turnobject CINNABARISLANDGYM_SUPER_NERD_1, DOWN
 	pause 15
 	playsound SFX_ENTER_DOOR
-	changeblock 16, 6, $4d ; Left Shutter
-	changeblock 19, 6, $4e ; Right Shutter
+	changeblock 16, 6, $0e ; Left Shutter
+	changeblock 19, 6, $12 ; Right Shutter
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_1
 	setevent EVENT_BEAT_SUPER_NERD_ALBERT
@@ -306,7 +306,7 @@ Question2:
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
-	changeblock 12, 6, $40 ; Shutter2
+	changeblock 12, 6, $01 ; Shutter2
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_2
 	end
@@ -350,7 +350,7 @@ Question2:
 	turnobject CINNABARISLANDGYM_BURGLAR_1, DOWN
 	pause 15
 	playsound SFX_ENTER_DOOR
-	changeblock 12, 6, $40 ; Shutter2
+	changeblock 12, 6, $01 ; Shutter2
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_2
 	setevent EVENT_BEAT_BURGLAR_ERIK
@@ -371,7 +371,7 @@ Question3:
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
-	changeblock 12, 12, $40 ; Shutter3
+	changeblock 12, 12, $01 ; Shutter3
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_3
 	end
@@ -415,7 +415,7 @@ Question3:
 	turnobject CINNABARISLANDGYM_SUPER_NERD_2, DOWN
 	pause 15
 	playsound SFX_ENTER_DOOR
-	changeblock 12, 12, $40 ; Shutter3
+	changeblock 12, 12, $01 ; Shutter3
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_3
 	setevent EVENT_BEAT_SUPER_NERD_JOSEF
@@ -436,7 +436,7 @@ Question4:
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
-	changeblock 6, 16, $40 ; Shutter4
+	changeblock 6, 16, $01 ; Shutter4
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_4
 	end
@@ -480,7 +480,7 @@ Question4:
 	turnobject CINNABARISLANDGYM_BURGLAR_2, DOWN
 	pause 15
 	playsound SFX_ENTER_DOOR
-	changeblock 6, 16, $40 ; Shutter4
+	changeblock 6, 16, $01 ; Shutter4
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_4
 	setevent EVENT_BEAT_BURGLAR_ARSENE
@@ -501,7 +501,7 @@ Question5:
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 12, $40 ; Left Shutter
+	changeblock 4, 12, $01 ; Left Shutter
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_5
 	end
@@ -545,7 +545,7 @@ Question5:
 	turnobject CINNABARISLANDGYM_SUPER_NERD_3, DOWN
 	pause 15
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 12, $40 ; Shutter5
+	changeblock 4, 12, $01 ; Shutter5
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_5
 	setevent EVENT_BEAT_SUPER_NERD_DAISUKE
@@ -566,7 +566,7 @@ Question6:
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 6, $40 ; Shutter6
+	changeblock 4, 6, $01 ; Shutter6
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_6
 	end
@@ -610,7 +610,7 @@ Question6:
 	turnobject CINNABARISLANDGYM_BURGLAR_3, DOWN
 	pause 15
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 6, $40 ; Shutter6
+	changeblock 4, 6, $01 ; Shutter6
 	reloadmappart
 	setevent EVENT_ANSWERED_QUESTION_6
 	setevent EVENT_BEAT_BURGLAR_KIDD

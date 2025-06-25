@@ -110,7 +110,6 @@ MahoganyRedGyaradosSpeechHouse_Blocks:
 BlackthornDragonSpeechHouse_Blocks:
 MoveDeletersHouse_Blocks:
 CeruleanGymBadgeSpeechHouse_Blocks:
-CeruleanPoliceStation_Blocks:
 CeruleanTradeSpeechHouse_Blocks:
 BillsHouse_Blocks:
 CharcoalKiln_Blocks:
@@ -156,7 +155,6 @@ CherrygroveFisherHouse_Blocks:
 BillsFamilysHouse_Blocks:
 	INCBIN "maps/BillsHouse.ablk"
 
-SafariZoneFuchsiaGateBeta_Blocks:
 Route19FuchsiaGate_Blocks:
 Route43MahoganyGate_Blocks:
 Route43Gate_Blocks:
@@ -271,6 +269,7 @@ CinnabarIslandMart_Blocks:
 Route10North_Blocks:
 	INCBIN "maps/Route10North.ablk"
 
+OneIslandPokecenter_Blocks:
 OlivinePokecenter1F_Blocks:
 MahoganyPokecenter1F_Blocks:
 EcruteakPokecenter1F_Blocks:
@@ -365,7 +364,6 @@ UnionCave1F_Blocks:
 	INCBIN "maps/UnionCave1F.ablk"
 
 NationalPark_Blocks:
-NationalParkBugContest_Blocks:
 	INCBIN "maps/NationalPark.ablk"
 
 Route5UndergroundPathEntrance_Blocks:
@@ -374,9 +372,6 @@ Route6UndergroundPathEntrance_Blocks:
 
 KurtsHouse_Blocks:
 	INCBIN "maps/KurtsHouse.ablk"
-
-GoldenrodMagnetTrainStation_Blocks:
-	INCBIN "maps/GoldenrodMagnetTrainStation.ablk"
 
 RuinsOfAlphOutside_Blocks:
 	INCBIN "maps/RuinsOfAlphOutside.ablk"
@@ -668,14 +663,10 @@ VermilionPort_Blocks:
 	INCBIN "maps/VermilionPort.ablk"
 
 OlivineCafe_Blocks:
-SafariZoneMainOffice_Blocks:
 	INCBIN "maps/OlivineCafe.ablk"
 
 PlayersHouse2F_Blocks:
 	INCBIN "maps/PlayersHouse2F.ablk"
-
-SaffronMagnetTrainStation_Blocks:
-	INCBIN "maps/SaffronMagnetTrainStation.ablk"
 
 CeruleanGym_Blocks:
 	INCBIN "maps/CeruleanGym.ablk"
@@ -723,9 +714,6 @@ SilverCaveItemRooms_Blocks:
 DayCare_Blocks:
 	INCBIN "maps/DayCare.ablk"
 
-SoulHouse_Blocks:
-	INCBIN "maps/SoulHouse.ablk"
-
 PewterGym_Blocks:
 	INCBIN "maps/PewterGym.ablk"
 
@@ -747,9 +735,6 @@ DiglettsCave_Blocks:
 MountMoon_Blocks:
 	INCBIN "maps/MountMoon.ablk"
 
-SeafoamGym_Blocks:
-	INCBIN "maps/SeafoamGym.ablk"
-
 MrPokemonsHouse_Blocks:
 FossilHouse_Blocks:
 	INCBIN "maps/MrPokemonsHouse.ablk"
@@ -763,9 +748,6 @@ VermilionPortPassage_Blocks:
 
 FuchsiaGym_Blocks:
 	INCBIN "maps/FuchsiaGym.ablk"
-
-SafariZoneBeta_Blocks:
-	INCBIN "maps/SafariZoneBeta.ablk"
 
 UndergroundPath_Blocks:
 	INCBIN "maps/UndergroundPath.ablk"
@@ -787,9 +769,6 @@ HallOfFame_Blocks:
 
 CopycatsHouse1F_Blocks:
 	INCBIN "maps/CopycatsHouse1F.ablk"
-
-CopycatsHouse2F_Blocks:
-	INCBIN "maps/CopycatsHouse2F.ablk"
 
 GoldenrodFlowerShop_Blocks:
 	INCBIN "maps/GoldenrodFlowerShop.ablk"

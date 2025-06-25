@@ -74,7 +74,6 @@ ENDM
 	map_const BURNED_TOWER_1F,                             10,  9 ; 13
 	map_const BURNED_TOWER_B1F,                            10,  9 ; 14
 	map_const NATIONAL_PARK,                               20, 27 ; 15
-	map_const NATIONAL_PARK_BUG_CONTEST,                   20, 27 ; 16
 	map_const RADIO_TOWER_1F,                              10,  9 ; 17
 	map_const RADIO_TOWER_2F,                               9,  4 ; 18
 	map_const RADIO_TOWER_3F,                               9,  4 ; 19
@@ -143,8 +142,6 @@ ENDM
 	map_const UNDERGROUND_PATH,                             3, 14 ; 86
 	map_const ROCK_TUNNEL_1F,                              15, 18 ; 87
 	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 88
-	map_const SAFARI_ZONE_FUCHSIA_GATE_BETA,                5,  4 ; 89
-	map_const SAFARI_ZONE_BETA,                            10, 18 ; 90
 	map_const VICTORY_ROAD,                                10, 36 ; 91
 	map_const DARK_CAVE_NEW_ENTRANCE,                       6,  3 ; 92
 	map_const LIGHTHOUSE_ELEVATOR,                          2,  2 ; 93
@@ -195,32 +192,30 @@ ENDM
 	newgroup                                                      ;  6
 
 	map_const CINNABAR_POKECENTER_1F,                       5,  4 ;  1
-	map_const ROUTE_19_FUCHSIA_GATE,                        5,  4 ;  3
-	map_const SEAFOAM_GYM,                                  5,  4 ;  4
-	map_const ROUTE_19,                                    10, 18 ;  5
-	map_const ROUTE_20,                                    30,  9 ;  6
-	map_const ROUTE_21,                                    10, 18 ;  7
-	map_const CINNABAR_ISLAND,                             10,  9 ;  8
-	map_const POKEMON_MANSION_1F,                          15, 14 ;  9
-	map_const POKEMON_MANSION_2F,                          15, 14 ; 10
-	map_const POKEMON_MANSION_3F,                          15,  9 ; 11
-	map_const POKEMON_MANSION_B1F,                         15, 14 ; 12
-	map_const CINNABAR_VOLCANO_1F,                         10, 10 ; 13
-	map_const CINNABAR_VOLCANO_B1F,                        12, 12 ; 14
-	map_const CINNABAR_VOLCANO_B2F,                         5, 10 ; 15
-	map_const CINNABAR_ISLAND_MART,                         6,  4 ; 16
-	map_const CINNABAR_ISLAND_GYM,                         10,  9 ; 17
-	map_const GLITCH_CITY,                                 10, 10 ; 18
-	map_const SEAFOAM_ISLAND_1F,                           15,  9 ; 19
-	map_const SEAFOAM_ISLAND_B1F,                          15, 10 ; 20
-	map_const SEAFOAM_ISLAND_B2F,                          15,  9 ; 21
-	map_const SEAFOAM_ISLAND_B3F,                          17, 13 ; 22
-	map_const SEAFOAM_ISLAND_B4F,                          15, 12 ; 23
+	map_const ROUTE_19_FUCHSIA_GATE,                        5,  4 ;  2
+	map_const ROUTE_19,                                    10, 18 ;  3
+	map_const ROUTE_20,                                    30,  9 ;  4
+	map_const ROUTE_21,                                    10, 18 ;  5
+	map_const CINNABAR_ISLAND,                             10,  9 ;  6
+	map_const POKEMON_MANSION_1F,                          15, 14 ;  7
+	map_const POKEMON_MANSION_2F,                          15, 14 ;  8
+	map_const POKEMON_MANSION_3F,                          15,  9 ;  9
+	map_const POKEMON_MANSION_B1F,                         15, 14 ; 10
+	map_const CINNABAR_VOLCANO_1F,                         10, 10 ; 11
+	map_const CINNABAR_VOLCANO_B1F,                        12, 12 ; 12
+	map_const CINNABAR_VOLCANO_B2F,                         5, 10 ; 13
+	map_const CINNABAR_ISLAND_MART,                         6,  4 ; 14
+	map_const CINNABAR_ISLAND_GYM,                         10,  9 ; 15
+	map_const GLITCH_CITY,                                 10, 10 ; 16
+	map_const SEAFOAM_ISLAND_1F,                           15,  9 ; 17
+	map_const SEAFOAM_ISLAND_B1F,                          15, 10 ; 18
+	map_const SEAFOAM_ISLAND_B2F,                          15,  9 ; 19
+	map_const SEAFOAM_ISLAND_B3F,                          17, 13 ; 20
+	map_const SEAFOAM_ISLAND_B4F,                          15, 12 ; 21
 
 	newgroup                                                      ;  7
 
 	map_const CERULEAN_GYM_BADGE_SPEECH_HOUSE,              4,  4 ;  1
-	map_const CERULEAN_POLICE_STATION,                      4,  4 ;  2
 	map_const CERULEAN_TRADE_SPEECH_HOUSE,                  4,  4 ;  3
 	map_const CERULEAN_POKECENTER_1F,                       5,  4 ;  4
 	map_const CERULEAN_GYM,                                 5,  8 ;  6
@@ -289,7 +284,6 @@ ENDM
 	map_const GOLDENROD_BIKE_SHOP,                          4,  4 ;  4
 	map_const GOLDENROD_HAPPINESS_RATER,                    4,  4 ;  5
 	map_const BILLS_FAMILYS_HOUSE,                          4,  4 ;  6
-	map_const GOLDENROD_MAGNET_TRAIN_STATION,              10,  9 ;  7
 	map_const GOLDENROD_FLOWER_SHOP,                        4,  4 ;  8
 	map_const GOLDENROD_PP_SPEECH_HOUSE,                    4,  4 ;  9
 	map_const GOLDENROD_NAME_RATER,                         4,  4 ; 10
@@ -372,7 +366,6 @@ ENDM
 	map_const ROUTE_18,                                    10,  9 ;  4
 	map_const FUCHSIA_CITY,                                20, 18 ;  5
 	map_const FUCHSIA_MART,                                 6,  4 ;  6
-	map_const SAFARI_ZONE_MAIN_OFFICE,                      4,  4 ;  7
 	map_const FUCHSIA_GYM,                                  5,  9 ;  8
 	map_const BILLS_BROTHERS_HOUSE,                         4,  4 ;  9
 	map_const FUCHSIA_POKECENTER_1F,                        5,  4 ; 10
@@ -386,14 +379,13 @@ ENDM
 	map_const ROUTE_10_SOUTH,                              10,  9 ;  3
 	map_const LAVENDER_TOWN,                               10,  9 ;  4
 	map_const LAVENDER_POKECENTER_1F,                       5,  4 ;  5
-	map_const MR_FUJIS_HOUSE,                               5,  4 ;  7
-	map_const LAVENDER_SPEECH_HOUSE,                        4,  4 ;  8
-	map_const LAVENDER_NAME_RATER,                          4,  4 ;  9
-	map_const LAVENDER_MART,                                6,  4 ; 10
-	map_const SOUL_HOUSE,                                   5,  4 ; 11
-	map_const LAV_RADIO_TOWER_1F,                          11,  9 ; 12
-	map_const ROUTE_8_SAFFRON_GATE,                         5,  4 ; 13
-	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ; 14
+	map_const MR_FUJIS_HOUSE,                               5,  4 ;  6
+	map_const LAVENDER_SPEECH_HOUSE,                        4,  4 ;  7
+	map_const LAVENDER_NAME_RATER,                          4,  4 ;  8
+	map_const LAVENDER_MART,                                6,  4 ;  9
+	map_const LAV_RADIO_TOWER_1F,                          11,  9 ; 10
+	map_const ROUTE_8_SAFFRON_GATE,                         5,  4 ; 11
+	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ; 12
 
 	newgroup                                                      ; 19
 
@@ -505,10 +497,8 @@ ENDM
 	map_const SAFFRON_MART,                                 6,  4 ;  5
 	map_const SAFFRON_POKECENTER_1F,                        5,  4 ;  6
 	map_const MR_PSYCHICS_HOUSE,                            4,  4 ;  8
-	map_const SAFFRON_MAGNET_TRAIN_STATION,                10,  9 ;  9
 	map_const SILPH_CO_1F,                                 15,  9 ; 10
 	map_const COPYCATS_HOUSE_1F,                            4,  4 ; 11
-	map_const COPYCATS_HOUSE_2F,                            5,  3 ; 12
 	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 13
 	map_const ROUTE_5_SAFFRON_GATE,                         5,  4 ; 14
 	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ; 15
@@ -557,3 +547,4 @@ ENDM
 	map_const TREASURE_BEACH,                               9, 13 ; 3
 	map_const KINDLE_ROAD,                                 14, 48 ; 4
 	map_const MT_EMBER,                                     8, 14 ; 5
+	map_const ONE_ISLAND_POKECENTER,                        5,  4 ; 6

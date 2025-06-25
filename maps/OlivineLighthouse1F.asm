@@ -22,7 +22,7 @@ OlivineLighthouse1F_MapScripts:
 .ElevatorBlocked:
 	checkevent EVENT_BEAT_LIGHTHOUSE_MIYAMOTO
 	iftrue .ElevatorFree
-	changeblock 10,  0, $3b ; blocked elevator
+	changeblock 10,  0, $03 ; blocked elevator
 .ElevatorFree:
 	return
 
