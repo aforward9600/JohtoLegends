@@ -149,6 +149,7 @@
 	const MUSIC_SILPH_CO
 	const MUSIC_POKEMON_TOWER
 	const MUSIC_OAK_BATTLE
+	const MUSIC_REGI_BATTLE
 
 ; GetMapMusic picks music for this value (see home/map.asm)
 MUSIC_MAHOGANY_MART EQU $fc

@@ -114,11 +114,11 @@ ENDM
 	map_const MOUNT_MORTAR_1F_INSIDE,                      20, 27 ; 58
 	map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ; 59
 	map_const MOUNT_MORTAR_B1F,                            20, 18 ; 60
-	map_const ICE_PATH_1F,                                 20, 18 ; 61
+	map_const ICE_PATH_1F,                                 20, 15 ; 61
 	map_const ICE_PATH_B1F,                                10, 18 ; 62
 	map_const ICE_PATH_B2F_MAHOGANY_SIDE,                  10,  9 ; 63
 	map_const ICE_PATH_B2F_BLACKTHORN_SIDE,                 5,  9 ; 64
-	map_const ICE_PATH_B3F,                                10,  9 ; 65
+	map_const ICE_PATH_B3F,                                10,  5 ; 65
 	map_const WHIRL_ISLAND_NW,                              5,  9 ; 66
 	map_const WHIRL_ISLAND_NE,                             10,  9 ; 67
 	map_const WHIRL_ISLAND_SW,                             10,  9 ; 68
@@ -186,7 +186,7 @@ ENDM
 	map_const ROCKET_LAIR_HALLWAY_1,                        5, 11 ; 15
 	map_const ROCKET_LAIR_BREAK_ROOM,                       5,  4 ; 16
 	map_const ROCKET_LAIR_HALLWAY_2,                       10,  9 ; 17
-	map_const ROCKET_LAIR_HALLWAY_3,                        5,  8 ; 18
+	map_const ROCKET_LAIR_HALLWAY_3,                        3,  8 ; 18
 	map_const ROCKET_LAIR_BOSS_ROOM,                        9,  9 ; 19
 
 	newgroup                                                      ;  6
@@ -393,8 +393,8 @@ ENDM
 	map_const SILVER_CAVE_OUTSIDE,                         20, 18 ;  2
 	map_const SILVER_CAVE_POKECENTER_1F,                    5,  4 ;  3
 	map_const ROUTE_28_STEEL_WING_HOUSE,                    4,  4 ;  4
-	map_const TIN_TOWER_ROOF,                              10, 11 ;  5
-	map_const RADIO_TOWER_5F,                               9,  4 ;  6
+	map_const TIN_TOWER_ROOF,                               7, 11 ;  5
+	map_const RADIO_TOWER_5F,                               7, 11 ;  6
 	map_const DRACO_SCENE,                                  6,  7 ;  7
 	map_const DAHLIA_SCENE,                                 6,  7 ;  8
 	map_const HO_OH_TOWER_SCENE,                            5,  9 ;  9      

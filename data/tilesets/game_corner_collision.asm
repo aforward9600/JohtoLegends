@@ -7,18 +7,18 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 06
 	tilecoll COUNTER, COUNTER, COUNTER, COUNTER ; 07
 	tilecoll FLOOR, FLOOR, COUNTER, COUNTER ; 08
-	tilecoll FLOOR, FLOOR, COUNTER, COUNTER ; 09
-	tilecoll FLOOR, FLOOR, COUNTER, COUNTER ; 0a
+	tilecoll WALL, WALL, FLOOR, WALL ; 09
+	tilecoll WALL, WALL, WALL, WALL ; 0a
 	tilecoll WALL, WALL, WALL, WALL ; 0b
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 0c
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 0d
 	tilecoll WALL, WALL, WALL, WALL ; 0e
 	tilecoll WALL, WALL, WALL, WALL ; 0f
-	tilecoll WALL, WALL, COUNTER, COUNTER ; 10
-	tilecoll WALL, WALL, COUNTER, COUNTER ; 11
-	tilecoll WALL, WALL, WALL, WALL ; 12
+	tilecoll WALL, WALL, WALL, WALL ; 10
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 11
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 12
 	tilecoll WALL, WALL, COUNTER, FLOOR ; 13
-	tilecoll COUNTER, FLOOR, COUNTER, COUNTER ; 14
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 14
 	tilecoll WALL, WALL, WALL, WALL ; 15
 	tilecoll COUNTER, FLOOR, COUNTER, FLOOR ; 16
 	tilecoll COUNTER, FLOOR, COUNTER, COUNTER ; 17
@@ -27,9 +27,9 @@
 	tilecoll FLOOR, COUNTER, COUNTER, COUNTER ; 1a
 	tilecoll FLOOR, COUNTER, COUNTER, COUNTER ; 1b
 	tilecoll WALL, WALL, FLOOR, COUNTER ; 1c
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 1d
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 1e
-	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 1f
+	tilecoll WALL, WALL, WALL, FLOOR ; 1d
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 1e
+	tilecoll WALL, WALL, FLOOR, WALL ; 1f
 	tilecoll WALL, WALL, WALL, WALL ; 20
 	tilecoll WALL, WALL, WALL, WALL ; 21
 	tilecoll WALL, WALL, WALL, WALL ; 22
@@ -40,11 +40,3 @@
 	tilecoll FLOOR, FLOOR, COUNTER, COUNTER ; 27
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 28
 	tilecoll WALL, WALL, FLOOR, WALL ; 29
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 2a
-	tilecoll WALL, WALL, FLOOR, WALL ; 2b
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 2c
-	tilecoll WALL, WALL, WALL, WALL ; 2d
-	tilecoll WALL, WALL, WALL, WALL ; 2e
-	tilecoll WALL, WALL, FLOOR, WALL ; 2f
-	tilecoll WALL, WALL, WALL, FLOOR ; 30
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 31

@@ -255,20 +255,20 @@ RocketLairHallway3_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  4, 15, ROCKET_LAIR_HALLWAY_2, 3
-	warp_event  5, 15, ROCKET_LAIR_HALLWAY_2, 4
-	warp_event  4,  0, ROCKET_LAIR_BOSS_ROOM, 1
-	warp_event  5,  0, ROCKET_LAIR_BOSS_ROOM, 2
+	warp_event  2, 15, ROCKET_LAIR_HALLWAY_2, 3
+	warp_event  3, 15, ROCKET_LAIR_HALLWAY_2, 4
+	warp_event  2,  0, ROCKET_LAIR_BOSS_ROOM, 1
+	warp_event  3,  0, ROCKET_LAIR_BOSS_ROOM, 2
 
 	db 4 ; coord_events
-	coord_event 3,  6, SCENE_DEFAULT, RocketLairHallway3_Event1
-	coord_event 4,  6, SCENE_DEFAULT, RocketLairHallway3_Event2
-	coord_event 5,  6, SCENE_DEFAULT, RocketLairHallway3_Event3
-	coord_event 6,  6, SCENE_DEFAULT, RocketLairHallway3_Event4
+	coord_event  1,  6, SCENE_DEFAULT, RocketLairHallway3_Event1
+	coord_event  2,  6, SCENE_DEFAULT, RocketLairHallway3_Event2
+	coord_event  3,  6, SCENE_DEFAULT, RocketLairHallway3_Event3
+	coord_event  4,  6, SCENE_DEFAULT, RocketLairHallway3_Event4
 
 	db 0 ; bg events
 
 	db 3 ; object events
-	object_event  5,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROCKET_LAIR_HALLWAY_3_RIVAL
-	object_event  5,  2, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROCKET_LAIR_HALLWAY_3_MIYAMOTO
-	object_event  4,  9, SPRITE_OFFICER_JENNY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketLairHallway3OfficerScript, EVENT_HOOH_LUGIA_ROOM_OFFICER
+	object_event  3,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROCKET_LAIR_HALLWAY_3_RIVAL
+	object_event  3,  2, SPRITE_MIYAMOTO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROCKET_LAIR_HALLWAY_3_MIYAMOTO
+	object_event  2,  9, SPRITE_OFFICER_JENNY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketLairHallway3OfficerScript, EVENT_HOOH_LUGIA_ROOM_OFFICER

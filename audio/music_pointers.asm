@@ -148,3 +148,4 @@ Music:
 	dba Music_SilphCo
 	dba Music_PokemonTower
 	dba Music_OakBattle
+	dba Music_RegiBattle

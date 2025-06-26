@@ -229,7 +229,8 @@ WildAreaOutside/JohtoSafariZoneGate - Mmmmmmmmmmmmmmmmm
 WildArea/JohtoSafariZone - Mmmmmmmmmmmmmmmmm
 Route 47 - Mmmmmmmmmmmmmmmmm
 Cinnabar Mansion, Rocket Lair, RBY Champion Battle, Silph Co., Pokemon Tower - Dannye
-NightTime coding and songs, Friendly Shop, Cynthia Battle & Encounter, Cinnabar Island, FRLG Gym Leader Song and Giovanni Theme: TriteHexagon
+NightTime coding and songs, Friendly Shop, Cynthia Battle & Encounter, Cinnabar Island, 
+FRLG Gym Leader Song, Giovanni Theme and Regi Battle: TriteHexagon
 Lugia Battle: Pigu
 Kanto Legend Battle XY: GACT and Pigu
 Ho-Oh Battle: Pigu
