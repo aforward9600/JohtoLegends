@@ -66,7 +66,6 @@ Music:
 	dba Music_GoldenrodCity
 	dba Music_VermilionCity
 	dba Music_PokemonChannel
-	dba Music_PokeFluteChannel
 	dba Music_TinTower
 	dba Music_SproutTower
 	dba Music_BurnedTower
@@ -90,22 +89,16 @@ Music:
 	dba Music_RuinsOfAlphInterior
 	dba Music_RocketTheme
 	dba Music_DancingHall
-	dba Music_ContestResults
 	dba Music_BugCatchingContest
-	dba Music_LakeOfRageRocketRadio
 	dba Music_Printer
 	dba Music_PostCredits
 ; new to Crystal
 	dba Music_Clair
-	dba Music_MobileAdapterMenu
-	dba Music_MobileAdapter
 	dba Music_BuenasPassword
 	dba Music_LookMysticalMan
-	dba Music_CrystalOpening
 	dba Music_BattleTowerTheme
 	dba Music_SuicuneBattle
 	dba Music_BattleTowerLobby
-	dba Music_MobileCenter
 	dba Music_Route47
 	dba Music_SafariZoneGate
 	dba Music_SafariZone

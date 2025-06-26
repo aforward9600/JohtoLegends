@@ -48,10 +48,8 @@ INCLUDE "audio/music/dragonsden.asm"
 INCLUDE "audio/music/ruinsofalphradio.asm"
 INCLUDE "audio/music/lookbeauty.asm"
 INCLUDE "audio/music/route26.asm"
-INCLUDE "audio/music/lakeofragerocketradio.asm"
 INCLUDE "audio/music/magnettrain.asm"
 INCLUDE "audio/music/dancinghall.asm"
-INCLUDE "audio/music/contestresults.asm"
 
 
 SECTION "Songs 3", ROMX
@@ -98,27 +96,22 @@ INCLUDE "audio/music/lookrocket.asm"
 INCLUDE "audio/music/rockettheme.asm"
 INCLUDE "audio/music/mainmenu.asm"
 INCLUDE "audio/music/lookkimonogirl.asm"
-INCLUDE "audio/music/pokeflutechannel.asm"
 INCLUDE "audio/music/bugcatchingcontest.asm"
 
 
 SECTION "Songs 5", ROMX
 
-INCLUDE "audio/music/mobileadaptermenu.asm"
 INCLUDE "audio/music/buenaspassword.asm"
 INCLUDE "audio/music/lookmysticalman.asm"
-INCLUDE "audio/music/crystalopening.asm"
 INCLUDE "audio/music/battletowertheme.asm"
 INCLUDE "audio/music/suicunebattle.asm"
 INCLUDE "audio/music/battletowerlobby.asm"
-INCLUDE "audio/music/mobilecenter.asm"
 
 
 SECTION "Extra Songs 1", ROMX
 
 INCLUDE "audio/music/credits.asm"
 INCLUDE "audio/music/clair.asm"
-INCLUDE "audio/music/mobileadapter.asm"
 
 
 SECTION "Extra Songs 2", ROMX

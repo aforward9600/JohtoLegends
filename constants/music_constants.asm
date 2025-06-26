@@ -66,7 +66,6 @@
 	const MUSIC_GOLDENROD_CITY               ; 3d
 	const MUSIC_VERMILION_CITY               ; 3e
 	const MUSIC_POKEMON_CHANNEL              ; 3f
-	const MUSIC_POKE_FLUTE_CHANNEL           ; 40
 	const MUSIC_TIN_TOWER                    ; 41
 	const MUSIC_SPROUT_TOWER                 ; 42
 	const MUSIC_BURNED_TOWER                 ; 43
@@ -90,23 +89,17 @@
 	const MUSIC_RUINS_OF_ALPH_INTERIOR       ; 55
 	const MUSIC_ROCKET_OVERTURE              ; 56
 	const MUSIC_DANCING_HALL                 ; 57
-	const MUSIC_BUG_CATCHING_CONTEST_RANKING ; 58
 	const MUSIC_BUG_CATCHING_CONTEST         ; 59
-	const MUSIC_LAKE_OF_RAGE_ROCKET_RADIO    ; 5a
 	const MUSIC_PRINTER                      ; 5b
 	const MUSIC_POST_CREDITS                 ; 5c
 
 ; new to Crystal
 	const MUSIC_CLAIR                        ; 5d
-	const MUSIC_MOBILE_ADAPTER_MENU          ; 5e
-	const MUSIC_MOBILE_ADAPTER               ; 5f
 	const MUSIC_BUENAS_PASSWORD              ; 60
 	const MUSIC_MYSTICALMAN_ENCOUNTER        ; 61
-	const MUSIC_CRYSTAL_OPENING              ; 62
 	const MUSIC_BATTLE_TOWER_THEME           ; 63
 	const MUSIC_SUICUNE_BATTLE               ; 64
 	const MUSIC_BATTLE_TOWER_LOBBY           ; 65
-	const MUSIC_MOBILE_CENTER                ; 66
 	const MUSIC_ROUTE_47                     ; 67
 	const MUSIC_WILD_AREA_OUTSIDE            ; 68
 	const MUSIC_WILD_AREA                    ; 69

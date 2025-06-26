@@ -327,54 +327,7 @@ CheckLuckyNumberShowFlag:
 	ret
 
 SnorlaxAwake:
-; Check if the Poké Flute channel is playing, and if the player is standing
-; next to Snorlax.
-
-; outputs:
-; wScriptVar is 1 if the conditions are met, otherwise 0.
-
-; check background music
-	ld a, [wMapMusic]
-	cp MUSIC_POKE_FLUTE_CHANNEL
-	jr nz, .nope
-
-	ld a, [wXCoord]
-	ld b, a
-	ld a, [wYCoord]
-	ld c, a
-
-	ld hl, .ProximityCoords
-.loop
-	ld a, [hli]
-	cp -1
-	jr z, .nope
-	cp b
-	jr nz, .nextcoord
-	ld a, [hli]
-	cp c
-	jr nz, .loop
-
-	ld a, TRUE
-	jr .done
-
-.nextcoord
-	inc hl
-	jr .loop
-
-.nope
-	xor a
-.done
-	ld [wScriptVar], a
 	ret
-
-.ProximityCoords:
-	;   x,  y
-	db 33,  8 ; left
-	db 34, 10 ; below
-	db 35, 10 ; below
-	db 36,  8 ; right
-	db 36,  9 ; right
-	db -1
 
 PlayCurMonCry:
 	ld a, [wCurPartySpecies]
