@@ -24,7 +24,7 @@ IsInJohto::
 	jr nc, .Kanto
 
 .Johto:
-	xor a
+	ld a, 0
 	ret
 
 .Kanto:

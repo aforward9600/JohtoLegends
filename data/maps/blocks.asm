@@ -1031,6 +1031,7 @@ InfantGrove_Blocks:
 	INCBIN "maps/InfantGrove.ablk"
 
 OneIslandPort_Blocks:
+TwoIslandPort_Blocks:
 	INCBIN "maps/SeviiPort.ablk"
 
 OneIsland_Blocks:
@@ -1044,3 +1045,9 @@ KindleRoad_Blocks:
 
 MtEmber_Blocks:
 	INCBIN "maps/MtEmber.ablk"
+
+TwoIsland_Blocks:
+	INCBIN "maps/TwoIsland.ablk"
+
+CapeBrink_Blocks:
+	INCBIN "maps/CapeBrink.ablk"

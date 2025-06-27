@@ -48,8 +48,10 @@ FindNest:
 	ld b, h
 	ld c, l
 	ld a, e
-	and a
-	jr nz, .kanto
+	cp 1
+	jr z, .kanto
+	cp 2
+	jr z, .sevii
 	decoord 0, 0
 	ld hl, JohtoGrassWildMons
 	call .FindGrass
@@ -60,8 +62,6 @@ FindNest:
 	ret
 
 .kanto
-	cp 2
-	jr z, .sevii
 	decoord 0, 0
 	ld hl, KantoGrassWildMons
 	call .FindGrass
@@ -643,7 +643,7 @@ _JohtoWildmonCheck:
 
 .sevii
 	ld h, b
-	ld h, c
+	ld l, c
 	ret
 
 _SwarmWildmonCheck:

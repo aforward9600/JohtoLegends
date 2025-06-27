@@ -548,3 +548,6 @@ ENDM
 	map_const KINDLE_ROAD,                                 14, 48 ; 4
 	map_const MT_EMBER,                                     8, 14 ; 5
 	map_const ONE_ISLAND_POKECENTER,                        5,  4 ; 6
+	map_const TWO_ISLAND_PORT,                              5,  9 ; 7
+	map_const TWO_ISLAND,                                  18, 10 ; 8
+	map_const CAPE_BRINK,                                  10, 10 ; 9 

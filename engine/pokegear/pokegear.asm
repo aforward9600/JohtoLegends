@@ -3747,6 +3747,9 @@ Pokedex_GetArea:
 	ld hl, vTiles0 tile $78
 	ld c, 4
 	call Request2bpp
+	ld a, [wTownMapPlayerIconLandmark]
+	cp SEVII_LANDMARK
+	jp nc, .sevii_pokedex
 	call LoadTownMapGFX2
 	call FillKantoMap
 	call .PlaceString_MonsNest
@@ -3825,6 +3828,38 @@ Pokedex_GetArea:
 	ld a, KANTO_REGION
 	call .GetAndPlaceNest
 	ret
+
+.sevii_pokedex
+	call LoadTownMapGFX2
+	call FillSeviiMap
+	call .PlaceString_MonsNest
+	call TownMapPals
+	hlbgcoord 0, 0
+	call TownMapBGUpdate
+	ld b, SCGB_POKEGEAR_PALS
+	call GetSGBLayout
+	call SetPalettes
+	xor a
+	ldh [hBGMapMode], a
+	ld a, SEVII_ISLANDS
+	call .GetAndPlaceNest
+.loop_2
+	call JoyTextDelay
+	ld hl, hJoyPressed
+	ld a, [hl]
+	and A_BUTTON | B_BUTTON
+	jr nz, .a_b
+	ldh a, [hJoypadDown]
+	and SELECT
+	jp nz, .select
+	call .BlinkNestIcons
+	jr .next_2
+
+.select_2
+	call .HideNestsShowPlayer
+.next_2
+	call DelayFrame
+	jr .loop_2
 
 .BlinkNestIcons:
 	ldh a, [hVBlankCounter]
@@ -3957,16 +3992,22 @@ Pokedex_GetArea:
 ; on the screen.
 	ld a, [wTownMapPlayerIconLandmark]
 	cp KANTO_LANDMARK
+	jr nc, .kanto
+	cp SEVII_LANDMARK
 	jr c, .johto
+	ld a, [wTownMapCursorLandmark]
+	cp 3
+	jr nz, .clear
+	jr .ok
 .kanto
 	ld a, [wTownMapCursorLandmark]
-	and a
-	jr z, .clear
+	cp 1
+	jr nz, .clear
 	jr .ok
 
 .johto
 	ld a, [wTownMapCursorLandmark]
-	and a
+	cp 0
 	jr nz, .clear
 .ok
 	and a
