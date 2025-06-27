@@ -1370,11 +1370,7 @@ Script_catchtutorial:
 ; script command 0x61
 ; parameters: byte
 
-	call GetScriptByte
-	ld [wBattleType], a
-	call BufferScreen
-	farcall CatchTutorial
-	jp Script_reloadmap
+	ret
 
 Script_reloadmapafterbattle:
 ; script command 0x60

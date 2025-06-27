@@ -3996,7 +3996,7 @@ Pokedex_GetArea:
 	cp SEVII_LANDMARK
 	jr c, .johto
 	ld a, [wTownMapCursorLandmark]
-	cp 3
+	cp 2
 	jr nz, .clear
 	jr .ok
 .kanto

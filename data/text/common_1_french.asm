@@ -577,16 +577,6 @@ Text_EnemyUsedOn::
 	text "!"
 	prompt
 
-UnknownText_0x1bd2bc::
-	text "Quel étage?"
-	done
-
-UnknownText_0x1bd2ca::
-	text "Presentateur: BIP!"
-
-	para "Temps écoulé!"
-	done
-
 UnknownText_0x1bd2e7::
 	text "Presentateur: Le"
 	line "councours est fini!"

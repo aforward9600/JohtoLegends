@@ -550,4 +550,8 @@ ENDM
 	map_const ONE_ISLAND_POKECENTER,                        5,  4 ; 6
 	map_const TWO_ISLAND_PORT,                              5,  9 ; 7
 	map_const TWO_ISLAND,                                  18, 10 ; 8
-	map_const CAPE_BRINK,                                  10, 10 ; 9 
+	map_const CAPE_BRINK,                                  10, 10 ; 9
+	map_const THREE_ISLAND_PORT,                            5,  9 ; 10
+	map_const THREE_ISLAND,                                12, 27 ; 11
+	map_const BOND_BRIDGE,                                 40,  9 ; 12
+	map_const BERRY_FOREST,                                16, 19 ; 13

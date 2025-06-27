@@ -1129,10 +1129,6 @@ DepositSellTutorial_InterpretJoypad:
 
 TutorialPack:
 	call DepositSellInitPackBuffers
-	ld a, [wInputType]
-	or a
-	jr z, .loop
-	farcall _DudeAutoInput_RightA
 .loop
 	call .RunJumptable
 	call DepositSellTutorial_InterpretJoypad

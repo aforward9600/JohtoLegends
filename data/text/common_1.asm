@@ -847,24 +847,8 @@ UnknownText_0x1bd286::
 	text "…"
 	done
 
-UnknownText_0x1bd2a0::
-	text "Obtained the"
-	line "VOLTORBBADGE!"
-	done
-
 UnknownText_0x1bd2bc::
 	text "Which floor?"
-	done
-
-UnknownText_0x1bd2ca::
-	text "ANNOUNCER: BEEEP!"
-
-	para "Time's up!"
-	done
-
-UnknownText_0x1bd2e7::
-	text "ANNOUNCER: The"
-	line "Contest is over!"
 	done
 
 _RepelWoreOffText::

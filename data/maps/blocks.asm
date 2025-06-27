@@ -1032,6 +1032,7 @@ InfantGrove_Blocks:
 
 OneIslandPort_Blocks:
 TwoIslandPort_Blocks:
+ThreeIslandPort_Blocks:
 	INCBIN "maps/SeviiPort.ablk"
 
 OneIsland_Blocks:
@@ -1051,3 +1052,12 @@ TwoIsland_Blocks:
 
 CapeBrink_Blocks:
 	INCBIN "maps/CapeBrink.ablk"
+
+ThreeIsland_Blocks:
+	INCBIN "maps/ThreeIsland.ablk"
+
+BondBridge_Blocks:
+	INCBIN "maps/BondBridge.ablk"
+
+BerryForest_Blocks:
+	INCBIN "maps/BerryForest.ablk"

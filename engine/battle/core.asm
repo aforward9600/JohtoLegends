@@ -4635,11 +4635,7 @@ BattleMenu:
 	jr .next
 .not_contest
 
-	; Auto input: choose "ITEM"
-	ld a, [wInputType]
-	or a
-	jr z, .skip_dude_pack_select
-	farcall _DudeAutoInput_DownA
+
 .skip_dude_pack_select
 	call LoadBattleMenu2
 	ret c

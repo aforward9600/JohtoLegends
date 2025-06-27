@@ -23,4 +23,18 @@ SeviiWaterWildMons:
 	dbw 70, GOLDUCK
 	dbw 70, GYARADOS
 
+	map_id BOND_BRIDGE
+	db 4 percent ; encounter rate
+	dbw 70, POLIWHIRL
+	dbw 70, SEAKING
+	dbw 70, GOLDUCK
+	dbw 70, GYARADOS
+
+	map_id BERRY_FOREST
+	db 4 percent ; encounter rate
+	dbw 70, POLIWHIRL
+	dbw 70, SEAKING
+	dbw 70, GOLDUCK
+	dbw 70, GYARADOS
+
 	db -1 ; end

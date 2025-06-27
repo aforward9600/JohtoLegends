@@ -749,6 +749,8 @@ ENDM
 	map_attributes MtEmber, MT_EMBER, $10, 0
 	map_attributes OneIslandPokecenter, ONE_ISLAND_POKECENTER, $00, 0
 	map_attributes TwoIslandPort, TWO_ISLAND_PORT, $00, 0
+	map_attributes ThreeIslandPort, THREE_ISLAND_PORT, $00, 0
+	map_attributes BerryForest, BERRY_FOREST, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1
@@ -765,3 +767,9 @@ ENDM
 
 	map_attributes CapeBrink, CAPE_BRINK, $43, SOUTH
 	connection south, TwoIsland, TWO_ISLAND, -8
+
+	map_attributes ThreeIsland, THREE_ISLAND, $43, WEST
+	connection west, BondBridge, BOND_BRIDGE, 0
+
+	map_attributes BondBridge, BOND_BRIDGE, $43, EAST
+	connection east, ThreeIsland, THREE_ISLAND, 0
