@@ -270,6 +270,9 @@ Route10North_Blocks:
 	INCBIN "maps/Route10North.ablk"
 
 OneIslandPokecenter_Blocks:
+TwoIslandPokecenter_Blocks:
+ThreeIslandPokecenter_Blocks:
+FourIslandPokecenter_Blocks:
 OlivinePokecenter1F_Blocks:
 MahoganyPokecenter1F_Blocks:
 EcruteakPokecenter1F_Blocks:
@@ -1033,6 +1036,7 @@ InfantGrove_Blocks:
 OneIslandPort_Blocks:
 TwoIslandPort_Blocks:
 ThreeIslandPort_Blocks:
+FourIslandPort_Blocks:
 	INCBIN "maps/SeviiPort.ablk"
 
 OneIsland_Blocks:
@@ -1061,3 +1065,18 @@ BondBridge_Blocks:
 
 BerryForest_Blocks:
 	INCBIN "maps/BerryForest.ablk"
+
+FourIsland_Blocks:
+	INCBIN "maps/FourIsland.ablk"
+
+IcefallCaveEntrance_Blocks:
+	INCBIN "maps/IcefallCaveEntrance.ablk"
+
+IcefallCave1F_Blocks:
+	INCBIN "maps/IcefallCave1F.ablk"
+
+IcefallCave2F_Blocks:
+	INCBIN "maps/IcefallCave2F.ablk"
+
+IcefallCaveBackCave_Blocks:
+	INCBIN "maps/IcefallCaveBackCave.ablk"

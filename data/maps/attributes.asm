@@ -751,6 +751,15 @@ ENDM
 	map_attributes TwoIslandPort, TWO_ISLAND_PORT, $00, 0
 	map_attributes ThreeIslandPort, THREE_ISLAND_PORT, $00, 0
 	map_attributes BerryForest, BERRY_FOREST, $00, 0
+	map_attributes FourIslandPort, FOUR_ISLAND_PORT, $43, 0
+	map_attributes FourIsland, FOUR_ISLAND, $43, 0
+	map_attributes IcefallCaveEntrance, ICEFALL_CAVE_ENTRANCE, $09, 0
+	map_attributes IcefallCave1F, ICEFALL_CAVE_1F, $09, 0
+	map_attributes IcefallCave2F, ICEFALL_CAVE_2F, $09, 0
+	map_attributes IcefallCaveBackCave, ICEFALL_CAVE_BACK_CAVE, $09, 0
+	map_attributes TwoIslandPokecenter, TWO_ISLAND_POKECENTER, $00, 0
+	map_attributes ThreeIslandPokecenter, THREE_ISLAND_POKECENTER, $00, 0
+	map_attributes FourIslandPokecenter, FOUR_ISLAND_POKECENTER, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1

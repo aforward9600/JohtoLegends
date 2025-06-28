@@ -551,7 +551,16 @@ ENDM
 	map_const TWO_ISLAND_PORT,                              5,  9 ; 7
 	map_const TWO_ISLAND,                                  18, 10 ; 8
 	map_const CAPE_BRINK,                                  10, 10 ; 9
+	map_const TWO_ISLAND_POKECENTER,                        5,  4 ; 
 	map_const THREE_ISLAND_PORT,                            5,  9 ; 10
 	map_const THREE_ISLAND,                                12, 27 ; 11
 	map_const BOND_BRIDGE,                                 40,  9 ; 12
 	map_const BERRY_FOREST,                                16, 19 ; 13
+	map_const THREE_ISLAND_POKECENTER,                      5,  4 ; 14
+	map_const FOUR_ISLAND_PORT,                             5,  9 ; 14
+	map_const FOUR_ISLAND,                                 24, 16 ; 15
+	map_const ICEFALL_CAVE_ENTRANCE,                       10, 12 ; 16
+	map_const ICEFALL_CAVE_1F,                             10,  9 ; 17
+	map_const ICEFALL_CAVE_2F,                              9, 11 ; 18
+	map_const ICEFALL_CAVE_BACK_CAVE,                      10, 11 ; 19
+	map_const FOUR_ISLAND_POKECENTER,                       4,  5 ; 
