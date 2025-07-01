@@ -97,8 +97,7 @@ UpdateTrainerRankingsChecksum2:
 	ld a, BANK(sTrainerRankings)
 	call GetSRAMBank
 	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 UpdateTrainerRankingsChecksum:
 	push de
@@ -141,8 +140,7 @@ BackupMobileEventIndex:
 	call GetSRAMBank
 	pop af
 	ld [sMobileEventIndexBackup], a
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 RestoreMobileEventIndex:
 	ld a, BANK(sMobileEventIndexBackup)
@@ -153,16 +151,14 @@ RestoreMobileEventIndex:
 	call GetSRAMBank
 	pop af
 	ld [sMobileEventIndex], a
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 DeleteMobileEventIndex:
 	ld a, BANK(sMobileEventIndex)
 	call GetSRAMBank
 	xor a
 	ld [sMobileEventIndex], a
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 _MobilePrintNum::
 ; Supports signed 31-bit integers (up to 10 digits)

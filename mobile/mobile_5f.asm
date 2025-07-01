@@ -318,15 +318,13 @@ Function17d0f3:
 
 .asm_17d180
 	call CloseSubmenu
-	call RestartMapMusic
-	ret
+	jp RestartMapMusic
 
 Mobile_CopyDefaultOTName:
 	ld hl, Mobile5F_PlayersName
 	ld de, wc63d
 	ld bc, 5
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 Mobile5F_PlayersName:
 	db "クりス@@"
@@ -335,8 +333,7 @@ Mobile_CopyDefaultNickname:
 	ld hl, .DefaultNickname
 	ld de, wc642
 	ld bc, 5
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 .DefaultNickname:
 	db "？？？？？"
@@ -349,8 +346,7 @@ Mobile_CopyDefaultMail:
 	ld hl, .DefaultMessage
 	ld de, wc647
 	ld bc, 6
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 .DefaultMessage:
 	db "こんにちは@"
@@ -363,8 +359,7 @@ Mobile_CopyDefaultMailAuthor:
 	ld hl, Mobile5F_PlayersName
 	ld de, wc668
 	ld bc, 5
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 CheckStringContainsLessThanBNextCharacters:
 .loop
@@ -446,8 +441,7 @@ Menu_ChallengeExplanationCancel:
 .Load_Interpret:
 	call LoadMenuHeader
 	call Function17d246
-	call CloseWindow
-	ret
+	jp CloseWindow
 
 Function17d246:
 	call VerticalMenu
@@ -873,8 +867,7 @@ Function17d60b:
 	ld a, [$b1b2]
 	ld b, a
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 Function17d6a1:
 	push hl
@@ -1028,8 +1021,7 @@ Function17d78d:
 	call CloseSRAM
 	xor a
 	ld [wcd77], a
-	call ClearBGPalettes
-	ret
+	jp ClearBGPalettes
 
 Function17d7b4:
 	call IncCrashCheckPointer
@@ -1037,8 +1029,7 @@ Function17d7b4:
 	ld e, a
 	ld d, $0
 	call PlayMusic2
-	call HlToCrashCheckPointer
-	ret
+	jp HlToCrashCheckPointer
 
 Function17d7c2:
 	call IncCrashCheckPointer
@@ -1047,8 +1038,7 @@ Function17d7c2:
 	ld d, $0
 	call PlaySFX
 	call WaitSFX
-	call HlToCrashCheckPointer
-	ret
+	jp HlToCrashCheckPointer
 
 Function17d7d3:
 	call IncCrashCheckPointer
@@ -1060,8 +1050,7 @@ Function17d7d3:
 	pop bc
 	call nc, PlayCry
 	call WaitSFX
-	call HlToCrashCheckPointer
-	ret
+	jp HlToCrashCheckPointer
 
 Function17d7e5:
 	call IncCrashCheckPointer
@@ -1085,8 +1074,7 @@ Function17d7e5:
 	ld [wcd53], a
 	ld de, wcd4f
 	call Function17e691
-	call HlToCrashCheckPointer
-	ret
+	jp HlToCrashCheckPointer
 
 Function17d818:
 	call IncCrashCheckPointer
@@ -1104,8 +1092,7 @@ Function17d818:
 	ld d, h
 	hlcoord 0, 0
 	add hl, bc
-	call PlaceString
-	ret
+	jp PlaceString
 
 Function17d833:
 	call IncCrashCheckPointer
@@ -1130,8 +1117,7 @@ Function17d833:
 	add hl, de
 	ld e, l
 	ld d, h
-	call Function17e349
-	ret
+	jp Function17e349
 
 Function17d85d:
 	call IncCrashCheckPointer
@@ -1226,12 +1212,10 @@ Function17d85d:
 	jr z, .asm_17d8fe
 	cp $a
 	jr z, .asm_17d8fe
-	call Function17e309
-	ret
+	jp Function17e309
 
 .asm_17d8fe
-	call Function17e349
-	ret
+	jp Function17e349
 
 Function17d902:
 	call IncCrashCheckPointer
@@ -1260,12 +1244,10 @@ Function17d902:
 	jr z, .asm_17d936
 	cp $a
 	jr z, .asm_17d936
-	call Function17e309
-	ret
+	jp Function17e309
 
 .asm_17d936
-	call Function17e349
-	ret
+	jp Function17e349
 
 Function17d93a:
 	call IncCrashCheckPointer
@@ -1299,8 +1281,7 @@ Function17d93a:
 	farcall HOF_AnimateFrontpic
 	pop af
 	ldh [rSVBK], a
-	call Function17e349
-	ret
+	jp Function17e349
 
 Function17d98b:
 	call IncCrashCheckPointer
@@ -1335,8 +1316,7 @@ Function17d98b:
 	predef PlaceGraphic
 	pop af
 	ldh [rSVBK], a
-	call Function17e349
-	ret
+	jp Function17e349
 
 Function17d9e3:
 	call IncCrashCheckPointer

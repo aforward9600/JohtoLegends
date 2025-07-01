@@ -129,8 +129,7 @@ DecompressRequest2bpp::
 
 	ld de, sScratch
 	call Request2bpp
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 FarCopyBytes::
 ; copy bc bytes from a:hl to de
@@ -210,6 +209,8 @@ Request2bpp::
 	ld a, $6
 	ldh [hTilesPerCycle], a
 
+
+; Battle Tower seems to get caught in a loop around here.
 .NotMobile:
 	ld a, e
 	ld [wRequested2bppSource], a

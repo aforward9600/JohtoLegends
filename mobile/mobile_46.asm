@@ -50,8 +50,7 @@ Function118125:
 	ldh [rSVBK], a
 	call BattleTowerRoomMenu_Cleanup
 	call Function118180
-	call ReturnToMapFromSubmenu
-	ret
+	jp ReturnToMapFromSubmenu
 
 Function118180:
 	ld a, [wScriptVar]
@@ -89,8 +88,7 @@ Function118180:
 .reset_banks
 	pop af
 	ldh [rSVBK], a
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 .return_d3
 	ld a, $d3
@@ -462,6 +460,7 @@ Function118e76:
 	; Call $c in BattleTowerRoomMenu2
 	ld a, $c
 	ld [wcd3c], a
+	ld b,b
 	jp BattleTowerRoomMenu_IncrementJumptable
 
 BattleTowerRoomMenu_CallRoomMenu2:
@@ -1738,6 +1737,51 @@ BattleTowerRoomMenu_WriteMessage_DoNothing:
 	ret
 
 Function11a971:
+	ld hl, $c31f
+	ldh a, [hJoyDown]
+	and a
+	jr nz, .asm_11a97f
+	ld a, [hl]
+	and a
+	jr z, .asm_11a97f
+	dec [hl]
+	ret
+
+.asm_11a97f
+	ld a, [wOptions]
+	and $7
+	ld [hl], a
+	ld hl, wcd8d
+	ld a, [$c31b]
+	ld e, a
+	ld a, [$c31c]
+	ld d, a
+	ld a, [de]
+	inc de
+	ld [hli], a
+	ld a, e
+	ld [$c31b], a
+	ld a, d
+	ld [$c31c], a
+	ld a, $50
+	ld [hl], a
+	ld a, [$c31d]
+	ld l, a
+	ld a, [$c31e]
+	ld h, a
+	ld de, wcd8d
+	call PlaceString
+	ld a, c
+	ld [$c31d], a
+	ld a, b
+	ld [$c31e], a
+	ld a, [wcd8d]
+	cp $50
+	jr nz, .asm_11a9bf
+	xor a
+	ld [$c31a], a
+
+.asm_11a9bf
 	ret
 
 BattleTowerRoomMenu_SetMessage:
