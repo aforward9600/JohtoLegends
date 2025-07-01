@@ -1496,3 +1496,9 @@ ShedSkinText:
 	text "<USER>"
 	line "shed its skin!"
 	prompt
+
+HydrationText:
+	text "<USER>'s"
+	line "Hydration healed"
+	cont "its status!"
+	prompt

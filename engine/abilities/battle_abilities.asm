@@ -80,15 +80,13 @@ SentOutAbilityBoth::
 	call BattleCommand_SwitchTurnAbilities
 	call EnemyAbilityFirst
 	call BattleCommand_SwitchTurnAbilities
-	call PlayerAbilityFirst
-	ret
+	jp PlayerAbilityFirst
 
 .player_goes_first
 	call PlayerAbilityFirst
 	call BattleCommand_SwitchTurnAbilities
 	call EnemyAbilityFirst
-	call BattleCommand_SwitchTurnAbilities
-	ret
+	jp BattleCommand_SwitchTurnAbilities
 
 .speed_tie
 	call BattleRandom
@@ -316,8 +314,7 @@ EnemyNeutralGas:
 	call MoveDelayAbility
 	ld hl, NeutralGasText
 	call StdBattleTextbox
-	call BattleCommand_SwitchTurnAbilities
-	ret
+	jp BattleCommand_SwitchTurnAbilities
 
 PlayerNeutralGas:
 	call MoveDelayAbility
@@ -466,8 +463,7 @@ CheckContactAbilities:
 	ret nc
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_ParalyzeTarget
-	call BattleCommand_SwitchTurnAbilities
-	ret
+	jp BattleCommand_SwitchTurnAbilities
 
 .PoisonPoint:
 	call BattleRandom
@@ -475,8 +471,7 @@ CheckContactAbilities:
 	ret nc
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_PoisonTarget
-	call BattleCommand_SwitchTurnAbilities
-	ret
+	jp BattleCommand_SwitchTurnAbilities
 
 .FlameBody:
 	ld hl, wBattleMonType1
@@ -496,8 +491,7 @@ CheckContactAbilities:
 	ret nc
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_BurnTarget
-	call BattleCommand_SwitchTurnAbilities
-	ret
+	jp BattleCommand_SwitchTurnAbilities
 
 .EffectSpore:
 	call GetUserAbility
@@ -523,8 +517,7 @@ CheckContactAbilities:
 .EffectSporeSleep:
 	farcall BattleCommand_SleepHit
 .FinishEffectSpore:
-	call BattleCommand_SwitchTurnAbilities
-	ret
+	jp BattleCommand_SwitchTurnAbilities
 
 .RoughSkin:
 	farcall GetEighthMaxHP
@@ -1287,8 +1280,7 @@ CheckDefensiveAbilities:
 	call MoveDelayAbility
 	ld hl, FlashFireText
 	call StdBattleTextbox
-	farcall EndMoveEffect
-	ret
+	jp EndMoveEffectAbilities
 
 .Levitate:
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1299,8 +1291,7 @@ CheckDefensiveAbilities:
 	call MoveDelayAbility
 	ld hl, LevitateText
 	call StdBattleTextbox
-	farcall EndMoveEffect
-	ret
+	jp EndMoveEffectAbilities
 
 .SapSipper:
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1317,8 +1308,7 @@ CheckDefensiveAbilities:
 	call MoveDelayAbility
 	ld hl, SapSipperText
 	call StdBattleTextbox
-	farcall EndMoveEffect
-	ret
+	jp EndMoveEffectAbilities
 
 .Lightningrod:
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1335,8 +1325,7 @@ CheckDefensiveAbilities:
 	call MoveDelayAbility
 	ld hl, LightningRodText
 	call StdBattleTextbox
-	farcall EndMoveEffect
-	ret
+	jp EndMoveEffectAbilities
 
 .MotorDrive:
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1353,8 +1342,7 @@ CheckDefensiveAbilities:
 	call MoveDelayAbility
 	ld hl, MotorDriveText
 	call StdBattleTextbox
-	farcall EndMoveEffect
-	ret
+	jp EndMoveEffectAbilities
 
 .Soundproof:
 	ldh a, [hBattleTurn]
@@ -1372,8 +1360,7 @@ CheckDefensiveAbilities:
 	call MoveDelayAbility
 	ld hl, SoundproofText
 	call StdBattleTextbox
-	farcall EndMoveEffect
-	ret
+	jp EndMoveEffectAbilities
 
 .DrySkin:
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1382,8 +1369,7 @@ CheckDefensiveAbilities:
 	cp WATER
 	ret nz
 	call CheckFullHPDefenseAbilities
-	farcall EndMoveEffect
-	ret
+	jp EndMoveEffectAbilities
 
 .WaterAbsorb:
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1392,8 +1378,7 @@ CheckDefensiveAbilities:
 	cp WATER
 	ret nz
 	call CheckFullHPDefenseAbilities
-	farcall EndMoveEffect
-	ret
+	jp EndMoveEffectAbilities
 
 .VoltAbsorb:
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1404,6 +1389,10 @@ CheckDefensiveAbilities:
 	call CheckFullHPDefenseAbilities
 	farcall EndMoveEffect
 .NoDefensiveAbilities
+	ret
+
+EndMoveEffectAbilities:
+	farcall EndMoveEffect
 	ret
 
 CheckFullHPDefenseAbilities:
@@ -1480,6 +1469,7 @@ HandleEndMoveAbility:
 	dbw DRY_SKIN,        .DrySkin
 	dbw SPEED_BOOST,     .SpeedBoost
 	dbw SHED_SKIN,       .ShedSkin
+	dbw HYDRATION,       .Hydration
 	db -1
 
 .RainDish:
@@ -1487,6 +1477,22 @@ HandleEndMoveAbility:
 	cp WEATHER_RAIN
 	ret nz
 	jp CheckFullHPAbilities
+
+.Hydration:
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	ret nz
+	call CheckStatusAbilities
+	ret z
+	call BattleRandom
+	cp 30 percent + 1
+	ret nc
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	ld a, [hl]
+	ld [hl], 0
+	ld hl, HydrationText
+	jp StdBattleTextbox
 
 .DrySkin:
 	ld a, [wBattleWeather]
@@ -1513,9 +1519,7 @@ HandleEndMoveAbility:
 	jp StdBattleTextbox
 
 .ShedSkin:
-	ld a, BATTLE_VARS_STATUS
-	call GetBattleVar
-	and 1 << SLP | 1 << FRZ | 1 << PAR
+	call CheckStatusAbilities
 	ret z
 	call BattleRandom
 	cp 30 percent + 1
@@ -1527,6 +1531,12 @@ HandleEndMoveAbility:
 	ld hl, ShedSkinText
 	call StdBattleTextbox
 .NoEndTurnAbilities:
+	ret
+
+CheckStatusAbilities:
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVar
+	and 1 << SLP | 1 << FRZ | 1 << PAR
 	ret
 
 CheckFullHPAbilities:

@@ -1024,7 +1024,7 @@ ResidualDamage:
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVar
 	and 1 << PSN | 1 << BRN
-	jr z, .did_psn_brn
+	jp z, .did_psn_brn
 
 	ld hl, HurtByPoisonText
 	ld de, ANIM_PSN
@@ -1034,10 +1034,17 @@ ResidualDamage:
 	ld de, ANIM_BRN
 .got_anim
 
+	call CheckNeutralGas
+	jr z, .SkipShedSkin
 	call GetUserAbility
 	cp SHED_SKIN
 	jr z, .ShedSkinHeal
+	cp HYDRATION
+	jr z, .Hydration
+	cp POISON_HEAL
+	jr z, .TryPoisonHeal
 
+.SkipShedSkin
 	push de
 	call StdBattleTextbox
 	pop de
@@ -1074,11 +1081,49 @@ ResidualDamage:
 	jr .did_psn_brn
 
 .ShedSkinHeal:
+	call BattleRandom
+	cp 30 percent + 1
+	ret nc
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVarAddr
 	ld a, [hl]
 	ld [hl], 0
 	ld hl, ShedSkinText
+	call StdBattleTextbox
+	jr .did_psn_brn
+
+.Hydration
+	call CheckCloudNine
+	ret z
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	ret nz
+	ld a, BATTLE_VARS_STATUS
+	ld a, [hl]
+	ld [hl], 0
+	ld hl, HydrationText
+	call StdBattleTextbox
+	jr .did_psn_brn
+
+.TryPoisonHeal
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVar
+	and 1 << PSN
+	jr z, .SkipShedSkin
+	call CheckFullHP
+	jr z, .did_psn_brn
+	call GetEighthMaxHP
+	call SwitchTurnCore
+	call RestoreHP
+	call SwitchTurnCore
+;	call MoveDelayCore
+	ld c, 40
+	jp DelayFrames
+	call GetUserAbility
+	call Ability_LoadAbilityName
+	ld a, b
+	and a
+	ld hl, WaterAbsorbText
 	call StdBattleTextbox
 
 .did_psn_brn
