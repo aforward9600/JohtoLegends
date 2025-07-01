@@ -5294,6 +5294,9 @@ BattleCommand_ForceSwitch:
 	ld hl, DraggedOutText
 	call StdBattleTextbox
 
+	farcall SetEnemyAbility
+	farcall SentOutAbility
+
 	ld hl, SpikesDamage
 	jp CallBattleCore
 
@@ -5329,7 +5332,7 @@ BattleCommand_ForceSwitch:
 	jr nc, .wild_succeed_playeristarget
 
 .player_miss
-	jr .fail
+	jp .fail
 
 .wild_succeed_playeristarget
 	call UpdateBattleMonInParty
@@ -5390,6 +5393,9 @@ BattleCommand_ForceSwitch:
 
 	ld hl, DraggedOutText
 	call StdBattleTextbox
+
+	farcall SetPlayerAbility
+	farcall SentOutAbility
 
 	ld hl, SpikesDamage
 	jp CallBattleCore
@@ -5512,6 +5518,9 @@ BattleCommand_SwitchHit:
 	ld hl, DraggedOutText
 	call StdBattleTextbox
 
+	farcall SetEnemyAbility
+	farcall SentOutAbility
+
 	ld hl, SpikesDamage
 	jp CallBattleCore
 
@@ -5600,6 +5609,9 @@ BattleCommand_SwitchHit:
 
 	ld hl, DraggedOutText
 	call StdBattleTextbox
+
+	farcall SetPlayerAbility
+	farcall SentOutAbility
 
 	ld hl, SpikesDamage
 	jp CallBattleCore

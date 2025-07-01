@@ -13,7 +13,7 @@
 	const SKILL_LINK   ; 0a
 	const SHEER_FORCE  ; 0bx
 	const VITAL_SPIRIT ; 0c
-	const RUN_AWAY     ; 0d
+	const RUN_AWAY     ; 0dx
 	const INTIMIDATE   ; 0ex
 	const SCRAPPY      ; 0f
 	const LIMBER       ; 10
@@ -66,7 +66,7 @@
 	const FLASH_FIRE   ; 3fx
 	const FLAME_BODY   ; 40x
 	const RIVALRY      ; 41
-	const HYDRATION    ; 42
+	const HYDRATION    ; 42 x
 	const STICKY_HOLD  ; 43
 	const STATIC       ; 44x
 	const INNER_FOCUS  ; 45
@@ -76,7 +76,7 @@
 	const HUSTLE       ; 49
 	const JUSTIFIED    ; 4a
 	const VOLT_ABSORB  ; 4bx
-	const MAGNET_PULL  ; 4c
+	const MAGNET_PULL  ; 4cx
 	const OBLIVIOUS    ; 4d
 	const OWN_TEMPO    ; 4e
 	const STEADFAST    ; 4f
@@ -119,7 +119,7 @@
 	const FRISK        ; 74
 	const DRY_SKIN     ; 75
 	const WONDER_SKIN  ; 76
-	const ARENA_TRAP   ; 77
+	const ARENA_TRAP   ; 77x
 	const ILLUMINATE   ; 78
 	const IMPOSTER     ; 79
 	const PIXILATE     ; 7ax
@@ -130,7 +130,7 @@
 	const HUGE_POWER   ; 7fx
 	const SAP_SIPPER   ; 80x
 	const ARMOR_TAIL   ; 81
-	const POISON_HEAL  ; 82
+	const POISON_HEAL  ; 82x
 	const CONTRARY     ; 83
 	const PICKPOCKET   ; 84
 	const BULLETPROOF  ; 85

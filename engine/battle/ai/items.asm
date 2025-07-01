@@ -12,6 +12,14 @@ AI_SwitchOrTryItem:
 	farcall CheckEnemyLockedIn
 	ret nz
 
+	call CheckNeutralGas
+	jr z, .SkipAbilities
+	ld a, [wPlayerAbility]
+	cp ARENA_TRAP
+	jr z, .ArenaTrap
+	cp MAGNET_PULL
+	jr z, .MagnetPull
+.SkipAbilities
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, DontSwitch
@@ -36,11 +44,32 @@ AI_SwitchOrTryItem:
 	jp nz, SwitchRarely
 	bit SWITCH_SOMETIMES_F, [hl]
 	jp nz, SwitchSometimes
-	; fallthrough
+	jp DontSwitch
+
+.ArenaTrap:
+	ld a, [wEnemyAbility]
+	cp LEVITATE
+	jp z, .SkipAbilities
+	ld hl, wEnemyMonType1
+	ld a, [hli]
+	cp FLYING
+	jp z, .SkipAbilities
+	ld a, [hl]
+	cp FLYING
+	jp z, .SkipAbilities
+	jr DontSwitch
+
+.MagnetPull:
+	ld hl, wEnemyMonType1
+	ld a, [hli]
+	cp STEEL
+	jp z, .SkipAbilities
+	ld a, [hl]
+	cp STEEL
+	jp z, .SkipAbilities
 
 DontSwitch:
-	call AI_TryItem
-	ret
+	jp AI_TryItem
 
 SwitchOften:
 	callfar CheckAbleToSwitch

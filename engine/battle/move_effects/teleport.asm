@@ -17,6 +17,13 @@ BattleCommand_Teleport:
 	cp BATTLETYPE_LUGIA
 	jr z, .failed
 
+	call CheckNeutralGas
+	jr z, .SkipRunAway
+	call GetUserAbility
+	cp RUN_AWAY
+	jr z, .run_away
+
+.SkipRunAway
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVar
 	bit SUBSTATUS_CANT_RUN, a

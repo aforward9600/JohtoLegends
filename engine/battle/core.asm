@@ -3521,6 +3521,18 @@ TryToRunAwayFromBattle:
 	dec a
 	jp nz, .cant_run_from_trainer
 
+	call CheckNeutralGas
+	jr z, .SkipRunAway
+	call GetUserAbility
+	cp RUN_AWAY
+	jp z, .fled
+	call GetTargetAbility
+	cp ARENA_TRAP
+	jp z, .ArenaTrap
+	cp MAGNET_PULL
+	jp z, .MagnetPull
+
+.SkipRunAway
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
 	jp nz, .cant_escape
@@ -3669,6 +3681,39 @@ TryToRunAwayFromBattle:
 	call LoadTileMapToTempTileMap
 	scf
 	ret
+
+.ArenaTrap:
+	call GetUserAbility
+	cp LEVITATE
+	jp z, .SkipRunAway
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	cp FLYING
+	jp z, .SkipRunAway
+	ld a, [hl]
+	cp FLYING
+	jp z, .SkipRunAway
+	call GetUserAbility
+	call Ability_LoadAbilityName
+	ld a, b
+	and a
+	ld hl, ArenaTrapText
+	jp .print_inescapable_text
+
+.MagnetPull:
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	cp STEEL
+	jp z, .SkipRunAway
+	ld a, [hl]
+	cp STEEL
+	jp z, .SkipRunAway
+	call GetUserAbility
+	call Ability_LoadAbilityName
+	ld a, b
+	and a
+	ld hl, ArenaTrapText
+	jp .print_inescapable_text
 
 .mobile
 	call StopDangerSound
@@ -4943,6 +4988,14 @@ TryPlayerSwitch:
 	jp BattleMenuPKMN_Loop
 
 .check_trapped
+	call CheckNeutralGas
+	jr z, .IgnoreAbilities
+	ld a, [wEnemyAbility]
+	cp ARENA_TRAP
+	jr z, .arena_trap
+	cp MAGNET_PULL
+	jr z, .magnet_pull
+.IgnoreAbilities
 	ld a, [wPlayerWrapCount]
 	and a
 	jr nz, .trapped
@@ -4952,8 +5005,42 @@ TryPlayerSwitch:
 
 .trapped
 	ld hl, BattleText_MonCantBeRecalled
+.finishplayerswitch
 	call StdBattleTextbox
 	jp BattleMenuPKMN_Loop
+
+.arena_trap
+	ld a, [wPlayerAbility]
+	cp LEVITATE
+	jr z, .IgnoreAbilities
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	cp FLYING
+	jr z, .IgnoreAbilities
+	ld a, [hl]
+	cp FLYING
+	jr z, .IgnoreAbilities
+	call GetUserAbility
+	call Ability_LoadAbilityName
+	ld a, b
+	and a
+	ld hl, ArenaTrapText
+	jr .finishplayerswitch
+
+.magnet_pull
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	cp STEEL
+	jr z, .IgnoreAbilities
+	ld a, [hl]
+	cp STEEL
+	jr z, .IgnoreAbilities
+	call GetUserAbility
+	call Ability_LoadAbilityName
+	ld a, b
+	and a
+	ld hl, ArenaTrapText
+	jr .finishplayerswitch
 
 .try_switch
 	call CheckIfCurPartyMonIsFitToFight
