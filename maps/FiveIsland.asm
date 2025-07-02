@@ -18,9 +18,10 @@ FiveIslandSignText:
 FiveIsland_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event  7, 17, FIVE_ISLAND_PORT, 1
 	warp_event  8, 17, FIVE_ISLAND_PORT, 2
+	warp_event 13,  7, FIVE_ISLAND_POKECENTER, 1
 
 	db 0 ; coord events
 

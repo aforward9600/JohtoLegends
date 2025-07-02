@@ -3531,6 +3531,8 @@ TryToRunAwayFromBattle:
 	jp z, .ArenaTrap
 	cp MAGNET_PULL
 	jp z, .MagnetPull
+	cp SHADOW_TAG
+	jp z, .ShadowTag
 
 .SkipRunAway
 	ld a, [wEnemySubStatus5]
@@ -3683,7 +3685,7 @@ TryToRunAwayFromBattle:
 	ret
 
 .ArenaTrap:
-	call GetUserAbility
+	ld a, [wPlayerAbility]
 	cp LEVITATE
 	jp z, .SkipRunAway
 	ld hl, wBattleMonType1
@@ -3693,12 +3695,7 @@ TryToRunAwayFromBattle:
 	ld a, [hl]
 	cp FLYING
 	jp z, .SkipRunAway
-	call GetUserAbility
-	call Ability_LoadAbilityName
-	ld a, b
-	and a
-	ld hl, ArenaTrapText
-	jp .print_inescapable_text
+	jr .TryToRunAbilityName
 
 .MagnetPull:
 	ld hl, wBattleMonType1
@@ -3708,7 +3705,14 @@ TryToRunAwayFromBattle:
 	ld a, [hl]
 	cp STEEL
 	jp z, .SkipRunAway
-	call GetUserAbility
+	jr .TryToRunAbilityName
+
+.ShadowTag:
+	ld a, [wPlayerAbility]
+	cp SHADOW_TAG
+	jp z, .SkipRunAway
+.TryToRunAbilityName
+	call GetTargetAbility
 	call Ability_LoadAbilityName
 	ld a, b
 	and a
@@ -4995,6 +4999,8 @@ TryPlayerSwitch:
 	jr z, .arena_trap
 	cp MAGNET_PULL
 	jr z, .magnet_pull
+	cp SHADOW_TAG
+	jr z, .shadow_tag
 .IgnoreAbilities
 	ld a, [wPlayerWrapCount]
 	and a
@@ -5020,22 +5026,24 @@ TryPlayerSwitch:
 	ld a, [hl]
 	cp FLYING
 	jr z, .IgnoreAbilities
-	call GetUserAbility
-	call Ability_LoadAbilityName
-	ld a, b
-	and a
-	ld hl, ArenaTrapText
-	jr .finishplayerswitch
+	jr .PlayerSwitchAbilityName
 
 .magnet_pull
 	ld hl, wBattleMonType1
 	ld a, [hli]
 	cp STEEL
-	jr z, .IgnoreAbilities
+	jr nz, .IgnoreAbilities
 	ld a, [hl]
 	cp STEEL
+	jr nz, .IgnoreAbilities
+	jr .PlayerSwitchAbilityName
+
+.shadow_tag
+	ld a, [wPlayerAbility]
+	cp SHADOW_TAG
 	jr z, .IgnoreAbilities
-	call GetUserAbility
+.PlayerSwitchAbilityName
+	call GetTargetAbility
 	call Ability_LoadAbilityName
 	ld a, b
 	and a

@@ -150,6 +150,7 @@ CherrygroveEvolutionSpeechHouse_Blocks:
 Route30BerryHouse_Blocks:
 SootheBellHouse_Blocks:
 CherrygroveFisherHouse_Blocks:
+SelphysHouse_Blocks:
 	INCBIN "maps/House1.ablk"
 
 BillsFamilysHouse_Blocks:
@@ -273,6 +274,7 @@ OneIslandPokecenter_Blocks:
 TwoIslandPokecenter_Blocks:
 ThreeIslandPokecenter_Blocks:
 FourIslandPokecenter_Blocks:
+FiveIslandPokecenter_Blocks:
 OlivinePokecenter1F_Blocks:
 MahoganyPokecenter1F_Blocks:
 EcruteakPokecenter1F_Blocks:
@@ -817,9 +819,6 @@ BattleTower1F_Blocks:
 
 BattleTowerBattleRoom_Blocks:
 	INCBIN "maps/BattleTowerBattleRoom.ablk"
-
-PokecomCenterAdminOfficeMobile_Blocks:
-	INCBIN "maps/PokecomCenterAdminOfficeMobile.ablk"
 
 BattleTowerHallway_Blocks:
 	INCBIN "maps/BattleTowerHallway.ablk"

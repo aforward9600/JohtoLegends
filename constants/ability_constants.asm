@@ -20,7 +20,7 @@
 	const UNBURDEN     ; 11
 	const PRANKSTER    ; 12x
 	const STURDY       ; 13
-	const WEAK_ARMOR   ; 14
+	const WEAK_ARMOR   ; 14x
 	const SAND_FORCE   ; 15x
 	const SAND_RUSH    ; 16x
 	const MOLD_BREAKER ; 17
@@ -30,7 +30,7 @@
 	const CHLOROPHYLL  ; 1bx
 	const OVERCOAT     ; 1c
 	const POISON_POINT ; 1dx
-	const SPEED_BOOST  ; 1e
+	const SPEED_BOOST  ; 1ex
 	const INFILTRATOR  ; 1f
 	const TINTED_LENS  ; 20x
 	const ADAPTABILITY ; 21
@@ -41,7 +41,7 @@
 	const LIQUID_OOZE  ; 26
 	const WATER_VEIL   ; 27
 	const SOLID_ROCK   ; 28x
-	const SHADOW_TAG   ; 29
+	const SHADOW_TAG   ; 29x
 	const REFRIGERATE  ; 2ax
 	const ROUGH_SKIN   ; 2bx
 	const CUTE_CHARM   ; 2cx

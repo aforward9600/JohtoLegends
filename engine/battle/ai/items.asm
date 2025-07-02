@@ -19,6 +19,9 @@ AI_SwitchOrTryItem:
 	jr z, .ArenaTrap
 	cp MAGNET_PULL
 	jr z, .MagnetPull
+	cp SHADOW_TAG
+	jr z, .ShadowTag
+
 .SkipAbilities
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
@@ -67,6 +70,12 @@ AI_SwitchOrTryItem:
 	ld a, [hl]
 	cp STEEL
 	jp z, .SkipAbilities
+	jr DontSwitch
+
+.ShadowTag:
+	ld a, [wEnemyAbility]
+	cp SHADOW_TAG
+	jr z, .SkipAbilities
 
 DontSwitch:
 	jp AI_TryItem

@@ -60,11 +60,11 @@ SECTION "Map Scripts 4", ROMX
 INCLUDE "maps/RadioTower5F.asm"
 INCLUDE "maps/OlivineLighthouse5F.asm"
 INCLUDE "maps/GoldenrodPokecenter1F.asm"
-INCLUDE "maps/PokecomCenterAdminOfficeMobile.asm"
 INCLUDE "maps/IlexForestAzaleaGate.asm"
 INCLUDE "maps/Route34IlexForestGate.asm"
 INCLUDE "maps/DayCare.asm"
 INCLUDE "maps/BillsFamilysHouse.asm"
+INCLUDE "maps/SelphysHouse.asm"
 
 
 SECTION "Map Scripts 5", ROMX
@@ -584,3 +584,4 @@ INCLUDE "maps/FiveIsleMeadow.asm"
 INCLUDE "maps/MemorialIsland.asm"
 INCLUDE "maps/WaterLabyrinth.asm"
 INCLUDE "maps/ResortGorgeous.asm"
+INCLUDE "maps/FiveIslandPokecenter.asm"
