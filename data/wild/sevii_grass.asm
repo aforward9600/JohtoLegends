@@ -152,4 +152,124 @@ SeviiGrassWildMons:
 	dbw 75, PERSIAN
 	dbw 75, PERSIAN
 
+	map_id ICEFALL_CAVE_ENTRANCE
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	; day
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	; nite
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+
+	map_id ICEFALL_CAVE_1F
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	; day
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	; nite
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+
+	map_id ICEFALL_CAVE_2F
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	; day
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	; nite
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+
+	map_id ICEFALL_CAVE_BACK_CAVE
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	; day
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	; nite
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+	dbw 75, PERSIAN
+
 	db -1 ; end

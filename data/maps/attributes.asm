@@ -760,6 +760,7 @@ ENDM
 	map_attributes TwoIslandPokecenter, TWO_ISLAND_POKECENTER, $00, 0
 	map_attributes ThreeIslandPokecenter, THREE_ISLAND_POKECENTER, $00, 0
 	map_attributes FourIslandPokecenter, FOUR_ISLAND_POKECENTER, $00, 0
+	map_attributes FiveIslandPort, FIVE_ISLAND_PORT, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1
@@ -782,3 +783,21 @@ ENDM
 
 	map_attributes BondBridge, BOND_BRIDGE, $43, EAST
 	connection east, ThreeIsland, THREE_ISLAND, 0
+
+	map_attributes FiveIsland, FIVE_ISLAND, $43, NORTH | EAST
+	connection north, WaterLabyrinth, WATER_LABYRINTH, -22
+	connection east, FiveIsleMeadow, FIVE_ISLE_MEADOW, 0
+
+	map_attributes WaterLabyrinth, WATER_LABYRINTH, $43, NORTH | SOUTH
+	connection north, ResortGorgeous, RESORT_GORGEOUS, 21
+	connection south, FiveIsland, FIVE_ISLAND, 22
+
+	map_attributes FiveIsleMeadow, FIVE_ISLE_MEADOW, $43, WEST | EAST
+	connection west, FiveIsland, FIVE_ISLAND, 0
+	connection east, MemorialIsland, MEMORIAL_ISLAND, 8
+
+	map_attributes MemorialIsland, MEMORIAL_ISLAND, $43, WEST
+	connection west, FiveIsleMeadow, FIVE_ISLE_MEADOW, -8
+
+	map_attributes ResortGorgeous, RESORT_GORGEOUS, $43, SOUTH
+	connection south, WaterLabyrinth, WATER_LABYRINTH, -21

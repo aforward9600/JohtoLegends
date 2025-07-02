@@ -542,6 +542,7 @@ ENDM
 	map_const SILVER_CAVE_MEW_ROOM,                         6,  5 ; 4
 
 	newgroup
+
 	map_const ONE_ISLAND_PORT,                              5,  9 ; 1
 	map_const ONE_ISLAND,                                  12, 11 ; 2
 	map_const TREASURE_BEACH,                               9, 13 ; 3
@@ -564,3 +565,12 @@ ENDM
 	map_const ICEFALL_CAVE_2F,                              9, 11 ; 18
 	map_const ICEFALL_CAVE_BACK_CAVE,                      10, 11 ; 19
 	map_const FOUR_ISLAND_POKECENTER,                       4,  5 ; 
+
+	newgroup
+
+	map_const FIVE_ISLAND_PORT,                             5,  9 ; 1
+	map_const FIVE_ISLAND,                                 10, 12 ; 2
+	map_const WATER_LABYRINTH,                             26,  8 ; 3
+	map_const RESORT_GORGEOUS,                             25, 10 ; 4
+	map_const FIVE_ISLE_MEADOW,                             9, 18 ; 5
+	map_const MEMORIAL_ISLAND,                             13, 20 ; 6

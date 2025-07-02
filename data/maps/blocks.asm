@@ -1037,6 +1037,7 @@ OneIslandPort_Blocks:
 TwoIslandPort_Blocks:
 ThreeIslandPort_Blocks:
 FourIslandPort_Blocks:
+FiveIslandPort_Blocks:
 	INCBIN "maps/SeviiPort.ablk"
 
 OneIsland_Blocks:
@@ -1080,3 +1081,18 @@ IcefallCave2F_Blocks:
 
 IcefallCaveBackCave_Blocks:
 	INCBIN "maps/IcefallCaveBackCave.ablk"
+
+FiveIsland_Blocks:
+	INCBIN "maps/FiveIsland.ablk"
+
+FiveIsleMeadow_Blocks:
+	INCBIN "maps/FiveIsleMeadow.ablk"
+
+MemorialIsland_Blocks:
+	INCBIN "maps/MemorialIsland.ablk"
+
+WaterLabyrinth_Blocks:
+	INCBIN "maps/WaterLabyrinth.ablk"
+
+ResortGorgeous_Blocks:
+	INCBIN "maps/ResortGorgeous.ablk"

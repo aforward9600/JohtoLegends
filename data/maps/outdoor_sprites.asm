@@ -32,6 +32,7 @@ OutdoorSprites:
 	dw Route47GroupSprites
 	dw BellchimePathSprites
 	dw SeviiIslandsSprites
+	dw SeviiIslands2Sprites
 
 ; Route1 and ViridianCity are connected
 ; Route2, and PewterCity are connected
@@ -427,7 +428,7 @@ BellchimePathSprites:
 	db 0 ; end
 
 SeviiIslandsSprites:
-; Route47, Route48, WildAreaOutside, WildArea
+SeviiIslands2Sprites:
 	db SPRITE_ENOKI, WALKING_SPRITE
 	db SPRITE_GRAMPS, WALKING_SPRITE
 	db SPRITE_YOUNGSTER, WALKING_SPRITE

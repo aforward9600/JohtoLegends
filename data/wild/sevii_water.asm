@@ -37,4 +37,25 @@ SeviiWaterWildMons:
 	dbw 70, GOLDUCK
 	dbw 70, GYARADOS
 
+	map_id FOUR_ISLAND
+	db 4 percent ; encounter rate
+	dbw 70, POLIWHIRL
+	dbw 70, SEAKING
+	dbw 70, GOLDUCK
+	dbw 70, GYARADOS
+
+	map_id ICEFALL_CAVE_ENTRANCE
+	db 4 percent ; encounter rate
+	dbw 70, POLIWHIRL
+	dbw 70, SEAKING
+	dbw 70, GOLDUCK
+	dbw 70, GYARADOS
+
+	map_id ICEFALL_CAVE_BACK_CAVE
+	db 4 percent ; encounter rate
+	dbw 70, POLIWHIRL
+	dbw 70, SEAKING
+	dbw 70, GOLDUCK
+	dbw 70, GYARADOS
+
 	db -1 ; end
