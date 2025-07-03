@@ -762,6 +762,17 @@ ENDM
 	map_attributes FiveIslandPort, FIVE_ISLAND_PORT, $00, 0
 	map_attributes FiveIslandPokecenter, FIVE_ISLAND_POKECENTER, $00, 0
 	map_attributes SelphysHouse, SELPHYS_HOUSE, $00, 0
+	map_attributes LostCaveEntrance, LOST_CAVE_ENTRANCE, $00, 0
+	map_attributes LostCaveRoom1, LOST_CAVE_ROOM_1, $00, 0
+	map_attributes LostCaveRoom2, LOST_CAVE_ROOM_2, $00, 0
+	map_attributes LostCaveRoom3, LOST_CAVE_ROOM_3, $00, 0
+	map_attributes LostCaveRoom4, LOST_CAVE_ROOM_4, $00, 0
+	map_attributes LostCaveRoom5, LOST_CAVE_ROOM_5, $00, 0
+	map_attributes LostCaveRoom6, LOST_CAVE_ROOM_6, $00, 0
+	map_attributes LostCaveRoom7, LOST_CAVE_ROOM_7, $00, 0
+	map_attributes LostCaveRoom8, LOST_CAVE_ROOM_8, $00, 0
+	map_attributes LostCaveRoom9, LOST_CAVE_ROOM_9, $00, 0
+	map_attributes LostCaveRegieleki, LOST_CAVE_REGIELEKI, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1

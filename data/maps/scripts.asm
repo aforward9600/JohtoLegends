@@ -65,6 +65,17 @@ INCLUDE "maps/Route34IlexForestGate.asm"
 INCLUDE "maps/DayCare.asm"
 INCLUDE "maps/BillsFamilysHouse.asm"
 INCLUDE "maps/SelphysHouse.asm"
+INCLUDE "maps/LostCaveEntrance.asm"
+INCLUDE "maps/LostCaveRoom1.asm"
+INCLUDE "maps/LostCaveRoom2.asm"
+INCLUDE "maps/LostCaveRoom3.asm"
+INCLUDE "maps/LostCaveRoom4.asm"
+INCLUDE "maps/LostCaveRoom5.asm"
+INCLUDE "maps/LostCaveRoom6.asm"
+INCLUDE "maps/LostCaveRoom7.asm"
+INCLUDE "maps/LostCaveRoom8.asm"
+INCLUDE "maps/LostCaveRoom9.asm"
+INCLUDE "maps/LostCaveRegieleki.asm"
 
 
 SECTION "Map Scripts 5", ROMX

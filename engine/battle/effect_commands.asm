@@ -5442,6 +5442,8 @@ BattleCommand_SwitchHit:
 	jp z, .fail_hit
 	cp BATTLETYPE_LUGIA
 	jp z, .fail_hit
+	cp BATTLETYPE_REGI
+	jp z, .fail_hit
 	ldh a, [hBattleTurn]
 	and a
 	jp nz, .force_player_switch_hit

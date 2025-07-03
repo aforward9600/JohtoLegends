@@ -1002,6 +1002,18 @@ StaticPokemonRefresh:
 	iftrue .refreshhooh
 	checkevent EVENT_BEAT_POLITOED
 	iftrue .refreshpolitoed
+	checkevent EVENT_BEAT_REGIROCK
+	iftrue .refreshregirock
+	checkevent EVENT_BEAT_REGICE
+	iftrue .refreshregice
+	checkevent EVENT_BEAT_REGISTEEL
+	iftrue .refreshregisteel
+	checkevent EVENT_BEAT_REGIDRAGO
+	iftrue .refreshregidrago
+	checkevent EVENT_BEAT_REGIELEKI
+	iftrue .refreshregieleki
+	checkevent EVENT_BEAT_REGIGIGAS
+	iftrue .refreshregigigas
 	return
 
 .refreshfarfetchd:
@@ -1065,6 +1077,36 @@ StaticPokemonRefresh:
 .refreshpolitoed:
 	clearevent EVENT_ECRUTEAK_CITY_POLITOED
 	clearevent EVENT_BEAT_POLITOED
+	sjump StaticPokemonRefresh
+
+.refreshregirock
+	clearevent EVENT_BEAT_REGIROCK
+	clearevent EVENT_ALTERING_CAVE_REGIROCK
+	sjump StaticPokemonRefresh
+
+.refreshregice
+	clearevent EVENT_BEAT_REGICE
+	clearevent EVENT_ICEFALL_CAVE_REGICE
+	sjump StaticPokemonRefresh
+
+.refreshregisteel
+	clearevent EVENT_BEAT_REGISTEEL
+	clearevent EVENT_DOTTED_HOLE_REGISTEEL
+	sjump StaticPokemonRefresh
+
+.refreshregidrago
+	clearevent EVENT_BEAT_REGIDRAGO
+	clearevent EVENT_MT_EMBER_REGIDRAGO
+	sjump StaticPokemonRefresh
+
+.refreshregieleki
+	clearevent EVENT_BEAT_REGIELEKI
+	clearevent EVENT_LOST_CAVE_REGIELEKI
+	sjump StaticPokemonRefresh
+
+.refreshregigigas
+	clearevent EVENT_BEAT_REGIGIGAS
+	clearevent EVENT_ONAGAN_TEMPLE_REGIGIGAS
 	sjump StaticPokemonRefresh
 
 TelevisionScript:

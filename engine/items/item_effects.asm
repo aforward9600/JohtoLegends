@@ -565,6 +565,8 @@ PokeBallEffect:
 	jr z, .is_celebi
 	cp BATTLETYPE_FORCEITEM
 	jr z, .is_celebi
+	cp BATTLETYPE_REGI
+	jr z, .is_celebi
 	cp BATTLETYPE_CELEBI
 	jr nz, .not_celebi
 .is_celebi

@@ -166,7 +166,7 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_UNOWN ; 99
 	const SPRITE_SKARMINI ; 9a
 	const SPRITE_GROWLITHE ; 9b
-	const SPRITE_WEEDLE ; 9c
+	const SPRITE_REGIROCK ; 9c
 	const SPRITE_CYNDAQUIL ; 9d
 	const SPRITE_KOTORA ; 9e
 	const SPRITE_GENGAR ; 9f
@@ -184,10 +184,10 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_STARMIE ; ab
 	const SPRITE_BULBASAUR ; ac
 	const SPRITE_JIGGLYPUFF ; ad
-	const SPRITE_GRIMER ; ae
+	const SPRITE_REGICE ; ae
 	const SPRITE_EKANS ; af
-	const SPRITE_PARAS ; b0
-	const SPRITE_TENTACOOL ; b1
+	const SPRITE_REGISTEEL ; b0
+	const SPRITE_REGIDRAGO ; b1
 	const SPRITE_TAUROS ; b2
 	const SPRITE_MACHOP ; b3
 	const SPRITE_VOLTORB ; b4
@@ -226,7 +226,7 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_SPEAROW ; d3
 	const SPRITE_POLITOED ; d4
 	const SPRITE_IGGLYBUFF ; d5
-	const SPRITE_QUAGSIRE ; d6
+	const SPRITE_REGIGIGAS ; d6
 	const SPRITE_ABRA ; d7
 	const SPRITE_MISSINGNO
 	const SPRITE_MEWTWO
@@ -234,9 +234,10 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_MAROWAK
 	const SPRITE_MEW
 	const SPRITE_NIDORAN_F
+	const SPRITE_REGIELEKI
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
-	const_def $e6
+	const_def $e7
 	const SPRITE_DAY_CARE_MON_1 ; e1
 	const SPRITE_DAY_CARE_MON_2 ; e2
 

@@ -575,3 +575,14 @@ ENDM
 	map_const MEMORIAL_ISLAND,                             13, 20 ; 6
 	map_const FIVE_ISLAND_POKECENTER,                       5,  4 ; 7
 	map_const SELPHYS_HOUSE,                                4,  4 ; 8
+	map_const LOST_CAVE_ENTRANCE,                           5,  5 ; 9
+	map_const LOST_CAVE_ROOM_1,                             5,  5 ; 10
+	map_const LOST_CAVE_ROOM_2,                             5,  5 ; 11
+	map_const LOST_CAVE_ROOM_3,                             5,  5 ; 12
+	map_const LOST_CAVE_ROOM_4,                             5,  5 ; 13
+	map_const LOST_CAVE_ROOM_5,                             5,  5 ; 14
+	map_const LOST_CAVE_ROOM_6,                             5,  5 ; 15
+	map_const LOST_CAVE_ROOM_7,                             5,  5 ; 16
+	map_const LOST_CAVE_ROOM_8,                             5,  5 ; 17
+	map_const LOST_CAVE_ROOM_9,                             5,  5 ; 18
+	map_const LOST_CAVE_REGIELEKI,                          5,  5 ; 19

@@ -1095,3 +1095,28 @@ WaterLabyrinth_Blocks:
 
 ResortGorgeous_Blocks:
 	INCBIN "maps/ResortGorgeous.ablk"
+
+LostCaveEntrance_Blocks:
+	INCBIN "maps/LostCaveEntrance.ablk"
+
+LostCaveRoom1_Blocks:
+	INCBIN "maps/LostCaveRoom1.ablk"
+
+LostCaveRegieleki_Blocks:
+	INCBIN "maps/LostCaveRegieleki.ablk"
+
+LostCaveRoom2_Blocks:
+LostCaveRoom9_Blocks:
+	INCBIN "maps/LostCaveRoom12.ablk"
+
+LostCaveRoom5_Blocks:
+LostCaveRoom8_Blocks:
+	INCBIN "maps/LostCaveRoom3.ablk"
+
+LostCaveRoom3_Blocks:
+LostCaveRoom4_Blocks:
+LostCaveRoom7_Blocks:
+	INCBIN "maps/LostCaveRoom6.ablk"
+
+LostCaveRoom6_Blocks:
+	INCBIN "maps/LostCaveRoom9.ablk"

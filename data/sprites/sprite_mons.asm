@@ -3,7 +3,7 @@ SpriteMons:
 	dw UNOWN
 	dw SKARMINI
 	dw GROWLITHE
-	dw WEEDLE
+	dw REGIROCK
 	dw CYNDAQUIL
 	dw KOTORA
 	dw GENGAR
@@ -21,10 +21,10 @@ SpriteMons:
 	dw STARMIE
 	dw BULBASAUR
 	dw JIGGLYPUFF
-	dw GRIMER
+	dw REGICE
 	dw EKANS
-	dw PARAS
-	dw TENTACOOL
+	dw REGISTEEL
+	dw REGIDRAGO
 	dw TAUROS
 	dw MACHOP
 	dw VOLTORB
@@ -63,7 +63,7 @@ SpriteMons:
 	dw SPEAROW
 	dw POLITOED
 	dw IGGLYBUFF
-	dw QUAGSIRE
+	dw REGIGIGAS
 	dw ABRA
 	dw MISSINGNO
 	dw MEWTWO
@@ -71,3 +71,4 @@ SpriteMons:
 	dw MAROWAK
 	dw MEW
 	dw NIDORAN_F
+	dw REGIELEKI

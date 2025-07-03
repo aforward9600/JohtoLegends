@@ -16,6 +16,8 @@ BattleCommand_Teleport:
 	jr z, .failed
 	cp BATTLETYPE_LUGIA
 	jr z, .failed
+	cp BATTLETYPE_REGI
+	jr z, .failed
 
 	call CheckNeutralGas
 	jr z, .SkipRunAway
