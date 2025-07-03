@@ -275,6 +275,7 @@ TwoIslandPokecenter_Blocks:
 ThreeIslandPokecenter_Blocks:
 FourIslandPokecenter_Blocks:
 FiveIslandPokecenter_Blocks:
+SixIslandPokecenter_Blocks:
 OlivinePokecenter1F_Blocks:
 MahoganyPokecenter1F_Blocks:
 EcruteakPokecenter1F_Blocks:
@@ -1037,6 +1038,7 @@ TwoIslandPort_Blocks:
 ThreeIslandPort_Blocks:
 FourIslandPort_Blocks:
 FiveIslandPort_Blocks:
+SixIslandPort_Blocks:
 	INCBIN "maps/SeviiPort.ablk"
 
 OneIsland_Blocks:
@@ -1120,3 +1122,18 @@ LostCaveRoom7_Blocks:
 
 LostCaveRoom6_Blocks:
 	INCBIN "maps/LostCaveRoom9.ablk"
+
+SixIsland_Blocks:
+	INCBIN "maps/SixIsland.ablk"
+
+WaterPath_Blocks:
+	INCBIN "maps/WaterPath.ablk"
+
+GreenPath_Blocks:
+	INCBIN "maps/GreenPath.ablk"
+
+OutcastIsland_Blocks:
+	INCBIN "maps/OutcastIsland.ablk"
+
+RuinValley_Blocks:
+	INCBIN "maps/RuinValley.ablk"

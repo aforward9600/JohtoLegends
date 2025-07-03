@@ -586,3 +586,10 @@ ENDM
 	map_const LOST_CAVE_ROOM_8,                             5,  5 ; 17
 	map_const LOST_CAVE_ROOM_9,                             5,  5 ; 18
 	map_const LOST_CAVE_REGIELEKI,                          5,  5 ; 19
+	map_const SIX_ISLAND_PORT,                              5,  9 ; 20
+	map_const SIX_ISLAND,                                  11, 13 ; 21
+	map_const WATER_PATH,                                  12, 24 ; 22
+	map_const GREEN_PATH,                                  42, 10 ; 23
+	map_const OUTCAST_ISLAND,                              10, 20 ; 24
+	map_const RUIN_VALLEY,                                 28, 17 ; 25
+	map_const SIX_ISLAND_POKECENTER,                        5,  4 ; 26

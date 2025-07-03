@@ -773,6 +773,8 @@ ENDM
 	map_attributes LostCaveRoom8, LOST_CAVE_ROOM_8, $00, 0
 	map_attributes LostCaveRoom9, LOST_CAVE_ROOM_9, $00, 0
 	map_attributes LostCaveRegieleki, LOST_CAVE_REGIELEKI, $00, 0
+	map_attributes SixIslandPort, SIX_ISLAND_PORT, $00, 0
+	map_attributes SixIslandPokecenter, SIX_ISLAND_POKECENTER, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1
@@ -813,3 +815,21 @@ ENDM
 
 	map_attributes ResortGorgeous, RESORT_GORGEOUS, $43, SOUTH
 	connection south, WaterLabyrinth, WATER_LABYRINTH, -21
+
+	map_attributes SixIsland, SIX_ISLAND, $43, EAST
+	connection east, WaterPath, WATER_PATH, -7
+
+	map_attributes WaterPath, WATER_PATH, $43, NORTH | SOUTH | WEST
+	connection north, GreenPath, GREEN_PATH, -34
+	connection south, RuinValley, RUIN_VALLEY, -20
+	connection west, SixIsland, SIX_ISLAND, 7
+
+	map_attributes GreenPath, GREEN_PATH, $43, NORTH | SOUTH
+	connection north, OutcastIsland, OUTCAST_ISLAND, 0
+	connection south, WaterPath, WATER_PATH, 34
+
+	map_attributes OutcastIsland, OUTCAST_ISLAND, $43, SOUTH
+	connection south, GreenPath, GREEN_PATH, 0
+
+	map_attributes RuinValley, RUIN_VALLEY, $43, NORTH
+	connection north, WaterPath, WATER_PATH, 20

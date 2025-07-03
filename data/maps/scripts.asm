@@ -93,6 +93,13 @@ INCLUDE "maps/Route35GoldenrodGate.asm"
 INCLUDE "maps/Route35NationalParkGate.asm"
 INCLUDE "maps/Route36RuinsOfAlphGate.asm"
 INCLUDE "maps/Route36NationalParkGate.asm"
+INCLUDE "maps/SixIsland.asm"
+INCLUDE "maps/SixIslandPort.asm"
+INCLUDE "maps/SixIslandPokecenter.asm"
+INCLUDE "maps/WaterPath.asm"
+INCLUDE "maps/GreenPath.asm"
+INCLUDE "maps/OutcastIsland.asm"
+INCLUDE "maps/RuinValley.asm"
 
 
 SECTION "Map Scripts 6", ROMX
