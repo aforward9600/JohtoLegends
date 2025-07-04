@@ -546,13 +546,15 @@ ENDM
 	map_const ONE_ISLAND,                                  12, 11 ; 2
 	map_const TREASURE_BEACH,                               9, 13 ; 3
 	map_const KINDLE_ROAD,                                 14, 48 ; 4
-	map_const MT_EMBER,                                     8, 14 ; 5
-	map_const ONE_ISLAND_POKECENTER,                        5,  4 ; 6
-	map_const TWO_ISLAND_PORT,                              5,  9 ; 7
-	map_const TWO_ISLAND,                                  18, 10 ; 8
-	map_const CAPE_BRINK,                                  10, 10 ; 9
-	map_const TWO_ISLAND_POKECENTER,                        5,  4 ; 
-	map_const THREE_ISLAND_PORT,                            5,  9 ; 10
+	map_const MT_EMBER,                                     6, 11 ; 5
+	map_const REGIDRAGO_PUZZLE_CHAMBER,                     4,  4 ; 6
+	map_const REGIDRAGO_CHAMBER,                            5,  5 ; 7
+	map_const ONE_ISLAND_POKECENTER,                        5,  4 ; 7
+	map_const TWO_ISLAND_PORT,                              5,  9 ; 8
+	map_const TWO_ISLAND,                                  18, 10 ; 9
+	map_const CAPE_BRINK,                                  10, 10 ; 10
+	map_const TWO_ISLAND_POKECENTER,                        5,  4 ; 11
+	map_const THREE_ISLAND_PORT,                            5,  9 ; 12
 	map_const THREE_ISLAND,                                12, 27 ; 11
 	map_const BOND_BRIDGE,                                 40,  9 ; 12
 	map_const BERRY_FOREST,                                16, 19 ; 13

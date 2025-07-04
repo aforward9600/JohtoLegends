@@ -775,6 +775,8 @@ ENDM
 	map_attributes LostCaveRegieleki, LOST_CAVE_REGIELEKI, $00, 0
 	map_attributes SixIslandPort, SIX_ISLAND_PORT, $00, 0
 	map_attributes SixIslandPokecenter, SIX_ISLAND_POKECENTER, $00, 0
+	map_attributes RegidragoPuzzleChamber, REGIDRAGO_PUZZLE_CHAMBER, $00, 0
+	map_attributes RegidragoChamber, REGIDRAGO_CHAMBER, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1

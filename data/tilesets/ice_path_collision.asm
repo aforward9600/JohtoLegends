@@ -95,3 +95,4 @@
 	tilecoll PIT, WALL, WALL, WALL ; 5e
 	tilecoll WALL, WALL, WALL, WALL ; 5f
 	tilecoll WALL, WALL, WALL, WALL ; 60
+	tilecoll WALL, ICE, WALL, ICE ; 61

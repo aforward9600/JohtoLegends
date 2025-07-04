@@ -100,6 +100,8 @@ INCLUDE "maps/WaterPath.asm"
 INCLUDE "maps/GreenPath.asm"
 INCLUDE "maps/OutcastIsland.asm"
 INCLUDE "maps/RuinValley.asm"
+INCLUDE "maps/RegidragoPuzzleChamber.asm"
+INCLUDE "maps/RegidragoChamber.asm"
 
 
 SECTION "Map Scripts 6", ROMX

@@ -1137,3 +1137,9 @@ OutcastIsland_Blocks:
 
 RuinValley_Blocks:
 	INCBIN "maps/RuinValley.ablk"
+
+RegidragoPuzzleChamber_Blocks:
+	INCBIN "maps/RegiPuzzleChamber.ablk"
+
+RegidragoChamber_Blocks:
+	INCBIN "maps/RegidragoChamber.ablk"

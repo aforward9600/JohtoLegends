@@ -8,9 +8,10 @@ MtEmber_MapScripts:
 MtEmber_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
-	warp_event  6, 23, KINDLE_ROAD, 1
-	warp_event  7, 23, KINDLE_ROAD, 2
+	db 3 ; warp events
+	warp_event  4, 17, KINDLE_ROAD, 1
+	warp_event  5, 17, KINDLE_ROAD, 2
+	warp_event  5,  3, REGIDRAGO_PUZZLE_CHAMBER, 1
 
 	db 0 ; coord events
 
