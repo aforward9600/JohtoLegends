@@ -605,3 +605,12 @@ INCLUDE "maps/MemorialIsland.asm"
 INCLUDE "maps/WaterLabyrinth.asm"
 INCLUDE "maps/ResortGorgeous.asm"
 INCLUDE "maps/FiveIslandPokecenter.asm"
+
+SECTION "Map Scripts 33", ROMX
+
+INCLUDE "maps/DottedHoleEntrance.asm"
+INCLUDE "maps/DottedHoleB1F.asm"
+INCLUDE "maps/DottedHoleB2F.asm"
+INCLUDE "maps/DottedHoleB3F.asm"
+INCLUDE "maps/DottedHoleB4F.asm"
+INCLUDE "maps/RegisteelChamber.asm"

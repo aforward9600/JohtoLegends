@@ -138,6 +138,7 @@ Landmarks:
 	landmark  76,  82, OutcastIslandName
 	landmark  76,  76, AlteringCaveName
 	landmark 108, 124, RuinValleyName
+	landmark 108, 120, DottedHoleName
 	landmark  12, 100, SevenIslandName
 	landmark  20, 116, SevaultCanyonName
 	landmark  20, 140, TanobiRuinsName
@@ -284,3 +285,4 @@ SevaultCanyonName:   db "Sevault¯Canyon@"
 TanobiRuinsName:     db "Tanobi¯Ruins@"
 SacredPathName:      db "Sacred Path@"
 OnaganTempleName:    db "Onagan¯Temple@"
+DottedHoleName:      db "Dotted Hole@"

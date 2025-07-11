@@ -1143,3 +1143,15 @@ RegidragoPuzzleChamber_Blocks:
 
 RegidragoChamber_Blocks:
 	INCBIN "maps/RegidragoChamber.ablk"
+
+DottedHoleEntrance_Blocks:
+	INCBIN "maps/DottedHoleEntrance.ablk"
+
+DottedHoleB1F_Blocks:
+DottedHoleB2F_Blocks:
+DottedHoleB3F_Blocks:
+DottedHoleB4F_Blocks:
+	INCBIN "maps/DottedHoleFloor.ablk"
+
+RegisteelChamber_Blocks:
+	INCBIN "maps/DottedHoleRegisteel.ablk"

@@ -136,11 +136,12 @@ SEVII_LANDMARK EQU const_value
 	const OUTCAST_ISLAND    ; 82
 	const ALTERING_CAVE     ; 83
 	const RUIN_VALLEY       ; 84
-	const SEVEN_ISLAND      ; 85
-	const SEVAULT_CANYON    ; 86
-	const TANOBI_RUINS      ; 87
-	const SACRED_PATH       ; 88
-	const ONAGAN_TEMPLE     ; 89
+	const DOTTED_HOLE       ; 85
+	const SEVEN_ISLAND      ; 86
+	const SEVAULT_CANYON    ; 87
+	const TANOBI_RUINS      ; 88
+	const SACRED_PATH       ; 89
+	const ONAGAN_TEMPLE     ; 90
 
 ; used in CaughtData
 GIFT_LOCATION  EQU $fd

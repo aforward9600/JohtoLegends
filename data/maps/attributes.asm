@@ -777,6 +777,12 @@ ENDM
 	map_attributes SixIslandPokecenter, SIX_ISLAND_POKECENTER, $00, 0
 	map_attributes RegidragoPuzzleChamber, REGIDRAGO_PUZZLE_CHAMBER, $00, 0
 	map_attributes RegidragoChamber, REGIDRAGO_CHAMBER, $00, 0
+	map_attributes DottedHoleEntrance, DOTTED_HOLE_ENTRANCE, $00, 0
+	map_attributes DottedHoleB1F, DOTTED_HOLE_B1F, $00, 0
+	map_attributes DottedHoleB2F, DOTTED_HOLE_B1F, $00, 0
+	map_attributes DottedHoleB3F, DOTTED_HOLE_B1F, $00, 0
+	map_attributes DottedHoleB4F, DOTTED_HOLE_B1F, $00, 0
+	map_attributes RegisteelChamber, REGISTEEL_CHAMBER, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1

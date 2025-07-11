@@ -56,7 +56,7 @@ RegidragoOpenText:
 RegidragoWallText:
 	text "There are some"
 	line "dots here, as well"
-	cont "as a different"
+	cont "as a familiar"
 	cont "language."
 	done
 

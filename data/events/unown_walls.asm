@@ -47,15 +47,15 @@ UnownWalls:
 ; UNOWNWORDS_UNOWN
 	unownwall "U", "N", "O", "W", "N"
 ; UNOWNWORDS_LEFT
-	unownwall "L", "E", "F", "T", "-"
+	unownwall "L", "E", "F", "T"
 ; UNOWNWORDS_RIGHT
 	unownwall "R", "I", "G", "H", "T"
 ; UNOWNWORDS_UP
-	unownwall "U", "P", "-", "-", "-"
+	unownwall "U", "P"
 ; UNOWNWORDS_DOWN
-	unownwall "D", "O", "W", "N", "-"
+	unownwall "D", "O", "W", "N"
 ; UNOWNWORDS_REGIDRAGO
-	unownwall "F", "A", "N", "G", "-"
+	unownwall "F", "A", "N", "G"
 
 MenuHeaders_UnownWalls:
 ; UNOWNWORDS_ESCAPE
@@ -96,16 +96,16 @@ MenuHeaders_UnownWalls:
 	menu_coords 4, 4, 15, 9
 ; UNOWNWORDS_LEFT
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 4, 4, 15, 9
+	menu_coords 4, 4, 13, 9
 ; UNOWNWORDS_RIGHT
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 4, 4, 15, 9
 ; UNOWNWORDS_UP
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 4, 4, 15, 9
+	menu_coords 6, 4, 11, 9
 ; UNOWNWORDS_DOWN
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 4, 4, 15, 9
+	menu_coords 4, 4, 13, 9
 ; UNOWNWORDS_FANG
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 4, 4, 15, 9
+	menu_coords 4, 4, 13, 9

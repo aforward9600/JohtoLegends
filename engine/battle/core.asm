@@ -3512,6 +3512,8 @@ TryToRunAwayFromBattle:
 	jp z, .cant_escape
 	cp BATTLETYPE_LEGENDARY
 	jp z, .cant_escape
+	cp BATTLETYPE_REGI
+	jp z, .cant_escape
 
 	ld a, [wLinkMode]
 	and a
