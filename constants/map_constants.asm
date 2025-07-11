@@ -593,11 +593,14 @@ ENDM
 	map_const WATER_PATH,                                  12, 24 ; 22
 	map_const GREEN_PATH,                                  42, 10 ; 23
 	map_const OUTCAST_ISLAND,                              10, 20 ; 24
-	map_const RUIN_VALLEY,                                 28, 17 ; 25
-	map_const SIX_ISLAND_POKECENTER,                        5,  4 ; 26
-	map_const DOTTED_HOLE_ENTRANCE,                         7,  6 ; 27
-	map_const DOTTED_HOLE_B1F,                              5,  5 ; 28
-	map_const DOTTED_HOLE_B2F,                              5,  5 ; 29
-	map_const DOTTED_HOLE_B3F,                              5,  5 ; 30
-	map_const DOTTED_HOLE_B4F,                              5,  5 ; 31
-	map_const REGISTEEL_CHAMBER,                            7,  7 ; 32
+	map_const ALTERING_CAVE,                               15, 12 ; 25
+	map_const REGIROCK_PUZZLE_CHAMBER,                      4,  4 ; 26
+	map_const REGIROCK_CHAMBER,                             5,  5 ; 27
+	map_const RUIN_VALLEY,                                 28, 17 ; 28
+	map_const SIX_ISLAND_POKECENTER,                        5,  4 ; 29
+	map_const DOTTED_HOLE_ENTRANCE,                         7,  6 ; 30
+	map_const DOTTED_HOLE_B1F,                              5,  5 ; 31
+	map_const DOTTED_HOLE_B2F,                              5,  5 ; 32
+	map_const DOTTED_HOLE_B3F,                              5,  5 ; 33
+	map_const DOTTED_HOLE_B4F,                              5,  5 ; 34
+	map_const REGISTEEL_CHAMBER,                            7,  7 ; 35

@@ -783,6 +783,9 @@ ENDM
 	map_attributes DottedHoleB3F, DOTTED_HOLE_B1F, $00, 0
 	map_attributes DottedHoleB4F, DOTTED_HOLE_B1F, $00, 0
 	map_attributes RegisteelChamber, REGISTEEL_CHAMBER, $00, 0
+	map_attributes AlteringCave, ALTERING_CAVE, $00, 0
+	map_attributes RegirockPuzzleChamber, REGIROCK_PUZZLE_CHAMBER, $00, 0
+	map_attributes RegirockChamber, REGIROCK_CHAMBER, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1

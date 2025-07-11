@@ -1138,6 +1138,7 @@ OutcastIsland_Blocks:
 RuinValley_Blocks:
 	INCBIN "maps/RuinValley.ablk"
 
+RegirockPuzzleChamber_Blocks:
 RegidragoPuzzleChamber_Blocks:
 	INCBIN "maps/RegiPuzzleChamber.ablk"
 
@@ -1155,3 +1156,9 @@ DottedHoleB4F_Blocks:
 
 RegisteelChamber_Blocks:
 	INCBIN "maps/DottedHoleRegisteel.ablk"
+
+RegirockChamber_Blocks:
+	INCBIN "maps/RegirockChamber.ablk"
+
+AlteringCave_Blocks:
+	INCBIN "maps/AlteringCave.ablk"

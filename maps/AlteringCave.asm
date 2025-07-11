@@ -1,15 +1,16 @@
 	object_const_def ; object_event constants
 
-OutcastIsland_MapScripts:
+AlteringCave_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-OutcastIsland_MapEvents:
+AlteringCave_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
-	warp_event  6,  9, ALTERING_CAVE, 1
+	db 2 ; warp events
+	warp_event 13, 21, OUTCAST_ISLAND, 1
+	warp_event  5,  1, REGIROCK_PUZZLE_CHAMBER, 1
 
 	db 0 ; coord events
 
