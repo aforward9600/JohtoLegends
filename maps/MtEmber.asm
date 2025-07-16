@@ -11,7 +11,7 @@ MtEmber_MapEvents:
 	db 3 ; warp events
 	warp_event  4, 17, KINDLE_ROAD, 1
 	warp_event  5, 17, KINDLE_ROAD, 2
-	warp_event  5,  3, REGIDRAGO_PUZZLE_CHAMBER, 1
+	warp_event  5,  1, REGIDRAGO_PUZZLE_CHAMBER, 1
 
 	db 0 ; coord events
 

@@ -310,7 +310,7 @@ ENDM
 	map_const VERMILION_CITY,                              20, 18 ;  3
 	map_const VERMILION_FISHING_SPEECH_HOUSE,               4,  4 ;  4
 	map_const VERMILION_POKECENTER_1F,                      5,  4 ;  5
-	map_const POKEMON_FAN_CLUB,                             5,  4 ;  7
+	map_const POKEMON_FAN_CLUB,                             5,  5 ;  7
 	map_const VERMILION_MAGNET_TRAIN_SPEECH_HOUSE,          4,  4 ;  8
 	map_const VERMILION_MART,                               6,  4 ;  9
 	map_const VERMILION_DIGLETTS_CAVE_SPEECH_HOUSE,         4,  4 ; 10
@@ -604,3 +604,8 @@ ENDM
 	map_const DOTTED_HOLE_B3F,                              5,  5 ; 33
 	map_const DOTTED_HOLE_B4F,                              5,  5 ; 34
 	map_const REGISTEEL_CHAMBER,                            7,  7 ; 35
+	map_const SEVEN_ISLAND_PORT,                            5,  9 ; 36
+	map_const SEVEN_ISLAND,                                16, 21 ; 37
+	map_const SEVAULT_CANYON,                              17, 42 ; 38
+	map_const TANOBI_RUINS,                                47, 11 ; 39
+	map_const ONAGAN_TEMPLE_OUTSIDE,                       11, 13 ; 40

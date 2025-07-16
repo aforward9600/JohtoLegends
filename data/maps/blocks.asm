@@ -1039,6 +1039,7 @@ ThreeIslandPort_Blocks:
 FourIslandPort_Blocks:
 FiveIslandPort_Blocks:
 SixIslandPort_Blocks:
+SevenIslandPort_Blocks:
 	INCBIN "maps/SeviiPort.ablk"
 
 OneIsland_Blocks:
@@ -1162,3 +1163,15 @@ RegirockChamber_Blocks:
 
 AlteringCave_Blocks:
 	INCBIN "maps/AlteringCave.ablk"
+
+SevenIsland_Blocks:
+	INCBIN "maps/SevenIsland.ablk"
+
+SevaultCanyon_Blocks:
+	INCBIN "maps/SevaultCanyon.ablk"
+
+TanobiRuins_Blocks:
+	INCBIN "maps/TanobiRuins.ablk"
+
+OnaganTempleOutside_Blocks:
+	INCBIN "maps/OnaganTempleOutside.ablk"

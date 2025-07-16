@@ -786,6 +786,7 @@ ENDM
 	map_attributes AlteringCave, ALTERING_CAVE, $00, 0
 	map_attributes RegirockPuzzleChamber, REGIROCK_PUZZLE_CHAMBER, $00, 0
 	map_attributes RegirockChamber, REGIROCK_CHAMBER, $00, 0
+	map_attributes SevenIslandPort, SEVEN_ISLAND_PORT, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1
@@ -844,3 +845,17 @@ ENDM
 
 	map_attributes RuinValley, RUIN_VALLEY, $43, NORTH
 	connection north, WaterPath, WATER_PATH, 20
+
+	map_attributes SevenIsland, SEVEN_ISLAND, $43, NORTH | SOUTH
+	connection north, OnaganTempleOutside, ONAGAN_TEMPLE_OUTSIDE, 1
+	connection south, SevaultCanyon, SEVAULT_CANYON, 5
+
+	map_attributes SevaultCanyon, SEVAULT_CANYON, $43, NORTH | SOUTH
+	connection north, SevenIsland, SEVEN_ISLAND, -5
+	connection south, TanobiRuins, TANOBI_RUINS, -19
+
+	map_attributes TanobiRuins, TANOBI_RUINS, $43, NORTH
+	connection north, SevaultCanyon, SEVAULT_CANYON, 19
+
+	map_attributes OnaganTempleOutside, ONAGAN_TEMPLE_OUTSIDE, $43, SOUTH
+	connection south, SevenIsland, SEVEN_ISLAND, -1
