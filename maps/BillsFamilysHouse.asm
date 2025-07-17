@@ -49,10 +49,7 @@ BillsBrotherHouseScript:
 	end
 
 BillsHouseBookshelf1:
-	jumpstd picturebookshelf
-
-BillsHouseBookshelf2:
-	jumpstd magazinebookshelf
+	jumpstd genericsink
 
 GoldenrodBillsTelevision:
 	jumpstd televisionscript
@@ -217,18 +214,18 @@ BillsFamilysHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, GOLDENROD_CITY, 4
-	warp_event  3,  7, GOLDENROD_CITY, 4
+	warp_event  4,  7, GOLDENROD_CITY, 4
+	warp_event  5,  7, GOLDENROD_CITY, 4
 
 	db 0 ; coord events
 
 	db 4 ; bg events
-	bg_event  0,  1, BGEVENT_READ, BillsHouseBookshelf2
+	bg_event  0,  1, BGEVENT_READ, BillsHouseBookshelf1
 	bg_event  1,  1, BGEVENT_READ, BillsHouseBookshelf1
-	bg_event  2,  1, BGEVENT_READ, GoldenrodBillsTelevision
-	bg_event  7,  1, BGEVENT_READ, BillsFamilyComputer
+	bg_event  4,  1, BGEVENT_READ, GoldenrodBillsTelevision
+	bg_event  9,  1, BGEVENT_READ, BillsFamilyComputer
 
 	db 3 ; object events
-	object_event  2,  3, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillScript, -1
-	object_event  5,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillsDadScript, -1
-	object_event  5,  4, SPRITE_KID, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BillsBrotherHouseScript, -1
+	object_event  3,  3, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillScript, -1
+	object_event  6,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillsDadScript, -1
+	object_event  6,  4, SPRITE_KID, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BillsBrotherHouseScript, -1

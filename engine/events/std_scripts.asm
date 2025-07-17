@@ -60,6 +60,7 @@ StdScripts::
 	dba SwarmScript
 	dba GetDecoEvent
 	dba GymStatue5Script
+	dba GenericSinkScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -179,6 +180,9 @@ PokecenterNurseScript:
 
 DifficultBookshelfScript:
 	farjumptext DifficultBookshelfText
+
+GenericSinkScript:
+	farjumptext GenericSinkText
 
 PictureBookshelfScript:
 	farjumptext PictureBookshelfText

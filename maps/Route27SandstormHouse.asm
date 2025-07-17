@@ -35,7 +35,7 @@ SandstormHouseWoman:
 	end
 
 SandstormHouseBookshelf:
-	jumpstd magazinebookshelf
+	jumpstd genericsink
 
 SandstormHouseWomanText1:
 	text "Where are you off"
@@ -93,8 +93,8 @@ Route27SandstormHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, ROUTE_27, 1
-	warp_event  3,  7, ROUTE_27, 1
+	warp_event  4,  7, ROUTE_27, 1
+	warp_event  5,  7, ROUTE_27, 1
 
 	db 0 ; coord events
 
@@ -103,4 +103,4 @@ Route27SandstormHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, SandstormHouseBookshelf
 
 	db 1 ; object events
-	object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandstormHouseWoman, -1
+	object_event  3,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandstormHouseWoman, -1

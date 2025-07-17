@@ -173,7 +173,7 @@ CianwoodLugiaSpeechHouseTwinScript:
 	jumptextfaceplayer CianwoodLugiaSpeechHouseTwinText
 
 CianwoodLugiaSpeechHouseBookshelf:
-	jumpstd picturebookshelf
+	jumpstd genericsink
 
 YouGotAnEeveeText:
 	text "Oh, I see you have"
@@ -315,17 +315,17 @@ CianwoodLugiaSpeechHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, CIANWOOD_CITY, 6
-	warp_event  3,  7, CIANWOOD_CITY, 6
+	warp_event  4,  7, CIANWOOD_CITY, 6
+	warp_event  5,  7, CIANWOOD_CITY, 6
 
 	db 0 ; coord events
 
 	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, CianwoodLugiaSpeechHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, CianwoodLugiaSpeechHouseBookshelf
-	bg_event  2,  1, BGEVENT_READ, CianwoodTelevision
+	bg_event  4,  1, BGEVENT_READ, CianwoodTelevision
 
 	db 3 ; object events
-	object_event  2,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseTeacherScript, -1
-	object_event  6,  5, SPRITE_TWIN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseLassScript, -1
+	object_event  3,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseTeacherScript, -1
+	object_event  7,  5, SPRITE_TWIN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseLassScript, -1
 	object_event  0,  2, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseTwinScript, -1

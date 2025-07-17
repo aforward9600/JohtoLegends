@@ -82,8 +82,8 @@ SafariZoneWardensHome_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, FUCHSIA_CITY, 5
-	warp_event  3,  7, FUCHSIA_CITY, 5
+	warp_event  2,  9, FUCHSIA_CITY, 5
+	warp_event  3,  9, FUCHSIA_CITY, 5
 
 	db 0 ; coord events
 
@@ -94,4 +94,4 @@ SafariZoneWardensHome_MapEvents:
 	bg_event  9,  0, BGEVENT_READ, SafariZonePhoto
 
 	db 1 ; object events
-	object_event  2,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, WardensGranddaughter, -1
+	object_event  2,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, WardensGranddaughter, -1

@@ -14,7 +14,7 @@ PlayersNeighborScript:
 	jumptextfaceplayer PlayersNeighborText
 
 PlayersNeighborsHouseBookshelfScript:
-	jumpstd magazinebookshelf
+	jumpstd genericsink
 
 NewBarkTVScript:
 	jumpstd televisionscript
@@ -53,8 +53,8 @@ PlayersNeighborsHouse_MapEvents:
 	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, PlayersNeighborsHouseBookshelfScript
 	bg_event  1,  1, BGEVENT_READ, PlayersNeighborsHouseBookshelfScript
-	bg_event  2,  1, BGEVENT_READ, NewBarkTVScript
+	bg_event  4,  1, BGEVENT_READ, NewBarkTVScript
 
 	db 2 ; object events
-	object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborScript, -1
-	object_event  5,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborMScript, -1
+	object_event  3,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborScript, -1
+	object_event  6,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborMScript, -1

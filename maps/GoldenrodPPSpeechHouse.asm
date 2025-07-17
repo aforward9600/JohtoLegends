@@ -36,10 +36,7 @@ GoldenrodPPSpeechHouseGrampsScript:
 	end
 
 GoldenrodPPSpeechHouseBookshelf2:
-	jumpstd difficultbookshelf
-
-GoldenrodPPSpeechHouseBookshelf1:
-	jumpstd magazinebookshelf
+	jumpstd genericsink
 
 GoldenrodPPSpeechHouseRadio:
 	jumpstd televisionscript
@@ -95,10 +92,10 @@ GoldenrodPPSpeechHouse_MapEvents:
 	db 0 ; coord events
 
 	db 3 ; bg events
-	bg_event  0,  1, BGEVENT_READ, GoldenrodPPSpeechHouseBookshelf1
+	bg_event  0,  1, BGEVENT_READ, GoldenrodPPSpeechHouseBookshelf2
 	bg_event  1,  1, BGEVENT_READ, GoldenrodPPSpeechHouseBookshelf2
-	bg_event  7,  1, BGEVENT_READ, GoldenrodPPSpeechHouseRadio
+	bg_event  4,  1, BGEVENT_READ, GoldenrodPPSpeechHouseRadio
 
 	db 2 ; object events
-	object_event  2,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodPPSpeechHouseYoungsterScript, -1
-	object_event  5,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPPSpeechHouseGrampsScript, -1
+	object_event  3,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodPPSpeechHouseYoungsterScript, -1
+	object_event  6,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPPSpeechHouseGrampsScript, -1

@@ -183,13 +183,16 @@ DayCareBookshelf:
 
 DayCareRivalMovement1:
 	step RIGHT
+	step RIGHT
 	step_end
 
 DayCareRivalMovement2:
 	step LEFT
+	step LEFT
 	step_end
 
 DayCarePlayerMovement1:
+	step LEFT
 	step LEFT
 	step LEFT
 	step_end
@@ -197,7 +200,9 @@ DayCarePlayerMovement1:
 DayCarePlayerMovement2:
 	step DOWN
 	step LEFT
+	step LEFT
 	step_end
+
 
 Text_GrampsLookingForYou:
 	text "Gramps was looking"
@@ -471,8 +476,8 @@ DayCare_MapEvents:
 	db 4 ; warp events
 	warp_event  0,  5, ROUTE_34, 3
 	warp_event  0,  6, ROUTE_34, 4
-	warp_event  2,  7, ROUTE_34, 5
-	warp_event  3,  7, ROUTE_34, 5
+	warp_event  4,  7, ROUTE_34, 5
+	warp_event  5,  7, ROUTE_34, 5
 
 	db 0 ; coord events
 
@@ -481,7 +486,7 @@ DayCare_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, DayCareBookshelf
 
 	db 4 ; object events
-	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Inside, EVENT_DAY_CARE_MAN_IN_DAY_CARE
-	object_event  5,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DayCareLadyScript, -1
-	object_event  2,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareMrPokemon, EVENT_DAY_CARE_MR_POKEMON
+	object_event  3,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Inside, EVENT_DAY_CARE_MAN_IN_DAY_CARE
+	object_event  6,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DayCareLadyScript, -1
+	object_event  3,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareMrPokemon, EVENT_DAY_CARE_MR_POKEMON
 	object_event  0,  5, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DAY_CARE_RIVAL

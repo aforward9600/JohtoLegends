@@ -15,7 +15,7 @@ Route30BerryHousePokefanMScript:
 	end
 
 Route30BerryHouseBookshelf:
-	jumpstd magazinebookshelf
+	jumpstd genericsink
 
 Route30BerrySpeechHouseCheckTreesText:
 	text "Mr. #mon has"
@@ -32,8 +32,8 @@ Route30BerryHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, ROUTE_30, 1
-	warp_event  3,  7, ROUTE_30, 1
+	warp_event  4,  7, ROUTE_30, 1
+	warp_event  5,  7, ROUTE_30, 1
 
 	db 0 ; coord events
 
@@ -42,4 +42,4 @@ Route30BerryHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, Route30BerryHouseBookshelf
 
 	db 1 ; object events
-	object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route30BerryHousePokefanMScript, -1
+	object_event  3,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route30BerryHousePokefanMScript, -1

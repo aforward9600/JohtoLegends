@@ -71,16 +71,16 @@ ManiasHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, CIANWOOD_CITY, 1
-	warp_event  3,  7, CIANWOOD_CITY, 1
+	warp_event  4,  7, CIANWOOD_CITY, 1
+	warp_event  5,  7, CIANWOOD_CITY, 1
 
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event  2,  1, BGEVENT_READ, CianwoodTelevision
+	bg_event  4,  1, BGEVENT_READ, CianwoodTelevision
 
 	db 4 ; object events
-	object_event  2,  4, SPRITE_KID, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ManiaScript, -1
-	object_event  5,  6, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ManiaMotherScript, -1
+	object_event  3,  4, SPRITE_KID, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ManiaScript, -1
+	object_event  7,  6, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ManiaMotherScript, -1
 	object_event  0,  2, SPRITE_SNEASEL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SneaselScript, -1
 	object_event  5,  1, SPRITE_SHUCKLE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ShuckleScript, -1

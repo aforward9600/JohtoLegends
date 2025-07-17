@@ -51,7 +51,6 @@ RivalsMomScript:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female
 	faceplayer
-	opentext
 	writetext RivalsMom1Text
 	waitbutton
 	closetext
@@ -93,7 +92,7 @@ RivalsMomScript:
 	end
 
 RivalsHouseBookshelf:
-	jumpstd magazinebookshelf
+	jumpstd genericsink
 
 RivalsDadText:
 	text "My kid's finally"
@@ -211,17 +210,17 @@ RivalsHouse1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  2,  7, BLACKTHORN_CITY, 3
-	warp_event  3,  7, BLACKTHORN_CITY, 3
-	warp_event  6,  0, RIVALS_HOUSE_2F, 1
+	warp_event  4,  7, BLACKTHORN_CITY, 3
+	warp_event  5,  7, BLACKTHORN_CITY, 3
+	warp_event  8,  0, RIVALS_HOUSE_2F, 1
 
 	db 0 ; coord events
 
 	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, RivalsHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, RivalsHouseBookshelf
-	bg_event  2,  1, BGEVENT_READ, MoveDeleterTelevision
+	bg_event  4,  1, BGEVENT_READ, MoveDeleterTelevision
 
 	db 2 ; object events
-	object_event  5,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RivalsDadScript, -1
-	object_event  2,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RivalsMomScript, EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR
+	object_event  6,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RivalsDadScript, -1
+	object_event  3,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RivalsMomScript, EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR

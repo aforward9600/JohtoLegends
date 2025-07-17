@@ -61,3 +61,4 @@
 	enum swarmscript
 	enum getdecoevent
 	enum gymstatue5
+	enum genericsink

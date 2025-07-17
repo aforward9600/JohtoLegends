@@ -80,13 +80,13 @@ OlivineGoodRodHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, OLIVINE_CITY, 5
-	warp_event  3,  7, OLIVINE_CITY, 5
+	warp_event  4,  7, OLIVINE_CITY, 5
+	warp_event  5,  7, OLIVINE_CITY, 5
 
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event  2,  1, BGEVENT_READ, TimsHouseTelevision
+	bg_event  4,  1, BGEVENT_READ, TimsHouseTelevision
 
 	db 1 ; object events
-	object_event  2,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoodRodGuru, -1
+	object_event  3,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoodRodGuru, -1

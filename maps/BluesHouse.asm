@@ -58,14 +58,14 @@ BluesHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, PALLET_TOWN, 2
-	warp_event  3,  7, PALLET_TOWN, 2
+	warp_event  4,  7, PALLET_TOWN, 2
+	warp_event  5,  7, PALLET_TOWN, 2
 
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event  2,  1, BGEVENT_READ, RedsHouse1FTV
+	bg_event  4,  1, BGEVENT_READ, RedsHouse1FTV
 
 	db 2 ; object events
-	object_event  6,  4, SPRITE_TWIN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DaisyScript, -1
-	object_event  2,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DaisysMomScript, -1
+	object_event  7,  4, SPRITE_TWIN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DaisyScript, -1
+	object_event  3,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DaisysMomScript, -1

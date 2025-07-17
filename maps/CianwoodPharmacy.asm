@@ -18,7 +18,7 @@ PharmacyGrannyScript:
 	jumptextfaceplayer CianwoodPharmacyGrandmaText
 
 CianwoodPharmacyBookshelf:
-	jumpstd difficultbookshelf
+	jumpstd genericsink
 
 CianwoodPharmacistText:
 	text "My grandma has a"
@@ -41,16 +41,16 @@ CianwoodPharmacy_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, CIANWOOD_CITY, 4
-	warp_event  3,  7, CIANWOOD_CITY, 4
+	warp_event  4,  7, CIANWOOD_CITY, 4
+	warp_event  5,  7, CIANWOOD_CITY, 4
 
 	db 0 ; coord events
 
 	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, CianwoodPharmacyBookshelf
 	bg_event  1,  1, BGEVENT_READ, CianwoodPharmacyBookshelf
-	bg_event  2,  1, BGEVENT_READ, CianwoodTelevision
+	bg_event  4,  1, BGEVENT_READ, CianwoodTelevision
 
 	db 2 ; object events
-	object_event  2,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodPharmacist, -1
-	object_event  5,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PharmacyGrannyScript, -1
+	object_event  3,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodPharmacist, -1
+	object_event  6,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PharmacyGrannyScript, -1

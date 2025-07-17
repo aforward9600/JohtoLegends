@@ -25,7 +25,7 @@ Route39FarmhouseGrannyScript:
 	jumptextfaceplayer GrannyText_GoodJob
 
 FarmhouseBookshelf:
-	jumpstd picturebookshelf
+	jumpstd genericsink
 
 GrannyText_InTrouble:
 	text "My son took over"
@@ -67,8 +67,8 @@ Route39Farmhouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, ROUTE_39, 2
-	warp_event  3,  7, ROUTE_39, 2
+	warp_event  4,  7, ROUTE_39, 2
+	warp_event  5,  7, ROUTE_39, 2
 
 	db 0 ; coord events
 
@@ -77,5 +77,5 @@ Route39Farmhouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, FarmhouseBookshelf
 
 	db 2 ; object events
-	object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FarmerFScript_SellMilk, -1
-	object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FarmhouseGrannyScript, -1
+	object_event  6,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FarmerFScript_SellMilk, -1
+	object_event  3,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FarmhouseGrannyScript, -1

@@ -114,7 +114,7 @@ LakeOfRageTelevision:
 	jumpstd televisionscript
 
 MagikarpHouseBookshelf:
-	jumpstd difficultbookshelf
+	jumpstd genericsink
 
 MagikarpLengthRaterText_LakeOfRageHistory:
 	text "Lake of Rage is"
@@ -269,16 +269,16 @@ LakeOfRageMagikarpHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, LAKE_OF_RAGE, 2
-	warp_event  3,  7, LAKE_OF_RAGE, 2
+	warp_event  4,  7, LAKE_OF_RAGE, 2
+	warp_event  5,  7, LAKE_OF_RAGE, 2
 
 	db 0 ; coord events
 
 	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, MagikarpHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, MagikarpHouseBookshelf
-	bg_event  2,  1, BGEVENT_READ, LakeOfRageTelevision
+	bg_event  4,  1, BGEVENT_READ, LakeOfRageTelevision
 
 	db 2 ; object events
-	object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MagikarpLengthRaterScript, -1
-	object_event  5,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MagikarpLengthOldRodScript, -1
+	object_event  3,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MagikarpLengthRaterScript, -1
+	object_event  6,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MagikarpLengthOldRodScript, -1

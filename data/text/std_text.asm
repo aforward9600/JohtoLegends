@@ -418,3 +418,8 @@ GymStatue_WinningTrainers5Text:
 	line "<PLAYER>"
 	cont "<RIVAL>"
 	done
+
+GenericSinkText:
+	text "A nice, clean"
+	line "sink."
+	done

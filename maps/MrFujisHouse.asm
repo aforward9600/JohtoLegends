@@ -111,6 +111,9 @@ MrFujisTogepi:
 MrFujisHouseBookshelf:
 	jumpstd difficultbookshelf
 
+MrFujiPicture:
+	jumptext MrFujiPictureText
+
 MrFujisHousePokefanMText:
 	text "Those Feds are so"
 	line "heartless!"
@@ -305,23 +308,29 @@ LearnedSongOfAwakeningText:
 	cont "Awakening!"
 	done
 
+MrFujiPictureText:
+	text "A picture of two"
+	line "men in lab coats."
+	done
+
 MrFujisHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, LAVENDER_TOWN, 2
-	warp_event  3,  7, LAVENDER_TOWN, 2
+	warp_event  4,  7, LAVENDER_TOWN, 2
+	warp_event  5,  7, LAVENDER_TOWN, 2
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, MrFujisHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, MrFujisHouseBookshelf
+	bg_event  6,  0, BGEVENT_READ, MrFujiPicture
 
 	db 6 ; object events
-	object_event  7,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MrFujisHousePokefanMScript, -1
+	object_event  6,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MrFujisHousePokefanMScript, -1
 	object_event  3,  4, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisHouseTeacherScript, -1
-	object_event  7,  4, SPRITE_EKANS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MrFujisEkans, -1
+	object_event  6,  4, SPRITE_EKANS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MrFujisEkans, -1
 	object_event  5,  5, SPRITE_MAROWAK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MrFujisMarowak, -1
 	object_event  1,  3, SPRITE_TOGEPI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MrFujisTogepi, -1
 	object_event  4,  1, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisHouseMrFuji, -1

@@ -14,7 +14,7 @@ VermilionMagnetTrainSpeechHouseYoungsterScript:
 	jumptextfaceplayer VermilionMagnetTrainSpeechHouseYoungsterText
 
 VermilionMagnetTrainSpeechHouseBookshelf:
-	jumpstd picturebookshelf
+	jumpstd genericsink
 
 VermilionMagnetTrainSpeechHousePokefanFText:
 	text "I often wonder"
@@ -38,8 +38,8 @@ VermilionMagnetTrainSpeechHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, VERMILION_CITY, 4
-	warp_event  3,  7, VERMILION_CITY, 4
+	warp_event  4,  7, VERMILION_CITY, 4
+	warp_event  5,  7, VERMILION_CITY, 4
 
 	db 0 ; coord events
 
@@ -49,4 +49,4 @@ VermilionMagnetTrainSpeechHouse_MapEvents:
 
 	db 2 ; object events
 	object_event  2,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionMagnetTrainSpeechHousePokefanFScript, -1
-	object_event  0,  3, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionMagnetTrainSpeechHouseYoungsterScript, -1
+	object_event  7,  4, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionMagnetTrainSpeechHouseYoungsterScript, -1

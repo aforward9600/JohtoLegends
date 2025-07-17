@@ -16,6 +16,7 @@ CherrygroveGymSpeechHouse_MapScripts:
 	playmusic MUSIC_CYNTHIA_ENCOUNTER
 	pause 15
 	applymovement CHERRYGROVEGYMSPEECHHOUSE_CYNTHIA, CherrygroveCynthiaMovement
+	turnobject CHERRYGROVEGYMSPEECHHOUSE_CYNTHIA, DOWN
 	opentext
 	writetext CherrygroveCynthiaMeetingText
 	yesorno
@@ -142,15 +143,17 @@ CherrygroveTelevision:
 CherrygroveCynthiaMovement:
 	big_step DOWN
 	big_step DOWN
+	big_step RIGHT
 	step_end
 
 CherrygroveCynthiaMovement2:
+	big_step LEFT
 	big_step UP
 	big_step UP
 	step_end
 
 CherrygroveGymSpeechHouseBookshelf:
-	jumpstd picturebookshelf
+	jumpstd genericsink
 
 Cynthia2LastMonText:
 	text "We can still win"
@@ -266,15 +269,15 @@ CherrygroveGymSpeechHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, CHERRYGROVE_CITY, 3
-	warp_event  3,  7, CHERRYGROVE_CITY, 3
+	warp_event  4,  7, CHERRYGROVE_CITY, 3
+	warp_event  5,  7, CHERRYGROVE_CITY, 3
 
 	db 0 ; coord events
 
 	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf
-	bg_event  2,  1, BGEVENT_READ, CherrygroveTelevision
+	bg_event  4,  1, BGEVENT_READ, CherrygroveTelevision
 
 	db 1 ; object events
-	object_event  2,  4, SPRITE_CYNTHIA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveGymSpeechHouseCynthiaScript, EVENT_CHERRYGROVE_CYNTHIA
+	object_event  3,  4, SPRITE_CYNTHIA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveGymSpeechHouseCynthiaScript, EVENT_CHERRYGROVE_CYNTHIA

@@ -85,10 +85,10 @@ CharcoalKilnFarfetchd:
 	end
 
 CharcoalKilnBookshelf:
-	jumpstd magazinebookshelf
+	jumpstd genericsink
 
 CharcoalKilnRadio:
-	jumpstd radio2
+	jumpstd televisionscript
 
 CharcoalKilnBossText1:
 	text "Some say that on"
@@ -188,17 +188,17 @@ CharcoalKiln_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, AZALEA_TOWN, 2
-	warp_event  3,  7, AZALEA_TOWN, 2
+	warp_event  4,  7, AZALEA_TOWN, 2
+	warp_event  5,  7, AZALEA_TOWN, 2
 
 	db 0 ; coord events
 
 	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, CharcoalKilnBookshelf
 	bg_event  1,  1, BGEVENT_READ, CharcoalKilnBookshelf
-	bg_event  7,  1, BGEVENT_READ, CharcoalKilnRadio
+	bg_event  4,  1, BGEVENT_READ, CharcoalKilnRadio
 
 	db 3 ; object events
-	object_event  2,  3, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharcoalKilnBoss, EVENT_CHARCOAL_KILN_BOSS
-	object_event  5,  3, SPRITE_KID, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharcoalKilnApprentice, -1
-	object_event  5,  6, SPRITE_FARFETCHD, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CharcoalKilnFarfetchd, EVENT_CHARCOAL_KILN_FARFETCH_D
+	object_event  3,  3, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharcoalKilnBoss, EVENT_CHARCOAL_KILN_BOSS
+	object_event  6,  3, SPRITE_KID, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharcoalKilnApprentice, -1
+	object_event  7,  6, SPRITE_FARFETCHD, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CharcoalKilnFarfetchd, EVENT_CHARCOAL_KILN_FARFETCH_D

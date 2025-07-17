@@ -15,7 +15,7 @@ LavenderSpeechHousePokefanFScript:
 	jumptextfaceplayer LavenderSpeechHousePokefanFText2
 
 LavenderSpeechHouseBookshelf:
-	jumpstd picturebookshelf
+	jumpstd genericsink
 
 LavenderSpeechHousePokefanFText:
 	text "I can't even pay"
@@ -36,8 +36,8 @@ LavenderSpeechHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, LAVENDER_TOWN, 3
-	warp_event  3,  7, LAVENDER_TOWN, 3
+	warp_event  4,  7, LAVENDER_TOWN, 3
+	warp_event  5,  7, LAVENDER_TOWN, 3
 
 	db 0 ; coord events
 
@@ -46,4 +46,4 @@ LavenderSpeechHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, LavenderSpeechHouseBookshelf
 
 	db 1 ; object events
-	object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderSpeechHousePokefanFScript, -1
+	object_event  3,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderSpeechHousePokefanFScript, -1
