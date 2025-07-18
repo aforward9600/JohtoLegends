@@ -7,15 +7,15 @@
 	const THICK_FAT    ; 04x
 	const RECKLESS     ; 05x
 	const SOLAR_POWER  ; 06x
-	const DAMP         ; 07
+	const DAMP         ; 07x
 	const SWIFT_SWIM   ; 08x
 	const KEEN_EYE     ; 09
-	const SKILL_LINK   ; 0a
+	const SKILL_LINK   ; 0ax
 	const SHEER_FORCE  ; 0bx
 	const VITAL_SPIRIT ; 0c
 	const RUN_AWAY     ; 0dx
 	const INTIMIDATE   ; 0ex
-	const SCRAPPY      ; 0f
+	const SCRAPPY      ; 0fx
 	const LIMBER       ; 10
 	const UNBURDEN     ; 11
 	const PRANKSTER    ; 12x

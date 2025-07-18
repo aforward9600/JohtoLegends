@@ -1345,6 +1345,12 @@ BattleCommand_Stab:
 	; foresight
 	cp -2
 	jr nz, .SkipForesightCheck
+	call CheckNeutralGas
+	jr z, .DoForesightCheck
+	call GetUserAbility
+	cp SCRAPPY
+	jr z, .end
+.DoForesightCheck
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_IDENTIFIED, a
@@ -1468,6 +1474,12 @@ CheckTypeMatchup:
 	jr z, .End
 	cp -2
 	jr nz, .Next
+	call CheckNeutralGas
+	jr z, .SkipScrappy
+	call GetUserAbility
+	cp SCRAPPY
+	jr z, .End
+.SkipScrappy:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_IDENTIFIED, a
@@ -5723,6 +5735,14 @@ BattleCommand_EndLoop:
 	jr .done_loop
 
 .not_triple_kick
+	call CheckNeutralGas
+	jr z, .not_skill_link
+	call GetUserAbility
+	cp SKILL_LINK
+	jr nz, .not_skill_link
+	ld a, 4
+	jr .double_hit
+.not_skill_link
 	call BattleRandom
 	and $3
 	cp 2
