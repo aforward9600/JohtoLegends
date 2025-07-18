@@ -1,4 +1,10 @@
 BattleCommand_Selfdestruct:
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .ContinueSelfdestruct
+	call GetTargetAbility
+	cp DAMP
+	jr z, .FailSelfdestruct
+.ContinueSelfdestruct
 	farcall StubbedTrainerRankings_Selfdestruct
 	ld a, BATTLEANIM_PLAYER_DAMAGE
 	ld [wNumHits], a
@@ -27,3 +33,10 @@ BattleCommand_Selfdestruct:
 	farcall DrawEnemyHUD
 	call WaitBGMap
 	jp RefreshBattleHuds
+
+.FailSelfdestruct
+	ld c, 3
+	call DelayFrames
+	ld hl, BattleText_Damp
+	call StdBattleTextbox
+	jp EndMoveEffect

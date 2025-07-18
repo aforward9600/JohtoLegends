@@ -55,7 +55,7 @@
 	const DROUGHT      ; 34x
 	const SANDSTREAM   ; 35x
 	const SHELL_ARMOR  ; 36
-	const NO_GUARD     ; 37
+	const NO_GUARD     ; 37x
 	const EFFECT_SPORE ; 38x
 	const CURSED_BODY  ; 39x
 	const MOODY        ; 3a

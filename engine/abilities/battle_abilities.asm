@@ -785,6 +785,8 @@ CheckBoostingAbilities:
 	jp TwentyPercentBoost
 
 .SandForce:
+	call CheckCloudNine
+	ret z
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
 	ret nz
@@ -908,6 +910,8 @@ CheckBoostingAbilities:
 	ret
 
 .SolarPower:
+	call CheckCloudNine
+	ret z
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
 	ret nz
@@ -1489,12 +1493,16 @@ HandleEndMoveAbility:
 	db -1
 
 .RainDish:
+	call CheckCloudNine
+	ret z
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
 	ret nz
 	jp CheckFullHPAbilities
 
 .Hydration:
+	call CheckCloudNine
+	ret z
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
 	ret nz
@@ -1511,6 +1519,8 @@ HandleEndMoveAbility:
 	jp StdBattleTextbox
 
 .DrySkin:
+	call CheckCloudNine
+	ret z
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
 	jr z, .DrySkinRain
@@ -1535,6 +1545,8 @@ HandleEndMoveAbility:
 	jp StdBattleTextbox
 
 .SolarPower:
+	call CheckCloudNine
+	ret z
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
 	ret nz
