@@ -680,6 +680,7 @@ CheckBoostingAbilities:
 	dbw TOUGH_CLAWS,     .ToughClaws
 	dbw STRONG_JAW,      .StrongJaw
 	dbw MEGA_LAUNCHER,   .MegaLauncher
+	dbw SOLAR_POWER,     .SolarPower
 	db -1
 
 .Guts:
@@ -810,8 +811,12 @@ CheckBoostingAbilities:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_RECOIL_HIT
-	ret nz
-	jp TwentyPercentBoost
+	jp z, TwentyPercentBoost
+	cp EFFECT_FLARE_BLITZ
+	jp z, TwentyPercentBoost
+	cp EFFECT_JUMP_KICK
+	jp z, TwentyPercentBoost
+	jp .NoBoostingAbilities
 
 .Overgrow:
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -901,6 +906,16 @@ CheckBoostingAbilities:
 	cp ELECTRIC
 	jr z, ThirtyPercentBoost
 	ret
+
+.SolarPower:
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret nz
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp PHYSICAL
+	ret nc
+	jp FiftyPercentBoost
 
 .DragonsMaw:
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1470,6 +1485,7 @@ HandleEndMoveAbility:
 	dbw SPEED_BOOST,     .SpeedBoost
 	dbw SHED_SKIN,       .ShedSkin
 	dbw HYDRATION,       .Hydration
+	dbw SOLAR_POWER,     .SolarPower
 	db -1
 
 .RainDish:
@@ -1516,6 +1532,15 @@ HandleEndMoveAbility:
 	and a
 	ret nz
 	ld hl, SpeedBoostText
+	jp StdBattleTextbox
+
+.SolarPower:
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret nz
+	farcall GetEighthMaxHP
+	farcall SubtractHPFromUser
+	ld hl, SolarPowerText
 	jp StdBattleTextbox
 
 .ShedSkin:

@@ -5,8 +5,8 @@
 	const BLAZE        ; 02x
 	const TORRENT      ; 03x
 	const THICK_FAT    ; 04x
-	const RECKLESS     ; 05
-	const SOLAR_POWER  ; 06
+	const RECKLESS     ; 05x
+	const SOLAR_POWER  ; 06x
 	const DAMP         ; 07
 	const SWIFT_SWIM   ; 08x
 	const KEEN_EYE     ; 09

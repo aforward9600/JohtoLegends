@@ -1555,18 +1555,36 @@ BattleCommand_CheckHit:
 	call .LockOn
 	ret nz
 
-	call .FlyDigMoves
-	jp nz, .Miss
-
 	call .AirBalloon
 	jp z, .Miss
 
+	call CheckNeutralGas
+	jr z, .SkipAccuracyAbilities
+	call GetUserAbility
+	cp NO_GUARD
+	ret z
+	call GetTargetAbility
+	cp NO_GUARD
+	ret z
+
+.SkipAccuracyAbilities:
+	call .FlyDigMoves
+	jp nz, .Miss
+
+	call CheckNeutralGas
+	jr z, .SkipCloudNine
+
+	call CheckCloudNine
+	jr z, .SkipWeather
+
+.SkipCloudNine
 	call .ThunderRain
 	ret z
 
 	call .BlizzardHail
 	ret z
 
+.SkipWeather
 	call .XAccuracy
 	ret nz
 

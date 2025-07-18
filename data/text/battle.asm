@@ -1502,3 +1502,9 @@ HydrationText:
 	line "Hydration healed"
 	cont "its status!"
 	prompt
+
+SolarPowerText:
+	text "<USER> is"
+	line "hurt by its"
+	cont "Solar Power!"
+	prompt

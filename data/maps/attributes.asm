@@ -749,7 +749,7 @@ ENDM
 	map_attributes OneIslandPokecenter, ONE_ISLAND_POKECENTER, $00, 0
 	map_attributes TwoIslandPort, TWO_ISLAND_PORT, $00, 0
 	map_attributes ThreeIslandPort, THREE_ISLAND_PORT, $00, 0
-	map_attributes BerryForest, BERRY_FOREST, $00, 0
+	map_attributes BerryForest, BERRY_FOREST, $0f, 0
 	map_attributes FourIslandPort, FOUR_ISLAND_PORT, $43, 0
 	map_attributes FourIsland, FOUR_ISLAND, $43, 0
 	map_attributes IcefallCaveEntrance, ICEFALL_CAVE_ENTRANCE, $09, 0
