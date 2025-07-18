@@ -978,10 +978,15 @@ FiftyPercentNerf:
 	ret
 
 EffectiveDefensiveAbilities:
+	call CheckNeutralGas
+	ret z
 	call GetUserAbility
 	cp TINTED_LENS
 	jr z, .TintedLens
 .ReturnToDefensiveAbilities:
+	call GetUserAbility
+	cp MOLD_BREAKER
+	ret z
 	call GetTargetAbility
 	cp SOLID_ROCK
 	jr z, .SolidRock
@@ -1256,11 +1261,8 @@ BattleCommand_SwitchTurnAbilities:
 	ret
 
 CheckDefensiveAbilities:
-	call CheckNeutralGas
+	call CheckUserNeutralGasMoldBreaker
 	ret z
-	call GetUserAbility
-	cp MOLD_BREAKER
-	ret z 
 	call GetTargetAbility
 	ld de, 3
 	ld hl, .DefensiveAbilities

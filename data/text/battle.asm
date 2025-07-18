@@ -1508,3 +1508,13 @@ SolarPowerText:
 	line "hurt by its"
 	cont "Solar Power!"
 	prompt
+
+RestInsomniaText:
+	text "<USER>"
+	line "can't fall asleep!"
+	prompt
+
+InsomniaText:
+	text "<TARGET>"
+	line "can't fall asleep!"
+	prompt

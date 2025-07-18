@@ -155,6 +155,28 @@ CheckPlayerTurn:
 	and SLP
 	jr z, .not_asleep
 
+	push af
+
+	call CheckNeutralGas
+	jr z, .SkipSleepAbility
+
+	ld a, [wPlayerAbility]
+	cp INSOMNIA
+	jr z, .woke_up_ability
+	cp VITAL_SPIRIT
+	jr z, .woke_up_ability
+	cp EARLY_BIRD
+	jr nz, .SkipSleepAbility
+	pop af
+	dec a
+	ld [wBattleMonStatus], a
+	and SLP
+	jr z, .woke_up
+	jr .AfterEarlyBird
+
+.SkipSleepAbility
+	pop af
+.AfterEarlyBird
 	dec a
 	ld [wBattleMonStatus], a
 	and SLP
@@ -166,6 +188,8 @@ CheckPlayerTurn:
 	call FarPlayBattleAnimation
 	jr .fast_asleep
 
+.woke_up_ability
+	pop af
 .woke_up
 	ld hl, WokeUpText
 	call StdBattleTextbox
@@ -393,6 +417,28 @@ CheckEnemyTurn:
 	and SLP
 	jr z, .not_asleep
 
+	push af
+
+	call CheckNeutralGas
+	jr z, .SkipSleepAbility
+
+	ld a, [wEnemyAbility]
+	cp INSOMNIA
+	jr z, .woke_up_ability
+	cp VITAL_SPIRIT
+	jr z, .woke_up_ability
+	cp EARLY_BIRD
+	jr nz, .SkipSleepAbility
+	pop af
+	dec a
+	ld [wEnemyMonStatus], a
+	and a
+	jr z, .woke_up
+	jr .AfterEarlyBird
+
+.SkipSleepAbility
+	pop af
+.AfterEarlyBird
 	dec a
 	ld [wEnemyMonStatus], a
 	and a
@@ -406,6 +452,8 @@ CheckEnemyTurn:
 	call FarPlayBattleAnimation
 	jr .fast_asleep
 
+.woke_up_ability
+	pop af
 .woke_up
 	ld hl, WokeUpText
 	call StdBattleTextbox
@@ -3351,6 +3399,35 @@ BattleCommand_DamageCalc:
 	and a
 	ret z
 
+	call CheckNeutralGas
+	jr z, .SkipSniper
+	call GetUserAbility
+	cp SNIPER
+	jr nz, .SkipSniper
+
+; x3
+	xor a
+	ldh [hMultiplicand + 0], a
+	ldh a, [hQuotient + 2]
+	ldh [hMultiplicand + 1], a
+	ldh a, [hQuotient + 3]
+	ldh [hMultiplicand + 2], a
+	ld a, 30
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+
+	ldh a, [hQuotient + 3]
+	ldh [hProduct + 3], a
+
+	ldh a, [hQuotient + 2]
+	ldh [hProduct + 2], a
+	jr .CritCap
+
+.SkipSniper
 ; x2
 	ldh a, [hQuotient + 3]
 	add a
@@ -3361,6 +3438,7 @@ BattleCommand_DamageCalc:
 	ldh [hProduct + 2], a
 
 ; Cap at $ffff.
+.CritCap
 	ret nc
 
 	ld a, $ff
@@ -3804,6 +3882,27 @@ BattleCommand_SleepTarget:
 	call CheckSubstituteOpp
 	jr nz, .fail
 
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipVitalSpirit
+
+	call GetTargetAbility
+	cp VITAL_SPIRIT
+	jr z, .protected_by_ability
+	cp INSOMNIA
+	jr z, .protected_by_ability
+	cp LEAF_GUARD
+	jr nz, .SkipVitalSpirit
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr nz, .SkipVitalSpirit
+	call AnimateFailedMove
+	call Ability_LoadAbilityName
+	ld a, b
+	and a
+	ld hl, ProtectedByText
+	jp StdBattleTextbox
+	
+.SkipVitalSpirit:
 	call AnimateCurrentMove
 	ld b, $7
 	ld a, [wInBattleTowerBattle]
@@ -3829,6 +3928,9 @@ BattleCommand_SleepTarget:
 
 	jp z, OpponentCantMove
 	ret
+
+.protected_by_ability
+	ld hl, InsomniaText
 
 .fail
 	push hl
@@ -6344,8 +6446,6 @@ EndRechargeOpp:
 	res SUBSTATUS_RECHARGE, [hl]
 	pop hl
 	ret
-
-INCLUDE "engine/battle/move_effects/mimic.asm"
 
 INCLUDE "engine/battle/move_effects/leech_seed.asm"
 
