@@ -250,7 +250,19 @@ CheckPlayerTurn:
 	res SUBSTATUS_FLINCHED, [hl]
 	ld hl, FlinchedText
 	call StdBattleTextbox
+	call CheckNeutralGas
+	jr z, .SkipSteadfast
+	ld a, [wPlayerAbility]
+	cp STEADFAST
+	jr nz, .SkipSteadfast
+	call BattleCommand_SpeedUp
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .SkipSteadfast
+	ld hl, SteadfastText
+	call StdBattleTextbox
 
+.SkipSteadfast
 	call CantMove
 	jp EndTurn
 
@@ -4336,6 +4348,19 @@ BattleCommand_SleepHit:
 	ret nz
 	call SafeCheckSafeguard
 	ret nz
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipAbilities
+	call GetTargetAbility
+	cp VITAL_SPIRIT
+	ret z
+	cp INSOMNIA
+	ret z
+	cp LEAF_GUARD
+	jr nz, .SkipAbilities
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret z
+.SkipAbilities
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	ld d, h
@@ -6521,6 +6546,20 @@ BattleCommand_Heal:
 	push hl
 	push de
 	push af
+	call CheckNeutralGas
+	jr z, .SkipAbilities
+	call GetUserAbility
+	cp INSOMNIA
+	jr z, .CantRest
+	cp VITAL_SPIRIT
+	jr z, .CantRest
+	cp LEAF_GUARD
+	jr nz, .SkipAbilities
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .CantRest
+
+.SkipAbilities
 	call BattleCommand_MoveDelay
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVarAddr
@@ -6553,6 +6592,14 @@ BattleCommand_Heal:
 	ld hl, GetHalfMaxHP
 	call CallBattleCore
 	jr .finish
+
+.CantRest:
+	pop de
+	pop hl
+	pop af
+	call AnimateFailedMove
+	ld hl, RestInsomniaText
+	jp StdBattleTextbox
 
 .restore_full_hp
 	ld hl, GetMaxHP

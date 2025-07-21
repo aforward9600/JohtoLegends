@@ -12,7 +12,7 @@
 	const KEEN_EYE     ; 09
 	const SKILL_LINK   ; 0ax
 	const SHEER_FORCE  ; 0bx
-	const VITAL_SPIRIT ; 0c
+	const VITAL_SPIRIT ; 0cx
 	const RUN_AWAY     ; 0dx
 	const INTIMIDATE   ; 0ex
 	const SCRAPPY      ; 0fx
@@ -65,8 +65,8 @@
 	const ANALYTIC     ; 3ex
 	const FLASH_FIRE   ; 3fx
 	const FLAME_BODY   ; 40x
-	const RIVALRY      ; 41
-	const HYDRATION    ; 42 x
+	const RIVALRY      ; 41x
+	const HYDRATION    ; 42x
 	const STICKY_HOLD  ; 43
 	const STATIC       ; 44x
 	const INNER_FOCUS  ; 45
@@ -80,13 +80,13 @@
 	const OBLIVIOUS    ; 4d
 	const OWN_TEMPO    ; 4e
 	const STEADFAST    ; 4f
-	const EARLY_BIRD   ; 50
+	const EARLY_BIRD   ; 50x
 	const TANGLED_FEET ; 51
 	const GLUTTONY     ; 52
 	const AFTERMATH    ; 53x
 	const POISON_TOUCH ; 54x
 	const HYPER_CUTTER ; 55
-	const INSOMNIA     ; 56
+	const INSOMNIA     ; 56x
 	const SOUNDPROOF   ; 57x
 	const LIGHTNINGROD ; 58x
 	const BATTLE_ARMOR ; 59
@@ -95,7 +95,7 @@
 	const STENCH       ; 5cx
 	const SERENE_GRACE ; 5d
 	const NATURAL_CURE ; 5e
-	const SNIPER       ; 5f
+	const SNIPER       ; 5fx
 	const FILTER       ; 60x
 	const SCREEN_CLEAN ; 61x
 	const SHARPNESS    ; 62x
