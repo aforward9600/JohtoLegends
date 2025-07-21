@@ -132,12 +132,12 @@
 	const ARMOR_TAIL   ; 81
 	const POISON_HEAL  ; 82x
 	const CONTRARY     ; 83
-	const PICKPOCKET   ; 84
-	const BULLETPROOF  ; 85
+	const PICKPOCKET   ; 84x
+	const BULLETPROOF  ; 85x
 	const MAGMA_ARMOR  ; 86
 	const SUCTION_CUPS ; 87
 	const HEAT_PROOF   ; 88x
-	const MEGA_LAUNCHER ; 89
+	const MEGA_LAUNCHER ; 89x
 	const STRONG_JAW   ; 8ax
 	const TOUGH_CLAWS  ; 8bx
 	const SLOW_START   ; 8cx

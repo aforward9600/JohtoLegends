@@ -1459,7 +1459,9 @@ SapSipperText:
 
 SoundproofText:
 	text "<TARGET>'s"
-	line "Soundproof"
+	line "@"
+	text_ram wStringBuffer1
+	text_start
 	cont "protected it!"
 	prompt
 

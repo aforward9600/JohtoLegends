@@ -1284,6 +1284,7 @@ CheckDefensiveAbilities:
 	dbw MOTOR_DRIVE,     .MotorDrive
 	dbw LIGHTNINGROD,    .Lightningrod
 	dbw SAP_SIPPER,      .SapSipper
+	dbw BULLETPROOF,     .Bulletproof
 	db -1
 
 .FlashFire:
@@ -1362,26 +1363,33 @@ CheckDefensiveAbilities:
 	ret nz
 	call MoveDelayAbility
 	ld hl, MotorDriveText
-	call StdBattleTextbox
-	jp EndMoveEffectAbilities
+	jp StdBattleTextbox
 
 .Soundproof:
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .PlayerSoundproof
-	ld a, [wCurEnemyMove]
-	jr .FinishSoundproof
-
-.PlayerSoundproof
-	ld a, [wCurPlayerMove]
-.FinishSoundproof
+	call GetUserCurrentMove
 	ld hl, SoundMoves
 	call CheckMoveInListAbilities
 	ret nc
 	call MoveDelayAbility
+	call GetTargetAbility
+	call Ability_LoadAbilityName
+	ld a, b
+	and a
 	ld hl, SoundproofText
-	call StdBattleTextbox
-	jp EndMoveEffectAbilities
+	jp StdBattleTextbox
+
+.Bulletproof:
+	call GetUserCurrentMove
+	ld hl, BulletproofMoves
+	call CheckMoveInListAbilities
+	ret nc
+	call MoveDelayAbility
+	call GetTargetAbility
+	call Ability_LoadAbilityName
+	ld a, b
+	and a
+	ld hl, SoundproofText
+	jp StdBattleTextbox
 
 .DrySkin:
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1414,6 +1422,17 @@ CheckDefensiveAbilities:
 
 EndMoveEffectAbilities:
 	farcall EndMoveEffect
+	ret
+
+GetUserCurrentMove:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .PlayerCurrentMove
+	ld a, [wCurEnemyMove]
+	ret
+
+.PlayerCurrentMove
+	ld a, [wCurPlayerMove]
 	ret
 
 CheckFullHPDefenseAbilities:
@@ -1610,3 +1629,22 @@ CheckFullHPAbilities:
 	and a
 	ld hl, WaterAbsorbText
 	jp StdBattleTextbox
+
+BulletproofMoves:
+	dw ACID_SPRAY
+	dw AURA_SPHERE
+	dw BARRAGE
+	dw BULLET_SEED
+	dw EGG_BOMB
+	dw ENERGY_BALL
+	dw FOCUS_BLAST
+	dw GYRO_BALL
+	dw MUD_BOMB
+	dw OCTAZOOKA
+	dw ROCK_BLAST
+	dw ROCK_WRECKER
+	dw SEED_BOMB
+	dw SHADOW_BALL
+	dw SLUDGE_BOMB
+	dw ZAP_CANNON
+	dw -1

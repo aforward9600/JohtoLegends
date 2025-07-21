@@ -1,11 +1,7 @@
 BattleCommand_Thief:
 ; thief
 
-	call CheckNeutralGas
-	jr z, .SkipAbilities
-
-	call GetUserAbility
-	cp MOLD_BREAKER
+	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipAbilities
 
 	call GetTargetAbility
