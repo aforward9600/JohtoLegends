@@ -2933,6 +2933,27 @@ Coil:
 	raisesub
 	endmove
 
+GyroBall:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	gyroball
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	kingsrock
+	checkfaint
+	buildopponentrage
+	endmove
+
 ;WakeUpSlap:
 ;	checkobedience
 ;	usedmovetext

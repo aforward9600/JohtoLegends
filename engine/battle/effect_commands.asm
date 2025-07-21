@@ -5958,6 +5958,7 @@ BattleCommand_DefensiveAbilities:
 	ret
 
 BattleCommand_GyroBall:
+	farcall GyroBallEffect
 	ret
 
 BattleCommand_FlinchTarget:
@@ -6884,8 +6885,6 @@ INCLUDE "engine/battle/move_effects/sandstorm.asm"
 INCLUDE "engine/battle/move_effects/hail.asm"
 
 INCLUDE "engine/battle/move_effects/rollout.asm"
-
-INCLUDE "engine/battle/move_effects/attract.asm"
 
 INCLUDE "engine/battle/move_effects/return.asm"
 

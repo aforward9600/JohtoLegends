@@ -1,26 +1,36 @@
 BattleCommand_Attract:
 ; attract
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipOblivious
+	call GetTargetAbility
+	cp OBLIVIOUS
+	jr z, .oblivious
+.SkipOblivious
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .failed
 	call CheckOppositeGender
 	jr c, .failed
-	call CheckHiddenOpponent
-	jr nz, .failed
+	jr z, .failed
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_IN_LOVE, [hl]
 	jr nz, .failed
 
 	set SUBSTATUS_IN_LOVE, [hl]
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 
 ; 'fell in love!'
 	ld hl, FellInLoveText
 	jp StdBattleTextbox
 
 .failed
-	jp FailMove
+	farcall FailMove
+	ret
+
+.oblivious
+	ld hl, ObliviousText
+	jp StdBattleTextbox
 
 CheckOppositeGender:
 	ld a, MON_SPECIES
@@ -66,7 +76,7 @@ CheckOppositeGender:
 
 .got_enemy_gender
 	xor b
-	jr z, .genderless_samegender
+	ret z
 
 	and a
 	ret

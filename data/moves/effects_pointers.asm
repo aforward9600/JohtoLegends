@@ -189,4 +189,5 @@ MoveEffectsPointers:
 	dw UTurn
 	dw Coil
 	dw VitalThrow
+	dw GyroBall
 ;	dw WakeUpSlap

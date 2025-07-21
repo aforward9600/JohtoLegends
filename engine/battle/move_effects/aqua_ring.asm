@@ -4,10 +4,11 @@ BattleCommand_AquaRing:
 	bit SUBSTATUS_AQUA_RING, [hl]
 	jr nz, .failed
 	set SUBSTATUS_AQUA_RING, [hl]
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 	ld hl, SurroundedByWaterText
 	jp StdBattleTextbox
 
 .failed
-	call AnimateFailedMove
-	jp PrintButItFailed
+	farcall AnimateFailedMove
+	farcall PrintButItFailed
+	ret

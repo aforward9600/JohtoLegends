@@ -78,7 +78,7 @@ BattleCommand_Spite:
 	ld [hl], e
 .transformed
 	push de
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 	pop de
 	ld a, d
 	ld [wDeciramBuffer], a

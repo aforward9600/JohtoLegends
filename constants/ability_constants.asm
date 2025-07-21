@@ -77,7 +77,7 @@
 	const JUSTIFIED    ; 4a
 	const VOLT_ABSORB  ; 4bx
 	const MAGNET_PULL  ; 4cx
-	const OBLIVIOUS    ; 4d
+	const OBLIVIOUS    ; 4dx
 	const OWN_TEMPO    ; 4e
 	const STEADFAST    ; 4f
 	const EARLY_BIRD   ; 50x

@@ -1363,7 +1363,8 @@ CheckDefensiveAbilities:
 	ret nz
 	call MoveDelayAbility
 	ld hl, MotorDriveText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	jp EndMoveEffectAbilities
 
 .Soundproof:
 	call GetUserCurrentMove
@@ -1376,7 +1377,8 @@ CheckDefensiveAbilities:
 	ld a, b
 	and a
 	ld hl, SoundproofText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	jp EndMoveEffectAbilities
 
 .Bulletproof:
 	call GetUserCurrentMove
@@ -1389,7 +1391,8 @@ CheckDefensiveAbilities:
 	ld a, b
 	and a
 	ld hl, SoundproofText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	jp EndMoveEffectAbilities
 
 .DrySkin:
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1594,7 +1597,7 @@ HandleEndMoveAbility:
 CheckStatusAbilities:
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVar
-	and 1 << SLP | 1 << FRZ | 1 << PAR
+	and a
 	ret
 
 CheckFullHPAbilities:

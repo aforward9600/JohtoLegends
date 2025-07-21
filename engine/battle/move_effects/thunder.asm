@@ -1,6 +1,8 @@
 BattleCommand_ThunderAccuracy:
 ; thunderaccuracy
 
+	call CheckCloudNine
+	ret z
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVarAddr
 	and TYPE_MASK
