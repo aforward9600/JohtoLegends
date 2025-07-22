@@ -6,8 +6,7 @@ PlayWhirlpoolSound:
 	call WaitSFX
 	ld de, SFX_SURF
 	call PlaySFX
-	call WaitSFX
-	ret
+	jp WaitSFX
 
 BlindingFlash:
 	farcall FadeOutPalettes
@@ -72,8 +71,7 @@ ShakeHeadbuttTree:
 	ld hl, vTiles1
 	lb bc, BANK(Font), 12
 	call Get1bpp
-	call ReplaceKrisSprite
-	ret
+	jp ReplaceKrisSprite
 
 HeadbuttTreeGFX:
 INCBIN "gfx/overworld/headbutt_tree.2bpp"

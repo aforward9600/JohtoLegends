@@ -1206,6 +1206,15 @@ BattleCommand_Critical:
 	xor a
 	ld [wCriticalHit], a
 
+	call CheckNeutralGas
+	jr z, .SkipShellArmor
+	call GetTargetAbility
+	cp SHELL_ARMOR
+	ret z
+	cp BATTLE_ARMOR
+	ret z
+
+.SkipShellArmor
 	ld a, BATTLE_VARS_MOVE_POWER
 	call GetBattleVar
 	and a
@@ -2758,6 +2767,13 @@ PlayerAttackDamage:
 
 	call HailDefBoost
 
+	call CheckNeutralGas
+	jr z, .SkipPhysicalInfiltrator
+	ld a, [wPlayerAbility]
+	cp INFILTRATOR
+	jr z, .physicalcrit
+
+.SkipPhysicalInfiltrator
 	ld a, [wEnemyScreens]
 	bit SCREENS_REFLECT, a
 	jr z, .physicalcrit
@@ -2784,6 +2800,13 @@ PlayerAttackDamage:
 
 	call SandstormSpDefBoost
 
+	call CheckNeutralGas
+	jr z, .SkipSpecialInfiltrator
+	ld a, [wPlayerAbility]
+	cp INFILTRATOR
+	jr z, .specialcrit
+
+.SkipSpecialInfiltrator
 	ld a, [wEnemyScreens]
 	bit SCREENS_LIGHT_SCREEN, a
 	jr z, .specialcrit
@@ -3018,6 +3041,13 @@ EnemyAttackDamage:
 
 	call HailDefBoost
 
+	call CheckNeutralGas
+	jr z, .SkipPhysicalInfiltrator
+	ld a, [wEnemyAbility]
+	cp INFILTRATOR
+	jr z, .specialcrit
+
+.SkipPhysicalInfiltrator
 	ld a, [wPlayerScreens]
 	bit SCREENS_REFLECT, a
 	jr z, .physicalcrit
@@ -3044,6 +3074,13 @@ EnemyAttackDamage:
 
 	call SandstormSpDefBoost
 
+	call CheckNeutralGas
+	jr z, .SkipSpecialInfiltrator
+	ld a, [wEnemyAbility]
+	cp INFILTRATOR
+	jr z, .specialcrit
+
+.SkipSpecialInfiltrator
 	ld a, [wPlayerScreens]
 	bit SCREENS_LIGHT_SCREEN, a
 	jr z, .specialcrit
@@ -4804,6 +4841,9 @@ BattleCommand_StatDown:
 	ret
 
 CheckMist:
+;	call CheckNeutralGas
+;	jr z, .SkipInfiltrator
+;	call GetUserAbility
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_ATTACK_DOWN
@@ -6891,6 +6931,13 @@ INCLUDE "engine/battle/move_effects/return.asm"
 INCLUDE "engine/battle/move_effects/safeguard.asm"
 
 SafeCheckSafeguard:
+	call CheckNeutralGas
+	jr z, .SkipInfiltrator
+	call GetUserAbility
+	cp INFILTRATOR
+	ret z
+
+.SkipInfiltrator
 	push hl
 	ld hl, wEnemyScreens
 	ldh a, [hBattleTurn]
@@ -7285,6 +7332,8 @@ INCLUDE "engine/battle/move_effects/avalanche.asm"
 
 SandstormSpDefBoost: 
 ; First, check if Sandstorm is active.
+	call CheckCloudNine
+	ret z
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
 	ret nz
@@ -7422,6 +7471,8 @@ MachoBraceEffectOnSpeed::
 
 HailDefBoost: 
 ; First, check if Hail is active.
+	call CheckCloudNine
+	ret z
 	ld a, [wBattleWeather]
 	cp WEATHER_HAIL
 	ret nz

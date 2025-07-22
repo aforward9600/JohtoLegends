@@ -60,8 +60,7 @@ endr
 	ld c, a
 	farcall GetBuenasPassword
 	pop hl
-	call PlaceString
-	ret
+	jp PlaceString
 
 BuenaPrize:
 	xor a
@@ -143,8 +142,7 @@ BuenaPrize:
 	ld hl, .Text_PleaseComeBackAgain
 	call PrintText
 	call JoyWaitAorB
-	call PlayClickSFX
-	ret
+	jp PlayClickSFX
 
 .Text_AskWhichPrize:
 	; Which prize would you like?
@@ -207,8 +205,7 @@ PrintBlueCardBalance:
 	ld [hld], a
 	pop de
 	lb bc, 1, 2
-	call PrintNum
-	ret
+	jp PrintNum
 
 .Points_string:
 	db "Points@"
@@ -219,8 +216,7 @@ BlueCardBalanceMenuHeader:
 
 Buena_PlacePrizeMenuBox:
 	ld hl, .MenuHeader
-	call LoadMenuHeader
-	ret
+	jp LoadMenuHeader
 
 .MenuHeader
 	db MENU_BACKUP_TILES ; flags
@@ -287,8 +283,7 @@ endr
 	ld [wNamedObjectIndexBuffer], a
 	call GetItemName
 	pop hl
-	call PlaceString
-	ret
+	jp PlaceString
 
 .prizepoints
 	ld a, [wMenuSelection]

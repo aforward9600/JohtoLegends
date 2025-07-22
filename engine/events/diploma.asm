@@ -1,7 +1,6 @@
 _Diploma:
 	call PlaceDiplomaOnScreen
-	call WaitPressAorB_BlinkCursor
-	ret
+	jp WaitPressAorB_BlinkCursor
 
 PlaceDiplomaOnScreen:
 	call ClearBGPalettes
@@ -32,11 +31,10 @@ PlaceDiplomaOnScreen:
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
 	call SetPalettes
-	call DelayFrame
-	ret
+	jp DelayFrame
 
 .Player:
-	db "PLAYER@"
+	db "Player@"
 
 .EmptyString:
 	db "@"
@@ -45,7 +43,7 @@ PlaceDiplomaOnScreen:
 	db   "This certifies"
 	next "that you have"
 	next "completed the"
-	next "new #DEX."
+	next "#mon Journal."
 	next "Congratulations!"
 	db   "@"
 
@@ -72,11 +70,10 @@ PrintDiplomaPage2:
 	inc hl
 	ld de, wGameTimeMinutes
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
-	call PrintNum
-	ret
+	jp PrintNum
 
-.PlayTime: db "PLAY TIME@"
-.GameFreak: db "GAME FREAK@"
+.PlayTime: db "Play Time@"
+.GameFreak: db "Game Freak@"
 
 DiplomaGFX:
 INCBIN "gfx/diploma/diploma.2bpp.lz"

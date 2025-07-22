@@ -534,8 +534,10 @@ ApplyAbilityEffectsOnEncounterMon:
 	dbw VITAL_SPIRIT, .VitalSpirit
 	dbw QUICK_FEET,   .QuickFeet
 	dbw INFILTRATOR,  .Infiltrator
+	dbw NO_GUARD,     .NoGuard
 	db -1, -1
 
+.NoGuard:
 .ArenaTrap:
 .Illuminate:
 .double_encounter_rate
