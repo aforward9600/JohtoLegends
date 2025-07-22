@@ -4841,9 +4841,12 @@ BattleCommand_StatDown:
 	ret
 
 CheckMist:
-;	call CheckNeutralGas
-;	jr z, .SkipInfiltrator
-;	call GetUserAbility
+	call CheckNeutralGas
+	jr z, .SkipInfiltrator
+	call GetUserAbility
+	cp INFILTRATOR
+	jr z, .dont_check_mist
+.SkipInfiltrator
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_ATTACK_DOWN
@@ -4852,8 +4855,16 @@ CheckMist:
 	jr c, .check_mist
 	cp EFFECT_ATTACK_DOWN_2
 	jr c, .dont_check_mist
+	cp EFFECT_SP_ATK_DOWN_2 + 1
+	jr c, .check_mist
 	cp EFFECT_ATTACK_DOWN_HIT
 	jr c, .dont_check_mist
+	cp EFFECT_ACCURACY_DOWN_HIT + 1
+	jr c, .check_mist
+	cp EFFECT_ALL_DOWN_HIT
+	jr c, .dont_check_mist
+	cp EFFECT_PLAY_NICE + 1
+	jr c, .check_mist
 .dont_check_mist
 	xor a
 	ret
@@ -5085,6 +5096,8 @@ BattleCommand_ResetMiss:
 	ld [wAttackMissed], a
 	ret
 
+LowerStatPop::
+	ld a, b
 LowerStat:
 	ld [wLoweredStat], a
 

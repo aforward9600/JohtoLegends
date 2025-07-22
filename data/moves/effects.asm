@@ -2387,10 +2387,7 @@ HammerArm:
 	applydamage
 	criticaltext
 	supereffectivetext
-	switchturn
-	speeddown
-	statdownmessage
-	switchturn
+	hammerarm
 	kingsrock
 	checkfaint
 	buildopponentrage
@@ -2412,12 +2409,7 @@ CloseCombat:
 	applydamage
 	criticaltext
 	supereffectivetext
-	switchturn
-	defensedown
-	statdownmessage
-	specialdefensedown
-	statdownmessage
-	switchturn
+	closecombat
 	kingsrock
 	checkfaint
 	buildopponentrage
@@ -2455,12 +2447,7 @@ Superpower:
 	applydamage
 	criticaltext
 	supereffectivetext
-	switchturn
-	attackdown
-	statdownmessage
-	defensedown
-	statdownmessage
-	switchturn
+	superpower
 	kingsrock
 	checkfaint
 	buildopponentrage
@@ -2503,8 +2490,8 @@ StrengthSap:
     usedmovetext
     doturn
     checkhit
-	magicbounce
-	defensiveabilities
+    magicbounce
+    defensiveabilities
     strengthsap
     endmove
 

@@ -50,10 +50,7 @@ StrengthSap_AttackDown:
     bit SUBSTATUS_MIST, a
     jp nz, .mist
 
-	call CheckNeutralGas
-	jr z, .SkipHyperCutter
-	call GetUserAbility
-	cp MOLD_BREAKER
+	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipHyperCutter
 	call GetTargetAbility
 	cp HYPER_CUTTER

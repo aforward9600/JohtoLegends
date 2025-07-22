@@ -158,24 +158,24 @@ MoveEffectsPointers:
 	dw Fly
 	dw DefenseCurl
 	dw DracoFang
-	dw AllDownHit
 	dw SleepHit
 	dw FlareBlitz
 	dw Avalanche
 	dw HammerArm
 	dw CloseCombat
-	dw BulkUp
 	dw Superpower
-	dw DragonDance
 	dw ShellSmash
+	dw AllDownHit
+	dw SpecialDefenseDown2Hit
+	dw PlayNice
+	dw BulkUp
+	dw DragonDance
 	dw HoneClaws
 	dw SpeedUpHit
 	dw Hail
 	dw BrickBreak
 	dw QuiverDance
-	dw SpecialDefenseDown2Hit
 	dw VoltTackle
-	dw PlayNice
 	dw CircleThrow
 	dw SpecialAttackUpHit
 	dw SuckerPunch

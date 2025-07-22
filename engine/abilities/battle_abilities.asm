@@ -139,12 +139,20 @@ DoEntranceAbilities:
 	db -1
 
 .Intimidate:
+	ld a, BATTLE_VARS_SUBSTATUS4_OPP
+	call GetBattleVar
+	bit SUBSTATUS_MIST, a
+	jr nz, .IntimidateBlocked
 	call GetTargetAbility
 	ld hl, NoIntimidateAbilities
 	ld de, 1
 	call IsInArray
 	jr c, .IntimidateBlocked
-	farcall BattleCommand_AttackDown
+	ld b, ATTACK
+	call LowerStatAbility
+	ld a, [wFailedMessage]
+	and a
+	ret nz
 	ld hl, IntimidateText
 	call StdBattleTextbox
 	call GetTargetAbility
@@ -600,8 +608,9 @@ CheckContactAbilities:
 	farcall HasPlayerFainted
 	ret z
 .ContinueWeakArmor
-	farcall BattleCommand_DefenseDown
-	ld a, [wAttackMissed]
+	ld b, DEFENSE
+	call LowerStatAbility
+	ld a, [wFailedMessage]
 	and a
 	jr nz, .TrySpeedUp
 	ld hl, WeakArmorDefenseText
@@ -1651,3 +1660,7 @@ BulletproofMoves:
 	dw SLUDGE_BOMB
 	dw ZAP_CANNON
 	dw -1
+
+LowerStatAbility:
+	farcall LowerStatPop
+	ret

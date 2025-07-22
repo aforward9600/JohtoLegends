@@ -196,6 +196,9 @@ ENDM
 	command gyroball
 	command sheerforce
 	command defensiveabilities
+	command hammerarm
+	command closecombat
+	command superpower
 ;	command wakeupslap
 ;	command awakenopponent
 

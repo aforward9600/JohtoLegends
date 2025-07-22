@@ -196,5 +196,8 @@ BattleCommandPointers:
 	effectfn BattleCommand_GyroBall
 	effectfn BattleCommand_SheerForce
 	effectfn BattleCommand_DefensiveAbilities
+	effectfn BattleCommand_HammerArm
+	effectfn BattleCommand_CloseCombat
+	effectfn BattleCommand_Superpower
 ;	effectfn BattleCommand_WakeUpSlap
 ;	effectfn BattleCommand_AwakenOpponent

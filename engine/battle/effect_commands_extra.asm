@@ -418,3 +418,40 @@ PranksterCheck:
 	ld a, 1
 	ld [wAttackMissed], a
 	ret
+
+BattleCommand_Superpower:
+	farcall ResetMiss
+	ld b, ATTACK
+	farcall LowerStatPop
+	farcall BattleCommand_SwitchTurn
+	farcall BattleCommand_StatDownMessage
+
+	farcall ResetMiss
+	ld b, DEFENSE
+	farcall LowerStatPop
+	farcall BattleCommand_StatDownMessage
+	farcall BattleCommand_SwitchTurn
+	ret
+
+BattleCommand_CloseCombat:
+	farcall ResetMiss
+	ld b, DEFENSE
+	farcall LowerStatPop
+	farcall BattleCommand_SwitchTurn
+	farcall BattleCommand_StatDownMessage
+
+	farcall ResetMiss
+	ld b, SP_DEFENSE
+	farcall LowerStatPop
+	farcall BattleCommand_StatDownMessage
+	farcall BattleCommand_SwitchTurn
+	ret
+
+BattleCommand_HammerArm:
+	farcall ResetMiss
+	ld b, SPEED
+	farcall LowerStatPop
+	farcall BattleCommand_SwitchTurn
+	farcall BattleCommand_StatDownMessage
+	farcall BattleCommand_SwitchTurn
+	ret
