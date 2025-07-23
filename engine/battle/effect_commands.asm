@@ -1630,6 +1630,11 @@ BattleCommand_CheckHit:
 	and a
 	jp nz, .Miss
 
+	farcall ArmorTailCheck
+	ld a, [wAttackMissed]
+	and a
+	jp nz, .ArmorTail
+
 	call .DrainSub
 	jp z, .Miss
 
@@ -1910,6 +1915,12 @@ BattleCommand_CheckHit:
 	call GetBattleVar
 	bit SUBSTATUS_X_ACCURACY, a
 	ret
+
+.ArmorTail:
+	call BattleCommand_MoveDelay
+	ld hl, ArmorTailText
+	call StdBattleTextbox
+	jp EndMoveEffect
 
 .StatModifiers:
 	ldh a, [hBattleTurn]

@@ -1401,6 +1401,13 @@ BattleText_Damp:
 	cont "attack!"
 	prompt
 
+ArmorTailText:
+	text "<TARGET>'s"
+	line "Armor Tail"
+	cont "prevented the"
+	cont "attack!"
+	done
+
 WaterAbsorbText:
 	text "<TARGET>"
 	line "healed itself with"

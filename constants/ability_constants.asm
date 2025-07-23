@@ -131,7 +131,7 @@
 	const SAP_SIPPER   ; 80x
 	const ARMOR_TAIL   ; 81
 	const POISON_HEAL  ; 82x
-	const CONTRARY     ; 83
+	const CONTRARY     ; 83x
 	const PICKPOCKET   ; 84x
 	const BULLETPROOF  ; 85x
 	const MAGMA_ARMOR  ; 86

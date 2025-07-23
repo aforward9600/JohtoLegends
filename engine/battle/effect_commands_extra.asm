@@ -373,12 +373,47 @@ BattleCommand_SwitchTurn2:
 	ldh [hBattleTurn], a
 	ret
 
-PranksterCheck:
-	call CheckNeutralGas
-	jr nz, .ContinuePrankster
+ArmorTailCheck:
+	call CheckUserNeutralGasMoldBreaker
+	jr nz, .ContinueArmorTail
+.NotArmorTail
 	ld a, 0
 	ld [wAttackMissed], a
 	ret
+
+.ContinueArmorTail
+	call GetTargetAbility
+	cp ARMOR_TAIL
+	jr nz, .NotArmorTail
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_FAKE_OUT
+	jr z, .ArmorTailBlocked
+	cp EFFECT_SUCKER_PUNCH
+	jr z, .ArmorTailBlocked
+	cp EFFECT_PRIORITY_HIT
+	jr z, .ArmorTailBlocked
+	call GetUserAbility
+	cp PRANKSTER
+	jr z, .CheckForStatus
+	jr .NotArmorTail
+
+.ArmorTailBlocked:
+	ld a, 1
+	ld [wAttackMissed], a
+	ret
+
+.CheckForStatus
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp STATUS
+	jr c, .NotArmorTail
+	jr .ArmorTailBlocked
+
+PranksterCheck:
+	call CheckNeutralGas
+	jr nz, .ContinuePrankster
+	jr .OverwritePriority
 
 .ContinuePrankster
 	call GetUserAbility
