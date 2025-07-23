@@ -125,11 +125,11 @@
 	const PIXILATE     ; 7ax
 	const IMMUNITY     ; 7b
 	const MARVEL_SCALE ; 7cx
-	const MULTISCALE   ; 7d
+	const MULTISCALE   ; 7dx
 	const SUPER_LUCK   ; 7e
 	const HUGE_POWER   ; 7fx
 	const SAP_SIPPER   ; 80x
-	const ARMOR_TAIL   ; 81
+	const ARMOR_TAIL   ; 81x
 	const POISON_HEAL  ; 82x
 	const CONTRARY     ; 83x
 	const PICKPOCKET   ; 84x

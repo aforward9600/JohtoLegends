@@ -666,6 +666,8 @@ CheckBoostingAbilities:
 	jp z, .DrySkin
 	cp HEAT_PROOF
 	jp z, .HeatProof
+	cp MULTISCALE
+	jp z, .Multiscale
 .AfterMarvelScale
 	call GetUserAbility
 	ld de, 3
@@ -785,6 +787,12 @@ CheckBoostingAbilities:
 	call GetBattleVar
 	and TYPE_MASK
 	cp FIRE
+	jp nz, .AfterMarvelScale
+	call FiftyPercentNerf
+	jp .AfterMarvelScale
+
+.Multiscale:
+	farcall CheckOpponentFullHP
 	jp nz, .AfterMarvelScale
 	call FiftyPercentNerf
 	jp .AfterMarvelScale
