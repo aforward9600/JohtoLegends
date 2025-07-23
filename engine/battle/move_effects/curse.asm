@@ -41,10 +41,17 @@ BattleCommand_Curse:
 	ld a, $1
 	ld [wKickCounter], a
 	call AnimateCurrentMove
+	call CheckNeutralGas
+	jr z, .SkipNeutralGas
+	call GetUserAbility
+	cp CONTRARY
+	jr z, .CurseContrary
+.SkipNeutralGas
 	ld a, SPEED
 	call LowerStat
 	call BattleCommand_SwitchTurn
 	call BattleCommand_StatDownMessage
+.ReconveneCurse
 	call ResetMiss
 	call BattleCommand_SwitchTurn
 	call BattleCommand_AttackUp
@@ -52,6 +59,13 @@ BattleCommand_Curse:
 	call ResetMiss
 	call BattleCommand_DefenseUp
 	jp BattleCommand_StatUpMessage
+
+.CurseContrary
+	ld a, SPEED
+	call RaiseStat
+	call BattleCommand_SwitchTurn
+	call BattleCommand_StatDownMessage
+	jr .ReconveneCurse
 
 .ghost
 

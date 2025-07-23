@@ -1,6 +1,12 @@
 BattleCommand_ShellSmash:
 ; shellsmash
 
+	call CheckNeutralGas
+	jr z, .SkipContrary
+	call GetUserAbility
+	cp CONTRARY
+	jr z, ShellSmashContrary
+.SkipContrary
 ; Defense
 	call ResetMiss
 	ld a, DEFENSE
@@ -16,6 +22,7 @@ BattleCommand_ShellSmash:
 
 	call BattleCommand_SwitchTurn
 
+ReconveneShellSmash:
 ; Attack
 	call ResetMiss
 	call BattleCommand_AttackUp2
@@ -30,3 +37,20 @@ BattleCommand_ShellSmash:
 	call ResetMiss
 	call BattleCommand_SpeedUp2
 	jp   BattleCommand_StatUpMessage
+
+ShellSmashContrary:
+; Defense
+	call ResetMiss
+	ld a, DEFENSE
+	call RaiseStat
+	call BattleCommand_SwitchTurn
+	call BattleCommand_StatDownMessage
+
+; Special Defense
+	call ResetMiss
+	ld a, SP_DEFENSE
+	call RaiseStat
+	call BattleCommand_StatDownMessage
+
+	call BattleCommand_SwitchTurn
+	jr ReconveneShellSmash

@@ -1241,6 +1241,13 @@ IntimidateText:
 	cont "Attack!"
 	prompt
 
+IntimidateContraryText:
+	text "<USER>'s"
+	line "Intimidate raised"
+	cont "<TARGET>'s"
+	cont "Attack!"
+	prompt
+
 AttackNotLoweredText:
 	text "<TARGET>'s"
 	line "Attack was not"

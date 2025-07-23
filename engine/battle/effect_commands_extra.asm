@@ -421,37 +421,80 @@ PranksterCheck:
 
 BattleCommand_Superpower:
 	farcall ResetMiss
+	call CheckNeutralGas
+	jr z, .SkipContrary
+	call GetUserAbility
+	cp CONTRARY
+	jr z, SuperpowerContrary
+.SkipContrary
 	ld b, ATTACK
 	farcall LowerStatPop
-	farcall BattleCommand_SwitchTurn
-	farcall BattleCommand_StatDownMessage
-
+	call MoveFirstSwitchTurn
 	farcall ResetMiss
 	ld b, DEFENSE
 	farcall LowerStatPop
-	farcall BattleCommand_StatDownMessage
-	farcall BattleCommand_SwitchTurn
-	ret
+	jp MoveSecondSwitchTurn
+
+SuperpowerContrary:
+	ld b, ATTACK
+	farcall RaiseStat
+	call MoveFirstSwitchTurn
+	farcall ResetMiss
+	ld b, DEFENSE
+	farcall RaiseStat
+	jp MoveSecondSwitchTurn
 
 BattleCommand_CloseCombat:
 	farcall ResetMiss
+	call CheckNeutralGas
+	jr z, .SkipContrary
+	call GetUserAbility
+	cp CONTRARY
+	jr z, CloseCombatContrary
+.SkipContrary
 	ld b, DEFENSE
 	farcall LowerStatPop
-	farcall BattleCommand_SwitchTurn
-	farcall BattleCommand_StatDownMessage
-
+	call MoveFirstSwitchTurn
 	farcall ResetMiss
 	ld b, SP_DEFENSE
 	farcall LowerStatPop
-	farcall BattleCommand_StatDownMessage
-	farcall BattleCommand_SwitchTurn
-	ret
+	jp MoveSecondSwitchTurn
+
+CloseCombatContrary:
+	ld b, DEFENSE
+	farcall RaiseStat
+	call MoveFirstSwitchTurn
+
+	farcall ResetMiss
+	ld b, SP_DEFENSE
+	farcall RaiseStat
+	jp MoveSecondSwitchTurn
 
 BattleCommand_HammerArm:
 	farcall ResetMiss
+	call CheckNeutralGas
+	jr z, .SkipContrary
+	call GetUserAbility
+	cp CONTRARY
+	jr z, HammerArmContrary
+.SkipContrary
 	ld b, SPEED
 	farcall LowerStatPop
-	farcall BattleCommand_SwitchTurn
+HammerArmMessage:
+	call BattleCommand_SwitchTurn2
 	farcall BattleCommand_StatDownMessage
-	farcall BattleCommand_SwitchTurn
+	jp BattleCommand_SwitchTurn2
+
+HammerArmContrary:
+	ld b, SPEED
+	farcall RaiseStat
+	jr HammerArmMessage
+
+MoveFirstSwitchTurn:
+	call BattleCommand_SwitchTurn2
+	farcall BattleCommand_StatDownMessage
 	ret
+
+MoveSecondSwitchTurn:
+	farcall BattleCommand_StatDownMessage
+	jp BattleCommand_SwitchTurn2

@@ -144,12 +144,14 @@ DoEntranceAbilities:
 	bit SUBSTATUS_MIST, a
 	jr nz, .IntimidateBlocked
 	call GetTargetAbility
+	cp CONTRARY
+	jr z, .IntimidateContrary
 	ld hl, NoIntimidateAbilities
 	ld de, 1
 	call IsInArray
 	jr c, .IntimidateBlocked
 	ld b, ATTACK
-	call LowerStatAbility
+	farcall LowerStatPop
 	ld a, [wFailedMessage]
 	and a
 	ret nz
@@ -164,6 +166,15 @@ DoEntranceAbilities:
 
 .IntimidateBlocked:
 	ld hl, AttackNotLoweredText
+	jp StdBattleTextbox
+
+.IntimidateContrary:
+	ld b, ATTACK
+	farcall RaiseStat
+	ld a, [wFailedMessage]
+	and a
+	ret nz
+	ld hl, IntimidateContraryText
 	jp StdBattleTextbox
 
 .Trace:
@@ -609,7 +620,7 @@ CheckContactAbilities:
 	ret z
 .ContinueWeakArmor
 	ld b, DEFENSE
-	call LowerStatAbility
+	farcall LowerStatPop
 	ld a, [wFailedMessage]
 	and a
 	jr nz, .TrySpeedUp
@@ -1660,7 +1671,3 @@ BulletproofMoves:
 	dw SLUDGE_BOMB
 	dw ZAP_CANNON
 	dw -1
-
-LowerStatAbility:
-	farcall LowerStatPop
-	ret

@@ -4547,13 +4547,26 @@ BattleCommand_EvasionUp2:
 
 BattleCommand_StatUp:
 ; statup
+	call CheckNeutralGas
+	jr z, StatUpSkipContrary
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .PlayerContrary
+	ld a, [wEnemyAbility]
+	jr .ContinueContrary
+.PlayerContrary
+	ld a, [wPlayerAbility]
+.ContinueContrary
+	cp CONTRARY
+	jp z, StatDownSkipContrary
+StatUpSkipContrary:
 	call RaiseStat
 	ld a, [wFailedMessage]
 	and a
 	ret nz
 	jp MinimizeDropSub
 
-RaiseStat:
+RaiseStat::
 	ld a, b
 	ld [wLoweredStat], a
 	ld hl, wPlayerStatLevels
@@ -4748,7 +4761,21 @@ BattleCommand_EvasionDown2:
 
 BattleCommand_StatDown:
 ; statdown
-
+	ld b, a
+	call CheckNeutralGas
+	jr z, StatDownSkipContrary
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .EnemyContrary
+	ld a, [wPlayerAbility]
+	jr .ContinueContrary
+.EnemyContrary
+	ld a, [wEnemyAbility]
+.ContinueContrary
+	cp CONTRARY
+	jp z, StatUpSkipContrary
+StatDownSkipContrary:
+	ld a, b
 	ld [wLoweredStat], a
 
 	call CheckMist
@@ -4861,7 +4888,7 @@ CheckMist:
 	jr c, .dont_check_mist
 	cp EFFECT_ACCURACY_DOWN_HIT + 1
 	jr c, .check_mist
-	cp EFFECT_ALL_DOWN_HIT
+	cp EFFECT_HAMMER_ARM
 	jr c, .dont_check_mist
 	cp EFFECT_PLAY_NICE + 1
 	jr c, .check_mist
@@ -4876,6 +4903,20 @@ CheckMist:
 	ret
 
 BattleCommand_StatUpMessage:
+	call CheckNeutralGas
+	jr z, StatUpMessageSkipContrary
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .PlayerContrary
+	ld a, [wEnemyAbility]
+	jr .ContinueContrary
+.PlayerContrary
+	ld a, [wPlayerAbility]
+	ld b,b
+.ContinueContrary
+	cp CONTRARY
+	jr z, StatDownMessageSkipContrary2
+StatUpMessageSkipContrary:
 	ld a, [wFailedMessage]
 	and a
 	ret nz
@@ -4905,7 +4946,25 @@ BattleCommand_StatUpMessage:
 	text_far UnknownText_0x1c0ce0
 	text_end
 
+StatDownMessageSkipContrary2:
+	call BattleCommand_SwitchTurn
+	call StatDownMessageSkipContrary
+	jp BattleCommand_SwitchTurn
+
 BattleCommand_StatDownMessage:
+	call CheckNeutralGas
+	jr z, StatDownMessageSkipContrary
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .EnemyContrary
+	ld a, [wPlayerAbility]
+	jr .ContinueContrary
+.EnemyContrary
+	ld a, [wEnemyAbility]
+.ContinueContrary
+	cp CONTRARY
+	jp z, StatUpMessageSkipContrary2
+StatDownMessageSkipContrary:
 	ld a, [wFailedMessage]
 	and a
 	ret nz
@@ -4934,6 +4993,11 @@ BattleCommand_StatDownMessage:
 .fell
 	text_far UnknownText_0x1c0d06
 	text_end
+
+StatUpMessageSkipContrary2:
+	call BattleCommand_SwitchTurn
+	call StatUpMessageSkipContrary
+	jp BattleCommand_SwitchTurn
 
 TryLowerStat:
 ; Lower stat c from stat struct hl (buffer de).
@@ -4980,6 +5044,19 @@ TryLowerStat:
 
 BattleCommand_StatUpFailText:
 ; statupfailtext
+	call CheckNeutralGas
+	jr z, StatUpFailSkipContrary
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .PlayerContrary
+	ld a, [wEnemyAbility]
+	jr .ContinueContrary
+.PlayerContrary
+	ld a, [wPlayerAbility]
+.ContinueContrary
+	cp CONTRARY
+	jp z, StatDownFailSkipContrary2
+StatUpFailSkipContrary:
 	ld a, [wFailedMessage]
 	and a
 	ret z
@@ -4996,8 +5073,26 @@ BattleCommand_StatUpFailText:
 	ld hl, WontRiseAnymoreText
 	jp StdBattleTextbox
 
+StatDownFailSkipContrary2:
+	call BattleCommand_SwitchTurn
+	call StatDownFailSkipContrary
+	jp BattleCommand_SwitchTurn
+
 BattleCommand_StatDownFailText:
 ; statdownfailtext
+	call CheckNeutralGas
+	jr z, StatDownFailSkipContrary
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .EnemyContrary
+	ld a, [wPlayerAbility]
+	jr .ContinueContrary
+.EnemyContrary
+	ld a, [wEnemyAbility]
+.ContinueContrary
+	cp CONTRARY
+	jp z, StatUpFailSkipContrary2
+StatDownFailSkipContrary:
 	ld a, [wFailedMessage]
 	and a
 	ret z
@@ -5016,6 +5111,11 @@ BattleCommand_StatDownFailText:
 	call GetStatName
 	ld hl, WontDropAnymoreText
 	jp StdBattleTextbox
+
+StatUpFailSkipContrary2:
+	call BattleCommand_SwitchTurn
+	call StatUpFailSkipContrary
+	jp BattleCommand_SwitchTurn
 
 GetStatName:
 	ld hl, StatNames

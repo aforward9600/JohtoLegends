@@ -2725,8 +2725,8 @@ HorseaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 32, SEADRA
 	db 0 ; no more evolutions
 	dbw 1, BUBBLE
-	dbw 5, SMOKESCREEN
-	dbw 9, LEER
+	dbw 5, LEER
+	dbw 9, SMOKESCREEN
 	dbw 13, WATER_GUN
 	dbw 17, TWISTER
 	dbw 21, BUBBLEBEAM
@@ -2742,8 +2742,8 @@ SeadraEvosAttacks:
 	dbbw EVOLVE_ITEM, DRAGON_SCALE, KINGDRA
 	db 0 ; no more evolutions
 	dbw 1, BUBBLE
-	dbw 5, SMOKESCREEN
-	dbw 9, LEER
+	dbw 5, LEER
+	dbw 9, SMOKESCREEN
 	dbw 13, WATER_GUN
 	dbw 17, TWISTER
 	dbw 21, BUBBLEBEAM
@@ -2760,8 +2760,8 @@ KingdraEvosAttacks:
 	dbw LEARN_EVO_MOVE, OUTRAGE
 	dbw 1, OUTRAGE
 	dbw 1, BUBBLE
-	dbw 5, SMOKESCREEN
-	dbw 9, LEER
+	dbw 5, LEER
+	dbw 9, SMOKESCREEN
 	dbw 13, WATER_GUN
 	dbw 17, TWISTER
 	dbw 21, BUBBLEBEAM

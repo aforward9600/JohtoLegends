@@ -6,7 +6,7 @@ BattleCommand_PainSplit:
 	jp nz, .ButItFailed
 	call CheckSubstituteOpp
 	jp nz, .ButItFailed
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 	ld hl, wBattleMonMaxHP + 1
 	ld de, wEnemyMonMaxHP + 1
 	call .PlayerShareHP
@@ -90,4 +90,5 @@ BattleCommand_PainSplit:
 	ret
 
 .ButItFailed:
-	jp PrintDidntAffect2
+	farcall PrintDidntAffect2
+	ret

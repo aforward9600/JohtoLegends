@@ -14,9 +14,21 @@ BattleCommand_StrengthSap:
 
 ; lower opponents attack
     push bc
+	call CheckNeutralGas
+	jr z, .SkipContrary
+	call GetTargetAbility
+	cp CONTRARY
+	jr nz, .SkipContrary
+	call StrengthSap_AttackRaise
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .fail
+	jr .finishstrengthsap
+.SkipContrary
     call StrengthSap_AttackDown
     and a
     jr nz, .fail
+.finishstrengthsap
     farcall AnimateCurrentMove
     farcall BattleCommand_StatDownMessage
     jr .restorehp
@@ -127,3 +139,8 @@ StrengthSap_AttackDown:
 .AttackDropSkip
 	farcall AnimateCurrentMove
 	jp BattleCommand_StrengthSap.restorehp
+
+StrengthSap_AttackRaise:
+	ld b, ATTACK
+	farcall RaiseStat
+	ret
