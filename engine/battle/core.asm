@@ -1145,11 +1145,34 @@ ResidualDamage:
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	call z, Call_PlayBattleAnim_OnlyIfVisible
 	call SwitchTurnCore
-
 	call GetEighthMaxHP
 	call SubtractHPFromUser
 	ld a, $1
 	ldh [hBGMapMode], a
+	call CheckNeutralGas
+	jr z, .SkipLiquidOoze
+	call GetUserAbility
+	cp LIQUID_OOZE
+	jr nz, .SkipLiquidOoze
+	call SwitchTurnCore
+
+	ld hl, wBattleMonMaxHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyMonMaxHP
+.ok
+	ld a, [hli]
+	ld [wBuffer1 + 1], a
+	ld a, [hl]
+	ld [wBuffer1], a
+
+	call SubtractHPFromUser
+	call SwitchTurnCore
+	ld hl, LiquidOozeText
+	call StdBattleTextbox
+	jr .not_seeded
+.SkipLiquidOoze
 	call RestoreHP
 	ld hl, LeechSeedSapsText
 	call StdBattleTextbox
@@ -1585,6 +1608,32 @@ HandleWeather:
 	dw BattleText_TheSunlightFaded
 	dw BattleText_TheSandstormSubsided
 	dw BattleText_HailEnds
+
+_LiquidOoze::
+; GetMaxHP puts it into both bc and wHPBuffer1.
+; The former is overwritten below, but the latter is needed to animate the HP bar correctly.
+	call GetMaxHP
+
+; Put current damage into bc and halve it.
+	ld hl, wCurDamage
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+
+	srl b
+	rr c
+
+	ld a, c
+	or b
+	jr nz, .got_damage
+	inc c
+.got_damage
+
+	call SubtractHPFromUser
+	ld c, 20
+	call DelayFrames
+	ld hl, LiquidOozeText
+	jp StdBattleTextbox
 
 SubtractHPFromTarget:
 	call SubtractHP

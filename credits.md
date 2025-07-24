@@ -11,7 +11,7 @@ Dark Zeta, Celadonk and cardboardbox for Evolution moves for Pokecrystal16.
 
 Celadonk for the Password System and some cries.
 
-Grate Oracle Lewot for the gift Pokemon issue fix.
+Grate Oracle Lewot for the gift Pokemon issue fix and Liquid Ooze.
 
 Rangi, DGamers-64 and Vendily for the fourth stat page.
 

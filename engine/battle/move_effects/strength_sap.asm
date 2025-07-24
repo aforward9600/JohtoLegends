@@ -14,7 +14,7 @@ BattleCommand_StrengthSap:
 
 ; lower opponents attack
     push bc
-	call CheckNeutralGas
+	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipContrary
 	call GetTargetAbility
 	cp CONTRARY
@@ -39,6 +39,12 @@ BattleCommand_StrengthSap:
 
 .restorehp
 ; restore HP by value of opponents attack before it was lowered
+    call CheckUserNeutralGasMoldBreaker
+    jr z, .SkipLiquidOoze
+    call GetTargetAbility
+    cp LIQUID_OOZE
+    jr z, .LiquidOoze
+.SkipLiquidOoze
     pop bc
     call BattleCommand_SwitchTurn2
     ld hl, RestoreHP
@@ -48,6 +54,18 @@ BattleCommand_StrengthSap:
     call UpdateUserInParty
     call RefreshBattleHuds
     ld hl, RegainedHealthText
+    jp StdBattleTextbox
+
+.LiquidOoze
+    pop bc
+;    call BattleCommand_SwitchTurn2
+    ld hl, SubtractHPFromTarget
+    ld a, BANK("Battle Core")
+    rst FarCall
+;    call BattleCommand_SwitchTurn2
+    call UpdateUserInParty
+    call RefreshBattleHuds
+    ld hl, LiquidOozeText
     jp StdBattleTextbox
 
 StrengthSap_AttackDown:

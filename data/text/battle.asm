@@ -1408,6 +1408,13 @@ ArmorTailText:
 	cont "attack!"
 	done
 
+LiquidOozeText:
+	text "<TARGET>'s"
+	line "Liquid Ooze"
+	cont "damaged"
+	cont "<USER>!"
+	done
+
 SuctionCupsText:
 	text "<TARGET>'s"
 	line "Suction Cups"

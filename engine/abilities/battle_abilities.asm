@@ -1542,6 +1542,7 @@ HandleEndMoveAbility:
 	dbw SHED_SKIN,       .ShedSkin
 	dbw HYDRATION,       .Hydration
 	dbw SOLAR_POWER,     .SolarPower
+	dbw ICE_BODY,        .IceBody
 	db -1
 
 .RainDish:
@@ -1584,6 +1585,14 @@ HandleEndMoveAbility:
 	jp StdBattleTextbox
 
 .DrySkinRain:
+	jp CheckFullHPAbilities
+
+.IceBody:
+	call CheckCloudNine
+	ret z
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	ret nz
 	jp CheckFullHPAbilities
 
 .SpeedBoost:

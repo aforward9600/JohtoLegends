@@ -4231,12 +4231,28 @@ PoisonOpponent:
 
 BattleCommand_DrainTarget:
 ; draintarget
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipLiquidOoze
+	call GetTargetAbility
+	cp LIQUID_OOZE
+	jr z, LiquidOoze
+.SkipLiquidOoze
 	call SapHealth
 	ld hl, SuckedHealthText
 	jp StdBattleTextbox
 
+LiquidOoze:
+	farcall _LiquidOoze
+	ret
+
 BattleCommand_EatDream:
 ; eatdream
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipLiquidOoze
+	call GetTargetAbility
+	cp LIQUID_OOZE
+	jr z, LiquidOoze
+.SkipLiquidOoze
 	call SapHealth
 	ld hl, DreamEatenText
 	jp StdBattleTextbox
