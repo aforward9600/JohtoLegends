@@ -116,8 +116,8 @@
 	const SAND_VEIL    ; 71
 	const UNAWARE      ; 72
 	const COMPETITIVE  ; 73
-	const FRISK        ; 74
-	const DRY_SKIN     ; 75
+	const FRISK        ; 74x
+	const DRY_SKIN     ; 75x
 	const WONDER_SKIN  ; 76
 	const ARENA_TRAP   ; 77x
 	const ILLUMINATE   ; 78
@@ -126,7 +126,7 @@
 	const IMMUNITY     ; 7b
 	const MARVEL_SCALE ; 7cx
 	const MULTISCALE   ; 7dx
-	const SUPER_LUCK   ; 7e
+	const SUPER_LUCK   ; 7ex
 	const HUGE_POWER   ; 7fx
 	const SAP_SIPPER   ; 80x
 	const ARMOR_TAIL   ; 81x
@@ -135,7 +135,7 @@
 	const PICKPOCKET   ; 84x
 	const BULLETPROOF  ; 85x
 	const MAGMA_ARMOR  ; 86
-	const SUCTION_CUPS ; 87
+	const SUCTION_CUPS ; 87x
 	const HEAT_PROOF   ; 88x
 	const MEGA_LAUNCHER ; 89x
 	const STRONG_JAW   ; 8ax

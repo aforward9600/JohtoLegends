@@ -1408,6 +1408,13 @@ ArmorTailText:
 	cont "attack!"
 	done
 
+SuctionCupsText:
+	text "<TARGET>'s"
+	line "Suction Cups"
+	cont "prevented the"
+	cont "attack!"
+	done
+
 WaterAbsorbText:
 	text "<TARGET>"
 	line "healed itself with"

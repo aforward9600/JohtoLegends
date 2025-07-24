@@ -1310,9 +1310,18 @@ BattleCommand_Critical:
 	ld a, b
 	cp HELD_CRITICAL_UP ; Increased critical chance. Only Scope Lens has this.
 	pop bc
-	jr nz, .Tally
+	jr nz, .CheckSuperLuck
 
 ; +1 critical level
+	inc c
+
+.CheckSuperLuck:
+	call CheckNeutralGas
+	jr z, .Tally
+	call GetUserAbility
+	cp SUPER_LUCK
+	jr nz, .Tally
+
 	inc c
 
 .Tally:
@@ -5531,6 +5540,12 @@ BattleCommand_ForceSwitch:
 	jp z, .fail
 	cp BATTLETYPE_LUGIA
 	jp z, .fail
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipSuctionCups
+	call GetTargetAbility
+	cp SUCTION_CUPS
+	jp z, .SuctionCups
+.SkipSuctionCups
 	ldh a, [hBattleTurn]
 	and a
 	jp nz, .force_player_switch
@@ -5663,7 +5678,7 @@ BattleCommand_ForceSwitch:
 	ld [wForcedSwitch], a
 	call SetBattleDraw
 	ld a, [wEnemyMoveStructAnimation]
-	jr .succeed
+	jp .succeed
 
 .vs_trainer
 	call CheckPlayerHasMonToSwitchTo
@@ -5726,6 +5741,15 @@ BattleCommand_ForceSwitch:
 	call BattleCommand_MoveDelay
 	call BattleCommand_RaiseSub
 	jp PrintButItFailed
+
+.SuctionCups
+	call BattleCommand_LowerSub
+	call BattleCommand_MoveDelay
+	call BattleCommand_RaiseSub
+	ld hl, SuctionCupsText
+	call StdBattleTextbox
+	call AnimateFailedMove
+	jp EndMoveEffect
 
 .succeed
 	push af
