@@ -2010,6 +2010,40 @@ BattleCommand_CheckHit:
 	dec d
 	jr nz, .accuracy_loop
 
+	push af
+	call CheckNeutralGas
+	jr z, .FinishEvasionAbilities
+	call GetUserAbility
+	cp COMPOUNDEYES
+	jr z, .CompoundEyes
+	cp HUSTLE
+	jr nz, .NoHustle
+	farcall HustleCheck
+	jr nc, .NoHustle
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_OHKO
+	jr nz, .HustleLoss
+.NoHustle
+	pop af
+.CheckTargetEvasionAbilities
+	push af
+	call GetUserAbility
+	cp MOLD_BREAKER
+	jr z, .FinishEvasionAbilities
+	call GetTargetAbility
+	cp SAND_VEIL
+	jr z, .CheckSand
+	cp SNOW_CLOAK
+	jr z, .CheckHail
+	cp TANGLED_FEET
+	jr z, .TangledFeet
+	cp WONDER_SKIN
+	jr z, .WonderSkin
+.FinishEvasionAbilities
+	pop af
+
+.FinishEvasion
 	; if the result is more than 2 bytes, max out at 100%
 	ldh a, [hQuotient + 2]
 	and a
@@ -2021,6 +2055,66 @@ BattleCommand_CheckHit:
 	pop hl
 	ld [hl], a
 	ret
+
+.HustleLoss
+	pop af
+	ld a, 80
+	call AccuracyCalc
+	jr .CheckTargetEvasionAbilities
+
+.CompoundEyes
+	pop af
+	ld a, 30
+	add 100
+	call AccuracyCalc
+	jr .CheckTargetEvasionAbilities
+
+.CheckSand
+	ld a, [wBattleWeather]
+	cp WEATHER_SANDSTORM
+	jr nz, .FinishEvasionAbilities
+	pop af
+	ld a, 80
+	call AccuracyCalc
+	jr .FinishEvasion
+
+.CheckHail
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	jr nz, .FinishEvasionAbilities
+	pop af
+	ld a, 80
+	call AccuracyCalc
+	jr .FinishEvasion
+
+.TangledFeet
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVar
+	bit SUBSTATUS_CONFUSED, a
+	jr z, .FinishEvasionAbilities
+	pop af
+	ld a, 50
+	call AccuracyCalc
+	jr .FinishEvasion
+
+.WonderSkin
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp STATUS
+	jr c, .FinishEvasionAbilities
+	pop af
+	ld a, 50
+	call AccuracyCalc
+	jr .FinishEvasion
+
+AccuracyCalc:
+	ldh [hMultiplier], a
+	call Multiply
+
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	jp Divide
 
 BattleCommand_EffectChance:
 ; effectchance

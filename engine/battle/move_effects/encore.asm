@@ -42,7 +42,12 @@ BattleCommand_Encore:
 	inc a
 	inc a
 	ld [de], a
-	call CheckOpponentWentFirst
+	push bc
+	ld a, [wEnemyGoesFirst] ; 0 if player went first
+	ld b, a
+	ldh a, [hBattleTurn] ; 0 if it's the player's turn
+	xor b ; 1 if opponent went first
+	pop bc
 	jr nz, .finish_move
 	ldh a, [hBattleTurn]
 	and a
@@ -107,12 +112,13 @@ BattleCommand_Encore:
 	call GetMoveData
 
 .finish_move
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 	ld hl, GotAnEncoreText
 	jp StdBattleTextbox
 
 .failed
-	jp PrintDidntAffect2
+	farcall PrintDidntAffect2
+	ret
 
 .invalid_moves
 	dw NO_MOVE

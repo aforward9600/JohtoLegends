@@ -20,12 +20,19 @@ BattleCommand_HealBell:
 	add hl, bc
 	dec d
 	jr nz, .loop
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 
 	ld hl, BellChimedText
 	call StdBattleTextbox
 
 	ldh a, [hBattleTurn]
 	and a
-	jp z, CalcPlayerStats
-	jp CalcEnemyStats
+	jr z, .CalcPlayerStats
+	jr .CalcEnemyStats
+
+.CalcPlayerStats
+	farcall CalcPlayerStats
+	ret
+.CalcEnemyStats
+	farcall CalcEnemyStats
+	ret
