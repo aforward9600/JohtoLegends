@@ -4894,14 +4894,7 @@ BattleCommand_StatDown:
 	ld b, a
 	call CheckNeutralGas
 	jr z, StatDownSkipContrary
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .EnemyContrary
-	ld a, [wPlayerAbility]
-	jr .ContinueContrary
-.EnemyContrary
-	ld a, [wEnemyAbility]
-.ContinueContrary
+	call GetTargetAbility
 	cp CONTRARY
 	jp z, StatUpSkipContrary
 StatDownSkipContrary:
@@ -5018,7 +5011,7 @@ CheckMist:
 	jr c, .dont_check_mist
 	cp EFFECT_ACCURACY_DOWN_HIT + 1
 	jr c, .check_mist
-	cp EFFECT_HAMMER_ARM
+	cp EFFECT_ALL_DOWN_HIT
 	jr c, .dont_check_mist
 	cp EFFECT_PLAY_NICE + 1
 	jr c, .check_mist
@@ -5035,15 +5028,7 @@ CheckMist:
 BattleCommand_StatUpMessage:
 	call CheckNeutralGas
 	jr z, StatUpMessageSkipContrary
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .PlayerContrary
-	ld a, [wEnemyAbility]
-	jr .ContinueContrary
-.PlayerContrary
-	ld a, [wPlayerAbility]
-	ld b,b
-.ContinueContrary
+	call GetTargetAbility
 	cp CONTRARY
 	jr z, StatDownMessageSkipContrary2
 StatUpMessageSkipContrary:
@@ -5084,14 +5069,7 @@ StatDownMessageSkipContrary2:
 BattleCommand_StatDownMessage:
 	call CheckNeutralGas
 	jr z, StatDownMessageSkipContrary
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .EnemyContrary
-	ld a, [wPlayerAbility]
-	jr .ContinueContrary
-.EnemyContrary
-	ld a, [wEnemyAbility]
-.ContinueContrary
+	call GetTargetAbility
 	cp CONTRARY
 	jp z, StatUpMessageSkipContrary2
 StatDownMessageSkipContrary:
@@ -5176,14 +5154,7 @@ BattleCommand_StatUpFailText:
 ; statupfailtext
 	call CheckNeutralGas
 	jr z, StatUpFailSkipContrary
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .PlayerContrary
-	ld a, [wEnemyAbility]
-	jr .ContinueContrary
-.PlayerContrary
-	ld a, [wPlayerAbility]
-.ContinueContrary
+	call GetTargetAbility
 	cp CONTRARY
 	jp z, StatDownFailSkipContrary2
 StatUpFailSkipContrary:
@@ -5212,14 +5183,7 @@ BattleCommand_StatDownFailText:
 ; statdownfailtext
 	call CheckNeutralGas
 	jr z, StatDownFailSkipContrary
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .EnemyContrary
-	ld a, [wPlayerAbility]
-	jr .ContinueContrary
-.EnemyContrary
-	ld a, [wEnemyAbility]
-.ContinueContrary
+	call GetTargetAbility
 	cp CONTRARY
 	jp z, StatUpFailSkipContrary2
 StatDownFailSkipContrary:
@@ -5299,26 +5263,32 @@ BattleCommand_AllStatsDown:
 	call ResetMiss
 	call BattleCommand_AttackDown
 	call BattleCommand_StatDownMessage
+	farcall BattleCommand_Defiant
 
 ; Defense
 	call ResetMiss
 	call BattleCommand_DefenseDown
 	call BattleCommand_StatDownMessage
+	farcall BattleCommand_Defiant
 
 ; Speed
 	call ResetMiss
 	call BattleCommand_SpeedDown
 	call BattleCommand_StatDownMessage
+	farcall BattleCommand_Defiant
 
 ; Special Attack
 	call ResetMiss
 	call BattleCommand_SpecialAttackDown
 	call BattleCommand_StatDownMessage
+	farcall BattleCommand_Defiant
 
 ; Special Defense
 	call ResetMiss
 	call BattleCommand_SpecialDefenseDown
-	jp   BattleCommand_StatDownMessage
+	call BattleCommand_StatDownMessage
+	farcall BattleCommand_Defiant
+	ret
 
 ResetMiss:
 BattleCommand_ResetMiss:

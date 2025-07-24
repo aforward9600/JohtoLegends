@@ -1155,7 +1155,7 @@ SurroundedByWaterText:
 
 	para "with a veil of"
 	line "water!"
-	done
+	prompt
 
 RecoveredWithSomethingText:
 	text "<USER>"
@@ -1333,6 +1333,13 @@ DefiantText:
 	cont "raised Attack!"
 	prompt
 
+CompetitiveText:
+	text "<TARGET>'s"
+	line "Competitive"
+	cont "sharply raised"
+	cont "Spcl.Atk!"
+	prompt
+
 SteadfastText:
 	text "<USER>'s"
 	line "Steadfast raised"
@@ -1406,21 +1413,21 @@ ArmorTailText:
 	line "Armor Tail"
 	cont "prevented the"
 	cont "attack!"
-	done
+	prompt
 
 LiquidOozeText:
 	text "<TARGET>'s"
 	line "Liquid Ooze"
 	cont "damaged"
 	cont "<USER>!"
-	done
+	prompt
 
 SuctionCupsText:
 	text "<TARGET>'s"
 	line "Suction Cups"
 	cont "prevented the"
 	cont "attack!"
-	done
+	prompt
 
 WaterAbsorbText:
 	text "<TARGET>"

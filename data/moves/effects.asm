@@ -386,6 +386,7 @@ AttackDown:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	defiant
 	endmove
 
 DefenseDown:
@@ -400,6 +401,7 @@ DefenseDown:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	defiant
 	endmove
 
 SpeedDown:
@@ -414,6 +416,7 @@ SpeedDown:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	defiant
 	endmove
 
 SpecialAttackDown:
@@ -428,6 +431,7 @@ SpecialAttackDown:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	defiant
 	endmove
 
 SpecialDefenseDown:
@@ -443,6 +447,7 @@ SpecialDefenseDown:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	defiant
 	endmove
 
 AccuracyDown:
@@ -457,6 +462,7 @@ AccuracyDown:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	defiant
 	endmove
 
 EvasionDown:
@@ -471,6 +477,7 @@ EvasionDown:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	defiant
 	endmove
 
 AttackDown2:
@@ -485,6 +492,7 @@ AttackDown2:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	defiant
 	endmove
 
 DefenseDown2:
@@ -500,6 +508,7 @@ DefenseDown2:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	defiant
 	endmove
 
 SpeedDown2:
@@ -514,6 +523,7 @@ SpeedDown2:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	defiant
 	endmove
 
 SpecialAttackDown2:
@@ -531,34 +541,13 @@ SpecialDefenseDown2:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	defiant
 	endmove
 
 AccuracyDown2:
-	checkobedience
-	usedmovetext
-	doturn
-	checkhit
-	magicbounce
-	accuracydown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
 	endmove
 
 EvasionDown2:
-	checkobedience
-	usedmovetext
-	doturn
-	checkhit
-	magicbounce
-	evasiondown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
 	endmove
 
 AttackDownHit:
@@ -584,6 +573,7 @@ AttackDownHit:
 	sheerforce
 	attackdown
 	statdownmessage
+	defiant
 	endmove
 
 DefenseDownHit:
@@ -610,6 +600,7 @@ DefenseDownHit:
 	sheerforce
 	defensedown
 	statdownmessage
+	defiant
 	endmove
 
 SpeedDownHit:
@@ -635,6 +626,7 @@ SpeedDownHit:
 	sheerforce
 	speeddown
 	statdownmessage
+	defiant
 	endmove
 
 SpecialAttackDownHit:
@@ -660,6 +652,7 @@ SpecialAttackDownHit:
 	sheerforce
 	specialattackdown
 	statdownmessage
+	defiant
 	endmove
 
 SpecialDefenseDownHit:
@@ -685,6 +678,7 @@ SpecialDefenseDownHit:
 	sheerforce
 	specialdefensedown
 	statdownmessage
+	defiant
 	endmove
 
 AccuracyDownHit:
@@ -710,6 +704,7 @@ AccuracyDownHit:
 	sheerforce
 	accuracydown
 	statdownmessage
+	defiant
 	endmove
 
 EvasionDownHit:
@@ -2642,6 +2637,7 @@ SpecialDefenseDown2Hit:
 	sheerforce
 	specialdefensedown2
 	statdownmessage
+	defiant
 	endmove
 
 VoltTackle:

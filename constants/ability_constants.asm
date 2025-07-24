@@ -72,7 +72,7 @@
 	const INNER_FOCUS  ; 45
 	const PERISH_BODY  ; 46x
 	const PRESSURE     ; 47
-	const DEFIANT      ; 48
+	const DEFIANT      ; 48x
 	const HUSTLE       ; 49x
 	const JUSTIFIED    ; 4ax
 	const VOLT_ABSORB  ; 4bx
@@ -115,7 +115,7 @@
 	const UNNERVE      ; 70
 	const SAND_VEIL    ; 71x
 	const UNAWARE      ; 72
-	const COMPETITIVE  ; 73
+	const COMPETITIVE  ; 73x
 	const FRISK        ; 74x
 	const DRY_SKIN     ; 75x
 	const WONDER_SKIN  ; 76x

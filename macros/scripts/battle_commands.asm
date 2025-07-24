@@ -199,6 +199,7 @@ ENDM
 	command hammerarm
 	command closecombat
 	command superpower
+	command defiant
 ;	command wakeupslap
 ;	command awakenopponent
 

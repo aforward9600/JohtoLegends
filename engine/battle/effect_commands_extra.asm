@@ -533,3 +533,51 @@ MoveFirstSwitchTurn:
 MoveSecondSwitchTurn:
 	farcall BattleCommand_StatDownMessage
 	jp BattleCommand_SwitchTurn2
+
+BattleCommand_Defiant:
+	ld a, [wFailedMessage]
+	and a
+	ret nz
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_HAMMER_ARM
+	jr nz, .CheckDefiant
+	cp EFFECT_CURSE
+	jr nz, .CheckDefiant
+	cp EFFECT_SHELL_SMASH
+	jr nz, .CheckDefiant
+	cp EFFECT_SUPERPOWER
+	jr nz, .CheckDefiant
+	cp EFFECT_CLOSE_COMBAT
+	jr nz, .CheckDefiant
+	ret
+
+.CheckDefiant
+	call CheckNeutralGas
+	ret z
+	call GetTargetAbility
+	cp DEFIANT
+	jr z, .Defiant
+	cp COMPETITIVE
+	jr z, .Competitive
+	ret
+
+.Defiant:
+	call BattleCommand_SwitchTurn2
+	farcall BattleCommand_AttackUp2
+	call BattleCommand_SwitchTurn2
+	ld a, [wFailedMessage]
+	and a
+	ret nz
+	ld hl, DefiantText
+	jp StdBattleTextbox
+
+.Competitive:
+	call BattleCommand_SwitchTurn2
+	farcall BattleCommand_SpecialAttackUp2
+	call BattleCommand_SwitchTurn2
+	ld a, [wFailedMessage]
+	and a
+	ret nz
+	ld hl, CompetitiveText
+	jp StdBattleTextbox

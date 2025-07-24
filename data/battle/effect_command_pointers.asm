@@ -199,5 +199,6 @@ BattleCommandPointers:
 	effectfn BattleCommand_HammerArm
 	effectfn BattleCommand_CloseCombat
 	effectfn BattleCommand_Superpower
+	effectfn BattleCommand_Defiant
 ;	effectfn BattleCommand_WakeUpSlap
 ;	effectfn BattleCommand_AwakenOpponent

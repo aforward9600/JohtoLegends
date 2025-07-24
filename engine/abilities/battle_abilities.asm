@@ -161,8 +161,10 @@ DoEntranceAbilities:
 	cp RATTLED
 	jp z, RattledAbility
 	cp DEFIANT
+	jp z, DefiantAbility
+	cp COMPETITIVE
 	ret nz
-	jp DefiantAbility
+	jp CompetitiveAbility
 
 .IntimidateBlocked:
 	ld hl, AttackNotLoweredText
@@ -377,6 +379,17 @@ DefiantAbility:
 	ret nz
 	call MoveDelayAbility
 	ld hl, DefiantText
+	jp StdBattleTextbox
+
+CompetitiveAbility:
+	call BattleCommand_SwitchTurnAbilities
+	farcall BattleCommand_SpecialAttackUp2
+	call BattleCommand_SwitchTurnAbilities
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	call MoveDelayAbility
+	ld hl, CompetitiveText
 	jp StdBattleTextbox
 
 CheckContactAbilities:

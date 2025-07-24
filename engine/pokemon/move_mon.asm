@@ -1874,7 +1874,7 @@ GetGiftMonAbility:
 	jr c, .HiddenAbility
 
 	call Random
-	cp 50 percent + 1
+	cp 50 percent
 	jr c, .secondability
 
 	ld a, 0
