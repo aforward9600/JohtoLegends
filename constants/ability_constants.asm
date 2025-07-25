@@ -9,14 +9,14 @@
 	const SOLAR_POWER  ; 06x
 	const DAMP         ; 07x
 	const SWIFT_SWIM   ; 08x
-	const KEEN_EYE     ; 09
+	const KEEN_EYE     ; 09x
 	const SKILL_LINK   ; 0ax
 	const SHEER_FORCE  ; 0bx
 	const VITAL_SPIRIT ; 0cx
 	const RUN_AWAY     ; 0dx
 	const INTIMIDATE   ; 0ex
 	const SCRAPPY      ; 0fx
-	const LIMBER       ; 10
+	const LIMBER       ; 10x
 	const UNBURDEN     ; 11
 	const PRANKSTER    ; 12x
 	const STURDY       ; 13
@@ -28,7 +28,7 @@
 	const IRON_FIST    ; 19x
 	const SWARM        ; 1ax
 	const CHLOROPHYLL  ; 1bx
-	const OVERCOAT     ; 1c
+	const OVERCOAT     ; 1cx
 	const POISON_POINT ; 1dx
 	const SPEED_BOOST  ; 1ex
 	const INFILTRATOR  ; 1fx
@@ -39,7 +39,7 @@
 	const MOXIE        ; 24
 	const WATER_ABSORB ; 25x
 	const LIQUID_OOZE  ; 26x
-	const WATER_VEIL   ; 27
+	const WATER_VEIL   ; 27x
 	const SOLID_ROCK   ; 28x
 	const SHADOW_TAG   ; 29x
 	const REFRIGERATE  ; 2ax
@@ -60,7 +60,7 @@
 	const CURSED_BODY  ; 39x
 	const MOODY        ; 3a
 	const COMPOUNDEYES ; 3bx
-	const CLEAR_BODY   ; 3c
+	const CLEAR_BODY   ; 3cx
 	const SYNCHRONIZE  ; 3d
 	const ANALYTIC     ; 3ex
 	const FLASH_FIRE   ; 3fx
@@ -69,7 +69,7 @@
 	const HYDRATION    ; 42x
 	const STICKY_HOLD  ; 43
 	const STATIC       ; 44x
-	const INNER_FOCUS  ; 45
+	const INNER_FOCUS  ; 45x
 	const PERISH_BODY  ; 46x
 	const PRESSURE     ; 47
 	const DEFIANT      ; 48x
@@ -78,14 +78,14 @@
 	const VOLT_ABSORB  ; 4bx
 	const MAGNET_PULL  ; 4cx
 	const OBLIVIOUS    ; 4dx
-	const OWN_TEMPO    ; 4e
+	const OWN_TEMPO    ; 4ex
 	const STEADFAST    ; 4fx
 	const EARLY_BIRD   ; 50x
 	const TANGLED_FEET ; 51x
 	const GLUTTONY     ; 52
 	const AFTERMATH    ; 53x
 	const POISON_TOUCH ; 54x
-	const HYPER_CUTTER ; 55
+	const HYPER_CUTTER ; 55x
 	const INSOMNIA     ; 56x
 	const SOUNDPROOF   ; 57x
 	const LIGHTNINGROD ; 58x
@@ -106,12 +106,12 @@
 	const LEAF_GUARD   ; 67x
 	const TRACE        ; 68x
 	const DOWNLOAD     ; 69x
-	const SHED_SKIN    ; 6a
+	const SHED_SKIN    ; 6ax
 	const RAIN_DISH    ; 6bx
 	const MAGIC_BOUNCE ; 6cx
 	const PICKUP       ; 6d
 	const SHIELD_DUST  ; 6ex
-	const BIG_PECKS    ; 6f
+	const BIG_PECKS    ; 6fx
 	const UNNERVE      ; 70
 	const SAND_VEIL    ; 71x
 	const UNAWARE      ; 72
@@ -120,10 +120,10 @@
 	const DRY_SKIN     ; 75x
 	const WONDER_SKIN  ; 76x
 	const ARENA_TRAP   ; 77x
-	const ILLUMINATE   ; 78
+	const ILLUMINATE   ; 78x
 	const IMPOSTER     ; 79
 	const PIXILATE     ; 7ax
-	const IMMUNITY     ; 7b
+	const IMMUNITY     ; 7bx
 	const MARVEL_SCALE ; 7cx
 	const MULTISCALE   ; 7dx
 	const SUPER_LUCK   ; 7ex
@@ -134,7 +134,7 @@
 	const CONTRARY     ; 83x
 	const PICKPOCKET   ; 84x
 	const BULLETPROOF  ; 85x
-	const MAGMA_ARMOR  ; 86
+	const MAGMA_ARMOR  ; 86x
 	const SUCTION_CUPS ; 87x
 	const HEAT_PROOF   ; 88x
 	const MEGA_LAUNCHER ; 89x

@@ -1043,6 +1043,8 @@ ResidualDamage:
 	jr z, .Hydration
 	cp POISON_HEAL
 	jr z, .TryPoisonHeal
+	cp MAGIC_GUARD
+	jp z, .did_psn_brn
 
 .SkipShedSkin
 	push de
@@ -1536,6 +1538,21 @@ HandleWeather:
 	cp STEEL
 	ret z
 
+	call CheckNeutralGas
+	jr z, .SkipSandAbilities
+	call GetUserAbility
+	cp SAND_VEIL
+	ret z
+	cp SAND_RUSH
+	ret z
+	cp SAND_FORCE
+	ret z
+	cp OVERCOAT
+	ret z
+	cp MAGIC_GUARD
+	ret z
+
+.SkipSandAbilities
 	call SwitchTurnCore
 	xor a
 	ld [wNumHits], a
@@ -1564,6 +1581,19 @@ HandleWeather:
 	cp ICE
 	ret z
 
+	call CheckNeutralGas
+	jr z, .SkipHailAbilities
+	call GetUserAbility
+	cp SNOW_CLOAK
+	ret z
+	cp ICE_BODY
+	ret z
+	cp MAGIC_GUARD
+	ret z
+	cp OVERCOAT
+	ret z
+
+.SkipHailAbilities
 	call SwitchTurnCore
 	xor a
 	ld [wNumHits], a

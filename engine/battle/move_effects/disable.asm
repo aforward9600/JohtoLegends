@@ -56,7 +56,7 @@ BattleCommand_Disable:
 	swap c
 	add c
 	ld [de], a
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 	ld hl, wDisabledMove
 	ldh a, [hBattleTurn]
 	and a
@@ -72,7 +72,8 @@ BattleCommand_Disable:
 	jp StdBattleTextbox
 
 .failed
-	jp FailMove
+	farcall FailMove
+	ret
 
 CursedBodyAbility::
 ; disable
@@ -132,10 +133,10 @@ CursedBodyAbility::
 	swap c
 	add c
 	ld [de], a
-	call BattleCommand_SwitchTurn
+	call BattleCommand_SwitchTurn2
 	ld de, ANIM_IN_NIGHTMARE
-	call FarPlayBattleAnimation
-	call BattleCommand_SwitchTurn
+	farcall FarPlayBattleAnimation
+	call BattleCommand_SwitchTurn2
 	ld hl, wDisabledMove
 	ldh a, [hBattleTurn]
 	and a

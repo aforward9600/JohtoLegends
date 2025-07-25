@@ -4104,6 +4104,14 @@ BattleCommand_SleepTarget:
 BattleCommand_PoisonTarget:
 ; poisontarget
 
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipImmunity
+	call GetTargetAbility
+	cp IMMUNITY
+	ret z
+	cp LEAF_GUARD
+	jr z, .LeafGuard
+.SkipImmunity
 	call CheckSubstituteOpp
 	ret nz
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -4132,6 +4140,12 @@ BattleCommand_PoisonTarget:
 	farcall UseHeldStatusHealingItem
 	ret
 
+.LeafGuard
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret z
+	jr .SkipImmunity
+
 BattleCommand_Poison:
 ; poison
 
@@ -4143,6 +4157,14 @@ BattleCommand_Poison:
 	call CheckIfTargetIsPoisonType
 	jp z, .failed
 
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipImmunity
+	call GetTargetAbility
+	cp IMMUNITY
+	jr z, .Immunity
+	cp LEAF_GUARD
+	jr z, .LeafGuard
+.SkipImmunity
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
 	ld b, a
@@ -4207,6 +4229,13 @@ BattleCommand_Poison:
 	call GetBattleVar
 	cp EFFECT_TOXIC
 	ret
+
+.LeafGuard
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr nz, .SkipImmunity
+.Immunity
+	jp _PreventAbilityText
 
 CheckIfTargetIsPoisonType:
 	ld de, wEnemyMonType1
@@ -4357,6 +4386,14 @@ BattleCommand_BurnTarget:
 	ld [wNumHits], a
 	call CheckSubstituteOpp
 	ret nz
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipWaterVeil
+	call GetTargetAbility
+	cp WATER_VEIL
+	ret z
+	cp LEAF_GUARD
+	jr z, .LeafGuard
+.SkipWaterVeil
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
@@ -4379,6 +4416,12 @@ BattleCommand_BurnTarget:
 
 	farcall UseHeldStatusHealingItem
 	ret
+
+.LeafGuard
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret z
+	jr .SkipWaterVeil
 
 BurnOpponent:
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -4423,6 +4466,14 @@ BattleCommand_FreezeTarget:
 	ld [wNumHits], a
 	call CheckSubstituteOpp
 	ret nz
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipMagmaArmor
+	call GetTargetAbility
+	cp MAGMA_ARMOR
+	ret z
+	cp LEAF_GUARD
+	jr z, .LeafGuard
+.SkipMagmaArmor
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
@@ -4465,6 +4516,12 @@ BattleCommand_FreezeTarget:
 	ld [hl], $1
 	ret
 
+.LeafGuard
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret z
+	jr .SkipMagmaArmor
+
 BattleCommand_ParalyzeTarget:
 ; paralyzetarget
 
@@ -4472,6 +4529,14 @@ BattleCommand_ParalyzeTarget:
 	ld [wNumHits], a
 	call CheckSubstituteOpp
 	ret nz
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipLimber
+	call GetTargetAbility
+	cp LIMBER
+	ret z
+	cp LEAF_GUARD
+	jr z, .LeafGuard
+.SkipLimber
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
@@ -4496,6 +4561,12 @@ BattleCommand_ParalyzeTarget:
 	call PrintParalyze
 	ld hl, UseHeldStatusHealingItem
 	jp CallBattleCore
+
+.LeafGuard:
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret z
+	jp .SkipLimber
 
 BattleCommand_SleepHit:
 ; sleephit
@@ -4563,6 +4634,14 @@ BattleCommand_SleepHit:
 
 BattleCommand_Burn:
 ; burn
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipWaterVeil
+	call GetTargetAbility
+	cp WATER_VEIL
+	jr z, .WaterVeil
+	cp LEAF_GUARD
+	jr z, .LeafGuard
+.SkipWaterVeil
 	call CheckForStatusIfAlreadyHasAny
 	jr nz, .hasstatus
 	ld a, [wTypeModifier]
@@ -4604,6 +4683,13 @@ BattleCommand_Burn:
 .didnt_affect
 	call AnimateFailedMove
 	jp PrintDoesntAffect
+
+.LeafGuard
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr nz, .SkipWaterVeil
+.WaterVeil
+	jp _PreventAbilityText
 
 BattleCommand_AttackUp:
 ; attackup
@@ -6650,6 +6736,12 @@ BattleCommand_Charge:
 BattleCommand_ConfuseTarget:
 ; confusetarget
 
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipOwnTempo
+	call GetTargetAbility
+	cp OWN_TEMPO
+	ret z
+.SkipOwnTempo
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -6666,6 +6758,12 @@ BattleCommand_ConfuseTarget:
 BattleCommand_Confuse:
 ; confuse
 
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipOwnTempo
+	call GetTargetAbility
+	cp OWN_TEMPO
+	jr z, .OwnTempo
+.SkipOwnTempo
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_CONFUSED, [hl]
@@ -6673,6 +6771,10 @@ BattleCommand_Confuse:
 	call AnimateFailedMove
 	ld hl, AlreadyConfusedText
 	jp StdBattleTextbox
+
+.OwnTempo
+	call _PreventAbilityText
+	jp EndMoveEffect
 
 .not_already_confused
 	call CheckSubstituteOpp
@@ -6736,9 +6838,21 @@ BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit:
 	ret z
 	jp PrintDidntAffect2
 
+_PreventAbilityText:
+	farcall PreventAbilityText
+	ret
+
 BattleCommand_Paralyze:
 ; paralyze
 
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipLimber
+	call GetTargetAbility
+	cp LIMBER
+	jr z, .Limber
+	cp LEAF_GUARD
+	jr z, .LeafGuard
+.SkipLimber
 	call CheckForStatusIfAlreadyHasAny
 	jr nz, .hasstatus
 	ld a, [wTypeModifier]
@@ -6773,6 +6887,13 @@ BattleCommand_Paralyze:
 
 .failed
 	jp PrintDidntAffect2
+
+.LeafGuard
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr nz, .SkipLimber
+.Limber
+	jp _PreventAbilityText
 
 .didnt_affect
 	call AnimateFailedMove
@@ -6823,8 +6944,6 @@ EndRechargeOpp:
 	ret
 
 INCLUDE "engine/battle/move_effects/leech_seed.asm"
-
-INCLUDE "engine/battle/move_effects/disable.asm"
 
 INCLUDE "engine/battle/move_effects/conversion.asm"
 

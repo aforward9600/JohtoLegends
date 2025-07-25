@@ -1468,12 +1468,6 @@ ObliviousText:
 	line "immune to Attract!"
 	prompt
 
-OwnTempoText:
-	text "<TARGET>'s"
-	line "Own Tempo prevents"
-	cont "confusion!"
-	prompt
-
 SwaggerOwnTempoText:
 	text "<USER>'s"
 	line "Own Tempo prevents"

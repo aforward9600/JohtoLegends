@@ -1412,13 +1412,7 @@ CheckDefensiveAbilities:
 	ld hl, SoundMoves
 	call CheckMoveInListAbilities
 	ret nc
-	call MoveDelayAbility
-	call GetTargetAbility
-	call Ability_LoadAbilityName
-	ld a, b
-	and a
-	ld hl, SoundproofText
-	call StdBattleTextbox
+	call PreventAbilityText
 	jp EndMoveEffectAbilities
 
 .Bulletproof:
@@ -1426,13 +1420,7 @@ CheckDefensiveAbilities:
 	ld hl, BulletproofMoves
 	call CheckMoveInListAbilities
 	ret nc
-	call MoveDelayAbility
-	call GetTargetAbility
-	call Ability_LoadAbilityName
-	ld a, b
-	and a
-	ld hl, SoundproofText
-	call StdBattleTextbox
+	call PreventAbilityText
 	jp EndMoveEffectAbilities
 
 .DrySkin:
@@ -1706,14 +1694,15 @@ PreventStatDrop::
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_ATTACK_DOWN_HIT
-	jr c, .DoText
+	jr c, PreventAbilityText
 	cp EFFECT_EVASION_DOWN_HIT + 1
 	ret c
 	cp EFFECT_ALL_DOWN_HIT
-	jr c, .DoText
+	jr c, PreventAbilityText
 	cp EFFECT_SP_DEF_DOWN_2_HIT + 1
 	ret c
-.DoText
+
+PreventAbilityText::
 	call MoveDelayAbility
 	call GetTargetAbility
 	call Ability_LoadAbilityName
