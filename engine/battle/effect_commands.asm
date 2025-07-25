@@ -4820,74 +4820,159 @@ MinimizeDropSub:
 	call WaitBGMap
 	jp BattleCommand_MoveDelay
 
+_PreventStatDrop:
+	farcall PreventStatDrop
+	jp EndMoveEffect
+
 BattleCommand_AttackDown:
 ; attackdown
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipAbilities
+	call GetTargetAbility
+	cp HYPER_CUTTER
+	jr z, _PreventStatDrop
+	cp CLEAR_BODY
+	jr z, _PreventStatDrop
+.SkipAbilities
 	ld a, ATTACK
-	jr BattleCommand_StatDown
+	jp BattleCommand_StatDown
 
 BattleCommand_DefenseDown:
 ; defensedown
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipAbilities
+	call GetTargetAbility
+	cp BIG_PECKS
+	jr z, _PreventStatDrop
+	cp CLEAR_BODY
+	jr z, _PreventStatDrop
+.SkipAbilities
 	ld a, DEFENSE
-	jr BattleCommand_StatDown
+	jp BattleCommand_StatDown
 
 BattleCommand_SpeedDown:
 ; speeddown
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipAbilities
+	call GetTargetAbility
+	cp CLEAR_BODY
+	jr z, _PreventStatDrop
+.SkipAbilities
 	ld a, SPEED
-	jr BattleCommand_StatDown
+	jp BattleCommand_StatDown
 
 BattleCommand_SpecialAttackDown:
 ; specialattackdown
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipAbilities
+	call GetTargetAbility
+	cp CLEAR_BODY
+	jr z, _PreventStatDrop
+.SkipAbilities
 	ld a, SP_ATTACK
-	jr BattleCommand_StatDown
+	jp BattleCommand_StatDown
 
 BattleCommand_SpecialDefenseDown:
 ; specialdefensedown
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipAbilities
+	call GetTargetAbility
+	cp CLEAR_BODY
+	jp z, _PreventStatDrop
+.SkipAbilities
 	ld a, SP_DEFENSE
-	jr BattleCommand_StatDown
+	jp BattleCommand_StatDown
 
 BattleCommand_AccuracyDown:
 ; accuracydown
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipAbilities
+	call GetTargetAbility
+	cp CLEAR_BODY
+	jp z, _PreventStatDrop
+	cp ILLUMINATE
+	jp z, _PreventStatDrop
+	cp KEEN_EYE
+	jp z, _PreventStatDrop
+.SkipAbilities
 	ld a, ACCURACY
 	jr BattleCommand_StatDown
 
 BattleCommand_EvasionDown:
 ; evasiondown
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipAbilities
+	call GetTargetAbility
+	cp CLEAR_BODY
+	jp z, _PreventStatDrop
+.SkipAbilities
 	ld a, EVASION
 	jr BattleCommand_StatDown
 
 BattleCommand_AttackDown2:
 ; attackdown2
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipAbilities
+	call GetTargetAbility
+	cp HYPER_CUTTER
+	jp z, _PreventStatDrop
+	cp CLEAR_BODY
+	jp z, _PreventStatDrop
+.SkipAbilities
 	ld a, $10 | ATTACK
 	jr BattleCommand_StatDown
 
 BattleCommand_DefenseDown2:
 ; defensedown2
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipAbilities
+	call GetTargetAbility
+	cp BIG_PECKS
+	jp z, _PreventStatDrop
+	cp CLEAR_BODY
+	jp z, _PreventStatDrop
+.SkipAbilities
 	ld a, $10 | DEFENSE
 	jr BattleCommand_StatDown
 
 BattleCommand_SpeedDown2:
 ; speeddown2
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipAbilities
+	call GetTargetAbility
+	cp CLEAR_BODY
+	jp z, _PreventStatDrop
+.SkipAbilities
 	ld a, $10 | SPEED
 	jr BattleCommand_StatDown
 
 BattleCommand_SpecialAttackDown2:
 ; specialattackdown2
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipAbilities
+	call GetTargetAbility
+	cp CLEAR_BODY
+	jp z, _PreventStatDrop
+.SkipAbilities
 	ld a, $10 | SP_ATTACK
 	jr BattleCommand_StatDown
 
 BattleCommand_SpecialDefenseDown2:
 ; specialdefensedown2
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipAbilities
+	call GetTargetAbility
+	cp CLEAR_BODY
+	jp z, _PreventStatDrop
+.SkipAbilities
 	ld a, $10 | SP_DEFENSE
 	jr BattleCommand_StatDown
 
 BattleCommand_AccuracyDown2:
 ; accuracydown2
-	ld a, $10 | ACCURACY
-	jr BattleCommand_StatDown
 
 BattleCommand_EvasionDown2:
 ; evasiondown2
-	ld a, $10 | EVASION
 
 BattleCommand_StatDown:
 ; statdown
@@ -6560,8 +6645,6 @@ BattleCommand_Charge:
 	text_far UnknownText_0x1c0d6c
 	text_end
 
-INCLUDE "engine/battle/move_effects/focus_energy.asm"
-
 ;INCLUDE "engine/battle/move_effects/wake_up_slap.asm"
 
 BattleCommand_ConfuseTarget:
@@ -6730,8 +6813,6 @@ CheckMoveTypeMatchesTarget:
 	and a
 	pop hl
 	ret
-
-INCLUDE "engine/battle/move_effects/substitute.asm"
 
 EndRechargeOpp:
 	push hl

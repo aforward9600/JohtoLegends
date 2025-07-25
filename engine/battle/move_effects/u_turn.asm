@@ -5,7 +5,7 @@ BattleCommand_UTurn:
 	and a
 	jr nz, .enemy_turn
 
-	farcall CheckPlayerHasMonToSwitchTo
+	call CheckPlayerHasMonToSwitchTo
 	ret z
 
 	call UpdateUserInParty

@@ -581,3 +581,48 @@ BattleCommand_Defiant:
 	ret nz
 	ld hl, CompetitiveText
 	jp StdBattleTextbox
+
+CheckUserIsCharging2:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerCharging] ; player
+	jr z, .end
+	ld a, [wEnemyCharging] ; enemy
+.end
+	and a
+	ret
+
+LoadMoveAnim2:
+	xor a
+	ld [wNumHits], a
+
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	and a
+	ret z
+
+	; fallthrough
+
+LoadAnim2:
+	call SetMoveAnimationID2
+	; fallthrough
+
+PlayUserBattleAnim2:
+	push hl
+	push de
+	push bc
+	callfar PlayBattleAnim
+	pop bc
+	pop de
+	pop hl
+	ret
+
+SetMoveAnimationID2:
+	push hl
+	call GetMoveIndexFromID
+	ld a, l
+	ld [wFXAnimID], a
+	ld a, h
+	ld [wFXAnimID + 1], a
+	pop hl
+	ret

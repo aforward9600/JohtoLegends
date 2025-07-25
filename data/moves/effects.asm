@@ -349,27 +349,9 @@ SpecialDefenseUp2:
 	endmove
 
 AccuracyUp2:
-	checkobedience
-	usedmovetext
-	doturn
-	accuracyup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
 	endmove
 
 EvasionUp2:
-	checkobedience
-	usedmovetext
-	doturn
-	evasionup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
 	endmove
 
 PlayNice:

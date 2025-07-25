@@ -1701,3 +1701,23 @@ BulletproofMoves:
 	dw SLUDGE_BOMB
 	dw ZAP_CANNON
 	dw -1
+
+PreventStatDrop::
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_ATTACK_DOWN_HIT
+	jr c, .DoText
+	cp EFFECT_EVASION_DOWN_HIT + 1
+	ret c
+	cp EFFECT_ALL_DOWN_HIT
+	jr c, .DoText
+	cp EFFECT_SP_DEF_DOWN_2_HIT + 1
+	ret c
+.DoText
+	call MoveDelayAbility
+	call GetTargetAbility
+	call Ability_LoadAbilityName
+	ld a, b
+	and a
+	ld hl, SoundproofText
+	jp StdBattleTextbox
