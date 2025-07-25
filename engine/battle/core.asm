@@ -1121,7 +1121,8 @@ ResidualDamage:
 	ld c, 40
 	jp DelayFrames
 	call GetUserAbility
-	call Ability_LoadAbilityName
+	ld b, a
+	farcall FarLoadAbilityName
 	ld a, b
 	and a
 	ld hl, WaterAbsorbText
@@ -3793,7 +3794,8 @@ TryToRunAwayFromBattle:
 	jp z, .SkipRunAway
 .TryToRunAbilityName
 	call GetTargetAbility
-	call Ability_LoadAbilityName
+	ld b, a
+	farcall FarLoadAbilityName
 	ld a, b
 	and a
 	ld hl, ArenaTrapText
@@ -5165,7 +5167,8 @@ TryPlayerSwitch:
 	jr z, .IgnoreAbilities
 .PlayerSwitchAbilityName
 	call GetTargetAbility
-	call Ability_LoadAbilityName
+	ld b, a
+	farcall FarLoadAbilityName
 	ld a, b
 	and a
 	ld hl, ArenaTrapText

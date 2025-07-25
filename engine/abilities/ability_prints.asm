@@ -57,9 +57,11 @@ PrintAbility:
 INCLUDE "data/abilities/names.asm"
 INCLUDE "data/abilities/descriptions.asm"
 
+FarLoadAbilityName::
+	ld a, b
 Ability_LoadAbilityName:
     ld hl, AbilityNames
-	call GetNthString
+    call GetNthString
     ld d, h
     ld e, l
     ld hl, wStringBuffer1

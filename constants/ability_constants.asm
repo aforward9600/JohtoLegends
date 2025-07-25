@@ -19,7 +19,7 @@
 	const LIMBER       ; 10x
 	const UNBURDEN     ; 11
 	const PRANKSTER    ; 12x
-	const STURDY       ; 13
+	const STURDY       ; 13x
 	const WEAK_ARMOR   ; 14x
 	const SAND_FORCE   ; 15x
 	const SAND_RUSH    ; 16x
@@ -82,7 +82,7 @@
 	const STEADFAST    ; 4fx
 	const EARLY_BIRD   ; 50x
 	const TANGLED_FEET ; 51x
-	const GLUTTONY     ; 52
+	const GLUTTONY     ; 52x
 	const AFTERMATH    ; 53x
 	const POISON_TOUCH ; 54x
 	const HYPER_CUTTER ; 55x

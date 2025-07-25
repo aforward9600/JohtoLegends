@@ -2416,6 +2416,26 @@ BattleCommand_ApplyDamage:
 	jr .damage
 
 .check_item
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipSturdy
+	call GetTargetAbility
+	cp STURDY
+	jr nz, .SkipSturdy
+	farcall CheckOpponentFullHP
+	jr nz, .damage
+	farcall BattleCommand_FalseSwipe
+	ld b, 0
+	jr nc, .damage
+	call GetTargetAbility
+	ld b, a
+	farcall FarLoadAbilityName
+	ld b, a
+	and a
+;	ld hl, HungOnText
+;	call StdBattleTextbox
+	ld b, 2
+	jr .damage
+.SkipSturdy
 	call GetOpponentItem
 	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
@@ -4069,7 +4089,9 @@ BattleCommand_SleepTarget:
 	cp WEATHER_SUN
 	jr nz, .SkipVitalSpirit
 	call AnimateFailedMove
-	call Ability_LoadAbilityName
+	call GetTargetAbility
+	ld b, a
+	farcall FarLoadAbilityName
 	ld a, b
 	and a
 	ld hl, ProtectedByText
@@ -6539,6 +6561,12 @@ BattleCommand_HeldFlinch:
 BattleCommand_OHKO:
 ; ohko
 
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipSturdy
+	call GetTargetAbility
+	cp STURDY
+	jr z, .no_effect
+.SkipSturdy
 	call ResetDamage
 	ld a, [wTypeModifier]
 	and $7f
