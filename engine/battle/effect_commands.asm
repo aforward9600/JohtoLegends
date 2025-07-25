@@ -1393,12 +1393,27 @@ BattleCommand_Stab:
 	ld h, [hl]
 	ld l, a
 
+	push af
+	call CheckNeutralGas
+	jr z, .IgnoreAdaptability
+	call GetUserAbility
+	cp ADAPTABILITY
+	jr z, .AdaptabilitySTAB
+.IgnoreAdaptability
+	pop af
 	ld b, h
 	ld c, l
 	srl b
 	rr c
 	add hl, bc
+	jr .FinishStab
 
+.AdaptabilitySTAB
+	pop af
+	ld b, h
+	ld c, l
+	add hl, bc
+.FinishStab
 	ld a, h
 	ld [wCurDamage], a
 	ld a, l
@@ -2431,8 +2446,6 @@ BattleCommand_ApplyDamage:
 	farcall FarLoadAbilityName
 	ld b, a
 	and a
-;	ld hl, HungOnText
-;	call StdBattleTextbox
 	ld b, 2
 	jr .damage
 .SkipSturdy

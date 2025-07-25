@@ -17,7 +17,7 @@
 	const INTIMIDATE   ; 0ex
 	const SCRAPPY      ; 0fx
 	const LIMBER       ; 10x
-	const UNBURDEN     ; 11
+	const UNBURDEN     ; 11x
 	const PRANKSTER    ; 12x
 	const STURDY       ; 13x
 	const WEAK_ARMOR   ; 14x
@@ -33,7 +33,7 @@
 	const SPEED_BOOST  ; 1ex
 	const INFILTRATOR  ; 1fx
 	const TINTED_LENS  ; 20x
-	const ADAPTABILITY ; 21
+	const ADAPTABILITY ; 21x
 	const ROCK_HEAD    ; 22
 	const RATTLED      ; 23x
 	const MOXIE        ; 24
