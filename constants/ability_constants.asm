@@ -100,7 +100,7 @@
 	const SCREEN_CLEAN ; 61x
 	const SHARPNESS    ; 62x
 	const MOTOR_DRIVE  ; 63x
-	const ANGER_POINT  ; 64
+	const ANGER_POINT  ; 64x
 	const QUICK_FEET   ; 65x
 	const SNOW_CLOAK   ; 66x
 	const LEAF_GUARD   ; 67x

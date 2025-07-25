@@ -248,8 +248,7 @@ Stubbed_Function3c1bf:
 	dec [hl]
 
 .finish
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 HandleBetweenTurnEffects:
 	ldh a, [hSerialConnectionStatus]
@@ -4208,11 +4207,24 @@ HandleHealingItems:
 	cp USING_EXTERNAL_CLOCK
 	jr z, .player_1
 	call SetPlayerTurn
+	call CheckNeutralGas
+	jr z, .SkipPlayerUnnerve1
+	ld a, [wPlayerAbility]
+	cp UNNERVE
+	jr z, .EnemyUnnerve1
+.SkipPlayerUnnerve1
 	call HandleHPHealingItem
 	call UseHeldStatusHealingItem
 	call UseConfusionHealingItem
 	call UsePinchBerry
+.EnemyUnnerve1
 	call SetEnemyTurn
+	call CheckNeutralGas
+	jr z, .SkipEnemyUnnerve1
+	ld a, [wEnemyAbility]
+	cp UNNERVE
+	ret z
+.SkipEnemyUnnerve1
 	call HandleHPHealingItem
 	call UseHeldStatusHealingItem
 	call UseConfusionHealingItem
@@ -4220,11 +4232,24 @@ HandleHealingItems:
 
 .player_1
 	call SetEnemyTurn
+	call CheckNeutralGas
+	jr z, .SkipEnemyUnnerve2
+	ld a, [wEnemyAbility]
+	cp UNNERVE
+	jr z, .PlayerUnnerve1
+.SkipEnemyUnnerve2
 	call HandleHPHealingItem
 	call UseHeldStatusHealingItem
 	call UseConfusionHealingItem
 	call UsePinchBerry
+.PlayerUnnerve1
 	call SetPlayerTurn
+	call CheckNeutralGas
+	jr z, .SkipPlayerUnnerve2
+	ld a, [wPlayerAbility]
+	cp UNNERVE
+	ret z
+.SkipPlayerUnnerve2
 	call HandleHPHealingItem
 	call UseHeldStatusHealingItem
 	call UseConfusionHealingItem
@@ -4288,7 +4313,19 @@ UseOpponentItem:
 	jp StdBattleTextbox
 
 UsePinchBerry:
+	call CheckNeutralGas
+	jr z, .SkipGluttony
+	call GetTargetAbility
+	cp UNNERVE
+	ret z
+	call GetUserAbility
+	cp GLUTTONY
+	jr nz, .SkipGluttony
+	call GetHalfMaxHP
+	jr .FinishGluttony
+.SkipGluttony
 	call GetQuarterMaxHP
+.FinishGluttony
 	call CheckUserHasEnoughHP
 	ret c
 	callfar GetUserItem
@@ -5438,7 +5475,7 @@ MoveSelectionScreen:
 
 .battle_player_moves
 	call MoveInfoBox
-	call GetWeatherImage
+	farcall GetWeatherImage
 	ld a, [wMoveSwapBuffer]
 	and a
 	jr z, .interpret_joypad
@@ -9279,8 +9316,7 @@ InitBattleDisplay:
 
 .InitBackPic:
 	call GetTrainerBackpic
-	call CopyBackpic
-	ret
+	jp CopyBackpic
 
 GetTrainerBackpic:
 ; Load the player character's backpic (6x6) into VRAM starting from vTiles2 tile $31.
@@ -9451,55 +9487,3 @@ BattleStartMessage:
 	ld c, $2 ; start
 
 	ret
-
-GetWeatherImage:
-	ld a, [wBattleWeather]
-	and a
-	ret z
-	ld de, RainWeatherImage
-	lb bc, PAL_BATTLE_OB_BLUE, 4
-	cp WEATHER_RAIN
-	jr z, .done
-	ld de, SunWeatherImage
-	ld b, PAL_BATTLE_OB_YELLOW
-	cp WEATHER_SUN
-	jr z, .done
-	ld de, SandstormWeatherImage
-	ld b, PAL_BATTLE_OB_BROWN
-	cp WEATHER_SANDSTORM
-	jr z, .done
-	ld de, HailWeatherImage
-	ld b, PAL_BATTLE_OB_BLUE
-	cp WEATHER_HAIL
-	ret nz
-	
-.done
-	push bc
-	ld b, BANK(WeatherImages) ; c = 4
-	ld hl, vTiles0
-	call Request2bpp
-	pop bc
-	ld hl, wVirtualOAMSprite00
-	ld de, .WeatherImageOAMData
-.loop
-	ld a, [de]
-	inc de
-	ld [hli], a
-	ld a, [de]
-	inc de
-	ld [hli], a
-	dec c
-	ld a, c
-	ld [hli], a
-	ld a, b
-	ld [hli], a
-	jr nz, .loop
-	ret
-
-.WeatherImageOAMData
-; positions are backwards since
-; we load them in reverse order
-	db $88, $1c ; y/x - bottom right
-	db $88, $14 ; y/x - bottom left
-	db $80, $1c ; y/x - top right
-	db $80, $14 ; y/x - top left
