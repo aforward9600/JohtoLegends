@@ -1474,6 +1474,12 @@ SwaggerOwnTempoText:
 	cont "confusion!"
 	prompt
 
+AngerPointText:
+	text "<TARGET>'s"
+	line "Anger Point maxed"
+	cont "out its Attack!"
+	prompt
+
 FlashFireText:
 	text "<TARGET>'s"
 	line "Attack raised with"
