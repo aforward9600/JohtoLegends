@@ -2131,7 +2131,17 @@ BattleCommand_EffectChance:
 	jr z, .got_move_chance
 	ld hl, wEnemyMoveStruct + MOVE_CHANCE
 .got_move_chance
+	call CheckNeutralGas
+	jr z, .SkipSereneGrace
+	call GetUserAbility
+	cp SERENE_GRACE
+	jr nz, .SkipSereneGrace
 	ld a, [hl]
+	add a, a
+	jr .FinishSereneGrace
+.SkipSereneGrace
+	ld a, [hl]
+.FinishSereneGrace
 	sub 100 percent
 	; If chance was 100%, RNG won't be called (carry not set)
 	; Thus chance will be subtracted from 0, guaranteeing a carry

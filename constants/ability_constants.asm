@@ -93,7 +93,7 @@
 	const CLOUD_NINE   ; 5a
 	const NEUTRAL_GAS  ; 5b
 	const STENCH       ; 5cx
-	const SERENE_GRACE ; 5d
+	const SERENE_GRACE ; 5dx
 	const NATURAL_CURE ; 5e
 	const SNIPER       ; 5fx
 	const FILTER       ; 60x

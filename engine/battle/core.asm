@@ -4301,16 +4301,7 @@ UseOpponentItem:
 	callfar ConsumeHeldItem
 	ld hl, RecoveredUsingText
 	call StdBattleTextbox
-	call CheckNeutralGas
-	ret z
-	call GetUserAbility
-	cp UNBURDEN
-	ret nz
-	ld a, BATTLE_VARS_SUBSTATUS1
-	call GetBattleVarAddr
-	set SUBSTATUS_UNBURDEN, [hl]
-	ld hl, UnburdenText
-	jp StdBattleTextbox
+	jp UnburdenScript
 
 UsePinchBerry:
 	call CheckNeutralGas
@@ -4377,7 +4368,19 @@ PinchBerryStatUp:
 	and a
 	ret nz
 	farcall BattleCommand_StatUpMessage
-	ret
+	jp UnburdenScript
+
+UnburdenScript:
+	call CheckNeutralGas
+	ret z
+	call GetUserAbility
+	cp UNBURDEN
+	ret nz
+	ld a, BATTLE_VARS_SUBSTATUS1
+	call GetBattleVarAddr
+	set SUBSTATUS_UNBURDEN, [hl]
+	ld hl, UnburdenText
+	jp StdBattleTextbox
 
 ItemRecoveryAnim:
 	push hl
@@ -4484,14 +4487,14 @@ UseConfusionHealingItem:
 	dec a
 	ret z
 	ld [hl], $0
-	ret
+	jp UnburdenScript
 
 .do_partymon
 	call GetPartymonItem
 	xor a
 	ld [bc], a
 	ld [hl], a
-	ret
+	jp UnburdenScript
 
 INCLUDE "data/battle/held_stat_up.asm"
 
