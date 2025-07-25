@@ -224,6 +224,31 @@ BattleCommand_TrapTarget:
 BattleCommand_Recoil:
 ; recoil
 
+	call CheckNeutralGas
+	jr z, .NoMagicGuard
+	call GetUserAbility
+	cp ROCK_HEAD
+	jr z, .CheckStruggle
+	cp MAGIC_GUARD
+	jr nz, .NoMagicGuard
+.CheckStruggle
+	ld hl, wBattleMonMoves
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .get_last_move
+	ld hl, wEnemyMonMoves
+.get_last_move
+	ld a, BATTLE_VARS_LAST_COUNTER_MOVE
+	call GetBattleVar
+	and a
+	ld b, a
+	push bc
+	ld bc, STRUGGLE
+	call CompareMove
+	pop bc
+	ret nz
+
+.NoMagicGuard
 	ld hl, wBattleMonMaxHP
 	ldh a, [hBattleTurn]
 	and a

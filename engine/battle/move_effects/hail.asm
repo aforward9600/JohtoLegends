@@ -19,6 +19,8 @@ BattleCommand_StartHail:
 .AfterWeatherRock
 	ld [wWeatherCount], a
 	call AnimateCurrentMove
+	call CalcPlayerStats
+	call CalcEnemyStats
 	ld hl, HailStartsText
 	jp StdBattleTextbox
 

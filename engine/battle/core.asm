@@ -1020,6 +1020,15 @@ ResidualDamage:
 	call HasUserFainted
 	ret z
 
+	call CheckNeutralGas
+	jr z, .SkipMagicGuard
+	call GetUserAbility
+	cp MAGIC_GUARD
+	jr nz, .SkipMagicGuard
+	call HasUserFainted
+	ret z
+
+.SkipMagicGuard
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVar
 	and 1 << PSN | 1 << BRN
@@ -1042,8 +1051,6 @@ ResidualDamage:
 	jr z, .Hydration
 	cp POISON_HEAL
 	jr z, .TryPoisonHeal
-	cp MAGIC_GUARD
-	jp z, .did_psn_brn
 
 .SkipShedSkin
 	push de
@@ -1117,7 +1124,6 @@ ResidualDamage:
 	call SwitchTurnCore
 	call RestoreHP
 	call SwitchTurnCore
-;	call MoveDelayCore
 	ld c, 40
 	jp DelayFrames
 	call GetUserAbility

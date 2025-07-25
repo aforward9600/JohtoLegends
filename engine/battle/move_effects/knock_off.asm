@@ -41,7 +41,30 @@ BattleCommand_KnockOff:
 	call GetItemName
 
 	ld hl, KnockedOffItemText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	farcall GetUserItem
+	ld a, b
+	cp HELD_CHOICE_BOOST
+	ret nz
+	ld a, c
+	cp SPEED
+	jr nz, .reset_encore_count
+	farcall CalcPlayerStats
+	farcall CalcEnemyStats
+
+.reset_encore_count
+	ld hl, wEnemyEncoreCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_encore_count
+	ld hl, wPlayerEncoreCount
+.got_encore_count
+	xor a
+	ld [hl], a
+	ld a, BATTLE_VARS_SUBSTATUS5_OPP
+	call GetBattleVarAddr
+	res SUBSTATUS_ENCORED, [hl]
+	ret
 
 CheckKnockOff:
 ; Returns z if we can knock off the opponent
