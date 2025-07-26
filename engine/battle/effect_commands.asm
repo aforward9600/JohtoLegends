@@ -2576,6 +2576,12 @@ GetFailureResultText:
 	cp EFFECT_JUMP_KICK
 	ret nz
 
+	call CheckNeutralGas
+	jr z, .SkipMagicGuard
+	call GetUserAbility
+	cp MAGIC_GUARD
+	jr z, .MagicGuard
+.SkipMagicGuard
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
@@ -2605,6 +2611,10 @@ endr
 	and a
 	jp nz, DoEnemyDamage
 	jp DoPlayerDamage
+
+.MagicGuard
+	ld hl, CrashedText
+	jp StdBattleTextbox
 
 FailText_CheckOpponentProtect:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP

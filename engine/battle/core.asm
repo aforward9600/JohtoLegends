@@ -1382,8 +1382,15 @@ HandleWrap:
 	call SwitchTurnCore
 
 .skip_anim
+	call CheckNeutralGas
+	jr z, .SkipMagicGuard
+	call GetTargetAbility
+	cp MAGIC_GUARD
+	jr z, .SkipTrapDamage
+.SkipMagicGuard
 	call GetSixteenthMaxHP
 	call SubtractHPFromUser
+.SkipTrapDamage
 	ld hl, BattleText_UsersHurtByStringBuffer1
 	jr .print_text
 
@@ -1483,6 +1490,12 @@ HandleWeather:
 	cp WEATHER_NONE
 	ret z
 
+	call CheckNeutralGas
+	jr z, .SkipCloudNine
+	call CheckCloudNine
+	ret z
+
+.SkipCloudNine
 	ld hl, wWeatherCount
 	dec [hl]
 	jp z, .ended
@@ -6600,9 +6613,7 @@ LoadEnemyMon:
 	ld de, wEnemyStats
 	ld bc, wEnemyMonStatsEnd - wEnemyMonStats
 	call CopyBytes
-	call ApplyStatusEffectOnEnemyStats
-
-	ret
+	jp ApplyStatusEffectOnEnemyStats
 
 DVsPassword:
 	db "CHEATER"
@@ -8618,8 +8629,7 @@ InitEnemyWildmon:
 
 ExitBattle:
 	call .HandleEndOfBattle
-	call CleanUpBattleRAM
-	ret
+	jp CleanUpBattleRAM
 
 .HandleEndOfBattle:
 	ld a, [wLinkMode]
@@ -8628,8 +8638,7 @@ ExitBattle:
 	call ShowLinkBattleParticipantsAfterEnd
 	ld c, 150
 	call DelayFrames
-	call DisplayLinkBattleResult
-	ret
+	jp DisplayLinkBattleResult
 
 .not_linked
 	ld a, [wBattleResult]
@@ -8672,8 +8681,7 @@ CleanUpBattleRAM:
 	ld [hli], a
 	dec b
 	jr nz, .loop
-	call WaitSFX
-	ret
+	jp WaitSFX
 
 CheckPayDay:
 	ld hl, wPayDayMoney
@@ -8707,8 +8715,7 @@ CheckPayDay:
 	bit 0, a
 	ret z
 	call ClearTileMap
-	call ClearBGPalettes
-	ret
+	jp ClearBGPalettes
 
 ShowLinkBattleParticipantsAfterEnd:
 	farcall StubbedTrainerRankings_LinkBattles
@@ -8773,14 +8780,12 @@ DisplayLinkBattleResult:
 	call IsMobileBattle2
 	jr z, .mobile
 	call WaitPressAorB_BlinkCursor
-	call ClearTileMap
-	ret
+	jp ClearTileMap
 
 .mobile
 	ld c, 200
 	call DelayFrames
-	call ClearTileMap
-	ret
+	jp ClearTileMap
 
 .Win:
 	db "YOU WIN@"
@@ -8795,8 +8800,7 @@ DisplayLinkBattleResult:
 	call PlaceString
 	ld c, 200
 	call DelayFrames
-	call ClearTileMap
-	ret
+	jp ClearTileMap
 
 .Invalid:
 	db "INVALID BATTLE@"
@@ -8823,8 +8827,7 @@ _DisplayLinkRecord:
 	call SetPalettes
 	ld c, 8
 	call DelayFrames
-	call WaitPressAorB_BlinkCursor
-	ret
+	jp WaitPressAorB_BlinkCursor
 
 ReadAndPrintLinkBattleRecord:
 	call ClearTileMap
@@ -9233,8 +9236,7 @@ AddLastMobileBattleToLinkRecord:
 	ld hl, wd002
 	ld bc, 18
 	pop de
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 .LoadPointer:
 	ld e, $0

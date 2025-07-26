@@ -34,7 +34,7 @@
 	const INFILTRATOR  ; 1fx
 	const TINTED_LENS  ; 20x
 	const ADAPTABILITY ; 21x
-	const ROCK_HEAD    ; 22
+	const ROCK_HEAD    ; 22x
 	const RATTLED      ; 23x
 	const MOXIE        ; 24
 	const WATER_ABSORB ; 25x
@@ -46,9 +46,9 @@
 	const ROUGH_SKIN   ; 2bx
 	const CUTE_CHARM   ; 2cx
 	const TECHNICIAN   ; 2dx
-	const MAGIC_GUARD  ; 2e
+	const MAGIC_GUARD  ; 2ex
 	const REGENERATOR  ; 2f
-	const LEVITATE     ; 30
+	const LEVITATE     ; 30x
 	const ICE_BODY     ; 31x
 	const SNOW_WARNING ; 32x
 	const DRIZZLE      ; 33x
