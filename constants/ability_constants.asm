@@ -36,7 +36,7 @@
 	const ADAPTABILITY ; 21x
 	const ROCK_HEAD    ; 22x
 	const RATTLED      ; 23x
-	const MOXIE        ; 24
+	const MOXIE        ; 24x
 	const WATER_ABSORB ; 25x
 	const LIQUID_OOZE  ; 26x
 	const WATER_VEIL   ; 27x
@@ -112,7 +112,7 @@
 	const PICKUP       ; 6d
 	const SHIELD_DUST  ; 6ex
 	const BIG_PECKS    ; 6fx
-	const UNNERVE      ; 70
+	const UNNERVE      ; 70x
 	const SAND_VEIL    ; 71x
 	const UNAWARE      ; 72
 	const COMPETITIVE  ; 73x

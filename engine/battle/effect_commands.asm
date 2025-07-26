@@ -6003,6 +6003,10 @@ BattleCommand_ForceSwitch:
 	cp $1
 	jr z, .switch_fail
 
+	farcall BattleCommand_SwitchTurn
+	farcall PlayerSwitchAbilities
+	farcall BattleCommand_SwitchTurn
+
 	call UpdateBattleMonInParty
 	ld a, $1
 	ld [wKickCounter], a
@@ -7413,8 +7417,6 @@ INCLUDE "engine/battle/move_effects/protect.asm"
 INCLUDE "engine/battle/move_effects/endure.asm"
 
 INCLUDE "engine/battle/move_effects/spikes.asm"
-
-INCLUDE "engine/battle/move_effects/foresight.asm"
 
 INCLUDE "engine/battle/move_effects/perish_song.asm"
 

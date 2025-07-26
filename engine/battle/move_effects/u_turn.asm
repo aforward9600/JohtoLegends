@@ -8,6 +8,8 @@ BattleCommand_UTurn:
 	call CheckPlayerHasMonToSwitchTo
 	ret z
 
+	farcall PlayerSwitchAbilities
+
 	call UpdateUserInParty
 	ld c, 20
 	call DelayFrames
@@ -24,6 +26,8 @@ BattleCommand_UTurn:
 .enemy_turn:
 	farcall FindAliveEnemyMons
 	ret c
+
+	farcall EnemySwitchAbilities
 
 	ld a, [wBattleMode]
 	dec a

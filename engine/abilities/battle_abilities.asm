@@ -1710,3 +1710,115 @@ PreventAbilityText::
 	and a
 	ld hl, SoundproofText
 	jp StdBattleTextbox
+
+EnemySwitchAbilities:
+	call CheckNeutralGas
+	ret z
+	ld a, [wEnemyAbility]
+	cp REGENERATOR
+	jr z, .EnemyRegeneratorAbility
+	cp NATURAL_CURE
+	ret nz
+	ld a, 0
+	ld [wEnemyMonStatus], a
+	call UpdateEnemyMonInParty
+	ret
+
+.EnemyRegeneratorAbility
+	ld hl, wEnemyMonMaxHP
+	call GetThirdMaxHPAbilities
+	call BattleCommand_SwitchTurnAbilities
+	ld hl, wEnemyMonMaxHP
+	call RestoreHPAbilities
+	call BattleCommand_SwitchTurnAbilities
+	call UpdateEnemyMonInParty
+	ret
+
+PlayerSwitchAbilities:
+	call CheckNeutralGas
+	ret z
+	ld a, [wPlayerAbility]
+	cp REGENERATOR
+	jr z, .PlayerRegeneratorAbility
+	cp NATURAL_CURE
+	ret nz
+	ld a, 0
+	ld [wBattleMonStatus], a
+	call UpdateBattleMonInParty
+	call UpdateUserInParty
+	ret
+
+.PlayerRegeneratorAbility
+	ld hl, wBattleMonMaxHP
+	call GetThirdMaxHPAbilities
+	call BattleCommand_SwitchTurnAbilities
+	ld hl, wBattleMonMaxHP
+	call RestoreHPAbilities
+	call BattleCommand_SwitchTurnAbilities
+	call UpdateBattleMonInParty
+	ret
+
+GetMaxHPAbilities:
+.ok
+	ld a, [hli]
+	ld [wBuffer2], a
+	ld b, a
+
+	ld a, [hl]
+	ld [wBuffer1], a
+	ld c, a
+	ret
+
+GetThirdMaxHPAbilities:
+; Assumes HP<768
+	call GetMaxHPAbilities
+	xor a
+	inc b
+.loop
+	dec b
+	inc a
+	dec bc
+	dec bc
+	dec bc
+	inc b
+	jr nz, .loop
+	dec a
+	ld c, a
+	ret nz
+	inc c ; At least 1
+	ret
+
+RestoreHPAbilities:
+	ld a, [hli]
+	ld [wBuffer2], a
+	ld a, [hld]
+	ld [wBuffer1], a
+	dec hl
+	ld a, [hl]
+	ld [wBuffer3], a
+	add c
+	ld [hld], a
+	ld [wBuffer5], a
+	ld a, [hl]
+	ld [wBuffer4], a
+	adc b
+	ld [hli], a
+	ld [wBuffer6], a
+
+	ld a, [wBuffer1]
+	ld c, a
+	ld a, [hld]
+	sub c
+	ld a, [wBuffer2]
+	ld b, a
+	ld a, [hl]
+	sbc b
+	jr c, .asm_3cd2d
+	ld a, b
+	ld [hli], a
+	ld [wBuffer6], a
+	ld a, c
+	ld [hl], a
+	ld [wBuffer5], a
+.asm_3cd2d
+	ret

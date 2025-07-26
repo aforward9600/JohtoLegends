@@ -5,7 +5,7 @@ BattleCommand_Foresight:
 	and a
 	jr nz, .failed
 
-	call CheckHiddenOpponent
+	xor a
 	jr nz, .failed
 
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
@@ -14,9 +14,10 @@ BattleCommand_Foresight:
 	jr nz, .failed
 
 	set SUBSTATUS_IDENTIFIED, [hl]
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 	ld hl, IdentifiedText
 	jp StdBattleTextbox
 
 .failed
-	jp FailMove
+	farcall FailMove
+	ret
