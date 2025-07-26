@@ -71,7 +71,7 @@
 	const STATIC       ; 44x
 	const INNER_FOCUS  ; 45x
 	const PERISH_BODY  ; 46x
-	const PRESSURE     ; 47
+	const PRESSURE     ; 47x
 	const DEFIANT      ; 48x
 	const HUSTLE       ; 49x
 	const JUSTIFIED    ; 4ax

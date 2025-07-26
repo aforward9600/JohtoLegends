@@ -1106,6 +1106,26 @@ BattleCommand_DoTurn:
 	ld a, [wCurEnemyMoveNum]
 
 .okay
+	push af
+	call CheckNeutralGas
+	jr z, .IgnorePressure
+	call GetTargetAbility
+	cp PRESSURE
+	jr nz, .IgnorePressure
+	pop af
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	and PP_MASK
+	jr z, .out_of_pp
+	dec [hl]
+	dec [hl]
+	ld b, 0
+	ret
+
+.IgnorePressure
+	pop af
 	ld c, a
 	ld b, 0
 	add hl, bc
