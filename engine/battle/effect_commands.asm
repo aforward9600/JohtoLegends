@@ -4201,6 +4201,8 @@ BattleCommand_PoisonTarget:
 	ld hl, WasPoisonedText
 	call StdBattleTextbox
 
+	farcall SynchronizeCheck
+
 	farcall UseHeldStatusHealingItem
 	ret
 
@@ -4225,7 +4227,7 @@ BattleCommand_Poison:
 	jr z, .SkipImmunity
 	call GetTargetAbility
 	cp IMMUNITY
-	jr z, .Immunity
+	jp z, .Immunity
 	cp LEAF_GUARD
 	jr z, .LeafGuard
 .SkipImmunity
@@ -4266,6 +4268,7 @@ BattleCommand_Poison:
 	call StdBattleTextbox
 
 .finished
+	farcall SynchronizeCheck
 	farcall UseHeldStatusHealingItem
 	ret
 
@@ -4478,6 +4481,7 @@ BattleCommand_BurnTarget:
 	ld hl, WasBurnedText
 	call StdBattleTextbox
 
+	farcall SynchronizeCheck
 	farcall UseHeldStatusHealingItem
 	ret
 
@@ -4623,6 +4627,7 @@ BattleCommand_ParalyzeTarget:
 	call PlayOpponentBattleAnim
 	call RefreshBattleHuds
 	call PrintParalyze
+	farcall SynchronizeCheck
 	ld hl, UseHeldStatusHealingItem
 	jp CallBattleCore
 
@@ -4731,7 +4736,8 @@ BattleCommand_Burn:
 	call CallBattleCore
 	call UpdateBattleHuds
 	ld hl, WasBurnedText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	farcall SynchronizeCheck
 	ld hl, UseHeldStatusHealingItem
 	jp CallBattleCore
 
@@ -6950,6 +6956,7 @@ BattleCommand_Paralyze:
 	call CallBattleCore
 	call UpdateBattleHuds
 	call PrintParalyze
+	farcall SynchronizeCheck
 	ld hl, UseHeldStatusHealingItem
 	jp CallBattleCore
 
@@ -7018,8 +7025,6 @@ EndRechargeOpp:
 	ret
 
 INCLUDE "engine/battle/move_effects/leech_seed.asm"
-
-INCLUDE "engine/battle/move_effects/conversion.asm"
 
 INCLUDE "engine/battle/move_effects/shell_smash.asm"
 

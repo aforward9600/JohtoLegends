@@ -964,7 +964,7 @@ if DEF(_CHALLENGE)
 else
 	db NO_ITEM
 endc
-	dw NUZZLE, LEER, NO_MOVE, NO_MOVE
+	dw BUBBLE, LEER, NO_MOVE, NO_MOVE
 	db -1 ; end
 
 	end_list_items

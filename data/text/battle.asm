@@ -1254,6 +1254,12 @@ IntimidateContraryText:
 	cont "Attack!"
 	prompt
 
+SynchronizeText:
+	text "<USER>'s"
+	line "Synchronize"
+	cont "activated!"
+	prompt
+
 AttackNotLoweredText:
 	text "<TARGET>'s"
 	line "Attack was not"

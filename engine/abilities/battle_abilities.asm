@@ -1822,3 +1822,78 @@ RestoreHPAbilities:
 	ld [wBuffer5], a
 .asm_3cd2d
 	ret
+
+SynchronizeCheck:
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	and a
+	ret nz
+	call CheckNeutralGas
+	ret z
+	call GetTargetAbility
+	cp SYNCHRONIZE
+	ret nz
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_POISON_MULTI_HIT
+	jp z, .SynchronizePoison
+	cp EFFECT_POISON_HIT
+	jp z, .SynchronizePoison
+	cp EFFECT_POISON
+	jp z, .SynchronizePoison
+	cp EFFECT_TOXIC
+	jp z, .SynchronizePoison
+	cp EFFECT_BURN
+	jp z, .SynchronizeBurn
+	cp EFFECT_BURN_HIT
+	jp z, .SynchronizeBurn
+	cp EFFECT_FLAME_WHEEL
+	jp z, .SynchronizeBurn
+	cp EFFECT_FLARE_BLITZ
+	jp z, .SynchronizeBurn
+	cp EFFECT_PARALYZE_HIT
+	jp z, .SynchronizePar
+	cp EFFECT_PARALYZE
+	ret nz
+
+.SynchronizePar
+	call GetUserAbility
+	cp LIMBER
+	ret z
+	ld hl, SynchronizeText
+	call StdBattleTextbox
+	call BattleCommand_SwitchTurnAbilities
+	farcall BattleCommand_ParalyzeTarget
+	jp BattleCommand_SwitchTurnAbilities
+
+.SynchronizeBurn
+	call GetUserAbility
+	cp WATER_VEIL
+	ret z
+	ld hl, wBattleMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .GotPlayerType
+	ld hl, wEnemyMonType1
+.GotPlayerType
+	ld a, [hli]
+	cp FIRE
+	ret z
+	ld a, [hl]
+	cp FIRE
+	ret z
+	ld hl, SynchronizeText
+	call StdBattleTextbox
+	call BattleCommand_SwitchTurnAbilities
+	farcall BattleCommand_BurnTarget
+	jp BattleCommand_SwitchTurnAbilities
+
+.SynchronizePoison
+	call GetUserAbility
+	cp IMMUNITY
+	ret z
+	ld hl, SynchronizeText
+	call StdBattleTextbox
+	call BattleCommand_SwitchTurnAbilities
+	farcall BattleCommand_PoisonTarget
+	jp BattleCommand_SwitchTurnAbilities

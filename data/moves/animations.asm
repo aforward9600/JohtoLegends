@@ -1535,6 +1535,7 @@ BattleAnim_Thunderpunch:
 	anim_wait 64
 	anim_ret
 
+BattleAnim_Nuzzle:
 BattleAnim_Thundershock:
 	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
 	anim_obj ANIM_OBJ_34, 136, 56, $2
@@ -6344,21 +6345,6 @@ BattleAnim_SmartStrike:
 	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj ANIM_OBJ_01, 136, 56, $0
 	anim_wait 16
-	anim_ret
-
-BattleAnim_Nuzzle:
-	anim_3gfx ANIM_GFX_HIT, ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
-	anim_call BattleAnim_TargetObj_2Row
-	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
-	anim_wait 4
-	anim_sound 0, 1, SFX_TACKLE
-	anim_obj ANIM_OBJ_00, 136, 48, $0
-	anim_wait 8
-	anim_obj ANIM_OBJ_34, 136, 56, $2
-	anim_wait 16
-	anim_sound 0, 1, SFX_THUNDERSHOCK
-	anim_obj ANIM_OBJ_33, 136, 56, $0
-	anim_wait 96
 	anim_ret
 
 BattleAnim_CrushClaw:

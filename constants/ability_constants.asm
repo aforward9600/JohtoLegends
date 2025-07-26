@@ -47,7 +47,7 @@
 	const CUTE_CHARM   ; 2cx
 	const TECHNICIAN   ; 2dx
 	const MAGIC_GUARD  ; 2ex
-	const REGENERATOR  ; 2f
+	const REGENERATOR  ; 2fx
 	const LEVITATE     ; 30x
 	const ICE_BODY     ; 31x
 	const SNOW_WARNING ; 32x
@@ -61,13 +61,13 @@
 	const MOODY        ; 3a
 	const COMPOUNDEYES ; 3bx
 	const CLEAR_BODY   ; 3cx
-	const SYNCHRONIZE  ; 3d
+	const SYNCHRONIZE  ; 3dx
 	const ANALYTIC     ; 3ex
 	const FLASH_FIRE   ; 3fx
 	const FLAME_BODY   ; 40x
 	const RIVALRY      ; 41x
 	const HYDRATION    ; 42x
-	const STICKY_HOLD  ; 43
+	const STICKY_HOLD  ; 43x
 	const STATIC       ; 44x
 	const INNER_FOCUS  ; 45x
 	const PERISH_BODY  ; 46x
@@ -94,7 +94,7 @@
 	const NEUTRAL_GAS  ; 5b
 	const STENCH       ; 5cx
 	const SERENE_GRACE ; 5dx
-	const NATURAL_CURE ; 5e
+	const NATURAL_CURE ; 5ex
 	const SNIPER       ; 5fx
 	const FILTER       ; 60x
 	const SCREEN_CLEAN ; 61x
