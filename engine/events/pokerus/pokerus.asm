@@ -1,5 +1,6 @@
 GivePokerusAndConvertBerries:
 	call ConvertBerriesToBerryJuice
+	call CheckPickup
 	ld hl, wPartyMon1PokerusStatus
 	ld a, [wPartyCount]
 	ld b, a
@@ -16,11 +17,6 @@ GivePokerusAndConvertBerries:
 	dec b
 	jr nz, .loopMons
 
-; If we haven't been to Goldenrod City at least once,
-; prevent the contraction of Pokerus.
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_REACHED_GOLDENROD_F, [hl]
-	ret z
 	call Random
 	ldh a, [hRandomAdd]
 	and a
@@ -122,11 +118,6 @@ GivePokerusAndConvertBerries:
 	ret
 
 ConvertBerriesToBerryJuice:
-; If we haven't been to Goldenrod City at least once,
-; prevent Shuckle from turning held Berry into Berry Juice.
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_REACHED_GOLDENROD_F, [hl]
-	ret z
 	call Random
 	cp 6 percent + 1 ; 1/16 chance
 	ret nc
@@ -165,3 +156,159 @@ ConvertBerriesToBerryJuice:
 	pop hl
 	pop af
 	jr .done
+
+CheckPickup:
+	ld hl, wPartyMon1Item
+	ld a, [hl]
+	cp NO_ITEM
+	jr nz, .SecondPickup
+	ld a, [wPartyMon1Species]
+	call IsAPokemon
+	jr c, .SecondPickup
+	ld hl, wPartyMon1CaughtAbility
+	ld c, a
+	call GetAbility
+	cp PICKUP
+	jp z, .convertToItem1
+.SecondPickup
+	ld hl, wPartyMon2Item
+	ld a, [hl]
+	cp NO_ITEM
+	jr nz, .ThirdPickup
+	ld a, [wPartyMon2Species]
+	call IsAPokemon
+	jr c, .ThirdPickup
+	ld hl, wPartyMon2CaughtAbility
+	ld c, a
+	call GetAbility
+	cp PICKUP
+	jp z, .convertToItem2
+.ThirdPickup
+	ld hl, wPartyMon3Item
+	ld a, [hl]
+	cp NO_ITEM
+	jr nz, .FourthPickup
+	ld a, [wPartyMon3Species]
+	call IsAPokemon
+	jr c, .FourthPickup
+	ld hl, wPartyMon3CaughtAbility
+	ld c, a
+	call GetAbility
+	cp PICKUP
+	jr z, .convertToItem3
+.FourthPickup
+	ld hl, wPartyMon4Item
+	ld a, [hl]
+	cp NO_ITEM
+	jr nz, .FifthPickup
+	ld a, [wPartyMon4Species]
+	call IsAPokemon
+	jr c, .FifthPickup
+	ld hl, wPartyMon4CaughtAbility
+	ld c, a
+	call GetAbility
+	cp PICKUP
+	jr z, .convertToItem4
+.FifthPickup
+	ld hl, wPartyMon5Item
+	ld a, [hl]
+	cp NO_ITEM
+	jr nz, .SixthPickup
+	ld a, [wPartyMon5Species]
+	call IsAPokemon
+	jr c, .SixthPickup
+	ld hl, wPartyMon5CaughtAbility
+	ld c, a
+	call GetAbility
+	cp PICKUP
+	jr z, .convertToItem5
+.SixthPickup
+	ld hl, wPartyMon6Item
+	ld a, [hl]
+	cp NO_ITEM
+	ret nz
+	ld a, [wPartyMon6Species]
+	call IsAPokemon
+	ret c
+	ld hl, wPartyMon5CaughtAbility
+	ld c, a
+	call GetAbility
+	cp PICKUP
+	ret nz
+	call Random
+	cp 10 percent
+	ret nc
+	call PickupItems
+	ld [wPartyMon6Item], a
+	ret
+
+.convertToItem1
+	call Random
+	cp 10 percent
+	jp nc, .SecondPickup
+	call PickupItems
+	ld [wPartyMon1Item], a
+	jp .SecondPickup
+
+.convertToItem2
+	call Random
+	cp 10 percent
+	jp nc, .ThirdPickup
+	call PickupItems
+	ld [wPartyMon2Item], a
+	jp .ThirdPickup
+
+.convertToItem3
+	call Random
+	cp 10 percent
+	jp nc, .FourthPickup
+	call PickupItems
+	ld [wPartyMon3Item], a
+	jp .FourthPickup
+
+.convertToItem4
+	call Random
+	cp 10 percent
+	jr nc, .FifthPickup
+	call PickupItems
+	ld [wPartyMon4Item], a
+	jp .FifthPickup
+
+.convertToItem5
+	call Random
+	cp 10 percent
+	jr nc, .SixthPickup
+	call PickupItems
+	ld [wPartyMon5Item], a
+	jr .SixthPickup
+
+PickupItems:
+	ld hl, .PickupItemsList
+	call Random
+.loop
+	sub [hl]
+	jr c, .ok
+	inc hl
+	inc hl
+	jr .loop
+
+.ok
+	ld a, [hli]
+	inc a
+	jr z, .done
+	ld a, [hli]
+.done
+	ret
+
+.PickupItemsList:
+	db 3, KINGS_ROCK
+	db 11, PP_UP
+	db 13, PROTEIN
+	db 26, RARE_CANDY
+	db 26, REVIVE
+	db 26, NUGGET
+	db 26, FULL_HEAL
+	db 26, FULL_RESTORE
+	db 26, ULTRA_BALL
+	db 73, SUPER_POTION
+	db 0
