@@ -1551,6 +1551,7 @@ HandleEndMoveAbility:
 	dbw HYDRATION,       .Hydration
 	dbw SOLAR_POWER,     .SolarPower
 	dbw ICE_BODY,        .IceBody
+	dbw MOODY,           .Moody
 	db -1
 
 .RainDish:
@@ -1612,6 +1613,83 @@ HandleEndMoveAbility:
 	ret nz
 	ld hl, SpeedBoostText
 	jp StdBattleTextbox
+
+.Moody:
+	call Random
+	cp 20 percent
+	jr c, .Next1
+	farcall BattleCommand_AttackUp2
+	jr .MoodyStatUpText
+
+.Next1
+	call Random
+	cp 25 percent
+	jr c, .Next2
+	farcall BattleCommand_DefenseUp2
+	jr .MoodyStatUpText
+
+.Next2
+	call Random
+	cp 33 percent
+	jr c, .Next3
+	farcall BattleCommand_SpeedUp2
+	jr .MoodyStatUpText
+
+.Next3
+	call Random
+	cp 50 percent
+	jr c, .MoodySpDefUp
+	farcall BattleCommand_SpecialAttackUp2
+	jr .MoodyStatUpText
+.MoodySpDefUp
+	farcall BattleCommand_SpecialDefenseUp2
+.MoodyStatUpText
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .MoodyDown
+	ld hl, MoodyText
+	call StdBattleTextbox
+	farcall BattleCommand_StatUpMessage
+.MoodyDown
+	call Random
+	cp 20 percent
+	jr c, .Next4
+	call BattleCommand_SwitchTurnAbilities
+	farcall BattleCommand_AttackDown
+	jr .MoodyStatDownText
+
+.Next4
+	call Random
+	cp 25 percent
+	jr c, .Next5
+	call BattleCommand_SwitchTurnAbilities
+	farcall BattleCommand_DefenseDown
+	jr .MoodyStatDownText
+
+.Next5
+	call Random
+	cp 33 percent
+	jr c, .Next6
+	call BattleCommand_SwitchTurnAbilities
+	farcall BattleCommand_SpeedDown
+	jr .MoodyStatDownText
+
+.Next6
+	call Random
+	cp 50 percent
+	jr c, .MoodySpDefDown
+	call BattleCommand_SwitchTurnAbilities
+	farcall BattleCommand_SpecialAttackDown
+	jr .MoodyStatDownText
+.MoodySpDefDown
+	call BattleCommand_SwitchTurnAbilities
+	farcall BattleCommand_SpecialDefenseDown
+.MoodyStatDownText
+	ld a, [wAttackMissed]
+	and a
+	jp nz, BattleCommand_SwitchTurnAbilities
+	farcall BattleCommand_StatDownMessage
+	jp BattleCommand_SwitchTurnAbilities
 
 .SolarPower:
 	call CheckCloudNine

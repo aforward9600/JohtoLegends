@@ -121,7 +121,7 @@
 	const WONDER_SKIN  ; 76x
 	const ARENA_TRAP   ; 77x
 	const ILLUMINATE   ; 78x
-	const IMPOSTER     ; 79
+	const IMPOSTER     ; 79x
 	const PIXILATE     ; 7ax
 	const IMMUNITY     ; 7bx
 	const MARVEL_SCALE ; 7cx

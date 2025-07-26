@@ -1364,6 +1364,19 @@ DefiantUserText:
 	cont "raised Attack!"
 	prompt
 
+MoodyText:
+	text "<USER>'s"
+	line "Moody activated!"
+	prompt
+
+MoodyStatDownText:
+	text "<USER>'s"
+	line "Moody lowered"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
 ArenaTrapText:
 	text "<TARGET>'s"
 	line "@"

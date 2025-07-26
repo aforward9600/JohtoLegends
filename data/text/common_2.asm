@@ -686,7 +686,7 @@ UnknownText_0x1c0ceb::
 
 UnknownText_0x1c0cf5::
 	text_pause
-	text "<SCROLL>sharply fell!"
+	text "<SCROLL>harshly fell!"
 	prompt
 
 UnknownText_0x1c0d06::
