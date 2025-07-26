@@ -27,6 +27,7 @@ BattleCommand_Transform:
 	call GetBattleVarAddr
 	set SUBSTATUS_TRANSFORMED, [hl]
 	call ResetActorDisable
+	farcall TransformCopyAbility
 	ld hl, wBattleMonSpecies
 	ld de, wEnemyMonSpecies
 	ldh a, [hBattleTurn]

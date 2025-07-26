@@ -136,6 +136,7 @@ DoEntranceAbilities:
 	dbw SANDSTREAM,       .Sandstream
 	dbw DOWNLOAD,         .Download
 	dbw SLOW_START,       .SlowStart
+	dbw IMPOSTER,         .Imposter
 	db -1
 
 .Intimidate:
@@ -320,6 +321,12 @@ DoEntranceAbilities:
 	call MoveDelayAbility
 	ld hl, SlowStartText
 	jp StdBattleTextbox
+
+.Imposter:
+	ld de, ANIM_IMPOSTER
+	farcall FarPlayBattleAnimation
+	farcall BattleCommand_Transform
+	jr .NoFirstAbility
 
 .Download:
 	farcall BattleCommand_SpecialAttackUp
@@ -1897,3 +1904,16 @@ SynchronizeCheck:
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_PoisonTarget
 	jp BattleCommand_SwitchTurnAbilities
+
+TransformCopyAbility::
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .PlayerAbility
+	ld a, [wPlayerAbility]
+	ld [wEnemyAbility], a
+	ret
+
+.PlayerAbility
+	ld a, [wEnemyAbility]
+	ld [wPlayerAbility], a
+	ret

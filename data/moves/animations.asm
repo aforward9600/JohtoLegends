@@ -19,6 +19,7 @@
 	dw BattleAnim_InSun
 	dw BattleAnim_BerryRecover
 	dw BattleAnim_PerishBody
+	dw BattleAnim_Imposter
 	dw BattleAnim_Miss
 	dw BattleAnim_EnemyDamage
 	dw BattleAnim_EnemyStatDown
@@ -2720,6 +2721,7 @@ BattleAnim_SpikeCannon:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_Imposter:
 BattleAnim_Transform:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_2Row
