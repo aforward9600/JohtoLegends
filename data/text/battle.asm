@@ -1241,6 +1241,12 @@ IntimidateText:
 	cont "Attack!"
 	prompt
 
+MoxieText:
+	text "<USER>'s"
+	line "Moxie raised"
+	cont "its Attack!"
+	prompt
+
 IntimidateContraryText:
 	text "<USER>'s"
 	line "Intimidate raised"

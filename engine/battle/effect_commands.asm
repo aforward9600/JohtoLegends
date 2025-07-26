@@ -2747,6 +2747,15 @@ BattleCommand_CheckFaint:
 	call BattleCommand_RaiseSub
 
 .finish
+	call CheckNeutralGas
+	jp z, EndMoveEffect
+	call GetUserAbility
+	cp MOXIE
+	jp nz, EndMoveEffect
+	call BattleCommand_MoveDelay
+	call BattleCommand_AttackUp
+	ld hl, MoxieText
+	call StdBattleTextbox
 	jp EndMoveEffect
 
 BattleCommand_BuildOpponentRage:

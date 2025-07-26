@@ -1490,12 +1490,6 @@ HandleWeather:
 	cp WEATHER_NONE
 	ret z
 
-	call CheckNeutralGas
-	jr z, .SkipCloudNine
-	call CheckCloudNine
-	ret z
-
-.SkipCloudNine
 	ld hl, wWeatherCount
 	dec [hl]
 	jp z, .ended
@@ -1559,6 +1553,8 @@ HandleWeather:
 
 	call CheckNeutralGas
 	jr z, .SkipSandAbilities
+	call CheckCloudNine
+	ret z
 	call GetUserAbility
 	cp SAND_VEIL
 	ret z
@@ -1602,6 +1598,8 @@ HandleWeather:
 
 	call CheckNeutralGas
 	jr z, .SkipHailAbilities
+	call CheckCloudNine
+	ret z
 	call GetUserAbility
 	cp SNOW_CLOAK
 	ret z
