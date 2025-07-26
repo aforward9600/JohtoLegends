@@ -2945,6 +2945,18 @@ PlayerAttackDamage:
 
 	call ResetDamage
 
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipUnaware
+	ld a, [wPlayerAbility]
+	cp UNAWARE
+	jr z, .PlayerUnawareAttack
+	ld a, [wEnemyAbility]
+	cp UNAWARE
+	jr nz, .SkipUnaware
+.PlayerUnawareAttack
+	jp UnawareCheck
+
+.SkipUnaware
 	ld hl, wPlayerMoveStructPower
 	ld a, [hli]
 	and a
@@ -3218,6 +3230,18 @@ DoubleStatIfSpeciesHoldingItem:
 EnemyAttackDamage:
 	call ResetDamage
 
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipUnaware
+	ld a, [wEnemyAbility]
+	cp UNAWARE
+	jr z, .EnemyUnawareAttack
+	ld a, [wPlayerAbility]
+	cp UNAWARE
+	jr nz, .SkipUnaware
+.EnemyUnawareAttack
+	jp UnawareCheck
+
+.SkipUnaware
 ; No damage dealt with 0 power.
 	ld hl, wEnemyMoveStructPower
 	ld a, [hli] ; hl = wEnemyMoveStructType

@@ -352,3 +352,7 @@ CheckCloudNine::
 	ld a, [wPlayerAbility]
 	cp CLOUD_NINE
 	ret
+
+UnawareCheck::
+	homecall _UnawarePlayer
+	ret

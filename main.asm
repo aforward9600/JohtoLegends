@@ -654,3 +654,4 @@ SECTION "Abilities", ROMX
 INCLUDE "engine/abilities/ability_prints.asm"
 INCLUDE "engine/abilities/battle_abilities.asm"
 INCLUDE "data/moves/sound_moves.asm"
+INCLUDE "engine/abilities/unaware_calc.asm"
