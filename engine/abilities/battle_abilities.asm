@@ -28,6 +28,16 @@ SetEnemyAbility::
 	dec a
 	jr z, .WildAbilities
 
+	ld a, [wOtherTrainerType]
+	bit TRAINERTYPE_ABILITY_F, a
+	jr z, .Ability1
+	ld a, [wCurPartyMon]
+	ld hl, wOTPartyMon1CaughtAbility
+	call GetPartyLocation
+	ld a, [hl]
+	jr .FinishEnemyAbility
+
+.Ability1
 	ld a, 0
 	jr .FinishEnemyAbility
 

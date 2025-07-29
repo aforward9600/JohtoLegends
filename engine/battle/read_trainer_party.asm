@@ -285,6 +285,23 @@ ReadTrainerPartyPieces:
 	jr nz, .evs_loop
 .no_evs
 
+	ld a, [wOtherTrainerType]
+	bit TRAINERTYPE_ABILITY_F, a
+	jr z, .no_ability
+
+	push hl
+	ld a, [wOTPartyCount]
+	dec a
+	ld hl, wOTPartyMon1CaughtAbility
+	call GetPartyLocation
+	ld d, h
+	ld e, l
+	pop hl
+
+	call GetNextTrainerDataByte
+	ld [de], a
+
+.no_ability
 ; Custom DVs affect stats, so recalculate them after TryAddMonToParty
 	ld a, [wOtherTrainerType]
 	and TRAINERTYPE_DVS | TRAINERTYPE_EVS
