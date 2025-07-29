@@ -185,17 +185,40 @@ AI_Types:
 	push hl
 	push bc
 	push de
+	ld a, [wEnemyAbility]
+	cp NEUTRAL_GAS
+	jr z, .SkipAbilities
+	cp MOLD_BREAKER
+	jr z, .SkipAbilities
+	ld a, [wPlayerAbility]
+	cp LEVITATE
+	jp z, .CheckGroundMove
+	cp SAP_SIPPER
+	jp z, .CheckGrassMove
+	cp FLASH_FIRE
+	jp z, .CheckFireMove
+	cp VOLT_ABSORB
+	jp z, .CheckElectricMove
+	cp MOTOR_DRIVE
+	jp z, .CheckElectricMove
+	cp LIGHTNINGROD
+	jp z, .CheckElectricMove
+	cp WATER_ABSORB
+	jp z, .CheckWaterMove
+	cp DRY_SKIN
+	jp z, .CheckWaterMove
+.SkipAbilities
 	ld hl, wBattleMonItem
 	ld b, [hl]
 	farcall GetItemHeldEffect
 	ld a, b
 	cp HELD_AIR_BALLOON
-	jr nz, .skip_air_ballon
+	jr nz, .skip_air_balloon
 	call AI_80_20
-	jr c, .skip_air_ballon
+	jr c, .skip_air_balloon
 	jp .CheckGroundMove
 
-.skip_air_ballon
+.skip_air_balloon
 	pop hl
 	pop bc
 	pop de
@@ -223,9 +246,9 @@ AI_Types:
 ; effective
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
-	jr z, .checkmove
+	jp z, .checkmove
 	dec [hl]
-	jr .checkmove
+	jp .checkmove
 
 .noteffective
 ; Discourage this move if there are any moves
@@ -338,7 +361,7 @@ AI_Types:
 	dec [hl]
 	jr .checkmove4
 
-.CheckGroundMove
+.CheckAIMoveType:
 	pop hl
 	pop bc
 	pop de
@@ -361,44 +384,35 @@ AI_Types:
 	push hl
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
 	and TYPE_MASK
-	cp GROUND
-	pop hl
-	jp z, AIDiscourageMove
 	ret
 
-;	push hl
-;	push de
-;	push bc
-;	ld hl, GroundMoves
-;	ld de, 1
-;	call IsInArray
+.CheckGroundMove
+	call .CheckAIMoveType
+	cp GROUND
+	jr .FinishMoveCheck
 
-;	pop bc
-;	pop de
-;	pop hl
-;	jr nc, .checkmove5
+.CheckGrassMove
+	call .CheckAIMoveType
+	cp GRASS
+	jr .FinishMoveCheck
 
-;	dec [hl]
-;	jr .checkmove5
+.CheckWaterMove
+	call .CheckAIMoveType
+	cp WATER
+	jr .FinishMoveCheck
 
-;GroundMoves:
-;	dw DIG
-;	dw EARTHQUAKE
-;	dw MUD_SHOT
-;	dw MUD_SLAP
-;	dw MUD_BOMB
-;	dw FISSURE
-;	dw BONE_CLUB
-;	dw BONEMERANG
-;	dw BONE_RUSH
-;	dw MAGNITUDE
-;	dw BULLDOZE
-;	dw DRILL_RUN
-;	dw EARTH_POWER
-;	dw HIHORSEPOWER
-;	dw SAND_TOMB
-;	dw HEADLONGRUSH
-;	dw -1
+.CheckElectricMove
+	call .CheckAIMoveType
+	cp ELECTRIC
+	jr .FinishMoveCheck
+
+.CheckFireMove
+	call .CheckAIMoveType
+	cp FIRE
+.FinishMoveCheck
+	pop hl
+	jp z, .immune
+	ret
 
 AI_Offensive:
 ; Greatly discourage non-damaging moves.
@@ -3345,22 +3359,32 @@ AI_Status:
 	cp EFFECT_LEECH_SEED
 	jr z, .leechseedimmunity
 	cp EFFECT_PARALYZE
-	jr z, .typeimmunity
+	jp z, .paralyzeimmunity
 	cp EFFECT_BURN
 	jr z, .burnimmunity
+	cp EFFECT_SLEEP
+	jr z, .sleepimmunity
 
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
-	jr z, .checkmove
+	jp z, .checkmove
 
-	jr .typeimmunity
+	jp .typeimmunity
 
 .poisonimmunity
+	call CheckUserNeutralGasMoldBreaker
+	jp z, .typeimmunity
+	ld a, [wPlayerAbility]
+	cp IMMUNITY
+	jp z, .immune
+	cp LEAF_GUARD
+	call z, SunCheck
+	jp z, .immune
 	ld a, [wBattleMonType1]
 	cp POISON
-	jr z, .immune
+	jp z, .immune
 	cp STEEL
-	jr z, .immune
+	jp z, .immune
 	ld a, [wBattleMonType2]
 	cp POISON
 	jr z, .immune
@@ -3375,13 +3399,46 @@ AI_Status:
 	ld a, [wBattleMonType2]
 	cp GRASS
 	jr z, .immune
+	jr .typeimmunity
 
 .burnimmunity
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .typeimmunity
+	ld a, [wPlayerAbility]
+	cp WATER_VEIL
+	jr z, .immune
+	cp LEAF_GUARD
+	call z, SunCheck
+	jr z, .immune
 	ld a, [wBattleMonType1]
 	cp FIRE
 	jr z, .immune
 	ld a, [wBattleMonType2]
 	cp FIRE
+	jr z, .immune
+	jr .typeimmunity
+
+.sleepimmunity
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .typeimmunity
+	ld a, [wPlayerAbility]
+	cp VITAL_SPIRIT
+	jr z, .immune
+	cp INSOMNIA
+	jr z, .immune
+	cp LEAF_GUARD
+	call z, SunCheck
+	jr z, .immune
+	jr .typeimmunity
+
+.paralyzeimmunity
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .typeimmunity
+	ld a, [wPlayerAbility]
+	cp LIMBER
+	jr z, .immune
+	cp LEAF_GUARD
+	call z, SunCheck
 	jr z, .immune
 
 .typeimmunity
@@ -3397,12 +3454,16 @@ AI_Status:
 
 	ld a, [wTypeMatchup]
 	and a
-	jr nz, .checkmove
+	jp nz, .checkmove
 
 .immune
 	call AIDiscourageMove
-	jr .checkmove
+	jp .checkmove
 
+SunCheck:
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret
 
 AI_Risky:
 ; Use any move that will KO the target.

@@ -332,7 +332,7 @@ TeamRocketBaseB2FLockedDoor:
 	end
 
 TeamRocketBaseB2FTMThief:
-	itemball TM_THIEF
+	itemball TM_BRICK_BREAK
 
 TeamRocketBaseB2FLaprasCallB:
 	itemball SMOKE_BALL

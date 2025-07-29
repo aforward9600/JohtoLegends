@@ -14,44 +14,55 @@ AI_Redundant:
 	jp hl
 
 .Moves:
-	dbw EFFECT_DREAM_EATER,  .DreamEater
-	dbw EFFECT_HEAL,         .Heal
-	dbw EFFECT_LIGHT_SCREEN, .LightScreen
-	dbw EFFECT_MIST,         .Mist
-	dbw EFFECT_FOCUS_ENERGY, .FocusEnergy
-	dbw EFFECT_CONFUSE,      .Confuse
-	dbw EFFECT_TRANSFORM,    .Transform
-	dbw EFFECT_REFLECT,      .Reflect
-	dbw EFFECT_SUBSTITUTE,   .Substitute
-	dbw EFFECT_LEECH_SEED,   .LeechSeed
-	dbw EFFECT_DISABLE,      .Disable
-	dbw EFFECT_ENCORE,       .Encore
-	dbw EFFECT_SNORE,        .Snore
-	dbw EFFECT_SLEEP_TALK,   .SleepTalk
-	dbw EFFECT_MEAN_LOOK,    .MeanLook
-	dbw EFFECT_SPIKES,       .Spikes
-	dbw EFFECT_FORESIGHT,    .Foresight
-	dbw EFFECT_PERISH_SONG,  .PerishSong
-	dbw EFFECT_SANDSTORM,    .Sandstorm
-	dbw EFFECT_ATTRACT,      .Attract
-	dbw EFFECT_SAFEGUARD,    .Safeguard
-	dbw EFFECT_RAIN_DANCE,   .RainDance
-	dbw EFFECT_SUNNY_DAY,    .SunnyDay
-	dbw EFFECT_TELEPORT,     .Teleport
-	dbw EFFECT_MORNING_SUN,  .MorningSun
-	dbw EFFECT_SYNTHESIS,    .Synthesis
-	dbw EFFECT_MOONLIGHT,    .Moonlight
-	dbw EFFECT_SWAGGER,      .Swagger
-	dbw EFFECT_FUTURE_SIGHT, .FutureSight
-	dbw EFFECT_HAIL,         .Hail
-	dbw EFFECT_AQUA_RING,    .AquaRing
-	dbw EFFECT_ROOST,        .Roost
-	dbw EFFECT_FAKE_OUT,     .FakeOut
-	dbw EFFECT_LEECH_HIT,    .LeechHit
-	dbw EFFECT_SLEEP,        .Sleep
-	dbw EFFECT_POISON,       .Poison
-	dbw EFFECT_PARALYZE,     .Paralyze
-	dbw EFFECT_BURN,         .Burn
+	dbw EFFECT_DREAM_EATER,    .DreamEater
+	dbw EFFECT_HEAL,           .Heal
+	dbw EFFECT_LIGHT_SCREEN,   .LightScreen
+	dbw EFFECT_MIST,           .Mist
+	dbw EFFECT_FOCUS_ENERGY,   .FocusEnergy
+	dbw EFFECT_CONFUSE,        .Confuse
+	dbw EFFECT_TRANSFORM,      .Transform
+	dbw EFFECT_REFLECT,        .Reflect
+	dbw EFFECT_SUBSTITUTE,     .Substitute
+	dbw EFFECT_LEECH_SEED,     .LeechSeed
+	dbw EFFECT_DISABLE,        .Disable
+	dbw EFFECT_ENCORE,         .Encore
+	dbw EFFECT_SNORE,          .Snore
+	dbw EFFECT_SLEEP_TALK,     .SleepTalk
+	dbw EFFECT_MEAN_LOOK,      .MeanLook
+	dbw EFFECT_SPIKES,         .Spikes
+	dbw EFFECT_FORESIGHT,      .Foresight
+	dbw EFFECT_PERISH_SONG,    .PerishSong
+	dbw EFFECT_SANDSTORM,      .Sandstorm
+	dbw EFFECT_ATTRACT,        .Attract
+	dbw EFFECT_SAFEGUARD,      .Safeguard
+	dbw EFFECT_RAIN_DANCE,     .RainDance
+	dbw EFFECT_SUNNY_DAY,      .SunnyDay
+	dbw EFFECT_TELEPORT,       .Teleport
+	dbw EFFECT_MORNING_SUN,    .MorningSun
+	dbw EFFECT_SYNTHESIS,      .Synthesis
+	dbw EFFECT_MOONLIGHT,      .Moonlight
+	dbw EFFECT_SWAGGER,        .Swagger
+	dbw EFFECT_FUTURE_SIGHT,   .FutureSight
+	dbw EFFECT_HAIL,           .Hail
+	dbw EFFECT_AQUA_RING,      .AquaRing
+	dbw EFFECT_ROOST,          .Roost
+	dbw EFFECT_FAKE_OUT,       .FakeOut
+	dbw EFFECT_LEECH_HIT,      .LeechHit
+	dbw EFFECT_SLEEP,          .Sleep
+	dbw EFFECT_POISON,         .Poison
+	dbw EFFECT_PARALYZE,       .Paralyze
+	dbw EFFECT_BURN,           .Burn
+	dbw EFFECT_FLATTER,        .Flatter
+	dbw EFFECT_ATTACK_DOWN,    .AttackDown
+	dbw EFFECT_ATTACK_DOWN_2,  .AttackDown
+	dbw EFFECT_DEFENSE_DOWN,   .DefenseDown
+	dbw EFFECT_DEFENSE_DOWN_2, .DefenseDown
+	dbw EFFECT_SPEED_DOWN,     .StatDown
+	dbw EFFECT_SPEED_DOWN_2,   .StatDown
+	dbw EFFECT_SP_DEF_DOWN,    .StatDown
+	dbw EFFECT_SP_DEF_DOWN_2,  .StatDown
+	dbw EFFECT_ACCURACY_DOWN,  .AccuracyDown
+	dbw EFFECT_EVASION_DOWN,   .StatDown
 	db -1
 
 .LightScreen:
@@ -65,22 +76,32 @@ AI_Redundant:
 	ret
 
 .FocusEnergy:
-	ld a, [wEnemySubStatus4]
-	bit SUBSTATUS_FOCUS_ENERGY, a
-	ret
+	ld a, [wPlayerAbility]
+	cp BATTLE_ARMOR
+	jp z, .Redundant
+	cp SHELL_ARMOR
+	jp z, .Redundant
+	jp SubstituteCheckAI
 
 .Confuse:
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipConfuse
+	ld a, [wPlayerAbility]
+	cp OWN_TEMPO
+	jp z, .Redundant
+.SkipConfuse
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_CONFUSED, a
 	ret nz
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
 	ret nz
-	ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a
-	ret
+	jp SubstituteCheckAI
 
 .Transform:
+	ld a, [wEnemyAbility]
+	cp IMPOSTER
+	jp z, .Redundant
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TRANSFORMED, a
 	ret
@@ -90,18 +111,26 @@ AI_Redundant:
 	bit SCREENS_REFLECT, a
 	ret
 
+.Burn:
+.Sleep:
+.Poison:
+.Paralyze:
 .Substitute:
-	ld a, [wEnemySubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a
-	ret
+	jp SubstituteCheckAI
 
 .LeechSeed:
+	call CheckNeutralGas
+	jr z, .SkipLeechSeed
+	ld a, [wPlayerAbility]
+	cp LIQUID_OOZE
+	jp z, .Redundant
+	cp MAGIC_GUARD
+	jp z, .Redundant
+.SkipLeechSeed
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_LEECH_SEED, a
 	ret nz
-	ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a
-	ret
+	jp SubstituteCheckAI
 
 .Disable:
 	ld a, [wPlayerDisableCount]
@@ -136,6 +165,13 @@ AI_Redundant:
 	ret
 
 .PerishSong:
+	ld a, [wEnemyAbility]
+	cp PERISH_SONG
+	jr z, .SkipPerishSong
+	ld a, [wPlayerAbility]
+	cp SOUNDPROOF
+	jp z, .Redundant
+.SkipPerishSong
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_PERISH, a
 	ret
@@ -143,17 +179,22 @@ AI_Redundant:
 .Sandstorm:
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
-	jr z, .Redundant
-	jr .NotRedundant
+	jp z, .Redundant
+	jp .NotRedundant
 
 .Attract:
 	; not "redundant" per se,
 	; but don't use when player is substituted
-	ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipAttract
+	ld a, [wPlayerAbility]
+	cp OBLIVIOUS
+	jp z, .Redundant
+.SkipAttract
+	call SubstituteCheckAI
 	ret nz
 	farcall CheckOppositeGender
-	jr c, .Redundant
+	jp c, .Redundant
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_IN_LOVE, a
 	ret
@@ -166,26 +207,35 @@ AI_Redundant:
 .RainDance:
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
-	jr z, .Redundant
-	jr .NotRedundant
+	jp z, .Redundant
+	jp .NotRedundant
 
 .SunnyDay:
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
-	jr z, .Redundant
-	jr .NotRedundant
+	jp z, .Redundant
+	jp .NotRedundant
 
 .DreamEater:
+	ld a, [wPlayerAbility]
+	cp LIQUID_OOZE
+	jp z, .Redundant
 	ld a, [wBattleMonStatus]
 	and SLP
-	jr z, .Redundant
-	jr .NotRedundant
+	jp z, .Redundant
+	jp .NotRedundant
 
+.Flatter:
 .Swagger:
 	; not "redundant" per se,
 	; but don't use when player is substituted
-	ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipSwagger
+	ld a, [wPlayerAbility]
+	cp OWN_TEMPO
+	jp z, .Redundant
+.SkipSwagger
+	call SubstituteCheckAI
 	ret nz
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_CONFUSED, a
@@ -207,16 +257,51 @@ AI_Redundant:
 	bit SUBSTATUS_AQUA_RING, a
 	ret
 
-.Burn:
-.Sleep:
-.Poison:
-.Paralyze:
 .LeechHit:
-	; not "redundant" per se,
-	; but don't use when player is substituted
+	ld a, [wPlayerAbility]
+	cp LIQUID_OOZE
+	jr z, .Redundant
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
 	ret
+
+.AttackDown:
+	call CheckUserNeutralGasMoldBreaker
+	ret z
+	ld a, [wPlayerAbility]
+	cp HYPER_CUTTER
+	jr z, .Redundant
+	cp CLEAR_BODY
+	jr z, .Redundant
+	jr .NotRedundant
+
+.DefenseDown:
+	call CheckUserNeutralGasMoldBreaker
+	ret z
+	ld a, [wPlayerAbility]
+	cp BIG_PECKS
+	jr z, .Redundant
+	cp CLEAR_BODY
+	jr z, .Redundant
+	jr .NotRedundant
+
+.AccuracyDown:
+	call CheckUserNeutralGasMoldBreaker
+	ret z
+	ld a, [wPlayerAbility]
+	cp KEEN_EYE
+	jr z, .Redundant
+	cp CLEAR_BODY
+	jr z, .Redundant
+	jr .NotRedundant
+
+.StatDown:
+	call CheckUserNeutralGasMoldBreaker
+	ret z
+	ld a, [wPlayerAbility]
+	cp CLEAR_BODY
+	jr z, .Redundant
+	jr .NotRedundant
 
 .Heal:
 .MorningSun:
@@ -227,6 +312,12 @@ AI_Redundant:
 	jr nc, .NotRedundant
 
 .FakeOut:
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipFakeOut
+	ld a, [wPlayerAbility]
+	cp INNER_FOCUS
+	jr z, .Redundant
+.SkipFakeOut
 	ld a, [wPlayerTurnsTaken]
 	and a
 	ret
@@ -239,4 +330,9 @@ AI_Redundant:
 
 .NotRedundant:
 	xor a
+	ret
+
+SubstituteCheckAI:
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
 	ret

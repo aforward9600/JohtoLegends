@@ -231,11 +231,12 @@ MartEcruteak:
 	db -1 ; end
 
 MartMahogany1:
-	db 4 ; # items
+	db 5 ; # items
 	db TINYMUSHROOM
 	db ESCAPE_ROPE
 	db POKE_BALL
 	db POTION
+	db TM_THIEF
 	db -1 ; end
 
 MartMahogany2:
@@ -248,6 +249,7 @@ MartMahogany2:
 	db PARLYZ_HEAL
 	db SUPER_REPEL
 	db REVIVE
+	db TM_THIEF
 	db -1 ; end
 
 MartBlackthorn:
@@ -459,9 +461,8 @@ MartEcruteakBalls:
 	db -1 ; end
 
 MartOlivineTMs:
-	db 4
+	db 3
 	db TM_SHADOW_CLAW
-	db TM_BRICK_BREAK
 	db TM_SAFEGUARD
 	db TM_POISON_JAB
 	db -1 ; end

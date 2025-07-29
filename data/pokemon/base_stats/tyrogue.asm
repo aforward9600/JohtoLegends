@@ -7,7 +7,7 @@
 	db FIGHTING, FIGHTING ; type
 	db 75 ; catch rate
 	db 91 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, MACHO_BRACE ; items
 	db GENDER_F0 ; gender ratio
 	db 25 ; step cycles to hatch
 	INCBIN "gfx/pokemon/tyrogue/front.dimensions"

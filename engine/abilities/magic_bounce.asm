@@ -1,5 +1,5 @@
 BattleCommand_MagicBounce:
-	call CheckNeutralGas
+	call CheckUserNeutralGasMoldBreaker
 	ret z
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
@@ -10,10 +10,6 @@ BattleCommand_MagicBounce:
 	call GetTargetAbility
 	cp MAGIC_BOUNCE
 	ret nz
-
-	call GetUserAbility
-	cp MOLD_BREAKER
-	ret z
 
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
