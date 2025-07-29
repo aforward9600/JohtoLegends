@@ -178,6 +178,16 @@ CheckBreedmonCompatibility:
 	ret
 
 DoEggStep::
+	ld a, [wPartyCount]
+	and a
+	ret z
+
+	call GetLeadAbility
+	cp MAGMA_ARMOR
+	jr z, .MagmaArmor
+	cp FLAME_BODY
+	jr z, .MagmaArmor
+
 	ld de, wPartySpecies
 	ld hl, wPartyMon1Happiness
 	ld c, 0
@@ -200,6 +210,31 @@ DoEggStep::
 	add hl, de
 	pop de
 	jr .loop
+
+.MagmaArmor
+	ld de, wPartySpecies
+	ld hl, wPartyMon1Happiness
+	ld c, 0
+.loopmagmaarmor
+	ld a, [de]
+	inc de
+	cp -1
+	ret z
+	cp EGG
+	jr nz, .nextmagmaarmor
+	dec [hl]
+	dec [hl]
+	jr nz, .nextmagmaarmor
+	ld a, 1
+	and a
+	ret
+
+.nextmagmaarmor
+	push de
+	ld de, PARTYMON_STRUCT_LENGTH
+	add hl, de
+	pop de
+	jr .loopmagmaarmor
 
 OverworldHatchEgg::
 	call RefreshScreen
@@ -262,6 +297,10 @@ HatchEggs:
 	ld b, SET_FLAG
 	call EventFlagAction
 .nottogepi
+
+	call EggAbility
+	ld hl, wEggMonCaughtAbility
+	ld [hli], a
 
 	pop de
 

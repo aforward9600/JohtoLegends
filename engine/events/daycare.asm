@@ -570,9 +570,6 @@ DayCare_InitBreeding:
 	cp 150
 	jr c, .loop
 	ld [wStepsToEgg], a
-	jp .UselessJump
-
-.UselessJump:
 	xor a
 	ld hl, wEggMon
 	ld bc, wEggMonEnd - wEggMon
@@ -661,6 +658,9 @@ DayCare_InitBreeding:
 	ld [hli], a
 	dec b
 	jr nz, .loop2
+	call EggAbility
+	ld hl, wEggMonCaughtAbility
+	ld [hli], a
 	ld hl, DITTO
 	call GetPokemonIDFromIndex
 	ld b, a
@@ -778,3 +778,23 @@ Daycare_CheckAlternateOffspring:
 .alternate_offspring_table
 	dw NIDORAN_F, NIDORAN_M
 	dw -1
+
+EggAbility:
+	call Random
+	cp 10 percent + 1
+	jr c, .HiddenAbility
+
+	call Random
+	cp 50 percent
+	jr c, .secondability
+
+	ld a, 0
+	ret
+
+.secondability:
+	ld a, 1
+	ret
+
+.HiddenAbility:
+	ld a, 2
+	ret
