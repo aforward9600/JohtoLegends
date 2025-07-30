@@ -1073,6 +1073,7 @@ SharpnessMoves:
 	dw SLASH
 	dw LEAF_BLADE
 	dw STEEL_SLICE
+	dw X_SCISSOR
 	dw -1
 
 MegaLauncherMoves:

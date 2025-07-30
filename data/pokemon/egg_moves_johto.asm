@@ -367,6 +367,7 @@ TogepiEggMoves:
 	dw FUTURE_SIGHT
 	dw EXTRASENSORY
 	dw ECHOED_VOICE
+	dw THUNDER_WAVE
 	dw -1 ; end
 
 NatuEggMoves:

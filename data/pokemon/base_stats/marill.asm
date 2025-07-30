@@ -11,7 +11,7 @@
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/marill/front.dimensions"
-	db THICK_FAT, HUGE_POWER, SAP_SIPPER ; wBaseAbility1, wBaseAbility2, wBaseAbility3
+	db HUGE_POWER, THICK_FAT, SAP_SIPPER ; wBaseAbility1, wBaseAbility2, wBaseAbility3
 	db 0 ; Padding left-over from the unused back pic
 	db GROWTH_FAST ; growth rate
 	dn EGG_WATER_1, EGG_FAIRY ; egg groups
