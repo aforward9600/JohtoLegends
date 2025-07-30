@@ -23,28 +23,186 @@ MoveDeleter:
 MaxDVsSetter:
 	faceplayer
 	opentext
+	writetext EnterPasswordText
+	buttonsound
+	special AskForPasswordInMap
+	writetext IsThisPasswordCorrect
+	yesorno
+	iffalse .DontGivePassword
+	scall CheckForPassword
+	scall ReturnToMoveDeletersHouse
 	checkevent EVENT_PASSWORD_CHEATER
-	iftrue .SetDVs
-	writetext StrongestPasswordText
+	iftrue .SetCheater
+	checkevent EVENT_PASSWORD_SHINY
+	iftrue .SetShiny
+	checkevent EVENT_PASSWORD_MONOCHROME
+	iftrue .SetMonochrome
+;	checkevent EVENT_PASSWORD_NO_MONOCHROME
+;	iftrue .SetNoMonochrome
+	checkevent EVENT_PASSWORD_SINGULAR
+	iftrue .SetSingular
+.NoPassword
+	writetext NoPasswordText
 	waitbutton
 	closetext
 	end
 
-.SetDVs:
-	checkflag ENGINE_ACTIVATED_MAX_DVS
-	iftrue .UnsetDVs
-	writetext SetDVSText
+.SetCheater:
+	checkitem CANDY_POUCH
+	iftrue .NoPassword
+	writetext HereIsCandyPouchText
+	buttonsound
+	verbosegiveitem CANDY_POUCH
+	closetext
+	clearevent EVENT_PASSWORD_CHEATER
+	end
+
+.SetShiny:
+	writetext ShinyPokemonText
 	waitbutton
 	closetext
+	clearevent EVENT_PASSWORD_SHINY
+	end
+
+.SetMonochrome:
+	writetext MonochromeText
+	waitbutton
+	closetext
+	clearevent EVENT_PASSWORD_MONOCHROME
+	end
+
+;.SetNoMonochrome:
+;	writetext NoMonochromeText
+;	waitbutton
+;	closetext
+;	clearevent EVENT_PASSWORD_NO_MONOCHROME
+;	end
+
+.SetSingular:
+	checkevent EVENT_PASSWORD_SET_3
+	iftrue .NoPassword
+	writetext SingularTextMoveDeleter
+	waitbutton
+	closetext
+	setevent EVENT_PASSWORD_SET_3
+	end
+
+.DontGivePassword:
+	scall ReturnToMoveDeletersHouse
+	writetext TryPasswordLaterText
+	waitbutton
+	closetext
+	end
+
+ReturnToMoveDeletersHouse:
+	callasm .ReturnToMoveDeletersHouse
+	end
+
+.ReturnToMoveDeletersHouse:
+	call ReturnToMapWithSpeechTextbox
+	ret
+
+CheckForPassword:
+	callasm .shinypassword
+	iftrue .shinypassword2
+	callasm .cheaterpassword
+	iftrue .cheaterpassword2
+	callasm .monochromepassword
+	iftrue .monochromepassword2
+;	callasm .nomonochromepassword
+;	iftrue .nomonochromepassword2
+	callasm .singularpassword
+	iftrue .singularpassword2
+	end
+
+.shinypassword:
+	xor a
+	ld [wScriptVar], a
+	ld de, ShinyPassword
+	jp .FinishPassword
+
+.shinypassword2:
+	setevent EVENT_PASSWORD_SHINY
+	setflag ENGINE_SHINY_PASSWORD
+	end
+
+.cheaterpassword:
+	xor a
+	ld [wScriptVar], a
+	ld de, CheaterPassword
+	jp .FinishPassword
+
+.cheaterpassword2:
+	setevent EVENT_PASSWORD_CHEATER
 	setflag ENGINE_ACTIVATED_MAX_DVS
 	end
 
-.UnsetDVs:
-	writetext UnsetDVsText
-	waitbutton
-	closetext
-	clearflag ENGINE_ACTIVATED_MAX_DVS
+.monochromepassword:
+	xor a
+	ld [wScriptVar], a
+	ld de, MonochromePassword
+	jp .FinishPassword
+
+.monochromepassword2:
+	callasm SetMonochrome
+	setevent EVENT_PASSWORD_MONOCHROME
 	end
+
+.nomonochromepassword:
+	xor a
+	ld [wScriptVar], a
+	ld de, NoMonochromePassword
+	jp .FinishPassword
+
+.nomonochromepassword2:
+	callasm SetNoMonochrome
+	setevent EVENT_PASSWORD_NO_MONOCHROME
+	ret
+
+.singularpassword2:
+	setevent EVENT_PASSWORD_SINGULAR
+	setflag ENGINE_4F
+	end
+
+.singularpassword:
+	xor a
+	ld [wScriptVar], a
+	ld de, SingularPassword
+.FinishPassword:
+	ld hl, wRedsName
+	ld c, 4
+	call CompareBytes
+	ret nz
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+ShinyPassword:
+	db "MASUDA"
+
+CheaterPassword:
+	db "CHEATER"
+
+MonochromePassword:
+	db "MONOCHROME"
+
+SingularPassword:
+	db "SINGULAR"
+
+NoMonochromePassword:
+	db "RESETCOLOR"
+
+SetMonochrome:
+	ld hl, wRedsName
+	ld de, wMomsName
+	ld bc, NAME_LENGTH
+	jp CopyBytes
+
+SetNoMonochrome:
+	ld hl, wRedsName
+	ld de, wMomsName
+	ld bc, NAME_LENGTH
+	jp CopyBytes
 
 MoveDeletersHouseBookshelf:
 	jumpstd genericsink
@@ -68,32 +226,59 @@ MoveDeleterNoMonText:
 	line "have a #mon!"
 	done
 
-SetDVSText:
-	text "You will now"
-	line "encounter strong"
-	cont "#mon."
+EnterPasswordText:
+	text "Please say the"
+	line "password."
 	done
 
-UnsetDVsText:
-	text "The strong #mon"
-	line "will be rare"
-	cont "again."
+NoPasswordText:
+	text "That is not a"
+	line "valid password."
 	done
 
-StrongestPasswordText:
-	text "Apparently, if you"
-	line "speak a certain"
-	cont "word before your"
-	cont "journey begins,"
+TryPasswordLaterText:
+	text "Feel free to come"
+	line "back with a new"
+	cont "password."
+	done
 
-	para "you will encounter"
-	line "strong #mon."
+HereIsCandyPouchText:
+	text "All #mon you"
+	line "have will have"
+	cont "higher stats."
 
-	para "I don't know what"
-	line "that word is, but"
-	cont "maybe you will"
-	cont "come across it in"
-	cont "the future."
+	para "Also, take this."
+
+	para "I am silently"
+	line "judging you."
+	done
+
+ShinyPokemonText:
+	text "Different colored"
+	line "#mon will"
+	cont "appear more often."
+	done
+
+SingularTextMoveDeleter:
+	text "You cannot obtain"
+	line "any more #mon."
+	done
+
+MonochromeText:
+	text "Go outside and the"
+	line "world will appear"
+	cont "less colorful."
+	done
+
+NoMonochromeText:
+	text "Go outside and the"
+	line "world will appear"
+	cont "more colorful."
+	done
+
+IsThisPasswordCorrect:
+	text "Is this password"
+	line "correct?"
 	done
 
 MoveDeletersHouse_MapEvents:

@@ -32,11 +32,9 @@ CheckShininess:
 ; Check if the shiny password is active.
 	push de
 	push hl
-	ld de, ShinyPassword
-	ld hl, wGreensName
-	ld c, 4
-	call CompareBytes
-	jr z, .AltSpecial
+	ld de, ENGINE_SHINY_PASSWORD
+	farcall CheckEngineFlag
+	jr nc, .AltSpecial
 	pop hl
 	pop de
 
@@ -50,6 +48,7 @@ CheckShininess:
 .AltSpecial
 	pop hl
 	pop de
+	ld b,b
 	ld a, [hl]
 	and SHINY_ATK_BIT << 4
 	jr z, .NotShiny
@@ -61,9 +60,6 @@ CheckShininess:
 .NotShiny:
 	and a
 	ret
-
-ShinyPassword:
-	db "MASUDA"
 
 InitPartyMenuPalettes:
 	ld hl, PalPacket_PartyMenu + 1

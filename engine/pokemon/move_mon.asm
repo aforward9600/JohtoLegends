@@ -211,22 +211,22 @@ endr
 	inc de
 	inc de
 
-	push hl
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_UNUSED_5_F, [hl]
-	jr nz, .MaxDVsPasswordGifts
-	pop hl
+;	push hl
+;	ld hl, wStatusFlags2
+;	bit STATUSFLAGS2_UNUSED_5_F, [hl]
+;	jr nz, .MaxDVsPasswordGifts
+;	pop hl
 
 	call Random
 	ld b, a
 	call Random
 	ld c, a
-	jr .initializeDVs
+;	jr .initializeDVs
 
-.MaxDVsPasswordGifts:
-	pop hl
-	ld b, $ff
-	ld c, $ff
+;.MaxDVsPasswordGifts:
+;	pop hl
+;	ld b, $ff
+;	ld c, $ff
 .initializeDVs
 	ld a, b
 	ld [de], a
@@ -1513,6 +1513,11 @@ endc
 	ld bc, MON_DVS - MON_HP_EV + 1
 	add hl, bc
 	pop bc
+	push hl
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_UNUSED_5_F, [hl]
+	jr nz, .Cheater
+	pop hl
 	ld a, c
 	cp STAT_ATK
 	jr z, .Attack
@@ -1549,31 +1554,94 @@ endc
 	and 1
 	add b
 	pop bc
-	jr .GotDV
+	jp .GotDV
 
 .Attack:
 	ld a, [hl]
 	swap a
 	and $f
-	jr .GotDV
+	jp .GotDV
 
 .Defense:
 	ld a, [hl]
 	and $f
-	jr .GotDV
+	jp .GotDV
 
 .Speed:
 	inc hl
 	ld a, [hl]
 	swap a
 	and $f
-	jr .GotDV
+	jp .GotDV
 
 .Special:
 	inc hl
 	ld a, [hl]
 	and $f
+	jr .GotDV
 
+.Cheater
+	pop hl
+	ld a, c
+	cp STAT_ATK
+	jr z, .AttackMax
+	cp STAT_DEF
+	jr z, .DefenseMax
+	cp STAT_SPD
+	jr z, .SpeedMax
+	cp STAT_SATK
+	jr z, .SpecialMax
+	cp STAT_SDEF
+	jr z, .SpecialMax
+; DV_HP = (DV_ATK & 1) << 3 | (DV_DEF & 1) << 2 | (DV_SPD & 1) << 1 | (DV_SPC & 1)
+	push bc
+	ld a, 240
+	swap a
+	and 1
+	add a
+	add a
+	add a
+	ld b, a
+	ld a, 15
+	and 1
+	add a
+	add a
+	add b
+	ld b, a
+	ld a, 240
+	swap a
+	and 1
+	add a
+	add b
+	ld b, a
+	ld a, 15
+	and 1
+	add b
+	pop bc
+	jr .GotDV
+
+.AttackMax:
+	ld a, 240
+	swap a
+	and $f
+	jr .GotDV
+
+.DefenseMax:
+	ld a, 15
+	and $f
+	jr .GotDV
+
+.SpeedMax:
+	inc hl
+	ld a, 240
+	swap a
+	and $f
+	jr .GotDV
+
+.SpecialMax:
+	inc hl
+	ld a, 15
+	and $f
 .GotDV:
 	ld d, 0
 	add e

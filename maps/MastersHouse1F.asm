@@ -684,15 +684,6 @@ WalkUpToRival2:
 	opentext
 	writetext TalkToGranny
 	waitbutton
-	checkevent EVENT_PASSWORD_CHEATER
-	iftrue .GiveCandyPouch
-	closetext
-	end
-
-.GiveCandyPouch
-	writetext TakeCandyPouchText
-	buttonsound
-	verbosegiveitem CANDY_POUCH
 	closetext
 	end
 
@@ -729,13 +720,7 @@ MasterPasswordCheck:
 	xor a
 	ld [wScriptVar], a
 	ld de, PseudoSwapPassword
-	ld hl, wGreensName ; check inputted password
-	ld c, 4
-	call CompareBytes
-	ret nz
-	ld a, 1
-	ld [wScriptVar], a
-	ret
+	jp .FinishPassword
 
 .pseudoswap2:
 	setevent EVENT_PASSWORD_PSEUDOSWAP
@@ -745,13 +730,7 @@ MasterPasswordCheck:
 	xor a
 	ld [wScriptVar], a
 	ld de, MythicalPassword
-	ld hl, wGreensName ; check inputted password
-	ld c, 4
-	call CompareBytes
-	ret nz
-	ld a, 1
-	ld [wScriptVar], a
-	ret
+	jp .FinishPassword
 
 .mythical2:
 	setevent EVENT_PASSWORD_MYTHICAL
@@ -761,13 +740,7 @@ MasterPasswordCheck:
 	xor a
 	ld [wScriptVar], a
 	ld de, ExperimentPassword
-	ld hl, wGreensName ; check inputted password
-	ld c, 4
-	call CompareBytes
-	ret nz
-	ld a, 1
-	ld [wScriptVar], a
-	ret
+	jp .FinishPassword
 
 .experiment2:
 	setevent EVENT_PASSWORD_EXPERIMENT
@@ -777,13 +750,7 @@ MasterPasswordCheck:
 	xor a
 	ld [wScriptVar], a
 	ld de, StupidPassword
-	ld hl, wGreensName ; check inputted password
-	ld c, 4
-	call CompareBytes
-	ret nz
-	ld a, 1
-	ld [wScriptVar], a
-	ret
+	jp .FinishPassword
 
 .stupid2:
 	setevent EVENT_PASSWORD_STUPID
@@ -793,13 +760,7 @@ MasterPasswordCheck:
 	xor a
 	ld [wScriptVar], a
 	ld de, CommencePassword
-	ld hl, wGreensName ; check inputted password
-	ld c, 4
-	call CompareBytes
-	ret nz
-	ld a, 1
-	ld [wScriptVar], a
-	ret
+	jp .FinishPassword
 
 .commence2:
 	setevent EVENT_PASSWORD_COMMENCE
@@ -809,13 +770,7 @@ MasterPasswordCheck:
 	xor a
 	ld [wScriptVar], a
 	ld de, BambinoPassword
-	ld hl, wGreensName ; check inputted password
-	ld c, 4
-	call CompareBytes
-	ret nz
-	ld a, 1
-	ld [wScriptVar], a
-	ret
+	jp .FinishPassword
 
 .bambino2:
 	setevent EVENT_PASSWORD_BAMBINO
@@ -825,6 +780,7 @@ MasterPasswordCheck:
 	xor a
 	ld [wScriptVar], a
 	ld de, FossilPassword
+.FinishPassword
 	ld hl, wGreensName ; check inputted password
 	ld c, 4
 	call CompareBytes

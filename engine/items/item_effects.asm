@@ -202,11 +202,13 @@ PokeBallEffect:
 ; Check if the solo password is active.
 	push de
 	push hl
-	ld de, SoloPassword
-	ld hl, wMomsName
-	ld c, 4
-	call CompareBytes
-	jp z, CantUsePokeBallMessage
+;	ld de, SoloPassword
+;	ld hl, wMomsName
+;	ld c, 4
+;	call CompareBytes
+	ld de, ENGINE_4F
+	farcall CheckEngineFlag
+	jp nc, CantUsePokeBallMessage
 	pop hl
 	pop de
 

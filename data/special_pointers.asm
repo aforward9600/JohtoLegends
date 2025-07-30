@@ -162,3 +162,4 @@ SpecialsPointers::
 	add_special NameRivalFemale
 	add_special HiddenPowerGuru
 	add_special SetMonHiddenPowerDVs ; a8
+	add_special AskForPasswordInMap

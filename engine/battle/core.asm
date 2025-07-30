@@ -6620,9 +6620,6 @@ LoadEnemyMon:
 	call CopyBytes
 	jp ApplyStatusEffectOnEnemyStats
 
-DVsPassword:
-	db "CHEATER"
-
 FinalPkmnSlideInEnemyMonFrontpic:
 	call FinishBattleAnim
 	farcall GetEnemyMonFrontpic

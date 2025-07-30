@@ -376,3 +376,9 @@ TrainerHouse:
 	ld a, [sMysteryGiftTrainerHouseFlag]
 	ld [wScriptVar], a
 	jp CloseSRAM
+
+AskForPasswordInMap:
+	ld b, NAME_PASSWORD
+	ld de, wRedsName
+	farcall NamingScreen
+	ret
