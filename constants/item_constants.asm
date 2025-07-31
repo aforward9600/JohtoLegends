@@ -189,7 +189,7 @@
 	const CANDY_POUCH  ; d9
 	const GREPA_BERRY  ; da
 	const TAMATO_BERRY ; db
-	const MIRAGE_MAIL  ; dc unused
+	const ABILITY_PILL ; dc
 
 add_tm: MACRO
 if !DEF(TM01)

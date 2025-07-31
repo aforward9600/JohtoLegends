@@ -182,7 +182,7 @@ ItemNames::
 	db "Candy Pouch@"
 	db "Grepa Berry@"
 	db "Tamato Berry@"
-	db "Mirage Mail@"
+	db "Ability Pill@"
 	db "TM01@"
 	db "TM02@"
 	db "TM03@"

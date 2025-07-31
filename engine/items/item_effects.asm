@@ -196,7 +196,7 @@ ItemEffects:
 	dw CandyPouchEffect    ; CANDY_POUCH
 	dw EVLoweringBerryEffect ; GREPA_BERRY
 	dw EVLoweringBerryEffect ; TAMATO_BERRY
-	dw NoEffect            ; MIRAGE_MAIL
+	dw ChangePokemonAbility ; ABILITY_PILL
 
 PokeBallEffect:
 ; Check if the solo password is active.
@@ -1562,6 +1562,74 @@ endc
 	farcall EvolvePokemon
 
 	jp UseDisposableItem
+
+ChangePokemonAbility:
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+
+;	farcall SelectMonFromParty
+;	jp c, .cancel
+;
+;	ld a, [wCurPartySpecies]
+;	cp EGG
+;	jp z, .egg
+;
+;	call IsAPokemon
+;	jp c, .cancel
+
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1CaughtAbility
+	call GetPartyLocation
+
+	ld a, [hl]
+	cp 2
+	jp z, .HiddenAbility
+	cp 1
+	jp z, .ChangeToFirstAbility
+	ld a, 1
+	ld [hl], a
+
+.AbilityChanged
+
+	ld hl, AbilityChangedText
+	call PrintText
+	jp UseDisposableItem
+
+.egg
+
+	ld hl, EggSelectedAbilityText
+	call PrintText
+	call WaitPressAorB_BlinkCursor
+.cancel
+	scf
+	ret
+
+.HiddenAbility
+	ld hl, HiddenAbilityText
+	call PrintText
+	jr .cancel
+
+.ChangeToFirstAbility
+	ld a, 0
+	ld [hl], a
+	jr .AbilityChanged
+
+AbilityChangedText:
+	text "Your #mon's"
+	line "ability has"
+	cont "changed."
+	prompt
+
+HiddenAbilityText:
+	text "I cannot change"
+	line "this #mon's"
+	cont "ability."
+	prompt
+
+EggSelectedAbilityText:
+	text "Eggs do not have"
+	line "abilities."
+	prompt
 
 HealPowderEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM

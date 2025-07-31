@@ -190,6 +190,8 @@ AI_Types:
 	jr z, .SkipAbilities
 	cp MOLD_BREAKER
 	jr z, .SkipAbilities
+	cp TINTED_LENS
+	jr z, .effective
 	ld a, [wPlayerAbility]
 	cp LEVITATE
 	jp z, .CheckGroundMove
@@ -243,6 +245,7 @@ AI_Types:
 	jr z, .checkmove
 	jr c, .noteffective
 
+.effective
 ; effective
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a

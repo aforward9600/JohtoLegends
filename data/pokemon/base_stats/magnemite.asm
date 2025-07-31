@@ -11,7 +11,7 @@
 	db GENDER_UNKNOWN ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/magnemite/front.dimensions"
-	db MAGNET_PULL, STURDY, ANALYTIC ; wBaseAbility1, wBaseAbility2, wBaseAbility3
+	db STURDY, MAGNET_PULL, ANALYTIC ; wBaseAbility1, wBaseAbility2, wBaseAbility3
 	db 0 ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_MINERAL, EGG_MINERAL ; egg groups

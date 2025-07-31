@@ -183,7 +183,7 @@ ItemDescriptions:
 	dw CandyPouchDesc
 	dw GrepaBerryDesc
 	dw TamatoBerryDesc
-	dw MewMailDesc
+	dw AbilityPillDesc
 	dw QuestionMarkDesc
 	dw QuestionMarkDesc
 	dw QuestionMarkDesc
@@ -986,6 +986,6 @@ TamatoBerryDesc:
 	db   "Lowers Speed &"
 	next "boosts happiness.@"
 
-MewMailDesc:
-	db   "Mew-print Mail."
-	next "(Hold)@"
+AbilityPillDesc:
+	db   "Changes a #mon's"
+	next "ability.@"

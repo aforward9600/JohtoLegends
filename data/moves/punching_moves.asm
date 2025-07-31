@@ -11,4 +11,5 @@ PunchingMoves:
 	dw SHADOW_PUNCH
 	dw THUNDERPUNCH
 	dw PIXIE_PUNCH
+	dw CLOSE_COMBAT
 	dw -1

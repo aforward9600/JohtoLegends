@@ -142,8 +142,7 @@ SetMonHiddenPowerDVs:
 	predef CalcMonStats
 
 	ld hl, HiddenPowerDVsSetText
-	call PrintText
-	ret
+	jp PrintText
 
 .egg
 	ld de, SFX_WRONG
@@ -153,20 +152,19 @@ SetMonHiddenPowerDVs:
 	ld hl, EggSelectedText
 	call PrintText
 	call WaitPressAorB_BlinkCursor
+.finish
 	scf
 	ret
 
 .cancel
 	ld hl, CancelText
 	call PrintText
-	scf
-	ret
+	jr .finish
 
 .shiny
 	ld hl, ShinyCafeText
 	call PrintText
-	scf
-	ret
+	jr .finish
 
 EggSelectedText:
 	text "Sorry, but an Egg"
