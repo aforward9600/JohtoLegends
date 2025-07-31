@@ -1512,12 +1512,12 @@ endc
 	push bc
 	ld bc, MON_DVS - MON_HP_EV + 1
 	add hl, bc
-	pop bc
 	push hl
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_UNUSED_5_F, [hl]
-	jr nz, .Cheater
+	ld de, ENGINE_ACTIVATED_MAX_DVS
+	farcall CheckEngineFlag
+	jp nc, .Cheater
 	pop hl
+	pop bc
 	ld a, c
 	cp STAT_ATK
 	jr z, .Attack
@@ -1582,6 +1582,7 @@ endc
 
 .Cheater
 	pop hl
+	pop bc
 	ld a, c
 	cp STAT_ATK
 	jr z, .AttackMax

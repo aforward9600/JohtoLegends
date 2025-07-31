@@ -632,18 +632,18 @@ GenerateShinySwarm:
 
 .skipshineswarm:
 ; Generate new random DVs
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_UNUSED_5_F, [hl]
-	jr nz, .MaxDVs
+;	ld hl, wStatusFlags2
+;	bit STATUSFLAGS2_UNUSED_5_F, [hl]
+;	jr nz, .MaxDVs
 	call BattleRandom
 	ld b, a
 	call BattleRandom
 	ld c, a
-	jr .UpdateDVsSwarm
+;	jr .UpdateDVsSwarm
 
-.MaxDVs:
-	ld b, $ff
-	ld c, $ff
+;.MaxDVs:
+;	ld b, $ff
+;	ld c, $ff
 
 .UpdateDVsSwarm:
 ; Input DVs in register bc
