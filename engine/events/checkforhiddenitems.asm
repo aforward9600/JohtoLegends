@@ -103,6 +103,7 @@ RockItemEncounter:
 
 .RockItems:
 	db 1, MAX_REVIVE
+	db 1, ABILITY_PILL
 	db 5, NUGGET
 	db 6, HELIX_FOSSIL
 	db 6, DOME_FOSSIL
