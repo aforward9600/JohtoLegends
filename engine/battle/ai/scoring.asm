@@ -191,7 +191,12 @@ AI_Types:
 	cp MOLD_BREAKER
 	jr z, .SkipAbilities
 	cp TINTED_LENS
-	jr z, .effective
+	jp z, .TintedLens
+	cp PIXILATE
+	jp z, .Pixilate
+	cp REFRIGERATE
+	jp z, .Refrigerate
+.SkipEnemyAbilities
 	ld a, [wPlayerAbility]
 	cp LEVITATE
 	jp z, .CheckGroundMove
@@ -242,7 +247,7 @@ AI_Types:
 	and a
 	jr z, .immune
 	cp EFFECTIVE
-	jr z, .checkmove
+	jp z, .checkmove
 	jr c, .noteffective
 
 .effective
@@ -389,6 +394,10 @@ AI_Types:
 	and TYPE_MASK
 	ret
 
+.TintedLens
+	call .PopAll
+	jp .effective
+
 .CheckGroundMove
 	call .CheckAIMoveType
 	cp GROUND
@@ -416,6 +425,60 @@ AI_Types:
 	pop hl
 	jp z, .immune
 	ret
+
+.PopAll
+	pop bc
+	pop de
+	pop hl
+	ret
+
+.Pixilate
+	call .CheckAIMoveType
+	pop hl
+	cp NORMAL
+	jp nz, .SkipEnemyAbilities
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	cp DARK
+	jp z, .effective
+	cp DRAGON
+	jp z, .effective
+	cp FIGHTING
+	jp z, .effective
+	ld a, [hl]
+	cp DARK
+	jp z, .effective
+	cp DRAGON
+	jp z, .effective
+	cp FIGHTING
+	jp z, .effective
+	jp .noteffective
+
+.Refrigerate
+	call .CheckAIMoveType
+	pop hl
+	cp NORMAL
+	jp nz, .SkipEnemyAbilities
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	cp FLYING
+	jp z, .effective
+	cp GROUND
+	jp z, .effective
+	cp DRAGON
+	jp z, .effective
+	cp GRASS
+	jp z, .effective
+	ld a, [hl]
+	cp FLYING
+	jp z, .effective
+	cp GROUND
+	jp z, .effective
+	cp DRAGON
+	jp z, .effective
+	cp GRASS
+	jp z, .effective
+	jp .noteffective
 
 AI_Offensive:
 ; Greatly discourage non-damaging moves.

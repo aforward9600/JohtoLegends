@@ -1440,7 +1440,7 @@ endc
 	db 67
 	dw GENGAR
 if DEF(_CHALLENGE)
-	db LIFE_ORB
+	db AIR_BALLOON
 else
 	db SITRUS_BERRY
 endc
@@ -1499,7 +1499,7 @@ endc
 	db 85
 	dw GENGAR
 if DEF(_CHALLENGE)
-	db LIFE_ORB
+	db AIR_BALLOON
 else
 	db SITRUS_BERRY
 endc
@@ -2119,7 +2119,7 @@ endc
 
 ScientistGroup:
 	next_list_item ; SCIENTIST (1) Tin Tower 3F
-	db "Mac@", TRAINERTYPE_ITEM_MOVES
+	db "Mac@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
 	db 44
 	dw DITTO
 if DEF(_CHALLENGE)
@@ -2128,14 +2128,16 @@ else
 	db NO_ITEM
 endc
 	dw TRANSFORM, NO_MOVE, NO_MOVE, NO_MOVE
+	db 2 ; IMPOSTER
 	db 44
 	dw MAGNETON
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db MAGNET
 else
 	db NO_ITEM
 endc
 	dw MIRROR_SHOT, VOLT_SWITCH, METAL_SOUND, TRI_ATTACK
+	db 0 ; STURDY
 	db 44
 	dw RAICHU
 if DEF(_CHALLENGE)
@@ -2144,6 +2146,7 @@ else
 	db NO_ITEM
 endc
 	dw THUNDERBOLT, BRICK_BREAK, THUNDERPUNCH, SURF
+	db 0 ; STATIC
 	db 44
 	dw ELECTABUZZ
 if DEF(_CHALLENGE)
@@ -2152,6 +2155,7 @@ else
 	db NO_ITEM
 endc
 	dw LOW_KICK, THUNDERBOLT, LIGHT_SCREEN, THUNDER_WAVE
+	db 0 ; STATIC
 	db -1 ; end
 
 	next_list_item ; SCIENTIST (4) Radio Tower 3F
@@ -2159,7 +2163,7 @@ endc
 	db 33
 	dw MAGNETON
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db AIR_BALLOON
 else
 	db NO_ITEM
 endc
@@ -2186,7 +2190,7 @@ endc
 
 ErikaGroup:
 	next_list_item ; ERIKA (1)
-	db "Erika@", TRAINERTYPE_ITEM_MOVES
+	db "Erika@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
 	db 74
 	dw TANGROWTH
 if DEF(_CHALLENGE)
@@ -2195,15 +2199,18 @@ else
 	db NO_ITEM
 endc
 	dw POWER_WHIP, STONE_EDGE, SWORDS_DANCE, KNOCK_OFF
+	db 2 ; REGENERATOR
 	db 74
 if DEF(_CHALLENGE)
 	dw GARDEVOIR
 	db SPECIALSPECS
 	dw PSYCHIC_M, MOONBLAST, CALM_MIND, THUNDERBOLT
+	db 2 ; ANALYTIC
 else
 	dw JUMPLUFF
 	db NO_ITEM
 	dw ACROBATICS, BATON_PASS, AGILITY, GIGA_DRAIN
+	db 0 ; CHLOROPHYLL
 endc
 	db 74
 	dw EXEGGUTOR
@@ -2213,14 +2220,16 @@ else
 	db NO_ITEM
 endc
 	dw GIGA_DRAIN, PSYCHIC_M, SLEEP_POWDER, SYNTHESIS
+	db 2 ; UNAWARE
 	db 74
 	dw VICTREEBEL
 if DEF(_CHALLENGE)
-	db POISON_BARB
+	db SALAC_BERRY
 else
 	db NO_ITEM
 endc
 	dw KNOCK_OFF, SYNTHESIS, POISON_JAB, POWER_WHIP
+	db 2 ; GLUTTONY
 	db 74
 	dw VENUSAUR
 if DEF(_CHALLENGE)
@@ -2229,6 +2238,7 @@ else
 	db NO_ITEM
 endc
 	dw SLUDGE_BOMB, GROWTH, GIGA_DRAIN, EARTHQUAKE
+	db 2 ; CHLOROPHYLL
 	db 75
 	dw VILEPLUME
 if DEF(_CHALLENGE)
@@ -2237,29 +2247,22 @@ else
 	db SITRUS_BERRY
 endc
 	dw PETAL_DANCE, MOONBLAST, SLUDGE_BOMB, MOONLIGHT
+	db 2 ; EFFECT_SPORE
 	db -1 ; end
 
 	end_list_items
 
 YoungsterGroup:
 	next_list_item ; YOUNGSTER (1)
-	db "Cotton@", TRAINERTYPE_ITEM
+	db "Cotton@", TRAINERTYPE_NORMAL
 	db 50
 	dw TANGROWTH
-	db NO_ITEM
 	db 50
 	dw DONPHAN
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 50
 	dw AMBIPOM
-	db NO_ITEM
 	db 51
 	dw BRONZONG
-	db NO_ITEM
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (2) Ice Path
@@ -2309,20 +2312,13 @@ endc
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (6)
-	db "Randy@", TRAINERTYPE_ITEM
+	db "Randy@", TRAINERTYPE_NORMAL
 	db 16
 	dw ELECTRIKE
-	db NO_ITEM
 	db 17
 	dw ARON
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 18
 	dw IVYSAUR
-	db NO_ITEM
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (9)
@@ -2358,20 +2354,13 @@ SchoolboyGroup:
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (3) Route 34
-	db "Gregory@", TRAINERTYPE_ITEM
+	db "Gregory@", TRAINERTYPE_NORMAL
 	db 31
 	dw CACNEA
-	db NO_ITEM
 	db 31
 	dw WEEPINBELL
-	db NO_ITEM
 	db 32
 	dw DONPHAN
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (5)
@@ -2489,20 +2478,13 @@ endc
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (6) Violet Gym
-	db "Lucas@", TRAINERTYPE_ITEM
+	db "Lucas@", TRAINERTYPE_NORMAL
 	db 47
 	dw XATU
-	db NO_ITEM
 	db 47
 	dw SKARMORY
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 48
 	dw NOCTOWL
-	db NO_ITEM
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (7) Route 44
@@ -2754,46 +2736,29 @@ CooltrainerMGroup:
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (3) Union Cave B2F
-	db "Adrien@", TRAINERTYPE_ITEM
+	db "Adrien@", TRAINERTYPE_NORMAL
 	db 46
 	dw SEAKING
-	db NO_ITEM
 	db 46
 	dw LICKILICKY
-	db NO_ITEM
 	db 46
 	dw AGGRON
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 47
 	dw TYPHLOSION
-	db NO_ITEM
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (4)
-	db "Jacque@", TRAINERTYPE_ITEM
+	db "Jacque@", TRAINERTYPE_NORMAL
 	db 51
 	dw JOLTEON
-	db NO_ITEM
 	db 51
 	dw GLALIE
-	db NO_ITEM
 	db 51
 	dw CROBAT
-	db NO_ITEM
 	db 51
 	dw AGGRON
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 52
 	dw QUAGSIRE
-	db NO_ITEM
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (5)
@@ -2958,7 +2923,7 @@ endc
 	db 61
 	dw FORRETRESS
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db PINK_BOW
 else
 	db NO_ITEM
 endc
@@ -3049,27 +3014,15 @@ CooltrainerFGroup:
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (3)
-	db "Emiko@", TRAINERTYPE_ITEM
+	db "Emiko@", TRAINERTYPE_NORMAL
 	db 42
 	dw KINGDRA
-if DEF(_CHALLENGE)
-	db SCOPE_LENS
-else
-	db NO_ITEM
-endc
 	db 42
 	dw ROSELIA
-	db NO_ITEM
 	db 42
 	dw TOGETIC
-	db NO_ITEM
 	db 43
 	dw STEELIX
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (4) Union Cave B2F
@@ -3180,7 +3133,7 @@ endc
 	db 61
 	dw MAGNEZONE
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db AIR_BALLOON
 else
 	db NO_ITEM
 endc
@@ -3196,7 +3149,7 @@ endc
 	db 61
 	dw DONPHAN
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db LEFTOVERS
 else
 	db NO_ITEM
 endc
@@ -3232,7 +3185,7 @@ endc
 	db 61
 	dw MAGNEZONE
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db AIR_BALLOON
 else
 	db NO_ITEM
 endc
@@ -3372,14 +3325,9 @@ endc
 
 BeautyGroup:
 	next_list_item ; BEAUTY (3) Olivine Gym 2F
-	db "Ashley@", TRAINERTYPE_ITEM
+	db "Ashley@", TRAINERTYPE_NORMAL
 	db 29
 	dw SKARMORY
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db -1 ; end
 
 	next_list_item ; BEAUTY (4) Union Cave 1F
@@ -3447,7 +3395,7 @@ endc
 	db 30
 	dw DONPHAN
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db SITRUS_BERRY
 else
 	db NO_ITEM
 endc
@@ -3471,17 +3419,11 @@ endc
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (3)
-	db "Palmer@", TRAINERTYPE_ITEM
+	db "Palmer@", TRAINERTYPE_NORMAL
 	db 33
 	dw VENOMOTH
-	db NO_ITEM
 	db 33
 	dw LAIRON
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (6)
@@ -3491,20 +3433,13 @@ endc
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (10) Route 43
-	db "Jarvis@", TRAINERTYPE_ITEM
+	db "Jarvis@", TRAINERTYPE_NORMAL
 	db 14
 	dw LICKITUNG
-	db NO_ITEM
 	db 14
 	dw WYNAUT
-	db NO_ITEM
 	db 14
 	dw ARON
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (15) Mount Mortar 1F Inside
@@ -3541,41 +3476,23 @@ GruntMGroup:
 	db -1 ; end
 
 	next_list_item ; ManM (3) Lighthouse
-	db "Man@", TRAINERTYPE_ITEM
+	db "Man@", TRAINERTYPE_NORMAL
 	db 21
 	dw KOFFING
-	db NO_ITEM
 	db 22
 	dw SPINARAK
-if DEF(_CHALLENGE)
-	db SCOPE_LENS
-else
-	db NO_ITEM
-endc
 	db 22
 	dw PINECO
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db -1 ; end
 
 	next_list_item ; ManM (4) Lighthouse
-	db "Man@", TRAINERTYPE_ITEM
+	db "Man@", TRAINERTYPE_NORMAL
 	db 20
 	dw GRIMER
-	db NO_ITEM
 	db 20
 	dw MAGNEMITE
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 21
 	dw GLIGAR
-	db NO_ITEM
 	db -1 ; end
 
 	next_list_item ; ManM (5) Lighthouse
@@ -3764,20 +3681,13 @@ endc
 
 GentlemanGroup:
 	next_list_item ; GENTLEMAN (1) Olivine Gym 
-	db "Crofton@", TRAINERTYPE_ITEM
+	db "Crofton@", TRAINERTYPE_NORMAL
 	db 28
 	dw MAGNEMITE
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 28
-	dw SKARMINI
-	db NO_ITEM
+	dw BRONZOR
 	db 28
 	dw METANG
-	db NO_ITEM
 	db -1 ; end
 
 	next_list_item ; GENTLEMAN (2) Route 34
@@ -3815,24 +3725,13 @@ SkierGroup:
 
 TeacherGroup:
 	next_list_item ; TEACHER (1) Olivine Gym
-	db "Abigail@", TRAINERTYPE_ITEM
+	db "Abigail@", TRAINERTYPE_NORMAL
 	db 28
 	dw ARON
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 28
 	dw OCTILLERY
-	db SCOPE_LENS
 	db 28
 	dw MAGNEMITE
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db -1 ; end
 
 	next_list_item ; TEACHER (2)
@@ -4147,65 +4046,35 @@ endc
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (12) AZALEA GYM
-	db "Marty@", TRAINERTYPE_ITEM
+	db "Marty@", TRAINERTYPE_NORMAL
 	db 42
 	dw VENOMOTH
-	db NO_ITEM
 	db 42
 	dw FORRETRESS
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 42
 	dw SCYTHER
-	db NO_ITEM
 	db 42
 	dw BEEDRILL
-if DEF(_CHALLENGE)
-	db SCOPE_LENS
-else
-	db NO_ITEM
-endc
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (15) Viridian Forest
-	db "Dom@", TRAINERTYPE_ITEM
+	db "Dom@", TRAINERTYPE_NORMAL
 	db 68
 	dw SCYTHER
-	db NO_ITEM
 	db 68
 	dw LEDIAN
-	db NO_ITEM
 	db 69
 	dw ARIADOS
-if DEF(_CHALLENGE)
-	db SCOPE_LENS
-else
-	db NO_ITEM
-endc
 	db 68
 	dw SHUCKLE
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (19) AZALEA GYM
-	db "Pete@", TRAINERTYPE_ITEM
+	db "Pete@", TRAINERTYPE_NORMAL
 	db 43
 	dw PARASECT
-	db NO_ITEM
 	db 43
 	dw SHUCKLE
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db -1 ; end
 
 	end_list_items
@@ -4720,20 +4589,13 @@ SuperNerdGroup:
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (4) Route 32
-	db "Jason@", TRAINERTYPE_ITEM
+	db "Jason@", TRAINERTYPE_NORMAL
 	db 47
 	dw WEEZING
-	db NO_ITEM
 	db 47
 	dw ELECTRODE
-	db NO_ITEM
 	db 48
 	dw FORRETRESS
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (5) Union Cave B1F
@@ -4853,41 +4715,23 @@ HikerGroup:
 	db -1 ; end
 
 	next_list_item ; HIKER (2) Mount Mortar 1F Inside
-	db "Ozzy@", TRAINERTYPE_ITEM
+	db "Ozzy@", TRAINERTYPE_NORMAL
 	db 15
 	dw GEODUDE
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 15
 	dw MACHOP
-	db NO_ITEM
 	db 15
 	dw BONSLY
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db -1 ; end
 
 	next_list_item ; HIKER (3)
-	db "Phil@", TRAINERTYPE_ITEM
+	db "Phil@", TRAINERTYPE_NORMAL
 	db 26
 	dw MACHOP
-	db NO_ITEM
 	db 27
 	dw RHYHORN
-	db NO_ITEM
 	db 28
 	dw GRAVELER
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db -1 ; end
 
 	next_list_item ; HIKER (4) Union Cave B2F
@@ -4911,7 +4755,7 @@ endc
 	db -1 ; end
 
 	next_list_item ; hiker (9) route 45
-	db "Parry@", TRAINERTYPE_ITEM_MOVES
+	db "Parry@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
 	db 53
 	dw STEELIX
 if DEF(_CHALLENGE)
@@ -4920,6 +4764,7 @@ else
 	db NO_ITEM
 endc
 	dw IRON_TAIL, EARTHQUAKE, STONE_EDGE, DOUBLE_EDGE
+	db 1 ; ROCK_HEAD
 	db 53
 	dw MAMOSWINE
 if DEF(_CHALLENGE)
@@ -4928,6 +4773,7 @@ else
 	db NO_ITEM
 endc
 	dw EARTHQUAKE, ICE_SHARD, ICE_FANG, STONE_EDGE
+	db 2 ; THICK_FAT
 	db 53
 	dw GOLEM
 if DEF(_CHALLENGE)
@@ -4936,6 +4782,7 @@ else
 	db NO_ITEM
 endc
 	dw EARTHQUAKE, STONE_EDGE, EXPLOSION, DOUBLE_EDGE
+	db 1 ; ROCK_HEAD
 	db 54
 	dw KABUTOPS
 if DEF(_CHALLENGE)
@@ -4944,30 +4791,19 @@ else
 	db NO_ITEM
 endc
 	dw AQUA_JET, SLASH, STONE_EDGE, EARTHQUAKE
+	db 2 ; WEAK_ARMOR
 	db -1 ; end
 
 	next_list_item ; HIKER (18)
-	db "Bubba@", TRAINERTYPE_ITEM
+	db "Bubba@", TRAINERTYPE_NORMAL
 	db 46
 	dw STEELIX
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 46
 	dw MACHAMP
-	db NO_ITEM
 	db 46
 	dw SUDOWOODO
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 47
 	dw GALLADE
-	db NO_ITEM
 	db -1 ; end
 
 	end_list_items
@@ -5057,31 +4893,27 @@ BikerGroup:
 	db -1 ; end
 
 	next_list_item ; BIKER (10) Route 3
-	db "Forest@", TRAINERTYPE_ITEM_MOVES
+	db "Forest@", TRAINERTYPE_MOVES | TRAINERTYPE_ABILITY
 	db 70
 	dw NINETALES
-	db NO_ITEM
 	dw FIRE_BLAST, SHADOW_BALL, EXTRASENSORY, NASTY_PLOT
+	db 2 ; DROUGHT
 	db 70
 	dw FORRETRESS
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	dw EXPLOSION, X_SCISSOR, GYRO_BALL, SPIKES
+	db 0 ; STURDY
 	db 70
 	dw GOLDUCK
-	db NO_ITEM
 	dw PSYCHIC_M, HYDRO_PUMP, NASTY_PLOT, ICE_BEAM
+	db 0 ; DAMP
 	db 70
 	dw ARBOK
-	db NO_ITEM
 	dw CRUNCH, GUNK_SHOT, COIL, ICE_FANG
+	db 0 ; INTIMIDATE
 	db 71
 	dw XATU
-	db NO_ITEM
 	dw PSYCHIC_M, AIR_SLASH, GIGA_DRAIN, CALM_MIND
+	db 2 ; MAGIC_BOUNCE
 	db -1 ; end
 
 	next_list_item ; BIKER (11) Route 3
@@ -5435,27 +5267,15 @@ JugglerGroup:
 
 BlackbeltGroup:
 	next_list_item ; BLACKBELT_T (1) Mt.Mortar
-	db "Hideo@", TRAINERTYPE_ITEM
+	db "Hideo@", TRAINERTYPE_NORMAL
 	db 23
 	dw ONIX
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 23
 	dw MANKEY
-	db NO_ITEM
 	db 23
 	dw SHUCKLE
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 24
 	dw MACHOP
-	db NO_ITEM
 	db -1 ; end
 
 	next_list_item ; BLACKBELT_T (2) Cianwood Gym
@@ -5469,38 +5289,18 @@ endc
 	db -1 ; end
 
 	next_list_item ; BLACKBELT_T (3) Route 34
-	db "Satoru@", TRAINERTYPE_ITEM_MOVES
+	db "Satoru@", TRAINERTYPE_MOVES
 	db 30
 	dw ONIX
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	dw DRAGONBREATH, ROCK_TOMB, SLAM, DIG
 	db 30
 	dw CROAGUNK
-if DEF(_CHALLENGE)
-	db BLACKBELT
-else
-	db NO_ITEM
-endc
 	dw LOW_SWEEP, SWAGGER, REVENGE, FAINT_ATTACK
 	db 31
 	dw GRAVELER
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	dw SPIKES, SELFDESTRUCT, BULLDOZE, ROCK_TOMB
 	db 32
 	dw MACHOKE
-if DEF(_CHALLENGE)
-	db QUICK_CLAW
-else
-	db NO_ITEM
-endc
 	dw BRICK_BREAK, KNOCK_OFF, REVENGE, FORESIGHT
 	db -1 ; end
 
@@ -6023,23 +5823,15 @@ CamperGroup:
 	db -1 ; end
 
 	next_list_item ; CAMPER (2) Route 32
-	db "William@", TRAINERTYPE_ITEM
+	db "William@", TRAINERTYPE_NORMAL
 	db 46
 	dw DONPHAN
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 46
 	dw URSARING
-	db NO_ITEM
 	db 46
 	dw MANTINE
-	db NO_ITEM
 	db 47
 	dw RAPIDASH
-	db NO_ITEM
 	db -1 ; end
 
 	next_list_item ; CAMPER (2)
@@ -6976,7 +6768,7 @@ endc
 	db 55
 	dw FORRETRESS
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db PINK_BOW
 else
 	db NO_ITEM
 endc
@@ -7445,24 +7237,27 @@ endc
 
 ChigusaGroup:
 	next_list_item ; CHIGUSA1
-	db "Chigusa@", TRAINERTYPE_ITEM_MOVES
+	db "Chigusa@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
 	db 27
 	dw BRELOOM
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db TOXIC_ORB
 else
 	db NO_ITEM
 endc
 	dw MACH_PUNCH, ROCK_TOMB, MEGA_DRAIN, LEECH_SEED
+	db 1 ; POISON_HEAL
 	db 27
 if DEF(_CHALLENGE)
 	dw ARBOK
 	db POWER_BAND
 	dw POISON_FANG, CRUNCH, GLARE, SCREECH
+	db 0 ; INTIMIDATE
 else
 	dw CROAGUNK
 	db NO_ITEM
 	dw BULK_UP, SWAGGER, REVENGE, FAINT_ATTACK
+	db 2 ; POISON_TOUCH
 endc
 	db 27
 	dw HITMONTOP
@@ -7472,15 +7267,18 @@ else
 	db NO_ITEM
 endc
 	dw BULK_UP, ROLLING_KICK, DIG, RAPID_SPIN
+	db 0 ; INTIMIDATE
 if DEF(_CHALLENGE)
 	db 27
 	dw HITMONLEE
 	db KINGS_ROCK
 	dw AERIAL_ACE, BRICK_BREAK, MEDITATE, ROCK_TOMB
+	db 1 ; RECKLESS
 	db 27
 	dw HITMONCHAN
 	db CHOICE_BAND
 	dw BULLET_PUNCH, AERIAL_ACE, PURSUIT, MACH_PUNCH
+	db 1 ; IRON_FIST
 endc
 	db 28
 	dw GALLADE
@@ -7489,19 +7287,21 @@ if DEF(_CHALLENGE)
 else
 	db ORAN_BERRY
 endc
-	dw LEAF_BLADE, SLASH, CONFUSION, BRICK_BREAK 
+	dw LEAF_BLADE, SLASH, CONFUSION, BRICK_BREAK
+	db 2 ; SHARPNESS
 	db -1 ; end
 
 	next_list_item ; CHIGUSA2
-	db "Chigusa@", TRAINERTYPE_ITEM_MOVES
+	db "Chigusa@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
 	db 30
 	dw BRELOOM
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db TOXIC_ORB
 else
 	db NO_ITEM
 endc
 	dw FORCE_PALM, MEGA_DRAIN, LEECH_SEED, ROCK_TOMB
+	db 1 ; POISON_HEAL
 	db 30
 	dw HITMONTOP
 if DEF(_CHALLENGE)
@@ -7510,29 +7310,35 @@ else
 	db NO_ITEM
 endc
 	dw BULK_UP, ROLLING_KICK, DIG, RAPID_SPIN
+	db 0 ; INTIMIDATE
 if DEF(_CHALLENGE)
 	db 30
 	dw HITMONLEE
 	db KINGS_ROCK
 	dw HI_JUMP_KICK, AERIAL_ACE, MEDITATE, ROCK_TOMB
+	db 1 ; RECKLESS
 	db 30
 	dw HITMONCHAN
 	db CHOICE_BAND
 	dw BULLET_PUNCH, MACH_PUNCH, AERIAL_ACE, PURSUIT
+	db 1 ; IRON_FIST
 	db 30
 	dw ARBOK
 	db POWER_BAND
 	dw POISON_FANG, CRUNCH, SCREECH, GLARE
+	db 0 ; INTIMIDATE
 else
 	db 30
 	dw TOXICROAK
 	db NO_ITEM
 	dw BULK_UP, REVENGE, SWAGGER, FAINT_ATTACK
+	db 2 ; POISON_HEAL
 endc
 	db 31
 	dw GALLADE
 	db SITRUS_BERRY
-	dw SWORDS_DANCE, LEAF_BLADE, CONFUSION, BRICK_BREAK 
+	dw SWORDS_DANCE, LEAF_BLADE, CONFUSION, BRICK_BREAK
+	db 2 ; SHARPNESS
 	db -1 ; end
 
 	end_list_items
@@ -7541,7 +7347,7 @@ SECTION "Enemy Trainer Parties 3", ROMX
 
 MasterGroup:
 	next_list_item ; MASTER1
-	db "Master@", TRAINERTYPE_ITEM_MOVES
+	db "Master@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
 	db 53
 	dw GYARADOS
 if DEF(_CHALLENGE)
@@ -7550,6 +7356,7 @@ else
 	db NO_ITEM
 endc
 	dw WAVE_CRASH, DRAGON_DANCE, BOUNCE, EARTHQUAKE
+	db 0 ; INTIMIDATE
 	db 53
 	dw GARCHOMP
 if DEF(_CHALLENGE)
@@ -7558,6 +7365,7 @@ else
 	db NO_ITEM
 endc
 	dw DRAGON_CLAW, DRAGON_DANCE, IRON_HEAD, EARTHQUAKE
+	db 2 ; ROUGH_SKIN
 	db 53
 	dw ALTARIA
 if DEF(_CHALLENGE)
@@ -7565,7 +7373,8 @@ if DEF(_CHALLENGE)
 else
 	db NO_ITEM
 endc
-	dw CALM_MIND, MOONBLAST, DRAGON_PULSE, AIR_SLASH
+	dw CALM_MIND, HYPER_BEAM, DRAGON_PULSE, AIR_SLASH
+	db 2 ; PIXILATE
 	db 54
 	dw KINGDRA
 if DEF(_CHALLENGE)
@@ -7574,15 +7383,18 @@ else
 	db NO_ITEM
 endc
 	dw DRAGON_PULSE, SURF, HYPER_BEAM, ICE_BEAM
+	db 1 ; SNIPER
 	db 54
 if DEF(_CHALLENGE)
 	dw AGGRON
-	db FOCUS_SASH
+	db SALAC_BERRY
 	dw STONE_EDGE, STEEL_SLICE, EARTHQUAKE, DRAGON_DANCE
+	db 0 ; STURDY
 else
 	dw AMPHAROS
 	db NO_ITEM
 	dw THUNDERBOLT, DRAGON_PULSE, COTTON_SPORE, POWER_GEM
+	db 2 ; MOLD_BREAKER
 endc
 	db 55
 	dw SALAMENCE
@@ -7592,10 +7404,11 @@ else
 	db SITRUS_BERRY
 endc
 	dw DRAGON_CLAW, DRAGON_DANCE, DUALWINGBEAT, STEEL_WING
+	db 0 ; INTIMIDATE
 	db -1 ; end
 
 	next_list_item ; MASTER1
-	db "Master@", TRAINERTYPE_ITEM_MOVES
+	db "Master@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
 	db 67
 	dw GYARADOS
 if DEF(_CHALLENGE)
@@ -7604,6 +7417,7 @@ else
 	db NO_ITEM
 endc
 	dw WAVE_CRASH, DRAGON_DANCE, BOUNCE, EARTHQUAKE
+	db 0 ; INTIMIDATE
 	db 67
 	dw GARCHOMP
 if DEF(_CHALLENGE)
@@ -7612,6 +7426,7 @@ else
 	db NO_ITEM
 endc
 	dw DRAGON_RUSH, DRAGON_DANCE, IRON_HEAD, EARTHQUAKE
+	db 2 ; ROUGH_SKIN
 	db 67
 	dw ALTARIA
 if DEF(_CHALLENGE)
@@ -7619,7 +7434,8 @@ if DEF(_CHALLENGE)
 else
 	db NO_ITEM
 endc
-	dw CALM_MIND, MOONBLAST, DRAGON_PULSE, AIR_SLASH
+	dw CALM_MIND, HYPER_BEAM, DRAGON_PULSE, AIR_SLASH
+	db 2 ; PIXILATE
 	db 67
 	dw KINGDRA
 if DEF(_CHALLENGE)
@@ -7628,15 +7444,18 @@ else
 	db NO_ITEM
 endc
 	dw DRAGON_PULSE, HYDRO_PUMP, HYPER_BEAM, ICE_BEAM
+	db 1 ; SNIPER
 	db 67
 if DEF(_CHALLENGE)
 	dw AGGRON
-	db FOCUS_SASH
+	db SALAC_BERRY
 	dw STONE_EDGE, STEEL_SLICE, EARTHQUAKE, DRAGON_DANCE
+	db 0 ; STURDY
 else
 	dw AMPHAROS
 	db NO_ITEM
 	dw THUNDERBOLT, DRAGON_PULSE, COTTON_SPORE, POWER_GEM
+	db 2 ; MOLD_BREAKER
 endc
 	db 68
 	dw SALAMENCE
@@ -7646,6 +7465,7 @@ else
 	db SITRUS_BERRY
 endc
 	dw DRAGON_CLAW, DRAGON_DANCE, DUALWINGBEAT, STEEL_WING
+	db 0 ; INTIMIDATE
 	db -1 ; end
 
 	end_list_items
@@ -8196,96 +8016,53 @@ EngineerGroup:
 	db -1 ; end
 
 	next_list_item ; ENGINEER (2)
-	db "Oswald@", TRAINERTYPE_ITEM
+	db "Oswald@", TRAINERTYPE_NORMAL
 	db 30
 	dw MAGNETON
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 31
 	dw LANTURN
-	db NO_ITEM
 	db 31
 	dw MACHOKE
-	db NO_ITEM
 	db -1 ; end
 
 	next_list_item ; ENGINEER (3) Olivine Gym 2F
-	db "Dante@", TRAINERTYPE_ITEM
+	db "Dante@", TRAINERTYPE_NORMAL
 	db 28
 	dw MAGNEMITE
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 28
 	dw MAGNEMITE
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 28
-	dw SKARMINI
-	db NO_ITEM
+	dw LAIRON
 	db -1 ; end
 
 	next_list_item ; ENGINEER (4) Olivine Gym 3F
-	db "Rudy@", TRAINERTYPE_ITEM
+	db "Rudy@", TRAINERTYPE_NORMAL
 	db 29
 	dw FORRETRESS
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db -1 ; end
 
 	next_list_item ; ENGINEER (5) Pewter Gym
-	db "Gabe@", TRAINERTYPE_ITEM
+	db "Gabe@", TRAINERTYPE_NORMAL
 	db 68
 	dw GOLEM
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 68
 	dw MACHAMP
-	db NO_ITEM
 	db 68
 	dw KABUTOPS
-	db NO_ITEM
 	db 68
 	dw AGGRON
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db -1 ; end
 
 	next_list_item ; ENGINEER (6) Pewter Gym
-	db "Bernie@", TRAINERTYPE_ITEM
+	db "Bernie@", TRAINERTYPE_NORMAL
 	db 68
 	dw SUDOWOODO
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 68
 	dw ANNIHILAPE
-	db NO_ITEM
 	db 68
 	dw OMASTAR
-	db NO_ITEM
 	db 68
 	dw RHYPERIOR
-	db NO_ITEM
 	db -1 ; end
 
 	end_list_items
@@ -8324,22 +8101,15 @@ endc
 	db -1 ; end
 
 	next_list_item ; MNINJA_M (4)
-	db "Ninja@", TRAINERTYPE_ITEM_MOVES
+	db "Ninja@", TRAINERTYPE_MOVES
 	db 37
 	dw ELECTABUZZ
-	db NO_ITEM
 	dw CHARGE_BEAM, LIGHT_SCREEN, LOW_KICK, QUICK_ATTACK
 	db 37
 	dw SKARMORY
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	dw ROOST, DUALWINGBEAT, STEEL_WING, AGILITY
 	db 38
 	dw DEWGONG
-	db NO_ITEM
 	dw WATER_PULSE, AURORA_BEAM, AQUA_RING, SHEER_COLD
 	db -1 ; end
 
@@ -9145,7 +8915,7 @@ endc
 
 MadameBossGroup:
 	next_list_item ; MADAME_BOSS (1)
-	db "Boss@", TRAINERTYPE_ITEM_MOVES
+	db "Boss@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
 	db 60
 	dw PORYGON_Z
 if DEF(_CHALLENGE)
@@ -9154,14 +8924,18 @@ else
 	db SITRUS_BERRY
 endc
 	dw NASTY_PLOT, THUNDERBOLT, TRI_ATTACK, PSYCHIC_M
+	db 1 ; DOWNLOAD
 	db 60
 	dw METAGROSS
 if DEF(_CHALLENGE)
 	db POWER_BAND
+	dw ZEN_HEADBUTT, METEOR_MASH, AGILITY, EARTHQUAKE
+	db 2 ; TOUGH_CLAWS
 else
 	db SITRUS_BERRY
-endc
 	dw ZEN_HEADBUTT, METEOR_MASH, AGILITY, EARTHQUAKE
+	db 0 ; CLEAR_BODY
+endc
 	db 60
 	dw LUDICOLO
 if DEF(_CHALLENGE)
@@ -9170,31 +8944,40 @@ else
 	db SITRUS_BERRY
 endc
 	dw SURF, ICE_BEAM, AQUA_RING, ENERGY_BALL
+	db 1 ; RAIN_DISH
 	db 60
 	dw ARTICUNO
 if DEF(_CHALLENGE)
 	db FOCUS_SASH
+	dw ROOST, HAIL, BLIZZARD, DUALWINGBEAT
+	db 2 ; SNOW_CLOAK
 else
 	db SITRUS_BERRY
-endc
 	dw ROOST, HAIL, BLIZZARD, DUALWINGBEAT
+	db 0 ; PRESSURE
+endc
 	db 60
 	dw ZAPDOS
 if DEF(_CHALLENGE)
 	db CHESTO_BERRY
 	dw THUNDER, AERIAL_ACE, REST, RAIN_DANCE
+	db 2 ; STATIC
 else
 	db SITRUS_BERRY
 	dw THUNDER, AERIAL_ACE, LIGHT_SCREEN, RAIN_DANCE
+	db 0 ; PRESSURE
 endc
 	db 60
 	dw MOLTRES
 if DEF(_CHALLENGE)
 	db LIFE_ORB
+	dw SUNNY_DAY, SOLARBEAM, AIR_SLASH, FLAMETHROWER
+	db 2 ; FLAME_BODY
 else
 	db SITRUS_BERRY
-endc
 	dw SUNNY_DAY, SOLARBEAM, AIR_SLASH, FLAMETHROWER
+	db 0 ; PRESSURE
+endc
 	db -1 ; end
 
 	end_list_items
@@ -9963,38 +9746,43 @@ endc
 
 ChigusaGroup2:
 	next_list_item ; CHIGUSA3
-	db "Chigusa@", TRAINERTYPE_ITEM_MOVES
+	db "Chigusa@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
 	db 33
 	dw BRELOOM
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db TOXIC_ORB
 else
 	db NO_ITEM
 endc
 	dw FORCE_PALM, GIGA_DRAIN, LEECH_SEED, ROCK_SLIDE
+	db 1 ; POISON_HEAL
 if DEF(_CHALLENGE)
 	db 33
 	dw ARBOK
 	db POWER_BAND
 	dw POISON_FANG, CRUNCH, GLARE, SCREECH
+	db 0 ; INTIMIDATE
 	db 33
 	dw HITMONCHAN
 	db CHOICE_BAND
 	dw BULLET_PUNCH, BRICK_BREAK, AERIAL_ACE, PURSUIT
+	db 1 ; IRON_FIST
 else
 	db 33
 	dw TOXICROAK
 	db NO_ITEM
 	dw BULK_UP, LOW_SWEEP, POISON_JAB, SUCKER_PUNCH
+	db 2 ; POISON_TOUCH
 endc
 	db 33
 	dw HITMONLEE
 if DEF(_CHALLENGE)
-	db KINGS_ROCK
+	db SALAC_BERRY
 else
 	db NO_ITEM
 endc
 	dw BULK_UP, ROCK_SLIDE, HI_JUMP_KICK, AERIAL_ACE
+	db 1 ; RECKLESS
 	db 33
 	dw HITMONTOP
 if DEF(_CHALLENGE)
@@ -10003,6 +9791,7 @@ else
 	db NO_ITEM
 endc
 	dw BULK_UP, TRIPLE_KICK, DIG, RAPID_SPIN
+	db 0 ; INTIMIDATE
 	db 34
 	dw GALLADE
 if DEF(_CHALLENGE)
@@ -10011,32 +9800,37 @@ else
 	db SITRUS_BERRY
 endc
 	dw SWORDS_DANCE, LEAF_BLADE, PSYCHO_CUT, BRICK_BREAK 
+	db 2 ; SHARPNESS
 	db -1 ; end
 
 	next_list_item ; CHIGUSA4
-	db "Chigusa@", TRAINERTYPE_ITEM_MOVES
+	db "Chigusa@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
 	db 43
 	dw BRELOOM
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db TOXIC_ORB
 else
 	db NO_ITEM
 endc
 	dw FORCE_PALM, GIGA_DRAIN, LEECH_SEED, ROCK_SLIDE
+	db 1 ; POISON_HEAL
 if DEF(_CHALLENGE)
 	db 43
 	dw ARBOK
 	db POWER_BAND
 	dw POISON_FANG, CRUNCH, SCREECH, GLARE
+	db 0 ; INTIMIDATE
 	db 43
 	dw HITMONCHAN
 	db CHOICE_BAND
 	dw BRICK_BREAK, ICE_PUNCH, BULLET_PUNCH, ROCK_SLIDE
+	db 1 ; IRON_FIST
 else
 	db 43
 	dw TOXICROAK
 	db NO_ITEM
 	dw TOXIC, SUCKER_PUNCH, VENOSHOCK, LOW_SWEEP
+	db 2 ; POISON_TOUCH
 endc
 	db 43
 	dw HITMONLEE
@@ -10046,6 +9840,7 @@ else
 	db NO_ITEM
 endc
 	dw BULK_UP, ROCK_SLIDE, HI_JUMP_KICK, AERIAL_ACE
+	db 1 ; RECKLESS
 	db 43
 	dw HITMONTOP
 if DEF(_CHALLENGE)
@@ -10054,6 +9849,7 @@ else
 	db NO_ITEM
 endc
 	dw BULK_UP, TRIPLE_KICK, GYRO_BALL, RAPID_SPIN
+	db 0 ; INTIMIDATE
 	db 44
 	dw GALLADE
 if DEF(_CHALLENGE)
@@ -10061,28 +9857,32 @@ if DEF(_CHALLENGE)
 else
 	db SITRUS_BERRY
 endc
-	dw SWORDS_DANCE, LEAF_BLADE, PSYCHO_CUT, BRICK_BREAK 
+	dw SWORDS_DANCE, LEAF_BLADE, PSYCHO_CUT, BRICK_BREAK
+	db 2 ; SHARPNESS
 	db -1 ; end
 
 	next_list_item ; CHIGUSA5
-	db "Chigusa@", TRAINERTYPE_ITEM_MOVES
+	db "Chigusa@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
 	db 50
 	dw BRELOOM
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db TOXIC_ORB
 else
 	db NO_ITEM
 endc
 	dw FORCE_PALM, SEED_BOMB, LEECH_SEED, ROCK_SLIDE
+	db 1 ; POISON_TOUCH
 	db 50
 if DEF(_CHALLENGE)
 	dw ARBOK
 	db POWER_BAND
 	dw POISON_FANG, CRUNCH, SCREECH, GLARE
+	db 0 ; INTIMIDATE
 else
 	dw TOXICROAK
 	db NO_ITEM
 	dw BULK_UP, TOXIC, POISON_JAB, LOW_SWEEP
+	db 2 ; POISON_TOUCH
 endc
 	db 50
 	dw HITMONCHAN
@@ -10093,6 +9893,7 @@ else
 	db NO_ITEM
 	dw BULK_UP, BRICK_BREAK, ICE_PUNCH, BULLET_PUNCH
 endc
+	db 1 ; IRON_FIST
 	db 50
 	dw HITMONLEE
 if DEF(_CHALLENGE)
@@ -10107,6 +9908,7 @@ elif DEF(_NOPSS)
 else
 	dw BULK_UP, ROCK_SLIDE, HI_JUMP_KICK, BLAZE_KICK
 endc
+	db 1 ; RECKLESS
 	db 50
 	dw HITMONTOP
 if DEF(_CHALLENGE)
@@ -10115,6 +9917,7 @@ else
 	db NO_ITEM
 endc
 	dw BULK_UP, TRIPLE_KICK, GYRO_BALL, RAPID_SPIN
+	db 0 ; INTIMIDATE
 	db 51
 	dw GALLADE
 if DEF(_CHALLENGE)
@@ -10122,28 +9925,32 @@ if DEF(_CHALLENGE)
 else
 	db SITRUS_BERRY
 endc
-	dw SWORDS_DANCE, SLASH, PSYCHO_CUT, BRICK_BREAK 
+	dw SWORDS_DANCE, SLASH, PSYCHO_CUT, BRICK_BREAK
+	db 2 ; SHARPNESS
 	db -1 ; end
 
 	next_list_item ; CHIGUSA6
-	db "Chigusa@", TRAINERTYPE_ITEM_MOVES
+	db "Chigusa@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
 	db 54
 	dw BRELOOM
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db TOXIC_ORB
 else
 	db NO_ITEM
 endc
 	dw FORCE_PALM, SEED_BOMB, LEECH_SEED, ROCK_SLIDE
+	db 1 ; POISON_HEAL
 	db 54
 if DEF(_CHALLENGE)
 	dw ARBOK
 	db POWER_BAND
 	dw POISON_FANG, HAZE, CRUNCH, GLARE
+	db 0 ; INTIMIDATE
 else
 	dw TOXICROAK
 	db NO_ITEM
 	dw BULK_UP, TOXIC, POISON_JAB, LOW_SWEEP
+	db 2 ; POISON_TOUCH
 endc
 	db 54
 	dw HITMONCHAN
@@ -10154,6 +9961,7 @@ else
 	db NO_ITEM
 	dw BULK_UP, BRICK_BREAK, ICE_PUNCH, BULLET_PUNCH
 endc
+	db 1 ; IRON_FIST
 	db 54
 	dw HITMONLEE
 if DEF(_CHALLENGE)
@@ -10168,6 +9976,7 @@ elif DEF(_NOPSS)
 else
 	dw BULK_UP, ROCK_SLIDE, HI_JUMP_KICK, BLAZE_KICK
 endc
+	db 1 ; RECKLESS
 	db 54
 	dw HITMONTOP
 if DEF(_CHALLENGE)
@@ -10176,6 +9985,7 @@ else
 	db NO_ITEM
 endc
 	dw BULK_UP, BRICK_BREAK, GYRO_BALL, RAPID_SPIN
+	db 0 ; INTIMIDATE
 	db 55
 	dw GALLADE
 if DEF(_CHALLENGE)
@@ -10184,27 +9994,31 @@ else
 	db SITRUS_BERRY
 endc
 	dw SWORDS_DANCE, SLASH, PSYCHO_CUT, CLOSE_COMBAT
+	db 2 ; SHARPNESS
 	db -1 ; end
 
 	next_list_item ; CHIGUSA7
-	db "Chigusa@", TRAINERTYPE_ITEM_MOVES
+	db "Chigusa@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
 	db 67
 	dw BRELOOM
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db TOXIC_ORB
 else
 	db NO_ITEM
 endc
 	dw FORCE_PALM, SEED_BOMB, SPORE, ROCK_SLIDE
+	db 1 ; POISON_HEAL
 	db 67
 if DEF(_CHALLENGE)
 	dw ARBOK
 	db POWER_BAND
 	dw GUNK_SHOT, HAZE, CRUNCH, GLARE
+	db 0 ; INTIMIDATE
 else
 	dw TOXICROAK
 	db NO_ITEM
 	dw BULK_UP, TOXIC, POISON_JAB, CLOSE_COMBAT
+	db 2 ; POISON_HEAL
 endc
 	db 67
 	dw HITMONCHAN
@@ -10215,6 +10029,7 @@ else
 	db NO_ITEM
 	dw BULK_UP, CLOSE_COMBAT, ICE_PUNCH, BULLET_PUNCH
 endc
+	db 1 ; IRON_FIST
 	db 67
 	dw HITMONLEE
 if DEF(_CHALLENGE)
@@ -10229,6 +10044,7 @@ elif DEF(_NOPSS)
 else
 	dw BULK_UP, ROCK_SLIDE, CLOSE_COMBAT, BLAZE_KICK
 endc
+	db 1 ; RECKLESS
 	db 67
 	dw HITMONTOP
 if DEF(_CHALLENGE)
@@ -10237,6 +10053,7 @@ else
 	db NO_ITEM
 endc
 	dw BULK_UP, CLOSE_COMBAT, GYRO_BALL, ROCK_SLIDE
+	db 0 ; INTIMIDATE
 	db 68
 	dw GALLADE
 if DEF(_CHALLENGE)
@@ -10245,6 +10062,7 @@ else
 	db SITRUS_BERRY
 endc
 	dw SWORDS_DANCE, SLASH, ZEN_HEADBUTT, CLOSE_COMBAT
+	db 2 ; SHARPNESS
 	db -1 ; end
 
 	end_list_items
@@ -10367,7 +10185,7 @@ endc
 	db 50
 	dw FORRETRESS
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db PINK_BOW
 else
 	db NO_ITEM
 endc
@@ -10562,25 +10380,31 @@ LinkTrainerGroup:
 
 FedLeaderGroup:
 	next_list_item ; PAXTON
-	db "Paxton@", TRAINERTYPE_MOVES
+	db "Paxton@", TRAINERTYPE_MOVES | TRAINERTYPE_ABILITY
 	db 79
 	dw GARDEVOIR
-	dw PSYCHIC_M, CALM_MIND, THUNDERBOLT, MOONBLAST
+	dw PSYCHIC_M, CALM_MIND, THUNDERBOLT, HYPER_BEAM
+	db 2 ; PIXILATE
 	db 79
 	dw WEAVILE
 	dw NIGHT_SLASH, ICICLE_CRASH, BRICK_BREAK, SWORDS_DANCE
+	db 2 ; PICKPOCKET
 	db 79
 	dw MACHAMP
 	dw CROSS_CHOP, STONE_EDGE, EARTHQUAKE, BULK_UP
+	db 1 ; NO_GUARD
 	db 79
 	dw BLASTOISE
-	dw FLASH_CANNON, HYDRO_CANNON, ICE_BEAM, IRON_DEFENSE
+	dw FLASH_CANNON, HYDRO_CANNON, ICE_BEAM, AURA_SPHERE
+	db 2 ; MEGA_LAUNCHER
 	db 79
 	dw MANECTRIC
 	dw GRASS_KNOT, RAIN_DANCE, THUNDER, VOLT_SWITCH
+	db 2 ; INTIMIDATE
 	db 80
 	dw SCIZOR
 	dw IRON_HEAD, X_SCISSOR, SWORDS_DANCE, NIGHT_SLASH
+	db 2 ; STEADFAST
 	db -1 ; end
 
 	end_list_items
@@ -11071,30 +10895,17 @@ endc
 
 DelinquentGroup:
 	next_list_item ; DELINQUENT1 (Route 3)
-	db "Karen@", TRAINERTYPE_ITEM
+	db "Karen@", TRAINERTYPE_NORMAL
 	db 70
 	dw SKARMORY
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	db 70
 	dw FROSLASS
-	db NO_ITEM
 	db 70
 	dw LEAFEON
-	db NO_ITEM
 	db 70
 	dw AZUMARILL
-if DEF(_CHALLENGE)
-	db POWER_BAND
-else
-	db NO_ITEM
-endc
 	db 71
 	dw TAUROS
-	db NO_ITEM
 	db -1
 
 	next_list_item ; DELINQUENT2 (Route 3)
@@ -11414,35 +11225,28 @@ RoughneckGroup:
 	db -1 ; end
 
 	next_list_item ; ROUGHNECK (2) Route 25
-	db "Phillip@", TRAINERTYPE_ITEM_MOVES
+	db "Phillip@", TRAINERTYPE_MOVES
 	db 71
 	dw DONPHAN
-if DEF(_CHALLENGE)
-	db FOCUS_SASH
-else
-	db NO_ITEM
-endc
 	dw EARTHQUAKE, RAPID_SPIN, STONE_EDGE, KNOCK_OFF
 	db 71
 	dw WYRDEER
-	db NO_ITEM
 	dw GIGA_IMPACT, ZEN_HEADBUTT, MEGAHORN, PROTECT
 	db 71
 	dw VILEPLUME
-	db NO_ITEM
 	dw PETAL_DANCE, MOONBLAST, SLUDGE_BOMB, MOONLIGHT
 	db 72
 	dw FARFETCH_D
-	db NO_ITEM
 	dw BRAVE_BIRD, LEAF_BLADE, NIGHT_SLASH, ROOST
 	db -1 ; end
 
 	next_list_item ; ROUGHNECK (3) Fed Hideout B1F
-	db "Kyle@", TRAINERTYPE_ITEM_MOVES
+	db "Kyle@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
 	db 75
 	dw BRONZONG
 	db NO_ITEM
 	dw PSYCHIC_M, FLASH_CANNON, CALM_MIND, FAINT_ATTACK
+	db 0 ; LEVITATE
 	db 75
 	dw SMEARGLE
 if DEF(_CHALLENGE)
@@ -11451,10 +11255,16 @@ else
 	db NO_ITEM
 endc
 	dw SPORE, SWORDS_DANCE, CLOSE_COMBAT, SHADOW_PUNCH
+	db 2 ; MOODY
 	db 76
 	dw GENGAR
+if DEF(_CHALLENGE)
+	db AIR_BALLOON
+else
 	db NO_ITEM
+endc
 	dw SHADOW_BALL, SLUDGE_BOMB, DESTINY_BOND, FOCUS_BLAST
+	db 0 ; CURSED_BODY
 	db -1 ; end
 
 	next_list_item ; ROUGHNECK (4) Fed Hideout B2F
@@ -11617,7 +11427,7 @@ endc
 	db -1 ; end
 
 	next_list_item ; SOLDIER(3) Vermillion Gym
-	db "Ulysses@", TRAINERTYPE_ITEM_MOVES
+	db "Ulysses@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
 	db 72
 	dw AMPHAROS
 if DEF(_CHALLENGE)
@@ -11626,14 +11436,16 @@ else
 	db NO_ITEM
 endc
 	dw THUNDERBOLT, DRAGON_PULSE, THUNDER_WAVE, FLASH_CANNON
+	db 2 ; MOLD_BREAKER
 	db 72
 	dw MAGNEZONE
 if DEF(_CHALLENGE)
-	db FOCUS_SASH
+	db AIR_BALLOON
 else
 	db NO_ITEM
 endc
 	dw FLASH_CANNON, THUNDERBOLT, TRI_ATTACK, THUNDER_WAVE
+	db 0 ; STURDY
 	db 73
 	dw JOLTEON
 if DEF(_CHALLENGE)
@@ -11642,6 +11454,7 @@ else
 	db NO_ITEM
 endc
 	dw THUNDERBOLT, FLASH_CANNON, SHADOW_BALL, THUNDER_WAVE
+	db 0 ; VOLT_ABSORB
 	db -1 ; end
 
 	next_list_item ; SOLDIER(4) Vermillion Gym
