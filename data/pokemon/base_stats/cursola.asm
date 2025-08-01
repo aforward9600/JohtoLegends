@@ -7,7 +7,7 @@
 	db GHOST, GHOST ; type
 	db 30 ; catch rate
 	db 179 ; base exp
-	db NO_ITEM, HARD_STONE ; items
+	db NO_ITEM, NO_ITEM ; items
 	db GENDER_F75 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/cursola/front.dimensions"

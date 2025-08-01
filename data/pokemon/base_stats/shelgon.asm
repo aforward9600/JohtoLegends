@@ -7,7 +7,7 @@
 	db DRAGON, DRAGON ; type
 	db 45 ; catch rate
 	db 147 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, DRAGON_FANG ; items
 	db GENDER_F50 ; gender ratio
 	db 40 ; step cycles to hatch
 	INCBIN "gfx/pokemon/shelgon/front.dimensions"

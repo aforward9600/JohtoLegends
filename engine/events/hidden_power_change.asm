@@ -189,3 +189,54 @@ CancelText:
 HiddenPowerDVsSetText:
 	text "Enjoy your drink!"
 	prompt
+
+HiddenAbilityChange:
+	farcall SelectMonFromParty
+	jp c, .cancel
+
+	ld a, [wCurPartySpecies]
+	cp EGG
+	jp z, .egg
+
+	call IsAPokemon
+	jp c, .cancel
+
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1CaughtAbility
+	call GetPartyLocation
+
+	ld a, [hl]
+	cp 2
+	jp z, .ChangeToFirstAbility
+	ld a, 2
+.AbilityChanged
+	ld [hl], a
+	ld hl, AbilityChanged2Text
+	jp PrintText
+
+.egg
+	ld de, SFX_WRONG
+	call PlaySFX
+	call WaitSFX
+
+	ld hl, EggSelectedText
+	call PrintText
+	call WaitPressAorB_BlinkCursor
+.finish
+	scf
+	ret
+
+.cancel
+	ld hl, CancelText
+	call PrintText
+	jr .finish
+
+.ChangeToFirstAbility
+	ld a, 0
+	jr .AbilityChanged
+
+AbilityChanged2Text:
+	text "Your #mon's"
+	line "ability has"
+	cont "changed."
+	prompt

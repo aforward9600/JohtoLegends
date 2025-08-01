@@ -196,6 +196,8 @@ AI_Types:
 	jp z, .Pixilate
 	cp REFRIGERATE
 	jp z, .Refrigerate
+	cp SCRAPPY
+	jp z, .Scrappy
 .SkipEnemyAbilities
 	ld a, [wPlayerAbility]
 	cp LEVITATE
@@ -397,6 +399,22 @@ AI_Types:
 .TintedLens
 	call .PopAll
 	jp .effective
+
+.Scrappy
+	call .CheckAIMoveType
+	pop hl
+	cp NORMAL
+	jp nz, .SkipEnemyAbilities
+	cp FIGHTING
+	jp nz, .SkipEnemyAbilities
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	cp GHOST
+	jp z, .effective
+	ld a, [hl]
+	cp GHOST
+	jp z, .effective
+	jp .immune
 
 .CheckGroundMove
 	call .CheckAIMoveType
