@@ -700,8 +700,12 @@ IntroScene3_Jumper:
 	ld hl, wIntroFrameCounter2
 	ld a, [hl]
 	and %00011111
-	ret z
+	jr z, .load_palettes
 	call Intro_InitMagikarps
+	ret
+
+.load_palettes
+	callfar Unreferenced_Function8b07
 	ret
 
 .scene3_5:
