@@ -185,6 +185,9 @@ AI_Types:
 	push hl
 	push bc
 	push de
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jr nz, .SkipAbilities
 	ld a, [wEnemyAbility]
 	cp NEUTRAL_GAS
 	jr z, .SkipAbilities
@@ -3447,7 +3450,7 @@ AI_Status:
 	cp EFFECT_BURN
 	jr z, .burnimmunity
 	cp EFFECT_SLEEP
-	jr z, .sleepimmunity
+	jp z, .sleepimmunity
 
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
@@ -3456,6 +3459,9 @@ AI_Status:
 	jp .typeimmunity
 
 .poisonimmunity
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jp nz, .typeimmunity
 	call CheckUserNeutralGasMoldBreaker
 	jp z, .typeimmunity
 	ld a, [wPlayerAbility]
@@ -3471,21 +3477,24 @@ AI_Status:
 	jp z, .immune
 	ld a, [wBattleMonType2]
 	cp POISON
-	jr z, .immune
+	jp z, .immune
 	cp STEEL
-	jr z, .immune
+	jp z, .immune
 	jr .typeimmunity
 
 .leechseedimmunity
 	ld a, [wBattleMonType1]
 	cp GRASS
-	jr z, .immune
+	jp z, .immune
 	ld a, [wBattleMonType2]
 	cp GRASS
-	jr z, .immune
+	jp z, .immune
 	jr .typeimmunity
 
 .burnimmunity
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jp nz, .typeimmunity
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .typeimmunity
 	ld a, [wPlayerAbility]
@@ -3503,6 +3512,9 @@ AI_Status:
 	jr .typeimmunity
 
 .sleepimmunity
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jp nz, .typeimmunity
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .typeimmunity
 	ld a, [wPlayerAbility]
@@ -3516,6 +3528,9 @@ AI_Status:
 	jr .typeimmunity
 
 .paralyzeimmunity
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jp nz, .typeimmunity
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .typeimmunity
 	ld a, [wPlayerAbility]

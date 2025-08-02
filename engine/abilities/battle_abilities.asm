@@ -1,8 +1,8 @@
 SetPlayerAbility::
 
-;	ld de, ENGINE_ABILITIES_OFF
-;	farcall CheckEngineFlag
-;	jr nc, .NoAbility
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jr nz, .NoAbility
 
 	ld a, [wCurBattleMon]
 	ld hl, wPartyMon1CaughtAbility
@@ -14,15 +14,15 @@ SetPlayerAbility::
 	ld [wPlayerAbility], a
 	ret
 
-;.NoAbility:
-;	ld a, NO_ABILITY
-;	jr .FinishPlayerAbility
+.NoAbility:
+	ld a, NO_ABILITY
+	jr .FinishPlayerAbility
 
 SetEnemyAbility::
 
-;	ld de, ENGINE_ABILITIES_OFF
-;	farcall CheckEngineFlag
-;	jr nc, .NoAbility
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jr nz, .NoAbility
 
 	ld a, [wBattleMode]
 	dec a

@@ -76,6 +76,9 @@ AI_Redundant:
 	ret
 
 .FocusEnergy:
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jp nz, SubstituteCheckAI
 	ld a, [wPlayerAbility]
 	cp BATTLE_ARMOR
 	jp z, .Redundant
@@ -84,6 +87,9 @@ AI_Redundant:
 	jp SubstituteCheckAI
 
 .Confuse:
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jp nz, .SkipConfuse
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipConfuse
 	ld a, [wPlayerAbility]
@@ -119,6 +125,9 @@ AI_Redundant:
 	jp SubstituteCheckAI
 
 .LeechSeed:
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jp nz, .SkipLeechSeed
 	call CheckNeutralGas
 	jr z, .SkipLeechSeed
 	ld a, [wPlayerAbility]
@@ -165,6 +174,9 @@ AI_Redundant:
 	ret
 
 .PerishSong:
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jp nz, .SkipPerishSong
 	ld a, [wEnemyAbility]
 	cp PERISH_SONG
 	jr z, .SkipPerishSong
@@ -185,6 +197,9 @@ AI_Redundant:
 .Attract:
 	; not "redundant" per se,
 	; but don't use when player is substituted
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jp nz, .SkipAttract
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipAttract
 	ld a, [wPlayerAbility]
@@ -217,6 +232,9 @@ AI_Redundant:
 	jp .NotRedundant
 
 .DreamEater:
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jp nz, .NotRedundant
 	ld a, [wPlayerAbility]
 	cp LIQUID_OOZE
 	jp z, .Redundant
@@ -229,6 +247,9 @@ AI_Redundant:
 .Swagger:
 	; not "redundant" per se,
 	; but don't use when player is substituted
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jp nz, .SkipSwagger
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipSwagger
 	ld a, [wPlayerAbility]
@@ -249,8 +270,8 @@ AI_Redundant:
 .Hail:
 	ld a, [wBattleWeather]
 	cp WEATHER_HAIL
-	jr z, .Redundant
-	jr .NotRedundant
+	jp z, .Redundant
+	jp .NotRedundant
 
 .AquaRing:
 	ld a, [wEnemySubStatus5]
@@ -258,6 +279,9 @@ AI_Redundant:
 	ret
 
 .LeechHit:
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jp nz, .NotRedundant
 	ld a, [wPlayerAbility]
 	cp LIQUID_OOZE
 	jr z, .Redundant
@@ -266,6 +290,9 @@ AI_Redundant:
 	ret
 
 .AttackDown:
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	ret nz
 	call CheckUserNeutralGasMoldBreaker
 	ret z
 	ld a, [wPlayerAbility]
@@ -276,6 +303,9 @@ AI_Redundant:
 	jr .NotRedundant
 
 .DefenseDown:
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	ret nz
 	call CheckUserNeutralGasMoldBreaker
 	ret z
 	ld a, [wPlayerAbility]
@@ -286,6 +316,9 @@ AI_Redundant:
 	jr .NotRedundant
 
 .AccuracyDown:
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	ret nz
 	call CheckUserNeutralGasMoldBreaker
 	ret z
 	ld a, [wPlayerAbility]
@@ -296,6 +329,9 @@ AI_Redundant:
 	jr .NotRedundant
 
 .StatDown:
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	ret nz
 	call CheckUserNeutralGasMoldBreaker
 	ret z
 	ld a, [wPlayerAbility]
@@ -312,6 +348,9 @@ AI_Redundant:
 	jr nc, .NotRedundant
 
 .FakeOut:
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jp nz, .SkipFakeOut
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipFakeOut
 	ld a, [wPlayerAbility]

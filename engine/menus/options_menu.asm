@@ -69,7 +69,7 @@ StringOptions:
 	db "        :<LF>"
 	db "Sound<LF>"
 	db "        :<LF>"
-	db "Print<LF>"
+	db "Abilities<LF>"
 	db "        :<LF>"
 	db "Menu Account<LF>"
 	db "        :<LF>"
@@ -333,31 +333,28 @@ Options_Sound:
 	const OPT_PRINT_DARKEST  ; 4
 
 Options_Print:
-	call GetPrinterSetting
+	ld a, [wGBPrinterBrightness]
+	ld c, a
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	ld a, c
-	cp OPT_PRINT_DARKEST
-	jr c, .Increase
-	ld c, OPT_PRINT_LIGHTEST - 1
+	cp OPT_PRINT_LIGHTEST
+	jr z, .Increase
+	ld a, OPT_PRINT_LIGHTEST
+	jr .Save
 
 .Increase:
-	inc c
-	ld a, e
+	ld a, OPT_PRINT_LIGHTER
 	jr .Save
 
 .LeftPressed:
 	ld a, c
-	and a
-	jr nz, .Decrease
-	ld c, OPT_PRINT_DARKEST + 1
-
-.Decrease:
-	dec c
-	ld a, d
+	cp OPT_PRINT_LIGHTEST
+	jr z, .Increase
+	ld a, OPT_PRINT_LIGHTEST
 
 .Save:
 	ld b, a
@@ -384,8 +381,8 @@ Options_Print:
 	dw .Darker
 	dw .Darkest
 
-.Lightest: db "Lightest@"
-.Lighter:  db "Lighter @"
+.Lightest: db "On @"
+.Lighter:  db "Off@"
 .Normal:   db "Normal  @"
 .Darker:   db "Darker  @"
 .Darkest:  db "Darkest @"
