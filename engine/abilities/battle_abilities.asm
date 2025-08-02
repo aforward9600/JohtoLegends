@@ -24,6 +24,10 @@ SetEnemyAbility::
 	cp OPT_PRINT_LIGHTEST
 	jr nz, .NoAbility
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_SHINY
+	jr z, .HiddenAbility
+
 	ld a, [wBattleMode]
 	dec a
 	jr z, .WildAbilities
@@ -420,10 +424,13 @@ CheckContactAbilities:
 	cp JUSTIFIED
 	jp z, .justified
 .AfterCursedBody
-	ld a, BATTLE_VARS_LAST_MOVE
+	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
-	cp PHYSICAL
-	ret c
+	cp SPECIAL
+	ret nc
+	cp STATUS
+	ret nc
+	ld b,b
 	call GetUserAbility
 	cp POISON_TOUCH
 	jr z, .PoisonTouch
@@ -515,6 +522,22 @@ CheckContactAbilities:
 	jp BattleCommand_SwitchTurnAbilities
 
 .PoisonPoint:
+	ld hl, wBattleMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .GotPlayerTypePoison
+	ld hl, wEnemyMonType1
+.GotPlayerTypePoison
+	ld a, [hli]
+	cp POISON
+	ret z
+	cp STEEL
+	ret z
+	ld a, [hl]
+	cp POISON
+	ret z
+	cp STEEL
+	ret z
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
@@ -910,8 +933,8 @@ CheckBoostingAbilities:
 	ret
 
 .PinchHPCheck:
-	call GetThirdMaxHP
-	call CheckUserHasEnoughHP
+	farcall GetThirdMaxHP
+	call CheckUserHasEnoughHPAbilities
 	ret c
 	jp FiftyPercentBoost
 
@@ -2006,4 +2029,18 @@ TransformCopyAbility::
 .PlayerAbility
 	ld a, [wEnemyAbility]
 	ld [wPlayerAbility], a
+	ret
+
+CheckUserHasEnoughHPAbilities:
+	ld hl, wBattleMonHP + 1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyMonHP + 1
+.ok
+	ld a, c
+	sub [hl]
+	dec hl
+	ld a, b
+	sbc [hl]
 	ret
