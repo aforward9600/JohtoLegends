@@ -284,7 +284,7 @@ AI_Redundant:
 	jp nz, .NotRedundant
 	ld a, [wPlayerAbility]
 	cp LIQUID_OOZE
-	jr z, .Redundant
+	jp z, .Redundant
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
 	ret
@@ -314,6 +314,8 @@ AI_Redundant:
 	cp CLEAR_BODY
 	jr z, .Redundant
 	jr .NotRedundant
+
+	ld b,b
 
 .AccuracyDown:
 	ld a, [wGBPrinterBrightness]

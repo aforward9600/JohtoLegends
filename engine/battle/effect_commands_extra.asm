@@ -427,16 +427,12 @@ BattleCommand_SwitchTurn2:
 
 ArmorTailCheck:
 	call CheckUserNeutralGasMoldBreaker
-	jr nz, .ContinueArmorTail
-.NotArmorTail
-	ld a, 0
-	ld [wAttackMissed], a
-	ret
+	ret z
 
 .ContinueArmorTail
 	call GetTargetAbility
 	cp ARMOR_TAIL
-	jr nz, .NotArmorTail
+	ret nz
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_FAKE_OUT
@@ -447,40 +443,31 @@ ArmorTailCheck:
 	jr z, .ArmorTailBlocked
 	call GetUserAbility
 	cp PRANKSTER
-	jr z, .CheckForStatus
-	jr .NotArmorTail
+	ret nz
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp STATUS
+	ret nc
 
 .ArmorTailBlocked:
 	ld a, 1
 	ld [wAttackMissed], a
 	ret
 
-.CheckForStatus
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	cp STATUS
-	jr c, .NotArmorTail
-	jr .ArmorTailBlocked
-
 PranksterCheck:
 	call CheckNeutralGas
-	jr nz, .ContinuePrankster
-	jr .OverwritePriority
+	ret z
 
 .ContinuePrankster
 	call GetUserAbility
 	cp PRANKSTER
-	jr z, .CheckForStatus
-.OverwritePriority
-	ld a, 0
-	ld [wAttackMissed], a
-	ret
+	ret nz
 
 .CheckForStatus
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	cp STATUS
-	jr c, .OverwritePriority
+	ret c
 ;	ld a, BATTLE_VARS_MOVE_EFFECT
 ;	call GetBattleVar
 ;	ld hl, PranksterEffects
@@ -498,8 +485,7 @@ PranksterCheck:
 	jr z, .IsDarkType
 	ld a, [hl]
 	cp DARK
-	jr z, .IsDarkType
-	jr .OverwritePriority
+	ret nz
 
 .IsDarkType
 	ld a, 1

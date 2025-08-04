@@ -430,7 +430,6 @@ CheckContactAbilities:
 	ret nc
 	cp STATUS
 	ret nc
-	ld b,b
 	call GetUserAbility
 	cp POISON_TOUCH
 	jr z, .PoisonTouch

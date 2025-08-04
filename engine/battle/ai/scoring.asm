@@ -169,7 +169,6 @@ AI_Types:
 ; Encourage super-effective moves.
 ; Discourage not very effective moves unless
 ; all damaging moves are of the same type.
-
 	ld hl, wBuffer1 - 1
 	ld de, wEnemyMonMoves
 	ld b, wEnemyMonMovesEnd - wEnemyMonMoves + 1
@@ -181,6 +180,9 @@ AI_Types:
 	ld a, [de]
 	and a
 	jp z, .checkrain
+
+	inc de
+	call AIGetEnemyMove
 
 	push hl
 	push bc
@@ -231,16 +233,6 @@ AI_Types:
 	jp .CheckGroundMove
 
 .skip_air_balloon
-	pop hl
-	pop bc
-	pop de
-
-	inc de
-	call AIGetEnemyMove
-
-	push hl
-	push bc
-	push de
 	ld a, 1
 	ldh [hBattleTurn], a
 	callfar BattleCheckTypeMatchup
@@ -254,6 +246,8 @@ AI_Types:
 	cp EFFECTIVE
 	jp z, .checkmove
 	jr c, .noteffective
+
+	ld b,b
 
 .effective
 ; effective
@@ -407,17 +401,29 @@ AI_Types:
 	call .CheckAIMoveType
 	pop hl
 	cp NORMAL
-	jp nz, .SkipEnemyAbilities
+	jr nz, .SkipScrappy
 	cp FIGHTING
-	jp nz, .SkipEnemyAbilities
+	jr nz, .SkipScrappy
+	push hl
 	ld hl, wBattleMonType1
 	ld a, [hli]
 	cp GHOST
-	jp z, .effective
+	jr z, .effectivescrappy
 	ld a, [hl]
 	cp GHOST
-	jp z, .effective
+	jr z, .effectivescrappy
+	pop hl
 	jp .immune
+
+.SkipScrappy
+	push hl
+	push de
+	push bc
+	jp .SkipEnemyAbilities
+
+.effectivescrappy
+	pop hl
+	jp .effective
 
 .CheckGroundMove
 	call .CheckAIMoveType
@@ -445,7 +451,10 @@ AI_Types:
 .FinishMoveCheck
 	pop hl
 	jp z, .immune
-	ret
+	push hl
+	push de
+	push bc
+	jp .skip_air_balloon
 
 .PopAll
 	pop bc

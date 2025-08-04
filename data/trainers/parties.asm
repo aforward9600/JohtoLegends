@@ -7025,6 +7025,20 @@ else
 endc
 	db -1 ; end
 
+	next_list_item ; RIVAL4 (1)
+	db "<RIVAL>@", TRAINERTYPE_ITEM
+	db 6
+	dw SMOOCHUM
+	db NO_ITEM
+	db 7
+	dw DRATINI
+if DEF(_CHALLENGE)
+	db ORAN_BERRY
+else
+	db NO_ITEM
+endc
+	db -1 ; end
+
 	next_list_item ; RIVAL3 (2)
 	db "<RIVAL>@", TRAINERTYPE_ITEM | TRAINERTYPE_ABILITY
 	db 17

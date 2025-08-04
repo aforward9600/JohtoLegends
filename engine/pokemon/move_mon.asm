@@ -1510,6 +1510,7 @@ endc
 .no_stat_exp
 	pop hl
 	push bc
+	push de
 	ld bc, MON_DVS - MON_HP_EV + 1
 	add hl, bc
 	push hl
@@ -1517,6 +1518,7 @@ endc
 	farcall CheckEngineFlag
 	jp nc, .Cheater
 	pop hl
+	pop de
 	pop bc
 	ld a, c
 	cp STAT_ATK
@@ -1581,6 +1583,7 @@ endc
 	jr .GotDV
 
 .Cheater
+	pop de
 	pop hl
 	pop bc
 	ld a, c
