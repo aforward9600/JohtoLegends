@@ -1485,6 +1485,16 @@ CalcMonStatC:
 	push hl
 	push de
 	push bc
+
+	ld de, ENGINE_ACTIVATED_MAX_DVS
+	farcall CheckEngineFlag
+	jp nc, .Cheater
+
+	pop bc
+	pop hl
+	push hl
+	push bc
+
 if DEF(_CHALLENGE)
 	ld d, 0
 else
@@ -1510,15 +1520,8 @@ endc
 .no_stat_exp
 	pop hl
 	push bc
-	push de
 	ld bc, MON_DVS - MON_HP_EV + 1
 	add hl, bc
-	push hl
-	ld de, ENGINE_ACTIVATED_MAX_DVS
-	farcall CheckEngineFlag
-	jp nc, .Cheater
-	pop hl
-	pop de
 	pop bc
 	ld a, c
 	cp STAT_ATK
@@ -1583,8 +1586,38 @@ endc
 	jr .GotDV
 
 .Cheater
-	pop de
+	pop bc
 	pop hl
+	push hl
+	push bc
+
+if DEF(_CHALLENGE)
+	ld d, 0
+else
+	ld a, b
+	ld d, a
+endc
+	push hl
+	ld hl, wBaseStats
+	dec hl ; has to be decreased, because 'c' begins with 1
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	ld e, a
+	pop hl
+	push hl
+	ld a, d
+	and a
+	jr z, .no_stat_exp_2
+	add hl, bc
+	ld a, [hl]
+	ld b, a
+
+.no_stat_exp_2
+	pop hl
+	push bc
+	ld bc, MON_DVS - MON_HP_EV + 1
+	add hl, bc
 	pop bc
 	ld a, c
 	cp STAT_ATK

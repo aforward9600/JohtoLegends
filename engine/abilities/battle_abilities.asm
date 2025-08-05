@@ -46,6 +46,7 @@ SetEnemyAbility::
 	jr .FinishEnemyAbility
 
 .WildAbilities
+	ld b,b
 	call Random
 	cp 10 percent + 1
 	jr c, .HiddenAbility
@@ -120,7 +121,6 @@ EnemyAbilityFirst:
 	jr DoEntranceAbilities
 
 PlayerAbilityFirst:
-	ld a, [wPlayerAbility]
 	ld a, [wPlayerAbility]
 	cp NEUTRAL_GAS
 	jp z, PlayerNeutralGas
