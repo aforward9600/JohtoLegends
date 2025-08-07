@@ -79,8 +79,8 @@ MeetUpHoOh:
 	waitbutton
 	closetext
 	pause 15
-	moveobject TINTOWERROOF_RIVAL, 8, 15
-	moveobject TINTOWERROOF_SHERLES, 8, 15
+	moveobject TINTOWERROOF_RIVAL, 6, 15
+	moveobject TINTOWERROOF_SHERLES, 6, 15
 	appear TINTOWERROOF_RIVAL
 	applymovement TINTOWERROOF_RIVAL, TinTowerRivalMovement
 	opentext
@@ -101,8 +101,8 @@ MeetUpHoOh:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	showemote EMOTE_SHOCK, TINTOWERROOF_RIVAL, 15
 	showemote EMOTE_SHOCK, TINTOWERROOF_SHERLES, 15
-	moveobject TINTOWERROOF_RIVAL, 8, 11
-	moveobject TINTOWERROOF_SHERLES, 8, 12
+	moveobject TINTOWERROOF_RIVAL, 6, 11
+	moveobject TINTOWERROOF_SHERLES, 6, 12
 	opentext
 	writetext WhatWasThatText
 	waitbutton

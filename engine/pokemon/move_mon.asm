@@ -1487,12 +1487,17 @@ CalcMonStatC:
 	push bc
 
 	ld de, ENGINE_ACTIVATED_MAX_DVS
-	farcall CheckEngineFlag
-	jp nc, .Cheater
+	ld b, CHECK_FLAG
+	farcall EngineFlagAction
+	ld a, c
+	and a
+	jr nz, .Cheater
 
 	pop bc
+	pop de
 	pop hl
 	push hl
+	push de
 	push bc
 
 if DEF(_CHALLENGE)
@@ -1587,8 +1592,10 @@ endc
 
 .Cheater
 	pop bc
+	pop de
 	pop hl
 	push hl
+	push de
 	push bc
 
 if DEF(_CHALLENGE)

@@ -1,3 +1,4 @@
+
 	object_const_def ; object_event constants
 	const PLAYERSHOUSE1F_GRANNY1
 	const PLAYERSHOUSE1F_GRANNY2

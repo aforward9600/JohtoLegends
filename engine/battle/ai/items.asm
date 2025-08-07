@@ -691,6 +691,9 @@ AI_Switch:
 	callfar PursuitSwitch
 
 	push af
+
+	farcall EnemySwitchAbilities
+	call UpdateEnemyMonInParty
 	ld a, [wCurOTMon]
 	ld hl, wOTPartyMon1Status
 	ld bc, PARTYMON_STRUCT_LENGTH
