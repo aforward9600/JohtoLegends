@@ -16,8 +16,14 @@ GiveShuckle:
 	jp nc, .NotGiven
 
 ; Caught data.
-	ld b, CAUGHT_BY_GIRL
 	farcall SetGiftPartyMonCaughtData
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1CaughtGender
+	call AddNTimes
+	ld a, CAUGHT_BY_UNKNOWN
+	ld [hl], a
 
 ; Holding a Berry.
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -28,6 +34,20 @@ GiveShuckle:
 	ld hl, wPartyMon1Item
 	call AddNTimes
 	ld [hl], ORAN_BERRY
+;	call PopPushbcaf
+;	ld hl, wPartyMon1CaughtLocation
+;	call AddNTimes
+;	and CAUGHT_LOCATION_MASK
+;	ld [hl], $fd
+;	call PopPushbcaf
+;	ld hl, wPartyMon1CaughtLevel
+;	call AddNTimes
+;	ld [hl], 15
+;	call PopPushbcaf
+;	ld hl, wPartyMon1CaughtTime
+;	call AddNTimes
+;	ld a, [wTimeOfDay]
+;	ld [hl], a
 	pop bc
 	pop af
 
@@ -69,7 +89,6 @@ GiveShuckle:
 	callfar LoadEnemyMon
 	farcall SendMonIntoBox
 	jr nc, .NotGiven
-	ld b, CAUGHT_BY_GIRL
 	farcall SetGiftMonCaughtData
 
 ; Holding a Berry.
@@ -243,3 +262,10 @@ ReturnShuckle:
 	endc
 	jr nz, .DontReturn
 ;	jr z, .ReturnAfterChecking
+
+PopPushbcaf:
+	pop bc
+	pop af
+	push af
+	push bc
+	ret

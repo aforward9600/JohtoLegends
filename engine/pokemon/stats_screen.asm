@@ -779,6 +779,10 @@ StatsScreen_LoadGFX:
 	ret
 
 .placeCaughtLocation
+	ld hl, wTempMonCaughtGender
+	ld a, [hl]
+	cp CAUGHT_BY_UNKNOWN
+	jr z, .unknown_location
 	ld a, [wTempMonCaughtLocation]
 	and CAUGHT_LOCATION_MASK
 	jr z, .unknown_location
@@ -867,8 +871,16 @@ StatsScreen_LoadGFX:
 	jp PlaceString
 
 .unknown_level
+	ld [wDeciramBuffer], a
+	hlcoord 5, 16
+	ld de, wDeciramBuffer
+	lb bc, PRINTNUM_RIGHTALIGN | 1, 3
+	call PrintNum
+	ld de, MetAtLevelString
+	hlcoord 1, 15
+	call PlaceString
 	ld de, MetUnknownLevelString
-	hlcoord 2, 12
+	hlcoord 4, 16
 	call PlaceString
 	ret
 

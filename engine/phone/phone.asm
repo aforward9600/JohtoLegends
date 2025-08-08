@@ -96,6 +96,7 @@ INCLUDE "data/phone/permanent_numbers.asm"
 CheckPhoneCall::
 ; Check if the phone is ringing in the overworld.
 
+	ret
 	call CheckStandingOnEntrance
 	jr z, .no_call
 
@@ -226,6 +227,7 @@ GetAvailableCallers:
 	ret
 
 CheckSpecialPhoneCall::
+	ret
 	ld a, [wSpecialPhoneCallID]
 	and a
 	jr z, .NoPhoneCall
@@ -408,6 +410,7 @@ WrongNumber:
 	text_far UnknownText_0x1c5565
 	text_end
 
+Script_SpecialBillCall::
 Script_ReceivePhoneCall:
 	pause 15
 	refreshscreen
@@ -422,22 +425,12 @@ Script_ReceivePhoneCall:
 	closetext
 	end
 
-Script_SpecialBillCall::
-;	callasm .LoadBillScript
-	sjump Script_ReceivePhoneCall
-
 .LoadBillScript:
 	ld e, PHONE_BILL
 	jp LoadCallerScript
 
 UnknownScript_0x90261:
-	callasm .LoadElmScript
-	pause 30
-	sjump Script_ReceivePhoneCall
-
-.LoadElmScript:
-	ld e, PHONE_ELM
-	jp LoadCallerScript
+	ret
 
 RingTwice_StartCall:
 	call .Ring

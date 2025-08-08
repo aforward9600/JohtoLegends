@@ -26,7 +26,7 @@ MomTriesToBuySomething::
 
 .Script:
 	callasm .ASMFunction
-	farsjump Script_ReceivePhoneCall
+;	farsjump Script_ReceivePhoneCall
 
 .ASMFunction:
 	call MomBuysItem_DeductFunds
