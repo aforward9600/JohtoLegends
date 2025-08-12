@@ -528,7 +528,6 @@ Pokegear_UpdateClock:
 	text_end
 
 PokegearMap_CheckRegion:
-	ld b,b
 	ld a, [wPokegearMapPlayerIconLandmark]
 	cp SEVII_LANDMARK
 	jr nc, .sevii
@@ -573,7 +572,6 @@ PokegearMap_SeviiMap:
 PokegearMap_JohtoMap:
 	ld d, SILVER_CAVE
 	ld e, BLACKTHORN_CITY
-	ld b,b
 PokegearMap_ContinueMap:
 	ld hl, hJoyLast
 	ld a, [hl]
@@ -3376,13 +3374,26 @@ FlyMapScroll:
 	and D_DOWN
 	jr nz, .ScrollPrev
 	push hl
+	push de
+	ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	call GetWorldMapLocation
+; If we're not in a valid location, i.e. Pokecenter floor 2F,
+; the backup map information is used.
+	cp SPECIAL_MAP
+	jr nz, .CheckRegion
 	ld a, [wBackupMapGroup]
 	ld b, a
 	ld a, [wBackupMapNumber]
 	ld c, a
 	call GetWorldMapLocation
+.CheckRegion:
+; The first 46 locations are part of Johto. The rest are in Kanto.
 	cp SEVII_LANDMARK
 	jr nc, .sevii
+	pop de
 	pop hl
 	ld a, [hl]
 	and D_LEFT
@@ -3393,6 +3404,7 @@ FlyMapScroll:
 	ret
 
 .sevii:
+	pop de
 	pop hl
 	ret
 
@@ -3717,7 +3729,7 @@ FlyMap:
 ; Flypoints begin at New Bark Town...
 	ld [wStartFlypoint], a
 ; ..and end at Silver Cave.
-	ld a, FLY_ONE_ISLAND
+	ld a, FLY_SEVEN_ISLAND
 	ld [wEndFlypoint], a
 ; Fill out the map
 	call FillSeviiMap

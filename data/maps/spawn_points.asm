@@ -38,6 +38,12 @@ SpawnPoints:
 	spawn CHERRYGROVE_CITY,           29,  4
 	spawn NEW_BARK_TOWN,              13,  6
 	spawn SILVER_CAVE_OUTSIDE,        23, 20
+	spawn ONE_ISLAND,                 11,  8
+	spawn TWO_ISLAND,                 15, 10
+	spawn THREE_ISLAND,               15, 28
+	spawn FOUR_ISLAND,                17, 16
+	spawn FIVE_ISLAND,                13,  8
+	spawn SIX_ISLAND,                  9,  6
+	spawn SEVEN_ISLAND,               21, 18
 	spawn TEAM_ROCKET_BASE_JAIL,       5,  6
-	spawn ONE_ISLAND,                 11, 18
 	spawn N_A,                        -1, -1

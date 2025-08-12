@@ -3,7 +3,12 @@
 ThreeIsland_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .FlyPoint
+
+.FlyPoint:
+	setflag ENGINE_FLYPOINT_THREE_ISLAND
+	return
 
 ThreeIslandSign:
 	jumptext ThreeIslandSignText

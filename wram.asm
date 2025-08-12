@@ -2833,7 +2833,7 @@ wSafariTimeRemaining:: dw ; dc7a
 
 wPhoneList:: ds CONTACT_LIST_SIZE ; dc7c
 ; dc86
-	ds 23
+	ds 22
 
 wLuckyNumberShowFlag:: db ; dc9d
 

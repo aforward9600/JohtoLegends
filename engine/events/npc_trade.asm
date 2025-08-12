@@ -184,7 +184,7 @@ DoNPCTrade:
 	call Trade_GetAttributeOfCurrentPartymon
 	ld b, h
 	ld c, l
-	farcall GetCaughtGender
+	ld c, CAUGHT_BY_UNKNOWN
 	ld a, c
 	ld [wPlayerTrademonCaughtData], a
 

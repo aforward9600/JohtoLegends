@@ -3,7 +3,12 @@
 SixIsland_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .FlyPoint
+
+.FlyPoint:
+	setflag ENGINE_FLYPOINT_SIX_ISLAND
+	return
 
 SixIslandSign:
 	jumptext SixIslandSignText
