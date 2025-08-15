@@ -565,7 +565,9 @@ ENDM
 	map_const ICEFALL_CAVE_1F,                             10,  9 ; 17
 	map_const ICEFALL_CAVE_2F,                              9, 11 ; 18
 	map_const ICEFALL_CAVE_BACK_CAVE,                      10, 11 ; 19
-	map_const FOUR_ISLAND_POKECENTER,                       5,  4 ; 
+	map_const FOUR_ISLAND_POKECENTER,                       5,  4 ; 20
+	map_const CELIOS_HOUSE,                                 5,  4 ; 21
+	map_const ONE_ISLAND_HOUSE,                             5,  4 ; 22
 
 	newgroup
 

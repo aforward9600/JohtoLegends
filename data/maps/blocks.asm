@@ -151,9 +151,11 @@ Route30BerryHouse_Blocks:
 SootheBellHouse_Blocks:
 CherrygroveFisherHouse_Blocks:
 SelphysHouse_Blocks:
+OneIslandHouse_Blocks:
 	INCBIN "maps/House1.ablk"
 
 BillsFamilysHouse_Blocks:
+CeliosHouse_Blocks:
 	INCBIN "maps/BillsHouse.ablk"
 
 Route19FuchsiaGate_Blocks:

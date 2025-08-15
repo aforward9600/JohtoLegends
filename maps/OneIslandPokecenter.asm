@@ -1,6 +1,6 @@
 	object_const_def ; object_event constants
 	const ONEISLANDPOKECENTER_NURSE
-;	const WILDAREAPOKECENTER_GENTLEMAN
+	const WILDAREAPOKECENTER_SCIENTIST
 ;	const WILDAREAPOKECENTER_FISHING_GURU
 
 OneIslandPokecenter_MapScripts:
@@ -10,6 +10,19 @@ OneIslandPokecenter_MapScripts:
 
 OneIslandPokecenterNurseScript:
 	jumpstd pokecenternurse
+
+OneIslandPokecenterScientist:
+	jumptextfaceplayer OneIslandPokecenterScientistText
+
+OneIslandPokecenterScientistText:
+	text "Luckily the phones"
+	line "out here work."
+
+	para "Otherwise we'd all"
+	line "have to carry our"
+	cont "# Balls every-"
+	cont "where!"
+	done
 
 OneIslandPokecenter_MapEvents:
 	db 0, 0 ; filler
@@ -23,7 +36,7 @@ OneIslandPokecenter_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OneIslandPokecenterNurseScript, -1
-;	object_event  1,  5, SPRITE_ROCKER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, WildAreaPokecenterRockerScript, -1
+	object_event  1,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OneIslandPokecenterScientist, -1
 ;	object_event  7,  5, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildAreaPokecenterCooltrainerFScript, -1

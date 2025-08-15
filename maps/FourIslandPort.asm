@@ -7,11 +7,86 @@ FourIslandPort_MapScripts:
 	db 0 ; callbacks
 
 FourIslandPortSailorScript:
-	jumptextfaceplayer FourIslandPortSailorText
+	opentext
+	writetext VermilionPortSeviiText
+	waitbutton
+	loadmenu FourIslandMenu
+	verticalmenu
+	ifequal 1, .OneIsland
+	ifequal 2, .TwoIsland
+	ifequal 3, .ThreeIsland
+	ifequal 4, .FiveIsland
+	ifequal 5, .SixIsland
+	ifequal 6, .SevenIsland
+	ifequal 7, .VermilionPort
+	sjump .Cancel
 
-FourIslandPortSailorText:
-	text "Boat not running."
-	done
+.OneIsland
+	writetext OneIslandText
+	scall SeviiPortLeave
+	warp ONE_ISLAND_PORT, 5, 3
+	end
+
+.TwoIsland
+	writetext TwoIslandText
+	scall SeviiPortLeave
+	warp TWO_ISLAND_PORT, 5, 3
+	end
+
+.ThreeIsland
+	writetext ThreeIslandText
+	scall SeviiPortLeave
+	warp THREE_ISLAND_PORT, 5, 3
+	end
+
+.FiveIsland
+	writetext FiveIslandText
+	scall SeviiPortLeave
+	warp FIVE_ISLAND_PORT, 5, 3
+	end
+
+.SixIsland
+	writetext SixIslandText
+	scall SeviiPortLeave
+	warp SIX_ISLAND_PORT, 5, 3
+	end
+
+.SevenIsland
+	writetext SevenIslandText
+	scall SeviiPortLeave
+	warp SEVEN_ISLAND_PORT, 5, 3
+	end
+
+.VermilionPort
+	writetext VermilionPortText
+	scall SeviiPortLeave
+	setmapscene, VERMILION_PORT, SCENE_VERMILIONPORT_LEAVE_SHIP
+	turnobject, PLAYER, UP
+	warp VERMILION_PORT, 7, 17
+	end
+
+.Cancel
+	writetext UnknownText_0x74fa7
+	waitbutton
+	closetext
+	end
+
+FourIslandMenu:
+	db MENU_BACKUP_TILES
+	menu_coords 0, 0, 17, 16
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 7 ; items
+	db "One Island@"
+	db "Two Island@"
+	db "Three Island@"
+	db "Five Island@"
+	db "Six Island@"
+	db "Seven Island@"
+	db "Vermilion City@"
 
 FourIslandPort_MapEvents:
 	db 0, 0 ; filler

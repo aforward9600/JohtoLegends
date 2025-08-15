@@ -1,5 +1,4 @@
 	object_const_def ; object_event constants
-	const VERMILIONPORT_SAILOR1
 	const VERMILIONPORT_SAILOR2
 	const VERMILIONPORT_SUPER_NERD
 
@@ -14,6 +13,8 @@ VermilionPort_MapScripts:
 	end
 
 .LeaveFastShip:
+	applymovement PLAYER, MovementPlayerLeavesShip
+	setscene SCENE_DEFAULT
 	end
 
 VermilionPortSailorScript:
@@ -28,6 +29,10 @@ VermilionPortSailorScript:
 	end
 
 .skip2:
+;	writetext WalkThisWayText
+;	waitbutton
+;	closetext
+;	end
 	writetext UnknownText_0x74fa7
 	waitbutton
 	closetext
@@ -38,21 +43,97 @@ VermilionPortWalkUpToShipScript:
 	turnobject PLAYER, LEFT
 	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
-	iftrue .skip
+;	iftrue .skip
+	iffalse .skip ; need to delete
 	writetext UnknownText_0x74f4d
 	waitbutton
 	closetext
 	applymovement PLAYER, MovementData_0x74ef5
 	end
 
-.skip:
+.Cancel:
 	writetext UnknownText_0x74fa7
 	waitbutton
 	closetext
 	applymovement PLAYER, MovementData_0x74ef5
 	end
 
-VermilionPortSailorAtGangwayScript:
+.skip
+	checkflag ENGINE_FLYPOINT_ONE_ISLAND
+	iftrue .VermilionPortMenu
+	writetext HeadToOneIslandText
+	yesorno
+	iffalse .Cancel
+	sjump .OneIsland
+
+.VermilionPortMenu
+	writetext VermilionPortSeviiText
+	waitbutton
+	loadmenu VermilionPortMenu
+	verticalmenu
+	ifequal 1, .OneIsland
+	ifequal 2, .TwoIsland
+	ifequal 3, .ThreeIsland
+	ifequal 4, .FourIsland
+	ifequal 5, .FiveIsland
+	ifequal 6, .SixIsland
+	ifequal 7, .SevenIsland
+	sjump .Cancel
+
+.OneIsland
+	writetext OneIslandText
+	scall VermilionPortLeave
+	warp ONE_ISLAND_PORT, 5, 3
+	end
+
+.TwoIsland
+	writetext TwoIslandText
+	scall VermilionPortLeave
+	warp TWO_ISLAND_PORT, 5, 3
+	end
+
+.ThreeIsland
+	writetext ThreeIslandText
+	scall VermilionPortLeave
+	warp THREE_ISLAND_PORT, 5, 3
+	end
+
+.FourIsland
+	writetext FourIslandText
+	scall VermilionPortLeave
+	warp FOUR_ISLAND_PORT, 5, 3
+	end
+
+.FiveIsland
+	writetext FiveIslandText
+	scall VermilionPortLeave
+	warp FIVE_ISLAND_PORT, 5, 3
+	end
+
+.SixIsland
+	writetext SixIslandText
+	scall VermilionPortLeave
+	warp SIX_ISLAND_PORT, 5, 3
+	end
+
+.SevenIsland
+	writetext SevenIslandText
+	scall VermilionPortLeave
+	warp SEVEN_ISLAND_PORT, 5, 3
+	end
+
+VermilionPortLeave:
+	waitbutton
+	writetext AllAboardText
+	waitbutton
+	closetext
+	pause 5
+	applymovement PLAYER, PlayerGoesToShipMovement
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	playsound SFX_BOAT
+	pause 5
+	waitsfx
 	end
 
 VermilionPortSuperNerdScript:
@@ -65,6 +146,23 @@ VermilionPortSuperNerdScript:
 
 VermilionPortHiddenIron:
 	hiddenitem IRON, EVENT_VERMILION_PORT_HIDDEN_IRON
+
+VermilionPortMenu:
+	db MENU_BACKUP_TILES
+	menu_coords 0, 0, 17, 16
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 7 ; items
+	db "One Island@"
+	db "Two Island@"
+	db "Three Island@"
+	db "Four Island@"
+	db "Five Island@"
+	db "Six Island@"
+	db "Seven Island@"
 
 MovementData_0x74ef1:
 	step DOWN
@@ -79,7 +177,8 @@ MovementData_0x74ef5:
 	turn_head LEFT
 	step_end
 
-MovementData_0x74ef8:
+PlayerGoesToShipMovement:
+	step DOWN
 	step DOWN
 	step DOWN
 	step DOWN
@@ -97,16 +196,15 @@ MovementData_0x74efe:
 	step DOWN
 	step_end
 
-UnknownText_0x74f06:
-	text "We're departing"
-	line "soon. Please get"
-	cont "on board."
-	done
-
-UnknownText_0x74f31:
-	text "Sorry. You can't"
-	line "board now."
-	done
+MovementPlayerLeavesShip:
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step RIGHT
+	step_end
 
 UnknownText_0x74f4d:
 	text "You'll have to"
@@ -117,47 +215,9 @@ UnknownText_0x74f4d:
 	cont "right now."
 	done
 
-UnknownText_0x74f8b:
-	text "May I see your"
-	line "S.S.TICKET?"
-	done
-
 UnknownText_0x74fa7:
-	text "I think we'll be"
-	line "able to sail again"
-	cont "in a few months."
-	done
-
-VermilionPortSSTicketText:
-	text "<PLAYER> flashed"
-	line "the S.S.TICKET."
-
-	para "That's it."
-	line "Thank you!"
-	done
-
-UnknownText_0x74ff2:
-	text "<PLAYER> tried to"
-	line "show the S.S."
-	cont "TICKET…"
-
-	para "…But no TICKET!"
-
-	para "Sorry!"
-	line "You may board only"
-
-	para "if you have an"
-	line "S.S.TICKET."
-	done
-
-UnknownText_0x75059:
-	text "The FAST SHIP will"
-	line "sail on Wednesday."
-	done
-
-UnknownText_0x75080:
-	text "The FAST SHIP will"
-	line "sail next Sunday."
+	text "Come back if you"
+	line "wish to sail."
 	done
 
 UnknownText_0x750a6:
@@ -167,6 +227,68 @@ UnknownText_0x750a6:
 	para "Someday, I shall"
 	line "take to the waves"
 	cont "once again!"
+	done
+
+OneIslandText:
+	text "You'd like to go to"
+	line "One Island?"
+	done
+
+TwoIslandText:
+	text "You'd like to go to"
+	line "Two Island?"
+	done
+
+ThreeIslandText:
+	text "You'd like to go to"
+	line "Three Island?"
+	done
+
+FourIslandText:
+	text "You'd like to go to"
+	line "Four Island?"
+	done
+
+FiveIslandText:
+	text "You'd like to go to"
+	line "Five Island?"
+	done
+
+SixIslandText:
+	text "You'd like to go to"
+	line "Six Island?"
+	done
+
+SevenIslandText:
+	text "You'd like to go to"
+	line "Seven Island?"
+	done
+
+AllAboardText:
+	text "Alright!"
+
+	para "All aboard!"
+	done
+
+HeadToOneIslandText:
+	text "Now that the Feds"
+	line "are no more, we"
+	cont "can sail to the"
+	cont "Sevii Islands once"
+	cont "again!"
+
+	para "I can take you to"
+	line "One Island first,"
+	cont "then you can go"
+	cont "to the others any"
+	cont "time you want."
+
+	para "Whaddya say?"
+	done
+
+VermilionPortSeviiText:
+	text "Where would you"
+	line "like to go?"
 	done
 
 VermilionPort_MapEvents:
@@ -181,7 +303,6 @@ VermilionPort_MapEvents:
 	db 1 ; bg events
 	bg_event 16, 12, BGEVENT_ITEM, VermilionPortHiddenIron
 
-	db 3 ; object events
-	object_event  7, 17, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortSailorAtGangwayScript, -1
+	db 2 ; object events
 	object_event  6, 11, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortSailorScript, -1
 	object_event 12, 10, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortSuperNerdScript, -1

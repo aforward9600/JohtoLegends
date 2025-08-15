@@ -750,7 +750,7 @@ ENDM
 	map_attributes TwoIslandPort, TWO_ISLAND_PORT, $00, 0
 	map_attributes ThreeIslandPort, THREE_ISLAND_PORT, $00, 0
 	map_attributes BerryForest, BERRY_FOREST, $0f, 0
-	map_attributes FourIslandPort, FOUR_ISLAND_PORT, $43, 0
+	map_attributes FourIslandPort, FOUR_ISLAND_PORT, $00, 0
 	map_attributes FourIsland, FOUR_ISLAND, $43, 0
 	map_attributes IcefallCaveEntrance, ICEFALL_CAVE_ENTRANCE, $09, 0
 	map_attributes IcefallCave1F, ICEFALL_CAVE_1F, $09, 0
@@ -787,6 +787,8 @@ ENDM
 	map_attributes RegirockPuzzleChamber, REGIROCK_PUZZLE_CHAMBER, $00, 0
 	map_attributes RegirockChamber, REGIROCK_CHAMBER, $00, 0
 	map_attributes SevenIslandPort, SEVEN_ISLAND_PORT, $00, 0
+	map_attributes CeliosHouse, CELIOS_HOUSE, $00, 0
+	map_attributes OneIslandHouse, ONE_ISLAND_HOUSE, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1

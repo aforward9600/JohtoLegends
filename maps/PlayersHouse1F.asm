@@ -46,6 +46,7 @@ MeetMomScript:
 	buttonsound
 	special NameRival
 	writetext DahliasLookingForYouText
+.Finish3
 	buttonsound
 	waitsfx
 	writetext GotWatchText
@@ -53,17 +54,6 @@ MeetMomScript:
 	waitsfx
 	setflag ENGINE_POKEGEAR
 	setflag ENGINE_MAP_CARD
-	giveitem PIDGEOT_CALL
-	setflag ENGINE_FLYPOINT_TWO_ISLAND
-	setflag ENGINE_FLYPOINT_THREE_ISLAND
-	setflag ENGINE_FLYPOINT_FOUR_ISLAND
-	setflag ENGINE_FLYPOINT_MAHOGANY
-	setflag ENGINE_FLYPOINT_FIVE_ISLAND
-	setflag ENGINE_FLYPOINT_SIX_ISLAND
-	setflag ENGINE_FLYPOINT_SEVEN_ISLAND
-	setflag ENGINE_FLYPOINT_INDIGO_PLATEAU
-	setflag ENGINE_FLYPOINT_ROUTE_26
-	setflag ENGINE_FLYPOINT_SILVER_CAVE
 	setscene SCENE_PLAYERS_HOUSE_NOTHING
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
@@ -85,22 +75,8 @@ MeetMomScript:
 	buttonsound
 	special NameRivalFemale
 	writetext DracosLookingForYouText
-	buttonsound
-	waitsfx
-	writetext GotWatchText
-	playsound SFX_ITEM
-	waitsfx
-	setflag ENGINE_POKEGEAR
-	setflag ENGINE_MAP_CARD
-	setscene SCENE_PLAYERS_HOUSE_NOTHING
 	variablesprite SPRITE_RIVAL, SPRITE_CHRIS
-	setevent EVENT_PLAYERS_HOUSE_MOM_1
-	setevent EVENT_RIVAL_AT_MASTERS_HOUSE_1
-	clearevent EVENT_PLAYERS_HOUSE_MOM_2
-	writetext MomGivesPokegearText
-	buttonsound
-	special SetDayOfWeek
-	sjump .SetDayOfWeek
+	sjump .Finish3
 
 .WrongDay:
 	special InitialClearDSTFlag
@@ -742,7 +718,7 @@ PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  6,  7, ONE_ISLAND_PORT, 1
+	warp_event  6,  7, VERMILION_PORT, 1
 ;	warp_event  6,  7, BLACKTHORN_CITY, 9
 	warp_event  7,  7, BLACKTHORN_CITY, 9
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
