@@ -2715,6 +2715,19 @@ endc
 	dw GIGA_DRAIN, ACROBATICS, U_TURN, SLEEP_POWDER
 	db -1 ; end
 
+	next_list_item ; LASS (1)
+	db "Gabrielle@", TRAINERTYPE_MOVES
+	db 85
+	dw BRELOOM
+	dw SKY_UPPERCUT, SEED_BOMB, SPORE, MACH_PUNCH
+	db 85
+	dw TOGEKISS
+	dw THUNDER_WAVE, AIR_SLASH, MOONBLAST, ROOST
+	db 85
+	dw DODRIO
+	dw JUMP_KICK, BRAVE_BIRD, DRILL_PECK, SWORDS_DANCE
+	db -1 ; end
+
 	end_list_items
 
 JanineGroup:
@@ -4547,6 +4560,14 @@ endc
 	dw DEWGONG
 	db 70
 	dw SEAKING
+	db -1 ; end
+
+	next_list_item ; SWIMMERF (19)
+	db "Tara@", TRAINERTYPE_NORMAL
+	db 86
+	dw OVERQWIL
+	db 86
+	dw OCTILLERY
 	db -1 ; end
 
 	end_list_items

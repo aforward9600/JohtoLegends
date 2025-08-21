@@ -48,7 +48,7 @@ PokemonMansion1FAbraStatue:
 	changeblock 16,  6, $54 ; Shutter
 	changeblock 20, 16, $54 ; Shutter
 	changeblock 26,  4, $0e ; Floor
-	changeblock  2,  4, $77 ; Closed Eyes
+	changeblock  2,  4, $2b ; Closed Eyes
 	reloadmappart
 	end
 

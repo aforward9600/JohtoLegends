@@ -23,40 +23,38 @@ WildAreaOutside_MapScripts:
 
 RivalWalksUpLeft:
 	special FadeOutMusic
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female1
 	showemote EMOTE_SHOCK, PLAYER, 15
 	turnobject, PLAYER, DOWN
 	appear WILDAREAOUTSIDE_RIVAL
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female1
 	playmusic MUSIC_DAHLIA_ENCOUNTER
 	applymovement WILDAREAOUTSIDE_RIVAL, RivalMovesUp
 	turnobject WILDAREAOUTSIDE_RIVAL, LEFT
 	turnobject PLAYER, RIGHT
+.Reconverge
 	opentext
 	writetext HeyRivalText
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
-	iftrue .Larvitar1
 	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
 	setlasttalked WILDAREAOUTSIDE_RIVAL
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
+	iftrue .Larvitar1
 	loadtrainer RIVAL3, RIVAL3_C_LARVITAR
+.Resume
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .AfterVictorious1
 
 .Larvitar1:
-	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
-	setlasttalked WILDAREAOUTSIDE_RIVAL
 	loadtrainer RIVAL3, RIVAL3_C_DRATINI
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterVictorious1
+	sjump .Resume
 
 .AfterVictorious1:
 	playmusic MUSIC_DAHLIA_AFTER_BATTLE
+.AfterVictorious2:
 	opentext
 	writetext YouWonOnceAgainText
 	buttonsound
@@ -90,69 +88,30 @@ RivalWalksUpLeft:
 	end
 
 .Female1:
-	showemote EMOTE_SHOCK, PLAYER, 15
-	turnobject, PLAYER, DOWN
-	appear WILDAREAOUTSIDE_RIVAL
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	applymovement WILDAREAOUTSIDE_RIVAL, RivalMovesUp
 	turnobject WILDAREAOUTSIDE_RIVAL, LEFT
 	turnobject PLAYER, RIGHT
+.Reconverge2
 	opentext
 	writetext HeyRivalText
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
-	iftrue .Larvitar2
 	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
 	setlasttalked WILDAREAOUTSIDE_RIVAL
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
+	iftrue .Larvitar2
 	loadtrainer RIVAL4, RIVAL4_C_LARVITAR
+.Resume2:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
+	playmusic MUSIC_RIVAL_AFTER
 	sjump .AfterVictorious2
 
 .Larvitar2:
-	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
-	setlasttalked WILDAREAOUTSIDE_RIVAL
 	loadtrainer RIVAL4, RIVAL4_C_DRATINI
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterVictorious2
-
-.AfterVictorious2:
-	playmusic MUSIC_RIVAL_AFTER
-	opentext
-	writetext YouWonOnceAgainText
-	buttonsound
-	verbosegiveitem PIDGEOT_CALL
-	setevent EVENT_GOT_PIDGEOT_CALL
-	writetext PidgeotCallText
-	waitbutton
-	closetext
-	opentext
-	writetext ByTheWayText
-	waitbutton
-	closetext
-	turnobject WILDAREAOUTSIDE_RIVAL, UP
-	turnobject PLAYER, UP
-	opentext
-	writetext ThisIsTheWildAreaText
-	waitbutton
-	closetext
-	applymovement WILDAREAOUTSIDE_RIVAL, RivalLeavesWildAreaMovement
-	playsound SFX_EXIT_BUILDING
-	disappear WILDAREAOUTSIDE_RIVAL
-	setevent EVENT_WILD_AREA_RIVAL_BEAT
-	clearevent EVENT_OLIVINE_GYM_JASMINE
-	setevent EVENT_CIANWOOD_GYM_RIVAL1
-	setscene SCENE_DEFAULT
-	special FadeOutMusic
-	pause 10
-	special RestartMapMusic
-	waitsfx
-	playmapmusic
-	end
+	sjump .Resume2
 
 RivalWalksUpRight:
 	special FadeOutMusic
@@ -166,62 +125,7 @@ RivalWalksUpRight:
 	applymovement WILDAREAOUTSIDE_RIVAL, RivalMovesUp
 	turnobject WILDAREAOUTSIDE_RIVAL, RIGHT
 	turnobject PLAYER, LEFT
-	opentext
-	writetext HeyRivalText
-	waitbutton
-	closetext
-	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
-	iftrue .Larvitar3
-	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
-	setlasttalked WILDAREAOUTSIDE_RIVAL
-	loadtrainer RIVAL3, RIVAL3_C_LARVITAR
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterVictorious3
-
-.Larvitar3:
-	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
-	setlasttalked WILDAREAOUTSIDE_RIVAL
-	loadtrainer RIVAL3, RIVAL3_C_DRATINI
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterVictorious3
-
-.AfterVictorious3:
-	playmusic MUSIC_DAHLIA_AFTER_BATTLE
-	opentext
-	writetext YouWonOnceAgainText
-	buttonsound
-	verbosegiveitem PIDGEOT_CALL
-	setevent EVENT_GOT_PIDGEOT_CALL
-	writetext PidgeotCallText
-	waitbutton
-	closetext
-	opentext
-	writetext ByTheWayText
-	waitbutton
-	closetext
-	turnobject WILDAREAOUTSIDE_RIVAL, UP
-	turnobject PLAYER, UP
-	opentext
-	writetext ThisIsTheWildAreaText
-	waitbutton
-	closetext
-	applymovement WILDAREAOUTSIDE_RIVAL, RivalLeavesWildAreaMovement
-	playsound SFX_EXIT_BUILDING
-	disappear WILDAREAOUTSIDE_RIVAL
-	setevent EVENT_WILD_AREA_RIVAL_BEAT
-	clearevent EVENT_OLIVINE_GYM_JASMINE
-	setevent EVENT_CIANWOOD_GYM_RIVAL1
-	setscene SCENE_DEFAULT
-	special FadeOutMusic
-	pause 10
-	special RestartMapMusic
-	waitsfx
-	playmapmusic
-	end
+	sjump RivalWalksUpLeft.Reconverge
 
 .Female2:
 	turnobject, PLAYER, DOWN
@@ -232,62 +136,7 @@ RivalWalksUpRight:
 	applymovement WILDAREAOUTSIDE_RIVAL, RivalMovesUp
 	turnobject WILDAREAOUTSIDE_RIVAL, RIGHT
 	turnobject PLAYER, LEFT
-	opentext
-	writetext HeyRivalText
-	waitbutton
-	closetext
-	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
-	iftrue .Larvitar4
-	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
-	setlasttalked WILDAREAOUTSIDE_RIVAL
-	loadtrainer RIVAL4, RIVAL4_C_LARVITAR
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterVictorious4
-
-.Larvitar4:
-	winlosstext RivalWildAreaWinText, RivalWildAreaLossText
-	setlasttalked WILDAREAOUTSIDE_RIVAL
-	loadtrainer RIVAL4, RIVAL4_C_DRATINI
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterVictorious4
-
-.AfterVictorious4:
-	playmusic MUSIC_RIVAL_AFTER
-	opentext
-	writetext YouWonOnceAgainText
-	buttonsound
-	verbosegiveitem PIDGEOT_CALL
-	setevent EVENT_GOT_PIDGEOT_CALL
-	writetext PidgeotCallText
-	waitbutton
-	closetext
-	opentext
-	writetext ByTheWayText
-	waitbutton
-	closetext
-	turnobject WILDAREAOUTSIDE_RIVAL, UP
-	turnobject PLAYER, UP
-	opentext
-	writetext ThisIsTheWildAreaText
-	waitbutton
-	closetext
-	applymovement WILDAREAOUTSIDE_RIVAL, RivalLeavesWildAreaMovement
-	playsound SFX_EXIT_BUILDING
-	disappear WILDAREAOUTSIDE_RIVAL
-	setevent EVENT_WILD_AREA_RIVAL_BEAT
-	clearevent EVENT_OLIVINE_GYM_JASMINE
-	setevent EVENT_CIANWOOD_GYM_RIVAL1
-	setscene SCENE_DEFAULT
-	special FadeOutMusic
-	pause 10
-	special RestartMapMusic
-	waitsfx
-	playmapmusic
-	end
+	sjump RivalWalksUpLeft.Reconverge2
 
 WildAreaOutsideOldManScript:
 	jumptextfaceplayer WildAreaOutsideOldManText

@@ -83,6 +83,9 @@ AzaleaGymKurtScript:
 .Rematch:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .PostGameKurt
+	writetext KurtText_Rematch
+	waitbutton
+	closetext
 	readvar VAR_BADGES
 	ifequal 6, .KurtBattle1
 	ifequal 7, .KurtBattle2
@@ -90,25 +93,16 @@ AzaleaGymKurtScript:
 	sjump .KurtBattle3
 
 .KurtBattle1:
-	writetext KurtText_Rematch
-	waitbutton
-	closetext
 	winlosstext KurtText_NoRespect, KurtText_Respect
 	loadtrainer KURT, KURT1
 	sjump AfterKurtRematch
 
 .KurtBattle2:
-	writetext KurtText_Rematch
-	waitbutton
-	closetext
 	winlosstext KurtText_NoRespect, KurtText_Respect
 	loadtrainer KURT, KURT2
 	sjump AfterKurtRematch
 
 .KurtBattle3:
-	writetext KurtText_Rematch
-	waitbutton
-	closetext
 	winlosstext KurtText_NoRespect, KurtText_Respect
 	loadtrainer KURT, KURT3
 	sjump AfterKurtRematch

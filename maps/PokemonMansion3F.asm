@@ -44,7 +44,7 @@ PokemonMansion3FAbraStatue:
 	clearevent EVENT_POKEMON_MANSION_SWITCH
 	changeblock 14, 10, $0e ; Floor
 	changeblock 14,  4, $5f ; Shutter
-	changeblock 10,  4, $77 ; Closed Eyes
+	changeblock 10,  4, $2b ; Closed Eyes
 	reloadmappart
 	end
 

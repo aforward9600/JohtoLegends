@@ -152,6 +152,7 @@ CHRIS EQU __enum__
 	const LAURA
 	const USAGI
 	const MICHELLE
+	const GABRIELLE
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -305,6 +306,7 @@ CHRIS EQU __enum__
 	const NIKKI
 	const AQUA
 	const SHEILA
+	const TARA
 
 	trainerclass SAILOR ; 28
 	const EUGENE

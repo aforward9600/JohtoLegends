@@ -15,7 +15,6 @@ AzaleaTown_MapScripts:
 	db 2 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_AZALEATOWN_NOTHING
 	scene_script .DummyScene1 ; SCENE_AZALEATOWN_RIVAL_BATTLE
-;	scene_script .DummyScene2 ; SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .Flypoint
@@ -24,9 +23,6 @@ AzaleaTown_MapScripts:
 	end
 
 .DummyScene1:
-	end
-
-.DummyScene2:
 	end
 
 .Flypoint:

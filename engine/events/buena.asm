@@ -181,8 +181,6 @@ Buena_DisplayBlueCardBalance:
 
 PrintBlueCardBalance:
 	ld de, wBlueCardBalance
-	call .DrawBox
-	ret
 
 .DrawBox:
 	push de

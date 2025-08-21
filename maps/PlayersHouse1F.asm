@@ -135,7 +135,6 @@ MomScript:
 	writetext GrandmaCongratsText
 	waitbutton
 	closetext
-	scall GetDecoEvent
 	end
 
 .GotAPokemon:
@@ -168,12 +167,8 @@ MomScript:
 	setmapscene ICE_PATH_B1F, SCENE_ICE_PATH_B1F_RIVAL
 	end
 
-GetDecoEvent:
-	jumpstd getdecoevent
-
 MeetGrandmaLeftScript:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-
 MeetGrandmaRightScript:
 	playmusic MUSIC_MOM
 	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_GRANNY1, 15
@@ -186,12 +181,10 @@ MeetGrandmaRightScript:
 .OnRight:
 	applymovement PLAYERSHOUSE1F_GRANNY1, MomWalksToPlayerMovement
 MeetGrandmaScript:
+	opentext
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .DracoCameBy
-	opentext
 	writetext DahliaCameByText
-	waitbutton
-	closetext
 .ReconvergeGranny:
 	clearevent EVENT_VICTORY_ROAD_GATE_OAK
 	clearevent EVENT_VICTORY_ROAD_GATE_RIVAL
@@ -219,10 +212,7 @@ MeetGrandmaScript:
 	end
 
 .DracoCameBy:
-	opentext
 	writetext DracoCameByText
-	waitbutton
-	closetext
 	sjump .ReconvergeGranny
 
 NeighborScript:
@@ -718,8 +708,7 @@ PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  6,  7, VERMILION_PORT, 1
-;	warp_event  6,  7, BLACKTHORN_CITY, 9
+	warp_event  6,  7, BLACKTHORN_CITY, 9
 	warp_event  7,  7, BLACKTHORN_CITY, 9
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
 

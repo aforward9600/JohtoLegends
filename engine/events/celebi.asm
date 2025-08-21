@@ -184,15 +184,13 @@ UpdateCelebiPosition:
 	add hl, bc
 	ld a, SPRITE_ANIM_FRAMESET_CELEBI_RIGHT
 	call ReinitSpriteAnimFrame
-	jr .done
+	ret
 
 .left
 	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld a, SPRITE_ANIM_FRAMESET_CELEBI_LEFT
-	call ReinitSpriteAnimFrame
-.done
-	ret
+	jp ReinitSpriteAnimFrame
 
 .FreezeCelebiPosition:
 	pop af
