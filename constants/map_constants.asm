@@ -608,6 +608,7 @@ ENDM
 	map_const REGISTEEL_CHAMBER,                            7,  7 ; 35
 	map_const SEVEN_ISLAND_PORT,                            5,  9 ; 36
 	map_const SEVEN_ISLAND,                                16, 21 ; 37
-	map_const SEVAULT_CANYON,                              17, 42 ; 38
-	map_const TANOBI_RUINS,                                47, 11 ; 39
-	map_const ONAGAN_TEMPLE_OUTSIDE,                       11, 13 ; 40
+	map_const SEVEN_ISLAND_MASTERS_HOUSE,                   5,  5 ; 38
+	map_const SEVAULT_CANYON,                              17, 42 ; 39
+	map_const TANOBI_RUINS,                                47, 11 ; 40
+	map_const ONAGAN_TEMPLE_OUTSIDE,                       11, 13 ; 41

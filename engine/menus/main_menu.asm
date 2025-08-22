@@ -155,16 +155,11 @@ MainMenu_PrintCurrentTimeAndDay:
 .PlaceBox:
 	call CheckRTCStatus
 	and $80
-	jr nz, .TimeFail
+	jp nz, SpeechTextbox
 	hlcoord 0, 14
 	ld b, 2
 	ld c, 18
-	call Textbox
-	ret
-
-.TimeFail:
-	call SpeechTextbox
-	ret
+	jp Textbox
 
 .PlaceTime:
 	ld a, [wSaveFileExists]
@@ -186,14 +181,12 @@ MainMenu_PrintCurrentTimeAndDay:
 	inc hl
 	ld de, hMinutes
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
-	call PrintNum
-	ret
+	jp PrintNum
 
 .PrintTimeNotSet:
 	hlcoord 1, 14
 	ld de, .TimeNotSet
-	call PlaceString
-	ret
+	jp PlaceString
 
 if DEF(_FRENCH)
 .TimeNotSet:
@@ -215,8 +208,7 @@ endc
 	ld h, b
 	ld l, c
 	ld de, .Day
-	call PlaceString
-	ret
+	jp PlaceString
 
 if DEF(_FRENCH)
 .Days:
@@ -248,8 +240,7 @@ Function49ed0:
 	call ClearTileMap
 	call LoadFontsExtra
 	call LoadStandardFont
-	call ClearWindowData
-	ret
+	jp ClearWindowData
 
 MainMenu_NewGame:
 	farcall NewGame

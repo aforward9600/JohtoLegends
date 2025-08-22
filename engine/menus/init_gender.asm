@@ -35,8 +35,7 @@ InitGenderScreenPrep:
 	call LoadGenderScreenPal
 	call LoadGenderScreenLightBlueTile
 	call WaitBGMap2
-	call SetPalettes
-	ret
+	jp SetPalettes
 
 InitGender:
 ;	call InitGenderScreen
@@ -134,8 +133,7 @@ InitGenderScreen:
 	hlcoord 0, 0, wAttrMap
 	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
 	xor a
-	call ByteFill
-	ret
+	jp ByteFill
 
 LoadGenderScreenPal:
 	ld hl, .Palette
@@ -153,8 +151,7 @@ LoadGenderScreenLightBlueTile:
 	ld de, .LightBlueTile
 	ld hl, vTiles2 tile $00
 	lb bc, BANK(.LightBlueTile), 1
-	call Get2bpp
-	ret
+	jp Get2bpp
 
 .LightBlueTile:
 INCBIN "gfx/new_game/gender_screen.2bpp"

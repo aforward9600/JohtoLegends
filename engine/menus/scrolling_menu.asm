@@ -408,17 +408,14 @@ ScrollingMenu_CallFunctions1and2:
 	pop hl
 	ld a, [wMenuData_ScrollingMenuWidth]
 	and a
-	jr z, .done
+	ret z
 	ld e, a
 	ld d, $0
 	add hl, de
 	ld d, h
 	ld e, l
 	ld hl, wMenuData_ScrollingMenuFunction2
-	call CallPointerAt
-
-.done
-	ret
+	jp CallPointerAt
 
 ScrollingMenu_PlaceCursor:
 	ld a, [wSwitchItem]
@@ -466,8 +463,7 @@ ScrollingMenu_CheckCallFunction3:
 	dec a
 	call ScrollingMenu_GetListItemCoordAndFunctionArgs
 	ld hl, wMenuData_ScrollingMenuFunction3
-	call CallPointerAt
-	ret
+	jp CallPointerAt
 
 ScrollingMenu_GetListItemCoordAndFunctionArgs:
 	push de

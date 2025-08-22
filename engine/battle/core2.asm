@@ -4,8 +4,7 @@ Core2_NewTurnEndEffects:
 	call HandleDefrost
 	call HandleSafeguard
 	call HandleScreens
-	call HandleRoost
-	ret
+	jp HandleRoost
 
 HandleLeftovers:
 	ldh a, [hSerialConnectionStatus]

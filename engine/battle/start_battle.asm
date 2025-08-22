@@ -9,8 +9,7 @@ ShowLinkBattleParticipants:
 	ld c, 150
 	call DelayFrames
 	call ClearTileMap
-	call ClearSprites
-	ret
+	jp ClearSprites
 
 FindFirstAliveMonAndStartBattle:
 ;	call GetMapEnvironment

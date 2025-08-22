@@ -4,8 +4,7 @@ PlaceMenuItemName:
 	ld [wNamedObjectIndexBuffer], a
 	call GetItemName
 	pop hl
-	call PlaceString
-	ret
+	jp PlaceString
 
 PlaceMenuItemQuantity:
 	push de
@@ -15,17 +14,14 @@ PlaceMenuItemQuantity:
 	ld a, [wItemAttributeParamBuffer]
 	pop hl
 	and a
-	jr nz, .done
+	ret nz
 	ld de, $15
 	add hl, de
 	ld [hl], "×"
 	inc hl
 	ld de, wMenuSelectionQuantity
 	lb bc, 1, 2
-	call PrintNum
-
-.done
-	ret
+	jp PrintNum
 
 PlaceMoneyTopRight:
 	ld hl, MenuHeader_0x24b15
@@ -49,8 +45,7 @@ PlaceMoneyTextbox:
 	add hl, de
 	ld de, wMoney
 	lb bc, PRINTNUM_MONEY | 3, 6
-	call PrintNum
-	ret
+	jp PrintNum
 
 MenuHeader_0x24b15:
 	db MENU_BACKUP_TILES ; flags
@@ -79,8 +74,7 @@ DisplayCoinCaseBalance:
 	ld de, wCoins
 	lb bc, 2, 4
 	hlcoord 13, 1
-	call PrintNum
-	ret
+	jp PrintNum
 
 DisplayMoneyAndCoinBalance:
 	hlcoord 5, 0
@@ -100,8 +94,7 @@ DisplayMoneyAndCoinBalance:
 	hlcoord 15, 3
 	ld de, wCoins
 	lb bc, 2, 4
-	call PrintNum
-	ret
+	jp PrintNum
 
 if DEF(_FRENCH)
 MoneyString:
@@ -121,8 +114,7 @@ StartMenu_DrawBugContestStatusBox:
 	hlcoord 0, 0
 	ld b, 5
 	ld c, 17
-	call Textbox
-	ret
+	jp Textbox
 
 StartMenu_PrintBugContestStatus:
 	ld hl, wOptions

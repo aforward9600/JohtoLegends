@@ -814,6 +814,7 @@ RuinsOfAlphOmanyteWordRoom_Blocks:
 RuinsOfAlphAerodactylWordRoom_Blocks:
 	INCBIN "maps/RuinsOfAlphAerodactylWordRoom.ablk"
 
+SevenIslandMastersHouse_Blocks:
 DragonShrine_Blocks:
 	INCBIN "maps/DragonShrine.ablk"
 

@@ -1,3 +1,2 @@
 BattleStart_CopyTilemapAtOnce:
-	call CGBOnly_CopyTilemapAtOnce
-	ret
+	jp CGBOnly_CopyTilemapAtOnce

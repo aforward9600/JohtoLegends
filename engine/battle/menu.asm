@@ -6,8 +6,7 @@ LoadBattleMenu:
 	call InterpretBattleMenu
 	ld a, [wMenuCursorBuffer]
 	ld [wBattleMenuCursorBuffer], a
-	call ExitMenu
-	ret
+	jp ExitMenu
 
 SafariBattleMenu:
 ; untranslated
@@ -25,8 +24,7 @@ Function24f19:
 	call _2DMenu
 	ld a, [wMenuCursorBuffer]
 	ld [wBattleMenuCursorBuffer], a
-	call ExitMenu
-	ret
+	jp ExitMenu
 
 BattleMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -70,8 +68,7 @@ Function24f7c:
 	hlcoord 17, 13
 	ld de, wSafariBallsRemaining
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
-	call PrintNum
-	ret
+	jp PrintNum
 
 MenuHeader_0x24f89:
 	db MENU_BACKUP_TILES ; flags
@@ -96,5 +93,4 @@ Function24fb2:
 	hlcoord 13, 16
 	ld de, wParkBallsRemaining
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
-	call PrintNum
-	ret
+	jp PrintNum

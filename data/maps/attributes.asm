@@ -789,6 +789,7 @@ ENDM
 	map_attributes SevenIslandPort, SEVEN_ISLAND_PORT, $00, 0
 	map_attributes CeliosHouse, CELIOS_HOUSE, $00, 0
 	map_attributes OneIslandHouse, ONE_ISLAND_HOUSE, $00, 0
+	map_attributes SevenIslandMastersHouse, SEVEN_ISLAND_MASTERS_HOUSE, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1

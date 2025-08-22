@@ -222,8 +222,9 @@ if DEF(_FAITHFUL)
 	writetext MahoganyGymGuyFaithfulText
 elif DEF(_NOPSS)
 	writetext MahoganyGymGuyFaithfulText
-endc
+else
 	writetext MahoganyGymGuyText
+endc
 	waitbutton
 	closetext
 	end
