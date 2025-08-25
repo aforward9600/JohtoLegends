@@ -267,6 +267,7 @@ CherrygroveMart_Blocks:
 WildAreaMart_Blocks:
 LakeOfRageMart_Blocks:
 CinnabarIslandMart_Blocks:
+SevenIslandMart_Blocks:
 	INCBIN "maps/Mart.ablk"
 
 Route10North_Blocks:
@@ -278,6 +279,7 @@ ThreeIslandPokecenter_Blocks:
 FourIslandPokecenter_Blocks:
 FiveIslandPokecenter_Blocks:
 SixIslandPokecenter_Blocks:
+SevenIslandPokecenter_Blocks:
 OlivinePokecenter1F_Blocks:
 MahoganyPokecenter1F_Blocks:
 EcruteakPokecenter1F_Blocks:

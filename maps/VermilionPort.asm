@@ -43,8 +43,7 @@ VermilionPortWalkUpToShipScript:
 	turnobject PLAYER, LEFT
 	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
-;	iftrue .skip
-	iffalse .skip ; need to delete
+	iftrue .skip
 	writetext UnknownText_0x74f4d
 	waitbutton
 	closetext
@@ -59,6 +58,12 @@ VermilionPortWalkUpToShipScript:
 	end
 
 .skip
+	writetext UnknownText_0x750a6
+	waitbutton
+	closetext
+	applymovement PLAYER, MovementData_0x74ef5
+	end
+
 	checkflag ENGINE_FLYPOINT_ONE_ISLAND
 	iftrue .VermilionPortMenu
 	writetext HeadToOneIslandText

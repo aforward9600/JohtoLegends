@@ -35,11 +35,12 @@ OnaganTempleSignText:
 SevenIsland_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
+	db 5 ; warp events
 	warp_event 27, 29, SEVEN_ISLAND_PORT, 1
 	warp_event 28, 29, SEVEN_ISLAND_PORT, 2
 	warp_event 21, 23, SEVEN_ISLAND_MASTERS_HOUSE, 1
-;	warp_event  9,  5, SEVEN_ISLAND_POKECENTER, 1
+	warp_event 21, 17, SEVEN_ISLAND_POKECENTER, 1
+	warp_event 13, 23, SEVEN_ISLAND_MART, 1
 
 	db 0 ; coord events
 

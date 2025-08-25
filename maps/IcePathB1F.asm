@@ -27,45 +27,36 @@ IcePath1FRivalScene1:
 	turnobject PLAYER, RIGHT
 	special FadeOutMusic
 	pause 5
+	applymovement ICEPATHB1F_RIVAL, IcePath_RivalWalksToYou1
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .IcePath1FRivalScene2
-	applymovement ICEPATHB1F_RIVAL, IcePath_RivalWalksToYou1
 	playmusic MUSIC_DAHLIA_ENCOUNTER
 	sjump RestOfRival
 
 .IcePath1FRivalScene2:
-	applymovement ICEPATHB1F_RIVAL, IcePath_RivalWalksToYou1
 	playmusic MUSIC_RIVAL_ENCOUNTER
-	sjump RestOfRival
-
 RestOfRival:
 	opentext
 	writetext IcePath1FRivalText_Seen
 	waitbutton
 	closetext
+	winlosstext RivalIcePathWinText, RivalIcePathLossText
+	setlasttalked ICEPATHB1F_RIVAL
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .Larvitar
-	winlosstext RivalIcePathWinText, RivalIcePathLossText
-	setlasttalked ICEPATHB1F_RIVAL
 	loadtrainer RIVAL3, RIVAL3_A_LARVITAR
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
 	sjump .AfterVictorious
 
 .Larvitar:
-	winlosstext RivalIcePathWinText, RivalIcePathLossText
-	setlasttalked ICEPATHB1F_RIVAL
 	loadtrainer RIVAL3, RIVAL3_A_DRATINI
+.AfterVictorious:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump .AfterVictorious
-
-.AfterVictorious:
 	playmusic MUSIC_DAHLIA_AFTER_BATTLE
+.AfterRival:
 	opentext
 	writetext IcePathRivalText_YouWon
 	waitbutton
@@ -82,37 +73,17 @@ RestOfRival:
 .Female:
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .Larvitar2
-	winlosstext RivalIcePathWinText, RivalIcePathLossText
-	setlasttalked ICEPATHB1F_RIVAL
 	loadtrainer RIVAL4, RIVAL4_A_LARVITAR
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
 	sjump .AfterVictorious2
 
 .Larvitar2:
-	winlosstext RivalIcePathWinText, RivalIcePathLossText
-	setlasttalked ICEPATHB1F_RIVAL
 	loadtrainer RIVAL4, RIVAL4_A_DRATINI
+.AfterVictorious2:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump .AfterVictorious2
-
-.AfterVictorious2:
 	playmusic MUSIC_RIVAL_AFTER
-	opentext
-	writetext IcePathRivalText_YouWon
-	waitbutton
-	closetext
-	applymovement ICEPATHB1F_RIVAL, IcePath_RivalLeaves
-	playsound SFX_EXIT_BUILDING
-	disappear ICEPATHB1F_RIVAL
-	setevent EVENT_ICE_PATH_B1F_RIVAL1
-	setscene SCENE_DEFAULT
-	waitsfx
-	playmapmusic
-	end
+	sjump .AfterRival
 
 IcePathB1FRock:
 	jumpstd smashrock

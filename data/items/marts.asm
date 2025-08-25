@@ -47,6 +47,7 @@ Marts:
 	dw MartCinnabarIsland
 	dw MartBerries1
 	dw MartBerries2
+	dw MartSevenIsland
 .End
 
 MartCherrygrove:
@@ -558,3 +559,16 @@ MartBerries2:
 	db GREPA_BERRY
 	db TAMATO_BERRY
 	db -1
+
+MartSevenIsland:
+	db 9 ; # items
+	db ULTRA_BALL
+	db FULL_RESTORE
+	db HYPER_POTION
+	db FULL_HEAL
+	db MAX_REPEL
+	db GREAT_BALL
+	db MAX_POTION
+	db REVIVE
+	db ESCAPE_ROPE
+	db -1 ; end

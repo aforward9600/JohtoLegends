@@ -609,6 +609,8 @@ ENDM
 	map_const SEVEN_ISLAND_PORT,                            5,  9 ; 36
 	map_const SEVEN_ISLAND,                                16, 21 ; 37
 	map_const SEVEN_ISLAND_MASTERS_HOUSE,                   5,  5 ; 38
-	map_const SEVAULT_CANYON,                              17, 42 ; 39
-	map_const TANOBI_RUINS,                                47, 11 ; 40
-	map_const ONAGAN_TEMPLE_OUTSIDE,                       11, 13 ; 41
+	map_const SEVEN_ISLAND_POKECENTER,                      5,  4 ; 39
+	map_const SEVEN_ISLAND_MART,                            6,  4 ; 40
+	map_const SEVAULT_CANYON,                              17, 42 ; 41
+	map_const TANOBI_RUINS,                                47, 11 ; 42
+	map_const ONAGAN_TEMPLE_OUTSIDE,                       11, 13 ; 43

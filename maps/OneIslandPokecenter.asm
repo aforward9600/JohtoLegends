@@ -1,7 +1,6 @@
 	object_const_def ; object_event constants
 	const ONEISLANDPOKECENTER_NURSE
-	const WILDAREAPOKECENTER_SCIENTIST
-;	const WILDAREAPOKECENTER_FISHING_GURU
+	const ONEISLANDPOKECENTER_SCIENTIST
 
 OneIslandPokecenter_MapScripts:
 	db 0 ; scene scripts
