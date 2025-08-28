@@ -18,14 +18,10 @@ TeamRocketBaseB1F_MapScripts:
 .DummyScene:
 	end
 
-NoSecurityCamera:
-	end
-
 ExplodingTrap1:
 	checkevent EVENT_EXPLODING_TRAP_1
 	iftrue NoExplodingTrap
 	scall KoffingExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_1
 	end
 
@@ -33,7 +29,6 @@ ExplodingTrap2:
 	checkevent EVENT_EXPLODING_TRAP_2
 	iftrue NoExplodingTrap
 	scall VoltorbExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_2
 	end
 
@@ -41,7 +36,6 @@ ExplodingTrap3:
 	checkevent EVENT_EXPLODING_TRAP_3
 	iftrue NoExplodingTrap
 	scall GeodudeExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_3
 	end
 
@@ -49,7 +43,6 @@ ExplodingTrap4:
 	checkevent EVENT_EXPLODING_TRAP_4
 	iftrue NoExplodingTrap
 	scall VoltorbExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_4
 	end
 
@@ -57,7 +50,6 @@ ExplodingTrap5:
 	checkevent EVENT_EXPLODING_TRAP_5
 	iftrue NoExplodingTrap
 	scall GeodudeExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_5
 	end
 
@@ -65,7 +57,6 @@ ExplodingTrap6:
 	checkevent EVENT_EXPLODING_TRAP_6
 	iftrue NoExplodingTrap
 	scall KoffingExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_6
 	end
 
@@ -73,7 +64,6 @@ ExplodingTrap7:
 	checkevent EVENT_EXPLODING_TRAP_7
 	iftrue NoExplodingTrap
 	scall VoltorbExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_7
 	end
 
@@ -81,7 +71,6 @@ ExplodingTrap8:
 	checkevent EVENT_EXPLODING_TRAP_8
 	iftrue NoExplodingTrap
 	scall KoffingExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_8
 	end
 
@@ -89,7 +78,6 @@ ExplodingTrap9:
 	checkevent EVENT_EXPLODING_TRAP_9
 	iftrue NoExplodingTrap
 	scall KoffingExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_9
 	end
 
@@ -97,7 +85,6 @@ ExplodingTrap10:
 	checkevent EVENT_EXPLODING_TRAP_10
 	iftrue NoExplodingTrap
 	scall VoltorbExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_10
 	end
 
@@ -105,7 +92,6 @@ ExplodingTrap11:
 	checkevent EVENT_EXPLODING_TRAP_11
 	iftrue NoExplodingTrap
 	scall GeodudeExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_11
 	end
 
@@ -113,7 +99,6 @@ ExplodingTrap12:
 	checkevent EVENT_EXPLODING_TRAP_12
 	iftrue NoExplodingTrap
 	scall GeodudeExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_12
 	end
 
@@ -121,7 +106,6 @@ ExplodingTrap13:
 	checkevent EVENT_EXPLODING_TRAP_13
 	iftrue NoExplodingTrap
 	scall GeodudeExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_13
 	end
 
@@ -129,7 +113,6 @@ ExplodingTrap14:
 	checkevent EVENT_EXPLODING_TRAP_14
 	iftrue NoExplodingTrap
 	scall KoffingExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_14
 	end
 
@@ -137,7 +120,6 @@ ExplodingTrap15:
 	checkevent EVENT_EXPLODING_TRAP_15
 	iftrue NoExplodingTrap
 	scall VoltorbExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_15
 	end
 
@@ -145,7 +127,6 @@ ExplodingTrap16:
 	checkevent EVENT_EXPLODING_TRAP_16
 	iftrue NoExplodingTrap
 	scall KoffingExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_16
 	end
 
@@ -153,7 +134,6 @@ ExplodingTrap17:
 	checkevent EVENT_EXPLODING_TRAP_17
 	iftrue NoExplodingTrap
 	scall VoltorbExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_17
 	end
 
@@ -161,7 +141,6 @@ ExplodingTrap18:
 	checkevent EVENT_EXPLODING_TRAP_18
 	iftrue NoExplodingTrap
 	scall GeodudeExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_18
 	end
 
@@ -169,7 +148,6 @@ ExplodingTrap19:
 	checkevent EVENT_EXPLODING_TRAP_19
 	iftrue NoExplodingTrap
 	scall GeodudeExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_19
 	end
 
@@ -177,7 +155,6 @@ ExplodingTrap20:
 	checkevent EVENT_EXPLODING_TRAP_20
 	iftrue NoExplodingTrap
 	scall VoltorbExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_20
 	end
 
@@ -185,7 +162,6 @@ ExplodingTrap21:
 	checkevent EVENT_EXPLODING_TRAP_21
 	iftrue NoExplodingTrap
 	scall KoffingExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_21
 	end
 
@@ -193,7 +169,6 @@ ExplodingTrap22:
 	checkevent EVENT_EXPLODING_TRAP_22
 	iftrue NoExplodingTrap
 	scall VoltorbExplodingTrap
-	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_22
 	end
 
@@ -205,6 +180,7 @@ VoltorbExplodingTrap:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon ELECTRODE, 30
 	startbattle
+	reloadmapafterbattle
 	end
 
 GeodudeExplodingTrap:
@@ -215,6 +191,7 @@ GeodudeExplodingTrap:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon GRAVELER, 29
 	startbattle
+	reloadmapafterbattle
 	end
 
 KoffingExplodingTrap:
@@ -225,8 +202,7 @@ KoffingExplodingTrap:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon KOFFING, 29
 	startbattle
-	end
-
+	reloadmapafterbattle
 NoExplodingTrap:
 	end
 
@@ -234,7 +210,6 @@ RivalConfronts1:
 	checkevent EVENT_HIDEOUT_B1F_CONFRONTATION
 	iftrue .ConfrontationOver1
 	applymovement PLAYER, SecurityCameraMovement1
-	turnobject PLAYER, RIGHT
 	sjump RivalConfronts3
 
 .ConfrontationOver1:
@@ -244,18 +219,16 @@ RivalConfronts2:
 	checkevent EVENT_HIDEOUT_B1F_CONFRONTATION
 	iftrue .ConfrontationOver2
 	applymovement PLAYER, SecurityCameraMovement2
-	turnobject PLAYER, RIGHT
 	sjump RivalConfronts3
 
 .ConfrontationOver2:
 	end
 	
 RivalConfronts3:
-	special FadeOutMusic
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .RivalConfrontsFemale
 	checkevent EVENT_HIDEOUT_B1F_CONFRONTATION
 	iftrue .ConfrontationOver3
+	turnobject PLAYER, RIGHT
+	special FadeOutMusic
 	checkevent EVENT_TEAM_ROCKET_BASE_POPULATION
 	iftrue .SkipToBattle
 	pause 15
@@ -268,7 +241,10 @@ RivalConfronts3:
 	waitbutton
 	closetext
 	opentext
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .RivalConfrontsFemale
 	writetext DahliaSilentAgainText
+.ReconveneBeforeBattle
 	waitbutton
 	closetext
 	special FadeBlackQuickly
@@ -294,85 +270,36 @@ RivalConfronts3:
 	waitbutton
 	closetext
 	special HealParty
-	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
-	iftrue .HideoutDahliaBattleDratini
 	winlosstext, HideoutRivalDefeatedText, HideoutRivalLostText
 	setlasttalked TEAMROCKETBASEB1F_RIVAL
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .FemaleBattle
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
+	iftrue .HideoutDahliaBattleDratini
 	loadtrainer DEPRESSED_DAHLIA, DAHLIA_LARVITAR_1
+.ReconveneBattle
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .HideoutVictorious1
 
 .HideoutDahliaBattleDratini:
-	winlosstext, HideoutRivalDefeatedText, HideoutRivalLostText
-	setlasttalked TEAMROCKETBASEB1F_RIVAL
 	loadtrainer DEPRESSED_DAHLIA, DAHLIA_DRATINI_1
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .HideoutVictorious1
+	sjump .ReconveneBattle
 
 .RivalConfrontsFemale:
-	checkevent EVENT_HIDEOUT_B1F_CONFRONTATION
-	iftrue .ConfrontationOver3
-	checkevent EVENT_TEAM_ROCKET_BASE_POPULATION
-	iftrue .SkipToBattleFemale
-	special FadeOutMusic
-	pause 15
-	opentext
-	writetext ThatAllYouGotText
-	waitbutton
-	closetext
-	opentext
-	writetext DracoIsSilentText
-	waitbutton
-	closetext
-	opentext
 	writetext DracoSilentAgainText
-	waitbutton
-	closetext
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	scall NinjaHideoutClear
-	disappear TEAMROCKETBASEB1F_NINJA1
-	disappear TEAMROCKETBASEB1F_NINJA2
-	disappear TEAMROCKETBASEB1F_NINJA3
-	disappear TEAMROCKETBASEB1F_NINJA4
-	disappear TEAMROCKETBASEB1F_MIYAMOTO
-	pause 15
-	special FadeInQuickly
-.SkipToBattleFemale:
-	pause 15
-	opentext
-	writetext DracoIsSilentText
-	waitbutton
-	closetext
-	applymovement TEAMROCKETBASEB1F_RIVAL, SecurityCameraMovement3
-	pause 15
-	opentext
-	writetext ICouldntDoItText
-	waitbutton
-	closetext
-	special HealParty
+	sjump .ReconveneBeforeBattle
+
+.FemaleBattle:
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .HideoutDracoBattleDratini
-	winlosstext, HideoutRivalDefeatedText, HideoutRivalLostText
-	setlasttalked TEAMROCKETBASEB1F_RIVAL
 	loadtrainer DEPRESSED_DRACO, DRACO_LARVITAR_1
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .HideoutVictorious1
+	sjump .ReconveneBattle
 
 .HideoutDracoBattleDratini:
-	winlosstext, HideoutRivalDefeatedText, HideoutRivalLostText
-	setlasttalked TEAMROCKETBASEB1F_RIVAL
 	loadtrainer DEPRESSED_DRACO, DRACO_DRATINI_1
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .HideoutVictorious1
+	sjump .ReconveneBattle
 
 .HideoutVictorious1:
 	playmusic MUSIC_UNWAVERING_HEART
@@ -394,87 +321,55 @@ RivalConfronts3:
 	setmapscene ROUTE_34, SCENE_DEFAULT
 	setevent EVENT_ROUTE_34_NINJA
 	clearevent EVENT_ROUTE_34_OFFICER
-	end
-
-.ConfrontationOver3:
+.ConfrontationOver3
 	end
 
 WarpPanelBroke:
-	opentext
-	writetext WarpPanelBrokeText
-	waitbutton
-	closetext
-	end
+	jumptext WarpPanelBrokeText
 
 NinjaHideoutClear:
 	jumpstd ninjahideoutclear
 
 TrainerMNinjaM5:
-	trainer MNINJA_M, MNINJA_M5, EVENT_HIDEOUT_NINJA9, MNinjaM5SeenText, MNinjaM5SeenText, 0, .Script
+	trainer MNINJA_M, MNINJA_M5, EVENT_HIDEOUT_NINJA9, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
 
 .Script:
-	pause 15
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
+	scall NinjaFadeOut
 	disappear TEAMROCKETBASEB1F_NINJA1
-	pause 15
-	special FadeInQuickly
-	endifjustbattled
-	opentext
-	writetext MNinjaM5SeenText
-	waitbutton
-	closetext
-	end
+	sjump DisappearNinja
 
 TrainerMNinjaF5:
-	trainer MNINJA_F, MNINJA_F5, EVENT_HIDEOUT_NINJA10, MNinjaM5SeenText, MNinjaM5SeenText, 0, .Script
+	trainer MNINJA_F, MNINJA_F5, EVENT_HIDEOUT_NINJA10, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
 
 .Script:
-	pause 15
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
+	scall NinjaFadeOut
 	disappear TEAMROCKETBASEB1F_NINJA2
-	pause 15
-	special FadeInQuickly
-	endifjustbattled
-	opentext
-	writetext MNinjaM5SeenText
-	waitbutton
-	closetext
-	end
+	sjump DisappearNinja
 
 TrainerMNinjaM6:
-	trainer MNINJA_M, MNINJA_M6, EVENT_HIDEOUT_NINJA11, MNinjaM5SeenText, MNinjaM5SeenText, 0, .Script
+	trainer MNINJA_M, MNINJA_M6, EVENT_HIDEOUT_NINJA11, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
 
 .Script:
-	pause 15
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
+	scall NinjaFadeOut
 	disappear TEAMROCKETBASEB1F_NINJA3
-	pause 15
-	special FadeInQuickly
-	endifjustbattled
-	opentext
-	writetext MNinjaM5SeenText
-	waitbutton
-	closetext
-	end
+	sjump DisappearNinja
 
 TrainerMNinjaF6:
-	trainer MNINJA_F, MNINJA_F6, EVENT_HIDEOUT_NINJA12, MNinjaM5SeenText, MNinjaM5SeenText, 0, .Script
+	trainer MNINJA_F, MNINJA_F6, EVENT_HIDEOUT_NINJA12, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
 
 .Script:
+	scall NinjaFadeOut
+	disappear TEAMROCKETBASEB1F_NINJA4
+
+DisappearNinja:
+	pause 15
+	special FadeInQuickly
+	end
+
+NinjaFadeOut:
 	pause 15
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	disappear TEAMROCKETBASEB1F_NINJA4
-	pause 15
-	special FadeInQuickly
-	endifjustbattled
-	opentext
-	writetext MNinjaM5SeenText
-	waitbutton
-	closetext
 	end
 
 TeamRocketBaseB1FSecurityCamera:
@@ -520,64 +415,10 @@ SecurityCameraMovement4:
 	step RIGHT
 	step_end
 
-SecurityCameraMovement5:
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step UP
-	big_step UP
-	big_step LEFT
-	big_step LEFT
-	step_end
-
-SecurityCameraMovement6:
-	big_step UP
-	big_step UP
-	big_step RIGHT
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step LEFT
-	step_end
-
-SecurityCameraMovement7:
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step RIGHT
-	big_step UP
-	big_step UP
-	big_step LEFT
-	step_end
-
-SecurityCameraMovement8:
-	big_step DOWN
-	big_step DOWN
-	big_step RIGHT
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	step_end
-
-SecurityCameraMovement9:
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	step_end
-
 WarpPanelBrokeText:
 	text "Whatever this"
 	line "panel is, it looks"
 	cont "broken."
-	done
-
-MNinjaM5SeenText:
-	text "………………………"
 	done
 
 ThatAllYouGotText:
@@ -589,21 +430,8 @@ ThatAllYouGotText:
 	cont "like you."
 	done
 
-DracoIsSilentText:
-	text "<RIVAL>:………………………"
-	done
-
 DahliaIsSilentText:
 	text "<RIVAL>:………………………"
-	done
-
-ScientistJedSeenText:
-	text "This was once a"
-	line "ninja hideout."
-
-	para "There are traps to"
-	line "confound intruders"
-	cont "like you."
 	done
 
 HideoutRivalDefeatedText:
@@ -720,11 +548,6 @@ TeamRocketBaseB1FSecretSwitchText:
 	para "It's looks too"
 	line "complex for you"
 	cont "to understand."
-	done
-
-TeamRocketBaseB1FSwitchOffText:
-	text "The switch is"
-	line "turned off."
 	done
 
 NinjaBookText2:

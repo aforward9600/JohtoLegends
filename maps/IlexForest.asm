@@ -4,7 +4,6 @@
 	const ILEXFOREST_BLACK_BELT
 	const ILEXFOREST_ROCKER
 	const ILEXFOREST_POKE_BALL1
-	const ILEXFOREST_KURT
 	const ILEXFOREST_LASS
 	const ILEXFOREST_HEX_MANIAC
 	const ILEXFOREST_POKE_BALL2
@@ -29,22 +28,6 @@ IlexForest_MapScripts:
 .FarfetchDWillAppear:
 	appear ILEXFOREST_FARFETCHD
 	return
-
-IlexForestCharcoalApprenticeScript:
-	faceplayer
-	opentext
-	checkevent EVENT_HERDED_FARFETCHD
-	iftrue .DoneFarfetchd
-	writetext IlexForestApprenticeIntroText
-	waitbutton
-	closetext
-	end
-
-.DoneFarfetchd:
-	writetext IlexForestApprenticeAfterText
-	waitbutton
-	closetext
-	end
 
 TrainerSuperNerdIrwin:
 	trainer SUPER_NERD, IRWIN, EVENT_BEAT_SUPER_NERD_IRWIN, SuperNerdIrwinSeenText, SuperNerdIrwinBeatenText, 0, .Script
@@ -192,18 +175,11 @@ IlexForestShrineScript:
 	startbattle
 	ifequal LOSE, .NotBeaten
 	reloadmapafterbattle
-	pause 20
 	special CheckCaughtCelebi
 	iffalse .DidntCatchCelebi
 	setevent EVENT_CAUGHT_CELEBI
-	appear ILEXFOREST_KURT
-	applymovement ILEXFOREST_KURT, MovementData_0x6ef4e
-	opentext
-	writetext Text_KurtCaughtCelebi
-	waitbutton
-	closetext
-	applymovement ILEXFOREST_KURT, MovementData_0x6ef53
-	disappear ILEXFOREST_KURT
+	end
+
 .DidntCatchCelebi:
 	setevent EVENT_BEAT_CELEBI
 	giveitem GS_BALL
@@ -234,90 +210,6 @@ MovementData_0x6ef58:
 	remove_fixed_facing
 	step_end
 
-IlexForestApprenticeIntroText:
-	text "Oh, man… My boss"
-	line "is going to be"
-	cont "steaming…"
-
-	para "The FARFETCH'D"
-	line "that CUTS trees"
-
-	para "for charcoal took"
-	line "off on me."
-
-	para "I can't go looking"
-	line "for it here in the"
-	cont "ILEX FOREST."
-
-	para "It's too big, dark"
-	line "and scary for me…"
-	done
-
-IlexForestApprenticeAfterText:
-	text "Wow! Thanks a"
-	line "whole bunch!"
-
-	para "My boss's #MON"
-	line "won't obey me be-"
-	cont "cause I don't have"
-	cont "a BADGE."
-	done
-
-Text_ItsTheMissingPokemon:
-	text "It's the missing"
-	line "#MON!"
-	done
-
-Text_Kwaaaa:
-	text "Farfetch'd: Kwaa!"
-	done
-
-Text_CharcoalMasterIntro:
-	text "Ah! My FARFETCH'D!"
-
-	para "You found it for"
-	line "us, kid?"
-
-	para "Without it, we"
-	line "wouldn't be able"
-
-	para "to CUT trees for"
-	line "charcoal."
-
-	para "Thanks, kid!"
-
-	para "Now, how can I"
-	line "thank you…"
-
-	para "I know! Here, take"
-	line "this."
-	done
-
-Text_CharcoalMasterOutro:
-	text "That's the CUT HM."
-	line "Teach that to a"
-
-	para "#MON to clear"
-	line "small trees."
-
-	para "Of course, you"
-	line "have to have the"
-
-	para "GYM BADGE from"
-	line "AZALEA to use it."
-	done
-
-Text_CharcoalMasterTalkAfter:
-	text "Do you want to"
-	line "apprentice as a"
-
-	para "charcoal maker"
-	line "with me?"
-
-	para "You'll be first-"
-	line "rate in ten years!"
-	done
-
 Text_DarkPulseIntro:
 	text "What am I doing?"
 
@@ -330,17 +222,6 @@ Text_DarkPulseIntro:
 	line "like it too,"
 
 	para "with this."
-	done
-
-ReceivedDarkPulseText:
-	text "<PLAYER> received"
-	line "TM63."
-	done
-
-TMGoesIntoBagText:
-	text "<PLAYER> puts the"
-	line "TM63 in"
-	cont "the TM Pocket."
 	done
 
 Text_DarkPulseOutro:
@@ -377,6 +258,10 @@ Text_IlexForestShrine:
 	para "It's in honor of"
 	line "the forest's"
 	cont "protector…"
+	done
+
+Text_Kwaaaa:
+	text "Farfetch'd: Kwaaaa!"
 	done
 
 Text_ShrineCelebiEvent:
@@ -509,13 +394,12 @@ IlexForest_MapEvents:
 	bg_event  1, 17, BGEVENT_ITEM, IlexForestHiddenFullHeal
 	bg_event  8, 22, BGEVENT_UP, IlexForestShrineScript
 
-	db 11 ; object events
+	db 10 ; object events
 	object_event 25, 22, SPRITE_FARFETCHD, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IlexForestFarfetchdScript, EVENT_ILEX_FOREST_FARFETCHD
 	object_event 29, 30, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerSuperNerdIrwin, -1
 	object_event  1, 36, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerFEmiko, -1
 	object_event 15, 14, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestDarkPulseGirlScript, -1
 	object_event 20, 32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestRevive, EVENT_ILEX_FOREST_REVIVE
-	object_event  8, 29, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ILEX_FOREST_KURT
 	object_event  3, 24, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestLassScript, EVENT_ILEX_FOREST_LASS
 	object_event 12,  1, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerHexManiacMaeve, -1
 	object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestXAttack, EVENT_ILEX_FOREST_X_ATTACK

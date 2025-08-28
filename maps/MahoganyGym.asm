@@ -83,6 +83,10 @@ MahoganyGymPryceScript:
 .Rematch:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .PostGamePryce
+	writetext PryceText_WelcomeBack
+	waitbutton
+	closetext
+	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	readvar VAR_BADGES
 	ifequal 1, .PryceBattle1
 	ifequal 2, .PryceBattle2
@@ -95,66 +99,34 @@ MahoganyGymPryceScript:
 	sjump .PryceBattle8
 
 .PryceBattle1:
-	writetext PryceText_WelcomeBack
-	waitbutton
-	closetext
-	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE, PRYCE_ALTERNATE
 	sjump AfterPryceRematch
 
 .PryceBattle2:
-	writetext PryceText_WelcomeBack
-	waitbutton
-	closetext
-	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE, PRYCE2
 	sjump AfterPryceRematch
 
 .PryceBattle3:
-	writetext PryceText_WelcomeBack
-	waitbutton
-	closetext
-	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE_2, PRYCE3
 	sjump AfterPryceRematch
 
 .PryceBattle4:
-	writetext PryceText_WelcomeBack
-	waitbutton
-	closetext
-	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE_2, PRYCE4
 	sjump AfterPryceRematch
 
 .PryceBattle5:
-	writetext PryceText_WelcomeBack
-	waitbutton
-	closetext
-	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE_2, PRYCE5
 	sjump AfterPryceRematch
 
 .PryceBattle6:
-	writetext PryceText_WelcomeBack
-	waitbutton
-	closetext
-	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE_3, PRYCE6
 	sjump AfterPryceRematch
 
 .PryceBattle7:
-	writetext PryceText_WelcomeBack
-	waitbutton
-	closetext
-	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE_3, PRYCE7
 	sjump AfterPryceRematch
 
 .PryceBattle8:
-	writetext PryceText_WelcomeBack
-	waitbutton
-	closetext
-	winlosstext PryceText_Blizzard, PryceText_StillGotIt
 	loadtrainer PRYCE_3, PRYCE8
 	sjump AfterPryceRematch
 
@@ -238,10 +210,11 @@ endc
 GymGuyStopsYou1Script:
 	applymovement MAHOGANYGYM_GYM_GUY, StopsYouMovement1
 	turnobject PLAYER, RIGHT
+	opentext
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female1
-	opentext
 	writetext ByTheWay1Text
+.FinishGymGuy1
 	waitbutton
 	closetext
 	applymovement MAHOGANYGYM_GYM_GUY, GoesBackMovement1
@@ -252,24 +225,17 @@ GymGuyStopsYou1Script:
 	end
 
 .Female1:
-	opentext
 	writetext ByTheWay2Text
-	waitbutton
-	closetext
-	applymovement MAHOGANYGYM_GYM_GUY, GoesBackMovement1
-	turnobject MAHOGANYGYM_GYM_GUY, DOWN
-	setscene SCENE_DEFAULT
-	clearevent EVENT_RIVAL_AT_LAKE_OF_RAGE_1
-	clearevent EVENT_LAKE_OF_RAGE_MIYAMOTO
-	end
+	sjump .FinishGymGuy1
 
 GymGuyStopsYou2Script:
 	applymovement MAHOGANYGYM_GYM_GUY, StopsYouMovement2
 	turnobject PLAYER, RIGHT
+	opentext
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female2
-	opentext
 	writetext ByTheWay1Text
+.FinishGymGuy2
 	waitbutton
 	closetext
 	applymovement MAHOGANYGYM_GYM_GUY, GoesBackMovement2
@@ -280,17 +246,8 @@ GymGuyStopsYou2Script:
 	end
 
 .Female2:
-	opentext
-	waitbutton
 	writetext ByTheWay2Text
-	waitbutton
-	closetext
-	applymovement MAHOGANYGYM_GYM_GUY, GoesBackMovement2
-	turnobject MAHOGANYGYM_GYM_GUY, DOWN
-	setscene SCENE_DEFAULT
-	clearevent EVENT_RIVAL_AT_LAKE_OF_RAGE_1
-	clearevent EVENT_LAKE_OF_RAGE_MIYAMOTO
-	end
+	sjump .FinishGymGuy2
 
 MahoganyGymStatue:
 	checkflag ENGINE_GLACIERBADGE

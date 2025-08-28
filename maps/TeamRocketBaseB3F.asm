@@ -179,69 +179,33 @@ TrainerMNinjaF1:
 	trainer MNINJA_F, MNINJA_F1, EVENT_HIDEOUT_NINJA2, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
 
 .Script:
-	pause 15
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
+	scall NinjaFadeOut
 	disappear TEAMROCKETBASEB3F_NINJA2
-	pause 15
-	special FadeInQuickly
-	endifjustbattled
-	opentext
-	writetext MNinjaM1SeenText
-	waitbutton
-	closetext
-	end
+	sjump DisappearNinja
 
 TrainerMNinjaF2:
 	trainer MNINJA_F, MNINJA_F2, EVENT_HIDEOUT_NINJA3, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
 
 .Script:
-	pause 15
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
+	scall NinjaFadeOut
 	disappear TEAMROCKETBASEB3F_NINJA3
-	pause 15
-	special FadeInQuickly
-	endifjustbattled
-	opentext
-	writetext MNinjaM1SeenText
-	waitbutton
-	closetext
-	end
+	sjump DisappearNinja
 
 TrainerMNinjaM1:
 	trainer MNINJA_M, MNINJA_M1, EVENT_HIDEOUT_NINJA, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
 
 .Script:
-	pause 15
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
+	scall NinjaFadeOut
 	disappear TEAMROCKETBASEB3F_NINJA1
-	pause 15
-	special FadeInQuickly
-	endifjustbattled
-	opentext
-	writetext MNinjaM1SeenText
-	waitbutton
-	closetext
-	end
+	sjump DisappearNinja
 
 TrainerMNinjaM2:
 	trainer MNINJA_M, MNINJA_M2, EVENT_HIDEOUT_NINJA4, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
 
 .Script:
-	pause 15
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
+	scall NinjaFadeOut
 	disappear TEAMROCKETBASEB3F_NINJA4
-	pause 15
-	special FadeInQuickly
-	endifjustbattled
-	opentext
-	writetext MNinjaM1SeenText
-	waitbutton
-	closetext
-	end
+	sjump DisappearNinja
 
 TeamRocketBaseB3FOathScript:
 	jumptext NinjaBookText

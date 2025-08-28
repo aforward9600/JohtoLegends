@@ -24,37 +24,6 @@ NurseNiteText:
 	line "#mon Center."
 	done
 
-PokeComNurseMornText:
-	text "Good morning!"
-
-	para "This is the #-"
-	line "mon Communication"
-
-	para "Center--or the"
-	line "#COM Center."
-	done
-
-PokeComNurseDayText:
-	text "Hello!"
-
-	para "This is the #-"
-	line "mon Communication"
-
-	para "Center--or the"
-	line "#com Center."
-	done
-
-PokeComNurseNiteText:
-	text "Good to see you"
-	line "working so late."
-
-	para "This is the #-"
-	line "mon Communication"
-
-	para "Center--or the"
-	line "#com Center."
-	done
-
 NurseAskHealText:
 	text "We can heal your"
 	line "#mon to perfect"
@@ -82,11 +51,6 @@ NurseGoodbyeText:
 	line "again."
 	done
 
-; not used
-	text "We hope to see you"
-	line "again."
-	done
-
 NursePokerusText:
 	text "Your #mon"
 	line "appear to be"
@@ -103,21 +67,6 @@ NursePokerusText:
 
 	para "at a #mon"
 	line "Center."
-	done
-
-PokeComNursePokerusText:
-	text "Your #mon"
-	line "appear to be"
-
-	para "infected by tiny"
-	line "life forms."
-
-	para "Your #mon are"
-	line "healthy and seem"
-	cont "to be fine."
-
-	para "But we can't tell"
-	line "you anything more."
 	done
 
 DifficultBookshelfText:
@@ -186,26 +135,9 @@ HomepageText:
 	line "updated…"
 	done
 
-; not used
-	text "#mon RADIO!"
-
-	para "Call in with your"
-	line "requests now!"
-	done
-
 TrashCanText:
 	text "There's nothing in"
 	line "here…"
-	done
-
-; not used
-	text "A #mon may be"
-	line "able to move this."
-	done
-
-; not used
-	text "Maybe a #mon"
-	line "can break this."
 	done
 
 PokecenterSignText:
@@ -281,7 +213,7 @@ ContestResults_PartyFullText:
 	line "so the #mon was"
 
 	para "sent to your Box"
-	line "in the A.D.S."
+	line "in the ADS."
 	done
 
 GymStatue_CityGymText:

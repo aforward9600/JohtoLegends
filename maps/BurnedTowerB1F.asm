@@ -191,11 +191,6 @@ EnokiMovement6:
 	step DOWN
 	step_end
 
-BurnedTowerB1FEusineText:
-	text "EUSINE: I dug a"
-	line "hole here, too…"
-	done
-
 TheyWontAwakeText:
 	text "They won't awake."
 

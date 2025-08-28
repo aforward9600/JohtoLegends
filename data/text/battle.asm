@@ -230,12 +230,6 @@ BattleText_UseNextMon:
 	text "Use next #mon?"
 	done
 
-BattleText_0x80a93:
-	text "<RIVAL>: Yes!"
-	line "I guess I chose a"
-	cont "good #mon!"
-	prompt
-
 LostAgainstText:
 	text "Lost against"
 	line "<ENEMY>!"
@@ -491,16 +485,6 @@ ClampedByText:
 	text "<TARGET>"
 	line "was Clamped by"
 	cont "<USER>!"
-	prompt
-
-StoringEnergyText:
-	text "<USER>"
-	line "is storing energy!"
-	prompt
-
-UnleashedEnergyText:
-	text "<USER>"
-	line "unleashed energy!"
 	prompt
 
 HungOnText:

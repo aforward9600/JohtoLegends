@@ -145,8 +145,6 @@ GoldenrodCityNameRaterSign:
 	jumptext GoldenrodCityNameRaterSignText
 
 GoldenrodCityUndergroundSignNorth:
-	jumptext GoldenrodCityUndergroundSignNorthText
-
 GoldenrodCityUndergroundSignSouth:
 	jumptext GoldenrodCityUndergroundSignSouthText
 
@@ -405,11 +403,6 @@ GoldenrodCityNameRaterSignText:
 
 	para "Get Your #mon"
 	line "Nicknames Rated"
-	done
-
-GoldenrodCityUndergroundSignNorthText:
-	text "Underground"
-	line "Coming soon"
 	done
 
 GoldenrodCityUndergroundSignSouthText:

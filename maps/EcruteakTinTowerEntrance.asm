@@ -118,13 +118,6 @@ EcruteakTinTowerEntranceSageScript:
 	iftrue .AllowedThrough
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .RangClearBell
-	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .GotClearBell
-	writetext EcruteakTinTowerEntranceSageText_NoClearBell
-	waitbutton
-	closetext
-	end
-
 .GotClearBell:
 	writetext EcruteakTinTowerEntranceSageText_HearsClearBell
 	waitbutton
@@ -343,24 +336,6 @@ EcruteakTinTowerEntranceSageText_GotFogBadge:
 	cont "security for now."
 	done
 
-EcruteakTinTowerEntranceSageText_NoClearBell:
-	text "A momentous event"
-	line "has occurred."
-
-	para "I beg your pardon,"
-	line "but I must ask you"
-	cont "to leave."
-
-	para "…What soothes the"
-	line "soul…"
-
-	para "The WISE TRIO say"
-	line "things that are so"
-
-	para "very difficult to"
-	line "understand…"
-	done
-
 EcruteakTinTowerEntranceSageText_HearsClearBell:
 	text "Ah!"
 
@@ -415,14 +390,6 @@ EcruteakTinTowerEntranceWanderingSageText:
 	para "It soothes the"
 	line "soul of all who"
 	cont "see it."
-	done
-
-EcruteakTinTowerEntranceWanderingSageText_GotClearBell:
-	text "The Bell Tower"
-	line "shook! A #mon"
-
-	para "must have returned"
-	line "to the top!"
 	done
 
 EcruteakTinTowerEntranceGrampsText:

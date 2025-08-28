@@ -95,6 +95,10 @@ CianwoodGymChigusaScript:
 .Rematch:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .PostGameChigusa
+	writetext ReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext ChigusaLossText, ChigusaWinText
 	readvar VAR_BADGES
 	ifequal 3, .ChigusaBattle1
 	ifequal 4, .ChigusaBattle2
@@ -105,52 +109,26 @@ CianwoodGymChigusaScript:
 	sjump .ChigusaBattle6
 
 .ChigusaBattle1:
-	writetext ReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA, CHIGUSA1
 	sjump AfterChigusaRematch
 
 .ChigusaBattle2:
-	writetext ReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA, CHIGUSA2
 	sjump AfterChigusaRematch
 
 .ChigusaBattle3:
-	writetext ReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA_2, CHIGUSA3
-	startbattle
-	reloadmapafterbattle
 	sjump AfterChigusaRematch
 
 .ChigusaBattle4:
-	writetext ReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA_2, CHIGUSA4
 	sjump AfterChigusaRematch
 
 .ChigusaBattle5:
-	writetext ReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA_2, CHIGUSA5
 	sjump AfterChigusaRematch
 
 .ChigusaBattle6:
-	writetext ReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext ChigusaLossText, ChigusaWinText
 	loadtrainer CHIGUSA_2, CHIGUSA6
 	sjump AfterChigusaRematch
 
@@ -241,14 +219,15 @@ CianwoodGymDahliaScript:
 
 RivalWalksLeft:
 	moveobject CIANWOODGYM_RIVAL, 4, 17
-	playsound SFX_ENTER_DOOR
-	appear CIANWOODGYM_RIVAL
-	applymovement CIANWOODGYM_RIVAL, RivalWalksUpMovement
-	opentext
-	writetext CianwoodGymHeyThereText
-	waitbutton
-	closetext
+	scall CianwoodGymRivalWalksUp
 	applymovement CIANWOODGYM_RIVAL, RivalWalksLeftMovement
+	sjump CianwoodGymRivalFinish
+
+RivalWalksRight:
+	moveobject CIANWOODGYM_RIVAL, 5, 17
+	scall CianwoodGymRivalWalksUp
+	applymovement CIANWOODGYM_RIVAL, RivalWalksRightMovement
+CianwoodGymRivalFinish:
 	disappear CIANWOODGYM_RIVAL
 	moveobject CIANWOODGYM_RIVAL, 5, 2
 	appear CIANWOODGYM_RIVAL
@@ -258,8 +237,7 @@ RivalWalksLeft:
 	setscene SCENE_DEFAULT
 	end
 
-RivalWalksRight:
-	moveobject CIANWOODGYM_RIVAL, 5, 17
+CianwoodGymRivalWalksUp:
 	playsound SFX_ENTER_DOOR
 	appear CIANWOODGYM_RIVAL
 	applymovement CIANWOODGYM_RIVAL, RivalWalksUpMovement
@@ -267,14 +245,6 @@ RivalWalksRight:
 	writetext CianwoodGymHeyThereText
 	waitbutton
 	closetext
-	applymovement CIANWOODGYM_RIVAL, RivalWalksRightMovement
-	disappear CIANWOODGYM_RIVAL
-	moveobject CIANWOODGYM_RIVAL, 5, 2
-	appear CIANWOODGYM_RIVAL
-	clearevent EVENT_CIANWOOD_GYM_RIVAL1
-	setevent EVENT_CIANWOOD_CITY_CENTER_RIVAL1
-	setevent EVENT_CLIFFS_EDGE_GATE_GUARD
-	setscene SCENE_DEFAULT
 	end
 
 RivalWalksUpMovement:

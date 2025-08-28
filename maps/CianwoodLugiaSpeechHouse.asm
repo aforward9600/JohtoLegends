@@ -55,76 +55,56 @@ CianwoodLugiaSpeechHouseTeacherScript:
 	buttonsound
 	verbosegiveitem WATER_STONE
 	writetext VaporeonText
-	waitbutton
-	closetext
-	setevent EVENT_GOT_STONE_FROM_THEATRE
-	end
+	sjump .FinishEvolutionStone
 
 .ThunderStone:
 	writetext HereYouGoText
 	buttonsound
 	verbosegiveitem THUNDERSTONE
 	writetext JolteonText
-	waitbutton
-	closetext
-	setevent EVENT_GOT_STONE_FROM_THEATRE
-	end
+	sjump .FinishEvolutionStone
 
 .FireStone:
 	writetext HereYouGoText
 	buttonsound
 	verbosegiveitem FIRE_STONE
 	writetext FlareonText
-	waitbutton
-	closetext
-	setevent EVENT_GOT_STONE_FROM_THEATRE
-	end
+	sjump .FinishEvolutionStone
 
 .SunStone:
 	writetext HereYouGoText
 	buttonsound
 	verbosegiveitem SUN_STONE
 	writetext EspeonText
-	waitbutton
-	closetext
-	setevent EVENT_GOT_STONE_FROM_THEATRE
-	end
+	sjump .FinishEvolutionStone
 
 .MoonStone:
 	writetext HereYouGoText
 	buttonsound
 	verbosegiveitem MOON_STONE
 	writetext UmbreonText
-	waitbutton
-	closetext
-	setevent EVENT_GOT_STONE_FROM_THEATRE
-	end
+	sjump .FinishEvolutionStone
 
 .LeafStone:
 	writetext HereYouGoText
 	buttonsound
 	verbosegiveitem LEAF_STONE
 	writetext LeafeonText
-	waitbutton
-	closetext
-	setevent EVENT_GOT_STONE_FROM_THEATRE
-	end
+	sjump .FinishEvolutionStone
 
 .IceStone:
 	writetext HereYouGoText
 	buttonsound
 	verbosegiveitem ICE_STONE
 	writetext GlaceonText
-	waitbutton
-	closetext
-	setevent EVENT_GOT_STONE_FROM_THEATRE
-	end
+	sjump .FinishEvolutionStone
 
 .ShinyStone:
 	writetext HereYouGoText
 	buttonsound
 	verbosegiveitem SHINY_STONE
 	writetext SylveonText
+.FinishEvolutionStone
 	waitbutton
 	closetext
 	setevent EVENT_GOT_STONE_FROM_THEATRE
@@ -252,20 +232,6 @@ HowIsYourEeveeText:
 
 OKMaybeNextTimeText:
 	text "OK. Perhaps later."
-	done
-
-CianwoodLugiaSpeechHouseTeacherText:
-	text "You came from"
-	line "Olivine?"
-
-	para "Do you remember"
-	line "the four islands"
-	cont "along the way?"
-
-	para "I heard that a "
-	line "mythical sea crea-"
-	cont "ture is hiding in"
-	cont "them."
 	done
 
 CianwoodLugiaSpeechHouseLassText:

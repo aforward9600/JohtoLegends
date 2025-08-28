@@ -4,11 +4,6 @@
 
 	const_def 1 ; locked Pokémon ID table entries, used for species checking
 	const BILLSHOUSE_INDEX_LAPRAS
-	const BILLSHOUSE_INDEX_ODDISH
-	const BILLSHOUSE_INDEX_STARYU
-	const BILLSHOUSE_INDEX_GROWLITHE
-	const BILLSHOUSE_INDEX_VULPIX
-	const BILLSHOUSE_INDEX_PICHU
 
 BillsHouse_MapScripts:
 	db 0 ; scene scripts
@@ -18,11 +13,6 @@ BillsHouse_MapScripts:
 
 .LoadReservedIDs:
 	loadmonindex BILLSHOUSE_INDEX_LAPRAS, LAPRAS
-	loadmonindex BILLSHOUSE_INDEX_ODDISH, ODDISH
-	loadmonindex BILLSHOUSE_INDEX_STARYU, STARYU
-	loadmonindex BILLSHOUSE_INDEX_GROWLITHE, GROWLITHE
-	loadmonindex BILLSHOUSE_INDEX_VULPIX, VULPIX
-	loadmonindex BILLSHOUSE_INDEX_PICHU, PICHU
 	return
 
 BillsGrandpa:

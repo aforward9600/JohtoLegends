@@ -17,7 +17,6 @@ GoldenrodNameRater:
 GoldenrodNameRaterBookshelf:
 	jumpstd genericsink
 
-
 GoldenrodNameRater_MapEvents:
 	db 0, 0 ; filler
 

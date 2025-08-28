@@ -60,13 +60,6 @@ MeetMomScript:
 	writetext MomGivesPokegearText
 	buttonsound
 	special SetDayOfWeek
-.SetDayOfWeek:
-	writetext IsItDSTText
-	yesorno
-	iffalse .WrongDay
-	special InitialSetDSTFlag
-	yesorno
-	iffalse .SetDayOfWeek
 	sjump .DayOfWeekDone
 
 .GrannyGirl:
@@ -78,10 +71,6 @@ MeetMomScript:
 	variablesprite SPRITE_RIVAL, SPRITE_CHRIS
 	sjump .Finish3
 
-.WrongDay:
-	special InitialClearDSTFlag
-	yesorno
-	iffalse .SetDayOfWeek
 .DayOfWeekDone:
 	writetext ComeHomeForDSTText
 	waitbutton
@@ -350,13 +339,7 @@ IsItDSTText:
 	done
 
 ComeHomeForDSTText:
-	text "Come home to"
-	line "adjust your clock"
-
-	para "for Daylight"
-	line "Saving Time."
-
-	para "By the way, for"
+	text "By the way, for"
 	line "the watch, press"
 	cont "Left or Right to"
 

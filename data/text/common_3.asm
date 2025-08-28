@@ -97,74 +97,6 @@ UnknownText_0x1c422a::
 	para "Is that OK?"
 	done
 
-UnknownText_0x1c4275::
-	text "Need more info on"
-	line "mobile battles?"
-	done
-
-UnknownText_0x1c4298::
-	text "For a mobile"
-	line "battle, choose"
-	cont "three #mon."
-
-	para "The maximum daily"
-	line "play time is ten"
-
-	para "minutes for each"
-	line "linked player."
-
-	para "If a battle isn't"
-	line "finished within"
-
-	para "the time limit,"
-	line "the player with"
-
-	para "the fewest fainted"
-	line "#mon wins."
-
-	para "If tied, the team"
-	line "that lost the"
-
-	para "least amount of HP"
-	line "wins."
-	done
-
-UnknownText_0x1c439c::
-	text "Today's remaining"
-	line "time is @"
-	text_decimal wStringBuffer2, 1, 2
-	text " min."
-
-	para "Would you like to"
-	line "battle?"
-	done
-
-UnknownText_0x1c43dc::
-	text "There are only @"
-	text_decimal wStringBuffer2, 1, 2
-	text_start
-	line "min. left today."
-
-	para "Want a quick"
-	line "battle?"
-	done
-
-UnknownText_0x1c4419::
-	text "There is only"
-	line "1 min. left today!"
-
-	para "Want to rush"
-	line "through a battle?"
-	done
-
-UnknownText_0x1c445a::
-	text "There is less than"
-	line "1 min. left today!"
-
-	para "Please try again"
-	line "tomorrow."
-	done
-
 UnknownText_0x1c454b::
 	text "Would you like to"
 	line "save the game?"
@@ -198,19 +130,10 @@ UnknownText_0x1c465f::
 	cont "will be saved. OK?"
 	done
 
-UnknownText_0x1c4693::
-	text "The window save"
-	line "area was exceeded."
-	done
-
 UnknownText_0x1c46b7::
 	text "No windows avail-"
 	line "able for popping."
 	done
-
-UnknownText_0x1c46dc::
-	text "Corrupted event!"
-	prompt
 
 _ObjectEventText::
 	text "Object event"
@@ -497,7 +420,7 @@ UnknownText_0x1c4cce::
 	done
 
 UnknownText_0x1c4cea::
-	text "Oh? Your PACK is"
+	text "Oh? Your Pack is"
 	line "full, dear."
 	done
 
@@ -535,7 +458,7 @@ UnknownText_0x1c4dcd::
 	done
 
 UnknownText_0x1c4dd6::
-	text "Uh-oh, your PACK"
+	text "Uh-oh, your Pack"
 	line "is chock-full."
 	done
 
@@ -686,169 +609,6 @@ UnknownText_0x1c509f::
 
 UnknownText_0x1c50bb::
 	text "Darn!"
-	done
-
-_MobileStadiumEntryText::
-	text "Data for use in"
-	line "the MOBILE STADIUM"
-
-	para "of the N64 #mon"
-	line "STADIUM 2 can be"
-	cont "read here."
-
-	para "Read the data?"
-	done
-
-_MobileStadiumSuccessText::
-	text "Data transfer is"
-	line "complete."
-
-	para "We hope you enjoy"
-	line "MOBILE STADIUM"
-
-	para "battles in the N64"
-	line "#mon STADIUM 2."
-
-	para ""
-	done
-
-UnknownText_0x1c5182::
-	text "Clock time unknown"
-	done
-
-UnknownText_0x1c5196::
-	text "Delete the saved"
-	line "LOG-IN PASSWORD?"
-	done
-
-UnknownText_0x1c51b9::
-	text "Deleted the LOG-IN"
-	line "PASSWORD."
-	done
-
-UnknownText_0x1c51d7::
-	text "Pick three #mon"
-	line "for battle."
-	prompt
-
-UnknownText_0x1c51f4::
-	text_ram wMobileParticipant1Nickname
-	text ","
-	line "@"
-	text_ram wMobileParticipant2Nickname
-	text " and"
-	cont "@"
-	text_ram wMobileParticipant3Nickname
-	text "."
-
-	para "Use these three?"
-	done
-
-UnknownText_0x1c521c::
-	text "Only three #mon"
-	line "may enter."
-	prompt
-
-UnknownText_0x1c5238::
-	text "The CARD FOLDER"
-	line "stores your and"
-
-	para "your friends'"
-	line "CARDS."
-
-	para "A CARD contains"
-	line "information like"
-
-	para "the person's name,"
-	line "phone number and"
-	cont "profile."
-
-	para ""
-	done
-
-UnknownText_0x1c52bc::
-	text "This is your CARD."
-
-	para "Once you've"
-	line "entered your phone"
-
-	para "number, you can"
-	line "trade CARDS with"
-	cont "your friends."
-
-	para ""
-	done
-
-UnknownText_0x1c531e::
-	text "If you have your"
-	line "friend's CARD, you"
-
-	para "can use it to make"
-	line "a call from a"
-
-	para "mobile phone on"
-	line "the 2nd floor of a"
-	cont "#mon CENTER."
-
-	para ""
-	done
-
-UnknownText_0x1c5394::
-	text "To safely store"
-	line "your collection of"
-
-	para "CARDS, you must"
-	line "set a PASSCODE for"
-	cont "your CARD FOLDER."
-
-	para ""
-	done
-
-UnknownText_0x1c53ee::
-	text "If the CARD FOLDER"
-	line "is deleted, all"
-
-	para "its CARDS and the"
-	line "PASSCODE will also"
-	cont "be deleted."
-
-	para "Beware--a deleted"
-	line "CARD FOLDER can't"
-	cont "be restored."
-
-	para "Want to delete"
-	line "your CARD FOLDER?"
-	done
-
-UnknownText_0x1c5494::
-	text "Are you sure you"
-	line "want to delete it?"
-	done
-
-UnknownText_0x1c54b9::
-	text "The CARD FOLDER"
-	line "has been deleted."
-
-	para ""
-	done
-
-UnknownText_0x1c54dd::
-	text "There is an older"
-	line "CARD FOLDER from a"
-	cont "previous journey."
-
-	para "Do you want to"
-	line "open it?"
-	done
-
-UnknownText_0x1c552d::
-	text "Delete the old"
-	line "CARD FOLDER?"
-	done
-
-UnknownText_0x1c554a::
-	text "Finish registering"
-	line "CARDS?"
 	done
 
 UnknownText_0x1c5565::
@@ -1107,7 +867,7 @@ _NeedAtLeastThreeMonText::
 	done
 
 _EggDoesNotQualifyText::
-	text "Sorry, an EGG"
+	text "Sorry, an Egg"
 	line "doesn't qualify."
 
 	para ""
@@ -1248,7 +1008,7 @@ UnknownText_0x1c5c28::
 
 UnknownText_0x1c5c44::
 	text "<PLAYER> played the"
-	line "# FLUTE.@"
+	line "# Flute.@"
 	text_waitbutton
 	text_end
 
@@ -1289,18 +1049,6 @@ Text_PPsIncreased::
 
 UnknownText_0x1c5cf1::
 	text "PP was restored."
-	prompt
-
-UnknownText_0x1c5d03::
-	text "There was a trophy"
-	line "inside!@"
-	sound_dex_fanfare_50_79
-	text_start
-
-	para "@"
-	text_ram wPlayerName
-	text " sent the"
-	line "trophy home."
 	prompt
 
 UnknownText_0x1c5d3e::

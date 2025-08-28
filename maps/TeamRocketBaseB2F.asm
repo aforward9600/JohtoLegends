@@ -182,72 +182,36 @@ HideoutB2FArcherScript:
 	end
 
 TrainerMNinjaF3:
-	trainer MNINJA_F, MNINJA_F3, EVENT_HIDEOUT_NINJA6, MNinjaM2SeenText, MNinjaM2SeenText, 0, .Script
+	trainer MNINJA_F, MNINJA_F3, EVENT_HIDEOUT_NINJA6, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
 
 .Script:
-	pause 15
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
+	scall NinjaFadeOut
 	disappear TEAMROCKETBASEB2F_NINJA3
-	pause 15
-	special FadeInQuickly
-	endifjustbattled
-	opentext
-	writetext MNinjaM2SeenText
-	waitbutton
-	closetext
-	end
+	sjump DisappearNinja
 
 TrainerMNinjaM3:
-	trainer MNINJA_M, MNINJA_M3, EVENT_HIDEOUT_NINJA5, MNinjaM2SeenText, MNinjaM2SeenText, 0, .Script
+	trainer MNINJA_M, MNINJA_M3, EVENT_HIDEOUT_NINJA5, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
 
 .Script:
-	pause 15
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
+	scall NinjaFadeOut
 	disappear TEAMROCKETBASEB2F_NINJA
-	pause 15
-	special FadeInQuickly
-	endifjustbattled
-	opentext
-	writetext MNinjaM2SeenText
-	waitbutton
-	closetext
-	end
+	sjump DisappearNinja
 
 TrainerMNinjaM4:
-	trainer MNINJA_M, MNINJA_M4, EVENT_HIDEOUT_NINJA8, MNinjaM2SeenText, MNinjaM2SeenText, 0, .Script
+	trainer MNINJA_M, MNINJA_M4, EVENT_HIDEOUT_NINJA8, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
 
 .Script:
-	pause 15
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
+	scall NinjaFadeOut
 	disappear TEAMROCKETBASEB2F_NINJA4
-	pause 15
-	special FadeInQuickly
-	endifjustbattled
-	opentext
-	writetext MNinjaM2SeenText
-	waitbutton
-	closetext
-	end
+	sjump DisappearNinja
 
 TrainerMNinjaF4:
-	trainer MNINJA_F, MNINJA_F4, EVENT_HIDEOUT_NINJA7, MNinjaM2SeenText, MNinjaM2SeenText, 0, .Script
+	trainer MNINJA_F, MNINJA_F4, EVENT_HIDEOUT_NINJA7, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script
 
 .Script:
-	pause 15
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
+	scall NinjaFadeOut
 	disappear TEAMROCKETBASEB2F_NINJA2
-	pause 15
-	special FadeInQuickly
-	endifjustbattled
-	opentext
-	writetext MNinjaM2SeenText
-	waitbutton
-	closetext
-	end
+	sjump DisappearNinja
 
 GoldenrodWorkerScript:
 	jumptextfaceplayer GoldenrodWorkerHelpMeText
@@ -258,49 +222,20 @@ HideoutWings:
 	iftrue .RainbowWingRecover
 	verbosegiveitem SILVER_WING
 	opentext
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .FemaleRainbowWing
 	writetext GotRainbowWingText
 	giveitem RAINBOW_WING
-	waitbutton
-	closetext
-	setevent EVENT_HIDEOUT_WINGS
-	disappear TEAMROCKETBASEB2F_POKE_BALL2
-	end
-
-.FemaleRainbowWing:
-	writetext GotRainbowWingFemaleText
-	giveitem RAINBOW_WING
-	waitbutton
-	closetext
-	setevent EVENT_HIDEOUT_WINGS
-	disappear TEAMROCKETBASEB2F_POKE_BALL2
-	end
+	sjump FinishGivingWings
 
 .RainbowWingRecover:
 	verbosegiveitem RAINBOW_WING
 	opentext
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .FemaleSilverWing
 	writetext GotSilverWingText
 	giveitem SILVER_WING
+FinishGivingWings:
 	waitbutton
 	closetext
 	setevent EVENT_HIDEOUT_WINGS
 	disappear TEAMROCKETBASEB2F_POKE_BALL2
-	end
-
-.FemaleSilverWing:
-	writetext GotSilverWingFemaleText
-	giveitem SILVER_WING
-	waitbutton
-	closetext
-	setevent EVENT_HIDEOUT_WINGS
-	disappear TEAMROCKETBASEB2F_POKE_BALL2
-	end
-
-TeamRocketBaseB2FReloadMap:
-	reloadmapafterbattle
 	end
 
 TeamRocketBaseB2FLockedDoor:
@@ -536,11 +471,6 @@ MovementData_0x6d2a4:
 	step RIGHT
 	step_end
 
-UnknownText_0x6d2ad:
-	text "Hold it right"
-	line "there!"
-	done
-
 Archer3LastMonText:
 	text "I'm almost beaten"
 	line "again?"
@@ -597,76 +527,6 @@ HeresPassword2Text:
 	para "It's useless with-"
 	line "out the other"
 	cont "password."
-	done
-
-GruntM17SeenText:
-	text "The door won't"
-	line "open?"
-
-	para "Well, duh."
-	line "It has to have a"
-
-	para "password that only"
-	line "TEAM ROCKET knows."
-	done
-
-GruntM17BeatenText:
-	text "What? I lost?"
-	done
-
-GruntM17AfterBattleText:
-	text "Heh, I'm just a"
-	line "GRUNT."
-
-	para "I don't know the"
-	line "password. Too bad"
-	cont "for you."
-	done
-
-GruntM18SeenText:
-	text "Oh, a kid? I don't"
-	line "really like this,"
-
-	para "but eliminate you"
-	line "I must."
-	done
-
-GruntM18BeatenText:
-	text "I knew I'd lose…"
-	done
-
-GruntM18AfterBattleText:
-	text "I got wiped out on"
-	line "the last mission"
-	cont "by a kid too."
-
-	para "When we were ab-"
-	line "ducting #MON,"
-
-	para "this kid with long"
-	line "red hair and mean-"
-
-	para "looking eyes just"
-	line "creamed me…"
-	done
-
-GruntM19SeenText:
-	text "You rotten little"
-	line "pest!"
-	done
-
-GruntM19BeatenText:
-	text "Grrrr…"
-	done
-
-GruntM19AfterBattleText:
-	text "Heh, only the boss"
-	line "knows the password"
-	cont "for that door."
-
-	para "Where's the boss?"
-	line "Who knows? Go look"
-	cont "for yourself."
 	done
 
 UnknownText_0x6dd39:
@@ -757,25 +617,7 @@ GotRainbowWingText:
 	line "now."
 	done
 
-GotRainbowWingFemaleText:
-	text "<RIVAL>'s Rainbow"
-	line "Wing was in it as"
-	cont "well."
-
-	para "Better take it for"
-	line "now."
-	done
-
 GotSilverWingText:
-	text "<RIVAL>'s Silver"
-	line "Wing was in it as"
-	cont "well."
-
-	para "Better take it for"
-	line "now."
-	done
-
-GotSilverWingFemaleText:
 	text "<RIVAL>'s Silver"
 	line "Wing was in it as"
 	cont "well."
@@ -788,10 +630,6 @@ CantLeaveWithoutWingsText:
 	text "I can't leave"
 	line "without getting"
 	cont "the wings back."
-	done
-
-MNinjaM2SeenText:
-	text "…………………………"
 	done
 
 ArcherGoAwayText:
