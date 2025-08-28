@@ -31,10 +31,12 @@ CapeBrinkSignText:
 TwoIsland_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
+	db 5 ; warp events
 	warp_event  5,  9, TWO_ISLAND_PORT, 1
 	warp_event  6,  9, TWO_ISLAND_PORT, 2
 	warp_event 15,  9, TWO_ISLAND_POKECENTER, 1
+	warp_event 25,  9, TWO_ISLAND_HOUSE, 1
+	warp_event 29,  9, TWO_ISLAND_GAME_HOUSE, 1
 
 	db 0 ; coord events
 

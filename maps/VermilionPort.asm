@@ -69,6 +69,7 @@ VermilionPortWalkUpToShipScript:
 	writetext HeadToOneIslandText
 	yesorno
 	iffalse .Cancel
+	setevent EVENT_LOST_BOY_TWO_ISLAND
 	sjump .OneIsland
 
 .VermilionPortMenu

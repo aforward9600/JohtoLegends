@@ -792,6 +792,9 @@ ENDM
 	map_attributes SevenIslandMastersHouse, SEVEN_ISLAND_MASTERS_HOUSE, $00, 0
 	map_attributes SevenIslandPokecenter, SEVEN_ISLAND_POKECENTER, $00, 0
 	map_attributes SevenIslandMart, SEVEN_ISLAND_MART, $00, 0
+	map_attributes CapeBrinkHouse, CAPE_BRINK_HOUSE, $00, 0
+	map_attributes TwoIslandHouse, TWO_ISLAND_HOUSE, $00, 0
+	map_attributes TwoIslandGameHouse, TWO_ISLAND_GAME_HOUSE, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1

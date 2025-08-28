@@ -152,6 +152,9 @@ SootheBellHouse_Blocks:
 CherrygroveFisherHouse_Blocks:
 SelphysHouse_Blocks:
 OneIslandHouse_Blocks:
+CapeBrinkHouse_Blocks:
+TwoIslandHouse_Blocks:
+TwoIslandGameHouse_Blocks:
 	INCBIN "maps/House1.ablk"
 
 BillsFamilysHouse_Blocks:
