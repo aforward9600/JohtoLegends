@@ -795,6 +795,8 @@ ENDM
 	map_attributes CapeBrinkHouse, CAPE_BRINK_HOUSE, $00, 0
 	map_attributes TwoIslandHouse, TWO_ISLAND_HOUSE, $00, 0
 	map_attributes TwoIslandGameHouse, TWO_ISLAND_GAME_HOUSE, $00, 0
+	map_attributes RegicePuzzleChamber, REGICE_PUZZLE_CHAMBER, $00, 0
+	map_attributes RegiceChamber, REGICE_CHAMBER, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1

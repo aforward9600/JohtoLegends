@@ -96,3 +96,5 @@
 	tilecoll WALL, WALL, WALL, WALL ; 5f
 	tilecoll WALL, WALL, WALL, WALL ; 60
 	tilecoll WALL, ICE, WALL, ICE ; 61
+	tilecoll FLOOR, WALL, WARP_CARPET_DOWN, FLOOR ; 62
+	tilecoll WATER, WATER, WATER, WATER ; 63

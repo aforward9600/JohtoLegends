@@ -1149,10 +1149,14 @@ RuinValley_Blocks:
 
 RegirockPuzzleChamber_Blocks:
 RegidragoPuzzleChamber_Blocks:
+RegicePuzzleChamber_Blocks:
 	INCBIN "maps/RegiPuzzleChamber.ablk"
 
 RegidragoChamber_Blocks:
 	INCBIN "maps/RegidragoChamber.ablk"
+
+RegiceChamber_Blocks:
+	INCBIN "maps/RegiceChamber.ablk"
 
 DottedHoleEntrance_Blocks:
 	INCBIN "maps/DottedHoleEntrance.ablk"

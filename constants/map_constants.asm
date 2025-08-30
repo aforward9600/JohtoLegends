@@ -567,10 +567,12 @@ ENDM
 	map_const ICEFALL_CAVE_ENTRANCE,                       10, 12 ; 23
 	map_const ICEFALL_CAVE_1F,                             10,  9 ; 24
 	map_const ICEFALL_CAVE_2F,                              9, 11 ; 25
-	map_const ICEFALL_CAVE_BACK_CAVE,                      10, 11 ; 26
-	map_const FOUR_ISLAND_POKECENTER,                       5,  4 ; 27
-	map_const CELIOS_HOUSE,                                 5,  4 ; 28
-	map_const ONE_ISLAND_HOUSE,                             5,  4 ; 29
+	map_const ICEFALL_CAVE_BACK_CAVE,                      12, 12 ; 26
+	map_const REGICE_PUZZLE_CHAMBER,                        4,  4 ; 27
+	map_const REGICE_CHAMBER,                               5,  5 ; 28
+	map_const FOUR_ISLAND_POKECENTER,                       5,  4 ; 29
+	map_const CELIOS_HOUSE,                                 5,  4 ; 30
+	map_const ONE_ISLAND_HOUSE,                             5,  4 ; 31
 
 	newgroup
 

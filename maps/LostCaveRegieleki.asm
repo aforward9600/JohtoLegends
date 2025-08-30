@@ -46,5 +46,5 @@ LostCaveRegieleki_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  5,  2, SPRITE_REGIELEKI, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, RegielekiScript, EVENT_LOST_CAVE_REGIELEKI
+	object_event  5,  4, SPRITE_REGIELEKI, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, RegielekiScript, EVENT_LOST_CAVE_REGIELEKI
 	

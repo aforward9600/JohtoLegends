@@ -140,3 +140,5 @@
 	tilecoll FLOOR, FLOOR, CAVE, WALL ; 8b
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 8c
 	tilecoll WARP_CARPET_LEFT, FLOOR, FLOOR, WARP_CARPET_RIGHT ; 8d
+	tilecoll FLOOR, WALL, WALL, FLOOR ; 8e
+	tilecoll WALL, FLOOR, FLOOR, WALL ; 8f
