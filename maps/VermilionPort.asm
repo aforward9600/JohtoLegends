@@ -70,6 +70,7 @@ VermilionPortWalkUpToShipScript:
 	yesorno
 	iffalse .Cancel
 	setevent EVENT_LOST_BOY_TWO_ISLAND
+	setevent EVENT_FIVE_ISLAND_FERROPEXOLA
 	sjump .OneIsland
 
 .VermilionPortMenu

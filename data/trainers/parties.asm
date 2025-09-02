@@ -2343,6 +2343,14 @@ endc
 	dw DRILL_PECK, RETURN, DRILL_RUN, ROOST
 	db -1 ; end
 
+	next_list_item ; YOUNGSTER (10)
+	db "Mik@", TRAINERTYPE_NORMAL
+	db 85
+	dw MACHAMP
+	db 85
+	dw ANNIHILAPE
+	db -1
+
 	end_list_items
 
 SchoolboyGroup:
@@ -3318,21 +3326,21 @@ else
 endc
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERF (19) unused
+	next_list_item ; COOLTRAINERF (19) Kindle Road
 	db "Raina@", TRAINERTYPE_MOVES
-	db 61
+	db 85
 	dw AMBIPOM
 	dw SWORDS_DANCE, FAINT_ATTACK, DOUBLE_EDGE, ACROBATICS
-	db 61
+	db 85
 	dw AZUMARILL
 	dw WAVE_CRASH, SUPERPOWER, PLAY_ROUGH, RAIN_DANCE
-	db 61
+	db 85
 	dw BUTTERFREE
 	dw SIGNAL_WAVE, AIR_SLASH, QUIVER_DANCE, BATON_PASS
-	db 61
+	db 85
 	dw NIDOQUEEN
 	dw EARTHQUAKE, SUPERPOWER, POISON_JAB, CRUNCH
-	db 62
+	db 85
 	dw GARDEVOIR
 	dw MOONBLAST, PSYCHIC_M, THUNDERBOLT, CALM_MIND
 	db -1 ; end
@@ -4419,6 +4427,19 @@ else
 	db NO_ITEM
 endc
 	dw HYDRO_PUMP, ICE_BEAM, DRAGON_PULSE, AGILITY
+	db -1 ; end
+
+	next_list_item ; SWIMMERM (21)
+	db "Daryl@", TRAINERTYPE_MOVES
+	db 85
+	dw POLITOED
+	dw HYDRO_PUMP, PERISH_SONG, ICE_BEAM, FOCUS_BLAST
+	db 85
+	dw LANTURN
+	dw ICE_BEAM, SURF, THUNDERBOLT, AQUA_RING
+	db 85
+	dw TOXICROAK
+	dw POISON_JAB, CLOSE_COMBAT, SUCKER_PUNCH, BULK_UP
 	db -1 ; end
 
 	end_list_items
@@ -5940,6 +5961,16 @@ CamperGroup:
 	dw POLIWRATH
 	dw WATERFALL, SUBMISSION, ICE_PUNCH, HYPNOSIS
 	db -1 ; end
+
+	next_list_item ; CAMPER
+	db "Gerald@", TRAINERTYPE_NORMAL
+	db 84
+	dw QUAGSIRE
+	db 84
+	dw AMPHAROS
+	db 85
+	dw GLISCOR
+	db -1
 
 	end_list_items
 

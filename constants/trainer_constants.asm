@@ -118,6 +118,7 @@ CHRIS EQU __enum__
 	const GORDY
 	const RANDY
 	const BARNEY_YOUNGSTER
+	const MIK
 
 	trainerclass SCHOOLBOY ; 17
 	const FINN
@@ -290,6 +291,7 @@ CHRIS EQU __enum__
 	const CAMERON
 	const SETH
 	const TANNER
+	const DARYL
 
 	trainerclass SWIMMERF ; 27
 	const ANGIE
@@ -430,6 +432,7 @@ CHRIS EQU __enum__
 	const JAOQUIN
 	const GARRET2
 	const GARRET3
+	const GERALD
 
 	trainerclass ARIANA ; 37
 	const ARIANA_1

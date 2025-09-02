@@ -4,7 +4,24 @@
 Route28SteelWingHouse_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .FerropexolaWeekend
+
+.FerropexolaWeekend:
+	checkevent EVENT_COMPLETED_EPILOGUE
+	iffalse .NoDisappear
+	checkevent EVENT_BEAT_FERROPEXOLA
+	iffalse .NoDisappear
+	readvar VAR_WEEKDAY
+	ifequal SATURDAY, .FerroDisappears
+	ifequal SUNDAY, .FerroDisappears
+	appear ROUTE27SANDSTORMHOUSE_FERROPEXOLA
+.NoDisappear
+	return
+
+.FerroDisappears:
+	disappear ROUTE27SANDSTORMHOUSE_FERROPEXOLA
+	return
 
 FerropexolaScript:
 	faceplayer
