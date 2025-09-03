@@ -99,3 +99,9 @@
 	tilecoll WALL, WALL, FLOOR, WALL ; 62
 	tilecoll WALL, WALL, WALL, FLOOR ; 63
 	tilecoll FLOOR, WALL, WALL, WALL ; 64
+	tilecoll WALL, STOP_SPIN, WALL, SPIN_UP ; 65
+	tilecoll STOP_SPIN, FLOOR, SPIN_UP, WALL ; 66
+	tilecoll SPIN_DOWN, WALL, STOP_SPIN, WALL ; 67
+	tilecoll FLOOR, SPIN_DOWN, WALL, STOP_SPIN ; 68
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 69
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 6a

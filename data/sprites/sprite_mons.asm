@@ -72,3 +72,4 @@ SpriteMons:
 	dw MEW
 	dw NIDORAN_F
 	dw REGIELEKI
+	dw HYPNO

@@ -93,7 +93,6 @@ GhostHouseHexManiacScript:
 	end
 
 GhostHouseDusknoirScript:
-	faceplayer
 	opentext
 	writetext GhostHouseDusknoirText
 	pause 15

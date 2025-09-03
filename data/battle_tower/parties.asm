@@ -34,7 +34,7 @@ BattleTowerMons1:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 0, 0, 0, 252, 252, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 2, 0, 0 ; padding
 	dn 14, 13, 15, 11 ; DVs
 	db 15, 10, 5, 10 ; PP
 	db 100 ; Happiness
@@ -103,7 +103,7 @@ BattleTowerMons1:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 0, 252, 0, 252, 0, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 1, 0, 0 ; padding
 	dn 14, 15, 12, 15 ; DVs
 	db 15, 20, 10, 15 ; PP
 	db 255 ; Happiness
@@ -126,7 +126,7 @@ BattleTowerMons1:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 252, 0, 252, 0, 0, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 2, 0, 0 ; padding
 	dn 15, 14, 15, 13 ; DVs
 	db 15, 15, 10, 10 ; PP
 	db 100 ; Happiness
@@ -149,7 +149,7 @@ BattleTowerMons1:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 0, 252, 0, 252, 0, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 1, 0, 0 ; padding
 	dn 11, 11, 13, 15 ; DVs
 	db 5, 10, 5, 10 ; PP
 	db 100 ; Happiness
@@ -172,7 +172,7 @@ BattleTowerMons1:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 0, 252, 0, 252, 0, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 2, 0, 0 ; padding
 	dn 13, 11, 15, 11 ; DVs
 	db 15, 20, 10, 25 ; PP
 	db 100 ; Happiness
@@ -241,7 +241,7 @@ BattleTowerMons1:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 252, 0, 128, 0, 0, 128 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 1, 0, 0 ; padding
 	dn 15, 11, 13, 14 ; DVs
 	db 10, 10, 20, 15 ; PP
 	db 100 ; Happiness
@@ -310,7 +310,7 @@ BattleTowerMons1:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 0, 128, 0, 252, 128, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 2, 0, 0 ; padding
 	dn 13, 13, 15, 13 ; DVs
 	db 20, 20, 15, 30 ; PP
 	db 255 ; Happiness
@@ -396,13 +396,13 @@ BattleTowerMons1:
 	db "NAtuSI-@@@@"
 
 	dw HERACROSS
-	db SITRUS_BERRY
+	db FLAME_ORB
 	dw AERIAL_ACE, ENDURE, HORN_ATTACK, BRICK_BREAK
 
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 0, 252, 0, 252, 0, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 1, 0, 0 ; padding
 	dn 15, 7, 15, 7 ; DVs
 	db 20, 10, 25, 15 ; PP
 	db 100 ; Happiness
@@ -629,13 +629,13 @@ BattleTowerMons2:
 	db "UINDEi@@@@@"
 
 	dw HERACROSS
-	db FOCUS_SASH
+	db FLAME_ORB
 	dw ENDURE, REVERSAL, MEGAHORN, EARTHQUAKE
 
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 0, 252, 0, 252, 0, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 1, 0, 0 ; padding
 	dn 13, 15, 13, 14 ; DVs
 	db 10, 15, 10, 10 ; PP
 	db 100 ; Happiness
@@ -681,7 +681,7 @@ BattleTowerMons2:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 0, 252, 0, 252, 0, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 2, 0, 0 ; padding
 	dn 15, 11, 11, 11 ; DVs
 	db 10, 15, 10, 20 ; PP
 	db 100 ; Happiness
@@ -796,7 +796,7 @@ BattleTowerMons2:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 0, 252, 0, 252, 0, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 1, 0, 0 ; padding
 	dn 15, 11, 15, 13 ; DVs
 	db 15, 15, 15, 20 ; PP
 	db 100 ; Happiness
@@ -865,7 +865,7 @@ BattleTowerMons2:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 0, 252, 0, 252, 0, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 1, 0, 0 ; padding
 	dn 13, 15, 15, 14 ; DVs
 	db 10, 10, 15, 20 ; PP
 	db 255 ; Happiness
@@ -1328,7 +1328,7 @@ BattleTowerMons3:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 0, 0, 0, 252, 252, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 2, 0, 0 ; padding
 	dn 14, 15, 15, 7 ; DVs
 	db 10, 20, 10, 15 ; PP
 	db 100 ; Happiness
@@ -4118,7 +4118,7 @@ BattleTowerMons9:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 0, 0, 0, 252, 252, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 2, 0, 0 ; padding
 	dn 13, 13, 15, 14 ; DVs
 	db 10, 15, 5, 5 ; PP
 	db 100 ; Happiness
@@ -4296,13 +4296,13 @@ BattleTowerMons9:
 	db "TUBOTUBO@@@"
 
 	dw FLAREON
-	db LEFTOVERS
+	db TOXIC_ORB
 	dw FLARE_BLITZ, EARTHQUAKE, WILL_O_WISP, THUNDER_FANG
 
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 252, 252, 0, 0, 0, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 2, 0, 0 ; padding
 	dn 15, 7, 15, 7 ; DVs
 	db 15, 10, 15, 15 ; PP
 	db 100 ; Happiness
@@ -4325,7 +4325,7 @@ BattleTowerMons9:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 0, 252, 0, 252, 0, 0 ; EVs
-	db 0, 0, 0, 0 ; padding
+	db 0, 1, 0, 0 ; padding
 	dn 4, 7, 5, 7 ; DVs
 	db 10, 10, 15, 15 ; PP
 	db 0 ; Happiness

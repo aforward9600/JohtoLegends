@@ -1,4 +1,5 @@
 	object_const_def ; object_event constants
+	const TWOISLAND_GRAMPS
 
 TwoIsland_MapScripts:
 	db 0 ; scene scripts
@@ -9,6 +10,9 @@ TwoIsland_MapScripts:
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_TWO_ISLAND
 	return
+
+TwoIslandGramps:
+	jumptextfaceplayer TwoIslandGrampsText
 
 TwoIslandSign:
 	jumptext TwoIslandSignText
@@ -28,6 +32,13 @@ CapeBrinkSignText:
 	line "Brink"
 	done
 
+TwoIslandGrampsText:
+	text "The boy in the"
+	line "eastern house"
+	cont "tends to get lost"
+	cont "a lot."
+	done
+
 TwoIsland_MapEvents:
 	db 0, 0 ; filler
 
@@ -44,5 +55,6 @@ TwoIsland_MapEvents:
 	bg_event  4,  6, BGEVENT_READ, TwoIslandSign
 	bg_event 22,  8, BGEVENT_READ, CapeBrinkSign
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event 22, 10, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TwoIslandGramps, -1
 	

@@ -71,6 +71,7 @@ VermilionPortWalkUpToShipScript:
 	iffalse .Cancel
 	setevent EVENT_LOST_BOY_TWO_ISLAND
 	setevent EVENT_FIVE_ISLAND_FERROPEXOLA
+	setevent EVENT_BERRY_FOREST_HYPNO
 	sjump .OneIsland
 
 .VermilionPortMenu

@@ -25,7 +25,7 @@ OneIslandGrampsText:
 	para "The embargo must"
 	line "finally be lifted!"
 
-	para "I can finally get"
+	para "I can finally buy"
 	line "my Moomoo milk!"
 	done
 

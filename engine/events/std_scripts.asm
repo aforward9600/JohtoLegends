@@ -962,6 +962,8 @@ StaticPokemonRefresh:
 	iftrue .refreshmoltres
 	checkevent EVENT_BEAT_ZAPDOS
 	iftrue .refreshzapdos
+	checkevent EVENT_BEAT_ARTICUNO
+	iftrue .refresharticuno
 	checkevent EVENT_BEAT_SNORLAX
 	iftrue .refreshsnorlax
 	checkevent EVENT_BEAT_MISSINGNO
@@ -988,6 +990,8 @@ StaticPokemonRefresh:
 	iftrue .refreshregieleki
 	checkevent EVENT_BEAT_REGIGIGAS
 	iftrue .refreshregigigas
+	checkevent EVENT_BEAT_HYPNO
+	iftrue .refreshhypno
 	return
 
 .refreshfarfetchd:
@@ -1021,6 +1025,10 @@ StaticPokemonRefresh:
 
 .refreshzapdos:
 	clearevent EVENT_BEAT_ZAPDOS
+	sjump StaticPokemonRefresh
+
+.refresharticuno:
+	clearevent EVENT_BEAT_ARTICUNO
 	sjump StaticPokemonRefresh
 
 .refreshsnorlax:
@@ -1081,6 +1089,11 @@ StaticPokemonRefresh:
 .refreshregigigas
 	clearevent EVENT_BEAT_REGIGIGAS
 	clearevent EVENT_ONAGAN_TEMPLE_REGIGIGAS
+	sjump StaticPokemonRefresh
+
+.refreshhypno:
+	clearevent EVENT_BEAT_HYPNO
+	clearevent EVENT_BERRY_FOREST_HYPNO
 	sjump StaticPokemonRefresh
 
 TelevisionScript:
