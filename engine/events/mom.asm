@@ -181,13 +181,11 @@ BankOfMom:
 
 .DontHaveThatMuchToDeposit:
 	ld hl, UnknownText_0x1667b
-	call PrintText
-	ret
+	jp PrintText
 
 .CantDepositThatMuch:
 	ld hl, UnknownText_0x16680
-	call PrintText
-	ret
+	jp PrintText
 
 .CancelDeposit:
 	ld a, $7
@@ -247,13 +245,11 @@ BankOfMom:
 
 .InsufficientFundsInBank:
 	ld hl, UnknownText_0x16671
-	call PrintText
-	ret
+	jp PrintText
 
 .NotEnoughRoomInWallet:
 	ld hl, UnknownText_0x16676
-	call PrintText
-	ret
+	jp PrintText
 
 .CancelWithdraw:
 	ld a, $7
@@ -316,8 +312,7 @@ DSTChecks:
 	call .ClearBox
 	bccoord 1, 14
 	ld hl, .Text_LostInstructionBooklet
-	call PlaceHLTextAtBC
-	ret
+	jp PlaceHLTextAtBC
 
 .loop
 	call .ClearBox
@@ -336,8 +331,7 @@ DSTChecks:
 	call .ClearBox
 	bccoord 1, 14
 	ld hl, .Text_SetClockBack
-	call PlaceHLTextAtBC
-	ret
+	jp PlaceHLTextAtBC
 
 .SetDST:
 	ld hl, .Text_SwitchToDST
@@ -351,8 +345,7 @@ DSTChecks:
 	call .ClearBox
 	bccoord 1, 14
 	ld hl, .Text_SetClockForward
-	call PlaceHLTextAtBC
-	ret
+	jp PlaceHLTextAtBC
 
 .SetClockForward:
 	ld a, [wStartHour]
@@ -386,8 +379,7 @@ DSTChecks:
 .ClearBox:
 	hlcoord 1, 14
 	lb bc, 3, 18
-	call ClearBox
-	ret
+	jp ClearBox
 
 .Text_AdjustClock:
 	; Do you want to adjust your clock for Daylight Saving Time?
@@ -455,13 +447,11 @@ Mom_ContinueMenuSetup:
 	lb bc, PRINTNUM_MONEY | PRINTNUM_LEADINGZEROS | 3, 6
 	call PrintNum
 	call UpdateSprites
-	call CGBOnly_CopyTilemapAtOnce
-	ret
+	jp CGBOnly_CopyTilemapAtOnce
 
 Mom_Wait10Frames:
 	ld c, 10
-	call DelayFrames
-	ret
+	jp DelayFrames
 
 Mom_WithdrawDepositMenuJoypad:
 .loop

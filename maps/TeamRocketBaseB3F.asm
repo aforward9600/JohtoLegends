@@ -15,11 +15,9 @@
 	const TEAMROCKETBASEB3F_POKE_BALL5
 
 TeamRocketBaseB3F_MapScripts:
-	db 4 ; scene scripts
+	db 2 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER
-	scene_script .DummyScene2 ; SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS
-	scene_script .DummyScene3 ; SCENE_TEAMROCKETBASEB3F_NOTHING
+	scene_script .DummyScene1 ; SCENE_FINISHED
 
 	db 0 ; callbacks
 
@@ -27,12 +25,6 @@ TeamRocketBaseB3F_MapScripts:
 	end
 
 .DummyScene1:
-	end
-
-.DummyScene2:
-	end
-
-.DummyScene3:
 	end
 
 TeamRocketBaseB3FRocketScript:
@@ -139,7 +131,7 @@ RocketBaseBoss:
 	setevent EVENT_HIDEOUT_B3F_KOGA
 	clearevent EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE
 	setevent EVENT_LEARNED_RATICATE_TAIL
-	setscene SCENE_TEAMROCKETBASEB3F_NOTHING
+	setscene SCENE_FINISHED
 	end
 
 HideoutArianaScript:

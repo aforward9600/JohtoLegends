@@ -2,8 +2,7 @@ FieldMoveJumptableReset:
 	xor a
 	ld hl, wBuffer1
 	ld bc, 7
-	call ByteFill
-	ret
+	jp ByteFill
 
 FieldMoveJumptable:
 	ld a, [wBuffer1]
@@ -30,8 +29,7 @@ GetPartyNick:
 ; copy text from wStringBuffer2 to wStringBuffer3
 	ld de, wStringBuffer2
 	ld hl, wStringBuffer3
-	call CopyName2
-	ret
+	jp CopyName2
 
 CheckEngineFlag::
 ; Check engine flag de
@@ -113,8 +111,7 @@ CheckPartyMove:
 
 FieldMoveFailed:
 	ld hl, .CantUseHere
-	call MenuTextboxBackup
-	ret
+	jp MenuTextboxBackup
 
 .CantUseHere:
 	; Can't use that here.
@@ -238,8 +235,7 @@ CutDownTreeOrGrass:
 	call GetMovementPermissions
 	call UpdateSprites
 	call DelayFrame
-	call LoadStandardFont
-	ret
+	jp LoadStandardFont
 
 CheckOverworldTileArrays:
 	; Input: c contains the tile you're facing
@@ -1202,8 +1198,7 @@ DisappearWhirlpool:
 	ld e, a
 	farcall PlayWhirlpoolSound
 	call BufferScreen
-	call GetMovementPermissions
-	ret
+	jp GetMovementPermissions
 
 TryWhirlpoolOW::
 	ld de, ENGINE_LAPRAS_CALLB
@@ -1641,8 +1636,7 @@ PutTheRodAway:
 	ld a, $1
 	ld [wPlayerAction], a
 	call UpdateSprites
-	call ReplaceKrisSprite
-	ret
+	jp ReplaceKrisSprite
 
 UnknownText_0xd0a4:
 	; Oh! A bite!

@@ -40,8 +40,7 @@ RotateUnownFrontpic:
 	ldh a, [hROMBank]
 	ld b, a
 	call Get2bpp
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 .Copy:
 	ld c, $10

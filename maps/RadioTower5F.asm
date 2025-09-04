@@ -49,7 +49,6 @@ RadioTowerMiyamotoScene2:
 	waitbutton
 	closetext
 	applymovement RADIOTOWER5F_MIYAMOTO, MiyamotoMovement2
-	sjump Reconverge
 
 Reconverge:
 	opentext
@@ -116,19 +115,7 @@ Reconverge:
 	applymovement RADIOTOWER5F_RIVAL, MiyamotoMovement2
 	turnobject RADIOTOWER5F_RIVAL, RIGHT
 	turnobject PLAYER, LEFT
-	opentext
-	writetext HeresTheClearBellText
-	buttonsound
-	verbosegiveitem CLEAR_BELL
-	writetext LetsGoText
-	waitbutton
-	closetext
-	setevent EVENT_GOLDENROD_TOWER_RIVAL_1
-	special FadeOutPalettes
-	special HealParty
-	pause 15
-	warp RADIO_TOWER_1F, 10, 3
-	end
+	sjump .FinishRival
 
 .RivalAppears2:
 	playsound SFX_ENTER_DOOR
@@ -157,6 +144,7 @@ Reconverge:
 	applymovement RADIOTOWER5F_RIVAL, MiyamotoMovement2
 	turnobject RADIOTOWER5F_RIVAL, LEFT
 	turnobject PLAYER, RIGHT
+.FinishRival:
 	opentext
 	writetext HeresTheClearBellText
 	buttonsound

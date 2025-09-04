@@ -436,13 +436,10 @@ Function1704e1:
 	call JoyTextDelay
 	ld a, [wJumptableIndex]
 	bit 7, a
-	jr nz, .done
+	ret nz
 	call .DoJumptable
 	farcall ReloadMapPart
 	jr .loop
-
-.done
-	ret
 
 .DoJumptable:
 	ld a, [wJumptableIndex]

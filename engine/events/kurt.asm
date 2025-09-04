@@ -1,7 +1,6 @@
 Kurt_PrintTextWhichApricorn:
 	ld hl, .Text
-	call PrintText
-	ret
+	jp PrintText
 
 .Text:
 	; Which APRICORN should I use?
@@ -10,8 +9,7 @@ Kurt_PrintTextWhichApricorn:
 
 Kurt_PrintTextHowMany:
 	ld hl, .Text
-	call PrintText
-	ret
+	jp PrintText
 
 .Text:
 	; How many should I make?
@@ -48,8 +46,7 @@ SelectApricornForKurt:
 	call Kurt_GiveUpSelectedQuantityOfSelectedApricorn
 
 .done
-	call ExitMenu
-	ret
+	jp ExitMenu
 
 Kurt_SelectApricorn:
 	farcall FindApricornsInBag
@@ -144,8 +141,7 @@ Kurt_SelectQuantity:
 	scf
 
 .done
-	call CloseWindow
-	ret
+	jp CloseWindow
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags

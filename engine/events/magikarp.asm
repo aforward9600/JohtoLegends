@@ -309,8 +309,7 @@ MagikarpHouseSign:
 	ld [wMagikarpLength + 1], a
 	call PrintMagikarpLength
 	ld hl, .CurrentRecordtext
-	call PrintText
-	ret
+	jp PrintText
 
 .CurrentRecordtext:
 	; "CURRENT RECORD"

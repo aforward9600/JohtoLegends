@@ -52,8 +52,7 @@ InitNDaysCountdown:
 	call UpdateTime
 	pop hl
 	inc hl
-	call CopyDayToHL
-	ret
+	jp CopyDayToHL
 
 CheckDayDependentEventHL:
 	inc hl
@@ -70,20 +69,30 @@ RestartReceiveCallDelay:
 	ld [hl], a
 	call UpdateTime
 	ld hl, wReceiveCallDelay_StartTime
-	call CopyDayHourMinToHL
-	ret
+	jp CopyDayHourMinToHL
 
 CheckReceiveCallDelay:
 	ld hl, wReceiveCallDelay_StartTime
 	call CalcMinsHoursDaysSince
 	call GetMinutesSinceIfLessThan60
 	ld hl, wReceiveCallDelay_MinsRemaining
-	call UpdateTimeRemaining
-	ret
+	jp UpdateTimeRemaining
 
 RestartDailyResetTimer:
+	callasm ResetBerryForestBerries
 	ld hl, wDailyResetTimer
 	jp InitOneDayCountdown
+
+ResetBerryForestBerries:
+	clearevent EVENT_BERRY_FOREST_ORAN_BERRY
+	clearevent EVENT_BERRY_FOREST_LUM_BERRY
+	clearevent EVENT_BERRY_FOREST_RAWST_BERRY
+	clearevent EVENT_BERRY_FOREST_CHERI_BERRY
+	clearevent EVENT_BERRY_FOREST_CHESTO_BERRY
+	clearevent EVENT_BERRY_FOREST_PERSIM_BERRY
+	clearevent EVENT_BERRY_FOREST_PECHA_BERRY
+	clearevent EVENT_BERRY_FOREST_ASPEAR_BERRY
+	end
 
 CheckDailyResetTimer::
 	ld hl, wDailyResetTimer

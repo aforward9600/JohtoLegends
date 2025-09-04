@@ -79,6 +79,36 @@ BerryForestHypno:
 	reloadmapafterbattle
 	end
 
+BerryForestBerrySign:
+	jumptext BerryForestBerrySignText
+
+BerryForestHypnoSign:
+	jumptext BerryForestHypnoSignText
+
+BerryForestAspearBerry:
+	hiddenitem ASPEAR_BERRY, EVENT_BERRY_FOREST_ASPEAR_BERRY
+
+BerryForestCheriBerry:
+	hiddenitem CHERRI_BERRY, EVENT_BERRY_FOREST_CHERI_BERRY
+
+BerryForestChestoBerry:
+	hiddenitem CHESTO_BERRY, EVENT_BERRY_FOREST_CHESTO_BERRY
+
+BerryForestLumBerry:
+	hiddenitem LUM_BERRY, EVENT_BERRY_FOREST_LUM_BERRY
+
+BerryForestOranBerry:
+	hiddenitem ORAN_BERRY, EVENT_BERRY_FOREST_ORAN_BERRY
+
+BerryForestPechaBerry:
+	hiddenitem PECHA_BERRY, EVENT_BERRY_FOREST_PECHA_BERRY
+
+BerryForestPersimBerry:
+	hiddenitem PERSIM_BERRY, EVENT_BERRY_FOREST_PERSIM_BERRY
+
+BerryForestRawstBerry:
+	hiddenitem RAWST_BERRY, EVENT_BERRY_FOREST_RAWST_BERRY
+
 BerryForestHypnoText:
 	text "Hypno!"
 	done
@@ -109,6 +139,18 @@ BerryForestYoungsterText3:
 	cont "house!"
 	done
 
+BerryForestBerrySignText:
+	text "Use the Itemfinder"
+	line "to find berries on"
+	cont "the ground."
+	done
+
+BerryForestHypnoSignText:
+	text "Watch out for"
+	line "hypnotizing"
+	cont "#mon."
+	done
+
 BerryForest_MapEvents:
 	db 0, 0 ; filler
 
@@ -116,7 +158,17 @@ BerryForest_MapEvents:
 	warp_event 26, 37, BOND_BRIDGE, 1
 	warp_event 27, 37, BOND_BRIDGE, 2
 
-	db 0 ; coord events
+	db 10 ; coord events
+	coord_event 22, 30, BGEVENT_READ, BerryForestBerrySign
+	coord_event  2, 20, BGEVENT_READ, BerryForestHypnoSign
+	coord_event 28,  1, BGEVENT_ITEM, BerryForestChestoBerry
+	coord_event  3,  1, BGEVENT_ITEM, BerryForestLumBerry
+	coord_event  2, 23, BGEVENT_ITEM, BerryForestPechaBerry
+	coord_event  8,  1, BGEVENT_ITEM, BerryForestRawstBerry
+	coord_event 23, 12, BGEVENT_ITEM, BerryForestOranBerry
+	coord_event 28, 26, BGEVENT_ITEM, BerryForestPersimBerry
+	coord_event 14,  1, BGEVENT_ITEM, BerryForestAspearBerry
+	coord_event  7, 17, BGEVENT_ITEM, BerryForestCheriBerry
 
 	db 0 ; bg events
 

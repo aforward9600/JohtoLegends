@@ -8,8 +8,7 @@ ProfOaksPC:
 	ld hl, OakPCText4
 	call PrintText
 	call JoyWaitAorB
-	call ExitMenu
-	ret
+	jp ExitMenu
 
 ProfOaksPCBoot:
 	ld hl, OakPCText2
@@ -17,8 +16,7 @@ ProfOaksPCBoot:
 	call Rate
 	call PlaySFX ; sfx loaded by previous Rate function call
 	call JoyWaitAorB
-	call WaitSFX
-	ret
+	jp WaitSFX
 
 ProfOaksPCRating:
 	call Rate
@@ -28,8 +26,7 @@ ProfOaksPCRating:
 	pop de
 	call PlaySFX
 	call JoyWaitAorB
-	call WaitSFX
-	ret
+	jp WaitSFX
 
 Rate:
 ; calculate Seen/Owned

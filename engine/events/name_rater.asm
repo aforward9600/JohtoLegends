@@ -75,8 +75,7 @@ _NameRater:
 	ld hl, NameRaterEggText
 
 .done
-	call PrintText
-	ret
+	jp PrintText
 
 CheckIfMonIsYourOT:
 ; Checks to see if the partymon loaded in [wCurPartyMon] has the different OT as you.  Returns carry if not.

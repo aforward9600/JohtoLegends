@@ -3,11 +3,6 @@ MAP_NAME_SIGN_START EQU $c0
 ReturnFromMapSetupScript::
 	xor a
 	ldh [hBGMapMode], a
-	farcall .inefficient_farcall ; this is a waste of 6 ROM bytes and 6 stack bytes
-	ret
-
-; should have just been a fallthrough
-.inefficient_farcall
 	ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]
@@ -128,8 +123,7 @@ InitMapNameFrame:
 	ld b, 2
 	ld c, 18
 	call InitMapSignAttrMap
-	call PlaceMapNameFrame
-	ret
+	jp PlaceMapNameFrame
 
 PlaceMapNameCenterAlign:
 	ld a, [wCurLandmark]
@@ -144,8 +138,7 @@ PlaceMapNameCenterAlign:
 	hlcoord 0, 2
 	add hl, bc
 	ld de, wStringBuffer1
-	call PlaceString
-	ret
+	jp PlaceString
 
 .GetNameLength:
 	ld c, 0

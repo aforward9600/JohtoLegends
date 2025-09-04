@@ -26,8 +26,7 @@ PhotoStudio:
 	ld hl, .Text_Egg
 
 .print_text
-	call PrintText
-	ret
+	jp PrintText
 
 .Text_AskWhichMon:
 	; Which #MON should I photo- graph?

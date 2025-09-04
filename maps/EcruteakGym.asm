@@ -124,6 +124,10 @@ EcruteakGymEnokiScript:
 .EnokiRematch:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .PostGameEnoki
+	writetext EnokiReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext EnokiWinLossText, EnokiWinText
 	readvar VAR_BADGES
 	ifequal 2, .EnokiBattle1
 	ifequal 3, .EnokiBattle2
@@ -135,58 +139,30 @@ EcruteakGymEnokiScript:
 	sjump .EnokiBattle7
 
 .EnokiBattle1:
-	writetext EnokiReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI, ENOKI_ALTERNATE
 	sjump AfterEnokiRematch
 
 .EnokiBattle2:
-	writetext EnokiReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI_2, ENOKI2
 	sjump AfterEnokiRematch
 
 .EnokiBattle3:
-	writetext EnokiReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI_2, ENOKI3
 	sjump AfterEnokiRematch
 
 .EnokiBattle4:
-	writetext EnokiReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI_2, ENOKI4
 	sjump AfterEnokiRematch
 
 .EnokiBattle5:
-	writetext EnokiReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI_3, ENOKI5
 	sjump AfterEnokiRematch
 
 .EnokiBattle6:
-	writetext EnokiReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI_3, ENOKI6
 	sjump AfterEnokiRematch
 
 .EnokiBattle7:
-	writetext EnokiReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext EnokiWinLossText, EnokiWinText
 	loadtrainer ENOKI_3, ENOKI7
 	sjump AfterEnokiRematch
 
