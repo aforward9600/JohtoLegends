@@ -1425,7 +1425,7 @@ HandleFlameToxicOrb:
 .OrbCheck
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
-	cp 0
+	or a
 	ret nz
 	callfar GetOpponentItem
 	ld a, b

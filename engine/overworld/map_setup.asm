@@ -10,10 +10,6 @@ RunMapSetupScript::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call ReadMapSetupScript
-	ret
-
-INCLUDE "data/maps/setup_scripts.asm"
 
 ReadMapSetupScript:
 .loop
@@ -57,6 +53,8 @@ ReadMapSetupScript:
 
 	pop hl
 	jr .loop
+
+INCLUDE "data/maps/setup_scripts.asm"
 
 MapSetupCommands:
 ; entries correspond to command indexes in constants/map_setup_constants.asm
@@ -150,8 +148,7 @@ CheckReplaceKrisSprite:
 	ret
 
 .ok
-	call ReplaceKrisSprite
-	ret
+	jp ReplaceKrisSprite
 
 .CheckBiking:
 	and a
@@ -212,8 +209,7 @@ CheckReplaceKrisSprite:
 
 FadeOldMapMusic:
 	ld a, 6
-	call SkipMusic
-	ret
+	jp SkipMusic
 
 RetainOldPalettes:
 	farcall _UpdateTimePals
@@ -226,8 +222,7 @@ RotatePalettesRightMapAndMusic:
 	ld a, [wMusicFadeID + 1]
 	ld a, $4
 	ld [wMusicFade], a
-	call RotateThreePalettesRight
-	ret
+	jp RotateThreePalettesRight
 
 ForceMapMusic:
 	ld a, [wPlayerState]
@@ -237,5 +232,4 @@ ForceMapMusic:
 	ld a, $88
 	ld [wMusicFade], a
 .notbiking
-	call TryRestartMapMusic
-	ret
+	jp TryRestartMapMusic

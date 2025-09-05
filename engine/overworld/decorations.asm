@@ -77,8 +77,7 @@ _PlayerDecorationMenu:
 	ld hl, wStringBuffer2
 	ld de, wd002
 	ld bc, ITEM_NAME_LENGTH
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 .ClearStringBuffer2:
 	ld hl, wStringBuffer2
@@ -86,8 +85,7 @@ _PlayerDecorationMenu:
 	ld [hli], a
 	ld bc, ITEM_NAME_LENGTH - 1
 	ld a, -1
-	call ByteFill
-	ret
+	jp ByteFill
 
 .AppendToStringBuffer2:
 	ld hl, wStringBuffer2
@@ -137,8 +135,7 @@ Deco_FillTempWithMinusOne:
 	ld [hli], a
 	ld a, -1
 	ld bc, $10
-	call ByteFill
-	ret
+	jp ByteFill
 
 CheckAllDecorationFlags:
 .loop
@@ -348,12 +345,9 @@ PopulateDecoCategoryMenu:
 	ld hl, .NonscrollingMenuHeader
 	call LoadMenuHeader
 	call DoNthMenu
-	jr c, .no_action_1
+	jp c, ExitMenu
 	call DoDecorationAction2
-
-.no_action_1
-	call ExitMenu
-	ret
+	jp ExitMenu
 
 .beyond_eight
 	ld hl, wd002
@@ -373,17 +367,13 @@ PopulateDecoCategoryMenu:
 	call ScrollingMenu
 	ld a, [wMenuJoypad]
 	cp 2
-	jr z, .no_action_2
+	jp z, ExitMenu
 	call DoDecorationAction2
-
-.no_action_2
-	call ExitMenu
-	ret
+	jp ExitMenu
 
 .empty
 	ld hl, .Text_nothing_to_choose
-	call MenuTextboxBackup
-	ret
+	jp MenuTextboxBackup
 
 .Text_nothing_to_choose:
 	; There's nothing to choose.
@@ -421,16 +411,14 @@ PopulateDecoCategoryMenu:
 GetDecorationData:
 	ld hl, DecorationAttributes
 	ld bc, 6
-	call AddNTimes
-	ret
+	jp AddNTimes
 
 GetDecorationName:
 	push hl
 	call GetDecorationData
 	call GetDecoName
 	pop hl
-	call CopyName2
-	ret
+	jp CopyName2
 
 DecorationMenuFunction:
 	ld a, [wMenuSelection]
@@ -438,8 +426,7 @@ DecorationMenuFunction:
 	call GetDecorationData
 	call GetDecoName
 	pop hl
-	call PlaceString
-	ret
+	jp PlaceString
 
 DoDecorationAction2:
 	ld a, [wMenuSelection]
@@ -481,8 +468,7 @@ DecorationFlagAction:
 	push bc
 	call GetDecorationFlag
 	pop bc
-	call EventFlagAction
-	ret
+	jp EventFlagAction
 
 GetDecorationSprite:
 	ld a, c
@@ -551,8 +537,6 @@ GetDecoName:
 	call .getdeconame
 	pop de
 	ld a, e
-	jr .getpokename
-
 .getpokename
 	push bc
 	ld c, a
@@ -917,8 +901,7 @@ GetDecorationName_c_de:
 	ld a, c
 	ld h, d
 	ld l, e
-	call GetDecorationName
-	ret
+	jp GetDecorationName
 
 DecorationFlagAction_c:
 	ld a, c
@@ -937,8 +920,7 @@ SetSpecificDecorationFlag:
 	ld a, c
 	call GetDecorationID
 	ld b, SET_FLAG
-	call DecorationFlagAction
-	ret
+	jp DecorationFlagAction
 
 GetDecorationID:
 	push hl
@@ -957,15 +939,12 @@ SetAllDecorationFlags:
 .loop
 	ld a, [hli]
 	cp -1
-	jr z, .done
+	ret z
 	push hl
 	ld b, SET_FLAG
 	call DecorationFlagAction
 	pop hl
 	jr .loop
-
-.done
-	ret
 
 INCLUDE "data/decorations/decorations.asm"
 
@@ -1169,8 +1148,6 @@ ToggleDecorationsVisibility:
 	ld de, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
 	ld hl, wVariableSprites + SPRITE_BIG_DOLL - SPRITE_VARS
 	ld a, [wDecoBigDoll]
-	call ToggleDecorationVisibility
-	ret
 
 ToggleDecorationVisibility:
 	and a
@@ -1202,5 +1179,4 @@ PadCoords_de:
 	ld a, e
 	add 4
 	ld e, a
-	call GetBlockLocation
-	ret
+	jp GetBlockLocation

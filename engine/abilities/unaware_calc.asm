@@ -671,8 +671,7 @@ DoubleStatIfSpeciesHoldingItem2:
 	ret nz
 
 ; Double the stat
-	sla l
-	rl h
+	add hl, hl
 	ret
 
 GetUserItem2:

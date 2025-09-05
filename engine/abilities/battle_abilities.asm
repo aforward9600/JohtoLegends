@@ -802,7 +802,7 @@ CheckBoostingAbilities:
 .MarvelScale:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
-	cp 0
+	or a
 	ret z
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
@@ -949,7 +949,7 @@ CheckBoostingAbilities:
 .FinishTypeChange:
 	ld a, BATTLE_VARS_MOVE_POWER
 	call GetBattleVar
-	cp 0
+	or a
 	ret z
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVarAddr

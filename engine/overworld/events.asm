@@ -176,14 +176,7 @@ HandleMapTimeAndJoypad:
 
 	call UpdateTime
 	call GetJoypad
-	call TimeOfDayPals
-	ret
-
-HandleMapObjects:
-	farcall HandleNPCStep ; engine/map_objects.asm
-	farcall _HandlePlayerStep
-	call _CheckObjectEnteringVisibleRange
-	ret
+	jp TimeOfDayPals
 
 HandleMapBackground:
 	farcall _UpdateSprites
@@ -209,6 +202,10 @@ CheckPlayerState:
 	ld a, MAPEVENTS_OFF
 	ld [wMapEventStatus], a
 	ret
+
+HandleMapObjects:
+	farcall HandleNPCStep ; engine/map_objects.asm
+	farcall _HandlePlayerStep
 
 _CheckObjectEnteringVisibleRange:
 	ld hl, wPlayerStepFlags
@@ -350,8 +347,7 @@ CheckTileEvent:
 	ld h, [hl]
 	ld l, a
 	call GetMapScriptsBank
-	call CallScript
-	ret
+	jp CallScript
 
 CheckWildEncounterCooldown::
 	ld hl, wWildEncounterCooldown
@@ -568,8 +564,7 @@ TryObjectEvent:
 	ld h, [hl]
 	ld l, a
 	call GetMapScriptsBank
-	call CallScript
-	ret
+	jp CallScript
 
 .itemball
 	ld hl, MAPOBJECT_SCRIPT_POINTER
@@ -592,17 +587,8 @@ TryObjectEvent:
 	ret
 
 .three
-	xor a
-	ret
-
 .four
-	xor a
-	ret
-
 .five
-	xor a
-	ret
-
 .six
 	xor a
 	ret

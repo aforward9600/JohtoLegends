@@ -231,7 +231,7 @@ DoPlayerMovement::
 ; the player change facing without moving by tapping a direction.
 
 	ld a, [wPlayerTurningDirection]
-	cp 0
+	or a
 	jr nz, .not_turning
 	ld a, [wWalkingDirection]
 	cp STANDING
@@ -607,7 +607,7 @@ DoPlayerMovement::
 	ret nc
 
 	ld a, [wPlayerTurningDirection]
-	cp 0
+	or a
 	ret z
 
 .force
@@ -839,8 +839,7 @@ ENDM
 	call CheckSFX
 	ret c
 	ld de, SFX_BUMP
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 .GetOutOfWater:
 	push bc
@@ -868,7 +867,7 @@ ENDM
 
 CheckStandingOnIce::
 	ld a, [wPlayerTurningDirection]
-	cp 0
+	or a
 	jr z, .not_ice
 	cp $f0
 	jr z, .not_ice

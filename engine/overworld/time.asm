@@ -143,8 +143,7 @@ StartBugContestTimer:
 	ld [wBugContestSecsRemaining], a
 	call UpdateTime
 	ld hl, wBugContestStartTime
-	call CopyDayHourMinSecToHL
-	ret
+	jp CopyDayHourMinSecToHL
 
 CheckBugContestTimer::
 	ld hl, wBugContestStartTime
@@ -183,8 +182,7 @@ CheckBugContestTimer::
 InitializeStartDay:
 	call UpdateTime
 	ld hl, wTimerEventStartDay
-	call CopyDayToHL
-	ret
+	jp CopyDayToHL
 
 CheckPokerusTick::
 	ld hl, wTimerEventStartDay
@@ -209,12 +207,10 @@ RestartLuckyNumberCountdown:
 	ld a, FRIDAY
 	sub c
 	jr z, .friday_saturday
-	jr nc, .earlier ; could have done "ret nc"
+	ret nc
 
 .friday_saturday
 	add 7
-
-.earlier
 	ret
 
 _CheckLuckyNumberShowFlag:
@@ -247,8 +243,7 @@ DoMysteryGiftIfDayHasPassed:
 	ld [sMysteryGiftTimer], a
 	ld a, [hl]
 	ld [sMysteryGiftTimer + 1], a
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 UpdateTimeRemaining:
 ; If the amount of time elapsed exceeds the capacity of its

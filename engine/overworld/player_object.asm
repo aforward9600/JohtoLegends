@@ -13,8 +13,7 @@ BlankScreen:
 	ld a, $7
 	call ByteFill
 	call WaitBGMap2
-	call SetPalettes
-	ret
+	jp SetPalettes
 
 SpawnPlayer:
 	ld a, -1
@@ -79,8 +78,7 @@ PlayerSpawn_ConvertCoords:
 	add 4
 	ld e, a
 	pop bc
-	call CopyDECoordsToMapObject
-	ret
+	jp CopyDECoordsToMapObject
 
 WriteObjectXY::
 	ld a, b
@@ -162,11 +160,6 @@ CopyObjectStruct::
 	ret
 
 CopyMapObjectToObjectStruct:
-	call .CopyMapObjectToTempObject
-	call CopyTempObjectToObjectStruct
-	ret
-
-.CopyMapObjectToTempObject:
 	ldh a, [hObjectStructIndexBuffer]
 	ld hl, MAPOBJECT_OBJECT_STRUCT_ID
 	add hl, bc
@@ -221,7 +214,7 @@ CopyMapObjectToObjectStruct:
 	add hl, bc
 	ld a, [hl]
 	ld [wTempObjectCopyRadius], a
-	ret
+	jp CopyTempObjectToObjectStruct
 
 InitializeVisibleSprites:
 	ld bc, wMapObjects + OBJECT_LENGTH
@@ -268,7 +261,7 @@ InitializeVisibleSprites:
 	push bc
 	call CopyObjectStruct
 	pop bc
-	jp c, .ret
+	ret c
 
 .next
 	ld hl, OBJECT_LENGTH
@@ -279,9 +272,6 @@ InitializeVisibleSprites:
 	inc a
 	cp NUM_OBJECTS
 	jr nz, .loop
-	ret
-
-.ret
 	ret
 
 CheckObjectEnteringVisibleRange::
@@ -525,15 +515,6 @@ TrainerWalkToPlayer:
 	ld b, a
 	ld c, PLAYER
 	ld d, 1
-	call .GetPathToPlayer
-	call DecrementMovementBufferCount
-
-.TerminateStep:
-	ld a, movement_step_resume
-	call AppendToMovementBuffer
-	ret
-
-.GetPathToPlayer:
 	push de
 	push bc
 ; get player object struct, load to de
@@ -575,7 +556,11 @@ TrainerWalkToPlayer:
 
 	pop af
 	call ComputePathToWalkToPlayer
-	ret
+	call DecrementMovementBufferCount
+
+.TerminateStep:
+	ld a, movement_step_resume
+	jp AppendToMovementBuffer
 
 SurfStartStep:
 	ld a, [wPlayerDirection]
@@ -702,8 +687,7 @@ GetRelativeFacing::
 	cp NUM_OBJECT_STRUCTS
 	jr nc, .carry
 	ld e, a
-	call .GetFacing_e_relativeto_d
-	ret
+	jr .GetFacing_e_relativeto_d
 
 .carry
 	scf
