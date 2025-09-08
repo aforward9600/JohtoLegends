@@ -53,25 +53,16 @@ EcruteakMoveTutorScript:
 	sjump .Incompatible
 
 .Refused:
-	writetext EcruteakMoveTutorVeryWellText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakMoveTutorVeryWellText
 
 .Incompatible:
-	writetext EcruteakMoveTutorHmTooBadText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakMoveTutorHmTooBadText
 
 .TeachMove:
 	writetext EcruteakMoveTutorPowerfulFistsText
 	takemoney YOUR_MONEY, 1000
 	buttonsound
-	writetext EcruteakMoveTutorFarewellText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakMoveTutorFarewellText
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags

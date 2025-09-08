@@ -71,25 +71,16 @@ KurtsHouseYoungster:
 	db "Cancel@"
 
 .Refused:
-	writetext YoullBeBackText
-	waitbutton
-	closetext
-	end
+	writetextend YoullBeBackText
 
 .TeachMove:
 	writetext KurtsHouseNiceMoveText
 	takemoney YOUR_MONEY, 2000
 	buttonsound
-	writetext KurtsHouseGoodLuckText
-	waitbutton
-	closetext
-	end
+	writetextend KurtsHouseGoodLuckText
 
 .Incompatible:
-	writetext KurtsHouseHowUnfortunateText
-	waitbutton
-	closetext
-	end
+	writetextend KurtsHouseHowUnfortunateText
 
 KurtsHouseSlowpoke:
 	refreshscreen
@@ -98,10 +89,7 @@ KurtsHouseSlowpoke:
 	waitbutton
 	closepokepic
 	opentext
-	writetext KurtsHouseSlowpokeText
-	waitbutton
-	closetext
-	end
+	writetextend KurtsHouseSlowpokeText
 
 KurtsHouseKurtScript:
 	faceplayer

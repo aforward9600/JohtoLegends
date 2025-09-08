@@ -12,21 +12,15 @@ MrPokemonsHouse_MrPokemonScript:
 	opentext
 	checkevent EVENT_TALKED_TO_MR_POKEMON
 	iftrue .AlwaysNewDiscoveries
-	writetext MrPokemonText_ImDependingOnYou
-	waitbutton
-	closetext
 	setevent EVENT_TALKED_TO_MR_POKEMON
-	end
+	writetextend MrPokemonText_ImDependingOnYou
 
 .AlwaysNewDiscoveries:
 	checkitem STRANGE_HAIR
 	iftrue .GiveMeThatHair
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .MythicalPassword
-	writetext MrPokemonText_AlwaysNewDiscoveries
-	waitbutton
-	closetext
-	end
+	writetextend MrPokemonText_AlwaysNewDiscoveries
 
 .GiveMeThatHair:
 	writetext MrPokemonText_GimmeTheScale
@@ -47,10 +41,7 @@ MrPokemonsHouse_MrPokemonScript:
 	end
 
 .MythicalPassword:
-	writetext MythicalPasswordText
-	waitbutton
-	closetext
-	end
+	writetextend MythicalPasswordText
 
 MrPokemonsHouse_ForeignMagazines:
 	jumptext MrPokemonsHouse_ForeignMagazinesText

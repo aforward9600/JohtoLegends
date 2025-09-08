@@ -8,18 +8,10 @@ CherrygroveEvolutionSpeechHouse_MapScripts:
 	db 0 ; callbacks
 
 CherrygroveEvolutionSpeechHouseBeautyScript:
-	opentext
-	writetext CherrygroveEvolutionSpeechHouseBeautyText
-	waitbutton
-	closetext
-	end
+	jumptext CherrygroveEvolutionSpeechHouseBeautyText
 
 CherrygroveEvolutionSpeechHouseGrannyScript:
-	opentext
-	writetext CherrygroveEvolutionSpeechHouseGrannyText
-	waitbutton
-	closetext
-	end
+	jumptext CherrygroveEvolutionSpeechHouseGrannyText
 
 CherrygroveEvolutionSpeechHouseBookshelf:
 	jumpstd genericsink

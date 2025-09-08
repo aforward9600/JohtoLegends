@@ -40,6 +40,7 @@ AzaleaTownRivalBattleScene1:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .AzaleaRivalFemale
 	playmusic MUSIC_DAHLIA_ENCOUNTER
+.ResumeAzaleaRival
 	opentext
 	writetext AzaleaTownRivalBeforeText
 	waitbutton
@@ -61,24 +62,7 @@ AzaleaTownRivalBattleScene1:
 
 .AzaleaRivalFemale:
 	playmusic MUSIC_RIVAL_ENCOUNTER
-	opentext
-	writetext AzaleaTownRivalBeforeText
-	waitbutton
-	closetext
-	clearevent EVENT_TIN_TOWER_1F_WISE_TRIO_1
-	setevent EVENT_OPEN_TIN_TOWER
-	setevent EVENT_TIN_TOWER_TAKEOVER
-	setevent EVENT_TIN_TOWER_ROOF_PLAYER
-	setevent EVENT_TIN_TOWER_ROOF_HO_OH
-	clearevent EVENT_BELLCHIME_PATH_ENOKI_PANIC
-	applymovement AZALEATOWN_RIVAL, AzaleaTownRivalBattleExitMovement
-	disappear AZALEATOWN_RIVAL
-	setscene SCENE_AZALEATOWN_NOTHING
-	pause 15
-	special RestartMapMusic
-	waitsfx
-	playmapmusic
-	end
+	sjump .ResumeAzaleaRival
 
 AzaleaTownCooltrainerScript:
 	jumptextfaceplayer AzaleaTownCooltrainerText
@@ -104,10 +88,7 @@ AzaleaTownSlowpokeScript:
 	opentext
 	writetext AzaleaTownSlowpokeText1
 	pause 60
-	writetext AzaleaTownSlowpokeText2
-	waitbutton
-	closetext
-	end
+	writetextend AzaleaTownSlowpokeText2
 
 AzaleaTownSign:
 	jumptext AzaleaTownSignText

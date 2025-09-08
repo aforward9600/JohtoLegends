@@ -7,12 +7,7 @@ PokeSeersHouse_MapScripts:
 	db 0 ; callbacks
 
 SeerScript:
-	faceplayer
-	opentext
-	writetext ShallITellYouText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer ShallITellYouText
 
 PokeSeerTelevision:
 	jumpstd televisionscript

@@ -48,10 +48,7 @@ TrainerKimonoGirlRui:
 .GotEevee:
 	checkevent EVENT_BEAT_CHAMPION_LANCE
 	iftrue .CommencePassword
-	writetext TrainerKimonoGirlRuiAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend TrainerKimonoGirlRuiAfterBattleText
 
 .NoRoom:
 	readvar VAR_BOXSPACE
@@ -59,33 +56,21 @@ TrainerKimonoGirlRui:
 	sjump .GetEevee
 
 .BoxFullEevee:
-	writetext NoRoomText
-	waitbutton
-	closetext
-	end
+	writetextend NoRoomText
 
 .CantGetEevee:
-	writetext CantGetEeveeText
-	waitbutton
-	closetext
 	setevent EVENT_GOT_EEVEE
-	end
+	writetextend CantGetEeveeText
 
 .CommencePassword:
-	writetext CommencePasswordText
-	waitbutton
-	closetext
-	end
+	writetextend CommencePasswordText
 
 DanceTheaterSurfGuy:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_KIMONO_GIRL_RUI
 	iftrue .WildCharge
-	writetext SurfGuyNeverLeftAScratchText
-	waitbutton
-	closetext
-	end
+	writetextend SurfGuyNeverLeftAScratchText
 
 .WildCharge:
 	checkevent EVENT_GOT_TM09_WILD_CHARGE
@@ -94,16 +79,10 @@ DanceTheaterSurfGuy:
 	buttonsound
 	verbosegiveitem TM_WILD_CHARGE
 	setevent EVENT_GOT_TM09_WILD_CHARGE
-	writetext SurfGuyWildChargeExplanationText
-	waitbutton
-	closetext
-	end
+	writetextend SurfGuyWildChargeExplanationText
 
 .WildChargeExplanation:
-	writetext SurfGuyWildChargeExplanationText
-	waitbutton
-	closetext
-	end
+	writetextend SurfGuyWildChargeExplanationText
 
 DanceTheaterRhydon:
 	refreshscreen
@@ -112,34 +91,22 @@ DanceTheaterRhydon:
 	waitbutton
 	closepokepic
 	opentext
-	writetext RhydonText
-	waitbutton
-	closetext
-	end
+	writetextend RhydonText
 
 DanceTheatreGrannyScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_EEVEE
 	iftrue .AlreadyHaveEevee
-	writetext DanceTheatreGrannyText
-	waitbutton
-	closetext
-	end
+	writetextend DanceTheatreGrannyText
 
 .AlreadyHaveEevee:
 	checkevent EVENT_GOT_STONE_FROM_THEATRE
 	iftrue .GotStone
-	writetext SeeMySonText
-	waitbutton
-	closetext
-	end
+	writetextend SeeMySonText
 
 .GotStone:
-	writetext YouSawMySonText
-	waitbutton
-	closetext
-	end
+	writetextend YouSawMySonText
 
 DanceTheaterCynthiaScript:
 	playmusic MUSIC_CYNTHIA_ENCOUNTER
@@ -494,7 +461,7 @@ SeeMySonText:
 	para "Most impressive."
 
 	para "If you go to"
-	line "Cianwood City,"
+	line "Olivine City,"
 	cont "talk with my son."
 
 	para "He'll give you an"

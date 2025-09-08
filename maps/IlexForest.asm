@@ -35,10 +35,7 @@ TrainerSuperNerdIrwin:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SuperNerdIrwinAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SuperNerdIrwinAfterBattleText
 
 IlexForestFarfetchdScript:
 	faceplayer
@@ -80,10 +77,7 @@ IlexForestDarkPulseGirlScript:
 	end
 
 .AlreadyGotHeadbutt:
-	writetext Text_DarkPulseOutro
-	waitbutton
-	closetext
-	end
+	writetextend Text_DarkPulseOutro
 
 TrainerHexManiacMaeve:
 	trainer HEX_MANIAC, MAEVE, EVENT_BEAT_HEX_MANIAC_MAEVE, HexManiacMaeveSeenText, HexManiacMaeveBeatenText, 0, .Script
@@ -91,10 +85,7 @@ TrainerHexManiacMaeve:
 .Script:
 	endifjustbattled
 	opentext
-	writetext HexManiacMaeveAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend HexManiacMaeveAfterBattleText
 
 TrainerCooltrainerFEmiko:
 	trainer COOLTRAINERF, EMIKO, EVENT_BEAT_COOLTRAINERF_EMIKO, CooltrainerFEmikoSeenText, CooltrainerFEmikoBeatenText, 0, .Script
@@ -102,10 +93,7 @@ TrainerCooltrainerFEmiko:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerFEmikoAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerFEmikoAfterBattleText
 
 IlexForestLassScript:
 	jumptextfaceplayer Text_IlexForestLass

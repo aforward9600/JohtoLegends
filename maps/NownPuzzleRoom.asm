@@ -65,11 +65,7 @@ NownPuzzleRoomPuzzle:
 	end
 
 .PuzzleDone:
-	opentext
-	writetext PuzzleDoneText
-	waitbutton
-	closetext
-	end
+	jumptext PuzzleDoneText
 
 NownPuzzleRoomAncientReplica:
 	jumptext NownPuzzleRoomAncientReplicaText
@@ -112,11 +108,7 @@ NownPuzzleRoomWallPatternRight:
 	end
 
 .WallOpen:
-	opentext
-	writetext NownPuzzleRoomWallHoleText
-	waitbutton
-	closetext
-	end
+	jumptext NownPuzzleRoomWallHoleText
 
 NownPuzzleRoomSkyfallTopMovement:
 	skyfall_top

@@ -46,31 +46,19 @@ MrFujisHouseMrFuji:
 	iftrue HaveMewtwo
 	checkevent EVENT_SHOWED_MR_FUJI_MEWTWO
 	iftrue AlreadyShowedMewtwo
-	writetext MrFujisHouseMrFujiText2
-	waitbutton
-	closetext
-	end
+	writetextend MrFujisHouseMrFujiText2
 
 HaveMewtwo:
 	checkevent EVENT_SHOWED_MR_FUJI_MEWTWO
 	iftrue PleaseDontShowAgain
-	writetext MrFujisHouseMrFujiText3
-	waitbutton
-	closetext
 	setevent EVENT_SHOWED_MR_FUJI_MEWTWO
-	end
+	writetextend MrFujisHouseMrFujiText3
 
 AlreadyShowedMewtwo:
-	writetext MrFujisHouseMrFujiText4
-	waitbutton
-	closetext
-	end
+	writetextend MrFujisHouseMrFujiText4
 
 PleaseDontShowAgain:
-	writetext MrFujisHouseMrFujiText5
-	waitbutton
-	closetext
-	end
+	writetextend MrFujisHouseMrFujiText5
 
 MrFujisEkans:
 	refreshscreen
@@ -79,10 +67,7 @@ MrFujisEkans:
 	waitbutton
 	closepokepic
 	opentext
-	writetext MrFujisEkansText
-	waitbutton
-	closetext
-	end
+	writetextend MrFujisEkansText
 
 MrFujisMarowak:
 	refreshscreen
@@ -91,10 +76,7 @@ MrFujisMarowak:
 	waitbutton
 	closepokepic
 	opentext
-	writetext MrFujisMarowakText
-	waitbutton
-	closetext
-	end
+	writetextend MrFujisMarowakText
 
 MrFujisTogepi:
 	refreshscreen
@@ -103,10 +85,7 @@ MrFujisTogepi:
 	waitbutton
 	closepokepic
 	opentext
-	writetext MrFujisTogepiText
-	waitbutton
-	closetext
-	end
+	writetextend MrFujisTogepiText
 
 MrFujisHouseBookshelf:
 	jumpstd difficultbookshelf

@@ -29,10 +29,7 @@ DarkCaveNewEntranceHikerScript:
 	end
 
 .DarkCaveRocksCleared:
-	writetext DarkCaveNewEntranceHikerText2
-	waitbutton
-	closetext
-	end
+	writetextend DarkCaveNewEntranceHikerText2
 
 DarkCaveNewEntrancePotion:
 	itemball POTION

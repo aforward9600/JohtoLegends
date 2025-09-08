@@ -87,10 +87,7 @@ TrainerEngineerDante:
 .Script:
 	endifjustbattled
 	opentext
-	writetext EngineerDanteFAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend EngineerDanteFAfterBattleText
 
 TrainerBeautyAshley:
 	trainer BEAUTY, ASHLEY, EVENT_BEAT_BEAUTY_ASHLEY, BeautyAshleySeenText, BeautyAshleyBeatenText, 0, .Script
@@ -98,107 +95,64 @@ TrainerBeautyAshley:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BeautyAshleyAfterBattle
-	waitbutton
-	closetext
-	end
+	writetextend BeautyAshleyAfterBattle
 
 First2FElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_FIRST_ELEVATOR
 	warp OLIVINE_GYM_1F, 7, 5
 	end
 
 Second2FElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_SECOND_ELEVATOR
 	warp OLIVINE_GYM_1F, 11, 5
 	end
 
 Third2FElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_THIRD_ELEVATOR
 	warp OLIVINE_GYM_1F, 14, 5
 	end
 
 Fourth2FElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	setevent EVENT_GYM_FOURTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 18, 10
 	end
 
 Fifth2FElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_FIFTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 17, 5
 	end
 
 Sixth2FElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	setevent EVENT_GYM_SIXTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 21, 10
 	end
 
 Seventh2FElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_SEVENTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 16, 10
 	end
 
 Eighth2FElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	setevent EVENT_GYM_EIGHTH_ELEVATOR
 	warp OLIVINE_GYM_3F, 3, 12
 	end
 
 Ninth2FElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_NINTH_ELEVATOR
 	warp OLIVINE_GYM_3F, 16, 3
 	end
 
 Tenth2FElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	setevent EVENT_GYM_TENTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 19, 2
 	end

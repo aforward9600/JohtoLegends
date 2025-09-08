@@ -42,10 +42,7 @@ MaxDVsSetter:
 	checkevent EVENT_PASSWORD_SINGULAR
 	iftrue .SetSingular
 .NoPassword
-	writetext NoPasswordText
-	waitbutton
-	closetext
-	end
+	writetextend NoPasswordText
 
 .SetCheater:
 	checkitem CANDY_POUCH
@@ -58,18 +55,12 @@ MaxDVsSetter:
 	end
 
 .SetShiny:
-	writetext ShinyPokemonText
-	waitbutton
-	closetext
 	clearevent EVENT_PASSWORD_SHINY
-	end
+	writetextend ShinyPokemonText
 
 .SetMonochrome:
-	writetext MonochromeText
-	waitbutton
-	closetext
 	clearevent EVENT_PASSWORD_MONOCHROME
-	end
+	writetextend MonochromeText
 
 ;.SetNoMonochrome:
 ;	writetext NoMonochromeText
@@ -81,18 +72,12 @@ MaxDVsSetter:
 .SetSingular:
 	checkevent EVENT_PASSWORD_SET_3
 	iftrue .NoPassword
-	writetext SingularTextMoveDeleter
-	waitbutton
-	closetext
 	setevent EVENT_PASSWORD_SET_3
-	end
+	writetextend SingularTextMoveDeleter
 
 .DontGivePassword:
 	scall ReturnToMoveDeletersHouse
-	writetext TryPasswordLaterText
-	waitbutton
-	closetext
-	end
+	writetextend TryPasswordLaterText
 
 ReturnToMoveDeletersHouse:
 	callasm .ReturnToMoveDeletersHouse

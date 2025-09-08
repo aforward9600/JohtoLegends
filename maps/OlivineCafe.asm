@@ -20,10 +20,7 @@ OlivineCafeStrengthSailorScript:
 	verbosegiveitem MACHAMP_CALL
 	setevent EVENT_GOT_HM04_STRENGTH
 .GotStrength:
-	writetext OlivineCafeStrengthSailorText_GotStrength
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCafeStrengthSailorText_GotStrength
 
 OlivineCafeFishingGuruScript:
 	jumptextfaceplayer OlivineCafeFishingGuruText
@@ -46,17 +43,11 @@ OlivineCafeTutorScript:
 	special MoveTutor
 	if_equal $0, .TeachMove
 .TutorRefused
-	writetext OlivineCafeTutorSteelSliceRefused
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCafeTutorSteelSliceRefused
 
 .TeachMove
-	writetext OlivineCafeTutorSteelSliceTaught
 	takemoney YOUR_MONEY, 1000
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCafeTutorSteelSliceTaught
 
 OlivineCafeHaircutGuyScript:
 	faceplayer
@@ -94,8 +85,6 @@ OlivineCafeHaircutGuyScript:
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
-	sjump .then
-
 .then
 	takemoney YOUR_MONEY, 500
 	special PlaceMoneyTopRight
@@ -117,22 +106,13 @@ OlivineCafeHaircutGuyScript:
 	sjump OlivineCafeHaircutGuyScript_MuchHappier
 
 .Refused:
-	writetext OlivineCafeHaircutGuyThatsAShameText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCafeHaircutGuyThatsAShameText
 
 .NotEnoughMoney:
-	writetext OlivineCafeHaircutGuyYoullNeedMoreMoneyText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCafeHaircutGuyYoullNeedMoreMoneyText
 
 .AlreadyGotHaircut:
-	writetext OlivineCafeHaircutGuyOneHaircutADayText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCafeHaircutGuyOneHaircutADayText
 
 OlivineCafeHaircutGuyScript_SlightlyHappier:
 	writetext OlivineCafeHaircutGuyText_SlightlyHappier

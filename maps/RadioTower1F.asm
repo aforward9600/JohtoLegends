@@ -219,10 +219,7 @@ RadioTower1FSylveonScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext TowerSylveonText
-	waitbutton
-	closetext
-	end
+	writetextend TowerSylveonText
 
 RadioTower1FWobbuffetScript:
 	refreshscreen
@@ -231,10 +228,7 @@ RadioTower1FWobbuffetScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext WobbuffetText
-	waitbutton
-	closetext
-	end
+	writetextend WobbuffetText
 
 PlayerTowerMovement1:
 	step DOWN

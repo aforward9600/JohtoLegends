@@ -33,16 +33,10 @@ BlackthornMartCooltrainerMScript:
 	opentext
 	checkevent EVENT_GOT_JOURNAL
 	iftrue .PokeBallsInStock
-	writetext BlackthornMartCooltrainerMText
-	waitbutton
-	closetext
-	end
+	writetextend BlackthornMartCooltrainerMText
 
 .PokeBallsInStock:
-	writetext BlackthornMartCooltrainerMText_PokeBallsInStock
-	waitbutton
-	closetext
-	end
+	writetextend BlackthornMartCooltrainerMText_PokeBallsInStock
 
 BlackthornMartBlackBeltScript:
 	jumptextfaceplayer BlackthornMartBlackBeltText

@@ -22,10 +22,7 @@ SneaselScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext SneaselText
-	waitbutton
-	closetext
-	end
+	writetextend SneaselText
 
 ShuckleScript:
 	refreshscreen
@@ -34,10 +31,7 @@ ShuckleScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext ShuckleText
-	waitbutton
-	closetext
-	end
+	writetextend ShuckleText
 
 MyPokemonAreCoolText:
 	text "Aren't my #mon"

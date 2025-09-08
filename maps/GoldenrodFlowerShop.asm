@@ -12,10 +12,7 @@ FlowerShopFlorinasHusbandScript:
 	opentext
 	checkevent EVENT_CURRENTLY_CHAMPION
 	iftrue .BerryMart1
-	writetext GoldenrodFlowerShopFlorinasHusbandText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodFlowerShopFlorinasHusbandText
 
 .BerryMart1
 	pokemart MARTTYPE_BERRIES_1, MART_BERRIES_1
@@ -27,10 +24,7 @@ FlowerShopFlorinasDaughterScript:
 	opentext
 	checkevent EVENT_CURRENTLY_CHAMPION
 	iftrue .BerryMart2
-	writetext GoldenrodFlowerShopFlorinasDaughterText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodFlowerShopFlorinasDaughterText
 
 .BerryMart2
 	pokemart MARTTYPE_BERRIES_2, MART_BERRIES_2

@@ -76,27 +76,16 @@ OlivineGym1F_MapScripts:
 
 OlivineGym1FGuyScript:
 	faceplayer
+	opentext
 	checkevent EVENT_BEAT_BYRON
 	iftrue .OlivineGymGuy1FWinScript
-	opentext
-	writetext OlivineGym1FGuyText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineGym1FGuyText
 
 .OlivineGymGuy1FWinScript:
-	opentext
-	writetext OlivineGym1FGuyWinText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineGym1FGuyWinText
 
 .OlivineGymGuy1FPreScript:
-	opentext
-	writetext OlivineGym1FGuyPreText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineGym1FGuyPreText
 
 OlivineGymTrainerGentlemanCrofton1F:
 	trainer GENTLEMAN, CROFTON, EVENT_BEAT_GENTLEMAN_CROFTON, GentlemanCrofton1FSeenText, GentlemanCrofton1FBeatenText, 0, .Script
@@ -104,10 +93,7 @@ OlivineGymTrainerGentlemanCrofton1F:
 .Script:
 	endifjustbattled
 	opentext
-	writetext GentlemanCrofton1FAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend GentlemanCrofton1FAfterBattleText
 
 TrainerTeacherAbigail1F:
 	trainer TEACHER, ABIGAIL, EVENT_BEAT_TEACHER_ABIGAIL, TeacherAbigail1FSeenText, TeacherAbigail1FBeatenText, 0, .Script
@@ -115,10 +101,7 @@ TrainerTeacherAbigail1F:
 .Script:
 	endifjustbattled
 	opentext
-	writetext TeacherAbigail1FAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend TeacherAbigail1FAfterBattleText
 
 OlivineGym1FStatue:
 	checkflag ENGINE_PLAINBADGE
@@ -134,106 +117,74 @@ OlivineGym1FStatue:
 	jumpstd gymstatue5
 
 FirstElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	setevent EVENT_GYM_FIRST_ELEVATOR
 	warp OLIVINE_GYM_2F, 5, 5
 	end
 
 SecondElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	setevent EVENT_GYM_SECOND_ELEVATOR
 	warp OLIVINE_GYM_2F, 7, 5
 	end
 
 ThirdElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	setevent EVENT_GYM_THIRD_ELEVATOR
 	warp OLIVINE_GYM_2F, 9, 5
 	end
 
 FourthElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_FOURTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 13, 10
 	end
 
 FifthElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	setevent EVENT_GYM_FIFTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 12, 5
 	end
 
 SixthElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_SIXTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 15, 10
 	end
 
 SeventhElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	setevent EVENT_GYM_SEVENTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 11, 10
 	end
 
 TenthElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_TENTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 13, 3
 	end
 
 EleventhElevator1F:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	setevent EVENT_GYM_ELEVENTH_ELEVATOR
 	warp OLIVINE_GYM_4F, 7, 4
 	end
 
 TwelthElevator1F:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_TWELTH_ELEVATOR
 	warp OLIVINE_GYM_4F, 3, 4
 	end
 
 ResetElevators:
+	end
+
+OlivineElevatorEffect:
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	playsound SFX_ELEVATOR
+	pause 5
+	waitsfx
 	end
 
 GentlemanCrofton1FSeenText:

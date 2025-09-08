@@ -96,10 +96,7 @@ Script_FailedBattleTowerChallenge:
 	setval BATTLETOWERACTION_CHALLENGECANCELED
 	special BattleTowerAction
 	opentext
-	writetext Text_ThanksForVisiting
-	waitbutton
-	closetext
-	end
+	writetextend Text_ThanksForVisiting
 
 Script_BeatenAllTrainers:
 	pause 60
@@ -112,7 +109,7 @@ Script_BeatenAllTrainers2:
 
 Text_ReturnedAfterSave_Mobile:
 	text "You'll be returned"
-	line "after you SAVE."
+	line "after you save."
 	done
 
 BattleTowerBattleRoom_MapEvents:

@@ -5,61 +5,16 @@
 	const OLIVINELIGHTHOUSE4F_COOLTRAINERF
 
 OlivineLighthouse4F_MapScripts:
-	db 2 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_FINISHED
+	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-.DummyScene0:
-	end
-
-.DummyScene1:
-	end
-
-ArianaNorth:
-	playmusic MUSIC_ROCKET_ENCOUNTER
-	showemote EMOTE_SHOCK, OLIVINELIGHTHOUSE4F_ARIANA, 15
-	turnobject OLIVINELIGHTHOUSE4F_ARIANA, UP
-	turnobject PLAYER, DOWN
-	opentext
-	writetext LighthouseArianaSeenText
-	waitbutton
-	closetext
-	winlosstext LighthouseArianaBeatenText, LighthouseArianaLossText
-	loadtrainer ARIANA, ARIANA_1
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_LIGHTHOUSE_ARIANA
-	opentext
-	writetext LighthouseArianaAfterBattleText
-	waitbutton
-	closetext
-	setscene SCENE_FINISHED
-	end
-
-ArianaEast:
-	showemote EMOTE_SHOCK, OLIVINELIGHTHOUSE4F_ARIANA, 15
-	playmusic MUSIC_ROCKET_ENCOUNTER
-	turnobject PLAYER, LEFT
-	opentext
-	writetext LighthouseArianaSeenText
-	waitbutton
-	closetext
-	winlosstext LighthouseArianaBeatenText, LighthouseArianaLossText
-	loadtrainer ARIANA, ARIANA_1
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_LIGHTHOUSE_ARIANA
-	opentext
-	writetext LighthouseArianaAfterBattleText
-	waitbutton
-	closetext
-	setscene SCENE_FINISHED
-	end
-
 LighthouseArianaScript:
-	jumptextfaceplayer LighthouseArianaAfterBattleText
+	trainer ARIANA, ARIANA_1, EVENT_BEAT_LIGHTHOUSE_ARIANA, LighthouseArianaSeenText, LighthouseArianaBeatenText, LighthouseArianaLossText, .Script
+
+.Script:
+	opentext
+	writetextend LighthouseArianaAfterBattleText
 
 TrainerLighthouse4FGruntF:
 	trainer GRUNTF, GRUNTF_4, EVENT_BEAT_ROCKET_GRUNTF_4, Lighthouse4FGruntFSeenText, Lighthouse4FGruntFBeatenText, 0, .Script
@@ -67,10 +22,7 @@ TrainerLighthouse4FGruntF:
 .Script:
 	endifjustbattled
 	opentext
-	writetext Lighthouse4FGruntFAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend Lighthouse4FGruntFAfterBattleText
 
 Lighthouse4FOfficerScript:
 	jumptextfaceplayer Lighthouse4FOfficerText
@@ -182,14 +134,12 @@ OlivineLighthouse4F_MapEvents:
 	warp_event  9,  3, OLIVINE_LIGHTHOUSE_3F, 5
 	warp_event  6, 15, OLIVINE_LIGHTHOUSE_5F, 4
 
-	db 2 ; coord events
-	coord_event  8,  5, SCENE_DEFAULT, ArianaNorth
-	coord_event  9,  6, SCENE_DEFAULT, ArianaEast
+	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 4 ; object events
-	object_event  8,  6, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 3, LighthouseArianaScript, EVENT_LIGHTHOUSE_ROCKETS
+	object_event  8,  6, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 1, LighthouseArianaScript, EVENT_LIGHTHOUSE_ROCKETS
 	object_event 11,  2, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLighthouse4FGruntF, EVENT_LIGHTHOUSE_ROCKETS
 	object_event 10,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Lighthouse4FOfficerScript, EVENT_LIGHTHOUSE_SHERLES
 	object_event  3, 11, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Lighthouse4FCooltrainerFScript, EVENT_LIGHTHOUSE_CIVILLIANS

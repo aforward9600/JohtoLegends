@@ -32,48 +32,30 @@ PewterCityGrampsScript:
 	opentext
 	checkevent EVENT_BEAT_BROCK
 	iftrue .GotSilverWing
-	writetext PewterCityGrampsText
-	waitbutton
-	closetext
-	end
+	writetextend PewterCityGrampsText
 
 .GotSilverWing:
-	writetext PewterCityGrampsText_GotSilverWing
-	waitbutton
-	closetext
-	end
+	writetextend PewterCityGrampsText_GotSilverWing
 
 PewterCityDelinquentScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_BROCK
 	iftrue .PewterCityDelinquentAfter
-	writetext PewterCityDelinquentText1
-	waitbutton
-	closetext
-	end
+	writetextend PewterCityDelinquentText1
 
 .PewterCityDelinquentAfter:
-	writetext PewterCityDelinquentText2
-	waitbutton
-	closetext
-	end
+	writetextend PewterCityDelinquentText2
 
 PewterCityBikerScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_BROCK
 	iftrue .PewterCityBikerAfter
-	writetext PewterCityBikerText1
-	waitbutton
-	closetext
-	end
+	writetextend PewterCityBikerText1
 
 .PewterCityBikerAfter:
-	writetext PewterCityBikerText2
-	waitbutton
-	closetext
-	end
+	writetextend PewterCityBikerText2
 
 PewterCitySign:
 	jumptext PewterCitySignText

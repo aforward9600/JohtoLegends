@@ -53,10 +53,7 @@ TrainerDelinquentBertha:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DelinquentBerthaAfterText
-	waitbutton
-	closetext
-	end
+	writetextend DelinquentBerthaAfterText
 
 TrainerRoughneckGuido:
 	trainer ROUGHNECK, GUIDO, EVENT_BEAT_ROUGHNECK_GUIDO, RoughneckGuidoSeenText, RoughneckGuidoBeatenText, 0, .Script
@@ -64,10 +61,7 @@ TrainerRoughneckGuido:
 .Script:
 	endifjustbattled
 	opentext
-	writetext RoughneckGuidoAfterText
-	waitbutton
-	closetext
-	end
+	writetextend RoughneckGuidoAfterText
 
 FedHideoutB3FKogaText:
 	text "Koga: Today, we"

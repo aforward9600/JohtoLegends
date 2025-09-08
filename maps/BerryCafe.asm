@@ -263,16 +263,10 @@ BerryCafeBaristaScript:
 	end
 
 .CantMake:
-	writetext BerryCafeCantMakeText
-	waitbutton
-	closetext
-	end
+	writetextend BerryCafeCantMakeText
 
 .Cancel:
-	writetext BerryCafeLaterText
-	waitbutton
-	closetext
-	end
+	writetextend BerryCafeLaterText
 
 BerryCafeMenuMenu:
 	db MENU_BACKUP_TILES

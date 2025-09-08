@@ -17,32 +17,20 @@ CinnabarPokecenter1FCooltrainerFScript:
 	opentext
 	checkevent EVENT_BEAT_BLAINE
 	iftrue .CinnabarPokecenter1FCooltrainerF2
-	writetext CinnabarPokecenter1FCooltrainerFText
-	waitbutton
-	closetext
-	end
+	writetextend CinnabarPokecenter1FCooltrainerFText
 
 .CinnabarPokecenter1FCooltrainerF2:
-	writetext CinnabarPokecenter1FCooltrainerFText2
-	waitbutton
-	closetext
-	end
+	writetextend CinnabarPokecenter1FCooltrainerFText2
 
 CinnabarPokecenter1FRival:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_BLAINE
 	iftrue .CinnabarPokecenter1FRival2
-	writetext CinnabarPokecenter1FRivalText
-	waitbutton
-	closetext
-	end
+	writetextend CinnabarPokecenter1FRivalText
 
 .CinnabarPokecenter1FRival2:
-	writetext CinnabarPokecenter1FRivalText2
-	waitbutton
-	closetext
-	end
+	writetextend CinnabarPokecenter1FRivalText2
 
 CinnabarPokecenter1FFisherScript:
 	checkevent EVENT_BEAT_BIKER_BOSS

@@ -29,20 +29,13 @@ PokemonFanClubChairmanScript:
 	verbosegiveitem RARE_CANDY
 	iffalse .BagFull
 	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
-	writetext PokemonFanClubChairmanItsARareCandyText
-	waitbutton
-	closetext
-	end
+	writetextend PokemonFanClubChairmanItsARareCandyText
 
 .HeardSpeech:
-	writetext PokemonFanClubChairmanMoreTalesToTellText
-	waitbutton
-	closetext
-	end
+	writetextend PokemonFanClubChairmanMoreTalesToTellText
 
 .NotListening:
-	writetext PokemonFanClubChairmanHowDisappointingText
-	waitbutton
+	writetextend PokemonFanClubChairmanHowDisappointingText
 .BagFull:
 	closetext
 	end
@@ -63,10 +56,7 @@ PokemonFanClubClefairyDollScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext PokemonFanClubClefairyDollText
-	waitbutton
-	closetext
-	end
+	writetextend PokemonFanClubClefairyDollText
 
 PokemonFanClubBayleefScript:
 	refreshscreen
@@ -75,10 +65,7 @@ PokemonFanClubBayleefScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext PokemonFanClubBayleefText
-	waitbutton
-	closetext
-	end
+	writetextend PokemonFanClubBayleefText
 
 PokemonFanClubListenSign:
 	jumptext PokemonFanClubListenSignText

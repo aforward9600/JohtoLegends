@@ -207,20 +207,14 @@ TrainerBikerBluno:
 
 .Script:
 	opentext
-	writetext BikerBlunoAfterText
-	waitbutton
-	closetext
-	end
+	writetextend BikerBlunoAfterText
 
 TrainerBikerRosso:
 	trainer BIKER, ROSSO, EVENT_BEAT_BIKER_ROSSO, BikerRossoSeenText, BikerRossoBeatenText, 0, .Script
 
 .Script:
 	opentext
-	writetext BikerRossoAfterText
-	waitbutton
-	closetext
-	end
+	writetextend BikerRossoAfterText
 
 PlayerMovesToBikerBoss1Movement:
 	step RIGHT

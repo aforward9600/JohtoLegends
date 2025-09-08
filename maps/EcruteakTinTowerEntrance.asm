@@ -88,8 +88,6 @@ EcruteakTinTowerEntrance_CoordEvent3:
 	closetext
 	turnobject ECRUTEAKTINTOWERENTRANCE_SHERLES, UP
 	setscene SCENE_ECRUTEAKTINTOWERENTRANCE_NORMAL
-	end
-
 .Done:
 	end
 
@@ -102,16 +100,10 @@ EcruteakTinTowerEntranceSageScript:
 	iftrue .CheckForClearBell
 	checkflag ENGINE_FOGBADGE
 	iftrue .BlockPassage_GotFogBadge
-	writetext EcruteakTinTowerEntranceSageText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakTinTowerEntranceSageText
 
 .BlockPassage_GotFogBadge:
-	writetext EcruteakTinTowerEntranceSageText_GotFogBadge
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakTinTowerEntranceSageText_GotFogBadge
 
 .CheckForClearBell:
 	checkevent EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER
@@ -119,9 +111,6 @@ EcruteakTinTowerEntranceSageScript:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .RangClearBell
 .GotClearBell:
-	writetext EcruteakTinTowerEntranceSageText_HearsClearBell
-	waitbutton
-	closetext
 	setscene SCENE_ECRUTEAKTINTOWERENTRANCE_NOTHING
 	setevent EVENT_RANG_CLEAR_BELL_2
 	clearevent EVENT_RANG_CLEAR_BELL_1
@@ -129,65 +118,41 @@ EcruteakTinTowerEntranceSageScript:
 	setevent EVENT_WISE_TRIOS_ROOM_WISE_TRIO_1
 	clearevent EVENT_WISE_TRIOS_ROOM_WISE_TRIO_2
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	end
+	writetextend EcruteakTinTowerEntranceSageText_HearsClearBell
 
 .AllowedThrough:
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .PleaseHelpUs
-	writetext EcruteakTinTowerEntranceSageText_PleaseDoGoOn
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakTinTowerEntranceSageText_PleaseDoGoOn
 
 .RangClearBell:
-	writetext EcruteakTinTowerEntranceSageText_HeardClearBell
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakTinTowerEntranceSageText_HeardClearBell
 
 .PleaseLeave:
-	writetext PleaseLeaveText
-	waitbutton
-	closetext
-	end
+	writetextend PleaseLeaveText
 
 .PleaseHelpUs:
-	writetext PleaseHelpUsText
-	waitbutton
-	closetext
-	end
+	writetextend PleaseHelpUsText
 
 EcruteakTinTowerEntranceWanderingSageScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .PleaseHelpTheTower
-	writetext EcruteakTinTowerEntranceWanderingSageText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakTinTowerEntranceWanderingSageText
 
 .PleaseHelpTheTower:
-	writetext PleaseHelpTheTowerText
-	waitbutton
-	closetext
-	end
+	writetextend PleaseHelpTheTowerText
 
 EcruteakTinTowerEntranceGrampsScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .ThisIsTerrible
-	writetext EcruteakTinTowerEntranceGrampsText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakTinTowerEntranceGrampsText
 
 .ThisIsTerrible:
-	writetext ThisIsTerribleText
-	waitbutton
-	closetext
-	end
+	writetextend ThisIsTerribleText
 
 EcruteakTinTowerEntranceRocketScript:
 	opentext

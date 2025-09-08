@@ -15,16 +15,10 @@ RadioTower4FEngineerScript:
 	opentext
 	checkevent EVENT_GOLDENROD_TOWER_TAKEOVER
 	iftrue .Engineer3Script
-	writetext RadioTower4FEngineerText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower4FEngineerText
 
 .Engineer3Script:
-	writetext RadioTower4FEngineer2Text
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower4FEngineer2Text
 
 TrainerGruntM15:
 	trainer GRUNTM, GRUNTM_15, EVENT_BEAT_ROCKET_GRUNTM_15, GruntM15SeenText, GruntM15BeatenText, 0, .Script
@@ -32,21 +26,14 @@ TrainerGruntM15:
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM15AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend GruntM15AfterBattleText
 
 TrainerArcher2:
 	trainer ARCHER, ARCHER_2, EVENT_BEAT_GOLDENROD_TOWER_ARCHER, Archer2SeenText, Archer2BeatenText, Archer2LastMonText, .Script
 
 .Script:
-	endifjustbattled
 	opentext
-	writetext Archer2AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend Archer2AfterBattleText
 
 TrainerGruntF9:
 	trainer GRUNTF, GRUNTF_9, EVENT_BEAT_ROCKET_GRUNTF_9, GruntF9SeenText, GruntF9BeatenText, 0, .Script
@@ -54,10 +41,7 @@ TrainerGruntF9:
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntF9AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend GruntF9AfterBattleText
 
 RadioTower4FSurfTM:
 	itemball TM_SURF

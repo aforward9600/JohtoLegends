@@ -17,10 +17,7 @@ TrainerOlivineLighthouse3FRocket1:
 .Script:
 	endifjustbattled
 	opentext
-	writetext OlivineLighthouse3FRocket1AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineLighthouse3FRocket1AfterBattleText
 
 TrainerOlivineLighthouse3FRocket2:
 	trainer GRUNTM, GRUNTM_6, EVENT_BEAT_ROCKET_GRUNTM_6, OlivineLighthouse3FRocket2SeenText, OlivineLighthouse3FRocket2BeatenText, 0, .Script
@@ -28,10 +25,7 @@ TrainerOlivineLighthouse3FRocket2:
 .Script:
 	endifjustbattled
 	opentext
-	writetext OlivineLighthouse3FRocket2AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineLighthouse3FRocket2AfterBattleText
 
 TrainerOlivineLighthouse3FRocketF:
 	trainer GRUNTF, GRUNTF_3, EVENT_BEAT_ROCKET_GRUNTF_3, OlivineLighthouse3FRocketFSeenText, OlivineLighthouse3FRocketFBeatenText, 0, .Script
@@ -39,10 +33,7 @@ TrainerOlivineLighthouse3FRocketF:
 .Script:
 	endifjustbattled
 	opentext
-	writetext OlivineLighthouse3FRocketFAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineLighthouse3FRocketFAfterBattleText
 
 Lighthouse3FSailorScript:
 	jumptextfaceplayer Lighthouse3FSailorText

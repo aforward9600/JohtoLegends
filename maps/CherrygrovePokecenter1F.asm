@@ -16,16 +16,10 @@ CherrygrovePokecenter1FGentlemanScript:
 	opentext
 	checkevent EVENT_BEAT_MADAME_BOSS
 	iftrue .BeatRockets
-	writetext CherrygrovePokecenter1FGentlemanText
-	waitbutton
-	closetext
-	end
+	writetextend CherrygrovePokecenter1FGentlemanText
 
 .BeatRockets:
-	writetext CherrygrovePokecenter1FGentlemanText2
-	waitbutton
-	closetext
-	end
+	writetextend CherrygrovePokecenter1FGentlemanText2
 
 CherrygrovePokecenter1FTeacherScript:
 	jumptextfaceplayer CherrygrovePokecenter1FTeacherText
@@ -35,10 +29,7 @@ HiddenAbilityChangeScript:
 	opentext
 	checkitem ABILITY_PILL
 	iftrue .AskAbilityPill
-	writetext BringMeAnAbilityPill
-	waitbutton
-	closetext
-	end
+	writetextend BringMeAnAbilityPill
 
 .AskAbilityPill
 	writetext ChangeAbilityText
@@ -52,10 +43,7 @@ HiddenAbilityChangeScript:
 	end
 
 .Cancel
-	writetext HiddenAbilityCancelText
-	waitbutton
-	closetext
-	end
+	writetextend HiddenAbilityCancelText
 
 CherrygrovePokecenter1FGentlemanText:
 	text "Shh!"

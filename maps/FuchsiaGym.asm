@@ -49,10 +49,7 @@ FuchsiaGymKogaScript:
 	setevent EVENT_DECO_BED_2
 	opentext
 .AfterTM:
-	writetext KogaText_Ready
-	waitbutton
-	closetext
-	end
+	writetextend KogaText_Ready
 
 .AlreadyGotTM:
 	opentext
@@ -67,10 +64,7 @@ FuchsiaGymKogaScript:
 .KogaPost:
 	checkflag ENGINE_JOSE
 	iffalse .KogaRematch
-	writetext KogaPostGameText
-	waitbutton
-	closetext
-	end
+	writetextend KogaPostGameText
 
 .KogaRematch:
 	writetext KogaRematchText
@@ -80,12 +74,9 @@ FuchsiaGymKogaScript:
 	loadtrainer KOGA, KOGA1
 	startbattle
 	reloadmapafterbattle
-	opentext
-	writetext KogaRematchAfterText
-	waitbutton
-	closetext
 	setflag ENGINE_JOSE
-	end
+	opentext
+	writetextend KogaRematchAfterText
 
 KogaText_LastMonText:
 	text "A ninja is always"
@@ -98,10 +89,7 @@ FuchsiaGymNinjaF1:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FuchsiaGymNinjaF1AfterText
-	waitbutton
-	closetext
-	end
+	writetextend FuchsiaGymNinjaF1AfterText
 
 FuchsiaGymNinjaF2:
 	trainer FNINJA_F, FNINJA_F_2, EVENT_BEAT_FNINJA_F2, FuchsiaGymNinjaF2BeforeText, FuchsiaGymNinjaF2BeatenText, 0, .Script
@@ -109,10 +97,7 @@ FuchsiaGymNinjaF2:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FuchsiaGymNinjaF2AfterText
-	waitbutton
-	closetext
-	end
+	writetextend FuchsiaGymNinjaF2AfterText
 
 FuchsiaGymNinjaM1:
 	trainer FNINJA_M, FNINJA_M_1, EVENT_BEAT_FNINJA_M1, FuchsiaGymNinjaM1BeforeText, FuchsiaGymNinjaM1BeatenText, 0, .Script
@@ -120,10 +105,7 @@ FuchsiaGymNinjaM1:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FuchsiaGymNinjaM1AfterText
-	waitbutton
-	closetext
-	end
+	writetextend FuchsiaGymNinjaM1AfterText
 
 FuchsiaGymNinjaM2:
 	trainer FNINJA_M, FNINJA_M_2, EVENT_BEAT_FNINJA_M2, FuchsiaGymNinjaM2BeforeText, FuchsiaGymNinjaM2BeatenText, 0, .Script
@@ -131,10 +113,7 @@ FuchsiaGymNinjaM2:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FuchsiaGymNinjaM2AfterText
-	waitbutton
-	closetext
-	end
+	writetextend FuchsiaGymNinjaM2AfterText
 
 FuchsiaGymStatue:
 	jumptext FuchsiaGymStatueText

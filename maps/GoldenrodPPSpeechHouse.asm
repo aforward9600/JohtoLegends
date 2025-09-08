@@ -23,10 +23,7 @@ GoldenrodPPSpeechHouseGrampsScript:
 	special MoveTutor
 	if_equal $0, .TeachMove
 .TutorRefused
-	writetext GoldenrodPPSpeechHouseGrampsDrainPunchRefused
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodPPSpeechHouseGrampsDrainPunchRefused
 
 .TeachMove
 	writetext GoldenrodPPSpeechHouseGrampsDrainPunchTaught

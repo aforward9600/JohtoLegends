@@ -45,10 +45,7 @@ GoldenrodBlackMarketRocketScript:
 	opentext
 	checkflag ENGINE_HIVEBADGE
 	iftrue .SellDubiousDisk
-	writetext BlackMarketRocketText
-	waitbutton
-	closetext
-	end
+	writetextend BlackMarketRocketText
 
 .SellDubiousDisk:
 	writetext BuyADubiousDiskText
@@ -70,38 +67,23 @@ GoldenrodBlackMarketRocketScript:
 	end
 
 .RefusedDubiousDisk:
-	writetext RefusedDubiousDiskText
-	waitbutton
-	closetext
-	end
+	writetextend RefusedDubiousDiskText
 
 NoMoneyDubiousDisk:
-	writetext NoMoneyDubiousDiskText
-	waitbutton
-	closetext
-	end
+	writetextend NoMoneyDubiousDiskText
 
 NoRoomForDubiousDisk:
-	writetext NoRoomForDubiousDiskText
-	waitbutton
-	closetext
-	end
+	writetextend NoRoomForDubiousDiskText
 
 GoldenrodBikeShopBurglarScript:
 	faceplayer
 	opentext
 	checkflag ENGINE_HIVEBADGE
 	iftrue .NewItems
-	writetext BikeShopBurglarText1
-	waitbutton
-	closetext
-	end
+	writetextend BikeShopBurglarText1
 
 .NewItems:
-	writetext BikeShopBurglarText2
-	waitbutton
-	closetext
-	end
+	writetextend BikeShopBurglarText2
 
 BlackMarketRocketText:
 	text "The Upgrade is"

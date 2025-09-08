@@ -57,10 +57,7 @@ PokemonMansion2FAbraStatue:
 	end
 
 .DidntPressTheButton2F:
-	writetext NotQuiteYet2FText
-	waitbutton
-	closetext
-	end
+	writetextend NotQuiteYet2FText
 
 TrainerBurglarMarv:
 	trainer BURGLAR, MARV, EVENT_BEAT_BURGLAR_MARV, BurglarMarvSeenText, BurglarMarvBeatenText, 0, .Script
@@ -68,10 +65,7 @@ TrainerBurglarMarv:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BurglarMarvAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BurglarMarvAfterBattleText
 
 PokemonMansion2FScientist:
 	jumptextfaceplayer PokemonMansion2FScientistText

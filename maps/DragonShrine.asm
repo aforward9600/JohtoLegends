@@ -115,12 +115,9 @@ DragonShrine_MapScripts:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	iftrue .Question1
 .PassedTheTest:
-	writetext DragonShrinePassedTestText
-	waitbutton
-	closetext
 	setscene SCENE_FINISHED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	end
+	writetextend DragonShrinePassedTestText
 
 DragonShrineElder1Script:
 	faceplayer
@@ -148,22 +145,13 @@ DragonShrineElder1Script:
 	special GiveDratini
 	setevent EVENT_GOT_DRATINI
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
-	writetext DragonShrineSymbolicDragonText
-	waitbutton
-	closetext
-	end
+	writetextend DragonShrineSymbolicDragonText
 
 .PartyFull:
-	writetext DragonShrinePartyFullText
-	waitbutton
-	closetext
-	end
+	writetextend DragonShrinePartyFullText
 
 .DontGiveDratiniYet:
-	writetext DragonShrineComeAgainText
-	waitbutton
-	closetext
-	end
+	writetextend DragonShrineComeAgainText
 
 .ReceivedDratini:
 	writetext DragonShrineTutorText
@@ -174,40 +162,21 @@ DragonShrineElder1Script:
 	special MoveTutor
 	if_equal $0, .TeachMove
 .ExtremeSpeedRefused:
-	writetext ExtremeSpeedRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend ExtremeSpeedRefusedText
 
 .TeachMove:
-	writetext TaughtExtremeSpeedText
-	waitbutton
-	closetext
-	end
+	writetextend TaughtExtremeSpeedText
 
 .CantGetBagon:
-	writetext CantGetBagonText
 	setevent EVENT_GOT_DRATINI
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
-	waitbutton
-	closetext
-	end
+	writetextend CantGetBagonText
 
 DragonShrineElder2Script:
-	faceplayer
-	opentext
-	writetext DragonShrineElder2Text
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer DragonShrineElder2Text
 
 DragonShrineElder3Script:
-	faceplayer
-	opentext
-	writetext DragonShrineElder3Text
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer DragonShrineElder3Text
 
 DragonShrineElder4Script:
 	jumptextfaceplayer DragonShrineClairsGrandfatherText
@@ -217,16 +186,10 @@ DragonShrineElder5Script:
 	opentext
 	checkevent EVENT_GOT_DRATINI_FROM_MASTER
 	iftrue .RivalDragonShrine
-	writetext DontLikeLarvitarYouText
-	waitbutton
-	closetext
-	end
+	writetextend DontLikeLarvitarYouText
 
 .RivalDragonShrine:
-	writetext DontLikeLarvitarText
-	waitbutton
-	closetext
-	end
+	writetextend DontLikeLarvitarText
 
 DragonShrineQuestion1_MenuHeader:
 	db MENU_BACKUP_TILES ; flags

@@ -115,28 +115,16 @@ MomScript:
 	iftrue .GaveMysteryEgg
 	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue .GotAPokemon
-	writetext HurryUpElmIsWaitingText
-	waitbutton
-	closetext
-	end
+	writetextend HurryUpElmIsWaitingText
 
 .BeatLeague:
-	writetext GrandmaCongratsText
-	waitbutton
-	closetext
-	end
+	writetextend GrandmaCongratsText
 
 .GotAPokemon:
-	writetext SoWhatWasProfElmsErrandText
-	waitbutton
-	closetext
-	end
+	writetextend SoWhatWasProfElmsErrandText
 
 .FirstTimeBanking:
-	writetext ImBehindYouText
-	waitbutton
-	closetext
-	end
+	writetextend ImBehindYouText
 
 .GaveMysteryEgg:
 	writetext OhWaitText

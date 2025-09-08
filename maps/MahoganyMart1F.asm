@@ -57,12 +57,7 @@ MahogayMart1FPharmacistScript:
 	end
 
 MahogayMart1FBuenaScript:
-	faceplayer
-	opentext
-	writetext MahogayMart1FBuenaText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer MahogayMart1FBuenaText
 
 SherlesTriesToArrestKoga:
 	pause 10
@@ -163,12 +158,7 @@ MahogayMart1FGrannyScript:
 	end
 
 MartSherlesScript:
-	faceplayer
-	opentext
-	writetext MartSherlesText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer MartSherlesText
 
 MartRival:
 	jumptextfaceplayer EmptyHuhText

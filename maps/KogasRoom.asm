@@ -70,22 +70,16 @@ SurgeReconvene:
 	waitsfx
 	end
 
-Surge2:
-	winlosstext SurgeScript_SurgeBeatenText, GeneralSurgeLastMonText
-	loadtrainer GEN_SURGE, GEN_SURGE2
-	sjump SurgeReconvene
-
 SurgeRematch:
 	writetext SurgeScript_SurgeBeforeText2
 	waitbutton
 	closetext
-	sjump Surge2
+	winlosstext SurgeScript_SurgeBeatenText, GeneralSurgeLastMonText
+	loadtrainer GEN_SURGE, GEN_SURGE2
+	sjump SurgeReconvene
 
 SurgeScript_AfterBattle:
-	writetext SurgeScript_SurgeDefeatText
-	waitbutton
-	closetext
-	end
+	writetextend SurgeScript_SurgeDefeatText
 
 SurgesRoom_EnterMovement:
 	step UP

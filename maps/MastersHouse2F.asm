@@ -62,22 +62,13 @@ TrainerDragonKidClair:
 	sjump Rival1
 
 .LarvitarScript:
-	writetext ClairHiText
-	waitbutton
-	closetext
-	end
+	writetextend ClairHiText
 
 .ClairBeaten:
-	writetext ClairIWontLoseText
-	waitbutton
-	closetext
-	end
+	writetextend ClairIWontLoseText
 
 .ClairLost:
-	writetext LostToClairText
-	waitbutton
-	closetext
-	end
+	writetextend LostToClairText
 
 .CanLoseToClair
 	winlosstext DragonKidClairBeatenText, 0
@@ -131,22 +122,13 @@ TrainerDragonKidLance:
 	sjump Rival2
 
 .DratiniScript:
-	writetext LanceHiText
-	waitbutton
-	closetext
-	end
+	writetextend LanceHiText
 
 .LanceBeaten:
-	writetext LanceNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend LanceNextTimeText
 
 .LanceLost:
-	writetext LostToLanceText
-	waitbutton
-	closetext
-	end
+	writetextend LostToLanceText
 
 .CanLoseToLance:
 	winlosstext DragonKidLanceBeatenText, 0
@@ -220,10 +202,7 @@ MastersHouseDratiniScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext MastersHouseDratiniText
-	waitbutton
-	closetext
-	end
+	writetextend MastersHouseDratiniText
 
 AfterBattleMovement1:
 	step DOWN

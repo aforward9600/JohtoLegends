@@ -22,16 +22,10 @@ MahoganyTownGrampsScript:
 	opentext
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
 	iftrue .ClearedRocketHideout
-	writetext MahoganyTownGrampsText
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyTownGrampsText
 
 .ClearedRocketHideout:
-	writetext MahoganyTownGrampsText_ClearedRocketHideout
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyTownGrampsText_ClearedRocketHideout
 
 MahoganyTownFisherScript:
 	jumptextfaceplayer MahoganyTownFisherText

@@ -110,10 +110,7 @@ FuchsiaCityPokefanM2:
 	iftrue .GotSnorlaxDoll
 	checkevent EVENT_VERMILION_CITY_SNORLAX
 	iftrue .GetSnorlaxDoll
-	writetext ThatSnorlaxIsThereText
-	waitbutton
-	closetext
-	end
+	writetextend ThatSnorlaxIsThereText
 
 .GetSnorlaxDoll:
 	writetext GiveSnorlaxDollText
@@ -128,16 +125,10 @@ FuchsiaCityPokefanM2:
 .GotSnorlaxDoll:
 	checkevent EVENT_VERMILION_CITY_SNORLAX
 	iffalse .SnorlaxIsBack
-	writetext HowsThatSnorlaxDollText
-	waitbutton
-	closetext
-	end
+	writetextend HowsThatSnorlaxDollText
 
 .SnorlaxIsBack:
-	writetext SnorlaxIsBackText
-	waitbutton
-	closetext
-	end
+	writetextend SnorlaxIsBackText
 
 FuchsiaCityFishingGuru:
 	checkevent EVENT_BEAT_BIKER_BOSS

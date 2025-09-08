@@ -49,10 +49,7 @@ TrainerDelinquentTabitha:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DelinquentTabithaAfterText
-	waitbutton
-	closetext
-	end
+	writetextend DelinquentTabithaAfterText
 
 TrainerRoughneckKyle:
 	trainer ROUGHNECK, KYLE_2, EVENT_BEAT_ROUGHNECK_KYLE, RoughneckKyleSeenText, RoughneckKyleBeatenText, 0, .Script
@@ -68,10 +65,7 @@ TrainerRoughneckKyle:
 	end
 
 .GotElevatorPassword:
-	writetext RoughneckKyleElevatorText
-	waitbutton
-	closetext
-	end
+	writetextend RoughneckKyleElevatorText
 
 FedHideoutB1FSabrinaText:
 	text "Sabrina: She's too"

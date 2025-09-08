@@ -53,10 +53,11 @@ OlivineLighthouse6F_MapScripts:
 	waitbutton
 	closetext
 	turnobject PLAYER, UP
+	opentext
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female1
-	opentext
 	writetext ThisYourGFText
+.FinishLighthouse6F:
 	waitbutton
 	closetext
 	opentext
@@ -128,80 +129,6 @@ OlivineLighthouse6F_MapScripts:
 	playmusic MUSIC_UNWAVERING_HEART
 	turnobject OLIVINELIGHTHOUSE6F_RIVAL, DOWN
 	turnobject PLAYER, UP
-	sjump .Backstory
-
-.Female1:
-	opentext
-	writetext ThisYourBFText
-	waitbutton
-	closetext
-	opentext
-	writetext SilenceText
-	waitbutton
-	closetext
-	opentext
-	writetext WhateverWereDoneText
-	waitbutton
-	closetext
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	disappear OLIVINELIGHTHOUSE6F_MIYAMOTO
-	pause 15
-	special FadeInQuickly
-	setevent EVENT_BEAT_LIGHTHOUSE_MIYAMOTO
-	waitsfx
-	playmapmusic
-	opentext
-	writetext DangSmokeBombsText
-	waitbutton
-	closetext
-	pause 10
-	applymovement OLIVINELIGHTHOUSE6F_MONSTER2, RosaMovesMovement
-	appear OLIVINELIGHTHOUSE6F_MONSTER
-	pause 10
-	applymovement OLIVINELIGHTHOUSE6F_MONSTER2, RosaDisappears
-	disappear OLIVINELIGHTHOUSE6F_MONSTER2
-	clearevent EVENT_LIGHTHOUSE_MONSTER
-	cry AMPHAROS
-	pause 15
-	opentext
-	writetext ThisIsRosaText
-	waitbutton
-	closetext
-	applymovement OLIVINELIGHTHOUSE6F_BYRON, ByronLeavesMovement1
-	applymovement PLAYER, RivalMovesOutOfWayMovement
-	turnobject PLAYER, RIGHT
-	turnobject OLIVINELIGHTHOUSE6F_RIVAL, RIGHT
-	applymovement OLIVINELIGHTHOUSE6F_BYRON, ByronLeavesMovement1
-	turnobject OLIVINELIGHTHOUSE6F_BYRON, LEFT
-	opentext
-	writetext HeresSurfText
-	buttonsound
-	giveitem LAPRAS_CALLA
-	writetext ReceivedLaprasCallText
-	waitsfx
-	specialsound
-	waitbutton
-	itemnotify
-	disappear OLIVINELIGHTHOUSE6F_MONSTER2
-	setevent EVENT_GOT_LAPRAS_CALLA
-	writetext ThatsSurfText
-	waitbutton
-	closetext
-	applymovement OLIVINELIGHTHOUSE6F_BYRON, RosaMovesMovement
-	playsound SFX_EXIT_BUILDING
-	disappear OLIVINELIGHTHOUSE6F_BYRON
-	setevent EVENT_OLIVINE_LIGHTHOUSE_JASMINE
-	special FadeOutMusic
-	pause 30
-	opentext
-	writetext SilenceText
-	waitbutton
-	closetext
-	playmusic MUSIC_UNWAVERING_HEART
-	turnobject OLIVINELIGHTHOUSE6F_RIVAL, DOWN
-	turnobject PLAYER, UP
-	sjump .Backstory
 
 .Backstory:
 	opentext
@@ -215,7 +142,6 @@ OlivineLighthouse6F_MapScripts:
 	writetext DragoniteText
 	waitbutton
 	closetext
-	sjump .RivalLeaves
 
 .RivalLeaves:
 	applymovement OLIVINELIGHTHOUSE6F_RIVAL, RivalLeavesMovement
@@ -248,6 +174,10 @@ OlivineLighthouse6F_MapScripts:
 	setevent EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_SHERLES
 	setscene SCENE_FINISHED
 	end
+
+.Female1:
+	writetext ThisYourBFText
+	sjump .FinishLighthouse6F
 
 .Dummy0:
 	end
@@ -292,12 +222,7 @@ OlivineLighthouseAmphy:
 	end
 
 OlivineLighthouse6FByron:
-	faceplayer
-	opentext
-	writetext KeepingRosaCompanyText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer KeepingRosaCompanyText
 
 OlivineLighthouse6FSuperPotion:
 	itemball SUPER_POTION
@@ -455,7 +380,7 @@ ThisYourBFText:
 	done
 
 SilenceText:
-	text ".................."
+	text "………………………"
 	done
 
 WhateverWereDoneText:

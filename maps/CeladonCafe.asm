@@ -19,16 +19,10 @@ CeladonCafeChef:
 	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .CeladonCafeChef2
-	writetext ChefText_Eatathon
-	waitbutton
-	closetext
-	end
+	writetextend ChefText_Eatathon
 
 .CeladonCafeChef2:
-	writetext SuperNerdText_FedsGone
-	waitbutton
-	closetext
-	end
+	writetextend SuperNerdText_FedsGone
 
 CeladonCafeFisher1:
 	opentext
@@ -141,10 +135,7 @@ CeladonCafeTrashcan:
 	getitemname STRING_BUFFER_3, LEFTOVERS
 	writetext FoundLeftoversText
 	buttonsound
-	writetext NoRoomForLeftoversText
-	waitbutton
-	closetext
-	end
+	writetextend NoRoomForLeftoversText
 
 .TrashEmpty:
 	jumpstd trashcan

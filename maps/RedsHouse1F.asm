@@ -15,15 +15,10 @@ RedsMom:
 	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .MetAlready
-	writetext RedsMomText1
-	waitbutton
-	closetext
-	end
+	writetextend RedsMomText1
+
 .MetAlready:
-	writetext RedsMomText2
-	waitbutton
-	closetext
-	end
+	writetextend RedsMomText2
 
 RedsHouse1FTV:
 	checkevent EVENT_BEAT_BIKER_BOSS

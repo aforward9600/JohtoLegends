@@ -17,23 +17,14 @@ GoodRodGuru:
 	writetext GiveGoodRodText
 	buttonsound
 	verbosegiveitem GOOD_ROD
-	writetext GaveGoodRodText
-	waitbutton
-	closetext
 	setevent EVENT_GOT_GOOD_ROD
-	end
+	writetextend GaveGoodRodText
 
 .DontWantIt:
-	writetext DontWantGoodRodText
-	waitbutton
-	closetext
-	end
+	writetextend DontWantGoodRodText
 
 .AlreadyGotItem:
-	writetext HaveGoodRodText
-	waitbutton
-	closetext
-	end
+	writetextend HaveGoodRodText
 
 OfferGoodRodText:
 	text "Olivine is on the"

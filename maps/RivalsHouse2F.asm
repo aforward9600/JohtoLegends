@@ -25,55 +25,37 @@ RivalsHouse2FRival:
 	opentext
 	checkflag ENGINE_RISINGBADGE
 	iftrue .RivalsHouseBattle
-	writetext RivalSilenceText
-	waitbutton
-	closetext
-	end
+	writetextend RivalSilenceText
 
 .RivalsHouseBattle:
 	writetext PleaseBattleMeText
 	waitbutton
 	closetext
+	setlasttalked RIVALSHOUSE2F_RIVAL
+	winlosstext, RivalsHouseDefeatedText, RivalsHouseLastMonText
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .RivalsHouseDraco
 	checkevent EVENT_GOT_DRATINI_FROM_MASTER
 	iftrue .RivalsHouseDahliaDratini
-	winlosstext, RivalsHouseDefeatedText, RivalsHouseLastMonText
-	setlasttalked RIVALSHOUSE2F_RIVAL
 	loadtrainer DEPRESSED_DAHLIA, DAHLIA_DRATINI_2
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
 	sjump .RivalsHouseVictorious1
 
 .RivalsHouseDahliaDratini:
-	winlosstext, RivalsHouseDefeatedText, RivalsHouseLastMonText
-	setlasttalked RIVALSHOUSE2F_RIVAL
 	loadtrainer DEPRESSED_DAHLIA, DAHLIA_LARVITAR_2
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
 	sjump .RivalsHouseVictorious1
 
 .RivalsHouseDraco:
 	checkevent EVENT_GOT_DRATINI_FROM_MASTER
 	iftrue .RivalsHouseDracoDratini
-	winlosstext, RivalsHouseDefeatedText, RivalsHouseLastMonText
-	setlasttalked RIVALSHOUSE2F_RIVAL
 	loadtrainer DEPRESSED_DRACO, DRACO_DRATINI_2
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
 	sjump .RivalsHouseVictorious1
 
 .RivalsHouseDracoDratini:
-	winlosstext, RivalsHouseDefeatedText, RivalsHouseLastMonText
-	setlasttalked RIVALSHOUSE2F_RIVAL
 	loadtrainer DEPRESSED_DRACO, DRACO_LARVITAR_2
+.RivalsHouseVictorious1:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-.RivalsHouseVictorious1:
 	playmusic MUSIC_UNWAVERING_HEART
 	pause 15
 	opentext

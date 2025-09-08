@@ -35,22 +35,13 @@ GoldenrodPokecenter1FPokefanF:
 	waitbutton
 	verbosegiveitem EVIOLITE
 	iffalse .NoRoom
-	writetext GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText
 
 .NoEonMail:
-	writetext GoldenrodPokecenter1FPokefanFTooBadText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodPokecenter1FPokefanFTooBadText
 
 .NoRoom:
-	writetext GoldenrodPokecenter1FPokefanFAnotherTimeThenText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodPokecenter1FPokefanFAnotherTimeThenText
 
 GoldenrodPokecenter1FGameboyKidText:
 	text "Have you ever"

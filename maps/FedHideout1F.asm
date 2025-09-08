@@ -15,12 +15,7 @@ FedHideout1FRoughneck1:
 	showemote EMOTE_SILENCE, FEDHIDEOUT1F_ROUGHNECK1, 15
 	pause 5
 	opentext
-	writetext FedHideout1FRoughneck1Text
-	waitbutton
-	closetext
-	setevent EVENT_FED_HIDEOUT_GIOVANNI
-	setevent EVENT_FED_HIDEOUT_PLAYER
-	end
+	writetextend FedHideout1FRoughneck1Text
 
 FedHideout1FDelinquent:
 	jumptextfaceplayer FedHideout1FDelinquentText
@@ -47,14 +42,9 @@ TrainerBikerSpike:
 	trainer BIKER, SPIKE, EVENT_BEAT_BIKER_SPIKE, BikerSpikeSeenText, BikerSpikeBeatenText, 0, .Script
 
 .Script:
-	setevent EVENT_FED_HIDEOUT_GIOVANNI
-	setevent EVENT_FED_HIDEOUT_PLAYER
 	endifjustbattled
 	opentext
-	writetext BikerSpikeAfterText
-	waitbutton
-	closetext
-	end
+	writetextend BikerSpikeAfterText
 
 FedHideout1FRoughneck1Text:
 	text "Looks like he was"

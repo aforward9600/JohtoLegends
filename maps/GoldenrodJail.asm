@@ -22,10 +22,7 @@ GoldenrodJailOfficerScript:
 	iftrue .ReleasedRocket
 	checkevent EVENT_GOT_PORYGON_R
 	iftrue .RocketInJail
-	writetext PlentyOfCrimeLatelyText
-	waitbutton
-	closetext
-	end
+	writetextend PlentyOfCrimeLatelyText
 
 .RocketInJail:
 	writetext GotHimselfCaughtText
@@ -100,18 +97,15 @@ GoldenrodJailOfficerScript:
 	sjump .OfficerGetsRocket
 
 .ReleasedRocket:
-	writetext HopeIDidTheRightThingText
-	waitbutton
-	closetext
-	end
+	writetextend HopeIDidTheRightThingText
 
 RocketInJailTalk:
+	opentext
 	checkevent EVENT_GOT_STRANGE_HAIR
 	iftrue .EmptyCellTalk
 	checkevent EVENT_GOT_PORYGON_R
 	iffalse .EmptyCellTalk
 	turnobject GOLDENRODJAIL_ROCKET, DOWN
-	opentext
 	checkevent EVENT_ACCEPTED_GRUNTS_REQUEST
 	iftrue .ThanksMan
 	checkevent EVENT_PASSWORD_SINGULAR
@@ -119,64 +113,39 @@ RocketInJailTalk:
 	writetext GetMeOuttaHereText
 	yesorno
 	iffalse .ComeOnMan
-	writetext ThanksManText
-	waitbutton
-	closetext
 	setevent EVENT_ACCEPTED_GRUNTS_REQUEST
-	end
+	writetextend ThanksManText
 
 .EmptyCellTalk:
-	opentext
-	writetext ItLooksEmptyText
-	waitbutton
-	closetext
-	end
+	writetextend ItLooksEmptyText
 
 .ComeOnMan:
-	writetext ComeOnManText
-	waitbutton
-	closetext
-	end
+	writetextend ComeOnManText
 
 .ThanksMan:
-	writetext ThanksManText
-	waitbutton
-	closetext
-	end
+	writetextend ThanksManText
 
 .RocketJailSingular:
 	writetext GetMeOuttaHereSingularText
 	yesorno
 	iffalse .ComeOnMan
-	writetext ThanksManText
-	waitbutton
-	closetext
 	setevent EVENT_ACCEPTED_GRUNTS_REQUEST
-	end
+	writetextend ThanksManText
 
 SecondJailCellTalk:
 	turnobject GOLDENRODJAIL_BURGLAR, DOWN
 	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .CheaterPassword
-	writetext DangGotCaughtText
-	waitbutton
-	closetext
-	end
+	writetextend DangGotCaughtText
 
 .CheaterPassword:
-	writetext CheaterPasswordText
-	waitbutton
-	closetext
-	end
+	writetextend CheaterPasswordText
 
 ThirdJailCellTalk:
 	turnobject GOLDENRODJAIL_FRAUD, DOWN
 	opentext
-	writetext LastTimeICommitFraudText
-	waitbutton
-	closetext
-	end
+	writetextend LastTimeICommitFraudText
 
 GoldenrodJailCooltrainerFScript:
 	faceplayer
@@ -186,10 +155,7 @@ GoldenrodJailCooltrainerFScript:
 	closetext
 	turnobject GOLDENRODJAIL_COOLTRAINER_F, UP
 	opentext
-	writetext CmonBabeText
-	waitbutton
-	closetext
-	end
+	writetextend CmonBabeText
 
 GoldenrodJailPokefanFScript:
 	faceplayer
@@ -199,10 +165,7 @@ GoldenrodJailPokefanFScript:
 	closetext
 	turnobject GOLDENRODJAIL_POKEFAN_F, UP
 	opentext
-	writetext ListenHereText
-	waitbutton
-	closetext
-	end
+	writetextend ListenHereText
 
 GoldenrodJailOfficer2Script:
 	jumptextfaceplayer WatchingTheseGuysText

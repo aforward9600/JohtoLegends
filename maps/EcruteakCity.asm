@@ -33,22 +33,13 @@ EcruteakCityGramps1Script:
 	iftrue .OldManPolitoed
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .Toldyou
-	writetext EcruteakCityGramps1Text
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakCityGramps1Text
 
 .Toldyou:
-	writetext EcruteakCityGrampsToldYouText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakCityGrampsToldYouText
 
 .OldManPolitoed:
-	writetext OldManPolitoedText
-	waitbutton
-	closetext
-	end
+	writetextend OldManPolitoedText
 
 EcruteakCityGramps2Script:
 	jumptextfaceplayer EcruteakCityGramps2Text
@@ -60,12 +51,7 @@ EcruteakCityLass1Script:
 	jumptextfaceplayer EcruteakCityLass1Text
 
 EcruteakCityMotherScript:
-	faceplayer
-	opentext
-	writetext EcruteakCityMotherText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer EcruteakCityMotherText
 
 EcruteakPolitoedScript:
 	opentext
@@ -100,22 +86,13 @@ EcruteakCityFisherScript:
 	iftrue .OldManHome
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .CalmDown
-	writetext EcruteakCityFisherText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakCityFisherText
 
 .CalmDown:
-	writetext EcruteakCityFisherText_CalmDown
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakCityFisherText_CalmDown
 
 .OldManHome:
-	writetext OldManHomeText
-	waitbutton
-	closetext
-	end
+	writetextend OldManHomeText
 
 EcruteakCityYoungsterScript:
 	jumptextfaceplayer EcruteakCityYoungsterText

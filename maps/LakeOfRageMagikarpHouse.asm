@@ -16,24 +16,15 @@ MagikarpLengthRaterScript:
 	iftrue .AskedForMagikarp
 	checkevent EVENT_LAKE_OF_RAGE_EXPLAINED_WEIRD_MAGIKARP
 	iftrue .ClearedRocketHideout
-	writetext MagikarpLengthRaterText_LakeOfRageHistory
-	waitbutton
-	closetext
 	setevent EVENT_LAKE_OF_RAGE_EXPLAINED_WEIRD_MAGIKARP
-	end
+	writetextend MagikarpLengthRaterText_LakeOfRageHistory
 
 .ExplainedHistory:
-	writetext MagikarpLengthRaterText_MenInBlack
-	waitbutton
-	closetext
-	end
+	writetextend MagikarpLengthRaterText_MenInBlack
 
 .ClearedRocketHideout:
-	writetext MagikarpLengthRaterText_WorldsLargestMagikarp
-	waitbutton
-	closetext
 	setevent EVENT_LAKE_OF_RAGE_ASKED_FOR_MAGIKARP
-	end
+	writetextend MagikarpLengthRaterText_WorldsLargestMagikarp
 
 .AskedForMagikarp:
 	loadmonindex 1, MAGIKARP
@@ -58,28 +49,16 @@ MagikarpLengthRaterScript:
 	waitsfx
 	buttonsound
 .GotReward:
-	writetext MagikarpLengthRaterText_Doll
-	waitbutton
-	closetext
-	end
+	writetextend MagikarpLengthRaterText_Doll
 
 .TooShort:
-	writetext MagikarpLengthRaterText_TooShort
-	waitbutton
-	closetext
-	end
+	writetextend MagikarpLengthRaterText_TooShort
 
 .NotMagikarp:
-	writetext MagikarpLengthRaterText_NotMagikarp
-	waitbutton
-	closetext
-	end
+	writetextend MagikarpLengthRaterText_NotMagikarp
 
 .Refused:
-	writetext MagikarpLengthRaterText_Refused
-	waitbutton
-	closetext
-	end
+	writetextend MagikarpLengthRaterText_Refused
 
 MagikarpLengthOldRodScript:
 	faceplayer
@@ -92,23 +71,14 @@ MagikarpLengthOldRodScript:
 	writetext OldRodText_Yes
 	buttonsound
 	verbosegiveitem OLD_ROD
-	writetext OldRodText_GiveOldRod
-	waitbutton
-	closetext
 	setevent EVENT_GOT_OLD_ROD
-	end
+	writetextend OldRodText_GiveOldRod
 
 .Refused:
-	writetext OldRodText_No
-	waitbutton
-	closetext
-	end
+	writetextend OldRodText_No
 
 .GotOldRod:
-	writetext OldRodText_After
-	waitbutton
-	closetext
-	end
+	writetextend OldRodText_After
 
 LakeOfRageTelevision:
 	jumpstd televisionscript

@@ -53,10 +53,7 @@ PokemonMansion1FAbraStatue:
 	end
 
 .DidntPressTheButton:
-	writetext NotQuiteYetText
-	waitbutton
-	closetext
-	end
+	writetextend NotQuiteYetText
 
 PokemonMansion1FDiary:
 	jumptext PokemonMansion1FDiaryText
@@ -74,10 +71,7 @@ PokemonMansion1FGiovanni:
 	opentext
 	readvar VAR_BADGES
 	ifequal 15, .CanSpeakWithGiovanni
-	writetext GiovanniLeaveMeAloneText
-	waitbutton
-	closetext
-	end
+	writetextend GiovanniLeaveMeAloneText
 
 .CanSpeakWithGiovanni:
 	writetext GiovanniItsAllGoneText

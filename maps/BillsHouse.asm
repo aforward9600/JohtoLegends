@@ -47,10 +47,7 @@ BillsGrandpa:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	writetext ThanksForShowingLaprasText
-	waitbutton
-	closetext
-	end
+	writetextend ThanksForShowingLaprasText
 
 .ExcitedToSee:
 	writetext BillsGrandpaExcitedToSeeText
@@ -58,10 +55,7 @@ BillsGrandpa:
 	end
 
 .SaidNo:
-	writetext BillsGrandpaYouDontHaveItTextText
-	waitbutton
-	closetext
-	end
+	writetextend BillsGrandpaYouDontHaveItTextText
 
 .CorrectPokemon:
 	writetext BillsGrandpaShownPokemonText
@@ -74,22 +68,13 @@ BillsGrandpa:
 	end
 
 .JustShowedSomething:
-	writetext BillsGrandpaComeAgainText
-	waitbutton
-	closetext
-	end
+	writetextend BillsGrandpaComeAgainText
 
 .AlreadyGotLaprasDoll:
-	writetext HowsYourJourneyGoingText
-	waitbutton
-	closetext
-	end
+	writetextend HowsYourJourneyGoingText
 
 .WrongPokemon:
-	writetext BillsGrandpaWrongPokemonText
-	waitbutton
-	closetext
-	end
+	writetextend BillsGrandpaWrongPokemonText
 
 .BagFull:
 	closetext
@@ -102,10 +87,7 @@ BillsHouseAbra:
 	waitbutton
 	closepokepic
 	opentext
-	writetext BillsHouseAbraText
-	waitbutton
-	closetext
-	end
+	writetextend BillsHouseAbraText
 
 BillsGrandpaIntroText:
 	text "Hm? You're <PLAYER>,"

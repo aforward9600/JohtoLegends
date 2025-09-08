@@ -41,16 +41,10 @@ GoldenrodCityDirectorScript:
 	opentext
 	checkevent EVENT_GOLDENROD_TOWER_TAKEOVER
 	iftrue .RadioTower
-	writetext MyPoorTowerText
-	waitbutton
-	closetext
-	end
+	writetextend MyPoorTowerText
 
 .RadioTower:
-	writetext RadioTowerText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTowerText
 
 GoldenrodCityCooltrainerF3Script:
 	jumptextfaceplayer GoldenrodCityCooltrainerF3Text
@@ -62,30 +56,16 @@ GoldenrodCityLass2Script:
 	iftrue .ClearedRadioTower
 	checkevent EVENT_GOLDENROD_TOWER_TAKEOVER
 	iftrue .CurrentlyInvaded
-	writetext GoldenrodCityLassInvasionText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodCityLassInvasionText
 
 .ClearedRadioTower:
-	writetext GoldenrodCityLass2Text_ClearedRadioTower
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodCityLass2Text_ClearedRadioTower
 
 .CurrentlyInvaded:
-	writetext GoldenrodCityLass2Text
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodCityLass2Text
 
 GoldenrodCityCooltrainerF2Script:
-	faceplayer
-	opentext
-	writetext GoldenrodCityCooltrainerF2Text
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer GoldenrodCityCooltrainerF2Text
 
 GoldenrodCityYoungster2Script:
 	jumptextfaceplayer GoldenrodCityYoungster2Text

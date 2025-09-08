@@ -14,10 +14,7 @@ BlackthornDragonSpeechHouseGrannyScript:
 	iftrue .GotADoll
 	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue .GetADoll
-	writetext ComeBackWithAPokemonText
-	waitbutton
-	closetext
-	end
+	writetextend ComeBackWithAPokemonText
 
 .GetADoll:
 	writetext TakeThisDollText
@@ -40,10 +37,7 @@ BlackthornDragonSpeechHouseGrannyScript:
 	buttonsound
 	setevent EVENT_GOT_DOLL_FROM_OLD_LADY
 .GotADoll:
-	writetext TreatDollWellText
-	waitbutton
-	closetext
-	end
+	writetextend TreatDollWellText
 
 BlackthornDragonSpeechHouseDratiniScript:
 	refreshscreen
@@ -52,10 +46,7 @@ BlackthornDragonSpeechHouseDratiniScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext BlackthornDragonSpeechHouseDratiniText
-	waitbutton
-	closetext
-	end
+	writetextend BlackthornDragonSpeechHouseDratiniText
 
 BlackthornDragonSpeechHouseGrannyText:
 	text "A clan of trainers"

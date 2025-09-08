@@ -73,14 +73,10 @@ OlivineGym1FByronScript:
 	setevent EVENT_BEAT_ENGINEER_DANTE
 	setevent EVENT_BEAT_BEAUTY_ASHLEY
 	setevent EVENT_BEAT_ENGINEER_RUDY
-	writetext Byron1F_FlashCannonSpeech
-	waitbutton
-	closetext
-	end
+	writetextend Byron1F_FlashCannonSpeech
 
 .GotIronTail:
-	writetext Byron1F_Sunnyshore
-	waitbutton
+	writetextend Byron1F_Sunnyshore
 .NoRoomForFlashCannon:
 	closetext
 	end
@@ -88,6 +84,10 @@ OlivineGym1FByronScript:
 .RematchByron:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .PostGameByron
+	writetext ByronRematchText
+	waitbutton
+	closetext
+	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
 	readvar VAR_BADGES
 	ifequal 4, .ByronBattle1
 	ifequal 5, .ByronBattle2
@@ -97,42 +97,22 @@ OlivineGym1FByronScript:
 	sjump .ByronBattle5
 
 .ByronBattle1:
-	writetext ByronRematchText
-	waitbutton
-	closetext
-	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
 	loadtrainer BYRON, BYRON1
 	sjump AfterByronRematch
 
 .ByronBattle2:
-	writetext ByronRematchText
-	waitbutton
-	closetext
-	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
 	loadtrainer BYRON_2, BYRON2
 	sjump AfterByronRematch
 
 .ByronBattle3:
-	writetext ByronRematchText
-	waitbutton
-	closetext
-	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
 	loadtrainer BYRON_2, BYRON3
 	sjump AfterByronRematch
 
 .ByronBattle4:
-	writetext ByronRematchText
-	waitbutton
-	closetext
-	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
 	loadtrainer BYRON_2, BYRON4
 	sjump AfterByronRematch
 
 .ByronBattle5:
-	writetext ByronRematchText
-	waitbutton
-	closetext
-	winlosstext Byron1F_Clang, Byron1F_SteelyDetermination
 	loadtrainer BYRON_2, BYRON5
 	sjump AfterByronRematch
 
@@ -145,38 +125,24 @@ OlivineGym1FByronScript:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext BeatenByronAgainText2
-	waitbutton
-	closetext
 	setflag ENGINE_BEAT_BYRON
-	end
+	writetextend BeatenByronAgainText2
 
 AfterByronRematch:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext BeatenByronAgainText
-	waitbutton
-	closetext
 	setflag ENGINE_BEAT_BYRON
-	end
+	writetextend BeatenByronAgainText
 
 EleventhElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_ELEVENTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 13, 2
 	end
 
 TwelthElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	setevent EVENT_GYM_TWELTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 5, 2
 	end

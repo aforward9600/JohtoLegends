@@ -18,16 +18,10 @@ EcruteakItemfinderGuy:
 	verbosegiveitem ITEMFINDER
 	setevent EVENT_GOT_ITEMFINDER
 .itemfinder:
-	writetext ItemfinderExplanationText
-	waitbutton
-	closetext
-	end
+	writetextend ItemfinderExplanationText
 
 .no:
-	writetext EcruteakItemfinderToEachHisOwnText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakItemfinderToEachHisOwnText
 
 EcruteakPorygonGuy:
 	faceplayer
@@ -50,10 +44,7 @@ EcruteakPorygonGuy:
 	clearevent EVENT_ITEMFINDER_GUY
 	clearevent EVENT_JAILED_ROCKET
 .GotPorygon:
-	writetext QuitText
-	waitbutton
-	closetext
-	end
+	writetextend QuitText
 
 .NoRoom:
 	readvar VAR_BOXSPACE
@@ -61,19 +52,13 @@ EcruteakPorygonGuy:
 	sjump .GetPorygon
 
 .BoxFullPorygon:
-	writetext EcruteakNoRoomText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakNoRoomText
 
 .CantGivePorygon:
-	writetext CantGivePorygonText
 	setevent EVENT_GOT_PORYGON_R
 	clearevent EVENT_ITEMFINDER_GUY
 	clearevent EVENT_JAILED_ROCKET
-	waitbutton
-	closetext
-	end
+	writetextend CantGivePorygonText
 
 EcruteakHistoryBook:
 	opentext
@@ -91,10 +76,7 @@ EcruteakHistoryBook:
 	end
 
 .KeepReading:
-	writetext EcruteakThreeMonText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakThreeMonText
 
 ItemFinderHouseRadio:
 	jumpstd televisionscript

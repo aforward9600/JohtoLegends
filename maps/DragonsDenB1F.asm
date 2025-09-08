@@ -35,10 +35,7 @@ TrainerCooltrainermJoseph:
 	waitsfx
 	buttonsound
 .GotRattataDoll:
-	writetext CooltrainermJosephAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainermJosephAfterBattleText
 
 TrainerDragonTamerfDebby:
 	trainer DRAGON_TAMER_F, DEBBY, EVENT_BEAT_DRAGON_TAMER_F_DEBBY, DragonTamerfDebbySeenText, DragonTamerfDebbyBeatenText, 0, .Script
@@ -46,10 +43,7 @@ TrainerDragonTamerfDebby:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DragonTamerfDebbyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DragonTamerfDebbyAfterBattleText
 
 TrainerDragonTamermDylan:
 	trainer DRAGON_TAMER_M, DYLAN, EVENT_BEAT_DRAGON_TAMER_M_DYLAN, DragonTamermDylanSeenText, DragonTamermDylanBeatenText, 0, .Script
@@ -57,10 +51,7 @@ TrainerDragonTamermDylan:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DragonTamermDylanAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DragonTamermDylanAfterBattleText
 
 DragonsDenB1FDragonFangScript:
 ; This whole script is written out rather than as an itemball

@@ -69,16 +69,10 @@ AzaleaGymKurtScript:
 	buttonsound
 	verbosegiveitem TM_X_SCISSOR
 	setevent EVENT_GOT_TM60_X_SCISSOR
-	writetext KurtText_XScissorSpeech
-	waitbutton
-	closetext
-	end
+	writetextend KurtText_XScissorSpeech
 
 .GotFuryCutter:
-	writetext KurtText_Retirement
-	waitbutton
-	closetext
-	end
+	writetextend KurtText_Retirement
 
 .Rematch:
 	checkevent EVENT_BEAT_ELITE_FOUR
@@ -86,6 +80,7 @@ AzaleaGymKurtScript:
 	writetext KurtText_Rematch
 	waitbutton
 	closetext
+	winlosstext KurtText_NoRespect, KurtText_Respect
 	readvar VAR_BADGES
 	ifequal 6, .KurtBattle1
 	ifequal 7, .KurtBattle2
@@ -93,17 +88,14 @@ AzaleaGymKurtScript:
 	sjump .KurtBattle3
 
 .KurtBattle1:
-	winlosstext KurtText_NoRespect, KurtText_Respect
 	loadtrainer KURT, KURT1
 	sjump AfterKurtRematch
 
 .KurtBattle2:
-	winlosstext KurtText_NoRespect, KurtText_Respect
 	loadtrainer KURT, KURT2
 	sjump AfterKurtRematch
 
 .KurtBattle3:
-	winlosstext KurtText_NoRespect, KurtText_Respect
 	loadtrainer KURT, KURT3
 	sjump AfterKurtRematch
 
@@ -116,12 +108,9 @@ AzaleaGymKurtScript:
 AfterKurtRematch:
 	startbattle
 	reloadmapafterbattle
-	opentext
-	writetext KurtText_BeatenAgain
-	waitbutton
-	closetext
 	setflag ENGINE_BEAT_KURT
-	end
+	opentext
+	writetextend KurtText_BeatenAgain
 
 TrainerTwinsGingerandsam1:
 	trainer TWINS, GINGERANDSAM1, EVENT_BEAT_TWINS_GINGER_AND_SAM, TwinsGingerandsam1SeenText, TwinsGingerandsam1BeatenText, 0, .AfterScript
@@ -129,10 +118,7 @@ TrainerTwinsGingerandsam1:
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext TwinsGingerandsam1AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend TwinsGingerandsam1AfterBattleText
 
 TrainerTwinsGingerandsam2:
 	trainer TWINS, GINGERANDSAM2, EVENT_BEAT_TWINS_GINGER_AND_SAM, TwinsGingerandsam2SeenText, TwinsGingerandsam2BeatenText, 0, .AfterScript
@@ -140,10 +126,7 @@ TrainerTwinsGingerandsam2:
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext TwinsGingerandsam2AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend TwinsGingerandsam2AfterBattleText
 
 TrainerBugCatcherNat:
 	trainer BUG_CATCHER, NAT, EVENT_BEAT_BUG_CATCHER_NAT, BugCatcherNatSeenText, BugCatcherNatBeatenText, 0, .AfterScript
@@ -151,10 +134,7 @@ TrainerBugCatcherNat:
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext BugCatcherNatAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatcherNatAfterBattleText
 
 TrainerBugCatcherPete:
 	trainer BUG_CATCHER, PETE, EVENT_BEAT_BUG_CATCHER_PETE, BugCatcherPeteSeenText, BugCatcherPeteBeatenText, 0, .AfterScript
@@ -162,10 +142,7 @@ TrainerBugCatcherPete:
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext BugCatcherPeteAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatcherPeteAfterBattleText
 
 TrainerBugCatcherMarty:
 	trainer BUG_CATCHER, MARTY, EVENT_BEAT_BUG_CATCHER_MARTY, BugCatcherMartySeenText, BugCatcherMartyBeatenText, 0, .AfterScript
@@ -173,27 +150,17 @@ TrainerBugCatcherMarty:
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext BugCatcherMartyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatcherMartyAfterBattleText
 
 AzaleaGymGuyScript:
 	faceplayer
+	opentext
 	checkevent EVENT_BEAT_KURT
 	iftrue .AzaleaGymGuyWinScript
-	opentext
-	writetext AzaleaGymGuyText
-	waitbutton
-	closetext
-	end
+	writetextend AzaleaGymGuyText
 
 .AzaleaGymGuyWinScript:
-	opentext
-	writetext AzaleaGymGuyWinText
-	waitbutton
-	closetext
-	end
+	writetextend AzaleaGymGuyWinText
 
 AzaleaGymStatue:
 	checkevent EVENT_CLEARED_TIN_TOWER

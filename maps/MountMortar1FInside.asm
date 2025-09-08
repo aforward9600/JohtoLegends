@@ -67,10 +67,7 @@ TrainerSupernerdMarkus:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SupernerdMarkusAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SupernerdMarkusAfterBattleText
 
 TrainerHikerOzzy:
 	trainer HIKER, OZZY, EVENT_BEAT_HIKER_OZZY, HikerOzzySeenText, HikerOzzyBeatenText, 0, .Script
@@ -78,10 +75,7 @@ TrainerHikerOzzy:
 .Script:
 	endifjustbattled
 	opentext
-	writetext HikerOzzyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend HikerOzzyAfterBattleText
 
 TrainerYoungsterBert:
 	trainer YOUNGSTER, ALBERT, EVENT_BEAT_YOUNGSTER_ALBERT, YoungsterBertSeenText, YoungsterBertBeatenText, 0, .Script
@@ -89,10 +83,7 @@ TrainerYoungsterBert:
 .Script:
 	endifjustbattled
 	opentext
-	writetext YoungsterBertAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend YoungsterBertAfterBattleText
 
 HikerStopsYou1:
 	moveobject MOUNTMORTAR1FINSIDE_HIKER1, 11, 42
@@ -168,16 +159,10 @@ MountMortar1FInsideHikerScript:
 	opentext
 	checkevent EVENT_MOUNT_MORTAR_HIKER_2
 	iftrue .NextRocks
-	writetext MountMortar1FInsideHikerText1
-	waitbutton
-	closetext
-	end
+	writetextend MountMortar1FInsideHikerText1
 
 .NextRocks:
-	writetext MountMortar1FInsideHikerText2
-	waitbutton
-	closetext
-	end
+	writetextend MountMortar1FInsideHikerText2
 
 PokemaniacMovement:
 	step RIGHT

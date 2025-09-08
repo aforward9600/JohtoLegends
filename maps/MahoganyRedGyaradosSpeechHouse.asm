@@ -35,10 +35,7 @@ MahoganyRedGyaradosSpeechHouseHeracrossScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext MahoganyRedGyaradosSpeechHouseHeracrossText
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyRedGyaradosSpeechHouseHeracrossText
 
 MahoganyTelevision:
 	jumpstd televisionscript

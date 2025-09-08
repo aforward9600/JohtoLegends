@@ -37,18 +37,12 @@ DayCareManScript_Inside:
 	writetext DayCareText_GotOddEgg
 	playsound SFX_KEY_ITEM
 	waitsfx
-	writetext DayCareText_DescribeOddEgg
-	waitbutton
-	closetext
 	setevent EVENT_GOT_ODD_EGG
-	end
+	writetextend DayCareText_DescribeOddEgg
 
 .PartyFull:
 	opentext
-	writetext DayCareText_PartyFull
-	waitbutton
-	closetext
-	end
+	writetextend DayCareText_PartyFull
 
 .AlreadyHaveOddEgg:
 	special DayCareMan
@@ -67,10 +61,7 @@ DayCareLadyScript:
 	end
 
 .HusbandWasLookingForYou:
-	writetext Text_GrampsLookingForYou
-	waitbutton
-	closetext
-	end
+	writetextend Text_GrampsLookingForYou
 
 DayCareMrPokemon:
 	checkevent EVENT_TALKED_TO_MR_POKEMON_AT_DAY_CARE

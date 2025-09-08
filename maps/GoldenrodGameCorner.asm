@@ -131,28 +131,16 @@ GoldenrodGameCornerPrizeVendor_AlreadyHaveTMScript:
 	sjump GoldenrodGameCornerTMVendor_LoopScript
 
 GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript:
-	writetext GoldenrodGameCornerPrizeVendorNeedMoreCoinsText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodGameCornerPrizeVendorNeedMoreCoinsText
 
 GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript:
-	writetext GoldenrodGameCornerPrizeVendorNoMoreRoomText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodGameCornerPrizeVendorNoMoreRoomText
 
 GoldenrodGameCornerPrizeVendor_CancelPurchaseScript:
-	writetext GoldenrodGameCornerPrizeVendorQuitText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodGameCornerPrizeVendorQuitText
 
 GoldenrodGameCornerPrizeVendor_NoCoinCaseScript:
-	writetext GoldenrodGameCornerPrizeVendorNoCoinCaseText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodGameCornerPrizeVendorNoCoinCaseText
 
 GoldenrodGameCornerTMVendorMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -275,10 +263,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	db "Cancel@"
 
 .CannotGetPrize:
-	writetext CannotGetPrizeText
-	waitbutton
-	closetext
-	end
+	writetextend CannotGetPrizeText
 
 GoldenrodGameCornerPharmacistScript:
 	faceplayer
@@ -338,10 +323,7 @@ GoldenrodGameCornerPokefanM2Script:
 	verbosegiveitem COIN_CASE
 	setevent EVENT_GOLDENROD_UNDERGROUND_COIN_CASE
 .GotCoinCase:
-	writetext ThatsCoinCaseText
-	waitbutton
-	closetext
-	end
+	writetextend ThatsCoinCaseText
 
 GoldenrodGameCornerLeftTheirDrinkScript:
 	jumptext GoldenrodGameCornerLeftTheirDrinkText

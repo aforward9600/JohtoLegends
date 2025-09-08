@@ -13,12 +13,8 @@ TrainerAriana2:
 	trainer ARIANA, ARIANA_2, EVENT_BEAT_GOLDENROD_TOWER_ARIANA, Ariana2SeenText, Ariana2BeatenText, Ariana2LastMonText, .Script
 
 .Script:
-	endifjustbattled
 	opentext
-	writetext Ariana2AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend Ariana2AfterBattleText
 
 RadioTower3FRocketScript:
 	jumptextfaceplayer RadioTower3FRocketText
@@ -29,10 +25,7 @@ TrainerGruntF8:
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntF8AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend GruntF8AfterBattleText
 
 TrainerScientistMac:
 	trainer SCIENTIST, MAC, EVENT_BEAT_SCIENTIST_MAC, ScientistMacSeenText, ScientistMacBeatenText, 0, .Script
@@ -40,10 +33,7 @@ TrainerScientistMac:
 .Script:
 	endifjustbattled
 	opentext
-	writetext ScientistMacAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend ScientistMacAfterBattleText
 
 Ariana2LastMonText:
 	text "Not again!"

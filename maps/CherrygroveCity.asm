@@ -16,12 +16,7 @@ CherrygroveCity_MapScripts:
 	return
 
 CherrygroveCityGuideGent:
-	faceplayer
-	opentext
-	writetext GuideGentIntroText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer GuideGentIntroText
 
 CherrygroveCooltrainerFScript:
 	jumptextfaceplayer CherrygroveTeacherText_NoMapCard
@@ -40,8 +35,7 @@ MysticWaterGuy:
 	iffalse .Exit
 	setevent EVENT_GOT_MYSTIC_WATER_IN_CHERRYGROVE
 .After:
-	writetext MysticWaterGuyTextAfter
-	waitbutton
+	writetextend MysticWaterGuyTextAfter
 .Exit:
 	closetext
 	end

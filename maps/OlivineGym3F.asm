@@ -30,27 +30,16 @@ TrainerEngineerRudy:
 .Script:
 	endifjustbattled
 	opentext
-	writetext EngineerRudyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend EngineerRudyAfterBattleText
 
 EighthElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_EIGHTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 2, 12
 	end
 
 NinthElevator:
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	scall OlivineElevatorEffect
 	setevent EVENT_GYM_NINTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 15, 3
 	end

@@ -283,6 +283,8 @@ DoEntranceAbilities:
 .Drought:
 	ld a, WEATHER_SUN
 	ld [wBattleWeather], a
+	ld a, 5
+	ld [wWeatherCount], a
 	ld de, ANIM_IN_SUN
 	farcall FarPlayBattleAnimation
 	ld hl, SunGotBrightText
@@ -291,6 +293,8 @@ DoEntranceAbilities:
 .SnowWarning:
 	ld a, WEATHER_HAIL
 	ld [wBattleWeather], a
+	ld a, 5
+	ld [wWeatherCount], a
 	ld de, ANIM_IN_HAIL
 	farcall FarPlayBattleAnimation
 	ld hl, HailStartsText
@@ -309,6 +313,8 @@ DoEntranceAbilities:
 .Sandstream:
 	ld a, WEATHER_SANDSTORM
 	ld [wBattleWeather], a
+	ld a, 5
+	ld [wWeatherCount], a
 	ld de, ANIM_IN_SANDSTORM
 	farcall FarPlayBattleAnimation
 	ld hl, SandstormBrewedText

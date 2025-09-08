@@ -16,28 +16,16 @@ RivalsDadScript:
 	iftrue .RivalIsGone
 	checkevent EVENT_RIVALS_HOUSE_RIVAL
 	iffalse .WhatHappenedToRival
-	writetext RivalsDadText
-	waitbutton
-	closetext
-	end
+	writetextend RivalsDadText
 
 .RivalIsGone:
-	writetext RivalIsGoneText
-	waitbutton
-	closetext
-	end
+	writetextend RivalIsGoneText
 
 .WhatHappenedToRival:
-	writetext WhatHappenedToRivalText
-	waitbutton
-	closetext
-	end
+	writetextend WhatHappenedToRivalText
 
 .CongratsDad:
-	writetext CongratsDadText
-	waitbutton
-	closetext
-	end
+	writetextend CongratsDadText
 
 RivalsMomScript:
 	faceplayer
@@ -51,30 +39,18 @@ RivalsMomScript:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female
 	faceplayer
-	writetext RivalsMom1Text
-	waitbutton
-	closetext
-	end
+	writetextend RivalsMom1Text
 
 .Female:
-	writetext RivalsMom2Text
-	waitbutton
-	closetext
-	end
+	writetextend RivalsMom2Text
 
 .KeepAnEyeOnThem:
 	checkevent EVENT_RIVALS_HOUSE_RIVAL
 	iffalse .HopeTheyreOk
-	writetext KeepAnEyeOnThemText
-	waitbutton
-	closetext
-	end
+	writetextend KeepAnEyeOnThemText
 
 .HopeTheyreOk:
-	writetext HopeTheyreOkText
-	waitbutton
-	closetext
-	end
+	writetextend HopeTheyreOkText
 
 .HaveAPoster:
 	writetext HaveAPosterText
@@ -86,10 +62,7 @@ RivalsMomScript:
 	waitsfx
 	buttonsound
 .CongratsMom:
-	writetext CongratsMomText
-	waitbutton
-	closetext
-	end
+	writetextend CongratsMomText
 
 RivalsHouseBookshelf:
 	jumpstd genericsink

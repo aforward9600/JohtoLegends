@@ -27,16 +27,10 @@ FuchsiaPokecenter1FRivalScript:
 	opentext
 	checkevent EVENT_BEAT_KOGA
 	iftrue .FuchsiaPokecenter1FRival2
-	writetext FuchsiaPokecenter1FRivalText1
-	waitbutton
-	closetext
-	end
+	writetextend FuchsiaPokecenter1FRivalText1
 
 .FuchsiaPokecenter1FRival2:
-	writetext FuchsiaPokecenter1FRivalText2
-	waitbutton
-	closetext
-	end
+	writetextend FuchsiaPokecenter1FRivalText2
 
 FuchsiaPokecenter1FCooltrainerMText:
 	text "Woosh!"

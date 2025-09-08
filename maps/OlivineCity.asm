@@ -30,42 +30,26 @@ OlivineCitySailor1Script:
 	jumptextfaceplayer OlivineCitySailor1Text
 
 OlivineCityStandingYoungsterScript:
+	faceplayer
+	opentext
 	checkflag ENGINE_STORMBADGE
 	iftrue .GoToWildArea
 	checkevent EVENT_OLIVINE_LIGHTHOUSE_JASMINE
 	iftrue .GoToCianwood
-	faceplayer
-	opentext
-	writetext OlivineCityStandingYoungsterPokegearText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCityStandingYoungsterPokegearText
 
 .GoToWildArea:
-	faceplayer
-	opentext
-	writetext OlivineCityStandingYoungsterGotBadgeText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCityStandingYoungsterGotBadgeText
 
 .GoToCianwood:
-	faceplayer
-	opentext
-	writetext OlivineCityStandingYoungsterGoToCianwoodText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCityStandingYoungsterGoToCianwoodText
 
 OlivineRocketScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ROCKET_GRUNTM_1
 	iftrue .WordFromGrunt
-	writetext DoingMaintenanceText
-	waitbutton
-	closetext
-	end
+	writetextend DoingMaintenanceText
 
 .WordFromGrunt:
 	writetext DoingMaintenanceText
@@ -114,16 +98,10 @@ OlivineCitySailor2Script:
 	iffalse .NoRoom
 	setevent EVENT_GOT_MACHO_BRACE
 .AfterMachoBrace
-	writetext OlivineCitySailor2Text
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCitySailor2Text
 
 .NoRoom:
-	writetext NoRoomMachoBraceText
-	waitbutton
-	closetext
-	end
+	writetextend NoRoomMachoBraceText
 
 OlivineCitySign:
 	jumptext OlivineCitySignText
@@ -210,14 +188,6 @@ OlivineCityStandingYoungsterGotBadgeText:
 	cont "to pass the time?"
 	done
 
-OlivineCityStandingYoungsterPokedexText:
-	text "Wow, you have a"
-	line "#DEX!"
-
-	para "That is just so"
-	line "awesome."
-	done
-
 MachoBraceText:
 	text "Wanna make your"
 	line "#mon tougher?"
@@ -234,21 +204,12 @@ NoRoomMachoBraceText:
 	done
 
 OlivineCitySailor2Text:
-	text "The sea is sweet!"
+	text "How's that Macho"
+	line "Brace treatin' ya?"
 
-	para "Sunsets on the sea"
-	line "are marvelous!"
-
-	para "Sing with me! "
-	line "Yo-ho! Blow the"
-	cont "man down!…"
+	para "You feeling any"
+	line "stronger yet?"
 	done
-;	text "How's that Macho"
-;	line "Brace treatin' ya?"
-
-;	para "You feeling any"
-;	line "stronger yet?"
-;	done
 
 DoingMaintenanceText:
 	text "Sorry, but we're"

@@ -25,16 +25,10 @@ AcademyEarl:
 	writetext AcademyEarlTeachMoreText
 	yesorno
 	iffalse .Done
-	writetext AcademyEarlTeachHowToRaiseWellText
-	waitbutton
-	closetext
-	end
+	writetextend AcademyEarlTeachHowToRaiseWellText
 
 .Done:
-	writetext AcademyEarlNoMoreToTeachText
-	waitbutton
-	closetext
-	end
+	writetextend AcademyEarlNoMoreToTeachText
 
 EarlsPokemonAcademyYoungster1Script:
 	checkevent EVENT_BEAT_CHAMPION_LANCE
@@ -137,8 +131,7 @@ AcademyNotebook:
 	writetext AcademyNotebookText2
 	yesorno
 	iffalse .Done
-	writetext AcademyNotebookText3
-	waitbutton
+	writetextend AcademyNotebookText3
 .Done:
 	closetext
 	end

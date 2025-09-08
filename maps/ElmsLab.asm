@@ -24,28 +24,18 @@ ProfElmScript:
 	opentext
 	checkevent EVENT_SPOKE_WITH_ELM
 	iftrue .NewElmScript
-	writetext FirstElmText
-	waitbutton
-	closetext
 	setevent EVENT_SPOKE_WITH_ELM
 	setevent EVENT_BLACKTHORN_CITY_SUPER_NERD_BLOCKS_GYM
 	clearevent EVENT_BLACKTHORN_CITY_SUPER_NERD_DOES_NOT_BLOCK_GYM
 	setevent EVENT_DARK_CAVE_GUARD
 	setevent EVENT_MASTERS_HOUSE_MASTER
-	end
+	writetextend FirstElmText
 
 .NewElmScript:
-	writetext SecondElmText
-	waitbutton
-	closetext
-	end
+	writetextend SecondElmText
 
 LookAtElmPokeBallScript:
-	opentext
-	writetext ElmPokeBallText
-	waitbutton
-	closetext
-	end
+	jumptext ElmPokeBallText
 
 ElmsLabHealingMachine:
 	opentext
@@ -67,12 +57,7 @@ ElmsLabHealingMachine_HealParty:
 	end
 
 ElmsAideScript:
-	faceplayer
-	opentext
-	writetext AideText_AlwaysBusy
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer AideText_AlwaysBusy
 
 MeetCopScript2:
 	applymovement PLAYER, MeetCopScript2_StepLeft
@@ -94,11 +79,7 @@ ElmsLabOakScript:
 	end
 
 ElmsLabWindow:
-	opentext
-	writetext ElmsLabWindowText1
-	waitbutton
-	closetext
-	end
+	jumptext ElmsLabWindowText1
 
 ElmsLabTravelTip1:
 	jumptext ElmsLabTravelTip1Text

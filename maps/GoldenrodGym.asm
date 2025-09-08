@@ -77,20 +77,14 @@ GoldenrodGymMiltonScript:
 	buttonsound
 	verbosegiveitem TM_SWORDS_DANCE
 	setevent EVENT_GOT_TM45_ATTRACT
-	writetext MiltonAttractText
-	waitbutton
-	closetext
-	end
+	writetextend MiltonAttractText
 
 .GotAttract:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .AlreadyMetSister
 	checkevent EVENT_GOLDENROD_GYM_RIVAL_1
 	iffalse .ToughKid
-	writetext MiltonSisterText
-	waitbutton
-	closetext
-	end
+	writetextend MiltonSisterText
 
 .ToughKid:
 	writetext AsToughAsYouAreText
@@ -100,14 +94,17 @@ GoldenrodGymMiltonScript:
 	end
 
 .AlreadyMetSister:
-	writetext AlreadyMetSisterText
-	waitbutton
-	closetext
-	end
+	writetextend AlreadyMetSisterText
 
 .RematchMilton:
+	checkevent EVENT_GOLDENROD_GYM_RIVAL_1
+	iffalse .ToughKid
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .PostGameMilton
+	writetext MiltonReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext MiltonText_HooWee, MiltonText_Yeehaw
 	readvar VAR_BADGES
 	ifequal 5, .MiltonBattle1
 	ifequal 6, .MiltonBattle2
@@ -116,42 +113,18 @@ GoldenrodGymMiltonScript:
 	sjump .MiltonBattle4
 
 .MiltonBattle1:
-	checkevent EVENT_GOLDENROD_GYM_RIVAL_1
-	iffalse .ToughKid
-	writetext MiltonReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext MiltonText_HooWee, MiltonText_Yeehaw
 	loadtrainer MILTON, MILTON1
 	sjump AfterMiltonRematch
 
 .MiltonBattle2:
-	checkevent EVENT_GOLDENROD_GYM_RIVAL_1
-	iffalse .ToughKid
-	writetext MiltonReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext MiltonText_HooWee, MiltonText_Yeehaw
 	loadtrainer MILTON, MILTON2
 	sjump AfterMiltonRematch
 
 .MiltonBattle3:
-	checkevent EVENT_GOLDENROD_GYM_RIVAL_1
-	iffalse .ToughKid
-	writetext MiltonReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext MiltonText_HooWee, MiltonText_Yeehaw
 	loadtrainer MILTON, MILTON3
 	sjump AfterMiltonRematch
 
 .MiltonBattle4:
-	checkevent EVENT_GOLDENROD_GYM_RIVAL_1
-	iffalse .ToughKid
-	writetext MiltonReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext MiltonText_HooWee, MiltonText_Yeehaw
 	loadtrainer MILTON, MILTON4
 	sjump AfterMiltonRematch
 
@@ -164,12 +137,9 @@ GoldenrodGymMiltonScript:
 AfterMiltonRematch:
 	startbattle
 	reloadmapafterbattle
-	opentext
-	writetext MiltonText_BeatenAgain
-	waitbutton
-	closetext
 	setflag ENGINE_BEAT_MILTON
-	end
+	opentext
+	writetextend MiltonText_BeatenAgain
 
 GoldenrodRockets:
 	jumpstd goldenrodrockets
@@ -192,10 +162,7 @@ TrainerBreederSarah:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BreederSarahAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BreederSarahAfterBattleText
 
 TrainerBreederBridget:
 	trainer BREEDER, BRIDGET, EVENT_BEAT_BREEDER_BRIDGET, BreederBridgetSeenText, BreederBridgetBeatenText, 0, .Script
@@ -203,10 +170,7 @@ TrainerBreederBridget:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BreederBridgetAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BreederBridgetAfterBattleText
 
 TrainerBreederEmily:
 	trainer BREEDER, EMILY, EVENT_BEAT_BREEDER_EMILY, BreederEmilySeenText, BreederEmilyBeatenText, 0, .Script
@@ -214,10 +178,7 @@ TrainerBreederEmily:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BreederEmilyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BreederEmilyAfterBattleText
 
 TrainerBreederNina:
 	trainer BREEDER, NINA, EVENT_BEAT_BREEDER_NINA, BreederNinaSeenText, BreederNinaBeatenText, 0, .Script
@@ -225,27 +186,18 @@ TrainerBreederNina:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BreederNinaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BreederNinaAfterBattleText
 
 GoldenrodGymGuyScript:
 	faceplayer
+	opentext
 	checkevent EVENT_BEAT_MILTON
 	iftrue .GoldenrodGymGuyWinScript
 	opentext
-	writetext GoldenrodGymGuyText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodGymGuyText
 
 .GoldenrodGymGuyWinScript:
-	opentext
-	writetext GoldenrodGymGuyWinText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodGymGuyWinText
 
 GoldenrodGymStatue:
 	checkevent EVENT_ROCKET_JAIL_RIVAL

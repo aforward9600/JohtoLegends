@@ -69,36 +69,7 @@ AbraScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext AbraText
-	waitbutton
-	closetext
-	end
-
-PlateauRivalMovement1:
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	turn_head LEFT
-	step_end
-
-PlateauRivalMovement2:
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	turn_head RIGHT
-	step_end
-
-PlateauRivalLeavesMovement:
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
+	writetextend AbraText
 
 IndigoPlateauPokecenter1FCooltrainerMText:
 	text "At the #mon"

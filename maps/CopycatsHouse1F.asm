@@ -13,32 +13,20 @@ CopycatsHouse1FPokefanMScript:
 	opentext
 	checkevent EVENT_BEAT_SABRINA
 	iftrue .ReturnedMachinePart
-	writetext CopycatsHouse1FPokefanMText
-	waitbutton
-	closetext
-	end
+	writetextend CopycatsHouse1FPokefanMText
 
 .ReturnedMachinePart:
-	writetext CopycatsHouse1FPokefanMText2
-	waitbutton
-	closetext
-	end
+	writetextend CopycatsHouse1FPokefanMText2
 
 CopycatsHouse1FPokefanFScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_SABRINA
 	iftrue .ReturnedMachinePart
-	writetext CopycatsHouse1FPokefanFText
-	waitbutton
-	closetext
-	end
+	writetextend CopycatsHouse1FPokefanFText
 
 .ReturnedMachinePart:
-	writetext CopycatsHouse1FPokefanFText2
-	waitbutton
-	closetext
-	end
+	writetextend CopycatsHouse1FPokefanFText2
 
 CopycatsHouse1FBlisseyScript:
 	refreshscreen
@@ -47,10 +35,7 @@ CopycatsHouse1FBlisseyScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext CopycatsHouse1FBlisseyText
-	waitbutton
-	closetext
-	end
+	writetextend CopycatsHouse1FBlisseyText
 
 CopycatsHouse1FPokefanMText:
 	text "We want to have a"

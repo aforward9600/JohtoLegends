@@ -15,18 +15,12 @@ CharcoalKilnBoss:
 	iftrue .CaughtFarfetchd
 	checkevent EVENT_BEAT_FARFETCHD
 	iftrue .BeatFarfetchd
-	writetext CharcoalKilnBossText1
-	waitbutton
-	closetext
-	end
+	writetextend CharcoalKilnBossText1
 
 .BeatFarfetchd:
 	checkevent EVENT_CAUGHT_FARFETCHD
 	iftrue .CaughtFarfetchd
-	writetext CharcoalKilnBossText3
-	waitbutton
-	closetext
-	end
+	writetextend CharcoalKilnBossText3
 
 .CaughtFarfetchd:
 	checkevent EVENT_GOT_STICK_IN_CHARCOAL_KILN
@@ -36,18 +30,12 @@ CharcoalKilnBoss:
 	verbosegiveitem STICK
 	iffalse .Done
 	setevent EVENT_GOT_STICK_IN_CHARCOAL_KILN
+.Done:
 	closetext
 	end
 
 .AlreadyGotStick:
-	writetext CharcoalKilnBossText2
-	waitbutton
-	closetext
-	end
-
-.Done:
-	closetext
-	end
+	writetextend CharcoalKilnBossText2
 
 CharcoalKilnApprentice:
 	faceplayer
@@ -59,18 +47,12 @@ CharcoalKilnApprentice:
 	verbosegiveitem CHARCOAL
 	iffalse .Done
 	setevent EVENT_GOT_CHARCOAL_IN_CHARCOAL_KILN
+.Done:
 	closetext
 	end
 
 .Thanks:
-	writetext CharcoalKilnApprenticeText1
-	waitbutton
-	closetext
-	end
-
-.Done:
-	closetext
-	end
+	writetextend CharcoalKilnApprenticeText1
 
 CharcoalKilnFarfetchd:
 	refreshscreen
@@ -79,10 +61,7 @@ CharcoalKilnFarfetchd:
 	waitbutton
 	closepokepic
 	opentext
-	writetext FarfetchdText
-	waitbutton
-	closetext
-	end
+	writetextend FarfetchdText
 
 CharcoalKilnBookshelf:
 	jumpstd genericsink

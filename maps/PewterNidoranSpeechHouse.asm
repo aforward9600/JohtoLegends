@@ -17,13 +17,10 @@ PewterNidoran:
 	waitbutton
 	closepokepic
 	opentext
-	writetext PewterNidoranText
-	waitbutton
-	closetext
-	end
+	writetextend PewterNidoranText
 
 PewterNidoranSpeechHouseSuperNerdText:
-	text "Growlith will"
+	text "Growlithe will"
 	line "protect me!"
 	done
 

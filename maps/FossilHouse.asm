@@ -28,10 +28,7 @@ ScientistScript:
 	iftrue .AlreadySpokeToScientist
 	checkitem DOME_FOSSIL
 	iftrue .AlreadySpokeToScientist
-	writetext FossilHouseScientistText
-	waitbutton
-	closetext
-	end
+	writetextend FossilHouseScientistText
 
 .AlreadySpokeToScientist:
 	writetext YouHaveFossilText
@@ -47,10 +44,7 @@ ScientistScript:
 	sjump .Refused
 
 .Refused:
-	writetext FineNoFossilText
-	waitbutton
-	closetext
-	end
+	writetextend FineNoFossilText
 
 .FossilMenu:
 	db MENU_BACKUP_TILES ; flags
@@ -89,10 +83,7 @@ ScientistScript:
 
 .DontHaveFossil:
 	opentext
-	writetext YouNoHaveFossil
-	waitbutton
-	closetext
-	end
+	writetextend YouNoHaveFossil
 
 .GaveFossil:
 	opentext
@@ -103,10 +94,7 @@ ScientistScript:
 	end
 
 .YouNoPatient:
-	writetext YouNoPatientText
-	waitbutton
-	closetext
-	end
+	writetextend YouNoPatientText
 
 .Aerodactyl:
 	writetext AerodactylText
@@ -120,10 +108,7 @@ ScientistScript:
 	waitsfx
 	givepoke AERODACTYL, 20
 	clearevent EVENT_GAVE_OLD_AMBER
-	writetext TakeGoodCareText
-	waitbutton
-	closetext
-	end
+	writetextend TakeGoodCareText
 
 .AerodactylBox:
 	readvar VAR_BOXSPACE
@@ -142,10 +127,7 @@ ScientistScript:
 	waitsfx
 	givepoke OMANYTE, 20
 	clearevent EVENT_GAVE_HELIX_FOSSIL
-	writetext TakeGoodCareText
-	waitbutton
-	closetext
-	end
+	writetextend TakeGoodCareText
 
 .OmanyteBox:
 	readvar VAR_BOXSPACE
@@ -164,10 +146,7 @@ ScientistScript:
 	waitsfx
 	givepoke KABUTO, 20
 	clearevent EVENT_GAVE_DOME_FOSSIL
-	writetext TakeGoodCareText
-	waitbutton
-	closetext
-	end
+	writetextend TakeGoodCareText
 
 .KabutoBox:
 	readvar VAR_BOXSPACE
@@ -175,16 +154,10 @@ ScientistScript:
 	sjump .GetKabuto
 
 .NoRoom:
-	writetext FossilNoRoomText
-	waitbutton
-	closetext
-	end
+	writetextend FossilNoRoomText
 
 .CantGetFossil:
-	writetext CantGetFossilText
-	waitbutton
-	closetext
-	end
+	writetextend CantGetFossilText
 
 KimScript:
 	faceplayer

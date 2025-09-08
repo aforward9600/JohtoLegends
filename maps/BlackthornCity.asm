@@ -57,22 +57,13 @@ BlackthornSuperNerdScript:
 	iftrue .BeatClair
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .ClearedRadioTower
-	writetext Text_ClairIsOut
-	waitbutton
-	closetext
-	end
+	writetextend Text_ClairIsOut
 
 .ClearedRadioTower:
-	writetext Text_ClairIsIn
-	waitbutton
-	closetext
-	end
+	writetextend Text_ClairIsIn
 
 .BeatClair:
-	writetext Text_ClairIsBeaten
-	waitbutton
-	closetext
-	end
+	writetextend Text_ClairIsBeaten
 
 BlackthornGramps1Script:
 	jumptextfaceplayer BlackthornGrampsRefusesEntryText
@@ -81,20 +72,12 @@ BlackthornGramps2Script:
 	jumptextfaceplayer BlackthornGrampsGrantsEntryText
 
 BlackthornBlackBeltScript:
-	faceplayer
-	opentext
 	checkevent EVENT_GOT_JOURNAL
 	iftrue .GotJournal
-	writetext PokemonCenterGuardText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer PokemonCenterGuardText
 
 .GotJournal:
-	writetext BlackthornCityBlackBeltText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer BlackthornCityBlackBeltText
 
 BlackthornCooltrainerMScript:
 	jumptextfaceplayer BlackthornCooltrainerMText
@@ -113,10 +96,7 @@ BlackthornYoungsterScript:
 	buttonsound
 	verbosegiveitem EXP_SHARE
 	setevent EVENT_RECEIVED_EXP_SHARE
-	writetext ThatsExpShareText
-	waitbutton
-	closetext
-	end
+	writetextend ThatsExpShareText
 
 .GotExpShare
 	jumptextfaceplayer BlackthornYoungsterText3
@@ -147,23 +127,17 @@ SantosScript:
 	verbosegiveitem SPELL_TAG
 	iffalse .Done
 	setevent EVENT_GOT_SPELL_TAG_FROM_SANTOS
-	writetext SantosGaveGiftText
-	waitbutton
-	closetext
-	end
+	writetextend SantosGaveGiftText
 
 .Saturday:
-	writetext SantosSaturdayText
-	waitbutton
+	writetextend SantosSaturdayText
+
 .Done:
 	closetext
 	end
 
 .NotSaturday:
-	writetext SantosNotSaturdayText
-	waitbutton
-	closetext
-	end
+	writetextend SantosNotSaturdayText
 
 BlackthornCitySign:
 	jumptext BlackthornCitySignText

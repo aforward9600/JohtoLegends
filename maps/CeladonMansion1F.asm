@@ -24,10 +24,7 @@ CeladonMansion1FMeowth:
 	waitbutton
 	closepokepic
 	opentext
-	writetext CeladonMansion1FMeowthText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonMansion1FMeowthText
 
 CeladonMansion1FClefairy:
 	refreshscreen
@@ -36,10 +33,7 @@ CeladonMansion1FClefairy:
 	waitbutton
 	closepokepic
 	opentext
-	writetext CeladonMansion1FClefairyText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonMansion1FClefairyText
 
 CeladonMansion1FNidoranF:
 	refreshscreen
@@ -48,10 +42,7 @@ CeladonMansion1FNidoranF:
 	waitbutton
 	closepokepic
 	opentext
-	writetext CeladonMansion1FNidoranFText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonMansion1FNidoranFText
 
 CeladonMansionManagersSuiteSign:
 	jumptext CeladonMansionManagersSuiteSignText

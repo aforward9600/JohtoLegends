@@ -38,26 +38,17 @@ FightingDojoKoichi:
 .AlreadyBeatKoichi:
 	checkevent EVENT_GOT_TM01_DYNAMICPUNCH
 	iffalse .GetTM01
-	writetext GoAndFaceSabrinaText
-	waitbutton
-	closetext
-	end
+	writetextend GoAndFaceSabrinaText
 
 .AlreadyBeatSabrina:
 	checkevent EVENT_GOT_TM01_DYNAMICPUNCH
 	iffalse .GetTM01
-	writetext KoichiAfterText
-	waitbutton
-	closetext
-	end
+	writetextend KoichiAfterText
 
 .AlreadyBeatBikerBossKoichi:
 	checkevent EVENT_GOT_TM01_DYNAMICPUNCH
 	iffalse .GetTM01
-	writetext KoichiAfterEpilogueText
-	waitbutton
-	closetext
-	end
+	writetextend KoichiAfterEpilogueText
 
 .GetTM01:
 	writetext HereIsTM01Text
@@ -74,10 +65,7 @@ TrainerBlackbeltHiroshi:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BlackbeltHiroshiAfterText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltHiroshiAfterText
 
 TrainerBlackbeltTanabe:
 	trainer BLACKBELT_T, TANABE, EVENT_BEAT_BLACKBELT_TANABE, BlackbeltTanabeSeenText, BlackbeltTanabeBeatenText, 0, .Script
@@ -85,10 +73,7 @@ TrainerBlackbeltTanabe:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BlackbeltTanabeAfterText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltTanabeAfterText
 
 FightingDojoSign1:
 	jumptext FightingDojoSign1Text

@@ -82,10 +82,7 @@ MarthaRematch:
 	sjump Martha2
 
 MarthaScript_AfterBattle:
-	writetext MarthaScript_MarthaDefeatText
-	waitbutton
-	closetext
-	end
+	writetextend MarthaScript_MarthaDefeatText
 
 MarthasRoom_EnterMovement:
 	step UP

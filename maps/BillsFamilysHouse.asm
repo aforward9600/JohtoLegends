@@ -21,32 +21,16 @@ BillScript:
 	waitsfx
 	setflag ENGINE_RADIO_CARD
 	setevent EVENT_BILL_GIVES_YOU_SPRINTMAN
-	writetext GaveSprintmanText
-	waitbutton
-	closetext
-	end
+	writetextend GaveSprintmanText
 
 .GaveSprintman:
-	writetext BillText
-	waitbutton
-	closetext
-	end
+	writetextend BillText
 
 BillsDadScript:
-	faceplayer
-	opentext
-	writetext BillsPopText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer BillsPopText
 
 BillsBrotherHouseScript:
-	faceplayer
-	opentext
-	writetext BillsSecretText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer BillsSecretText
 
 BillsHouseBookshelf1:
 	jumpstd genericsink
@@ -58,16 +42,10 @@ BillsFamilyComputer:
 	opentext
 	readvar VAR_FACING
 	ifequal RIGHT, .CantReadComputer
-	writetext BillsFamilyComputerText
-	waitbutton
-	closetext
-	end
+	writetextend BillsFamilyComputerText
 
 .CantReadComputer:
-	writetext CantReadComputerText
-	waitbutton
-	closetext
-	end
+	writetextend CantReadComputerText
 
 GiveSprintmanText:
 	text "Howdy! My name is"

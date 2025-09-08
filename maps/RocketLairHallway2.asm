@@ -115,10 +115,7 @@ RocketLairHallway2GruntF:
 .Script:
 	endifjustbattled
 	opentext
-	writetext RocketLairHallway2GruntFAfterText
-	waitbutton
-	closetext
-	end
+	writetextend RocketLairHallway2GruntFAfterText
 
 RocketLairHallway2GruntM:
 	trainer GRUNTM, GRUNTM_18, EVENT_BEAT_ROCKET_GRUNTM_18, RocketLairHallway2GruntMSeenText, RocketLairHallway2GruntMBeatenText, 0, .Script
@@ -126,10 +123,7 @@ RocketLairHallway2GruntM:
 .Script:
 	endifjustbattled
 	opentext
-	writetext RocketLairHallway2GruntMAfterText
-	waitbutton
-	closetext
-	end
+	writetextend RocketLairHallway2GruntMAfterText
 
 RocketLairHallway2OfficerScript:
 	jumptextfaceplayer RocketLairHallway2OfficerText

@@ -44,10 +44,7 @@ BlackthornGym2F_MapScripts:
 	pause 30
 	scall .FX
 	opentext
-	writetext BlackthornGym2FBoulderFellText
-	waitbutton
-	closetext
-	end
+	writetextend BlackthornGym2FBoulderFellText
 
 .FX:
 	playsound SFX_STRENGTH
@@ -63,10 +60,7 @@ TrainerDragonTamerMDarius:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DragonTamerMDariusAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DragonTamerMDariusAfterBattleText
 
 TrainerDragonTamerfDaria:
 	trainer DRAGON_TAMER_F, DARIA, EVENT_BEAT_DRAGON_TAMER_F_DARIA, DragonTamerfDariaSeenText, DragonTamerfDariaBeatenText, 0, .Script
@@ -74,10 +68,7 @@ TrainerDragonTamerfDaria:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DragonTamerfDariaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DragonTamerfDariaAfterBattleText
 
 TrainerDragonTamerfDora:
 	trainer DRAGON_TAMER_F, DORA, EVENT_BEAT_DRAGON_TAMER_F_DORA, DragonTamerfDoraSeenText, DragonTamerfDoraBeatenText, 0, .Script
@@ -85,10 +76,7 @@ TrainerDragonTamerfDora:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DragonTamerfDoraAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DragonTamerfDoraAfterBattleText
 
 DragonTamerMDariusSeenText:
 	text "I have a few"

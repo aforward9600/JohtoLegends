@@ -57,40 +57,25 @@ GhostHouseHexManiacScript:
 	refreshscreen
 	cry DUSKNOIR
 	pause 10
-	opentext
-	writetext GoOnAndFightItText
-	waitbutton
-	closetext
 	setevent EVENT_BEAT_HEX_MANIAC_EDALYN
-	end
+	opentext
+	writetextend GoOnAndFightItText
 
 .NoFight:
-	writetext ComeBackAtNightText
-	waitbutton
-	closetext
-	end
+	writetextend ComeBackAtNightText
 
 .DoneFight:
 	checkevent EVENT_BEAT_DUSKNOIR
 	iftrue .HexManiacBeatDusknoir
 	checkevent EVENT_CAUGHT_DUSKNOIR
 	iftrue .HexManiacCaughtDusknoir
-	writetext GoOnAndFightItText
-	waitbutton
-	closetext
-	end
+	writetextend GoOnAndFightItText
 
 .HexManiacBeatDusknoir:
-	writetext YouBeatItText
-	waitbutton
-	closetext
-	end
+	writetextend YouBeatItText
 
 .HexManiacCaughtDusknoir:
-	writetext YouCaughtItText
-	waitbutton
-	closetext
-	end
+	writetextend YouCaughtItText
 
 GhostHouseDusknoirScript:
 	opentext

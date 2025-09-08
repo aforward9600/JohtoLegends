@@ -240,6 +240,7 @@ ScriptCommandTable:
 	dw Script_verbosegivetmhm
 	dw Script_tmhmnotify
 	dw Script_tmhmtotext
+	dw Script_writetextend
 
 StartScript:
 	ld hl, wScriptFlags
@@ -298,6 +299,17 @@ Script_memcallasm:
 	rst FarCall
 	ret
 
+Script_writetextend:
+	ld a, [wScriptBank]
+	ld [wScriptTextBank], a
+	call GetScriptByte
+	ld [wScriptTextAddr], a
+	call GetScriptByte
+	ld [wScriptTextAddr + 1], a
+	ld b, BANK(WriteTextWaitButtonClosetextEnd)
+	ld hl, WriteTextWaitButtonClosetextEnd
+	jp ScriptJump
+
 Script_jumptextfaceplayer:
 ; script command 0x51
 ; parameters: text_pointer
@@ -330,6 +342,7 @@ JumpTextFacePlayerScript:
 	faceplayer
 JumpTextScript:
 	opentext
+WriteTextWaitButtonClosetextEnd:
 	repeattext -1, -1
 	waitbutton
 	closetext

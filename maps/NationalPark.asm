@@ -16,23 +16,12 @@
 	const NATIONALPARK_ENGINEER2
 
 NationalPark_MapScripts:
-	db 2 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_FINISHED
+	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-.DummyScene0:
-	end
-
-.DummyScene1:
-	end
-
 NationalParkEngineer3Script:
 	jumptextfaceplayer NationalParkEngineer3Text
-
-NationalParkPokefanFScript:
-	jumptextfaceplayer NationalParkPokefanFText
 
 NationalParkTeacher1Script:
 	faceplayer
@@ -45,8 +34,7 @@ NationalParkTeacher1Script:
 	iffalse .NoRoom
 	setevent EVENT_GOT_QUICK_CLAW
 .GotQuickClaw:
-	writetext NationalParkTeacher1Text_GotQuickClaw
-	waitbutton
+	writetextend NationalParkTeacher1Text_GotQuickClaw
 .NoRoom:
 	closetext
 	end
@@ -57,22 +45,15 @@ BugCatcherElmer:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BugCatcherElmerAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatcherElmerAfterBattleText
 
 TrainerEngineerOswald:
 	trainer ENGINEER, OSWALD, EVENT_BEAT_ENGINEER_OSWALD, TrainerEngineerOswaldSeenText, TrainerEngineerOswaldBeatenText, 0, .Script
 
 .Script:
-	setscene SCENE_FINISHED
 	endifjustbattled
 	opentext
-	writetext TrainerEngineerOswaldAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend TrainerEngineerOswaldAfterBattleText
 
 TrainerPokefanMBernard:
 	trainer POKEFANM, BERNARD, EVENT_BEAT_POKEFANM_BERNARD, TrainerPokefanMBernardSeenText, TrainerPokefanMBernardBeatenText, 0, .Script
@@ -80,10 +61,7 @@ TrainerPokefanMBernard:
 .Script:
 	endifjustbattled
 	opentext
-	writetext TrainerPokefanMBernardAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend TrainerPokefanMBernardAfterBattleText
 
 NationalParkYoungster1Script:
 	jumptextfaceplayer NationalParkYoungster1Text
@@ -99,18 +77,10 @@ NationalParkPersian:
 	closepokepic
 	faceplayer
 	opentext
-	writetext NationalParkPersianText
-	waitbutton
-	closetext
-	end
+	writetextend NationalParkPersianText
 
 NationalParkEngineerScript:
-	faceplayer
-	opentext
-	writetext NationalParkEngineerText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer NationalParkEngineerText
 
 NationalParkEngineer2Script:
 	faceplayer
@@ -123,8 +93,7 @@ NationalParkEngineer2Script:
 	iffalse .NoRoom
 	setevent EVENT_GOT_RAZOR_CLAW_IN_NATIONAL_FOREST
 .GotRazorClaw:
-	writetext AlreadyHaveRazorClawText
-	waitbutton
+	writetextend AlreadyHaveRazorClawText
 .NoRoom:
 	closetext
 	end
@@ -135,10 +104,7 @@ TrainerEngineerHarvey:
 .Script:
 	endifjustbattled
 	opentext
-	writetext EngineerHarveyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend EngineerHarveyAfterBattleText
 
 TrainerBugCatcherBuzzy:
 	trainer BUG_CATCHER, BUZZY, EVENT_BEAT_BUG_CATCHER_BUZZY, BugCatcherBuzzySeenText, BugCatcherBuzzyBeatenText, 0, .Script
@@ -146,10 +112,7 @@ TrainerBugCatcherBuzzy:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BugCatcherBuzzyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatcherBuzzyAfterBattleText
 
 NationalParkPokefanF2Script:
 	jumptextfaceplayer NationalParkPokefanF2Text
@@ -165,21 +128,6 @@ NationalParkTMDig:
 
 NationalParkHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
-
-NationalParkEngineerStopsYou:
-	turnobject NATIONALPARK_ENGINEER, DOWN
-	turnobject PLAYER, UP
-	opentext
-	writetext ConstructionGoingOnText
-	waitbutton
-	closetext
-	applymovement PLAYER, EngineerMovesYouMovement
-	turnobject NATIONALPARK_ENGINEER, RIGHT
-	end
-
-EngineerMovesYouMovement:
-	step RIGHT
-	step_end
 
 NationalParkEngineer3Text:
 	text "Whew!"
@@ -203,15 +151,9 @@ NationalParkEngineer3Text:
 	cont "conservationists."
 	done
 
-NationalParkPokefanFText:
-	text "This is MAIL I got"
-	line "from my daughter."
-	cont "It cheers me up."
-	done
-
 NationalParkTeacher1Text:
-	text "I wanna be a teac-"
-	line "her someday!"
+	text "I wanna be a"
+	line "teacher someday!"
 
 	para "What about you?"
 
@@ -243,12 +185,6 @@ NationalParkYoungster1Text:
 	para "Perfect for some"
 	line "relaxing isolat-"
 	cont "ion."
-	done
-
-NationalParkYoungster2Text:
-	text "I get the other"
-	line "guy's #DEX"
-	cont "sticker if I win."
 	done
 
 NationalParkGrampsText:
@@ -303,12 +239,6 @@ NationalParkPokefanF2Text:
 	text "Uh-oh..."
 
 	para "I think I'm lost."
-	done
-
-UnknownText_0x5c5bd:
-	text "I must say, your"
-	line "#MON are quite"
-	cont "cute, too."
 	done
 
 BugCatcherBuzzySeenText:
@@ -370,34 +300,6 @@ BugCatcherElmerAfterBattleText:
 	para "It's weally not"
 	line "good for my sewf"
 	cont "esteem."
-	done
-
-UnknownText_0x5c68a:
-	text "My friend keeps a"
-	line "MARILL!"
-
-	para "I find them very"
-	line "endearing."
-
-	para "Oh, I wish for a"
-	line "MARILL of my own…"
-	done
-
-LassKriseSeenText:
-	text "Hello? Why are you"
-	line "staring at me?"
-
-	para "Oh, a battle?"
-	done
-
-LassKriseBeatenText:
-	text "…Hmmm…"
-	done
-
-LassKriseAfterBattleText:
-	text "I thought you were"
-	line "staring at me"
-	cont "because I'm cute!"
 	done
 
 ConstructionGoingOnText:
@@ -476,8 +378,7 @@ NationalPark_MapEvents:
 	warp_event 10, 47, ROUTE_35_NATIONAL_PARK_GATE, 1
 	warp_event 11, 47, ROUTE_35_NATIONAL_PARK_GATE, 2
 
-	db 1 ; coord events
-	coord_event 29, 19, SCENE_DEFAULT, NationalParkEngineerStopsYou
+	db 0 ; coord events
 
 	db 2 ; bg events
 	bg_event 33, 16, BGEVENT_READ, NationalParkRelaxationSquareSign

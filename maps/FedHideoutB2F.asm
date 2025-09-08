@@ -53,10 +53,7 @@ TrainerDelinquentJillian:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DelinquentJillianAfterText
-	waitbutton
-	closetext
-	end
+	writetextend DelinquentJillianAfterText
 
 TrainerRoughneckCameron:
 	trainer ROUGHNECK, CAMERON_2, EVENT_BEAT_ROUGHNECK_CAMERON, RoughneckCameronSeenText, RoughneckCameronBeatText, 0, .Script
@@ -64,10 +61,7 @@ TrainerRoughneckCameron:
 .Script:
 	endifjustbattled
 	opentext
-	writetext RoughneckCameronAfterText
-	waitbutton
-	closetext
-	end
+	writetextend RoughneckCameronAfterText
 
 FedHideoutB2FSurgeText:
 	text "Surge: I've fought"

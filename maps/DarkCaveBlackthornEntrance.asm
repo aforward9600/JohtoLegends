@@ -22,10 +22,7 @@ DarkCaveBlackthornEntranceOfficerScript:
 	opentext
 	checkevent EVENT_OPEN_DARK_CAVE_HIDEOUT
 	iftrue .OfficerLeaves
-	writetext DarkCaveBlackthornEntranceOfficerText
-	waitbutton
-	closetext
-	end
+	writetextend DarkCaveBlackthornEntranceOfficerText
 
 .OfficerLeaves:
 	writetext IllGoSeeTheChiefText

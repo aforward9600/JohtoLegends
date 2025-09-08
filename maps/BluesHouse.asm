@@ -15,15 +15,10 @@ DaisysMomScript:
 	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .DaisysMomScript2
-	writetext DaisysMomText
-	waitbutton
-	closetext
-	end
+	writetextend DaisysMomText
+
 .DaisysMomScript2:
-	writetext DaisysMomText2
-	waitbutton
-	closetext
-	end
+	writetextend DaisysMomText2
 
 HiImDaisyText:
 	text "Hi! I'm Daisy!"

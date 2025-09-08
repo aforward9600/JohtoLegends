@@ -36,16 +36,10 @@ MountMortarB1FKiyoScript:
 	iffalse .NoRoom
 	setevent EVENT_GOT_GOLEM_CALL
 .GotTyrogue:
-	writetext UnknownText_0x7e36a
-	waitbutton
-	closetext
-	end
+	writetextend UnknownText_0x7e36a
 
 .NoRoom:
-	writetext UnknownText_0x7e3df
-	waitbutton
-	closetext
-	end
+	writetextend UnknownText_0x7e3df
 
 MountMortarB1FBoulder:
 	jumpstd strengthboulder

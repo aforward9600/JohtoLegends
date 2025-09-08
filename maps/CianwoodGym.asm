@@ -81,16 +81,10 @@ CianwoodGymChigusaScript:
 	buttonsound
 	verbosegiveitem TM_BULK_UP
 	setevent EVENT_GOT_TM08_BULK_UP
-	writetext ChigusaExplainTMText
-	waitbutton
-	closetext
-	end
+	writetextend ChigusaExplainTMText
 
 .AlreadyGotTM:
-	writetext ChigusaAfterText
-	waitbutton
-	closetext
-	end
+	writetextend ChigusaAfterText
 
 .Rematch:
 	checkevent EVENT_BEAT_ELITE_FOUR
@@ -141,12 +135,9 @@ CianwoodGymChigusaScript:
 AfterChigusaRematch:
 	startbattle
 	reloadmapafterbattle
-	opentext
-	writetext BeatenChigusaAgainText
-	waitbutton
-	closetext
 	setflag ENGINE_BEAT_CHIGUSA
-	end
+	opentext
+	writetextend BeatenChigusaAgainText
 
 TrainerBlackbeltYoshi:
 	trainer BLACKBELT_T, YOSHI, EVENT_BEAT_BLACKBELT_YOSHI, BlackbeltYoshiSeenText, BlackbeltYoshiBeatenText, 0, .Script
@@ -154,10 +145,7 @@ TrainerBlackbeltYoshi:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BlackbeltYoshiAfterText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltYoshiAfterText
 
 TrainerBlackbeltNob:
 	trainer BLACKBELT_T, NOB, EVENT_BEAT_BLACKBELT_NOB, BlackbeltNobSeenText, BlackbeltNobBeatenText, 0, .Script
@@ -165,10 +153,7 @@ TrainerBlackbeltNob:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BlackbeltNobAfterText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltNobAfterText
 
 TrainerBlackbeltLung:
 	trainer BLACKBELT_T, LUNG, EVENT_BEAT_BLACKBELT_LUNG, BlackbeltLungSeenText, BlackbeltLungBeatenText, 0, .Script
@@ -176,10 +161,7 @@ TrainerBlackbeltLung:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BlackbeltLungAfterText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltLungAfterText
 
 TrainerApprenticeChuck:
 	trainer CHUCK, CHUCK1, EVENT_BEAT_CHUCK, ChuckSeenText, ChuckBeatenText, 0, .Script
@@ -187,10 +169,7 @@ TrainerApprenticeChuck:
 .Script:
 	endifjustbattled
 	opentext
-	writetext ChuckAfterText
-	waitbutton
-	closetext
-	end
+	writetextend ChuckAfterText
 
 CianwoodGymBoulder:
 	jumpstd strengthboulder

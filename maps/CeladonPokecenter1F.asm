@@ -32,16 +32,10 @@ CeladonPokecenter1FRival:
 	opentext
 	checkevent EVENT_BEAT_ERIKA
 	iftrue .CeladonPokecenter1FRival2
-	writetext CeladonPokecenter1FRivalText1
-	waitbutton
-	closetext
-	end
+	writetextend CeladonPokecenter1FRivalText1
 
 .CeladonPokecenter1FRival2:
-	writetext CeladonPokecenter1FRivalText2
-	waitbutton
-	closetext
-	end
+	writetextend CeladonPokecenter1FRivalText2
 
 CeladonPokecenter1FCooltrainerMText:
 	text "I wouldn't go near"

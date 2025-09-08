@@ -63,24 +63,15 @@ CinnabarGymBlaine:
 	waitsfx
 	setflag ENGINE_VOLCANOBADGE
 	setevent EVENT_DECO_PLANT_2
-	writetext BlaineVolcanoBadgeText
-	waitbutton
-	closetext
-	end
+	writetextend BlaineVolcanoBadgeText
 
 .FightDone:
-	writetext BlaineFightDoneText
-	waitbutton
-	closetext
-	end
+	writetextend BlaineFightDoneText
 
 .BlainePost:
 	checkflag ENGINE_JOEY
 	iffalse .BlaineRematch
-	writetext BlainePostText
-	waitbutton
-	closetext
-	end
+	writetextend BlainePostText
 
 .BlaineRematch:
 	writetext BlaineRematchText
@@ -90,12 +81,9 @@ CinnabarGymBlaine:
 	loadtrainer BLAINE, BLAINE1
 	startbattle
 	reloadmapafterbattle
-	opentext
-	writetext BlaineAfterRematchText
-	waitbutton
-	closetext
 	setflag ENGINE_JOEY
-	end
+	opentext
+	writetextend BlaineAfterRematchText
 	
 
 BlaineLastMonText:
@@ -138,10 +126,7 @@ TrainerSuperNerdDaisuke:
 
 .BeatDaisuke:
 	opentext
-	writetext SuperNerdDaisukeAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SuperNerdDaisukeAfterBattleText
 
 TrainerSuperNerdJosef:
 	trainer SUPER_NERD, JOSEF, EVENT_BEAT_SUPER_NERD_JOSEF, SuperNerdJosefSeenText, SuperNerdJosefBeatenText, 0, .Script
@@ -158,10 +143,7 @@ TrainerSuperNerdJosef:
 
 .BeatJosef:
 	opentext
-	writetext SuperNerdJosefAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SuperNerdJosefAfterBattleText
 
 TrainerBurglarErik:
 	trainer BURGLAR, BURGLAR_ERIK, EVENT_BEAT_BURGLAR_ERIK, BurglarErikSeenText, BurglarErikBeatenText, 0, .Script
@@ -178,10 +160,7 @@ TrainerBurglarErik:
 
 .BeatErik:
 	opentext
-	writetext BurglarErikAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BurglarErikAfterBattleText
 
 TrainerBurglarKidd:
 	trainer BURGLAR, KIDD, EVENT_BEAT_BURGLAR_KIDD, BurglarKiddSeenText, BurglarKiddBeatenText, 0, .Script
@@ -198,10 +177,7 @@ TrainerBurglarKidd:
 
 .BeatKidd:
 	opentext
-	writetext BurglarKiddAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BurglarKiddAfterBattleText
 
 TrainerBurglarArsene:
 	trainer BURGLAR, ARSENE, EVENT_BEAT_BURGLAR_ARSENE, BurglarArseneSeenText, BurglarArseneBeatenText, 0, .Script
@@ -218,10 +194,7 @@ TrainerBurglarArsene:
 
 .BeatErik:
 	opentext
-	writetext BurglarArseneAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BurglarArseneAfterBattleText
 
 Question1:
 	opentext
@@ -246,10 +219,7 @@ Question1:
 	end
 
 .AnsweredQuestion1:
-	writetext AlreadyAnsweredQuestionText
-	waitbutton
-	closetext
-	end
+	writetextend AlreadyAnsweredQuestionText
 
 .WrongAnswer:
 	playsound SFX_WRONG
@@ -312,10 +282,7 @@ Question2:
 	end
 
 .AnsweredQuestion2:
-	writetext AlreadyAnsweredQuestionText
-	waitbutton
-	closetext
-	end
+	writetextend AlreadyAnsweredQuestionText
 
 .WrongAnswer:
 	playsound SFX_WRONG
@@ -377,10 +344,7 @@ Question3:
 	end
 
 .AnsweredQuestion3:
-	writetext AlreadyAnsweredQuestionText
-	waitbutton
-	closetext
-	end
+	writetextend AlreadyAnsweredQuestionText
 
 .WrongAnswer:
 	playsound SFX_WRONG
@@ -442,10 +406,7 @@ Question4:
 	end
 
 .AnsweredQuestion4:
-	writetext AlreadyAnsweredQuestionText
-	waitbutton
-	closetext
-	end
+	writetextend AlreadyAnsweredQuestionText
 
 .WrongAnswer:
 	playsound SFX_WRONG
@@ -507,10 +468,7 @@ Question5:
 	end
 
 .AnsweredQuestion5:
-	writetext AlreadyAnsweredQuestionText
-	waitbutton
-	closetext
-	end
+	writetextend AlreadyAnsweredQuestionText
 
 .WrongAnswer:
 	playsound SFX_WRONG
@@ -572,10 +530,7 @@ Question6:
 	end
 
 .AnsweredQuestion6:
-	writetext AlreadyAnsweredQuestionText
-	waitbutton
-	closetext
-	end
+	writetextend AlreadyAnsweredQuestionText
 
 .WrongAnswer:
 	playsound SFX_WRONG

@@ -18,17 +18,11 @@ MrPsychic:
 	verbosegiveitem TM_PSYCHIC_M
 	setevent EVENT_GOT_TM29_PSYCHIC
 .AlreadyGivenItem:
-	writetext MrPsychicText2
-	waitbutton
-	closetext
-	end
+	writetextend MrPsychicText2
 
 .AlreadyGotItem:
-	writetext MrPsychicText3
-	waitbutton
-	closetext
 	setevent EVENT_GOT_TM29_PSYCHIC
-	end
+	writetextend MrPsychicText3
 
 MrPsychicsHouseBookshelf:
 	jumpstd genericsink

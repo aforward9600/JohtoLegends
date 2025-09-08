@@ -23,10 +23,7 @@ PewterJigglypuff:
 	waitbutton
 	closepokepic
 	opentext
-	writetext PewterJigglypuffText
-	waitbutton
-	closetext
-	end
+	writetextend PewterJigglypuffText
 
 Chris:
 	faceplayer
@@ -41,16 +38,10 @@ PewterPokecenter1FRivalScript:
 	opentext
 	checkevent EVENT_BEAT_BROCK
 	iftrue .PewterPokecenterRivalAfter
-	writetext PewterPokecenter1FRivalText
-	waitbutton
-	closetext
-	end
+	writetextend PewterPokecenter1FRivalText
 
 .PewterPokecenterRivalAfter:
-	writetext PewterPokecenter1FRivalAfterText
-	waitbutton
-	closetext
-	end
+	writetextend PewterPokecenter1FRivalAfterText
 
 PewterPokecenter1FTeacherText:
 	text "I use this Iggly-"

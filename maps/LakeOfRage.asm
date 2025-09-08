@@ -91,10 +91,7 @@ LakeOfRageRivalScript:
 	end
 
 .BeatMiyamoto:
-	writetext LakeOfRageRivalThatWasSomethingText
-	waitbutton
-	closetext
-	end
+	writetextend LakeOfRageRivalThatWasSomethingText
 
 LakeOfRageSuperNerdScript:
 	jumptextfaceplayer LakeOfRageSuperNerdText
@@ -129,10 +126,7 @@ TrainerFisherAidan:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherAidanAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend FisherAidanAfterBattleText
 
 TrainerFisherNoah:
 	trainer FISHER, NOAH, EVENT_BEAT_FISHER_NOAH, FisherNoahSeenText, FisherNoahBeatenText, 0, .Script
@@ -140,10 +134,7 @@ TrainerFisherNoah:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherNoahAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend FisherNoahAfterBattleText
 
 TrainerLassJackie:
 	trainer LASS, JACKIE, EVENT_BEAT_LASS_JACKIE, LassJackieSeenText, LassJackieBeatenText, 0, .Script
@@ -151,10 +142,7 @@ TrainerLassJackie:
 .Script:
 	endifjustbattled
 	opentext
-	writetext LassJackieAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend LassJackieAfterBattleText
 
 WesleyScript:
 	faceplayer
@@ -174,10 +162,7 @@ WesleyScript:
 	verbosegiveitem BLACKBELT
 	iffalse WesleyDoneScript
 	setevent EVENT_GOT_BLACKBELT_FROM_WESLEY
-	writetext WesleyGaveGiftText
-	waitbutton
-	closetext
-	end
+	writetextend WesleyGaveGiftText
 
 WesleyWednesdayScript:
 	writetext WesleyWednesdayText
@@ -187,10 +172,7 @@ WesleyDoneScript:
 	end
 
 WesleyNotWednesdayScript:
-	writetext WesleyNotWednesdayText
-	waitbutton
-	closetext
-	end
+	writetextend WesleyNotWednesdayText
 
 LakeOfRageElixer:
 	itemball ETHER

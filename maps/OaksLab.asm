@@ -35,10 +35,7 @@ Oak:
 	writetext OakLabDexCheckText
 	waitbutton
 	special ProfOaksPCBoot
-	writetext OakLabGoodbyeText
-	waitbutton
-	closetext
-	end
+	writetextend OakLabGoodbyeText
 
 .OpenMtSilver:
 	checkevent EVENT_BEAT_BIKER_BOSS
@@ -61,10 +58,7 @@ Oak:
 	writetext OakOpenMtSilverText
 	buttonsound
 	setevent EVENT_OPENED_MT_SILVER
-	writetext OnceAgainThankYouText
-	waitbutton
-	closetext
-	end
+	writetextend OnceAgainThankYouText
 
 .BattleOak:
 	writetext BattleOakText
@@ -86,11 +80,8 @@ Oak:
 ;	buttonsound
 ;	pause 15
 .FinishOakBattle:
-	writetext OakBeatText
-	waitbutton
-	closetext
 	setflag ENGINE_RALPH
-	end
+	writetextend OakBeatText
 
 OaksAssistant1Script:
 	jumptextfaceplayer OaksAssistant1Text

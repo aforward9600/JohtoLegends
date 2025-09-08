@@ -1124,3 +1124,9 @@ tmhmtotext: MACRO
 	db \1 ; tmhm
 	db \2 ; memory
 ENDM
+
+	enum writetextend_command
+writetextend: MACRO
+	db writetextend_command
+	dw \1
+ENDM

@@ -81,10 +81,7 @@ AgathaRematch:
 	sjump AgathaReconvene
 
 AgathaScript_AfterBattle:
-	writetext AgathaScript_AgathaDefeatText
-	waitbutton
-	closetext
-	end
+	writetextend AgathaScript_AgathaDefeatText
 
 AgathaRematchBeaten:
 	writetext AgathaScript_AgathaDefeatText2

@@ -112,30 +112,18 @@ CherrygroveGymSpeechHouseCynthiaScript:
 	loadtrainer TOURIST, CYNTHIA4
 	startbattle
 	reloadmapafterbattle
-	opentext
-	writetext YoureAsStrongAsEverText
-	waitbutton
-	closetext
 	setevent EVENT_BEAT_CHERRYGROVE_CYNTHIA
-	end
+	opentext
+	writetextend YoureAsStrongAsEverText
 
 .BeatenCherrygroveCynthia:
-	writetext CynthiaHelloAgainText
-	waitbutton
-	closetext
-	end
+	writetextend CynthiaHelloAgainText
 
 .RefusedCynthiaBattle:
-	writetext CynthiaSomeOtherTimeText
-	waitbutton
-	closetext
-	end
+	writetextend CynthiaSomeOtherTimeText
 
 .PsuedoPassword:
-	writetext PsuedoPasswordText
-	waitbutton
-	closetext
-	end
+	writetextend PsuedoPasswordText
 
 CherrygroveTelevision:
 	jumpstd televisionscript

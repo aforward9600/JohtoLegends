@@ -50,7 +50,6 @@ GoldenrodVendingMachine:
 	iffalse .NotEnoughSpace
 	takemoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_LEMONADE_PRICE
 	getitemname STRING_BUFFER_3, LEMONADE
-	sjump .VendItem
 
 .VendItem:
 	pause 10

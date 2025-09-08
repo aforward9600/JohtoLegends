@@ -32,10 +32,7 @@ CianwoodCityChucksWife:
 	buttonsound
 	checkevent EVENT_BEAT_CHUCK
 	iftrue .BeatChuck
-	writetext ChucksWifeBeatChuckText
-	waitbutton
-	closetext
-	end
+	writetextend ChucksWifeBeatChuckText
 
 .BeatChuck:
 	writetext ChucksWifeGiveHMText
@@ -45,10 +42,7 @@ CianwoodCityChucksWife:
 	writetext ChucksWifeFlySpeechText
 	buttonsound
 .GotFly:
-	writetext ChucksWifeChubbyText
-	waitbutton
-	closetext
-	end
+	writetextend ChucksWifeChubbyText
 
 ForestTrade:
 	faceplayer

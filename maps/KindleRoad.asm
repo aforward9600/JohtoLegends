@@ -74,10 +74,7 @@ TrainerYoungsterMik:
 .Script
 	endifjustbattled
 	opentext
-	writetext YoungsterMikAfterText
-	waitbutton
-	closetext
-	end
+	writetextend YoungsterMikAfterText
 
 TrainerSwimmerDaryl:
 	trainer SWIMMERM, DARYL, EVENT_BEAT_SWIMMERM_JACKSON, SwimmerDarylSeenText, SwimmerDarylBeatenText, 0, .Script
@@ -85,10 +82,7 @@ TrainerSwimmerDaryl:
 .Script
 	endifjustbattled
 	opentext
-	writetext SwimmerDarylAfterText
-	waitbutton
-	closetext
-	end
+	writetextend SwimmerDarylAfterText
 
 TrainerCooltrainerFRaina:
 	trainer COOLTRAINERF, REENA2, EVENT_BEAT_COOLTRAINERF_REENA2, CooltrainerFRainaSeenText, CooltrainerFRainaBeatenText, 0, .Script
@@ -96,10 +90,7 @@ TrainerCooltrainerFRaina:
 .Script
 	endifjustbattled
 	opentext
-	writetext CooltrainerFRainaAfterText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerFRainaAfterText
 
 TrainerCamperGerald:
 	trainer CAMPER, GERALD, EVENT_BEAT_CAMPER_GERALD, CamperGeraldSeenText, CamperGeraldBeatenText, 0, .Script
@@ -107,10 +98,7 @@ TrainerCamperGerald:
 .Script
 	endifjustbattled
 	opentext
-	writetext CamperGeraldAfterText
-	waitbutton
-	closetext
-	end
+	writetextend CamperGeraldAfterText
 
 KindleRoadTwinScript:
 	jumptextfaceplayer KindleRoadTwinText

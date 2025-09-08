@@ -60,13 +60,10 @@ WalkUpToRival:
 	closetext
 	turnobject MASTERSHOUSE1F_RIVAL, LEFT
 	turnobject PLAYER, RIGHT
-	opentext
-	writetext GoodSportText
-	waitbutton
 	setscene SCENE_CANT_LEAVE_HOUSE
-	closetext
 	scall MasterPasswordCheck
-	end
+	opentext
+	writetextend GoodSportText
 
 TryToLeaveHouseScript:
 	opentext
@@ -504,16 +501,10 @@ ChooseKabuto:
 	sjump RivalDratiniScript
 
 DidntChooseDratiniScript:
-	writetext DidntChooseDratiniText
-	waitbutton
-	closetext
-	end
+	writetextend DidntChooseDratiniText
 
 DidntChooseLarvitarScript:
-	writetext DidntChooseLarvitarText
-	waitbutton
-	closetext
-	end
+	writetextend DidntChooseLarvitarText
 
 RivalLarvitarScript:
 	applymovement MASTERSHOUSE1F_RIVAL, MastersHouse1F_RivalLarvitarMovement
@@ -534,10 +525,6 @@ RivalLarvitarScript:
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext IsntItCuteText
-	waitbutton
-	closetext
-	turnobject MASTERSHOUSE1F_RIVAL, UP
-	turnobject PLAYER, UP
 	sjump MastersTestScript1
 
 .Female:
@@ -550,10 +537,6 @@ RivalLarvitarScript:
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext HehToughMonText
-	waitbutton
-	closetext
-	turnobject MASTERSHOUSE1F_RIVAL, UP
-	turnobject PLAYER, UP
 	sjump MastersTestScript1
 
 RivalDratiniScript:
@@ -575,10 +558,6 @@ RivalDratiniScript:
 	turnobject PLAYER, LEFT
 	opentext
 	writetext IsntItCuteText
-	waitbutton
-	closetext
-	turnobject MASTERSHOUSE1F_RIVAL, UP
-	turnobject PLAYER, UP
 	sjump MastersTestScript2
 
 .Female2:
@@ -591,13 +570,13 @@ RivalDratiniScript:
 	turnobject PLAYER, LEFT
 	opentext
 	writetext HehToughMonText
+	sjump MastersTestScript2
+
+MastersTestScript1:
 	waitbutton
 	closetext
 	turnobject MASTERSHOUSE1F_RIVAL, UP
 	turnobject PLAYER, UP
-	sjump MastersTestScript2
-
-MastersTestScript1:
 	opentext
 	writetext MastersTestText
 	waitbutton
@@ -616,6 +595,10 @@ MastersTestScript1:
 	end
 
 MastersTestScript2:
+	waitbutton
+	closetext
+	turnobject MASTERSHOUSE1F_RIVAL, UP
+	turnobject PLAYER, UP
 	opentext
 	writetext MastersTestText
 	waitbutton
@@ -682,10 +665,7 @@ WalkUpToRival2:
 	applymovement MASTERSHOUSE1F_MASTER, MasterLastMovement
 	turnobject PLAYER, UP
 	opentext
-	writetext TalkToGranny
-	waitbutton
-	closetext
-	end
+	writetextend TalkToGranny
 
 .MasterUnfortunate:
 	writetext MasterUnfortunateText

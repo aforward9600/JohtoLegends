@@ -107,10 +107,7 @@ EinScript:
 	end
 
 .AfterEin:
-	writetext MaybeOrreText
-	waitbutton
-	closetext
-	end
+	writetextend MaybeOrreText
 
 GivesRocketBall:
 	jumpstd receiveitem
@@ -132,10 +129,7 @@ HoOhTank:
 	waitbutton
 	closepokepic
 	opentext
-	writetext HoOhIsInPainText
-	waitbutton
-	closetext
-	end
+	writetextend HoOhIsInPainText
 
 .HoOhBattle:
 	opentext
@@ -197,10 +191,7 @@ LugiaTank:
 	waitbutton
 	closepokepic
 	opentext
-	writetext LugiaIsInPainText
-	waitbutton
-	closetext
-	end
+	writetextend LugiaIsInPainText
 
 .LugiaBattle:
 	opentext
@@ -263,10 +254,7 @@ HoOhLugiaRoomOfficerScript:
 	opentext
 	checkitem POKE_BALL
 	iffalse .NeedPokeBalls
-	writetext GoodThingWeStoppedThemText
-	waitbutton
-	closetext
-	end
+	writetextend GoodThingWeStoppedThemText
 
 .NeedPokeBalls:
 	writetext YouNeedBallsText
@@ -276,10 +264,7 @@ HoOhLugiaRoomOfficerScript:
 	giveitem POKE_BALL, 10
 	buttonsound
 	itemnotify
-	writetext ThatOuttaDoItText
-	waitbutton
-	closetext
-	end
+	writetextend ThatOuttaDoItText
 
 OfficerGivesBalls:
 	jumpstd receiveitem

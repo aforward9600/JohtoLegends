@@ -62,10 +62,7 @@ GoldenrodDeptStore1FLuckyNumber:
 	sjump .NoPrize
 
 .GameOver:
-	writetext DeptStore1FLuckyNumberComeAgainText
-	waitbutton
-	closetext
-	end
+	writetextend DeptStore1FLuckyNumberComeAgainText
 
 .FirstPlace:
 	writetext DeptStore1FLuckyNumberPerfectMatchText
@@ -101,16 +98,10 @@ GoldenrodDeptStore1FLuckyNumber:
 	sjump .GameOver
 
 .NoPrize:
-	writetext DeptStore1FLuckyNumberNoneOfYourIDNumbersMatchText
-	waitbutton
-	closetext
-	end
+	writetextend DeptStore1FLuckyNumberNoneOfYourIDNumbersMatchText
 
 .BagFull:
-	writetext DeptStore1FLuckyNumberNoRoomForYourPrizeText
-	waitbutton
-	closetext
-	end
+	writetextend DeptStore1FLuckyNumberNoRoomForYourPrizeText
 
 GoldenrodDeptStore1FReceptionistText:
 	text "Welcome to Golden-"

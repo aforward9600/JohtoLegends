@@ -49,10 +49,7 @@ PokemonMansion3FAbraStatue:
 	end
 
 .DidntPressTheButton3F:
-	writetext NotQuiteYet3FText
-	waitbutton
-	closetext
-	end
+	writetextend NotQuiteYet3FText
 
 TrainerBurglarHarry:
 	trainer BURGLAR, BURGLAR_HARRY, EVENT_BEAT_BURGLAR_HARRY, BurglarHarrySeenText, BurglarHarryBeatenText, 0, .Script
@@ -60,10 +57,7 @@ TrainerBurglarHarry:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BurglarHarryAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BurglarHarryAfterBattleText
 
 PokemonMansion3FScientist:
 	jumptextfaceplayer PokemonMansion3FScientistText

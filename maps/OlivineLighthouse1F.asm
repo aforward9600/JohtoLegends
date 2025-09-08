@@ -27,15 +27,16 @@ OlivineLighthouse1F_MapScripts:
 	return
 
 LeftRival:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female
 	clearevent EVENT_LIGHTHOUSE1F_RIVAL1
 	showemote EMOTE_SHOCK, PLAYER, 15
 	turnobject PLAYER, UP
 	special FadeOutMusic
 	pause 10
 	appear OLIVINELIGHTHOUSE1F_RIVAL
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female
 	playmusic MUSIC_DAHLIA_ENCOUNTER
+.ResumeLeftRival:
 	applymovement OLIVINELIGHTHOUSE1F_RIVAL, RivalMovesUp1
 	turnobject OLIVINELIGHTHOUSE1F_RIVAL, LEFT
 	turnobject PLAYER, RIGHT
@@ -53,39 +54,20 @@ LeftRival:
 	end
 
 .Female:
-	clearevent EVENT_LIGHTHOUSE1F_RIVAL1
-	showemote EMOTE_SHOCK, PLAYER, 15
-	turnobject PLAYER, UP
-	special FadeOutMusic
-	pause 10
-	appear OLIVINELIGHTHOUSE1F_RIVAL
 	playmusic MUSIC_RIVAL_ENCOUNTER
-	applymovement OLIVINELIGHTHOUSE1F_RIVAL, RivalMovesUp1
-	turnobject OLIVINELIGHTHOUSE1F_RIVAL, LEFT
-	turnobject PLAYER, RIGHT
-	opentext
-	writetext LighthouseHeyPlayerText
-	waitbutton
-	closetext
-	applymovement OLIVINELIGHTHOUSE1F_RIVAL, RivalDisappearsMovement1
-	disappear OLIVINELIGHTHOUSE1F_RIVAL
-	playsound SFX_EXIT_BUILDING
-	special RestartMapMusic
-	setscene SCENE_FINISHED
-	setevent EVENT_LIGHTHOUSE1F_RIVAL1
-	setevent EVENT_LIGHTHOUSE6F_RIVAL1
-	end
+	sjump .ResumeLeftRival
 
 RightRival:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female2
 	showemote EMOTE_SHOCK, PLAYER, 15
 	turnobject PLAYER, UP
 	special FadeOutMusic
 	pause 10
 	clearevent EVENT_LIGHTHOUSE1F_RIVAL1
 	appear OLIVINELIGHTHOUSE1F_RIVAL
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female2
 	playmusic MUSIC_DAHLIA_ENCOUNTER
+.ResumeRightRival
 	applymovement OLIVINELIGHTHOUSE1F_RIVAL, RivalMovesUp2
 	opentext
 	writetext LighthouseHeyPlayerText
@@ -101,26 +83,8 @@ RightRival:
 	end
 
 .Female2:
-	clearevent EVENT_LIGHTHOUSE1F_RIVAL1
-	showemote EMOTE_SHOCK, PLAYER, 15
-	turnobject PLAYER, UP
-	special FadeOutMusic
-	pause 10
-	appear OLIVINELIGHTHOUSE1F_RIVAL
 	playmusic MUSIC_RIVAL_ENCOUNTER
-	applymovement OLIVINELIGHTHOUSE1F_RIVAL, RivalMovesUp2
-	opentext
-	writetext LighthouseHeyPlayerText
-	waitbutton
-	closetext
-	applymovement OLIVINELIGHTHOUSE1F_RIVAL, RivalDisappearsMovement2
-	disappear OLIVINELIGHTHOUSE1F_RIVAL
-	playsound SFX_EXIT_BUILDING
-	special RestartMapMusic
-	setscene SCENE_FINISHED
-	setevent EVENT_LIGHTHOUSE1F_RIVAL1
-	setevent EVENT_LIGHTHOUSE6F_RIVAL1
-	end
+	sjump .ResumeRightRival
 
 OlivineLighthouse1FRocket1Script:
 	trainer GRUNTM, GRUNTM_3, EVENT_BEAT_ROCKET_GRUNTM_3, OlivineLighthouse1FRocketSeenText, OlivineLighthouse1FRocketBeatenText, 0, .Script
@@ -128,10 +92,7 @@ OlivineLighthouse1FRocket1Script:
 .Script:
 	endifjustbattled
 	opentext
-	writetext OlivineLighthouse1FRocketAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineLighthouse1FRocketAfterBattleText
 
 OlivineLighthouse1FRocket2Script:
 	trainer GRUNTM, GRUNTM_4, EVENT_BEAT_ROCKET_GRUNTM_4, OlivineLighthouse1FRocket2SeenText, OlivineLighthouse1FRocket2BeatenText, 0, .Script
@@ -139,10 +100,7 @@ OlivineLighthouse1FRocket2Script:
 .Script:
 	endifjustbattled
 	opentext
-	writetext OlivineLighthouse1FRocket2AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineLighthouse1FRocket2AfterBattleText
 
 OlivineLighthouse1FSherlesScript:
 	opentext
@@ -151,25 +109,16 @@ OlivineLighthouse1FSherlesScript:
 	closetext
 	faceplayer
 	opentext
-	writetext OlivineLighthouse1FSherles2Text
-	waitbutton
-	closetext
-	end
+	writetextend OlivineLighthouse1FSherles2Text
 
 ElevatorScript:
 	opentext
 	checkevent EVENT_BEAT_LIGHTHOUSE_MIYAMOTO
 	iftrue .ElevatorFunctioning
-	writetext ElevatorBlockedText
-	waitbutton
-	closetext
-	end
+	writetextend ElevatorBlockedText
 
 .ElevatorFunctioning:
-	writetext ElevatorFreeText
-	waitbutton
-	closetext
-	end
+	writetextend ElevatorFreeText
 
 OlivineLighthouse1FOfficer:
 	jumptextfaceplayer Lighthouse1FOfficerText

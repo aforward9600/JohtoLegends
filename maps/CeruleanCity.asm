@@ -24,16 +24,10 @@ CeruleanCityBikerScript:
 	opentext
 	checkevent EVENT_BEAT_SENSATIONAL_SISTERS
 	iftrue .CeruleanCityBiker2
-	writetext CeruleanCityBikerText1
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanCityBikerText1
 
 .CeruleanCityBiker2:
-	writetext CeruleanCityBikerText2
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanCityBikerText2
 
 CeruleanCityPokefanMScript:
 	jumptextfaceplayer CeruleanCityPokefanMText
@@ -46,16 +40,10 @@ CeruleanCityDelinquentScript:
 	opentext
 	checkevent EVENT_BEAT_SENSATIONAL_SISTERS
 	iftrue .CeruleanCityDelinquent2
-	writetext CeruleanCityDelinquentText1
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanCityDelinquentText1
 
 .CeruleanCityDelinquent2:
-	writetext CeruleanCityDelinquentText2
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanCityDelinquentText2
 
 CeruleanCityFisherScript:
 	jumptextfaceplayer CeruleanCityFisherText

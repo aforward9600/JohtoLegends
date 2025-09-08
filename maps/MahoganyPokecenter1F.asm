@@ -29,10 +29,7 @@ MahoganyPokecenter1FSwinubScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext MahoganyPokecenter1FSwinubText
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyPokecenter1FSwinubText
 
 MahoganyPokecenter1FCooltrainerMText:
 	text "Did you ever want"

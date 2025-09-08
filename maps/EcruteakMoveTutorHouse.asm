@@ -77,16 +77,10 @@ EcruteakMoveTutorHouseMoveTutorScript:
 	writetext NiceMoveText
 	takemoney YOUR_MONEY, 800
 	buttonsound
-	writetext GoodLuckText
-	waitbutton
-	closetext
-	end
+	writetextend GoodLuckText
 
 .Incompatible:
-	writetext HowUnfortunateText
-	waitbutton
-	closetext
-	end
+	writetextend HowUnfortunateText
 
 MoveTutorTV:
 	jumpstd televisionscript

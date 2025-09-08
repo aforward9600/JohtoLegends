@@ -51,10 +51,7 @@ CeladonCityPoliwrath:
 	waitbutton
 	closepokepic
 	opentext
-	writetext CeladonCityPoliwrathText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonCityPoliwrathText
 
 CeladonCityTeacher1Script:
 	jumptextfaceplayer CeladonCityTeacher1Text

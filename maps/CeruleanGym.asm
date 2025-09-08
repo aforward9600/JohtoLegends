@@ -131,18 +131,12 @@ CeruleanGymVioletScript:
 	setlasttalked CERULEANGYM_LILY
 	startbattle
 	reloadmapafterbattle
-	opentext
-	writetext LilyAfterRematchText
-	waitbutton
-	closetext
 	setflag ENGINE_HUEY
-	end
+	opentext
+	writetextend LilyAfterRematchText
 
 .VioletPost:
-	writetext VioletAfterRematchText
-	waitbutton
-	closetext
-	end
+	writetextend VioletAfterRematchText
 
 CeruleanGymDaisyScript:
 	faceplayer
@@ -231,10 +225,7 @@ TrainerSwimmerfDiana:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmerfDianaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SwimmerfDianaAfterBattleText
 
 TrainerSwimmerfBriana:
 	trainer SWIMMERF, AQUA, EVENT_BEAT_SWIMMERF_AQUA, SwimmerfBrianaSeenText, SwimmerfBrianaBeatenText, 0, .Script
@@ -242,10 +233,7 @@ TrainerSwimmerfBriana:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmerfBrianaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SwimmerfBrianaAfterBattleText
 
 TrainerSwimmermParker:
 	trainer SWIMMERM, TANNER, EVENT_BEAT_SWIMMERM_TANNER, SwimmermParkerSeenText, SwimmermParkerBeatenText, 0, .Script
@@ -253,10 +241,7 @@ TrainerSwimmermParker:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmermParkerAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SwimmermParkerAfterBattleText
 
 VioletIntroText:
 	text "Violet: You wanna"

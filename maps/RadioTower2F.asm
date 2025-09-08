@@ -17,10 +17,7 @@ TrainerGruntM11:
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM11AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend GruntM11AfterBattleText
 
 TrainerGruntM13:
 	trainer GRUNTM, GRUNTM_13, EVENT_BEAT_ROCKET_GRUNTM_13, GruntM13SeenText, GruntM13BeatenText, 0, .Script
@@ -28,10 +25,7 @@ TrainerGruntM13:
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM13AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend GruntM13AfterBattleText
 
 TrainerGruntM14:
 	trainer GRUNTM, GRUNTM_14, EVENT_BEAT_ROCKET_GRUNTM_14, GruntM14SeenText, GruntM14BeatenText, 0, .Script
@@ -39,10 +33,7 @@ TrainerGruntM14:
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM14AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend GruntM14AfterBattleText
 
 TrainerGruntF7:
 	trainer GRUNTF, GRUNTF_7, EVENT_BEAT_ROCKET_GRUNTF_7, GruntF7SeenText, GruntF7BeatenText, 0, .Script
@@ -50,10 +41,7 @@ TrainerGruntF7:
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntF7AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend GruntF7AfterBattleText
 
 TrainerGruntF6:
 	trainer GRUNTF, GRUNTF_6, EVENT_BEAT_ROCKET_GRUNTF_6, GruntF6SeenText, GruntF6BeatenText, 0, .Script
@@ -61,26 +49,17 @@ TrainerGruntF6:
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntF6AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend GruntF6AfterBattleText
 
 RadioTower2FEngineerScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOLDENROD_TOWER_TAKEOVER
 	iftrue .EngineerScript2
-	writetext RadioTower2FEngineerText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower2FEngineerText
 
 .EngineerScript2:
-	writetext RadioTower2FEngineer2Text
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower2FEngineer2Text
 
 GruntM11SeenText:
 	text "Get outta here,"

@@ -87,16 +87,10 @@ BlackthornGymMasterScript:
 	buttonsound
 	verbosegiveitem TM_DRAGON_CLAW
 	setevent EVENT_GOT_TM24_DRAGONBREATH
-	writetext BlackthornGymMasterText_DescribeTM24
-	waitbutton
-	closetext
-	end
+	writetextend BlackthornGymMasterText_DescribeTM24
 
 .GotTM24:
-	writetext BlackthornGymMasterText_League
-	waitbutton
-	closetext
-	end
+	writetextend BlackthornGymMasterText_League
 
 .Rematch:
 	checkevent EVENT_BEAT_ELITE_FOUR
@@ -117,12 +111,9 @@ BlackthornGymMasterScript:
 .AfterMasterRematch:
 	startbattle
 	reloadmapafterbattle
-	opentext
-	writetext MasterBeatenAgainText
-	waitbutton
-	closetext
 	setflag ENGINE_BEAT_MASTER
-	end
+	opentext
+	writetextend MasterBeatenAgainText
 
 TrainerDragonTamermDevin:
 	trainer DRAGON_TAMER_M, DEVIN, EVENT_BEAT_DRAGON_TAMER_M_DEVIN, DragonTamermDevinSeenText, DragonTamermDevinBeatenText, 0, .Script
@@ -130,10 +121,7 @@ TrainerDragonTamermDevin:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DragonTamermDevinAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DragonTamermDevinAfterBattleText
 
 TrainerDragonTamermDavis:
 	trainer DRAGON_TAMER_M, DAVIS, EVENT_BEAT_DRAGON_TAMER_M_DAVIS, DragonTamermDavisSeenText, DragonTamermDavisBeatenText, 0, .Script
@@ -141,10 +129,7 @@ TrainerDragonTamermDavis:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DragonTamermDavisAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DragonTamermDavisAfterBattleText
 
 TrainerDragonTamerfDani:
 	trainer DRAGON_TAMER_F, DANI, EVENT_BEAT_DRAGON_TAMER_F_DANI, DragonTamerfDaniSeenText, DragonTamerfDaniBeatenText, 0, .Script
@@ -152,26 +137,17 @@ TrainerDragonTamerfDani:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DragonTamerfDaniAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DragonTamerfDaniAfterBattleText
 
 BlackthornGymGuyScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_MASTER
 	iftrue .BlackthornGymGuyWinScript
-	writetext BlackthornGymGuyText
-	waitbutton
-	closetext
-	end
+	writetextend BlackthornGymGuyText
 
 .BlackthornGymGuyWinScript:
-	writetext BlackthornGymGuyWinText
-	waitbutton
-	closetext
-	end
+	writetextend BlackthornGymGuyWinText
 
 BlackthornGymStatue:
 	checkflag ENGINE_RISINGBADGE

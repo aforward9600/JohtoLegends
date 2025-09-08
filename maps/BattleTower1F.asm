@@ -46,8 +46,8 @@ BattleTower1FRulesSign:
 	writetext Text_ReadBattleTowerRules
 	yesorno
 	iffalse .skip
-	writetext Text_BattleTowerRules
-	waitbutton
+	writetextend Text_BattleTowerRules
+
 .skip:
 	closetext
 	end
@@ -75,10 +75,7 @@ BattleTower1FReceptionistScript:
 	buttonsound
 	setevent EVENT_MET_BUENA
 	verbosegiveitem BATTLE_CARD
-	writetext ThatIsABattleCardText
-	waitbutton
-	closetext
-	end
+	writetextend ThatIsABattleCardText
 
 .CardFull:
 	opentext
@@ -88,10 +85,7 @@ BattleTower1FReceptionistScript:
 	sjump .BattleTowerMenu
 
 .Refused:
-	writetext ComeBackWithLessPointsText
-	waitbutton
-	closetext
-	end
+	writetextend ComeBackWithLessPointsText
 
 Script_Menu_ChallengeExplanationCancel:
 	writetext Text_WantToGoIntoABattleRoom
@@ -170,10 +164,7 @@ Script_GivePlayerHisPrize:
 	sjump .DoneWithPoints
 
 Script_YourPackIsStuffedFull:
-	writetext Text_YourPackIsStuffedFull
-	waitbutton
-	closetext
-	end
+	writetextend Text_YourPackIsStuffedFull
 
 Script_BattleTowerIntroductionYesNo:
 	writetext Text_WouldYouLikeToHearAboutTheBattleTower
@@ -188,9 +179,6 @@ Script_BattleTowerSkipExplanation:
 
 Script_BattleTowerHopeToServeYouAgain:
 	writetext Text_WeHopeToServeYouAgain
-	waitbutton
-	closetext
-	end
 
 Script_WaitButton:
 	waitbutton

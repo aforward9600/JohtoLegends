@@ -22,10 +22,7 @@ RocketLairHallway1GruntF:
 .Script:
 	endifjustbattled
 	opentext
-	writetext RocketLairHallway1GruntFAfterText
-	waitbutton
-	closetext
-	end
+	writetextend RocketLairHallway1GruntFAfterText
 
 RocketLairHallway1GruntM:
 	trainer GRUNTM, GRUNTM_17, EVENT_BEAT_ROCKET_GRUNTM_17, RocketLairHallway1GruntMSeenText, RocketLairHallway1GruntMBeatenText, 0, .Script
@@ -33,18 +30,13 @@ RocketLairHallway1GruntM:
 .Script:
 	endifjustbattled
 	opentext
-	writetext RocketLairHallway1GruntMAfterText
-	waitbutton
-	closetext
-	end
+	writetextend RocketLairHallway1GruntMAfterText
 
 RocketLairLockedDoor:
 	checkevent EVENT_OPEN_DOOR_IN_LAIR
 	iftrue .Notext
 	opentext
-	writetext RocketDoorLockedText
-	waitbutton
-	closetext
+	writetextend RocketDoorLockedText
 .Notext:
 	end
 

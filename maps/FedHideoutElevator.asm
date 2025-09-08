@@ -20,10 +20,7 @@ FedHideoutElevatorScript:
 .NoPasswordEntered:
 	checkevent EVENT_GOT_ELEVATOR_PASSWORD
 	iftrue .GotPassword
-	writetext NoElevatorPasswordText
-	waitbutton
-	closetext
-	end
+	writetextend NoElevatorPasswordText
 
 .GotPassword:
 	writetext EnteredElevatorPasswordText

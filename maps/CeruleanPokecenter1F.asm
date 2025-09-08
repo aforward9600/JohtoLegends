@@ -16,32 +16,20 @@ CeruleanPokecenter1FCooltrainerM:
 	opentext
 	checkevent EVENT_BEAT_SENSATIONAL_SISTERS
 	iftrue .CeruleanPokecenter1FCooltrainerMAfter
-	writetext CeruleanPokecenter1FCooltrainerMText1
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanPokecenter1FCooltrainerMText1
 
 .CeruleanPokecenter1FCooltrainerMAfter:
-	writetext CeruleanPokecenter1FCooltrainerMText2
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanPokecenter1FCooltrainerMText2
 
 CeruleanPokecenter1FRival:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_SENSATIONAL_SISTERS
 	iftrue .CeruleanPokecenter1FRivalAfter
-	writetext CeruleanPokecenter1FRivalText1
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanPokecenter1FRivalText1
 
 .CeruleanPokecenter1FRivalAfter:
-	writetext CeruleanPokecenter1FRivalText2
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanPokecenter1FRivalText2
 
 CeruleanPokecenter1FCooltrainerMText1:
 	text "Dang it!"

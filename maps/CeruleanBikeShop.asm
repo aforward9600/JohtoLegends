@@ -32,16 +32,10 @@ CeruleanBikeShopOwnerScript:
 	itemnotify
 	setevent EVENT_GOT_BICYCLE
 .BikeShopAfter:
-	writetext UseTheBikeText
-	waitbutton
-	closetext
-	end
+	writetextend UseTheBikeText
 
 .KeepBike:
-	writetext KeepBikeText
-	waitbutton
-	closetext
-	end
+	writetextend KeepBikeText
 
 CeruleanBikeShopBikerText:
 	text "This is the best"

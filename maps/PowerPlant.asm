@@ -58,16 +58,10 @@ PowerPlantEngineerScript:
 	opentext
 	checkevent EVENT_POWER_PLANT_ZAPDOS
 	iftrue .ZapdosGone
-	writetext PowerPlantEngineerText
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantEngineerText
 
 .ZapdosGone:
-	writetext PowerPlantEngineerText2
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantEngineerText2
 
 PowerPlantEngineer2Script:
 	jumptextfaceplayer PowerPlantEngineerText3

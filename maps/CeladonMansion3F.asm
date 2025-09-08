@@ -27,11 +27,8 @@ GameFreakGameDesignerScript:
 	writetext GameFreakGameDesignerPauseForDiplomaText
 	buttonsound
 	special Diploma
-	writetext GameFreakGameDesignerAfterDiplomaText
-	waitbutton
-	closetext
 	setevent EVENT_ENABLE_DIPLOMA_PRINTING
-	end
+	writetextend GameFreakGameDesignerAfterDiplomaText
 
 mountvesuviusScript:
 	jumptextfaceplayer mountvesuviusText
@@ -41,10 +38,7 @@ GameFreakGraphicArtistScript:
 	opentext
 	checkevent EVENT_ENABLE_DIPLOMA_PRINTING
 	iftrue .CanPrintDiploma
-	writetext GameFreakGraphicArtistText
-	waitbutton
-	closetext
-	end
+	writetextend GameFreakGraphicArtistText
 
 .CanPrintDiploma:
 	writetext GameFreakGraphicArtistPrintDiplomaText
@@ -55,10 +49,7 @@ GameFreakGraphicArtistScript:
 	end
 
 .Refused:
-	writetext GameFreakGraphicArtistRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend GameFreakGraphicArtistRefusedText
 
 Ax6Script:
 	faceplayer
@@ -68,10 +59,7 @@ Ax6Script:
 	checkevent EVENT_ENABLE_DIPLOMA_PRINTING
 	iftrue .GetShinyDitto
 .AlreadyGotDitto
-	writetext Ax6Text
-	waitbutton
-	closetext
-	end
+	writetextend Ax6Text
 
 .GetShinyDitto:
 	writetext GiveShinyDittoText
@@ -87,10 +75,7 @@ Ax6Script:
 	loadmem wPartyMon1DVs+0, $ea
 	loadmem wPartyMon1DVs+1, $aa
 	setevent EVENT_GOT_SHINY_DITTO
-	writetext TakeCareOfDittoText
-	waitbutton
-	closetext
-	end
+	writetextend TakeCareOfDittoText
 
 .NoRooom:
 	readvar VAR_BOXSPACE
@@ -98,10 +83,7 @@ Ax6Script:
 	sjump .GetDitto
 
 .BoxFullBeldum:
-	writetext NoRoomDittoText
-	waitbutton
-	closetext
-	end
+	writetextend NoRoomDittoText
 
 CardboardBoxScript:
 	jumptextfaceplayer CardboardBoxText

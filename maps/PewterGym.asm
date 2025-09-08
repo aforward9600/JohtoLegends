@@ -31,26 +31,17 @@ PewterGymBrockScript:
 	waitsfx
 	setflag ENGINE_BOULDERBADGE
 	setevent EVENT_DECO_BIG_ONIX_DOLL
-	writetext BrockBoulderBadgeText
-	waitbutton
-	closetext
-	end
+	writetextend BrockBoulderBadgeText
 
 .FightDone:
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .FlintAfterScript
-	writetext BrockFightDoneText
-	waitbutton
-	closetext
-	end
+	writetextend BrockFightDoneText
 
 .FlintAfterScript:
 	checkflag ENGINE_JACK
 	iffalse .Rematch
-	writetext FlintMySonText
-	waitbutton
-	closetext
-	end
+	writetextend FlintMySonText
 
 .Rematch:
 	writetext FlintRematchText
@@ -61,11 +52,8 @@ PewterGymBrockScript:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext FlintAfterRematchText
-	waitbutton
-	closetext
 	setflag ENGINE_JACK
-	end
+	writetextend FlintAfterRematchText
 
 FlintLastMonText:
 	text "Rock hard determi-"
@@ -80,16 +68,10 @@ TrainerEngineerGabe:
 	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .EngineerGabeAfterBattle2
-	writetext EngineerGabeAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend EngineerGabeAfterBattleText
 
 .EngineerGabeAfterBattle2:
-	writetext EngineerGabeAfterBattleText2
-	waitbutton
-	closetext
-	end
+	writetextend EngineerGabeAfterBattleText2
 
 TrainerEngineerBernie:
 	trainer ENGINEER, BERNIE, EVENT_BEAT_ENGINEER_BERNIE, EngineerBernieSeenText, EngineerBernieBeatenText, 0, .Script
@@ -97,10 +79,7 @@ TrainerEngineerBernie:
 .Script:
 	endifjustbattled
 	opentext
-	writetext EngineerBernieAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend EngineerBernieAfterBattleText
 
 BrockIntroText:
 	text "???: Hm?"

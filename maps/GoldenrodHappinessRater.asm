@@ -21,40 +21,22 @@ GoldenrodHappinessRaterTeacherScript:
 	sjump .LooksMean
 
 .LovesYouALot:
-	writetext GoldenrodHappinessRatingText_LovesYouALot
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHappinessRatingText_LovesYouALot
 
 .ReallyTrustsYou:
-	writetext GoldenrodHappinessRatingText_ReallyTrustsYou
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHappinessRatingText_ReallyTrustsYou
 
 .SortOfHappy:
-	writetext GoldenrodHappinessRatingText_SortOfHappy
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHappinessRatingText_SortOfHappy
 
 .QuiteCute:
-	writetext GoldenrodHappinessRatingText_QuiteCute
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHappinessRatingText_QuiteCute
 
 .NotUsedToYou:
-	writetext GoldenrodHappinessRatingText_NotUsedToYou
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHappinessRatingText_NotUsedToYou
 
 .LooksMean:
-	writetext GoldenrodHappinessRatingText_LooksMean
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHappinessRatingText_LooksMean
 
 GoldenrodHappinessRaterPokefanMScript:
 	jumptextfaceplayer GoldenrodHappinessRaterPokefanMText

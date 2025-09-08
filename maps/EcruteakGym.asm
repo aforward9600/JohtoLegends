@@ -111,10 +111,7 @@ EcruteakGymEnokiScript:
 	end
 
 .GotShadowBall:
-	writetext EnokiFightDoneText
-	waitbutton
-	closetext
-	end
+	writetextend EnokiFightDoneText
 
 .EnokiAlternateBattle:
 	winlosstext EnokiWinLossText, EnokiWinText
@@ -175,12 +172,9 @@ EcruteakGymEnokiScript:
 AfterEnokiRematch:
 	startbattle
 	reloadmapafterbattle
-	opentext
-	writetext BeatenEnokiAgainText
-	waitbutton
-	closetext
 	setflag ENGINE_BEAT_ENOKI
-	end
+	opentext
+	writetextend BeatenEnokiAgainText
 
 EcruteakGymClosed:
 	applymovement PLAYER, EcruteakGymPlayerStepUpMovement
@@ -204,10 +198,7 @@ TrainerSageJeffrey:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SageJeffreyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SageJeffreyAfterBattleText
 
 TrainerSagePing:
 	trainer SAGE, PING, EVENT_BEAT_SAGE_PING, SagePingSeenText, SagePingBeatenText, 0, .Script
@@ -215,10 +206,7 @@ TrainerSagePing:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SagePingAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SagePingAfterBattleText
 
 TrainerHexManiacHilda:
 	trainer HEX_MANIAC, HILDA, EVENT_BEAT_HEX_MANIAC_HILDA, HexManiacHildaSeenText, HexManiacHildaBeatenText, 0, .Script
@@ -226,10 +214,7 @@ TrainerHexManiacHilda:
 .Script:
 	endifjustbattled
 	opentext
-	writetext HexManiacHildaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend HexManiacHildaAfterBattleText
 
 TrainerHexManiacZelda:
 	trainer HEX_MANIAC, ZELDA, EVENT_BEAT_HEX_MANIAC_ZELDA, HexManiacZeldaSeenText, HexManiacZeldaBeatenText, 0, .Script
@@ -237,26 +222,17 @@ TrainerHexManiacZelda:
 .Script:
 	endifjustbattled
 	opentext
-	writetext HexManiacZeldaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend HexManiacZeldaAfterBattleText
 
 EcruteakGymGuyScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ENOKI
 	iftrue .EcruteakGymGuyWinScript
-	writetext EcruteakGymGuyText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakGymGuyText
 
 .EcruteakGymGuyWinScript:
-	writetext EcruteakGymGuyWinText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakGymGuyWinText
 
 EcruteakGymMorty:
 	jumptextfaceplayer EcruteakGymMortyGymText

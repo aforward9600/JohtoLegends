@@ -15,10 +15,7 @@ CeladonMansionRoofHousePharmacistScript:
 	buttonsound
 	checktime NITE
 	iftrue .Night
-	writetext CeladonMansionRoofHousePharmacistNotNightText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonMansionRoofHousePharmacistNotNightText
 
 .Night:
 	writetext CeladonMansionRoofHousePharmacistStoryText
@@ -31,10 +28,7 @@ CeladonMansionRoofHousePharmacistScript:
 	buttonsound
 	pause 15
 .GotCurse:
-	writetext CeladonMansionRoofHousePharmacistCurseText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonMansionRoofHousePharmacistCurseText
 
 CeladonMansionRoofHousePharmacistIntroText:
 	text "Let me recount a"

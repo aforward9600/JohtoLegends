@@ -23,16 +23,10 @@ OlivinePortSailorBeforeHOFScript:
 	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .OlivinePortSailorAfterBiker
-	writetext OlivinePortSailorBeforeHOFText
-	waitbutton
-	closetext
-	end
+	writetextend OlivinePortSailorBeforeHOFText
 
 .OlivinePortSailorAfterBiker:
-	writetext OlivinePortSailorAfterBikerText
-	waitbutton
-	closetext
-	end
+	writetextend OlivinePortSailorAfterBikerText
 
 OlivinePortFishingGuru1Script:
 	faceplayer

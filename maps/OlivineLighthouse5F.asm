@@ -8,28 +8,17 @@
 	const OLIVINELIGHTHOUSE5F_TWIN
 
 OlivineLighthouse5F_MapScripts:
-	db 2 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_FINISHED
+	db 0 ; scene scripts
 
 	db 0 ; callbacks
-
-.DummyScene0:
-	end
-.DummyScene1:
-	end
 
 TrainerLighthouseArcher:
 	trainer ARCHER, ARCHER_1, EVENT_BEAT_LIGHTHOUSE_ARCHER, LighthouseArcherSeenText, LighthouseArcherBeatenText, LighthouseArcherLostText, .Script
 
 .Script:
 	opentext
-	writetext LighthouseArcherAfterBattleText
-	waitbutton
-	closetext
-	setscene SCENE_FINISHED
 	setevent EVENT_LIGHTHOUSE6F_SHERLES
-	end
+	writetextend LighthouseArcherAfterBattleText
 
 TrainerLighthouse5FRocket:
 	trainer GRUNTM, GRUNTM_7, EVENT_BEAT_ROCKET_GRUNTM_7, Lighthouse5FRocketSeenText, Lighthouse5FRocketBeatenText, 0, .Script
@@ -37,10 +26,7 @@ TrainerLighthouse5FRocket:
 .Script:
 	endifjustbattled
 	opentext
-	writetext Lighthouse5FRocketAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend Lighthouse5FRocketAfterBattleText
 
 TrainerLighthouse5FRocketF:
 	trainer GRUNTF, GRUNTF_5, EVENT_BEAT_ROCKET_GRUNTF_5, Lighthouse5FRocketFSeenText, Lighthouse5FRocketFBeatenText, 0, .Script
@@ -48,10 +34,7 @@ TrainerLighthouse5FRocketF:
 .Script:
 	endifjustbattled
 	opentext
-	writetext Lighthouse5FRocketFAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend Lighthouse5FRocketFAfterBattleText
 
 Lighthouse5FOfficerScript:
 	jumptextfaceplayer Lighthouse5FOfficerText
@@ -67,28 +50,6 @@ OlivineLighthouse5FTMSwagger:
 
 OlivineLighthouse5FHiddenHyperPotion:
 	hiddenitem SUPER_POTION, EVENT_OLIVINE_LIGHTHOUSE_5F_HIDDEN_HYPER_POTION
-
-ArcherWalks1Movement:
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step_end
-
-ArcherWalks2Movement:
-	step LEFT
-	step LEFT
-	step LEFT
-	step_end
-
-ArcherWalks3Movement:
-	step LEFT
-	step LEFT
-	step_end
-
-ArcherWalks4Movement:
-	step LEFT
-	step_end
 
 Lighthouse5FRocketSeenText:
 	text "Woah, hey there!"

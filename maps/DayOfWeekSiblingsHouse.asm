@@ -14,8 +14,7 @@ DayOfWeekSiblingsHousePokedexScript:
 	writetext DayOfWeekSiblingsHousePokedexText2
 	yesorno
 	iffalse .End
-	writetext DayOfWeekSiblingsHousePokedexText3
-	waitbutton
+	writetextend DayOfWeekSiblingsHousePokedexText3
 .End:
 	closetext
 	end

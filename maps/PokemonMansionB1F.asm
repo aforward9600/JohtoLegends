@@ -69,10 +69,7 @@ PokemonMansionB1FAbraStatue:
 	end
 
 .DidntPressTheButtonB1F:
-	writetext NotQuiteYetB1FText
-	waitbutton
-	closetext
-	end
+	writetextend NotQuiteYetB1FText
 
 CinnabarVolcanoGuardScript:
 	jumptextfaceplayer CinnabarVolcanoGuardText
@@ -93,71 +90,31 @@ PokemonMansionB1FRecording:
 	pause 30
 	playsound SFX_PECK
 	pause 30
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
+	scall FireSounds
 	opentext
 	writetext PokemonMansionB1FRecordingText
 	waitbutton
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
+	scall FireSounds
 	writetext M00ConvincedText
 	waitbutton
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
+	scall FireSounds
 	writetext OnlyMewtwoRemainsText
 	waitbutton
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
+	scall FireSounds
 	writetext ThereIsntMuchTimeText
 	waitbutton
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
+	scall FireSounds
 	writetext ThereIsNoEscapeText
 	waitbutton
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
+	scall FireSounds
 	writetext ItFoundMeText
 	waitbutton
 	closetext
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
+	scall FireSounds
 	pause 30
 	cry MEWTWO
 	waitsfx
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
-	playsound SFX_EMBER
+	scall FireSounds
 	pause 40
 	playsound SFX_PECK
 	pause 30
@@ -167,6 +124,15 @@ PokemonMansionB1FRecording:
 	closetext
 	pause 30
 	special RestartMapMusic
+	end
+
+FireSounds:
+	playsound SFX_EMBER
+	playsound SFX_EMBER
+	playsound SFX_EMBER
+	playsound SFX_EMBER
+	playsound SFX_EMBER
+	playsound SFX_EMBER
 	end
 
 PokemonMansionB1FScientist:
@@ -262,16 +228,10 @@ PokemonMansionB1FScientist3:
 	opentext
 	checkscene
 	iftrue .PokemonMansionB1FScientist32
-	writetext PokemonMansionB1FScientist3Text
-	waitbutton
-	closetext
-	end
+	writetextend PokemonMansionB1FScientist3Text
 
 .PokemonMansionB1FScientist32:
-	writetext PokemonMansionB1FScientist3Text2
-	waitbutton
-	closetext
-	end
+	writetextend PokemonMansionB1FScientist3Text2
 
 ScientistStopsYou:
 	opentext

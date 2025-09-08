@@ -74,11 +74,8 @@ MahoganyGymPryceScript:
 	buttonsound
 	verbosegiveitem TM_ICY_WIND
 	setevent EVENT_GOT_TM16_ICY_WIND
-	writetext PryceText_IcyWindSpeech
-	waitbutton
-	closetext
 	setscene SCENE_GYM_GUIDE_STOPS_YOU
-	end
+	writetextend PryceText_IcyWindSpeech
 
 .Rematch:
 	checkevent EVENT_BEAT_ELITE_FOUR
@@ -140,17 +137,11 @@ AfterPryceRematch:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext PryceText_BeatenAgain
-	waitbutton
-	closetext
 	setflag ENGINE_BEAT_PRYCE
-	end
+	writetextend PryceText_BeatenAgain
 
 PryceScript_Defeat:
-	writetext PryceText_GoodLooks
-	waitbutton
-	closetext
-	end
+	writetextend PryceText_GoodLooks
 
 TrainerSkierBrandy:
 	trainer SKIER, BRANDY, EVENT_BEAT_SKIER_BRANDY, SkierBrandySeenText, SkierBrandyBeatenText, 0, .Script
@@ -158,10 +149,7 @@ TrainerSkierBrandy:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SkierBrandyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SkierBrandyAfterBattleText
 
 TrainerSkierPam:
 	trainer SKIER, PAM, EVENT_BEAT_SKIER_PAM, SkierPamSeenText, SkierPamBeatenText, 0, .Script
@@ -169,10 +157,7 @@ TrainerSkierPam:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SkierPamAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SkierPamAfterBattleText
 
 TrainerBoarderSonny:
 	trainer BOARDER, SONNY, EVENT_BEAT_BOARDER_SONNY, BoarderSonnySeenText, BoarderSonnyBeatenText, 0, .Script
@@ -180,10 +165,7 @@ TrainerBoarderSonny:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BoarderSonnyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BoarderSonnyAfterBattleText
 
 MahoganyGymGuyScript:
 	faceplayer
@@ -191,21 +173,15 @@ MahoganyGymGuyScript:
 	checkevent EVENT_BEAT_PRYCE
 	iftrue .MahoganyGymGuyWinScript
 if DEF(_FAITHFUL)
-	writetext MahoganyGymGuyFaithfulText
+	writetextend MahoganyGymGuyFaithfulText
 elif DEF(_NOPSS)
-	writetext MahoganyGymGuyFaithfulText
+	writetextend MahoganyGymGuyFaithfulText
 else
-	writetext MahoganyGymGuyText
+	writetextend MahoganyGymGuyText
 endc
-	waitbutton
-	closetext
-	end
 
 .MahoganyGymGuyWinScript:
-	writetext MahoganyGymGuyWinText
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyGymGuyWinText
 
 GymGuyStopsYou1Script:
 	applymovement MAHOGANYGYM_GYM_GUY, StopsYouMovement1

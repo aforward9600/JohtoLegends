@@ -18,20 +18,13 @@ CianwoodPokecenter1FLassScript:
 
 CianwoodGymGuyScript:
 	faceplayer
+	opentext
 	checkevent EVENT_BEAT_CHUCK
 	iftrue .CianwoodGymGuyWinScript
-	opentext
-	writetext CianwoodGymGuyText
-	waitbutton
-	closetext
-	end
+	writetextend CianwoodGymGuyText
 
 .CianwoodGymGuyWinScript:
-	opentext
-	writetext CianwoodGymGuyWinText
-	waitbutton
-	closetext
-	end
+	writetextend CianwoodGymGuyWinText
 
 CianwoodPokecenter1FSuperNerdScript:
 	jumptextfaceplayer CianwoodPokecenter1FSuperNerdText
