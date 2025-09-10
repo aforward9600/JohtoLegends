@@ -49,17 +49,11 @@ VictoryRoadGateBadgeCheckScript:
 	end
 
 .AllEightBadges:
-	writetext VictoryRoadGateEightBadgesText
-	waitbutton
-	closetext
 	setscene SCENE_VICTORY_ROAD_GATE_RIVAL
-	end
+	writetextend VictoryRoadGateEightBadgesText
 
 .WelcomeBackChampion:
-	writetext WelcomeBackChampionText
-	waitbutton
-	closetext
-	end
+	writetextend WelcomeBackChampionText
 
 VictoryRoadRival1:
 	moveobject VICTORYROADGATE_RIVAL_2, 9, 6
@@ -201,16 +195,10 @@ VictoryRoadGateRightBlackBeltEndScript:
 	end
 
 .GuardDoesntMove:
-	writetext VictoryRoadGateGoOnThroughText
-	waitbutton
-	closetext
-	end
+	writetextend VictoryRoadGateGoOnThroughText
 
 .PreElite4Guard:
-	writetext VictoryRoadGateRightBlackBeltText
-	waitbutton
-	closetext
-	end
+	writetextend VictoryRoadGateRightBlackBeltText
 
 VictoryRoadGateStepDownMovement:
 	step DOWN

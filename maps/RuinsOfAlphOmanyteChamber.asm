@@ -98,11 +98,7 @@ RuinsOfAlphOmanyteChamberWallPatternRight:
 	end
 
 .WallOpen:
-	opentext
-	writetext RuinsOfAlphOmanyteChamberWallHoleText
-	waitbutton
-	closetext
-	end
+	jumptext RuinsOfAlphOmanyteChamberWallHoleText
 
 RuinsOfAlphOmanyteChamberSkyfallTopMovement:
 	skyfall_top

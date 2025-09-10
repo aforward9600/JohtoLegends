@@ -55,10 +55,7 @@ DevonStoneScript:
 	loadmem wPartyMon1DVs+1, $aa
 	setevent EVENT_GOT_SHINY_BELDUM
 .AlreadyGotBeldum
-	writetext DevonStoneText2
-	waitbutton
-	closetext
-	end
+	writetextend DevonStoneText2
 
 .NoRoom:
 	readvar VAR_BOXSPACE
@@ -66,17 +63,11 @@ DevonStoneScript:
 	sjump .GetBeldum
 
 .BoxFullBeldum:
-	writetext NoRoomBeldumText
-	waitbutton
-	closetext
-	end
+	writetextend NoRoomBeldumText
 
 .CantGiveBeldum:
-	writetext CantGiveBeldumText
 	setevent EVENT_GOT_SHINY_BELDUM
-	waitbutton
-	closetext
-	end
+	writetextend CantGiveBeldumText
 
 SilphCoReceptionistText:
 	text "Welcome. This is"

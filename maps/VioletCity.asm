@@ -39,9 +39,6 @@ VioletGymSign:
 SproutTowerSign:
 	jumptext SproutTowerSignText
 
-EarlsPokemonAcademySign:
-	jumptext EarlsPokemonAcademySignText
-
 VioletCityPokecenterSign:
 	jumpstd pokecentersign
 
@@ -59,110 +56,6 @@ VioletCityFruitTree:
 
 VioletCityHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_VIOLET_CITY_HIDDEN_HYPER_POTION
-
-VioletCityFollowEarl_MovementData:
-	big_step DOWN
-	big_step DOWN
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	big_step DOWN
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	big_step UP
-	turn_head DOWN
-	step_end
-
-VioletCityFinishFollowEarl_MovementData:
-	step UP
-	step_end
-
-VioletCitySpinningEarl_MovementData:
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	step_end
-
-Text_EarlAsksIfYouBeatFalkner:
-	text "Hello!"
-	line "You are trainer?"
-
-	para "Battle Gym Leader,"
-	line "win you did?"
-	done
-
-Text_VeryNiceIndeed:
-	text "Ooh, la la!"
-	line "Very indeed nice!"
-	done
-
-Text_FollowEarl:
-	text "Is that so? Then"
-	line "study shall you!"
-	cont "Follow me!"
-	done
-
-Text_HereTeacherIAm:
-	text "Here, teacher I"
-	line "am. Good it is"
-	cont "you study here!"
-	done
 
 VioletCityLassText:
 	text "Ghosts are rumored"
@@ -220,11 +113,6 @@ SproutTowerSignText:
 
 	para "Experience the"
 	line "Way of #mon"
-	done
-
-EarlsPokemonAcademySignText:
-	text "Earl's #mon"
-	line "Academy"
 	done
 
 VioletCity_MapEvents:

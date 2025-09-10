@@ -13,28 +13,17 @@ VermilionPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
 VermilionPokecenter1FTwinScript:
-	faceplayer
-	opentext
-	writetext VermilionPokecenter1FTwinText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer VermilionPokecenter1FTwinText
 
 VermilionPokecenterRivalScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_LTSURGE
 	iftrue .VermilionPokecenterRivalAfter
-	writetext VermilionPokecenterRivalText
-	waitbutton
-	closetext
-	end
+	writetextend VermilionPokecenterRivalText
 
 .VermilionPokecenterRivalAfter:
-	writetext VermilionPokecenterRivalText2
-	waitbutton
-	closetext
-	end
+	writetextend VermilionPokecenterRivalText2
 
 VermilionPokecenter1FSailorScript:
 	jumptextfaceplayer VermilionPokecenter1FSailorText

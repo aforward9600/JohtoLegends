@@ -19,10 +19,7 @@ TrainerTeacherKawakami:
 .Script:
 	endifjustbattled
 	opentext
-	writetext TeacherKawakamiAfterText
-	waitbutton
-	closetext
-	end
+	writetextend TeacherKawakamiAfterText
 
 Route31MailRecipientScript:
 	faceplayer
@@ -37,10 +34,7 @@ Route31MailRecipientScript:
 	end
 
 .DescribeNightmare:
-	writetext Text_Route31DescribeNightmare
-	waitbutton
-	closetext
-	end
+	writetextend Text_Route31DescribeNightmare
 
 TrainerCooltrainerFJessie:
 	trainer COOLTRAINERF, JESSIE, EVENT_BEAT_COOLTRAINERF_JESSIE, CooltrainerFJessieSeenText, CooltrainerFJessieBeatenText, 0, .Script
@@ -62,10 +56,7 @@ TrainerCooltrainerFJessie:
 	end
 
 .Refused:
-	writetext CooltrainerFJessieRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerFJessieRefusedText
 
 Route31YoungsterScript:
 	jumptextfaceplayer Route31YoungsterText

@@ -43,10 +43,7 @@ Route32RoarTMGuyScript:
 	verbosegiveitem TM_IRON_TAIL
 	setevent EVENT_GOT_TM05_ROAR
 .AlreadyHaveRoar:
-	writetext Text_RoarOutro
-	waitbutton
-	closetext
-	end
+	writetextend Text_RoarOutro
 
 SlowpokeTailSalesmanScript:
 	jumptextfaceplayer SlowPokeTailSalesmanText
@@ -57,10 +54,7 @@ TrainerPicnickerLacy:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PicnickerLacyAfterText
-	waitbutton
-	closetext
-	end
+	writetextend PicnickerLacyAfterText
 
 TrainerFisherJonah:
 	trainer FISHER, JONAH, EVENT_BEAT_FISHER_JONAH, FisherJonahSeenText, FisherJonahBeatenText, 0, .Script
@@ -68,10 +62,7 @@ TrainerFisherJonah:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherJonahAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend FisherJonahAfterBattleText
 
 TrainerFisherRalph1:
 	trainer FISHER, RALPH1, EVENT_BEAT_FISHER_RALPH, FisherRalph1SeenText, FisherRalph1BeatenText, 0, .Script
@@ -79,10 +70,7 @@ TrainerFisherRalph1:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherRalphAfterText
-	waitbutton
-	closetext
-	end
+	writetextend FisherRalphAfterText
 
 TrainerFisherMarlin:
 	trainer FISHER, MARLIN, EVENT_BEAT_FISHER_MARLIN, FisherMarlinSeenText, FisherMarlinBeatenText, 0, .Script
@@ -90,10 +78,7 @@ TrainerFisherMarlin:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherMarlinAfterText
-	waitbutton
-	closetext
-	end
+	writetextend FisherMarlinAfterText
 
 TrainerCamperWilliam:
 	trainer CAMPER, TODD1, EVENT_BEAT_CAMPER_WILLIAM, CamperWilliamSeenText, CamperWilliamBeatenText, 0, .Script
@@ -101,10 +86,7 @@ TrainerCamperWilliam:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CamperWilliamAfterText
-	waitbutton
-	closetext
-	end
+	writetextend CamperWilliamAfterText
 
 TrainerSuperNerdJason:
 	trainer SUPER_NERD, SUPER_NERD_JASON, EVENT_BEAT_SUPER_NERD_JASON, SuperNerdJasonSeenText, SuperNerdJasonBeatenText, 0, .Script
@@ -112,10 +94,7 @@ TrainerSuperNerdJason:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SuperNerdJasonAfterText
-	waitbutton
-	closetext
-	end
+	writetextend SuperNerdJasonAfterText
 
 TrainerCooltrainerMRobert:
 	trainer COOLTRAINERM, ROBERT1, EVENT_BEAT_COOLTRAINERM_ROBERT, CooltrainerMRobertSeenText, CooltrainerMRobertBeatenText, 0, .Script
@@ -123,10 +102,7 @@ TrainerCooltrainerMRobert:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerMRobertAfterText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerMRobertAfterText
 
 TrainerBirdKeeperPedro:
 	trainer BIRD_KEEPER, PEDRO, EVENT_BEAT_BIRD_KEEPER_PEDRO, BirdKeeperPedroSeenText, BirdKeeperPedroBeatenText, 0, .Script
@@ -136,16 +112,10 @@ TrainerBirdKeeperPedro:
 	opentext
 	checkflag ENGINE_ZEPHYRBADGE
 	iftrue .PedroAfterGym
-	writetext BirdKeeperPedroAfterText
-	waitbutton
-	closetext
-	end
+	writetextend BirdKeeperPedroAfterText
 
 .PedroAfterGym:
-	writetext BirdKeeperPedroAfterGymText
-	waitbutton
-	closetext
-	end
+	writetextend BirdKeeperPedroAfterGymText
 
 FriedaScript:
 	faceplayer
@@ -165,23 +135,16 @@ FriedaScript:
 	verbosegiveitem POISON_BARB
 	iffalse .Done
 	setevent EVENT_GOT_POISON_BARB_FROM_FRIEDA
-	writetext FriedaGaveGiftText
-	waitbutton
-	closetext
-	end
+	writetextend FriedaGaveGiftText
 
 .Friday:
-	writetext FriedaFridayText
-	waitbutton
+	writetextend FriedaFridayText
 .Done:
 	closetext
 	end
 
 .NotFriday:
-	writetext FriedaNotFridayText
-	waitbutton
-	closetext
-	end
+	writetextend FriedaNotFridayText
 
 Route32GreatBall:
 	itemball ESCAPE_ROPE

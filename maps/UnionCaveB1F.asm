@@ -18,10 +18,7 @@ TrainerDragonTamerMDrew:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DragonTamerMDrewAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DragonTamerMDrewAfterBattleText
 
 TrainerDragonTamerFDawna:
 	trainer DRAGON_TAMER_F, DAWNA, EVENT_BEAT_DRAGON_TAMER_F_DAWNA, DragonTamerFDawnaSeenText, DragonTamerFDawnaBeatenText, 0, .Script
@@ -29,10 +26,7 @@ TrainerDragonTamerFDawna:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DragonTamerFDawnaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DragonTamerFDawnaAfterBattleText
 
 TrainerHikerGunther:
 	trainer HIKER, GUNTHER, EVENT_BEAT_HIKER_GUNTHER, HikerGuntherSeenText, HikerGuntherBeatenText, 0, .Script
@@ -40,10 +34,7 @@ TrainerHikerGunther:
 .Script:
 	endifjustbattled
 	opentext
-	writetext HikerGuntherAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend HikerGuntherAfterBattleText
 
 TrainerSuperNerdRichard:
 	trainer SUPER_NERD, SUPER_NERD_RICHARD, EVENT_BEAT_SUPER_NERD_RICHARD, SuperNerdRichardSeenText, SuperNerdRichardBeatenText, 0, .Script
@@ -51,10 +42,7 @@ TrainerSuperNerdRichard:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SuperNerdRichardAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SuperNerdRichardAfterBattleText
 
 UnionCaveB1FTMIronHead:
 	itemball TM_IRON_HEAD

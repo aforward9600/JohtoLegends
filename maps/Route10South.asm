@@ -13,10 +13,7 @@ TrainerRoughneckLarry:
 .Script:
 	endifjustbattled
 	opentext
-	writetext RoughneckLarryAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend RoughneckLarryAfterBattleText
 
 TrainerPokefanmTrenton:
 	trainer POKEFANM, TRENTON, EVENT_BEAT_POKEFANM_TRENTON, PokefanmTrentonSeenText, PokefanmTrentonBeatenText, 0, .Script
@@ -24,10 +21,7 @@ TrainerPokefanmTrenton:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokefanmTrentonAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend PokefanmTrentonAfterBattleText
 
 Route10Sign:
 	jumptext Route10SignText

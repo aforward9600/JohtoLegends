@@ -38,10 +38,7 @@ TrainerBlackbeltMinoru:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BlackbeltMinoruAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltMinoruAfterBattleText
 
 HikerWorkerScript:
 	faceplayer
@@ -55,10 +52,7 @@ HikerWorkerScript:
 	end
 
 .RockSlideCleared:
-	writetext RockSlideClearedText
-	waitbutton
-	closetext
-	end
+	writetextend RockSlideClearedText
 
 LuckyPunchLass:
 	faceplayer
@@ -71,16 +65,10 @@ LuckyPunchLass:
 	iffalse .NoRoom
 	setevent EVENT_GOT_LUCKY_PUNCH
 .AlreadyGotLuckyPunch:
-	writetext ThatsLuckyPunchText
-	waitbutton
-	closetext
-	end
+	writetextend ThatsLuckyPunchText
 
 .NoRoom:
-	writetext NoRoomForLuckyPunchText
-	waitbutton
-	closetext
-	end
+	writetextend NoRoomForLuckyPunchText
 
 TrainerHikerParry:
 	trainer HIKER, PARRY1, EVENT_BEAT_HIKER_PARRY, HikerParrySeenText, HikerParryBeatenText, 0, .Script
@@ -88,10 +76,7 @@ TrainerHikerParry:
 .Script:
 	endifjustbattled
 	opentext
-	writetext HikerParryAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend HikerParryAfterBattleText
 
 Route45GrampsScript:
 	jumptextfaceplayer Route45GrampsText
@@ -102,10 +87,7 @@ TrainerCooltrainermKosu:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainermKosuAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainermKosuAfterBattleText
 
 TrainerCooltrainerfHarley:
 	trainer COOLTRAINERF, HARLEY, EVENT_BEAT_COOLTRAINERF_HARLEY, CooltrainerfHarleySeenText, CooltrainerfHarleyBeatenText, 0, .Script
@@ -113,24 +95,10 @@ TrainerCooltrainerfHarley:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerfHarleyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfHarleyAfterBattleText
 
 Route45YoungsterScript:
-	faceplayer
-	opentext
-	writetext Route45YoungsterText
-	waitbutton
-	closetext
-	end
-
-Route45DummyScript:
-	writetext Route45DummyText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer Route45YoungsterText
 
 Route45Sign:
 	jumptext Route45SignText
@@ -276,15 +244,6 @@ CooltrainerfHarleyAfterBattleText:
 
 	para "Maybe I could try"
 	line "that…"
-	done
-
-Route45DummyText:
-	text "I'm really, really"
-	line "tough!"
-
-	para "Is there anywhere"
-	line "I can prove how"
-	cont "tough I really am?"
 	done
 
 Route45YoungsterText::

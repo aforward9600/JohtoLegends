@@ -31,10 +31,7 @@ Speary:
 	waitbutton
 	closepokepic
 	opentext
-	writetext SpearyText
-	waitbutton
-	closetext
-	end
+	writetextend SpearyText
 
 ViridianNicknameSpeechHousePokefanMText:
 	text "I love my Spearow,"

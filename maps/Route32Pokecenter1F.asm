@@ -22,23 +22,14 @@ Route32Pokecenter1FFishingGuruScript:
 	writetext Route32Pokecenter1FFishingGuruText_Yes
 	buttonsound
 	verbosegiveitem SUPER_ROD
-	writetext Route32Pokecenter1FFishingGuruText_GiveOldRod
-	waitbutton
-	closetext
 	setevent EVENT_GOT_SUPER_ROD
-	end
+	writetextend Route32Pokecenter1FFishingGuruText_GiveOldRod
 
 .Refused:
-	writetext Route32Pokecenter1FFishingGuruText_No
-	waitbutton
-	closetext
-	end
+	writetextend Route32Pokecenter1FFishingGuruText_No
 
 .GotSuperRod:
-	writetext Route32Pokecenter1FFishingGuruText_After
-	waitbutton
-	closetext
-	end
+	writetextend Route32Pokecenter1FFishingGuruText_After
 
 Route32Pokecenter1FCooltrainerFScript:
 	jumptextfaceplayer Route32Pokecenter1FCooltrainerFText

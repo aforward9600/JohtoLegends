@@ -22,64 +22,40 @@ ViridianCityCoffeeGramps:
 	writetext ViridianCityCoffeeGrampsQuestionText
 	yesorno
 	iffalse .no
-	writetext ViridianCityCoffeeGrampsBelievedText
-	waitbutton
-	closetext
-	end
+	writetextend ViridianCityCoffeeGrampsBelievedText
 
 .no:
-	writetext ViridianCityCoffeeGrampsDoubtedText
-	waitbutton
-	closetext
-	end
+	writetextend ViridianCityCoffeeGrampsDoubtedText
 
 ViridianCityBikerScript2:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_GIOVANNI
 	iftrue .ViridianCityAlternateBiker2
-	writetext ViridianCityBikerText3
-	waitbutton
-	closetext
-	end
+	writetextend ViridianCityBikerText3
 
 .ViridianCityAlternateBiker2:
-	writetext ViridianCityBikerText4
-	waitbutton
-	closetext
-	end
+	writetextend ViridianCityBikerText4
 
 ViridianCityBikerScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_GIOVANNI
 	iftrue .ViridianCityAlternateBiker
-	writetext ViridianCityBikerText
-	waitbutton
-	closetext
-	end
+	writetextend ViridianCityBikerText
 
 .ViridianCityAlternateBiker:
-	writetext ViridianCityBikerText2
-	waitbutton
-	closetext
-	end
+	writetextend ViridianCityBikerText2
 
 ViridianCityGrampsNearGym:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_GIOVANNI
 	iftrue .BlueReturned
-	writetext ViridianCityGrampsNearGymText
-	waitbutton
-	closetext
-	end
+	writetextend ViridianCityGrampsNearGymText
 
 .BlueReturned:
-	writetext ViridianCityGrampsNearGymBlueReturnedText
-	waitbutton
-	closetext
-	end
+	writetextend ViridianCityGrampsNearGymBlueReturnedText
 
 ViridianCityDreamEaterFisher:
 	jumptextfaceplayer ViridianCityDreamEaterFisherText

@@ -78,38 +78,28 @@ VioletGymWalkerScript:
 	buttonsound
 	verbosegiveitem TM_ROOST
 	setevent EVENT_GOT_TM31_MUD_SLAP
-	writetext WalkerTMRoostText
-	waitbutton
-	closetext
-	end
+	writetextend WalkerTMRoostText
 
 .SpeechAfterTM:
-	writetext WalkerFightDoneText
-	waitbutton
-	closetext
-	end
+	writetextend WalkerFightDoneText
 
 .WalkerRematch:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .PostGameWalker
+	writetext WalkerReadyForARematchText
+	waitbutton
+	closetext
+	winlosstext WalkerWinLossText, WalkerLossText
 	readvar VAR_BADGES
 	ifequal 7, .WalkerBattle1
 	ifequal 8, .WalkerBattle2
 	sjump .WalkerBattle2
 
 .WalkerBattle1:
-	writetext WalkerReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext WalkerWinLossText, WalkerLossText
 	loadtrainer WALKER, WALKER1
 	sjump AfterWalkerRematch
 
 .WalkerBattle2:
-	writetext WalkerReadyForARematchText
-	waitbutton
-	closetext
-	winlosstext WalkerWinLossText, WalkerLossText
 	loadtrainer WALKER, WALKER2
 	sjump AfterWalkerRematch
 
@@ -123,11 +113,8 @@ AfterWalkerRematch:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext BeatenWalkerAgainText
-	waitbutton
-	closetext
 	setflag ENGINE_BEAT_WALKER
-	end
+	writetextend BeatenWalkerAgainText
 
 WalkerLossText:
 	text "We can't fall just"
@@ -140,10 +127,7 @@ TrainerBirdKeeperRodney:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperRodneyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BirdKeeperRodneyAfterBattleText
 
 TrainerBirdKeeperAbel:
 	trainer BIRD_KEEPER, ABEL, EVENT_BEAT_BIRD_KEEPER_ABEL, BirdKeeperAbelSeenText, BirdKeeperAbelBeatenText, 0, .Script
@@ -151,10 +135,7 @@ TrainerBirdKeeperAbel:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperAbelAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BirdKeeperAbelAfterBattleText
 
 TrainerBirdKeeperLucas:
 	trainer BIRD_KEEPER, LUCAS, EVENT_BEAT_BIRD_KEEPER_LUCAS, BirdKeeperLucasSeenText, BirdKeeperLucasBeatenText, 0, .Script
@@ -162,26 +143,17 @@ TrainerBirdKeeperLucas:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperLucasAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BirdKeeperLucasAfterBattleText
 
 VioletGymGuyScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_WALKER
 	iftrue .VioletGymGuyWinScript
-	writetext VioletGymGuyText
-	waitbutton
-	closetext
-	end
+	writetextend VioletGymGuyText
 
 .VioletGymGuyWinScript:
-	writetext VioletGymGuyWinText
-	waitbutton
-	closetext
-	end
+	writetextend VioletGymGuyWinText
 
 VioletGymStatue:
 	checkflag ENGINE_ZEPHYRBADGE
@@ -193,19 +165,10 @@ VioletGymStatue:
 	jumpstd gymstatue2
 
 VioletGymRival1:
-	turnobject PLAYER, UP
 	moveobject VIOLETGYM_RIVAL, 4, 10
-	appear VIOLETGYM_RIVAL
-	special FadeOutMusic
-	pause 30
-	applymovement VIOLETGYM_RIVAL, VioletGymRivalMovement
-	pause 15
-	opentext
-	writetext VioletGymRivalText
-	waitbutton
-	closetext
-	pause 15
+	scall VioletGymRivalShared
 	applymovement VIOLETGYM_RIVAL, VioletGymRivalLeavesMovement1
+FinishVioletGymRival:
 	turnobject PLAYER, DOWN
 	playsound SFX_EXIT_BUILDING
 	disappear VIOLETGYM_RIVAL
@@ -216,8 +179,13 @@ VioletGymRival1:
 	end
 
 VioletGymRival2:
-	turnobject PLAYER, UP
 	moveobject VIOLETGYM_RIVAL, 5, 10
+	scall VioletGymRivalShared
+	applymovement VIOLETGYM_RIVAL, VioletGymRivalLeavesMovement2
+	sjump FinishVioletGymRival
+
+VioletGymRivalShared:
+	turnobject PLAYER, UP
 	appear VIOLETGYM_RIVAL
 	special FadeOutMusic
 	pause 30
@@ -228,14 +196,6 @@ VioletGymRival2:
 	waitbutton
 	closetext
 	pause 15
-	applymovement VIOLETGYM_RIVAL, VioletGymRivalLeavesMovement2
-	turnobject PLAYER, DOWN
-	playsound SFX_EXIT_BUILDING
-	disappear VIOLETGYM_RIVAL
-	pause 15
-	waitsfx
-	special RestartMapMusic
-	setscene SCENE_FINISHED
 	end
 
 VioletGymRivalMovement:

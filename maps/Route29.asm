@@ -41,16 +41,10 @@ Route29YoungsterScript:
 	opentext
 	checkevent EVENT_SPOKE_WITH_ELM
 	iftrue .YoungsterRocksCleared
-	writetext Route29YoungsterText
-	waitbutton
-	closetext
-	end
+	writetextend Route29YoungsterText
 
 .YoungsterRocksCleared:
-	writetext Route29YoungsterText_RocksCleared
-	waitbutton
-	closetext
-	end
+	writetextend Route29YoungsterText_RocksCleared
 
 TrainerTeacherCharlene:
 	trainer TEACHER, CHARLENE, EVENT_BEAT_TEACHER_CHARLENE, TeacherCharleneSeenText, TeacherCharleneBeatenText, 0, .Script
@@ -58,10 +52,7 @@ TrainerTeacherCharlene:
 .Script:
 	endifjustbattled
 	opentext
-	writetext TeacherCharleneAfterText
-	waitbutton
-	closetext
-	end
+	writetextend TeacherCharleneAfterText
 
 TrainerCooltrainermJrose:
 	trainer COOLTRAINERM, EMILE, EVENT_BEAT_COOLTRAINERM_EMILE, CooltrainermJroseSeenText, CooltrainermJroseBeatenText, 0, .Script
@@ -83,10 +74,7 @@ TrainerCooltrainermJrose:
 	end
 
 .Refused:
-	writetext CooltrainermJroseAfterText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainermJroseAfterText
 
 TrainerCooltrainerfReese:
 	trainer COOLTRAINERF, REESE, EVENT_BEAT_COOLTRAINERF_REESE, CooltrainerfReeseSeenText, CooltrainerfReeseBeatenText, 0, .Script
@@ -94,10 +82,7 @@ TrainerCooltrainerfReese:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerfReeseAfterText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfReeseAfterText
 
 TuscanyScript:
 	faceplayer
@@ -117,23 +102,16 @@ TuscanyScript:
 	verbosegiveitem POLKADOT_BOW
 	iffalse TuscanyDoneScript
 	setevent EVENT_GOT_PINK_BOW_FROM_TUSCANY
-	writetext TuscanyGaveGiftText
-	waitbutton
-	closetext
-	end
+	writetextend TuscanyGaveGiftText
 
 TuscanyTuesdayScript:
-	writetext TuscanyTuesdayText
-	waitbutton
+	writetextend TuscanyTuesdayText
 TuscanyDoneScript:
 	closetext
 	end
 
 TuscanyNotTuesdayScript:
-	writetext TuscanyNotTuesdayText
-	waitbutton
-	closetext
-	end
+	writetextend TuscanyNotTuesdayText
 
 Route29Sign1:
 	jumptext Route29Sign1Text

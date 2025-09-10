@@ -14,17 +14,11 @@ Route6SaffronGuardScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_SABRINA
-	iftrue .ReturnedPart
-	writetext Route6SaffronGuardWelcomeText
-	waitbutton
-	closetext
-	end
+	iftrue .BeatenSabrina
+	writetextend Route6SaffronGuardWelcomeText
 
-.ReturnedPart:
-	writetext Route6SaffronGuardMagnetTrainText
-	waitbutton
-	closetext
-	end
+.BeatenSabrina:
+	writetextend Route6SaffronGuardMagnetTrainText
 
 Route6SaffronGuardWelcomeText:
 	text "Watch out for the"

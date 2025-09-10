@@ -64,25 +64,16 @@ VioletNicknameSpeechHouseTeacherScript:
 	db "Cancel@"
 
 .Refused:
-	writetext VioletCityHowUnfortunateText
-	waitbutton
-	closetext
-	end
+	writetextend VioletCityHowUnfortunateText
 
 .TeachMove:
 	writetext VioletCityNiceMoveText
 	takemoney YOUR_MONEY, 2500
 	buttonsound
-	writetext VioletCityGoodLuckText
-	waitbutton
-	closetext
-	end
+	writetextend VioletCityGoodLuckText
 
 .Incompatible:
-	writetext VioletCityHowUnfortunateText
-	waitbutton
-	closetext
-	end
+	writetextend VioletCityHowUnfortunateText
 
 VioletNicknameSpeechHouseLassScript:
 	jumptextfaceplayer VioletNicknameSpeechHouseLassText
@@ -94,10 +85,7 @@ VioletNicknameSpeechHouseRaichuScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext VioletNicknameSpeechHouseRaichuText
-	waitbutton
-	closetext
-	end
+	writetextend VioletNicknameSpeechHouseRaichuText
 
 VioletNicknameSpeechHouseTeacherText:
 	text "She uses the names"

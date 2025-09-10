@@ -71,10 +71,7 @@ TinTower1FPoliwrathScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext TinTower1FPoliwrathText
-	waitbutton
-	closetext
-	end
+	writetextend TinTower1FPoliwrathText
 
 TinTower1FPersianScript:
 	refreshscreen
@@ -83,10 +80,7 @@ TinTower1FPersianScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext TinTower1FPersianText
-	waitbutton
-	closetext
-	end
+	writetextend TinTower1FPersianText
 
 TinTowerEusine:
 	faceplayer
@@ -99,45 +93,27 @@ TinTowerEusine:
 	iftrue .HoOhIsGone
 	checkevent EVENT_OPEN_ILEX_FOREST
 	iftrue .TinTowerSage
-	writetext TinTowerEusineHoOhText
-	waitbutton
-	closetext
 	setevent EVENT_OPEN_ILEX_FOREST
 	clearevent EVENT_AZALEA_TOWN_SLOWPOKES
 	clearevent EVENT_ILEX_FOREST_FARFETCHD
-	end
+	writetextend TinTowerEusineHoOhText
 
 .TinTowerSage:
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .PleaseHelpUs
-	writetext TinTowerSageText
-	waitbutton
-	closetext
-	end
+	writetextend TinTowerSageText
 
 .PleaseHelpUs:
-	writetext TinTowerSageHelpUsText
-	waitbutton
-	closetext
-	end
+	writetextend TinTowerSageHelpUsText
 
 .HoOhIsGone:
-	writetext HoOhIsGoneText
-	waitbutton
-	closetext
-	end
+	writetextend HoOhIsGoneText
 
 .HoOhIsFree:
-	writetext HoOhIsFreeText
-	waitbutton
-	closetext
-	end
+	writetextend HoOhIsFreeText
 
 .HoOhIsYours:
-	writetext HoOhIsYoursText
-	waitbutton
-	closetext
-	end
+	writetextend HoOhIsYoursText
 
 IllHealYouBellTowerText:
 	text "You doing OK?"

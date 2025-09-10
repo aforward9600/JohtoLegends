@@ -17,10 +17,7 @@ TrainerBikerChance:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerChanceAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerChanceAfterBattleText
 
 TrainerRoughneckPhillip:
 	trainer ROUGHNECK, PHILLIP, EVENT_BEAT_ROUGHNECK_PHILLIP, RoughneckPhillipSeenText, RoughneckPhillipBeatenText, 0, .Script
@@ -28,10 +25,7 @@ TrainerRoughneckPhillip:
 .Script:
 	endifjustbattled
 	opentext
-	writetext RoughneckPhillipAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend RoughneckPhillipAfterBattleText
 
 TrainerDelinquentSherry:
 	trainer DELINQUENT, SHERRY, EVENT_BEAT_DELINQUENT_SHERRY, DelinquentSherrySeenText, DelinquentSherryBeatenText, 0, .Script
@@ -39,10 +33,7 @@ TrainerDelinquentSherry:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DelinquentSherryAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DelinquentSherryAfterBattleText
 
 Route25SuperNerdScript:
 	jumptextfaceplayer Route25SuperNerdText

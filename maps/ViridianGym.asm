@@ -54,18 +54,12 @@ ViridianGymBlueScript:
 	end
 
 .FightDone:
-	writetext LeaderBlueEpilogueText
-	waitbutton
-	closetext
-	end
+	writetextend LeaderBlueEpilogueText
 
 .GiovanniPost:
 	checkflag ENGINE_WADE
 	iffalse .GiovanniRematch
-	writetext GiovanniPostText
-	waitbutton
-	closetext
-	end
+	writetextend GiovanniPostText
 
 .GiovanniRematch:
 	writetext GiovanniRematchText
@@ -75,12 +69,9 @@ ViridianGymBlueScript:
 	loadtrainer GIOVANNI, GIOVANNI1
 	startbattle
 	reloadmapafterbattle
-	opentext
-	writetext GiovanniAfterRematchText
-	waitbutton
-	closetext
 	setflag ENGINE_WADE
-	end
+	opentext
+	writetextend GiovanniAfterRematchText
 
 GiovanniLastMonText:
 	text "This raw strength…"
@@ -94,10 +85,7 @@ TrainerCooltrainerFSol:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerFSolAfterText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerFSolAfterText
 
 TrainerCooltrainerMBumi:
 	trainer COOLTRAINERM, BUMI, EVENT_BEAT_COOLTRAINERM_BUMI, CooltrainerMBumiSeenText, CooltrainerMBumiBeatenText, 0, .Script
@@ -105,10 +93,7 @@ TrainerCooltrainerMBumi:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerMBumiAfterText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerMBumiAfterText
 
 LeaderBlueBeforeText:
 	text "Giovanni: I must"

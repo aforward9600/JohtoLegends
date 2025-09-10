@@ -22,10 +22,7 @@ Route39Miltank:
 	waitbutton
 	closepokepic
 	opentext
-	writetext Route39MiltankText
-	waitbutton
-	closetext
-	end
+	writetextend Route39MiltankText
 
 TrainerPokefanmDevon:
 	trainer POKEFANM, DEREK1, EVENT_BEAT_POKEFANM_DEREK, PokefanmDevonSeenText, PokefanmDevonBeatenText, 0, .Script
@@ -33,10 +30,7 @@ TrainerPokefanmDevon:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokefanmDevonAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend PokefanmDevonAfterBattleText
 
 TrainerPokefanfCamilla:
 	trainer POKEFANF, GEORGIA, EVENT_BEAT_POKEFANF_GEORGIA, PokefanfCamillaSeenText, PokefanfCamillaBeatenText, 0, .Script
@@ -44,10 +38,7 @@ TrainerPokefanfCamilla:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokefanfCamillaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend PokefanfCamillaAfterBattleText
 
 TrainerSailorSheldon:
 	trainer SAILOR, EUGENE, EVENT_BEAT_SAILOR_EUGENE, SailorSheldonSeenText, SailorSheldonBeatenText, 0, .Script
@@ -57,16 +48,10 @@ TrainerSailorSheldon:
 	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .SailorSheldonAfterBattle2
-	writetext SailorSheldonAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SailorSheldonAfterBattleText
 
 .SailorSheldonAfterBattle2
-	writetext SailorSheldonAfterBattleText2
-	waitbutton
-	closetext
-	end
+	writetextend SailorSheldonAfterBattleText2
 
 TrainerBugCatcherStevie:
 	trainer BUG_CATCHER, STEVIE, EVENT_BEAT_BUG_CATCHER_STEVIE, BugCatcherStevieSeenText, BugCatcherStevieBeatenText, 0, .Script
@@ -88,10 +73,7 @@ TrainerBugCatcherStevie:
 	end
 
 .Refused:
-	writetext BugCatcherStevieAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatcherStevieAfterBattleText
 
 TrainerHexManiacSabrina:
 	faceplayer
@@ -127,16 +109,10 @@ TrainerHexManiacSabrina:
 	end
 
 .Refused:
-	writetext HexManiacSabrinaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend HexManiacSabrinaAfterBattleText
 
 .NotNight:
-	writetext HexManiacSabrinaHopeItGetsDarkText
-	waitbutton
-	closetext
-	end
+	writetextend HexManiacSabrinaHopeItGetsDarkText
 
 Route39Sign:
 	jumptext Route39SignText

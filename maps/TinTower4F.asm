@@ -14,12 +14,8 @@ TinTower4FGrunt:
 
 .Script:
 	endifjustbattled
-	faceplayer
 	opentext
-	writetext GruntMAfterText
-	waitbutton
-	closetext
-	end
+	writetextend GruntMAfterText
 
 TinTower4FUltraBall:
 	itemball TM_SHADOW_BALL

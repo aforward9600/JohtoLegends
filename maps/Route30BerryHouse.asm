@@ -7,12 +7,7 @@ Route30BerryHouse_MapScripts:
 	db 0 ; callbacks
 
 Route30BerryHousePokefanMScript:
-	faceplayer
-	opentext
-	writetext Route30BerrySpeechHouseCheckTreesText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer Route30BerrySpeechHouseCheckTreesText
 
 Route30BerryHouseBookshelf:
 	jumpstd genericsink

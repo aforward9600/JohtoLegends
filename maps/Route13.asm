@@ -20,10 +20,7 @@ TrainerRoughneckKandori:
 .Script:
 	endifjustbattled
 	opentext
-	writetext RoughneckKandoriAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend RoughneckKandoriAfterBattleText
 
 TrainerBikerKevin:
 	trainer BIKER, BIKER_KEVIN, EVENT_BEAT_BIKER_KEVIN, BikerKevinSeenText, BikerKevinBeatenText, 0, .Script
@@ -31,10 +28,7 @@ TrainerBikerKevin:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerKevinAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerKevinAfterBattleText
 
 Route13YoungsterScript:
 	jumptextfaceplayer Route13YoungsterText
@@ -45,10 +39,7 @@ TrainerDelinquentElly:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DelinquentEllyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DelinquentEllyAfterBattleText
 
 Route13TrainerTips:
 	jumptext Route13TrainerTipsText

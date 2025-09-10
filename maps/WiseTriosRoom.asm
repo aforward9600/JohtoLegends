@@ -45,48 +45,30 @@ WiseTriosRoomSage1Script:
 	opentext
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .WiseTriosRoomSage1Takeover
-	writetext WiseTriosRoomSage1Text
-	waitbutton
-	closetext
-	end
+	writetextend WiseTriosRoomSage1Text
 
 .WiseTriosRoomSage1Takeover:
-	writetext WiseTriosRoomSage1TakeoverText
-	waitbutton
-	closetext
-	end
+	writetextend WiseTriosRoomSage1TakeoverText
 
 WiseTriosRoomSage2Script:
 	faceplayer
 	opentext
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .WiseTriosRoomSage2Takeover
-	writetext WiseTriosRoomSage2Text
-	waitbutton
-	closetext
-	end
+	writetextend WiseTriosRoomSage2Text
 
 .WiseTriosRoomSage2Takeover:
-	writetext WiseTriosRoomSage2TakeoverText
-	waitbutton
-	closetext
-	end
+	writetextend WiseTriosRoomSage2TakeoverText
 
 WiseTriosRoomSage3Script:
 	faceplayer
 	opentext
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .WiseTriosRoomSage3Takeover
-	writetext WiseTriosRoomSage3Text
-	waitbutton
-	closetext
-	end
+	writetextend WiseTriosRoomSage3Text
 
 .WiseTriosRoomSage3Takeover:
-	writetext WiseTriosRoomSage3TakeoverText
-	waitbutton
-	closetext
-	end
+	writetextend WiseTriosRoomSage3TakeoverText
 
 WiseTriosRoom_CannotEnterTinTowerScript:
 	turnobject WISETRIOSROOM_SAGE3, UP
@@ -111,16 +93,10 @@ TrainerSageGaku:
 	opentext
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .WiseTriosRoomSage1Takeover
-	writetext SageGakuAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SageGakuAfterBattleText
 
 .WiseTriosRoomSage1Takeover:
-	writetext WiseTriosRoomSage1TakeoverText
-	waitbutton
-	closetext
-	end
+	writetextend WiseTriosRoomSage1TakeoverText
 
 TrainerSageMasa:
 	trainer SAGE, MASA, EVENT_BEAT_SAGE_MASA, SageMasaSeenText, SageMasaBeatenText, 0, .Script
@@ -129,16 +105,10 @@ TrainerSageMasa:
 	opentext
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .WiseTriosRoomSage2Takeover
-	writetext SageMasaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SageMasaAfterBattleText
 
 .WiseTriosRoomSage2Takeover:
-	writetext WiseTriosRoomSage2TakeoverText
-	waitbutton
-	closetext
-	end
+	writetextend WiseTriosRoomSage2TakeoverText
 
 TrainerSageKoji:
 	trainer SAGE, KOJI, EVENT_BEAT_SAGE_KOJI, SageKojiSeenText, SageKojiBeatenText, 0, .Script
@@ -163,17 +133,11 @@ TrainerSageKoji:
 
 .KojiAllowsPassage:
 	opentext
-	writetext SageKojiAfterBattleFinalText
-	waitbutton
-	closetext
-	end
+	writetextend SageKojiAfterBattleFinalText
 
 .WiseTriosRoomSage3Takeover:
 	opentext
-	writetext WiseTriosRoomSage3TakeoverText
-	waitbutton
-	closetext
-	end
+	writetextend WiseTriosRoomSage3TakeoverText
 
 MovementData_0x98622:
 	step LEFT
@@ -344,32 +308,6 @@ SageKojiAfterBattleQuestionText:
 	line "for centuries."
 
 	para "Go on…"
-	done
-
-SageKojiAfterBattleSpeechText:
-	text "I see…"
-
-	para "We, the WISE TRIO,"
-	line "have been given "
-
-	para "the responsibility"
-	line "of protecting the"
-
-	para "legendary #MON."
-	line "We are to allow"
-
-	para "passage only to"
-	line "those people who"
-
-	para "possess the power"
-	line "and soul of truth."
-
-	para "Please, do go on"
-	line "and enter the TIN"
-	cont "TOWER ahead."
-
-	para "SUICUNE will put"
-	line "you to the test."
 	done
 
 SageKojiAfterBattleFinalText:

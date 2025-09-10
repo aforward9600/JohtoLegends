@@ -27,22 +27,13 @@ SaffronPokecenter1FPokefanMScript:
 	iftrue .SaffronPokecenter1FPokefanM2
 	checkevent EVENT_BEAT_SABRINA
 	iftrue .SolvedKantoPowerCrisis
-	writetext SaffronPokecenter1FFisherText
-	waitbutton
-	closetext
-	end
+	writetextend SaffronPokecenter1FFisherText
 
 .SolvedKantoPowerCrisis:
-	writetext SaffronPokecenter1FFisherReturnedMachinePartText
-	waitbutton
-	closetext
-	end
+	writetextend SaffronPokecenter1FFisherReturnedMachinePartText
 
 .SaffronPokecenter1FPokefanM2:
-	writetext SaffronPokecenter1FPokefanMText2
-	waitbutton
-	closetext
-	end
+	writetextend SaffronPokecenter1FPokefanMText2
 
 SaffronPokecenter1FRival:
 	faceplayer
@@ -51,22 +42,13 @@ SaffronPokecenter1FRival:
 	iftrue .RivalBeatSabrina
 	checkevent EVENT_BEAT_KOICHI
 	iftrue .RivalBeatKoichi
-	writetext SaffronPokecenter1FRivalText1
-	waitbutton
-	closetext
-	end
+	writetextend SaffronPokecenter1FRivalText1
 
 .RivalBeatSabrina:
-	writetext SaffronPokecenter1FRivalText2
-	waitbutton
-	closetext
-	end
+	writetextend SaffronPokecenter1FRivalText2
 
 .RivalBeatKoichi:
-	writetext SaffronPokecenter1FRivalText3
-	waitbutton
-	closetext
-	end
+	writetextend SaffronPokecenter1FRivalText3
 
 SaffronPokecenter1FTeacherText:
 	text "Our city wasn't"

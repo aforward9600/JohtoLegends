@@ -39,6 +39,7 @@ Route34_MapScripts:
 	special ReloadSpritesNoPalettes
 	takeitem RAINBOW_WING
 	iffalse .TakeSilverWing
+.ResumeKidnapping:
 	pause 45
 	warp TEAM_ROCKET_BASE_JAIL, 5, 6
 	blackoutmod TEAM_ROCKET_BASE_JAIL
@@ -49,13 +50,7 @@ Route34_MapScripts:
 
 .TakeSilverWing:
 	takeitem SILVER_WING
-	pause 45
-	warp TEAM_ROCKET_BASE_JAIL, 5, 6
-	blackoutmod TEAM_ROCKET_BASE_JAIL
-	setscene SCENE_DEFAULT
-	setevent EVENT_ROUTE_34_NINJA
-	clearevent EVENT_ROUTE_34_OFFICER
-	end
+	sjump .ResumeKidnapping
 
 .EggCheckCallback:
 	checkflag ENGINE_DAY_CARE_MAN_HAS_EGG
@@ -143,10 +138,7 @@ TrainerCooltrainerFTina:
 	end
 
 .Refused:
-	writetext CooltrainerFTinaRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerFTinaRefusedText
 
 TrainerBlackbeltSatoru:
 	trainer BLACKBELT_T, SATORU, EVENT_BEAT_BLACKBELT_SATORU, BlackbeltSatoruSeenText, BlackbeltSatoruBeatenText, 0, .Script
@@ -154,10 +146,7 @@ TrainerBlackbeltSatoru:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BlackbeltSatoruAfterText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltSatoruAfterText
 
 TrainerGentlemanFrank:
 	trainer GENTLEMAN, FRANK, EVENT_BEAT_GENTLEMAN_FRANK, GentlemanFrankSeenText, GentlemanFrankBeatenText, 0, .Script
@@ -165,26 +154,17 @@ TrainerGentlemanFrank:
 .Script:
 	endifjustbattled
 	opentext
-	writetext GentlemanFrankAfterText
-	waitbutton
-	closetext
-	end
+	writetextend GentlemanFrankAfterText
 
 OfficerKeithScript:
 	faceplayer
 	opentext
 	checkevent EVENT_KOGA_SAVES_YOU_FROM_JAIL
 	iftrue .NoFight
-	writetext OfficerKeithAfterText
-	waitbutton
-	closetext
-	end
+	writetextend OfficerKeithAfterText
 
 .NoFight:
-	writetext OfficerKeithDaytimeText
-	waitbutton
-	closetext
-	end
+	writetextend OfficerKeithDaytimeText
 
 TrainerSchoolboyGregory:
 	trainer SCHOOLBOY, ALAN1, EVENT_BEAT_SCHOOLBOY_ALAN, SchoolboyGregorySeenText, SchoolboyGregoryBeatenText, 0, .Script
@@ -192,10 +172,7 @@ TrainerSchoolboyGregory:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SchoolboyGregoryAfterText
-	waitbutton
-	closetext
-	end
+	writetextend SchoolboyGregoryAfterText
 
 TrainerCooltrainerfIrene:
 	trainer LASS, LAURA, EVENT_BEAT_LASS_IRENE, CooltrainerfIreneSeenText, CooltrainerfIreneBeatenText, 0, .Script
@@ -205,16 +182,10 @@ TrainerCooltrainerfIrene:
 	opentext
 	checkevent EVENT_GOT_SOFT_SAND_FROM_KATE
 	iftrue .GotSoftSand
-	writetext CooltrainerfIreneAfterText1
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfIreneAfterText1
 
 .GotSoftSand:
-	writetext CooltrainerfIreneAfterText2
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfIreneAfterText2
 
 TrainerCooltrainerfJenn:
 	trainer LASS, CONNIE1, EVENT_BEAT_LASS_JENN, CooltrainerfJennSeenText, CooltrainerfJennBeatenText, 0, .Script
@@ -224,16 +195,10 @@ TrainerCooltrainerfJenn:
 	opentext
 	checkevent EVENT_GOT_SOFT_SAND_FROM_KATE
 	iftrue .GotSoftSand
-	writetext CooltrainerfJennAfterText1
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfJennAfterText1
 
 .GotSoftSand:
-	writetext CooltrainerfJennAfterText2
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfJennAfterText2
 
 TrainerCooltrainerfKate:
 	trainer LASS, LINDA, EVENT_BEAT_LASS_KATE, CooltrainerfKateSeenText, CooltrainerfKateBeatenText, 0, .Script
@@ -249,8 +214,7 @@ TrainerCooltrainerfKate:
 	iffalse .BagFull
 	setevent EVENT_GOT_SOFT_SAND_FROM_KATE
 .GotSoftSand:
-	writetext CooltrainerfKateAfterText
-	waitbutton
+	writetextend CooltrainerfKateAfterText
 .BagFull:
 	closetext
 	end

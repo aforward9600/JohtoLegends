@@ -97,11 +97,7 @@ RuinsOfAlphAerodactylChamberWallPatternRight:
 	end
 
 .WallOpen:
-	opentext
-	writetext RuinsOfAlphAerodactylChamberWallHoleText
-	waitbutton
-	closetext
-	end
+	jumptext RuinsOfAlphAerodactylChamberWallHoleText
 
 RuinsOfAlphAerodactylChamberSkyfallTopMovement:
 	skyfall_top

@@ -17,10 +17,7 @@ TrainerSwimmerfDawn:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmerfDawnAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SwimmerfDawnAfterBattleText
 
 TrainerSwimmermHarold:
 	trainer SWIMMERM, HAROLD, EVENT_BEAT_SWIMMERM_HAROLD, SwimmermHaroldSeenText, SwimmermHaroldBeatenText, 0, .Script
@@ -28,10 +25,7 @@ TrainerSwimmermHarold:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmermHaroldAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SwimmermHaroldAfterBattleText
 
 TrainerSwimmerfHarlene:
 	trainer SWIMMERF, HARLENE, EVENT_BEAT_SWIMMERF_HARLENE, SwimmerfHarleneSeenText, SwimmerfHarleneBeatenText, 0, .Script
@@ -39,10 +33,7 @@ TrainerSwimmerfHarlene:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmerfHarleneAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SwimmerfHarleneAfterBattleText
 
 TrainerSwimmermTucker:
 	trainer SWIMMERM, TUCKER, EVENT_BEAT_SWIMMERM_TUCKER, SwimmermTuckerSeenText, SwimmermTuckerBeatenText, 0, .Script
@@ -50,42 +41,27 @@ TrainerSwimmermTucker:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmermTuckerAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SwimmermTuckerAfterBattleText
 
 Route19Fisher1Script:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .RocksCleared
-	writetext Route19Fisher1Text
-	waitbutton
-	closetext
-	end
+	writetextend Route19Fisher1Text
 
 .RocksCleared:
-	writetext Route19Fisher1Text_RocksCleared
-	waitbutton
-	closetext
-	end
+	writetextend Route19Fisher1Text_RocksCleared
 
 Route19Fisher2Script:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .RocksCleared
-	writetext Route19Fisher2Text
-	waitbutton
-	closetext
-	end
+	writetextend Route19Fisher2Text
 
 .RocksCleared:
-	writetext Route19Fisher2Text_RocksCleared
-	waitbutton
-	closetext
-	end
+	writetextend Route19Fisher2Text_RocksCleared
 
 Route19Sign:
 	jumptext Route19SignText

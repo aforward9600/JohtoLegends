@@ -21,10 +21,7 @@ OfficerScript_GuardWithSludgeBomb:
 	end
 
 .GotSludgeBomb:
-	writetext OfficerText_AvoidGrass
-	waitbutton
-	closetext
-	end
+	writetextend OfficerText_AvoidGrass
 
 OfficerText_FoundTM:
 	text "You're the first"

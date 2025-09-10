@@ -21,10 +21,7 @@ Route26HealHouseTeacherScript:
 	special FadeInQuickly
 	special RestartMapMusic
 	opentext
-	writetext Route26HealHouseKeepAtItText
-	waitbutton
-	closetext
-	end
+	writetextend Route26HealHouseKeepAtItText
 
 Route26HealHouseBookshelf:
 	jumpstd genericsink

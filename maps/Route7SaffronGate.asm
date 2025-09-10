@@ -11,16 +11,10 @@ Route7SaffronGuardScript:
 	opentext
 	checkevent EVENT_BEAT_SABRINA
 	iftrue .ReturnedPart
-	writetext Route7SaffronGuardPowerPlantText
-	waitbutton
-	closetext
-	end
+	writetextend Route7SaffronGuardPowerPlantText
 
 .ReturnedPart:
-	writetext Route7SaffronGuardSeriousText
-	waitbutton
-	closetext
-	end
+	writetextend Route7SaffronGuardSeriousText
 
 Route7SaffronGuardPowerPlantText:
 	text "I don't think the"

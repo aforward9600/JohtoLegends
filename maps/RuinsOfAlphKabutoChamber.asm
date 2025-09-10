@@ -99,16 +99,10 @@ RuinsOfAlphKabutoChamberScientistScript:
 	end
 
 .WallOpen:
-	writetext UnknownText_0x5897c
-	waitbutton
-	closetext
-	end
+	writetextend UnknownText_0x5897c
 
 .AllUnownCaught:
-	writetext RuinsOfAlphResearchCenterScientist1Text_GotAllUnown
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist1Text_GotAllUnown
 
 RuinsOfAlphKabutoChamberAncientReplica:
 	jumptext RuinsOfAlphKabutoChamberAncientReplicaText
@@ -135,11 +129,7 @@ RuinsOfAlphKabutoChamberWallPatternRight:
 	end
 
 .WallOpen:
-	opentext
-	writetext RuinsOfAlphKabutoChamberWallHoleText
-	waitbutton
-	closetext
-	end
+	jumptext RuinsOfAlphKabutoChamberWallHoleText
 
 RuinsOfAlphKabutoChamberSkyfallTopMovement:
 	skyfall_top

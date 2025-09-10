@@ -15,10 +15,7 @@ TrainerBikerRiver:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerRiverAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerRiverAfterBattleText
 
 TrainerRoughneckTerrance:
 	trainer ROUGHNECK, TERRANCE, EVENT_BEAT_ROUGHNECK_TERRANCE, RoughneckTerranceSeenText, RoughneckTerranceBeatenText, 0, .Script
@@ -26,10 +23,7 @@ TrainerRoughneckTerrance:
 .Script:
 	endifjustbattled
 	opentext
-	writetext RoughneckTerranceAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend RoughneckTerranceAfterBattleText
 
 TrainerDelinquentSharon:
 	trainer DELINQUENT, SHARON, EVENT_BEAT_DELINQUENT_SHARON, DelinquentSharonSeenText, DelinquentSharonBeatenText, 0, .Script
@@ -37,10 +31,7 @@ TrainerDelinquentSharon:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DelinquentSharonAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DelinquentSharonAfterBattleText
 
 MtMoonSquareSign:
 	jumptext MtMoonSquareSignText

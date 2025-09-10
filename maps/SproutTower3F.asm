@@ -47,16 +47,10 @@ SageLiScript:
 	verbosegiveitem VOLTORB_CALL
 	setevent EVENT_GOT_HM05_FLASH
 	setevent EVENT_BEAT_SAGE_LI
-	writetext SageLiFlashExplanationText
-	waitbutton
-	closetext
-	end
+	writetextend SageLiFlashExplanationText
 
 .GotFlash:
-	writetext SageLiAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SageLiAfterBattleText
 
 TrainerSageJin:
 	trainer SAGE, JIN, EVENT_BEAT_SAGE_JIN, SageJinSeenText, SageJinBeatenText, 0, .Script
@@ -64,10 +58,7 @@ TrainerSageJin:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SageJinAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SageJinAfterBattleText
 
 TrainerSageTroy:
 	trainer SAGE, TROY, EVENT_BEAT_SAGE_TROY, SageTroySeenText, SageTroyBeatenText, 0, .Script
@@ -75,10 +66,7 @@ TrainerSageTroy:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SageTroyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SageTroyAfterBattleText
 
 TrainerSageNeal:
 	trainer SAGE, NEAL, EVENT_BEAT_SAGE_NEAL, SageNealSeenText, SageNealBeatenText, 0, .Script
@@ -86,10 +74,7 @@ TrainerSageNeal:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SageNealAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SageNealAfterBattleText
 
 SproutTowerWalkerScript:
 	jumptextfaceplayer SproutTowerWalkerText

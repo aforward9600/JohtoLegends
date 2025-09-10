@@ -16,10 +16,7 @@ TrainerDelinquentYukari:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DelinquentYukariAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DelinquentYukariAfterBattleText
 
 TrainerSailorHewbert:
 	trainer SAILOR, HUEY1, EVENT_BEAT_YOUNGSTER_JASON, SailorHewbertSeenText, SailorHewbertBeatenText, 0, .Script
@@ -27,10 +24,7 @@ TrainerSailorHewbert:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SailorHewbertAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SailorHewbertAfterBattleText
 
 TrainerBikerBlazer:
 	trainer BIKER, BLAZER, EVENT_BEAT_PSYCHIC_HERMAN, BikerBlazerSeenText, BikerBlazerBeatenText, 0, .Script
@@ -38,10 +32,7 @@ TrainerBikerBlazer:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerBlazerAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerBlazerAfterBattleText
 
 TrainerSoldierMcClellan:
 	trainer SOLDIER, MCCLELLAN, EVENT_BEAT_PSYCHIC_FIDEL, SoldierMcClellanSeenText, SoldierMcClellanBeatenText, 0, .Script
@@ -49,10 +40,7 @@ TrainerSoldierMcClellan:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SoldierMcClellanAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SoldierMcClellanAfterBattleText
 
 Route11Sign:
 	jumptext Route11SignText

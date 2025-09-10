@@ -20,10 +20,7 @@ TrainerFirebreatherChaz:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FirebreatherChazAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend FirebreatherChazAfterBattleText
 
 TrainerCamperGarret:
 	trainer CAMPER, CAMPER_GARRET, EVENT_BEAT_CAMPER_GARRET, CamperGarretSeenText, CamperGarretBeatenText, 0, .Script
@@ -58,10 +55,7 @@ TrainerCamperGarret:
 	sjump .StartCamperGarretBattle
 
 .NoGarretRematch:
-	writetext CamperGarretAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CamperGarretAfterBattleText
 
 TrainerJugglerPercy:
 	trainer JUGGLER, PERCY, EVENT_BEAT_JUGGLER_PERCY, JugglerPercySeenText, JugglerPercyBeatenText, 0, .Script
@@ -69,10 +63,7 @@ TrainerJugglerPercy:
 .Script:
 	endifjustbattled
 	opentext
-	writetext JugglerPercyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend JugglerPercyAfterBattleText
 
 TrainerPicnickerChloe:
 	trainer PICNICKER, CHLOE, EVENT_BEAT_PICNICKER_CHLOE, PicnickerChloeSeenText, PicnickerChloeBeatenText, 0, .Script
@@ -97,10 +88,7 @@ TrainerPicnickerChloe:
 	end
 
 .Refused:
-	writetext PicnickerChloeAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend PicnickerChloeAfterBattleText
 
 .ChloeRematch:
 	checkflag ENGINE_MINERALBADGE
@@ -118,10 +106,7 @@ TrainerFisherShane:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherShaneAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend FisherShaneAfterBattleText
 
 TrainerPokemaniacJarvis:
 	trainer POKEMANIAC, JARVIS, EVENT_BEAT_POKEMANIAC_JARVIS, PokemaniacJarvisSeenText, PokemaniacJarvisBeatenText, 0, .Script
@@ -129,10 +114,7 @@ TrainerPokemaniacJarvis:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokemaniacJarvisAfterText
-	waitbutton
-	closetext
-	end
+	writetextend PokemaniacJarvisAfterText
 
 TogepiEggGiver:
 	faceplayer
@@ -152,19 +134,13 @@ TogepiEggGiver:
 	scall .GivenTogepiEgg
 	setevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
 .TakeCareOfIt:
-	writetext TakeCareOfItText
-	waitbutton
-	closetext
-	end
+	writetextend TakeCareOfItText
 
 .eggname:
 	db "Egg@"
 
 .RefusedEgg:
-	writetext NoEggForYouText
-	waitbutton
-	closetext
-	end
+	writetextend NoEggForYouText
 
 .PartyFull:
 ;	readvar VAR_BOXSPACE
@@ -172,20 +148,14 @@ TogepiEggGiver:
 ;	sjump .GetTogepiEgg
 
 ;.BoxFullEgg:
-	writetext YouAintGotRoomText
-	waitbutton
-	closetext
-	end
+	writetextend YouAintGotRoomText
 
 .GivenTogepiEgg:
 	jumpstd receivetogepiegg
 	end
 
 .NoTogepiEgg:
-	writetext NoTogepiEggText
-	waitbutton
-	closetext
-	end
+	writetextend NoTogepiEggText
 
 Route43Sign1:
 	jumptext Route43Sign1Text

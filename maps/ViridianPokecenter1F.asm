@@ -17,16 +17,10 @@ ViridianPokecenter1FTwinScript:
 	opentext
 	checkevent EVENT_BEAT_GIOVANNI
 	iftrue .BlueReturned
-	writetext ViridianPokecenter1FTwinText
-	waitbutton
-	closetext
-	end
+	writetextend ViridianPokecenter1FTwinText
 
 .BlueReturned:
-	writetext ViridianPokecenter1FTwinText_BlueReturned
-	waitbutton
-	closetext
-	end
+	writetextend ViridianPokecenter1FTwinText_BlueReturned
 
 ViridianPokecenter1FSchoolboyScript:
 	jumptextfaceplayer ViridianPokecenter1FSchoolboyText
@@ -38,23 +32,14 @@ ViridianPokecenter1FRivalScript:
 	iftrue .ViridianPokecenterRivalAfter
 	readvar VAR_BADGES
 	ifequal 15, .ViridianPokecenter1FRival2
-	writetext ViridianPokecenter1FRivalText
-	waitbutton
-	closetext
 	setevent EVENT_TALKED_WITH_RIVAL_IN_VIRIDIAN
-	end
+	writetextend ViridianPokecenter1FRivalText
 
 .ViridianPokecenterRivalAfter:
-	writetext ViridianPokecenter1FRivalAfterText
-	waitbutton
-	closetext
-	end
+	writetextend ViridianPokecenter1FRivalAfterText
 
 .ViridianPokecenter1FRival2:
-	writetext ViridianPokecenter1FRivalText2
-	waitbutton
-	closetext
-	end
+	writetextend ViridianPokecenter1FRivalText2
 
 ViridianPokecenter1FTwinText:
 	text "I wanna go out-"

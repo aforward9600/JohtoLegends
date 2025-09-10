@@ -11,16 +11,10 @@ Route24RoughneckScript:
 	opentext
 	checkevent EVENT_BEAT_SENSATIONAL_SISTERS
 	iftrue .Route24RoughneckAfter
-	writetext Route24RoughneckText1
-	waitbutton
-	closetext
-	end
+	writetextend Route24RoughneckText1
 
 .Route24RoughneckAfter:
-	writetext Route24RoughneckText2
-	waitbutton
-	closetext
-	end
+	writetextend Route24RoughneckText2
 
 Route24RoughneckText1:
 	text "Sorry, but I'm not"

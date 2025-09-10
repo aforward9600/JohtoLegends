@@ -26,10 +26,7 @@ TrainerCamperJaoquin:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CamperJaoquinAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CamperJaoquinAfterBattleText
 
 TrainerPicnickerBarbara:
 	trainer PICNICKER, BARBARA, EVENT_BEAT_PICNICKER_BARBARA, PicnickerBarbaraSeenText, PicnickerBarbaraBeatenText, 0, .Script
@@ -37,26 +34,17 @@ TrainerPicnickerBarbara:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PicnickerBarbaraAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend PicnickerBarbaraAfterBattleText
 
 Route46HikerScript:
 	faceplayer
 	opentext
 	checkevent EVENT_SPOKE_WITH_ELM
 	iftrue .HikerRocksCleared
-	writetext Route46HikerText
-	waitbutton
-	closetext
-	end
+	writetextend Route46HikerText
 
 .HikerRocksCleared:
-	writetext Route46HikerText_RocksCleared
-	waitbutton
-	closetext
-	end
+	writetextend Route46HikerText_RocksCleared
 
 Route46Sign:
 	jumptext Route46SignText

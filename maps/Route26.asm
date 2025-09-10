@@ -19,10 +19,7 @@ TrainerCooltrainermJuan:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainermJuanAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainermJuanAfterBattleText
 
 TrainerCooltrainermGaven3:
 	trainer COOLTRAINERM, GAVEN1, EVENT_BEAT_COOLTRAINERM_GAVEN, CooltrainermGaven3SeenText, CooltrainermGaven3BeatenText, 0, .Script
@@ -30,10 +27,7 @@ TrainerCooltrainermGaven3:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainermGavenAfterText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainermGavenAfterText
 
 TrainerCooltrainerfMary:
 	trainer COOLTRAINERF, MARY1, EVENT_BEAT_COOLTRAINERF_MARY, CooltrainerfMarySeenText, CooltrainerfMaryBeatenText, 0, .Script
@@ -41,10 +35,7 @@ TrainerCooltrainerfMary:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerfMaryAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfMaryAfterBattleText
 
 TrainerCooltrainerfTessa:
 	trainer COOLTRAINERF, BETH1, EVENT_BEAT_COOLTRAINERF_TESSA, CooltrainerfTessaSeenText, CooltrainerfTessaBeatenText, 0, .Script
@@ -52,10 +43,7 @@ TrainerCooltrainerfTessa:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerfTessaAfterText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfTessaAfterText
 
 Route26PsychicScript:
 	jumptextfaceplayer Route26PsychicText

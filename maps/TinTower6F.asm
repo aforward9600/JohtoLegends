@@ -13,10 +13,7 @@ TinTower6FAriana:
 .Script:
 	faceplayer
 	opentext
-	writetext TinTower6FArianaAfterText
-	waitbutton
-	closetext
-	end
+	writetextend TinTower6FArianaAfterText
 
 TinTower6FMaxPotion:
 	itemball MAX_POTION

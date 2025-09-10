@@ -17,10 +17,7 @@ TrainerBugCatcherThor:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BugCatcherThorAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatcherThorAfterBattleText
 
 TrainerBugCatcherOlly:
 	trainer BUG_CATCHER, OLLY, EVENT_BEAT_BUG_CATCHER_OLLY, BugCatcherOllySeenText, BugCatcherOllyBeatenText, 0, .Script
@@ -28,10 +25,7 @@ TrainerBugCatcherOlly:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BugCatcherOllyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatcherOllyAfterBattleText
 
 TrainerBugCatcherDom:
 	trainer BUG_CATCHER, DOM, EVENT_BEAT_BUG_CATCHER_DOM, BugCatcherDomSeenText, BugCatcherDomBeatenText, 0, .Script
@@ -39,10 +33,7 @@ TrainerBugCatcherDom:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BugCatcherDomAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatcherDomAfterBattleText
 
 ViridianForestPokefanF:
 	jumptextfaceplayer ViridianForestPokefanFText

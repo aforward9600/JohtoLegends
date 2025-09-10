@@ -23,20 +23,14 @@ VermilionPortSailorScript:
 	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .skip2
-	writetext UnknownText_0x74f4d
-	waitbutton
-	closetext
-	end
+	writetextend UnknownText_0x74f4d
 
 .skip2:
 ;	writetext WalkThisWayText
 ;	waitbutton
 ;	closetext
 ;	end
-	writetext UnknownText_0x74fa7
-	waitbutton
-	closetext
-	end
+	writetextend UnknownText_0x74fa7
 
 VermilionPortWalkUpToShipScript:
 	turnobject VERMILIONPORT_SAILOR2, RIGHT

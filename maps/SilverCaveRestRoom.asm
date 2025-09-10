@@ -28,10 +28,7 @@ SilverCaveRadio:
 	playsound SFX_PECK
 	pause 30
 	opentext
-	writetext SilverCaveRadioText3
-	waitbutton
-	closetext
-	end
+	writetextend SilverCaveRadioText3
 
 MtSilverFireText:
 	text "This fire was lit"

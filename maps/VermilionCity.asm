@@ -30,10 +30,7 @@ VermilionMachop:
 	waitbutton
 	closepokepic
 	opentext
-	writetext VermilionMachopText1
-	waitbutton
-	closetext
-	end
+	writetextend VermilionMachopText1
 
 VermilionCitySuperNerdScript:
 	jumptextfaceplayer VermilionCitySuperNerdText

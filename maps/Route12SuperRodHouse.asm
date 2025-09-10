@@ -11,16 +11,10 @@ Route12SuperRodHouseFishingGuruScript:
 	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .GotSuperRod
-	writetext OfferSuperRodText
-	waitbutton
-	closetext
-	end
+	writetextend OfferSuperRodText
 
 .GotSuperRod:
-	writetext GaveSuperRodText
-	waitbutton
-	closetext
-	end
+	writetextend GaveSuperRodText
 
 OfferSuperRodText:
 	text "It used to be so"

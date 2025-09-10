@@ -38,10 +38,7 @@ TrainerBirdKeeperSal:
 	end
 
 .Refused
-	writetext BirdKeeperSalAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BirdKeeperSalAfterBattleText
 
 .SalRematch2:
 	checkflag ENGINE_PLAINBADGE
@@ -59,10 +56,7 @@ TrainerSchoolboyFinn:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SchoolboyFinnAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SchoolboyFinnAfterBattleText
 
 TrainerFisherLyle:
 	trainer FISHER, LYLE1, EVENT_BEAT_FISHER_LYLE, FisherLyleSeenText, FisherLyleBeatenText, 0, .Script
@@ -70,10 +64,7 @@ TrainerFisherLyle:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherLyleAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend FisherLyleAfterBattleText
 
 TrainerFisherButch:
 	trainer FISHER, BUTCH, EVENT_BEAT_FISHER_BUTCH, FisherButchSeenText, FisherButchBeatenText, 0, .Script
@@ -81,10 +72,7 @@ TrainerFisherButch:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherButchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend FisherButchAfterBattleText
 
 TrainerYoungsterGordy:
 	trainer YOUNGSTER, GORDY, EVENT_BEAT_YOUNGSTER_GORDY, YoungsterGordySeenText, YoungsterGordyBeatenText, 0, .Script
@@ -92,10 +80,7 @@ TrainerYoungsterGordy:
 .Script:
 	endifjustbattled
 	opentext
-	writetext YoungsterGordyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend YoungsterGordyAfterBattleText
 
 Route44Sign1:
 	jumptext Route44Sign1Text

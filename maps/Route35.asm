@@ -22,10 +22,7 @@ TrainerBirdKeeperThad:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperThadAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BirdKeeperThadAfterBattleText
 
 TrainerSuperNerdHerbert:
 	trainer SUPER_NERD, HERBERT_SUPER_NERD, EVENT_BEAT_JUGGLER_IRWIN, SuperNerdHerbertSeenText, SuperNerdHerbertBeatenText, 0, .Script
@@ -33,10 +30,7 @@ TrainerSuperNerdHerbert:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SuperNerdHerbertAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SuperNerdHerbertAfterBattleText
 
 TrainerSchoolboyCaleb:
 	trainer SCHOOLBOY, JACK2, EVENT_BEAT_YOUNGSTER_CALEB, SchoolboyCalebSeenText, SchoolboyCalebBeatenText, 0, .Script
@@ -44,10 +38,7 @@ TrainerSchoolboyCaleb:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SchoolboyCalebAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SchoolboyCalebAfterBattleText
 
 TrainerCooltrainermAJ:
 	trainer COOLTRAINERM, AJ, EVENT_BEAT_COOLTRAINERM_AJ, CooltrainermAJSeenText, CooltrainermAJBeatenText, 0, .Script
@@ -55,10 +46,7 @@ TrainerCooltrainermAJ:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainermAJAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainermAJAfterBattleText
 
 TrainerPicnickerVivian:
 	trainer PICNICKER, VIVIAN_PICNICKER, EVENT_BEAT_LASS_VIVIAN, PicnickerVivianSeenText, PicnickerVivianBeatenText, 0, .Script
@@ -80,10 +68,7 @@ TrainerPicnickerVivian:
 	end
 
 .Refused:
-	writetext PicnickerVivianRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend PicnickerVivianRefusedText
 
 TrainerFisherRusty:
 	trainer FISHER, RUSTY, EVENT_BEAT_FISHER_RUSTY, FisherRustySeenText, FisherRustyBeatenText, 0, .Script
@@ -91,10 +76,7 @@ TrainerFisherRusty:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherRustyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend FisherRustyAfterBattleText
 
 TrainerPokemaniacPalmer:
 	trainer POKEMANIAC, PALMER, EVENT_BEAT_BUG_CATCHER_PALMER, PokemaniacPalmerSeenText, PokemaniacPalmerBeatenText, 0, .Script
@@ -102,10 +84,7 @@ TrainerPokemaniacPalmer:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokemaniacPalmerAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend PokemaniacPalmerAfterBattleText
 
 TrainerFirebreatherKelvin:
 	trainer FIREBREATHER, KELVIN, EVENT_BEAT_FIREBREATHER_KELVIN, FirebreatherKelvinSeenText, FirebreatherKelvinBeatenText, 0, .Script
@@ -127,10 +106,7 @@ TrainerFirebreatherKelvin:
 	end
 
 .Refused:
-	writetext FirebreatherKelvinRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend FirebreatherKelvinRefusedText
 
 TrainerOfficerClancy:
 	faceplayer
@@ -152,16 +128,10 @@ TrainerOfficerClancy:
 	end
 
 .AfterBattle:
-	writetext OfficerClancyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend OfficerClancyAfterBattleText
 
 .NotNight:
-	writetext OfficerClancyPrettyToughText
-	waitbutton
-	closetext
-	end
+	writetextend OfficerClancyPrettyToughText
 
 Route35Sign:
 	jumptext Route35SignText

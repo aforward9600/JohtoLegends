@@ -19,10 +19,7 @@ TrainerYoungsterCotton:
 .Script:
 	endifjustbattled
 	opentext
-	writetext YoungsterCottonAfterText
-	waitbutton
-	closetext
-	end
+	writetextend YoungsterCottonAfterText
 
 TrainerCooltrainerMJacques:
 	trainer COOLTRAINERM, JACQUES, EVENT_BEAT_COOLTRAINERM_JACQUES, CooltrainerMJacquesSeenText, CooltrainerMJacquesBeatenText, 0, .Script
@@ -44,10 +41,7 @@ TrainerCooltrainerMJacques:
 	end
 
 .Refused:
-	writetext CooltrainerMJacquesRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerMJacquesRefusedText
 
 TrainerBugCatcherAnton:
 	trainer BUG_CATCHER, ANTON, EVENT_BEAT_BUG_CATCHER_ANTON, BugCatcherAntonSeenText, BugCatcherAntonBeatenText, 0, .Script
@@ -55,10 +49,7 @@ TrainerBugCatcherAnton:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BugCatcherAntonAfterText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatcherAntonAfterText
 
 Route30YoungsterScript:
 	jumptextfaceplayer Route30YoungsterText

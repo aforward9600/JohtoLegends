@@ -18,10 +18,7 @@ TrainerTeacherIsako:
 .Script:
 	endifjustbattled
 	opentext
-	writetext TeacherIsakoAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend TeacherIsakoAfterBattleText
 
 TrainerBirdKeeperTerry:
 	trainer BIRD_KEEPER, TERRY, EVENT_BEAT_BIRD_KEEPER_TERRY, BirdKeeperTerrySeenText, BirdKeeperTerryBeatenText, 0, .Script
@@ -29,10 +26,7 @@ TrainerBirdKeeperTerry:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperTerryAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BirdKeeperTerryAfterBattleText
 
 TrainerBikerBurgess:
 	trainer BIKER, BURGESS, EVENT_BEAT_BIKER_BURGESS, BikerBurgessSeenText, BikerBurgessBeatenText, 0, .Script
@@ -40,10 +34,7 @@ TrainerBikerBurgess:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerBurgessAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerBurgessAfterBattleText
 
 TrainerRoughneckKanji:
 	trainer ROUGHNECK, KANJI, EVENT_BEAT_ROUGHNECK_KANJI, RoughneckKanjiSeenText, RoughneckKanjiBeatenText, 0, .Script
@@ -51,10 +42,7 @@ TrainerRoughneckKanji:
 .Script:
 	endifjustbattled
 	opentext
-	writetext RoughneckKanjiAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend RoughneckKanjiAfterBattleText
 
 TrainerDelinquentChie:
 	trainer DELINQUENT, CHIE, EVENT_BEAT_DELINQUENT_CHIE, DelinquentChieSeenText, DelinquentChieBeatenText, 0, .Script
@@ -62,10 +50,7 @@ TrainerDelinquentChie:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DelinquentChieAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DelinquentChieAfterBattleText
 
 Route15GrampsScript:
 	jumptextfaceplayer Route15GrampsText

@@ -17,8 +17,8 @@ Route2NuggetHouseFisherScript:
 	iffalse .NoRoom
 	setevent EVENT_GOT_NUGGET_FROM_GUY
 .GotNugget:
-	writetext Route2NuggetHouseFisherText_GotNugget
-	waitbutton
+	writetextend Route2NuggetHouseFisherText_GotNugget
+
 .NoRoom:
 	closetext
 	end
@@ -44,6 +44,12 @@ Route2NuggetHouseFisherText_GotNugget:
 
 	para "wisdom, so that'll"
 	line "have to do!"
+
+	para "I'll need to go to"
+	line "Three Island once"
+	cont "the embargo is"
+	cont "lifted to get"
+	cont "more Nuggets."
 	done
 
 Route2NuggetHouse_MapEvents:

@@ -45,10 +45,7 @@ TrainerPokefanFEthel:
 	end
 
 .Refused:
-	writetext PokefanFEthelRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend PokefanFEthelRefusedText
 
 .EthelRematch:
 	checkflag ENGINE_PLAINBADGE
@@ -85,23 +82,16 @@ SunnyScript:
 	verbosegiveitem MAGNET
 	iffalse SunnyDoneScript
 	setevent EVENT_GOT_MAGNET_FROM_SUNNY
-	writetext SunnyGaveGiftText
-	waitbutton
-	closetext
-	end
+	writetextend SunnyGaveGiftText
 
 SunnySundayScript:
-	writetext SunnySundayText
-	waitbutton
+	writetextend SunnySundayText
 SunnyDoneScript:
 	closetext
 	end
 
 SunnyNotSundayScript:
-	writetext SunnyNotSundayText
-	waitbutton
-	closetext
-	end
+	writetextend SunnyNotSundayText
 
 OfficerTobyScript:
 	faceplayer
@@ -123,16 +113,10 @@ OfficerTobyScript:
 	end
 
 .AfterScript:
-	writetext OfficerTobyAfterText
-	waitbutton
-	closetext
-	end
+	writetextend OfficerTobyAfterText
 
 .NoFight:
-	writetext OfficerTobyDaytimeText
-	waitbutton
-	closetext
-	end
+	writetextend OfficerTobyDaytimeText
 
 Route37Sign:
 	jumptext Route37SignText

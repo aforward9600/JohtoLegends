@@ -20,10 +20,7 @@ TrainerFisherFred:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherFredAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend FisherFredAfterBattleText
 
 TrainerPsychicJordan:
 	trainer PSYCHIC_T, JORDAN, EVENT_BEAT_PSYCHIC_JORDAN, PsychicJordanSeenText, PsychicJordanBeatenText, 0, .Script
@@ -58,10 +55,7 @@ TrainerPsychicJordan:
 	sjump .StartJordanBattle
 
 .Refused:
-	writetext PsychicJordanRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend PsychicJordanRefusedText
 
 TrainerCamperHoward:
 	trainer CAMPER, HOWARD, EVENT_BEAT_CAMPER_HOWARD, CamperHowardSeenText, CamperHowardBeatenText, 0, .Script
@@ -69,10 +63,7 @@ TrainerCamperHoward:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CamperHowardAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CamperHowardAfterBattleText
 
 TrainerTeacherCadi:
 	trainer TEACHER, CADI, EVENT_BEAT_TEACHER_CADI, TeacherCadiSeenText, TeacherCadiBeatenText, 0, .Script
@@ -97,10 +88,7 @@ TrainerTeacherCadi:
 	end
 
 .Refused:
-	writetext TeacherCadiRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend TeacherCadiRefusedText
 
 .CadiRematch1:
 	checkflag ENGINE_MINERALBADGE
@@ -141,17 +129,6 @@ Route42FruitTree3:
 
 Route42HiddenMaxPotion:
 	hiddenitem RARE_CANDY, EVENT_ROUTE_42_HIDDEN_MAX_POTION
-
-Route42SuicuneMovement:
-	set_sliding
-	fast_jump_step UP
-	fast_jump_step UP
-	fast_jump_step UP
-	fast_jump_step RIGHT
-	fast_jump_step RIGHT
-	fast_jump_step RIGHT
-	remove_sliding
-	step_end
 
 FisherFredSeenText:
 	text "Argh! Lost another"

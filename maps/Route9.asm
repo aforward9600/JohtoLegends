@@ -17,10 +17,7 @@ TrainerBikerAl:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerAlAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerAlAfterBattleText
 
 TrainerDelinquentMarcy:
 	trainer DELINQUENT, MARCY, EVENT_BEAT_DELINQUENT_MARCY, DelinquentMarcySeenText, DelinquentMarcyBeatenText, 0, .Script
@@ -28,10 +25,7 @@ TrainerDelinquentMarcy:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DelinquentMarcyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DelinquentMarcyAfterBattleText
 
 TrainerSuperNerdRuss:
 	trainer SUPER_NERD, RUSS, EVENT_BEAT_SUPER_NERD_RUSS, SuperNerdRussSeenText, SuperNerdRussBeatenText, 0, .Script
@@ -39,10 +33,7 @@ TrainerSuperNerdRuss:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SuperNerdRussAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SuperNerdRussAfterBattleText
 
 TrainerBikerAntonio:
 	trainer BIKER, ANTONIO, EVENT_BEAT_BIKER_ANTONIO, BikerAntonioSeenText, BikerAntonioBeatenText, 0, .Script
@@ -50,10 +41,7 @@ TrainerBikerAntonio:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerAntonioAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerAntonioAfterBattleText
 
 TrainerDelinquentMakoto:
 	trainer DELINQUENT, MAKOTO, EVENT_BEAT_DELINQUENT_MAKOTO, DelinquentMakotoSeenText, DelinquentMakotoBeatenText, 0, .Script
@@ -61,10 +49,7 @@ TrainerDelinquentMakoto:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DelinquentMakotoAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DelinquentMakotoAfterBattleText
 
 TrainerRoughneckCarter:
 	trainer ROUGHNECK, CARTER_ROUGHNECK, EVENT_BEAT_ROUGHNECK_CARTER, RoughneckCarterSeenText, RoughneckCarterBeatenText, 0, .Script
@@ -72,10 +57,7 @@ TrainerRoughneckCarter:
 .Script:
 	endifjustbattled
 	opentext
-	writetext RoughneckCarterAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend RoughneckCarterAfterBattleText
 
 Route9Sign:
 	jumptext Route9SignText

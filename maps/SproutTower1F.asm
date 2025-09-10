@@ -29,10 +29,7 @@ TrainerSageChow:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SageChowAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SageChowAfterBattleText
 
 SproutTower1FParlyzHeal:
 	itemball TM_SOLARBEAM

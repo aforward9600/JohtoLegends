@@ -68,10 +68,7 @@ RuinsOfAlphResearchCenterScientist3Script:
 	end
 
 .PrinterAvailable:
-	writetext RuinsOfAlphResearchCenterScientist3_PrinterAvailable
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist3_PrinterAvailable
 
 RuinsOfAlphResearchCenterScientist1Script:
 	faceplayer
@@ -82,28 +79,16 @@ RuinsOfAlphResearchCenterScientist1Script:
 	iftrue .GotUnownDex
 	checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS
 	iftrue .UnownAppeared
-	writetext RuinsOfAlphResearchCenterScientist1Text
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist1Text
 
 .UnownAppeared:
-	writetext RuinsOfAlphResearchCenterScientist1Text_UnownAppeared
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist1Text_UnownAppeared
 
 .GotUnownDex:
-	writetext RuinsOfAlphResearchCenterScientist1Text_GotUnownDex
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist1Text_GotUnownDex
 
 .GotAllUnown:
-	writetext RuinsOfAlphResearchCenterScientist1Text_GotAllUnown
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist1Text_GotAllUnown
 
 RuinsOfAlphResearchCenterScientist2Script:
 	faceplayer
@@ -114,16 +99,10 @@ RuinsOfAlphResearchCenterScientist2Script:
 	ifequal NUM_UNOWN, .GotAllUnown
 	checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS
 	iftrue .UnownAppeared
-	writetext RuinsOfAlphResearchCenterScientist2Text
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist2Text
 
 .UnownAppeared:
-	writetext RuinsOfAlphResearchCenterScientist2Text_UnownAppeared
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist2Text_UnownAppeared
 
 .GotAllUnown:
 	setevent EVENT_DECO_UNOWN_DOLL
@@ -135,10 +114,7 @@ RuinsOfAlphResearchCenterScientist2Script:
 	waitsfx
 	buttonsound
 .GotUnownDoll:
-	writetext GotUnownDollText
-	waitbutton
-	closetext
-	end
+	writetextend GotUnownDollText
 
 RuinsOfAlphResearchCenterComputer:
 	opentext
@@ -147,16 +123,10 @@ RuinsOfAlphResearchCenterComputer:
 	readvar VAR_UNOWNCOUNT
 	ifequal NUM_UNOWN, .GotAllUnown
 .SkipChecking:
-	writetext RuinsOfAlphResearchCenterComputerText
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterComputerText
 
 .GotAllUnown:
-	writetext RuinsOfAlphResearchCenterComputerText_GotAllUnown
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterComputerText_GotAllUnown
 
 RuinsOfAlphResearchCenterPrinter:
 	opentext
@@ -165,10 +135,7 @@ RuinsOfAlphResearchCenterPrinter:
 	readvar VAR_UNOWNCOUNT
 	ifequal NUM_UNOWN, .PrinterAvailable
 .SkipChecking:
-	writetext RuinsOfAlphResearchCenterPrinterText_DoesntWork
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterPrinterText_DoesntWork
 
 .PrinterAvailable:
 	writetext RuinsOfAlphResearchCenterUnownPrinterText

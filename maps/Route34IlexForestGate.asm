@@ -55,23 +55,14 @@ Route34IlexForestGateTeacherScript:
 	special MoveTutor
 	if_equal $0, .TeachMove
 .Refused:
-	writetext Route34IlexForestGateTeacher_GotSweetScent
-	waitbutton
-	closetext
-	end
+	writetextend Route34IlexForestGateTeacher_GotSweetScent
 
 .TeachMove
 	takemoney YOUR_MONEY, 1200
-	writetext StrengthSapTutorTaught
-	waitbutton
-	closetext
-	end
+	writetextend StrengthSapTutorTaught
 
 .ForestIsRestless:
-	writetext Route34IlexForestGateTeacher_ForestIsRestless
-	buttonsound
-	closetext
-	end
+	writetextend Route34IlexForestGateTeacher_ForestIsRestless
 
 Route34IlexForestGateButterfreeScript:
 	refreshscreen
@@ -80,10 +71,7 @@ Route34IlexForestGateButterfreeScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext Route34IlexForestGateButterfreeText
-	waitbutton
-	closetext
-	end
+	writetextend Route34IlexForestGateButterfreeText
 
 Route34IlexForestGateLassScript:
 	jumptextfaceplayer Route34IlexForestGateLassText

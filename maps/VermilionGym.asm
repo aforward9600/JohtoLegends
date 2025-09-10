@@ -31,26 +31,17 @@ VermilionGymSurgeScript:
 	waitsfx
 	setflag ENGINE_THUNDERBADGE
 	setevent EVENT_DECO_SURFING_PIKACHU_DOLL
-	writetext LtSurgeThunderBadgeText
-	waitbutton
-	closetext
-	end
+	writetextend LtSurgeThunderBadgeText
 
 .FightDone:
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .LtSurgeStay
-	writetext LtSurgeFightDoneText
-	waitbutton
-	closetext
-	end
+	writetextend LtSurgeFightDoneText
 
 .LtSurgeStay:
 	checkflag ENGINE_GAVEN
 	iffalse .LtSurgeRematch
-	writetext LtSurgeStayText
-	waitbutton
-	closetext
-	end
+	writetextend LtSurgeStayText
 
 .LtSurgeRematch:
 	writetext LtSurgeRematchText
@@ -60,12 +51,9 @@ VermilionGymSurgeScript:
 	loadtrainer LT_SURGE, LT_SURGE1
 	startbattle
 	reloadmapafterbattle
-	opentext
-	writetext LtSurgeRematchAfterText
-	waitbutton
-	closetext
 	setflag ENGINE_GAVEN
-	end
+	opentext
+	writetextend LtSurgeRematchAfterText
 
 LtSurgeLastMonText:
 	text "Never give up!"
@@ -79,10 +67,7 @@ TrainerSoldierUlysses:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SoldierUlyssesAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SoldierUlyssesAfterBattleText
 
 TrainerSoldierDouglas:
 	trainer SOLDIER, DOUGLAS, EVENT_BEAT_SOLDIER_DOUGLAS, SoldierDouglasSeenText, SoldierDouglasBeatenText, 0, .Script
@@ -90,10 +75,7 @@ TrainerSoldierDouglas:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SoldierDouglasAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SoldierDouglasAfterBattleText
 
 TrainerSoldierGrant:
 	trainer SOLDIER, GRANT, EVENT_BEAT_SOLDIER_GRANT, SoldierGrantSeenText, SoldierGrantBeatenText, 0, .Script
@@ -101,10 +83,7 @@ TrainerSoldierGrant:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SoldierGrantAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SoldierGrantAfterBattleText
 
 VermilionGymBed:
 	jumptext VermilionGymBedText

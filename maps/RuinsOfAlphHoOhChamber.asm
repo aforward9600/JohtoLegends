@@ -181,11 +181,7 @@ RuinsOfAlphHoOhChamberWallPatternRight:
 	end
 
 .WallOpen:
-	opentext
-	writetext RuinsOfAlphHoOhChamberWallHoleText
-	waitbutton
-	closetext
-	end
+	jumptext RuinsOfAlphHoOhChamberWallHoleText
 
 RuinsOfAlphHoOhChamberSkyfallTopMovement:
 	skyfall_top

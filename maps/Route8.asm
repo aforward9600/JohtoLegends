@@ -17,10 +17,7 @@ TrainerBikerDwayne:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerDwayneAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerDwayneAfterBattleText
 
 TrainerBikerHarris:
 	trainer BIKER, HARRIS, EVENT_BEAT_BIKER_HARRIS, BikerHarrisSeenText, BikerHarrisBeatenText, 0, .Script
@@ -28,10 +25,7 @@ TrainerBikerHarris:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerHarrisAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerHarrisAfterBattleText
 
 TrainerBikerZeke:
 	trainer BIKER, ZEKE, EVENT_BEAT_BIKER_ZEKE, BikerZekeSeenText, BikerZekeBeatenText, 0, .Script
@@ -39,10 +33,7 @@ TrainerBikerZeke:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerZekeAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerZekeAfterBattleText
 
 TrainerSupernerdSam:
 	trainer DELINQUENT, CAROL, EVENT_BEAT_DELINQUENT_CAROL, SupernerdSamSeenText, SupernerdSamBeatenText, 0, .Script
@@ -50,10 +41,7 @@ TrainerSupernerdSam:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SupernerdSamAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SupernerdSamAfterBattleText
 
 Route8Supernerd:
 	checkevent EVENT_BEAT_BIKER_BOSS

@@ -83,10 +83,7 @@ TrainerHikerPhil:
 .Script:
 	endifjustbattled
 	opentext
-	writetext HikerPhilAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend HikerPhilAfterBattleText
 
 TrainerCamperEmil:
 	trainer CAMPER, EMIL, EVENT_BEAT_CAMPER_EMIL, CamperEmilSeenText, CamperEmilBeatenText, 0, .Script
@@ -94,10 +91,7 @@ TrainerCamperEmil:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CamperEmilAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CamperEmilAfterBattleText
 
 TrainerCooltrainerFTeresa:
 	trainer COOLTRAINERF, TERESA, EVENT_BEAT_COOLTRAINERF_TERESA, CooltrainerFTeresaSeenText, CooltrainerFTeresaBeatenText, 0, .Script
@@ -105,10 +99,7 @@ TrainerCooltrainerFTeresa:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerFTeresaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerFTeresaAfterBattleText
 
 Route47Suicune:
 	opentext

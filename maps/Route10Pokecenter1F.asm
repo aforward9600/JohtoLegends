@@ -20,16 +20,10 @@ Route10Pokecenter1FGymGuyScript:
 	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .ReturnedMachinePart
-	writetext Route10Pokecenter1FGymGuyText
-	waitbutton
-	closetext
-	end
+	writetextend Route10Pokecenter1FGymGuyText
 
 .ReturnedMachinePart:
-	writetext Route10Pokecenter1FGymGuyText_ReturnedMachinePart
-	waitbutton
-	closetext
-	end
+	writetextend Route10Pokecenter1FGymGuyText_ReturnedMachinePart
 
 Route10Pokecenter1FCooltrainerFScript:
 	jumptextfaceplayer Route10Pokecenter1FCooltrainerFText

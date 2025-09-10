@@ -15,10 +15,7 @@ TrainerSuperNerdNed:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SuperNerdNedAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SuperNerdNedAfterBattleText
 
 TrainerPokemaniacDamien:
 	trainer POKEMANIAC, DAMIEN, EVENT_BEAT_POKEMANIAC_DAMIEN, PokemaniacDamienSeenText, PokemaniacDamienBeatenText, 0, .Script
@@ -26,10 +23,7 @@ TrainerPokemaniacDamien:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokemaniacDamienAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend PokemaniacDamienAfterBattleText
 
 SlowpokeWellB1FBoulder:
 	jumpstd strengthboulder

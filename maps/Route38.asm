@@ -18,10 +18,7 @@ TrainerBirdKeeperFarley:
 .Script
 	endifjustbattled
 	opentext
-	writetext BirdKeeperFarleyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BirdKeeperFarleyAfterBattleText
 
 TrainerSailorLarry:
 	trainer SAILOR, HARRY, EVENT_BEAT_SAILOR_HARRY, SailorLarrySeenText, SailorLarryBeatenText, 0, .Script
@@ -29,10 +26,7 @@ TrainerSailorLarry:
 .Script
 	endifjustbattled
 	opentext
-	writetext SailorLarryAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SailorLarryAfterBattleText
 
 TrainerYoungsterRandy:
 	trainer YOUNGSTER, RANDY, EVENT_BEAT_YOUNGSTER_RANDY, YoungsterRandySeenText, YoungsterRandyBeatenText, 0, .Script
@@ -54,10 +48,7 @@ TrainerYoungsterRandy:
 	end
 
 .Refused:
-	writetext YoungsterRandyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend YoungsterRandyAfterBattleText
 
 TrainerSchoolboyEric:
 	trainer SCHOOLBOY, CHAD1, EVENT_BEAT_SCHOOLBOY_CHAD, SchoolboyEricSeenText, SchoolboyEricBeatenText, 0, .Script
@@ -65,10 +56,7 @@ TrainerSchoolboyEric:
 .Script
 	endifjustbattled
 	opentext
-	writetext SchoolboyEricAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SchoolboyEricAfterBattleText
 
 TrainerBeautyWilma:
 	trainer BEAUTY, VALERIE, EVENT_BEAT_BEAUTY_VALERIE, BeautyWilmaSeenText, BeautyWilmaBeatenText, 0, .Script
@@ -76,10 +64,7 @@ TrainerBeautyWilma:
 .Script
 	endifjustbattled
 	opentext
-	writetext BeautyWilmaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BeautyWilmaAfterBattleText
 
 TrainerBeautyFiona:
 	trainer BEAUTY, OLIVIA, EVENT_BEAT_BEAUTY_OLIVIA, BeautyFionaSeenText, BeautyFionaBeatenText, 0, .Script
@@ -87,10 +72,7 @@ TrainerBeautyFiona:
 .Script
 	endifjustbattled
 	opentext
-	writetext BeautyFionaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BeautyFionaAfterBattleText
 
 Route38Sign:
 	jumptext Route38SignText

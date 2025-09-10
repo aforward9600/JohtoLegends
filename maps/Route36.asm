@@ -10,18 +10,10 @@
 	const ROUTE36_FISHER3
 
 Route36_MapScripts:
-	db 2 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_ROUTE36_NOTHING
-	scene_script .DummyScene1 ; SCENE_ROUTE36_SUICUNE
+	db 0 ; scene scripts
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, .ArthurCallback
-
-.DummyScene0:
-	end
-
-.DummyScene1:
-	end
 
 .ArthurCallback:
 	readvar VAR_WEEKDAY
@@ -34,28 +26,17 @@ Route36_MapScripts:
 	return
 
 Route36RockSmashGuyScript:
-	faceplayer
-	opentext
-	writetext RockSmashGuyText1
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer RockSmashGuyText1
 
 Route36LassScript:
 	faceplayer
 	opentext
 	checkevent EVENT_FOUGHT_SUDOWOODO
 	iftrue .ClearedSudowoodo
-	writetext Route36LassText
-	waitbutton
-	closetext
-	end
+	writetextend Route36LassText
 
 .ClearedSudowoodo:
-	writetext Route36LassText_ClearedSudowoodo
-	waitbutton
-	closetext
-	end
+	writetextend Route36LassText_ClearedSudowoodo
 
 TrainerPokemaniacAlvin:
 	trainer POKEMANIAC, ALVIN, EVENT_BEAT_POKEMANIAC_ALVIN, PokemaniacAlvinSeenText, PokemaniacAlvinBeatenText, 0, .Script
@@ -77,10 +58,7 @@ TrainerPokemaniacAlvin:
 	end
 
 .Refused:
-	writetext PokemaniacAlvinRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend PokemaniacAlvinRefusedText
 
 TrainerSchoolboyPierce:
 	trainer SCHOOLBOY, PIERCE, EVENT_BEAT_SCHOOLBOY_PIE, SchoolboyPierceSeenText, SchoolboyPierceBeatenText, 0, .Script
@@ -88,10 +66,7 @@ TrainerSchoolboyPierce:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SchoolboyPierceAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SchoolboyPierceAfterBattleText
 
 TrainerPsychicMark:
 	trainer PSYCHIC_T, MARK, EVENT_BEAT_PSYCHIC_MARK, PsychicMarkSeenText, PsychicMarkBeatenText, 0, .Script
@@ -99,10 +74,7 @@ TrainerPsychicMark:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PsychicMarkAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend PsychicMarkAfterBattleText
 
 ArthurScript:
 	faceplayer
@@ -122,23 +94,16 @@ ArthurScript:
 	verbosegiveitem HARD_STONE
 	iffalse .BagFull
 	setevent EVENT_GOT_HARD_STONE_FROM_ARTHUR
-	writetext ArthurGaveGiftText
-	waitbutton
-	closetext
-	end
+	writetextend ArthurGaveGiftText
 
 .AlreadyGotStone:
-	writetext ArthurThursdayText
-	waitbutton
+	writetextend ArthurThursdayText
 .BagFull:
 	closetext
 	end
 
 ArthurNotThursdayScript:
-	writetext ArthurNotThursdayText
-	waitbutton
-	closetext
-	end
+	writetextend ArthurNotThursdayText
 
 Route36RockSmashGuyScript2:
 	jumptextfaceplayer RockSmashGuyText4

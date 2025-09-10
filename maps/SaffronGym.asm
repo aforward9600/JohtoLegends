@@ -34,25 +34,16 @@ SaffronGymSabrinaScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_MARSHBADGE
-	writetext SabrinaMarshBadgeText
-	waitbutton
-	closetext
 	setevent EVENT_DECO_BED_3
-	end
+	writetextend SabrinaMarshBadgeText
 
 .FightDone:
-	writetext SabrinaFightDoneText
-	waitbutton
-	closetext
-	end
+	writetextend SabrinaFightDoneText
 
 .SabrinaPost:
 	checkflag ENGINE_REENA
 	iffalse .SabrinaRematch
-	writetext SabrinaPostText
-	waitbutton
-	closetext
-	end
+	writetextend SabrinaPostText
 
 .SabrinaRematch:
 	writetext SabrinaRematchText
@@ -63,11 +54,8 @@ SaffronGymSabrinaScript:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext SabrinaAfterRematchText
-	waitbutton
-	closetext
 	setflag ENGINE_REENA
-	end
+	writetextend SabrinaAfterRematchText
 
 SabrinaLastMonText:
 	text "I did not foresee"
@@ -80,10 +68,7 @@ TrainerHexManiacBecky:
 .Script:
 	endifjustbattled
 	opentext
-	writetext HexManiacBeckyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend HexManiacBeckyAfterBattleText
 
 TrainerPsychicChris:
 	trainer PSYCHIC_T, CHRIS_PSYCHIC, EVENT_BEAT_PSYCHIC_CHRIS, PsychicChrisSeenText, PsychicChrisBeatenText, 0, .Script
@@ -91,10 +76,7 @@ TrainerPsychicChris:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PsychicChrisAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend PsychicChrisAfterBattleText
 
 TrainerHexManiacLillith:
 	trainer HEX_MANIAC, LILLITH, EVENT_BEAT_HEX_MANIAC_LILLITH, HexManiacLillithSeenText, HexManiacLillithBeatenText, 0, .Script
@@ -102,10 +84,7 @@ TrainerHexManiacLillith:
 .Script:
 	endifjustbattled
 	opentext
-	writetext HexManiacLillithAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend HexManiacLillithAfterBattleText
 
 TrainerPsychicJeremy:
 	trainer PSYCHIC_T, JEREMY_PSYCHIC, EVENT_BEAT_PSYCHIC_JEREMY, PsychicJeremySeenText, PsychicJeremyBeatenText, 0, .Script
@@ -113,10 +92,7 @@ TrainerPsychicJeremy:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PsychicJeremyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend PsychicJeremyAfterBattleText
 
 SabrinaIntroText:
 	text "Sabrina: I knew"

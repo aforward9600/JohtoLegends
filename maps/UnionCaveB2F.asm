@@ -54,16 +54,10 @@ TrainerCooltrainermAdrien:
 	opentext
 	checkevent EVENT_UNION_CAVE_B2F_HYPER_POTION
 	iftrue .AlreadyGotItem
-	writetext CooltrainermAdrienAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainermAdrienAfterBattleText
 
 .AlreadyGotItem:
-	writetext YouAlreadyGotTheItemText
-	waitbutton
-	closetext
-	end
+	writetextend YouAlreadyGotTheItemText
 
 TrainerCooltrainerfHazel:
 	trainer COOLTRAINERF, HAZEL, EVENT_BEAT_COOLTRAINERF_HAZEL, CooltrainerfHazelSeenText, CooltrainerfHazelBeatenText, 0, .Script
@@ -71,10 +65,7 @@ TrainerCooltrainerfHazel:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerfHazelAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfHazelAfterBattleText
 
 TrainerCooltrainerfElla:
 	trainer COOLTRAINERF, ELLA, EVENT_BEAT_COOLTRAINERF_ELLA, CooltrainerfEllaSeenText, CooltrainerfEllaBeatenText, 0, .Script
@@ -82,10 +73,7 @@ TrainerCooltrainerfElla:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerfEllaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfEllaAfterBattleText
 
 UnionCaveB2FElixer:
 	itemball ELIXER

@@ -13,10 +13,7 @@ TinTower2FRocket1Script:
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM16AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend GruntM16AfterBattleText
 
 TinTower2FRocket2Script:
 	trainer GRUNTF, GRUNTF_10, EVENT_BEAT_ROCKET_GRUNTF_10, GruntF10SeenText, GruntF10BeatenText, 0, .Script
@@ -24,10 +21,7 @@ TinTower2FRocket2Script:
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntF10AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend GruntF10AfterBattleText
 
 GruntM16SeenText:
 	text "We knew you'd be"

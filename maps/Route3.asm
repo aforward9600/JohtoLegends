@@ -16,10 +16,7 @@ TrainerDelinquentKaren:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DelinquentKarenAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DelinquentKarenAfterBattleText
 
 TrainerBikerForest:
 	trainer BIKER, FOREST_BIKER, EVENT_BEAT_BIKER_FOREST, BikerForestSeenText, BikerForestBeatenText, 0, .Script
@@ -27,10 +24,7 @@ TrainerBikerForest:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerForestAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerForestAfterBattleText
 
 TrainerBikerCalvin:
 	trainer BIKER, CALVIN, EVENT_BEAT_BIKER_CALVIN, BikerCalvinSeenText, BikerCalvinBeatenText, 0, .Script
@@ -38,10 +32,7 @@ TrainerBikerCalvin:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerCalvinAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerCalvinAfterBattleText
 
 TrainerDelinquentTracy:
 	trainer DELINQUENT, TRACY, EVENT_BEAT_DELINQUENT_TRACY, DelinquentTracySeenText, DelinquentTracyBeatenText, 0, .Script
@@ -49,10 +40,7 @@ TrainerDelinquentTracy:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DelinquentTracyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DelinquentTracyAfterBattleText
 
 Route3MtMoonSquareSign:
 	jumptext Route3MtMoonSquareSignText

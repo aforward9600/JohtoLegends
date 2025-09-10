@@ -11,15 +11,11 @@ TinTower9FArcher:
 	trainer ARCHER, ARCHER_4, EVENT_BEAT_TIN_TOWER_ARCHER, TinTower9FArcherSeenText, TinTower9FArcherBeatenText, Archer4LastMonText, .Script
 
 .Script:
-	faceplayer
-	opentext
-	writetext TinTower9FArcherAfterText
-	waitbutton
-	closetext
 	setevent EVENT_TIN_TOWER_ROOF_ROCKET_BALL
 	setevent EVENT_TIN_TOWER_ROOF_PLAYER
 	setevent EVENT_TIN_TOWER_ROOF_HO_OH_2
-	end
+	opentext
+	writetextend TinTower9FArcherAfterText
 
 TinTower9FHPUp:
 	itemball HP_UP

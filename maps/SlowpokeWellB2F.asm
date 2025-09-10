@@ -22,10 +22,7 @@ SlowpokeWellB2FGymGuyScript:
 	end
 
 .GotKingsRock:
-	writetext SlowpokeWellB2FGymGuyText_GotKingsRock
-	waitbutton
-	closetext
-	end
+	writetextend SlowpokeWellB2FGymGuyText_GotKingsRock
 
 SlowpokeWellB2FTMRainDance:
 	itemball TM_RAIN_DANCE

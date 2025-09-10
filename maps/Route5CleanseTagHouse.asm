@@ -17,8 +17,8 @@ Route5CleanseTagHouseGrannyScript:
 	iffalse .NoRoom
 	setevent EVENT_GOT_CLEANSE_TAG
 .GotCleanseTag:
-	writetext Route5CleanseTagHouseGrannyText2
-	waitbutton
+	writetextend Route5CleanseTagHouseGrannyText2
+
 .NoRoom:
 	closetext
 	end

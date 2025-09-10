@@ -35,10 +35,7 @@ TrainerLassArielle:
 .Script:
 	endifjustbattled
 	opentext
-	writetext LassArielleAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend LassArielleAfterBattleText
 
 TrainerSwimmerfAngie:
 	trainer SWIMMERF, ANGIE, EVENT_BEAT_SWIMMERF_ANGIE, SwimmerfAngieSeenText, SwimmerfAngieBeatenText, 0, .Script
@@ -57,10 +54,7 @@ TrainerSwimmerfAngie:
 	buttonsound
 	pause 15
 .GotStarmieDoll:
-	writetext SwimmerfAngieAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SwimmerfAngieAfterBattleText
 
 TrainerSwimmermDerrick:
 	trainer SWIMMERM, DERRICK, EVENT_BEAT_SWIMMERM_DERRICK, SwimmermDerrickSeenText, SwimmermDerrickBeatenText, 0, .Script
@@ -68,10 +62,7 @@ TrainerSwimmermDerrick:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmermDerrickAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SwimmermDerrickAfterBattleText
 
 TrainerBugCatcherArthur:
 	trainer BUG_CATCHER, ARTHUR, EVENT_BEAT_BUG_CATCHER_ARTHUR, BugCatcherArthurSeenText, BugCatcherArthurBeatenText, 0, .Script
@@ -79,10 +70,7 @@ TrainerBugCatcherArthur:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BugCatcherArthurAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatcherArthurAfterBattleText
 
 Route40Lass1Script:
 	jumptextfaceplayer Route40Lass1Text
@@ -114,23 +102,16 @@ MonicaScript:
 	verbosegiveitem SHARP_BEAK
 	iffalse .done
 	setevent EVENT_GOT_SHARP_BEAK_FROM_MONICA
-	writetext MonicaGaveGiftText
-	waitbutton
-	closetext
-	end
+	writetextend MonicaGaveGiftText
 
 .Monday:
-	writetext MonicaMondayText
-	waitbutton
+	writetextend MonicaMondayText
 .done:
 	closetext
 	end
 
 .NotMonday:
-	writetext MonicaNotMondayText
-	waitbutton
-	closetext
-	end
+	writetextend MonicaNotMondayText
 
 Route40Sign:
 	jumptext Route40SignText

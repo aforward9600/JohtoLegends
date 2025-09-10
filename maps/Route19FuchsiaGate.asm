@@ -7,12 +7,7 @@ Route19FuchsiaGate_MapScripts:
 	db 0 ; callbacks
 
 Route19FuchsiaGateOfficerScript:
-	faceplayer
-	opentext
-	writetext Route19FuchsiaGateOfficerText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer Route19FuchsiaGateOfficerText
 
 Route19FuchsiaGateOfficerText:
 	text "The good thing"

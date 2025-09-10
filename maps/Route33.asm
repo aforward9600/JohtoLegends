@@ -14,16 +14,10 @@ Route33LassScript:
 	opentext
 	checkevent EVENT_UNION_CAVE_BLOCKER
 	iftrue .HikerGone
-	writetext Route33LassText
-	waitbutton
-	closetext
-	end
+	writetextend Route33LassText
 
 .HikerGone:
-	writetext Route33TeacherText
-	waitbutton
-	closetext
-	end
+	writetextend Route33TeacherText
 
 TrainerHikerAnthony:
 	trainer HIKER, ANTHONY1, EVENT_BEAT_HIKER_ANTHONY, HikerAnthony2SeenText, HikerAnthony2BeatenText, 0, .Script
@@ -31,10 +25,7 @@ TrainerHikerAnthony:
 .Script:
 	endifjustbattled
 	opentext
-	writetext HikerAnthony2AfterText
-	waitbutton
-	closetext
-	end
+	writetextend HikerAnthony2AfterText
 
 Route33HikerScript:
 	jumptextfaceplayer Route33HikerText

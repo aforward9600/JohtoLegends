@@ -127,25 +127,15 @@ LockedDoor:
 	checkevent EVENT_TALKED_TO_RIVAL_IN_JAIL
 	iftrue .TriggerRivalScene
 	opentext
-	writetext DoorIsLockedText
-	waitbutton
-	closetext
-	end
+	writetextend DoorIsLockedText
 
 .DoorIsUnlocked:
-	opentext
-	writetext DoorIsUnlockedText
-	waitbutton
-	closetext
-	end
+	jumptext DoorIsUnlockedText
 
 .TriggerRivalScene:
-	opentext
 	setevent EVENT_CHECKED_JAIL_DOOR
-	writetext DoorIsLockedText
-	waitbutton
-	closetext
-	end
+	opentext
+	writetextend DoorIsLockedText
 
 MovePlayerJail1:
 	step RIGHT

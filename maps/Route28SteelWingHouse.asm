@@ -44,12 +44,9 @@ FerropexolaScript:
 	waitsfx
 	buttonsound
 	pause 15
-	writetext FerropexolaComeBackText
-	waitbutton
-	closetext
 	setevent EVENT_DECO_GOLD_TROPHY
 	setevent EVENT_BEAT_FERROPEXOLA
-	end
+	writetextend FerropexolaComeBackText
 
 .FerropexolaRematch:
 	writetext FerropexolaRematchText
@@ -63,22 +60,13 @@ FerropexolaScript:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext FerropexolaCongratsText
-	waitbutton
-	closetext
-	end
+	writetextend FerropexolaCongratsText
 
 .FerropexolaAfterBattle:
-	writetext FerropexolaCongratsText
-	waitbutton
-	closetext
-	end
+	writetextend FerropexolaCongratsText
 
 .Refused:
-	writetext FerropexolaComeBackText
-	waitbutton
-	closetext
-	end
+	writetextend FerropexolaComeBackText
 
 FerropexolaLastMonText:
 	text "This has gotten"

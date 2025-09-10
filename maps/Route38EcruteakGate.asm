@@ -30,23 +30,15 @@ EcruteakGateRival1:
 	writetext GotAnEeveeText
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
-	iftrue .Larvitar
 	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
 	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
+	iftrue .Larvitar
 	loadtrainer RIVAL3, RIVAL3_B_LARVITAR
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
 	sjump .AfterVictorious
 
 .Larvitar:
-	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
-	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
 	loadtrainer RIVAL3, RIVAL3_B_DRATINI
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
 	sjump .AfterVictorious
 
 .Female1:
@@ -56,18 +48,19 @@ EcruteakGateRival1:
 	writetext GotAnEeveeMaleText
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
-	iftrue .Larvitar2
 	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
 	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
+	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
+	iftrue .Larvitar2
 	loadtrainer RIVAL4, RIVAL4_B_LARVITAR
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
 	sjump .AfterVictorious2
 
 .AfterVictorious:
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
 	playmusic MUSIC_DAHLIA_AFTER_BATTLE
+.AfterVictorious3
 	opentext
 	writetext YouWonAgainText
 	waitbutton
@@ -82,28 +75,14 @@ EcruteakGateRival1:
 	end
 
 .Larvitar2:
-	winlosstext RivalEcruteakGateWinText, RivalEcruteakGateLossText
-	setlasttalked ROUTE38ECRUTEAKGATE_RIVAL
 	loadtrainer RIVAL4, RIVAL4_B_DRATINI
+
+.AfterVictorious2:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump .AfterVictorious2
-
-.AfterVictorious2:
 	playmusic MUSIC_RIVAL_AFTER
-	opentext
-	writetext YouWonAgainText
-	waitbutton
-	closetext
-	applymovement ROUTE38ECRUTEAKGATE_RIVAL, DahliaLeavesMovement
-	playsound SFX_EXIT_BUILDING
-	disappear ROUTE38ECRUTEAKGATE_RIVAL
-	setevent EVENT_ECRUTEAK_GATE_RIVAL_1
-	setscene SCENE_DEFAULT
-	waitsfx
-	playmapmusic
-	end
+	sjump .AfterVictorious3
 
 Movement1:
 	step RIGHT

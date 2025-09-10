@@ -28,11 +28,7 @@ TeamRocketBaseB3F_MapScripts:
 	end
 
 TeamRocketBaseB3FRocketScript:
-	opentext
-	writetext TeamRocketBaseB3FRocketText
-	waitbutton
-	closetext
-	end
+	jumptext TeamRocketBaseB3FRocketText
 
 RocketBaseBossLeft:
 	applymovement PLAYER, MovementData_0x6e133
@@ -135,11 +131,7 @@ RocketBaseBoss:
 	end
 
 HideoutArianaScript:
-	opentext
-	writetext RocketBaseArianaText
-	waitbutton
-	closetext
-	end
+	jumptext RocketBaseArianaText
 
 Ariana3LastMonText:
 	text "How many times are"
@@ -162,10 +154,7 @@ HideoutB3FRival:
 	special FadeInQuickly
 	special RestartMapMusic
 	opentext
-	writetext TheresAPCText
-	waitbutton
-	closetext
-	end
+	writetextend TheresAPCText
 
 TrainerMNinjaF1:
 	trainer MNINJA_F, MNINJA_F1, EVENT_HIDEOUT_NINJA2, MNinjaM1SeenText, MNinjaM1SeenText, 0, .Script

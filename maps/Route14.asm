@@ -31,10 +31,7 @@ TrainerBikerJamie:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerJamieAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerJamieAfterBattleText
 
 TrainerRoughneckDirk:
 	trainer ROUGHNECK, DIRK, EVENT_BEAT_ROUGHNECK_DIRK, RoughneckDirkSeenText, RoughneckDirkBeatenText, 0, .Script
@@ -42,10 +39,7 @@ TrainerRoughneckDirk:
 .Script:
 	endifjustbattled
 	opentext
-	writetext RoughneckDirkAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend RoughneckDirkAfterBattleText
 
 TrainerDelinquentAyase:
 	trainer DELINQUENT, AYASE, EVENT_BEAT_DELINQUENT_AYASE, DelinquentAyaseSeenText, DelinquentAyaseBeatenText, 0, .Script
@@ -53,10 +47,7 @@ TrainerDelinquentAyase:
 .Script:
 	endifjustbattled
 	opentext
-	writetext DelinquentAyaseAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend DelinquentAyaseAfterBattleText
 
 BikerJamieSeenText:
 	text "That maze is"

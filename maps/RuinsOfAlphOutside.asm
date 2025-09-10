@@ -77,18 +77,10 @@ RuinsOfAlphOutsideFisherScript:
 	writetext RuinsOfAlphOutsideFisherText1
 	buttonsound
 .Next:
-	writetext RuinsOfAlphOutsideFisherText2
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphOutsideFisherText2
 
 RuinsOfAlphOutsideYoungster1Script:
-	faceplayer
-	opentext
-	writetext RuinsOfAlphOutsideYoungster1Text
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer RuinsOfAlphOutsideYoungster1Text
 
 RuinsOfAlphOutsideYoungster2Script:
 	faceplayer
@@ -105,10 +97,7 @@ TrainerPsychicNathan:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PsychicNathanAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend PsychicNathanAfterBattleText
 
 TrainerSuperNerdStan:
 	trainer SUPER_NERD, DEXTER, EVENT_BEAT_SUPER_NERD_DEXTER, SuperNerdStanSeenText, SuperNerdStanBeatenText, 0, .Script
@@ -116,10 +105,7 @@ TrainerSuperNerdStan:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SuperNerdStanAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SuperNerdStanAfterBattleText
 
 RuinsOfAlphOutsideMysteryChamberSign:
 	jumptext RuinsOfAlphOutsideMysteryChamberSignText

@@ -79,10 +79,7 @@ RematchFlorina:
 	sjump FlorinaReconvene
 
 FlorinaScript_AfterBattle:
-	writetext FlorinaScript_FlorinaDefeatText
-	waitbutton
-	closetext
-	end
+	writetextend FlorinaScript_FlorinaDefeatText
 
 FlorinasRoom_EnterMovement:
 	step UP

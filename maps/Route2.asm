@@ -17,10 +17,7 @@ TrainerBikerBrandon:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerBrandonAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerBrandonAfterBattleText
 
 Route2LassScript:
 	jumptextfaceplayer Route2LassText
@@ -31,10 +28,7 @@ TrainerCooltrainerMGary:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerMGaryAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerMGaryAfterBattleText
 
 Route2Sign:
 	jumptext Route2SignText

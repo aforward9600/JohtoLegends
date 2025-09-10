@@ -103,16 +103,10 @@ ConsoleSales_FinishScript:
 	jump ConsoleSalesLoopScript
 
 ConsoleSalesCancel:
-	writetext IllStillHaveThemText
-	waitbutton
-	closetext
-	end
+	writetextend IllStillHaveThemText
 
 ConsoleSalesNotEnoughMoney:
-	writetext NotEnoughMoneyConsoleText
-	waitbutton
-	closetext
-	end
+	writetextend NotEnoughMoneyConsoleText
 
 Kyle:
 	faceplayer

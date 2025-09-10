@@ -21,10 +21,7 @@ TrainerBikerCharles:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerCharlesAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerCharlesAfterBattleText
 
 TrainerBikerRiley:
 	trainer BIKER, RILEY, EVENT_BEAT_BIKER_RILEY, BikerRileySeenText, BikerRileyBeatenText, 0, .Script
@@ -32,10 +29,7 @@ TrainerBikerRiley:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerRileyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerRileyAfterBattleText
 
 TrainerBikerJoel:
 	trainer BIKER, JOEL, EVENT_BEAT_BIKER_JOEL, BikerJoelSeenText, BikerJoelBeatenText, 0, .Script
@@ -43,10 +37,7 @@ TrainerBikerJoel:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerJoelAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BikerJoelAfterBattleText
 
 TrainerRoughneckCurly:
 	trainer ROUGHNECK, CURLY, EVENT_BEAT_ROUGHNECK_CURLY, RoughneckCurlySeenText, RoughneckCurlyBeatenText, 0, .Script
@@ -54,10 +45,7 @@ TrainerRoughneckCurly:
 .Script:
 	endifjustbattled
 	opentext
-	writetext RoughneckCurlyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend RoughneckCurlyAfterBattleText
 
 Route17HiddenMaxEther:
 	hiddenitem MAX_ETHER, EVENT_ROUTE_17_HIDDEN_MAX_ETHER

@@ -18,10 +18,7 @@ ScientistMac2Script:
 .Script:
 	endifjustbattled
 	opentext
-	writetext ScientistMac2AfterText
-	waitbutton
-	closetext
-	end
+	writetextend ScientistMac2AfterText
 
 GruntF11Script:
 	trainer GRUNTF, GRUNTF_11, EVENT_BEAT_ROCKET_GRUNTF_11, GruntF11SeenText, GruntF11BeatenText, 0, .Script
@@ -29,10 +26,7 @@ GruntF11Script:
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntF11AfterText
-	waitbutton
-	closetext
-	end
+	writetextend GruntF11AfterText
 
 TinTower3FFullHeal:
 	itemball FULL_HEAL

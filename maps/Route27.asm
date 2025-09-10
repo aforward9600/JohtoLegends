@@ -37,11 +37,8 @@ FirstStepIntoKantoScene_Continue:
 	opentext
 	writetext Route27FisherHeyText
 	buttonsound
-	writetext Route27FisherText
-	waitbutton
-	closetext
 	setscene SCENE_FINISHED
-	end
+	writetextend Route27FisherText
 
 Route27FisherScript:
 	jumptextfaceplayer Route27FisherText
@@ -52,10 +49,7 @@ TrainerPsychicHoudini:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PsychicHoudiniAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend PsychicHoudiniAfterBattleText
 
 TrainerBirdKeeperCarl:
 	trainer BIRD_KEEPER, CARL, EVENT_BEAT_BIRD_KEEPER_CARL, BirdKeeperCarlSeenText, BirdKeeperCarlBeatenText, 0, .Script
@@ -63,10 +57,7 @@ TrainerBirdKeeperCarl:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperCarlAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BirdKeeperCarlAfterBattleText
 
 TrainerCooltrainermCorey:
 	trainer COOLTRAINERM, COREY1, EVENT_BEAT_COOLTRAINERM_COREY, CooltrainermCoreySeenText, CooltrainermCoreyBeatenText, 0, .Script
@@ -74,10 +65,7 @@ TrainerCooltrainermCorey:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainermCoreyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainermCoreyAfterBattleText
 
 TrainerCooltrainermAlm:
 	trainer COOLTRAINERM, ALM, EVENT_BEAT_COOLTRAINERM_ALM, CooltrainermAlmSeenText, CooltrainermAlmBeatenText, 0, .Script
@@ -85,10 +73,7 @@ TrainerCooltrainermAlm:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainermAlmAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainermAlmAfterBattleText
 
 TrainerCooltrainerfReena:
 	trainer COOLTRAINERF, REENA1, EVENT_BEAT_COOLTRAINERF_REENA, CooltrainerfReenaSeenText, CooltrainerfReenaBeatenText, 0, .Script
@@ -96,10 +81,7 @@ TrainerCooltrainerfReena:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerfReenaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfReenaAfterBattleText
 
 TrainerCooltrainerfMaria:
 	trainer COOLTRAINERF, MARIA, EVENT_BEAT_COOLTRAINERF_MARIA, CooltrainerfMariaSeenText, CooltrainerfMariaBeatenText, 0, .Script
@@ -107,10 +89,7 @@ TrainerCooltrainerfMaria:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerfMariaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfMariaAfterBattleText
 
 TohjoFallsSign:
 	jumptext TohjoFallsSignText

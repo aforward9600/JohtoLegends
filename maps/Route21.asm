@@ -15,10 +15,7 @@ TrainerSwimmermSeth:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmermSethAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SwimmermSethAfterBattleText
 
 TrainerLassUsagi:
 	trainer LASS, USAGI, EVENT_BEAT_LASS_USAGI, LassUsagiSeenText, LassUsagiBeatenText, 0, .Script
@@ -26,10 +23,7 @@ TrainerLassUsagi:
 .Script:
 	endifjustbattled
 	opentext
-	writetext LassUsagiAfterText
-	waitbutton
-	closetext
-	end
+	writetextend LassUsagiAfterText
 
 TrainerSwimmerfNikki:
 	trainer SWIMMERF, NIKKI, EVENT_BEAT_SWIMMERF_NIKKI, SwimmerfNikkiSeenText, SwimmerfNikkiBeatenText, 0, .Script
@@ -37,10 +31,7 @@ TrainerSwimmerfNikki:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmerfNikkiAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SwimmerfNikkiAfterBattleText
 
 TrainerFisherArnold:
 	trainer FISHER, ARNOLD, EVENT_BEAT_FISHER_ARNOLD, FisherArnoldSeenText, FisherArnoldBeatenText, 0, .Script
@@ -48,10 +39,7 @@ TrainerFisherArnold:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherArnoldAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend FisherArnoldAfterBattleText
 
 SwimmermSethSeenText:
 	text "Swimming is good"

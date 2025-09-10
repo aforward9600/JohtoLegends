@@ -22,12 +22,7 @@ Route35NationalParkGate_MapScripts:
 	end
 
 Route35NationalParkGateOfficerScript:
-	faceplayer
-	opentext
-	writetext Route35NationalParkGateOfficer1WeHoldContestsText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer Route35NationalParkGateOfficer1WeHoldContestsText
 
 Route35NationalParkGateYoungsterScript:
 	jumptextfaceplayer Route35NationalParkGateYoungsterText

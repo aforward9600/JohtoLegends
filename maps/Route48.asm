@@ -19,10 +19,7 @@ TrainerFirebreatherFarrel:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FirebreatherFarrelAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend FirebreatherFarrelAfterBattleText
 
 Route48Nugget:
 	itemball NUGGET

@@ -22,8 +22,7 @@ SootheBellHouseTeacherScript:
 	iffalse .BagFull
 	setevent EVENT_GOT_SOOTHE_BELL
 .AlreadyGotSootheBell:
-	writetext SootheBellDoneText
-	waitbutton
+	writetextend SootheBellDoneText
 .BagFull:
 	closetext
 	end
@@ -35,10 +34,7 @@ SootheBellHouseClefairyScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext SootheBellHouseClefairyText
-	waitbutton
-	closetext
-	end
+	writetextend SootheBellHouseClefairyText
 
 SootheBellTelevision:
 	jumpstd televisionscript

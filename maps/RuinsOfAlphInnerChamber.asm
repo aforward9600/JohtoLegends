@@ -54,16 +54,10 @@ RuinsOfAlphInnerChamberScientistScript:
 	opentext
 	checkevent EVENT_OPENED_NOWN_ROOM
 	iftrue .ScientistScript2
-	writetext RuinsOfAlphInnerChamberScientistText1
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphInnerChamberScientistText1
 
 .ScientistScript2:
-	writetext RuinsOfAlphInnerChamberScientistText2
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphInnerChamberScientistText2
 
 RuinsOfAlphNownWall:
 	checkevent EVENT_OPENED_NOWN_ROOM

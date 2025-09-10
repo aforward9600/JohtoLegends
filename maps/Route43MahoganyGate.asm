@@ -7,12 +7,7 @@ Route43MahoganyGate_MapScripts:
 	db 0 ; callbacks
 
 Route43MahoganyGateOfficer:
-	faceplayer
-	opentext
-	writetext Route43MahoganyGateOfficerText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer Route43MahoganyGateOfficerText
 
 Route43MahoganyGateOfficerText:
 	text "The snow at the"

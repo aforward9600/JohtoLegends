@@ -19,10 +19,7 @@ TrainerBeautyBetty:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BeautyBettyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BeautyBettyAfterBattleText
 
 TrainerHikerBubba:
 	trainer HIKER, BUBBA, EVENT_BEAT_HIKER_BUBBA, HikerBubbaSeenText, HikerBubbaBeatenText, 0, .Script
@@ -30,10 +27,7 @@ TrainerHikerBubba:
 .Script:
 	endifjustbattled
 	opentext
-	writetext HikerBubbaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend HikerBubbaAfterBattleText
 
 TrainerPokeFanMRoberto:
 	trainer POKEFANM, ROBERTO, EVENT_BEAT_POKEFANM_ROBERTO, PokeFanMRobertoSeenText, PokeFanMRobertoBeatenText, 0, .Script
@@ -41,10 +35,7 @@ TrainerPokeFanMRoberto:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokeFanMRobertoAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend PokeFanMRobertoAfterBattleText
 
 TrainerFirebreatherBlart:
 	trainer FIREBREATHER, BLART, EVENT_BEAT_FIREBREATHER_BLART, FirebreatherBlartSeenText, FirebreatherBlartBeatenText, 0, .Script
@@ -52,10 +43,7 @@ TrainerFirebreatherBlart:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FirebreatherBlartAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend FirebreatherBlartAfterBattleText
 
 UnionCave1FDuskBall:
 	itemball DUSK_BALL

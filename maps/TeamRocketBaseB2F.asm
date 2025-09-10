@@ -59,7 +59,7 @@ RocketBaseCantLeaveScript:
 	applymovement TEAMROCKETBASEB2F_RIVAL, MovementData_0x6d212
 	turnobject TEAMROCKETBASEB2F_RIVAL, UP
 	turnobject PLAYER, DOWN
-.RivalGetsWingBack:
+RivalGetsWingBack:
 	opentext
 	writetext YouFoundTheWingsText
 	waitbutton
@@ -71,7 +71,7 @@ RocketBaseCantLeaveScript:
 	waitbutton
 	closetext
 	takeitem RAINBOW_WING
-	sjump .HaveYouSeenHer
+	sjump HaveYouSeenHer
 
 .GiveSilverWingBack:
 	opentext
@@ -79,7 +79,7 @@ RocketBaseCantLeaveScript:
 	waitbutton
 	closetext
 	takeitem SILVER_WING
-.HaveYouSeenHer:
+HaveYouSeenHer:
 	opentext
 	writetext LearnWhirlpoolText
 	buttonsound
@@ -113,42 +113,7 @@ RocketBaseCantLeaveScriptDown:
 	applymovement TEAMROCKETBASEB2F_RIVAL, MovementData_0x6d212
 	turnobject TEAMROCKETBASEB2F_RIVAL, DOWN
 	turnobject PLAYER, UP
-.RivalGetsWingBack:
-	opentext
-	writetext YouFoundTheWingsText
-	waitbutton
-	closetext
-	checkevent EVENT_GOT_RAINBOW_WING
-	iftrue .GiveSilverWingBack
-	opentext
-	writetext GaveBackRainbowWingText
-	waitbutton
-	closetext
-	takeitem RAINBOW_WING
-	sjump .HaveYouSeenHer
-
-.GiveSilverWingBack:
-	opentext
-	writetext GaveSilverWingText
-	waitbutton
-	closetext
-	takeitem SILVER_WING
-.HaveYouSeenHer:
-	opentext
-	writetext LearnWhirlpoolText
-	buttonsound
-	playsound SFX_GET_TM
-	waitsfx
-	setflag ENGINE_LAPRAS_CALLB
-	writetext HaveYouSeenHerText
-	waitbutton
-	closetext
-	applymovement TEAMROCKETBASEB2F_RIVAL, MovementData_0x6d212
-	disappear TEAMROCKETBASEB2F_RIVAL
-	setevent EVENT_TEAM_ROCKET_BASE_B2F_LANCE
-	setscene SCENE_TEAMROCKETBASEB2F_NOTHING
-	setevent EVENT_HIDEOUT_B3F_RIVAL
-	end
+	sjump RivalGetsWingBack
 
 HideoutGrannyScript:
 	jumptextfaceplayer HideoutGrannyText

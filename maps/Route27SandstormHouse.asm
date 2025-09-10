@@ -23,16 +23,10 @@ SandstormHouseWoman:
 	verbosegiveitem TM_SANDSTORM
 	setevent EVENT_GOT_TM37_SANDSTORM
 .AlreadyGotItem:
-	writetext SandstormHouseSandstormDescription
-	waitbutton
-	closetext
-	end
+	writetextend SandstormHouseSandstormDescription
 
 .Disloyal:
-	writetext SandstormHouseWomanDisloyalText
-	waitbutton
-	closetext
-	end
+	writetextend SandstormHouseWomanDisloyalText
 
 SandstormHouseBookshelf:
 	jumpstd genericsink

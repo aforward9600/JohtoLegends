@@ -14,10 +14,7 @@ TrainerSoldierDwight:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SoldierDwightAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SoldierDwightAfterBattleText
 
 TrainerSoldierSherman:
 	trainer SOLDIER, SHERMAN, EVENT_BEAT_SOLDIER_SHERMAN, SoldierShermanSeenText, SoldierShermanBeatenText, 0, .Script
@@ -25,10 +22,7 @@ TrainerSoldierSherman:
 .Script:
 	endifjustbattled
 	opentext
-	writetext SoldierShermanAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SoldierShermanAfterBattleText
 
 Route6Teacher:
 	jumptextfaceplayer Route6TeacherText

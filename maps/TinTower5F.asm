@@ -12,12 +12,8 @@ TinTower5FGruntF:
 
 .Script:
 	endifjustbattled
-	faceplayer
 	opentext
-	writetext TinTower5FGruntFAfterText
-	waitbutton
-	closetext
-	end
+	writetextend TinTower5FGruntFAfterText
 
 TinTower5FRareCandy:
 	itemball RARE_CANDY

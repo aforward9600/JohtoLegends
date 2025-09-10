@@ -17,10 +17,7 @@ TrainerFisherKyle:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherKyleAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend FisherKyleAfterBattleText
 
 TrainerFisherMartin:
 	trainer FISHER, MARTIN, EVENT_BEAT_FISHER_MARTIN, FisherMartinSeenText, FisherMartinBeatenText, 0, .Script
@@ -28,10 +25,7 @@ TrainerFisherMartin:
 .Script:
 	endifjustbattled
 	opentext
-	writetext FisherMartinAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend FisherMartinAfterBattleText
 
 Route12Fisher:
 	jumptextfaceplayer Route12FisherText
@@ -42,10 +36,7 @@ TrainerYoungsterBarney:
 .Script:
 	endifjustbattled
 	opentext
-	writetext YoungsterBarneyAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend YoungsterBarneyAfterBattleText
 
 Route12Sign:
 	jumptext Route12SignText

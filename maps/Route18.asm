@@ -13,10 +13,7 @@ TrainerBirdKeeperBoris:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperBorisAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BirdKeeperBorisAfterBattleText
 
 TrainerRoughneckMoe:
 	trainer ROUGHNECK, MOE, EVENT_BEAT_ROUGHNECK_MOE, RoughneckMoeSeenText, RoughneckMoeBeatenText, 0, .Script
@@ -24,10 +21,7 @@ TrainerRoughneckMoe:
 .Script:
 	endifjustbattled
 	opentext
-	writetext RoughneckMoeAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend RoughneckMoeAfterBattleText
 
 Route18Sign:
 	jumptext Route18SignText

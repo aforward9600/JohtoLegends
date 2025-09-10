@@ -19,12 +19,7 @@ Route36NationalParkGate_MapScripts:
 	end
 
 Route36NationalParkGateOfficerScript:
-	faceplayer
-	opentext
-	writetext Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText
 
 Route36ParkGate_DayToText:
 	jumpstd daytotext
