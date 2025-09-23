@@ -225,6 +225,7 @@ CHRIS EQU __enum__
 	const GRUNTM_17
 	const GRUNTM_18
 	const GRUNTM_22
+	const GRUNTM_23
 
 	trainerclass GENTLEMAN ; 20
 	const CROFTON
@@ -403,6 +404,7 @@ CHRIS EQU __enum__
 	const ARCHER_3
 	const ARCHER_4
 	const ARCHER_5
+	const ARCHER_6
 
 	trainerclass PSYCHIC_T ; 34
 	const JORDAN
@@ -440,6 +442,7 @@ CHRIS EQU __enum__
 	const ARIANA_3
 	const ARIANA_4
 	const ARIANA_5
+	const ARIANA_6
 
 	trainerclass SAGE ; 38
 	const CHOW
@@ -509,6 +512,7 @@ CHRIS EQU __enum__
 	const GRUNTF_12
 	const GRUNTF_13
 	const GRUNTF_14
+	const GRUNTF_15
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE

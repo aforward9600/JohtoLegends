@@ -106,7 +106,6 @@ MomScript:
 	ifequal SCENE_GRANDMA_TELLS_YOU_ABOUT_OAK, MeetGrandmaTalkedScript
 	ifequal SCENE_GRANDMA_GIVES_YOU_WATCH, MeetMomTalkedScript ; SCENE_DEFAULT
 .GrannySpeaks
-	opentext
 	checkevent EVENT_BEAT_CHAMPION_LANCE
 	iftrue .BeatLeague
 	checkevent EVENT_GOT_JOURNAL
@@ -115,16 +114,16 @@ MomScript:
 	iftrue .GaveMysteryEgg
 	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue .GotAPokemon
-	writetextend HurryUpElmIsWaitingText
+	jumptext HurryUpElmIsWaitingText
 
 .BeatLeague:
-	writetextend GrandmaCongratsText
+	jumptext GrandmaCongratsText
 
 .GotAPokemon:
-	writetextend SoWhatWasProfElmsErrandText
+	jumptext SoWhatWasProfElmsErrandText
 
 .FirstTimeBanking:
-	writetextend ImBehindYouText
+	jumptext ImBehindYouText
 
 .GaveMysteryEgg:
 	writetext OhWaitText

@@ -904,6 +904,8 @@ CheckBoostingAbilities:
 	jp z, TwentyPercentBoost
 	cp EFFECT_JUMP_KICK
 	jp z, TwentyPercentBoost
+	cp EFFECT_VOLT_TACKLE
+	jp z, TwentyPercentBoost
 	jp .NoBoostingAbilities
 
 .Overgrow:

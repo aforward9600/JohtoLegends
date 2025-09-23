@@ -16,25 +16,22 @@ TrainerLighthouseArcher:
 	trainer ARCHER, ARCHER_1, EVENT_BEAT_LIGHTHOUSE_ARCHER, LighthouseArcherSeenText, LighthouseArcherBeatenText, LighthouseArcherLostText, .Script
 
 .Script:
-	opentext
 	setevent EVENT_LIGHTHOUSE6F_SHERLES
-	writetextend LighthouseArcherAfterBattleText
+	jumptext LighthouseArcherAfterBattleText
 
 TrainerLighthouse5FRocket:
 	trainer GRUNTM, GRUNTM_7, EVENT_BEAT_ROCKET_GRUNTM_7, Lighthouse5FRocketSeenText, Lighthouse5FRocketBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend Lighthouse5FRocketAfterBattleText
+	jumptext Lighthouse5FRocketAfterBattleText
 
 TrainerLighthouse5FRocketF:
 	trainer GRUNTF, GRUNTF_5, EVENT_BEAT_ROCKET_GRUNTF_5, Lighthouse5FRocketFSeenText, Lighthouse5FRocketFBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend Lighthouse5FRocketFAfterBattleText
+	jumptext Lighthouse5FRocketFAfterBattleText
 
 Lighthouse5FOfficerScript:
 	jumptextfaceplayer Lighthouse5FOfficerText

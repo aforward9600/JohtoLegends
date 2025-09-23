@@ -144,32 +144,28 @@ TrainerBlackbeltYoshi:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BlackbeltYoshiAfterText
+	jumptext BlackbeltYoshiAfterText
 
 TrainerBlackbeltNob:
 	trainer BLACKBELT_T, NOB, EVENT_BEAT_BLACKBELT_NOB, BlackbeltNobSeenText, BlackbeltNobBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BlackbeltNobAfterText
+	jumptext BlackbeltNobAfterText
 
 TrainerBlackbeltLung:
 	trainer BLACKBELT_T, LUNG, EVENT_BEAT_BLACKBELT_LUNG, BlackbeltLungSeenText, BlackbeltLungBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BlackbeltLungAfterText
+	jumptext BlackbeltLungAfterText
 
 TrainerApprenticeChuck:
 	trainer CHUCK, CHUCK1, EVENT_BEAT_CHUCK, ChuckSeenText, ChuckBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend ChuckAfterText
+	jumptext ChuckAfterText
 
 CianwoodGymBoulder:
 	jumpstd strengthboulder

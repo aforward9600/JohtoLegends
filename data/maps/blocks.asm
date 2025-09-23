@@ -271,6 +271,7 @@ WildAreaMart_Blocks:
 LakeOfRageMart_Blocks:
 CinnabarIslandMart_Blocks:
 SevenIslandMart_Blocks:
+ThreeIslandMart_Blocks:
 	INCBIN "maps/Mart.ablk"
 
 Route10North_Blocks:
@@ -1187,3 +1188,6 @@ TanobiRuins_Blocks:
 
 OnaganTempleOutside_Blocks:
 	INCBIN "maps/OnaganTempleOutside.ablk"
+
+RocketWarehouse_Blocks:
+	INCBIN "maps/RocketWarehouse.ablk"

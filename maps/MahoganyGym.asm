@@ -136,52 +136,46 @@ MahoganyGymPryceScript:
 AfterPryceRematch:
 	startbattle
 	reloadmapafterbattle
-	opentext
 	setflag ENGINE_BEAT_PRYCE
-	writetextend PryceText_BeatenAgain
+	jumptext PryceText_BeatenAgain
 
 PryceScript_Defeat:
-	writetextend PryceText_GoodLooks
+	jumptext PryceText_GoodLooks
 
 TrainerSkierBrandy:
 	trainer SKIER, BRANDY, EVENT_BEAT_SKIER_BRANDY, SkierBrandySeenText, SkierBrandyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend SkierBrandyAfterBattleText
+	jumptext SkierBrandyAfterBattleText
 
 TrainerSkierPam:
 	trainer SKIER, PAM, EVENT_BEAT_SKIER_PAM, SkierPamSeenText, SkierPamBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend SkierPamAfterBattleText
+	jumptext SkierPamAfterBattleText
 
 TrainerBoarderSonny:
 	trainer BOARDER, SONNY, EVENT_BEAT_BOARDER_SONNY, BoarderSonnySeenText, BoarderSonnyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BoarderSonnyAfterBattleText
+	jumptext BoarderSonnyAfterBattleText
 
 MahoganyGymGuyScript:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_PRYCE
 	iftrue .MahoganyGymGuyWinScript
 if DEF(_FAITHFUL)
-	writetextend MahoganyGymGuyFaithfulText
+	jumptextfaceplayer MahoganyGymGuyFaithfulText
 elif DEF(_NOPSS)
-	writetextend MahoganyGymGuyFaithfulText
+	jumptextfaceplayer MahoganyGymGuyFaithfulText
 else
-	writetextend MahoganyGymGuyText
+	jumptextfaceplayer MahoganyGymGuyText
 endc
 
 .MahoganyGymGuyWinScript:
-	writetextend MahoganyGymGuyWinText
+	jumptextfaceplayer MahoganyGymGuyWinText
 
 GymGuyStopsYou1Script:
 	applymovement MAHOGANYGYM_GYM_GUY, StopsYouMovement1

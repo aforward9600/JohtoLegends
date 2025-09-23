@@ -562,6 +562,7 @@ ENDM
 	map_const BOND_BRIDGE,                                 40,  9 ; 18
 	map_const BERRY_FOREST,                                16, 19 ; 19
 	map_const THREE_ISLAND_POKECENTER,                      5,  4 ; 20
+	map_const THREE_ISLAND_MART,                            6,  4 ; 40
 	map_const FOUR_ISLAND_PORT,                             5,  9 ; 21
 	map_const FOUR_ISLAND,                                 24, 16 ; 22
 	map_const ICEFALL_CAVE_ENTRANCE,                       10, 12 ; 23
@@ -584,6 +585,7 @@ ENDM
 	map_const MEMORIAL_ISLAND,                             13, 20 ; 6
 	map_const FIVE_ISLAND_POKECENTER,                       5,  4 ; 7
 	map_const SELPHYS_HOUSE,                                4,  4 ; 8
+	map_const ROCKET_WAREHOUSE,                             7, 10 ; 9
 	map_const LOST_CAVE_ENTRANCE,                           5,  5 ; 9
 	map_const LOST_CAVE_ROOM_1,                             5,  5 ; 10
 	map_const LOST_CAVE_ROOM_2,                             5,  5 ; 11

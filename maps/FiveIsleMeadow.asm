@@ -8,7 +8,8 @@ FiveIsleMeadow_MapScripts:
 FiveIsleMeadow_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 1 ; warp events
+	warp_event  8, 19, ROCKET_WAREHOUSE, 1
 
 	db 0 ; coord events
 

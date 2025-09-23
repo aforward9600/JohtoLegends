@@ -41,34 +41,28 @@ WiseTriosRoom_MapScripts:
 	return
 
 WiseTriosRoomSage1Script:
-	faceplayer
-	opentext
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .WiseTriosRoomSage1Takeover
-	writetextend WiseTriosRoomSage1Text
+	jumptextfaceplayer WiseTriosRoomSage1Text
 
 .WiseTriosRoomSage1Takeover:
-	writetextend WiseTriosRoomSage1TakeoverText
+	jumptextfaceplayer WiseTriosRoomSage1TakeoverText
 
 WiseTriosRoomSage2Script:
-	faceplayer
-	opentext
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .WiseTriosRoomSage2Takeover
-	writetextend WiseTriosRoomSage2Text
+	jumptextfaceplayer WiseTriosRoomSage2Text
 
 .WiseTriosRoomSage2Takeover:
-	writetextend WiseTriosRoomSage2TakeoverText
+	jumptextfaceplayer WiseTriosRoomSage2TakeoverText
 
 WiseTriosRoomSage3Script:
-	faceplayer
-	opentext
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .WiseTriosRoomSage3Takeover
-	writetextend WiseTriosRoomSage3Text
+	jumptextfaceplayer WiseTriosRoomSage3Text
 
 .WiseTriosRoomSage3Takeover:
-	writetextend WiseTriosRoomSage3TakeoverText
+	jumptextfaceplayer WiseTriosRoomSage3TakeoverText
 
 WiseTriosRoom_CannotEnterTinTowerScript:
 	turnobject WISETRIOSROOM_SAGE3, UP

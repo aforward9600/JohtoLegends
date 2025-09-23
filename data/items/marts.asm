@@ -47,6 +47,9 @@ Marts:
 	dw MartCinnabarIsland
 	dw MartBerries1
 	dw MartBerries2
+	dw MartThreeIsland
+	dw MartFourIsland
+	dw MartFourIsland
 	dw MartSevenIsland
 .End
 
@@ -572,3 +575,25 @@ MartSevenIsland:
 	db REVIVE
 	db ESCAPE_ROPE
 	db -1 ; end
+
+MartThreeIsland:
+	db 6
+	db ULTRA_BALL
+	db REVIVE
+	db ESCAPE_ROPE
+	db HYPER_POTION
+	db FULL_HEAL
+	db MAX_REPEL
+	db -1
+
+MartFourIsland:
+	db 8
+	db ULTRA_BALL
+	db MAX_POTION
+	db ICE_HEAL
+	db ESCAPE_ROPE
+	db FULL_RESTORE
+	db REVIVE
+	db FULL_HEAL
+	db MAX_REPEL
+	db -1
