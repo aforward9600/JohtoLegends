@@ -155,6 +155,11 @@ OneIslandHouse_Blocks:
 CapeBrinkHouse_Blocks:
 TwoIslandHouse_Blocks:
 TwoIslandGameHouse_Blocks:
+ThreeIslandHouse1_Blocks:
+ThreeIslandHouse2_Blocks:
+ThreeIslandHouse3_Blocks:
+ThreeIslandHouse4_Blocks:
+ThreeIslandHouse5_Blocks:
 	INCBIN "maps/House1.ablk"
 
 BillsFamilysHouse_Blocks:

@@ -562,7 +562,12 @@ ENDM
 	map_const BOND_BRIDGE,                                 40,  9 ; 18
 	map_const BERRY_FOREST,                                16, 19 ; 19
 	map_const THREE_ISLAND_POKECENTER,                      5,  4 ; 20
-	map_const THREE_ISLAND_MART,                            6,  4 ; 40
+	map_const THREE_ISLAND_MART,                            6,  4 ; 21
+	map_const THREE_ISLAND_HOUSE_1,                         5,  4 ; 
+	map_const THREE_ISLAND_HOUSE_2,                         5,  4 ; 
+	map_const THREE_ISLAND_HOUSE_3,                         5,  4 ; 
+	map_const THREE_ISLAND_HOUSE_4,                         5,  4 ; 
+	map_const THREE_ISLAND_HOUSE_5,                         5,  4 ; 
 	map_const FOUR_ISLAND_PORT,                             5,  9 ; 21
 	map_const FOUR_ISLAND,                                 24, 16 ; 22
 	map_const ICEFALL_CAVE_ENTRANCE,                       10, 12 ; 23

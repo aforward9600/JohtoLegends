@@ -799,6 +799,11 @@ ENDM
 	map_attributes RegiceChamber, REGICE_CHAMBER, $00, 0
 	map_attributes ThreeIslandMart, THREE_ISLAND_MART, $00, 0
 	map_attributes RocketWarehouse, ROCKET_WAREHOUSE, $00, 0
+	map_attributes ThreeIslandHouse1, THREE_ISLAND_HOUSE_1, $00, 0
+	map_attributes ThreeIslandHouse2, THREE_ISLAND_HOUSE_2, $00, 0
+	map_attributes ThreeIslandHouse3, THREE_ISLAND_HOUSE_3, $00, 0
+	map_attributes ThreeIslandHouse4, THREE_ISLAND_HOUSE_4, $00, 0
+	map_attributes ThreeIslandHouse5, THREE_ISLAND_HOUSE_5, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1
