@@ -5,6 +5,12 @@ IcefallCave1F_MapScripts:
 
 	db 0 ; callbacks
 
+IcefallCave1FIceStone:
+	itemball ICE_STONE
+
+IcefallCave1FUltraBall:
+	itemball ULTRA_BALL
+
 IcefallCave1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -24,5 +30,7 @@ IcefallCave1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 2 ; object events
+	object_event 11,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcefallCave1FUltraBall, EVENT_ICEFALL_CAVE_1F_ULTRA_BALL
+	object_event 12, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcefallCave1FIceStone, EVENT_ICEFALL_CAVE_1F_ICE_STONE
 	

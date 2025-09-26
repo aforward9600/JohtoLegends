@@ -5,6 +5,12 @@ IcefallCave2F_MapScripts:
 
 	db 0 ; callbacks
 
+IcefallCave2FNevermeltice:
+	itemball NEVERMELTICE
+
+IcefallCave2FFullRestore:
+	itemball FULL_RESTORE
+
 IcefallCave2F_MapEvents:
 	db 0, 0 ; filler
 
@@ -21,5 +27,7 @@ IcefallCave2F_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 2 ; object events
+	object_event 15,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcefallCave2FNevermeltice, EVENT_ICEFALL_CAVE_2F_NEVERMELTICE
+	object_event  6, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcefallCave2FFullRestore, EVENT_ICEFALL_CAVE_2F_FULL_RESTORE
 	

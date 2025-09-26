@@ -563,22 +563,27 @@ ENDM
 	map_const BERRY_FOREST,                                16, 19 ; 19
 	map_const THREE_ISLAND_POKECENTER,                      5,  4 ; 20
 	map_const THREE_ISLAND_MART,                            6,  4 ; 21
-	map_const THREE_ISLAND_HOUSE_1,                         5,  4 ; 
-	map_const THREE_ISLAND_HOUSE_2,                         5,  4 ; 
-	map_const THREE_ISLAND_HOUSE_3,                         5,  4 ; 
-	map_const THREE_ISLAND_HOUSE_4,                         5,  4 ; 
-	map_const THREE_ISLAND_HOUSE_5,                         5,  4 ; 
-	map_const FOUR_ISLAND_PORT,                             5,  9 ; 21
-	map_const FOUR_ISLAND,                                 24, 16 ; 22
-	map_const ICEFALL_CAVE_ENTRANCE,                       10, 12 ; 23
-	map_const ICEFALL_CAVE_1F,                             10,  9 ; 24
-	map_const ICEFALL_CAVE_2F,                              9, 11 ; 25
-	map_const ICEFALL_CAVE_BACK_CAVE,                      12, 12 ; 26
-	map_const REGICE_PUZZLE_CHAMBER,                        4,  4 ; 27
-	map_const REGICE_CHAMBER,                               5,  5 ; 28
-	map_const FOUR_ISLAND_POKECENTER,                       5,  4 ; 29
-	map_const CELIOS_HOUSE,                                 5,  4 ; 30
-	map_const ONE_ISLAND_HOUSE,                             5,  4 ; 31
+	map_const THREE_ISLAND_HOUSE_1,                         5,  4 ; 22
+	map_const THREE_ISLAND_HOUSE_2,                         5,  4 ; 23
+	map_const THREE_ISLAND_HOUSE_3,                         5,  4 ; 24
+	map_const THREE_ISLAND_HOUSE_4,                         5,  4 ; 25
+	map_const THREE_ISLAND_HOUSE_5,                         5,  4 ; 26
+	map_const FOUR_ISLAND_PORT,                             5,  9 ; 27
+	map_const FOUR_ISLAND,                                 24, 16 ; 28
+	map_const FOUR_ISLAND_MART,                             6,  4 ; 29
+	map_const FOUR_ISLAND_HOUSE_1,                          5,  4 ; 30
+	map_const FOUR_ISLAND_HOUSE_2,                          5,  4 ; 31
+	map_const FOUR_ISLAND_HOUSE_3,                          5,  4 ; 32
+	map_const FOUR_ISLAND_LORELEIS_HOUSE,                   5,  4 ; 33
+	map_const ICEFALL_CAVE_ENTRANCE,                       10, 12 ; 34
+	map_const ICEFALL_CAVE_1F,                             10,  9 ; 35
+	map_const ICEFALL_CAVE_2F,                              9, 11 ; 36
+	map_const ICEFALL_CAVE_BACK_CAVE,                      12, 12 ; 37
+	map_const REGICE_PUZZLE_CHAMBER,                        4,  4 ; 38
+	map_const REGICE_CHAMBER,                               5,  5 ; 39
+	map_const FOUR_ISLAND_POKECENTER,                       5,  4 ; 40
+	map_const CELIOS_HOUSE,                                 5,  4 ; 41
+	map_const ONE_ISLAND_HOUSE,                             5,  4 ; 42
 
 	newgroup
 

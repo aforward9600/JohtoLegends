@@ -160,6 +160,10 @@ ThreeIslandHouse2_Blocks:
 ThreeIslandHouse3_Blocks:
 ThreeIslandHouse4_Blocks:
 ThreeIslandHouse5_Blocks:
+FourIslandHouse1_Blocks:
+FourIslandHouse2_Blocks:
+FourIslandHouse3_Blocks:
+FourIslandLoreleisHouse_Blocks:
 	INCBIN "maps/House1.ablk"
 
 BillsFamilysHouse_Blocks:
@@ -277,6 +281,7 @@ LakeOfRageMart_Blocks:
 CinnabarIslandMart_Blocks:
 SevenIslandMart_Blocks:
 ThreeIslandMart_Blocks:
+FourIslandMart_Blocks:
 	INCBIN "maps/Mart.ablk"
 
 Route10North_Blocks:
