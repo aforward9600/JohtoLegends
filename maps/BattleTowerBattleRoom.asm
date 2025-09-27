@@ -107,11 +107,6 @@ Script_BeatenAllTrainers2:
 	writetext Text_CongratulationsYouveBeatenAllTheTrainers
 	sjump Script_GivePlayerHisPrize
 
-Text_ReturnedAfterSave_Mobile:
-	text "You'll be returned"
-	line "after you save."
-	done
-
 BattleTowerBattleRoom_MapEvents:
 	db 0, 0 ; filler
 

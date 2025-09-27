@@ -80,10 +80,8 @@ endr
 
 	jr nz, .next
 
-	ldh a, [hSPBuffer]
-	ld l, a
-	ldh a, [hSPBuffer + 1]
-	ld h, a
+	ld sp, hSPBuffer
+	pop hl
 	ld sp, hl
 
 	pop af
@@ -255,10 +253,8 @@ endr
 	dec a
 	jr nz, .row
 
-	ldh a, [hSPBuffer]
-	ld l, a
-	ldh a, [hSPBuffer + 1]
-	ld h, a
+	ld sp, hSPBuffer
+	pop hl
 	ld sp, hl
 	ret
 
@@ -282,9 +278,8 @@ Serve1bppRequest::
 
 ; Source
 	ld hl, wRequested1bppSource
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
+	ld sp, hl
+	pop hl
 	ld sp, hl
 
 ; Destination
@@ -333,10 +328,8 @@ endr
 
 	ld [wRequested1bppSource], sp
 
-	ldh a, [hSPBuffer]
-	ld l, a
-	ldh a, [hSPBuffer + 1]
-	ld h, a
+	ld sp, hSPBuffer
+	pop hl
 	ld sp, hl
 	ret
 
@@ -367,9 +360,8 @@ _Serve2bppRequest::
 
 ; Source
 	ld hl, wRequested2bppSource
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
+	ld sp, hl
+	pop hl
 	ld sp, hl
 
 ; Destination
@@ -410,10 +402,8 @@ endr
 
 	ld [wRequested2bppSource], sp
 
-	ldh a, [hSPBuffer]
-	ld l, a
-	ldh a, [hSPBuffer + 1]
-	ld h, a
+	ld sp, hSPBuffer
+	pop hl
 	ld sp, hl
 	ret
 

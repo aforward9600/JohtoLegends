@@ -282,10 +282,6 @@ AzaleaTownSlowpokeText2:
 	text "<……> <……>Yawn?"
 	done
 
-WoosterText:
-	text "Wooster: Gugyoo…"
-	done
-
 AzaleaTownSignText:
 	text "Azalea Town"
 	line "Where People and"

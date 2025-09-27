@@ -436,9 +436,8 @@ AnimateFountain:
 	jr nc, .okay
 	inc h
 .okay
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
+	ld sp, hl
+	pop hl
 	ld sp, hl
 	ld l, e
 	ld h, d

@@ -8,24 +8,22 @@ RivalsHouse1F_MapScripts:
 	db 0 ; callbacks
 
 RivalsDadScript:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_CHAMPION_LANCE
 	iftrue .CongratsDad
 	checkevent EVENT_BEAT_RIVALS_HOUSE_RIVAL
 	iftrue .RivalIsGone
 	checkevent EVENT_RIVALS_HOUSE_RIVAL
 	iffalse .WhatHappenedToRival
-	writetextend RivalsDadText
+	jumptextfaceplayer RivalsDadText
 
 .RivalIsGone:
-	writetextend RivalIsGoneText
+	jumptextfaceplayer RivalIsGoneText
 
 .WhatHappenedToRival:
-	writetextend WhatHappenedToRivalText
+	jumptextfaceplayer WhatHappenedToRivalText
 
 .CongratsDad:
-	writetextend CongratsDadText
+	jumptextfaceplayer CongratsDadText
 
 RivalsMomScript:
 	faceplayer

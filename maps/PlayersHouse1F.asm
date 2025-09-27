@@ -83,8 +83,6 @@ MeetMomScript:
 
 .FromLeft:
 	applymovement PLAYERSHOUSE1F_GRANNY1, MomWalksBackMovement
-	sjump .Finish
-
 .Finish:
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_GRANNY1, LEFT
@@ -133,15 +131,12 @@ MomScript:
 	playsound SFX_ITEM
 	waitsfx
 	setflag ENGINE_POKEDEX
-	writetext GrandmaJournalText
-	waitbutton
-	closetext
 	setevent EVENT_GOT_JOURNAL
 	setevent EVENT_BLACKTHORN_HIKER
 	setevent EVENT_BLACKTHORN_BLACK_BELT
 	setmapscene BLACKTHORN_CITY, SCENE_BLACKTHORN_CITY_NOTHING
 	setmapscene ICE_PATH_B1F, SCENE_ICE_PATH_B1F_RIVAL
-	end
+	jumptext GrandmaJournalText
 
 MeetGrandmaLeftScript:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -158,6 +153,8 @@ MeetGrandmaRightScript:
 	applymovement PLAYERSHOUSE1F_GRANNY1, MomWalksToPlayerMovement
 MeetGrandmaScript:
 	opentext
+	writetext RivalCameByText
+	waitbutton
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .DracoCameBy
 	writetext DahliaCameByText
@@ -180,8 +177,6 @@ MeetGrandmaScript:
 
 .FromLeft2:
 	applymovement PLAYERSHOUSE1F_GRANNY1, MomWalksBackMovement
-	sjump .Finish2
-
 .Finish2:
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_GRANNY1, LEFT
@@ -216,8 +211,6 @@ NeighborScript:
 .DayScript:
 	writetext NeighborDayIntroText
 	buttonsound
-	sjump .Main
-
 .Main:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Main2
@@ -229,15 +222,15 @@ NeighborScript:
 	sjump .EndNeighborScript
 
 .CongratulationsOnBeingChampion:
+	writetext CongratulationsOnBeingChampionText
+	waitbutton
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .CongratsFemale
-	writetext CongratulationsOnBeingChampionText
+	writetext CongratsMaleText
 	sjump .EndNeighborScript
 
 .CongratsFemale:
 	writetext CongratsFemaleText
-	sjump .EndNeighborScript
-
 .EndNeighborScript:
 	waitbutton
 	closetext
@@ -563,7 +556,7 @@ GrandmaJournalText:
 	para "Time to head out!"
 	done
 
-DahliaCameByText:
+RivalCameByText:
 	text "Ah, there you are,"
 	line "<PLAYER>!"
 
@@ -577,8 +570,10 @@ DahliaCameByText:
 	para "Oh, by the way…"
 
 	para "<RIVAL> came by."
+	done
 
-	para "She said to meet"
+DahliaCameByText:
+	text "She said to meet"
 	line "her at the gate"
 	cont "to Victory Road."
 
@@ -590,21 +585,7 @@ DahliaCameByText:
 	done
 
 DracoCameByText:
-	text "Ah, there you are,"
-	line "<PLAYER>!"
-
-	para "Congratulations on"
-	line "becoming Champion!"
-
-	para "I'm certain your"
-	line "parents would be"
-	cont "proud!"
-
-	para "Oh, by the way…"
-
-	para "<RIVAL> came by."
-
-	para "He said to meet"
+	text "He said to meet"
 	line "him at the gate"
 	cont "to Victory Road."
 
@@ -624,8 +605,10 @@ CongratulationsOnBeingChampionText:
 	para "I'm proud of you,"
 	line "and <RIVAL> as"
 	cont "well!"
+	done
 
-	para "She's taking the"
+CongratsMaleText:
+	text "She's taking the"
 	line "loss better than"
 	cont "I thought she"
 
@@ -641,16 +624,7 @@ CongratulationsOnBeingChampionText:
 	done
 
 CongratsFemaleText:
-	text "<PLAYER>!"
-
-	para "Congratulations on"
-	line "becoming champion!"
-
-	para "I'm proud of you,"
-	line "and <RIVAL> as"
-	cont "well!"
-
-	para "He's taking the"
+	text "He's taking the"
 	line "loss better than"
 	cont "I thought he"
 
@@ -678,8 +652,7 @@ PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  6,  7, FOUR_ISLAND, 1
-;	warp_event  6,  7, BLACKTHORN_CITY, 9
+	warp_event  6,  7, BLACKTHORN_CITY, 9
 	warp_event  7,  7, BLACKTHORN_CITY, 9
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
 

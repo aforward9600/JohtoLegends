@@ -45,8 +45,7 @@ BlackthornDragonSpeechHouseDratiniScript:
 	cry DRATINI
 	waitbutton
 	closepokepic
-	opentext
-	writetextend BlackthornDragonSpeechHouseDratiniText
+	jumptext BlackthornDragonSpeechHouseDratiniText
 
 BlackthornDragonSpeechHouseGrannyText:
 	text "A clan of trainers"

@@ -651,4 +651,5 @@ GenerateShinySwarm:
 	ld a, b
 	ld [hli], a
 	ld [hl], c
+	farcall SetEnemyAbility
 	ret

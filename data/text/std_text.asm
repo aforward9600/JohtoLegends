@@ -89,17 +89,6 @@ MagazineBookshelfText:
 	done
 
 TeamRocketOathText:
-	text "Team Rocket Oath"
-
-	para "Steal #mon for"
-	line "profit!"
-
-	para "Exploit #mon"
-	line "for profit!"
-
-	para "All #mon exist"
-	line "for the glory of"
-	cont "Team Rocket!"
 	done
 
 IncenseBurnerText:

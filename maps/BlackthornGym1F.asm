@@ -112,42 +112,36 @@ BlackthornGymMasterScript:
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_BEAT_MASTER
-	opentext
-	writetextend MasterBeatenAgainText
+	jumptext MasterBeatenAgainText
 
 TrainerDragonTamermDevin:
 	trainer DRAGON_TAMER_M, DEVIN, EVENT_BEAT_DRAGON_TAMER_M_DEVIN, DragonTamermDevinSeenText, DragonTamermDevinBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend DragonTamermDevinAfterBattleText
+	jumptext DragonTamermDevinAfterBattleText
 
 TrainerDragonTamermDavis:
 	trainer DRAGON_TAMER_M, DAVIS, EVENT_BEAT_DRAGON_TAMER_M_DAVIS, DragonTamermDavisSeenText, DragonTamermDavisBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend DragonTamermDavisAfterBattleText
+	jumptext DragonTamermDavisAfterBattleText
 
 TrainerDragonTamerfDani:
 	trainer DRAGON_TAMER_F, DANI, EVENT_BEAT_DRAGON_TAMER_F_DANI, DragonTamerfDaniSeenText, DragonTamerfDaniBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend DragonTamerfDaniAfterBattleText
+	jumptext DragonTamerfDaniAfterBattleText
 
 BlackthornGymGuyScript:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_MASTER
 	iftrue .BlackthornGymGuyWinScript
-	writetextend BlackthornGymGuyText
+	jumptextfaceplayer BlackthornGymGuyText
 
 .BlackthornGymGuyWinScript:
-	writetextend BlackthornGymGuyWinText
+	jumptextfaceplayer BlackthornGymGuyWinText
 
 BlackthornGymStatue:
 	checkflag ENGINE_RISINGBADGE

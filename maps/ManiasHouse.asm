@@ -21,8 +21,7 @@ SneaselScript:
 	cry SNEASEL
 	waitbutton
 	closepokepic
-	opentext
-	writetextend SneaselText
+	jumptext SneaselText
 
 ShuckleScript:
 	refreshscreen
@@ -30,8 +29,7 @@ ShuckleScript:
 	cry SHUCKLE
 	waitbutton
 	closepokepic
-	opentext
-	writetextend ShuckleText
+	jumptext ShuckleText
 
 MyPokemonAreCoolText:
 	text "Aren't my #mon"

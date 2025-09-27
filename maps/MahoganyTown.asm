@@ -18,14 +18,7 @@ MahoganyTown_MapScripts:
 	return
 
 MahoganyTownGrampsScript:
-	faceplayer
-	opentext
-	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
-	iftrue .ClearedRocketHideout
-	writetextend MahoganyTownGrampsText
-
-.ClearedRocketHideout:
-	writetextend MahoganyTownGrampsText_ClearedRocketHideout
+	jumptextfaceplayer MahoganyTownGrampsText
 
 MahoganyTownFisherScript:
 	jumptextfaceplayer MahoganyTownFisherText
@@ -94,16 +87,6 @@ MahoganyTownGrampsText:
 	para "Someday they may"
 	line "no longer be"
 	cont "here…"
-	done
-
-MahoganyTownGrampsText_ClearedRocketHideout:
-	text "MAGIKARP have"
-	line "returned to LAKE"
-	cont "OF RAGE."
-
-	para "That should be"
-	line "good news for the"
-	cont "anglers there."
 	done
 
 MahoganyTownFisherText:

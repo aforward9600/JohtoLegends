@@ -88,51 +88,31 @@ FuchsiaGymNinjaF1:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend FuchsiaGymNinjaF1AfterText
+	jumptext FuchsiaGymNinjaF1AfterText
 
 FuchsiaGymNinjaF2:
 	trainer FNINJA_F, FNINJA_F_2, EVENT_BEAT_FNINJA_F2, FuchsiaGymNinjaF2BeforeText, FuchsiaGymNinjaF2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend FuchsiaGymNinjaF2AfterText
+	jumptext FuchsiaGymNinjaF2AfterText
 
 FuchsiaGymNinjaM1:
 	trainer FNINJA_M, FNINJA_M_1, EVENT_BEAT_FNINJA_M1, FuchsiaGymNinjaM1BeforeText, FuchsiaGymNinjaM1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend FuchsiaGymNinjaM1AfterText
+	jumptext FuchsiaGymNinjaM1AfterText
 
 FuchsiaGymNinjaM2:
 	trainer FNINJA_M, FNINJA_M_2, EVENT_BEAT_FNINJA_M2, FuchsiaGymNinjaM2BeforeText, FuchsiaGymNinjaM2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend FuchsiaGymNinjaM2AfterText
+	jumptext FuchsiaGymNinjaM2AfterText
 
 FuchsiaGymStatue:
 	jumptext FuchsiaGymStatueText
-
-Movement_NinjaSpin:
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	step_end
 
 KogaText_Welcome:
 	text "Koga: It's been a"

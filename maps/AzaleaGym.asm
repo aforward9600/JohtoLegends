@@ -117,50 +117,43 @@ TrainerTwinsGingerandsam1:
 
 .AfterScript:
 	endifjustbattled
-	opentext
-	writetextend TwinsGingerandsam1AfterBattleText
+	jumptext TwinsGingerandsam1AfterBattleText
 
 TrainerTwinsGingerandsam2:
-	trainer TWINS, GINGERANDSAM2, EVENT_BEAT_TWINS_GINGER_AND_SAM, TwinsGingerandsam2SeenText, TwinsGingerandsam2BeatenText, 0, .AfterScript
+	trainer TWINS, GINGERANDSAM2, EVENT_BEAT_TWINS_GINGER_AND_SAM, TwinsGingerandsam2SeenText, TwinsGingerandsam1BeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
-	opentext
-	writetextend TwinsGingerandsam2AfterBattleText
+	jumptext TwinsGingerandsam2AfterBattleText
 
 TrainerBugCatcherNat:
 	trainer BUG_CATCHER, NAT, EVENT_BEAT_BUG_CATCHER_NAT, BugCatcherNatSeenText, BugCatcherNatBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
-	opentext
-	writetextend BugCatcherNatAfterBattleText
+	jumptext BugCatcherNatAfterBattleText
 
 TrainerBugCatcherPete:
 	trainer BUG_CATCHER, PETE, EVENT_BEAT_BUG_CATCHER_PETE, BugCatcherPeteSeenText, BugCatcherPeteBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
-	opentext
-	writetextend BugCatcherPeteAfterBattleText
+	jumptext BugCatcherPeteAfterBattleText
 
 TrainerBugCatcherMarty:
 	trainer BUG_CATCHER, MARTY, EVENT_BEAT_BUG_CATCHER_MARTY, BugCatcherMartySeenText, BugCatcherMartyBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
-	opentext
-	writetextend BugCatcherMartyAfterBattleText
+	jumptext BugCatcherMartyAfterBattleText
 
 AzaleaGymGuyScript:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_KURT
 	iftrue .AzaleaGymGuyWinScript
-	writetextend AzaleaGymGuyText
+	jumptextfaceplayer AzaleaGymGuyText
 
 .AzaleaGymGuyWinScript:
-	writetextend AzaleaGymGuyWinText
+	jumptextfaceplayer AzaleaGymGuyWinText
 
 AzaleaGymStatue:
 	checkevent EVENT_CLEARED_TIN_TOWER
@@ -347,11 +340,6 @@ TwinsGingerandsam2SeenText:
 
 	para "I think they're"
 	line "strong!"
-	done
-
-TwinsGingerandsam2BeatenText:
-	text "Sami & Sam:"
-	line "Double dang!"
 	done
 
 TwinsGingerandsam2AfterBattleText:
