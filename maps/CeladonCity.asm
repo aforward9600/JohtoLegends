@@ -50,8 +50,7 @@ CeladonCityPoliwrath:
 	cry POLIWAG
 	waitbutton
 	closepokepic
-	opentext
-	writetextend CeladonCityPoliwrathText
+	jumptext CeladonCityPoliwrathText
 
 CeladonCityTeacher1Script:
 	jumptextfaceplayer CeladonCityTeacher1Text

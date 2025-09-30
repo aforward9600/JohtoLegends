@@ -124,6 +124,7 @@ MomScript:
 	jumptext ImBehindYouText
 
 .GaveMysteryEgg:
+	opentext
 	writetext OhWaitText
 	buttonsound
 	waitsfx

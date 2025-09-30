@@ -29,14 +29,12 @@ BlackthornMartClerk2Script:
 	end
 
 BlackthornMartCooltrainerMScript:
-	faceplayer
-	opentext
 	checkevent EVENT_GOT_JOURNAL
 	iftrue .PokeBallsInStock
-	writetextend BlackthornMartCooltrainerMText
+	jumptextfaceplayer BlackthornMartCooltrainerMText
 
 .PokeBallsInStock:
-	writetextend BlackthornMartCooltrainerMText_PokeBallsInStock
+	jumptextfaceplayer BlackthornMartCooltrainerMText_PokeBallsInStock
 
 BlackthornMartBlackBeltScript:
 	jumptextfaceplayer BlackthornMartBlackBeltText

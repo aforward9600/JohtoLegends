@@ -53,10 +53,10 @@ BattleCommand_Present:
 	jr c, .already_fully_healed
 
 	ld hl, GetQuarterMaxHP
-	farcall CallBattleCore
+	call CallBattleCore2
 	call BattleCommand_SwitchTurn2
 	ld hl, RestoreHP
-	farcall CallBattleCore
+	call CallBattleCore2
 	call BattleCommand_SwitchTurn2
 	ld hl, RegainedHealthText
 	call StdBattleTextbox

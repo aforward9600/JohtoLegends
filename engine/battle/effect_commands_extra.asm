@@ -1,3 +1,8 @@
+CallBattleCore2:
+	ld a, BANK("Battle Core")
+	rst FarCall
+	ret
+
 BattleCommand_UsedMoveText:
 ; usedmovetext
 	farcall DisplayUsedMoveText

@@ -20,10 +20,6 @@ SetPlayerAbility::
 
 SetEnemyAbility::
 
-	ld a, [wGBPrinterBrightness]
-	cp OPT_PRINT_LIGHTEST
-	jr nz, .NoAbility
-
 	ld a, [wBattleType]
 	cp BATTLETYPE_SHINY
 	jr z, .HiddenAbility
@@ -66,6 +62,9 @@ SetEnemyAbility::
 	ld a, 2
 .FinishEnemyAbility
 	ld [wEnemyMonAbility], a
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jr nz, .NoAbility
 	ld hl, wEnemyMonAbility
 	ld a, [wEnemyMonSpecies]
 	ld c, a

@@ -19,8 +19,7 @@ TrainerFisherFred:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend FisherFredAfterBattleText
+	jumptext FisherFredAfterBattleText
 
 TrainerPsychicJordan:
 	trainer PSYCHIC_T, JORDAN, EVENT_BEAT_PSYCHIC_JORDAN, PsychicJordanSeenText, PsychicJordanBeatenText, 0, .Script

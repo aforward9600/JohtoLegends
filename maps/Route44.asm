@@ -55,32 +55,28 @@ TrainerSchoolboyFinn:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend SchoolboyFinnAfterBattleText
+	jumptext SchoolboyFinnAfterBattleText
 
 TrainerFisherLyle:
 	trainer FISHER, LYLE1, EVENT_BEAT_FISHER_LYLE, FisherLyleSeenText, FisherLyleBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend FisherLyleAfterBattleText
+	jumptext FisherLyleAfterBattleText
 
 TrainerFisherButch:
 	trainer FISHER, BUTCH, EVENT_BEAT_FISHER_BUTCH, FisherButchSeenText, FisherButchBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend FisherButchAfterBattleText
+	jumptext FisherButchAfterBattleText
 
 TrainerYoungsterGordy:
 	trainer YOUNGSTER, GORDY, EVENT_BEAT_YOUNGSTER_GORDY, YoungsterGordySeenText, YoungsterGordyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend YoungsterGordyAfterBattleText
+	jumptext YoungsterGordyAfterBattleText
 
 Route44Sign1:
 	jumptext Route44Sign1Text

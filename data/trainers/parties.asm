@@ -5856,23 +5856,29 @@ PicnickerGroup:
 	db -1 ; end
 
 	next_list_item ; PICNICKER (2)
-	db "Chloe@", TRAINERTYPE_NORMAL
+	db "Chloe@", TRAINERTYPE_ABILITY
 	db 29
 	dw NIDORINO
+	db 1 ; RIVALRY
 	db 29
 	dw ARCANINE
+	db 2 ; JUSTIFIED
 	db 29
 	dw WEEPINBELL
+	db 0 ; CHLOROPHYLL
 	db -1 ; end
 
 	next_list_item ; PICNICKER (3)
-	db "Chloe@", TRAINERTYPE_NORMAL
+	db "Chloe@", TRAINERTYPE_ABILITY
 	db 12
 	dw NIDORAN_M
+	db 1 ; RIVALRY
 	db 12
 	dw GROWLITHE
+	db 2 ; JUSTIFIED
 	db 12
 	dw BELLSPROUT
+	db 0 ; CHLOROPHYLL
 	db -1 ; end
 
 	next_list_item ; PICNICKER (4) Route 32
@@ -5917,16 +5923,19 @@ PicnickerGroup:
 	db -1 ; end
 
 	next_list_item ; PICNICKER (2)
-	db "Chloe@", TRAINERTYPE_MOVES
+	db "Chloe@", TRAINERTYPE_MOVES | TRAINERTYPE_ABILITY
 	db 32
 	dw NIDOKING
 	dw BULLDOZE, POISON_JAB, MEGAHORN, BULK_UP
+	db 1 ; RIVALRY
 	db 32
 	dw ELECTIVIRE
 	dw THUNDERPUNCH, CROSS_CHOP, THUNDER_WAVE, ICE_PUNCH
+	db 2 ; IRON_FIST
 	db 32
 	dw VICTREEBEL
 	dw KNOCK_OFF, SLEEP_POWDER, POWER_WHIP, POISON_JAB
+	db 0 ; CHLOROPHYLL
 	db -1 ; end
 
 	next_list_item ; PICNICKER (19)
@@ -5950,16 +5959,19 @@ PicnickerGroup:
 
 CamperGroup:
 	next_list_item ; CAMPER (1)
-	db "Garret@", TRAINERTYPE_MOVES
+	db "Garret@", TRAINERTYPE_MOVES | TRAINERTYPE_ABILITY
 	db 10
 	dw GEODUDE
 	dw ROLLOUT, ROCK_POLISH, MUD_SLAP, DEFENSE_CURL
+	db 1 ; ROCK_HEAD
 	db 11
 	dw SANDSHREW
 	dw FURY_CUTTER, RAPID_SPIN, DEFENSE_CURL, ROLLOUT
+	db 0 ; SAND_VEIL
 	db 9
 	dw METAPOD
 	dw TACKLE, HARDEN, STRING_SHOT, NO_MOVE
+	db 0 ; SHED_SKIN
 	db -1 ; end
 
 	next_list_item ; CAMPER (2) Route 32
@@ -6011,29 +6023,35 @@ CamperGroup:
 	db -1 ; end
 
 	next_list_item ; CAMPER (1)
-	db "Garret@", TRAINERTYPE_MOVES
+	db "Garret@", TRAINERTYPE_MOVES | TRAINERTYPE_ABILITY
 	db 29
 	dw GRAVELER
 	dw SELFDESTRUCT, BULLDOZE, ROCK_TOMB, ROCK_POLISH
+	db 1 ; ROCK_HEAD
 	db 29
 	dw SANDSLASH
 	dw SLASH, MAGNITUDE, RAPID_SPIN, ROLLOUT
+	db 0 ; SAND_VEIL
 	db 29
 	dw MAGCARGO
 	dw SHELL_SMASH, FLAME_BURST, ANCIENTPOWER, FLASH_CANNON
+	db 0 ; MAGMA_ARMOR
 	db -1 ; end
 
 	next_list_item ; CAMPER (1)
-	db "Garret@", TRAINERTYPE_MOVES
+	db "Garret@", TRAINERTYPE_MOVES | TRAINERTYPE_ABILITY
 	db 42
 	dw GOLEM
 	dw SELFDESTRUCT, EARTHQUAKE, ROCK_SLIDE, GYRO_BALL
+	db 1 ; ROCK_HEAD
 	db 42
 	dw AGGRON
-	dw IRON_TAIL, IRON_DEFENSE, EARTHQUAKE, STONE_EDGE
+	dw IRON_TAIL, DOUBLE_EDGE, EARTHQUAKE, STONE_EDGE
+	db 1 ; ROCK_HEAD
 	db 42
 	dw POLIWRATH
 	dw WATERFALL, SUBMISSION, ICE_PUNCH, HYPNOSIS
+	db 0 ; WATER_ABSORB
 	db -1 ; end
 
 	next_list_item ; CAMPER

@@ -19,8 +19,7 @@ TrainerFirebreatherChaz:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend FirebreatherChazAfterBattleText
+	jumptext FirebreatherChazAfterBattleText
 
 TrainerCamperGarret:
 	trainer CAMPER, CAMPER_GARRET, EVENT_BEAT_CAMPER_GARRET, CamperGarretSeenText, CamperGarretBeatenText, 0, .Script
@@ -62,8 +61,7 @@ TrainerJugglerPercy:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend JugglerPercyAfterBattleText
+	jumptext JugglerPercyAfterBattleText
 
 TrainerPicnickerChloe:
 	trainer PICNICKER, CHLOE, EVENT_BEAT_PICNICKER_CHLOE, PicnickerChloeSeenText, PicnickerChloeBeatenText, 0, .Script

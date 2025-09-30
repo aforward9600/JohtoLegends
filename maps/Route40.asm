@@ -34,8 +34,7 @@ TrainerLassArielle:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend LassArielleAfterBattleText
+	jumptext LassArielleAfterBattleText
 
 TrainerSwimmerfAngie:
 	trainer SWIMMERF, ANGIE, EVENT_BEAT_SWIMMERF_ANGIE, SwimmerfAngieSeenText, SwimmerfAngieBeatenText, 0, .Script
@@ -61,16 +60,14 @@ TrainerSwimmermDerrick:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend SwimmermDerrickAfterBattleText
+	jumptext SwimmermDerrickAfterBattleText
 
 TrainerBugCatcherArthur:
 	trainer BUG_CATCHER, ARTHUR, EVENT_BEAT_BUG_CATCHER_ARTHUR, BugCatcherArthurSeenText, BugCatcherArthurBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BugCatcherArthurAfterBattleText
+	jumptext BugCatcherArthurAfterBattleText
 
 Route40Lass1Script:
 	jumptextfaceplayer Route40Lass1Text

@@ -59,24 +59,21 @@ TrainerDragonTamerMDarius:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend DragonTamerMDariusAfterBattleText
+	jumptext DragonTamerMDariusAfterBattleText
 
 TrainerDragonTamerfDaria:
 	trainer DRAGON_TAMER_F, DARIA, EVENT_BEAT_DRAGON_TAMER_F_DARIA, DragonTamerfDariaSeenText, DragonTamerfDariaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend DragonTamerfDariaAfterBattleText
+	jumptext DragonTamerfDariaAfterBattleText
 
 TrainerDragonTamerfDora:
 	trainer DRAGON_TAMER_F, DORA, EVENT_BEAT_DRAGON_TAMER_F_DORA, DragonTamerfDoraSeenText, DragonTamerfDoraBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend DragonTamerfDoraAfterBattleText
+	jumptext DragonTamerfDoraAfterBattleText
 
 DragonTamerMDariusSeenText:
 	text "I have a few"

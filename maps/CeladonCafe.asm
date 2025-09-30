@@ -15,14 +15,12 @@ CeladonCafe_MapScripts:
 	db 0 ; callbacks
 
 CeladonCafeChef:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .CeladonCafeChef2
-	writetextend ChefText_Eatathon
+	jumptextfaceplayer ChefText_Eatathon
 
 .CeladonCafeChef2:
-	writetextend SuperNerdText_FedsGone
+	jumptextfaceplayer SuperNerdText_FedsGone
 
 CeladonCafeFisher1:
 	opentext
