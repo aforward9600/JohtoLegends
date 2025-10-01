@@ -68,10 +68,7 @@ EcruteakMoveTutorHouseMoveTutorScript:
 	db "Cancel@"
 
 .Refused:
-	writetext YourLossText
-	waitbutton
-	closetext
-	end
+	writetextend YourLossText
 
 .TeachMove:
 	writetext NiceMoveText

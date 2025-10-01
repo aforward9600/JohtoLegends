@@ -12,24 +12,20 @@ CeruleanPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
 CeruleanPokecenter1FCooltrainerM:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_SENSATIONAL_SISTERS
 	iftrue .CeruleanPokecenter1FCooltrainerMAfter
-	writetextend CeruleanPokecenter1FCooltrainerMText1
+	jumptextfaceplayer CeruleanPokecenter1FCooltrainerMText1
 
 .CeruleanPokecenter1FCooltrainerMAfter:
-	writetextend CeruleanPokecenter1FCooltrainerMText2
+	jumptextfaceplayer CeruleanPokecenter1FCooltrainerMText2
 
 CeruleanPokecenter1FRival:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_SENSATIONAL_SISTERS
 	iftrue .CeruleanPokecenter1FRivalAfter
-	writetextend CeruleanPokecenter1FRivalText1
+	jumptextfaceplayer CeruleanPokecenter1FRivalText1
 
 .CeruleanPokecenter1FRivalAfter:
-	writetextend CeruleanPokecenter1FRivalText2
+	jumptextfaceplayer CeruleanPokecenter1FRivalText2
 
 CeruleanPokecenter1FCooltrainerMText1:
 	text "Dang it!"

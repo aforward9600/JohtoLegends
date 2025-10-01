@@ -33,7 +33,7 @@ AI_Basic:
 	pop bc
 	pop de
 	pop hl
-	jr nz, .discourage
+	jp nz, .discourage
 
 ; Dismiss status-only moves if the player can't be statused.
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
@@ -61,11 +61,112 @@ AI_Basic:
 ; Dismiss Safeguard if it's already active.
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
-	jr z, .checkmove
+	jr nz, .discourage
+
+	ld a, [wGBPrinterBrightness]
+	cp OPT_PRINT_LIGHTEST
+	jr nz, .SkipAbilities
+	ld a, [wEnemyAbility]
+	cp NEUTRAL_GAS
+	jr z, .SkipAbilities
+	cp MOLD_BREAKER
+	jr z, .SkipAbilities
+	ld a, [wPlayerAbility]
+	cp LEVITATE
+	jp z, .CheckGroundMove
+	cp SAP_SIPPER
+	jp z, .CheckGrassMove
+	cp FLASH_FIRE
+	jp z, .CheckFireMove
+	cp VOLT_ABSORB
+	jp z, .CheckElectricMove
+	cp MOTOR_DRIVE
+	jp z, .CheckElectricMove
+	cp LIGHTNINGROD
+	jp z, .CheckElectricMove
+	cp WATER_ABSORB
+	jp z, .CheckWaterMove
+	cp DRY_SKIN
+	jp z, .CheckWaterMove
+.SkipAbilities
+	push hl
+	push de
+	push bc
+	ld hl, wBattleMonItem
+	ld b, [hl]
+	call .GetItemHeldEffect
+	ld a, b
+	cp HELD_AIR_BALLOON
+	pop bc
+	pop de
+	pop hl
+	jp nz, .checkmove
+	call AI_80_20
+	jp c, .checkmove
+	call .CheckAIMoveType
+	cp GROUND
+	jp nz, .checkmove
 
 .discourage
 	call AIDiscourageMove
-	jr .checkmove
+	jp .checkmove
+
+.CheckGroundMove
+	call .CheckAIMoveType
+	cp GROUND
+	jr .FinishMoveCheck
+
+.CheckGrassMove
+	call .CheckAIMoveType
+	cp GRASS
+	jr .FinishMoveCheck
+
+.CheckWaterMove
+	call .CheckAIMoveType
+	cp WATER
+	jr .FinishMoveCheck
+
+.CheckElectricMove
+	call .CheckAIMoveType
+	cp ELECTRIC
+	jr .FinishMoveCheck
+
+.CheckFireMove
+	call .CheckAIMoveType
+	cp FIRE
+.FinishMoveCheck
+	jr z, .discourage
+;	push hl
+;	push de
+;	push bc
+	jr .SkipAbilities
+
+.CheckAIMoveType:
+;	pop hl
+;	pop bc
+;	pop de
+	call AIGetEnemyMove
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
+	ret
+
+.GetItemHeldEffect:
+; Return the effect of item b in bc.
+	ld a, b
+	and a
+	ret z
+
+	ld hl, ItemAttributes + ITEMATTR_EFFECT
+	dec a
+	ld c, a
+	ld b, 0
+	ld a, ITEMATTR_STRUCT_LENGTH
+	call AddNTimes
+	ld a, BANK(ItemAttributes)
+	call GetFarHalfword
+	ld b, l
+	ld c, h
+	ret
 
 INCLUDE "data/battle/ai/status_only_effects.asm"
 
@@ -163,7 +264,6 @@ AI_Setup:
 	inc [hl]
 	jr .checkmove
 
-
 AI_Types:
 ; Dismiss any move that the player is immune to.
 ; Encourage super-effective moves.
@@ -187,52 +287,6 @@ AI_Types:
 	push hl
 	push bc
 	push de
-;	ld a, [wGBPrinterBrightness]
-;	cp OPT_PRINT_LIGHTEST
-;	jr nz, .SkipAbilities
-;	ld a, [wEnemyAbility]
-;	cp NEUTRAL_GAS
-;	jr z, .SkipAbilities
-;	cp MOLD_BREAKER
-;	jr z, .SkipAbilities
-;	cp TINTED_LENS
-;	jp z, .TintedLens
-;	cp PIXILATE
-;	jp z, .Pixilate
-;	cp REFRIGERATE
-;	jp z, .Refrigerate
-;	cp SCRAPPY
-;	jp z, .Scrappy
-;.SkipEnemyAbilities
-;	ld a, [wPlayerAbility]
-;	cp LEVITATE
-;	jp z, .CheckGroundMove
-;	cp SAP_SIPPER
-;	jp z, .CheckGrassMove
-;	cp FLASH_FIRE
-;	jp z, .CheckFireMove
-;	cp VOLT_ABSORB
-;	jp z, .CheckElectricMove
-;	cp MOTOR_DRIVE
-;	jp z, .CheckElectricMove
-;	cp LIGHTNINGROD
-;	jp z, .CheckElectricMove
-;	cp WATER_ABSORB
-;	jp z, .CheckWaterMove
-;	cp DRY_SKIN
-;	jp z, .CheckWaterMove
-;.SkipAbilities
-;	ld hl, wBattleMonItem
-;	ld b, [hl]
-;	farcall GetItemHeldEffect
-;	ld a, b
-;	cp HELD_AIR_BALLOON
-;	jr nz, .skip_air_balloon
-;	call AI_80_20
-;	jr c, .skip_air_balloon
-;	jp .CheckGroundMove
-
-;.skip_air_balloon
 	ld a, 1
 	ldh [hBattleTurn], a
 	callfar BattleCheckTypeMatchup
@@ -366,154 +420,105 @@ AI_Types:
 	dec [hl]
 	jr .checkmove4
 
-.CheckAIMoveType:
-	pop hl
-	pop bc
-	pop de
-	ld hl, wBuffer1 - 1
-	ld de, wEnemyMonMoves
-	ld b, wEnemyMonMovesEnd - wEnemyMonMoves + 1
-;.checkmove5
-	inc hl
-	dec c
-	ret z
+;	cp TINTED_LENS
+;	jp z, .TintedLens
+;	cp PIXILATE
+;	jp z, .Pixilate
+;	cp REFRIGERATE
+;	jp z, .Refrigerate
+;	cp SCRAPPY
+;	jp z, .Scrappy
 
-	ld a, [de]
-	inc de
-	and a
-	ret z
+;.TintedLens
+;	jp .effective
 
-	inc de
-	call AIGetEnemyMove
-
-	push hl
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	and TYPE_MASK
-	ret
-
-.TintedLens
-	call .PopAll
-	jp .effective
-
-.Scrappy
-	call .CheckAIMoveType
-	pop hl
-	cp NORMAL
-	jr nz, .SkipScrappy
-	cp FIGHTING
-	jr nz, .SkipScrappy
-	push hl
-	push bc
-	push de
-	ld hl, wBattleMonType1
-	ld a, [hli]
-	cp GHOST
-	jr z, .effectivescrappy
-	ld a, [hl]
-	cp GHOST
-	jr z, .effectivescrappy
-	pop hl
-	pop de
-	pop bc
-	jp .immune
-
-.SkipScrappy
-	push hl
-	push de
-	push bc
+;.Scrappy
+;	call .CheckAIMoveType
+;	cp NORMAL
+;	jr nz, .SkipScrappy
+;	cp FIGHTING
+;	jr nz, .SkipScrappy
+;	push hl
+;	push bc
+;	push de
+;	ld hl, wBattleMonType1
+;	ld a, [hli]
+;	cp GHOST
+;	jr z, .effectivescrappy
+;	ld a, [hl]
+;	cp GHOST
+;	jr z, .effectivescrappy
+;	pop hl
+;	pop de
+;	pop bc
+;	jp .immune
+;
+;.SkipScrappy
+;	push hl
+;	push de
+;	push bc
 ;	jp .SkipEnemyAbilities
-
-.effectivescrappy
-	pop hl
-	jp .effective
-
-.CheckGroundMove
-	call .CheckAIMoveType
-	cp GROUND
-	jr .FinishMoveCheck
-
-.CheckGrassMove
-	call .CheckAIMoveType
-	cp GRASS
-	jr .FinishMoveCheck
-
-.CheckWaterMove
-	call .CheckAIMoveType
-	cp WATER
-	jr .FinishMoveCheck
-
-.CheckElectricMove
-	call .CheckAIMoveType
-	cp ELECTRIC
-	jr .FinishMoveCheck
-
-.CheckFireMove
-	call .CheckAIMoveType
-	cp FIRE
-.FinishMoveCheck
-	pop hl
-	jp z, .immune
-	push hl
-	push de
-	push bc
-;	jp .skip_air_balloon
-
-.PopAll
-	pop bc
-	pop de
-	pop hl
-	ret
-
-.Pixilate
-	call .CheckAIMoveType
-	pop hl
-	cp NORMAL
-	jp nz, .SkipScrappy
-	ld hl, wBattleMonType1
-	ld a, [hli]
-	cp DARK
-	jp z, .effectivescrappy
-	cp DRAGON
-	jp z, .effectivescrappy
-	cp FIGHTING
-	jp z, .effectivescrappy
-	ld a, [hl]
-	cp DARK
-	jp z, .effectivescrappy
-	cp DRAGON
-	jp z, .effectivescrappy
-	cp FIGHTING
-	jp z, .effectivescrappy
-	pop hl
-	jp .SkipScrappy
-
-.Refrigerate
-	call .CheckAIMoveType
-	pop hl
-	cp NORMAL
-	jp nz, .SkipScrappy
-	ld hl, wBattleMonType1
-	ld a, [hli]
-	cp FLYING
-	jp z, .effectivescrappy
-	cp GROUND
-	jp z, .effectivescrappy
-	cp DRAGON
-	jp z, .effectivescrappy
-	cp GRASS
-	jp z, .effectivescrappy
-	ld a, [hl]
-	cp FLYING
-	jp z, .effectivescrappy
-	cp GROUND
-	jp z, .effectivescrappy
-	cp DRAGON
-	jp z, .effectivescrappy
-	cp GRASS
-	jp z, .effectivescrappy
-	pop hl
-	jp .SkipScrappy
-
+;
+;.effectivescrappy
+;	pop hl
+;	jp .effective
+;
+;.PopAll
+;	pop bc
+;	pop de
+;	pop hl
+;	ret
+;
+;.Pixilate
+;	call .CheckAIMoveType
+;	pop hl
+;	cp NORMAL
+;	jp nz, .SkipScrappy
+;	ld hl, wBattleMonType1
+;	ld a, [hli]
+;	cp DARK
+;	jp z, .effectivescrappy
+;	cp DRAGON
+;	jp z, .effectivescrappy
+;	cp FIGHTING
+;	jp z, .effectivescrappy
+;	ld a, [hl]
+;	cp DARK
+;	jp z, .effectivescrappy
+;	cp DRAGON
+;	jp z, .effectivescrappy
+;	cp FIGHTING
+;	jp z, .effectivescrappy
+;	pop hl
+;	jp .SkipScrappy
+;
+;.Refrigerate
+;	call .CheckAIMoveType
+;	pop hl
+;	cp NORMAL
+;	jp nz, .SkipScrappy
+;	ld hl, wBattleMonType1
+;	ld a, [hli]
+;	cp FLYING
+;	jp z, .effectivescrappy
+;	cp GROUND
+;	jp z, .effectivescrappy
+;	cp DRAGON
+;	jp z, .effectivescrappy
+;	cp GRASS
+;	jp z, .effectivescrappy
+;	ld a, [hl]
+;	cp FLYING
+;	jp z, .effectivescrappy
+;	cp GROUND
+;	jp z, .effectivescrappy
+;	cp DRAGON
+;	jp z, .effectivescrappy
+;	cp GRASS
+;	jp z, .effectivescrappy
+;	pop hl
+;	jp .SkipScrappy
+;
 AI_Offensive:
 ; Greatly discourage non-damaging moves.
 

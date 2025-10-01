@@ -16,24 +16,21 @@ TrainerOlivineLighthouse3FRocket1:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend OlivineLighthouse3FRocket1AfterBattleText
+	jumptext OlivineLighthouse3FRocket1AfterBattleText
 
 TrainerOlivineLighthouse3FRocket2:
 	trainer GRUNTM, GRUNTM_6, EVENT_BEAT_ROCKET_GRUNTM_6, OlivineLighthouse3FRocket2SeenText, OlivineLighthouse3FRocket2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend OlivineLighthouse3FRocket2AfterBattleText
+	jumptext OlivineLighthouse3FRocket2AfterBattleText
 
 TrainerOlivineLighthouse3FRocketF:
 	trainer GRUNTF, GRUNTF_3, EVENT_BEAT_ROCKET_GRUNTF_3, OlivineLighthouse3FRocketFSeenText, OlivineLighthouse3FRocketFBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend OlivineLighthouse3FRocketFAfterBattleText
+	jumptext OlivineLighthouse3FRocketFAfterBattleText
 
 Lighthouse3FSailorScript:
 	jumptextfaceplayer Lighthouse3FSailorText

@@ -43,8 +43,7 @@ TrainerBikerSpike:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BikerSpikeAfterText
+	jumptext BikerSpikeAfterText
 
 FedHideout1FRoughneck1Text:
 	text "Looks like he was"

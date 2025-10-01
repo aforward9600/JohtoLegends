@@ -34,8 +34,7 @@ MahoganyRedGyaradosSpeechHouseHeracrossScript:
 	cry HERACROSS
 	waitbutton
 	closepokepic
-	opentext
-	writetextend MahoganyRedGyaradosSpeechHouseHeracrossText
+	jumptext MahoganyRedGyaradosSpeechHouseHeracrossText
 
 MahoganyTelevision:
 	jumpstd televisionscript

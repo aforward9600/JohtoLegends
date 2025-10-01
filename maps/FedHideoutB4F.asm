@@ -206,15 +206,13 @@ TrainerBikerBluno:
 	trainer BIKER, BLUNO, EVENT_BEAT_BIKER_BLUNO, BikerBlunoSeenText, BikerBlunoBeatenText, 0, .Script
 
 .Script:
-	opentext
-	writetextend BikerBlunoAfterText
+	jumptext BikerBlunoAfterText
 
 TrainerBikerRosso:
 	trainer BIKER, ROSSO, EVENT_BEAT_BIKER_ROSSO, BikerRossoSeenText, BikerRossoBeatenText, 0, .Script
 
 .Script:
-	opentext
-	writetextend BikerRossoAfterText
+	jumptext BikerRossoAfterText
 
 PlayerMovesToBikerBoss1Movement:
 	step RIGHT

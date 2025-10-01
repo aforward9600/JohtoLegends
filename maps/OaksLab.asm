@@ -68,20 +68,9 @@ Oak:
 	loadtrainer POKEMON_PROF, OAK
 	startbattle
 	reloadmapafterbattle
-	opentext
-;	checkevent EVENT_DECO_GOLD_TROPHY
-;	iftrue .FinishOakBattle
-;	writetext OakGivesGoldTrophyText
-;	buttonsound
-;	waitsfx
-;	writetext PlayerGotGoldTrophyText
-;	playsound SFX_CAUGHT_MON
-;	waitsfx
-;	buttonsound
-;	pause 15
 .FinishOakBattle:
 	setflag ENGINE_RALPH
-	writetextend OakBeatText
+	jumptext OakBeatText
 
 OaksAssistant1Script:
 	jumptextfaceplayer OaksAssistant1Text

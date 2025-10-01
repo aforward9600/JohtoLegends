@@ -9,24 +9,20 @@ CopycatsHouse1F_MapScripts:
 	db 0 ; callbacks
 
 CopycatsHouse1FPokefanMScript:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_SABRINA
 	iftrue .ReturnedMachinePart
-	writetextend CopycatsHouse1FPokefanMText
+	jumptextfaceplayer CopycatsHouse1FPokefanMText
 
 .ReturnedMachinePart:
-	writetextend CopycatsHouse1FPokefanMText2
+	jumptextfaceplayer CopycatsHouse1FPokefanMText2
 
 CopycatsHouse1FPokefanFScript:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_SABRINA
 	iftrue .ReturnedMachinePart
-	writetextend CopycatsHouse1FPokefanFText
+	jumptextfaceplayer CopycatsHouse1FPokefanFText
 
 .ReturnedMachinePart:
-	writetextend CopycatsHouse1FPokefanFText2
+	jumptextfaceplayer CopycatsHouse1FPokefanFText2
 
 CopycatsHouse1FBlisseyScript:
 	refreshscreen
@@ -34,8 +30,7 @@ CopycatsHouse1FBlisseyScript:
 	cry CHANSEY
 	waitbutton
 	closepokepic
-	opentext
-	writetextend CopycatsHouse1FBlisseyText
+	jumptext CopycatsHouse1FBlisseyText
 
 CopycatsHouse1FPokefanMText:
 	text "We want to have a"

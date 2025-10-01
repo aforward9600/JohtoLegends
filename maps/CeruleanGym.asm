@@ -224,24 +224,21 @@ TrainerSwimmerfDiana:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend SwimmerfDianaAfterBattleText
+	jumptext SwimmerfDianaAfterBattleText
 
 TrainerSwimmerfBriana:
 	trainer SWIMMERF, AQUA, EVENT_BEAT_SWIMMERF_AQUA, SwimmerfBrianaSeenText, SwimmerfBrianaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend SwimmerfBrianaAfterBattleText
+	jumptext SwimmerfBrianaAfterBattleText
 
 TrainerSwimmermParker:
 	trainer SWIMMERM, TANNER, EVENT_BEAT_SWIMMERM_TANNER, SwimmermParkerSeenText, SwimmermParkerBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend SwimmermParkerAfterBattleText
+	jumptext SwimmermParkerAfterBattleText
 
 VioletIntroText:
 	text "Violet: You wanna"

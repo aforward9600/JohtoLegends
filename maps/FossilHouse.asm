@@ -82,16 +82,11 @@ ScientistScript:
 	sjump .GaveFossil
 
 .DontHaveFossil:
-	opentext
-	writetextend YouNoHaveFossil
+	jumptext YouNoHaveFossil
 
 .GaveFossil:
-	opentext
-	writetext YouGoNow
-	waitbutton
-	closetext
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	end
+	jumptext YouGoNow
 
 .YouNoPatient:
 	writetextend YouNoPatientText

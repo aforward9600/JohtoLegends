@@ -213,22 +213,6 @@ RivalLeavesMartMovement:
 	step DOWN
 	step_end
 
-UnknownText_0x6c414:
-	text "Hello, kiddo!"
-
-	para "How would you like"
-	line "some Ragecandybar?"
-
-	para "It's the thing to"
-	line "eat in Mahogany!"
-	done
-
-MahogayMart1FPharmacistText_LanceEntered:
-	text "Arrgh… You found"
-	line "the secret stair-"
-	cont "way…"
-	done
-
 MahogayMart1FBuenaText:
 	text "Hm? Their whole"
 	line "stock seems"

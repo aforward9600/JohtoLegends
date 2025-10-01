@@ -68,8 +68,7 @@ AbraScript:
 	cry ABRA
 	waitbutton
 	closepokepic
-	opentext
-	writetextend AbraText
+	jumptext AbraText
 
 IndigoPlateauPokecenter1FCooltrainerMText:
 	text "At the #mon"

@@ -86,16 +86,14 @@ TrainerEngineerDante:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend EngineerDanteFAfterBattleText
+	jumptext EngineerDanteFAfterBattleText
 
 TrainerBeautyAshley:
 	trainer BEAUTY, ASHLEY, EVENT_BEAT_BEAUTY_ASHLEY, BeautyAshleySeenText, BeautyAshleyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BeautyAshleyAfterBattle
+	jumptext BeautyAshleyAfterBattle
 
 First2FElevator:
 	scall OlivineElevatorEffect

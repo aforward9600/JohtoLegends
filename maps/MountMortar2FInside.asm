@@ -17,8 +17,7 @@ TrainerBurglarLocke:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BurglarLockeAfterBattleText
+	jumptext BurglarLockeAfterBattleText
 
 MountMortar2FInsideMaxPotion:
 	itemball MAX_POTION

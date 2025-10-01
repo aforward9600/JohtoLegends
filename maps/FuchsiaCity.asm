@@ -200,7 +200,6 @@ FuchsiaCityRoughneckText:
 	cont "fight!"
 	done
 
-
 FuchsiaCityRoughneckText2:
 	text "That new guy's"
 	line "gonna be more of a"

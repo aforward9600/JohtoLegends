@@ -76,14 +76,12 @@ NoRoomForDubiousDisk:
 	writetextend NoRoomForDubiousDiskText
 
 GoldenrodBikeShopBurglarScript:
-	faceplayer
-	opentext
 	checkflag ENGINE_HIVEBADGE
 	iftrue .NewItems
-	writetextend BikeShopBurglarText1
+	jumptextfaceplayer BikeShopBurglarText1
 
 .NewItems:
-	writetextend BikeShopBurglarText2
+	jumptextfaceplayer BikeShopBurglarText2
 
 BlackMarketRocketText:
 	text "The Upgrade is"

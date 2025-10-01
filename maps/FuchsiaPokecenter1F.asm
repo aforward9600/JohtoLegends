@@ -23,14 +23,12 @@ FuchsiaPokecenter1FCooltrainerFScript:
 	jumptextfaceplayer FuchsiaPokecenter1FCooltrainerFText
 
 FuchsiaPokecenter1FRivalScript:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_KOGA
 	iftrue .FuchsiaPokecenter1FRival2
-	writetextend FuchsiaPokecenter1FRivalText1
+	jumptextfaceplayer FuchsiaPokecenter1FRivalText1
 
 .FuchsiaPokecenter1FRival2:
-	writetextend FuchsiaPokecenter1FRivalText2
+	jumptextfaceplayer FuchsiaPokecenter1FRivalText2
 
 FuchsiaPokecenter1FCooltrainerMText:
 	text "Woosh!"

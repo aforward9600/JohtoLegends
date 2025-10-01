@@ -17,8 +17,7 @@ ElmsPichu:
 	cry PICHU
 	waitbutton
 	closepokepic
-	opentext
-	writetextend ElmsPichuText
+	jumptext ElmsPichuText
 
 ElmsHousePC:
 	jumptext ElmsHousePCText

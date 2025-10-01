@@ -201,8 +201,7 @@ MastersHouseDratiniScript:
 	cry DRATINI
 	waitbutton
 	closepokepic
-	opentext
-	writetextend MastersHouseDratiniText
+	jumptext MastersHouseDratiniText
 
 AfterBattleMovement1:
 	step DOWN

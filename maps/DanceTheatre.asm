@@ -90,23 +90,20 @@ DanceTheaterRhydon:
 	cry RHYDON
 	waitbutton
 	closepokepic
-	opentext
-	writetextend RhydonText
+	jumptext RhydonText
 
 DanceTheatreGrannyScript:
-	faceplayer
-	opentext
 	checkevent EVENT_GOT_EEVEE
 	iftrue .AlreadyHaveEevee
-	writetextend DanceTheatreGrannyText
+	jumptextfaceplayer DanceTheatreGrannyText
 
 .AlreadyHaveEevee:
 	checkevent EVENT_GOT_STONE_FROM_THEATRE
 	iftrue .GotStone
-	writetextend SeeMySonText
+	jumptextfaceplayer SeeMySonText
 
 .GotStone:
-	writetextend YouSawMySonText
+	jumptextfaceplayer YouSawMySonText
 
 DanceTheaterCynthiaScript:
 	playmusic MUSIC_CYNTHIA_ENCOUNTER

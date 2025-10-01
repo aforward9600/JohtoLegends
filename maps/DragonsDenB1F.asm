@@ -42,20 +42,16 @@ TrainerDragonTamerfDebby:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend DragonTamerfDebbyAfterBattleText
+	jumptext DragonTamerfDebbyAfterBattleText
 
 TrainerDragonTamermDylan:
 	trainer DRAGON_TAMER_M, DYLAN, EVENT_BEAT_DRAGON_TAMER_M_DYLAN, DragonTamermDylanSeenText, DragonTamermDylanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend DragonTamermDylanAfterBattleText
+	jumptext DragonTamermDylanAfterBattleText
 
 DragonsDenB1FDragonFangScript:
-; This whole script is written out rather than as an itemball
-; because it's left over from the GS event.
 	itemball DRAGON_FANG
 
 DragonShrineSignpost:

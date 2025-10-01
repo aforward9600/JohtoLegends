@@ -66,8 +66,7 @@ MrFujisEkans:
 	cry EKANS
 	waitbutton
 	closepokepic
-	opentext
-	writetextend MrFujisEkansText
+	jumptext MrFujisEkansText
 
 MrFujisMarowak:
 	refreshscreen
@@ -75,8 +74,7 @@ MrFujisMarowak:
 	cry MAROWAK
 	waitbutton
 	closepokepic
-	opentext
-	writetextend MrFujisMarowakText
+	jumptext MrFujisMarowakText
 
 MrFujisTogepi:
 	refreshscreen
@@ -84,8 +82,7 @@ MrFujisTogepi:
 	cry TOGEPI
 	waitbutton
 	closepokepic
-	opentext
-	writetextend MrFujisTogepiText
+	jumptext MrFujisTogepiText
 
 MrFujisHouseBookshelf:
 	jumpstd difficultbookshelf

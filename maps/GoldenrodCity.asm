@@ -37,32 +37,28 @@ GoldenrodCityPokefanMScript:
 	jumptextfaceplayer GoldenrodCityPokefanMText
 
 GoldenrodCityDirectorScript:
-	faceplayer
-	opentext
 	checkevent EVENT_GOLDENROD_TOWER_TAKEOVER
 	iftrue .RadioTower
-	writetextend MyPoorTowerText
+	jumptextfaceplayer MyPoorTowerText
 
 .RadioTower:
-	writetextend RadioTowerText
+	jumptextfaceplayer RadioTowerText
 
 GoldenrodCityCooltrainerF3Script:
 	jumptextfaceplayer GoldenrodCityCooltrainerF3Text
 
 GoldenrodCityLass2Script:
-	faceplayer
-	opentext
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .ClearedRadioTower
 	checkevent EVENT_GOLDENROD_TOWER_TAKEOVER
 	iftrue .CurrentlyInvaded
-	writetextend GoldenrodCityLassInvasionText
+	jumptextfaceplayer GoldenrodCityLassInvasionText
 
 .ClearedRadioTower:
-	writetextend GoldenrodCityLass2Text_ClearedRadioTower
+	jumptextfaceplayer GoldenrodCityLass2Text_ClearedRadioTower
 
 .CurrentlyInvaded:
-	writetextend GoldenrodCityLass2Text
+	jumptextfaceplayer GoldenrodCityLass2Text
 
 GoldenrodCityCooltrainerF2Script:
 	jumptextfaceplayer GoldenrodCityCooltrainerF2Text

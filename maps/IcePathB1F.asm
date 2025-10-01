@@ -105,32 +105,28 @@ TrainerYoungsterTimmy:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend YoungsterTimmyAfterText
+	jumptext YoungsterTimmyAfterText
 
 TrainerSkierLupita:
 	trainer SKIER, LUPITA, EVENT_BEAT_SKIER_LUPITA, SkierLupitaSeenText, SkierLupitaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend SkierLupitaAfterText
+	jumptext SkierLupitaAfterText
 
 TrainerBoarderGareth:
 	trainer BOARDER, GARETH, EVENT_BEAT_BOARDER_GARETH, BoarderGarethSeenText, BoarderGarethBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BoarderGarethAfterText
+	jumptext BoarderGarethAfterText
 
 TrainerBoarderBrody:
 	trainer BOARDER, BRODY, EVENT_BEAT_BOARDER_BRODY, BoarderBrodySeenText, BoarderBrodyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BoarderBrodyAfterText
+	jumptext BoarderBrodyAfterText
 
 IcePathB1FHiddenMaxPotion:
 	hiddenitem RARE_CANDY, EVENT_ICE_PATH_B1F_HIDDEN_MAX_POTION

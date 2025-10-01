@@ -28,8 +28,7 @@ MahoganyPokecenter1FSwinubScript:
 	cry SWINUB
 	waitbutton
 	closepokepic
-	opentext
-	writetextend MahoganyPokecenter1FSwinubText
+	jumptext MahoganyPokecenter1FSwinubText
 
 MahoganyPokecenter1FCooltrainerMText:
 	text "Did you ever want"

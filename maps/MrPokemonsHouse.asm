@@ -34,8 +34,8 @@ MrPokemonsHouse_MrPokemonScript:
 	sjump .AlwaysNewDiscoveries
 
 .refused
-	writetext MrPokemonText_Disappointed
-	waitbutton
+	writetextend MrPokemonText_Disappointed
+
 .full
 	closetext
 	end

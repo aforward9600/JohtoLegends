@@ -135,24 +135,20 @@ EcruteakTinTowerEntranceSageScript:
 	writetextend PleaseHelpUsText
 
 EcruteakTinTowerEntranceWanderingSageScript:
-	faceplayer
-	opentext
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .PleaseHelpTheTower
-	writetextend EcruteakTinTowerEntranceWanderingSageText
+	jumptextfaceplayer EcruteakTinTowerEntranceWanderingSageText
 
 .PleaseHelpTheTower:
-	writetextend PleaseHelpTheTowerText
+	jumptextfaceplayer PleaseHelpTheTowerText
 
 EcruteakTinTowerEntranceGrampsScript:
-	faceplayer
-	opentext
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .ThisIsTerrible
-	writetextend EcruteakTinTowerEntranceGrampsText
+	jumptextfaceplayer EcruteakTinTowerEntranceGrampsText
 
 .ThisIsTerrible:
-	writetextend ThisIsTerribleText
+	jumptextfaceplayer ThisIsTerribleText
 
 EcruteakTinTowerEntranceRocketScript:
 	opentext

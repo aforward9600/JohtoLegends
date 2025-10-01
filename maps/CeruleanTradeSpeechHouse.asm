@@ -21,8 +21,7 @@ CeruleanTradeSpeechHouseJynxScript:
 	cry JYNX
 	waitbutton
 	closepokepic
-	opentext
-	writetextend CeruleanTradeSpeechHouseJynxText
+	jumptext CeruleanTradeSpeechHouseJynxText
 
 CeruleanTradeSpeechHouseBulbasaurScript:
 	refreshscreen
@@ -30,8 +29,7 @@ CeruleanTradeSpeechHouseBulbasaurScript:
 	cry BULBASAUR
 	waitbutton
 	closepokepic
-	opentext
-	writetextend CeruleanTradeSpeechHouseBulbasaurText
+	jumptext CeruleanTradeSpeechHouseBulbasaurText
 
 CeruleanTradeSpeechHouseGrannyText:
 	text "My husband lives"

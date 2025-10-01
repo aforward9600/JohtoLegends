@@ -182,14 +182,12 @@ DragonShrineElder4Script:
 	jumptextfaceplayer DragonShrineClairsGrandfatherText
 
 DragonShrineElder5Script:
-	faceplayer
-	opentext
 	checkevent EVENT_GOT_DRATINI_FROM_MASTER
 	iftrue .RivalDragonShrine
-	writetextend DontLikeLarvitarYouText
+	jumptextfaceplayer DontLikeLarvitarYouText
 
 .RivalDragonShrine:
-	writetextend DontLikeLarvitarText
+	jumptextfaceplayer DontLikeLarvitarText
 
 DragonShrineQuestion1_MenuHeader:
 	db MENU_BACKUP_TILES ; flags

@@ -23,8 +23,7 @@ CeladonMansion1FMeowth:
 	cry MEOWTH
 	waitbutton
 	closepokepic
-	opentext
-	writetextend CeladonMansion1FMeowthText
+	jumptext CeladonMansion1FMeowthText
 
 CeladonMansion1FClefairy:
 	refreshscreen
@@ -32,8 +31,7 @@ CeladonMansion1FClefairy:
 	cry CLEFAIRY
 	waitbutton
 	closepokepic
-	opentext
-	writetextend CeladonMansion1FClefairyText
+	jumptext CeladonMansion1FClefairyText
 
 CeladonMansion1FNidoranF:
 	refreshscreen
@@ -41,8 +39,7 @@ CeladonMansion1FNidoranF:
 	cry NIDORAN_F
 	waitbutton
 	closepokepic
-	opentext
-	writetextend CeladonMansion1FNidoranFText
+	jumptext CeladonMansion1FNidoranFText
 
 CeladonMansionManagersSuiteSign:
 	jumptext CeladonMansionManagersSuiteSignText

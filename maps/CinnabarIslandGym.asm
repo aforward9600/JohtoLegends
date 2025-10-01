@@ -105,11 +105,7 @@ TrainerSuperNerdAlbert:
 	end
 
 .BeatAlbert:
-	opentext
-	writetext SuperNerdAlbertAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SuperNerdAlbertAfterBattleText
 
 TrainerSuperNerdDaisuke:
 	trainer SUPER_NERD, DAISUKE, EVENT_BEAT_SUPER_NERD_DAISUKE, SuperNerdDaisukeSeenText, SuperNerdDaisukeBeatenText, 0, .Script
@@ -125,8 +121,7 @@ TrainerSuperNerdDaisuke:
 	end
 
 .BeatDaisuke:
-	opentext
-	writetextend SuperNerdDaisukeAfterBattleText
+	jumptext SuperNerdDaisukeAfterBattleText
 
 TrainerSuperNerdJosef:
 	trainer SUPER_NERD, JOSEF, EVENT_BEAT_SUPER_NERD_JOSEF, SuperNerdJosefSeenText, SuperNerdJosefBeatenText, 0, .Script
@@ -142,8 +137,7 @@ TrainerSuperNerdJosef:
 	end
 
 .BeatJosef:
-	opentext
-	writetextend SuperNerdJosefAfterBattleText
+	jumptext SuperNerdJosefAfterBattleText
 
 TrainerBurglarErik:
 	trainer BURGLAR, BURGLAR_ERIK, EVENT_BEAT_BURGLAR_ERIK, BurglarErikSeenText, BurglarErikBeatenText, 0, .Script
@@ -159,8 +153,7 @@ TrainerBurglarErik:
 	end
 
 .BeatErik:
-	opentext
-	writetextend BurglarErikAfterBattleText
+	jumptext BurglarErikAfterBattleText
 
 TrainerBurglarKidd:
 	trainer BURGLAR, KIDD, EVENT_BEAT_BURGLAR_KIDD, BurglarKiddSeenText, BurglarKiddBeatenText, 0, .Script
@@ -176,8 +169,7 @@ TrainerBurglarKidd:
 	end
 
 .BeatKidd:
-	opentext
-	writetextend BurglarKiddAfterBattleText
+	jumptext BurglarKiddAfterBattleText
 
 TrainerBurglarArsene:
 	trainer BURGLAR, ARSENE, EVENT_BEAT_BURGLAR_ARSENE, BurglarArseneSeenText, BurglarArseneBeatenText, 0, .Script
@@ -193,8 +185,7 @@ TrainerBurglarArsene:
 	end
 
 .BeatErik:
-	opentext
-	writetextend BurglarArseneAfterBattleText
+	jumptext BurglarArseneAfterBattleText
 
 Question1:
 	opentext

@@ -30,19 +30,17 @@ OlivineCitySailor1Script:
 	jumptextfaceplayer OlivineCitySailor1Text
 
 OlivineCityStandingYoungsterScript:
-	faceplayer
-	opentext
 	checkflag ENGINE_STORMBADGE
 	iftrue .GoToWildArea
 	checkevent EVENT_OLIVINE_LIGHTHOUSE_JASMINE
 	iftrue .GoToCianwood
-	writetextend OlivineCityStandingYoungsterPokegearText
+	jumptextfaceplayer OlivineCityStandingYoungsterPokegearText
 
 .GoToWildArea:
-	writetextend OlivineCityStandingYoungsterGotBadgeText
+	jumptextfaceplayer OlivineCityStandingYoungsterGotBadgeText
 
 .GoToCianwood:
-	writetextend OlivineCityStandingYoungsterGoToCianwoodText
+	jumptextfaceplayer OlivineCityStandingYoungsterGoToCianwoodText
 
 OlivineRocketScript:
 	faceplayer
@@ -87,7 +85,6 @@ OlivineRocketScript:
 	end
 
 OlivineCitySailor2Script:
-;	jumptextfaceplayer OlivineCitySailor2Text
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_MACHO_BRACE

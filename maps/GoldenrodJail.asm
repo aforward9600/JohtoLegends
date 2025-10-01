@@ -144,8 +144,7 @@ SecondJailCellTalk:
 
 ThirdJailCellTalk:
 	turnobject GOLDENRODJAIL_FRAUD, DOWN
-	opentext
-	writetextend LastTimeICommitFraudText
+	jumptext LastTimeICommitFraudText
 
 GoldenrodJailCooltrainerFScript:
 	faceplayer
@@ -154,8 +153,7 @@ GoldenrodJailCooltrainerFScript:
 	waitbutton
 	closetext
 	turnobject GOLDENRODJAIL_COOLTRAINER_F, UP
-	opentext
-	writetextend CmonBabeText
+	jumptext CmonBabeText
 
 GoldenrodJailPokefanFScript:
 	faceplayer
@@ -164,8 +162,7 @@ GoldenrodJailPokefanFScript:
 	waitbutton
 	closetext
 	turnobject GOLDENRODJAIL_POKEFAN_F, UP
-	opentext
-	writetextend ListenHereText
+	jumptext ListenHereText
 
 GoldenrodJailOfficer2Script:
 	jumptextfaceplayer WatchingTheseGuysText

@@ -27,19 +27,17 @@ EcruteakCity_MapScripts:
 	return
 
 EcruteakCityGramps1Script:
-	faceplayer
-	opentext
 	checkevent EVENT_CURRENTLY_CHAMPION
 	iftrue .OldManPolitoed
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .Toldyou
-	writetextend EcruteakCityGramps1Text
+	jumptextfaceplayer EcruteakCityGramps1Text
 
 .Toldyou:
-	writetextend EcruteakCityGrampsToldYouText
+	jumptextfaceplayer EcruteakCityGrampsToldYouText
 
 .OldManPolitoed:
-	writetextend OldManPolitoedText
+	jumptextfaceplayer OldManPolitoedText
 
 EcruteakCityGramps2Script:
 	jumptextfaceplayer EcruteakCityGramps2Text
@@ -80,19 +78,17 @@ EcruteakPolitoedScript:
 	end
 
 EcruteakCityFisherScript:
-	faceplayer
-	opentext
 	checkevent EVENT_CURRENTLY_CHAMPION
 	iftrue .OldManHome
 	checkevent EVENT_TIN_TOWER_TAKEOVER
 	iftrue .CalmDown
-	writetextend EcruteakCityFisherText
+	jumptextfaceplayer EcruteakCityFisherText
 
 .CalmDown:
-	writetextend EcruteakCityFisherText_CalmDown
+	jumptextfaceplayer EcruteakCityFisherText_CalmDown
 
 .OldManHome:
-	writetextend OldManHomeText
+	jumptextfaceplayer OldManHomeText
 
 EcruteakCityYoungsterScript:
 	jumptextfaceplayer EcruteakCityYoungsterText

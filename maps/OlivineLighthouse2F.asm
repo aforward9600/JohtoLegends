@@ -17,16 +17,14 @@ TrainerOlivineLighthouse2FRocketF1:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend OlivineLighthouse2FRocketF1AfterBattleText
+	jumptext OlivineLighthouse2FRocketF1AfterBattleText
 
 TrainerOlivineLighthouse2FRocketF2:
 	trainer GRUNTF, GRUNTF_2, EVENT_BEAT_ROCKET_GRUNTF_2, OlivineLighthouse2FRocketF2SeenText, OlivineLighthouse2FRocketF2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend OlivineLighthouse2FRocketF2AfterBattleText
+	jumptext OlivineLighthouse2FRocketF2AfterBattleText
 
 Lighthouse2FRocketScript:
 	faceplayer
@@ -64,8 +62,7 @@ LighthouseSwinubScript:
 	cry SWINUB
 	waitbutton
 	closepokepic
-	opentext
-	writetextend LighthouseSwinubText
+	jumptext LighthouseSwinubText
 
 LighthouseRaticateScript:
 	refreshscreen
@@ -73,8 +70,7 @@ LighthouseRaticateScript:
 	cry RATICATE
 	waitbutton
 	closepokepic
-	opentext
-	writetextend LighthouseRaticateText
+	jumptext LighthouseRaticateText
 
 Lighthouse2FGentlemanScript:
 	jumptextfaceplayer Lighthouse2FGentlemanText

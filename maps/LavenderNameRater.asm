@@ -2,13 +2,9 @@
 	const LAVENDERNAMERATER_NAME_RATER
 
 LavenderNameRater_MapScripts:
-	db 1 ; scene scripts
-	scene_script .DummyScene
+	db 0 ; scene scripts
 
 	db 0 ; callbacks
-
-.DummyScene:
-	end
 
 LavenderNameRater:
 	faceplayer

@@ -47,10 +47,7 @@ EcruteakPokecenter1FPokefanMScript:
 	done
 
 .not_enough_money
-	writetext .not_enough_money_text
-	waitbutton
-	closetext
-	end
+	writetextend .not_enough_money_text
 
 .not_enough_money_text:
 	text "I'm sorry, but it"

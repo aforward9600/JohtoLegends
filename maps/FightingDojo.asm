@@ -64,16 +64,14 @@ TrainerBlackbeltHiroshi:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BlackbeltHiroshiAfterText
+	jumptext BlackbeltHiroshiAfterText
 
 TrainerBlackbeltTanabe:
 	trainer BLACKBELT_T, TANABE, EVENT_BEAT_BLACKBELT_TANABE, BlackbeltTanabeSeenText, BlackbeltTanabeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BlackbeltTanabeAfterText
+	jumptext BlackbeltTanabeAfterText
 
 FightingDojoSign1:
 	jumptext FightingDojoSign1Text

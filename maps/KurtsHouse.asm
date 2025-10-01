@@ -88,8 +88,7 @@ KurtsHouseSlowpoke:
 	cry SLOWPOKE
 	waitbutton
 	closepokepic
-	opentext
-	writetextend KurtsHouseSlowpokeText
+	jumptext KurtsHouseSlowpokeText
 
 KurtsHouseKurtScript:
 	faceplayer

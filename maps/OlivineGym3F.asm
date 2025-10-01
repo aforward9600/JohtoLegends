@@ -29,8 +29,7 @@ TrainerEngineerRudy:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend EngineerRudyAfterBattleText
+	jumptext EngineerRudyAfterBattleText
 
 EighthElevator:
 	scall OlivineElevatorEffect

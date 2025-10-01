@@ -48,8 +48,7 @@ TrainerDelinquentTabitha:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend DelinquentTabithaAfterText
+	jumptext DelinquentTabithaAfterText
 
 TrainerRoughneckKyle:
 	trainer ROUGHNECK, KYLE_2, EVENT_BEAT_ROUGHNECK_KYLE, RoughneckKyleSeenText, RoughneckKyleBeatenText, 0, .Script

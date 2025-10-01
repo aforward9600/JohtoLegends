@@ -161,43 +161,36 @@ TrainerBreederSarah:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BreederSarahAfterBattleText
+	jumptext BreederSarahAfterBattleText
 
 TrainerBreederBridget:
 	trainer BREEDER, BRIDGET, EVENT_BEAT_BREEDER_BRIDGET, BreederBridgetSeenText, BreederBridgetBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BreederBridgetAfterBattleText
+	jumptext BreederBridgetAfterBattleText
 
 TrainerBreederEmily:
 	trainer BREEDER, EMILY, EVENT_BEAT_BREEDER_EMILY, BreederEmilySeenText, BreederEmilyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BreederEmilyAfterBattleText
+	jumptext BreederEmilyAfterBattleText
 
 TrainerBreederNina:
 	trainer BREEDER, NINA, EVENT_BEAT_BREEDER_NINA, BreederNinaSeenText, BreederNinaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BreederNinaAfterBattleText
+	jumptext BreederNinaAfterBattleText
 
 GoldenrodGymGuyScript:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_MILTON
 	iftrue .GoldenrodGymGuyWinScript
-	opentext
-	writetextend GoldenrodGymGuyText
+	jumptextfaceplayer GoldenrodGymGuyText
 
 .GoldenrodGymGuyWinScript:
-	writetextend GoldenrodGymGuyWinText
+	jumptextfaceplayer GoldenrodGymGuyWinText
 
 GoldenrodGymStatue:
 	checkevent EVENT_ROCKET_JAIL_RIVAL

@@ -52,16 +52,14 @@ TrainerDelinquentBertha:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend DelinquentBerthaAfterText
+	jumptext DelinquentBerthaAfterText
 
 TrainerRoughneckGuido:
 	trainer ROUGHNECK, GUIDO, EVENT_BEAT_ROUGHNECK_GUIDO, RoughneckGuidoSeenText, RoughneckGuidoBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend RoughneckGuidoAfterText
+	jumptext RoughneckGuidoAfterText
 
 FedHideoutB3FKogaText:
 	text "Koga: Today, we"

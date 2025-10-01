@@ -34,8 +34,7 @@ TrainerSuperNerdIrwin:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend SuperNerdIrwinAfterBattleText
+	jumptext SuperNerdIrwinAfterBattleText
 
 IlexForestFarfetchdScript:
 	faceplayer
@@ -84,16 +83,14 @@ TrainerHexManiacMaeve:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend HexManiacMaeveAfterBattleText
+	jumptext HexManiacMaeveAfterBattleText
 
 TrainerCooltrainerFEmiko:
 	trainer COOLTRAINERF, EMIKO, EVENT_BEAT_COOLTRAINERF_EMIKO, CooltrainerFEmikoSeenText, CooltrainerFEmikoBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend CooltrainerFEmikoAfterBattleText
+	jumptext CooltrainerFEmikoAfterBattleText
 
 IlexForestLassScript:
 	jumptextfaceplayer Text_IlexForestLass

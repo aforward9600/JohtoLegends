@@ -13,16 +13,14 @@ LighthouseArianaScript:
 	trainer ARIANA, ARIANA_1, EVENT_BEAT_LIGHTHOUSE_ARIANA, LighthouseArianaSeenText, LighthouseArianaBeatenText, LighthouseArianaLossText, .Script
 
 .Script:
-	opentext
-	writetextend LighthouseArianaAfterBattleText
+	jumptext LighthouseArianaAfterBattleText
 
 TrainerLighthouse4FGruntF:
 	trainer GRUNTF, GRUNTF_4, EVENT_BEAT_ROCKET_GRUNTF_4, Lighthouse4FGruntFSeenText, Lighthouse4FGruntFBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend Lighthouse4FGruntFAfterBattleText
+	jumptext Lighthouse4FGruntFAfterBattleText
 
 Lighthouse4FOfficerScript:
 	jumptextfaceplayer Lighthouse4FOfficerText

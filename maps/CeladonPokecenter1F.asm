@@ -28,14 +28,12 @@ CeladonPokecenter1FTeacherScript:
 	jumptextfaceplayer CeladonPokecenter1FTeacherText
 
 CeladonPokecenter1FRival:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_ERIKA
 	iftrue .CeladonPokecenter1FRival2
-	writetextend CeladonPokecenter1FRivalText1
+	jumptextfaceplayer CeladonPokecenter1FRivalText1
 
 .CeladonPokecenter1FRival2:
-	writetextend CeladonPokecenter1FRivalText2
+	jumptextfaceplayer CeladonPokecenter1FRivalText2
 
 CeladonPokecenter1FCooltrainerMText:
 	text "I wouldn't go near"

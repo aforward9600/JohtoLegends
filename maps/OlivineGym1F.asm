@@ -75,33 +75,26 @@ OlivineGym1F_MapScripts:
 	return
 
 OlivineGym1FGuyScript:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_BYRON
 	iftrue .OlivineGymGuy1FWinScript
-	writetextend OlivineGym1FGuyText
+	jumptextfaceplayer OlivineGym1FGuyText
 
 .OlivineGymGuy1FWinScript:
-	writetextend OlivineGym1FGuyWinText
-
-.OlivineGymGuy1FPreScript:
-	writetextend OlivineGym1FGuyPreText
+	jumptextfaceplayer OlivineGym1FGuyWinText
 
 OlivineGymTrainerGentlemanCrofton1F:
 	trainer GENTLEMAN, CROFTON, EVENT_BEAT_GENTLEMAN_CROFTON, GentlemanCrofton1FSeenText, GentlemanCrofton1FBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend GentlemanCrofton1FAfterBattleText
+	jumptext GentlemanCrofton1FAfterBattleText
 
 TrainerTeacherAbigail1F:
 	trainer TEACHER, ABIGAIL, EVENT_BEAT_TEACHER_ABIGAIL, TeacherAbigail1FSeenText, TeacherAbigail1FBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend TeacherAbigail1FAfterBattleText
+	jumptext TeacherAbigail1FAfterBattleText
 
 OlivineGym1FStatue:
 	checkflag ENGINE_PLAINBADGE
@@ -251,15 +244,6 @@ OlivineGym1FGuyText:
 OlivineGym1FGuyWinText:
 	text "Sharp as ever,"
 	line "you are!"
-	done
-
-OlivineGym1FGuyPreText:
-	text "Byron, the Gym"
-	line "Leader, is at the"
-	cont "Lighthouse."
-
-	para "There's apparently"
-	line "an incident."
 	done
 
 OlivineGym1F_MapEvents:

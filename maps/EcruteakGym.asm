@@ -197,42 +197,36 @@ TrainerSageJeffrey:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend SageJeffreyAfterBattleText
+	jumptext SageJeffreyAfterBattleText
 
 TrainerSagePing:
 	trainer SAGE, PING, EVENT_BEAT_SAGE_PING, SagePingSeenText, SagePingBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend SagePingAfterBattleText
+	jumptext SagePingAfterBattleText
 
 TrainerHexManiacHilda:
 	trainer HEX_MANIAC, HILDA, EVENT_BEAT_HEX_MANIAC_HILDA, HexManiacHildaSeenText, HexManiacHildaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend HexManiacHildaAfterBattleText
+	jumptext HexManiacHildaAfterBattleText
 
 TrainerHexManiacZelda:
 	trainer HEX_MANIAC, ZELDA, EVENT_BEAT_HEX_MANIAC_ZELDA, HexManiacZeldaSeenText, HexManiacZeldaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend HexManiacZeldaAfterBattleText
+	jumptext HexManiacZeldaAfterBattleText
 
 EcruteakGymGuyScript:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_ENOKI
 	iftrue .EcruteakGymGuyWinScript
-	writetextend EcruteakGymGuyText
+	jumptextfaceplayer EcruteakGymGuyText
 
 .EcruteakGymGuyWinScript:
-	writetextend EcruteakGymGuyWinText
+	jumptextfaceplayer EcruteakGymGuyWinText
 
 EcruteakGymMorty:
 	jumptextfaceplayer EcruteakGymMortyGymText

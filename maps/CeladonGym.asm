@@ -55,10 +55,7 @@ CeladonGymErikaScript:
 	setevent EVENT_GOT_TM19_GIGA_DRAIN
 	setevent EVENT_DECO_LOTAD_DOLL
 .GotGigaDrain:
-	writetext ErikaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend ErikaAfterBattleText
 
 .AlreadyGotEnergyBall:
 	writetext AlreadyGotEnergyBallText
@@ -79,18 +76,11 @@ CeladonGymErikaScript:
 	loadtrainer ERIKA, ERIKA1
 	startbattle
 	reloadmapafterbattle
-	opentext
-	writetext ErikaRematchDefeatText
-	waitbutton
-	closetext
 	setflag ENGINE_BETH
-	end
+	jumptext ErikaRematchDefeatText
 
 .ErikaPost:
-	writetext ErikaPostText
-	waitbutton
-	closetext
-	end
+	writetextend ErikaPostText
 
 ErikaLastMonText:
 	text "Erika: My last"
@@ -104,55 +94,35 @@ TrainerLassMichelle:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LassMichelleAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LassMichelleAfterBattleText
 
 TrainerPicnickerTanya:
 	trainer PICNICKER, TANYA, EVENT_BEAT_PICNICKER_TANYA, PicnickerTanyaSeenText, PicnickerTanyaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PicnickerTanyaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PicnickerTanyaAfterBattleText
 
 TrainerBeautyJulia:
 	trainer BEAUTY, JULIA, EVENT_BEAT_BEAUTY_JULIA, BeautyJuliaSeenText, BeautyJuliaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BeautyJuliaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BeautyJuliaAfterBattleText
 
 TrainerTwinsJoAndZoe1:
 	trainer TWINS, JOANDZOE1, EVENT_BEAT_TWINS_JO_AND_ZOE, TwinsJoAndZoe1SeenText, TwinsJoAndZoe1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext TwinsJoAndZoe1AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext TwinsJoAndZoe1AfterBattleText
 
 TrainerTwinsJoAndZoe2:
 	trainer TWINS, JOANDZOE2, EVENT_BEAT_TWINS_JO_AND_ZOE, TwinsJoAndZoe2SeenText, TwinsJoAndZoe2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext TwinsJoAndZoe2AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext TwinsJoAndZoe2AfterBattleText
 
 CeladonGymStatue:
 	checkflag ENGINE_RAINBOWBADGE

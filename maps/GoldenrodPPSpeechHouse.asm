@@ -26,11 +26,8 @@ GoldenrodPPSpeechHouseGrampsScript:
 	writetextend GoldenrodPPSpeechHouseGrampsDrainPunchRefused
 
 .TeachMove
-	writetext GoldenrodPPSpeechHouseGrampsDrainPunchTaught
 	takemoney YOUR_MONEY, 1800
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodPPSpeechHouseGrampsDrainPunchTaught
 
 GoldenrodPPSpeechHouseBookshelf2:
 	jumpstd genericsink

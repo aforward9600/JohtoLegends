@@ -108,13 +108,6 @@ LakeOfRageGymSign:
 MagikarpHouseSignScript:
 	opentext
 	writetext FishingGurusHouseSignText
-	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
-	iftrue .MagikarpLengthRecord
-	waitbutton
-	closetext
-	end
-
-.MagikarpLengthRecord:
 	buttonsound
 	special MagikarpHouseSign
 	closetext
@@ -125,24 +118,21 @@ TrainerFisherAidan:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend FisherAidanAfterBattleText
+	jumptext FisherAidanAfterBattleText
 
 TrainerFisherNoah:
 	trainer FISHER, NOAH, EVENT_BEAT_FISHER_NOAH, FisherNoahSeenText, FisherNoahBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend FisherNoahAfterBattleText
+	jumptext FisherNoahAfterBattleText
 
 TrainerLassJackie:
 	trainer LASS, JACKIE, EVENT_BEAT_LASS_JACKIE, LassJackieSeenText, LassJackieBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend LassJackieAfterBattleText
+	jumptext LassJackieAfterBattleText
 
 WesleyScript:
 	faceplayer
@@ -165,8 +155,8 @@ WesleyScript:
 	writetextend WesleyGaveGiftText
 
 WesleyWednesdayScript:
-	writetext WesleyWednesdayText
-	waitbutton
+	writetextend WesleyWednesdayText
+
 WesleyDoneScript:
 	closetext
 	end
@@ -203,10 +193,6 @@ LakeOfRagePokecenterSign:
 
 LakeOfRageMartSign:
 	jumpstd martsign
-
-MovementData_0x70155:
-	teleport_from
-	step_end
 
 OnlyMagikarpText:
 	text "Hm…"

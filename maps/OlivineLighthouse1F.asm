@@ -91,16 +91,14 @@ OlivineLighthouse1FRocket1Script:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend OlivineLighthouse1FRocketAfterBattleText
+	jumptext OlivineLighthouse1FRocketAfterBattleText
 
 OlivineLighthouse1FRocket2Script:
 	trainer GRUNTM, GRUNTM_4, EVENT_BEAT_ROCKET_GRUNTM_4, OlivineLighthouse1FRocket2SeenText, OlivineLighthouse1FRocket2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend OlivineLighthouse1FRocket2AfterBattleText
+	jumptext OlivineLighthouse1FRocket2AfterBattleText
 
 OlivineLighthouse1FSherlesScript:
 	opentext
@@ -112,13 +110,12 @@ OlivineLighthouse1FSherlesScript:
 	writetextend OlivineLighthouse1FSherles2Text
 
 ElevatorScript:
-	opentext
 	checkevent EVENT_BEAT_LIGHTHOUSE_MIYAMOTO
 	iftrue .ElevatorFunctioning
-	writetextend ElevatorBlockedText
+	jumptext ElevatorBlockedText
 
 .ElevatorFunctioning:
-	writetextend ElevatorFreeText
+	jumptext ElevatorFreeText
 
 OlivineLighthouse1FOfficer:
 	jumptextfaceplayer Lighthouse1FOfficerText

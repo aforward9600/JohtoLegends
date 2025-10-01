@@ -60,8 +60,7 @@ TrainerPicnickerHaylee:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend PicnickerHayleeAfterText
+	jumptext PicnickerHayleeAfterText
 
 IcePath1FSmoochumScript:
 	refreshscreen
@@ -69,8 +68,7 @@ IcePath1FSmoochumScript:
 	cry SMOOCHUM
 	waitbutton
 	closepokepic
-	opentext
-	writetextend IcePath1FSmoochumText
+	jumptext IcePath1FSmoochumText
 
 IcePath1FPryceScript:
 	jumptextfaceplayer IcePath1FPryceText
