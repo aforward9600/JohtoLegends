@@ -154,6 +154,7 @@ CHRIS EQU __enum__
 	const USAGI
 	const MICHELLE
 	const GABRIELLE
+	const CARMEN
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -173,6 +174,7 @@ CHRIS EQU __enum__
 	const ALM
 	const BUMI
 	const JOSEPH
+	const DARTZ
 
 	trainerclass COOLTRAINERF ; 1c
 	const TERESA
@@ -191,6 +193,7 @@ CHRIS EQU __enum__
 	const JESSIE
 	const REENA2
 	const ELLA
+	const HOLLY
 
 	trainerclass BEAUTY ; 1d
 	const ASHLEY
@@ -435,6 +438,7 @@ CHRIS EQU __enum__
 	const GARRET2
 	const GARRET3
 	const GERALD
+	const PERRY
 
 	trainerclass ARIANA ; 37
 	const ARIANA_1
@@ -480,6 +484,8 @@ CHRIS EQU __enum__
 	const GINGERANDSAM2
 	const JOANDZOE1
 	const JOANDZOE2
+	const CAMANDPAM1
+	const CAMANDPAM2
 
 	trainerclass POKEFANF ; 3e
 	const BEVERLY1

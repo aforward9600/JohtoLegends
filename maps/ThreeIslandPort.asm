@@ -22,37 +22,43 @@ ThreeIslandPortSailorScript:
 	sjump .Cancel
 
 .OneIsland
-	writetext OneIslandText
+	getlandmarkname STRING_BUFFER_5, ONE_ISLAND
+	writetext SeviiIslandText
 	scall SeviiPortLeave
 	warp ONE_ISLAND_PORT, 5, 3
 	end
 
 .TwoIsland
-	writetext TwoIslandText
+	getlandmarkname STRING_BUFFER_5, TWO_ISLAND
+	writetext SeviiIslandText
 	scall SeviiPortLeave
 	warp TWO_ISLAND_PORT, 5, 3
 	end
 
 .FourIsland
-	writetext FourIslandText
+	getlandmarkname STRING_BUFFER_5, FOUR_ISLAND
+	writetext SeviiIslandText
 	scall SeviiPortLeave
 	warp FOUR_ISLAND_PORT, 5, 3
 	end
 
 .FiveIsland
-	writetext FiveIslandText
+	getlandmarkname STRING_BUFFER_5, FIVE_ISLAND
+	writetext SeviiIslandText
 	scall SeviiPortLeave
 	warp FIVE_ISLAND_PORT, 5, 3
 	end
 
 .SixIsland
-	writetext SixIslandText
+	getlandmarkname STRING_BUFFER_5, SIX_ISLAND
+	writetext SeviiIslandText
 	scall SeviiPortLeave
 	warp SIX_ISLAND_PORT, 5, 3
 	end
 
 .SevenIsland
-	writetext SevenIslandText
+	getlandmarkname STRING_BUFFER_5, SEVEN_ISLAND
+	writetext SeviiIslandText
 	scall SeviiPortLeave
 	warp SEVEN_ISLAND_PORT, 5, 3
 	end

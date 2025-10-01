@@ -83,43 +83,50 @@ VermilionPortWalkUpToShipScript:
 	sjump .Cancel
 
 .OneIsland
-	writetext OneIslandText
+	getlandmarkname STRING_BUFFER_5, ONE_ISLAND
+	writetext SeviiIslandText
 	scall VermilionPortLeave
 	warp ONE_ISLAND_PORT, 5, 3
 	end
 
 .TwoIsland
-	writetext TwoIslandText
+	getlandmarkname STRING_BUFFER_5, TWO_ISLAND
+	writetext SeviiIslandText
 	scall VermilionPortLeave
 	warp TWO_ISLAND_PORT, 5, 3
 	end
 
 .ThreeIsland
-	writetext ThreeIslandText
+	getlandmarkname STRING_BUFFER_5, THREE_ISLAND
+	writetext SeviiIslandText
 	scall VermilionPortLeave
 	warp THREE_ISLAND_PORT, 5, 3
 	end
 
 .FourIsland
-	writetext FourIslandText
+	getlandmarkname STRING_BUFFER_5, FOUR_ISLAND
+	writetext SeviiIslandText
 	scall VermilionPortLeave
 	warp FOUR_ISLAND_PORT, 5, 3
 	end
 
 .FiveIsland
-	writetext FiveIslandText
+	getlandmarkname STRING_BUFFER_5, FIVE_ISLAND
+	writetext SeviiIslandText
 	scall VermilionPortLeave
 	warp FIVE_ISLAND_PORT, 5, 3
 	end
 
 .SixIsland
-	writetext SixIslandText
+	getlandmarkname STRING_BUFFER_5, SIX_ISLAND
+	writetext SeviiIslandText
 	scall VermilionPortLeave
 	warp SIX_ISLAND_PORT, 5, 3
 	end
 
 .SevenIsland
-	writetext SevenIslandText
+	getlandmarkname STRING_BUFFER_5, SEVEN_ISLAND
+	writetext SeviiIslandText
 	scall VermilionPortLeave
 	warp SEVEN_ISLAND_PORT, 5, 3
 	end
@@ -231,39 +238,11 @@ UnknownText_0x750a6:
 	cont "once again!"
 	done
 
-OneIslandText:
+SeviiIslandText:
 	text "You'd like to go to"
-	line "One Island?"
-	done
-
-TwoIslandText:
-	text "You'd like to go to"
-	line "Two Island?"
-	done
-
-ThreeIslandText:
-	text "You'd like to go to"
-	line "Three Island?"
-	done
-
-FourIslandText:
-	text "You'd like to go to"
-	line "Four Island?"
-	done
-
-FiveIslandText:
-	text "You'd like to go to"
-	line "Five Island?"
-	done
-
-SixIslandText:
-	text "You'd like to go to"
-	line "Six Island?"
-	done
-
-SevenIslandText:
-	text "You'd like to go to"
-	line "Seven Island?"
+	line "@"
+	text_ram wStringBuffer5
+	text "?"
 	done
 
 AllAboardText:

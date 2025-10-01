@@ -2736,6 +2736,26 @@ endc
 	dw JUMP_KICK, BRAVE_BIRD, DRILL_PECK, SWORDS_DANCE
 	db -1 ; end
 
+	next_list_item ; LASS
+	db "Carmen@", TRAINERTYPE_MOVES | TRAINERTYPE_ABILITY
+	db 85
+	dw LICKILICKY
+	dw EARTHQUAKE, DOUBLE_EDGE, GYRO_BALL, KNOCK_OFF
+	db 0 ; OBLIVIOUS
+	db 85
+	dw LEDIAN
+	dw THUNDERPUNCH, DRAIN_PUNCH, U_TURN, BULK_UP
+	db 2 ; IRON_FIST
+	db 85
+	dw MANTINE
+	dw RAIN_DANCE, AIR_SLASH, HYDRO_PUMP, ROOST
+	db 0 ; SWIFT_SWIM
+	db 86
+	dw UMBREON
+	dw FAINT_ATTACK, PSYCHIC_M, CONFUSE_RAY, TOXIC
+	db 0 ; SYNCHRONIZE
+	db -1 ; end
+
 	end_list_items
 
 JanineGroup:
@@ -3032,6 +3052,20 @@ endc
 	db 56
 	dw RATICATE
 	dw SUCKER_PUNCH, SLASH, SCREECH, AERIAL_ACE
+	db -1 ; end
+
+	next_list_item ; COOLTRAINERM
+	db "Dartz@", TRAINERTYPE_NORMAL
+	db 85
+	dw MR__MIME
+	db 85
+	dw FERALIGATR
+	db 85
+	dw SNORLAX
+	db 85
+	dw BRONZONG
+	db 86
+	dw SALAMENCE
 	db -1 ; end
 
 	end_list_items
@@ -3355,6 +3389,20 @@ endc
 	dw FARIGIRAF
 	db 47
 	dw MEGANIUM
+	db -1 ; end
+
+	next_list_item ; COOLTRAINERF (22)
+	db "Holly@", TRAINERTYPE_NORMAL
+	db 85
+	dw WYRDEER
+	db 85
+	dw MEGANIUM
+	db 85
+	dw MANECTRIC
+	db 85
+	dw PIDGEOT
+	db 86
+	dw GARCHOMP
 	db -1 ; end
 
 	end_list_items
@@ -6064,6 +6112,16 @@ CamperGroup:
 	dw GLISCOR
 	db -1
 
+	next_list_item ; CAMPER
+	db "Perry@", TRAINERTYPE_NORMAL
+	db 85
+	dw GALLADE
+	db 85
+	dw SANDSLASH
+	db 86
+	dw MAGMORTAR
+	db -1 ; end
+
 	end_list_items
 
 ArianaGroup:
@@ -6678,6 +6736,30 @@ endc
 	db 74
 	dw LEAFEON
 	dw DIG, SUNNY_DAY, SOLAR_BLADE, X_SCISSOR
+	db -1 ; end
+
+	next_list_item ; TWINS (7)
+	db "Cam & Pam@", TRAINERTYPE_MOVES | TRAINERTYPE_ABILITY
+	db 86
+	dw CLEFABLE
+	dw MOONBLAST, FIRE_BLAST, SOFTBOILED, CALM_MIND
+	db 1 ; MAGIC_GUARD
+	db 86
+	dw WIGGLYTUFF
+	dw PLAY_ROUGH, DRAIN_PUNCH, REFLECT, THUNDERPUNCH
+	db 1 ; COMPETITIVE
+	db -1 ; end
+
+	next_list_item ; TWINS (7)
+	db "Cam & Pam@", TRAINERTYPE_MOVES | TRAINERTYPE_ABILITY
+	db 86
+	dw WIGGLYTUFF
+	dw PLAY_ROUGH, DRAIN_PUNCH, REFLECT, THUNDERPUNCH
+	db 1 ; COMPETITIVE
+	db 86
+	dw CLEFABLE
+	dw MOONBLAST, FIRE_BLAST, SOFTBOILED, CALM_MIND
+	db 1 ; MAGIC_GUARD
 	db -1 ; end
 
 	end_list_items
