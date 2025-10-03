@@ -42,6 +42,20 @@ MemorialIslandFerropexola:
 .Finish
 	end
 
+TrainerCooltrainerMColby:
+	trainer COOLTRAINERM, COLBY, EVENT_BEAT_COOLTRAINERM_SEAN, CooltrainerMColbySeenText, CooltrainerMColbyBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	jumptext CooltrainerMColbyAfterText
+
+TrainerSwimmerMCole:
+	trainer SWIMMERM, COLE, EVENT_BEAT_SWIMMERM_HAL, SwimmerMColeSeenText, SwimmerMColeBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	jumptext SwimmerMColeAfterText
+
 MemorialIslandGrave:
 	jumptext MemorialIslandGraveText
 
@@ -86,6 +100,39 @@ MemorialIslandGraveText:
 	para "6.23.11-6.10.25"
 	done
 
+CooltrainerMColbySeenText:
+	text "Only one person"
+	line "visits Memorial"
+	cont "Island."
+	done
+
+CooltrainerMColbyBeatenText:
+	text "I've never spoken"
+	line "to him."
+	done
+
+CooltrainerMColbyAfterText:
+	text "He only shows up"
+	line "on weekends."
+	done
+
+SwimmerMColeSeenText:
+	text "I'm the fastest"
+	line "Swimmer in the"
+	cont "Sevii Islands!"
+	done
+
+SwimmerMColeBeatenText:
+	text "Leg cramp!"
+	done
+
+SwimmerMColeAfterText:
+	text "There's never been"
+	line "a competition, but"
+	cont "I feel like I'm"
+	cont "the fastest!"
+	done
+
 MemorialIsland_MapEvents:
 	db 0, 0 ; filler
 
@@ -96,6 +143,8 @@ MemorialIsland_MapEvents:
 	db 1 ; bg events
 	bg_event 11, 24, BGEVENT_READ, MemorialIslandGrave
 
-	db 1 ; object events
+	db 3 ; object events
 	object_event 11, 25, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MemorialIslandFerropexola, EVENT_FIVE_ISLAND_FERROPEXOLA
+	object_event 21,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerMColby, -1
+	object_event 10, 12, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerSwimmerMCole, -1
 	

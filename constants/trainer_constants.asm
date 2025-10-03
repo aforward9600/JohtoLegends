@@ -106,6 +106,8 @@ CHRIS EQU __enum__
 	trainerclass SCIENTIST ; 14
 	const MAC_2
 	const MAC
+	const GIDEON
+	const BRAUN
 
 	trainerclass ERIKA ; 15
 	const ERIKA1
@@ -175,6 +177,7 @@ CHRIS EQU __enum__
 	const BUMI
 	const JOSEPH
 	const DARTZ
+	const COLBY
 
 	trainerclass COOLTRAINERF ; 1c
 	const TERESA
@@ -296,6 +299,7 @@ CHRIS EQU __enum__
 	const SETH
 	const TANNER
 	const DARYL
+	const COLE
 
 	trainerclass SWIMMERF ; 27
 	const ANGIE

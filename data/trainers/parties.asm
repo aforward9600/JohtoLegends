@@ -2201,6 +2201,38 @@ endc
 	dw DISCHARGE, LIGHT_SCREEN, THUNDER_WAVE, LOW_KICK
 	db -1 ; end
 
+	next_list_item ; SCIENTIST
+	db "Gideon@", TRAINERTYPE_ABILITY
+	db 87
+	dw DITTO
+	db 2 ; IMPOSTER
+	db 87
+	dw ALAKAZAM
+	db 2 ; MAGIC_GUARD
+	db 87
+	dw MAGNEZONE
+	db 0 ; STURDY
+	db 87
+	dw PORYGON_Z
+	db 1 ; DOWNLOAD
+	db -1 ; end
+
+	next_list_item ; SCIENTIST
+	db "Braun@", TRAINERTYPE_ABILITY
+	db 87
+	dw ELECTRODE
+	db 2 ; AFTERMATH
+	db 87
+	dw SCIZOR
+	db 1 ; TECHNICIAN
+	db 87
+	dw AERODACTYL
+	db 2 ; TOUGH_CLAWS
+	db 87
+	dw FARIGIRAF
+	db 1 ; ARMOR_TAIL
+	db -1 ; end
+
 	end_list_items
 
 ErikaGroup:
@@ -3066,6 +3098,26 @@ endc
 	dw BRONZONG
 	db 86
 	dw SALAMENCE
+	db -1 ; end
+
+	next_list_item ; COOLTRAINERM
+	db "Colby@", TRAINERTYPE_MOVES | TRAINERTYPE_ABILITY
+	db 87
+	dw VENUSAUR
+	dw SLUDGE_BOMB, GIGA_DRAIN, SUNNY_DAY, EARTHQUAKE
+	db 2 ; CHLOROPHYLL
+	db 87
+	dw DUDUNSPARS
+	dw EARTHQUAKE, PLAY_ROUGH, GLARE, AIR_SLASH
+	db 0 ; SERENE_GRACE
+	db 87
+	dw AGGRON
+	dw IRON_HEAD, EARTHQUAKE, STONE_EDGE, DRAGON_CLAW
+	db 0 ; STURDY
+	db 88
+	dw HONCHKROW
+	dw NIGHT_SLASH, DRILL_PECK, ROOST, STEEL_WING
+	db 1 ; SUPER_LUCK
 	db -1 ; end
 
 	end_list_items
@@ -4504,6 +4556,18 @@ endc
 	db 85
 	dw TOXICROAK
 	dw POISON_JAB, CLOSE_COMBAT, SUCKER_PUNCH, BULK_UP
+	db -1 ; end
+
+	next_list_item ; SWIMMERM
+	db "Cole@", TRAINERTYPE_MOVES | TRAINERTYPE_ABILITY
+	db 87
+	dw POLITOED
+	dw SURF, ICE_BEAM, PERISH_SONG, PSYCHIC_M
+	db 2 ; DRIZZLE
+	db 88
+	dw KINGDRA
+	dw SURF, ICE_BEAM, DRAGON_PULSE, SMOKESCREEN
+	db 0 ; SWIFT_SWIM
 	db -1 ; end
 
 	end_list_items

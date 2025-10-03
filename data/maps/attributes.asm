@@ -809,6 +809,8 @@ ENDM
 	map_attributes FourIslandHouse2, FOUR_ISLAND_HOUSE_2, $00, 0
 	map_attributes FourIslandHouse3, FOUR_ISLAND_HOUSE_3, $00, 0
 	map_attributes FourIslandLoreleisHouse, FOUR_ISLAND_LORELEIS_HOUSE, $00, 0
+	map_attributes FiveIslandHouse1, FIVE_ISLAND_HOUSE_1, $00, 0
+	map_attributes FiveIslandHouse2, FIVE_ISLAND_HOUSE_2, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1

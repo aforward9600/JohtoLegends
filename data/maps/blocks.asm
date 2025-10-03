@@ -164,6 +164,8 @@ FourIslandHouse1_Blocks:
 FourIslandHouse2_Blocks:
 FourIslandHouse3_Blocks:
 FourIslandLoreleisHouse_Blocks:
+FiveIslandHouse1_Blocks:
+FiveIslandHouse2_Blocks:
 	INCBIN "maps/House1.ablk"
 
 BillsFamilysHouse_Blocks:

@@ -589,12 +589,14 @@ ENDM
 
 	map_const FIVE_ISLAND_PORT,                             5,  9 ; 1
 	map_const FIVE_ISLAND,                                 10, 12 ; 2
+	map_const FIVE_ISLAND_HOUSE_1,                          5,  4 ; 3
+	map_const FIVE_ISLAND_HOUSE_2,                          5,  4 ; 4
 	map_const WATER_LABYRINTH,                             26,  8 ; 3
 	map_const RESORT_GORGEOUS,                             25, 10 ; 4
 	map_const FIVE_ISLE_MEADOW,                             9, 18 ; 5
 	map_const MEMORIAL_ISLAND,                             13, 20 ; 6
 	map_const FIVE_ISLAND_POKECENTER,                       5,  4 ; 7
-	map_const SELPHYS_HOUSE,                                4,  4 ; 8
+	map_const SELPHYS_HOUSE,                                5,  4 ; 8
 	map_const ROCKET_WAREHOUSE,                             7, 10 ; 9
 	map_const LOST_CAVE_ENTRANCE,                           5,  5 ; 9
 	map_const LOST_CAVE_ROOM_1,                             5,  5 ; 10
