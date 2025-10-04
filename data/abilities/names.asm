@@ -142,3 +142,4 @@ AbilityNames::
 	db "Slow Start@"
 	db "Dragon's Maw@"
 	db "Transistor@"
+	db "Triage@"

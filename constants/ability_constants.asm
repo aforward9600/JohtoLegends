@@ -143,5 +143,6 @@
 	const SLOW_START    ; 8c
 	const DRAGONS_MAW   ; 8d
 	const TRANSISTOR    ; 8e
+	const TRIAGE        ; 8f
 
 NUM_ABILITIES EQU const_value + -1

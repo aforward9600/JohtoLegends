@@ -433,8 +433,6 @@ BattleCommand_SwitchTurn2:
 ArmorTailCheck:
 	call CheckUserNeutralGasMoldBreaker
 	ret z
-
-.ContinueArmorTail
 	call GetTargetAbility
 	cp ARMOR_TAIL
 	ret nz
@@ -447,17 +445,69 @@ ArmorTailCheck:
 	cp EFFECT_PRIORITY_HIT
 	jr z, .ArmorTailBlocked
 	call GetUserAbility
+	cp TRIAGE
+	jr z, .Triage
 	cp PRANKSTER
 	ret nz
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	cp STATUS
+	ret c
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	ld hl, PranksterEffects
+	ld de, 1
+	call IsInArray
 	ret nc
 
 .ArmorTailBlocked:
 	ld a, 1
 	ld [wAttackMissed], a
 	ret
+
+.Triage:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_STRENGTH_SAP
+	jr z, .ArmorTailBlocked
+	cp EFFECT_LEECH_HIT
+	jr z, .ArmorTailBlocked
+	cp EFFECT_DREAM_EATER
+	jr z, .ArmorTailBlocked
+	ret
+
+PranksterEffects:
+	db EFFECT_SLEEP
+	db EFFECT_ATTACK_DOWN
+	db EFFECT_DEFENSE_DOWN
+	db EFFECT_SPEED_DOWN
+	db EFFECT_SP_ATK_DOWN
+	db EFFECT_ACCURACY_DOWN
+	db EFFECT_EVASION_DOWN
+	db EFFECT_TOXIC
+	db EFFECT_CONFUSE
+	db EFFECT_ATTACK_DOWN_2
+	db EFFECT_DEFENSE_DOWN_2
+	db EFFECT_SPEED_DOWN_2
+	db EFFECT_SP_DEF_DOWN_2
+	db EFFECT_POISON
+	db EFFECT_PARALYZE
+	db EFFECT_LEECH_SEED
+	db EFFECT_DISABLE
+	db EFFECT_ENCORE
+	db EFFECT_LOCK_ON
+	db EFFECT_FORESIGHT
+	db EFFECT_MEAN_LOOK
+	db EFFECT_SPITE
+	db EFFECT_PERISH_SONG
+	db EFFECT_SWAGGER
+	db EFFECT_ATTRACT
+	db EFFECT_STRENGTH_SAP
+	db EFFECT_PLAY_NICE
+	db EFFECT_FLATTER
+	db EFFECT_BURN
+	db -1
+	
 
 PranksterCheck:
 	call CheckNeutralGas

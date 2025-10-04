@@ -142,6 +142,7 @@ AbilityDescriptions:
 	dw SlowStartDesc
 	dw DragonsMawDesc
 	dw TransistorDesc
+	dw TriageDesc
 
 NoAbilityDesc:
 	db    "No ability."
@@ -702,3 +703,7 @@ DragonsMawDesc:
 TransistorDesc:
 	db    "Raise power by"
 	next1 "30 percent.@"
+
+TriageDesc:
+	db    "Healing moves"
+	next1 "gain priority.@"

@@ -796,14 +796,15 @@ GetPlayerMovePriority:
 
 	ld a, [wEnemyAbility]
 	cp NEUTRAL_GAS
-	jr z, GetMovePriority
+	jp z, GetMovePriority
 	ld a, [wPlayerAbility]
+	cp TRIAGE
+	jr z, .CheckTriage
 	cp PRANKSTER
-	jr nz, GetMovePriority
+	jp nz, GetMovePriority
 	ld a, [wPlayerMoveStructType]
 	cp STATUS
-	jr nc, .PlayerPrankster
-	jr GetMovePriority
+	jp c, GetMovePriority
 
 .PlayerPrankster
 	call GetMoveEffect
@@ -812,12 +813,34 @@ GetPlayerMovePriority:
 	jr z, .GetPlayerMove
 	cp EFFECT_ENDURE
 	jr z, .GetPlayerMove
+.GiveMovePriority
 	ld a, 4
 	ret
 
 .GetPlayerMove
 	ld a, [wCurPlayerMove]
 	ld b, a
+	jr GetMovePriority
+
+.CheckTriage
+	call GetMoveEffect
+	ld b, a
+	cp EFFECT_LEECH_HIT
+	jr z, .GiveMovePriority
+	cp EFFECT_STRENGTH_SAP
+	jr z, .GiveMovePriority
+	cp EFFECT_DREAM_EATER
+	jr z, .GiveMovePriority
+	cp EFFECT_HEAL
+	jr z, .GiveMovePriority
+	cp EFFECT_SYNTHESIS
+	jr z, .GiveMovePriority
+	cp EFFECT_MORNING_SUN
+	jr z, .GiveMovePriority
+	cp EFFECT_MOONLIGHT
+	jr z, .GiveMovePriority
+	cp EFFECT_ROOST
+	jr z, .GiveMovePriority
 	jr GetMovePriority
 
 GetEnemyMovePriority:
@@ -827,12 +850,13 @@ GetEnemyMovePriority:
 	cp NEUTRAL_GAS
 	jr z, GetMovePriority
 	ld a, [wEnemyAbility]
+	cp TRIAGE
+	jr z, .CheckTriage
 	cp PRANKSTER
 	jr nz, GetMovePriority
 	ld a, [wEnemyMoveStructType]
 	cp STATUS
-	jr nc, .EnemyPrankster
-	jr GetMovePriority
+	jr c, GetMovePriority
 
 .EnemyPrankster
 	call GetMoveEffect
@@ -841,8 +865,28 @@ GetEnemyMovePriority:
 	jr z, .GetEnemyMove
 	cp EFFECT_ENDURE
 	jr z, .GetEnemyMove
+.GiveMovePriority
 	ld a, 4
 	ret
+
+.CheckTriage
+	cp EFFECT_LEECH_HIT
+	jr z, .GiveMovePriority
+	cp EFFECT_STRENGTH_SAP
+	jr z, .GiveMovePriority
+	cp EFFECT_DREAM_EATER
+	jr z, .GiveMovePriority
+	cp EFFECT_HEAL
+	jr z, .GiveMovePriority
+	cp EFFECT_SYNTHESIS
+	jr z, .GiveMovePriority
+	cp EFFECT_MORNING_SUN
+	jr z, .GiveMovePriority
+	cp EFFECT_MOONLIGHT
+	jr z, .GiveMovePriority
+	cp EFFECT_ROOST
+	jr z, .GiveMovePriority
+	jr GetMovePriority
 
 .GetEnemyMove
 	ld a, [wCurEnemyMove]
