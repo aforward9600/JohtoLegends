@@ -1847,8 +1847,7 @@ EnemySwitchAbilities:
 	ret nz
 	ld a, 0
 	ld [wEnemyMonStatus], a
-	call UpdateEnemyMonInParty
-	ret
+	jp UpdateEnemyMonInParty
 
 .EnemyRegeneratorAbility
 	ld hl, wEnemyMonMaxHP
@@ -1857,8 +1856,7 @@ EnemySwitchAbilities:
 	ld hl, wEnemyMonMaxHP
 	call RestoreHPAbilities
 	call BattleCommand_SwitchTurnAbilities
-	call UpdateEnemyMonInParty
-	ret
+	jp UpdateEnemyMonInParty
 
 PlayerSwitchAbilities:
 	call CheckNeutralGas
@@ -1871,8 +1869,7 @@ PlayerSwitchAbilities:
 	ld a, 0
 	ld [wBattleMonStatus], a
 	call UpdateBattleMonInParty
-	call UpdateUserInParty
-	ret
+	jp UpdateUserInParty
 
 .PlayerRegeneratorAbility
 	ld hl, wBattleMonMaxHP
@@ -1881,8 +1878,7 @@ PlayerSwitchAbilities:
 	ld hl, wBattleMonMaxHP
 	call RestoreHPAbilities
 	call BattleCommand_SwitchTurnAbilities
-	call UpdateBattleMonInParty
-	ret
+	jp UpdateBattleMonInParty
 
 GetMaxHPAbilities:
 .ok

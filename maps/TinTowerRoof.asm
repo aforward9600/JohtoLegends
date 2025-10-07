@@ -34,8 +34,8 @@ TinTowerRoof_MapScripts:
 	return
 
 .HoOh:
-	moveobject TINTOWERROOF_RIVAL, 8, 11
-	moveobject TINTOWERROOF_SHERLES, 8, 12
+	moveobject TINTOWERROOF_RIVAL, 6, 11
+	moveobject TINTOWERROOF_SHERLES, 6, 12
 	checkevent EVENT_BEAT_HO_OH
 	iftrue .NoAppear
 	checkevent EVENT_CAUGHT_HO_OH
@@ -228,7 +228,6 @@ AfterHoOhSceneJump:
 	end
 
 TinTowerHoOh:
-	faceplayer
 	opentext
 	writetext HoOhText
 	cry HO_OH

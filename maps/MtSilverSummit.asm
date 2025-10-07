@@ -12,25 +12,25 @@ MtSilverSummit_MapScripts:
 .NightTime:
 	checktime NITE
 	iffalse .CheckMorn
-	changeblock 0, 0, $36
-	changeblock 2, 0, $36
-	changeblock 4, 0, $36
-	changeblock 6, 0, $36
-	changeblock 8, 0, $39
-	changeblock 10, 0, $36
-	changeblock 12, 0, $36
+	changeblock 0, 0, $11
+	changeblock 2, 0, $11
+	changeblock 4, 0, $11
+	changeblock 6, 0, $11
+	changeblock 8, 0, $14
+	changeblock 10, 0, $11
+	changeblock 12, 0, $11
 	return
 
 .CheckMorn:
 	checktime MORN
 	iffalse .CheckEve
-	changeblock 6, 0, $3b
+	changeblock 6, 0, $03
 	return
 
 .CheckEve:
 	checktime DAY
 	iftrue .DoNothing
-	changeblock 6, 0, $3d
+	changeblock 6, 0, $15
 	return
 
 .DoNothing:
