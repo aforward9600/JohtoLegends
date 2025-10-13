@@ -137,7 +137,6 @@ DratiniPokeballScript:
 	waitsfx
 	buttonsound
 	givepoke DRATINI, 5, ORAN_BERRY
-	closetext
 	sjump RivalLarvitarScript
 
 ChooseBagon:
@@ -160,7 +159,6 @@ ChooseBagon:
 	waitsfx
 	buttonsound
 	givepoke BAGON, 5, ORAN_BERRY
-	closetext
 	sjump RivalLarvitarScript
 
 ChooseMew:
@@ -183,7 +181,6 @@ ChooseMew:
 	waitsfx
 	buttonsound
 	givepoke MEW, 5, ORAN_BERRY
-	closetext
 	sjump RivalLarvitarScript
 
 ChooseEevee:
@@ -206,7 +203,6 @@ ChooseEevee:
 	waitsfx
 	buttonsound
 	givepoke EEVEE, 5, ORAN_BERRY
-	closetext
 	sjump RivalLarvitarScript
 
 ChooseMagikarp:
@@ -229,7 +225,6 @@ ChooseMagikarp:
 	waitsfx
 	buttonsound
 	givepoke MAGIKARP, 5, ORAN_BERRY
-	closetext
 	sjump RivalLarvitarScript
 
 ChooseElekid:
@@ -252,7 +247,6 @@ ChooseElekid:
 	waitsfx
 	buttonsound
 	givepoke ELEKID, 5, ORAN_BERRY
-	closetext
 	sjump RivalLarvitarScript
 
 ChooseMewtwo:
@@ -275,7 +269,6 @@ ChooseMewtwo:
 	waitsfx
 	buttonsound
 	givepoke MEWTWO, 5, ORAN_BERRY
-	closetext
 	sjump RivalLarvitarScript
 
 ChooseOmanyte:
@@ -298,7 +291,6 @@ ChooseOmanyte:
 	waitsfx
 	buttonsound
 	givepoke OMANYTE, 5, ORAN_BERRY
-	closetext
 	sjump RivalLarvitarScript
 
 LarvitarPokeballScript:
@@ -336,7 +328,6 @@ LarvitarPokeballScript:
 	waitsfx
 	buttonsound
 	givepoke LARVITAR, 5, ORAN_BERRY
-	closetext
 	sjump RivalDratiniScript
 
 ChooseCelebi:
@@ -359,7 +350,6 @@ ChooseCelebi:
 	waitsfx
 	buttonsound
 	givepoke CELEBI, 5, ORAN_BERRY
-	closetext
 	sjump RivalDratiniScript
 
 ChooseGible:
@@ -382,7 +372,6 @@ ChooseGible:
 	waitsfx
 	buttonsound
 	givepoke GIBLE, 5, ORAN_BERRY
-	closetext
 	sjump RivalDratiniScript
 
 ChooseMissingno:
@@ -405,7 +394,6 @@ ChooseMissingno:
 	waitsfx
 	buttonsound
 	givepoke MISSINGNO, 5, ORAN_BERRY
-	closetext
 	sjump RivalDratiniScript
 
 ChooseMagby:
@@ -428,7 +416,6 @@ ChooseMagby:
 	waitsfx
 	buttonsound
 	givepoke MAGBY, 5, ORAN_BERRY
-	closetext
 	sjump RivalDratiniScript
 
 ChoosePikachu:
@@ -451,7 +438,6 @@ ChoosePikachu:
 	waitsfx
 	buttonsound
 	givepoke PIKACHU, 5, ORAN_BERRY
-	closetext
 	sjump RivalDratiniScript
 
 ChooseMagikarp2:
@@ -474,7 +460,6 @@ ChooseMagikarp2:
 	waitsfx
 	buttonsound
 	givepoke MAGIKARP, 5, ORAN_BERRY
-	closetext
 	sjump RivalDratiniScript
 
 ChooseKabuto:
@@ -497,7 +482,6 @@ ChooseKabuto:
 	waitsfx
 	buttonsound
 	givepoke KABUTO, 5, ORAN_BERRY
-	closetext
 	sjump RivalDratiniScript
 
 DidntChooseDratiniScript:
@@ -507,6 +491,7 @@ DidntChooseLarvitarScript:
 	writetextend DidntChooseLarvitarText
 
 RivalLarvitarScript:
+	closetext
 	applymovement MASTERSHOUSE1F_RIVAL, MastersHouse1F_RivalLarvitarMovement
 	disappear MASTERSHOUSE1F_POKE_BALL2
 	opentext
@@ -540,6 +525,7 @@ RivalLarvitarScript:
 	sjump MastersTestScript1
 
 RivalDratiniScript:
+	closetext
 	applymovement MASTERSHOUSE1F_RIVAL, MastersHouse1F_RivalDratiniMovement
 	disappear MASTERSHOUSE1F_POKE_BALL1
 	opentext
@@ -592,6 +578,12 @@ MastersTestScript1:
 	setevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	setevent EVENT_RIVAL_AT_MASTERS_HOUSE_1
 	waitsfx
+;	checkflag ENGINE_SHINY_PASSWORD
+;	iftrue .ShinyDratini
+;	end
+;.ShinyDratini
+;	loadmem wPartyMon1DVs+0, $ea
+;	loadmem wPartyMon1DVs+1, $aa
 	end
 
 MastersTestScript2:
@@ -673,6 +665,10 @@ WalkUpToRival2:
 
 Rival_ReceiveTheBalls:
 	jumpstd receiveitem
+	end
+
+ShinyStarter:
+	jumpstd shinygiftpokemon
 	end
 
 MasterPasswordCheck:

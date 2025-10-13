@@ -9,7 +9,7 @@ RegidragoPuzzleChamber_MapScripts:
 .HiddenDoor:
 	checkevent EVENT_WALL_OPENED_IN_REGIDRAGO_CHAMBER
 	iftrue .WallOpen
-	changeblock 2, 0, $0d
+	changeblock 4, 0, $0d
 .WallOpen:
 	return
 
@@ -32,7 +32,7 @@ RegidragoPuzzleChamberRock:
 	showemote EMOTE_SHOCK, PLAYER, 20
 	pause 30
 	playsound SFX_STRENGTH
-	changeblock 2, 0, $13
+	changeblock 4, 0, $13
 	reloadmappart
 	earthquake 50
 	setevent EVENT_WALL_OPENED_IN_REGIDRAGO_CHAMBER
@@ -53,7 +53,7 @@ RegidragoPuzzleChamber_MapEvents:
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event  4,  3, BGEVENT_READ, RegidragoPuzzleChamberRock
+	bg_event  5,  5, BGEVENT_READ, RegidragoPuzzleChamberRock
 
 	db 0 ; object events
 	

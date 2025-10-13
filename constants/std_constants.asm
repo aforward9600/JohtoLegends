@@ -62,3 +62,5 @@
 	enum getdecoevent
 	enum gymstatue5
 	enum genericsink
+	enum shinypasswordcheck
+	enum shinygiftpokemon

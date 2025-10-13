@@ -72,7 +72,7 @@ Unique Poke Ball sprites and animations: Idain
 Move Steel Slice: Mskd.
 
 Rangi and the Polished Crystal team for Route 47 and 48 maps, Cherry Tree and the Town Map expansion and many overworld sprites,
-Wynaut sprites and animations, Yanmega back sprite.
+Wynaut sprites and animations, Yanmega back sprite, Erika sprite.
 
 Overqwil sprites: Polished Crystal Team
 

@@ -157,7 +157,6 @@ MadameBossBattle:
 	playsound SFX_POKEBALLS_PLACED_ON_TABLE
 	pause 20
 	applymovement ROCKETLAIRBOSSROOM_RIVAL_2, RivalMovesBackToYouMovement
-	turnobject ROCKETLAIRBOSSROOM_RIVAL_2, RIGHT
 	turnobject PLAYER, LEFT
 	opentext
 	writetext GotTheKeyText
@@ -235,6 +234,7 @@ PlayerWalksToBossMovement:
 
 RocketLairSherlesMovement:
 	big_step UP
+	big_step LEFT
 	big_step UP
 	big_step UP
 	big_step UP
@@ -242,24 +242,25 @@ RocketLairSherlesMovement:
 	big_step UP
 	big_step UP
 	big_step UP
+	big_step RIGHT
 	step_end
 
 RivalMovesToTableMovement:
-	step DOWN
-	step LEFT
-	step LEFT
-	step UP
-	step UP
-	step UP
-	step UP
 	step RIGHT
+	step UP
+	step UP
+	step UP
+	step LEFT
+	step LEFT
 	step_end
 
 RivalMovesBackToYouMovement:
 	step LEFT
+	step LEFT
 	step DOWN
 	step DOWN
 	step DOWN
+	step RIGHT
 	step_end
 
 RivalLeavesBossRoomMovement:

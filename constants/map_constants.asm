@@ -547,7 +547,7 @@ ENDM
 	map_const TREASURE_BEACH,                               9, 13 ; 3
 	map_const KINDLE_ROAD,                                 14, 48 ; 4
 	map_const MT_EMBER,                                     6, 11 ; 5
-	map_const REGIDRAGO_PUZZLE_CHAMBER,                     4,  4 ; 6
+	map_const REGIDRAGO_PUZZLE_CHAMBER,                     5,  5 ; 6
 	map_const REGIDRAGO_CHAMBER,                            5,  5 ; 7
 	map_const ONE_ISLAND_POKECENTER,                        5,  4 ; 8
 	map_const TWO_ISLAND_PORT,                              5,  9 ; 9
@@ -579,7 +579,7 @@ ENDM
 	map_const ICEFALL_CAVE_1F,                             10,  9 ; 35
 	map_const ICEFALL_CAVE_2F,                              9, 11 ; 36
 	map_const ICEFALL_CAVE_BACK_CAVE,                      12, 12 ; 37
-	map_const REGICE_PUZZLE_CHAMBER,                        4,  4 ; 38
+	map_const REGICE_PUZZLE_CHAMBER,                        5,  5 ; 38
 	map_const REGICE_CHAMBER,                               5,  5 ; 39
 	map_const FOUR_ISLAND_POKECENTER,                       5,  4 ; 40
 	map_const CELIOS_HOUSE,                                 5,  4 ; 41
@@ -615,7 +615,7 @@ ENDM
 	map_const GREEN_PATH,                                  42, 10 ; 23
 	map_const OUTCAST_ISLAND,                              10, 20 ; 24
 	map_const ALTERING_CAVE,                               15, 12 ; 25
-	map_const REGIROCK_PUZZLE_CHAMBER,                      4,  4 ; 26
+	map_const REGIROCK_PUZZLE_CHAMBER,                      5,  5 ; 26
 	map_const REGIROCK_CHAMBER,                             5,  5 ; 27
 	map_const RUIN_VALLEY,                                 28, 17 ; 28
 	map_const SIX_ISLAND_POKECENTER,                        5,  4 ; 29

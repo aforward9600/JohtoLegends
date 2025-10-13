@@ -51,23 +51,20 @@ DevonStoneScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	givepoke BELDUM, 5
-	loadmem wPartyMon1DVs+0, $ea
-	loadmem wPartyMon1DVs+1, $aa
+	scall GiveShinyBeldum
 	setevent EVENT_GOT_SHINY_BELDUM
 .AlreadyGotBeldum
 	writetextend DevonStoneText2
 
 .NoRoom:
-	readvar VAR_BOXSPACE
-	ifequal 0, .BoxFullBeldum
-	sjump .GetBeldum
-
-.BoxFullBeldum:
 	writetextend NoRoomBeldumText
 
 .CantGiveBeldum:
 	setevent EVENT_GOT_SHINY_BELDUM
 	writetextend CantGiveBeldumText
+
+GiveShinyBeldum:
+	jumpstd shinygiftpokemon
 
 SilphCoReceptionistText:
 	text "Welcome. This is"
