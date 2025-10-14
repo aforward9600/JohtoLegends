@@ -425,16 +425,26 @@ CheckContactAbilities:
 	cp CURSED_BODY
 	jr z, .cursedbody
 	cp RATTLED
-	jr z, .rattled
+	jp z, .rattled
 	cp JUSTIFIED
 	jp z, .justified
 .AfterCursedBody
+	call GetUserCurrentMove
+	push af
+	ld hl, NoContactMoves
+	call CheckMoveInListAbilities
+	jp c, .NoContactMoves
+	pop af
+	ld hl, SpecialContactMoves
+	call CheckMoveInListAbilities
+	jr c, .SpecialContactMoves
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	cp SPECIAL
 	ret nc
 	cp STATUS
 	ret nc
+.SpecialContactMoves
 	call GetUserAbility
 	cp POISON_TOUCH
 	jr z, .PoisonTouch
@@ -503,6 +513,10 @@ CheckContactAbilities:
 	jp nz, .AfterCursedBody
 	call JustifiedAbility
 	jp .AfterCursedBody
+
+.NoContactMoves:
+	pop af
+	ret
 
 .ContactAbilities:
 	dbw STATIC,       .Static
@@ -707,6 +721,49 @@ CheckContactAbilities:
 	call BattleCommand_SwitchTurnAbilities
 .NoContactAilities:
 	ret
+
+NoContactMoves:
+	dw BARRAGE
+	dw BONE_CLUB
+	dw BONE_RUSH
+	dw BONEMERANG
+	dw BULLDOZE
+	dw BULLET_SEED
+	dw EARTHQUAKE
+	dw EGG_BOMB
+	dw EXPLOSION
+	dw FISSURE
+	dw ICE_SHARD
+	dw ICICLE_CRASH
+	dw ICICLE_SPEAR
+	dw MAGNITUDE
+	dw PAY_DAY
+	dw PETAL_BLIZZ
+	dw PIN_MISSILE
+	dw POISON_STING
+	dw PRESENT
+	dw PSYCHO_CUT
+	dw RAZOR_LEAF
+	dw ROCK_BLAST
+	dw ROCK_SLIDE
+	dw ROCK_THROW
+	dw ROCK_TOMB
+	dw ROCK_WRECKER
+	dw SACRED_FIRE
+	dw SAND_TOMB
+	dw SEED_BOMB
+	dw SELFDESTRUCT
+	dw SKY_ATTACK
+	dw SPIKE_CANNON
+	dw STONE_EDGE
+	dw TWINEEDLE
+	dw -1
+
+SpecialContactMoves:
+	dw GRASS_KNOT
+	dw DRAININGKISS
+	dw PETAL_DANCE
+	dw -1
 
 CheckBoostingAbilities:
 	call CheckNeutralGas
