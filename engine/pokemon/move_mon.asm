@@ -237,8 +237,8 @@ endr
 	pop de
 	pop hl
 	pop bc
-	ld b, ATKDEFDV_SHINY
-	ld c, $aa
+	ld b, $fa
+	ld c, $af
 
 .initializeDVs
 	ld a, b

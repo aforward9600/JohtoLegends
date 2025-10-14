@@ -29,11 +29,6 @@ CheckShininess:
 	cp  SHINY_SPD_VAL << 4
 	jr nz, .NotShiny
 
-; Special
-	ld a, [hl]
-	and $f
-	cp  SHINY_SPC_VAL
-	jr z, .Shiny
 ; Check if the shiny password is active.
 	push de
 	push hl
@@ -42,13 +37,19 @@ CheckShininess:
 	jr nc, .AltSpecial
 	pop hl
 	pop de
-	jr .NotShiny
+
+; Special
+	ld a, [hl]
+	and $f
+	cp  SHINY_SPC_VAL
+	jr nz, .NotShiny
+	jr .Shiny
 
 .AltSpecial
 	pop hl
 	pop de
 	ld a, [hl]
-	and SHINY_ATK_BIT << 4
+	and 1 << SHINY_ATK_BIT
 	jr z, .NotShiny
 
 .Shiny:
