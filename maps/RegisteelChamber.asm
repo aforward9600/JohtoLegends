@@ -38,14 +38,14 @@ RegisteelText:
 RegisteelChamber_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
-	warp_event  6, 10, DOTTED_HOLE_B4F, 4
-	warp_event 11,  7, DOTTED_HOLE_ENTRANCE, 3
+	db 1 ; warp events
+	warp_event  5,  7, REGISTEEL_PUZZLE_CHAMBER, 2
+;	warp_event 11,  7, DOTTED_HOLE_ENTRANCE, 3
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  6,  6, SPRITE_REGISTEEL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, RegisteelScript, EVENT_DOTTED_HOLE_REGISTEEL
+	object_event  5,  4, SPRITE_REGISTEEL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, RegisteelScript, EVENT_DOTTED_HOLE_REGISTEEL
 	

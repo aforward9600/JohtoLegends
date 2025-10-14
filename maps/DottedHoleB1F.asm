@@ -22,7 +22,7 @@ DottedHoleB1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 5 ; warp events
-	warp_event  3,  3, DOTTED_HOLE_ENTRANCE, 3
+	warp_event  3,  3, DOTTED_HOLE_ENTRANCE, 2
 	warp_event  5,  3, DOTTED_HOLE_B2F, 1 ; up
 	warp_event  3,  5, DOTTED_HOLE_ENTRANCE, 4 ; left
 	warp_event  5,  7, DOTTED_HOLE_ENTRANCE, 4 ; down

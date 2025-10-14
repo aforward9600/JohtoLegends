@@ -811,6 +811,7 @@ ENDM
 	map_attributes FourIslandLoreleisHouse, FOUR_ISLAND_LORELEIS_HOUSE, $00, 0
 	map_attributes FiveIslandHouse1, FIVE_ISLAND_HOUSE_1, $00, 0
 	map_attributes FiveIslandHouse2, FIVE_ISLAND_HOUSE_2, $00, 0
+	map_attributes RegisteelPuzzleChamber, REGISTEEL_PUZZLE_CHAMBER, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1

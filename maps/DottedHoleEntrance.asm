@@ -11,7 +11,7 @@ DottedHoleEntrance_MapEvents:
 	db 4 ; warp events
 	warp_event  5,  9, RUIN_VALLEY, 1
 	warp_event  5,  5, DOTTED_HOLE_B1F, 1
-	warp_event 11,  5, REGISTEEL_CHAMBER, 2
+	warp_event 11,  5, REGISTEEL_PUZZLE_CHAMBER, 1
 	warp_event  5,  7, DOTTED_HOLE_B1F, 2 ; return
 
 	db 0 ; coord events

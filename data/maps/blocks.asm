@@ -1181,7 +1181,10 @@ DottedHoleB4F_Blocks:
 	INCBIN "maps/DottedHoleFloor.ablk"
 
 RegisteelChamber_Blocks:
-	INCBIN "maps/DottedHoleRegisteel.ablk"
+	INCBIN "maps/RegisteelChamber.ablk"
+
+RegisteelPuzzleChamber_Blocks:
+	INCBIN "maps/RegisteelPuzzleChamber.ablk"
 
 RegirockChamber_Blocks:
 	INCBIN "maps/RegirockChamber.ablk"
