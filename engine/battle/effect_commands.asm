@@ -4236,14 +4236,15 @@ BattleCommand_PoisonTarget:
 	call SafeCheckSafeguard
 	ret nz
 
-	call PoisonOpponent
-	ld de, ANIM_PSN
-	call PlayOpponentBattleAnim
-	call RefreshBattleHuds
+	call .check_poison_fang
+	jr z, .poison_fang
+
+	call .apply_poison
 
 	ld hl, WasPoisonedText
 	call StdBattleTextbox
 
+.finish_poison
 	farcall SynchronizeCheck
 
 	farcall UseHeldStatusHealingItem
@@ -4254,6 +4255,35 @@ BattleCommand_PoisonTarget:
 	cp WEATHER_SUN
 	ret z
 	jr .SkipImmunity
+
+.check_poison_fang
+	ld a, BATTLE_VARS_SUBSTATUS5_OPP
+	call GetBattleVarAddr
+	ldh a, [hBattleTurn]
+	and a
+	ld de, wEnemyToxicCount
+	jr z, .ok
+	ld de, wPlayerToxicCount
+.ok
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_POISON_FANG
+	ret
+
+.poison_fang
+	set SUBSTATUS_TOXIC, [hl]
+	xor a
+	ld [de], a
+	call .apply_poison
+
+	ld hl, BadlyPoisonedText
+	jp StdBattleTextbox
+
+.apply_poison
+	call PoisonOpponent
+	ld de, ANIM_PSN
+	call PlayOpponentBattleAnim
+	jp RefreshBattleHuds
 
 BattleCommand_Poison:
 ; poison
@@ -7070,8 +7100,6 @@ EndRechargeOpp:
 INCLUDE "engine/battle/move_effects/leech_seed.asm"
 
 INCLUDE "engine/battle/move_effects/shell_smash.asm"
-
-INCLUDE "engine/battle/move_effects/sucker_punch.asm"
 
 BattleCommand_ResetStats:
 ; resetstats

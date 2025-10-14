@@ -439,6 +439,7 @@ PidgeotEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, RAZOR_WIND
 	dbw 1, RAZOR_WIND
+	dbw 1, HEAT_WAVE
 	dbw 1, TACKLE
 	dbw 5, SAND_ATTACK
 	dbw 9, GUST

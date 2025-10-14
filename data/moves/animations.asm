@@ -2451,8 +2451,7 @@ BattleAnim_Headbutt:
 	anim_sound 0, 1, SFX_HEADBUTT
 	anim_obj ANIM_OBJ_01, 136, 56, $0
 	anim_wait 8
-	anim_call BattleAnim_ShowMon_0
-	anim_ret
+	anim_jump BattleAnim_ShowMon_0
 
 BattleAnim_Tackle:
 BattleAnim_Astonish:
@@ -2463,8 +2462,7 @@ BattleAnim_Astonish:
 	anim_sound 0, 1, SFX_TACKLE
 	anim_obj ANIM_OBJ_00, 136, 48, $0
 	anim_wait 8
-	anim_call BattleAnim_ShowMon_0
-	anim_ret
+	anim_jump BattleAnim_ShowMon_0
 
 BattleAnim_BodySlam:
 	anim_1gfx ANIM_GFX_HIT
@@ -3414,6 +3412,11 @@ BattleAnim_Agility:
 	anim_obp0 $fc
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_18, $0, $1, $40
+	anim_call BattleAnim_AgilityLoop
+	anim_incbgeffect ANIM_BG_18
+	anim_jump BattleAnim_ShowMon_0
+
+BattleAnim_AgilityLoop:
 	anim_obj ANIM_OBJ_AGILITY, 8, 24, $10
 	anim_obj ANIM_OBJ_AGILITY, 8, 48, $2
 	anim_obj ANIM_OBJ_AGILITY, 8, 88, $8
@@ -3426,9 +3429,9 @@ BattleAnim_Agility:
 	anim_sound 0, 0, SFX_RAZOR_WIND
 	anim_wait 4
 	anim_loop 18, .loop
-	anim_incbgeffect ANIM_BG_18
-	anim_call BattleAnim_ShowMon_0
 	anim_ret
+;	anim_jump BattleAnim_ShowMon_0
+;	anim_ret
 
 BattleAnim_BoneClub:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_MISC
@@ -4463,6 +4466,10 @@ BattleAnim_CalmMind:
 BattleAnim_Endure:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_call BattleAnim_TargetObj_1Row
+	anim_call BattleAnim_EndureLoop
+	anim_jump BattleAnim_ShowMon_0
+
+BattleAnim_EndureLoop:
 	anim_bgeffect ANIM_BG_1A, $0, $1, $20
 	anim_bgeffect ANIM_BG_07, $0, $2, $0
 .loop
@@ -4484,7 +4491,6 @@ BattleAnim_Endure:
 	anim_loop 5, .loop
 	anim_wait 8
 	anim_incbgeffect ANIM_BG_1A
-	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
 BattleAnim_Charm:
@@ -5806,8 +5812,9 @@ BattleAnim_AerialAce:
 	anim_1gfx ANIM_GFX_CUT
 	anim_sound 0, 1, SFX_CUT
 	anim_obj ANIM_OBJ_3A, 152, 40, $0
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_wait 32
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 16
 	anim_ret
 
 BattleAnim_MagicalLeaf:
@@ -6186,32 +6193,9 @@ BattleAnim_AuraSphere:
 
 BattleAnim_Superpower:
 	anim_1gfx ANIM_GFX_SPEED
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect ANIM_BG_1A, $0, $1, $20
-	anim_bgeffect ANIM_BG_07, $0, $2, $0
-.loop
-	anim_sound 0, 0, SFX_SWORDS_DANCE
-	anim_obj ANIM_OBJ_47, 44, 108, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 36, 108, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 52, 108, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 28, 108, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 60, 108, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 20, 108, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 68, 108, $8
-	anim_wait 2
-	anim_loop 5, .loop
-	anim_wait 8
-	anim_incbgeffect ANIM_BG_1A
-	anim_call BattleAnim_ShowMon_0
+	anim_call BattleAnim_EndureLoop
 	anim_1gfx ANIM_GFX_HIT
-	anim_call BattleAnim_DoubleEdge
-	anim_ret
+	anim_jump BattleAnim_DoubleEdge
 
 BattleAnim_DragonDance:
     anim_sound 0, 0, SFX_SURF
@@ -6478,49 +6462,33 @@ BattleAnim_DrainingKiss:
     anim_ret
 
 BattleAnim_SilverWind:
-    anim_2gfx ANIM_GFX_WIND, ANIM_GFX_HIT
+    anim_2gfx ANIM_GFX_WIND_BG, ANIM_GFX_HIT
     anim_obp0 $fc
     anim_call BattleAnim_TargetObj_1Row
-    anim_obj ANIM_OBJ_AGILITY, 8, 24, $10
-    anim_obj ANIM_OBJ_AGILITY, 8, 48, $2
-    anim_obj ANIM_OBJ_AGILITY, 8, 88, $8
-    anim_wait 4
-    anim_obj ANIM_OBJ_AGILITY, 8, 32, $6
-    anim_obj ANIM_OBJ_AGILITY, 8, 56, $c
-    anim_obj ANIM_OBJ_AGILITY, 8, 80, $4
-    anim_obj ANIM_OBJ_AGILITY, 8, 104, $e
-.loop
-    anim_sound 0, 0, SFX_RAZOR_WIND
-    anim_wait 4
+	anim_bgeffect ANIM_BG_18, $0, $1, $40
+	anim_call BattleAnim_AgilityLoop
+	anim_incbgeffect ANIM_BG_18
+	anim_wait 4
     anim_sound 0, 1, SFX_COMET_PUNCH
-    anim_obj ANIM_OBJ_04, 120, 32, $0
+    anim_obj ANIM_OBJ_00, 136, 48, $0
     anim_wait 8
     anim_sound 0, 1, SFX_COMET_PUNCH
-    anim_obj ANIM_OBJ_04, 152, 40, $0
+    anim_obj ANIM_OBJ_00, 136, 48, $0
     anim_wait 8
     anim_sound 0, 1, SFX_COMET_PUNCH
-    anim_obj ANIM_OBJ_04, 136, 48, $0
+    anim_obj ANIM_OBJ_00, 136, 48, $0
     anim_wait 32
-    anim_call BattleAnim_ShowMon_0
-    anim_ret
+    anim_jump BattleAnim_ShowMon_0
 
 BattleAnim_OminousWind:
-    anim_2gfx ANIM_GFX_WIND, ANIM_GFX_ANGELS
+    anim_2gfx ANIM_GFX_WIND_BG, ANIM_GFX_ANGELS
     anim_obp0 $fc
     anim_call BattleAnim_TargetObj_1Row
-    anim_obj ANIM_OBJ_AGILITY, 8, 24, $10
-    anim_obj ANIM_OBJ_AGILITY, 8, 48, $2
-    anim_obj ANIM_OBJ_AGILITY, 8, 88, $8
-    anim_wait 4
-    anim_obj ANIM_OBJ_AGILITY, 8, 32, $6
-    anim_obj ANIM_OBJ_AGILITY, 8, 56, $c
-    anim_obj ANIM_OBJ_AGILITY, 8, 80, $4
-    anim_obj ANIM_OBJ_AGILITY, 8, 104, $e
-    anim_sound 0, 0, SFX_RAZOR_WIND
-    anim_wait 4
-    anim_call BattleAnim_ShowMon_0
 	anim_bgp $1b
 	anim_obp0 $f
+	anim_call BattleAnim_AgilityLoop
+    anim_wait 4
+    anim_call BattleAnim_ShowMon_0
 	anim_obj ANIM_OBJ_NIGHTMARE, 132, 40, $0
 	anim_obj ANIM_OBJ_NIGHTMARE, 132, 40, $a0
 	anim_sound 0, 1, SFX_NIGHTMARE

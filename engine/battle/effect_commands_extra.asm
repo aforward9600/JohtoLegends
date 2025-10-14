@@ -719,3 +719,14 @@ SetMoveAnimationID2:
 	ld [wFXAnimID + 1], a
 	pop hl
 	ret
+
+CheckOpponentWentFirst2:
+; Returns a=0, z if user went first
+; Returns a=1, nz if opponent went first
+	push bc
+	ld a, [wEnemyGoesFirst] ; 0 if player went first
+	ld b, a
+	ldh a, [hBattleTurn] ; 0 if it's the player's turn
+	xor b ; 1 if opponent went first
+	pop bc
+	ret

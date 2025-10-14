@@ -128,7 +128,6 @@ TogepiEggGiver:
 	ifequal PARTY_LENGTH, .PartyFull
 .GetTogepiEgg:
 	giveegg TOGEPI, 5
-	scall ShinyTogepiEgg
 	getstring STRING_BUFFER_4, .eggname
 	scall .GivenTogepiEgg
 	setevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
@@ -149,19 +148,12 @@ TogepiEggGiver:
 ;.BoxFullEgg:
 	writetextend YouAintGotRoomText
 
-.GivenTogepiEgg:
-	checkflag ENGINE_SHINY_PASSWORD
-	iffalse .end
-	jumpstd shinygiftpokemon
-.end
+.GivenTogepiEgg
+	jumpstd receivetogepiegg
 	end
 
 .NoTogepiEgg:
 	writetextend NoTogepiEggText
-
-ShinyTogepiEgg:
-	jumpstd shinypasswordcheck
-	end
 
 Route43Sign1:
 	jumptext Route43Sign1Text

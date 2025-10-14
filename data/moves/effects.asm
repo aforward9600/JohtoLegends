@@ -35,6 +35,7 @@ DoSleep:
 	sleeptarget
 	endmove
 
+PoisonFang:
 PoisonHit:
 	checkobedience
 	usedmovetext
