@@ -12,7 +12,7 @@ LostCaveRoom9_MapEvents:
 	warp_event  7,  5, LOST_CAVE_ROOM_1, 3 ; right to left
 	warp_event  5,  7, LOST_CAVE_ROOM_1, 4 ; down to up
 	warp_event  2,  4, LOST_CAVE_ROOM_1, 1 ; left to right
-	warp_event  4,  1, LOST_CAVE_REGIELEKI, 1 ; up to down
+	warp_event  4,  1, REGIELEKI_PUZZLE_CHAMBER, 1 ; up to down
 
 	db 0 ; coord events
 

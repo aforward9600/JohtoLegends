@@ -307,6 +307,8 @@ NUM_UNOWN_PUZZLES EQU const_value
 	const UNOWNWORDS_REGIROCK
 	const UNOWNWORDS_REGICE
 	const UNOWNWORDS_REGISTEEL
+	const UNOWNWORDS_REGIELEKI
+	const UNOWNWORDS_REGIGIGAS
 
 ; MoveTutor setval arguments
 	const_def 1

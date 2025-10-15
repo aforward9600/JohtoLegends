@@ -1163,7 +1163,12 @@ RuinValley_Blocks:
 RegirockPuzzleChamber_Blocks:
 RegidragoPuzzleChamber_Blocks:
 RegicePuzzleChamber_Blocks:
+RegielekiPuzzleChamber_Blocks:
 	INCBIN "maps/RegiPuzzleChamber.ablk"
+
+RegigigasChamber_Blocks:
+OnaganTempleInside_Blocks:
+	INCBIN "maps/OnaganTempleInside.ablk"
 
 RegidragoChamber_Blocks:
 	INCBIN "maps/RegidragoChamber.ablk"

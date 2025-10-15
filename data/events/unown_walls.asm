@@ -62,6 +62,10 @@ UnownWalls:
 	unownwall "N", "E", "V", "E", "R"
 ; UNOWNWORDS_REGISTEEL
 	unownwall "C", "O", "A", "T"
+; UNOWNWORDS_REGIELEKI
+	unownwall "M", "A", "G", "N", "E", "T"
+; UNOWNWORDS_REGIGIGAS
+	unownwall "G", "I", "A", "N", "T", "S"
 
 MenuHeaders_UnownWalls:
 ; UNOWNWORDS_ESCAPE
@@ -124,3 +128,9 @@ MenuHeaders_UnownWalls:
 ; UNOWNWORDS_REGISTEEL
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 4, 4, 13, 9
+; UNOWNWORDS_REGIELEKI
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 3, 4, 16, 9
+; UNOWNWORDS_REGIGIGAS
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 3, 4, 16, 9

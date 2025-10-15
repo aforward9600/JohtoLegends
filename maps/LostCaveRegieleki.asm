@@ -39,7 +39,7 @@ LostCaveRegieleki_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event  5,  7, LOST_CAVE_ROOM_9, 4 ; down to up
+	warp_event  5,  7, REGIELEKI_PUZZLE_CHAMBER, 2 ; down to up
 
 	db 0 ; coord events
 

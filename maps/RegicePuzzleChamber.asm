@@ -47,8 +47,8 @@ RegicePuzzleChamber_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  3,  5, ICEFALL_CAVE_BACK_CAVE, 2
-	warp_event  3,  1, REGICE_CHAMBER, 1
+	warp_event  5,  7, ICEFALL_CAVE_BACK_CAVE, 2
+	warp_event  5,  1, REGICE_CHAMBER, 1
 
 	db 0 ; coord events
 

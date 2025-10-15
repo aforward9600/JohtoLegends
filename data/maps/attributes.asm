@@ -812,6 +812,9 @@ ENDM
 	map_attributes FiveIslandHouse1, FIVE_ISLAND_HOUSE_1, $00, 0
 	map_attributes FiveIslandHouse2, FIVE_ISLAND_HOUSE_2, $00, 0
 	map_attributes RegisteelPuzzleChamber, REGISTEEL_PUZZLE_CHAMBER, $00, 0
+	map_attributes RegielekiPuzzleChamber, REGIELEKI_PUZZLE_CHAMBER, $00, 0
+	map_attributes OnaganTempleInside, ONAGAN_TEMPLE_INSIDE, $00, 0
+	map_attributes RegigigasChamber, REGIGIGAS_CHAMBER, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1

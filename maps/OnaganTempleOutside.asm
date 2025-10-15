@@ -8,7 +8,8 @@ OnaganTempleOutside_MapScripts:
 OnaganTempleOutside_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 1 ; warp events
+	warp_event 11,  5, ONAGAN_TEMPLE_INSIDE, 1
 
 	db 0 ; coord events
 

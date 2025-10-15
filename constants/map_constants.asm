@@ -608,6 +608,7 @@ ENDM
 	map_const LOST_CAVE_ROOM_7,                             5,  5 ; 16
 	map_const LOST_CAVE_ROOM_8,                             5,  5 ; 17
 	map_const LOST_CAVE_ROOM_9,                             5,  5 ; 18
+	map_const REGIELEKI_PUZZLE_CHAMBER,                     5,  5 ; 19
 	map_const LOST_CAVE_REGIELEKI,                          5,  5 ; 19
 	map_const SIX_ISLAND_PORT,                              5,  9 ; 20
 	map_const SIX_ISLAND,                                  11, 13 ; 21
@@ -634,3 +635,5 @@ ENDM
 	map_const SEVAULT_CANYON,                              17, 42 ; 41
 	map_const TANOBI_RUINS,                                47, 11 ; 42
 	map_const ONAGAN_TEMPLE_OUTSIDE,                       11, 13 ; 43
+	map_const ONAGAN_TEMPLE_INSIDE,                         4,  5 ; 44
+	map_const REGIGIGAS_CHAMBER,                            4,  5 ; 45
