@@ -2383,6 +2383,16 @@ endc
 	dw ANNIHILAPE
 	db -1
 
+	next_list_item ; YOUNGSTER (11)
+	db "Jorge@", TRAINERTYPE_NORMAL
+	db 87
+	dw TANGROWTH
+	db 87
+	dw GRANBULL
+	db 88
+	dw CACTURNE
+	db -1
+
 	end_list_items
 
 SchoolboyGroup:

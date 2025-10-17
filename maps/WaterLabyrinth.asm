@@ -85,7 +85,7 @@ CantGiveMunchlaxEgg:
 
 SwimmerFKanaSeenText:
 	text "I can't stand that"
-	line "Selphie!"
+	line "Selphy!"
 	done
 
 SwimmerFKanaBeatenText:

@@ -121,6 +121,7 @@ CHRIS EQU __enum__
 	const RANDY
 	const BARNEY_YOUNGSTER
 	const MIK
+	const JORGE
 
 	trainerclass SCHOOLBOY ; 17
 	const FINN
