@@ -300,6 +300,7 @@ CHRIS EQU __enum__
 	const TANNER
 	const DARYL
 	const COLE
+	const BRAD
 
 	trainerclass SWIMMERF ; 27
 	const ANGIE
@@ -317,6 +318,7 @@ CHRIS EQU __enum__
 	const AQUA
 	const SHEILA
 	const TARA
+	const KANA
 
 	trainerclass SAILOR ; 28
 	const EUGENE

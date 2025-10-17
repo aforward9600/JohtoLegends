@@ -1083,7 +1083,7 @@ ImOffText:
 	para "to time. See you"
 	line "later!"
 
-	para "...Oh, wait!"
+	para "…Oh, wait!"
 
 	para "Before we go, have"
 	line "some # Balls"

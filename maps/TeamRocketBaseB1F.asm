@@ -174,7 +174,7 @@ ExplodingTrap22:
 
 VoltorbExplodingTrap:
 	special FadeOutPalettes
-	cry VOLTORB
+	cry ELECTRODE
 	special FadeInPalettes
 	setlasttalked -1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
@@ -185,7 +185,7 @@ VoltorbExplodingTrap:
 
 GeodudeExplodingTrap:
 	special FadeOutPalettes
-	cry GEODUDE
+	cry GRAVELER
 	special FadeInPalettes
 	setlasttalked -1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP

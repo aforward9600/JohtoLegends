@@ -3054,6 +3054,7 @@ EnemySwitch:
 	ld [wEnemyIsSwitching], a
 	call LoadTileMapToTempTileMap
 	farcall PlayerSwitchAbilities
+	farcall SetEnemyAbility
 	jp PlayerSwitch
 
 EnemySwitch_SetMode:

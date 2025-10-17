@@ -4583,6 +4583,19 @@ endc
 	db 0 ; SWIFT_SWIM
 	db -1 ; end
 
+	next_list_item ; SWIMMERM
+	db "Brad@", TRAINERTYPE_MOVES
+	db 87
+	dw MANTINE
+	dw ICE_BEAM, HYDRO_PUMP, HURRICANE, RAIN_DANCE
+	db 87
+	dw STARMIE
+	dw SURF, THUNDERBOLT, RECOVER, PSYCHIC_M
+	db 88
+	dw LUDICOLO
+	dw GIGA_DRAIN, SURF, QUIVER_DANCE, ICE_BEAM
+	db -1 ; end
+
 	end_list_items
 
 SwimmerFGroup:
@@ -4730,6 +4743,16 @@ endc
 	dw OVERQWIL
 	db 86
 	dw OCTILLERY
+	db -1 ; end
+
+	next_list_item ; SWIMMERF
+	db "Kana@", TRAINERTYPE_NORMAL
+	db 86
+	dw BLASTOISE
+	db 86
+	dw DRAGONITE
+	db 87
+	dw AZUMARILL
 	db -1 ; end
 
 	end_list_items

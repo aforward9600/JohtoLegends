@@ -103,16 +103,14 @@ TrainerFisherShane:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend FisherShaneAfterBattleText
+	jumptext FisherShaneAfterBattleText
 
 TrainerPokemaniacJarvis:
 	trainer POKEMANIAC, JARVIS, EVENT_BEAT_POKEMANIAC_JARVIS, PokemaniacJarvisSeenText, PokemaniacJarvisBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend PokemaniacJarvisAfterText
+	jumptext PokemaniacJarvisAfterText
 
 TogepiEggGiver:
 	faceplayer
