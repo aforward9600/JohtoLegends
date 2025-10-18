@@ -620,6 +620,8 @@ ENDM
 	map_const REGIROCK_CHAMBER,                             5,  5 ; 27
 	map_const RUIN_VALLEY,                                 28, 17 ; 28
 	map_const SIX_ISLAND_POKECENTER,                        5,  4 ; 29
+	map_const SIX_ISLAND_MART,                              6,  4 ; 30
+	map_const SIX_ISLAND_HOUSE,                             5,  4 ; 
 	map_const DOTTED_HOLE_ENTRANCE,                         7,  6 ; 30
 	map_const DOTTED_HOLE_B1F,                              5,  5 ; 31
 	map_const DOTTED_HOLE_B2F,                              5,  5 ; 32

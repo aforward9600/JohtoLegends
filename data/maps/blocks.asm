@@ -166,6 +166,7 @@ FourIslandHouse3_Blocks:
 FourIslandLoreleisHouse_Blocks:
 FiveIslandHouse1_Blocks:
 FiveIslandHouse2_Blocks:
+SixIslandHouse_Blocks:
 	INCBIN "maps/House1.ablk"
 
 BillsFamilysHouse_Blocks:
@@ -284,6 +285,7 @@ CinnabarIslandMart_Blocks:
 SevenIslandMart_Blocks:
 ThreeIslandMart_Blocks:
 FourIslandMart_Blocks:
+SixIslandMart_Blocks:
 	INCBIN "maps/Mart.ablk"
 
 Route10North_Blocks:
