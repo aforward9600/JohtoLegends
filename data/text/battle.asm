@@ -1362,7 +1362,7 @@ MoodyStatDownText:
 	prompt
 
 ArenaTrapText:
-	text "<TARGET>'s"
+	text "<USER>'s"
 	line "@"
 	text_ram wStringBuffer1
 	text_start

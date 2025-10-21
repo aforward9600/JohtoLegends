@@ -11,7 +11,7 @@ a conspiracy to take over the region from the shadows.
 Features
 
 Thanks to the expansion, we were able to go beyond the usual 256 limit, and
-now there are 323 Pokémon from Generations 1-4, 6, 8, and 9, as well as several
+now there are 330 Pokémon from Generations 1-4, 6, 8, and 9, as well as several
 Fakemon. There are also 406 moves, ranging from Generations 1-9, and a few
 original moves.
 
@@ -59,21 +59,21 @@ Download a ROM of Crystal with the name: Pokemon - Crystal Version (UE) (V1.1) [
 
 It has to be v1.1 for the patch to work.
 
-Below is a link to the current patch, Version 0.6.8 Beta.
+Below is a link to the current patch, Version 0.7.1 Beta.
 
-https://www.mediafire.com/file/hqq7j43o8v464a4/johtolegendsv0.6.8.ips/file
+https://www.mediafire.com/file/p5ro90gpghywhwr/johtolegendsv0.7.1.ips/file
 
 Faithful:
 
-https://www.mediafire.com/file/n98dtodl98c8vnq/johtolegendsfaithfulv0.6.8.ips/file
+https://www.mediafire.com/file/prbuzoch577qeh2/johtolegendsfaithfulv0.7.1.ips/file
 
 No PSS
 
-https://www.mediafire.com/file/fw8ckc33omav7br/johtolegendsnopssv0.6.8.ips/file
+https://www.mediafire.com/file/3mlqk0tonj76uts/johtolegendsnopssv0.7.1.ips/file
 
 Challenge:
 
-https://www.mediafire.com/file/18qo45iz4gncvah/johtolegendschallengev0.6.8.ips/file
+https://www.mediafire.com/file/3ub1ovngq30biiv/johtolegendschallengev0.7.1.ips/file
 
 Patch the ROM with the patch, and it is all set.
 
@@ -86,4 +86,3 @@ Shift + F9. Otherwise, you will be interrupted constantly. Emulators such as
 VBA and MyOldBoy will not emulate the hack correctly.
 
 https://github.com/aforward9600/JohtoLegends
-

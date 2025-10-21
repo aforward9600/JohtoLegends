@@ -3670,6 +3670,14 @@ TryToRunAwayFromBattle:
 	dec a
 	jp nz, .cant_run_from_trainer
 
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	cp GHOST
+	jr z, .no_flee_item
+	ld a, [hl]
+	cp GHOST
+	jr z, .no_flee_item
+
 	call CheckNeutralGas
 	jr z, .SkipRunAway
 	call GetUserAbility
@@ -3861,7 +3869,7 @@ TryToRunAwayFromBattle:
 	cp SHADOW_TAG
 	jp z, .SkipRunAway
 .TryToRunAbilityName
-	call GetTargetAbility
+	ld a, [wEnemyAbility]
 	ld b, a
 	farcall FarLoadAbilityName
 	ld a, b
@@ -5183,6 +5191,13 @@ TryPlayerSwitch:
 	jp BattleMenuPKMN_Loop
 
 .check_trapped
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	cp GHOST
+	jr z, .try_switch
+	ld a, [hl]
+	cp GHOST
+	jr z, .try_switch
 	call CheckNeutralGas
 	jr z, .IgnoreAbilities
 	ld a, [wEnemyAbility]
@@ -5234,7 +5249,7 @@ TryPlayerSwitch:
 	cp SHADOW_TAG
 	jr z, .IgnoreAbilities
 .PlayerSwitchAbilityName
-	call GetTargetAbility
+	ld a, [wEnemyAbility]
 	ld b, a
 	farcall FarLoadAbilityName
 	ld a, b

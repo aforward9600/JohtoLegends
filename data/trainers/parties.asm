@@ -2798,6 +2798,34 @@ endc
 	db 0 ; SYNCHRONIZE
 	db -1 ; end
 
+	next_list_item ; LASS
+	db "Yvonne@", TRAINERTYPE_ITEM_MOVES
+	db 87
+	dw JUMPLUFF
+if DEF(_CHALLENGE)
+	db MIRACLE_SEED
+else
+	db NO_ITEM
+endc
+	dw GIGA_DRAIN, SLEEP_POWDER, ACROBATICS, U_TURN
+	db 87
+	dw FARIGIRAF
+if DEF(_CHALLENGE)
+	db PINK_BOW
+else
+	db NO_ITEM
+endc
+	dw PSYCHIC_M, EARTHQUAKE, DARK_PULSE, RETURN
+	db 88
+	dw RAICHU
+if DEF(_CHALLENGE)
+	db LIGHT_BALL
+else
+	db NO_ITEM
+endc
+	dw SURF, THUNDERBOLT, 
+	db -1 ; end
+
 	end_list_items
 
 JanineGroup:
@@ -3128,6 +3156,18 @@ endc
 	dw HONCHKROW
 	dw NIGHT_SLASH, DRILL_PECK, ROOST, STEEL_WING
 	db 1 ; SUPER_LUCK
+	db -1 ; end
+
+	next_list_item ; COOLTRAINERM
+	db "Richie@", TRAINERTYPE_NORMAL
+	db 87
+	dw HERACROSS
+	db 87
+	dw LICKILICKY
+	db 87
+	dw TYPHLOSION
+	db 88
+	dw ALTARIA
 	db -1 ; end
 
 	end_list_items
@@ -3475,6 +3515,30 @@ endc
 	dw GARCHOMP
 	dw EARTHQUAKE, DRAGON_RUSH, IRON_HEAD, STONE_EDGE
 	db 2 ; ROUGH_SKIN
+	db -1 ; end
+
+	next_list_item ; COOLTRAINERF
+	db "Corina", TRAINERTYPE_MOVES | TRAINERTYPE_ABILITY
+	db 87
+	dw VENOMOTH
+	dw SLUDGE_BOMB, PSYCHIC_M, SLEEP_POWDER, BUG_BUZZ
+	db 1 ; TINTED_LENS
+	db 87
+	dw CLEFABLE
+	dw MOONBLAST, FIRE_BLAST, SOFTBOILED, THUNDERBOLT
+	db 1 ; MAGIC_GUARD
+	db 87
+	dw XATU
+	dw PSYCHIC_M, AIR_SLASH, SHADOW_BALL, CALM_MIND
+	db 2 ; MAGIC_BOUNCE
+	db 87
+	dw OCTILLERY
+	dw HYDRO_PUMP, ICE_BEAM, FLASH_CANNON, FLAMETHROWER
+	db 2 ; MOODY
+	db 88
+	dw FROSLASS
+	dw HAIL, SHADOW_BALL, BLIZZARD, PSYCHIC_M
+	db 0 ; SNOW_CLOAK
 	db -1 ; end
 
 	end_list_items
@@ -4604,6 +4668,18 @@ endc
 	db 88
 	dw LUDICOLO
 	dw GIGA_DRAIN, SURF, QUIVER_DANCE, ICE_BEAM
+	db -1 ; end
+
+	next_list_item ; SWIMMERM
+	db "Guiseppe@", TRAINERTYPE_NORMAL
+	db 87
+	dw GYARADOS
+	db 87
+	dw SLOWBRO
+	db 87
+	dw OVERQWIL
+	db 88
+	dw AZUMARILL
 	db -1 ; end
 
 	end_list_items

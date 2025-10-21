@@ -158,6 +158,7 @@ CHRIS EQU __enum__
 	const MICHELLE
 	const GABRIELLE
 	const CARMEN
+	const YVONNE
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -179,6 +180,7 @@ CHRIS EQU __enum__
 	const JOSEPH
 	const DARTZ
 	const COLBY
+	const RICHIE
 
 	trainerclass COOLTRAINERF ; 1c
 	const TERESA
@@ -198,6 +200,7 @@ CHRIS EQU __enum__
 	const REENA2
 	const ELLA
 	const HOLLY
+	const CORINA
 
 	trainerclass BEAUTY ; 1d
 	const ASHLEY
@@ -302,6 +305,7 @@ CHRIS EQU __enum__
 	const DARYL
 	const COLE
 	const BRAD
+	const GUISEPPE
 
 	trainerclass SWIMMERF ; 27
 	const ANGIE

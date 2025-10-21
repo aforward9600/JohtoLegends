@@ -614,6 +614,8 @@ ENDM
 	map_const SIX_ISLAND,                                  11, 13 ; 21
 	map_const WATER_PATH,                                  12, 24 ; 22
 	map_const GREEN_PATH,                                  42, 10 ; 23
+	map_const GREEN_PATH_HOUSE_1,                           5,  4 ; 24
+	map_const GREEN_PATH_HOUSE_2,                           5,  4 ; 25
 	map_const OUTCAST_ISLAND,                              10, 20 ; 24
 	map_const ALTERING_CAVE,                               15, 12 ; 25
 	map_const REGIROCK_PUZZLE_CHAMBER,                      5,  5 ; 26
