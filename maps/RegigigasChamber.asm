@@ -57,5 +57,5 @@ RegigigasChamber_MapEvents:
 	bg_event  5,  7, BGEVENT_READ, OnaganTemplePillar
 
 	db 1 ; object events
-	object_event  4,  5, SPRITE_REGIGIGAS, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, RegigigasScript, EVENT_ONAGAN_TEMPLE_REGIGIGAS
+	object_event  3,  4, SPRITE_REGIGIGAS, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, RegigigasScript, EVENT_ONAGAN_TEMPLE_REGIGIGAS
 	

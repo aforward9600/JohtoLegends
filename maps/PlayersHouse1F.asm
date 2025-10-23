@@ -653,7 +653,8 @@ PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  6,  7, BLACKTHORN_CITY, 9
+	warp_event  6,  7, REGIGIGAS_CHAMBER, 1
+;	warp_event  6,  7, BLACKTHORN_CITY, 9
 	warp_event  7,  7, BLACKTHORN_CITY, 9
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
 

@@ -73,32 +73,28 @@ TrainerYoungsterMik:
 
 .Script
 	endifjustbattled
-	opentext
-	writetextend YoungsterMikAfterText
+	jumptext YoungsterMikAfterText
 
 TrainerSwimmerDaryl:
 	trainer SWIMMERM, DARYL, EVENT_BEAT_SWIMMERM_JACKSON, SwimmerDarylSeenText, SwimmerDarylBeatenText, 0, .Script
 
 .Script
 	endifjustbattled
-	opentext
-	writetextend SwimmerDarylAfterText
+	jumptext SwimmerDarylAfterText
 
 TrainerCooltrainerFRaina:
 	trainer COOLTRAINERF, REENA2, EVENT_BEAT_COOLTRAINERF_REENA2, CooltrainerFRainaSeenText, CooltrainerFRainaBeatenText, 0, .Script
 
 .Script
 	endifjustbattled
-	opentext
-	writetextend CooltrainerFRainaAfterText
+	jumptext CooltrainerFRainaAfterText
 
 TrainerCamperGerald:
 	trainer CAMPER, GERALD, EVENT_BEAT_CAMPER_GERALD, CamperGeraldSeenText, CamperGeraldBeatenText, 0, .Script
 
 .Script
 	endifjustbattled
-	opentext
-	writetextend CamperGeraldAfterText
+	jumptext CamperGeraldAfterText
 
 KindleRoadTwinScript:
 	jumptextfaceplayer KindleRoadTwinText

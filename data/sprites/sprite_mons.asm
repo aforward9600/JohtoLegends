@@ -63,7 +63,6 @@ SpriteMons:
 	dw SPEAROW
 	dw POLITOED
 	dw IGGLYBUFF
-	dw REGIGIGAS
 	dw ABRA
 	dw MISSINGNO
 	dw MEWTWO

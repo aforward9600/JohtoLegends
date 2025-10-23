@@ -159,6 +159,7 @@
 	const SPRITE_SENSATIONAL_BLONDE ; 9b
 	const SPRITE_CHRIS_RUN ; 9c
 	const SPRITE_KRIS_RUN ; 9d
+	const SPRITE_REGIGIGAS
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $9f
@@ -226,16 +227,15 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_SPEAROW ; db
 	const SPRITE_POLITOED ; dc
 	const SPRITE_IGGLYBUFF ; dd
-	const SPRITE_REGIGIGAS ; de
-	const SPRITE_ABRA ; df
-	const SPRITE_MISSINGNO ; e0
-	const SPRITE_MEWTWO ; e1
-	const SPRITE_CHANSEY ; e2
-	const SPRITE_MAROWAK ; e3
-	const SPRITE_MEW ; e4
-	const SPRITE_NIDORAN_F ; e5
-	const SPRITE_REGIELEKI ; e6
-	const SPRITE_HYPNO
+	const SPRITE_ABRA ; de
+	const SPRITE_MISSINGNO ; df
+	const SPRITE_MEWTWO ; e0
+	const SPRITE_CHANSEY ; e1
+	const SPRITE_MAROWAK ; e2
+	const SPRITE_MEW ; e3
+	const SPRITE_NIDORAN_F ; e4
+	const SPRITE_REGIELEKI ; e5
+	const SPRITE_HYPNO ; e6
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
 	const_def $e8
