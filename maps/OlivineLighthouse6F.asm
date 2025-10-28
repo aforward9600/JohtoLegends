@@ -653,7 +653,7 @@ AmphyPaluPaluluText:
 
 ReceivedLaprasCallText:
 	text "<PLAYER> received"
-	line "Lapras CallA."
+	line "Lapras Call."
 	done
 
 KeepingRosaCompanyText:

@@ -1,4 +1,5 @@
 	object_const_def ; object_event constants
+	const ONAGANTEMPLEINSIDE_SCIENTIST_F
 
 OnaganTempleInside_MapScripts:
 	db 0 ; scene scripts
@@ -12,6 +13,9 @@ OnaganTempleInside_MapScripts:
 	changeblock 4, 0, $9f
 .WallOpen:
 	return
+
+OnaganTempleInsideScientistScript:
+	jumptextfaceplayer OnaganTempleInsideScientistText
 
 OnaganTempleInsideWall2:
 	checkevent EVENT_WALL_OPENED_IN_REGIGIGAS_CHAMBER
@@ -52,6 +56,19 @@ OnaganTempleInsideWall:
 WallOpen:
 	jumptext RegigigasOpenWallText
 
+OnaganTempleInsideScientistText:
+	text "I've studied each"
+	line "temple across the"
+	cont "islands, but this"
+	cont "one is so much"
+	cont "more elaborate."
+
+	para "Perhaps this was"
+	line "dedicated to the"
+	cont "lead deity of the"
+	cont "Onagan religion."
+	done
+
 OnaganTemplePillar:
 	jumptext OnaganTemplePillarText
 
@@ -87,5 +104,6 @@ OnaganTempleInside_MapEvents:
 	bg_event  5,  3, BGEVENT_READ, OnaganTemplePillar
 	bg_event  5,  7, BGEVENT_READ, OnaganTemplePillar
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event  2,  4, SPRITE_SCIENTIST_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OnaganTempleInsideScientistScript, -1
 	

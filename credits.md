@@ -104,7 +104,7 @@ Azurill and Dahlia credits sprite: FrenchOrange & Ferropexola
 
 Kanto grass colors: FrenchOrange
 
-Officer Jenny sprite: FrenchOrange
+Officer Jenny sprite, Regigigas overworld sprite: FrenchOrange
 
 Smoochum and Quilava sprites: FrenchOrange
 

@@ -122,6 +122,7 @@ CHRIS EQU __enum__
 	const BARNEY_YOUNGSTER
 	const MIK
 	const JORGE
+	const JIMMY
 
 	trainerclass SCHOOLBOY ; 17
 	const FINN
@@ -159,6 +160,7 @@ CHRIS EQU __enum__
 	const GABRIELLE
 	const CARMEN
 	const YVONNE
+	const SAMANTHA
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -181,6 +183,7 @@ CHRIS EQU __enum__
 	const DARTZ
 	const COLBY
 	const RICHIE
+	const HECTOR
 
 	trainerclass COOLTRAINERF ; 1c
 	const TERESA
@@ -201,6 +204,7 @@ CHRIS EQU __enum__
 	const ELLA
 	const HOLLY
 	const CORINA
+	const PHOEBE
 
 	trainerclass BEAUTY ; 1d
 	const ASHLEY

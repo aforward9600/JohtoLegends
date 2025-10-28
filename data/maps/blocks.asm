@@ -169,6 +169,7 @@ FiveIslandHouse2_Blocks:
 SixIslandHouse_Blocks:
 GreenPathHouse1_Blocks:
 GreenPathHouse2_Blocks:
+SevaultCanyonHouse_Blocks:
 	INCBIN "maps/House1.ablk"
 
 BillsFamilysHouse_Blocks:
@@ -1215,3 +1216,24 @@ OnaganTempleOutside_Blocks:
 
 RocketWarehouse_Blocks:
 	INCBIN "maps/RocketWarehouse.ablk"
+
+MoneanChamber_Blocks:
+	INCBIN "maps/MoneanChamber.ablk"
+
+LiptooChamber_Blocks:
+	INCBIN "maps/LiptooChamber.ablk"
+
+WeepthChamber_Blocks:
+	INCBIN "maps/WeepthChamber.ablk"
+
+DilfordChamber_Blocks:
+	INCBIN "maps/DilfordChamber.ablk"
+
+ScufibChamber_Blocks:
+	INCBIN "maps/ScufibChamber.ablk"
+
+RixyChamber_Blocks:
+	INCBIN "maps/RixyChamber.ablk"
+
+ViapoisChamber_Blocks:
+	INCBIN "maps/ViapoisChamber.ablk"

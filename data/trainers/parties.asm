@@ -2393,6 +2393,16 @@ endc
 	dw CACTURNE
 	db -1
 
+	next_list_item ; YOUNGSTER (12)
+	db "Jimmy@", TRAINERTYPE_NORMAL
+	db 89
+	dw FURRET
+	db 89
+	dw CACTURNE
+	db 90
+	dw FLAREON
+	db -1 ; end
+
 	end_list_items
 
 SchoolboyGroup:
@@ -2826,6 +2836,16 @@ endc
 	dw SURF, THUNDERBOLT, 
 	db -1 ; end
 
+	next_list_item ; LASS
+	db "Samantha@", TRAINERTYPE_NORMAL
+	db 89
+	dw ARBOK
+	db 89
+	dw SYLVEON
+	db 90
+	dw AMPHAROS
+	db -1 ; end
+
 	end_list_items
 
 JanineGroup:
@@ -3169,6 +3189,22 @@ endc
 	db 88
 	dw ALTARIA
 	db -1 ; end
+
+	next_list_item ; COOLTRAINERM
+	db "Hector@", TRAINERTYPE_MOVES
+	db 89
+	dw SANDSLASH
+	dw EARTHQUAKE, ROCK_SLIDE, SWORDS_DANCE, X_SCISSOR
+	db 89
+	dw MUK
+	dw GUNK_SHOT, FIRE_PUNCH, KNOCK_OFF, TOXIC
+	db 89
+	dw VAPOREON
+	dw HYDRO_PUMP, ICE_BEAM, GROWTH, SHADOW_BALL
+	db 90
+	dw SALAMENCE
+	dw FIRE_BLAST, DUALWINGBEAT, DRAGON_CLAW, DRAGON_DANCE
+	db -1
 
 	end_list_items
 
@@ -3539,6 +3575,18 @@ endc
 	dw FROSLASS
 	dw HAIL, SHADOW_BALL, BLIZZARD, PSYCHIC_M
 	db 0 ; SNOW_CLOAK
+	db -1 ; end
+
+	next_list_item ; COOLTRAINERF
+	db "Phoebe@", TRAINERTYPE_NORMAL
+	db 89
+	dw KANGASKHAN
+	db 89
+	dw ESPEON
+	db 89
+	dw GRANBULL
+	db 90
+	dw DUSKNOIR
 	db -1 ; end
 
 	end_list_items

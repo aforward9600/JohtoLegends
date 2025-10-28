@@ -133,6 +133,9 @@ INCLUDE "engine/menus/trainer_card.asm"
 SECTION "bankA", ROMX
 
 INCLUDE "engine/overworld/wildmons.asm"
+
+SECTION "Pokerus", ROMX
+
 INCLUDE "engine/events/pokerus/pokerus.asm"
 
 ChrisBackpic:

@@ -482,4 +482,214 @@ SeviiGrassWildMons:
 	dbw 75, PUPITAR
 	dbw 75, TYRANITAR
 
+	map_id MONEAN_CHAMBER
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	; day
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	; nite
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+
+	map_id LIPTOO_CHAMBER
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	; day
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	; nite
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+
+	map_id WEEPTH_CHAMBER
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	; day
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	; nite
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+
+	map_id DILFORD_CHAMBER
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	; day
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	; nite
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+
+	map_id SCUFIB_CHAMBER
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	; day
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	; nite
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+
+	map_id RIXY_CHAMBER
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	; day
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	; nite
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+
+	map_id VIAPOIS_CHAMBER
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	; day
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	; nite
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+	dbw 50, UNOWN
+
 	db -1 ; end
