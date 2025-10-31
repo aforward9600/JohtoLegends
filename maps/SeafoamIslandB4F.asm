@@ -18,9 +18,9 @@ SeafoamIslandB4F_MapScripts:
 	return
 
 .CalmWaterB4FCallback:
+	changeblock 4, 14, $4d
+	changeblock 4, 16, $4d
 	changeblock 6, 14, $4d
-	changeblock 6, 16, $4d
-	changeblock 8, 14, $4d
 	return
 
 .CheckBoulderB4F:
@@ -29,9 +29,9 @@ SeafoamIslandB4F_MapScripts:
 	checkevent EVENT_SEAFOAM_ISLAND_BOULDER_B4F_2
 	iftrue .NeedsBoulderB4F
 .CalmWaterB4F:
+	changeblock 4, 14, $4d
+	changeblock 4, 16, $4d
 	changeblock 6, 14, $4d
-	changeblock 6, 16, $4d
-	changeblock 8, 14, $4d
 	reloadmappart
 	setevent EVENT_SEAFOAM_ISLAND_BOULDER_B4F_FALLEN
 .NeedsBoulderB4F:
@@ -82,6 +82,7 @@ SeafoamIslandBirdkeeperScript:
 	checkevent EVENT_BEAT_ARTICUNO
 	iftrue .BeatArticuno
 	writetext SeafoamIslandBirdkeeperText1
+.FinishSeafoamIslandBirdkeeper:
 	waitbutton
 	closetext
 	turnobject SEAFOAMISLANDB4F_BIRDKEEPER, UP
@@ -89,17 +90,11 @@ SeafoamIslandBirdkeeperScript:
 
 .CaughtArticunoKeeper:
 	writetext SeafoamIslandBirdkeeperText2
-	waitbutton
-	closetext
-	turnobject SEAFOAMISLANDB4F_BIRDKEEPER, UP
-	end
+	sjump .FinishSeafoamIslandBirdkeeper
 
 .BeatArticuno:
 	writetext SeafoamIslandBirdkeeperText3
-	waitbutton
-	closetext
-	turnobject SEAFOAMISLANDB4F_BIRDKEEPER, UP
-	end
+	sjump .FinishSeafoamIslandBirdkeeper
 
 SeafoamIslandB4FBoulder:
 	jumptext SeafoamIslandB4FBoulderText

@@ -1119,7 +1119,11 @@ BattleCommand_DoTurn:
 	ld a, [hl]
 	and PP_MASK
 	jr z, .out_of_pp
+	ld a, [hl]
+	cp 1
+	jr z, .DoOne
 	dec [hl]
+.DoOne
 	dec [hl]
 	ld b, 0
 	ret

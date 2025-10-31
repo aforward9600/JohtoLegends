@@ -190,9 +190,10 @@ TaurosEvosAttacks:
 	dbw 24, PAYBACK
 	dbw 29, WORK_UP
 	dbw 35, ZEN_HEADBUTT
-	dbw 41, TAKE_DOWN
+	dbw 41, TAKE_DOWN ; need to replace with RAGING_BULL
 	dbw 48, SWAGGER
 	dbw 50, THRASH
+	dbw 55, DOUBLE_EDGE
 	dbw 63, GIGA_IMPACT
 	db 0 ; no more level-up moves
 

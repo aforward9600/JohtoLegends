@@ -26,11 +26,7 @@ VermilionPortSailorScript:
 	writetextend UnknownText_0x74f4d
 
 .skip2:
-;	writetext WalkThisWayText
-;	waitbutton
-;	closetext
-;	end
-	writetextend UnknownText_0x74fa7
+	writetextend WalkThisWayText
 
 VermilionPortWalkUpToShipScript:
 	turnobject VERMILIONPORT_SAILOR2, RIGHT
@@ -52,12 +48,6 @@ VermilionPortWalkUpToShipScript:
 	end
 
 .skip
-	writetext UnknownText_0x750a6
-	waitbutton
-	closetext
-	applymovement PLAYER, MovementData_0x74ef5
-	end
-
 	checkflag ENGINE_FLYPOINT_ONE_ISLAND
 	iftrue .VermilionPortMenu
 	writetext HeadToOneIslandText
@@ -270,6 +260,12 @@ HeadToOneIslandText:
 VermilionPortSeviiText:
 	text "Where would you"
 	line "like to go?"
+	done
+
+WalkThisWayText:
+	text "If you want to"
+	line "sail, come over"
+	cont "to the dock."
 	done
 
 VermilionPort_MapEvents:

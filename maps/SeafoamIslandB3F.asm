@@ -21,7 +21,7 @@ SeafoamIslandB3FFastCurrent:
 
 .CalmB3FWaterCallback:
 	changeblock 16, 12, $4d
-	changeblock 18, 12, $4d
+;	changeblock 18, 12, $4d
 	changeblock 20,  8, $4d
 	changeblock 20, 10, $4d
 	changeblock 20, 12, $4d
@@ -37,7 +37,7 @@ SeafoamIslandB3FFastCurrent:
 	iftrue .NeedBoulder3F
 .CalmB3FWater:
 	changeblock 16, 12, $4d
-	changeblock 18, 12, $4d
+;	changeblock 18, 12, $4d
 	changeblock 20,  8, $4d
 	changeblock 20, 10, $4d
 	changeblock 20, 12, $4d
@@ -75,10 +75,7 @@ SetUpStoneTableB3F:
 	pause 30
 	scall .FX
 	opentext
-	writetext SeafoamIslandB3FBoulderFellText
-	waitbutton
-	closetext
-	end
+	writetextend SeafoamIslandB3FBoulderFellText
 
 .FX:
 	playsound SFX_STRENGTH
