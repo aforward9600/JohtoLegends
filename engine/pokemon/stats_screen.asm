@@ -754,7 +754,7 @@ StatsScreen_LoadGFX:
 	ret z
 	cp $7f
 	ret z
-	and $80
+	and CAUGHT_GENDER_MASK
 	ld a, "♂"
 	jr z, .got_gender
 	ld a, "♀"
