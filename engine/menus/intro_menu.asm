@@ -279,14 +279,17 @@ SetDefaultBoxNames:
 	dec hl
 	ld a, c
 	inc a
-	cp 10
-	jr c, .less
+	assert LOW("0") == LOW(-10)
 	sub 10
-	ld [hl], "1"
+	jr c, .less
+	ld [hl], "0"
+.tens_loop
+	inc [hl]
+	sub 10
+	jr nc, .tens_loop
 	inc hl
 
 .less
-	add "0"
 	ld [hli], a
 	ld [hl], "@"
 	pop hl

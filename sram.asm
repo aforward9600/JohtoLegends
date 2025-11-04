@@ -40,10 +40,10 @@ sMailbox3::  mailmsg sMailbox3
 sMailbox4::  mailmsg sMailbox4
 sMailbox5::  mailmsg sMailbox5
 sMailbox6::  mailmsg sMailbox6
-sMailbox7::  mailmsg sMailbox7
-sMailbox8::  mailmsg sMailbox8
-sMailbox9::  mailmsg sMailbox9
-sMailbox10:: mailmsg sMailbox10
+;sMailbox7::  mailmsg sMailbox7
+;sMailbox8::  mailmsg sMailbox8
+;sMailbox9::  mailmsg sMailbox9
+;sMailbox10:: mailmsg sMailbox10
 
 ; aa0b
 sMailboxCountBackup:: db
@@ -54,10 +54,10 @@ sMailbox3Backup::  mailmsg sMailbox3Backup
 sMailbox4Backup::  mailmsg sMailbox4Backup
 sMailbox5Backup::  mailmsg sMailbox5Backup
 sMailbox6Backup::  mailmsg sMailbox6Backup
-sMailbox7Backup::  mailmsg sMailbox7Backup
-sMailbox8Backup::  mailmsg sMailbox8Backup
-sMailbox9Backup::  mailmsg sMailbox9Backup
-sMailbox10Backup:: mailmsg sMailbox10Backup
+;sMailbox7Backup::  mailmsg sMailbox7Backup
+;sMailbox8Backup::  mailmsg sMailbox8Backup
+;sMailbox9Backup::  mailmsg sMailbox9Backup
+;sMailbox10Backup:: mailmsg sMailbox10Backup
 
 ; abe2
 sMysteryGiftItem:: db
@@ -76,46 +76,16 @@ s0_ac09:: ds 1
 sMysteryGiftTrainer:: ds (1 + 1 + NUM_MOVES) * PARTY_LENGTH + 2 ; ac0a
 sBackupMysteryGiftItemEnd::
 
-	ds $30
-
 sRTCStatusFlags:: ds 8
 sLuckyNumberDay:: db
 sLuckyIDNumber::  dw
 
 SECTION "Saved 16-bit conversion tables", SRAM
 ; the Pokémon index table isn't stored here to improve save data packing
+sConversionTables::
+sPokemonIndexTable:: ds wPokemonIndexTableEnd - wPokemonIndexTable
 sMoveIndexTable:: ds wMoveIndexTableEnd - wMoveIndexTable
-sBackupMoveIndexTable:: ds wMoveIndexTableEnd - wMoveIndexTable
-
-SECTION "Backup Save", SRAM
-
-sBackupOptions:: ds wOptionsEnd - wOptions
-
-sBackupCheckValue1:: db ; loaded with SAVE_CHECK_VALUE_1, used to check save corruption
-
-sBackupSaveData::
-
-sBackupGameData:: ; b209
-sBackupPlayerData::  ds wPlayerDataEnd - wPlayerData
-sBackupCurMapData::  ds wCurMapDataEnd - wCurMapData
-sBackupPokemonData:: ds wPokemonDataEnd - wPokemonData
-sBackupGameDataEnd::
-
-sBackupPokemonIndexTable:: ds wPokemonIndexTableEnd - wPokemonIndexTable
-
-sBackupConversionTableChecksum:: dw
-
-sBackupSaveDataEnd::
-
-; bd85
-	ds $88
-; bf0d
-
-sBackupChecksum:: dw
-
-sBackupCheckValue2:: db ; loaded with SAVE_CHECK_VALUE_2, used to check save corruption
-
-sStackTop:: dw
+sConversionTablesEnd::
 
 
 SECTION "Save", SRAM
@@ -132,15 +102,9 @@ sCurMapData::  ds wCurMapDataEnd - wCurMapData
 sPokemonData:: ds wPokemonDataEnd - wPokemonData
 sGameDataEnd::
 
-sPokemonIndexTable:: ds wPokemonIndexTableEnd - wPokemonIndexTable
-
 sConversionTableChecksum:: dw
 
 sSaveDataEnd::
-
-; ab85
-	ds $88
-; ad0d
 
 sChecksum:: dw
 
@@ -152,8 +116,6 @@ SECTION "Active Box", SRAM
 ; ad10
 sBox:: box sBox
 ; b160
-
-	ds $f4
 
 
 SECTION "Link Battle Data", SRAM
@@ -193,20 +155,6 @@ sHallOfFame13:: hall_of_fame sHallOfFame13
 sHallOfFame14:: hall_of_fame sHallOfFame14
 sHallOfFame15:: hall_of_fame sHallOfFame15
 sHallOfFame16:: hall_of_fame sHallOfFame16
-sHallOfFame17:: hall_of_fame sHallOfFame17
-sHallOfFame18:: hall_of_fame sHallOfFame18
-sHallOfFame19:: hall_of_fame sHallOfFame19
-sHallOfFame20:: hall_of_fame sHallOfFame20
-sHallOfFame21:: hall_of_fame sHallOfFame21
-sHallOfFame22:: hall_of_fame sHallOfFame22
-sHallOfFame23:: hall_of_fame sHallOfFame23
-sHallOfFame24:: hall_of_fame sHallOfFame24
-sHallOfFame25:: hall_of_fame sHallOfFame25
-sHallOfFame26:: hall_of_fame sHallOfFame26
-sHallOfFame27:: hall_of_fame sHallOfFame27
-sHallOfFame28:: hall_of_fame sHallOfFame28
-sHallOfFame29:: hall_of_fame sHallOfFame29
-sHallOfFame30:: hall_of_fame sHallOfFame30
 sHallOfFameEnd::
 
 
@@ -254,6 +202,7 @@ sBox3::  box sBox3
 sBox4::  box sBox4
 sBox5::  box sBox5
 sBox6::  box sBox6
+sBox7::  box sBox7
 
 sBox1PokemonIndexes::  ds 2 * MONS_PER_BOX
 sBox2PokemonIndexes::  ds 2 * MONS_PER_BOX
@@ -261,43 +210,54 @@ sBox3PokemonIndexes::  ds 2 * MONS_PER_BOX
 sBox4PokemonIndexes::  ds 2 * MONS_PER_BOX
 sBox5PokemonIndexes::  ds 2 * MONS_PER_BOX
 sBox6PokemonIndexes::  ds 2 * MONS_PER_BOX
+sBox7PokemonIndexes::  ds 2 * MONS_PER_BOX
 
 
 SECTION "Boxes 8-14", SRAM
 
-sBox7::  box sBox7
 sBox8::  box sBox8
 sBox9::  box sBox9
 sBox10:: box sBox10
 sBox11:: box sBox11
 sBox12:: box sBox12
+sBox13:: box sBox13
+sBox14:: box sBox14
 
-sBox7PokemonIndexes::  ds 2 * MONS_PER_BOX
 sBox8PokemonIndexes::  ds 2 * MONS_PER_BOX
 sBox9PokemonIndexes::  ds 2 * MONS_PER_BOX
 sBox10PokemonIndexes:: ds 2 * MONS_PER_BOX
 sBox11PokemonIndexes:: ds 2 * MONS_PER_BOX
 sBox12PokemonIndexes:: ds 2 * MONS_PER_BOX
-
-SECTION "Boxes 13-17", SRAM
-
-sBox13:: box sBox13
-sBox14:: box sBox14
-sBox15:: box sBox15
-sBox16:: box sBox16
-;sBox17:: box sBox17
-
 sBox13PokemonIndexes:: ds 2 * MONS_PER_BOX
 sBox14PokemonIndexes:: ds 2 * MONS_PER_BOX
+
+SECTION "Boxes 15-18", SRAM
+
+sBox15:: box sBox15
+sBox16:: box sBox16
+sBox17:: box sBox17
+sBox18:: box sBox18
+
 sBox15PokemonIndexes:: ds 2 * MONS_PER_BOX
 sBox16PokemonIndexes:: ds 2 * MONS_PER_BOX
-;sBox17PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox17PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox18PokemonIndexes:: ds 2 * MONS_PER_BOX
 
-SECTION "SRAM Mobile 1", SRAM
 
-	ds $13
+SECTION "Boxes 19-20", SRAM
 
-s4_a013:: ds 36 ; a013
+sBox19:: box sBox19
+sBox20:: box sBox20
+
+sBox19PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox20PokemonIndexes:: ds 2 * MONS_PER_BOX
+
+
+;SECTION "SRAM Mobile 1", SRAM
+
+;	ds $13
+
+;s4_a013:: ds 36 ; a013
 
 SECTION "SRAM Mobile 2", SRAM
 

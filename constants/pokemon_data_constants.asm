@@ -129,13 +129,13 @@ CAUGHT_EGG_LEVEL EQU 1
 PARTY_LENGTH EQU 6
 
 ; boxes
-MONS_PER_BOX EQU 21
-NUM_BOXES    EQU 16
+MONS_PER_BOX EQU 20
+NUM_BOXES    EQU 20
 
 ; hall of fame
 HOF_MON_LENGTH EQU 2 + 2 + 2 + 1 + (MON_NAME_LENGTH + -1) ; species, id, dvs, level, nick
 HOF_LENGTH EQU 1 + HOF_MON_LENGTH * PARTY_LENGTH + 2 ; win count, party, terminator
-NUM_HOF_TEAMS EQU 30
+NUM_HOF_TEAMS EQU 16
 
 ; evolution types (used in data/pokemon/evos_attacks.asm)
 	const_def 1

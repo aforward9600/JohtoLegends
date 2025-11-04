@@ -489,7 +489,6 @@ _MovePKMNWithoutMail:
 	ldh [hMapAnims], a
 	call BillsPC_InitRAM
 	ld a, [wCurBox]
-	and $f
 	inc a
 	ld [wBillsPC_LoadedBox], a
 	call DelayFrame
@@ -2190,7 +2189,10 @@ GetBoxPointer:
 	dba sBox14
 	dba sBox15
 	dba sBox16
-;	dba sBox17
+	dba sBox17
+	dba sBox18
+	dba sBox19
+	dba sBox20
 
 BillsPC_ApplyPalettes:
 	ld b, a
@@ -2415,7 +2417,10 @@ GetBoxCount:
 	dba sBox14
 	dba sBox15
 	dba sBox16
-;	dba sBox17
+	dba sBox17
+	dba sBox18
+	dba sBox19
+	dba sBox20
 
 BillsPC_PrintBoxName:
 	hlcoord 0, 0
@@ -2426,7 +2431,6 @@ BillsPC_PrintBoxName:
 	ld de, .Current
 	call PlaceString
 	ld a, [wCurBox]
-	and $f
 	call GetBoxName
 	hlcoord 11, 2
 	call PlaceString

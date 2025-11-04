@@ -130,7 +130,6 @@ CheckOwnMonAnywhere:
 .box
 	; Don't search the current box again.
 	ld a, [wCurBox]
-	and $f
 	cp c
 	jr z, .loopbox
 
@@ -349,7 +348,10 @@ BoxAddressTable1:
 	dba sBox14
 	dba sBox15
 	dba sBox16
-;	dba sBox17
+	dba sBox17
+	dba sBox18
+	dba sBox19
+	dba sBox20
 
 BoxPokemonIndexesAddressTable:
 	dba sBox1PokemonIndexes
@@ -368,7 +370,10 @@ BoxPokemonIndexesAddressTable:
 	dba sBox14PokemonIndexes
 	dba sBox15PokemonIndexes
 	dba sBox16PokemonIndexes
-;	dba sBox17PokemonIndexes
+	dba sBox17PokemonIndexes
+	dba sBox18PokemonIndexes
+	dba sBox19PokemonIndexes
+	dba sBox20PokemonIndexes
 
 UpdateOTPointer:
 	push hl

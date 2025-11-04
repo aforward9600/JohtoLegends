@@ -2722,7 +2722,7 @@ wLevelCap::          db
 wBattleAnimBank::    db
 ; da0e
 
-	ds 66
+	ds 15
 
 wEventFlags:: flag_array NUM_EVENTS ; da72
 ; db6c

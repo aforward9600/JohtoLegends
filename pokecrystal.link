@@ -337,11 +337,10 @@ VRAM $01
 	"VRAM1"
 SRAM $00
 	"Scratch"
-	org $a600
 	"SRAM Bank 0"
-	org $ae00
+	"Boxes 15-18"
+	align 8
 	"Saved 16-bit conversion tables"
-	"Backup Save"
 SRAM $01
 	"Save"
 	"Active Box"
@@ -349,12 +348,13 @@ SRAM $01
 	"SRAM Hall of Fame"
 	"SRAM Crystal Data"
 	"SRAM Battle Tower"
+	"Boxes 19-20"
 SRAM $02
 	"Boxes 1-7"
 SRAM $03
 	"Boxes 8-14"
-SRAM $04
-	"SRAM Mobile 1"
+;SRAM $04
+;	"SRAM Mobile 1"
 SRAM $05
 	"SRAM Mobile 2"
 HRAM
