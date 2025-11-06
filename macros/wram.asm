@@ -18,9 +18,10 @@ box_struct: MACRO
 \1SpclAtkEV::      db
 \1SpclDefEV::      db
 \1CaughtTime::
-\1Padding2::       db
+\1Padding::        db
 \1CaughtAbility::  db
-\1Padding::        ds 2
+;\1Form::           db
+\1Padding2::       ds 2
 \1DVs::            dw
 \1PP::             ds NUM_MOVES
 \1Happiness::      db
@@ -103,6 +104,7 @@ battle_struct: MACRO
 \1Type1::     db
 \1Type2::     db
 \1Ability::   db
+\1Form::      db
 \1StructEnd::
 ENDM
 

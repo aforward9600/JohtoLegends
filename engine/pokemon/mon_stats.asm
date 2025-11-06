@@ -474,10 +474,10 @@ PrintTempMonStatsDVs:
 	ld a, [wTempMonDVs]
     and $f0
     swap a
-	ld [wTempMonPadding + 1], a
+	ld [wTempMonPadding2 + 1], a
 	xor a
-	ld [wTempMonPadding], a
-	ld de, wTempMonPadding
+	ld [wTempMonPadding2], a
+	ld de, wTempMonPadding2
 	lb bc, 2, 3
 	call .PrintDVEVs
 
@@ -487,8 +487,8 @@ if DEF(_CHALLENGE)
 else
 	ld de, wTempMonAtkEV
 	ld a, [de]
-	ld [wTempMonPadding + 1], a
-	ld de, wTempMonPadding
+	ld [wTempMonPadding2 + 1], a
+	ld de, wTempMonPadding2
 	lb bc, 2, 3
 endc
 	call .PrintDVEVs
@@ -500,8 +500,8 @@ endc
 	 ; Defense DVs, EVs and stat
 	ld a, [wTempMonDVs]
     and $f
-	ld [wTempMonPadding + 1], a
-	ld de, wTempMonPadding
+	ld [wTempMonPadding2 + 1], a
+	ld de, wTempMonPadding2
 	lb bc, 2, 3
 	call .PrintDVEVs
 
@@ -511,8 +511,8 @@ if DEF(_CHALLENGE)
 else
 	ld de, wTempMonDefEV
 	ld a, [de]
-	ld [wTempMonPadding + 1], a
-	ld de, wTempMonPadding
+	ld [wTempMonPadding2 + 1], a
+	ld de, wTempMonPadding2
 	lb bc, 2, 3
 endc
 	call .PrintDVEVs
@@ -524,8 +524,8 @@ endc
 	 ; Special DVs and Sp. Atk EVs and stat
 	ld a, [wTempMonDVs + 1]
     and $f
-	ld [wTempMonPadding + 1], a
-	ld de, wTempMonPadding
+	ld [wTempMonPadding2 + 1], a
+	ld de, wTempMonPadding2
 	lb bc, 2, 3
 	call .PrintDVEVs
 
@@ -535,8 +535,8 @@ if DEF(_CHALLENGE)
 else
 	ld de, wTempMonSpclAtkEV
 	ld a, [de]
-	ld [wTempMonPadding + 1], a
-	ld de, wTempMonPadding
+	ld [wTempMonPadding2 + 1], a
+	ld de, wTempMonPadding2
 	lb bc, 2, 3
 endc
 	call .PrintDVEVs
@@ -548,8 +548,8 @@ endc
 	 ; Special DVs and Sp. Def EVs and stat
 	ld a, [wTempMonDVs + 1]
     and $f
-	ld [wTempMonPadding + 1], a
-	ld de, wTempMonPadding
+	ld [wTempMonPadding2 + 1], a
+	ld de, wTempMonPadding2
 	lb bc, 2, 3
 	call .PrintDVEVs
 
@@ -559,8 +559,8 @@ if DEF(_CHALLENGE)
 else
 	ld de, wTempMonSpclDefEV
 	ld a, [de]
-	ld [wTempMonPadding + 1], a
-	ld de, wTempMonPadding
+	ld [wTempMonPadding2 + 1], a
+	ld de, wTempMonPadding2
 	lb bc, 2, 3
 endc
 	call .PrintDVEVs
@@ -573,8 +573,8 @@ endc
 	ld a, [wTempMonDVs + 1]
     and $f0
     swap a
-	ld [wTempMonPadding + 1], a
-	ld de, wTempMonPadding
+	ld [wTempMonPadding2 + 1], a
+	ld de, wTempMonPadding2
 	lb bc, 2, 3
 	call .PrintDVEVs
 
@@ -585,13 +585,13 @@ else
 	ld de, wTempMonSpdEV
 	lb bc, 2, 3
 	ld a, [de]
-	ld [wTempMonPadding + 1], a
-	ld de, wTempMonPadding
+	ld [wTempMonPadding2 + 1], a
+	ld de, wTempMonPadding2
 endc
 	call .PrintDVEVs
 	
 	xor a
-	ld [wTempMonPadding + 1], a
+	ld [wTempMonPadding2 + 1], a
 	lb bc, 2, 3
 	ld de, wTempMonSpeed
 	jp PrintNum
@@ -626,7 +626,7 @@ PrintTempMonHPDVs:
 	ld a, [wTempMonDVs]
 	and $f0
 	swap a
-	ld [wTempMonPadding + 1], a
+	ld [wTempMonPadding2 + 1], a
 	ld c, 0
 	and 1
 	jr z, .atk_not_odd
@@ -638,7 +638,7 @@ PrintTempMonHPDVs:
 	push bc
 	ld a, [wTempMonDVs]
 	and $f
-	ld [wTempMonPadding + 1], a
+	ld [wTempMonPadding2 + 1], a
 	pop bc
 	and 1
 	jr z, .def_not_odd
@@ -651,7 +651,7 @@ PrintTempMonHPDVs:
 	ld a, [wTempMonDVs + 1]
 	and $f0
 	swap a
-	ld [wTempMonPadding + 1], a
+	ld [wTempMonPadding2 + 1], a
 	pop bc
 	and 1
 	jr z, .speed_not_odd
@@ -663,7 +663,7 @@ PrintTempMonHPDVs:
 	push bc
 	ld a, [wTempMonDVs + 1]
 	and $f
-	ld [wTempMonPadding + 1], a
+	ld [wTempMonPadding2 + 1], a
 	pop bc
 	and 1
 	jr z, .spc_not_odd
@@ -673,8 +673,8 @@ PrintTempMonHPDVs:
 	ld c, a
 .spc_not_odd
 	ld a, c
-	ld [wTempMonPadding + 1], a
-	ld de, wTempMonPadding
+	ld [wTempMonPadding2 + 1], a
+	ld de, wTempMonPadding2
 	lb bc, 2, 3
 	call .PrintHPDVEVs
 
@@ -684,8 +684,8 @@ if DEF(_CHALLENGE)
 else
 	ld de, wTempMonHPEV
 	ld a, [de]
-	ld [wTempMonPadding + 1], a
-	ld de, wTempMonPadding
+	ld [wTempMonPadding2 + 1], a
+	ld de, wTempMonPadding2
 	lb bc, 2, 3
 endc
 	call .PrintHPDVEVs

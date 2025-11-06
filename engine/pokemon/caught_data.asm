@@ -164,7 +164,6 @@ TextJump_GiveANickname:
 SetCaughtData:
 	ld a, [wPartyCount]
 	dec a
-;	ld hl, wPartyMon1CaughtLevel
 	ld hl, wPartyMon1CaughtTime
 	call GetPartyLocation
 SetBoxmonOrEggmonCaughtData:
@@ -175,6 +174,7 @@ SetBoxmonOrEggmonCaughtData:
 	and CAUGHT_TIME_MASK
 	or b
 	ld [hl], a
+	call SetGenderShininess
 	ld a, (wPartyMon1CaughtLevel - wPartyMon1CaughtTime)
 	add l
 	ld l, a
@@ -212,8 +212,7 @@ SetBoxMonCaughtData:
 	call GetSRAMBank
 	ld hl, sBoxMon1CaughtTime
 	call SetBoxmonOrEggmonCaughtData
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 SetGiftBoxMonCaughtData:
 	push bc
@@ -222,8 +221,7 @@ SetGiftBoxMonCaughtData:
 	ld hl, sBoxMon1CaughtTime
 	pop bc
 	call SetGiftMonCaughtData
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 SetGiftPartyMonCaughtData:
 	ld a, [wPartyCount]
@@ -277,4 +275,68 @@ SetEggMonCaughtData:
 	call SetBoxmonOrEggmonCaughtData
 	pop af
 	ld [wCurPartyLevel], a
+	ret
+
+SetGenderShininess:
+	ld b,b
+	ld a, [wBattleMode]
+	and a
+	jr z, .Random
+	ld a, [wEnemyForm]
+	and CAUGHT_MON_GENDER_MASK
+	jr z, .Male
+	ld a, [hl]
+	or CAUGHT_MON_GENDER_MASK
+	ld [hl], a
+.Male
+	ld a, [wEnemyForm]
+	and CAUGHT_SHINY_MASK
+	jr z, .NotShiny
+	ld a, [hl]
+	or CAUGHT_SHINY_MASK
+	ld [hl], a
+.NotShiny
+	ret ; need to add forms next
+
+.Random
+	push hl
+	call Random
+	cp GIFT_SHINY_NUMERATOR
+	pop hl
+	jr c, .MaleRandom
+	ld a, [hl]
+	or CAUGHT_MON_GENDER_MASK
+	ld [hl], a
+.MaleRandom
+	push bc
+	push hl
+	push de
+	ld de, ENGINE_SHINY_PASSWORD
+	farcall CheckEngineFlag
+	jr nc, .GuaranteeShiny
+	pop de
+	pop hl
+	pop bc
+	push hl
+	call Random
+	and a
+	jr nz, .NotShinyRandom
+	call Random
+	cp SHINY_NUMERATOR
+	jr nc, .NotShinyRandom
+	pop hl
+	jr .IsShiny
+
+.GuaranteeShiny
+	pop de
+	pop hl
+	pop bc
+.IsShiny
+	ld a, [hl]
+	or CAUGHT_SHINY_MASK
+	ld [hl], a
+	ret
+
+.NotShinyRandom
+	pop hl
 	ret

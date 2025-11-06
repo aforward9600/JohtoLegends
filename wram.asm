@@ -692,8 +692,9 @@ wGivingExperienceToExpShareHolders:: db ; c71f
 
 wExpShare:: db
 wExpShareText:: db
+wEnemyForm:: db
 
-	ds 7
+	ds 6
 
 wPlayerFutureSightDamage:: dw ; c727
 wEnemyFutureSightDamage:: dw ; c729

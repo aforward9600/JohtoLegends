@@ -460,7 +460,7 @@ StatsScreen_PlacePageSwitchArrows:
 	ret
 
 StatsScreen_PlaceShinyIcon:
-	ld bc, wTempMonDVs
+	ld bc, wTempMonCaughtTime
 	farcall CheckShininess
 	ret nc
 	hlcoord 19, 0

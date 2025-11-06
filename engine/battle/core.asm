@@ -3930,13 +3930,17 @@ InitBattleMon:
 	call ApplyStatusEffectOnPlayerStats
 	ret
 
-BattleCheckPlayerShininess:
-	call GetPartyMonDVs
-	jr BattleCheckShininess
-
 BattleCheckEnemyShininess:
-	call GetEnemyMonDVs
+	ld a, [wBattleMode]
+	dec a
+	ret nz
 
+	ld bc, wEnemyMonForm
+	callfar CheckShininess
+	ret
+
+BattleCheckPlayerShininess:
+	farcall GetPartyMonForm
 BattleCheckShininess:
 	ld b, h
 	ld c, l
@@ -6303,11 +6307,18 @@ LoadEnemyMon:
 	cp BATTLETYPE_SHINY
 	jr nz, .GenerateDVs
 
-	ld b, ATKDEFDV_SHINY ; $ea
-	ld c, SPDSPCDV_SHINY ; $aa
+;	ld b, ATKDEFDV_SHINY ; $ea
+;	ld c, SPDSPCDV_SHINY ; $aa
+;	jr .UpdateDVs
+
+	ld a, [wEnemyMonForm]
+	or CAUGHT_SHINY_MASK
+	ld [wEnemyMonForm], a
 	jr .UpdateDVs
 
 .GenerateDVs:
+
+	farcall CheckEnemyShininess
 
 ;checkswarm
 	ld hl, wDailyFlags1
@@ -6315,7 +6326,7 @@ LoadEnemyMon:
 	jr z, .skipshine
 
 	farcall GenerateShinySwarm
-	jp .next
+;	jp .next
 
 .skipshine:
 ; Generate new random DVs

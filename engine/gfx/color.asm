@@ -6,6 +6,16 @@ SHINY_SPD_VAL EQU 10
 SHINY_SPC_VAL EQU 10
 
 CheckShininess:
+	ld a, [bc]
+	and CAUGHT_SHINY_MASK
+	jr z, .NotShiny
+.Shiny:
+	scf
+	ret
+
+.NotShiny:
+	and a
+	ret
 ; Check if a mon is shiny by DVs at bc.
 ; Return carry if shiny.
 
@@ -51,14 +61,6 @@ CheckShininess:
 	ld a, [hl]
 	and 1 << SHINY_ATK_BIT
 	jr z, .NotShiny
-
-.Shiny:
-	scf
-	ret
-
-.NotShiny:
-	and a
-	ret
 
 InitPartyMenuPalettes:
 	ld hl, PalPacket_PartyMenu + 1
@@ -589,7 +591,7 @@ InitPartyMenuOBPals:
 
 GetBattlemonBackpicPalettePointer:
 	push de
-	farcall GetPartyMonDVs
+	farcall GetPartyMonForm
 	ld c, l
 	ld b, h
 	ld a, [wTempBattleMonSpecies]
@@ -599,7 +601,7 @@ GetBattlemonBackpicPalettePointer:
 
 GetEnemyFrontpicPalettePointer:
 	push de
-	farcall GetEnemyMonDVs
+	ld hl, wEnemyMonForm
 	ld c, l
 	ld b, h
 	ld a, [wTempEnemyMonSpecies]

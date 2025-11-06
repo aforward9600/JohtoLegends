@@ -42,7 +42,6 @@ SetEnemyAbility::
 	jr .FinishEnemyAbility
 
 .WildAbilities
-	ld b,b
 	call Random
 	cp 10 percent + 1
 	jr c, .HiddenAbility

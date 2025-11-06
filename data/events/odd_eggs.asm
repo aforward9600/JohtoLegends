@@ -89,7 +89,8 @@ OddEggs:
 	dw 00256 ; OT ID
 	dt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
-	db 0, 2, 0, 0 ; padding
+	db %00110000
+	db 2, 0, 0 ; padding
 	dn 11, 10, 10, 10 ; DVs
 	db 30, 20, 30, 10 ; PP
 	db 20 ; Step cycles to hatch
@@ -133,7 +134,8 @@ OddEggs:
 	dw 00768 ; OT ID
 	dt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
-	db 0, 2, 0, 0 ; padding
+	db %00110000
+	db 2, 0, 0 ; padding
 	dn 11, 10, 10, 10 ; DVs
 	db 35, 20, 5, 10 ; PP
 	db 20 ; Step cycles to hatch
@@ -177,7 +179,8 @@ OddEggs:
 	dw 00768 ; OT ID
 	dt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
-	db 0, 2, 0, 0 ; padding
+	db %00110000
+	db 2, 0, 0 ; padding
 	dn 11, 10, 10, 10 ; DVs
 	db 15, 20, 40, 10 ; PP
 	db 20 ; Step cycles to hatch
@@ -221,7 +224,8 @@ OddEggs:
 	dw 00512 ; OT ID
 	dt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
-	db 0, 2, 0, 0 ; padding
+	db %00110000
+	db 2, 0, 0 ; padding
 	dn 11, 10, 10, 10 ; DVs
 	db 10, 40, 30, 10 ; PP
 	db 20 ; Step cycles to hatch
@@ -265,7 +269,8 @@ OddEggs:
 	dw 00512 ; OT ID
 	dt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
-	db 0, 2, 0, 0 ; padding
+	db %00110000
+	db 2, 0, 0 ; padding
 	dn 11, 10, 10, 10 ; DVs
 	db 25, 30, 10, 10 ; PP
 	db 20 ; Step cycles to hatch
@@ -309,7 +314,8 @@ OddEggs:
 	dw 00512 ; OT ID
 	dt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
-	db 0, 2, 0, 0 ; padding
+	db %00110000
+	db 2, 0, 0 ; padding
 	dn 11, 10, 10, 10 ; DVs
 	db 10, 10, 40, 10 ; PP
 	db 20 ; Step cycles to hatch
@@ -353,7 +359,8 @@ OddEggs:
 	dw 00256 ; OT ID
 	dt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
-	db 0, 2, 0, 0 ; padding
+	db %00110000
+	db 2, 0, 0 ; padding
 	dn 11, 10, 10, 10 ; DVs
 	db 35, 40, 30, 10 ; PP
 	db 20 ; Step cycles to hatch

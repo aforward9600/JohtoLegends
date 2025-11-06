@@ -599,3 +599,44 @@ CopyBackpic:
 	dec b
 	jr nz, .outer_loop
 	ret
+
+CheckEnemyShininess::
+	ld b,b
+	push de
+	push hl
+	ld de, ENGINE_SHINY_PASSWORD
+	farcall CheckEngineFlag
+	jr c, .NoPassword
+	pop hl
+	pop de
+
+	call Random
+	cp SHINY_EGG_TWO_SHINY_PARENTS_NUMERATOR
+	ret nc
+.Shiny
+	ld a, [wEnemyMonForm]
+	or CAUGHT_SHINY_MASK
+	ld [wEnemyMonForm], a
+	ret
+
+.NoPassword
+	pop hl
+	pop de
+	call Random
+	and a
+	ret nz
+	call Random
+	cp SHINY_NUMERATOR
+	jr c, .Shiny
+	ret
+
+GetPartyMonForm::
+	ld hl, wBattleMonForm
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_TRANSFORMED, a
+	ret z
+	ld hl, wPartyMon1CaughtTime
+	ld a, [wCurBattleMon]
+	jp GetPartyLocation
+
+
