@@ -1,5 +1,11 @@
 SetPlayerAbility::
 
+	ld a, [wCurBattleMon]
+	ld hl, wPartyMon1CaughtTime
+	call GetPartyLocation
+	ld a, [hl]
+	ld [wBattleMonForm], a
+
 	ld a, [wGBPrinterBrightness]
 	cp OPT_PRINT_LIGHTEST
 	jr nz, .NoAbility

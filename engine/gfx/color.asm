@@ -591,7 +591,7 @@ InitPartyMenuOBPals:
 
 GetBattlemonBackpicPalettePointer:
 	push de
-	farcall GetPartyMonForm
+	call GetPartyMonForm
 	ld c, l
 	ld b, h
 	ld a, [wTempBattleMonSpecies]
@@ -601,9 +601,7 @@ GetBattlemonBackpicPalettePointer:
 
 GetEnemyFrontpicPalettePointer:
 	push de
-	ld hl, wEnemyMonForm
-	ld c, l
-	ld b, h
+	ld bc, wEnemyMonForm
 	ld a, [wTempEnemyMonSpecies]
 	call GetFrontpicPalettePointer
 	pop de
@@ -640,8 +638,7 @@ GetTrainerPalettePointer:
 	ret
 
 GetMonPalettePointer:
-	call _GetMonPalettePointer
-	ret
+	jr _GetMonPalettePointer
 
 BattleObjectPals:
 INCLUDE "gfx/battle_anims/battle_anims.pal"

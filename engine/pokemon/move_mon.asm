@@ -217,28 +217,28 @@ endr
 ;	jr nz, .MaxDVsPasswordGifts
 ;	pop hl
 
-	push bc
-	push hl
-	push de
-	ld de, ENGINE_SHINY_PASSWORD
-	farcall CheckEngineFlag
-	jr nc, .ShinyDVs
-	pop de
-	pop hl
-	pop bc
+;	push bc
+;	push hl
+;	push de
+;	ld de, ENGINE_SHINY_PASSWORD
+;	farcall CheckEngineFlag
+;	jr nc, .ShinyDVs
+;	pop de
+;	pop hl
+;	pop bc
 
 	call Random
 	ld b, a
 	call Random
 	ld c, a
-	jr .initializeDVs
+;	jr .initializeDVs
 
-.ShinyDVs
-	pop de
-	pop hl
-	pop bc
-	ld b, $fa
-	ld c, $af
+;.ShinyDVs
+;	pop de
+;	pop hl
+;	pop bc
+;	ld b, $fa
+;	ld c, $af
 
 .initializeDVs
 	ld a, b

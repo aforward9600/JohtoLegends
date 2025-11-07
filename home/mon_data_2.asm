@@ -10,6 +10,13 @@ GetPartyParamLocation::
 	pop bc
 	ret
 
+GetPartyMonForm::
+;	ld hl, wBattleMonForm
+;	ld a, [wPlayerSubStatus5]
+;	bit SUBSTATUS_TRANSFORMED, a
+;	ret z
+	ld a, [wCurBattleMon]
+	ld hl, wPartyMon1CaughtTime
 GetPartyLocation::
 ; Add the length of a PartyMon struct to hl a times.
 	ld bc, PARTYMON_STRUCT_LENGTH

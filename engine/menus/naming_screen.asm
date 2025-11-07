@@ -89,16 +89,16 @@ NamingScreen:
 	and a
 	jr z, .party_mon
 
-	ld hl, sBoxMon1DVs
+	ld hl, sBoxMon1CaughtTime
 	ld a, BANK(sBox)
 	call OpenSRAM
 	jr .start
 
 .party_mon
-	ld a, MON_DVS
+	ld a, MON_CAUGHTTIME
 	call GetPartyParamLocation
 .start
-	ld de, wTempMonDVs
+	ld de, wTempMonCaughtTime
 	ld a, [hli]
 	ld [de], a
 	inc de
@@ -133,7 +133,7 @@ NamingScreen:
 	ld [hl], a
 .genderless
 	call .StoreMonIconParams
-	ld bc, wTempMonDVs
+	ld bc, wTempMonCaughtTime
 	farcall CheckShininess
 	ret nc
 	ld a, "<BOLD_S>"

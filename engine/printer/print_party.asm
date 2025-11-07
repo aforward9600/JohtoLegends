@@ -334,7 +334,7 @@ Function1dc52c:
 .got_gender
 	hlcoord 17, 2
 	ld [hl], a
-	ld bc, wTempMonDVs
+	ld bc, wTempMonCaughtTime
 	farcall CheckShininess
 	ret nc
 	hlcoord 18, 2

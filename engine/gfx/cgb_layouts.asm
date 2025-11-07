@@ -280,7 +280,7 @@ _CGB_StatsScreenHPPals:
 	add hl, bc
 	call LoadPalette_White_Col1_Col2_Black ; hp palette
 	ld a, [wCurPartySpecies]
-	ld bc, wTempMonDVs
+	ld bc, wTempMonCaughtTime
 	call GetPlayerOrMonPalettePointer
 	call LoadPalette_White_Col1_Col2_Black ; mon palette
 	ld hl, ExpBarPalette
@@ -342,7 +342,7 @@ _CGB_StatsScreenHPPals:
 	add hl, bc
 	call LoadPalette_White_Col1_Col2_Black ; hp palette
 	ld a, [wCurPartySpecies]
-	ld bc, wTempMonDVs
+	ld bc, wTempMonCaughtTime
 	call GetPlayerOrMonPalettePointer
 	call LoadPalette_White_Col1_Col2_Black ; mon palette
 	ld hl, ExpBarPalette
@@ -489,7 +489,7 @@ _CGB_BillsPC:
 	jr .Resume
 
 .GetMonPalette:
-	ld bc, wTempMonDVs
+	ld bc, wTempMonCaughtTime
 	call GetPlayerOrMonPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 .Resume:
@@ -854,7 +854,7 @@ _CGB_Evolution:
 	jr .got_palette
 
 .pokemon
-	ld hl, wPartyMon1DVs
+	ld hl, wPartyMon1CaughtTime
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld a, [wCurPartyMon]
 	call AddNTimes
@@ -1369,7 +1369,7 @@ INCLUDE "gfx/splash/logo.pal"
 _CGB_PlayerOrMonFrontpicPals:
 	ld de, wBGPals1
 	ld a, [wCurPartySpecies]
-	ld bc, wTempMonDVs
+	ld bc, wTempMonCaughtTime
 	call GetPlayerOrMonPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	call WipeAttrMap

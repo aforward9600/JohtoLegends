@@ -57,7 +57,7 @@ LoadPartyMenuMonIconColors:
 	add hl, de
 	ld a, [hl]
 	ld [wCurPartySpecies], a
-	ld a, MON_DVS
+	ld a, MON_CAUGHTTIME
 	call GetPartyParamLocation
 	call GetMenuMonIconPalette
 	ld hl, wVirtualOAMSprite00Attributes
@@ -343,7 +343,7 @@ NamingScreen_InitAnimatedMonIcon:
 	ret
 
 MoveList_InitAnimatedMonIcon:
-	ld a, MON_DVS
+	ld a, MON_CAUGHTTIME
 	call GetPartyParamLocation
 	call SetMenuMonIconColor
 	ld a, [wTempIconSpecies]
@@ -370,7 +370,7 @@ Trade_LoadMonIconGFX:
 GetSpeciesIcon:
 ; Load species icon into VRAM at tile a
 	push de
-	ld a, MON_DVS
+	ld a, MON_CAUGHTTIME
 	call GetPartyParamLocation
 	call SetMenuMonIconColor
 	ld a, [wTempIconSpecies]

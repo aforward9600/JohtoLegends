@@ -819,7 +819,7 @@ ENDM
 	map_attributes SixIslandHouse, SIX_ISLAND_HOUSE, $00, 0
 	map_attributes GreenPathHouse1, GREEN_PATH_HOUSE_1, $00, 0
 	map_attributes GreenPathHouse2, GREEN_PATH_HOUSE_2, $00, 0
-	map_attributes SevaultCanyonHouse, SEVAULT_CANYON, $00, 0
+	map_attributes SevaultCanyonHouse, SEVAULT_CANYON_HOUSE, $00, 0
 	map_attributes MoneanChamber, MONEAN_CHAMBER, $00, 0
 	map_attributes LiptooChamber, LIPTOO_CHAMBER, $00, 0
 	map_attributes WeepthChamber, WEEPTH_CHAMBER, $00, 0

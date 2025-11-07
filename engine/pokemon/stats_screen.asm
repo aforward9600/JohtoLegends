@@ -479,12 +479,10 @@ StatsScreen_LoadGFX:
 	ld hl, wcf64
 	bit 4, [hl]
 	jr nz, .place_frontpic
-	call SetPalettes
-	ret
+	jp SetPalettes
 
 .place_frontpic
-	call StatsScreen_PlaceFrontpic
-	ret
+	jp StatsScreen_PlaceFrontpic
 
 .ClearBox:
 	ld a, [wcf64]
@@ -493,8 +491,7 @@ StatsScreen_LoadGFX:
 	call StatsScreen_LoadPageIndicators
 	hlcoord 0, 8
 	lb bc, 10, 20
-	call ClearBox
-	ret
+	jp ClearBox
 
 .LoadPals:
 	ld a, [wcf64]
@@ -704,8 +701,7 @@ StatsScreen_LoadGFX:
 	farcall TimeCapsule_ReplaceTeruSama
 	ld a, b
 	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
-	ret
+	jp GetItemName
 
 .Item:
 	db "Item@"
@@ -808,14 +804,12 @@ StatsScreen_LoadGFX:
 	call CopyName1
 	ld de, wStringBuffer2
 	hlcoord 4, 14
-	call PlaceString
-	ret
+	jp PlaceString
 
 .unknown_location:
 	ld de, MetUnknownMapString
 	hlcoord 4, 13
-	call PlaceString
-	ret
+	jp PlaceString
 
 .times
 	db "Morning@"
@@ -881,8 +875,7 @@ StatsScreen_LoadGFX:
 	call PlaceString
 	ld de, MetUnknownLevelString
 	hlcoord 4, 16
-	call PlaceString
-	ret
+	jp PlaceString
 
 MetAtMapString:
 	db "Met at:@"
@@ -934,20 +927,17 @@ StatsScreen_PlaceFrontpic:
 
 .egg
 	call .AnimateEgg
-	call SetPalettes
-	ret
+	jp SetPalettes
 
 .no_cry
 	call .AnimateMon
-	call SetPalettes
-	ret
+	jp SetPalettes
 
 .cry
 	call SetPalettes
 	call .AnimateMon
 	ld a, [wCurPartySpecies]
-	call PlayMonCry2
-	ret
+	jp PlayMonCry2
 
 .AnimateMon:
 	ld hl, wcf64

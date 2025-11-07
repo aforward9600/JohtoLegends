@@ -283,13 +283,13 @@ SetGenderShininess:
 	and a
 	jr z, .Random
 	ld a, [wEnemyForm]
-	and CAUGHT_MON_GENDER_MASK
-	jr z, .Male
-	ld a, [hl]
-	or CAUGHT_MON_GENDER_MASK
-	ld [hl], a
-.Male
-	ld a, [wEnemyForm]
+;	and CAUGHT_MON_GENDER_MASK
+;	jr z, .Male
+;	ld a, [hl]
+;	or CAUGHT_MON_GENDER_MASK
+;	ld [hl], a
+;.Male
+;	ld a, [wEnemyForm]
 	and CAUGHT_SHINY_MASK
 	jr z, .NotShiny
 	ld a, [hl]
@@ -299,14 +299,14 @@ SetGenderShininess:
 	ret ; need to add forms next
 
 .Random
-	push hl
-	call Random
-	cp GIFT_SHINY_NUMERATOR
-	pop hl
-	jr c, .MaleRandom
-	ld a, [hl]
-	or CAUGHT_MON_GENDER_MASK
-	ld [hl], a
+;	push hl
+;	call Random
+;	cp GIFT_SHINY_NUMERATOR
+;	pop hl
+;	jr c, .MaleRandom
+;	ld a, [hl]
+;	or CAUGHT_MON_GENDER_MASK
+;	ld [hl], a
 .MaleRandom
 	push bc
 	push hl

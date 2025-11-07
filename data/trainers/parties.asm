@@ -2833,7 +2833,7 @@ if DEF(_CHALLENGE)
 else
 	db NO_ITEM
 endc
-	dw SURF, THUNDERBOLT, 
+	dw SURF, THUNDERBOLT, GRASS_KNOT, PROTECT
 	db -1 ; end
 
 	next_list_item ; LASS

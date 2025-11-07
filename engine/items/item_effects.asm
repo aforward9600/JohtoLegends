@@ -459,6 +459,8 @@ PokeBallEffect:
 	ld [wCurPartyLevel], a
 	ld a, [wEnemyMonAbility]
 	ld [wEnemyAbility], a
+	ld a, [wEnemyMonForm]
+	ld [wEnemyForm], a
 	farcall LoadEnemyMon
 
 	pop af
@@ -578,8 +580,6 @@ PokeBallEffect:
 
 	predef TryAddMonToParty
 
-	ld a, [wEnemyMonForm]
-	ld [wEnemyForm], a
 	farcall SetCaughtData
 
 	ld a, [wCurItem]

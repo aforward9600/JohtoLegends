@@ -3940,10 +3940,10 @@ BattleCheckEnemyShininess:
 	ret
 
 BattleCheckPlayerShininess:
-	farcall GetPartyMonForm
+	call GetPartyMonForm
 BattleCheckShininess:
-	ld b, h
 	ld c, l
+	ld b, h
 	callfar CheckShininess
 	ret
 

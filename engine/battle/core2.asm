@@ -629,14 +629,3 @@ CheckEnemyShininess::
 	cp SHINY_NUMERATOR
 	jr c, .Shiny
 	ret
-
-GetPartyMonForm::
-	ld hl, wBattleMonForm
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_TRANSFORMED, a
-	ret z
-	ld hl, wPartyMon1CaughtTime
-	ld a, [wCurBattleMon]
-	jp GetPartyLocation
-
-
