@@ -175,6 +175,7 @@ SetBoxmonOrEggmonCaughtData:
 	or b
 	ld [hl], a
 	call SetGenderShininess
+SetBoxmonOrEggmonCaughtData2:
 	ld a, (wPartyMon1CaughtLevel - wPartyMon1CaughtTime)
 	add l
 	ld l, a
@@ -268,28 +269,40 @@ SetEggMonCaughtData:
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1CaughtTime
 	call GetPartyLocation
+	ld a, [hl]
+	ld [de], a
 	ld a, [wCurPartyLevel]
 	push af
 	ld a, CAUGHT_EGG_LEVEL
 	ld [wCurPartyLevel], a
-	call SetBoxmonOrEggmonCaughtData
+	ld a, [wTimeOfDay]
+	inc a
+	rrca
+	rrca
+	and CAUGHT_TIME_MASK
+	or b
+	ld [hl], a
+;	ld a, [wCurPartyMon]
+;	ld hl, wPartyMon1CaughtTime
+;	call GetPartyLocation
+	call SetGenderShininessEgg
+	call SetBoxmonOrEggmonCaughtData2
 	pop af
 	ld [wCurPartyLevel], a
 	ret
 
 SetGenderShininess:
-	ld b,b
 	ld a, [wBattleMode]
 	and a
 	jr z, .Random
 	ld a, [wEnemyForm]
-;	and CAUGHT_MON_GENDER_MASK
-;	jr z, .Male
-;	ld a, [hl]
-;	or CAUGHT_MON_GENDER_MASK
-;	ld [hl], a
-;.Male
-;	ld a, [wEnemyForm]
+	and CAUGHT_MON_GENDER_MASK
+	jr z, .Male
+	ld a, [hl]
+	or CAUGHT_MON_GENDER_MASK
+	ld [hl], a
+.Male
+	ld a, [wEnemyForm]
 	and CAUGHT_SHINY_MASK
 	jr z, .NotShiny
 	ld a, [hl]
@@ -299,14 +312,14 @@ SetGenderShininess:
 	ret ; need to add forms next
 
 .Random
-;	push hl
-;	call Random
-;	cp GIFT_SHINY_NUMERATOR
-;	pop hl
-;	jr c, .MaleRandom
-;	ld a, [hl]
-;	or CAUGHT_MON_GENDER_MASK
-;	ld [hl], a
+	push hl
+	call Random
+	cp GIFT_SHINY_NUMERATOR
+	pop hl
+	jr c, .MaleRandom
+	ld a, [hl]
+	or CAUGHT_MON_GENDER_MASK
+	ld [hl], a
 .MaleRandom
 	push bc
 	push hl
@@ -339,4 +352,37 @@ SetGenderShininess:
 
 .NotShinyRandom
 	pop hl
+	ret
+
+SetGenderShininessEgg:
+;	push hl
+;	call Random
+;	cp GIFT_SHINY_NUMERATOR
+;	pop hl
+;	ret c
+;	ld a, [hl]
+;	or CAUGHT_MON_GENDER_MASK
+;	ld [hl], a
+;	ret
+;.MaleRandom
+;	ld a, [wEggMonCaughtTime]
+	ld a, [de]
+	and CAUGHT_GENDER_MASK
+	jr z, .SkipGender
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1CaughtTime
+	call GetPartyLocation
+	ld a, [hl]
+	or CAUGHT_GENDER_MASK
+	ld [hl], a
+.SkipGender
+	ld a, [de]
+	and CAUGHT_SHINY_MASK
+	ret z
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1CaughtTime
+	call GetPartyLocation
+	ld a, [hl]
+	or CAUGHT_SHINY_MASK
+	ld [hl], a
 	ret

@@ -500,6 +500,11 @@ DayCare_GiveEgg:
 	ld bc, wEggMonEnd - wEggMon
 	call CopyBytes
 
+;	ld hl, wPartyMon1CaughtTime
+;	call GetPartyLocation
+;	ld a, [wEggMonCaughtTime]
+;	ld [hl], a
+
 	call GetBaseData
 	ld a, [wPartyCount]
 	dec a
@@ -730,6 +735,52 @@ DayCare_InitBreeding:
 	ld [hl], a
 	ld a, [wCurPartyLevel]
 	ld [wEggMonLevel], a
+
+	ld a, [wBreedMon1CaughtTime]
+	and CAUGHT_SHINY_MASK
+	ld b, a
+	ld a, [wBreedMon2CaughtTime]
+	and CAUGHT_SHINY_MASK
+	or b
+	jr z, .no_shiny_parent
+
+	ld a, [wBreedMon1CaughtTime]
+	and CAUGHT_SHINY_MASK
+	ld b, a
+	ld a, [wBreedMon2CaughtTime]
+	and CAUGHT_SHINY_MASK
+	and b
+	jr z, .one_parent_shiny
+
+	call Random
+	cp SHINY_EGG_TWO_SHINY_PARENTS_NUMERATOR
+	jr nc, .not_shiny
+	ld a, [wEggMonCaughtTime]
+	or CAUGHT_SHINY_MASK
+	ld [wEggMonCaughtTime], a
+	ret
+
+.one_parent_shiny:
+	call Random
+	cp SHINY_EGG_ONE_SHINY_PARENT_NUMERATOR
+	jr nc, .not_shiny
+	ld a, [wEggMonCaughtTime]
+	or CAUGHT_SHINY_MASK
+	ld [wEggMonCaughtTime], a
+
+.no_shiny_parent:
+	call Random
+	and a
+	jr nz, .not_shiny
+	call Random
+	cp SHINY_EGG_NUMERATOR
+	jr nc, .not_shiny
+	ld a, [wEggMonCaughtTime]
+	or CAUGHT_SHINY_MASK
+	ld [wEggMonCaughtTime], a
+.not_shiny
+	xor a
+	ld [wEggMonCaughtTime], a
 	ret
 
 .String_EGG:

@@ -298,9 +298,9 @@ HatchEggs:
 	call EventFlagAction
 .nottogepi
 
-	call EggAbility
-	ld hl, wEggMonCaughtAbility
-	ld [hli], a
+;	call EggAbility
+;	ld hl, wEggMonCaughtAbility
+;	ld [hli], a
 
 	pop de
 
@@ -707,8 +707,8 @@ GetEggFrontpic:
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
 	call GetBaseData
-	ld hl, wBattleMonDVs
-	predef GetUnownLetter
+	ld hl, wPartyMon1CaughtTime
+	call GetPartyLocation
 	pop de
 	predef_jump GetMonFrontpic
 
@@ -717,8 +717,8 @@ GetHatchlingFrontpic:
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
 	call GetBaseData
-	ld hl, wBattleMonDVs
-	predef GetUnownLetter
+	ld hl, wPartyMon1CaughtTime
+	call GetPartyLocation
 	pop de
 	predef_jump GetAnimatedFrontpic
 
