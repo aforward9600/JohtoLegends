@@ -601,7 +601,6 @@ CopyBackpic:
 	ret
 
 CheckEnemyShininess::
-	ld b,b
 	push de
 	push hl
 	ld de, ENGINE_SHINY_PASSWORD

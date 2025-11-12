@@ -299,6 +299,20 @@ DoNPCTrade:
 	pop de
 	pop bc
 	pop af
+	ld e, NPCTRADE_DIALOG
+	call GetTradeAttribute
+	ld a, [hl]
+	cp TRADE_DIALOGSET_GIRL
+	jr nc, .Male
+	cp TRADE_DIALOGSET_COLLECTOR
+	jr nc, .Male
+	ld hl, wPartyMon1CaughtTime
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [hl]
+	or CAUGHT_GENDER_MASK
+	ld [hl], a
+
+.Male
 	ret
 
 GetTradeAttribute:

@@ -16,51 +16,6 @@ CheckShininess:
 .NotShiny:
 	and a
 	ret
-; Check if a mon is shiny by DVs at bc.
-; Return carry if shiny.
-
-	ld l, c
-	ld h, b
-
-; Attack
-	ld a, [hl]
-	and 1 << SHINY_ATK_BIT
-	jr z, .NotShiny
-
-; Defense
-	ld a, [hli]
-	and $f
-	cp  SHINY_DEF_VAL
-	jr nz, .NotShiny
-
-; Speed
-	ld a, [hl]
-	and $f0
-	cp  SHINY_SPD_VAL << 4
-	jr nz, .NotShiny
-
-; Check if the shiny password is active.
-	push de
-	push hl
-	ld de, ENGINE_SHINY_PASSWORD
-	farcall CheckEngineFlag
-	jr nc, .AltSpecial
-	pop hl
-	pop de
-
-; Special
-	ld a, [hl]
-	and $f
-	cp  SHINY_SPC_VAL
-	jr nz, .NotShiny
-	jr .Shiny
-
-.AltSpecial
-	pop hl
-	pop de
-	ld a, [hl]
-	and 1 << SHINY_ATK_BIT
-	jr z, .NotShiny
 
 InitPartyMenuPalettes:
 	ld hl, PalPacket_PartyMenu + 1

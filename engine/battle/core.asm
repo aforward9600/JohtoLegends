@@ -6318,17 +6318,18 @@ LoadEnemyMon:
 
 .GenerateDVs:
 
-	farcall CheckEnemyShininess
-
 ;checkswarm
 	ld hl, wDailyFlags1
 	bit DAILYFLAGS1_SWARM_F, [hl]
 	jr z, .skipshine
 
 	farcall GenerateShinySwarm
-;	jp .next
+	jr .SkipShine
 
 .skipshine:
+	farcall CheckEnemyShininess
+
+.SkipShine
 ; Generate new random DVs
 ;	ld hl, wStatusFlags2
 ;	bit STATUSFLAGS2_UNUSED_5_F, [hl]

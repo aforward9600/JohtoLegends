@@ -456,7 +456,7 @@ GenerateShinySwarm:
 		endc
 	endc
 	jp nz, .skipshineswarm
-	jr .rollshiny
+	jp .rollshiny
 
 .murkrow
 	ld a, [wCurPartySpecies]
@@ -493,7 +493,7 @@ GenerateShinySwarm:
 			cp HIGH(DITTO)
 		endc
 	endc
-	jr nz, .skipshineswarm
+	jp nz, .skipshineswarm
 	jr .rollshiny
 
 .slowpoke
@@ -619,37 +619,22 @@ GenerateShinySwarm:
 	call Random
 	cp 7
 	jr nc, .trynext
-	ld b, ATKDEFDV_SHINY ; $ea
-	ld c, SPDSPCDV_SHINY ; $aa
+	ld a, [wEnemyMonForm]
+	or CAUGHT_SHINY_MASK
+	ld [wEnemyMonForm], a
 	jr .UpdateDVsSwarm
 .trynext:
 	call Random
 	cp 7
 	jr nc, .skipshineswarm
-	ld b, ATKDEFDV_SHINYF ; 1a
-	ld c, SPDSPCDV_SHINY ; $aa
-	jr .UpdateDVsSwarm
+	ld a, [wEnemyMonForm]
+	or CAUGHT_SHINY_MASK
+	ld [wEnemyMonForm], a
 
 .skipshineswarm:
-; Generate new random DVs
-;	ld hl, wStatusFlags2
-;	bit STATUSFLAGS2_UNUSED_5_F, [hl]
-;	jr nz, .MaxDVs
-	call BattleRandom
-	ld b, a
-	call BattleRandom
-	ld c, a
-;	jr .UpdateDVsSwarm
-
-;.MaxDVs:
-;	ld b, $ff
-;	ld c, $ff
 
 .UpdateDVsSwarm:
 ; Input DVs in register bc
-	ld hl, wEnemyMonDVs
-	ld a, b
-	ld [hli], a
-	ld [hl], c
+; 	Need to do gender next
 	farcall SetEnemyAbility
 	ret
