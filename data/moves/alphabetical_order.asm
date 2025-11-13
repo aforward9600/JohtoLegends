@@ -263,6 +263,7 @@ AlphabeticalMoveList::
 	dw PROTECT
 	dw PSYBEAM
 	dw PSYCHIC_M
+	dw PSYCHO_BOOST
 	dw PSYCHO_CUT
 	dw PSYCH_UP
 	dw PSYSHIELD

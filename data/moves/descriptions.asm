@@ -413,6 +413,7 @@ MoveDescriptions1:
 	dw MeteorMashDescription
 	dw ForcePalmDescription
 	dw SkyUppercutDescription
+	dw PsychoBoostDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1989,3 +1990,7 @@ ForcePalmDescription:
 SkyUppercutDescription:
 	db   "An uppercut thrown"
 	line "to the sky.@"
+
+PsychoBoostDescription:
+	db   "Sharply lowers the"
+	line "user's Sp.Atk.@"

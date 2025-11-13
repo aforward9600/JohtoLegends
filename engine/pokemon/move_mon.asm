@@ -1786,6 +1786,7 @@ endc
 	ret
 
 GivePoke::
+	ld b,b
 	push de
 	push bc
 	xor a ; PARTYMON

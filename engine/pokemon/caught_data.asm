@@ -289,16 +289,14 @@ SetEggMonCaughtData:
 	ret
 
 SetGenderShininess:
+	push hl
 	ld a, [wBattleMode]
 	and a
 	jr z, .Random
 	ld a, [wEnemyForm]
 	and CAUGHT_MON_GENDER_MASK
 	jr z, .Male
-	ld a, [wPartyCount]
-	dec a
-	ld hl, wPartyMon1CaughtTime
-	call GetPartyLocation
+	pop hl
 	ld a, [hl]
 	or CAUGHT_MON_GENDER_MASK
 	ld [hl], a
@@ -309,42 +307,39 @@ SetGenderShininess:
 	ld a, [hl]
 	or CAUGHT_SHINY_MASK
 	ld [hl], a
+	ret
 .NotShiny
+	pop hl
 	ret ; need to add forms next
 
 .Random
 	farcall SetPokemonGender
 	jr c, .MaleRandom
 ;	jr nz, .MaleRandom
-	ld a, [wPartyCount]
-	dec a
-	ld hl, wPartyMon1CaughtTime
-	call GetPartyLocation
+	pop hl
 	ld a, [hl]
 	or CAUGHT_MON_GENDER_MASK
 	ld [hl], a
+	push hl
 .MaleRandom
 	ld de, ENGINE_SHINY_PASSWORD
 	farcall CheckEngineFlag
-	jr nc, .GuaranteeShiny
+	jr nc, .IsShiny
 	call Random
 	and a
 	jr nz, .NotShinyRandom
 	call Random
 	cp SHINY_NUMERATOR
 	jr nc, .NotShinyRandom
-	jr .IsShiny
 
-.GuaranteeShiny
 .IsShiny
-	ld a, [wPartyCount]
-	dec a
-	ld hl, wPartyMon1CaughtTime
-	call GetPartyLocation
+	pop hl
 	ld a, [hl]
 	or CAUGHT_SHINY_MASK
 	ld [hl], a
+	ret
 .NotShinyRandom
+	pop hl
 	ret
 
 SetGenderShininessEgg:

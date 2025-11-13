@@ -414,6 +414,7 @@
 	const METEOR_MASH
 	const FORCE_PALM
 	const SKY_UPPERCUT
+	const PSYCHO_BOOST
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 

@@ -2920,6 +2920,31 @@ GyroBall:
 	buildopponentrage
 	endmove
 
+PsychoBoost:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	switchturn
+	specialdefensedown2
+	statdownmessage
+	switchturn
+	kingsrock
+	checkfaint
+	buildopponentrage
+	endmove
+
 ;WakeUpSlap:
 ;	checkobedience
 ;	usedmovetext

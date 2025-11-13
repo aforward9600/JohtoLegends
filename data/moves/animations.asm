@@ -438,6 +438,7 @@ BattleAnimations::
 	dw BattleAnim_MeteorMash
 	dw BattleAnim_ForcePalm
 	dw BattleAnim_SkyUppercut
+	dw BattleAnim_PsychoBoost
 ;	dw BattleAnim_WakeUpSlap
 
 BattleAnim_0:
@@ -3374,6 +3375,10 @@ BattleAnim_Waterfall2:
 	anim_obj ANIM_OBJ_01, 136, 24, $0
 	anim_jump BattleAnim_Wait8
 
+BattleAnim_PsychoBoost:
+	anim_1gfx ANIM_GFX_PSYCHIC
+	anim_bgp $1b
+	anim_obp0 $f
 BattleAnim_PsychicM:
 BattleAnim_Extrasensory:
 	anim_1gfx ANIM_GFX_PSYCHIC
