@@ -356,6 +356,7 @@ JOHTO_POKEMON EQU const_value
 	const REGIELEKI
 	const REGIDRAGO
 	const REGIGIGAS
+	const DEOXYS
 
 NUM_POKEMON EQU const_value + -1
 

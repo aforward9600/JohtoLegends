@@ -54,6 +54,7 @@ AlphabeticalPokedexOrder:
 	dw CURSOLA
 	dw CYNDAQUIL
 	dw DELIBIRD
+	dw DEOXYS
 	dw DEWGONG
 	dw DIGLETT
 	dw DITTO

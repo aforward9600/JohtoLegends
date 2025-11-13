@@ -685,3 +685,5 @@ PokemonPicPointers::
 	dba RegidragoBackpic
 	dba RegigigasFrontpic
 	dba RegigigasBackpic
+	dba DeoxysFrontpic
+	dba DeoxysBackpic

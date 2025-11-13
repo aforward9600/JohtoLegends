@@ -337,3 +337,4 @@ NewPokedexOrder:
 	dw REGIELEKI
 	dw REGIDRAGO
 	dw REGIGIGAS
+	dw DEOXYS

@@ -347,3 +347,4 @@ MonMenuIconPals:
 	icon_pals BLUE,   GRAY   ; REGIELEKI
 	icon_pals RED,    BLUE   ; REGIDRAGO
 	icon_pals GREEN,  BLUE   ; REGIGIGAS
+	icon_pals RED,    GREEN  ; DEOXYS

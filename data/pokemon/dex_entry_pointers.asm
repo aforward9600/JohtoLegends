@@ -336,3 +336,4 @@ PokedexDataPointerTable:
 	dba RegielekiPokedexEntry
 	dba RegidragoPokedexEntry
 	dba RegigigasPokedexEntry
+	dba DeoxysPokedexEntry

@@ -335,3 +335,4 @@ AnimationPointers:
 	dw RegielekiAnimation
 	dw RegidragoAnimation
 	dw RegigigasAnimation
+	dw DeoxysAnimation

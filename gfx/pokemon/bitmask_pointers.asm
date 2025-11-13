@@ -335,3 +335,4 @@ BitmasksPointers:
 	dw RegielekiBitmasks
 	dw RegidragoBitmasks
 	dw RegigigasBitmasks
+	dw DeoxysBitmasks

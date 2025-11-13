@@ -335,3 +335,4 @@ FramesPointers:
 	dba RegielekiFrames
 	dba RegidragoFrames
 	dba RegigigasFrames
+	dba DeoxysFrames

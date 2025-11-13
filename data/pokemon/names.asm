@@ -339,3 +339,4 @@ PokemonNames::
 	db "Regieleki@"
 	db "Regidrago@"
 	db "Regigigas@"
+	db "Deoxys@@@@"

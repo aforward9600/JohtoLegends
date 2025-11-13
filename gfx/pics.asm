@@ -1346,3 +1346,11 @@ RegigigasFrontpic:   INCBIN "gfx/pokemon/regigigas/front.animated.2bpp.lz"
 SECTION "Regigigas Backpic", ROMX
 
 RegigigasBackpic:    INCBIN "gfx/pokemon/regigigas/back.2bpp.lz"
+
+SECTION "Deoxys Frontpic", ROMX
+
+DeoxysFrontpic:      INCBIN "gfx/pokemon/deoxys/front.animated.2bpp.lz"
+
+SECTION "Deoxys Backpic", ROMX
+
+DeoxysBackpic:      INCBIN "gfx/pokemon/deoxys/back.2bpp.lz"

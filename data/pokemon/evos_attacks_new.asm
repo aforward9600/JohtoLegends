@@ -30,6 +30,7 @@ EvosAttacksPointers3::
 	dw RegielekiEvosAttacks
 	dw RegidragoEvosAttacks
 	dw RegigigasEvosAttacks
+	dw DeoxysEvosAttacks
 
 AronEvosAttacks:
 	dbbw EVOLVE_LEVEL, 32, LAIRON
@@ -574,4 +575,22 @@ RegigigasEvosAttacks:
 	dbw 75, BODY_SLAM
 	dbw 90, SUPERPOWER
 	dbw 100, GIGA_IMPACT
+	db 0 ; no more level-up moves
+
+DeoxysEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, LEER
+	dbw 1, WRAP
+	dbw 7, NIGHT_SHADE
+	dbw 13, TELEPORT
+	dbw 19, KNOCK_OFF
+	dbw 25, PURSUIT
+	dbw 31, PSYCHIC_M
+	dbw 37, PROTECT
+	dbw 43, HYPNOSIS
+	dbw 49, ZEN_HEADBUTT
+	dbw 55, COSMIC_POWER
+	dbw 61, RECOVER
+	dbw 67, PSYCHO_BOOST
+	dbw 73, HYPER_BEAM
 	db 0 ; no more level-up moves

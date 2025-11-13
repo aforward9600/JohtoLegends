@@ -185,6 +185,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw NoEggMoves2
 
 PinsirEggMoves:
 	dw FURY_ATTACK
