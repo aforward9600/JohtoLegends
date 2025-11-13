@@ -8,6 +8,8 @@ CheckBreedmonCompatibility:
 	ld [wTempMonDVs], a
 	ld a, [wBreedMon1DVs + 1]
 	ld [wTempMonDVs + 1], a
+	ld a, [wBreedMon1CaughtTime]
+	ld [wTempMonCaughtTime], a
 	ld a, TEMPMON
 	ld [wMonType], a
 	predef GetGender
@@ -24,6 +26,8 @@ CheckBreedmonCompatibility:
 	ld [wTempMonDVs], a
 	ld a, [wBreedMon2DVs + 1]
 	ld [wTempMonDVs + 1], a
+	ld a, [wBreedMon2CaughtTime]
+	ld [wTempMonCaughtTime], a
 	ld a, TEMPMON
 	ld [wMonType], a
 	predef GetGender
@@ -649,6 +653,8 @@ GetHeritableMoves:
 	ld [wTempMonDVs], a
 	ld a, [wBreedMon2DVs + 1]
 	ld [wTempMonDVs + 1], a
+	ld a, [wBreedMon2CaughtTime]
+	ld [wTempMonCaughtTime], a
 	ld a, TEMPMON
 	ld [wMonType], a
 	predef GetGender
@@ -665,6 +671,8 @@ GetHeritableMoves:
 	ld [wTempMonDVs], a
 	ld a, [wBreedMon1DVs + 1]
 	ld [wTempMonDVs + 1], a
+	ld a, [wBreedMon1CaughtTime]
+	ld [wTempMonCaughtTime], a
 	ld a, TEMPMON
 	ld [wMonType], a
 	predef GetGender

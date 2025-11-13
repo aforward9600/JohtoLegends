@@ -165,7 +165,7 @@ BattleTurn:
 .loop
 	call Stubbed_Function3c1bf
 	call CheckContestBattleOver
-	jp c, .quit
+	ret c
 
 	xor a
 	ld [wPlayerIsSwitching], a
@@ -182,20 +182,20 @@ BattleTurn:
 
 	call IsMobileBattle
 	jr nz, .not_disconnected
-	jp c, .quit
+	ret c
 .not_disconnected
 
 	call CheckPlayerLockedIn
 	jr c, .skip_iteration
 .loop1
 	call BattleMenu
-	jr c, .quit
+	ret c
 	ld a, [wBattleEnded]
 	and a
-	jr nz, .quit
+	ret nz
 	ld a, [wForcedSwitch] ; roared/whirlwinded/teleported
 	and a
-	jr nz, .quit
+	ret nz
 .skip_iteration
 	call ParsePlayerAction
 	push af
@@ -204,7 +204,7 @@ BattleTurn:
 	jr nz, .loop1
 
 	call EnemyTriesToFlee
-	jr c, .quit
+	ret c
 
 	call DetermineMoveOrder
 	jr c, .false
@@ -214,24 +214,21 @@ BattleTurn:
 	call Battle_PlayerFirst
 .proceed
 	call CheckMobileBattleError
-	jr c, .quit
+	ret c
 
 	ld a, [wForcedSwitch]
 	and a
-	jr nz, .quit
+	ret nz
 
 	ld a, [wBattleEnded]
 	and a
-	jr nz, .quit
+	ret nz
 
 	call HandleBetweenTurnEffects
 	ld a, [wBattleEnded]
 	and a
-	jr nz, .quit
+	ret nz
 	jp .loop
-
-.quit
-	ret
 
 Stubbed_Function3c1bf:
 	ret
@@ -6242,6 +6239,15 @@ LoadEnemyMon:
 	dec a
 	jr z, .WildDVs
 
+; Trainer gender
+	farcall GetTrainerGender
+	ld hl, wEnemyMonForm
+	jr c, .SkipTrainerGender
+	ld a, [hl]
+	or CAUGHT_MON_GENDER_MASK
+	ld [hl], a
+.SkipTrainerGender:
+
 ; TrainerDVs
 	ld a, [wCurPartyMon]
 	ld hl, wOTPartyMon1DVs
@@ -8636,7 +8642,7 @@ InitEnemyTrainer:
 	ld [wBattleMode], a
 
 	call IsGymLeader
-	jr nc, .done
+	ret nc
 	xor a
 	ld [wCurPartyMon], a
 	ld a, [wPartyCount]
@@ -8653,12 +8659,12 @@ InitEnemyTrainer:
 .skipfaintedmon
 	pop bc
 	dec b
-	jr z, .done
+	ret z
 	ld hl, wCurPartyMon
 	inc [hl]
 	jr .partyloop
-.done
-	ret
+;.done
+;	ret
 
 InitEnemyWildmon:
 	ld a, WILD_BATTLE
@@ -8996,7 +9002,7 @@ ReadAndPrintLinkBattleRecord:
 	hlcoord 6, 4
 	ld de, sLinkBattleWins
 	call .PrintZerosIfNoSaveFileExists
-	jr c, .quit
+	ret c
 
 	lb bc, 2, 4
 	call PrintNum
@@ -9013,10 +9019,7 @@ ReadAndPrintLinkBattleRecord:
 	call .PrintZerosIfNoSaveFileExists
 
 	lb bc, 2, 4
-	call PrintNum
-
-.quit
-	ret
+	jp PrintNum
 
 .PrintZerosIfNoSaveFileExists:
 	ld a, [wSavedAtLeastOnce]
@@ -9194,8 +9197,8 @@ AddLastMobileBattleToLinkRecord:
 
 .done
 	call .StoreResult
-	call .FindOpponentAndAppendRecord
-	ret
+	jr .FindOpponentAndAppendRecord
+
 .StoreResult:
 	ld a, [wBattleResult]
 	and $f

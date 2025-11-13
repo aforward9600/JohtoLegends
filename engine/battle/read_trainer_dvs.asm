@@ -19,3 +19,18 @@ GetTrainerDVs:
 	ret
 
 INCLUDE "data/trainers/dvs.asm"
+
+GetTrainerGender:
+	ld hl, FemalePokemonTrainers
+	ld a, [wOtherTrainerClass]
+	ld de, 1
+	call IsInArray
+	jr z, .FemalePokemonTrainers
+	scf
+	ret
+
+.FemalePokemonTrainers:
+	xor a
+	ret
+
+INCLUDE "data/trainers/gendered_pokemon.asm"

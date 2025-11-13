@@ -854,10 +854,6 @@ SetPokemonGender::
 	scf
 	ret
 
-	ld a, 1
-	and a
-	ret
-
 Daycare_CheckAlternateOffspring:
 	; returns [wCurPartySpecies] in a, unless that species may give birth to an alternate species (e.g., gender variant)
 	; if an alternate species is possible, it returns it 50% of the time
