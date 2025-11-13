@@ -796,7 +796,6 @@ SetEggGender:
 	ld hl, wEggMonCaughtTime
 	push hl
 SetPokemonGender::
-	ld b,b
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld b, h

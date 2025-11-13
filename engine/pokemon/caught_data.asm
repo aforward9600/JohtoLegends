@@ -289,7 +289,6 @@ SetEggMonCaughtData:
 	ret
 
 SetGenderShininess:
-	ld b,b
 	ld a, [wBattleMode]
 	and a
 	jr z, .Random

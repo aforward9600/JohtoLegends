@@ -1710,37 +1710,15 @@ ShinyPasswordCheck:
 	end
 
 ShinyGiftPokemon:
-	readvar VAR_PARTYCOUNT
-	ifequal 1, .FirstShiny
-	ifequal 2, .SecondShiny
-	ifequal 3, .ThirdShiny
-	ifequal 4, .FourthShiny
-	ifequal 5, .FifthShiny
-	loadmem wPartyMon6DVs+0, $ea
-	loadmem wPartyMon6DVs+1, $aa
+	callasm ShinyGiftPokemonASM
 	end
 
-.FirstShiny:
-	loadmem wPartyMon1DVs+0, $ea
-	loadmem wPartyMon1DVs+1, $aa
-	end
-
-.SecondShiny:
-	loadmem wPartyMon2DVs+0, $ea
-	loadmem wPartyMon2DVs+1, $aa
-	end
-
-.ThirdShiny
-	loadmem wPartyMon3DVs+0, $ea
-	loadmem wPartyMon3DVs+1, $aa
-	end
-
-.FourthShiny
-	loadmem wPartyMon4DVs+0, $ea
-	loadmem wPartyMon4DVs+1, $aa
-	end
-
-.FifthShiny
-	loadmem wPartyMon5DVs+0, $ea
-	loadmem wPartyMon5DVs+1, $aa
-	end
+ShinyGiftPokemonASM:
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1CaughtTime
+	call GetPartyLocation
+	ld a, [hl]
+	or CAUGHT_SHINY_MASK
+	ld [hl], a
+	ret
