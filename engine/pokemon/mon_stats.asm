@@ -136,30 +136,52 @@ GetGender:
 ; Figure out what type of monster struct we're looking at.
 
 ; 0: PartyMon
-	ld hl, wPartyMon1DVs
+;	ld hl, wPartyMon1DVs
+;	ld bc, PARTYMON_STRUCT_LENGTH
+;	ld a, [wMonType]
+;	and a
+;	jr z, .PartyMon
+
+	ld hl, wPartyMon1CaughtTime
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld a, [wMonType]
 	and a
 	jr z, .PartyMon
 
 ; 1: OTPartyMon
-	ld hl, wOTPartyMon1DVs
+;	ld hl, wOTPartyMon1DVs
+;	dec a
+;	jr z, .PartyMon
+
+	ld hl, wOTPartyMon1CaughtTime
 	dec a
 	jr z, .PartyMon
 
 ; 2: sBoxMon
-	ld hl, sBoxMon1DVs
+;	ld hl, sBoxMon1DVs
+;	ld bc, BOXMON_STRUCT_LENGTH
+;	dec a
+;	jr z, .sBoxMon
+
+	ld hl, sBoxMon1CaughtTime
 	ld bc, BOXMON_STRUCT_LENGTH
 	dec a
 	jr z, .sBoxMon
 
 ; 3: Unknown
-	ld hl, wTempMonDVs
+;	ld hl, wTempMonDVs
+;	dec a
+;	jr z, .DVs
+
+	ld hl, wTempMonCaughtTime
 	dec a
 	jr z, .DVs
 
 ; else: WildMon
-	ld hl, wEnemyMonDVs
+;	ld hl, wEnemyMonDVs
+;	jr .DVs
+
+	ld hl, wEnemyMonForm
 	jr .DVs
 
 ; Get our place in the party/box.
@@ -177,29 +199,29 @@ GetGender:
 	call z, GetSRAMBank
 
 ; Attack DV
-	ld a, [hl]
-	cpl
-	and $10
-	swap a
-	add a    ; Atk DV << 1
-	ld b, a  ; Store it in register b
+;	ld a, [hl]
+;	cpl
+;	and $10
+;	swap a
+;	add a    ; Atk DV << 1
+;	ld b, a  ; Store it in register b
 ; Defense DV
-	ld a, [hli]
-	and $1
-	add a    ; Def DV << 1
-	add a    ; Def DV << 2
-	or b    ; Add (Atk DV << 1) + (Def DV << 2)
-	ld b, a  ; Store result in b
+;	ld a, [hli]
+;	and $1
+;	add a    ; Def DV << 1
+;	add a    ; Def DV << 2
+;	or b    ; Add (Atk DV << 1) + (Def DV << 2)
+;	ld b, a  ; Store result in b
 ; Special DV
-	ld a, [hl]
-	cpl
-	and $1
-	add a    ; Spec DV << 1
-	add a    ; Spec DV << 2
-	add a    ; Spec DV << 3
-	or b    ; Add (Spec DV << 3)
-	swap a
-	ld b, a  ; Again, stored in b.
+;	ld a, [hl]
+;	cpl
+;	and $1
+;	add a    ; Spec DV << 1
+;	add a    ; Spec DV << 2
+;	add a    ; Spec DV << 3
+;	or b    ; Add (Spec DV << 3)
+;	swap a
+;	ld b, a  ; Again, stored in b.
 
 ; Close SRAM if we were dealing with a sBoxMon.
 	ld a, [wMonType]
@@ -207,6 +229,8 @@ GetGender:
 	call z, CloseSRAM
 
 ; We need the gender ratio to do anything with this.
+	ld b, h
+	ld c, l
 	push bc
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
@@ -218,6 +242,7 @@ GetGender:
 	ld bc, BASE_GENDER
 	add hl, bc
 	pop bc
+	push bc
 	jr z, .Genderless
 
 	call GetFarByte
@@ -225,27 +250,36 @@ GetGender:
 ; The higher the ratio, the more likely the monster is to be female.
 
 	cp GENDER_UNKNOWN
-	jr z, .Genderless
+	jr z, .GenderlessPop
 
-	and a ; GENDER_F0?
-	jr z, .Male
+	cp GENDER_F0 ; GENDER_F0?
+	jr z, .MalePop
 
 	cp GENDER_F100
-	jr z, .Female
+	jr z, .FemalePop
 
 ; Values below the ratio are male, and vice versa.
-	cp b
-	jr c, .Male
+	pop bc
+	ld a, [bc]
+	and CAUGHT_MON_GENDER_MASK
+	jr z, .Male
+	jr .Female
 
+.FemalePop:
+	pop bc
 .Female:
 	xor a
 	ret
 
+.MalePop:
+	pop bc
 .Male:
 	ld a, 1
 	and a
 	ret
 
+.GenderlessPop:
+	pop bc
 .Genderless:
 	scf
 	ret

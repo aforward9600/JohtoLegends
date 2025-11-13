@@ -710,6 +710,7 @@ AI_Switch:
 	call PrintText
 
 .skiptext
+	farcall SetEnemyAbility
 	ld a, 1
 	ld [wBattleHasJustStarted], a
 	callfar NewEnemyMonStatus

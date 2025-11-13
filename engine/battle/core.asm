@@ -2287,8 +2287,7 @@ WinTrainerBattle:
 	or [hl]
 	ret nz
 	call ClearTileMap
-	call ClearBGPalettes
-	ret
+	jp ClearBGPalettes
 
 .GiveMoney:
 	ld a, [wAmuletCoin]
@@ -2429,7 +2428,7 @@ AddBattleMoneyToAccount:
 
 PlayVictoryMusic:
 	call IsDepressedRival
-	jr z, .DepressedRivals
+	ret z
 	push de
 	ld de, MUSIC_NONE
 	call PlayMusic
@@ -2462,9 +2461,6 @@ PlayVictoryMusic:
 
 .lost
 	pop de
-	ret
-
-.DepressedRivals:
 	ret
 
 IsKantoGymLeader:
@@ -2729,8 +2725,7 @@ JumpToPartyMenuAndPrintText:
 	farcall PrintPartyMenuText
 	call WaitBGMap
 	call SetPalettes
-	call DelayFrame
-	ret
+	jp DelayFrame
 
 SelectBattleMon:
 	call IsMobileBattle
@@ -2850,8 +2845,7 @@ LostBattle:
 	farcall BattleTowerText
 	call WaitPressAorB_BlinkCursor
 	call ClearTileMap
-	call ClearBGPalettes
-	ret
+	jp ClearBGPalettes
 
 .no_loss_text
 	ld a, [wLinkMode]
@@ -3022,8 +3016,7 @@ ForceEnemySwitch:
 	call ResetEnemyStatLevels
 	call Function_SetEnemyMonAndSendOutAnimation
 	call BreakAttraction
-	call ResetBattleParticipants
-	ret
+	jp ResetBattleParticipants
 
 EnemySwitch:
 	call CheckWhetherToAskSwitch
@@ -3183,10 +3176,10 @@ LookUpTheEffectivenessOfEveryMove:
 	ld e, NUM_MOVES + 1
 .loop
 	dec e
-	jr z, .done
+	ret z
 	ld a, [hli]
 	and a
-	jr z, .done
+	ret z
 	push hl
 	push de
 	push bc
@@ -3202,8 +3195,6 @@ LookUpTheEffectivenessOfEveryMove:
 	jr c, .loop
 	ld hl, wBuffer1
 	set 0, [hl]
-	ret
-.done
 	ret
 
 IsThePlayerMonTypesEffectiveAgainstOTMon:
@@ -4695,6 +4686,8 @@ PrintPlayerHUD:
 
 	push bc
 
+	farcall SetTempMonTime
+
 	ld a, [wCurBattleMon]
 	ld hl, wPartyMon1DVs
 	call GetPartyLocation
@@ -4769,6 +4762,8 @@ DrawEnemyHUD:
 	call ClearBox
 
 	farcall DrawEnemyHUDBorder
+
+	farcall SetEnemyGender
 
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurSpecies], a
@@ -6314,7 +6309,7 @@ LoadEnemyMon:
 	ld a, [wEnemyMonForm]
 	or CAUGHT_SHINY_MASK
 	ld [wEnemyMonForm], a
-	jr .UpdateDVs
+	jr .SetGender
 
 .GenerateDVs:
 
@@ -6324,10 +6319,21 @@ LoadEnemyMon:
 	jr z, .skipshine
 
 	farcall GenerateShinySwarm
-	jr .SkipShine
+	jr .SetGender
 
 .skipshine:
 	farcall CheckEnemyShininess
+
+;	ld b,b
+
+.SetGender:
+	farcall SetPokemonGender
+	ld hl, wEnemyMonForm
+	jr c, .SkipShine
+;	jr nz, .SkipShine
+	ld a, [hl]
+	or CAUGHT_MON_GENDER_MASK
+	ld [hl], a
 
 .SkipShine
 ; Generate new random DVs

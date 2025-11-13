@@ -282,9 +282,6 @@ SetEggMonCaughtData:
 	and CAUGHT_TIME_MASK
 	or b
 	ld [hl], a
-;	ld a, [wCurPartyMon]
-;	ld hl, wPartyMon1CaughtTime
-;	call GetPartyLocation
 	call SetGenderShininessEgg
 	call SetBoxmonOrEggmonCaughtData2
 	pop af
@@ -292,12 +289,17 @@ SetEggMonCaughtData:
 	ret
 
 SetGenderShininess:
+	ld b,b
 	ld a, [wBattleMode]
 	and a
 	jr z, .Random
 	ld a, [wEnemyForm]
 	and CAUGHT_MON_GENDER_MASK
 	jr z, .Male
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1CaughtTime
+	call GetPartyLocation
 	ld a, [hl]
 	or CAUGHT_MON_GENDER_MASK
 	ld [hl], a
@@ -312,60 +314,41 @@ SetGenderShininess:
 	ret ; need to add forms next
 
 .Random
-	push hl
-	call Random
-	cp GIFT_SHINY_NUMERATOR
-	pop hl
+	farcall SetPokemonGender
 	jr c, .MaleRandom
+;	jr nz, .MaleRandom
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1CaughtTime
+	call GetPartyLocation
 	ld a, [hl]
 	or CAUGHT_MON_GENDER_MASK
 	ld [hl], a
 .MaleRandom
-	push bc
-	push hl
-	push de
 	ld de, ENGINE_SHINY_PASSWORD
 	farcall CheckEngineFlag
 	jr nc, .GuaranteeShiny
-	pop de
-	pop hl
-	pop bc
-	push hl
 	call Random
 	and a
 	jr nz, .NotShinyRandom
 	call Random
 	cp SHINY_NUMERATOR
 	jr nc, .NotShinyRandom
-	pop hl
 	jr .IsShiny
 
 .GuaranteeShiny
-	pop de
-	pop hl
-	pop bc
 .IsShiny
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1CaughtTime
+	call GetPartyLocation
 	ld a, [hl]
 	or CAUGHT_SHINY_MASK
 	ld [hl], a
-	ret
-
 .NotShinyRandom
-	pop hl
 	ret
 
 SetGenderShininessEgg:
-;	push hl
-;	call Random
-;	cp GIFT_SHINY_NUMERATOR
-;	pop hl
-;	ret c
-;	ld a, [hl]
-;	or CAUGHT_MON_GENDER_MASK
-;	ld [hl], a
-;	ret
-;.MaleRandom
-;	ld a, [wEggMonCaughtTime]
 	ld a, [de]
 	and CAUGHT_GENDER_MASK
 	jr z, .SkipGender
@@ -373,7 +356,7 @@ SetGenderShininessEgg:
 	ld hl, wPartyMon1CaughtTime
 	call GetPartyLocation
 	ld a, [hl]
-	or CAUGHT_GENDER_MASK
+	or CAUGHT_MON_GENDER_MASK
 	ld [hl], a
 .SkipGender
 	ld a, [de]

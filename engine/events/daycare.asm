@@ -758,7 +758,7 @@ DayCare_InitBreeding:
 	ld a, [wEggMonCaughtTime]
 	or CAUGHT_SHINY_MASK
 	ld [wEggMonCaughtTime], a
-	ret
+	jr SetEggGender
 
 .one_parent_shiny:
 	call Random
@@ -767,6 +767,7 @@ DayCare_InitBreeding:
 	ld a, [wEggMonCaughtTime]
 	or CAUGHT_SHINY_MASK
 	ld [wEggMonCaughtTime], a
+	jr SetEggGender
 
 .no_shiny_parent:
 	call Random
@@ -778,13 +779,85 @@ DayCare_InitBreeding:
 	ld a, [wEggMonCaughtTime]
 	or CAUGHT_SHINY_MASK
 	ld [wEggMonCaughtTime], a
+	jr SetEggGender
 .not_shiny
 	xor a
 	ld [wEggMonCaughtTime], a
-	ret
+	jr SetEggGender
 
 .String_EGG:
 	db "Egg@"
+
+SetWildPokemonGender::
+	ld hl, wEnemyMonForm
+	jr SetPokemonGender
+
+SetEggGender:
+	ld hl, wEggMonCaughtTime
+	push hl
+SetPokemonGender::
+	ld b,b
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld hl, BaseData
+	ld a, BANK(BaseData)
+	call LoadIndirectPointer
+	ld bc, BASE_GENDER
+	add hl, bc
+	jr z, .Genderless
+
+	call GetFarByte
+
+	cp GENDER_UNKNOWN
+	jr z, .Genderless
+
+	cp GENDER_F0
+	jr z, .Male
+
+	cp GENDER_F100
+	jr z, .Female
+
+	cp GENDER_F50
+	jr nz, .SeventyFive
+	call Random
+	cp GIFT_SHINY_NUMERATOR
+	jr nc, .Male
+	jr .Female
+
+.SeventyFive
+	cp GENDER_F75
+	jr nz, .TwentyFive
+	call Random
+	cp FEMALE_75_NUMERATOR
+	jr c, .Male
+	jr .Female
+
+.TwentyFive
+	cp GENDER_F25
+	jr nz, .TwelveFive
+	call Random
+	cp FEMALE_75_NUMERATOR
+	jr nc, .Male
+	jr .Female
+
+.TwelveFive
+	call Random
+	cp FEMALE_125_NUMERATOR
+	jr nc, .Male
+.Female
+	xor a
+	ret
+
+.Genderless
+.Male
+	scf
+	ret
+
+	ld a, 1
+	and a
+	ret
 
 Daycare_CheckAlternateOffspring:
 	; returns [wCurPartySpecies] in a, unless that species may give birth to an alternate species (e.g., gender variant)

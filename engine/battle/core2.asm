@@ -601,30 +601,38 @@ CopyBackpic:
 	ret
 
 CheckEnemyShininess::
-	push de
-	push hl
 	ld de, ENGINE_SHINY_PASSWORD
 	farcall CheckEngineFlag
 	jr c, .NoPassword
-	pop hl
-	pop de
 
 	call Random
 	cp SHINY_EGG_TWO_SHINY_PARENTS_NUMERATOR
 	ret nc
 .Shiny
-	ld a, [wEnemyMonForm]
+	ld hl, wEnemyMonForm
+	ld a, [hl]
 	or CAUGHT_SHINY_MASK
-	ld [wEnemyMonForm], a
+	ld [hl], a
 	ret
 
 .NoPassword
-	pop hl
-	pop de
 	call Random
 	and a
 	ret nz
 	call Random
 	cp SHINY_NUMERATOR
 	jr c, .Shiny
+	ret
+
+SetTempMonTime::
+	ld a, [wCurBattleMon]
+	ld hl, wPartyMon1CaughtTime
+	call GetPartyLocation
+	ld a, [hl]
+	ld [wTempMonCaughtTime], a
+	ret
+
+SetEnemyGender::
+	ld a, [wEnemyMonForm]
+	ld [wTempMonCaughtTime], a
 	ret

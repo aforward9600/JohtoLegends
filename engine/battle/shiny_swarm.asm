@@ -619,17 +619,19 @@ GenerateShinySwarm:
 	call Random
 	cp 7
 	jr nc, .trynext
-	ld a, [wEnemyMonForm]
+	ld hl, wEnemyMonForm
+	ld a, [hl]
 	or CAUGHT_SHINY_MASK
-	ld [wEnemyMonForm], a
+	ld [hl], a
 	jr .UpdateDVsSwarm
 .trynext:
 	call Random
 	cp 7
 	jr nc, .skipshineswarm
-	ld a, [wEnemyMonForm]
+	ld hl, wEnemyMonForm
+	ld a, [hl]
 	or CAUGHT_SHINY_MASK
-	ld [wEnemyMonForm], a
+	ld [hl], a
 
 .skipshineswarm:
 
