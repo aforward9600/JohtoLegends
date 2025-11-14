@@ -190,6 +190,11 @@ SECTION "Raichu Front", ROMX
 
 RaichuFrontpic:      INCBIN "gfx/pokemon/raichu/front.animated.2bpp.lz"
 
+SECTION "Raichu_A Front", ROMX
+
+RaichuAFrontpic:     INCBIN "gfx/pokemon/raichu_a/front.animated.2bpp.lz"
+
+
 SECTION "Primeape Front", ROMX
 
 PrimeapeFrontpic:    INCBIN "gfx/pokemon/primeape/front.animated.2bpp.lz"
@@ -791,6 +796,7 @@ NidorinoBackpic:     INCBIN "gfx/pokemon/nidorino/back.2bpp.lz"
 MysticalmanPic:      INCBIN "gfx/trainers/mysticalman.2bpp.lz"
 CooltrainerfPic:     INCBIN "gfx/trainers/cooltrainer_f.2bpp.lz"
 ElectrodeFrontpic:   INCBIN "gfx/pokemon/electrode/front.animated.2bpp.lz"
+RaichuABackpic:      INCBIN "gfx/pokemon/raichu_a/back.2bpp.lz"
 
 
 SECTION "Pics 14", ROMX

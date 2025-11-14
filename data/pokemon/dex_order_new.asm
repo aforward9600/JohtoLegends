@@ -157,6 +157,7 @@ NewPokedexOrder:
 	dw PICHU
 	dw PIKACHU
 	dw RAICHU
+	dw RAICHU_A
 	dw ONIX
 	dw STEELIX
 	dw SLOWPOKE

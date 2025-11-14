@@ -239,6 +239,7 @@ AlphabeticalPokedexOrder:
 	dw QUILAVA
 	dw QWILFISH
 	dw RAICHU
+	dw RAICHU_A
 	dw RAIKOU
 	dw RAITORA
 	dw RALTS

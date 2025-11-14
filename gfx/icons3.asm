@@ -2,6 +2,7 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw WeavileIcon
 	dw TeddiursaIcon
 	dw UrsaringIcon
 	dw UrsalunaIcon
@@ -89,6 +90,7 @@ Icons3:
 	dw RegigigasIcon
 	dw DeoxysIcon
 
+WeavileIcon:	  INCBIN "gfx/icons/weavile.2bpp"
 TeddiursaIcon:    INCBIN "gfx/icons/teddiursa.2bpp"
 UrsaringIcon:     INCBIN "gfx/icons/ursaring.2bpp"
 UrsalunaIcon:     INCBIN "gfx/icons/ursaluna.2bpp"

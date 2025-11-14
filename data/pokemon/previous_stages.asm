@@ -27,6 +27,7 @@ PreviousEvolutionStage::
 	dw 0
 	dw PICHU
 	dw PIKACHU
+	dw PIKACHU
 	dw 0
 	dw SANDSHREW
 	dw 0

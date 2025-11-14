@@ -28,6 +28,7 @@ EvosAttacksPointers1::
 	dw PichuEvosAttacks
 	dw PikachuEvosAttacks
 	dw RaichuEvosAttacks
+	dw RaichuAEvosAttacks
 	dw SandshrewEvosAttacks
 	dw SandslashEvosAttacks
 	dw NidoranFEvosAttacks
@@ -583,6 +584,7 @@ PichuEvosAttacks:
 
 PikachuEvosAttacks:
 	dbbw EVOLVE_ITEM, THUNDERSTONE, RAICHU
+	dbbw EVOLVE_ITEM, SHINY_STONE, RAICHU_A
 	db 0 ; no more evolutions
 	dbw 1, THUNDERSHOCK
 	dbw 1, TAIL_WHIP
@@ -608,6 +610,16 @@ RaichuEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, THUNDERPUNCH
 	dbw 1, THUNDERPUNCH
+	dbw 1, THUNDERSHOCK
+	dbw 1, TAIL_WHIP
+	dbw 1, QUICK_ATTACK
+	dbw 1, THUNDERBOLT
+	db 0 ; no more level-up moves
+
+RaichuAEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, PSYCHIC_M
+	dbw 1, PSYCHIC_M
 	dbw 1, THUNDERSHOCK
 	dbw 1, TAIL_WHIP
 	dbw 1, QUICK_ATTACK

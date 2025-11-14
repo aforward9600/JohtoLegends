@@ -27,6 +27,7 @@ PokedexDataPointerTable:
 	dba PichuPokedexEntry
 	dba PikachuPokedexEntry
 	dba RaichuPokedexEntry
+	dba RaichuAPokedexEntry
 	dba SandshrewPokedexEntry
 	dba SandslashPokedexEntry
 	dba NidoranFPokedexEntry

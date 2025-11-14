@@ -30,6 +30,7 @@ ArbokPokedexEntry::      INCLUDE "data/pokemon/dex_entries/arbok.asm"
 PichuPokedexEntry::      INCLUDE "data/pokemon/dex_entries/pichu.asm"
 PikachuPokedexEntry::    INCLUDE "data/pokemon/dex_entries/pikachu.asm"
 RaichuPokedexEntry::     INCLUDE "data/pokemon/dex_entries/raichu.asm"
+RaichuAPokedexEntry::    INCLUDE "data/pokemon/dex_entries/raichu_a.asm"
 SandshrewPokedexEntry::  INCLUDE "data/pokemon/dex_entries/sandshrew.asm"
 SandslashPokedexEntry::  INCLUDE "data/pokemon/dex_entries/sandslash.asm"
 NidoranFPokedexEntry::   INCLUDE "data/pokemon/dex_entries/nidoran_f.asm"
@@ -66,11 +67,11 @@ GolduckPokedexEntry::    INCLUDE "data/pokemon/dex_entries/golduck.asm"
 MankeyPokedexEntry::     INCLUDE "data/pokemon/dex_entries/mankey.asm"
 PrimeapePokedexEntry::   INCLUDE "data/pokemon/dex_entries/primeape.asm"
 GrowlithePokedexEntry::  INCLUDE "data/pokemon/dex_entries/growlithe.asm"
-ArcaninePokedexEntry::   INCLUDE "data/pokemon/dex_entries/arcanine.asm"
 
 
 SECTION "Pokedex Entries 065-128", ROMX
 
+ArcaninePokedexEntry::   INCLUDE "data/pokemon/dex_entries/arcanine.asm"
 PoliwagPokedexEntry::    INCLUDE "data/pokemon/dex_entries/poliwag.asm"
 PoliwhirlPokedexEntry::  INCLUDE "data/pokemon/dex_entries/poliwhirl.asm"
 PoliwrathPokedexEntry::  INCLUDE "data/pokemon/dex_entries/poliwrath.asm"
@@ -134,11 +135,11 @@ RhyperiorPokedexEntry::  INCLUDE "data/pokemon/dex_entries/rhyperior.asm"
 RhydonPokedexEntry::     INCLUDE "data/pokemon/dex_entries/rhydon.asm"
 HappinyPokedexEntry::    INCLUDE "data/pokemon/dex_entries/happiny.asm"
 ChanseyPokedexEntry::    INCLUDE "data/pokemon/dex_entries/chansey.asm"
-BlisseyPokedexEntry::    INCLUDE "data/pokemon/dex_entries/blissey.asm"
 
 
 SECTION "Pokedex Entries 129-192", ROMX
 
+BlisseyPokedexEntry::    INCLUDE "data/pokemon/dex_entries/blissey.asm"
 TangelaPokedexEntry::    INCLUDE "data/pokemon/dex_entries/tangela.asm"
 TangrowthPokedexEntry::  INCLUDE "data/pokemon/dex_entries/tangrowth.asm"
 KangaskhanPokedexEntry:: INCLUDE "data/pokemon/dex_entries/kangaskhan.asm"
@@ -203,11 +204,11 @@ QuilavaPokedexEntry::    INCLUDE "data/pokemon/dex_entries/quilava.asm"
 TyphlosionPokedexEntry:: INCLUDE "data/pokemon/dex_entries/typhlosion.asm"
 TotodilePokedexEntry::   INCLUDE "data/pokemon/dex_entries/totodile.asm"
 CroconawPokedexEntry::   INCLUDE "data/pokemon/dex_entries/croconaw.asm"
-FeraligatrPokedexEntry:: INCLUDE "data/pokemon/dex_entries/feraligatr.asm"
 
 
 SECTION "Pokedex Entries 193-251", ROMX
 
+FeraligatrPokedexEntry:: INCLUDE "data/pokemon/dex_entries/feraligatr.asm"
 SentretPokedexEntry::    INCLUDE "data/pokemon/dex_entries/sentret.asm"
 FurretPokedexEntry::     INCLUDE "data/pokemon/dex_entries/furret.asm"
 HoothootPokedexEntry::   INCLUDE "data/pokemon/dex_entries/hoothoot.asm"

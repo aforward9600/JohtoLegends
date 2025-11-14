@@ -1,4 +1,5 @@
 BaseData2:
+INCLUDE "data/pokemon/base_stats/furret.asm"
 INCLUDE "data/pokemon/base_stats/hoothoot.asm"
 INCLUDE "data/pokemon/base_stats/noctowl.asm"
 INCLUDE "data/pokemon/base_stats/ledyba.asm"

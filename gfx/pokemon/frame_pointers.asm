@@ -26,6 +26,7 @@ FramesPointers:
 	dba PichuFrames
 	dba PikachuFrames
 	dba RaichuFrames
+	dba RaichuAFrames
 	dba SandshrewFrames
 	dba SandslashFrames
 	dba NidoranFFrames

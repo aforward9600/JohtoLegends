@@ -1,7 +1,7 @@
 IconPointers::
 	indirect_table 2, 0
-	indirect_entries RHYDON, Icons1
-	indirect_entries WEAVILE, Icons2
+	indirect_entries RHYHORN, Icons1
+	indirect_entries SNEASEL, Icons2
 	indirect_entries NUM_POKEMON, Icons3
 	indirect_table_end
 

@@ -29,6 +29,7 @@ Icons1:
 	dw PichuIcon
 	dw PikachuIcon
 	dw RaichuIcon
+	dw RaichuAIcon
 	dw SandshrewIcon
 	dw SandslashIcon
 	dw NidoranFIcon
@@ -126,7 +127,6 @@ Icons1:
 	dw KoffingIcon
 	dw WeezingIcon
 	dw RhyhornIcon
-	dw RhydonIcon
 
 EggIcon:          INCBIN "gfx/icons/egg.2bpp"
 BulbasaurIcon:    INCBIN "gfx/icons/bulbasaur.2bpp"
@@ -156,6 +156,7 @@ ArbokIcon:        INCBIN "gfx/icons/arbok.2bpp"
 PichuIcon:        INCBIN "gfx/icons/pichu.2bpp"
 PikachuIcon:      INCBIN "gfx/icons/pikachu.2bpp"
 RaichuIcon:       INCBIN "gfx/icons/raichu.2bpp"
+RaichuAIcon:      INCBIN "gfx/icons/raichu_a.2bpp"
 SandshrewIcon:    INCBIN "gfx/icons/sandshrew.2bpp"
 SandslashIcon:    INCBIN "gfx/icons/sandslash.2bpp"
 NidoranFIcon:     INCBIN "gfx/icons/nidoran_f.2bpp"
@@ -253,4 +254,3 @@ LickilickyIcon:   INCBIN "gfx/icons/lickilicky.2bpp"
 KoffingIcon:      INCBIN "gfx/icons/koffing.2bpp"
 WeezingIcon:      INCBIN "gfx/icons/weezing.2bpp"
 RhyhornIcon:      INCBIN "gfx/icons/rhyhorn.2bpp"
-RhydonIcon:       INCBIN "gfx/icons/rhydon.2bpp"

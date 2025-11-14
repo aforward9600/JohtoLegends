@@ -2,6 +2,7 @@ SECTION "Mon Icons 2", ROMX
 
 Icons2:
 
+	dw RhydonIcon
 	dw RhyperiorIcon
 	dw HappinyIcon
 	dw ChanseyIcon
@@ -127,8 +128,8 @@ Icons2:
 	dw ShuckleIcon
 	dw HeracrossIcon
 	dw SneaselIcon
-	dw WeavileIcon
 
+RhydonIcon:       INCBIN "gfx/icons/rhydon.2bpp"
 RhyperiorIcon:    INCBIN "gfx/icons/rhyperior.2bpp"
 HappinyIcon:      INCBIN "gfx/icons/happiny.2bpp"
 ChanseyIcon:      INCBIN "gfx/icons/chansey.2bpp"
@@ -254,4 +255,3 @@ OverqwilIcon:     INCBIN "gfx/icons/overqwil.2bpp"
 ShuckleIcon:      INCBIN "gfx/icons/shuckle.2bpp"
 HeracrossIcon:    INCBIN "gfx/icons/heracross.2bpp"
 SneaselIcon:	  INCBIN "gfx/icons/sneasel.2bpp"
-WeavileIcon:	  INCBIN "gfx/icons/weavile.2bpp"
