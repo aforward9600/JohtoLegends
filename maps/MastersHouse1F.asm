@@ -136,7 +136,7 @@ DratiniPokeballScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke DEOXYS, 5, ORAN_BERRY
+	givepoke DRATINI, 5, ORAN_BERRY
 	sjump RivalLarvitarScript
 
 ChooseBagon:

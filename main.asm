@@ -357,6 +357,7 @@ INCLUDE "engine/events/treemons.asm"
 INCLUDE "engine/events/fishing_gfx.asm"
 INCLUDE "engine/pokegear/radio.asm"
 INCLUDE "engine/pokemon/mail_2.asm"
+INCLUDE "data/pokemon/dex_numbers.asm"
 
 
 SECTION "Phone Scripts 2", ROMX
@@ -624,7 +625,6 @@ INCLUDE "engine/events/odd_egg.asm"
 SECTION "16-bit ID stuff", ROMX
 
 INCLUDE "engine/16/table_functions.asm"
-INCLUDE "data/pokemon/dex_numbers.asm"
 
 ; own section
 INCLUDE "data/trainers/parties.asm"

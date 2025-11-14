@@ -1678,7 +1678,7 @@ Pokedex_PrintListing:
 	ret z
 	ld a, BANK(wPokedexSeen)
 	ldh [rSVBK], a
-	call Pokedex_PrintNumberIfOldMode
+;	call Pokedex_PrintNumberIfOldMode
 	call Pokedex_PlaceDefaultStringIfNotSeen
 	ret c
 	call Pokedex_PlaceCaughtSymbolIfCaught
