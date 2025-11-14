@@ -22,6 +22,8 @@ PokemonNames::
 	db "Pidgeotto@"
 	db "Pidgeot@@@"
 	db "Rattata@@@"
+	db "Rattata@@@"
+	db "Raticate@@"
 	db "Raticate@@"
 	db "Spearow@@@"
 	db "Fearow@@@@"

@@ -27,7 +27,9 @@ NewPokedexOrder:
 	dw SPINARAK
 	dw ARIADOS
 	dw RATTATA
+	dw RATTATA_A
 	dw RATICATE
+	dw RATICATE_A
 	dw SENTRET
 	dw FURRET
 	dw SPEAROW

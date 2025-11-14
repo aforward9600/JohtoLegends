@@ -313,6 +313,10 @@ SECTION "Raticate Front", ROMX
 
 RaticateFrontpic:    INCBIN "gfx/pokemon/raticate/front.animated.2bpp.lz"
 
+SECTION "Raticate_A Front", ROMX
+
+RaticateAFrontpic:   INCBIN "gfx/pokemon/raticate_a/front.animated.2bpp.lz"
+
 SECTION "Venomoth Front", ROMX
 
 VenomothFrontpic:    INCBIN "gfx/pokemon/venomoth/front.animated.2bpp.lz"
@@ -586,6 +590,11 @@ HitmonchanFrontpic:  INCBIN "gfx/pokemon/hitmonchan/front.animated.2bpp.lz"
 SECTION "Crobat Frontpic", ROMX
 
 CrobatFrontpic:      INCBIN "gfx/pokemon/crobat/front.animated.2bpp.lz"
+
+
+SECTION "Rattata_A Frontpic", ROMX
+
+RattataAFrontpic:    INCBIN "gfx/pokemon/rattata_a/front.animated.2bpp.lz"
 
 
 SECTION "Pics 9", ROMX
@@ -900,6 +909,7 @@ MagnemiteFrontpic:   INCBIN "gfx/pokemon/magnemite/front.animated.2bpp.lz"
 ErikaPic:            INCBIN "gfx/trainers/erika.2bpp.lz"
 JaninePic:           INCBIN "gfx/trainers/janine.2bpp.lz"
 MagnemiteBackpic:    INCBIN "gfx/pokemon/magnemite/back.2bpp.lz"
+RattataABackpic:     INCBIN "gfx/pokemon/rattata_a/back.2bpp.lz"
 
 
 SECTION "Pics 16", ROMX
@@ -1360,3 +1370,7 @@ DeoxysFrontpic:      INCBIN "gfx/pokemon/deoxys/front.animated.2bpp.lz"
 SECTION "Deoxys Backpic", ROMX
 
 DeoxysBackpic:      INCBIN "gfx/pokemon/deoxys/back.2bpp.lz"
+
+SECTION "Raticate_A Backpic", ROMX
+
+RaticateABackpic:    INCBIN "gfx/pokemon/raticate_a/back.2bpp.lz"

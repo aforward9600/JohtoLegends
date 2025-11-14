@@ -2,6 +2,8 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw HeracrossIcon
+	dw SneaselIcon
 	dw WeavileIcon
 	dw TeddiursaIcon
 	dw UrsaringIcon
@@ -90,6 +92,8 @@ Icons3:
 	dw RegigigasIcon
 	dw DeoxysIcon
 
+HeracrossIcon:    INCBIN "gfx/icons/heracross.2bpp"
+SneaselIcon:	  INCBIN "gfx/icons/sneasel.2bpp"
 WeavileIcon:	  INCBIN "gfx/icons/weavile.2bpp"
 TeddiursaIcon:    INCBIN "gfx/icons/teddiursa.2bpp"
 UrsaringIcon:     INCBIN "gfx/icons/ursaring.2bpp"

@@ -20,7 +20,9 @@ EvosAttacksPointers1::
 	dw PidgeottoEvosAttacks
 	dw PidgeotEvosAttacks
 	dw RattataEvosAttacks
+	dw RattataAEvosAttacks
 	dw RaticateEvosAttacks
+	dw RaticateAEvosAttacks
 	dw SpearowEvosAttacks
 	dw FearowEvosAttacks
 	dw EkansEvosAttacks
@@ -475,7 +477,44 @@ RattataEvosAttacks:
 	dbw 34, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
+RattataAEvosAttacks:
+	dbbw EVOLVE_LEVEL, 20, RATICATE_A
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 4, QUICK_ATTACK
+	dbw 7, FOCUS_ENERGY
+	dbw 10, BITE
+	dbw 13, PURSUIT
+	dbw 16, HYPER_FANG
+	dbw 19, PAYBACK
+	dbw 22, CRUNCH
+	dbw 25, SUCKER_PUNCH
+	dbw 28, SUPER_FANG
+	dbw 31, SLASH
+	dbw 34, DOUBLE_EDGE
+	db 0 ; no more level-up moves
+
 RaticateEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SCARY_FACE
+	dbw 1, SCARY_FACE
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 4, QUICK_ATTACK
+	dbw 7, FOCUS_ENERGY
+	dbw 10, BITE
+	dbw 13, PURSUIT
+	dbw 16, HYPER_FANG
+	dbw 19, PAYBACK
+	dbw 24, CRUNCH
+	dbw 29, SUCKER_PUNCH
+	dbw 34, SUPER_FANG
+	dbw 39, SLASH
+	dbw 44, DOUBLE_EDGE
+	db 0 ; no more level-up moves
+
+RaticateAEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, SCARY_FACE
 	dbw 1, SCARY_FACE

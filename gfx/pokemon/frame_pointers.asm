@@ -18,7 +18,9 @@ FramesPointers:
 	dba PidgeottoFrames
 	dba PidgeotFrames
 	dba RattataFrames
+	dba RattataAFrames
 	dba RaticateFrames
+	dba RaticateAFrames
 	dba SpearowFrames
 	dba FearowFrames
 	dba EkansFrames

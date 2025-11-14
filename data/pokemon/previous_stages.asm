@@ -19,7 +19,9 @@ PreviousEvolutionStage::
 	dw PIDGEY
 	dw PIDGEOTTO
 	dw 0
+	dw 0
 	dw RATTATA
+	dw RATTATA_A
 	dw 0
 	dw SPEAROW
 	dw 0

@@ -30,7 +30,9 @@ MonMenuIconPals:
 	icon_pals BROWN,  BROWN  ; PIDGEOTTO
 	icon_pals RED,    BROWN  ; PIDGEOTTO
 	icon_pals PURPLE, GRAY   ; RATTATA
+	icon_pals GRAY,   RED    ; RATTATA_A
 	icon_pals BROWN,  RED    ; RATICATE
+	icon_pals GRAY,   RED    ; RATICATE_A
 	icon_pals RED,    RED    ; SPEAROW
 	icon_pals BROWN,  BROWN  ; FEAROW
 	icon_pals PURPLE, TEAL   ; EKANS

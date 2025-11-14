@@ -20,6 +20,8 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw RattataEggMoves
+	dw RattataEggMoves
+	dw NoEggMoves1
 	dw NoEggMoves1
 	dw SpearowEggMoves
 	dw NoEggMoves1

@@ -19,7 +19,9 @@ PokedexDataPointerTable:
 	dba PidgeottoPokedexEntry
 	dba PidgeotPokedexEntry
 	dba RattataPokedexEntry
+	dba RattataAPokedexEntry
 	dba RaticatePokedexEntry
+	dba RaticateAPokedexEntry
 	dba SpearowPokedexEntry
 	dba FearowPokedexEntry
 	dba EkansPokedexEntry

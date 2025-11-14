@@ -21,7 +21,9 @@ Icons1:
 	dw PidgeottoIcon
 	dw PidgeotIcon
 	dw RattataIcon
+	dw RattataAIcon
 	dw RaticateIcon
+	dw RaticateAIcon
 	dw SpearowIcon
 	dw FearowIcon
 	dw EkansIcon
@@ -125,8 +127,6 @@ Icons1:
 	dw LickitungIcon
 	dw LickilickyIcon
 	dw KoffingIcon
-	dw WeezingIcon
-	dw RhyhornIcon
 
 EggIcon:          INCBIN "gfx/icons/egg.2bpp"
 BulbasaurIcon:    INCBIN "gfx/icons/bulbasaur.2bpp"
@@ -148,7 +148,9 @@ PidgeyIcon:       INCBIN "gfx/icons/pidgey.2bpp"
 PidgeottoIcon:    INCBIN "gfx/icons/pidgeotto.2bpp"
 PidgeotIcon:      INCBIN "gfx/icons/pidgeot.2bpp"
 RattataIcon:      INCBIN "gfx/icons/rattata.2bpp"
+RattataAIcon:     INCBIN "gfx/icons/rattata_a.2bpp"
 RaticateIcon:     INCBIN "gfx/icons/raticate.2bpp"
+RaticateAIcon:    INCBIN "gfx/icons/raticate_a.2bpp"
 SpearowIcon:      INCBIN "gfx/icons/spearow.2bpp"
 FearowIcon:       INCBIN "gfx/icons/fearow.2bpp"
 EkansIcon:        INCBIN "gfx/icons/ekans.2bpp"
@@ -252,5 +254,3 @@ HitmontopIcon:    INCBIN "gfx/icons/hitmontop.2bpp"
 LickitungIcon:    INCBIN "gfx/icons/lickitung.2bpp"
 LickilickyIcon:   INCBIN "gfx/icons/lickilicky.2bpp"
 KoffingIcon:      INCBIN "gfx/icons/koffing.2bpp"
-WeezingIcon:      INCBIN "gfx/icons/weezing.2bpp"
-RhyhornIcon:      INCBIN "gfx/icons/rhyhorn.2bpp"

@@ -80,7 +80,7 @@ Ambipom back sprite, Annihilape sprite: ShadowOne333
 
 Annihilape sprite: Sea and ShadowOne333
 
-Ursaluna sprites and animation: Cure, ShadowOne333, Scarlax
+Ursaluna, Alolan Rattata and Alolan Raticate sprites and animation: Cure, ShadowOne333, Scarlax
 
 Kleavor sprites: Cure
 

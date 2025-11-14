@@ -245,7 +245,9 @@ AlphabeticalPokedexOrder:
 	dw RALTS
 	dw RAPIDASH
 	dw RATICATE
+	dw RATICATE_A
 	dw RATTATA
+	dw RATTATA_A
 	dw REGICE
 	dw REGIDRAGO
 	dw REGIELEKI
