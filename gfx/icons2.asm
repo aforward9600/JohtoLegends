@@ -2,6 +2,8 @@ SECTION "Mon Icons 2", ROMX
 
 Icons2:
 
+	dw HitmontopIcon
+	dw LickitungIcon
 	dw LickilickyIcon
 	dw KoffingIcon
 	dw WeezingIcon
@@ -126,9 +128,9 @@ Icons2:
 	dw GligarIcon
 	dw GliscorIcon
 	dw SnubbullIcon
-	dw GranbullIcon
-	dw QwilfishIcon
 
+HitmontopIcon:    INCBIN "gfx/icons/hitmontop.2bpp"
+LickitungIcon:    INCBIN "gfx/icons/lickitung.2bpp"
 LickilickyIcon:   INCBIN "gfx/icons/lickilicky.2bpp"
 KoffingIcon:      INCBIN "gfx/icons/koffing.2bpp"
 WeezingIcon:      INCBIN "gfx/icons/weezing.2bpp"
@@ -253,5 +255,3 @@ DudunsparsIcon:   INCBIN "gfx/icons/dudunspars.2bpp"
 GligarIcon:       INCBIN "gfx/icons/gligar.2bpp"
 GliscorIcon:      INCBIN "gfx/icons/gliscor.2bpp"
 SnubbullIcon:     INCBIN "gfx/icons/snubbull.2bpp"
-GranbullIcon:	  INCBIN "gfx/icons/granbull.2bpp"
-QwilfishIcon:     INCBIN "gfx/icons/qwilfish.2bpp"

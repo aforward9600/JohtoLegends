@@ -43,7 +43,9 @@ FramesPointers:
 	dba ClefairyFrames
 	dba ClefableFrames
 	dba VulpixFrames
+	dba VulpixAFrames
 	dba NinetalesFrames
+	dba NinetalesAFrames
 	dba IgglybuffFrames
 	dba JigglypuffFrames
 	dba WigglytuffFrames

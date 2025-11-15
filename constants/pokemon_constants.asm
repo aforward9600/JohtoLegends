@@ -63,7 +63,9 @@
 	const CLEFAIRY   ; 23
 	const CLEFABLE   ; 24
 	const VULPIX     ; 25
+	const VULPIX_A
 	const NINETALES  ; 26
+	const NINETALES_A
 	const IGGLYBUFF  ; ae
 	const JIGGLYPUFF ; 27
 	const WIGGLYTUFF ; 28

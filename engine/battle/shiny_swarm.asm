@@ -191,7 +191,7 @@ GenerateShinySwarm:
 	if HIGH(SNEASEL) == 0
 		or h
 	else
-		jr nz, .skipshineswarm
+		jp nz, .skipshineswarm
 		if HIGH(SNEASEL) == 1
 			dec h
 		else

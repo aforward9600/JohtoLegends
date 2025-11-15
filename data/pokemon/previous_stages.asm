@@ -33,7 +33,7 @@ PreviousEvolutionStage::
 	dw 0
 	dw 0
 	dw SANDSHREW
-	dw SANDSHREW
+	dw SANDSHREW_A
 	dw 0
 	dw NIDORAN_F
 	dw NIDORINA
@@ -44,7 +44,9 @@ PreviousEvolutionStage::
 	dw CLEFFA
 	dw CLEFAIRY
 	dw 0
+	dw 0
 	dw VULPIX
+	dw VULPIX_A
 	dw 0
 	dw IGGLYBUFF
 	dw JIGGLYPUFF  ;28

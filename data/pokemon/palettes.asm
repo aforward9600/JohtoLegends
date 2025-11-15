@@ -118,8 +118,12 @@ INCBIN "gfx/pokemon/clefable/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/clefable/shiny.pal"
 INCBIN "gfx/pokemon/vulpix/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/vulpix/shiny.pal"
+INCLUDE "gfx/pokemon/vulpix_a/normal.pal"
+INCLUDE "gfx/pokemon/vulpix_a/shiny.pal"
 INCBIN "gfx/pokemon/ninetales/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/ninetales/shiny.pal"
+INCLUDE "gfx/pokemon/ninetales_a/normal.pal"
+INCLUDE "gfx/pokemon/ninetales_a/shiny.pal"
 INCBIN "gfx/pokemon/igglybuff/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/igglybuff/shiny.pal"
 INCBIN "gfx/pokemon/jigglypuff/front.gbcpal", middle_colors

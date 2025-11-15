@@ -2,6 +2,8 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw GranbullIcon
+	dw QwilfishIcon
 	dw OverqwilIcon
 	dw ShuckleIcon
 	dw HeracrossIcon
@@ -94,6 +96,8 @@ Icons3:
 	dw RegigigasIcon
 	dw DeoxysIcon
 
+GranbullIcon:	  INCBIN "gfx/icons/granbull.2bpp"
+QwilfishIcon:     INCBIN "gfx/icons/qwilfish.2bpp"
 OverqwilIcon:     INCBIN "gfx/icons/overqwil.2bpp"
 ShuckleIcon:      INCBIN "gfx/icons/shuckle.2bpp"
 HeracrossIcon:    INCBIN "gfx/icons/heracross.2bpp"

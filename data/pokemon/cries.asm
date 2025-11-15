@@ -49,7 +49,9 @@ PokemonCries::
 	mon_cry CRY_CLEFAIRY,    $0cc,  $081 ; CLEFAIRY
 	mon_cry CRY_CLEFAIRY,    $0aa,  $0a0 ; CLEFABLE
 	mon_cry CRY_VULPIX,      $04f,  $090 ; VULPIX
+	mon_cry CRY_VULPIX,      $04f,  $090 ; VULPIX_A
 	mon_cry CRY_VULPIX,      $088,  $0e0 ; NINETALES
+	mon_cry CRY_VULPIX,      $088,  $0e0 ; NINETALES_A
 	mon_cry CRY_CHIKORITA,   $0e8,  $0e8 ; IGGLYBUFF
 	mon_cry CRY_PIDGEY,      $0ff,  $0b5 ; JIGGLYPUFF
 	mon_cry CRY_PIDGEY,      $068,  $0e0 ; WIGGLYTUFF

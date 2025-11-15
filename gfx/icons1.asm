@@ -46,7 +46,9 @@ Icons1:
 	dw ClefairyIcon
 	dw ClefableIcon
 	dw VulpixIcon
+	dw VulpixAIcon
 	dw NinetalesIcon
+	dw NinetalesAIcon
 	dw IgglybuffIcon
 	dw JigglypuffIcon
 	dw WigglytuffIcon
@@ -125,8 +127,6 @@ Icons1:
 	dw TyrogueIcon
 	dw HitmonleeIcon
 	dw HitmonchanIcon
-	dw HitmontopIcon
-	dw LickitungIcon
 
 EggIcon:          INCBIN "gfx/icons/egg.2bpp"
 BulbasaurIcon:    INCBIN "gfx/icons/bulbasaur.2bpp"
@@ -173,7 +173,9 @@ CleffaIcon:       INCBIN "gfx/icons/cleffa.2bpp"
 ClefairyIcon:     INCBIN "gfx/icons/clefairy.2bpp"
 ClefableIcon:     INCBIN "gfx/icons/clefable.2bpp"
 VulpixIcon:       INCBIN "gfx/icons/vulpix.2bpp"
+VulpixAIcon:      INCBIN "gfx/icons/vulpix_a.2bpp"
 NinetalesIcon:    INCBIN "gfx/icons/ninetales.2bpp"
+NinetalesAIcon:   INCBIN "gfx/icons/ninetales_a.2bpp"
 IgglybuffIcon:    INCBIN "gfx/icons/igglybuff.2bpp"
 JigglypuffIcon:   INCBIN "gfx/icons/jigglypuff.2bpp"
 WigglytuffIcon:   INCBIN "gfx/icons/wigglytuff.2bpp"
@@ -252,5 +254,3 @@ MarowakIcon:      INCBIN "gfx/icons/marowak.2bpp"
 TyrogueIcon:      INCBIN "gfx/icons/tyrogue.2bpp"
 HitmonleeIcon:    INCBIN "gfx/icons/hitmonlee.2bpp"
 HitmonchanIcon:   INCBIN "gfx/icons/hitmonchan.2bpp"
-HitmontopIcon:    INCBIN "gfx/icons/hitmontop.2bpp"
-LickitungIcon:    INCBIN "gfx/icons/lickitung.2bpp"

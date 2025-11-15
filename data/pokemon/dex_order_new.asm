@@ -116,7 +116,9 @@ NewPokedexOrder:
 	dw DODUO
 	dw DODRIO
 	dw VULPIX
+	dw VULPIX_A
 	dw NINETALES
+	dw NINETALES_A
 	dw GROWLITHE
 	dw ARCANINE
 	dw MAREEP

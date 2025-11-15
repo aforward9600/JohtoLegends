@@ -44,7 +44,9 @@ PokedexDataPointerTable:
 	dba ClefairyPokedexEntry
 	dba ClefablePokedexEntry
 	dba VulpixPokedexEntry
+	dba VulpixAPokedexEntry
 	dba NinetalesPokedexEntry
+	dba NinetalesAPokedexEntry
 	dba IgglybuffPokedexEntry
 	dba JigglypuffPokedexEntry
 	dba WigglytuffPokedexEntry

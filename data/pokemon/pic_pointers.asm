@@ -98,8 +98,12 @@ PokemonPicPointers::
 	dba ClefableBackpic
 	dba VulpixFrontpic
 	dba VulpixBackpic
+	dba VulpixAFrontpic
+	dba VulpixABackpic
 	dba NinetalesFrontpic
 	dba NinetalesBackpic
+	dba NinetalesAFrontpic
+	dba NinetalesABackpic
 	dba IgglybuffFrontpic
 	dba IgglybuffBackpic
 	dba JigglypuffFrontpic

@@ -32,6 +32,10 @@ SECTION "Ninetales Front", ROMX
 
 NinetalesFrontpic:   INCBIN "gfx/pokemon/ninetales/front.animated.2bpp.lz"
 
+SECTION "Ninetales_A Front", ROMX
+
+NinetalesAFrontpic:  INCBIN "gfx/pokemon/ninetales_a/front.animated.2bpp.lz"
+
 SECTION "Feraligatr Front", ROMX
 
 FeraligatrFrontpic:  INCBIN "gfx/pokemon/feraligatr/front.animated.2bpp.lz"
@@ -450,6 +454,10 @@ SECTION "Vulpix Front", ROMX
 
 VulpixFrontpic:      INCBIN "gfx/pokemon/vulpix/front.animated.2bpp.lz"
 
+SECTION "Vulpix_A Front", ROMX
+
+VulpixAFrontpic:     INCBIN "gfx/pokemon/vulpix_a/front.animated.2bpp.lz"
+
 SECTION "Gligar Front", ROMX
 
 GligarFrontpic:      INCBIN "gfx/pokemon/gligar/front.animated.2bpp.lz"
@@ -725,6 +733,10 @@ SnorlaxBackpic:      INCBIN "gfx/pokemon/snorlax/back.2bpp.lz"
 SandslashABackpic:   INCBIN "gfx/pokemon/sandslash_a/back.2bpp.lz"
 
 
+SECTION "Ninetales_A Backpic", ROMX
+
+NinetalesABackpic:   INCBIN "gfx/pokemon/ninetales_a/back.2bpp.lz"
+
 SECTION "Pics 12", ROMX
 
 VenusaurBackpic:     INCBIN "gfx/pokemon/venusaur/back.2bpp.lz"
@@ -866,6 +878,11 @@ VenonatBackpic:      INCBIN "gfx/pokemon/venonat/back.2bpp.lz"
 BellossomBackpic:    INCBIN "gfx/pokemon/bellossom/back.2bpp.lz"
 Rival1Pic:           INCBIN "gfx/trainers/rival1.2bpp.lz"
 SwinubBackpic:       INCBIN "gfx/pokemon/swinub/back.2bpp.lz"
+
+
+SECTION "Vulpix_A Backpic", ROMX
+
+VulpixABackpic:      INCBIN "gfx/pokemon/vulpix_a/back.2bpp.lz"
 
 
 SECTION "Pics 15", ROMX

@@ -45,6 +45,8 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw VulpixEggMoves
+	dw VulpixAEggMoves
+	dw NoEggMoves1
 	dw NoEggMoves1
 	dw IgglybuffEggMoves
 	dw NoEggMoves1
@@ -321,6 +323,20 @@ VulpixEggMoves:
 	dw FLARE_BLITZ
 	dw HOWL
 	dw HEAT_WAVE
+	dw -1 ; end
+
+VulpixAEggMoves:
+	dw AGILITY
+	dw CHARM
+	dw DISABLE
+	dw ENCORE
+	dw EXTRASENSORY
+	dw FLAIL
+	dw HOWL
+	dw HYPNOSIS
+	dw MOONBLAST
+	dw ROAR
+	dw SPITE
 	dw -1 ; end
 
 IgglybuffEggMoves:

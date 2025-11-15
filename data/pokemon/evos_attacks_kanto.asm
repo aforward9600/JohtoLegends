@@ -45,7 +45,9 @@ EvosAttacksPointers1::
 	dw ClefairyEvosAttacks
 	dw ClefableEvosAttacks
 	dw VulpixEvosAttacks
+	dw VulpixAEvosAttacks
 	dw NinetalesEvosAttacks
+	dw NinetalesAEvosAttacks
 	dw IgglybuffEvosAttacks
 	dw JigglypuffEvosAttacks
 	dw WigglytuffEvosAttacks
@@ -914,6 +916,31 @@ VulpixEvosAttacks:
 	dbw 50, INFERNO
 	db 0 ; no more level-up moves
 
+VulpixAEvosAttacks:
+	dbbw EVOLVE_ITEM, ICE_STONE, NINETALES_A
+	db 0 ; no more evolutions
+	dbw 1, POWDER_SNOW
+	dbw 4, TAIL_WHIP
+	dbw 7, ROAR
+	dbw 9, GROWL
+	dbw 10, ICE_SHARD
+	dbw 12, CONFUSE_RAY
+	dbw 15, ICY_WIND
+	dbw 18, PAYBACK
+	dbw 20, MIST
+	dbw 23, FAINT_ATTACK
+	dbw 26, HEX
+	dbw 28, AURORA_BEAM
+	dbw 31, EXTRASENSORY
+	dbw 34, SAFEGUARD
+	dbw 36, ICE_BEAM
+	dbw 39, SPITE
+	dbw 42, BLIZZARD
+	dbw 44, NASTY_PLOT
+	dbw 47, DESTINY_BOND
+	dbw 50, SHEER_COLD
+	db 0 ; no more level-up moves
+
 NinetalesEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, HEX
@@ -925,6 +952,17 @@ NinetalesEvosAttacks:
 	dbw 1, FIRE_SPIN
 	dbw 1, NASTY_PLOT
 	dbw 1, FLAMETHROWER
+	db 0 ; no more level-up moves
+
+NinetalesAEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, DAZZLINGLEAM
+	dbw 1, DAZZLINGLEAM
+	dbw 1, ICE_BEAM
+	dbw 1, NASTY_PLOT
+	dbw 1, ICE_SHARD
+	dbw 1, CONFUSE_RAY
+	dbw 1, SAFEGUARD
 	db 0 ; no more level-up moves
 
 IgglybuffEvosAttacks:

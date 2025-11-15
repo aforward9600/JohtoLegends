@@ -47,6 +47,8 @@ PokemonNames::
 	db "Clefairy@@"
 	db "Clefable@@"
 	db "Vulpix@@@@"
+	db "Vulpix@@@@"
+	db "Ninetales@"
 	db "Ninetales@"
 	db "Igglybuff@"
 	db "Jigglypuff"
