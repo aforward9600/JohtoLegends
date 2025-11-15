@@ -187,8 +187,7 @@ BattleCommand_Teleport:
 	res SUBSTATUS_LEECH_SEED, [hl]
 
 .new_participants
-	ld hl, BreakAttraction
-	call CallBattleCore
+	farcall BreakAttraction
 	ld hl, NewEnemyMonStatus
 	call CallBattleCore
 	ld hl, ResetEnemyStatLevels

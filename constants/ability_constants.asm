@@ -144,5 +144,13 @@
 	const DRAGONS_MAW   ; 8d
 	const TRANSISTOR    ; 8e
 	const TRIAGE        ; 8f
+	const SLUSH_RUSH    ; 90
+	const TANGLING_HAIR ; 91
+	const FUR_COAT      ; 92
+	const STEELY_SPIRIT ; 93
+	const GALVANIZE     ; 94
+	const QUICK_DRAW    ; 95
+	const ALCHEMY_POWER ; 96
+	const BERSERK       ; 97
 
 NUM_ABILITIES EQU const_value + -1

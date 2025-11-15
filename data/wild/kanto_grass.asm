@@ -174,10 +174,10 @@ KantoGrassWildMons:
 	dbw 49, SLOWKING
 	; nite
 	dbw 49, GOLBAT
-	dbw 49, RATICATE
+	dbw 49, RATICATE_A
 	dbw 49, GOLBAT
 	dbw 49, SLOWPOKE
-	dbw 49, RATICATE
+	dbw 49, RATICATE_A
 	dbw 49, SLOWPOKE
 	dbw 49, SLOWBRO
 	dbw 49, SLOWKING
@@ -198,7 +198,7 @@ KantoGrassWildMons:
 	dbw 66, TANGROWTH
 	dbw 66, MR__MIME
 	dbw 66, PIDGEOT
-	dbw 66, FURRET
+	dbw 66, RATICATE
 	dbw 66, AZUMARILL
 	dbw  2, BULBASAUR
 	dbw  3, BULBASAUR
@@ -207,7 +207,7 @@ KantoGrassWildMons:
 	dbw 66, TANGROWTH
 	dbw 66, MR__MIME
 	dbw 66, NOCTOWL
-	dbw 66, RATICATE
+	dbw 66, RATICATE_A
 	dbw 66, AZUMARILL
 	dbw  2, BULBASAUR
 	dbw  3, BULBASAUR
@@ -335,7 +335,7 @@ KantoGrassWildMons:
 	map_id ROUTE_6
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 69, RATICATE
+	dbw 69, FURRET
 	dbw 69, SNUBBULL
 	dbw 69, MAGNETON
 	dbw 69, RATICATE
@@ -358,7 +358,7 @@ KantoGrassWildMons:
 	dbw 69, MAGNETON
 	dbw 69, GOLDUCK
 	dbw 69, JIGGLYPUFF
-	dbw 69, RATICATE
+	dbw 69, RATICATE_A
 	dbw 2, SQUIRTLE
 	dbw 3, SQUIRTLE
 
@@ -443,14 +443,14 @@ KantoGrassWildMons:
 	dbw 70, MAROWAK
 	dbw 70, MAROWAK
 	; nite
-	dbw 70, RATICATE
+	dbw 70, RATICATE_A
 	dbw 70, VENOMOTH
-	dbw 70, RATICATE
+	dbw 70, RATICATE_A
 	dbw 70, NOCTOWL
 	dbw 70, NOCTOWL
-	dbw 70, RATICATE
-	dbw 70, RATICATE
-	dbw 70, RATICATE
+	dbw 70, RATICATE_A
+	dbw 70, RATICATE_A
+	dbw 70, RATICATE_A
 
 	map_id ROUTE_10_NORTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -475,7 +475,7 @@ KantoGrassWildMons:
 	; nite
 	dbw 70, NOCTOWL
 	dbw 70, ELECTRODE
-	dbw 70, RATICATE
+	dbw 70, RATICATE_A
 	dbw 70, NOCTOWL
 	dbw 70, MAROWAK
 	dbw 70, ELECTABUZZ
@@ -504,10 +504,10 @@ KantoGrassWildMons:
 	dbw 70, JUMPLUFF
 	; nite
 	dbw 70, DROWZEE
-	dbw 70, RATICATE
+	dbw 70, RATICATE_A
 	dbw 70, MAGNETON
 	dbw 70, NOCTOWL
-	dbw 70, RATICATE
+	dbw 70, RATICATE_A
 	dbw 70, HYPNO
 	dbw 70, HYPNO
 	dbw 70, HYPNO
@@ -696,7 +696,7 @@ KantoGrassWildMons:
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 69, TANGELA
-	dbw 69, RATICATE
+	dbw 69, FURRET
 	dbw 69, TANGELA
 	dbw 69, RATICATE
 	dbw 69, MR__MIME
@@ -705,7 +705,7 @@ KantoGrassWildMons:
 	dbw 69, MR__MIME
 	; day
 	dbw 69, TANGELA
-	dbw 69, RATICATE
+	dbw 69, RATTATA
 	dbw 69, TANGELA
 	dbw 69, RATICATE
 	dbw 69, MR__MIME
@@ -714,9 +714,9 @@ KantoGrassWildMons:
 	dbw 69, MR__MIME
 	; nite
 	dbw 69, TANGELA
-	dbw 69, RATTATA
+	dbw 69, RATTATA_A
 	dbw 69, TANGELA
-	dbw 69, RATICATE
+	dbw 69, RATICATE_A
 	dbw 69, TANGELA
 	dbw 69, TANGELA
 	dbw 69, TANGROWTH
@@ -743,7 +743,7 @@ KantoGrassWildMons:
 	dbw 63, FEAROW
 	dbw 63, FEAROW
 	; nite
-	dbw 63, RATICATE
+	dbw 63, RATICATE_A
 	dbw 63, FEAROW
 	dbw 63, FEAROW
 	dbw 63, DODRIO
@@ -834,9 +834,9 @@ KantoGrassWildMons:
 	dbw 60, ARBOK
 	; nite
 	dbw 58, NOCTOWL
-	dbw 58, RATICATE
+	dbw 58, RATICATE_A
 	dbw 62, NOCTOWL
-	dbw 60, RATICATE
+	dbw 60, RATICATE_A
 	dbw 60, TOXICROAK
 	dbw 60, QUAGSIRE
 	dbw 60, QUAGSIRE
@@ -865,7 +865,7 @@ KantoGrassWildMons:
 	; nite
 	dbw 58, QUAGSIRE
 	dbw 58, NOCTOWL
-	dbw 60, RATICATE
+	dbw 60, RATICATE_A
 	dbw 60, QUAGSIRE
 	dbw 62, NOCTOWL
 	dbw 62, TOXICROAK

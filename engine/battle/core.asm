@@ -40,7 +40,7 @@ DoBattle:
 	ld [wEnemySwitchMonIndex], a
 	call NewEnemyMonStatus
 	call ResetEnemyStatLevels
-	call BreakAttraction
+	farcall BreakAttraction
 	call EnemySwitch
 
 .wild
@@ -90,7 +90,7 @@ DoBattle:
 	call ResetPlayerStatLevels
 	call SendOutMonText
 	call NewBattleMonStatus
-	call BreakAttraction
+	farcall BreakAttraction
 	call SendOutPlayerMon
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
@@ -106,7 +106,7 @@ DoBattle:
 	ld [wEnemySwitchMonIndex], a
 	call NewEnemyMonStatus
 	call ResetEnemyStatLevels
-	call BreakAttraction
+	farcall BreakAttraction
 	call EnemySwitch
 	call SetEnemyTurn
 	call SpikesDamage
@@ -482,14 +482,26 @@ DetermineMoveOrder:
 	jp .enemy_first
 
 .equal_priority
-	call SetPlayerTurn
 	callfar GetUserItem
 	push bc
 	callfar GetOpponentItem
 	pop de
+	call CheckNeutralGas
+	jr z, .skip_player_quick_draw
+	ld a, [wPlayerAbility]
+	cp QUICK_DRAW
+	jr z, .check_enemy_quick_draw
+.skip_player_quick_draw
 	ld a, d
 	cp HELD_QUICK_CLAW
 	jr nz, .player_no_quick_claw
+.check_enemy_quick_draw
+	call CheckNeutralGas
+	jr z, .check_enemy_quick_claw
+	ld a, [wEnemyAbility]
+	cp QUICK_DRAW
+	jr z, .both_have_quick_claw
+.check_enemy_quick_claw
 	ld a, b
 	cp HELD_QUICK_CLAW
 	jr z, .both_have_quick_claw
@@ -2045,7 +2057,7 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	ld [hli], a
 	ld [hl], a
 	call NewEnemyMonStatus
-	call BreakAttraction
+	farcall BreakAttraction
 	ld a, [wBattleMode]
 	dec a
 	jr z, .wild2
@@ -2127,7 +2139,9 @@ FaintYourPokemon:
 	lb bc, 5, 11
 	call ClearBox
 	ld hl, BattleText_MonFainted
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	farcall EnemyAlchemyPower
+	ret
 
 FaintEnemyPokemon:
 	call StopDangerSound
@@ -2145,7 +2159,9 @@ FaintEnemyPokemon:
 	lb bc, 4, 10
 	call ClearBox
 	ld hl, BattleText_EnemyMonFainted
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	farcall UserAlchemyPower
+	ret
 
 CheckEnemyTrainerDefeated:
 	ld a, [wOTPartyCount]
@@ -2197,7 +2213,7 @@ EnemyPartyMonEntrance:
 	ld [wEnemySwitchMonIndex], a
 	call NewEnemyMonStatus
 	call ResetEnemyStatLevels
-	call BreakAttraction
+	farcall BreakAttraction
 	pop af
 	and a
 	jr nz, .set
@@ -2654,7 +2670,7 @@ ForcePlayerMonChoice:
 	call SetPalettes
 	call SendOutMonText
 	call NewBattleMonStatus
-	call BreakAttraction
+	farcall BreakAttraction
 	call SendOutPlayerMon
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
@@ -2677,7 +2693,7 @@ PlayerPartyMonEntrance:
 	call ResetPlayerStatLevels
 	call SendOutMonText
 	call NewBattleMonStatus
-	call BreakAttraction
+	farcall BreakAttraction
 	call SendOutPlayerMon
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
@@ -3012,7 +3028,7 @@ ForceEnemySwitch:
 	call NewEnemyMonStatus
 	call ResetEnemyStatLevels
 	call Function_SetEnemyMonAndSendOutAnimation
-	call BreakAttraction
+	farcall BreakAttraction
 	jp ResetBattleParticipants
 
 EnemySwitch:
@@ -3510,7 +3526,7 @@ Function_SetEnemyMonAndSendOutAnimation:
 	ld de, ANIM_SEND_OUT_MON
 	call Call_PlayBattleAnim
 
-	call BattleCheckEnemyShininess
+	farcall BattleCheckEnemyShininess
 	jr nc, .not_shiny
 
 	ld a, 1 ; shiny anim
@@ -3918,23 +3934,6 @@ InitBattleMon:
 	call ApplyStatusEffectOnPlayerStats
 	ret
 
-BattleCheckEnemyShininess:
-	ld a, [wBattleMode]
-	dec a
-	ret nz
-
-	ld bc, wEnemyMonForm
-	callfar CheckShininess
-	ret
-
-BattleCheckPlayerShininess:
-	call GetPartyMonForm
-BattleCheckShininess:
-	ld c, l
-	ld b, h
-	callfar CheckShininess
-	ret
-
 GetPartyMonDVs:
 	ld hl, wBattleMonDVs
 	ld a, [wPlayerSubStatus5]
@@ -4029,7 +4028,7 @@ SwitchPlayerMon:
 	call InitBattleMon
 	call ResetPlayerStatLevels
 	call NewBattleMonStatus
-	call BreakAttraction
+	farcall BreakAttraction
 	call SendOutPlayerMon
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
@@ -4068,7 +4067,7 @@ SendOutPlayerMon:
 	ld [wBattleAnimParam], a
 	ld de, ANIM_SEND_OUT_MON
 	call Call_PlayBattleAnim
-	call BattleCheckPlayerShininess
+	farcall BattleCheckPlayerShininess
 	jr nc, .not_shiny
 	ld a, 1
 	ld [wBattleAnimParam], a
@@ -4119,13 +4118,6 @@ endr
 	ld [wPlayerTurnsTaken], a
 	ld hl, wEnemySubStatus5
 	res SUBSTATUS_CANT_RUN, [hl]
-	ret
-
-BreakAttraction:
-	ld hl, wPlayerSubStatus1
-	res SUBSTATUS_IN_LOVE, [hl]
-	ld hl, wEnemySubStatus1
-	res SUBSTATUS_IN_LOVE, [hl]
 	ret
 
 SpikesDamage:
@@ -4285,8 +4277,8 @@ HandleHealingItems:
 .SkipPlayerUnnerve1
 	call HandleHPHealingItem
 	call UseHeldStatusHealingItem
+	farcall UsePinchBerry
 	call UseConfusionHealingItem
-	call UsePinchBerry
 .EnemyUnnerve1
 	call SetEnemyTurn
 	call CheckNeutralGas
@@ -4297,8 +4289,8 @@ HandleHealingItems:
 .SkipEnemyUnnerve1
 	call HandleHPHealingItem
 	call UseHeldStatusHealingItem
-	call UseConfusionHealingItem
-	jp UsePinchBerry
+	farcall UsePinchBerry
+	jp UseConfusionHealingItem
 
 .player_1
 	call SetEnemyTurn
@@ -4310,8 +4302,8 @@ HandleHealingItems:
 .SkipEnemyUnnerve2
 	call HandleHPHealingItem
 	call UseHeldStatusHealingItem
+	farcall UsePinchBerry
 	call UseConfusionHealingItem
-	call UsePinchBerry
 .PlayerUnnerve1
 	call SetPlayerTurn
 	call CheckNeutralGas
@@ -4322,8 +4314,8 @@ HandleHealingItems:
 .SkipPlayerUnnerve2
 	call HandleHPHealingItem
 	call UseHeldStatusHealingItem
-	call UseConfusionHealingItem
-	jp UsePinchBerry
+	farcall UsePinchBerry
+	jp UseConfusionHealingItem
 
 HandleHPHealingItem:
 	callfar GetOpponentItem
@@ -4371,86 +4363,8 @@ UseOpponentItem:
 	callfar ConsumeHeldItem
 	ld hl, RecoveredUsingText
 	call StdBattleTextbox
-	jp UnburdenScript
-
-UsePinchBerry:
-	call CheckNeutralGas
-	jr z, .SkipGluttony
-	call GetTargetAbility
-	cp UNNERVE
-	ret z
-	call GetUserAbility
-	cp GLUTTONY
-	jr nz, .SkipGluttony
-	call GetHalfMaxHP
-	jr .FinishGluttony
-.SkipGluttony
-	call GetQuarterMaxHP
-.FinishGluttony
-	call CheckUserHasEnoughHP
-	ret c
-	callfar GetUserItem
-	ld a, b
-	cp HELD_ATTACK_UP
-	jr z, .LiechiBerry
-	cp HELD_DEFENSE_UP
-	jr z, .GanlonBerry
-	cp HELD_SPEED_UP
-	jr z, .SalacBerry
-	cp HELD_SP_ATTACK_UP
-	jr z, .PetayaBerry
-	cp HELD_SP_DEFENSE_UP
-	ret nz
-	call PinchBerryAnimation
-	farcall BattleCommand_SpecialDefenseUp
-	jp PinchBerryStatUp
-.SalacBerry
-	call PinchBerryAnimation
-	farcall BattleCommand_SpeedUp
-	jp PinchBerryStatUp
-.LiechiBerry
-	call PinchBerryAnimation
-	farcall BattleCommand_AttackUp
-	jp PinchBerryStatUp
-.GanlonBerry
-	call PinchBerryAnimation
-	farcall BattleCommand_DefenseUp
-	jp PinchBerryStatUp
-.PetayaBerry
-	call PinchBerryAnimation
-	farcall BattleCommand_SpecialAttackUp
-	jp PinchBerryStatUp
-
-PinchBerryAnimation:
-	callfar GetUserItem
-	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
-	callfar BattleCommand_SwitchTurn
-	call ItemRecoveryAnim
-	callfar ConsumeHeldItem
-	callfar BattleCommand_SwitchTurn
-	ld hl, PinchBerryText
-	jp StdBattleTextbox
-
-PinchBerryStatUp:
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-	farcall BattleCommand_StatUpMessage
-	jp UnburdenScript
-
-UnburdenScript:
-	call CheckNeutralGas
-	ret z
-	call GetUserAbility
-	cp UNBURDEN
-	ret nz
-	ld a, BATTLE_VARS_SUBSTATUS1
-	call GetBattleVarAddr
-	set SUBSTATUS_UNBURDEN, [hl]
-	ld hl, UnburdenText
-	jp StdBattleTextbox
+	farcall UnburdenScript
+	ret
 
 ItemRecoveryAnim:
 	push hl
@@ -4557,14 +4471,16 @@ UseConfusionHealingItem:
 	dec a
 	ret z
 	ld [hl], $0
-	jp UnburdenScript
+	farcall UnburdenScript
+	ret
 
 .do_partymon
 	call GetPartymonItem
 	xor a
 	ld [bc], a
 	ld [hl], a
-	jp UnburdenScript
+	farcall UnburdenScript
+	ret
 
 INCLUDE "data/battle/held_stat_up.asm"
 
@@ -5351,7 +5267,7 @@ BattleMonEntrance:
 	call ResetPlayerStatLevels
 	call SendOutMonText
 	call NewBattleMonStatus
-	call BreakAttraction
+	farcall BreakAttraction
 	call SendOutPlayerMon
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
@@ -9433,7 +9349,7 @@ BattleStartMessage:
 	jr .PlaceBattleStartText
 
 .wild
-	call BattleCheckEnemyShininess
+	farcall BattleCheckEnemyShininess
 	jr nc, .not_shiny
 
 	xor a

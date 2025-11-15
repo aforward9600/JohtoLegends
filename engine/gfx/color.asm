@@ -1265,3 +1265,20 @@ StarterLoadPokemonPalette:
 	ld bc, PAL_COLOR_SIZE * 2
 	ld a, BANK(wBGPals1)
 	jp FarCopyWRAM
+
+BattleCheckEnemyShininess::
+	ld a, [wBattleMode]
+	dec a
+	ret nz
+
+	ld bc, wEnemyMonForm
+	call CheckShininess
+	ret
+
+BattleCheckPlayerShininess::
+	call GetPartyMonForm
+BattleCheckShininess::
+	ld c, l
+	ld b, h
+	call CheckShininess
+	ret

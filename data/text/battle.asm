@@ -1238,6 +1238,22 @@ IntimidateContraryText:
 	cont "Attack!"
 	prompt
 
+TanglingHairText:
+	text "<USER>'s"
+	line "Tangling Hair"
+	cont "lowered"
+	cont "<TARGET>'s"
+	cont "Speed!"
+	prompt
+
+TanglingHairContraryText:
+	text "<USER>'s"
+	line "Tangling Hair"
+	cont "raised"
+	cont "<TARGET>'s"
+	cont "Speed!"
+	prompt
+
 SynchronizeText:
 	text "<USER>'s"
 	line "Synchronize"

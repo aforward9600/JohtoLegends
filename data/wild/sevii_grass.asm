@@ -284,7 +284,7 @@ SeviiGrassWildMons:
 	dbw 75, PERSIAN
 	dbw 75, PERSIAN
 	; day
-	dbw 75, FURRET
+	dbw 75, RATICATE
 	dbw 75, PIDGEOT
 	dbw 75, GOROTORA
 	dbw 75, MANECTRIC
@@ -293,7 +293,7 @@ SeviiGrassWildMons:
 	dbw 75, PERSIAN
 	dbw 75, PERSIAN
 	; nite
-	dbw 75, RATICATE
+	dbw 75, RATICATE_A
 	dbw 75, NOCTOWL
 	dbw 75, GOROTORA
 	dbw 75, MANECTRIC
@@ -314,7 +314,7 @@ SeviiGrassWildMons:
 	dbw 75, PERSIAN
 	dbw 75, PERSIAN
 	; day
-	dbw 75, FURRET
+	dbw 75, RATICATE
 	dbw 75, PIDGEOT
 	dbw 75, GOROTORA
 	dbw 75, MANECTRIC
@@ -323,7 +323,7 @@ SeviiGrassWildMons:
 	dbw 75, PERSIAN
 	dbw 75, PERSIAN
 	; nite
-	dbw 75, RATICATE
+	dbw 75, RATICATE_A
 	dbw 75, NOCTOWL
 	dbw 75, GOROTORA
 	dbw 75, MANECTRIC

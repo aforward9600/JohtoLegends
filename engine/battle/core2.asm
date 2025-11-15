@@ -636,3 +636,10 @@ SetEnemyGender::
 	ld a, [wEnemyMonForm]
 	ld [wTempMonCaughtTime], a
 	ret
+
+BreakAttraction::
+	ld hl, wPlayerSubStatus1
+	res SUBSTATUS_IN_LOVE, [hl]
+	ld hl, wEnemySubStatus1
+	res SUBSTATUS_IN_LOVE, [hl]
+	ret

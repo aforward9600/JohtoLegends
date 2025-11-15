@@ -534,7 +534,35 @@ CheckContactAbilities:
 	dbw AFTERMATH,    .Aftermath
 	dbw WEAK_ARMOR,   .WeakArmor
 	dbw PICKPOCKET,   .Pickpocket
+	dbw TANGLING_HAIR, .TanglingHair
 	db -1
+
+.TanglingHair:
+	ld a, BATTLE_VARS_SUBSTATUS4_OPP
+	call GetBattleVar
+	bit SUBSTATUS_MIST, a
+	ret nz
+	call GetTargetAbility
+	cp CONTRARY
+	jr z, .TanglingHairContrary
+	cp CLEAR_BODY
+	ret z
+	ld b, SPEED
+	farcall LowerStatPop
+	ld a, [wFailedMessage]
+	and a
+	ret nz
+	ld hl, TanglingHairText
+	jp StdBattleTextbox
+
+.TanglingHairContrary:
+	ld b, SPEED
+	farcall RaiseStat
+	ld a, [wFailedMessage]
+	and a
+	ret nz
+	ld hl, TanglingHairContraryText
+	jp StdBattleTextbox
 
 .Static
 	call BattleRandom
@@ -822,6 +850,9 @@ CheckBoostingAbilities:
 	dbw STRONG_JAW,      .StrongJaw
 	dbw MEGA_LAUNCHER,   .MegaLauncher
 	dbw SOLAR_POWER,     .SolarPower
+	dbw GALVANIZE,       .Galvanize
+	dbw STEELY_SPIRIT,   .SteelySpirit
+	dbw BERSERK,         .Berserk
 	db -1
 
 .Guts:
@@ -956,6 +987,16 @@ CheckBoostingAbilities:
 	ret nc
 	jp FiftyPercentBoost
 
+.Berserk:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp SPECIAL
+	ret c
+	farcall GetHalfMaxHP
+	call CheckUserHasEnoughHPAbilities
+	ret c
+	jp FiftyPercentBoost
+
 .Reckless:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
@@ -1009,6 +1050,9 @@ CheckBoostingAbilities:
 .HugePower:
 	jp HundredPercentBoost
 
+.Galvanize:
+	ld b, ELECTRIC
+	jr .FinishTypeChange
 .Pixilate:
 	ld b, FAIRY
 	jr .FinishTypeChange
@@ -1056,6 +1100,14 @@ CheckBoostingAbilities:
 	and TYPE_MASK
 	cp ELECTRIC
 	jr z, ThirtyPercentBoost
+	ret
+
+.SteelySpirit:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp STEEL
+	jr z, FiftyPercentBoost
 	ret
 
 .SolarPower:
@@ -1141,6 +1193,8 @@ EffectiveDefensiveAbilities:
 	jr z, .SolidRock
 	cp FILTER
 	jr z, .SolidRock
+	cp FUR_COAT
+	jr z, .FurCoat
 	ret
 
 .TintedLens:
@@ -1156,6 +1210,13 @@ EffectiveDefensiveAbilities:
 	cp 20
 	ret nz
 	jp TwentyFivePercentNerf
+
+.FurCoat:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp SPECIAL
+	ret nc
+	jp FiftyPercentNerf
 
 SharpnessMoves:
 	dw CROSS_POISON
@@ -1238,6 +1299,7 @@ ApplySpeedAbilities::
 	dbw CHLOROPHYLL,  .Chlorophyll
 	dbw SAND_RUSH,    .SandRush
 	dbw UNBURDEN,     .Unburden
+	dbw SLUSH_RUSH,   .SlushRush
 	db -1
 
 .SwiftSwim:
@@ -1261,6 +1323,14 @@ ApplySpeedAbilities::
 	ret z
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
+	ret nz
+	jp DoubleUserSpeed
+
+.SlushRush:
+	call CheckCloudNine
+	ret z
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
 	ret nz
 	jp DoubleUserSpeed
 
@@ -2119,3 +2189,159 @@ CheckOpponentWentFirstAbilities:
 	xor b ; 1 if opponent went first
 	pop bc
 	ret
+
+EnemyAlchemyPower:
+	ld a, [wEnemyAbility]
+	cp ALCHEMY_POWER
+	ret nz
+	ld a, [wPlayerAbility]
+	cp NEUTRAL_GAS
+	ret z
+	cp TRACE
+	ret z
+	cp IMPOSTER
+	ret z
+	call MoveDelayAbility
+	ld a, [wPlayerAbility]
+	ld [wEnemyAbility], a
+	call Ability_LoadAbilityName
+	ld a, b
+	and a
+	ld hl, EnemyTraceText
+	jp StdBattleTextbox
+
+UserAlchemyPower:
+	ld a, [wPlayerAbility]
+	cp ALCHEMY_POWER
+	ret nz
+	ld a, [wEnemyAbility]
+	cp NEUTRAL_GAS
+	ret z
+	cp TRACE
+	ret z
+	cp IMPOSTER
+	ret z
+	call MoveDelayAbility
+	ld a, [wEnemyAbility]
+	ld [wPlayerAbility], a
+	call Ability_LoadAbilityName
+	ld a, b
+	and a
+	ld hl, PlayerTraceText
+	jp StdBattleTextbox
+
+UsePinchBerry:
+	call CheckNeutralGas
+	jr z, .SkipGluttony
+	call GetTargetAbility
+	cp UNNERVE
+	ret z
+	call GetUserAbility
+	cp GLUTTONY
+	jr nz, .SkipGluttony
+	farcall GetHalfMaxHP
+	jr .FinishGluttony
+.SkipGluttony
+	farcall GetQuarterMaxHP
+.FinishGluttony
+	call CheckUserHasEnoughHPAbilities
+	ret c
+	call GetUserAbility
+	cp CONTRARY
+	jp z, ContraryPinchBerries
+	callfar GetUserItem
+	ld a, b
+	cp HELD_ATTACK_UP
+	jr z, .LiechiBerry
+	cp HELD_DEFENSE_UP
+	jr z, .GanlonBerry
+	cp HELD_SPEED_UP
+	jr z, .SalacBerry
+	cp HELD_SP_ATTACK_UP
+	jr z, .PetayaBerry
+	cp HELD_SP_DEFENSE_UP
+	ret nz
+	call PinchBerryAnimation
+	farcall BattleCommand_SpecialDefenseUp
+	jp PinchBerryStatUp
+.SalacBerry
+	call PinchBerryAnimation
+	farcall BattleCommand_SpeedUp
+	jp PinchBerryStatUp
+.LiechiBerry
+	call PinchBerryAnimation
+	farcall BattleCommand_AttackUp
+	jp PinchBerryStatUp
+.GanlonBerry
+	call PinchBerryAnimation
+	farcall BattleCommand_DefenseUp
+	jp PinchBerryStatUp
+.PetayaBerry
+	call PinchBerryAnimation
+	farcall BattleCommand_SpecialAttackUp
+PinchBerryStatUp:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	farcall BattleCommand_StatUpMessage
+UnburdenScript:
+	call CheckNeutralGas
+	ret z
+	call GetUserAbility
+	cp UNBURDEN
+	ret nz
+	ld a, BATTLE_VARS_SUBSTATUS1
+	call GetBattleVarAddr
+	set SUBSTATUS_UNBURDEN, [hl]
+	ld hl, UnburdenText
+	jp StdBattleTextbox
+
+ContraryPinchBerries:
+	callfar GetUserItem
+	ld a, b
+	cp HELD_ATTACK_UP
+	jr z, .LiechiBerry
+	cp HELD_DEFENSE_UP
+	jr z, .GanlonBerry
+	cp HELD_SPEED_UP
+	jr z, .SalacBerry
+	cp HELD_SP_ATTACK_UP
+	jr z, .PetayaBerry
+	cp HELD_SP_DEFENSE_UP
+	ret nz
+	call PinchBerryAnimation
+	farcall BattleCommand_SpecialDefenseDown
+	jp PinchBerryStatDown
+.SalacBerry
+	call PinchBerryAnimation
+	farcall BattleCommand_SpeedDown
+	jp PinchBerryStatDown
+.LiechiBerry
+	call PinchBerryAnimation
+	farcall BattleCommand_AttackDown
+	jp PinchBerryStatDown
+.GanlonBerry
+	call PinchBerryAnimation
+	farcall BattleCommand_DefenseDown
+	jp PinchBerryStatDown
+.PetayaBerry
+	call PinchBerryAnimation
+	farcall BattleCommand_SpecialAttackDown
+PinchBerryStatDown:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	farcall BattleCommand_StatDownMessage
+	jr UnburdenScript
+
+PinchBerryAnimation:
+	callfar GetUserItem
+	ld a, [hl]
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	callfar BattleCommand_SwitchTurn
+	callfar ItemRecoveryAnim
+	callfar ConsumeHeldItem
+	callfar BattleCommand_SwitchTurn
+	ld hl, PinchBerryText
+	jp StdBattleTextbox

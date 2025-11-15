@@ -143,6 +143,14 @@ AbilityDescriptions:
 	dw DragonsMawDesc
 	dw TransistorDesc
 	dw TriageDesc
+	dw SlushRushDesc
+	dw TanglingHairDesc
+	dw FurCoatDesc
+	dw SteelySpiritDesc
+	dw GalvanizeDesc
+	dw QuickDrawDesc
+	dw AlchemyPowerDesc
+	dw BerserkDesc
 
 NoAbilityDesc:
 	db    "No ability."
@@ -707,3 +715,35 @@ TransistorDesc:
 TriageDesc:
 	db    "Healing moves"
 	next1 "gain priority.@"
+
+SlushRushDesc:
+	db    "Speed is raised"
+	next1 "in hail.@"
+
+TanglingHairDesc:
+	db    "Contact lowers"
+	next1 "foe's Speed.@"
+
+FurCoatDesc:
+	db    "Halves damage from"
+	next1 "physical moves.@"
+
+SteelySpiritDesc:
+	db    "Raises power of"
+	next1 "Steel-type moves.@"
+
+GalvanizeDesc:
+	db    "Normal moves are"
+	next1 "Electric moves.@"
+
+QuickDrawDesc:
+	db    "User sometimes"
+	next1 "moves first.@"
+
+AlchemyPowerDesc:
+	db    "Gains ability of"
+	next1 "defeated foe.@"
+
+BerserkDesc:
+	db    "Sp.Atk boosted"
+	next1 "when HP is low.@"
