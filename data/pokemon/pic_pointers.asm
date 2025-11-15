@@ -72,8 +72,12 @@ PokemonPicPointers::
 	dba RaichuABackpic
 	dba SandshrewFrontpic
 	dba SandshrewBackpic
+	dba SandshrewAFrontpic
+	dba SandshrewABackpic
 	dba SandslashFrontpic
 	dba SandslashBackpic
+	dba SandslashAFrontpic
+	dba SandslashABackpic
 	dba NidoranFFrontpic
 	dba NidoranFBackpic
 	dba NidorinaFrontpic

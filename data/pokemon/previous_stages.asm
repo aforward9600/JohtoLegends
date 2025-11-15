@@ -31,6 +31,8 @@ PreviousEvolutionStage::
 	dw PIKACHU
 	dw PIKACHU
 	dw 0
+	dw 0
+	dw SANDSHREW
 	dw SANDSHREW
 	dw 0
 	dw NIDORAN_F

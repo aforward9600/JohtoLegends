@@ -31,7 +31,9 @@ PokedexDataPointerTable:
 	dba RaichuPokedexEntry
 	dba RaichuAPokedexEntry
 	dba SandshrewPokedexEntry
+	dba SandshrewAPokedexEntry
 	dba SandslashPokedexEntry
+	dba SandslashAPokedexEntry
 	dba NidoranFPokedexEntry
 	dba NidorinaPokedexEntry
 	dba NidoqueenPokedexEntry

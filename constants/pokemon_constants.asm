@@ -50,7 +50,9 @@
 	const RAICHU     ; 1a
 	const RAICHU_A
 	const SANDSHREW  ; 1b
+	const SANDSHREW_A
 	const SANDSLASH  ; 1c
+	const SANDSLASH_A
 	const NIDORAN_F  ; 1d
 	const NIDORINA   ; 1e
 	const NIDOQUEEN  ; 1f

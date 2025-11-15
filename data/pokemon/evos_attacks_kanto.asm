@@ -32,7 +32,9 @@ EvosAttacksPointers1::
 	dw RaichuEvosAttacks
 	dw RaichuAEvosAttacks
 	dw SandshrewEvosAttacks
+	dw SandshrewAEvosAttacks
 	dw SandslashEvosAttacks
+	dw SandslashAEvosAttacks
 	dw NidoranFEvosAttacks
 	dw NidorinaEvosAttacks
 	dw NidoqueenEvosAttacks
@@ -687,6 +689,28 @@ SandshrewEvosAttacks:
 	dbw 46, EARTHQUAKE
 	db 0 ; no more level-up moves
 
+SandshrewAEvosAttacks:
+	dbbw EVOLVE_ITEM, ICE_STONE, SANDSLASH_A
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, DEFENSE_CURL
+	dbw 3, MIST
+	dbw 5, POWDER_SNOW
+	dbw 7, ROLLOUT
+	dbw 9, RAPID_SPIN
+	dbw 11, FURY_CUTTER
+	dbw 14, METAL_CLAW
+	dbw 17, SWIFT
+	dbw 20, FURY_SWIPES
+	dbw 23, IRON_DEFENSE
+	dbw 26, SLASH
+	dbw 30, IRON_HEAD
+	dbw 34, GYRO_BALL
+	dbw 38, SWORDS_DANCE
+	dbw 42, HAIL
+	dbw 46, BLIZZARD
+	db 0 ; no more level-up moves
+
 SandslashEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, CRUSH_CLAW
@@ -708,6 +732,17 @@ SandslashEvosAttacks:
 	dbw 43, SWORDS_DANCE
 	dbw 48, SANDSTORM
 	dbw 53, EARTHQUAKE
+	db 0 ; no more level-up moves
+
+SandslashAEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, ICICLE_SPEAR
+	dbw 1, ICICLE_SPEAR
+	dbw 1, ICICLE_CRASH
+	dbw 1, SLASH
+	dbw 1, DEFENSE_CURL
+	dbw 1, ROLLOUT
+	dbw 1, METAL_CLAW
 	db 0 ; no more level-up moves
 
 NidoranFEvosAttacks:

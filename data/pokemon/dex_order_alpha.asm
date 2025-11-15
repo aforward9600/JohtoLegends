@@ -262,6 +262,8 @@ AlphabeticalPokedexOrder:
 	dw ROSERADE
 	dw SALAMENCE
 	dw SANDSHREW
+	dw SANDSHREW
+	dw SANDSLASH
 	dw SANDSLASH
 	dw SCIZOR
 	dw SCYTHER

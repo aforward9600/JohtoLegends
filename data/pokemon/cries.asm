@@ -36,7 +36,9 @@ PokemonCries::
 	mon_cry CRY_RAICHU,      $0ee,  $088 ; RAICHU
 	mon_cry CRY_RAICHU,      $0ee,  $088 ; RAICHU_A
 	mon_cry CRY_NIDORAN_M,   $020,  $0c0 ; SANDSHREW
+	mon_cry CRY_NIDORAN_M,   $020,  $0c0 ; SANDSHREW_A
 	mon_cry CRY_NIDORAN_M,   $0ff,  $17f ; SANDSLASH
+	mon_cry CRY_NIDORAN_M,   $0ff,  $17f ; SANDSLASH_A
 	mon_cry CRY_NIDORAN_F,   $000,  $100 ; NIDORAN_F
 	mon_cry CRY_NIDORAN_F,   $02c,  $160 ; NIDORINA
 	mon_cry CRY_NIDOQUEEN,   $000,  $100 ; NIDOQUEEN

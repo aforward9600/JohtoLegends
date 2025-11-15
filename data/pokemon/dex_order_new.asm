@@ -123,6 +123,8 @@ NewPokedexOrder:
 	dw FLAAFFY
 	dw AMPHAROS
 	dw SANDSHREW
+	dw SANDSHREW
+	dw SANDSLASH
 	dw SANDSLASH
 	dw RALTS
 	dw KIRLIA

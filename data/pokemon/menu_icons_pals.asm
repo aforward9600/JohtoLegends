@@ -42,7 +42,9 @@ MonMenuIconPals:
 	icon_pals RED,    BROWN  ; RAICHU
 	icon_pals RED,    BROWN  ; RAICHU_A
 	icon_pals BROWN,  GRAY   ; SANDSHREW
+	icon_pals BLUE,   TEAL   ; SANDSHREW_A
 	icon_pals BROWN,  RED    ; SANDSLASH
+	icon_pals BLUE,   TEAL   ; SANDSLASH_A
 	icon_pals BLUE,   PINK   ; NIDORAN_F
 	icon_pals BLUE,   PINK   ; NIDORINA
 	icon_pals BLUE,   PINK   ; NIDOQUEEN

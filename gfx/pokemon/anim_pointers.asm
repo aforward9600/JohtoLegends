@@ -30,7 +30,9 @@ AnimationPointers:
 	dw RaichuAnimation
 	dw RaichuAAnimation
 	dw SandshrewAnimation
+	dw SandshrewAAnimation
 	dw SandslashAnimation
+	dw SandslashAAnimation
 	dw NidoranFAnimation
 	dw NidorinaAnimation
 	dw NidoqueenAnimation

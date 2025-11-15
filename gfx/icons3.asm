@@ -2,6 +2,8 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw OverqwilIcon
+	dw ShuckleIcon
 	dw HeracrossIcon
 	dw SneaselIcon
 	dw WeavileIcon
@@ -92,6 +94,8 @@ Icons3:
 	dw RegigigasIcon
 	dw DeoxysIcon
 
+OverqwilIcon:     INCBIN "gfx/icons/overqwil.2bpp"
+ShuckleIcon:      INCBIN "gfx/icons/shuckle.2bpp"
 HeracrossIcon:    INCBIN "gfx/icons/heracross.2bpp"
 SneaselIcon:	  INCBIN "gfx/icons/sneasel.2bpp"
 WeavileIcon:	  INCBIN "gfx/icons/weavile.2bpp"

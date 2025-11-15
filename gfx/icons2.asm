@@ -2,6 +2,8 @@ SECTION "Mon Icons 2", ROMX
 
 Icons2:
 
+	dw LickilickyIcon
+	dw KoffingIcon
 	dw WeezingIcon
 	dw RhyhornIcon
 	dw RhydonIcon
@@ -126,9 +128,9 @@ Icons2:
 	dw SnubbullIcon
 	dw GranbullIcon
 	dw QwilfishIcon
-	dw OverqwilIcon
-	dw ShuckleIcon
 
+LickilickyIcon:   INCBIN "gfx/icons/lickilicky.2bpp"
+KoffingIcon:      INCBIN "gfx/icons/koffing.2bpp"
 WeezingIcon:      INCBIN "gfx/icons/weezing.2bpp"
 RhyhornIcon:      INCBIN "gfx/icons/rhyhorn.2bpp"
 RhydonIcon:       INCBIN "gfx/icons/rhydon.2bpp"
@@ -253,5 +255,3 @@ GliscorIcon:      INCBIN "gfx/icons/gliscor.2bpp"
 SnubbullIcon:     INCBIN "gfx/icons/snubbull.2bpp"
 GranbullIcon:	  INCBIN "gfx/icons/granbull.2bpp"
 QwilfishIcon:     INCBIN "gfx/icons/qwilfish.2bpp"
-OverqwilIcon:     INCBIN "gfx/icons/overqwil.2bpp"
-ShuckleIcon:      INCBIN "gfx/icons/shuckle.2bpp"

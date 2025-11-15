@@ -32,6 +32,8 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw SandshrewEggMoves
+	dw SandshrewAEggMoves
+	dw NoEggMoves1
 	dw NoEggMoves1
 	dw NidoranFEggMoves
 	dw NoEggMoves1
@@ -260,6 +262,18 @@ SandshrewEggMoves:
 	dw NIGHT_SLASH
 	dw WORK_UP
 	dw HONE_CLAWS
+	dw -1 ; end
+
+SandshrewAEggMoves:
+	dw AMNESIA
+	dw CRUSH_CLAW
+	dw ENDURE
+	dw FLAIL
+	dw HONE_CLAWS
+	dw ICICLE_CRASH
+	dw ICICLE_SPEAR
+	dw METAL_CLAW
+	dw NIGHT_SLASH
 	dw -1 ; end
 
 NidoranFEggMoves:

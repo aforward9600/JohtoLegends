@@ -30,7 +30,9 @@ BitmasksPointers:
 	dw RaichuBitmasks
 	dw RaichuABitmasks
 	dw SandshrewBitmasks
+	dw SandshrewABitmasks
 	dw SandslashBitmasks
+	dw SandslashABitmasks
 	dw NidoranFBitmasks
 	dw NidorinaBitmasks
 	dw NidoqueenBitmasks

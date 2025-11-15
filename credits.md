@@ -162,7 +162,11 @@ Ampharos and overworld sprite: Prism Team
 
 Gible line sprites: Blue Emerald
 
-Lance, Female Scientist and Cynthia overworld sprites: Rangi and the Polished Crystal Team.
+Lance, Female Scientist and Cynthia overworld sprites,
+Alolan Sandshrew and Sandslash, Alolan Vulpix and Ninetales,
+Hisuian Voltorb and Electrode,
+Alolan Geodude, Graveler and Golem sprites: 
+Rangi and the Polished Crystal Team.
 
 Clair Trainer Sprite base, Gen 5 Black Belt sprite: Solo993
 

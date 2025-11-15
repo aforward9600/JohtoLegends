@@ -30,7 +30,9 @@ FramesPointers:
 	dba RaichuFrames
 	dba RaichuAFrames
 	dba SandshrewFrames
+	dba SandshrewAFrames
 	dba SandslashFrames
+	dba SandslashAFrames
 	dba NidoranFFrames
 	dba NidorinaFrames
 	dba NidoqueenFrames

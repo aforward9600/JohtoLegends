@@ -34,6 +34,8 @@ PokemonNames::
 	db "Raichu@@@@"
 	db "Raichu@@@@"
 	db "Sandshrew@"
+	db "Sandshrew@"
+	db "Sandslash@"
 	db "Sandslash@"
 	db "Nidoran♀@@"
 	db "Nidorina@@"

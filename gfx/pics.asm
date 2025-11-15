@@ -268,6 +268,10 @@ SECTION "Sandslash Front", ROMX
 
 SandslashFrontpic:   INCBIN "gfx/pokemon/sandslash/front.animated.2bpp.lz"
 
+SECTION "Sandslash_A Front", ROMX
+
+SandslashAFrontpic:  INCBIN "gfx/pokemon/sandslash_a/front.animated.2bpp.lz"
+
 SECTION "Jolteon Front", ROMX
 
 JolteonFrontpic:     INCBIN "gfx/pokemon/jolteon/front.animated.2bpp.lz"
@@ -631,6 +635,11 @@ PidgeyFrontpic:      INCBIN "gfx/pokemon/pidgey/front.animated.2bpp.lz"
 ParasectBackpic:     INCBIN "gfx/pokemon/parasect/back.2bpp.lz"
 QuagsireFrontpic:    INCBIN "gfx/pokemon/quagsire/front.animated.2bpp.lz"
 
+SECTION "Sandshrew_A Frontpic", ROMX
+
+SandshrewAFrontpic:  INCBIN "gfx/pokemon/sandshrew_a/front.animated.2bpp.lz"
+
+
 SECTION "Celebi Frontpic", ROMX
 
 CelebiFrontpic:      INCBIN "gfx/pokemon/celebi/front.animated.2bpp.lz"
@@ -713,6 +722,7 @@ CelebiBackpic:       INCBIN "gfx/pokemon/celebi/back.2bpp.lz"
 KrabbyBackpic:       INCBIN "gfx/pokemon/krabby/back.2bpp.lz"
 BugCatcherPic:       INCBIN "gfx/trainers/bug_catcher.2bpp.lz"
 SnorlaxBackpic:      INCBIN "gfx/pokemon/snorlax/back.2bpp.lz"
+SandslashABackpic:   INCBIN "gfx/pokemon/sandslash_a/back.2bpp.lz"
 
 
 SECTION "Pics 12", ROMX
@@ -1374,3 +1384,7 @@ DeoxysBackpic:      INCBIN "gfx/pokemon/deoxys/back.2bpp.lz"
 SECTION "Raticate_A Backpic", ROMX
 
 RaticateABackpic:    INCBIN "gfx/pokemon/raticate_a/back.2bpp.lz"
+
+SECTION "Sandshrew_A Backpic", ROMX
+
+SandshrewABackpic:   INCBIN "gfx/pokemon/sandshrew_a/back.2bpp.lz"

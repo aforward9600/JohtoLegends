@@ -33,7 +33,9 @@ Icons1:
 	dw RaichuIcon
 	dw RaichuAIcon
 	dw SandshrewIcon
+	dw SandshrewAIcon
 	dw SandslashIcon
+	dw SandslashAIcon
 	dw NidoranFIcon
 	dw NidorinaIcon
 	dw NidoqueenIcon
@@ -125,8 +127,6 @@ Icons1:
 	dw HitmonchanIcon
 	dw HitmontopIcon
 	dw LickitungIcon
-	dw LickilickyIcon
-	dw KoffingIcon
 
 EggIcon:          INCBIN "gfx/icons/egg.2bpp"
 BulbasaurIcon:    INCBIN "gfx/icons/bulbasaur.2bpp"
@@ -160,7 +160,9 @@ PikachuIcon:      INCBIN "gfx/icons/pikachu.2bpp"
 RaichuIcon:       INCBIN "gfx/icons/raichu.2bpp"
 RaichuAIcon:      INCBIN "gfx/icons/raichu_a.2bpp"
 SandshrewIcon:    INCBIN "gfx/icons/sandshrew.2bpp"
+SandshrewAIcon:   INCBIN "gfx/icons/sandshrew_a.2bpp"
 SandslashIcon:    INCBIN "gfx/icons/sandslash.2bpp"
+SandslashAIcon:   INCBIN "gfx/icons/sandslash_a.2bpp"
 NidoranFIcon:     INCBIN "gfx/icons/nidoran_f.2bpp"
 NidorinaIcon:     INCBIN "gfx/icons/nidorina.2bpp"
 NidoqueenIcon:    INCBIN "gfx/icons/nidoqueen.2bpp"
@@ -252,5 +254,3 @@ HitmonleeIcon:    INCBIN "gfx/icons/hitmonlee.2bpp"
 HitmonchanIcon:   INCBIN "gfx/icons/hitmonchan.2bpp"
 HitmontopIcon:    INCBIN "gfx/icons/hitmontop.2bpp"
 LickitungIcon:    INCBIN "gfx/icons/lickitung.2bpp"
-LickilickyIcon:   INCBIN "gfx/icons/lickilicky.2bpp"
-KoffingIcon:      INCBIN "gfx/icons/koffing.2bpp"

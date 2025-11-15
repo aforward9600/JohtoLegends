@@ -30,7 +30,9 @@ AnimationIdlePointers:
 	dw RaichuAnimationIdle
 	dw RaichuAAnimationIdle
 	dw SandshrewAnimationIdle
+	dw SandshrewAAnimationIdle
 	dw SandslashAnimationIdle
+	dw SandslashAAnimationIdle
 	dw NidoranFAnimationIdle
 	dw NidorinaAnimationIdle
 	dw NidoqueenAnimationIdle
