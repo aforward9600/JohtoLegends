@@ -61,7 +61,9 @@ FramesPointers:
 	dba VenonatFrames
 	dba VenomothFrames
 	dba DiglettFrames
+	dba DiglettAFrames
 	dba DugtrioFrames
+	dba DugtrioAFrames
 	dba MeowthFrames
 	dba PersianFrames
 	dba PsyduckFrames

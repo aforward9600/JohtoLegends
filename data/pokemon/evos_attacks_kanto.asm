@@ -63,7 +63,9 @@ EvosAttacksPointers1::
 	dw VenonatEvosAttacks
 	dw VenomothEvosAttacks
 	dw DiglettEvosAttacks
+	dw DiglettAEvosAttacks
 	dw DugtrioEvosAttacks
+	dw DugtrioAEvosAttacks
 	dw MeowthEvosAttacks
 	dw PersianEvosAttacks
 	dw PsyduckEvosAttacks
@@ -1261,6 +1263,25 @@ DiglettEvosAttacks:
 	dbw 43, FISSURE
 	db 0 ; no more level-up moves
 
+DiglettAEvosAttacks:
+	dbbw EVOLVE_LEVEL, 26, DUGTRIO_A
+	db 0 ; no more evolutions
+	dbw 1, METAL_CLAW
+	dbw 1, SAND_ATTACK
+	dbw 4, GROWL
+	dbw 7, ASTONISH
+	dbw 10, MUD_SLAP
+	dbw 14, MAGNITUDE
+	dbw 18, BULLDOZE
+	dbw 22, SUCKER_PUNCH
+	dbw 25, MUD_BOMB
+	dbw 28, EARTH_POWER
+	dbw 31, DIG
+	dbw 35, IRON_HEAD
+	dbw 39, EARTHQUAKE
+	dbw 43, FISSURE
+	db 0 ; no more level-up moves
+
 DugtrioEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, SAND_TOMB
@@ -1277,6 +1298,26 @@ DugtrioEvosAttacks:
 	dbw 30, EARTH_POWER
 	dbw 35, DIG
 	dbw 41, SLASH
+	dbw 47, EARTHQUAKE
+	dbw 53, FISSURE
+	db 0 ; no more level-up moves
+
+DugtrioAEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SAND_TOMB
+	dbw 1, SAND_TOMB
+	dbw 1, SAND_ATTACK
+	dbw 1, METAL_CLAW
+	dbw 4, GROWL
+	dbw 7, ASTONISH
+	dbw 10, MUD_SLAP
+	dbw 14, MAGNITUDE
+	dbw 18, BULLDOZE
+	dbw 22, SUCKER_PUNCH
+	dbw 25, MUD_BOMB
+	dbw 30, EARTH_POWER
+	dbw 35, DIG
+	dbw 41, IRON_HEAD
 	dbw 47, EARTHQUAKE
 	dbw 53, FISSURE
 	db 0 ; no more level-up moves

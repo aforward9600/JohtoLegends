@@ -64,7 +64,9 @@ Icons1:
 	dw VenonatIcon
 	dw VenomothIcon
 	dw DiglettIcon
+	dw DiglettAIcon
 	dw DugtrioIcon
+	dw DugtrioAIcon
 	dw MeowthIcon
 	dw PersianIcon
 	dw PsyduckIcon
@@ -125,8 +127,6 @@ Icons1:
 	dw CuboneIcon
 	dw MarowakIcon
 	dw TyrogueIcon
-	dw HitmonleeIcon
-	dw HitmonchanIcon
 
 EggIcon:          INCBIN "gfx/icons/egg.2bpp"
 BulbasaurIcon:    INCBIN "gfx/icons/bulbasaur.2bpp"
@@ -191,7 +191,9 @@ ParasectIcon:     INCBIN "gfx/icons/parasect.2bpp"
 VenonatIcon:      INCBIN "gfx/icons/venonat.2bpp"
 VenomothIcon:     INCBIN "gfx/icons/venomoth.2bpp"
 DiglettIcon:      INCBIN "gfx/icons/diglett.2bpp"
+DiglettAIcon:     INCBIN "gfx/icons/diglett_a.2bpp"
 DugtrioIcon:      INCBIN "gfx/icons/dugtrio.2bpp"
+DugtrioAIcon:     INCBIN "gfx/icons/dugtrio_a.2bpp"
 MeowthIcon:       INCBIN "gfx/icons/meowth.2bpp"
 PersianIcon:      INCBIN "gfx/icons/persian.2bpp"
 PsyduckIcon:      INCBIN "gfx/icons/psyduck.2bpp"
@@ -252,5 +254,3 @@ ExeggutorIcon:    INCBIN "gfx/icons/exeggutor.2bpp"
 CuboneIcon:       INCBIN "gfx/icons/cubone.2bpp"
 MarowakIcon:      INCBIN "gfx/icons/marowak.2bpp"
 TyrogueIcon:      INCBIN "gfx/icons/tyrogue.2bpp"
-HitmonleeIcon:    INCBIN "gfx/icons/hitmonlee.2bpp"
-HitmonchanIcon:   INCBIN "gfx/icons/hitmonchan.2bpp"

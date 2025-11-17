@@ -134,8 +134,12 @@ PokemonPicPointers::
 	dba VenomothBackpic
 	dba DiglettFrontpic
 	dba DiglettBackpic
+	dba DiglettAFrontpic
+	dba DiglettABackpic
 	dba DugtrioFrontpic
 	dba DugtrioBackpic
+	dba DugtrioAFrontpic
+	dba DugtrioABackpic
 	dba MeowthFrontpic
 	dba MeowthBackpic
 	dba PersianFrontpic

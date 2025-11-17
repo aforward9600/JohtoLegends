@@ -63,6 +63,8 @@ EggMovePointers1:
 	dw VenonatEggMoves
 	dw NoEggMoves1
 	dw DiglettEggMoves
+	dw DiglettAEggMoves
+	dw NoEggMoves1
 	dw NoEggMoves1
 	dw MeowthEggMoves
 	dw NoEggMoves1
@@ -401,6 +403,16 @@ DiglettEggMoves:
 	dw REVERSAL
 	dw WORK_UP
 	dw HONE_CLAWS
+	dw -1 ; end
+
+DiglettAEggMoves:
+	dw ANCIENTPOWER
+	dw ENDURE
+	dw FAINT_ATTACK
+	dw HEADBUTT
+	dw PURSUIT
+	dw REVERSAL
+	dw THRASH
 	dw -1 ; end
 
 MeowthEggMoves:

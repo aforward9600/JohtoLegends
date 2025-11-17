@@ -164,6 +164,7 @@ Gible line sprites: Blue Emerald
 
 Lance, Female Scientist and Cynthia overworld sprites,
 Alolan Sandshrew and Sandslash, Alolan Vulpix and Ninetales,
+Alolan Diglett and Dugtrio,
 Hisuian Voltorb and Electrode,
 Alolan Geodude, Graveler and Golem sprites: 
 Rangi and the Polished Crystal Team.

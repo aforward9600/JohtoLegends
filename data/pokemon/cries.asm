@@ -67,7 +67,9 @@ PokemonCries::
 	mon_cry CRY_VENONAT,     $044,  $0c0 ; VENONAT
 	mon_cry CRY_VENONAT,     $029,  $100 ; VENOMOTH
 	mon_cry CRY_DIGLETT,     $0aa,  $081 ; DIGLETT
+	mon_cry CRY_DIGLETT,     $0aa,  $081 ; DIGLETT_A
 	mon_cry CRY_DIGLETT,     $02a,  $090 ; DUGTRIO
+	mon_cry CRY_DIGLETT,     $02a,  $090 ; DUGTRIO_A
 	mon_cry CRY_CLEFAIRY,    $077,  $090 ; MEOWTH
 	mon_cry CRY_CLEFAIRY,    $099,  $17f ; PERSIAN
 	mon_cry CRY_PSYDUCK,     $020,  $0e0 ; PSYDUCK

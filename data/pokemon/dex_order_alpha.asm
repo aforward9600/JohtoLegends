@@ -57,6 +57,7 @@ AlphabeticalPokedexOrder:
 	dw DEOXYS
 	dw DEWGONG
 	dw DIGLETT
+	dw DIGLETT_A
 	dw DITTO
 	dw DODRIO
 	dw DODUO
@@ -67,6 +68,7 @@ AlphabeticalPokedexOrder:
 	dw DROWZEE
 	dw DUDUNSPARS
 	dw DUGTRIO
+	dw DUGTRIO_A
 	dw DUNSPARCE
 	dw DUSCLOPS
 	dw DUSKNOIR

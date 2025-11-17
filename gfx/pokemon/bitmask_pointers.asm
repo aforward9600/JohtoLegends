@@ -61,7 +61,9 @@ BitmasksPointers:
 	dw VenonatBitmasks
 	dw VenomothBitmasks
 	dw DiglettBitmasks
+	dw DiglettABitmasks
 	dw DugtrioBitmasks
+	dw DugtrioABitmasks
 	dw MeowthBitmasks
 	dw PersianBitmasks
 	dw PsyduckBitmasks

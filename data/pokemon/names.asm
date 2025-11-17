@@ -65,6 +65,8 @@ PokemonNames::
 	db "Venonat@@@"
 	db "Venomoth@@"
 	db "Diglett@@@"
+	db "Diglett@@@"
+	db "Dugtrio@@@"
 	db "Dugtrio@@@"
 	db "Meowth@@@@"
 	db "Persian@@@"

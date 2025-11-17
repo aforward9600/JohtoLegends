@@ -249,6 +249,6 @@ Pokered_MonIndices:
 	db STEELIX
 	db SNUBBULL
 	db GRANBULL
-	db QWILFISH
+	db DIGLETT_A
 	db KLEAVOR
 	db WOBBUFFET

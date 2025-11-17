@@ -266,7 +266,9 @@ NewPokedexOrder:
 	dw SNUBBULL
 	dw GRANBULL
 	dw DIGLETT
+	dw DIGLETT_A
 	dw DUGTRIO
+	dw DUGTRIO_A
 	dw MEOWTH
 	dw PERSIAN
 	dw PONYTA

@@ -61,7 +61,9 @@ AnimationPointers:
 	dw VenonatAnimation
 	dw VenomothAnimation
 	dw DiglettAnimation
+	dw DiglettAAnimation
 	dw DugtrioAnimation
+	dw DugtrioAAnimation
 	dw MeowthAnimation
 	dw PersianAnimation
 	dw PsyduckAnimation

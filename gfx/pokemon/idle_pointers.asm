@@ -61,7 +61,9 @@ AnimationIdlePointers:
 	dw VenonatAnimationIdle
 	dw VenomothAnimationIdle
 	dw DiglettAnimationIdle
+	dw DiglettAAnimationIdle
 	dw DugtrioAnimationIdle
+	dw DugtrioAAnimationIdle
 	dw MeowthAnimationIdle
 	dw PersianAnimationIdle
 	dw PsyduckAnimationIdle

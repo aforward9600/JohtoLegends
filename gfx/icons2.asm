@@ -2,6 +2,8 @@ SECTION "Mon Icons 2", ROMX
 
 Icons2:
 
+	dw HitmonleeIcon
+	dw HitmonchanIcon
 	dw HitmontopIcon
 	dw LickitungIcon
 	dw LickilickyIcon
@@ -126,9 +128,9 @@ Icons2:
 	dw DunsparceIcon
 	dw DudunsparsIcon
 	dw GligarIcon
-	dw GliscorIcon
-	dw SnubbullIcon
 
+HitmonleeIcon:    INCBIN "gfx/icons/hitmonlee.2bpp"
+HitmonchanIcon:   INCBIN "gfx/icons/hitmonchan.2bpp"
 HitmontopIcon:    INCBIN "gfx/icons/hitmontop.2bpp"
 LickitungIcon:    INCBIN "gfx/icons/lickitung.2bpp"
 LickilickyIcon:   INCBIN "gfx/icons/lickilicky.2bpp"
@@ -253,5 +255,3 @@ ForretressIcon:   INCBIN "gfx/icons/forretress.2bpp"
 DunsparceIcon:    INCBIN "gfx/icons/dunsparce.2bpp"
 DudunsparsIcon:   INCBIN "gfx/icons/dudunspars.2bpp"
 GligarIcon:       INCBIN "gfx/icons/gligar.2bpp"
-GliscorIcon:      INCBIN "gfx/icons/gliscor.2bpp"
-SnubbullIcon:     INCBIN "gfx/icons/snubbull.2bpp"

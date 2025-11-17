@@ -497,6 +497,11 @@ ForretressFrontpic:  INCBIN "gfx/pokemon/forretress/front.animated.2bpp.lz"
 TogeticFrontpic:     INCBIN "gfx/pokemon/togetic/front.animated.2bpp.lz"
 KangaskhanBackpic:   INCBIN "gfx/pokemon/kangaskhan/back.2bpp.lz"
 
+SECTION "Dugtrio_A Front", ROMX
+
+DugtrioAFrontpic:    INCBIN "gfx/pokemon/dugtrio_a/front.animated.2bpp.lz"
+
+
 SECTION "Yanma Frontpic", ROMX
 
 YanmaFrontpic:       INCBIN "gfx/pokemon/yanma/front.animated.2bpp.lz"
@@ -884,6 +889,10 @@ SECTION "Vulpix_A Backpic", ROMX
 
 VulpixABackpic:      INCBIN "gfx/pokemon/vulpix_a/back.2bpp.lz"
 
+SECTION "Diglett_A Front", ROMX
+
+DiglettAFrontpic:    INCBIN "gfx/pokemon/diglett_a/front.animated.2bpp.lz"
+
 
 SECTION "Pics 15", ROMX
 
@@ -937,6 +946,10 @@ ErikaPic:            INCBIN "gfx/trainers/erika.2bpp.lz"
 JaninePic:           INCBIN "gfx/trainers/janine.2bpp.lz"
 MagnemiteBackpic:    INCBIN "gfx/pokemon/magnemite/back.2bpp.lz"
 RattataABackpic:     INCBIN "gfx/pokemon/rattata_a/back.2bpp.lz"
+
+SECTION "Dugtrio_A Backpic", ROMX
+
+DugtrioABackpic:     INCBIN "gfx/pokemon/dugtrio_a/back.2bpp.lz"
 
 
 SECTION "Pics 16", ROMX
@@ -1124,6 +1137,10 @@ UnownPBackpic:       INCBIN "gfx/pokemon/unown_p/back.2bpp.lz"
 UnownIBackpic:       INCBIN "gfx/pokemon/unown_i/back.2bpp.lz"
 UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
+
+SECTION "Diglett_A Backpic", ROMX
+
+DiglettABackpic:     INCBIN "gfx/pokemon/diglett_a/back.2bpp.lz"
 
 SECTION "Pics 19", ROMX
 

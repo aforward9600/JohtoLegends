@@ -81,7 +81,9 @@
 	const VENONAT    ; 30
 	const VENOMOTH   ; 31
 	const DIGLETT    ; 32
+	const DIGLETT_A
 	const DUGTRIO    ; 33
+	const DUGTRIO_A
 	const MEOWTH     ; 34
 	const PERSIAN    ; 35
 	const PSYDUCK    ; 36

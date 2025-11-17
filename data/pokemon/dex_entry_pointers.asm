@@ -62,7 +62,9 @@ PokedexDataPointerTable:
 	dba VenonatPokedexEntry
 	dba VenomothPokedexEntry
 	dba DiglettPokedexEntry
+	dba DiglettAPokedexEntry
 	dba DugtrioPokedexEntry
+	dba DugtrioAPokedexEntry
 	dba MeowthPokedexEntry
 	dba PersianPokedexEntry
 	dba PsyduckPokedexEntry

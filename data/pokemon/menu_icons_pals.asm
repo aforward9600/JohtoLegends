@@ -73,7 +73,9 @@ MonMenuIconPals:
 	icon_pals RED,    BLUE   ; VENONAT
 	icon_pals PURPLE, BLUE   ; VENOMOTH
 	icon_pals BROWN,  PURPLE ; DIGLETT
+	icon_pals BROWN,  BLUE   ; DIGLETT_A
 	icon_pals BROWN,  PURPLE ; DUGTRIO
+	icon_pals BROWN,  BLUE   ; DUGTRIO_A
 	icon_pals BROWN,  PURPLE ; MEOWTH
 	icon_pals BROWN,  PURPLE ; PERSIAN
 	icon_pals RED,    PURPLE ; PSYDUCK
