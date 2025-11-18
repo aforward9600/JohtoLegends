@@ -220,11 +220,12 @@ bugcontestwinner: MACRO
 ENDM
 
 hof_mon: MACRO
-\1Species::  dw
-\1ID::       dw
-\1DVs::      dw
-\1Level::    db
-\1Nickname:: ds MON_NAME_LENGTH + -1
+\1Species::    dw
+\1ID::         dw
+\1CaughtTime:: db
+\1DVs::        dw
+\1Level::      db
+\1Nickname::   ds MON_NAME_LENGTH + -1
 \1End::
 ENDM
 

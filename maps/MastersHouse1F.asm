@@ -74,8 +74,6 @@ TryToLeaveHouseScript:
 	end
 
 MaastersHouseMasterScript:
-	halloffame
-	end
 	checkevent EVENT_BEAT_MASTER
 	iftrue .MasterBeaten
 	checkevent EVENT_MASTERS_RIVAL_DONE
