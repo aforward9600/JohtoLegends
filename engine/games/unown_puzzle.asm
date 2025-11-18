@@ -284,14 +284,13 @@ UnownPuzzleJumptable:
 	and a
 	jr nz, .holding_piece
 	ld de, SFX_POUND
-	jr .play_sfx
+	jp PlaySFX
 
 .holding_piece
 	ld de, SFX_MOVE_PUZZLE_PIECE
 
 .play_sfx
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 UnownPuzzle_A:
 	ld a, [wHoldingUnownPuzzlePiece]
@@ -348,8 +347,7 @@ UnownPuzzle_Quit:
 UnownPuzzle_InvalidAction:
 	ld de, SFX_WRONG
 	call PlaySFX
-	call WaitSFX
-	ret
+	jp WaitSFX
 
 UnownPuzzle_FillBox:
 	ld de, SCREEN_WIDTH
@@ -645,8 +643,7 @@ ConvertLoadedPuzzlePieces:
 	pop bc
 	dec b
 	jr nz, .loop
-	call UnownPuzzle_AddPuzzlePieceBorders
-	ret
+	jp UnownPuzzle_AddPuzzlePieceBorders
 
 .EnlargePuzzlePieceTiles:
 ; double size
@@ -818,8 +815,7 @@ LoadUnownPuzzlePiecesGFX:
 	ld l, a
 	ld de, vTiles2
 	call Decompress
-	call ConvertLoadedPuzzlePieces
-	ret
+	jp ConvertLoadedPuzzlePieces
 
 .LZPointers:
 ; entries correspond to UNOWNPUZZLE_* constants

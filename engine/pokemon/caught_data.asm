@@ -293,10 +293,10 @@ SetGenderShininess:
 	ld a, [wBattleMode]
 	and a
 	jr z, .Random
+	pop hl
 	ld a, [wEnemyForm]
 	and CAUGHT_MON_GENDER_MASK
 	jr z, .Male
-	pop hl
 	ld a, [hl]
 	or CAUGHT_MON_GENDER_MASK
 	ld [hl], a
@@ -307,10 +307,8 @@ SetGenderShininess:
 	ld a, [hl]
 	or CAUGHT_SHINY_MASK
 	ld [hl], a
-	ret
 .NotShiny
-	pop hl
-	ret ; need to add forms next
+	ret
 
 .Random
 	farcall SetPokemonGender

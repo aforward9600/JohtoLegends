@@ -541,8 +541,7 @@ InitPartyMenuOBPals:
 	ld de, wOBPals1
 	ld bc, 8 palettes
 	ld a, BANK(wOBPals1)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 
 GetBattlemonBackpicPalettePointer:
 	push de

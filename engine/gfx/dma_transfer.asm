@@ -16,8 +16,7 @@ HDMATransferAttrMapAndTileMapToWRAMBank3::
 	ld a, $1
 	ldh [rVBK], a
 	ld hl, wScratchAttrMap
-	call HDMATransferToWRAMBank3
-	ret
+	jp HDMATransferToWRAMBank3
 
 HDMATransferTileMapToWRAMBank3::
 	ld hl, .Function
@@ -30,8 +29,7 @@ HDMATransferTileMapToWRAMBank3::
 	ld a, $0
 	ldh [rVBK], a
 	ld hl, wScratchTileMap
-	call HDMATransferToWRAMBank3
-	ret
+	jp HDMATransferToWRAMBank3
 
 HDMATransferAttrMapToWRAMBank3:
 	ld hl, .Function
@@ -44,8 +42,7 @@ HDMATransferAttrMapToWRAMBank3:
 	ld a, $1
 	ldh [rVBK], a
 	ld hl, wScratchAttrMap
-	call HDMATransferToWRAMBank3
-	ret
+	jp HDMATransferToWRAMBank3
 
 ReloadMapPart::
 	ld hl, .Function
@@ -164,8 +161,7 @@ Mobile_OpenAndCloseMenu_HDMATransferTileMapAndAttrMap:
 	ld a, $0
 	ldh [rVBK], a
 	ld hl, wScratchTileMap
-	call HDMATransfer_Wait127Scanlines_toBGMap
-	ret
+	jp HDMATransfer_Wait127Scanlines_toBGMap
 
 CallInSafeGFXMode:
 	ldh a, [hBGMapMode]
@@ -544,8 +540,7 @@ HDMATransfer_OnlyTopFourRows:
 	ld c, $8
 	ld hl, wScratchTileMap
 	debgcoord 0, 0, vBGMap1
-	call HDMATransfer_Wait127Scanlines
-	ret
+	jp HDMATransfer_Wait127Scanlines
 
 .Copy:
 	ld b, 4

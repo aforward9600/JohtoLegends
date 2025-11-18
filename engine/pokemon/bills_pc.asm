@@ -88,8 +88,7 @@ _DepositPKMN:
 	ld a, $1
 	ldh [hBGMapMode], a
 	call DelayFrame
-	call DelayFrame
-	ret
+	jp DelayFrame
 
 .a_button
 	call BillsPC_GetSelectedPokemonSpecies
@@ -123,8 +122,7 @@ _DepositPKMN:
 	call BillsPC_PlaceString
 	ld a, $1
 	ld [wMenuCursorY], a
-	call BillsPC_IncrementJumptableIndex
-	ret
+	jp BillsPC_IncrementJumptableIndex
 
 .Submenu:
 	ld hl, BillsPCDepositMenuHeader
@@ -166,8 +164,7 @@ BillsPCDepositFuncDeposit:
 
 .box_full
 	ld de, PCString_WhatsUp
-	call BillsPC_PlaceString
-	ret
+	jp BillsPC_PlaceString
 
 BillsPCDepositFuncStats:
 	call LoadStandardMenuHeader
@@ -177,8 +174,7 @@ BillsPCDepositFuncStats:
 	call BillsPC_GetSelectedPokemonSpecies
 	ld [wCurPartySpecies], a
 	ld a, SCGB_BILLS_PC
-	call BillsPC_ApplyPalettes
-	ret
+	jp BillsPC_ApplyPalettes
 
 BillsPCDepositFuncRelease:
 	call BillsPC_CheckMail_PreventBlackout
@@ -360,8 +356,7 @@ _WithdrawPKMN:
 	call BillsPC_PlaceString
 	ld a, $1
 	ld [wMenuCursorY], a
-	call BillsPC_IncrementJumptableIndex
-	ret
+	jp BillsPC_IncrementJumptableIndex
 
 BillsPC_Withdraw:
 	ld hl, .MenuHeader
@@ -413,8 +408,7 @@ BillsPC_Withdraw:
 	call BillsPC_GetSelectedPokemonSpecies
 	ld [wCurPartySpecies], a
 	ld a, SCGB_BILLS_PC
-	call BillsPC_ApplyPalettes
-	ret
+	jp BillsPC_ApplyPalettes
 
 .release
 	ld a, [wMenuCursorY]
@@ -654,8 +648,7 @@ _MovePKMNWithoutMail:
 	call BillsPC_GetSelectedPokemonSpecies
 	ld [wCurPartySpecies], a
 	ld a, SCGB_BILLS_PC
-	call BillsPC_ApplyPalettes
-	ret
+	jp BillsPC_ApplyPalettes
 
 .Cancel:
 	ld a, $0
@@ -1038,6 +1031,8 @@ PCMonInfo:
 	predef GetUnownLetter
 	call GetBaseData
 	ld de, vTiles2 tile $00
+;	ld b,b
+	ld bc, wTempMonCaughtTime
 	predef GetMonFrontpic
 	xor a
 	ld [wBillsPC_MonHasMail], a
@@ -1098,7 +1093,7 @@ BillsPC_LoadMonStats:
 	and a
 	jr z, .party
 	cp NUM_BOXES + 1
-	jr z, .sBox
+	jp z, .sBox
 	ld b, a
 	call GetBoxPointer
 	ld a, b
@@ -1121,6 +1116,15 @@ BillsPC_LoadMonStats:
 	ld a, [hl]
 	ld [wTempMonItem], a
 	pop hl
+	push hl
+	ld bc, sBoxMon1CaughtTime - sBox
+	add hl, bc
+	ld bc, BOXMON_STRUCT_LENGTH
+	ld a, e
+	call AddNTimes
+	ld a, [hl]
+	ld [wTempMonCaughtTime], a
+	pop hl
 	ld bc, sBoxMon1DVs - sBox
 	add hl, bc
 	ld bc, BOXMON_STRUCT_LENGTH
@@ -1132,8 +1136,7 @@ BillsPC_LoadMonStats:
 	inc de
 	ld a, [hl]
 	ld [de], a
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 .party
 	ld hl, wPartyMon1Level
@@ -1148,6 +1151,12 @@ BillsPC_LoadMonStats:
 	call AddNTimes
 	ld a, [hl]
 	ld [wTempMonItem], a
+	ld hl, wPartyMon1CaughtTime
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, e
+	call AddNTimes
+	ld a, [hl]
+	ld [wTempMonCaughtTime], a
 	ld hl, wPartyMon1DVs
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld a, e
@@ -1177,6 +1186,13 @@ BillsPC_LoadMonStats:
 	ld a, [hl]
 	ld [wTempMonItem], a
 
+	ld hl, sBoxMon1CaughtTime
+	ld bc, BOXMON_STRUCT_LENGTH
+	ld a, e
+	call AddNTimes
+	ld a, [hl]
+	ld [wTempMonCaughtTime], a
+
 	ld hl, sBoxMon1DVs
 	ld bc, BOXMON_STRUCT_LENGTH
 	ld a, e
@@ -1188,8 +1204,7 @@ BillsPC_LoadMonStats:
 	ld a, [hl]
 	ld [de], a
 
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 BillsPC_RefreshTextboxes:
 	hlcoord 8, 2

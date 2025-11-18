@@ -182,6 +182,15 @@ GetHallOfFameParty:
 	ld [de], a
 	inc de
 
+;	ld hl, MON_CAUGHTTIME
+;	add hl, bc
+;	ld a, [hl]
+;	ld [de], a
+;	inc de
+;	ld a, [hl]
+;	ld [de], a
+;	inc de
+
 	ld hl, MON_DVS
 	add hl, bc
 	ld a, [hli]
@@ -239,6 +248,8 @@ AnimateHOFMonEntrance:
 	ld [wCurPartySpecies], a
 	inc hl
 	inc hl
+;	ld a, [hli]
+;	ld [wTempMonCaughtTime], a
 	ld a, [hli]
 	ld [wTempMonDVs], a
 	ld a, [hli]

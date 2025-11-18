@@ -233,8 +233,7 @@ Mobile_InitPartyMenuBGPal71:
 PartyMenu_InitAnimatedMonIcon:
 	call InitPartyMenuIcon
 	call .SpawnItemIcon
-	call SetPartyMonIconAnimSpeed
-	ret
+	jp SetPartyMonIconAnimSpeed
 
 .SpawnItemIcon:
 	push bc
@@ -377,16 +376,14 @@ GetSpeciesIcon:
 	call GetPokemonIndexFromID
 	pop de
 	ld a, e
-	call GetIconGFX
-	ret
+	jr GetIconGFX
 
 FlyFunction_GetMonIcon:
 	ld hl, PIDGEOT
 	call GetPokemonIDFromIndex
 	ld b, a
 	ld a, e
-	call GetIcon_a
-	ret
+	jp GetIcon_a
 
 GetMemIconGFX:
 	ld a, [wCurIconTile]

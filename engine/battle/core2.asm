@@ -606,7 +606,7 @@ CheckEnemyShininess::
 	jr c, .NoPassword
 
 	call Random
-	cp SHINY_EGG_TWO_SHINY_PARENTS_NUMERATOR
+	cp GIFT_SHINY_NUMERATOR
 	ret nc
 .Shiny
 	ld hl, wEnemyMonForm

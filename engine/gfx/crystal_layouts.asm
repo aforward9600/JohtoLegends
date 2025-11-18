@@ -46,8 +46,7 @@ MG_Mobile_Layout_WipeAttrMap:
 	hlcoord 0, 0, wAttrMap
 	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
 	xor a
-	call ByteFill
-	ret
+	jp ByteFill
 
 MG_Mobile_Layout_LoadPals:
 	ld de, wBGPals1
@@ -59,8 +58,7 @@ MG_Mobile_Layout_LoadPals:
 	ld hl, Palette_TextBG7
 	ld bc, 1 palettes
 	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 
 MG_Mobile_Layout00:
 	call MG_Mobile_Layout_LoadPals
@@ -104,8 +102,7 @@ MG_Mobile_Layout_CreatePalBoxes:
 	hlcoord 0, 12, wAttrMap
 	ld bc, 6 * SCREEN_WIDTH
 	ld a, $7
-	call ByteFill
-	ret
+	jp ByteFill
 
 Palette_MysteryGiftMobile:
 INCLUDE "gfx/mystery_gift/mg_mobile.pal"
@@ -115,8 +112,7 @@ LoadOW_BGPal7::
 	ld de, wBGPals1 palette PAL_BG_TEXT
 	ld bc, 1 palettes
 	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 
 Palette_TextBG7:
 INCLUDE "gfx/font/bg_text.pal"
@@ -126,8 +122,7 @@ Function49420::
 	ld de, wBGPals1 palette PAL_BG_ROOF
 	ld bc, 1 palettes
 	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 
 MG_Mobile_Layout01:
 	call MG_Mobile_Layout_LoadPals
@@ -206,8 +201,7 @@ MG_Mobile_Layout02:
 	ld de, wOBPals1
 	ld bc, 1 palettes
 	ld a, BANK(wOBPals1)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 
 .Palette_49732:
 	RGB 31, 31, 31
@@ -281,8 +275,7 @@ _InitMG_Mobile_LinkTradePalMap:
 	hlcoord 2, 17, wAttrMap
 	ld a, $3
 	ld bc, 6
-	call ByteFill
-	ret
+	jp ByteFill
 
 _LoadTradeRoomBGPals:
 	ld hl, TradeRoomPalette
@@ -297,5 +290,4 @@ TradeRoomPalette:
 INCLUDE "gfx/trade/border.pal"
 
 InitMG_Mobile_LinkTradePalMap:
-	call _InitMG_Mobile_LinkTradePalMap
-	ret
+	jp _InitMG_Mobile_LinkTradePalMap

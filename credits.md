@@ -164,9 +164,10 @@ Gible line sprites: Blue Emerald
 
 Lance, Female Scientist and Cynthia overworld sprites,
 Alolan Sandshrew and Sandslash, Alolan Vulpix and Ninetales,
-Alolan Diglett and Dugtrio,
-Hisuian Voltorb and Electrode,
-Alolan Geodude, Graveler and Golem sprites: 
+Alolan Diglett and Dugtrio, Alolan Meowth and Persian,
+Galarian Meowth and Perrserker, Hisuian Voltorb and Electrode,
+Alolan Geodude, Graveler and Golem sprites,
+Regional form icons: 
 Rangi and the Polished Crystal Team.
 
 Clair Trainer Sprite base, Gen 5 Black Belt sprite: Solo993
