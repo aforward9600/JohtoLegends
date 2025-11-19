@@ -270,7 +270,11 @@ NewPokedexOrder:
 	dw DUGTRIO
 	dw DUGTRIO_A
 	dw MEOWTH
+	dw MEOWTH_A
+	dw MEOWTH_G
 	dw PERSIAN
+	dw PERSIAN_A
+	dw PERRSERKER
 	dw PONYTA
 	dw RAPIDASH
 	dw QWILFISH

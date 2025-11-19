@@ -142,8 +142,16 @@ PokemonPicPointers::
 	dba DugtrioABackpic
 	dba MeowthFrontpic
 	dba MeowthBackpic
+	dba MeowthAFrontpic
+	dba MeowthABackpic
+	dba MeowthGFrontpic
+	dba MeowthGBackpic
 	dba PersianFrontpic
 	dba PersianBackpic
+	dba PersianAFrontpic
+	dba PersianABackpic
+	dba PerrserkerFrontpic
+	dba PerrserkerBackpic
 	dba PsyduckFrontpic
 	dba PsyduckBackpic
 	dba GolduckFrontpic

@@ -65,7 +65,11 @@ AnimationPointers:
 	dw DugtrioAnimation
 	dw DugtrioAAnimation
 	dw MeowthAnimation
+	dw MeowthAAnimation
+	dw MeowthGAnimation
 	dw PersianAnimation
+	dw PersianAAnimation
+	dw PerrserkerAnimation
 	dw PsyduckAnimation
 	dw GolduckAnimation
 	dw MankeyAnimation

@@ -112,7 +112,7 @@ GenerateShinySwarm:
 	if HIGH(QWILFISH) == 0
 		or h
 	else
-		jr nz, .skipshineswarm
+		jp nz, .skipshineswarm
 		if HIGH(QWILFISH) == 1
 			dec h
 		else

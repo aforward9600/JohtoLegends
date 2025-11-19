@@ -65,7 +65,11 @@ AnimationIdlePointers:
 	dw DugtrioAnimationIdle
 	dw DugtrioAAnimationIdle
 	dw MeowthAnimationIdle
+	dw MeowthAAnimationIdle
+	dw MeowthGAnimationIdle
 	dw PersianAnimationIdle
+	dw PersianAAnimationIdle
+	dw PerrserkerAnimationIdle
 	dw PsyduckAnimationIdle
 	dw GolduckAnimationIdle
 	dw MankeyAnimationIdle

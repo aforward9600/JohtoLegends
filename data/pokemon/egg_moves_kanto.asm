@@ -67,6 +67,10 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw MeowthEggMoves
+	dw MeowthAEggMoves
+	dw MeowthGEggMoves
+	dw NoEggMoves1
+	dw NoEggMoves1
 	dw NoEggMoves1
 	dw PsyduckEggMoves
 	dw NoEggMoves1
@@ -425,6 +429,24 @@ MeowthEggMoves:
 	dw TAIL_WHIP
 	dw WORK_UP
 	dw HONE_CLAWS
+	dw -1 ; end
+
+MeowthAEggMoves:
+	dw AMNESIA
+	dw CHARM
+	dw FLAIL
+	dw FLATTER
+	dw HYPNOSIS
+	dw SPITE
+	dw ODOR_SLEUTH
+	dw -1 ; end
+
+MeowthGEggMoves:
+	dw DOUBLE_EDGE
+	dw FLAIL
+	dw NIGHT_SLASH
+	dw SPITE
+	dw ODOR_SLEUTH
 	dw -1 ; end
 
 PsyduckEggMoves:

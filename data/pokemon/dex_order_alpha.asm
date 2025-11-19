@@ -183,6 +183,8 @@ AlphabeticalPokedexOrder:
 	dw MAROWAK
 	dw MEGANIUM
 	dw MEOWTH
+	dw MEOWTH_A
+	dw MEOWTH_G
 	dw METAGROSS
 	dw METANG
 	dw METAPOD
@@ -217,7 +219,9 @@ AlphabeticalPokedexOrder:
 	dw OVERQWIL
 	dw PARAS
 	dw PARASECT
+	dw PERRSERKER
 	dw PERSIAN
+	dw PERSIAN_A
 	dw PHANPY
 	dw PICHU
 	dw PIDGEOT

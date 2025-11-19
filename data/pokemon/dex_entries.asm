@@ -69,12 +69,16 @@ DiglettAPokedexEntry::   INCLUDE "data/pokemon/dex_entries/diglett_a.asm"
 DugtrioPokedexEntry::    INCLUDE "data/pokemon/dex_entries/dugtrio.asm"
 DugtrioAPokedexEntry::   INCLUDE "data/pokemon/dex_entries/dugtrio_a.asm"
 MeowthPokedexEntry::     INCLUDE "data/pokemon/dex_entries/meowth.asm"
-PersianPokedexEntry::    INCLUDE "data/pokemon/dex_entries/persian.asm"
-PsyduckPokedexEntry::    INCLUDE "data/pokemon/dex_entries/psyduck.asm"
+MeowthAPokedexEntry::    INCLUDE "data/pokemon/dex_entries/meowth_a.asm"
+MeowthGPokedexEntry::    INCLUDE "data/pokemon/dex_entries/meowth_g.asm"
 
 
 SECTION "Pokedex Entries 065-128", ROMX
 
+PersianPokedexEntry::    INCLUDE "data/pokemon/dex_entries/persian.asm"
+PersianAPokedexEntry::   INCLUDE "data/pokemon/dex_entries/persian_a.asm"
+PerrserkerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/perrserker.asm"
+PsyduckPokedexEntry::    INCLUDE "data/pokemon/dex_entries/psyduck.asm"
 GolduckPokedexEntry::    INCLUDE "data/pokemon/dex_entries/golduck.asm"
 MankeyPokedexEntry::     INCLUDE "data/pokemon/dex_entries/mankey.asm"
 PrimeapePokedexEntry::   INCLUDE "data/pokemon/dex_entries/primeape.asm"

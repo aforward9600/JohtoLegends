@@ -313,6 +313,14 @@ SECTION "Persian Front", ROMX
 
 PersianFrontpic:     INCBIN "gfx/pokemon/persian/front.animated.2bpp.lz"
 
+SECTION "Persian_a Front", ROMX
+
+PersianAFrontpic:     INCBIN "gfx/pokemon/persian_a/front.animated.2bpp.lz"
+
+SECTION "Perrserker Front", ROMX
+
+PerrserkerFrontpic:  INCBIN "gfx/pokemon/perrserker/front.animated.2bpp.lz"
+
 SECTION "Stantler Front", ROMX
 
 StantlerFrontpic:    INCBIN "gfx/pokemon/stantler/front.animated.2bpp.lz"
@@ -648,6 +656,14 @@ PidgeyFrontpic:      INCBIN "gfx/pokemon/pidgey/front.animated.2bpp.lz"
 ParasectBackpic:     INCBIN "gfx/pokemon/parasect/back.2bpp.lz"
 QuagsireFrontpic:    INCBIN "gfx/pokemon/quagsire/front.animated.2bpp.lz"
 
+SECTION "Meowth_A Front", ROMX
+
+MeowthAFrontpic:     INCBIN "gfx/pokemon/meowth_a/front.animated.2bpp.lz"
+
+SECTION "Meowth_G Front", ROMX
+
+MeowthGFrontpic:     INCBIN "gfx/pokemon/meowth_g/front.animated.2bpp.lz"
+
 SECTION "Sandshrew_A Frontpic", ROMX
 
 SandshrewAFrontpic:  INCBIN "gfx/pokemon/sandshrew_a/front.animated.2bpp.lz"
@@ -834,6 +850,14 @@ CooltrainerfPic:     INCBIN "gfx/trainers/cooltrainer_f.2bpp.lz"
 ElectrodeFrontpic:   INCBIN "gfx/pokemon/electrode/front.animated.2bpp.lz"
 RaichuABackpic:      INCBIN "gfx/pokemon/raichu_a/back.2bpp.lz"
 
+SECTION "Persian_A Backpic", ROMX
+
+PersianABackpic:     INCBIN "gfx/pokemon/persian_a/back.2bpp.lz"
+
+
+SECTION "Perrserker Backpic", ROMX
+
+PerrserkerBackpic:   INCBIN "gfx/pokemon/perrserker/back.2bpp.lz"
 
 SECTION "Pics 14", ROMX
 
@@ -951,6 +975,14 @@ SECTION "Dugtrio_A Backpic", ROMX
 
 DugtrioABackpic:     INCBIN "gfx/pokemon/dugtrio_a/back.2bpp.lz"
 
+
+SECTION "Meowth_A Backpic", ROMX
+
+MeowthABackpic:      INCBIN "gfx/pokemon/meowth_a/back.2bpp.lz"
+
+SECTION "Meowth_G Backpic", ROMX
+
+MeowthGBackpic:      INCBIN "gfx/pokemon/meowth_g/back.2bpp.lz"
 
 SECTION "Pics 16", ROMX
 

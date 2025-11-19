@@ -67,7 +67,11 @@ EvosAttacksPointers1::
 	dw DugtrioEvosAttacks
 	dw DugtrioAEvosAttacks
 	dw MeowthEvosAttacks
+	dw MeowthAEvosAttacks
+	dw MeowthGEvosAttacks
 	dw PersianEvosAttacks
+	dw PersianAEvosAttacks
+	dw PerrserkerEvosAttacks
 	dw PsyduckEvosAttacks
 	dw GolduckEvosAttacks
 	dw MankeyEvosAttacks
@@ -1342,6 +1346,47 @@ MeowthEvosAttacks:
 	dbw 50, PLAY_ROUGH
 	db 0 ; no more level-up moves
 
+MeowthAEvosAttacks:
+	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, PERSIAN_A
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, GROWL
+	dbw 6, BITE
+	dbw 9, FAKE_OUT
+	dbw 14, FURY_SWIPES
+	dbw 17, SCREECH
+	dbw 22, FAINT_ATTACK
+	dbw 25, HONE_CLAWS
+	dbw 30, PAY_DAY
+	dbw 33, SLASH
+	dbw 38, NASTY_PLOT
+	dbw 41, PAYBACK
+	dbw 46, FOCUS_ENERGY
+	dbw 49, NIGHT_SLASH
+	dbw 50, PLAY_ROUGH
+	dbw 55, DARK_PULSE
+	db 0 ; no more level-up moves
+
+MeowthGEvosAttacks:
+	dbbw EVOLVE_LEVEL, 28, PERRSERKER
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, GROWL
+	dbw 6, BITE
+	dbw 9, FAKE_OUT
+	dbw 14, METAL_CLAW
+	dbw 17, SCREECH
+	dbw 22, FAINT_ATTACK
+	dbw 25, HONE_CLAWS
+	dbw 30, PAY_DAY
+	dbw 33, SLASH
+	dbw 38, METAL_SOUND
+	dbw 41, PAYBACK
+	dbw 46, SWAGGER
+	dbw 49, NIGHT_SLASH
+	dbw 50, PLAY_ROUGH
+	db 0 ; no more level-up moves
+
 PersianEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, SWIFT
@@ -1361,6 +1406,50 @@ PersianEvosAttacks:
 	dbw 56, FOCUS_ENERGY
 	dbw 61, NIGHT_SLASH
 	dbw 65, PLAY_ROUGH
+	db 0 ; no more level-up moves
+
+PersianAEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SNARL
+	dbw 1, SNARL
+	dbw 1, SCRATCH
+	dbw 1, GROWL
+	dbw 6, BITE
+	dbw 9, FAKE_OUT
+	dbw 14, FURY_SWIPES
+	dbw 17, SCREECH
+	dbw 22, FAINT_ATTACK
+	dbw 25, HONE_CLAWS
+	dbw 32, POWER_GEM
+	dbw 37, SLASH
+	dbw 44, NASTY_PLOT
+	dbw 49, PAYBACK
+	dbw 56, FOCUS_ENERGY
+	dbw 61, NIGHT_SLASH
+	dbw 65, PLAY_ROUGH
+	dbw 69, DARK_PULSE
+	db 0 ; no more level-up moves
+
+PerrserkerEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, IRON_HEAD
+	dbw 1, IRON_HEAD
+	dbw 1, SCRATCH
+	dbw 1, GROWL
+	dbw 6, BITE
+	dbw 9, FAKE_OUT
+	dbw 14, METAL_CLAW
+	dbw 17, SCREECH
+	dbw 22, FAINT_ATTACK
+	dbw 25, HONE_CLAWS
+	dbw 32, PAY_DAY
+	dbw 37, SLASH
+	dbw 44, METAL_SOUND
+	dbw 49, PAYBACK
+	dbw 56, SWAGGER
+	dbw 61, NIGHT_SLASH
+	dbw 65, PLAY_ROUGH
+	dbw 70, THRASH
 	db 0 ; no more level-up moves
 
 PsyduckEvosAttacks:

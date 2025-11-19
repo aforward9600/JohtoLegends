@@ -85,7 +85,11 @@
 	const DUGTRIO    ; 33
 	const DUGTRIO_A
 	const MEOWTH     ; 34
+	const MEOWTH_A
+	const MEOWTH_G
 	const PERSIAN    ; 35
+	const PERSIAN_A
+	const PERRSERKER
 	const PSYDUCK    ; 36
 	const GOLDUCK    ; 37
 	const MANKEY     ; 38

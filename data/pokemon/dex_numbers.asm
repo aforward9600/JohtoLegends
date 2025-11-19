@@ -70,6 +70,9 @@ PokemonNumbers::
 	db "056@@"
 	db "056@@"
 	db "057@@"
+	db "057@@"
+	db "057@@"
+	db "058@@"
 	db "058@@"
 	db "059@@"
 	db "060@@"
@@ -350,4 +353,5 @@ PokemonNumbers::
 	db "335@@"
 	db "336@@"
 	db "337@@"
+	db "338@@"
 	assert_table_length NUM_POKEMON

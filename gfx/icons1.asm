@@ -68,7 +68,11 @@ Icons1:
 	dw DugtrioIcon
 	dw DugtrioAIcon
 	dw MeowthIcon
+	dw MeowthAIcon
+	dw MeowthGIcon
 	dw PersianIcon
+	dw PersianAIcon
+	dw PerrserkerIcon
 	dw PsyduckIcon
 	dw GolduckIcon
 	dw MankeyIcon
@@ -123,10 +127,6 @@ Icons1:
 	dw VoltorbIcon
 	dw ElectrodeIcon
 	dw ExeggcuteIcon
-	dw ExeggutorIcon
-	dw CuboneIcon
-	dw MarowakIcon
-	dw TyrogueIcon
 
 EggIcon:          INCBIN "gfx/icons/egg.2bpp"
 BulbasaurIcon:    INCBIN "gfx/icons/bulbasaur.2bpp"
@@ -195,7 +195,11 @@ DiglettAIcon:     INCBIN "gfx/icons/diglett_a.2bpp"
 DugtrioIcon:      INCBIN "gfx/icons/dugtrio.2bpp"
 DugtrioAIcon:     INCBIN "gfx/icons/dugtrio_a.2bpp"
 MeowthIcon:       INCBIN "gfx/icons/meowth.2bpp"
+MeowthAIcon:      INCBIN "gfx/icons/meowth_a.2bpp"
+MeowthGIcon:      INCBIN "gfx/icons/meowth_g.2bpp"
 PersianIcon:      INCBIN "gfx/icons/persian.2bpp"
+PersianAIcon:     INCBIN "gfx/icons/persian_a.2bpp"
+PerrserkerIcon:   INCBIN "gfx/icons/perrserker.2bpp"
 PsyduckIcon:      INCBIN "gfx/icons/psyduck.2bpp"
 GolduckIcon:      INCBIN "gfx/icons/golduck.2bpp"
 MankeyIcon:       INCBIN "gfx/icons/mankey.2bpp"
@@ -250,7 +254,3 @@ KinglerIcon:      INCBIN "gfx/icons/kingler.2bpp"
 VoltorbIcon:      INCBIN "gfx/icons/voltorb.2bpp"
 ElectrodeIcon:    INCBIN "gfx/icons/electrode.2bpp"
 ExeggcuteIcon:    INCBIN "gfx/icons/exeggcute.2bpp"
-ExeggutorIcon:    INCBIN "gfx/icons/exeggutor.2bpp"
-CuboneIcon:       INCBIN "gfx/icons/cubone.2bpp"
-MarowakIcon:      INCBIN "gfx/icons/marowak.2bpp"
-TyrogueIcon:      INCBIN "gfx/icons/tyrogue.2bpp"

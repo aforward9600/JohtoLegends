@@ -2,6 +2,10 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw ForretressIcon
+	dw DunsparceIcon
+	dw DudunsparsIcon
+	dw GligarIcon
 	dw GliscorIcon
 	dw SnubbullIcon
 	dw GranbullIcon
@@ -98,6 +102,10 @@ Icons3:
 	dw RegigigasIcon
 	dw DeoxysIcon
 
+ForretressIcon:   INCBIN "gfx/icons/forretress.2bpp"
+DunsparceIcon:    INCBIN "gfx/icons/dunsparce.2bpp"
+DudunsparsIcon:   INCBIN "gfx/icons/dudunspars.2bpp"
+GligarIcon:       INCBIN "gfx/icons/gligar.2bpp"
 GliscorIcon:      INCBIN "gfx/icons/gliscor.2bpp"
 SnubbullIcon:     INCBIN "gfx/icons/snubbull.2bpp"
 GranbullIcon:	  INCBIN "gfx/icons/granbull.2bpp"

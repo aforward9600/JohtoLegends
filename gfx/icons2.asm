@@ -2,6 +2,10 @@ SECTION "Mon Icons 2", ROMX
 
 Icons2:
 
+	dw ExeggutorIcon
+	dw CuboneIcon
+	dw MarowakIcon
+	dw TyrogueIcon
 	dw HitmonleeIcon
 	dw HitmonchanIcon
 	dw HitmontopIcon
@@ -124,11 +128,11 @@ Icons2:
 	dw GirafarigIcon
 	dw FarigirafIcon
 	dw PinecoIcon
-	dw ForretressIcon
-	dw DunsparceIcon
-	dw DudunsparsIcon
-	dw GligarIcon
 
+ExeggutorIcon:    INCBIN "gfx/icons/exeggutor.2bpp"
+CuboneIcon:       INCBIN "gfx/icons/cubone.2bpp"
+MarowakIcon:      INCBIN "gfx/icons/marowak.2bpp"
+TyrogueIcon:      INCBIN "gfx/icons/tyrogue.2bpp"
 HitmonleeIcon:    INCBIN "gfx/icons/hitmonlee.2bpp"
 HitmonchanIcon:   INCBIN "gfx/icons/hitmonchan.2bpp"
 HitmontopIcon:    INCBIN "gfx/icons/hitmontop.2bpp"
@@ -251,7 +255,3 @@ WobbuffetIcon:    INCBIN "gfx/icons/wobbuffet.2bpp"
 GirafarigIcon:    INCBIN "gfx/icons/girafarig.2bpp"
 FarigirafIcon:    INCBIN "gfx/icons/farigiraf.2bpp"
 PinecoIcon:       INCBIN "gfx/icons/pineco.2bpp"
-ForretressIcon:   INCBIN "gfx/icons/forretress.2bpp"
-DunsparceIcon:    INCBIN "gfx/icons/dunsparce.2bpp"
-DudunsparsIcon:   INCBIN "gfx/icons/dudunspars.2bpp"
-GligarIcon:       INCBIN "gfx/icons/gligar.2bpp"

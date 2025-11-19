@@ -65,7 +65,11 @@ FramesPointers:
 	dba DugtrioFrames
 	dba DugtrioAFrames
 	dba MeowthFrames
+	dba MeowthAFrames
+	dba MeowthGFrames
 	dba PersianFrames
+	dba PersianAFrames
+	dba PerrserkerFrames
 	dba PsyduckFrames
 	dba GolduckFrames
 	dba MankeyFrames

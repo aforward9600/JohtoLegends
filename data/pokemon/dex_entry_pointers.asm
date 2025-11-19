@@ -66,7 +66,11 @@ PokedexDataPointerTable:
 	dba DugtrioPokedexEntry
 	dba DugtrioAPokedexEntry
 	dba MeowthPokedexEntry
+	dba MeowthAPokedexEntry
+	dba MeowthGPokedexEntry
 	dba PersianPokedexEntry
+	dba PersianAPokedexEntry
+	dba PerrserkerPokedexEntry
 	dba PsyduckPokedexEntry
 	dba GolduckPokedexEntry
 	dba MankeyPokedexEntry

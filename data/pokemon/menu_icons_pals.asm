@@ -77,7 +77,11 @@ MonMenuIconPals:
 	icon_pals BROWN,  PURPLE ; DUGTRIO
 	icon_pals BROWN,  BLUE   ; DUGTRIO_A
 	icon_pals BROWN,  PURPLE ; MEOWTH
+	icon_pals GRAY,   BLUE   ; MEOWTH_A
+	icon_pals BROWN,  RED    ; MEOWTH_G
 	icon_pals BROWN,  PURPLE ; PERSIAN
+	icon_pals GRAY,   BLUE   ; PERSIAN_A
+	icon_pals GRAY,   BROWN  ; PERRSERKER
 	icon_pals RED,    PURPLE ; PSYDUCK
 	icon_pals TEAL,   BLUE   ; GOLDUCK
 	icon_pals BROWN,  GREEN  ; MANKEY

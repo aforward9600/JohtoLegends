@@ -459,13 +459,13 @@ INCLUDE "engine/battle_anims/bg_effects.asm"
 
 SECTION "Options Menu", ROMX
 INCLUDE "engine/menus/options_menu.asm"
+INCLUDE "engine/battle/misc.asm"
 
 SECTION "bank3E", ROMX
 
 INCLUDE "engine/gfx/load_font.asm"
 INCLUDE "engine/events/play_slow_cry.asm"
 INCLUDE "engine/pokedex/new_pokedex_entry.asm"
-INCLUDE "engine/battle/misc.asm"
 
 SECTION "Unown Dex", ROMX
 

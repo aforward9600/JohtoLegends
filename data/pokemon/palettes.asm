@@ -162,8 +162,16 @@ INCLUDE "gfx/pokemon/dugtrio_a/normal.pal"
 INCLUDE "gfx/pokemon/dugtrio_a/shiny.pal"
 INCBIN "gfx/pokemon/meowth/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/meowth/shiny.pal"
+INCLUDE "gfx/pokemon/meowth_a/normal.pal"
+INCLUDE "gfx/pokemon/meowth_a/shiny.pal"
+INCLUDE "gfx/pokemon/meowth_g/normal.pal"
+INCLUDE "gfx/pokemon/meowth_g/shiny.pal"
 INCBIN "gfx/pokemon/persian/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/persian/shiny.pal"
+INCLUDE "gfx/pokemon/persian_a/normal.pal"
+INCLUDE "gfx/pokemon/persian_a/shiny.pal"
+INCLUDE "gfx/pokemon/perrserker/normal.pal"
+INCLUDE "gfx/pokemon/perrserker/shiny.pal"
 INCBIN "gfx/pokemon/psyduck/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/psyduck/shiny.pal"
 INCBIN "gfx/pokemon/golduck/front.gbcpal", middle_colors

@@ -66,7 +66,11 @@ PreviousEvolutionStage::
 	dw DIGLETT
 	dw DIGLETT_A
 	dw 0
+	dw 0
+	dw 0
 	dw MEOWTH
+	dw MEOWTH_A
+	dw MEOWTH_G
 	dw 0
 	dw PSYDUCK
 	dw 0    ;38
