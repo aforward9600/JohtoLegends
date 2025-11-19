@@ -408,4 +408,8 @@ MoveNames::
 	db "Force Palm@"
 	db "Sky Uppercut@"
 	db "Psycho Boost@"
+	db "Head Smash@"
+	db "Raging Fury@"
+	db "StrangeSteam@"
+	db "Shadow Bone@"
 ;	db "Wake Up Slap@"

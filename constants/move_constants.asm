@@ -415,6 +415,10 @@
 	const FORCE_PALM
 	const SKY_UPPERCUT
 	const PSYCHO_BOOST
+	const HEAD_SMASH
+	const RAGING_FURY
+	const STRANGESTEAM
+	const SHADOW_BONE
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 

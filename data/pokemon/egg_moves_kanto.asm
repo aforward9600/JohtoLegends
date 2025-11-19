@@ -487,6 +487,7 @@ GrowlitheEggMoves:
 	dw MORNING_SUN
 	dw PLAY_ROUGH
 	dw HEAT_WAVE
+	dw RAGING_FURY
 	dw -1 ; end
 
 PoliwagEggMoves:

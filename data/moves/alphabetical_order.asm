@@ -156,6 +156,7 @@ AlphabeticalMoveList::
 	dw HAZE
 	dw HEADBUTT
 	dw HEADLONGRUSH
+	dw HEAD_SMASH
 	dw HEAL_BELL
 	dw HEAT_WAVE
 	dw HEX
@@ -272,6 +273,7 @@ AlphabeticalMoveList::
 	dw QUICK_ATTACK
 	dw QUIVER_DANCE
 	dw RAGE
+	dw RAGING_FURY
 	dw RAIN_DANCE
 	dw RAPID_SPIN
 	dw RAZOR_LEAF
@@ -306,6 +308,7 @@ AlphabeticalMoveList::
 	dw SEISMIC_TOSS
 	dw SELFDESTRUCT
 	dw SHADOW_BALL
+	dw SHADOW_BONE
 	dw SHADOW_CLAW
 	dw SHADOW_PUNCH
 	dw SHADOW_SNEAK
@@ -349,6 +352,7 @@ AlphabeticalMoveList::
 	dw STOMP
 	dw STONE_EDGE
 	dw STONE_BASH
+	dw STRANGESTEAM
 	dw STRENGTH
 	dw STRENGTH_SAP
 	dw STRING_SHOT
