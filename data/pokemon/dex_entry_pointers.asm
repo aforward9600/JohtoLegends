@@ -77,7 +77,9 @@ PokedexDataPointerTable:
 	dba PrimeapePokedexEntry
 	dba AnnihilapePokedexEntry
 	dba GrowlithePokedexEntry
+	dba GrowlitheHPokedexEntry
 	dba ArcaninePokedexEntry
+	dba ArcanineHPokedexEntry
 	dba PoliwagPokedexEntry
 	dba PoliwhirlPokedexEntry
 	dba PoliwrathPokedexEntry

@@ -76,7 +76,9 @@ FramesPointers:
 	dba PrimeapeFrames
 	dba AnnihilapeFrames
 	dba GrowlitheFrames
+	dba GrowlitheHFrames
 	dba ArcanineFrames
+	dba ArcanineHFrames
 	dba PoliwagFrames
 	dba PoliwhirlFrames
 	dba PoliwrathFrames

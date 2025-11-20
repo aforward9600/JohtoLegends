@@ -2,6 +2,8 @@ SECTION "Mon Icons 2", ROMX
 
 Icons2:
 
+	dw ElectrodeIcon
+	dw ExeggcuteIcon
 	dw ExeggutorIcon
 	dw CuboneIcon
 	dw MarowakIcon
@@ -126,9 +128,9 @@ Icons2:
 	dw WynautIcon
 	dw WobbuffetIcon
 	dw GirafarigIcon
-	dw FarigirafIcon
-	dw PinecoIcon
 
+ElectrodeIcon:    INCBIN "gfx/icons/electrode.2bpp"
+ExeggcuteIcon:    INCBIN "gfx/icons/exeggcute.2bpp"
 ExeggutorIcon:    INCBIN "gfx/icons/exeggutor.2bpp"
 CuboneIcon:       INCBIN "gfx/icons/cubone.2bpp"
 MarowakIcon:      INCBIN "gfx/icons/marowak.2bpp"
@@ -253,5 +255,3 @@ UnownIcon:        INCBIN "gfx/icons/unown.2bpp"
 WynautIcon:       INCBIN "gfx/icons/wynaut.2bpp"
 WobbuffetIcon:    INCBIN "gfx/icons/wobbuffet.2bpp"
 GirafarigIcon:    INCBIN "gfx/icons/girafarig.2bpp"
-FarigirafIcon:    INCBIN "gfx/icons/farigiraf.2bpp"
-PinecoIcon:       INCBIN "gfx/icons/pineco.2bpp"

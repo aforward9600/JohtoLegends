@@ -244,7 +244,7 @@ Pokered_MonIndices:
 	db GIRAFARIG
 	db PINECO
 	db FORRETRESS
-	db DUNSPARCE
+	db GROWLITHE_H
 	db MEOWTH_A
 	db STEELIX
 	db MEOWTH_G

@@ -82,7 +82,9 @@ PokemonCries::
 	mon_cry CRY_NIDOQUEEN,   $0af,  $0c0 ; PRIMEAPE
 	mon_cry CRY_NIDOQUEEN,   $0af,  $0c0 ; ANNIHILAPE
 	mon_cry CRY_GROWLITHE,   $020,  $0c0 ; GROWLITHE
+	mon_cry CRY_GROWLITHE,   $020,  $0c0 ; GROWLITHE_H
 	mon_cry CRY_WEEDLE,      $000,  $100 ; ARCANINE
+	mon_cry CRY_WEEDLE,      $000,  $100 ; ARCANINE_H
 	mon_cry CRY_PIDGEY,      $0ff,  $17f ; POLIWAG
 	mon_cry CRY_PIDGEY,      $077,  $0e0 ; POLIWHIRL
 	mon_cry CRY_PIDGEY,      $000,  $17f ; POLIWRATH

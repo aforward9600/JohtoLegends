@@ -96,7 +96,9 @@
 	const PRIMEAPE   ; 39
 	const ANNIHILAPE
 	const GROWLITHE  ; 3a
+	const GROWLITHE_H
 	const ARCANINE   ; 3b
+	const ARCANINE_H
 	const POLIWAG    ; 3c
 	const POLIWHIRL  ; 3d
 	const POLIWRATH  ; 3e

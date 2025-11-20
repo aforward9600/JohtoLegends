@@ -184,8 +184,12 @@ INCLUDE "gfx/pokemon/annihilape/normal.pal"
 INCLUDE "gfx/pokemon/annihilape/shiny.pal"
 INCBIN "gfx/pokemon/growlithe/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/growlithe/shiny.pal"
+INCLUDE "gfx/pokemon/growlithe_h/normal.pal"
+INCLUDE "gfx/pokemon/growlithe_h/shiny.pal"
 INCBIN "gfx/pokemon/arcanine/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/arcanine/shiny.pal"
+INCLUDE "gfx/pokemon/arcanine_h/normal.pal"
+INCLUDE "gfx/pokemon/arcanine_h/shiny.pal"
 INCBIN "gfx/pokemon/poliwag/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/poliwag/shiny.pal"
 INCBIN "gfx/pokemon/poliwhirl/front.gbcpal", middle_colors

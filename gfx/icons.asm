@@ -1,7 +1,7 @@
 IconPointers::
 	indirect_table 2, 0
-	indirect_entries EXEGGCUTE, Icons1
-	indirect_entries PINECO, Icons2
+	indirect_entries VOLTORB, Icons1
+	indirect_entries GIRAFARIG, Icons2
 	indirect_entries NUM_POKEMON, Icons3
 	indirect_table_end
 

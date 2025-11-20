@@ -88,7 +88,9 @@ MonMenuIconPals:
 	icon_pals BROWN,  TEAL   ; PRIMAPE
 	icon_pals GRAY,   BLUE   ; ANNIHILAPE
 	icon_pals RED,    BROWN  ; GROWLITHE
+	icon_pals RED,    BROWN  ; GROWLITHE_H
 	icon_pals RED,    BROWN  ; ARCANINE
+	icon_pals RED,    BROWN  ; ARCANINE_H
 	icon_pals RED,    BLUE   ; POLIWAG
 	icon_pals BLUE,   TEAL   ; POLIWHIRL
 	icon_pals BLUE,   TEAL   ; POLIWRATH

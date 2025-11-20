@@ -164,8 +164,12 @@ PokemonPicPointers::
 	dba AnnihilapeBackpic
 	dba GrowlitheFrontpic
 	dba GrowlitheBackpic
+	dba GrowlitheHFrontpic
+	dba GrowlitheHBackpic
 	dba ArcanineFrontpic
 	dba ArcanineBackpic
+	dba ArcanineHFrontpic
+	dba ArcanineHBackpic
 	dba PoliwagFrontpic
 	dba PoliwagBackpic
 	dba PoliwhirlFrontpic

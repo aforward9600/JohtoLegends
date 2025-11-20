@@ -77,7 +77,9 @@ PreviousEvolutionStage::
 	dw MANKEY
 	dw PRIMEAPE
 	dw 0
+	dw 0
 	dw GROWLITHE
+	dw GROWLITHE_H
 	dw 0
 	dw POLIWAG
 	dw POLIWHIRL

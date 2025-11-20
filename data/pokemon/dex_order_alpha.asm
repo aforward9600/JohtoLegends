@@ -12,6 +12,7 @@ AlphabeticalPokedexOrder:
 	dw ANNIHILAPE
 	dw ARBOK
 	dw ARCANINE
+	dw ARCANINE_H
 	dw ARIADOS
 	dw ARON
 	dw ARTICUNO
@@ -116,6 +117,7 @@ AlphabeticalPokedexOrder:
 	dw GRAVELER
 	dw GRIMER
 	dw GROWLITHE
+	dw GROWLITHE_H
 	dw GYARADOS
 	dw HAPPINY
 	dw HAUNTER

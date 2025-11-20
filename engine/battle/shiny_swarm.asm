@@ -428,7 +428,7 @@ GenerateShinySwarm:
 	if HIGH(GLIGAR) == 0
 		or h
 	else
-		jr nz, .skipshineswarm
+		jp nz, .skipshineswarm
 		if HIGH(GLIGAR)
 			dec h
 		else

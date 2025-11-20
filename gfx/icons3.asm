@@ -2,6 +2,8 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw FarigirafIcon
+	dw PinecoIcon
 	dw ForretressIcon
 	dw DunsparceIcon
 	dw DudunsparsIcon
@@ -102,6 +104,8 @@ Icons3:
 	dw RegigigasIcon
 	dw DeoxysIcon
 
+FarigirafIcon:    INCBIN "gfx/icons/farigiraf.2bpp"
+PinecoIcon:       INCBIN "gfx/icons/pineco.2bpp"
 ForretressIcon:   INCBIN "gfx/icons/forretress.2bpp"
 DunsparceIcon:    INCBIN "gfx/icons/dunsparce.2bpp"
 DudunsparsIcon:   INCBIN "gfx/icons/dudunspars.2bpp"

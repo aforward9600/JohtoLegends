@@ -80,6 +80,8 @@ PokemonNames::
 	db "Primeape@@"
 	db "Annihilape"
 	db "Growlithe@"
+	db "Growlithe@"
+	db "Arcanine@@"
 	db "Arcanine@@"
 	db "Poliwag@@@"
 	db "Poliwhirl@"

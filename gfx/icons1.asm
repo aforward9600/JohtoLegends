@@ -79,7 +79,9 @@ Icons1:
 	dw PrimeapeIcon
 	dw AnnihilapeIcon
 	dw GrowlitheIcon
+	dw GrowlitheHIcon
 	dw ArcanineIcon
+	dw ArcanineHIcon
 	dw PoliwagIcon
 	dw PoliwhirlIcon
 	dw PoliwrathIcon
@@ -125,8 +127,6 @@ Icons1:
 	dw KrabbyIcon
 	dw KinglerIcon
 	dw VoltorbIcon
-	dw ElectrodeIcon
-	dw ExeggcuteIcon
 
 EggIcon:          INCBIN "gfx/icons/egg.2bpp"
 BulbasaurIcon:    INCBIN "gfx/icons/bulbasaur.2bpp"
@@ -206,7 +206,9 @@ MankeyIcon:       INCBIN "gfx/icons/mankey.2bpp"
 PrimeapeIcon:     INCBIN "gfx/icons/primeape.2bpp"
 AnnihilapeIcon:   INCBIN "gfx/icons/annihilape.2bpp"
 GrowlitheIcon:    INCBIN "gfx/icons/growlithe.2bpp"
+GrowlitheHIcon:   INCBIN "gfx/icons/growlithe_h.2bpp"
 ArcanineIcon:     INCBIN "gfx/icons/arcanine.2bpp"
+ArcanineHIcon:    INCBIN "gfx/icons/arcanine_h.2bpp"
 PoliwagIcon:      INCBIN "gfx/icons/poliwag.2bpp"
 PoliwhirlIcon:    INCBIN "gfx/icons/poliwhirl.2bpp"
 PoliwrathIcon:    INCBIN "gfx/icons/poliwrath.2bpp"
@@ -252,5 +254,3 @@ HypnoIcon:        INCBIN "gfx/icons/hypno.2bpp"
 KrabbyIcon:       INCBIN "gfx/icons/krabby.2bpp"
 KinglerIcon:      INCBIN "gfx/icons/kingler.2bpp"
 VoltorbIcon:      INCBIN "gfx/icons/voltorb.2bpp"
-ElectrodeIcon:    INCBIN "gfx/icons/electrode.2bpp"
-ExeggcuteIcon:    INCBIN "gfx/icons/exeggcute.2bpp"

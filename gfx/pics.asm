@@ -101,6 +101,10 @@ SECTION "Arcanine Front", ROMX
 
 ArcanineFrontpic:    INCBIN "gfx/pokemon/arcanine/front.animated.2bpp.lz"
 
+SECTION "Arcanine_H Front", ROMX
+
+ArcanineHFrontpic:   INCBIN "gfx/pokemon/arcanine_h/front.animated.2bpp.lz"
+
 SECTION "Tyranitar Front", ROMX
 
 TyranitarFrontpic:   INCBIN "gfx/pokemon/tyranitar/front.animated.2bpp.lz"
@@ -710,6 +714,10 @@ CloysterBackpic:     INCBIN "gfx/pokemon/cloyster/back.2bpp.lz"
 HoothootFrontpic:    INCBIN "gfx/pokemon/hoothoot/front.animated.2bpp.lz"
 UnownFBackpic:       INCBIN "gfx/pokemon/unown_f/back.2bpp.lz"
 
+SECTION "Growlithe_H Front", ROMX
+
+GrowlitheHFrontpic:  INCBIN "gfx/pokemon/growlithe_h/front.animated.2bpp.lz"
+
 
 SECTION "Pics 11", ROMX
 
@@ -802,6 +810,10 @@ GoldeenBackpic:      INCBIN "gfx/pokemon/goldeen/back.2bpp.lz"
 BulbasaurFrontpic:   INCBIN "gfx/pokemon/bulbasaur/front.animated.2bpp.lz"
 StarmieBackpic:      INCBIN "gfx/pokemon/starmie/back.2bpp.lz"
 
+SECTION "Arcanine_H Back", ROMX
+
+ArcanineHBackpic:    INCBIN "gfx/pokemon/arcanine_h/back.2bpp.lz"
+
 
 SECTION "Pics 13", ROMX
 
@@ -849,6 +861,11 @@ MysticalmanPic:      INCBIN "gfx/trainers/mysticalman.2bpp.lz"
 CooltrainerfPic:     INCBIN "gfx/trainers/cooltrainer_f.2bpp.lz"
 ElectrodeFrontpic:   INCBIN "gfx/pokemon/electrode/front.animated.2bpp.lz"
 RaichuABackpic:      INCBIN "gfx/pokemon/raichu_a/back.2bpp.lz"
+
+SECTION "Growlithe_H Back", ROMX
+
+GrowlitheHBackpic:   INCBIN "gfx/pokemon/growlithe_h/back.2bpp.lz"
+
 
 SECTION "Persian_A Backpic", ROMX
 

@@ -76,7 +76,9 @@ AnimationPointers:
 	dw PrimeapeAnimation
 	dw AnnihilapeAnimation
 	dw GrowlitheAnimation
+	dw GrowlitheHAnimation
 	dw ArcanineAnimation
+	dw ArcanineHAnimation
 	dw PoliwagAnimation
 	dw PoliwhirlAnimation
 	dw PoliwrathAnimation

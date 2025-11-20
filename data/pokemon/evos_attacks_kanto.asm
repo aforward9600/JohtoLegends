@@ -78,7 +78,9 @@ EvosAttacksPointers1::
 	dw PrimeapeEvosAttacks
 	dw AnnihilapeEvosAttacks
 	dw GrowlitheEvosAttacks
+	dw GrowlitheHEvosAttacks
 	dw ArcanineEvosAttacks
+	dw ArcanineHEvosAttacks
 	dw PoliwagEvosAttacks
 	dw PoliwhirlEvosAttacks
 	dw PoliwrathEvosAttacks
@@ -1589,6 +1591,30 @@ GrowlitheEvosAttacks:
 	dbw 48, FLARE_BLITZ
 	db 0 ; no more level-up moves
 
+GrowlitheHEvosAttacks:
+	dbbw EVOLVE_ITEM, FIRE_STONE, ARCANINE_H
+	db 0 ; no more evolutions
+	dbw 1, BITE
+	dbw 1, ROAR
+	dbw 6, EMBER
+	dbw 8, LEER
+	dbw 10, ODOR_SLEUTH
+	dbw 12, HOWL
+	dbw 17, FLAME_WHEEL
+	dbw 19, REVERSAL
+	dbw 21, FIRE_FANG
+	dbw 23, TAKE_DOWN
+	dbw 28, FLAME_CHARGE
+	dbw 30, AGILITY
+	dbw 32, ROCK_SLIDE
+	dbw 34, FLAMETHROWER
+	dbw 39, CRUNCH
+	dbw 41, HEAT_WAVE
+	dbw 43, OUTRAGE
+	dbw 45, STONE_EDGE
+	dbw 48, FLARE_BLITZ
+	db 0 ; no more level-up moves
+
 ArcanineEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, EXTREMESPEED
@@ -1598,6 +1624,18 @@ ArcanineEvosAttacks:
 	dbw 1, LEER
 	dbw 1, TAKE_DOWN
 	dbw 1, FLAME_WHEEL
+	db 0 ; no more level-up moves
+
+ArcanineHEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, EXTREMESPEED
+	dbw 1, EXTREMESPEED
+	dbw 1, THUNDER_FANG
+	dbw 1, ROAR
+	dbw 1, LEER
+	dbw 1, TAKE_DOWN
+	dbw 1, FLAME_WHEEL
+	dbw 64, RAGING_FURY
 	db 0 ; no more level-up moves
 
 PoliwagEvosAttacks:
