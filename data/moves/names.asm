@@ -412,4 +412,5 @@ MoveNames::
 	db "Raging Fury@"
 	db "StrangeSteam@"
 	db "Shadow Bone@"
+	db "Poison Tail@"
 ;	db "Wake Up Slap@"

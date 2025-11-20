@@ -418,6 +418,7 @@ MoveDescriptions1:
 	dw ThrashDescription ; Raging Fury
 	dw StrangeSteamDescription
 	dw ShadowBoneDescription
+	dw CrossPoisonDescription ; Poison Tail
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:

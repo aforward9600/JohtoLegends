@@ -243,6 +243,7 @@ EkansEggMoves:
 	dw DISABLE
 	dw SCARY_FACE
 	dw SUCKER_PUNCH
+	dw POISON_TAIL
 	dw -1 ; end
 
 PichuEggMoves:
@@ -294,6 +295,7 @@ NidoranFEggMoves:
 	dw ENDURE
 	dw PURSUIT
 	dw HONE_CLAWS
+	dw POISON_TAIL
 	dw -1 ; end
 
 NidoranMEggMoves:
@@ -307,6 +309,7 @@ NidoranMEggMoves:
 	dw FOCUS_ENERGY
 	dw SUCKER_PUNCH
 	dw HONE_CLAWS
+	dw POISON_TAIL
 	dw -1 ; end
 
 CleffaEggMoves:
