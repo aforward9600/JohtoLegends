@@ -420,6 +420,9 @@
 	const STRANGESTEAM
 	const SHADOW_BONE
 	const POISON_TAIL
+	const FREEZE_GLARE
+	const THUNDER_KICK
+	const FIERY_WRATH
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 

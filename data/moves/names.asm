@@ -413,4 +413,7 @@ MoveNames::
 	db "StrangeSteam@"
 	db "Shadow Bone@"
 	db "Poison Tail@"
+	db "Freeze Glare@"
+	db "Thunder Kick@"
+	db "Fiery Wrath@"
 ;	db "Wake Up Slap@"

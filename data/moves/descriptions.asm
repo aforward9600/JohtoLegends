@@ -419,6 +419,9 @@ MoveDescriptions1:
 	dw StrangeSteamDescription
 	dw ShadowBoneDescription
 	dw CrossPoisonDescription ; Poison Tail
+	dw FreezeGlareDescription
+	dw ThunderKickDescription
+	dw FieryWrathDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1803,3 +1806,15 @@ StrangeSteamDescription:
 ShadowBoneDescription:
 	db   "Ethereal bone that"
 	line "may lower Defense.@"
+
+FreezeGlareDescription:
+	db   "Icy glare that can"
+	line "freeze.@"
+
+ThunderKickDescription:
+	db   "Shocking kick that"
+	line "lowers Defense.@"
+
+FieryWrathDescription:
+	db   "Wrathful flames"
+	line "that can flinch.@"
