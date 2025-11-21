@@ -118,7 +118,7 @@ Aerodactyl, Celebi, Houndour, Houndoom, Slowbro, Hitmonchan, Xatu, Pidgeot,
 Azumarill, Crobat, Fearow, Nidoking, Entei, Ho-Oh, Exeggutor, Starmie,
 Forretress, Granbull, Meganium, Bellossom, Kadabra & Delibird back sprite- SoupPotato
 
-Korotora, Raitora, Kurstraw & Pangshi graphics and game data:
+Korotora and Raitora graphics and game data:
 SoupPotato, GS 97 Reforged Team, Game Freak
 
 Gorotora front sprite: Helix Chamber

@@ -242,8 +242,8 @@ Pokered_MonIndices:
 	db UNOWN
 	db WOBBUFFET
 	db GIRAFARIG
-	db PINECO
-	db FORRETRESS
+	db GRAVELER_A
+	db GOLEM_A
 	db GROWLITHE_H
 	db MEOWTH_A
 	db STEELIX

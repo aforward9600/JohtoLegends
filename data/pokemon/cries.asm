@@ -101,8 +101,11 @@ PokemonCries::
 	mon_cry CRY_VENONAT,     $000,  $100 ; TENTACOOL
 	mon_cry CRY_VENONAT,     $0ee,  $17f ; TENTACRUEL
 	mon_cry CRY_VULPIX,      $0f0,  $090 ; GEODUDE
+	mon_cry CRY_VULPIX,      $0f0,  $090 ; GEODUDE_A
 	mon_cry CRY_VULPIX,      $000,  $100 ; GRAVELER
+	mon_cry CRY_VULPIX,      $000,  $100 ; GRAVELER_A
 	mon_cry CRY_GOLEM,       $0e0,  $0c0 ; GOLEM
+	mon_cry CRY_GOLEM,       $0e0,  $0c0 ; GOLEM_A
 	mon_cry CRY_WEEPINBELL,  $000,  $100 ; PONYTA
 	mon_cry CRY_WEEPINBELL,  $020,  $140 ; RAPIDASH
 	mon_cry CRY_SLOWPOKE,    $000,  $100 ; SLOWPOKE

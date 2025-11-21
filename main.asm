@@ -463,13 +463,13 @@ INCLUDE "engine/battle/misc.asm"
 
 SECTION "bank3E", ROMX
 
-INCLUDE "engine/gfx/load_font.asm"
 INCLUDE "engine/events/play_slow_cry.asm"
 INCLUDE "engine/pokedex/new_pokedex_entry.asm"
-
-SECTION "Unown Dex", ROMX
-
 INCLUDE "engine/pokedex/unown_dex.asm"
+
+SECTION "Load Font", ROMX
+
+INCLUDE "engine/gfx/load_font.asm"
 
 INCLUDE "engine/battle/hidden_power.asm"
 SECTION "Time Capsule 2", ROMX

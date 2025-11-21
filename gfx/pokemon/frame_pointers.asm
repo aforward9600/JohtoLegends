@@ -95,8 +95,11 @@ FramesPointers:
 	dba TentacoolFrames
 	dba TentacruelFrames
 	dba GeodudeFrames
+	dba GeodudeAFrames
 	dba GravelerFrames
+	dba GravelerAFrames
 	dba GolemFrames
+	dba GolemAFrames
 	dba PonytaFrames
 	dba RapidashFrames
 	dba SlowpokeFrames

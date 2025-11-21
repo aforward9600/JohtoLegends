@@ -95,8 +95,11 @@ AnimationIdlePointers:
 	dw TentacoolAnimationIdle
 	dw TentacruelAnimationIdle
 	dw GeodudeAnimationIdle
+	dw GeodudeAAnimationIdle
 	dw GravelerAnimationIdle
+	dw GravelerAAnimationIdle
 	dw GolemAnimationIdle
+	dw GolemAAnimationIdle
 	dw PonytaAnimationIdle
 	dw RapidashAnimationIdle
 	dw SlowpokeAnimationIdle

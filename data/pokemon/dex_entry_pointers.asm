@@ -96,8 +96,11 @@ PokedexDataPointerTable:
 	dba TentacoolPokedexEntry
 	dba TentacruelPokedexEntry
 	dba GeodudePokedexEntry
+	dba GeodudeAPokedexEntry
 	dba GravelerPokedexEntry
+	dba GravelerAPokedexEntry
 	dba GolemPokedexEntry
+	dba GolemAPokedexEntry
 	dba PonytaPokedexEntry
 	dba RapidashPokedexEntry
 	dba SlowpokePokedexEntry

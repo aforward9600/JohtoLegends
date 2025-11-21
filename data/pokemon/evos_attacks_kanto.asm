@@ -97,8 +97,11 @@ EvosAttacksPointers1::
 	dw TentacoolEvosAttacks
 	dw TentacruelEvosAttacks
 	dw GeodudeEvosAttacks
+	dw GeodudeAEvosAttacks
 	dw GravelerEvosAttacks
+	dw GravelerAEvosAttacks
 	dw GolemEvosAttacks
+	dw GolemAEvosAttacks
 	dw PonytaEvosAttacks
 	dw RapidashEvosAttacks
 	dw SlowpokeEvosAttacks
@@ -1936,6 +1939,27 @@ GeodudeEvosAttacks:
 	dbw 42, STONE_EDGE
 	db 0 ; no more level-up moves
 
+GeodudeAEvosAttacks:
+	dbbw EVOLVE_LEVEL, 25, GRAVELER_A
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, DEFENSE_CURL
+	dbw 4, MUD_SLAP
+	dbw 6, ROCK_POLISH
+	dbw 10, ROLLOUT
+	dbw 12, SPARK
+	dbw 16, ROCK_THROW
+	dbw 18, ROCK_TOMB
+	dbw 22, THUNDERPUNCH
+	dbw 24, SELFDESTRUCT
+	dbw 28, SPIKES
+	dbw 30, ROCK_BLAST
+	dbw 34, DISCHARGE
+	dbw 36, EXPLOSION
+	dbw 40, DOUBLE_EDGE
+	dbw 42, STONE_EDGE
+	db 0 ; no more level-up moves
+
 GravelerEvosAttacks:
 	dbbw EVOLVE_ITEM, LINK_CABLE, GOLEM
 	db 0 ; no more evolutions
@@ -1952,6 +1976,49 @@ GravelerEvosAttacks:
 	dbw 30, SPIKES
 	dbw 34, ROCK_BLAST
 	dbw 40, EARTHQUAKE
+	dbw 44, EXPLOSION
+	dbw 50, DOUBLE_EDGE
+	dbw 54, STONE_EDGE
+	db 0 ; no more level-up moves
+
+GravelerAEvosAttacks:
+	dbbw EVOLVE_ITEM, LINK_CABLE, GOLEM_A
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, DEFENSE_CURL
+	dbw 4, MUD_SLAP
+	dbw 6, ROCK_POLISH
+	dbw 10, ROLLOUT
+	dbw 12, SPARK
+	dbw 16, ROCK_THROW
+	dbw 18, ROCK_TOMB
+	dbw 22, THUNDERPUNCH
+	dbw 24, SELFDESTRUCT
+	dbw 30, SPIKES
+	dbw 34, ROCK_BLAST
+	dbw 40, DISCHARGE
+	dbw 44, EXPLOSION
+	dbw 50, DOUBLE_EDGE
+	dbw 54, STONE_EDGE
+	db 0 ; no more level-up moves
+
+GolemAEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, GYRO_BALL
+	dbw 1, GYRO_BALL
+	dbw 1, TACKLE
+	dbw 1, DEFENSE_CURL
+	dbw 4, MUD_SLAP
+	dbw 6, ROCK_POLISH
+	dbw 10, ROLLOUT
+	dbw 12, SPARK
+	dbw 16, ROCK_THROW
+	dbw 18, ROCK_TOMB
+	dbw 22, THUNDERPUNCH
+	dbw 24, SELFDESTRUCT
+	dbw 30, SPIKES
+	dbw 34, ROCK_BLAST
+	dbw 40, DISCHARGE
 	dbw 44, EXPLOSION
 	dbw 50, DOUBLE_EDGE
 	dbw 54, STONE_EDGE

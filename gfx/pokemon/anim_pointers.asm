@@ -95,8 +95,11 @@ AnimationPointers:
 	dw TentacoolAnimation
 	dw TentacruelAnimation
 	dw GeodudeAnimation
+	dw GeodudeAAnimation
 	dw GravelerAnimation
+	dw GravelerAAnimation
 	dw GolemAnimation
+	dw GolemAAnimation
 	dw PonytaAnimation
 	dw RapidashAnimation
 	dw SlowpokeAnimation

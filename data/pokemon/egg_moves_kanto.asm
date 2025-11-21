@@ -97,6 +97,9 @@ EggMovePointers1:
 	dw TentacoolEggMoves
 	dw NoEggMoves1
 	dw GeodudeEggMoves
+	dw GeodudeEggMoves
+	dw NoEggMoves1
+	dw NoEggMoves1
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw PonytaEggMoves

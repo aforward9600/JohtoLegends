@@ -222,10 +222,16 @@ INCBIN "gfx/pokemon/tentacruel/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/tentacruel/shiny.pal"
 INCBIN "gfx/pokemon/geodude/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/geodude/shiny.pal"
+INCLUDE "gfx/pokemon/geodude_a/normal.pal"
+INCLUDE "gfx/pokemon/geodude_a/shiny.pal"
 INCBIN "gfx/pokemon/graveler/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/graveler/shiny.pal"
+INCLUDE "gfx/pokemon/graveler_a/normal.pal"
+INCLUDE "gfx/pokemon/graveler_a/shiny.pal"
 INCBIN "gfx/pokemon/golem/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/golem/shiny.pal"
+INCLUDE "gfx/pokemon/golem_a/normal.pal"
+INCLUDE "gfx/pokemon/golem_a/shiny.pal"
 INCBIN "gfx/pokemon/ponyta/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/ponyta/shiny.pal"
 INCBIN "gfx/pokemon/rapidash/front.gbcpal", middle_colors

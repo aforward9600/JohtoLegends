@@ -2,6 +2,9 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw WynautIcon
+	dw WobbuffetIcon
+	dw GirafarigIcon
 	dw FarigirafIcon
 	dw PinecoIcon
 	dw ForretressIcon
@@ -104,6 +107,9 @@ Icons3:
 	dw RegigigasIcon
 	dw DeoxysIcon
 
+WynautIcon:       INCBIN "gfx/icons/wynaut.2bpp"
+WobbuffetIcon:    INCBIN "gfx/icons/wobbuffet.2bpp"
+GirafarigIcon:    INCBIN "gfx/icons/girafarig.2bpp"
 FarigirafIcon:    INCBIN "gfx/icons/farigiraf.2bpp"
 PinecoIcon:       INCBIN "gfx/icons/pineco.2bpp"
 ForretressIcon:   INCBIN "gfx/icons/forretress.2bpp"

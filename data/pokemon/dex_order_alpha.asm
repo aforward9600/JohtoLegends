@@ -101,6 +101,7 @@ AlphabeticalPokedexOrder:
 	dw GASTLY
 	dw GENGAR
 	dw GEODUDE
+	dw GEODUDE_A
 	dw GIBLE
 	dw GIRAFARIG
 	dw GLACEON
@@ -112,9 +113,11 @@ AlphabeticalPokedexOrder:
 	dw GOLDEEN
 	dw GOLDUCK
 	dw GOLEM
+	dw GOLEM_A
 	dw GOROTORA
 	dw GRANBULL
 	dw GRAVELER
+	dw GRAVELER_A
 	dw GRIMER
 	dw GROWLITHE
 	dw GROWLITHE_H

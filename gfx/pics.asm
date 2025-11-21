@@ -410,6 +410,14 @@ SECTION "Golem Front", ROMX
 
 GolemFrontpic:       INCBIN "gfx/pokemon/golem/front.animated.2bpp.lz"
 
+SECTION "Golem_A Front", ROMX
+
+GolemAFrontpic:      INCBIN "gfx/pokemon/golem_a/front.animated.2bpp.lz"
+
+SECTION "Golem_A Back", ROMX
+
+GolemABackpic:       INCBIN "gfx/pokemon/golem_a/back.2bpp.lz"
+
 SECTION "Poliwhirl Front", ROMX
 
 PoliwhirlFrontpic:   INCBIN "gfx/pokemon/poliwhirl/front.animated.2bpp.lz"
@@ -508,6 +516,14 @@ DragonairFrontpic:   INCBIN "gfx/pokemon/dragonair/front.animated.2bpp.lz"
 ForretressFrontpic:  INCBIN "gfx/pokemon/forretress/front.animated.2bpp.lz"
 TogeticFrontpic:     INCBIN "gfx/pokemon/togetic/front.animated.2bpp.lz"
 KangaskhanBackpic:   INCBIN "gfx/pokemon/kangaskhan/back.2bpp.lz"
+
+SECTION "Graveler_A Front", ROMX
+
+GravelerAFrontpic:   INCBIN "gfx/pokemon/graveler_a/front.animated.2bpp.lz"
+
+SECTION "Graveler_A Back", ROMX
+
+GravelerABackpic:    INCBIN "gfx/pokemon/graveler_a/back.2bpp.lz"
 
 SECTION "Dugtrio_A Front", ROMX
 
@@ -875,6 +891,14 @@ PersianABackpic:     INCBIN "gfx/pokemon/persian_a/back.2bpp.lz"
 SECTION "Perrserker Backpic", ROMX
 
 PerrserkerBackpic:   INCBIN "gfx/pokemon/perrserker/back.2bpp.lz"
+
+SECTION "Geodude_A Backpic", ROMX
+
+GeodudeABackpic:     INCBIN "gfx/pokemon/geodude_a/back.2bpp.lz"
+
+SECTION "Geodude_A Front", ROMX
+
+GeodudeAFrontpic:    INCBIN "gfx/pokemon/geodude_a/front.animated.2bpp.lz"
 
 SECTION "Pics 14", ROMX
 

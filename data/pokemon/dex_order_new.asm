@@ -44,8 +44,11 @@ NewPokedexOrder:
 	dw SHROOMISH
 	dw BRELOOM
 	dw GEODUDE
+	dw GEODUDE_A
 	dw GRAVELER
+	dw GRAVELER_A
 	dw GOLEM
+	dw GOLEM_A
 	dw PIDGEY
 	dw PIDGEOTTO
 	dw PIDGEOT

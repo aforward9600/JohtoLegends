@@ -98,8 +98,11 @@ Icons1:
 	dw TentacoolIcon
 	dw TentacruelIcon
 	dw GeodudeIcon
+	dw GeodudeAIcon
 	dw GravelerIcon
+	dw GravelerAIcon
 	dw GolemIcon
+	dw GolemAIcon
 	dw PonytaIcon
 	dw RapidashIcon
 	dw SlowpokeIcon
@@ -124,9 +127,6 @@ Icons1:
 	dw SteelixIcon
 	dw DrowzeeIcon
 	dw HypnoIcon
-	dw KrabbyIcon
-	dw KinglerIcon
-	dw VoltorbIcon
 
 EggIcon:          INCBIN "gfx/icons/egg.2bpp"
 BulbasaurIcon:    INCBIN "gfx/icons/bulbasaur.2bpp"
@@ -225,8 +225,11 @@ VictreebelIcon:   INCBIN "gfx/icons/victreebel.2bpp"
 TentacoolIcon:    INCBIN "gfx/icons/tentacool.2bpp"
 TentacruelIcon:   INCBIN "gfx/icons/tentacruel.2bpp"
 GeodudeIcon:      INCBIN "gfx/icons/geodude.2bpp"
+GeodudeAIcon:     INCBIN "gfx/icons/geodude_a.2bpp"
 GravelerIcon:     INCBIN "gfx/icons/graveler.2bpp"
+GravelerAIcon:    INCBIN "gfx/icons/graveler_a.2bpp"
 GolemIcon:        INCBIN "gfx/icons/golem.2bpp"
+GolemAIcon:       INCBIN "gfx/icons/golem_a.2bpp"
 PonytaIcon:       INCBIN "gfx/icons/ponyta.2bpp"
 RapidashIcon:     INCBIN "gfx/icons/rapidash.2bpp"
 SlowpokeIcon:     INCBIN "gfx/icons/slowpoke.2bpp"
@@ -251,6 +254,3 @@ OnixIcon:         INCBIN "gfx/icons/onix.2bpp"
 SteelixIcon:      INCBIN "gfx/icons/steelix.2bpp"
 DrowzeeIcon:      INCBIN "gfx/icons/drowzee.2bpp"
 HypnoIcon:        INCBIN "gfx/icons/hypno.2bpp"
-KrabbyIcon:       INCBIN "gfx/icons/krabby.2bpp"
-KinglerIcon:      INCBIN "gfx/icons/kingler.2bpp"
-VoltorbIcon:      INCBIN "gfx/icons/voltorb.2bpp"

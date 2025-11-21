@@ -2,6 +2,9 @@ SECTION "Mon Icons 2", ROMX
 
 Icons2:
 
+	dw KrabbyIcon
+	dw KinglerIcon
+	dw VoltorbIcon
 	dw ElectrodeIcon
 	dw ExeggcuteIcon
 	dw ExeggutorIcon
@@ -125,10 +128,10 @@ Icons2:
 	dw MisdreavusIcon
 	dw MismagiusIcon
 	dw UnownIcon
-	dw WynautIcon
-	dw WobbuffetIcon
-	dw GirafarigIcon
 
+KrabbyIcon:       INCBIN "gfx/icons/krabby.2bpp"
+KinglerIcon:      INCBIN "gfx/icons/kingler.2bpp"
+VoltorbIcon:      INCBIN "gfx/icons/voltorb.2bpp"
 ElectrodeIcon:    INCBIN "gfx/icons/electrode.2bpp"
 ExeggcuteIcon:    INCBIN "gfx/icons/exeggcute.2bpp"
 ExeggutorIcon:    INCBIN "gfx/icons/exeggutor.2bpp"
@@ -252,6 +255,3 @@ HonchkrowIcon:    INCBIN "gfx/icons/honchkrow.2bpp"
 MisdreavusIcon:   INCBIN "gfx/icons/misdreavus.2bpp"
 MismagiusIcon:    INCBIN "gfx/icons/mismagius.2bpp"
 UnownIcon:        INCBIN "gfx/icons/unown.2bpp"
-WynautIcon:       INCBIN "gfx/icons/wynaut.2bpp"
-WobbuffetIcon:    INCBIN "gfx/icons/wobbuffet.2bpp"
-GirafarigIcon:    INCBIN "gfx/icons/girafarig.2bpp"

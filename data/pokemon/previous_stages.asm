@@ -96,8 +96,11 @@ PreviousEvolutionStage::
 	dw 0  ;48
 	dw TENTACOOL
 	dw 0
+	dw 0
 	dw GEODUDE
+	dw GEODUDE_A
 	dw GRAVELER
+	dw GRAVELER_A
 	dw 0
 	dw PONYTA
 	dw 0

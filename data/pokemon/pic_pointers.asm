@@ -202,10 +202,16 @@ PokemonPicPointers::
 	dba TentacruelBackpic
 	dba GeodudeFrontpic
 	dba GeodudeBackpic
+	dba GeodudeAFrontpic
+	dba GeodudeABackpic
 	dba GravelerFrontpic
 	dba GravelerBackpic
+	dba GravelerAFrontpic
+	dba GravelerABackpic
 	dba GolemFrontpic
 	dba GolemBackpic
+	dba GolemAFrontpic
+	dba GolemABackpic
 	dba PonytaFrontpic
 	dba PonytaBackpic
 	dba RapidashFrontpic

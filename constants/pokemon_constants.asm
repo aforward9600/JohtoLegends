@@ -115,8 +115,11 @@
 	const TENTACOOL  ; 48
 	const TENTACRUEL ; 49
 	const GEODUDE    ; 4a
+	const GEODUDE_A
 	const GRAVELER   ; 4b
+	const GRAVELER_A
 	const GOLEM      ; 4c
+	const GOLEM_A
 	const PONYTA     ; 4d
 	const RAPIDASH   ; 4e
 	const SLOWPOKE   ; 4f

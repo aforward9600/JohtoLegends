@@ -7,7 +7,7 @@ GenerateShinySwarm:
 	cp DARK_CAVE
 	jr z, .dunsparce
 	cp ROUTE_39
-	jr z, .yanma
+	jp z, .yanma
 	cp WILD_AREA_OUTSIDE
 	jp z, .wildarea
 	cp ICE_PATH
@@ -55,7 +55,7 @@ GenerateShinySwarm:
 	if HIGH(DUNSPARCE) == 0
 		or h
 	else
-		jr nz, .skipshineswarm
+		jp nz, .skipshineswarm
 		if HIGH(DUNSPARCE)
 			dec h
 		else
