@@ -172,8 +172,11 @@ NewPokedexOrder:
 	dw ONIX
 	dw STEELIX
 	dw SLOWPOKE
+	dw SLOWPOKE_G
 	dw SLOWBRO
+	dw SLOWBRO_G
 	dw SLOWKING
+	dw SLOWKING_G
 	dw SCYTHER
 	dw SCIZOR
 	dw KLEAVOR

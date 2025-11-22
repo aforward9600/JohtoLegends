@@ -108,8 +108,11 @@ Icons1:
 	dw RapidashIcon
 	dw RapidashGIcon
 	dw SlowpokeIcon
+	dw SlowpokeGIcon
 	dw SlowbroIcon
+	dw SlowbroGIcon
 	dw SlowkingIcon
+	dw SlowkingGIcon
 	dw MagnemiteIcon
 	dw MagnetonIcon
 	dw MagnezoneIcon
@@ -124,9 +127,6 @@ Icons1:
 	dw CloysterIcon
 	dw GastlyIcon
 	dw HaunterIcon
-	dw GengarIcon
-	dw OnixIcon
-	dw SteelixIcon
 
 EggIcon:          INCBIN "gfx/icons/egg.2bpp"
 BulbasaurIcon:    INCBIN "gfx/icons/bulbasaur.2bpp"
@@ -235,8 +235,11 @@ PonytaGIcon:      INCBIN "gfx/icons/ponyta_g.2bpp"
 RapidashIcon:     INCBIN "gfx/icons/rapidash.2bpp"
 RapidashGIcon:    INCBIN "gfx/icons/rapidash_g.2bpp"
 SlowpokeIcon:     INCBIN "gfx/icons/slowpoke.2bpp"
+SlowpokeGIcon:    INCBIN "gfx/icons/slowpoke_g.2bpp"
 SlowbroIcon:      INCBIN "gfx/icons/slowbro.2bpp"
+SlowbroGIcon:     INCBIN "gfx/icons/slowbro_g.2bpp"
 SlowkingIcon:     INCBIN "gfx/icons/slowking.2bpp"
+SlowkingGIcon:    INCBIN "gfx/icons/slowking_g.2bpp"
 MagnemiteIcon:    INCBIN "gfx/icons/magnemite.2bpp"
 MagnetonIcon:     INCBIN "gfx/icons/magneton.2bpp"
 MagnezoneIcon:    INCBIN "gfx/icons/magnezone.2bpp"
@@ -251,6 +254,3 @@ ShellderIcon:     INCBIN "gfx/icons/shellder.2bpp"
 CloysterIcon:     INCBIN "gfx/icons/cloyster.2bpp"
 GastlyIcon:       INCBIN "gfx/icons/gastly.2bpp"
 HaunterIcon:      INCBIN "gfx/icons/haunter.2bpp"
-GengarIcon:       INCBIN "gfx/icons/gengar.2bpp"
-OnixIcon:         INCBIN "gfx/icons/onix.2bpp"
-SteelixIcon:      INCBIN "gfx/icons/steelix.2bpp"

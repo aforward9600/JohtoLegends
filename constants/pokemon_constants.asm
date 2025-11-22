@@ -125,8 +125,11 @@
 	const RAPIDASH   ; 4e
 	const RAPIDASH_G
 	const SLOWPOKE   ; 4f
+	const SLOWPOKE_G
 	const SLOWBRO    ; 50
+	const SLOWBRO_G
 	const SLOWKING   ; c7
+	const SLOWKING_G
 	const MAGNEMITE  ; 51
 	const MAGNETON   ; 52
 	const MAGNEZONE

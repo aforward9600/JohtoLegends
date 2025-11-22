@@ -8600,7 +8600,7 @@ InitEnemyWildmon:
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld a, l
-	sub UNOWN
+	sub LOW(UNOWN)
 	if HIGH(UNOWN) == 0
 		or h
 	else

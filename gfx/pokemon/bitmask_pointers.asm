@@ -105,8 +105,11 @@ BitmasksPointers:
 	dw RapidashBitmasks
 	dw RapidashGBitmasks
 	dw SlowpokeBitmasks
+	dw SlowpokeGBitmasks
 	dw SlowbroBitmasks
+	dw SlowbroGBitmasks
 	dw SlowkingBitmasks
+	dw SlowkingGBitmasks
 	dw MagnemiteBitmasks
 	dw MagnetonBitmasks
 	dw MagnezoneBitmasks

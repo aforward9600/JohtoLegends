@@ -293,8 +293,11 @@ AlphabeticalPokedexOrder:
 	dw SKARMORY
 	dw SKIPLOOM
 	dw SLOWBRO
+	dw SLOWBRO_G
 	dw SLOWKING
+	dw SLOWKING_G
 	dw SLOWPOKE
+	dw SLOWPOKE_G
 	dw SLUGMA
 	dw SMEARGLE
 	dw SMOOCHUM

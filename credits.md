@@ -88,6 +88,10 @@ Kleavor sprites: Cure
 
 Kleavor footprint: Rangi
 
+Galarian Slowpoke sprites: Avoman
+
+Galarian Slowbro sprites: trainerlass
+
 Dudunspars sprites - Mia
 
 Lickilicky sprites by Chaos Rush.
@@ -168,8 +172,8 @@ Lance, Female Scientist and Cynthia overworld sprites,
 Alolan Sandshrew and Sandslash, Alolan Vulpix and Ninetales,
 Alolan Diglett and Dugtrio, Alolan Meowth and Persian,
 Galarian Meowth and Perrserker, Hisuian Voltorb and Electrode,
-Alolan Geodude, Graveler and Golem sprites,
-Regional form icons: 
+Alolan Geodude, Graveler and Golem, Galarian Slowking sprites and
+regional form icons: 
 Rangi and the Polished Crystal Team.
 
 Clair Trainer Sprite base, Gen 5 Black Belt sprite: Solo993

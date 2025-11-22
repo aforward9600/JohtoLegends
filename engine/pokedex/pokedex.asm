@@ -605,15 +605,13 @@ DexEntryScreen_MenuActionJumptable:
 	call WaitBGMap
 	ld a, POKEDEX_SCX
 	ldh [hSCX], a
-	call Pokedex_ApplyUsualPals
-	ret
+	jp Pokedex_ApplyUsualPals
 
 Pokedex_RedisplayDexEntry:
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_GetSelectedMon
 	farcall DisplayDexEntry
-	call Pokedex_DrawFootprint
-	ret
+	jp Pokedex_DrawFootprint
 
 Pokedex_InitOptionScreen:
 	xor a

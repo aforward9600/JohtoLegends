@@ -105,8 +105,11 @@ AnimationIdlePointers:
 	dw RapidashAnimationIdle
 	dw RapidashGAnimationIdle
 	dw SlowpokeAnimationIdle
+	dw SlowpokeGAnimationIdle
 	dw SlowbroAnimationIdle
+	dw SlowbroGAnimationIdle
 	dw SlowkingAnimationIdle
+	dw SlowkingGAnimationIdle
 	dw MagnemiteAnimationIdle
 	dw MagnetonAnimationIdle
 	dw MagnezoneAnimationIdle

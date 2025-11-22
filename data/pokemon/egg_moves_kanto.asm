@@ -107,6 +107,9 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw SlowpokeEggMoves
+	dw SlowpokeEggMoves
+	dw NoEggMoves1
+	dw NoEggMoves1
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw NoEggMoves1

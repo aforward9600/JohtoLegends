@@ -239,8 +239,8 @@ Pokered_MonIndices:
 	db MURKROW
 	db SLOWKING
 	db MISDREAVUS
-	db UNOWN
-	db WOBBUFFET
+	db SLOWKING_G
+	db SLOWBRO_G
 	db RAPIDASH_G
 	db GRAVELER_A
 	db GOLEM_A
@@ -251,4 +251,4 @@ Pokered_MonIndices:
 	db PERRSERKER
 	db DIGLETT_A
 	db KLEAVOR
-	db WOBBUFFET
+	db SLOWPOKE_G

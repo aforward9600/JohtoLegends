@@ -111,8 +111,11 @@ PokemonCries::
 	mon_cry CRY_WEEPINBELL,  $020,  $140 ; RAPIDASH
 	mon_cry CRY_WEEPINBELL,  $020,  $140 ; RAPIDASH_G
 	mon_cry CRY_SLOWPOKE,    $000,  $100 ; SLOWPOKE
+	mon_cry CRY_SLOWPOKE,    $000,  $100 ; SLOWPOKE_G
 	mon_cry CRY_GROWLITHE,   $000,  $100 ; SLOWBRO
+	mon_cry CRY_GROWLITHE,   $000,  $100 ; SLOWBRO_G
 	mon_cry CRY_SLOWKING,    $104,  $200 ; SLOWKING
+	mon_cry CRY_SLOWKING,    $104,  $200 ; SLOWKING_G
 	mon_cry CRY_METAPOD,     $080,  $0e0 ; MAGNEMITE
 	mon_cry CRY_METAPOD,     $020,  $140 ; MAGNETON
 	mon_cry CRY_DROWZEE,     $110,  $0e0 ; MAGNEZONE

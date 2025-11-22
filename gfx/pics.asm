@@ -174,6 +174,14 @@ SECTION "Slowbro Front", ROMX
 
 SlowbroFrontpic:     INCBIN "gfx/pokemon/slowbro/front.animated.2bpp.lz"
 
+SECTION "Slowbro_G Front", ROMX
+
+SlowbroGFrontpic:    INCBIN "gfx/pokemon/slowbro_g/front.animated.2bpp.lz"
+
+SECTION "Slowbro_G Back", ROMX
+
+SlowbroGBackpic:     INCBIN "gfx/pokemon/slowbro_g/back.2bpp.lz"
+
 SECTION "Butterfree Front", ROMX
 
 ButterfreeFrontpic:  INCBIN "gfx/pokemon/butterfree/front.animated.2bpp.lz"
@@ -223,6 +231,10 @@ DodrioFrontpic:      INCBIN "gfx/pokemon/dodrio/front.animated.2bpp.lz"
 SECTION "Slowking Front", ROMX
 
 SlowkingFrontpic:    INCBIN "gfx/pokemon/slowking/front.animated.2bpp.lz"
+
+SECTION "Slowking_G Front", ROMX
+
+SlowkingGFrontpic:   INCBIN "gfx/pokemon/slowking_g/front.animated.2bpp.lz"
 
 SECTION "Hitmontop Front", ROMX
 
@@ -786,6 +798,9 @@ BugCatcherPic:       INCBIN "gfx/trainers/bug_catcher.2bpp.lz"
 SnorlaxBackpic:      INCBIN "gfx/pokemon/snorlax/back.2bpp.lz"
 SandslashABackpic:   INCBIN "gfx/pokemon/sandslash_a/back.2bpp.lz"
 
+SECTION "Slowking_G Back", ROMX
+
+SlowkingGBackpic:    INCBIN "gfx/pokemon/slowking_g/back.2bpp.lz"
 
 SECTION "Ninetales_A Backpic", ROMX
 
@@ -1163,6 +1178,13 @@ JigglypuffBackpic:   INCBIN "gfx/pokemon/jigglypuff/back.2bpp.lz"
 OddishBackpic:       INCBIN "gfx/pokemon/oddish/back.2bpp.lz"
 UnownDBackpic:       INCBIN "gfx/pokemon/unown_d/back.2bpp.lz"
 
+SECTION "Slowpoke_G Front", ROMX
+
+SlowpokeGFrontpic:   INCBIN "gfx/pokemon/slowpoke_g/front.animated.2bpp.lz"
+
+SECTION "Slowpoke_G Back", ROMX
+
+SlowpokeGBackpic:    INCBIN "gfx/pokemon/slowpoke_g/back.2bpp.lz"
 
 SECTION "Pics 18", ROMX
 

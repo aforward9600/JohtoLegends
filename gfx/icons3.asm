@@ -2,6 +2,9 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw MurkrowIcon
+	dw HonchkrowIcon
+	dw MisdreavusIcon
 	dw MismagiusIcon
 	dw UnownIcon
 	dw WynautIcon
@@ -109,6 +112,9 @@ Icons3:
 	dw RegigigasIcon
 	dw DeoxysIcon
 
+MurkrowIcon:      INCBIN "gfx/icons/murkrow.2bpp"
+HonchkrowIcon:    INCBIN "gfx/icons/honchkrow.2bpp"
+MisdreavusIcon:   INCBIN "gfx/icons/misdreavus.2bpp"
 MismagiusIcon:    INCBIN "gfx/icons/mismagius.2bpp"
 UnownIcon:        INCBIN "gfx/icons/unown.2bpp"
 WynautIcon:       INCBIN "gfx/icons/wynaut.2bpp"

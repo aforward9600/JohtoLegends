@@ -105,8 +105,11 @@ AnimationPointers:
 	dw RapidashAnimation
 	dw RapidashGAnimation
 	dw SlowpokeAnimation
+	dw SlowpokeGAnimation
 	dw SlowbroAnimation
+	dw SlowbroGAnimation
 	dw SlowkingAnimation
+	dw SlowkingGAnimation
 	dw MagnemiteAnimation
 	dw MagnetonAnimation
 	dw MagnezoneAnimation

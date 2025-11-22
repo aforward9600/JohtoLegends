@@ -106,8 +106,11 @@ PreviousEvolutionStage::
 	dw PONYTA
 	dw PONYTA_G
 	dw 0
+	dw 0
 	dw SLOWPOKE
+	dw SLOWPOKE_G
 	dw SLOWPOKE   ;50
+	dw SLOWPOKE_G
 	dw 0
 	dw MAGNEMITE
 	dw MAGNETON

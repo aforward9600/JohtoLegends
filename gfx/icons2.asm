@@ -2,6 +2,9 @@ SECTION "Mon Icons 2", ROMX
 
 Icons2:
 
+	dw GengarIcon
+	dw OnixIcon
+	dw SteelixIcon
 	dw DrowzeeIcon
 	dw HypnoIcon
 	dw KrabbyIcon
@@ -125,10 +128,10 @@ Icons2:
 	dw YanmegaIcon
 	dw WooperIcon
 	dw QuagsireIcon
-	dw MurkrowIcon
-	dw HonchkrowIcon
-	dw MisdreavusIcon
 
+GengarIcon:       INCBIN "gfx/icons/gengar.2bpp"
+OnixIcon:         INCBIN "gfx/icons/onix.2bpp"
+SteelixIcon:      INCBIN "gfx/icons/steelix.2bpp"
 DrowzeeIcon:      INCBIN "gfx/icons/drowzee.2bpp"
 HypnoIcon:        INCBIN "gfx/icons/hypno.2bpp"
 KrabbyIcon:       INCBIN "gfx/icons/krabby.2bpp"
@@ -252,6 +255,3 @@ YanmaIcon:        INCBIN "gfx/icons/yanma.2bpp"
 YanmegaIcon:      INCBIN "gfx/icons/yanmega.2bpp"
 WooperIcon:       INCBIN "gfx/icons/wooper.2bpp"
 QuagsireIcon:     INCBIN "gfx/icons/quagsire.2bpp"
-MurkrowIcon:      INCBIN "gfx/icons/murkrow.2bpp"
-HonchkrowIcon:    INCBIN "gfx/icons/honchkrow.2bpp"
-MisdreavusIcon:   INCBIN "gfx/icons/misdreavus.2bpp"

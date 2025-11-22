@@ -38,12 +38,12 @@ CreditsStrings:
 	dw .Seasick
 	dw .TomWang
 	dw .VictoriaLacroix
-	dw .KunimiKawamura
+	dw .RangiAvoman
 	dw .DarkZeta
 	dw .Celadonk
 	dw .PiaCarrot
 	dw .Neslug
-	dw .ToruOsawa
+	dw .Nuuktrainerlass
 	dw .TakaoOhara
 	dw .YuichiroIto
 	dw .TakaoShimizu
@@ -164,12 +164,12 @@ CreditsStrings:
 .Seasick:             db "      Seasick@"          ; "ただ　あつし@"
 .TomWang:             db "      Tom Wang@"         ; "かわかみ　なおこ@"
 .VictoriaLacroix:     db "  Victoria Lacroix@"         ; "じんない　ひろゆき@"
-.KunimiKawamura:      db "  KUNIMI KAWAMURA@"         ; "かわむら　くにみ@"
+.RangiAvoman:         db "   Rangi & Avoman@"         ; "かわむら　くにみ@"
 .DarkZeta:            db "     Dark Zeta@"            ; "そがべ　ひさし@"
 .Celadonk:            db "     Celadonk@"             ; "かがや　けいた@"
 .PiaCarrot:           db "     PiaCarrot@"            ; "まつだ　よしのり@"
 .Neslug:              db "       Neslug@"            ; "さとう　ひとみ@"
-.ToruOsawa:           db "     TORU OSAWA@"           ; "おおさわ　とおる@"
+.Nuuktrainerlass:     db "Nuuk & trainerlass@"           ; "おおさわ　とおる@"
 .TakaoOhara:          db "    TAKAO OHARA@"           ; "おおはら　たかお@"
 .YuichiroIto:         db "    YUICHIRO ITO@"          ; "いとう　ゆういちろう@"
 .TakaoShimizu:        db "   TAKAO SHIMIZU@"          ; "しみず　たかお@"

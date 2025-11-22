@@ -105,8 +105,11 @@ FramesPointers:
 	dba RapidashFrames
 	dba RapidashGFrames
 	dba SlowpokeFrames
+	dba SlowpokeGFrames
 	dba SlowbroFrames
+	dba SlowbroGFrames
 	dba SlowkingFrames
+	dba SlowkingGFrames
 	dba MagnemiteFrames
 	dba MagnetonFrames
 	dba MagnezoneFrames

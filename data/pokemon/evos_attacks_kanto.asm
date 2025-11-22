@@ -107,8 +107,11 @@ EvosAttacksPointers1::
 	dw RapidashEvosAttacks
 	dw RapidashGEvosAttacks
 	dw SlowpokeEvosAttacks
+	dw SlowpokeGEvosAttacks
 	dw SlowbroEvosAttacks
+	dw SlowbroGEvosAttacks
 	dw SlowkingEvosAttacks
+	dw SlowkingGEvosAttacks
 	dw MagnemiteEvosAttacks
 	dw MagnetonEvosAttacks
 	dw MagnezoneEvosAttacks
@@ -2151,6 +2154,27 @@ SlowpokeEvosAttacks:
 	dbw 58, HAZE
 	db 0 ; no more level-up moves
 
+SlowpokeGEvosAttacks:
+	dbbw EVOLVE_ITEM, ROYAL_ROCK, SLOWKING_G
+	dbbw EVOLVE_LEVEL, 37, SLOWBRO_G
+	db 0 ; no more evolutions
+	dbw 1, CURSE
+	dbw 1, TACKLE
+	dbw 5, GROWL
+	dbw 9, ACID
+	dbw 14, CONFUSION
+	dbw 19, DISABLE
+	dbw 23, HEADBUTT
+	dbw 28, WATER_PULSE
+	dbw 32, ZEN_HEADBUTT
+	dbw 36, SLACK_OFF
+	dbw 41, AMNESIA
+	dbw 45, PSYCHIC_M
+	dbw 49, RAIN_DANCE
+	dbw 54, PSYCH_UP
+	dbw 58, HAZE
+	db 0 ; no more level-up moves
+
 SlowbroEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, WITHDRAW
@@ -2172,10 +2196,52 @@ SlowbroEvosAttacks:
 	dbw 68, HAZE
 	db 0 ; no more level-up moves
 
+SlowbroGEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SHELLSIDEARM
+	dbw 1, SHELLSIDEARM
+	dbw 1, CURSE
+	dbw 1, TACKLE
+	dbw 5, GROWL
+	dbw 9, WATER_GUN
+	dbw 14, CONFUSION
+	dbw 19, DISABLE
+	dbw 23, HEADBUTT
+	dbw 28, WATER_PULSE
+	dbw 32, ZEN_HEADBUTT
+	dbw 36, SLACK_OFF
+	dbw 43, AMNESIA
+	dbw 49, PSYCHIC_M
+	dbw 55, RAIN_DANCE
+	dbw 62, PSYCH_UP
+	dbw 68, HAZE
+	db 0 ; no more level-up moves
+
 SlowkingEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, HIDDEN_POWER
 	dbw 1, HIDDEN_POWER
+	dbw 1, CURSE
+	dbw 1, TACKLE
+	dbw 5, GROWL
+	dbw 9, WATER_GUN
+	dbw 14, CONFUSION
+	dbw 19, DISABLE
+	dbw 23, HEADBUTT
+	dbw 28, WATER_PULSE
+	dbw 32, ZEN_HEADBUTT
+	dbw 36, NASTY_PLOT
+	dbw 41, SWAGGER
+	dbw 45, PSYCHIC_M
+	dbw 49, RAIN_DANCE
+	dbw 54, PSYCH_UP
+	dbw 58, HAZE
+	db 0 ; no more level-up moves
+
+SlowkingGEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, EERIE_SPELL
+	dbw 1, EERIE_SPELL
 	dbw 1, CURSE
 	dbw 1, TACKLE
 	dbw 5, GROWL

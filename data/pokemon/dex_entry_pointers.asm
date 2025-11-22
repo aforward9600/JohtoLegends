@@ -106,8 +106,11 @@ PokedexDataPointerTable:
 	dba RapidashPokedexEntry
 	dba RapidashGPokedexEntry
 	dba SlowpokePokedexEntry
+	dba SlowpokeGPokedexEntry
 	dba SlowbroPokedexEntry
+	dba SlowbroGPokedexEntry
 	dba SlowkingPokedexEntry
+	dba SlowkingGPokedexEntry
 	dba MagnemitePokedexEntry
 	dba MagnetonPokedexEntry
 	dba MagnezonePokedexEntry

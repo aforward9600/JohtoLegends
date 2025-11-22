@@ -117,8 +117,11 @@ MonMenuIconPals:
 	icon_pals RED,    PURPLE ; RAPIDASH
 	icon_pals PURPLE, TEAL   ; RAPIDASH_G
 	icon_pals RED,    PURPLE ; SLOWPOKE
+	icon_pals RED,    BROWN  ; SLOWPOKE_G
 	icon_pals RED,    PURPLE ; SLOWBRO
+	icon_pals PURPLE, BLUE   ; SLOWBRO_G
 	icon_pals RED,    PURPLE ; SLOWKING
+	icon_pals PURPLE, BLUE   ; SLOWKING_G
 	icon_pals GRAY,   BROWN  ; MAGNEMITE
 	icon_pals GRAY,   BROWN  ; MAGNETON
 	icon_pals GRAY,   BROWN  ; MAGNEZONE

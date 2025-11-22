@@ -73,12 +73,12 @@ CreditsScript:
 	db           KOOLBOYMAN, 1
 	db           PRISM_TEAM, 2
 	db           SOUPPOTATO, 3
-	db                 NUUK, 4
+	db     NUUK_TRAINERLASS, 4
 
 	db CREDITS_WAIT, 12
 
 	db      POKEMON_SPRITES, 0
-	db                RANGI, 1
+	db         RANGI_AVOMAN, 1
 	db           CHAOS_RUSH, 2
 	db        BRONZESWAGGER, 3
 	db          ADAM_SHAMAN, 4

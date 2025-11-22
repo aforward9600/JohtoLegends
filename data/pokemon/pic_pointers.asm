@@ -222,10 +222,16 @@ PokemonPicPointers::
 	dba RapidashGBackpic
 	dba SlowpokeFrontpic
 	dba SlowpokeBackpic
+	dba SlowpokeGFrontpic
+	dba SlowpokeGBackpic
 	dba SlowbroFrontpic
 	dba SlowbroBackpic
+	dba SlowbroGFrontpic
+	dba SlowbroGBackpic
 	dba SlowkingFrontpic
 	dba SlowkingBackpic
+	dba SlowkingGFrontpic
+	dba SlowkingGBackpic
 	dba MagnemiteFrontpic
 	dba MagnemiteBackpic
 	dba MagnetonFrontpic

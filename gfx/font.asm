@@ -47,5 +47,5 @@ INCBIN "gfx/font/unused_up_arrow.1bpp"
 MobilePhoneTilesGFX:
 INCBIN "gfx/mobile/phone_tiles.2bpp"
 
-Footprints:
-INCLUDE "gfx/footprints.asm"
+;Footprints:
+;INCLUDE "gfx/footprints.asm"

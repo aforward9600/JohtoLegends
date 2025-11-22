@@ -478,6 +478,7 @@ INCLUDE "engine/pokedex/unown_dex.asm"
 SECTION "Time Capsule 2", ROMX
 
 INCLUDE "engine/link/time_capsule_2.asm"
+INCLUDE "gfx/footprints.asm"
 
 SECTION "Magikarp Event", ROMX
 
