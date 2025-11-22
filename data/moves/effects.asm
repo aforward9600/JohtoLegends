@@ -2945,6 +2945,29 @@ PsychoBoost:
 	buildopponentrage
 	endmove
 
+EerieSpell:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	defensiveabilities
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	kingsrock
+	checkfaint
+	buildopponentrage
+	sheerforce
+	eeriespell
+	endmove
+
 ;WakeUpSlap:
 ;	checkobedience
 ;	usedmovetext

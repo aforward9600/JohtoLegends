@@ -200,5 +200,6 @@ BattleCommandPointers:
 	effectfn BattleCommand_CloseCombat
 	effectfn BattleCommand_Superpower
 	effectfn BattleCommand_Defiant
+	effectfn BattleCommand_EerieSpell
 ;	effectfn BattleCommand_WakeUpSlap
 ;	effectfn BattleCommand_AwakenOpponent

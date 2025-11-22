@@ -422,6 +422,8 @@ MoveDescriptions1:
 	dw FreezeGlareDescription
 	dw ThunderKickDescription
 	dw FieryWrathDescription
+	dw ShellSideArmDescription
+	dw EerieSpellDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1818,3 +1820,11 @@ ThunderKickDescription:
 FieryWrathDescription:
 	db   "Wrathful flames"
 	line "that can flinch.@"
+
+ShellSideArmDescription:
+	db   "Quick draw poison"
+	line "shot.@"
+
+EerieSpellDescription:
+	db   "Odd incantation"
+	line "that lowers PP.@"

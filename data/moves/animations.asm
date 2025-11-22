@@ -447,6 +447,8 @@ BattleAnimations::
 	dw BattleAnim_FreezeGlare
 	dw BattleAnim_ThunderKick
 	dw BattleAnim_FieryWrath
+	dw BattleAnim_ShellSideArm
+	dw BattleAnim_EerieSpell
 ;	dw BattleAnim_WakeUpSlap
 
 BattleAnim_0:
@@ -4061,7 +4063,7 @@ BattleAnim_SludgeBomb:
 	anim_obj ANIM_OBJ_SLUDGE_BOMB, 64, 92, $10
 	anim_wait 36
 	anim_call BattleAnim_SludgeBomb_branch_cbc15
-	anim_jump BattleAnim_Wait64
+	anim_jump BattleAnim_Wait32
 
 BattleAnim_MudSlap:
 BattleAnim_MudShot:
@@ -4860,6 +4862,8 @@ BattleAnim_Moonlight:
 .three
 	anim_jump BattleAnim_Moonlight_branch_cbc80
 
+BattleAnim_EerieSpell:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_PURPLE
 BattleAnim_HiddenPower:
 	anim_1gfx ANIM_GFX_CHARGE
 	anim_call BattleAnim_TargetObj_1Row
@@ -5437,18 +5441,6 @@ BattleAnim_WaterPulse:
 	anim_incbgeffect ANIM_BG_WHIRLPOOL
 	anim_wait 4
 	anim_ret
-
-BattleAnim_GunkShot:
-	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
-	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_POISON
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
-	anim_bgeffect ANIM_BG_BLACK_HUES, $0, $8, $0
-	anim_sound 6, 2, SFX_SLUDGE_BOMB
-	anim_obj ANIM_OBJ_SLUDGE_BOMB, 64, 92, $10
-	anim_wait 36
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
-	anim_call BattleAnim_SludgeBomb_branch_cbc15
-	anim_jump BattleAnim_Wait32
 
 BattleAnim_EarthPower:
 	anim_1gfx ANIM_GFX_FIRE
@@ -6288,6 +6280,25 @@ BattleAnim_TriAttack_branch_cbbdf:
 	anim_obj ANIM_OBJ_12, 128, 70, $0
 	anim_ret
 
+BattleAnim_ShellSideArm:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
+	anim_2gfx ANIM_GFX_POISON, ANIM_GFX_HIT
+	anim_sound 6, 2, SFX_SLUDGE_BOMB
+	anim_obj ANIM_OBJ_SHELLSIDEARM, 64, 92, $4
+	anim_wait 16
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_01, 136, 56, $0
+	anim_jump BattleAnim_Toxic_branch_cbc15
+
+BattleAnim_GunkShot:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
+	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_POISON
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
+	anim_bgeffect ANIM_BG_BLACK_HUES, $0, $8, $0
+	anim_sound 6, 2, SFX_SLUDGE_BOMB
+	anim_obj ANIM_OBJ_SLUDGE_BOMB, 64, 92, $10
+	anim_wait 36
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
 BattleAnim_SludgeBomb_branch_cbc15:
 BattleAnim_Sludge_branch_cbc15:
 BattleAnim_Toxic_branch_cbc15:
@@ -6302,7 +6313,7 @@ BattleAnim_Toxic_branch_cbc15:
 	anim_obj ANIM_OBJ_1A, 148, 72, $0
 	anim_wait 8
 	anim_loop 5, .loop
-	anim_ret
+	anim_jump BattleAnim_Wait32
 
 BattleAnim_Acid_branch_cbc35:
 BattleAnim_Toxic_branch_cbc35:

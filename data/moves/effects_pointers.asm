@@ -192,4 +192,5 @@ MoveEffectsPointers:
 	dw GyroBall
 	dw PoisonFang
 	dw PsychoBoost
+	dw EerieSpell
 ;	dw WakeUpSlap

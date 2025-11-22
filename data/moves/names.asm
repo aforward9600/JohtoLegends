@@ -416,4 +416,6 @@ MoveNames::
 	db "Freeze Glare@"
 	db "Thunder Kick@"
 	db "Fiery Wrath@"
+	db "ShellSideArm@"
+	db "Eerie Spell@"
 ;	db "Wake Up Slap@"

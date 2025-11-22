@@ -423,6 +423,8 @@
 	const FREEZE_GLARE
 	const THUNDER_KICK
 	const FIERY_WRATH
+	const SHELLSIDEARM
+	const EERIE_SPELL
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 

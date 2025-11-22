@@ -102,6 +102,7 @@ AlphabeticalMoveList::
 	dw EARTH_POWER
 	dw EARTHQUAKE
 	dw ECHOED_VOICE
+	dw EERIE_SPELL
 	dw EGG_BOMB
 	dw EMBER
 	dw ENCORE
@@ -317,6 +318,7 @@ AlphabeticalMoveList::
 	dw SHADOW_SNEAK
 	dw SHARPEN
 	dw SHEER_COLD
+	dw SHELLSIDEARM
 	dw SHELL_SMASH
 	dw SIGNAL_BEAM
 	dw SIGNAL_WAVE

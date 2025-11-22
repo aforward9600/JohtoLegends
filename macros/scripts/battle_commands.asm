@@ -200,6 +200,7 @@ ENDM
 	command closecombat
 	command superpower
 	command defiant
+	command eeriespell
 ;	command wakeupslap
 ;	command awakenopponent
 

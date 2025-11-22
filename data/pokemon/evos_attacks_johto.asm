@@ -691,10 +691,6 @@ DratiniEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, DRAGON_RAGE
 	dbw 1, LEER
-	dbw 1, X_SCISSOR
-	dbw 1, CROSS_CHOP
-	dbw 1, MUD_SLAP
-	dbw 1, VOLT_SWITCH
 	dbw 6, THUNDER_WAVE
 	dbw 9, WRAP
 	dbw 11, TWISTER
