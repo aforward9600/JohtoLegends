@@ -214,8 +214,12 @@ PokemonPicPointers::
 	dba GolemABackpic
 	dba PonytaFrontpic
 	dba PonytaBackpic
+	dba PonytaGFrontpic
+	dba PonytaGBackpic
 	dba RapidashFrontpic
 	dba RapidashBackpic
+	dba RapidashGFrontpic
+	dba RapidashGBackpic
 	dba SlowpokeFrontpic
 	dba SlowpokeBackpic
 	dba SlowbroFrontpic

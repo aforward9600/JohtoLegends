@@ -77,6 +77,10 @@ SECTION "Rapidash Front", ROMX
 
 RapidashFrontpic:    INCBIN "gfx/pokemon/rapidash/front.animated.2bpp.lz"
 
+SECTION "Rapidash_G Front", ROMX
+
+RapidashGFrontpic:   INCBIN "gfx/pokemon/rapidash_g/front.animated.2bpp.lz"
+
 SECTION "Meganium Front", ROMX
 
 MeganiumFrontpic:    INCBIN "gfx/pokemon/meganium/front.animated.2bpp.lz"
@@ -517,6 +521,11 @@ ForretressFrontpic:  INCBIN "gfx/pokemon/forretress/front.animated.2bpp.lz"
 TogeticFrontpic:     INCBIN "gfx/pokemon/togetic/front.animated.2bpp.lz"
 KangaskhanBackpic:   INCBIN "gfx/pokemon/kangaskhan/back.2bpp.lz"
 
+SECTION "Ponyta_G Front", ROMX
+
+PonytaGFrontpic:     INCBIN "gfx/pokemon/ponyta_g/front.animated.2bpp.lz"
+
+
 SECTION "Graveler_A Front", ROMX
 
 GravelerAFrontpic:   INCBIN "gfx/pokemon/graveler_a/front.animated.2bpp.lz"
@@ -826,6 +835,10 @@ GoldeenBackpic:      INCBIN "gfx/pokemon/goldeen/back.2bpp.lz"
 BulbasaurFrontpic:   INCBIN "gfx/pokemon/bulbasaur/front.animated.2bpp.lz"
 StarmieBackpic:      INCBIN "gfx/pokemon/starmie/back.2bpp.lz"
 
+SECTION "Rapidash_G Back", ROMX
+
+RapidashGBackpic:    INCBIN "gfx/pokemon/rapidash_g/back.2bpp.lz"
+
 SECTION "Arcanine_H Back", ROMX
 
 ArcanineHBackpic:    INCBIN "gfx/pokemon/arcanine_h/back.2bpp.lz"
@@ -877,6 +890,10 @@ MysticalmanPic:      INCBIN "gfx/trainers/mysticalman.2bpp.lz"
 CooltrainerfPic:     INCBIN "gfx/trainers/cooltrainer_f.2bpp.lz"
 ElectrodeFrontpic:   INCBIN "gfx/pokemon/electrode/front.animated.2bpp.lz"
 RaichuABackpic:      INCBIN "gfx/pokemon/raichu_a/back.2bpp.lz"
+
+SECTION "Ponyta_G Back", ROMX
+
+PonytaGBackpic:      INCBIN "gfx/pokemon/ponyta_g/back.2bpp.lz"
 
 SECTION "Growlithe_H Back", ROMX
 

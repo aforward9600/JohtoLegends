@@ -103,7 +103,9 @@ EvosAttacksPointers1::
 	dw GolemEvosAttacks
 	dw GolemAEvosAttacks
 	dw PonytaEvosAttacks
+	dw PonytaGEvosAttacks
 	dw RapidashEvosAttacks
+	dw RapidashGEvosAttacks
 	dw SlowpokeEvosAttacks
 	dw SlowbroEvosAttacks
 	dw SlowkingEvosAttacks
@@ -2065,6 +2067,25 @@ PonytaEvosAttacks:
 	dbw 49, FLARE_BLITZ
 	db 0 ; no more level-up moves
 
+PonytaGEvosAttacks:
+	dbbw EVOLVE_LEVEL, 30, RAPIDASH_G
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, GROWL
+	dbw 4, TAIL_WHIP
+	dbw 9, CONFUSION
+	dbw 13, FAIRY_WIND
+	dbw 17, STOMP
+	dbw 21, PSYBEAM
+	dbw 25, MOONLIGHT
+	dbw 29, TAKE_DOWN
+	dbw 33, DAZZLINGLEAM
+	dbw 37, AGILITY
+	dbw 41, PSYCHIC_M
+	dbw 45, BOUNCE
+	dbw 49, MOONBLAST
+	db 0 ; no more level-up moves
+
 RapidashEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, SMART_STRIKE
@@ -2083,6 +2104,28 @@ RapidashEvosAttacks:
 	dbw 41, FIRE_BLAST
 	dbw 45, BOUNCE
 	dbw 49, FLARE_BLITZ
+	dbw 53, MEGAHORN
+	dbw 57, SOLAR_BLADE
+	db 0 ; no more level-up moves
+
+RapidashGEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, PSYCHO_CUT
+	dbw 1, PSYCHO_CUT
+	dbw 1, TACKLE
+	dbw 1, GROWL
+	dbw 4, TAIL_WHIP
+	dbw 9, CONFUSION
+	dbw 13, FAIRY_WIND
+	dbw 17, STOMP
+	dbw 21, PSYBEAM
+	dbw 25, MOONLIGHT
+	dbw 29, TAKE_DOWN
+	dbw 33, DAZZLINGLEAM
+	dbw 37, AGILITY
+	dbw 41, PSYCHIC_M
+	dbw 45, BOUNCE
+	dbw 49, MOONBLAST
 	dbw 53, MEGAHORN
 	dbw 57, SOLAR_BLADE
 	db 0 ; no more level-up moves

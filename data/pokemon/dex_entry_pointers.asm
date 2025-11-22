@@ -102,7 +102,9 @@ PokedexDataPointerTable:
 	dba GolemPokedexEntry
 	dba GolemAPokedexEntry
 	dba PonytaPokedexEntry
+	dba PonytaGPokedexEntry
 	dba RapidashPokedexEntry
+	dba RapidashGPokedexEntry
 	dba SlowpokePokedexEntry
 	dba SlowbroPokedexEntry
 	dba SlowkingPokedexEntry

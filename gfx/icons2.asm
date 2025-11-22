@@ -2,6 +2,8 @@ SECTION "Mon Icons 2", ROMX
 
 Icons2:
 
+	dw DrowzeeIcon
+	dw HypnoIcon
 	dw KrabbyIcon
 	dw KinglerIcon
 	dw VoltorbIcon
@@ -126,9 +128,9 @@ Icons2:
 	dw MurkrowIcon
 	dw HonchkrowIcon
 	dw MisdreavusIcon
-	dw MismagiusIcon
-	dw UnownIcon
 
+DrowzeeIcon:      INCBIN "gfx/icons/drowzee.2bpp"
+HypnoIcon:        INCBIN "gfx/icons/hypno.2bpp"
 KrabbyIcon:       INCBIN "gfx/icons/krabby.2bpp"
 KinglerIcon:      INCBIN "gfx/icons/kingler.2bpp"
 VoltorbIcon:      INCBIN "gfx/icons/voltorb.2bpp"
@@ -253,5 +255,3 @@ QuagsireIcon:     INCBIN "gfx/icons/quagsire.2bpp"
 MurkrowIcon:      INCBIN "gfx/icons/murkrow.2bpp"
 HonchkrowIcon:    INCBIN "gfx/icons/honchkrow.2bpp"
 MisdreavusIcon:   INCBIN "gfx/icons/misdreavus.2bpp"
-MismagiusIcon:    INCBIN "gfx/icons/mismagius.2bpp"
-UnownIcon:        INCBIN "gfx/icons/unown.2bpp"

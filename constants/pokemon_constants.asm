@@ -121,7 +121,9 @@
 	const GOLEM      ; 4c
 	const GOLEM_A
 	const PONYTA     ; 4d
+	const PONYTA_G
 	const RAPIDASH   ; 4e
+	const RAPIDASH_G
 	const SLOWPOKE   ; 4f
 	const SLOWBRO    ; 50
 	const SLOWKING   ; c7

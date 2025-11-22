@@ -107,7 +107,9 @@ PokemonCries::
 	mon_cry CRY_GOLEM,       $0e0,  $0c0 ; GOLEM
 	mon_cry CRY_GOLEM,       $0e0,  $0c0 ; GOLEM_A
 	mon_cry CRY_WEEPINBELL,  $000,  $100 ; PONYTA
+	mon_cry CRY_WEEPINBELL,  $000,  $100 ; PONYTA_G
 	mon_cry CRY_WEEPINBELL,  $020,  $140 ; RAPIDASH
+	mon_cry CRY_WEEPINBELL,  $020,  $140 ; RAPIDASH_G
 	mon_cry CRY_SLOWPOKE,    $000,  $100 ; SLOWPOKE
 	mon_cry CRY_GROWLITHE,   $000,  $100 ; SLOWBRO
 	mon_cry CRY_SLOWKING,    $104,  $200 ; SLOWKING

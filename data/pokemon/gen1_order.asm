@@ -241,7 +241,7 @@ Pokered_MonIndices:
 	db MISDREAVUS
 	db UNOWN
 	db WOBBUFFET
-	db GIRAFARIG
+	db RAPIDASH_G
 	db GRAVELER_A
 	db GOLEM_A
 	db GROWLITHE_H

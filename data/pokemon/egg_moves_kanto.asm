@@ -103,6 +103,8 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw PonytaEggMoves
+	dw PonytaGEggMoves
+	dw NoEggMoves1
 	dw NoEggMoves1
 	dw SlowpokeEggMoves
 	dw NoEggMoves1
@@ -562,6 +564,14 @@ PonytaEggMoves:
 	dw MORNING_SUN
 	dw FLARE_BLITZ
 	dw -1 ; end
+
+PonytaGEggMoves:
+	dw DOUBLE_KICK
+	dw DOUBLE_EDGE
+	dw HORN_DRILL
+	dw MORNING_SUN
+	dw THRASH
+	dw -1
 
 SlowpokeEggMoves:
 	dw BELLY_DRUM

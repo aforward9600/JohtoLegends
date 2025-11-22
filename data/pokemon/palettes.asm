@@ -234,8 +234,12 @@ INCLUDE "gfx/pokemon/golem_a/normal.pal"
 INCLUDE "gfx/pokemon/golem_a/shiny.pal"
 INCBIN "gfx/pokemon/ponyta/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/ponyta/shiny.pal"
+INCLUDE "gfx/pokemon/ponyta_g/normal.pal"
+INCLUDE "gfx/pokemon/ponyta_g/shiny.pal"
 INCBIN "gfx/pokemon/rapidash/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/rapidash/shiny.pal"
+INCLUDE "gfx/pokemon/rapidash_g/normal.pal"
+INCLUDE "gfx/pokemon/rapidash_g/shiny.pal"
 INCBIN "gfx/pokemon/slowpoke/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/slowpoke/shiny.pal"
 INCBIN "gfx/pokemon/slowbro/front.gbcpal", middle_colors

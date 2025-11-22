@@ -459,19 +459,22 @@ INCLUDE "engine/battle_anims/bg_effects.asm"
 
 SECTION "Options Menu", ROMX
 INCLUDE "engine/menus/options_menu.asm"
-INCLUDE "engine/battle/misc.asm"
 
 SECTION "bank3E", ROMX
 
 INCLUDE "engine/events/play_slow_cry.asm"
 INCLUDE "engine/pokedex/new_pokedex_entry.asm"
-INCLUDE "engine/pokedex/unown_dex.asm"
+INCLUDE "engine/battle/hidden_power.asm"
+INCLUDE "engine/battle/misc.asm"
 
 SECTION "Load Font", ROMX
 
 INCLUDE "engine/gfx/load_font.asm"
 
-INCLUDE "engine/battle/hidden_power.asm"
+SECTION "Unown Dex", ROMX
+
+INCLUDE "engine/pokedex/unown_dex.asm"
+
 SECTION "Time Capsule 2", ROMX
 
 INCLUDE "engine/link/time_capsule_2.asm"

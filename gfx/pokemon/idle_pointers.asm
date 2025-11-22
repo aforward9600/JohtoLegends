@@ -101,7 +101,9 @@ AnimationIdlePointers:
 	dw GolemAnimationIdle
 	dw GolemAAnimationIdle
 	dw PonytaAnimationIdle
+	dw PonytaGAnimationIdle
 	dw RapidashAnimationIdle
+	dw RapidashGAnimationIdle
 	dw SlowpokeAnimationIdle
 	dw SlowbroAnimationIdle
 	dw SlowkingAnimationIdle

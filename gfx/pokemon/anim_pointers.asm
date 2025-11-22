@@ -101,7 +101,9 @@ AnimationPointers:
 	dw GolemAnimation
 	dw GolemAAnimation
 	dw PonytaAnimation
+	dw PonytaGAnimation
 	dw RapidashAnimation
+	dw RapidashGAnimation
 	dw SlowpokeAnimation
 	dw SlowbroAnimation
 	dw SlowkingAnimation

@@ -281,7 +281,9 @@ NewPokedexOrder:
 	dw PERSIAN_A
 	dw PERRSERKER
 	dw PONYTA
+	dw PONYTA_G
 	dw RAPIDASH
+	dw RAPIDASH_G
 	dw QWILFISH
 	dw OVERQWIL
 	dw SLUGMA

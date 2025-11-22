@@ -101,7 +101,9 @@ FramesPointers:
 	dba GolemFrames
 	dba GolemAFrames
 	dba PonytaFrames
+	dba PonytaGFrames
 	dba RapidashFrames
+	dba RapidashGFrames
 	dba SlowpokeFrames
 	dba SlowbroFrames
 	dba SlowkingFrames

@@ -2,6 +2,8 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw MismagiusIcon
+	dw UnownIcon
 	dw WynautIcon
 	dw WobbuffetIcon
 	dw GirafarigIcon
@@ -107,6 +109,8 @@ Icons3:
 	dw RegigigasIcon
 	dw DeoxysIcon
 
+MismagiusIcon:    INCBIN "gfx/icons/mismagius.2bpp"
+UnownIcon:        INCBIN "gfx/icons/unown.2bpp"
 WynautIcon:       INCBIN "gfx/icons/wynaut.2bpp"
 WobbuffetIcon:    INCBIN "gfx/icons/wobbuffet.2bpp"
 GirafarigIcon:    INCBIN "gfx/icons/girafarig.2bpp"

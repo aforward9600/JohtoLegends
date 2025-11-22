@@ -113,7 +113,9 @@ MonMenuIconPals:
 	icon_pals BROWN,  RED    ; GOLEM
 	icon_pals GRAY,   RED    ; GOLEM_A
 	icon_pals RED,    GRAY   ; PONYTA
+	icon_pals PURPLE, TEAL   ; PONYTA_G
 	icon_pals RED,    PURPLE ; RAPIDASH
+	icon_pals PURPLE, TEAL   ; RAPIDASH_G
 	icon_pals RED,    PURPLE ; SLOWPOKE
 	icon_pals RED,    PURPLE ; SLOWBRO
 	icon_pals RED,    PURPLE ; SLOWKING

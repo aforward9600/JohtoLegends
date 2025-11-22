@@ -104,7 +104,9 @@ Icons1:
 	dw GolemIcon
 	dw GolemAIcon
 	dw PonytaIcon
+	dw PonytaGIcon
 	dw RapidashIcon
+	dw RapidashGIcon
 	dw SlowpokeIcon
 	dw SlowbroIcon
 	dw SlowkingIcon
@@ -125,8 +127,6 @@ Icons1:
 	dw GengarIcon
 	dw OnixIcon
 	dw SteelixIcon
-	dw DrowzeeIcon
-	dw HypnoIcon
 
 EggIcon:          INCBIN "gfx/icons/egg.2bpp"
 BulbasaurIcon:    INCBIN "gfx/icons/bulbasaur.2bpp"
@@ -231,7 +231,9 @@ GravelerAIcon:    INCBIN "gfx/icons/graveler_a.2bpp"
 GolemIcon:        INCBIN "gfx/icons/golem.2bpp"
 GolemAIcon:       INCBIN "gfx/icons/golem_a.2bpp"
 PonytaIcon:       INCBIN "gfx/icons/ponyta.2bpp"
+PonytaGIcon:      INCBIN "gfx/icons/ponyta_g.2bpp"
 RapidashIcon:     INCBIN "gfx/icons/rapidash.2bpp"
+RapidashGIcon:    INCBIN "gfx/icons/rapidash_g.2bpp"
 SlowpokeIcon:     INCBIN "gfx/icons/slowpoke.2bpp"
 SlowbroIcon:      INCBIN "gfx/icons/slowbro.2bpp"
 SlowkingIcon:     INCBIN "gfx/icons/slowking.2bpp"
@@ -252,5 +254,3 @@ HaunterIcon:      INCBIN "gfx/icons/haunter.2bpp"
 GengarIcon:       INCBIN "gfx/icons/gengar.2bpp"
 OnixIcon:         INCBIN "gfx/icons/onix.2bpp"
 SteelixIcon:      INCBIN "gfx/icons/steelix.2bpp"
-DrowzeeIcon:      INCBIN "gfx/icons/drowzee.2bpp"
-HypnoIcon:        INCBIN "gfx/icons/hypno.2bpp"

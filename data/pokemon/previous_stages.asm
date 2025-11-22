@@ -102,7 +102,9 @@ PreviousEvolutionStage::
 	dw GRAVELER
 	dw GRAVELER_A
 	dw 0
+	dw 0
 	dw PONYTA
+	dw PONYTA_G
 	dw 0
 	dw SLOWPOKE
 	dw SLOWPOKE   ;50

@@ -105,6 +105,8 @@ PokemonNames::
 	db "Golem@@@@@"
 	db "Golem@@@@@"
 	db "Ponyta@@@@"
+	db "Ponyta@@@@"
+	db "Rapidash@@"
 	db "Rapidash@@"
 	db "Slowpoke@@"
 	db "Slowbro@@@"

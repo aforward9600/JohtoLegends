@@ -101,7 +101,9 @@ BitmasksPointers:
 	dw GolemBitmasks
 	dw GolemABitmasks
 	dw PonytaBitmasks
+	dw PonytaGBitmasks
 	dw RapidashBitmasks
+	dw RapidashGBitmasks
 	dw SlowpokeBitmasks
 	dw SlowbroBitmasks
 	dw SlowkingBitmasks
