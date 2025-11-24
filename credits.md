@@ -84,6 +84,8 @@ Hisuian Growlithe: Cure and Sea
 
 Ursaluna, Alolan Rattata and Alolan Raticate sprites and animation: Cure, ShadowOne333, Scarlax
 
+Galarian Farfetch'd sprites and animations: Polished Crystal team, ShadowOne333, Scarlax
+
 Kleavor sprites: Cure
 
 Kleavor footprint: Rangi
@@ -172,7 +174,7 @@ Lance, Female Scientist and Cynthia overworld sprites,
 Alolan Sandshrew and Sandslash, Alolan Vulpix and Ninetales,
 Alolan Diglett and Dugtrio, Alolan Meowth and Persian,
 Galarian Meowth and Perrserker, Hisuian Voltorb and Electrode,
-Alolan Geodude, Graveler and Golem, Galarian Slowking sprites and
+Alolan Geodude, Graveler and Golem, Galarian Slowking, Sirfetch'd sprites and
 regional form icons: 
 Rangi and the Polished Crystal Team.
 

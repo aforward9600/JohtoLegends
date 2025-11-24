@@ -116,6 +116,8 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw FarfetchDEggMoves
+	dw FarfetchDGEggMoves
+	dw NoEggMoves1
 	dw DoduoEggMoves
 	dw NoEggMoves1
 	dw SeelEggMoves
@@ -594,6 +596,15 @@ FarfetchDEggMoves:
 	dw MUD_SLAP
 	dw NIGHT_SLASH
 	dw REVENGE
+	dw LEAF_BLADE
+	dw -1 ; end
+
+FarfetchDGEggMoves:
+	dw DOUBLE_EDGE
+	dw FLAIL
+	dw NIGHT_SLASH
+	dw QUICK_ATTACK
+	dw SKY_ATTACK
 	dw LEAF_BLADE
 	dw -1 ; end
 

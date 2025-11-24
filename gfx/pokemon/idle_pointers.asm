@@ -114,6 +114,8 @@ AnimationIdlePointers:
 	dw MagnetonAnimationIdle
 	dw MagnezoneAnimationIdle
 	dw FarfetchDAnimationIdle
+	dw FarfetchDGAnimationIdle
+	dw SirfetchDAnimationIdle
 	dw DoduoAnimationIdle
 	dw DodrioAnimationIdle
 	dw SeelAnimationIdle

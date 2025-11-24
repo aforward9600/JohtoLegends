@@ -116,6 +116,8 @@ EvosAttacksPointers1::
 	dw MagnetonEvosAttacks
 	dw MagnezoneEvosAttacks
 	dw FarfetchDEvosAttacks
+	dw FarfetchDGEvosAttacks
+	dw SirfetchDEvosAttacks
 	dw DoduoEvosAttacks
 	dw DodrioEvosAttacks
 	dw SeelEvosAttacks
@@ -2354,6 +2356,55 @@ FarfetchDEvosAttacks:
 	dbw 49, DUALWINGBEAT
 	dbw 55, LEAF_BLADE
 	dbw 60, BRAVE_BIRD
+	db 0 ; no more level-up moves
+
+FarfetchDGEvosAttacks:
+	dbbw EVOLVE_LEVEL, 27, SIRFETCH_D
+	db 0 ; no more evolutions
+	dbw 1, PECK
+	dbw 1, POISON_JAB
+	dbw 1, SAND_ATTACK
+	dbw 1, LEER
+	dbw 7, ROCK_SMASH
+	dbw 9, DETECT
+	dbw 13, FAINT_ATTACK
+	dbw 19, SLASH
+	dbw 21, BRICK_BREAK
+	dbw 25, SWORDS_DANCE
+	dbw 31, AGILITY
+	dbw 33, NIGHT_SLASH
+	dbw 37, KNOCK_OFF
+	dbw 43, ROOST
+	dbw 45, FALSE_SWIPE
+	dbw 49, SLAM
+	dbw 55, LEAF_BLADE
+	dbw 60, BRAVE_BIRD
+	db 0 ; no more level-up moves
+
+SirfetchDEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, IRON_DEFENSE
+	dbw 1, IRON_DEFENSE
+	dbw 1, PECK
+	dbw 1, POISON_JAB
+	dbw 1, SAND_ATTACK
+	dbw 1, LEER
+	dbw 7, ROCK_SMASH
+	dbw 9, DETECT
+	dbw 13, FAINT_ATTACK
+	dbw 19, SLASH
+	dbw 21, BRICK_BREAK
+	dbw 25, SWORDS_DANCE
+	dbw 31, AGILITY
+	dbw 33, NIGHT_SLASH
+	dbw 37, KNOCK_OFF
+	dbw 43, ROOST
+	dbw 45, FALSE_SWIPE
+	dbw 49, SLAM
+	dbw 55, LEAF_BLADE
+	dbw 60, CLOSE_COMBAT
+	dbw 65, BRAVE_BIRD
+	dbw 70, METEOASSAULT
 	db 0 ; no more level-up moves
 
 DoduoEvosAttacks:

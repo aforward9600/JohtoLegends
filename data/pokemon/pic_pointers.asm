@@ -240,6 +240,10 @@ PokemonPicPointers::
 	dba MagnezoneBackpic
 	dba FarfetchDFrontpic
 	dba FarfetchDBackpic
+	dba FarfetchDGFrontpic
+	dba FarfetchDGBackpic
+	dba SirfetchDFrontpic
+	dba SirfetchDBackpic
 	dba DoduoFrontpic
 	dba DoduoBackpic
 	dba DodrioFrontpic

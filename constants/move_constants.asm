@@ -425,6 +425,7 @@
 	const FIERY_WRATH
 	const SHELLSIDEARM
 	const EERIE_SPELL
+	const METEOASSAULT
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 

@@ -215,6 +215,7 @@ AlphabeticalMoveList::
 	dw MEGA_PUNCH
 	dw METAL_CLAW
 	dw METAL_SOUND
+	dw METEOASSAULT
 	dw METEOR_MASH
 	dw METRONOME
 	dw MILK_DRINK

@@ -2,6 +2,8 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw WooperIcon
+	dw QuagsireIcon
 	dw MurkrowIcon
 	dw HonchkrowIcon
 	dw MisdreavusIcon
@@ -112,6 +114,8 @@ Icons3:
 	dw RegigigasIcon
 	dw DeoxysIcon
 
+WooperIcon:       INCBIN "gfx/icons/wooper.2bpp"
+QuagsireIcon:     INCBIN "gfx/icons/quagsire.2bpp"
 MurkrowIcon:      INCBIN "gfx/icons/murkrow.2bpp"
 HonchkrowIcon:    INCBIN "gfx/icons/honchkrow.2bpp"
 MisdreavusIcon:   INCBIN "gfx/icons/misdreavus.2bpp"

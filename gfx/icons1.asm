@@ -117,6 +117,8 @@ Icons1:
 	dw MagnetonIcon
 	dw MagnezoneIcon
 	dw FarfetchdIcon
+	dw FarfetchdGIcon
+	dw SirfetchdIcon
 	dw DoduoIcon
 	dw DodrioIcon
 	dw SeelIcon
@@ -125,8 +127,6 @@ Icons1:
 	dw MukIcon
 	dw ShellderIcon
 	dw CloysterIcon
-	dw GastlyIcon
-	dw HaunterIcon
 
 EggIcon:          INCBIN "gfx/icons/egg.2bpp"
 BulbasaurIcon:    INCBIN "gfx/icons/bulbasaur.2bpp"
@@ -244,6 +244,8 @@ MagnemiteIcon:    INCBIN "gfx/icons/magnemite.2bpp"
 MagnetonIcon:     INCBIN "gfx/icons/magneton.2bpp"
 MagnezoneIcon:    INCBIN "gfx/icons/magnezone.2bpp"
 FarfetchdIcon:    INCBIN "gfx/icons/farfetch_d.2bpp"
+FarfetchdGIcon:   INCBIN "gfx/icons/farfetch_d_g.2bpp"
+SirfetchdIcon:    INCBIN "gfx/icons/sirfetch_d.2bpp"
 DoduoIcon:        INCBIN "gfx/icons/doduo.2bpp"
 DodrioIcon:       INCBIN "gfx/icons/dodrio.2bpp"
 SeelIcon:         INCBIN "gfx/icons/seel.2bpp"
@@ -252,5 +254,3 @@ GrimerIcon:       INCBIN "gfx/icons/grimer.2bpp"
 MukIcon:          INCBIN "gfx/icons/muk.2bpp"
 ShellderIcon:     INCBIN "gfx/icons/shellder.2bpp"
 CloysterIcon:     INCBIN "gfx/icons/cloyster.2bpp"
-GastlyIcon:       INCBIN "gfx/icons/gastly.2bpp"
-HaunterIcon:      INCBIN "gfx/icons/haunter.2bpp"

@@ -418,4 +418,5 @@ MoveNames::
 	db "Fiery Wrath@"
 	db "ShellSideArm@"
 	db "Eerie Spell@"
+	db "MeteoAssault@"
 ;	db "Wake Up Slap@"

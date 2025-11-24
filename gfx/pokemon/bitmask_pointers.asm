@@ -114,6 +114,8 @@ BitmasksPointers:
 	dw MagnetonBitmasks
 	dw MagnezoneBitmasks
 	dw FarfetchDBitmasks
+	dw FarfetchDGBitmasks
+	dw SirfetchDBitmasks
 	dw DoduoBitmasks
 	dw DodrioBitmasks
 	dw SeelBitmasks

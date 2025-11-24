@@ -116,6 +116,8 @@ PreviousEvolutionStage::
 	dw MAGNETON
 	dw 0
 	dw 0
+	dw FARFETCH_D_G
+	dw 0
 	dw DODUO
 	dw 0
 	dw SEEL

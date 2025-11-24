@@ -485,8 +485,8 @@ NaturalCureDesc:
 	next1 "status conditions.@"
 
 SniperDesc:
-	db    "Increases chance"
-	next1 "of critical hits.@"
+	db    "Powers up"
+	next1 "critical hits.@"
 
 FilterDesc:
 	db    "Reduces super-"
@@ -602,7 +602,7 @@ AftermathDesc:
 
 RefrigerateDesc:
 	db    "Normal type moves"
-	next1 "become Ice moves.@"
+	next1 "become Ice type.@"
 
 ImmunityDesc:
 	db    "Immune to being"
@@ -734,7 +734,7 @@ SteelySpiritDesc:
 
 GalvanizeDesc:
 	db    "Normal moves are"
-	next1 "Electric moves.@"
+	next1 "Electric type.@"
 
 QuickDrawDesc:
 	db    "User sometimes"

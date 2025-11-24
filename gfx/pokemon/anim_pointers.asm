@@ -114,6 +114,8 @@ AnimationPointers:
 	dw MagnetonAnimation
 	dw MagnezoneAnimation
 	dw FarfetchDAnimation
+	dw FarfetchDGAnimation
+	dw SirfetchDAnimation
 	dw DoduoAnimation
 	dw DodrioAnimation
 	dw SeelAnimation

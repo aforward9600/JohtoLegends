@@ -118,6 +118,8 @@ PokemonNames::
 	db "Magneton@@"
 	db "Magnezone@"
 	db "Farfetch'd@"
+	db "Farfetch'd@"
+	db "Sirfetch'd@"
 	db "Doduo@@@@@"
 	db "Dodrio@@@@"
 	db "Seel@@@@@@"

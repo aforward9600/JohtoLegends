@@ -126,6 +126,8 @@ MonMenuIconPals:
 	icon_pals GRAY,   BROWN  ; MAGNETON
 	icon_pals GRAY,   BROWN  ; MAGNEZONE
 	icon_pals BROWN,  BLUE   ; FARFETCH_D
+	icon_pals BROWN,  GRAY   ; FARFETCH_D_G
+	icon_pals GREEN,  GREEN  ; SIRFETCH_D
 	icon_pals BROWN,  PINK   ; DODUO
 	icon_pals BROWN,  PINK   ; DODRIO
 	icon_pals BLUE,   GRAY   ; SEEL

@@ -115,6 +115,8 @@ PokedexDataPointerTable:
 	dba MagnetonPokedexEntry
 	dba MagnezonePokedexEntry
 	dba FarfetchDPokedexEntry
+	dba FarfetchDGPokedexEntry
+	dba SirfetchDPokedexEntry
 	dba DoduoPokedexEntry
 	dba DodrioPokedexEntry
 	dba SeelPokedexEntry

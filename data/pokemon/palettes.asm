@@ -260,6 +260,10 @@ INCBIN "gfx/pokemon/magnezone/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/magnezone/shiny.pal"
 INCBIN "gfx/pokemon/farfetch_d/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/farfetch_d/shiny.pal"
+INCLUDE "gfx/pokemon/farfetch_d_g/normal.pal"
+INCLUDE "gfx/pokemon/farfetch_d_g/shiny.pal"
+INCLUDE "gfx/pokemon/sirfetch_d/normal.pal"
+INCLUDE "gfx/pokemon/sirfetch_d/shiny.pal"
 INCBIN "gfx/pokemon/doduo/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/doduo/shiny.pal"
 INCBIN "gfx/pokemon/dodrio/front.gbcpal", middle_colors

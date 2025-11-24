@@ -458,6 +458,22 @@ SECTION "Farfetch'd Front", ROMX
 
 FarfetchDFrontpic:   INCBIN "gfx/pokemon/farfetch_d/front.animated.2bpp.lz"
 
+SECTION "Farfetch'd_G Front", ROMX
+
+FarfetchDGFrontpic:  INCBIN "gfx/pokemon/farfetch_d_g/front.animated.2bpp.lz"
+
+SECTION "Farfetch'd_G Back", ROMX
+
+FarfetchDGBackpic:   INCBIN "gfx/pokemon/farfetch_d_g/back.2bpp.lz"
+
+SECTION "Sirfetch'd Front", ROMX
+
+SirfetchDFrontpic:   INCBIN "gfx/pokemon/sirfetch_d/front.animated.2bpp.lz"
+
+SECTION "Sirfetch'd Back", ROMX
+
+SirfetchDBackpic:    INCBIN "gfx/pokemon/sirfetch_d/back.2bpp.lz"
+
 SECTION "Vileplume Front", ROMX
 
 VileplumeFrontpic:   INCBIN "gfx/pokemon/vileplume/front.animated.2bpp.lz"

@@ -134,6 +134,8 @@
 	const MAGNETON   ; 52
 	const MAGNEZONE
 	const FARFETCH_D ; 53
+	const FARFETCH_D_G
+	const SIRFETCH_D
 	const DODUO      ; 54
 	const DODRIO     ; 55
 	const SEEL       ; 56

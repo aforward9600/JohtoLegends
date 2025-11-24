@@ -86,6 +86,7 @@ AlphabeticalPokedexOrder:
 	dw EXEGGCUTE
 	dw EXEGGUTOR
 	dw FARFETCH_D
+	dw FARFETCH_D_G
 	dw FARIGIRAF
 	dw FEAROW
 	dw FERALIGATR
@@ -289,6 +290,7 @@ AlphabeticalPokedexOrder:
 	dw SHELLDER
 	dw SHROOMISH
 	dw SHUCKLE
+	dw SIRFETCH_D
 	dw SKARMINI
 	dw SKARMORY
 	dw SKIPLOOM

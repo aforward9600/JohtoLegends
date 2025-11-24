@@ -120,6 +120,8 @@ PokemonCries::
 	mon_cry CRY_METAPOD,     $020,  $140 ; MAGNETON
 	mon_cry CRY_DROWZEE,     $110,  $0e0 ; MAGNEZONE
 	mon_cry CRY_SPEAROW,     $0dd,  $081 ; FARFETCH_D
+	mon_cry CRY_SPEAROW,     $0dd,  $081 ; FARFETCH_D_G
+	mon_cry CRY_SPEAROW,     $0dd,  $081 ; SIRFETCH_D
 	mon_cry CRY_DIGLETT,     $0bb,  $081 ; DODUO
 	mon_cry CRY_DIGLETT,     $099,  $0a0 ; DODRIO
 	mon_cry CRY_SEEL,        $088,  $140 ; SEEL

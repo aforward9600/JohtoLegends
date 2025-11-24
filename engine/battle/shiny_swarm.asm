@@ -232,7 +232,7 @@ GenerateShinySwarm:
 	if HIGH(MISDREAVUS) == 0
 		or h
 	else
-		jr nz, .skipshineswarm
+		jp nz, .skipshineswarm
 		if HIGH(MISDREAVUS)
 			dec h
 		else

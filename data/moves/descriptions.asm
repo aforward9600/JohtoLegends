@@ -134,7 +134,7 @@ MoveDescriptions1:
 	dw WaterfallDescription
 	dw ClampDescription
 	dw SwiftDescription
-	dw SkullBashDescription
+	dw SolarbeamDescription ; Skull Bash
 	dw SpikeCannonDescription
 	dw ConstrictDescription
 	dw AmnesiaDescription
@@ -147,7 +147,7 @@ MoveDescriptions1:
 	dw BarrageDescription
 	dw AbsorbDescription ; Leech Life
 	dw SleepPowderDescription ; Lovely Kiss
-	dw SkyAttackDescription
+	dw SolarbeamDescription ; Sky Attack
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -282,7 +282,7 @@ MoveDescriptions1:
 	dw WildChargeDescription
 	dw PowerWhipDescription
 	dw DazzlinGleamDescription
-	dw GigaImpactDescription
+	dw HyperBeamDescription ; Giga Impact
 	dw NastyPlotDescription
 	dw PlayRoughDescription
 	dw FocusBlastDescription
@@ -424,6 +424,7 @@ MoveDescriptions1:
 	dw FieryWrathDescription
 	dw ShellSideArmDescription
 	dw EerieSpellDescription
+	dw HyperBeamDescription ; MeteoAssault
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -873,10 +874,6 @@ SwiftDescription:
 	db   "An attack that"
 	line "never misses.@"
 
-SkullBashDescription:
-	db   "1st turn: Prepare"
-	line "2nd turn: Attack@"
-
 SpikeCannonDescription:
 	db   "Fires spikes to"
 	line "hit 2-5 times.@"
@@ -908,10 +905,6 @@ DreamEaterDescription:
 BarrageDescription:
 	db   "Throws orbs to hit"
 	line "2-5 times.@"
-
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	line "2nd turn: Attack@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -1360,10 +1353,6 @@ PowerWhipDescription:
 DazzlinGleamDescription:
 	db   "User emits a powe-"
 	line "rful flash.@"
-
-GigaImpactDescription:
-	db   "1st turn: Attack"
-	line "2nd turn: Rest@"
 
 NastyPlotDescription:
 	db   "Sharply raises the"

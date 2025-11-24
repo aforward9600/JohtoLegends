@@ -114,6 +114,8 @@ FramesPointers:
 	dba MagnetonFrames
 	dba MagnezoneFrames
 	dba FarfetchDFrames
+	dba FarfetchDGFrames
+	dba SirfetchDFrames
 	dba DoduoFrames
 	dba DodrioFrames
 	dba SeelFrames
