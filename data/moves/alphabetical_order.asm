@@ -51,6 +51,7 @@ AlphabeticalMoveList::
 	dw CHARM
 	dw CIRCLE_THROW
 	dw CLAMP
+	dw CLEAR_SMOG
 	dw CLOSE_COMBAT
 	dw COIL
 	dw COMET_PUNCH

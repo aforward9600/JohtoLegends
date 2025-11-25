@@ -874,6 +874,11 @@ EliminatedStatsText:
 	line "were eliminated!"
 	prompt
 
+ClearSmogText:
+	text "<TARGET>'s"
+	line "stats were reset!"
+	prompt
+
 TransformedText:
 	text "<USER>"
 	line "Transformed into"

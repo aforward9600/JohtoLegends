@@ -450,6 +450,7 @@ BattleAnimations::
 	dw BattleAnim_ShellSideArm
 	dw BattleAnim_EerieSpell
 	dw BattleAnim_MeteoAssault
+	dw BattleAnim_ClearSmog
 ;	dw BattleAnim_WakeUpSlap
 
 BattleAnim_0:
@@ -2493,6 +2494,7 @@ BattleAnim_Mist:
 
 BattleAnim_Smog:
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
+BattleAnim_ClearSmog:
 	anim_1gfx ANIM_GFX_HAZE
 	anim_sound 0, 1, SFX_BUBBLEBEAM
 .loop
@@ -5804,14 +5806,6 @@ BattleAnim_Superpower:
 	anim_call BattleAnim_EndureLoop
 	anim_1gfx ANIM_GFX_HIT
 	anim_jump BattleAnim_DoubleEdge
-
-;BattleAnim_MeteoAssault:
-;	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_YELLOW
-;	anim_1gfx ANIM_GFX_SPEED
-;	anim_call BattleAnim_EndureLoop
-;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_YELLOW
-;	anim_1gfx ANIM_GFX_HIT
-;	anim_jump BattleAnim_DoubleEdge
 
 BattleAnim_DragonDance:
     anim_sound 0, 0, SFX_SURF

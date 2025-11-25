@@ -3066,7 +3066,7 @@ KoffingEvosAttacks:
 	dbw 4, SMOG
 	dbw 7, SMOKESCREEN
 	dbw 12, PAYBACK
-	dbw 15, MUD_BOMB
+	dbw 15, CLEAR_SMOG
 	dbw 18, SLUDGE
 	dbw 23, SELFDESTRUCT
 	dbw 26, HAZE
@@ -3088,7 +3088,7 @@ WeezingEvosAttacks:
 	dbw 4, SMOG
 	dbw 7, SMOKESCREEN
 	dbw 12, PAYBACK
-	dbw 15, MUD_BOMB
+	dbw 15, CLEAR_SMOG
 	dbw 18, SLUDGE
 	dbw 23, SELFDESTRUCT
 	dbw 26, HAZE
@@ -3645,7 +3645,7 @@ MagbyEvosAttacks:
 	dbw 8, SMOKESCREEN
 	dbw 12, FAINT_ATTACK
 	dbw 15, FIRE_SPIN
-	dbw 19, SLUDGE
+	dbw 19, CLEAR_SMOG
 	dbw 22, FLAME_BURST
 	dbw 26, CONFUSE_RAY
 	dbw 29, FIRE_PUNCH
@@ -3665,7 +3665,7 @@ MagmarEvosAttacks:
 	dbw 8, SMOKESCREEN
 	dbw 12, FAINT_ATTACK
 	dbw 15, FIRE_SPIN
-	dbw 19, SLUDGE
+	dbw 19, CLEAR_SMOG
 	dbw 22, FLAME_BURST
 	dbw 26, CONFUSE_RAY
 	dbw 29, FIRE_PUNCH
@@ -3684,7 +3684,7 @@ MagmortarEvosAttacks:
 	dbw 8, SMOKESCREEN
 	dbw 12, FAINT_ATTACK
 	dbw 15, FIRE_SPIN
-	dbw 19, SLUDGE
+	dbw 19, CLEAR_SMOG
 	dbw 22, FLAME_BURST
 	dbw 26, CONFUSE_RAY
 	dbw 29, FIRE_PUNCH

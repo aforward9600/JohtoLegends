@@ -193,4 +193,5 @@ MoveEffectsPointers:
 	dw PoisonFang
 	dw PsychoBoost
 	dw EerieSpell
+	dw ClearSmog
 ;	dw WakeUpSlap

@@ -643,6 +643,7 @@ GrimerEggMoves:
 	dw SHADOW_PUNCH
 	dw PURSUIT
 	dw SPITE
+	dw CLEAR_SMOG
 	dw -1 ; end
 
 ShellderEggMoves:
@@ -668,6 +669,7 @@ GastlyEggMoves:
 	dw ICE_PUNCH
 	dw THUNDERPUNCH
 	dw SMOG
+	dw CLEAR_SMOG
 	dw -1 ; end
 
 OnixEggMoves:

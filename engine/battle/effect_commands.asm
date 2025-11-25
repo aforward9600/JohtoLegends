@@ -1733,6 +1733,9 @@ BattleCommand_CheckHit:
 	cp EFFECT_PLAY_NICE
 	ret z
 
+	cp EFFECT_CLEAR_SMOG
+	ret z
+
 	call .StatModifiers
 
 	ld a, [wPlayerMoveStruct + MOVE_ACC]
@@ -6368,8 +6371,7 @@ BattleCommand_SwitchHit:
 .fail_hit
 	call BattleCommand_LowerSub
 	call BattleCommand_MoveDelay
-	call BattleCommand_RaiseSub
-	ret
+	jp BattleCommand_RaiseSub
 
 .succeed_hit
 	push af

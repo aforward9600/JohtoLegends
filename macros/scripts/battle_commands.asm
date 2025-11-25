@@ -201,6 +201,7 @@ ENDM
 	command superpower
 	command defiant
 	command eeriespell
+	command clearsmog
 ;	command wakeupslap
 ;	command awakenopponent
 

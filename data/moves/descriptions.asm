@@ -425,6 +425,7 @@ MoveDescriptions1:
 	dw ShellSideArmDescription
 	dw EerieSpellDescription
 	dw HyperBeamDescription ; MeteoAssault
+	dw ClearSmogDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1817,3 +1818,7 @@ ShellSideArmDescription:
 EerieSpellDescription:
 	db   "Odd incantation"
 	line "that lowers PP.@"
+
+ClearSmogDescription:
+	db   "Resets target's"
+	line "stats.@"

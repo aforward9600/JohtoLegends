@@ -2968,6 +2968,29 @@ EerieSpell:
 	eeriespell
 	endmove
 
+ClearSmog:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	defensiveabilities
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	kingsrock
+	checkfaint
+	buildopponentrage
+	sheerforce
+	clearsmog
+	endmove
+
 ;WakeUpSlap:
 ;	checkobedience
 ;	usedmovetext

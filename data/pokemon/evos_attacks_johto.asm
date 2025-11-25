@@ -2441,7 +2441,7 @@ SlugmaEvosAttacks:
 	dbw 8, ROCK_THROW
 	dbw 13, HARDEN
 	dbw 15, FIRE_SPIN
-	dbw 20, HAZE
+	dbw 20, CLEAR_SMOG
 	dbw 22, ANCIENTPOWER
 	dbw 27, FLAME_BURST
 if DEF(_FAITHFUL)
@@ -2468,7 +2468,7 @@ MagcargoEvosAttacks:
 	dbw 8, ROCK_THROW
 	dbw 13, HARDEN
 	dbw 15, FIRE_SPIN
-	dbw 20, HAZE
+	dbw 20, CLEAR_SMOG
 	dbw 22, ANCIENTPOWER
 	dbw 27, FLAME_BURST
 if DEF(_FAITHFUL)
