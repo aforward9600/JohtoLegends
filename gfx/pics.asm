@@ -276,6 +276,10 @@ SECTION "Muk Front", ROMX
 
 MukFrontpic:         INCBIN "gfx/pokemon/muk/front.animated.2bpp.lz"
 
+SECTION "Muk_A Front", ROMX
+
+MukAFrontpic:        INCBIN "gfx/pokemon/muk_a/front.animated.2bpp.lz"
+
 SECTION "Croconaw Front", ROMX
 
 CroconawFrontpic:    INCBIN "gfx/pokemon/croconaw/front.animated.2bpp.lz"
@@ -713,6 +717,10 @@ PidgeyFrontpic:      INCBIN "gfx/pokemon/pidgey/front.animated.2bpp.lz"
 ParasectBackpic:     INCBIN "gfx/pokemon/parasect/back.2bpp.lz"
 QuagsireFrontpic:    INCBIN "gfx/pokemon/quagsire/front.animated.2bpp.lz"
 
+SECTION "Grimer_A Front", ROMX
+
+GrimerAFrontpic:     INCBIN "gfx/pokemon/grimer_a/front.animated.2bpp.lz"
+
 SECTION "Meowth_A Front", ROMX
 
 MeowthAFrontpic:     INCBIN "gfx/pokemon/meowth_a/front.animated.2bpp.lz"
@@ -1006,6 +1014,9 @@ SECTION "Diglett_A Front", ROMX
 
 DiglettAFrontpic:    INCBIN "gfx/pokemon/diglett_a/front.animated.2bpp.lz"
 
+SECTION "Muk_A Back", ROMX
+
+MukABackpic:         INCBIN "gfx/pokemon/muk_a/back.2bpp.lz"
 
 SECTION "Pics 15", ROMX
 
@@ -1129,6 +1140,9 @@ LarvitarBackpic:     INCBIN "gfx/pokemon/larvitar/back.2bpp.lz"
 PorygonBackpic:      INCBIN "gfx/pokemon/porygon/back.2bpp.lz"
 UnownHBackpic:       INCBIN "gfx/pokemon/unown_h/back.2bpp.lz"
 
+SECTION "Grimer_A Back", ROMX
+
+GrimerABackpic:      INCBIN "gfx/pokemon/grimer_a/back.2bpp.lz"
 
 SECTION "Pics 17", ROMX
 

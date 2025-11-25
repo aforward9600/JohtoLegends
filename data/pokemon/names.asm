@@ -125,6 +125,8 @@ PokemonNames::
 	db "Seel@@@@@@"
 	db "Dewgong@@@"
 	db "Grimer@@@@"
+	db "Grimer@@@@"
+	db "Muk@@@@@@@"
 	db "Muk@@@@@@@"
 	db "Shellder@@"
 	db "Cloyster@@"

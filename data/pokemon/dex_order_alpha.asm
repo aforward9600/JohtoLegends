@@ -120,6 +120,7 @@ AlphabeticalPokedexOrder:
 	dw GRAVELER
 	dw GRAVELER_A
 	dw GRIMER
+	dw GRIMER_A
 	dw GROWLITHE
 	dw GROWLITHE_H
 	dw GYARADOS
@@ -204,6 +205,7 @@ AlphabeticalPokedexOrder:
 	dw MOLTRES
 	dw MR__MIME
 	dw MUK
+	dw MUK_A
 	dw MUNCHLAX
 	dw MURKROW
 	dw NATU

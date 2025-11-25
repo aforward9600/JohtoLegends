@@ -466,7 +466,7 @@ GenerateShinySwarm:
 	if HIGH(MURKROW) == 0
 		or h
 	else
-		jr nz, .skipshineswarm
+		jp nz, .skipshineswarm
 		if HIGH(MURKROW)
 			dec h
 		else

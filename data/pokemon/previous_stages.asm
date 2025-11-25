@@ -122,7 +122,9 @@ PreviousEvolutionStage::
 	dw 0
 	dw SEEL
 	dw 0     ;58
+	dw 0
 	dw GRIMER
+	dw GRIMER_A
 	dw 0
 	dw SHELLDER
 	dw 0

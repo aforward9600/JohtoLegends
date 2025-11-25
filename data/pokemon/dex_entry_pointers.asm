@@ -122,7 +122,9 @@ PokedexDataPointerTable:
 	dba SeelPokedexEntry
 	dba DewgongPokedexEntry
 	dba GrimerPokedexEntry
+	dba GrimerAPokedexEntry
 	dba MukPokedexEntry
+	dba MukAPokedexEntry
 	dba ShellderPokedexEntry
 	dba CloysterPokedexEntry
 	dba GastlyPokedexEntry

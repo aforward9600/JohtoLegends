@@ -141,7 +141,9 @@
 	const SEEL       ; 56
 	const DEWGONG    ; 57
 	const GRIMER     ; 58
+	const GRIMER_A
 	const MUK        ; 59
+	const MUK_A
 	const SHELLDER   ; 5a
 	const CLOYSTER   ; 5b
 	const GASTLY     ; 5c

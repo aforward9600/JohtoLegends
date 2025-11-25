@@ -2,6 +2,8 @@ SECTION "Mon Icons 2", ROMX
 
 Icons2:
 
+	dw ShellderIcon
+	dw CloysterIcon
 	dw GastlyIcon
 	dw HaunterIcon
 	dw GengarIcon
@@ -126,9 +128,9 @@ Icons2:
 	dw AmbipomIcon
 	dw SunkernIcon
 	dw SunfloraIcon
-	dw YanmaIcon
-	dw YanmegaIcon
 
+ShellderIcon:     INCBIN "gfx/icons/shellder.2bpp"
+CloysterIcon:     INCBIN "gfx/icons/cloyster.2bpp"
 GastlyIcon:       INCBIN "gfx/icons/gastly.2bpp"
 HaunterIcon:      INCBIN "gfx/icons/haunter.2bpp"
 GengarIcon:       INCBIN "gfx/icons/gengar.2bpp"
@@ -253,5 +255,3 @@ AipomIcon:        INCBIN "gfx/icons/aipom.2bpp"
 AmbipomIcon:      INCBIN "gfx/icons/ambipom.2bpp"
 SunkernIcon:      INCBIN "gfx/icons/sunkern.2bpp"
 SunfloraIcon:     INCBIN "gfx/icons/sunflora.2bpp"
-YanmaIcon:        INCBIN "gfx/icons/yanma.2bpp"
-YanmegaIcon:      INCBIN "gfx/icons/yanmega.2bpp"

@@ -123,7 +123,9 @@ EvosAttacksPointers1::
 	dw SeelEvosAttacks
 	dw DewgongEvosAttacks
 	dw GrimerEvosAttacks
+	dw GrimerAEvosAttacks
 	dw MukEvosAttacks
+	dw MukAEvosAttacks
 	dw ShellderEvosAttacks
 	dw CloysterEvosAttacks
 	dw GastlyEvosAttacks
@@ -2518,6 +2520,27 @@ GrimerEvosAttacks:
 	dbw 48, TOXIC
 	db 0 ; no more level-up moves
 
+GrimerAEvosAttacks:
+	dbbw EVOLVE_LEVEL, 38, MUK_A
+	db 0 ; no more evolutions
+	dbw 1, POISON_GAS
+	dbw 1, POUND
+	dbw 4, HARDEN
+	dbw 7, BITE
+	dbw 12, DISABLE
+	dbw 15, ACID_SPRAY
+	dbw 18, POISON_FANG
+	dbw 21, MINIMIZE
+	dbw 26, KNOCK_OFF
+	dbw 29, SLUDGE_BOMB
+	dbw 32, CRUNCH
+	dbw 37, SCREECH
+	dbw 40, GUNK_SHOT
+	dbw 43, ACID_ARMOR
+	dbw 46, BELCH
+	dbw 48, TOXIC
+	db 0 ; no more level-up moves
+
 MukEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, POISON_JAB
@@ -2537,6 +2560,29 @@ MukEvosAttacks:
 	dbw 40, BELCH
 	dbw 46, ACID_ARMOR
 	dbw 52, GUNK_SHOT
+	dbw 57, TOXIC
+	db 0 ; no more level-up moves
+
+
+MukAEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, POISON_JAB
+	dbw 1, POISON_JAB
+	dbw 1, POISON_GAS
+	dbw 1, POUND
+	dbw 4, HARDEN
+	dbw 7, BITE
+	dbw 12, DISABLE
+	dbw 15, ACID_SPRAY
+	dbw 18, POISON_FANG
+	dbw 21, MINIMIZE
+	dbw 26, KNOCK_OFF
+	dbw 29, SLUDGE_BOMB
+	dbw 32, CRUNCH
+	dbw 37, SCREECH
+	dbw 40, GUNK_SHOT
+	dbw 46, ACID_ARMOR
+	dbw 52, BELCH
 	dbw 57, TOXIC
 	db 0 ; no more level-up moves
 

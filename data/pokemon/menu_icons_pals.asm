@@ -133,7 +133,9 @@ MonMenuIconPals:
 	icon_pals BLUE,   GRAY   ; SEEL
 	icon_pals BLUE,   GRAY   ; DEWGONG
 	icon_pals PURPLE, GREEN  ; GRIMER
+	icon_pals GREEN,  PURPLE ; GRIMER_A
 	icon_pals PURPLE, GREEN  ; MUK
+	icon_pals GREEN,  PURPLE ; MUK_A
 	icon_pals PURPLE, RED    ; SHELLDER
 	icon_pals PURPLE, BLUE   ; CLOYSTER
 	icon_pals PURPLE, BLUE   ; GASTLY

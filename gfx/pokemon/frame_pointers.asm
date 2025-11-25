@@ -121,7 +121,9 @@ FramesPointers:
 	dba SeelFrames
 	dba DewgongFrames
 	dba GrimerFrames
+	dba GrimerAFrames
 	dba MukFrames
+	dba MukAFrames
 	dba ShellderFrames
 	dba CloysterFrames
 	dba GastlyFrames

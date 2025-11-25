@@ -121,7 +121,9 @@ BitmasksPointers:
 	dw SeelBitmasks
 	dw DewgongBitmasks
 	dw GrimerBitmasks
+	dw GrimerABitmasks
 	dw MukBitmasks
+	dw MukABitmasks
 	dw ShellderBitmasks
 	dw CloysterBitmasks
 	dw GastlyBitmasks

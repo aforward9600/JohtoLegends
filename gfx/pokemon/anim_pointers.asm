@@ -121,7 +121,9 @@ AnimationPointers:
 	dw SeelAnimation
 	dw DewgongAnimation
 	dw GrimerAnimation
+	dw GrimerAAnimation
 	dw MukAnimation
+	dw MukAAnimation
 	dw ShellderAnimation
 	dw CloysterAnimation
 	dw GastlyAnimation

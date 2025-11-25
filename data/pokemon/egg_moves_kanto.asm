@@ -123,6 +123,8 @@ EggMovePointers1:
 	dw SeelEggMoves
 	dw NoEggMoves1
 	dw GrimerEggMoves
+	dw GrimerEggMoves
+	dw NoEggMoves1
 	dw NoEggMoves1
 	dw ShellderEggMoves
 	dw NoEggMoves1
@@ -634,10 +636,13 @@ SeelEggMoves:
 	dw -1 ; end
 
 GrimerEggMoves:
+	dw CURSE
 	dw HAZE
 	dw MEAN_LOOK
 	dw LICK
 	dw SHADOW_PUNCH
+	dw PURSUIT
+	dw SPITE
 	dw -1 ; end
 
 ShellderEggMoves:

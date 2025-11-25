@@ -236,7 +236,7 @@ Pokered_MonIndices:
 	db QUAGSIRE
 	db ESPEON
 	db UMBREON
-	db MURKROW
+	db MUK_A
 	db SLOWKING
 	db FARFETCH_D_G
 	db SLOWKING_G

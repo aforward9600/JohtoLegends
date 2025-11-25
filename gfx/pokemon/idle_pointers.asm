@@ -121,7 +121,9 @@ AnimationIdlePointers:
 	dw SeelAnimationIdle
 	dw DewgongAnimationIdle
 	dw GrimerAnimationIdle
+	dw GrimerAAnimationIdle
 	dw MukAnimationIdle
+	dw MukAAnimationIdle
 	dw ShellderAnimationIdle
 	dw CloysterAnimationIdle
 	dw GastlyAnimationIdle

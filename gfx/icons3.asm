@@ -2,6 +2,8 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw YanmaIcon
+	dw YanmegaIcon
 	dw WooperIcon
 	dw QuagsireIcon
 	dw MurkrowIcon
@@ -114,6 +116,8 @@ Icons3:
 	dw RegigigasIcon
 	dw DeoxysIcon
 
+YanmaIcon:        INCBIN "gfx/icons/yanma.2bpp"
+YanmegaIcon:      INCBIN "gfx/icons/yanmega.2bpp"
 WooperIcon:       INCBIN "gfx/icons/wooper.2bpp"
 QuagsireIcon:     INCBIN "gfx/icons/quagsire.2bpp"
 MurkrowIcon:      INCBIN "gfx/icons/murkrow.2bpp"

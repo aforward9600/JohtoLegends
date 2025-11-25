@@ -83,7 +83,7 @@ EZChat_SortedPokemon:
 .mu:       db FARFETCH_D_G, HAPPINY, -1
 .me:       db MEGANIUM, DITTO, TENTACOOL, MAREEP, -1
 .mo:       db FLAAFFY, VENOMOTH, TANGELA, -1
-.ya:       db SLOWKING, SLOWBRO, SLOWPOKE, MURKROW, YANMA, -1
+.ya:       db SLOWKING, SLOWBRO, SLOWPOKE, MUK_A, YANMA, -1
 .yu:       db KADABRA, -1
 .yo:       db SANDSHREW_A, NOCTOWL, -1
 .ra:       db YANMEGA, RAICHU, CHANSEY, RATICATE, LAPRAS, VILEPLUME, LANTURN, -1

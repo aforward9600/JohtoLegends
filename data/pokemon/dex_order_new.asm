@@ -252,7 +252,9 @@ NewPokedexOrder:
 	dw KOFFING
 	dw WEEZING
 	dw GRIMER
+	dw GRIMER_A
 	dw MUK
+	dw MUK_A
 	dw EXEGGCUTE
 	dw EXEGGUTOR
 	dw GIRAFARIG

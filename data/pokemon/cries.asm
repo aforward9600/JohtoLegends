@@ -127,7 +127,9 @@ PokemonCries::
 	mon_cry CRY_SEEL,        $088,  $140 ; SEEL
 	mon_cry CRY_SEEL,        $023,  $17f ; DEWGONG
 	mon_cry CRY_GRIMER,      $000,  $100 ; GRIMER
+	mon_cry CRY_GRIMER,      $000,  $100 ; GRIMER_A
 	mon_cry CRY_MUK,         $0ef,  $17f ; MUK
+	mon_cry CRY_MUK,         $0ef,  $17f ; MUK_A
 	mon_cry CRY_FEAROW,      $000,  $100 ; SHELLDER
 	mon_cry CRY_FEAROW,      $06f,  $160 ; CLOYSTER
 	mon_cry CRY_METAPOD,     $000,  $100 ; GASTLY

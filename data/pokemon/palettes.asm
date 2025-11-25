@@ -274,8 +274,12 @@ INCBIN "gfx/pokemon/dewgong/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/dewgong/shiny.pal"
 INCBIN "gfx/pokemon/grimer/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/grimer/shiny.pal"
+INCBIN "gfx/pokemon/grimer_a/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/grimer_a/shiny.pal"
 INCBIN "gfx/pokemon/muk/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/muk/shiny.pal"
+INCBIN "gfx/pokemon/muk_a/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/muk_a/shiny.pal"
 INCBIN "gfx/pokemon/shellder/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/shellder/shiny.pal"
 INCBIN "gfx/pokemon/cloyster/front.gbcpal", middle_colors

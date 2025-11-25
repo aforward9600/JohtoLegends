@@ -124,9 +124,9 @@ Icons1:
 	dw SeelIcon
 	dw DewgongIcon
 	dw GrimerIcon
+	dw GrimerAIcon
 	dw MukIcon
-	dw ShellderIcon
-	dw CloysterIcon
+	dw MukAIcon
 
 EggIcon:          INCBIN "gfx/icons/egg.2bpp"
 BulbasaurIcon:    INCBIN "gfx/icons/bulbasaur.2bpp"
@@ -251,6 +251,6 @@ DodrioIcon:       INCBIN "gfx/icons/dodrio.2bpp"
 SeelIcon:         INCBIN "gfx/icons/seel.2bpp"
 DewgongIcon:      INCBIN "gfx/icons/dewgong.2bpp"
 GrimerIcon:       INCBIN "gfx/icons/grimer.2bpp"
+GrimerAIcon:      INCBIN "gfx/icons/grimer_a.2bpp"
 MukIcon:          INCBIN "gfx/icons/muk.2bpp"
-ShellderIcon:     INCBIN "gfx/icons/shellder.2bpp"
-CloysterIcon:     INCBIN "gfx/icons/cloyster.2bpp"
+MukAIcon:         INCBIN "gfx/icons/muk_a.2bpp"

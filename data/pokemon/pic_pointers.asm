@@ -254,8 +254,12 @@ PokemonPicPointers::
 	dba DewgongBackpic
 	dba GrimerFrontpic
 	dba GrimerBackpic
+	dba GrimerAFrontpic
+	dba GrimerABackpic
 	dba MukFrontpic
 	dba MukBackpic
+	dba MukAFrontpic
+	dba MukABackpic
 	dba ShellderFrontpic
 	dba ShellderBackpic
 	dba CloysterFrontpic

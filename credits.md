@@ -148,7 +148,7 @@ Gyarados, Regigigas, Regieleki, Regidrago and Deoxys sprites: Sage
 
 Farigiraf sprite and animation: Nuuk.
 
-Aron, Lairon and Alolan Raichu sprites: Nukkiie
+Aron, Lairon, Alolan Raichu, Alolan Grimer and Alolan Muk sprites: Nukkiie
 
 Ein trainer sprite: Sindorman
 
