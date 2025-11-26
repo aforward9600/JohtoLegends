@@ -396,8 +396,7 @@ LoadCallerScript:
 .proceed
 	ld de, wCallerContact
 	ld bc, PHONE_CONTACT_SIZE
-	call FarCopyBytes
-	ret
+	jp FarCopyBytes
 
 WrongNumber:
 	db TRAINER_NONE, PHONE_00
@@ -445,8 +444,6 @@ RingTwice_StartCall:
 	call Phone_Wait20Frames
 	call Phone_CallerTextbox
 	call Phone_Wait20Frames
-	call Phone_CallerTextboxWithName
-	ret
 
 Phone_CallerTextboxWithName:
 	ld a, [wCurCaller]
@@ -473,8 +470,6 @@ Phone_FirstOfTwoRings:
 	call Phone_Wait20Frames
 	call Phone_CallerTextbox
 	call Phone_Wait20Frames
-	call Phone_CallerTextboxWithName2
-	ret
 
 Phone_CallerTextboxWithName2:
 	call Phone_CallerTextbox
@@ -509,20 +504,17 @@ Phone_CallEnd:
 	call HangUp_BoopOn
 	call HangUp_Wait20Frames
 	call HangUp_BoopOff
-	call HangUp_Wait20Frames
-	ret
+	jp HangUp_Wait20Frames
 
 Function90316:
 	ld de, SFX_SHUT_DOWN_PC
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 HangUp_Beep:
 	ld hl, UnknownText_0x9032a
 	call PrintText
 	ld de, SFX_HANG_UP
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 UnknownText_0x9032a:
 	text_far UnknownText_0x1c5580
@@ -530,16 +522,14 @@ UnknownText_0x9032a:
 
 HangUp_BoopOn:
 	ld hl, UnknownText_0x90336
-	call PrintText
-	ret
+	jp PrintText
 
 UnknownText_0x90336:
 	text_far UnknownText_0x1c5588
 	text_end
 
 HangUp_BoopOff:
-	call SpeechTextbox
-	ret
+	jp SpeechTextbox
 
 Phone_StartRinging:
 	call WaitSFX
@@ -551,7 +541,6 @@ Phone_StartRinging:
 	ret
 
 HangUp_Wait20Frames:
-	jr Phone_Wait20Frames
 
 Phone_Wait20Frames:
 	ld c, 20
@@ -569,23 +558,18 @@ Function90363:
 	ld d, h
 	ld e, l
 	pop bc
-	call Function90380
-	ret
-
-Phone_CallerTextbox:
-	hlcoord 0, 0
-	ld b, 2
-	ld c, SCREEN_WIDTH - 2
-	call Textbox
-	ret
-
 Function90380:
 	ld h, d
 	ld l, e
 	ld a, b
 	call GetCallerTrainerClass
-	call GetCallerName
-	ret
+	jp GetCallerName
+
+Phone_CallerTextbox:
+	hlcoord 0, 0
+	ld b, 2
+	ld c, SCREEN_WIDTH - 2
+	jp Textbox
 
 CheckCanDeletePhoneNumber:
 	ld a, c
@@ -628,8 +612,7 @@ GetCallerName:
 	ld de, SCREEN_WIDTH + 3
 	add hl, de
 	call Phone_GetTrainerClassName
-	call PlaceString
-	ret
+	jp PlaceString
 
 .NotTrainer:
 	push hl
@@ -642,8 +625,7 @@ GetCallerName:
 	ld e, a
 	ld d, [hl]
 	pop hl
-	call PlaceString
-	ret
+	jp PlaceString
 
 INCLUDE "data/phone/non_trainer_names.asm"
 

@@ -186,7 +186,6 @@ OaksPKMNTalk1:
 	ld hl, JunichiMasudaSoloText
 	ld a, OAKS_POKEMON_TALK_2
 	jp NextRadioLine
-	ret
 
 OaksPKMNTalk2:
 	ld hl, GoIchinoseText
@@ -257,16 +256,12 @@ OaksPKMNTalk9:
 	jp NextRadioLine
 
 OaksPKMNTalk10:
-	ret
 
 OaksPKMNTalk11:
-	ret
 
 OaksPKMNTalk12:
-	ret
 
 OaksPKMNTalk13:
-	ret
 
 OaksPKMNTalk14:
 	ret
@@ -300,22 +295,16 @@ PokedexShow1:
 	jp NextRadioLine
 
 PokedexShow2:
-	ret
 
 PokedexShow3:
-	ret
 
 PokedexShow4:
-	ret
 
 PokedexShow5:
-	ret
 
 PokedexShow6:
-	ret
 
 PokedexShow7:
-	ret
 
 PokedexShow8:
 	ret
@@ -335,8 +324,7 @@ CopyDexEntry:
 	call CopyRadioTextToRAM
 	pop hl
 	pop af
-	call CopyDexEntryPart2
-	ret
+	jp CopyDexEntryPart2
 
 CopyDexEntryPart1:
 	ld de, wPokedexShowPointerBank
@@ -411,17 +399,15 @@ BenFernMusic4:
 	jp NextRadioLine
 
 BenFernMusic5:
-	ret
 
 BenFernMusic6:
-	ret
 
 BenFernMusic7:
 	ret
 
 StartPokemonMusicChannel:
 	call RadioTerminator
-	call PrintText
+	jp PrintText
 ;	ld de, MUSIC_NONE
 ;	call GetWeekday
 ;	and 1
@@ -429,7 +415,6 @@ StartPokemonMusicChannel:
 ;	ld de, MUSIC_POKEMON_LULLABY
 ;.SunTueThurSun:
 ;	callfar RadioMusicRestartDE
-	ret
 
 BenIntroText1:
 	; BEN: #MON MUSIC
@@ -463,43 +448,30 @@ LuckyNumberShow1:
 	jp NextRadioLine
 
 LuckyNumberShow2:
-	ret
 
 LuckyNumberShow3:
-	ret
 
 LuckyNumberShow4:
-	ret
 
 LuckyNumberShow5:
-	ret
 
 LuckyNumberShow6:
-	ret
 
 LuckyNumberShow7:
-	ret
 
 LuckyNumberShow8:
-	ret
 
 LuckyNumberShow9:
-	ret
 
 LuckyNumberShow10:
-	ret
 
 LuckyNumberShow11:
-	ret
 
 LuckyNumberShow12:
-	ret
 
 LuckyNumberShow13:
-	ret
 
 LuckyNumberShow14:
-	ret
 
 LuckyNumberShow15:
 	ret
@@ -536,7 +508,6 @@ PeoplePlaces4: ; People
 INCLUDE "data/radio/pnp_hidden_people.asm"
 
 PeoplePlaces5:
-	ret
 
 PeoplePlaces6: ; Places
 	ret
@@ -726,8 +697,7 @@ GetBuenasPassword:
 	ld h, [hl]
 	ld l, a
 	call GetPokemonIDFromIndex
-	call GetPokemonName
-	ret
+	jp GetPokemonName
 
 .Item:
 	ld h, 0
@@ -735,8 +705,7 @@ GetBuenasPassword:
 	add hl, de
 	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
-	ret
+	jp GetItemName
 
 .Move:
 	ld h, 0
@@ -747,8 +716,7 @@ GetBuenasPassword:
 	ld h, [hl]
 	ld l, a
 	call GetMoveIDFromIndex
-	call GetMoveName
-	ret
+	jp GetMoveName
 
 .RawString:
 ; Get the string from the table...

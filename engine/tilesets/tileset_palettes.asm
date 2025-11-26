@@ -215,8 +215,7 @@ LoadCaveRoomPalette:
 	ld de, wBGPals1
 	ld hl, CaveRoomPalette
 	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 
 CaveRoomPalette:
 INCLUDE "gfx/tilesets/cave_room.pal"
@@ -236,8 +235,7 @@ LoadPokeComPalette:
 	ld de, wBGPals1
 	ld hl, PokeComPalette
 	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 
 PokeComPalette:
 INCLUDE "gfx/tilesets/pokecom_center.pal"
@@ -247,8 +245,7 @@ LoadBattleTowerPalette:
 	ld de, wBGPals1
 	ld hl, BattleTowerPalette
 	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 
 BattleTowerPalette:
 INCLUDE "gfx/tilesets/battle_tower.pal"
@@ -258,8 +255,7 @@ LoadIcePathPalette:
 	ld de, wBGPals1
 	ld hl, IcePathPalette
 	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 
 IcePathPalette:
 INCLUDE "gfx/tilesets/ice_path.pal"
@@ -269,8 +265,7 @@ LoadHousePalette:
 	ld de, wBGPals1
 	ld hl, HousePalette
 	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 
 HousePalette:
 INCLUDE "gfx/tilesets/house.pal"
@@ -309,8 +304,7 @@ LoadMansionPalette:
 	ld de, wBGPals1 palette PAL_BG_ROOF
 	ld hl, MansionPalette1 palette 8
 	ld bc, 1 palettes
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 
 MansionPalette2:
 INCLUDE "gfx/tilesets/mansion_2.pal"
@@ -320,8 +314,7 @@ LoadTowerNightPalette:
 	ld de, wBGPals1
 	ld hl, TowerPalette
 	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 
 TowerPalette:
 INCLUDE "gfx/tilesets/tower_night.pal"
@@ -331,8 +324,7 @@ LoadTowerDayPalette:
 	ld de, wBGPals1
 	ld hl, TowerDayPalette
 	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 
 TowerDayPalette:
 INCLUDE "gfx/tilesets/tower_day.pal"

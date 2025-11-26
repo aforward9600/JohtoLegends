@@ -2,6 +2,8 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw SunkernIcon
+	dw SunfloraIcon
 	dw YanmaIcon
 	dw YanmegaIcon
 	dw WooperIcon
@@ -116,6 +118,8 @@ Icons3:
 	dw RegigigasIcon
 	dw DeoxysIcon
 
+SunkernIcon:      INCBIN "gfx/icons/sunkern.2bpp"
+SunfloraIcon:     INCBIN "gfx/icons/sunflora.2bpp"
 YanmaIcon:        INCBIN "gfx/icons/yanma.2bpp"
 YanmegaIcon:      INCBIN "gfx/icons/yanmega.2bpp"
 WooperIcon:       INCBIN "gfx/icons/wooper.2bpp"

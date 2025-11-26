@@ -21,13 +21,7 @@ _ResetClock:
 	ld [sRTCStatusFlags], a
 	call CloseSRAM
 	ld hl, .text_okay
-	call PrintText
-	ret
-
-.wrongpassword
-	ld hl, .text_wrong
-	call PrintText
-	ret
+	jp PrintText
 
 .text_okay
 	; Password OK. Select CONTINUE & reset settings.
@@ -229,8 +223,7 @@ ClockResetPassword:
 	ld hl, sPlayerData + (wMoney - wPlayerData)
 	ld c, $3
 	call .ComponentFromNumber
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 .ComponentFromNumber:
 	ld a, [hli]

@@ -284,8 +284,12 @@ PokemonPicPointers::
 	dba KinglerBackpic
 	dba VoltorbFrontpic
 	dba VoltorbBackpic
+	dba VoltorbHFrontpic
+	dba VoltorbHBackpic
 	dba ElectrodeFrontpic
 	dba ElectrodeBackpic
+	dba ElectrodeHFrontpic
+	dba ElectrodeHBackpic
 	dba ExeggcuteFrontpic
 	dba ExeggcuteBackpic
 	dba ExeggutorFrontpic

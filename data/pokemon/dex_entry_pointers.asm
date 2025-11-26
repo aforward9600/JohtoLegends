@@ -137,7 +137,9 @@ PokedexDataPointerTable:
 	dba KrabbyPokedexEntry
 	dba KinglerPokedexEntry
 	dba VoltorbPokedexEntry
+	dba VoltorbHPokedexEntry
 	dba ElectrodePokedexEntry
+	dba ElectrodeHPokedexEntry
 	dba ExeggcutePokedexEntry
 	dba ExeggutorPokedexEntry
 	dba CubonePokedexEntry

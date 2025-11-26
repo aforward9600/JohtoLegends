@@ -136,7 +136,9 @@ BitmasksPointers:
 	dw KrabbyBitmasks
 	dw KinglerBitmasks
 	dw VoltorbBitmasks
+	dw VoltorbHBitmasks
 	dw ElectrodeBitmasks
+	dw ElectrodeHBitmasks
 	dw ExeggcuteBitmasks
 	dw ExeggutorBitmasks
 	dw CuboneBitmasks

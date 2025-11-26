@@ -136,7 +136,9 @@ FramesPointers:
 	dba KrabbyFrames
 	dba KinglerFrames
 	dba VoltorbFrames
+	dba VoltorbHFrames
 	dba ElectrodeFrames
+	dba ElectrodeHFrames
 	dba ExeggcuteFrames
 	dba ExeggutorFrames
 	dba CuboneFrames

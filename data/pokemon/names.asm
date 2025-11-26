@@ -140,6 +140,8 @@ PokemonNames::
 	db "Krabby@@@@"
 	db "Kingler@@@"
 	db "Voltorb@@@"
+	db "Voltorb@@@"
+	db "Electrode@"
 	db "Electrode@"
 	db "Exeggcute@"
 	db "Exeggutor@"

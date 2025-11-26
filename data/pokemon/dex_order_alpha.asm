@@ -80,6 +80,7 @@ AlphabeticalPokedexOrder:
 	dw ELECTIVIRE
 	dw ELECTRIKE
 	dw ELECTRODE
+	dw ELECTRODE_H
 	dw ELEKID
 	dw ENTEI
 	dw ESPEON
@@ -348,6 +349,7 @@ AlphabeticalPokedexOrder:
 	dw VICTREEBEL
 	dw VILEPLUME
 	dw VOLTORB
+	dw VOLTORB_H
 	dw VULPIX
 	dw VULPIX_A
 	dw WARTORTLE

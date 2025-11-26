@@ -14,7 +14,9 @@ Icons2:
 	dw KrabbyIcon
 	dw KinglerIcon
 	dw VoltorbIcon
+	dw VoltorbHIcon
 	dw ElectrodeIcon
+	dw ElectrodeHIcon
 	dw ExeggcuteIcon
 	dw ExeggutorIcon
 	dw CuboneIcon
@@ -126,8 +128,6 @@ Icons2:
 	dw JumpluffIcon
 	dw AipomIcon
 	dw AmbipomIcon
-	dw SunkernIcon
-	dw SunfloraIcon
 
 ShellderIcon:     INCBIN "gfx/icons/shellder.2bpp"
 CloysterIcon:     INCBIN "gfx/icons/cloyster.2bpp"
@@ -141,7 +141,9 @@ HypnoIcon:        INCBIN "gfx/icons/hypno.2bpp"
 KrabbyIcon:       INCBIN "gfx/icons/krabby.2bpp"
 KinglerIcon:      INCBIN "gfx/icons/kingler.2bpp"
 VoltorbIcon:      INCBIN "gfx/icons/voltorb.2bpp"
+VoltorbHIcon:     INCBIN "gfx/icons/voltorb_h.2bpp"
 ElectrodeIcon:    INCBIN "gfx/icons/electrode.2bpp"
+ElectrodeHIcon:   INCBIN "gfx/icons/electrode_h.2bpp"
 ExeggcuteIcon:    INCBIN "gfx/icons/exeggcute.2bpp"
 ExeggutorIcon:    INCBIN "gfx/icons/exeggutor.2bpp"
 CuboneIcon:       INCBIN "gfx/icons/cubone.2bpp"
@@ -253,5 +255,3 @@ SkiploomIcon:     INCBIN "gfx/icons/skiploom.2bpp"
 JumpluffIcon:     INCBIN "gfx/icons/jumpluff.2bpp"
 AipomIcon:        INCBIN "gfx/icons/aipom.2bpp"
 AmbipomIcon:      INCBIN "gfx/icons/ambipom.2bpp"
-SunkernIcon:      INCBIN "gfx/icons/sunkern.2bpp"
-SunfloraIcon:     INCBIN "gfx/icons/sunflora.2bpp"

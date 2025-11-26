@@ -6246,35 +6246,19 @@ LoadEnemyMon:
 .skipshine:
 	farcall CheckEnemyShininess
 
-;	ld b,b
-
 .SetGender:
 	farcall SetPokemonGender
 	ld hl, wEnemyMonForm
 	jr c, .SkipShine
-;	jr nz, .SkipShine
 	ld a, [hl]
 	or CAUGHT_MON_GENDER_MASK
 	ld [hl], a
 
 .SkipShine
-; Generate new random DVs
-;	ld hl, wStatusFlags2
-;	bit STATUSFLAGS2_UNUSED_5_F, [hl]
-;	jr nz, .MaxDVs
 	call BattleRandom
 	ld b, a
 	call BattleRandom
 	ld c, a
-;	jr .UpdateDVs
-
-;.MaxDVs:
-;	call BattleRandom
-;	ld [hld], a
-;	ld b, $ff
-;	call BattleRandom
-;	ld [hl], a
-;	ld c, $ff
 
 .UpdateDVs:
 ; Input DVs in register bc

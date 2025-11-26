@@ -232,8 +232,8 @@ Pokered_MonIndices:
 	db SUNKERN
 	db SUNFLORA
 	db YANMA
-	db WOOPER
-	db QUAGSIRE
+	db VOLTORB_H
+	db ELECTRODE_H
 	db ESPEON
 	db UMBREON
 	db MUK_A

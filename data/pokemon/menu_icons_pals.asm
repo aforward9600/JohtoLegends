@@ -148,7 +148,9 @@ MonMenuIconPals:
 	icon_pals RED,    GRAY   ; KRABBY
 	icon_pals RED,    GRAY   ; KINGLER
 	icon_pals RED,    BLUE   ; VOLTORB
+	icon_pals RED,    GRAY   ; VOLTORB_H
 	icon_pals RED,    BLUE   ; ELECTRODE
+	icon_pals RED,    GRAY   ; ELECTRODE_H
 	icon_pals PINK,   GREEN  ; EXEGGCUTE
 	icon_pals GREEN,  RED    ; EXEGGUTOR
 	icon_pals BROWN,  TEAL   ; CUBONE

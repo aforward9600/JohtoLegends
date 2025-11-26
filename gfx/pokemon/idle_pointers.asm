@@ -136,7 +136,9 @@ AnimationIdlePointers:
 	dw KrabbyAnimationIdle
 	dw KinglerAnimationIdle
 	dw VoltorbAnimationIdle
+	dw VoltorbHAnimationIdle
 	dw ElectrodeAnimationIdle
+	dw ElectrodeHAnimationIdle
 	dw ExeggcuteAnimationIdle
 	dw ExeggutorAnimationIdle
 	dw CuboneAnimationIdle

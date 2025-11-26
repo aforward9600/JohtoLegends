@@ -20,8 +20,7 @@ InitDisplayForHallOfFame:
 	ld hl, .SavingRecordDontTurnOff
 	call PrintText
 	call WaitBGMap2
-	call SetPalettes
-	ret
+	jp SetPalettes
 
 .SavingRecordDontTurnOff:
 	; SAVING RECORD… DON'T TURN OFF!
@@ -57,8 +56,7 @@ InitDisplayForRedCredits:
 	ldh [hSCX], a
 	call EnableLCD
 	call WaitBGMap2
-	call SetPalettes
-	ret
+	jp SetPalettes
 
 ResetDisplayBetweenHallOfFameMons:
 	ldh a, [rSVBK]

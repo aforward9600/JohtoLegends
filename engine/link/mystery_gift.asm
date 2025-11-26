@@ -1343,8 +1343,7 @@ InitMysteryGiftLayout:
 	call WaitBGMap
 	ld b, SCGB_MYSTERY_GIFT
 	call GetSGBLayout
-	call SetPalettes
-	ret
+	jp SetPalettes
 
 .Load5GFX:
 	ld b,  5
@@ -1511,8 +1510,7 @@ Function105777:
 	call WaitBGMap
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
-	call SetPalettes
-	ret
+	jp SetPalettes
 
 Function10578c:
 	ld de, wLinkData
@@ -1541,8 +1539,7 @@ Function10578c:
 	ld hl, $a007 ; address of MBC30 bank
 	ld bc, $c
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 Function1057d7:
 	call ClearBGPalettes

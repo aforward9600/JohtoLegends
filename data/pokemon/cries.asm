@@ -142,7 +142,9 @@ PokemonCries::
 	mon_cry CRY_KRABBY,      $020,  $160 ; KRABBY
 	mon_cry CRY_KRABBY,      $0ee,  $160 ; KINGLER
 	mon_cry CRY_VOLTORB,     $0ed,  $100 ; VOLTORB
+	mon_cry CRY_VOLTORB,     $0ed,  $100 ; VOLTORB_H
 	mon_cry CRY_VOLTORB,     $0a8,  $110 ; ELECTRODE
+	mon_cry CRY_VOLTORB,     $0a8,  $110 ; ELECTRODE_H
 	mon_cry CRY_DIGLETT,     $000,  $100 ; EXEGGCUTE
 	mon_cry CRY_DROWZEE,     $000,  $100 ; EXEGGUTOR
 	mon_cry CRY_CLEFAIRY,    $000,  $100 ; CUBONE

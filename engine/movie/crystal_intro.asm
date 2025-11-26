@@ -466,7 +466,6 @@ IntroScene1:
 	ldh [rVBK], a
 	call Intro_ResetLYOverrides
 	ld de, vTiles2 tile $00
-;	ld b,b ; breakpoint
 	ld hl, Intro_WaterGFX1
 	call Decompress
 	ld a, LOW(Intro_WaterMeta)
@@ -564,8 +563,7 @@ IntroScene4:
 	dec [hl]
 
 .skip_move_left
-	call Intro_AnimateOceanWaves
-	ret
+	jp Intro_AnimateOceanWaves
 
 .next
 	ld hl, wIntroJumptableIndex

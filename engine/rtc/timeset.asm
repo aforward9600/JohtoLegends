@@ -250,8 +250,7 @@ DisplayMinutesWithMinString:
 	call PrintTwoDigitNumberRightAlign
 	inc hl
 	ld de, String_min
-	call PlaceString
-	ret
+	jp PlaceString
 
 PrintTwoDigitNumberRightAlign:
 	push hl
@@ -260,8 +259,7 @@ PrintTwoDigitNumberRightAlign:
 	ld [hl], a
 	pop hl
 	lb bc, PRINTNUM_RIGHTALIGN | 1, 2
-	call PrintNum
-	ret
+	jp PrintNum
 
 Text_WokeUpOak:
 	; Zzz… Hm? Wha…? You woke me up! Will you check the clock for me?
@@ -493,8 +491,7 @@ SetDayOfWeek:
 	ld d, [hl]
 	ld e, a
 	pop hl
-	call PlaceString
-	ret
+	jp PlaceString
 
 .WeekdayStrings:
 ; entries correspond to wCurDay constants (see constants/wram_constants.asm)
@@ -540,8 +537,7 @@ InitialSetDSTFlag:
 	lb bc, 3, 18
 	call ClearBox
 	ld hl, .Text
-	call PlaceHLTextAtBC
-	ret
+	jp PlaceHLTextAtBC
 
 .Text:
 	text_asm
@@ -568,8 +564,7 @@ InitialClearDSTFlag:
 	lb bc, 3, 18
 	call ClearBox
 	ld hl, .Text
-	call PlaceHLTextAtBC
-	ret
+	jp PlaceHLTextAtBC
 
 .Text:
 	text_asm
@@ -593,8 +588,7 @@ DebugDisplayTime:
 	lb bc, 3, SCREEN_WIDTH - 2
 	call ClearBox
 	ld hl, .Text
-	call PlaceHLTextAtBC
-	ret
+	jp PlaceHLTextAtBC
 
 .Text:
 	text_asm
@@ -663,8 +657,7 @@ DebugDisplayTime:
 	inc hl
 	inc de
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
-	call PrintNum
-	ret
+	jp PrintNum
 
 PrintHour:
 	ld l, e
@@ -679,8 +672,7 @@ PrintHour:
 	call AdjustHourForAMorPM
 	ld [wDeciramBuffer], a
 	ld de, wDeciramBuffer
-	call PrintTwoDigitNumberRightAlign
-	ret
+	jp PrintTwoDigitNumberRightAlign
 
 GetTimeOfDayString:
 	ld a, c

@@ -917,27 +917,6 @@ opt b.X ; . = 0, X = 0
 	bigdw %XXXXX......XXXXX
 popo
 
-RivalTransition:
-pusho
-opt b.X ; . = 0, X = 0
-	bigdw %XXXXXXXXX.......
-	bigdw %XXXXXXXXXXXX....
-	bigdw %XXXXXXXXXXXXX...
-	bigdw %XXX.....XXXXXX..
-	bigdw %XXX......XXXXXX.
-	bigdw %XXX.......XXXXX.
-	bigdw %XXX........XXXX.
-	bigdw %XXX........XXXX.
-	bigdw %XXX........XXXX.
-	bigdw %XXX........XXXX.
-	bigdw %XXX.......XXXXX.
-	bigdw %XXX......XXXXXX.
-	bigdw %XXX.....XXXXXX..
-	bigdw %XXXXXXXXXXXXX...
-	bigdw %XXXXXXXXXXXX....
-	bigdw %XXXXXXXXX.......
-popo
-
 LanceTransition:
 pusho
 opt b.X ; . = 0, X = 0

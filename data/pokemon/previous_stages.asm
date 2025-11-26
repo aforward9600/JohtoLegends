@@ -137,7 +137,9 @@ PreviousEvolutionStage::
 	dw 0
 	dw KRABBY
 	dw 0
+	dw 0
 	dw VOLTORB
+	dw VOLTORB_H
 	dw 0
 	dw EXEGGCUTE
 	dw 0      ;68

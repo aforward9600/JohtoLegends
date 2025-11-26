@@ -71,8 +71,7 @@ SaveRTC:
 	ld [MBC3SRamBank], a
 	xor a
 	ld [sRTCStatusFlags], a
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 StartClock::
 	call GetClock
@@ -99,8 +98,7 @@ Function1409b:
 .set_bit_7
 	; Day count exceeds 16383
 	ld a, %10000000
-	call RecordRTCStatus ; set bit 7 on sRTCStatusFlags
-	ret
+	jp RecordRTCStatus ; set bit 7 on sRTCStatusFlags
 
 Function140ae:
 	call CheckRTCStatus

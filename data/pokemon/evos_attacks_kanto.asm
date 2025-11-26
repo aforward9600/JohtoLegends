@@ -138,7 +138,9 @@ EvosAttacksPointers1::
 	dw KrabbyEvosAttacks
 	dw KinglerEvosAttacks
 	dw VoltorbEvosAttacks
+	dw VoltorbHEvosAttacks
 	dw ElectrodeEvosAttacks
+	dw ElectrodeHEvosAttacks
 	dw ExeggcuteEvosAttacks
 	dw ExeggutorEvosAttacks
 	dw CuboneEvosAttacks
@@ -2843,6 +2845,28 @@ VoltorbEvosAttacks:
 	dbw 52, VOLT_TACKLE
 	db 0 ; no more level-up moves
 
+VoltorbHEvosAttacks:
+	dbbw EVOLVE_ITEM, LEAF_STONE, ELECTRODE_H
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, STUN_SPORE
+	dbw 4, BULLET_SEED
+	dbw 11, ROLLOUT
+	dbw 13, SCREECH
+	dbw 16, CHARGE_BEAM
+	dbw 20, SWIFT
+	dbw 22, WILD_CHARGE
+	dbw 26, SELFDESTRUCT
+	dbw 29, ENERGY_BALL
+	dbw 34, SUCKER_PUNCH
+	dbw 34, SEED_BOMB
+	dbw 37, EXPLOSION
+	dbw 41, GYRO_BALL
+	dbw 46, MIRROR_COAT
+	dbw 48, THUNDER
+	dbw 52, VOLT_TACKLE
+	db 0 ; no more level-up moves
+
 ElectrodeEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, THUNDERBOLT
@@ -2858,6 +2882,28 @@ ElectrodeEvosAttacks:
 	dbw 26, SELFDESTRUCT
 	dbw 29, LIGHT_SCREEN
 	dbw 36, SUCKER_PUNCH
+	dbw 41, EXPLOSION
+	dbw 47, GYRO_BALL
+	dbw 54, MIRROR_COAT
+	dbw 58, THUNDER
+	dbw 62, VOLT_TACKLE
+	db 0 ; no more level-up moves
+
+ElectrodeHEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, THUNDERBOLT
+	dbw 1, TACKLE
+	dbw 1, STUN_SPORE
+	dbw 4, BULLET_SEED
+	dbw 11, ROLLOUT
+	dbw 13, SCREECH
+	dbw 16, CHARGE_BEAM
+	dbw 20, SWIFT
+	dbw 22, WILD_CHARGE
+	dbw 26, SELFDESTRUCT
+	dbw 29, ENERGY_BALL
+	dbw 36, SUCKER_PUNCH
+	dbw 36, SEED_BOMB
 	dbw 41, EXPLOSION
 	dbw 47, GYRO_BALL
 	dbw 54, MIRROR_COAT

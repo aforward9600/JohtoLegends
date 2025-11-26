@@ -136,7 +136,9 @@ AnimationPointers:
 	dw KrabbyAnimation
 	dw KinglerAnimation
 	dw VoltorbAnimation
+	dw VoltorbHAnimation
 	dw ElectrodeAnimation
+	dw ElectrodeHAnimation
 	dw ExeggcuteAnimation
 	dw ExeggutorAnimation
 	dw CuboneAnimation

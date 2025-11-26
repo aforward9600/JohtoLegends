@@ -930,6 +930,10 @@ CooltrainerfPic:     INCBIN "gfx/trainers/cooltrainer_f.2bpp.lz"
 ElectrodeFrontpic:   INCBIN "gfx/pokemon/electrode/front.animated.2bpp.lz"
 RaichuABackpic:      INCBIN "gfx/pokemon/raichu_a/back.2bpp.lz"
 
+SECTION "Electrode_H Front", ROMX
+
+ElectrodeHFrontpic:  INCBIN "gfx/pokemon/electrode_h/front.animated.2bpp.lz"
+
 SECTION "Ponyta_G Back", ROMX
 
 PonytaGBackpic:      INCBIN "gfx/pokemon/ponyta_g/back.2bpp.lz"
@@ -1144,6 +1148,10 @@ SECTION "Grimer_A Back", ROMX
 
 GrimerABackpic:      INCBIN "gfx/pokemon/grimer_a/back.2bpp.lz"
 
+SECTION "Voltorb_H Front", ROMX
+
+VoltorbHFrontpic:    INCBIN "gfx/pokemon/voltorb_h/front.animated.2bpp.lz"
+
 SECTION "Pics 17", ROMX
 
 ParasBackpic:        INCBIN "gfx/pokemon/paras/back.2bpp.lz"
@@ -1207,6 +1215,10 @@ MetapodBackpic:      INCBIN "gfx/pokemon/metapod/back.2bpp.lz"
 JigglypuffBackpic:   INCBIN "gfx/pokemon/jigglypuff/back.2bpp.lz"
 OddishBackpic:       INCBIN "gfx/pokemon/oddish/back.2bpp.lz"
 UnownDBackpic:       INCBIN "gfx/pokemon/unown_d/back.2bpp.lz"
+
+SECTION "Electrode_H Back", ROMX
+
+ElectrodeHBackpic:   INCBIN "gfx/pokemon/electrode_h/back.2bpp.lz"
 
 SECTION "Slowpoke_G Front", ROMX
 
@@ -1279,6 +1291,9 @@ UnownPBackpic:       INCBIN "gfx/pokemon/unown_p/back.2bpp.lz"
 UnownIBackpic:       INCBIN "gfx/pokemon/unown_i/back.2bpp.lz"
 UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
+SECTION "Voltorb_H Back", ROMX
+
+VoltorbHBackpic:     INCBIN "gfx/pokemon/voltorb_h/back.2bpp.lz"
 
 SECTION "Diglett_A Backpic", ROMX
 

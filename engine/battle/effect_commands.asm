@@ -1158,8 +1158,7 @@ BattleCommand_DoTurn:
 
 .mimic
 	ld hl, wWildMonPP
-	call .consume_pp
-	ret
+	jr .consume_pp
 
 .out_of_pp
 	call BattleCommand_MoveDelay
@@ -3183,6 +3182,9 @@ LightBallBoost:
 		ld bc, RAICHU
 	endc
 	call DoubleStatIfSpeciesHoldingItem
+	ld bc, RAICHU_A
+	ld d, LIGHT_BALL
+	call SpeciesItemBoost
 	pop de
 	pop bc
 	ret

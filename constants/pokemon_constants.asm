@@ -156,7 +156,9 @@
 	const KRABBY     ; 62
 	const KINGLER    ; 63
 	const VOLTORB    ; 64
+	const VOLTORB_H
 	const ELECTRODE  ; 65
+	const ELECTRODE_H
 	const EXEGGCUTE  ; 66
 	const EXEGGUTOR  ; 67
 	const CUBONE     ; 68

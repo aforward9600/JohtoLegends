@@ -184,8 +184,7 @@ Function24a40:
 	call ItemSwitch_GetNthItem
 	ld de, wd002
 	call ItemSwitch_ConvertItemFormatToDW
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 Function24a4d:
 	call ItemSwitch_GetNthItem
@@ -193,8 +192,7 @@ Function24a4d:
 	ld e, l
 	ld hl, wd002
 	call ItemSwitch_ConvertItemFormatToDW
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 ItemSwitch_GetNthItem:
 	push af
@@ -205,8 +203,7 @@ ItemSwitch_GetNthItem:
 	ld l, a
 	inc hl
 	pop af
-	call AddNTimes
-	ret
+	jp AddNTimes
 
 Function24a6c:
 	push hl
