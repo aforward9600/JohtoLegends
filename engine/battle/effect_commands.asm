@@ -3182,9 +3182,9 @@ LightBallBoost:
 		ld bc, RAICHU
 	endc
 	call DoubleStatIfSpeciesHoldingItem
-	ld bc, RAICHU_A
-	ld d, LIGHT_BALL
-	call SpeciesItemBoost
+;	ld bc, RAICHU_A
+;	ld d, LIGHT_BALL
+;	call SpeciesItemBoost
 	pop de
 	pop bc
 	ret

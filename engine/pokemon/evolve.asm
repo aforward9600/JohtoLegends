@@ -80,6 +80,9 @@ EvolveAfterBattle_MasterLoop:
 	cp EVOLVE_ITEM
 	jp z, .item
 
+	cp EVOLVE_MOVE
+	jp z, .move
+
 	ld a, [wForceEvolution]
 	and a
 	jp nz, .dont_evolve_check
@@ -170,7 +173,7 @@ EvolveAfterBattle_MasterLoop:
 	call GetNextEvoAttackByte
 	ld b, a
 	inc a
-	jr z, .proceed
+	jp z, .proceed
 
 	ld a, [wLinkMode]
 	cp LINK_TIMECAPSULE
@@ -216,6 +219,33 @@ EvolveAfterBattle_MasterLoop:
 	and a
 	jp nz, .skip_evolution_species
 	jr .proceed
+
+.move
+	call IsMonHoldingEverstone
+	jp z, .skip_evolution_species_two_parameters
+
+	ldh a, [hTemp]
+	push hl
+	call GetFarHalfword
+	call GetMoveIDFromIndex
+	pop hl
+	ld b, a
+	ld de, wTempMonMoves
+	ld c, NUM_MOVES
+.move_loop
+	ld a, [de]
+	cp b
+	jr z, .move_found
+
+	inc de
+	dec c
+	jp nz, .move_loop
+	jp .skip_evolution_species_two_parameters
+
+.move_found
+	call GetNextEvoAttackByte
+	inc hl
+	jp .proceed
 
 .level
 	call GetNextEvoAttackByte
@@ -370,8 +400,11 @@ EvolveAfterBattle_MasterLoop:
 
 .dont_evolve_check
 	ld a, b
+	cp EVOLVE_MOVE
+	jr z, .skip_evolution_species_two_parameters
 	cp EVOLVE_STAT
 	jr nz, .skip_evolution_species_parameter
+.skip_evolution_species_two_parameters
 	inc hl
 .skip_evolution_species_parameter
 	inc hl
@@ -709,8 +742,11 @@ SkipEvolutions::
 	inc hl
 	and a
 	ret z
+	cp EVOLVE_MOVE
+	jr z, .extra_skip
 	cp EVOLVE_STAT
 	jr nz, .no_extra_skip
+.extra_skip
 	inc hl
 .no_extra_skip
 	inc hl
