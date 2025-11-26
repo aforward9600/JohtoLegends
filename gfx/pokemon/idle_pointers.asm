@@ -141,6 +141,7 @@ AnimationIdlePointers:
 	dw ElectrodeHAnimationIdle
 	dw ExeggcuteAnimationIdle
 	dw ExeggutorAnimationIdle
+	dw ExeggutorAAnimationIdle
 	dw CuboneAnimationIdle
 	dw MarowakAnimationIdle
 	dw TyrogueAnimationIdle

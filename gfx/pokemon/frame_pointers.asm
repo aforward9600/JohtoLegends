@@ -141,6 +141,7 @@ FramesPointers:
 	dba ElectrodeHFrames
 	dba ExeggcuteFrames
 	dba ExeggutorFrames
+	dba ExeggutorAFrames
 	dba CuboneFrames
 	dba MarowakFrames
 	dba TyrogueFrames

@@ -141,6 +141,7 @@ AnimationPointers:
 	dw ElectrodeHAnimation
 	dw ExeggcuteAnimation
 	dw ExeggutorAnimation
+	dw ExeggutorAAnimation
 	dw CuboneAnimation
 	dw MarowakAnimation
 	dw TyrogueAnimation

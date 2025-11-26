@@ -2,6 +2,7 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw AmbipomIcon
 	dw SunkernIcon
 	dw SunfloraIcon
 	dw YanmaIcon
@@ -118,6 +119,7 @@ Icons3:
 	dw RegigigasIcon
 	dw DeoxysIcon
 
+AmbipomIcon:      INCBIN "gfx/icons/ambipom.2bpp"
 SunkernIcon:      INCBIN "gfx/icons/sunkern.2bpp"
 SunfloraIcon:     INCBIN "gfx/icons/sunflora.2bpp"
 YanmaIcon:        INCBIN "gfx/icons/yanma.2bpp"

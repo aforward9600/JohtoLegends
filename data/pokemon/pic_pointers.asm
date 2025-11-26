@@ -294,6 +294,8 @@ PokemonPicPointers::
 	dba ExeggcuteBackpic
 	dba ExeggutorFrontpic
 	dba ExeggutorBackpic
+	dba ExeggutorAFrontpic
+	dba ExeggutorABackpic
 	dba CuboneFrontpic
 	dba CuboneBackpic
 	dba MarowakFrontpic

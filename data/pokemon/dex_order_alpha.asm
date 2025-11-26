@@ -86,6 +86,7 @@ AlphabeticalPokedexOrder:
 	dw ESPEON
 	dw EXEGGCUTE
 	dw EXEGGUTOR
+	dw EXEGGUTOR_A
 	dw FARFETCH_D
 	dw FARFETCH_D_G
 	dw FARIGIRAF

@@ -145,6 +145,7 @@ PokemonNames::
 	db "Electrode@"
 	db "Exeggcute@"
 	db "Exeggutor@"
+	db "Exeggutor@"
 	db "Cubone@@@@"
 	db "Marowak@@@"
 	db "Tyrogue@@@"

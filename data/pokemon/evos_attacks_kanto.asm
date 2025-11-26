@@ -143,6 +143,7 @@ EvosAttacksPointers1::
 	dw ElectrodeHEvosAttacks
 	dw ExeggcuteEvosAttacks
 	dw ExeggutorEvosAttacks
+	dw ExeggutorAEvosAttacks
 	dw CuboneEvosAttacks
 	dw MarowakEvosAttacks
 	dw TyrogueEvosAttacks
@@ -2913,6 +2914,7 @@ ElectrodeHEvosAttacks:
 
 ExeggcuteEvosAttacks:
 	dbbw EVOLVE_ITEM, LEAF_STONE, EXEGGUTOR
+	dbbw EVOLVE_ITEM, SUN_STONE, EXEGGUTOR_A
 	db 0 ; no more evolutions
 	dbw 1, BARRAGE
 	dbw 1, HYPNOSIS
@@ -2936,6 +2938,21 @@ ExeggutorEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, STOMP
 	dbw 1, STOMP
+	dbw 1, BARRAGE
+	dbw 1, HYPNOSIS
+	dbw 1, CONFUSION
+	dbw 1, EXTRASENSORY
+	dbw 17, PSYBEAM
+	dbw 27, EGG_BOMB
+	dbw 37, WOOD_HAMMER
+	dbw 47, SOLARBEAM
+	dbw 57, PSYCHIC_M
+	db 0 ; no more level-up moves
+
+ExeggutorAEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, OUTRAGE
+	dbw 1, OUTRAGE
 	dbw 1, BARRAGE
 	dbw 1, HYPNOSIS
 	dbw 1, CONFUSION

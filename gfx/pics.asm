@@ -393,6 +393,10 @@ SECTION "Exeggutor Front", ROMX
 
 ExeggutorFrontpic:   INCBIN "gfx/pokemon/exeggutor/front.animated.2bpp.lz"
 
+SECTION "Exeggutor_A Front", ROMX
+
+ExeggutorAFrontpic:  INCBIN "gfx/pokemon/exeggutor_a/front.animated.2bpp.lz"
+
 SECTION "Azumarill Front", ROMX
 
 AzumarillFrontpic:   INCBIN "gfx/pokemon/azumarill/front.animated.2bpp.lz"
@@ -779,6 +783,9 @@ SECTION "Growlithe_H Front", ROMX
 
 GrowlitheHFrontpic:  INCBIN "gfx/pokemon/growlithe_h/front.animated.2bpp.lz"
 
+SECTION "Exeggutor_A Back", ROMX
+
+ExeggutorABackpic:   INCBIN "gfx/pokemon/exeggutor_a/back.2bpp.lz"
 
 SECTION "Pics 11", ROMX
 

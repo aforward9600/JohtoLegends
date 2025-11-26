@@ -147,6 +147,7 @@ PokemonCries::
 	mon_cry CRY_VOLTORB,     $0a8,  $110 ; ELECTRODE_H
 	mon_cry CRY_DIGLETT,     $000,  $100 ; EXEGGCUTE
 	mon_cry CRY_DROWZEE,     $000,  $100 ; EXEGGUTOR
+	mon_cry CRY_DROWZEE,     $000,  $100 ; EXEGGUTOR_A
 	mon_cry CRY_CLEFAIRY,    $000,  $100 ; CUBONE
 	mon_cry CRY_ODDISH,      $04f,  $0e0 ; MAROWAK
 	mon_cry CRY_AIPOM,       $02c,  $108 ; TYROGUE

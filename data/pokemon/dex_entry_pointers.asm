@@ -142,6 +142,7 @@ PokedexDataPointerTable:
 	dba ElectrodeHPokedexEntry
 	dba ExeggcutePokedexEntry
 	dba ExeggutorPokedexEntry
+	dba ExeggutorAPokedexEntry
 	dba CubonePokedexEntry
 	dba MarowakPokedexEntry
 	dba TyroguePokedexEntry

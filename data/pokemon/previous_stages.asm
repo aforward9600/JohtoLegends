@@ -142,6 +142,7 @@ PreviousEvolutionStage::
 	dw VOLTORB_H
 	dw 0
 	dw EXEGGCUTE
+	dw EXEGGCUTE
 	dw 0      ;68
 	dw CUBONE
 	dw 0

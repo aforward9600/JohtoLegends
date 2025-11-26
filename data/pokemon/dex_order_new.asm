@@ -259,6 +259,7 @@ NewPokedexOrder:
 	dw MUK_A
 	dw EXEGGCUTE
 	dw EXEGGUTOR
+	dw EXEGGUTOR_A
 	dw GIRAFARIG
 	dw FARIGIRAF
 	dw STANTLER

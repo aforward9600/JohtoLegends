@@ -141,6 +141,7 @@ INCBIN "gfx/footprints/magnemite.1bpp" ; Electrode
 INCBIN "gfx/footprints/magnemite.1bpp" ; Electrode H
 INCBIN "gfx/footprints/magnemite.1bpp" ; Exeggcute
 INCBIN "gfx/footprints/exeggutor.1bpp"
+INCBIN "gfx/footprints/exeggutor.1bpp" ; Exeggutor A
 INCBIN "gfx/footprints/cubone.1bpp"
 INCBIN "gfx/footprints/marowak.1bpp"
 INCBIN "gfx/footprints/tyrogue.1bpp"

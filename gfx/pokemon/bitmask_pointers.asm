@@ -141,6 +141,7 @@ BitmasksPointers:
 	dw ElectrodeHBitmasks
 	dw ExeggcuteBitmasks
 	dw ExeggutorBitmasks
+	dw ExeggutorABitmasks
 	dw CuboneBitmasks
 	dw MarowakBitmasks
 	dw TyrogueBitmasks

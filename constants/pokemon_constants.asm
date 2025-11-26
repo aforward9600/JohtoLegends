@@ -161,6 +161,7 @@
 	const ELECTRODE_H
 	const EXEGGCUTE  ; 66
 	const EXEGGUTOR  ; 67
+	const EXEGGUTOR_A
 	const CUBONE     ; 68
 	const MAROWAK    ; 69
 	const TYROGUE    ; ec

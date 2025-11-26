@@ -153,6 +153,7 @@ MonMenuIconPals:
 	icon_pals RED,    GRAY   ; ELECTRODE_H
 	icon_pals PINK,   GREEN  ; EXEGGCUTE
 	icon_pals GREEN,  RED    ; EXEGGUTOR
+	icon_pals GREEN,  RED    ; EXEGGUTOR_A
 	icon_pals BROWN,  TEAL   ; CUBONE
 	icon_pals BROWN,  TEAL   ; MAROWAK
 	icon_pals BROWN,  BLUE   ; TYROGUE
