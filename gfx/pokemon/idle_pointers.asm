@@ -144,6 +144,7 @@ AnimationIdlePointers:
 	dw ExeggutorAAnimationIdle
 	dw CuboneAnimationIdle
 	dw MarowakAnimationIdle
+	dw MarowakAAnimationIdle
 	dw TyrogueAnimationIdle
 	dw HitmonleeAnimationIdle
 	dw HitmonchanAnimationIdle

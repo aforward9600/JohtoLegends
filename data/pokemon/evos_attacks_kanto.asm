@@ -146,6 +146,7 @@ EvosAttacksPointers1::
 	dw ExeggutorAEvosAttacks
 	dw CuboneEvosAttacks
 	dw MarowakEvosAttacks
+	dw MarowakAEvosAttacks
 	dw TyrogueEvosAttacks
 	dw HitmonleeEvosAttacks
 	dw HitmonchanEvosAttacks
@@ -2965,6 +2966,7 @@ ExeggutorAEvosAttacks:
 	db 0 ; no more level-up moves
 
 CuboneEvosAttacks:
+	dbww EVOLVE_MOVE, ASTONISH, MAROWAK_A
 	dbbw EVOLVE_LEVEL, 28, MAROWAK
 	db 0 ; no more evolutions
 	dbw 1, GROWL
@@ -2976,6 +2978,7 @@ CuboneEvosAttacks:
 	dbw 21, BONEMERANG
 	dbw 23, RAGE
 	dbw 27, FALSE_SWIPE
+	dbw 28, ASTONISH
 	dbw 31, THRASH
 	dbw 33, FAINT_ATTACK
 	dbw 37, HIHORSEPOWER
@@ -3003,6 +3006,27 @@ MarowakEvosAttacks:
 	dbw 43, HIHORSEPOWER
 	dbw 49, BRICK_BREAK
 	dbw 53, DOUBLE_EDGE
+	dbw 59, EARTHQUAKE
+	dbw 65, BONE_RUSH
+	db 0 ; no more level-up moves
+
+MarowakAEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SHADOW_BONE
+	dbw 1, SHADOW_BONE
+	dbw 1, GROWL
+	dbw 3, TAIL_WHIP
+	dbw 7, BONE_CLUB
+	dbw 11, FLAME_WHEEL
+	dbw 13, LEER
+	dbw 17, HEX
+	dbw 21, BONEMERANG
+	dbw 23, WILL_O_WISP
+	dbw 33, THRASH
+	dbw 37, FAINT_ATTACK
+	dbw 43, HIHORSEPOWER
+	dbw 49, BRICK_BREAK
+	dbw 53, FLARE_BLITZ
 	dbw 59, EARTHQUAKE
 	dbw 65, BONE_RUSH
 	db 0 ; no more level-up moves

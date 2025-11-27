@@ -184,6 +184,7 @@ NewPokedexOrder:
 	dw HERACROSS
 	dw CUBONE
 	dw MAROWAK
+	dw MAROWAK_A
 	dw KRABBY
 	dw KINGLER
 	dw VOLTORB

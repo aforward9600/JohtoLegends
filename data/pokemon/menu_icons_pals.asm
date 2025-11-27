@@ -156,6 +156,7 @@ MonMenuIconPals:
 	icon_pals GREEN,  RED    ; EXEGGUTOR_A
 	icon_pals BROWN,  TEAL   ; CUBONE
 	icon_pals BROWN,  TEAL   ; MAROWAK
+	icon_pals GREEN,  BLUE   ; MAROWAK_A
 	icon_pals BROWN,  BLUE   ; TYROGUE
 	icon_pals BROWN,  TEAL   ; HITMONLEE
 	icon_pals BROWN,  BLUE   ; HITMONCHAN

@@ -93,7 +93,7 @@ GenerateShinySwarm:
 	if HIGH(YANMA) == 0
 		or h
 	else
-		jr nz, .skipshineswarm
+		jp nz, .skipshineswarm
 		if HIGH(YANMA) == 1
 			dec h
 		else

@@ -510,6 +510,10 @@ SECTION "Marowak Front", ROMX
 
 MarowakFrontpic:     INCBIN "gfx/pokemon/marowak/front.animated.2bpp.lz"
 
+SECTION "Marowak_A Front", ROMX
+
+MarowakAFrontpic:    INCBIN "gfx/pokemon/marowak_a/front.animated.2bpp.lz"
+
 SECTION "Vulpix Front", ROMX
 
 VulpixFrontpic:      INCBIN "gfx/pokemon/vulpix/front.animated.2bpp.lz"
@@ -966,6 +970,10 @@ GeodudeABackpic:     INCBIN "gfx/pokemon/geodude_a/back.2bpp.lz"
 SECTION "Geodude_A Front", ROMX
 
 GeodudeAFrontpic:    INCBIN "gfx/pokemon/geodude_a/front.animated.2bpp.lz"
+
+SECTION "Marowak_A Back", ROMX
+
+MarowakABackpic:     INCBIN "gfx/pokemon/marowak_a/back.2bpp.lz"
 
 SECTION "Pics 14", ROMX
 

@@ -145,6 +145,7 @@ PreviousEvolutionStage::
 	dw EXEGGCUTE
 	dw 0      ;68
 	dw CUBONE
+	dw CUBONE
 	dw 0
 	dw TYROGUE
 	dw TYROGUE

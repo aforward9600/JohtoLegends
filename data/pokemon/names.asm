@@ -148,6 +148,7 @@ PokemonNames::
 	db "Exeggutor@"
 	db "Cubone@@@@"
 	db "Marowak@@@"
+	db "Marowak@@@"
 	db "Tyrogue@@@"
 	db "Hitmonlee@"
 	db "Hitmonchan"

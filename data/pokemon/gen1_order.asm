@@ -231,7 +231,7 @@ Pokered_MonIndices:
 	db AIPOM
 	db SUNKERN
 	db SUNFLORA
-	db YANMA
+	db MAROWAK_A
 	db VOLTORB_H
 	db ELECTRODE_H
 	db ESPEON

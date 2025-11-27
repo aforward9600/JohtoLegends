@@ -144,6 +144,7 @@ FramesPointers:
 	dba ExeggutorAFrames
 	dba CuboneFrames
 	dba MarowakFrames
+	dba MarowakAFrames
 	dba TyrogueFrames
 	dba HitmonleeFrames
 	dba HitmonchanFrames

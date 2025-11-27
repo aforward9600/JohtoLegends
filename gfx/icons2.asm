@@ -22,6 +22,7 @@ Icons2:
 	dw ExeggutorAIcon
 	dw CuboneIcon
 	dw MarowakIcon
+	dw MarowakAIcon
 	dw TyrogueIcon
 	dw HitmonleeIcon
 	dw HitmonchanIcon
@@ -127,7 +128,6 @@ Icons2:
 	dw HoppipIcon
 	dw SkiploomIcon
 	dw JumpluffIcon
-	dw AipomIcon
 
 ShellderIcon:     INCBIN "gfx/icons/shellder.2bpp"
 CloysterIcon:     INCBIN "gfx/icons/cloyster.2bpp"
@@ -149,6 +149,7 @@ ExeggutorIcon:    INCBIN "gfx/icons/exeggutor.2bpp"
 ExeggutorAIcon:   INCBIN "gfx/icons/exeggutor_a.2bpp"
 CuboneIcon:       INCBIN "gfx/icons/cubone.2bpp"
 MarowakIcon:      INCBIN "gfx/icons/marowak.2bpp"
+MarowakAIcon:     INCBIN "gfx/icons/marowak_a.2bpp"
 TyrogueIcon:      INCBIN "gfx/icons/tyrogue.2bpp"
 HitmonleeIcon:    INCBIN "gfx/icons/hitmonlee.2bpp"
 HitmonchanIcon:   INCBIN "gfx/icons/hitmonchan.2bpp"
@@ -254,4 +255,3 @@ SudowoodoIcon:    INCBIN "gfx/icons/sudowoodo.2bpp"
 HoppipIcon:       INCBIN "gfx/icons/hoppip.2bpp"
 SkiploomIcon:     INCBIN "gfx/icons/skiploom.2bpp"
 JumpluffIcon:     INCBIN "gfx/icons/jumpluff.2bpp"
-AipomIcon:        INCBIN "gfx/icons/aipom.2bpp"

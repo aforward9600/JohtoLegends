@@ -144,6 +144,7 @@ AnimationPointers:
 	dw ExeggutorAAnimation
 	dw CuboneAnimation
 	dw MarowakAnimation
+	dw MarowakAAnimation
 	dw TyrogueAnimation
 	dw HitmonleeAnimation
 	dw HitmonchanAnimation

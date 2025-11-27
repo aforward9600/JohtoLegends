@@ -144,6 +144,7 @@ INCBIN "gfx/footprints/exeggutor.1bpp"
 INCBIN "gfx/footprints/exeggutor.1bpp" ; Exeggutor A
 INCBIN "gfx/footprints/cubone.1bpp"
 INCBIN "gfx/footprints/marowak.1bpp"
+INCBIN "gfx/footprints/marowak.1bpp" ; Marowak A
 INCBIN "gfx/footprints/tyrogue.1bpp"
 INCBIN "gfx/footprints/hitmonlee.1bpp"
 INCBIN "gfx/footprints/hitmonchan.1bpp"

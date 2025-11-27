@@ -164,6 +164,7 @@
 	const EXEGGUTOR_A
 	const CUBONE     ; 68
 	const MAROWAK    ; 69
+	const MAROWAK_A
 	const TYROGUE    ; ec
 	const HITMONLEE  ; 6a
 	const HITMONCHAN ; 6b

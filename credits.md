@@ -175,7 +175,7 @@ Alolan Sandshrew and Sandslash, Alolan Vulpix and Ninetales,
 Alolan Diglett and Dugtrio, Alolan Meowth and Persian,
 Galarian Meowth and Perrserker, Hisuian Voltorb and Electrode,
 Alolan Geodude, Graveler and Golem, Galarian Slowking, Sirfetch'd,
-Alolan Exeggutor
+Alolan Exeggutor, Alolan Marowak
 sprites and regional form icons: 
 Rangi and the Polished Crystal Team.
 

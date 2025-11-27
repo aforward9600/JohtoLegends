@@ -3162,6 +3162,8 @@ ThickClubBoost:
 		ld bc, MAROWAK
 	endc
 	call DoubleStatIfSpeciesHoldingItem
+	ld bc, MAROWAK_A
+	call DoubleStatIfSpeciesHoldingItem
 	pop de
 	pop bc
 	ret
@@ -3182,9 +3184,8 @@ LightBallBoost:
 		ld bc, RAICHU
 	endc
 	call DoubleStatIfSpeciesHoldingItem
-;	ld bc, RAICHU_A
-;	ld d, LIGHT_BALL
-;	call SpeciesItemBoost
+	ld bc, RAICHU_A
+	call DoubleStatIfSpeciesHoldingItem
 	pop de
 	pop bc
 	ret
@@ -3230,7 +3231,7 @@ DoubleStatIfSpeciesHoldingItem:
 	pop hl
 	cp d
 	ret nz
-
+	ld b,b
 ; Double the stat
 	add hl, hl
 	ret

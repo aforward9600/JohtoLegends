@@ -145,6 +145,7 @@ PokedexDataPointerTable:
 	dba ExeggutorAPokedexEntry
 	dba CubonePokedexEntry
 	dba MarowakPokedexEntry
+	dba MarowakAPokedexEntry
 	dba TyroguePokedexEntry
 	dba HitmonleePokedexEntry
 	dba HitmonchanPokedexEntry

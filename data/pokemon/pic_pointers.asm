@@ -300,6 +300,8 @@ PokemonPicPointers::
 	dba CuboneBackpic
 	dba MarowakFrontpic
 	dba MarowakBackpic
+	dba MarowakAFrontpic
+	dba MarowakABackpic
 	dba TyrogueFrontpic
 	dba TyrogueBackpic
 	dba HitmonleeFrontpic

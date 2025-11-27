@@ -144,6 +144,7 @@ BitmasksPointers:
 	dw ExeggutorABitmasks
 	dw CuboneBitmasks
 	dw MarowakBitmasks
+	dw MarowakABitmasks
 	dw TyrogueBitmasks
 	dw HitmonleeBitmasks
 	dw HitmonchanBitmasks
