@@ -144,7 +144,7 @@ Budew, Roselia, Roserade, Electrike, Manectric, Cacnea, Cacturne, Croagunk,
 Toxicroak, Snorunt, Glalie, Froslass, Aggron, Lotad, Lombre, Ludicolo sprites:
 Prism Team.
 
-Gyarados, Regigigas, Regieleki, Regidrago and Deoxys sprites: Sage
+Gyarados, Regigigas, Regieleki, Regidrago, Deoxys and Galarian Weezing sprites: Sage
 
 Farigiraf sprite and animation: Nuuk.
 

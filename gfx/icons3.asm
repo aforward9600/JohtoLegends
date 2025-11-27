@@ -2,6 +2,7 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw JumpluffIcon
 	dw AipomIcon
 	dw AmbipomIcon
 	dw SunkernIcon
@@ -120,6 +121,7 @@ Icons3:
 	dw RegigigasIcon
 	dw DeoxysIcon
 
+JumpluffIcon:     INCBIN "gfx/icons/jumpluff.2bpp"
 AipomIcon:        INCBIN "gfx/icons/aipom.2bpp"
 AmbipomIcon:      INCBIN "gfx/icons/ambipom.2bpp"
 SunkernIcon:      INCBIN "gfx/icons/sunkern.2bpp"

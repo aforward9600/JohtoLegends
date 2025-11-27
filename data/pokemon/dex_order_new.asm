@@ -254,6 +254,7 @@ NewPokedexOrder:
 	dw GYARADOS
 	dw KOFFING
 	dw WEEZING
+	dw WEEZING_G
 	dw GRIMER
 	dw GRIMER_A
 	dw MUK

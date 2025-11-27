@@ -154,6 +154,7 @@ PreviousEvolutionStage::
 	dw LICKITUNG
 	dw 0
 	dw KOFFING
+	dw KOFFING
 	dw 0
 	dw RHYHORN  	;70
 	dw RHYDON

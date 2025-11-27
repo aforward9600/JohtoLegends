@@ -230,7 +230,7 @@ Pokered_MonIndices:
 	db JUMPLUFF
 	db AIPOM
 	db SUNKERN
-	db SUNFLORA
+	db WEEZING_G
 	db MAROWAK_A
 	db VOLTORB_H
 	db ELECTRODE_H

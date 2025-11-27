@@ -155,6 +155,7 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw KoffingEggMoves
 	dw NoEggMoves1
+	dw NoEggMoves1
 	dw RhyhornEggMoves
 	dw NoEggMoves1
 	dw NoEggMoves1

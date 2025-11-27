@@ -153,6 +153,7 @@ AnimationPointers:
 	dw LickilickyAnimation
 	dw KoffingAnimation
 	dw WeezingAnimation
+	dw WeezingGAnimation
 	dw RhyhornAnimation
 	dw RhydonAnimation
 	dw RhyperiorAnimation

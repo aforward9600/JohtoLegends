@@ -165,6 +165,7 @@ MonMenuIconPals:
 	icon_pals PINK,   RED    ; LICKILICKY
 	icon_pals PURPLE, BLUE   ; KOFFING
 	icon_pals PURPLE, BLUE   ; WEEZING
+	icon_pals GRAY,   BROWN  ; WEEZING_G
 	icon_pals BROWN,  PINK   ; RHYHORN
 	icon_pals BROWN,  GRAY   ; RHYDON
 	icon_pals BROWN,  RED    ; RHYPERIOR

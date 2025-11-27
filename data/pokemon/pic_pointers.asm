@@ -318,6 +318,8 @@ PokemonPicPointers::
 	dba KoffingBackpic
 	dba WeezingFrontpic
 	dba WeezingBackpic
+	dba WeezingGFrontpic
+	dba WeezingGBackpic
 	dba RhyhornFrontpic
 	dba RhyhornBackpic
 	dba RhydonFrontpic

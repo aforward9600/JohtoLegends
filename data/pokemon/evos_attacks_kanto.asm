@@ -155,6 +155,7 @@ EvosAttacksPointers1::
 	dw LickilickyEvosAttacks
 	dw KoffingEvosAttacks
 	dw WeezingEvosAttacks
+	dw WeezingGEvosAttacks
 	dw RhyhornEvosAttacks
 	dw RhydonEvosAttacks
 	dw RhyperiorEvosAttacks
@@ -3146,6 +3147,7 @@ LickilickyEvosAttacks:
 	db 0 ; no more level-up moves
 
 KoffingEvosAttacks:
+	dbww EVOLVE_MOVE, FAIRY_WIND, WEEZING_G
 	dbbw EVOLVE_LEVEL, 35, WEEZING
 	db 0 ; no more evolutions
 	dbw 1, POISON_GAS
@@ -3159,6 +3161,7 @@ KoffingEvosAttacks:
 	dbw 26, HAZE
 	dbw 29, GYRO_BALL
 	dbw 34, SLUDGE_BOMB
+	dbw 35, FAIRY_WIND
 	dbw 37, EXPLOSION
 	dbw 40, DESTINY_BOND
 	dbw 42, SLUDGE_WAVE
@@ -3184,6 +3187,29 @@ WeezingEvosAttacks:
 	dbw 40, EXPLOSION
 	dbw 46, DESTINY_BOND
 	dbw 51, SLUDGE_WAVE
+	dbw 57, BELCH
+	db 0 ; no more level-up moves
+
+WeezingGEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, STRANGESTEAM
+	dbw 1, STRANGESTEAM
+	dbw 1, HEAT_WAVE
+	dbw 1, TOXIC
+	dbw 1, POISON_GAS
+	dbw 1, TACKLE
+	dbw 4, SMOG
+	dbw 7, SMOKESCREEN
+	dbw 12, PAYBACK
+	dbw 15, MUD_BOMB
+	dbw 18, SLUDGE
+	dbw 23, SELFDESTRUCT
+	dbw 26, HAZE
+	dbw 29, GYRO_BALL
+	dbw 34, SLUDGE_BOMB
+	dbw 40, EXPLOSION
+	dbw 46, DESTINY_BOND
+	dbw 51, MOONBLAST
 	dbw 57, BELCH
 	db 0 ; no more level-up moves
 

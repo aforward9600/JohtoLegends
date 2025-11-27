@@ -31,6 +31,7 @@ Icons2:
 	dw LickilickyIcon
 	dw KoffingIcon
 	dw WeezingIcon
+	dw WeezingGIcon
 	dw RhyhornIcon
 	dw RhydonIcon
 	dw RhyperiorIcon
@@ -127,7 +128,6 @@ Icons2:
 	dw SudowoodoIcon
 	dw HoppipIcon
 	dw SkiploomIcon
-	dw JumpluffIcon
 
 ShellderIcon:     INCBIN "gfx/icons/shellder.2bpp"
 CloysterIcon:     INCBIN "gfx/icons/cloyster.2bpp"
@@ -158,6 +158,7 @@ LickitungIcon:    INCBIN "gfx/icons/lickitung.2bpp"
 LickilickyIcon:   INCBIN "gfx/icons/lickilicky.2bpp"
 KoffingIcon:      INCBIN "gfx/icons/koffing.2bpp"
 WeezingIcon:      INCBIN "gfx/icons/weezing.2bpp"
+WeezingGIcon:     INCBIN "gfx/icons/weezing_g.2bpp"
 RhyhornIcon:      INCBIN "gfx/icons/rhyhorn.2bpp"
 RhydonIcon:       INCBIN "gfx/icons/rhydon.2bpp"
 RhyperiorIcon:    INCBIN "gfx/icons/rhyperior.2bpp"
@@ -254,4 +255,3 @@ BonslyIcon:       INCBIN "gfx/icons/bonsly.2bpp"
 SudowoodoIcon:    INCBIN "gfx/icons/sudowoodo.2bpp"
 HoppipIcon:       INCBIN "gfx/icons/hoppip.2bpp"
 SkiploomIcon:     INCBIN "gfx/icons/skiploom.2bpp"
-JumpluffIcon:     INCBIN "gfx/icons/jumpluff.2bpp"

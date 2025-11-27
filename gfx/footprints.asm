@@ -153,6 +153,7 @@ INCBIN "gfx/footprints/lickitung.1bpp"
 INCBIN "gfx/footprints/lickilicky.1bpp"
 INCBIN "gfx/footprints/magnemite.1bpp" ; Koffing
 INCBIN "gfx/footprints/magnemite.1bpp" ; Weezing
+INCBIN "gfx/footprints/magnemite.1bpp" ; Weezing G
 INCBIN "gfx/footprints/rhyhorn.1bpp"
 INCBIN "gfx/footprints/rhydon.1bpp"
 INCBIN "gfx/footprints/rhyperior.1bpp"

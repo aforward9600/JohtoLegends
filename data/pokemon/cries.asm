@@ -159,6 +159,7 @@ PokemonCries::
 	mon_cry CRY_SEEL,        $000,  $100 ; LICKILICKY
 	mon_cry CRY_GOLEM,       $0e6,  $15d ; KOFFING
 	mon_cry CRY_GOLEM,       $0ff,  $17f ; WEEZING
+	mon_cry CRY_GOLEM,       $0ff,  $17f ; WEEZING_G
 	mon_cry CRY_CHARMANDER,  $000,  $100 ; RHYHORN
 	mon_cry CRY_RHYDON,      $000,  $100 ; RHYDON
 	mon_cry CRY_RHYDON,      $000,  $100 ; RHYPERIOR

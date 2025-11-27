@@ -190,6 +190,10 @@ SECTION "Weezing Front", ROMX
 
 WeezingFrontpic:     INCBIN "gfx/pokemon/weezing/front.animated.2bpp.lz"
 
+SECTION "Weezing_G Front", ROMX
+
+WeezingGFrontpic:    INCBIN "gfx/pokemon/weezing_g/front.animated.2bpp.lz"
+
 SECTION "Cloyster Front", ROMX
 
 CloysterFrontpic:    INCBIN "gfx/pokemon/cloyster/front.animated.2bpp.lz"
@@ -1089,6 +1093,10 @@ ErikaPic:            INCBIN "gfx/trainers/erika.2bpp.lz"
 JaninePic:           INCBIN "gfx/trainers/janine.2bpp.lz"
 MagnemiteBackpic:    INCBIN "gfx/pokemon/magnemite/back.2bpp.lz"
 RattataABackpic:     INCBIN "gfx/pokemon/rattata_a/back.2bpp.lz"
+
+SECTION "Weezing_G Back", ROMX
+
+WeezingGBackpic:     INCBIN "gfx/pokemon/weezing_g/back.2bpp.lz"
 
 SECTION "Dugtrio_A Backpic", ROMX
 

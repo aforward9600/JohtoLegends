@@ -153,6 +153,7 @@ FramesPointers:
 	dba LickilickyFrames
 	dba KoffingFrames
 	dba WeezingFrames
+	dba WeezingGFrames
 	dba RhyhornFrames
 	dba RhydonFrames
 	dba RhyperiorFrames

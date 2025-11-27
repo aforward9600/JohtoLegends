@@ -153,6 +153,7 @@ AnimationIdlePointers:
 	dw LickilickyAnimationIdle
 	dw KoffingAnimationIdle
 	dw WeezingAnimationIdle
+	dw WeezingGAnimationIdle
 	dw RhyhornAnimationIdle
 	dw RhydonAnimationIdle
 	dw RhyperiorAnimationIdle

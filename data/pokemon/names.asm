@@ -157,6 +157,7 @@ PokemonNames::
 	db "Lickilicky"
 	db "Koffing@@@"
 	db "Weezing@@@"
+	db "Weezing@@@"
 	db "Rhyhorn@@@"
 	db "Rhydon@@@@"
 	db "Rhyperior@"

@@ -136,9 +136,7 @@ DratiniPokeballScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke CUBONE, 27, RARE_CANDY
-	givepoke CUBONE, 27, RARE_CANDY
-;	givepoke DRATINI, 5, ORAN_BERRY
+	givepoke DRATINI, 5, ORAN_BERRY
 	sjump RivalLarvitarScript
 
 ChooseBagon:

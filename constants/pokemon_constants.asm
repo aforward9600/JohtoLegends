@@ -173,6 +173,7 @@
 	const LICKILICKY
 	const KOFFING    ; 6d
 	const WEEZING    ; 6e
+	const WEEZING_G  ; 6e
 	const RHYHORN    ; 6f
 	const RHYDON     ; 70
 	const RHYPERIOR

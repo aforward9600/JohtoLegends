@@ -154,6 +154,7 @@ PokedexDataPointerTable:
 	dba LickilickyPokedexEntry
 	dba KoffingPokedexEntry
 	dba WeezingPokedexEntry
+	dba WeezingGPokedexEntry
 	dba RhyhornPokedexEntry
 	dba RhydonPokedexEntry
 	dba RhyperiorPokedexEntry

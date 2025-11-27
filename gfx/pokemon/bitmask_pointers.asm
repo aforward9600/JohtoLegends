@@ -153,6 +153,7 @@ BitmasksPointers:
 	dw LickilickyBitmasks
 	dw KoffingBitmasks
 	dw WeezingBitmasks
+	dw WeezingGBitmasks
 	dw RhyhornBitmasks
 	dw RhydonBitmasks
 	dw RhyperiorBitmasks
