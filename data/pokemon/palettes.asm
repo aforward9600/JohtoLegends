@@ -376,6 +376,10 @@ INCLUDE "gfx/pokemon/mimejr/normal.pal"
 INCLUDE "gfx/pokemon/mimejr/shiny.pal"
 INCBIN "gfx/pokemon/mr__mime/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/mr__mime/shiny.pal"
+INCLUDE "gfx/pokemon/mr__mime_g/normal.pal"
+INCLUDE "gfx/pokemon/mr__mime_g/shiny.pal"
+INCLUDE "gfx/pokemon/mr__rime/normal.pal"
+INCLUDE "gfx/pokemon/mr__rime/shiny.pal"
 INCBIN "gfx/pokemon/scyther/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/scyther/shiny.pal"
 INCBIN "gfx/pokemon/scizor/front.gbcpal", middle_colors

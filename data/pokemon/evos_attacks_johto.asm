@@ -1620,7 +1620,7 @@ JumpluffEvosAttacks:
 	db 0 ; no more level-up moves
 
 AipomEvosAttacks:
-	dbbw EVOLVE_LEVEL, 32, AMBIPOM
+	dbww EVOLVE_MOVE, DOUBLE_HIT_M, AMBIPOM
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, TAIL_WHIP
@@ -1640,8 +1640,6 @@ AipomEvosAttacks:
 
 AmbipomEvosAttacks:
 	db 0 ; no more evolutions
-	dbw LEARN_EVO_MOVE, DOUBLE_HIT_M
-	dbw 1, DOUBLE_HIT_M
 	dbw 1, ASTONISH
 	dbw 1, DUAL_CHOP
 	dbw 1, SCRATCH
@@ -1653,6 +1651,7 @@ AmbipomEvosAttacks:
 	dbw 22, SWIFT
 	dbw 25, SCREECH
 	dbw 29, AGILITY
+	dbw 32, DOUBLE_HIT_M
 	dbw 36, FAINT_ATTACK
 	dbw 39, SWORDS_DANCE
 	dbw 43, DOUBLE_EDGE
@@ -1739,7 +1738,7 @@ endc
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:
-	dbbw EVOLVE_LEVEL, 33, YANMEGA
+	dbww EVOLVE_MOVE, ANCIENTPOWER, YANMEGA
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, FORESIGHT
@@ -2513,10 +2512,11 @@ SwinubEvosAttacks:
 	db 0 ; no more level-up moves
 
 PiloswineEvosAttacks:
-	dbbw EVOLVE_ITEM, ICE_STONE, MAMOSWINE
+	dbww EVOLVE_MOVE, ANCIENTPOWER, MAMOSWINE
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, FURY_ATTACK
 	dbw 1, FURY_ATTACK
+	dbw 1, ANCIENTPOWER
 	dbw 1, ICE_FANG
 	dbw 1, TACKLE
 	dbw 1, MUD_SLAP
@@ -2537,8 +2537,8 @@ PiloswineEvosAttacks:
 
 MamoswineEvosAttacks:
 	db 0 ; no more evolutions
-	dbw LEARN_EVO_MOVE, ANCIENTPOWER
 	dbw 1, ANCIENTPOWER
+	dbw 1, FURY_ATTACK
 	dbw 1, ICE_FANG
 	dbw 1, TACKLE
 	dbw 8, POWDER_SNOW

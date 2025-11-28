@@ -15,7 +15,7 @@ CreditsStrings:
 	dw .ChaosRush
 	dw .SCMidna
 	dw .Nukkiie
-	dw .Frogtoes
+	dw .FrogtoesFlempa
 	dw .landesherr
 	dw .Chamber
 	dw .Pikachu
@@ -44,7 +44,7 @@ CreditsStrings:
 	dw .PiaCarrot
 	dw .Neslug
 	dw .Nuuktrainerlass
-	dw .TakaoOhara
+	dw .Frogtoes
 	dw .YuichiroIto
 	dw .TakaoShimizu
 	dw .Planning
@@ -141,7 +141,7 @@ CreditsStrings:
 .ChaosRush:           db "     Chaos Rush@"           ; "おくたに　じゅん@"
 .SCMidna:             db "    SCMidna & Mia@"        ; "よしだ　ひろのぶ@"
 .Nukkiie:             db "      Nukkiie@"         ; "いわした　あすか@"
-.Frogtoes:            db "      Frogtoes@"           ; "いちのせ　ごう@"
+.FrogtoesFlempa:      db " Frogtoes & flempa@"           ; "いちのせ　ごう@"
 .landesherr:          db "     landesherr@"          ; "あおき　もりかず@"
 .Chamber:             db "      Chamber@"          ; "にしの　こうじ@"
 .Pikachu:             db "     Pikachu25@"        ; "まつしま　けんじ@"
@@ -170,7 +170,7 @@ CreditsStrings:
 .PiaCarrot:           db "     PiaCarrot@"            ; "まつだ　よしのり@"
 .Neslug:              db "       Neslug@"            ; "さとう　ひとみ@"
 .Nuuktrainerlass:     db "Nuuk & trainerlass@"           ; "おおさわ　とおる@"
-.TakaoOhara:          db "    TAKAO OHARA@"           ; "おおはら　たかお@"
+.Frogtoes:            db "      Frogtoes@"           ; "おおはら　たかお@"
 .YuichiroIto:         db "    YUICHIRO ITO@"          ; "いとう　ゆういちろう@"
 .TakaoShimizu:        db "   TAKAO SHIMIZU@"          ; "しみず　たかお@"
 .Planning:            db " SPECIAL PRODUCTION"

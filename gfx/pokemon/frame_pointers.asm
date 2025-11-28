@@ -172,6 +172,8 @@ FramesPointers:
 	dba StarmieFrames
 	dba MimeJrFrames
 	dba MrMimeFrames
+	dba MrMimeGFrames
+	dba MrRimeFrames
 	dba ScytherFrames
 	dba ScizorFrames
 	dba KleavorFrames

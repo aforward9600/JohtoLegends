@@ -50,6 +50,8 @@ Icons2:
 	dw StarmieIcon
 	dw MimeJrIcon
 	dw MrMimeIcon
+	dw MrMimeGIcon
+	dw MrRimeIcon
 	dw ScytherIcon
 	dw ScizorIcon
 	dw KleavorIcon
@@ -126,8 +128,6 @@ Icons2:
 	dw AzumarillIcon
 	dw BonslyIcon
 	dw SudowoodoIcon
-	dw HoppipIcon
-	dw SkiploomIcon
 
 ShellderIcon:     INCBIN "gfx/icons/shellder.2bpp"
 CloysterIcon:     INCBIN "gfx/icons/cloyster.2bpp"
@@ -177,6 +177,8 @@ StaryuIcon:       INCBIN "gfx/icons/staryu.2bpp"
 StarmieIcon:      INCBIN "gfx/icons/starmie.2bpp"
 MimeJrIcon:       INCBIN "gfx/icons/mime__jr.2bpp"
 MrMimeIcon:       INCBIN "gfx/icons/mr__mime.2bpp"
+MrMimeGIcon:      INCBIN "gfx/icons/mr__mime_g.2bpp"
+MrRimeIcon:       INCBIN "gfx/icons/mr__rime.2bpp"
 ScytherIcon:      INCBIN "gfx/icons/scyther.2bpp"
 ScizorIcon:       INCBIN "gfx/icons/scizor.2bpp"
 KleavorIcon:      INCBIN "gfx/icons/kleavor.2bpp"
@@ -253,5 +255,3 @@ MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
 AzumarillIcon:    INCBIN "gfx/icons/azumarill.2bpp"
 BonslyIcon:       INCBIN "gfx/icons/bonsly.2bpp"
 SudowoodoIcon:    INCBIN "gfx/icons/sudowoodo.2bpp"
-HoppipIcon:       INCBIN "gfx/icons/hoppip.2bpp"
-SkiploomIcon:     INCBIN "gfx/icons/skiploom.2bpp"

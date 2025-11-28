@@ -173,6 +173,8 @@ PokedexDataPointerTable:
 	dba StarmiePokedexEntry
 	dba MimeJrPokedexEntry
 	dba MrMimePokedexEntry
+	dba MrMimeGPokedexEntry
+	dba MrRimePokedexEntry
 	dba ScytherPokedexEntry
 	dba ScizorPokedexEntry
 	dba KleavorPokedexEntry

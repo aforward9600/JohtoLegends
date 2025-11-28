@@ -172,6 +172,8 @@ AnimationPointers:
 	dw StarmieAnimation
 	dw MimeJrAnimation
 	dw MrMimeAnimation
+	dw MrMimeGAnimation
+	dw MrRimeAnimation
 	dw ScytherAnimation
 	dw ScizorAnimation
 	dw KleavorAnimation

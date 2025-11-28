@@ -15,7 +15,7 @@
 	const CHAOS_RUSH
 	const SCMIDNA
 	const NUKKIIE
-	const FROGTOES
+	const FROGTOES_FLEMPA
 	const LANDESHERR
 	const CHAMBER
 	const PIKACHU_CREDITS
@@ -44,7 +44,7 @@
 	const PIACARROT
 	const NESLUG
 	const NUUK_TRAINERLASS
-	const TAKAO_OHARA
+	const FROGTOES
 	const YUICHIRO_ITO
 	const TAKAO_SHIMIZU
 	const PLANNING

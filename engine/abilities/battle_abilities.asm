@@ -1749,8 +1749,8 @@ HandleEndMoveAbility:
 	ret nc
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVarAddr
-	ld a, [hl]
-	ld [hl], 0
+	xor a
+	ld [hl], a
 	ld hl, HydrationText
 	jp StdBattleTextbox
 
@@ -1884,8 +1884,8 @@ HandleEndMoveAbility:
 	ret nc
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVarAddr
-	ld a, [hl]
-	ld [hl], 0
+	xor a
+	ld [hl], a
 	ld hl, ShedSkinText
 	call StdBattleTextbox
 .NoEndTurnAbilities:

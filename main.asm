@@ -266,6 +266,9 @@ INCLUDE "engine/pokemon/switchpartymons.asm"
 INCLUDE "engine/gfx/load_pics.asm"
 INCLUDE "engine/pokemon/move_mon_wo_mail.asm"
 INCLUDE "data/pokemon/base_stats.asm"
+
+SECTION "Names", ROMX
+
 if DEF(_FRENCH)
 INCLUDE "data/pokemon/names_french.asm"
 else

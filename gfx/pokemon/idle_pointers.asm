@@ -172,6 +172,8 @@ AnimationIdlePointers:
 	dw StarmieAnimationIdle
 	dw MimeJrAnimationIdle
 	dw MrMimeAnimationIdle
+	dw MrMimeGAnimationIdle
+	dw MrRimeAnimationIdle
 	dw ScytherAnimationIdle
 	dw ScizorAnimationIdle
 	dw KleavorAnimationIdle

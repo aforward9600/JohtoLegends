@@ -182,8 +182,10 @@ MonMenuIconPals:
 	icon_pals RED,    TEAL   ; SEAKING
 	icon_pals RED,    BLUE   ; STARYU
 	icon_pals PURPLE, BLUE   ; STARMIE
-	icon_pals PINK,   GREEN  ; MIME_JR
-	icon_pals PINK,   GREEN  ; MR_MIME
+	icon_pals BLUE,   GREEN  ; MIME_JR
+	icon_pals PINK,   GREEN  ; MR__MIME
+	icon_pals BLUE,   PURPLE ; MR__MIME_G
+	icon_pals BLUE,   BLUE   ; MR__RIME
 	icon_pals GREEN,  RED    ; SCYTHER
 	icon_pals RED,    GREEN  ; SCIZOR
 	icon_pals BROWN,  GREEN  ; KLEAVOR

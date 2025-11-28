@@ -145,6 +145,8 @@ NewPokedexOrder:
 	dw CACTURNE
 	dw MIME__JR
 	dw MR__MIME
+	dw MR__MIME_G
+	dw MR__RIME
 	dw BONSLY
 	dw SUDOWOODO
 	dw CLEFFA

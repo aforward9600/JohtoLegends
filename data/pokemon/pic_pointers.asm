@@ -356,6 +356,10 @@ PokemonPicPointers::
 	dba MimeJrBackpic
 	dba MrMimeFrontpic
 	dba MrMimeBackpic
+	dba MrMimeGFrontpic
+	dba MrMimeGBackpic
+	dba MrRimeFrontpic
+	dba MrRimeBackpic
 	dba ScytherFrontpic
 	dba ScytherBackpic
 	dba ScizorFrontpic

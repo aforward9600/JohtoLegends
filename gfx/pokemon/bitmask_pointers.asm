@@ -172,6 +172,8 @@ BitmasksPointers:
 	dw StarmieBitmasks
 	dw MimeJrBitmasks
 	dw MrMimeBitmasks
+	dw MrMimeGBitmasks
+	dw MrRimeBitmasks
 	dw ScytherBitmasks
 	dw ScizorBitmasks
 	dw KleavorBitmasks

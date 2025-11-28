@@ -174,6 +174,7 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw MimeJrEggMoves
 	dw NoEggMoves1
+	dw NoEggMoves1
 	dw ScytherEggMoves
 	dw NoEggMoves1
 	dw NoEggMoves1

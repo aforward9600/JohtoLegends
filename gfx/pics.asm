@@ -413,6 +413,22 @@ SECTION "Mr Mime Front", ROMX
 
 MrMimeFrontpic:      INCBIN "gfx/pokemon/mr__mime/front.animated.2bpp.lz"
 
+SECTION "Mr Mime_G Front", ROMX
+
+MrMimeGFrontpic:     INCBIN "gfx/pokemon/mr__mime_g/front.animated.2bpp.lz"
+
+SECTION "Mr Rime Front", ROMX
+
+MrRimeFrontpic:      INCBIN "gfx/pokemon/mr__rime/front.animated.2bpp.lz"
+
+SECTION "Mr Mime_G Back", ROMX
+
+MrMimeGBackpic:      INCBIN "gfx/pokemon/mr__mime_g/back.2bpp.lz"
+
+SECTION "Mr Rime Back", ROMX
+
+MrRimeBackpic:       INCBIN "gfx/pokemon/mr__rime/back.2bpp.lz"
+
 SECTION "Heracross Front", ROMX
 
 HeracrossFrontpic:   INCBIN "gfx/pokemon/heracross/front.animated.2bpp.lz"

@@ -176,6 +176,8 @@ PokemonNames::
 	db "Starmie@@@"
 	db "Mime Jr.@@"
 	db "Mr. Mime@@"
+	db "Mr. Mime@@"
+	db "Mr. Rime@@"
 	db "Scyther@@@"
 	db "Scizor@@@@"
 	db "Kleavor@@@"

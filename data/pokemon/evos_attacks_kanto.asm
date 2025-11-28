@@ -174,6 +174,8 @@ EvosAttacksPointers1::
 	dw StarmieEvosAttacks
 	dw MimeJrEvosAttacks
 	dw MrMimeEvosAttacks
+	dw MrMimeGEvosAttacks
+	dw MrRimeEvosAttacks
 	dw ScytherEvosAttacks
 	dw ScizorEvosAttacks
 	dw KleavorEvosAttacks
@@ -3106,7 +3108,7 @@ HitmontopEvosAttacks:
 	db 0 ; no more level-up moves
 
 LickitungEvosAttacks:
-	dbbw EVOLVE_LEVEL, 33, LICKILICKY
+	dbww EVOLVE_MOVE, ROLLOUT, LICKILICKY
 	db 0 ; no more evolutions
 	dbw 1, LICK
 	dbw 5, SUPERSONIC
@@ -3116,6 +3118,7 @@ LickitungEvosAttacks:
 	dbw 21, STOMP
 	dbw 25, DISABLE
 	dbw 29, SLAM
+	dbw 33, ROLLOUT
 	dbw 37, BODY_SLAM
 	dbw 41, BELLY_DRUM
 	dbw 45, HEAL_BELL
@@ -3126,8 +3129,6 @@ LickitungEvosAttacks:
 
 LickilickyEvosAttacks:
 	db 0 ; no more evolutions
-	dbw LEARN_EVO_MOVE, ROLLOUT
-	dbw 1, ROLLOUT
 	dbw 1, LICK
 	dbw 5, SUPERSONIC
 	dbw 9, DEFENSE_CURL
@@ -3336,7 +3337,7 @@ BlisseyEvosAttacks:
 	db 0 ; no more level-up moves
 
 TangelaEvosAttacks:
-	dbbw EVOLVE_LEVEL, 38, TANGROWTH
+	dbww EVOLVE_MOVE, ANCIENTPOWER, TANGROWTH
 	db 0 ; no more evolutions
 	dbw 1, CONSTRICT
 	dbw 4, SLEEP_POWDER
@@ -3534,7 +3535,8 @@ StarmieEvosAttacks:
 	db 0 ; no more level-up moves
 
 MimeJrEvosAttacks:
-	dbbw EVOLVE_LEVEL, 16, MR__MIME
+	dbww EVOLVE_MOVE, MIMIC, MR__MIME
+	dbbw EVOLVE_LEVEL, 15, MR__MIME_G
 	db 0 ; no more evolutions
 	dbw 1, BARRIER
 	dbw 1, CONFUSION
@@ -3572,6 +3574,54 @@ MrMimeEvosAttacks:
 	dbw 29, SUBSTITUTE
 	dbw 32, DRAININGKISS
 	dbw 36, DAZZLINGLEAM
+	dbw 39, PSYCHIC_M
+	dbw 43, CALM_MIND
+	dbw 46, BATON_PASS
+	dbw 50, SAFEGUARD
+	db 0 ; no more level-up moves
+
+MrMimeGEvosAttacks:
+	dbbw EVOLVE_LEVEL, 42, MR__RIME
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, POWDER_SNOW
+	dbw 1, POWDER_SNOW
+	dbw 1, CONFUSION
+	dbw 1, BARRIER
+	dbw 1, MAGICAL_LEAF
+	dbw 8, MEDITATE
+	dbw 11, DOUBLESLAP
+	dbw 15, MIMIC
+	dbw 15, PSYWAVE
+	dbw 18, ENCORE
+	dbw 22, LIGHT_SCREEN
+	dbw 22, REFLECT
+	dbw 25, PSYBEAM
+	dbw 29, SUBSTITUTE
+	dbw 32, ICY_WIND
+	dbw 36, ICE_BEAM
+	dbw 39, PSYCHIC_M
+	dbw 43, CALM_MIND
+	dbw 46, BATON_PASS
+	dbw 50, SAFEGUARD
+	db 0 ; no more level-up moves
+
+MrRimeEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, POWDER_SNOW
+	dbw 1, CONFUSION
+	dbw 1, BARRIER
+	dbw 1, MAGICAL_LEAF
+	dbw 8, MEDITATE
+	dbw 11, DOUBLESLAP
+	dbw 15, MIMIC
+	dbw 15, PSYWAVE
+	dbw 18, ENCORE
+	dbw 22, LIGHT_SCREEN
+	dbw 22, REFLECT
+	dbw 25, PSYBEAM
+	dbw 29, SUBSTITUTE
+	dbw 32, ICY_WIND
+	dbw 36, ICE_BEAM
 	dbw 39, PSYCHIC_M
 	dbw 43, CALM_MIND
 	dbw 46, BATON_PASS

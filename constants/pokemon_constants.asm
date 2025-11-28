@@ -192,6 +192,8 @@
 	const STARMIE    ; 79
 	const MIME__JR
 	const MR__MIME   ; 7a
+	const MR__MIME_G
+	const MR__RIME
 	const SCYTHER    ; 7b
 	const SCIZOR     ; d4
 	const KLEAVOR

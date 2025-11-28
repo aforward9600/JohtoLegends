@@ -178,6 +178,8 @@ PokemonCries::
 	mon_cry CRY_PARAS,       $000,  $100 ; STARMIE
 	mon_cry CRY_KRABBY,     -$050,  $060 ; MIME__JR
 	mon_cry CRY_KRABBY,      $008,  $0c0 ; MR__MIME
+	mon_cry CRY_KRABBY,      $008,  $0c0 ; MR__MIME_G
+	mon_cry CRY_KRABBY,      $008,  $0c0 ; MR__RIME
 	mon_cry CRY_CATERPIE,    $000,  $100 ; SCYTHER
 	mon_cry CRY_AMPHAROS,    $000,  $160 ; SCIZOR
 	mon_cry CRY_CATERPIE,    $000,  $100 ; KLEAVOR

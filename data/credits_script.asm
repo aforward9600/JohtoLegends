@@ -106,7 +106,7 @@ CreditsScript:
 	db      POKEMON_SPRITES, 0
 	db          LAKEOFDANCE, 1
 	db          FERROPEXOLA, 2
-	db             FROGTOES, 3
+	db      FROGTOES_FLEMPA, 3
 	db       INTERNETGOBLIN, 4
 	db         SAGE_CREDITS, 5
 

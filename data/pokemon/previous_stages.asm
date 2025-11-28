@@ -173,6 +173,8 @@ PreviousEvolutionStage::
 	dw STARYU
 	dw 0
 	dw MIME__JR
+	dw MIME__JR
+	dw MR__MIME_G
 	dw 0
 	dw SCYTHER
 	dw SCYTHER

@@ -148,6 +148,8 @@ Gyarados, Regigigas, Regieleki, Regidrago, Deoxys and Galarian Weezing sprites: 
 
 Farigiraf sprite and animation: Nuuk.
 
+Galarian Mr. Mime & Mr. Rime sprites: flempa, Scarlax, ShadowOne333
+
 Aron, Lairon, Alolan Raichu, Alolan Grimer and Alolan Muk sprites: Nukkiie
 
 Ein trainer sprite: Sindorman

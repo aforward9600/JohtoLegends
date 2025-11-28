@@ -207,6 +207,8 @@ AlphabeticalPokedexOrder:
 	dw MISSINGNO
 	dw MOLTRES
 	dw MR__MIME
+	dw MR__MIME_G
+	dw MR__RIME
 	dw MUK
 	dw MUK_A
 	dw MUNCHLAX
