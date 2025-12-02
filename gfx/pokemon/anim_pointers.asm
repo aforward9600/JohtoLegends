@@ -187,6 +187,7 @@ AnimationPointers:
 	dw MagmortarAnimation
 	dw PinsirAnimation
 	dw TaurosAnimation
+	dw TaurosPAnimation
 	dw MagikarpAnimation
 	dw GyaradosAnimation
 	dw LaprasAnimation
@@ -370,3 +371,4 @@ AnimationPointers:
 	dw RegidragoAnimation
 	dw RegigigasAnimation
 	dw DeoxysAnimation
+	dw TaurosPAnimation

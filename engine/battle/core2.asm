@@ -624,6 +624,85 @@ CheckEnemyShininess::
 	jr c, .Shiny
 	ret
 
+SetPokemonForm::
+	push hl
+	ld a, [wTempEnemyMonSpecies]
+	jr ResumeFormCheck
+
+SetPartyPokemonForm::
+	ld hl, wPartyMon1Species
+	ld a, [wPartyCount]
+	dec a
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld a, [hl]
+	call GetPokemonIndexFromID
+	jr FinishTaurosCheck
+
+PaldeanTaurosCheck::
+;	ld hl, wTempMonSpecies
+;	ld a, [hl]
+	ld a, [wCurSpecies]
+	call GetPokemonIndexFromID
+FinishTaurosCheck:
+	ld b,b
+	ld a, l
+	sub LOW(TAUROS_P)
+	if HIGH(TAUROS_P) == 0
+		or h
+	else
+		jr nz, .NotTauros
+		ld a, h
+		if HIGH(TAUROS_P) == 1
+			dec a
+		else
+			cp HIGH(TAUROS_P)
+		endc
+	endc
+	jr nz, .NotTauros
+	scf
+.NotTauros
+	ret
+
+ResumeFormCheck:
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(TAUROS_P)
+	if HIGH(TAUROS_P) == 0
+		or h
+	else
+		jr nz, .NotTauros
+		ld a, h
+		if HIGH(TAUROS_P) == 1
+			dec a
+		else
+			cp HIGH(TAUROS_P)
+		endc
+	endc
+	jr nz, .NotTauros
+	call BattleRandom
+	cp 33 percent + 1
+	jr c, .NotTauros
+	call BattleRandom
+	cp 50 percent
+	jr nc, .Water
+	pop hl
+	ld a, [hl]
+	or CAUGHT_FORM_1_MASK
+	ld [hl], a
+	ret
+
+.Water
+	pop hl
+	ld a, [hl]
+	or CAUGHT_FORM_2_MASK
+	ld [hl], a
+	ret
+
+.NotTauros
+	pop hl
+	ret
+
 SetTempMonTime::
 	ld a, [wCurBattleMon]
 	ld hl, wPartyMon1CaughtTime

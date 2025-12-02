@@ -65,6 +65,7 @@ Icons2:
 	dw MagmortarIcon
 	dw PinsirIcon
 	dw TaurosIcon
+	dw TaurosPIcon
 	dw MagikarpIcon
 	dw GyaradosIcon
 	dw LaprasIcon
@@ -127,7 +128,6 @@ Icons2:
 	dw MarillIcon
 	dw AzumarillIcon
 	dw BonslyIcon
-	dw SudowoodoIcon
 
 ShellderIcon:     INCBIN "gfx/icons/shellder.2bpp"
 CloysterIcon:     INCBIN "gfx/icons/cloyster.2bpp"
@@ -192,6 +192,7 @@ MagmarIcon:       INCBIN "gfx/icons/magmar.2bpp"
 MagmortarIcon:    INCBIN "gfx/icons/magmortar.2bpp"
 PinsirIcon:       INCBIN "gfx/icons/pinsir.2bpp"
 TaurosIcon:       INCBIN "gfx/icons/tauros.2bpp"
+TaurosPIcon:      INCBIN "gfx/icons/tauros_p.2bpp"
 MagikarpIcon:     INCBIN "gfx/icons/magikarp.2bpp"
 GyaradosIcon:     INCBIN "gfx/icons/gyarados.2bpp"
 LaprasIcon:       INCBIN "gfx/icons/lapras.2bpp"
@@ -254,4 +255,3 @@ AzurillIcon:      INCBIN "gfx/icons/azurill.2bpp"
 MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
 AzumarillIcon:    INCBIN "gfx/icons/azumarill.2bpp"
 BonslyIcon:       INCBIN "gfx/icons/bonsly.2bpp"
-SudowoodoIcon:    INCBIN "gfx/icons/sudowoodo.2bpp"

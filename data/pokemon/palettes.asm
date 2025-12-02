@@ -406,6 +406,8 @@ INCBIN "gfx/pokemon/pinsir/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/pinsir/shiny.pal"
 INCBIN "gfx/pokemon/tauros/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/tauros/shiny.pal"
+INCLUDE "gfx/pokemon/tauros_p/normal.pal"
+INCLUDE "gfx/pokemon/tauros_p/shiny.pal"
 INCBIN "gfx/pokemon/magikarp/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/magikarp/shiny.pal"
 INCBIN "gfx/pokemon/gyarados/front.gbcpal", middle_colors
@@ -772,3 +774,5 @@ INCBIN "gfx/pokemon/regigigas/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/regigigas/shiny.pal"
 INCBIN "gfx/pokemon/deoxys/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/deoxys/shiny.pal"
+INCLUDE "gfx/pokemon/tauros_p_fire/normal.pal"
+INCLUDE "gfx/pokemon/tauros_p_fire/shiny.pal"

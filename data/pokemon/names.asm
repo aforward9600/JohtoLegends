@@ -191,6 +191,7 @@ PokemonNames::
 	db "Magmortar@"
 	db "Pinsir@@@@"
 	db "Tauros@@@@"
+	db "Tauros@@@@"
 	db "Magikarp@@"
 	db "Gyarados@@"
 	db "Lapras@@@@"
@@ -374,3 +375,4 @@ PokemonNames::
 	db "Regidrago@"
 	db "Regigigas@"
 	db "Deoxys@@@@"
+	db "Tauros@@@@"

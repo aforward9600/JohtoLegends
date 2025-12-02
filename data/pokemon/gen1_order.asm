@@ -228,7 +228,7 @@ Pokered_MonIndices:
 	db HOPPIP
 	db SKIPLOOM
 	db JUMPLUFF
-	db AIPOM
+	db TAUROS_P
 	db MR__MIME_G
 	db WEEZING_G
 	db MAROWAK_A

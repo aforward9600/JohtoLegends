@@ -308,6 +308,20 @@ SetGenderShininess:
 	or CAUGHT_SHINY_MASK
 	ld [hl], a
 .NotShiny
+	ld a, [wEnemyForm]
+	and CAUGHT_FORM_1_MASK
+	jr z, .TrySecond
+	ld a, [hl]
+	or CAUGHT_FORM_1_MASK
+	ld [hl], a
+	ret
+
+.TrySecond
+	and CAUGHT_FORM_2_MASK
+	ret z
+	ld a, [hl]
+	or CAUGHT_FORM_2_MASK
+	ld [hl], a
 	ret
 
 .Random
@@ -335,8 +349,35 @@ SetGenderShininess:
 	ld a, [hl]
 	or CAUGHT_SHINY_MASK
 	ld [hl], a
-	ret
+	push hl
+	farcall SetPartyPokemonForm
+	jr .FinishShiny
 .NotShinyRandom
+	pop hl
+	push hl
+	farcall SetPartyPokemonForm
+.FinishShiny
+	jr nc, .NotTauros
+	call BattleRandom
+	cp 33 percent + 1
+	jr nc, .NotTauros
+	call BattleRandom
+	cp 50 percent
+	jr nc, .Water
+	pop hl
+	ld a, [hl]
+	or CAUGHT_FORM_1_MASK
+	ld [hl], a
+	ret
+
+.Water
+	pop hl
+	ld a, [hl]
+	or CAUGHT_FORM_2_MASK
+	ld [hl], a
+	ret
+
+.NotTauros
 	pop hl
 	ret
 
@@ -353,11 +394,36 @@ SetGenderShininessEgg:
 .SkipGender
 	ld a, [de]
 	and CAUGHT_SHINY_MASK
-	ret z
+	jr z, .SkipShiny
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1CaughtTime
 	call GetPartyLocation
 	ld a, [hl]
 	or CAUGHT_SHINY_MASK
 	ld [hl], a
+.SkipShiny
+	push hl
+	farcall SetPartyPokemonForm
+	jr nc, .NotTauros
+	call BattleRandom
+	cp 33 percent + 1
+	jr c, .NotTauros
+	call BattleRandom
+	cp 50 percent
+	jr nc, .Water
+	pop hl
+	ld a, [hl]
+	or CAUGHT_FORM_1_MASK
+	ld [hl], a
+	ret
+
+.Water
+	pop hl
+	ld a, [hl]
+	or CAUGHT_FORM_2_MASK
+	ld [hl], a
+	ret
+
+.NotTauros
+	pop hl
 	ret

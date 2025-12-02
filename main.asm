@@ -425,6 +425,9 @@ SECTION "Pic Animations 3", ROMX
 
 INCLUDE "gfx/pokemon/johto_frames.asm"
 
+SECTION "Pic Animations 5", ROMX
+
+INCLUDE "gfx/pokemon/new_frames.asm"
 
 SECTION "Unown Animations", ROMX
 

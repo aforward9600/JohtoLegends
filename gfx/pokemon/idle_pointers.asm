@@ -187,6 +187,7 @@ AnimationIdlePointers:
 	dw MagmortarAnimationIdle
 	dw PinsirAnimationIdle
 	dw TaurosAnimationIdle
+	dw TaurosPAnimationIdle
 	dw MagikarpAnimationIdle
 	dw GyaradosAnimationIdle
 	dw LaprasAnimationIdle
@@ -370,3 +371,4 @@ AnimationIdlePointers:
 	dw RegidragoAnimationIdle
 	dw RegigigasAnimationIdle
 	dw DeoxysAnimationIdle
+	dw TaurosPAnimationIdle

@@ -6253,6 +6253,7 @@ LoadEnemyMon:
 	ld a, [hl]
 	or CAUGHT_MON_GENDER_MASK
 	ld [hl], a
+	farcall SetPokemonForm
 
 .SkipShine
 	call BattleRandom

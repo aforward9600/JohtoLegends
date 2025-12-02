@@ -187,6 +187,7 @@ FramesPointers:
 	dba MagmortarFrames
 	dba PinsirFrames
 	dba TaurosFrames
+	dba TaurosPFrames
 	dba MagikarpFrames
 	dba GyaradosFrames
 	dba LaprasFrames
@@ -370,3 +371,4 @@ FramesPointers:
 	dba RegidragoFrames
 	dba RegigigasFrames
 	dba DeoxysFrames
+	dba TaurosPFireFrames

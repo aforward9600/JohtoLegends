@@ -193,6 +193,7 @@ PokemonCries::
 	mon_cry CRY_CHARMANDER,  $710,  $130 ; MAGMORTAR
 	mon_cry CRY_PIDGEOTTO,   $000,  $100 ; PINSIR
 	mon_cry CRY_SQUIRTLE,    $011,  $0c0 ; TAUROS
+	mon_cry CRY_SQUIRTLE,    $011,  $0c0 ; TAUROS_P
 	mon_cry CRY_EKANS,       $080,  $080 ; MAGIKARP
 	mon_cry CRY_EKANS,       $000,  $100 ; GYARADOS
 	mon_cry CRY_LAPRAS,      $000,  $100 ; LAPRAS
@@ -376,3 +377,4 @@ PokemonCries::
 	mon_cry CRY_CHARMANDER,  $c30,  $200 ; REGIDRAGO PLACEHOLDER
 	mon_cry CRY_RAICHU,      $450,  $200 ; REGIGIGAS PLACEHOLDER
 	mon_cry CRY_PIDGEY,     -$104,  $560 ; DEOXYS
+	mon_cry CRY_SQUIRTLE,    $011,  $0c0 ; TAUROS_P_FIRE

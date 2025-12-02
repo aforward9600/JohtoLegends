@@ -188,6 +188,7 @@ PokedexDataPointerTable:
 	dba MagmortarPokedexEntry
 	dba PinsirPokedexEntry
 	dba TaurosPokedexEntry
+	dba TaurosPPokedexEntry
 	dba MagikarpPokedexEntry
 	dba GyaradosPokedexEntry
 	dba LaprasPokedexEntry
@@ -371,3 +372,4 @@ PokedexDataPointerTable:
 	dba RegidragoPokedexEntry
 	dba RegigigasPokedexEntry
 	dba DeoxysPokedexEntry
+	dba TaurosPPokedexEntry

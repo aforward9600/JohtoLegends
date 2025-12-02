@@ -187,6 +187,7 @@ BitmasksPointers:
 	dw MagmortarBitmasks
 	dw PinsirBitmasks
 	dw TaurosBitmasks
+	dw TaurosPBitmasks
 	dw MagikarpBitmasks
 	dw GyaradosBitmasks
 	dw LaprasBitmasks
@@ -370,3 +371,4 @@ BitmasksPointers:
 	dw RegidragoBitmasks
 	dw RegigigasBitmasks
 	dw DeoxysBitmasks
+	dw TaurosPFireBitmasks

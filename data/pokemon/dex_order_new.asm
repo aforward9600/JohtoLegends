@@ -197,6 +197,7 @@ NewPokedexOrder:
 	dw MAGNETON
 	dw MAGNEZONE
 	dw TAUROS
+	dw TAUROS_P
 	dw MILTANK
 	dw YANMA
 	dw YANMEGA
@@ -372,3 +373,4 @@ NewPokedexOrder:
 	dw REGIDRAGO
 	dw REGIGIGAS
 	dw DEOXYS
+	dw TAUROS_P_FIRE

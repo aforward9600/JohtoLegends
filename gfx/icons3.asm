@@ -2,6 +2,7 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw SudowoodoIcon
 	dw HoppipIcon
 	dw SkiploomIcon
 	dw JumpluffIcon
@@ -122,7 +123,9 @@ Icons3:
 	dw RegidragoIcon
 	dw RegigigasIcon
 	dw DeoxysIcon
+	dw TaurosPFireIcon
 
+SudowoodoIcon:    INCBIN "gfx/icons/sudowoodo.2bpp"
 HoppipIcon:       INCBIN "gfx/icons/hoppip.2bpp"
 SkiploomIcon:     INCBIN "gfx/icons/skiploom.2bpp"
 JumpluffIcon:     INCBIN "gfx/icons/jumpluff.2bpp"
@@ -243,3 +246,4 @@ RegielekiIcon:    INCBIN "gfx/icons/regieleki.2bpp"
 RegidragoIcon:    INCBIN "gfx/icons/regidrago.2bpp"
 RegigigasIcon:    INCBIN "gfx/icons/regigigas.2bpp"
 DeoxysIcon:       INCBIN "gfx/icons/deoxys.2bpp"
+TaurosPFireIcon:  INCBIN "gfx/icons/tauros_p_fire.2bpp"

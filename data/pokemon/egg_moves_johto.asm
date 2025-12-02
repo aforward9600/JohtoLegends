@@ -5,6 +5,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw NoEggMoves2
 	dw LaprasEggMoves
 	dw NoEggMoves2
 	dw EeveeEggMoves
@@ -169,6 +170,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw BagonEggMoves
+	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2

@@ -189,6 +189,7 @@ PreviousEvolutionStage::
 	dw 0
 	dw 0     ;80
 	dw 0
+	dw 0
 	dw MAGIKARP
 	dw 0
 	dw 0
@@ -359,6 +360,7 @@ PreviousEvolutionStage::
 	dw 0
 	dw BELDUM
 	dw METANG
+	dw 0
 	dw 0
 	dw 0
 	dw 0

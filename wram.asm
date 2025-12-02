@@ -2716,7 +2716,8 @@ wHoOhTowerSceneID::                               db
 wOneIslandPortSceneID::                           db
 wKindleRoadSceneID::                              db
 
-	ds 33
+	ds 32
+wBufferMonForm::     db
 
 ; fight counts
 wLevelCap::          db

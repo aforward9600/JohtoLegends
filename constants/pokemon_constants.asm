@@ -208,6 +208,7 @@
 JOHTO_POKEMON EQU const_value
 	const PINSIR     ; 7f
 	const TAUROS     ; 80
+	const TAUROS_P
 	const MAGIKARP   ; 81
 	const GYARADOS   ; 82
 	const LAPRAS     ; 83
@@ -391,6 +392,7 @@ JOHTO_POKEMON EQU const_value
 	const REGIDRAGO
 	const REGIGIGAS
 	const DEOXYS
+	const TAUROS_P_FIRE
 
 NUM_POKEMON EQU const_value + -1
 

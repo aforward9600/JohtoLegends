@@ -331,6 +331,7 @@ AlphabeticalPokedexOrder:
 	dw TANGELA
 	dw TANGROWTH
 	dw TAUROS
+	dw TAUROS_P
 	dw TEDDIURSA
 	dw TENTACOOL
 	dw TENTACRUEL
@@ -372,3 +373,4 @@ AlphabeticalPokedexOrder:
 	dw YANMEGA
 	dw ZAPDOS
 	dw ZUBAT
+	dw TAUROS_P_FIRE

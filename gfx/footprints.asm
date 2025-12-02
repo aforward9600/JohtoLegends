@@ -187,6 +187,7 @@ INCBIN "gfx/footprints/magmar.1bpp"
 INCBIN "gfx/footprints/magmortar.1bpp"
 INCBIN "gfx/footprints/pinsir.1bpp"
 INCBIN "gfx/footprints/tauros.1bpp"
+INCBIN "gfx/footprints/tauros.1bpp" ; Tauros P
 INCBIN "gfx/footprints/magnemite.1bpp" ; Magikarp
 INCBIN "gfx/footprints/magnemite.1bpp" ; Gyarados
 INCBIN "gfx/footprints/magnemite.1bpp" ; Lapras
@@ -370,3 +371,4 @@ INCBIN "gfx/footprints/regieleki.1bpp"
 INCBIN "gfx/footprints/regidrago.1bpp"
 INCBIN "gfx/footprints/regigigas.1bpp"
 INCBIN "gfx/footprints/deoxys.1bpp"
+INCBIN "gfx/footprints/tauros.1bpp" ; Tauros P Fire

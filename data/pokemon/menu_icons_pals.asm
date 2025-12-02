@@ -199,6 +199,7 @@ MonMenuIconPals:
 	icon_pals RED,    PINK   ; MAGMORTAR
 	icon_pals BROWN,  BLUE   ; PINSIR
 	icon_pals BROWN,  TEAL   ; TAUROS
+	icon_pals GRAY,   GRAY   ; TAUROS_P
 	icon_pals RED,    PINK   ; MAGIKARP
 	icon_pals BLUE,   RED    ; GYARADOS
 	icon_pals BLUE,   PURPLE ; LAPRAS
@@ -382,3 +383,4 @@ MonMenuIconPals:
 	icon_pals RED,    BLUE   ; REGIDRAGO
 	icon_pals GREEN,  BLUE   ; REGIGIGAS
 	icon_pals RED,    GREEN  ; DEOXYS
+	icon_pals GRAY,   GRAY   ; TAUROS_P

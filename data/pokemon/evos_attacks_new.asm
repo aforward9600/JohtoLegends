@@ -31,6 +31,7 @@ EvosAttacksPointers3::
 	dw RegidragoEvosAttacks
 	dw RegigigasEvosAttacks
 	dw DeoxysEvosAttacks
+	dw TaurosPFireEvosAttacks
 
 AronEvosAttacks:
 	dbbw EVOLVE_LEVEL, 32, LAIRON
@@ -593,4 +594,23 @@ DeoxysEvosAttacks:
 	dbw 61, RECOVER
 	dbw 67, PSYCHO_BOOST
 	dbw 73, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+TaurosPFireEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 3, TAIL_WHIP
+	dbw 5, RAGE
+	dbw 8, HEADBUTT
+	dbw 11, SCARY_FACE
+	dbw 15, DOUBLE_KICK
+	dbw 19, REST
+	dbw 24, FLAME_CHARGE
+	dbw 29, WORK_UP
+	dbw 35, ZEN_HEADBUTT
+;	dbw 41, RAGING_BULL ; need to add
+	dbw 48, SWAGGER
+	dbw 50, THRASH
+	dbw 55, FLARE_BLITZ
+	dbw 63, CLOSE_COMBAT
 	db 0 ; no more level-up moves

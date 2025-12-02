@@ -386,6 +386,8 @@ PokemonPicPointers::
 	dba PinsirBackpic
 	dba TaurosFrontpic
 	dba TaurosBackpic
+	dba TaurosPFrontpic
+	dba TaurosPBackpic
 	dba MagikarpFrontpic
 	dba MagikarpBackpic
 	dba GyaradosFrontpic
@@ -755,3 +757,5 @@ PokemonPicPointers::
 	dba RegigigasBackpic
 	dba DeoxysFrontpic
 	dba DeoxysBackpic
+	dba TaurosPFireFrontpic
+	dba TaurosPFireBackpic

@@ -148,13 +148,11 @@ MonStatsInit:
 	ld hl, wcf64
 	set 4, [hl]
 	ld h, 4
-	call StatsScreen_SetJumptableIndex
-	ret
+	jp StatsScreen_SetJumptableIndex
 
 .egg
 	ld h, 1
-	call StatsScreen_SetJumptableIndex
-	ret
+	jp StatsScreen_SetJumptableIndex
 
 EggStatsInit:
 	call EggStatsScreen
@@ -213,6 +211,8 @@ StatsScreen_CopyToTempMon:
 	ld a, [wMonType]
 	cp TEMPMON
 	jr nz, .breedmon
+	ld a, [wBufferMonCaughtTime]
+	ld [wBufferMonForm], a
 	ld a, [wBufferMonSpecies]
 	ld [wCurSpecies], a
 	call GetBaseData
@@ -1139,8 +1139,7 @@ EggStatsScreen:
 	cp 6
 	ret nc
 	ld de, SFX_2_BOOPS
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 EggString:
 	db "Egg@"
@@ -1250,8 +1249,7 @@ CopyNickname:
 	push de
 	call CopyBytes
 	pop de
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 .partymon
 	push de

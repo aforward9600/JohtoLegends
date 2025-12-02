@@ -10,10 +10,30 @@ GetBaseData::
 	cp EGG
 	jr z, .egg
 
+	farcall PaldeanTaurosCheck
+	jr nc, .NotTauros
+
+	ld a, [wBufferMonForm]
+	and CAUGHT_FORM_1_MASK
+	jr z, .TrySecond
+	ld bc, TAUROS_P_FIRE
+	jr .GotTauros
+
+.TrySecond
+	and CAUGHT_FORM_2_MASK
+	jr z, .NotTauros
+;	ld bc, TAUROS_P_WATER
+	ld bc, TAUROS_P_FIRE
+	jr .GotTauros
+
 ; Get BaseData
+.NotTauros
+	ld a, [wCurSpecies]
 	call GetPokemonIndexFromID
+
 	ld b, h
 	ld c, l
+.GotTauros
 	ld a, BANK(BaseData)
 	ld hl, BaseData
 	call LoadIndirectPointer

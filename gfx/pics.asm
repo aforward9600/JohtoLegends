@@ -60,6 +60,22 @@ SECTION "Tauros Front", ROMX
 
 TaurosFrontpic:      INCBIN "gfx/pokemon/tauros/front.animated.2bpp.lz"
 
+SECTION "Tauros_P_Fire Front", ROMX
+
+TaurosPFireFrontpic: INCBIN "gfx/pokemon/tauros_p_fire/front.animated.2bpp.lz"
+
+SECTION "Tauros_P_Fire Back", ROMX
+
+TaurosPFireBackpic:  INCBIN "gfx/pokemon/tauros_p_fire/back.2bpp.lz"
+
+SECTION "Tauros_P Front", ROMX
+
+TaurosPFrontpic:     INCBIN "gfx/pokemon/tauros_p/front.animated.2bpp.lz"
+
+SECTION "Tauros_P Back", ROMX
+
+TaurosPBackpic:      INCBIN "gfx/pokemon/tauros_p/back.2bpp.lz"
+
 SECTION "Venusaur Front", ROMX
 
 VenusaurFrontpic:    INCBIN "gfx/pokemon/venusaur/front.animated.2bpp.lz"

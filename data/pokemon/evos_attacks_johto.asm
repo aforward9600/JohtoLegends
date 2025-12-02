@@ -3,6 +3,7 @@ SECTION "Evolutions and Attacks 2", ROMX
 EvosAttacksPointers2::
 	dw PinsirEvosAttacks
 	dw TaurosEvosAttacks
+	dw TaurosPEvosAttacks
 	dw MagikarpEvosAttacks
 	dw GyaradosEvosAttacks
 	dw LaprasEvosAttacks
@@ -195,6 +196,25 @@ TaurosEvosAttacks:
 	dbw 50, THRASH
 	dbw 55, DOUBLE_EDGE
 	dbw 63, GIGA_IMPACT
+	db 0 ; no more level-up moves
+
+TaurosPEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 3, TAIL_WHIP
+	dbw 5, RAGE
+	dbw 8, HEADBUTT
+	dbw 11, SCARY_FACE
+	dbw 15, DOUBLE_KICK
+	dbw 19, REST
+	dbw 24, PAYBACK
+	dbw 29, WORK_UP
+	dbw 35, ZEN_HEADBUTT
+;	dbw 41, RAGING_BULL ; need to add
+	dbw 48, SWAGGER
+	dbw 50, THRASH
+	dbw 55, DOUBLE_EDGE
+	dbw 63, CLOSE_COMBAT
 	db 0 ; no more level-up moves
 
 MagikarpEvosAttacks:
