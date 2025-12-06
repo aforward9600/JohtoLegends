@@ -355,8 +355,7 @@ DoAnimFrame:
 	ret
 
 .asm_8d41e
-	call DeinitializeSprite
-	ret
+	jp DeinitializeSprite
 
 .SlotsGolem:
 	callfar Slots_AnimateGolem
@@ -391,8 +390,7 @@ DoAnimFrame:
 	ld a, $4
 	ld [wcf64], a
 	ld de, SFX_PLACE_PUZZLE_PIECE_DOWN
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 .move_right
 	inc [hl]
@@ -526,8 +524,7 @@ DoAnimFrame:
 	sub $c
 	ld [hl], a
 	ld de, SFX_SWITCH_POKEMON
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 .asm_8d51c
 	xor a
@@ -535,12 +532,10 @@ DoAnimFrame:
 	ld hl, SPRITEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
-	call .IncrementJumptableIndex
-	ret
+	jp .IncrementJumptableIndex
 
 .TradePokeBall_five
-	call DeinitializeSprite
-	ret
+	jp DeinitializeSprite
 
 .TradeTubeBulge
 	ld hl, SPRITEANIMSTRUCT_XCOORD
@@ -549,16 +544,11 @@ DoAnimFrame:
 	inc [hl]
 	inc [hl]
 	cp $b0
-	jr nc, .delete
+	jp nc, DeinitializeSprite
 	and $3
 	ret nz
 	ld de, SFX_POKEBALLS_PLACED_ON_TABLE
-	call PlaySFX
-	ret
-
-.delete
-	call DeinitializeSprite
-	ret
+	jp PlaySFX
 
 .TrademonInTube
 	callfar TradeAnim_AnimateTrademonInTube
@@ -569,7 +559,7 @@ DoAnimFrame:
 	add hl, bc
 	ld a, [hl]
 	cp $80
-	jr nc, .finish_EggShell
+	jp nc, DeinitializeSprite
 	ld d, a
 	add $8
 	ld [hl], a
@@ -595,10 +585,6 @@ DoAnimFrame:
 	ld hl, SPRITEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ret
-
-.finish_EggShell
-	call DeinitializeSprite
 	ret
 
 .RadioTuningKnob:
@@ -688,7 +674,7 @@ DoAnimFrame:
 	add hl, bc
 	ld a, [hl]
 	cp -9 * 8
-	jr nc, .delete_leaf
+	jp nc, DeinitializeSprite
 	inc [hl]
 	inc [hl]
 
@@ -706,10 +692,6 @@ DoAnimFrame:
 	ld hl, SPRITEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ret
-
-.delete_leaf
-	call DeinitializeSprite
 	ret
 
 .FlyTo:

@@ -3222,6 +3222,8 @@ IsThePlayerMonTypesEffectiveAgainstOTMon:
 	add hl, bc
 	ld a, [hl]
 	call GetPokemonIndexFromID
+;	farcall FinishTaurosCheck
+;	jr nc, .NotTauros
 	ld b, h
 	ld c, l
 	ld hl, BaseData
@@ -3513,6 +3515,7 @@ Function_SetEnemyMonAndSendOutAnimation:
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
+	call SetEnemyBufferForm
 	call GetBaseData
 	ld a, OTPARTYMON
 	ld [wMonType], a
@@ -3916,6 +3919,7 @@ InitBattleMon:
 	ld [wTempBattleMonSpecies], a
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
+	call SetPlayerBufferForm
 	call GetBaseData
 	ld a, [wBaseType1]
 	ld [wBattleMonType1], a
@@ -3931,8 +3935,7 @@ InitBattleMon:
 	ld de, wPlayerStats
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
 	call CopyBytes
-	call ApplyStatusEffectOnPlayerStats
-	ret
+	jp ApplyStatusEffectOnPlayerStats
 
 GetPartyMonDVs:
 	ld hl, wBattleMonDVs
@@ -3986,6 +3989,7 @@ InitEnemyMon:
 	call CopyBytes
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
+	call SetEnemyBufferForm
 	call GetBaseData
 	ld hl, wOTPartyMonNicknames
 	ld a, [wCurPartyMon]
@@ -4620,6 +4624,7 @@ PrintPlayerHUD:
 	ld a, [hl]
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
+	call SetPlayerBufferForm
 	call GetBaseData
 
 	pop hl
@@ -4681,6 +4686,7 @@ DrawEnemyHUD:
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
+	call SetEnemyBufferForm
 	call GetBaseData
 	ld de, wEnemyMonNick
 	hlcoord 1, 0
@@ -6055,6 +6061,8 @@ LoadEnemyMon:
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 
+	call SetEnemyBufferForm
+
 ; Grab the BaseData for this species
 	call GetBaseData
 
@@ -7290,6 +7298,7 @@ GiveExperiencePoints:
 	push bc
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
+	call SetEnemyBufferForm
 	call GetBaseData
 ; EV yield format: %hhaaddss %ttff0000
 ; h = hp, a = atk, d = def, s = spd
@@ -7497,6 +7506,7 @@ endc
 	add hl, de
 	ld a, [hl]
 	ld [wCurSpecies], a
+	call SetPlayerBufferForm
 	call GetBaseData
 	push bc
 if !DEF(_CHALLENGE)
@@ -8395,6 +8405,7 @@ DropEnemySub:
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
+	call SetEnemyBufferForm
 	call GetBaseData
 	ld hl, wEnemyMonDVs
 	predef GetUnownLetter
@@ -9395,4 +9406,15 @@ BattleStartMessage:
 
 	ld c, $2 ; start
 
+	ret
+
+SetEnemyBufferForm:
+	ld a, [wEnemyMonForm]
+	ld [wBufferMonForm], a
+	ret
+
+SetPlayerBufferForm:
+	call GetPartyMonForm
+	ld a, [hl]
+	ld [wBufferMonForm], a
 	ret

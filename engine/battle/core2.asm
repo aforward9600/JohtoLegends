@@ -624,11 +624,6 @@ CheckEnemyShininess::
 	jr c, .Shiny
 	ret
 
-SetPokemonForm::
-	push hl
-	ld a, [wTempEnemyMonSpecies]
-	jr ResumeFormCheck
-
 SetPartyPokemonForm::
 	ld hl, wPartyMon1Species
 	ld a, [wPartyCount]
@@ -639,13 +634,23 @@ SetPartyPokemonForm::
 	call GetPokemonIndexFromID
 	jr FinishTaurosCheck
 
+FrontFinishTaurosCheck::
+	ld a, [wTempMonSpecies]
+	call GetPokemonIndexFromID
+	jr FinishTaurosCheck
+
+CurPartyTaurosCheck::
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	jr FinishTaurosCheck
+
 PaldeanTaurosCheck::
 ;	ld hl, wTempMonSpecies
 ;	ld a, [hl]
 	ld a, [wCurSpecies]
 	call GetPokemonIndexFromID
 FinishTaurosCheck:
-	ld b,b
+;	ld b,b
 	ld a, l
 	sub LOW(TAUROS_P)
 	if HIGH(TAUROS_P) == 0
@@ -661,9 +666,14 @@ FinishTaurosCheck:
 	endc
 	jr nz, .NotTauros
 	scf
+	ret
 .NotTauros
+	xor a
 	ret
 
+SetPokemonForm::
+	push hl
+	ld a, [wTempEnemyMonSpecies]
 ResumeFormCheck:
 	call GetPokemonIndexFromID
 	ld a, l

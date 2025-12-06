@@ -233,6 +233,7 @@ SetGiftPartyMonCaughtData:
 	pop bc
 SetGiftMonCaughtData:
 	xor a
+	ld b,b
 ;	ld [hl], a
 ;	ld a, (wPartyMon1CaughtLevel - wPartyMon1CaughtTime)
 ;	add l
@@ -317,6 +318,7 @@ SetGenderShininess:
 	ret
 
 .TrySecond
+	ld a, [wEnemyForm]
 	and CAUGHT_FORM_2_MASK
 	ret z
 	ld a, [hl]
@@ -325,6 +327,7 @@ SetGenderShininess:
 	ret
 
 .Random
+;	ld b,b
 	farcall SetPokemonGender
 	jr c, .MaleRandom
 ;	jr nz, .MaleRandom
@@ -360,7 +363,7 @@ SetGenderShininess:
 	jr nc, .NotTauros
 	call BattleRandom
 	cp 33 percent + 1
-	jr nc, .NotTauros
+	jr c, .NotTauros
 	call BattleRandom
 	cp 50 percent
 	jr nc, .Water

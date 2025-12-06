@@ -430,6 +430,35 @@ PokeAnim_StopWaitAnim:
 	ld [wPokeAnimJumptableIndex], a
 	ret
 
+AnimTaurosCheck:
+	call GetPokemonIndexFromID
+	ld a, l
+	cp LOW(TAUROS_P)
+	ld a, h
+	ret nz
+	if HIGH(TAUROS_P) == 0
+		and a
+	elif HIGH(TAUROS_P) == 1
+		dec a
+	else
+		cp HIGH(TAUROS_P)
+	endc
+	ld a, [wPokeAnimUnownLetter]
+	cp 0
+	jr z, .Plain
+	cp 1
+	jr z, .Fire
+	ld hl, TAUROS_P_FIRE ; change to water
+	ret
+
+.Fire
+	ld hl, TAUROS_P_FIRE
+	ret
+
+.Plain
+	ld hl, TAUROS_P
+	ret
+
 PokeAnim_IsUnown:
 	ld a, [wPokeAnimSpecies]
 	push hl
@@ -899,7 +928,7 @@ GetMonAnimPointer:
 	ld a, [wPokeAnimSpeciesOrUnown]
 	ld l, a
 	ld h, 0
-	call nz, GetPokemonIndexFromID
+	call nz, AnimTaurosCheck
 	add hl, hl
 	add hl, de
 	ld a, c
@@ -965,7 +994,7 @@ GetMonFramesPointer:
 	ld a, [wPokeAnimSpeciesOrUnown]
 	ld l, a
 	ld h, 0
-	call nz, GetPokemonIndexFromID
+	call nz, AnimTaurosCheck
 	ld a, c
 	ld c, l
 	ld b, h
@@ -1011,7 +1040,7 @@ GetMonBitmaskPointer:
 	ld a, [wPokeAnimSpeciesOrUnown]
 	ld l, a
 	ld h, 0
-	call nz, GetPokemonIndexFromID
+	call nz, AnimTaurosCheck
 	add hl, hl
 	add hl, de
 	ld a, [wPokeAnimBitmaskBank]

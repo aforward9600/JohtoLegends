@@ -1,3 +1,23 @@
+GetTaurosForm::
+	ld a, [wBufferMonForm]
+	and CAUGHT_FORM_1_MASK
+	jr z, .TrySecond
+	ld a, 1
+	ld [wUnownLetter], a
+	ret
+
+.TrySecond
+	ld a, [wBufferMonForm]
+	and CAUGHT_FORM_2_MASK
+	jr z, .PlainTauros
+	ld a, 2
+	ld [wUnownLetter], a
+	ret
+.PlainTauros
+	ld a, 0
+	ld [wUnownLetter], a
+	ret
+
 GetUnownLetter:
 ; Return Unown letter in wUnownLetter based on DVs at hl
 
@@ -134,6 +154,40 @@ GetPicIndirectPointer:
 	ld b, h
 	ld c, l
 	ld a, l
+	push af
+	sub LOW(TAUROS_P)
+	if HIGH(TAUROS_P) == 0
+		or h
+	else
+		jr nz, .NotTauros
+		if HIGH(TAUROS_P) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(TAUROS_P)
+		endc
+	endc
+	jr nz, .NotTauros
+	ld a, [wUnownLetter]
+	cp 0
+	jr z, .PlainTauros
+	cp 1
+	jr z, .FireTauros
+	ld bc, TAUROS_P_FIRE ; Change to Water later
+	jr .FinishTauros
+
+.FireTauros
+	ld bc, TAUROS_P_FIRE
+	jr .FinishTauros
+
+.PlainTauros
+	ld bc, TAUROS_P
+.FinishTauros
+	pop af
+	jr .not_unown
+
+.NotTauros
+	pop af
 	sub LOW(UNOWN)
 	if HIGH(UNOWN) == 0
 		or h

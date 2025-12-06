@@ -20,6 +20,7 @@ GetBaseData::
 	jr .GotTauros
 
 .TrySecond
+	ld a, [wBufferMonForm]
 	and CAUGHT_FORM_2_MASK
 	jr z, .NotTauros
 ;	ld bc, TAUROS_P_WATER

@@ -223,6 +223,12 @@ StatsScreen_CopyToTempMon:
 	jr .done
 
 .breedmon
+;	ld a, [wCurPartyMon]
+;	ld hl, wPartyMon1CaughtTime
+;	call GetPartyLocation
+;	ld a, [hl]
+;	ld [wBufferMonForm], a
+	call GetBufferMonForm
 	farcall CopyMonToTempMon
 	ld a, [wCurPartySpecies]
 	cp EGG
@@ -916,8 +922,17 @@ PoorString:
 	db "/Miserable@"
 
 StatsScreen_PlaceFrontpic:
+	farcall FrontFinishTaurosCheck
+	jr nc, .NotTauros
+	ld de, wTempMonCaughtTime
+	ld a, [de]
+	ld [wBufferMonForm], a
+	farcall GetTaurosForm
+	jr .SkipUnown
+.NotTauros:
 	ld hl, wTempMonDVs
 	predef GetUnownLetter
+.SkipUnown
 	call StatsScreen_GetAnimationParam
 	jr c, .egg
 	and a
@@ -941,6 +956,13 @@ StatsScreen_PlaceFrontpic:
 .AnimateMon:
 	ld hl, wcf64
 	set 5, [hl]
+;	ld a, [wCurPartySpecies]
+;	call GetPokemonIndexFromID
+;	farcall FinishTaurosCheck
+;	jr nc, .NotTaurosAnimate
+;	call 
+
+;.NotTaurosAnimate
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld a, l
@@ -1288,4 +1310,12 @@ CheckFaintedFrzSlp:
 
 .fainted_frz_slp
 	scf
+	ret
+
+GetBufferMonForm::
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1CaughtTime
+	call GetPartyLocation
+	ld a, [hl]
+	ld [wBufferMonForm], a
 	ret

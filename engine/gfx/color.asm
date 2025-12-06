@@ -165,8 +165,7 @@ ApplyMonOrTrainerPals:
 	call LoadPalette_White_Col1_Col2_Black
 	call WipeAttrMap
 	call ApplyAttrMap
-	call ApplyPals
-	ret
+	jp ApplyPals
 
 ApplyHPBarPals:
 	ld a, [wWhichHPBar]
@@ -289,8 +288,7 @@ LoadMailPalettes:
 	ld hl, wSGBPals
 	call PushSGBPals
 	ld hl, BlkPacket_9a86
-	call PushSGBPals
-	ret
+	jp PushSGBPals
 
 .cgb
 	ld de, wBGPals1
@@ -299,8 +297,7 @@ LoadMailPalettes:
 	call FarCopyWRAM
 	call ApplyPals
 	call WipeAttrMap
-	call ApplyAttrMap
-	ret
+	jp ApplyAttrMap
 
 .MailPals:
 INCLUDE "gfx/mail/mail.pal"
@@ -598,7 +595,30 @@ BattleObjectPals:
 INCLUDE "gfx/battle_anims/battle_anims.pal"
 
 _GetMonPalettePointer:
+	ld b,b
+	push af
+	farcall CurPartyTaurosCheck
+	pop af
+	jr nc, .NotTauros
+;	farcall GetTaurosForm
+	ld a, [wUnownLetter]
+	cp 0
+	jr z, .NotTauros
+	cp 1
+	jr z, .Fire
+	ld hl, TAUROS_P_FIRE ; change to water
+;	ld a, [hl]
+	jr .FinishPalette
+
+.Fire
+	ld hl, TAUROS_P_FIRE
+;	ld a, [hl]
+	jr .FinishPalette
+	
+.NotTauros
 	call GetPokemonIndexFromID
+.FinishPalette
+	; hl = palette
 	add hl, hl
 	add hl, hl
 	add hl, hl
@@ -1249,7 +1269,6 @@ INCLUDE "gfx/slots/slots.pal"
 
 LoadPokemonPalette:
 	ld a, [wCurPartySpecies]
-	; hl = palette
 	call GetMonPalettePointer
 	; load palette into de (set by caller)
 	ld bc, PAL_COLOR_SIZE * 2

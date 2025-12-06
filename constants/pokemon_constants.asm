@@ -442,3 +442,9 @@ endc
 	const UNOWN_Y ; 25
 	const UNOWN_Z ; 26
 NUM_UNOWN EQU const_value + -1 ; 26
+
+	const_def 1
+	const TAUROS_PLAIN
+	const TARUOS_FIRE
+	const TAUROS_WATER
+NUM_TAUROS EQU const_value + -1
