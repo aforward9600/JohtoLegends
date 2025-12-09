@@ -933,6 +933,7 @@ StatsScreen_PlaceFrontpic:
 	ld hl, wTempMonDVs
 	predef GetUnownLetter
 .SkipUnown
+	ld b,b
 	call StatsScreen_GetAnimationParam
 	jr c, .egg
 	and a

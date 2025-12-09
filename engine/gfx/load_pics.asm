@@ -168,6 +168,7 @@ GetPicIndirectPointer:
 		endc
 	endc
 	jr nz, .NotTauros
+	call GetTaurosForm
 	ld a, [wUnownLetter]
 	cp 0
 	jr z, .PlainTauros

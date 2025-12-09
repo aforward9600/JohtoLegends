@@ -597,25 +597,41 @@ INCLUDE "gfx/battle_anims/battle_anims.pal"
 _GetMonPalettePointer:
 	ld b,b
 	push af
-	farcall CurPartyTaurosCheck
-	pop af
-	jr nc, .NotTauros
-;	farcall GetTaurosForm
+;	farcall CurPartyTaurosCheck
+;	ld a, [wTempMonSpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(TAUROS_P)
+	if HIGH(TAUROS_P) == 0
+		or h
+	else
+		jr nz, .NotTauros2
+		ld a, h
+		if HIGH(TAUROS_P) == 1
+			dec a
+		else
+			cp HIGH(TAUROS_P)
+		endc
+	endc
+	jr nz, .NotTauros2
+;	jr nc, .NotTauros
+	farcall GetTaurosForm
 	ld a, [wUnownLetter]
 	cp 0
-	jr z, .NotTauros
+	jr z, .NotTauros2
 	cp 1
 	jr z, .Fire
 	ld hl, TAUROS_P_FIRE ; change to water
-;	ld a, [hl]
+	pop af
 	jr .FinishPalette
 
 .Fire
 	ld hl, TAUROS_P_FIRE
-;	ld a, [hl]
+	pop af
 	jr .FinishPalette
 	
-.NotTauros
+.NotTauros2
+	pop af
 	call GetPokemonIndexFromID
 .FinishPalette
 	; hl = palette

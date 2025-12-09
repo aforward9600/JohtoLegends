@@ -7298,7 +7298,7 @@ GiveExperiencePoints:
 	push bc
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
-	call SetEnemyBufferForm
+;	call SetEnemyBufferForm
 	call GetBaseData
 ; EV yield format: %hhaaddss %ttff0000
 ; h = hp, a = atk, d = def, s = spd
@@ -7506,7 +7506,7 @@ endc
 	add hl, de
 	ld a, [hl]
 	ld [wCurSpecies], a
-	call SetPlayerBufferForm
+;	call SetPlayerBufferForm
 	call GetBaseData
 	push bc
 if !DEF(_CHALLENGE)
