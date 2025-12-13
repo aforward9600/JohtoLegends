@@ -223,11 +223,6 @@ StatsScreen_CopyToTempMon:
 	jr .done
 
 .breedmon
-;	ld a, [wCurPartyMon]
-;	ld hl, wPartyMon1CaughtTime
-;	call GetPartyLocation
-;	ld a, [hl]
-;	ld [wBufferMonForm], a
 	call GetBufferMonForm
 	farcall CopyMonToTempMon
 	ld a, [wCurPartySpecies]

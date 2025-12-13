@@ -10,7 +10,7 @@
 	db NO_ITEM, NO_ITEM ; items
 	db GENDER_F0 ; gender ratio
 	db 20 ; step cycles to hatch
-	INCBIN "gfx/pokemon/tauros_p/front.dimensions"
+	INCBIN "gfx/pokemon/tauros_p_fire/front.dimensions"
 	db INTIMIDATE, ANGER_POINT, SHEER_FORCE ; wBaseAbility1, wBaseAbility2, wBaseAbility3
 	db 0 ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate

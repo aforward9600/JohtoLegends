@@ -140,7 +140,8 @@ DratiniPokeballScript:
 	givepoke TAUROS_P, 5, ORAN_BERRY
 	givepoke TAUROS_P, 5, ORAN_BERRY
 	givepoke UNOWN, 5, ORAN_BERRY
-	givepoke DRATINI, 5, ORAN_BERRY
+	givepoke TAUROS_P_FIRE, 5, ORAN_BERRY
+;	givepoke DRATINI, 5, ORAN_BERRY
 	sjump RivalLarvitarScript
 
 ChooseBagon:

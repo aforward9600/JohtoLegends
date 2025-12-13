@@ -4686,7 +4686,7 @@ DrawEnemyHUD:
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
-	call SetEnemyBufferForm
+;	call SetEnemyBufferForm
 	call GetBaseData
 	ld de, wEnemyMonNick
 	hlcoord 1, 0
@@ -4917,40 +4917,19 @@ endc
 
 	call LoadStandardMenuHeader
 
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .tutorial
-	cp BATTLETYPE_CONTEST
-	jr z, .contest
-
 	farcall BattlePack
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
 	jr z, .didnt_use_item
-	jr .got_item
-
-.tutorial
-	farcall TutorialPack
-	ld a, POKE_BALL
-	ld [wCurItem], a
-	call DoItemEffect
-	jr .got_item
-
-.contest
-	ld a, PARK_BALL
-	ld [wCurItem], a
-	call DoItemEffect
-
-.got_item
-	call .UseItem
-	ret
+	jr .UseItem
 
 .didnt_use_item
 	call ClearPalettes
 	call DelayFrame
 	call _LoadBattleFontsHPBar
-	call GetBattleMonBackpic
+	call SetEnemyBufferForm
 	call GetEnemyMonFrontpic
+	call GetBattleMonBackpic
 	call ExitMenu
 	call WaitBGMap
 	call FinishBattleAnim
@@ -4963,6 +4942,7 @@ endc
 	jp BattleMenu
 
 .UseItem:
+	ld b,b
 	ld a, [wWildMon]
 	and a
 	jr nz, .run
@@ -4977,13 +4957,9 @@ endc
 	ldh [hBGMapMode], a
 	call _LoadBattleFontsHPBar
 	call ClearSprites
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .tutorial2
-	call GetBattleMonBackpic
-
-.tutorial2
+	call SetEnemyBufferForm
 	call GetEnemyMonFrontpic
+	call GetBattleMonBackpic
 	ld a, $1
 	ld [wMenuCursorY], a
 	call ExitMenu
@@ -8355,6 +8331,7 @@ PlaceExpBar:
 	ret
 
 GetBattleMonBackpic:
+	call SetPlayerBufferForm
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
 	ld hl, BattleAnimCmd_RaiseSub

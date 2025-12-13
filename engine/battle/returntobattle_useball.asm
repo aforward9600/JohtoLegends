@@ -1,16 +1,9 @@
 _ReturnToBattle_UseBall:
 	call ClearBGPalettes
 	call ClearTileMap
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .gettutorialbackpic
-	farcall GetBattleMonBackpic
-	jr .continue
-
-.gettutorialbackpic
-	farcall GetTrainerBackpic
-.continue
+	farcall SetEnemyBufferForm
 	farcall GetEnemyMonFrontpic
+	farcall GetBattleMonBackpic
 	farcall _LoadBattleFontsHPBar
 	call GetMemSGBLayout
 	call CloseWindow

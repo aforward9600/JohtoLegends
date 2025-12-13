@@ -597,8 +597,6 @@ INCLUDE "gfx/battle_anims/battle_anims.pal"
 _GetMonPalettePointer:
 	ld b,b
 	push af
-;	farcall CurPartyTaurosCheck
-;	ld a, [wTempMonSpecies]
 	call GetPokemonIndexFromID
 	ld a, l
 	sub LOW(TAUROS_P)
@@ -614,7 +612,6 @@ _GetMonPalettePointer:
 		endc
 	endc
 	jr nz, .NotTauros2
-;	jr nc, .NotTauros
 	farcall GetTaurosForm
 	ld a, [wUnownLetter]
 	cp 0
