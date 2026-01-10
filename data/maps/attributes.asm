@@ -100,7 +100,7 @@ ENDM
 	connection west, Route29, ROUTE_29, 0
 	connection east, Route27, ROUTE_27, 0
 
-	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $CD, NORTH | EAST
+	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $3A, NORTH | EAST
 	connection north, Route30, ROUTE_30, 5
 	connection east, Route29, ROUTE_29, 0
 
@@ -113,14 +113,14 @@ ENDM
 	connection west, Route34, ROUTE_34, -18
 	connection east, Route33, ROUTE_33, 0
 
-	map_attributes CianwoodCity, CIANWOOD_CITY, $CD, EAST
+	map_attributes CianwoodCity, CIANWOOD_CITY, $3A, EAST
 	connection east, Route41, ROUTE_41, 0
 
-	map_attributes GoldenrodCity, GOLDENROD_CITY, $CD, NORTH | SOUTH
+	map_attributes GoldenrodCity, GOLDENROD_CITY, $3A, NORTH | SOUTH
 	connection north, Route35, ROUTE_35, 5
 	connection south, Route34, ROUTE_34, 5
 
-	map_attributes OlivineCity, OLIVINE_CITY, $CD, NORTH | WEST
+	map_attributes OlivineCity, OLIVINE_CITY, $3A, NORTH | WEST
 	connection north, Route39, ROUTE_39, 5
 	connection west, Route40, ROUTE_40, 9
 
@@ -150,7 +150,7 @@ ENDM
 	map_attributes Route26, ROUTE_26, $05, WEST
 	connection west, Route27, ROUTE_27, 45
 
-	map_attributes Route27, ROUTE_27, $CD, WEST | EAST
+	map_attributes Route27, ROUTE_27, $3A, WEST | EAST
 	connection west, NewBarkTown, NEW_BARK_TOWN, 0
 	connection east, Route26, ROUTE_26, -45
 
@@ -203,11 +203,11 @@ ENDM
 	connection south, OlivineCity, OLIVINE_CITY, -5
 	connection east, Route38, ROUTE_38, 0
 
-	map_attributes Route40, ROUTE_40, $CD, SOUTH | EAST
+	map_attributes Route40, ROUTE_40, $3A, SOUTH | EAST
 	connection south, Route41, ROUTE_41, -15
 	connection east, OlivineCity, OLIVINE_CITY, -9
 
-	map_attributes Route41, ROUTE_41, $CD, NORTH | WEST
+	map_attributes Route41, ROUTE_41, $3A, NORTH | WEST
 	connection north, Route40, ROUTE_40, 15
 	connection west, CianwoodCity, CIANWOOD_CITY, 0
 

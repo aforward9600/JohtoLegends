@@ -476,7 +476,7 @@ ChooseKabuto:
 	writetext TakeKabutoText
 	yesorno
 	iffalse DidntChooseLarvitarScript
-	disappear MASTERSHOUSE1F_POKE_BALL1
+	disappear MASTERSHOUSE1F_POKE_BALL2
 	setevent EVENT_GOT_LARVITAR_FROM_MASTER
 	writetext ChoseKabutoText
 	buttonsound
@@ -645,7 +645,7 @@ WalkUpToRival2:
 	buttonsound
 	getitemname STRING_BUFFER_4, POKE_BALL
 	scall Rival_ReceiveTheBalls
-	giveitem POKE_BALL, 10
+	giveitem MASTER_BALL, 10
 	buttonsound
 	itemnotify
 	writetext RivalGoodByeText

@@ -1,4 +1,5 @@
 GetBaseData::
+	ld b,b
 	push bc
 	push de
 	push hl

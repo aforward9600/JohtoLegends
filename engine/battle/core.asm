@@ -3515,6 +3515,9 @@ Function_SetEnemyMonAndSendOutAnimation:
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
+;	farcall SetPokemonForm
+;	ld a, [wBufferMonForm]
+;	ld [wEnemyMonForm], a
 	call SetEnemyBufferForm
 	call GetBaseData
 	ld a, OTPARTYMON
@@ -3687,10 +3690,10 @@ TryToRunAwayFromBattle:
 
 	call CheckNeutralGas
 	jr z, .SkipRunAway
-	call GetUserAbility
+	ld a, [wPlayerAbility]
 	cp RUN_AWAY
 	jp z, .fled
-	call GetTargetAbility
+	ld a, [wEnemyAbility]
 	cp ARENA_TRAP
 	jp z, .ArenaTrap
 	cp MAGNET_PULL
@@ -4051,6 +4054,8 @@ SendOutPlayerMon:
 	call WaitBGMap
 	xor a
 	ldh [hBGMapMode], a
+	call SetEnemyBufferForm
+	call GetEnemyMonFrontpic
 	call GetBattleMonBackpic
 	xor a
 	ldh [hGraphicStartTile], a
@@ -4942,7 +4947,6 @@ endc
 	jp BattleMenu
 
 .UseItem:
-	ld b,b
 	ld a, [wWildMon]
 	and a
 	jr nz, .run
@@ -6039,6 +6043,15 @@ LoadEnemyMon:
 
 	call SetEnemyBufferForm
 
+;	ld a, [wBufferMonForm]
+;	xor a
+
+;	ld hl, wBufferMonForm
+;	ld a, [hl]
+;	or CAUGHT_FORM_1_MASK
+;	ld [hl], a
+;	ld [wBufferMonForm], a
+
 ; Grab the BaseData for this species
 	call GetBaseData
 
@@ -6161,6 +6174,11 @@ LoadEnemyMon:
 ; Wild DVs
 ; Here's where the fun starts
 
+	ld a, [wEnemyMonForm]
+	ld [wBufferMonForm], a
+	ld a, [wEnemyMonForm]
+	xor a
+
 ; Roaming monsters (Entei, Raikou) work differently
 ; They have their own structs, which are shorter than normal
 	ld a, [wBattleType]
@@ -6237,9 +6255,25 @@ LoadEnemyMon:
 	ld a, [hl]
 	or CAUGHT_MON_GENDER_MASK
 	ld [hl], a
-	farcall SetPokemonForm
 
 .SkipShine
+	farcall SetPokemonForm
+;	ld a, [wBufferMonForm]
+;	and CAUGHT_FORM_1_MASK
+;	jr z, .TrySecond
+;	ld a, [hl]
+;	or CAUGHT_FORM_1_MASK
+;	ld [hl], a
+;	jr .FinishDVs
+;
+;.TrySecond
+;	ld a, [wBufferMonForm]
+;	and CAUGHT_FORM_2_MASK
+;	jr z, .FinishDVs
+;	ld a, [hl]
+;	or CAUGHT_FORM_2_MASK
+;	ld a, [hl]
+;.FinishDVs
 	call BattleRandom
 	ld b, a
 	call BattleRandom

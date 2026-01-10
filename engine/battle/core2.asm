@@ -697,17 +697,25 @@ ResumeFormCheck:
 	cp 50 percent
 	jr nc, .Water
 	pop hl
+;	ld hl, wBufferMonForm
 	ld a, [hl]
 	or CAUGHT_FORM_1_MASK
 	ld [hl], a
 	ret
+;	ld a, 1
+;	ld [wBufferMonForm], a
+;	ret
 
 .Water
 	pop hl
+;	ld hl, wBufferMonForm
 	ld a, [hl]
 	or CAUGHT_FORM_2_MASK
 	ld [hl], a
 	ret
+;	ld a, 2
+;	ld [wBufferMonForm], a
+;	ret
 
 .NotTauros
 	pop hl
