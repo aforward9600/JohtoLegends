@@ -211,3 +211,5 @@
 	const SFX_4_NOTE_DITTY                ; cd
 	const SFX_TWINKLE                     ; ce
 	const SFX_PUDDLE
+	const SFX_STAT_DOWN
+	const SFX_STAT_UP

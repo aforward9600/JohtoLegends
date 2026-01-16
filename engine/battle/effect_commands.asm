@@ -2350,14 +2350,6 @@ BattleCommand_StatDownAnim:
 	and a
 	jp nz, BattleCommand_MoveDelay
 
-	ldh a, [hBattleTurn]
-	and a
-	ld a, BATTLEANIM_ENEMY_STAT_DOWN
-	jr z, BattleCommand_StatUpDownAnim
-	ld a, BATTLEANIM_WOBBLE
-
-	; fallthrough
-
 BattleCommand_StatUpDownAnim:
 	ld [wNumHits], a
 	xor a
@@ -5352,13 +5344,15 @@ CheckMist:
 BattleCommand_StatUpMessage:
 	call CheckNeutralGas
 	jr z, StatUpMessageSkipContrary
-	call GetTargetAbility
+	call GetUserAbility
 	cp CONTRARY
 	jr z, StatDownMessageSkipContrary2
 StatUpMessageSkipContrary:
 	ld a, [wFailedMessage]
 	and a
 	ret nz
+	ld de, ANIM_ENEMY_STAT_DOWN
+	farcall Call_PlayBattleAnim
 	ld a, [wLoweredStat]
 	and $f
 	ld b, a
@@ -5400,6 +5394,12 @@ StatDownMessageSkipContrary:
 	ld a, [wFailedMessage]
 	and a
 	ret nz
+	call BattleCommand_SwitchTurn
+	xor a
+	ld [wNumHits], a
+	ld de, ANIM_PLAYER_STAT_DOWN
+	farcall Call_PlayBattleAnim
+	call BattleCommand_SwitchTurn
 	ld a, [wLoweredStat]
 	and $f
 	ld b, a
@@ -7496,10 +7496,6 @@ BattleCommand_Defrost:
 	jp StdBattleTextbox
 
 INCLUDE "engine/battle/move_effects/curse.asm"
-
-INCLUDE "engine/battle/move_effects/protect.asm"
-
-INCLUDE "engine/battle/move_effects/endure.asm"
 
 INCLUDE "engine/battle/move_effects/spikes.asm"
 

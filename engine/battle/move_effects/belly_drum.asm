@@ -28,6 +28,9 @@ BattleCommand_BellyDrum:
 	dec a
 	jr nz, .max_attack_loop
 
+	ld de, ANIM_ENEMY_STAT_DOWN
+	farcall Call_PlayBattleAnim
+
 	ld hl, BellyDrumText
 	jp StdBattleTextbox
 

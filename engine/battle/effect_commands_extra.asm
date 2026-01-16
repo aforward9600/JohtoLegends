@@ -633,15 +633,9 @@ BattleCommand_Defiant:
 	ret nz
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_HAMMER_ARM
-	jr nz, .CheckDefiant
 	cp EFFECT_CURSE
 	jr nz, .CheckDefiant
 	cp EFFECT_SHELL_SMASH
-	jr nz, .CheckDefiant
-	cp EFFECT_SUPERPOWER
-	jr nz, .CheckDefiant
-	cp EFFECT_CLOSE_COMBAT
 	jr nz, .CheckDefiant
 	ret
 

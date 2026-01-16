@@ -47,6 +47,7 @@ AnimObjVortexGFX:       INCBIN "gfx/battle_anims/vortex.2bpp.lz"
 AnimObjAuraSphereGFX:   INCBIN "gfx/battle_anims/aurasphere.2bpp.lz"
 AnimObjGlowGFX:         INCBIN "gfx/battle_anims/glow.2bpp.lz"
 AnimObjMisc2GFX:        INCBIN "gfx/battle_anims/misc2.2bpp.lz"
+AnimObjStatsGFX:        INCBIN "gfx/battle_anims/stats.2bpp.lz"
 
 
 SECTION "Battle Ball Icons", ROMX

@@ -10,7 +10,7 @@ BattleCommand_Endure:
 	call GetBattleVarAddr
 	set SUBSTATUS_ENDURE, [hl]
 
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 
 	ld hl, BracedItselfText
 	jp StdBattleTextbox

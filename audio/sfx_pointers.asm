@@ -209,3 +209,5 @@ SFX:
 	dba Sfx_4NoteDitty
 	dba Sfx_Twinkle
 	dba Sfx_Puddle
+	dba Sfx_StatDown
+	dba Sfx_StatUp

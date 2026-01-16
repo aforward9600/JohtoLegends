@@ -169,11 +169,15 @@ DoEntranceAbilities:
 	ld de, 1
 	call IsInArray
 	jr c, .IntimidateBlocked
-	ld b, ATTACK
-	farcall LowerStatPop
-	ld a, [wFailedMessage]
-	and a
-	ret nz
+	farcall BattleCommand_AttackDown
+	farcall BattleCommand_StatDownMessage
+;	ld b, ATTACK
+;	farcall LowerStatPop
+;	ld a, [wFailedMessage]
+;	and a
+;	ret nz
+;	ld de, ANIM_PLAYER_STAT_DOWN
+;	farcall Call_PlayBattleAnim
 	ld hl, IntimidateText
 	call StdBattleTextbox
 	call GetTargetAbility
@@ -190,11 +194,15 @@ DoEntranceAbilities:
 	jp StdBattleTextbox
 
 .IntimidateContrary:
+	call BattleCommand_SwitchTurnAbilities
 	ld b, ATTACK
 	farcall RaiseStat
 	ld a, [wFailedMessage]
 	and a
-	ret nz
+	jp nz, BattleCommand_SwitchTurnAbilities
+	ld de, ANIM_ENEMY_STAT_DOWN
+	farcall Call_PlayBattleAnim
+	call BattleCommand_SwitchTurnAbilities
 	ld hl, IntimidateContraryText
 	jp StdBattleTextbox
 
@@ -354,6 +362,8 @@ DoEntranceAbilities:
 
 .Download:
 	farcall BattleCommand_SpecialAttackUp
+	ld de, ANIM_ENEMY_STAT_DOWN
+	farcall Call_PlayBattleAnim
 	ld hl, DownloadText
 	call StdBattleTextbox
 .NoFirstAbility:
@@ -382,11 +392,17 @@ MoveDelayAbility:
 RattledAbility:
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_SpeedUp
+;	ld de, ANIM_ENEMY_STAT_DOWN
+;	farcall Call_PlayBattleAnim
 	call BattleCommand_SwitchTurnAbilities
 	ld a, [wAttackMissed]
 	and a
 	ret nz
 	call MoveDelayAbility
+	call BattleCommand_SwitchTurnAbilities
+	ld de, ANIM_ENEMY_STAT_DOWN
+	farcall Call_PlayBattleAnim
+	call BattleCommand_SwitchTurnAbilities
 	ld hl, RattledText
 	jp StdBattleTextbox
 
@@ -398,6 +414,10 @@ JustifiedAbility:
 	and a
 	ret nz
 	call MoveDelayAbility
+	call BattleCommand_SwitchTurnAbilities
+	ld de, ANIM_ENEMY_STAT_DOWN
+	farcall Call_PlayBattleAnim
+	call BattleCommand_SwitchTurnAbilities
 	ld hl, JustifiedText
 	jp StdBattleTextbox
 
@@ -409,6 +429,10 @@ DefiantAbility:
 	and a
 	ret nz
 	call MoveDelayAbility
+	call BattleCommand_SwitchTurnAbilities
+	ld de, ANIM_ENEMY_STAT_DOWN
+	farcall Call_PlayBattleAnim
+	call BattleCommand_SwitchTurnAbilities
 	ld hl, DefiantText
 	jp StdBattleTextbox
 
@@ -420,6 +444,10 @@ CompetitiveAbility:
 	and a
 	ret nz
 	call MoveDelayAbility
+	call BattleCommand_SwitchTurnAbilities
+	ld de, ANIM_ENEMY_STAT_DOWN
+	farcall Call_PlayBattleAnim
+	call BattleCommand_SwitchTurnAbilities
 	ld hl, CompetitiveText
 	jp StdBattleTextbox
 
@@ -547,20 +575,28 @@ CheckContactAbilities:
 	jr z, .TanglingHairContrary
 	cp CLEAR_BODY
 	ret z
-	ld b, SPEED
-	farcall LowerStatPop
-	ld a, [wFailedMessage]
-	and a
-	ret nz
+	call BattleCommand_SwitchTurnAbilities
+	farcall BattleCommand_SpeedDown
+	farcall BattleCommand_StatDownMessage
+	call BattleCommand_SwitchTurnAbilities
+;	ld b, SPEED
+;	farcall LowerStatPop
+;	ld a, [wFailedMessage]
+;	and a
+;	ret nz
 	ld hl, TanglingHairText
 	jp StdBattleTextbox
 
 .TanglingHairContrary:
-	ld b, SPEED
-	farcall RaiseStat
-	ld a, [wFailedMessage]
-	and a
-	ret nz
+;	ld b, SPEED
+;	farcall RaiseStat
+;	ld a, [wFailedMessage]
+;	and a
+;	ret nz
+	call BattleCommand_SwitchTurnAbilities
+	farcall BattleCommand_SpeedUp
+	farcall BattleCommand_StatUpMessage
+	call BattleCommand_SwitchTurnAbilities
 	ld hl, TanglingHairContraryText
 	jp StdBattleTextbox
 
@@ -728,11 +764,16 @@ CheckContactAbilities:
 	ld a, [wFailedMessage]
 	and a
 	jr nz, .TrySpeedUp
+	call BattleCommand_SwitchTurnAbilities
+	ld de, ANIM_PLAYER_STAT_DOWN
+	farcall Call_PlayBattleAnim
+	call BattleCommand_SwitchTurnAbilities
 	ld hl, WeakArmorDefenseText
 	call StdBattleTextbox
 .TrySpeedUp
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_SpeedUp2
+	farcall BattleCommand_StatUpMessage
 	call BattleCommand_SwitchTurnAbilities
 	ld a, [wAttackMissed]
 	and a

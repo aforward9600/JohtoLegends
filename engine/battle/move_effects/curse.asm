@@ -32,7 +32,7 @@ BattleCommand_Curse:
 	inc bc
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
-	jr nc, .cantraise
+	jp nc, .cantraise
 
 .raise
 

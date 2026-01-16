@@ -96,6 +96,8 @@ DoBattleAnimFrame:
 	dw BattleAnimFunction_4F ; 4f
 	dw BattleAnimFunction_RadialSpin
 	dw BattleAnimFunction_RadialMoveOutSlow
+	dw BattleAnimFunction_RadialMoveOut_Stats
+	dw BattleAnimFunction_StraightDescent
 
 BattleAnimFunction_Null:
 	call BattleAnim_AnonJumptable
@@ -404,8 +406,7 @@ BattleAnimFunction_PokeBallBlocked:
 	dw .two
 .zero
 	call GetBallAnimPal
-	call BattleAnim_IncAnonJumptableIndex
-	ret
+	jp BattleAnim_IncAnonJumptableIndex
 
 .one
 	ld hl, BATTLEANIMSTRUCT_XCOORD
@@ -4154,5 +4155,78 @@ BattleAnimFunction_RadialMoveOutSlow:
 	call Cosine
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
+	ld [hl], a
+	ret
+
+BattleAnimFunction_RadialMoveOut_Stats:
+	call BattleAnim_AnonJumptable
+.anon_dw
+	dw .init
+	dw .step
+
+.init
+	call BattleAnimFunc_RadialInit
+.step
+	lb de, 6, 80
+
+BattleAnimFunc_RadialStep:
+	ld hl, BATTLEANIMSTRUCT_0F
+	add hl, bc
+	push bc
+	push hl
+	ld a, [hli]
+	ld c, [hl]
+	ld b, a
+	ld h, d ; speed x 2
+	ld l, 0
+	srl h
+	rr l
+	add hl, bc
+	ld a, h
+	ld c, l
+	pop hl
+	ld [hli], a
+	ld [hl], c
+	pop bc
+	cp e ; final position
+	jp nc, DeinitBattleAnimation
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld e, [hl]
+	push de
+	ld a, e
+	call Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	pop de
+	ld a, e
+	call Cosine
+	ld hl, BATTLEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld [hl], a
+	ret
+
+BattleAnimFunc_RadialInit:
+	ld hl, BATTLEANIMSTRUCT_10
+	add hl, bc
+	xor a
+	ld [hld], a
+	ld [hl], a
+	jp BattleAnim_IncAnonJumptableIndex
+
+BattleAnimFunction_StraightDescent:
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld a, [hl]
+	cp $28
+	jp nc, DeinitBattleAnimation
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld d, [hl]
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld a, [hl]
+	add d
 	ld [hl], a
 	ret

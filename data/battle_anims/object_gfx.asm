@@ -58,6 +58,7 @@ AnimObjGFX:
 	anim_obj_gfx 16, AnimObjAuraSphereGFX
 	anim_obj_gfx  9, AnimObjGlowGFX
 	anim_obj_gfx  5, AnimObjMisc2GFX
+	anim_obj_gfx  2, AnimObjStatsGFX
 
 AnimBallObjGFX:
 	dbw POKE_BALL, 		AnimObjPokeBallGFX

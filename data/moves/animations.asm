@@ -760,20 +760,62 @@ BattleAnim_EnemyDamage:
 	anim_ret
 
 BattleAnim_EnemyStatDown:
-	anim_call BattleAnim_UserObj_1Row
-	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
-	anim_wait 40
-	anim_call BattleAnim_ShowMon_1
-	anim_wait 1
-	anim_ret
+	anim_1gfx ANIM_GFX_SPEED
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_1A, $0, $1, $20
+	anim_bgeffect ANIM_BG_07, $0, $2, $0
+	anim_sound 0, 0, SFX_STAT_UP
+.loop
+	anim_obj ANIM_OBJ_STAT_UP,   5, 4,  13, 6, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_STAT_UP,   4, 4,  13, 6, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_STAT_UP,   6, 4,  13, 6, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_STAT_UP,   3, 4,  13, 6, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_STAT_UP,   7, 4,  13, 6, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_STAT_UP,   2, 4,  13, 6, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_STAT_UP,   8, 4,  13, 6, $8
+	anim_wait 2
+	anim_loop 3, .loop
+	anim_wait 8
+	anim_incbgeffect ANIM_BG_1A
+	anim_jump BattleAnim_ShowMon_0
 
 BattleAnim_PlayerStatDown:
-	anim_call BattleAnim_UserObj_1Row
-	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $0, $0
-	anim_wait 40
-	anim_call BattleAnim_ShowMon_1
-	anim_wait 1
-	anim_ret
+	anim_1gfx ANIM_GFX_SPEED
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_1A, $0, $1, $20
+	anim_bgeffect ANIM_BG_07, $0, $2, $0
+	anim_sound 0, 0, SFX_STAT_DOWN
+.loop
+	anim_obj ANIM_OBJ_STAT_DOWN, 5, 4,  7, 6, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_STAT_DOWN, 4, 4,  7, 6, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_STAT_DOWN, 6, 4,  7, 6, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_STAT_DOWN, 3, 4,  7, 6, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_STAT_DOWN, 7, 4,  7, 6, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_STAT_DOWN, 2, 4,  7, 6, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_STAT_DOWN, 8, 4,  7, 6, $8
+	anim_wait 2
+	anim_loop 3, .loop
+	anim_wait 8
+	anim_incbgeffect ANIM_BG_1A
+	anim_jump BattleAnim_ShowMon_0
+;	anim_call BattleAnim_UserObj_1Row
+;	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $0, $0
+;	anim_wait 40
+;	anim_call BattleAnim_ShowMon_1
+;	anim_wait 1
+;	anim_ret
 
 BattleAnim_PlayerDamage:
 	anim_bgeffect ANIM_BG_20, $20, $2, $20

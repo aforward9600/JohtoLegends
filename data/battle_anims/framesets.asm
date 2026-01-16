@@ -193,6 +193,8 @@ BattleAnimFrameData:
 	dw .Frameset_DropletR
 	dw .Frameset_DropletL
 	dw .Frameset_ba
+	dw .Frameset_StatUp
+	dw .Frameset_StatDown
 
 .Frameset_00:
 	frame BATTLEANIMOAMSET_00,  6
@@ -1325,4 +1327,12 @@ BattleAnimFrameData:
 .Frameset_ba:
 	dowait 6
 	frame BATTLEANIMOAMSET_D8, 16
+	delanim
+
+.Frameset_StatUp:
+	frame BATTLEANIMOAMSET_STAT, 16
+	delanim
+
+.Frameset_StatDown:
+	frame BATTLEANIMOAMSET_STAT, 16, OAM_Y_FLIP
 	delanim
