@@ -810,7 +810,9 @@ wPrevDexEntryBackup:: dw
 wPrevDexEntryJumptableIndex:: db
 
 wPokedexNameBuffer:: ds MON_NAME_LENGTH
-	ds 230
+wStringBufferBattle:: ds 19
+;wTilemap5RowBackup:: ds SCREEN_WIDTH * 5
+	ds 211
 
 NEXTU ; c6d0
 wMoveRelearnerSpecies:: dw ; c6d0
@@ -3104,6 +3106,7 @@ wLYOverridesBackup:: ds SCREEN_HEIGHT_PX - 96
 wLYOverrides2End:: ds SCREEN_HEIGHT_PX - 48
 wLYOverridesBackupEnd::
 
+wTilemap5RowBackup:: ds SCREEN_WIDTH * 5
 
 SECTION "Battle Animations", WRAMX
 

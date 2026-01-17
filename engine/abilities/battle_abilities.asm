@@ -169,17 +169,9 @@ DoEntranceAbilities:
 	ld de, 1
 	call IsInArray
 	jr c, .IntimidateBlocked
+	call AnimateUserAbility
 	farcall BattleCommand_AttackDown
 	farcall BattleCommand_StatDownMessage
-;	ld b, ATTACK
-;	farcall LowerStatPop
-;	ld a, [wFailedMessage]
-;	and a
-;	ret nz
-;	ld de, ANIM_PLAYER_STAT_DOWN
-;	farcall Call_PlayBattleAnim
-	ld hl, IntimidateText
-	call StdBattleTextbox
 	call GetTargetAbility
 	cp RATTLED
 	jp z, RattledAbility
@@ -390,21 +382,21 @@ MoveDelayAbility:
 	jp DelayFrames
 
 RattledAbility:
+;	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_SpeedUp
+	farcall BattleCommand_StatUpMessage
+	jp BattleCommand_SwitchTurnAbilities
+;	ld a, [wAttackMissed]
+;	and a
+;	ret nz
+;	call MoveDelayAbility
+;	call BattleCommand_SwitchTurnAbilities
 ;	ld de, ANIM_ENEMY_STAT_DOWN
 ;	farcall Call_PlayBattleAnim
-	call BattleCommand_SwitchTurnAbilities
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-	call MoveDelayAbility
-	call BattleCommand_SwitchTurnAbilities
-	ld de, ANIM_ENEMY_STAT_DOWN
-	farcall Call_PlayBattleAnim
-	call BattleCommand_SwitchTurnAbilities
-	ld hl, RattledText
-	jp StdBattleTextbox
+;	call BattleCommand_SwitchTurnAbilities
+;	ld hl, RattledText
+;	jp StdBattleTextbox
 
 JustifiedAbility:
 	call BattleCommand_SwitchTurnAbilities
@@ -2387,3 +2379,10 @@ PinchBerryAnimation:
 	callfar BattleCommand_SwitchTurn
 	ld hl, PinchBerryText
 	jp StdBattleTextbox
+
+Ability_LoadAbilitySlideIn:
+;	ldh a, [hBattleTurn]
+;	and a
+;	jr z, .PlayerAbility
+	farcall AnimateUserAbility
+	ret
