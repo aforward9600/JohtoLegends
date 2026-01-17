@@ -384,7 +384,7 @@ wBattleMonNick:: ds MON_NAME_LENGTH ; c621
 
 wBattleMon:: battle_struct wBattleMon ; c62c
 
-	ds 4
+;	ds 4
 wIntroJumptableIndex:: db
 wIntroBGMapPointer:: dw
 wIntroTilemapPointer:: dw
@@ -394,10 +394,10 @@ wIntroFrameCounter2:: db
 wIntroSpriteStateFlag:: db
 
 
-	ds 2
+;	ds 2
 
 wWildMon:: db ; c64e
-	ds 1
+;	ds 1
 wEnemyTrainerItem1:: db ; c650
 wEnemyTrainerItem2:: db ; c651
 wEnemyTrainerBaseReward:: db ; c652
@@ -545,7 +545,7 @@ wPlayerDefense:: dw
 wPlayerSpeed:: dw
 wPlayerSpAtk:: dw
 wPlayerSpDef:: dw
-	ds 1
+;	ds 1
 
 wEnemyStats:: ; c6c1
 wEnemyAttack:: dw
@@ -553,7 +553,7 @@ wEnemyDefense:: dw
 wEnemySpeed:: dw
 wEnemySpAtk:: dw
 wEnemySpDef:: dw
-	ds 1
+;	ds 1
 
 wPlayerStatLevels:: ; c6cc
 ; 07 neutral
@@ -576,17 +576,17 @@ wEnemySAtkLevel:: db ; c6d7
 wEnemySDefLevel:: db ; c6d8
 wEnemyAccLevel:: db ; c6d9
 wEnemyEvaLevel:: db ; c6da
-	ds 1
+;	ds 1
 
 wEnemyTurnsTaken:: db ; c6dc
 wPlayerTurnsTaken:: db ; c6dd
-	ds 1
+;	ds 1
 
 wPlayerSubstituteHP:: db ; c6df
 wEnemySubstituteHP:: db ; c6e0
 
 wUnusedPlayerLockedMove:: db ; c6e1
-	ds 1
+;	ds 1
 
 wCurPlayerMove:: db ; c6e3
 wCurEnemyMove:: db ; c6e4
@@ -648,7 +648,7 @@ wEnemySafeguardCount:: db ; c705
 wEnemyLightScreenCount:: db ; c706
 wEnemyReflectCount:: db ; c707
 wEnemyKnockOff:: db
-	ds 1
+;	ds 1
 
 wBattleWeather:: ; c70a
 ; 00 normal
@@ -694,7 +694,7 @@ wExpShare:: db
 wExpShareText:: db
 wEnemyForm:: db
 
-	ds 6
+;	ds 6
 
 wPlayerFutureSightDamage:: dw ; c727
 wEnemyFutureSightDamage:: dw ; c729
@@ -721,6 +721,9 @@ wSomeoneIsRampaging:: db ; c73b
 
 wPlayerJustGotFrozen:: db ; c73c
 wEnemyJustGotFrozen:: db ; c73d
+
+wStringBufferBattle:: ds 19
+
 wBattleEnd::
 
 NEXTU ; c608
@@ -810,9 +813,8 @@ wPrevDexEntryBackup:: dw
 wPrevDexEntryJumptableIndex:: db
 
 wPokedexNameBuffer:: ds MON_NAME_LENGTH
-wStringBufferBattle:: ds 19
 ;wTilemap5RowBackup:: ds SCREEN_WIDTH * 5
-	ds 211
+	ds 230
 
 NEXTU ; c6d0
 wMoveRelearnerSpecies:: dw ; c6d0
