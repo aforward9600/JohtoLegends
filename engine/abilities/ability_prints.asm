@@ -89,8 +89,7 @@ AnimatePlayerAbility::
 	jr z, .Animate
 	call BattleCommand_SwitchTurnAbilities
 	call .Animate
-	call BattleCommand_SwitchTurnAbilities
-	ret
+	jp BattleCommand_SwitchTurnAbilities
 
 .Animate:
 	xor a
@@ -105,8 +104,7 @@ AnimateEnemyAbility::
 	jr nz, .Animate
 	call BattleCommand_SwitchTurnAbilities
 	call .Animate
-	call BattleCommand_SwitchTurnAbilities
-	ret
+	jp BattleCommand_SwitchTurnAbilities
 
 .Animate
 	xor a

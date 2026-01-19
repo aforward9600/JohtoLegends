@@ -382,21 +382,11 @@ MoveDelayAbility:
 	jp DelayFrames
 
 RattledAbility:
-;	call AnimateOppAbility
+	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_SpeedUp
 	farcall BattleCommand_StatUpMessage
 	jp BattleCommand_SwitchTurnAbilities
-;	ld a, [wAttackMissed]
-;	and a
-;	ret nz
-;	call MoveDelayAbility
-;	call BattleCommand_SwitchTurnAbilities
-;	ld de, ANIM_ENEMY_STAT_DOWN
-;	farcall Call_PlayBattleAnim
-;	call BattleCommand_SwitchTurnAbilities
-;	ld hl, RattledText
-;	jp StdBattleTextbox
 
 JustifiedAbility:
 	call BattleCommand_SwitchTurnAbilities
@@ -429,19 +419,11 @@ DefiantAbility:
 	jp StdBattleTextbox
 
 CompetitiveAbility:
+	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_SpecialAttackUp2
-	call BattleCommand_SwitchTurnAbilities
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-	call MoveDelayAbility
-	call BattleCommand_SwitchTurnAbilities
-	ld de, ANIM_ENEMY_STAT_DOWN
-	farcall Call_PlayBattleAnim
-	call BattleCommand_SwitchTurnAbilities
-	ld hl, CompetitiveText
-	jp StdBattleTextbox
+	farcall BattleCommand_StatUpMessage
+	jp BattleCommand_SwitchTurnAbilities
 
 CheckContactAbilities:
 	call CheckNeutralGas
@@ -2384,5 +2366,4 @@ Ability_LoadAbilitySlideIn:
 ;	ldh a, [hBattleTurn]
 ;	and a
 ;	jr z, .PlayerAbility
-	farcall AnimateUserAbility
-	ret
+	jp AnimateUserAbility

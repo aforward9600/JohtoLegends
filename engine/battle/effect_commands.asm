@@ -2342,6 +2342,7 @@ BattleCommand_StatUpAnim:
 	and a
 	jp nz, BattleCommand_MoveDelay
 
+.SkipContrary
 	xor a
 	jr BattleCommand_StatUpDownAnim
 
@@ -4904,7 +4905,7 @@ BattleCommand_AccuracyUp2:
 BattleCommand_EvasionUp2:
 ; evasionup2
 	ld b, $10 | EVASION
-	jr BattleCommand_StatUp
+;	jr BattleCommand_StatUp
 
 BattleCommand_StatUp:
 ; statup
@@ -4919,7 +4920,10 @@ BattleCommand_StatUp:
 	ld a, [wPlayerAbility]
 .ContinueContrary
 	cp CONTRARY
-	jp z, StatDownSkipContrary
+	jr nz, StatUpSkipContrary
+	call BattleCommand_SwitchTurn
+	call StatDownSkipContrary
+	jp BattleCommand_SwitchTurn
 StatUpSkipContrary:
 	call RaiseStat
 	ld a, [wFailedMessage]
@@ -5212,7 +5216,10 @@ BattleCommand_StatDown:
 	jr z, StatDownSkipContrary
 	call GetTargetAbility
 	cp CONTRARY
-	jp z, StatUpSkipContrary
+	jr nz, StatDownSkipContrary
+	call BattleCommand_SwitchTurn
+	call StatUpSkipContrary
+	jp BattleCommand_SwitchTurn
 StatDownSkipContrary:
 	ld a, b
 	ld [wLoweredStat], a
@@ -5381,6 +5388,11 @@ StatUpMessageSkipContrary:
 
 StatDownMessageSkipContrary2:
 	call BattleCommand_SwitchTurn
+	ld a, [wFailedMessage]
+	and a
+	jr nz, .SkipAbility
+	farcall AnimateOppAbility
+.SkipAbility
 	call StatDownMessageSkipContrary
 	jp BattleCommand_SwitchTurn
 
@@ -5428,6 +5440,11 @@ StatDownMessageSkipContrary:
 
 StatUpMessageSkipContrary2:
 	call BattleCommand_SwitchTurn
+	ld a, [wFailedMessage]
+	and a
+	jr nz, .SkipAbility
+	farcall AnimateUserAbility
+.SkipAbility
 	call StatUpMessageSkipContrary
 	jp BattleCommand_SwitchTurn
 

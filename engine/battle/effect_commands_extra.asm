@@ -599,24 +599,10 @@ CloseCombatContrary:
 	jp MoveSecondSwitchTurn
 
 BattleCommand_HammerArm:
-	farcall ResetMiss
-	call CheckNeutralGas
-	jr z, .SkipContrary
-	call GetUserAbility
-	cp CONTRARY
-	jr z, HammerArmContrary
-.SkipContrary
-	ld b, SPEED
-	farcall LowerStatPop
-HammerArmMessage:
 	call BattleCommand_SwitchTurn2
+	farcall BattleCommand_SpeedDown
 	farcall BattleCommand_StatDownMessage
 	jp BattleCommand_SwitchTurn2
-
-HammerArmContrary:
-	ld b, SPEED
-	farcall RaiseStat
-	jr HammerArmMessage
 
 MoveFirstSwitchTurn:
 	call BattleCommand_SwitchTurn2
@@ -650,24 +636,12 @@ BattleCommand_Defiant:
 	ret
 
 .Defiant:
-	call BattleCommand_SwitchTurn2
-	farcall BattleCommand_AttackUp2
-	call BattleCommand_SwitchTurn2
-	ld a, [wFailedMessage]
-	and a
-	ret nz
-	ld hl, DefiantText
-	jp StdBattleTextbox
+	farcall DefiantAbility
+	ret
 
 .Competitive:
-	call BattleCommand_SwitchTurn2
-	farcall BattleCommand_SpecialAttackUp2
-	call BattleCommand_SwitchTurn2
-	ld a, [wFailedMessage]
-	and a
-	ret nz
-	ld hl, CompetitiveText
-	jp StdBattleTextbox
+	farcall CompetitiveAbility
+	ret
 
 CheckUserIsCharging2:
 	ldh a, [hBattleTurn]
