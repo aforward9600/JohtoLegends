@@ -5358,8 +5358,12 @@ StatUpMessageSkipContrary:
 	ld a, [wFailedMessage]
 	and a
 	ret nz
+	ld a, [wStatChangeHappened]
+	and a
+	jr nz, .SkipAnimation
 	ld de, ANIM_ENEMY_STAT_DOWN
 	farcall Call_PlayBattleAnim
+.SkipAnimation
 	ld a, [wLoweredStat]
 	and $f
 	ld b, a
@@ -5391,6 +5395,9 @@ StatDownMessageSkipContrary2:
 	ld a, [wFailedMessage]
 	and a
 	jr nz, .SkipAbility
+	ld a, [wStatChangeHappened]
+	and a
+	jr nz, .SkipAbility
 	farcall AnimateOppAbility
 .SkipAbility
 	call StatDownMessageSkipContrary
@@ -5409,8 +5416,12 @@ StatDownMessageSkipContrary:
 	call BattleCommand_SwitchTurn
 	xor a
 	ld [wNumHits], a
+	ld a, [wStatChangeHappened]
+	and a
+	jr nz, .SkipAnimation
 	ld de, ANIM_PLAYER_STAT_DOWN
 	farcall Call_PlayBattleAnim
+.SkipAnimation
 	call BattleCommand_SwitchTurn
 	ld a, [wLoweredStat]
 	and $f
@@ -5441,6 +5452,9 @@ StatDownMessageSkipContrary:
 StatUpMessageSkipContrary2:
 	call BattleCommand_SwitchTurn
 	ld a, [wFailedMessage]
+	and a
+	jr nz, .SkipAbility
+	ld a, [wStatChangeHappened]
 	and a
 	jr nz, .SkipAbility
 	farcall AnimateUserAbility
@@ -5577,6 +5591,9 @@ BattleCommand_AllStatsUp:
 	call BattleCommand_AttackUp
 	call BattleCommand_StatUpMessage
 
+	ld a, 1
+	ld [wStatChangeHappened], a
+
 ; Defense
 	call ResetMiss
 	call BattleCommand_DefenseUp
@@ -5595,7 +5612,8 @@ BattleCommand_AllStatsUp:
 ; Special Defense
 	call ResetMiss
 	call BattleCommand_SpecialDefenseUp
-	jp   BattleCommand_StatUpMessage
+	call BattleCommand_StatUpMessage
+	jr ResetStatChange
 
 BattleCommand_AllStatsDown:
 ; allstatsdown
@@ -5605,6 +5623,9 @@ BattleCommand_AllStatsDown:
 	call BattleCommand_AttackDown
 	call BattleCommand_StatDownMessage
 	farcall BattleCommand_Defiant
+
+	ld a, 1
+	ld [wStatChangeHappened], a
 
 ; Defense
 	call ResetMiss
@@ -5629,6 +5650,10 @@ BattleCommand_AllStatsDown:
 	call BattleCommand_SpecialDefenseDown
 	call BattleCommand_StatDownMessage
 	farcall BattleCommand_Defiant
+
+ResetStatChange:
+	xor a
+	ld [wStatChangeHappened], a
 	ret
 
 ResetMiss:

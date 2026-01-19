@@ -573,30 +573,39 @@ SuperpowerContrary:
 	jp MoveSecondSwitchTurn
 
 BattleCommand_CloseCombat:
-	farcall ResetMiss
-	call CheckNeutralGas
-	jr z, .SkipContrary
-	call GetUserAbility
-	cp CONTRARY
-	jr z, CloseCombatContrary
-.SkipContrary
-	ld b, DEFENSE
-	farcall LowerStatPop
-	call MoveFirstSwitchTurn
-	farcall ResetMiss
-	ld b, SP_DEFENSE
-	farcall LowerStatPop
-	jp MoveSecondSwitchTurn
+	call BattleCommand_SwitchTurn2
+	farcall BattleCommand_DefenseDown
+	farcall BattleCommand_StatDownMessage
+	ld a, 1
+	ld [wStatChangeHappened], a
+	farcall BattleCommand_SpecialDefenseDown
+	farcall BattleCommand_StatDownMessage
+	call BattleCommand_SwitchTurn2
+	ld a, [wStatChangeHappened]
+	xor a
+	ret
+;	farcall ResetMiss
+;	call CheckNeutralGas
+;	jr z, .SkipContrary
+;	call GetUserAbility
+;	cp CONTRARY
+;	jr z, CloseCombatContrary
+;.SkipContrary
+;	ld b, DEFENSE
+;	farcall LowerStatPop
+;	call MoveFirstSwitchTurn
+;	farcall ResetMiss
+;	ld b, SP_DEFENSE
+;	farcall LowerStatPop
+;	jp MoveSecondSwitchTurn
 
 CloseCombatContrary:
-	ld b, DEFENSE
-	farcall RaiseStat
-	call MoveFirstSwitchTurn
-
-	farcall ResetMiss
-	ld b, SP_DEFENSE
-	farcall RaiseStat
-	jp MoveSecondSwitchTurn
+	call BattleCommand_SwitchTurn2
+	farcall BattleCommand_DefenseDown
+	farcall BattleCommand_StatDownMessage
+	farcall BattleCommand_SpecialDefenseDown
+	farcall BattleCommand_StatDownMessage
+	jp BattleCommand_SwitchTurn2
 
 BattleCommand_HammerArm:
 	call BattleCommand_SwitchTurn2

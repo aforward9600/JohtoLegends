@@ -604,7 +604,7 @@ wPayDayMoney:: ds 3 ; c6ec
 
 wSafariMonAngerCount:: db
 wSafariMonEating:: db
-	ds 1
+wStatChangeHappened:: db
 wEnemyBackupDVs:: dw ; used when enemy is transformed
 wAlreadyDisobeyed:: db ; c6f4
 
