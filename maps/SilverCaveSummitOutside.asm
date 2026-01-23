@@ -13,7 +13,7 @@ SilverCaveSummitOutside_MapScripts:
 	return
 
 .MewCaveAppears:
-	changeblock 8, 22, $af
+	changeblock 8, 12, $af
 	checkevent EVENT_BEAT_MEW
 	iftrue .MewWillNotAppear
 	checkevent EVENT_CAUGHT_MEW

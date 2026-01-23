@@ -2381,7 +2381,6 @@ CloseCombat:
 	stab
 	damagevariation
 	checkhit
-	effectchance
 	moveanim
 	failuretext
 	applydamage

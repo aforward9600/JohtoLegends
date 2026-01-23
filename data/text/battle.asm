@@ -1278,8 +1278,9 @@ DownloadText:
 	prompt
 
 EnemyTraceText:
-	text "<USER>"
-	line "traced <TARGET>'s"
+	text "<USER>'s"
+	line "Trace copied"
+	cont "<TARGET>'s"
 	cont "@"
 	text_ram wStringBuffer1
 	text "!"

@@ -1967,7 +1967,7 @@ BattleCommand_CheckHit:
 	ret
 
 .ArmorTail:
-	call BattleCommand_MoveDelay
+	farcall AnimateOppAbility
 	ld hl, ArmorTailText
 	call StdBattleTextbox
 	jp EndMoveEffect
@@ -5349,15 +5349,17 @@ CheckMist:
 	ret
 
 BattleCommand_StatUpMessage:
+	ld a, [wFailedMessage]
+	and a
+	ret nz
 	call CheckNeutralGas
 	jr z, StatUpMessageSkipContrary
 	call GetUserAbility
 	cp CONTRARY
 	jr z, StatDownMessageSkipContrary2
 StatUpMessageSkipContrary:
-	ld a, [wFailedMessage]
-	and a
-	ret nz
+	xor a
+	ld [wNumHits], a
 	ld a, [wStatChangeHappened]
 	and a
 	jr nz, .SkipAnimation
@@ -5392,9 +5394,6 @@ StatUpMessageSkipContrary:
 
 StatDownMessageSkipContrary2:
 	call BattleCommand_SwitchTurn
-	ld a, [wFailedMessage]
-	and a
-	jr nz, .SkipAbility
 	ld a, [wStatChangeHappened]
 	and a
 	jr nz, .SkipAbility
@@ -5404,15 +5403,15 @@ StatDownMessageSkipContrary2:
 	jp BattleCommand_SwitchTurn
 
 BattleCommand_StatDownMessage:
+	ld a, [wFailedMessage]
+	and a
+	ret nz
 	call CheckNeutralGas
 	jr z, StatDownMessageSkipContrary
 	call GetTargetAbility
 	cp CONTRARY
 	jp z, StatUpMessageSkipContrary2
 StatDownMessageSkipContrary:
-	ld a, [wFailedMessage]
-	and a
-	ret nz
 	call BattleCommand_SwitchTurn
 	xor a
 	ld [wNumHits], a
@@ -5451,9 +5450,6 @@ StatDownMessageSkipContrary:
 
 StatUpMessageSkipContrary2:
 	call BattleCommand_SwitchTurn
-	ld a, [wFailedMessage]
-	and a
-	jr nz, .SkipAbility
 	ld a, [wStatChangeHappened]
 	and a
 	jr nz, .SkipAbility

@@ -160,6 +160,7 @@ AnimateAbility:
 	ret
 
 .SetupBox:
+	ld b,b
 	push de
 	ld hl, wTileMap
 	ld de, wTilemap5RowBackup

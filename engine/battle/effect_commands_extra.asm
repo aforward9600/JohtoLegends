@@ -104,9 +104,8 @@ BattleCommand_CriticalText:
 	pop af
 	dec a
 	jr nz, .AngerPointLoop
-	call BattleCommand_SwitchTurn2
-	ld hl, AngerPointText
-	call StdBattleTextbox
+	farcall BattleCommand_StatUpMessage
+	jp BattleCommand_SwitchTurn2
 
 .wait
 	ld c, 20
@@ -523,12 +522,6 @@ PranksterCheck:
 	call GetBattleVar
 	cp STATUS
 	ret c
-;	ld a, BATTLE_VARS_MOVE_EFFECT
-;	call GetBattleVar
-;	ld hl, PranksterEffects
-;	ld de, 1
-;	call IsInArray
-;	jr nc, .OverwritePriority
 	ld hl, wBattleMonType1
 	ldh a, [hBattleTurn]
 	and a
@@ -548,29 +541,18 @@ PranksterCheck:
 	ret
 
 BattleCommand_Superpower:
+	call BattleCommand_SwitchTurn2
+	farcall BattleCommand_AttackDown
+	farcall BattleCommand_StatDownMessage
+	ld a, 1
+	ld [wStatChangeHappened], a
 	farcall ResetMiss
-	call CheckNeutralGas
-	jr z, .SkipContrary
-	call GetUserAbility
-	cp CONTRARY
-	jr z, SuperpowerContrary
-.SkipContrary
-	ld b, ATTACK
-	farcall LowerStatPop
-	call MoveFirstSwitchTurn
-	farcall ResetMiss
-	ld b, DEFENSE
-	farcall LowerStatPop
-	jp MoveSecondSwitchTurn
-
-SuperpowerContrary:
-	ld b, ATTACK
-	farcall RaiseStat
-	call MoveFirstSwitchTurn
-	farcall ResetMiss
-	ld b, DEFENSE
-	farcall RaiseStat
-	jp MoveSecondSwitchTurn
+	farcall BattleCommand_DefenseDown
+	farcall BattleCommand_StatDownMessage
+	call BattleCommand_SwitchTurn2
+	xor a
+	ld [wStatChangeHappened], a
+	ret
 
 BattleCommand_CloseCombat:
 	call BattleCommand_SwitchTurn2
@@ -578,47 +560,17 @@ BattleCommand_CloseCombat:
 	farcall BattleCommand_StatDownMessage
 	ld a, 1
 	ld [wStatChangeHappened], a
+	farcall ResetMiss
 	farcall BattleCommand_SpecialDefenseDown
 	farcall BattleCommand_StatDownMessage
 	call BattleCommand_SwitchTurn2
-	ld a, [wStatChangeHappened]
 	xor a
+	ld [wStatChangeHappened], a
 	ret
-;	farcall ResetMiss
-;	call CheckNeutralGas
-;	jr z, .SkipContrary
-;	call GetUserAbility
-;	cp CONTRARY
-;	jr z, CloseCombatContrary
-;.SkipContrary
-;	ld b, DEFENSE
-;	farcall LowerStatPop
-;	call MoveFirstSwitchTurn
-;	farcall ResetMiss
-;	ld b, SP_DEFENSE
-;	farcall LowerStatPop
-;	jp MoveSecondSwitchTurn
-
-CloseCombatContrary:
-	call BattleCommand_SwitchTurn2
-	farcall BattleCommand_DefenseDown
-	farcall BattleCommand_StatDownMessage
-	farcall BattleCommand_SpecialDefenseDown
-	farcall BattleCommand_StatDownMessage
-	jp BattleCommand_SwitchTurn2
 
 BattleCommand_HammerArm:
 	call BattleCommand_SwitchTurn2
 	farcall BattleCommand_SpeedDown
-	farcall BattleCommand_StatDownMessage
-	jp BattleCommand_SwitchTurn2
-
-MoveFirstSwitchTurn:
-	call BattleCommand_SwitchTurn2
-	farcall BattleCommand_StatDownMessage
-	ret
-
-MoveSecondSwitchTurn:
 	farcall BattleCommand_StatDownMessage
 	jp BattleCommand_SwitchTurn2
 

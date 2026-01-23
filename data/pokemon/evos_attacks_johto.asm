@@ -709,8 +709,10 @@ MoltresEvosAttacks:
 DratiniEvosAttacks:
 	dbbw EVOLVE_LEVEL, 20, DRAGONAIR
 	db 0 ; no more evolutions
-	dbw 1, DRAGON_RAGE
-	dbw 1, LEER
+;	dbw 1, DRAGON_RAGE
+;	dbw 1, LEER
+	dbw 1, POWERUPPUNCH
+	dbw 1, HAMMER_ARM
 	dbw 1, ANCIENTPOWER
 	dbw 1, CLOSE_COMBAT
 	dbw 6, THUNDER_WAVE

@@ -27,17 +27,17 @@ SilverCaveMewRoom_MapScripts:
 	applymovement PLAYER, PlayerMovesTowardMew
 	pause 15
 	showemote EMOTE_SHOCK, PLAYER, 15
-	turnobject PLAYER, LEFT
+	applymovement PLAYER, MewRoomLookLeft
 	pause 15
-	turnobject PLAYER, RIGHT
+	applymovement PLAYER, MewRoomLookRight
 	pause 15
 	cry MEW
 	pause 30
 	showemote EMOTE_SHOCK, PLAYER, 15
-	turnobject PLAYER, UP
+	applymovement PLAYER, MewRoomLookUp
 	pause 15
 	appear SILVERCAVEMEWROOM_MEW
-	turnobject SILVERCAVEMEWROOM_MEW, DOWN
+	applymovement SILVERCAVEMEWROOM_MEW, MewRoomLookDown
 	pause 15
 	cry MEW
 	pause 45
@@ -45,7 +45,7 @@ SilverCaveMewRoom_MapScripts:
 	applymovement SILVERCAVEMEWROOM_MEW, MewCirclesMovement
 	applymovement SILVERCAVEMEWROOM_MEW, MewCirclesMovement
 	applymovement SILVERCAVEMEWROOM_MEW, MewCirclesMovement
-	turnobject SILVERCAVEMEWROOM_MEW, DOWN
+	applymovement SILVERCAVEMEWROOM_MEW, MewRoomLookDown
 	pause 30
 	cry MEW
 	pause 30
@@ -123,17 +123,11 @@ SilverCaveRock:
 	pause 15
 	waitsfx
 .MewIsGone:
-	writetext MewSeemsGoneText
-	waitbutton
-	closetext
 	setscene SCENE_MEW_GONE
-	end
+	writetextend MewSeemsGoneText
 
 .AlreadyCaughtMew:
-	writetext MewIsCaughtText
-	waitbutton
-	closetext
-	end
+	writetextend MewIsCaughtText
 
 .MewIsGoneAgain:
 	writetext MewIsGoneAgainText
@@ -141,6 +135,22 @@ SilverCaveRock:
 .DidntDecide:
 	closetext
 	end
+
+MewRoomLookRight:
+	turn_head RIGHT
+	step_end
+
+MewRoomLookLeft:
+	turn_head LEFT
+	step_end
+
+MewRoomLookDown:
+	turn_head DOWN
+	step_end
+
+MewRoomLookUp:
+	turn_head UP
+	step_end
 
 PlayerMovesTowardMew:
 	step UP

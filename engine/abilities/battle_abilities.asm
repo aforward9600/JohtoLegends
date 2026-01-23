@@ -162,9 +162,9 @@ DoEntranceAbilities:
 	call GetBattleVar
 	bit SUBSTATUS_MIST, a
 	jr nz, .IntimidateBlocked
-	call GetTargetAbility
-	cp CONTRARY
-	jr z, .IntimidateContrary
+;	call GetTargetAbility
+;	cp CONTRARY
+;	jr z, .IntimidateContrary
 	ld hl, NoIntimidateAbilities
 	ld de, 1
 	call IsInArray
@@ -182,6 +182,7 @@ DoEntranceAbilities:
 	jp CompetitiveAbility
 
 .IntimidateBlocked:
+	call AnimateOppAbility
 	ld hl, AttackNotLoweredText
 	jp StdBattleTextbox
 
@@ -204,7 +205,7 @@ DoEntranceAbilities:
 	ret z
 	cp NEUTRAL_GAS
 	ret z
-	call MoveDelayAbility
+	call AnimateUserAbility
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .PlayerTrace
@@ -226,12 +227,12 @@ DoEntranceAbilities:
 	jp StdBattleTextbox
 
 .MoldBreaker:
-	call MoveDelayAbility
+	call AnimateUserAbility
 	ld hl, BattleText_MoldBreaker
 	jp StdBattleTextbox
 
 .Pressure:
-	call MoveDelayAbility
+	call AnimateUserAbility
 	ld hl, PressureText
 	jp StdBattleTextbox
 
@@ -257,7 +258,7 @@ DoEntranceAbilities:
 	pop af
 	and 1 << SCREENS_LIGHT_SCREEN
 	ret z
-	call MoveDelayAbility
+	call AnimateUserAbility
 	ld hl, ScreenCleanText
 	jp StdBattleTextbox
 
@@ -266,6 +267,7 @@ DoEntranceAbilities:
 	ld a, [hl]
 	and a
 	ret z
+	call AnimateUserAbility
 	farcall GetOpponentItem
 	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
@@ -275,16 +277,17 @@ DoEntranceAbilities:
 	jp StdBattleTextbox
 
 .Unnerve:
-	call MoveDelayAbility
+	call AnimateUserAbility
 	ld hl, UnnerveText
 	jp StdBattleTextbox
 
 .CloudNine:
-	call MoveDelayAbility
+	call AnimateUserAbility
 	ld hl, CloudNineText
 	jp StdBattleTextbox
 
 .Drought:
+	call AnimateUserAbility
 	ld a, WEATHER_SUN
 	ld [wBattleWeather], a
 	ld a, 5
@@ -295,6 +298,7 @@ DoEntranceAbilities:
 	jp StdBattleTextbox
 
 .SnowWarning:
+	call AnimateUserAbility
 	ld a, WEATHER_HAIL
 	ld [wBattleWeather], a
 	ld a, 5
@@ -305,6 +309,7 @@ DoEntranceAbilities:
 	jp StdBattleTextbox
 
 .Drizzle:
+	call AnimateUserAbility
 	ld a, WEATHER_RAIN
 	ld [wBattleWeather], a
 	ld a, 5
@@ -315,6 +320,7 @@ DoEntranceAbilities:
 	jp StdBattleTextbox
 
 .Sandstream:
+	call AnimateUserAbility
 	ld a, WEATHER_SANDSTORM
 	ld [wBattleWeather], a
 	ld a, 5
@@ -325,6 +331,7 @@ DoEntranceAbilities:
 	jp StdBattleTextbox
 
 .SlowStart:
+	call AnimateUserAbility
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr
 	set SUBSTATUS_SLOW_START, [hl]
@@ -342,22 +349,22 @@ DoEntranceAbilities:
 	ld [wPlayerSlowStartCount], a
 .FinishSlowStart:
 	farcall CalcPlayerStats
+	farcall CalcEnemyStats
 	call MoveDelayAbility
 	ld hl, SlowStartText
 	jp StdBattleTextbox
 
 .Imposter:
+	call AnimateUserAbility
 	ld de, ANIM_IMPOSTER
 	farcall FarPlayBattleAnimation
 	farcall BattleCommand_Transform
 	jr .NoFirstAbility
 
 .Download:
+	call AnimateUserAbility
 	farcall BattleCommand_SpecialAttackUp
-	ld de, ANIM_ENEMY_STAT_DOWN
-	farcall Call_PlayBattleAnim
-	ld hl, DownloadText
-	call StdBattleTextbox
+	farcall BattleCommand_StatUpMessage
 .NoFirstAbility:
 	ret
 
@@ -365,12 +372,11 @@ INCLUDE "data/abilities/no_intimidate_abilities.asm"
 
 EnemyNeutralGas:
 	call BattleCommand_SwitchTurnAbilities
-	call MoveDelayAbility
-	ld hl, NeutralGasText
-	call StdBattleTextbox
+	call PlayerNeutralGas
 	jp BattleCommand_SwitchTurnAbilities
 
 PlayerNeutralGas:
+	call AnimateUserAbility
 	call MoveDelayAbility
 	ld hl, NeutralGasText
 	jp StdBattleTextbox
@@ -389,34 +395,18 @@ RattledAbility:
 	jp BattleCommand_SwitchTurnAbilities
 
 JustifiedAbility:
+	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_AttackUp
-	call BattleCommand_SwitchTurnAbilities
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-	call MoveDelayAbility
-	call BattleCommand_SwitchTurnAbilities
-	ld de, ANIM_ENEMY_STAT_DOWN
-	farcall Call_PlayBattleAnim
-	call BattleCommand_SwitchTurnAbilities
-	ld hl, JustifiedText
-	jp StdBattleTextbox
+	farcall BattleCommand_StatUpMessage
+	jp BattleCommand_SwitchTurnAbilities
 
 DefiantAbility:
+	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_AttackUp2
-	call BattleCommand_SwitchTurnAbilities
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-	call MoveDelayAbility
-	call BattleCommand_SwitchTurnAbilities
-	ld de, ANIM_ENEMY_STAT_DOWN
-	farcall Call_PlayBattleAnim
-	call BattleCommand_SwitchTurnAbilities
-	ld hl, DefiantText
-	jp StdBattleTextbox
+	farcall BattleCommand_StatUpMessage
+	jp BattleCommand_SwitchTurnAbilities
 
 CompetitiveAbility:
 	call AnimateOppAbility
@@ -476,6 +466,7 @@ CheckContactAbilities:
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
+	call AnimateUserAbility
 	farcall BattleCommand_PoisonTarget
 	jr .ReconveneContact
 
@@ -493,10 +484,11 @@ CheckContactAbilities:
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
+	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
 	farcall CursedBodyAbility
 	call BattleCommand_SwitchTurnAbilities
-	jr .AfterCursedBody
+	jp .AfterCursedBody
 
 .rattled:
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -540,26 +532,17 @@ CheckContactAbilities:
 	db -1
 
 .TanglingHair:
-	ld a, BATTLE_VARS_SUBSTATUS4_OPP
-	call GetBattleVar
-	bit SUBSTATUS_MIST, a
-	ret nz
-	call GetTargetAbility
-	cp CONTRARY
-	jr z, .TanglingHairContrary
-	cp CLEAR_BODY
-	ret z
+;	ld a, BATTLE_VARS_SUBSTATUS4_OPP
+;	call GetBattleVar
+;	bit SUBSTATUS_MIST, a
+;	ret nz
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_SpeedDown
+	call AnimateUserAbility
 	farcall BattleCommand_StatDownMessage
-	call BattleCommand_SwitchTurnAbilities
-;	ld b, SPEED
-;	farcall LowerStatPop
-;	ld a, [wFailedMessage]
-;	and a
-;	ret nz
-	ld hl, TanglingHairText
-	jp StdBattleTextbox
+	jp BattleCommand_SwitchTurnAbilities
+;	ld hl, TanglingHairText
+;	jp StdBattleTextbox
 
 .TanglingHairContrary:
 ;	ld b, SPEED
@@ -1536,7 +1519,7 @@ CheckDefensiveAbilities:
 	ld a, [wAttackMissed]
 	and a
 	ret nz
-	call MoveDelayAbility
+	call AnimateOppAbility
 	ld hl, FlashFireText
 	call StdBattleTextbox
 	jp EndMoveEffectAbilities
@@ -1547,7 +1530,7 @@ CheckDefensiveAbilities:
 	and TYPE_MASK
 	cp GROUND
 	ret nz
-	call MoveDelayAbility
+	call AnimateOppAbility
 	ld hl, LevitateText
 	call StdBattleTextbox
 	jp EndMoveEffectAbilities
@@ -1558,6 +1541,7 @@ CheckDefensiveAbilities:
 	and TYPE_MASK
 	cp GRASS
 	ret nz
+	call AnimateOppAbility
 	farcall BattleCommand_SwitchTurn
 	farcall BattleCommand_AttackUp
 	farcall BattleCommand_SwitchTurn
@@ -1575,6 +1559,7 @@ CheckDefensiveAbilities:
 	and TYPE_MASK
 	cp ELECTRIC
 	ret nz
+	call AnimateOppAbility
 	farcall BattleCommand_SwitchTurn
 	farcall BattleCommand_SpecialAttackUp
 	farcall BattleCommand_SwitchTurn
@@ -1592,6 +1577,7 @@ CheckDefensiveAbilities:
 	and TYPE_MASK
 	cp ELECTRIC
 	ret nz
+	call AnimateOppAbility
 	farcall BattleCommand_SwitchTurn
 	farcall BattleCommand_SpeedUp
 	farcall BattleCommand_SwitchTurn
@@ -1664,6 +1650,7 @@ GetUserCurrentMove:
 	ret
 
 CheckFullHPDefenseAbilities:
+	call AnimateOppAbility
 	ld hl, wEnemyMonHP
 	ldh a, [hBattleTurn]
 	and a
@@ -1762,6 +1749,7 @@ HandleEndMoveAbility:
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
+	call AnimateUserAbility
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVarAddr
 	xor a
@@ -1777,6 +1765,7 @@ HandleEndMoveAbility:
 	jr z, .DrySkinRain
 	cp WEATHER_SUN
 	ret nz
+	call AnimateUserAbility
 	farcall GetEighthMaxHP
 	farcall SubtractHPFromUser
 	ld hl, DrySkinHurtText
@@ -1794,38 +1783,37 @@ HandleEndMoveAbility:
 	jp CheckFullHPAbilities
 
 .SpeedBoost:
-	push bc
 	farcall BattleCommand_SpeedUp
-	pop bc
-	ld a, [wAttackMissed]
+	ld a, [wFailedMessage]
 	and a
 	ret nz
-	ld hl, SpeedBoostText
-	jp StdBattleTextbox
+	call AnimateUserAbility
+	farcall BattleCommand_StatUpMessage
+	ret
 
 .Moody:
-	call Random
+	call BattleRandom
 	cp 20 percent
 	jr c, .Next1
 	farcall BattleCommand_AttackUp2
 	jr .MoodyStatUpText
 
 .Next1
-	call Random
+	call BattleRandom
 	cp 25 percent
 	jr c, .Next2
 	farcall BattleCommand_DefenseUp2
 	jr .MoodyStatUpText
 
 .Next2
-	call Random
+	call BattleRandom
 	cp 33 percent
 	jr c, .Next3
 	farcall BattleCommand_SpeedUp2
 	jr .MoodyStatUpText
 
 .Next3
-	call Random
+	call BattleRandom
 	cp 50 percent
 	jr c, .MoodySpDefUp
 	farcall BattleCommand_SpecialAttackUp2
@@ -1836,11 +1824,14 @@ HandleEndMoveAbility:
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .MoodyDown
-	ld hl, MoodyText
-	call StdBattleTextbox
+	call AnimateUserAbility
+;	ld hl, MoodyText
+;	call StdBattleTextbox
 	farcall BattleCommand_StatUpMessage
+	ld a, 1
+	ld [wStatChangeHappened], a
 .MoodyDown
-	call Random
+	call BattleRandom
 	cp 20 percent
 	jr c, .Next4
 	call BattleCommand_SwitchTurnAbilities
@@ -1848,7 +1839,7 @@ HandleEndMoveAbility:
 	jr .MoodyStatDownText
 
 .Next4
-	call Random
+	call BattleRandom
 	cp 25 percent
 	jr c, .Next5
 	call BattleCommand_SwitchTurnAbilities
@@ -1856,7 +1847,7 @@ HandleEndMoveAbility:
 	jr .MoodyStatDownText
 
 .Next5
-	call Random
+	call BattleRandom
 	cp 33 percent
 	jr c, .Next6
 	call BattleCommand_SwitchTurnAbilities
@@ -1864,7 +1855,7 @@ HandleEndMoveAbility:
 	jr .MoodyStatDownText
 
 .Next6
-	call Random
+	call BattleRandom
 	cp 50 percent
 	jr c, .MoodySpDefDown
 	call BattleCommand_SwitchTurnAbilities
@@ -1874,6 +1865,13 @@ HandleEndMoveAbility:
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_SpecialDefenseDown
 .MoodyStatDownText
+	ld a, [wStatChangeHappened]
+	and a
+	jr nz, .SkipAnimation
+	call AnimateUserAbility
+.SkipAnimation
+	xor a
+	ld [wStatChangeHappened], a
 	ld a, [wAttackMissed]
 	and a
 	jp nz, BattleCommand_SwitchTurnAbilities
@@ -1886,6 +1884,7 @@ HandleEndMoveAbility:
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
 	ret nz
+	call AnimateUserAbility
 	farcall GetEighthMaxHP
 	farcall SubtractHPFromUser
 	ld hl, SolarPowerText
@@ -1897,6 +1896,7 @@ HandleEndMoveAbility:
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
+	call AnimateUserAbility
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVarAddr
 	xor a
@@ -1933,6 +1933,7 @@ CheckFullHPAbilities:
 	ret z
 
 .restore
+	call AnimateUserAbility
 	farcall GetEighthMaxHP
 	farcall SwitchTurnCore
 	farcall RestoreHP
@@ -1977,7 +1978,7 @@ PreventStatDrop::
 	ret c
 
 PreventAbilityText::
-	call MoveDelayAbility
+	call AnimateOppAbility
 	call GetTargetAbility
 	call Ability_LoadAbilityName
 	ld a, b
