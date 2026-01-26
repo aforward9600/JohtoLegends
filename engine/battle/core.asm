@@ -3868,11 +3868,11 @@ TryToRunAwayFromBattle:
 	ld hl, wBattleMonType1
 	ld a, [hli]
 	cp STEEL
-	jp z, .SkipRunAway
+	jp z, .TryToRunAbilityName
 	ld a, [hl]
 	cp STEEL
-	jp z, .SkipRunAway
-	jr .TryToRunAbilityName
+	jp z, .TryToRunAbilityName
+	jp .SkipRunAway
 
 .ShadowTag:
 	ld a, [wPlayerAbility]
@@ -5136,11 +5136,11 @@ TryPlayerSwitch:
 	ld hl, wBattleMonType1
 	ld a, [hli]
 	cp STEEL
-	jr nz, .IgnoreAbilities
+	jr z, .PlayerSwitchAbilityName
 	ld a, [hl]
 	cp STEEL
-	jr nz, .IgnoreAbilities
-	jr .PlayerSwitchAbilityName
+	jr z, .PlayerSwitchAbilityName
+	jr .IgnoreAbilities
 
 .shadow_tag
 	ld a, [wPlayerAbility]

@@ -202,5 +202,11 @@ BattleCommandPointers:
 	effectfn BattleCommand_Defiant
 	effectfn BattleCommand_EerieSpell
 	effectfn BattleCommand_ClearSmog
+	effectfn BattleCommand_QuiverDance
+	effectfn BattleCommand_Growth
+	effectfn BattleCommand_Coil
+	effectfn BattleCommand_CosmicPower
+	effectfn BattleCommand_DragonDance
+	effectfn BattleCommand_HoneClaws
 ;	effectfn BattleCommand_WakeUpSlap
 ;	effectfn BattleCommand_AwakenOpponent

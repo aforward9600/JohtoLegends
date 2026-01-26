@@ -1565,22 +1565,14 @@ JohtoGrassWildMons:
 	map_id ROUTE_45
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 2, TAUROS_P
-	dbw 2, TAUROS_P
-	dbw 2, TAUROS_P
-	dbw 2, TAUROS_P
-	dbw 2, TAUROS_P
-	dbw 2, TAUROS_P
-	dbw 2, TAUROS_P
-	dbw 2, TAUROS_P
-;	dbw 2, PIDGEY
-;	dbw 2, SENTRET
-;	dbw 2, LEDYBA
-;	dbw 2, SKARMINI
-;	dbw 2, PHANPY
-;	dbw 2, SKARMINI
-;	dbw 2, GEODUDE
-;	dbw 2, PHANPY
+	dbw 2, PIDGEY
+	dbw 2, SENTRET
+	dbw 2, LEDYBA
+	dbw 2, SKARMINI
+	dbw 2, PHANPY
+	dbw 2, SKARMINI
+	dbw 2, GEODUDE
+	dbw 2, PHANPY
 	; day
 	dbw 2, PIDGEY
 	dbw 2, RATTATA

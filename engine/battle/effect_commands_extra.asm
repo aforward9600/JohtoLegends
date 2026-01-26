@@ -544,8 +544,7 @@ BattleCommand_Superpower:
 	call BattleCommand_SwitchTurn2
 	farcall BattleCommand_AttackDown
 	farcall BattleCommand_StatDownMessage
-	ld a, 1
-	ld [wStatChangeHappened], a
+	call SetStatChangeAnimation
 	farcall ResetMiss
 	farcall BattleCommand_DefenseDown
 	farcall BattleCommand_StatDownMessage
@@ -558,8 +557,7 @@ BattleCommand_CloseCombat:
 	call BattleCommand_SwitchTurn2
 	farcall BattleCommand_DefenseDown
 	farcall BattleCommand_StatDownMessage
-	ld a, 1
-	ld [wStatChangeHappened], a
+	call SetStatChangeAnimation
 	farcall ResetMiss
 	farcall BattleCommand_SpecialDefenseDown
 	farcall BattleCommand_StatDownMessage
@@ -573,6 +571,77 @@ BattleCommand_HammerArm:
 	farcall BattleCommand_SpeedDown
 	farcall BattleCommand_StatDownMessage
 	jp BattleCommand_SwitchTurn2
+
+BellyDrumMessage:
+	call GetUserAbility
+	cp CONTRARY
+	jr z, .ContraryBellyDrum
+
+	ld de, ANIM_ENEMY_STAT_DOWN
+	farcall Call_PlayBattleAnim
+
+	ld hl, BellyDrumText
+	jp StdBattleTextbox
+
+.ContraryBellyDrum
+	farcall AnimateUserAbility
+	ld de, ANIM_PLAYER_STAT_DOWN
+	farcall Call_PlayBattleAnim
+	ld hl, BellyDrumContraryText
+	jp StdBattleTextbox
+
+BattleCommand_Growth:
+BattleCommand_Coil:
+BattleCommand_CosmicPower:
+BattleCommand_DragonDance:
+BattleCommand_HoneClaws:
+BattleCommand_QuiverDance:
+	farcall BattleCommand_SpecialAttackUp
+	call CheckFailedMessage
+	jr nz, .SkipSpAtkAnim
+	farcall BattleCommand_StatUpAnim
+	farcall BattleCommand_StatUpMessage
+	call SetStatChangeAnimation
+.SkipSpAtkAnim
+	farcall BattleCommand_StatUpFailText
+	farcall ResetMiss
+	farcall BattleCommand_SpecialDefenseUp
+	call CheckFailedMessage
+	jr nz, .SkipSpDef
+	ld a, [wStatChangeHappened]
+	and a
+	jr nz, .SkipSpDefAnim
+	farcall BattleCommand_StatUpAnim
+.SkipSpDefAnim
+	farcall BattleCommand_StatUpMessage
+	call SetStatChangeAnimation
+.SkipSpDef
+	farcall BattleCommand_StatUpFailText
+	farcall ResetMiss
+	farcall BattleCommand_SpeedUp
+	call CheckFailedMessage
+	jr nz, .SkipSpeed
+	ld a, [wStatChangeHappened]
+	and a
+	jr nz, .SkipSpeedAnim
+	farcall BattleCommand_StatUpAnim
+.SkipSpeedAnim
+	farcall BattleCommand_StatUpMessage
+.SkipSpeed
+	farcall BattleCommand_StatUpFailText
+	xor a
+	ld [wStatChangeHappened], a
+	ret
+
+CheckFailedMessage:
+	ld a, [wFailedMessage]
+	and a
+	ret
+
+SetStatChangeAnimation:
+	ld a, 1
+	ld [wStatChangeHappened], a
+	ret
 
 BattleCommand_Defiant:
 	ld a, [wFailedMessage]

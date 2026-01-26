@@ -1163,8 +1163,7 @@ TwentyFivePercentNerf:
 	ld a, 100
 	ldh [hDivisor], a
 	ld b, 4
-	call Divide
-	ret
+	jp Divide
 
 FiftyPercentNerf:
 	ld a, 50
@@ -1174,8 +1173,7 @@ FiftyPercentNerf:
 	ld a, 100
 	ldh [hDivisor], a
 	ld b, 4
-	call Divide
-	ret
+	jp Divide
 
 EffectiveDefensiveAbilities:
 	call CheckNeutralGas

@@ -2771,10 +2771,9 @@ BattleCommand_CheckFaint:
 	call GetUserAbility
 	cp MOXIE
 	jp nz, EndMoveEffect
-	call BattleCommand_MoveDelay
+	farcall AnimateUserAbility
 	call BattleCommand_AttackUp
-	ld hl, MoxieText
-	call StdBattleTextbox
+	call BattleCommand_StatUpMessage
 	jp EndMoveEffect
 
 BattleCommand_BuildOpponentRage:
@@ -5505,7 +5504,7 @@ BattleCommand_StatUpFailText:
 ; statupfailtext
 	call CheckNeutralGas
 	jr z, StatUpFailSkipContrary
-	call GetTargetAbility
+	call GetUserAbility
 	cp CONTRARY
 	jp z, StatDownFailSkipContrary2
 StatUpFailSkipContrary:

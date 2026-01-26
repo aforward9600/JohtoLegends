@@ -715,7 +715,9 @@ DratiniEvosAttacks:
 	dbw 1, HAMMER_ARM
 	dbw 1, ANCIENTPOWER
 	dbw 1, CLOSE_COMBAT
-	dbw 6, THUNDER_WAVE
+	dbw 6, BELLY_DRUM
+	dbw 6, QUIVER_DANCE
+;	dbw 6, THUNDER_WAVE
 	dbw 9, WRAP
 	dbw 11, TWISTER
 	dbw 15, DRACO_FANG

@@ -29,8 +29,8 @@ DoSleep:
 	usedmovetext
 	doturn
 	checkhit
-	magicbounce
 	defensiveabilities
+	magicbounce
 	checksafeguard
 	sleeptarget
 	endmove
@@ -116,6 +116,7 @@ FreezeHit:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -165,8 +166,8 @@ Selfdestruct:
 	checkhit
 	selfdestruct
 	moveanimnosub
-	defensiveabilities
 	failuretext
+	defensiveabilities
 	applydamage
 	criticaltext
 	supereffectivetext
@@ -205,9 +206,9 @@ MirrorMove:
 
 AttackUp:
 	checkobedience
+	defensiveabilities
 	usedmovetext
 	doturn
-	defensiveabilities
 	attackup
 	lowersub
 	statupanim
@@ -241,27 +242,9 @@ SpeedUp:
 	endmove
 
 SpecialAttackUp:
-	checkobedience
-	usedmovetext
-	doturn
-	specialattackup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
 	endmove
 
 SpecialDefenseUp:
-	checkobedience
-	usedmovetext
-	doturn
-	specialdefenseup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
 	endmove
 
 AccuracyUp:
@@ -361,8 +344,8 @@ AttackDown:
 	usedmovetext
 	doturn
 	checkhit
-	magicbounce
 	defensiveabilities
+	magicbounce
 	attackdown
 	lowersub
 	statdownanim
@@ -377,6 +360,7 @@ DefenseDown:
 	usedmovetext
 	doturn
 	checkhit
+	defensiveabilities
 	magicbounce
 	defensedown
 	lowersub
@@ -392,6 +376,7 @@ SpeedDown:
 	usedmovetext
 	doturn
 	checkhit
+	defensiveabilities
 	magicbounce
 	speeddown
 	lowersub
@@ -403,34 +388,9 @@ SpeedDown:
 	endmove
 
 SpecialAttackDown:
-	checkobedience
-	usedmovetext
-	doturn
-	checkhit
-	magicbounce
-	specialattackdown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
-	defiant
 	endmove
 
 SpecialDefenseDown:
-	checkobedience
-	usedmovetext
-	doturn
-	checkhit
-	magicbounce
-	defensiveabilities
-	specialdefensedown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
-	defiant
 	endmove
 
 AccuracyDown:
@@ -438,6 +398,7 @@ AccuracyDown:
 	usedmovetext
 	doturn
 	checkhit
+	defensiveabilities
 	magicbounce
 	accuracydown
 	lowersub
@@ -453,6 +414,7 @@ EvasionDown:
 	usedmovetext
 	doturn
 	checkhit
+	defensiveabilities
 	magicbounce
 	evasiondown
 	lowersub
@@ -518,6 +480,7 @@ SpecialDefenseDown2:
 	doturn
 	checkhit
 	magicbounce
+	defensiveabilities
 	specialdefensedown2
 	lowersub
 	statdownanim
@@ -579,7 +542,6 @@ DefenseDownHit:
 	kingsrock
 	checkfaint
 	buildopponentrage
-;	effectchance ; bug: duplicate effectchance shouldn't be here
 	sheerforce
 	defensedown
 	statdownmessage
@@ -1036,7 +998,6 @@ TriAttack:
 	stab
 	damagevariation
 	checkhit
-	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -1056,7 +1017,6 @@ DoPoison:
 	doturn
 	checkhit
 	magicbounce
-	defensiveabilities
 	stab
 	checksafeguard
 	poison
@@ -1116,6 +1076,7 @@ HyperBeam:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -1136,6 +1097,7 @@ Rage:
 	damagecalc
 	stab
 	checkhit
+	defensiveabilities
 	ragedamage
 	damagevariation
 	moveanim
@@ -1202,6 +1164,7 @@ RazorWind:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -1404,6 +1367,7 @@ FalseSwipe:
 	damagevariation
 	falseswipe
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -1585,6 +1549,7 @@ Swagger:
 	usedmovetext
 	doturn
 	checkhit
+	defensiveabilities
 	magicbounce
 	switchturn
 	attackup2
@@ -1626,6 +1591,7 @@ Attract:
 	usedmovetext
 	doturn
 	checkhit
+	defensiveabilities
 	magicbounce
 	attract
 	endmove
@@ -1641,6 +1607,7 @@ Return:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -1656,6 +1623,7 @@ Present:
 	usedmovetext
 	doturn
 	checkhit
+	defensiveabilities
 	critical
 	damagestats
 	present
@@ -1689,6 +1657,7 @@ SacredFire:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -1764,6 +1733,7 @@ RapidSpin:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -1846,6 +1816,7 @@ FakeOut:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -1896,6 +1867,7 @@ SkullBash:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -1920,7 +1892,6 @@ Twister:
 	damagevariation
 	doubleflyingdamage
 	checkhit
-	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -2006,6 +1977,7 @@ Stomp:
 	damagevariation
 	doubleminimizedamage
 	checkhit
+	defensiveabilities
 	effectchance
 	moveanim
 	failuretext
@@ -2276,7 +2248,6 @@ AllDownHit:
 	checkfaint
 	buildopponentrage
 	sheerforce
-;	statdropprevent
 	allstatsdown
 	endmove
 
@@ -2359,16 +2330,15 @@ HammerArm:
 	stab
 	damagevariation
 	checkhit
-	effectchance
 	moveanim
 	failuretext
 	applydamage
 	criticaltext
 	supereffectivetext
-	hammerarm
 	kingsrock
-	checkfaint
 	buildopponentrage
+	hammerarm
+	checkfaint
 	endmove
 
 CloseCombat:
@@ -2381,15 +2351,16 @@ CloseCombat:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
 	criticaltext
 	supereffectivetext
-	closecombat
 	kingsrock
-	checkfaint
 	buildopponentrage
+	closecombat
+	checkfaint
 	endmove
 
 BulkUp:
@@ -2416,18 +2387,18 @@ Superpower:
 	damagestats
 	damagecalc
 	stab
+	defensiveabilities
 	damagevariation
 	checkhit
-	effectchance
 	moveanim
 	failuretext
 	applydamage
 	criticaltext
 	supereffectivetext
-	superpower
 	kingsrock
-	checkfaint
 	buildopponentrage
+	superpower
+	checkfaint
 	endmove
 
 CalmMind:
@@ -2581,18 +2552,7 @@ QuiverDance:
 	usedmovetext
 	doturn
 	lowersub
-	specialattackup
-	statupanim
-	statupmessage
-	statupfailtext
-	resetmiss
-	specialdefenseup
-	statupmessage
-	statupfailtext
-	resetmiss
-	speedup
-	statupmessage
-	statupfailtext
+	quiverdance
 	raisesub
 	endmove
 

@@ -1091,6 +1091,12 @@ SunGotBrightText:
 	line "bright!"
 	prompt
 
+BellyDrumContraryText:
+	text "<USER>"
+	line "cut its HP and"
+	cont "minimized Attack!"
+	prompt
+
 BellyDrumText:
 	text "<USER>"
 	line "cut its HP and"

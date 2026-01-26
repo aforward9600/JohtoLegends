@@ -202,6 +202,12 @@ ENDM
 	command defiant
 	command eeriespell
 	command clearsmog
+	command quiverdance
+	command growth
+	command coil
+	command cosmicpower
+	command dragondance
+	command honeclaws
 ;	command wakeupslap
 ;	command awakenopponent
 
