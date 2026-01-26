@@ -208,6 +208,7 @@ ENDM
 	command cosmicpower
 	command dragondance
 	command honeclaws
+	command poweruppunch
 ;	command wakeupslap
 ;	command awakenopponent
 

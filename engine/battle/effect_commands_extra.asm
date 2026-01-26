@@ -638,6 +638,14 @@ CheckFailedMessage:
 	and a
 	ret
 
+BattleCommand_PowerUpPunch:
+	call GetUserAbility
+	cp SHEER_FORCE
+	ret z
+	farcall BattleCommand_AttackUp
+	farcall BattleCommand_StatUpMessage
+	ret
+
 SetStatChangeAnimation:
 	ld a, 1
 	ld [wStatChangeHappened], a

@@ -705,6 +705,29 @@ AttackUpHit:
 	statupmessage
 	endmove
 
+PowerUpPunch:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	defensiveabilities
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	kingsrock
+	buildopponentrage
+	poweruppunch
+	checkfaint
+	endmove
+
 AllUpHit:
 	checkobedience
 	usedmovetext

@@ -194,4 +194,5 @@ MoveEffectsPointers:
 	dw PsychoBoost
 	dw EerieSpell
 	dw ClearSmog
+	dw PowerUpPunch
 ;	dw WakeUpSlap
