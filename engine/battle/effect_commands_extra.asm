@@ -549,9 +549,7 @@ BattleCommand_Superpower:
 	farcall BattleCommand_DefenseDown
 	farcall BattleCommand_StatDownMessage
 	call BattleCommand_SwitchTurn2
-	xor a
-	ld [wStatChangeHappened], a
-	ret
+	jp ResetStatChangeExtra
 
 BattleCommand_CloseCombat:
 	call BattleCommand_SwitchTurn2
@@ -562,9 +560,7 @@ BattleCommand_CloseCombat:
 	farcall BattleCommand_SpecialDefenseDown
 	farcall BattleCommand_StatDownMessage
 	call BattleCommand_SwitchTurn2
-	xor a
-	ld [wStatChangeHappened], a
-	ret
+	jp ResetStatChangeExtra
 
 BattleCommand_HammerArm:
 	call BattleCommand_SwitchTurn2
@@ -591,10 +587,158 @@ BellyDrumMessage:
 	jp StdBattleTextbox
 
 BattleCommand_Growth:
+	call CheckCloudNine
+	jr z, .SkipSun
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .SunAttack
+.SkipSun
+	farcall BattleCommand_AttackUp
+.FinishSunAttack
+	call CheckFailedMessage
+	jr nz, .SkipSpAtkAnim
+	farcall BattleCommand_StatUpAnim
+	farcall BattleCommand_StatUpMessage
+	call SetStatChangeAnimation
+.SkipSpAtkAnim
+	farcall BattleCommand_StatUpFailText
+	farcall ResetMiss
+	call CheckCloudNine
+	jr z, .SkipSun2
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .SunSpecialAttack
+.SkipSun2
+	farcall BattleCommand_SpecialAttackUp
+.FinishSunSpecialAttack
+	call CheckFailedMessage
+	jr nz, .SkipSpDef
+	ld a, [wStatChangeHappened]
+	and a
+	jr nz, .SkipSpDefAnim
+	farcall BattleCommand_StatUpAnim
+.SkipSpDefAnim
+	farcall BattleCommand_StatUpMessage
+	call SetStatChangeAnimation
+.SkipSpDef
+	farcall BattleCommand_StatUpFailText
+	jp ResetStatChangeExtra
+
+.SunAttack
+	farcall BattleCommand_AttackUp2
+	jr .FinishSunAttack
+
+.SunSpecialAttack
+	farcall BattleCommand_SpecialAttackUp2
+	jr .FinishSunSpecialAttack
+
 BattleCommand_Coil:
+	farcall BattleCommand_AttackUp
+	call CheckFailedMessage
+	jr nz, .SkipSpAtkAnim
+	farcall BattleCommand_StatUpAnim
+	farcall BattleCommand_StatUpMessage
+	call SetStatChangeAnimation
+.SkipSpAtkAnim
+	farcall BattleCommand_StatUpFailText
+	farcall ResetMiss
+	farcall BattleCommand_DefenseUp
+	call CheckFailedMessage
+	jr nz, .SkipSpDef
+	ld a, [wStatChangeHappened]
+	and a
+	jr nz, .SkipSpDefAnim
+	farcall BattleCommand_StatUpAnim
+.SkipSpDefAnim
+	farcall BattleCommand_StatUpMessage
+	call SetStatChangeAnimation
+.SkipSpDef
+	farcall BattleCommand_StatUpFailText
+	farcall ResetMiss
+	farcall BattleCommand_AccuracyUp
+	call CheckFailedMessage
+	jr nz, .SkipSpeed
+	ld a, [wStatChangeHappened]
+	and a
+	jr nz, .SkipSpeedAnim
+	farcall BattleCommand_StatUpAnim
+.SkipSpeedAnim
+	farcall BattleCommand_StatUpMessage
+.SkipSpeed
+	farcall BattleCommand_StatUpFailText
+	jp ResetStatChangeExtra
+
 BattleCommand_CosmicPower:
+	farcall BattleCommand_DefenseUp
+	call CheckFailedMessage
+	jr nz, .SkipSpAtkAnim
+	farcall BattleCommand_StatUpAnim
+	farcall BattleCommand_StatUpMessage
+	call SetStatChangeAnimation
+.SkipSpAtkAnim
+	farcall BattleCommand_StatUpFailText
+	farcall ResetMiss
+	farcall BattleCommand_SpecialDefenseUp
+	call CheckFailedMessage
+	jr nz, .SkipSpDef
+	ld a, [wStatChangeHappened]
+	and a
+	jr nz, .SkipSpDefAnim
+	farcall BattleCommand_StatUpAnim
+.SkipSpDefAnim
+	farcall BattleCommand_StatUpMessage
+	call SetStatChangeAnimation
+.SkipSpDef
+	farcall BattleCommand_StatUpFailText
+	jp ResetStatChangeExtra
+
 BattleCommand_DragonDance:
+	farcall BattleCommand_AttackUp
+	call CheckFailedMessage
+	jr nz, .SkipSpAtkAnim
+	farcall BattleCommand_StatUpAnim
+	farcall BattleCommand_StatUpMessage
+	call SetStatChangeAnimation
+.SkipSpAtkAnim
+	farcall BattleCommand_StatUpFailText
+	farcall ResetMiss
+	farcall BattleCommand_SpeedUp
+	call CheckFailedMessage
+	jr nz, .SkipSpDef
+	ld a, [wStatChangeHappened]
+	and a
+	jr nz, .SkipSpDefAnim
+	farcall BattleCommand_StatUpAnim
+.SkipSpDefAnim
+	farcall BattleCommand_StatUpMessage
+	call SetStatChangeAnimation
+.SkipSpDef
+	farcall BattleCommand_StatUpFailText
+	jp ResetStatChangeExtra
 BattleCommand_HoneClaws:
+	farcall BattleCommand_AttackUp
+	call CheckFailedMessage
+	jr nz, .SkipSpAtkAnim
+	farcall BattleCommand_StatUpAnim
+	farcall BattleCommand_StatUpMessage
+	call SetStatChangeAnimation
+.SkipSpAtkAnim
+	farcall BattleCommand_StatUpFailText
+	farcall ResetMiss
+	farcall BattleCommand_AccuracyUp
+	call CheckFailedMessage
+	jr nz, .SkipSpDef
+	ld a, [wStatChangeHappened]
+	and a
+	jr nz, .SkipSpDefAnim
+	farcall BattleCommand_StatUpAnim
+.SkipSpDefAnim
+	farcall BattleCommand_StatUpMessage
+	call SetStatChangeAnimation
+.SkipSpDef
+	farcall BattleCommand_StatUpFailText
+	jp ResetStatChangeExtra
+
 BattleCommand_QuiverDance:
 	farcall BattleCommand_SpecialAttackUp
 	call CheckFailedMessage
@@ -629,6 +773,8 @@ BattleCommand_QuiverDance:
 	farcall BattleCommand_StatUpMessage
 .SkipSpeed
 	farcall BattleCommand_StatUpFailText
+
+ResetStatChangeExtra:
 	xor a
 	ld [wStatChangeHappened], a
 	ret

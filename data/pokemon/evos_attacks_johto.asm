@@ -717,6 +717,7 @@ DratiniEvosAttacks:
 	dbw 1, CLOSE_COMBAT
 	dbw 6, BELLY_DRUM
 	dbw 6, QUIVER_DANCE
+	dbw 7, COSMIC_POWER
 ;	dbw 6, THUNDER_WAVE
 	dbw 9, WRAP
 	dbw 11, TWISTER

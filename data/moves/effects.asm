@@ -2445,14 +2445,7 @@ DragonDance:
 	usedmovetext
 	doturn
 	lowersub
-	attackup
-	statupanim
-	statupmessage
-	statupfailtext
-	resetmiss
-	speedup
-	statupmessage
-	statupfailtext
+	dragondance
 	raisesub
 	endmove
 
@@ -2482,14 +2475,7 @@ HoneClaws:
 	usedmovetext
 	doturn
 	lowersub
-	attackup
-	statupanim
-	statupmessage
-	statupfailtext
-	resetmiss
-	accuracyup
-	statupmessage
-	statupfailtext
+	honeclaws
 	raisesub
 	endmove
 
@@ -2635,14 +2621,7 @@ CosmicPower:
 	usedmovetext
 	doturn
 	lowersub
-	defenseup
-	statupanim
-	statupmessage
-	statupfailtext
-	resetmiss
-	specialdefenseup
-	statupmessage
-	statupfailtext
+	cosmicpower
 	raisesub
 	endmove
 
@@ -2651,14 +2630,7 @@ Growth:
 	usedmovetext
 	doturn
 	lowersub
-	attackup
-	statupanim
-	statupmessage
-	statupfailtext
-	resetmiss
-	specialattackup
-	statupmessage
-	statupfailtext
+	growth
 	raisesub
 	endmove
 
@@ -2866,18 +2838,7 @@ Coil:
 	usedmovetext
 	doturn
 	lowersub
-	attackup
-	statupanim
-	statupmessage
-	statupfailtext
-	resetmiss
-	defenseup
-	statupmessage
-	statupfailtext
-	resetmiss
-	accuracyup
-	statupmessage
-	statupfailtext
+	coil
 	raisesub
 	endmove
 
