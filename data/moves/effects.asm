@@ -2464,10 +2464,8 @@ ShellSmash:
 	usedmovetext
 	doturn
 	lowersub
-	statupanim
-	raisesub
 	shellsmash
-	statupfailtext
+	raisesub
 	endmove
 
 HoneClaws:
@@ -2560,9 +2558,7 @@ QuiverDance:
 	checkobedience
 	usedmovetext
 	doturn
-	lowersub
 	quiverdance
-	raisesub
 	endmove
 
 SpecialDefenseDown2Hit:

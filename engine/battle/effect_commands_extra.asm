@@ -740,23 +740,63 @@ BattleCommand_HoneClaws:
 	jp ResetStatChangeExtra
 
 BattleCommand_QuiverDance:
+	call GetUserAbility
+	cp CONTRARY
+	jr z, .Contrary
+	call GetStatsExtra
+	ld a, [bc]
+	inc bc
+	inc bc
+	ld a, [bc]
+	cp MAX_STAT_LEVEL
+	jr c, .raise
+
+	inc bc
+	ld a, [bc]
+	cp MAX_STAT_LEVEL
+	jr c, .raise
+
+	inc bc
+	ld a, [bc]
+	cp MAX_STAT_LEVEL
+	jr nc, .SkipAnim
+	jr .raise
+
+.Contrary
+	call GetStatsExtra
+	ld b,b
+	inc bc
+	inc bc
+	ld a, [bc]
+	cp 1
+	jr nz, .raise
+
+	inc bc
+	ld a, [bc]
+	cp 1
+	jr nz, .raise
+
+	inc bc
+	ld a, [bc]
+	cp 1
+	jr z, .SkipAnim
+
+.raise
+	farcall BattleCommand_LowerSub
+	ld a, $1
+	ld [wKickCounter], a
+	farcall AnimateCurrentMove
+	farcall BattleCommand_RaiseSub
+	call AnimateAbilityStats
+.SkipAnim
 	farcall BattleCommand_SpecialAttackUp
-	call CheckFailedMessage
-	jr nz, .SkipSpAtkAnim
-	farcall BattleCommand_StatUpAnim
 	farcall BattleCommand_StatUpMessage
 	call SetStatChangeAnimation
-.SkipSpAtkAnim
 	farcall BattleCommand_StatUpFailText
 	farcall ResetMiss
 	farcall BattleCommand_SpecialDefenseUp
 	call CheckFailedMessage
 	jr nz, .SkipSpDef
-	ld a, [wStatChangeHappened]
-	and a
-	jr nz, .SkipSpDefAnim
-	farcall BattleCommand_StatUpAnim
-.SkipSpDefAnim
 	farcall BattleCommand_StatUpMessage
 	call SetStatChangeAnimation
 .SkipSpDef
@@ -765,11 +805,6 @@ BattleCommand_QuiverDance:
 	farcall BattleCommand_SpeedUp
 	call CheckFailedMessage
 	jr nz, .SkipSpeed
-	ld a, [wStatChangeHappened]
-	and a
-	jr nz, .SkipSpeedAnim
-	farcall BattleCommand_StatUpAnim
-.SkipSpeedAnim
 	farcall BattleCommand_StatUpMessage
 .SkipSpeed
 	farcall BattleCommand_StatUpFailText
@@ -882,3 +917,22 @@ CheckOpponentWentFirst2:
 	xor b ; 1 if opponent went first
 	pop bc
 	ret
+
+GetStatsExtra:
+	ld bc, wPlayerStatLevels
+	ldh a, [hBattleTurn]
+	and a
+	ret z
+	ld bc, wEnemyStatLevels
+	ret
+
+AnimateAbilityStats:
+	farcall AnimateUserAbility
+	call GetUserAbility
+	ld de, ANIM_PLAYER_STAT_DOWN
+	cp CONTRARY
+	jr z, .Contrary
+	ld de, ANIM_ENEMY_STAT_DOWN
+.Contrary
+	farcall Call_PlayBattleAnim
+	jp SetStatChangeAnimation
