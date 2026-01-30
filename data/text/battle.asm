@@ -1097,6 +1097,18 @@ BellyDrumContraryText:
 	cont "minimized Attack!"
 	prompt
 
+StatsCantLowerText:
+	text "<TARGET>'s"
+	line "stats can't lower"
+	cont "any further!"
+	prompt
+
+StatsCantRaiseText:
+	text "<USER>'s"
+	line "stats can't raise"
+	cont "any further!"
+	prompt
+
 BellyDrumText:
 	text "<USER>"
 	line "cut its HP and"

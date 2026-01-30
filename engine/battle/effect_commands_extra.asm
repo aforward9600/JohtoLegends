@@ -587,156 +587,258 @@ BellyDrumMessage:
 	jp StdBattleTextbox
 
 BattleCommand_Growth:
+	call GetUserAbility
+	cp CONTRARY
+	jr z, .Contrary
+	call GetStatsExtra
+	ld a, [bc]
+	cp MAX_STAT_LEVEL
+	jr c, .raise
+
+	inc bc
+	inc bc
+	inc bc
+	ld a, [bc]
+	cp MAX_STAT_LEVEL
+	jp nc, NoStatRaise
+
+.Contrary
+	call GetStatsExtra
+	ld a, [bc]
+	cp 1
+	jr nz, .raise
+
+	inc bc
+	inc bc
+	inc bc
+	ld a, [bc]
+	cp 1
+	jp z, NoStatRaise
+
+.raise
+	farcall BattleCommand_LowerSub
+	ld a, $1
+	ld [wKickCounter], a
+	farcall AnimateCurrentMove
+	farcall BattleCommand_RaiseSub
+	call AnimateAbilityStats
 	call CheckCloudNine
 	jr z, .SkipSun
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
-	jr z, .SunAttack
+	jr z, .Sun
 .SkipSun
 	farcall BattleCommand_AttackUp
-.FinishSunAttack
-	call CheckFailedMessage
-	jr nz, .SkipSpAtkAnim
-	farcall BattleCommand_StatUpAnim
 	farcall BattleCommand_StatUpMessage
 	call SetStatChangeAnimation
-.SkipSpAtkAnim
-	farcall BattleCommand_StatUpFailText
 	farcall ResetMiss
-	call CheckCloudNine
-	jr z, .SkipSun2
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
-	jr z, .SunSpecialAttack
-.SkipSun2
 	farcall BattleCommand_SpecialAttackUp
-.FinishSunSpecialAttack
-	call CheckFailedMessage
-	jr nz, .SkipSpDef
-	ld a, [wStatChangeHappened]
-	and a
-	jr nz, .SkipSpDefAnim
-	farcall BattleCommand_StatUpAnim
-.SkipSpDefAnim
 	farcall BattleCommand_StatUpMessage
-	call SetStatChangeAnimation
-.SkipSpDef
-	farcall BattleCommand_StatUpFailText
 	jp ResetStatChangeExtra
 
-.SunAttack
+.Sun
 	farcall BattleCommand_AttackUp2
-	jr .FinishSunAttack
-
-.SunSpecialAttack
+	farcall BattleCommand_StatUpMessage
+	call SetStatChangeAnimation
+	farcall ResetMiss
 	farcall BattleCommand_SpecialAttackUp2
-	jr .FinishSunSpecialAttack
+	farcall BattleCommand_StatUpMessage
+	jp ResetStatChangeExtra
 
 BattleCommand_Coil:
+	call GetUserAbility
+	cp CONTRARY
+	jr z, .Contrary
+	call GetStatsExtra
+	ld a, [bc]
+	cp MAX_STAT_LEVEL
+	jr c, .raise
+
+	inc bc
+	ld a, [bc]
+	cp MAX_STAT_LEVEL
+	jr c, .raise
+
+	inc bc
+	inc bc
+	inc bc
+	inc bc
+	ld a, [bc]
+	cp MAX_STAT_LEVEL
+	jp nc, NoStatRaise
+	jr .raise
+
+.Contrary
+	call GetStatsExtra
+	ld a, [bc]
+	cp 1
+	jr nz, .raise
+
+	inc bc
+	ld a, [bc]
+	cp 1
+	jr nz, .raise
+
+	inc bc
+	inc bc
+	inc bc
+	inc bc
+	ld a, [bc]
+	cp 1
+	jp z, NoStatRaise
+
+.raise
+	farcall BattleCommand_LowerSub
+	ld a, $1
+	ld [wKickCounter], a
+	farcall AnimateCurrentMove
+	farcall BattleCommand_RaiseSub
+	call AnimateAbilityStats
 	farcall BattleCommand_AttackUp
-	call CheckFailedMessage
-	jr nz, .SkipSpAtkAnim
-	farcall BattleCommand_StatUpAnim
 	farcall BattleCommand_StatUpMessage
 	call SetStatChangeAnimation
-.SkipSpAtkAnim
-	farcall BattleCommand_StatUpFailText
 	farcall ResetMiss
 	farcall BattleCommand_DefenseUp
-	call CheckFailedMessage
-	jr nz, .SkipSpDef
-	ld a, [wStatChangeHappened]
-	and a
-	jr nz, .SkipSpDefAnim
-	farcall BattleCommand_StatUpAnim
-.SkipSpDefAnim
 	farcall BattleCommand_StatUpMessage
-	call SetStatChangeAnimation
-.SkipSpDef
-	farcall BattleCommand_StatUpFailText
 	farcall ResetMiss
 	farcall BattleCommand_AccuracyUp
-	call CheckFailedMessage
-	jr nz, .SkipSpeed
-	ld a, [wStatChangeHappened]
-	and a
-	jr nz, .SkipSpeedAnim
-	farcall BattleCommand_StatUpAnim
-.SkipSpeedAnim
 	farcall BattleCommand_StatUpMessage
-.SkipSpeed
-	farcall BattleCommand_StatUpFailText
 	jp ResetStatChangeExtra
 
 BattleCommand_CosmicPower:
+	call GetUserAbility
+	cp CONTRARY
+	jr z, .Contrary
+	call GetStatsExtra
+	inc b
+	ld a, [bc]
+	cp MAX_STAT_LEVEL
+	jr c, .raise
+
+	inc bc
+	inc bc
+	inc bc
+	ld a, [bc]
+	cp MAX_STAT_LEVEL
+	jp nc, NoStatRaise
+
+.Contrary
+	call GetStatsExtra
+	inc b
+	ld a, [bc]
+	cp 1
+	jr nz, .raise
+
+	inc bc
+	inc bc
+	inc bc
+	ld a, [bc]
+	cp 1
+	jp z, NoStatRaise
+
+.raise
+	farcall BattleCommand_LowerSub
+	ld a, $1
+	ld [wKickCounter], a
+	farcall AnimateCurrentMove
+	farcall BattleCommand_RaiseSub
+	call AnimateAbilityStats
 	farcall BattleCommand_DefenseUp
-	call CheckFailedMessage
-	jr nz, .SkipSpAtkAnim
-	farcall BattleCommand_StatUpAnim
 	farcall BattleCommand_StatUpMessage
 	call SetStatChangeAnimation
-.SkipSpAtkAnim
-	farcall BattleCommand_StatUpFailText
 	farcall ResetMiss
 	farcall BattleCommand_SpecialDefenseUp
-	call CheckFailedMessage
-	jr nz, .SkipSpDef
-	ld a, [wStatChangeHappened]
-	and a
-	jr nz, .SkipSpDefAnim
-	farcall BattleCommand_StatUpAnim
-.SkipSpDefAnim
+	farcall BattleCommand_StatUpMessage
+	jp ResetStatChangeExtra
+
+BattleCommand_HoneClaws:
+	call GetUserAbility
+	cp CONTRARY
+	jr z, .Contrary
+	call GetStatsExtra
+	ld a, [bc]
+	cp MAX_STAT_LEVEL
+	jr c, .raise
+
+	inc bc
+	inc bc
+	inc bc
+	inc bc
+	inc bc
+	ld a, [bc]
+	cp MAX_STAT_LEVEL
+	jp nc, NoStatRaise
+
+.Contrary
+	call GetStatsExtra
+	ld a, [bc]
+	cp 1
+	jr nz, .raise
+
+	inc bc
+	inc bc
+	inc bc
+	inc bc
+	inc bc
+	ld a, [bc]
+	cp 1
+	jp z, NoStatRaise
+
+.raise
+	farcall BattleCommand_LowerSub
+	ld a, $1
+	ld [wKickCounter], a
+	farcall AnimateCurrentMove
+	farcall BattleCommand_RaiseSub
+	call AnimateAbilityStats
+	farcall BattleCommand_AttackUp
 	farcall BattleCommand_StatUpMessage
 	call SetStatChangeAnimation
-.SkipSpDef
-	farcall BattleCommand_StatUpFailText
+	farcall ResetMiss
+	farcall BattleCommand_AccuracyUp
+	farcall BattleCommand_StatUpMessage
 	jp ResetStatChangeExtra
 
 BattleCommand_DragonDance:
+	call GetUserAbility
+	cp CONTRARY
+	jr z, .Contrary
+	call GetStatsExtra
+	ld a, [bc]
+	cp MAX_STAT_LEVEL
+	jr c, .raise
+
+	inc bc
+	inc bc
+	ld a, [bc]
+	cp MAX_STAT_LEVEL
+	jp nc, NoStatRaise
+
+.Contrary
+	call GetStatsExtra
+	ld a, [bc]
+	cp 1
+	jr nz, .raise
+
+	inc bc
+	inc bc
+	ld a, [bc]
+	cp 1
+	jp z, NoStatRaise
+
+.raise
+	farcall BattleCommand_LowerSub
+	ld a, $1
+	ld [wKickCounter], a
+	farcall AnimateCurrentMove
+	farcall BattleCommand_RaiseSub
+	call AnimateAbilityStats
 	farcall BattleCommand_AttackUp
-	call CheckFailedMessage
-	jr nz, .SkipSpAtkAnim
-	farcall BattleCommand_StatUpAnim
 	farcall BattleCommand_StatUpMessage
 	call SetStatChangeAnimation
-.SkipSpAtkAnim
-	farcall BattleCommand_StatUpFailText
 	farcall ResetMiss
 	farcall BattleCommand_SpeedUp
-	call CheckFailedMessage
-	jr nz, .SkipSpDef
-	ld a, [wStatChangeHappened]
-	and a
-	jr nz, .SkipSpDefAnim
-	farcall BattleCommand_StatUpAnim
-.SkipSpDefAnim
 	farcall BattleCommand_StatUpMessage
-	call SetStatChangeAnimation
-.SkipSpDef
-	farcall BattleCommand_StatUpFailText
-	jp ResetStatChangeExtra
-BattleCommand_HoneClaws:
-	farcall BattleCommand_AttackUp
-	call CheckFailedMessage
-	jr nz, .SkipSpAtkAnim
-	farcall BattleCommand_StatUpAnim
-	farcall BattleCommand_StatUpMessage
-	call SetStatChangeAnimation
-.SkipSpAtkAnim
-	farcall BattleCommand_StatUpFailText
-	farcall ResetMiss
-	farcall BattleCommand_AccuracyUp
-	call CheckFailedMessage
-	jr nz, .SkipSpDef
-	ld a, [wStatChangeHappened]
-	and a
-	jr nz, .SkipSpDefAnim
-	farcall BattleCommand_StatUpAnim
-.SkipSpDefAnim
-	farcall BattleCommand_StatUpMessage
-	call SetStatChangeAnimation
-.SkipSpDef
-	farcall BattleCommand_StatUpFailText
 	jp ResetStatChangeExtra
 
 BattleCommand_QuiverDance:
@@ -759,12 +861,11 @@ BattleCommand_QuiverDance:
 	inc bc
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
-	jr nc, .SkipAnim
+	jp nc, NoStatRaise
 	jr .raise
 
 .Contrary
 	call GetStatsExtra
-	ld b,b
 	inc bc
 	inc bc
 	ld a, [bc]
@@ -779,7 +880,7 @@ BattleCommand_QuiverDance:
 	inc bc
 	ld a, [bc]
 	cp 1
-	jr z, .SkipAnim
+	jp z, NoStatRaise
 
 .raise
 	farcall BattleCommand_LowerSub
@@ -788,26 +889,15 @@ BattleCommand_QuiverDance:
 	farcall AnimateCurrentMove
 	farcall BattleCommand_RaiseSub
 	call AnimateAbilityStats
-.SkipAnim
 	farcall BattleCommand_SpecialAttackUp
 	farcall BattleCommand_StatUpMessage
 	call SetStatChangeAnimation
-	farcall BattleCommand_StatUpFailText
 	farcall ResetMiss
 	farcall BattleCommand_SpecialDefenseUp
-	call CheckFailedMessage
-	jr nz, .SkipSpDef
 	farcall BattleCommand_StatUpMessage
-	call SetStatChangeAnimation
-.SkipSpDef
-	farcall BattleCommand_StatUpFailText
 	farcall ResetMiss
 	farcall BattleCommand_SpeedUp
-	call CheckFailedMessage
-	jr nz, .SkipSpeed
 	farcall BattleCommand_StatUpMessage
-.SkipSpeed
-	farcall BattleCommand_StatUpFailText
 
 ResetStatChangeExtra:
 	xor a
@@ -936,3 +1026,23 @@ AnimateAbilityStats:
 .Contrary
 	farcall Call_PlayBattleAnim
 	jp SetStatChangeAnimation
+
+NoStatRaise:
+	farcall MoveDelayAbility
+	call GetUserAbility
+	ld hl, StatsCantLowerText
+	cp CONTRARY
+	jr z, .Contrary
+	ld hl, StatsCantRaiseText
+.Contrary
+	jp StdBattleTextbox
+
+NoStatLower:
+	farcall MoveDelayAbility
+	call GetUserAbility
+	ld hl, StatsCantRaiseText
+	cp CONTRARY
+	jr z, .Contrary
+	ld hl, StatsCantLowerText
+.Contrary
+	jp StdBattleTextbox
