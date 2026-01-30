@@ -209,6 +209,8 @@ ENDM
 	command dragondance
 	command honeclaws
 	command poweruppunch
+	command calmmind
+	command bulkup
 ;	command wakeupslap
 ;	command awakenopponent
 

@@ -7145,8 +7145,6 @@ EndRechargeOpp:
 
 INCLUDE "engine/battle/move_effects/leech_seed.asm"
 
-INCLUDE "engine/battle/move_effects/shell_smash.asm"
-
 BattleCommand_ResetStats:
 ; resetstats
 

@@ -209,5 +209,7 @@ BattleCommandPointers:
 	effectfn BattleCommand_DragonDance
 	effectfn BattleCommand_HoneClaws
 	effectfn BattleCommand_PowerUpPunch
+	effectfn BattleCommand_CalmMind
+	effectfn BattleCommand_BulkUp
 ;	effectfn BattleCommand_WakeUpSlap
 ;	effectfn BattleCommand_AwakenOpponent

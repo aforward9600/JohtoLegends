@@ -2390,16 +2390,7 @@ BulkUp:
 	checkobedience
 	usedmovetext
 	doturn
-	lowersub
-	attackup
-	statupanim
-	statupmessage
-	statupfailtext
-	resetmiss
-	defenseup
-	statupmessage
-	statupfailtext
-	raisesub
+	bulkup
 	endmove
 
 Superpower:
@@ -2428,25 +2419,14 @@ CalmMind:
 	checkobedience
 	usedmovetext
 	doturn
-	lowersub
-	specialattackup
-	statupanim
-	statupmessage
-	statupfailtext
-	resetmiss
-	specialdefenseup
-	statupmessage
-	statupfailtext
-	raisesub
+	calmmind
 	endmove
 
 DragonDance:
 	checkobedience
 	usedmovetext
 	doturn
-	lowersub
 	dragondance
-	raisesub
 	endmove
 
 StrengthSap:
@@ -2472,9 +2452,7 @@ HoneClaws:
 	checkobedience
 	usedmovetext
 	doturn
-	lowersub
 	honeclaws
-	raisesub
 	endmove
 
 SpeedUpHit:
@@ -2616,18 +2594,14 @@ CosmicPower:
 	checkobedience
 	usedmovetext
 	doturn
-	lowersub
 	cosmicpower
-	raisesub
 	endmove
 
 Growth:
 	checkobedience
 	usedmovetext
 	doturn
-	lowersub
 	growth
-	raisesub
 	endmove
 
 CircleThrow:
@@ -2833,9 +2807,7 @@ Coil:
 	checkobedience
 	usedmovetext
 	doturn
-	lowersub
 	coil
-	raisesub
 	endmove
 
 GyroBall:
