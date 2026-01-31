@@ -23,6 +23,14 @@ BattleCommand_Curse:
 
 ; If no stats can be increased, don't.
 
+	call CheckNeutralGas
+	jr z, .SkipContrary
+
+	call GetUserAbility
+	cp CONTRARY
+	jr z, .Contrary
+
+.SkipContrary
 ; Attack
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
@@ -33,39 +41,52 @@ BattleCommand_Curse:
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
 	jp nc, .cantraise
+	jr .raise
+
+.Contrary
+	ld a, [bc]
+	cp 1
+	jr nz, .raisecontrary
+
+	inc bc
+	ld a, [bc]
+	cp 1
+	jr nz, .raisecontrary
+	jr .cantraise
 
 .raise
 
 ; Raise Attack and Defense, and lower Speed.
 
-	ld a, $1
-	ld [wKickCounter], a
-	call AnimateCurrentMove
-	call CheckNeutralGas
-	jr z, .SkipNeutralGas
-	call GetUserAbility
-	cp CONTRARY
-	jr z, .CurseContrary
+	inc bc
+	ld a, [bc]
+	cp 1
+	jr nz, .SkipNeutralGas
+	call RaiseLowerSubEffect
+	jr .ReconveneCurse
+
+.raisecontrary
+	inc bc
+	ld a, [bc]
+	cp MAX_STAT_LEVEL
+	jr c, .SkipNeutralGas
+	call RaiseLowerSubEffect
+	jr .ReconveneCurse
+
 .SkipNeutralGas
-	ld a, SPEED
-	call LowerStat
+	call RaiseLowerSubEffect
 	call BattleCommand_SwitchTurn
+	call BattleCommand_SpeedDown
 	call BattleCommand_StatDownMessage
-.ReconveneCurse
-	call ResetMiss
 	call BattleCommand_SwitchTurn
+.ReconveneCurse
+	farcall AnimateAbilityStats
+	call ResetMiss
 	call BattleCommand_AttackUp
 	call BattleCommand_StatUpMessage
 	call ResetMiss
 	call BattleCommand_DefenseUp
 	jp BattleCommand_StatUpMessage
-
-.CurseContrary
-	ld a, SPEED
-	call RaiseStat
-	call BattleCommand_SwitchTurn
-	call BattleCommand_StatDownMessage
-	jr .ReconveneCurse
 
 .ghost
 
@@ -108,3 +129,12 @@ BattleCommand_Curse:
 	call AnimateFailedMove
 	ld hl, WontRiseAnymoreText
 	jp StdBattleTextbox
+
+RaiseLowerSubEffect:
+	call BattleCommand_LowerSub
+	ld a, $1
+	ld [wKickCounter], a
+	call AnimateCurrentMove
+	call BattleCommand_RaiseSub
+	farcall AnimateAbilityStatsLower
+	ret

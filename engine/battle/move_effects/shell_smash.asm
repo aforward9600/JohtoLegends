@@ -1,10 +1,14 @@
 BattleCommand_ShellSmash:
 ; shellsmash
 
+	call CheckNeutralGas
+	jr z, .SkipContrary
+
 	call GetUserAbility
 	cp CONTRARY
 	jr z, .ContraryDefense
 
+.SkipContrary
 	call GetStatsExtra
 	inc bc
 	ld a, [bc]

@@ -569,10 +569,13 @@ BattleCommand_HammerArm:
 	jp BattleCommand_SwitchTurn2
 
 BellyDrumMessage:
+	call CheckNeutralGas
+	jr z, .SkipContrary
 	call GetUserAbility
 	cp CONTRARY
 	jr z, .ContraryBellyDrum
 
+.SkipContrary
 	ld de, ANIM_ENEMY_STAT_DOWN
 	farcall Call_PlayBattleAnim
 
@@ -587,9 +590,12 @@ BellyDrumMessage:
 	jp StdBattleTextbox
 
 BattleCommand_Growth:
+	call CheckNeutralGas
+	jr z, .SkipContrary
 	call GetUserAbility
 	cp CONTRARY
 	jr z, .Contrary
+.SkipContrary
 	call GetStatsExtra
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
@@ -641,9 +647,12 @@ BattleCommand_Growth:
 	jp ResetStatChangeExtra
 
 BattleCommand_Coil:
+	call CheckNeutralGas
+	jr z, .SkipContrary
 	call GetUserAbility
 	cp CONTRARY
 	jr z, .Contrary
+.SkipContrary
 	call GetStatsExtra
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
@@ -696,9 +705,12 @@ BattleCommand_Coil:
 	jp ResetStatChangeExtra
 
 BattleCommand_CosmicPower:
+	call CheckNeutralGas
+	jr z, .SkipContrary
 	call GetUserAbility
 	cp CONTRARY
 	jr z, .Contrary
+.SkipContrary
 	call GetStatsExtra
 	inc b
 	ld a, [bc]
@@ -737,9 +749,12 @@ BattleCommand_CosmicPower:
 	jp ResetStatChangeExtra
 
 BattleCommand_HoneClaws:
+	call CheckNeutralGas
+	jr z, .SkipContrary
 	call GetUserAbility
 	cp CONTRARY
 	jr z, .Contrary
+.SkipContrary
 	call GetStatsExtra
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
@@ -780,9 +795,12 @@ BattleCommand_HoneClaws:
 	jp ResetStatChangeExtra
 
 BattleCommand_DragonDance:
+	call CheckNeutralGas
+	jr z, .SkipContrary
 	call GetUserAbility
 	cp CONTRARY
 	jr z, .Contrary
+.SkipContrary
 	call GetStatsExtra
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
@@ -817,9 +835,12 @@ BattleCommand_DragonDance:
 	jp ResetStatChangeExtra
 
 BattleCommand_CalmMind:
+	call CheckNeutralGas
+	jr z, .SkipContrary
 	call GetUserAbility
 	cp CONTRARY
 	jr z, .Contrary
+.SkipContrary
 	call GetStatsExtra
 	inc bc
 	inc bc
@@ -857,9 +878,12 @@ BattleCommand_CalmMind:
 	jp ResetStatChangeExtra
 
 BattleCommand_BulkUp:
+	call CheckNeutralGas
+	jr z, .SkipContrary
 	call GetUserAbility
 	cp CONTRARY
 	jr z, .Contrary
+.SkipContrary
 	call GetStatsExtra
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
@@ -893,9 +917,12 @@ BattleCommand_BulkUp:
 
 
 BattleCommand_QuiverDance:
+	call CheckNeutralGas
+	jr z, .SkipContrary
 	call GetUserAbility
 	cp CONTRARY
 	jr z, .Contrary
+.SkipContrary
 	call GetStatsExtra
 	ld a, [bc]
 	inc bc
@@ -1072,6 +1099,8 @@ AnimateAbilityStats:
 	ld a, [wStatChangeHappened]
 	and a
 	jr nz, .SkipAbility
+	call CheckNeutralGas
+	jr z, .SkipContrary
 	call GetUserAbility
 	cp CONTRARY
 	jr nz, .SkipContrary
@@ -1085,6 +1114,8 @@ AnimateAbilityStats:
 	jp SetStatChangeAnimation
 
 .SkipAbility
+	call CheckNeutralGas
+	jr z, .SkipContrary
 	call GetUserAbility
 	cp CONTRARY
 	ld de, ANIM_PLAYER_STAT_DOWN
@@ -1094,6 +1125,8 @@ AnimateAbilityStatsLower:
 	ld a, [wStatChangeHappened]
 	and a
 	jr nz, .SkipAbility
+	call CheckNeutralGas
+	jr z, .SkipContrary
 	call GetUserAbility
 	cp CONTRARY
 	jr nz, .SkipContrary
@@ -1107,27 +1140,23 @@ AnimateAbilityStatsLower:
 	jp SetStatChangeAnimation
 
 .SkipAbility
+	call CheckNeutralGas
+	jr z, .SkipContrary
 	call GetUserAbility
 	cp CONTRARY
 	ld de, ANIM_ENEMY_STAT_DOWN
+	jr z, .SkipContrary
 	jr .Contrary
 
 NoStatRaise:
 	farcall MoveDelayAbility
-	call GetUserAbility
 	ld hl, StatsCantLowerText
+	call CheckNeutralGas
+	jr z, .NoContrary
+	call GetUserAbility
 	cp CONTRARY
 	jr z, .Contrary
+.NoContrary
 	ld hl, StatsCantRaiseText
 .Contrary
 	jp StdBattleTextbox
-
-;NoStatLower:
-;	farcall MoveDelayAbility
-;	call GetUserAbility
-;	ld hl, StatsCantRaiseText
-;	cp CONTRARY
-;	jr z, .Contrary
-;	ld hl, StatsCantLowerText
-;.Contrary
-;	jp StdBattleTextbox

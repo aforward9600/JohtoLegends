@@ -2443,9 +2443,7 @@ ShellSmash:
 	checkobedience
 	usedmovetext
 	doturn
-	lowersub
 	shellsmash
-	raisesub
 	endmove
 
 HoneClaws:

@@ -2341,8 +2341,6 @@ BattleCommand_StatUpAnim:
 	ld a, [wAttackMissed]
 	and a
 	jp nz, BattleCommand_MoveDelay
-
-.SkipContrary
 	xor a
 	jr BattleCommand_StatUpDownAnim
 
