@@ -1,5 +1,6 @@
 GetTaurosForm::
-	ld a, [wBufferMonForm]
+;	ld a, [wBufferMonForm]
+	ld a, [bc]
 	and CAUGHT_FORM_1_MASK
 	jr z, .TrySecond
 	ld a, 1
@@ -7,7 +8,8 @@ GetTaurosForm::
 	ret
 
 .TrySecond
-	ld a, [wBufferMonForm]
+;	ld a, [wBufferMonForm]
+	ld a, [bc]
 	and CAUGHT_FORM_2_MASK
 	jr z, .PlainTauros
 	ld a, 2
@@ -149,12 +151,13 @@ _GetFrontpic:
 	ret
 
 GetPicIndirectPointer:
+	push bc
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld b, h
 	ld c, l
 	ld a, l
-	push af
+;	push af
 	sub LOW(TAUROS_P)
 	if HIGH(TAUROS_P) == 0
 		or h
@@ -168,6 +171,9 @@ GetPicIndirectPointer:
 		endc
 	endc
 	jr nz, .NotTauros
+;	pop af
+	pop bc
+;	push af
 	call GetTaurosForm
 	ld a, [wUnownLetter]
 	cp 0
@@ -184,11 +190,17 @@ GetPicIndirectPointer:
 .PlainTauros
 	ld bc, TAUROS_P
 .FinishTauros
-	pop af
+;	pop af
 	jr .not_unown
 
 .NotTauros
-	pop af
+;	pop af
+	pop bc
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld a, l
 	sub LOW(UNOWN)
 	if HIGH(UNOWN) == 0
 		or h
@@ -324,6 +336,9 @@ GetMonBackpic:
 	ldh a, [rSVBK]
 	push af
 	push de
+	call GetPartyMonForm
+	ld c, l
+	ld b, h
 	call GetPicIndirectPointer
 	ld a, BANK(wDecompressScratch)
 	ldh [rSVBK], a

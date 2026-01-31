@@ -920,15 +920,14 @@ StatsScreen_PlaceFrontpic:
 	farcall FrontFinishTaurosCheck
 	jr nc, .NotTauros
 	ld de, wTempMonCaughtTime
-	ld a, [de]
-	ld [wBufferMonForm], a
+	ld b, d
+	ld c, e
 	farcall GetTaurosForm
 	jr .SkipUnown
 .NotTauros:
 	ld hl, wTempMonDVs
 	predef GetUnownLetter
 .SkipUnown
-	ld b,b
 	call StatsScreen_GetAnimationParam
 	jr c, .egg
 	and a

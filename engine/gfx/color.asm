@@ -107,8 +107,7 @@ Intro_LoadMonPalette:
 	ld de, wOBPals1
 	ld a, [wCurSpecies]
 	call GetMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
-	ret
+	jp LoadPalette_White_Col1_Col2_Black
 
 LoadTrainerClassPaletteAsNthBGPal:
 	ld a, [wTrainerClass]
@@ -143,8 +142,7 @@ got_palette_pointer_8bd7:
 	ld e, l
 	ld d, h
 	pop hl
-	call LoadPalette_White_Col1_Col2_Black
-	ret
+	jp LoadPalette_White_Col1_Col2_Black
 
 ApplyMonOrTrainerPals:
 	call CheckCGB
@@ -214,8 +212,7 @@ ApplyHPBarPals:
 .done
 	lb bc, 2, 8
 	ld a, e
-	call FillBoxCGB
-	ret
+	jp FillBoxCGB
 
 LoadStatsScreenPals:
 ;	push de SGB colors work, but causes all pages to be blue otherwise
@@ -595,41 +592,46 @@ BattleObjectPals:
 INCLUDE "gfx/battle_anims/battle_anims.pal"
 
 _GetMonPalettePointer:
-	ld b,b
-	push af
+;	push af
 	call GetPokemonIndexFromID
 	ld a, l
 	sub LOW(TAUROS_P)
 	if HIGH(TAUROS_P) == 0
 		or h
 	else
-		jr nz, .NotTauros2
-		ld a, h
+		jr nz, .FinishPalette
 		if HIGH(TAUROS_P) == 1
-			dec a
+			dec h
 		else
+			ld a, h
 			cp HIGH(TAUROS_P)
 		endc
 	endc
-	jr nz, .NotTauros2
+	jr nz, .FinishPalette
+	pop bc
+	push bc
+	push hl
 	farcall GetTaurosForm
 	ld a, [wUnownLetter]
 	cp 0
 	jr z, .NotTauros2
 	cp 1
 	jr z, .Fire
+	pop hl
 	ld hl, TAUROS_P_FIRE ; change to water
-	pop af
+;	pop af
 	jr .FinishPalette
 
 .Fire
+	pop hl
 	ld hl, TAUROS_P_FIRE
-	pop af
+;	pop af
 	jr .FinishPalette
 	
 .NotTauros2
-	pop af
-	call GetPokemonIndexFromID
+	pop hl
+;	pop af
+;	call GetPokemonIndexFromID
 .FinishPalette
 	; hl = palette
 	add hl, hl
@@ -1303,13 +1305,11 @@ BattleCheckEnemyShininess::
 	ret nz
 
 	ld bc, wEnemyMonForm
-	call CheckShininess
-	ret
+	jp CheckShininess
 
 BattleCheckPlayerShininess::
 	call GetPartyMonForm
 BattleCheckShininess::
 	ld c, l
 	ld b, h
-	call CheckShininess
-	ret
+	jp CheckShininess
