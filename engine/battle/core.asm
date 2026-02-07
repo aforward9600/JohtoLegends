@@ -4046,6 +4046,9 @@ SwitchPlayerMon:
 
 SendOutPlayerMon:
 	ld hl, wBattleMonDVs
+	call GetPartyMonForm
+	ld b, h
+	ld c, l
 	predef GetUnownLetter
 	hlcoord 1, 5
 	ld b, 7
@@ -6335,7 +6338,7 @@ LoadEnemyMon:
 	if HIGH(MAGIKARP) == 0
 		or h
 	else
-		jr nz, .Happiness
+		jr nz, .Happiness1
 		if HIGH(MAGIKARP) == 1
 			dec h
 		else
@@ -6343,7 +6346,7 @@ LoadEnemyMon:
 			cp HIGH(MAGIKARP)
 		endc
 	endc
-	jr nz, .Happiness
+	jr nz, .Happiness1
 
 ; Get Magikarp's length
 	ld de, wEnemyMonDVs
@@ -6389,20 +6392,29 @@ LoadEnemyMon:
 ; smaller than 4'0" may be caught by the filter, a lot more than intended.
 	ld a, [wMapGroup]
 	cp GROUP_LAKE_OF_RAGE
-	jr nz, .Happiness
+	jr nz, .Happiness1
 	ld a, [wMapNumber]
 	cp MAP_LAKE_OF_RAGE
-	jr nz, .Happiness
+	jr nz, .Happiness1
 ; 40% chance of not flooring
 	call Random
 	cp 40 percent - 2
-	jr c, .Happiness
+	jr c, .Happiness1
 ; Try again if length < 1024 mm (i.e. if HIGH(length) < 3 feet)
 	ld a, [wMagikarpLength]
 	cp 3 ; should be "cp 3", since 1024 mm = 3'4", but HIGH(1024) = 4
 	jp c, .GenerateDVs ; try again
 
 ; Finally done with DVs
+
+.Happiness1:
+;	ld b, 0
+;	ld c, 0
+;	ld b,b
+;	ld a, [wEnemyMonForm]
+;	ld [wUnownLetter], a
+	ld bc, wEnemyMonForm
+	call GetTaurosForm2
 
 .Happiness:
 ; Set happiness
@@ -8381,6 +8393,9 @@ DropPlayerSub:
 	ld a, [wBattleMonSpecies]
 	ld [wCurPartySpecies], a
 	ld hl, wBattleMonDVs
+	call GetPartyMonForm
+	ld b, h
+	ld c, l
 	predef GetUnownLetter
 	ld de, vTiles2 tile $31
 	predef GetMonBackpic
@@ -8419,6 +8434,7 @@ DropEnemySub:
 	call SetEnemyBufferForm
 	call GetBaseData
 	ld hl, wEnemyMonDVs
+	ld bc, wEnemyMonForm
 	predef GetUnownLetter
 	ld de, vTiles2
 	predef GetAnimatedFrontpic
@@ -8602,8 +8618,6 @@ InitEnemyWildmon:
 	ld de, wWildMonPP
 	ld bc, NUM_MOVES
 	call CopyBytes
-	ld hl, wEnemyMonDVs
-	predef GetUnownLetter
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld a, l
@@ -8623,6 +8637,9 @@ InitEnemyWildmon:
 	ld a, [wFirstUnownSeen]
 	and a
 	jr nz, .skip_unown
+	ld hl, wEnemyMonDVs
+	ld bc, wEnemyMonForm
+	predef GetUnownLetter
 	ld a, [wUnownLetter]
 	ld [wFirstUnownSeen], a
 .skip_unown

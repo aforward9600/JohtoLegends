@@ -260,6 +260,8 @@ INCLUDE "gfx/pokegear/sgb.pal"
 _CGB_StatsScreenHPPals:
 	push de
 	push hl
+	ld bc, wTempMonCaughtTime
+	call GetTaurosForm2
 	ld de, MonochromePassword
 	ld hl, wMomsName
 	ld c, 4

@@ -260,16 +260,15 @@ IsSFXPlaying::
 
 MaxVolume::
 	ld a, MAX_VOLUME
-	ld [wVolume], a
-	ret
+	jr FinishVolume
 
 LowVolume::
 	ld a, $33 ; 40%
-	ld [wVolume], a
-	ret
+	jr FinishVolume
 
 VolumeOff::
 	xor a
+FinishVolume::
 	ld [wVolume], a
 	ret
 

@@ -1,5 +1,29 @@
 GetTaurosForm::
 ;	ld a, [wBufferMonForm]
+	ld b,b
+	ld a, [bc]
+	and CAUGHT_FORM_1_MASK
+	jr z, .TrySecond
+	ld a, 1
+	ld [wUnownLetter], a
+	ret
+
+.TrySecond
+;	ld a, [wBufferMonForm]
+	ld a, [bc]
+	and CAUGHT_FORM_2_MASK
+	jr z, .PlainTauros
+	ld a, 2
+	ld [wUnownLetter], a
+	ret
+.PlainTauros
+	ld a, 0
+	ld [wUnownLetter], a
+	ret
+
+_GetTaurosForm::
+;	ld a, [wBufferMonForm]
+	ld b,b
 	ld a, [bc]
 	and CAUGHT_FORM_1_MASK
 	jr z, .TrySecond
@@ -26,6 +50,56 @@ GetUnownLetter:
 ; Take the middle 2 bits of each DV and place them in order:
 ;	atk  def  spd  spc
 ;	.ww..xx.  .yy..zz.
+
+	push bc
+	push hl
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld a, l
+	push af
+	sub LOW(TAUROS_P)
+	if HIGH(TAUROS_P) == 0
+		or h
+	else
+		jr nz, .NotTauros
+		if HIGH(TAUROS_P) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(TAUROS_P)
+		endc
+	endc
+	jr nz, .NotTauros
+	pop af
+	pop hl
+	pop bc
+	jr GetTaurosForm
+
+.NotTauros
+	pop af
+
+	sub LOW(UNOWN)
+	if HIGH(UNOWN) == 0
+		or h
+	else
+		jr nz, .not_unown
+		if HIGH(UNOWN) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(UNOWN)
+		endc
+	endc
+	jr z, .unown
+.not_unown
+	pop hl
+	pop bc
+	ret
+.unown
+	pop hl
+	pop bc
 
 	; atk
 	ld a, [hl]
@@ -151,13 +225,13 @@ _GetFrontpic:
 	ret
 
 GetPicIndirectPointer:
-	push bc
+;	push bc
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld b, h
 	ld c, l
 	ld a, l
-;	push af
+	push af
 	sub LOW(TAUROS_P)
 	if HIGH(TAUROS_P) == 0
 		or h
@@ -171,10 +245,11 @@ GetPicIndirectPointer:
 		endc
 	endc
 	jr nz, .NotTauros
+	ld b,b
 ;	pop af
-	pop bc
 ;	push af
-	call GetTaurosForm
+;	pop bc
+;	call GetTaurosForm
 	ld a, [wUnownLetter]
 	cp 0
 	jr z, .PlainTauros
@@ -190,17 +265,18 @@ GetPicIndirectPointer:
 .PlainTauros
 	ld bc, TAUROS_P
 .FinishTauros
-;	pop af
+	pop af
 	jr .not_unown
 
 .NotTauros
-;	pop af
-	pop bc
-	ld a, [wCurPartySpecies]
-	call GetPokemonIndexFromID
-	ld b, h
-	ld c, l
-	ld a, l
+;	pop bc
+	pop af
+;	pop bc
+;	ld a, [wCurPartySpecies]
+;	call GetPokemonIndexFromID
+;	ld b, h
+;	ld c, l
+;	ld a, l
 	sub LOW(UNOWN)
 	if HIGH(UNOWN) == 0
 		or h
@@ -336,9 +412,10 @@ GetMonBackpic:
 	ldh a, [rSVBK]
 	push af
 	push de
-	call GetPartyMonForm
-	ld c, l
-	ld b, h
+;	call GetPartyMonForm
+;	ld c, l
+;	ld b, h
+;	call GetTaurosForm
 	call GetPicIndirectPointer
 	ld a, BANK(wDecompressScratch)
 	ldh [rSVBK], a

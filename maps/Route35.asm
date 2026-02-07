@@ -10,6 +10,7 @@
 	const ROUTE35_OFFICER
 	const ROUTE35_FRUIT_TREE
 	const ROUTE35_POKE_BALL
+	const ROUTE35_POKE_BALL2
 
 Route35_MapScripts:
 	db 0 ; scene scripts
@@ -138,6 +139,9 @@ Route35Sign:
 
 Route35TMRollout:
 	itemball TM_AERIAL_ACE
+
+Route35ScopeLens:
+	itemball SCOPE_LENS
 
 Route35FruitTree:
 	fruittree FRUITTREE_ROUTE_35
@@ -399,7 +403,7 @@ Route35_MapEvents:
 	bg_event  1,  7, BGEVENT_READ, Route35Sign
 	bg_event 11, 31, BGEVENT_READ, Route35Sign
 
-	db 11 ; object events
+	db 12 ; object events
 	object_event  0, 11, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSchoolboyCaleb, -1
 	object_event  8, 21, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermAJ, -1
 	object_event  4, 17, SPRITE_PICNICKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerPicnickerVivian, -1
@@ -411,3 +415,4 @@ Route35_MapEvents:
 	object_event  2,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerOfficerClancy, -1
 	object_event  2, 25, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route35FruitTree, -1
 	object_event 13, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, Route35TMRollout, EVENT_ROUTE_35_TM_ROLLOUT
+	object_event  7, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route35ScopeLens, EVENT_ROUTE_35_SCOPE_LENS

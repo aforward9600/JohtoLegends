@@ -10,11 +10,11 @@ INCLUDE "gfx/pokemon/egg/shiny.pal"
 	RGB 23, 16, 00
 
 ; -1
-	RGB 23, 23, 23
-	RGB 17, 17, 17
+	RGB 11, 11, 11
+	RGB 05, 05, 05
 ; -1 shiny
-	RGB 23, 23, 23
-	RGB 17, 17, 17
+	RGB 25, 25, 25
+	RGB 15, 15, 15
 
 PokemonPalettes:
 ; entries correspond to Pokémon species, two apiece

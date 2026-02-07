@@ -919,10 +919,13 @@ PoorString:
 StatsScreen_PlaceFrontpic:
 	farcall FrontFinishTaurosCheck
 	jr nc, .NotTauros
-	ld de, wTempMonCaughtTime
-	ld b, d
-	ld c, e
-	farcall GetTaurosForm
+	ld b,b
+	ld bc, wTempMonCaughtTime
+;	ld b, d
+;	ld c, e
+;	ld a, [bc]
+;	ld [wBufferMonForm], a
+	call GetTaurosForm2
 	jr .SkipUnown
 .NotTauros:
 	ld hl, wTempMonDVs
@@ -943,6 +946,7 @@ StatsScreen_PlaceFrontpic:
 	jp SetPalettes
 
 .cry
+	ld bc, wTempMonCaughtTime
 	call SetPalettes
 	call .AnimateMon
 	ld a, [wCurPartySpecies]
@@ -951,13 +955,6 @@ StatsScreen_PlaceFrontpic:
 .AnimateMon:
 	ld hl, wcf64
 	set 5, [hl]
-;	ld a, [wCurPartySpecies]
-;	call GetPokemonIndexFromID
-;	farcall FinishTaurosCheck
-;	jr nc, .NotTaurosAnimate
-;	call 
-
-;.NotTaurosAnimate
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld a, l

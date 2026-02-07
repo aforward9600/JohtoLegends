@@ -592,14 +592,15 @@ BattleObjectPals:
 INCLUDE "gfx/battle_anims/battle_anims.pal"
 
 _GetMonPalettePointer:
-;	push af
+	push af
 	call GetPokemonIndexFromID
+;	push hl
 	ld a, l
 	sub LOW(TAUROS_P)
 	if HIGH(TAUROS_P) == 0
 		or h
 	else
-		jr nz, .FinishPalette
+		jr nz, .NotTauros2
 		if HIGH(TAUROS_P) == 1
 			dec h
 		else
@@ -607,31 +608,38 @@ _GetMonPalettePointer:
 			cp HIGH(TAUROS_P)
 		endc
 	endc
-	jr nz, .FinishPalette
-	pop bc
-	push bc
-	push hl
-	farcall GetTaurosForm
+	jr nz, .NotTauros2
+;	pop bc
+;	push bc
+	ld b,b
+;	call GetTaurosForm2
 	ld a, [wUnownLetter]
 	cp 0
-	jr z, .NotTauros2
+	jr z, .NotTauros3
 	cp 1
 	jr z, .Fire
-	pop hl
+;	pop hl
 	ld hl, TAUROS_P_FIRE ; change to water
-;	pop af
+	pop af
 	jr .FinishPalette
 
 .Fire
-	pop hl
+;	pop hl
 	ld hl, TAUROS_P_FIRE
-;	pop af
+	pop af
 	jr .FinishPalette
-	
+
+.NotTauros3
+	ld hl, -1
+	pop af
+	jr .FinishPalette
+
 .NotTauros2
-	pop hl
-;	pop af
-;	call GetPokemonIndexFromID
+;	pop hl
+	pop af
+	call GetPokemonIndexFromID
+;	ld l, a
+;	ld h, $0
 .FinishPalette
 	; hl = palette
 	add hl, hl
