@@ -4045,10 +4045,10 @@ SwitchPlayerMon:
 	ret
 
 SendOutPlayerMon:
-	ld hl, wBattleMonDVs
 	call GetPartyMonForm
 	ld b, h
 	ld c, l
+	ld hl, wBattleMonDVs
 	predef GetUnownLetter
 	hlcoord 1, 5
 	ld b, 7

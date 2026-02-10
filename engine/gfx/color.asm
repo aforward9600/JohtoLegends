@@ -611,26 +611,38 @@ _GetMonPalettePointer:
 	jr nz, .NotTauros2
 ;	pop bc
 ;	push bc
-	ld b,b
-;	call GetTaurosForm2
-	ld a, [wUnownLetter]
-	cp 0
-	jr z, .NotTauros3
-	cp 1
-	jr z, .Fire
-;	pop hl
-	ld hl, TAUROS_P_FIRE ; change to water
-	pop af
-	jr .FinishPalette
-
-.Fire
-;	pop hl
+	ld a, [bc]
+	and CAUGHT_FORM_1_MASK
+	jr z, .TrySecond
 	ld hl, TAUROS_P_FIRE
 	pop af
 	jr .FinishPalette
 
+.TrySecond
+	ld a, [bc]
+	and CAUGHT_FORM_2_MASK
+	jr z, .NotTauros3
+	ld hl, TAUROS_P_FIRE ; Change to Water
+	pop af
+	jr .FinishPalette
+;	ld a, [wUnownLetter]
+;	cp 0
+;	jr z, .NotTauros3
+;	cp 1
+;	jr z, .Fire
+;	pop hl
+;	ld hl, TAUROS_P_FIRE ; change to water
+;	pop af
+;	jr .FinishPalette
+
+;.Fire
+;	pop hl
+;	ld hl, TAUROS_P_FIRE
+;	pop af
+;	jr .FinishPalette
+
 .NotTauros3
-	ld hl, -1
+	ld hl, TAUROS_P
 	pop af
 	jr .FinishPalette
 
