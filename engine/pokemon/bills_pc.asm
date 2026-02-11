@@ -1028,11 +1028,11 @@ PCMonInfo:
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
 	ld hl, wTempMonDVs
+	ld bc, wTempMonCaughtTime
 	predef GetUnownLetter
 	call GetBaseData
 	ld de, vTiles2 tile $00
 ;	ld b,b
-	ld bc, wTempMonCaughtTime
 	predef GetMonFrontpic
 	xor a
 	ld [wBillsPC_MonHasMail], a

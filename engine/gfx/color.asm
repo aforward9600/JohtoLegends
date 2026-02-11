@@ -21,8 +21,7 @@ InitPartyMenuPalettes:
 	ld hl, PalPacket_PartyMenu + 1
 	call CopyFourPalettes
 	call InitPartyMenuOBPals
-	call WipeAttrMap
-	ret
+	jp WipeAttrMap
 
 ; SGB layout for SCGB_PARTY_MENU_HP_PALS
 SGB_ApplyPartyMenuHPPals:
@@ -592,6 +591,7 @@ BattleObjectPals:
 INCLUDE "gfx/battle_anims/battle_anims.pal"
 
 _GetMonPalettePointer:
+	ld b,b
 	push af
 	call GetPokemonIndexFromID
 ;	push hl

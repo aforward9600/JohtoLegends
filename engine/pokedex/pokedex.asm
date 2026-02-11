@@ -419,8 +419,7 @@ Pokedex_InitDexEntryScreen:
 	call Pokedex_GetSGBLayout
 	ld a, [wCurPartySpecies]
 	call PlayMonCry
-	call Pokedex_IncrementDexPointer
-	ret
+	jp Pokedex_IncrementDexPointer
 
 Pokedex_UpdateDexEntryScreen:
 	ld de, DexEntryScreen_ArrowCursorData
@@ -437,8 +436,7 @@ Pokedex_UpdateDexEntryScreen:
 	jr nz, .toggle_shininess
 	call Pokedex_NextOrPreviousDexEntry
 	ret nc
-	call Pokedex_IncrementDexPointer
-	ret
+	jp Pokedex_IncrementDexPointer
 
 .do_menu_action
 	ld a, [wDexArrowCursorPosIndex]
@@ -922,16 +920,14 @@ Pokedex_InitUnownMode:
 	call WaitBGMap
 	ld a, SCGB_POKEDEX_UNOWN_MODE
 	call Pokedex_GetSGBLayout
-	call Pokedex_IncrementDexPointer
-	ret
+	jp Pokedex_IncrementDexPointer
 
 Pokedex_UpdateUnownMode:
 	ld hl, hJoyPressed
 	ld a, [hl]
 	and A_BUTTON | B_BUTTON
 	jr nz, .a_b
-	call Pokedex_UnownModeHandleDPadInput
-	ret
+	jp Pokedex_UnownModeHandleDPadInput
 
 .a_b
 	call Pokedex_BlackOutBG
@@ -941,16 +937,13 @@ Pokedex_UpdateUnownMode:
 	call Pokedex_CheckSGB
 	jr nz, .decompress
 	farcall LoadSGBPokedexGFX2
-	jr .done
+	ret
 
 .decompress
 	ld hl, PokedexLZ
 	ld de, vTiles2 tile $31
 	lb bc, BANK(PokedexLZ), 58
-	call DecompressRequest2bpp
-
-.done
-	ret
+	jp DecompressRequest2bpp
 
 Pokedex_UnownModeHandleDPadInput:
 	ld hl, hJoyLast
@@ -1285,8 +1278,7 @@ Pokedex_DrawMainScreenBG:
 	ld [hl], $54
 	hlcoord 8, 16
 	ld [hl], $5b
-	call Pokedex_PlaceFrontpicTopLeftCorner
-	ret
+	jp Pokedex_PlaceFrontpicTopLeftCorner
 
 String_SEEN:
 	db "Seen", -1
@@ -1327,8 +1319,7 @@ Pokedex_DrawDexEntryScreenBG:
 	hlcoord 0, 17
 	ld de, .MenuItems
 	call Pokedex_PlaceString
-	call Pokedex_PlaceFrontpicTopLeftCorner
-	ret
+	jp Pokedex_PlaceFrontpicTopLeftCorner
 
 .Height:
 	db "HT  ?", $5e, "??", $5f, -1 ; HT  ?'??"
@@ -1435,8 +1426,7 @@ Pokedex_DrawSearchResultsScreenBG:
 	ld [hl], $69
 	hlcoord 8, 10
 	ld [hl], $6a
-	call Pokedex_PlaceFrontpicTopLeftCorner
-	ret
+	jp Pokedex_PlaceFrontpicTopLeftCorner
 
 .BottomWindowText:
 	db   "Search Results"
@@ -2390,8 +2380,7 @@ Pokedex_UpdateSearchResultsCursorOAM:
 	cp DEXMODE_OLD
 	jp z, Pokedex_PutOldModeCursorOAM
 	ld hl, .CursorOAM
-	call Pokedex_LoadCursorOAM
-	ret
+	jr Pokedex_LoadCursorOAM
 
 .CursorOAM:
 	dsprite  3,  3,  9, -1, $30, 7
@@ -2685,8 +2674,7 @@ Pokedex_ApplyPrintPals:
 	call DmgToCgbBGPals
 	ld a, $ff
 	call DmgToCgbObjPal0
-	call DelayFrame
-	ret
+	jp DelayFrame
 
 Pokedex_GetSGBLayout:
 	ld b, a
@@ -2697,8 +2685,7 @@ Pokedex_ApplyUsualPals:
 	ld a, $e4
 	call DmgToCgbBGPals
 	ld a, $e0
-	call DmgToCgbObjPal0
-	ret
+	jp DmgToCgbObjPal0
 
 Pokedex_LoadPointer:
 	ld e, a
@@ -2717,8 +2704,15 @@ Pokedex_LoadSelectedMonTiles:
 	jr z, .QuestionMark
 	ld a, [wFirstUnownSeen]
 	ld [wUnownLetter], a
+	farcall CurPartyTaurosCheck
+	jr nc, .NotTauros
+	xor a
+	ld [wUnownLetter], a
+.NotTauros
 	ld a, [wTempSpecies]
 	ld [wCurPartySpecies], a
+	xor a
+	ld [wBufferMonForm], a
 	call GetBaseData
 	ld de, vTiles2
 	predef GetMonFrontpic
@@ -2734,8 +2728,7 @@ Pokedex_LoadSelectedMonTiles:
 	ldh a, [hROMBank]
 	ld b, a
 	call Get2bpp
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 Pokedex_LoadCurrentFootprint:
 	call Pokedex_GetSelectedMon
@@ -2785,8 +2778,7 @@ Pokedex_LoadGFX:
 	call Decompress
 	ld a, 6
 	call SkipMusic
-	call EnableLCD
-	ret
+	jp EnableLCD
 
 Pokedex_LoadInvertedFont:
 	call LoadStandardFont
@@ -2833,8 +2825,7 @@ Pokedex_LoadUnownFont:
 	ld hl, vTiles2 tile $40
 	lb bc, BANK(Pokedex_LoadUnownFont), NUM_UNOWN + 1
 	call Request2bpp
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 Pokedex_LoadUnownFrontpicTiles:
 	ld a, [wUnownLetter]
@@ -2887,22 +2878,19 @@ _NewPokedexEntry:
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout
 	ld a, [wCurPartySpecies]
-	call PlayMonCry
-	ret
+	jp PlayMonCry
 
 Pokedex_SetBGMapMode3:
 	ld a, $3
 	ldh [hBGMapMode], a
 	ld c, 4
-	call DelayFrames
-	ret
+	jp DelayFrames
 
 Pokedex_SetBGMapMode4:
 	ld a, $4
 	ldh [hBGMapMode], a
 	ld c, 4
-	call DelayFrames
-	ret
+	jp DelayFrames
 
 Pokedex_SetBGMapMode_3ifDMG_4ifCGB:
 	ldh a, [hCGB]
@@ -2910,8 +2898,7 @@ Pokedex_SetBGMapMode_3ifDMG_4ifCGB:
 	jr z, .DMG
 	call Pokedex_SetBGMapMode4
 .DMG:
-	call Pokedex_SetBGMapMode3
-	ret
+	jr Pokedex_SetBGMapMode3
 
 Pokedex_ResetBGMapMode:
 	xor a

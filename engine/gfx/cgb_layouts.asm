@@ -383,6 +383,10 @@ _CGB_Pokedex:
 	jr .got_palette
 
 .is_pokemon
+	xor a
+	ld b, a
+	ld c, a
+	ld a, [wCurPartySpecies]
 	call GetMonPalettePointer
 	ld a, [wPokedexShinyToggle]
 	and a
