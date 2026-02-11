@@ -672,7 +672,8 @@ FinishTaurosCheck:
 	ret
 
 SetPokemonForm::
-	push hl
+	ld b,b
+;	push hl
 	ld a, [wTempEnemyMonSpecies]
 ResumeFormCheck:
 	call GetPokemonIndexFromID
@@ -690,14 +691,17 @@ ResumeFormCheck:
 		endc
 	endc
 	jr nz, .NotTauros
-	call BattleRandom
-	cp 33 percent + 1
-	jr c, .NotTauros
-	call BattleRandom
-	cp 50 percent
-	jr nc, .Water
-	pop hl
-;	ld hl, wBufferMonForm
+;	call BattleRandom
+;	cp 33 percent + 1
+;	jr c, .NotTauros
+;	call BattleRandom
+;	cp 50 percent
+;	jr nc, .Water
+;	ld hl, wEnemyMonForm
+	ld a, [wBufferMonForm]
+	and CAUGHT_FORM_1_MASK
+	jr z, .Water
+	ld hl, wEnemyMonForm
 	ld a, [hl]
 	or CAUGHT_FORM_1_MASK
 	ld [hl], a
@@ -707,18 +711,21 @@ ResumeFormCheck:
 ;	ret
 
 .Water
-	pop hl
-;	ld hl, wBufferMonForm
+;	ld hl, wEnemyMonForm
+	ld a, [wBufferMonForm]
+	and CAUGHT_FORM_2_MASK
+	ret z
+	ld hl, wEnemyMonForm
 	ld a, [hl]
 	or CAUGHT_FORM_2_MASK
 	ld [hl], a
 	ret
-;	ld a, 2
+;	ld a, 1
 ;	ld [wBufferMonForm], a
 ;	ret
 
 .NotTauros
-	pop hl
+;	pop hl
 	ret
 
 SetTempMonTime::

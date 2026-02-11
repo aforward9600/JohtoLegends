@@ -6044,7 +6044,8 @@ LoadEnemyMon:
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 
-	call SetEnemyBufferForm
+;	call SetEnemyBufferForm
+	call InitEnemyForm
 
 ;	ld a, [wBufferMonForm]
 ;	xor a
@@ -6177,10 +6178,10 @@ LoadEnemyMon:
 ; Wild DVs
 ; Here's where the fun starts
 
-	ld a, [wEnemyMonForm]
-	ld [wBufferMonForm], a
-	ld a, [wEnemyMonForm]
-	xor a
+;	ld a, [wEnemyMonForm]
+;	ld [wBufferMonForm], a
+;	ld a, [wEnemyMonForm]
+;	xor a
 
 ; Roaming monsters (Entei, Raikou) work differently
 ; They have their own structs, which are shorter than normal
@@ -6555,6 +6556,7 @@ LoadEnemyMon:
 ; Make sure the predef knows this isn't a partymon
 	ld [wEvolutionOldSpecies], a
 ; Fill moves based on level
+	ld bc, wEnemyMonForm
 	predef FillMoves
 
 .PP:
@@ -9434,6 +9436,26 @@ BattleStartMessage:
 
 	ld c, $2 ; start
 
+	ret
+
+InitEnemyForm:
+	call BattleRandom
+	cp 33 percent + 1
+	ret c
+	call BattleRandom
+	cp 50 percent
+	jr nc, .Water
+	ld hl, wBufferMonForm
+	ld a, [hl]
+	or CAUGHT_FORM_1_MASK
+	ld [hl], a
+	ret
+
+.Water
+	ld hl, wBufferMonForm
+	ld a, [hl]
+	or CAUGHT_FORM_2_MASK
+	ld [hl], a
 	ret
 
 SetEnemyBufferForm:

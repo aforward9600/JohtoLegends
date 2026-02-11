@@ -919,7 +919,6 @@ PoorString:
 StatsScreen_PlaceFrontpic:
 	farcall FrontFinishTaurosCheck
 	jr nc, .NotTauros
-	ld b,b
 	ld bc, wTempMonCaughtTime
 ;	ld b, d
 ;	ld c, e

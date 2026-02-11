@@ -133,6 +133,7 @@ rept NUM_MOVES + -1
 endr
 	ld [hl], a
 	ld [wBuffer1], a
+	ld bc, wEnemyMonForm
 	predef FillMoves
 
 .next
@@ -940,6 +941,15 @@ RetrieveBreedmon:
 	ld e, l
 	ld a, $1
 	ld [wBuffer1], a
+	push hl
+	ld hl, wPartyMon1CaughtTime
+	ld a, [wPartyCount]
+	dec a
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld c, l
+	ld b, h
+	pop hl
 	predef FillMoves
 	ld a, [wPartyCount]
 	dec a
@@ -2069,6 +2079,7 @@ LoadEnemyMonOutsideBattle:
 	ld [hli], a
 	ld [hl], a
 	ld [wEvolutionOldSpecies], a
+	ld bc, wEnemyMonForm
 	predef FillMoves
 
 ; pp
