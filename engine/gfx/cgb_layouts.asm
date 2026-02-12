@@ -383,7 +383,10 @@ _CGB_Pokedex:
 	jr .got_palette
 
 .is_pokemon
-	xor a
+;	xor a
+;	ld b, a
+;	ld c, a
+	ld a, [wBufferMonForm]
 	ld b, a
 	ld c, a
 	ld a, [wCurPartySpecies]

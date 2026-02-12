@@ -2872,6 +2872,8 @@ _NewPokedexEntry:
 	farcall DisplayDexEntry
 	call EnableLCD
 	call WaitBGMap
+	ld a, [wEnemyForm]
+	ld [wBufferMonForm], a
 	call GetBaseData
 	ld de, vTiles2
 	predef GetMonFrontpic
