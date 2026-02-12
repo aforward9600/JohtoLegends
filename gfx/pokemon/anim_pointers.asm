@@ -372,3 +372,4 @@ AnimationPointers:
 	dw RegigigasAnimation
 	dw DeoxysAnimation
 	dw TaurosPAnimation
+	dw TaurosPAnimation

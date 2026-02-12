@@ -776,3 +776,5 @@ INCBIN "gfx/pokemon/deoxys/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/deoxys/shiny.pal"
 INCLUDE "gfx/pokemon/tauros_p_fire/normal.pal"
 INCLUDE "gfx/pokemon/tauros_p_fire/shiny.pal"
+INCLUDE "gfx/pokemon/tauros_p_water/normal.pal"
+INCLUDE "gfx/pokemon/tauros_p_water/shiny.pal"

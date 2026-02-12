@@ -372,3 +372,4 @@ FramesPointers:
 	dba RegigigasFrames
 	dba DeoxysFrames
 	dba TaurosPFireFrames
+	dba TaurosPWaterFrames

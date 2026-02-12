@@ -582,7 +582,7 @@ CheckTaurosIcon:
 	ld a, [hl]
 	and CAUGHT_FORM_2_MASK
 	jr z, .Plain
-	ld hl, TAUROS_P_FIRE ; change to water
+	ld hl, TAUROS_P_WATER
 	ret
 
 .Plain:

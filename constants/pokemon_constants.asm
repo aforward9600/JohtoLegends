@@ -393,6 +393,7 @@ JOHTO_POKEMON EQU const_value
 	const REGIGIGAS
 	const DEOXYS
 	const TAUROS_P_FIRE
+	const TAUROS_P_WATER
 
 NUM_POKEMON EQU const_value + -1
 

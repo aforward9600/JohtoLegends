@@ -609,8 +609,6 @@ _GetMonPalettePointer:
 		endc
 	endc
 	jr nz, .NotTauros2
-;	pop bc
-;	push bc
 	ld a, [bc]
 	and CAUGHT_FORM_1_MASK
 	jr z, .TrySecond
@@ -622,24 +620,9 @@ _GetMonPalettePointer:
 	ld a, [bc]
 	and CAUGHT_FORM_2_MASK
 	jr z, .NotTauros3
-	ld hl, TAUROS_P_FIRE ; Change to Water
+	ld hl, TAUROS_P_WATER
 	pop af
 	jr .FinishPalette
-;	ld a, [wUnownLetter]
-;	cp 0
-;	jr z, .NotTauros3
-;	cp 1
-;	jr z, .Fire
-;	pop hl
-;	ld hl, TAUROS_P_FIRE ; change to water
-;	pop af
-;	jr .FinishPalette
-
-;.Fire
-;	pop hl
-;	ld hl, TAUROS_P_FIRE
-;	pop af
-;	jr .FinishPalette
 
 .NotTauros3
 	ld hl, TAUROS_P
@@ -647,11 +630,8 @@ _GetMonPalettePointer:
 	jr .FinishPalette
 
 .NotTauros2
-;	pop hl
 	pop af
 	call GetPokemonIndexFromID
-;	ld l, a
-;	ld h, $0
 .FinishPalette
 	; hl = palette
 	add hl, hl

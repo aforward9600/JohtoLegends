@@ -384,3 +384,4 @@ MonMenuIconPals:
 	icon_pals GREEN,  BLUE   ; REGIGIGAS
 	icon_pals RED,    GREEN  ; DEOXYS
 	icon_pals GRAY,   GRAY   ; TAUROS_P
+	icon_pals GRAY,   GRAY   ; TAUROS_P

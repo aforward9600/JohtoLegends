@@ -374,3 +374,4 @@ NewPokedexOrder:
 	dw REGIGIGAS
 	dw DEOXYS
 	dw TAUROS_P_FIRE
+	dw TAUROS_P_WATER

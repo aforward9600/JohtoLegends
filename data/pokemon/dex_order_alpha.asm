@@ -374,3 +374,4 @@ AlphabeticalPokedexOrder:
 	dw ZAPDOS
 	dw ZUBAT
 	dw TAUROS_P_FIRE
+	dw TAUROS_P_WATER

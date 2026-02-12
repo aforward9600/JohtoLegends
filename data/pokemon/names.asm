@@ -376,3 +376,4 @@ PokemonNames::
 	db "Regigigas@"
 	db "Deoxys@@@@"
 	db "Tauros@@@@"
+	db "Tauros@@@@"

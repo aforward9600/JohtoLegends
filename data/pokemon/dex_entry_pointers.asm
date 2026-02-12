@@ -373,3 +373,4 @@ PokedexDataPointerTable:
 	dba RegigigasPokedexEntry
 	dba DeoxysPokedexEntry
 	dba TaurosPPokedexEntry
+	dba TaurosPPokedexEntry

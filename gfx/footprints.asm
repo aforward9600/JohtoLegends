@@ -372,3 +372,4 @@ INCBIN "gfx/footprints/regidrago.1bpp"
 INCBIN "gfx/footprints/regigigas.1bpp"
 INCBIN "gfx/footprints/deoxys.1bpp"
 INCBIN "gfx/footprints/tauros.1bpp" ; Tauros P Fire
+INCBIN "gfx/footprints/tauros.1bpp" ; Tauros P Water

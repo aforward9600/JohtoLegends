@@ -255,7 +255,7 @@ GetPicIndirectPointer:
 	jr z, .PlainTauros
 	cp 1
 	jr z, .FireTauros
-	ld bc, TAUROS_P_FIRE ; Change to Water later
+	ld bc, TAUROS_P_WATER
 	jr .FinishTauros
 
 .FireTauros

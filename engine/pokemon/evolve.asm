@@ -611,7 +611,7 @@ FillMoves:
 	ld a, [bc]
 	and CAUGHT_FORM_2_MASK
 	jr z, .NotTauros
-	ld hl, TAUROS_P_FIRE ; replace with water
+	ld hl, TAUROS_P_WATER
 	jr .Finish
 
 .NotTauros

@@ -68,6 +68,14 @@ SECTION "Tauros_P_Fire Back", ROMX
 
 TaurosPFireBackpic:  INCBIN "gfx/pokemon/tauros_p_fire/back.2bpp.lz"
 
+SECTION "Tauros_P_Water Front", ROMX
+
+TaurosPWaterFrontpic: INCBIN "gfx/pokemon/tauros_p_water/front.animated.2bpp.lz"
+
+SECTION "Tauros_P_Water Back", ROMX
+
+TaurosPWaterBackpic:  INCBIN "gfx/pokemon/tauros_p_water/back.2bpp.lz"
+
 SECTION "Tauros_P Front", ROMX
 
 TaurosPFrontpic:     INCBIN "gfx/pokemon/tauros_p/front.animated.2bpp.lz"

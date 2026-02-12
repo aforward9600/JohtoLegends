@@ -759,3 +759,5 @@ PokemonPicPointers::
 	dba DeoxysBackpic
 	dba TaurosPFireFrontpic
 	dba TaurosPFireBackpic
+	dba TaurosPWaterFrontpic
+	dba TaurosPWaterBackpic

@@ -378,3 +378,4 @@ PokemonCries::
 	mon_cry CRY_RAICHU,      $450,  $200 ; REGIGIGAS PLACEHOLDER
 	mon_cry CRY_PIDGEY,     -$104,  $560 ; DEOXYS
 	mon_cry CRY_SQUIRTLE,    $011,  $0c0 ; TAUROS_P_FIRE
+	mon_cry CRY_SQUIRTLE,    $011,  $0c0 ; TAUROS_P_WATER

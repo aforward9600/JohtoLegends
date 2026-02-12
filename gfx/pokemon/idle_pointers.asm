@@ -372,3 +372,4 @@ AnimationIdlePointers:
 	dw RegigigasAnimationIdle
 	dw DeoxysAnimationIdle
 	dw TaurosPAnimationIdle
+	dw TaurosPAnimationIdle

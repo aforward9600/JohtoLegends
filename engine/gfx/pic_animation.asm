@@ -448,7 +448,7 @@ AnimTaurosCheck:
 	jr z, .Plain
 	cp 1
 	jr z, .Fire
-	ld hl, TAUROS_P_FIRE ; change to water
+	ld hl, TAUROS_P_WATER
 	ret
 
 .Fire

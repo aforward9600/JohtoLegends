@@ -23,8 +23,7 @@ GetBaseData::
 	ld a, [wBufferMonForm]
 	and CAUGHT_FORM_2_MASK
 	jr z, .NotTauros
-;	ld bc, TAUROS_P_WATER
-	ld bc, TAUROS_P_FIRE
+	ld bc, TAUROS_P_WATER
 	jr .GotTauros
 
 ; Get BaseData
