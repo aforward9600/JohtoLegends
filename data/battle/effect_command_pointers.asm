@@ -211,5 +211,6 @@ BattleCommandPointers:
 	effectfn BattleCommand_PowerUpPunch
 	effectfn BattleCommand_CalmMind
 	effectfn BattleCommand_BulkUp
+	effectfn BattleCommand_RagingBull
 ;	effectfn BattleCommand_WakeUpSlap
 ;	effectfn BattleCommand_AwakenOpponent

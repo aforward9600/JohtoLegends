@@ -1814,6 +1814,29 @@ HiddenPower:
 	buildopponentrage
 	endmove
 
+RagingBull:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	ragingbull
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	defensiveabilities
+	breakscreens
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	kingsrock
+	checkfaint
+	buildopponentrage
+	endmove
+
 RainDance:
 	checkobedience
 	usedmovetext

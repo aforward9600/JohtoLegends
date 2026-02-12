@@ -210,7 +210,7 @@ TaurosPEvosAttacks:
 	dbw 24, PAYBACK
 	dbw 29, WORK_UP
 	dbw 35, ZEN_HEADBUTT
-;	dbw 41, RAGING_BULL ; need to add
+	dbw 41, RAGING_BULL ; need to add
 	dbw 48, SWAGGER
 	dbw 50, THRASH
 	dbw 55, DOUBLE_EDGE

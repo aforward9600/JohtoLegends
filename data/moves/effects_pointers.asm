@@ -195,4 +195,5 @@ MoveEffectsPointers:
 	dw EerieSpell
 	dw ClearSmog
 	dw PowerUpPunch
+	dw RagingBull
 ;	dw WakeUpSlap

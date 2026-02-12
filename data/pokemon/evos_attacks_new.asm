@@ -600,6 +600,7 @@ DeoxysEvosAttacks:
 TaurosPFireEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
+	dbw 2, RAGING_BULL
 	dbw 3, TAIL_WHIP
 	dbw 5, RAGE
 	dbw 8, HEADBUTT
@@ -609,7 +610,7 @@ TaurosPFireEvosAttacks:
 	dbw 24, FLAME_CHARGE
 	dbw 29, WORK_UP
 	dbw 35, ZEN_HEADBUTT
-;	dbw 41, RAGING_BULL ; need to add
+	dbw 41, RAGING_BULL
 	dbw 48, SWAGGER
 	dbw 50, THRASH
 	dbw 55, FLARE_BLITZ
@@ -619,6 +620,7 @@ TaurosPFireEvosAttacks:
 TaurosPWaterEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
+	dbw 2, RAGING_BULL
 	dbw 3, TAIL_WHIP
 	dbw 5, RAGE
 	dbw 8, HEADBUTT
@@ -628,7 +630,7 @@ TaurosPWaterEvosAttacks:
 	dbw 24, AQUA_JET
 	dbw 29, WORK_UP
 	dbw 35, ZEN_HEADBUTT
-;	dbw 41, RAGING_BULL ; need to add
+	dbw 41, RAGING_BULL
 	dbw 48, SWAGGER
 	dbw 50, THRASH
 	dbw 55, WAVE_CRASH

@@ -279,6 +279,7 @@ AlphabeticalMoveList::
 	dw QUICK_ATTACK
 	dw QUIVER_DANCE
 	dw RAGE
+	dw RAGING_BULL
 	dw RAGING_FURY
 	dw RAIN_DANCE
 	dw RAPID_SPIN

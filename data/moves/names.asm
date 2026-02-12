@@ -420,4 +420,5 @@ MoveNames::
 	db "Eerie Spell@"
 	db "MeteoAssault@"
 	db "Clear Smog@"
+	db "Raging Bull@"
 ;	db "Wake Up Slap@"

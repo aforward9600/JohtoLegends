@@ -451,6 +451,7 @@ BattleAnimations::
 	dw BattleAnim_EerieSpell
 	dw BattleAnim_MeteoAssault
 	dw BattleAnim_ClearSmog
+	dw BattleAnim_RagingBull
 ;	dw BattleAnim_WakeUpSlap
 
 BattleAnim_0:
@@ -4338,6 +4339,30 @@ BattleAnim_BulkUp:
     anim_wait 16
     anim_obj ANIM_OBJ_9A, 30, 86, $2c
     anim_jump BattleAnim_Wait32
+
+BattleAnim_RagingBull:
+;	anim_if_param_equal $0, .Normal
+;	anim_if_param_equal $1, .Fighting
+;	anim_if_param_equal $2, .Fire
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
+;	anim_jump .Normal
+
+;.Fighting
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_YELLOW
+;	anim_jump .Normal
+
+;.Fire
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_FIRE
+
+;.Normal
+    anim_1gfx ANIM_GFX_WIND
+.loop
+    anim_sound 0, 0, SFX_ENCORE
+    anim_obj ANIM_OBJ_SWAGGER, 72, 88, $44
+    anim_wait 64
+    anim_loop 2, .loop
+    anim_wait 16
+    anim_jump BattleAnim_DoubleEdge
 
 BattleAnim_CalmMind:
     anim_1gfx ANIM_GFX_HIT

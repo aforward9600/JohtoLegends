@@ -427,6 +427,7 @@
 	const EERIE_SPELL
 	const METEOASSAULT
 	const CLEAR_SMOG
+	const RAGING_BULL
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 

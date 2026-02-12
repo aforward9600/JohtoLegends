@@ -85,7 +85,6 @@ MaastersHouseMasterScript:
 	jumptextfaceplayer MastersHouseMasterText
 
 .MasterGoodLuck:
-	halloffame
 	jumptextfaceplayer MasterGoodLuckText
 
 .BeatDragonKid1:

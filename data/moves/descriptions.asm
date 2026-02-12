@@ -426,6 +426,7 @@ MoveDescriptions1:
 	dw EerieSpellDescription
 	dw HyperBeamDescription ; MeteoAssault
 	dw ClearSmogDescription
+	dw RagingBullDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1822,3 +1823,7 @@ EerieSpellDescription:
 ClearSmogDescription:
 	db   "Resets target's"
 	line "stats.@"
+
+RagingBullDescription:
+	db   "Breaks screens,"
+	line "type varies.@"
