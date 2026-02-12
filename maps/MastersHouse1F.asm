@@ -85,6 +85,7 @@ MaastersHouseMasterScript:
 	jumptextfaceplayer MastersHouseMasterText
 
 .MasterGoodLuck:
+	halloffame
 	jumptextfaceplayer MasterGoodLuckText
 
 .BeatDragonKid1:
@@ -645,8 +646,8 @@ WalkUpToRival2:
 	buttonsound
 	getitemname STRING_BUFFER_4, POKE_BALL
 	scall Rival_ReceiveTheBalls
-	giveitem MASTER_BALL, 10
-;	giveitem POKE_BALL, 10
+;	giveitem MASTER_BALL, 10
+	giveitem POKE_BALL, 10
 	buttonsound
 	itemnotify
 	writetext RivalGoodByeText

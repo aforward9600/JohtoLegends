@@ -255,6 +255,7 @@ AnimateHOFMonEntrance:
 	ld a, [hli]
 	ld [wTempMonDVs + 1], a
 	ld hl, wTempMonDVs
+	ld bc, wTempMonCaughtTime
 	predef GetUnownLetter
 	hlcoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
@@ -491,6 +492,7 @@ DisplayHOFMon:
 	ld a, [wTempMonSpecies]
 	ld [wCurPartySpecies], a
 	ld hl, wTempMonDVs
+	ld bc, wTempMonCaughtTime
 	predef GetUnownLetter
 	xor a
 	ld [wBoxAlignment], a
