@@ -3,6 +3,7 @@ LoadOverworldMonIcon:
 	call ReadMonMenuIcon
 	ld a, b
 	call GetPokemonIndexFromID
+	call CheckTaurosIcon
 	ld b, h
 	ld c, l
 	ld hl, IconPointers
@@ -113,6 +114,7 @@ GetMenuMonIconPalette_PredeterminedShininess:
 	push af
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
+	call CheckTaurosIcon
 	ld c, l
 	ld b, h
 	ld hl, MonMenuIconPals
@@ -159,8 +161,7 @@ LoadMenuMonIcon:
 .GetPartyMenuMonIcon:
 	call InitPartyMenuIcon
 	call .GetPartyMonItemGFX
-	call SetPartyMonIconAnimSpeed
-	ret
+	jp SetPartyMonIconAnimSpeed
 
 .GetPartyMonItemGFX:
 	push bc
@@ -363,8 +364,7 @@ Trade_LoadMonIconGFX:
 	call ReadMonMenuIcon
 	ld a, $62
 	ld [wCurIconTile], a
-	call GetMemIconGFX
-	ret
+	jp GetMemIconGFX
 
 GetSpeciesIcon:
 ; Load species icon into VRAM at tile a
@@ -374,6 +374,7 @@ GetSpeciesIcon:
 	call SetMenuMonIconColor
 	ld a, [wTempIconSpecies]
 	call GetPokemonIndexFromID
+	call CheckTaurosIcon
 	pop de
 	ld a, e
 	jr GetIconGFX
@@ -431,6 +432,7 @@ endr
 	push hl
 	ld a, b
 	call GetPokemonIndexFromID
+	call CheckTaurosIcon
 	ld b, h
 	ld c, l
 	ld hl, IconPointers
@@ -544,6 +546,53 @@ ReadMonMenuIcon:
 	ret
 .egg
 	ld b, 0
+	ret
+
+CheckTaurosIcon:
+	ld b, h
+	ld c, l
+	ld a, l
+	sub LOW(TAUROS_P)
+	if HIGH(TAUROS_P) == 0
+		or h
+	else
+		jr nz, .NotTauros
+		if HIGH(TAUROS_P) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(TAUROS_P)
+		endc
+	endc
+	jr nz, .NotTauros
+	ld a, MON_CAUGHTTIME
+	ld hl, wPartyMons
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [wCurPartyMon]
+	call GetPartyLocation
+	ld a, [hl]
+	and CAUGHT_FORM_1_MASK
+	jr z, .Water
+	ld hl, TAUROS_P_FIRE
+	ret
+
+.Water:
+	ld a, [hl]
+	and CAUGHT_FORM_2_MASK
+	jr z, .Plain
+	ld hl, TAUROS_P_FIRE ; change to water
+	ret
+
+.Plain:
+	ld hl, TAUROS_P
+	ret
+
+.NotTauros:
+;	pop bc
+	ld h, b
+	ld l, c
 	ret
 
 INCLUDE "data/pokemon/menu_icons_pals.asm"
