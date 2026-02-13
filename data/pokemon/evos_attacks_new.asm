@@ -600,7 +600,6 @@ DeoxysEvosAttacks:
 TaurosPFireEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
-	dbw 2, RAGING_BULL
 	dbw 3, TAIL_WHIP
 	dbw 5, RAGE
 	dbw 8, HEADBUTT
@@ -620,7 +619,6 @@ TaurosPFireEvosAttacks:
 TaurosPWaterEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
-	dbw 2, RAGING_BULL
 	dbw 3, TAIL_WHIP
 	dbw 5, RAGE
 	dbw 8, HEADBUTT

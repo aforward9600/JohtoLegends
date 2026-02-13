@@ -845,6 +845,10 @@ BattleAnimCmd_Transform:
 	and a
 	jr z, .player
 
+	call GetPartyMonForm
+	ld a, [hl]
+	ld b, h
+	ld c, l
 	ld a, [wTempBattleMonSpecies] ; TempBattleMonSpecies
 	ld [wCurPartySpecies], a ; CurPartySpecies
 	ld hl, wBattleMonDVs ; BattleMonDVs
@@ -857,6 +861,7 @@ BattleAnimCmd_Transform:
 	ld a, [wTempEnemyMonSpecies] ; TempEnemyMonSpecies
 	ld [wCurPartySpecies], a ; CurPartySpecies
 	ld hl, wEnemyMonDVs ; EnemyMonDVs
+	ld bc, wEnemyMonForm
 	predef GetUnownLetter
 	ld de, vTiles0 tile $00
 	predef GetMonBackpic

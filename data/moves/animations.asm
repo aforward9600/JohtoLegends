@@ -2683,8 +2683,7 @@ BattleAnim_Transform:
 	anim_updateactorpic
 	anim_incbgeffect ANIM_BG_WAVE_DEFORM_USER
 	anim_wait 48
-	anim_call BattleAnim_ShowMon_0
-	anim_ret
+	anim_jump BattleAnim_ShowMon_0
 
 BattleAnim_PetalDance:
 	anim_sound 0, 0, SFX_MENU

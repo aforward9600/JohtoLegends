@@ -85,6 +85,7 @@ MaastersHouseMasterScript:
 	jumptextfaceplayer MastersHouseMasterText
 
 .MasterGoodLuck:
+	givepoke DITTO, 5, ORAN_BERRY
 	jumptextfaceplayer MasterGoodLuckText
 
 .BeatDragonKid1:
