@@ -233,8 +233,11 @@ JOHTO_POKEMON EQU const_value
 	const MUNCHLAX
 	const SNORLAX    ; 8f
 	const ARTICUNO   ; 90
+	const ARTICUNO_G
 	const ZAPDOS     ; 91
+	const ZAPDOS_G
 	const MOLTRES    ; 92
+	const MOLTRES_G
 	const DRATINI    ; 93
 	const DRAGONAIR  ; 94
 	const DRAGONITE  ; 95

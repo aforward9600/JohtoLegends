@@ -212,8 +212,11 @@ BitmasksPointers:
 	dw MunchlaxBitmasks
 	dw SnorlaxBitmasks
 	dw ArticunoBitmasks
+	dw ArticunoGBitmasks
 	dw ZapdosBitmasks
+	dw ZapdosGBitmasks
 	dw MoltresBitmasks
+	dw MoltresGBitmasks
 	dw DratiniBitmasks
 	dw DragonairBitmasks
 	dw DragoniteBitmasks

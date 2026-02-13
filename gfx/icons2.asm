@@ -90,8 +90,11 @@ Icons2:
 	dw MunchlaxIcon
 	dw SnorlaxIcon
 	dw ArticunoIcon
+	dw ArticunoGIcon
 	dw ZapdosIcon
+	dw ZapdosGIcon
 	dw MoltresIcon
+	dw MoltresGIcon
 	dw DratiniIcon
 	dw DragonairIcon
 	dw DragoniteIcon
@@ -125,9 +128,6 @@ Icons2:
 	dw FlaaffyIcon
 	dw AmpharosIcon
 	dw AzurillIcon
-	dw MarillIcon
-	dw AzumarillIcon
-	dw BonslyIcon
 
 ShellderIcon:     INCBIN "gfx/icons/shellder.2bpp"
 CloysterIcon:     INCBIN "gfx/icons/cloyster.2bpp"
@@ -217,8 +217,11 @@ AerodactylIcon:   INCBIN "gfx/icons/aerodactyl.2bpp"
 MunchlaxIcon:     INCBIN "gfx/icons/munchlax.2bpp"
 SnorlaxIcon:      INCBIN "gfx/icons/snorlax.2bpp"
 ArticunoIcon:     INCBIN "gfx/icons/articuno.2bpp"
+ArticunoGIcon:    INCBIN "gfx/icons/articuno_g.2bpp"
 ZapdosIcon:       INCBIN "gfx/icons/zapdos.2bpp"
+ZapdosGIcon:      INCBIN "gfx/icons/zapdos_g.2bpp"
 MoltresIcon:      INCBIN "gfx/icons/moltres.2bpp"
+MoltresGIcon:     INCBIN "gfx/icons/moltres_g.2bpp"
 DratiniIcon:      INCBIN "gfx/icons/dratini.2bpp"
 DragonairIcon:    INCBIN "gfx/icons/dragonair.2bpp"
 DragoniteIcon:    INCBIN "gfx/icons/dragonite.2bpp"
@@ -252,6 +255,3 @@ MareepIcon:       INCBIN "gfx/icons/mareep.2bpp"
 FlaaffyIcon:      INCBIN "gfx/icons/flaaffy.2bpp"
 AmpharosIcon:     INCBIN "gfx/icons/ampharos.2bpp"
 AzurillIcon:      INCBIN "gfx/icons/azurill.2bpp"
-MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
-AzumarillIcon:    INCBIN "gfx/icons/azumarill.2bpp"
-BonslyIcon:       INCBIN "gfx/icons/bonsly.2bpp"

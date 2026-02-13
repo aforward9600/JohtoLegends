@@ -212,7 +212,10 @@ INCBIN "gfx/footprints/aerodactyl.1bpp"
 INCBIN "gfx/footprints/munchlax.1bpp"
 INCBIN "gfx/footprints/snorlax.1bpp"
 INCBIN "gfx/footprints/articuno.1bpp"
+INCBIN "gfx/footprints/articuno.1bpp"
 INCBIN "gfx/footprints/zapdos.1bpp"
+INCBIN "gfx/footprints/zapdos.1bpp"
+INCBIN "gfx/footprints/moltres.1bpp"
 INCBIN "gfx/footprints/moltres.1bpp"
 INCBIN "gfx/footprints/gastly.1bpp" ; Dratini
 INCBIN "gfx/footprints/gastly.1bpp" ; Dragonair

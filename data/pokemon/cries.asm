@@ -218,8 +218,11 @@ PokemonCries::
 	mon_cry CRY_GRIMER,      $055,  $081 ; MUNCHLAX
 	mon_cry CRY_GRIMER,      $055,  $081 ; SNORLAX
 	mon_cry CRY_RAICHU,      $080,  $0c0 ; ARTICUNO
+	mon_cry CRY_RAICHU,      $080,  $0c0 ; ARTICUNO_G
 	mon_cry CRY_FEAROW,      $0ff,  $100 ; ZAPDOS
+	mon_cry CRY_FEAROW,      $0ff,  $100 ; ZAPDOS_G
 	mon_cry CRY_RAICHU,      $0f8,  $0c0 ; MOLTRES
+	mon_cry CRY_RAICHU,      $0f8,  $0c0 ; MOLTRES_G
 	mon_cry CRY_BULBASAUR,   $060,  $0c0 ; DRATINI
 	mon_cry CRY_BULBASAUR,   $040,  $100 ; DRAGONAIR
 	mon_cry CRY_BULBASAUR,   $03c,  $140 ; DRAGONITE

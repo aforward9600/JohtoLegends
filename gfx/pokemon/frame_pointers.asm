@@ -212,8 +212,11 @@ FramesPointers:
 	dba MunchlaxFrames
 	dba SnorlaxFrames
 	dba ArticunoFrames
+	dba ArticunoGFrames
 	dba ZapdosFrames
+	dba ZapdosGFrames
 	dba MoltresFrames
+	dba MoltresGFrames
 	dba DratiniFrames
 	dba DragonairFrames
 	dba DragoniteFrames

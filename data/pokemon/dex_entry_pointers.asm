@@ -213,8 +213,11 @@ PokedexDataPointerTable:
 	dba MunchlaxPokedexEntry
 	dba SnorlaxPokedexEntry
 	dba ArticunoPokedexEntry
+	dba ArticunoGPokedexEntry
 	dba ZapdosPokedexEntry
+	dba ZapdosGPokedexEntry
 	dba MoltresPokedexEntry
+	dba MoltresGPokedexEntry
 	dba DratiniPokedexEntry
 	dba DragonairPokedexEntry
 	dba DragonitePokedexEntry

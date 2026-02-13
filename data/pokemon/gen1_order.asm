@@ -225,9 +225,9 @@ Pokered_MonIndices:
 	db AZUMARILL
 	db SUDOWOODO
 	db POLITOED
-	db HOPPIP
-	db SKIPLOOM
-	db JUMPLUFF
+	db ARTICUNO_G
+	db ZAPDOS_G
+	db MOLTRES_G
 	db TAUROS_P
 	db MR__MIME_G
 	db WEEZING_G

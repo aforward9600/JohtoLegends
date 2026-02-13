@@ -216,6 +216,9 @@ PreviousEvolutionStage::
 	dw 0
 	dw 0
 	dw 0
+	dw 0
+	dw 0
+	dw 0
 	dw DRATINI
 	dw DRAGONAIR
 	dw 0

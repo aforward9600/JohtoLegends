@@ -212,8 +212,11 @@ AnimationIdlePointers:
 	dw MunchlaxAnimationIdle
 	dw SnorlaxAnimationIdle
 	dw ArticunoAnimationIdle
+	dw ArticunoGAnimationIdle
 	dw ZapdosAnimationIdle
+	dw ZapdosGAnimationIdle
 	dw MoltresAnimationIdle
+	dw MoltresGAnimationIdle
 	dw DratiniAnimationIdle
 	dw DragonairAnimationIdle
 	dw DragoniteAnimationIdle

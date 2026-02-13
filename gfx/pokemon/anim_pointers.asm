@@ -212,8 +212,11 @@ AnimationPointers:
 	dw MunchlaxAnimation
 	dw SnorlaxAnimation
 	dw ArticunoAnimation
+	dw ArticunoGAnimation
 	dw ZapdosAnimation
+	dw ZapdosGAnimation
 	dw MoltresAnimation
+	dw MoltresGAnimation
 	dw DratiniAnimation
 	dw DragonairAnimation
 	dw DragoniteAnimation

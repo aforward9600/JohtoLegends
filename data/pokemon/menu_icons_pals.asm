@@ -224,8 +224,11 @@ MonMenuIconPals:
 	icon_pals BROWN,  BLUE   ; MUNCHLAX
 	icon_pals BROWN,  BLUE   ; SNORLAX
 	icon_pals BLUE,   TEAL   ; ARTICUNO
+	icon_pals PURPLE, BLUE   ; ARTICUNO_G
 	icon_pals BROWN,  RED    ; ZAPDOS
+	icon_pals BROWN,  RED    ; ZAPDOS_G
 	icon_pals RED,    PINK   ; MOLTRES
+	icon_pals PINK,   RED    ; MOLTRES
 	icon_pals BLUE,   PINK   ; DRATINI
 	icon_pals BLUE,   PINK   ; DRAGONAIR
 	icon_pals RED,    PINK   ; DRAGONITE

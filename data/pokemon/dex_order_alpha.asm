@@ -16,6 +16,7 @@ AlphabeticalPokedexOrder:
 	dw ARIADOS
 	dw ARON
 	dw ARTICUNO
+	dw ARTICUNO_G
 	dw AZUMARILL
 	dw AZURILL
 	dw BAGON
@@ -206,6 +207,7 @@ AlphabeticalPokedexOrder:
 	dw MISMAGIUS
 	dw MISSINGNO
 	dw MOLTRES
+	dw MOLTRES_G
 	dw MR__MIME
 	dw MR__MIME_G
 	dw MR__RIME
@@ -372,6 +374,7 @@ AlphabeticalPokedexOrder:
 	dw YANMA
 	dw YANMEGA
 	dw ZAPDOS
+	dw ZAPDOS_G
 	dw ZUBAT
 	dw TAUROS_P_FIRE
 	dw TAUROS_P_WATER

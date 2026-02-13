@@ -28,8 +28,11 @@ EvosAttacksPointers2::
 	dw MunchlaxEvosAttacks
 	dw SnorlaxEvosAttacks
 	dw ArticunoEvosAttacks
+	dw ArticunoGEvosAttacks
 	dw ZapdosEvosAttacks
+	dw ZapdosGEvosAttacks
 	dw MoltresEvosAttacks
+	dw MoltresGEvosAttacks
 	dw DratiniEvosAttacks
 	dw DragonairEvosAttacks
 	dw DragoniteEvosAttacks
@@ -666,6 +669,26 @@ ArticunoEvosAttacks:
 	dbw 99, SHEER_COLD
 	db 0 ; no more level-up moves
 
+ArticunoGEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, GUST
+	dbw 1, CONFUSION
+	dbw 8, MIST
+	dbw 15, PSYBEAM
+	dbw 22, MIND_READER
+	dbw 29, ANCIENTPOWER
+	dbw 36, AGILITY
+	dbw 43, DUALWINGBEAT
+	dbw 50, REFLECT
+	dbw 57, LIGHT_SCREEN
+	dbw 64, SAFEGUARD
+	dbw 71, PSYCHIC_M
+	dbw 78, FREEZE_GLARE
+	dbw 85, RECOVER
+	dbw 92, HURRICANE
+	dbw 99, DREAM_EATER
+	db 0 ; no more level-up moves
+
 ZapdosEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, PECK
@@ -686,6 +709,26 @@ ZapdosEvosAttacks:
 	dbw 99, ZAP_CANNON
 	db 0 ; no more level-up moves
 
+ZapdosGEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, PECK
+	dbw 1, ROCK_SMASH
+	dbw 8, FOCUS_ENERGY
+	dbw 15, DETECT
+	dbw 22, AERIAL_ACE
+	dbw 29, ANCIENTPOWER
+	dbw 36, AGILITY
+	dbw 43, BRICK_BREAK
+	dbw 50, HI_JUMP_KICK
+	dbw 57, BULK_UP
+	dbw 64, LIGHT_SCREEN
+	dbw 71, DRILL_PECK
+	dbw 78, THUNDER_KICK
+	dbw 85, ROOST
+	dbw 92, HURRICANE
+	dbw 99, CLOSE_COMBAT
+	db 0 ; no more level-up moves
+
 MoltresEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, WING_ATTACK
@@ -704,6 +747,26 @@ MoltresEvosAttacks:
 	dbw 85, ROOST
 	dbw 92, HURRICANE
 	dbw 99, FIRE_BLAST
+	db 0 ; no more level-up moves
+
+MoltresGEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, GUST
+	dbw 1, PAYBACK
+	dbw 8, PURSUIT
+	dbw 15, AGILITY
+	dbw 22, ENDURE
+	dbw 29, ANCIENTPOWER
+	dbw 36, FAINT_ATTACK
+	dbw 43, SAFEGUARD
+	dbw 50, AIR_SLASH
+	dbw 57, NASTY_PLOT
+	dbw 64, SUCKER_PUNCH
+	dbw 71, SKY_ATTACK
+	dbw 78, FIERY_WRATH
+	dbw 85, ROOST
+	dbw 92, HURRICANE
+	dbw 99, CATASTROPHE
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:

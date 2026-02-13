@@ -354,8 +354,11 @@ NewPokedexOrder:
 	dw CROCONAW
 	dw FERALIGATR
 	dw ARTICUNO
+	dw ARTICUNO_G
 	dw ZAPDOS
+	dw ZAPDOS_G
 	dw MOLTRES
+	dw MOLTRES_G
 	dw RAIKOU
 	dw ENTEI
 	dw SUICUNE

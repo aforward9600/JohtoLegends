@@ -1283,6 +1283,30 @@ SECTION "Electrode_H Back", ROMX
 
 ElectrodeHBackpic:   INCBIN "gfx/pokemon/electrode_h/back.2bpp.lz"
 
+SECTION "Articuno_G Back", ROMX
+
+ArticunoGBackpic:     INCBIN "gfx/pokemon/articuno_g/back.2bpp.lz"
+
+SECTION "Articuno_G Front", ROMX
+
+ArticunoGFrontpic:     INCBIN "gfx/pokemon/articuno_g/front.animated.2bpp.lz"
+
+SECTION "Zapdos_G Back", ROMX
+
+ZapdosGBackpic:     INCBIN "gfx/pokemon/zapdos_g/back.2bpp.lz"
+
+SECTION "Zapdos_G Front", ROMX
+
+ZapdosGFrontpic:     INCBIN "gfx/pokemon/zapdos_g/front.animated.2bpp.lz"
+
+SECTION "Moltres_G Back", ROMX
+
+MoltresGBackpic:     INCBIN "gfx/pokemon/moltres_g/back.2bpp.lz"
+
+SECTION "Moltres_G Front", ROMX
+
+MoltresGFrontpic:     INCBIN "gfx/pokemon/moltres_g/front.animated.2bpp.lz"
+
 SECTION "Slowpoke_G Front", ROMX
 
 SlowpokeGFrontpic:   INCBIN "gfx/pokemon/slowpoke_g/front.animated.2bpp.lz"

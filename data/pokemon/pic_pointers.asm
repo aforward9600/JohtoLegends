@@ -436,10 +436,16 @@ PokemonPicPointers::
 	dba SnorlaxBackpic
 	dba ArticunoFrontpic
 	dba ArticunoBackpic
+	dba ArticunoGFrontpic
+	dba ArticunoGBackpic
 	dba ZapdosFrontpic
 	dba ZapdosBackpic
+	dba ZapdosGFrontpic
+	dba ZapdosGBackpic
 	dba MoltresFrontpic
 	dba MoltresBackpic
+	dba MoltresGFrontpic
+	dba MoltresGBackpic
 	dba DratiniFrontpic
 	dba DratiniBackpic
 	dba DragonairFrontpic

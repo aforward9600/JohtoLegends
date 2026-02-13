@@ -1,7 +1,7 @@
 IconPointers::
 	indirect_table 2, 0
 	indirect_entries MUK_A, Icons1
-	indirect_entries BONSLY, Icons2
+	indirect_entries AZURILL, Icons2
 	indirect_entries NUM_POKEMON, Icons3
 	indirect_table_end
 

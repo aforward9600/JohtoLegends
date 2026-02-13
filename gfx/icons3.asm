@@ -2,6 +2,9 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw MarillIcon
+	dw AzumarillIcon
+	dw BonslyIcon
 	dw SudowoodoIcon
 	dw HoppipIcon
 	dw SkiploomIcon
@@ -126,6 +129,9 @@ Icons3:
 	dw TaurosPFireIcon
 	dw TaurosPWaterIcon
 
+MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
+AzumarillIcon:    INCBIN "gfx/icons/azumarill.2bpp"
+BonslyIcon:       INCBIN "gfx/icons/bonsly.2bpp"
 SudowoodoIcon:    INCBIN "gfx/icons/sudowoodo.2bpp"
 HoppipIcon:       INCBIN "gfx/icons/hoppip.2bpp"
 SkiploomIcon:     INCBIN "gfx/icons/skiploom.2bpp"
