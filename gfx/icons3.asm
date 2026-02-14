@@ -42,7 +42,9 @@ Icons3:
 	dw ShuckleIcon
 	dw HeracrossIcon
 	dw SneaselIcon
+	dw SneaselHIcon
 	dw WeavileIcon
+	dw SneaslerIcon
 	dw TeddiursaIcon
 	dw UrsaringIcon
 	dw UrsalunaIcon
@@ -125,9 +127,6 @@ Icons3:
 	dw RegirockIcon
 	dw RegiceIcon
 	dw RegisteelIcon
-	dw RegielekiIcon
-	dw RegidragoIcon
-	dw RegigigasIcon
 
 AzurillIcon:      INCBIN "gfx/icons/azurill.2bpp"
 MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
@@ -169,7 +168,9 @@ OverqwilIcon:     INCBIN "gfx/icons/overqwil.2bpp"
 ShuckleIcon:      INCBIN "gfx/icons/shuckle.2bpp"
 HeracrossIcon:    INCBIN "gfx/icons/heracross.2bpp"
 SneaselIcon:	  INCBIN "gfx/icons/sneasel.2bpp"
+SneaselHIcon:	  INCBIN "gfx/icons/sneasel_h.2bpp"
 WeavileIcon:	  INCBIN "gfx/icons/weavile.2bpp"
+SneaslerIcon:	  INCBIN "gfx/icons/sneasler.2bpp"
 TeddiursaIcon:    INCBIN "gfx/icons/teddiursa.2bpp"
 UrsaringIcon:     INCBIN "gfx/icons/ursaring.2bpp"
 UrsalunaIcon:     INCBIN "gfx/icons/ursaluna.2bpp"
@@ -252,6 +253,3 @@ MissingnoIcon:	  INCBIN "gfx/icons/missingno.2bpp"
 RegirockIcon:     INCBIN "gfx/icons/regirock.2bpp"
 RegiceIcon:       INCBIN "gfx/icons/regice.2bpp"
 RegisteelIcon:    INCBIN "gfx/icons/registeel.2bpp"
-RegielekiIcon:    INCBIN "gfx/icons/regieleki.2bpp"
-RegidragoIcon:    INCBIN "gfx/icons/regidrago.2bpp"
-RegigigasIcon:    INCBIN "gfx/icons/regigigas.2bpp"

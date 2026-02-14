@@ -290,7 +290,9 @@ AnimationPointers:
 	dw ShuckleAnimation
 	dw HeracrossAnimation
 	dw SneaselAnimation
+	dw SneaselHAnimation
 	dw WeavileAnimation
+	dw SneaslerAnimation
 	dw TeddiursaAnimation
 	dw UrsaringAnimation
 	dw UrsalunaAnimation

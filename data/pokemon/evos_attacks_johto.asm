@@ -106,7 +106,9 @@ EvosAttacksPointers2::
 	dw ShuckleEvosAttacks
 	dw HeracrossEvosAttacks
 	dw SneaselEvosAttacks
+	dw SneaselHEvosAttacks
 	dw WeavileEvosAttacks
+	dw SneaslerEvosAttacks
 	dw TeddiursaEvosAttacks
 	dw UrsaringEvosAttacks
 	dw UrsalunaEvosAttacks
@@ -2499,6 +2501,26 @@ SneaselEvosAttacks:
 	dbw 47, ICICLE_CRASH
 	db 0 ; no more level-up moves
 
+SneaselHEvosAttacks:
+	dbbw EVOLVE_ITEM, RAZOR_CLAW, SNEASLER
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 8, QUICK_ATTACK
+	dbw 10, POISON_STING
+	dbw 14, MACH_PUNCH
+	dbw 16, FURY_SWIPES
+	dbw 20, AGILITY
+	dbw 22, METAL_CLAW
+	dbw 25, HONE_CLAWS
+	dbw 28, BRICK_BREAK
+	dbw 32, SCREECH
+	dbw 35, SLASH
+	dbw 40, POISON_JAB
+	dbw 44, GUNK_SHOT
+	dbw 47, CLOSE_COMBAT
+	db 0 ; no more level-up moves
+
 WeavileEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
@@ -2516,6 +2538,27 @@ WeavileEvosAttacks:
 	dbw 40, PAYBACK
 	dbw 44, ICICLE_CRASH
 	dbw 47, DARK_PULSE
+	db 0 ; no more level-up moves
+
+SneaslerEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, DIRE_CLAW
+	dbw 1, DIRE_CLAW
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 8, QUICK_ATTACK
+	dbw 10, POISON_STING
+	dbw 14, MACH_PUNCH
+	dbw 16, FURY_SWIPES
+	dbw 20, AGILITY
+	dbw 22, METAL_CLAW
+	dbw 25, HONE_CLAWS
+	dbw 28, BRICK_BREAK
+	dbw 32, SCREECH
+	dbw 35, SLASH
+	dbw 40, POISON_JAB
+	dbw 44, GUNK_SHOT
+	dbw 47, CLOSE_COMBAT
 	db 0 ; no more level-up moves
 
 TeddiursaEvosAttacks:

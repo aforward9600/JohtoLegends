@@ -595,8 +595,12 @@ PokemonPicPointers::
 	dba HeracrossBackpic
 	dba SneaselFrontpic
 	dba SneaselBackpic
+	dba SneaselHFrontpic
+	dba SneaselHBackpic
 	dba WeavileFrontpic
 	dba WeavileBackpic
+	dba SneaslerFrontpic
+	dba SneaslerBackpic
 	dba TeddiursaFrontpic
 	dba TeddiursaBackpic
 	dba UrsaringFrontpic

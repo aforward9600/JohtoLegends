@@ -428,6 +428,7 @@ MoveDescriptions1:
 	dw ClearSmogDescription
 	dw RagingBullDescription
 	dw InfernaBlastDescription
+	dw DireClawDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1832,3 +1833,7 @@ RagingBullDescription:
 InfernaBlastDescription:
 	db   "Can burn, double"
 	line "damage on status.@"
+
+DireClawDescription:
+	db   "Causes poison, pa-"
+	line "ralysis or sleep.@"

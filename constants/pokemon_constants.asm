@@ -311,7 +311,9 @@ JOHTO_POKEMON EQU const_value
 	const SHUCKLE    ; d5
 	const HERACROSS  ; d6
 	const SNEASEL    ; d7
+	const SNEASEL_H
 	const WEAVILE
+	const SNEASLER
 	const TEDDIURSA  ; d8
 	const URSARING   ; d9
 	const URSALUNA

@@ -75,6 +75,7 @@ AlphabeticalMoveList::
 	dw DESTINY_BOND
 	dw DETECT
 	dw DIG
+	dw DIRE_CLAW
 	dw DISABLE
 	dw DISARM_VOICE
 	dw DISCHARGE

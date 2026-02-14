@@ -578,6 +578,13 @@ SECTION "Gastly Front", ROMX
 
 GastlyFrontpic:      INCBIN "gfx/pokemon/gastly/front.animated.2bpp.lz"
 
+SECTION "Sneasel_H Front", ROMX
+
+SneaselHFrontpic:    INCBIN "gfx/pokemon/sneasel_h/front.animated.2bpp.lz"
+
+SECTION "Sneasler Front", ROMX
+
+SneaslerFrontpic:    INCBIN "gfx/pokemon/sneasler/front.animated.2bpp.lz"
 
 SECTION "Pics 7", ROMX
 
@@ -1091,6 +1098,14 @@ DiglettAFrontpic:    INCBIN "gfx/pokemon/diglett_a/front.animated.2bpp.lz"
 SECTION "Muk_A Back", ROMX
 
 MukABackpic:         INCBIN "gfx/pokemon/muk_a/back.2bpp.lz"
+
+SECTION "Sneasel_H Backpic", ROMX
+
+SneaselHBackpic:     INCBIN "gfx/pokemon/sneasel_h/back.2bpp.lz"
+
+SECTION "Sneasler Backpic", ROMX
+
+SneaslerBackpic:     INCBIN "gfx/pokemon/sneasler/back.2bpp.lz"
 
 SECTION "Pics 15", ROMX
 

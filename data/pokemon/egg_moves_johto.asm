@@ -105,6 +105,8 @@ EggMovePointers2::
 	dw ShuckleEggMoves
 	dw HeracrossEggMoves
 	dw SneaselEggMoves
+	dw SneaselHEggMoves
+	dw NoEggMoves2
 	dw NoEggMoves2
 	dw TeddiursaEggMoves
 	dw NoEggMoves2
@@ -609,6 +611,13 @@ SneaselEggMoves:
 	dw KNOCK_OFF
 	dw HONE_CLAWS
 	dw FAKE_OUT
+	dw -1 ; end
+
+SneaselHEggMoves:
+	dw COUNTER
+	dw DOUBLE_HIT_M
+	dw FAKE_OUT
+	dw NIGHT_SLASH
 	dw -1 ; end
 
 TeddiursaEggMoves:

@@ -290,7 +290,9 @@ BitmasksPointers:
 	dw ShuckleBitmasks
 	dw HeracrossBitmasks
 	dw SneaselBitmasks
+	dw SneaselHBitmasks
 	dw WeavileBitmasks
+	dw SneaslerBitmasks
 	dw TeddiursaBitmasks
 	dw UrsaringBitmasks
 	dw UrsalunaBitmasks

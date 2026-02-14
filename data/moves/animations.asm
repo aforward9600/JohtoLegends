@@ -453,6 +453,7 @@ BattleAnimations::
 	dw BattleAnim_ClearSmog
 	dw BattleAnim_RagingBull
 	dw BattleAnim_InfernaBlast
+	dw BattleAnim_DireClaw
 ;	dw BattleAnim_WakeUpSlap
 
 BattleAnim_0:
@@ -5036,6 +5037,7 @@ BattleAnim_Twister:
 
 BattleAnim_RainDance:
 BattleAnim_InRain:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
 	anim_1gfx ANIM_GFX_WATER
 	anim_bgp $f8
 	anim_obp0 $7c
@@ -5312,6 +5314,7 @@ BattleAnim_DrainPunch:
 	anim_jump BattleAnim_Wait48
 
 BattleAnim_ShadowClaw:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_CURSE
 	anim_call BattleAnim_TargetObj_1Row
@@ -5853,6 +5856,7 @@ BattleAnim_SunGFX:
 	anim_ret
 
 BattleAnim_ShadowPunch:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_CURSE
 	anim_call BattleAnim_TargetObj_1Row
@@ -6016,6 +6020,8 @@ BattleAnim_SmartStrike:
 	anim_obj ANIM_OBJ_01, 136, 56, $0
 	anim_jump BattleAnim_Wait16
 
+BattleAnim_DireClaw:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 BattleAnim_CrushClaw:
 	anim_1gfx ANIM_GFX_CUT
 	anim_sound 0, 1, SFX_SCRATCH

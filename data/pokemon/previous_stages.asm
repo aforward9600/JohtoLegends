@@ -291,7 +291,9 @@ PreviousEvolutionStage::
 	dw 0
 	dw 0
 	dw 0
+	dw 0
 	dw SNEASEL
+	dw SNEASEL_H
 	dw 0  ;d8
 	dw TEDDIURSA
 	dw URSARING

@@ -113,7 +113,9 @@ NewPokedexOrder:
 	dw GLIGAR
 	dw GLISCOR
 	dw SNEASEL
+	dw SNEASEL_H
 	dw WEAVILE
+	dw SNEASLER
 	dw BRONZOR
 	dw BRONZONG
 	dw PINECO

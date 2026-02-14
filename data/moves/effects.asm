@@ -2345,6 +2345,29 @@ SleepHit:
 	sleephit
 	endmove
 
+DireClaw:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	kingsrock
+	checkfaint
+	buildopponentrage
+	sheerforce
+	direclaw
+	endmove
+
 FlareBlitz:
 	checkobedience
 	usedmovetext

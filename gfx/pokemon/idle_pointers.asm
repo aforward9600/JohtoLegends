@@ -290,7 +290,9 @@ AnimationIdlePointers:
 	dw ShuckleAnimationIdle
 	dw HeracrossAnimationIdle
 	dw SneaselAnimationIdle
+	dw SneaselHAnimationIdle
 	dw WeavileAnimationIdle
+	dw SneaslerAnimationIdle
 	dw TeddiursaAnimationIdle
 	dw UrsaringAnimationIdle
 	dw UrsalunaAnimationIdle

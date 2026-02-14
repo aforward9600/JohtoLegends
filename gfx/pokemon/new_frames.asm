@@ -1,5 +1,7 @@
 NewFrames:
 
+BeldumFrames:     INCLUDE "gfx/pokemon/beldum/frames.asm"
+MetangFrames:     INCLUDE "gfx/pokemon/metang/frames.asm"
 MetagrossFrames:  INCLUDE "gfx/pokemon/metagross/frames.asm"
 LugiaFrames:      INCLUDE "gfx/pokemon/lugia/frames.asm"
 HoOhFrames:       INCLUDE "gfx/pokemon/ho_oh/frames.asm"

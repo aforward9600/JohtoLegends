@@ -212,6 +212,7 @@ ENDM
 	command calmmind
 	command bulkup
 	command ragingbull
+	command direclaw
 ;	command wakeupslap
 ;	command awakenopponent
 

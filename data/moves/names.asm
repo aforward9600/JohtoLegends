@@ -422,4 +422,5 @@ MoveNames::
 	db "Clear Smog@"
 	db "Raging Bull@"
 	db "InfernaBlast@"
+	db "Dire Claw@"
 ;	db "Wake Up Slap@"

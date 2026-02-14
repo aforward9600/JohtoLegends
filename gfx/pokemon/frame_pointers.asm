@@ -290,7 +290,9 @@ FramesPointers:
 	dba ShuckleFrames
 	dba HeracrossFrames
 	dba SneaselFrames
+	dba SneaselHFrames
 	dba WeavileFrames
+	dba SneaslerFrames
 	dba TeddiursaFrames
 	dba UrsaringFrames
 	dba UrsalunaFrames

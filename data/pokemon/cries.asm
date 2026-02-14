@@ -296,7 +296,9 @@ PokemonCries::
 	mon_cry CRY_DUNSPARCE,   $290,  $0a8 ; SHUCKLE
 	mon_cry CRY_AMPHAROS,    $035,  $0e0 ; HERACROSS
 	mon_cry CRY_WOOPER,      $053,  $0af ; SNEASEL
-	mon_cry CRY_WOOPER,      $053,  $0af ; SNEASEL
+	mon_cry CRY_WOOPER,      $053,  $0af ; SNEASEL_H
+	mon_cry CRY_WOOPER,      $053,  $0af ; WEAVILE
+	mon_cry CRY_WOOPER,      $053,  $0af ; SNEASLER
 	mon_cry CRY_TEDDIURSA,   $7a2,  $06e ; TEDDIURSA
 	mon_cry CRY_TEDDIURSA,   $640,  $0d8 ; URSARING
 	mon_cry CRY_TEDDIURSA,   $640,  $0d8 ; URSALUNA

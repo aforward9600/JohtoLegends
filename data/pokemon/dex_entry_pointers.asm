@@ -291,7 +291,9 @@ PokedexDataPointerTable:
 	dba ShucklePokedexEntry
 	dba HeracrossPokedexEntry
 	dba SneaselPokedexEntry
+	dba SneaselHPokedexEntry
 	dba WeavilePokedexEntry
+	dba SneaslerPokedexEntry
 	dba TeddiursaPokedexEntry
 	dba UrsaringPokedexEntry
 	dba UrsalunaPokedexEntry

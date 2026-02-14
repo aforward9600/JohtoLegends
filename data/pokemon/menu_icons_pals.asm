@@ -302,7 +302,9 @@ MonMenuIconPals:
 	icon_pals RED,    BLUE   ; SHUCKLE
 	icon_pals BLUE,   PURPLE ; HERACROSS
 	icon_pals RED,    PINK   ; SNEASEL
+	icon_pals PURPLE, GRAY   ; SNEASEL_H
 	icon_pals RED,    PINK   ; WEAVILE
+	icon_pals TEAL,   BROWN  ; SNEASLER
 	icon_pals BROWN,  RED    ; TEDDIURSA
 	icon_pals BROWN,  GRAY   ; URSARING
 	icon_pals BROWN,  RED    ; URSALUNA
