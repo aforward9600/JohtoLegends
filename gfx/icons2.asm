@@ -106,6 +106,7 @@ Icons2:
 	dw CyndaquilIcon
 	dw QuilavaIcon
 	dw TyphlosionIcon
+	dw TyphlosionHIcon
 	dw TotodileIcon
 	dw CroconawIcon
 	dw FeraligatrIcon
@@ -127,7 +128,6 @@ Icons2:
 	dw MareepIcon
 	dw FlaaffyIcon
 	dw AmpharosIcon
-	dw AzurillIcon
 
 ShellderIcon:     INCBIN "gfx/icons/shellder.2bpp"
 CloysterIcon:     INCBIN "gfx/icons/cloyster.2bpp"
@@ -233,6 +233,7 @@ MeganiumIcon:     INCBIN "gfx/icons/meganium.2bpp"
 CyndaquilIcon:    INCBIN "gfx/icons/cyndaquil.2bpp"
 QuilavaIcon:      INCBIN "gfx/icons/quilava.2bpp"
 TyphlosionIcon:   INCBIN "gfx/icons/typhlosion.2bpp"
+TyphlosionHIcon:  INCBIN "gfx/icons/typhlosion_h.2bpp"
 TotodileIcon:     INCBIN "gfx/icons/totodile.2bpp"
 CroconawIcon:     INCBIN "gfx/icons/croconaw.2bpp"
 FeraligatrIcon:   INCBIN "gfx/icons/feraligatr.2bpp"
@@ -254,4 +255,3 @@ XatuIcon:         INCBIN "gfx/icons/xatu.2bpp"
 MareepIcon:       INCBIN "gfx/icons/mareep.2bpp"
 FlaaffyIcon:      INCBIN "gfx/icons/flaaffy.2bpp"
 AmpharosIcon:     INCBIN "gfx/icons/ampharos.2bpp"
-AzurillIcon:      INCBIN "gfx/icons/azurill.2bpp"

@@ -937,6 +937,10 @@ SECTION "Arcanine_H Back", ROMX
 
 ArcanineHBackpic:    INCBIN "gfx/pokemon/arcanine_h/back.2bpp.lz"
 
+SECTION "Typhlosion_H Back", ROMX
+
+TyphlosionHBackpic:  INCBIN "gfx/pokemon/typhlosion_h/back.2bpp.lz"
+
 
 SECTION "Pics 13", ROMX
 
@@ -1530,6 +1534,10 @@ LaironBackpic:       INCBIN "gfx/pokemon/lairon/back.2bpp.lz"
 AggronFrontpic:      INCBIN "gfx/pokemon/aggron/front.animated.2bpp.lz"
 AggronBackpic:       INCBIN "gfx/pokemon/aggron/back.2bpp.lz"
 EinPic:              INCBIN "gfx/trainers/ein.2bpp.lz"
+
+SECTION "Typhlosion_H Front", ROMX
+
+TyphlosionHFrontpic: INCBIN "gfx/pokemon/typhlosion_h/front.animated.2bpp.lz"
 
 SECTION "Pics 29", ROMX
 

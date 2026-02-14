@@ -185,6 +185,7 @@ AlphabeticalMoveList::
 	dw ICICLE_CRASH
 	dw ICICLE_SPEAR
 	dw ICY_WIND
+	dw INFERNABLAST
 	dw INFERNO
 	dw IRON_DEFENSE
 	dw IRON_HEAD

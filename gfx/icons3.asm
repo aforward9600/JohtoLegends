@@ -2,6 +2,7 @@ SECTION "Mon Icons 3", ROMX
 
 Icons3:
 
+	dw AzurillIcon
 	dw MarillIcon
 	dw AzumarillIcon
 	dw BonslyIcon
@@ -127,8 +128,8 @@ Icons3:
 	dw RegigigasIcon
 	dw DeoxysIcon
 	dw TaurosPFireIcon
-	dw TaurosPWaterIcon
 
+AzurillIcon:      INCBIN "gfx/icons/azurill.2bpp"
 MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
 AzumarillIcon:    INCBIN "gfx/icons/azumarill.2bpp"
 BonslyIcon:       INCBIN "gfx/icons/bonsly.2bpp"
@@ -254,4 +255,3 @@ RegidragoIcon:    INCBIN "gfx/icons/regidrago.2bpp"
 RegigigasIcon:    INCBIN "gfx/icons/regigigas.2bpp"
 DeoxysIcon:       INCBIN "gfx/icons/deoxys.2bpp"
 TaurosPFireIcon:  INCBIN "gfx/icons/tauros_p_fire.2bpp"
-TaurosPWaterIcon: INCBIN "gfx/icons/tauros_p_water.2bpp"

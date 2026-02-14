@@ -85,6 +85,8 @@ MaastersHouseMasterScript:
 	jumptextfaceplayer MastersHouseMasterText
 
 .MasterGoodLuck:
+	givepoke QUILAVA, 35, RARE_CANDY
+	givepoke QUILAVA, 35, RARE_CANDY
 	jumptextfaceplayer MasterGoodLuckText
 
 .BeatDragonKid1:

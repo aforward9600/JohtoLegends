@@ -488,6 +488,8 @@ INCBIN "gfx/pokemon/quilava/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/quilava/shiny.pal"
 INCBIN "gfx/pokemon/typhlosion/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/typhlosion/shiny.pal"
+INCLUDE "gfx/pokemon/typhlosion_h/normal.pal"
+INCLUDE "gfx/pokemon/typhlosion_h/shiny.pal"
 INCBIN "gfx/pokemon/totodile/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/totodile/shiny.pal"
 INCBIN "gfx/pokemon/croconaw/front.gbcpal", middle_colors

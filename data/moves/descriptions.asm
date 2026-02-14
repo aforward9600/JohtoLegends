@@ -427,6 +427,7 @@ MoveDescriptions1:
 	dw HyperBeamDescription ; MeteoAssault
 	dw ClearSmogDescription
 	dw RagingBullDescription
+	dw InfernaBlastDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1827,3 +1828,7 @@ ClearSmogDescription:
 RagingBullDescription:
 	db   "Breaks screens,"
 	line "type varies.@"
+
+InfernaBlastDescription:
+	db   "Can burn, double"
+	line "damage on status.@"

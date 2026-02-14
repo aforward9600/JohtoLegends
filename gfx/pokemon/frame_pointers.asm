@@ -228,6 +228,7 @@ FramesPointers:
 	dba CyndaquilFrames
 	dba QuilavaFrames
 	dba TyphlosionFrames
+	dba TyphlosionHFrames
 	dba TotodileFrames
 	dba CroconawFrames
 	dba FeraligatrFrames

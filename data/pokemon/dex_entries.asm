@@ -239,6 +239,7 @@ MeganiumPokedexEntry::   INCLUDE "data/pokemon/dex_entries/meganium.asm"
 CyndaquilPokedexEntry::  INCLUDE "data/pokemon/dex_entries/cyndaquil.asm"
 QuilavaPokedexEntry::    INCLUDE "data/pokemon/dex_entries/quilava.asm"
 TyphlosionPokedexEntry:: INCLUDE "data/pokemon/dex_entries/typhlosion.asm"
+TyphlosionHPokedexEntry:: INCLUDE "data/pokemon/dex_entries/typhlosion_h.asm"
 TotodilePokedexEntry::   INCLUDE "data/pokemon/dex_entries/totodile.asm"
 CroconawPokedexEntry::   INCLUDE "data/pokemon/dex_entries/croconaw.asm"
 

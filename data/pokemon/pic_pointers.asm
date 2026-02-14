@@ -468,6 +468,8 @@ PokemonPicPointers::
 	dba QuilavaBackpic
 	dba TyphlosionFrontpic
 	dba TyphlosionBackpic
+	dba TyphlosionHFrontpic
+	dba TyphlosionHBackpic
 	dba TotodileFrontpic
 	dba TotodileBackpic
 	dba CroconawFrontpic

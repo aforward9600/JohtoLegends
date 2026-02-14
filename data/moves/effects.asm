@@ -2127,6 +2127,31 @@ Hex:
 	buildopponentrage
 	endmove
 
+InfernaBlast:
+	checkobedience
+	usedmovetext
+	doturn
+	hex
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	defensiveabilities
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	kingsrock
+	checkfaint
+	buildopponentrage
+	sheerforce
+	burntarget
+	endmove
+
 Venoshock:
 	checkobedience
 	usedmovetext

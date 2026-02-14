@@ -1,5 +1,6 @@
 NewFrames:
 
+NownFrames:       INCLUDE "gfx/pokemon/nown/frames.asm"
 RegirockFrames:   INCLUDE "gfx/pokemon/regirock/frames.asm"
 RegiceFrames:     INCLUDE "gfx/pokemon/regice/frames.asm"
 RegisteelFrames:  INCLUDE "gfx/pokemon/registeel/frames.asm"

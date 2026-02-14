@@ -343,6 +343,7 @@ AlphabeticalPokedexOrder:
 	dw TOTODILE
 	dw TOXICROAK
 	dw TYPHLOSION
+	dw TYPHLOSION_H
 	dw TYRANITAR
 	dw TYROGUE
 	dw UMBREON

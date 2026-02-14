@@ -281,8 +281,7 @@ CheckSpecialPhoneCall::
 	ld b, 0
 	ld hl, SpecialPhoneCallList
 	ld a, 6
-	call AddNTimes
-	ret
+	jp AddNTimes
 
 SpecialCallOnlyWhenOutside:
 	ld a, [wEnvironment]
@@ -353,8 +352,7 @@ Function90199:
 .OutOfArea:
 	ld b, BANK(UnknownScript_0x90209)
 	ld de, UnknownScript_0x90209
-	call ExecuteCallbackScript
-	ret
+	jp ExecuteCallbackScript
 
 .DoPhoneCall:
 	ld a, b
@@ -365,8 +363,7 @@ Function90199:
 	ld [wPhoneCaller + 1], a
 	ld b, BANK(UnknownScript_0x90205)
 	ld de, UnknownScript_0x90205
-	call ExecuteCallbackScript
-	ret
+	jp ExecuteCallbackScript
 
 UnknownScript_0x90205:
 	memcall wPhoneScriptBank
@@ -448,8 +445,7 @@ RingTwice_StartCall:
 Phone_CallerTextboxWithName:
 	ld a, [wCurCaller]
 	ld b, a
-	call Function90363
-	ret
+	jp Function90363
 
 PhoneCall::
 	ld a, b

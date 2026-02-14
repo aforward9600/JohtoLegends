@@ -44,6 +44,7 @@ EvosAttacksPointers2::
 	dw CyndaquilEvosAttacks
 	dw QuilavaEvosAttacks
 	dw TyphlosionEvosAttacks
+	dw TyphlosionHEvosAttacks
 	dw TotodileEvosAttacks
 	dw CroconawEvosAttacks
 	dw FeraligatrEvosAttacks
@@ -213,7 +214,7 @@ TaurosPEvosAttacks:
 	dbw 24, PAYBACK
 	dbw 29, WORK_UP
 	dbw 35, ZEN_HEADBUTT
-	dbw 41, RAGING_BULL ; need to add
+	dbw 41, RAGING_BULL
 	dbw 48, SWAGGER
 	dbw 50, THRASH
 	dbw 55, DOUBLE_EDGE
@@ -952,6 +953,7 @@ CyndaquilEvosAttacks:
 	db 0 ; no more level-up moves
 
 QuilavaEvosAttacks:
+	dbww EVOLVE_MOVE, ASTONISH, TYPHLOSION_H
 	dbbw EVOLVE_LEVEL, 36, TYPHLOSION
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
@@ -963,6 +965,7 @@ QuilavaEvosAttacks:
 	dbw 24, DEFENSE_CURL
 	dbw 31, SWIFT
 	dbw 35, FLAME_CHARGE
+	dbw 36, ASTONISH
 	dbw 42, LAVA_PLUME
 	dbw 46, FLAMETHROWER
 	dbw 53, INFERNO
@@ -996,6 +999,28 @@ elif DEF(_NOPSS)
 else
 	dbw 69, EARTHQUAKE
 endc
+	dbw 74, FIRE_BLAST
+	dbw 82, BLAST_BURN
+	db 0 ; no more level-up moves
+
+TyphlosionHEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, INFERNABLAST
+	dbw 1, INFERNABLAST
+	dbw 1, TACKLE
+	dbw 1, LEER
+	dbw 6, SMOKESCREEN
+	dbw 10, EMBER
+	dbw 13, QUICK_ATTACK
+	dbw 20, FLAME_WHEEL
+	dbw 24, DEFENSE_CURL
+	dbw 31, SWIFT
+	dbw 35, FLAME_CHARGE
+	dbw 43, LAVA_PLUME
+	dbw 48, FLAMETHROWER
+	dbw 56, INFERNO
+	dbw 61, ROLLOUT
+	dbw 69, SHADOW_BALL
 	dbw 74, FIRE_BLAST
 	dbw 82, BLAST_BURN
 	db 0 ; no more level-up moves

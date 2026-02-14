@@ -228,6 +228,7 @@ AnimationPointers:
 	dw CyndaquilAnimation
 	dw QuilavaAnimation
 	dw TyphlosionAnimation
+	dw TyphlosionHAnimation
 	dw TotodileAnimation
 	dw CroconawAnimation
 	dw FeraligatrAnimation

@@ -249,6 +249,7 @@ JOHTO_POKEMON EQU const_value
 	const CYNDAQUIL  ; 9b
 	const QUILAVA    ; 9c
 	const TYPHLOSION ; 9d
+	const TYPHLOSION_H
 	const TOTODILE   ; 9e
 	const CROCONAW   ; 9f
 	const FERALIGATR ; a0

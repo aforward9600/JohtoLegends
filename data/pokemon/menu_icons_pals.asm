@@ -240,6 +240,7 @@ MonMenuIconPals:
 	icon_pals RED,    PURPLE ; CYNDAQUIL
 	icon_pals RED,    PURPLE ; QUILAVA
 	icon_pals RED,    PURPLE ; TYPHLOSION
+	icon_pals PURPLE, PURPLE ; TYPHLOSION_H
 	icon_pals BLUE,   TEAL   ; TOTODILE
 	icon_pals BLUE,   TEAL   ; CROCONAW
 	icon_pals BLUE,   TEAL   ; FERALIGATR

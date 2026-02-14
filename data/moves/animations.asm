@@ -452,6 +452,7 @@ BattleAnimations::
 	dw BattleAnim_MeteoAssault
 	dw BattleAnim_ClearSmog
 	dw BattleAnim_RagingBull
+	dw BattleAnim_InfernaBlast
 ;	dw BattleAnim_WakeUpSlap
 
 BattleAnim_0:
@@ -4669,6 +4670,8 @@ BattleAnim_PainSplit:
 	anim_wait 1
 	anim_ret
 
+BattleAnim_InfernaBlast:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_DRAGON_RAGE
 BattleAnim_RagingFury:
 BattleAnim_SacredFire:
 BattleAnim_FlareBlitz:

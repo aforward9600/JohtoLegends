@@ -196,4 +196,5 @@ MoveEffectsPointers:
 	dw ClearSmog
 	dw PowerUpPunch
 	dw RagingBull
+	dw InfernaBlast
 ;	dw WakeUpSlap

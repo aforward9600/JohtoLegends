@@ -223,7 +223,7 @@ Pokered_MonIndices:
 	db BELLOSSOM
 	db MARILL
 	db AZUMARILL
-	db SUDOWOODO
+	db TYPHLOSION_H
 	db POLITOED
 	db ARTICUNO_G
 	db ZAPDOS_G

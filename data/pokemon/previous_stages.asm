@@ -229,6 +229,7 @@ PreviousEvolutionStage::
 	dw 0
 	dw CYNDAQUIL
 	dw QUILAVA
+	dw QUILAVA
 	dw 0
 	dw TOTODILE
 	dw CROCONAW   ;a0

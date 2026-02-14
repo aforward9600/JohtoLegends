@@ -234,6 +234,7 @@ PokemonCries::
 	mon_cry CRY_CYNDAQUIL,   $347,  $080 ; CYNDAQUIL
 	mon_cry CRY_CYNDAQUIL,   $321,  $120 ; QUILAVA
 	mon_cry CRY_TYPHLOSION,  $f00,  $0d4 ; TYPHLOSION
+	mon_cry CRY_TYPHLOSION,  $f00,  $0d4 ; TYPHLOSION_H
 	mon_cry CRY_TOTODILE,    $46c,  $0e8 ; TOTODILE
 	mon_cry CRY_TOTODILE,    $440,  $110 ; CROCONAW
 	mon_cry CRY_TOTODILE,    $3fc,  $180 ; FERALIGATR

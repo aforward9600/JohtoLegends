@@ -228,6 +228,7 @@ AnimationIdlePointers:
 	dw CyndaquilAnimationIdle
 	dw QuilavaAnimationIdle
 	dw TyphlosionAnimationIdle
+	dw TyphlosionHAnimationIdle
 	dw TotodileAnimationIdle
 	dw CroconawAnimationIdle
 	dw FeraligatrAnimationIdle

@@ -232,6 +232,7 @@ PokemonNames::
 	db "Cyndaquil@"
 	db "Quilava@@@"
 	db "Typhlosion"
+	db "Typhlosion"
 	db "Totodile@@"
 	db "Croconaw@@"
 	db "Feraligatr"

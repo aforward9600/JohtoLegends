@@ -229,6 +229,7 @@ PokedexDataPointerTable:
 	dba CyndaquilPokedexEntry
 	dba QuilavaPokedexEntry
 	dba TyphlosionPokedexEntry
+	dba TyphlosionHPokedexEntry
 	dba TotodilePokedexEntry
 	dba CroconawPokedexEntry
 	dba FeraligatrPokedexEntry

@@ -421,4 +421,5 @@ MoveNames::
 	db "MeteoAssault@"
 	db "Clear Smog@"
 	db "Raging Bull@"
+	db "InfernaBlast@"
 ;	db "Wake Up Slap@"

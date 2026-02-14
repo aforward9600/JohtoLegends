@@ -228,6 +228,7 @@ BitmasksPointers:
 	dw CyndaquilBitmasks
 	dw QuilavaBitmasks
 	dw TyphlosionBitmasks
+	dw TyphlosionHBitmasks
 	dw TotodileBitmasks
 	dw CroconawBitmasks
 	dw FeraligatrBitmasks
