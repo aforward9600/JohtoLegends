@@ -17,7 +17,9 @@ Icons3:
 	dw YanmaIcon
 	dw YanmegaIcon
 	dw WooperIcon
+	dw WooperPIcon
 	dw QuagsireIcon
+	dw ClodsireIcon
 	dw MurkrowIcon
 	dw HonchkrowIcon
 	dw MisdreavusIcon
@@ -126,8 +128,6 @@ Icons3:
 	dw RegielekiIcon
 	dw RegidragoIcon
 	dw RegigigasIcon
-	dw DeoxysIcon
-	dw TaurosPFireIcon
 
 AzurillIcon:      INCBIN "gfx/icons/azurill.2bpp"
 MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
@@ -144,7 +144,9 @@ SunfloraIcon:     INCBIN "gfx/icons/sunflora.2bpp"
 YanmaIcon:        INCBIN "gfx/icons/yanma.2bpp"
 YanmegaIcon:      INCBIN "gfx/icons/yanmega.2bpp"
 WooperIcon:       INCBIN "gfx/icons/wooper.2bpp"
+WooperPIcon:      INCBIN "gfx/icons/wooper_p.2bpp"
 QuagsireIcon:     INCBIN "gfx/icons/quagsire.2bpp"
+ClodsireIcon:     INCBIN "gfx/icons/clodsire.2bpp"
 MurkrowIcon:      INCBIN "gfx/icons/murkrow.2bpp"
 HonchkrowIcon:    INCBIN "gfx/icons/honchkrow.2bpp"
 MisdreavusIcon:   INCBIN "gfx/icons/misdreavus.2bpp"
@@ -253,5 +255,3 @@ RegisteelIcon:    INCBIN "gfx/icons/registeel.2bpp"
 RegielekiIcon:    INCBIN "gfx/icons/regieleki.2bpp"
 RegidragoIcon:    INCBIN "gfx/icons/regidrago.2bpp"
 RegigigasIcon:    INCBIN "gfx/icons/regigigas.2bpp"
-DeoxysIcon:       INCBIN "gfx/icons/deoxys.2bpp"
-TaurosPFireIcon:  INCBIN "gfx/icons/tauros_p_fire.2bpp"

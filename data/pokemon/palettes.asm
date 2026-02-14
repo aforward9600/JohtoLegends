@@ -562,8 +562,12 @@ INCLUDE "gfx/pokemon/yanmega/normal.pal"
 INCLUDE "gfx/pokemon/yanmega/shiny.pal"
 INCBIN "gfx/pokemon/wooper/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/wooper/shiny.pal"
+INCBIN "gfx/pokemon/wooper_p/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/wooper_p/shiny.pal"
 INCBIN "gfx/pokemon/quagsire/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/quagsire/shiny.pal"
+INCBIN "gfx/pokemon/clodsire/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/clodsire/shiny.pal"
 INCBIN "gfx/pokemon/murkrow/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/murkrow/shiny.pal"
 INCLUDE "gfx/pokemon/honchkrow/normal.pal"

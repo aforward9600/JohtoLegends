@@ -277,7 +277,9 @@ MonMenuIconPals:
 	icon_pals RED,    BLUE   ; YANMA
 	icon_pals GREEN,  TEAL   ; YANMEGA
 	icon_pals BLUE,   PINK   ; WOOPER
+	icon_pals BROWN,  BLUE   ; WOOPER_P
 	icon_pals BLUE,   PINK   ; QUAGSIRE
+	icon_pals BROWN,  BLUE   ; CLODSIRE
 	icon_pals BLUE,   PURPLE ; MURKROW
 	icon_pals BLUE,   PURPLE ; HONCHKROW
 	icon_pals PINK,   BLUE   ; MISDREAVUS

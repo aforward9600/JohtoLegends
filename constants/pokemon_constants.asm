@@ -286,7 +286,9 @@ JOHTO_POKEMON EQU const_value
 	const YANMA      ; c1
 	const YANMEGA
 	const WOOPER     ; c2
+	const WOOPER_P
 	const QUAGSIRE   ; c3
+	const CLODSIRE
 	const MURKROW    ; c6
 	const HONCHKROW  ; fe
 	const MISDREAVUS ; c8

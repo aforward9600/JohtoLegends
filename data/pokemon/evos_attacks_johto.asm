@@ -81,7 +81,9 @@ EvosAttacksPointers2::
 	dw YanmaEvosAttacks
 	dw YanmegaEvosAttacks
 	dw WooperEvosAttacks
+	dw WooperPEvosAttacks
 	dw QuagsireEvosAttacks
+	dw ClodsireEvosAttacks
 	dw MurkrowEvosAttacks
 	dw HonchkrowEvosAttacks
 	dw MisdreavusEvosAttacks
@@ -1967,6 +1969,26 @@ WooperEvosAttacks:
 	dbw 56, WAVE_CRASH
 	db 0 ; no more level-up moves
 
+WooperPEvosAttacks:
+	dbbw EVOLVE_LEVEL, 20, CLODSIRE
+	db 0 ; no more evolutions
+	dbw 1, ACID
+	dbw 1, TAIL_WHIP
+	dbw 9, MUD_SHOT
+	dbw 12, POISON_TAIL
+	dbw 15, SLAM
+	dbw 19, MUD_BOMB
+	dbw 23, AMNESIA
+	dbw 29, POISON_JAB
+	dbw 33, EARTHQUAKE
+	dbw 37, TOXIC
+	dbw 43, SPIKES
+	dbw 43, HAZE
+	dbw 47, SLUDGE_WAVE
+	dbw 51, EARTH_POWER
+	dbw 56, GUNK_SHOT
+	db 0 ; no more level-up moves
+
 QuagsireEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, BULLDOZE
@@ -1985,6 +2007,27 @@ QuagsireEvosAttacks:
 	dbw 53, MUDDY_WATER
 	dbw 57, AQUA_TAIL
 	dbw 62, WAVE_CRASH
+	db 0 ; no more level-up moves
+
+ClodsireEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, BULLDOZE
+	dbw 1, BULLDOZE
+	dbw 1, ACID
+	dbw 1, TAIL_WHIP
+	dbw 9, MUD_SHOT
+	dbw 12, POISON_TAIL
+	dbw 15, SLAM
+	dbw 19, MUD_BOMB
+	dbw 24, AMNESIA
+	dbw 31, POISON_JAB
+	dbw 36, EARTHQUAKE
+	dbw 41, TOXIC
+	dbw 48, SPIKES
+	dbw 48, HAZE
+	dbw 53, SLUDGE_WAVE
+	dbw 57, EARTH_POWER
+	dbw 62, GUNK_SHOT
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:

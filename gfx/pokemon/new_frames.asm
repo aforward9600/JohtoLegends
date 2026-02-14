@@ -1,5 +1,10 @@
 NewFrames:
 
+MetagrossFrames:  INCLUDE "gfx/pokemon/metagross/frames.asm"
+LugiaFrames:      INCLUDE "gfx/pokemon/lugia/frames.asm"
+HoOhFrames:       INCLUDE "gfx/pokemon/ho_oh/frames.asm"
+CelebiFrames:     INCLUDE "gfx/pokemon/celebi/frames.asm"
+MissingnoFrames:  INCLUDE "gfx/pokemon/missingno/frames.asm"
 NownFrames:       INCLUDE "gfx/pokemon/nown/frames.asm"
 RegirockFrames:   INCLUDE "gfx/pokemon/regirock/frames.asm"
 RegiceFrames:     INCLUDE "gfx/pokemon/regice/frames.asm"

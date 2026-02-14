@@ -265,7 +265,9 @@ AnimationPointers:
 	dw YanmaAnimation
 	dw YanmegaAnimation
 	dw WooperAnimation
+	dw WooperPAnimation
 	dw QuagsireAnimation
+	dw ClodsireAnimation
 	dw MurkrowAnimation
 	dw HonchkrowAnimation
 	dw MisdreavusAnimation

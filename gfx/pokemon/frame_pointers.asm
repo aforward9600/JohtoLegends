@@ -265,7 +265,9 @@ FramesPointers:
 	dba YanmaFrames
 	dba YanmegaFrames
 	dba WooperFrames
+	dba WooperPFrames
 	dba QuagsireFrames
+	dba ClodsireFrames
 	dba MurkrowFrames
 	dba HonchkrowFrames
 	dba MisdreavusFrames

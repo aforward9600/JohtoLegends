@@ -80,6 +80,8 @@ EggMovePointers2::
 	dw YanmaEggMoves
 	dw NoEggMoves2
 	dw WooperEggMoves
+	dw WooperPEggMoves
+	dw NoEggMoves2
 	dw NoEggMoves2
 	dw MurkrowEggMoves
 	dw NoEggMoves2
@@ -474,6 +476,16 @@ WooperEggMoves:
 	dw DOUBLE_KICK
 	dw ENCORE
 	dw RECOVER
+	dw -1 ; end
+
+WooperPEggMoves:
+	dw ACID_SPRAY
+	dw ANCIENTPOWER
+	dw COUNTER
+	dw CURSE
+	dw DOUBLE_KICK
+	dw HAZE
+	dw MIST
 	dw -1 ; end
 
 MurkrowEggMoves:

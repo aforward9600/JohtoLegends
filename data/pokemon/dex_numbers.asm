@@ -270,8 +270,9 @@ PokemonNumbers::
 	db "228@@"
 	db "229@@"
 	db "230@@"
+	db "230@@"
 	db "231@@"
-	db "232@@"
+	db "232@@" ; clodsire
 	db "233@@"
 	db "234@@"
 	db "235@@"
@@ -380,6 +381,7 @@ PokemonNumbers::
 	db "338@@"
 	db "339@@"
 	db "340@@"
+	db "341@@"
 	db "157@@"
 	db "157@@"
 	assert_table_length NUM_POKEMON

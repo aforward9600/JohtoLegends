@@ -271,7 +271,9 @@ PokemonCries::
 	mon_cry CRY_TOTODILE,    $031,  $0c8 ; YANMA
 	mon_cry CRY_TOTODILE,   -$16f,  $168 ; YANMEGA
 	mon_cry CRY_WOOPER,      $093,  $0af ; WOOPER
+	mon_cry CRY_WOOPER,      $093,  $0af ; WOOPER_P
 	mon_cry CRY_WOOPER,     -$0c6,  $140 ; QUAGSIRE
+	mon_cry CRY_WOOPER,     -$0c6,  $140 ; CLODSIRE
 	mon_cry CRY_MARILL,     -$01f,  $180 ; MURKROW
 	mon_cry CRY_MARILL,     -$01f,  $180 ; HONCHKROW
 	mon_cry CRY_HOOTHOOT,    $130,  $0e8 ; MISDREAVUS

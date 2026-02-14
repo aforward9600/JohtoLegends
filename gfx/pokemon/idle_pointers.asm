@@ -265,7 +265,9 @@ AnimationIdlePointers:
 	dw YanmaAnimationIdle
 	dw YanmegaAnimationIdle
 	dw WooperAnimationIdle
+	dw WooperPAnimationIdle
 	dw QuagsireAnimationIdle
+	dw ClodsireAnimationIdle
 	dw MurkrowAnimationIdle
 	dw HonchkrowAnimationIdle
 	dw MisdreavusAnimationIdle

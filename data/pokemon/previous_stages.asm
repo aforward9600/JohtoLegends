@@ -266,7 +266,9 @@ PreviousEvolutionStage::
 	dw 0
 	dw YANMA
 	dw 0
+	dw 0
 	dw WOOPER
+	dw WOOPER_P
 	dw 0
 	dw MURKROW
 	dw 0

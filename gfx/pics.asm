@@ -769,6 +769,10 @@ PidgeyFrontpic:      INCBIN "gfx/pokemon/pidgey/front.animated.2bpp.lz"
 ParasectBackpic:     INCBIN "gfx/pokemon/parasect/back.2bpp.lz"
 QuagsireFrontpic:    INCBIN "gfx/pokemon/quagsire/front.animated.2bpp.lz"
 
+SECTION "Clodsire Front", ROMX
+
+ClodsireFrontpic:    INCBIN "gfx/pokemon/clodsire/front.animated.2bpp.lz"
+
 SECTION "Grimer_A Front", ROMX
 
 GrimerAFrontpic:     INCBIN "gfx/pokemon/grimer_a/front.animated.2bpp.lz"
@@ -1072,6 +1076,9 @@ BellossomBackpic:    INCBIN "gfx/pokemon/bellossom/back.2bpp.lz"
 Rival1Pic:           INCBIN "gfx/trainers/rival1.2bpp.lz"
 SwinubBackpic:       INCBIN "gfx/pokemon/swinub/back.2bpp.lz"
 
+SECTION "Wooper_P Front", ROMX
+
+WooperPFrontpic:     INCBIN "gfx/pokemon/wooper_p/front.animated.2bpp.lz"
 
 SECTION "Vulpix_A Backpic", ROMX
 
@@ -1211,6 +1218,10 @@ LarvitarBackpic:     INCBIN "gfx/pokemon/larvitar/back.2bpp.lz"
 PorygonBackpic:      INCBIN "gfx/pokemon/porygon/back.2bpp.lz"
 UnownHBackpic:       INCBIN "gfx/pokemon/unown_h/back.2bpp.lz"
 
+SECTION "Clodsire Backpic", ROMX
+
+ClodsireBackpic:     INCBIN "gfx/pokemon/clodsire/back.2bpp.lz"
+
 SECTION "Grimer_A Back", ROMX
 
 GrimerABackpic:      INCBIN "gfx/pokemon/grimer_a/back.2bpp.lz"
@@ -1318,6 +1329,10 @@ SlowpokeGFrontpic:   INCBIN "gfx/pokemon/slowpoke_g/front.animated.2bpp.lz"
 SECTION "Slowpoke_G Back", ROMX
 
 SlowpokeGBackpic:    INCBIN "gfx/pokemon/slowpoke_g/back.2bpp.lz"
+
+SECTION "Wooper_P Backpic", ROMX
+
+WooperPBackpic:      INCBIN "gfx/pokemon/wooper_p/back.2bpp.lz"
 
 SECTION "Pics 18", ROMX
 
