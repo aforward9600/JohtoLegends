@@ -49,6 +49,7 @@ AlphabeticalPokedexOrder:
 	dw CLEFFA
 	dw CLODSIRE
 	dw CLOYSTER
+	dw CORSOLA_J
 	dw CORSOLA
 	dw CROAGUNK
 	dw CROBAT

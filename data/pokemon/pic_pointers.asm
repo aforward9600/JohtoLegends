@@ -617,6 +617,8 @@ PokemonPicPointers::
 	dba PiloswineBackpic
 	dba MamoswineFrontpic
 	dba MamoswineBackpic
+	dba CorsolaJFrontpic
+	dba CorsolaJBackpic
 	dba CorsolaFrontpic
 	dba CorsolaBackpic
 	dba CursolaFrontpic

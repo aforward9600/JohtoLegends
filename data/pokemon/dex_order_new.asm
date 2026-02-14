@@ -315,6 +315,7 @@ NewPokedexOrder:
 	dw TENTACRUEL
 	dw CHINCHOU
 	dw LANTURN
+	dw CORSOLA_J
 	dw CORSOLA
 	dw CURSOLA
 	dw PSYDUCK

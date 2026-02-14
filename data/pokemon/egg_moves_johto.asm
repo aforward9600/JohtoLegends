@@ -116,6 +116,7 @@ EggMovePointers2::
 	dw SwinubEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw CorsolaJEggMoves
 	dw CorsolaEggMoves
 	dw NoEggMoves2
 	dw RemoraidEggMoves
@@ -656,6 +657,17 @@ SwinubEggMoves:
 	dw ICICLE_CRASH
 	dw MUD_SHOT
 	dw ICE_FANG
+	dw -1 ; end
+
+CorsolaJEggMoves:
+	dw AMNESIA
+	dw AQUA_RING
+	dw BARRIER
+	dw CONFUSE_RAY
+	dw ICICLE_SPEAR
+	dw MIST
+	dw SCREECH
+	dw WATER_PULSE
 	dw -1 ; end
 
 CorsolaEggMoves:

@@ -306,6 +306,7 @@ PokemonNames::
 	db "Piloswine@"
 	db "Mamoswine@"
 	db "Corsola@@@"
+	db "Corsola@@@"
 	db "Cursola@@@"
 	db "Remoraid@@"
 	db "Octillery@"

@@ -303,6 +303,7 @@ PreviousEvolutionStage::
 	dw SWINUB
 	dw PILOSWINE
 	dw 0
+	dw 0
 	dw CORSOLA
 	dw 0
 	dw REMORAID   ;e0

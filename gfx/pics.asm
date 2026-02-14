@@ -1443,6 +1443,13 @@ AmbipomBackpic:      INCBIN "gfx/pokemon/ambipom/back.2bpp.lz"
 LickilickyFrontpic:  INCBIN "gfx/pokemon/lickilicky/front.animated.2bpp.lz"
 LickilickyBackpic:   INCBIN "gfx/pokemon/lickilicky/back.2bpp.lz"
 
+SECTION "Corsola Backpic", ROMX
+
+CorsolaJBackpic:     INCBIN "gfx/pokemon/corsola_j/back.2bpp.lz"
+
+SECTION "Corsola Front", ROMX
+
+CorsolaJFrontpic:    INCBIN "gfx/pokemon/corsola_j/front.animated.2bpp.lz"
 
 SECTION "Pics 25", ROMX
 

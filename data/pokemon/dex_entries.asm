@@ -242,11 +242,11 @@ TyphlosionPokedexEntry:: INCLUDE "data/pokemon/dex_entries/typhlosion.asm"
 TyphlosionHPokedexEntry:: INCLUDE "data/pokemon/dex_entries/typhlosion_h.asm"
 TotodilePokedexEntry::   INCLUDE "data/pokemon/dex_entries/totodile.asm"
 CroconawPokedexEntry::   INCLUDE "data/pokemon/dex_entries/croconaw.asm"
+FeraligatrPokedexEntry:: INCLUDE "data/pokemon/dex_entries/feraligatr.asm"
 
 
 SECTION "Pokedex Entries 193-251", ROMX
 
-FeraligatrPokedexEntry:: INCLUDE "data/pokemon/dex_entries/feraligatr.asm"
 SentretPokedexEntry::    INCLUDE "data/pokemon/dex_entries/sentret.asm"
 FurretPokedexEntry::     INCLUDE "data/pokemon/dex_entries/furret.asm"
 HoothootPokedexEntry::   INCLUDE "data/pokemon/dex_entries/hoothoot.asm"
@@ -313,6 +313,7 @@ MagcargoPokedexEntry::   INCLUDE "data/pokemon/dex_entries/magcargo.asm"
 SwinubPokedexEntry::     INCLUDE "data/pokemon/dex_entries/swinub.asm"
 PiloswinePokedexEntry::  INCLUDE "data/pokemon/dex_entries/piloswine.asm"
 MamoswinePokedexEntry::  INCLUDE "data/pokemon/dex_entries/mamoswine.asm"
+CorsolaJPokedexEntry::   INCLUDE "data/pokemon/dex_entries/corsola_j.asm"
 CorsolaPokedexEntry::    INCLUDE "data/pokemon/dex_entries/corsola.asm"
 CursolaPokedexEntry::    INCLUDE "data/pokemon/dex_entries/cursola.asm"
 RemoraidPokedexEntry::   INCLUDE "data/pokemon/dex_entries/remoraid.asm"

@@ -302,6 +302,7 @@ PokedexDataPointerTable:
 	dba SwinubPokedexEntry
 	dba PiloswinePokedexEntry
 	dba MamoswinePokedexEntry
+	dba CorsolaJPokedexEntry
 	dba CorsolaPokedexEntry
 	dba CursolaPokedexEntry
 	dba RemoraidPokedexEntry

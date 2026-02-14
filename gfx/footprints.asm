@@ -302,6 +302,7 @@ INCBIN "gfx/footprints/swinub.1bpp"
 INCBIN "gfx/footprints/piloswine.1bpp"
 INCBIN "gfx/footprints/mamoswine.1bpp"
 INCBIN "gfx/footprints/corsola.1bpp"
+INCBIN "gfx/footprints/corsola.1bpp"
 INCBIN "gfx/footprints/corsola.1bpp" ; Cursola
 INCBIN "gfx/footprints/gastly.1bpp" ; Remoraid
 INCBIN "gfx/footprints/octillery.1bpp"

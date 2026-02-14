@@ -85,8 +85,6 @@ MaastersHouseMasterScript:
 	jumptextfaceplayer MastersHouseMasterText
 
 .MasterGoodLuck:
-	givepoke SNEASEL, 5, RAZOR_CLAW
-	givepoke SNEASEL_H, 5, RAZOR_CLAW
 	jumptextfaceplayer MasterGoodLuckText
 
 .BeatDragonKid1:

@@ -301,6 +301,7 @@ FramesPointers:
 	dba SwinubFrames
 	dba PiloswineFrames
 	dba MamoswineFrames
+	dba CorsolaJFrames
 	dba CorsolaFrames
 	dba CursolaFrames
 	dba RemoraidFrames

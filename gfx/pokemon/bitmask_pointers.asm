@@ -301,6 +301,7 @@ BitmasksPointers:
 	dw SwinubBitmasks
 	dw PiloswineBitmasks
 	dw MamoswineBitmasks
+	dw CorsolaJBitmasks
 	dw CorsolaBitmasks
 	dw CursolaBitmasks
 	dw RemoraidBitmasks

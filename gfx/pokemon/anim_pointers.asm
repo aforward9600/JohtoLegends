@@ -301,6 +301,7 @@ AnimationPointers:
 	dw SwinubAnimation
 	dw PiloswineAnimation
 	dw MamoswineAnimation
+	dw CorsolaJAnimation
 	dw CorsolaAnimation
 	dw CursolaAnimation
 	dw RemoraidAnimation

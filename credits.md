@@ -122,7 +122,8 @@ Charizard, Grimer, Muk, Sneasel, Tyranitar, Dragonite, Moltres, Heracross,
 Kingdra, Kangaskhan, Yanma, Teddiursa, Ursaring, Phanpy, Umbreon, Feraligatr,
 Aerodactyl, Celebi, Houndour, Houndoom, Slowbro, Hitmonchan, Xatu, Pidgeot,
 Azumarill, Crobat, Fearow, Nidoking, Entei, Ho-Oh, Exeggutor, Starmie,
-Forretress, Granbull, Meganium, Bellossom, Kadabra & Delibird back sprite- SoupPotato
+Forretress, Granbull, Meganium, Bellossom, Kadabra,
+Corsola & Delibird back sprite- SoupPotato
 
 Korotora and Raitora graphics and game data:
 SoupPotato, GS 97 Reforged Team, Game Freak

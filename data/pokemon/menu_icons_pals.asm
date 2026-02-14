@@ -304,7 +304,7 @@ MonMenuIconPals:
 	icon_pals RED,    PINK   ; SNEASEL
 	icon_pals PURPLE, GRAY   ; SNEASEL_H
 	icon_pals RED,    PINK   ; WEAVILE
-	icon_pals TEAL,   BROWN  ; SNEASLER
+	icon_pals PURPLE, BROWN  ; SNEASLER
 	icon_pals BROWN,  RED    ; TEDDIURSA
 	icon_pals BROWN,  GRAY   ; URSARING
 	icon_pals BROWN,  RED    ; URSALUNA
@@ -313,6 +313,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  BLUE   ; SWINUB
 	icon_pals BROWN,  BLUE   ; PILOSWINE
 	icon_pals BROWN,  RED    ; MAMOSWINE
+	icon_pals PINK,   BLUE   ; CORSOLA_J
 	icon_pals PINK,   PURPLE ; CORSOLA
 	icon_pals PINK,   PURPLE ; CURSOLA
 	icon_pals BLUE,   GRAY   ; REMORAID

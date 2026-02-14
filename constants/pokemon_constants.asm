@@ -322,6 +322,7 @@ JOHTO_POKEMON EQU const_value
 	const SWINUB     ; dc
 	const PILOSWINE  ; dd
 	const MAMOSWINE
+	const CORSOLA_J
 	const CORSOLA    ; de
 	const CURSOLA    ; ff
 	const REMORAID   ; df

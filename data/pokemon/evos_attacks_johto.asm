@@ -117,6 +117,7 @@ EvosAttacksPointers2::
 	dw SwinubEvosAttacks
 	dw PiloswineEvosAttacks
 	dw MamoswineEvosAttacks
+	dw CorsolaJEvosAttacks
 	dw CorsolaEvosAttacks
 	dw CursolaEvosAttacks
 	dw RemoraidEvosAttacks
@@ -2749,6 +2750,28 @@ MamoswineEvosAttacks:
 	dbw 52, BLIZZARD
 	dbw 58, SCARY_FACE
 	dbw 63, ICICLE_CRASH
+	db 0 ; no more level-up moves
+
+CorsolaJEvosAttacks:
+	db ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, HARDEN
+	dbw 4, BUBBLE
+	dbw 8, RECOVER
+	dbw 10, BUBBLEBEAM
+	dbw 13, HEAL_BELL
+	dbw 17, ANCIENTPOWER
+	dbw 20, SPIKE_CANNON
+	dbw 23, PROTECT
+	dbw 27, WATER_PULSE
+	dbw 29, IRON_DEFENSE
+	dbw 31, ROCK_BLAST
+	dbw 35, ENDURE
+	dbw 38, AQUA_RING
+	dbw 41, POWER_GEM
+	dbw 45, MIRROR_COAT
+	dbw 47, EARTH_POWER
+	dbw 50, FLAIL
 	db 0 ; no more level-up moves
 
 CorsolaEvosAttacks:

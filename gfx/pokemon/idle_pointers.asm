@@ -301,6 +301,7 @@ AnimationIdlePointers:
 	dw SwinubAnimationIdle
 	dw PiloswineAnimationIdle
 	dw MamoswineAnimationIdle
+	dw CorsolaJAnimationIdle
 	dw CorsolaAnimationIdle
 	dw CursolaAnimationIdle
 	dw RemoraidAnimationIdle

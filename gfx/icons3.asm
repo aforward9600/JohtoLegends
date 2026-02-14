@@ -53,6 +53,7 @@ Icons3:
 	dw SwinubIcon
 	dw PiloswineIcon
 	dw MamoswineIcon
+	dw CorsolaJIcon
 	dw CorsolaIcon
 	dw CursolaIcon
 	dw RemoraidIcon
@@ -179,6 +180,7 @@ MagcargoIcon:     INCBIN "gfx/icons/magcargo.2bpp"
 SwinubIcon:       INCBIN "gfx/icons/swinub.2bpp"
 PiloswineIcon:    INCBIN "gfx/icons/piloswine.2bpp"
 MamoswineIcon:	  INCBIN "gfx/icons/mamoswine.2bpp"
+CorsolaJIcon:	  INCBIN "gfx/icons/corsola_j.2bpp"
 CorsolaIcon:	  INCBIN "gfx/icons/corsola.2bpp"
 CursolaIcon:	  INCBIN "gfx/icons/cursola.2bpp"
 RemoraidIcon:	  INCBIN "gfx/icons/remoraid.2bpp"

@@ -1,10 +1,10 @@
 	db "Coral@" ; species name
-	dw 200, 110 ; height, weight
+	dw 200, 11 ; height, weight
 
-	db   "The points on its"
-	next "head absorb"
-	next "nutrients from"
+	db   "Sudden pollution"
+	next "wiped out this"
+	next "ancient kind of"
 
-	page "clean water. They"
-	next "cannot survive in"
-	next "polluted water.@"
+	page "Corsola. It"
+	next "absorbs life-force"
+	next "with its branches.@"
