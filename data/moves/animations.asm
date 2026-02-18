@@ -764,9 +764,8 @@ BattleAnim_EnemyDamage:
 
 BattleAnim_EnemyStatDown:
 	anim_1gfx ANIM_GFX_SPEED
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect ANIM_BG_1A, $0, $1, $20
-	anim_bgeffect ANIM_BG_07, $0, $2, $0
+	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $1, $40
+	anim_obp0 $30
 	anim_sound 0, 0, SFX_STAT_UP
 .loop
 	anim_obj ANIM_OBJ_STAT_UP,   5, 4,  13, 6, $6
@@ -783,16 +782,15 @@ BattleAnim_EnemyStatDown:
 	anim_wait 2
 	anim_obj ANIM_OBJ_STAT_UP,   8, 4,  13, 6, $8
 	anim_wait 2
-	anim_loop 3, .loop
+	anim_loop 2, .loop
 	anim_wait 8
-	anim_incbgeffect ANIM_BG_1A
-	anim_jump BattleAnim_ShowMon_0
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING
+	anim_ret
 
 BattleAnim_PlayerStatDown:
 	anim_1gfx ANIM_GFX_SPEED
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect ANIM_BG_1A, $0, $1, $20
-	anim_bgeffect ANIM_BG_07, $0, $2, $0
+	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $1, $40
+	anim_obp0 $30
 	anim_sound 0, 0, SFX_STAT_DOWN
 .loop
 	anim_obj ANIM_OBJ_STAT_DOWN, 5, 4,  7, 6, $6
@@ -809,16 +807,10 @@ BattleAnim_PlayerStatDown:
 	anim_wait 2
 	anim_obj ANIM_OBJ_STAT_DOWN, 8, 4,  7, 6, $8
 	anim_wait 2
-	anim_loop 3, .loop
+	anim_loop 2, .loop
 	anim_wait 8
-	anim_incbgeffect ANIM_BG_1A
-	anim_jump BattleAnim_ShowMon_0
-;	anim_call BattleAnim_UserObj_1Row
-;	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $0, $0
-;	anim_wait 40
-;	anim_call BattleAnim_ShowMon_1
-;	anim_wait 1
-;	anim_ret
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING
+	anim_ret
 
 BattleAnim_PlayerDamage:
 	anim_bgeffect ANIM_BG_20, $20, $2, $20
