@@ -1237,3 +1237,15 @@ RixyChamber_Blocks:
 
 ViapoisChamber_Blocks:
 	INCBIN "maps/ViapoisChamber.ablk"
+
+WildAreaPond_Blocks:
+	INCBIN "maps/WildAreaPond.ablk"
+
+WildAreaIceCave_Blocks:
+	INCBIN "maps/WildAreaIceCave.ablk"
+
+WildArea6_Blocks:
+	INCBIN "maps/WildArea6.ablk"
+
+WildArea7_Blocks:
+	INCBIN "maps/WildArea7.ablk"

@@ -128,7 +128,7 @@ Corsola & Delibird back sprite- SoupPotato
 Korotora and Raitora graphics and game data:
 SoupPotato, GS 97 Reforged Team, Game Freak
 
-Gorotora front sprite: Helix Chamber
+Gorotora front sprite: RacieBeep
 
 Gorotora back sprite: Adam Shaman
 

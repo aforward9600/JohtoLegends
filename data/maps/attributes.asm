@@ -383,8 +383,43 @@ ENDM
 	connection north, WildAreaOutside, WILD_AREA_OUTSIDE, 2
 	connection south, Route47, ROUTE_47, 1
 
-	map_attributes WildAreaOutside, WILD_AREA_OUTSIDE, $67, SOUTH
+	map_attributes WildAreaOutside, WILD_AREA_OUTSIDE, $00, NORTH | SOUTH
+	connection north, WildArea1, WILD_AREA_1, 1
 	connection south, Route48, ROUTE_48, -2
+
+	map_attributes WildArea1, WILD_AREA_1, $00,  NORTH | SOUTH | WEST | EAST
+	connection north, WildAreaPond, WILD_AREA_POND, 0
+	connection south, WildAreaOutside, WILD_AREA_OUTSIDE, -1
+	connection west, WildArea4, WILD_AREA_4, 0
+	connection east, WildArea23, WILD_AREA_2_3, -1
+
+
+	map_attributes WildArea23, WILD_AREA_2_3, $00, WEST
+	connection west, WildArea1, WILD_AREA_1, 1
+
+	map_attributes WildAreaCave, WILD_AREA_CAVE, $00, 0
+	map_attributes WildAreaIceCave, WILD_AREA_ICE_CAVE, $00, 0
+	map_attributes WildArea4, WILD_AREA_4, $00, NORTH | EAST
+	connection north, WildArea5, WILD_AREA_5, 1
+	connection east, WildArea1, WILD_AREA_1, 0
+
+	map_attributes WildAreaPond, WILD_AREA_POND, $00, NORTH | SOUTH | WEST
+	connection north, WildArea6, WILD_AREA_6, 0
+	connection south, WildArea1, WILD_AREA_1, 0
+	connection west, WildArea5, WILD_AREA_5, 0
+
+	map_attributes WildArea5, WILD_AREA_5, $00, NORTH | SOUTH | EAST
+	connection north, WildArea7, WILD_AREA_7, 0
+	connection south, WildArea4, WILD_AREA_4, -1
+	connection east, WildAreaPond, WILD_AREA_POND, 0
+
+	map_attributes WildArea6, WILD_AREA_6, $00, SOUTH | WEST
+	connection south, WildAreaPond, WILD_AREA_POND, 0
+	connection west, WildArea7, WILD_AREA_7, 0
+
+	map_attributes WildArea7, WILD_AREA_7, $00, SOUTH | EAST
+	connection south, WildArea5, WILD_AREA_5, 0
+	connection east, WildArea6, WILD_AREA_6, 0
 
 	map_attributes Route23, ROUTE_23, $0f, 0
 	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
@@ -681,11 +716,6 @@ ENDM
 	map_attributes CliffCave, CLIFF_CAVE, $00, 0
 	map_attributes WildAreaPokecenter, WILD_AREA_POKECENTER, $00, 0
 	map_attributes WildAreaMart, WILD_AREA_MART, $00, 0
-	map_attributes WildArea1, WILD_AREA_1, $00, 0
-	map_attributes WildArea23, WILD_AREA_2_3, $00, 0
-	map_attributes WildAreaCave, WILD_AREA_CAVE, $00, 0
-	map_attributes WildArea4, WILD_AREA_4, $00, 0
-	map_attributes WildArea5, WILD_AREA_5, $00, 0
 	map_attributes BurnedTower2F, BURNED_TOWER_2F, $00, 0
 	map_attributes GoldenrodJail, GOLDENROD_JAIL, $00, 0
 	map_attributes TeamRocketBaseJail, TEAM_ROCKET_BASE_JAIL, $00, 0

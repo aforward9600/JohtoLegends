@@ -104,7 +104,7 @@ FishGroups:
 	dbbw  35 percent,     20, HORSEA
 	dbbw  70 percent,     20, QWILFISH
 	dbbw  90 percent + 1, 20, QWILFISH
-	dbbw 100 percent,     10, TIME_GROUP
+	dbbw 100 percent,     10, CORSOLA
 .Qwilfish_Swarm_Super:
 	dbbw  40 percent,     40, QWILFISH
 	dbbw  70 percent,     11, TIME_GROUP

@@ -54,7 +54,7 @@ SwarmGrassWildMonsAlt:
 	dbw 5, CHIKORITA
 	; nite
 	dbw 5, CHIKORITA
-	dbw 5, SLOWPOKE
+	dbw 5, SLOWPOKE_G
 	dbw 5, CHIKORITA
 	dbw 5, EKANS
 	dbw 5, BUDEW
@@ -162,20 +162,20 @@ SwarmGrassWildMonsAlt:
 	dbw 2, SMOOCHUM
 	dbw 2, SMOOCHUM
 	dbw 2, DELIBIRD
-	dbw 2, SNEASEL
-	dbw 2, SNEASEL
+	dbw 2, SNEASEL_H
+	dbw 2, SNEASEL_H
 	dbw 2, ZUBAT
 	dbw 2, SMOOCHUM
-	dbw 2, SNEASEL
+	dbw 2, SNEASEL_H
 	; day
 	dbw 2, SMOOCHUM
 	dbw 2, SMOOCHUM
 	dbw 2, DELIBIRD
-	dbw 2, SNEASEL
-	dbw 2, SNEASEL
+	dbw 2, SNEASEL_H
+	dbw 2, SNEASEL_H
 	dbw 2, ZUBAT
 	dbw 2, SMOOCHUM
-	dbw 2, SNEASEL
+	dbw 2, SNEASEL_H
 	; nite
 	dbw 2, SMOOCHUM
 	dbw 2, SMOOCHUM
@@ -214,7 +214,7 @@ SwarmGrassWildMonsAlt:
 	dbw  7, BONSLY
 	dbw  7, HOUNDOUR
 	dbw  7, HOUNDOUR
-	dbw  7, PONYTA
-	dbw  7, PONYTA
+	dbw  7, PONYTA_G
+	dbw  7, PONYTA_G
 
 	db -1 ; end

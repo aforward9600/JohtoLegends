@@ -522,16 +522,20 @@ ENDM
 	map_const ROUTE_47,                                    39, 19 ; 1
 	map_const ROUTE_48,                                    18,  9 ; 2
 	map_const CLIFF_CAVE,                                  12,  5 ; 3
-	map_const WILD_AREA_OUTSIDE,                           11, 11 ; 4
+	map_const WILD_AREA_OUTSIDE,                           11,  9 ; 4
 	map_const WILD_AREA_POKECENTER,                         5,  4 ; 5
 	map_const WILD_AREA_MART,                               6,  4 ; 6
 	map_const WILD_AREA_1,                                  7,  7 ; 7
-	map_const WILD_AREA_2_3,                               13, 12 ; 8
+	map_const WILD_AREA_2_3,                                6,  7 ; 8
 	map_const WILD_AREA_CAVE,                               7,  7 ; 9
 	map_const WILD_AREA_4,                                  7,  7 ; 10
-	map_const WILD_AREA_5,                                  6,  6 ; 11
+	map_const WILD_AREA_5,                                  6,  7 ; 11
 	map_const CLIFF_CAVE_B1F,                               5,  6 ; 12
 	map_const EMBEDDED_TOWER,                              11, 12 ; 13
+	map_const WILD_AREA_POND,                               9,  7 ; 14
+	map_const WILD_AREA_ICE_CAVE,                           7,  7 ; 15
+	map_const WILD_AREA_6,                                  9,  6 ; 16
+	map_const WILD_AREA_7,                                  6,  6 ; 17
 
 	newgroup
 

@@ -98,7 +98,7 @@ CreditsScript:
 	db              SCMIDNA, 1
 	db            SHADOWONE, 2
 	db              NUKKIIE, 3
-	db        HELIX_CHAMBER, 4
+	db            RACIEBEEP, 4
 	db         FRENCHORANGE, 5
 
 	db CREDITS_WAIT, 12

@@ -75,9 +75,10 @@ WildAreaCaveSignText:
 WildAreaCave_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
-	warp_event  7, 11, WILD_AREA_2_3, 5
-	warp_event  3,  5, WILD_AREA_2_3, 6
+	db 3 ; warp events
+	warp_event  7, 11, WILD_AREA_2_3, 1
+	warp_event  2,  6, WILD_AREA_POND, 1
+	warp_event  7,  1, WILD_AREA_ICE_CAVE, 1
 
 	db 0 ; coord events
 

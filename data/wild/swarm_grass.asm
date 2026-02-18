@@ -6,7 +6,7 @@ SwarmGrassWildMons:
 	map_id DARK_CAVE_NEW_ENTRANCE
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 2, GEODUDE
+	dbw 2, ZUBAT
 	dbw 2, DUNSPARCE
 	dbw 2, ZUBAT
 	dbw 2, CYNDAQUIL
@@ -15,7 +15,7 @@ SwarmGrassWildMons:
 	dbw 2, DUNSPARCE
 	dbw 2, DUNSPARCE
 	; day
-	dbw 2, GEODUDE
+	dbw 2, ZUBAT
 	dbw 2, DUNSPARCE
 	dbw 2, ZUBAT
 	dbw 2, CYNDAQUIL
@@ -24,7 +24,7 @@ SwarmGrassWildMons:
 	dbw 2, DUNSPARCE
 	dbw 2, DUNSPARCE
 	; nite
-	dbw 2, GEODUDE
+	dbw 2, ZUBAT
 	dbw 2, DUNSPARCE
 	dbw 2, ZUBAT
 	dbw 2, CYNDAQUIL
@@ -161,30 +161,30 @@ SwarmGrassWildMons:
 	map_id ICE_PATH_B1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 2, SNEASEL
-	dbw 2, SNEASEL
+	dbw 2, SNEASEL_H
+	dbw 2, SNEASEL_H
 	dbw 2, DELIBIRD
-	dbw 2, SNEASEL
-	dbw 2, SNEASEL
-	dbw 2, ZUBAT
+	dbw 2, SNEASEL_H
+	dbw 2, SNEASEL_H
 	dbw 2, SMOOCHUM
-	dbw 2, SNEASEL
+	dbw 2, SMOOCHUM
+	dbw 2, SNEASEL_H
 	; day
-	dbw 2, SNEASEL
-	dbw 2, SNEASEL
+	dbw 2, SNEASEL_H
+	dbw 2, SNEASEL_H
 	dbw 2, DELIBIRD
-	dbw 2, SNEASEL
-	dbw 2, SNEASEL
-	dbw 2, ZUBAT
+	dbw 2, SNEASEL_H
+	dbw 2, SNEASEL_H
 	dbw 2, SMOOCHUM
-	dbw 2, SNEASEL
+	dbw 2, SMOOCHUM
+	dbw 2, SNEASEL_H
 	; nite
 	dbw 2, SNEASEL
 	dbw 2, SNEASEL
 	dbw 2, DELIBIRD
 	dbw 2, SNEASEL
 	dbw 2, SNEASEL
-	dbw 2, ZUBAT
+	dbw 2, SMOOCHUM
 	dbw 2, SMOOCHUM
 	dbw 2, SNEASEL
 
@@ -273,7 +273,7 @@ SwarmGrassWildMons:
 	dbw 14, SCYTHER
 	; nite
 	dbw 14, SCYTHER
-	dbw 14, MEOWTH
+	dbw 14, TAUROS_P
 	dbw 14, BEEDRILL
 	dbw 14, SCYTHER
 	dbw 14, MURKROW
@@ -550,8 +550,8 @@ SwarmGrassWildMons:
 	dbw 5, CHIKORITA
 	dbw 5, CHIKORITA
 	; nite
-	dbw 5, SLOWPOKE
-	dbw 5, SLOWPOKE
+	dbw 5, SLOWPOKE_G
+	dbw 5, SLOWPOKE_G
 	dbw 5, CHIKORITA
 	dbw 5, EKANS
 	dbw 5, BUDEW
@@ -649,5 +649,99 @@ SwarmGrassWildMons:
 	dbw 35, METANG
 	dbw 35, METANG
 	dbw 35, METANG
+
+; Farfetch'd G swarm
+	map_id WILD_AREA_6
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 15, FARFETCH_D_G
+	dbw 15, WOOPER_P
+	dbw 15, FARFETCH_D_G
+	dbw 15, WOOPER_P
+	dbw 15, POLIWAG
+	dbw 15, FARFETCH_D_G
+	dbw 15, POLIWAG
+	dbw 15, FARFETCH_D_G
+	; morn
+	dbw 15, FARFETCH_D_G
+	dbw 15, WOOPER_P
+	dbw 15, FARFETCH_D_G
+	dbw 15, WOOPER_P
+	dbw 15, POLIWAG
+	dbw 15, FARFETCH_D_G
+	dbw 15, POLIWAG
+	dbw 15, FARFETCH_D_G
+	; nite
+	dbw 15, FARFETCH_D_G
+	dbw 15, WOOPER_P
+	dbw 15, FARFETCH_D_G
+	dbw 15, WOOPER_P
+	dbw 15, POLIWAG
+	dbw 15, FARFETCH_D_G
+	dbw 15, POLIWAG
+	dbw 15, FARFETCH_D_G
+
+; Voltorb H swarm
+
+	map_id WILD_AREA_7
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 15, VOLTORB_H
+	dbw 15, GRIMER_A
+	dbw 15, PONYTA_G
+	dbw 15, GRIMER_A
+	dbw 15, VOLTORB_H
+	dbw 15, VOLTORB_H
+	dbw 15, GRIMER_A
+	dbw 15, VOLTORB_H
+	; day
+	dbw 15, VOLTORB_H
+	dbw 15, GRIMER_A
+	dbw 15, PONYTA_G
+	dbw 15, GRIMER_A
+	dbw 15, VOLTORB_H
+	dbw 15, VOLTORB_H
+	dbw 15, GRIMER_A
+	dbw 15, VOLTORB_H
+	; nite
+	dbw 15, VOLTORB_H
+	dbw 15, GRIMER_A
+	dbw 15, PONYTA_G
+	dbw 15, GRIMER_A
+	dbw 15, VOLTORB_H
+	dbw 15, VOLTORB_H
+	dbw 15, GRIMER_A
+	dbw 15, VOLTORB_H
+
+; Mr. Mime G swarm
+	map_id WILD_AREA_ICE_CAVE
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 15, VULPIX_A
+	dbw 15, MR__MIME_G
+	dbw 15, MR__MIME_G
+	dbw 15, SNORUNT
+	dbw 15, SNORUNT
+	dbw 15, MR__MIME_G
+	dbw 15, SNORUNT
+	dbw 15, MR__MIME_G
+	; day
+	dbw 15, VULPIX_A
+	dbw 15, MR__MIME_G
+	dbw 15, MR__MIME_G
+	dbw 15, SNORUNT
+	dbw 15, SNORUNT
+	dbw 15, MR__MIME_G
+	dbw 15, SNORUNT
+	dbw 15, MR__MIME_G
+	; nite
+	dbw 15, VULPIX_A
+	dbw 15, MR__MIME_G
+	dbw 15, MR__MIME_G
+	dbw 15, SNORUNT
+	dbw 15, SNORUNT
+	dbw 15, MR__MIME_G
+	dbw 15, SNORUNT
+	dbw 15, MR__MIME_G
 
 	db -1 ; end

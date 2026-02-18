@@ -1325,7 +1325,7 @@ SwarmScript:
 	farwritetext WhatSwarmTodayText
 	waitbutton
 .SwarmReroll:
-	random 30
+	random 33
 	ifequal 0,  .noswarm
 	ifequal 1,  .yanma
 	ifequal 2,  .dunsparce
@@ -1356,6 +1356,9 @@ SwarmScript:
 	ifequal 27, .tyrogue
 	ifequal 28, .chansey
 	ifequal 29, .beldum
+	ifequal 30, .farfetchd
+	ifequal 31, .voltorb
+	ifequal 32, .mrmime
 
 .noswarm
 	setflag ENGINE_SWARM
@@ -1434,6 +1437,8 @@ SwarmScript:
 	sjump .endswarmchannel
 
 .sneasel
+	checkflag ENGINE_FOGBADGE
+	iffalse .SwarmReroll
 	setflag ENGINE_SWARM
 	swarm ICE_PATH_B1F
 	getlandmarkname STRING_BUFFER_5, ICE_PATH
@@ -1678,6 +1683,42 @@ SwarmScript:
 	setflag ENGINE_SWARM
 	swarm EMBEDDED_TOWER
 	farwritetext EmbeddedTowerSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.farfetchd
+	checkflag ENGINE_FOGBADGE
+	iffalse .SwarmReroll
+	setflag ENGINE_SWARM
+	swarm WILD_AREA_6
+	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
+	getmonname STRING_BUFFER_3, FARFETCH_D_G
+	farwritetext CaveSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.voltorb
+	checkflag ENGINE_FOGBADGE
+	iffalse .SwarmReroll
+	setflag ENGINE_SWARM
+	swarm WILD_AREA_7
+	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
+	getmonname STRING_BUFFER_3, VOLTORB_H
+	farwritetext CaveSwarmText
+	waitbutton
+	closetext
+	sjump .endswarmchannel
+
+.mrmime
+	checkflag ENGINE_FOGBADGE
+	iffalse .SwarmReroll
+	setflag ENGINE_SWARM
+	swarm WILD_AREA_ICE_CAVE
+	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
+	getmonname STRING_BUFFER_3, MR__MIME_G
+	farwritetext CaveSwarmText
 	waitbutton
 	closetext
 	sjump .endswarmchannel

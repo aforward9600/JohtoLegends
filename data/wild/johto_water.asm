@@ -168,7 +168,7 @@ JohtoWaterWildMons:
 	dbw 21, TENTACOOL
 	dbw 22, CORSOLA
 	dbw 23, REMORAID
-	dbw 24, TENTACRUEL
+	dbw 24, GRIMER_A
 
 	map_id ROUTE_41
 	db 6 percent ; encounter rate

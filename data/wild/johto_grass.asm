@@ -87,7 +87,7 @@ JohtoGrassWildMons:
 	dbw 12, KOFFING
 	dbw 12, RATTATA_A
 	dbw 12, ZUBAT
-	dbw 12, GRIMER
+	dbw 12, GRIMER_A
 	dbw 12, DUSKULL
 	dbw 12, MISDREAVUS
 	dbw 12, MISDREAVUS
@@ -117,7 +117,7 @@ JohtoGrassWildMons:
 	dbw 12, KOFFING
 	dbw 12, RATTATA_A
 	dbw 12, ZUBAT
-	dbw 12, GRIMER
+	dbw 12, GRIMER_A
 	dbw 12, DUSKULL
 	dbw 12, MISDREAVUS
 	dbw 12, MISDREAVUS
@@ -147,7 +147,7 @@ JohtoGrassWildMons:
 	dbw 21, KOFFING
 	dbw 21, ZUBAT
 	dbw 21, RATICATE_A
-	dbw 21, GRIMER
+	dbw 21, GRIMER_A
 	dbw 21, DUSKULL
 	dbw 21, MISDREAVUS
 	dbw 21, HAUNTER
@@ -356,11 +356,11 @@ JohtoGrassWildMons:
 	dbw 37, ZUBAT
 	dbw 37, ZUBAT
 	dbw 37, GOLBAT
-	dbw 37, SLOWPOKE
+	dbw 37, SLOWPOKE_G
 	dbw 37, GOLBAT
-	dbw 37, SLOWPOKE
-	dbw 37, SLOWPOKE
-	dbw 37, SLOWBRO
+	dbw 37, SLOWPOKE_G
+	dbw 37, SLOWPOKE_G
+	dbw 37, SLOWBRO_G
 
 	map_id SLOWPOKE_WELL_B2F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
@@ -386,11 +386,11 @@ JohtoGrassWildMons:
 	dbw 37, ZUBAT
 	dbw 37, ZUBAT
 	dbw 37, GOLBAT
-	dbw 37, SLOWPOKE
+	dbw 37, SLOWPOKE_G
 	dbw 37, GOLBAT
-	dbw 37, SLOWPOKE
-	dbw 37, SLOWPOKE
-	dbw 37, SLOWKING
+	dbw 37, SLOWPOKE_G
+	dbw 37, SLOWPOKE_G
+	dbw 37, SLOWKING_G
 
 	map_id ILEX_FOREST
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
@@ -582,7 +582,7 @@ JohtoGrassWildMons:
 	dbw 3, SWINUB
 	dbw 3, SMOOCHUM
 	dbw 3, SMOOCHUM
-	dbw 3, SNEASEL
+	dbw 3, SMOOCHUM
 	; day
 	dbw 3, SWINUB
 	dbw 3, ZUBAT
@@ -591,7 +591,7 @@ JohtoGrassWildMons:
 	dbw 3, SWINUB
 	dbw 3, SMOOCHUM
 	dbw 3, SMOOCHUM
-	dbw 3, SNEASEL
+	dbw 3, SMOOCHUM
 	; nite
 	dbw 3, SWINUB
 	dbw 3, ZUBAT
@@ -600,7 +600,7 @@ JohtoGrassWildMons:
 	dbw 3, SWINUB
 	dbw 3, SMOOCHUM
 	dbw 3, SMOOCHUM
-	dbw 3, SNEASEL
+	dbw 3, SMOOCHUM
 
 	map_id ICE_PATH_B2F_MAHOGANY_SIDE
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
@@ -969,7 +969,7 @@ JohtoGrassWildMons:
 	dbw 75, MACHAMP
 	dbw 75, URSARING
 	dbw 75, PARASECT
-	dbw 75, SNEASEL
+	dbw 75, SNEASEL_H
 	dbw 75, PUPITAR
 	dbw 75, PUPITAR
 	dbw 75, TYRANITAR
@@ -978,7 +978,7 @@ JohtoGrassWildMons:
 	dbw 75, MACHAMP
 	dbw 75, URSARING
 	dbw 75, PARASECT
-	dbw 75, SNEASEL
+	dbw 75, SNEASEL_H
 	dbw 75, PUPITAR
 	dbw 75, PUPITAR
 	dbw 75, TYRANITAR
@@ -1359,7 +1359,7 @@ JohtoGrassWildMons:
 	dbw 12, NIDORAN_F
 	dbw 12, SHROOMISH
 	dbw 12, NIDORAN_M
-	dbw 12, MIME__JR
+	dbw 12, FARFETCH_D_G
 	dbw 12, JIGGLYPUFF
 	dbw 12, FARFETCH_D
 	dbw 12, FARFETCH_D
@@ -1368,7 +1368,7 @@ JohtoGrassWildMons:
 	dbw 12, NIDORAN_F
 	dbw 12, PIDGEY
 	dbw 12, NIDORAN_M
-	dbw 12, MIME__JR
+	dbw 12, FARFETCH_D_G
 	dbw 12, JIGGLYPUFF
 	dbw 12, MEOWTH
 	dbw 12, MEOWTH
@@ -1377,10 +1377,10 @@ JohtoGrassWildMons:
 	dbw 12, NIDORAN_M
 	dbw 12, HOOTHOOT
 	dbw 12, NIDORAN_F
-	dbw 12, MIME__JR
+	dbw 12, MEOWTH_G
 	dbw 12, JIGGLYPUFF
-	dbw 12, MURKROW
-	dbw 12, MURKROW
+	dbw 12, MEOWTH_A
+	dbw 12, MEOWTH_A
 
 	map_id ROUTE_38
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1405,8 +1405,8 @@ JohtoGrassWildMons:
 	; nite
 	dbw 14, MAGNEMITE
 	dbw 14, DROWZEE
-	dbw 14, MEOWTH
 	dbw 14, MURKROW
+	dbw 14, TAUROS_P
 	dbw 14, WEEDLE
 	dbw 14, WEEDLE
 	dbw 14, SCYTHER
@@ -1438,8 +1438,8 @@ JohtoGrassWildMons:
 	dbw 15, WEEDLE
 	dbw 15, MURKROW
 	dbw 15, ROSELIA
-	dbw 15, MEOWTH
-	dbw 15, MEOWTH
+	dbw 15, MEOWTH_A
+	dbw 15, MEOWTH_A
 	dbw 15, YANMA
 
 	map_id ROUTE_42
@@ -1465,10 +1465,10 @@ JohtoGrassWildMons:
 	; nite
 	dbw  7, PICHU
 	dbw  7, ABRA
-	dbw  7, RATTATA_A
+	dbw  7, HOUNDOUR
 	dbw  7, BONSLY
 	dbw  7, NATU
-	dbw  7, HOUNDOUR
+	dbw  7, PONYTA_G
 	dbw  7, ELEKID
 	dbw  7, ELEKID
 
@@ -1506,8 +1506,8 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw  7, ELECTRIKE
-	dbw  7, GROWLITHE
-	dbw  7, VULPIX
+	dbw  7, GROWLITHE_H
+	dbw  7, VULPIX_A
 	dbw  7, CROAGUNK
 	dbw  7, SHROOMISH
 	dbw  7, MIME__JR
@@ -1515,8 +1515,8 @@ JohtoGrassWildMons:
 	dbw  7, KOTORA
 	; day
 	dbw  7, ELECTRIKE
-	dbw  7, GROWLITHE
-	dbw  7, VULPIX
+	dbw  7, GROWLITHE_H
+	dbw  7, VULPIX_A
 	dbw  7, CROAGUNK
 	dbw  7, SHROOMISH
 	dbw  7, MIME__JR
@@ -1525,7 +1525,7 @@ JohtoGrassWildMons:
 	; nite
 	dbw  7, ELECTRIKE
 	dbw  7, HOUNDOUR
-	dbw  7, RATTATA
+	dbw  7, RATTATA_A
 	dbw  7, CROAGUNK
 	dbw  7, SHROOMISH
 	dbw  7, MIME__JR
@@ -1538,7 +1538,7 @@ JohtoGrassWildMons:
 	dbw 5, BELLSPROUT
 	dbw 5, ODDISH
 	dbw 5, POLIWAG
-	dbw 5, EKANS
+	dbw 5, SANDSHREW_A
 	dbw 5, BUDEW
 	dbw 5, SLOWPOKE
 	dbw 5, CHIKORITA
@@ -1547,7 +1547,7 @@ JohtoGrassWildMons:
 	dbw 5, BELLSPROUT
 	dbw 5, ODDISH
 	dbw 5, POLIWAG
-	dbw 5, EKANS
+	dbw 5, SANDSHREW_A
 	dbw 5, BUDEW
 	dbw 5, SLOWPOKE
 	dbw 5, CHIKORITA
@@ -1556,9 +1556,9 @@ JohtoGrassWildMons:
 	dbw 5, BELLSPROUT
 	dbw 5, ODDISH
 	dbw 5, POLIWAG
-	dbw 5, EKANS
+	dbw 5, SANDSHREW_A
 	dbw 5, BUDEW
-	dbw 5, SLOWPOKE
+	dbw 5, SLOWPOKE_G
 	dbw 5, HOOTHOOT
 	dbw 5, HOOTHOOT
 
@@ -1738,7 +1738,7 @@ JohtoGrassWildMons:
 	dbw 24, GROWLITHE
 	dbw 24, DIGLETT
 	dbw 24, FARFETCH_D
-	dbw 24, TAUROS
+	dbw 24, TAUROS_P
 	dbw 24, GIRAFARIG
 	dbw 24, GIRAFARIG
 
@@ -1832,32 +1832,62 @@ JohtoGrassWildMons:
 	dbw 15, MISDREAVUS
 	dbw 15, KANGASKHAN
 
+	map_id WILD_AREA_ICE_CAVE
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 15, VULPIX_A
+	dbw 15, SANDSHREW_A
+	dbw 15, SWINUB
+	dbw 15, SNEASEL_H
+	dbw 15, SEEL
+	dbw 15, DELIBIRD
+	dbw 15, SNORUNT
+	dbw 15, MR__MIME_G
+	; day
+	dbw 15, VULPIX_A
+	dbw 15, SANDSHREW_A
+	dbw 15, SWINUB
+	dbw 15, SNEASEL_H
+	dbw 15, SEEL
+	dbw 15, DELIBIRD
+	dbw 15, SNORUNT
+	dbw 15, MR__MIME_G
+	; nite
+	dbw 15, VULPIX_A
+	dbw 15, SANDSHREW_A
+	dbw 15, PARAS
+	dbw 15, SNEASEL
+	dbw 15, SEEL
+	dbw 15, DELIBIRD
+	dbw 15, SNORUNT
+	dbw 15, MR__MIME_G
+
 	map_id WILD_AREA_4
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 15, GROWLITHE
-	dbw 15, HOUNDOUR
+	dbw 15, GROWLITHE_H
+	dbw 15, DIGLETT_A
 	dbw 15, CACNEA
 	dbw 15, CHANSEY
-	dbw 15, NATU
+	dbw 15, GEODUDE_A
 	dbw 15, MURKROW
 	dbw 15, STANTLER
 	dbw 15, GIBLE
 	; morn
-	dbw 15, GROWLITHE
-	dbw 15, HOUNDOUR
+	dbw 15, GROWLITHE_H
+	dbw 15, DIGLETT_A
 	dbw 15, CACNEA
 	dbw 15, CHANSEY
-	dbw 15, NATU
+	dbw 15, GEODUDE_A
 	dbw 15, MURKROW
 	dbw 15, STANTLER
 	dbw 15, GIBLE
 	; nite
-	dbw 15, GROWLITHE
-	dbw 15, HOUNDOUR
+	dbw 15, GROWLITHE_H
+	dbw 15, DIGLETT_A
 	dbw 15, CACNEA
 	dbw 15, CHANSEY
-	dbw 15, NATU
+	dbw 15, GEODUDE_A
 	dbw 15, MURKROW
 	dbw 15, STANTLER
 	dbw 15, GIBLE
@@ -1891,6 +1921,66 @@ JohtoGrassWildMons:
 	dbw 15, SHUCKLE
 	dbw 15, CACNEA
 	dbw 15, ROSELIA
+
+	map_id WILD_AREA_6
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 15, WOOPER_P
+	dbw 15, SLOWPOKE_G
+	dbw 15, EKANS
+	dbw 15, PSYDUCK
+	dbw 15, POLIWAG
+	dbw 15, YANMA
+	dbw 15, CROAGUNK
+	dbw 15, FARFETCH_D_G
+	; day
+	dbw 15, WOOPER_P
+	dbw 15, SLOWPOKE_G
+	dbw 15, EKANS
+	dbw 15, PSYDUCK
+	dbw 15, POLIWAG
+	dbw 15, YANMA
+	dbw 15, CROAGUNK
+	dbw 15, FARFETCH_D_G
+	; nite
+	dbw 15, WOOPER_P
+	dbw 15, SLOWPOKE_G
+	dbw 15, EKANS
+	dbw 15, PSYDUCK
+	dbw 15, POLIWAG
+	dbw 15, YANMA
+	dbw 15, CROAGUNK
+	dbw 15, FARFETCH_D_G
+
+	map_id WILD_AREA_7
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 15, MEOWTH_A
+	dbw 15, MEOWTH_G
+	dbw 15, PONYTA_G
+	dbw 15, GEODUDE_A
+	dbw 15, GROWLITHE_H
+	dbw 15, RATTATA_A
+	dbw 15, GRIMER_A
+	dbw 15, VOLTORB_H
+	; day
+	dbw 15, MEOWTH_A
+	dbw 15, MEOWTH_G
+	dbw 15, PONYTA_G
+	dbw 15, GEODUDE_A
+	dbw 15, GROWLITHE_H
+	dbw 15, RATTATA_A
+	dbw 15, GRIMER_A
+	dbw 15, VOLTORB_H
+	; nite
+	dbw 15, MEOWTH_A
+	dbw 15, MEOWTH_G
+	dbw 15, PONYTA_G
+	dbw 15, GEODUDE_A
+	dbw 15, GROWLITHE_H
+	dbw 15, RATTATA_A
+	dbw 15, GRIMER_A
+	dbw 15, VOLTORB_H
 
 	map_id DRAGONS_DEN_B1F
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
@@ -1960,18 +2050,18 @@ JohtoGrassWildMons:
 	dbw 75, GLALIE
 	dbw 75, GLALIE
 	dbw 75, GLALIE
-	dbw 75, SNEASEL
-	dbw 75, SNEASEL
-	dbw 75, WEAVILE
+	dbw 75, SNEASEL_H
+	dbw 75, SNEASEL_H
+	dbw 75, SNEASLER
 	; day
 	dbw 75, GOLDUCK
 	dbw 75, URSARING
 	dbw 75, GLALIE
 	dbw 75, GLALIE
 	dbw 75, GLALIE
-	dbw 75, SNEASEL
-	dbw 75, SNEASEL
-	dbw 75, WEAVILE
+	dbw 75, SNEASEL_H
+	dbw 75, SNEASEL_H
+	dbw 75, SNEASLER
 	; nite
 	dbw 75, MISDREAVUS
 	dbw 75, MISDREAVUS

@@ -75,15 +75,7 @@ WildArea1SignText:
 WildArea1_MapEvents:
 	db 0, 0 ; filler
 
-	db 8 ; warp events
-	warp_event  6, 13, WILD_AREA_OUTSIDE, 3
-	warp_event  7, 13, WILD_AREA_OUTSIDE, 4
-	warp_event 13,  6, WILD_AREA_2_3, 1
-	warp_event 13,  7, WILD_AREA_2_3, 2
-	warp_event  6,  0, WILD_AREA_2_3, 3
-	warp_event  7,  0, WILD_AREA_2_3, 4
-	warp_event  0,  6, WILD_AREA_4, 1
-	warp_event  0,  7, WILD_AREA_4, 2
+	db 0 ; warp events
 
 	db 0 ; coord events
 

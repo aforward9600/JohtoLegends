@@ -259,20 +259,18 @@ WildAreaOutsideSignText:
 WildAreaOutside_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
-	warp_event  5, 17, WILD_AREA_POKECENTER, 1
-	warp_event 13, 17, WILD_AREA_MART, 1
-	warp_event  9,  6, WILD_AREA_1, 1
-	warp_event 10,  6, WILD_AREA_1, 2
+	db 2 ; warp events
+	warp_event  3, 13, WILD_AREA_POKECENTER, 1
+	warp_event 13, 13, WILD_AREA_MART, 1
 
 	db 2 ; coord events
-	coord_event  9,  7, SCENE_WILD_AREA_RIVAL, RivalWalksUpLeft
-	coord_event 10,  7, SCENE_WILD_AREA_RIVAL, RivalWalksUpRight
+	coord_event  8,  3, SCENE_WILD_AREA_RIVAL, RivalWalksUpLeft
+	coord_event  9,  3, SCENE_WILD_AREA_RIVAL, RivalWalksUpRight
 
 	db 1 ; bg events
-	bg_event  8,  8, BGEVENT_READ, WildAreaOutsideSign
+	bg_event  6,  4, BGEVENT_READ, WildAreaOutsideSign
 
 	db 3 ; object events
-	object_event 10, 12, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_WILD_AREA_OUTSIDE_RIVAL1
-	object_event  4, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildAreaOutsideOldManScript, -1
-	object_event 13, 11, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildAreaOutsideTwinScript, -1
+	object_event 10,  8, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_WILD_AREA_OUTSIDE_RIVAL1
+	object_event  4,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildAreaOutsideOldManScript, -1
+	object_event 13,  7, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildAreaOutsideTwinScript, -1
