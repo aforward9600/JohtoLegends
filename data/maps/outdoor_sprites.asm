@@ -446,7 +446,7 @@ SeviiIslandsSprites:
 	; 9 of max 9 walking sprites
 	db SPRITE_ROCK, STILL_SPRITE
 	db SPRITE_POKE_BALL, STILL_SPRITE
-	db SPRITE_FRUIT_TREE, STILL_SPRITE
+	db SPRITE_MOLTRES_G, POKEMON_SPRITE
 	db 0 ; end
 
 SeviiIslands2Sprites:

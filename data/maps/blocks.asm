@@ -1077,8 +1077,8 @@ TreasureBeach_Blocks:
 KindleRoad_Blocks:
 	INCBIN "maps/KindleRoad.ablk"
 
-MtEmber_Blocks:
-	INCBIN "maps/MtEmber.ablk"
+MtEmberOutside_Blocks:
+	INCBIN "maps/MtEmberOutside.ablk"
 
 TwoIsland_Blocks:
 	INCBIN "maps/TwoIsland.ablk"
@@ -1249,3 +1249,36 @@ WildArea6_Blocks:
 
 WildArea7_Blocks:
 	INCBIN "maps/WildArea7.ablk"
+
+SECTION "Map Blocks 5", ROMX
+
+MtEmberSummit_Blocks:
+	INCBIN "maps/MtEmberSummit.ablk"
+
+MtEmberInside1_Blocks:
+	INCBIN "maps/MtEmberInside1.ablk"
+
+MtEmberInside2_Blocks:
+	INCBIN "maps/MtEmberInside2.ablk"
+
+MtEmberInside3_Blocks:
+	INCBIN "maps/MtEmberInside3.ablk"
+
+MtEmberInside4_Blocks:
+	INCBIN "maps/MtEmberInside4.ablk"
+
+MtEmberInside5_Blocks:
+	INCBIN "maps/MtEmberInside5.ablk"
+
+MtEmberInside72_Blocks:
+MtEmberInside6_Blocks:
+	INCBIN "maps/MtEmberInside6.ablk"
+
+MtEmberInside7_Blocks:
+	INCBIN "maps/MtEmberInside7.ablk"
+
+MtEmberInside8_Blocks:
+	INCBIN "maps/MtEmberInside8.ablk"
+
+MtEmberInside9_Blocks:
+	INCBIN "maps/MtEmberInside9.ablk"

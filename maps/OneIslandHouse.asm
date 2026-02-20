@@ -8,31 +8,17 @@ OneIslandHouse_MapScripts:
 	db 0 ; callbacks
 
 OneIslandHouseGrannyScript:
-	checkevent EVENT_MT_EMBER_ERRUPTED
-	iftrue .OneIslandHouseGranny2
 	jumptextfaceplayer OneIslandHouseGrannyText
-
-.OneIslandHouseGranny2:
-	jumptextfaceplayer OneIslandHouseGrannyText2
 
 OneIslandHouseLassScript:
 	jumptextfaceplayer OneIslandHouseLassText
 
 OneIslandHouseGrannyText:
-	text "Mt. Ember is about"
-	line "to errupt."
+	text "Mt. Ember will"
+	line "erupt one day."
 
 	para "I can feel it in"
 	line "my bones."
-	done
-
-OneIslandHouseGrannyText2:
-	text "I knew Mt. Ember"
-	line "was going to"
-	cont "erupt!"
-
-	para "My bones never"
-	line "lie!"
 	done
 
 OneIslandHouseLassText:

@@ -775,7 +775,6 @@ ENDM
 	map_attributes Route36VioletGate, ROUTE_36_VIOLET_GATE, $00, 0
 	map_attributes BerryCafe, BERRY_CAFE, $00, 0
 	map_attributes OneIslandPort, ONE_ISLAND_PORT, $00, 0
-	map_attributes MtEmber, MT_EMBER, $10, 0
 	map_attributes OneIslandPokecenter, ONE_ISLAND_POKECENTER, $00, 0
 	map_attributes TwoIslandPort, TWO_ISLAND_PORT, $00, 0
 	map_attributes ThreeIslandPort, THREE_ISLAND_PORT, $00, 0
@@ -857,6 +856,16 @@ ENDM
 	map_attributes ScufibChamber, SCUFIB_CHAMBER, $00, 0
 	map_attributes RixyChamber, RIXY_CHAMBER, $00, 0
 	map_attributes ViapoisChamber, VIAPOIS_CHAMBER, $00, 0
+	map_attributes MtEmberInside1, MT_EMBER_INSIDE_1, $00, 0
+	map_attributes MtEmberInside2, MT_EMBER_INSIDE_2, $00, 0
+	map_attributes MtEmberInside3, MT_EMBER_INSIDE_3, $00, 0
+	map_attributes MtEmberInside4, MT_EMBER_INSIDE_4, $00, 0
+	map_attributes MtEmberInside5, MT_EMBER_INSIDE_5, $00, 0
+	map_attributes MtEmberInside6, MT_EMBER_INSIDE_6, $00, 0
+	map_attributes MtEmberInside7, MT_EMBER_INSIDE_7, $00, 0
+	map_attributes MtEmberInside72, MT_EMBER_INSIDE_7_2, $00, 0
+	map_attributes MtEmberInside8, MT_EMBER_INSIDE_8, $00, 0
+	map_attributes MtEmberInside9, MT_EMBER_INSIDE_9, $00, 0
 
 	map_attributes OneIsland, ONE_ISLAND, $43, SOUTH | EAST
 	connection south, TreasureBeach, TREASURE_BEACH, 1
@@ -865,8 +874,16 @@ ENDM
 	map_attributes TreasureBeach, TREASURE_BEACH, $43, NORTH
 	connection north, OneIsland, ONE_ISLAND, -1
 
-	map_attributes KindleRoad, KINDLE_ROAD, $43, WEST
+	map_attributes KindleRoad, KINDLE_ROAD, $43, NORTH | WEST
+	connection north, MtEmberOutside, MT_EMBER_OUTSIDE, -3
 	connection west, OneIsland, ONE_ISLAND, 38
+
+	map_attributes MtEmberOutside, MT_EMBER_OUTSIDE, $17, NORTH | SOUTH
+	connection north, MtEmberSummit, MT_EMBER_SUMMIT, 5
+	connection south, KindleRoad, KINDLE_ROAD, 3
+
+	map_attributes MtEmberSummit, MT_EMBER_SUMMIT, $17, SOUTH
+	connection south, MtEmberOutside, MT_EMBER_OUTSIDE, -5
 
 	map_attributes TwoIsland, TWO_ISLAND, $43, NORTH
 	connection north, CapeBrink, CAPE_BRINK, 8

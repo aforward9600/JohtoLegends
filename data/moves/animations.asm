@@ -715,8 +715,7 @@ BattleAnim_InNightmare:
 	anim_1gfx ANIM_GFX_ANGELS
 	anim_sound 0, 0, SFX_BUBBLEBEAM
 	anim_obj ANIM_OBJ_IN_NIGHTMARE, 68, 80, $0
-	anim_wait 40
-	anim_ret
+	anim_jump BattleAnim_Wait40
 
 BattleAnim_InWhirlpool:
 	anim_1gfx ANIM_GFX_WIND
@@ -814,18 +813,15 @@ BattleAnim_PlayerStatDown:
 
 BattleAnim_PlayerDamage:
 	anim_bgeffect ANIM_BG_20, $20, $2, $20
-	anim_wait 40
-	anim_ret
+	anim_jump BattleAnim_Wait40
 
 BattleAnim_Wobble:
 	anim_bgeffect ANIM_BG_35, $0, $0, $0
-	anim_wait 40
-	anim_ret
+	anim_jump BattleAnim_Wait40
 
 BattleAnim_Shake:
 	anim_bgeffect ANIM_BG_1F, $20, $2, $40
-	anim_wait 40
-	anim_ret
+	anim_jump BattleAnim_Wait40
 
 BattleAnim_ForcePalm:
 BattleAnim_Pound:
@@ -2742,8 +2738,7 @@ BattleAnim_LovelyKiss:
 	anim_wait 32
 	anim_sound 0, 1, SFX_LICK
 	anim_obj ANIM_OBJ_HEART, 128, 40, $0
-	anim_wait 40
-	anim_ret
+	anim_jump BattleAnim_Wait40
 
 BattleAnim_Bonemerang:
 	anim_2gfx ANIM_GFX_MISC, ANIM_GFX_HIT
@@ -4051,8 +4046,7 @@ BattleAnim_SweetKiss:
 	anim_wait 32
 	anim_sound 0, 1, SFX_SWEET_KISS_2
 	anim_obj ANIM_OBJ_HEART, 120, 40, $0
-	anim_wait 40
-	anim_ret
+	anim_jump BattleAnim_Wait40
 
 BattleAnim_BellyDrum:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_NOISE
@@ -4444,8 +4438,7 @@ BattleAnim_Swagger:
 	anim_wait 32
 	anim_sound 0, 1, SFX_KINESIS_2
 	anim_obj ANIM_OBJ_ANGER, 104, 40, $0
-	anim_wait 40
-	anim_ret
+	anim_jump BattleAnim_Wait40
 
 BattleAnim_MilkDrink:
 	anim_2gfx ANIM_GFX_MISC, ANIM_GFX_BUBBLE
@@ -6502,6 +6495,10 @@ BattleAnim_Wait16:
 
 BattleAnim_Wait32:
 	anim_wait 32
+	anim_ret
+
+BattleAnim_Wait40:
+	anim_wait 40
 	anim_ret
 
 BattleAnim_Wait48:

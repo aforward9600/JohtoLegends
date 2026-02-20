@@ -1,17 +1,17 @@
 	object_const_def ; object_event constants
 
-MtEmber_MapScripts:
+MtEmberInside4_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-MtEmber_MapEvents:
+MtEmberInside4_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  4, 17, KINDLE_ROAD, 1
-	warp_event  5, 17, KINDLE_ROAD, 2
-	warp_event  5,  1, REGIDRAGO_PUZZLE_CHAMBER, 1
+	warp_event 15, 15, MT_EMBER_OUTSIDE, 3
+	warp_event  3,  3, MT_EMBER_INSIDE_5, 1
+	warp_event 17,  7, MT_EMBER_INSIDE_6, 1
 
 	db 0 ; coord events
 

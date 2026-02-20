@@ -550,7 +550,7 @@ ENDM
 	map_const ONE_ISLAND,                                  12, 11 ; 2
 	map_const TREASURE_BEACH,                               9, 13 ; 3
 	map_const KINDLE_ROAD,                                 14, 48 ; 4
-	map_const MT_EMBER,                                     6, 11 ; 5
+	map_const MT_EMBER_OUTSIDE,                            16, 17 ; 5
 	map_const REGIDRAGO_PUZZLE_CHAMBER,                     5,  5 ; 6
 	map_const REGIDRAGO_CHAMBER,                            5,  5 ; 7
 	map_const ONE_ISLAND_POKECENTER,                        5,  4 ; 8
@@ -588,6 +588,17 @@ ENDM
 	map_const FOUR_ISLAND_POKECENTER,                       5,  4 ; 40
 	map_const CELIOS_HOUSE,                                 5,  4 ; 41
 	map_const ONE_ISLAND_HOUSE,                             5,  4 ; 42
+	map_const MT_EMBER_SUMMIT,                              9,  8 ; 43
+	map_const MT_EMBER_INSIDE_1,                            6,  8 ; 44
+	map_const MT_EMBER_INSIDE_2,                           16, 12 ; 45
+	map_const MT_EMBER_INSIDE_3,                            7,  5 ; 45
+	map_const MT_EMBER_INSIDE_4,                           11,  9 ; 45
+	map_const MT_EMBER_INSIDE_5,                            6, 12 ; 45
+	map_const MT_EMBER_INSIDE_6,                            5,  5 ; 45
+	map_const MT_EMBER_INSIDE_7,                            8,  7 ; 45
+	map_const MT_EMBER_INSIDE_7_2,                          5,  5 ; 45
+	map_const MT_EMBER_INSIDE_8,                           16, 12 ; 45
+	map_const MT_EMBER_INSIDE_9,                            5,  5 ; 45
 
 	newgroup
 
