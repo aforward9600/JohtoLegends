@@ -55,7 +55,6 @@ ENDM
 	map_const ROUTE_44,                                    30,  9 ;  6
 	map_const MAHOGANY_TOWN,                               10,  9 ;  7
 	map_const FOSSIL_HOUSE,                                 4,  4 ;  8
-	map_const SILVER_CAVE_SUMMIT_OUTSIDE,                  16, 12 ;  9
 
 	newgroup                                                      ;  3
 
@@ -543,6 +542,7 @@ ENDM
 	map_const MT_SILVER_SUMMIT,                             7, 10 ; 2
 	map_const GOLD_CRYSTAL_HOUSE,                           5,  4 ; 3
 	map_const SILVER_CAVE_MEW_ROOM,                         6,  5 ; 4
+	map_const SILVER_CAVE_SUMMIT_OUTSIDE,                  16, 12 ; 5
 
 	newgroup
 

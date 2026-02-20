@@ -1,5 +1,6 @@
 	object_const_def ; object_event constants
 	const SILVERCAVESUMMITOUTSIDE_RIVAL
+	const SILVERCAVESUMMITOUTSIDE_ARTICUNO_G
 
 SilverCaveSummitOutside_MapScripts:
 	db 0 ; scene scripts
@@ -45,6 +46,35 @@ MtSilverSummitRival:
 	warpfacing UP, MT_SILVER_SUMMIT, 6, 15
 	end
 
+GalarianArticunoScript:
+	opentext
+	writetext ArticunoGText
+	pause 15
+	cry ARTICUNO_G
+	waitbutton
+	closetext
+	loadwildmon ARTICUNO_G, 80
+	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+	startbattle
+	ifequal LOSE, .NotBeaten
+	disappear SILVERCAVESUMMITOUTSIDE_ARTICUNO_G
+	special CheckCaughtCelebi
+	iftrue .CaughtArticunoG
+	setevent EVENT_BEAT_ARTICUNO_G
+	end
+
+.CaughtArticunoG:
+	setevent EVENT_CAUGHT_ARTICUNO_G
+	end
+
+.NotBeaten:
+	reloadmapafterbattle
+	end
+
+ArticunoGText:
+	text "Gyaoo!"
+	done
+
 SilverCaveSummitOutsideWalk:
 	step UP
 	step_end
@@ -74,5 +104,6 @@ SilverCaveSummitOutside_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event  6,  6, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtSilverSummitRival, -1
+	object_event 26, 14, SPRITE_ARTICUNO_G, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, GalarianArticunoScript, EVENT_MT_SILVER_ARTICUNO_G

@@ -174,7 +174,7 @@ SilphCo1FGentlemanText2:
 	done
 
 DevonStoneText1:
-	text "My name is Devon"
+	text "My name is Joseph"
 	line "Stone."
 
 	para "I am the owner of"
@@ -231,7 +231,7 @@ DevonStoneText1:
 	done
 
 DevonStoneText2:
-	text "Devon: The thought"
+	text "Joseph: Thinking"
 	line "of going home and"
 	cont "seeing my son"
 	cont "again fills me"

@@ -765,7 +765,7 @@ ENDM
 	map_attributes EmbeddedTower, EMBEDDED_TOWER, $00, 0
 	map_attributes CliffCaveB1F, CLIFF_CAVE_B1F, $00, 0
 	map_attributes SilverCaveRestRoom, SILVER_CAVE_REST_ROOM, $00, 0
-	map_attributes SilverCaveSummitOutside, SILVER_CAVE_SUMMIT_OUTSIDE, $00, 0
+	map_attributes SilverCaveSummitOutside, SILVER_CAVE_SUMMIT_OUTSIDE, $a3, 0
 	map_attributes MtSilverSummit, MT_SILVER_SUMMIT, $00, 0
 	map_attributes GoldCrystalHouse, GOLD_CRYSTAL_HOUSE, $00, 0
 	map_attributes SilverCaveMewRoom, SILVER_CAVE_MEW_ROOM, $00, 0
