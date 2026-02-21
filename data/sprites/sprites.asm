@@ -19,7 +19,7 @@ OverworldSprites:
 	overworld_sprite KurtSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite MomSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite BlaineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite RedsMomSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite ZapdosGSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite DaisySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ElmSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite FlorinaSpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN

@@ -66,15 +66,7 @@ ReturnFromMapSetupScript::
 	ret z
 	cp SPECIAL_MAP
 	ret z
-	cp RADIO_TOWER
-	ret z
-	cp LAV_RADIO_TOWER
-	ret z
-	cp UNDERGROUND_PATH
-	ret z
 	cp INDIGO_PLATEAU
-	ret z
-	cp POWER_PLANT
 	ret z
 	ld a, 1
 	and a

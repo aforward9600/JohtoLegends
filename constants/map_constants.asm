@@ -646,6 +646,9 @@ ENDM
 	map_const DOTTED_HOLE_B4F,                              5,  5 ; 34
 	map_const REGISTEEL_PUZZLE_CHAMBER,                     5,  5 ; 35
 	map_const REGISTEEL_CHAMBER,                            5,  5 ; 35
+
+	newgroup
+
 	map_const SEVEN_ISLAND_PORT,                            5,  9 ; 36
 	map_const SEVEN_ISLAND,                                16, 21 ; 37
 	map_const SEVEN_ISLAND_MASTERS_HOUSE,                   5,  5 ; 38

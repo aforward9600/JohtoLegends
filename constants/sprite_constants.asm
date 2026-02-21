@@ -15,7 +15,7 @@
 	const SPRITE_KURT ; 0b
 	const SPRITE_MOM ; 0c
 	const SPRITE_BLAINE ; 0d
-	const SPRITE_REDS_MOM ; 0e
+	const SPRITE_ZAPDOS_G ; 0e
 	const SPRITE_DAISY ; 0f
 	const SPRITE_ELM ; 10
 	const SPRITE_FLORINA ; 11
@@ -237,8 +237,7 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_REGIELEKI ; e5
 	const SPRITE_HYPNO ; e6
 	const SPRITE_ARTICUNO_G ; e7
-	const SPRITE_ZAPDOS_G ; e8
-	const SPRITE_MOLTRES_G ; e9
+	const SPRITE_MOLTRES_G ; e8
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
 	const_def $ed

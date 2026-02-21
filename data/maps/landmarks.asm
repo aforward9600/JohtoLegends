@@ -14,14 +14,12 @@ Landmarks:
 	landmark 130,  38, IcePathName
 	landmark 120,  44, Route44Name
 	landmark 108,  44, MahoganyTownName
-	landmark 109,  45, UnknownName
 	landmark 108,  36, Route43Name
 	landmark 108,  28, LakeOfRageName
 	landmark 107,  27, InfantGroveName
 	landmark  92,  44, Route42Name
 	landmark  84,  44, MtMortarName
 	landmark  68,  44, EcruteakCityName
-	landmark  69,  42, BellchimePathName
 	landmark  70,  42, TinTowerName
 	landmark  66,  42, BurnedTowerName
 	landmark  52,  44, Route38Name
@@ -33,7 +31,6 @@ Landmarks:
 	landmark  28,  92, WhirlIslandsName
 	landmark  28, 100, Route41Name
 	landmark  20, 100, CianwoodCityName
-	landmark  20,  99, CliffsEdgeGateName
 	landmark  12, 100, Route47Name
 	landmark  11, 100, CliffCaveName
 	landmark   4, 102, EmbeddedTowerName
@@ -44,7 +41,6 @@ Landmarks:
 	landmark  52,  60, NationalParkName
 	landmark  52,  76, Route35Name
 	landmark  52,  92, GoldenrodCityName
-	landmark  50,  92, RadioTowerName
 	landmark  52, 112, Route34Name
 	landmark  52, 120, IlexForestName
 	landmark  68, 124, AzaleaTownName
@@ -76,7 +72,6 @@ Landmarks:
 	landmark 100,  44, Route24Name
 	landmark 108,  36, Route25Name
 	landmark 100,  60, Route5Name
-	landmark 108,  76, UndergroundName
 	landmark 100,  76, Route6Name
 	landmark 100,  84, VermilionCityName
 	landmark  88,  60, DiglettsCaveName
@@ -85,9 +80,7 @@ Landmarks:
 	landmark 116,  52, Route9Name
 	landmark 132,  52, RockTunnelName
 	landmark 132,  56, Route10Name
-	landmark 132,  60, PowerPlantName
 	landmark 132,  68, LavenderTownName
-	landmark 140,  68, LavRadioTowerName
 	landmark  76,  68, CeladonCityName
 	landmark 100,  68, SaffronCityName
 	landmark 116,  84, Route11Name
@@ -105,7 +98,6 @@ Landmarks:
 	landmark  52, 132, CinnabarIslandName
 	landmark  51, 131, PokemonMansionName
 	landmark  51, 132, CinnabarVolcanoName
-	landmark  52, 132, UnknownName2
 	landmark  52, 120, Route21Name
 	landmark  36,  68, Route22Name
 	landmark  28,  52, VictoryRoadName
@@ -116,7 +108,6 @@ Landmarks:
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
 	landmark  12,  44, OneIslandName
-	landmark  12,  60, TreasureBeachName
 	landmark  20,  40, KindleRoadName
 	landmark  20,  20, MtEmberName
 	landmark  68,  36, TwoIslandName
@@ -142,7 +133,6 @@ Landmarks:
 	landmark  12, 100, SevenIslandName
 	landmark  20, 116, SevaultCanyonName
 	landmark  20, 140, TanobiRuinsName
-	landmark  12,  92, SacredPathName
 	landmark  12,  84, OnaganTempleName
 
 NewBarkTownName:     db "New Bark¯Town@"

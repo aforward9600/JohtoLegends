@@ -18,6 +18,7 @@ RegisteelScript:
 	startbattle
 	ifequal LOSE, .NotBeaten
 	disappear REGISTEELCHAMBER_REGISTEEL
+	reloadmapafterbattle
 	special CheckCaughtCelebi
 	iftrue .CaughtRegisteel
 	setevent EVENT_BEAT_REGISTEEL

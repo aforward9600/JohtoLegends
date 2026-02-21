@@ -18,6 +18,7 @@ GalarianMoltresScript:
 	startbattle
 	ifequal LOSE, .NotBeaten
 	disappear MTEMBERSUMMIT_MOLTRES_G
+	reloadmapafterbattle
 	special CheckCaughtCelebi
 	iftrue .CaughtMoltresG
 	setevent EVENT_BEAT_MOLTRES_G
@@ -45,5 +46,5 @@ MtEmberSummit_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  9,  8, SPRITE_MOLTRES_G, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GalarianMoltresScript, EVENT_MT_EMBER_MOLTRES_G
+	object_event  9,  8, SPRITE_MOLTRES_G, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, GalarianMoltresScript, EVENT_MT_EMBER_MOLTRES_G
 	

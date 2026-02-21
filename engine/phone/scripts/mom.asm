@@ -53,7 +53,7 @@ MomPhonePalette1:
 	getlandmarkname STRING_BUFFER_4, SLOWPOKE_WELL
 	sjump MomPhoneLandmark
 .goldenrod
-	getlandmarkname STRING_BUFFER_4, RADIO_TOWER
+	getlandmarkname STRING_BUFFER_4, EMBEDDED_TOWER
 	sjump MomPhoneLandmark
 
 MomPhonePalette2:

@@ -18,6 +18,7 @@ RegiceScript:
 	startbattle
 	ifequal LOSE, .NotBeaten
 	disappear REGICECHAMBER_REGICE
+	reloadmapafterbattle
 	special CheckCaughtCelebi
 	iftrue .CaughtRegice
 	setevent EVENT_BEAT_REGICE

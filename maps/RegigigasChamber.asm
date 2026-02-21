@@ -24,6 +24,7 @@ RegigigasScript:
 	startbattle
 	ifequal LOSE, .NotBeaten
 	disappear REGIGIGASCHAMBER_REGIGIGAS
+	reloadmapafterbattle
 	special CheckCaughtCelebi
 	iftrue .CaughtRegigigas
 	setevent EVENT_BEAT_REGIGIGAS

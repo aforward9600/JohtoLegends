@@ -2718,7 +2718,7 @@ wDracoSceneID::                                   db
 wDahliaSceneID::                                  db
 wHoOhTowerSceneID::                               db
 wOneIslandPortSceneID::                           db
-wKindleRoadSceneID::                              db
+wSevaultCanyonSceneID::                           db
 
 	ds 31
 wBufferMonForm::       db

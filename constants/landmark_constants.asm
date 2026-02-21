@@ -10,14 +10,12 @@
 	const ICE_PATH          ; 05
 	const ROUTE_44          ; 06
 	const MAHOGANY_TOWN     ; 07
-	const UNKNOWN           ; 08
 	const ROUTE_43          ; 09
 	const LAKE_OF_RAGE      ; 0a
 	const INFANT_GROVE      ; 0b
 	const ROUTE_42          ; 0c
 	const MT_MORTAR         ; 0d
 	const ECRUTEAK_CITY     ; 0e
-	const BELLCHIME_PATH    ; 0f
 	const TIN_TOWER         ; 10
 	const BURNED_TOWER      ; 11
 	const ROUTE_38          ; 12
@@ -29,7 +27,6 @@
 	const WHIRL_ISLANDS     ; 18
 	const ROUTE_41          ; 19
 	const CIANWOOD_CITY     ; 1a
-	const CLIFFS_EDGE_GATE  ; 1b
 	const ROUTE_47          ; 1c
 	const CLIFF_CAVE        ; 1d
 	const EMBEDDED_TOWER    ; 1e
@@ -40,7 +37,6 @@
 	const NATIONAL_PARK     ; 23
 	const ROUTE_35          ; 24
 	const GOLDENROD_CITY    ; 25
-	const RADIO_TOWER       ; 26
 	const ROUTE_34          ; 27
 	const ILEX_FOREST       ; 28
 	const AZALEA_TOWN       ; 29
@@ -73,7 +69,6 @@ KANTO_LANDMARK EQU const_value
 	const ROUTE_24          ; 43
 	const ROUTE_25          ; 44
 	const ROUTE_5           ; 45
-	const UNDERGROUND_PATH  ; 46
 	const ROUTE_6           ; 47
 	const VERMILION_CITY    ; 48
 	const DIGLETTS_CAVE     ; 49
@@ -82,9 +77,7 @@ KANTO_LANDMARK EQU const_value
 	const ROUTE_9           ; 4c
 	const ROCK_TUNNEL       ; 4d
 	const ROUTE_10          ; 4e
-	const POWER_PLANT       ; 4f
 	const LAVENDER_TOWN     ; 50
-	const LAV_RADIO_TOWER   ; 51
 	const CELADON_CITY      ; 52
 	const SAFFRON_CITY      ; 53
 	const ROUTE_11          ; 54
@@ -102,7 +95,6 @@ KANTO_LANDMARK EQU const_value
 	const CINNABAR_ISLAND   ; 60
 	const POKEMON_MANSION   ; 61
 	const CINNABAR_VOLCANO  ; 62
-	const UNKNOWN_2         ; 63
 	const ROUTE_21          ; 64
 	const ROUTE_22          ; 65
 	const VICTORY_ROAD      ; 66
@@ -114,7 +106,6 @@ KANTO_LANDMARK EQU const_value
 	const ROUTE_28          ; 6c
 SEVII_LANDMARK EQU const_value
 	const ONE_ISLAND        ; 6d
-	const TREASURE_BEACH    ; 6e
 	const KINDLE_ROAD       ; 6f
 	const MT_EMBER          ; 70
 	const TWO_ISLAND        ; 71
@@ -140,7 +131,6 @@ SEVII_LANDMARK EQU const_value
 	const SEVEN_ISLAND      ; 85
 	const SEVAULT_CANYON    ; 86
 	const TANOBI_RUINS      ; 87
-	const SACRED_PATH       ; 88
 	const ONAGAN_TEMPLE     ; 89
 
 ; used in CaughtData

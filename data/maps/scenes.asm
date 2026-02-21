@@ -99,5 +99,5 @@ MapScenes::
 	scene_var DAHLIA_SCENE,                                wDahliaSceneID
 	scene_var HO_OH_TOWER_SCENE,                           wHoOhTowerSceneID
 	scene_var ONE_ISLAND_PORT,                             wOneIslandPortSceneID
-	scene_var KINDLE_ROAD,                                 wKindleRoadSceneID
+	scene_var SEVAULT_CANYON,                              wSevaultCanyonSceneID
 	db -1 ; end

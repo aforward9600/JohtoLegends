@@ -692,4 +692,34 @@ SeviiGrassWildMons:
 	dbw 50, UNOWN
 	dbw 50, UNOWN
 
+	map_id MT_EMBER_OUTSIDE
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 75, FEAROW
+	dbw 75, PERSIAN
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, GOLDUCK
+	dbw 75, SLOWBRO
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+	; day
+	dbw 75, FEAROW
+	dbw 75, PERSIAN
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, GOLDUCK
+	dbw 75, SLOWBRO
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+	; nite
+	dbw 75, HONCHKROW
+	dbw 75, PERSIAN
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, GOLDUCK
+	dbw 75, SLOWKING
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+
 	db -1 ; end

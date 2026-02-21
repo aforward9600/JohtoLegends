@@ -18,6 +18,7 @@ RegielekiScript:
 	startbattle
 	ifequal LOSE, .NotBeaten
 	disappear LOSTCAVEREGIELEKI_REGIELEKI
+	reloadmapafterbattle
 	special CheckCaughtCelebi
 	iftrue .CaughtRegieleki
 	setevent EVENT_BEAT_REGIELEKI

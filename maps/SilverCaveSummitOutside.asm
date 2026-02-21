@@ -58,6 +58,7 @@ GalarianArticunoScript:
 	startbattle
 	ifequal LOSE, .NotBeaten
 	disappear SILVERCAVESUMMITOUTSIDE_ARTICUNO_G
+	reloadmapafterbattle
 	special CheckCaughtCelebi
 	iftrue .CaughtArticunoG
 	setevent EVENT_BEAT_ARTICUNO_G

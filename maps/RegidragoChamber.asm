@@ -18,6 +18,7 @@ RegidragoScript:
 	startbattle
 	ifequal LOSE, .NotBeaten
 	disappear REGIDRAGOCHAMBER_REGIDRAGO
+	reloadmapafterbattle
 	special CheckCaughtCelebi
 	iftrue .CaughtRegidrago
 	setevent EVENT_BEAT_REGIDRAGO

@@ -18,6 +18,7 @@ RegirockScript:
 	startbattle
 	ifequal LOSE, .NotBeaten
 	disappear REGIROCKCHAMBER_REGIROCK
+	reloadmapafterbattle
 	special CheckCaughtCelebi
 	iftrue .CaughtRegirock
 	setevent EVENT_BEAT_REGIROCK

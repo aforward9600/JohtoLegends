@@ -73,5 +73,4 @@ SpriteMons:
 	dw REGIELEKI
 	dw HYPNO
 	dw ARTICUNO_G
-	dw ZAPDOS_G
 	dw MOLTRES_G

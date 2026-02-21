@@ -41,6 +41,7 @@ MapGroupRoofs:
 	db ROOF_MAHOGANY
 	db ROOF_GOLDENROD
 	db ROOF_GOLDENROD
+	db ROOF_GOLDENROD
 
 Roofs:
 ; entries correspond to ROOF_* constants
