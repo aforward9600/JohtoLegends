@@ -998,6 +998,12 @@ StaticPokemonRefresh:
 	iftrue .refreshregigigas
 	checkevent EVENT_BEAT_HYPNO
 	iftrue .refreshhypno
+	checkevent EVENT_BEAT_ARTICUNO_G
+	iftrue .refresharticunog
+	checkevent EVENT_BEAT_ZAPDOS_G
+	iftrue .refreshzapdosg
+	checkevent EVENT_BEAT_MOLTRES_G
+	iftrue .refreshmoltresg
 	return
 
 .refreshfarfetchd:
@@ -1101,6 +1107,21 @@ StaticPokemonRefresh:
 	clearevent EVENT_BEAT_HYPNO
 	clearevent EVENT_BERRY_FOREST_HYPNO
 	sjump StaticPokemonRefresh
+
+.refresharticunog:
+	clearevent EVENT_BEAT_ARTICUNO_G
+	clearevent EVENT_MT_SILVER_ARTICUNO_G
+	sjump StaticPokemonRefresh
+
+.refreshzapdosg:
+	clearevent EVENT_BEAT_ZAPDOS_G
+	clearevent EVENT_SEVAULT_CANYON_ZAPDOS_1
+	setmapscene SEVAULT_CANYON, SCENE_DEFAULT
+	sjump StaticPokemonRefresh
+
+.refreshmoltresg:
+	clearevent EVENT_BEAT_MOLTRES_G
+	clearevent EVENT_MT_EMBER_MOLTRES_G
 
 TelevisionScript:
 	readvar VAR_WEEKDAY
