@@ -1,6 +1,4 @@
 GetTaurosForm::
-;	ld a, [wBufferMonForm]
-	ld b,b
 	ld a, [bc]
 	and CAUGHT_FORM_1_MASK
 	jr z, .TrySecond
@@ -22,8 +20,6 @@ GetTaurosForm::
 	ret
 
 _GetTaurosForm::
-;	ld a, [wBufferMonForm]
-	ld b,b
 	ld a, [bc]
 	and CAUGHT_FORM_1_MASK
 	jr z, .TrySecond
@@ -245,7 +241,6 @@ GetPicIndirectPointer:
 		endc
 	endc
 	jr nz, .NotTauros
-	ld b,b
 ;	pop af
 ;	push af
 ;	pop bc

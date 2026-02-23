@@ -280,7 +280,12 @@ ReceivedZephyrBadgeText:
 	done
 
 WalkerZephyrBadgeText:
-	text "Here--take this"
+	text "The ZephyrBadge"
+	line "makes all #mon"
+	cont "up to Lv 80 obey"
+	cont "you."
+
+	para "Here--take this"
 	line "TM for yourself."
 	done
 

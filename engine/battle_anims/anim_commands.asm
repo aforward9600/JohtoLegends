@@ -178,7 +178,8 @@ BattleAnimRequestPals:
 	ld b, a
 	ld a, [wOBP0]
 	cp b
-	jp nz, BattleAnim_SetOBPals
+	call nz, BattleAnim_SetOBPals
+	ret
 
 ClearActorHud:
 	ldh a, [hBattleTurn]

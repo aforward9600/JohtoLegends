@@ -1,5 +1,5 @@
 	db "G!L&I-T?C/H@" ; species name
-	dw 000, 000 ; height, weight
+	dw 000, 001 ; height, weight
 
 	db   "8$w?e)a!1r%(e+?7"
 	next "5;s6/t+19u2?c,k9?"

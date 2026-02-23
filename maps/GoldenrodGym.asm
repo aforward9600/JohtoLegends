@@ -339,9 +339,12 @@ PlayerReceivedPlainBadgeText:
 	done
 
 MiltonText_PlainBadgeSpeech:
-	text "Well done there,"
-	line "pardner! Here,"
-	cont "take this TM as"
+	text "The PlainBadge"
+	line "makes all #mon"
+	cont "up to Lv 60 obey"
+
+	para "you. Here,"
+	line "take this TM as"
 	cont "well!"
 	done
 

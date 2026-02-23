@@ -591,7 +591,6 @@ BattleObjectPals:
 INCLUDE "gfx/battle_anims/battle_anims.pal"
 
 _GetMonPalettePointer:
-	ld b,b
 	push af
 	call GetPokemonIndexFromID
 ;	push hl

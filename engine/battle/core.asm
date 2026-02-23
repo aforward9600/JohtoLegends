@@ -3672,6 +3672,8 @@ TryToRunAwayFromBattle:
 	cp BATTLETYPE_REGI
 	jp z, .cant_escape
 
+	ld b,b
+
 	ld a, [wLinkMode]
 	and a
 	jp nz, .can_escape
@@ -3680,13 +3682,17 @@ TryToRunAwayFromBattle:
 	dec a
 	jp nz, .cant_run_from_trainer
 
+	push hl
+
 	ld hl, wBattleMonType1
 	ld a, [hli]
 	cp GHOST
-	jr z, .no_flee_item
+	jr z, .ghost_flee
 	ld a, [hl]
 	cp GHOST
-	jr z, .no_flee_item
+	jr z, .ghost_flee
+
+	pop hl
 
 	call CheckNeutralGas
 	jr z, .SkipRunAway
@@ -3728,6 +3734,8 @@ TryToRunAwayFromBattle:
 	call StdBattleTextbox
 	jp .can_escape
 
+.ghost_flee
+	pop hl
 .no_flee_item
 	ld a, [wNumFleeAttempts]
 	inc a
@@ -6411,7 +6419,6 @@ LoadEnemyMon:
 .Happiness1:
 ;	ld b, 0
 ;	ld c, 0
-;	ld b,b
 ;	ld a, [wEnemyMonForm]
 ;	ld [wUnownLetter], a
 	ld bc, wEnemyMonForm

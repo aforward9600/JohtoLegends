@@ -190,6 +190,10 @@ CheckPlayerTurn:
 
 .woke_up_ability
 	pop af
+	xor a
+	ld [wBattleMonStatus], a
+	and SLP
+	farcall AnimateUserAbility
 .woke_up
 	ld hl, WokeUpText
 	call StdBattleTextbox
@@ -466,6 +470,10 @@ CheckEnemyTurn:
 
 .woke_up_ability
 	pop af
+	xor a
+	ld [wEnemyMonStatus], a
+	and SLP
+	farcall AnimateUserAbility
 .woke_up
 	ld hl, WokeUpText
 	call StdBattleTextbox
@@ -759,19 +767,39 @@ BattleCommand_CheckObedience:
 	ld a, MAX_LEVEL + 1
 	jr nz, .getlevel
 
-	; stormbadge
-	bit STORMBADGE, [hl]
-	ld a, 70
-	jr nz, .getlevel
-
-	; fogbadge
-	bit FOGBADGE, [hl]
-	ld a, 50
+	; zephyrbadge
+	bit ZEPHYRBADGE, [hl]
+	ld a, 80
 	jr nz, .getlevel
 
 	; hivebadge
 	bit HIVEBADGE, [hl]
+	ld a, 70
+	jr nz, .getlevel
+
+	; plainbadge
+	bit PLAINBADGE, [hl]
+	ld a, 60
+	jr nz, .getlevel
+
+	; mineralbadge
+	bit MINERALBADGE, [hl]
+	ld a, 50
+	jr nz, .getlevel
+
+	; stormbadge
+	bit STORMBADGE, [hl]
+	ld a, 40
+	jr nz, .getlevel
+
+	; fogbadge
+	bit FOGBADGE, [hl]
 	ld a, 30
+	jr nz, .getlevel
+
+	; glacierbadge
+	bit GLACIERBADGE, [hl]
+	ld a, 20
 	jr nz, .getlevel
 
 	; no badges
@@ -3221,7 +3249,6 @@ DoubleStatIfSpeciesHoldingItem:
 	pop hl
 	cp d
 	ret nz
-	ld b,b
 ; Double the stat
 	add hl, hl
 	ret
@@ -4200,6 +4227,7 @@ BattleCommand_SleepTarget:
 	ret
 
 .protected_by_ability
+	farcall AnimateOppAbility
 	ld hl, InsomniaText
 
 .fail
@@ -7259,6 +7287,7 @@ BattleCommand_Heal:
 	pop hl
 	pop af
 	call AnimateFailedMove
+	farcall AnimateUserAbility
 	ld hl, RestInsomniaText
 	jp StdBattleTextbox
 

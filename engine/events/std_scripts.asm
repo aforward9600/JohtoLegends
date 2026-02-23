@@ -1122,6 +1122,7 @@ StaticPokemonRefresh:
 .refreshmoltresg:
 	clearevent EVENT_BEAT_MOLTRES_G
 	clearevent EVENT_MT_EMBER_MOLTRES_G
+	sjump StaticPokemonRefresh
 
 TelevisionScript:
 	readvar VAR_WEEKDAY

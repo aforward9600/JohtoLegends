@@ -650,7 +650,6 @@ PaldeanTaurosCheck::
 	ld a, [wCurSpecies]
 	call GetPokemonIndexFromID
 FinishTaurosCheck:
-;	ld b,b
 	ld a, l
 	sub LOW(TAUROS_P)
 	if HIGH(TAUROS_P) == 0
@@ -672,7 +671,6 @@ FinishTaurosCheck:
 	ret
 
 SetPokemonForm::
-	ld b,b
 ;	push hl
 	ld a, [wTempEnemyMonSpecies]
 ResumeFormCheck:
