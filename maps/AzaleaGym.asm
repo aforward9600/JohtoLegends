@@ -218,10 +218,10 @@ Text_ReceivedHiveBadge:
 
 KurtText_HiveBadgeSpeech:
 	text "The HiveBadge"
-	line "makes all #mon"
-	cont "up to Lv 70 obey"
+	line "makes #mon up"
+	cont "to Lv 70 obey you."
 
-	para "you. Here, take"
+	para "Here, take"
 	line "this too."
 	done
 

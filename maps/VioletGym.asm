@@ -281,9 +281,8 @@ ReceivedZephyrBadgeText:
 
 WalkerZephyrBadgeText:
 	text "The ZephyrBadge"
-	line "makes all #mon"
-	cont "up to Lv 80 obey"
-	cont "you."
+	line "makes #mon up"
+	cont "to Lv 80 obey you."
 
 	para "Here--take this"
 	line "TM for yourself."
@@ -296,8 +295,8 @@ WalkerTMRoostText:
 	para "It will heal a"
 	line "bird #mon of"
 
-	para "its wounds."
-	line "Use it well."
+	para "its wounds. Use it"
+	line "well."
 	done
 
 WalkerFightDoneText:

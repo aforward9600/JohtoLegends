@@ -206,11 +206,11 @@ Text1F_ReceivedMineralBadge:
 
 Byron1F_BadgeSpeech:
 	text "The MineralBadge"
-	line "will make any"
-	cont "#mon up to Lv."
+	line "makes #mon up"
+	cont "to Lv 50 obey you."
 
-	para "50 obey you. Take"
-	line "this TM as well!"
+	para "Have this TM for"
+	line "your collection!"
 	done
 
 Byron1F_FlashCannonSpeech:

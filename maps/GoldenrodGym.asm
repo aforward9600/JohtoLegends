@@ -340,12 +340,11 @@ PlayerReceivedPlainBadgeText:
 
 MiltonText_PlainBadgeSpeech:
 	text "The PlainBadge"
-	line "makes all #mon"
-	cont "up to Lv 60 obey"
+	line "makes #mon up"
+	cont "to Lv 60 obey you."
 
-	para "you. Here,"
-	line "take this TM as"
-	cont "well!"
+	para "Here, take this"
+	line "TM as well!"
 	done
 
 MiltonAttractText:

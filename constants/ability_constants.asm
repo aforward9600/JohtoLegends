@@ -152,5 +152,6 @@
 	const QUICK_DRAW    ; 95
 	const ALCHEMY_POWER ; 96
 	const BERSERK       ; 97
+	const MINDS_EYE     ; 98
 
 NUM_ABILITIES EQU const_value + -1

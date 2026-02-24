@@ -151,3 +151,4 @@ AbilityNames::
 	db "Quick Draw@"
 	db "AlchemyPower@"
 	db "Berserk@"
+	db "Mind's Eye@"

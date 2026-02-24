@@ -37,8 +37,8 @@ MaxDVsSetter:
 	iftrue .SetShiny
 	checkevent EVENT_PASSWORD_MONOCHROME
 	iftrue .SetMonochrome
-;	checkevent EVENT_PASSWORD_NO_MONOCHROME
-;	iftrue .SetNoMonochrome
+	checkevent EVENT_PASSWORD_NO_MONOCHROME
+	iftrue .SetNoMonochrome
 	checkevent EVENT_PASSWORD_SINGULAR
 	iftrue .SetSingular
 .NoPassword
@@ -62,12 +62,12 @@ MaxDVsSetter:
 	clearevent EVENT_PASSWORD_MONOCHROME
 	writetextend MonochromeText
 
-;.SetNoMonochrome:
-;	writetext NoMonochromeText
-;	waitbutton
-;	closetext
-;	clearevent EVENT_PASSWORD_NO_MONOCHROME
-;	end
+.SetNoMonochrome:
+	writetext NoMonochromeText
+	waitbutton
+	closetext
+	clearevent EVENT_PASSWORD_NO_MONOCHROME
+	end
 
 .SetSingular:
 	checkevent EVENT_PASSWORD_SET_3
@@ -94,8 +94,8 @@ CheckForPassword:
 	iftrue .cheaterpassword2
 	callasm .monochromepassword
 	iftrue .monochromepassword2
-;	callasm .nomonochromepassword
-;	iftrue .nomonochromepassword2
+	callasm .nomonochromepassword
+	iftrue .nomonochromepassword2
 	callasm .singularpassword
 	iftrue .singularpassword2
 	end
@@ -142,7 +142,7 @@ CheckForPassword:
 .nomonochromepassword2:
 	callasm SetNoMonochrome
 	setevent EVENT_PASSWORD_NO_MONOCHROME
-	ret
+	end
 
 .singularpassword2:
 	setevent EVENT_PASSWORD_SINGULAR

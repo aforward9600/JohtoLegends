@@ -151,6 +151,7 @@ AbilityDescriptions:
 	dw QuickDrawDesc
 	dw AlchemyPowerDesc
 	dw BerserkDesc
+	dw MindsEyeDesc
 
 NoAbilityDesc:
 	db    "No ability."
@@ -645,8 +646,8 @@ SolarPowerDesc:
 	next1 "Sun, lowers HP.@"
 
 MagmaArmorDesc:
-	db    "Prevents freezing."
-	next1 "@"
+	db    "Immune to freezing"
+	next1 "and Water moves.@"
 
 LiquidOozeDesc:
 	db    "Draining moves"
@@ -747,3 +748,7 @@ AlchemyPowerDesc:
 BerserkDesc:
 	db    "Sp.Atk boosted"
 	next1 "when HP is low.@"
+
+MindsEyeDesc:
+	db    "Ignores evasion,"
+	next1 "can hit Ghosts.@"

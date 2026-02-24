@@ -327,18 +327,21 @@ Text_ReceivedGlacierBadge:
 PryceText_GlacierBadgeSpeech:
 	text "That's your first"
 	line "Badge, right? You"
-	cont "are on your way"
+	cont "are on your way to"
+	cont "becoming a master."
 
-	para "to becoming a"
-	line "master. Here, take"
-	cont "this TM. It will"
+	para "The GlacierBadge"
+	line "makes #mon up"
+	cont "to Lv 20 obey you."
+
+	para "Here, take this"
+	cont "TM. It will teach"
 
 
-	para "teach your #mon"
-	line "a move, and it"
-	cont "can be used"
-
-	para "over and over."
+	para "your #mon a"
+	line "move, and it can"
+	cont "be used over and"
+	cont "over."
 	done
 
 PryceText_IcyWindSpeech:

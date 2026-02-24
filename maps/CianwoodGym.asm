@@ -307,10 +307,11 @@ GetStormBadgeText:
 
 ChigusaExplainBadgeText:
 	text "The StormBadge"
-	line "makes all #mon"
-	cont "up to Lv 40 obey"
+	line "makes #mon up"
+	cont "to Lv 40 obey you."
 
-	para "you. Take this TM!"
+	para "You can have this"
+	line "TM too!"
 	done
 
 ChigusaExplainTMText:

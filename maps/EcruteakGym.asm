@@ -310,11 +310,11 @@ Text_ReceivedFogBadge:
 
 EnokiText_FogBadgeSpeech:
 	text "The FogBadge will"
-	line "make any #mon"
-	cont "up to Lv 30 obey"
+	line "make #mon up"
+	cont "to Lv 30 obey you."
 
-	para "you. Here, take"
-	line "this TM."
+	para "Here, take this"
+	line "TM."
 	done
 
 EnokiText_HexSpeech:

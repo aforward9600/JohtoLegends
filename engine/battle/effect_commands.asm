@@ -1484,7 +1484,7 @@ BattleCommand_Stab:
 	ld a, [hli]
 
 	cp -1
-	jr z, .end
+	jp z, .end
 
 	; foresight
 	cp -2
@@ -1493,6 +1493,8 @@ BattleCommand_Stab:
 	jr z, .DoForesightCheck
 	call GetUserAbility
 	cp SCRAPPY
+	jr z, .end
+	cp MINDS_EYE
 	jr z, .end
 .DoForesightCheck
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
@@ -1576,7 +1578,7 @@ BattleCommand_Stab:
 .SkipType:
 	inc hl
 	inc hl
-	jr .TypesLoop
+	jp .TypesLoop
 
 .end
 	call BattleCheckTypeMatchup
@@ -1622,6 +1624,8 @@ CheckTypeMatchup:
 	jr z, .SkipScrappy
 	call GetUserAbility
 	cp SCRAPPY
+	jr z, .End
+	cp MINDS_EYE
 	jr z, .End
 .SkipScrappy:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
@@ -2029,6 +2033,11 @@ BattleCommand_CheckHit:
 	call GetBattleVar
 	bit SUBSTATUS_IDENTIFIED, a
 	ret nz
+	call CheckNeutralGas
+	jr z, .skip_foresight_check
+	call GetUserAbility
+	cp MINDS_EYE
+	ret z
 
 .skip_foresight_check
 	; subtract evasion from 14
@@ -5154,6 +5163,8 @@ BattleCommand_AccuracyDown:
 	jp z, _PreventStatDrop
 	cp KEEN_EYE
 	jp z, _PreventStatDrop
+	cp MINDS_EYE
+	jp z, _PreventStatDrop
 .SkipAbilities
 	ld a, ACCURACY
 	jr BattleCommand_StatDown
@@ -7168,8 +7179,6 @@ EndRechargeOpp:
 	res SUBSTATUS_RECHARGE, [hl]
 	pop hl
 	ret
-
-INCLUDE "engine/battle/move_effects/leech_seed.asm"
 
 BattleCommand_ResetStats:
 ; resetstats

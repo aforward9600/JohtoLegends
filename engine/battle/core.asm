@@ -5538,6 +5538,13 @@ MoveSelectionScreen:
 	dec a
 	cp c
 	jr z, .move_disabled
+;BattleCommand_BloodMoon:
+;	ld a, BATTLE_VARS_LAST_MOVE
+;	call GetBattleVarAddr
+;	ld a, [hl]
+;	and a
+;	cp DRAGON_RAGE
+;	jr z, .move_disabled
 	ld a, [wUnusedPlayerLockedMove]
 	and a
 	jr nz, .skip2
@@ -6052,17 +6059,7 @@ LoadEnemyMon:
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 
-;	call SetEnemyBufferForm
 	call InitEnemyForm
-
-;	ld a, [wBufferMonForm]
-;	xor a
-
-;	ld hl, wBufferMonForm
-;	ld a, [hl]
-;	or CAUGHT_FORM_1_MASK
-;	ld [hl], a
-;	ld [wBufferMonForm], a
 
 ; Grab the BaseData for this species
 	call GetBaseData
@@ -6186,11 +6183,6 @@ LoadEnemyMon:
 ; Wild DVs
 ; Here's where the fun starts
 
-;	ld a, [wEnemyMonForm]
-;	ld [wBufferMonForm], a
-;	ld a, [wEnemyMonForm]
-;	xor a
-
 ; Roaming monsters (Entei, Raikou) work differently
 ; They have their own structs, which are shorter than normal
 	ld a, [wBattleType]
@@ -6238,10 +6230,6 @@ LoadEnemyMon:
 	cp BATTLETYPE_SHINY
 	jr nz, .GenerateDVs
 
-;	ld b, ATKDEFDV_SHINY ; $ea
-;	ld c, SPDSPCDV_SHINY ; $aa
-;	jr .UpdateDVs
-
 	ld a, [wEnemyMonForm]
 	or CAUGHT_SHINY_MASK
 	ld [wEnemyMonForm], a
@@ -6270,22 +6258,7 @@ LoadEnemyMon:
 
 .SkipShine
 	farcall SetPokemonForm
-;	ld a, [wBufferMonForm]
-;	and CAUGHT_FORM_1_MASK
-;	jr z, .TrySecond
-;	ld a, [hl]
-;	or CAUGHT_FORM_1_MASK
-;	ld [hl], a
-;	jr .FinishDVs
-;
-;.TrySecond
-;	ld a, [wBufferMonForm]
-;	and CAUGHT_FORM_2_MASK
-;	jr z, .FinishDVs
-;	ld a, [hl]
-;	or CAUGHT_FORM_2_MASK
-;	ld a, [hl]
-;.FinishDVs
+;	farcall SetEnemyHiddenPower
 	call BattleRandom
 	ld b, a
 	call BattleRandom

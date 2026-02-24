@@ -491,9 +491,7 @@ CheckContactAbilities:
 	jp .AfterCursedBody
 
 .rattled:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp BUG
 	jr z, .ActivateRattle
 	cp DARK
@@ -505,9 +503,7 @@ CheckContactAbilities:
 	jp .AfterCursedBody
 
 .justified:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp DARK
 	jp nz, .AfterCursedBody
 	call JustifiedAbility
@@ -909,9 +905,7 @@ CheckBoostingAbilities:
 	jp .AfterMarvelScale
 
 .ThickFat:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp FIRE
 	jr z, .ThickFatNerf
 	cp ICE
@@ -923,18 +917,14 @@ CheckBoostingAbilities:
 	jp .AfterMarvelScale
 
 .DrySkin:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp FIRE
 	jp nz, .AfterMarvelScale
 	call TwentyFivePercentBoost
 	jp .AfterMarvelScale
 
 .HeatProof:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp FIRE
 	jp nz, .AfterMarvelScale
 	call FiftyPercentNerf
@@ -967,9 +957,7 @@ CheckBoostingAbilities:
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
 	ret nz
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp ROCK
 	jr z, .SandForceBoost
 	cp GROUND
@@ -1010,32 +998,24 @@ CheckBoostingAbilities:
 	jp .NoBoostingAbilities
 
 .Overgrow:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp GRASS
 	jr z, .PinchHPCheck
 	ret
 
 .Blaze:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp FIRE
 	jr z, .PinchHPCheck
 	ret
 .Torrent:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp WATER
 	jr z, .PinchHPCheck
 	ret
 
 .Swarm:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp BUG
 	jr z, .PinchHPCheck
 	ret
@@ -1094,17 +1074,13 @@ CheckBoostingAbilities:
 	ret
 
 .Transistor:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp ELECTRIC
 	jr z, ThirtyPercentBoost
 	ret
 
 .SteelySpirit:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp STEEL
 	jr z, FiftyPercentBoost
 	ret
@@ -1122,9 +1098,7 @@ CheckBoostingAbilities:
 	jp FiftyPercentBoost
 
 .DragonsMaw:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp DRAGON
 	jr z, FiftyPercentBoost
 .NoBoostingAbilities:
@@ -1503,12 +1477,11 @@ CheckDefensiveAbilities:
 	dbw LIGHTNINGROD,    .Lightningrod
 	dbw SAP_SIPPER,      .SapSipper
 	dbw BULLETPROOF,     .Bulletproof
+	dbw MAGMA_ARMOR,     .MagmaArmor
 	db -1
 
 .FlashFire:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp FIRE
 	ret nz
 	farcall BattleCommand_SwitchTurn
@@ -1523,9 +1496,7 @@ CheckDefensiveAbilities:
 	jp EndMoveEffectAbilities
 
 .Levitate:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp GROUND
 	ret nz
 	call AnimateOppAbility
@@ -1534,9 +1505,7 @@ CheckDefensiveAbilities:
 	jp EndMoveEffectAbilities
 
 .SapSipper:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp GRASS
 	ret nz
 	call AnimateOppAbility
@@ -1552,9 +1521,7 @@ CheckDefensiveAbilities:
 	jp EndMoveEffectAbilities
 
 .Lightningrod:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp ELECTRIC
 	ret nz
 	call AnimateOppAbility
@@ -1570,9 +1537,7 @@ CheckDefensiveAbilities:
 	jp EndMoveEffectAbilities
 
 .MotorDrive:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp ELECTRIC
 	ret nz
 	call AnimateOppAbility
@@ -1603,28 +1568,29 @@ CheckDefensiveAbilities:
 	call PreventAbilityText
 	jp EndMoveEffectAbilities
 
+.MagmaArmor:
+	call CheckMoveTypeAbilities
+	cp WATER
+	ret nz
+	call PreventAbilityText
+	jp EndMoveEffectAbilities
+
 .DrySkin:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp WATER
 	ret nz
 	call CheckFullHPDefenseAbilities
 	jp EndMoveEffectAbilities
 
 .WaterAbsorb:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp WATER
 	ret nz
 	call CheckFullHPDefenseAbilities
 	jp EndMoveEffectAbilities
 
 .VoltAbsorb:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call CheckMoveTypeAbilities
 	cp ELECTRIC
 	ret nz
 	call CheckFullHPDefenseAbilities
@@ -2366,3 +2332,9 @@ Ability_LoadAbilitySlideIn:
 ;	and a
 ;	jr z, .PlayerAbility
 	jp AnimateUserAbility
+
+CheckMoveTypeAbilities:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	ret
