@@ -3568,6 +3568,7 @@ Function_SetEnemyMonAndSendOutAnimation:
 
 NewEnemyMonStatus:
 	xor a
+;	ld [wEnemyBloodMoon], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastEnemyMove], a
@@ -4114,6 +4115,7 @@ SendOutPlayerMon:
 
 NewBattleMonStatus:
 	xor a
+;	ld [wPlayerBloodMoon], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerMove], a
@@ -5545,6 +5547,11 @@ MoveSelectionScreen:
 ;	and a
 ;	cp DRAGON_RAGE
 ;	jr z, .move_disabled
+;	ld b,b
+;	xor a
+;	ld [wPlayerBloodMoon], a
+;	ld a, [wPlayerBloodMoon]
+;	jr nz, .move_disabled
 	ld a, [wUnusedPlayerLockedMove]
 	and a
 	jr nz, .skip2

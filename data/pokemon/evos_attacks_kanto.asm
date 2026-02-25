@@ -1676,7 +1676,7 @@ PoliwagEvosAttacks:
 
 PoliwhirlEvosAttacks:
 	dbbw EVOLVE_ITEM, WATER_STONE, POLIWRATH
-	dbbw EVOLVE_ITEM, ROYAL_ROCK, POLITOED
+	dbbbw EVOLVE_HOLD, KINGS_ROCK, TR_ANYTIME, POLITOED
 	db 0 ; no more evolutions
 	dbw 1, WATER_GUN
 	dbw 1, HYPNOSIS
@@ -2145,7 +2145,7 @@ RapidashGEvosAttacks:
 	db 0 ; no more level-up moves
 
 SlowpokeEvosAttacks:
-	dbbw EVOLVE_ITEM, ROYAL_ROCK, SLOWKING
+	dbbbw EVOLVE_ITEM, KINGS_ROCK, TR_ANYTIME, SLOWKING
 	dbbw EVOLVE_LEVEL, 37, SLOWBRO
 	db 0 ; no more evolutions
 	dbw 1, CURSE
@@ -2166,7 +2166,7 @@ SlowpokeEvosAttacks:
 	db 0 ; no more level-up moves
 
 SlowpokeGEvosAttacks:
-	dbbw EVOLVE_ITEM, ROYAL_ROCK, SLOWKING_G
+	dbbbw EVOLVE_ITEM, KINGS_ROCK, TR_ANYTIME, SLOWKING_G
 	dbbw EVOLVE_LEVEL, 37, SLOWBRO_G
 	db 0 ; no more evolutions
 	dbw 1, CURSE
@@ -2693,7 +2693,7 @@ GengarEvosAttacks:
 	db 0 ; no more level-up moves
 
 OnixEvosAttacks:
-	dbbw EVOLVE_ITEM, METAL_COAT, STEELIX
+	dbbbw EVOLVE_HOLD, METAL_COAT, TR_ANYTIME, STEELIX
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, SCREECH
@@ -3235,7 +3235,7 @@ RhyhornEvosAttacks:
 	db 0 ; no more level-up moves
 
 RhydonEvosAttacks:
-	dbbw EVOLVE_ITEM, PROTECTOR, RHYPERIOR
+	dbbbw EVOLVE_HOLD, PROTECTOR, TR_ANYTIME, RHYPERIOR
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, HAMMER_ARM
 	dbw 1, HAMMER_ARM
@@ -3419,7 +3419,7 @@ HorseaEvosAttacks:
 	db 0 ; no more level-up moves
 
 SeadraEvosAttacks:
-	dbbw EVOLVE_ITEM, DRAGON_SCALE, KINGDRA
+	dbbbw EVOLVE_HOLD, DRAGON_SCALE, TR_ANYTIME, KINGDRA
 	db 0 ; no more evolutions
 	dbw 1, BUBBLE
 	dbw 5, LEER
@@ -3629,8 +3629,8 @@ MrRimeEvosAttacks:
 	db 0 ; no more level-up moves
 
 ScytherEvosAttacks:
-	dbbw EVOLVE_ITEM, METAL_COAT, SCIZOR
-	dbbw EVOLVE_ITEM, ROYAL_ROCK, KLEAVOR
+	dbbbw EVOLVE_HOLD, METAL_COAT, TR_ANYTIME, SCIZOR
+	dbbbw EVOLVE_HOLD, KINGS_ROCK, TR_ANYTIME, KLEAVOR
 	db 0 ; no more evolutions
 	dbw 1, QUICK_ATTACK
 	dbw 1, LEER
@@ -3757,7 +3757,7 @@ ElekidEvosAttacks:
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
-	dbbw EVOLVE_ITEM, ELECTIRIZER, ELECTIVIRE
+	dbbbw EVOLVE_HOLD, ELECTIRIZER, TR_ANYTIME, ELECTIVIRE
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, CROSS_CHOP
 	dbw 1, CROSS_CHOP
@@ -3819,7 +3819,7 @@ MagbyEvosAttacks:
 	db 0 ; no more level-up moves
 
 MagmarEvosAttacks:
-	dbbw EVOLVE_ITEM, MAGMARIZER, MAGMORTAR
+	dbbbw EVOLVE_HOLD, MAGMARIZER, TR_ANYTIME, MAGMORTAR
 	db 0 ; no more evolutions
 	dbw 1, EMBER
 	dbw 1, LEER

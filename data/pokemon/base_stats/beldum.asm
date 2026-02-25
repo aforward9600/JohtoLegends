@@ -7,7 +7,7 @@
 	db STEEL, PSYCHIC ; type
 	db 15 ; catch rate
 	db 103 ; base exp
-	db STEEL_DAGGER, METAL_COAT ; items
+	db NO_ITEM, METAL_COAT ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 40 ; step cycles to hatch
 	INCBIN "gfx/pokemon/beldum/front.dimensions"

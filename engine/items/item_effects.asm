@@ -140,11 +140,11 @@ ItemEffects:
 	dw NoEffect            ; CHARCOAL
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS
-	dw EvoStoneEffect      ; METAL_COAT
+	dw NoEffect            ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
 	dw NoEffect            ; LEFTOVERS
 	dw RestorePPEffect     ; MYSTERYBERRY
-	dw EvoStoneEffect      ; DRAGON_SCALE
+	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
@@ -160,7 +160,7 @@ ItemEffects:
 	dw NoEffect            ; SOOTHE_BELL
 	dw EvoStoneEffect      ; SUN_STONE
 	dw NoEffect            ; POLKADOT_BOW
-	dw EvoStoneEffect      ; UP_GRADE
+	dw NoEffect            ; UP_GRADE
 	dw RestoreHPEffect     ; BERRY
 	dw Restore4thHPEffect  ; GOLD_BERRY
 	dw NoEffect            ; SQUIRTBOTTLE
@@ -169,15 +169,15 @@ ItemEffects:
 	dw EvoStoneEffect      ; DUSK_STONE
 	dw EvoStoneEffect      ; ICE_STONE
 	dw EvoStoneEffect      ; SHINY_STONE
-	dw EvoStoneEffect      ; DUBIOUSDISK
+	dw NoEffect            ; DUBIOUSDISK
 	dw EvoStoneEffect      ; LINK_CABLE
-	dw EvoStoneEffect      ; ELECTIRIZER
-	dw EvoStoneEffect      ; MAGMARIZER
-	dw EvoStoneEffect      ; RAZOR_CLAW
-	dw EvoStoneEffect      ; RAZOR_FANG
-	dw EvoStoneEffect      ; PROTECTOR
+	dw NoEffect            ; ELECTIRIZER
+	dw NoEffect            ; MAGMARIZER
+	dw NoEffect            ; RAZOR_CLAW
+	dw NoEffect            ; RAZOR_FANG
+	dw NoEffect            ; PROTECTOR
 	dw NoEffect            ; STEEL_DAGGER
-	dw EvoStoneEffect      ; ROYAL_ROCK
+	dw NoEffect            ; ROYAL_ROCK
 	dw ScytherCallEffect   ; SCYTHER_CALL
 	dw GolemCallEffect     ; GOLEM_CALL
 	dw VoltorbCallEffect   ; VOLTORB_CALL

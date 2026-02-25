@@ -32,13 +32,9 @@ SlowpokeWellB2FGymGuyText:
 
 	para "I thought this"
 	line "rock would make a"
-
-	para "Slowpoke evolve,"
-	line "but all it does is"
-	cont "make it flinch!"
-
-	para "Apparently, I need"
-	line "a Royal Rock!"
+	cont "Slowpoke evolve if"
+	cont "I used it, but it"
+	cont "did nothing!"
 
 	para "Here, take this"
 	line "King's Rock away!"
@@ -48,13 +44,13 @@ SlowpokeWellB2FGymGuyText:
 	done
 
 SlowpokeWellB2FGymGuyText_GotKingsRock:
-	text "Guess I'll have to"
-	line "go and find a"
+	text "Wait, maybe I"
+	line "needed to let it"
+	cont "hold it…"
 
-	para "Royal Rock if I"
-	line "want to see a"
-	cont "Slowpoke evolve"
-	cont "into a Slowking…"
+	para "Great, now I have"
+	line "to find another"
+	cont "King's Rock!"
 	done
 
 SlowpokeWellB2F_MapEvents:

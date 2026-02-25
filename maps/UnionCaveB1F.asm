@@ -48,7 +48,7 @@ UnionCaveB1FTMIronHead:
 	itemball TM_IRON_HEAD
 
 UnionCaveB1FSteelDagger:
-	itemball STEEL_DAGGER
+	itemball METAL_COAT
 
 UnionCaveB1FBoulder:
 	jumpstd strengthboulder

@@ -178,7 +178,7 @@ MartGoldenrodBlackMarket2:
 	db DRAGON_SCALE
 	db LINK_CABLE
 	db UP_GRADE
-	db ROYAL_ROCK
+	db KINGS_ROCK
 	db METAL_COAT
 	db RAZOR_CLAW
 	db RAZOR_FANG
@@ -201,7 +201,7 @@ MartGoldenrodBlackMarket3:
 MartGoldenrodBlackMarket4:
 	db 7 ; # items
 	db UP_GRADE
-	db ROYAL_ROCK
+	db KINGS_ROCK
 	db METAL_COAT
 	db SHINY_STONE
 	db DUSK_STONE

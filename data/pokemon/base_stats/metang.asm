@@ -7,7 +7,7 @@
 	db STEEL, PSYCHIC ; type
 	db 3 ; catch rate
 	db 153 ; base exp
-	db STEEL_DAGGER, METAL_COAT ; items
+	db NO_ITEM, METAL_COAT ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 40 ; step cycles to hatch
 	INCBIN "gfx/pokemon/metang/front.dimensions"

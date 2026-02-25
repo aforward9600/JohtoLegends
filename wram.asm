@@ -602,8 +602,8 @@ wCurEnemyMoveNum:: db ; c6e9
 wEnemyHPAtTimeOfPlayerSwitch:: dw ; c6ea
 wPayDayMoney:: ds 3 ; c6ec
 
-wSafariMonAngerCount:: db
-wSafariMonEating:: db
+wPlayerBloodMoon:: db
+wEnemyBloodMoon:: db
 wStatChangeHappened:: db
 wEnemyBackupDVs:: dw ; used when enemy is transformed
 wAlreadyDisobeyed:: db ; c6f4
@@ -1465,7 +1465,8 @@ wWhichIndexSet:: db ; cf76
 wScrollingMenuCursorPosition:: db ; cf77
 wWindowStackSize:: db ; cf78
 
-	ds 8
+wEvolutionItem:: db
+	ds 7
 
 ; menu header
 wMenuHeader:: ; cf81

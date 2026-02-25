@@ -458,7 +458,7 @@ SylveonEvosAttacks:
 	db 0 ; no more level-up moves
 
 PorygonEvosAttacks:
-	dbbw EVOLVE_ITEM, UP_GRADE, PORYGON2
+	dbbbw EVOLVE_HOLD, UP_GRADE, TR_ANYTIME, PORYGON2
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, CONVERSION
@@ -477,7 +477,7 @@ PorygonEvosAttacks:
 	db 0 ; no more level-up moves
 
 Porygon2EvosAttacks:
-	dbbw EVOLVE_ITEM, DUBIOUSDISK, PORYGON_Z
+	dbbbw EVOLVE_HOLD, DUBIOUSDISK, TR_ANYTIME, PORYGON_Z
 	db 0 ; no more evolutions
 	dbw 1, NASTY_PLOT
 	dbw 1, TACKLE
@@ -2314,7 +2314,7 @@ endc
 	db 0 ;  no more level-up moves
 
 GligarEvosAttacks:
-	dbbw EVOLVE_ITEM, RAZOR_FANG, GLISCOR
+	dbbbw EVOLVE_HOLD, RAZOR_FANG, TR_MORNDAY, GLISCOR
 	db 0 ; no more evolutions
 	dbw 1, POISON_STING
 	dbw 4, SAND_ATTACK
@@ -2483,7 +2483,7 @@ HeracrossEvosAttacks:
 	db 0 ; no more level-up moves
 
 SneaselEvosAttacks:
-	dbbw EVOLVE_ITEM, RAZOR_CLAW, WEAVILE
+	dbbbw EVOLVE_HOLD, RAZOR_CLAW, TR_EVENITE, WEAVILE
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, LEER
@@ -2503,7 +2503,7 @@ SneaselEvosAttacks:
 	db 0 ; no more level-up moves
 
 SneaselHEvosAttacks:
-	dbbw EVOLVE_ITEM, RAZOR_CLAW, SNEASLER
+	dbbbw EVOLVE_HOLD, RAZOR_CLAW, TR_MORNDAY, SNEASLER
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, LEER

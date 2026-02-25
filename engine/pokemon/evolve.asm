@@ -94,8 +94,8 @@ EvolveAfterBattle_MasterLoop:
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
 
-;	cp EVOLVE_HOLD
-;	jr z, .hold
+	cp EVOLVE_HOLD
+	jr z, .hold
 
 ; EVOLVE_STAT
 	call GetNextEvoAttackByte
@@ -125,16 +125,45 @@ EvolveAfterBattle_MasterLoop:
 	jp nz, .skip_evolution_species
 	jp .proceed
 
-;.hold
-;	ld a, [hli]
-;	ld b, a
-;	ld a, [wTempMonItem]
-;	cp b
-;	jp nz, .skip_evolution_species
-;
-;	xor a
-;	ld [wTempMonItem], a
-;	jp .proceed
+.hold
+	push hl
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Item
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld a, [hl]
+	ld b, a
+	pop hl
+
+	call GetNextEvoAttackByte
+	cp b
+	jp nz, .skip_evolution_species_parameter
+	call GetNextEvoAttackByte
+	ld b,b
+	cp TR_ANYTIME
+	jr z, .proceed_item
+	cp TR_MORNDAY
+	jr z, .evo_daylight
+	ld a, [wTimeOfDay]
+	cp NITE_F
+	jr z, .proceed_item
+	cp EVE_F
+	jp nz, .skip_evolution_species
+	jr .proceed_item
+
+.evo_daylight
+	ld a, [wTimeOfDay]
+	cp DAY_F
+	jr z, .proceed_item
+	cp MORN_F
+	jp nz, .skip_evolution_species
+
+.proceed_item
+	ld a, TRUE
+	ld [wForceEvolution], a
+	xor a
+	ld [wTempMonItem], a
+	jp .proceed
 
 .happiness
 	ld a, [wTempMonHappiness]
@@ -403,6 +432,8 @@ EvolveAfterBattle_MasterLoop:
 	cp EVOLVE_MOVE
 	jr z, .skip_evolution_species_two_parameters
 	cp EVOLVE_STAT
+	jr z, .skip_evolution_species_two_parameters
+	cp EVOLVE_HOLD
 	jr nz, .skip_evolution_species_parameter
 .skip_evolution_species_two_parameters
 	inc hl
@@ -776,6 +807,8 @@ SkipEvolutions::
 	cp EVOLVE_MOVE
 	jr z, .extra_skip
 	cp EVOLVE_STAT
+	jr z, .extra_skip
+	cp EVOLVE_HOLD
 	jr nz, .no_extra_skip
 .extra_skip
 	inc hl
@@ -798,6 +831,8 @@ DetermineEvolutionItemResults::
 	and a
 	ret z
 
+	cp EVOLVE_HOLD
+	jr z, .skip_species_two_parameters
 	cp EVOLVE_ITEM_MALE
 	jr z, .item_male
 	cp EVOLVE_ITEM_FEMALE
