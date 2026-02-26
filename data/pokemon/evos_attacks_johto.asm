@@ -2855,7 +2855,7 @@ DelibirdEvosAttacks:
 	db 0 ; no more level-up moves
 
 MantykeEvosAttacks:
-	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, MANTINE
+	dbww EVOLVE_PARTY, REMORAID, MANTINE
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, BUBBLE

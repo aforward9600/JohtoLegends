@@ -92,10 +92,13 @@ EvolveAfterBattle_MasterLoop:
 	jp z, .level
 
 	cp EVOLVE_HAPPINESS
-	jr z, .happiness
+	jp z, .happiness
 
 	cp EVOLVE_HOLD
 	jr z, .hold
+
+	cp EVOLVE_PARTY
+	jr z, .party
 
 ; EVOLVE_STAT
 	call GetNextEvoAttackByte
@@ -163,6 +166,24 @@ EvolveAfterBattle_MasterLoop:
 	ld [wForceEvolution], a
 	xor a
 	ld [wTempMonItem], a
+	jp .proceed
+
+.party
+	call IsMonHoldingEverstone
+	jp z, .skip_evolution_species_two_parameters
+
+	ldh a, [hTemp]
+	push hl
+	call GetFarHalfword
+	call GetPokemonIDFromIndex
+	ld b, a
+	farcall FindThatSpecies
+	pop hl
+
+	jp z, .skip_evolution_species_two_parameters
+
+	call GetNextEvoAttackByte
+	inc hl
 	jp .proceed
 
 .happiness
@@ -432,6 +453,8 @@ EvolveAfterBattle_MasterLoop:
 	cp EVOLVE_MOVE
 	jr z, .skip_evolution_species_two_parameters
 	cp EVOLVE_STAT
+	jr z, .skip_evolution_species_two_parameters
+	cp EVOLVE_PARTY
 	jr z, .skip_evolution_species_two_parameters
 	cp EVOLVE_HOLD
 	jr nz, .skip_evolution_species_parameter
@@ -808,6 +831,8 @@ SkipEvolutions::
 	jr z, .extra_skip
 	cp EVOLVE_STAT
 	jr z, .extra_skip
+	cp EVOLVE_PARTY
+	jr z, .extra_skip
 	cp EVOLVE_HOLD
 	jr nz, .no_extra_skip
 .extra_skip
@@ -831,6 +856,8 @@ DetermineEvolutionItemResults::
 	and a
 	ret z
 
+	cp EVOLVE_PARTY
+	jr z, .skip_species_two_parameters
 	cp EVOLVE_HOLD
 	jr z, .skip_species_two_parameters
 	cp EVOLVE_ITEM_MALE

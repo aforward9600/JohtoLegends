@@ -169,6 +169,7 @@ NUM_HOF_TEAMS EQU 15
 	const EVOLVE_STAT
 	const EVOLVE_HOLD
 	const EVOLVE_MOVE
+	const EVOLVE_PARTY
 
 ; EVOLVE_HAPPINESS triggers
 	const_def 1
