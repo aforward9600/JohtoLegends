@@ -629,9 +629,6 @@ ParsePlayerAction:
 	jp z, .reset_rage
 	and a
 	jr nz, .reset_bide
-	ld a, [wPlayerSubStatus3]
-	and 1 << SUBSTATUS_BIDE
-	jr nz, .locked_in
 	xor a
 	ld [wMoveSelectionMenuType], a
 	if HIGH(POUND)
@@ -698,8 +695,6 @@ ParsePlayerAction:
 	jr .continue_protect
 
 .reset_bide
-	ld hl, wPlayerSubStatus3
-	res SUBSTATUS_BIDE, [hl]
 
 .locked_in
 	xor a
@@ -1203,7 +1198,7 @@ ResidualDamage:
 	ld de, ANIM_SAP
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_VANISHED
 	call z, Call_PlayBattleAnim_OnlyIfVisible
 	call SwitchTurnCore
 	call GetEighthMaxHP
@@ -1425,7 +1420,7 @@ HandleWrap:
 
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_VANISHED
 	jr nz, .skip_anim
 
 	call SwitchTurnCore
@@ -5864,7 +5859,7 @@ ParseEnemyAction:
 	bit SUBSTATUS_ROLLOUT, a
 	jp nz, .skip_load
 	ld a, [wEnemySubStatus3]
-	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_BIDE
+	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE
 	jp nz, .skip_load
 
 	ld hl, wEnemySubStatus5
@@ -6030,7 +6025,7 @@ CheckEnemyLockedIn:
 
 	ld hl, wEnemySubStatus3
 	ld a, [hl]
-	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_BIDE
+	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE
 	ret nz
 
 	ld hl, wEnemySubStatus1
@@ -7222,7 +7217,7 @@ _BattleRandom::
 Call_PlayBattleAnim_OnlyIfVisible:
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_VANISHED
 	ret nz
 
 Call_PlayBattleAnim:

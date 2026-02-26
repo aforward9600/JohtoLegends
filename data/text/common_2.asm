@@ -722,14 +722,19 @@ UnknownText_0x1c0d5c::
 	line "flew up high!"
 	prompt
 
+BounceText::
+	text_start
+	line "bounced up high!"
+	prompt
+
+VanishedText::
+	text_start
+	line "vanished!"
+	prompt
+
 UnknownText_0x1c0d6c::
 	text_start
 	line "dug a hole!"
-	prompt
-
-BounceText::
-	text_start
-	line "bounce high!"
 	prompt
 
 _ActorNameText::

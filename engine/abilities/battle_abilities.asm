@@ -1455,6 +1455,9 @@ BattleCommand_SwitchTurnAbilities:
 CheckDefensiveAbilities:
 	call CheckUserNeutralGasMoldBreaker
 	ret z
+	ld a, [wAttackMissed]
+	and a
+	ret nz
 	call GetTargetAbility
 	ld de, 3
 	ld hl, .DefensiveAbilities

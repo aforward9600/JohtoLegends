@@ -1584,6 +1584,7 @@ AnnihilapeEvosAttacks:
 	dbw 48, HIHORSEPOWER
 	dbw 53, OUTRAGE
 	dbw 57, SUPERPOWER
+	dbw 60, PHANTOMFORCE
 	db 0 ; no more level-up moves
 
 GrowlitheEvosAttacks:

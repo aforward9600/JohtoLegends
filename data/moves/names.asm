@@ -423,4 +423,5 @@ MoveNames::
 	db "Raging Bull@"
 	db "InfernaBlast@"
 	db "Dire Claw@"
+	db "PhantomForce@"
 ;	db "Wake Up Slap@"

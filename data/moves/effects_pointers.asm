@@ -198,4 +198,7 @@ MoveEffectsPointers:
 	dw RagingBull
 	dw InfernaBlast
 	dw DireClaw
+	dw Bounce
+	dw Fly
+	dw Fly
 ;	dw WakeUpSlap

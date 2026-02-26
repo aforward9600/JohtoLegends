@@ -1221,6 +1221,31 @@ Fly:
 	buildopponentrage
 	endmove
 
+Bounce:
+	checkcharge
+	checkobedience
+	doturn
+	charge
+	usedmovetext
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanimnosub
+	raisesub
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	kingsrock
+	checkfaint
+	buildopponentrage
+	sheerforce
+	paralyzetarget
+	endmove
+
 TrapTarget:
 	checkobedience
 	usedmovetext

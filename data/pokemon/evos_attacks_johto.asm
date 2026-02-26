@@ -3348,7 +3348,7 @@ DuskullEvosAttacks:
 	dbw 38, HEX
 	dbw 41, SHADOW_BALL
 	dbw 46, MEAN_LOOK
-	dbw 49, PAYBACK
+	dbw 49, PHANTOMFORCE
 	dbw 54, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
@@ -3370,7 +3370,7 @@ DusclopsEvosAttacks:
 	dbw 40, HEX
 	dbw 45, SHADOW_BALL
 	dbw 52, MEAN_LOOK
-	dbw 57, PAYBACK
+	dbw 57, PHANTOMFORCE
 	dbw 64, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
@@ -3390,7 +3390,7 @@ DusknoirEvosAttacks:
 	dbw 40, HEX
 	dbw 45, SHADOW_BALL
 	dbw 52, MEAN_LOOK
-	dbw 57, PAYBACK
+	dbw 57, PHANTOMFORCE
 	dbw 64, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 

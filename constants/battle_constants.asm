@@ -189,7 +189,7 @@ SUBSTATUS_CURLED EQU 0
 	enum SUBSTATUS_FLINCHED
 	enum SUBSTATUS_IN_LOOP
 	enum SUBSTATUS_RAMPAGE
-	enum SUBSTATUS_BIDE
+	enum SUBSTATUS_VANISHED
 
 ; wPlayerSubStatus4 or wEnemySubStatus4 bit flags
 	enum_start 7, -1

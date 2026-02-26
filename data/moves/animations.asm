@@ -454,6 +454,7 @@ BattleAnimations::
 	dw BattleAnim_RagingBull
 	dw BattleAnim_InfernaBlast
 	dw BattleAnim_DireClaw
+	dw BattleAnim_PhantomForce
 ;	dw BattleAnim_WakeUpSlap
 
 BattleAnim_0:
@@ -1902,6 +1903,7 @@ BattleAnim_Teleport:
 	anim_call BattleAnim_Teleport_branch_cbb12
 	anim_jump BattleAnim_Wait64
 
+BattleAnim_Bounce:
 BattleAnim_Fly:
 	anim_if_param_equal $1, BattleAnim_Fly_branch_c9e89
 	anim_if_param_equal $2, BattleAnim_Fly_branch_c9e82
@@ -4025,6 +4027,33 @@ BattleAnim_ShadowSneak:
 	anim_wait 4
 	anim_ret
 
+BattleAnim_PhantomForce:
+	anim_if_param_equal $1, BattleAnim_PhantomForceBranch
+	anim_if_param_equal $2, BattleAnim_PhantomForceBranch2
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
+	anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_TailAttack
+	anim_wait 32
+BattleAnim_PhantomForceBranch2:
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_jump BattleAnim_Wait32
+
+BattleAnim_PhantomForceBranch:
+;.loop
+	anim_bgp $1b
+	anim_obp1 $1b
+	anim_wait 36
+	anim_sound 0, 0, SFX_CURSE
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_loop 5, .loop
+;	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+;	anim_call BattleAnim_TargetObj_1Row
+;	anim_bgeffect ANIM_BG_1D, $0, $1, $80
+;	anim_incbgeffect ANIM_BG_1D
+	anim_wait 96
+	anim_ret
+
 BattleAnim_FaintAttack:
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_CURSE
@@ -6074,18 +6103,6 @@ BattleAnim_BlazeKick:
 	anim_wait 6
 	anim_obj ANIM_OBJ_07, 136, 56, $0
 	anim_call BattleAnim_FirePunch_branch_cbbcc
-	anim_jump BattleAnim_Wait16
-
-BattleAnim_Bounce:
-	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_HIT
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $1, $0
-	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
-	anim_call BattleAnim_Fly_branch_cbb12
-	anim_wait 16
-	anim_sound 0, 1, SFX_WING_ATTACK
-	anim_obj ANIM_OBJ_01, 136, 56, $0
-	anim_wait 32
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_jump BattleAnim_Wait16
 
 BattleAnim_LeafBlade:

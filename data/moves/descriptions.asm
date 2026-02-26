@@ -429,6 +429,7 @@ MoveDescriptions1:
 	dw RagingBullDescription
 	dw InfernaBlastDescription
 	dw DireClawDescription
+	dw PhantomForceDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1837,3 +1838,7 @@ InfernaBlastDescription:
 DireClawDescription:
 	db   "Causes poison, pa-"
 	line "ralysis or sleep.@"
+
+PhantomForceDescription:
+	db   "1st turn: Vanish"
+	line "2nd turn: Attack@"

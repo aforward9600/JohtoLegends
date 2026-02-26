@@ -403,6 +403,7 @@ CantMove:
 
 	res SUBSTATUS_UNDERGROUND, [hl]
 	res SUBSTATUS_FLYING, [hl]
+	res SUBSTATUS_VANISHED, [hl]
 	jp AppearUserRaiseSub
 
 .fly_dig_moves
@@ -602,7 +603,7 @@ CheckEnemyTurn:
 	ld de, ANIM_HIT_CONFUSION
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_VANISHED
 	call z, PlayFXAnimID
 
 	ld c, TRUE
@@ -705,7 +706,7 @@ HitConfusion:
 	ld de, ANIM_HIT_CONFUSION
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_VANISHED
 	call z, PlayFXAnimID
 
 	ld hl, UpdatePlayerHUD
@@ -1216,6 +1217,9 @@ BattleCommand_DoTurn:
 	db EFFECT_FLY
 	db EFFECT_ROLLOUT
 	db EFFECT_RAMPAGE
+	db EFFECT_BOUNCE
+	db EFFECT_PHANTOM_FORCE
+	db EFFECT_DIG
 	db -1
 
 CheckMimicUsed:
@@ -1935,13 +1939,18 @@ BattleCommand_CheckHit:
 
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_VANISHED
 	ret z
 
-	bit SUBSTATUS_FLYING, a
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVar
+	bit SUBSTATUS_VANISHED, a
+	ret nz
 	ld hl, .FlyMoves
+	bit SUBSTATUS_FLYING, a
 	jr nz, .check_move_in_list
 	ld hl, .DigMoves
+	bit SUBSTATUS_UNDERGROUND, a
 .check_move_in_list
 	; returns z (and a = 0) if the current move is in a given list, or nz (and a = 1) if not
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -2259,6 +2268,12 @@ BattleCommand_LowerSub:
 	jr z, .charge_turn
 	cp EFFECT_FLY
 	jr z, .charge_turn
+	cp EFFECT_DIG
+	jr z, .charge_turn
+	cp EFFECT_BOUNCE
+	jr z, .charge_turn
+	cp EFFECT_PHANTOM_FORCE
+	jr z, .charge_turn
 
 .already_charged
 	call .Rampage
@@ -2354,6 +2369,8 @@ BattleCommand_MoveAnimNoSub:
 .fly_dig_moves
 	dw FLY
 	dw DIG
+	dw BOUNCE
+	dw PHANTOMFORCE
 	dw -1
 
 .alternate_anim
@@ -2462,12 +2479,15 @@ BattleCommand_FailureText:
 	call GetBattleVarAddr
 	res SUBSTATUS_UNDERGROUND, [hl]
 	res SUBSTATUS_FLYING, [hl]
+	res SUBSTATUS_VANISHED, [hl]
 	call AppearUserRaiseSub
 	jp EndMoveEffect
 
 .fly_dig_moves
 	dw FLY
 	dw DIG
+	dw BOUNCE
+	dw PHANTOMFORCE
 	dw -1
 
 BattleCommand_ApplyDamage:
@@ -3940,7 +3960,7 @@ FarPlayBattleAnimation:
 
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_VANISHED
 	ret nz
 
 	; fallthrough
@@ -4110,7 +4130,7 @@ DoSubstituteDamage:
 	call BattleCommand_LowerSubNoAnim
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_VANISHED
 	call z, AppearUserLowerSub
 	call BattleCommand_SwitchTurn
 
@@ -6818,6 +6838,7 @@ BattleCommand_CheckCharge:
 	res SUBSTATUS_CHARGED, [hl]
 	res SUBSTATUS_UNDERGROUND, [hl]
 	res SUBSTATUS_FLYING, [hl]
+	res SUBSTATUS_VANISHED, [hl]
 	ld b, charge_command
 	jp SkipToBattleCommand
 
@@ -6851,37 +6872,46 @@ BattleCommand_Charge:
 	inc a
 	ld [wKickCounter], a
 	call LoadMoveAnim
-	ld a, BATTLE_VARS_MOVE_ANIM
+	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	ld h, a
-	ld bc, FLY
-	call CompareMove
-	ld a, 1 << SUBSTATUS_FLYING
-	jr z, .got_move_type
-	if HIGH(FLY) != HIGH(DIG)
-		ld bc, DIG
-	else
-		ld c, LOW(DIG)
-	endc
-	ld a, h
-	call CompareMove
-	ld a, 1 << SUBSTATUS_UNDERGROUND
-	jr z, .got_move_type
+	cp EFFECT_FLY
+	jr z, .disappear
+	cp EFFECT_BOUNCE
+	jr z, .disappear
+	cp EFFECT_DIG
+	jr z, .disappear
+	cp EFFECT_PHANTOM_FORCE
+	jr z, .disappear
 	call BattleCommand_RaiseSub
-	xor a
+	jr .dont_disappear
 
-.got_move_type
-	; a will contain the substatus 3 bit to set (1 << bit), or 0 if none (not flying/digging underground)
-	and a
-	ld l, a
-	push hl
-	call nz, DisappearUser
+.disappear
+	call DisappearUser
+.dont_disappear
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVarAddr
-	pop bc
-	ld a, c
-	or [hl]
-	ld [hl], a
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	ld b, a
+	cp EFFECT_FLY
+	jr z, .set_flying
+	cp EFFECT_BOUNCE
+	jr z, .set_flying
+	cp EFFECT_DIG
+	jr z, .set_underground
+	cp EFFECT_PHANTOM_FORCE
+	jr nz, .dont_set_vanished
+	set SUBSTATUS_VANISHED, [hl]
+	jr .dont_set_vanished
+
+.set_flying
+	set SUBSTATUS_FLYING, [hl]
+	jr .dont_set_vanished
+
+.set_underground
+	set SUBSTATUS_UNDERGROUND, [hl]
+
+.dont_set_vanished
 	call CheckUserIsCharging
 	jr nz, .mimic
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE
@@ -6928,13 +6958,15 @@ BattleCommand_Charge:
 	ret
 
 .move_messages
-	dw RAZOR_WIND,  .RazorWind
-	dw SOLARBEAM,   .Solarbeam
-	dw SKULL_BASH,  .SkullBash
-	dw SKY_ATTACK,  .SkyAttack
-	dw FLY,         .Fly
-	dw DIG,         .Dig
-	dw SOLAR_BLADE, .Solarbeam
+	dw RAZOR_WIND,   .RazorWind
+	dw SOLARBEAM,    .Solarbeam
+	dw SKULL_BASH,   .SkullBash
+	dw SKY_ATTACK,   .SkyAttack
+	dw FLY,          .Fly
+	dw DIG,          .Dig
+	dw SOLAR_BLADE,  .Solarbeam
+	dw BOUNCE,       .Bounce
+	dw PHANTOMFORCE, .PhantomForce
 	dw -1
 
 .RazorWind:
@@ -6965,6 +6997,14 @@ BattleCommand_Charge:
 .Dig:
 ; 'dug a hole!'
 	text_far UnknownText_0x1c0d6c
+	text_end
+
+.Bounce:
+	text_far BounceText
+	text_end
+
+.PhantomForce
+	text_far VanishedText
 	text_end
 
 ;INCLUDE "engine/battle/move_effects/wake_up_slap.asm"
@@ -7568,8 +7608,6 @@ BattleCommand_Defrost:
 
 INCLUDE "engine/battle/move_effects/curse.asm"
 
-INCLUDE "engine/battle/move_effects/spikes.asm"
-
 INCLUDE "engine/battle/move_effects/perish_song.asm"
 
 INCLUDE "engine/battle/move_effects/sandstorm.asm"
@@ -7577,8 +7615,6 @@ INCLUDE "engine/battle/move_effects/sandstorm.asm"
 INCLUDE "engine/battle/move_effects/hail.asm"
 
 INCLUDE "engine/battle/move_effects/rollout.asm"
-
-INCLUDE "engine/battle/move_effects/return.asm"
 
 INCLUDE "engine/battle/move_effects/safeguard.asm"
 

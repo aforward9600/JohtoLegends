@@ -219,7 +219,7 @@ AI_Setup:
 
 .statup
 	ld a, [wPlayerSubStatus3]
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_VANISHED
 	jr z, .statup_continue
 
 	call AICompareSpeed
@@ -680,6 +680,7 @@ AI_Smart:
 	dbw EFFECT_ACROBATICS,       AI_Smart_Acrobatics
 	dbw EFFECT_DEFENSE_CURL,     AI_Smart_DefenseCurl
 	dbw EFFECT_U_TURN,           AI_Smart_BatonPass
+	dbw EFFECT_DIG,              AI_Smart_Fly
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -1435,7 +1436,7 @@ AI_Smart_Fly:
 ; flying or underground, and slower than the enemy.
 
 	ld a, [wPlayerSubStatus3]
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_VANISHED
 	ret z
 
 	call AICompareSpeed
@@ -1929,7 +1930,7 @@ AI_Smart_PriorityHit:
 
 ; Dismiss this move if the player is flying or underground.
 	ld a, [wPlayerSubStatus3]
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_VANISHED
 	jp nz, AIDiscourageMove
 
 ; Greatly encourage this move if it will KO the player.
