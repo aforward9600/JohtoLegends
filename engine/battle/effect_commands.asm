@@ -2515,6 +2515,7 @@ BattleCommand_ApplyDamage:
 	farcall BattleCommand_FalseSwipe
 	ld b, 0
 	jr nc, .damage
+	farcall AnimateOppAbility
 	call GetTargetAbility
 	ld b, a
 	farcall FarLoadAbilityName
@@ -2585,6 +2586,7 @@ BattleCommand_ApplyDamage:
 	call GetUserAbility
 	cp UNBURDEN
 	ret nz
+	farcall AnimateUserAbility
 	ld a, BATTLE_VARS_SUBSTATUS1
 	call GetBattleVarAddr
 	set SUBSTATUS_UNBURDEN, [hl]
@@ -4220,6 +4222,7 @@ BattleCommand_SleepTarget:
 	cp WEATHER_SUN
 	jr nz, .SkipVitalSpirit
 	call AnimateFailedMove
+	farcall AnimateOppAbility
 	call GetTargetAbility
 	ld b, a
 	farcall FarLoadAbilityName
@@ -7115,6 +7118,7 @@ BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit:
 	jp PrintDidntAffect2
 
 _PreventAbilityText:
+	farcall AnimateOppAbility
 	farcall PreventAbilityText
 	ret
 

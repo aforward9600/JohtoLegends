@@ -29,6 +29,7 @@ BattleCommand_Attract:
 	ret
 
 .oblivious
+	farcall AnimateOppAbility
 	ld hl, ObliviousText
 	jp StdBattleTextbox
 

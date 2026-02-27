@@ -16,6 +16,8 @@ BattleCommand_MagicBounce:
 	bit SUBSTATUS_PROTECT, a
 	ret nz
 
+	farcall AnimateOppAbility
+
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
 	ld b, a
@@ -43,13 +45,13 @@ BattleCommand_MagicBounce:
 	pop af
 	ld [hl], a
 	farcall UpdateMoveData
-	call BattleCommand_SwitchTurn2
-	ret
+	jp BattleCommand_SwitchTurn2
 
 .SwaggerCheck
 	call GetTargetAbility
 	cp OWN_TEMPO
 	ret nz
 	farcall AnimateFailedMove
+	farcall AnimateOppAbility
 	ld hl, SwaggerOwnTempoText
 	jp StdBattleTextbox

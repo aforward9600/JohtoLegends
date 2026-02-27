@@ -37,6 +37,7 @@ BattleCommand_Selfdestruct:
 .FailSelfdestruct
 	ld c, 3
 	call DelayFrames
+	farcall AnimateOppAbility
 	ld hl, BattleText_Damp
 	call StdBattleTextbox
 	jp EndMoveEffect

@@ -90,6 +90,7 @@ BattleCommand_CriticalText:
 	call GetTargetAbility
 	cp ANGER_POINT
 	jr nz, .wait
+	farcall AnimateOppAbility
 	call BattleCommand_SwitchTurn2
 	farcall BattleCommand_AttackUp2
 	ld a, [wAttackMissed]
