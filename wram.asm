@@ -1465,8 +1465,7 @@ wWhichIndexSet:: db ; cf76
 wScrollingMenuCursorPosition:: db ; cf77
 wWindowStackSize:: db ; cf78
 
-wEvolutionItem:: db
-	ds 7
+	ds 8
 
 ; menu header
 wMenuHeader:: ; cf81

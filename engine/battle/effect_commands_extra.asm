@@ -1119,6 +1119,7 @@ AnimateAbilityStats:
 	call GetUserAbility
 	cp CONTRARY
 	ld de, ANIM_PLAYER_STAT_DOWN
+	jr nz, .SkipContrary
 	jr .Contrary
 
 AnimateAbilityStatsLower:
@@ -1145,7 +1146,7 @@ AnimateAbilityStatsLower:
 	call GetUserAbility
 	cp CONTRARY
 	ld de, ANIM_ENEMY_STAT_DOWN
-	jr z, .SkipContrary
+	jr nz, .SkipContrary
 	jr .Contrary
 
 NoStatRaise:
