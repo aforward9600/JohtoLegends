@@ -700,6 +700,7 @@ CheckContactAbilities:
 	jp nz, .NoContactAilities
 	set SUBSTATUS_IN_LOVE, [hl]
 	call BattleCommand_SwitchTurnAbilities
+	call AnimateOppAbility
 	ld de, ANIM_IN_LOVE
 	farcall FarPlayBattleAnimation
 	ld hl, CuteCharmText
