@@ -455,6 +455,7 @@ BattleAnimations::
 	dw BattleAnim_InfernaBlast
 	dw BattleAnim_DireClaw
 	dw BattleAnim_PhantomForce
+	dw BattleAnim_BloodMoon
 ;	dw BattleAnim_WakeUpSlap
 
 BattleAnim_0:
@@ -5856,12 +5857,27 @@ BattleAnim_Moonblast:
     anim_obj ANIM_OBJ_MOON, 45, 104, $1
     anim_wait 128
     anim_sound 6, 2, SFX_METRONOME
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
     anim_obj ANIM_OBJ_SWIFT, 64, 88, $4
     anim_wait 4
     anim_obj ANIM_OBJ_SWIFT, 64, 72, $4
     anim_wait 4
     anim_obj ANIM_OBJ_SWIFT, 64, 76, $4
     anim_jump BattleAnim_Wait64
+
+BattleAnim_BloodMoon:
+    anim_3gfx ANIM_GFX_MOON, ANIM_GFX_HIT, ANIM_GFX_BEAM
+    anim_bgp $1b
+    anim_bgeffect ANIM_BG_20, $10, $1, $20
+    anim_sound 6, 2, SFX_NIGHTMARE
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_RED
+    anim_obj ANIM_OBJ_MOON, 45, 104, $1
+    anim_wait 128
+	anim_bgeffect ANIM_BG_1F, $30, $4, $10
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_RED
+	anim_call BattleAnim_HyperBeam_branch_cbb39
+	anim_jump BattleAnim_Wait48
 
 BattleAnim_Avalanche:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE

@@ -63,6 +63,7 @@ AI_Redundant:
 	dbw EFFECT_SP_DEF_DOWN_2,  .StatDown
 	dbw EFFECT_ACCURACY_DOWN,  .AccuracyDown
 	dbw EFFECT_EVASION_DOWN,   .StatDown
+	dbw EFFECT_BLOOD_MOON,     .BloodMoon
 	db -1
 
 .LightScreen:
@@ -348,6 +349,7 @@ AI_Redundant:
 .Roost:
 	farcall AICheckEnemyMaxHP
 	jr nc, .NotRedundant
+	jr .Redundant
 
 .FakeOut:
 	ld a, [wGBPrinterBrightness]
@@ -362,6 +364,12 @@ AI_Redundant:
 	ld a, [wPlayerTurnsTaken]
 	and a
 	ret
+
+.BloodMoon:
+	ld a, [wEnemyBloodMoon]
+	and a
+	jr nz, .Redundant
+	jr .NotRedundant
 
 .Teleport:
 .Redundant:

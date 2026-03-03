@@ -424,4 +424,5 @@ MoveNames::
 	db "InfernaBlast@"
 	db "Dire Claw@"
 	db "PhantomForce@"
+	db "Blood Moon@"
 ;	db "Wake Up Slap@"

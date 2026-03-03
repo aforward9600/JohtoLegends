@@ -201,4 +201,5 @@ MoveEffectsPointers:
 	dw Bounce
 	dw Fly
 	dw Fly
+	dw BloodMoon
 ;	dw WakeUpSlap

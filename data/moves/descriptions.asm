@@ -430,6 +430,7 @@ MoveDescriptions1:
 	dw InfernaBlastDescription
 	dw DireClawDescription
 	dw PhantomForceDescription
+	dw BloodMoonDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1842,3 +1843,7 @@ DireClawDescription:
 PhantomForceDescription:
 	db   "1st turn: Vanish"
 	line "2nd turn: Attack@"
+
+BloodMoonDescription:
+	db   "Can only use every"
+	line "other turn.@"

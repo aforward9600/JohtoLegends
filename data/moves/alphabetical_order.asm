@@ -31,6 +31,7 @@ AlphabeticalMoveList::
 	dw BLAST_BURN
 	dw BLAZE_KICK
 	dw BLIZZARD
+	dw BLOOD_MOON
 	dw BODY_SLAM
 	dw BONE_CLUB
 	dw BONE_RUSH

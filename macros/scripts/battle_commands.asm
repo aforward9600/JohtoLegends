@@ -213,6 +213,7 @@ ENDM
 	command bulkup
 	command ragingbull
 	command direclaw
+	command bloodmoon
 ;	command wakeupslap
 ;	command awakenopponent
 

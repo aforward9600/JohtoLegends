@@ -213,5 +213,6 @@ BattleCommandPointers:
 	effectfn BattleCommand_BulkUp
 	effectfn BattleCommand_RagingBull
 	effectfn BattleCommand_DireClaw
+	effectfn BattleCommand_BloodMoon
 ;	effectfn BattleCommand_WakeUpSlap
 ;	effectfn BattleCommand_AwakenOpponent

@@ -193,7 +193,6 @@ TaurosEvosAttacks:
 	dbw 1, TACKLE
 	dbw 3, TAIL_WHIP
 	dbw 5, RAGE
-	dbw 5, RAGING_BULL
 	dbw 8, HORN_ATTACK
 	dbw 11, SCARY_FACE
 	dbw 15, PURSUIT

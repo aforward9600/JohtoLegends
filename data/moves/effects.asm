@@ -1862,6 +1862,29 @@ RagingBull:
 	buildopponentrage
 	endmove
 
+BloodMoon:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	defensiveabilities
+	breakscreens
+	moveanim
+	failuretext
+	bloodmoon
+	applydamage
+	criticaltext
+	supereffectivetext
+	kingsrock
+	checkfaint
+	buildopponentrage
+	endmove
+
 RainDance:
 	checkobedience
 	usedmovetext

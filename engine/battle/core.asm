@@ -5534,21 +5534,7 @@ MoveSelectionScreen:
 	dec a
 	cp c
 	jr z, .move_disabled
-;BattleCommand_BloodMoon:
-;	ld a, BATTLE_VARS_LAST_MOVE
-;	call GetBattleVarAddr
-;	ld a, [hl]
-;	and a
-;	cp DRAGON_RAGE
-;	jr z, .move_disabled
-;	xor a
-;	ld [wPlayerBloodMoon], a
-;	ld hl, wPlayerBloodMoon
-;	ld a, [hl]
-;	and a
-	ld b,b
-	ld hl, wPlayerBloodMoon
-	ld a, [hl]
+	ld a, [wPlayerBloodMoon]
 	and a
 	jr z, .move_not_disabled
 	ld a, BATTLE_VARS_MOVE
