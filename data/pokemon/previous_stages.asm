@@ -380,6 +380,6 @@ PreviousEvolutionStage::
 	dw 0
 	dw 0
 	dw 0
-	dw 0
+	dw URSARING
 	dw 0
 	dw 0

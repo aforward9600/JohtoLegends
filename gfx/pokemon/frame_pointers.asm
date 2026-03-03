@@ -379,6 +379,6 @@ FramesPointers:
 	dba RegielekiFrames
 	dba RegidragoFrames
 	dba RegigigasFrames
-	dba DeoxysFrames
+	dba UrsalunaBloodFrames
 	dba TaurosPFireFrames
 	dba TaurosPWaterFrames

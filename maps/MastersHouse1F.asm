@@ -82,7 +82,6 @@ MaastersHouseMasterScript:
 	iftrue .BeatDragonKid1
 	checkevent EVENT_BEAT_DRAGON_KID_LANCE
 	iftrue .BeatDragonKid2
-	givepoke TAUROS, 5, ORAN_BERRY
 	jumptextfaceplayer MastersHouseMasterText
 
 .MasterGoodLuck:

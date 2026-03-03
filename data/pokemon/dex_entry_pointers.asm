@@ -380,6 +380,6 @@ PokedexDataPointerTable:
 	dba RegielekiPokedexEntry
 	dba RegidragoPokedexEntry
 	dba RegigigasPokedexEntry
-	dba DeoxysPokedexEntry
+	dba UrsalunaPokedexEntry
 	dba TaurosPPokedexEntry
 	dba TaurosPPokedexEntry

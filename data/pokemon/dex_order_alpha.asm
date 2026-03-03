@@ -58,7 +58,6 @@ AlphabeticalPokedexOrder:
 	dw CURSOLA
 	dw CYNDAQUIL
 	dw DELIBIRD
-	dw DEOXYS
 	dw DEWGONG
 	dw DIGLETT
 	dw DIGLETT_A
@@ -382,5 +381,6 @@ AlphabeticalPokedexOrder:
 	dw ZAPDOS
 	dw ZAPDOS_G
 	dw ZUBAT
+	dw URSALUNA_BLOOD
 	dw TAUROS_P_FIRE
 	dw TAUROS_P_WATER

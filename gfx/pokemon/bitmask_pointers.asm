@@ -379,6 +379,6 @@ BitmasksPointers:
 	dw RegielekiBitmasks
 	dw RegidragoBitmasks
 	dw RegigigasBitmasks
-	dw DeoxysBitmasks
+	dw UrsalunaBloodBitmasks
 	dw TaurosPFireBitmasks
 	dw TaurosPWaterBitmasks

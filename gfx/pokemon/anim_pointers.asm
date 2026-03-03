@@ -379,6 +379,6 @@ AnimationPointers:
 	dw RegielekiAnimation
 	dw RegidragoAnimation
 	dw RegigigasAnimation
-	dw DeoxysAnimation
+	dw UrsalunaBloodAnimation
 	dw TaurosPAnimation
 	dw TaurosPAnimation

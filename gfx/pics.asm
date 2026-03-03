@@ -1696,13 +1696,13 @@ SECTION "Regigigas Backpic", ROMX
 
 RegigigasBackpic:    INCBIN "gfx/pokemon/regigigas/back.2bpp.lz"
 
-SECTION "Deoxys Frontpic", ROMX
+SECTION "Ursaluna Blood Frontpic", ROMX
 
-DeoxysFrontpic:      INCBIN "gfx/pokemon/deoxys/front.animated.2bpp.lz"
+UrsalunaBloodFrontpic: INCBIN "gfx/pokemon/ursaluna_blood/front.animated.2bpp.lz"
 
-SECTION "Deoxys Backpic", ROMX
+SECTION "Ursaluna Blood Backpic", ROMX
 
-DeoxysBackpic:      INCBIN "gfx/pokemon/deoxys/back.2bpp.lz"
+UrsalunaBloodBackpic:      INCBIN "gfx/pokemon/ursaluna_blood/back.2bpp.lz"
 
 SECTION "Raticate_A Backpic", ROMX
 

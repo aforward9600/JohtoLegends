@@ -773,8 +773,8 @@ PokemonPicPointers::
 	dba RegidragoBackpic
 	dba RegigigasFrontpic
 	dba RegigigasBackpic
-	dba DeoxysFrontpic
-	dba DeoxysBackpic
+	dba UrsalunaBloodFrontpic
+	dba UrsalunaBloodBackpic
 	dba TaurosPFireFrontpic
 	dba TaurosPFireBackpic
 	dba TaurosPWaterFrontpic

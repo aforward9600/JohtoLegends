@@ -379,6 +379,6 @@ AnimationIdlePointers:
 	dw RegielekiAnimationIdle
 	dw RegidragoAnimationIdle
 	dw RegigigasAnimationIdle
-	dw DeoxysAnimationIdle
+	dw UrsalunaBloodAnimationIdle
 	dw TaurosPAnimationIdle
 	dw TaurosPAnimationIdle

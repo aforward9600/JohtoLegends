@@ -400,7 +400,7 @@ JOHTO_POKEMON EQU const_value
 	const REGIELEKI
 	const REGIDRAGO
 	const REGIGIGAS
-	const DEOXYS
+	const URSALUNA_BLOOD
 	const TAUROS_P_FIRE
 	const TAUROS_P_WATER
 
