@@ -3668,8 +3668,6 @@ TryToRunAwayFromBattle:
 	cp BATTLETYPE_REGI
 	jp z, .cant_escape
 
-	ld b,b
-
 	ld a, [wLinkMode]
 	and a
 	jp nz, .can_escape
@@ -4109,8 +4107,9 @@ SendOutPlayerMon:
 	ret
 
 NewBattleMonStatus:
+	ld b,b
 	xor a
-;	ld [wPlayerBloodMoon], a
+	ld [wPlayerBloodMoon], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerMove], a
@@ -5542,11 +5541,24 @@ MoveSelectionScreen:
 ;	and a
 ;	cp DRAGON_RAGE
 ;	jr z, .move_disabled
-;	ld b,b
 ;	xor a
 ;	ld [wPlayerBloodMoon], a
-;	ld a, [wPlayerBloodMoon]
-;	jr nz, .move_disabled
+;	ld hl, wPlayerBloodMoon
+;	ld a, [hl]
+;	and a
+	ld b,b
+	ld hl, wPlayerBloodMoon
+	ld a, [hl]
+	and a
+	jr z, .move_not_disabled
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld b, a
+	call GetMoveEffect
+	ld a, b
+	cp EFFECT_RAGING_BULL
+	jr z, .move_disabled
+.move_not_disabled
 	ld a, [wUnusedPlayerLockedMove]
 	and a
 	jr nz, .skip2

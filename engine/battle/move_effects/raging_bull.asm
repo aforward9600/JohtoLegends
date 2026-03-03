@@ -66,4 +66,29 @@ BattleCommand_RagingBull:
 .Normal
 	xor a
 	ld [wKickCounter], a
+	ld b,b
+	ld hl, wPlayerBloodMoon
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .PlayerTurn
+	ld hl, wEnemyBloodMoon
+.PlayerTurn
+	ld a, [hl]
+	and a
+;	jr nz, ResetBloodMoon
+	inc [hl]
+	ret
+
+ResetBloodMoon:
+	ld b,b
+	ld hl, wPlayerBloodMoon
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .PlayerTurn
+	ld hl, wEnemyBloodMoon
+.PlayerTurn
+	ld a, [hl]
+	and a
+;	ret z
+	dec [hl]
 	ret

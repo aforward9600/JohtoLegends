@@ -6,7 +6,7 @@ CallBattleCore2:
 BattleCommand_UsedMoveText:
 ; usedmovetext
 	farcall DisplayUsedMoveText
-	ret
+	jp ResetBloodMoon
 
 BattleCommand_DamageVariation:
 ; damagevariation

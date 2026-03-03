@@ -21,3 +21,4 @@ BattleCommand_ClearSmog:
 	ldh [hBattleTurn], a
 	ld hl, ClearSmogText
 	jp StdBattleTextbox
+	

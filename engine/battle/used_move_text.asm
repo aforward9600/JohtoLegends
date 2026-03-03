@@ -40,21 +40,6 @@ UsedMoveText:
 
 .ok
 	ld hl, UsedMoveInsteadText
-;	ld b,b
-;	ld a, BATTLE_VARS_LAST_COUNTER_MOVE
-;	call GetBattleVarAddr
-;	ld a, [hl]
-;	cp DRAGON_RAGE
-;	jr z, .SkipBloodMoon
-;	ld hl, wPlayerBloodMoon
-;	ldh a, [hBattleTurn]
-;	and a
-;	jr z, .FinishBloodMoon
-;	ld hl, wEnemyBloodMoon
-;.FinishBloodMoon
-;	ld a, 1
-;	ld [hl], a
-;.SkipBloodMoon
 	ret
 
 UsedMoveInsteadText:

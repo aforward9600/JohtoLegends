@@ -193,6 +193,7 @@ TaurosEvosAttacks:
 	dbw 1, TACKLE
 	dbw 3, TAIL_WHIP
 	dbw 5, RAGE
+	dbw 5, RAGING_BULL
 	dbw 8, HORN_ATTACK
 	dbw 11, SCARY_FACE
 	dbw 15, PURSUIT
@@ -200,7 +201,7 @@ TaurosEvosAttacks:
 	dbw 24, PAYBACK
 	dbw 29, WORK_UP
 	dbw 35, ZEN_HEADBUTT
-	dbw 41, TAKE_DOWN ; need to replace with RAGING_BULL
+	dbw 41, RAGING_BULL
 	dbw 48, SWAGGER
 	dbw 50, THRASH
 	dbw 55, DOUBLE_EDGE
