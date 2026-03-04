@@ -1549,6 +1549,13 @@ endc
 	ld a, [wCurPartySpecies]
 	ld [wEvolutionOldSpecies], a
 	ld [wTempSpecies], a
+
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1CaughtTime
+	call GetPartyLocation
+	ld b, h
+	ld c, l
+
 	predef LearnLevelMoves
 
 	xor a
@@ -3399,6 +3406,11 @@ endc
 	ld a, [wCurPartySpecies]
 	ld [wEvolutionOldSpecies], a
 	ld [wTempSpecies], a
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1CaughtTime
+	call GetPartyLocation
+	ld b, h
+	ld c, l
 	predef LearnLevelMoves
 
 	xor a

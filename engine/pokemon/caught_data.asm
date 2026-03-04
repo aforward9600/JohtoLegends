@@ -327,7 +327,6 @@ SetGenderShininess:
 	ret
 
 .Random
-;	ld b,b
 	farcall SetPokemonGender
 	jr c, .MaleRandom
 ;	jr nz, .MaleRandom

@@ -435,7 +435,7 @@ AnimTaurosCheck:
 	ld a, l
 	cp LOW(TAUROS_P)
 	ld a, h
-	ret nz
+	jr nz, .Ursaluna
 	if HIGH(TAUROS_P) == 0
 		and a
 	elif HIGH(TAUROS_P) == 1
@@ -443,6 +443,7 @@ AnimTaurosCheck:
 	else
 		cp HIGH(TAUROS_P)
 	endc
+	jr nz, .Ursaluna
 	ld a, [wPokeAnimUnownLetter]
 	cp 0
 	jr z, .Plain
@@ -457,6 +458,33 @@ AnimTaurosCheck:
 
 .Plain
 	ld hl, TAUROS_P
+	ret
+
+.Ursaluna
+	ld a, [wPokeAnimSpeciesOrUnown]
+	ld l, a
+	ld h, 0
+	call GetPokemonIndexFromID
+	ld a, l
+	cp LOW(URSALUNA)
+	ld a, h
+	ret nz
+	if HIGH(URSALUNA) == 0
+		and a
+	elif HIGH(URSALUNA) == 1
+		dec a
+	else
+		cp HIGH(URSALUNA)
+	endc
+	ret nz
+	ld a, [wPokeAnimUnownLetter]
+	cp 0
+	jr z, .PlainUrsaluna
+	ld hl, URSALUNA_BLOOD
+	ret
+
+.PlainUrsaluna
+	ld hl, URSALUNA
 	ret
 
 PokeAnim_IsUnown:

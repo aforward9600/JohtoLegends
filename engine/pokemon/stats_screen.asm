@@ -918,14 +918,26 @@ PoorString:
 
 StatsScreen_PlaceFrontpic:
 	farcall FrontFinishTaurosCheck
-	jr nc, .NotTauros
+	jr nc, .CheckUrsaluna
 	ld bc, wTempMonCaughtTime
-;	ld b, d
-;	ld c, e
-;	ld a, [bc]
-;	ld [wBufferMonForm], a
 	call GetTaurosForm2
 	jr .SkipUnown
+.CheckUrsaluna
+	farcall FrontFinishUrsalunaCheck
+	jr nc, .NotTauros
+	ld bc, wTempMonCaughtTime
+	ld a, [bc]
+	and CAUGHT_FORM_1_MASK
+	jr z, .Ursaluna
+	ld a, 1
+	ld [wUnownLetter], a
+	jr .SkipUnown
+
+.Ursaluna
+	xor a
+	ld [wUnownLetter], a
+	jr .SkipUnown
+
 .NotTauros:
 	ld hl, wTempMonDVs
 	predef GetUnownLetter

@@ -102,6 +102,7 @@ SPDSPCDV_SHINY EQU $AA
 	const BATTLETYPE_LUGIA
 	const BATTLETYPE_LEGENDARY
 	const BATTLETYPE_REGI
+	const BATTLETYPE_BLOOD_MOON
 
 ; BattleVarPairs indexes (see home/battle.asm)
 	const_def

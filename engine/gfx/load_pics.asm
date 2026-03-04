@@ -7,7 +7,6 @@ GetTaurosForm::
 	ret
 
 .TrySecond
-;	ld a, [wBufferMonForm]
 	ld a, [bc]
 	and CAUGHT_FORM_2_MASK
 	jr z, .PlainTauros
@@ -15,7 +14,7 @@ GetTaurosForm::
 	ld [wUnownLetter], a
 	ret
 .PlainTauros
-	ld a, 0
+	xor a
 	ld [wUnownLetter], a
 	ret
 
@@ -36,7 +35,7 @@ _GetTaurosForm::
 	ld [wUnownLetter], a
 	ret
 .PlainTauros
-	ld a, 0
+	xor a
 	ld [wUnownLetter], a
 	ret
 
@@ -74,8 +73,32 @@ GetUnownLetter:
 	jr GetTaurosForm
 
 .NotTauros
-	pop af
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld a, l
 
+	sub LOW(URSALUNA)
+	if HIGH(URSALUNA) == 0
+		or h
+	else
+		jr nz, .NotUrsaluna
+		if HIGH(URSALUNA) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(URSALUNA)
+		endc
+	endc
+	jr nz, .NotUrsaluna
+	pop af
+	pop hl
+	pop bc
+	jr GetTaurosForm
+
+.NotUrsaluna
+	pop af
 	sub LOW(UNOWN)
 	if HIGH(UNOWN) == 0
 		or h
@@ -241,10 +264,6 @@ GetPicIndirectPointer:
 		endc
 	endc
 	jr nz, .NotTauros
-;	pop af
-;	push af
-;	pop bc
-;	call GetTaurosForm
 	ld a, [wUnownLetter]
 	cp 0
 	jr z, .PlainTauros
@@ -266,12 +285,32 @@ GetPicIndirectPointer:
 .NotTauros
 ;	pop bc
 	pop af
-;	pop bc
-;	ld a, [wCurPartySpecies]
-;	call GetPokemonIndexFromID
-;	ld b, h
-;	ld c, l
-;	ld a, l
+	push af
+	sub LOW(URSALUNA)
+	if HIGH(URSALUNA) == 0
+		or h
+	else
+		jr nz, .NotUrsaluna
+		if HIGH(URSALUNA) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(URSALUNA)
+		endc
+	endc
+	jr nz, .NotUrsaluna
+	ld a, [wUnownLetter]
+	cp 0
+	jr z, .Ursaluna
+	ld bc, URSALUNA_BLOOD
+	jr .FinishTauros
+
+.Ursaluna
+	ld bc, URSALUNA
+	jr .FinishTauros
+
+.NotUrsaluna
+	pop af
 	sub LOW(UNOWN)
 	if HIGH(UNOWN) == 0
 		or h
@@ -407,10 +446,6 @@ GetMonBackpic:
 	ldh a, [rSVBK]
 	push af
 	push de
-;	call GetPartyMonForm
-;	ld c, l
-;	ld b, h
-;	call GetTaurosForm
 	call GetPicIndirectPointer
 	ld a, BANK(wDecompressScratch)
 	ldh [rSVBK], a

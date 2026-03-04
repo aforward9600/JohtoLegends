@@ -6059,7 +6059,18 @@ LoadEnemyMon:
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_BLOOD_MOON
+	jr nz, .InitMonForm
+	ld hl, wBufferMonForm
+	ld a, [hl]
+	or CAUGHT_FORM_1_MASK
+	ld [hl], a
+	jr .ResumeMonForm
+
+.InitMonForm
 	call InitEnemyForm
+.ResumeMonForm
 
 ; Grab the BaseData for this species
 	call GetBaseData
@@ -7701,6 +7712,11 @@ endc
 	ld a, [wCurPartySpecies]
 	ld [wEvolutionOldSpecies], a
 	push bc
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1CaughtTime
+	call GetPartyLocation
+	ld b, h
+	ld c, l
 	predef LearnLevelMoves
 	pop bc
 	ld a, b

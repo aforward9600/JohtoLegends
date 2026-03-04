@@ -629,6 +629,37 @@ _GetMonPalettePointer:
 	jr .FinishPalette
 
 .NotTauros2
+	ld b,b
+	pop af
+	push af
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(URSALUNA)
+	if HIGH(URSALUNA) == 0
+		or h
+	else
+		jr nz, .NotUrsaluna
+		if HIGH(URSALUNA) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(URSALUNA)
+		endc
+	endc
+	jr nz, .NotUrsaluna
+	ld a, [bc]
+	and CAUGHT_FORM_1_MASK
+	jr z, .TrySecondUrsaluna
+	ld hl, URSALUNA_BLOOD
+	pop af
+	jr .FinishPalette
+
+.TrySecondUrsaluna
+	ld hl, URSALUNA
+	pop af
+	jr .FinishPalette
+
+.NotUrsaluna
 	pop af
 	call GetPokemonIndexFromID
 .FinishPalette

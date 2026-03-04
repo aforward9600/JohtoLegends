@@ -11,10 +11,6 @@ GetPartyParamLocation::
 	ret
 
 GetPartyMonForm::
-;	ld hl, wBattleMonForm
-;	ld a, [wPlayerSubStatus5]
-;	bit SUBSTATUS_TRANSFORMED, a
-;	ret z
 	ld a, [wCurBattleMon]
 	ld hl, wPartyMon1CaughtTime
 GetPartyLocation::
@@ -36,27 +32,3 @@ FarSkipEvolutions::
 GetTaurosForm2::
 	homecall _GetTaurosForm
 	ret
-;	ld a, [wBufferMonForm]
-;	ld b,b
-;	ld a, [bc]
-;	and CAUGHT_FORM_1_MASK
-;	jr z, .TrySecond
-;	ld a, 1
-;	jr .Finish
-;	ld [wUnownLetter], a
-;	ret
-
-;.TrySecond
-;	ld a, [wBufferMonForm]
-;	ld a, [bc]
-;	and CAUGHT_FORM_2_MASK
-;	jr z, .PlainTauros
-;	ld a, 2
-;	jr .Finish
-;	ld [wUnownLetter], a
-;	ret
-;.PlainTauros
-;	ld a, 0
-;.Finish
-;	ld [wUnownLetter], a
-;	ret

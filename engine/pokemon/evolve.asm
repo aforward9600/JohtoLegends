@@ -559,6 +559,59 @@ LearnLevelMoves:
 	ld a, [wTempSpecies]
 	ld [wCurPartySpecies], a
 	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(TAUROS_P)
+	if HIGH(TAUROS_P) == 0
+		or h
+	else
+		jr nz, .NotTauros
+		ld a, h
+		if HIGH(TAUROS_P) == 1
+			dec a
+		else
+			cp HIGH(TAUROS_P)
+		endc
+	endc
+	jr nz, .NotTauros
+	ld a, [bc]
+	and CAUGHT_FORM_1_MASK
+	jr z, .Water
+	ld hl, TAUROS_P_FIRE
+	jr .Finish
+
+.Water
+	ld a, [bc]
+	and CAUGHT_FORM_2_MASK
+	jr z, .NotTauros
+	ld hl, TAUROS_P_WATER
+	jr .Finish
+
+.NotTauros
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(URSALUNA)
+	if HIGH(URSALUNA) == 0
+		or h
+	else
+		jr nz, .NotUrsaluna
+		ld a, h
+		if HIGH(URSALUNA) == 1
+			dec a
+		else
+			cp HIGH(URSALUNA)
+		endc
+	endc
+	jr nz, .NotUrsaluna
+	ld a, [bc]
+	and CAUGHT_FORM_1_MASK
+	jr z, .NotUrsaluna
+	ld hl, URSALUNA_BLOOD
+	jr .Finish
+.NotUrsaluna
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+.Finish
 	ld b, h
 	ld c, l
 	ld hl, EvosAttacksPointers
@@ -669,6 +722,28 @@ FillMoves:
 	jr .Finish
 
 .NotTauros
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(URSALUNA)
+	if HIGH(URSALUNA) == 0
+		or h
+	else
+		jr nz, .NotUrsaluna
+		ld a, h
+		if HIGH(URSALUNA) == 1
+			dec a
+		else
+			cp HIGH(URSALUNA)
+		endc
+	endc
+	jr nz, .NotUrsaluna
+	ld a, [bc]
+	and CAUGHT_FORM_1_MASK
+	jr z, .NotUrsaluna
+	ld hl, URSALUNA_BLOOD
+	jr .Finish
+.NotUrsaluna
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 .Finish

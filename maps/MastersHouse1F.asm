@@ -82,6 +82,10 @@ MaastersHouseMasterScript:
 	iftrue .BeatDragonKid1
 	checkevent EVENT_BEAT_DRAGON_KID_LANCE
 	iftrue .BeatDragonKid2
+	givepoke URSALUNA, 5, ORAN_BERRY
+	givepoke URSALUNA_BLOOD, 5, ORAN_BERRY
+	givepoke TAUROS_P, 23, RARE_CANDY
+	giveitem MASTER_BALL, 10
 	jumptextfaceplayer MastersHouseMasterText
 
 .MasterGoodLuck:
@@ -136,11 +140,6 @@ DratiniPokeballScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-;	givepoke TAUROS_P, 5, ORAN_BERRY
-;	givepoke TAUROS_P, 5, ORAN_BERRY
-;	givepoke TAUROS_P, 5, ORAN_BERRY
-;	givepoke UNOWN, 5, ORAN_BERRY
-;	givepoke TAUROS_P_FIRE, 5, ORAN_BERRY
 	givepoke DRATINI, 5, ORAN_BERRY
 	sjump RivalLarvitarScript
 

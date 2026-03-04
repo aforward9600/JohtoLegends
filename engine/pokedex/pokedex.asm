@@ -2708,7 +2708,13 @@ Pokedex_LoadSelectedMonTiles:
 	jr nc, .NotTauros
 	xor a
 	ld [wUnownLetter], a
+	jr .NotUrsaluna
 .NotTauros
+	farcall CurPartyUrsalunaCheck
+	jr nc, .NotUrsaluna
+	xor a
+	ld [wUnownLetter], a
+.NotUrsaluna
 	ld a, [wTempSpecies]
 	ld [wCurPartySpecies], a
 	xor a

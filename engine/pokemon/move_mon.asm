@@ -133,7 +133,13 @@ rept NUM_MOVES + -1
 endr
 	ld [hl], a
 	ld [wBuffer1], a
-	ld bc, wEnemyMonForm
+	ld hl, wPartyMon1CaughtTime
+	ld a, [wPartyCount]
+	dec a
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld c, l
+	ld b, h
 	predef FillMoves
 
 .next

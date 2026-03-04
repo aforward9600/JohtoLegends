@@ -136,16 +136,6 @@ Function3eea::
 	pop hl
 	jp MobileHome_PlaceBox
 
-Function3f20::
-	hlcoord 0, 0, wAttrMap
-	ld b,  6
-	ld c, 20
-	call Function3f35
-	hlcoord 0, 0
-	ld b,  4
-	ld c, 18
-	jp MobileHome_PlaceBox
-
 Function3f35::
 	ld a, 6
 	ld de, SCREEN_WIDTH
@@ -225,26 +215,6 @@ Function3f88::
 	inc de
 	cpl
 	ld [hl], 0
-	inc hl
-	ld [hli], a
-	dec c
-	jr nz, .col
-	pop bc
-	dec c
-	jr nz, .row
-	ret
-
-Function3f9f::
-	ld hl, wDecompressScratch
-.row
-	push bc
-	ld c, 1 tiles / 2
-.col
-	ld a, [de]
-	inc de
-	inc de
-	cpl
-	ld [hl], $0
 	inc hl
 	ld [hli], a
 	dec c

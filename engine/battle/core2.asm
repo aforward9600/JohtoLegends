@@ -639,14 +639,23 @@ FrontFinishTaurosCheck::
 	call GetPokemonIndexFromID
 	jr FinishTaurosCheck
 
+FrontFinishUrsalunaCheck::
+	ld b,b
+	ld a, [wTempMonSpecies]
+	call GetPokemonIndexFromID
+	jr FinishUrsalunaCheck
+
 CurPartyTaurosCheck::
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	jr FinishTaurosCheck
 
+CurPartyUrsalunaCheck::
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	jr FinishUrsalunaCheck
+
 PaldeanTaurosCheck::
-;	ld hl, wTempMonSpecies
-;	ld a, [hl]
 	ld a, [wCurSpecies]
 	call GetPokemonIndexFromID
 FinishTaurosCheck:
@@ -670,9 +679,32 @@ FinishTaurosCheck:
 	xor a
 	ret
 
+UrsalunaCheck::
+	ld a, [wCurSpecies]
+	call GetPokemonIndexFromID
+FinishUrsalunaCheck:
+	ld a, l
+	sub LOW(URSALUNA)
+	if HIGH(URSALUNA) == 0
+		or h
+	else
+		jr nz, .NotUrsaluna
+		ld a, h
+		if HIGH(URSALUNA) == 1
+			dec a
+		else
+			cp HIGH(URSALUNA)
+		endc
+	endc
+	jr nz, .NotUrsaluna
+	scf
+	ret
+.NotUrsaluna
+	xor a
+	ret
+
 SetPokemonForm::
 	ld a, [wTempEnemyMonSpecies]
-ResumeFormCheck:
 	call GetPokemonIndexFromID
 	ld a, l
 	sub LOW(TAUROS_P)
@@ -705,7 +737,31 @@ ResumeFormCheck:
 	ld a, [hl]
 	or CAUGHT_FORM_2_MASK
 	ld [hl], a
+	ret
 .NotTauros
+	ld a, [wTempEnemyMonSpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(URSALUNA)
+	if HIGH(URSALUNA) == 0
+		or h
+	else
+		ret nz
+		ld a, h
+		if HIGH(URSALUNA) == 1
+			dec a
+		else
+			cp HIGH(URSALUNA)
+		endc
+	endc
+	ret nz
+	ld a, [wBufferMonForm]
+	and CAUGHT_FORM_1_MASK
+	ret z
+	ld hl, wEnemyMonForm
+	ld a, [hl]
+	or CAUGHT_FORM_1_MASK
+	ld [hl], a
 	ret
 
 SetTempMonTime::

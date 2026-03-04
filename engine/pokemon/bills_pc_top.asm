@@ -32,8 +32,7 @@ _BillsPC:
 	call PrintText
 	pop af
 	ld [wOptions], a
-	call LoadFontsBattleExtra
-	ret
+	jp LoadFontsBattleExtra
 
 .Text_What:
 	; What?
@@ -41,8 +40,7 @@ _BillsPC:
 	text_end
 
 .LogOut:
-	call CloseSubmenu
-	ret
+	jp CloseSubmenu
 
 .UseBillsPC:
 	call .clear_current_reserved_mon
@@ -206,12 +204,12 @@ ClearPCItemScreen:
 	lb bc, 4, 18
 	call Textbox
 	call WaitBGMap2
-	call SetPalettes ; load regular palettes?
-	ret
+	jp SetPalettes ; load regular palettes?
 
 CopyBoxmonToTempMon:
 	ld a, [wCurPartyMon]
 	ld hl, sBoxMon1Species
+;	call CheckUrsalunaBox
 	ld bc, BOXMON_STRUCT_LENGTH
 	call AddNTimes
 	ld de, wTempMonSpecies
@@ -219,5 +217,6 @@ CopyBoxmonToTempMon:
 	ld a, BANK(sBoxMon1Species)
 	call GetSRAMBank
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jp CloseSRAM
+
+
