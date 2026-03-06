@@ -296,6 +296,7 @@ BitmasksPointers:
 	dw TeddiursaBitmasks
 	dw UrsaringBitmasks
 	dw UrsalunaBitmasks
+	dw UrsalunaBloodBitmasks
 	dw SlugmaBitmasks
 	dw MagcargoBitmasks
 	dw SwinubBitmasks
@@ -379,6 +380,5 @@ BitmasksPointers:
 	dw RegielekiBitmasks
 	dw RegidragoBitmasks
 	dw RegigigasBitmasks
-	dw UrsalunaBloodBitmasks
 	dw TaurosPFireBitmasks
 	dw TaurosPWaterBitmasks

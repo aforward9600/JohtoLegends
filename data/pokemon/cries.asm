@@ -302,6 +302,7 @@ PokemonCries::
 	mon_cry CRY_TEDDIURSA,   $7a2,  $06e ; TEDDIURSA
 	mon_cry CRY_TEDDIURSA,   $640,  $0d8 ; URSARING
 	mon_cry CRY_TEDDIURSA,   $640,  $0d8 ; URSALUNA
+	mon_cry CRY_TEDDIURSA,   $640,  $0d8 ; URSALUNA_BLOOD
 	mon_cry CRY_SLUGMA,     -$1d8,  $140 ; SLUGMA
 	mon_cry CRY_MAGCARGO,   -$20d,  $1c0 ; MAGCARGO
 	mon_cry CRY_CYNDAQUIL,   $1fe,  $140 ; SWINUB
@@ -385,6 +386,5 @@ PokemonCries::
 	mon_cry CRY_GRIMER,      $250,  $1c0 ; REGIELEKI PLACEHOLDER
 	mon_cry CRY_CHARMANDER,  $c30,  $200 ; REGIDRAGO PLACEHOLDER
 	mon_cry CRY_RAICHU,      $450,  $200 ; REGIGIGAS PLACEHOLDER
-	mon_cry CRY_TEDDIURSA,   $640,  $0d8 ; URSALUNA_BLOOD
 	mon_cry CRY_SQUIRTLE,    $011,  $0c0 ; TAUROS_P_FIRE
 	mon_cry CRY_SQUIRTLE,    $011,  $0c0 ; TAUROS_P_WATER

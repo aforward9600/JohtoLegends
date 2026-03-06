@@ -82,10 +82,6 @@ MaastersHouseMasterScript:
 	iftrue .BeatDragonKid1
 	checkevent EVENT_BEAT_DRAGON_KID_LANCE
 	iftrue .BeatDragonKid2
-	givepoke URSALUNA, 5, ORAN_BERRY
-	givepoke URSALUNA_BLOOD, 5, ORAN_BERRY
-	givepoke TAUROS_P, 23, RARE_CANDY
-	giveitem MASTER_BALL, 10
 	jumptextfaceplayer MastersHouseMasterText
 
 .MasterGoodLuck:

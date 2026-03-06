@@ -3563,7 +3563,7 @@ Function_SetEnemyMonAndSendOutAnimation:
 
 NewEnemyMonStatus:
 	xor a
-;	ld [wEnemyBloodMoon], a
+	ld [wEnemyBloodMoon], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastEnemyMove], a
@@ -5542,7 +5542,7 @@ MoveSelectionScreen:
 	ld b, a
 	call GetMoveEffect
 	ld a, b
-	cp EFFECT_RAGING_BULL
+	cp EFFECT_BLOOD_MOON
 	jr z, .move_disabled
 .move_not_disabled
 	ld a, [wUnusedPlayerLockedMove]
@@ -5898,6 +5898,16 @@ ParseEnemyAction:
 	ld a, [wEnemyDisabledMove]
 	cp [hl]
 	jr z, .disabled
+	ld a, [wEnemyBloodMoon]
+	and a
+	jr z, .move_not_disabled
+
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+
+	cp EFFECT_BLOOD_MOON
+	jr z, .disabled
+
+.move_not_disabled
 	ld a, [de]
 	and PP_MASK
 	jr nz, .enough_pp

@@ -317,6 +317,7 @@ JOHTO_POKEMON EQU const_value
 	const TEDDIURSA  ; d8
 	const URSARING   ; d9
 	const URSALUNA
+	const URSALUNA_BLOOD
 	const SLUGMA     ; da
 	const MAGCARGO   ; db
 	const SWINUB     ; dc
@@ -400,7 +401,6 @@ JOHTO_POKEMON EQU const_value
 	const REGIELEKI
 	const REGIDRAGO
 	const REGIGIGAS
-	const URSALUNA_BLOOD
 	const TAUROS_P_FIRE
 	const TAUROS_P_WATER
 

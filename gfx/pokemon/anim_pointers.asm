@@ -296,6 +296,7 @@ AnimationPointers:
 	dw TeddiursaAnimation
 	dw UrsaringAnimation
 	dw UrsalunaAnimation
+	dw UrsalunaBloodAnimation
 	dw SlugmaAnimation
 	dw MagcargoAnimation
 	dw SwinubAnimation
@@ -379,6 +380,5 @@ AnimationPointers:
 	dw RegielekiAnimation
 	dw RegidragoAnimation
 	dw RegigigasAnimation
-	dw UrsalunaBloodAnimation
 	dw TaurosPAnimation
 	dw TaurosPAnimation

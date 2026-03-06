@@ -297,6 +297,7 @@ PokedexDataPointerTable:
 	dba TeddiursaPokedexEntry
 	dba UrsaringPokedexEntry
 	dba UrsalunaPokedexEntry
+	dba UrsalunaBloodPokedexEntry
 	dba SlugmaPokedexEntry
 	dba MagcargoPokedexEntry
 	dba SwinubPokedexEntry
@@ -380,6 +381,5 @@ PokedexDataPointerTable:
 	dba RegielekiPokedexEntry
 	dba RegidragoPokedexEntry
 	dba RegigigasPokedexEntry
-	dba UrsalunaPokedexEntry
 	dba TaurosPPokedexEntry
 	dba TaurosPPokedexEntry

@@ -177,7 +177,7 @@ ItemEffects:
 	dw NoEffect            ; RAZOR_FANG
 	dw NoEffect            ; PROTECTOR
 	dw NoEffect            ; STEEL_DAGGER
-	dw NoEffect            ; ROYAL_ROCK
+	dw NoEffect            ; PEAT_BLOCK
 	dw ScytherCallEffect   ; SCYTHER_CALL
 	dw GolemCallEffect     ; GOLEM_CALL
 	dw VoltorbCallEffect   ; VOLTORB_CALL

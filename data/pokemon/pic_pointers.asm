@@ -607,6 +607,8 @@ PokemonPicPointers::
 	dba UrsaringBackpic
 	dba UrsalunaFrontpic
 	dba UrsalunaBackpic
+	dba UrsalunaBloodFrontpic
+	dba UrsalunaBloodBackpic
 	dba SlugmaFrontpic
 	dba SlugmaBackpic
 	dba MagcargoFrontpic
@@ -773,8 +775,6 @@ PokemonPicPointers::
 	dba RegidragoBackpic
 	dba RegigigasFrontpic
 	dba RegigigasBackpic
-	dba UrsalunaBloodFrontpic
-	dba UrsalunaBloodBackpic
 	dba TaurosPFireFrontpic
 	dba TaurosPFireBackpic
 	dba TaurosPWaterFrontpic

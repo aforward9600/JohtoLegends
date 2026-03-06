@@ -296,6 +296,7 @@ FramesPointers:
 	dba TeddiursaFrames
 	dba UrsaringFrames
 	dba UrsalunaFrames
+	dba UrsalunaBloodFrames
 	dba SlugmaFrames
 	dba MagcargoFrames
 	dba SwinubFrames
@@ -379,6 +380,5 @@ FramesPointers:
 	dba RegielekiFrames
 	dba RegidragoFrames
 	dba RegigigasFrames
-	dba UrsalunaBloodFrames
 	dba TaurosPFireFrames
 	dba TaurosPWaterFrames

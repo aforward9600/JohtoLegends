@@ -163,7 +163,7 @@ ItemNames::
 	db "Razor Fang@"
 	db "Protector@"
 	db "Steel Dagger@"
-	db "Royal Rock@"
+	db "Peat Block@"
 	db "Scyther Call@"
 	db "Golem Call@"
 	db "Voltorb Call@"

@@ -48,6 +48,7 @@ Icons3:
 	dw TeddiursaIcon
 	dw UrsaringIcon
 	dw UrsalunaIcon
+	dw UrsalunaBloodIcon
 	dw SlugmaIcon
 	dw MagcargoIcon
 	dw SwinubIcon
@@ -127,7 +128,6 @@ Icons3:
 	dw MissingnoIcon
 	dw RegirockIcon
 	dw RegiceIcon
-	dw RegisteelIcon
 
 AzurillIcon:      INCBIN "gfx/icons/azurill.2bpp"
 MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
@@ -175,6 +175,7 @@ SneaslerIcon:	  INCBIN "gfx/icons/sneasler.2bpp"
 TeddiursaIcon:    INCBIN "gfx/icons/teddiursa.2bpp"
 UrsaringIcon:     INCBIN "gfx/icons/ursaring.2bpp"
 UrsalunaIcon:     INCBIN "gfx/icons/ursaluna.2bpp"
+UrsalunaBloodIcon: INCBIN "gfx/icons/ursaluna_blood.2bpp"
 SlugmaIcon:       INCBIN "gfx/icons/slugma.2bpp"
 MagcargoIcon:     INCBIN "gfx/icons/magcargo.2bpp"
 SwinubIcon:       INCBIN "gfx/icons/swinub.2bpp"
@@ -254,4 +255,3 @@ NownIcon:         INCBIN "gfx/icons/nown.2bpp"
 MissingnoIcon:	  INCBIN "gfx/icons/missingno.2bpp"
 RegirockIcon:     INCBIN "gfx/icons/regirock.2bpp"
 RegiceIcon:       INCBIN "gfx/icons/regice.2bpp"
-RegisteelIcon:    INCBIN "gfx/icons/registeel.2bpp"

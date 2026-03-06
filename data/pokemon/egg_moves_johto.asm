@@ -111,6 +111,7 @@ EggMovePointers2::
 	dw TeddiursaEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw NoEggMoves2
 	dw SlugmaEggMoves
 	dw NoEggMoves2
 	dw SwinubEggMoves
@@ -178,7 +179,6 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw BagonEggMoves
-	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2

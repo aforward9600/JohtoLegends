@@ -20,7 +20,7 @@ DarkCaveVioletEntranceFullHeal:
 	itemball FULL_HEAL
 
 DarkCaveVioletEntranceHyperPotion:
-	itemball HYPER_POTION
+	itemball PEAT_BLOCK
 
 DarkCaveVioletEntranceMaxElixer:
 	itemball MAX_ELIXER

@@ -112,6 +112,7 @@ EvosAttacksPointers2::
 	dw TeddiursaEvosAttacks
 	dw UrsaringEvosAttacks
 	dw UrsalunaEvosAttacks
+	dw UrsalunaBloodEvosAttacks
 	dw SlugmaEvosAttacks
 	dw MagcargoEvosAttacks
 	dw SwinubEvosAttacks
@@ -2128,7 +2129,7 @@ WobbuffetEvosAttacks:
 	db 0 ; no more level-up moves
 
 GirafarigEvosAttacks:
-	dbbw EVOLVE_LEVEL, 32, FARIGIRAF
+	dbww EVOLVE_MOVE, TWIN_BEAM, FARIGIRAF
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, GROWL
@@ -2140,7 +2141,7 @@ GirafarigEvosAttacks:
 	dbw 19, PSYBEAM
 	dbw 23, AGILITY
 	dbw 28, DOUBLE_HIT_M
-	dbw 32, ZEN_HEADBUTT
+	dbw 32, TWIN_BEAM
 	dbw 37, CRUNCH
 	dbw 41, BATON_PASS
 	dbw 46, NASTY_PLOT
@@ -2149,7 +2150,6 @@ GirafarigEvosAttacks:
 
 FarigirafEvosAttacks:
 	db 0 ; no more evolutions
-	dbw LEARN_EVO_MOVE, TWIN_BEAM
 	dbw 1, TWIN_BEAM
 	dbw 1, TACKLE
 	dbw 1, GROWL
@@ -2161,7 +2161,7 @@ FarigirafEvosAttacks:
 	dbw 19, PSYBEAM
 	dbw 23, AGILITY
 	dbw 28, DOUBLE_HIT_M
-	dbw 32, ZEN_HEADBUTT
+	dbw 32, TWIN_BEAM
 	dbw 37, CRUNCH
 	dbw 41, BATON_PASS
 	dbw 46, NASTY_PLOT
@@ -2583,7 +2583,8 @@ TeddiursaEvosAttacks:
 	db 0 ; no more level-up moves
 
 UrsaringEvosAttacks:
-	dbbw EVOLVE_LEVEL, 49, URSALUNA
+	dbbbw EVOLVE_HOLD, PEAT_BLOCK, TR_EVENITE, URSALUNA_BLOOD
+	dbbbw EVOLVE_HOLD, PEAT_BLOCK, TR_MORNDAY, URSALUNA
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, SHADOW_CLAW
 	dbw 1, SHADOW_CLAW
@@ -2625,6 +2626,29 @@ UrsalunaEvosAttacks:
 	dbw 48, CRUNCH
 	dbw 56, THRASH
 	dbw 64, HAMMER_ARM
+	db 0 ; no more level-up moves
+
+UrsalunaBloodEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, MOONLIGHT
+	dbw 1, MOONLIGHT
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 1, GROWL
+	dbw 1, LICK
+	dbw 8, FURY_SWIPES
+	dbw 13, FAINT_ATTACK
+	dbw 17, SWEET_SCENT
+	dbw 22, SLASH
+	dbw 25, PLAY_NICE
+	dbw 29, PLAY_ROUGH
+	dbw 35, SCARY_FACE
+	dbw 41, REST
+	dbw 41, SNORE
+	dbw 48, EARTH_POWER
+	dbw 56, MOONBLAST
+	dbw 64, HAMMER_ARM
+	dbw 70, BLOOD_MOON
 	db 0 ; no more level-up moves
 
 SlugmaEvosAttacks:

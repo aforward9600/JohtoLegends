@@ -308,6 +308,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  RED    ; TEDDIURSA
 	icon_pals BROWN,  GRAY   ; URSARING
 	icon_pals BROWN,  RED    ; URSALUNA
+	icon_pals BROWN,  RED    ; URSALUNA_BLOOD
 	icon_pals RED,    GRAY   ; SLUGMA
 	icon_pals RED,    BLUE   ; MAGCARGO
 	icon_pals BROWN,  BLUE   ; SWINUB
@@ -391,6 +392,5 @@ MonMenuIconPals:
 	icon_pals BLUE,   GRAY   ; REGIELEKI
 	icon_pals RED,    BLUE   ; REGIDRAGO
 	icon_pals GREEN,  BLUE   ; REGIGIGAS
-	icon_pals BROWN,  RED    ; URSALUNA
 	icon_pals GRAY,   GRAY   ; TAUROS_P
 	icon_pals GRAY,   GRAY   ; TAUROS_P

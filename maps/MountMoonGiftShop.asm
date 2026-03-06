@@ -27,7 +27,38 @@ MountMoonGiftShopClerkScript:
 	end
 
 .MountMoonMart:
-	pokemart MARTTYPE_STANDARD, MART_MT_MOON
+	writetext BuyPeatBlockText
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .Refused
+	checkmoney YOUR_MONEY, 10000
+	ifequal HAVE_LESS, .NotEnoughMoney
+	giveitem PEAT_BLOCK
+	iffalse .NoRoom
+	waitsfx
+	playsound SFX_TRANSACTION
+	takemoney YOUR_MONEY, 10000
+	special PlaceMoneyTopRight
+	writetext PeatBlockText
+	waitbutton
+	closetext
+	end
+
+.Refused:
+	writetext RefusedPeatBlock
+	waitbutton
+	closetext
+	end
+
+.NoRoom:
+	writetext NoRoomForPeatBlockText
+	waitbutton
+	closetext
+	end
+
+.NotEnoughMoney:
+	writetext NotEnoughMoneyPeatBlock
+	waitbutton
 	closetext
 	end
 
@@ -103,6 +134,53 @@ MountMoonGiftShopLassText2:
 	para "It will be nice"
 	line "to live life"
 	cont "normally again."
+	done
+
+BuyPeatBlockText:
+	text "I create blocks of"
+	line "mud that contain"
+	cont "pieces of meteors."
+
+	para "I can sell you one"
+	line "for ¥10,000."
+
+	para "How about it?"
+	done
+
+RefusedPeatBlock:
+	text "Are you certain?"
+
+	para "It's made of"
+	line "meteors!"
+	done
+
+NoRoomForPeatBlockText:
+	text "There's not"
+	line "enough room in"
+	cont "your pack."
+	done
+
+PeatBlockText:
+	text "Certain #mon"
+	line "love this item,"
+
+	para "and use its cosmic"
+	line "power to evolve."
+
+	para "Make sure you"
+	line "give it to your"
+	cont "#mon at the"
+	cont "right time."
+
+	para "Otherwise, the"
+	line "result might not"
+	cont "be what you want."
+	done
+
+NotEnoughMoneyPeatBlock:
+	text "You're too broke to"
+	line "afford this work"
+	cont "of art!"
 	done
 
 MountMoonGiftShop_MapEvents:

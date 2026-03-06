@@ -737,31 +737,7 @@ SetPokemonForm::
 	ld a, [hl]
 	or CAUGHT_FORM_2_MASK
 	ld [hl], a
-	ret
 .NotTauros
-	ld a, [wTempEnemyMonSpecies]
-	call GetPokemonIndexFromID
-	ld a, l
-	sub LOW(URSALUNA)
-	if HIGH(URSALUNA) == 0
-		or h
-	else
-		ret nz
-		ld a, h
-		if HIGH(URSALUNA) == 1
-			dec a
-		else
-			cp HIGH(URSALUNA)
-		endc
-	endc
-	ret nz
-	ld a, [wBufferMonForm]
-	and CAUGHT_FORM_1_MASK
-	ret z
-	ld hl, wEnemyMonForm
-	ld a, [hl]
-	or CAUGHT_FORM_1_MASK
-	ld [hl], a
 	ret
 
 SetTempMonTime::

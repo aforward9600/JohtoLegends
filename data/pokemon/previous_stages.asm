@@ -297,6 +297,7 @@ PreviousEvolutionStage::
 	dw 0  ;d8
 	dw TEDDIURSA
 	dw URSARING
+	dw URSARING
 	dw 0
 	dw SLUGMA
 	dw 0
@@ -380,6 +381,5 @@ PreviousEvolutionStage::
 	dw 0
 	dw 0
 	dw 0
-	dw URSARING
 	dw 0
 	dw 0

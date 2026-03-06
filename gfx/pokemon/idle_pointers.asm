@@ -296,6 +296,7 @@ AnimationIdlePointers:
 	dw TeddiursaAnimationIdle
 	dw UrsaringAnimationIdle
 	dw UrsalunaAnimationIdle
+	dw UrsalunaBloodAnimationIdle
 	dw SlugmaAnimationIdle
 	dw MagcargoAnimationIdle
 	dw SwinubAnimationIdle
@@ -379,6 +380,5 @@ AnimationIdlePointers:
 	dw RegielekiAnimationIdle
 	dw RegidragoAnimationIdle
 	dw RegigigasAnimationIdle
-	dw UrsalunaBloodAnimationIdle
 	dw TaurosPAnimationIdle
 	dw TaurosPAnimationIdle

@@ -352,13 +352,11 @@ StatsScreen_JoypadAction:
 	or c
 	ld [wcf64], a
 	ld h, 4
-	call StatsScreen_SetJumptableIndex
-	ret
+	jp StatsScreen_SetJumptableIndex
 
 .load_mon
 	ld h, 0
-	call StatsScreen_SetJumptableIndex
-	ret
+	jp StatsScreen_SetJumptableIndex
 
 .b_button
 	ld h, 7
@@ -918,24 +916,9 @@ PoorString:
 
 StatsScreen_PlaceFrontpic:
 	farcall FrontFinishTaurosCheck
-	jr nc, .CheckUrsaluna
-	ld bc, wTempMonCaughtTime
-	call GetTaurosForm2
-	jr .SkipUnown
-.CheckUrsaluna
-	farcall FrontFinishUrsalunaCheck
 	jr nc, .NotTauros
 	ld bc, wTempMonCaughtTime
-	ld a, [bc]
-	and CAUGHT_FORM_1_MASK
-	jr z, .Ursaluna
-	ld a, 1
-	ld [wUnownLetter], a
-	jr .SkipUnown
-
-.Ursaluna
-	xor a
-	ld [wUnownLetter], a
+	call GetTaurosForm2
 	jr .SkipUnown
 
 .NotTauros:

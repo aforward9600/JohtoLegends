@@ -30,7 +30,6 @@ EvosAttacksPointers3::
 	dw RegielekiEvosAttacks
 	dw RegidragoEvosAttacks
 	dw RegigigasEvosAttacks
-	dw UrsalunaBloodEvosAttacks
 	dw TaurosPFireEvosAttacks
 	dw TaurosPWaterEvosAttacks
 
@@ -577,29 +576,6 @@ RegigigasEvosAttacks:
 	dbw 75, BODY_SLAM
 	dbw 90, SUPERPOWER
 	dbw 100, GIGA_IMPACT
-	db 0 ; no more level-up moves
-
-UrsalunaBloodEvosAttacks:
-	db 0 ; no more evolutions
-	dbw LEARN_EVO_MOVE, MOONLIGHT
-	dbw 1, MOONLIGHT
-	dbw 1, SCRATCH
-	dbw 1, LEER
-	dbw 1, GROWL
-	dbw 1, LICK
-	dbw 8, FURY_SWIPES
-	dbw 13, FAINT_ATTACK
-	dbw 17, SWEET_SCENT
-	dbw 22, SLASH
-	dbw 25, PLAY_NICE
-	dbw 29, PLAY_ROUGH
-	dbw 35, SCARY_FACE
-	dbw 41, REST
-	dbw 41, SNORE
-	dbw 48, EARTH_POWER
-	dbw 56, MOONBLAST
-	dbw 64, HAMMER_ARM
-	dbw 70, BLOOD_MOON
 	db 0 ; no more level-up moves
 
 TaurosPFireEvosAttacks:

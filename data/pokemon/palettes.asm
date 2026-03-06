@@ -624,6 +624,8 @@ INCBIN "gfx/pokemon/ursaring/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/ursaring/shiny.pal"
 INCLUDE "gfx/pokemon/ursaluna/normal.pal"
 INCLUDE "gfx/pokemon/ursaluna/shiny.pal"
+INCLUDE "gfx/pokemon/ursaluna_blood/normal.pal"
+INCLUDE "gfx/pokemon/ursaluna_blood/shiny.pal"
 INCBIN "gfx/pokemon/slugma/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/slugma/shiny.pal"
 INCBIN "gfx/pokemon/magcargo/front.gbcpal", middle_colors
@@ -790,8 +792,6 @@ INCBIN "gfx/pokemon/regidrago/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/regidrago/shiny.pal"
 INCBIN "gfx/pokemon/regigigas/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/regigigas/shiny.pal"
-INCLUDE "gfx/pokemon/ursaluna_blood/normal.pal"
-INCLUDE "gfx/pokemon/ursaluna_blood/shiny.pal"
 INCLUDE "gfx/pokemon/tauros_p_fire/normal.pal"
 INCLUDE "gfx/pokemon/tauros_p_fire/shiny.pal"
 INCLUDE "gfx/pokemon/tauros_p_water/normal.pal"

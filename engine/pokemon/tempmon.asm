@@ -9,6 +9,8 @@ CopyMonToTempMon:
 	ld [wCurSpecies], a
 	call GetBaseData
 
+	ld b,b
+
 	ld a, [wMonType]
 	ld hl, wPartyMon1Species
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -23,11 +25,16 @@ CopyMonToTempMon:
 	ret
 
 .copywholestruct
+;	ld hl, URSALUNA_BLOOD
 	ld a, [wCurPartyMon]
 	call AddNTimes
 	ld de, wTempMon
 	ld bc, PARTYMON_STRUCT_LENGTH
-	jp CopyBytes
+	call CopyBytes
+;	ld hl, URSALUNA_BLOOD
+;	ld a, [hl]
+;	ld [wTempMonSpecies], a
+	ret
 
 CalcBufferMonStats:
 	ld bc, wBufferMon

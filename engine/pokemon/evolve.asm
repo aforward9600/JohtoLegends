@@ -589,28 +589,6 @@ LearnLevelMoves:
 .NotTauros
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
-	ld a, l
-	sub LOW(URSALUNA)
-	if HIGH(URSALUNA) == 0
-		or h
-	else
-		jr nz, .NotUrsaluna
-		ld a, h
-		if HIGH(URSALUNA) == 1
-			dec a
-		else
-			cp HIGH(URSALUNA)
-		endc
-	endc
-	jr nz, .NotUrsaluna
-	ld a, [bc]
-	and CAUGHT_FORM_1_MASK
-	jr z, .NotUrsaluna
-	ld hl, URSALUNA_BLOOD
-	jr .Finish
-.NotUrsaluna
-	ld a, [wCurPartySpecies]
-	call GetPokemonIndexFromID
 .Finish
 	ld b, h
 	ld c, l
@@ -722,28 +700,6 @@ FillMoves:
 	jr .Finish
 
 .NotTauros
-	ld a, [wCurPartySpecies]
-	call GetPokemonIndexFromID
-	ld a, l
-	sub LOW(URSALUNA)
-	if HIGH(URSALUNA) == 0
-		or h
-	else
-		jr nz, .NotUrsaluna
-		ld a, h
-		if HIGH(URSALUNA) == 1
-			dec a
-		else
-			cp HIGH(URSALUNA)
-		endc
-	endc
-	jr nz, .NotUrsaluna
-	ld a, [bc]
-	and CAUGHT_FORM_1_MASK
-	jr z, .NotUrsaluna
-	ld hl, URSALUNA_BLOOD
-	jr .Finish
-.NotUrsaluna
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 .Finish

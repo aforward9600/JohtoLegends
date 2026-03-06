@@ -3943,9 +3943,18 @@ BattleAnim_CottonSpore:
 	anim_loop 5, .loop
 	anim_jump BattleAnim_Wait96
 
-BattleAnim_Reversal:
 BattleAnim_Revenge:
+    anim_1gfx ANIM_GFX_WIND
+.loop
+    anim_sound 0, 0, SFX_ENCORE
+    anim_obj ANIM_OBJ_SWAGGER, 72, 88, $44
+    anim_wait 64
+    anim_loop 2, .loop
+    anim_wait 16
+	anim_jump BattleAnim_Waterfall
+
 BattleAnim_Payback:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_07, $0, $0, $0
 	anim_sound 0, 1, SFX_MEGA_PUNCH
@@ -4412,20 +4421,6 @@ BattleAnim_BulkUp:
     anim_jump BattleAnim_Wait32
 
 BattleAnim_RagingBull:
-;	anim_if_param_equal $0, .Normal
-;	anim_if_param_equal $1, .Fighting
-;	anim_if_param_equal $2, .Fire
-;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
-;	anim_jump .Normal
-
-;.Fighting
-;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_YELLOW
-;	anim_jump .Normal
-
-;.Fire
-;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_FIRE
-
-;.Normal
     anim_1gfx ANIM_GFX_WIND
 .loop
     anim_sound 0, 0, SFX_ENCORE
@@ -5043,6 +5038,31 @@ BattleAnim_Moonlight:
 
 .three
 	anim_jump BattleAnim_Moonlight_branch_cbc80
+
+BattleAnim_Reversal:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_BLUE
+	anim_1gfx ANIM_GFX_CHARGE
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_1A, $0, $1, $20
+	anim_bgeffect ANIM_BG_07, $0, $2, $0
+	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $0
+	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $8
+	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $10
+	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $18
+	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $20
+	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $28
+	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $30
+	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $38
+.loop
+	anim_sound 0, 0, SFX_SWORDS_DANCE
+	anim_wait 8
+	anim_loop 12, .loop
+	anim_incbgeffect ANIM_BG_1A
+	anim_call BattleAnim_ShowMon_0
+	anim_wait 16
+	anim_clearobjs
+	anim_wait 16
+	anim_jump BattleAnim_MegaPunch
 
 BattleAnim_EerieSpell:
 	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_PURPLE

@@ -352,6 +352,7 @@ AlphabeticalPokedexOrder:
 	dw UMBREON
 	dw UNOWN
 	dw URSALUNA
+	dw URSALUNA_BLOOD
 	dw URSARING
 	dw VAPOREON
 	dw VENOMOTH
@@ -381,6 +382,5 @@ AlphabeticalPokedexOrder:
 	dw ZAPDOS
 	dw ZAPDOS_G
 	dw ZUBAT
-	dw URSALUNA_BLOOD
 	dw TAUROS_P_FIRE
 	dw TAUROS_P_WATER

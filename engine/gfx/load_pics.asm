@@ -73,31 +73,6 @@ GetUnownLetter:
 	jr GetTaurosForm
 
 .NotTauros
-	ld a, [wCurPartySpecies]
-	call GetPokemonIndexFromID
-	ld b, h
-	ld c, l
-	ld a, l
-
-	sub LOW(URSALUNA)
-	if HIGH(URSALUNA) == 0
-		or h
-	else
-		jr nz, .NotUrsaluna
-		if HIGH(URSALUNA) == 1
-			dec h
-		else
-			ld a, h
-			cp HIGH(URSALUNA)
-		endc
-	endc
-	jr nz, .NotUrsaluna
-	pop af
-	pop hl
-	pop bc
-	jr GetTaurosForm
-
-.NotUrsaluna
 	pop af
 	sub LOW(UNOWN)
 	if HIGH(UNOWN) == 0
@@ -284,32 +259,6 @@ GetPicIndirectPointer:
 
 .NotTauros
 ;	pop bc
-	pop af
-	push af
-	sub LOW(URSALUNA)
-	if HIGH(URSALUNA) == 0
-		or h
-	else
-		jr nz, .NotUrsaluna
-		if HIGH(URSALUNA) == 1
-			dec h
-		else
-			ld a, h
-			cp HIGH(URSALUNA)
-		endc
-	endc
-	jr nz, .NotUrsaluna
-	ld a, [wUnownLetter]
-	cp 0
-	jr z, .Ursaluna
-	ld bc, URSALUNA_BLOOD
-	jr .FinishTauros
-
-.Ursaluna
-	ld bc, URSALUNA
-	jr .FinishTauros
-
-.NotUrsaluna
 	pop af
 	sub LOW(UNOWN)
 	if HIGH(UNOWN) == 0

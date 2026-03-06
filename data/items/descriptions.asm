@@ -164,7 +164,7 @@ ItemDescriptions:
 	dw RazorFangDesc
 	dw ProtectorDesc
 	dw SteelDaggerDesc
-	dw RoyalRockDesc
+	dw PeatBlockDesc
 	dw ScytherCallDesc
 	dw GolemCallDesc
 	dw VoltorbCallDesc
@@ -907,7 +907,7 @@ SteelDaggerDesc:
 	db   "Powers up steel-"
 	next "type moves. (Hold)@"
 
-RoyalRockDesc:
+PeatBlockDesc:
 	db   "Evolves certain"
 	next "kinds of #mon.@"
 
