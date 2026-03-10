@@ -10,6 +10,8 @@ GetBaseData::
 	cp EGG
 	jr z, .egg
 
+;	ld b,b
+
 	farcall PaldeanTaurosCheck
 	jr nc, .NotTauros
 
@@ -28,16 +30,6 @@ GetBaseData::
 
 ; Get BaseData
 .NotTauros
-;	farcall UrsalunaCheck
-;	jr nc, .NotUrsaluna
-
-;	ld a, [wBufferMonForm]
-;	and CAUGHT_FORM_1_MASK
-;	jr z, .NotUrsaluna
-;	ld bc, URSALUNA_BLOOD
-;	jr .GotTauros
-
-;.NotUrsaluna
 	ld a, [wCurSpecies]
 	call GetPokemonIndexFromID
 

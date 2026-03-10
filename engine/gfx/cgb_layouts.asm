@@ -514,8 +514,6 @@ _CGB_BillsPC:
 .Function9009:
 	ld hl, .BillsPCOrangePalette
 	call LoadHLPaletteIntoDE
-	jr .asm_901a
-
 .asm_901a
 	call WipeAttrMap
 	hlcoord 1, 1, wAttrMap

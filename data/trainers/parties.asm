@@ -1476,14 +1476,10 @@ endc
 	dw DUALWINGBEAT, CONFUSE_RAY, GUNK_SHOT, LEECH_LIFE
 	db 2 ; INFILTRATOR
 	db 84
-	dw CURSOLA
-if DEF(_CHALLENGE)
-	db SPECIALSPECS
-else
-	db NO_ITEM
-endc
-	dw POWER_GEM, SHADOW_BALL, NASTY_PLOT, STRENGTH_SAP
-	db 2 ; PERISH_BODY
+	dw MAROWAK_A
+	db THICK_CLUB
+	dw SHADOW_BONE, FLARE_BLITZ, BRICK_BREAK, EARTHQUAKE
+	db 2 ; ROCK_HEAD
 	db 84
 	dw UMBREON
 if DEF(_CHALLENGE)
@@ -2504,7 +2500,7 @@ endc
 	next_list_item ; BIRD_KEEPER (3)
 	db "Gunner@", TRAINERTYPE_NORMAL
 	db 27
-	dw FARFETCH_D
+	dw FARFETCH_D_G
 	db 26
 	dw PIDGEOTTO
 	db 27
@@ -2886,7 +2882,7 @@ CooltrainerMGroup:
 	db 46
 	dw AGGRON
 	db 47
-	dw TYPHLOSION
+	dw TYPHLOSION_H
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (4)
@@ -3031,8 +3027,8 @@ endc
 	dw TAUROS
 	dw EARTHQUAKE, RETURN, SWORDS_DANCE, ZEN_HEADBUTT
 	db 62
-	dw DUGTRIO
-	dw EARTHQUAKE, SUCKER_PUNCH, ROCK_SLIDE, SLASH
+	dw DUGTRIO_A
+	dw EARTHQUAKE, SUCKER_PUNCH, ROCK_SLIDE, IRON_HEAD
 	db 63
 	dw VAPOREON
 if DEF(_FAITHFUL)
@@ -3110,8 +3106,8 @@ endc
 	dw SANDSLASH
 	dw SAND_ATTACK, POISON_STING, SLASH, SWIFT
 	db 61
-	dw MUK
-	dw TOXIC, EARTHQUAKE, FIRE_BLAST, GUNK_SHOT
+	dw MUK_A
+	dw TOXIC, CRUNCH, FIRE_BLAST, GUNK_SHOT
 	db 61
 	dw SUNFLORA
 	dw GIGA_DRAIN, FIRE_BLAST, SUNNY_DAY, EARTH_POWER
@@ -3143,7 +3139,7 @@ endc
 	next_list_item ; COOLTRAINERM
 	db "Dartz@", TRAINERTYPE_NORMAL
 	db 85
-	dw MR__MIME
+	dw MR__RIME
 	db 85
 	dw FERALIGATR
 	db 85
@@ -3189,8 +3185,8 @@ endc
 	next_list_item ; COOLTRAINERM
 	db "Hector@", TRAINERTYPE_MOVES
 	db 89
-	dw SANDSLASH
-	dw EARTHQUAKE, ROCK_SLIDE, SWORDS_DANCE, X_SCISSOR
+	dw SANDSLASH_A
+	dw ICICLE_CRASH, IRON_HEAD, SWORDS_DANCE, HAIL
 	db 89
 	dw MUK_A
 	dw GUNK_SHOT, FIRE_PUNCH, KNOCK_OFF, TOXIC
@@ -3632,8 +3628,8 @@ BeautyGroup:
 	dw VULPIX
 	dw EMBER, QUICK_ATTACK, FIRE_SPIN, CONFUSE_RAY
 	db 18
-	dw JIGGLYPUFF
-	dw DOUBLESLAP, DISABLE, PLAY_NICE, POUND
+	dw CLEFAIRY
+	dw DOUBLESLAP, DEFENSE_CURL, DISARM_VOICE, SING
 	db -1 ; end
 
 	next_list_item ; BEAUTY (17) OLIVIA Route 38
@@ -3745,7 +3741,7 @@ GruntMGroup:
 	next_list_item ; ManM (3) Lighthouse
 	db "Man@", TRAINERTYPE_NORMAL
 	db 21
-	dw KOFFING
+	dw DIGLETT_A
 	db 22
 	dw SPINARAK
 	db 22
@@ -3787,7 +3783,7 @@ GruntMGroup:
 	next_list_item ; ManM (7) Lighthouse
 	db "Man@", TRAINERTYPE_NORMAL
 	db 21
-	dw KOFFING
+	dw DIGLETT
 	db 21
 	dw GRIMER_A
 	db 21
@@ -3977,6 +3973,8 @@ GentlemanGroup:
 	db "Frank@", TRAINERTYPE_NORMAL
 	db 33
 	dw PERSIAN
+	db 33
+	dw PERSIAN_A
 	db -1 ; end
 
 	end_list_items
@@ -4927,13 +4925,16 @@ SuperNerdGroup:
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (2) Ilex Forest
-	db "Irwin@", TRAINERTYPE_NORMAL
+	db "Irwin@", TRAINERTYPE_MOVES
 	db 41
 	dw TOXICROAK
+	dw SUCKER_PUNCH, BRICK_BREAK, POISON_JAB, SWAGGER
 	db 41
-	dw SANDSLASH
+	dw SANDSLASH_A
+	dw HAIL, SWORDS_DANCE, IRON_HEAD, ICICLE_CRASH
 	db 42
 	dw PIDGEOT
+	dw ROOST, AIR_CUTTER, RAZOR_WIND, FEATHERDANCE
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (3) SLOWPOKE WELL
@@ -5101,7 +5102,7 @@ HikerGroup:
 	db 46
 	dw CROBAT
 	db 47
-	dw SANDSLASH
+	dw SANDSLASH_A
 	db -1 ; end
 
 	next_list_item ; HIKER (5)
@@ -5176,8 +5177,8 @@ BikerGroup:
 	dw HYPNO
 	dw HYPNOSIS, DREAM_EATER, DARK_PULSE, NASTY_PLOT
 	db 68
-	dw WEEZING
-	dw SLUDGE_BOMB, MUD_BOMB, EXPLOSION, WILL_O_WISP
+	dw WEEZING_G
+	dw BELCH, EXPLOSION, MOONBLAST, WILL_O_WISP
 	db -1 ; end
 
 	next_list_item ; BIKER (2)
@@ -5193,7 +5194,7 @@ BikerGroup:
 	next_list_item ; BIKER (3)
 	db "Dwayne@", TRAINERTYPE_NORMAL
 	db 72
-	dw RATICATE
+	dw RATICATE_A
 	db 72
 	dw GOLEM
 	db 72
@@ -5253,9 +5254,9 @@ BikerGroup:
 	next_list_item ; BIKER (10) Route 3
 	db "Forest@", TRAINERTYPE_MOVES | TRAINERTYPE_ABILITY
 	db 70
-	dw NINETALES
-	dw FIRE_BLAST, SHADOW_BALL, EXTRASENSORY, NASTY_PLOT
-	db 2 ; DROUGHT
+	dw NINETALES_A
+	dw BLIZZARD, MOONBLAST, DARK_PULSE, NASTY_PLOT
+	db 2 ; SNOW_WARNING
 	db 70
 	dw FORRETRESS
 	dw EXPLOSION, X_SCISSOR, GYRO_BALL, SPIKES
@@ -5296,7 +5297,7 @@ BikerGroup:
 	next_list_item ; BIKER (12) Route 4
 	db "River@", TRAINERTYPE_NORMAL
 	db 70
-	dw MR__MIME
+	dw MR__RIME
 	db 70
 	dw GOROTORA
 	db 70
@@ -5548,8 +5549,8 @@ BurglarGroup:
 	dw ARCANINE
 	dw EXTREMESPEED, FLARE_BLITZ, CRUNCH, OUTRAGE
 	db 70
-	dw ELECTRODE
-	dw EXPLOSION, VOLT_TACKLE, SUCKER_PUNCH, GYRO_BALL
+	dw ELECTRODE_H
+	dw EXPLOSION, VOLT_TACKLE, SEED_BOMB, SUCKER_PUNCH
 	db 71
 	dw WEEZING
 	dw BELCH, FIRE_BLAST, EXPLOSION, DESTINY_BOND
@@ -7276,7 +7277,7 @@ endc
 	dw SCYTHER
 	dw U_TURN, FLY, PURSUIT, SWORDS_DANCE
 	db 44
-	dw RATICATE
+	dw RATICATE_A
 	dw SUPER_FANG, SCARY_FACE, CRUNCH, SUCKER_PUNCH
 	db 44
 	dw OMASTAR
@@ -8678,7 +8679,7 @@ endc
 	db 37
 	dw DUSCLOPS
 	db 38
-	dw MR__MIME
+	dw MR__MIME_G
 	db -1 ; end
 
 	next_list_item ; MNINJA_M (4)
@@ -8736,7 +8737,7 @@ MahoganyNinjaFGroup:
 	next_list_item ; MNINJA_F (2)
 	db "Ninja@", TRAINERTYPE_ITEM
 	db 38
-	dw DUGTRIO
+	dw DUGTRIO_A
 	db NO_ITEM
 	db 38
 	dw SEADRA
@@ -11059,8 +11060,8 @@ FedLeaderGroup:
 	next_list_item ; PAXTON
 	db "Paxton@", TRAINERTYPE_MOVES | TRAINERTYPE_ABILITY
 	db 79
-	dw GARDEVOIR
-	dw PSYCHIC_M, CALM_MIND, THUNDERBOLT, HYPER_BEAM
+	dw URSALUNA_BLOOD
+	dw BLOOD_MOON, EARTH_POWER, MOONLIGHT, MOONBLAST
 	db 2 ; PIXILATE
 	db 79
 	dw WEAVILE
@@ -11616,7 +11617,7 @@ else
 	db NO_ITEM
 endc
 	db 70
-	dw MUK
+	dw MUK_A
 	db NO_ITEM
 	db 70
 	dw DEWGONG
@@ -11759,7 +11760,7 @@ endc
 	db 74
 	dw ESPEON
 	db 74
-	dw PERSIAN
+	dw PERSIAN_A
 	db -1 ; end
 
 	next_list_item ; DELINQUENT12 (Route 13)

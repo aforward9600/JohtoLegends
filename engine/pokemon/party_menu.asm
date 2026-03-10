@@ -8,8 +8,7 @@ SelectMonFromParty::
 	call SetPalettes
 	call DelayFrame
 	call PartyMenuSelect
-	call ReturnToMapWithSpeechTextbox
-	ret
+	jp ReturnToMapWithSpeechTextbox
 
 SelectTradeOrDayCareMon:
 	ld a, b
@@ -23,16 +22,14 @@ SelectTradeOrDayCareMon:
 	call SetPalettes
 	call DelayFrame
 	call PartyMenuSelect
-	call ReturnToMapWithSpeechTextbox
-	ret
+	jp ReturnToMapWithSpeechTextbox
 
 InitPartyMenuLayout:
 	call LoadPartyMenuGFX
 	call InitPartyMenuWithCancel
 	call InitPartyMenuGFX
 	call WritePartyMenuTilemap
-	call PrintPartyMenuText
-	ret
+	jp PrintPartyMenuText
 
 LoadPartyMenuGFX:
 	call LoadFontsBattleExtra
@@ -106,8 +103,7 @@ PlacePartyNicknames:
 	dec hl
 	dec hl
 	ld de, .CANCEL
-	call PlaceString
-	ret
+	jp PlaceString
 
 .CANCEL:
 	db "Cancel@"
@@ -151,8 +147,7 @@ PlacePartyHPBar:
 	dec c
 	jr nz, .loop
 	ld b, SCGB_PARTY_MENU
-	call GetSGBLayout
-	ret
+	jp GetSGBLayout
 
 PlacePartymonHPBar:
 	ld a, b
@@ -314,6 +309,12 @@ PlacePartyMonTMHMCompatibility:
 	add hl, de
 	ld a, [hl]
 	ld [wCurPartySpecies], a
+	ld a, b
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld hl, wPartyMon1CaughtTime
+	call AddNTimes
+	ld a, [hl]
+	ld [wBufferMonForm], a
 	predef CanLearnTMHMMove
 	pop hl
 	call .PlaceAbleNotAble
@@ -667,6 +668,16 @@ PartyMenuSelect:
 	add hl, bc
 	ld a, [hl]
 	ld [wCurPartySpecies], a
+
+	ld a, MON_CAUGHTTIME
+	ld hl, wPartyMons
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [wCurPartyMon]
+	call GetPartyLocation
+	ld a, [hl]
+	ld [wBufferMonForm], a
 
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX

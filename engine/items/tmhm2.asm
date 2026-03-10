@@ -1,6 +1,32 @@
 CanLearnTMHMMove:
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
+;	push hl
+;	farcall PaldeanTaurosCheck
+;	jr nc, .NotTauros
+
+;	ld b,b
+
+;	pop hl
+
+;	ld a, [hl]
+;	and CAUGHT_FORM_1_MASK
+;	jr z, .TrySecond
+;	ld hl, TAUROS_P_FIRE
+;	jr .GotTauros
+
+;.TrySecond
+;	ld a, [hl]
+;	and CAUGHT_FORM_2_MASK
+;	jr z, .NotTauros
+;	ld hl, TAUROS_P_WATER
+;.GotTauros
+;	ld a, [hl]
+;	ld [wCurSpecies], a
+;	jr .GotTauros2
+;.NotTauros
+;	pop hl
+.GotTauros2
 	call GetBaseData
 	ld hl, wBaseTMHM
 	push hl

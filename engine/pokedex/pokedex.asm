@@ -329,8 +329,7 @@ Pokedex_InitMainScreen:
 	ld a, 7
 	ld [wDexListingHeight], a
 	call Pokedex_PrintListing
-	call Pokedex_IncrementDexPointer
-	ret
+	jp Pokedex_IncrementDexPointer
 
 Pokedex_UpdateMainScreen:
 	ld hl, hJoyPressed
@@ -353,9 +352,7 @@ Pokedex_UpdateMainScreen:
 	ldh [hBGMapMode], a
 	call Pokedex_PrintListing
 	call Pokedex_SetBGMapMode3
-	call Pokedex_ResetBGMapMode
-	ret
-
+	jp Pokedex_ResetBGMapMode
 .a
 	call Pokedex_GetSelectedMon
 	call Pokedex_CheckSeen
@@ -374,8 +371,7 @@ Pokedex_UpdateMainScreen:
 	ldh [hSCX], a
 	ld a, $a7
 	ldh [hWX], a
-	call DelayFrame
-	ret
+	jp DelayFrame
 
 .start
 	call Pokedex_BlackOutBG
@@ -385,8 +381,7 @@ Pokedex_UpdateMainScreen:
 	ldh [hSCX], a
 	ld a, $a7
 	ldh [hWX], a
-	call DelayFrame
-	ret
+	jp DelayFrame
 
 .b
 	ld a, DEXSTATE_EXIT
@@ -485,8 +480,7 @@ Pokedex_Page:
 	ld a, h
 	ld [wPrevDexEntry + 1], a
 	farcall DisplayDexEntry
-	call WaitBGMap
-	ret
+	jp WaitBGMap
 
 Pokedex_ReinitDexEntryScreen:
 ; Reinitialize the Pokédex entry screen after changing the selected mon.
@@ -560,8 +554,7 @@ DexEntryScreen_MenuActionJumptable:
 	call Pokedex_GetSelectedMon
 	ld [wCurPartySpecies], a
 	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
-	ret
+	jp Pokedex_GetSGBLayout
 
 .Cry:
 	call Pokedex_GetSelectedMon
@@ -569,8 +562,7 @@ DexEntryScreen_MenuActionJumptable:
 	call GetCryIndex
 	ld e, c
 	ld d, b
-	call PlayCry
-	ret
+	jp PlayCry
 
 .Print:
 	call Pokedex_ApplyPrintPals
@@ -623,8 +615,7 @@ Pokedex_InitOptionScreen:
 	call WaitBGMap
 	ld a, SCGB_POKEDEX_SEARCH_OPTION
 	call Pokedex_GetSGBLayout
-	call Pokedex_IncrementDexPointer
-	ret
+	jp Pokedex_IncrementDexPointer
 
 Pokedex_UpdateOptionScreen:
 	ld a, [wUnlockedUnownMode]
@@ -728,8 +719,7 @@ Pokedex_InitSearchScreen:
 	call WaitBGMap
 	ld a, SCGB_POKEDEX_SEARCH_OPTION
 	call Pokedex_GetSGBLayout
-	call Pokedex_IncrementDexPointer
-	ret
+	jp Pokedex_IncrementDexPointer
 
 Pokedex_UpdateSearchScreen:
 	ld de, .ArrowCursorData
@@ -772,8 +762,7 @@ Pokedex_UpdateSearchScreen:
 
 .MenuAction_MonSearchType:
 	call Pokedex_NextSearchMonType
-	call Pokedex_PlaceSearchScreenTypeStrings
-	ret
+	jp Pokedex_PlaceSearchScreenTypeStrings
 
 .MenuAction_BeginSearch:
 	call Pokedex_SearchForMons
@@ -791,8 +780,7 @@ Pokedex_UpdateSearchScreen:
 	call Pokedex_DrawSearchScreenBG
 	call Pokedex_InitArrowCursor
 	call Pokedex_PlaceSearchScreenTypeStrings
-	call WaitBGMap
-	ret
+	jp WaitBGMap
 
 .show_search_results
 	ld a, [wDexSearchResultCount]
@@ -856,8 +844,7 @@ Pokedex_InitSearchResultsScreen:
 	ld [wCurPartySpecies], a
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout
-	call Pokedex_IncrementDexPointer
-	ret
+	jp Pokedex_IncrementDexPointer
 
 Pokedex_UpdateSearchResultsScreen:
 	ld hl, hJoyPressed
@@ -874,8 +861,7 @@ Pokedex_UpdateSearchResultsScreen:
 	ldh [hBGMapMode], a
 	call Pokedex_PrintListing
 	call Pokedex_SetBGMapMode3
-	call Pokedex_ResetBGMapMode
-	ret
+	jp Pokedex_ResetBGMapMode
 
 .go_to_dex_entry
 	call Pokedex_GetSelectedMon
@@ -987,8 +973,7 @@ Pokedex_UnownModeHandleDPadInput:
 	ld a, $1
 	ldh [hBGMapMode], a
 	call DelayFrame
-	call DelayFrame
-	ret
+	jp DelayFrame
 
 Pokedex_UnownModeEraseCursor:
 	ld c, " "
@@ -1347,8 +1332,7 @@ Pokedex_DrawOptionScreenBG:
 	ret z
 	hlcoord 3, 10
 	ld de, .UnownMode
-	call PlaceString
-	ret
+	jp PlaceString
 
 .Title:
 	db $3b, " Option ", $3c, -1
@@ -1381,8 +1365,7 @@ Pokedex_DrawSearchScreenBG:
 	call PlaceString
 	hlcoord 3, 13
 	ld de, .Menu
-	call PlaceString
-	ret
+	jp PlaceString
 
 .Title:
 	db $3b, " Search ", $3c, -1
@@ -2024,8 +2007,7 @@ Pokedex_DisplayChangingModesMessage:
 	ld de, SFX_CHANGE_DEX_MODE
 	call PlaySFX
 	ld c, 64
-	call DelayFrames
-	ret
+	jp DelayFrames
 
 String_ChangingModesPleaseWait:
 	db   "Changing modes."
@@ -2130,8 +2112,7 @@ endr
 	ld e, l
 	ld d, h
 	pop hl
-	call PlaceString
-	ret
+	jp PlaceString
 
 INCLUDE "data/types/search_strings.asm"
 
@@ -2266,8 +2247,7 @@ Pokedex_DisplayTypeNotFoundMessage:
 	ld a, $1
 	ldh [hBGMapMode], a
 	ld c, $80
-	call DelayFrames
-	ret
+	jp DelayFrames
 
 .TypeNotFound:
 	db   "The specified type"
@@ -2278,8 +2258,7 @@ Pokedex_UpdateCursorOAM:
 	cp DEXMODE_OLD
 	jp z, Pokedex_PutOldModeCursorOAM
 	call Pokedex_PutNewModeABCModeCursorOAM
-	call Pokedex_PutScrollbarOAM
-	ret
+	jp Pokedex_PutScrollbarOAM
 
 Pokedex_PutOldModeCursorOAM:
 	ld hl, .CursorOAM
@@ -2288,8 +2267,7 @@ Pokedex_PutOldModeCursorOAM:
 	jr nz, .okay
 	ld hl, .CursorAtTopOAM
 .okay
-	call Pokedex_LoadCursorOAM
-	ret
+	jp Pokedex_LoadCursorOAM
 
 .CursorOAM:
 	dsprite  3,  0,  9, -1, $30, 7

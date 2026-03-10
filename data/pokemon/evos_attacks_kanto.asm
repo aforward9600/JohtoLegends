@@ -767,11 +767,11 @@ SandslashAEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, ICICLE_SPEAR
 	dbw 1, ICICLE_SPEAR
-	dbw 1, ICICLE_CRASH
 	dbw 1, SLASH
 	dbw 1, DEFENSE_CURL
 	dbw 1, ROLLOUT
 	dbw 1, METAL_CLAW
+	dbw 1, ICICLE_CRASH
 	db 0 ; no more level-up moves
 
 NidoranFEvosAttacks:
