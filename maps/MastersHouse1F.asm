@@ -82,9 +82,6 @@ MaastersHouseMasterScript:
 	iftrue .BeatDragonKid1
 	checkevent EVENT_BEAT_DRAGON_KID_LANCE
 	iftrue .BeatDragonKid2
-	givepoke SYLVEON, 5, ORAN_BERRY
-	givepoke SNEASLER, 5, ORAN_BERRY
-	givepoke PERRSERKER, 5, ORAN_BERRY
 	jumptextfaceplayer MastersHouseMasterText
 
 .MasterGoodLuck:

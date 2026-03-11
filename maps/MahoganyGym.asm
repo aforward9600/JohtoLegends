@@ -96,7 +96,7 @@ MahoganyGymPryceScript:
 	sjump .PryceBattle8
 
 .PryceBattle1:
-	loadtrainer PRYCE, PRYCE_ALTERNATE
+	loadtrainer PRYCE, PRYCE1
 	sjump AfterPryceRematch
 
 .PryceBattle2:

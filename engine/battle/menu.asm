@@ -8,12 +8,6 @@ LoadBattleMenu:
 	ld [wBattleMenuCursorBuffer], a
 	jp ExitMenu
 
-SafariBattleMenu:
-; untranslated
-	ld hl, MenuHeader_0x24f4e
-	call LoadMenuHeader
-	jr Function24f19
-
 ContestBattleMenu:
 	ld hl, MenuHeader_0x24f89
 	call LoadMenuHeader

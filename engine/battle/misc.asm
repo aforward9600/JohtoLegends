@@ -85,7 +85,7 @@ DoWeatherModifiers:
 	ld a, [de]
 	inc de
 	cp -1
-	jr z, .done
+	ret z
 
 	cp b
 	jr nz, .NextWeatherMove

@@ -77,8 +77,7 @@ ReadTrainerParty:
 	ld [wOtherTrainerType], a
 	ld de, sMysteryGiftTrainer
 	call ReadTrainerPartyPieces
-	call CloseSRAM
-	jr .done
+	jp CloseSRAM
 
 ReadTrainerPartyPieces:
 	ld h, d

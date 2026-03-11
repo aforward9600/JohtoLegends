@@ -49,7 +49,6 @@ CHRIS EQU __enum__
 	trainerclass PRYCE ; 5
 	const PRYCE1
 	const PRYCE2
-	const PRYCE_ALTERNATE
 
 	trainerclass BYRON ; 6
 	const BYRON1
