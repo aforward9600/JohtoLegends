@@ -2013,3 +2013,184 @@ Cry_Rattata_Ch8:
 	noise __,  2, $a2, $39
 	noise __,  9, $91, $49
 	endchannel
+
+Cry_Shroomish:
+	musicheader 3, 5, Cry_Shroomish_Ch5
+	musicheader 1, 6, Cry_Shroomish_Ch6
+	musicheader 1, 8, Cry_Shroomish_Ch8
+
+Cry_Shroomish_Ch5:
+	sound_duty 0, 0, 1, 0
+	sound __, 4, $f9, $0698
+	sound __, 7, $f1, $06a4
+	sound __, 16, $f0, $068d
+	sound __, 16, $d0, $068d
+	sound __, 6, $c0, $068d
+	sound __, 2, $0, $068d
+	endchannel
+
+Cry_Shroomish_Ch6:
+	sound_duty 0, 0, 2, 0
+	sound __, 4, $69, $03fc
+	sound __, 7, $56, $04fd
+	sound __, 6, $75, $04fd
+	sound __, 5, $64, $04fd
+	sound __, 13, $40, $04fd
+	sound __, 3, $0, $04fd
+	endchannel
+
+Cry_Shroomish_Ch8:
+	noise __, 8, $a5, $0d
+	noise __, 16, $54, $0f
+	endchannel
+
+Cry_Breloom:
+	musicheader 3, 5, Cry_Breloom_Ch5
+	musicheader 1, 6, Cry_Breloom_Ch6
+	musicheader 1, 8, Cry_Breloom_Ch8
+
+Cry_Breloom_Ch5:
+	sound_duty 0, 3, 0, 1
+	sound __, 4, $d9, $06c9
+	sound __, 6, $f3, $06d0
+	sound __, 16, $f0, $068d
+	sound __, 4, $e0, $068d
+	sound __, 4, $e0, $0689
+	sound __, 2, $0, $068d
+	endchannel
+
+Cry_Breloom_Ch6:
+	sound_duty 2, 1, 0, 3
+	sound __, 4, $79, $03fc
+	sound __, 6, $66, $03fc
+	sound __, 6, $65, $0583
+	sound __, 5, $54, $057c
+	sound __, 12, $50, $0583
+	sound __, 3, $0, $0583
+	endchannel
+
+Cry_Breloom_Ch8:
+	noise __, 9, $b5, $02
+	noise __, 16, $a7, $03
+	endchannel
+
+Cry_Ralts:
+	musicheader 3, 5, Cry_Ralts_Ch5
+	musicheader 1, 6, Cry_Ralts_Ch6
+	musicheader 1, 8, Cry_Ralts_Ch8
+
+Cry_Ralts_Ch5:
+	sound_duty 1, 2, 1, 0
+	sound __, 5, $b7, $06a0
+	sound __, 9, $c7, $0722
+	sound __, 16, $e7, $0722
+	sound __, 5, $e6, $0722
+	sound __, 13, $b3, $06a0
+	sound __, 9, $e7, $0708
+	sound __, 16, $c6, $0708
+	sound __, 5, $b3, $0708
+	endchannel
+
+Cry_Ralts_Ch6:
+	sound_duty 2, 1, 2, 1
+	sound __, 5, $77, $0578
+	sound __, 9, $77, $0406
+	sound __, 16, $97, $0406
+	sound __, 5, $76, $0406
+	sound __, 13, $73, $028a
+	sound __, 9, $97, $02ee
+	sound __, 16, $76, $02ee
+	sound __, 5, $73, $02ee
+	endchannel
+
+Cry_Ralts_Ch8:
+	noise __, 9, $61, $1e
+	noise __, 9, $31, $1e
+	noise __, 9, $61, $64
+	endchannel
+
+Cry_Kirlia:
+	musicheader 3, 5, Cry_Kirlia_Ch5
+	musicheader 1, 6, Cry_Kirlia_Ch6
+	musicheader 1, 8, Cry_Kirlia_Ch8
+
+Cry_Kirlia_Ch5:
+	sound_duty 1, 2, 1, 0
+	sound __, 9, $f7, $0725
+	sound __, 16, $d7, $0725
+	sound __, 9, $e7, $0724
+	sound __, 16, $d6, $0724
+	sound __, 9, $c3, $0724
+	endchannel
+
+Cry_Kirlia_Ch6:
+	sound_duty  2, 1, 2, 1
+	sound __, 9, $65, $0406
+	sound __, 16, $45, $0406
+	sound __, 9, $55, $03fc
+	sound __, 16, $45, $03fc
+	sound __, 9, $33, $03fc
+	endchannel
+
+Cry_Kirlia_Ch8:
+	noise __, 9, $66, $91
+	endchannel
+
+Cry_Gallade:
+	musicheader 3, 5, Cry_Gallade_Ch5
+	musicheader 1, 6, Cry_Gallade_Ch6
+	musicheader 1, 8, Cry_Gallade_Ch8
+
+Cry_Gallade_Ch5:
+	sound_duty 0, 0, 0, 0
+	sound __, 4, $3d, $0381
+	sound __, 9, $e5, $06e3
+	sound __, 5, $c2, $05ca
+	sound __, 10, $31, $0381
+	sound __, 12, $04, $0381
+	sound __, 5, $e1, $0708
+	sound __, 2, $45, $0788
+	sound __, 13, $50, $0796
+	sound __, 5, $52, $0796
+	endchannel
+
+Cry_Gallade_Ch6:
+	sound_duty 0, 0, 0, 0
+	sound __, 4, $38, $0381
+	sound __, 9, $c5, $05dc
+	sound __, 3, $e2, $0776
+	sound __, 3, $e2, $07ae
+	sound __, 10, $e3, $07ba
+	sound __, 12, $04, $07ba
+	sound __, 5, $58, $0381
+	sound __, 2, $c5, $07b6
+	sound __, 13, $b0, $07c4
+	sound __, 5, $b2, $07c4
+	endchannel
+
+Cry_Gallade_Ch8:
+	noise __, 4, $92, $49
+	noise __, 9, $b5, $29
+	noise __, 5, $a2, $39
+	noise __, 10, $91, $50
+	noise __, 12, $01, $3c
+	noise __, 4, $64, $49
+	noise __, 9, $84, $50
+	noise __, 10, $85, $32
+	endchannel
+
+Cry_Sneasler:
+	musicheader 2, 5, Cry_Sneasler_Ch5
+	musicheader 1, 6, Cry_Sneasler_Ch6
+
+Cry_Sneasler_Ch5:
+	dutycycle 3, 2, 3, 2
+	sound __, 9, $f2, $778
+	sound __, 9, $f2, $778
+	endchannel
+
+Cry_Sneasler_Ch6:
+	dutycycle 2, 1, 2, 1
+	sound __, 9, $e2, $758
+	sound __, 9, $e2, $758
+	endchannel

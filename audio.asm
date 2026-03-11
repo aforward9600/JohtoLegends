@@ -58,8 +58,6 @@ INCLUDE "audio/music/route29.asm"
 INCLUDE "audio/music/halloffame.asm"
 INCLUDE "audio/music/healpokemon.asm"
 INCLUDE "audio/music/evolution.asm"
-INCLUDE "audio/music/printer.asm"
-INCLUDE "audio/music/dahliaafterbattle.asm"
 
 
 SECTION "Songs 4", ROMX
@@ -184,3 +182,5 @@ INCLUDE "audio/music/silphco.asm"
 INCLUDE "audio/music/pokemontower.asm"
 INCLUDE "audio/music/oakbattle.asm"
 INCLUDE "audio/music/regibattle.asm"
+INCLUDE "audio/music/printer.asm"
+INCLUDE "audio/music/dahliaafterbattle.asm"

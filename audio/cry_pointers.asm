@@ -67,3 +67,9 @@ Cries:
 	dba Cry_Aipom
 	dba Cry_Dunsparce
 	dba Cry_Donphan
+	dba Cry_Shroomish
+	dba Cry_Breloom
+	dba Cry_Ralts
+	dba Cry_Kirlia
+	dba Cry_Gallade
+	dba Cry_Sneasler

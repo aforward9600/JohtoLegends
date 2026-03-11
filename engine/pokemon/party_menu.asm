@@ -758,8 +758,7 @@ PrintPartyMenuActionText:
 	ld a, [wPartyMenuActionText]
 	and $f
 	ld hl, .MenuActionTexts
-	call .PrintText
-	ret
+	jr .PrintText
 
 .MenuActionTexts:
 ; entries correspond to PARTYMENUTEXT_* constants

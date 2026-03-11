@@ -72,3 +72,9 @@
 	const CRY_AIPOM
 	const CRY_DUNSPARCE
 	const CRY_DONPHAN
+	const CRY_SHROOMISH
+	const CRY_BRELOOM
+	const CRY_RALTS
+	const CRY_KIRLIA
+	const CRY_GALLADE
+	const CRY_SNEASLER
