@@ -337,12 +337,6 @@ BattleAnimCommands::
 	dw BattleAnimCmd_Call
 	dw BattleAnimCmd_Ret
 
-BattleAnimCmd_EA:
-BattleAnimCmd_EB:
-BattleAnimCmd_EC:
-BattleAnimCmd_ED:
-	ret
-
 BattleAnimCmd_Ret:
 	ld hl, wBattleAnimFlags
 	res BATTLEANIM_IN_SUBROUTINE_F, [hl]
@@ -354,6 +348,10 @@ BattleAnimCmd_Ret:
 	ld [hl], e
 	inc hl
 	ld [hl], d
+BattleAnimCmd_EA:
+BattleAnimCmd_EB:
+BattleAnimCmd_EC:
+BattleAnimCmd_ED:
 	ret
 
 BattleAnimCmd_Call:
@@ -828,8 +826,6 @@ BattleAnimCmd_CheckPokeball:
 	callfar GetPokeBallWobble
 	ld a, c
 	ld [wBattleAnimVar], a
-	ret
-
 BattleAnimCmd_E7:
 	ret
 
@@ -1200,8 +1196,6 @@ BattleAnimCmd_OAMOff:
 BattleAnimCmd_KeepSprites:
 	ld hl, wBattleAnimFlags
 	set BATTLEANIM_KEEPSPRITES_F, [hl]
-	ret
-
 BattleAnimCmd_F5:
 BattleAnimCmd_F6:
 BattleAnimCmd_F7:

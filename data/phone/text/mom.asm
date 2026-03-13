@@ -36,7 +36,7 @@ MomPhoneNewBarkText:
 	text_ram wStringBuffer3
 	text "?"
 
-	para "Come see your MOM"
+	para "Come see your Mom"
 	line "sometime!"
 	done
 

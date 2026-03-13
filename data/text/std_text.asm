@@ -142,28 +142,8 @@ MartSignText:
 	done
 
 ContestResults_ReadyToJudgeText:
-	text "We will now judge"
-	line "the #mon you've"
-	cont "caught."
-
-	para "<……>"
-	line "<……>"
-
-	para "We have chosen the"
-	line "winners!"
-
-	para "Are you ready for"
-	line "this?"
-	done
 
 ContestResults_PlayerWonAPrizeText:
-	text "<PLAYER>, the No.@"
-	text_ram wStringBuffer3
-	text_start
-	line "finisher, wins"
-	cont "@"
-	text_ram wStringBuffer4
-	text "!"
 	done
 
 ReceivedItemText:
@@ -174,35 +154,13 @@ ReceivedItemText:
 	done
 
 ContestResults_JoinUsNextTimeText:
-	text "Please join us for"
-	line "the next Contest!"
-	done
 
 ContestResults_ConsolationPrizeText:
-	text "Everyone else gets"
-	line "a Berry as a con-"
-	cont "solation prize!"
-	done
 
 ContestResults_DidNotWinText:
-	text "We hope you do"
-	line "better next time."
-	done
-
 ContestResults_ReturnPartyText:
-	text "We'll return the"
-	line "#mon we kept"
-
-	para "for you."
-	line "Here you go!"
-	done
 
 ContestResults_PartyFullText:
-	text "Your party's full,"
-	line "so the #mon was"
-
-	para "sent to your Box"
-	line "in the ADS."
 	done
 
 GymStatue_CityGymText:

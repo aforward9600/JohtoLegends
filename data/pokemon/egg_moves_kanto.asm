@@ -195,7 +195,6 @@ BulbasaurEggMoves:
 	dw MAGICAL_LEAF
 	dw SING
 	dw AMNESIA
-	dw STRENGTH_SAP
 	dw -1 ; end
 
 CharmanderEggMoves:
@@ -273,7 +272,6 @@ PichuEggMoves:
 	dw DOUBLESLAP
 	dw DISARM_VOICE
 	dw ENDURE
-	dw THUNDERPUNCH
 	dw VOLT_TACKLE
 	dw ECHOED_VOICE
 	dw FAKE_OUT
@@ -363,7 +361,6 @@ VulpixAEggMoves:
 	dw FLAIL
 	dw HOWL
 	dw HYPNOSIS
-	dw MOONBLAST
 	dw ROAR
 	dw SPITE
 	dw -1 ; end
@@ -383,14 +380,12 @@ ZubatEggMoves:
 	dw BRAVE_BIRD
 	dw HYPNOSIS
 	dw ZEN_HEADBUTT
-	dw STRENGTH_SAP
 	dw -1 ; end
 
 OddishEggMoves:
 	dw RAZOR_LEAF
 	dw FLAIL
 	dw SYNTHESIS
-	dw STRENGTH_SAP
 	dw -1 ; end
 
 ParasEggMoves:
@@ -399,7 +394,6 @@ ParasEggMoves:
 	dw COUNTER
 	dw PSYBEAM
 	dw FLAIL
-	dw LIGHT_SCREEN
 	dw PURSUIT
 	dw AGILITY
 	dw CROSS_POISON
@@ -407,13 +401,11 @@ ParasEggMoves:
 	dw LEECH_SEED
 	dw METAL_CLAW
 	dw SWEET_SCENT
-	dw STRENGTH_SAP
 	dw -1 ; end
 
 VenonatEggMoves:
 	dw BATON_PASS
 	dw SCREECH
-	dw GIGA_DRAIN
 	dw AGILITY
 	dw SIGNAL_BEAM
 	dw -1 ; end
@@ -671,9 +663,6 @@ GastlyEggMoves:
 	dw HAZE
 	dw ASTONISH
 	dw DISABLE
-	dw FIRE_PUNCH
-	dw ICE_PUNCH
-	dw THUNDERPUNCH
 	dw SMOG
 	dw CLEAR_SMOG
 	dw -1 ; end
@@ -687,9 +676,6 @@ OnixEggMoves:
 
 DrowzeeEggMoves:
 	dw BARRIER
-	dw FIRE_PUNCH
-	dw ICE_PUNCH
-	dw THUNDERPUNCH
 	dw PSYCHO_CUT
 	dw FLATTER
 	dw -1 ; end
@@ -754,16 +740,12 @@ KoffingEggMoves:
 RhyhornEggMoves:
 	dw CRUNCH
 	dw REVERSAL
-	dw ROCK_SLIDE
 	dw THRASH
 	dw PURSUIT
 	dw COUNTER
 	dw MAGNITUDE
 	dw CRUSH_CLAW
 	dw DRAGON_RUSH
-	dw FIRE_FANG
-	dw ICE_FANG
-	dw THUNDER_FANG
 	dw SKULL_BASH
 	dw -1 ; end
 
@@ -835,7 +817,6 @@ ScytherEggMoves:
 
 SmoochumEggMoves:
 	dw MEDITATE
-	dw ICE_PUNCH
 	dw FAKE_OUT
 	dw -1 ; end
 
@@ -845,8 +826,6 @@ ElekidEggMoves:
 	dw ROLLING_KICK
 	dw MEDITATE
 	dw CROSS_CHOP
-	dw FIRE_PUNCH
-	dw THUNDERPUNCH
 	dw -1 ; end
 
 MagbyEggMoves:
@@ -855,8 +834,6 @@ MagbyEggMoves:
 	dw BARRIER
 	dw SCREECH
 	dw CROSS_CHOP
-	dw FIRE_PUNCH
-	dw THUNDERPUNCH
 	dw FOCUS_ENERGY
 	dw MACH_PUNCH
 	dw -1 ; end

@@ -19,7 +19,6 @@ OpenMartDialog::
 .dialogs
 	dw MartDialog
 	dw HerbShop
-	dw BargainShop
 	dw Pharmacist
 	dw RooftopSale
 	dw ShadyShop
@@ -43,26 +42,6 @@ HerbShop:
 	call MartTextbox
 	call BuyMenu
 	ld hl, Text_HerbShop_ComeAgain
-	jp MartTextbox
-
-BargainShop:
-	ld b, BANK(BargainShopData)
-	ld de, BargainShopData
-	call LoadMartPointer
-	call ReadMart
-	call LoadStandardMenuHeader
-	ld hl, Text_BargainShop_Intro
-	call MartTextbox
-	call BuyMenu
-	ld hl, wBargainShopFlags
-	ld a, [hli]
-	or [hl]
-	jr z, .skip_set
-	ld hl, wDailyFlags1
-	set DAILYFLAGS1_GOLDENROD_UNDERGROUND_BARGAIN_F, [hl]
-
-.skip_set
-	ld hl, Text_BargainShop_ComeAgain
 	jp MartTextbox
 
 Pharmacist:

@@ -22,4 +22,5 @@ SunnyDayMoves:
 	dw HEAT_WAVE
 	dw LAVA_PLUME
 	dw BLAST_BURN
+	dw RAGING_FURY
 	dw -1 ; end

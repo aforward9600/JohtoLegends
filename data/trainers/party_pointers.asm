@@ -58,7 +58,6 @@ TrainerGroups:
 	dba CamperGroup
 	dba ArianaGroup
 	dba SageGroup
-	dba MediumGroup
 	dba BoarderGroup
 	dba PokefanMGroup
 	dba KimonoGirlGroup

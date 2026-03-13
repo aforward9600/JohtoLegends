@@ -39,5 +39,4 @@ EncoreMoves:
 	dw RAIN_DANCE
 	dw SUNNY_DAY
 	dw WILL_O_WISP
-	dw 
 	dw -1 ; end

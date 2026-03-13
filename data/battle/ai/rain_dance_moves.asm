@@ -17,4 +17,6 @@ RainDanceMoves:
 	dw AQUA_TAIL
 	dw MUDDY_WATER
 	dw HYDRO_CANNON
+	dw HURRICANE
+	dw WAVE_CRASH
 	dw -1 ; end

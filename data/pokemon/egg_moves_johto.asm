@@ -251,10 +251,6 @@ AerodactylEggMoves:
 	dw PURSUIT
 	dw FORESIGHT
 	dw DRAGONBREATH
-	dw FIRE_FANG
-	dw THUNDER_FANG
-	dw ICE_FANG
-	dw DRACO_FANG
 	dw -1 ; end
 
 MunchlaxEggMoves:
@@ -273,8 +269,8 @@ DratiniEggMoves:
 	dw SUPERSONIC
 	dw DRAGONBREATH
 	dw DRAGON_RUSH
-	dw EXTREMESPEED
 	dw WATER_PULSE
+	dw -1 ; end
 
 ChikoritaEggMoves:
 	dw VINE_WHIP
@@ -283,7 +279,6 @@ ChikoritaEggMoves:
 	dw ANCIENTPOWER
 	dw FLAIL
 	dw BODY_SLAM
-	dw STRENGTH_SAP
 	dw GRASSWHISTLE
 	dw -1 ; end
 
@@ -310,8 +305,6 @@ TotodileEggMoves:
 	dw ANCIENTPOWER
 	dw RAZOR_WIND
 	dw AQUA_JET
-	dw ICE_PUNCH
-	dw ICE_FANG
 	dw WATER_PULSE
 	dw FLATTER
 	dw -1 ; end
@@ -433,7 +426,6 @@ HoppipEggMoves:
 	dw AMNESIA
 	dw PAY_DAY
 	dw SEED_BOMB
-	dw STRENGTH_SAP
 	dw AGILITY
 	dw -1 ; end
 
@@ -564,9 +556,6 @@ SnubbullEggMoves:
 	dw LICK
 	dw LEER
 	dw DOUBLE_EDGE
-	dw FIRE_FANG
-	dw ICE_FANG
-	dw THUNDER_FANG
 	dw MIMIC
 	dw SNORE
 	dw SEISMIC_TOSS
@@ -605,7 +594,6 @@ SneaselEggMoves:
 	dw BITE
 	dw CRUSH_CLAW
 	dw DOUBLE_HIT_M
-	dw ICE_PUNCH
 	dw ICE_SHARD
 	dw ICICLE_CRASH
 	dw PURSUIT
@@ -656,7 +644,6 @@ SwinubEggMoves:
 	dw FISSURE
 	dw ICICLE_CRASH
 	dw MUD_SHOT
-	dw ICE_FANG
 	dw -1 ; end
 
 CorsolaJEggMoves:
@@ -676,7 +663,6 @@ CorsolaEggMoves:
 	dw AMNESIA
 	dw CONFUSE_RAY
 	dw WATER_PULSE
-	dw STRENGTH_SAP
 	dw -1 ; end
 
 RemoraidEggMoves:
@@ -700,7 +686,6 @@ DelibirdEggMoves:
 	dw SPLASH
 	dw RAPID_SPIN
 	dw DESTINY_BOND
-	dw ICE_PUNCH
 	dw ICE_SHARD
 	dw FAKE_OUT
 	dw DUALWINGBEAT
@@ -734,8 +719,6 @@ HoundourEggMoves:
 	dw SPITE
 	dw REVERSAL
 	dw DESTINY_BOND
-	dw FIRE_FANG
-	dw THUNDER_FANG
 	dw SUCKER_PUNCH
 	dw -1 ; end
 
@@ -791,12 +774,9 @@ BudewEggMoves:
 ElectrikeEggMoves:
 	dw CRUNCH
 	dw DISCHARGE
-	dw FIRE_FANG
 	dw FLAME_BURST
 	dw HEADBUTT
-	dw ICE_FANG
 	dw SWIFT
-	dw THUNDER_FANG
 	dw DOUBLE_EDGE
 	dw SNARL
 	dw -1 ; end
@@ -830,7 +810,6 @@ CacneaEggMoves:
 	dw GRASSWHISTLE
 	dw LOW_KICK
 	dw MAGICAL_LEAF
-	dw NASTY_PLOT
 	dw SEED_BOMB
 	dw -1 ; end
 
@@ -846,14 +825,12 @@ RaltsEggMoves:
 ShroomishEggMoves:
 	dw BULLET_SEED
 	dw CHARM
-	dw DRAIN_PUNCH
 	dw SEED_BOMB
 	dw -1 ; end
 
 AronEggMoves:
 	dw BODY_SLAM
 	dw DRAGON_RUSH
-	dw IRON_HEAD
 	dw SCREECH
 	dw REVERSAL
 	dw STOMP
@@ -867,14 +844,12 @@ LarvitarEggMoves:
 	dw FOCUS_ENERGY
 	dw ANCIENTPOWER
 	dw IRON_DEFENSE
-	dw EXTREMESPEED
 	dw -1 ; end
 
 GibleEggMoves:
 	dw DOUBLE_EDGE
 	dw BODY_SLAM
 	dw DRAGONBREATH
-	dw IRON_HEAD
 	dw METAL_CLAW
 	dw OUTRAGE
 	dw SAND_TOMB
@@ -886,12 +861,10 @@ GibleEggMoves:
 BagonEggMoves:
 	dw DRAGON_RAGE
 	dw DRAGON_RUSH
-	dw FIRE_FANG
 	dw HYDRO_PUMP
 	dw THRASH
 	dw TWISTER
 	dw DRAGONBREATH
-	dw EXTREMESPEED
 	dw HEAT_WAVE
 	dw -1 ; end
 

@@ -59,7 +59,6 @@ if DEF(_CHALLENGE)
 	dn 12, 10, 10, 10 ; CAMPER
 	dn 10, 15, 12, 10 ; ARIANA
 	dn 12, 10, 10, 10 ; SAGE
-	dn 12, 10, 10, 10 ; MEDIUM
 	dn 12, 10, 10, 10 ; BOARDER
 	dn 12, 10, 10, 10 ; POKEFANM
 	dn  9, 10, 10, 12 ; KIMONO_GIRL
@@ -170,7 +169,6 @@ else
 	dn  9,  8,  8,  8 ; CAMPER
 	dn  7, 14, 10,  8 ; ARIANA
 	dn  9,  8,  8,  8 ; SAGE
-	dn  7,  8,  8,  8 ; MEDIUM
 	dn  9,  8,  8,  8 ; BOARDER
 	dn  9,  8,  8,  8 ; POKEFANM
 	dn  6,  8,  8, 10 ; KIMONO_GIRL

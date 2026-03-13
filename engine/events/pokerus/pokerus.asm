@@ -295,7 +295,7 @@ PickupItems:
 .ok
 	ld a, [hli]
 	inc a
-	jr z, .done
+	ret z
 	ld a, [hli]
 .done
 	ret

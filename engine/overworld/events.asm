@@ -362,8 +362,6 @@ CheckWildEncounterCooldown::
 SetUpFiveStepWildEncounterCooldown:
 	ld a, 5
 	ld [wWildEncounterCooldown], a
-	ret
-
 ret_968d7:
 	ret
 

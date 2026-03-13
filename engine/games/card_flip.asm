@@ -151,8 +151,7 @@ _CardFlip:
 	ld a, $1
 	ldh [hBGMapMode], a
 	call WaitSFX
-	call .Increment
-	ret
+	jr .Increment
 
 .NotEnoughCoinsText:
 	; Not enough coins…

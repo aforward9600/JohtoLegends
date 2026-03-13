@@ -87,16 +87,6 @@ UnknownText_0x1c4212::
 	text "?"
 	done
 
-UnknownText_0x1c422a::
-	text "To enter a mobile"
-	line "battle, you must"
-
-	para "pick a team of"
-	line "three #mon."
-
-	para "Is that OK?"
-	done
-
 UnknownText_0x1c454b::
 	text "Would you like to"
 	line "save the game?"
@@ -251,7 +241,7 @@ UnknownText_0x1c487f::
 UnknownText_0x1c491d::
 	text "Hey!"
 
-	para "That's an EGG!"
+	para "That's an Egg!"
 
 	para "You can't say that"
 	line "you've met it yet…"
@@ -1245,9 +1235,7 @@ ShadyShop_IntroText::
 ShadyShop_DontTellText::
 	text "Don't tell the"
 	line "cops. They're not"
-	cont "exactly fans of"
-
-	para "us here."
+	cont "fans of us."
 	done
 
 ShadyShop_HowManyText::
@@ -1738,6 +1726,10 @@ CyndaquilOakText::
 	line "the Ground Type"
 	cont "upon evolution."
 
+	para "It can also evolve"
+	line "into a Fire/Ghost-"
+	cont "type version."
+
 	para "It lights up the"
 	line "portion of Dark"
 	cont "Cave it is in."
@@ -1800,8 +1792,7 @@ CroagunkOakText::
 	line "into Toxicroak."
 
 	para "Croagunk is native"
-	line "to the Sinnoh"
-	cont "region."
+	line "to Sinnoh."
 
 	para "The poison sacs on"
 	line "their cheeks can"
@@ -1824,8 +1815,7 @@ ElectrikeOakText::
 	line "into Manectric."
 
 	para "Electrike are"
-	line "native to Hoenn,"
-	cont "not Johto."
+	line "native to Hoenn."
 
 	para "When they gather,"
 	line "thunderstorms tend"

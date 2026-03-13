@@ -263,8 +263,7 @@ CheckPlayerTurn:
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .SkipSteadfast
-	ld hl, SteadfastText
-	call StdBattleTextbox
+	call BattleCommand_StatUpMessage
 
 .SkipSteadfast
 	call CantMove
@@ -1911,7 +1910,7 @@ BattleCommand_CheckHit:
 	ld c, 40
 	call DelayFrames
 
-	ld a, 0
+	xor a
 	and a
 	ret
 
@@ -2313,7 +2312,7 @@ BattleCommand_LowerSub:
 .rollout_rampage
 	ld a, [wSomeoneIsRampaging]
 	and a
-	ld a, 0
+	xor a
 	ld [wSomeoneIsRampaging], a
 	ret
 
@@ -2768,7 +2767,7 @@ BattleCommand_CheckFaint:
 	and a
 	ld hl, wEnemyMonMaxHP + 1
 	bccoord 2, 2 ; hp bar
-	ld a, 0
+	xor a
 	jr nz, .got_max_hp
 	ld hl, wBattleMonMaxHP + 1
 	bccoord 10, 9 ; hp bar
@@ -3787,7 +3786,7 @@ BattleCommand_ConstantDamage:
 	call GetBattleVar
 	cp EFFECT_LEVEL_DAMAGE
 	ld b, [hl]
-	ld a, 0
+	xor a
 	jr z, .got_power
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
@@ -3819,7 +3818,7 @@ BattleCommand_ConstantDamage:
 	cp b
 	jr nc, .psywave_loop
 	ld b, a
-	ld a, 0
+	xor a
 	jr .got_power
 
 .super_fang
@@ -3840,7 +3839,7 @@ BattleCommand_ConstantDamage:
 	and a
 	jr nz, .got_power
 	or b
-	ld a, 0
+	xor a
 	jr nz, .got_power
 	ld b, 1
 	jr .got_power

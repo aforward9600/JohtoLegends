@@ -645,104 +645,7 @@ BuenasPassword4:
 	jp NextRadioLine
 
 GetBuenasPassword:
-; The password indices are held in c.  High nybble contains the group index, low nybble contains the word index.
-; Load the password group pointer in hl.
-	ld a, c
-	swap a
-	and $f
-	ld hl, BuenasPasswordTable
-	ld d, 0
-	ld e, a
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-; Get the password type and store it in b.
-	ld a, [hli]
-	ld b, a
-	push hl
-	inc hl
-; Get the password index.
-	ld a, c
-	and $f
-	ld c, a
-	push hl
-	ld hl, .StringFunctionJumpTable
-	ld e, b
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	pop de ; de now contains the pointer to the value of this week's password, in Blue Card Points.
-	call _hl_
-	pop hl
-	ld c, [hl]
 	ret
-
-.StringFunctionJumpTable:
-; entries correspond to BUENA_* constants
-	dw .Mon       ; BUENA_MON
-	dw .Item      ; BUENA_ITEM
-	dw .Move      ; BUENA_MOVE
-	dw .RawString ; BUENA_STRING
-
-.Mon:
-	ld h, 0
-	ld l, c
-	add hl, hl
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	call GetPokemonIDFromIndex
-	jp GetPokemonName
-
-.Item:
-	ld h, 0
-	ld l, c
-	add hl, de
-	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	jp GetItemName
-
-.Move:
-	ld h, 0
-	ld l, c
-	add hl, hl
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	call GetMoveIDFromIndex
-	jp GetMoveName
-
-.RawString:
-; Get the string from the table...
-	ld a, c
-	and a
-	jr z, .skip
-.read_loop
-	ld a, [de]
-	inc de
-	cp "@"
-	jr nz, .read_loop
-	dec c
-	jr nz, .read_loop
-; ... and copy it into wStringBuffer1.
-.skip
-	ld hl, wStringBuffer1
-.copy_loop
-	ld a, [de]
-	inc de
-	ld [hli], a
-	cp "@"
-	jr nz, .copy_loop
-	ld de, wStringBuffer1
-	ret
-
-INCLUDE "data/radio/buenas_passwords.asm"
 
 BuenasPassword5:
 	ld hl, BuenaRadioText3
@@ -839,9 +742,6 @@ BuenasPassword21:
 	ld a, BUENAS_PASSWORD_20
 	jp NextRadioLine
 
-BuenasPasswordChannelName:
-	db "BUENA'S PASSWORD@"
-
 BuenaRadioText1:
 	; BUENA: BUENA here!
 	text_far _BuenaRadioText1
@@ -888,6 +788,7 @@ BuenaRadioMidnightText4:
 	text_end
 
 BuenaRadioMidnightText5:
+BuenaRadioMidnightText8:
 	; in to the end! But
 	text_far _BuenaRadioMidnightText5
 	text_end
@@ -895,11 +796,6 @@ BuenaRadioMidnightText5:
 BuenaRadioMidnightText7:
 	; late! Presented to
 	text_far _BuenaRadioMidnightText7
-	text_end
-
-BuenaRadioMidnightText8:
-	; you by DJ BUENA!
-	text_far _BuenaRadioMidnightText8
 	text_end
 
 BuenaRadioMidnightText10:

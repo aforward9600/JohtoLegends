@@ -7,6 +7,7 @@ BattleText_PlayerPickedUpPayDayMoney:
 	text "!"
 	prompt
 
+WildCelebiAppearedText:
 WildPokemonAppearedText:
 	text "Wild @"
 	text_ram wEnemyMonNick
@@ -26,13 +27,6 @@ PokemonFellFromTreeText:
 	text_ram wEnemyMonNick
 	text " fell"
 	line "out of the tree!"
-	prompt
-
-WildCelebiAppearedText:
-	text "Wild @"
-	text_ram wEnemyMonNick
-	text_start
-	line "appeared!"
 	prompt
 
 WantsToBattleText::
@@ -67,11 +61,6 @@ HurtByBurnText:
 LeechSeedSapsText:
 	text "Leech Seed saps"
 	line "<USER>!"
-	prompt
-
-HasANightmareText:
-	text "<USER>"
-	line "has a Nightmare!"
 	prompt
 
 HurtByCurseText:
@@ -199,25 +188,9 @@ TiedAgainstText:
 	prompt
 
 SentSomeToMomText:
-	text "<PLAYER> got ¥@"
-	text_decimal wBattleReward, 3, 6
-	text_start
-	line "for winning!"
-	cont "Sent some to MOM!"
-	prompt
-
 SentHalfToMomText:
-	text "Sent half to MOM!"
-	prompt
-
 SentAllToMomText:
 	text "Sent all to MOM!"
-	prompt
-
-BattleText_0x80a4f:
-	text "<RIVAL>: Huh? I"
-	line "should've chosen"
-	cont "your #mon!"
 	prompt
 
 BattleText_MonFainted:
@@ -264,6 +237,7 @@ BattleText_AnEGGCantBattle:
 	line "battle!"
 	prompt
 
+BattleText_CantEscape:
 BattleText_CantEscape2:
 	text "Can't escape!"
 	prompt
@@ -284,10 +258,6 @@ BattleText_UserFledUsingAStringBuffer1:
 	cont "@"
 	text_ram wStringBuffer1
 	text "!"
-	prompt
-
-BattleText_CantEscape:
-	text "Can't escape!"
 	prompt
 
 BattleText_UserHurtBySpikes:
@@ -365,20 +335,6 @@ BattleText_StringBuffer1GrewToLevel:
 	text "!@"
 	sound_dex_fanfare_50_79
 	text_end
-
-BattleText_WildMonIsEating:
-	text "Wild @"
-	text_ram wEnemyMonNick
-	text_start
-	line "is eating!"
-	prompt
-
-BattleText_WildMonIsAngry:
-	text "Wild @"
-	text_ram wEnemyMonNick
-	text_start
-	line "is angry!"
-	prompt
 
 FastAsleepText:
 	text "<USER>"
@@ -463,11 +419,6 @@ UsedBindText:
 	text "<USER>"
 	line "used Bind on"
 	cont "<TARGET>!"
-	prompt
-
-WhirlpoolTrapText:
-	text "<TARGET>"
-	line "was trapped!"
 	prompt
 
 FireSpinTrapText:
@@ -586,10 +537,6 @@ RegainedHealthText:
 	prompt
 
 AttackMissedText:
-	text "<USER>'s"
-	line "attack missed!"
-	prompt
-
 AttackMissed2Text:
 	text "<USER>'s"
 	line "attack missed!"
@@ -911,10 +858,6 @@ ItFailedText:
 	prompt
 
 DidntAffect1Text:
-	text "It didn't affect"
-	line "<TARGET>!"
-	prompt
-
 DidntAffect2Text:
 	text "It didn't affect"
 	line "<TARGET>!"
@@ -970,12 +913,6 @@ StoleText:
 CantEscapeNowText:
 	text "<TARGET>"
 	line "can't escape now!"
-	prompt
-
-StartedNightmareText:
-	text "<TARGET>"
-	line "started to have a"
-	cont "Nightmare!"
 	prompt
 
 WasDefrostedText:
@@ -1127,12 +1064,6 @@ ForesawAttackText:
 	text "<USER>"
 	line "foresaw an attack!"
 	prompt
-
-BeatUpAttackText:
-	text_ram wStringBuffer1
-	text "'s"
-	line "attack!"
-	done
 
 RefusedGiftText:
 	text "<TARGET>"
@@ -1296,8 +1227,8 @@ DownloadText:
 	prompt
 
 EnemyTraceText:
-	text "<USER>'s"
-	line "Trace copied"
+	text "<USER>"
+	line "traced"
 	cont "<TARGET>'s"
 	cont "@"
 	text_ram wStringBuffer1
@@ -1354,51 +1285,7 @@ BattleText_MoldBreaker:
 CloudNineText:
 	text "The effects of"
 	line "weather have"
-	cont "disappeard!"
-	prompt
-
-JustifiedText:
-	text "<TARGET>'s"
-	line "Justified raised"
-	cont "its Attack stat!"
-	prompt
-
-DefiantText:
-	text "<TARGET>'s"
-	line "Defiant sharply"
-	cont "raised Attack!"
-	prompt
-
-CompetitiveText:
-	text "<TARGET>'s"
-	line "Competitive"
-	cont "sharply raised"
-	cont "Spcl.Atk!"
-	prompt
-
-SteadfastText:
-	text "<USER>'s"
-	line "Steadfast raised"
-	cont "its Speed!"
-	prompt
-
-DefiantUserText:
-	text "<USER>'s"
-	line "Defiant sharply"
-	cont "raised Attack!"
-	prompt
-
-MoodyText:
-	text "<USER>'s"
-	line "Moody activated!"
-	prompt
-
-MoodyStatDownText:
-	text "<USER>'s"
-	line "Moody lowered"
-	cont "@"
-	text_ram wStringBuffer1
-	text "!"
+	cont "disappeared!"
 	prompt
 
 ArenaTrapText:
@@ -1409,22 +1296,10 @@ ArenaTrapText:
 	cont "prevents esacape!"
 	prompt
 
-SturdyText:
-	text "<TARGET>"
-	line "hung on with"
-	cont "Sturdy!"
-	prompt
-
 UnburdenText:
 	text "<TARGET>'s"
 	line "Unburden greatly"
 	cont "raised Speed!"
-	prompt
-
-RattledText:
-	text "<TARGET> was"
-	line "rattled and its"
-	cont "Speed rose!"
 	prompt
 
 CuteCharmText:
@@ -1531,14 +1406,10 @@ AngerPointText:
 
 FlashFireText:
 	text "<TARGET>'s"
-	line "Attack raised with"
-	cont "Flash Fire!"
-	prompt
-
-SapSipperText:
-	text "<TARGET>'s"
-	line "Attack raised with"
-	cont "Sap Sipper!"
+	line "@"
+	text_ram wStringBuffer1
+	text_start
+	cont "raised Attack!"
 	prompt
 
 SoundproofText:
@@ -1570,12 +1441,6 @@ MotorDriveText:
 DrySkinHurtText:
 	text "<USER> was"
 	line "hurt by Dry Skin!"
-	prompt
-
-SpeedBoostText:
-	text "<USER>'s"
-	line "Speed Boost raised"
-	cont "its Speed!"
 	prompt
 
 ShedSkinText:

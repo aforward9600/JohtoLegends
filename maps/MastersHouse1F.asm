@@ -88,8 +88,6 @@ MaastersHouseMasterScript:
 	jumptextfaceplayer MasterGoodLuckText
 
 .BeatDragonKid1:
-	jumptextfaceplayer HmText
-
 .BeatDragonKid2:
 	jumptextfaceplayer HmText
 
@@ -97,9 +95,6 @@ MaastersHouseMasterScript:
 	jumptextfaceplayer MasterBeatenText
 
 MastersHouseRivalScript:
-	jumptextfaceplayer MastersHouseRivalText
-
-MastersHouseRival2Script:
 	jumptextfaceplayer MastersHouseRivalText
 
 DratiniPokeballScript:

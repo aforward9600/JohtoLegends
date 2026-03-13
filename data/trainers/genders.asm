@@ -58,7 +58,6 @@ BTTrainerClassGenders:
 	db MALE   ; CAMPER
 	db FEMALE ; EXECUTIVEF
 	db MALE   ; SAGE
-	db FEMALE ; MEDIUM
 	db MALE   ; BOARDER
 	db MALE   ; POKEFANM
 	db FEMALE ; KIMONO_GIRL

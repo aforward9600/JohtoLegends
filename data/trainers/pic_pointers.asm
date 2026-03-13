@@ -58,7 +58,6 @@ TrainerPicPointers::
 	dba CamperPic
 	dba ArianaPic
 	dba SagePic
-	dba MediumPic
 	dba BoarderPic
 	dba PokefanmPic
 	dba KimonoGirlPic

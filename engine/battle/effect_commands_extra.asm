@@ -223,8 +223,8 @@ BattleCommand_TrapTarget:
 	dw WRAP,      WrappedByText     ; 'was WRAPPED by'
 	dw FIRE_SPIN, FireSpinTrapText  ; 'was trapped!'
 	dw CLAMP,     ClampedByText     ; 'was CLAMPED by'
-	dw WHIRLPOOL, WhirlpoolTrapText ; 'was trapped!'
-	dw SAND_TOMB, WhirlpoolTrapText ; 'was trapped!'
+	dw WHIRLPOOL, FireSpinTrapText  ; 'was trapped!'
+	dw SAND_TOMB, FireSpinTrapText  ; 'was trapped!'
 
 BattleCommand_Recoil:
 ; recoil
@@ -344,7 +344,7 @@ DoubleDamage:
 	sla [hl]
 	dec hl
 	rl [hl]
-	jr nc, .quit
+	ret nc
 
 	ld a, $ff
 	ld [hli], a
@@ -914,7 +914,7 @@ BattleCommand_BulkUp:
 	farcall ResetMiss
 	farcall BattleCommand_DefenseUp
 	farcall BattleCommand_StatUpMessage
-	jp ResetStatChangeExtra
+	jr ResetStatChangeExtra
 
 
 BattleCommand_QuiverDance:

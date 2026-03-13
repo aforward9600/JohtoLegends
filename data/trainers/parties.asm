@@ -6717,15 +6717,6 @@ SageGroup:
 
 	end_list_items
 
-MediumGroup:
-	next_list_item ; MEDIUM (3)
-	db "BETHANY@", TRAINERTYPE_NORMAL
-	db 25
-	dw HAUNTER
-	db -1 ; end
-
-	end_list_items
-
 BoarderGroup:
 	next_list_item ; BOARDER (1)
 	db "Gareth@", TRAINERTYPE_MOVES

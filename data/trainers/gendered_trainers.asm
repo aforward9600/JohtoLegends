@@ -29,7 +29,6 @@ MaleTrainers:
 .End
 
 FemaleTrainers:
-	db MEDIUM
 	db LASS
 	db BEAUTY
 	db SKIER

@@ -56,7 +56,6 @@ TrainerClassNames::
 	db "Camper@"
 	db "Mysterious@"
 	db "Sage@"
-	db "Medium@"
 	db "Boarder@"
 	db "#fan@"
 	db "Kimono Girl@"

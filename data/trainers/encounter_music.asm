@@ -59,7 +59,6 @@ TrainerEncounterMusic::
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; camper
 	db MUSIC_ROCKET_ENCOUNTER      ; ariana
 	db MUSIC_SAGE_ENCOUNTER        ; sage
-	db MUSIC_SAGE_ENCOUNTER        ; medium
 	db MUSIC_HIKER_ENCOUNTER       ; boarder
 	db MUSIC_HIKER_ENCOUNTER       ; pokefanm
 	db MUSIC_KIMONO_ENCOUNTER      ; kimono_girl

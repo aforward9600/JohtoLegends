@@ -221,8 +221,6 @@ Function_PartyCountEq3:
 
 Function_PartySpeciesAreUnique:
 	ld hl, wPartyMon1Species
-	call VerifyUniqueness
-	ret
 
 VerifyUniqueness:
 	ld de, wPartyCount

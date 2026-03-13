@@ -63,7 +63,6 @@ INCBIN "gfx/trainers/picnicker.gbcpal", middle_colors
 INCBIN "gfx/trainers/camper.gbcpal", middle_colors
 INCLUDE "gfx/trainers/ariana.pal"
 INCLUDE "gfx/trainers/sage.pal"
-INCBIN "gfx/trainers/medium.gbcpal", middle_colors
 INCBIN "gfx/trainers/boarder.gbcpal", middle_colors
 INCBIN "gfx/trainers/pokefan_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/kimono_girl.gbcpal", middle_colors

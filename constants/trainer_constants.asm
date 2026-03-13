@@ -476,9 +476,6 @@ CHRIS EQU __enum__
 	const MASA
 	const KOJI
 
-	trainerclass MEDIUM ; 39
-	const BETHANY
-
 	trainerclass BOARDER ; 3a
 	const GARETH
 	const BRODY

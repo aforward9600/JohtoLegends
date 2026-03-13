@@ -500,12 +500,12 @@ MoveRelearner_DisplayMoveData:
 	ld a, [wMoveRelearnerScroll]
 	ld c, a
 	and a
-	ld [hl], $7a ; textbox horizontal border
+	ld [hl], $bb ; textbox horizontal border
 	jr z, .got_top_arrow
 	ld [hl], $70 ; arrow pointing up
 .got_top_arrow
 	hlcoord 18, 10
-	ld [hl], $7a ; textbox horizontal border
+	ld [hl], $bb ; textbox horizontal border
 	ld a, [wMoveRelearnerMoveCount]
 	sub c
 	cp 4

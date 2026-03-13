@@ -2,30 +2,30 @@ BillPhoneMornGreetingText:
 	text "Good morning!"
 
 	para "This is the #-"
-	line "MON STORAGE SYSTEM"
+	line "mon Storage System"
 
-	para "ADMINISTRATION"
-	line "SERVICE."
+	para "Administration"
+	line "Service."
 	done
 
 BillPhoneDayGreetingText:
 	text "Good day!"
 
 	para "This is the #-"
-	line "MON STORAGE SYSTEM"
+	line "mon Storage System"
 
-	para "ADMINISTRATION"
-	line "SERVICE."
+	para "Administration"
+	line "Service."
 	done
 
 BillPhoneNiteGreetingText:
 	text "Good evening!"
 
 	para "This is the #-"
-	line "MON STORAGE SYSTEM"
+	line "mon Storage System"
 
-	para "ADMINISTRATION"
-	line "SERVICE."
+	para "Administration"
+	line "Service."
 	done
 
 BillPhoneGenericText:
@@ -42,11 +42,11 @@ BillPhoneNotFullText:
 	text "Thanks for"
 	line "waiting!"
 
-	para "<PLAY_G>, your BOX"
+	para "<PLAY_G>, your Box"
 	line "has room for @"
 	text_ram wStringBuffer3
 	text_start
-	cont "more #MON."
+	cont "more #mon."
 
 	para "Get out there and"
 	line "fill it up!"
@@ -56,28 +56,28 @@ BillPhoneNearlyFullText:
 	text "Thanks for"
 	line "waiting!"
 
-	para "<PLAY_G>, your BOX"
+	para "<PLAY_G>, your Box"
 	line "has room for only"
 	cont "@"
 	text_ram wStringBuffer3
-	text " more #MON."
+	text " more #mon."
 
 	para "Maybe you should"
-	line "switch your BOX."
+	line "switch your Box."
 	done
 
 BillPhoneFullText:
 	text "Thanks for"
 	line "waiting!"
 
-	para "<PLAY_G>, your BOX"
+	para "<PLAY_G>, your Box"
 	line "is full!"
 
 	para "You'll have to"
-	line "switch BOXES if"
+	line "switch Boxes if"
 
 	para "you want to catch"
-	line "more #MON."
+	line "more #mon."
 	done
 
 BillPhoneNewlyFullText:

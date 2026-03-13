@@ -366,8 +366,7 @@ BattleBGEffect_HideMon:
 .four
 	xor a
 	ldh [hBGMapMode], a
-	call EndBattleBGEffect
-	ret
+	jp EndBattleBGEffect
 
 BattleBGEffect_ShowMon:
 	call BGEffect_CheckFlyDigStatus
@@ -965,8 +964,7 @@ BattleBGEffect_Whirlpool:
 	ld a, $5e
 	ldh [hLYOverrideEnd], a
 	lb de, 2, 2
-	call Functionc8f2e
-	ret
+	jp Functionc8f2e
 
 .one
 	jp BattleBGEffect_WavyScreenFX

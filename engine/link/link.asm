@@ -511,8 +511,7 @@ LinkTimeout:
 	call ClearScreen
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
-	call WaitBGMap2
-	ret
+	jp WaitBGMap2
 
 .TooMuchTimeHasElapsed:
 	; Too much time has elapsed. Please try again.

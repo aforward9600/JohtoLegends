@@ -45,8 +45,7 @@ DuskullOakText::
 	cont "Dusknoir."
 
 	para "Duskull is native"
-	line "to the Hoenn"
-	cont "region."
+	line "to Hoenn."
 
 	para "Duskull likes to"
 	line "scare people by"
@@ -132,9 +131,9 @@ CacneaOakText::
 	cont "be warming, but"
 
 	para "I'd have to"
-	line "recommend not get-"
-	cont "ting one from your"
-	cont "Cacnea!"
+	line "recommend not"
+	cont "getting one from"
+	cont "your Cacnea!"
 	done
 
 SnoruntOakText::
@@ -258,6 +257,11 @@ CorsolaOakText::
 	line "to clean up the"
 	cont "ocean, so the"
 	cont "species has hope."
+
+	para "The only remaining"
+	line "population of pink"
+	cont "Corsola reside in"
+	cont "the Wild Area."
 	done
 
 BonslyOakText::
@@ -285,7 +289,7 @@ MimeJrOakText::
 	line "found on Route 43."
 
 	para "Mime Jr. evolves"
-	line "into Mr.Mime."
+	line "into Mr. Mime."
 
 	para "Mime Jr. is an"
 	line "excellent mimic."
@@ -338,8 +342,7 @@ BronzorOakText::
 	line "into Bronzong."
 
 	para "Bronzor is native"
-	line "to the Sinnoh"
-	cont "region."
+	line "to Sinnoh."
 
 	para "Bronzor prefer"
 	line "caves, which"

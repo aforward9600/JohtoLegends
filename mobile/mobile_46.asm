@@ -136,8 +136,7 @@ BattleTowerRoomMenu_InitRAM:
 	call GetSRAMBank
 	xor a
 	ld [$bfff], a
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 BattleTowerRoomMenu_Cleanup:
 	di
@@ -793,7 +792,6 @@ Function119f76:
 	jp BattleTowerRoomMenu2_IncrementJumptable
 
 Function119f98:
-	ret
 
 Function11a113:
 	ret
@@ -1477,8 +1475,7 @@ Function11a63c:
 	call PlaceString
 	hlcoord 4, 4
 	ld de, String_11a7f4
-	call PlaceString
-	ret
+	jp PlaceString
 
 String_11a661:
 	db   "これから　モバイルセンターに"
@@ -1777,7 +1774,7 @@ Function11a971:
 	ld [$c31e], a
 	ld a, [wcd8d]
 	cp $50
-	jr nz, .asm_11a9bf
+	ret nz
 	xor a
 	ld [$c31a], a
 
@@ -1799,8 +1796,7 @@ Function11a9ce:
 	call ExitMenu
 	farcall Function106464
 	farcall FinishExitMenu
-	call UpdateSprites
-	ret
+	jp UpdateSprites
 
 Function11a9f0:
 	ld a, $1
@@ -1930,8 +1926,7 @@ Function11ac3e:
 	call FadeToMenu
 	callfar ClearSpriteAnims2
 	call Function11ac51
-	call CloseSubmenu
-	ret
+	jp CloseSubmenu
 
 Function11ac51:
 	xor a
@@ -2152,8 +2147,7 @@ Function11adc4:
 	pop af
 	ld [wMenuCursorY], a
 	ld hl, Unknown_11afcc
-	call Function11afb7
-	ret
+	jp Function11afb7
 
 .asm_11ae06
 	call PlayClickSFX
@@ -2269,8 +2263,7 @@ Function11ae98:
 	pop af
 	ld [wMenuCursorY], a
 	ld hl, Unknown_11afd2
-	call Function11afb7
-	ret
+	jp Function11afb7
 
 .asm_11aee1
 	call PlayClickSFX
@@ -2359,8 +2352,7 @@ Function11af4e:
 	pop af
 	ld [wMenuCursorY], a
 	ld hl, Unknown_11afd2
-	call Function11afb7
-	ret
+	jp Function11afb7
 
 .asm_11af97
 	call PlayClickSFX
@@ -2463,8 +2455,7 @@ Function11b022:
 	cp $3
 	ret z
 	ld hl, wStringBuffer4
-	call Function11b03d
-	ret
+	jp Function11b03d
 
 Function11b03d:
 	push hl
@@ -2513,8 +2504,7 @@ Function11b03d:
 
 .got_string
 	ld bc, 4 ; string length
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 .MaleString: db "オスの　"
 .FemaleString: db "メスの　"
@@ -2574,8 +2564,7 @@ Function11b099:
 	push hl
 	call GetPokemonName
 	pop hl
-	call PlaceString
-	ret
+	jp PlaceString
 
 .SetCaughtFlag:
 	call CheckCaughtMemMon
@@ -2788,8 +2777,7 @@ Function11b1f7:
 	hlcoord 0, 0
 	ld a, $32
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	call ByteFill
-	ret
+	jp ByteFill
 
 Function11b203:
 .asm_11b203
@@ -2879,8 +2867,6 @@ Function11b272:
 	ret
 
 Function11b275:
-	call Function11b279
-	ret
 
 Function11b279:
 	ld a, [wTempSpecies]
@@ -2954,8 +2940,7 @@ Function11b295:
 	jr nz, .asm_11b2ec
 	pop hl
 	ld de, wStringBuffer4
-	call PlaceString
-	ret
+	jp PlaceString
 
 String_11b2fe:
 	db "あげる#@"
@@ -2971,8 +2956,7 @@ String_11b30e:
 
 Function11b314:
 	call Function11b31b
-	call Function11b3d9
-	ret
+	jp Function11b3d9
 
 Function11b31b:
 	ld hl, .Coords
@@ -2993,18 +2977,17 @@ Function11b31b:
 	jr z, .tilemap_1
 
 	ld bc, .Tilemap2
-	jr .load_sprites
+	jp Function11b397
 
 .tilemap_3
 	ld bc, .Tilemap3
-	jr .load_sprites
+	jp Function11b397
 
 .tilemap_1
 	ld bc, .Tilemap1
 
 .load_sprites
-	call Function11b397
-	ret
+	jp Function11b397
 
 .Coords:
 	dbpixel 3, 11, 2, 6 ;  0
@@ -3305,8 +3288,7 @@ Function11b6b4:
 	inc de
 	ld a, [de]
 	ld [hl], a
-	call AddMobileMonToParty
-	ret
+	jp AddMobileMonToParty
 
 Function11b7e5:
 	ld a, [$c60d] ; species
@@ -3362,8 +3344,7 @@ Function11b7e5:
 
 .asm_11b872
 	call CloseSubmenu
-	call RestartMapMusic
-	ret
+	jp RestartMapMusic
 
 Function11b879:
 	farcall BattleTower_CheckSaveFileExistsAndIsYours
@@ -3596,8 +3577,7 @@ AddMobileMonToParty:
 	ld bc, MAIL_STRUCT_LENGTH
 	call CopyBytes
 
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 Function11ba38:
 	farcall CheckCurPartyMonFainted

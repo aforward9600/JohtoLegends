@@ -20,9 +20,9 @@ ItemDescriptions:
 	dw EscapeRopeDesc
 	dw RepelDesc
 	dw MaxElixerDesc
-	dw FireStoneDesc
-	dw ThunderStoneDesc
-	dw WaterStoneDesc
+	dw MoonStoneDesc
+	dw MoonStoneDesc
+	dw MoonStoneDesc
 	dw HPUpDesc
 	dw ProteinDesc
 	dw IronDesc
@@ -31,7 +31,7 @@ ItemDescriptions:
 	dw CalciumDesc
 	dw RareCandyDesc
 	dw XAccuracyDesc
-	dw LeafStoneDesc
+	dw MoonStoneDesc
 	dw MetalPowderDesc
 	dw NuggetDesc
 	dw PokeDollDesc
@@ -42,7 +42,7 @@ ItemDescriptions:
 	dw SuperRepelDesc
 	dw MaxRepelDesc
 	dw DireHitDesc
-	dw FreshWaterDesc
+	dw SuperPotionDesc
 	dw SodaPopDesc
 	dw LemonadeDesc
 	dw XAttackDesc
@@ -78,7 +78,7 @@ ItemDescriptions:
 	dw KingsRockDesc
 	dw BitterBerryDesc
 	dw MintBerryDesc
-	dw DawnStoneDesc
+	dw MoonStoneDesc
 	dw TinyMushroomDesc
 	dw BigMushroomDesc
 	dw SilverPowderDesc
@@ -105,7 +105,7 @@ ItemDescriptions:
 	dw BigPearlDesc
 	dw EverStoneDesc
 	dw SpellTagDesc
-	dw RageCandyBarDesc
+	dw PotionDesc
 	dw GSBallDesc
 	dw DuskBallDesc
 	dw MiracleSeedDesc
@@ -125,9 +125,9 @@ ItemDescriptions:
 	dw StarPieceDesc
 	dw BasementKeyDesc
 	dw CharcoalDesc
-	dw BerryJuiceDesc
+	dw PotionDesc
 	dw ScopeLensDesc
-	dw MetalCoatDesc
+	dw MoonStoneDesc
 	dw DragonFangDesc
 	dw LeftoversDesc
 	dw MysteryBerryDesc
@@ -145,26 +145,26 @@ ItemDescriptions:
 	dw LoveBallDesc
 	dw ZincDesc
 	dw SootheBellDesc
-	dw SunStoneDesc
+	dw MoonStoneDesc
 	dw PolkadotBowDesc
 	dw UpGradeDesc
 	dw BerryDesc
 	dw GoldBerryDesc
 	dw FlameDownDesc
-	dw ParkBallDesc
+	dw PokeBallDesc
 	dw RainbowWingDesc
-	dw DuskStoneDesc
-	dw IceStoneDesc
-	dw ShinyStoneDesc
-	dw DubiousDiskDesc
-	dw LinkCableDesc
-	dw ElectirizerDesc
-	dw MagmarizerDesc
-	dw RazorClawDesc
-	dw RazorFangDesc
-	dw ProtectorDesc
-	dw SteelDaggerDesc
-	dw PeatBlockDesc
+	dw MoonStoneDesc
+	dw MoonStoneDesc
+	dw MoonStoneDesc
+	dw MoonStoneDesc
+	dw MoonStoneDesc
+	dw MoonStoneDesc
+	dw MoonStoneDesc
+	dw MoonStoneDesc
+	dw MoonStoneDesc
+	dw MoonStoneDesc
+	dw MetalPowderDesc
+	dw MoonStoneDesc
 	dw ScytherCallDesc
 	dw GolemCallDesc
 	dw VoltorbCallDesc
@@ -264,12 +264,12 @@ BrightpowderDesc:
 	next "accuracy. (Hold)@"
 
 GreatBallDesc:
-	db   "A Ball with a de-"
-	next "cent success rate.@"
+	db   "A Ball with a good"
+	next "success rate.@"
 
 PokeBallDesc:
-	db   "An item for catch-"
-	next "ing #mon.@"
+	db   "An item for"
+	next "catching #mon.@"
 
 BicycleDesc:
 	db   "A collapsible bike"
@@ -331,18 +331,6 @@ MaxElixerDesc:
 	db   "Fully restores the"
 	next "PP of one #mon.@"
 
-FireStoneDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
-
-ThunderStoneDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
-
-WaterStoneDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
-
 HPUpDesc:
 	db   "Raises the HP of"
 	next "one #mon.@"
@@ -374,10 +362,6 @@ RareCandyDesc:
 XAccuracyDesc:
 	db   "Raises accuracy."
 	next "(1 BTL)@"
-
-LeafStoneDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
 
 MetalPowderDesc:
 	db   "Raises Defense of"
@@ -418,10 +402,6 @@ MaxRepelDesc:
 DireHitDesc:
 	db   "Ups critical hit"
 	next "ratio. (1 BTL)@"
-
-FreshWaterDesc:
-	db   "Restores #mon"
-	next "HP by 50.@"
 
 SodaPopDesc:
 	db   "Restores #mon"
@@ -563,10 +543,6 @@ MintBerryDesc:
 	db   "A self-awakening"
 	next "for sleep. (Hold)@"
 
-DawnStoneDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
-
 TinyMushroomDesc:
 	db   "An ordinary mush-"
 	next "room. Sell low.@"
@@ -671,10 +647,6 @@ SpellTagDesc:
 	db   "Powers up ghost-"
 	next "type moves. (Hold)@"
 
-RageCandyBarDesc:
-	db   "Restores #mon"
-	next "HP by 20.@"
-
 GSBallDesc:
 	db   "The mysterious"
 	next "Berry.@"
@@ -692,8 +664,8 @@ ThickClubDesc:
 	next "sort. Sell low.@"
 
 FocusBandDesc:
-	db   "May prevent faint-"
-	next "ing. (Hold)@"
+	db   "May prevent"
+	next "fainting. (Hold)@"
 
 FlameOrbDesc:
 	db   "A bizarre orb that"
@@ -721,7 +693,7 @@ LuckyEggDesc:
 
 BattleCardDesc:
 	db   "Stores Battle"
-	next "Points (Max 95)@"
+	next "Points. (Max 95)@"
 
 StrangeHairDesc:
 	db   "A mysterious pink"
@@ -751,17 +723,9 @@ CharcoalDesc:
 	db   "Powers up fire-"
 	next "type moves. (Hold)@"
 
-BerryJuiceDesc:
-	db   "Restores #mon"
-	next "HP by 20.@"
-
 ScopeLensDesc:
 	db   "Raises critical"
 	next "hit ratio. (Hold)@"
-
-MetalCoatDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
 
 DragonFangDesc:
 	db   "Powers up dragon-"
@@ -831,10 +795,6 @@ SootheBellDesc:
 	db   "Makes a #mon"
 	next "happier. (Hold)@"
 
-SunStoneDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
-
 PolkadotBowDesc:
 	db   "Powers up fairy-"
 	next "type moves. (Hold)@"
@@ -855,61 +815,9 @@ FlameDownDesc:
 	db   "Down from Moltres."
 	next "Feels nice & warm.@"
 
-ParkBallDesc:
-	db   "The Bug-Catching"
-	next "Contest Ball.@"
-
 RainbowWingDesc:
 	db   "A mystical feather"
 	next "of rainbow colors.@"
-
-DuskStoneDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
-
-IceStoneDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
-
-ShinyStoneDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
-
-DubiousDiskDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
-
-LinkCableDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
-
-ElectirizerDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
-
-MagmarizerDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
-
-RazorClawDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
-
-RazorFangDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
-
-ProtectorDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
-
-SteelDaggerDesc:
-	db   "Powers up steel-"
-	next "type moves. (Hold)@"
-
-PeatBlockDesc:
-	db   "Evolves certain"
-	next "kinds of #mon.@"
 
 ScytherCallDesc:
 	db   "Calls a Scyther"

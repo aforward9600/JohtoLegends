@@ -1484,21 +1484,6 @@ CheckDefensiveAbilities:
 	dbw MAGMA_ARMOR,     .MagmaArmor
 	db -1
 
-.FlashFire:
-	call CheckMoveTypeAbilities
-	cp FIRE
-	ret nz
-	farcall BattleCommand_SwitchTurn
-	farcall BattleCommand_AttackUp
-	farcall BattleCommand_SwitchTurn
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-	call AnimateOppAbility
-	ld hl, FlashFireText
-	call StdBattleTextbox
-	jp EndMoveEffectAbilities
-
 .Levitate:
 	call CheckMoveTypeAbilities
 	cp GROUND
@@ -1508,6 +1493,10 @@ CheckDefensiveAbilities:
 	call StdBattleTextbox
 	jp EndMoveEffectAbilities
 
+.FlashFire:
+	call CheckMoveTypeAbilities
+	cp FIRE
+	ret nz
 .SapSipper:
 	call CheckMoveTypeAbilities
 	cp GRASS
@@ -1520,7 +1509,11 @@ CheckDefensiveAbilities:
 	and a
 	ret nz
 	call MoveDelayAbility
-	ld hl, SapSipperText
+	call GetTargetAbility
+	call Ability_LoadAbilityName
+	ld a, b
+	and a
+	ld hl, FlashFireText
 	call StdBattleTextbox
 	jp EndMoveEffectAbilities
 
@@ -1793,8 +1786,6 @@ HandleEndMoveAbility:
 	and a
 	jr nz, .MoodyDown
 	call AnimateUserAbility
-;	ld hl, MoodyText
-;	call StdBattleTextbox
 	farcall BattleCommand_StatUpMessage
 	ld a, 1
 	ld [wStatChangeHappened], a

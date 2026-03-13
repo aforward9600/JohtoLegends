@@ -29,10 +29,6 @@ _NothingHereText::
 	done
 
 _WhichApricornText::
-	text "Which Apricorn"
-	line "should I use?"
-	done
-
 _HowManyShouldIMakeText::
 	text "How many should I"
 	line "make?"
@@ -563,11 +559,6 @@ _BuenaRadioMidnightText7::
 	line "Radiation"
 	done
 
-_BuenaRadioMidnightText8::
-	text_start
-	line "ShockSlayer"
-	done
-
 _BuenaRadioMidnightText10::
 	text "Pigu"
 	done
@@ -829,34 +820,7 @@ _NPCTradeAfterText4::
 	done
 
 _MomLeavingText1::
-	text "So, this is it."
-
-	para "Your adventure"
-	line "begins now."
-
-	para "OK!"
-	line "I'll help too."
-
-	para "But what can I do"
-	line "for you?"
-
-	para "I know! I'll save"
-	line "money for you."
-
-	para "On a long journey,"
-	line "money's important."
-
-	para "Do you want me to"
-	line "save your money?"
-	done
-
 _MomLeavingText2::
-	text "OK, I'll take care"
-	line "of your money."
-
-	para "<……><……><……>"
-	prompt
-
 _MomLeavingText3::
 	text "Be careful."
 
@@ -868,16 +832,6 @@ _MomLeavingText3::
 	done
 
 _MomVisitingText1::
-	text "Hi! Welcome home!"
-	line "You're trying very"
-	cont "hard, I see."
-
-	para "I've kept your"
-	line "room tidy."
-
-	para "Or is this about"
-	line "your money?"
-	done
 
 _MomVisitingText2::
 	text "What do you want"

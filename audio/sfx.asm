@@ -3574,9 +3574,6 @@ Sfx_2Boops_Ch5:
 	soundinput $8
 	endchannel
 
-Sfx_IntroWhoosh:
-	musicheader 1, 8, Sfx_IntroWhoosh_Ch8
-
 Sfx_Menu_Ch8:
 	noise __,  2, $e2, $33
 	noise __,  9, $e1, $22
@@ -4625,18 +4622,6 @@ Sfx_Unknown60_Ch8:
 	noise __,  9, $d7, $42
 	noise __, 16, $e7, $43
 	noise __, 16, $f2, $43
-	endchannel
-
-Sfx_IntroWhoosh_Ch8:
-	noise __,  2, $10, $10
-	noise __,  3, $20, $10
-	noise __,  3, $30, $20
-	noise __,  3, $40, $20
-	noise __,  3, $50, $21
-	noise __,  3, $60, $22
-	noise __,  5, $70, $22
-	noise __,  9, $80, $22
-	noise __, 16, $94, $22
 	endchannel
 
 Sfx_Unknown61_Ch8:
