@@ -355,6 +355,8 @@ PokemonNames::
 	db "Gallade@@@"
 	db "Shroomish@"
 	db "Breloom@@@"
+	db "Sableye@@@"
+	db "Mawile@@@@"
 	db "Aron@@@@@@"
 	db "Lairon@@@@"
 	db "Aggron@@@@"

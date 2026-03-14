@@ -149,9 +149,10 @@ Budew, Roselia, Roserade, Electrike, Manectric, Cacnea, Cacturne, Croagunk,
 Toxicroak, Snorunt, Glalie, Froslass, Aggron, Lotad, Lombre, Ludicolo sprites:
 Prism Team.
 
-Galarian Zapdos overworld sprite, Gyarados, Paldean Wooper, Clodsire, Regigigas, Regieleki, Regidrago, Deoxys and Galarian Weezing sprites: Sage
+Galarian Zapdos overworld sprite, Gyarados, Paldean Wooper, Clodsire, Regigigas, Regieleki, 
+Regidrago, Feebas and Galarian Weezing sprites: Sage
 
-Farigiraf sprite and animation: Nuuk.
+Carvanha, Sharpedo, Farigiraf sprite and animation: Nuuk.
 
 Galarian Mr. Mime & Mr. Rime sprites: flempa, Scarlax, ShadowOne333
 
@@ -175,7 +176,13 @@ Ariana, Archer and Giovanni trainer and overworld sprite: SirWhibbles
 
 Ampharos and overworld sprite: Prism Team
 
-Gible line sprites: Blue Emerald
+Blue Emerald: Lotad, Lombre, Ludicolo, Ralts, Kirlia, Gallade, Electrike, Manectric
+Cacnea, Cacturne, Swablu, Altaria, Duskull, Dusclops, Dusknoir, Snorunt
+Glalie, Froslass, Bagon, Shelgon, Salamence, Beldum, Metang, Metagross
+Budew, Bronzor, Bronzong, Happiny, Gible, Gabite, Garchomp, Munchlax, Riolu
+Lucario, Croagunk, Toxicroak, Weavile, Magnezone, Rhyperior, Tangrowth
+Electivire, Magmortar, Togekiss, Yanmega, Leafeon, Glaceon, Gliscor, Mamoswine
+Porygon-Z sprites
 
 Lance, Female Scientist and Cynthia overworld sprites,
 Alolan Sandshrew and Sandslash, Alolan Vulpix and Ninetales,

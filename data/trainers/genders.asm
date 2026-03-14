@@ -13,7 +13,6 @@ BTTrainerClassGenders:
 	db MALE   ; RIVAL1
 	db MALE   ; POKEMON_PROF
 	db FEMALE ; FLORINA
-	db MALE   ; CAL
 	db FEMALE ; MARTHA
 	db FEMALE ; AGATHA
 	db MALE   ; KOGA
@@ -27,7 +26,6 @@ BTTrainerClassGenders:
 	db MALE   ; SCHOOLBOY
 	db MALE   ; BIRD_KEEPER
 	db FEMALE ; LASS
-	db FEMALE ; JANINE
 	db MALE   ; COOLTRAINERM
 	db FEMALE ; COOLTRAINERF
 	db FEMALE ; BEAUTY
@@ -43,8 +41,6 @@ BTTrainerClassGenders:
 	db FEMALE ; SWIMMERF
 	db MALE   ; SAILOR
 	db MALE   ; SUPER_NERD
-	db MALE   ; RIVAL2
-	db MALE   ; GUITARIST
 	db MALE   ; HIKER
 	db MALE   ; BIKER
 	db MALE   ; BLAINE
@@ -63,11 +59,9 @@ BTTrainerClassGenders:
 	db FEMALE ; KIMONO_GIRL
 	db FEMALE ; TWINS
 	db FEMALE ; POKEFANF
-	db MALE   ; RED
 	db MALE   ; GIOVANNI
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF
-	db MALE   ; MYSTICAL_MAN
 	db FEMALE ; RIVAL3
 	db MALE   ; RIVAL4
 	db FEMALE ; BREEDER

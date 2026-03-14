@@ -103,6 +103,8 @@ Icons3:
 	dw GalladeIcon
 	dw ShroomishIcon
 	dw BreloomIcon
+	dw SableyeIcon
+	dw MawileIcon
 	dw AronIcon
 	dw LaironIcon
 	dw AggronIcon
@@ -126,8 +128,6 @@ Icons3:
 	dw CelebiIcon
 	dw NownIcon
 	dw MissingnoIcon
-	dw RegirockIcon
-	dw RegiceIcon
 
 AzurillIcon:      INCBIN "gfx/icons/azurill.2bpp"
 MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
@@ -230,6 +230,8 @@ GardevoirIcon:	  INCBIN "gfx/icons/gardevoir.2bpp"
 GalladeIcon:	  INCBIN "gfx/icons/gallade.2bpp"
 ShroomishIcon:    INCBIN "gfx/icons/shroomish.2bpp"
 BreloomIcon:      INCBIN "gfx/icons/breloom.2bpp"
+SableyeIcon:      INCBIN "gfx/icons/sableye.2bpp"
+MawileIcon:       INCBIN "gfx/icons/mawile.2bpp"
 AronIcon:	      INCBIN "gfx/icons/aron.2bpp"
 LaironIcon:	      INCBIN "gfx/icons/lairon.2bpp"
 AggronIcon:	      INCBIN "gfx/icons/aggron.2bpp"
@@ -253,5 +255,3 @@ HoOhIcon:	      INCBIN "gfx/icons/ho_oh.2bpp"
 CelebiIcon:	      INCBIN "gfx/icons/celebi.2bpp"
 NownIcon:         INCBIN "gfx/icons/nown.2bpp"
 MissingnoIcon:	  INCBIN "gfx/icons/missingno.2bpp"
-RegirockIcon:     INCBIN "gfx/icons/regirock.2bpp"
-RegiceIcon:       INCBIN "gfx/icons/regice.2bpp"

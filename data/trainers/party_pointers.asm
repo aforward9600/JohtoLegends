@@ -13,7 +13,6 @@ TrainerGroups:
 	dba Rival1Group
 	dba PokemonProfGroup
 	dba FlorinaGroup
-	dba PKMNTrainerGroup
 	dba MarthaGroup
 	dba AgathaGroup
 	dba KogaGroup
@@ -27,7 +26,6 @@ TrainerGroups:
 	dba SchoolboyGroup
 	dba BirdKeeperGroup
 	dba LassGroup
-	dba JanineGroup
 	dba CooltrainerMGroup
 	dba CooltrainerFGroup
 	dba BeautyGroup
@@ -43,8 +41,6 @@ TrainerGroups:
 	dba SwimmerFGroup
 	dba SailorGroup
 	dba SuperNerdGroup
-	dba Rival2Group
-	dba GuitaristGroup
 	dba HikerGroup
 	dba BikerGroup
 	dba BlaineGroup
@@ -63,11 +59,9 @@ TrainerGroups:
 	dba KimonoGirlGroup
 	dba TwinsGroup
 	dba PokefanFGroup
-	dba RedGroup
 	dba GiovanniGroup
 	dba OfficerGroup
 	dba GruntFGroup
-	dba MysticalmanGroup
 	dba Rival3Group
 	dba Rival4Group
 	dba BreederGroup

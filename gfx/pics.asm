@@ -855,7 +855,6 @@ SlowpokeFrontpic:    INCBIN "gfx/pokemon/slowpoke/front.animated.2bpp.lz"
 SmoochumFrontpic:    INCBIN "gfx/pokemon/smoochum/front.animated.2bpp.lz"
 JugglerPic:          INCBIN "gfx/trainers/juggler.2bpp.lz"
 MarillFrontpic:      INCBIN "gfx/pokemon/marill/front.animated.2bpp.lz"
-GuitaristPic:        INCBIN "gfx/trainers/guitarist.2bpp.lz"
 PokefanfPic:         INCBIN "gfx/trainers/pokefan_f.2bpp.lz"
 VenomothBackpic:     INCBIN "gfx/pokemon/venomoth/back.2bpp.lz"
 ClairPic:            INCBIN "gfx/trainers/clair.2bpp.lz"
@@ -994,7 +993,6 @@ PoliwrathBackpic:    INCBIN "gfx/pokemon/poliwrath/back.2bpp.lz"
 SwimmermPic:         INCBIN "gfx/trainers/swimmer_m.2bpp.lz"
 SunkernFrontpic:     INCBIN "gfx/pokemon/sunkern/front.animated.2bpp.lz"
 NidorinoBackpic:     INCBIN "gfx/pokemon/nidorino/back.2bpp.lz"
-MysticalmanPic:      INCBIN "gfx/trainers/mysticalman.2bpp.lz"
 CooltrainerfPic:     INCBIN "gfx/trainers/cooltrainer_f.2bpp.lz"
 ElectrodeFrontpic:   INCBIN "gfx/pokemon/electrode/front.animated.2bpp.lz"
 RaichuABackpic:      INCBIN "gfx/pokemon/raichu_a/back.2bpp.lz"
@@ -1110,7 +1108,6 @@ SECTION "Pics 15", ROMX
 
 MewtwoBackpic:       INCBIN "gfx/pokemon/mewtwo/back.2bpp.lz"
 PokemonProfPic:      INCBIN "gfx/trainers/oak.2bpp.lz"
-CalPic:              INCBIN "gfx/trainers/cal.2bpp.lz"
 SwimmerfPic:         INCBIN "gfx/trainers/swimmer_f.2bpp.lz"
 DiglettFrontpic:     INCBIN "gfx/pokemon/diglett/front.animated.2bpp.lz"
 OfficerPic:          INCBIN "gfx/trainers/officer.2bpp.lz"
@@ -1155,7 +1152,6 @@ FlorinaPic:          INCBIN "gfx/trainers/florina.2bpp.lz"
 SchoolboyPic:        INCBIN "gfx/trainers/schoolboy.2bpp.lz"
 MagnemiteFrontpic:   INCBIN "gfx/pokemon/magnemite/front.animated.2bpp.lz"
 ErikaPic:            INCBIN "gfx/trainers/erika.2bpp.lz"
-JaninePic:           INCBIN "gfx/trainers/janine.2bpp.lz"
 MagnemiteBackpic:    INCBIN "gfx/pokemon/magnemite/back.2bpp.lz"
 RattataABackpic:     INCBIN "gfx/pokemon/rattata_a/back.2bpp.lz"
 
@@ -1192,7 +1188,6 @@ TogepiFrontpic:      INCBIN "gfx/pokemon/togepi/front.animated.2bpp.lz"
 SuperNerdPic:        INCBIN "gfx/trainers/super_nerd.2bpp.lz"
 HaunterBackpic:      INCBIN "gfx/pokemon/haunter/back.2bpp.lz"
 XatuBackpic:         INCBIN "gfx/pokemon/xatu/back.2bpp.lz"
-RedPic:              INCBIN "gfx/trainers/red.2bpp.lz"
 Porygon2Backpic:     INCBIN "gfx/pokemon/porygon2/back.2bpp.lz"
 ByronPic:            INCBIN "gfx/trainers/byron.2bpp.lz"
 PinecoBackpic:       INCBIN "gfx/pokemon/pineco/back.2bpp.lz"
@@ -1219,7 +1214,6 @@ ChinchouBackpic:     INCBIN "gfx/pokemon/chinchou/back.2bpp.lz"
 ChanseyBackpic:      INCBIN "gfx/pokemon/chansey/back.2bpp.lz"
 SkiploomBackpic:     INCBIN "gfx/pokemon/skiploom/back.2bpp.lz"
 SpinarakFrontpic:    INCBIN "gfx/pokemon/spinarak/front.animated.2bpp.lz"
-Rival2Pic:           INCBIN "gfx/trainers/rival2.2bpp.lz"
 UnownWFrontpic:      INCBIN "gfx/pokemon/unown_w/front.animated.2bpp.lz"
 CharmanderBackpic:   INCBIN "gfx/pokemon/charmander/back.2bpp.lz"
 RhyhornBackpic:      INCBIN "gfx/pokemon/rhyhorn/back.2bpp.lz"
@@ -1706,6 +1700,22 @@ UrsalunaBloodBackpic:      INCBIN "gfx/pokemon/ursaluna_blood/back.2bpp.lz"
 SECTION "Raticate_A Backpic", ROMX
 
 RaticateABackpic:    INCBIN "gfx/pokemon/raticate_a/back.2bpp.lz"
+
+SECTION "Sableye Front", ROMX
+
+SableyeFrontpic:     INCBIN "gfx/pokemon/sableye/front.animated.2bpp.lz"
+
+SECTION "Sableye Back", ROMX
+
+SableyeBackpic:      INCBIN "gfx/pokemon/sableye/back.2bpp.lz"
+
+SECTION "Mawile Front", ROMX
+
+MawileFrontpic:      INCBIN "gfx/pokemon/mawile/front.animated.2bpp.lz"
+
+SECTION "Mawile Back", ROMX
+
+MawileBackpic:       INCBIN "gfx/pokemon/mawile/back.2bpp.lz"
 
 SECTION "Sandshrew_A Backpic", ROMX
 

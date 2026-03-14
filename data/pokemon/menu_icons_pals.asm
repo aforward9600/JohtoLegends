@@ -363,6 +363,8 @@ MonMenuIconPals:
 	icon_pals GREEN,  BLUE   ; GALLADE
 	icon_pals GREEN,  RED    ; SHROOMISH
 	icon_pals GREEN,  RED    ; BRELOOM
+	icon_pals PURPLE, RED    ; SABLEYE
+	icon_pals GRAY,   PINK   ; MAWILE
 	icon_pals GRAY,   TEAL   ; ARON
 	icon_pals GRAY,   TEAL   ; LAIRON
 	icon_pals GRAY,   TEAL   ; AGGRON

@@ -16,7 +16,7 @@
 	const CRY_DIGLETT
 	const CRY_SEEL
 	const CRY_DROWZEE
-	const CRY_PIDGEY
+	const CRY_PIDGEY ; 0f
 	const CRY_BULBASAUR
 	const CRY_SPEAROW
 	const CRY_RHYDON
@@ -32,7 +32,7 @@
 	const CRY_LAPRAS
 	const CRY_METAPOD
 	const CRY_SQUIRTLE
-	const CRY_PARAS
+	const CRY_PARAS ; 1f
 	const CRY_GROWLITHE
 	const CRY_KRABBY
 	const CRY_PSYDUCK
@@ -50,7 +50,7 @@
 	const CRY_MAREEP
 	const CRY_TOGETIC
 	const CRY_HOOTHOOT
-	const CRY_SENTRET
+	const CRY_SENTRET ; 2f
 	const CRY_SLOWKING
 	const CRY_CYNDAQUIL
 	const CRY_CHIKORITA

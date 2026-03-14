@@ -717,6 +717,10 @@ PokemonPicPointers::
 	dba ShroomishBackpic
 	dba BreloomFrontpic
 	dba BreloomBackpic
+	dba SableyeFrontpic
+	dba SableyeBackpic
+	dba MawileFrontpic
+	dba MawileBackpic
 	dba AronFrontpic
 	dba AronBackpic
 	dba LaironFrontpic

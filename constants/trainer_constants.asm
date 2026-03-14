@@ -69,11 +69,6 @@ CHRIS EQU __enum__
 	const FLORINA1
 	const FLORINA2
 
-	trainerclass CAL ; c
-	const CAL1
-	const CAL2
-	const CAL3
-
 	trainerclass MARTHA ; d
 	const MARTHA1
 	const MARTHA2
@@ -160,9 +155,6 @@ CHRIS EQU __enum__
 	const CARMEN
 	const YVONNE
 	const SAMANTHA
-
-	trainerclass JANINE ; 1a
-	const JANINE1
 
 	trainerclass COOLTRAINERM ; 1b
 	const FABIO
@@ -346,12 +338,6 @@ CHRIS EQU __enum__
 	const RUSS
 	const MARKUS
 
-	trainerclass RIVAL2 ; 2a
-	const RIVAL2_1_CHIKORITA
-
-	trainerclass GUITARIST ; 2b
-	const CLYDE
-
 	trainerclass HIKER ; 2c
 	const ANTHONY1
 	const OZZY
@@ -504,9 +490,6 @@ CHRIS EQU __enum__
 	const GEORGIA
 	const ETHEL2
 
-	trainerclass RED ; 3f
-	const RED1
-
 	trainerclass GIOVANNI ; 40
 	const GIOVANNI1
 
@@ -530,9 +513,6 @@ CHRIS EQU __enum__
 	const GRUNTF_13
 	const GRUNTF_14
 	const GRUNTF_15
-
-	trainerclass MYSTICALMAN ; 43
-	const EUSINE
 
 	trainerclass RIVAL3 ; 44
 	const RIVAL3_A_LARVITAR

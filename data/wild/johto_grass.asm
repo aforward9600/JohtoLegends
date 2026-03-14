@@ -992,36 +992,6 @@ JohtoGrassWildMons:
 	dbw 75, MISDREAVUS
 	dbw 75, MISMAGIUS
 
-	map_id SILVER_CAVE_ROOM_3
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 51, GOLBAT
-	dbw 48, ONIX
-	dbw 48, GRAVELER
-	dbw 50, URSARING
-	dbw 20, LARVITAR
-	dbw 15, LARVITAR
-	dbw 20, PUPITAR
-	dbw 20, PUPITAR
-	; day
-	dbw 51, GOLBAT
-	dbw 48, ONIX
-	dbw 48, GRAVELER
-	dbw 50, URSARING
-	dbw 20, LARVITAR
-	dbw 15, LARVITAR
-	dbw 20, PUPITAR
-	dbw 20, PUPITAR
-	; nite
-	dbw 51, GOLBAT
-	dbw 48, ONIX
-	dbw 48, GRAVELER
-	dbw 49, GOLBAT
-	dbw 45, GOLDUCK
-	dbw 53, GOLBAT
-	dbw 53, GOLBAT
-	dbw 53, GOLBAT
-
 	map_id SILVER_CAVE_ITEM_ROOMS
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn

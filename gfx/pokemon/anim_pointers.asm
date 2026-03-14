@@ -351,6 +351,8 @@ AnimationPointers:
 	dw GalladeAnimation
 	dw ShroomishAnimation
 	dw BreloomAnimation
+	dw SableyeAnimation
+	dw MawileAnimation
 	dw AronAnimation
 	dw LaironAnimation
 	dw AggronAnimation

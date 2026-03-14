@@ -1,6 +1,8 @@
 SECTION "Evolution and Attacks 3", ROMX
 
 EvosAttacksPointers3::
+	dw SableyeEvosAttacks
+	dw MawileEvosAttacks
 	dw AronEvosAttacks
 	dw LaironEvosAttacks
 	dw AggronEvosAttacks
@@ -32,6 +34,51 @@ EvosAttacksPointers3::
 	dw RegigigasEvosAttacks
 	dw TaurosPFireEvosAttacks
 	dw TaurosPWaterEvosAttacks
+
+SableyeEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, LEER
+	dbw 1, SCRATCH
+	dbw 4, FORESIGHT
+	dbw 6, NIGHT_SHADE
+	dbw 9, ASTONISH
+	dbw 11, FURY_SWIPES
+	dbw 14, DETECT
+	dbw 16, SHADOW_SNEAK
+	dbw 19, FAINT_ATTACK
+	dbw 21, FAKE_OUT
+	dbw 24, SPITE
+	dbw 26, KNOCK_OFF
+	dbw 29, SHADOW_CLAW
+	dbw 31, CONFUSE_RAY
+	dbw 34, ZEN_HEADBUTT
+	dbw 36, POWER_GEM
+	dbw 39, SHADOW_BALL
+	dbw 41, CATASTROPHE
+	dbw 44, SWAGGER
+	dbw 46, MEAN_LOOK
+	dbw 51, PHANTOMFORCE
+	db 0 ; no more level-up moves
+
+MawileEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, PLAY_ROUGH
+	dbw 1, GROWL
+	dbw 1, FAIRY_WIND
+	dbw 1, ASTONISH
+	dbw 5, LEER
+	dbw 9, BITE
+	dbw 13, SWEET_SCENT
+	dbw 17, VICEGRIP
+	dbw 21, FAINT_ATTACK
+	dbw 25, BATON_PASS
+	dbw 29, CRUNCH
+	dbw 33, IRON_DEFENSE
+	dbw 37, SUCKER_PUNCH
+	dbw 41, MOONLIGHT
+	dbw 45, IRON_HEAD
+	dbw 49, PLAY_ROUGH
+	db 0 ; no more level-up moves
 
 AronEvosAttacks:
 	dbbw EVOLVE_LEVEL, 32, LAIRON

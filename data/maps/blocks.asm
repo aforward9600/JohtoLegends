@@ -575,9 +575,6 @@ SilverCaveRoom1_Blocks:
 SilverCaveRoom2_Blocks:
 	INCBIN "maps/SilverCaveRoom2.ablk"
 
-SilverCaveRoom3_Blocks:
-	INCBIN "maps/SilverCaveRoom3.ablk"
-
 MahoganyMart1F_Blocks:
 MountMoonGiftShop_Blocks:
 	INCBIN "maps/GiftShop.ablk"

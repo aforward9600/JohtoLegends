@@ -372,6 +372,8 @@ JOHTO_POKEMON EQU const_value
 	const GALLADE      ; 15e 9
 	const SHROOMISH    ; 15f 1
 	const BRELOOM      ; 160 2
+	const SABLEYE
+	const MAWILE
 	const ARON         ; 161 3
 	const LAIRON       ; 162 3
 	const AGGRON       ; 163 9

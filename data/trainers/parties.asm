@@ -1174,27 +1174,6 @@ endc
 
 	end_list_items
 
-PKMNTrainerGroup:
-	next_list_item ; CAL (1)
-	db "Cal@", TRAINERTYPE_NORMAL
-	db 10
-	dw TOTODILE
-	db -1 ; end
-
-	next_list_item ; CAL (2)
-	db "Cal@", TRAINERTYPE_NORMAL
-	db 30
-	dw CROCONAW
-	db -1 ; end
-
-	next_list_item ; CAL (3)
-	db "Cal@", TRAINERTYPE_NORMAL
-	db 50
-	dw FERALIGATR
-	db -1 ; end
-
-	end_list_items
-
 MarthaGroup:
 	next_list_item ; MARTHA (1)
 	db "Martha@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
@@ -2758,15 +2737,6 @@ endc
 	dw SYLVEON
 	db 90
 	dw AMPHAROS
-	db -1 ; end
-
-	end_list_items
-
-JanineGroup:
-	next_list_item ; JANINE (1)
-	db "JANINE@", TRAINERTYPE_NORMAL
-	db 36
-	dw CROBAT
 	db -1 ; end
 
 	end_list_items
@@ -4966,24 +4936,6 @@ endc
 
 	end_list_items
 
-Rival2Group:
-	next_list_item ; RIVAL2 (1)
-	db "Dahlia@", TRAINERTYPE_NORMAL
-	db 45
-	dw MEGANIUM
-	db -1 ; end
-
-	end_list_items
-
-GuitaristGroup:
-	next_list_item ; GUITARIST (1)
-	db "CLYDE@", TRAINERTYPE_NORMAL
-	db 34
-	dw ELECTABUZZ
-	db -1 ; end
-
-	end_list_items
-
 HikerGroup:
 	next_list_item ; HIKER (1)
 	db "Anthony@", TRAINERTYPE_NORMAL
@@ -6970,15 +6922,6 @@ PokefanFGroup:
 
 	end_list_items
 
-RedGroup:
-	next_list_item ; RED (1)
-	db "RED@", TRAINERTYPE_NORMAL
-	db 81
-	dw PIKACHU
-	db -1 ; end
-
-	end_list_items
-
 GiovanniGroup:
 	next_list_item ; BLUE (1)
 	db "Giovanni@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_ABILITY
@@ -7289,15 +7232,6 @@ endc
 	db 89
 	dw GARCHOMP
 	dw EARTHQUAKE, DRAGON_RUSH, IRON_HEAD, SWORDS_DANCE
-	db -1 ; end
-
-	end_list_items
-
-MysticalmanGroup:
-	next_list_item ; MYSTICALMAN (1)
-	db "EUSINE@", TRAINERTYPE_NORMAL
-	db 23
-	dw DROWZEE
 	db -1 ; end
 
 	end_list_items

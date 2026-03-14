@@ -128,27 +128,26 @@ ENDM
 	map_const WHIRL_ISLAND_LUGIA_CHAMBER,                  10,  9 ; 73
 	map_const SILVER_CAVE_ROOM_1,                          10, 18 ; 74
 	map_const SILVER_CAVE_ROOM_2,                          15, 18 ; 75
-	map_const SILVER_CAVE_ROOM_3,                          10, 18 ; 76
-	map_const SILVER_CAVE_ITEM_ROOMS,                      10,  9 ; 77
-	map_const DARK_CAVE_VIOLET_ENTRANCE,                   20, 18 ; 78
-	map_const DARK_CAVE_BLACKTHORN_ENTRANCE,               15, 18 ; 79
-	map_const DRAGONS_DEN_1F,                               5,  9 ; 80
-	map_const DRAGONS_DEN_B1F,                             20, 18 ; 81
-	map_const DRAGON_SHRINE,                                5,  5 ; 82
-	map_const TOHJO_FALLS,                                 15,  9 ; 83
-	map_const DIGLETTS_CAVE,                               10, 18 ; 84
-	map_const MOUNT_MOON,                                  15,  9 ; 85
-	map_const UNDERGROUND_PATH,                             3, 14 ; 86
-	map_const ROCK_TUNNEL_1F,                              15, 18 ; 87
-	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 88
-	map_const VICTORY_ROAD,                                10, 36 ; 91
-	map_const DARK_CAVE_NEW_ENTRANCE,                       6,  3 ; 92
-	map_const LIGHTHOUSE_ELEVATOR,                          2,  2 ; 93
-	map_const BURNED_TOWER_2F,                             10,  9 ; 94
-	map_const TEAM_ROCKET_BASE_JAIL,                        5,  9 ; 95
-	map_const NOWN_ROOM,                                    4, 11 ; 96
-	map_const NOWN_PUZZLE_ROOM,                             4,  5 ; 97
-	map_const SILVER_CAVE_REST_ROOM,                        5,  4 ; 98
+	map_const SILVER_CAVE_ITEM_ROOMS,                      10,  9 ; 76
+	map_const DARK_CAVE_VIOLET_ENTRANCE,                   20, 18 ; 77
+	map_const DARK_CAVE_BLACKTHORN_ENTRANCE,               15, 18 ; 78
+	map_const DRAGONS_DEN_1F,                               5,  9 ; 79
+	map_const DRAGONS_DEN_B1F,                             20, 18 ; 80
+	map_const DRAGON_SHRINE,                                5,  5 ; 81
+	map_const TOHJO_FALLS,                                 15,  9 ; 82
+	map_const DIGLETTS_CAVE,                               10, 18 ; 83
+	map_const MOUNT_MOON,                                  15,  9 ; 84
+	map_const UNDERGROUND_PATH,                             3, 14 ; 85
+	map_const ROCK_TUNNEL_1F,                              15, 18 ; 86
+	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 87
+	map_const VICTORY_ROAD,                                10, 36 ; 88
+	map_const DARK_CAVE_NEW_ENTRANCE,                       6,  3 ; 89
+	map_const LIGHTHOUSE_ELEVATOR,                          2,  2 ; 90
+	map_const BURNED_TOWER_2F,                             10,  9 ; 91
+	map_const TEAM_ROCKET_BASE_JAIL,                        5,  9 ; 92
+	map_const NOWN_ROOM,                                    4, 11 ; 93
+	map_const NOWN_PUZZLE_ROOM,                             4,  5 ; 94
+	map_const SILVER_CAVE_REST_ROOM,                        5,  4 ; 95
 
 	newgroup                                                      ;  4
 

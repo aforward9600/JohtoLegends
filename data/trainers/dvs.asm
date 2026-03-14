@@ -14,7 +14,6 @@ if DEF(_CHALLENGE)
 	dn 15, 15, 15, 15 ; RIVAL1
 	dn 15, 15, 15, 15 ; POKEMON_PROF
 	dn 13, 12, 13, 13 ; FLORINA
-	dn 13, 12, 13, 13 ; CAL
 	dn 13, 12, 13, 13 ; MARTHA
 	dn 10, 15, 15, 15 ; AGATHA
 	dn 15, 14, 15, 15 ; KOGA
@@ -28,7 +27,6 @@ if DEF(_CHALLENGE)
 	dn 12, 10, 10, 10 ; SCHOOLBOY
 	dn 12, 10, 10, 10 ; BIRD_KEEPER
 	dn  8, 10, 10, 10 ; LASS
-	dn 12, 10, 10, 10 ; JANINE
 	dn 13,  8, 12,  8 ; COOLTRAINERM
 	dn  9, 14, 14, 10 ; COOLTRAINERF
 	dn  8, 11, 14, 10 ; BEAUTY
@@ -44,8 +42,6 @@ if DEF(_CHALLENGE)
 	dn 12, 10, 10, 10 ; SWIMMERF
 	dn 12, 10, 10, 10 ; SAILOR
 	dn 12, 10, 10, 10 ; SUPER_NERD
-	dn 15, 15, 15, 15 ; RIVAL2
-	dn 12, 10, 10, 10 ; GUITARIST
 	dn 12, 10, 10, 10 ; HIKER
 	dn 12, 10, 10, 10 ; BIKER
 	dn 14, 14, 14, 14 ; BLAINE
@@ -64,11 +60,9 @@ if DEF(_CHALLENGE)
 	dn  9, 10, 10, 12 ; KIMONO_GIRL
 	dn  9, 10, 12, 10 ; TWINS
 	dn  8, 15, 10, 10 ; POKEFANF
-	dn 15, 13, 13, 14 ; RED
 	dn 15, 15, 15, 15 ; GIOVANNI
 	dn 12, 10, 10, 10 ; OFFICER
 	dn  9, 15, 12, 10 ; GRUNTF
-	dn 12, 10, 10, 10 ; MYSTICALMAN
 	dn 15, 15, 15, 15 ; RIVAL3
 	dn 15, 15, 15, 15 ; RIVAL4
 	dn 11, 11, 14, 10 ; BREEDER
@@ -124,7 +118,6 @@ else
 	dn 13, 13, 13, 13 ; RIVAL1
 	dn 15, 15, 15, 15 ; POKEMON_PROF
 	dn 13, 12, 13, 13 ; FLORINA
-	dn 13, 12, 13, 13 ; CAL
 	dn 13, 12, 13, 13 ; MARTHA
 	dn  7, 15, 13, 15 ; AGATHA
 	dn 13, 12, 13, 13 ; KOGA
@@ -138,7 +131,6 @@ else
 	dn  9,  8,  8,  8 ; SCHOOLBOY
 	dn  9,  8,  8,  8 ; BIRD_KEEPER
 	dn  5,  8,  8,  8 ; LASS
-	dn  9,  8,  8,  8 ; JANINE
 	dn 13,  8, 12,  8 ; COOLTRAINERM
 	dn  7, 12, 12,  8 ; COOLTRAINERF
 	dn  6,  9, 12,  8 ; BEAUTY
@@ -154,8 +146,6 @@ else
 	dn  7,  8,  8,  8 ; SWIMMERF
 	dn  9,  8,  8,  8 ; SAILOR
 	dn  9,  8,  8,  8 ; SUPER_NERD
-	dn  9,  8,  8,  8 ; RIVAL2
-	dn  9,  8,  8,  8 ; GUITARIST
 	dn 10,  8,  8,  8 ; HIKER
 	dn  9,  8,  8,  8 ; BIKER
 	dn  9,  8,  8,  8 ; BLAINE
@@ -174,11 +164,9 @@ else
 	dn  6,  8,  8, 10 ; KIMONO_GIRL
 	dn  6,  8, 10,  8 ; TWINS
 	dn  6, 13,  8,  8 ; POKEFANF
-	dn 15, 13, 13, 14 ; RED
 	dn 15, 13, 13, 13 ; GIOVANNI
 	dn  9,  8,  8,  8 ; OFFICER
 	dn  7, 14, 10,  8 ; GRUNTF
-	dn  9,  8,  8,  8 ; MYSTICALMAN
 	dn 13, 13, 13, 13 ; RIVAL3
 	dn 13, 13, 13, 13 ; RIVAL4
 	dn  9,  9, 12,  8 ; BREEDER

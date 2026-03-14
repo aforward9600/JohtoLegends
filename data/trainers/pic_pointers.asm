@@ -13,7 +13,6 @@ TrainerPicPointers::
 	dba Rival1Pic
 	dba PokemonProfPic
 	dba FlorinaPic
-	dba CalPic
 	dba MarthaPic
 	dba AgathaPic
 	dba KogaPic
@@ -27,7 +26,6 @@ TrainerPicPointers::
 	dba SchoolboyPic
 	dba BirdKeeperPic
 	dba LassPic
-	dba JaninePic
 	dba CooltrainermPic
 	dba CooltrainerfPic
 	dba BeautyPic
@@ -43,8 +41,6 @@ TrainerPicPointers::
 	dba SwimmerfPic
 	dba SailorPic
 	dba SuperNerdPic
-	dba Rival2Pic
-	dba GuitaristPic
 	dba HikerPic
 	dba BikerPic
 	dba BlainePic
@@ -63,11 +59,9 @@ TrainerPicPointers::
 	dba KimonoGirlPic
 	dba TwinsPic
 	dba PokefanfPic
-	dba RedPic
 	dba GiovanniPic
 	dba OfficerPic
 	dba GruntfPic
-	dba MysticalmanPic
 	dba Rival3Pic
 	dba Rival4Pic
 	dba BreederPic

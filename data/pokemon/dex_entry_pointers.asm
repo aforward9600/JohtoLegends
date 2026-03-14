@@ -352,6 +352,8 @@ PokedexDataPointerTable:
 	dba GalladePokedexEntry
 	dba ShroomishPokedexEntry
 	dba BreloomPokedexEntry
+	dba SableyePokedexEntry
+	dba MawilePokedexEntry
 	dba AronPokedexEntry
 	dba LaironPokedexEntry
 	dba AggronPokedexEntry

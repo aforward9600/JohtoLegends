@@ -67,12 +67,6 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_SMART | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_OFTEN
 
-; Cal
-	db NO_ITEM, NO_ITEM ; items
-	db 25 ; base reward
-	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
-	dw CONTEXT_USE | SWITCH_SOMETIMES
-
 ; Bruno
 	db MAX_POTION, NO_ITEM ; items
 	db 25 ; base reward
@@ -150,12 +144,6 @@ TrainerClassAttributes:
 	db 6 ; base reward
 	dw AI_BASIC | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_OFTEN
-
-; Janine
-	db DIRE_HIT, NO_ITEM ; items
-	db 25 ; base reward
-	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
-	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Cooltrainerm
 	db NO_ITEM, NO_ITEM ; items
@@ -245,18 +233,6 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 8 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_SMART | AI_STATUS
-	dw CONTEXT_USE | SWITCH_SOMETIMES
-
-; Rival2
-	db NO_ITEM, NO_ITEM ; items
-	db 25 ; base reward
-	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
-	dw CONTEXT_USE | SWITCH_SOMETIMES
-
-; Guitarist
-	db NO_ITEM, NO_ITEM ; items
-	db 8 ; base reward
-	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Hiker
@@ -367,13 +343,7 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_TYPES | AI_SMART | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Red
-	db FULL_RESTORE, FULL_RESTORE ; items
-	db 25 ; base reward
-	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
-	dw CONTEXT_USE | SWITCH_SOMETIMES
-
-; Blue
+; Giovanni
 	db FULL_RESTORE, FULL_RESTORE ; items
 	db 25 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
@@ -390,12 +360,6 @@ TrainerClassAttributes:
 	db 10 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_OFTEN
-
-; Mysticalman
-	db NO_ITEM, NO_ITEM ; items
-	db 25 ; base reward
-	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
-	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Rival3
 	db NO_ITEM, NO_ITEM ; items

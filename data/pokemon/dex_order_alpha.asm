@@ -193,6 +193,7 @@ AlphabeticalPokedexOrder:
 	dw MARILL
 	dw MAROWAK
 	dw MAROWAK_A
+	dw MAWILE
 	dw MEGANIUM
 	dw MEOWTH
 	dw MEOWTH_A
@@ -285,6 +286,7 @@ AlphabeticalPokedexOrder:
 	dw RHYPERIOR
 	dw ROSELIA
 	dw ROSERADE
+	dw SABLEYE
 	dw SALAMENCE
 	dw SANDSHREW
 	dw SANDSHREW

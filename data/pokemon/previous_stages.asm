@@ -353,6 +353,8 @@ PreviousEvolutionStage::
 	dw 0
 	dw SHROOMISH
 	dw 0
+	dw 0
+	dw 0
 	dw ARON
 	dw LAIRON
 	dw 0

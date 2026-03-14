@@ -166,6 +166,8 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw ShroomishEggMoves
 	dw NoEggMoves2
+	dw SableyeEggMoves
+	dw MawileEggMoves
 	dw AronEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -827,6 +829,19 @@ ShroomishEggMoves:
 	dw CHARM
 	dw SEED_BOMB
 	dw -1 ; end
+
+SableyeEggMoves:
+	dw FLATTER
+	dw RECOVER
+	dw SUCKER_PUNCH
+	dw -1
+
+MawileEggMoves:
+	dw ANCIENTPOWER
+	dw SEISMIC_TOSS
+	dw SLAM
+	dw SUCKER_PUNCH
+	dw -1
 
 AronEggMoves:
 	dw BODY_SLAM

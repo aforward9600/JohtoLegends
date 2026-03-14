@@ -396,3 +396,8 @@ RegielekiPokedexEntry::  INCLUDE "data/pokemon/dex_entries/regieleki.asm"
 RegidragoPokedexEntry::  INCLUDE "data/pokemon/dex_entries/regidrago.asm"
 RegigigasPokedexEntry::  INCLUDE "data/pokemon/dex_entries/regigigas.asm"
 UrsalunaBloodPokedexEntry::     INCLUDE "data/pokemon/dex_entries/ursaluna_blood.asm"
+
+SECTION "New Pokdex Entries", ROMX
+
+SableyePokedexEntry::    INCLUDE "data/pokemon/dex_entries/sableye.asm"
+MawilePokedexEntry::     INCLUDE "data/pokemon/dex_entries/mawile.asm"

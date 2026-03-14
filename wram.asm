@@ -2676,7 +2676,6 @@ wMahoganyMart1FSceneID::                          db ; d9b1
 wTeamRocketBaseB1FSceneID::                       db ; d9b2
 wTeamRocketBaseB2FSceneID::                       db ; d9b3
 wTeamRocketBaseB3FSceneID::                       db ; d9b4
-wSilverCaveRoom3SceneID::                         db ; d9b6
 wDragonsDenB1FSceneID::                           db ; d9b8
 wDragonShrineSceneID::                            db ; d9b9
 wOlivinePortSceneID::                             db ; d9ba
@@ -2720,7 +2719,7 @@ wHoOhTowerSceneID::                               db
 wOneIslandPortSceneID::                           db
 wSevaultCanyonSceneID::                           db
 
-	ds 31
+	ds 32
 wBufferMonForm::       db
 wPlayerBufferMonForm:: db
 

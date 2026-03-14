@@ -357,6 +357,8 @@ PokemonCries::
 	mon_cry CRY_GALLADE,     $020,  $130 ; GALLADE
 	mon_cry CRY_SHROOMISH,   $0ff,  $070 ; SHROOMISH
 	mon_cry CRY_BRELOOM,     $050,  $116 ; BRELOOM
+	mon_cry CRY_CATERPIE,    $ee3,  $100 ; SABLEYE SourApple
+	mon_cry CRY_SENTRET,     $3f4,  $380 ; MAWILE
 	mon_cry CRY_GROWLITHE,   $080,  $0b0 ; ARON
 	mon_cry CRY_WEEDLE,      $040,  $090 ; LAIRON
 	mon_cry CRY_SLOWKING,    $710,  $242 ; AGGRON

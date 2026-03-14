@@ -4,7 +4,7 @@ BattleTowerTrainers:
 ; See BattleTowerText in engine/events/battle_tower/trainer_text.asm.
 	db "Hanson@@@@", FISHER
 	db "Sawyer@@@@", POKEMANIAC
-	db "Masuda@@@@", GUITARIST
+	db "Masuda@@@@", SOLDIER
 	db "Nickel@@@@", SCIENTIST
 	db "Olson@@@@@", POKEFANM
 	db "Zaborowski", LASS
@@ -64,7 +64,7 @@ BattleTowerTrainers:
 	db "Walker@@@@", SCHOOLBOY
 	db "Meyer@@@@@", SWIMMERF
 	db "Johnson@@@", YOUNGSTER
-	db "Adams@@@@@", GUITARIST
+	db "Adams@@@@@", ENGINEER
 	db "Smith@@@@@", BUG_CATCHER
 	db "Tajiri@@@@", BUG_CATCHER
 	db "Baker@@@@@", POKEMANIAC

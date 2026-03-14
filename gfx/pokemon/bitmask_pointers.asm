@@ -351,6 +351,8 @@ BitmasksPointers:
 	dw GalladeBitmasks
 	dw ShroomishBitmasks
 	dw BreloomBitmasks
+	dw SableyeBitmasks
+	dw MawileBitmasks
 	dw AronBitmasks
 	dw LaironBitmasks
 	dw AggronBitmasks

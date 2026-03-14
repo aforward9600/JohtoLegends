@@ -351,6 +351,8 @@ FramesPointers:
 	dba GalladeFrames
 	dba ShroomishFrames
 	dba BreloomFrames
+	dba SableyeFrames
+	dba MawileFrames
 	dba AronFrames
 	dba LaironFrames
 	dba AggronFrames

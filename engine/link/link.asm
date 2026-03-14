@@ -424,7 +424,7 @@ Gen2ToGen2LinkComms:
 	ld a, [wLinkOtherPlayerGender]
 	dec a
 	jr z, .is_female
-	ld a, CAL
+	ld a, RIVAL4
 	jr .done
 .is_female
 	ld a, LINK_TRAINER

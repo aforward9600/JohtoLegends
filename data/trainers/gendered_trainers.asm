@@ -12,7 +12,6 @@ MaleTrainers:
 	db SWIMMERM
 	db SAILOR
 	db SUPER_NERD
-	db GUITARIST
 	db HIKER
 	db FIREBREATHER
 	db BLACKBELT_T

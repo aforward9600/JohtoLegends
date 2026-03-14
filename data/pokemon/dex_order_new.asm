@@ -87,6 +87,8 @@ NewPokedexOrder:
 	dw DUSKULL
 	dw DUSCLOPS
 	dw DUSKNOIR
+	dw SABLEYE
+	dw MAWILE
 	dw ARON
 	dw LAIRON
 	dw AGGRON

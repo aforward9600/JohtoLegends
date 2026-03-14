@@ -351,6 +351,8 @@ AnimationIdlePointers:
 	dw GalladeAnimationIdle
 	dw ShroomishAnimationIdle
 	dw BreloomAnimationIdle
+	dw SableyeAnimationIdle
+	dw MawileAnimationIdle
 	dw AronAnimationIdle
 	dw LaironAnimationIdle
 	dw AggronAnimationIdle
