@@ -360,6 +360,8 @@ PokemonNames::
 	db "Aron@@@@@@"
 	db "Lairon@@@@"
 	db "Aggron@@@@"
+	db "Meditite@@"
+	db "Medicham@@"
 	db "Raikou@@@@"
 	db "Entei@@@@@"
 	db "Suicune@@@"

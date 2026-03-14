@@ -1717,6 +1717,22 @@ SECTION "Mawile Back", ROMX
 
 MawileBackpic:       INCBIN "gfx/pokemon/mawile/back.2bpp.lz"
 
+SECTION "Meditite Front", ROMX
+
+MedititeFrontpic:    INCBIN "gfx/pokemon/meditite/front.animated.2bpp.lz"
+
+SECTION "Meditite Back", ROMX
+
+MedititeBackpic:     INCBIN "gfx/pokemon/meditite/back.2bpp.lz"
+
+SECTION "Medicham Front", ROMX
+
+MedichamFrontpic:    INCBIN "gfx/pokemon/medicham/front.animated.2bpp.lz"
+
+SECTION "Medicham Back", ROMX
+
+MedichamBackpic:     INCBIN "gfx/pokemon/medicham/back.2bpp.lz"
+
 SECTION "Sandshrew_A Backpic", ROMX
 
 SandshrewABackpic:   INCBIN "gfx/pokemon/sandshrew_a/back.2bpp.lz"

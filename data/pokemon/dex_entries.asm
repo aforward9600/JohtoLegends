@@ -401,3 +401,5 @@ SECTION "New Pokdex Entries", ROMX
 
 SableyePokedexEntry::    INCLUDE "data/pokemon/dex_entries/sableye.asm"
 MawilePokedexEntry::     INCLUDE "data/pokemon/dex_entries/mawile.asm"
+MedititePokedexEntry::   INCLUDE "data/pokemon/dex_entries/meditite.asm"
+MedichamPokedexEntry::   INCLUDE "data/pokemon/dex_entries/medicham.asm"

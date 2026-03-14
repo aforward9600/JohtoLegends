@@ -358,6 +358,8 @@ PreviousEvolutionStage::
 	dw ARON
 	dw LAIRON
 	dw 0
+	dw MEDITITE
+	dw 0
 	dw 0
 	dw 0
 	dw 0

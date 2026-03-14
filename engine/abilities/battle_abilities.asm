@@ -849,6 +849,7 @@ CheckBoostingAbilities:
 	dbw GALVANIZE,       .Galvanize
 	dbw STEELY_SPIRIT,   .SteelySpirit
 	dbw BERSERK,         .Berserk
+	dbw PURE_POWER,      .HugePower
 	db -1
 
 .Guts:

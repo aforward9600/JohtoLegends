@@ -152,3 +152,4 @@ AbilityNames::
 	db "AlchemyPower@"
 	db "Berserk@"
 	db "Mind's Eye@"
+	db "Pure Power@"

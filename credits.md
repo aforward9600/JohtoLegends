@@ -152,7 +152,7 @@ Prism Team.
 Galarian Zapdos overworld sprite, Gyarados, Paldean Wooper, Clodsire, Regigigas, Regieleki, 
 Regidrago, Feebas and Galarian Weezing sprites: Sage
 
-Carvanha, Sharpedo, Farigiraf sprite and animation: Nuuk.
+Carvanha, Sharpedo, Mawile, Farigiraf sprite and animation: Nuuk.
 
 Galarian Mr. Mime & Mr. Rime sprites: flempa, Scarlax, ShadowOne333
 

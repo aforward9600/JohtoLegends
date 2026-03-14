@@ -153,5 +153,6 @@
 	const ALCHEMY_POWER ; 96
 	const BERSERK       ; 97
 	const MINDS_EYE     ; 98
+	const PURE_POWER    ; 99
 
 NUM_ABILITIES EQU const_value + -1

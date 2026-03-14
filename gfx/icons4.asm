@@ -2,6 +2,8 @@ SECTION "Mon Icons 4", ROMX
 
 Icons4:
 
+	dw NownIcon
+	dw MissingnoIcon
 	dw RegirockIcon
 	dw RegiceIcon
 	dw RegisteelIcon
@@ -11,6 +13,8 @@ Icons4:
 	dw TaurosPFireIcon
 	dw TaurosPWaterIcon
 
+NownIcon:         INCBIN "gfx/icons/nown.2bpp"
+MissingnoIcon:	  INCBIN "gfx/icons/missingno.2bpp"
 RegirockIcon:     INCBIN "gfx/icons/regirock.2bpp"
 RegiceIcon:       INCBIN "gfx/icons/regice.2bpp"
 RegisteelIcon:    INCBIN "gfx/icons/registeel.2bpp"

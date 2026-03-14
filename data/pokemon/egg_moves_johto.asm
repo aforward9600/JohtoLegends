@@ -171,6 +171,8 @@ EggMovePointers2::
 	dw AronEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw MedititeEggMoves
+	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -851,6 +853,13 @@ AronEggMoves:
 	dw STOMP
 	dw SUPERPOWER
 	dw -1 ; end
+
+MedititeEggMoves:
+	dw BATON_PASS
+	dw BULLET_PUNCH
+	dw FAKE_OUT
+	dw FORESIGHT
+	dw PSYCHO_CUT
 
 LarvitarEggMoves:
 	dw PURSUIT

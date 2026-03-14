@@ -108,6 +108,8 @@ Icons3:
 	dw AronIcon
 	dw LaironIcon
 	dw AggronIcon
+	dw MedititeIcon
+	dw MedichamIcon
 	dw RaikouIcon
 	dw EnteiIcon
 	dw SuicuneIcon
@@ -126,8 +128,6 @@ Icons3:
 	dw LugiaIcon
 	dw HoOhIcon
 	dw CelebiIcon
-	dw NownIcon
-	dw MissingnoIcon
 
 AzurillIcon:      INCBIN "gfx/icons/azurill.2bpp"
 MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
@@ -235,6 +235,8 @@ MawileIcon:       INCBIN "gfx/icons/mawile.2bpp"
 AronIcon:	      INCBIN "gfx/icons/aron.2bpp"
 LaironIcon:	      INCBIN "gfx/icons/lairon.2bpp"
 AggronIcon:	      INCBIN "gfx/icons/aggron.2bpp"
+MedititeIcon:     INCBIN "gfx/icons/meditite.2bpp"
+MedichamIcon:     INCBIN "Gfx/icons/medicham.2bpp"
 RaikouIcon:	      INCBIN "gfx/icons/raikou.2bpp"
 EnteiIcon:	      INCBIN "gfx/icons/entei.2bpp"
 SuicuneIcon:	  INCBIN "gfx/icons/suicune.2bpp"
@@ -253,5 +255,3 @@ MetagrossIcon:    INCBIN "gfx/icons/metagross.2bpp"
 LugiaIcon:	      INCBIN "gfx/icons/lugia.2bpp"
 HoOhIcon:	      INCBIN "gfx/icons/ho_oh.2bpp"
 CelebiIcon:	      INCBIN "gfx/icons/celebi.2bpp"
-NownIcon:         INCBIN "gfx/icons/nown.2bpp"
-MissingnoIcon:	  INCBIN "gfx/icons/missingno.2bpp"

@@ -356,6 +356,8 @@ FramesPointers:
 	dba AronFrames
 	dba LaironFrames
 	dba AggronFrames
+	dba MedititeFrames
+	dba MedichamFrames
 	dba RaikouFrames
 	dba EnteiFrames
 	dba SuicuneFrames

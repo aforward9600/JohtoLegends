@@ -6,6 +6,8 @@ EvosAttacksPointers3::
 	dw AronEvosAttacks
 	dw LaironEvosAttacks
 	dw AggronEvosAttacks
+	dw MedititeEvosAttacks
+	dw MedichamEvosAttacks
 	dw RaikouEvosAttacks
 	dw EnteiEvosAttacks
 	dw SuicuneEvosAttacks
@@ -168,6 +170,49 @@ elif DEF(_NOPSS)
 else
 	dbw 63, OUTRAGE
 endc
+	db 0 ; no more level-up moves
+
+MedititeEvosAttacks:
+	dbbw EVOLVE_LEVEL, 37, MEDICHAM
+	db 0 ; no more evolutions
+	dbw 1, ROCK_SMASH
+	dbw 4, MEDITATE
+	dbw 7, CONFUSION
+	dbw 9, DETECT
+	dbw 12, ENDURE
+	dbw 15, HEADBUTT
+	dbw 17, FORCE_PALM
+	dbw 20, HIDDEN_POWER
+	dbw 23, CALM_MIND
+	dbw 25, MIND_READER
+	dbw 28, HI_JUMP_KICK
+	dbw 31, PSYCH_UP
+	dbw 33, ZEN_HEADBUTT
+	dbw 36, COUNTER
+	dbw 39, REVERSAL
+	dbw 41, RECOVER
+	dbw 44, CLOSE_COMBAT
+	db 0 ; no more level-up moves
+
+MedichamEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, ROCK_SMASH
+	dbw 4, MEDITATE
+	dbw 7, CONFUSION
+	dbw 9, DETECT
+	dbw 12, ENDURE
+	dbw 15, HEADBUTT
+	dbw 17, FORCE_PALM
+	dbw 20, HIDDEN_POWER
+	dbw 23, CALM_MIND
+	dbw 25, MIND_READER
+	dbw 28, HI_JUMP_KICK
+	dbw 31, PSYCH_UP
+	dbw 33, ZEN_HEADBUTT
+	dbw 36, COUNTER
+	dbw 42, REVERSAL
+	dbw 47, RECOVER
+	dbw 53, CLOSE_COMBAT
 	db 0 ; no more level-up moves
 
 RaikouEvosAttacks:

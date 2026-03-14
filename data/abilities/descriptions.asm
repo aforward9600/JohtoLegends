@@ -152,6 +152,7 @@ AbilityDescriptions:
 	dw AlchemyPowerDesc
 	dw BerserkDesc
 	dw MindsEyeDesc
+	dw HugePowerDesc
 
 NoAbilityDesc:
 	db    "No ability."

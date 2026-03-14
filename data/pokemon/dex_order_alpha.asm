@@ -194,6 +194,8 @@ AlphabeticalPokedexOrder:
 	dw MAROWAK
 	dw MAROWAK_A
 	dw MAWILE
+	dw MEDICHAM
+	dw MEDITITE
 	dw MEGANIUM
 	dw MEOWTH
 	dw MEOWTH_A

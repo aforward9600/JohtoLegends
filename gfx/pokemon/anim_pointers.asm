@@ -356,6 +356,8 @@ AnimationPointers:
 	dw AronAnimation
 	dw LaironAnimation
 	dw AggronAnimation
+	dw MedititeAnimation
+	dw MedichamAnimation
 	dw RaikouAnimation
 	dw EnteiAnimation
 	dw SuicuneAnimation

@@ -377,6 +377,8 @@ JOHTO_POKEMON EQU const_value
 	const ARON         ; 161 3
 	const LAIRON       ; 162 3
 	const AGGRON       ; 163 9
+	const MEDITITE
+	const MEDICHAM
 	const RAIKOU       ; 164 1
 	const ENTEI        ; 165 1
 	const SUICUNE      ; 166 1

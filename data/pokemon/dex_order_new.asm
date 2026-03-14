@@ -92,6 +92,8 @@ NewPokedexOrder:
 	dw ARON
 	dw LAIRON
 	dw AGGRON
+	dw MEDITITE
+	dw MEDICHAM
 	dw NATU
 	dw XATU
 	dw ZUBAT
