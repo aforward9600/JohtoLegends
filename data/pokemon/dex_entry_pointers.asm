@@ -359,6 +359,8 @@ PokedexDataPointerTable:
 	dba AggronPokedexEntry
 	dba MedititePokedexEntry
 	dba MedichamPokedexEntry
+	dba CarvanhaPokedexEntry
+	dba SharpedoPokedexEntry
 	dba RaikouPokedexEntry
 	dba EnteiPokedexEntry
 	dba SuicunePokedexEntry

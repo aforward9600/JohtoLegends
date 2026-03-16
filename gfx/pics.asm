@@ -1733,6 +1733,22 @@ SECTION "Medicham Back", ROMX
 
 MedichamBackpic:     INCBIN "gfx/pokemon/medicham/back.2bpp.lz"
 
+SECTION "Carvanha Front", ROMX
+
+CarvanhaFrontpic:    INCBIN "gfx/pokemon/carvanha/front.animated.2bpp.lz"
+
+SECTION "Carvanha Back", ROMX
+
+CarvanhaBackpic:     INCBIN "gfx/pokemon/carvanha/back.2bpp.lz"
+
+SECTION "Sharpedo Front", ROMX
+
+SharpedoFrontpic:    INCBIN "gfx/pokemon/sharpedo/front.animated.2bpp.lz"
+
+SECTION "Sharpedo Back", ROMX
+
+SharpedoBackpic:     INCBIN "gfx/pokemon/sharpedo/back.2bpp.lz"
+
 SECTION "Sandshrew_A Backpic", ROMX
 
 SandshrewABackpic:   INCBIN "gfx/pokemon/sandshrew_a/back.2bpp.lz"

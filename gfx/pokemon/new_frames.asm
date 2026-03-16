@@ -1,5 +1,8 @@
 NewFrames:
 
+GibleFrames:      INCLUDE "gfx/pokemon/gible/frames.asm"
+GabiteFrames:     INCLUDE "gfx/pokemon/gabite/frames.asm"
+GarchompFrames:   INCLUDE "gfx/pokemon/garchomp/frames.asm"
 BagonFrames:      INCLUDE "gfx/pokemon/bagon/frames.asm"
 ShelgonFrames:    INCLUDE "gfx/pokemon/shelgon/frames.asm"
 SalamenceFrames:  INCLUDE "gfx/pokemon/salamence/frames.asm"

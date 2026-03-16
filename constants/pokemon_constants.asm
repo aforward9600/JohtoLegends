@@ -379,6 +379,8 @@ JOHTO_POKEMON EQU const_value
 	const AGGRON       ; 163 9
 	const MEDITITE
 	const MEDICHAM
+	const CARVANHA
+	const SHARPEDO
 	const RAIKOU       ; 164 1
 	const ENTEI        ; 165 1
 	const SUICUNE      ; 166 1

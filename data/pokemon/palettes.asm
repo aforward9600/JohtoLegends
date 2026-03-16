@@ -748,6 +748,10 @@ INCBIN "gfx/pokemon/meditite/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/meditite/shiny.pal"
 INCBIN "gfx/pokemon/medicham/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/medicham/shiny.pal"
+INCBIN "gfx/pokemon/carvanha/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/carvanha/shiny.pal"
+INCBIN "gfx/pokemon/sharpedo/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sharpedo/shiny.pal"
 INCBIN "gfx/pokemon/raikou/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/raikou/shiny.pal"
 INCBIN "gfx/pokemon/entei/front.gbcpal", middle_colors

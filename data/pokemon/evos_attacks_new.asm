@@ -8,6 +8,8 @@ EvosAttacksPointers3::
 	dw AggronEvosAttacks
 	dw MedititeEvosAttacks
 	dw MedichamEvosAttacks
+	dw CarvanhaEvosAttacks
+	dw SharpedoEvosAttacks
 	dw RaikouEvosAttacks
 	dw EnteiEvosAttacks
 	dw SuicuneEvosAttacks
@@ -213,6 +215,49 @@ MedichamEvosAttacks:
 	dbw 42, REVERSAL
 	dbw 47, RECOVER
 	dbw 53, CLOSE_COMBAT
+	db 0 ; no more level-up moves
+
+CarvanhaEvosAttacks:
+	dbbw EVOLVE_LEVEL, 30, SHARPEDO
+	db 0 ; no more evolutions
+	dbw 1, LEER
+	dbw 4, BITE
+	dbw 4, RAGE
+	dbw 8, FOCUS_ENERGY
+	dbw 11, AQUA_JET
+	dbw 15, PAYBACK
+	dbw 18, SCREECH
+	dbw 22, SWAGGER
+	dbw 25, ICE_FANG
+	dbw 29, SCARY_FACE
+	dbw 32, POISON_FANG
+	dbw 36, CRUNCH
+	dbw 39, AGILITY
+	dbw 43, TAKE_DOWN
+	dbw 47, WAVE_CRASH
+	db 0 ; no more level-up moves
+
+SharpedoEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SLASH
+	dbw 1, SLASH
+	dbw 1, NIGHT_SLASH
+	dbw 1, LEER
+	dbw 4, BITE
+	dbw 4, RAGE
+	dbw 8, FOCUS_ENERGY
+	dbw 11, AQUA_JET
+	dbw 15, PAYBACK
+	dbw 18, SCREECH
+	dbw 22, SWAGGER
+	dbw 25, ICE_FANG
+	dbw 29, SCARY_FACE
+	dbw 34, POISON_FANG
+	dbw 40, CRUNCH
+	dbw 45, AGILITY
+	dbw 51, SKULL_BASH
+	dbw 56, NIGHT_SLASH
+	dbw 62, WAVE_CRASH
 	db 0 ; no more level-up moves
 
 RaikouEvosAttacks:

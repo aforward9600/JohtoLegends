@@ -358,6 +358,8 @@ AnimationPointers:
 	dw AggronAnimation
 	dw MedititeAnimation
 	dw MedichamAnimation
+	dw CarvanhaAnimation
+	dw SharpedoAnimation
 	dw RaikouAnimation
 	dw EnteiAnimation
 	dw SuicuneAnimation

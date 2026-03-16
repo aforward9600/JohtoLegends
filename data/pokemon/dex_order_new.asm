@@ -158,6 +158,8 @@ NewPokedexOrder:
 	dw MR__RIME
 	dw BONSLY
 	dw SUDOWOODO
+	dw CARVANHA
+	dw SHARPEDO
 	dw CLEFFA
 	dw CLEFAIRY
 	dw CLEFABLE

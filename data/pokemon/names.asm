@@ -362,6 +362,8 @@ PokemonNames::
 	db "Aggron@@@@"
 	db "Meditite@@"
 	db "Medicham@@"
+	db "Carvanha@@"
+	db "Sharpedo@@"
 	db "Raikou@@@@"
 	db "Entei@@@@@"
 	db "Suicune@@@"

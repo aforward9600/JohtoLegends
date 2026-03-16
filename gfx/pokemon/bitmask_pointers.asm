@@ -358,6 +358,8 @@ BitmasksPointers:
 	dw AggronBitmasks
 	dw MedititeBitmasks
 	dw MedichamBitmasks
+	dw CarvanhaBitmasks
+	dw SharpedoBitmasks
 	dw RaikouBitmasks
 	dw EnteiBitmasks
 	dw SuicuneBitmasks

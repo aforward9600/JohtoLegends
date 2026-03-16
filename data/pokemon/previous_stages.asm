@@ -360,6 +360,8 @@ PreviousEvolutionStage::
 	dw 0
 	dw MEDITITE
 	dw 0
+	dw CARVANHA
+	dw 0
 	dw 0
 	dw 0
 	dw 0

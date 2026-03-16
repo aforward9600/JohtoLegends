@@ -370,6 +370,8 @@ MonMenuIconPals:
 	icon_pals GRAY,   TEAL   ; AGGRON
 	icon_pals BLUE,   RED    ; MEDITITE
 	icon_pals RED,    BLUE   ; MEDICHAM
+	icon_pals BLUE,   GREEN  ; CARVANHA
+	icon_pals BLUE,   PINK   ; SHARPEDO
 	icon_pals RED,    PINK   ; RAIKOU
 	icon_pals RED,    BROWN  ; ENTEI
 	icon_pals BLUE,   TEAL   ; SUICUNE

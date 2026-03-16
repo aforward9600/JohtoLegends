@@ -731,6 +731,10 @@ PokemonPicPointers::
 	dba MedititeBackpic
 	dba MedichamFrontpic
 	dba MedichamBackpic
+	dba CarvanhaFrontpic
+	dba CarvanhaBackpic
+	dba SharpedoFrontpic
+	dba SharpedoBackpic
 	dba RaikouFrontpic
 	dba RaikouBackpic
 	dba EnteiFrontpic

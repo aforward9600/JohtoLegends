@@ -358,6 +358,8 @@ AnimationIdlePointers:
 	dw AggronAnimationIdle
 	dw MedititeAnimationIdle
 	dw MedichamAnimationIdle
+	dw CarvanhaAnimationIdle
+	dw SharpedoAnimationIdle
 	dw RaikouAnimationIdle
 	dw EnteiAnimationIdle
 	dw SuicuneAnimationIdle

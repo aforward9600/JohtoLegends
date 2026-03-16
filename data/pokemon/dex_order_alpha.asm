@@ -36,6 +36,7 @@ AlphabeticalPokedexOrder:
 	dw BUTTERFREE
 	dw CACNEA
 	dw CACTURNE
+	dw CARVANHA
 	dw CATERPIE
 	dw CELEBI
 	dw CHANSEY
@@ -300,6 +301,7 @@ AlphabeticalPokedexOrder:
 	dw SEAKING
 	dw SEEL
 	dw SENTRET
+	dw SHARPEDO
 	dw SHELGON
 	dw SHELLDER
 	dw SHROOMISH

@@ -358,6 +358,8 @@ FramesPointers:
 	dba AggronFrames
 	dba MedititeFrames
 	dba MedichamFrames
+	dba CarvanhaFrames
+	dba SharpedoFrames
 	dba RaikouFrames
 	dba EnteiFrames
 	dba SuicuneFrames

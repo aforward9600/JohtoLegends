@@ -173,6 +173,8 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw MedititeEggMoves
 	dw NoEggMoves2
+	dw CarvanhaEggMoves
+	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -860,6 +862,14 @@ MedititeEggMoves:
 	dw FAKE_OUT
 	dw FORESIGHT
 	dw PSYCHO_CUT
+	dw -1 ; end
+
+CarvanhaEggMoves:
+	dw DESTINY_BOND
+	dw HYDRO_PUMP
+	dw SWIFT
+	dw THRASH
+	dw -1 ; end
 
 LarvitarEggMoves:
 	dw PURSUIT
