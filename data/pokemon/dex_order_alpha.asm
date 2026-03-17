@@ -36,6 +36,7 @@ AlphabeticalPokedexOrder:
 	dw BUTTERFREE
 	dw CACNEA
 	dw CACTURNE
+	dw CAMERUPT
 	dw CARVANHA
 	dw CATERPIE
 	dw CELEBI
@@ -231,6 +232,7 @@ AlphabeticalPokedexOrder:
 	dw NINETALES_A
 	dw NOCTOWL
 	dw NOWN
+	dw NUMEL
 	dw OCTILLERY
 	dw ODDISH
 	dw OMANYTE

@@ -112,6 +112,8 @@ Icons3:
 	dw MedichamIcon
 	dw CarvanhaIcon
 	dw SharpedoIcon
+	dw NumelIcon
+	dw CameruptIcon
 	dw RaikouIcon
 	dw EnteiIcon
 	dw SuicuneIcon
@@ -126,8 +128,6 @@ Icons3:
 	dw SalamenceIcon
 	dw BeldumIcon
 	dw MetangIcon
-	dw MetagrossIcon
-	dw LugiaIcon
 
 AzurillIcon:      INCBIN "gfx/icons/azurill.2bpp"
 MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
@@ -239,6 +239,8 @@ MedititeIcon:     INCBIN "gfx/icons/meditite.2bpp"
 MedichamIcon:     INCBIN "gfx/icons/medicham.2bpp"
 CarvanhaIcon:     INCBIN "gfx/icons/carvanha.2bpp"
 SharpedoIcon:     INCBIN "gfx/icons/sharpedo.2bpp"
+NumelIcon:        INCBIN "gfx/icons/numel.2bpp"
+CameruptIcon:     INCBIN "gfx/icons/camerupt.2bpp"
 RaikouIcon:	      INCBIN "gfx/icons/raikou.2bpp"
 EnteiIcon:	      INCBIN "gfx/icons/entei.2bpp"
 SuicuneIcon:	  INCBIN "gfx/icons/suicune.2bpp"
@@ -253,5 +255,3 @@ ShelgonIcon:	  INCBIN "gfx/icons/shelgon.2bpp"
 SalamenceIcon:	  INCBIN "gfx/icons/salamence.2bpp"
 BeldumIcon:       INCBIN "gfx/icons/beldum.2bpp"
 MetangIcon:       INCBIN "gfx/icons/metang.2bpp"
-MetagrossIcon:    INCBIN "gfx/icons/metagross.2bpp"
-LugiaIcon:	      INCBIN "gfx/icons/lugia.2bpp"

@@ -10,6 +10,8 @@ EvosAttacksPointers3::
 	dw MedichamEvosAttacks
 	dw CarvanhaEvosAttacks
 	dw SharpedoEvosAttacks
+	dw NumelEvosAttacks
+	dw CameruptEvosAttacks
 	dw RaikouEvosAttacks
 	dw EnteiEvosAttacks
 	dw SuicuneEvosAttacks
@@ -258,6 +260,47 @@ SharpedoEvosAttacks:
 	dbw 51, SKULL_BASH
 	dbw 56, NIGHT_SLASH
 	dbw 62, WAVE_CRASH
+	db 0 ; no more level-up moves
+
+NumelEvosAttacks:
+	dbbw EVOLVE_LEVEL, 33, CAMERUPT
+	db 0 ; no more evolutions
+	dbw 1, GROWL
+	dbw 1, TACKLE
+	dbw 5, EMBER
+	dbw 8, FOCUS_ENERGY
+	dbw 12, MAGNITUDE
+	dbw 15, FLAME_BURST
+	dbw 19, AMNESIA
+	dbw 22, LAVA_PLUME
+	dbw 26, EARTH_POWER
+	dbw 29, CURSE
+	dbw 31, TAKE_DOWN
+	dbw 36, SLACK_OFF
+	dbw 40, EARTHQUAKE
+	dbw 43, FLAMETHROWER
+	dbw 47, DOUBLE_EDGE
+	db 0 ; no more level-up moves
+
+CameruptEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, ROCK_SLIDE
+	dbw 1, ROCK_SLIDE
+	dbw 1, GROWL
+	dbw 1, TACKLE
+	dbw 5, EMBER
+	dbw 8, FOCUS_ENERGY
+	dbw 12, MAGNITUDE
+	dbw 15, FLAME_BURST
+	dbw 19, AMNESIA
+	dbw 22, LAVA_PLUME
+	dbw 26, EARTH_POWER
+	dbw 29, CURSE
+	dbw 31, TAKE_DOWN
+	dbw 39, SLACK_OFF
+	dbw 46, EARTHQUAKE
+	dbw 52, FLARE_BLITZ
+	dbw 59, FISSURE
 	db 0 ; no more level-up moves
 
 RaikouEvosAttacks:

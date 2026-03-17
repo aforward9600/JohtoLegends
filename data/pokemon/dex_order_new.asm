@@ -160,6 +160,8 @@ NewPokedexOrder:
 	dw SUDOWOODO
 	dw CARVANHA
 	dw SHARPEDO
+	dw NUMEL
+	dw CAMERUPT
 	dw CLEFFA
 	dw CLEFAIRY
 	dw CLEFABLE

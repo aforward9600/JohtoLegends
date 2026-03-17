@@ -360,6 +360,8 @@ FramesPointers:
 	dba MedichamFrames
 	dba CarvanhaFrames
 	dba SharpedoFrames
+	dba NumelFrames
+	dba CameruptFrames
 	dba RaikouFrames
 	dba EnteiFrames
 	dba SuicuneFrames

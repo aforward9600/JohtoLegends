@@ -362,6 +362,8 @@ PreviousEvolutionStage::
 	dw 0
 	dw CARVANHA
 	dw 0
+	dw NUMEL
+	dw 0
 	dw 0
 	dw 0
 	dw 0

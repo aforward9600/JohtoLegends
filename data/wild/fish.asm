@@ -38,11 +38,11 @@ FishGroups:
 
 .Ocean_Old:
 	dbbw  70 percent + 1, 10, MAGIKARP
-	dbbw  85 percent + 1, 10, MAGIKARP
+	dbbw  85 percent + 1, 10, CARVANHA
 	dbbw 100 percent,     10, TENTACOOL
 .Ocean_Good:
 	dbbw  35 percent,     20, MAGIKARP
-	dbbw  70 percent,     20, TENTACOOL
+	dbbw  70 percent,     20, CARVANHA
 	dbbw  90 percent + 1, 20, CHINCHOU
 	dbbw 100 percent,      2, TIME_GROUP
 .Ocean_Super:
@@ -98,13 +98,13 @@ FishGroups:
 
 .Qwilfish_Swarm_Old:
 	dbbw  70 percent + 1,  5, MAGIKARP
-	dbbw  85 percent + 1,  5, MAGIKARP
+	dbbw  85 percent + 1,  5, CARVANHA
 	dbbw 100 percent,      5, QWILFISH
 .Qwilfish_Swarm_Good:
 	dbbw  35 percent,     20, HORSEA
 	dbbw  70 percent,     20, QWILFISH
 	dbbw  90 percent + 1, 20, QWILFISH
-	dbbw 100 percent,     10, CORSOLA
+	dbbw 100 percent,     10, CARVANHA
 .Qwilfish_Swarm_Super:
 	dbbw  40 percent,     40, QWILFISH
 	dbbw  70 percent,     11, TIME_GROUP
@@ -191,13 +191,13 @@ FishGroups:
 
 .Remoraid_Old:
 	dbbw  70 percent + 1, 10, MAGIKARP
-	dbbw  85 percent + 1, 10, MAGIKARP
-	dbbw 100 percent,     10, POLIWAG
+	dbbw  85 percent + 1, 10, POLIWAG
+	dbbw 100 percent,     10, REMORAID
 .Remoraid_Good:
 	dbbw  35 percent,     20, MAGIKARP
 	dbbw  70 percent,     20, POLIWAG
 	dbbw  90 percent + 1, 20, POLIWAG
-	dbbw 100 percent,      6, TIME_GROUP
+	dbbw 100 percent,      6, REMORAID
 .Remoraid_Super:
 	dbbw  40 percent,     40, POLIWAG
 	dbbw  70 percent,      7, TIME_GROUP

@@ -1701,6 +1701,10 @@ SECTION "Raticate_A Backpic", ROMX
 
 RaticateABackpic:    INCBIN "gfx/pokemon/raticate_a/back.2bpp.lz"
 
+SECTION "Sandshrew_A Backpic", ROMX
+
+SandshrewABackpic:   INCBIN "gfx/pokemon/sandshrew_a/back.2bpp.lz"
+
 SECTION "Sableye Front", ROMX
 
 SableyeFrontpic:     INCBIN "gfx/pokemon/sableye/front.animated.2bpp.lz"
@@ -1749,6 +1753,18 @@ SECTION "Sharpedo Back", ROMX
 
 SharpedoBackpic:     INCBIN "gfx/pokemon/sharpedo/back.2bpp.lz"
 
-SECTION "Sandshrew_A Backpic", ROMX
+SECTION "Numel Front", ROMX
 
-SandshrewABackpic:   INCBIN "gfx/pokemon/sandshrew_a/back.2bpp.lz"
+NumelFrontpic:       INCBIN "gfx/pokemon/numel/front.animated.2bpp.lz"
+
+SECTION "Numel Back", ROMX
+
+NumelBackpic:        INCBIN "gfx/pokemon/numel/back.2bpp.lz"
+
+SECTION "Camerupt Front", ROMX
+
+CameruptFrontpic:    INCBIN "gfx/pokemon/camerupt/front.animated.2bpp.lz"
+
+SECTION "Camerupt Back", ROMX
+
+CameruptBackpic:     INCBIN "gfx/pokemon/camerupt/back.2bpp.lz"

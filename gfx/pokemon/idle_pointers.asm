@@ -360,6 +360,8 @@ AnimationIdlePointers:
 	dw MedichamAnimationIdle
 	dw CarvanhaAnimationIdle
 	dw SharpedoAnimationIdle
+	dw NumelAnimationIdle
+	dw CameruptAnimationIdle
 	dw RaikouAnimationIdle
 	dw EnteiAnimationIdle
 	dw SuicuneAnimationIdle

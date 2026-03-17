@@ -735,6 +735,10 @@ PokemonPicPointers::
 	dba CarvanhaBackpic
 	dba SharpedoFrontpic
 	dba SharpedoBackpic
+	dba NumelFrontpic
+	dba NumelBackpic
+	dba CameruptFrontpic
+	dba CameruptBackpic
 	dba RaikouFrontpic
 	dba RaikouBackpic
 	dba EnteiFrontpic

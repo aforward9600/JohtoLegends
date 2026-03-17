@@ -372,6 +372,8 @@ MonMenuIconPals:
 	icon_pals RED,    BLUE   ; MEDICHAM
 	icon_pals BLUE,   GREEN  ; CARVANHA
 	icon_pals BLUE,   PINK   ; SHARPEDO
+	icon_pals GREEN,  BLUE   ; NUMEL
+	icon_pals RED,    GRAY   ; CAMERUPT
 	icon_pals RED,    PINK   ; RAIKOU
 	icon_pals RED,    BROWN  ; ENTEI
 	icon_pals BLUE,   TEAL   ; SUICUNE

@@ -360,6 +360,8 @@ AnimationPointers:
 	dw MedichamAnimation
 	dw CarvanhaAnimation
 	dw SharpedoAnimation
+	dw NumelAnimation
+	dw CameruptAnimation
 	dw RaikouAnimation
 	dw EnteiAnimation
 	dw SuicuneAnimation

@@ -2,6 +2,8 @@ SECTION "Mon Icons 4", ROMX
 
 Icons4:
 
+	dw MetagrossIcon
+	dw LugiaIcon
 	dw HoOhIcon
 	dw CelebiIcon
 	dw NownIcon
@@ -15,6 +17,8 @@ Icons4:
 	dw TaurosPFireIcon
 	dw TaurosPWaterIcon
 
+MetagrossIcon:    INCBIN "gfx/icons/metagross.2bpp"
+LugiaIcon:	      INCBIN "gfx/icons/lugia.2bpp"
 HoOhIcon:	      INCBIN "gfx/icons/ho_oh.2bpp"
 CelebiIcon:	      INCBIN "gfx/icons/celebi.2bpp"
 NownIcon:         INCBIN "gfx/icons/nown.2bpp"

@@ -277,7 +277,7 @@ JohtoWaterWildMons:
 
 	map_id WILD_AREA_2_3
 	db 10 percent ; encounter rate
-	dbw 15, SLOWPOKE
+	dbw 15, CORSOLA_J
 	dbw 15, STARYU
 	dbw 15, SHELLDER
 	dbw 15, LAPRAS

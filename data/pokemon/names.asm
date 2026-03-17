@@ -364,6 +364,8 @@ PokemonNames::
 	db "Medicham@@"
 	db "Carvanha@@"
 	db "Sharpedo@@"
+	db "Numel@@@@@"
+	db "Camerupt@@"
 	db "Raikou@@@@"
 	db "Entei@@@@@"
 	db "Suicune@@@"

@@ -175,6 +175,8 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw CarvanhaEggMoves
 	dw NoEggMoves2
+	dw NumelEggMoves
+	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -869,6 +871,19 @@ CarvanhaEggMoves:
 	dw HYDRO_PUMP
 	dw SWIFT
 	dw THRASH
+	dw -1 ; end
+
+NumelEggMoves:
+	dw ANCIENTPOWER
+	dw BODY_SLAM
+	dw DEFENSE_CURL
+	dw ENDURE
+	dw HEAT_WAVE
+	dw HOWL
+	dw MUD_BOMB
+	dw ROLLOUT
+	dw SCARY_FACE
+	dw STOMP
 	dw -1 ; end
 
 LarvitarEggMoves:

@@ -360,6 +360,8 @@ BitmasksPointers:
 	dw MedichamBitmasks
 	dw CarvanhaBitmasks
 	dw SharpedoBitmasks
+	dw NumelBitmasks
+	dw CameruptBitmasks
 	dw RaikouBitmasks
 	dw EnteiBitmasks
 	dw SuicuneBitmasks

@@ -360,6 +360,8 @@ PokedexDataPointerTable:
 	dba MedititePokedexEntry
 	dba MedichamPokedexEntry
 	dba CarvanhaPokedexEntry
+	dba NumelPokedexEntry
+	dba CameruptPokedexEntry
 	dba SharpedoPokedexEntry
 	dba RaikouPokedexEntry
 	dba EnteiPokedexEntry
