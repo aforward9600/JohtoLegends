@@ -393,6 +393,9 @@ PokemonNumbers::
 	db "347@@"
 	db "348@@"
 	db "349@@"
+	db "350@@"
+	db "351@@"
+	db "352@@"
 	db "157@@"
 	db "157@@"
 	assert_table_length NUM_POKEMON

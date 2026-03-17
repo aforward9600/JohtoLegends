@@ -114,6 +114,9 @@ Icons3:
 	dw SharpedoIcon
 	dw NumelIcon
 	dw CameruptIcon
+	dw TrapinchIcon
+	dw VibravaIcon
+	dw FlygonIcon
 	dw RaikouIcon
 	dw EnteiIcon
 	dw SuicuneIcon
@@ -125,9 +128,6 @@ Icons3:
 	dw GarchompIcon
 	dw BagonIcon
 	dw ShelgonIcon
-	dw SalamenceIcon
-	dw BeldumIcon
-	dw MetangIcon
 
 AzurillIcon:      INCBIN "gfx/icons/azurill.2bpp"
 MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
@@ -241,6 +241,9 @@ CarvanhaIcon:     INCBIN "gfx/icons/carvanha.2bpp"
 SharpedoIcon:     INCBIN "gfx/icons/sharpedo.2bpp"
 NumelIcon:        INCBIN "gfx/icons/numel.2bpp"
 CameruptIcon:     INCBIN "gfx/icons/camerupt.2bpp"
+TrapinchIcon:     INCBIN "gfx/icons/trapinch.2bpp"
+VibravaIcon:      INCBIN "gfx/icons/vibrava.2bpp"
+FlygonIcon:       INCBIN "gfx/icons/flygon.2bpp"
 RaikouIcon:	      INCBIN "gfx/icons/raikou.2bpp"
 EnteiIcon:	      INCBIN "gfx/icons/entei.2bpp"
 SuicuneIcon:	  INCBIN "gfx/icons/suicune.2bpp"
@@ -252,6 +255,3 @@ GabiteIcon:       INCBIN "gfx/icons/gabite.2bpp"
 GarchompIcon:     INCBIN "gfx/icons/garchomp.2bpp"
 BagonIcon:	      INCBIN "gfx/icons/bagon.2bpp"
 ShelgonIcon:	  INCBIN "gfx/icons/shelgon.2bpp"
-SalamenceIcon:	  INCBIN "gfx/icons/salamence.2bpp"
-BeldumIcon:       INCBIN "gfx/icons/beldum.2bpp"
-MetangIcon:       INCBIN "gfx/icons/metang.2bpp"

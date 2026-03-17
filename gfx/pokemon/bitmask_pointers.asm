@@ -362,6 +362,9 @@ BitmasksPointers:
 	dw SharpedoBitmasks
 	dw NumelBitmasks
 	dw CameruptBitmasks
+	dw TrapinchBitmasks
+	dw VibravaBitmasks
+	dw FlygonBitmasks
 	dw RaikouBitmasks
 	dw EnteiBitmasks
 	dw SuicuneBitmasks

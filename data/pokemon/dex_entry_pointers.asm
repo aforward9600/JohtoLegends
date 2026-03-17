@@ -362,6 +362,9 @@ PokedexDataPointerTable:
 	dba CarvanhaPokedexEntry
 	dba NumelPokedexEntry
 	dba CameruptPokedexEntry
+	dba TrapinchPokedexEntry
+	dba VibravaPokedexEntry
+	dba FlygonPokedexEntry
 	dba SharpedoPokedexEntry
 	dba RaikouPokedexEntry
 	dba EnteiPokedexEntry

@@ -227,6 +227,9 @@ NewPokedexOrder:
 	dw NIDOKING
 	dw EKANS
 	dw ARBOK
+	dw TRAPINCH
+	dw VIBRAVA
+	dw FLYGON
 	dw SUNKERN
 	dw SUNFLORA
 	dw MANKEY

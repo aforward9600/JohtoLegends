@@ -362,6 +362,9 @@ INCBIN "gfx/footprints/gastly.1bpp" ; Carvanha
 INCBIN "gfx/footprints/gastly.1bpp" ; Sharpedo
 INCBIN "gfx/footprints/numel.1bpp"
 INCBIN "gfx/footprints/camerupt.1bpp"
+INCBIN "gfx/footprints/trapinch.1bpp"
+INCBIN "gfx/footprints/vibrava.1bpp"
+INCBIN "gfx/footprints/flygon.1bpp"
 INCBIN "gfx/footprints/raikou.1bpp"
 INCBIN "gfx/footprints/entei.1bpp"
 INCBIN "gfx/footprints/suicune.1bpp"

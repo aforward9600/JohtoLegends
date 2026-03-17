@@ -12,6 +12,9 @@ EvosAttacksPointers3::
 	dw SharpedoEvosAttacks
 	dw NumelEvosAttacks
 	dw CameruptEvosAttacks
+	dw TrapinchEvosAttacks
+	dw VibravaEvosAttacks
+	dw FlygonEvosAttacks
 	dw RaikouEvosAttacks
 	dw EnteiEvosAttacks
 	dw SuicuneEvosAttacks
@@ -301,6 +304,72 @@ CameruptEvosAttacks:
 	dbw 46, EARTHQUAKE
 	dbw 52, FLARE_BLITZ
 	dbw 59, FISSURE
+	db 0 ; no more level-up moves
+
+TrapinchEvosAttacks:
+	dbbw EVOLVE_LEVEL, 35, VIBRAVA
+	db 0 ; no more evolutions
+	dbw 1, SAND_ATTACK
+	dbw 1, BITE
+	dbw 1, FAINT_ATTACK
+	dbw 5, MUD_SLAP
+	dbw 8, BULLDOZE
+	dbw 12, SAND_TOMB
+	dbw 15, ROCK_TOMB
+	dbw 19, DIG
+	dbw 22, CRUNCH
+	dbw 26, EARTH_POWER
+	dbw 29, HEADBUTT
+	dbw 33, EARTHQUAKE
+	dbw 36, SANDSTORM
+	dbw 40, SUPERPOWER
+	dbw 43, HYPER_BEAM
+	dbw 47, FISSURE
+	db 0 ; no more level-up moves
+
+VibravaEvosAttacks:
+	dbbw EVOLVE_LEVEL, 45, FLYGON
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, DRAGONBREATH
+	dbw 1, DRAGONBREATH
+	dbw 1, SAND_ATTACK
+	dbw 1, BITE
+	dbw 1, FAINT_ATTACK
+	dbw 5, MUD_SLAP
+	dbw 8, BULLDOZE
+	dbw 12, SAND_TOMB
+	dbw 15, ROCK_TOMB
+	dbw 19, DIG
+	dbw 22, CRUNCH
+	dbw 26, EARTH_POWER
+	dbw 29, HEADBUTT
+	dbw 33, EARTHQUAKE
+	dbw 36, SANDSTORM
+	dbw 40, ROUND_M
+	dbw 43, HYPER_BEAM
+	dbw 47, HYPER_VOICE
+	db 0 ; no more level-up moves
+
+FlygonEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, DRAGON_CLAW
+	dbw 1, DRAGON_CLAW
+	dbw 1, SAND_ATTACK
+	dbw 1, BITE
+	dbw 1, FAINT_ATTACK
+	dbw 5, MUD_SLAP
+	dbw 8, BULLDOZE
+	dbw 12, SAND_TOMB
+	dbw 15, ROCK_TOMB
+	dbw 19, DIG
+	dbw 22, CRUNCH
+	dbw 26, EARTH_POWER
+	dbw 29, HEADBUTT
+	dbw 33, EARTHQUAKE
+	dbw 36, SANDSTORM
+	dbw 40, ROUND_M
+	dbw 43, HYPER_BEAM
+	dbw 47, DRAGON_RUSH
 	db 0 ; no more level-up moves
 
 RaikouEvosAttacks:

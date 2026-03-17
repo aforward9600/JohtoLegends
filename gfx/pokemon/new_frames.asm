@@ -1,5 +1,8 @@
 NewFrames:
 
+LarvitarFrames:   INCLUDE "gfx/pokemon/larvitar/frames.asm"
+PupitarFrames:    INCLUDE "gfx/pokemon/pupitar/frames.asm"
+TyranitarFrames:  INCLUDE "gfx/pokemon/tyranitar/frames.asm"
 GibleFrames:      INCLUDE "gfx/pokemon/gible/frames.asm"
 GabiteFrames:     INCLUDE "gfx/pokemon/gabite/frames.asm"
 GarchompFrames:   INCLUDE "gfx/pokemon/garchomp/frames.asm"

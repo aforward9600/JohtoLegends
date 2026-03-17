@@ -177,6 +177,9 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NumelEggMoves
 	dw NoEggMoves2
+	dw TrapinchEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -884,6 +887,17 @@ NumelEggMoves:
 	dw ROLLOUT
 	dw SCARY_FACE
 	dw STOMP
+	dw -1 ; end
+
+TrapinchEggMoves:
+	dw EARTH_POWER
+	dw ENDURE
+	dw FLAIL
+	dw FOCUS_ENERGY
+	dw FURY_CUTTER
+	dw GUST
+	dw SIGNAL_BEAM
+	dw QUICK_ATTACK
 	dw -1 ; end
 
 LarvitarEggMoves:

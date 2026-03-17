@@ -362,6 +362,9 @@ AnimationIdlePointers:
 	dw SharpedoAnimationIdle
 	dw NumelAnimationIdle
 	dw CameruptAnimationIdle
+	dw TrapinchAnimationIdle
+	dw VibravaAnimationIdle
+	dw FlygonAnimationIdle
 	dw RaikouAnimationIdle
 	dw EnteiAnimationIdle
 	dw SuicuneAnimationIdle

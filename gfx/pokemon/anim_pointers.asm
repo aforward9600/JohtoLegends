@@ -362,6 +362,9 @@ AnimationPointers:
 	dw SharpedoAnimation
 	dw NumelAnimation
 	dw CameruptAnimation
+	dw TrapinchAnimation
+	dw VibravaAnimation
+	dw FlygonAnimation
 	dw RaikouAnimation
 	dw EnteiAnimation
 	dw SuicuneAnimation

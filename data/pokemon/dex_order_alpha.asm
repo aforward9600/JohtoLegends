@@ -98,6 +98,7 @@ AlphabeticalPokedexOrder:
 	dw FERALIGATR
 	dw FLAAFFY
 	dw FLAREON
+	dw FLYGON
 	dw FORRETRESS
 	dw FROSLASS
 	dw FURRET
@@ -353,6 +354,7 @@ AlphabeticalPokedexOrder:
 	dw TOGETIC
 	dw TOTODILE
 	dw TOXICROAK
+	dw TRAPINCH
 	dw TYPHLOSION
 	dw TYPHLOSION_H
 	dw TYRANITAR
@@ -366,6 +368,7 @@ AlphabeticalPokedexOrder:
 	dw VENOMOTH
 	dw VENONAT
 	dw VENUSAUR
+	dw VIBRAVA
 	dw VICTREEBEL
 	dw VILEPLUME
 	dw VOLTORB

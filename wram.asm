@@ -2902,7 +2902,7 @@ wPartyMonOT:: ds NAME_LENGTH * PARTY_LENGTH ; ddff
 wPartyMonNicknames:: ds MON_NAME_LENGTH * PARTY_LENGTH ; de41
 wPartyMonNicknamesEnd::
 
-	ds 21
+	ds 19
 
 wPokedexCaught:: flag_array NUM_POKEMON ; de99
 wEndPokedexCaught::

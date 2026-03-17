@@ -364,6 +364,9 @@ PreviousEvolutionStage::
 	dw 0
 	dw NUMEL
 	dw 0
+	dw TRAPINCH
+	dw VIBRAVA
+	dw 0
 	dw 0
 	dw 0
 	dw 0

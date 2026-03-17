@@ -362,6 +362,9 @@ FramesPointers:
 	dba SharpedoFrames
 	dba NumelFrames
 	dba CameruptFrames
+	dba TrapinchFrames
+	dba VibravaFrames
+	dba FlygonFrames
 	dba RaikouFrames
 	dba EnteiFrames
 	dba SuicuneFrames
