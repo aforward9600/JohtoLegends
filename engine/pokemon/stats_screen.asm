@@ -352,11 +352,13 @@ StatsScreen_JoypadAction:
 	or c
 	ld [wcf64], a
 	ld h, 4
-	jp StatsScreen_SetJumptableIndex
+	call StatsScreen_SetJumptableIndex
+	ret
 
 .load_mon
 	ld h, 0
-	jp StatsScreen_SetJumptableIndex
+	call StatsScreen_SetJumptableIndex
+	ret
 
 .b_button
 	ld h, 7
@@ -920,7 +922,6 @@ StatsScreen_PlaceFrontpic:
 	ld bc, wTempMonCaughtTime
 	call GetTaurosForm2
 	jr .SkipUnown
-
 .NotTauros:
 	ld hl, wTempMonDVs
 	predef GetUnownLetter

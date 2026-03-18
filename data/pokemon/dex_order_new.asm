@@ -227,6 +227,9 @@ NewPokedexOrder:
 	dw NIDOKING
 	dw EKANS
 	dw ARBOK
+	dw TRAPINCH
+	dw VIBRAVA
+	dw FLYGON
 	dw SUNKERN
 	dw SUNFLORA
 	dw MANKEY
@@ -243,6 +246,8 @@ NewPokedexOrder:
 	dw MACHAMP
 	dw AIPOM
 	dw AMBIPOM
+	dw FEEBAS
+	dw MILOTIC
 	dw BELLSPROUT
 	dw WEEPINBELL
 	dw VICTREEBEL

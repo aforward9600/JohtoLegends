@@ -1768,3 +1768,43 @@ CameruptFrontpic:    INCBIN "gfx/pokemon/camerupt/front.animated.2bpp.lz"
 SECTION "Camerupt Back", ROMX
 
 CameruptBackpic:     INCBIN "gfx/pokemon/camerupt/back.2bpp.lz"
+
+SECTION "Trapinch Front", ROMX
+
+TrapinchFrontpic:    INCBIN "gfx/pokemon/trapinch/front.animated.2bpp.lz"
+
+SECTION "Trapinch Back", ROMX
+
+TrapinchBackpic:     INCBIN "gfx/pokemon/trapinch/back.2bpp.lz"
+
+SECTION "Vibrava Front", ROMX
+
+VibravaFrontpic:     INCBIN "gfx/pokemon/vibrava/front.animated.2bpp.lz"
+
+SECTION "Vibrava Back", ROMX
+
+VibravaBackpic:      INCBIN "gfx/pokemon/vibrava/back.2bpp.lz"
+
+SECTION "Flygon Front", ROMX
+
+FlygonFrontpic:      INCBIN "gfx/pokemon/flygon/front.animated.2bpp.lz"
+
+SECTION "Flygon Back", ROMX
+
+FlygonBackpic:       INCBIN "gfx/pokemon/flygon/back.2bpp.lz"
+
+SECTION "Feebas Front", ROMX
+
+FeebasFrontpic:      INCBIN "gfx/pokemon/feebas/front.animated.2bpp.lz"
+
+SECTION "Feebas Back", ROMX
+
+FeebasBackpic:       INCBIN "gfx/pokemon/feebas/back.2bpp.lz"
+
+SECTION "Milotic Front", ROMX
+
+MiloticFrontpic:     INCBIN "gfx/pokemon/milotic/front.animated.2bpp.lz"
+
+SECTION "Milotic Back", ROMX
+
+MiloticBackpic:      INCBIN "gfx/pokemon/milotic/back.2bpp.lz"

@@ -374,6 +374,11 @@ MonMenuIconPals:
 	icon_pals BLUE,   PINK   ; SHARPEDO
 	icon_pals GREEN,  BLUE   ; NUMEL
 	icon_pals RED,    GRAY   ; CAMERUPT
+	icon_pals RED,    GREEN  ; TRAPINCH
+	icon_pals GREEN,  RED    ; VIBRAVA
+	icon_pals GREEN,  BLUE   ; FLYGON
+	icon_pals BLUE,   PURPLE ; FEEBAS
+	icon_pals RED,    BLUE   ; MILOTIC
 	icon_pals RED,    PINK   ; RAIKOU
 	icon_pals RED,    BROWN  ; ENTEI
 	icon_pals BLUE,   TEAL   ; SUICUNE

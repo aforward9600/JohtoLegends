@@ -95,9 +95,11 @@ AlphabeticalPokedexOrder:
 	dw FARFETCH_D_G
 	dw FARIGIRAF
 	dw FEAROW
+	dw FEEBAS
 	dw FERALIGATR
 	dw FLAAFFY
 	dw FLAREON
+	dw FLYGON
 	dw FORRETRESS
 	dw FROSLASS
 	dw FURRET
@@ -207,6 +209,7 @@ AlphabeticalPokedexOrder:
 	dw METAPOD
 	dw MEW
 	dw MEWTWO
+	dw MILOTIC
 	dw MILTANK
 	dw MIME__JR
 	dw MISDREAVUS
@@ -353,6 +356,7 @@ AlphabeticalPokedexOrder:
 	dw TOGETIC
 	dw TOTODILE
 	dw TOXICROAK
+	dw TRAPINCH
 	dw TYPHLOSION
 	dw TYPHLOSION_H
 	dw TYRANITAR
@@ -366,6 +370,7 @@ AlphabeticalPokedexOrder:
 	dw VENOMOTH
 	dw VENONAT
 	dw VENUSAUR
+	dw VIBRAVA
 	dw VICTREEBEL
 	dw VILEPLUME
 	dw VOLTORB

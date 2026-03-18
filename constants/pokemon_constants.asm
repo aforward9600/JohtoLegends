@@ -383,6 +383,11 @@ JOHTO_POKEMON EQU const_value
 	const SHARPEDO
 	const NUMEL
 	const CAMERUPT
+	const TRAPINCH
+	const VIBRAVA
+	const FLYGON
+	const FEEBAS
+	const MILOTIC
 	const RAIKOU       ; 164 1
 	const ENTEI        ; 165 1
 	const SUICUNE      ; 166 1

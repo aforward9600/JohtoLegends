@@ -152,7 +152,7 @@ Prism Team.
 Galarian Zapdos overworld sprite, Gyarados, Paldean Wooper, Clodsire, Regigigas, Regieleki, 
 Regidrago, Feebas and Galarian Weezing sprites: Sage
 
-Carvanha, Sharpedo, Mawile, Farigiraf sprite and animation: Nuuk.
+Carvanha, Sharpedo, Mawile, Flygon, Farigiraf sprite and animation: Nuuk.
 
 Galarian Mr. Mime & Mr. Rime sprites: flempa, Scarlax, ShadowOne333
 
@@ -177,7 +177,7 @@ Ariana, Archer and Giovanni trainer and overworld sprite: SirWhibbles
 Ampharos and overworld sprite: Prism Team
 
 Blue Emerald: Lotad, Lombre, Ludicolo, Ralts, Kirlia, Gallade, Electrike, Manectric
-Cacnea, Cacturne, Swablu, Altaria, Duskull, Dusclops, Dusknoir, Snorunt
+Cacnea, Cacturne, Swablu, Altaria, Duskull, Dusclops, Dusknoir, Milotic, Snorunt
 Glalie, Froslass, Bagon, Shelgon, Salamence, Beldum, Metang, Metagross
 Budew, Bronzor, Bronzong, Happiny, Gible, Gabite, Garchomp, Munchlax, Riolu
 Lucario, Croagunk, Toxicroak, Weavile, Magnezone, Rhyperior, Tangrowth
