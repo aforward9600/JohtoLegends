@@ -2,8 +2,11 @@ SECTION "Mon Icons 4", ROMX
 
 Icons4:
 
+<<<<<<< HEAD
 	dw BagonIcon
 	dw ShelgonIcon
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 	dw SalamenceIcon
 	dw BeldumIcon
 	dw MetangIcon
@@ -22,8 +25,11 @@ Icons4:
 	dw TaurosPFireIcon
 	dw TaurosPWaterIcon
 
+<<<<<<< HEAD
 BagonIcon:	      INCBIN "gfx/icons/bagon.2bpp"
 ShelgonIcon:	  INCBIN "gfx/icons/shelgon.2bpp"
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 SalamenceIcon:	  INCBIN "gfx/icons/salamence.2bpp"
 BeldumIcon:       INCBIN "gfx/icons/beldum.2bpp"
 MetangIcon:       INCBIN "gfx/icons/metang.2bpp"

@@ -117,8 +117,11 @@ Icons3:
 	dw TrapinchIcon
 	dw VibravaIcon
 	dw FlygonIcon
+<<<<<<< HEAD
 	dw FeebasIcon
 	dw MiloticIcon
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 	dw RaikouIcon
 	dw EnteiIcon
 	dw SuicuneIcon
@@ -128,6 +131,11 @@ Icons3:
 	dw GibleIcon
 	dw GabiteIcon
 	dw GarchompIcon
+<<<<<<< HEAD
+=======
+	dw BagonIcon
+	dw ShelgonIcon
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 
 AzurillIcon:      INCBIN "gfx/icons/azurill.2bpp"
 MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
@@ -244,8 +252,11 @@ CameruptIcon:     INCBIN "gfx/icons/camerupt.2bpp"
 TrapinchIcon:     INCBIN "gfx/icons/trapinch.2bpp"
 VibravaIcon:      INCBIN "gfx/icons/vibrava.2bpp"
 FlygonIcon:       INCBIN "gfx/icons/flygon.2bpp"
+<<<<<<< HEAD
 FeebasIcon:       INCBIN "gfx/icons/feebas.2bpp"
 MiloticIcon:      INCBIN "gfx/icons/milotic.2bpp"
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 RaikouIcon:	      INCBIN "gfx/icons/raikou.2bpp"
 EnteiIcon:	      INCBIN "gfx/icons/entei.2bpp"
 SuicuneIcon:	  INCBIN "gfx/icons/suicune.2bpp"
@@ -255,3 +266,8 @@ TyranitarIcon:	  INCBIN "gfx/icons/tyranitar.2bpp"
 GibleIcon:        INCBIN "gfx/icons/gible.2bpp"
 GabiteIcon:       INCBIN "gfx/icons/gabite.2bpp"
 GarchompIcon:     INCBIN "gfx/icons/garchomp.2bpp"
+<<<<<<< HEAD
+=======
+BagonIcon:	      INCBIN "gfx/icons/bagon.2bpp"
+ShelgonIcon:	  INCBIN "gfx/icons/shelgon.2bpp"
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b

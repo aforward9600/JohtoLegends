@@ -15,8 +15,11 @@ EvosAttacksPointers3::
 	dw TrapinchEvosAttacks
 	dw VibravaEvosAttacks
 	dw FlygonEvosAttacks
+<<<<<<< HEAD
 	dw FeebasEvosAttacks
 	dw MiloticEvosAttacks
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 	dw RaikouEvosAttacks
 	dw EnteiEvosAttacks
 	dw SuicuneEvosAttacks
@@ -374,6 +377,7 @@ FlygonEvosAttacks:
 	dbw 47, DRAGON_RUSH
 	db 0 ; no more level-up moves
 
+<<<<<<< HEAD
 FeebasEvosAttacks:
 	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, MILOTIC
 	db 0 ; no more evolutions
@@ -403,6 +407,8 @@ MiloticEvosAttacks:
 	dbw 47, RAIN_DANCE
 	db 0 ; no more level-up moves
 
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 RaikouEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, BITE

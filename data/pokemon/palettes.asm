@@ -762,10 +762,13 @@ INCBIN "gfx/pokemon/vibrava/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/vibrava/shiny.pal"
 INCBIN "gfx/pokemon/flygon/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/flygon/shiny.pal"
+<<<<<<< HEAD
 INCBIN "gfx/pokemon/feebas/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/feebas/shiny.pal"
 INCBIN "gfx/pokemon/milotic/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/milotic/shiny.pal"
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 INCBIN "gfx/pokemon/raikou/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/raikou/shiny.pal"
 INCBIN "gfx/pokemon/entei/front.gbcpal", middle_colors

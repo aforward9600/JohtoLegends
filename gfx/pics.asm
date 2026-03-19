@@ -1792,6 +1792,7 @@ FlygonFrontpic:      INCBIN "gfx/pokemon/flygon/front.animated.2bpp.lz"
 SECTION "Flygon Back", ROMX
 
 FlygonBackpic:       INCBIN "gfx/pokemon/flygon/back.2bpp.lz"
+<<<<<<< HEAD
 
 SECTION "Feebas Front", ROMX
 
@@ -1808,3 +1809,5 @@ MiloticFrontpic:     INCBIN "gfx/pokemon/milotic/front.animated.2bpp.lz"
 SECTION "Milotic Back", ROMX
 
 MiloticBackpic:      INCBIN "gfx/pokemon/milotic/back.2bpp.lz"
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b

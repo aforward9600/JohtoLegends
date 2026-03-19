@@ -365,8 +365,11 @@ AnimationIdlePointers:
 	dw TrapinchAnimationIdle
 	dw VibravaAnimationIdle
 	dw FlygonAnimationIdle
+<<<<<<< HEAD
 	dw FeebasAnimationIdle
 	dw MiloticAnimationIdle
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 	dw RaikouAnimationIdle
 	dw EnteiAnimationIdle
 	dw SuicuneAnimationIdle

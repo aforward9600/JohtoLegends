@@ -131,8 +131,11 @@ INCLUDE "data/pokemon/base_stats/camerupt.asm"
 INCLUDE "data/pokemon/base_stats/trapinch.asm"
 INCLUDE "data/pokemon/base_stats/vibrava.asm"
 INCLUDE "data/pokemon/base_stats/flygon.asm"
+<<<<<<< HEAD
 INCLUDE "data/pokemon/base_stats/feebas.asm"
 INCLUDE "data/pokemon/base_stats/milotic.asm"
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 INCLUDE "data/pokemon/base_stats/raikou.asm"
 INCLUDE "data/pokemon/base_stats/entei.asm"
 INCLUDE "data/pokemon/base_stats/suicune.asm"

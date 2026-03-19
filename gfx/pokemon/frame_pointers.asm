@@ -365,8 +365,11 @@ FramesPointers:
 	dba TrapinchFrames
 	dba VibravaFrames
 	dba FlygonFrames
+<<<<<<< HEAD
 	dba FeebasFrames
 	dba MiloticFrames
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 	dba RaikouFrames
 	dba EnteiFrames
 	dba SuicuneFrames

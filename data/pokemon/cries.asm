@@ -371,8 +371,11 @@ PokemonCries::
 	mon_cry CRY_SLUGMA,      $324,  $0c7 ; TRAPINCH
 	mon_cry CRY_SLOWKING,    $050,  $185 ; VIBRAVA
 	mon_cry CRY_AMPHAROS,    $f09,  $1a2 ; FLYGON
+<<<<<<< HEAD
 	mon_cry CRY_DIGLETT,     $f57,  $062 ; FEEBAS
 	mon_cry CRY_GLIGAR,      $f39,  $4a0 ; MILOTIC
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 	mon_cry CRY_RAIKOU,      $22e,  $120 ; RAIKOU
 	mon_cry CRY_ENTEI,       $000,  $1a0 ; ENTEI
 	mon_cry CRY_MAGCARGO,    $000,  $180 ; SUICUNE

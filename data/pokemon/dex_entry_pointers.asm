@@ -365,8 +365,11 @@ PokedexDataPointerTable:
 	dba TrapinchPokedexEntry
 	dba VibravaPokedexEntry
 	dba FlygonPokedexEntry
+<<<<<<< HEAD
 	dba FeebasPokedexEntry
 	dba MiloticPokedexEntry
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 	dba SharpedoPokedexEntry
 	dba RaikouPokedexEntry
 	dba EnteiPokedexEntry

@@ -180,8 +180,11 @@ EggMovePointers2::
 	dw TrapinchEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+<<<<<<< HEAD
 	dw FeebasEggMoves
 	dw NoEggMoves2
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -902,6 +905,7 @@ TrapinchEggMoves:
 	dw QUICK_ATTACK
 	dw -1 ; end
 
+<<<<<<< HEAD
 FeebasEggMoves:
 	dw CONFUSE_RAY
 	dw DRAGONBREATH
@@ -910,6 +914,8 @@ FeebasEggMoves:
 	dw MIST
 	dw -1
 
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 LarvitarEggMoves:
 	dw PURSUIT
 	dw STOMP

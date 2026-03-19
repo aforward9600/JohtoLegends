@@ -350,8 +350,11 @@ CameruptBitmasks:   INCLUDE "gfx/pokemon/camerupt/bitmask.asm"
 TrapinchBitmasks:   INCLUDE "gfx/pokemon/trapinch/bitmask.asm"
 VibravaBitmasks:    INCLUDE "gfx/pokemon/vibrava/bitmask.asm"
 FlygonBitmasks:     INCLUDE "gfx/pokemon/flygon/bitmask.asm"
+<<<<<<< HEAD
 FeebasBitmasks:     INCLUDE "gfx/pokemon/feebas/bitmask.asm"
 MiloticBitmasks:    INCLUDE "gfx/pokemon/milotic/bitmask.asm"
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 RaikouBitmasks:     INCLUDE "gfx/pokemon/raikou/bitmask.asm"
 EnteiBitmasks:      INCLUDE "gfx/pokemon/entei/bitmask.asm"
 SuicuneBitmasks:    INCLUDE "gfx/pokemon/suicune/bitmask.asm"

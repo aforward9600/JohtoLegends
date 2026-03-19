@@ -369,8 +369,11 @@ PokemonNames::
 	db "Trapinch@@"
 	db "Vibrava@@@"
 	db "Flygon@@@@"
+<<<<<<< HEAD
 	db "Feebas@@@@"
 	db "Milotic@@@"
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 	db "Raikou@@@@"
 	db "Entei@@@@@"
 	db "Suicune@@@"

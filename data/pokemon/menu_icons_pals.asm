@@ -377,8 +377,11 @@ MonMenuIconPals:
 	icon_pals RED,    GREEN  ; TRAPINCH
 	icon_pals GREEN,  RED    ; VIBRAVA
 	icon_pals GREEN,  BLUE   ; FLYGON
+<<<<<<< HEAD
 	icon_pals BLUE,   PURPLE ; FEEBAS
 	icon_pals RED,    BLUE   ; MILOTIC
+=======
+>>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 	icon_pals RED,    PINK   ; RAIKOU
 	icon_pals RED,    BROWN  ; ENTEI
 	icon_pals BLUE,   TEAL   ; SUICUNE
