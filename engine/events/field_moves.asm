@@ -410,8 +410,7 @@ FlyFunction_FrameTimer:
 	and $7
 	ret nz
 	ld de, SFX_FLY
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 .exit
 	ld hl, wJumptableIndex

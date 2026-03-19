@@ -1611,7 +1611,7 @@ ChangePokemonAbility:
 	jr .cancel
 
 .ChangeToFirstAbility
-	ld a, 0
+	xor a
 	ld [hl], a
 	jr .AbilityChanged
 
@@ -1778,7 +1778,7 @@ RevivalHerbEffect:
 	ld c, HAPPINESS_REVIVALHERB
 	farcall ChangeHappiness
 	call LooksBitterMessage
-	ld a, 0
+	xor a
 
 .asm_f0c5
 	jp StatusHealer_Jumptable
@@ -1834,7 +1834,7 @@ RevivePokemon:
 	ld [wPartyMenuActionText], a
 	call ItemActionTextWaitButton
 	call UseDisposableItem
-	ld a, 0
+	xor a
 	ret
 
 FullRestoreEffect:
@@ -1870,7 +1870,7 @@ FullRestoreEffect:
 	ld [wPartyMenuActionText], a
 	call ItemActionTextWaitButton
 	call UseDisposableItem
-	ld a, 0
+	xor a
 	ret
 
 BitterBerryEffect:
@@ -1887,7 +1887,7 @@ BitterBerryEffect:
 	ld hl, ConfusedNoMoreText
 	call StdBattleTextbox
 
-	ld a, 0
+	xor a
 
 .done
 	jp StatusHealer_Jumptable
@@ -1924,7 +1924,7 @@ ItemRestore4thHP:
 	ld [wPartyMenuActionText], a
 	call ItemActionTextWaitButton
 	call UseDisposableItem
-	ld a, 0
+	xor a
 	ret
 
 ItemRestoreHP:
@@ -1951,7 +1951,7 @@ ItemRestoreHP:
 	ld [wPartyMenuActionText], a
 	call ItemActionTextWaitButton
 	call UseDisposableItem
-	ld a, 0
+	xor a
 	ret
 
 GetOneFourthMaxHP:

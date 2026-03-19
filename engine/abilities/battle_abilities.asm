@@ -44,7 +44,7 @@ SetEnemyAbility::
 	jr .FinishEnemyAbility
 
 .Ability1
-	ld a, 0
+	xor a
 	jr .FinishEnemyAbility
 
 .WildAbilities
@@ -56,7 +56,7 @@ SetEnemyAbility::
 	cp 50 percent + 1
 	jr c, .secondability
 
-	ld a, 0
+	xor a
 	jr .FinishEnemyAbility
 
 .secondability
@@ -1954,7 +1954,7 @@ EnemySwitchAbilities:
 	jr z, .EnemyRegeneratorAbility
 	cp NATURAL_CURE
 	ret nz
-	ld a, 0
+	xor a
 	ld [wEnemyMonStatus], a
 	jp UpdateEnemyMonInParty
 
@@ -1975,7 +1975,7 @@ PlayerSwitchAbilities:
 	jr z, .PlayerRegeneratorAbility
 	cp NATURAL_CURE
 	ret nz
-	ld a, 0
+	xor a
 	ld [wBattleMonStatus], a
 	call UpdateBattleMonInParty
 	jp UpdateUserInParty

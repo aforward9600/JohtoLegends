@@ -900,7 +900,7 @@ HandleTrackVibrato:
 	ld a, e
 	sub d
 	jr nc, .no_carry
-	ld a, 0
+	xor a
 	jr .no_carry
 
 .down
@@ -957,10 +957,10 @@ ApplyPitchWheel:
 	add hl, bc
 	add [hl]
 	ld [hl], a
-	ld a, 0
+	xor a
 	adc e
 	ld e, a
-	ld a, 0
+	xor a
 	adc d
 	ld d, a
 	; Compare the dw at [Channel*PitchWheelTarget] to de.

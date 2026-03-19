@@ -7315,7 +7315,7 @@ GiveExperiencePoints:
 	ld a, 1
 	jr .got_macho_brace
 .no_macho_brace
-	ld a, 0
+	xor a
 .got_macho_brace
 	ld [wMachoBraceBuffer], a
 	ld hl, MON_EVS
@@ -7449,7 +7449,7 @@ endc
 	inc hl
 	ld a, [wPlayerID + 1]
 	cp [hl]
-	ld a, 0
+	xor a
 	jr z, .no_boost
 
 .boosted

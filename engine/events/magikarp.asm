@@ -66,23 +66,21 @@ CheckMagikarpLength:
 	call SkipNames
 	call CopyBytes
 	ld a, MAGIKARPLENGTH_BEAT_RECORD
+.FinishMagikarp
 	ld [wScriptVar], a
 	ret
 
 .not_long_enough
 	ld a, MAGIKARPLENGTH_TOO_SHORT
-	ld [wScriptVar], a
-	ret
+	jr .FinishMagikarp
 
 .declined
 	ld a, MAGIKARPLENGTH_REFUSED
-	ld [wScriptVar], a
-	ret
+	jr .FinishMagikarp
 
 .not_magikarp
 	xor a ; MAGIKARPLENGTH_NOT_MAGIKARP
-	ld [wScriptVar], a
-	ret
+	jr .FinishMagikarp
 
 .MeasureItText:
 	; Let me measure that MAGIKARP. …Hm, it measures @ .
