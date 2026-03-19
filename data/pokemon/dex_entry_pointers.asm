@@ -365,6 +365,7 @@ PokedexDataPointerTable:
 	dba TrapinchPokedexEntry
 	dba VibravaPokedexEntry
 	dba FlygonPokedexEntry
+	dba AbsolPokedexEntry
 	dba FeebasPokedexEntry
 	dba MiloticPokedexEntry
 	dba SharpedoPokedexEntry

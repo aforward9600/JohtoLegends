@@ -367,6 +367,7 @@ FramesPointers:
 	dba FlygonFrames
 	dba FeebasFrames
 	dba MiloticFrames
+	dba AbsolFrames
 	dba RaikouFrames
 	dba EnteiFrames
 	dba SuicuneFrames

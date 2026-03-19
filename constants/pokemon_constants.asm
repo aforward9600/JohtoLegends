@@ -388,6 +388,7 @@ JOHTO_POKEMON EQU const_value
 	const FLYGON
 	const FEEBAS
 	const MILOTIC
+	const ABSOL
 	const RAIKOU       ; 164 1
 	const ENTEI        ; 165 1
 	const SUICUNE      ; 166 1

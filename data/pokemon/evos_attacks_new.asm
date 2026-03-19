@@ -17,6 +17,7 @@ EvosAttacksPointers3::
 	dw FlygonEvosAttacks
 	dw FeebasEvosAttacks
 	dw MiloticEvosAttacks
+	dw AbsolEvosAttacks
 	dw RaikouEvosAttacks
 	dw EnteiEvosAttacks
 	dw SuicuneEvosAttacks
@@ -401,6 +402,27 @@ MiloticEvosAttacks:
 	dbw 41, COIL
 	dbw 44, HYDRO_PUMP
 	dbw 47, RAIN_DANCE
+	db 0 ; no more level-up moves
+
+AbsolEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 4, LEER
+	dbw 7, QUICK_ATTACK
+	dbw 10, PURSUIT
+	dbw 13, HOWL
+	dbw 16, BITE
+	dbw 19, DOUBLE_TEAM
+	dbw 22, SLASH
+	dbw 25, SWORDS_DANCE
+	dbw 29, NIGHT_SLASH
+	dbw 33, DETECT
+	dbw 37, PSYCHO_CUT
+	dbw 41, NASTY_PLOT
+	dbw 45, SUCKER_PUNCH
+	dbw 49, RAZOR_WIND
+	dbw 53, FUTURE_SIGHT
+	dbw 57, PERISH_SONG
 	db 0 ; no more level-up moves
 
 RaikouEvosAttacks:

@@ -371,6 +371,7 @@ PokemonNames::
 	db "Flygon@@@@"
 	db "Feebas@@@@"
 	db "Milotic@@@"
+	db "Absol@@@@@"
 	db "Raikou@@@@"
 	db "Entei@@@@@"
 	db "Suicune@@@"

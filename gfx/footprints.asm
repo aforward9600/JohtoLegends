@@ -367,6 +367,7 @@ INCBIN "gfx/footprints/vibrava.1bpp"
 INCBIN "gfx/footprints/flygon.1bpp"
 INCBIN "gfx/footprints/gastly.1bpp" ; Feebas
 INCBIN "gfx/footprints/gastly.1bpp" ; Milotic
+INCBIN "gfx/footprints/absol.1bpp"
 INCBIN "gfx/footprints/raikou.1bpp"
 INCBIN "gfx/footprints/entei.1bpp"
 INCBIN "gfx/footprints/suicune.1bpp"

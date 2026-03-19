@@ -2,6 +2,7 @@ SECTION "Mon Icons 4", ROMX
 
 Icons4:
 
+	dw GarchompIcon
 	dw BagonIcon
 	dw ShelgonIcon
 	dw SalamenceIcon
@@ -22,6 +23,7 @@ Icons4:
 	dw TaurosPFireIcon
 	dw TaurosPWaterIcon
 
+GarchompIcon:     INCBIN "gfx/icons/garchomp.2bpp"
 BagonIcon:	      INCBIN "gfx/icons/bagon.2bpp"
 ShelgonIcon:	  INCBIN "gfx/icons/shelgon.2bpp"
 SalamenceIcon:	  INCBIN "gfx/icons/salamence.2bpp"

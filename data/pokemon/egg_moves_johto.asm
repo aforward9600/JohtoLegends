@@ -182,6 +182,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw FeebasEggMoves
 	dw NoEggMoves2
+	dw AbsolEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -909,6 +910,18 @@ FeebasEggMoves:
 	dw MIRROR_COAT
 	dw MIST
 	dw -1
+
+AbsolEggMoves:
+	dw BATON_PASS
+	dw CURSE
+	dw DOUBLE_EDGE
+	dw FAINT_ATTACK
+	dw MEAN_LOOK
+	dw MEGAHORN
+	dw PLAY_ROUGH
+	dw SUCKER_PUNCH
+	dw ZEN_HEADBUTT
+	dw -1 ; end
 
 LarvitarEggMoves:
 	dw PURSUIT

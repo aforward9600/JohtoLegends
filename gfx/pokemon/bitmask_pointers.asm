@@ -367,6 +367,7 @@ BitmasksPointers:
 	dw FlygonBitmasks
 	dw FeebasBitmasks
 	dw MiloticBitmasks
+	dw AbsolBitmasks
 	dw RaikouBitmasks
 	dw EnteiBitmasks
 	dw SuicuneBitmasks

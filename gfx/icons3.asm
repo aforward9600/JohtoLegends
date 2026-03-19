@@ -119,6 +119,7 @@ Icons3:
 	dw FlygonIcon
 	dw FeebasIcon
 	dw MiloticIcon
+	dw AbsolIcon
 	dw RaikouIcon
 	dw EnteiIcon
 	dw SuicuneIcon
@@ -127,7 +128,6 @@ Icons3:
 	dw TyranitarIcon
 	dw GibleIcon
 	dw GabiteIcon
-	dw GarchompIcon
 
 AzurillIcon:      INCBIN "gfx/icons/azurill.2bpp"
 MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
@@ -246,6 +246,7 @@ VibravaIcon:      INCBIN "gfx/icons/vibrava.2bpp"
 FlygonIcon:       INCBIN "gfx/icons/flygon.2bpp"
 FeebasIcon:       INCBIN "gfx/icons/feebas.2bpp"
 MiloticIcon:      INCBIN "gfx/icons/milotic.2bpp"
+AbsolIcon:        INCBIN "gfx/icons/absol.2bpp"
 RaikouIcon:	      INCBIN "gfx/icons/raikou.2bpp"
 EnteiIcon:	      INCBIN "gfx/icons/entei.2bpp"
 SuicuneIcon:	  INCBIN "gfx/icons/suicune.2bpp"
@@ -254,4 +255,3 @@ PupitarIcon:	  INCBIN "gfx/icons/pupitar.2bpp"
 TyranitarIcon:	  INCBIN "gfx/icons/tyranitar.2bpp"
 GibleIcon:        INCBIN "gfx/icons/gible.2bpp"
 GabiteIcon:       INCBIN "gfx/icons/gabite.2bpp"
-GarchompIcon:     INCBIN "gfx/icons/garchomp.2bpp"

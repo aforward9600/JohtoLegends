@@ -373,6 +373,7 @@ PokemonCries::
 	mon_cry CRY_AMPHAROS,    $f09,  $1a2 ; FLYGON
 	mon_cry CRY_DIGLETT,     $f57,  $062 ; FEEBAS
 	mon_cry CRY_GLIGAR,      $f39,  $4a0 ; MILOTIC
+	mon_cry CRY_BLASTOISE,   $280,  $0a0 ; ABSOL
 	mon_cry CRY_RAIKOU,      $22e,  $120 ; RAIKOU
 	mon_cry CRY_ENTEI,       $000,  $1a0 ; ENTEI
 	mon_cry CRY_MAGCARGO,    $000,  $180 ; SUICUNE

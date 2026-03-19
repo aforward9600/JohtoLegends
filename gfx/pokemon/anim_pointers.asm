@@ -367,6 +367,7 @@ AnimationPointers:
 	dw FlygonAnimation
 	dw FeebasAnimation
 	dw MiloticAnimation
+	dw AbsolAnimation
 	dw RaikouAnimation
 	dw EnteiAnimation
 	dw SuicuneAnimation

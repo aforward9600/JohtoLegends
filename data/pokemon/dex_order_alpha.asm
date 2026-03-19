@@ -2,6 +2,7 @@
 
 AlphabeticalPokedexOrder:
 	dw ABRA
+	dw ABSOL
 	dw AERODACTYL
 	dw AGGRON
 	dw AIPOM

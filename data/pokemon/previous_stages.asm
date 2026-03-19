@@ -372,6 +372,7 @@ PreviousEvolutionStage::
 	dw 0
 	dw 0
 	dw 0
+	dw 0
 	dw LARVITAR
 	dw PUPITAR   ;f8
 	dw 0

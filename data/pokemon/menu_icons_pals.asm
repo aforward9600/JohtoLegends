@@ -379,6 +379,7 @@ MonMenuIconPals:
 	icon_pals GREEN,  BLUE   ; FLYGON
 	icon_pals BLUE,   PURPLE ; FEEBAS
 	icon_pals RED,    BLUE   ; MILOTIC
+	icon_pals GRAY,   RED    ; ABSOL
 	icon_pals RED,    PINK   ; RAIKOU
 	icon_pals RED,    BROWN  ; ENTEI
 	icon_pals BLUE,   TEAL   ; SUICUNE

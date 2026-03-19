@@ -367,6 +367,7 @@ AnimationIdlePointers:
 	dw FlygonAnimationIdle
 	dw FeebasAnimationIdle
 	dw MiloticAnimationIdle
+	dw AbsolAnimationIdle
 	dw RaikouAnimationIdle
 	dw EnteiAnimationIdle
 	dw SuicuneAnimationIdle

@@ -1808,3 +1808,11 @@ MiloticFrontpic:     INCBIN "gfx/pokemon/milotic/front.animated.2bpp.lz"
 SECTION "Milotic Back", ROMX
 
 MiloticBackpic:      INCBIN "gfx/pokemon/milotic/back.2bpp.lz"
+
+SECTION "Absol Front", ROMX
+
+AbsolFrontpic:       INCBIN "gfx/pokemon/absol/front.animated.2bpp.lz"
+
+SECTION "Absol Back", ROMX
+
+AbsolBackpic:        INCBIN "gfx/pokemon/absol/back.2bpp.lz"
