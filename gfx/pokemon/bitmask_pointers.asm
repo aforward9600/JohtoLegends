@@ -365,11 +365,8 @@ BitmasksPointers:
 	dw TrapinchBitmasks
 	dw VibravaBitmasks
 	dw FlygonBitmasks
-<<<<<<< HEAD
 	dw FeebasBitmasks
 	dw MiloticBitmasks
-=======
->>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 	dw RaikouBitmasks
 	dw EnteiBitmasks
 	dw SuicuneBitmasks

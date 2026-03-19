@@ -367,11 +367,8 @@ PreviousEvolutionStage::
 	dw TRAPINCH
 	dw VIBRAVA
 	dw 0
-<<<<<<< HEAD
 	dw FEEBAS
 	dw 0
-=======
->>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 	dw 0
 	dw 0
 	dw 0

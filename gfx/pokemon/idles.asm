@@ -350,11 +350,8 @@ CameruptAnimationIdle:   INCLUDE "gfx/pokemon/camerupt/anim_idle.asm"
 TrapinchAnimationIdle:   INCLUDE "gfx/pokemon/trapinch/anim_idle.asm"
 VibravaAnimationIdle:    INCLUDE "gfx/pokemon/vibrava/anim_idle.asm"
 FlygonAnimationIdle:     INCLUDE "gfx/pokemon/flygon/anim_idle.asm"
-<<<<<<< HEAD
 FeebasAnimationIdle:     INCLUDE "gfx/pokemon/feebas/anim_idle.asm"
 MiloticAnimationIdle:    INCLUDE "gfx/pokemon/milotic/anim_idle.asm"
-=======
->>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 RaikouAnimationIdle:     INCLUDE "gfx/pokemon/raikou/anim_idle.asm"
 EnteiAnimationIdle:      INCLUDE "gfx/pokemon/entei/anim_idle.asm"
 SuicuneAnimationIdle:    INCLUDE "gfx/pokemon/suicune/anim_idle.asm"

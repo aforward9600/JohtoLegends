@@ -350,11 +350,8 @@ CameruptAnimation:   INCLUDE "gfx/pokemon/camerupt/anim.asm"
 TrapinchAnimation:   INCLUDE "gfx/pokemon/trapinch/anim.asm"
 VibravaAnimation:    INCLUDE "gfx/pokemon/vibrava/anim.asm"
 FlygonAnimation:     INCLUDE "gfx/pokemon/flygon/anim.asm"
-<<<<<<< HEAD
 FeebasAnimation:     INCLUDE "gfx/pokemon/feebas/anim.asm"
 MiloticAnimation:    INCLUDE "gfx/pokemon/milotic/anim.asm"
-=======
->>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 RaikouAnimation:     INCLUDE "gfx/pokemon/raikou/anim.asm"
 EnteiAnimation:      INCLUDE "gfx/pokemon/entei/anim.asm"
 SuicuneAnimation:    INCLUDE "gfx/pokemon/suicune/anim.asm"

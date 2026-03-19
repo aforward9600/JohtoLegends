@@ -386,11 +386,8 @@ JOHTO_POKEMON EQU const_value
 	const TRAPINCH
 	const VIBRAVA
 	const FLYGON
-<<<<<<< HEAD
 	const FEEBAS
 	const MILOTIC
-=======
->>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 	const RAIKOU       ; 164 1
 	const ENTEI        ; 165 1
 	const SUICUNE      ; 166 1

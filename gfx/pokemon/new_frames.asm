@@ -1,11 +1,8 @@
 NewFrames:
 
-<<<<<<< HEAD
 RaikouFrames:     INCLUDE "gfx/pokemon/raikou/frames.asm"
 EnteiFrames:      INCLUDE "gfx/pokemon/entei/frames.asm"
 SuicuneFrames:    INCLUDE "gfx/pokemon/suicune/frames.asm"
-=======
->>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 LarvitarFrames:   INCLUDE "gfx/pokemon/larvitar/frames.asm"
 PupitarFrames:    INCLUDE "gfx/pokemon/pupitar/frames.asm"
 TyranitarFrames:  INCLUDE "gfx/pokemon/tyranitar/frames.asm"

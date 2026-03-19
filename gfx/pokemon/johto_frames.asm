@@ -167,14 +167,8 @@ CameruptFrames:   INCLUDE "gfx/pokemon/camerupt/frames.asm"
 TrapinchFrames:   INCLUDE "gfx/pokemon/trapinch/frames.asm"
 VibravaFrames:    INCLUDE "gfx/pokemon/vibrava/frames.asm"
 FlygonFrames:     INCLUDE "gfx/pokemon/flygon/frames.asm"
-<<<<<<< HEAD
 FeebasFrames:     INCLUDE "gfx/pokemon/feebas/frames.asm"
 MiloticFrames:    INCLUDE "gfx/pokemon/milotic/frames.asm"
-=======
-RaikouFrames:     INCLUDE "gfx/pokemon/raikou/frames.asm"
-EnteiFrames:      INCLUDE "gfx/pokemon/entei/frames.asm"
-SuicuneFrames:    INCLUDE "gfx/pokemon/suicune/frames.asm"
->>>>>>> 09cb6dd69a723fa734da3e4b018ff1e4e9d56e7b
 SwabluFrames:     INCLUDE "gfx/pokemon/swablu/frames.asm"
 AltariaFrames:    INCLUDE "gfx/pokemon/altaria/frames.asm"
 KotoraFrames:     INCLUDE "gfx/pokemon/kotora/frames.asm"
