@@ -341,37 +341,31 @@ JOHTO_POKEMON EQU const_value
 	const WYRDEER      ; 13f 6
 	const SMEARGLE     ; 140 2
 	const MILTANK      ; 141 5
+	const RAIKOU       ; 164 1
+	const ENTEI        ; 165 1
+	const SUICUNE      ; 166 1
+	const LARVITAR     ; 167 1
+	const PUPITAR      ; 168 2
+	const TYRANITAR    ; 169 6
+	const LUGIA        ; 173 1
+	const HO_OH        ; 174 1
+	const CELEBI       ; 175 0
 	const KOTORA       ; 142 1
 	const RAITORA      ; 143 3
 	const GOROTORA     ; 144 5
-	const BUDEW        ; 145 1
-	const ROSELIA      ; 146 4
-	const ROSERADE     ; 147 11
-	const ELECTRIKE    ; 148 2
-	const MANECTRIC    ; 149 8
 	const CROAGUNK     ; 14a 2
 	const TOXICROAK    ; 14b 6
-	const SWABLU       ; 14c 1
-	const ALTARIA      ; 14d 7
-	const DUSKULL      ; 14e 3
-	const DUSCLOPS     ; 14f 3
-	const DUSKNOIR     ; 150 6
+	const BRONZOR      ; 157 2
+	const BRONZONG     ; 158 6
 	const LOTAD        ; 151 1
 	const LOMBRE       ; 152 1
 	const LUDICOLO     ; 153 8
-	const SNORUNT      ; 154 3
-	const GLALIE       ; 155 3
-	const FROSLASS     ; 156 6
-	const BRONZOR      ; 157 2
-	const BRONZONG     ; 158 6
-	const CACNEA       ; 159 3
-	const CACTURNE     ; 15a 8
+	const SHROOMISH    ; 15f 1
+	const BRELOOM      ; 160 2
 	const RALTS        ; 15b 2
 	const KIRLIA       ; 15c 2
 	const GARDEVOIR    ; 15d 9
 	const GALLADE      ; 15e 9
-	const SHROOMISH    ; 15f 1
-	const BRELOOM      ; 160 2
 	const SABLEYE
 	const MAWILE
 	const ARON         ; 161 3
@@ -379,6 +373,11 @@ JOHTO_POKEMON EQU const_value
 	const AGGRON       ; 163 9
 	const MEDITITE
 	const MEDICHAM
+	const ELECTRIKE    ; 148 2
+	const MANECTRIC    ; 149 8
+	const BUDEW        ; 145 1
+	const ROSELIA      ; 146 4
+	const ROSERADE     ; 147 11
 	const CARVANHA
 	const SHARPEDO
 	const NUMEL
@@ -386,27 +385,28 @@ JOHTO_POKEMON EQU const_value
 	const TRAPINCH
 	const VIBRAVA
 	const FLYGON
+	const CACNEA       ; 159 3
+	const CACTURNE     ; 15a 8
+	const SWABLU       ; 14c 1
+	const ALTARIA      ; 14d 7
 	const FEEBAS
 	const MILOTIC
+	const DUSKULL      ; 14e 3
+	const DUSCLOPS     ; 14f 3
+	const DUSKNOIR     ; 150 6
 	const ABSOL
-	const RAIKOU       ; 164 1
-	const ENTEI        ; 165 1
-	const SUICUNE      ; 166 1
-	const LARVITAR     ; 167 1
-	const PUPITAR      ; 168 2
-	const TYRANITAR    ; 169 6
-	const GIBLE        ; 16a 1
-	const GABITE       ; 16b 5
-	const GARCHOMP     ; 16c 9
+	const SNORUNT      ; 154 3
+	const GLALIE       ; 155 3
+	const FROSLASS     ; 156 6
 	const BAGON        ; 16d 1
 	const SHELGON      ; 16e 1
 	const SALAMENCE    ; 16f 7
 	const BELDUM       ; 170 1
 	const METANG       ; 171 2
 	const METAGROSS    ; 172 2
-	const LUGIA        ; 173 1
-	const HO_OH        ; 174 1
-	const CELEBI       ; 175 0
+	const GIBLE        ; 16a 1
+	const GABITE       ; 16b 5
+	const GARCHOMP     ; 16c 9
 	const NOWN         ; 176 0
 	const MISSINGNO    ; 177 0
 	const REGIROCK     ; 178 0

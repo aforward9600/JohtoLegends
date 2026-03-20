@@ -320,37 +320,31 @@ AnimationIdlePointers:
 	dw WyrdeerAnimationIdle
 	dw SmeargleAnimationIdle
 	dw MiltankAnimationIdle
+	dw RaikouAnimationIdle
+	dw EnteiAnimationIdle
+	dw SuicuneAnimationIdle
+	dw LarvitarAnimationIdle
+	dw PupitarAnimationIdle
+	dw TyranitarAnimationIdle
+	dw LugiaAnimationIdle
+	dw HoOhAnimationIdle
+	dw CelebiAnimationIdle
 	dw KotoraAnimationIdle
 	dw RaitoraAnimationIdle
 	dw GorotoraAnimationIdle
-	dw BudewAnimationIdle
-	dw RoseliaAnimationIdle
-	dw RoseradeAnimationIdle
-	dw ElectrikeAnimationIdle
-	dw ManectricAnimationIdle
 	dw CroagunkAnimationIdle
 	dw ToxicroakAnimationIdle
-	dw SwabluAnimationIdle
-	dw AltariaAnimationIdle
-	dw DuskullAnimationIdle
-	dw DusclopsAnimationIdle
-	dw DusknoirAnimationIdle
+	dw BronzorAnimationIdle
+	dw BronzongAnimationIdle
 	dw LotadAnimationIdle
 	dw LombreAnimationIdle
 	dw LudicoloAnimationIdle
-	dw SnoruntAnimationIdle
-	dw GlalieAnimationIdle
-	dw FroslassAnimationIdle
-	dw BronzorAnimationIdle
-	dw BronzongAnimationIdle
-	dw CacneaAnimationIdle
-	dw CacturneAnimationIdle
+	dw ShroomishAnimationIdle
+	dw BreloomAnimationIdle
 	dw RaltsAnimationIdle
 	dw KirliaAnimationIdle
 	dw GardevoirAnimationIdle
 	dw GalladeAnimationIdle
-	dw ShroomishAnimationIdle
-	dw BreloomAnimationIdle
 	dw SableyeAnimationIdle
 	dw MawileAnimationIdle
 	dw AronAnimationIdle
@@ -358,6 +352,11 @@ AnimationIdlePointers:
 	dw AggronAnimationIdle
 	dw MedititeAnimationIdle
 	dw MedichamAnimationIdle
+	dw ElectrikeAnimationIdle
+	dw ManectricAnimationIdle
+	dw BudewAnimationIdle
+	dw RoseliaAnimationIdle
+	dw RoseradeAnimationIdle
 	dw CarvanhaAnimationIdle
 	dw SharpedoAnimationIdle
 	dw NumelAnimationIdle
@@ -365,27 +364,28 @@ AnimationIdlePointers:
 	dw TrapinchAnimationIdle
 	dw VibravaAnimationIdle
 	dw FlygonAnimationIdle
+	dw CacneaAnimationIdle
+	dw CacturneAnimationIdle
+	dw SwabluAnimationIdle
+	dw AltariaAnimationIdle
 	dw FeebasAnimationIdle
 	dw MiloticAnimationIdle
+	dw DuskullAnimationIdle
+	dw DusclopsAnimationIdle
+	dw DusknoirAnimationIdle
 	dw AbsolAnimationIdle
-	dw RaikouAnimationIdle
-	dw EnteiAnimationIdle
-	dw SuicuneAnimationIdle
-	dw LarvitarAnimationIdle
-	dw PupitarAnimationIdle
-	dw TyranitarAnimationIdle
-	dw GibleAnimationIdle
-	dw GabiteAnimationIdle
-	dw GarchompAnimationIdle
+	dw SnoruntAnimationIdle
+	dw GlalieAnimationIdle
+	dw FroslassAnimationIdle
 	dw BagonAnimationIdle
 	dw ShelgonAnimationIdle
 	dw SalamenceAnimationIdle
 	dw BeldumAnimationIdle
 	dw MetangAnimationIdle
 	dw MetagrossAnimationIdle
-	dw LugiaAnimationIdle
-	dw HoOhAnimationIdle
-	dw CelebiAnimationIdle
+	dw GibleAnimationIdle
+	dw GabiteAnimationIdle
+	dw GarchompAnimationIdle
 	dw NownAnimationIdle
 	dw MissingnoAnimationIdle
 	dw RegirockAnimationIdle

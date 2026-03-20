@@ -321,37 +321,31 @@ PokedexDataPointerTable:
 	dba WyrdeerPokedexEntry
 	dba SmearglePokedexEntry
 	dba MiltankPokedexEntry
+	dba RaikouPokedexEntry
+	dba EnteiPokedexEntry
+	dba SuicunePokedexEntry
+	dba LarvitarPokedexEntry
+	dba PupitarPokedexEntry
+	dba TyranitarPokedexEntry
+	dba LugiaPokedexEntry
+	dba HoOhPokedexEntry
+	dba CelebiPokedexEntry
 	dba KotoraPokedexEntry
 	dba RaitoraPokedexEntry
 	dba GorotoraPokedexEntry
-	dba BudewPokedexEntry
-	dba RoseliaPokedexEntry
-	dba RoseradePokedexEntry
-	dba ElectrikePokedexEntry
-	dba ManectricPokedexEntry
 	dba CroagunkPokedexEntry
 	dba ToxicroakPokedexEntry
-	dba SwabluPokedexEntry
-	dba AltariaPokedexEntry
-	dba DuskullPokedexEntry
-	dba DusclopsPokedexEntry
-	dba DusknoirPokedexEntry
+	dba BronzorPokedexEntry
+	dba BronzongPokedexEntry
 	dba LotadPokedexEntry
 	dba LombrePokedexEntry
 	dba LudicoloPokedexEntry
-	dba SnoruntPokedexEntry
-	dba GlaliePokedexEntry
-	dba FroslassPokedexEntry
-	dba BronzorPokedexEntry
-	dba BronzongPokedexEntry
-	dba CacneaPokedexEntry
-	dba CacturnePokedexEntry
+	dba ShroomishPokedexEntry
+	dba BreloomPokedexEntry
 	dba RaltsPokedexEntry
 	dba KirliaPokedexEntry
 	dba GardevoirPokedexEntry
 	dba GalladePokedexEntry
-	dba ShroomishPokedexEntry
-	dba BreloomPokedexEntry
 	dba SableyePokedexEntry
 	dba MawilePokedexEntry
 	dba AronPokedexEntry
@@ -359,34 +353,40 @@ PokedexDataPointerTable:
 	dba AggronPokedexEntry
 	dba MedititePokedexEntry
 	dba MedichamPokedexEntry
+	dba ElectrikePokedexEntry
+	dba ManectricPokedexEntry
+	dba BudewPokedexEntry
+	dba RoseliaPokedexEntry
+	dba RoseradePokedexEntry
 	dba CarvanhaPokedexEntry
+	dba SharpedoPokedexEntry
 	dba NumelPokedexEntry
 	dba CameruptPokedexEntry
 	dba TrapinchPokedexEntry
 	dba VibravaPokedexEntry
 	dba FlygonPokedexEntry
-	dba AbsolPokedexEntry
+	dba CacneaPokedexEntry
+	dba CacturnePokedexEntry
+	dba SwabluPokedexEntry
+	dba AltariaPokedexEntry
 	dba FeebasPokedexEntry
 	dba MiloticPokedexEntry
-	dba SharpedoPokedexEntry
-	dba RaikouPokedexEntry
-	dba EnteiPokedexEntry
-	dba SuicunePokedexEntry
-	dba LarvitarPokedexEntry
-	dba PupitarPokedexEntry
-	dba TyranitarPokedexEntry
-	dba GiblePokedexEntry
-	dba GabitePokedexEntry
-	dba GarchompPokedexEntry
+	dba DuskullPokedexEntry
+	dba DusclopsPokedexEntry
+	dba DusknoirPokedexEntry
+	dba AbsolPokedexEntry
+	dba SnoruntPokedexEntry
+	dba GlaliePokedexEntry
+	dba FroslassPokedexEntry
 	dba BagonPokedexEntry
 	dba ShelgonPokedexEntry
 	dba SalamencePokedexEntry
 	dba BeldumPokedexEntry
 	dba MetangPokedexEntry
 	dba MetagrossPokedexEntry
-	dba LugiaPokedexEntry
-	dba HoOhPokedexEntry
-	dba CelebiPokedexEntry
+	dba GiblePokedexEntry
+	dba GabitePokedexEntry
+	dba GarchompPokedexEntry
 	dba NownPokedexEntry
 	dba MissingnoPokedexEntry
 	dba RegirockPokedexEntry

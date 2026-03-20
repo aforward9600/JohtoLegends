@@ -320,37 +320,31 @@ FramesPointers:
 	dba WyrdeerFrames
 	dba SmeargleFrames
 	dba MiltankFrames
+	dba RaikouFrames
+	dba EnteiFrames
+	dba SuicuneFrames
+	dba LarvitarFrames
+	dba PupitarFrames
+	dba TyranitarFrames
+	dba LugiaFrames
+	dba HoOhFrames
+	dba CelebiFrames
 	dba KotoraFrames
 	dba RaitoraFrames
 	dba GorotoraFrames
-	dba BudewFrames
-	dba RoseliaFrames
-	dba RoseradeFrames
-	dba ElectrikeFrames
-	dba ManectricFrames
 	dba CroagunkFrames
 	dba ToxicroakFrames
-	dba SwabluFrames
-	dba AltariaFrames
-	dba DuskullFrames
-	dba DusclopsFrames
-	dba DusknoirFrames
+	dba BronzorFrames
+	dba BronzongFrames
 	dba LotadFrames
 	dba LombreFrames
 	dba LudicoloFrames
-	dba SnoruntFrames
-	dba GlalieFrames
-	dba FroslassFrames
-	dba BronzorFrames
-	dba BronzongFrames
-	dba CacneaFrames
-	dba CacturneFrames
+	dba ShroomishFrames
+	dba BreloomFrames
 	dba RaltsFrames
 	dba KirliaFrames
 	dba GardevoirFrames
 	dba GalladeFrames
-	dba ShroomishFrames
-	dba BreloomFrames
 	dba SableyeFrames
 	dba MawileFrames
 	dba AronFrames
@@ -358,6 +352,11 @@ FramesPointers:
 	dba AggronFrames
 	dba MedititeFrames
 	dba MedichamFrames
+	dba ElectrikeFrames
+	dba ManectricFrames
+	dba BudewFrames
+	dba RoseliaFrames
+	dba RoseradeFrames
 	dba CarvanhaFrames
 	dba SharpedoFrames
 	dba NumelFrames
@@ -365,27 +364,28 @@ FramesPointers:
 	dba TrapinchFrames
 	dba VibravaFrames
 	dba FlygonFrames
+	dba CacneaFrames
+	dba CacturneFrames
+	dba SwabluFrames
+	dba AltariaFrames
 	dba FeebasFrames
 	dba MiloticFrames
+	dba DuskullFrames
+	dba DusclopsFrames
+	dba DusknoirFrames
 	dba AbsolFrames
-	dba RaikouFrames
-	dba EnteiFrames
-	dba SuicuneFrames
-	dba LarvitarFrames
-	dba PupitarFrames
-	dba TyranitarFrames
-	dba GibleFrames
-	dba GabiteFrames
-	dba GarchompFrames
+	dba SnoruntFrames
+	dba GlalieFrames
+	dba FroslassFrames
 	dba BagonFrames
 	dba ShelgonFrames
 	dba SalamenceFrames
 	dba BeldumFrames
 	dba MetangFrames
 	dba MetagrossFrames
-	dba LugiaFrames
-	dba HoOhFrames
-	dba CelebiFrames
+	dba GibleFrames
+	dba GabiteFrames
+	dba GarchompFrames
 	dba NownFrames
 	dba MissingnoFrames
 	dba RegirockFrames

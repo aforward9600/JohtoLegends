@@ -320,37 +320,31 @@ BitmasksPointers:
 	dw WyrdeerBitmasks
 	dw SmeargleBitmasks
 	dw MiltankBitmasks
+	dw RaikouBitmasks
+	dw EnteiBitmasks
+	dw SuicuneBitmasks
+	dw LarvitarBitmasks
+	dw PupitarBitmasks
+	dw TyranitarBitmasks
+	dw LugiaBitmasks
+	dw HoOhBitmasks
+	dw CelebiBitmasks
 	dw KotoraBitmasks
 	dw RaitoraBitmasks
 	dw GorotoraBitmasks
-	dw BudewBitmasks
-	dw RoseliaBitmasks
-	dw RoseradeBitmasks
-	dw ElectrikeBitmasks
-	dw ManectricBitmasks
 	dw CroagunkBitmasks
 	dw ToxicroakBitmasks
-	dw SwabluBitmasks
-	dw AltariaBitmasks
-	dw DuskullBitmasks
-	dw DusclopsBitmasks
-	dw DusknoirBitmasks
+	dw BronzorBitmasks
+	dw BronzongBitmasks
 	dw LotadBitmasks
 	dw LombreBitmasks
 	dw LudicoloBitmasks
-	dw SnoruntBitmasks
-	dw GlalieBitmasks
-	dw FroslassBitmasks
-	dw BronzorBitmasks
-	dw BronzongBitmasks
-	dw CacneaBitmasks
-	dw CacturneBitmasks
+	dw ShroomishBitmasks
+	dw BreloomBitmasks
 	dw RaltsBitmasks
 	dw KirliaBitmasks
 	dw GardevoirBitmasks
 	dw GalladeBitmasks
-	dw ShroomishBitmasks
-	dw BreloomBitmasks
 	dw SableyeBitmasks
 	dw MawileBitmasks
 	dw AronBitmasks
@@ -358,6 +352,11 @@ BitmasksPointers:
 	dw AggronBitmasks
 	dw MedititeBitmasks
 	dw MedichamBitmasks
+	dw ElectrikeBitmasks
+	dw ManectricBitmasks
+	dw BudewBitmasks
+	dw RoseliaBitmasks
+	dw RoseradeBitmasks
 	dw CarvanhaBitmasks
 	dw SharpedoBitmasks
 	dw NumelBitmasks
@@ -365,27 +364,28 @@ BitmasksPointers:
 	dw TrapinchBitmasks
 	dw VibravaBitmasks
 	dw FlygonBitmasks
+	dw CacneaBitmasks
+	dw CacturneBitmasks
+	dw SwabluBitmasks
+	dw AltariaBitmasks
+	dw DuskullBitmasks
+	dw DusclopsBitmasks
+	dw DusknoirBitmasks
 	dw FeebasBitmasks
 	dw MiloticBitmasks
 	dw AbsolBitmasks
-	dw RaikouBitmasks
-	dw EnteiBitmasks
-	dw SuicuneBitmasks
-	dw LarvitarBitmasks
-	dw PupitarBitmasks
-	dw TyranitarBitmasks
-	dw GibleBitmasks
-	dw GabiteBitmasks
-	dw GarchompBitmasks
+	dw SnoruntBitmasks
+	dw GlalieBitmasks
+	dw FroslassBitmasks
 	dw BagonBitmasks
 	dw ShelgonBitmasks
 	dw SalamenceBitmasks
 	dw BeldumBitmasks
 	dw MetangBitmasks
 	dw MetagrossBitmasks
-	dw LugiaBitmasks
-	dw HoOhBitmasks
-	dw CelebiBitmasks
+	dw GibleBitmasks
+	dw GabiteBitmasks
+	dw GarchompBitmasks
 	dw NownBitmasks
 	dw MissingnoBitmasks
 	dw RegirockBitmasks

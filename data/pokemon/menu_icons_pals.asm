@@ -332,37 +332,31 @@ MonMenuIconPals:
 	icon_pals GRAY,   GREEN  ; WYRDEER
 	icon_pals BROWN,  GREEN  ; SMEARGLE
 	icon_pals PINK,   BLUE   ; MILTANK
+	icon_pals RED,    PINK   ; RAIKOU
+	icon_pals RED,    BROWN  ; ENTEI
+	icon_pals BLUE,   TEAL   ; SUICUNE
+	icon_pals GREEN,  PURPLE ; LARVITAR
+	icon_pals BLUE,   PURPLE ; PUPITAR
+	icon_pals GREEN,  GRAY   ; TYRANITAR
+	icon_pals BLUE,   RED    ; LUGIA
+	icon_pals RED,    GREEN  ; HO_OH
+	icon_pals GREEN,  PINK   ; CELEBI
 	icon_pals RED,    BROWN  ; KOTORA
 	icon_pals RED,    BROWN  ; RAITORA
 	icon_pals RED,    BROWN  ; GOROTORA
-	icon_pals GREEN,  TEAL   ; BUDEW
-	icon_pals GREEN,  PURPLE ; ROSELIA
-	icon_pals GREEN,  PURPLE ; ROSERADE
-	icon_pals GREEN,  BLUE   ; ELECTRIKE
-	icon_pals BLUE,   GRAY   ; MANECTRIC
 	icon_pals BLUE,   TEAL   ; CROAGUNK
 	icon_pals BLUE,   TEAL   ; TOXICROAK
-	icon_pals BLUE,   PINK   ; SWABLU
-	icon_pals BLUE,   PINK   ; ALTARIA
-	icon_pals GRAY,   PINK   ; DUSKULL
-	icon_pals GRAY,   PINK   ; DUSCLOPS
-	icon_pals GRAY,   BLUE   ; DUSKNOIR
+	icon_pals BLUE,   GREEN  ; BRONZOR
+	icon_pals BLUE,   GREEN  ; BRONZONG
 	icon_pals GREEN,  BLUE   ; LOTAD
 	icon_pals GREEN,  BLUE   ; LOMBRE
 	icon_pals GREEN,  BLUE   ; LUDICOLO
-	icon_pals RED,    BLUE   ; SNORUNT
-	icon_pals BLUE,   RED    ; GLALIE
-	icon_pals RED,    PURPLE ; FROSLASS
-	icon_pals BLUE,   GREEN  ; BRONZOR
-	icon_pals BLUE,   GREEN  ; BRONZONG
-	icon_pals GREEN,  RED    ; CACNEA
-	icon_pals GREEN,  RED    ; CACTURNE
+	icon_pals GREEN,  RED    ; SHROOMISH
+	icon_pals GREEN,  RED    ; BRELOOM
 	icon_pals GREEN,  BLUE   ; RALTS
 	icon_pals GREEN,  BLUE   ; KIRLIA
 	icon_pals GREEN,  BLUE   ; GARDEVOIR
 	icon_pals GREEN,  BLUE   ; GALLADE
-	icon_pals GREEN,  RED    ; SHROOMISH
-	icon_pals GREEN,  RED    ; BRELOOM
 	icon_pals PURPLE, RED    ; SABLEYE
 	icon_pals GRAY,   PINK   ; MAWILE
 	icon_pals GRAY,   TEAL   ; ARON
@@ -370,6 +364,11 @@ MonMenuIconPals:
 	icon_pals GRAY,   TEAL   ; AGGRON
 	icon_pals BLUE,   RED    ; MEDITITE
 	icon_pals RED,    BLUE   ; MEDICHAM
+	icon_pals GREEN,  BLUE   ; ELECTRIKE
+	icon_pals BLUE,   GRAY   ; MANECTRIC
+	icon_pals GREEN,  TEAL   ; BUDEW
+	icon_pals GREEN,  PURPLE ; ROSELIA
+	icon_pals GREEN,  PURPLE ; ROSERADE
 	icon_pals BLUE,   GREEN  ; CARVANHA
 	icon_pals BLUE,   PINK   ; SHARPEDO
 	icon_pals GREEN,  BLUE   ; NUMEL
@@ -377,27 +376,28 @@ MonMenuIconPals:
 	icon_pals RED,    GREEN  ; TRAPINCH
 	icon_pals GREEN,  RED    ; VIBRAVA
 	icon_pals GREEN,  BLUE   ; FLYGON
+	icon_pals GREEN,  RED    ; CACNEA
+	icon_pals GREEN,  RED    ; CACTURNE
+	icon_pals BLUE,   PINK   ; SWABLU
+	icon_pals BLUE,   PINK   ; ALTARIA
 	icon_pals BLUE,   PURPLE ; FEEBAS
 	icon_pals RED,    BLUE   ; MILOTIC
+	icon_pals GRAY,   PINK   ; DUSKULL
+	icon_pals GRAY,   PINK   ; DUSCLOPS
+	icon_pals GRAY,   BLUE   ; DUSKNOIR
 	icon_pals GRAY,   RED    ; ABSOL
-	icon_pals RED,    PINK   ; RAIKOU
-	icon_pals RED,    BROWN  ; ENTEI
-	icon_pals BLUE,   TEAL   ; SUICUNE
-	icon_pals GREEN,  PURPLE ; LARVITAR
-	icon_pals BLUE,   PURPLE ; PUPITAR
-	icon_pals GREEN,  GRAY   ; TYRANITAR
-	icon_pals BLUE,   PINK   ; GIBLE
-	icon_pals BLUE,   PINK   ; GABITE
-	icon_pals BLUE,   PINK   ; GARCHOMP
+	icon_pals RED,    BLUE   ; SNORUNT
+	icon_pals BLUE,   RED    ; GLALIE
+	icon_pals RED,    PURPLE ; FROSLASS
 	icon_pals BLUE,   PINK   ; BAGON
 	icon_pals BLUE,   PINK   ; SHELGON
 	icon_pals BLUE,   PINK   ; SALAMENCE
 	icon_pals BLUE,   GRAY   ; BELDUM
 	icon_pals BLUE,   GRAY   ; METANG
 	icon_pals BLUE,   GRAY   ; METAGROSS
-	icon_pals BLUE,   RED    ; LUGIA
-	icon_pals RED,    GREEN  ; HO_OH
-	icon_pals GREEN,  PINK   ; CELEBI
+	icon_pals BLUE,   PINK   ; GIBLE
+	icon_pals BLUE,   PINK   ; GABITE
+	icon_pals BLUE,   PINK   ; GARCHOMP
 	icon_pals GRAY,   BLUE   ; NOWN
 	icon_pals GRAY,   GRAY   ; MISSINGO.
 	icon_pals RED,    BROWN  ; REGIROCK

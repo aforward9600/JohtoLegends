@@ -322,36 +322,31 @@ PreviousEvolutionStage::
 	dw 0     ;f0
 	dw 0
 	dw 0
+	dw 0
+	dw 0
+	dw 0
+	dw LARVITAR
+	dw PUPITAR   ;f8
+	dw 0
+	dw 0
+	dw 0
+	dw 0
+	dw 0
 	dw KOTORA
 	dw RAITORA
 	dw 0
-	dw BUDEW
-	dw ROSELIA
-	dw 0
-	dw ELECTRIKE
-	dw 0
 	dw CROAGUNK
 	dw 0
-	dw SWABLU
-	dw 0
-	dw DUSKULL
-	dw DUSCLOPS
+	dw BRONZOR
 	dw 0
 	dw LOTAD
 	dw LOMBRE
 	dw 0
-	dw SNORUNT
-	dw SNORUNT
-	dw 0
-	dw BRONZOR
-	dw 0
-	dw CACNEA
+	dw SHROOMISH
 	dw 0
 	dw RALTS
 	dw KIRLIA
 	dw KIRLIA
-	dw 0
-	dw SHROOMISH
 	dw 0
 	dw 0
 	dw 0
@@ -360,6 +355,11 @@ PreviousEvolutionStage::
 	dw 0
 	dw MEDITITE
 	dw 0
+	dw ELECTRIKE
+	dw 0
+	dw BUDEW
+	dw ROSELIA
+	dw 0
 	dw CARVANHA
 	dw 0
 	dw NUMEL
@@ -367,26 +367,26 @@ PreviousEvolutionStage::
 	dw TRAPINCH
 	dw VIBRAVA
 	dw 0
+	dw CACNEA
+	dw 0
+	dw SWABLU
+	dw 0
 	dw FEEBAS
 	dw 0
+	dw DUSKULL
+	dw DUSCLOPS
 	dw 0
 	dw 0
-	dw 0
-	dw 0
-	dw LARVITAR
-	dw PUPITAR   ;f8
-	dw 0
-	dw GIBLE
-	dw GABITE
+	dw SNORUNT
+	dw SNORUNT
 	dw 0
 	dw BAGON
 	dw SHELGON
 	dw 0
 	dw BELDUM
 	dw METANG
-	dw 0
-	dw 0
-	dw 0
+	dw GIBLE
+	dw GABITE
 	dw 0
 	dw 0
 	dw 0

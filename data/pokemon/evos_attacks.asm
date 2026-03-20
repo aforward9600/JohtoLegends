@@ -19,7 +19,7 @@ SECTION "Evolutions and Attacks Pointers", ROMX
 EvosAttacksPointers::
 	indirect_table 2, 1
 	indirect_entries MAGMORTAR, EvosAttacksPointers1
-	indirect_entries BRELOOM, EvosAttacksPointers2
+	indirect_entries ARON, EvosAttacksPointers2
 	indirect_entries NUM_POKEMON, EvosAttacksPointers3
 	indirect_table_end
 

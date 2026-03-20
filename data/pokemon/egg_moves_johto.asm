@@ -135,36 +135,30 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw MiltankEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw LarvitarEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw KotoraEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
-	dw BudewEggMoves
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw ElectrikeEggMoves
-	dw NoEggMoves2
 	dw CroagunkEggMoves
 	dw NoEggMoves2
-	dw SwabluEggMoves
-	dw NoEggMoves2
-	dw DuskullEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw LotadEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
-	dw SnoruntEggMoves
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw CacneaEggMoves
+	dw ShroomishEggMoves
 	dw NoEggMoves2
 	dw RaltsEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
-	dw NoEggMoves2
-	dw ShroomishEggMoves
 	dw NoEggMoves2
 	dw SableyeEggMoves
 	dw MawileEggMoves
@@ -173,6 +167,11 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw MedititeEggMoves
 	dw NoEggMoves2
+	dw ElectrikeEggMoves
+	dw NoEggMoves2
+	dw BudewEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw CarvanhaEggMoves
 	dw NoEggMoves2
 	dw NumelEggMoves
@@ -180,16 +179,17 @@ EggMovePointers2::
 	dw TrapinchEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw CacneaEggMoves
+	dw NoEggMoves2
+	dw SwabluEggMoves
+	dw NoEggMoves2
 	dw FeebasEggMoves
 	dw NoEggMoves2
+	dw DuskullEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw AbsolEggMoves
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw LarvitarEggMoves
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw GibleEggMoves
+	dw SnoruntEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw BagonEggMoves
@@ -198,7 +198,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
-	dw NoEggMoves2
+	dw GibleEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2

@@ -72,37 +72,31 @@ Icons3:
 	dw WyrdeerIcon
 	dw SmeargleIcon
 	dw MiltankIcon
+	dw RaikouIcon
+	dw EnteiIcon
+	dw SuicuneIcon
+	dw LarvitarIcon
+	dw PupitarIcon
+	dw TyranitarIcon
+	dw LugiaIcon
+	dw HoOhIcon
+	dw CelebiIcon
 	dw KotoraIcon
 	dw RaitoraIcon
 	dw GorotoraIcon
-	dw BudewIcon
-	dw RoseliaIcon
-	dw RoseradeIcon
-	dw ElectrikeIcon
-	dw ManectricIcon
 	dw CroagunkIcon
 	dw ToxicroakIcon
-	dw SwabluIcon
-	dw AltariaIcon
-	dw DuskullIcon
-	dw DusclopsIcon
-	dw DusknoirIcon
+	dw BronzorIcon
+	dw BronzongIcon
 	dw LotadIcon
 	dw LombreIcon
 	dw LudicoloIcon
-	dw SnoruntIcon
-	dw GlalieIcon
-	dw FroslassIcon
-	dw BronzorIcon
-	dw BronzongIcon
-	dw CacneaIcon
-	dw CacturneIcon
+	dw ShroomishIcon
+	dw BreloomIcon
 	dw RaltsIcon
 	dw KirliaIcon
 	dw GardevoirIcon
 	dw GalladeIcon
-	dw ShroomishIcon
-	dw BreloomIcon
 	dw SableyeIcon
 	dw MawileIcon
 	dw AronIcon
@@ -110,6 +104,11 @@ Icons3:
 	dw AggronIcon
 	dw MedititeIcon
 	dw MedichamIcon
+	dw ElectrikeIcon
+	dw ManectricIcon
+	dw BudewIcon
+	dw RoseliaIcon
+	dw RoseradeIcon
 	dw CarvanhaIcon
 	dw SharpedoIcon
 	dw NumelIcon
@@ -117,17 +116,16 @@ Icons3:
 	dw TrapinchIcon
 	dw VibravaIcon
 	dw FlygonIcon
+	dw CacneaIcon
+	dw CacturneIcon
+	dw SwabluIcon
+	dw AltariaIcon
 	dw FeebasIcon
 	dw MiloticIcon
+	dw DuskullIcon
+	dw DusclopsIcon
+	dw DusknoirIcon
 	dw AbsolIcon
-	dw RaikouIcon
-	dw EnteiIcon
-	dw SuicuneIcon
-	dw LarvitarIcon
-	dw PupitarIcon
-	dw TyranitarIcon
-	dw GibleIcon
-	dw GabiteIcon
 
 AzurillIcon:      INCBIN "gfx/icons/azurill.2bpp"
 MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
@@ -217,9 +215,6 @@ DusknoirIcon:	  INCBIN "gfx/icons/dusknoir.2bpp"
 LotadIcon:        INCBIN "gfx/icons/lotad.2bpp"
 LombreIcon:       INCBIN "gfx/icons/lombre.2bpp"
 LudicoloIcon:     INCBIN "gfx/icons/ludicolo.2bpp"
-SnoruntIcon:	  INCBIN "gfx/icons/snorunt.2bpp"
-GlalieIcon:	      INCBIN "gfx/icons/glalie.2bpp"
-FroslassIcon:	  INCBIN "gfx/icons/froslass.2bpp"
 BronzorIcon:	  INCBIN "gfx/icons/bronzor.2bpp"
 BronzongIcon:	  INCBIN "gfx/icons/bronzong.2bpp"
 CacneaIcon:	      INCBIN "gfx/icons/cacnea.2bpp"
@@ -253,5 +248,6 @@ SuicuneIcon:	  INCBIN "gfx/icons/suicune.2bpp"
 LarvitarIcon:	  INCBIN "gfx/icons/larvitar.2bpp"
 PupitarIcon:	  INCBIN "gfx/icons/pupitar.2bpp"
 TyranitarIcon:	  INCBIN "gfx/icons/tyranitar.2bpp"
-GibleIcon:        INCBIN "gfx/icons/gible.2bpp"
-GabiteIcon:       INCBIN "gfx/icons/gabite.2bpp"
+LugiaIcon:	      INCBIN "gfx/icons/lugia.2bpp"
+HoOhIcon:	      INCBIN "gfx/icons/ho_oh.2bpp"
+CelebiIcon:	      INCBIN "gfx/icons/celebi.2bpp"

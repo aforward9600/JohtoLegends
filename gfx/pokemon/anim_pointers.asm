@@ -320,37 +320,31 @@ AnimationPointers:
 	dw WyrdeerAnimation
 	dw SmeargleAnimation
 	dw MiltankAnimation
+	dw RaikouAnimation
+	dw EnteiAnimation
+	dw SuicuneAnimation
+	dw LarvitarAnimation
+	dw PupitarAnimation
+	dw TyranitarAnimation
+	dw LugiaAnimation
+	dw HoOhAnimation
+	dw CelebiAnimation
 	dw KotoraAnimation
 	dw RaitoraAnimation
 	dw GorotoraAnimation
-	dw BudewAnimation
-	dw RoseliaAnimation
-	dw RoseradeAnimation
-	dw ElectrikeAnimation
-	dw ManectricAnimation
 	dw CroagunkAnimation
 	dw ToxicroakAnimation
-	dw SwabluAnimation
-	dw AltariaAnimation
-	dw DuskullAnimation
-	dw DusclopsAnimation
-	dw DusknoirAnimation
+	dw BronzorAnimation
+	dw BronzongAnimation
 	dw LotadAnimation
 	dw LombreAnimation
 	dw LudicoloAnimation
-	dw SnoruntAnimation
-	dw GlalieAnimation
-	dw FroslassAnimation
-	dw BronzorAnimation
-	dw BronzongAnimation
-	dw CacneaAnimation
-	dw CacturneAnimation
+	dw ShroomishAnimation
+	dw BreloomAnimation
 	dw RaltsAnimation
 	dw KirliaAnimation
 	dw GardevoirAnimation
 	dw GalladeAnimation
-	dw ShroomishAnimation
-	dw BreloomAnimation
 	dw SableyeAnimation
 	dw MawileAnimation
 	dw AronAnimation
@@ -358,6 +352,11 @@ AnimationPointers:
 	dw AggronAnimation
 	dw MedititeAnimation
 	dw MedichamAnimation
+	dw ElectrikeAnimation
+	dw ManectricAnimation
+	dw BudewAnimation
+	dw RoseliaAnimation
+	dw RoseradeAnimation
 	dw CarvanhaAnimation
 	dw SharpedoAnimation
 	dw NumelAnimation
@@ -365,27 +364,28 @@ AnimationPointers:
 	dw TrapinchAnimation
 	dw VibravaAnimation
 	dw FlygonAnimation
+	dw CacneaAnimation
+	dw CacturneAnimation
+	dw SwabluAnimation
+	dw AltariaAnimation
 	dw FeebasAnimation
 	dw MiloticAnimation
+	dw DuskullAnimation
+	dw DusclopsAnimation
+	dw DusknoirAnimation
 	dw AbsolAnimation
-	dw RaikouAnimation
-	dw EnteiAnimation
-	dw SuicuneAnimation
-	dw LarvitarAnimation
-	dw PupitarAnimation
-	dw TyranitarAnimation
-	dw GibleAnimation
-	dw GabiteAnimation
-	dw GarchompAnimation
+	dw SnoruntAnimation
+	dw GlalieAnimation
+	dw FroslassAnimation
 	dw BagonAnimation
 	dw ShelgonAnimation
 	dw SalamenceAnimation
 	dw BeldumAnimation
 	dw MetangAnimation
 	dw MetagrossAnimation
-	dw LugiaAnimation
-	dw HoOhAnimation
-	dw CelebiAnimation
+	dw GibleAnimation
+	dw GabiteAnimation
+	dw GarchompAnimation
 	dw NownAnimation
 	dw MissingnoAnimation
 	dw RegirockAnimation
