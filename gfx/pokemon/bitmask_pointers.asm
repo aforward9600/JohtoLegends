@@ -332,10 +332,6 @@ BitmasksPointers:
 	dw KotoraBitmasks
 	dw RaitoraBitmasks
 	dw GorotoraBitmasks
-	dw CroagunkBitmasks
-	dw ToxicroakBitmasks
-	dw BronzorBitmasks
-	dw BronzongBitmasks
 	dw LotadBitmasks
 	dw LombreBitmasks
 	dw LudicoloBitmasks
@@ -383,16 +379,21 @@ BitmasksPointers:
 	dw BeldumBitmasks
 	dw MetangBitmasks
 	dw MetagrossBitmasks
+	dw BronzorBitmasks
+	dw BronzongBitmasks
+	dw SpiritombBitmasks
 	dw GibleBitmasks
 	dw GabiteBitmasks
 	dw GarchompBitmasks
-	dw NownBitmasks
-	dw MissingnoBitmasks
+	dw CroagunkBitmasks
+	dw ToxicroakBitmasks
 	dw RegirockBitmasks
 	dw RegiceBitmasks
 	dw RegisteelBitmasks
 	dw RegielekiBitmasks
 	dw RegidragoBitmasks
 	dw RegigigasBitmasks
+	dw NownBitmasks
+	dw MissingnoBitmasks
 	dw TaurosPFireBitmasks
 	dw TaurosPWaterBitmasks

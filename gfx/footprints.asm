@@ -332,10 +332,6 @@ INCBIN "gfx/footprints/celebi.1bpp"
 INCBIN "gfx/footprints/kotora.1bpp"
 INCBIN "gfx/footprints/raitora.1bpp"
 INCBIN "gfx/footprints/gorotora.1bpp"
-INCBIN "gfx/footprints/croagunk.1bpp"
-INCBIN "gfx/footprints/toxicroak.1bpp"
-INCBIN "gfx/footprints/gastly.1bpp" ; Bronzor
-INCBIN "gfx/footprints/gastly.1bpp" ; Bronzong
 INCBIN "gfx/footprints/lotad.1bpp"
 INCBIN "gfx/footprints/lombre.1bpp"
 INCBIN "gfx/footprints/ludicolo.1bpp"
@@ -383,16 +379,21 @@ INCBIN "gfx/footprints/salamence.1bpp"
 INCBIN "gfx/footprints/beldum.1bpp"
 INCBIN "gfx/footprints/metang.1bpp"
 INCBIN "gfx/footprints/metagross.1bpp"
+INCBIN "gfx/footprints/gastly.1bpp" ; Bronzor
+INCBIN "gfx/footprints/gastly.1bpp" ; Bronzong
+INCBIN "gfx/footprints/gastly.1bpp" ; Spiritomb
 INCBIN "gfx/footprints/gible.1bpp"
 INCBIN "gfx/footprints/gabite.1bpp"
 INCBIN "gfx/footprints/garchomp.1bpp"
-INCBIN "gfx/footprints/gastly.1bpp" ; Nown
-INCBIN "gfx/footprints/missingno.1bpp"
+INCBIN "gfx/footprints/croagunk.1bpp"
+INCBIN "gfx/footprints/toxicroak.1bpp"
 INCBIN "gfx/footprints/regirock.1bpp"
 INCBIN "gfx/footprints/regice.1bpp"
 INCBIN "gfx/footprints/registeel.1bpp"
 INCBIN "gfx/footprints/regieleki.1bpp"
 INCBIN "gfx/footprints/regidrago.1bpp"
 INCBIN "gfx/footprints/regigigas.1bpp"
+INCBIN "gfx/footprints/gastly.1bpp" ; Nown
+INCBIN "gfx/footprints/missingno.1bpp"
 INCBIN "gfx/footprints/tauros.1bpp" ; Tauros P Fire
 INCBIN "gfx/footprints/tauros.1bpp" ; Tauros P Water

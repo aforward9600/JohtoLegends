@@ -353,10 +353,6 @@ JOHTO_POKEMON EQU const_value
 	const KOTORA       ; 142 1
 	const RAITORA      ; 143 3
 	const GOROTORA     ; 144 5
-	const CROAGUNK     ; 14a 2
-	const TOXICROAK    ; 14b 6
-	const BRONZOR      ; 157 2
-	const BRONZONG     ; 158 6
 	const LOTAD        ; 151 1
 	const LOMBRE       ; 152 1
 	const LUDICOLO     ; 153 8
@@ -404,17 +400,22 @@ JOHTO_POKEMON EQU const_value
 	const BELDUM       ; 170 1
 	const METANG       ; 171 2
 	const METAGROSS    ; 172 2
+	const BRONZOR      ; 157 2
+	const BRONZONG     ; 158 6
+	const SPIRITOMB
 	const GIBLE        ; 16a 1
 	const GABITE       ; 16b 5
 	const GARCHOMP     ; 16c 9
-	const NOWN         ; 176 0
-	const MISSINGNO    ; 177 0
+	const CROAGUNK     ; 14a 2
+	const TOXICROAK    ; 14b 6
 	const REGIROCK     ; 178 0
 	const REGICE       ; 179 0
 	const REGISTEEL    ; 17a 0
 	const REGIELEKI    ; 17b
 	const REGIDRAGO    ; 17c
 	const REGIGIGAS    ; 17d
+	const NOWN         ; 176 0
+	const MISSINGNO    ; 177 0
 	const TAUROS_P_FIRE ; 17e
 	const TAUROS_P_WATER ; 17f
 

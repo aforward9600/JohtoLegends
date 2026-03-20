@@ -78,3 +78,4 @@
 	const CRY_KIRLIA
 	const CRY_GALLADE
 	const CRY_SNEASLER
+	const CRY_WHIMSICOTT

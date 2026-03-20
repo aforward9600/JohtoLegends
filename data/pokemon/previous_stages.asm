@@ -331,13 +331,8 @@ PreviousEvolutionStage::
 	dw 0
 	dw 0
 	dw 0
-	dw 0
 	dw KOTORA
 	dw RAITORA
-	dw 0
-	dw CROAGUNK
-	dw 0
-	dw BRONZOR
 	dw 0
 	dw LOTAD
 	dw LOMBRE
@@ -385,8 +380,14 @@ PreviousEvolutionStage::
 	dw 0
 	dw BELDUM
 	dw METANG
+	dw 0
+	dw BRONZOR
+	dw 0
+	dw 0
 	dw GIBLE
 	dw GABITE
+	dw 0
+	dw CROAGUNK
 	dw 0
 	dw 0
 	dw 0

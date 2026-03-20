@@ -36,17 +36,22 @@ EvosAttacksPointers3::
 	dw BeldumEvosAttacks
 	dw MetangEvosAttacks
 	dw MetagrossEvosAttacks
+	dw BronzorEvosAttacks
+	dw BronzongEvosAttacks
+	dw SpiritombEvosAttacks
 	dw GibleEvosAttacks
 	dw GabiteEvosAttacks
 	dw GarchompEvosAttacks
-	dw NownEvosAttack
-	dw MissingnoEvosAttacks
+	dw CroagunkEvosAttacks
+	dw ToxicroakEvosAttacks
 	dw RegirockEvosAttacks
 	dw RegiceEvosAttacks
 	dw RegisteelEvosAttacks
 	dw RegielekiEvosAttacks
 	dw RegidragoEvosAttacks
 	dw RegigigasEvosAttacks
+	dw NownEvosAttack
+	dw MissingnoEvosAttacks
 	dw TaurosPFireEvosAttacks
 	dw TaurosPWaterEvosAttacks
 
@@ -438,6 +443,23 @@ AbsolEvosAttacks:
 	dbw 49, RAZOR_WIND
 	dbw 53, FUTURE_SIGHT
 	dbw 57, PERISH_SONG
+	db 0 ; no more level-up moves
+
+SpiritombEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, CURSE
+	dbw 1, PURSUIT
+	dbw 1, CONFUSE_RAY
+	dbw 1, SPITE
+	dbw 1, SHADOW_SNEAK
+	dbw 7, FAINT_ATTACK
+	dbw 13, HYPNOSIS
+	dbw 19, DREAM_EATER
+	dbw 25, OMINOUS_WIND
+	dbw 31, SUCKER_PUNCH
+	dbw 37, NASTY_PLOT
+	dbw 43, DESTINY_BOND
+	dbw 49, DARK_PULSE
 	db 0 ; no more level-up moves
 
 GibleEvosAttacks:
@@ -972,4 +994,90 @@ AltariaEvosAttacks:
 	dbw 46, PERISH_SONG
 	dbw 52, MOONBLAST
 	dbw 59, SKY_ATTACK
+	db 0 ; no more level-up moves
+
+CroagunkEvosAttacks:
+	dbbw EVOLVE_LEVEL, 28, TOXICROAK
+	db 0 ; no more evolutions
+	dbw 1, ASTONISH
+	dbw 3, MUD_SLAP
+	dbw 8, POISON_STING
+	dbw 10, KARATE_CHOP
+	dbw 15, PURSUIT
+	dbw 17, FAINT_ATTACK
+	dbw 22, REVENGE
+	dbw 24, SWAGGER
+	dbw 29, LOW_SWEEP
+	dbw 31, SUCKER_PUNCH
+	dbw 36, VENOSHOCK
+	dbw 38, NASTY_PLOT
+	dbw 43, POISON_JAB
+	dbw 45, SLUDGE_BOMB
+	dbw 47, BELCH
+	dbw 50, FLATTER
+	dbw 54, CLOSE_COMBAT
+	db 0 ; no more level-up moves
+
+ToxicroakEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, ASTONISH
+	dbw 3, MUD_SLAP
+	dbw 8, POISON_STING
+	dbw 10, KARATE_CHOP
+	dbw 15, PURSUIT
+	dbw 17, FAINT_ATTACK
+	dbw 22, REVENGE
+	dbw 24, SWAGGER
+	dbw 31, LOW_SWEEP
+	dbw 36, SUCKER_PUNCH
+	dbw 38, VENOSHOCK
+	dbw 41, NASTY_PLOT
+	dbw 49, POISON_JAB
+	dbw 54, SLUDGE_BOMB
+	dbw 58, BELCH
+	dbw 62, FLATTER
+	dbw 65, CLOSE_COMBAT
+	db 0 ; no more level-up moves
+
+BronzorEvosAttacks:
+	dbbw EVOLVE_LEVEL, 33, BRONZONG
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, CONFUSION
+	dbw 5, HYPNOSIS
+	dbw 9, MEAN_LOOK
+	dbw 11, CONFUSE_RAY
+	dbw 15, PSYWAVE
+	dbw 19, IRON_DEFENSE
+	dbw 21, FAINT_ATTACK
+	dbw 25, SAFEGUARD
+	dbw 29, FUTURE_SIGHT
+	dbw 31, METAL_SOUND
+	dbw 35, GYRO_BALL
+	dbw 39, EXTRASENSORY
+	dbw 41, PAYBACK
+	dbw 45, CALM_MIND
+	dbw 49, FLASH_CANNON
+	db 0 ; no more level-up moves
+
+BronzongEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, ZEN_HEADBUTT
+	dbw 1, ZEN_HEADBUTT
+	dbw 1, TACKLE
+	dbw 1, CONFUSION
+	dbw 5, HYPNOSIS
+	dbw 9, MEAN_LOOK
+	dbw 11, CONFUSE_RAY
+	dbw 15, PSYWAVE
+	dbw 19, IRON_DEFENSE
+	dbw 21, FAINT_ATTACK
+	dbw 25, SAFEGUARD
+	dbw 29, FUTURE_SIGHT
+	dbw 31, METAL_SOUND
+	dbw 36, GYRO_BALL
+	dbw 42, EXTRASENSORY
+	dbw 46, PAYBACK
+	dbw 52, CALM_MIND
+	dbw 58, FLASH_CANNON
 	db 0 ; no more level-up moves

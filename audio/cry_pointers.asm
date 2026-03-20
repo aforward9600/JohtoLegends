@@ -73,3 +73,4 @@ Cries:
 	dba Cry_Kirlia
 	dba Cry_Gallade
 	dba Cry_Sneasler
+	dba Cry_Whimsicott

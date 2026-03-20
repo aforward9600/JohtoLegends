@@ -1,5 +1,6 @@
 NewFrames:
 
+SpiritombFrames:  INCLUDE "gfx/pokemon/spiritomb/frames.asm"
 RaikouFrames:     INCLUDE "gfx/pokemon/raikou/frames.asm"
 EnteiFrames:      INCLUDE "gfx/pokemon/entei/frames.asm"
 SuicuneFrames:    INCLUDE "gfx/pokemon/suicune/frames.asm"

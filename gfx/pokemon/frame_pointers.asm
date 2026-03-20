@@ -332,10 +332,6 @@ FramesPointers:
 	dba KotoraFrames
 	dba RaitoraFrames
 	dba GorotoraFrames
-	dba CroagunkFrames
-	dba ToxicroakFrames
-	dba BronzorFrames
-	dba BronzongFrames
 	dba LotadFrames
 	dba LombreFrames
 	dba LudicoloFrames
@@ -383,16 +379,21 @@ FramesPointers:
 	dba BeldumFrames
 	dba MetangFrames
 	dba MetagrossFrames
+	dba BronzorFrames
+	dba BronzongFrames
+	dba SpiritombFrames
 	dba GibleFrames
 	dba GabiteFrames
 	dba GarchompFrames
-	dba NownFrames
-	dba MissingnoFrames
+	dba CroagunkFrames
+	dba ToxicroakFrames
 	dba RegirockFrames
 	dba RegiceFrames
 	dba RegisteelFrames
 	dba RegielekiFrames
 	dba RegidragoFrames
 	dba RegigigasFrames
+	dba NownFrames
+	dba MissingnoFrames
 	dba TaurosPFireFrames
 	dba TaurosPWaterFrames

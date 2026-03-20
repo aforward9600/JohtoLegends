@@ -333,10 +333,6 @@ PokedexDataPointerTable:
 	dba KotoraPokedexEntry
 	dba RaitoraPokedexEntry
 	dba GorotoraPokedexEntry
-	dba CroagunkPokedexEntry
-	dba ToxicroakPokedexEntry
-	dba BronzorPokedexEntry
-	dba BronzongPokedexEntry
 	dba LotadPokedexEntry
 	dba LombrePokedexEntry
 	dba LudicoloPokedexEntry
@@ -384,16 +380,21 @@ PokedexDataPointerTable:
 	dba BeldumPokedexEntry
 	dba MetangPokedexEntry
 	dba MetagrossPokedexEntry
+	dba BronzorPokedexEntry
+	dba BronzongPokedexEntry
+	dba SpiritombPokedexEntry
 	dba GiblePokedexEntry
 	dba GabitePokedexEntry
 	dba GarchompPokedexEntry
-	dba NownPokedexEntry
-	dba MissingnoPokedexEntry
+	dba CroagunkPokedexEntry
+	dba ToxicroakPokedexEntry
 	dba RegirockPokedexEntry
 	dba RegicePokedexEntry
 	dba RegisteelPokedexEntry
 	dba RegielekiPokedexEntry
 	dba RegidragoPokedexEntry
 	dba RegigigasPokedexEntry
+	dba NownPokedexEntry
+	dba MissingnoPokedexEntry
 	dba TaurosPPokedexEntry
 	dba TaurosPPokedexEntry

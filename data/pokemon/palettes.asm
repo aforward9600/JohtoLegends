@@ -696,14 +696,6 @@ INCBIN "gfx/pokemon/raitora/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/raitora/shiny.pal"
 INCBIN "gfx/pokemon/gorotora/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/gorotora/shiny.pal"
-INCLUDE "gfx/pokemon/croagunk/front.pal"
-INCLUDE "gfx/pokemon/croagunk/shiny.pal"
-INCBIN "gfx/pokemon/toxicroak/front.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/toxicroak/shiny.pal"
-INCBIN "gfx/pokemon/bronzor/front.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/bronzor/shiny.pal"
-INCBIN "gfx/pokemon/bronzong/front.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/bronzong/shiny.pal"
 INCBIN "gfx/pokemon/lotad/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/lotad/shiny.pal"
 INCBIN "gfx/pokemon/lombre/front.gbcpal", middle_colors
@@ -798,16 +790,22 @@ INCBIN "gfx/pokemon/metang/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/metang/shiny.pal"
 INCBIN "gfx/pokemon/metagross/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/metagross/shiny.pal"
+INCBIN "gfx/pokemon/bronzor/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/bronzor/shiny.pal"
+INCBIN "gfx/pokemon/bronzong/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/bronzong/shiny.pal"
+INCBIN "gfx/pokemon/spiritomb/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/spiritomb/shiny.pal"
 INCLUDE "gfx/pokemon/gible/normal.pal"
 INCLUDE "gfx/pokemon/gible/shiny.pal"
 INCLUDE "gfx/pokemon/gabite/normal.pal"
 INCLUDE "gfx/pokemon/gabite/shiny.pal"
 INCLUDE "gfx/pokemon/garchomp/normal.pal"
 INCLUDE "gfx/pokemon/garchomp/shiny.pal"
-INCBIN  "gfx/pokemon/nown/front.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/nown/shiny.pal"
-INCLUDE "gfx/pokemon/missingno/normal.pal"
-INCLUDE "gfx/pokemon/missingno/shiny.pal"
+INCLUDE "gfx/pokemon/croagunk/front.pal"
+INCLUDE "gfx/pokemon/croagunk/shiny.pal"
+INCBIN "gfx/pokemon/toxicroak/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/toxicroak/shiny.pal"
 INCBIN "gfx/pokemon/regirock/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/regirock/shiny.pal"
 INCBIN "gfx/pokemon/regice/front.gbcpal", middle_colors
@@ -820,6 +818,10 @@ INCBIN "gfx/pokemon/regidrago/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/regidrago/shiny.pal"
 INCBIN "gfx/pokemon/regigigas/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/regigigas/shiny.pal"
+INCBIN  "gfx/pokemon/nown/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/nown/shiny.pal"
+INCLUDE "gfx/pokemon/missingno/normal.pal"
+INCLUDE "gfx/pokemon/missingno/shiny.pal"
 INCLUDE "gfx/pokemon/tauros_p_fire/normal.pal"
 INCLUDE "gfx/pokemon/tauros_p_fire/shiny.pal"
 INCLUDE "gfx/pokemon/tauros_p_water/normal.pal"

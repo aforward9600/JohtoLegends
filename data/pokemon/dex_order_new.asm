@@ -316,6 +316,7 @@ NewPokedexOrder:
 	dw PONYTA_G
 	dw RAPIDASH
 	dw RAPIDASH_G
+	dw SPIRITOMB
 	dw QWILFISH
 	dw OVERQWIL
 	dw SLUGMA

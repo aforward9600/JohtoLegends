@@ -332,10 +332,6 @@ AnimationIdlePointers:
 	dw KotoraAnimationIdle
 	dw RaitoraAnimationIdle
 	dw GorotoraAnimationIdle
-	dw CroagunkAnimationIdle
-	dw ToxicroakAnimationIdle
-	dw BronzorAnimationIdle
-	dw BronzongAnimationIdle
 	dw LotadAnimationIdle
 	dw LombreAnimationIdle
 	dw LudicoloAnimationIdle
@@ -383,16 +379,21 @@ AnimationIdlePointers:
 	dw BeldumAnimationIdle
 	dw MetangAnimationIdle
 	dw MetagrossAnimationIdle
+	dw BronzorAnimationIdle
+	dw BronzongAnimationIdle
+	dw SpiritombAnimationIdle
 	dw GibleAnimationIdle
 	dw GabiteAnimationIdle
 	dw GarchompAnimationIdle
-	dw NownAnimationIdle
-	dw MissingnoAnimationIdle
+	dw CroagunkAnimationIdle
+	dw ToxicroakAnimationIdle
 	dw RegirockAnimationIdle
 	dw RegiceAnimationIdle
 	dw RegisteelAnimationIdle
 	dw RegielekiAnimationIdle
 	dw RegidragoAnimationIdle
 	dw RegigigasAnimationIdle
+	dw NownAnimationIdle
+	dw MissingnoAnimationIdle
 	dw TaurosPAnimationIdle
 	dw TaurosPAnimationIdle

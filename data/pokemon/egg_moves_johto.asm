@@ -147,10 +147,6 @@ EggMovePointers2::
 	dw KotoraEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
-	dw CroagunkEggMoves
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
 	dw LotadEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -198,8 +194,13 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw SpiritombEggMoves
 	dw GibleEggMoves
 	dw NoEggMoves2
+	dw NoEggMoves2
+	dw CroagunkEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -930,6 +931,14 @@ LarvitarEggMoves:
 	dw FOCUS_ENERGY
 	dw ANCIENTPOWER
 	dw IRON_DEFENSE
+	dw -1 ; end
+
+SpiritombEggMoves:
+	dw DESTINY_BOND
+	dw DISABLE
+	dw PAIN_SPLIT
+	dw SHADOW_SNEAK
+	dw SMOKESCREEN
 	dw -1 ; end
 
 GibleEggMoves:

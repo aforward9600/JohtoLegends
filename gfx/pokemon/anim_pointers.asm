@@ -332,10 +332,6 @@ AnimationPointers:
 	dw KotoraAnimation
 	dw RaitoraAnimation
 	dw GorotoraAnimation
-	dw CroagunkAnimation
-	dw ToxicroakAnimation
-	dw BronzorAnimation
-	dw BronzongAnimation
 	dw LotadAnimation
 	dw LombreAnimation
 	dw LudicoloAnimation
@@ -383,16 +379,21 @@ AnimationPointers:
 	dw BeldumAnimation
 	dw MetangAnimation
 	dw MetagrossAnimation
+	dw BronzorAnimation
+	dw BronzongAnimation
+	dw SpiritombAnimation
 	dw GibleAnimation
 	dw GabiteAnimation
 	dw GarchompAnimation
-	dw NownAnimation
-	dw MissingnoAnimation
+	dw CroagunkAnimation
+	dw ToxicroakAnimation
 	dw RegirockAnimation
 	dw RegiceAnimation
 	dw RegisteelAnimation
 	dw RegielekiAnimation
 	dw RegidragoAnimation
 	dw RegigigasAnimation
+	dw NownAnimation
+	dw MissingnoAnimation
 	dw TaurosPAnimation
 	dw TaurosPAnimation

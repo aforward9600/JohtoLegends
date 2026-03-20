@@ -2194,3 +2194,34 @@ Cry_Sneasler_Ch6:
 	sound __, 9, $e2, $758
 	sound __, 9, $e2, $758
 	endchannel
+
+Cry_Whimsicott:
+	musicheader 2, 5, Cry_Whimsicott_Ch5
+	musicheader 1, 6, Cry_Whimsicott_Ch6
+
+Cry_Whimsicott_Ch5:
+	sound_duty 1, 2, 1, 2
+	sound __, 5, $78, 1616
+	sound __, 5, $f8, 1632
+	sound __, 5, $f8, 1628
+	sound __, 3, $f8, 1660
+	sound __, 8, $f8, 1664
+	sound __, 8, $f8, 1660
+	sound __, 8, $f8, 1656
+	sound __, 8, $f8, 1652
+	sound __, 5, $f8, 1642
+	sound __, 8, $f1, 1632
+	endchannel
+
+Cry_Whimsicott_Ch6:
+	sound_duty 0, 2, 0, 2
+	sound __, 5, $a1, 1636
+	sound __, 5, $a1, 1636
+	sound __, 7, $a1, 1636
+	sound __, 8, $a1, 1684
+	sound __, 8, $a1, 1684
+	sound __, 8, $a1, 1684
+	sound __, 8, $a1, 1684
+	sound __, 5, $a2, 1688
+	sound __, 5, $91, 1692
+	endchannel

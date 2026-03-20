@@ -84,10 +84,6 @@ Icons3:
 	dw KotoraIcon
 	dw RaitoraIcon
 	dw GorotoraIcon
-	dw CroagunkIcon
-	dw ToxicroakIcon
-	dw BronzorIcon
-	dw BronzongIcon
 	dw LotadIcon
 	dw LombreIcon
 	dw LudicoloIcon
@@ -126,6 +122,10 @@ Icons3:
 	dw DusclopsIcon
 	dw DusknoirIcon
 	dw AbsolIcon
+	dw SnoruntIcon
+	dw GlalieIcon
+	dw FroslassIcon
+	dw BagonIcon
 
 AzurillIcon:      INCBIN "gfx/icons/azurill.2bpp"
 MarillIcon:       INCBIN "gfx/icons/marill.2bpp"
@@ -205,8 +205,6 @@ RoseliaIcon:	  INCBIN "gfx/icons/roselia.2bpp"
 RoseradeIcon:	  INCBIN "gfx/icons/roserade.2bpp"
 ElectrikeIcon:	  INCBIN "gfx/icons/electrike.2bpp"
 ManectricIcon:	  INCBIN "gfx/icons/manectric.2bpp"
-CroagunkIcon:	  INCBIN "gfx/icons/croagunk.2bpp"
-ToxicroakIcon:	  INCBIN "gfx/icons/toxicroak.2bpp"
 SwabluIcon:       INCBIN "gfx/icons/swablu.2bpp"
 AltariaIcon:      INCBIN "gfx/icons/altaria.2bpp"
 DuskullIcon:	  INCBIN "gfx/icons/duskull.2bpp"
@@ -215,8 +213,6 @@ DusknoirIcon:	  INCBIN "gfx/icons/dusknoir.2bpp"
 LotadIcon:        INCBIN "gfx/icons/lotad.2bpp"
 LombreIcon:       INCBIN "gfx/icons/lombre.2bpp"
 LudicoloIcon:     INCBIN "gfx/icons/ludicolo.2bpp"
-BronzorIcon:	  INCBIN "gfx/icons/bronzor.2bpp"
-BronzongIcon:	  INCBIN "gfx/icons/bronzong.2bpp"
 CacneaIcon:	      INCBIN "gfx/icons/cacnea.2bpp"
 CacturneIcon:	  INCBIN "gfx/icons/cacturne.2bpp"
 RaltsIcon:	      INCBIN "gfx/icons/ralts.2bpp"
@@ -251,3 +247,7 @@ TyranitarIcon:	  INCBIN "gfx/icons/tyranitar.2bpp"
 LugiaIcon:	      INCBIN "gfx/icons/lugia.2bpp"
 HoOhIcon:	      INCBIN "gfx/icons/ho_oh.2bpp"
 CelebiIcon:	      INCBIN "gfx/icons/celebi.2bpp"
+SnoruntIcon:	  INCBIN "gfx/icons/snorunt.2bpp"
+GlalieIcon:	      INCBIN "gfx/icons/glalie.2bpp"
+FroslassIcon:	  INCBIN "gfx/icons/froslass.2bpp"
+BagonIcon:	      INCBIN "gfx/icons/bagon.2bpp"

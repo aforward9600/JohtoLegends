@@ -2,38 +2,40 @@ SECTION "Mon Icons 4", ROMX
 
 Icons4:
 
-	dw SnoruntIcon
-	dw GlalieIcon
-	dw FroslassIcon
-	dw BagonIcon
 	dw ShelgonIcon
 	dw SalamenceIcon
 	dw BeldumIcon
 	dw MetangIcon
 	dw MetagrossIcon
+	dw BronzorIcon
+	dw BronzongIcon
+	dw SpiritombIcon
 	dw GibleIcon
 	dw GabiteIcon
 	dw GarchompIcon
-	dw NownIcon
-	dw MissingnoIcon
+	dw CroagunkIcon
+	dw ToxicroakIcon
 	dw RegirockIcon
 	dw RegiceIcon
 	dw RegisteelIcon
 	dw RegielekiIcon
 	dw RegidragoIcon
 	dw RegigigasIcon
+	dw NownIcon
+	dw MissingnoIcon
 	dw TaurosPFireIcon
 	dw TaurosPWaterIcon
 
-SnoruntIcon:	  INCBIN "gfx/icons/snorunt.2bpp"
-GlalieIcon:	      INCBIN "gfx/icons/glalie.2bpp"
-FroslassIcon:	  INCBIN "gfx/icons/froslass.2bpp"
-BagonIcon:	      INCBIN "gfx/icons/bagon.2bpp"
+CroagunkIcon:	  INCBIN "gfx/icons/croagunk.2bpp"
+ToxicroakIcon:	  INCBIN "gfx/icons/toxicroak.2bpp"
+BronzorIcon:	  INCBIN "gfx/icons/bronzor.2bpp"
+BronzongIcon:	  INCBIN "gfx/icons/bronzong.2bpp"
 ShelgonIcon:	  INCBIN "gfx/icons/shelgon.2bpp"
 SalamenceIcon:	  INCBIN "gfx/icons/salamence.2bpp"
 BeldumIcon:       INCBIN "gfx/icons/beldum.2bpp"
 MetangIcon:       INCBIN "gfx/icons/metang.2bpp"
 MetagrossIcon:    INCBIN "gfx/icons/metagross.2bpp"
+SpiritombIcon:    INCBIN "gfx/icons/spiritomb.2bpp"
 GibleIcon:        INCBIN "gfx/icons/gible.2bpp"
 GabiteIcon:       INCBIN "gfx/icons/gabite.2bpp"
 GarchompIcon:     INCBIN "gfx/icons/garchomp.2bpp"

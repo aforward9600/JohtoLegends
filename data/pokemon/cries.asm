@@ -297,7 +297,7 @@ PokemonCries::
 	mon_cry CRY_AMPHAROS,    $035,  $0e0 ; HERACROSS
 	mon_cry CRY_WOOPER,      $053,  $0af ; SNEASEL
 	mon_cry CRY_WOOPER,      $053,  $0af ; SNEASEL_H
-	mon_cry CRY_WOOPER,      $073,  $151 ; WEAVILE
+	mon_cry CRY_MAREEP,      $058,  $132 ; WEAVILE
 	mon_cry CRY_SNEASLER,    $000,  $100 ; SNEASLER
 	mon_cry CRY_TEDDIURSA,   $7a2,  $06e ; TEDDIURSA
 	mon_cry CRY_TEDDIURSA,   $640,  $0d8 ; URSARING
@@ -338,10 +338,6 @@ PokemonCries::
 	mon_cry CRY_PICHU,       $f60,  $200 ; KOTORA
 	mon_cry CRY_RAIKOU,      $db3,  $168 ; RAITORA
 	mon_cry CRY_RAIKOU,      $cb3,  $201 ; GOROTORA
-	mon_cry CRY_DIGLETT,    -$133,  $125 ; CROAGUNK
-	mon_cry CRY_SLOWKING,    $002,  $2c6 ; TOXICROAK
-	mon_cry CRY_EKANS,       $101,  $086 ; BRONZOR
-	mon_cry CRY_EKANS,       $12a,  $170 ; BRONZONG
 	mon_cry CRY_SPINARAK,    $ff3,  $060 ; LOTAD
 	mon_cry CRY_FEAROW,      $680,  $090 ; LOMBRE
 	mon_cry CRY_KRABBY,      $0d0,  $0fa ; LUDICOLO
@@ -352,7 +348,7 @@ PokemonCries::
 	mon_cry CRY_KIRLIA,      $005,  $100 ; GARDEVOIR
 	mon_cry CRY_GALLADE,     $020,  $130 ; GALLADE
 	mon_cry CRY_CATERPIE,    $ee3,  $100 ; SABLEYE SourApple
-	mon_cry CRY_DIGLETT,     $ef3,  $120 ; MAWILE
+	mon_cry CRY_KRABBY,     -$2c4,  $0a0 ; MAWILE AzureKeys
 	mon_cry CRY_GROWLITHE,   $080,  $0b0 ; ARON
 	mon_cry CRY_WEEDLE,      $040,  $090 ; LAIRON
 	mon_cry CRY_SLOWKING,    $710,  $242 ; AGGRON
@@ -389,16 +385,21 @@ PokemonCries::
 	mon_cry CRY_CYNDAQUIL,   $40c,  $140 ; BELDUM
 	mon_cry CRY_SLOWKING,    $6af,  $17a ; METANG
 	mon_cry CRY_METAPOD,     $def,  $25a ; METAGROSS
+	mon_cry CRY_EKANS,       $101,  $086 ; BRONZOR
+	mon_cry CRY_EKANS,       $12a,  $170 ; BRONZONG
+	mon_cry CRY_WHIMSICOTT, -$086,  $150 ; SPIRITOMB
 	mon_cry CRY_NIDORAN_F,   $f26,  $0c0 ; GIBLE
 	mon_cry CRY_NIDORAN_F,   $e15,  $200 ; GABITE
 	mon_cry CRY_RAICHU,      $f1f,  $130 ; GARCHOMP
-	mon_cry CRY_HOOTHOOT,    $162,  $100 ; NOWN
-	mon_cry CRY_DROWZEE,     $000,  $000 ; MISSINGNO
+	mon_cry CRY_DIGLETT,    -$133,  $125 ; CROAGUNK
+	mon_cry CRY_SLOWKING,    $002,  $2c6 ; TOXICROAK
 	mon_cry CRY_TEDDIURSA,   $58e,  $0c8 ; REGIROCK PLACEHOLDER
 	mon_cry CRY_MAGCARGO,    $f1c,  $20a ; REGICE PLACEHOLDER
 	mon_cry CRY_WOOPER,      $e82,  $480 ; REGISTEEL PLACEHOLDER
 	mon_cry CRY_GRIMER,      $250,  $1c0 ; REGIELEKI PLACEHOLDER
 	mon_cry CRY_CHARMANDER,  $c30,  $200 ; REGIDRAGO PLACEHOLDER
 	mon_cry CRY_TEDDIURSA,   $5bf,  $188 ; REGIGIGAS PLACEHOLDER
+	mon_cry CRY_HOOTHOOT,    $162,  $100 ; NOWN
+	mon_cry CRY_DROWZEE,     $000,  $000 ; MISSINGNO
 	mon_cry CRY_SQUIRTLE,    $011,  $0c0 ; TAUROS_P_FIRE
 	mon_cry CRY_SQUIRTLE,    $011,  $0c0 ; TAUROS_P_WATER

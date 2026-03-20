@@ -679,14 +679,6 @@ PokemonPicPointers::
 	dba RaitoraBackpic
 	dba GorotoraFrontpic
 	dba GorotoraBackpic
-	dba CroagunkFrontpic
-	dba CroagunkBackpic
-	dba ToxicroakFrontpic
-	dba ToxicroakBackpic
-	dba BronzorFrontpic
-	dba BronzorBackpic
-	dba BronzongFrontpic
-	dba BronzongBackpic
 	dba LotadFrontpic
 	dba LotadBackpic
 	dba LombreFrontpic
@@ -781,16 +773,22 @@ PokemonPicPointers::
 	dba MetangBackpic
 	dba MetagrossFrontpic
 	dba MetagrossBackpic
+	dba BronzorFrontpic
+	dba BronzorBackpic
+	dba BronzongFrontpic
+	dba BronzongBackpic
+	dba SpiritombFrontpic
+	dba SpiritombBackpic
 	dba GibleFrontpic
 	dba GibleBackpic
 	dba GabiteFrontpic
 	dba GabiteBackpic
 	dba GarchompFrontpic
 	dba GarchompBackpic
-	dba NownFrontpic
-	dba NownBackpic
-	dba MissingnoFrontpic
-	dba MissingnoBackpic
+	dba CroagunkFrontpic
+	dba CroagunkBackpic
+	dba ToxicroakFrontpic
+	dba ToxicroakBackpic
 	dba RegirockFrontpic
 	dba RegirockBackpic
 	dba RegiceFrontpic
@@ -803,6 +801,10 @@ PokemonPicPointers::
 	dba RegidragoBackpic
 	dba RegigigasFrontpic
 	dba RegigigasBackpic
+	dba NownFrontpic
+	dba NownBackpic
+	dba MissingnoFrontpic
+	dba MissingnoBackpic
 	dba TaurosPFireFrontpic
 	dba TaurosPFireBackpic
 	dba TaurosPWaterFrontpic

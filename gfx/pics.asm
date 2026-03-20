@@ -1816,3 +1816,11 @@ AbsolFrontpic:       INCBIN "gfx/pokemon/absol/front.animated.2bpp.lz"
 SECTION "Absol Back", ROMX
 
 AbsolBackpic:        INCBIN "gfx/pokemon/absol/back.2bpp.lz"
+
+SECTION "Spiritomb Front", ROMX
+
+SpiritombFrontpic:   INCBIN "gfx/pokemon/spiritomb/front.animated.2bpp.lz"
+
+SECTION "Spiritomb Back", ROMX
+
+SpiritombBackpic:    INCBIN "gfx/pokemon/spiritomb/back.2bpp.lz"

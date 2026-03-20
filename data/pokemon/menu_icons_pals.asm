@@ -344,10 +344,6 @@ MonMenuIconPals:
 	icon_pals RED,    BROWN  ; KOTORA
 	icon_pals RED,    BROWN  ; RAITORA
 	icon_pals RED,    BROWN  ; GOROTORA
-	icon_pals BLUE,   TEAL   ; CROAGUNK
-	icon_pals BLUE,   TEAL   ; TOXICROAK
-	icon_pals BLUE,   GREEN  ; BRONZOR
-	icon_pals BLUE,   GREEN  ; BRONZONG
 	icon_pals GREEN,  BLUE   ; LOTAD
 	icon_pals GREEN,  BLUE   ; LOMBRE
 	icon_pals GREEN,  BLUE   ; LUDICOLO
@@ -395,16 +391,21 @@ MonMenuIconPals:
 	icon_pals BLUE,   GRAY   ; BELDUM
 	icon_pals BLUE,   GRAY   ; METANG
 	icon_pals BLUE,   GRAY   ; METAGROSS
+	icon_pals BLUE,   GREEN  ; BRONZOR
+	icon_pals BLUE,   GREEN  ; BRONZONG
+	icon_pals PURPLE, BLUE   ; SPIRITOMB
 	icon_pals BLUE,   PINK   ; GIBLE
 	icon_pals BLUE,   PINK   ; GABITE
 	icon_pals BLUE,   PINK   ; GARCHOMP
-	icon_pals GRAY,   BLUE   ; NOWN
-	icon_pals GRAY,   GRAY   ; MISSINGO.
+	icon_pals BLUE,   TEAL   ; CROAGUNK
+	icon_pals BLUE,   TEAL   ; TOXICROAK
 	icon_pals RED,    BROWN  ; REGIROCK
 	icon_pals BLUE,   TEAL   ; REGICE
 	icon_pals GRAY,   TEAL   ; REGISTEEL
 	icon_pals BLUE,   GRAY   ; REGIELEKI
 	icon_pals RED,    BLUE   ; REGIDRAGO
 	icon_pals GREEN,  BLUE   ; REGIGIGAS
+	icon_pals GRAY,   BLUE   ; NOWN
+	icon_pals GRAY,   GRAY   ; MISSINGO.
 	icon_pals GRAY,   GRAY   ; TAUROS_P
 	icon_pals GRAY,   GRAY   ; TAUROS_P
