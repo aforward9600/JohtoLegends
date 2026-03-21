@@ -1824,3 +1824,19 @@ SpiritombFrontpic:   INCBIN "gfx/pokemon/spiritomb/front.animated.2bpp.lz"
 SECTION "Spiritomb Back", ROMX
 
 SpiritombBackpic:    INCBIN "gfx/pokemon/spiritomb/back.2bpp.lz"
+
+SECTION "Riolu Front", ROMX
+
+RioluFrontpic:       INCBIN "gfx/pokemon/riolu/front.animated.2bpp.lz"
+
+SECTION "Riolu Back", ROMX
+
+RioluBackpic:        INCBIN "gfx/pokemon/riolu/back.2bpp.lz"
+
+SECTION "Lucario Front", ROMX
+
+LucarioFrontpic:     INCBIN "gfx/pokemon/lucario/front.animated.2bpp.lz"
+
+SECTION "Lucario Back", ROMX
+
+LucarioBackpic:      INCBIN "gfx/pokemon/lucario/back.2bpp.lz"

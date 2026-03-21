@@ -397,6 +397,8 @@ MonMenuIconPals:
 	icon_pals BLUE,   PINK   ; GIBLE
 	icon_pals BLUE,   PINK   ; GABITE
 	icon_pals BLUE,   PINK   ; GARCHOMP
+	icon_pals BLUE,   PINK   ; RIOLU
+	icon_pals BLUE,   PINK   ; LUCARIO
 	icon_pals BLUE,   TEAL   ; CROAGUNK
 	icon_pals BLUE,   TEAL   ; TOXICROAK
 	icon_pals RED,    BROWN  ; REGIROCK

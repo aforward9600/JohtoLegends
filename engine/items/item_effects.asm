@@ -176,7 +176,7 @@ ItemEffects:
 	dw NoEffect            ; RAZOR_CLAW
 	dw NoEffect            ; RAZOR_FANG
 	dw NoEffect            ; PROTECTOR
-	dw NoEffect            ; STEEL_DAGGER
+	dw NoEffect            ; ODD_KEYSTONE
 	dw NoEffect            ; PEAT_BLOCK
 	dw ScytherCallEffect   ; SCYTHER_CALL
 	dw GolemCallEffect     ; GOLEM_CALL

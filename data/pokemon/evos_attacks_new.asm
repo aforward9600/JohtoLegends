@@ -42,6 +42,8 @@ EvosAttacksPointers3::
 	dw GibleEvosAttacks
 	dw GabiteEvosAttacks
 	dw GarchompEvosAttacks
+	dw RioluEvosAttacks
+	dw LucarioEvosAttacks
 	dw CroagunkEvosAttacks
 	dw ToxicroakEvosAttacks
 	dw RegirockEvosAttacks
@@ -508,6 +510,45 @@ GarchompEvosAttacks:
 	dbw 33, DRAGON_CLAW
 	dbw 40, DIG
 	dbw 55, DRAGON_RUSH
+	db 0 ; no more level-up moves
+
+RioluEvosAttacks:
+	dbbw EVOLVE_HAPPINESS, TR_MORNDAY, LUCARIO
+	db 0 ; no more evolutions
+	dbw 1, FORESIGHT
+	dbw 1, QUICK_ATTACK
+	dbw 1, ENDURE
+	dbw 6, COUNTER
+	dbw 11, FAKE_OUT
+	dbw 15, KARATE_CHOP
+	dbw 19, MIMIC
+	dbw 24, SCREECH
+	dbw 29, REVERSAL
+	dbw 47, NASTY_PLOT
+	dbw 50, DESTINY_BOND
+	db 0 ; no more level-up moves
+
+LucarioEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, AURA_SPHERE
+	dbw 1, AURA_SPHERE
+	dbw 1, FORESIGHT
+	dbw 1, QUICK_ATTACK
+	dbw 1, ENDURE
+	dbw 6, COUNTER
+	dbw 11, FAKE_OUT
+	dbw 15, POWERUPPUNCH
+	dbw 19, SWORDS_DANCE
+	dbw 24, METAL_SOUND
+	dbw 29, BONE_RUSH
+	dbw 33, DETECT
+	dbw 37, MIRROR_COAT
+	dbw 42, WORK_UP
+	dbw 47, CALM_MIND
+	dbw 51, MORNING_SUN
+	dbw 55, CLOSE_COMBAT
+	dbw 60, DRAGON_PULSE
+	dbw 65, EXTREMESPEED
 	db 0 ; no more level-up moves
 
 BagonEvosAttacks:

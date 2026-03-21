@@ -385,6 +385,8 @@ BitmasksPointers:
 	dw GibleBitmasks
 	dw GabiteBitmasks
 	dw GarchompBitmasks
+	dw RioluBitmasks
+	dw LucarioBitmasks
 	dw CroagunkBitmasks
 	dw ToxicroakBitmasks
 	dw RegirockBitmasks

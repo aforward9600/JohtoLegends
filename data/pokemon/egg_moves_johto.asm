@@ -200,6 +200,8 @@ EggMovePointers2::
 	dw GibleEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw RioluEggMoves
+	dw NoEggMoves2
 	dw CroagunkEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -794,6 +796,23 @@ ElectrikeEggMoves:
 	dw SWIFT
 	dw DOUBLE_EDGE
 	dw SNARL
+	dw -1 ; end
+
+RioluEggMoves:
+	dw AGILITY
+	dw BITE
+	dw BLAZE_KICK
+	dw BULLET_PUNCH
+	dw CIRCLE_THROW
+	dw CROSS_CHOP
+	dw CRUNCH
+	dw DETECT
+	dw HI_JUMP_KICK
+	dw IRON_DEFENSE
+	dw LOW_KICK
+	dw METEOR_MASH
+	dw MIND_READER
+	dw SKY_UPPERCUT
 	dw -1 ; end
 
 CroagunkEggMoves:

@@ -273,6 +273,8 @@ NewPokedexOrder:
 	dw MISMAGIUS
 	dw MAGIKARP
 	dw GYARADOS
+	dw RIOLU
+	dw LUCARIO
 	dw KOFFING
 	dw WEEZING
 	dw WEEZING_G

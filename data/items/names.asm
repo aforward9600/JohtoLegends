@@ -162,7 +162,7 @@ ItemNames::
 	db "Razor Claw@"
 	db "Razor Fang@"
 	db "Protector@"
-	db "Steel Dagger@"
+	db "Odd Keystone@"
 	db "Peat Block@"
 	db "Scyther Call@"
 	db "Golem Call@"

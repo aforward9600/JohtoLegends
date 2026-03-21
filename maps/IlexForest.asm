@@ -9,6 +9,7 @@
 	const ILEXFOREST_POKE_BALL2
 	const ILEXFOREST_POKE_BALL3
 	const ILEXFOREST_POKE_BALL4
+	const ILEXFOREST_HEX_MANIAC2
 
 IlexForest_MapScripts:
 	db 0 ; scene scripts
@@ -94,6 +95,22 @@ TrainerCooltrainerFEmiko:
 
 IlexForestLassScript:
 	jumptextfaceplayer Text_IlexForestLass
+
+IlexForestHexManiacScript:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_ODD_KEYSTONE
+	iftrue .GotKeystone
+	writetext TakeThisKeystoneText
+	buttonsound
+	verbosegiveitem ODD_KEYSTONE
+	iffalse .BagFull
+	setevent EVENT_GOT_ODD_KEYSTONE
+.GotKeystone
+	writetextend EmbeddedTowerText
+
+.BagFull
+	writetextend OddKeystoneFullText
 
 IlexForestRevive:
 	itemball REVIVE
@@ -362,6 +379,29 @@ CooltrainerFEmikoAfterBattleText:
 	para "Makes sense, yes?"
 	done
 
+TakeThisKeystoneText:
+	text "Please, take this"
+	line "accursed object"
+	cont "from me!"
+
+	para "It whispers to me!"
+	done
+
+OddKeystoneFullText:
+	text "Oh no…"
+
+	para "You have no room…"
+	done
+
+EmbeddedTowerText:
+	text "Do not place that"
+	line "stone in the gray"
+	cont "rock at the"
+	cont "Embedded Tower…"
+
+	para "For your own sake…"
+	done
+
 IlexForest_MapEvents:
 	db 0, 0 ; filler
 
@@ -379,7 +419,7 @@ IlexForest_MapEvents:
 	bg_event  1, 17, BGEVENT_ITEM, IlexForestHiddenFullHeal
 	bg_event  8, 22, BGEVENT_UP, IlexForestShrineScript
 
-	db 10 ; object events
+	db 11 ; object events
 	object_event 25, 22, SPRITE_FARFETCHD, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IlexForestFarfetchdScript, EVENT_ILEX_FOREST_FARFETCHD
 	object_event 29, 30, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerSuperNerdIrwin, -1
 	object_event  1, 36, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerFEmiko, -1
@@ -390,3 +430,4 @@ IlexForest_MapEvents:
 	object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestXAttack, EVENT_ILEX_FOREST_X_ATTACK
 	object_event 17,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE
 	object_event 27,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
+	object_event 11, 34, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestHexManiacScript, -1

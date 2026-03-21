@@ -389,6 +389,8 @@ PokemonNames::
 	db "Gible@@@@@"
 	db "Gabite@@@@"
 	db "Garchomp@@"
+	db "Riolu@@@@@"
+	db "Lucario@@@"
 	db "Croagunk@@"
 	db "Toxicroak@"
 	db "Regirock@@"

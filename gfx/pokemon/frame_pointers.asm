@@ -385,6 +385,8 @@ FramesPointers:
 	dba GibleFrames
 	dba GabiteFrames
 	dba GarchompFrames
+	dba RioluFrames
+	dba LucarioFrames
 	dba CroagunkFrames
 	dba ToxicroakFrames
 	dba RegirockFrames

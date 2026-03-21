@@ -13,6 +13,8 @@ Icons4:
 	dw GibleIcon
 	dw GabiteIcon
 	dw GarchompIcon
+	dw RioluIcon
+	dw LucarioIcon
 	dw CroagunkIcon
 	dw ToxicroakIcon
 	dw RegirockIcon
@@ -39,6 +41,8 @@ SpiritombIcon:    INCBIN "gfx/icons/spiritomb.2bpp"
 GibleIcon:        INCBIN "gfx/icons/gible.2bpp"
 GabiteIcon:       INCBIN "gfx/icons/gabite.2bpp"
 GarchompIcon:     INCBIN "gfx/icons/garchomp.2bpp"
+RioluIcon:        INCBIN "gfx/icons/riolu.2bpp"
+LucarioIcon:      INCBIN "gfx/icons/lucario.2bpp"
 NownIcon:         INCBIN "gfx/icons/nown.2bpp"
 MissingnoIcon:	  INCBIN "gfx/icons/missingno.2bpp"
 RegirockIcon:     INCBIN "gfx/icons/regirock.2bpp"

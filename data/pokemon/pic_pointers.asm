@@ -785,6 +785,10 @@ PokemonPicPointers::
 	dba GabiteBackpic
 	dba GarchompFrontpic
 	dba GarchompBackpic
+	dba RioluFrontpic
+	dba RioluBackpic
+	dba LucarioFrontpic
+	dba LucarioBackpic
 	dba CroagunkFrontpic
 	dba CroagunkBackpic
 	dba ToxicroakFrontpic

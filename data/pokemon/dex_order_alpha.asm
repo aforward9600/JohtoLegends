@@ -176,6 +176,7 @@ AlphabeticalPokedexOrder:
 	dw LICKITUNG
 	dw LOMBRE
 	dw LOTAD
+	dw LUCARIO
 	dw LUDICOLO
 	dw LUGIA
 	dw MACHAMP
@@ -293,6 +294,7 @@ AlphabeticalPokedexOrder:
 	dw RHYDON
 	dw RHYHORN
 	dw RHYPERIOR
+	dw RIOLU
 	dw ROSELIA
 	dw ROSERADE
 	dw SABLEYE

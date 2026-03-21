@@ -406,6 +406,8 @@ JOHTO_POKEMON EQU const_value
 	const GIBLE        ; 16a 1
 	const GABITE       ; 16b 5
 	const GARCHOMP     ; 16c 9
+	const RIOLU
+	const LUCARIO
 	const CROAGUNK     ; 14a 2
 	const TOXICROAK    ; 14b 6
 	const REGIROCK     ; 178 0

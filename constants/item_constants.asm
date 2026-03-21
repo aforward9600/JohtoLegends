@@ -169,7 +169,7 @@
 	const RAZOR_CLAW   ; c5
 	const RAZOR_FANG   ; c6
 	const PROTECTOR    ; c7
-	const STEEL_DAGGER ; c8
+	const ODD_KEYSTONE ; c8
 	const PEAT_BLOCK   ; c9
 	const SCYTHER_CALL ; ca
 	const GOLEM_CALL   ; cb

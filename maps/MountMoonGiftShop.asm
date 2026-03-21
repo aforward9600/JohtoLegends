@@ -39,28 +39,16 @@ MountMoonGiftShopClerkScript:
 	playsound SFX_TRANSACTION
 	takemoney YOUR_MONEY, 10000
 	special PlaceMoneyTopRight
-	writetext PeatBlockText
-	waitbutton
-	closetext
-	end
+	writetextend PeatBlockText
 
 .Refused:
-	writetext RefusedPeatBlock
-	waitbutton
-	closetext
-	end
+	writetextend RefusedPeatBlock
 
 .NoRoom:
-	writetext NoRoomForPeatBlockText
-	waitbutton
-	closetext
-	end
+	writetextend NoRoomForPeatBlockText
 
 .NotEnoughMoney:
-	writetext NotEnoughMoneyPeatBlock
-	waitbutton
-	closetext
-	end
+	writetextend NotEnoughMoneyPeatBlock
 
 MountMoonGiftShopLassScript:
 	checkevent EVENT_BEAT_BIKER_BOSS

@@ -163,7 +163,7 @@ ItemDescriptions:
 	dw MoonStoneDesc
 	dw MoonStoneDesc
 	dw MoonStoneDesc
-	dw MetalPowderDesc
+	dw OddKeystoneDesc
 	dw MoonStoneDesc
 	dw ScytherCallDesc
 	dw GolemCallDesc
@@ -838,6 +838,10 @@ MachampCallDesc:
 SnubbullCallDesc:
 	db   "Calls a Snubbull"
 	next "to headbutt trees.@"
+
+OddKeystoneDesc:
+	db   "A mysterious stone"
+	next "that whispers.@"
 
 LaprasCallADesc:
 	db   "Calls a Lapras to"

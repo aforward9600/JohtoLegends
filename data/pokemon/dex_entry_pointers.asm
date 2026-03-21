@@ -386,6 +386,8 @@ PokedexDataPointerTable:
 	dba GiblePokedexEntry
 	dba GabitePokedexEntry
 	dba GarchompPokedexEntry
+	dba RioluPokedexEntry
+	dba LucarioPokedexEntry
 	dba CroagunkPokedexEntry
 	dba ToxicroakPokedexEntry
 	dba RegirockPokedexEntry

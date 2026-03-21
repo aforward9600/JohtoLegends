@@ -387,6 +387,8 @@ PreviousEvolutionStage::
 	dw GIBLE
 	dw GABITE
 	dw 0
+	dw RIOLU
+	dw 0
 	dw CROAGUNK
 	dw 0
 	dw 0
