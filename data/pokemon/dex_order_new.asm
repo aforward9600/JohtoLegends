@@ -273,6 +273,8 @@ NewPokedexOrder:
 	dw MISMAGIUS
 	dw MAGIKARP
 	dw GYARADOS
+	dw RIOLU
+	dw LUCARIO
 	dw KOFFING
 	dw WEEZING
 	dw WEEZING_G
@@ -342,6 +344,8 @@ NewPokedexOrder:
 	dw HYPNO
 	dw REMORAID
 	dw OCTILLERY
+	dw SKORUPI
+	dw DRAPION
 	dw SMEARGLE
 	dw LAPRAS
 	dw DITTO

@@ -1824,3 +1824,35 @@ SpiritombFrontpic:   INCBIN "gfx/pokemon/spiritomb/front.animated.2bpp.lz"
 SECTION "Spiritomb Back", ROMX
 
 SpiritombBackpic:    INCBIN "gfx/pokemon/spiritomb/back.2bpp.lz"
+
+SECTION "Riolu Front", ROMX
+
+RioluFrontpic:       INCBIN "gfx/pokemon/riolu/front.animated.2bpp.lz"
+
+SECTION "Riolu Back", ROMX
+
+RioluBackpic:        INCBIN "gfx/pokemon/riolu/back.2bpp.lz"
+
+SECTION "Lucario Front", ROMX
+
+LucarioFrontpic:     INCBIN "gfx/pokemon/lucario/front.animated.2bpp.lz"
+
+SECTION "Lucario Back", ROMX
+
+LucarioBackpic:      INCBIN "gfx/pokemon/lucario/back.2bpp.lz"
+
+SECTION "Skorupi Front", ROMX
+
+SkorupiFrontpic:     INCBIN "gfx/pokemon/skorupi/front.animated.2bpp.lz"
+
+SECTION "Skorupi Back", ROMX
+
+SkorupiBackpic:      INCBIN "gfx/pokemon/skorupi/back.2bpp.lz"
+
+SECTION "Drapion Front", ROMX
+
+DrapionFrontpic:     INCBIN "gfx/pokemon/drapion/front.animated.2bpp.lz"
+
+SECTION "Drapion Back", ROMX
+
+DrapionBackpic:      INCBIN "gfx/pokemon/drapion/back.2bpp.lz"

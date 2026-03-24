@@ -385,6 +385,10 @@ AnimationPointers:
 	dw GibleAnimation
 	dw GabiteAnimation
 	dw GarchompAnimation
+	dw RioluAnimation
+	dw LucarioAnimation
+	dw SkorupiAnimation
+	dw DrapionAnimation
 	dw CroagunkAnimation
 	dw ToxicroakAnimation
 	dw RegirockAnimation

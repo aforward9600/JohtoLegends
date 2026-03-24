@@ -42,6 +42,10 @@ EvosAttacksPointers3::
 	dw GibleEvosAttacks
 	dw GabiteEvosAttacks
 	dw GarchompEvosAttacks
+	dw RioluEvosAttacks
+	dw LucarioEvosAttacks
+	dw SkorupiEvosAttacks
+	dw DrapionEvosAttacks
 	dw CroagunkEvosAttacks
 	dw ToxicroakEvosAttacks
 	dw RegirockEvosAttacks
@@ -508,6 +512,45 @@ GarchompEvosAttacks:
 	dbw 33, DRAGON_CLAW
 	dbw 40, DIG
 	dbw 55, DRAGON_RUSH
+	db 0 ; no more level-up moves
+
+RioluEvosAttacks:
+	dbbw EVOLVE_HAPPINESS, TR_MORNDAY, LUCARIO
+	db 0 ; no more evolutions
+	dbw 1, FORESIGHT
+	dbw 1, QUICK_ATTACK
+	dbw 1, ENDURE
+	dbw 6, COUNTER
+	dbw 11, FAKE_OUT
+	dbw 15, KARATE_CHOP
+	dbw 19, MIMIC
+	dbw 24, SCREECH
+	dbw 29, REVERSAL
+	dbw 47, NASTY_PLOT
+	dbw 50, DESTINY_BOND
+	db 0 ; no more level-up moves
+
+LucarioEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, AURA_SPHERE
+	dbw 1, AURA_SPHERE
+	dbw 1, FORESIGHT
+	dbw 1, QUICK_ATTACK
+	dbw 1, ENDURE
+	dbw 6, COUNTER
+	dbw 11, FAKE_OUT
+	dbw 15, POWERUPPUNCH
+	dbw 19, SWORDS_DANCE
+	dbw 24, METAL_SOUND
+	dbw 29, BONE_RUSH
+	dbw 33, DETECT
+	dbw 37, MIRROR_COAT
+	dbw 42, WORK_UP
+	dbw 47, CALM_MIND
+	dbw 51, MORNING_SUN
+	dbw 55, CLOSE_COMBAT
+	dbw 60, DRAGON_PULSE
+	dbw 65, EXTREMESPEED
 	db 0 ; no more level-up moves
 
 BagonEvosAttacks:
@@ -1080,4 +1123,47 @@ BronzongEvosAttacks:
 	dbw 46, PAYBACK
 	dbw 52, CALM_MIND
 	dbw 58, FLASH_CANNON
+	db 0 ; no more level-up moves
+
+SkorupiEvosAttacks:
+	dbbw EVOLVE_LEVEL, 40, DRAPION
+	db 0 ; no more evolutions
+	dbw 1, BITE
+	dbw 1, POISON_STING
+	dbw 1, LEER
+	dbw 5, KNOCK_OFF
+	dbw 9, PIN_MISSILE
+	dbw 13, WORK_UP
+	dbw 16, PURSUIT
+	dbw 20, SIGNAL_BEAM
+	dbw 23, POISON_FANG
+	dbw 27, VENOSHOCK
+	dbw 30, HONE_CLAWS
+	dbw 34, TOXIC
+	dbw 38, NIGHT_SLASH
+	dbw 41, SCARY_FACE
+	dbw 45, CRUNCH
+	dbw 47, LEECH_LIFE
+	dbw 49, CROSS_POISON
+	db 0 ; no more level-up moves
+
+DrapionEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, BITE
+	dbw 1, POISON_STING
+	dbw 1, LEER
+	dbw 5, KNOCK_OFF
+	dbw 9, PIN_MISSILE
+	dbw 13, WORK_UP
+	dbw 16, PURSUIT
+	dbw 20, SIGNAL_BEAM
+	dbw 23, POISON_FANG
+	dbw 27, VENOSHOCK
+	dbw 30, HONE_CLAWS
+	dbw 34, TOXIC
+	dbw 38, NIGHT_SLASH
+	dbw 43, SCARY_FACE
+	dbw 49, CRUNCH
+	dbw 53, LEECH_LIFE
+	dbw 57, CROSS_POISON
 	db 0 ; no more level-up moves

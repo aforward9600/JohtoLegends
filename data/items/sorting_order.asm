@@ -128,7 +128,6 @@ ItemNameOrder:
 	db SOOTHE_BELL
 	db SPECIALSPECS
 	db SPELL_TAG
-	db STEEL_DAGGER
 	db STICK
 	db THICK_CLUB
 	db TOXIC_ORB
@@ -149,6 +148,7 @@ ItemNameOrder:
 	db PEARL
 	db BIG_PEARL
 	db NUGGET
+	db ODD_KEYSTONE
 
 	; Mail
 	db EON_MAIL

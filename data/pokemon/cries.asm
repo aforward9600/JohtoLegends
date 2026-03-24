@@ -391,6 +391,10 @@ PokemonCries::
 	mon_cry CRY_NIDORAN_F,   $f26,  $0c0 ; GIBLE
 	mon_cry CRY_NIDORAN_F,   $e15,  $200 ; GABITE
 	mon_cry CRY_RAICHU,      $f1f,  $130 ; GARCHOMP
+	mon_cry CRY_TOGEPI,      $074,  $100 ; RIOLU
+	mon_cry CRY_MARILL,     -$083,  $14e ; LUCARIO
+	mon_cry CRY_AMPHAROS,    $1c8,  $190 ; SKORUPI
+	mon_cry CRY_CLEFFA,     -$33e,  $200 ; DRAPION
 	mon_cry CRY_DIGLETT,    -$133,  $125 ; CROAGUNK
 	mon_cry CRY_SLOWKING,    $002,  $2c6 ; TOXICROAK
 	mon_cry CRY_TEDDIURSA,   $58e,  $0c8 ; REGIROCK PLACEHOLDER

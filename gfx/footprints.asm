@@ -385,6 +385,10 @@ INCBIN "gfx/footprints/gastly.1bpp" ; Spiritomb
 INCBIN "gfx/footprints/gible.1bpp"
 INCBIN "gfx/footprints/gabite.1bpp"
 INCBIN "gfx/footprints/garchomp.1bpp"
+INCBIN "gfx/footprints/riolu.1bpp"
+INCBIN "gfx/footprints/lucario.1bpp"
+INCBIN "gfx/footprints/skorupi.1bpp"
+INCBIN "gfx/footprints/skorupi.1bpp" ; Drapion
 INCBIN "gfx/footprints/croagunk.1bpp"
 INCBIN "gfx/footprints/toxicroak.1bpp"
 INCBIN "gfx/footprints/regirock.1bpp"

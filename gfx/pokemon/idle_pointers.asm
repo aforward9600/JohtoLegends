@@ -385,6 +385,10 @@ AnimationIdlePointers:
 	dw GibleAnimationIdle
 	dw GabiteAnimationIdle
 	dw GarchompAnimationIdle
+	dw RioluAnimationIdle
+	dw LucarioAnimationIdle
+	dw SkorupiAnimationIdle
+	dw DrapionAnimationIdle
 	dw CroagunkAnimationIdle
 	dw ToxicroakAnimationIdle
 	dw RegirockAnimationIdle

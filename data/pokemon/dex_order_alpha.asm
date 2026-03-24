@@ -70,6 +70,7 @@ AlphabeticalPokedexOrder:
 	dw DONPHAN
 	dw DRAGONAIR
 	dw DRAGONITE
+	dw DRAPION
 	dw DRATINI
 	dw DROWZEE
 	dw DUDUNSPARS
@@ -176,6 +177,7 @@ AlphabeticalPokedexOrder:
 	dw LICKITUNG
 	dw LOMBRE
 	dw LOTAD
+	dw LUCARIO
 	dw LUDICOLO
 	dw LUGIA
 	dw MACHAMP
@@ -293,6 +295,7 @@ AlphabeticalPokedexOrder:
 	dw RHYDON
 	dw RHYHORN
 	dw RHYPERIOR
+	dw RIOLU
 	dw ROSELIA
 	dw ROSERADE
 	dw SABLEYE
@@ -316,6 +319,7 @@ AlphabeticalPokedexOrder:
 	dw SKARMINI
 	dw SKARMORY
 	dw SKIPLOOM
+	dw SKORUPI
 	dw SLOWBRO
 	dw SLOWBRO_G
 	dw SLOWKING

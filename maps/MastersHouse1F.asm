@@ -82,6 +82,8 @@ MaastersHouseMasterScript:
 	iftrue .BeatDragonKid1
 	checkevent EVENT_BEAT_DRAGON_KID_LANCE
 	iftrue .BeatDragonKid2
+	givepoke SKORUPI, 5, NO_ITEM
+	givepoke DRAPION, 5, NO_ITEM
 	jumptextfaceplayer MastersHouseMasterText
 
 .MasterGoodLuck:
