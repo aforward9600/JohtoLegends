@@ -22,8 +22,8 @@ TreeMonSet_Canyon:
 	dbbw 15, 10, VENONAT
 	dbbw 15, 10, PINECO
 	dbbw 10, 10, AIPOM
-	dbbw  5, 10, AIPOM
-	dbbw  5, 10, AIPOM
+	dbbw  5, 10, SKORUPI
+	dbbw  5, 10, MUNCHLAX
 	db -1
 ; rare
 	dbbw 50, 10, SPEAROW
@@ -91,7 +91,7 @@ TreeMonSet_Kanto:
 TreeMonSet_Lake:
 ; common
 	dbbw 50, 10, HOOTHOOT
-	dbbw 15, 10, VENONAT
+	dbbw 15, 10, VOLTORB_H
 	dbbw 15, 10, PINECO
 	dbbw 10, 10, EXEGGCUTE
 	dbbw  5, 10, SWABLU

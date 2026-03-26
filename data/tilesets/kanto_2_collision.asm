@@ -106,7 +106,7 @@
 	tilecoll WATER, WATER, WATER, WATER ; 69
 	tilecoll HOP_RIGHT, WALL, HOP_RIGHT, WALL ; 6a
 	tilecoll WALL, WALL, WALL, WALL ; 6b
-	tilecoll WALL, WALL, WARP_CARPET_UP, WARP_CARPET_UP ; 6c
+	tilecoll FLOOR, FLOOR, WARP_CARPET_UP, WARP_CARPET_UP ; 6c
 	tilecoll WALL, WALL, WALL, WALL ; 6d
 	tilecoll WALL, WALL, WALL, WALL ; 6e
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 6f

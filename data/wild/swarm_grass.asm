@@ -41,7 +41,7 @@ SwarmGrassWildMons:
 	dbw 15, MILTANK
 	dbw 15, BUTTERFREE
 	dbw 15, TAUROS
-	dbw 15, YANMA
+	dbw 15, RIOLU
 	dbw 15, TAUROS
 	dbw 15, YANMA
 	dbw 15, YANMA
@@ -50,7 +50,7 @@ SwarmGrassWildMons:
 	dbw 15, MILTANK
 	dbw 15, BUTTERFREE
 	dbw 15, TAUROS
-	dbw 15, YANMA
+	dbw 15, RIOLU
 	dbw 15, TAUROS
 	dbw 15, YANMA
 	dbw 15, YANMA
@@ -58,9 +58,9 @@ SwarmGrassWildMons:
 	dbw 15, YANMA
 	dbw 15, MURKROW
 	dbw 15, BEEDRILL
-	dbw 15, MEOWTH
-	dbw 15, YANMA
-	dbw 15, MEOWTH
+	dbw 15, MEOWTH_A
+	dbw 15, RIOLU
+	dbw 15, MEOWTH_A
 	dbw 15, YANMA
 	dbw 15, YANMA
 
@@ -196,7 +196,7 @@ SwarmGrassWildMons:
 	dbw 12, MISDREAVUS
 	dbw 12, MAGBY
 	dbw 12, MISDREAVUS
-	dbw 12, MISDREAVUS
+	dbw 12, NUMEL
 	dbw 12, DUSKULL
 	dbw 12, DUSKULL
 	dbw 12, MISDREAVUS
@@ -205,7 +205,7 @@ SwarmGrassWildMons:
 	dbw 12, MISDREAVUS
 	dbw 12, MAGBY
 	dbw 12, MISDREAVUS
-	dbw 12, MISDREAVUS
+	dbw 12, NUMEL
 	dbw 12, DUSKULL
 	dbw 12, DUSKULL
 	dbw 12, MISDREAVUS
@@ -214,7 +214,7 @@ SwarmGrassWildMons:
 	dbw 12, MISDREAVUS
 	dbw 12, MAGBY
 	dbw 12, MISDREAVUS
-	dbw 12, MISDREAVUS
+	dbw 12, NUMEL
 	dbw 12, DUSKULL
 	dbw 12, DUSKULL
 	dbw 12, MISDREAVUS

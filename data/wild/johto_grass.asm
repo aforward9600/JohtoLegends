@@ -71,7 +71,7 @@ JohtoGrassWildMons:
 	dbw 12, ZUBAT
 	dbw 12, GRIMER
 	dbw 12, DUSKULL
-	dbw 12, SLUGMA
+	dbw 12, NUMEL
 	dbw 12, SLUGMA
 	; day
 	dbw 12, MAGBY
@@ -80,7 +80,7 @@ JohtoGrassWildMons:
 	dbw 12, ZUBAT
 	dbw 12, GRIMER
 	dbw 12, DUSKULL
-	dbw 12, SLUGMA
+	dbw 12, NUMEL
 	dbw 12, SLUGMA
 	; nite
 	dbw 12, RATTATA_A
@@ -101,7 +101,7 @@ JohtoGrassWildMons:
 	dbw 12, ZUBAT
 	dbw 12, GRIMER
 	dbw 12, DUSKULL
-	dbw 12, SLUGMA
+	dbw 12, NUMEL
 	dbw 12, SLUGMA
 	; day
 	dbw 12, MAGBY
@@ -110,7 +110,7 @@ JohtoGrassWildMons:
 	dbw 12, ZUBAT
 	dbw 12, GRIMER
 	dbw 12, DUSKULL
-	dbw 12, SLUGMA
+	dbw 12, NUMEL
 	dbw 12, SLUGMA
 	; nite
 	dbw 12, RATTATA_A
@@ -128,7 +128,7 @@ JohtoGrassWildMons:
 	dbw 21, MAGBY
 	dbw 21, KOFFING
 	dbw 21, ZUBAT
-	dbw 21, SLUGMA
+	dbw 21, NUMEL
 	dbw 21, GRIMER
 	dbw 21, DUSKULL
 	dbw 21, SLUGMA
@@ -137,7 +137,7 @@ JohtoGrassWildMons:
 	dbw 21, MAGBY
 	dbw 21, KOFFING
 	dbw 21, ZUBAT
-	dbw 21, SLUGMA
+	dbw 21, NUMEL
 	dbw 21, GRIMER
 	dbw 21, DUSKULL
 	dbw 21, SLUGMA
@@ -159,7 +159,7 @@ JohtoGrassWildMons:
 	dbw 27, NIDORINA
 	dbw 27, LEDIAN
 	dbw 27, BUTTERFREE
-	dbw 27, SCYTHER
+	dbw 27, SKIPLOOM
 	dbw 27, SCYTHER
 	dbw 27, PINSIR
 	dbw 27, PINSIR
@@ -168,7 +168,7 @@ JohtoGrassWildMons:
 	dbw 27, NIDORINA
 	dbw 27, LEDIAN
 	dbw 27, BUTTERFREE
-	dbw 27, SCYTHER
+	dbw 27, SKIPLOOM
 	dbw 27, SCYTHER
 	dbw 27, PINSIR
 	dbw 27, PINSIR
@@ -177,7 +177,7 @@ JohtoGrassWildMons:
 	dbw 27, NIDORINA
 	dbw 27, ARIADOS
 	dbw 27, BEEDRILL
-	dbw 27, SCYTHER
+	dbw 27, SKIPLOOM
 	dbw 27, SCYTHER
 	dbw 27, PINSIR
 	dbw 27, PINSIR
@@ -248,7 +248,7 @@ JohtoGrassWildMons:
 	dbw 44, GRAVELER
 	dbw 44, SANDSLASH
 	dbw 44, QUAGSIRE
-	dbw 44, RATICATE
+	dbw 44, MAWILE
 	dbw 44, GOLBAT
 	dbw 44, ONIX
 	dbw 44, STEELIX
@@ -257,7 +257,7 @@ JohtoGrassWildMons:
 	dbw 44, GRAVELER
 	dbw 44, SANDSLASH
 	dbw 44, QUAGSIRE
-	dbw 44, RATICATE
+	dbw 44, MAWILE
 	dbw 44, GOLBAT
 	dbw 44, ONIX
 	dbw 44, STEELIX
@@ -266,7 +266,7 @@ JohtoGrassWildMons:
 	dbw 44, GRAVELER
 	dbw 44, RATICATE_A
 	dbw 44, QUAGSIRE
-	dbw 44, RATICATE_A
+	dbw 44, SABLEYE
 	dbw 44, GOLBAT
 	dbw 44, ONIX
 	dbw 44, STEELIX
@@ -279,7 +279,7 @@ JohtoGrassWildMons:
 	dbw 44, GOLBAT
 	dbw 44, GOLBAT
 	dbw 44, STEELIX
-	dbw 44, RATICATE
+	dbw 44, MAWILE
 	dbw 44, RATICATE
 	dbw 44, RATICATE
 	dbw 44, RATICATE
@@ -288,7 +288,7 @@ JohtoGrassWildMons:
 	dbw 44, GOLBAT
 	dbw 44, GOLBAT
 	dbw 44, STEELIX
-	dbw 44, RATICATE
+	dbw 44, MAWILE
 	dbw 44, RATICATE
 	dbw 44, RATICATE
 	dbw 44, RATICATE
@@ -297,7 +297,7 @@ JohtoGrassWildMons:
 	dbw 44, GOLBAT
 	dbw 44, GOLBAT
 	dbw 44, STEELIX
-	dbw 44, RATICATE_A
+	dbw 44, SABLEYE
 	dbw 44, RATICATE_A
 	dbw 44, RATICATE_A
 	dbw 44, RATICATE_A
@@ -308,7 +308,7 @@ JohtoGrassWildMons:
 	dbw 44, GRAVELER
 	dbw 44, GOLBAT
 	dbw 44, SANDSLASH
-	dbw 44, RATICATE
+	dbw 44, MAWILE
 	dbw 44, GRAVELER
 	dbw 44, STEELIX
 	dbw 44, STEELIX
@@ -317,7 +317,7 @@ JohtoGrassWildMons:
 	dbw 44, GRAVELER
 	dbw 44, GOLBAT
 	dbw 44, SANDSLASH
-	dbw 44, RATICATE
+	dbw 44, MAWILE
 	dbw 44, GRAVELER
 	dbw 44, STEELIX
 	dbw 44, STEELIX
@@ -326,7 +326,7 @@ JohtoGrassWildMons:
 	dbw 44, GRAVELER
 	dbw 44, GOLBAT
 	dbw 44, QUAGSIRE
-	dbw 44, RATICATE_A
+	dbw 44, SABLEYE
 	dbw 44, GRAVELER
 	dbw 44, STEELIX
 	dbw 44, STEELIX
@@ -1240,7 +1240,7 @@ JohtoGrassWildMons:
 	dbw 28, PIDGEOTTO
 	dbw 28, JIGGLYPUFF
 	dbw 28, KIRLIA
-	dbw 28, DITTO
+	dbw 28, ABSOL
 	dbw 28, DITTO
 	dbw 28, DITTO
 	; day
@@ -1249,7 +1249,7 @@ JohtoGrassWildMons:
 	dbw 28, PIDGEOTTO
 	dbw 28, JIGGLYPUFF
 	dbw 28, KIRLIA
-	dbw 28, DITTO
+	dbw 28, ABSOL
 	dbw 28, DITTO
 	dbw 28, DITTO
 	; nite
@@ -1258,7 +1258,7 @@ JohtoGrassWildMons:
 	dbw 28, HYPNO
 	dbw 28, JIGGLYPUFF
 	dbw 28, KIRLIA
-	dbw 28, DITTO
+	dbw 28, ABSOL
 	dbw 28, DITTO
 	dbw 28, DITTO
 
@@ -1391,7 +1391,7 @@ JohtoGrassWildMons:
 	dbw 15, TAUROS
 	dbw 15, ROSELIA
 	dbw 15, MILTANK
-	dbw 15, MILTANK
+	dbw 15, RIOLU
 	dbw 15, YANMA
 	; day
 	dbw 15, MAGNEMITE
@@ -1400,7 +1400,7 @@ JohtoGrassWildMons:
 	dbw 15, TAUROS
 	dbw 15, ROSELIA
 	dbw 15, MILTANK
-	dbw 15, MILTANK
+	dbw 15, RIOLU
 	dbw 15, YANMA
 	; nite
 	dbw 15, MAGNEMITE
@@ -1409,7 +1409,7 @@ JohtoGrassWildMons:
 	dbw 15, MURKROW
 	dbw 15, ROSELIA
 	dbw 15, MEOWTH_A
-	dbw 15, MEOWTH_A
+	dbw 15, RIOLU
 	dbw 15, YANMA
 
 	map_id ROUTE_42
@@ -1661,7 +1661,7 @@ JohtoGrassWildMons:
 	dbw 23, GEODUDE
 	dbw 23, ONIX
 	dbw 23, KINGLER
-	dbw 23, QUAGSIRE
+	dbw 23, MAWILE
 	dbw 23, STEELIX
 	; day
 	dbw 23, ZUBAT
@@ -1670,7 +1670,7 @@ JohtoGrassWildMons:
 	dbw 23, GEODUDE
 	dbw 23, ONIX
 	dbw 23, KINGLER
-	dbw 23, QUAGSIRE
+	dbw 23, MAWILE
 	dbw 23, STEELIX
 	; nite
 	dbw 23, ZUBAT
@@ -1679,35 +1679,35 @@ JohtoGrassWildMons:
 	dbw 23, GEODUDE
 	dbw 23, ONIX
 	dbw 23, KINGLER
-	dbw 23, GOLBAT
+	dbw 23, SABLEYE
 	dbw 23, STEELIX
 
 	map_id ROUTE_48
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 24, SKIPLOOM
+	dbw 24, FARFETCH_D
 	dbw 24, VULPIX
 	dbw 24, GROWLITHE
 	dbw 24, DIGLETT
-	dbw 24, FARFETCH_D
+	dbw 24, MEDITITE
 	dbw 24, TAUROS
 	dbw 24, GIRAFARIG
 	dbw 24, GIRAFARIG
 	; day
-	dbw 24, SKIPLOOM
+	dbw 24, FARFETCH_D
 	dbw 24, VULPIX
 	dbw 24, GROWLITHE
 	dbw 24, DIGLETT
-	dbw 24, FARFETCH_D
+	dbw 24, MEDITITE
 	dbw 24, TAUROS
 	dbw 24, GIRAFARIG
 	dbw 24, GIRAFARIG
 	; nite
-	dbw 24, FEAROW
+	dbw 24, FARFETCH_D
 	dbw 24, VULPIX
 	dbw 24, GROWLITHE
 	dbw 24, DIGLETT
-	dbw 24, FARFETCH_D
+	dbw 24, MEDITITE
 	dbw 24, TAUROS_P
 	dbw 24, GIRAFARIG
 	dbw 24, GIRAFARIG
@@ -1835,29 +1835,29 @@ JohtoGrassWildMons:
 	map_id WILD_AREA_4
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 15, GROWLITHE_H
+	dbw 15, GEODUDE_A
 	dbw 15, DIGLETT_A
 	dbw 15, CACNEA
 	dbw 15, CHANSEY
-	dbw 15, GEODUDE_A
+	dbw 15, TRAPINCH
 	dbw 15, MURKROW
 	dbw 15, STANTLER
 	dbw 15, GIBLE
 	; morn
-	dbw 15, GROWLITHE_H
+	dbw 15, GEODUDE_A
 	dbw 15, DIGLETT_A
 	dbw 15, CACNEA
 	dbw 15, CHANSEY
-	dbw 15, GEODUDE_A
+	dbw 15, TRAPINCH
 	dbw 15, MURKROW
 	dbw 15, STANTLER
 	dbw 15, GIBLE
 	; nite
-	dbw 15, GROWLITHE_H
+	dbw 15, GEODUDE_A
 	dbw 15, DIGLETT_A
 	dbw 15, CACNEA
 	dbw 15, CHANSEY
-	dbw 15, GEODUDE_A
+	dbw 15, TRAPINCH
 	dbw 15, MURKROW
 	dbw 15, STANTLER
 	dbw 15, GIBLE
@@ -1900,7 +1900,7 @@ JohtoGrassWildMons:
 	dbw 15, EKANS
 	dbw 15, PSYDUCK
 	dbw 15, POLIWAG
-	dbw 15, YANMA
+	dbw 15, SKORUPI
 	dbw 15, CROAGUNK
 	dbw 15, FARFETCH_D_G
 	; day
@@ -1909,7 +1909,7 @@ JohtoGrassWildMons:
 	dbw 15, EKANS
 	dbw 15, PSYDUCK
 	dbw 15, POLIWAG
-	dbw 15, YANMA
+	dbw 15, SKORUPI
 	dbw 15, CROAGUNK
 	dbw 15, FARFETCH_D_G
 	; nite
@@ -1918,7 +1918,7 @@ JohtoGrassWildMons:
 	dbw 15, EKANS
 	dbw 15, PSYDUCK
 	dbw 15, POLIWAG
-	dbw 15, YANMA
+	dbw 15, SKORUPI
 	dbw 15, CROAGUNK
 	dbw 15, FARFETCH_D_G
 
