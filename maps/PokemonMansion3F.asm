@@ -187,7 +187,7 @@ PokemonMansion3F_MapEvents:
 	bg_event  1, 10, BGEVENT_ITEM, PokemonMansion3FHiddenNugget
 
 	db 4 ; object events
-	object_event  6, 12, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, PokemonMansion3FDiary, -1
-	object_event 19,  4, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, PokemonMansion3FDiary2, -1
+	object_event  6, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, PokemonMansion3FDiary, -1
+	object_event 19,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, PokemonMansion3FDiary2, -1
 	object_event 26, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonMansion3FScientist, -1
 	object_event  5, 14, SPRITE_BURGLAR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerBurglarHarry, -1
