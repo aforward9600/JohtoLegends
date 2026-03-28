@@ -115,8 +115,8 @@ Lighthouse4FCooltrainerFText:
 	text "I hope these cops"
 	line "leave soon."
 
-	para "This is my favor-"
-	line "ite spot for"
+	para "This is my"
+	line "favorite spot for"
 	cont "isolation."
 	done
 

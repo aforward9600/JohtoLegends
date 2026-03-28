@@ -53,7 +53,7 @@ OlivineGym1F_MapScripts:
 	return
 
 .SeventhElevator2:
-	changeblock 16, 10, $8a
+	changeblock 16, 10, $aa
 	checkevent EVENT_GYM_TENTH_ELEVATOR
 	iftrue .TenthElevator2
 	return
@@ -71,7 +71,7 @@ OlivineGym1F_MapScripts:
 	return
 
 .TwelthElevator2:
-	changeblock 4, 2, $99
+	changeblock 4, 2, $66
 	return
 
 OlivineGym1FGuyScript:
@@ -109,61 +109,86 @@ OlivineGym1FStatue:
 	gettrainername STRING_BUFFER_4, BYRON, BYRON1
 	jumpstd gymstatue5
 
+OlivineLiftSprite:
+	special LiftSprite
+	refreshscreen $86
+	end
+
 FirstElevator:
+	scall OlivineLiftSprite
+	changeblock 6, 4, $99
 	scall OlivineElevatorEffect
 	setevent EVENT_GYM_FIRST_ELEVATOR
 	warp OLIVINE_GYM_2F, 5, 5
 	end
 
 SecondElevator:
+	scall OlivineLiftSprite
+	changeblock 10, 4, $89
 	scall OlivineElevatorEffect
 	setevent EVENT_GYM_SECOND_ELEVATOR
 	warp OLIVINE_GYM_2F, 7, 5
 	end
 
 ThirdElevator:
+	scall OlivineLiftSprite
+	changeblock 14, 4, $87
 	scall OlivineElevatorEffect
 	setevent EVENT_GYM_THIRD_ELEVATOR
 	warp OLIVINE_GYM_2F, 9, 5
 	end
 
 FourthElevator:
+	scall OlivineLiftSprite
+	changeblock 18, 10, $60
 	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_FOURTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 13, 10
 	end
 
 FifthElevator:
+	scall OlivineLiftSprite
+	changeblock 16, 4, $89
 	scall OlivineElevatorEffect
 	setevent EVENT_GYM_FIFTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 12, 5
 	end
 
 SixthElevator:
+	scall OlivineLiftSprite
+	changeblock 20, 10, $68
 	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_SIXTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 15, 10
 	end
 
 SeventhElevator:
+	scall OlivineLiftSprite
+	changeblock 16, 10, $aa
 	scall OlivineElevatorEffect
 	setevent EVENT_GYM_SEVENTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 11, 10
 	end
 
 TenthElevator:
+	scall OlivineLiftSprite
+	changeblock 18, 2, $68
 	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_TENTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 13, 3
 	end
 
 EleventhElevator1F:
+	scall OlivineLiftSprite
+	changeblock 12, 2, $68
 	scall OlivineElevatorEffect
 	setevent EVENT_GYM_ELEVENTH_ELEVATOR
 	warp OLIVINE_GYM_4F, 7, 4
 	end
 
 TwelthElevator1F:
+	scall OlivineLiftSprite
+	changeblock 4, 2, $68
 	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_TWELTH_ELEVATOR
 	warp OLIVINE_GYM_4F, 3, 4
@@ -173,12 +198,23 @@ ResetElevators:
 	end
 
 OlivineElevatorEffect:
+	reloadmappart
+	playsound SFX_ELEVATOR
+	applymovement PLAYER, OlivineElevatorMovement
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	playsound SFX_ELEVATOR
-	pause 5
-	waitsfx
+	special RestorePlayerSprite
 	end
+
+OlivineElevatorMovement:
+	turn_head DOWN
+	fix_facing
+	step UP
+	step UP
+	step UP
+	remove_fixed_facing
+	step_end
+	
 
 GentlemanCrofton1FSeenText:
 	text "Steel is a hard"
@@ -228,7 +264,7 @@ OlivineGym1FGuyText:
 	line "champ in the"
 	cont "making?"
 
-	para "Byron uses the"
+	para "Opal uses the"
 	line "Steel-Type. They"
 	cont "are durable, and"
 
@@ -253,7 +289,7 @@ OlivineGym1F_MapEvents:
 	warp_event 12, 13, OLIVINE_CITY, 2
 	warp_event 13, 13, OLIVINE_CITY, 2
 
-	db 12 ; coord events
+	db 10 ; coord events
 	coord_event  7,  5, SCENE_DEFAULT, FirstElevator
 	coord_event 11,  5, SCENE_DEFAULT, SecondElevator
 	coord_event 14,  5, SCENE_DEFAULT, ThirdElevator
@@ -261,8 +297,6 @@ OlivineGym1F_MapEvents:
 	coord_event 17,  5, SCENE_DEFAULT, FifthElevator
 	coord_event 21, 10, SCENE_DEFAULT, SixthElevator
 	coord_event 16, 10, SCENE_DEFAULT, SeventhElevator
-	coord_event 12, 13, SCENE_DEFAULT, ResetElevators
-	coord_event 13, 13, SCENE_DEFAULT, ResetElevators
 	coord_event 19,  2, SCENE_DEFAULT, TenthElevator
 	coord_event 13,  2, SCENE_DEFAULT, EleventhElevator1F
 	coord_event  5,  2, SCENE_DEFAULT, TwelthElevator1F

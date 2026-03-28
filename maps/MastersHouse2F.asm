@@ -29,8 +29,6 @@ MastersHouse2F_MapScripts:
 
 .Disappear:
 	disappear MASTERSHOUSE2F_RIVAL
-	return
-
 .Skip:
 	return
 

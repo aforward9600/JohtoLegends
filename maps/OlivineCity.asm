@@ -150,8 +150,8 @@ OlivineCityStandingYoungsterPokegearText:
 	text "The Leader isn't"
 	line "here right now."
 
-	para "He's at the Light-"
-	line "house."
+	para "She's at the"
+	line "Lighthouse."
 
 	para "Apparently there's"
 	line "been an incident."
@@ -166,8 +166,7 @@ OlivineCityStandingYoungsterGoToCianwoodText:
 
 	para "Even then, you may"
 	line "need to wait a"
-	cont "little while long-"
-	cont "er."
+	cont "little longer."
 	done
 
 OlivineCityStandingYoungsterGotBadgeText:
@@ -175,7 +174,7 @@ OlivineCityStandingYoungsterGotBadgeText:
 	line "StormBadge! Nice!"
 
 	para "I'd like to let"
-	line "you in, but Byron"
+	line "you in, but Opal"
 	cont "is still getting"
 	cont "ready."
 
@@ -277,10 +276,10 @@ OlivineCityPortSignText:
 OlivineGymSignText:
 	text "Olivine City"
 	line "#mon Gym"
-	cont "Leader: Byron"
+	cont "Leader: Opal"
 
 	para "The Steel"
-	line "Mining Master"
+	line "Sweetheart"
 	done
 
 OlivineLighthouseSignText:

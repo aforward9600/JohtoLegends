@@ -164,3 +164,5 @@ SpecialsPointers::
 	add_special SetMonHiddenPowerDVs ; a8
 	add_special AskForPasswordInMap
 	add_special HiddenAbilityChange
+	add_special LiftSprite
+	add_special RestorePlayerSprite

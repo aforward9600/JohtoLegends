@@ -136,51 +136,45 @@ AfterByronRematch:
 	writetextend BeatenByronAgainText
 
 EleventhElevator:
-	scall OlivineElevatorEffect
+	scall OlivineDownElevator
 	clearevent EVENT_GYM_ELEVENTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 13, 2
 	end
 
 TwelthElevator:
-	scall OlivineElevatorEffect
+	scall OlivineDownElevator
 	setevent EVENT_GYM_TWELTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 5, 2
 	end
 
 Byron1F_LittleHero:
-	text "Welcome, little"
-	line "hero! I'll"
-	cont "properly introduce"
+	text "Welcome, my hero."
+	line "I'll properly"
+	cont "introduce myself"
+	cont "now."
 
-	para "myself now! I am"
-	line "Byron, the Leader"
-	cont "of the Olivine"
+	para "I am Opal, the"
+	line "Leader of the"
+	cont "Olivine City Gym."
 
-	para "City Gym! I came"
-	line "from Canalave City"
-	cont "in the Sinnoh"
+	para "I am quite the fan"
+	line "of Steel-types, as"
+	cont "they're sleek and"
+	cont "sturdy."
 
-	para "region. I hope to"
-	line "return to my home-"
-	cont "land someday, but"
-
-	para "for now, I shall"
-	line "be the greatest"
-	cont "Leader I can be"
-
-	para "here in Johto! You"
-	line "were of great help"
-	cont "at the Lighthouse,"
+	para "You were of great"
+	line "help at the"
+	cont "Lighthouse,"
 
 	para "but I can't just"
 	line "give you a Badge"
-	cont "for that! Let's"
+	cont "for that."
 
-	para "get this started!"
+	para "Let's start."
 	done
 
 Byron1F_Clang:
-	text "CLANG! What a"
+	text "Wow! What a"
 	line "battle!"
 	done
 
@@ -228,58 +222,54 @@ Byron1F_FlashCannonSpeech:
 	done
 
 Byron1F_Sunnyshore:
-	text "I'll need to find"
-	line "a suitable"
-	cont "replacement if I"
+	text "Did you enjoy the"
+	line "layout of our Gym?"
 
-	para "want to return"
-	line "home."
+	para "I was inspired by"
+	line "my friend Byron,"
 
-	para "Maybe a cute girl!"
+	para "the Gym Leader of"
+	line "Canalave City in"
+	cont "Sinnoh."
 
-	para "Whaddya think?"
+	para "I hope that my"
+	line "daughter Jasmine"
+	cont "can take over the"
+	cont "Gym for me"
+	cont "someday."
 	done
 
 ByronRematchText:
-	text "Welcome back, lil'"
-	line "hero!"
+	text "Welcome back,"
+	line "<PLAYER>."
 
 	para "Ready for our"
 	line "rematch?"
-
-	para "CLANG!"
 	done
 
 BeatenByronAgainText:
-	text "Dang!"
+	text "Impressive."
 
 	para "You're too good!"
-
-	para "Maybe you can be"
-	line "a Gym Leader some-"
-	cont "day!"
 	done
 
 PostGameByronText:
 	text "Looks like I was"
-	line "helpful to you!"
+	line "helpful to you."
 
-	para "You don't get to"
-	line "be Champion by"
-	cont "being soft!"
-
-	para "I toughened you up"
-	line "before, and now I"
-	cont "want to see how"
-	cont "good you are!"
+	para "Your journey has"
+	line "made you strong,"
+	cont "and I'd like to"
+	cont "see just how"
+	cont "strong you are."
 	done
 
 BeatenByronAgainText2:
 	text "You're quite the"
-	line "tough Champion!"
+	line "tough Champion."
 
 	para "Tough as steel"
-	line "I'd say!"
+	line "I'd say."
 	done
 
 OlivineGym4F_MapEvents:

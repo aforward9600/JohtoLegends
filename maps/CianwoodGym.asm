@@ -66,7 +66,6 @@ CianwoodGymChigusaScript:
 	readvar VAR_BADGES
 	setscene SCENE_FINISHED
 	setmapscene WILD_AREA_OUTSIDE, SCENE_WILD_AREA_RIVAL
-	setevent EVENT_WILD_AREA_OUTSIDE_RIVAL1
 	setflag ENGINE_BEAT_CHIGUSA
 .FightDone:
 	checkflag ENGINE_BEAT_CHIGUSA
@@ -259,20 +258,18 @@ ChigusaIntroText:
 	para "fighter in here!"
 	line "Powerful and"
 	cont "elegant, that's"
+	cont "what I am!"
 
-	para "what I am! I'm"
-	line "also the only"
-	cont "woman Gym Leader"
+	para "As one of the only"
+	line "women Gym Leaders"
+	cont "in Johto,"
 
-	para "in the region! I"
-	line "hope to inspire"
-	cont "girls around Johto"
+	para "I hope to inspire"
+	line "girls around Johto"
+	cont "to be just as"
+	cont "as I am!"
 
-	para "to be just as"
-	line "strong! Now then,"
-	cont "let's do it! My"
-
-	para "#mon will be"
+	para "My #mon will be"
 	line "spinning circles"
 	cont "around yours!"
 	done

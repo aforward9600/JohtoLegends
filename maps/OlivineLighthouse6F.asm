@@ -297,7 +297,7 @@ NeverYouCriminalText:
 
 	para "……Huh?"
 
-	para "Hey, kid!"
+	para "Hey, you!"
 
 	para "Get out of here!"
 
@@ -397,21 +397,23 @@ WhateverWereDoneText:
 DangSmokeBombsText:
 	text "Cough! Cough!"
 
-	para "Ugh, dang smoke"
-	line "bombs!"
+	para "That must have"
+	line "been a smoke"
+	cont "bomb."
 
 	para "Well, at least"
-	line "they're gone!"
+	line "they're gone."
 
-	para "Thanks little"
-	line "hero!"
+	para "Thank you for"
+	line "your help, young"
+	cont "hero."
 
 	para "Your name is?"
 
 	para "…So, <PLAYER> is"
-	line "it? Well met!"
+	line "it? Well met."
 
-	para "I'm Byron, the"
+	para "I'm Opal, the"
 	line "Leader of the"
 	cont "Olivine City Gym."
 
@@ -420,7 +422,8 @@ DangSmokeBombsText:
 	cont "mon of the light-"
 	cont "house."
 
-	para "Come on out."
+	para "It's alright. You"
+	line "can come on out."
 	done
 
 ThisIsRosaText:
@@ -444,8 +447,8 @@ ThisIsRosaText:
 
 	para "Well, come on down"
 	line "to the Gym when"
-	cont "you want to take"
-	cont "me on."
+	cont "you wish to"
+	cont "challenge me."
 
 	para "I need some time"
 	line "before the Gym is"
@@ -478,8 +481,7 @@ ThatsSurfText:
 	line "get to Cianwood"
 	cont "City."
 
-	para "See you later,"
-	line "hero!"
+	para "Farewell for now."
 	done
 
 TyranitarText:

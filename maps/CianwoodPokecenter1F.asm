@@ -63,16 +63,15 @@ CianwoodGymGuyText:
 	line "and Fairy Types"
 	cont "will easily put"
 
-	para "them out of commi-"
-	line "ssion!"
+	para "them out of"
+	line "commission!"
 	done
 
 CianwoodGymGuyWinText:
 	text "Nice one! I'm"
 	line "still not going in"
 	cont "there, even to"
-
-	para "talk to Chigusa."
+	cont "talk to Chigusa."
 	done
 
 CianwoodPokecenter1FSuperNerdText:

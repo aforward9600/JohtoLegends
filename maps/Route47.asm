@@ -142,21 +142,6 @@ Route47Sign:
 Route47SuperNerdScript:
 	jumptextfaceplayer Route47SuperNerdText
 
-;MakeBridgesPriority:
-;	changeblock 22, 12, $55
-;	changeblock 23, 12, $55
-;	changeblock 24, 12, $55
-;	changeblock 22,  9, $5C
-;	changeblock 23,  9, $5C
-;	changeblock 24,  9, $5C
-;	changeblock 10, 12, $5C
-;	changeblock 11, 12, $5C
-;	changeblock 12, 12, $5C
-;	changeblock 10,  8, $55
-;	changeblock 11,  8, $55
-;	changeblock 11,  8, $55
-;	end
-
 HikerPhilSeenText:
 	text "I like the caves"
 	line "here."

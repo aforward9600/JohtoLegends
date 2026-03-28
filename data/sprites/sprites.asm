@@ -27,7 +27,7 @@ OverworldSprites:
 	overworld_sprite MiltonSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite MortySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ChuckSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite ByronSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite ByronSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite PryceSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ClairSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite FlintSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
@@ -153,3 +153,5 @@ OverworldSprites:
 	overworld_sprite ChrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite RegigigasSpriteGFX, 12, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite ChrisLiftSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite KrisLiftSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED

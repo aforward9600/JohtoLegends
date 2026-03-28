@@ -180,16 +180,19 @@ IlexForestShrineScript:
 	special CheckCaughtCelebi
 	iffalse .DidntCatchCelebi
 	setevent EVENT_CAUGHT_CELEBI
+	clearevent EVENT_ILEX_FOREST_LASS
 	end
 
 .DidntCatchCelebi:
 	setevent EVENT_BEAT_CELEBI
+	clearevent EVENT_ILEX_FOREST_LASS
 	giveitem GS_BALL
 	end
 
 .NotBeaten:
 	reloadmapafterbattle
 	giveitem GS_BALL
+	setevent EVENT_FOREST_IS_RESTLESS
 	end
 
 MovementData_0x6ef4e:

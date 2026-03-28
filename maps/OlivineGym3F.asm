@@ -32,13 +32,13 @@ TrainerEngineerRudy:
 	jumptext EngineerRudyAfterBattleText
 
 EighthElevator:
-	scall OlivineElevatorEffect
+	scall OlivineDownElevator
 	clearevent EVENT_GYM_EIGHTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 2, 12
 	end
 
 NinthElevator:
-	scall OlivineElevatorEffect
+	scall OlivineDownElevator
 	setevent EVENT_GYM_NINTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 15, 3
 	end
@@ -54,11 +54,11 @@ EngineerRudySeenText:
 
 EngineerRudyBeatenText:
 	text "I'd say you're"
-	line "ready for Byron!"
+	line "ready for Opal!"
 	done
 
 EngineerRudyAfterBattleText:
-	text "The lifts were his"
+	text "The lifts were her"
 	line "idea."
 
 	para "We had a big part"

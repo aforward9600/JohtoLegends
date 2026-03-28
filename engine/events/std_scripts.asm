@@ -278,190 +278,35 @@ DayToTextScript:
 	db "Saturday@"
 
 GoldenrodRocketsScript:
-	clearevent EVENT_GOLDENROD_TOWER_TAKEOVER
-	setevent EVENT_GOLDENROD_CITY_CIVILIANS
-	setevent EVENT_GOLDENROD_CITY_GUARD_1
-	clearevent EVENT_GOLDENROD_CITY_GUARD_2
-	setmapscene GOLDENROD_GYM, SCENE_FINISHED
-	setflag ENGINE_ROCKETS_IN_RADIO_TOWER
-	end
-
 RadioTowerRocketsScript:
-	setevent EVENT_GOLDENROD_CITY_GUARD_1
-	clearevent EVENT_GOLDENROD_CITY_GUARD_2
-	setmapscene GOLDENROD_GYM, SCENE_FINISHED
-	end
 
 BugContestResultsWarpScript:
-	special ClearBGPalettes
-	scall BugContestResults_CopyContestantsToResults
-	setevent EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY
-	clearevent EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY
-	setevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
-	warp ROUTE_36_NATIONAL_PARK_GATE, 0, 4
-	applymovement PLAYER, Movement_ContestResults_WalkAfterWarp
 
 BugContestResultsScript:
-	clearflag ENGINE_BUG_CONTEST_TIMER
-	clearevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
-	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
-	clearevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
-	clearevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
-	clearevent EVENT_CONTEST_OFFICER_HAS_BERRY
-	opentext
-	farwritetext ContestResults_ReadyToJudgeText
-	waitbutton
-	special BugContestJudging
-	getnum STRING_BUFFER_3
-	ifequal 1, BugContestResults_FirstPlace
-	ifequal 2, BugContestResults_SecondPlace
-	ifequal 3, BugContestResults_ThirdPlace
-	farwritetext ContestResults_ConsolationPrizeText
-	buttonsound
-	waitsfx
-	verbosegiveitem ORAN_BERRY
-	iffalse BugContestResults_NoRoomForBerry
 
 BugContestResults_DidNotWin:
-	farwritetext ContestResults_DidNotWinText
-	buttonsound
-	sjump BugContestResults_FinishUp
 
 BugContestResults_ReturnAfterWinnersPrize:
-	farwritetext ContestResults_JoinUsNextTimeText
-	buttonsound
 
 BugContestResults_FinishUp:
-	checkevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER
-	iffalse BugContestResults_DidNotLeaveMons
-	farwritetext ContestResults_ReturnPartyText
-	waitbutton
-	special ContestReturnMons
 BugContestResults_DidNotLeaveMons:
-	special CheckPartyFullAfterContest
-	ifequal BUGCONTEST_CAUGHT_MON, BugContestResults_CleanUp
-	ifequal BUGCONTEST_NO_CATCH, BugContestResults_CleanUp
-	; BUGCONTEST_BOXED_MON
-	farwritetext ContestResults_PartyFullText
-	waitbutton
 BugContestResults_CleanUp:
-	closetext
-	setscene SCENE_ROUTE36NATIONALPARKGATE_NOTHING
-	setmapscene ROUTE_35_NATIONAL_PARK_GATE, SCENE_ROUTE35NATIONALPARKGATE_NOTHING
-	setevent EVENT_BUG_CATCHING_CONTESTANT_1A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_2A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_3A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_4A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_5A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_6A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_7A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_8A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_9A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_10A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_1B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_2B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_3B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_4B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_5B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_6B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_7B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_8B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_9B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_10B
-	setflag ENGINE_DAILY_BUG_CONTEST
-	special PlayMapMusic
-	end
 
 BugContestResults_FirstPlace:
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	getitemname STRING_BUFFER_4, SUN_STONE
-	farwritetext ContestResults_PlayerWonAPrizeText
-	waitbutton
-	verbosegiveitem SUN_STONE
-	iffalse BugContestResults_NoRoomForSunStone
-	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_SecondPlace:
-	getitemname STRING_BUFFER_4, EVERSTONE
-	farwritetext ContestResults_PlayerWonAPrizeText
-	waitbutton
-	verbosegiveitem EVERSTONE
-	iffalse BugContestResults_NoRoomForEverstone
-	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_ThirdPlace:
-	getitemname STRING_BUFFER_4, SITRUS_BERRY
-	farwritetext ContestResults_PlayerWonAPrizeText
-	waitbutton
-	verbosegiveitem SITRUS_BERRY
-	iffalse BugContestResults_NoRoomForGoldBerry
-	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_NoRoomForSunStone:
-	farwritetext BugContestPrizeNoRoomText
-	buttonsound
-	setevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
-	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_NoRoomForEverstone:
-	farwritetext BugContestPrizeNoRoomText
-	buttonsound
-	setevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
-	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_NoRoomForGoldBerry:
-	farwritetext BugContestPrizeNoRoomText
-	buttonsound
-	setevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
-	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_NoRoomForBerry:
-	farwritetext BugContestPrizeNoRoomText
-	buttonsound
-	setevent EVENT_CONTEST_OFFICER_HAS_BERRY
-	sjump BugContestResults_DidNotWin
 
 BugContestResults_CopyContestantsToResults:
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_1A
-	iftrue .skip1
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_1B
-.skip1
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_2A
-	iftrue .skip2
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_2B
-.skip2
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_3A
-	iftrue .skip3
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_3B
-.skip3
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_4A
-	iftrue .skip4
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_4B
-.skip4
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_5A
-	iftrue .skip5
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_5B
-.skip5
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_6A
-	iftrue .skip6
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_6B
-.skip6
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_7A
-	iftrue .skip7
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_7B
-.skip7
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_8A
-	iftrue .skip8
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_8B
-.skip8
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_9A
-	iftrue .skip9
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_9B
-.skip9
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_10A
-	iftrue .skip10
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_10B
-.skip10
 	end
 
 InitializeEventsScript:
@@ -470,34 +315,16 @@ InitializeEventsScript:
 	setevent EVENT_SEVAULT_CANYON_ZAPDOS_3
 	setevent EVENT_SEVAULT_CANYON_ZAPDOS_4
 	setevent EVENT_GOLDENROD_TOWER_TAKEOVER
-	setevent EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
 	setevent EVENT_RADIO_TOWER_CIVILIANS_AFTER
-	setevent EVENT_ILEX_FOREST_APPRENTICE
-	setevent EVENT_ILEX_FOREST_CHARCOAL_MASTER
-	setevent EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE
-	setevent EVENT_TEAM_ROCKET_BASE_B2F_GRUNT_WITH_EXECUTIVE
 	setevent EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE
-	setevent EVENT_TEAM_ROCKET_BASE_B2F_DRAGONITE
 	setevent EVENT_RIVAL_TEAM_ROCKET_BASE
 	setevent EVENT_BLACKTHORN_CITY_SUPER_NERD_DOES_NOT_BLOCK_GYM
-	setevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER
-	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setevent EVENT_RIVAL_AZALEA_TOWN
-	setevent EVENT_RIVAL_GOLDENROD_UNDERGROUND
-	setevent EVENT_KURTS_HOUSE_SLOWPOKE
-	setevent EVENT_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE
-	setevent EVENT_ELMS_AIDE_IN_VIOLET_POKEMON_CENTER
-	setevent EVENT_COP_IN_ELMS_LAB
 	setevent EVENT_RUINS_OF_ALPH_OUTSIDE_SCIENTIST
 	setevent EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST
 	setevent EVENT_MT_MOON_SQUARE_CLEFAIRY
-	setevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
-	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
 	setevent EVENT_INITIALIZED_EVENTS
-	setevent EVENT_FAST_SHIP_1F_GENTLEMAN
-	setevent EVENT_FAST_SHIP_B1F_SAILOR_RIGHT
-	setevent EVENT_FAST_SHIP_CABINS_NNW_NNE_NE_SAILOR
-	setevent EVENT_LAKE_OF_RAGE_CIVILIANS
+	setevent EVENT_WILD_AREA_OUTSIDE_RIVAL1
 	setevent EVENT_MAHOGANY_MART_OWNERS
 	setevent EVENT_TIN_TOWER_ROOF_HO_OH
 	setevent EVENT_WHIRL_ISLAND_LUGIA_CHAMBER_LUGIA
@@ -511,34 +338,18 @@ InitializeEventsScript:
 	setevent EVENT_OLIVINE_GYM_JASMINE
 	setevent EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
 	setevent EVENT_MET_BILL
-	setevent EVENT_ECRUTEAK_POKE_CENTER_BILL
 	setevent EVENT_MYSTERY_GIFT_DELIVERY_GUY
 	setevent EVENT_LAKE_OF_RAGE_MIYAMOTO
 	setevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1
 	setevent EVENT_GOLDENROD_UNDERGROUND_WAREHOUSE_BLOCKED_OFF
-	setevent EVENT_DRAGONS_DEN_CLAIR
-	setevent EVENT_RIVAL_OLIVINE_CITY
 	setevent EVENT_RIVAL_VICTORY_ROAD
-	setevent EVENT_RIVAL_DRAGONS_DEN
-	setevent EVENT_LANCES_ROOM_OAK_AND_MARY
-	setevent EVENT_FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN_TWIN_1
 	setevent EVENT_BURNED_TOWER_B1F_BEASTS_1
 	setevent EVENT_RED_IN_MT_SILVER
-	setevent EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME
-	setevent EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
-	setevent EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
-	setevent EVENT_OLIVINE_PORT_PASSAGE_POKEFAN_M
-	setevent EVENT_KURTS_HOUSE_KURT_2
-	setevent EVENT_KURTS_HOUSE_GRANDDAUGHTER_2
 	setevent EVENT_RANG_CLEAR_BELL_1
-	setevent EVENT_FLORIA_AT_FLOWER_SHOP
-	setevent EVENT_FLORIA_AT_SUDOWOODO
-	setevent EVENT_GOLDENROD_CITY_MOVE_TUTOR
 	setevent EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER
 	setevent EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
 	setevent EVENT_BATTLE_TOWER_BATTLE_ROOM_YOUNGSTER
 	setevent EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR
-	setevent EVENT_ILEX_FOREST_KURT
 	setevent EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_IN_WALKWAY
 	setevent EVENT_ILEX_FOREST_LASS
 	setevent EVENT_GOLDENROD_SALE_OFF
@@ -554,7 +365,6 @@ InitializeEventsScript:
 	setflag ENGINE_ROCKET_SIGNAL_ON_CH20
 	setflag ENGINE_ROCKETS_IN_MAHOGANY
 	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_ROCKET
-	variablesprite SPRITE_AZALEA_ROCKET, SPRITE_ROCKET
 	setevent EVENT_LOST_BOY_TWO_ISLAND
 	setevent EVENT_TRAINERS_IN_CERULEAN_GYM
 	setevent EVENT_VIRIDIAN_GYM_BLUE
@@ -1180,125 +990,85 @@ TelevisionScript:
 
 .Skarmini:
 	farwritetext SkarminiOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Cyndaquil:
 	farwritetext CyndaquilOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Chikorita:
 	farwritetext ChikoritaOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Totodile:
 	farwritetext TotodileOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Croagunk:
 	farwritetext CroagunkOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Electrike:
 	farwritetext ElectrikeOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Ralts:
 	farwritetext RaltsOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Duskull:
 	farwritetext DuskullOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Wynaut:
 	farwritetext WynautOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Budew:
 	farwritetext BudewOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Cacnea:
 	farwritetext CacneaOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Snorunt:
 	farwritetext SnoruntOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Aron:
 	farwritetext AronOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Gible:
 	farwritetext GibleOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Tyrogue:
 	farwritetext TyrogueOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Corsola:
 	farwritetext CorsolaOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Bonsly:
 	farwritetext BonslyOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .MimeJr:
 	farwritetext MimeJrOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Eevee:
 	farwritetext EeveeOakText
-	waitbutton
-	closetext
 	sjump .EndOakTalk
 
 .Bronzor:
 	farwritetext BronzorOakText
+.EndOakTalk:
 	waitbutton
 	closetext
-	sjump .EndOakTalk
-
-.EndOakTalk:
 	special FadeOutMusic
 	pause 15
 	special RestartMapMusic
@@ -1388,8 +1158,6 @@ SwarmScript:
 .noswarm
 	setflag ENGINE_SWARM
 	farwritetext NoSwarmTodayText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .yanma
@@ -1398,8 +1166,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ROUTE_39
 	getmonname STRING_BUFFER_3, YANMA
 	farwritetext RouteSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .dunsparce
@@ -1408,8 +1174,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, DARK_CAVE
 	getmonname STRING_BUFFER_3, DUNSPARCE
 	farwritetext CaveSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .qwilfish
@@ -1421,8 +1185,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
 	getmonname STRING_BUFFER_3, QWILFISH
 	farwritetext CaveSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .eevee
@@ -1433,8 +1195,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
 	getmonname STRING_BUFFER_3, EEVEE
 	farwritetext CaveSwarmVowelText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .kangaskhan
@@ -1445,8 +1205,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
 	getmonname STRING_BUFFER_3, KANGASKHAN
 	farwritetext CaveSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .gible
@@ -1457,8 +1215,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
 	getmonname STRING_BUFFER_3, GIBLE
 	farwritetext CaveSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .sneasel
@@ -1469,8 +1225,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ICE_PATH
 	getmonname STRING_BUFFER_3, SNEASEL
 	farwritetext CaveSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .smoochum
@@ -1480,8 +1234,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ICE_PATH
 	getmonname STRING_BUFFER_3, SMOOCHUM
 	farwritetext CaveSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .misdreavus
@@ -1492,8 +1244,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, BURNED_TOWER
 	getmonname STRING_BUFFER_3, MISDREAVUS
 	farwritetext CaveSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .magby
@@ -1505,8 +1255,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, BURNED_TOWER
 	getmonname STRING_BUFFER_3, MAGBY
 	farwritetext CaveSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .scyther
@@ -1515,8 +1263,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ROUTE_38
 	getmonname STRING_BUFFER_3, SCYTHER
 	farwritetext RouteSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .pinsir
@@ -1525,8 +1271,6 @@ SwarmScript:
 	setflag ENGINE_SWARM
 	swarm NATIONAL_PARK
 	farwritetext PinsirSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .aron
@@ -1535,8 +1279,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, MT_MORTAR
 	getmonname STRING_BUFFER_3, ARON
 	farwritetext CaveSwarmVowelText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .tyrogue
@@ -1546,8 +1288,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, MT_MORTAR
 	getmonname STRING_BUFFER_3, TYROGUE
 	farwritetext CaveSwarmVowelText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .ralts
@@ -1556,16 +1296,12 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ROUTE_43
 	getmonname STRING_BUFFER_3, RALTS
 	farwritetext RouteSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .kotora
 	setflag ENGINE_SWARM
 	swarm LAKE_OF_RAGE
 	farwritetext LakeOfRageSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .parasect
@@ -1576,8 +1312,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ILEX_FOREST
 	getmonname STRING_BUFFER_3, PARASECT
 	farwritetext CaveSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .gligar
@@ -1588,8 +1322,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, UNION_CAVE
 	getmonname STRING_BUFFER_3, GLIGAR
 	farwritetext CaveSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .toxicroak
@@ -1600,8 +1332,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ROUTE_32
 	getmonname STRING_BUFFER_3, TOXICROAK
 	farwritetext RouteSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .murkrow
@@ -1610,8 +1340,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ROUTE_37
 	getmonname STRING_BUFFER_3, MURKROW
 	farwritetext RouteSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .ditto
@@ -1622,8 +1350,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ROUTE_35
 	getmonname STRING_BUFFER_3, DITTO
 	farwritetext RouteSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .slowpoke
@@ -1632,8 +1358,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ROUTE_44
 	getmonname STRING_BUFFER_3, SLOWPOKE
 	farwritetext RouteSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .ponyta
@@ -1642,8 +1366,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ROUTE_42
 	getmonname STRING_BUFFER_3, PONYTA
 	farwritetext RouteSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .elekid
@@ -1653,8 +1375,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ROUTE_42
 	getmonname STRING_BUFFER_3, ELEKID
 	farwritetext RouteSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .cyndaquil
@@ -1664,8 +1384,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, DARK_CAVE
 	getmonname STRING_BUFFER_3, CYNDAQUIL
 	farwritetext CaveSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .chikorita
@@ -1675,8 +1393,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ROUTE_44
 	getmonname STRING_BUFFER_3, CHIKORITA
 	farwritetext RouteSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .totodile
@@ -1686,8 +1402,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ROUTE_43
 	getmonname STRING_BUFFER_3, TOTODILE
 	farwritetext RouteSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .chansey
@@ -1698,8 +1412,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, ROUTE_47
 	getmonname STRING_BUFFER_3, CHANSEY
 	farwritetext RouteSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .beldum
@@ -1708,8 +1420,6 @@ SwarmScript:
 	setflag ENGINE_SWARM
 	swarm EMBEDDED_TOWER
 	farwritetext EmbeddedTowerSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .farfetchd
@@ -1720,8 +1430,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
 	getmonname STRING_BUFFER_3, FARFETCH_D_G
 	farwritetext CaveSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .voltorb
@@ -1732,8 +1440,6 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
 	getmonname STRING_BUFFER_3, VOLTORB_H
 	farwritetext CaveSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .mrmime
@@ -1744,17 +1450,14 @@ SwarmScript:
 	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
 	getmonname STRING_BUFFER_3, MR__MIME_G
 	farwritetext CaveSwarmText
-	waitbutton
-	closetext
 	sjump .endswarmchannel
 
 .skiprandomswarm
 	farwritetext ThatsAllFolksText
-	waitbutton
-	closetext
-	sjump .endswarmchannel
 
 .endswarmchannel
+	waitbutton
+	closetext
 	special FadeOutMusic
 	pause 15
 	special RestartMapMusic

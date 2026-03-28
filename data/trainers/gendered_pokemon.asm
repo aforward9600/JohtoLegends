@@ -38,4 +38,5 @@ FemalePokemonTrainers:
 	db SENSATIONAL2
 	db SENSATIONAL3
 	db FNINJA_F
+	db BYRON
 	db -1

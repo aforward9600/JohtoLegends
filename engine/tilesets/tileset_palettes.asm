@@ -16,8 +16,8 @@ LoadSpecialMapPalette:
 	jr z, .ice_path
 	cp TILESET_HOUSE
 	jr z, .house
-;	cp TILESET_RADIO_TOWER
-;	jr z, .radio_tower
+	cp TILESET_UNDERGROUND
+	jr z, .underground
 	cp TILESET_MANSION
 	jp z, .mansion_mobile
 	cp TILESET_TOWER
@@ -67,10 +67,10 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
-;.radio_tower
-;	call LoadRadioTowerPalette
-;	scf
-;	ret
+.underground
+	call LoadUndergroundPalette
+	scf
+	ret
 
 .mansion_mobile
 	ld a, [wEnvironment]
@@ -270,16 +270,28 @@ LoadHousePalette:
 HousePalette:
 INCLUDE "gfx/tilesets/house.pal"
 
-;LoadRadioTowerPalette:
-;	ld a, BANK(wBGPals1)
-;	ld de, wBGPals1
-;	ld hl, RadioTowerPalette
-;	ld bc, 8 palettes
-;	call FarCopyWRAM
-;	ret
+LoadUndergroundPalette:
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
+	jr z, .male
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, UndergroundPaletteFemale
+	ld bc, 8 palettes
+	jp FarCopyWRAM
 
-;RadioTowerPalette:
-;INCLUDE "gfx/tilesets/radio_tower.pal"
+.male
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, UndergroundPalette
+	ld bc, 8 palettes
+	jp FarCopyWRAM
+
+UndergroundPalette:
+INCLUDE "gfx/tilesets/underground.pal"
+
+UndergroundPaletteFemale:
+INCLUDE "gfx/tilesets/underground_female.pal"
 
 MansionPalette1:
 INCLUDE "gfx/tilesets/mansion_1.pal"

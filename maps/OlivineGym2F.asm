@@ -95,62 +95,73 @@ TrainerBeautyAshley:
 	endifjustbattled
 	jumptext BeautyAshleyAfterBattle
 
+OlivineDownElevator:
+	playsound SFX_ELEVATOR
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	pause 30
+	end
+
 First2FElevator:
-	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_FIRST_ELEVATOR
+	scall OlivineDownElevator
 	warp OLIVINE_GYM_1F, 7, 5
 	end
 
 Second2FElevator:
-	scall OlivineElevatorEffect
+	scall OlivineDownElevator
 	clearevent EVENT_GYM_SECOND_ELEVATOR
 	warp OLIVINE_GYM_1F, 11, 5
 	end
 
 Third2FElevator:
-	scall OlivineElevatorEffect
+	scall OlivineDownElevator
 	clearevent EVENT_GYM_THIRD_ELEVATOR
 	warp OLIVINE_GYM_1F, 14, 5
 	end
 
 Fourth2FElevator:
-	scall OlivineElevatorEffect
+	scall OlivineDownElevator
 	setevent EVENT_GYM_FOURTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 18, 10
 	end
 
 Fifth2FElevator:
-	scall OlivineElevatorEffect
+	scall OlivineDownElevator
 	clearevent EVENT_GYM_FIFTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 17, 5
 	end
 
 Sixth2FElevator:
-	scall OlivineElevatorEffect
+	scall OlivineDownElevator
 	setevent EVENT_GYM_SIXTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 21, 10
 	end
 
 Seventh2FElevator:
-	scall OlivineElevatorEffect
+	scall OlivineDownElevator
 	clearevent EVENT_GYM_SEVENTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 16, 10
 	end
 
 Eighth2FElevator:
+	scall OlivineLiftSprite
+	changeblock 2, 12, $86
 	scall OlivineElevatorEffect
 	setevent EVENT_GYM_EIGHTH_ELEVATOR
 	warp OLIVINE_GYM_3F, 3, 12
 	end
 
 Ninth2FElevator:
+	scall OlivineLiftSprite
+	changeblock 14, 2, $7a
 	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_NINTH_ELEVATOR
 	warp OLIVINE_GYM_3F, 16, 3
 	end
 
 Tenth2FElevator:
-	scall OlivineElevatorEffect
+	scall OlivineDownElevator
 	setevent EVENT_GYM_TENTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 19, 2
 	end
