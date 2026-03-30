@@ -24,6 +24,19 @@ OlivineCity_MapScripts:
 	clearevent EVENT_GYM_TENTH_ELEVATOR
 	clearevent EVENT_GYM_ELEVENTH_ELEVATOR
 	clearevent EVENT_GYM_TWELTH_ELEVATOR
+	checkevent EVENT_BEAT_BYRON
+	iftrue .IsItWednesday
+	clearevent EVENT_OLIVINE_GYM_JASMINE
+	return
+
+.IsItWednesday:
+	readvar VAR_WEEKDAY
+	ifequal WEDNESDAY, .DisappearByron
+	clearevent EVENT_OLIVINE_GYM_JASMINE
+	return
+
+.DisappearByron:
+	setevent EVENT_OLIVINE_GYM_JASMINE
 	return
 
 OlivineCitySailor1Script:

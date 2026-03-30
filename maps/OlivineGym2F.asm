@@ -17,6 +17,9 @@ OlivineGym2F_MapScripts:
 	end
 
 .Elevators:
+	checkevent EVENT_OLIVINE_GYM_FIRST_PLATFORM
+	iftrue .ReplaceFirstPlatform
+.ResumeElevator:
 	checkevent EVENT_GYM_FOURTH_ELEVATOR
 	iftrue .ReplaceFourthElevator
 	checkevent EVENT_GYM_FIRST_ELEVATOR
@@ -28,6 +31,11 @@ OlivineGym2F_MapScripts:
 	checkevent EVENT_GYM_FIFTH_ELEVATOR
 	iftrue .ReplaceFifthElevator
 	return
+
+.ReplaceFirstPlatform:
+	changeblock 4, 10, $ad
+	changeblock 8, 10, $ac
+	sjump .ResumeElevator
 
 .ReplaceFirstElevator:
 	changeblock 4, 4, $6e
@@ -166,6 +174,60 @@ Tenth2FElevator:
 	warp OLIVINE_GYM_1F, 19, 2
 	end
 
+FirstPlatform:
+	scall OlivineLiftSprite
+	changeblock 8, 10, $ac
+	reloadmappart
+	playsound SFX_ELEVATOR
+	applymovement PLAYER, OlivineGymLeft5Movement
+	playsound SFX_BUMP
+	refreshscreen $86
+	changeblock 4, 10, $ad
+	scall OlivineRestorePlayerSpriteReloadMap
+	setevent EVENT_OLIVINE_GYM_FIRST_PLATFORM
+	end
+
+SecondPlatform:
+	scall OlivineLiftSprite
+	changeblock 4, 10, $ac
+	reloadmappart
+	playsound SFX_ELEVATOR
+	applymovement PLAYER, OlivineGymRight5Movement
+	playsound SFX_BUMP
+	refreshscreen $86
+	changeblock 8, 10, $ab
+	scall OlivineRestorePlayerSpriteReloadMap
+	clearevent EVENT_OLIVINE_GYM_FIRST_PLATFORM
+	end
+
+OlivineGymLeft9Movement:
+	step LEFT
+	step LEFT
+OlivineGymLeft5Movement:
+	step LEFT
+	step LEFT
+OlivineGymLeft3Movement:
+	step LEFT
+OlivineGymLeft2Movement:
+	step LEFT
+OlivineGymLeft1Movement:
+	step LEFT
+	step_end
+
+OlivineGymRight9Movement:
+	step RIGHT
+	step RIGHT
+OlivineGymRight5Movement:
+	step RIGHT
+	step RIGHT
+OlivineGymRight3Movement:
+	step RIGHT
+OlivineGymRight2Movement:
+	step RIGHT
+OlivineGymRight1Movement:
+	step RIGHT
+	step_end
+
 EngineerDanteSeenText:
 	text "Like these lifts?"
 
@@ -213,7 +275,7 @@ OlivineGym2F_MapEvents:
 
 	db 0 ; warp events
 
-	db 10 ; coord events
+	db 12 ; coord events
 	coord_event  5,  5, SCENE_DEFAULT, First2FElevator
 	coord_event  7,  5, SCENE_DEFAULT, Second2FElevator
 	coord_event  9,  5, SCENE_DEFAULT, Third2FElevator
@@ -224,6 +286,8 @@ OlivineGym2F_MapEvents:
 	coord_event  2, 12, SCENE_DEFAULT, Eighth2FElevator
 	coord_event 15,  3, SCENE_DEFAULT, Ninth2FElevator
 	coord_event 13,  3, SCENE_DEFAULT, Tenth2FElevator
+	coord_event  9, 10, SCENE_DEFAULT, FirstPlatform
+	coord_event  4, 10, SCENE_DEFAULT, SecondPlatform
 
 	db 0 ; bg events
 

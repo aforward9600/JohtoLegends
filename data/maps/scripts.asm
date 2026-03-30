@@ -12,10 +12,6 @@ INCLUDE "maps/GoldenrodDeptStore6F.asm"
 INCLUDE "maps/GoldenrodDeptStoreElevator.asm"
 INCLUDE "maps/GoldenrodDeptStoreRoof.asm"
 INCLUDE "maps/GoldenrodGameCorner.asm"
-INCLUDE "maps/OlivineGym2F.asm"
-INCLUDE "maps/OlivineGym1F.asm"
-INCLUDE "maps/OlivineGym3F.asm"
-INCLUDE "maps/OlivineGym4F.asm"
 
 
 SECTION "Map Scripts 2", ROMX
@@ -676,3 +672,10 @@ INCLUDE "maps/MtEmberInside7.asm"
 INCLUDE "maps/MtEmberInside72.asm"
 INCLUDE "maps/MtEmberInside8.asm"
 INCLUDE "maps/MtEmberInside9.asm"
+
+SECTION "Map Scripts 34", ROMX
+
+INCLUDE "maps/OlivineGym2F.asm"
+INCLUDE "maps/OlivineGym1F.asm"
+INCLUDE "maps/OlivineGym3F.asm"
+INCLUDE "maps/OlivineGym4F.asm"

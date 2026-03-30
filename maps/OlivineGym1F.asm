@@ -114,6 +114,12 @@ OlivineLiftSprite:
 	refreshscreen $86
 	end
 
+OlivineRestorePlayerSpriteReloadMap:
+	reloadmappart
+	special RestorePlayerSprite
+;	refreshscreen $86
+	end
+
 FirstElevator:
 	scall OlivineLiftSprite
 	changeblock 6, 4, $99
@@ -183,7 +189,7 @@ EleventhElevator1F:
 	changeblock 12, 2, $68
 	scall OlivineElevatorEffect
 	setevent EVENT_GYM_ELEVENTH_ELEVATOR
-	warp OLIVINE_GYM_4F, 7, 4
+	warp OLIVINE_GYM_4F, 5, 4
 	end
 
 TwelthElevator1F:
@@ -191,7 +197,7 @@ TwelthElevator1F:
 	changeblock 4, 2, $68
 	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_TWELTH_ELEVATOR
-	warp OLIVINE_GYM_4F, 3, 4
+	warp OLIVINE_GYM_4F, 1, 2
 	end
 
 ResetElevators:

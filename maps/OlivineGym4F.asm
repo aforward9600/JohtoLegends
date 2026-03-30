@@ -7,7 +7,7 @@ OlivineGym4F_MapScripts:
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_OBJECTS, .WednesdayByron
+	callback MAPCALLBACK_TILES, .Elevators
 
 .DummyScene0:
 	end
@@ -15,20 +15,38 @@ OlivineGym4F_MapScripts:
 .DummyScene1:
 	end
 
-.WednesdayByron:
-	checkevent EVENT_BEAT_BYRON
-	iftrue .IsItWednesday
-	appear OLIVINEGYM4F_BYRON
+.Elevators:
+	checkevent EVENT_OLIVINE_GYM_SEVENTH_PLATFORM
+	iftrue .SeventhLift
+	checkevent EVENT_OLIVINE_GYM_EIGHTH_PLATFORM
+	iftrue .EighthLift
+	checkevent EVENT_OLIVINE_GYM_NINTH_PLATFORM
+	iftrue .NinthLift
+	checkevent EVENT_OLIVINE_GYM_TENTH_PLATFORM
+	iftrue .TenthLift
 	return
 
-.IsItWednesday:
-	readvar VAR_WEEKDAY
-	ifequal WEDNESDAY, .DisappearByron
-	appear OLIVINEGYM4F_BYRON
-	return
+.SeventhLift:
+	changeblock 8, 0, $a9
+	changeblock 10, 0, $b0
+	checkevent EVENT_OLIVINE_GYM_EIGHTH_PLATFORM
+	iffalse .NinthLift
 
-.DisappearByron:
-	disappear OLIVINEGYM4F_BYRON
+.EighthLift:
+	changeblock 12, 2, $a6
+	changeblock 12, 6, $b1
+	checkevent EVENT_OLIVINE_GYM_NINTH_PLATFORM
+	iffalse .TenthLift
+
+.NinthLift:
+	changeblock 10, 8, $ac
+	changeblock  2, 8, $ad
+	checkevent EVENT_OLIVINE_GYM_TENTH_PLATFORM
+	iffalse .Finish
+.TenthLift:
+	changeblock 0, 6, $a7
+	changeblock 0, 4, $b2
+.Finish:
 	return
 
 OlivineGym1FByronScript:
@@ -145,6 +163,110 @@ TwelthElevator:
 	scall OlivineDownElevator
 	setevent EVENT_GYM_TWELTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 5, 2
+	end
+
+SeventeenthLift:
+	scall OlivineLiftSprite
+	changeblock 6, 0, $a9
+	reloadmappart
+	playsound SFX_ELEVATOR
+	applymovement PLAYER, OlivineGymRight3Movement
+	playsound SFX_BUMP
+	refreshscreen $86
+	changeblock 8, 0, $b0
+	scall OlivineRestorePlayerSpriteReloadMap
+	setevent EVENT_OLIVINE_GYM_SEVENTH_PLATFORM
+	end
+
+EighteenthLift:
+	scall OlivineLiftSprite
+	changeblock 8, 0, $a9
+	reloadmappart
+	playsound SFX_ELEVATOR
+	applymovement PLAYER, OlivineGymLeft3Movement
+	playsound SFX_BUMP
+	refreshscreen $86
+	changeblock 6, 0, $af
+	scall OlivineRestorePlayerSpriteReloadMap
+	clearevent EVENT_OLIVINE_GYM_SEVENTH_PLATFORM
+	end
+
+NineteenthLift:
+	scall OlivineLiftSprite
+	changeblock 10, 2, $a6
+	reloadmappart
+	playsound SFX_ELEVATOR
+	applymovement PLAYER, OlivineGymDown5Movement
+	playsound SFX_BUMP
+	refreshscreen $86
+	changeblock 10, 6, $b1
+	scall OlivineRestorePlayerSpriteReloadMap
+	setevent EVENT_OLIVINE_GYM_EIGHTH_PLATFORM
+	end
+
+TwentiethLift:
+	scall OlivineLiftSprite
+	changeblock 10, 6, $a7
+	reloadmappart
+	playsound SFX_ELEVATOR
+	applymovement PLAYER, OlivineGymUp5Movement
+	playsound SFX_BUMP
+	refreshscreen $86
+	changeblock 10, 2, $b2
+	scall OlivineRestorePlayerSpriteReloadMap
+	clearevent EVENT_OLIVINE_GYM_EIGHTH_PLATFORM
+	end
+
+TwentyfirstLift:
+	scall OlivineLiftSprite
+	changeblock 8, 8, $ac
+	reloadmappart
+	playsound SFX_ELEVATOR
+	applymovement PLAYER, OlivineGymLeft9Movement
+	playsound SFX_BUMP
+	refreshscreen $86
+	changeblock 2, 8, $ad
+	scall OlivineRestorePlayerSpriteReloadMap
+	setevent EVENT_OLIVINE_GYM_NINTH_PLATFORM
+	end
+
+TwentysecondLift:
+	scall OlivineLiftSprite
+	changeblock 2, 8, $ac
+	reloadmappart
+	playsound SFX_ELEVATOR
+	applymovement PLAYER, OlivineGymRight9Movement
+	playsound SFX_BUMP
+	refreshscreen $86
+	changeblock 8, 8, $ab
+	scall OlivineRestorePlayerSpriteReloadMap
+	clearevent EVENT_OLIVINE_GYM_NINTH_PLATFORM
+	end
+
+TwentythirdLift:
+	scall OlivineLiftSprite
+	changeblock 0, 6, $a7
+	reloadmappart
+	playsound SFX_ELEVATOR
+	applymovement PLAYER, OlivineGymUp3Movement
+	playsound SFX_BUMP
+	refreshscreen $86
+	changeblock 0, 4, $b2
+	scall OlivineRestorePlayerSpriteReloadMap
+	setevent EVENT_OLIVINE_GYM_TENTH_PLATFORM
+	end
+
+TwentyfourthLift:
+	scall OlivineLiftSprite
+	changeblock 0, 4, $a6
+	reloadmappart
+	playsound SFX_ELEVATOR
+	applymovement PLAYER, OlivineGymDown3Movement
+	playsound SFX_BUMP
+	refreshscreen $86
+	changeblock 0, 6, $b1
+	scall OlivineRestorePlayerSpriteReloadMap
+	clearevent EVENT_OLIVINE_GYM_TENTH_PLATFORM
 	end
 
 Byron1F_LittleHero:
@@ -277,11 +399,19 @@ OlivineGym4F_MapEvents:
 
 	db 0 ; warp events
 
-	db 2 ; coord events
-	coord_event  7,  4, SCENE_DEFAULT, EleventhElevator
-	coord_event  3,  4, SCENE_DEFAULT, TwelthElevator
+	db 10 ; coord events
+	coord_event  5,  4, SCENE_DEFAULT, EleventhElevator
+	coord_event  1,  2, SCENE_DEFAULT, TwelthElevator
+	coord_event  6,  1, SCENE_DEFAULT, SeventeenthLift
+	coord_event  9,  1, SCENE_DEFAULT, EighteenthLift
+	coord_event 10,  2, SCENE_DEFAULT, NineteenthLift
+	coord_event 10,  7, SCENE_DEFAULT, TwentiethLift
+	coord_event  9,  8, SCENE_DEFAULT, TwentyfirstLift
+	coord_event  2,  8, SCENE_DEFAULT, TwentysecondLift
+	coord_event  0,  7, SCENE_DEFAULT, TwentythirdLift
+	coord_event  0,  4, SCENE_DEFAULT, TwentyfourthLift
 
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  7,  0, SPRITE_BYRON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, OlivineGym1FByronScript, EVENT_OLIVINE_GYM_JASMINE
+	object_event  5,  0, SPRITE_BYRON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, OlivineGym1FByronScript, EVENT_OLIVINE_GYM_JASMINE
