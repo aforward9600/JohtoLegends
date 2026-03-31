@@ -62,7 +62,7 @@ OlivineGym2F_MapScripts:
 	return
 
 .ReplaceFifthElevator:
-	changeblock 12, 4, $7f
+	changeblock 12, 4, $5b
 	checkevent EVENT_GYM_SIXTH_ELEVATOR
 	iftrue .ReplaceSixthElevator
 	return
@@ -104,49 +104,96 @@ TrainerBeautyAshley:
 	jumptext BeautyAshleyAfterBattle
 
 OlivineDownElevator:
+	reloadmappart
 	playsound SFX_ELEVATOR
+	applymovement PLAYER, OlivineDownElevatorMovement1
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	pause 30
+	special RestorePlayerSprite
 	end
 
+OlivineDownElevator2:
+	reloadmappart
+	playsound SFX_ELEVATOR
+	applymovement PLAYER, OlivineDownElevatorMovement2
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	applymovement PLAYER, OlivineGymShowPlayer
+	special RestorePlayerSprite
+	end
+
+OlivineDownElevatorMovement1:
+	turn_head DOWN
+	hide_person
+	step DOWN
+	step DOWN
+	show_person
+	step DOWN
+	step_end
+
+OlivineDownElevatorMovement2:
+	turn_head DOWN
+	hide_person
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+OlivineGymShowPlayer:
+	show_person
+	step_end
+
 First2FElevator:
-	clearevent EVENT_GYM_FIRST_ELEVATOR
+	scall OlivineLiftSprite
+	changeblock 4, 4, $6d
 	scall OlivineDownElevator
+	clearevent EVENT_GYM_FIRST_ELEVATOR
 	warp OLIVINE_GYM_1F, 7, 5
 	end
 
 Second2FElevator:
+	scall OlivineLiftSprite
+	changeblock 6, 4, $6f
 	scall OlivineDownElevator
 	clearevent EVENT_GYM_SECOND_ELEVATOR
 	warp OLIVINE_GYM_1F, 11, 5
 	end
 
 Third2FElevator:
+	scall OlivineLiftSprite
+	changeblock 8, 4, $70
 	scall OlivineDownElevator
 	clearevent EVENT_GYM_THIRD_ELEVATOR
 	warp OLIVINE_GYM_1F, 14, 5
 	end
 
 Fourth2FElevator:
+	scall OlivineLiftSprite
+	changeblock 12, 10, $6b
 	scall OlivineDownElevator
 	setevent EVENT_GYM_FOURTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 18, 10
 	end
 
 Fifth2FElevator:
-	scall OlivineDownElevator
+	scall OlivineLiftSprite
+	changeblock 12, 4, $77
+	scall OlivineDownElevator2
 	clearevent EVENT_GYM_FIFTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 17, 5
 	end
 
 Sixth2FElevator:
+	scall OlivineLiftSprite
+	changeblock 14, 10, $6b
 	scall OlivineDownElevator
 	setevent EVENT_GYM_SIXTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 21, 10
 	end
 
 Seventh2FElevator:
+	scall OlivineLiftSprite
+	changeblock 10, 10, $82
 	scall OlivineDownElevator
 	clearevent EVENT_GYM_SEVENTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 16, 10
@@ -169,7 +216,9 @@ Ninth2FElevator:
 	end
 
 Tenth2FElevator:
-	scall OlivineDownElevator
+	scall OlivineLiftSprite
+	changeblock 12, 2, $79
+	scall OlivineDownElevator2
 	setevent EVENT_GYM_TENTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 19, 2
 	end

@@ -154,12 +154,16 @@ AfterByronRematch:
 	writetextend BeatenByronAgainText
 
 EleventhElevator:
+	scall OlivineLiftSprite
+	changeblock 4, 4, $8c
 	scall OlivineDownElevator
 	clearevent EVENT_GYM_ELEVENTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 13, 2
 	end
 
 TwelthElevator:
+	scall OlivineLiftSprite
+	changeblock 0, 2, $8c
 	scall OlivineDownElevator
 	setevent EVENT_GYM_TWELTH_ELEVATOR
 	warp OLIVINE_GYM_1F, 5, 2

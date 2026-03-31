@@ -75,13 +75,17 @@ TrainerEngineerRudy:
 	jumptext EngineerRudyAfterBattleText
 
 EighthElevator:
+	scall OlivineLiftSprite
+	changeblock 2, 12, $8c
 	scall OlivineDownElevator
 	clearevent EVENT_GYM_EIGHTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 2, 12
 	end
 
 NinthElevator:
-	scall OlivineDownElevator
+	scall OlivineLiftSprite
+	changeblock 16, 2, $b3
+	scall OlivineDownElevator2
 	setevent EVENT_GYM_NINTH_ELEVATOR
 	warp OLIVINE_GYM_2F, 15, 3
 	end
