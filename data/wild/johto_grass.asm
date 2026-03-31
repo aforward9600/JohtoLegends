@@ -1703,7 +1703,7 @@ JohtoGrassWildMons:
 	dbw 24, GIRAFARIG
 	dbw 24, GIRAFARIG
 	; nite
-	dbw 24, FARFETCH_D
+	dbw 24, FARFETCH_D_G
 	dbw 24, VULPIX
 	dbw 24, GROWLITHE
 	dbw 24, DIGLETT
@@ -1825,7 +1825,7 @@ JohtoGrassWildMons:
 	; nite
 	dbw 15, VULPIX_A
 	dbw 15, SANDSHREW_A
-	dbw 15, PARAS
+	dbw 15, SWINUB
 	dbw 15, SNEASEL
 	dbw 15, SEEL
 	dbw 15, DELIBIRD
@@ -2051,7 +2051,7 @@ JohtoGrassWildMons:
 	dbw 23, GEODUDE
 	dbw 23, ONIX
 	dbw 23, KINGLER
-	dbw 23, QUAGSIRE
+	dbw 23, MAWILE
 	dbw 23, STEELIX
 	; day
 	dbw 23, ZUBAT
@@ -2060,7 +2060,7 @@ JohtoGrassWildMons:
 	dbw 23, GEODUDE
 	dbw 23, ONIX
 	dbw 23, KINGLER
-	dbw 23, QUAGSIRE
+	dbw 23, MAWILE
 	dbw 23, STEELIX
 	; nite
 	dbw 23, ZUBAT
@@ -2069,7 +2069,7 @@ JohtoGrassWildMons:
 	dbw 23, GEODUDE
 	dbw 23, ONIX
 	dbw 23, KINGLER
-	dbw 23, GOLBAT
+	dbw 23, SABLEYE
 	dbw 23, STEELIX
 
 	map_id INFANT_GROVE
@@ -2101,5 +2101,35 @@ JohtoGrassWildMons:
 	dbw 5, BONSLY
 	dbw 5, CLEFFA
 	dbw 5, TOGEPI
+
+	map_id EMBEDDED_TOWER
+	db 10 percent, 10 percent, 10 percent
+	; morn
+	dbw 35, GOLBAT
+	dbw 35, MISDREAVUS
+	dbw 35, LAIRON
+	dbw 35, BRONZONG
+	dbw 35, SMEARGLE
+	dbw 18, BELDUM
+	dbw 18, BELDUM
+	dbw 35, METANG
+	; day
+	dbw 35, GOLBAT
+	dbw 35, MISDREAVUS
+	dbw 35, LAIRON
+	dbw 35, BRONZONG
+	dbw 35, SMEARGLE
+	dbw 18, BELDUM
+	dbw 18, BELDUM
+	dbw 35, METANG
+	; nite
+	dbw 35, GOLBAT
+	dbw 35, MISDREAVUS
+	dbw 35, LAIRON
+	dbw 35, BRONZONG
+	dbw 35, SMEARGLE
+	dbw 18, BELDUM
+	dbw 18, BELDUM
+	dbw 35, METANG
 
 	db -1 ; end

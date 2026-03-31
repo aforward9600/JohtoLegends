@@ -134,7 +134,7 @@ SwarmGrassWildMons:
 	dbw 15, GIBLE
 	dbw 15, CHANSEY
 	dbw 15, STANTLER
-	dbw 15, GIBLE
+	dbw 15, TRAPINCH
 	dbw 15, MURKROW
 	dbw 15, MURKROW
 	dbw 15, MURKROW
@@ -143,7 +143,7 @@ SwarmGrassWildMons:
 	dbw 15, GIBLE
 	dbw 15, CHANSEY
 	dbw 15, STANTLER
-	dbw 15, GIBLE
+	dbw 15, TRAPINCH
 	dbw 15, MURKROW
 	dbw 15, MURKROW
 	dbw 15, MURKROW
@@ -152,7 +152,7 @@ SwarmGrassWildMons:
 	dbw 15, GIBLE
 	dbw 15, CHANSEY
 	dbw 15, STANTLER
-	dbw 15, GIBLE
+	dbw 15, TRAPINCH
 	dbw 15, MURKROW
 	dbw 15, MURKROW
 	dbw 15, MURKROW
@@ -564,28 +564,28 @@ SwarmGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw  7, PONYTA
-	dbw  7, PONYTA
-	dbw  7, ELEKID
-	dbw  7, BONSLY
+	dbw  7, PONYTA_G
 	dbw  7, HOUNDOUR
+	dbw  7, BONSLY
+	dbw  7, PONYTA_G
 	dbw  7, HOUNDOUR
 	dbw  7, ELEKID
 	dbw  7, ELEKID
 	; day
 	dbw  7, PONYTA
-	dbw  7, PONYTA
-	dbw  7, ELEKID
-	dbw  7, BONSLY
+	dbw  7, PONYTA_G
 	dbw  7, HOUNDOUR
+	dbw  7, BONSLY
+	dbw  7, PONYTA_G
 	dbw  7, HOUNDOUR
 	dbw  7, ELEKID
 	dbw  7, ELEKID
 	; nite
 	dbw  7, PONYTA
-	dbw  7, PONYTA
-	dbw  7, ELEKID
-	dbw  7, BONSLY
+	dbw  7, PONYTA_G
 	dbw  7, HOUNDOUR
+	dbw  7, BONSLY
+	dbw  7, PONYTA_G
 	dbw  7, HOUNDOUR
 	dbw  7, ELEKID
 	dbw  7, ELEKID
@@ -656,30 +656,30 @@ SwarmGrassWildMons:
 	; morn
 	dbw 15, FARFETCH_D_G
 	dbw 15, WOOPER_P
-	dbw 15, FARFETCH_D_G
+	dbw 15, POLIWAG
 	dbw 15, WOOPER_P
-	dbw 15, POLIWAG
 	dbw 15, FARFETCH_D_G
-	dbw 15, POLIWAG
-	dbw 15, FARFETCH_D_G
+	dbw 15, SKORUPI
+	dbw 15, SKORUPI
+	dbw 15, SKORUPI
 	; morn
 	dbw 15, FARFETCH_D_G
 	dbw 15, WOOPER_P
-	dbw 15, FARFETCH_D_G
+	dbw 15, POLIWAG
 	dbw 15, WOOPER_P
-	dbw 15, POLIWAG
 	dbw 15, FARFETCH_D_G
-	dbw 15, POLIWAG
-	dbw 15, FARFETCH_D_G
+	dbw 15, SKORUPI
+	dbw 15, SKORUPI
+	dbw 15, SKORUPI
 	; nite
 	dbw 15, FARFETCH_D_G
 	dbw 15, WOOPER_P
-	dbw 15, FARFETCH_D_G
+	dbw 15, POLIWAG
 	dbw 15, WOOPER_P
-	dbw 15, POLIWAG
 	dbw 15, FARFETCH_D_G
-	dbw 15, POLIWAG
-	dbw 15, FARFETCH_D_G
+	dbw 15, SKORUPI
+	dbw 15, SKORUPI
+	dbw 15, SKORUPI
 
 ; Voltorb H swarm
 

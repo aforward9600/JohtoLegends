@@ -275,7 +275,7 @@ JohtoWaterWildMons:
 	dbw 19, MAGIKARP
 	dbw 25, QWILFISH
 
-	map_id WILD_AREA_2_3
+	map_id WILD_AREA_POND
 	db 10 percent ; encounter rate
 	dbw 15, CORSOLA_J
 	dbw 15, STARYU

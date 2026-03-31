@@ -97,32 +97,32 @@ SwarmGrassWildMonsAlt:
 	map_id BURNED_TOWER_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 12, SLUGMA
+	dbw 12, NUMEL
 	dbw 12, MAGBY
 	dbw 12, MAGBY
 	dbw 12, MAGBY
-	dbw 12, MISDREAVUS
 	dbw 12, DUSKULL
 	dbw 12, DUSKULL
-	dbw 12, MISDREAVUS
+	dbw 12, DUSKULL
+	dbw 12, DUSKULL
 	; day
-	dbw 12, SLUGMA
+	dbw 12, NUMEL
 	dbw 12, MAGBY
 	dbw 12, MAGBY
 	dbw 12, MAGBY
-	dbw 12, MISDREAVUS
 	dbw 12, DUSKULL
 	dbw 12, DUSKULL
-	dbw 12, MISDREAVUS
+	dbw 12, DUSKULL
+	dbw 12, DUSKULL
 	; nite
-	dbw 12, SLUGMA
+	dbw 12, NUMEL
 	dbw 12, MAGBY
 	dbw 12, MAGBY
 	dbw 12, MAGBY
-	dbw 12, MISDREAVUS
 	dbw 12, DUSKULL
 	dbw 12, DUSKULL
-	dbw 12, MISDREAVUS
+	dbw 12, DUSKULL
+	dbw 12, DUSKULL
 
 ; Tyrogue swarm
 	map_id MOUNT_MORTAR_1F_OUTSIDE
@@ -192,29 +192,29 @@ SwarmGrassWildMonsAlt:
 	; morn
 	dbw  7, ELEKID
 	dbw  7, ELEKID
-	dbw  7, ELEKID
+	dbw  7, HOUNDOUR
 	dbw  7, BONSLY
-	dbw  7, HOUNDOUR
-	dbw  7, HOUNDOUR
+	dbw  7, ELEKID
+	dbw  7, PONYTA_G
 	dbw  7, PONYTA
 	dbw  7, PONYTA
 	; day
 	dbw  7, ELEKID
 	dbw  7, ELEKID
-	dbw  7, ELEKID
+	dbw  7, HOUNDOUR
 	dbw  7, BONSLY
-	dbw  7, HOUNDOUR
-	dbw  7, HOUNDOUR
+	dbw  7, ELEKID
+	dbw  7, PONYTA_G
 	dbw  7, PONYTA
 	dbw  7, PONYTA
 	; nite
 	dbw  7, ELEKID
 	dbw  7, ELEKID
-	dbw  7, ELEKID
+	dbw  7, HOUNDOUR
 	dbw  7, BONSLY
-	dbw  7, HOUNDOUR
-	dbw  7, HOUNDOUR
+	dbw  7, ELEKID
 	dbw  7, PONYTA_G
-	dbw  7, PONYTA_G
+	dbw  7, PONYTA
+	dbw  7, PONYTA
 
 	db -1 ; end
