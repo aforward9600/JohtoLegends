@@ -1214,17 +1214,8 @@ OnaganTempleOutside_Blocks:
 RocketWarehouse_Blocks:
 	INCBIN "maps/RocketWarehouse.ablk"
 
-MoneanChamber_Blocks:
-	INCBIN "maps/MoneanChamber.ablk"
-
-LiptooChamber_Blocks:
-	INCBIN "maps/LiptooChamber.ablk"
-
-WeepthChamber_Blocks:
-	INCBIN "maps/WeepthChamber.ablk"
-
-DilfordChamber_Blocks:
-	INCBIN "maps/DilfordChamber.ablk"
+TanobiRuinsInside_Blocks:
+	INCBIN "maps/TanobiRuinsInside.ablk"
 
 ScufibChamber_Blocks:
 	INCBIN "maps/ScufibChamber.ablk"

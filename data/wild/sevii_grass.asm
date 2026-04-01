@@ -482,97 +482,7 @@ SeviiGrassWildMons:
 	dbw 75, PUPITAR
 	dbw 75, TYRANITAR
 
-	map_id MONEAN_CHAMBER
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	; day
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	; nite
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-
-	map_id LIPTOO_CHAMBER
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	; day
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	; nite
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-
-	map_id WEEPTH_CHAMBER
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	; day
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	; nite
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-
-	map_id DILFORD_CHAMBER
+	map_id TANOBI_RUINS_INSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 50, UNOWN
@@ -719,6 +629,66 @@ SeviiGrassWildMons:
 	dbw 75, MAGCARGO
 	dbw 75, GOLDUCK
 	dbw 75, SLOWKING
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+
+	map_id MT_EMBER_INSIDE_1
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 75, MAGCARGO
+	dbw 75, CROBAT
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, MAGMAR
+	dbw 75, CAMERUPT
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+	; day
+	dbw 75, MAGCARGO
+	dbw 75, CROBAT
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, MAGMAR
+	dbw 75, CAMERUPT
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+	; nite
+	dbw 75, MAGCARGO
+	dbw 75, CROBAT
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, MAGMAR
+	dbw 75, CAMERUPT
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+
+	map_id MT_EMBER_INSIDE_2
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 75, MAGCARGO
+	dbw 75, CROBAT
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, MAGMAR
+	dbw 75, CAMERUPT
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+	; day
+	dbw 75, MAGCARGO
+	dbw 75, CROBAT
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, MAGMAR
+	dbw 75, CAMERUPT
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+	; nite
+	dbw 75, MAGCARGO
+	dbw 75, CROBAT
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, MAGMAR
+	dbw 75, CAMERUPT
 	dbw 75, GOLEM
 	dbw 75, GOLEM
 

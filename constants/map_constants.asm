@@ -659,10 +659,7 @@ ENDM
 	map_const ONAGAN_TEMPLE_OUTSIDE,                       11, 13 ; 43
 	map_const ONAGAN_TEMPLE_INSIDE,                         4,  5 ; 44
 	map_const REGIGIGAS_CHAMBER,                            4,  5 ; 45
-	map_const MONEAN_CHAMBER,                               9,  6 ; 
-	map_const LIPTOO_CHAMBER,                               9,  6 ; 
-	map_const WEEPTH_CHAMBER,                               9,  6 ; 
-	map_const DILFORD_CHAMBER,                              9,  6 ; 
+	map_const TANOBI_RUINS_INSIDE,                         21, 14 ; 
 	map_const SCUFIB_CHAMBER,                               9,  6 ; 
 	map_const RIXY_CHAMBER,                                 9,  6 ; 
 	map_const VIAPOIS_CHAMBER,                              9,  6 ; 
