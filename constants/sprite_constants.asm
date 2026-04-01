@@ -151,6 +151,7 @@
 	const SPRITE_REGIGIGAS ; 9e
 	const SPRITE_CHRIS_LIFT
 	const SPRITE_KRIS_LIFT
+	const SPRITE_CUP
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $9f

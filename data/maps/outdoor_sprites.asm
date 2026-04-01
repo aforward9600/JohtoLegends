@@ -253,6 +253,7 @@ GoldenrodGroupSprites:
 	db SPRITE_DAY_CARE_MON_1, POKEMON_SPRITE
 	db SPRITE_DAY_CARE_MON_2, POKEMON_SPRITE
 	db SPRITE_POKE_BALL, STILL_SPRITE
+	db SPRITE_CUP, POKEMON_SPRITE
 	db 0 ; end
 
 ; OlivineCity and Route40 are connected
