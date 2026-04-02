@@ -590,13 +590,11 @@ ENDM
 	map_const MT_EMBER_SUMMIT,                              9,  8 ; 43
 	map_const MT_EMBER_INSIDE_1,                            6,  8 ; 44
 	map_const MT_EMBER_INSIDE_2,                           16, 12 ; 45
-	map_const MT_EMBER_INSIDE_3,                            7,  5 ; 45
+	map_const MT_EMBER_INSIDE_3,                           15,  5 ; 45
 	map_const MT_EMBER_INSIDE_4,                           11,  9 ; 45
-	map_const MT_EMBER_INSIDE_5,                            6, 12 ; 45
-	map_const MT_EMBER_INSIDE_6,                            5,  5 ; 45
 	map_const MT_EMBER_INSIDE_7,                            8,  7 ; 45
-	map_const MT_EMBER_INSIDE_7_2,                          5,  5 ; 45
-	map_const MT_EMBER_INSIDE_8,                           16, 12 ; 45
+	map_const MT_EMBER_INSIDE_7_2,                         15,  5 ; 45
+	map_const MT_EMBER_INSIDE_8,                           25, 12 ; 45
 	map_const MT_EMBER_INSIDE_9,                            5,  5 ; 45
 
 	newgroup

@@ -1249,18 +1249,12 @@ MtEmberInside1_Blocks:
 MtEmberInside2_Blocks:
 	INCBIN "maps/MtEmberInside2.ablk"
 
+MtEmberInside72_Blocks:
 MtEmberInside3_Blocks:
 	INCBIN "maps/MtEmberInside3.ablk"
 
 MtEmberInside4_Blocks:
 	INCBIN "maps/MtEmberInside4.ablk"
-
-MtEmberInside5_Blocks:
-	INCBIN "maps/MtEmberInside5.ablk"
-
-MtEmberInside72_Blocks:
-MtEmberInside6_Blocks:
-	INCBIN "maps/MtEmberInside6.ablk"
 
 MtEmberInside7_Blocks:
 	INCBIN "maps/MtEmberInside7.ablk"

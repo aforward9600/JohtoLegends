@@ -10,8 +10,8 @@ MtEmberInside4_MapEvents:
 
 	db 3 ; warp events
 	warp_event 15, 15, MT_EMBER_OUTSIDE, 3
-	warp_event  3,  3, MT_EMBER_INSIDE_5, 1
-	warp_event 17,  7, MT_EMBER_INSIDE_6, 1
+	warp_event  3,  3, MT_EMBER_INSIDE_8, 4
+	warp_event 17,  7, MT_EMBER_INSIDE_3, 3
 
 	db 0 ; coord events
 

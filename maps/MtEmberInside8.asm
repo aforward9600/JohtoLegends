@@ -12,11 +12,12 @@ MtEmberInside8_MapScripts:
 MtEmberInside8_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
+	db 5 ; warp events
 	warp_event  3,  5, MT_EMBER_INSIDE_7, 2
 	warp_event  5, 17, MT_EMBER_INSIDE_9, 1
 	warp_event 19, 21, MT_EMBER_INSIDE_7_2, 2
-	
+	warp_event 47, 21, MT_EMBER_INSIDE_4, 2
+	warp_event 45,  3, MT_EMBER_INSIDE_7, 1
 
 	db 0 ; coord events
 

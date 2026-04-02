@@ -856,8 +856,6 @@ ENDM
 	map_attributes MtEmberInside2, MT_EMBER_INSIDE_2, $00, 0
 	map_attributes MtEmberInside3, MT_EMBER_INSIDE_3, $00, 0
 	map_attributes MtEmberInside4, MT_EMBER_INSIDE_4, $00, 0
-	map_attributes MtEmberInside5, MT_EMBER_INSIDE_5, $00, 0
-	map_attributes MtEmberInside6, MT_EMBER_INSIDE_6, $00, 0
 	map_attributes MtEmberInside7, MT_EMBER_INSIDE_7, $00, 0
 	map_attributes MtEmberInside72, MT_EMBER_INSIDE_7_2, $00, 0
 	map_attributes MtEmberInside8, MT_EMBER_INSIDE_8, $00, 0

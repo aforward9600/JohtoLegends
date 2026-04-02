@@ -632,7 +632,7 @@ SeviiGrassWildMons:
 	dbw 75, GOLEM
 	dbw 75, GOLEM
 
-	map_id MT_EMBER_INSIDE_1
+	map_id MT_EMBER_INSIDE_7
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 75, MAGCARGO
@@ -663,6 +663,96 @@ SeviiGrassWildMons:
 	dbw 75, GOLEM
 
 	map_id MT_EMBER_INSIDE_2
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 75, MAGCARGO
+	dbw 75, CROBAT
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, MAGMAR
+	dbw 75, CAMERUPT
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+	; day
+	dbw 75, MAGCARGO
+	dbw 75, CROBAT
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, MAGMAR
+	dbw 75, CAMERUPT
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+	; nite
+	dbw 75, MAGCARGO
+	dbw 75, CROBAT
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, MAGMAR
+	dbw 75, CAMERUPT
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+
+	map_id MT_EMBER_INSIDE_3
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 75, MAGCARGO
+	dbw 75, CROBAT
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, MAGMAR
+	dbw 75, CAMERUPT
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+	; day
+	dbw 75, MAGCARGO
+	dbw 75, CROBAT
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, MAGMAR
+	dbw 75, CAMERUPT
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+	; nite
+	dbw 75, MAGCARGO
+	dbw 75, CROBAT
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, MAGMAR
+	dbw 75, CAMERUPT
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+
+	map_id MT_EMBER_INSIDE_4
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 75, MAGCARGO
+	dbw 75, CROBAT
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, MAGMAR
+	dbw 75, CAMERUPT
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+	; day
+	dbw 75, MAGCARGO
+	dbw 75, CROBAT
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, MAGMAR
+	dbw 75, CAMERUPT
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+	; nite
+	dbw 75, MAGCARGO
+	dbw 75, CROBAT
+	dbw 75, RAPIDASH
+	dbw 75, MAGCARGO
+	dbw 75, MAGMAR
+	dbw 75, CAMERUPT
+	dbw 75, GOLEM
+	dbw 75, GOLEM
+
+	map_id MT_EMBER_INSIDE_8
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 75, MAGCARGO
