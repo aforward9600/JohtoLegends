@@ -45,14 +45,29 @@ MaxDVsSetter:
 	writetextend NoPasswordText
 
 .SetCheater:
+	checkevent EVENT_RESET_MAX_DVS_PASSWORD
+	iftrue .ResetCheater
 	checkitem CANDY_POUCH
-	iftrue .NoPassword
+	iftrue .MaxDVs
 	writetext HereIsCandyPouchText
 	buttonsound
 	verbosegiveitem CANDY_POUCH
 	closetext
 	clearevent EVENT_PASSWORD_CHEATER
+	setevent EVENT_RESET_MAX_DVS_PASSWORD
 	end
+
+.MaxDVs:
+	setflag ENGINE_ACTIVATED_MAX_DVS
+	clearevent EVENT_PASSWORD_CHEATER
+	setevent EVENT_RESET_MAX_DVS_PASSWORD
+	writetextend MaxDVsText
+
+.ResetCheater:
+	clearevent EVENT_PASSWORD_CHEATER
+	clearevent EVENT_RESET_MAX_DVS_PASSWORD
+	clearflag ENGINE_ACTIVATED_MAX_DVS
+	writetextend ResetCheaterText
 
 .SetShiny:
 	clearevent EVENT_PASSWORD_SHINY
@@ -84,8 +99,7 @@ ReturnToMoveDeletersHouse:
 	end
 
 .ReturnToMoveDeletersHouse:
-	call ReturnToMapWithSpeechTextbox
-	ret
+	jp ReturnToMapWithSpeechTextbox
 
 CheckForPassword:
 	callasm .shinypassword
@@ -264,6 +278,17 @@ NoMonochromeText:
 IsThisPasswordCorrect:
 	text "Is this password"
 	line "correct?"
+	done
+
+ResetCheaterText:
+	text "#mon will no"
+	line "longer be at max"
+	cont "strength."
+	done
+
+MaxDVsText:
+	text "#mon will have"
+	line "max strength."
 	done
 
 MoveDeletersHouse_MapEvents:

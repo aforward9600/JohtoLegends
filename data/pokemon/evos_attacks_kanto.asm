@@ -2146,7 +2146,7 @@ RapidashGEvosAttacks:
 	db 0 ; no more level-up moves
 
 SlowpokeEvosAttacks:
-	dbbbw EVOLVE_ITEM, KINGS_ROCK, TR_ANYTIME, SLOWKING
+	dbbbw EVOLVE_HOLD, KINGS_ROCK, TR_ANYTIME, SLOWKING
 	dbbw EVOLVE_LEVEL, 37, SLOWBRO
 	db 0 ; no more evolutions
 	dbw 1, CURSE
@@ -2167,7 +2167,7 @@ SlowpokeEvosAttacks:
 	db 0 ; no more level-up moves
 
 SlowpokeGEvosAttacks:
-	dbbbw EVOLVE_ITEM, KINGS_ROCK, TR_ANYTIME, SLOWKING_G
+	dbbbw EVOLVE_HOLD, KINGS_ROCK, TR_ANYTIME, SLOWKING_G
 	dbbw EVOLVE_LEVEL, 37, SLOWBRO_G
 	db 0 ; no more evolutions
 	dbw 1, CURSE

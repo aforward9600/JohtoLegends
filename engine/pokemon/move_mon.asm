@@ -218,11 +218,16 @@ endr
 	inc de
 	inc de
 
-;	push hl
-;	ld hl, wStatusFlags2
-;	bit STATUSFLAGS2_UNUSED_5_F, [hl]
-;	jr nz, .MaxDVsPasswordGifts
-;	pop hl
+	push hl
+	push de
+	ld de, ENGINE_ACTIVATED_MAX_DVS
+	ld b, CHECK_FLAG
+	farcall EngineFlagAction
+	ld a, c
+	and a
+	jr nz, .MaxDVsPasswordGifts
+	pop de
+	pop hl
 
 ;	push bc
 ;	push hl
@@ -238,7 +243,7 @@ endr
 	ld b, a
 	call Random
 	ld c, a
-;	jr .initializeDVs
+	jr .initializeDVs
 
 ;.ShinyDVs
 ;	pop de
@@ -246,6 +251,11 @@ endr
 ;	pop bc
 ;	ld b, $fa
 ;	ld c, $af
+.MaxDVsPasswordGifts:
+	pop de
+	pop hl
+	ld b, $ff
+	ld c, $ff
 
 .initializeDVs
 	ld a, b
@@ -1515,12 +1525,12 @@ CalcMonStatC:
 	push de
 	push bc
 
-	ld de, ENGINE_ACTIVATED_MAX_DVS
-	ld b, CHECK_FLAG
-	farcall EngineFlagAction
-	ld a, c
-	and a
-	jr nz, .Cheater
+;	ld de, ENGINE_ACTIVATED_MAX_DVS
+;	ld b, CHECK_FLAG
+;	farcall EngineFlagAction
+;	ld a, c
+;	and a
+;	jr nz, .Cheater
 
 	pop bc
 	pop de

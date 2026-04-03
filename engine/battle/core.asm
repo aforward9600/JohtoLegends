@@ -6280,10 +6280,21 @@ LoadEnemyMon:
 .SkipShine
 	farcall SetPokemonForm
 ;	farcall SetEnemyHiddenPower
+	ld de, ENGINE_ACTIVATED_MAX_DVS
+	ld b, CHECK_FLAG
+	farcall EngineFlagAction
+	ld a, c
+	and a
+	jr nz, .MaxDVs
 	call BattleRandom
 	ld b, a
 	call BattleRandom
 	ld c, a
+	jr .UpdateDVs
+
+.MaxDVs:
+	ld b, $ff
+	ld c, $ff
 
 .UpdateDVs:
 ; Input DVs in register bc

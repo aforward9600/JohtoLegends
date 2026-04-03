@@ -33,7 +33,7 @@ MountMoonGiftShopClerkScript:
 	iffalse .Refused
 	checkmoney YOUR_MONEY, 10000
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem PEAT_BLOCK
+	verbosegiveitem PEAT_BLOCK
 	iffalse .NoRoom
 	waitsfx
 	playsound SFX_TRANSACTION

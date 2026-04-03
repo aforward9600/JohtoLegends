@@ -5,6 +5,7 @@ GOLDENRODDEPTSTORE6F_LEMONADE_PRICE    EQU 350
 	object_const_def ; object_event constants
 	const GOLDENRODDEPTSTORE6F_LASS
 	const GOLDENRODDEPTSTORE6F_SUPER_NERD
+	const GOLDENRODDEPTSTORE6F_POKEFAN_M
 
 GoldenrodDeptStore6F_MapScripts:
 	db 0 ; scene scripts
@@ -83,6 +84,38 @@ GoldenrodVendingMachine:
 	db "Lemonade     ¥350@"
 	db "Cancel@"
 
+GoldenrodDeptStore6FPokefanMScript:
+	faceplayer
+	opentext
+	writetext BuyAirBalloonText
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .Refused
+	checkmoney YOUR_MONEY, 10000
+	ifequal HAVE_LESS, .NotEnoughMoney
+	waitsfx
+	playsound SFX_TRANSACTION
+	takemoney YOUR_MONEY, 10000
+	special PlaceMoneyTopRight
+	verbosegiveitem AIR_BALLOON
+	iffalse .NoRoom
+	writetextend AirBalloonText
+
+.Refused
+	writetextend RefusedAirBalloonText
+
+.NoRoom
+	writetext NoRoomForAirBalloonText
+	waitbutton
+	special PlaceMoneyTopRight
+	givemoney YOUR_MONEY, 10000
+	special PlaceMoneyTopRight
+	closetext
+	end
+
+.NotEnoughMoney
+	writetextend NotEnoughMoneyAirBalloonText
+
 GoldenrodDeptStore6FLassScript:
 	jumptextfaceplayer GoldenrodDeptStore6FLassText
 
@@ -144,6 +177,41 @@ GoldenrodDeptStore6FDirectoryText:
 	para "6F Tranquil Square"
 	done
 
+AirBalloonText:
+	text "Your #mon will"
+	line "avoid Ground-type"
+	cont "moves if it holds"
+	cont "it!"
+
+	para "At least until it"
+	line "gets hit with"
+	cont "something else!"
+	done
+
+NoRoomForAirBalloonText:
+	text "Hey, you don't have"
+	line "enough room!"
+
+	para "Here's your money"
+	line "back."
+	done
+
+NotEnoughMoneyAirBalloonText:
+	text "Can't even afford"
+	line "a balloon, huh?"
+	done
+
+BuyAirBalloonText:
+	text "You looking for a"
+	line "balloon?"
+
+	para "Kids love them!"
+	done
+
+RefusedAirBalloonText:
+	text "You're no fun."
+	done
+
 GoldenrodDeptStore6F_MapEvents:
 	db 0, 0 ; filler
 
@@ -162,6 +230,7 @@ GoldenrodDeptStore6F_MapEvents:
 	bg_event 10,  1, BGEVENT_UP, GoldenrodVendingMachine
 	bg_event 11,  1, BGEVENT_UP, GoldenrodVendingMachine
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event 10,  2, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore6FLassScript, -1
-	object_event  8,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore6FSuperNerdScript, -1
+	object_event  8,  2, SPRITE_KID, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore6FSuperNerdScript, -1
+	object_event 12,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore6FPokefanMScript, EVENT_GOLDENROD_DEPT_STORE_POKEFAN_M

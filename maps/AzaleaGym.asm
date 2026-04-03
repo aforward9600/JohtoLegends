@@ -65,6 +65,7 @@ AzaleaGymKurtScript:
 	setevent EVENT_BEAT_BUG_CATCHER_MARTY
 	setevent EVENT_BEAT_BUG_CATCHER_NAT
 	setevent EVENT_BEAT_BUG_CATCHER_PETE
+	clearevent EVENT_GOLDENROD_DEPT_STORE_POKEFAN_M
 	writetext KurtText_HiveBadgeSpeech
 	buttonsound
 	verbosegiveitem TM_X_SCISSOR
