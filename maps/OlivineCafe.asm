@@ -23,7 +23,6 @@ OlivineCafeStrengthSailorScript:
 	writetextend OlivineCafeStrengthSailorText_GotStrength
 
 OlivineCafeFishingGuruScript:
-;	setevent EVENT_BEAT_OLIVINE_GRUNT
 	jumptextfaceplayer OlivineCafeFishingGuruText
 
 OlivineCafeSailorScript:

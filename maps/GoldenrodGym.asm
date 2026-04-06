@@ -50,8 +50,7 @@ GoldenrodGymMiltonScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MILTON
-	setevent EVENT_DECO_CHIKORITA_DOLL
-	scall GoldenrodRockets
+	setevent EVENT_DECO_CHIKORITA_DOLL	
 	opentext
 	writetext BeatenMiltonText
 	waitbutton
@@ -236,6 +235,7 @@ TowerInvaded1:
 	setscene SCENE_DEFAULT
 	setevent EVENT_WILD_AREA_5_RIVAL1
 	setevent EVENT_MET_RIVAL_AT_GOLDENROD_GYM
+	scall GoldenrodRockets
 	end
 
 TowerInvaded2:
@@ -264,6 +264,7 @@ TowerInvaded2:
 	setscene SCENE_DEFAULT
 	setevent EVENT_WILD_AREA_5_RIVAL1
 	setevent EVENT_MET_RIVAL_AT_GOLDENROD_GYM
+	scall GoldenrodRockets
 	end
 
 GoldenrodGymRivalMovement1:

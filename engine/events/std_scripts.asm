@@ -278,6 +278,14 @@ DayToTextScript:
 	db "Saturday@"
 
 GoldenrodRocketsScript:
+	clearevent EVENT_GOLDENROD_TOWER_TAKEOVER
+	setevent EVENT_GOLDENROD_CITY_CIVILIANS
+	setevent EVENT_GOLDENROD_CITY_GUARD_1
+	clearevent EVENT_GOLDENROD_CITY_GUARD_2
+	setmapscene GOLDENROD_GYM, SCENE_FINISHED
+	setflag ENGINE_ROCKETS_IN_RADIO_TOWER
+	end
+
 RadioTowerRocketsScript:
 
 BugContestResultsWarpScript:
