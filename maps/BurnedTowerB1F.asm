@@ -332,13 +332,9 @@ EnteiCry:
 BurnedTowerB1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 6 ; warp events
+	db 2 ; warp events
 	warp_event 10,  9, BURNED_TOWER_1F, 3
-	warp_event 17,  7, BURNED_TOWER_1F, 7
-	warp_event 10,  8, BURNED_TOWER_1F, 9
-	warp_event  3, 13, BURNED_TOWER_1F, 10
-	warp_event 17, 14, BURNED_TOWER_1F, 12
-	warp_event  7, 15, BURNED_TOWER_1F, 14
+	warp_event  7, 15, BURNED_TOWER_1F, 5
 
 	db 1 ; coord events
 	coord_event 10,  6, SCENE_FINISHED, ReleaseTheBeasts

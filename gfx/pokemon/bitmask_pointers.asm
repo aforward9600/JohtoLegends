@@ -364,11 +364,11 @@ BitmasksPointers:
 	dw CacturneBitmasks
 	dw SwabluBitmasks
 	dw AltariaBitmasks
+	dw FeebasBitmasks
+	dw MiloticBitmasks
 	dw DuskullBitmasks
 	dw DusclopsBitmasks
 	dw DusknoirBitmasks
-	dw FeebasBitmasks
-	dw MiloticBitmasks
 	dw AbsolBitmasks
 	dw SnoruntBitmasks
 	dw GlalieBitmasks

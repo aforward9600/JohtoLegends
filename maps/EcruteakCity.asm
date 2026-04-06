@@ -23,7 +23,16 @@ EcruteakCity_MapScripts:
 	end
 
 .FlyPoint:
+	checkevent EVENT_BURNED_TOWER_1F_EUSINE
+	iftrue .setevents
 	setflag ENGINE_FLYPOINT_ECRUTEAK
+	return
+
+.setevents
+	setmapscene BURNED_TOWER_1F, SCENE_DEFAULT
+	setevent EVENT_BURNED_TOWER_1F_ENOKI_2
+	setflag ENGINE_FLYPOINT_ECRUTEAK
+	setevent EVENT_HIDE_BASEMENT
 	return
 
 EcruteakCityGramps1Script:

@@ -86,7 +86,8 @@ BattleCommand_Spite:
 	jp StdBattleTextbox
 
 .failed
-	jp PrintDidntAffect2
+	farcall PrintDidntAffect2
+	ret
 
 OpponentPartyAttr:
 	push af

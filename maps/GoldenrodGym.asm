@@ -67,6 +67,7 @@ GoldenrodGymMiltonScript:
 .FightDone:
 	checkflag ENGINE_BEAT_MILTON
 	iffalse .RematchMilton
+	setscene SCENE_FINISHED
 	checkevent EVENT_GOT_TM45_ATTRACT
 	iftrue .GotAttract
 	setevent EVENT_BEAT_BREEDER_SARAH
@@ -190,6 +191,10 @@ GoldenrodGymGuyScript:
 	jumptextfaceplayer GoldenrodGymGuyText
 
 .GoldenrodGymGuyWinScript:
+	checkevent EVENT_MET_RIVAL_AT_GOLDENROD_GYM
+	iftrue .SkipScene
+	setscene SCENE_FINISHED
+.SkipScene
 	jumptextfaceplayer GoldenrodGymGuyWinText
 
 GoldenrodGymStatue:
@@ -230,6 +235,7 @@ TowerInvaded1:
 	special RestartMapMusic
 	setscene SCENE_DEFAULT
 	setevent EVENT_WILD_AREA_5_RIVAL1
+	setevent EVENT_MET_RIVAL_AT_GOLDENROD_GYM
 	end
 
 TowerInvaded2:
@@ -257,6 +263,7 @@ TowerInvaded2:
 	special RestartMapMusic
 	setscene SCENE_DEFAULT
 	setevent EVENT_WILD_AREA_5_RIVAL1
+	setevent EVENT_MET_RIVAL_AT_GOLDENROD_GYM
 	end
 
 GoldenrodGymRivalMovement1:

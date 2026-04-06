@@ -36,7 +36,6 @@ BurnedTower1F_MapScripts:
 	applymovement BURNEDTOWER1F_ENOKI_2, BurnedTower1F_EnokiHidesMovement
 	turnobject BURNEDTOWER1F_ENOKI_2, DOWN
 	turnobject PLAYER, LEFT
-	setscene SCENE_FINISHED
 	playsound SFX_STRENGTH
 	earthquake 50
 	waitsfx
@@ -67,6 +66,8 @@ BurnedTower1F_MapScripts:
 	return
 
 .MeetEusine:
+	checkevent EVENT_HIDE_BASEMENT
+	iftrue .Finish
 	turnobject BURNEDTOWER1F_ENOKI, DOWN
 	showemote EMOTE_SHOCK, BURNEDTOWER1F_ENOKI, 15
 	applymovement BURNEDTOWER1F_ENOKI, BurnedTower1FEusineMovement
@@ -76,6 +77,7 @@ BurnedTower1F_MapScripts:
 	closetext
 	moveobject BURNEDTOWER1F_ENOKI, 9, 14
 	setscene SCENE_BURNEDTOWER1F_RIVAL_BATTLE
+.Finish
 	end
 
 BurnedTower1FEusineScript:
@@ -103,7 +105,6 @@ BurnedTower1FEusineScript:
 	writetext EusineHelloText
 	waitbutton
 	closetext
-	setscene SCENE_BURNEDTOWER1F_NOTHING
 	special FadeOutMusic
 	pause 15
 	earthquake 50
@@ -283,11 +284,12 @@ BurnedTower1FEnokiText:
 BurnedTower1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
+	db 5 ; warp events
 	warp_event  9, 15, ECRUTEAK_CITY, 13
 	warp_event 10, 15, ECRUTEAK_CITY, 13
 	warp_event 10,  9, BURNED_TOWER_B1F, 1
 	warp_event 16,  1, BURNED_TOWER_2F, 1
+	warp_event  7, 15, BURNED_TOWER_B1F, 2
 
 	db 1 ; coord events
 	coord_event 11,  9, SCENE_BURNEDTOWER1F_RIVAL_BATTLE, BurnedTower1FEusineScript
