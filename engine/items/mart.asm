@@ -460,7 +460,6 @@ GetMartDialogGroup:
 .MartTextFunctionPointers:
 	dwb .StandardMartPointers, 0
 	dwb .HerbShopPointers, 0
-	dwb .BargainShopPointers, 1
 	dwb .PharmacyPointers, 0
 	dwb .StandardMartPointers, 2
 	dwb .ShadyPointers, 0

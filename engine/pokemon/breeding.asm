@@ -280,26 +280,26 @@ HatchEggs:
 	ld [wCurPartySpecies], a
 	call SetSeenAndCaughtMon
 
-	ld a, [wCurPartySpecies]
-	call GetPokemonIndexFromID
-	ld a, l
-	sub LOW(TOGEPI)
-	if HIGH(TOGEPI) == 0
-		or h
-	else
-		jr nz, .nottogepi
-		if HIGH(TOGEPI) == 1
-			dec h
-		else
-			ld a, h
-			cp HIGH(TOGEPI)
-		endc
-	endc
-	jr nz, .nottogepi
-	; set the event flag for hatching togepi
-	ld de, EVENT_TOGEPI_HATCHED
-	ld b, SET_FLAG
-	call EventFlagAction
+;	ld a, [wCurPartySpecies]
+;	call GetPokemonIndexFromID
+;	ld a, l
+;	sub LOW(TOGEPI)
+;	if HIGH(TOGEPI) == 0
+;		or h
+;	else
+;		jr nz, .nottogepi
+;		if HIGH(TOGEPI) == 1
+;			dec h
+;		else
+;			ld a, h
+;			cp HIGH(TOGEPI)
+;		endc
+;	endc
+;	jr nz, .nottogepi
+;	; set the event flag for hatching togepi
+;	ld de, EVENT_TOGEPI_HATCHED
+;	ld b, SET_FLAG
+;	call EventFlagAction
 .nottogepi
 
 ;	call EggAbility
@@ -923,8 +923,7 @@ Hatch_InitShellFragments:
 .done
 	ld de, SFX_EGG_HATCH
 	call PlaySFX
-	call EggHatch_DoAnimFrame
-	ret
+	jp EggHatch_DoAnimFrame
 
 shell_fragment: MACRO
 ; y tile, y pxl, x tile, x pxl, frameset offset, ???

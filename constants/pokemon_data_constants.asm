@@ -82,7 +82,6 @@ MON_SDF_EV             EQUS "(wPartyMon1SpclDefEV - wPartyMon1)"
 MON_CAUGHTTIME         EQUS "(wPartyMon1CaughtTime - wPartyMon1)"
 MON_PADDING1           EQUS "(wPartyMon1Padding - wPartyMon1)"
 MON_ABILITY            EQUS "(wPartyMon1CaughtAbility - wPartyMon1)"
-;MON_FORM               EQUS "(wPartyMon1Form - wPartyMon1)"
 MON_PADDING2           EQUS "(wPartyMon1Padding2 - wPartyMon1)"
 MON_DVS                EQUS "(wPartyMon1DVs - wPartyMon1)"
 MON_PP                 EQUS "(wPartyMon1PP - wPartyMon1)"
@@ -116,10 +115,9 @@ CAUGHT_FORM_1_MASK     EQU %00001000
 CAUGHT_FORM_2_MASK     EQU %00000100
 CAUGHT_PADDING_MASK    EQU %00000011
 
-; 0, 0 Normal Deoxys, Paldean Tauros
-; 1, 0 Attack Deoxys, Fire Tauros
-; 0, 1 Defense Deoxys, Water Tauros
-; 1, 1 Speed Deoxys
+; 0, 0 Paldean Tauros
+; 1, 0 Fire Tauros
+; 0, 1 Water Tauros
 
 CAUGHT_ABILITY_MASK    EQU %00011111
 CAUGHT_ABILITY_1_MASK  EQU %10000000

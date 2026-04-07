@@ -57,7 +57,7 @@ OlivineGym3F_MapScripts:
 	changeblock 14, 10, $b1
 	checkevent EVENT_OLIVINE_GYM_SIXTH_PLATFORM
 	iftrue .SixthLift
-	return
+	sjump .Finish
 
 .SixthLift:
 	checkevent EVENT_OLIVINE_GYM_SIXTH_PLATFORM
@@ -71,6 +71,10 @@ TrainerEngineerRudy:
 	trainer ENGINEER, RUDY, EVENT_BEAT_ENGINEER_RUDY, EngineerRudySeenText, EngineerRudyBeatenText, 0, .Script
 
 .Script:
+	refreshscreen $86
+	changeblock 14, 8, $b2
+	changeblock 14, 10, $a7
+	reloadmappart
 	endifjustbattled
 	jumptext EngineerRudyAfterBattleText
 

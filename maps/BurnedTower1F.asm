@@ -62,7 +62,10 @@ BurnedTower1F_MapScripts:
 	return
 
 .HideBasement2:
+	checkevent EVENT_CLEARED_TIN_TOWER
+	iftrue .FinishedLadder
 	changeblock 6, 14, $09 ; No ladder
+.FinishedLadder
 	return
 
 .MeetEusine:
