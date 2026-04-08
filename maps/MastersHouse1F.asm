@@ -132,8 +132,6 @@ DratiniPokeballScript:
 	waitsfx
 	buttonsound
 	givepoke DRATINI, 5, ORAN_BERRY
-	giveegg TOGEPI, 5
-	givepoke SLUGMA, 5, ORAN_BERRY
 	sjump RivalLarvitarScript
 
 ChooseBagon:

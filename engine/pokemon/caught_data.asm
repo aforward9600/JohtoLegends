@@ -233,7 +233,6 @@ SetGiftPartyMonCaughtData:
 	pop bc
 SetGiftMonCaughtData:
 	xor a
-	ld b,b
 ;	ld [hl], a
 ;	ld a, (wPartyMon1CaughtLevel - wPartyMon1CaughtTime)
 ;	add l
@@ -271,7 +270,8 @@ SetEggMonCaughtData:
 	ld hl, wPartyMon1CaughtTime
 	call GetPartyLocation
 	ld a, [hl]
-	ld [de], a
+;	ld [de], a
+	ld [wBufferMonForm], a
 	ld a, [wCurPartyLevel]
 	push af
 	ld a, CAUGHT_EGG_LEVEL
@@ -327,7 +327,6 @@ SetGenderShininess:
 	ret
 
 .Random
-;	ld b,b
 	farcall SetPokemonGender
 	jr c, .MaleRandom
 ;	jr nz, .MaleRandom
@@ -385,26 +384,44 @@ SetGenderShininess:
 	ret
 
 SetGenderShininessEgg:
-	ld a, [de]
-	and CAUGHT_GENDER_MASK
-	jr z, .SkipGender
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1CaughtTime
-	call GetPartyLocation
+;	ld a, [wBufferMonForm]
+;	and CAUGHT_GENDER_MASK
+;	jr z, .SkipGender
+	push hl
+	farcall SetPokemonGender
+	jr c, .SkipGender
+;	ld a, [wCurPartyMon]
+;	ld hl, wPartyMon1CaughtTime
+;	call GetPartyLocation
+	pop hl
 	ld a, [hl]
 	or CAUGHT_MON_GENDER_MASK
 	ld [hl], a
+	jr .GotGender
 .SkipGender
-	ld a, [de]
+	pop hl
+.GotGender
+	push hl
+	ld de, ENGINE_SHINY_PASSWORD
+	farcall CheckEngineFlag
+	jr nc, .IsShiny
+	ld a, [wBufferMonForm]
 	and CAUGHT_SHINY_MASK
 	jr z, .SkipShiny
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1CaughtTime
-	call GetPartyLocation
+;	ld a, [wCurPartyMon]
+;	ld hl, wPartyMon1CaughtTime
+;	call GetPartyLocation
+.IsShiny
+	pop hl
 	ld a, [hl]
 	or CAUGHT_SHINY_MASK
 	ld [hl], a
+	jr .SkipShiny2
 .SkipShiny
+	pop hl
+.SkipShiny2
+	pop de
+	push de
 	push hl
 	farcall SetPartyPokemonForm
 	jr nc, .NotTauros
