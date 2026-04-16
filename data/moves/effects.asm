@@ -4,6 +4,7 @@ MoveEffects: ; used only for BANK(MoveEffects)
 
 NormalHit:
 VitalThrow:
+HyperVoice:
 	checkobedience
 	usedmovetext
 	doturn

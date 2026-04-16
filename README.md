@@ -61,19 +61,19 @@ It has to be v1.1 for the patch to work.
 
 Below is a link to the current patch, Version 0.8.3.2 Beta:
 
-https://www.mediafire.com/file/8n6pdjefptsxrmi/johtolegendsv0.8.4.ips/file
+https://www.mediafire.com/file/zjd2jo2s2binumu/johtolegendsv0.8.4.1.ips/file
 
 Faithful:
 
-https://www.mediafire.com/file/zw68un9t8k3xvkf/johtolegendsfaithfulv0.8.4.ips/file
+https://www.mediafire.com/file/8q0wh3rrw9zx9iv/johtolegendsfaithfulv0.8.4.1.ips/file
 
 No PSS
 
-https://www.mediafire.com/file/ywqtaa6rj735v77/johtolegendsnopssv0.8.4.ips/file
+https://www.mediafire.com/file/qhjk36lvr0vaths/johtolegendsnopssv0.8.4.1.ips/file
 
 Challenge:
 
-https://www.mediafire.com/file/l2u2u7pguycpllh/johtolegendschallengev0.8.4.ips/file
+https://www.mediafire.com/file/1mbndkqjp28udd8/johtolegendschallengev0.8.4.1.ips/file
 
 Patch the ROM with the patch, and it is all set.
 

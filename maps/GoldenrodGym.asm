@@ -66,7 +66,6 @@ GoldenrodGymMiltonScript:
 .FightDone:
 	checkflag ENGINE_BEAT_MILTON
 	iffalse .RematchMilton
-	setscene SCENE_FINISHED
 	checkevent EVENT_GOT_TM45_ATTRACT
 	iftrue .GotAttract
 	setevent EVENT_BEAT_BREEDER_SARAH
@@ -77,6 +76,7 @@ GoldenrodGymMiltonScript:
 	buttonsound
 	verbosegiveitem TM_SWORDS_DANCE
 	setevent EVENT_GOT_TM45_ATTRACT
+	setscene SCENE_FINISHED
 	writetextend MiltonAttractText
 
 .GotAttract:

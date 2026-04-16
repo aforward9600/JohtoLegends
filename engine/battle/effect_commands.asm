@@ -3978,6 +3978,7 @@ PlaySelectedFXAnim:
 	ret
 
 DoEnemyDamage:
+;	farcall CheckSubstituteMove
 	ld hl, wCurDamage
 	ld a, [hli]
 	ld b, a
@@ -3988,6 +3989,8 @@ DoEnemyDamage:
 	ld a, c
 	and a
 	jr nz, .ignore_substitute
+;	ld a, [wSubstituteMoves]
+;	jr nz, .ignore_substitute
 	ld a, [wEnemySubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
 	jp nz, DoSubstituteDamage
@@ -4038,6 +4041,7 @@ DoEnemyDamage:
 	jp RefreshBattleHuds
 
 DoPlayerDamage:
+;	farcall CheckSubstituteMove
 	ld hl, wCurDamage
 	ld a, [hli]
 	ld b, a
@@ -4048,6 +4052,8 @@ DoPlayerDamage:
 	ld a, c
 	and a
 	jr nz, .ignore_substitute
+;	ld a, [wSubstituteMoves]
+;	jr nz, .ignore_substitute
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
 	jp nz, DoSubstituteDamage
@@ -4457,33 +4463,21 @@ PoisonOpponent:
 	set PSN, [hl]
 	jp UpdateOpponentInParty
 
-BattleCommand_DrainTarget:
-; draintarget
-	call CheckUserNeutralGasMoldBreaker
-	jr z, .SkipLiquidOoze
-	call GetTargetAbility
-	cp LIQUID_OOZE
-	jr z, LiquidOoze
-.SkipLiquidOoze
-	call SapHealth
-	ld hl, SuckedHealthText
-	jp StdBattleTextbox
-
-LiquidOoze:
-	farcall _LiquidOoze
-	ret
-
 BattleCommand_EatDream:
 ; eatdream
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipLiquidOoze
 	call GetTargetAbility
 	cp LIQUID_OOZE
-	jr z, LiquidOoze
+	jr z, LiquidOoze2
 .SkipLiquidOoze
 	call SapHealth
 	ld hl, DreamEatenText
 	jp StdBattleTextbox
+
+LiquidOoze2:
+	farcall _LiquidOoze
+	ret
 
 SapHealth:
 	; Divide damage by 2, store it in hDividend
@@ -7503,9 +7497,16 @@ PrintParalyze:
 	jp StdBattleTextbox
 
 CheckSubstituteOpp:
+;	farcall CheckSubstituteMove
+;	ld a, [wSubstituteMoves]
+;	jr nz, .Yes
 	ld a, BATTLE_VARS_SUBSTATUS4_OPP
 	call GetBattleVar
 	bit SUBSTATUS_SUBSTITUTE, a
+	ret
+
+.Yes
+	xor a
 	ret
 
 INCLUDE "engine/battle/move_effects/selfdestruct.asm"

@@ -203,11 +203,11 @@ ENDM
 	connection south, OlivineCity, OLIVINE_CITY, -5
 	connection east, Route38, ROUTE_38, 0
 
-	map_attributes Route40, ROUTE_40, $3A, SOUTH | EAST
+	map_attributes Route40, ROUTE_40, $CD, SOUTH | EAST
 	connection south, Route41, ROUTE_41, -15
 	connection east, OlivineCity, OLIVINE_CITY, -9
 
-	map_attributes Route41, ROUTE_41, $3A, NORTH | WEST
+	map_attributes Route41, ROUTE_41, $CD, NORTH | WEST
 	connection north, Route40, ROUTE_40, 15
 	connection west, CianwoodCity, CIANWOOD_CITY, 0
 

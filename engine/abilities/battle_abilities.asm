@@ -83,6 +83,7 @@ SetEnemyAbility::
 	jr .FullyFinishEnemyAbility
 
 SentOutAbilityBoth::
+	ld b,b
 	ld a, [wEnemyAbility]
 	cp NEUTRAL_GAS
 	jp z, EnemyNeutralGas
@@ -113,7 +114,16 @@ SentOutAbilityBoth::
 	jr c, .player_goes_first
 	jr .enemy_goes_first
 
+PlayerAbilityFirstSwitch:
+	call BattleCommand_SwitchTurnAbilities
+	call PlayerAbilityFirst
+	call BattleCommand_SwitchTurnAbilities
+	jp EnemyAbilityFirst
+
 SentOutAbility::
+	ld b,b
+	ld a, [wBothPokemonFainted]
+	ret nz
 	ldh a, [hBattleTurn]
 	and a
 	jr z, PlayerAbilityFirst
@@ -162,14 +172,23 @@ DoEntranceAbilities:
 	call GetBattleVar
 	bit SUBSTATUS_MIST, a
 	jr nz, .IntimidateBlocked
-;	call GetTargetAbility
-;	cp CONTRARY
-;	jr z, .IntimidateContrary
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .Player
+	ld a, [wEnemySubStatus4]
+	jr .next
+
+.Player
+	ld a, [wPlayerSubStatus4]
+.next
+	bit SUBSTATUS_SUBSTITUTE, a
+	ret nz
+	call AnimateUserAbility
+	call GetTargetAbility
 	ld hl, NoIntimidateAbilities
 	ld de, 1
 	call IsInArray
 	jr c, .IntimidateBlocked
-	call AnimateUserAbility
 	farcall BattleCommand_AttackDown
 	farcall BattleCommand_StatDownMessage
 	call GetTargetAbility
@@ -215,7 +234,8 @@ DoEntranceAbilities:
 	ld a, b
 	and a
 	ld hl, EnemyTraceText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	jp EnemyAbilityFirst
 
 .PlayerTrace:
 	ld a, [wEnemyAbility]
@@ -224,7 +244,8 @@ DoEntranceAbilities:
 	ld a, b
 	and a
 	ld hl, PlayerTraceText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	jp PlayerAbilityFirst
 
 .MoldBreaker:
 	call AnimateUserAbility
@@ -693,11 +714,11 @@ CheckContactAbilities:
 	ret z
 	call BattleCommand_SwitchTurnAbilities
 	farcall CheckOppositeGender
-	jp c, .NoContactAilities
+	jp c, BattleCommand_SwitchTurnAbilities
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_IN_LOVE, [hl]
-	jp nz, .NoContactAilities
+	jp nz, BattleCommand_SwitchTurnAbilities
 	set SUBSTATUS_IN_LOVE, [hl]
 	call BattleCommand_SwitchTurnAbilities
 	call AnimateOppAbility
@@ -1571,28 +1592,25 @@ CheckDefensiveAbilities:
 	cp WATER
 	ret nz
 	call PreventAbilityText
-	jp EndMoveEffectAbilities
+	jr EndMoveEffectAbilities
 
 .DrySkin:
 	call CheckMoveTypeAbilities
 	cp WATER
 	ret nz
-	call CheckFullHPDefenseAbilities
-	jp EndMoveEffectAbilities
+	jr CheckFullHPDefenseAbilities
 
 .WaterAbsorb:
 	call CheckMoveTypeAbilities
 	cp WATER
 	ret nz
-	call CheckFullHPDefenseAbilities
-	jp EndMoveEffectAbilities
+	jr CheckFullHPDefenseAbilities
 
 .VoltAbsorb:
 	call CheckMoveTypeAbilities
 	cp ELECTRIC
 	ret nz
-	call CheckFullHPDefenseAbilities
-	farcall EndMoveEffect
+	jr CheckFullHPDefenseAbilities
 .NoDefensiveAbilities
 	ret
 
@@ -1641,7 +1659,8 @@ CheckFullHPDefenseAbilities:
 	ld a, b
 	and a
 	ld hl, WaterAbsorbText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	jr EndMoveEffectAbilities
 
 HandleEndMoveAbility:
 	ld de, wBattleMonSpeed
@@ -2334,3 +2353,32 @@ CheckMoveTypeAbilities:
 	call GetBattleVar
 	and TYPE_MASK
 	ret
+
+CheckSubstituteMove::
+	ld b,b
+	xor a
+	ld [wSubstituteMoves], a
+	call CheckNeutralGas
+	jr z, .skipinfiltrator
+	call GetUserAbility
+	cp INFILTRATOR
+	jr z, .Yes
+.skipinfiltrator
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .PlayerSubstituteMove
+	ld a, [wCurEnemyMove]
+	jr .FinishSubstituteMove
+
+.PlayerSubstituteMove
+	ld a, [wCurPlayerMove]
+.FinishSubstituteMove
+	ld hl, SubstituteMoves
+	call CheckMoveInListAbilities
+	ret nc
+.Yes
+	ld a, 1
+	ld [wSubstituteMoves], a
+	ret
+
+INCLUDE "data/moves/substitute_moves.asm"

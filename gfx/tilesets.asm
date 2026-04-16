@@ -359,15 +359,6 @@ INCLUDE "data/tilesets/kanto_collision.asm"
 
 SECTION "Tileset Data 11", ROMX
 
-TilesetKanto2GFX:
-INCBIN "gfx/tilesets/kanto_2.2bpp.lz"
-
-TilesetKanto2Meta:
-INCBIN "data/tilesets/kanto_2_metatiles.bin"
-
-TilesetKanto2Coll:
-INCLUDE "data/tilesets/kanto_2_collision.asm"
-
 TilesetFedHideoutGFX:
 INCBIN "gfx/tilesets/fed_hideout.2bpp.lz"
 
@@ -410,6 +401,15 @@ INCBIN "data/tilesets/cave_attributes.bin"
 
 TilesetChampionsRoomAttr::
 INCBIN "data/tilesets/champions_room_attributes.bin"
+
+TilesetKanto2GFX:
+INCBIN "gfx/tilesets/kanto_2.2bpp.lz"
+
+TilesetKanto2Meta:
+INCBIN "data/tilesets/kanto_2_metatiles.bin"
+
+TilesetKanto2Coll:
+INCLUDE "data/tilesets/kanto_2_collision.asm"
 
 SECTION "Tileset Data 13", ROMX
 

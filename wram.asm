@@ -771,8 +771,11 @@ wc647:: ds 33
 wc668:: ds 32
 wc688:: ds 2
 wc68a:: ds 4
-	ds 66
+	ds 64
 ENDU ; c6d0
+
+wBothPokemonFainted:: db
+wSubstituteMoves:: db
 
 ; This union spans 280 bytes from c6d0 to c7e8.
 UNION ; c6d0

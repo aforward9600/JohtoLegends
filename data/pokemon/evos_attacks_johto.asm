@@ -774,6 +774,7 @@ DratiniEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, DRAGON_RAGE
 	dbw 1, LEER
+	dbw 1, HYPER_VOICE
 	dbw 6, THUNDER_WAVE
 	dbw 9, WRAP
 	dbw 11, TWISTER

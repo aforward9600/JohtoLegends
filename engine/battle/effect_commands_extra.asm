@@ -1162,3 +1162,19 @@ NoStatRaise:
 	ld hl, StatsCantRaiseText
 .Contrary
 	jp StdBattleTextbox
+
+BattleCommand_DrainTarget:
+; draintarget
+	call CheckUserNeutralGasMoldBreaker
+	jr z, .SkipLiquidOoze
+	call GetTargetAbility
+	cp LIQUID_OOZE
+	jr z, LiquidOoze
+.SkipLiquidOoze
+	farcall SapHealth
+	ld hl, SuckedHealthText
+	jp StdBattleTextbox
+
+LiquidOoze:
+	farcall _LiquidOoze
+	ret

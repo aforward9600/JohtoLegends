@@ -138,6 +138,11 @@ AfterChigusaRematch:
 	opentext
 	writetextend BeatenChigusaAgainText
 
+ChigusaWinText:
+	text "We can still win"
+	line "with elegance!"
+	done
+
 TrainerBlackbeltYoshi:
 	trainer BLACKBELT_T, YOSHI, EVENT_BEAT_BLACKBELT_YOSHI, BlackbeltYoshiSeenText, BlackbeltYoshiBeatenText, 0, .Script
 
@@ -277,11 +282,6 @@ ChigusaIntroText:
 ChigusaLossText:
 	text "Whoah! Now that's"
 	line "elegant!"
-	done
-
-ChigusaWinText:
-	text "We can still win"
-	line "with elegance!"
 	done
 
 BeatenChigusaText:

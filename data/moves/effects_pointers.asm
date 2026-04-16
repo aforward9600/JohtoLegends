@@ -202,4 +202,5 @@ MoveEffectsPointers:
 	dw Fly
 	dw Fly
 	dw BloodMoon
+	dw HyperVoice
 ;	dw WakeUpSlap

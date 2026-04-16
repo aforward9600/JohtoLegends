@@ -160,6 +160,8 @@ MeetGrandmaScript:
 	iftrue .DracoCameBy
 	writetext DahliaCameByText
 .ReconvergeGranny:
+	waitbutton
+	closetext
 	clearevent EVENT_VICTORY_ROAD_GATE_OAK
 	clearevent EVENT_VICTORY_ROAD_GATE_RIVAL
 	setevent EVENT_VICTORY_ROAD_GATE_GUARD

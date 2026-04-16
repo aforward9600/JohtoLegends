@@ -1992,7 +1992,14 @@ HandleEnemyMonFaint:
 	ld [wBattlePlayerAction], a
 	call HandleEnemySwitch
 	jp z, WildFled_EnemyFled_LinkBattleCanceled
-	jr DoubleSwitch
+	ld b,b
+	ld a, 1
+	ld [wBothPokemonFainted], a
+	call DoubleSwitch
+	farcall PlayerAbilityFirstSwitch
+	xor a
+	ld [wBothPokemonFainted], a
+	ret
 
 .player_mon_not_fainted
 	ld a, BATTLEPLAYERACTION_USEITEM
@@ -2221,7 +2228,10 @@ EnemyPartyMonEntrance:
 	call ResetBattleParticipants
 	call SetEnemyTurn
 	farcall SetEnemyAbility
+;	ld a, [wBothPokemonFainted]
+;	jr nz, .SkipAbility
 	farcall SentOutAbility
+.SkipAbility
 	call SpikesDamage
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
@@ -2546,7 +2556,14 @@ HandlePlayerMonFaint:
 	ld [wBattlePlayerAction], a
 	call HandleEnemySwitch
 	jp z, WildFled_EnemyFled_LinkBattleCanceled
-	jp DoubleSwitch
+	ld a, 1
+	ld [wBothPokemonFainted], a
+	call DoubleSwitch
+;	farcall SentOutAbilityBoth
+	farcall PlayerAbilityFirstSwitch
+	xor a
+	ld [wBothPokemonFainted], a
+	ret
 
 UpdateFaintedPlayerMon:
 	ld a, [wCurBattleMon]
@@ -2694,6 +2711,8 @@ PlayerPartyMonEntrance:
 	call LoadTileMapToTempTileMap
 	call SetPlayerTurn
 	farcall SetPlayerAbility
+;	ld a, [wBothPokemonFainted]
+;	jp nz, SpikesDamage
 	farcall SentOutAbility
 	jp SpikesDamage
 
@@ -4107,7 +4126,6 @@ SendOutPlayerMon:
 	ret
 
 NewBattleMonStatus:
-	ld b,b
 	xor a
 	ld [wPlayerBloodMoon], a
 	ld [wLastPlayerCounterMove], a
@@ -5231,6 +5249,8 @@ EnemyMonEntrance:
 	callfar AI_Switch
 	call SetEnemyTurn
 	farcall SetEnemyAbility
+;	ld a, [wBothPokemonFainted]
+;	jp nz, SpikesDamage
 	farcall SentOutAbility
 	jp SpikesDamage
 
