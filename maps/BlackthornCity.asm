@@ -51,19 +51,17 @@ BlackthornCity_MapScripts:
 	return
 
 BlackthornSuperNerdScript:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_MASTER
 	iftrue .BeatClair
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .ClearedRadioTower
-	writetextend Text_ClairIsOut
+	jumptextfaceplayer Text_ClairIsOut
 
 .ClearedRadioTower:
-	writetextend Text_ClairIsIn
+	jumptextfaceplayer Text_ClairIsIn
 
 .BeatClair:
-	writetextend Text_ClairIsBeaten
+	jumptextfaceplayer Text_ClairIsBeaten
 
 BlackthornGramps1Script:
 	jumptextfaceplayer BlackthornGrampsRefusesEntryText

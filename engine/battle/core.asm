@@ -1990,7 +1990,6 @@ HandleEnemyMonFaint:
 	ld [wBattlePlayerAction], a
 	call HandleEnemySwitch
 	jp z, WildFled_EnemyFled_LinkBattleCanceled
-	ld b,b
 	call DoubleSwitch
 	farcall PlayerAbilityFirstSwitch
 	jp ResetBothAbilitiesByte
@@ -9487,7 +9486,6 @@ ResetBothAbilitiesByte:
 	ret
 
 SetBothAbilitiesByte:
-	ld b,b
 	ld a, $1
 	ld [wBothPokemonFainted], a
 	ret

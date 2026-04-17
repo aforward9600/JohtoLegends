@@ -60,10 +60,8 @@ CeladonGymErikaScript:
 .AlreadyGotEnergyBall:
 	writetext AlreadyGotEnergyBallText
 	waitbutton
-	closetext
 	setevent EVENT_GOT_TM19_GIGA_DRAIN
 	setevent EVENT_DECO_LOTAD_DOLL
-	opentext
 	sjump .GotGigaDrain
 
 .ErikaRematch:
@@ -186,7 +184,7 @@ ErikaBeatenText:
 
 PlayerReceivedRainbowBadgeText:
 	text "Erika received"
-	line "RainbowBadge."
+	line "the Rainbow Badge."
 	done
 
 ErikaExplainTMText:

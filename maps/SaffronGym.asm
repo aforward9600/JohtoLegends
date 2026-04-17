@@ -67,32 +67,28 @@ TrainerHexManiacBecky:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend HexManiacBeckyAfterBattleText
+	jumptext HexManiacBeckyAfterBattleText
 
 TrainerPsychicChris:
 	trainer PSYCHIC_T, CHRIS_PSYCHIC, EVENT_BEAT_PSYCHIC_CHRIS, PsychicChrisSeenText, PsychicChrisBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend PsychicChrisAfterBattleText
+	jumptext PsychicChrisAfterBattleText
 
 TrainerHexManiacLillith:
 	trainer HEX_MANIAC, LILLITH, EVENT_BEAT_HEX_MANIAC_LILLITH, HexManiacLillithSeenText, HexManiacLillithBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend HexManiacLillithAfterBattleText
+	jumptext HexManiacLillithAfterBattleText
 
 TrainerPsychicJeremy:
 	trainer PSYCHIC_T, JEREMY_PSYCHIC, EVENT_BEAT_PSYCHIC_JEREMY, PsychicJeremySeenText, PsychicJeremyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend PsychicJeremyAfterBattleText
+	jumptext PsychicJeremyAfterBattleText
 
 SabrinaIntroText:
 	text "Sabrina: I knew"
@@ -133,7 +129,7 @@ SabrinaWinLossText:
 
 ReceivedMarshBadgeText:
 	text "Sabrina received"
-	line "MarshBadge."
+	line "the Marsh Badge."
 	done
 
 SabrinaMarshBadgeText:

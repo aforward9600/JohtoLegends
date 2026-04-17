@@ -9,20 +9,20 @@ CharcoalKiln_MapScripts:
 	db 0 ; callbacks
 
 CharcoalKilnBoss:
-	faceplayer
-	opentext
 	checkevent EVENT_CAUGHT_FARFETCHD
 	iftrue .CaughtFarfetchd
 	checkevent EVENT_BEAT_FARFETCHD
 	iftrue .BeatFarfetchd
-	writetextend CharcoalKilnBossText1
+	jumptextfaceplayer CharcoalKilnBossText1
 
 .BeatFarfetchd:
 	checkevent EVENT_CAUGHT_FARFETCHD
 	iftrue .CaughtFarfetchd
-	writetextend CharcoalKilnBossText3
+	jumptextfaceplayer CharcoalKilnBossText3
 
 .CaughtFarfetchd:
+	faceplayer
+	opentext
 	checkevent EVENT_GOT_STICK_IN_CHARCOAL_KILN
 	iftrue .AlreadyGotStick
 	writetext CharcoalKilnBossText4
@@ -35,7 +35,7 @@ CharcoalKilnBoss:
 	end
 
 .AlreadyGotStick:
-	writetextend CharcoalKilnBossText2
+	jumptextfaceplayer CharcoalKilnBossText2
 
 CharcoalKilnApprentice:
 	faceplayer
@@ -60,8 +60,7 @@ CharcoalKilnFarfetchd:
 	cry FARFETCH_D
 	waitbutton
 	closepokepic
-	opentext
-	writetextend FarfetchdText
+	jumptext FarfetchdText
 
 CharcoalKilnBookshelf:
 	jumpstd genericsink

@@ -687,7 +687,7 @@ BlaineWinLossText:
 
 ReceivedVolcanoBadgeText:
 	text "Blaine received"
-	line "the VolcanoBadge!"
+	line "the Volcano Badge."
 	done
 
 BlaineVolcanoBadgeText:

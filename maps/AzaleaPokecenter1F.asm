@@ -51,14 +51,10 @@ AzaleaPokecenter1FPokefanFText:
 	para "Then you can catch"
 	line "#mon with it."
 
-	para "At least, you"
-	line "have, if wild"
-
-	para "Apricorns didn't"
-	line "disappear."
-
-	para "They were over-"
-	line "harvested."
+	para "Unfortunately,"
+	line "wild Apricorns"
+	cont "have been over-"
+	cont "harvested."
 
 	para "There are efforts"
 	line "to restore them,"

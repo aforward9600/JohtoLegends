@@ -119,10 +119,9 @@ IndigoPlateauPokeCenter1FCooltrainerFText:
 IndigoPlateauPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 5 ; warp events
+	db 4 ; warp events
 	warp_event  8, 17, ROUTE_23, 1
 	warp_event  9, 17, ROUTE_23, 2
-	warp_event  0, 17, POKECENTER_2F, 1
 	warp_event  9,  0, WILLS_ROOM, 1
 	warp_event  8,  0, WILLS_ROOM, 4
 

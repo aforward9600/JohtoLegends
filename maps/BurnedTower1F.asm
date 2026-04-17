@@ -230,7 +230,7 @@ EusineHelloText:
 	
 	para "Can you help us?"
 
-	para "...What?"
+	para "…What?"
 
 	para "Morty's gramps is"
 	line "looking for us?"
@@ -279,7 +279,7 @@ ImHidingTheBasementText:
 	done
 
 BurnedTower1FEnokiText:
-	text "Hmmm...."
+	text "Hmmm…"
 	line "Maybe they're"
 	cont "near the center."
 	done

@@ -34,7 +34,7 @@ IWantMommyText:
 
 	para "I want my mommy!"
 
-	para "Sniff..."
+	para "Sniff…"
 
 	para "Huh?"
 	line "You got rid of the"

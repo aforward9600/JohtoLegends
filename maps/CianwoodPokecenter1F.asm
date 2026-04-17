@@ -89,29 +89,28 @@ CianwoodPokecenter1FSuperNerdText:
 	done
 
 CianwoodPokecenterRivalText:
-	text "Ugh..."
+	text "Ugh…"
 
-	para "Sorry...I got a"
+	para "Sorry…I got a"
 	line "little seasick."
 
 	para "I'm not used to"
 	line "travelling on"
-	cont "water..."
+	cont "water…"
 
 	para "I'm going to take"
 	line "a break and try to"
-	cont "feel better..."
+	cont "feel better…"
 
-	para "Ugh..."
+	para "Ugh…"
 	done
 
 CianwoodPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
+	db 2 ; warp events
 	warp_event  3,  7, CIANWOOD_CITY, 3
 	warp_event  4,  7, CIANWOOD_CITY, 3
-	warp_event  0,  7, POKECENTER_2F, 1
 
 	db 0 ; coord events
 

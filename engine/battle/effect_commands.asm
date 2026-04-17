@@ -2514,13 +2514,12 @@ BattleCommand_ApplyDamage:
 	farcall BattleCommand_FalseSwipe
 	ld b, 0
 	jr nc, .damage
-	farcall AnimateOppAbility
 	call GetTargetAbility
 	ld b, a
 	farcall FarLoadAbilityName
 	ld b, a
 	and a
-	ld b, 2
+	ld b, 3
 	jr .damage
 .SkipSturdy
 	call GetOpponentItem
@@ -2573,9 +2572,14 @@ BattleCommand_ApplyDamage:
 	ret z
 
 	dec a
+	cp 2
+	jr z, .sturdy
 	jr nz, .focus_band_text
 	ld hl, EnduredText
 	jp StdBattleTextbox
+
+.sturdy
+	farcall AnimateOppAbility
 
 .focus_band_text
 	ld hl, HungOnText

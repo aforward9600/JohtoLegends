@@ -294,16 +294,16 @@ BeatenChigusaText:
 	cont "I've seen! Here,"
 
 	para "take this"
-	line "StormBadge!"
+	line "Storm Badge!"
 	done
 
 GetStormBadgeText:
 	text "<PLAYER> received"
-	line "StormBadge."
+	line "the Storm Badge."
 	done
 
 ChigusaExplainBadgeText:
-	text "The StormBadge"
+	text "The Storm Badge"
 	line "makes #mon up"
 	cont "to Lv 40 obey you."
 
@@ -389,7 +389,7 @@ BlackbeltNobBeatenText:
 	done
 
 BlackbeltNobAfterText:
-	text "I lost! "
+	text "I lost!"
 	line "I'm speechless!"
 	done
 
@@ -478,8 +478,8 @@ ChuckAfterText:
 	line "She is pretty"
 	cont "cute. Maybe I"
 
-	para "should go for it.."
-	line "..Well, I can't"
+	para "should go for it…"
+	line "…Well, I can't"
 	cont "abandon the Gym,"
 
 	para "since I'm going to"

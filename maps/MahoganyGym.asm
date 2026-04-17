@@ -316,12 +316,12 @@ PryceText_After:
 	para "looks. Anyway,"
 	line "you've got skills,"
 	cont "kid! Here is the"
-	cont "GlacierBadge!"
+	cont "Glacier Badge!"
 	done
 
 Text_ReceivedGlacierBadge:
 	text "<PLAYER> received"
-	line "GlacierBadge."
+	line "the Glacier Badge."
 	done
 
 PryceText_GlacierBadgeSpeech:
@@ -330,7 +330,7 @@ PryceText_GlacierBadgeSpeech:
 	cont "are on your way to"
 	cont "becoming a master."
 
-	para "The GlacierBadge"
+	para "The Glacier Badge"
 	line "makes #mon up"
 	cont "to Lv 20 obey you."
 

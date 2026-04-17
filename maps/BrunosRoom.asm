@@ -96,8 +96,8 @@ MarthaLastMonText:
 	done
 
 MarthaScript_MarthaBeforeText:
-	text "Howdy! Err...I"
-	line "mean..."
+	text "Howdy! Err…I"
+	line "mean…"
 
 	para "Greetings. I am"
 	line "Martha of the"
@@ -110,9 +110,9 @@ MarthaScript_MarthaBeforeText:
 
 	para "I can't wait to"
 	line "see how strong you"
-	cont "you are!...I mean,"
+	cont "you are!…I mean,"
 
-	para "I uh...Ah forget"
+	para "I uh…Ah forget"
 	line "this prim and"
 	cont "proper nonsense!"
 

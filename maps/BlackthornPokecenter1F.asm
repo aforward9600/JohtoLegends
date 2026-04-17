@@ -36,18 +36,19 @@ BlackthornPokecenter1FFisherText:
 	done
 
 BlackthornPokecenter1FCooltrainerFText:
-	text "You can trade and"
-	line "battle #mon"
-	cont "upstairs."
+	text "I hear that all"
+	line "#mon Centers in"
+	cont "Johto will be"
+	cont "renovated in the"
+	cont "future."
 	done
 
 BlackthornPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
+	db 2 ; warp events
 	warp_event  3,  7, BLACKTHORN_CITY, 5
 	warp_event  4,  7, BLACKTHORN_CITY, 5
-	warp_event  0,  7, POKECENTER_2F, 1
 
 	db 0 ; coord events
 

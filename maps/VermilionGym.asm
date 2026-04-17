@@ -66,24 +66,21 @@ TrainerSoldierUlysses:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend SoldierUlyssesAfterBattleText
+	jumptext SoldierUlyssesAfterBattleText
 
 TrainerSoldierDouglas:
 	trainer SOLDIER, DOUGLAS, EVENT_BEAT_SOLDIER_DOUGLAS, SoldierDouglasSeenText, SoldierDouglasBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend SoldierDouglasAfterBattleText
+	jumptext SoldierDouglasAfterBattleText
 
 TrainerSoldierGrant:
 	trainer SOLDIER, GRANT, EVENT_BEAT_SOLDIER_GRANT, SoldierGrantSeenText, SoldierGrantBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend SoldierGrantAfterBattleText
+	jumptext SoldierGrantAfterBattleText
 
 VermilionGymBed:
 	jumptext VermilionGymBedText
@@ -152,11 +149,11 @@ LtSurgeWinLossText:
 
 ReceivedThunderBadgeText:
 	text "Pvt.Surge received"
-	line "ThunderBadge."
+	line "the Thunder Badge."
 	done
 
 LtSurgeThunderBadgeText:
-	text "A ThunderBadge…"
+	text "A Thunder Badge…"
 
 	para "Perfect for me,"
 	line "wouldn't you say?"

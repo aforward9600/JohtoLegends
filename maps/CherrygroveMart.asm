@@ -35,12 +35,13 @@ CherrygroveMartGrannyText:
 	done
 
 CherrygroveMartTwinText:
-	text "They sell Flower"
-	line "Mail here."
+	text "I heard they used"
+	line "to sell Flower"
+	cont "Mail here."
 
-	para "It's perfect for"
-	line "a town with"
-	cont "cherry blossoms!"
+	para "That's too bad,"
+	line "considering all of"
+	cont "the flowers."
 	done
 
 CherrygroveMart_MapEvents:

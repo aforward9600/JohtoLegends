@@ -14,7 +14,7 @@ GameFreakGameDesignerScript:
 	opentext
 	writetext GameFreakGameDesignerText
 	readvar VAR_DEXUNCAUGHT
-	ifless 3, .CompletedPokedex ; ignore Mew and Celebi
+	ifless 2, .CompletedPokedex ; ignore Mew and Celebi
 	waitbutton
 	closetext
 	end

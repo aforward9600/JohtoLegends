@@ -84,16 +84,14 @@ TrainerCooltrainerFSol:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend CooltrainerFSolAfterText
+	jumptext CooltrainerFSolAfterText
 
 TrainerCooltrainerMBumi:
 	trainer COOLTRAINERM, BUMI, EVENT_BEAT_COOLTRAINERM_BUMI, CooltrainerMBumiSeenText, CooltrainerMBumiBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend CooltrainerMBumiAfterText
+	jumptext CooltrainerMBumiAfterText
 
 LeaderBlueBeforeText:
 	text "Giovanni: I must"
@@ -135,7 +133,7 @@ LeaderBlueWinText:
 
 Text_ReceivedEarthBadge:
 	text "Giovanni received"
-	line "Earthbadge."
+	line "the Earth Badge."
 	done
 
 LeaderBlueAfterText:

@@ -214,11 +214,11 @@ BeatenKurtText:
 
 Text_ReceivedHiveBadge:
 	text "<PLAYER> received"
-	line "HiveBadge."
+	line "the Hive Badge."
 	done
 
 KurtText_HiveBadgeSpeech:
-	text "The HiveBadge"
+	text "The Hive Badge"
 	line "makes #mon up"
 	cont "to Lv 70 obey you."
 
@@ -374,7 +374,7 @@ AzaleaGymGuyWinText:
 	text "You really"
 	line "squashed those"
 
-	para "Bugs!....."
+	para "Bugs!……"
 	line "Sorry, was that"
 
 	para "too brutal?"

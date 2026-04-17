@@ -199,18 +199,18 @@ MasterText_Complete:
 
 	para "being called a"
 	line "Master. Now, here"
-	cont "is the Rising-"
+	cont "is the Rising"
 	cont "Badge. You've"
 	cont "earned it."
 	done
 
 MasterText_ReceivedRisingBadge:
 	text "<PLAYER> received"
-	line "RisingBadge."
+	line "the Rising Badge."
 	done
 
 MasterText_BadgeExplain:
-	text "The RisingBadge"
+	text "The Rising Badge"
 	line "will make all"
 	cont "#mon obey you."
 

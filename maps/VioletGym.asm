@@ -126,34 +126,29 @@ TrainerBirdKeeperRodney:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BirdKeeperRodneyAfterBattleText
+	jumptext BirdKeeperRodneyAfterBattleText
 
 TrainerBirdKeeperAbel:
 	trainer BIRD_KEEPER, ABEL, EVENT_BEAT_BIRD_KEEPER_ABEL, BirdKeeperAbelSeenText, BirdKeeperAbelBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BirdKeeperAbelAfterBattleText
+	jumptext BirdKeeperAbelAfterBattleText
 
 TrainerBirdKeeperLucas:
 	trainer BIRD_KEEPER, LUCAS, EVENT_BEAT_BIRD_KEEPER_LUCAS, BirdKeeperLucasSeenText, BirdKeeperLucasBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetextend BirdKeeperLucasAfterBattleText
+	jumptext BirdKeeperLucasAfterBattleText
 
 VioletGymGuyScript:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_WALKER
 	iftrue .VioletGymGuyWinScript
-	writetextend VioletGymGuyText
+	jumptextfaceplayer VioletGymGuyText
 
 .VioletGymGuyWinScript:
-	writetextend VioletGymGuyWinText
+	jumptextfaceplayer VioletGymGuyWinText
 
 VioletGymStatue:
 	checkflag ENGINE_ZEPHYRBADGE
@@ -271,16 +266,16 @@ BeatenWalkerText:
 	
 	para "Thank you for that"
 	line "battle. Here, take"
-	cont "this ZephyrBadge!"
+	cont "this Zephyr Badge!"
 	done
 
 ReceivedZephyrBadgeText:
 	text "<PLAYER> received"
-	line "ZephyrBadge."
+	line "the Zephyr Badge."
 	done
 
 WalkerZephyrBadgeText:
-	text "The ZephyrBadge"
+	text "The Zephyr Badge"
 	line "makes #mon up"
 	cont "to Lv 80 obey you."
 

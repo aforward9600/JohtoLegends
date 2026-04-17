@@ -28,6 +28,7 @@ CherrygroveGymSpeechHouse_MapScripts:
 	ifequal 7, .CynthiaBattle2
 	winlosstext CynthiaBeatenAgainText, Cynthia2LastMonText
 	loadtrainer TOURIST, CYNTHIA5
+.ResumeCynthiaBattle
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -48,22 +49,7 @@ CherrygroveGymSpeechHouse_MapScripts:
 .CynthiaBattle2:
 	winlosstext CynthiaBeatenAgainText, Cynthia2LastMonText
 	loadtrainer TOURIST, CYNTHIA4
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmusic MUSIC_CYNTHIA_ENCOUNTER
-	opentext
-	writetext YoureAsStrongAsEverText
-	waitbutton
-	closetext
-	setevent EVENT_BEAT_CHERRYGROVE_CYNTHIA
-	applymovement CHERRYGROVEGYMSPEECHHOUSE_CYNTHIA, CherrygroveCynthiaMovement2
-	turnobject CHERRYGROVEGYMSPEECHHOUSE_CYNTHIA, DOWN
-	special RestartMapMusic
-	waitsfx
-	playmapmusic
-	setscene SCENE_CHERRYGROVECITYHOUSE_NOTHING
-	end
+	jr .ResumeCynthiaBattle
 
 .RefusedCynthiaBattle1:
 	writetext CynthiaSomeOtherTimeText
@@ -95,6 +81,7 @@ CherrygroveGymSpeechHouseCynthiaScript:
 	ifequal 7, .CynthiaBattle1
 	winlosstext CynthiaBeatenAgainText, Cynthia2LastMonText
 	loadtrainer TOURIST, CYNTHIA5
+.ResumeCynthiaBattle
 	startbattle
 	reloadmapafterbattle
 	opentext
@@ -110,11 +97,7 @@ CherrygroveGymSpeechHouseCynthiaScript:
 .CynthiaBattle1:
 	winlosstext CynthiaBeatenAgainText, Cynthia2LastMonText
 	loadtrainer TOURIST, CYNTHIA4
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_CHERRYGROVE_CYNTHIA
-	opentext
-	writetextend YoureAsStrongAsEverText
+	jr .ResumeCynthiaBattle
 
 .BeatenCherrygroveCynthia:
 	writetextend CynthiaHelloAgainText

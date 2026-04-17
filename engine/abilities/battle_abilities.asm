@@ -169,6 +169,8 @@ DoEntranceAbilities:
 	db -1
 
 .Intimidate:
+	xor a
+	ld [wEffectFailed], a
 	ld a, BATTLE_VARS_SUBSTATUS4_OPP
 	call GetBattleVar
 	bit SUBSTATUS_MIST, a

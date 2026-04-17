@@ -278,7 +278,7 @@ LilyWinLossText:
 ReceivedCascadeBadgeText:
 	text "The Sensational"
 	line "Sisters received"
-	cont "CascadeBadge."
+	cont "the Cascade Badge."
 	done
 
 MistyFightDoneText:

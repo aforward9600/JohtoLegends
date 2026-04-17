@@ -316,16 +316,16 @@ Byron1F_Beaten:
 
 	para "battle to the end!"
 	line "You've earned this"
-	cont "MineralBadge!"
+	cont "Mineral Badge!"
 	done
 
 Text1F_ReceivedMineralBadge:
 	text "<PLAYER> received"
-	line "MineralBadge."
+	line "the Mineral Badge."
 	done
 
 Byron1F_BadgeSpeech:
-	text "The MineralBadge"
+	text "The Mineral Badge"
 	line "makes #mon up"
 	cont "to Lv 50 obey you."
 

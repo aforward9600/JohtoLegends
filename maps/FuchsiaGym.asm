@@ -211,7 +211,7 @@ KogaText_LossText:
 
 Text_ReceivedSoulBadge:
 	text "Koga received"
-	line "SoulBadge."
+	line "the Soul Badge."
 	done
 
 KogaText_ToxicSpeech:

@@ -300,16 +300,16 @@ BeatenEnokiText:
 
 	para "ghosts head-on."
 	line "You deserve this"
-	cont "FogBadge!"
+	cont "Fog Badge!"
 	done
 
 Text_ReceivedFogBadge:
 	text "<PLAYER> received"
-	line "FogBadge."
+	line "the Fog Badge."
 	done
 
 EnokiText_FogBadgeSpeech:
-	text "The FogBadge will"
+	text "The Fog Badge will"
 	line "make #mon up"
 	cont "to Lv 30 obey you."
 
@@ -346,8 +346,8 @@ WhatIsGoingOnText:
 	para "Please, excuse me"
 	line "<PLAYER>."
 
-	para "I must go invest-"
-	line "igate."
+	para "I must go"
+	line "investigate."
 	done
 
 EnokiFightDoneText:

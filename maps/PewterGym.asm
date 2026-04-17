@@ -169,7 +169,7 @@ FlintWinLossText:
 
 ReceivedBoulderBadgeText:
 	text "Flint received"
-	line "the Boulderbadge!"
+	line "the Boulder Badge."
 	done
 
 BrockBoulderBadgeText:

@@ -11,14 +11,12 @@ DaisyScript:
 	jumptextfaceplayer HiImDaisyText
 
 DaisysMomScript:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_BIKER_BOSS
 	iftrue .DaisysMomScript2
-	writetextend DaisysMomText
+	jumptextfaceplayer DaisysMomText
 
 .DaisysMomScript2:
-	writetextend DaisysMomText2
+	jumptextfaceplayer DaisysMomText2
 
 HiImDaisyText:
 	text "Hi! I'm Daisy!"

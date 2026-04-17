@@ -190,10 +190,6 @@ GoldenrodGymGuyScript:
 	jumptextfaceplayer GoldenrodGymGuyText
 
 .GoldenrodGymGuyWinScript:
-	checkevent EVENT_MET_RIVAL_AT_GOLDENROD_GYM
-	iftrue .SkipScene
-	setscene SCENE_FINISHED
-.SkipScene
 	jumptextfaceplayer GoldenrodGymGuyWinText
 
 GoldenrodGymStatue:
@@ -337,17 +333,16 @@ BeatenMiltonText:
 	para "handle a greased"
 	line "Primape! You've"
 	cont "earned this"
-
-	para "PlainBadge!"
+	cont "Plain Badge!"
 	done
 
 PlayerReceivedPlainBadgeText:
 	text "<PLAYER> received"
-	line "PlainBadge."
+	line "the Plain Badge."
 	done
 
 MiltonText_PlainBadgeSpeech:
-	text "The PlainBadge"
+	text "The Plain Badge"
 	line "makes #mon up"
 	cont "to Lv 60 obey you."
 

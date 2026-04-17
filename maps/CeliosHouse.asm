@@ -23,16 +23,10 @@ CeliosHouseComputer:
 	opentext
 	readvar VAR_FACING
 	ifequal RIGHT, .CantReadComputer
-	writetext CeliosHouseComputerText
-	waitbutton
-	closetext
-	end
+	writetextend CeliosHouseComputerText
 
 .CantReadComputer:
-	writetext CelioCantReadComputerText
-	waitbutton
-	closetext
-	end
+	writetextend CelioCantReadComputerText
 
 CelioText:
 	text "Celio: You're the"
