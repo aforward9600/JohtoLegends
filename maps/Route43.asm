@@ -34,7 +34,7 @@ TrainerCamperGarret:
 	writetext CamperGarretYesText
 	waitbutton
 	winlosstext CamperGarretBeatenText, 0
-	checkflag ENGINE_PLAINBADGE
+	checkflag ENGINE_STORMBADGE
 	iftrue .GarretRematch
 	loadtrainer CAMPER, CAMPER_GARRET
 .StartCamperGarretBattle:
@@ -44,7 +44,7 @@ TrainerCamperGarret:
 	end
 
 .GarretRematch:
-	checkflag ENGINE_HIVEBADGE
+	checkflag ENGINE_PLAINBADGE
 	iftrue .GarretRematch2
 	loadtrainer CAMPER, GARRET2
 	sjump .StartCamperGarretBattle
@@ -89,7 +89,7 @@ TrainerPicnickerChloe:
 	writetextend PicnickerChloeAfterBattleText
 
 .ChloeRematch:
-	checkflag ENGINE_MINERALBADGE
+	checkflag ENGINE_PLAINBADGE
 	iftrue .ChloeRematch2
 	loadtrainer PICNICKER, GINA1
 	sjump .StartChloeBattle

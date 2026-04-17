@@ -776,9 +776,6 @@ HandleEncore:
 	ld hl, BattleText_TargetsEncoreEnded
 	jp StdBattleTextbox
 
-TryEnemyFlee:
-	ret
-
 INCLUDE "data/wild/flee_mons.asm"
 
 CompareMovePriority:
@@ -793,6 +790,7 @@ CompareMovePriority:
 	call GetEnemyMovePriority
 	pop bc
 	cp b
+TryEnemyFlee:
 	ret
 
 GetPlayerMovePriority:
@@ -1993,17 +1991,14 @@ HandleEnemyMonFaint:
 	call HandleEnemySwitch
 	jp z, WildFled_EnemyFled_LinkBattleCanceled
 	ld b,b
-	ld a, 1
-	ld [wBothPokemonFainted], a
 	call DoubleSwitch
 	farcall PlayerAbilityFirstSwitch
-	xor a
-	ld [wBothPokemonFainted], a
-	ret
+	jp ResetBothAbilitiesByte
 
 .player_mon_not_fainted
 	ld a, BATTLEPLAYERACTION_USEITEM
 	ld [wBattlePlayerAction], a
+	call ResetBothAbilitiesByte
 	call HandleEnemySwitch
 	jp z, WildFled_EnemyFled_LinkBattleCanceled
 	xor a ; BATTLEPLAYERACTION_USEMOVE
@@ -2011,6 +2006,7 @@ HandleEnemyMonFaint:
 	ret
 
 DoubleSwitch:
+	call SetBothAbilitiesByte
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .player_1
@@ -2205,8 +2201,15 @@ HandleEnemySwitch:
 	ld a, [hli]
 	or [hl]
 	ld a, $0
-	jr nz, EnemyPartyMonEntrance
+	jr nz, .EnemyPartyMonEntrance
 	inc a
+	ret
+
+.EnemyPartyMonEntrance:
+	call EnemyPartyMonEntrance
+	push af
+	farcall SentOutAbility
+	pop af
 	ret
 
 EnemyPartyMonEntrance:
@@ -2228,10 +2231,6 @@ EnemyPartyMonEntrance:
 	call ResetBattleParticipants
 	call SetEnemyTurn
 	farcall SetEnemyAbility
-;	ld a, [wBothPokemonFainted]
-;	jr nz, .SkipAbility
-	farcall SentOutAbility
-.SkipAbility
 	call SpikesDamage
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
@@ -2556,14 +2555,9 @@ HandlePlayerMonFaint:
 	ld [wBattlePlayerAction], a
 	call HandleEnemySwitch
 	jp z, WildFled_EnemyFled_LinkBattleCanceled
-	ld a, 1
-	ld [wBothPokemonFainted], a
 	call DoubleSwitch
-;	farcall SentOutAbilityBoth
 	farcall PlayerAbilityFirstSwitch
-	xor a
-	ld [wBothPokemonFainted], a
-	ret
+	jp ResetBothAbilitiesByte
 
 UpdateFaintedPlayerMon:
 	ld a, [wCurBattleMon]
@@ -4833,13 +4827,10 @@ DrawEnemyHUD:
 	ld [wWhichHPBar], a
 	hlcoord 2, 2
 	ld b, 0
-	call DrawBattleHPBar
-	ret
+	jp DrawBattleHPBar
 
 UpdateEnemyHPPal:
 	ld hl, wEnemyHPPal
-	call UpdateHPPal
-	ret
 
 UpdateHPPal:
 	ld b, [hl]
@@ -5100,8 +5091,7 @@ Battle_StatsScreen:
 	ld bc, $31 tiles
 	call CopyBytes
 
-	call EnableLCD
-	ret
+	jp EnableLCD
 
 TryPlayerSwitch:
 	ld a, [wCurBattleMon]
@@ -5227,10 +5217,10 @@ PlayerSwitch:
 	jp c, .switch
 	cp BATTLEACTION_FORFEIT
 	jr nz, .dont_run
-	call WildFled_EnemyFled_LinkBattleCanceled
-	ret
+	jp WildFled_EnemyFled_LinkBattleCanceled
 
 .dont_run
+	call ResetBothAbilitiesByte
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .player_1
@@ -5292,7 +5282,7 @@ BattleMonEntrance:
 	ld [wMenuCursorY], a
 	ret
 
-PassedBattleMonEntrance:
+PassedBattleMonSection:
 	ld c, 50
 	call DelayFrames
 
@@ -5313,6 +5303,10 @@ PassedBattleMonEntrance:
 	call SetPlayerTurn
 	ldh a, [hBattleTurn]
 	and a
+	ret
+
+PassedBattleMonEntrance:
+	call PassedBattleMonSection
 	jr z, .GetPlayerAbilityPassed
 	farcall SetEnemyAbility
 	jr .GotEnemyAbilityPassed
@@ -5323,26 +5317,7 @@ PassedBattleMonEntrance:
 	jp SpikesDamage
 
 PassedBattleMonEntranceUTurn:
-	ld c, 50
-	call DelayFrames
-
-	hlcoord 9, 7
-	lb bc, 5, 11
-	call ClearBox
-
-	ld a, [wCurPartyMon]
-	ld [wCurBattleMon], a
-	call AddBattleParticipant
-	call InitBattleMon
-	xor a ; FALSE
-	ld [wApplyStatLevelMultipliersToEnemy], a
-	call ApplyStatLevelMultiplierOnAllStats
-	call SendOutPlayerMon
-	call EmptyBattleTextbox
-	call LoadTileMapToTempTileMap
-	call SetPlayerTurn
-	ldh a, [hBattleTurn]
-	and a
+	call PassedBattleMonSection
 	jr z, .GetPlayerAbilityUTurn
 	farcall SetEnemyAbility
 	jr .GotEnemyAbilityUTurn
@@ -9504,4 +9479,15 @@ SetPlayerBufferForm:
 	call GetPartyMonForm
 	ld a, [hl]
 	ld [wBufferMonForm], a
+	ret
+
+ResetBothAbilitiesByte:
+	xor a
+	ld [wBothPokemonFainted], a
+	ret
+
+SetBothAbilitiesByte:
+	ld b,b
+	ld a, $1
+	ld [wBothPokemonFainted], a
 	ret

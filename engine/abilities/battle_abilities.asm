@@ -123,7 +123,8 @@ PlayerAbilityFirstSwitch:
 SentOutAbility::
 	ld b,b
 	ld a, [wBothPokemonFainted]
-	ret nz
+	cp $1
+	ret z
 	ldh a, [hBattleTurn]
 	and a
 	jr z, PlayerAbilityFirst
@@ -441,7 +442,7 @@ CheckContactAbilities:
 	ret z
 	call GetTargetAbility
 	cp CURSED_BODY
-	jr z, .cursedbody
+	jp z, .cursedbody
 	cp RATTLED
 	jp z, .rattled
 	cp JUSTIFIED
@@ -487,6 +488,10 @@ CheckContactAbilities:
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and a
+	ret nz
 	call AnimateUserAbility
 	farcall BattleCommand_PoisonTarget
 	jr .ReconveneContact
@@ -495,6 +500,8 @@ CheckContactAbilities:
 	call GetTargetAbility
 	cp SHIELD_DUST
 	jr z, .ReconveneContact
+	cp INNER_FOCUS
+	ret z
 	call BattleRandom
 	cp 10 percent + 1
 	ret nc
@@ -578,6 +585,11 @@ CheckContactAbilities:
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and a
+	ret nz
+	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_ParalyzeTarget
 	jp BattleCommand_SwitchTurnAbilities
@@ -602,6 +614,11 @@ CheckContactAbilities:
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and a
+	ret nz
+	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_PoisonTarget
 	jp BattleCommand_SwitchTurnAbilities
@@ -622,6 +639,11 @@ CheckContactAbilities:
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and a
+	ret nz
+	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_BurnTarget
 	jp BattleCommand_SwitchTurnAbilities
@@ -634,6 +656,11 @@ CheckContactAbilities:
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and a
+	ret nz
+	call AnimateUserAbility
 	call BattleRandom
 	cp 33 percent + 1
 	jr c, .EffectSporePoison
@@ -653,6 +680,7 @@ CheckContactAbilities:
 	jp BattleCommand_SwitchTurnAbilities
 
 .RoughSkin:
+	call AnimateOppAbility
 	farcall GetEighthMaxHP
 	farcall SubtractHPFromUser
 	ld hl, RoughSkinText
@@ -687,6 +715,7 @@ CheckContactAbilities:
 	ld [wEnemyPerishCount], a
 
 .done
+	call AnimateOppAbility
 	ld de, ANIM_PERISH_BODY
 	farcall FarPlayBattleAnimation
 	ld hl, StartPerishText
@@ -700,6 +729,7 @@ CheckContactAbilities:
 	farcall HasUserFainted
 	ret nz
 	call BattleCommand_SwitchTurnAbilities
+	call AnimateOppAbility
 	farcall GetQuarterMaxHP
 	farcall SubtractHPFromUser
 	ld hl, AftermathText
@@ -743,6 +773,7 @@ CheckContactAbilities:
 	ld de, ANIM_PLAYER_STAT_DOWN
 	farcall Call_PlayBattleAnim
 	call BattleCommand_SwitchTurnAbilities
+	call AnimateOppAbility
 	ld hl, WeakArmorDefenseText
 	call StdBattleTextbox
 .TrySpeedUp
@@ -765,6 +796,7 @@ CheckContactAbilities:
 	call GetUserAbility
 	cp STICKY_HOLD
 	ret z
+	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_Thief
 	call BattleCommand_SwitchTurnAbilities
@@ -1994,6 +2026,16 @@ PlayerSwitchAbilities:
 	jr z, .PlayerRegeneratorAbility
 	cp NATURAL_CURE
 	ret nz
+;	ld b,b
+;	ld a, BATTLE_VARS_STATUS
+;	call GetBattleVarAddr
+;	and a
+;	ret nz
+;	ld a, BATTLE_VARS_STATUS
+;	call GetBattleVarAddr
+;	xor a
+;	ld [hl], a
+;	ret
 	xor a
 	ld [wBattleMonStatus], a
 	call UpdateBattleMonInParty

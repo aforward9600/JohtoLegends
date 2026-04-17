@@ -999,15 +999,6 @@ else
 	db NO_ITEM
 endc
 	dw BUBBLE, LEER, NO_MOVE, NO_MOVE
-	db 5
-	dw HORSEA
-if DEF(_CHALLENGE)
-	db SCOPE_LENS
-else
-	db NO_ITEM
-endc
-	dw BUBBLE, LEER, NO_MOVE, NO_MOVE
-;	dw SUBSTITUTE, NO_MOVE, NO_MOVE, NO_MOVE
 	db -1 ; end
 
 	end_list_items
