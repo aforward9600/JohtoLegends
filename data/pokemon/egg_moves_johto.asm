@@ -644,6 +644,7 @@ TeddiursaEggMoves:
 	dw SLACK_OFF
 	dw WORK_UP
 	dw HONE_CLAWS
+	dw CHIP_AWAY
 	dw -1 ; end
 
 SlugmaEggMoves:

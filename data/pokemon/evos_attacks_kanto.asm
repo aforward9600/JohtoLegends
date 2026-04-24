@@ -314,6 +314,7 @@ SquirtleEvosAttacks:
 	dbw 19, RAPID_SPIN
 	dbw 22, PROTECT
 	dbw 25, WATER_PULSE
+	dbw 27, SHELL_SMASH
 	dbw 28, AQUA_TAIL
 	dbw 31, SKULL_BASH
 	dbw 34, IRON_DEFENSE
@@ -334,6 +335,7 @@ WartortleEvosAttacks:
 	dbw 25, PROTECT
 	dbw 29, WATER_PULSE
 	dbw 33, AQUA_TAIL
+	dbw 35, SHELL_SMASH
 	dbw 37, SKULL_BASH
 	dbw 41, IRON_DEFENSE
 	dbw 45, RAIN_DANCE
@@ -355,6 +357,7 @@ BlastoiseEvosAttacks:
 	dbw 25, PROTECT
 	dbw 29, WATER_PULSE
 	dbw 33, AQUA_TAIL
+	dbw 35, SHELL_SMASH
 	dbw 40, SKULL_BASH
 	dbw 47, IRON_DEFENSE
 	dbw 54, RAIN_DANCE
@@ -818,7 +821,7 @@ NidoqueenEvosAttacks:
 	dbw 1, SCRATCH
 	dbw 1, DOUBLE_KICK
 	dbw 1, TAIL_WHIP
-	dbw 23, STOMP
+	dbw 23, CHIP_AWAY
 	dbw 35, BODY_SLAM
 	dbw 43, EARTH_POWER
 	db 0 ; no more level-up moves
@@ -867,7 +870,7 @@ NidokingEvosAttacks:
 	dbw 1, HORN_ATTACK
 	dbw 1, DOUBLE_KICK
 	dbw 1, POISON_STING
-	dbw 23, STOMP
+	dbw 23, CHIP_AWAY
 	dbw 35, THRASH
 	dbw 43, EARTH_POWER
 	db 0 ; no more level-up moves
@@ -3118,7 +3121,7 @@ LickitungEvosAttacks:
 	dbw 17, WRAP
 	dbw 21, STOMP
 	dbw 25, DISABLE
-	dbw 29, SLAM
+	dbw 29, CHIP_AWAY
 	dbw 33, ROLLOUT
 	dbw 37, BODY_SLAM
 	dbw 41, BELLY_DRUM
@@ -3137,7 +3140,7 @@ LickilickyEvosAttacks:
 	dbw 17, WRAP
 	dbw 21, STOMP
 	dbw 25, DISABLE
-	dbw 29, SLAM
+	dbw 29, CHIP_AWAY
 	dbw 33, ROLLOUT
 	dbw 37, BODY_SLAM
 	dbw 41, BELLY_DRUM
@@ -3225,7 +3228,7 @@ RhyhornEvosAttacks:
 	dbw 13, ROCK_TOMB
 	dbw 17, STOMP
 	dbw 21, BULLDOZE
-	dbw 25, BODY_SLAM
+	dbw 25, CHIP_AWAY
 	dbw 29, ROCK_BLAST
 	dbw 33, DRILL_RUN
 	dbw 37, TAKE_DOWN
@@ -3247,7 +3250,7 @@ RhydonEvosAttacks:
 	dbw 13, ROCK_TOMB
 	dbw 17, STOMP
 	dbw 21, BULLDOZE
-	dbw 25, BODY_SLAM
+	dbw 25, CHIP_AWAY
 	dbw 29, ROCK_BLAST
 	dbw 33, DRILL_RUN
 	dbw 37, TAKE_DOWN
@@ -3266,7 +3269,7 @@ RhyperiorEvosAttacks:
 	dbw 13, ROCK_TOMB
 	dbw 17, STOMP
 	dbw 21, BULLDOZE
-	dbw 25, BODY_SLAM
+	dbw 25, CHIP_AWAY
 	dbw 29, ROCK_BLAST
 	dbw 33, DRILL_RUN
 	dbw 37, TAKE_DOWN
@@ -3393,7 +3396,7 @@ KangaskhanEvosAttacks:
 	dbw 19, DOUBLE_HIT_M
 	dbw 22, RAGE
 	dbw 25, MEGA_PUNCH
-	dbw 31, HEADBUTT
+	dbw 31, CHIP_AWAY
 	dbw 34, DIZZY_PUNCH
 	dbw 37, CRUNCH
 	dbw 43, ENDURE

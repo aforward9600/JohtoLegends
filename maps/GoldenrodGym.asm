@@ -206,6 +206,8 @@ GoldenrodGymStatue:
 	jumpstd gymstatue5
 
 TowerInvaded1:
+	checkevent EVENT_MET_RIVAL_AT_GOLDENROD_GYM
+	iftrue .FinishEvent
 	moveobject, GOLDENRODGYM_DAHLIA, 3, 17
 	playsound SFX_ENTER_DOOR
 	appear GOLDENRODGYM_DAHLIA
@@ -228,13 +230,16 @@ TowerInvaded1:
 	disappear GOLDENRODGYM_DAHLIA
 	playsound SFX_EXIT_BUILDING
 	special RestartMapMusic
-	setscene SCENE_DEFAULT
 	setevent EVENT_WILD_AREA_5_RIVAL1
 	setevent EVENT_MET_RIVAL_AT_GOLDENROD_GYM
 	scall GoldenrodRockets
+.FinishEvent
+	setscene SCENE_DEFAULT
 	end
 
 TowerInvaded2:
+	checkevent EVENT_MET_RIVAL_AT_GOLDENROD_GYM
+	iftrue .FinishEvent
 	moveobject, GOLDENRODGYM_DAHLIA, 2, 17
 	playsound SFX_ENTER_DOOR
 	appear GOLDENRODGYM_DAHLIA
@@ -257,10 +262,11 @@ TowerInvaded2:
 	disappear GOLDENRODGYM_DAHLIA
 	playsound SFX_EXIT_BUILDING
 	special RestartMapMusic
-	setscene SCENE_DEFAULT
 	setevent EVENT_WILD_AREA_5_RIVAL1
 	setevent EVENT_MET_RIVAL_AT_GOLDENROD_GYM
 	scall GoldenrodRockets
+.FinishEvent
+	setscene SCENE_DEFAULT
 	end
 
 GoldenrodGymRivalMovement1:

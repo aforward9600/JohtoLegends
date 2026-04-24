@@ -8,8 +8,7 @@ StartRTC:
 	ld a, [MBC3RTC]
 	res 6, a ; halt
 	ld [MBC3RTC], a
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 GetTimeOfDay::
 ; get time of day based on the current hour
@@ -83,8 +82,7 @@ StartClock::
 	call RecordRTCStatus ; set flag on sRTCStatusFlags
 
 .skip_set
-	call StartRTC
-	ret
+	jp StartRTC
 
 Function1409b:
 	ld hl, hRTCDayHi
@@ -129,8 +127,7 @@ Function140ae:
 	ld a, [$b2fa] ; address of MBC30 bank
 	inc a
 	ld [$b2fa], a ; address of MBC30 bank
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 .dont_update
 	xor a

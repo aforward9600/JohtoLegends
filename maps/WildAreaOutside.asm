@@ -22,9 +22,7 @@ WildAreaOutside_MapScripts:
 	return
 
 RivalWalksUpLeft:
-	special FadeOutMusic
-	showemote EMOTE_SHOCK, PLAYER, 15
-	turnobject, PLAYER, DOWN
+	scall StartWildAreaRival
 	appear WILDAREAOUTSIDE_RIVAL
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female1
@@ -114,9 +112,7 @@ RivalWalksUpLeft:
 	sjump .Resume2
 
 RivalWalksUpRight:
-	special FadeOutMusic
-	showemote EMOTE_SHOCK, PLAYER, 15
-	turnobject, PLAYER, DOWN
+	scall StartWildAreaRival
 	moveobject WILDAREAOUTSIDE_RIVAL, 8, 8
 	appear WILDAREAOUTSIDE_RIVAL
 	checkflag ENGINE_PLAYER_IS_FEMALE
@@ -133,6 +129,12 @@ RivalWalksUpRight:
 	turnobject WILDAREAOUTSIDE_RIVAL, RIGHT
 	turnobject PLAYER, LEFT
 	sjump RivalWalksUpLeft.Reconverge2
+
+StartWildAreaRival:
+	special FadeOutMusic
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject, PLAYER, DOWN
+	end
 
 WildAreaOutsideOldManScript:
 	jumptextfaceplayer WildAreaOutsideOldManText

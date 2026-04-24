@@ -50,7 +50,7 @@ TrainerPsychicJordan:
 	sjump .StartJordanBattle
 
 .JordanRematch3
-	loadtrainer PSYCHIC_T, JORDAN_2
+	loadtrainer PSYCHIC_T, JORDAN_3
 	sjump .StartJordanBattle
 
 .Refused:

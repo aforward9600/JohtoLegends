@@ -613,19 +613,20 @@ SalamenceEvosAttacks:
 BeldumEvosAttacks:
 	dbbw EVOLVE_LEVEL, 20, METANG
 	db 0 ; no more evolutions
-	dbw 1, TAKE_DOWN
+	dbw 1, TACKLE
+	dbw 10, CONFUSION
+	dbw 15, METAL_CLAW
 	db 0 ; no more level-up moves
 
 MetangEvosAttacks:
 	dbbw EVOLVE_LEVEL, 45, METAGROSS
 	db 0 ; no more evolutions
-	dbw LEARN_EVO_MOVE, CONFUSION
-	dbw LEARN_EVO_MOVE, METAL_CLAW
-	dbw 1, CONFUSION
-	dbw 1, METAL_CLAW
-	dbw 1, TAKE_DOWN
-	dbw 23, PURSUIT
-	dbw 26, BULLET_PUNCH
+	dbw LEARN_EVO_MOVE, BULLET_PUNCH
+	dbw 1, BULLET_PUNCH
+	dbw 1, TACKLE
+	dbw 10, CONFUSION
+	dbw 15, METAL_CLAW
+	dbw 26, PURSUIT
 	dbw 29, FORESIGHT
 	dbw 32, ZEN_HEADBUTT
 	dbw 35, SCARY_FACE
@@ -640,11 +641,11 @@ MetagrossEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, HAMMER_ARM
 	dbw 1, HAMMER_ARM
-	dbw 1, CONFUSION
-	dbw 1, METAL_CLAW
-	dbw 1, TAKE_DOWN
-	dbw 23, PURSUIT
-	dbw 26, BULLET_PUNCH
+	dbw 1, BULLET_PUNCH
+	dbw 1, TACKLE
+	dbw 10, CONFUSION
+	dbw 15, METAL_CLAW
+	dbw 26, PURSUIT
 	dbw 29, FORESIGHT
 	dbw 32, ZEN_HEADBUTT
 	dbw 35, SCARY_FACE

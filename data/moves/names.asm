@@ -425,4 +425,6 @@ MoveNames::
 	db "Dire Claw@"
 	db "PhantomForce@"
 	db "Blood Moon@"
+	db "Sacred Sword@"
+	db "Chip Away@"
 ;	db "Wake Up Slap@"

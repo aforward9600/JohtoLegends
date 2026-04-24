@@ -289,6 +289,7 @@ SandshrewEggMoves:
 	dw NIGHT_SLASH
 	dw WORK_UP
 	dw HONE_CLAWS
+	dw CHIP_AWAY
 	dw -1 ; end
 
 SandshrewAEggMoves:
@@ -301,6 +302,7 @@ SandshrewAEggMoves:
 	dw ICICLE_SPEAR
 	dw METAL_CLAW
 	dw NIGHT_SLASH
+	dw CHIP_AWAY
 	dw -1 ; end
 
 NidoranFEggMoves:
@@ -314,6 +316,7 @@ NidoranFEggMoves:
 	dw PURSUIT
 	dw HONE_CLAWS
 	dw POISON_TAIL
+	dw CHIP_AWAY
 	dw -1 ; end
 
 NidoranMEggMoves:
@@ -328,6 +331,7 @@ NidoranMEggMoves:
 	dw SUCKER_PUNCH
 	dw HONE_CLAWS
 	dw POISON_TAIL
+	dw CHIP_AWAY
 	dw -1 ; end
 
 CleffaEggMoves:
@@ -704,6 +708,7 @@ CuboneEggMoves:
 	dw PERISH_SONG
 	dw DOUBLE_KICK
 	dw ENDURE
+	dw CHIP_AWAY
 	dw -1 ; end
 
 TyrogueEggMoves:

@@ -33,6 +33,8 @@ MaxDVsSetter:
 	scall ReturnToMoveDeletersHouse
 	checkevent EVENT_PASSWORD_CHEATER
 	iftrue .SetCheater
+	checkevent EVENT_RESET_SHINY_PASSWORD
+	iftrue .ResetShiny
 	checkevent EVENT_PASSWORD_SHINY
 	iftrue .SetShiny
 	checkevent EVENT_PASSWORD_MONOCHROME
@@ -72,6 +74,10 @@ MaxDVsSetter:
 .SetShiny:
 	clearevent EVENT_PASSWORD_SHINY
 	writetextend ShinyPokemonText
+
+.ResetShiny:
+	clearevent EVENT_RESET_SHINY_PASSWORD
+	writetextend ResetShinyPokemonText
 
 .SetMonochrome:
 	clearevent EVENT_PASSWORD_MONOCHROME
@@ -121,8 +127,15 @@ CheckForPassword:
 	jp .FinishPassword
 
 .shinypassword2:
+	checkflag ENGINE_SHINY_PASSWORD
+	iftrue .ResetShinyPassword
 	setevent EVENT_PASSWORD_SHINY
 	setflag ENGINE_SHINY_PASSWORD
+	end
+
+.ResetShinyPassword
+	setevent EVENT_RESET_SHINY_PASSWORD
+	clearflag ENGINE_SHINY_PASSWORD
 	end
 
 .cheaterpassword:
@@ -256,6 +269,12 @@ ShinyPokemonText:
 	text "Different colored"
 	line "#mon will"
 	cont "appear more often."
+	done
+
+ResetShinyPokemonText:
+	text "Different colored"
+	line "#mon will"
+	cont "appear less often."
 	done
 
 SingularTextMoveDeleter:

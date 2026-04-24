@@ -67,8 +67,7 @@ PokeGear:
 	ldh [hBGMapAddress + 1], a
 	ld a, $90
 	ldh [hWY], a
-	call ExitPokegearRadio_HandleMusic
-	ret
+	jp ExitPokegearRadio_HandleMusic
 
 .InitTilemap:
 	call ClearBGPalettes
@@ -108,8 +107,7 @@ PokeGear:
 	and a
 	ret z
 	ld a, %11100100
-	call DmgToCgbObjPal0
-	ret
+	jp DmgToCgbObjPal0
 
 Pokegear_LoadGFX:
 	call ClearVBank1
@@ -143,15 +141,13 @@ Pokegear_LoadGFX:
 	add hl, de
 	ld de, vTiles0 tile $14
 	ld bc, 4 tiles
-	call FarCopyBytes
-	ret
+	jp FarCopyBytes
 
 .ssaqua
 	ld hl, FastShipGFX
 	ld de, vTiles0 tile $10
 	ld bc, 8 tiles
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 FastShipGFX:
 INCBIN "gfx/pokegear/fast_ship.2bpp"
@@ -195,8 +191,7 @@ TownMap_GetCurrentLandmark:
 	ld b, a
 	ld a, [wBackupMapNumber]
 	ld c, a
-	call GetWorldMapLocation
-	ret
+	jp GetWorldMapLocation
 
 TownMap_InitCursorAndPlayerIconPositions:
 	ld a, [wMapGroup]
@@ -289,8 +284,7 @@ InitPokegearTilemap:
 	ld c, 3
 	call DelayFrames
 .dmg
-	call WaitBGMap
-	ret
+	jp WaitBGMap
 
 .Jumptable:
 ; entries correspond to POKEGEARCARD_* constants
@@ -308,8 +302,7 @@ InitPokegearTilemap:
 	hlcoord 0, 12
 	lb bc, 4, 18
 	call Textbox
-	call Pokegear_UpdateClock
-	ret
+	jp Pokegear_UpdateClock
 
 .switch
 	db " SWITCH▶@"
@@ -333,16 +326,14 @@ InitPokegearTilemap:
 .ok
 	farcall PokegearMap
 	ld a, [wPokegearMapCursorLandmark]
-	call PokegearMap_UpdateLandmarkName
-	ret
+	jp PokegearMap_UpdateLandmarkName
 
 .Radio:
 	ld de, RadioTilemapRLE
 	call Pokegear_LoadTilemapRLE
 	hlcoord 0, 12
 	lb bc, 4, 18
-	call Textbox
-	ret
+	jp Textbox
 
 .Phone:
 	ld de, PhoneTilemapRLE
@@ -351,8 +342,7 @@ InitPokegearTilemap:
 	lb bc, 4, 18
 	call Textbox
 	call .PlacePhoneBars
-	call PokegearPhone_UpdateDisplayList
-	ret
+	jp PokegearPhone_UpdateDisplayList
 
 .PlacePhoneBars:
 	hlcoord 17, 1
@@ -391,8 +381,7 @@ Pokegear_FinishTilemap:
 	call nz, .PlaceRadioIcon
 	hlcoord 0, 0
 	ld a, $46
-	call .PlacePokegearCardIcon
-	ret
+	jr .PlacePokegearCardIcon
 
 .PlaceMapIcon:
 	hlcoord 2, 0
@@ -455,8 +444,7 @@ PokegearClock_Init:
 	call PrintText
 	ld hl, wJumptableIndex
 	inc [hl]
-	call ExitPokegearRadio_HandleMusic
-	ret
+	jp ExitPokegearRadio_HandleMusic
 
 PokegearClock_Joypad:
 	call .UpdateClock
@@ -489,8 +477,7 @@ PokegearClock_Joypad:
 	ld c, POKEGEARSTATE_RADIOINIT
 	ld b, POKEGEARCARD_RADIO
 .done
-	call Pokegear_SwitchPage
-	ret
+	jp Pokegear_SwitchPage
 
 .quit
 	ld hl, wJumptableIndex
@@ -517,8 +504,7 @@ Pokegear_UpdateClock:
 	farcall PrintHoursMins
 	ld hl, .DayText
 	bccoord 6, 6
-	call PlaceHLTextAtBC
-	ret
+	jp PlaceHLTextAtBC
 
 	db "ごぜん@"
 	db "ごご@"
@@ -544,8 +530,7 @@ PokegearMap_CheckRegion:
 	ld a, POKEGEARSTATE_SEVIIMAPINIT
 .done
 	ld [wJumptableIndex], a
-	call ExitPokegearRadio_HandleMusic
-	ret
+	jp ExitPokegearRadio_HandleMusic
 
 PokegearMap_Init:
 	call InitPokegearTilemap
@@ -583,8 +568,7 @@ PokegearMap_ContinueMap:
 	ld a, [hl]
 	and D_LEFT
 	jr nz, .left
-	call .DPad
-	ret
+	jr .DPad
 
 .right
 	ld a, [wPokegearFlags]
@@ -606,8 +590,7 @@ PokegearMap_ContinueMap:
 	ld c, POKEGEARSTATE_CLOCKINIT
 	ld b, POKEGEARCARD_CLOCK
 .done
-	call Pokegear_SwitchPage
-	ret
+	jp Pokegear_SwitchPage
 
 .cancel
 	ld hl, wJumptableIndex
@@ -654,8 +637,7 @@ PokegearMap_ContinueMap:
 	ld a, [wPokegearMapCursorObjectPointer + 1]
 	ld b, a
 	ld a, [wPokegearMapCursorLandmark]
-	call PokegearMap_UpdateCursorPosition
-	ret
+	jp PokegearMap_UpdateCursorPosition
 
 PokegearMap_InitPlayerIcon:
 	push af
@@ -799,8 +781,7 @@ PokegearRadio_Joypad:
 	ld c, POKEGEARSTATE_CLOCKINIT
 	ld b, POKEGEARCARD_CLOCK
 .switch_page
-	call Pokegear_SwitchPage
-	ret
+	jp Pokegear_SwitchPage
 
 .cancel
 	ld hl, wJumptableIndex
@@ -817,8 +798,7 @@ PokegearPhone_Init:
 	call InitPokegearTilemap
 	call ExitPokegearRadio_HandleMusic
 	ld hl, PokegearText_WhomToCall
-	call PrintText
-	ret
+	jp PrintText
 
 PokegearPhone_Joypad:
 	ld hl, hJoyPressed
@@ -835,8 +815,7 @@ PokegearPhone_Joypad:
 	ld a, [hl]
 	and D_RIGHT
 	jr nz, .right
-	call PokegearPhone_GetDPad
-	ret
+	jp PokegearPhone_GetDPad
 
 .left
 	ld a, [wPokegearFlags]
@@ -858,8 +837,7 @@ PokegearPhone_Joypad:
 	ld c, POKEGEARSTATE_RADIOINIT
 	ld b, POKEGEARCARD_RADIO
 .switch_page
-	call Pokegear_SwitchPage
-	ret
+	jp Pokegear_SwitchPage
 
 .b
 	ld hl, wJumptableIndex
@@ -935,8 +913,7 @@ PokegearPhone_MakePhoneCall:
 	ld a, POKEGEARSTATE_PHONEJOYPAD
 	ld [wJumptableIndex], a
 	ld hl, PokegearText_WhomToCall
-	call PrintText
-	ret
+	jp PrintText
 
 .dotdotdot
 	;
@@ -956,8 +933,7 @@ PokegearPhone_FinishPhoneCall:
 	ld a, POKEGEARSTATE_PHONEJOYPAD
 	ld [wJumptableIndex], a
 	ld hl, PokegearText_WhomToCall
-	call PrintText
-	ret
+	jp PrintText
 
 PokegearPhone_GetDPad:
 	ld hl, hJoyLast
@@ -1005,15 +981,13 @@ PokegearPhone_GetDPad:
 	xor a
 	ldh [hBGMapMode], a
 	call PokegearPhone_UpdateCursor
-	call WaitBGMap
-	ret
+	jp WaitBGMap
 
 .done_joypad_update_page
 	xor a
 	ldh [hBGMapMode], a
 	call PokegearPhone_UpdateDisplayList
-	call WaitBGMap
-	ret
+	jp WaitBGMap
 
 PokegearPhone_UpdateCursor:
 	ld a, " "
@@ -1072,8 +1046,7 @@ PokegearPhone_UpdateDisplayList:
 	ld [wPokegearPhoneLoadNameBuffer], a
 	cp 4
 	jr c, .loop
-	call PokegearPhone_UpdateCursor
-	ret
+	jp PokegearPhone_UpdateCursor
 
 PokegearPhone_DeletePhoneNumber:
 	ld hl, wPhoneList
@@ -1298,8 +1271,7 @@ Pokegear_SwitchPage:
 	ld [wJumptableIndex], a
 	ld a, b
 	ld [wPokegearCard], a
-	call DeleteSpriteAnimStruct2ToEnd
-	ret
+	jp DeleteSpriteAnimStruct2ToEnd
 
 ExitPokegearRadio_HandleMusic:
 	ld a, [wPokegearRadioMusicPlaying]
@@ -1423,16 +1395,12 @@ UpdateRadioStation:
 .loop
 	ld a, [hli]
 	cp -1
-	jr z, .nostation
+	jp z, NoRadioStation
 	cp d
 	jr z, .foundstation
 	inc hl
 	inc hl
 	jr .loop
-
-.nostation
-	call NoRadioStation
-	ret
 
 .foundstation
 	ld a, [hli]
@@ -1461,16 +1429,12 @@ MusicPlayer:
 .musicplayerloop
 	ld a, [hli]
 	cp -1
-	jr z, .musicplayernostation
+	jp z, NoRadioStation
 	cp d
 	jr z, .musicplayerfoundstation
 	inc hl
 	inc hl
 	jr .musicplayerloop
-
-.musicplayernostation
-	call NoRadioStation
-	ret
 
 .musicplayerfoundstation
 	ld a, [hli]
@@ -1581,412 +1545,333 @@ MusicPlayerData:
 
 .BuenasPasswordMusic:
 	ld de, MUSIC_BUENAS_PASSWORD
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .PokemonMarchMusic:
 	ld de, MUSIC_POKEMON_MARCH
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .ClefairyDanceMusic:
 	ld de, MUSIC_MT_MOON_SQUARE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .ProfessorOakMusic:
 	ld de, MUSIC_PROF_OAK
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .BikeMusic:
 	ld de, MUSIC_BICYCLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .ClairMusic:
 	ld de, MUSIC_CLAIR
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .UnownSignalMusic:
 	ld de, MUSIC_RUINS_OF_ALPH_RADIO
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .SurfMusic:
 	ld de, MUSIC_SURF
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .UnwaveringHeartMusic:
 	ld de, MUSIC_UNWAVERING_HEART
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .CynthiaEncounterMusic:
 	ld de, MUSIC_CYNTHIA_ENCOUNTER
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .EusineMusic:
 	ld de, MUSIC_MYSTICALMAN_ENCOUNTER
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .MomsMusic:
 	ld de, MUSIC_MOM
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .AnthemMusic:
 	ld de, MUSIC_ANTHEM
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .SSAquaMusic:
 	ld de, MUSIC_SS_AQUA
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .DragonsDenMusic:
 	ld de, MUSIC_DRAGONS_DEN
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .LakeOfRageMusic:
 	ld de, MUSIC_LAKE_OF_RAGE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .DanceTheatreMusic:
 	ld de, MUSIC_DANCING_HALL
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .Megalovania:
 	ld de, MUSIC_MEGALOVANIA
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .OakBattleMusic:
 	ld de, MUSIC_OAK_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .CynthiaBattleMusic:
 	ld de, MUSIC_CYNTHIA_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .MewtwoMusic:
 	ld de, MUSIC_MEWTWO_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .XYLegendaryMusic:
 	ld de, MUSIC_KANTO_LEGEND_BATTLE_XY
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .KantoGymLeaderMusic:
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .KantoTrainerMusic:
 	ld de, MUSIC_KANTO_TRAINER_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .KantoWildMusic:
 	ld de, MUSIC_KANTO_WILD_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .ChampionMusic:
 	ld de, MUSIC_CHAMPION_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .EliteFourMusic:
 	ld de, MUSIC_ELITE_FOUR
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .HoOhMusic:
 	ld de, MUSIC_HO_OH_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .LugiaMusic:
 	ld de, MUSIC_LUGIA_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .SuicuneMusic:
 	ld de, MUSIC_SUICUNE_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .MadameBossMusic:
 	ld de, MUSIC_MADAME_BOSS
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .RocketBattleMusic:
 	ld de, MUSIC_ROCKET_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .DahliaMusic:
 	ld de, MUSIC_MARNIE_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .DracoMusic:
 	ld de, MUSIC_RIVAL_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .JohtoGymLeaderMusic:
 	ld de, MUSIC_JOHTO_GYM_LEADER_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .JohtoTrainerMusic:
 	ld de, MUSIC_JOHTO_TRAINER_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .JohtoWildMusic:
 	ld de, MUSIC_JOHTO_WILD_BATTLE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .CinnabarIslandMusic:
 	ld de, MUSIC_CINNABAR_ISLAND
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .PokemonMansionMusic:
 	ld de, MUSIC_CINNABAR_MANSION
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .GameCornerMusic:
 	ld de, MUSIC_GAME_CORNER
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .VictoryRoadRSEMusic:
 	ld de, MUSIC_VICTORY_ROAD_RSE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .SilphCoMusic:
 	ld de, MUSIC_SILPH_CO
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .CeruleanCaveMusic:
 	ld de, MUSIC_ROCKET_LAIR
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .MtMoonMusic:
 	ld de, MUSIC_MT_MOON
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .OaksLabMusic:
 	ld de, MUSIC_POKEMON_TALK
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .ViridianForestMusic:
 	ld de, MUSIC_ROUTE_2
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .VictoryRoadMusic:
 	ld de, MUSIC_VICTORY_ROAD
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .NinjaHideoutMusic:
 	ld de, MUSIC_ROCKET_HIDEOUT
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .WildAreaInsideMusic:
 	ld de, MUSIC_WILD_AREA
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .WildAreaMusic:
 	ld de, MUSIC_WILD_AREA_OUTSIDE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .LighthouseMusic:
 	ld de, MUSIC_LIGHTHOUSE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .BellTowerMusic:
 	ld de, MUSIC_TIN_TOWER
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .BurnedTowerMusic:
 	ld de, MUSIC_BURNED_TOWER
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .CatchingContestMusic:
 	ld de, MUSIC_BUG_CATCHING_CONTEST
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .NationalForestMusic:
 	ld de, MUSIC_NATIONAL_PARK
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .UnionCaveMusic:
 	ld de, MUSIC_UNION_CAVE
-	callfar RadioMusicRestartDE
-	ret
+	jp .RadioMusicRestartDE
 
 .RuinsOfAlphMusic:
 	ld de, MUSIC_RUINS_OF_ALPH_INTERIOR
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .SproutTowerMusic:
 	ld de, MUSIC_SPROUT_TOWER
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .DarkCaveMusic:
 	ld de, MUSIC_DARK_CAVE
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .ElmsLabMusic:
 	ld de, MUSIC_PROF_ELM
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .AzaleaTownMusic:
 	ld de, MUSIC_AZALEA_TOWN
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .Route1Music:
 	ld de, MUSIC_ROUTE_1
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .Route3Music:
 	ld de, MUSIC_ROUTE_3
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .Route12Music:
 	ld de, MUSIC_ROUTE_12
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .Route26Music:
 	ld de, MUSIC_ROUTE_26
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .Route29Music:
 	ld de, MUSIC_ROUTE_29
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .Route30Music:
 	ld de, MUSIC_ROUTE_30
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .Route36Music:
 	ld de, MUSIC_ROUTE_36
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .Route37Music:
 	ld de, MUSIC_ROUTE_37
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .Route47Music:
 	ld de, MUSIC_ROUTE_47
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .LavenderTownMusic:
 	ld de, MUSIC_LAVENDER_TOWN
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .CeladonCityMusic:
 	ld de, MUSIC_CELADON_CITY
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .PalletTownMusic:
 	ld de, MUSIC_PALLET_TOWN
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .EcruteakCityMusic:
 	ld de, MUSIC_ECRUTEAK_CITY
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .IndigoPlateauMusic:
 	ld de, MUSIC_INDIGO_PLATEAU
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .GSIntroPlayMusic:
 .AnthemPlayMusic:
 	ld de, MUSIC_ANTHEM
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .CherrygroveCityMusic:
 	ld de, MUSIC_CHERRYGROVE_CITY
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .NewBarkTownMusic:
 	ld de, MUSIC_NEW_BARK_TOWN
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .VioletCityMusic:
 	ld de, MUSIC_VIOLET_CITY
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .GoldenrodCityMusic:
 	ld de, MUSIC_GOLDENROD_CITY
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .ViridianCityMusic:
 	ld de, MUSIC_VIRIDIAN_CITY
-	callfar RadioMusicRestartDE
-	ret
+	jr .RadioMusicRestartDE
 
 .VermilionCityMusic:
 	ld de, MUSIC_VERMILION_CITY
+
+.RadioMusicRestartDE
 	callfar RadioMusicRestartDE
 	ret
 
@@ -2359,7 +2244,6 @@ RadioChannels:
 
 .EvolutionRadio:
 	jp LoadStation_EvolutionRadio
-	ret
 
 .InJohto:
 ; if in Johto or on the S.S. Aqua, set carry
@@ -2382,8 +2266,7 @@ StoreMusicPlayerData:
 	ld [wNumRadioLinesPrinted], a
 	ld a, BANK(PlayRadioShow)
 	ld hl, PlayRadioShow
-	call Radio_BackUpFarCallParams
-	ret
+	jp Radio_BackUpFarCallParams
 
 LoadStation_SurfMusic:
 	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
@@ -2872,25 +2755,18 @@ LoadStation_IndigoPlateauMusic:
 	ret
 
 LoadStation_LuckyChannel:
-	ret
 
 LoadStation_BuenasPassword:
-	ret
 
 LoadStation_UnownRadio:
-	ret
 
 LoadStation_PlacesAndPeople:
-	ret
 
 LoadStation_LetsAllSing:
-	ret
 
 LoadStation_RocketRadio:
-	ret
 
 LoadStation_PokeFluteRadio:
-	ret
 
 LoadStation_EvolutionRadio:
 	ret
@@ -2904,8 +2780,7 @@ RadioMusicRestartDE:
 	pop de
 	ld a, e
 	ld [wMapMusic], a
-	call PlayMusic
-	ret
+	jp PlayMusic
 
 RadioMusicRestartPokemonChannel:
 	push de
@@ -2915,8 +2790,7 @@ RadioMusicRestartPokemonChannel:
 	call PlayMusic
 	pop de
 	ld de, MUSIC_POKEMON_CHANNEL
-	call PlayMusic
-	ret
+	jp PlayMusic
 
 Radio_BackUpFarCallParams:
 	ld [wPokegearRadioChannelBank], a
@@ -2952,8 +2826,7 @@ NoRadioName:
 	call ClearBox
 	hlcoord 0, 12
 	lb bc, 4, 18
-	call Textbox
-	ret
+	jp Textbox
 
 NewBarkTownPlayerName:     db "New Bark Town   @"
 VioletCityPlayerName:      db "Violet City     @"
@@ -3229,8 +3102,7 @@ PlayRadio:
 .stop
 	pop af
 	ld [wOptions], a
-	call ExitPokegearRadio_HandleMusic
-	ret
+	jp ExitPokegearRadio_HandleMusic
 
 .PlayStation:
 	ld a, ENTER_MAP_MUSIC
@@ -3259,8 +3131,7 @@ PlayRadio:
 	ld h, b
 	ld l, c
 	ld [hl], "”"
-	call WaitBGMap
-	ret
+	jp WaitBGMap
 
 .StationPointers:
 ; entries correspond to MAPRADIO_* constants
@@ -3285,18 +3156,15 @@ PokegearMap:
 	cp 1
 	jr z, .kanto
 	call LoadTownMapGFX
-	call FillJohtoMap
-	ret
+	jp FillJohtoMap
 
 .kanto
 	call LoadTownMapGFX
-	call FillKantoMap
-	ret
+	jp FillKantoMap
 
 .sevii
 	call LoadTownMapGFX
-	call FillSeviiMap
-	ret
+	jp FillSeviiMap
 
 _FlyMap:
 	call ClearBGPalettes
@@ -3552,8 +3420,7 @@ TownMapBubble:
 	farcall GetLandmarkName
 	hlcoord 2, 1
 	ld de, wStringBuffer1
-	call PlaceString
-	ret
+	jp PlaceString
 
 GetMapCursorCoordinates:
 	ld a, [wTownMapPlayerIconLandmark]
@@ -3601,12 +3468,10 @@ HasVisitedSpawn:
 	ld d, 0
 	predef SmallFarFlagAction
 	ld a, c
+ret_91c8f:
 	ret
 
 INCLUDE "data/maps/flypoints.asm"
-
-ret_91c8f:
-	ret
 
 FlyMap:
 	ld a, [wMapGroup]
@@ -3686,8 +3551,7 @@ FlyMap:
 	call FillKantoMap
 	call .MapHud
 	pop af
-	call TownMapPlayerIcon
-	ret
+	jp TownMapPlayerIcon
 
 .NoKanto:
 ; If Indigo Plateau hasn't been visited, we use Johto's map instead
@@ -3735,8 +3599,7 @@ FlyMap:
 	call FillSeviiMap
 	call .MapHud
 	pop af
-	call TownMapPlayerIcon
-	ret
+	jp TownMapPlayerIcon
 
 Pokedex_GetArea:
 ; e: Current landmark
@@ -3824,8 +3687,7 @@ Pokedex_GetArea:
 	ld a, $90
 	ldh [hWY], a
 	xor a ; JOHTO_REGION
-	call .GetAndPlaceNest
-	ret
+	jp .GetAndPlaceNest
 
 .right
 	ld a, [wStatusFlags]
@@ -3838,8 +3700,7 @@ Pokedex_GetArea:
 	xor a
 	ldh [hWY], a
 	ld a, KANTO_REGION
-	call .GetAndPlaceNest
-	ret
+	jr .GetAndPlaceNest
 
 .sevii_pokedex
 	call LoadTownMapGFX2
@@ -3881,15 +3742,13 @@ Pokedex_GetArea:
 	ld a, e
 	and $10
 	jr nz, .copy_sprites
-	call ClearSprites
-	ret
+	jp ClearSprites
 
 .copy_sprites
 	hlcoord 0, 0
 	ld de, wVirtualOAM
 	ld bc, wVirtualOAMEnd - wVirtualOAM
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 .PlaceString_MonsNest:
 	hlcoord 0, 0
@@ -3902,8 +3761,7 @@ Pokedex_GetArea:
 	ld h, b
 	ld l, c
 	ld de, .String_SNest
-	call PlaceString
-	ret
+	jp PlaceString
 
 .String_SNest:
 	db "'s Nest@"
@@ -3943,8 +3801,7 @@ Pokedex_GetArea:
 	ld hl, wVirtualOAM
 	decoord 0, 0
 	ld bc, wVirtualOAMEnd - wVirtualOAM
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 .HideNestsShowPlayer:
 	call .CheckPlayerLocation
@@ -3987,8 +3844,7 @@ Pokedex_GetArea:
 	ld hl, wVirtualOAMSprite04
 	ld bc, wVirtualOAMEnd - wVirtualOAMSprite04
 	xor a
-	call ByteFill
-	ret
+	jp ByteFill
 
 .PlayerOAM:
 	; y pxl, x pxl, tile offset
@@ -4210,15 +4066,13 @@ LoadTownMapGFX:
 	ld hl, TownMapGFX
 	ld de, vTiles2
 	lb bc, BANK(TownMapGFX), 50
-	call DecompressRequest2bpp
-	ret
+	jp DecompressRequest2bpp
 
 LoadTownMapGFX2:
 	ld hl, TownMapGFX
 	ld de, vTiles2
 	lb bc, BANK(TownMapGFX), 96
-	call DecompressRequest2bpp
-	ret
+	jp DecompressRequest2bpp
 
 JohtoMap:
 INCBIN "gfx/pokegear/johto.bin"

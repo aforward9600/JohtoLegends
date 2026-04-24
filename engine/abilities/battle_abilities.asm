@@ -584,16 +584,23 @@ CheckContactAbilities:
 	jp StdBattleTextbox
 
 .Static
+	call SafeguardAbilities
+	ret nz
+	call GetUserAbility
+	cp IMMUNITY
+	ret z
+	cp LEAF_GUARD
+	call z, .LeafGuard
+	ret z
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and a
+	call CheckUserStatus
 	ret nz
 	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
-	farcall BattleCommand_ParalyzeTarget
+	farcall FinishParalysis
+	call SynchronizeCheck
 	jp BattleCommand_SwitchTurnAbilities
 
 .PoisonPoint:
@@ -613,17 +620,34 @@ CheckContactAbilities:
 	ret z
 	cp STEEL
 	ret z
+	call SafeguardAbilities
+	ret nz
+	call GetUserAbility
+	cp IMMUNITY
+	ret z
+	cp LEAF_GUARD
+	call z, .LeafGuard
+	ret z
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and a
+	call CheckUserStatus
 	ret nz
 	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
-	farcall BattleCommand_PoisonTarget
+	farcall PoisonOpponent
+	ld de, ANIM_PSN
+	farcall PlayOpponentBattleAnim
+	call RefreshBattleHuds
+	ld hl, WasPoisonedText
+	call StdBattleTextbox
+	call SynchronizeCheck
 	jp BattleCommand_SwitchTurnAbilities
+
+.LeafGuard:
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret
 
 .FlameBody:
 	ld hl, wBattleMonType1
@@ -638,16 +662,23 @@ CheckContactAbilities:
 	ld a, [hl]
 	cp FIRE
 	ret z
+	call SafeguardAbilities
+	ret nz
+	call GetUserAbility
+	cp IMMUNITY
+	ret z
+	cp LEAF_GUARD
+	call z, .LeafGuard
+	ret z
 	call BattleRandom
 	cp 30 percent + 1
 	ret nc
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and a
+	call CheckUserStatus
 	ret nz
 	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
-	farcall BattleCommand_BurnTarget
+	farcall BurnOpponent
+	call SynchronizeCheck
 	jp BattleCommand_SwitchTurnAbilities
 
 .EffectSpore:
@@ -848,6 +879,12 @@ SpecialContactMoves:
 	dw DRAININGKISS
 	dw PETAL_DANCE
 	dw -1
+
+CheckUserStatus:
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVar
+	and a
+	ret
 
 CheckBoostingAbilities:
 	call CheckNeutralGas
@@ -1255,6 +1292,8 @@ SharpnessMoves:
 	dw STEEL_SLICE
 	dw X_SCISSOR
 	dw SOLAR_BLADE
+	dw SHADOW_CLAW
+	dw SACRED_SWORD
 	dw -1
 
 MegaLauncherMoves:
@@ -2426,3 +2465,16 @@ CheckSubstituteMove::
 	ret
 
 INCLUDE "data/moves/substitute_moves.asm"
+
+SafeguardAbilities:
+	push hl
+	ld hl, wEnemyScreens
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .got_turn
+	ld hl, wPlayerScreens
+
+.got_turn
+	bit SCREENS_SAFEGUARD, [hl]
+	pop hl
+	ret

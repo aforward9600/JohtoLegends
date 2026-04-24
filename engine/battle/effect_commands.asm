@@ -1870,9 +1870,7 @@ BattleCommand_CheckHit:
 	ld c, 40
 	call DelayFrames
 
-	ld a, 1
-	and a
-	ret
+	jp SetAToOne
 
 .LockOn:
 ; Return nz if we are locked-on and aren't trying to use Earthquake,
@@ -1917,7 +1915,7 @@ BattleCommand_CheckHit:
 .DrainSub:
 ; Return z if using an HP drain move on a substitute.
 	call CheckSubstituteOpp
-	jr z, .not_draining_sub
+	jp z, SetAToOne
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
@@ -1926,11 +1924,7 @@ BattleCommand_CheckHit:
 	ret z
 	cp EFFECT_DREAM_EATER
 	ret z
-
-.not_draining_sub
-	ld a, 1
-	and a
-	ret
+	jp SetAToOne
 
 .FlyDigMoves:
 ; Check for moves that can hit underground/flying opponents.
@@ -2034,6 +2028,9 @@ BattleCommand_CheckHit:
 .got_acc_eva
 	cp b
 	jr c, .skip_foresight_check
+
+	call SacredSwordCheck
+	ret z
 
 	; if the target's evasion is greater than the user's accuracy,
 	; check the target's foresight status
@@ -2305,9 +2302,7 @@ BattleCommand_LowerSub:
 	cp EFFECT_RAMPAGE
 	jr z, .rollout_rampage
 
-	ld a, 1
-	and a
-	ret
+	jp SetAToOne
 
 .rollout_rampage
 	ld a, [wSomeoneIsRampaging]
@@ -3027,9 +3022,7 @@ PlayerAttackDamage:
 
 .physical
 	ld hl, wEnemyMonDefense
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
+	call ApplyStatsBattle
 
 	call HailDefBoost
 
@@ -3047,22 +3040,22 @@ PlayerAttackDamage:
 	rl b
 
 .physicalcrit
+	call SacredSwordCheck
+	jp z, .Sacred_Sword
+
+.check_physicalcrit
 	ld hl, wBattleMonAttack
 	call CheckDamageStatsCritical
 	jr c, .thickclub
 
 	ld hl, wEnemyDefense
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
+	call ApplyStatsBattle
 	ld hl, wPlayerAttack
 	jr .thickclub
 
 .special
 	ld hl, wEnemyMonSpclDef
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
+	call ApplyStatsBattle
 
 	call SandstormSpDefBoost
 
@@ -3085,9 +3078,7 @@ PlayerAttackDamage:
 	jr c, .lightball
 
 	ld hl, wEnemySpDef
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
+	call ApplyStatsBattle
 	ld hl, wPlayerSpAtk
 
 .lightball
@@ -3107,9 +3098,13 @@ PlayerAttackDamage:
 	call DittoMetalPowder
 	call UnevolvedEviolite
 
-	ld a, 1
-	and a
-	ret
+	jp SetAToOne
+
+.Sacred_Sword:
+	ld b,b
+	ld hl, wEnemyDefense
+	call ApplyStatsBattle
+	jp .check_physicalcrit
 
 TruncateHL_BC:
 .loop
@@ -3315,9 +3310,7 @@ EnemyAttackDamage:
 
 .physical
 	ld hl, wBattleMonDefense
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
+	call ApplyStatsBattle
 
 	call HailDefBoost
 
@@ -3335,22 +3328,22 @@ EnemyAttackDamage:
 	rl b
 
 .physicalcrit
+	call SacredSwordCheck
+	jp z, .Sacred_Sword
+
+.check_physicalcrit
 	ld hl, wEnemyMonAttack
 	call CheckDamageStatsCritical
 	jr c, .thickclub
 
 	ld hl, wPlayerDefense
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
+	call ApplyStatsBattle
 	ld hl, wEnemyAttack
 	jr .thickclub
 
 .Special:
 	ld hl, wBattleMonSpclDef
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
+	call ApplyStatsBattle
 
 	call SandstormSpDefBoost
 
@@ -3372,9 +3365,7 @@ EnemyAttackDamage:
 	call CheckDamageStatsCritical
 	jr c, .lightball
 	ld hl, wPlayerSpDef
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
+	call ApplyStatsBattle
 	ld hl, wEnemySpAtk
 
 .lightball
@@ -3392,8 +3383,17 @@ EnemyAttackDamage:
 	call DittoMetalPowder
 	call UnevolvedEviolite
 
-	ld a, 1
-	and a
+	jp SetAToOne
+
+.Sacred_Sword
+	ld hl, wPlayerDefense
+	call ApplyStatsBattle
+	jp .check_physicalcrit
+
+ApplyStatsBattle:
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
 	ret
 
 HitSelfInConfusion:
@@ -3719,9 +3719,7 @@ BattleCommand_DamageCalc:
 	inc [hl]
 .dont_floor
 
-	ld a, 1
-	and a
-	ret
+	jp SetAToOne
 
 .CriticalMultiplier:
 	ld a, [wCriticalHit]
@@ -4227,8 +4225,7 @@ BattleCommand_SleepTarget:
 	jr z, .protected_by_ability
 	cp LEAF_GUARD
 	jr nz, .SkipVitalSpirit
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
+	call CheckSun
 	jr nz, .SkipVitalSpirit
 	call AnimateFailedMove
 	farcall AnimateOppAbility
@@ -4277,6 +4274,11 @@ BattleCommand_SleepTarget:
 	pop hl
 	jp StdBattleTextbox
 
+CheckSun:
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret
+
 BattleCommand_PoisonTarget:
 ; poisontarget
 
@@ -4320,8 +4322,7 @@ BattleCommand_PoisonTarget:
 	ret
 
 .LeafGuard
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
+	call CheckSun
 	ret z
 	jr .SkipImmunity
 
@@ -4440,8 +4441,7 @@ BattleCommand_Poison:
 	ret
 
 .LeafGuard
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
+	call CheckSun
 	jr nz, .SkipImmunity
 .Immunity
 	jp _PreventAbilityText
@@ -4475,106 +4475,13 @@ BattleCommand_EatDream:
 	cp LIQUID_OOZE
 	jr z, LiquidOoze2
 .SkipLiquidOoze
-	call SapHealth
+	farcall SapHealth
 	ld hl, DreamEatenText
 	jp StdBattleTextbox
 
 LiquidOoze2:
 	farcall _LiquidOoze
 	ret
-
-SapHealth:
-	; Divide damage by 2, store it in hDividend
-	ld hl, wCurDamage
-	ld a, [hli]
-	srl a
-	ldh [hDividend], a
-	ld b, a
-	ld a, [hl]
-	rr a
-	ldh [hDividend + 1], a
-	or b
-	jr nz, .at_least_one
-	ld a, 1
-	ldh [hDividend + 1], a
-.at_least_one
-
-	ld hl, wBattleMonHP
-	ld de, wBattleMonMaxHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .battlemonhp
-	ld hl, wEnemyMonHP
-	ld de, wEnemyMonMaxHP
-.battlemonhp
-
-	; Store current HP in little endian wBuffer3/4
-	ld bc, wBuffer4
-	ld a, [hli]
-	ld [bc], a
-	ld a, [hl]
-	dec bc
-	ld [bc], a
-
-	; Store max HP in little endian wBuffer1/2
-	ld a, [de]
-	dec bc
-	ld [bc], a
-	inc de
-	ld a, [de]
-	dec bc
-	ld [bc], a
-
-	; Add hDividend to current HP and copy it to little endian wBuffer5/6
-	ldh a, [hDividend + 1]
-	ld b, [hl]
-	add b
-	ld [hld], a
-	ld [wBuffer5], a
-	ldh a, [hDividend]
-	ld b, [hl]
-	adc b
-	ld [hli], a
-	ld [wBuffer6], a
-	jr c, .max_hp
-
-	; Substract current HP from max HP (to see if we have more than max HP)
-	ld a, [hld]
-	ld b, a
-	ld a, [de]
-	dec de
-	sub b
-	ld a, [hli]
-	ld b, a
-	ld a, [de]
-	inc de
-	sbc b
-	jr nc, .finish
-
-.max_hp
-	; Load max HP into current HP and copy it to little endian wBuffer5/6
-	ld a, [de]
-	ld [hld], a
-	ld [wBuffer5], a
-	dec de
-	ld a, [de]
-	ld [hli], a
-	ld [wBuffer6], a
-	inc de
-
-.finish
-	ldh a, [hBattleTurn]
-	and a
-	hlcoord 10, 9
-	ld a, $1
-	jr z, .hp_bar
-	hlcoord 2, 2
-	xor a
-.hp_bar
-	ld [wWhichHPBar], a
-	predef AnimateHPBar
-	call RefreshBattleHuds
-	jp UpdateBattleMonInParty
 
 BattleCommand_BurnTarget:
 ; burntarget
@@ -4616,8 +4523,7 @@ BattleCommand_BurnTarget:
 	ret
 
 .LeafGuard
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
+	call CheckSun
 	ret z
 	jr .SkipWaterVeil
 
@@ -4679,8 +4585,7 @@ BattleCommand_FreezeTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
+	call CheckSun
 	ret z
 	call CheckMoveTypeMatchesTarget ; Don't freeze an Ice-type
 	ret z
@@ -4715,8 +4620,7 @@ BattleCommand_FreezeTarget:
 	ret
 
 .LeafGuard
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
+	call CheckSun
 	ret z
 	jr .SkipMagmaArmor
 
@@ -4747,6 +4651,16 @@ BattleCommand_ParalyzeTarget:
 	ret nz
 	call SafeCheckSafeguard
 	ret nz
+	call FinishParalysis
+	ld hl, UseHeldStatusHealingItem
+	jp CallBattleCore
+
+.LeafGuard:
+	call CheckSun
+	ret z
+	jp .SkipLimber
+
+FinishParalysis:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	set PAR, [hl]
@@ -4758,14 +4672,7 @@ BattleCommand_ParalyzeTarget:
 	call RefreshBattleHuds
 	call PrintParalyze
 	farcall SynchronizeCheck
-	ld hl, UseHeldStatusHealingItem
-	jp CallBattleCore
-
-.LeafGuard:
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
-	ret z
-	jp .SkipLimber
+	ret
 
 BattleCommand_SleepHit:
 ; sleephit
@@ -4794,8 +4701,7 @@ BattleCommand_SleepHit:
 	ret z
 	cp LEAF_GUARD
 	jr nz, .SkipAbilities
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
+	call CheckSun
 	ret z
 .SkipAbilities
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -4885,8 +4791,7 @@ BattleCommand_Burn:
 	jp PrintDoesntAffect
 
 .LeafGuard
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
+	call CheckSun
 	jr nz, .SkipWaterVeil
 .WaterVeil
 	jp _PreventAbilityText
@@ -5117,6 +5022,9 @@ BattleCommand_AttackDown:
 ; attackdown
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipAbilities
+	ld a, [wStatDropAbility]
+	and a
+	jr nz, .SkipAbilities
 	call GetTargetAbility
 	cp HYPER_CUTTER
 	jr z, _PreventStatDrop
@@ -5130,6 +5038,9 @@ BattleCommand_DefenseDown:
 ; defensedown
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipAbilities
+	ld a, [wStatDropAbility]
+	and a
+	jr nz, .SkipAbilities
 	call GetTargetAbility
 	cp BIG_PECKS
 	jr z, _PreventStatDrop
@@ -5143,6 +5054,9 @@ BattleCommand_SpeedDown:
 ; speeddown
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipAbilities
+	ld a, [wStatDropAbility]
+	and a
+	jr nz, .SkipAbilities
 	call GetTargetAbility
 	cp CLEAR_BODY
 	jr z, _PreventStatDrop
@@ -5165,6 +5079,9 @@ BattleCommand_SpecialDefenseDown:
 ; specialdefensedown
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipAbilities
+	ld a, [wStatDropAbility]
+	and a
+	jr nz, .SkipAbilities
 	call GetTargetAbility
 	cp CLEAR_BODY
 	jp z, _PreventStatDrop
@@ -5553,9 +5470,7 @@ TryLowerStat:
 	call CalcEnemyStats
 	call BattleCommand_SwitchTurn
 .end
-	ld a, 1
-	and a
-	ret
+	jp SetAToOne
 
 BattleCommand_StatUpFailText:
 ; statupfailtext
@@ -7167,8 +7082,7 @@ BattleCommand_Paralyze:
 	jp PrintDidntAffect2
 
 .LeafGuard
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
+	call CheckSun
 	jr nz, .SkipLimber
 .Limber
 	jp _PreventAbilityText
@@ -7208,8 +7122,7 @@ CheckMoveTypeMatchesTarget:
 	ret
 
 .normal
-	ld a, 1
-	and a
+	call SetAToOne
 	pop hl
 	ret
 
@@ -7294,8 +7207,7 @@ BattleCommand_Heal:
 	jr z, .CantRest
 	cp LEAF_GUARD
 	jr nz, .SkipAbilities
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
+	call CheckSun
 	jr z, .CantRest
 
 .SkipAbilities
@@ -7539,9 +7451,7 @@ CheckUserMove:
 	dec c
 	jr nz, .loop
 
-	ld a, 1
-	and a
-	ret
+	jp SetAToOne
 
 ResetTurn:
 	ld hl, wPlayerCharging
@@ -7765,8 +7675,7 @@ INCLUDE "engine/battle/move_effects/mirror_coat.asm"
 
 BattleCommand_SkipSunCharge:
 ; mimicsuncharge
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
+	call CheckSun
 	ret nz
 	ld b, charge_command
 	jp SkipToBattleCommand
@@ -8195,4 +8104,15 @@ HailDefBoost:
 	add hl, bc
 	ld b, h
 	ld c, l
+	ret
+
+SacredSwordCheck:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_SACRED_SWORD
+	ret
+
+SetAToOne:
+	ld a, 1
+	and a
 	ret

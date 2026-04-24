@@ -431,6 +431,8 @@ MoveDescriptions1:
 	dw DireClawDescription
 	dw PhantomForceDescription
 	dw BloodMoonDescription
+	dw SacredSwordDescription
+	dw SacredSwordDescription ; Chip Away
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1847,3 +1849,7 @@ PhantomForceDescription:
 BloodMoonDescription:
 	db   "Can only use every"
 	line "other turn.@"
+
+SacredSwordDescription:
+	db   "Ignores foe's stat"
+	line "changes.@"

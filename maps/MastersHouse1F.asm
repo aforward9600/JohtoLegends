@@ -466,7 +466,7 @@ ChooseKabuto:
 	writetext TakeKabutoText
 	yesorno
 	iffalse DidntChooseLarvitarScript
-	disappear MASTERSHOUSE1F_POKE_BALL1
+	disappear MASTERSHOUSE1F_POKE_BALL2
 	setevent EVENT_GOT_LARVITAR_FROM_MASTER
 	writetext ChoseKabutoText
 	buttonsound
@@ -573,12 +573,6 @@ MastersTestScript1:
 	setevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	setevent EVENT_RIVAL_AT_MASTERS_HOUSE_1
 	waitsfx
-;	checkflag ENGINE_SHINY_PASSWORD
-;	iftrue .ShinyDratini
-;	end
-;.ShinyDratini
-;	loadmem wPartyMon1DVs+0, $ea
-;	loadmem wPartyMon1DVs+1, $aa
 	end
 
 MastersTestScript2:

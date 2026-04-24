@@ -795,6 +795,14 @@ SetWildPokemonGender::
 SetEggGender:
 	ld hl, wEggMonCaughtTime
 	push hl
+	call SetPokemonGender
+	pop hl
+	ret c
+	ld a, [hl]
+	or CAUGHT_MON_GENDER_MASK
+	ld [hl], a
+	ret	
+
 SetPokemonGender::
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID

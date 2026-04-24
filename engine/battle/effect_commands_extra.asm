@@ -439,11 +439,11 @@ ArmorTailCheck:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_FAKE_OUT
-	jr z, .ArmorTailBlocked
+	jp z, IsDarkType
 	cp EFFECT_SUCKER_PUNCH
-	jr z, .ArmorTailBlocked
+	jr z, IsDarkType
 	cp EFFECT_PRIORITY_HIT
-	jr z, .ArmorTailBlocked
+	jr z, IsDarkType
 	call GetUserAbility
 	cp TRIAGE
 	jr z, .Triage
@@ -459,21 +459,17 @@ ArmorTailCheck:
 	ld de, 1
 	call IsInArray
 	ret nc
-
-.ArmorTailBlocked:
-	ld a, 1
-	ld [wAttackMissed], a
-	ret
+	jr IsDarkType
 
 .Triage:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_STRENGTH_SAP
-	jr z, .ArmorTailBlocked
+	jr z, IsDarkType
 	cp EFFECT_LEECH_HIT
-	jr z, .ArmorTailBlocked
+	jr z, IsDarkType
 	cp EFFECT_DREAM_EATER
-	jr z, .ArmorTailBlocked
+	jr z, IsDarkType
 	ret
 
 PranksterEffects:
@@ -531,17 +527,18 @@ PranksterCheck:
 .GotPlayerType
 	ld a, [hli]
 	cp DARK
-	jr z, .IsDarkType
+	jr z, IsDarkType
 	ld a, [hl]
 	cp DARK
 	ret nz
 
-.IsDarkType
+IsDarkType:
 	ld a, 1
 	ld [wAttackMissed], a
 	ret
 
 BattleCommand_Superpower:
+	call SetStatDropAbility
 	call BattleCommand_SwitchTurn2
 	farcall BattleCommand_AttackDown
 	farcall BattleCommand_StatDownMessage
@@ -550,9 +547,11 @@ BattleCommand_Superpower:
 	farcall BattleCommand_DefenseDown
 	farcall BattleCommand_StatDownMessage
 	call BattleCommand_SwitchTurn2
+	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_CloseCombat:
+	call SetStatDropAbility
 	call BattleCommand_SwitchTurn2
 	farcall BattleCommand_DefenseDown
 	farcall BattleCommand_StatDownMessage
@@ -561,13 +560,27 @@ BattleCommand_CloseCombat:
 	farcall BattleCommand_SpecialDefenseDown
 	farcall BattleCommand_StatDownMessage
 	call BattleCommand_SwitchTurn2
+	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_HammerArm:
+	call SetStatDropAbility
 	call BattleCommand_SwitchTurn2
 	farcall BattleCommand_SpeedDown
 	farcall BattleCommand_StatDownMessage
+	xor a
+	ld [wStatDropAbility], a
 	jp BattleCommand_SwitchTurn2
+
+SetStatDropAbility:
+	ld a, 1
+	ld [wStatDropAbility], a
+	ret
+
+ResetStatDropAbility:
+	xor a
+	ld [wStatDropAbility], a
+	ret
 
 BellyDrumMessage:
 	call CheckNeutralGas
@@ -623,6 +636,7 @@ BattleCommand_Growth:
 	jp z, NoStatRaise
 
 .raise
+	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	call CheckCloudNine
 	jr z, .SkipSun
@@ -636,6 +650,7 @@ BattleCommand_Growth:
 	farcall ResetMiss
 	farcall BattleCommand_SpecialAttackUp
 	farcall BattleCommand_StatUpMessage
+	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 .Sun
@@ -645,6 +660,7 @@ BattleCommand_Growth:
 	farcall ResetMiss
 	farcall BattleCommand_SpecialAttackUp2
 	farcall BattleCommand_StatUpMessage
+	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_Coil:
@@ -693,6 +709,7 @@ BattleCommand_Coil:
 	jp z, NoStatRaise
 
 .raise
+	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	farcall BattleCommand_AttackUp
 	farcall BattleCommand_StatUpMessage
@@ -703,6 +720,7 @@ BattleCommand_Coil:
 	farcall ResetMiss
 	farcall BattleCommand_AccuracyUp
 	farcall BattleCommand_StatUpMessage
+	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_CosmicPower:
@@ -740,6 +758,7 @@ BattleCommand_CosmicPower:
 	jp z, NoStatRaise
 
 .raise
+	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	farcall BattleCommand_DefenseUp
 	farcall BattleCommand_StatUpMessage
@@ -747,6 +766,7 @@ BattleCommand_CosmicPower:
 	farcall ResetMiss
 	farcall BattleCommand_SpecialDefenseUp
 	farcall BattleCommand_StatUpMessage
+	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_HoneClaws:
@@ -786,6 +806,7 @@ BattleCommand_HoneClaws:
 	jp z, NoStatRaise
 
 .raise
+	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	farcall BattleCommand_AttackUp
 	farcall BattleCommand_StatUpMessage
@@ -793,6 +814,7 @@ BattleCommand_HoneClaws:
 	farcall ResetMiss
 	farcall BattleCommand_AccuracyUp
 	farcall BattleCommand_StatUpMessage
+	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_DragonDance:
@@ -826,6 +848,7 @@ BattleCommand_DragonDance:
 	jp z, NoStatRaise
 
 .raise
+	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	farcall BattleCommand_AttackUp
 	farcall BattleCommand_StatUpMessage
@@ -833,6 +856,7 @@ BattleCommand_DragonDance:
 	farcall ResetMiss
 	farcall BattleCommand_SpeedUp
 	farcall BattleCommand_StatUpMessage
+	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_CalmMind:
@@ -869,6 +893,7 @@ BattleCommand_CalmMind:
 	jp z, NoStatRaise
 
 .raise
+	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	farcall BattleCommand_SpecialAttackUp
 	farcall BattleCommand_StatUpMessage
@@ -876,6 +901,7 @@ BattleCommand_CalmMind:
 	farcall ResetMiss
 	farcall BattleCommand_SpecialDefenseUp
 	farcall BattleCommand_StatUpMessage
+	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_BulkUp:
@@ -907,6 +933,7 @@ BattleCommand_BulkUp:
 	jp z, NoStatRaise
 
 .raise
+	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	farcall BattleCommand_AttackUp
 	farcall BattleCommand_StatUpMessage
@@ -914,6 +941,7 @@ BattleCommand_BulkUp:
 	farcall ResetMiss
 	farcall BattleCommand_DefenseUp
 	farcall BattleCommand_StatUpMessage
+	call ResetStatDropAbility
 	jr ResetStatChangeExtra
 
 
@@ -962,6 +990,7 @@ BattleCommand_QuiverDance:
 	jp z, NoStatRaise
 
 .raise
+	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	farcall BattleCommand_SpecialAttackUp
 	farcall BattleCommand_StatUpMessage
@@ -972,6 +1001,7 @@ BattleCommand_QuiverDance:
 	farcall ResetMiss
 	farcall BattleCommand_SpeedUp
 	farcall BattleCommand_StatUpMessage
+	call ResetStatDropAbility
 
 ResetStatChangeExtra:
 	xor a
@@ -987,9 +1017,10 @@ BattleCommand_PowerUpPunch:
 	call GetUserAbility
 	cp SHEER_FORCE
 	ret z
+	call SetStatDropAbility
 	farcall BattleCommand_AttackUp
 	farcall BattleCommand_StatUpMessage
-	ret
+	jp ResetStatDropAbility
 
 SetStatChangeAnimation:
 	ld a, 1
@@ -1171,10 +1202,103 @@ BattleCommand_DrainTarget:
 	cp LIQUID_OOZE
 	jr z, LiquidOoze
 .SkipLiquidOoze
-	farcall SapHealth
+	call SapHealth
 	ld hl, SuckedHealthText
 	jp StdBattleTextbox
 
 LiquidOoze:
 	farcall _LiquidOoze
 	ret
+
+SapHealth:
+	; Divide damage by 2, store it in hDividend
+	ld hl, wCurDamage
+	ld a, [hli]
+	srl a
+	ldh [hDividend], a
+	ld b, a
+	ld a, [hl]
+	rr a
+	ldh [hDividend + 1], a
+	or b
+	jr nz, .at_least_one
+	ld a, 1
+	ldh [hDividend + 1], a
+.at_least_one
+
+	ld hl, wBattleMonHP
+	ld de, wBattleMonMaxHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .battlemonhp
+	ld hl, wEnemyMonHP
+	ld de, wEnemyMonMaxHP
+.battlemonhp
+
+	; Store current HP in little endian wBuffer3/4
+	ld bc, wBuffer4
+	ld a, [hli]
+	ld [bc], a
+	ld a, [hl]
+	dec bc
+	ld [bc], a
+
+	; Store max HP in little endian wBuffer1/2
+	ld a, [de]
+	dec bc
+	ld [bc], a
+	inc de
+	ld a, [de]
+	dec bc
+	ld [bc], a
+
+	; Add hDividend to current HP and copy it to little endian wBuffer5/6
+	ldh a, [hDividend + 1]
+	ld b, [hl]
+	add b
+	ld [hld], a
+	ld [wBuffer5], a
+	ldh a, [hDividend]
+	ld b, [hl]
+	adc b
+	ld [hli], a
+	ld [wBuffer6], a
+	jr c, .max_hp
+
+	; Substract current HP from max HP (to see if we have more than max HP)
+	ld a, [hld]
+	ld b, a
+	ld a, [de]
+	dec de
+	sub b
+	ld a, [hli]
+	ld b, a
+	ld a, [de]
+	inc de
+	sbc b
+	jr nc, .finish
+
+.max_hp
+	; Load max HP into current HP and copy it to little endian wBuffer5/6
+	ld a, [de]
+	ld [hld], a
+	ld [wBuffer5], a
+	dec de
+	ld a, [de]
+	ld [hli], a
+	ld [wBuffer6], a
+	inc de
+
+.finish
+	ldh a, [hBattleTurn]
+	and a
+	hlcoord 10, 9
+	ld a, $1
+	jr z, .hp_bar
+	hlcoord 2, 2
+	xor a
+.hp_bar
+	ld [wWhichHPBar], a
+	predef AnimateHPBar
+	call RefreshBattleHuds
+	jp UpdateBattleMonInParty

@@ -616,7 +616,7 @@ MunchlaxEvosAttacks:
 	dbw 4, DEFENSE_CURL
 	dbw 9, AMNESIA
 	dbw 12, LICK
-	dbw 17, HEADBUTT
+	dbw 17, CHIP_AWAY
 	dbw 20, SCREECH
 	dbw 25, BODY_SLAM
 	dbw 28, REST
@@ -635,7 +635,7 @@ SnorlaxEvosAttacks:
 	dbw 4, DEFENSE_CURL
 	dbw 9, AMNESIA
 	dbw 12, LICK
-	dbw 17, HEADBUTT
+	dbw 17, CHIP_AWAY
 	dbw 25, BODY_SLAM
 	dbw 28, SNORE
 	dbw 28, REST
@@ -1042,7 +1042,7 @@ elif DEF(_NOPSS)
 else
 	dbw 27, WATERFALL
 endc
-	dbw 29, HEADBUTT
+	dbw 29, CHIP_AWAY
 if DEF(_FAITHFUL)
 	dbw 34, SLASH
 elif DEF(_NOPSS)
@@ -1075,7 +1075,7 @@ elif DEF(_NOPSS)
 else
 	dbw 30, WATERFALL
 endc
-	dbw 33, HEADBUTT
+	dbw 33, CHIP_AWAY
 if DEF(_FAITHFUL)
 	dbw 39, SLASH
 elif DEF(_NOPSS)
@@ -1109,7 +1109,7 @@ elif DEF(_NOPSS)
 else
 	dbw 32, WATERFALL
 endc
-	dbw 37, HEADBUTT
+	dbw 37, CHIP_AWAY
 if DEF(_FAITHFUL)
 	dbw 45, SLASH
 elif DEF(_NOPSS)
@@ -2464,7 +2464,7 @@ HeracrossEvosAttacks:
 	dbw 1, HORN_ATTACK
 	dbw 7, ENDURE
 	dbw 10, AERIAL_ACE
-	dbw 16, HEADBUTT
+	dbw 16, CHIP_AWAY
 	dbw 19, BRICK_BREAK
 	dbw 25, FURY_ATTACK
 	dbw 28, COUNTER
@@ -3295,6 +3295,7 @@ GalladeEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, SLASH
 	dbw 1, SLASH
+	dbw 1, SACRED_SWORD
 	dbw 1, GROWL
 	dbw 4, CONFUSION
 	dbw 6, DOUBLE_TEAM

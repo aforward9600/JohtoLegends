@@ -456,6 +456,8 @@ BattleAnimations::
 	dw BattleAnim_DireClaw
 	dw BattleAnim_PhantomForce
 	dw BattleAnim_BloodMoon
+	dw BattleAnim_SacredSword
+	dw BattleAnim_ChipAway
 ;	dw BattleAnim_WakeUpSlap
 
 BattleAnim_0:
@@ -1831,6 +1833,14 @@ BattleAnim_FurySwipes_branch_c9dd9:
 	anim_obj ANIM_OBJ_38, 128, 40, $0
 	anim_sound 0, 1, SFX_SCRATCH
 	anim_jump BattleAnim_Wait32
+
+BattleAnim_SacredSword:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_YELLOW
+	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_HIT
+	anim_obj ANIM_OBJ_01, 136, 56, $0
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_3A, 152, 40, $0
+	anim_jump BattleAnim_Wait48
 
 BattleAnim_Cut:
 BattleAnim_AirSlash:
@@ -4487,6 +4497,7 @@ BattleAnim_Charm:
 	anim_ret
 
 BattleAnim_Rollout:
+BattleAnim_ChipAway:
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_SPARK
 	anim_call BattleAnim_TargetObj_2Row

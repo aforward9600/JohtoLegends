@@ -58,6 +58,7 @@ CHRIS EQU __enum__
 
 	trainerclass CLAIR ; 8
 	const CLAIR1
+	const CLAIR2
 
 	trainerclass RIVAL1 ; 9
 	const RIVAL1_2_CHIKORITA
@@ -559,6 +560,7 @@ CHRIS EQU __enum__
 
 	trainerclass DRAGON_KID ; 4b
 	const LANCE1
+	const LANCE2
 
 	trainerclass PASSERBY ; 4c
 	const MIYAMOTO

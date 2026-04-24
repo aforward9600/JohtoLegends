@@ -129,6 +129,10 @@ _UnawarePlayerDefense::
 	rl b
 
 .physicalcritdefender
+	call SacredSwordCheckUnaware
+	jp z, .Sacred_Sword
+
+.check_physicalcrit
 	ld hl, wPlayerAttack
 	call CheckDamageStatsCritical2
 	jr c, .thickclub
@@ -185,6 +189,13 @@ _UnawarePlayerDefense::
 	ld a, 1
 	and a
 	ret
+
+.Sacred_Sword
+	ld hl, wEnemyDefense
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	jp .check_physicalcrit
 
 _UnawareEnemy::
 ; Enemy has Unaware during enemy's turn
@@ -312,6 +323,10 @@ _UnawareEnemyDefense::
 	rl b
 
 .physicalcritdefender
+	call SacredSwordCheckUnaware
+	jp z, .Sacred_Sword
+
+.check_physicalcrit
 	ld hl, wEnemyAttack
 	call CheckDamageStatsCritical2
 	jr c, .thickclub
@@ -368,6 +383,13 @@ _UnawareEnemyDefense::
 	ld a, 1
 	and a
 	ret
+
+.Sacred_Sword
+	ld hl, wPlayerDefense
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	jp .check_physicalcrit
 
 _UnawareBothPlayer::
 ; Player has Unaware during player's turn
@@ -903,4 +925,10 @@ HailDefBoost2:
 	add hl, bc
 	ld b, h
 	ld c, l
+	ret
+
+SacredSwordCheckUnaware:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_SACRED_SWORD
 	ret

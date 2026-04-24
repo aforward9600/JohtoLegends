@@ -50,6 +50,7 @@ AlphabeticalMoveList::
 	dw CATASTROPHE
 	dw CHARGE_BEAM
 	dw CHARM
+	dw CHIP_AWAY
 	dw CIRCLE_THROW
 	dw CLAMP
 	dw CLEAR_SMOG
@@ -308,6 +309,7 @@ AlphabeticalMoveList::
 	dw ROOST
 	dw ROUND_M
 	dw SACRED_FIRE
+	dw SACRED_SWORD
 	dw SAFEGUARD
 	dw SAND_ATTACK
 	dw SANDSTORM

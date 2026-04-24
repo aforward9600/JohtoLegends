@@ -432,6 +432,8 @@
 	const DIRE_CLAW
 	const PHANTOMFORCE
 	const BLOOD_MOON
+	const SACRED_SWORD
+	const CHIP_AWAY
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 
