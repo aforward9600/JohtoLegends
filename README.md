@@ -12,7 +12,7 @@ Features
 
 Thanks to the expansion, we were able to go beyond the usual 256 limit, and
 now there are 400 Pokémon from Generations 1-4, 6, 8, and 9, as well as 
-regional forms and several Fakemon. There are also 426 moves, ranging from
+regional forms and several Fakemon. There are also 428 moves, ranging from
 Generations 1-9, and a few original moves.
 
 There are four versions: Original, Faithful, No PSS and Challenge. Faithful version
@@ -61,19 +61,19 @@ It has to be v1.1 for the patch to work.
 
 Below is a link to the current patch, Version 0.8.3.2 Beta:
 
-https://www.mediafire.com/file/j330u2u8qb03pc3/johtolegendsv0.8.4.5.ips/file
+https://www.mediafire.com/file/bcnky8t9oin1ju6/johtolegendsv0.8.4.6.ips/file
 
 Faithful:
 
-https://www.mediafire.com/file/wk6pzk4ybvg72tg/johtolegendsfaithfulv0.8.4.5.ips/file
+https://www.mediafire.com/file/oyg347nf6pik7e0/johtolegendsfaithfulv0.8.4.6.ips/file
 
 No PSS
 
-https://www.mediafire.com/file/kxiwy2aixcd689d/johtolegendsnopssv0.8.4.5.ips/file
+https://www.mediafire.com/file/e38ax6t7w1pb9ad/johtolegendsnopssv0.8.4.6.ips/file
 
 Challenge:
 
-https://www.mediafire.com/file/lf1k49plf7ar3g3/johtolegendschallengev0.8.4.5.ips/file
+https://www.mediafire.com/file/putktgzpt0s416u/johtolegendschallengev0.8.4.6.ips/file
 
 Patch the ROM with the patch, and it is all set.
 

@@ -85,6 +85,7 @@ SaffronPokecenter1FFisherReturnedMachinePartText:
 	done
 
 SaffronPokecenter1FRivalText1:
+	text_ntag "<RIVAL>"
 	text "Gym Leader Koichi"
 	line "surrendered when"
 	cont "the Feds first"
@@ -106,6 +107,7 @@ SaffronPokecenter1FRivalText1:
 	done
 
 SaffronPokecenter1FRivalText2:
+	text_ntag "<RIVAL>"
 	text "Now that the"
 	line "Psychic Institute"
 	cont "is open, maybe you"
@@ -114,6 +116,7 @@ SaffronPokecenter1FRivalText2:
 	done
 
 SaffronPokecenter1FRivalText3:
+	text_ntag "<RIVAL>"
 	text "Looks like we have"
 	line "two Leaders on our"
 	cont "side."

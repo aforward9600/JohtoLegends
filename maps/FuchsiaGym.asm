@@ -115,8 +115,9 @@ FuchsiaGymStatue:
 	jumptext FuchsiaGymStatueText
 
 KogaText_Welcome:
-	text "Koga: It's been a"
-	line "while, <PLAYER>."
+	text_ntag "Koga"
+	text "It's been a while,"
+	line "<PLAYER>."
 
 	para "Even though the"
 	line "clan I was born"
@@ -201,7 +202,8 @@ KogaText_Welcome:
 	done
 
 KogaText_LossText:
-	text "Koga: …Your skills"
+	text_ntag "Koga"
+	text "…Your skills"
 	line "exceed what I have"
 	cont "been told…"
 
@@ -215,8 +217,9 @@ Text_ReceivedSoulBadge:
 	done
 
 KogaText_ToxicSpeech:
-	text "Koga: This was his"
-	line "badge, was it not?"
+	text_ntag "Koga"
+	text "This was his badge,"
+	line "was it not?"
 
 	para "…How beautiful…"
 
@@ -242,9 +245,10 @@ KogaText_ToxicSpeech:
 	done
 
 KogaText_Ready:
-	text "Koga: I shall be"
-	line "ready when the"
-	cont "time arrives."
+	text_ntag "Koga"
+	text "I shall be ready"
+	line "when the time"
+	cont "arrives."
 
 	para "We shall restore"
 	line "Kanto to its"
@@ -381,6 +385,7 @@ FuchsiaGymStatueText:
 	done
 
 AlreadyGotTMText:
+	text_ntag "Koga"
 	text "Hm?"
 
 	para "It appears you"
@@ -392,17 +397,18 @@ AlreadyGotTMText:
 	done
 
 KogaPostGameText:
-	text "Koga: My cousin"
-	line "has been avenged."
+	text_ntag "Koga"
+	text "My cousin has been"
+	line "avenged."
 
 	para "Thank you, my"
 	line "friend."
 	done
 
 KogaRematchText:
-	text "Koga: It is good"
-	line "to see you, my"
-	cont "friend."
+	text_ntag "Koga"
+	text "It is good to see"
+	line "you, my friend."
 
 	para "Shall we engage in"
 	line "friendly combat?"
@@ -413,7 +419,8 @@ KogaRematchText:
 	done
 
 KogaRematchAfterText:
-	text "Koga: I shall keep"
+	text_ntag "Koga"
+	text "I shall keep"
 	line "improving."
 
 	para "I must remain"

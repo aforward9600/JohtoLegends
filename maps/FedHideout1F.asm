@@ -64,7 +64,8 @@ FedHideout1FDelinquentText:
 	done
 
 FedHideout1FErikaText:
-	text "Erika: Yawn…"
+	text_ntag "Erika"
+	text "Yawn…"
 
 	para "…Oh, hi <PLAYER>…"
 

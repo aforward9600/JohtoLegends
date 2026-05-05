@@ -224,9 +224,11 @@ FirstElmText:
 
 	para "……<PLAYER>? I see!"
 	
-	para "I am Prof. Elm!"
+	para "I am Prof. Elm!@"
+	text_waitbutton
 
-	para "I'm a researcher of"
+	text_ntag "Prof. Elm"
+	text "I'm a researcher of"
 	line "#mon evolution!"
 
 	para "Where do they come"
@@ -247,6 +249,7 @@ FirstElmText:
 	done
 
 SecondElmText:
+	text_ntag "Prof. Elm"
 	text "Have my notes been"
 	line "helpful?"
 
@@ -303,9 +306,11 @@ ElmsLabOfficerText1:
 	line "manners? I haven't"
 	cont "introduced myself!"
 
-	para "I am Prof. Oak."
+	para "I am Prof. Oak.@"
+	text_waitbutton
 
-	para "I was visiting my"
+	text_ntag "Prof. Oak"
+	text "I was visiting my"
 	line "student, er, I"
 	cont "mean, my former"
 	cont "student Elm."

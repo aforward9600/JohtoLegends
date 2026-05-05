@@ -132,6 +132,7 @@ Cynthia2LastMonText:
 	done
 
 CherrygroveCynthiaAskBattleText:
+	text_ntag "Cynthia"
 	text "Keeping well?"
 
 	para "The Gible I gave"
@@ -143,10 +144,12 @@ CherrygroveCynthiaAskBattleText:
 	done
 
 CherrygroveCynthiaLetsDoThisText:
+	text_ntag "Cynthia"
 	text "After you, then."
 	done
 
 YoureAsStrongAsEverText:
+	text_ntag "Cynthia"
 	text "It looks like I've"
 	line "been beaten again."
 
@@ -168,6 +171,7 @@ YoureAsStrongAsEverText:
 	done
 
 CynthiaHelloAgainText:
+	text_ntag "Cynthia"
 	text "Hello again."
 
 	para "I'm still just"
@@ -176,6 +180,7 @@ CynthiaHelloAgainText:
 	done
 
 CynthiaSomeOtherTimeText:
+	text_ntag "Cynthia"
 	text "Some other time"
 	line "then."
 	done
@@ -185,6 +190,7 @@ CynthiaBeatenAgainText:
 	done
 
 CherrygroveCynthiaMeetingText:
+	text_ntag "Cynthia"
 	text "Fancy meeting you"
 	line "here."
 
@@ -200,8 +206,8 @@ CherrygroveCynthiaMeetingText:
 	done
 
 PsuedoPasswordText:
-	text "Cynthia: Hello,"
-	line "<PLAYER>."
+	text_ntag "Cynthia"
+	text "Hello, <PLAYER>."
 
 	para "Our battle at the"
 	line "League was quite"

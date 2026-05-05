@@ -186,15 +186,17 @@ OlivineLighthouse1FRocket2AfterBattleText:
 	done
 
 OlivineLighthouse1FSherles1Text:
+	text_ntag "Sherles"
 	text "More people in"
 	line "black with sun-"
-	cont "glasses..."
+	cont "glasses…"
 
 	para "Someone named"
-	line "Miyamoto..."
+	line "Miyamoto…"
 	done
 
 OlivineLighthouse1FSherles2Text:
+	text_ntag "Sherles"
 	text "Pardon?"
 
 	para "I'm busy right"
@@ -202,6 +204,7 @@ OlivineLighthouse1FSherles2Text:
 	done
 
 LighthouseHeyPlayerText:
+	text_ntag "<RIVAL>"
 	text "Hey <PLAYER>!"
 
 	para "I heard the"

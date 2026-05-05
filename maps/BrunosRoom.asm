@@ -101,9 +101,11 @@ MarthaScript_MarthaBeforeText:
 
 	para "Greetings. I am"
 	line "Martha of the"
-	cont "Elite Four."
+	cont "Elite Four.@"
+	text_waitbutton
 
-	para "It is an honor to"
+	text_ntag "Martha"
+	text "It is an honor to"
 	line "to meet you. My"
 	cont "brother, Milton,"
 	cont "told me about you."
@@ -143,6 +145,7 @@ MarthaScript_MarthaBeatenText:
 	done
 
 MarthaScript_MarthaDefeatText:
+	text_ntag "Martha"
 	text "Well done there!"
 	line "My brother was"
 	cont "right about you!"
@@ -160,8 +163,8 @@ MarthaScript_MarthaDefeatText:
 	done
 
 MarthaScript_MarthaBeforeText2:
-	text "Martha: Howdy"
-	line "<PLAYER>!"
+	text_ntag "Martha"
+	text "Howdy <PLAYER>!"
 
 	para "Been keepin' up on"
 	line "yer trainin'?"

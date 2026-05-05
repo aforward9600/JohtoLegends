@@ -183,8 +183,8 @@ BurnedTower1F_EnokiHidesMovement:
 	step_end
 
 EusineBurnedTowerSuicuneText:
-	text "Eusine: Come on"
-	line "Morty!"
+	text_ntag "Eusine"
+	text "Come on Morty!"
 
 	para "Suicune's gotta be"
 	line "here!"
@@ -197,9 +197,9 @@ EusineBurnedTowerSuicuneText:
 	done
 
 MortyHoOhText:
-	text "Morty: I don't"
-	line "really care about"
-	cont "Suicune."
+	text_ntag "Morty"
+	text "I don't really care"
+	line "about Suicune."
 
 	para "I'm interested in"
 	line "meeting that"
@@ -208,8 +208,8 @@ MortyHoOhText:
 	done
 
 EusineReallyText:
-	text "Eusine: Really,"
-	line "man?"
+	text_ntag "Eusine"
+	text "Really?"
 
 	para "There are plenty"
 	line "of bird #mon."
@@ -219,6 +219,7 @@ EusineReallyText:
 	done
 
 EusineHelloText:
+	text_ntag "Eusine"
 	text "Hi there!"
 
 	para "I'm Eusine, and"
@@ -244,6 +245,7 @@ EusineHelloText:
 	done
 
 AreYouOKText:
+	text_ntag "Eusine"
 	text "Woah!"
 
 	para "Are you OK?"
@@ -266,6 +268,7 @@ BurnedTower1FEnokiIntroText:
 	done
 
 ImHidingTheBasementText:
+	text_ntag "Enoki"
 	text "This will hope-"
 	line "fully prevent any-"
 	cont "one else from"

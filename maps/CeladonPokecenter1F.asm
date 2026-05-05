@@ -67,8 +67,9 @@ CeladonPokecenter1FPokefanMText:
 	done
 
 CeladonPokecenter1FRivalText1:
-	text "<RIVAL>: This city"
-	line "got it the worst."
+	text_ntag "<RIVAL>"
+	text "This city got it"
+	line "the worst."
 
 	para "The Gym Leader is"
 	line "gone, but from"
@@ -85,9 +86,10 @@ CeladonPokecenter1FRivalText1:
 	done
 
 CeladonPokecenter1FRivalText2:
-	text "<RIVAL>: Erika's a"
-	line "bit of an airhead,"
-	cont "don't you think?"
+	text_ntag "<RIVAL>"
+	text "Erika's a bit of an"
+	line "airhead, don't you"
+	cont "think?"
 
 	para "Let's hope she"
 	line "doesn't fall asleep"

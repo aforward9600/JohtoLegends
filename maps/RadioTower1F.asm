@@ -313,6 +313,7 @@ DirectorMovesUpMovement:
 	step_resume
 
 RadioTower1FRivalText:
+	text_ntag "<RIVAL>"
 	text "Don't worry, I got"
 	line "this! You go on"
 	cont "ahead!"
@@ -328,6 +329,7 @@ RadioTower1FDirectorText:
 	done
 
 RadioTower1FSherlesText:
+	text_ntag "Sherles"
 	text "Stop hanging"
 	line "around here kid,"
 	cont "or I'll arrest"
@@ -478,11 +480,7 @@ HaveAWingText:
 	done
 
 CanWeReallyText1:
-	text "<RIVAL>: Can we"
-	line "really?!"
-	done
-
-CanWeReallyText2:
+	text_ntag "<RIVAL>"
 	text "<RIVAL>: Can we"
 	line "really?!"
 	done
@@ -503,17 +501,19 @@ YesYesOfCourseText:
 	done
 
 ItsSoPrettyText:
-	text "<RIVAL>: They're so"
-	line "pretty, but what"
-	cont "kind of #mon"
-	cont "are they from?"
+	text_ntag "<RIVAL>"
+	text "They're so pretty,"
+	line "but what kind of"
+	cont "#mon are they"
+	cont "from?"
 	done
 
 ItsCoolText:
-	text "<RIVAL>: They're so"
-	line "cool, but what"
-	cont "kind of #mon"
-	cont "are they from?"
+	text_ntag "<RIVAL>"
+	text "They're so cool,"
+	line "but what kind of"
+	cont "#mon are they"
+	cont "from?"
 	done
 
 GoTalkToMrPokemonText:
@@ -546,23 +546,9 @@ GoTalkToMrPokemonText:
 	done
 
 DahliaSeeYaText:
-	text "<RIVAL>: Sounds"
-	line "like a plan."
-
-	para "You go on ahead,"
-	line "<PLAYER>."
-
-	para "I still have a"
-	line "PlainBadge to"
-	cont "earn!"
-
-	para "See ya at the"
-	line "Day-Care!"
-	done
-
-DracoSeeYaText:
-	text "<RIVAL>: Sounds"
-	line "like a plan."
+	text_ntag "<RIVAL>"
+	text "Sounds like a like"
+	line "a plan!"
 
 	para "You go on ahead,"
 	line "<PLAYER>."
@@ -576,6 +562,7 @@ DracoSeeYaText:
 	done
 
 YouAgainText:
+	text_ntag "Sherles"
 	text "You again, huh?"
 
 	para "Everytime these"
@@ -600,6 +587,7 @@ YouAgainText:
 	done
 
 IllHealYouGoldenrodTowerText:
+	text_ntag "<RIVAL>"
 	text "Need some healing?"
 	done
 

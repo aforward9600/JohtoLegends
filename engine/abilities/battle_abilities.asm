@@ -656,12 +656,6 @@ CheckContactAbilities:
 	jr z, .GotPlayerType
 	ld hl, wEnemyMonType1
 .GotPlayerType
-	ld a, [hli]
-	cp FIRE
-	ret z
-	ld a, [hl]
-	cp FIRE
-	ret z
 	call SafeguardAbilities
 	ret nz
 	call GetUserAbility
@@ -2209,11 +2203,8 @@ SynchronizeCheck:
 	jr z, .GotPlayerType
 	ld hl, wEnemyMonType1
 .GotPlayerType
-	ld a, [hli]
-	cp FIRE
-	ret z
-	ld a, [hl]
-	cp FIRE
+	ld b, FIRE
+	call CheckIfTargetIsGivenTypeAbility
 	ret z
 	ld hl, SynchronizeText
 	call StdBattleTextbox
@@ -2224,6 +2215,9 @@ SynchronizeCheck:
 .SynchronizePoison
 	call GetUserAbility
 	cp IMMUNITY
+	ret z
+	ld b, POISON
+	call CheckIfTargetIsGivenTypeAbility
 	ret z
 	ld hl, SynchronizeText
 	call StdBattleTextbox
@@ -2477,4 +2471,19 @@ SafeguardAbilities:
 .got_turn
 	bit SCREENS_SAFEGUARD, [hl]
 	pop hl
+	ret
+
+CheckIfTargetIsGivenTypeAbility:
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp b
+	ret z
+	ld a, [de]
+	cp b
 	ret

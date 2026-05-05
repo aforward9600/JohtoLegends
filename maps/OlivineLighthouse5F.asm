@@ -105,9 +105,11 @@ LighthouseArcherSeenText:
 	line "<PLAYER>."
 
 	para "You can call me"
-	line "Archer."
+	line "Archer.@"
+	text_waitbutton
 
-	para "I'm second in"
+	text_ntag "Archer"
+	text "I'm second in"
 	line "command on this"
 	cont "little mission."
 
@@ -127,6 +129,7 @@ LighthouseArcherLostText:
 	done
 
 LighthouseArcherAfterBattleText:
+	text_ntag "Archer"
 	text "Hm…"
 
 	para "Even in numbers,"

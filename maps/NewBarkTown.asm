@@ -117,6 +117,7 @@ NewBarkTownLassText:
 	done
 
 Text_MeetMeAfterGym:
+	text_ntag "<RIVAL>"
 	text "……………………"
 
 	para "<PLAYER>……"

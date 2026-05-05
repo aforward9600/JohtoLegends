@@ -252,6 +252,7 @@ RivalWalksRightMovement:
 	step_end
 
 ChigusaIntroText:
+	text_ntag "Chigusa"
 	text "Heya trainer! I'm"
 	line "Chigusa, the"
 	cont "Leader of Cianwood"
@@ -285,6 +286,7 @@ ChigusaLossText:
 	done
 
 BeatenChigusaText:
+	text_ntag "Chigusa"
 	text "You're stronger"
 	line "than you look!"
 	cont "And your #mon"
@@ -303,6 +305,7 @@ GetStormBadgeText:
 	done
 
 ChigusaExplainBadgeText:
+	text_ntag "Chigusa"
 	text "The Storm Badge"
 	line "makes #mon up"
 	cont "to Lv 40 obey you."
@@ -312,6 +315,7 @@ ChigusaExplainBadgeText:
 	done
 
 ChigusaExplainTMText:
+	text_ntag "Chigusa"
 	text "It contains Bulk"
 	line "Up! Your #mon"
 	cont "will increase"
@@ -321,6 +325,7 @@ ChigusaExplainTMText:
 	done
 
 ChigusaAfterText:
+	text_ntag "Chigusa"
 	text "Someday, Chuck"
 	line "will run this Gym."
 	cont "What he lacks in"
@@ -342,6 +347,7 @@ ChigusaAfterText:
 	done
 
 ReadyForARematchText:
+	text_ntag "Chigusa"
 	text "Heya!"
 
 	para "I've been waiting"
@@ -356,6 +362,7 @@ ReadyForARematchText:
 	done
 
 BeatenChigusaAgainText:
+	text_ntag "Chigusa"
 	text "Wow, your elegance"
 	line "only increases"
 	cont "with time!"
@@ -413,6 +420,7 @@ BlackbeltLungAfterText:
 	done
 
 ChuckSeenText:
+	text_ntag "Chuck"
 	text "So, puny"
 	line "challenger! You"
 	cont "arrived in front"
@@ -466,6 +474,7 @@ ChuckBeatenText:
 	done
 
 ChuckAfterText:
+	text_ntag "Chuck"
 	text "Maybe I should"
 	line "focus less on"
 	cont "training, and more"
@@ -491,6 +500,7 @@ ChuckAfterText:
 	done
 
 CianwoodGymHeyThereText:
+	text_ntag "<RIVAL>"
 	text "Alright, I'm feel-"
 	line "ing better now."
 
@@ -511,12 +521,14 @@ CianwoodGymHeyThereText:
 	done
 
 CianwoodGymRivalText:
+	text_ntag "<RIVAL>"
 	text "I didn't think"
 	line "this Leader would"
 	cont "be so tough!"
 	done
 
 PostGameChigusaText:
+	text_ntag "Chigusa"
 	text "Wow, you're the"
 	line "new Champion!"
 

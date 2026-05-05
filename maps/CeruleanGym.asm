@@ -241,9 +241,9 @@ TrainerSwimmermParker:
 	jumptext SwimmermParkerAfterBattleText
 
 VioletIntroText:
-	text "Violet: You wanna"
-	line "see how strong we"
-	cont "are?"
+	text_ntag "Violet"
+	text "You wanna see how"
+	line "strong we are?"
 
 	para "Alrighty!"
 
@@ -262,16 +262,16 @@ VioletIntroText:
 	done
 
 VioletWinLossText:
-	text "Violet: Oh man…"
+	text "Oh man…"
 	done
 
 DaisyWinLossText:
-	text "Daisy: Well, that"
+	text "Well, that"
 	line "was fun!"
 	done
 
 LilyWinLossText:
-	text "Lily: …Can we"
+	text "…Can we"
 	line "really do this?"
 	done
 
@@ -282,9 +282,9 @@ ReceivedCascadeBadgeText:
 	done
 
 MistyFightDoneText:
-	text "Lily: This was Mom"
-	line "and Dad's badge,"
-	cont "right?"
+	text_ntag "Lily"
+	text "This was Mom and"
+	line "Dad's badge, right?"
 
 	para "…Seeing this badge"
 	line "like this…"
@@ -351,17 +351,19 @@ SwimmermParkerAfterBattleText:
 	done
 
 CeruleanGymDaisyText1:
-	text "Daisy: You should"
-	line "talk to Violet in"
-	cont "the middle first!"
+	text_ntag "Daisy"
+	text "You should talk to"
+	line "Violet in middle"
+	cont "first!"
 
 	para "Then we can get"
 	line "started!"
 	done
 
 CeruleanGymDaisyText3:
-	text "Daisy: Would you"
-	line "mind finding my"
+	text_ntag "Daisy"
+	text "Would you mind"
+	line "finding my"
 	cont "sisters first?"
 
 	para "I don't wanna"
@@ -370,15 +372,15 @@ CeruleanGymDaisyText3:
 	done
 
 CeruleanGymDaisyText2:
-	text "Daisy: When you"
-	line "call us, we'll"
-	cont "come to help!"
+	text_ntag "Daisy"
+	text "When you call us,"
+	line "we'll help!"
 	done
 
 CeruleanGymLilyText1:
-	text "Lily: …Can you"
-	line "talk with Violet"
-	cont "first?"
+	text_ntag "Lily"
+	text "…Can you talk with"
+	line "Violet first?"
 
 	para "…I think she'll be"
 	line "a better first"
@@ -386,41 +388,46 @@ CeruleanGymLilyText1:
 	done
 
 CeruleanGymLilyText2:
-	text "Lily: …We'll make"
+	text_ntag "Lily"
+	text "…We'll make"
 	line "those Feds pay…"
 	done
 
 FindLilyText:
-	text "Violet: Before we"
-	line "begin, can you go"
-	cont "find Lily?"
+	text_ntag "Violet"
+	text "Before we begin,"
+	line "can you go find"
+	cont "Lily?"
 
 	para "We don't want to"
 	line "start without her!"
 	done
 
 VioletAfterText:
-	text "Violet: Let's do"
-	line "it!"
+	text_ntag "Violet"
+	text "Let's do it!"
 
 	para "Let's beat them up!"
 	done
 
 PleaseGetOnTheDockText:
-	text "Violet: Please get"
-	line "on the dock so we"
-	cont "can battle."
+	text_ntag "Violet"
+	text "Please get on the"
+	line "dock so we can"
+	cont "battle."
 	done
 
 DaisyIntroText:
-	text "Daisy: I'm up next!"
+	text_ntag "Daisy"
+	text "I'm up next!"
 
 	para "I'm not a pushover"
 	line "like Violet!"
 	done
 
 LilyIntroText:
-	text "Lily: You're the"
+	text_ntag "Lily"
+	text "You're the"
 	line "Champion, right?"
 
 	para "…I thought so."
@@ -431,15 +438,17 @@ LilyIntroText:
 	para "…My sisters may"
 	line "not show it, but"
 	cont "after our parents"
-	cont "passed away…"
+	cont "passed away…@"
+	text_waitbutton
 
-	para "Violet:……………………"
-	
-	para "Daisy:………………………"
+	text_ntag "Violet & Daisy"
+	text "……………………@"
+	text_waitbutton
 
-	para "Lily: We've been"
-	line "having a hard time"
-	cont "moving on…"
+	text_ntag "Lily"
+	para "We've been having a"
+	line "hard time moving"
+	cont "on…"
 
 	para "…I think with your"
 	line "help, we can make"
@@ -458,7 +467,8 @@ LilyIntroText:
 	done
 
 CeruleanGymDaisyText4:
-	text "Daisy: You want a"
+	text_ntag "Daisy"
+	text "You want a"
 	line "rematch?"
 
 	para "Talk to Violet and"
@@ -466,31 +476,35 @@ CeruleanGymDaisyText4:
 	done
 
 CeruleanGymLilyText3:
-	text "Lily: Speak with"
-	line "Violet if you want"
-	cont "to face us again."
+	text_ntag "Lily"
+	text "Speak with Violet"
+	line "if you want to"
+	cont "face us again."
 	done
 
 CeruleanGymDaisyText5:
-	text "Daisy: I think I'll"
+	text_ntag "Daisy"
+	text "I think I'll"
 	line "go swimming today!"
 	done
 
 CeruleanGymLilyText4:
-	text "Lily: Thank you,"
+	text_ntag "Lily"
+	text "Thank you,"
 	line "<PLAYER>."
 
 	para "For everything."
 	done
 
 VioletAfterRematchText:
-	text "Violet: We beat"
-	line "those guys pretty"
-	cont "bad, huh?"
+	text_ntag "Violet"
+	text "We beat those guys"
+	line "pretty bad, huh?"
 	done
 
 VioletRematchText:
-	text "Violet: Here for a"
+	text_ntag "Violet"
+	text "Here for a"
 	line "rematch, huh?"
 
 	para "We'll be happy to"
@@ -498,19 +512,20 @@ VioletRematchText:
 	done
 
 LilyRematchText:
-	text "Lily: I'm feeling"
-	line "much better than"
-	cont "I was during our"
-	cont "first battle."
+	text_ntag "Lily"
+	text "I'm feeling much"
+	line "better than I was"
+	cont "during our first"
+	cont "battle."
 
 	para "I think I'll do"
 	line "better this time!"
 	done
 
 LilyAfterRematchText:
-	text "Lily: I lost, but"
-	line "I don't feel bad"
-	cont "about it."
+	text_ntag "Lily"
+	text "I lost, but I don't"
+	line "feel bad about it"
 
 	para "It feels good to"
 	line "have fun again."
@@ -519,9 +534,10 @@ LilyAfterRematchText:
 	done
 
 LilyWinLossText2:
-	text "Lily: It's been a"
-	line "while since I've"
-	cont "felt this good."
+	text_ntag "Lily"
+	text "It's been a while"
+	line "since I've felt"
+	cont "like this."
 	done
 
 CeruleanGym_MapEvents:

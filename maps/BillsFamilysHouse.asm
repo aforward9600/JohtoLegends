@@ -48,6 +48,7 @@ BillsFamilyComputer:
 	writetextend CantReadComputerText
 
 GiveSprintmanText:
+	text_ntag "Bill"
 	text "Howdy! My name is"
 	line "Bill!"
 
@@ -80,13 +81,15 @@ GiveSprintmanText:
 	done
 
 GotMusicPlayerText:
+	text_ntag "Bill"
 	text "Your watch now"
 	line "can play music!"
 	done
 
 GaveSprintmanText:
-	text "Bill: I call it"
-	line "the Sprintman!"
+	text_ntag "Bill"
+	text "I call it the"
+	line "Sprintman!"
 
 	para "That cassette"
 	line "tape comes loaded"
@@ -109,8 +112,9 @@ GaveSprintmanText:
 	done
 
 BillText:
-	text "Bill: My grandpa"
-	line "runs the Abra"
+	text_ntag "Bill"
+	text "My grandpa runs"
+	line "the Abra"
 	cont "Delivery System!"
 
 	para "It's pretty con-"

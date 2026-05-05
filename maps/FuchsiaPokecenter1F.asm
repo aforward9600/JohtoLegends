@@ -49,10 +49,10 @@ FuchsiaPokecenter1FCooltrainerFText:
 	done
 
 FuchsiaPokecenter1FRivalText1:
-	text "<RIVAL>: I heard"
-	line "the ninja who got"
-	cont "us out of that"
-	cont "cell is here."
+	text_ntag "<RIVAL>"
+	text "I heard the ninja"
+	line "who got us out of"
+	cont "that cell is here."
 
 	para "He's at the ninja"
 	line "clan building on"
@@ -66,8 +66,9 @@ FuchsiaPokecenter1FRivalText1:
 	done
 
 FuchsiaPokecenter1FRivalText2:
-	text "<RIVAL>: Ninjas"
-	line "are so cool."
+	text_ntag "<RIVAL>"
+	text "Ninjas are so"
+	line "cool."
 	done
 
 FuchsiaPokecenter1F_MapEvents:

@@ -238,9 +238,11 @@ InTheDistantPastText:
 	para "I am the Leader of"
 	line "the Ecruteak Gym."
 
-	para "I am Enoki."
+	para "I am Enoki.@"
+	text_waitbutton
 
-	para "I apologize for"
+	text_ntag "Enoki@"
+	text "I apologize for"
 	line "not introducing"
 	cont "myself earlier. I"
 	cont "was preoccupied"

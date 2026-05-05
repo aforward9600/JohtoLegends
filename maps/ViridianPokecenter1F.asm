@@ -69,6 +69,7 @@ ViridianPokecenter1FSchoolboyText:
 	done
 
 ViridianPokecenter1FRivalText:
+	text_ntag "<RIVAL>"
 	text "I heard a rich and"
 	line "powerful trainer"
 	cont "owns the storage"
@@ -85,6 +86,7 @@ ViridianPokecenter1FRivalText:
 	done
 
 ViridianPokecenter1FRivalText2:
+	text_ntag "<RIVAL>"
 	text "I heard a rich and"
 	line "powerful trainer"
 	cont "owns the storage"
@@ -105,6 +107,7 @@ ViridianPokecenter1FRivalText2:
 	done
 
 ViridianPokecenter1FRivalAfterText:
+	text_ntag "<RIVAL>"
 	text "So, Giovanni, huh?"
 
 	para "He's seems pretty"

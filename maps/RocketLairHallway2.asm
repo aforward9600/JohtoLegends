@@ -143,6 +143,7 @@ EnteiLeavesMovement:
 	step_end
 
 LairArianaSeenText:
+	text_ntag "Ariana"
 	text "That's it!"
 
 	para "I'm sick of you!"
@@ -171,6 +172,7 @@ LairArianaBeatenText:
 	done
 
 LairArianaBeatenAgainText:
+	text_ntag "Ariana"
 	text "…I guess this is"
 	line "it for me…"
 
@@ -187,6 +189,7 @@ LairArianaBeatenAgainText:
 	done
 
 ArianaFinalText:
+	text_ntag "Ariana"
 	text "…Even Suicune has"
 	line "abandoned me…"
 
@@ -203,6 +206,7 @@ ArianaFinalText:
 	done
 
 LairArcherSeenText:
+	text_ntag "Archer"
 	text "That's far enough."
 
 	para "Do you know how"
@@ -233,6 +237,7 @@ LairArcherBeatenText:
 	done
 
 LairArcherBeatenAgainText:
+	text_ntag "Archer"
 	text "The power of Entei"
 	line "did nothing…"
 
@@ -241,6 +246,7 @@ LairArcherBeatenAgainText:
 	done
 
 ArcherFinalText:
+	text_ntag "Archer"
 	text "So, the Rocket"
 	line "Ball failed?"
 

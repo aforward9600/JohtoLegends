@@ -73,9 +73,10 @@ HallOfFame_SlowlyApproachMachine:
 	step_end
 
 HallOfFame_LanceText:
-	text "Oak: It's been a"
-	line "long time since I"
-	cont "last came here."
+	text_ntag "Prof. Oak"
+	text "It's been a long"
+	line "time since I last"
+	cont "came here."
 
 	para "This is where we"
 	line "honor the League"

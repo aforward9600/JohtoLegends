@@ -91,7 +91,7 @@
 	tilecoll WATER, WATER, WATER, WATER ; 5a
 	tilecoll WATER, WATER, WATER, WATER ; 5b
 	tilecoll WATER, WATER, WATER, WATER ; 5c
-	tilecoll ICE, WALL, ICE, WALL ; 5d
+	tilecoll ICE, WALL, WALL, ICE ; 5d
 	tilecoll PIT, WALL, WALL, WALL ; 5e
 	tilecoll WALL, WALL, WALL, WALL ; 5f
 	tilecoll WALL, WALL, WALL, WALL ; 60

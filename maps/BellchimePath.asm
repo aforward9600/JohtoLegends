@@ -48,6 +48,7 @@ BellchimePathSignText:
 	done
 
 EnokiWalkText:
+	text_ntag "Enoki"
 	text "Good to see you,"
 	line "<PLAYER>."
 
@@ -60,6 +61,7 @@ EnokiWalkText:
 	done
 
 EnokiPanicText:
+	text_ntag "Enoki"
 	text "Urgh…"
 
 	para "Thank goodness"

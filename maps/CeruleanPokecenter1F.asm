@@ -48,6 +48,7 @@ CeruleanPokecenter1FCooltrainerMText2:
 	done
 
 CeruleanPokecenter1FRivalText1:
+	text_ntag "<RIVAL>"
 	text "I hear that the"
 	line "best trainers in"
 	cont "the city are some"
@@ -66,6 +67,7 @@ CeruleanPokecenter1FRivalText1:
 	done
 
 CeruleanPokecenter1FRivalText2:
+	text_ntag "<RIVAL>"
 	text "To think the Feds"
 	line "are responsible"
 	cont "for their parents'"

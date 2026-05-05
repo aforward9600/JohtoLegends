@@ -674,6 +674,7 @@ TextCommands::
 	dw TextCommand_STRINGBUFFER     ; TX_STRINGBUFFER
 	dw TextCommand_DAY              ; TX_DAY
 	dw TextCommand_FAR              ; TX_FAR
+	dw TextCommand_NAMETAG          ; TX_NAMETAG
 
 TextCommand_START::
 ; text_start
@@ -842,6 +843,28 @@ TextCommand_START_ASM::
 	ld [hl], a
 	ret
 
+TextCommand_NAMETAG::
+	ld d, h
+	ld e, l
+	hlcoord TEXTBOX_INNERX, TEXTBOX_Y
+	push hl
+	ld a, "─"
+	ld b, SCREEN_WIDTH - 2
+.loop
+	ld [hli], a
+	dec b
+	jr nz, .loop
+	pop hl
+	call PlaceString
+	inc de
+    	push de
+    	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY - 1
+    	lb bc, TEXTBOX_INNERH, TEXTBOX_INNERW
+    	call ClearBox
+   	pop hl
+	bccoord TEXTBOX_INNERX, TEXTBOX_INNERY
+	ret
+	
 TextCommand_NUM::
 ; text_decimal
 ; [$09][addr][hi:bytes lo:digits]

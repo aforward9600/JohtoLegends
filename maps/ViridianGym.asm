@@ -94,9 +94,10 @@ TrainerCooltrainerMBumi:
 	jumptext CooltrainerMBumiAfterText
 
 LeaderBlueBeforeText:
-	text "Giovanni: I must"
-	line "apologize for the"
-	cont "lack of room."
+	text_ntag "Giovanni"
+	text "I must apologize"
+	line "for the lack of"
+	cont "room."
 
 	para "This is the best"
 	line "place in the city"
@@ -126,9 +127,8 @@ LeaderBlueBeforeText:
 	done
 
 LeaderBlueWinText:
-	text "Giovanni: I see"
-	line "how you became a"
-	cont "Champion!"
+	text "I see how you"
+	line "became a Champion!"
 	done
 
 Text_ReceivedEarthBadge:
@@ -137,9 +137,10 @@ Text_ReceivedEarthBadge:
 	done
 
 LeaderBlueAfterText:
-	text "Giovanni: …So this"
-	line "was the badge of"
-	cont "my predecessor…"
+	text_ntag "Giovanni"
+	text "…So this was the"
+	line "badge of my"
+	cont "predecessor…"
 
 	para "I like it."
 
@@ -164,10 +165,10 @@ LeaderBlueAfterText:
 	done
 
 LeaderBlueEpilogueText:
-	text "Giovanni: The Fed"
-	line "hideout has been"
-	cont "cleaned up of any"
-	cont "vermin."
+	text_ntag "Giovanni"
+	text "The Fed hideout"
+	line "has been cleaned"
+	cont "up of any vermin."
 
 	para "I decided to buy"
 	line "it and renovate it"
@@ -227,10 +228,11 @@ CooltrainerMBumiAfterText:
 	done
 
 GiovanniPostText:
-	text "Giovanni: I just"
-	line "bought the old"
-	cont "Federation lair"
-	cont "from Celadon City."
+	text_ntag "Giovanni"
+	text "I just bought the"
+	line "old Federation"
+	cont "lair from Celadon"
+	cont "City."
 
 	para "I plan on opening"
 	line "a Game Corner once"
@@ -243,16 +245,17 @@ GiovanniPostText:
 	done
 
 GiovanniRematchText:
-	text "Giovanni: Here for"
-	line "a rematch?"
+	text_ntag "Giovanni"
+	text "Here for a"
+	line "rematch?"
 
 	para "Don't hold back!"
 	done
 
 GiovanniAfterRematchText:
-	text "Giovanni: You"
-	line "really didn't hold"
-	cont "back!"
+	text_ntag "Giovannie"
+	text "You really didn't"
+	line "hold back!"
 
 	para "Perhaps someday, I"
 	line "can be compared to"

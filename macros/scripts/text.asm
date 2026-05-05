@@ -7,6 +7,7 @@ para   EQUS "db \"<PARA>\","  ; Start a new paragraph.
 cont   EQUS "db \"<CONT>\","  ; Scroll to the next line.
 done   EQUS "db \"<DONE>\""   ; End a text box.
 prompt EQUS "db \"<PROMPT>\"" ; Prompt the player to end a text box (initiating some other event).
+ntag   EQUS "db TX_NAMETAG"
 
 ; TextCommands indexes (see home/text.asm)
 	enum_start
@@ -137,6 +138,26 @@ text_far: MACRO
 	dw \1
 	db BANK(\1)
 ENDM
+
+	enum TX_NAMETAG
+text_ntag: MACRO
+	db TX_NAMETAG
+	db \1
+	db "@"
+ENDM
+
+;	ntag "<RIVAL>"
+;	text "Hey sleepy head!"
+;	line "about time you"
+
+;	para "woke up! Don't"
+;	line "worry, we didn't"
+;	cont "start without you!@"
+;	text_waitbutton
+
+;	ntag "Master:"
+;	text "test"
+;	done
 
 	enum_set $50
 

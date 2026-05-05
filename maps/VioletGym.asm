@@ -214,9 +214,11 @@ VioletGymRivalLeavesMovement2:
 WalkerIntroText:
 	text "I am Walker, "
 	line "Leader of the"
-	cont "Violet City Gym."
+	cont "Violet City Gym.@"
+	text_waitbutton
 
-	para "My birds and I"
+	text_ntag "Walker"
+	text "My birds and I"
 	line "yearn to be free"
 
 	para "to soar and expore"
@@ -248,6 +250,7 @@ WalkerWinLossText:
 	done
 
 BeatenWalkerText:
+	text_ntag "Walker"
 	text "I see now."
 	line "Although I cannot"
 	cont "leave here yet, I"
@@ -275,6 +278,7 @@ ReceivedZephyrBadgeText:
 	done
 
 WalkerZephyrBadgeText:
+	text_ntag "Walker"
 	text "The Zephyr Badge"
 	line "makes #mon up"
 	cont "to Lv 80 obey you."
@@ -284,6 +288,7 @@ WalkerZephyrBadgeText:
 	done
 
 WalkerTMRoostText:
+	text_ntag "Walker"
 	text "TM50 contains"
 	line "Roost."
 
@@ -295,6 +300,7 @@ WalkerTMRoostText:
 	done
 
 WalkerFightDoneText:
+	text_ntag "Walker"
 	text "Someday, I'll"
 	line "travel the world"
 	cont "with my cherished"
@@ -356,6 +362,7 @@ BirdKeeperAbelAfterBattleText:
 	done
 
 VioletGymGuyText:
+	text_ntag "Jim Gyde"
 	text "How's it going,"
 	line "champ in the"
 	cont "making?"
@@ -376,6 +383,7 @@ VioletGymGuyText:
 	done
 
 VioletGymGuyWinText:
+	text_ntag "Jim Gyde"
 	text "Way to go! You"
 	line "knocked 'em right"
 
@@ -383,6 +391,7 @@ VioletGymGuyWinText:
 	done
 
 WalkerReadyForARematchText:
+	text_ntag "Walker"
 	text "My birds have been"
 	line "looking forward to"
 	cont "soaring the skies"
@@ -414,6 +423,7 @@ BirdKeeperLucasAfterBattleText:
 	done
 
 VioletGymRivalText:
+	text_ntag "<RIVAL>"
 	text "……………………………………"
 
 	para "…………<PLAYER>………"
@@ -422,6 +432,7 @@ VioletGymRivalText:
 	done
 
 PostGameWalkerText:
+	text_ntag "Walker"
 	text "Here to soar yet"
 	line "again, Champion?"
 

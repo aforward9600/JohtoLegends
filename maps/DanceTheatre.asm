@@ -182,9 +182,11 @@ TrainerKimonoGirlRuiText:
 
 	para "Welcome to the"
 	line "Dance House. My"
-	cont "name is Rui."
+	cont "name is Rui.@"
+	text_waitbutton
 
-	para "I learned to dance"
+	text_ntag "Rui"
+	text "I learned to dance"
 	line "from a young age."
 
 	para "It is something I"
@@ -205,6 +207,7 @@ TrainerKimonoGirlRuiBeatenText:
 	done
 
 GiveEeveeText:
+	text_ntag "Rui"
 	text "That was an"
 	line "inspired dance."
 
@@ -230,6 +233,7 @@ GotEeveeText:
 	done
 
 TrainerKimonoGirlRuiAfterBattleText:
+	text_ntag "Rui"
 	text "If you see my son,"
 	line "Bill, in Goldenrod"
 	cont "City, please visit"
@@ -242,45 +246,49 @@ TrainerKimonoGirlRuiAfterBattleText:
 	done
 
 NoRoomText:
+	text_ntag "Rui"
 	text "Oh dear, you have"
 	line "no room in your"
 	cont "party for this."
 	done
 
 QuintupletNaokoText:
-	text "Naoko: Rui's"
-	line "Flareon is so"
-	cont "pretty!"
+	text_ntag "Naoko"
+	text "Rui's Flareon is so"
+	line "pretty!"
 
 	para "I want one when"
 	line "I'm older!"
 	done
 
 QuintupletSayoText:
-	text "Sayo: I'm going"
-	line "to train to be a"
-	cont "Kimono Girl just"
-	cont "like Rui!"
+	text_ntag "Sayo"
+	text "I'm going to train"
+	line "to be a Kimono"
+	cont "Girl just like Rui!"
 	done
 
 QuintupletZukiText:
-	text "Zuki: I want a"
-	line "barrette like Rui!"
+	text_ntag "Zuki"
+	text "I want a barrette"
+	line "like Rui's!"
 
 	para "It's so shiny!"
 	done
 
 QuintupletKuniText:
-	text "Kuni: Vaporeon is"
-	line "so elegant!"
+	text_ntag "Kuni"
+	text "Vaporeon is so"
+	line "elegant!"
 
 	para "It's the coolest!"
 	done
 
 QuintupletMikiText:
-	text "Miki: My favorite"
-	line "is Jolteon! It's"
-	cont "so pointy!"
+	text_ntag "Miki"
+	text "My favorite is"
+	line "Jolteon! It's so"
+	cont "pointy!"
 	done
 
 SurfGuyNeverLeftAScratchText:
@@ -391,9 +399,11 @@ DanceTheatreFancyPanelText:
 
 CynthiaIntroductionText:
 	text "Hello. My name is"
-	line "Cynthia."
+	line "Cynthia.@"
+	text_waitbutton
 
-	para "I have travelled"
+	text_ntag "Cynthia"
+	text "I have travelled"
 	line "from Sinnoh, and"
 	cont "I just love myths"
 	cont "and legends."
@@ -427,6 +437,7 @@ CynthiaBeatenText:
 	done
 
 HeadingToWildAreText:
+	text_ntag "Cynthia"
 	text "Nicely done."
 
 	para "You're a better"
@@ -474,10 +485,11 @@ YouSawMySonText:
 	done
 
 CantGetEeveeText:
-	text "Rui: Normally, I"
-	line "would give you an"
-	cont "Eevee as a reward"
-	cont "for defeating me,"
+	text_ntag "Rui"
+	text "Normally, I would"
+	line "give you an Eevee"
+	cont "as a reward for"
+	cont "defeating me,"
 
 	para "but since you are"
 	line "on a solo journey,"
@@ -488,7 +500,8 @@ CantGetEeveeText:
 	done
 
 CommencePasswordText:
-	text "Rui: Oh, hello."
+	text_ntag "Rui"
+	text "Oh, hello."
 
 	para "Congratulations on"
 	line "becoming Champion."

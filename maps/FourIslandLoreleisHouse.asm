@@ -29,8 +29,9 @@ LoreleiSlowpoke:
 	jumptext LoreleiSlowpokeText2
 
 LoreleiText:
-	text "Lorelei: I like to"
-	line "collect dolls."
+	text_ntag "Lorelei"
+	text "I like to collect"
+	line "dolls."
 	done
 
 LaprasDollText:

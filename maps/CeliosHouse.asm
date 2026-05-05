@@ -29,7 +29,8 @@ CeliosHouseComputer:
 	writetextend CelioCantReadComputerText
 
 CelioText:
-	text "Celio: You're the"
+	text_ntag "Celio"
+	text "You're the"
 	line "Champion, right?"
 
 	para "It's thanks to you"

@@ -334,6 +334,7 @@ Miyamoto3LossText:
 	done
 
 WelcomeToTheRoofText:
+	text_ntag "Miyamoto"
 	text "Welcome to the"
 	line "roof of Bell"
 	cont "Tower."
@@ -353,6 +354,7 @@ Miyamoto3WinText:
 	done
 
 ImpressiveText:
+	text_ntag "Miyamoto"
 	text "Impressive."
 
 	para "You're just as"
@@ -365,29 +367,34 @@ ImpressiveText:
 	done
 
 YouGotHerText:
-	text "<RIVAL>: Nice!"
+	text_ntag "<RIVAL>"
+	text "Nice!"
 
-	para "You got her!"
+	para "You got her!@"
+	text_waitbutton
 
-	para "Miyamoto: So, you"
-	line "decided to show"
-	cont "up as well…"
+	text_ntag "Miyamoto"
+	text "So, you decided to"
+	line "show up as well…"
 
 	para "I wonder if…"
 	done
 
 YoureUnderArrestText:
-	text "Sherles: Halt!"
+	text_ntag "Sherles"
+	text "Halt!"
 
 	para "You're under"
 	line "arrest!"
 	done
 
 WhatWasThatText:
-	text "<RIVAL>: What was"
-	line "that?"
+	text_ntag "<RIVAL>"
+	text "What was that?@"
+	text_waitbutton
 
-	para "Miyamoto: Ho-Oh…"
+	text_ntag "Miyamoto"
+	text "Ho-Oh…"
 
 	para "So, it took the"
 	line "two of them to"
@@ -397,19 +404,23 @@ WhatWasThatText:
 	done
 
 SheJustCaughtItText:
-	text "<RIVAL>: She…"
+	text_ntag "<RIVAL>"
+	text "She…"
 
 	para "She just caught"
-	line "it…"
+	line "it…@"
+	text_waitbutton
 
-	para "Miyamoto: Great"
-	line "deduction skills"
-	cont "you have there."
+	text_ntag "Miyamoto"
+	text "Great deduction"
+	line "skills you have"
+	cont "there."
 
 	para "Ho-Oh is now ours."
 	done
 
 IveGotWhatINeedText:
+	text_ntag "Miyamoto"
 	text "I've finally got"
 	line "what I've been"
 	cont "searching for."
@@ -420,19 +431,21 @@ IveGotWhatINeedText:
 	para "Lugia, Raikou,"
 	line "Entei and Suicune"
 	cont "are in our"
-	cont "possession."
+	cont "possession.@"
+	text_waitbutton
 
-	para "<RIVAL>: No!"
-	line "How?"
+	text_ntag "<RIVAL>"
+	text "No! How?@"
+	text_waitbutton
 
-	para "Miyamoto: They"
-	line "sensed that Ho-Oh"
-	cont "was in trouble."
+	text_ntag "Miyamoto"
+	text "They sensed that"
+	line "Ho-Oh was in"
+	cont "trouble."
 
 	para "They revealed"
 	line "themselves to our"
-	cont "agents hiding in"
-	cont "wait."
+	cont "hidden agents."
 
 	para "It was all thanks"
 	line "to you two."
@@ -441,25 +454,28 @@ IveGotWhatINeedText:
 	line "wings, I doubt we"
 
 	para "could have gotten"
-	line "them."
+	line "them.@"
+	text_waitbutton
 
-	para "<RIVAL>: ……No……"
+	text_ntag "<RIVAL>"
+	text "<RIVAL>: ……No……@"
+	text_waitbutton
 
-	para "Miyamoto: It's"
-	line "been fun, but I"
-	cont "have to go."
+	text_ntag "Miyamoto"
+	text "It's been fun, but"
+	line "I have to go."
 
 	para "Later."
 	done
 
 SheGotAwayText:
-	text "<RIVAL>: …She"
-	line "got away…"
+	text_ntag "<RIVAL>"
+	text "…She got away…"
 	done
 
 WellGetHerText:
-	text "Sherles: This is"
-	line "not good."
+	text_ntag "Sherles"
+	text "This is not good."
 
 	para "They've poached"
 	line "several Legendary"
@@ -482,6 +498,7 @@ WellGetHerText:
 	done
 
 LetsLeaveItToTheCopsText:
+	text_ntag "<RIVAL>"
 	text "……He's right."
 
 	para "……Let's leave it"

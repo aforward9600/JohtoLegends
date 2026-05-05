@@ -266,6 +266,7 @@ TeacherAbigail1FAfterBattleText:
 	done
 
 OlivineGym1FGuyText:
+	text_ntag "Jim Gyde"
 	text "How's it going,"
 	line "champ in the"
 	cont "making?"
@@ -284,6 +285,7 @@ OlivineGym1FGuyText:
 	done
 
 OlivineGym1FGuyWinText:
+	text_ntag "Jim Gyde"
 	text "Sharp as ever,"
 	line "you are!"
 	done

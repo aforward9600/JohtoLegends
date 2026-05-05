@@ -86,8 +86,8 @@ VermilionGymBed:
 	jumptext VermilionGymBedText
 
 LtSurgeIntroText:
-	text "Pvt.Surge: Just my"
-	line "luck!"
+	text_ntag "Pvt.Surge"
+	text "Just my luck!"
 
 	para "We end the war,"
 	line "and now we can't"
@@ -138,9 +138,8 @@ LtSurgeIntroText:
 	done
 
 LtSurgeWinLossText:
-	text "Pvt.Surge: Arrrgh!"
-	line "I'm having a"
-	cont "flashback!"
+	text "Arrrgh! I'm having"
+	line "a flashback!"
 
 	para "I can see why my"
 	line "old man lost to"
@@ -153,6 +152,7 @@ ReceivedThunderBadgeText:
 	done
 
 LtSurgeThunderBadgeText:
+	text_ntag "Pvt.Surge"
 	text "A Thunder Badge…"
 
 	para "Perfect for me,"
@@ -164,6 +164,7 @@ LtSurgeThunderBadgeText:
 	done
 
 LtSurgeFightDoneText:
+	text_ntag "Pvt.Surge"
 	text "I'll answer the"
 	line "the call to duty"
 	cont "when you're ready!"
@@ -172,6 +173,7 @@ LtSurgeFightDoneText:
 	done
 
 LtSurgeStayText:
+	text_ntag "Pvt.Surge"
 	text "I think after I"
 	line "get my promotion,"
 	cont "I'll settle down"
@@ -183,8 +185,8 @@ LtSurgeStayText:
 	done
 
 SoldierUlyssesSeenText:
-	text "Do you have busi-"
-	line "ness with our"
+	text "Do you have"
+	line "business with our"
 	cont "commander?"
 	done
 
@@ -261,8 +263,8 @@ VermilionGymBedText:
 	done
 
 LtSurgeRematchText:
-	text "Pvt.Surge: Hey"
-	line "Champion!"
+	text_ntag "Pvt.Surge"
+	text "Hey Champion!"
 
 	para "As a soldier, I"
 	line "never stop with my"
@@ -272,9 +274,10 @@ LtSurgeRematchText:
 	done
 
 LtSurgeRematchAfterText:
-	text "Pvt.Surge: I gotta"
-	line "continue training"
-	cont "my #mon and my"
+	text_ntag "Pvt.Surge"
+	text "I gotta continue"
+	line "training my"
+	cont "#mon and my"
 	cont "body!"
 	done
 

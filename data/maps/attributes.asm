@@ -913,13 +913,13 @@ ENDM
 	connection east, WaterPath, WATER_PATH, -7
 
 	map_attributes WaterPath, WATER_PATH, $43, NORTH | SOUTH | WEST
-	connection north, GreenPath, GREEN_PATH, -34
+	connection north, GreenPath, GREEN_PATH, -29
 	connection south, RuinValley, RUIN_VALLEY, -20
 	connection west, SixIsland, SIX_ISLAND, 7
 
 	map_attributes GreenPath, GREEN_PATH, $43, NORTH | SOUTH
 	connection north, OutcastIsland, OUTCAST_ISLAND, 0
-	connection south, WaterPath, WATER_PATH, 34
+	connection south, WaterPath, WATER_PATH, 29
 
 	map_attributes OutcastIsland, OUTCAST_ISLAND, $43, SOUTH
 	connection south, GreenPath, GREEN_PATH, 0

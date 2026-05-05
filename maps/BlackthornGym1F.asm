@@ -159,6 +159,7 @@ MasterLastMonText:
 	done
 
 MasterIntroText:
+	text_ntag "Master"
 	text "You have returned."
 
 	para "I am proud of you,"
@@ -193,6 +194,7 @@ MasterWinText:
 	done
 
 MasterText_Complete:
+	text_ntag "Master"
 	text "Your training is"
 	line "complete. You are"
 	cont "now worthy of"
@@ -210,6 +212,7 @@ MasterText_ReceivedRisingBadge:
 	done
 
 MasterText_BadgeExplain:
+	text_ntag "Master"
 	text "The Rising Badge"
 	line "will make all"
 	cont "#mon obey you."
@@ -230,6 +233,7 @@ BlackthornGymText_ReceivedTM24:
 	done
 
 BlackthornGymMasterText_DescribeTM24:
+	text_ntag "Master"
 	text "That contains"
 	line "Dragon Claw."
 
@@ -242,6 +246,7 @@ BlackthornGymMasterText_DescribeTM24:
 	done
 
 BlackthornGymMasterText_League:
+	text_ntag "Master"
 	text "You are ready to"
 	line "head to the final"
 	cont "part of your"
@@ -338,6 +343,7 @@ DragonTamerfDaniAfterBattleText:
 	done
 
 BlackthornGymGuyText:
+	text_ntag "Jim Gyde"
 	text "How's it going,"
 	line "champ in the"
 	cont "making?"
@@ -360,6 +366,7 @@ BlackthornGymGuyText:
 	done
 
 BlackthornGymGuyWinText:
+	text_ntag "Jim Gyde"
 	text "You did it! You"
 	line "have all eight"
 	cont "Badges! Now you"
@@ -371,6 +378,7 @@ BlackthornGymGuyWinText:
 	done
 
 MasterRematchText:
+	text_ntag "Master"
 	text "Back to test your"
 	line "skills?"
 
@@ -384,6 +392,7 @@ MasterBeatenAgainText:
 	done
 
 MasterPostGameText:
+	text_ntag "Master"
 	text "I am so proud of"
 	line "you, <PLAYER>."
 

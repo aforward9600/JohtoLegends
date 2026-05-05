@@ -181,6 +181,7 @@ KurtsHouseCelebiStatueText:
 	done
 
 KurtsHouseKurtText:
+	text_ntag "Kurt"
 	text "Hm?"
 
 	para "Oh, it's you…"

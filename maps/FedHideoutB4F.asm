@@ -256,7 +256,8 @@ DoppelgangerLeavesMovement:
 	step_end
 
 BikerBossSeenText:
-	text "???: Those idiots!"
+	text_ntag "???"
+	text "Those idiots!"
 
 	para "I told them to"
 	line "guard the hideout,"
@@ -276,9 +277,11 @@ BikerBossSeenText:
 	cont "takes!"
 
 	para "I'm Paxton, the"
-	line "Federation Leader!"
+	line "Federation Leader!@"
+	text_waitbutton
 
-	para "We had Kanto in"
+	text_ntag "Paxton"
+	text "We had Kanto in"
 	line "our hands until"
 	cont "you showed up!"
 
@@ -301,7 +304,7 @@ BikerBossSeenText:
 	done
 
 BikerBossWinText:
-	text "Paxton: …No."
+	text "…No."
 
 	para "Everything we've"
 	line "worked for…"
@@ -311,8 +314,8 @@ BikerBossWinText:
 	done
 
 BikerBossAfterText:
-	text "Paxton: …I don't"
-	line "understand…"
+	text_ntag "Paxton"
+	text "…I don't understand…"
 
 	para "We did everything"
 	line "she told us to do…"
@@ -341,23 +344,26 @@ BikerBossAfterText:
 	done
 
 GiovanniOneKidText:
-	text "???: It wasn't just"
+	text_ntag "???"
+	text "It wasn't just"
 	line "one kid."
 	done
 
 BikerBossYouText:
-	text "Paxton: Y-you…"
+	text_ntag "Paxton"
+	text "Y-you…"
 
 	para "You're her…"
 	done
 
 GiovanniDidYouThinkText:
-	text "Giovanni: Did you"
-	line "really think it"
-	cont "was merely the"
-	cont "effort of a lone"
-	cont "child that brought"
-	cont "you down?"
+	text_ntag "Giovanni"
+	text "Did you really"
+	line "think it was"
+	cont "merely the effort"
+	cont "of a lone child"
+	cont "that brought you"
+	cont "down?"
 
 	para "The combined and"
 	line "organized strength"
@@ -371,8 +377,8 @@ GiovanniDidYouThinkText:
 	done
 
 GiovanniYoureDoneText:
-	text "Giovanni: Don't"
-	line "you see?"
+	text_ntag "Giovanni"
+	text "Don't you see?"
 
 	para "It is not through"
 	line "discord and chaos"
@@ -407,7 +413,8 @@ GiovanniYoureDoneText:
 	done
 
 BikerBossUnderstoodText:
-	text "Paxton: …Yes."
+	text_ntag "Paxton"
+	text "…Yes."
 
 	para "I…I shall go."
 
@@ -429,8 +436,9 @@ BikerBossUnderstoodText:
 	done
 
 GiovanniGoodbyeText:
-	text "Giovanni: You did"
-	line "well, <PLAYER>."
+	text_ntag "Giovanni"
+	text "You did well,"
+	line "<PLAYER>."
 
 	para "Someday, Kanto can"
 	line "restore itself to"
@@ -481,7 +489,8 @@ GiovanniGoodbyeText:
 	done
 
 GiovanniGoodText:
-	text "Giovanni: ………"
+	text_ntag "Giovanni"
+	text "………"
 
 	para "I really must"
 	line "thank <PLAYER>."
@@ -564,9 +573,9 @@ GiovanniGoodText:
 	done
 
 FedHideoutB4FRivalText:
-	text "<RIVAL>: There"
-	line "should be a"
-	cont "Delinquent with"
+	text_ntag "<RIVAL>"
+	text "There should be a"
+	line "Delinquent with"
 	cont "the elevator"
 	cont "password on this"
 	cont "floor!"
@@ -586,7 +595,8 @@ FedHideoutB4FDelinquentText:
 	done
 
 FedHideoutB4FGiovanniText:
-	text "Giovanni: Ha!"
+	text_ntag "Giovanni"
+	text "Ha!"
 
 	para "I haven't felt this"
 	line "alive in years!"

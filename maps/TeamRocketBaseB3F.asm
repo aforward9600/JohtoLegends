@@ -68,15 +68,7 @@ RocketBaseBoss:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_HIDEOUT_ARIANA
 	opentext
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .ArianaHatesDraco
 	writetext HideoutArianaDahliaAfterText
-	waitbutton
-	closetext
-	sjump .KogaStopsAriana
-
-.ArianaHatesDraco:
-	writetext HideoutArianaDracoAfterText
 	waitbutton
 	closetext
 .KogaStopsAriana:
@@ -267,6 +259,7 @@ TeamRocketBaseB3FRocketText:
 	done
 
 HideoutB3FArianaBeforeText:
+	text_ntag "Ariana"
 	text "What? You got out?"
 
 	para "Of course you"
@@ -276,50 +269,59 @@ HideoutB3FArianaBeforeText:
 	done
 
 HideoutB3FArianaDahliaText:
-	text "<RIVAL>: You!"
+	text_ntag "<RIVAL>"
+	text "You!"
 
 	para "You're the one"
 	line "that left us to"
-	cont "rot in that cell!"
+	cont "rot in that cell!@"
+	text_waitbutton
 
-	para "Ariana: Your girl-"
-	line "friend is here to"
-	cont "watch you lose!"
+	text_ntag "Ariana"
+	text "Your girlfriend is"
+	line "here to watch you"
+	cont "lose!"
 
 	para "How precious!"
 
 	para "After I'm done"
 	line "with you, she'll"
 	cont "be a piece of"
-	cont "cake!"
+	cont "cake!@"
+	text_waitbutton
 
-	para "<RIVAL>: What was"
-	line "that?!"
+	text_ntag "<RIVAL>"
+	text "What was that?!"
 
 	para "Go on, <PLAYER>!"
 	line "Take her down!"
 	done
 
 HideoutB3FArianaDracoText:
-	text "<RIVAL>: You!"
+	text_ntag "<RIVAL>"
+	text "You!"
 
 	para "You're the one"
 	line "that left us to"
-	cont "rot in that cell!"
+	cont "rot in that cell!@"
+	text_waitbutton
 
-	para "Ariana: Your boy-"
-	line "friend is here to"
-	cont "watch you lose!"
+	text_ntag "Ariana"
+	text "Your boyfriend is"
+	line "here to watch you"
+	cont "lose!"
 
 	para "How precious!"
 
 	para "After I'm done"
 	line "with you, he'll"
 	cont "be a piece of"
-	cont "cake!"
+	cont "cake!@"
+	text_waitbutton
 
-	para "<RIVAL>: Think you"
-	line "are funny, do ya?"
+	text_ntag "<RIVAL>"
+	text "Think you're funny,"
+	line "do ya?"
 
 	para "Go on, <PLAYER>!"
 	line "Take her down!"
@@ -332,6 +334,7 @@ Ariana3BeatenText:
 	done
 
 RocketBaseArianaText:
+	text_ntag "Ariana"
 	text "ARGH!"
 
 	para "You traitor!"
@@ -345,6 +348,7 @@ MNinjaM1SeenText:
 	done
 
 IllHealYouB3FText:
+	text_ntag "<RIVAL>"
 	text "There's a strange"
 	line "presence here…"
 
@@ -366,7 +370,8 @@ TheresAPCText:
 	done
 
 HideoutArianaDahliaAfterText:
-	text "Ariana: Pah!"
+	text_ntag "Ariana"
+	text "Pah!"
 
 	para "Whatever!"
 
@@ -376,51 +381,30 @@ HideoutArianaDahliaAfterText:
 
 	para "Especially with-"
 	line "out the password,"
-	cont "that only I know!"
+	cont "that only I know!@"
+	text_waitbutton
 
-	para "<RIVAL>: You better"
-	line "tell us, you"
-	cont "witch!"
+	text_ntag "<RIVAL>"
+	text "You better tell"
+	line "us, you witch!@"
+	text_waitbutton
 
-	para "Ariana: Witch?!"
+	text_ntag "Ariana"
+	text "Witch?!"
 
 	para "How dare you, you"
 	line "little b…"
 	done
 
-HideoutArianaDracoAfterText:
-	text "Ariana: Pah!"
-
-	para "Whatever!"
-
-	para "Not like you're"
-	line "going to leave"
-	cont "here!"
-
-	para "Especially with-"
-	line "out the password,"
-	cont "that only I know!"
-
-	para "<RIVAL>: You better"
-	line "tell us, you"
-	cont "witch!"
-
-	para "Ariana: Witch?!"
-
-	para "How dare you, you"
-	line "little d…"
-	done
-
 ArianaWhosThereText:
-	text "Ariana:…!"
-
-	para "Who's there?!"
+	text_ntag "Ariana"
+	text "…! Who's there?!"
 	done
 
 WhatDoYouThinkYoureDoingText:
-	text "Ariana: What do"
-	line "you think you're"
-	cont "doing?!"
+	text_ntag "Ariana"
+	text "What do you think"
+	line "you're doing?!"
 
 	para "Untie me this"
 	line "instant!"
@@ -430,8 +414,9 @@ WhatDoYouThinkYoureDoingText:
 	done
 
 IAmNoLongerAPawnText:
-	text "Koga: I refuse to"
-	line "be a pawn in such"
+	text_ntag "Koga"
+	text "I refuse to be a"
+	line "pawn in such"
 	cont "nefarious schemes."
 
 	para "You will tell us"
@@ -448,8 +433,9 @@ IAmNoLongerAPawnText:
 	done
 
 AlrightIllTellYouText:
-	text "Ariana: A-alright,"
-	line "I'll tell you!"
+	text_ntag "Ariana"
+	text "A-alright, I'll"
+	line "tell you!"
 
 	para "The password is:"
 
@@ -465,8 +451,9 @@ AlrightIllTellYouText:
 	done
 
 WeHaveThePasswordText:
-	text "Koga: We now have"
-	line "the password."
+	text_ntag "Koga"
+	text "We now have the"
+	line "password."
 
 	para "I have overheard"
 	line "that there is a"
@@ -479,6 +466,7 @@ WeHaveThePasswordText:
 	done
 
 GoodThingHesOnOurSideText:
+	text_ntag "<RIVAL>"
 	text "…Good thing he's"
 	line "on our side…"
 

@@ -211,9 +211,11 @@ HelloText:
 	para "Hello. My name is"
 	line "Miyamoto. I am a"
 	cont "freelance photo-"
-	cont "grapher."
+	cont "grapher.@"
+	text_waitbutton
 
-	para "I heard some rum-"
+	text_ntag "Miyamoto"
+	text "I heard some rum-"
 	line "mors about a rare"
 	cont "#mon here, but"
 
@@ -223,7 +225,7 @@ HelloText:
 
 	para "And you are?"
 
-	para "..........Ah,"
+	para "…………Ah,"
 	line "<PLAYER>, is it?"
 
 	para "I see that you"
@@ -242,6 +244,7 @@ MiyamotoLossText:
 	done
 
 WillBeKeepingAnEyeText:
+	text_ntag "Miyamoto"
 	text "I'll be continuing"
 	line "my journey to snap"
 	cont "a rare picture,"
@@ -258,9 +261,9 @@ WillBeKeepingAnEyeText:
 	done
 
 LakeOfRageRivalScaryText:
-	text "............"
-	line "That woman at the"
-	cont "lake...."
+	text_ntag "<RIVAL>"
+	text "…That woman at the"
+	line "lake…"
 
 	para "She's quite scary."
 	line "She looks"
@@ -268,12 +271,13 @@ LakeOfRageRivalScaryText:
 
 	para "can't remember if"
 	line "I've ever seen her"
-	cont "before..."
+	cont "before…"
 	done
 
 LakeOfRageRivalThatWasSomethingText:
-	text ".....Well, that"
-	line "was something."
+	text_ntag "<RIVAL>"
+	text "……Well, that was"
+	line "something."
 
 	para "I'm going to stick"
 	line "around for a while"

@@ -108,7 +108,8 @@ HidePlayerMtSilverMovement:
 	step_end
 
 EpilogueNeighborText:
-	text "Neighbor: Wow!"
+	text_ntag "Neighbor"
+	text "Wow!"
 
 	para "That was an"
 	line "incredible story!"
@@ -123,8 +124,9 @@ EpilogueNeighborText:
 	done
 
 RivalEpilogueText:
-	text "<RIVAL>: Oh,"
-	line "you're too kind!"
+	text_ntag "<RIVAL>"
+	text "Oh, you're too"
+	line "kind!"
 
 	para "It was quite the"
 	line "journey, and I was"
@@ -139,8 +141,9 @@ RivalEpilogueText:
 	done
 
 PlayerEpilogueText:
-	text "<PLAYER>: Oh,"
-	line "you're too kind!"
+	text_ntag "<PLAYER>"
+	text "Oh, you're too"
+	line "kind!"
 
 	para "It was quite the"
 	line "journey, and I was"
@@ -155,6 +158,7 @@ PlayerEpilogueText:
 	done
 
 OhGoldText:
+	text_ntag "<RIVAL>"
 	text "Oh, Gold…! Our"
 	line "neighbor, Prof."
 
@@ -163,6 +167,7 @@ OhGoldText:
 	done
 
 OhCrystalText:
+	text_ntag "<PLAYER>"
 	text "Oh, Kris…! Our"
 	line "neighbor, Prof."
 
@@ -217,7 +222,8 @@ PokegearText:
 	done
 
 PlayerText:
-	text "<RIVAL>: ………………"
+	text_ntag "<RIVAL>"
+	text "………………"
 
 	para "…<PLAYER>…"
 
@@ -231,7 +237,8 @@ PlayerText:
 	done
 
 RivalText:
-	text "<PLAYER>: ………………"
+	text_ntag "<PLAYER>"
+	text "………………"
 
 	para "…<RIVAL>…"
 

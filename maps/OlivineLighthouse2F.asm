@@ -126,6 +126,7 @@ ThisKidIsToughText:
 	done
 
 GoOnAheadText:
+	text_ntag "<RIVAL>"
 	text "Go on ahead, this"
 	line "is easy!"
 	done
@@ -148,6 +149,7 @@ Lighthouse2FGentlemanText:
 	done
 
 IllHealYouLighthouseText:
+	text_ntag "<RIVAL>"
 	text "Hey, are your"
 	line "#mon doing"
 	cont "alright?"

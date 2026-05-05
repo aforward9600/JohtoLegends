@@ -26,6 +26,7 @@ Ariana4LastPokemonText:
 	done
 
 TinTower6FArianaSeenText:
+	text_ntag "Ariana"
 	text "This is really"
 	line "getting out of"
 	cont "hand."
@@ -43,6 +44,7 @@ TinTower6FArianaBeatenText:
 	done
 
 TinTower6FArianaAfterText:
+	text_ntag "Ariana"
 	text "…I can't muster"
 	line "the energy to get"
 	cont "mad…"

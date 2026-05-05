@@ -111,9 +111,11 @@ AgathaLastMonText:
 
 AgathaScript_AgathaBeforeText:
 	text "I am Agatha of the"
-	line "Elite Four."
+	line "Elite Four.@"
+	text_waitbutton
 
-	para "I'm the strongest"
+	text_ntag "Agatha"
+	text "I'm the strongest"
 	line "member, since I've"
 	cont "been here the"
 	cont "longest."
@@ -153,6 +155,7 @@ AgathaScript_AgathaBeatenText:
 	done
 
 AgathaScript_AgathaDefeatText:
+	text_ntag "Agatha"
 	text "Well done, young"
 	line "one."
 
@@ -179,8 +182,9 @@ AgathaScript_AgathaDefeatText:
 	done
 
 AgathaScript_AgathaBeforeText2:
-	text "Agatha: Back again"
-	line "are you?"
+	text_ntag "Agatha"
+	text "Back again, are"
+	line "you?"
 
 	para "The reigning Champ"
 	line "coming to defend"
@@ -192,9 +196,9 @@ AgathaScript_AgathaBeforeText2:
 	done
 
 AgathaScript_AgathaDefeatText2:
-	text "Agatha: You're"
-	line "really something,"
-	cont "child!"
+	text_ntag "Agatha"
+	text "You're really"
+	line "something, child!"
 
 	para "You'd give Oak a"
 	line "run for his money"

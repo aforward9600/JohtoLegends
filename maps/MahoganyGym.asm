@@ -255,6 +255,7 @@ GoesBackMovement2:
 	step_resume
 
 PryceText_Intro:
+	text_ntag "Pryce"
 	text "Hurrmph! I heard"
 	line "some kids around"
 	cont "here are calling"
@@ -305,6 +306,7 @@ PryceText_StillGotIt:
 	done
 
 PryceText_After:
+	text_ntag "Pryce"
 	text "I became an Ice-"
 	line "Type Gym Leader"
 	cont "because I enjoyed"
@@ -325,6 +327,7 @@ Text_ReceivedGlacierBadge:
 	done
 
 PryceText_GlacierBadgeSpeech:
+	text_ntag "Pryce"
 	text "That's your first"
 	line "Badge, right? You"
 	cont "are on your way to"
@@ -345,6 +348,7 @@ PryceText_GlacierBadgeSpeech:
 	done
 
 PryceText_IcyWindSpeech:
+	text_ntag "Pryce"
 	text "That TM contains"
 	line "Icy Wind."
 
@@ -357,6 +361,7 @@ PryceText_IcyWindSpeech:
 	done
 
 PryceText_GoodLooks:
+	text_ntag "Pryce"
 	text "I'll keep my"
 	line "dashing good"
 	cont "looks, even when"
@@ -368,6 +373,7 @@ PryceText_GoodLooks:
 	done
 
 PryceText_WelcomeBack:
+	text_ntag "Pryce"
 	text "Well, well, well,"
 	line "looks who's back!"
 
@@ -470,6 +476,7 @@ SkierPamAfterBattleText:
 	done
 
 MahoganyGymGuyText:
+	text_ntag "Jim Gyde"
 	text "How's it going,"
 	line "champ in the"
 	cont "making?"
@@ -501,6 +508,7 @@ MahoganyGymGuyText:
 	done
 
 MahoganyGymGuyWinText:
+	text_ntag "Jim Gyde"
 	text "Pryce is ice-cold,"
 	line "but you're firey-"
 	cont "hot! You melted"
@@ -509,6 +517,7 @@ MahoganyGymGuyWinText:
 	done
 
 ByTheWay1Text:
+	text_ntag "Jim Gyde"
 	text "Oh, by the way,"
 	line "your friend"
 	cont "<RIVAL> told me to"
@@ -523,6 +532,7 @@ ByTheWay1Text:
 	done
 
 ByTheWay2Text:
+	text_ntag "Jim Gyde"
 	text "Oh, by the way,"
 	line "your friend"
 	cont "<RIVAL> told me to"
@@ -537,6 +547,7 @@ ByTheWay2Text:
 	done
 
 MahoganyGymGuyFaithfulText:
+	text_ntag "Jim Gyde"
 	text "How's it going,"
 	line "champ in the"
 	cont "making?"
@@ -564,6 +575,7 @@ MahoganyGymGuyFaithfulText:
 	done
 
 PryceText_WelcomeBackChampion:
+	text_ntag "Pryce"
 	text "So, you're the"
 	line "Chamion now!"
 

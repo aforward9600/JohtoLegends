@@ -188,7 +188,8 @@ CeruleanCityFisherText:
 	done
 
 CeruleanCityDaisyText:
-	text "Daisy: Shhh!"
+	text_ntag "Daisy"
+	text "Shhh!"
 
 	para "I'm hiding from my"
 	line "sisters!"
@@ -204,7 +205,8 @@ CeruleanCityDaisyText:
 	done
 
 CeruleanCityVioletText:
-	text "Violet: Go away!"
+	text_ntag "Violet"
+	text "Go away!"
 
 	para "We're playing hide"
 	line "and seek!"
@@ -226,7 +228,8 @@ CeruleanCityVioletText:
 	done
 
 CeruleanCityLilyText:
-	text "Lily: Eeeek!"
+	text_ntag "Lily"
+	text "Eeeek!"
 
 	para "…Oh, I'm sorry."
 

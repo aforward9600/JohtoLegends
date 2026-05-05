@@ -26,6 +26,7 @@ Archer4LastMonText:
 	done
 
 TinTower9FArcherSeenText:
+	text_ntag "Archer"
 	text "You again, huh?"
 
 	para "I guess this was"
@@ -40,6 +41,7 @@ TinTower9FArcherBeatenText:
 	done
 
 TinTower9FArcherAfterText:
+	text_ntag "Archer"
 	text "Well, this is"
 	line "unfortunate."
 

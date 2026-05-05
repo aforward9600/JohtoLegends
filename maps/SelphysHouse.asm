@@ -14,6 +14,7 @@ SelphysHouseButlerScript:
 	jumptextfaceplayer SelphysHouseButlerText
 
 SelphysHouseSelphyText:
+	text_ntag "Selphy"
 	text "Are you rich?"
 
 	para "If not, I don't"

@@ -97,7 +97,8 @@ OaksLabPC:
 	jumptext OaksLabPCText
 
 OakWelcomeKantoText:
-	text "Oak: Ah, <PLAY_G>!"
+	text_ntag "Prof.Oak"
+	text "Ah, <PLAY_G>!"
 	line "It's good of you"
 
 	para "to come see me!"
@@ -112,6 +113,7 @@ OakWelcomeKantoText:
 	done
 
 OakLabDexCheckText:
+	text_ntag "Prof.Oak"
 	text "How is your"
 	line "Journal coming?"
 
@@ -119,13 +121,15 @@ OakLabDexCheckText:
 	done
 
 OakLabGoodbyeText:
+	text_ntag "Prof.Oak"
 	text "If you're in the"
 	line "area, I hope you"
 	cont "come visit again."
 	done
 
 OakOpenMtSilverText:
-	text "Oak: Well done,"
+	text_ntag "Prof.Oak"
+	text "Well done,"
 	line "<PLAYER>!"
 
 	para "Well done indeed!"
@@ -163,8 +167,9 @@ OakOpenMtSilverText:
 	done
 
 OakNoKantoBadgesText:
-	text "Oak: Hmm? You"
-	line "haven't found any"
+	text_ntag "Prof.Oak"
+	text "Hmm? You haven't"
+	line "found any"
 	cont "candidates yet?"
 
 	para "Well, no one said"
@@ -182,8 +187,9 @@ OakNoKantoBadgesText:
 	done
 
 OakYesKantoBadgesText:
-	text "Oak: Ah, starting"
-	line "to find candidates"
+	text_ntag "Prof.Oak"
+	text "Ah, starting to"
+	line "find candidates"
 	cont "are you?"
 
 	para "This region is"
@@ -272,8 +278,9 @@ OaksLabPCText:
 	done
 
 OakGotAllBadgesText:
-	text "Oak: Oh, I see you"
-	line "have found all of"
+	text_ntag "Prof.Oak"
+	text "Oh, I see you have"
+	line "found all of"
 	cont "candidates!"
 
 	para "Wonderful!"
@@ -283,7 +290,8 @@ OakGotAllBadgesText:
 	done
 
 OnceAgainThankYouText:
-	text "Oak: Once again,"
+	text_ntag "Prof.Oak"
+	text "Once again,"
 	line "thank you!"
 	done
 
@@ -293,8 +301,9 @@ PlayerGotSilverTrophy:
 	done
 
 BattleOakText:
-	text "Oak: Good to see"
-	line "you <PLAYER>!"
+	text_ntag "Prof.Oak"
+	text "Good to see you"
+	line "<PLAYER>!"
 
 	para "You know, I used"
 	line "to be quite the"
@@ -307,18 +316,19 @@ BattleOakText:
 	done
 
 OakWinText:
-	text "Oak: The savior of"
+	text "The savior of"
 	line "Kanto indeed!"
 	done
 
 OakLastMonText:
-	text "Oak: I haven't felt"
-	line "this rush in a"
-	cont "long time!"
+	text "I haven't felt this"
+	line "rush in a long"
+	cont "time!"
 	done
 
 OakBeatText:
-	text "Oak: Your skills"
+	text_ntag "Prof.Oak"
+	text "Your skills"
 	line "surpass even my"
 	cont "best expectations!"
 

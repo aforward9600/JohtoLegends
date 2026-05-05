@@ -141,6 +141,7 @@ IcePath_RivalLeaves:
 	step_end
 
 IcePath1FRivalText_Seen:
+	text_ntag "<RIVAL>"
 	text "Hey <PLAYER>!"
 
 	para "Have you been"
@@ -164,6 +165,7 @@ RivalIcePathLossText:
 	done
 
 IcePathRivalText_YouWon:
+	text_ntag "<RIVAL>"
 	text "It looks like I"
 	line "need to work on"
 	cont "my team some"

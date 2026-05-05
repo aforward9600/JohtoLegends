@@ -100,6 +100,7 @@ RocketLairHallway1GruntMAfterText:
 	done
 
 RocketLairSherlesText:
+	text_ntag "Sherles"
 	text "Well done, kid!"
 
 	para "I guess I can't"

@@ -290,9 +290,11 @@ MiltonText_Howdy:
 
 	para "Gym! Name's"
 	line "Milton, and I also"
-	cont "own MooMoo Farm! I"
+	cont "own MooMoo Farm!@"
+	text_waitbutton
 
-	para "took up this here"
+	text_ntag "Milton"
+	text "I took this here"
 	line "job as Gym Leader"
 	cont "so we could make"
 
@@ -332,6 +334,7 @@ MiltonText_BeatenAgain:
 	done
 
 BeatenMiltonText:
+	text_ntag "Milton"
 	text "I am impressed! Ya"
 	line "handled that"
 	cont "better than I can"
@@ -348,6 +351,7 @@ PlayerReceivedPlainBadgeText:
 	done
 
 MiltonText_PlainBadgeSpeech:
+	text_ntag "Milton"
 	text "The Plain Badge"
 	line "makes #mon up"
 	cont "to Lv 60 obey you."
@@ -357,6 +361,7 @@ MiltonText_PlainBadgeSpeech:
 	done
 
 MiltonAttractText:
+	text_ntag "Milton"
 	text "It's Swords Dance!"
 	line "It sharply increa-"
 
@@ -368,6 +373,7 @@ MiltonAttractText:
 	done
 
 MiltonSisterText:
+	text_ntag "Milton"
 	text "My sister is an"
 	line "even better"
 	cont "trainer than I am,"
@@ -492,6 +498,7 @@ BreederNinaAfterBattleText:
 	done
 
 GoldenrodGymGuyText:
+	text_ntag "Jim Gyde"
 	text "How's it going,"
 	line "champ in the"
 	cont "making? Milton is"
@@ -506,6 +513,7 @@ GoldenrodGymGuyText:
 	done
 
 GoldenrodGymGuyWinText:
+	text_ntag "Jim Gyde"
 	text "Yee-haw! Congrats"
 	line "there pardner! Yer"
 	cont "a real tough"
@@ -518,6 +526,7 @@ GoldenrodGymGuyWinText:
 	done
 
 TowerIsBeingInvadedText:
+	text_ntag "<RIVAL>"
 	text "<PLAYER>!"
 
 	para "The old tower is"
@@ -536,15 +545,18 @@ TowerIsBeingInvadedText:
 	done
 
 GoldenrodGymRivalText:
+	text_ntag "<RIVAL>"
 	text "Tauros is no joke!"
 	done
 
 AsToughAsYouAreText:
+	text_ntag "Milton"
 	text "This kid is as"
 	line "tough as you are!"
 	done
 
 MiltonReadyForARematchText:
+	text_ntag "Milton"
 	text "Y'all ready for a"
 	line "rematch?"
 
@@ -553,14 +565,8 @@ MiltonReadyForARematchText:
 	cont "as last time!"
 	done
 
-BeatenMiltonAgainText:
-	text "Hot dang!"
-
-	para "Yer a tough one"
-	line "alright!"
-	done
-
 PostGameMiltonText:
+	text_ntag "Milton"
 	text "Ya met my sister,"
 	line "didn't ya?"
 
@@ -574,6 +580,7 @@ PostGameMiltonText:
 	done
 
 AlreadyMetSisterText:
+	text_ntag "Milton"
 	text "I'm really hopin'"
 	line "my sister will"
 	cont "have a kid soon."

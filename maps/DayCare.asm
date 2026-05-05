@@ -99,15 +99,7 @@ DayCareMrPokemon:
 	turnobject DAYCARE_RIVAL, UP
 .DayCareRival2:
 	opentext
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .DracoMrPokemon
 	writetext DahliaMrPokemonText
-	waitbutton
-	closetext
-	sjump MrPokemonLegendary
-
-.DracoMrPokemon:
-	writetext DracoMrPokemonText
 	waitbutton
 	closetext
 	sjump MrPokemonLegendary
@@ -124,8 +116,6 @@ MrPokemonLegendary:
 	setevent EVENT_GOLDENROD_GYM_RIVAL_1
 	setmapscene ROUTE_34, SCENE_ROUTE_34_NINJA
 	setevent EVENT_ROUTE_34_OFFICER
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .DayCareDracoFarewell
 	opentext
 	writetext DayCareDahliaFarewellText
 	waitbutton
@@ -134,19 +124,6 @@ MrPokemonLegendary:
 	disappear DAYCARE_RIVAL
 	playsound SFX_EXIT_BUILDING
 	pause 30
-	sjump .LeaveDaycare
-
-.DayCareDracoFarewell:
-	opentext
-	writetext DayCareDracoFarewellText
-	waitbutton
-	closetext
-	applymovement DAYCARE_RIVAL, DayCareRivalMovement2
-	disappear DAYCARE_RIVAL
-	playsound SFX_EXIT_BUILDING
-	pause 30
-	sjump .LeaveDaycare
-
 .LeaveDaycare:
 	setevent EVENT_DAY_CARE_MR_POKEMON
 	readvar VAR_FACING
@@ -155,14 +132,11 @@ MrPokemonLegendary:
 
 .PlayerLeavesDown:
 	applymovement PLAYER, DayCarePlayerMovement2
-	playsound SFX_EXIT_BUILDING
-	disappear PLAYER
-	special FadeOutPalettes
-	warpfacing LEFT, ROUTE_34, 11, 14
-	end
+	sjump .FinishPlayerLeaves
 
 .PlayerLeaves:
 	applymovement PLAYER, DayCarePlayerMovement1
+.FinishPlayerLeaves
 	playsound SFX_EXIT_BUILDING
 	disappear PLAYER
 	special FadeOutPalettes
@@ -198,29 +172,6 @@ DayCarePlayerMovement2:
 Text_GrampsLookingForYou:
 	text "Gramps was looking"
 	line "for you."
-	done
-
-Text_DayCareManTalksAboutEggTicket:
-	text "I'm the Day-Care"
-	line "Man."
-
-	para "There's something"
-	line "new in Goldenrod"
-
-	para "called the Trade"
-	line "CORNER."
-
-	para "I was given an EGG"
-	line "TICKET that can be"
-
-	para "traded in for a"
-	line "ODD EGG."
-
-	para "But since we run a"
-	line "DAY-CARE, we don't"
-
-	para "need it. You may"
-	line "as well have it."
 	done
 
 DayCareManText_GiveOddEgg:
@@ -287,18 +238,6 @@ DayCareMrPokemonBusyText:
 	cont "now."
 	done
 
-EndOfDemoText:
-	text "This is the end of"
-	line "the current demo."
-
-	para "Stay tuned for"
-	line "updates!"
-
-	para "Thats what this"
-	line "letter from"
-	cont "Ferropexola says!"
-	done
-
 HmWhatIsThatText:
 	text "Excuse me, I'm"
 	line "trying to have a"
@@ -339,8 +278,8 @@ HmWhatIsThatText:
 	done
 
 DahliaMrPokemonText:
-	text "<RIVAL>: Hey"
-	line "<PLAYER>!"
+	text_ntag "<RIVAL>"
+	text "Hey <PLAYER>!"
 
 	para "You found Mr."
 	line "#mon!"
@@ -355,30 +294,11 @@ DahliaMrPokemonText:
 
 	para "Mr. #mon, can"
 	line "you tell me about"
-	cont "my mine as well?"
-	done
-
-DracoMrPokemonText:
-	text "<RIVAL>: Hey"
-	line "<PLAYER>!"
-
-	para "You found Mr."
-	line "#mon!"
-
-	para "Have you found"
-	line "anything out?"
-
-	para "…A legendary #-"
-	line "mon?!"
-
-	para "Awesome!"
-
-	para "Mr. #mon, can"
-	line "you tell me about"
-	cont "my mine as well?"
+	cont "my wing as well?"
 	done
 
 MrPokemonLegendaryText:
+	text_ntag "Mr. #mon"
 	text "Y-you have one as"
 	line "well?!"
 
@@ -432,18 +352,8 @@ MrPokemonLegendaryText:
 	done
 
 DayCareDahliaFarewellText:
-	text "<RIVAL>: So, Bell"
-	line "Tower, huh?"
-
-	para "I'm off then!"
-
-	para "Thank you, Mr."
-	line "#mon!"
-	done
-
-DayCareDracoFarewellText:
-	text "<RIVAL>: So, Bell"
-	line "Tower, huh?"
+	text_ntag "<RIVAL>"
+	text "So, Bell Tower huh?"
 
 	para "I'm off then!"
 

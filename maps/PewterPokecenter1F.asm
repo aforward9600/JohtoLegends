@@ -58,6 +58,7 @@ PewterJigglypuffText:
 	done
 
 PewterPokecenter1FRivalText:
+	text_ntag "<RIVAL>"
 	text "I heard a rumor"
 	line "about a strong"
 	cont "trainer in the"
@@ -70,6 +71,7 @@ PewterPokecenter1FRivalText:
 	done
 
 PewterPokecenter1FRivalAfterText:
+	text_ntag "<RIVAL>"
 	text "So, Flint hid his"
 	line "identity to prot-"
 	cont "ect his family?"

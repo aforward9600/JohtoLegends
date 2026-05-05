@@ -208,6 +208,7 @@ SproutTower3FStatueText:
 	done
 
 SproutTowerWalkerText:
+	text_ntag "Walker"
 	text "I like this tower."
 
 	para "It makes me feel"

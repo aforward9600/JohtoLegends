@@ -187,7 +187,7 @@ KindleRoad_MapEvents:
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event 14, 32, BGEVENT_READ, KindleRoadSign
+	bg_event  6, 76, BGEVENT_READ, KindleRoadSign
 
 	db 12 ; object events
 	object_event 11, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KindleRoadScientistScript, -1

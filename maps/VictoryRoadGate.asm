@@ -302,8 +302,9 @@ VictoryRoadGateRightBlackBeltText:
 	done
 
 HeyThereSleepyHeadAgainText:
-	text "<RIVAL>: Hey"
-	line "there sleepy head!"
+	text_ntag "<RIVAL>"
+	text "Hey there sleepy"
+	line "head!"
 
 	para "Late again, huh?"
 
@@ -313,8 +314,8 @@ HeyThereSleepyHeadAgainText:
 	done
 
 WelcomeYouTwoText:
-	text "Oak: Welcome you"
-	line "two."
+	text_ntag "Prof.Oak"
+	text "Welcome you two."
 
 	para "I've called you"
 	line "here for a special"
@@ -323,9 +324,11 @@ WelcomeYouTwoText:
 	para "You're both aware"
 	line "of the embargo"
 	cont "between Kanto and"
-	cont "Johto, correct?"
+	cont "Johto, correct?@"
+	text_waitbutton
 
-	para "<RIVAL>: Yeah…"
+	text_ntag "<RIVAL>"
+	text "Yeah…"
 
 	para "Something happened"
 	line "in Kanto and now"
@@ -335,9 +338,10 @@ WelcomeYouTwoText:
 	done
 
 CorrectText:
-	text "Oak: Correct. A"
-	line "group of gangsters"
-	cont "known as the Kanto"
+	text_ntag "Prof.Oak"
+	text "Correct. A group"
+	line "of gangsters known"
+	cont "as the Kanto"
 	cont "Federation caused"
 	cont "this event."
 
@@ -348,14 +352,16 @@ CorrectText:
 
 	para "Some weren't lucky"
 	line "enough to get that"
-	cont "choice."
+	cont "choice.@"
+	text_waitbutton
 
-	para "<RIVAL>: …That's"
-	line "horrible…"
+	text_ntag "<RIVAL>"
+	text "…That's horrible…"
 	done
 
 YesHorribleText:
-	text "Oak: …Yes."
+	text_ntag "Prof.Oak"
+	text "…Yes."
 
 	para "Some Leaders are"
 	line "gone. Some are in"
@@ -379,26 +385,32 @@ YesHorribleText:
 	para "But I have a plan."
 
 	para "And it requires"
-	line "both of you."
+	line "both of you.@"
+	text_waitbutton
 
-	para "<RIVAL>: Us?"
+	text_ntag "<RIVAL>"
+	text "Us?"
 	done
 
 TheTwoOfYouText:
-	text "Oak: Yes. As you"
-	line "two are Champions"
-	cont "of the #mon"
+	text_ntag "Prof.Oak"
+	text "Yes. As you two"
+	line "are Champions of"
+	cont "the #mon"
 	cont "League."
 
 	para "This gives you an"
-	line "edge over others."
+	line "edge over others.@"
+	text_waitbutton
 
-	para "<RIVAL>: What"
-	line "would you have us"
-	cont "do?"
+	text_ntag "<RIVAL>"
+	text "What would you"
+	line "have us do?@"
+	text_waitbutton
 
-	para "Oak: I want you to"
-	line "take these badges."
+	text_ntag "Prof.Oak"
+	text "I want you to take"
+	line "these badges."
 
 	para "They belonged to"
 	line "the previous Gym"
@@ -425,10 +437,10 @@ GivePlayerBadgesText:
 	done
 
 BadgeNumberExplainText:
-	text "Oak: Each badge"
-	line "given will"
-	cont "increase your"
-	cont "badge count."
+	text_ntag "Prof.Oak"
+	text "Each badge given"
+	line "will increase your"
+	cont "your badge count."
 
 	para "That will help you"
 	line "keep track of how"
@@ -441,19 +453,21 @@ BadgeNumberExplainText:
 
 	para "Town. The door to"
 	line "my lab is always"
-	cont "open!"
+	cont "open!@"
+	text_waitbutton
 
-	para "<RIVAL>: Wait,"
-	line "Professor!"
+	text_ntag "<RIVAL>"
+	text "Wait, Professor!"
 
 	para "How can you go"
 	line "between Johto and"
 	cont "Kanto with the"
-	cont "embargo up?"
+	cont "embargo up?@"
+	text_waitbutton
 
-	para "Oak: Well, being"
-	line "me has its"
-	cont "privileges."
+	text_ntag "Prof.Oak"
+	text "Well, being me has"
+	line "its privileges."
 
 	para "I'd say you have"
 	line "it too!"
@@ -468,6 +482,7 @@ BadgeNumberExplainText:
 	done
 
 IllScoutText:
+	text_ntag "<RIVAL>"
 	text "I'll scout out"
 	line "towns for our"
 	cont "potential Gym"
@@ -482,8 +497,8 @@ IllScoutText:
 	done
 
 VictoryRoadGateWelcomePlayerText:
-	text "Oak: Welcome,"
-	line "<PLAYER>."
+	text_ntag "Prof.Oak"
+	text "Welcome, <PLAYER>."
 
 	para "Would you mind"
 	line "stepping over here"
@@ -492,8 +507,8 @@ VictoryRoadGateWelcomePlayerText:
 	done
 
 HeyThereYouReadyText:
-	text "<RIVAL>: Hey there"
-	line "<PLAYER>!"
+	text_ntag "<RIVAL>"
+	text "Hey there <PLAYER>!"
 
 	para "You ready to"
 	line "help Prof. Oak?"
@@ -511,6 +526,7 @@ WelcomeBackChampionText:
 	done
 
 WereFinallyHereText:
+	text_ntag "<RIVAL>"
 	text "We're finally"
 	line "here, <PLAYER>."
 

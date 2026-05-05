@@ -397,6 +397,7 @@ EinWinText:
 	done
 
 ImpressiveBattlingText:
+	text_ntag "Ein"
 	text "Impressive skills"
 	line "you have."
 
@@ -416,10 +417,12 @@ ImpressiveBattlingText:
 	done
 
 IntriguingText:
+	text_ntag "Ein"
 	text "Most intriguing…"
 	done
 
 MyHypothesisWasWrongText:
+	text_ntag "Ein"
 	text "It broke out all"
 	line "on its own."
 
@@ -432,35 +435,45 @@ MyHypothesisWasWrongText:
 	done
 
 JustSawRaikouText:
-	text "<RIVAL>: I just"
-	line "saw Raikou speed"
-	cont "by. Did you free"
-	cont "it?"
+	text_ntag "<RIVAL>"
+	text "I just saw Raikou"
+	line "speed by. Did you"
+	cont "free it?@"
+	text_waitbutton
 
-	para "Ein: It wasn't"
-	line "your friend."
+	text_ntag "Ein"
+	text "It wasn't your"
+	line "friend."
 
 	para "The Rocket Ball,"
 	line "designed to catch"
 	cont "without fail, has,"
-	cont "indeed, failed."
+	cont "indeed, failed.@"
+	text_waitbutton
 
-	para "<RIVAL>: Hah!"
+	text_ntag "<RIVAL>"
+	text "Hah!"
 
 	para "That means we can"
 	line "free the others"
 	cont "the same way,"
-	cont "right?"
+	cont "right?@"
+	text_waitbutton
 
-	para "Ein: Statistically"
-	line "speaking, yes."
+	text_ntag "Ein"
+	text "Statistically"
+	line "speaking, yes.@"
+	text_waitbutton
 
-	para "<RIVAL>: Great!"
+	text_ntag "<RIVAL>"
+	text "Great!"
 
-	para "Now let them out!"
+	para "Now let them out!@"
+	text_waitbutton
 
-	para "Ein: Sorry, but I"
-	line "can't do that."
+	text_ntag "Ein"
+	text "Sorry, but I can't"
+	line "do that."
 
 	para "I don't have the"
 	line "key. The boss has"
@@ -473,16 +486,19 @@ JustSawRaikouText:
 	done
 
 ThatsARocketBallText:
-	text "<RIVAL>: These are"
-	line "those Rocket Balls"
-	cont "you were talking"
+	text_ntag "<RIVAL>"
+	text "These are those"
+	line "Rocket Balls you"
+	cont "were talking"
 	cont "about."
 
 	para "Why are you giving"
-	line "us these?"
+	line "us these?@"
+	text_waitbutton
 
-	para "Ein: I will be"
-	line "leaving shortly."
+	text_ntag "Ein"
+	text "I will be leaving"
+	line "shortly."
 
 	para "I have no further"
 	line "use for those who"
@@ -492,13 +508,15 @@ ThatsARocketBallText:
 	para "I hope to find"
 	line "someone to finance"
 	cont "my Shadow #mon"
-	cont "research instead."
+	cont "research instead.@"
+	text_waitbutton
 
-	para "<RIVAL>: Shadow"
-	line "#mon?"
+	text_ntag "<RIVAL>"
+	text "Shadow #mon?@"
 
-	para "Ein: You needn't"
-	line "worry about that."
+	text_ntag "Ein"
+	text "You needn't worry"
+	line "about that."
 
 	para "I believe that"
 	line "those Rocket Balls"
@@ -516,12 +534,14 @@ ThatsARocketBallText:
 	line "things to finish."
 
 	para "I'll open the door"
-	line "in the hallway."
+	line "in the hallway.@"
+	text_waitbutton
 
-	para "<RIVAL>: I don't"
-	line "like this guy, but"
-	cont "at least we have a"
-	cont "chance now."
+	text_ntag "<RIVAL>"
+	text "I don't like this"
+	line "guy, but at least"
+	cont "we have a chance"
+	cont "now."
 
 	para "I'm going on ahead."
 
@@ -529,6 +549,7 @@ ThatsARocketBallText:
 	done
 
 MaybeOrreText:
+	text_ntag "Ein"
 	text "Perhaps Greevil"
 	line "back home will"
 	cont "finance me…"
@@ -600,6 +621,7 @@ EmptyTankText:
 	done
 
 ICaughtHoOhText:
+	text_ntag "<RIVAL>"
 	text "…I…I did it…"
 
 	para "I caught Ho-Oh!"
@@ -627,6 +649,7 @@ ICaughtHoOhText:
 	done
 
 ICaughtLugiaText:
+	text_ntag "<RIVAL>"
 	text "…I…I did it…"
 
 	para "I caught Lugia!"
@@ -659,9 +682,9 @@ LearnWaterfallText:
 	text "You learned a new"
 	line "tune!"
 	done
-	
 
 ThatsALaprasCallText:
+	text_ntag "<RIVAL>"
 	text "You'll need it to"
 	line "get through Tojo"
 	cont "Falls."

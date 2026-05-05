@@ -48,7 +48,8 @@ MistysGrandmotherText2:
 	done
 
 BabyMistyText:
-	text "Misty:…………………………"
+	text_ntag "Misty"
+	text "…………………………"
 
 	para "…………Gah?"
 	done

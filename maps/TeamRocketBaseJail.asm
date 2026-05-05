@@ -59,22 +59,16 @@ TeamRocketBaseJailRivalScript:
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	applymovement TEAMROCKETBASEJAIL_ARIANA, ArianaShowsUpMovement
 	opentext
+	writetext ArianaPersianText
+	waitbutton
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .LittleBoyfriend
 	writetext PersianDahliaText
-	waitbutton
-	closetext
-	applymovement TEAMROCKETBASEJAIL_ARIANA, ArianaLeavesMovement
-	disappear TEAMROCKETBASEJAIL_ARIANA
-	playsound SFX_EXIT_BUILDING
-	pause 30
-	moveobject TEAMROCKETBASEJAIL_ARIANA, 3, 16
-	waitsfx
-	special RestartMapMusic
-	sjump .KogaAppears
+	sjump .FinishArianaScene
 
 .LittleBoyfriend:
 	writetext PersianDracoText
+.FinishArianaScene
 	waitbutton
 	closetext
 	applymovement TEAMROCKETBASEJAIL_ARIANA, ArianaLeavesMovement
@@ -165,6 +159,7 @@ RivalLeavesJailMovement:
 	step_end
 
 UghHowAreYouText:
+	text_ntag "<RIVAL>"
 	text "Ugh…"
 
 	para "That hurt…"
@@ -187,6 +182,7 @@ UghHowAreYouText:
 	done
 
 HowWillWeGetOutText:
+	text_ntag "<RIVAL>"
 	text "The door's locked,"
 	line "and there's no"
 	cont "other way out."
@@ -195,19 +191,23 @@ HowWillWeGetOutText:
 	line "out?"
 	done
 
-PersianDahliaText:
+ArianaPersianText:
+	text_ntag "Ariana"
 	text "Well, well, well!"
 
 	para "Look what the"
 	line "Persian dragged"
-	cont "in!"
+	cont "in!@"
+	text_waitbutton
 
-	para "<RIVAL>: You!"
+	text_ntag "<RIVAL>"
+	text "You!"
 
-	para "I remember you!"
+	para "I remember you!@"
+	text_waitbutton
 
-	para "Ariana: Oh, do"
-	line "you?"
+	text_ntag "Ariana"
+	text "Oh, do you?"
 
 	para "I'm flattered,"
 	line "really."
@@ -222,17 +222,19 @@ PersianDahliaText:
 	cont "in our sides, and"
 	cont "you'll remain here"
 	cont "until we no longer"
-	cont "need you."
+	cont "need you.@"
+	text_waitbutton
 
-	para "<RIVAL>: Wait, my"
-	line "wing!"
+	text_ntag "<RIVAL>"
+	text "Wait, my wing!"
 
 	para "What did you do"
-	line "with it?!"
+	line "with it?!@"
+	text_waitbutton
 
-	para "Ariana: Oh, you"
-	line "mean that old"
-	cont "feather?"
+	text_ntag "Ariana"
+	text "Oh, you mean that"
+	line "old feather?"
 
 	para "Don't worry, we're"
 	line "keeping it nice"
@@ -249,13 +251,18 @@ PersianDahliaText:
 	cont "lovebirds, I have"
 	cont "more important"
 	cont "business to attend"
-	cont "to."
+	cont "to.@"
+	text_waitbutton
 
-	para "<RIVAL>: You know"
-	line "we're older than"
-	cont "you, right?"
+	text_ntag "<RIVAL>"
+	text "You know we're"
+	line "older than you,"
+	cont "right?"
+	done
 
-	para "Ariana: Shut up!"
+PersianDahliaText:
+	text_ntag "Ariana"
+	text "Shut up!"
 
 	para "I'll give you and"
 	line "your boyfriend"
@@ -268,66 +275,8 @@ PersianDahliaText:
 	done
 
 PersianDracoText:
-	text "Well, well, well!"
-
-	para "Look what the"
-	line "Persian dragged"
-	cont "in!"
-
-	para "<RIVAL>: You!"
-
-	para "I remember you!"
-
-	para "Ariana: Oh, do"
-	line "you?"
-
-	para "I'm flattered,"
-	line "really."
-
-	para "Regardless, you're"
-	line "here, and you're"
-	cont "not going any-"
-	cont "where."
-
-	para "You've both been"
-	line "thorough thorns"
-	cont "in our sides, and"
-	cont "you'll remain here"
-	cont "until we no longer"
-	cont "need you."
-
-	para "<RIVAL>: Wait, my"
-	line "wing!"
-
-	para "What did you do"
-	line "with it?!"
-
-	para "Ariana: Oh, you"
-	line "mean that old"
-	cont "feather?"
-
-	para "Don't worry, we're"
-	line "keeping it nice"
-	cont "and safe, until we"
-	cont "have use of it."
-
-	para "We took yours too,"
-	line "so don't bother"
-	cont "searching your"
-	cont "bag for it."
-
-	para "Now, if you'll"
-	line "excuse me, young"
-	cont "lovebirds, I have"
-	cont "more important"
-	cont "business to attend"
-	cont "to."
-
-	para "<RIVAL>: You know"
-	line "we're older than"
-	cont "you, right?"
-
-	para "Ariana: Shut up!"
+	text_ntag "Ariana"
+	text "Shut up!"
 
 	para "I'll give you and"
 	line "your girlfriend"
@@ -340,6 +289,7 @@ PersianDracoText:
 	done
 
 NowWhatText:
+	text_ntag "<RIVAL>"
 	text "Now what?"
 
 	para "We need to get"
@@ -348,14 +298,17 @@ NowWhatText:
 	done
 
 DontSpeakText:
+	text_ntag "???"
 	text "Do not speak."
 
 	para "I am here to"
 	line "rescue you."
 
-	para "My name is Koga."
+	para "My name is Koga.@"
+	text_waitbutton
 
-	para "I am a member of"
+	text_ntag "Koga"
+	text "I am a member of"
 	line "the Mahogany Ninja"
 	cont "clan."
 
@@ -382,7 +335,8 @@ DontSpeakText:
 	done
 
 WedBetterGetGoingText:
-	text ".................."
+	text_ntag "<RIVAL>"
+	text "…………………………"
 
 	para "We'd better get"
 	line "going."

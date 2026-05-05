@@ -4299,7 +4299,11 @@ BattleCommand_PoisonTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	call CheckIfTargetIsPoisonType
+	ld b, POISON
+	call CheckIfTargetIsGivenType
+	ret z
+	ld b, STEEL
+	call CheckIfTargetIsGivenType
 	ret z
 	ld a, [wEffectFailed]
 	and a
@@ -4363,7 +4367,12 @@ BattleCommand_Poison:
 	and $7f
 	jp z, .failed
 
-	call CheckIfTargetIsPoisonType
+	ld b, POISON
+	call CheckIfTargetIsGivenType
+	jp z, .failed
+
+	ld b, STEEL
+	call CheckIfTargetIsGivenType
 	jp z, .failed
 
 	call CheckUserNeutralGasMoldBreaker
@@ -4446,7 +4455,7 @@ BattleCommand_Poison:
 .Immunity
 	jp _PreventAbilityText
 
-CheckIfTargetIsPoisonType:
+CheckIfTargetIsGivenType:
 	ld de, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
@@ -4455,10 +4464,10 @@ CheckIfTargetIsPoisonType:
 .ok
 	ld a, [de]
 	inc de
-	cp POISON
+	cp b
 	ret z
 	ld a, [de]
-	cp POISON
+	cp b
 	ret
 
 PoisonOpponent:
@@ -4505,7 +4514,8 @@ BattleCommand_BurnTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	call CheckMoveTypeMatchesTarget ; Don't burn a Fire-type
+	ld b, FIRE
+	call CheckIfTargetIsGivenType ; Don't burn a Fire-type
 	ret z
 	ld a, [wEffectFailed]
 	and a
@@ -4587,7 +4597,8 @@ BattleCommand_FreezeTarget:
 	ret z
 	call CheckSun
 	ret z
-	call CheckMoveTypeMatchesTarget ; Don't freeze an Ice-type
+	ld b, ICE
+	call CheckIfTargetIsGivenType ; Don't freeze an Ice-type
 	ret z
 	ld a, [wEffectFailed]
 	and a
@@ -4752,7 +4763,8 @@ BattleCommand_Burn:
 	ld a, [wTypeModifier]
 	and $7f
 	jr z, .didnt_affect
-	call CheckMoveTypeMatchesTarget ; Don't burn a Fire-type
+	ld b, FIRE
+	call CheckIfTargetIsGivenType ; Don't burn a Fire-type
 	jr z, .didnt_affect
 	ld a, [wAttackMissed]
 	and a
@@ -7090,41 +7102,6 @@ BattleCommand_Paralyze:
 .didnt_affect
 	call AnimateFailedMove
 	jp PrintDoesntAffect
-
-CheckMoveTypeMatchesTarget:
-; Compare move type to opponent type.
-; Return z if matching the opponent type,
-; unless the move is Normal (Tri Attack).
-
-	push hl
-
-	ld hl, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wBattleMonType1
-.ok
-
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
-	cp NORMAL
-	jr z, .normal
-
-	cp [hl]
-	jr z, .return
-
-	inc hl
-	cp [hl]
-
-.return
-	pop hl
-	ret
-
-.normal
-	call SetAToOne
-	pop hl
-	ret
 
 EndRechargeOpp:
 	push hl

@@ -136,6 +136,7 @@ RivalSilenceText:
 	done
 
 PleaseBattleMeText:
+	text_ntag "<RIVAL>"
 	text "……………Please"
 	line "battle me again…"
 
@@ -145,6 +146,7 @@ PleaseBattleMeText:
 	done
 
 IKnowWhatINeedToDoText:
+	text_ntag "<RIVAL>"
 	text "…Thanks again."
 
 	para "…Ever since Bell"

@@ -116,6 +116,7 @@ TinTowerEusine:
 	writetextend HoOhIsYoursText
 
 IllHealYouBellTowerText:
+	text_ntag "<RIVAL>"
 	text "You doing OK?"
 
 	para "Here, I'll heal"
@@ -274,6 +275,7 @@ TinTower1FRocket1Text:
 	done
 
 TinTower1FRivalText:
+	text_ntag "<RIVAL>"
 	text "Don't worry about"
 	line "me, <PLAYER>!"
 

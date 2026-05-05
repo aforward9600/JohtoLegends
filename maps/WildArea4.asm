@@ -103,6 +103,7 @@ DontLikeSandText:
 	done
 
 HaveThisGibleText:
+	text_ntag "Cynthia"
 	text "We meet again."
 
 	para "The Wild Area is"
@@ -126,6 +127,7 @@ HaveThisGibleText:
 	done
 
 CynthiaPartyIsFullText:
+	text_ntag "Cynthia"
 	text "How do you expect"
 	line "to carry this"
 	cont "Gible if your"
@@ -133,6 +135,7 @@ CynthiaPartyIsFullText:
 	done
 
 TakeCareOfGibleText:
+	text_ntag "Cynthia"
 	text "Thank you."
 
 	para "Take good care"
@@ -161,6 +164,7 @@ GotGibleText:
 	done
 
 ComeBackAnyTimeText:
+	text_ntag "Cynthia"
 	text "I'll be here when-"
 	line "ever you want"
 	cont "this Gible."
@@ -178,6 +182,7 @@ WildArea4SignText:
 	done
 
 CantGetGibleText:
+	text_ntag "Cynthia"
 	text "We meet again."
 
 	para "I'd like to stay"

@@ -91,8 +91,9 @@ TrainerPsychicJeremy:
 	jumptext PsychicJeremyAfterBattleText
 
 SabrinaIntroText:
-	text "Sabrina: I knew"
-	line "you were coming…"
+	text_ntag "Sabrina"
+	text "I knew you were"
+	line "coming…"
 
 	para "You, who has"
 	line "conquered the"
@@ -117,8 +118,7 @@ SabrinaIntroText:
 	done
 
 SabrinaWinLossText:
-	text "Sabrina: Your"
-	line "power…"
+	text "Your power…"
 
 	para "It far exceeds"
 	line "what I foresaw…"
@@ -133,8 +133,9 @@ ReceivedMarshBadgeText:
 	done
 
 SabrinaMarshBadgeText:
-	text "Sabrina: Quite a"
-	line "pretty badge."
+	text_ntag "Sabrina"
+	text "Quite a pretty"
+	line "badge."
 
 	para "Not at all what I"
 	line "expected from"
@@ -151,9 +152,9 @@ SabrinaMarshBadgeText:
 	done
 
 SabrinaFightDoneText:
-	text "Sabrina: …I am"
-	line "meditating to"
-	cont "become stronger."
+	text_ntag "Sabrina"
+	text "…I am meditating"
+	line "to be stronger."
 
 	para "Please do not"
 	line "disturb me until"
@@ -239,9 +240,9 @@ PsychicJeremyAfterBattleText:
 	done
 
 SabrinaPostText:
-	text "Sabrina: I foresee"
-	line "a better future"
-	cont "for Kanto."
+	text_ntag "Sabrina"
+	text "I foresee a better"
+	line "future for Kanto."
 
 	para "Better than the"
 	line "one I saw for the"
@@ -267,8 +268,9 @@ SabrinaPostText:
 	done
 
 SabrinaRematchText:
-	text "Sabrina: I foresaw"
-	line "this reunion."
+	text_ntag "Sabrina"
+	text "I foresaw this"
+	line "reunion."
 
 	para "There is no need"
 	line "for further words."
@@ -280,8 +282,8 @@ SabrinaRematchText:
 	done
 
 SabrinaAfterRematchText:
-	text "Sabrina: …Most"
-	line "unfortunate…"
+	text_ntag "Sabrina"
+	text "Most unfortunate…"
 
 	para "I was not able to"
 	line "change the outcome"

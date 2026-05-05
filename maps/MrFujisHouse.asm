@@ -134,9 +134,11 @@ MrFujisTogepiText:
 MrFujisHouseMrFujiText1:
 	text "Welcome."
 
-	para "I am Mr. Fuji."
+	para "I am Mr. Fuji.@"
+	text_waitbutton
 
-	para "Normally, I woudn't"
+	text_ntag "Mr. Fuji"
+	text "Normally, I woudn't"
 	line "let people into my"
 	cont "house, but I can"
 	cont "sense that you are"
@@ -162,6 +164,7 @@ MrFujisHouseMrFujiText1:
 	done
 
 MrFujisHouseMrFujiText2:
+	text_ntag "Mr. Fuji"
 	text "A truly dreadful"
 	line "situation our"
 	cont "region has been in"
@@ -177,7 +180,8 @@ MrFujisHouseMrFujiText2:
 	done
 
 MrFujisHouseMrFujiText3:
-	text "Mr. Fuji: Hm?"
+	text_ntag "Mr. Fuji"
+	text "Hm?"
 
 	para "T-t-that #mon…"
 
@@ -257,11 +261,11 @@ MrFujisHouseMrFujiText3:
 	done
 
 MrFujisHouseMrFujiText4:
-	text "Mr. Fuji: I live"
-	line "every single day"
-	cont "in regret for my"
-	cont "role in that"
-	cont "disaster."
+	text_ntag "Mr. Fuji"
+	text "I live every"
+	line "single day in"
+	cont "regret for my role"
+	cont "in that disaster."
 
 	para "I can only hope"
 	line "my good deeds here"
@@ -270,9 +274,9 @@ MrFujisHouseMrFujiText4:
 	done
 
 MrFujisHouseMrFujiText5:
-	text "Mr. Fuji: Please"
-	line "don't bring Mewtwo"
-	cont "here again."
+	text_ntag "Mr. Fuji"
+	text "Please don't bring"
+	line "Mewtwo here again."
 
 	para "I can't bear the"
 	line "guilt."

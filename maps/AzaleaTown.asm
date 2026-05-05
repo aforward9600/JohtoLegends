@@ -139,6 +139,7 @@ AzaleaTownRivalBattleExitMovement:
 	step_end
 
 AzaleaTownRivalBeforeText:
+	text_ntag "<RIVAL>"
 	text "<PLAYER>!"
 
 	para "You're not going"
@@ -167,52 +168,6 @@ AzaleaTownRivalBeforeText:
 	para "See you there!"
 	done
 
-AzaleaTownRivalWinText:
-	text "… Humph! Useless"
-	line "#mon!"
-
-	para "Listen, you. You"
-	line "only won because"
-
-	para "my #mon were"
-	line "weak."
-	done
-
-AzaleaTownRivalAfterText:
-	text "I hate the weak."
-
-	para "#mon, trainers."
-	line "It doesn't matter"
-	cont "who or what."
-
-	para "I'm going to be"
-	line "strong and wipe"
-	cont "out the weak."
-
-	para "That goes for Team"
-	line "Rocket too."
-
-	para "They act big and"
-	line "tough in a group."
-
-	para "But get them"
-	line "alone, and they're"
-	cont "weak."
-
-	para "I hate them all."
-
-	para "You stay out of my"
-	line "way. A weakling"
-
-	para "like you is only a"
-	line "distraction."
-	done
-
-AzaleaTownRivalLossText:
-	text "…Humph! I knew"
-	line "you were lying."
-	done
-
 AzaleaTownCooltrainerText:
 	text "Looking to fight"
 	line "the Gym Leader?"
@@ -236,8 +191,8 @@ AzaleaTownRocket2Text:
 	done
 
 AzaleaTownGrampsTextBefore:
-	text "Please be respect-"
-	line "ful of our"
+	text "Please be"
+	line "respectful of our"
 	cont "Slowpoke."
 	done
 
@@ -266,7 +221,7 @@ AzaleaTownYoungsterText:
 
 	para "…Oh, I see you"
 	line "have a Scyther"
-	cont "call."
+	cont "Call."
 
 	para "That makes getting"
 	line "through a breeze!"
@@ -291,7 +246,7 @@ AzaleaTownSignText:
 	done
 
 KurtsHouseSignText:
-	text "Kurt'S House"
+	text "Kurt's House"
 	done
 
 AzaleaGymSignText:

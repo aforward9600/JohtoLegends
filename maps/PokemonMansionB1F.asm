@@ -446,8 +446,9 @@ CinnabarVolcanoGuardText:
 	done
 
 PokemonMansionBlaineText1:
-	text "???: He's shutting"
-	line "us down now…"
+	text_ntag "???"
+	text "He's shutting us"
+	line "down now…"
 
 	para "After everything"
 	line "we achieved…"
@@ -462,7 +463,8 @@ PokemonMansionBlaineText1:
 	done
 
 PokemonMansionBlaineText2:
-	text "???: Who are you?"
+	text_ntag "???"
+	text "Who are you?"
 
 	para "………Ah, I know you."
 
@@ -484,9 +486,11 @@ PokemonMansionBlaineText2:
 	line "researcher, or a"
 	cont "former researcher"
 	cont "here, I should"
-	cont "say…"
+	cont "say…@"
+	text_waitbutton
 
-	para "So, what is it"
+	text_ntag "Blaine"
+	text "So, what is it"
 	line "that you want?"
 
 	para "………You're looking"
@@ -522,14 +526,15 @@ PokemonMansionBlaineText2:
 	done
 
 PokemonMansionBlaineText3:
-	text "Blaine: Catch or"
-	line "defeat the #mon"
-	cont "to claim the down."
+	text_ntag "Blaine"
+	text "Catch or defeat"
+	line "the #mon to"
+	cont "claim the down."
 	done
 
 PokemonMansionBlaineText4:
-	text "Blaine: You really"
-	line "did it."
+	text_ntag "Blaine"
+	text "You really did it."
 
 	para "Impressive."
 
@@ -583,8 +588,8 @@ PokemonMansionB1FScientist3Text2:
 	done
 
 ThatsItThenText:
-	text "???: So, that's it"
-	line "then?"
+	text_ntag "???"
+	text "So, that's it then?"
 
 	para "All of that time"
 	line "and money, and I"
@@ -600,8 +605,8 @@ ThatsItThenText:
 	done
 
 GiovanniOutOfMyWayText:
-	text "???: Get out of my"
-	line "way."
+	text_ntag "???"
+	text "Get out of my way."
 	done
 
 YouHaveMewtwoText:

@@ -98,9 +98,11 @@ FlorinaScript_FlorinaBeforeText:
 
 	para "I am Florina, and"
 	line "I am your first"
-	cont "battle."
+	cont "battle.@"
+	text_waitbutton
 
-	para "I love flowers,"
+	text_ntag "Florina"
+	text "I love flowers,"
 	line "and someday I hope"
 	cont "to set up my own"
 	cont "flower shop."
@@ -123,6 +125,7 @@ FlorinaScript_FlorinaBeatenText:
 	done
 
 FlorinaScript_FlorinaDefeatText:
+	text_ntag "Florina"
 	text "Someday, I will"
 	line "fulfill my dream,"
 	cont "and open a flower"
@@ -140,9 +143,10 @@ FlorinaScript_FlorinaDefeatText:
 	done
 
 FlorinaScript_FlorinaBeforeText2:
-	text "Florina: Welcome"
-	line "back to the"
-	cont "#mon League,"
+	text_ntag "Florina"
+	text "Welcome back to"
+	line "the #mon"
+	cont "League,"
 	cont "Champion <PLAYER>."
 
 	para "I am your first"

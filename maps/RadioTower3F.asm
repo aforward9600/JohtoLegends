@@ -40,6 +40,7 @@ Ariana2LastMonText:
 	done
 
 Ariana2SeenText:
+	text_ntag "Ariana"
 	text "You again?!"
 
 	para "Of all the people"
@@ -73,6 +74,7 @@ Ariana2BeatenText:
 	done
 
 Ariana2AfterBattleText:
+	text_ntag "Ariana"
 	text "You…you…"
 
 	para "GAH!"

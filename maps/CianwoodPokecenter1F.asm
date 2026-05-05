@@ -43,6 +43,7 @@ CianwoodPokecenter1FLassText:
 	done
 
 CianwoodGymGuyText:
+	text_ntag "Jim Gyde"
 	text "How's it going,"
 	line "champ in the"
 	cont "making? That"
@@ -89,6 +90,7 @@ CianwoodPokecenter1FSuperNerdText:
 	done
 
 CianwoodPokecenterRivalText:
+	text_ntag "<RIVAL>"
 	text "Ugh…"
 
 	para "Sorry…I got a"

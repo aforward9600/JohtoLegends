@@ -23,6 +23,8 @@ Mountvesuvius for Strength Sap and HM Key Items.
 
 Running Shoes: Grate Oracle Lewot, Victoria Lacroix, Tom Wang, Seasick
 
+Th3Element05 & Narishma: NPC name tag.
+
 Idain, Rangi, WasabiRaptor for EVS.
 
 Rangi and Idain for Evening time and SGB palettes for maps.

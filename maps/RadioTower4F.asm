@@ -86,6 +86,7 @@ GruntM15AfterBattleText:
 	done
 
 Archer2SeenText:
+	text_ntag "Archer"
 	text "Once again, you've"
 	line "come to meddle in"
 	cont "our affairs."
@@ -113,6 +114,7 @@ Archer2BeatenText:
 	done
 
 Archer2AfterBattleText:
+	text_ntag "Archer"
 	text "Hm…"
 
 	para "It seems more"

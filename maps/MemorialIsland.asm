@@ -60,10 +60,12 @@ MemorialIslandGrave:
 	jumptext MemorialIslandGraveText
 
 FerropexolaSilenceText:
-	text "Ferropexola:………………"
+	text_ntag "Ferropexola"
+	text "………………"
 	done
 
 FerropexolaThickClubText:
+	text_ntag "Ferropexola"
 	text "…Oh, hello,"
 	line "<PLAYER>…"
 

@@ -77,6 +77,7 @@ CinnabarPokecenter1FFisherText2:
 	done
 
 CinnabarPokecenter1FRivalText:
+	text_ntag "<RIVAL>"
 	text "I hear that the"
 	line "former Gym Leader"
 	cont "is still around."
@@ -92,6 +93,7 @@ CinnabarPokecenter1FRivalText:
 	done
 
 CinnabarPokecenter1FRivalText2:
+	text_ntag "<RIVAL>"
 	text "It's always nice to"
 	line "see someone find"
 	cont "purpose again,"

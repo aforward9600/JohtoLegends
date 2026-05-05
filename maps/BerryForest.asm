@@ -158,7 +158,9 @@ BerryForest_MapEvents:
 	warp_event 26, 37, BOND_BRIDGE, 1
 	warp_event 27, 37, BOND_BRIDGE, 2
 
-	db 10 ; coord events
+	db 0 ; coord events
+
+	db 10 ; bg events
 	coord_event 22, 30, BGEVENT_READ, BerryForestBerrySign
 	coord_event  2, 20, BGEVENT_READ, BerryForestHypnoSign
 	coord_event 28,  1, BGEVENT_ITEM, BerryForestChestoBerry
@@ -169,8 +171,6 @@ BerryForest_MapEvents:
 	coord_event 28, 26, BGEVENT_ITEM, BerryForestPersimBerry
 	coord_event 14,  1, BGEVENT_ITEM, BerryForestAspearBerry
 	coord_event  7, 17, BGEVENT_ITEM, BerryForestCheriBerry
-
-	db 0 ; bg events
 
 	db 2 ; object events
 	object_event  2,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BerryForestYoungsterScript, EVENT_LOST_BOY_BERRY_FOREST

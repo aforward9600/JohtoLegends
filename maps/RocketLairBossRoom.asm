@@ -306,6 +306,7 @@ MadameBossWinText:
 	done
 
 BackAgainHuhText:
+	text_ntag "Madame Boss"
 	text "Back again, huh?"
 
 	para "I would have"
@@ -316,6 +317,7 @@ BackAgainHuhText:
 	done
 
 YouReadyText:
+	text_ntag "<RIVAL>"
 	text "You ready for"
 	line "this?"
 
@@ -327,14 +329,16 @@ YouReadyText:
 	done
 
 YouMustBeTheBossText:
-	text "<RIVAL>: So, you"
-	line "must be the boss."
+	text_ntag "<RIVAL>"
+	text "So, you must be"
+	line "the boss."
 	done
 
 ThatsRightText:
-	text "???: And you must"
-	line "be the children"
-	cont "that have been an"
+	text_ntag "???"
+	text "And you must be" 
+	line "the children that"
+	cont "have been an"
 	cont "annoyance to us."
 
 	para "You may call me"
@@ -342,37 +346,44 @@ ThatsRightText:
 
 	para "I'm not giving you"
 	line "the privilege of"
-	cont "knowing my name."
+	cont "knowing my name.@"
+	text_waitbutton
 
-	para "<RIVAL>: Fine,"
-	line "'Madame'."
+	text_ntag "<RIVAL>"
+	text "Fine, 'Madame'."
 
 	para "We've got you"
 	line "cornered, so you"
 	cont "wanna tell us"
-	cont "what your deal is?"
+	cont "what your deal is?@"
+	text_waitbutton
 
-	para "Boss: I may as"
-	line "well, since you're"
-	cont "not leaving here"
-	cont "in one piece."
+	text_ntag "Madame Boss"
+	text "I may as well,"
+	line "since you're not"
+	cont "leaving here in"
+	cont "one piece."
 
 	para "The answer's"
 	line "obvious, isn't it?"
 
-	para "Money, and power."
+	para "Money, and power.@"
+	text_waitbutton
 
-	para "<RIVAL>: That's it?"
+	text_ntag "<RIVAL>"
+	text "That's it?"
 
 	para "That's your big"
 	line "plan?"
 
 	para "A get rich-quick"
-	line "scheme?"
+	line "scheme?@"
+	text_waitbutton
 
-	para "Boss: I knew a"
-	line "child like you"
-	cont "wouldn't get it."
+	text_ntag "Madame Boss"
+	text "I knew a child"
+	line "like you wouldn't"
+	cont "get it."
 
 	para "Money is every-"
 	line "thing, and money"
@@ -392,11 +403,12 @@ ThatsRightText:
 	cont "gotten my hands"
 	cont "on so many rare"
 	cont "and valuable"
-	cont "#mon."
+	cont "#mon.@"
+	text_waitbutton
 
-	para "<RIVAL>: You're"
-	line "sick, lady. You"
-	cont "know that?"
+	text_ntag "<RIVAL>"
+	text "You're sick, lady."
+	line "You know that?"
 
 	para "Stealing and"
 	line "poaching #mon"
@@ -406,9 +418,11 @@ ThatsRightText:
 
 	para "#mon are our"
 	line "friends, not"
-	cont "assets."
+	cont "assets.@"
+	text_waitbutton
 
-	para "Boss: How cute."
+	text_ntag "Madame Boss"
+	text "How cute."
 
 	para "You actually think"
 	line "I care?"
@@ -433,12 +447,13 @@ ThatsRightText:
 	cont "stupid, I had to"
 	cont "send him away so"
 	cont "he wouldn't"
-	cont "bother me anymore."
+	cont "bother me anymore.@"
+	text_waitbutton
 
-	para "<RIVAL>: The more"
-	line "I hear from you,"
-	cont "the more I hate"
-	cont "you."
+	text_ntag "<RIVAL>"
+	text "The more I hear"
+	line "from you, the more"
+	cont "I hate you."
 
 	para "You're completely"
 	line "selfish. You care"
@@ -454,10 +469,12 @@ ThatsRightText:
 	para "You're a shallow,"
 	line "empty psychopath,"
 	cont "and I'm done"
-	cont "talking with you."
+	cont "talking with you.@"
+	text_waitbutton
 
-	para "Boss: Oh, you're"
-	line "done? Finally."
+	text_ntag "Madame Boss"
+	text "Oh, you're done?"
+	line "Finally."
 
 	para "I thought you'd"
 	line "never shut up."
@@ -481,6 +498,7 @@ ThatsRightText:
 	done
 
 ICantLoseText:
+	text_ntag "Madame Boss"
 	text "I…can't lose…"
 
 	para "Not like this…"
@@ -506,9 +524,9 @@ ICantLoseText:
 	done
 
 YouDontHaveToDoThisText:
-	text "<RIVAL>: You know,"
-	line "you don't have to"
-	cont "do this."
+	text_ntag "<RIVAL>"
+	text "You know, you don't"
+	line "have to do this."
 
 	para "Seeing you like"
 	line "this, it's quite"
@@ -533,9 +551,9 @@ YouDontHaveToDoThisText:
 	done
 
 ShutUpKidText:
-	text "Boss: Shut up,"
-	line "shut up, shut up,"
-	cont "SHUT UP!"
+	text_ntag "Madame Boss"
+	text "Shut up, shut up,"
+	line "shut up, SHUT UP!"
 
 	para "I don't want to"
 	line "hear your"
@@ -596,7 +614,8 @@ ShutUpKidText:
 	done
 
 YoureUnderArrestLairText:
-	text "Sherles: Freeze!"
+	text_ntag "Sherles"
+	text "Freeze!"
 
 	para "You're under"
 	line "arrest!"
@@ -609,7 +628,8 @@ YoureUnderArrestLairText:
 	done
 
 ThisCantBeText:
-	text "Boss: No…"
+	text_ntag "Madame Boss"
+	text "No…"
 
 	para "This can't be"
 	line "happening…"
@@ -630,6 +650,7 @@ ThisCantBeText:
 	done
 
 WeFinallyDidItText:
+	text_ntag "<RIVAL>"
 	text "…We did it…"
 
 	para "We finally did it!"
@@ -650,6 +671,7 @@ WeFinallyDidItText:
 	done
 
 GotTheKeyText:
+	text_ntag "<RIVAL>"
 	text "Here it is."
 
 	para "We can finally"

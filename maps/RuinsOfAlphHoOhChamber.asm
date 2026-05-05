@@ -217,6 +217,7 @@ RuinsOfAlphHoOhChamberDescriptionText:
 	done
 
 HowIsGibleDoingText:
+	text_ntag "Cynthia"
 	text "Hello again,"
 	line "<PLAYER>."
 
@@ -242,6 +243,7 @@ HowIsGibleDoingText:
 	done
 
 GibleIsNotHappyText:
+	text_ntag "Cynthia"
 	text "………………"
 
 	para "It seems Gible"
@@ -255,6 +257,7 @@ GibleIsNotHappyText:
 	done
 
 GibleIsNotHereText:
+	text_ntag "Cynthia"
 	text "………………"
 
 	para "You don't have"
@@ -265,29 +268,8 @@ GibleIsNotHereText:
 	cont "have Gible."
 	done
 
-CynthiaWouldLikeToBattleText:
-	text "………………"
-
-	para "I would like to"
-	line "battle with you"
-	cont "again, please."
-
-	para "This will help me"
-	line "to better"
-	cont "understand you."
-	done
-
-CynthiaRuinsVictory:
-	text "Looks like I was"
-	line "right."
-	done
-
-CynthiaRuinsDefeat:
-	text "Looks like I was"
-	line "wrong."
-	done
-
 GibleIsVeryHappyText:
+	text_ntag "Cynthia"
 	text "………………"
 
 	para "It seems I was"
@@ -318,6 +300,7 @@ GibleIsVeryHappyText:
 	done
 
 ShowMeLaterText:
+	text_ntag "Cynthia"
 	text "I guess you are"
 	line "not ready to show"
 	cont "me how Gible is"
@@ -329,6 +312,7 @@ ShowMeLaterText:
 	done
 
 DontHaveGibleText:
+	text_ntag "Cynthia"
 	text "Hello again,"
 	line "<PLAYER>."
 

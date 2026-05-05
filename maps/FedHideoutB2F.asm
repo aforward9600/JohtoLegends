@@ -62,7 +62,8 @@ TrainerRoughneckCameron:
 	jumptext RoughneckCameronAfterText
 
 FedHideoutB2FSurgeText:
-	text "Surge: I've fought"
+	text_ntag "Pvt. Surge"
+	text "I've fought"
 	line "Rattata with more"
 	cont "bite than these"
 	cont "guys!"
@@ -81,9 +82,9 @@ FedHideoutB2FBikerText:
 	done
 
 FedHideoutB2FFlintText:
-	text "Flint: I'm doing"
-	line "this to save my"
-	cont "family!"
+	text_ntag "Flint"
+	text "I'm doing this to"
+	line "save my family!"
 
 	para "There's nothing I"
 	line "can't do!"

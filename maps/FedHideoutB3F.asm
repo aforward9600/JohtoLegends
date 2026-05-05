@@ -62,9 +62,9 @@ TrainerRoughneckGuido:
 	jumptext RoughneckGuidoAfterText
 
 FedHideoutB3FKogaText:
-	text "Koga: Today, we"
-	line "shall have our"
-	cont "revenge."
+	text_ntag "Koga"
+	text "Today, we shall"
+	line "have our revenge."
 
 	para "I know it."
 	done
@@ -75,9 +75,9 @@ FedHideoutB3FBikerText:
 	done
 
 FedHideoutB3FBlaineText:
-	text "Blaine: I need to"
-	line "atone for my"
-	cont "actions."
+	text_ntag "Blaine"
+	text "I need to atone"
+	line "for my actions."
 
 	para "I hope this shall"
 	line "suffice."

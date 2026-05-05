@@ -112,7 +112,8 @@ MtSilverSummitWalk:
 	step_end
 
 BeautifulIsntItText:
-	text "<RIVAL>: ………………"
+	text_ntag "<RIVAL>"
+	text "………………"
 
 	para "It's beautiful,"
 	line "isn't it?"
@@ -126,16 +127,19 @@ BeautifulIsntItText:
 	done
 
 ReleasedHoOhText:
+	text_ntag "<RIVAL>"
 	text "…I decided to"
 	line "release Ho-Oh…"
 	done
 
 ReleasedLugiaText:
+	text_ntag "<RIVAL>"
 	text "…I decided to"
 	line "release Lugia…"
 	done
 
 GoingToReleaseText:
+	text_ntag "<RIVAL>"
 	text "…I felt it would"
 	line "be better for it"
 	cont "to be free."
@@ -168,7 +172,8 @@ GoingToReleaseText:
 	para "…Together…"
 	done
 
-ThisIsNiceText:	
+ThisIsNiceText:
+	text_ntag "<RIVAL>"
 	text "…This was quite"
 	line "the journey, huh?"
 

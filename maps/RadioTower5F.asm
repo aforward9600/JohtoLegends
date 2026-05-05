@@ -181,12 +181,19 @@ RivalMoves2:
 	step UP
 	step_end
 
+RadioTowerMiyamotoLastText:
+	text "I underestimated"
+	line "you again."
+	done
+
 RadioTowerMiyamotoText1:
+	text_ntag "Miyamoto"
 	text "Right on time, as"
 	line "usual, <PLAYER>."
 	done
 
 RadioTowerMiyamotoText2:
+	text_ntag "Miyamoto"
 	text "I'm a little busy"
 	line "right now, but if"
 	cont "you truly want to"
@@ -202,17 +209,18 @@ RadioTowerMiyamotoWinText:
 	done
 
 RadioTowerMiyamotoTextAfter:
+	text_ntag "Miyamoto"
 	text "Well, it would"
 	line "appear that our"
-	cont "informant was in-"
-	cont "correct."
+	cont "informant was"
+	cont "incorrect."
 
-	para "I'll have to pun-"
-	line "ish him later."
+	para "I'll have to"
+	line "punish him later."
 
 	para "For now, let me"
-	line "tell you some-"
-	cont "thing."
+	line "tell you"
+	cont "something."
 
 	para "What we seek is"
 	line "unknown to you,"
@@ -231,6 +239,7 @@ RadioTowerMiyamotoTextAfter:
 	done
 
 RadioTower5FRivalText1:
+	text_ntag "<RIVAL>"
 	text "<PLAYER>,"
 	line "sorry I'm late!"
 
@@ -255,6 +264,7 @@ RadioTower5FRivalText1:
 	done
 
 RivalFindsClearBellText:
+	text_ntag "<RIVAL>"
 	text "Hey, I think I"
 	line "found it!"
 
@@ -266,6 +276,7 @@ RivalFindsClearBellText:
 	done
 
 HeresTheClearBellText:
+	text_ntag "<RIVAL>"
 	text "Here, you take"
 	line "this for now."
 
@@ -274,16 +285,12 @@ HeresTheClearBellText:
 	done
 
 LetsGoText:
+	text_ntag "<RIVAL>"
 	text "<PLAYER>, we"
 	line "should head back."
 
 	para "There's nothing"
 	line "else we need here."
-	done
-
-RadioTowerMiyamotoLastText:
-	text "I underestimated"
-	line "you again."
 	done
 
 RadioTower5F_MapEvents:

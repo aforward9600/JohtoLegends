@@ -274,6 +274,7 @@ TwentyfourthLift:
 	end
 
 Byron1F_LittleHero:
+	text_ntag "Opal"
 	text "Welcome, my hero."
 	line "I'll properly"
 	cont "introduce myself"
@@ -310,6 +311,7 @@ Byron1F_SteelyDetermination:
 	done
 
 Byron1F_Beaten:
+	text_ntag "Opal"
 	text "Well, that was"
 	line "what I expected!"
 	cont "A steel-hard"
@@ -325,6 +327,7 @@ Text1F_ReceivedMineralBadge:
 	done
 
 Byron1F_BadgeSpeech:
+	text_ntag "Opal"
 	text "The Mineral Badge"
 	line "makes #mon up"
 	cont "to Lv 50 obey you."
@@ -334,6 +337,7 @@ Byron1F_BadgeSpeech:
 	done
 
 Byron1F_FlashCannonSpeech:
+	text_ntag "Opal"
 	text "That lets you"
 	line "teach a #mon"
 	cont "Flash Cannon! It"
@@ -348,6 +352,7 @@ Byron1F_FlashCannonSpeech:
 	done
 
 Byron1F_Sunnyshore:
+	text_ntag "Opal"
 	text "Did you enjoy the"
 	line "layout of our Gym?"
 
@@ -366,6 +371,7 @@ Byron1F_Sunnyshore:
 	done
 
 ByronRematchText:
+	text_ntag "Opal"
 	text "Welcome back,"
 	line "<PLAYER>."
 
@@ -380,6 +386,7 @@ BeatenByronAgainText:
 	done
 
 PostGameByronText:
+	text_ntag "Opal"
 	text "Looks like I was"
 	line "helpful to you."
 
@@ -391,6 +398,7 @@ PostGameByronText:
 	done
 
 BeatenByronAgainText2:
+	text_ntag "Opal"
 	text "You're quite the"
 	line "tough Champion."
 

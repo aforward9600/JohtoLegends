@@ -170,6 +170,7 @@ AzaleaGymStatue:
 	jumpstd gymstatue5
 
 KurtText_DangSilph:
+	text_ntag "Kurt"
 	text "Humph. I'm Kurt,"
 	line "Gym Leader of"
 	cont "Azalea Town. I"
@@ -208,6 +209,7 @@ KurtText_NoRespect:
 	done
 
 BeatenKurtText:
+	text_ntag "Kurt"
 	text "Alright, alright!"
 	line "You won, so here!"
 	done
@@ -218,6 +220,7 @@ Text_ReceivedHiveBadge:
 	done
 
 KurtText_HiveBadgeSpeech:
+	text_ntag "Kurt"
 	text "The Hive Badge"
 	line "makes #mon up"
 	cont "to Lv 70 obey you."
@@ -227,6 +230,7 @@ KurtText_HiveBadgeSpeech:
 	done
 
 KurtText_XScissorSpeech:
+	text_ntag "Kurt"
 	text "TM60 contains"
 	line "X-Scissor."
 
@@ -242,6 +246,7 @@ KurtText_XScissorSpeech:
 	done
 
 KurtText_Retirement:
+	text_ntag "Kurt"
 	text "Maybe I can retire"
 	line "and rely on my son"
 
@@ -349,6 +354,7 @@ TwinsGingerandsam2AfterBattleText:
 	done
 
 AzaleaGymGuyText:
+	text_ntag "Jim Gyde"
 	text "How's it going,"
 	line "champ in the"
 	cont "making? Kurt's a"
@@ -371,6 +377,7 @@ AzaleaGymGuyText:
 	done
 
 AzaleaGymGuyWinText:
+	text_ntag "Jim Gyde"
 	text "You really"
 	line "squashed those"
 
@@ -381,6 +388,7 @@ AzaleaGymGuyWinText:
 	done
 
 KurtText_Rematch:
+	text_ntag "Kurt"
 	text "You here for a"
 	line "rematch?"
 
@@ -397,6 +405,7 @@ KurtText_Respect:
 	done
 
 KurtText_BeatenAgain:
+	text_ntag "Kurt"
 	text "Yep, you're just"
 	line "as strong as"
 	cont "before."
@@ -407,6 +416,7 @@ KurtText_BeatenAgain:
 	done
 
 KurtText_PostGame:
+	text_ntag "Kurt"
 	text "Champion, huh?"
 
 	para "That doesn't mean"

@@ -201,8 +201,9 @@ PokemonMansion1FScientist2Text:
 	done
 
 GiovanniItsAllGoneText:
-	text "???: …All of our"
-	line "plans, ruined…"
+	text_ntag "???"
+	text "…All of our plans,"
+	line "ruined…"
 
 	para "…That blasted"
 	line "#mon…"
@@ -217,7 +218,8 @@ GiovanniItsAllGoneText:
 	done
 
 PokemonMansion1FGiovanniText:
-	text "???: Who are you?"
+	text_ntag "???"
+	text "Who are you?"
 
 	para "…The Champion?"
 
@@ -243,9 +245,11 @@ PokemonMansion1FGiovanniText:
 	cont "Viridian City?"
 
 	para "That's me. I am"
-	line "Giovanni."
+	line "Giovanni.@"
+	text_waitbutton
 
-	para "So, you've heard of"
+	text_ntag "Giovanni"
+	text "So, you've heard of"
 	line "my battling skills"
 	cont "and are looking"
 	cont "for a new Gym"
@@ -274,8 +278,8 @@ PokemonMansion1FGiovanniText:
 	done
 
 GiovanniLeaveMeAloneText:
-	text "???: Leave me"
-	line "alone."
+	text_ntag "???"
+	text "Leave me alone."
 	done
 
 PokemonMansion1F_MapEvents:

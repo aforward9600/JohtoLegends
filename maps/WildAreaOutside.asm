@@ -155,6 +155,7 @@ WildAreaOutsideSign:
 	jumptext WildAreaOutsideSignText
 
 HeyRivalText:
+	text_ntag "<RIVAL>"
 	text "Hey <PLAYER>, you"
 	line "made it!"
 
@@ -174,6 +175,7 @@ RivalWildAreaLossText:
 	done
 
 YouWonOnceAgainText:
+	text_ntag "<RIVAL>"
 	text "Well, you won once"
 	line "again. I need to"
 	cont "work on my skills."
@@ -184,6 +186,7 @@ YouWonOnceAgainText:
 	done
 
 PidgeotCallText:
+	text_ntag "<RIVAL>"
 	text "That's a Pidgeot"
 	line "Call. You can sum-"
 	cont "mon a Pidgeot to"
@@ -197,6 +200,7 @@ PidgeotCallText:
 	done
 
 ByTheWayText:
+	text_ntag "<RIVAL>"
 	text "Oh, by the way,"
 	line "the other reason"
 	cont "I asked you to"
@@ -204,6 +208,7 @@ ByTheWayText:
 	done
 
 ThisIsTheWildAreaText:
+	text_ntag "<RIVAL>"
 	text "This is the Wild"
 	line "Area."
 

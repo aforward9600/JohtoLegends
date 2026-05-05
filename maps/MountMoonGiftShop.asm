@@ -102,9 +102,9 @@ HaveAClefairyPosterText:
 	done
 
 MountMoonGiftShopBrockText:
-	text "Brock: I wanna"
-	line "play with #mon"
-	cont "outside,"
+	text_ntag "Brock"
+	text "I wanna play with"
+	line "#mon outside,"
 
 	para "but mommy said"
 	line "it's bad out."

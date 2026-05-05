@@ -283,6 +283,7 @@ HandItOverText:
 	done
 
 NeverYouCriminalText:
+	text_ntag "???"
 	text "Never, you"
 	line "criminal!"
 
@@ -314,9 +315,11 @@ IKnewIdSeeYouText:
 
 	para "I am Miyamoto, and"
 	line "I am the leader of"
-	cont "this group."
+	cont "this group.@"
+	text_waitbutton
 
-	para "I had hoped we"
+	text_ntag "Miyamoto"
+	text "I had hoped we"
 	line "would meet again,"
 	cont "under better"
 	cont "circumstances."
@@ -341,6 +344,7 @@ Miyamoto1LossText:
 	done
 
 WeArentDoneYetText:
+	text_ntag "Miyamoto"
 	text "Don't think that"
 	line "this changes any-"
 	cont "thing."
@@ -356,6 +360,7 @@ WeArentDoneYetText:
 	done
 
 HuffHuffText:
+	text_ntag "<RIVAL>"
 	text "Huff…Huff…"
 
 	para "Sorry, <PLAYER>,"
@@ -366,6 +371,7 @@ HuffHuffText:
 	done
 
 ThisYourGFText:
+	text_ntag "Miyamoto"
 	text "Who is this?"
 
 	para "Your little"
@@ -373,6 +379,7 @@ ThisYourGFText:
 	done
 
 ThisYourBFText:
+	text_ntag "Miyamoto"
 	text "Who is this?"
 
 	para "Your little"
@@ -380,10 +387,12 @@ ThisYourBFText:
 	done
 
 SilenceText:
+	text_ntag "<RIVAL>"
 	text "………………………"
 	done
 
 WhateverWereDoneText:
+	text_ntag "Miyamoto"
 	text "What's the matter?"
 
 	para "Meowth got your"
@@ -415,9 +424,11 @@ DangSmokeBombsText:
 
 	para "I'm Opal, the"
 	line "Leader of the"
-	cont "Olivine City Gym."
+	cont "Olivine City Gym.@"
+	text_waitbutton
 
-	para "Those fiends tried"
+	text_ntag "Opal"
+	text "Those fiends tried"
 	line "to take the #-"
 	cont "mon of the light-"
 	cont "house."
@@ -427,6 +438,7 @@ DangSmokeBombsText:
 	done
 
 ThisIsRosaText:
+	text_ntag "Opal"
 	text "This is Rosa the"
 	line "Ampharos."
 
@@ -466,12 +478,14 @@ ThisIsRosaText:
 	done
 
 HeresSurfText:
+	text_ntag "Opal"
 	text "Oh, before I go,"
 	line "here, you can both"
 	cont "have one of these."
 	done
 
 ThatsSurfText:
+	text_ntag "Opal"
 	text "That Lapras Call"
 	line "will let you call"
 	cont "a Lapras so you"
@@ -485,6 +499,7 @@ ThatsSurfText:
 	done
 
 TyranitarText:
+	text_ntag "<RIVAL>"
 	text "Hey, <PLAYER>."
 
 	para "I'm sorry I froze"
@@ -556,6 +571,7 @@ TyranitarText:
 	done
 
 DragoniteText:
+	text_ntag "<RIVAL>"
 	text "Hey, <PLAYER>."
 
 	para "I'm sorry I froze"
@@ -627,6 +643,7 @@ DragoniteText:
 	done
 
 YoureHereTooText:
+	text_ntag "Sherles"
 	text "What?"
 
 	para "You're here as"
@@ -659,6 +676,7 @@ ReceivedLaprasCallText:
 	done
 
 KeepingRosaCompanyText:
+	text_ntag "Opal"
 	text "How've you been,"
 	line "hero?"
 

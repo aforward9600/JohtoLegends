@@ -65,9 +65,9 @@ VermilionPokecenter1FSoldierText:
 	done
 
 VermilionPokecenterRivalText:
-	text "<RIVAL>: The old"
-	line "Gym Leader isn't"
-	cont "here anymore."
+	text_ntag "<RIVAL>"
+	text "The old Gym Leader"
+	line "isn't here anymore."
 
 	para "From what I've"
 	line "heard, there's a"
@@ -82,10 +82,11 @@ VermilionPokecenterRivalText:
 	done
 
 VermilionPokecenterRivalText2:
-	text "<RIVAL>: Having a"
-	line "seasoned soldier"
-	cont "on our side will"
-	cont "be great!"
+	text_ntag "<RIVAL>"
+	text "Having a seasoned"
+	line "soldier on our"
+	cont "side will be"
+	cont "great!"
 
 	para "Let's hope the rest"
 	line "of the soldiers"

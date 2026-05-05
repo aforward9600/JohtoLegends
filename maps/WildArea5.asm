@@ -17,6 +17,7 @@ WildArea5Sign:
 	jumptext WildArea5SignText
 
 PlentyOfPokemonHereText:
+	text_ntag "<RIVAL>"
 	text "Wow, there sure"
 	line "are plenty of"
 	cont "#mon here!"

@@ -111,6 +111,7 @@ RocketWarehouseGruntFAfterBattleText:
 	done
 
 RocketWarehouseArianaSeenText:
+	text_ntag "Ariana"
 	text "……………………………………"
 
 	para "……………Can't you see"
@@ -122,6 +123,7 @@ RocketWarehouseArianaSeenText:
 	done
 
 RocketWarehouseArianaSeenText2:
+	text_ntag "Ariana"
 	text "Yes, I knew it was"
 	line "you."
 
@@ -143,6 +145,7 @@ RocketWarehouseArianaBeatenText:
 	done
 
 RocketWarehouseArianaAfterBattleText:
+	text_ntag "Ariana"
 	text "Please just go"
 	line "away…"
 
@@ -152,6 +155,7 @@ RocketWarehouseArianaAfterBattleText:
 	done
 
 RocketWarehouseArcherSeenText:
+	text_ntag "Archer"
 	text "It's truly amazing"
 	line "how persistent you"
 	cont "are."
@@ -180,6 +184,7 @@ RocketWarehouseArcherBeatenText:
 	done
 
 RocketWarehouseArcherAfterBattleText:
+	text_ntag "Archer"
 	text "…Shortly after we"
 	line "were sent here as"
 	cont "punishment,"
@@ -222,7 +227,7 @@ RocketWarehouse_MapEvents:
 	db 0 ; bg events
 
 	db 4 ; object events
-	object_event  8, 16, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, RocketWarehouseGrunt, -1
-	object_event  7, 14, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, RocketWarehouseGruntF, -1
+	object_event 10, 16, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, RocketWarehouseGrunt, -1
+	object_event  7, 15, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, RocketWarehouseGruntF, -1
 	object_event  7,  9, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, RocketWarehouseAriana, -1
 	object_event  7,  3, SPRITE_ARCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, RocketWarehouseArcher, -1

@@ -35,12 +35,14 @@ MastersHouse2F_MapScripts:
 TrainerDragonKidClair:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_CLAIR_REMATCH
+	iftrue .CheckFlag
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .ClairRematch
 	checkevent EVENT_LOST_FIRST_BATTLE
 	iftrue .ClairLost
 	checkevent EVENT_BEAT_DRAGON_KID_CLAIR
 	iftrue .ClairBeaten
-	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
-	iftrue .LarvitarScript
 	writetext DragonKidClairSeenText
 	waitbutton
 	closetext
@@ -58,9 +60,6 @@ TrainerDragonKidClair:
 	closetext
 	special HealParty
 	sjump Rival1
-
-.LarvitarScript:
-	writetextend ClairHiText
 
 .ClairBeaten:
 	writetextend ClairIWontLoseText
@@ -92,15 +91,43 @@ TrainerDragonKidClair:
 	setevent EVENT_LOST_FIRST_BATTLE
 	sjump Rival1
 
+.ClairRematch
+	writetext ClairRematchText
+	waitbutton
+	closetext
+	winlosstext DragonKidClairBeatenText, ClairFinalMonText
+	loadtrainer CLAIR, CLAIR2
+	startbattle
+	reloadmapafterbattle
+	setflag ENGINE_LIZ
+	setevent EVENT_BEAT_CLAIR_REMATCH
+	opentext
+.FinishClair
+	writetext ClairRematchAfterText
+	waitbutton
+	closetext
+	end
+
+.CheckFlag
+	checkflag ENGINE_LIZ
+	iffalse .ClairRematch
+	sjump .FinishClair
+
+ClairFinalMonText:
+	text "It can't be!"
+	done
+
 TrainerDragonKidLance:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_LANCE_REMATCH
+	iftrue .CheckFlag
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .LanceRematch
 	checkevent EVENT_LOST_FIRST_BATTLE
 	iftrue .LanceLost
 	checkevent EVENT_BEAT_DRAGON_KID_LANCE
 	iftrue .LanceBeaten
-	checkevent EVENT_GOT_DRATINI_FROM_MASTER
-	iftrue .DratiniScript
 	writetext DragonKidLanceSeenText
 	waitbutton
 	closetext
@@ -118,9 +145,6 @@ TrainerDragonKidLance:
 	closetext
 	special HealParty
 	sjump Rival2
-
-.DratiniScript:
-	writetextend LanceHiText
 
 .LanceBeaten:
 	writetextend LanceNextTimeText
@@ -151,6 +175,33 @@ TrainerDragonKidLance:
 	closetext
 	setevent EVENT_LOST_FIRST_BATTLE
 	sjump Rival2
+
+.LanceRematch
+	writetext LanceRematchText
+	waitbutton
+	closetext
+	winlosstext DragonKidLanceBeatenText, LanceFinalMonText
+	loadtrainer DRAGON_KID, LANCE2
+	startbattle
+	reloadmapafterbattle
+	setflag ENGINE_ANTHONY
+	setevent EVENT_BEAT_LANCE_REMATCH
+	opentext
+.FinishLance
+	writetext LanceRematchAfterText
+	waitbutton
+	closetext
+	end
+
+.CheckFlag
+	checkflag ENGINE_ANTHONY
+	iffalse .LanceRematch
+	sjump .FinishLance
+
+LanceFinalMonText:
+	text "This is a match"
+	line "for the ages!"
+	done
 
 MastersHouse2FRival1Script:
 	faceplayer
@@ -239,13 +290,8 @@ LeavingRoomMovement2:
 	step UP
 	step_resume
 
-ClairHiText:
-	text "Hi <PLAYER>!"
-	line "I'm playing with"
-	cont "Dahlia!"
-	done
-
 DragonKidClairSeenText:
+	text_ntag "Clair"
 	text "Hello there,"
 	line "<PLAYER>!"
 
@@ -263,23 +309,20 @@ DragonKidClairBeatenText:
 	done
 
 DragonKidClairAfterBattleText:
+	text_ntag "Clair"
 	text "No fair! You"
 	line "weren't supposed"
 	cont "to win!"
 	done
 
 ClairIWontLoseText:
+	text_ntag "Clair"
 	text "I won't lose next"
 	line "time!"
 	done
 
-LanceHiText:
-	text "Hey <PLAYER>!"
-	line "I'm playing with"
-	cont "Dahlia!"
-	done
-
 DragonKidLanceSeenText:
+	text_ntag "Lance"
 	text "Hey there,"
 	line "<PLAYER>!"
 
@@ -295,28 +338,30 @@ DragonKidLanceBeatenText:
 	done
 
 DragonKidLanceAfterBattleText:
+	text_ntag "Lance"
 	text "You'll go far,"
 	line "<PLAYER>!"
 	done
 
 LanceNextTimeText:
+	text_ntag "Lance"
 	text "Perhaps next time"
 	line "you can battle"
 	cont "us both!"
 	done
 
 ToughKidText:
+	text_ntag "<RIVAL>"
 	text "Wow! I can't"
 	line "believe how tough"
 	cont "they've gotten!"
 	done
 
 DahliaTheyWereToughText:
-	text "<RIVAL>: Master"
-	line "wasn't joking"
-	cont "about his"
-
-	para "grandchildren!"
+	text_ntag "<RIVAL>"
+	text "Master wasn't"
+	line "joking about his"
+	cont "granchildre!"
 
 	para "But, we won, so"
 	line "let's go back to"
@@ -330,19 +375,49 @@ MastersHouseDratiniText:
 	done
 
 LostToClairText:
-	text "Clair: Wow, you're"
-	line "not that good!"
+	text_ntag "Clair"
+	text "Wow, you're not"
+	line "that good!"
 
 	para "No wonder I beat"
 	line "you so easily!"
 	done
 
 LostToLanceText:
-	text "Lance: Train up a"
-	line "bit and maybe it'll"
-	cont "be different next"
+	text_ntag "Lance"
+	text "Train up a bit and"
+	line "maybe it'll be"
+	cont "different next"
 
 	para "time!"
+	done
+
+LanceRematchText:
+	text_ntag "Lance"
+	text "I heard you saved"
+	line "Kanto! I have to"
+	cont "know how much"
+	cont "stronger you've"
+	cont "gotten!"
+	done
+
+LanceRematchAfterText:
+	text_ntag "Lance"
+	text "The Champion and"
+	line "hero of Kanto is"
+	cont "no joke!"
+	done
+
+ClairRematchText:
+	text_ntag "Clair"
+	text "I'm not going to"
+	line "lose this time!"
+	done
+
+ClairRematchAfterText:
+	text_ntag "Clair"
+	text "I can't believe I"
+	line "lost again!"
 	done
 
 MastersHouse2F_MapEvents:

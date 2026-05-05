@@ -67,8 +67,8 @@ TrainerRoughneckKyle:
 	writetextend RoughneckKyleElevatorText
 
 FedHideoutB1FSabrinaText:
-	text "Sabrina: She's too"
-	line "easy."
+	text_ntag "Sabrina"
+	text "She's too easy."
 
 	para "Go on ahead."
 	done
@@ -80,15 +80,17 @@ FedHideoutB1FDelinquentText:
 	done
 
 FedHideoutB1FDaisyText:
-	text "Daisy: Hey mister!"
+	text_ntag "Daisy"
+	text "Hey mister!"
 
 	para "Wanna play with us"
 	line "please?"
 	done
 
 FedHideoutB1FVioletText:
-	text "Violet: Can I ride"
-	line "your bike, mister?"
+	text_ntag "Violet"
+	text "Can I ride your"
+	line "bike, mister?"
 
 	para "I promise I won't"
 	line "bang it up too"
@@ -96,8 +98,9 @@ FedHideoutB1FVioletText:
 	done
 
 FedHideoutB1FLilyText:
-	text "Lily: How does"
-	line "this feel?"
+	text_ntag "Lily"
+	text "How does this"
+	line "feel?"
 
 	para "I hope it hurts!"
 	done

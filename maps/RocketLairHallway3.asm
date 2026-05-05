@@ -128,15 +128,15 @@ RivalLeavesHallway2Movement:
 	step_end
 
 IDidItText:
-	text "<RIVAL>:…………………"
-	line "I…"
+	text_ntag "<RIVAL>"
+	text "………………I…"
 
 	para "…I did it…"
 	done
 
 DidYouSeeText:
-	text "<RIVAL>: Did you"
-	line "see it?"
+	text_ntag "<RIVAL>"
+	text "Did you see it?"
 
 	para "I did it!"
 
@@ -144,9 +144,9 @@ DidYouSeeText:
 	done
 
 CongratulationsKidText:
-	text "Miyamoto: I"
-	line "thought you were"
-	cont "familiar."
+	text_ntag "Miyamoto"
+	text "I thought you were"
+	line "familiar."
 
 	para "To think you were"
 	line "that little kid"
@@ -154,39 +154,47 @@ CongratulationsKidText:
 
 	para "You really have"
 	line "become stronger"
-	cont "than I expected."
+	cont "than I expected.@"
+	text_waitbutton
 
-	para "<RIVAL>: Yeah,"
-	line "yeah."
+	text_ntag "<RIVAL>"
+	text "Yeah, yeah."
 
 	para "Now that I've"
 	line "beaten you, give"
-	cont "me the key!"
+	cont "me the key!@"
+	text_waitbutton
 
-	para "Miyamoto: What"
-	line "key?"
+	text_ntag "Miyamoto"
+	text "What key?@"
+	text_waitbutton
 
-	para "<RIVAL>: Don't play"
-	line "dumb!"
+	text_ntag "<RIVAL>"
+	text "Don't play dumb!"
 
 	para "The key to Lugia"
-	line "and Ho-Oh's tanks!"
+	line "and Ho-Oh's tanks!@"
+	text_waitbutton
 
-	para "Miyamoto: Oh, that"
-	line "key."
+	text_ntag "Miyamoto"
+	text "Oh, that key."
 
 	para "Sorry, don't have"
-	line "it."
+	line "it.@"
+	text_waitbutton
 
-	para "<RIVAL>: What? You"
-	line "don't have it?"
+	text_ntag "<RIVAL>"
+	text "What? You don't"
+	line "have it?"
 
 	para "What do you mean?"
 
 	para "Aren't you the"
-	line "boss here?"
+	line "boss here?@"
+	text_waitbutton
 
-	para "Miyamoto: Oh, no."
+	text_ntag "Miyamoto"
+	text "Oh, no."
 
 	para "You must be"
 	line "mistaken."
@@ -229,6 +237,7 @@ CongratulationsKidText:
 	done
 
 ThisIsItText:
+	text_ntag "<RIVAL>"
 	text "…Well, this is it…"
 
 	para "We have to do"

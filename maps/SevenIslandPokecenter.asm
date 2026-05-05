@@ -36,5 +36,5 @@ SevenIslandPokecenter_MapEvents:
 	db 0 ; bg events
 
 	db 2 ; object events
-	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OneIslandPokecenterNurseScript, -1
+	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SevenIslandPokecenterNurseScript, -1
 	object_event  1,  5, SPRITE_DRAGON_TAMER_F, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SevenIslandPokecenterDragonTamerFScript, -1

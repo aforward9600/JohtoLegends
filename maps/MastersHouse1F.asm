@@ -348,8 +348,8 @@ ChooseCelebi:
 	sjump RivalDratiniScript
 
 ChooseGible:
-	pokepic GIBLE
-	cry GIBLE
+	pokepic BELDUM
+	cry BELDUM
 	waitbutton
 	closepokepic
 	opentext
@@ -361,12 +361,12 @@ ChooseGible:
 	writetext ChoseGibleText
 	buttonsound
 	waitsfx
-	getmonname STRING_BUFFER_3, GIBLE
+	getmonname STRING_BUFFER_3, BELDUM
 	writetext RecievedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke GIBLE, 5, ORAN_BERRY
+	givepoke BELDUM, 5, ORAN_BERRY
 	sjump RivalDratiniScript
 
 ChooseMissingno:
@@ -856,6 +856,7 @@ MasterLastMovement:
 	step_resume
 
 HeySleepyHeadText:
+	text_ntag "<RIVAL>"
 	text "Hey sleepy head!"
 	line "about time you"
 
@@ -865,6 +866,7 @@ HeySleepyHeadText:
 	done
 
 GoodOfYouText:
+	text_ntag "Master"
 	text "Good of you to"
 	line "have come."
 
@@ -888,6 +890,7 @@ GoodOfYouText:
 	done
 
 GoodSportText:
+	text_ntag "<RIVAL>"
 	text "I can't believe"
 	line "it."
 
@@ -902,53 +905,54 @@ GoodSportText:
 	done
 
 WhereDoYouThinkYoureGoingText:
+	text_ntag "Master"
 	text "And just where do"
 	line "you think you're"
 	cont "going?"
 	done
 
 TakeDratiniText:
-	text "Master: Will you"
-	line "take Dratini, the"
-	cont "pride of"
-
-	para "Blackthorn City?"
+	text_ntag "Master"
+	text "Will you take"
+	line "Dratini, the pride"
+	cont "of Blackthorn?"
 	done
 
 TakeLarvitarText:
-	text "Master: Will you"
-	line "take Larvitar,"
-	cont "the rampaging"
-
-	para "beast?"
+	text_ntag "Master"
+	text "Will you take"
+	line "Larvitar, the"
+	cont "rampaging beast?"
 	done
 
 DidntChooseDratiniText:
-	text "Master: Are you"
-	line "sure? It is of"
-	cont "great importance"
+	text_ntag "Master"
+	text "Are you sure? It"
+	line "is of great"
+	cont "importance that"
 
-	para "that you choose"
-	line "wisely."
+	para "you choose wisely."
 	done
 
 DidntChooseLarvitarText:
-	text "Master: Take your"
+	text_ntag "Master"
+	text "Take your time and"
 	line "time, and try not"
 	cont "to make a mistake."
 	done
 
 ChoseDratiniText:
-	text "Master: Excellent"
-	line "choice."
+	text_ntag "Master"
+	text "Excellent choice."
 	done
 
 ChoseLarvitarText:
-	text "Master: Hmm..."
-	line "Interesting."
+	text_ntag "Master"
+	text "Hmm…Interesting…"
 	done
 
 RivalChoseText:
+	text_ntag "<RIVAL>"
 	text "Alright, I'll"
 	line "take this one!"
 	done
@@ -975,23 +979,25 @@ RivalStarter2Text:
 	done
 
 IsntItCuteText:
+	text_ntag "<RIVAL>"
 	text "Giggle! Isn't my"
 	line "my #mon cute?"
 	done
 
 HehToughMonText:
+	text_ntag "<RIVAL>"
 	text "Heh! My #mon"
 	line "looks tough!"
 	done
 
 MastersTestText:
-	text "Master: Before you"
-	line "begin, your"
-	cont "journeys, I want"
+	text_ntag "Master"
+	text "Before you begin"
+	line "your journeys, I"
+	cont "want to test you."
 
-	para "to test you."
-	line "Upstairs are my"
-	cont "grandchildren,"
+	para "Upstairs are my"
+	line "grandchildren,"
 
 	para "Lance and Clair."
 	line "You've known them"
@@ -1013,25 +1019,30 @@ MastersTestText:
 	done
 
 LetsStartText:
-	text "<RIVAL>: Sounds"
-	line "simple enough."
-	cont "This'll be fun!"
+	text_ntag "<RIVAL>"
+	text "Sounds simple"
+	line "enough. This'll"
+	cont "be fun!"
 	done
 
 MastersHouseMasterText:
+	text_ntag "Master"
 	text "Go, and face your"
 	line "first challenge."
 	done
 
 HmText:
-	text "Hm."
+	text_ntag "Master"
+	text "Hm…"
 	done
 
 MastersHouseRivalText:
+	text_ntag "Master"
 	text "Go on!"
 	done
 
 CongratulationsText:
+	text_ntag "Master"
 	text "Congratulations."
 	line "I could hear"
 	cont "Clair's screams of"
@@ -1054,11 +1065,12 @@ CongratulationsText:
 	done
 
 ThankYouText:
-	text "<RIVAL>: Thank you,"
-	line "Master!"
+	text_ntag "<RIVAL>"
+	text "Thank you, Master!"
 	done
 
 ImOffText:
+	text_ntag "<RIVAL>"
 	text "Well, it looks"
 	line "like it's time!"
 	cont "We can finally"
@@ -1081,17 +1093,20 @@ ImOffText:
 	done
 
 RivalGoodByeText:
+	text_ntag "<RIVAL>"
 	text "I'm off. See you"
 	line "later!"
 	done
 
 MasterGoodLuckText:
+	text_ntag "Master"
 	text "Good luck to you"
 	line "both on your"
 	cont "journeys."
 	done
 
 TalkToGranny:
+	text_ntag "Master"
 	text "Be sure to speak"
 	line "to your grand-"
 	cont "mother before you"
@@ -1102,178 +1117,174 @@ TalkToGranny:
 	done
 
 MasterBeatenText:
-	text "Master: You've both"
-	line "done so well."
+	text_ntag "Master"
+	text "You've both done"
+	line "so well."
 
 	para "I am proud of you."
 	done
 
 TakeBagonText:
-	text "Master: Will you"
-	line "take Bagon, the"
-	cont "hard-headed"
-
-	para "#mon?"
+	text_ntag "Master"
+	text "Will you take"
+	line "Bagon, the hard-"
+	cont "headed #mon?"
 	done
 
 ChoseBagonText:
+	text_ntag "Master"
 	text "A good choice. I"
 	line "bred that from my"
 	cont "own Salamence."
 	done
 
 TakeCelebiText:
-	text "Master: Will you"
-	line "take Celebi, the"
-	cont "time-traveller?"
+	text_ntag "Master"
+	text "Will you take"
+	line "Celebi, the time-"
+	cont "traveller?"
 	done
 
 ChoseCelebiText:
-	text "Master: Don't ask"
-	line "me how I got that."
+	text_ntag "Master"
+	text "Don't ask me how"
+	line "I got that."
 	done
 
 TakeEeveeText:
-	text "Master: Will you"
-	line "take Eevee, the"
-	cont "#mon of many"
-
-	para "destinies?"
+	text_ntag "Master"
+	text "Will you take"
+	line "Eevee, the #mon"
+	cont "many destinies?"
 	done
 
 ChoseEeveeText:
-	text "Master: Its new"
-	line "form is all up to"
-	cont "you."
+	text_ntag "Master"
+	text "Its new form is"
+	line "all up to you."
 	done
 
 TakeMewtwoText:
-	text "Master: Will you"
-	line "take Mewtwo, the"
+	text_ntag "Master"
+	text "Will you take"
+	line "Mewtwo, the"
 	cont "strongest #mon?"
 	done
 
 ChoseMewtwoText:
-	text "Master: I think"
-	line "you're not taking"
-	cont "this seriously."
+	text_ntag "Master"
+	text "You're not taking"
+	line "this seriously."
 	done
 
 TakeElekidText:
-	text "Master: Will you"
-	line "take Elekid, the"
+	text_ntag "Master"
+	text "Will you take"
+	line "Elekid, the"
 	cont "lightening baby?"
 	done
 
 ChoseElekidText:
-	text "Master: Nurture it"
-	line "and it will be a"
-	cont "great ally."
+	text_ntag "Master"
+	text "Nurture it and it"
+	line "will be a great"
+	cont "ally."
 	done
 
 TakeMagikarpText:
-	text "Master: Will you"
-	line "take Magikarp, the"
+	text_ntag "Master"
+	text "Will you take"
+	line "Magikarp, the"
 	cont "weak fish?"
 	done
 
 ChoseMagikarpText:
-	text "Master: Good luck."
+	text_ntag "Master"
+	text "Good luck."
 
 	para "You're going to"
 	line "need it."
 	done
 
 TakePikachuText:
-	text "Master: Will you"
-	line "take Pikachu, the"
+	text_ntag "Master"
+	text "Will you take"
+	line "Pikachu, the"
 	cont "wildly popular"
 
 	para "mouse #mon?"
 	done
 
 ChosePikachuText:
-	text "Master: You'll be"
-	line "popular too with"
-	cont "this #mon!"
+	text_ntag "Master"
+	text "You'll be popular"
+	line "too with this"
+	cont "#mon!"
 	done
 
 TakeGibleText:
-	text "Master: Will you"
-	line "take Gible, the"
-	cont "biting #mon?"
+	text_ntag "Master"
+	text "Will you take"
+	line "Beldum, the iron"
+	cont "ball #mon?"
 	done
 
 ChoseGibleText:
-	text "A good choice. I"
-	line "bred that from my"
-	cont "own Garchomp."
+	text_ntag "Master"
+	text "Don't try to"
+	line "combine four of"
+	cont "them."
 	done
 
 TakeMagbyText:
-	text "Master: Will you"
-	line "take Magby, the"
-	cont "small, but strong"
+	text_ntag "Master"
+	text "Will you take"
+	line "Magby, the small,"
+	cont "but strong fire"
 
 	para "fire #mon?"
 	done
 
 ChoseMagbyText:
-	text "Master: Treat this"
-	line "#mon with"
-	cont "respect, and it"
-
-	para "will respect you."
+	text_ntag "Master"
+	text "Treat this #mon"
+	line "with respect, and"
+	cont "and it will"
+	cont "respect you."
 	done
 
 TakeMewText:
-	text "Master: Will you"
-	line "take Mew, the"
-	cont "ancestor to all"
-
-	para "#mon?"
+	text_ntag "Master"
+	text "Will you take Mew,"
+	line "the ancestor to all"
+	cont "#mon?"
 	done
 
 ChoseMewText:
-	text "Master: You are"
-	line "not even meant to"
-	cont "have this #mon"
-
-	para "until the post-"
-	line "game."
+	text_ntag "Master"
+	text "You are not even"
+	line "meant to have this"
+	cont "#mon until the"
+	cont"post-game"
 	done
 
 TakeMissingnoText:
-	text "Master: Will you"
-	line "take Missingno.,"
-	cont "the glitch?"
+	text_ntag "Master"
+	text "Will you take"
+	line "Missingno., the"
+	cont "glitch?"
 	done
 
 ChoseMissingnoText:
-	text "Master: That thing"
+	text_ntag "Master"
+	text "That thing"
 	line "shouldn't even be"
 	cont "in our world."
 	done
 
-TakeCandyPouchText:
-	text "By the way, I see"
-	line "that you put in"
-	cont "the password for"
-
-	para "CHEATER."
-	line "Humph. Have you no"
-	cont "shame?"
-
-	para "I am bound by the"
-	line "laws of the coding"
-	cont "to give you this."
-
-	para "Let us never speak"
-	line "of this again."
-	done
-
 MasterUnfortunateText:
-	text "Master: It is most"
+	text_ntag "Master"
+	text "It is most"
 	line "unfortunate that"
 	cont "you were not able"
 
@@ -1298,22 +1309,26 @@ MasterUnfortunateText:
 	done
 
 TakeOmanyteText:
-	text "Master: Will you"
-	line "take Omanyte, the"
+	text_ntag "Master"
+	text "Will you take"
+	line "Omanyte, the"
 	cont "Spiral #mon?"
 	done
 
 ChoseOmanyteText:
+	text_ntag "Master"
 	text "Praise Helix."
 	done
 
 TakeKabutoText:
-	text "Master: Will you"
-	line "take Kabuto, the"
+	text_ntag "Master"
+	text "Will you take"
+	line "Kabuto, the"
 	cont "Shellfish #mon?"
 	done
 
 ChoseKabutoText:
+	text_ntag "Master"
 	text "You're making a"
 	line "mistake."
 	done

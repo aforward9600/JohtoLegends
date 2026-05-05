@@ -502,6 +502,7 @@ MoveToChampionSpotFromRight:
 	step_end
 
 LooksLikeImTheChampionText:
+	text_ntag "<RIVAL>"
 	text "<PLAY_G>!"
 
 	para "I did it!"
@@ -571,6 +572,7 @@ ChampionLoseText:
 	done
 
 ChampionBattleAfterText:
+	text_ntag "<RIVAL>"
 	text "……………………………"
 
 	para "Well done,"
@@ -600,8 +602,8 @@ ChampionBattleAfterText:
 	done
 
 OakCongratulatesYouText:
-	text "Prof.Oak: Hello"
-	line "<PLAYER>!"
+	text_ntag "Prof.Oak"
+	text "Hello <PLAYER>!"
 
 	para "Congratulations on"
 	line "your triumph over"
@@ -617,8 +619,8 @@ OakCongratulatesYouText:
 	done
 
 OakCongratulatesRivalText:
-	text "Prof.Oak: Ah,"
-	line "<RIVAL>!"
+	text_ntag "Prof.Oak"
+	text "Ah, <RIVAL>!"
 
 	para "You fought well,"
 	line "and you fought"
@@ -637,10 +639,11 @@ OakCongratulatesRivalText:
 	done
 
 RivalThanksOakText:
-	text "<RIVAL>: Thank you"
-	line "Prof.Oak. I have"
-	cont "come to terms with"
-	cont "my loss here."
+	text_ntag "<RIVAL>"
+	text "Thank you Prof."
+	line "Oak. I have come"
+	cont "to terms with my"
+	cont "loss here."
 
 	para "I am happy that I"
 	line "got to share this"
@@ -649,14 +652,16 @@ RivalThanksOakText:
 	done
 
 OakComeWithMeText:
-	text "Prof.Oak: With"
-	line "that all settled,"
+	text_ntag "Prof.Oak"
+	text "With that all"
+	line "settled,"
 
 	para "<PLAY_G>, could you"
 	line "come with me?"
 	done
 
 ImBackPlayerText:
+	text_ntag "<RIVAL>"
 	text "<PLAYER>, I'm back."
 
 	para "I'm here to take"
@@ -681,22 +686,8 @@ ChallengerWinText:
 	para "…Heh…"
 	done
 
-BetterLuckNextTimeText:
-	text "…I…"
-
-	para "…I did it…"
-
-	para "I'm the champion"
-	line "again!"
-
-	para "<PLAYER>, come back"
-	line "when you want"
-	cont "another chance!"
-
-	para "I'll be waiting!"
-	done
-
 ChallengerCynthiaText:
+	text_ntag "Cynthia"
 	text "We meet again."
 
 	para "I decided to"
@@ -725,6 +716,7 @@ CynthiaWinText:
 	done
 
 CynthiaBattleAfterText:
+	text_ntag "Cynthia"
 	text "Congratulations"
 	line "are in order."
 
@@ -741,6 +733,7 @@ CynthiaBattleAfterText:
 	done
 
 OakCongratulatesCynthiaText:
+	text_ntag "Prof.Oak"
 	text "I must give my"
 	line "congrats to you as"
 	cont "well, Cynthia!"
@@ -755,6 +748,7 @@ OakCongratulatesCynthiaText:
 	done
 
 CynthiaThanksOakText:
+	text_ntag "Cynthia"
 	text "Thank you, Prof."
 	line "Oak."
 
@@ -765,8 +759,8 @@ CynthiaThanksOakText:
 	done
 
 OakCongratsText:
-	text "Prof.Oak: Hello"
-	line "<PLAYER>!"
+	text_ntag "Prof.Oak"
+	text "Hello <PLAYER>!"
 
 	para "Congratulations on"
 	line "defending your"
@@ -774,26 +768,6 @@ OakCongratsText:
 
 	para "I knew you had it"
 	line "in you!"
-	done
-
-LooksLikeImTheNewChampionText:
-	text "Looks like I'm"
-	line "the new Champion."
-
-	para "It was a good"
-	line "battle."
-
-	para "Come back if you"
-	line "want another try."
-	done
-
-CynthiaRematchText:
-	text "Here for a"
-	line "rematch?"
-
-	para "Let's see if you"
-	line "can reclaim your"
-	cont "title!"
 	done
 
 LancesRoom_MapEvents:

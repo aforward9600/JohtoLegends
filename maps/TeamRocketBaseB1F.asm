@@ -422,8 +422,8 @@ WarpPanelBrokeText:
 	done
 
 ThatAllYouGotText:
-	text "Miyamoto: That all"
-	line "you got?"
+	text_ntag "Miyamoto"
+	text "That all you got?"
 
 	para "I expected more"
 	line "out of someone"
@@ -431,7 +431,8 @@ ThatAllYouGotText:
 	done
 
 DahliaIsSilentText:
-	text "<RIVAL>:………………………"
+	text_ntag "<RIVAL>"
+	text "………………………"
 	done
 
 HideoutRivalDefeatedText:
@@ -446,8 +447,8 @@ HideoutRivalLostText:
 	done
 
 DahliaSilentAgainText:
-	text "Miyamoto: Silent"
-	line "again, huh?"
+	text_ntag "Miyamoto"
+	text "Silent again, huh?"
 
 	para "Pathetic."
 
@@ -472,8 +473,8 @@ DahliaSilentAgainText:
 	done
 
 DracoSilentAgainText:
-	text "Miyamoto: Silent"
-	line "again, huh?"
+	text_ntag "Miyamoto"
+	text "Silent again, huh?"
 
 	para "Pathetic."
 
@@ -498,6 +499,7 @@ DracoSilentAgainText:
 	done
 
 ICouldntDoItText:
+	text_ntag "<RIVAL>"
 	text "…Sniff…"
 
 	para "D-dang it…"
@@ -518,6 +520,7 @@ ICouldntDoItText:
 	done
 
 ThankYouOnceAgainText:
+	text_ntag "<RIVAL>"
 	text "…Thank you <PLAYER>…"
 
 	para "I know I need to"

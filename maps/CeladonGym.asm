@@ -81,8 +81,7 @@ CeladonGymErikaScript:
 	writetextend ErikaPostText
 
 ErikaLastMonText:
-	text "Erika: My last"
-	line "#mon?"
+	text "My last #mon?"
 
 	para "I hardly noticed…"
 	done
@@ -131,15 +130,17 @@ CeladonGymStatue:
 	jumpstd gymstatue2
 
 ErikaBeforeBattleText:
-	text "Erika: Oh…"
+	text "Oh…"
 	line "My apologies…"
 
 	para "I really dozed off"
 	line "there for a while…"
 
-	para "My name is Erika."
+	para "My name is Erika.@"
+	text_waitbutton
 
-	para "I'm the greenhouse"
+	text_ntag "Erika"
+	text "I'm the greenhouse"
 	line "owner here…"
 
 	para "Is there something"
@@ -173,7 +174,8 @@ ErikaBeforeBattleText:
 	done
 
 ErikaBeatenText:
-	text "Erika: Wait…"
+	text_ntag "Erika"
+	text "Wait…"
 
 	para "You're the #mon"
 	line "League Champion?"
@@ -188,8 +190,9 @@ PlayerReceivedRainbowBadgeText:
 	done
 
 ErikaExplainTMText:
-	text "Erika: This Badge"
-	line "is so pretty…"
+	text_ntag "Erika"
+	text "This Badge is so"
+	line "pretty…"
 
 	para "I'll be tending to"
 	line "the gardens here"
@@ -207,7 +210,8 @@ ErikaExplainTMText:
 	done
 
 ErikaAfterBattleText:
-	text "Erika: Mm…"
+	text_ntag "Erika"
+	text "Mm…"
 
 	para "Flowers need water"
 	line "everyday to grow"
@@ -318,7 +322,8 @@ TwinsJoAndZoe2AfterBattleText:
 	done
 
 AlreadyGotEnergyBallText:
-	text "Erika: …Oh?"
+	text_ntag "Erika"
+	text "…Oh?"
 
 	para "You already have"
 	line "that TM?"
@@ -330,8 +335,9 @@ AlreadyGotEnergyBallText:
 	done
 
 ErikaRematchText:
-	text "Erika:…Oh, hello"
-	line "again, <PLAYER>…"
+	text_ntag "Erika"
+	text "…Oh, hello again,"
+	line "<PLAYER>…"
 
 	para "I must have dozed"
 	line "off again…"
@@ -347,7 +353,8 @@ ErikaRematchText:
 	done
 
 ErikaRematchDefeatText:
-	text "Erika: …Oh, did I"
+	text_ntag "Erika"
+	text "…Oh, did I"
 	line "lose again?"
 
 	para "…Oh well…"
@@ -360,7 +367,8 @@ ErikaRematchDefeatText:
 	done
 
 ErikaPostText:
-	text "Erika: …Looks like"
+	text_ntag "Erika"
+	text "…Looks like"
 	line "we'll have a lot"
 	cont "of cleaning up to"
 	cont "do in the city…"

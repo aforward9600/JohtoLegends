@@ -95,13 +95,14 @@ GeneralSurgeLastMonText:
 	done
 
 SurgeScript_SurgeBeforeText:
-	text "Attention…"
-	line "At ease!"
+	text "Attention…At ease!"
 
 	para "I am General Surge"
-	line "of the Elite Four."
+	line "of the Elite Four.@"
+	text_waitbutton
 
-	para "After the war, the"
+	text_ntag "Surge"
+	text "After the war, the"
 	line "League was impres-"
 	cont "sed with my skill,"
 
@@ -135,6 +136,7 @@ SurgeScript_SurgeBeatenText:
 	done
 
 SurgeScript_SurgeDefeatText:
+	text_ntag "Surge"
 	text "That battle will"
 	line "go down in the"
 	cont "history books!"
@@ -154,8 +156,8 @@ SurgeScript_SurgeDefeatText:
 	done
 
 SurgeScript_SurgeBeforeText2:
-	text "Surge: Attention…"
-	line "At ease!"
+	text_ntag "Surge"
+	text "Attention…At ease!"
 
 	para "You're returned,"
 	line "<PLAYER>!"

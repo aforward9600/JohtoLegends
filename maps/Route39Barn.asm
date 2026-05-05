@@ -102,6 +102,7 @@ Route39BarnSailorText:
 	done
 
 Route39BarnMiltonText:
+	text_ntag "Milton"
 	text "Howdy there!"
 
 	para "I come back every"

@@ -49,6 +49,7 @@ WildAreaCaveHikerText:
 	done
 
 WildAreaCaveChigusaText:
+	text_ntag "Chigusa"
 	text "I like to train my"
 	line "body and #mon"
 	cont "here in the caves."

@@ -258,6 +258,7 @@ EcruteakGymGrampsSlowStepDownMovement:
 	step_end
 
 EnokiIntroText:
+	text_ntag "Enoki"
 	text "Good of you to"
 	line "have come."
 
@@ -294,6 +295,7 @@ EnokiWinText:
 	done
 
 BeatenEnokiText:
+	text_ntag "Enoki"
 	text "Bravo young"
 	line "trainer. It takes"
 	cont "some nerve to face"
@@ -309,6 +311,7 @@ Text_ReceivedFogBadge:
 	done
 
 EnokiText_FogBadgeSpeech:
+	text_ntag "Enoki"
 	text "The Fog Badge will"
 	line "make #mon up"
 	cont "to Lv 30 obey you."
@@ -318,6 +321,7 @@ EnokiText_FogBadgeSpeech:
 	done
 
 EnokiText_HexSpeech:
+	text_ntag "Enoki"
 	text "It contains the"
 	line "move Hex. Its"
 	cont "power doubles when"
@@ -341,6 +345,7 @@ EnokiHelpText:
 	done
 
 WhatIsGoingOnText:
+	text_ntag "Enoki"
 	text "What's that?"
 
 	para "Please, excuse me"
@@ -351,6 +356,7 @@ WhatIsGoingOnText:
 	done
 
 EnokiFightDoneText:
+	text_ntag "Enoki"
 	text "Morty will make a"
 	line "fine Gym Leader"
 	cont "one day, and"
@@ -364,6 +370,7 @@ EnokiFightDoneText:
 	done
 
 EnokiReadyForARematchText:
+	text_ntag "Enoki"
 	text "Good of you to"
 	line "return."
 
@@ -376,6 +383,7 @@ EnokiReadyForARematchText:
 	done
 
 BeatenEnokiAgainText:
+	text_ntag "Enoki"
 	text "You truly are on"
 	line "your way to becom-"
 	cont "ing a master."
@@ -475,6 +483,7 @@ HexManiacZeldaAfterBattleText:
 	done
 
 EcruteakGymGuyText:
+	text_ntag "Jim Gyde"
 	text "How's it going,"
 	line "champ in the"
 	cont "making? Enoki uses"
@@ -496,6 +505,7 @@ EcruteakGymGuyText:
 	done
 
 EcruteakGymGuyWinText:
+	text_ntag "Jim Gyde"
 	text "Ghost Types might"
 	line "be terrifying,"
 
@@ -516,6 +526,7 @@ EcruteakGymClosedText:
 	done
 
 EcruteakGymMortyGymText:
+	text_ntag "Morty"
 	text "Gramps got pretty"
 	line "mad at us for"
 	cont "going into the"
@@ -533,6 +544,7 @@ EcruteakGymMortyGymText:
 	done
 
 EcruteakGymEusineText:
+	text_ntag "Eusine"
 	text "Ah man."
 
 	para "Our punishment is"
@@ -552,6 +564,7 @@ EcruteakGymEusineText:
 	done
 
 PostGameEnokiText:
+	text_ntag "Enoki"
 	text "Congratulations on"
 	line "becoming Champion."
 

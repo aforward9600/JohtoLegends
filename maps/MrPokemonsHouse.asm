@@ -70,63 +70,8 @@ MrPokemonsHouse_OakExits:
 	step_sleep 2
 	step_end
 
-MrPokemonIntroText1:
-	text "Hello, hello! You"
-	line "must be <PLAY_G>."
-
-	para "PROF.ELM said that"
-	line "you would visit."
-	done
-
-MrPokemonIntroText2:
-	text "This is what I"
-	line "want PROF.ELM to"
-	cont "examine."
-	done
-
-MrPokemonsHouse_GotEggText:
-	text "<PLAYER> received"
-	line "MYSTERY EGG."
-	done
-
-MrPokemonIntroText3:
-	text "I know a couple"
-	line "who run a #MON"
-	cont "DAY-CARE service."
-
-	para "They gave me that"
-	line "EGG."
-
-	para "I was intrigued,"
-	line "so I sent mail to"
-	cont "PROF.ELM."
-
-	para "For #MON evolu-"
-	line "tion, PROF.ELM is"
-	cont "the authority."
-	done
-
-MrPokemonIntroText4:
-	text "Even PROF.OAK here"
-	line "recognizes that."
-	done
-
-MrPokemonIntroText5:
-	text "If my assumption"
-	line "is correct, PROF."
-	cont "ELM will know it."
-	done
-
-MrPokemonsHouse_MrPokemonHealText:
-	text "You are returning"
-	line "to PROF.ELM?"
-
-	para "Here. Your #MON"
-	line "should have some"
-	cont "rest."
-	done
-
 MrPokemonText_ImDependingOnYou:
+	text_ntag "Mr. #mon"
 	text "It's you!"
 
 	para "I heard you"
@@ -148,6 +93,7 @@ MrPokemonText_ImDependingOnYou:
 	done
 
 MrPokemonText_AlwaysNewDiscoveries:
+	text_ntag "Mr. #mon"
 	text "I'm always looking"
 	line "to expand my"
 	cont "collection."
@@ -157,94 +103,8 @@ MrPokemonText_AlwaysNewDiscoveries:
 	cont "make an offer."
 	done
 
-MrPokemonsHouse_OakText1:
-	text "OAK: Aha! So"
-	line "you're <PLAY_G>!"
-
-	para "I'm OAK! A #MON"
-	line "researcher."
-
-	para "I was just visit-"
-	line "ing my old friend"
-	cont "MR.#MON."
-
-	para "I heard you were"
-	line "running an errand"
-
-	para "for PROF.ELM, so I"
-	line "waited here."
-
-	para "Oh! What's this?"
-	line "A rare #MON!"
-
-	para "Let's see…"
-
-	para "Hm, I see!"
-
-	para "I understand why"
-	line "PROF.ELM gave you"
-
-	para "a #MON for this"
-	line "errand."
-
-	para "To researchers"
-	line "like PROF.ELM and"
-
-	para "I, #MON are our"
-	line "friends."
-
-	para "He saw that you"
-	line "would treat your"
-
-	para "#MON with love"
-	line "and care."
-
-	para "…Ah!"
-
-	para "You seem to be"
-	line "dependable."
-
-	para "How would you like"
-	line "to help me out?"
-
-	para "See? This is the"
-	line "latest version of"
-	cont "#DEX."
-
-	para "It automatically"
-	line "records data on"
-
-	para "#MON you've"
-	line "seen or caught."
-
-	para "It's a hi-tech"
-	line "encyclopedia!"
-	done
-
-MrPokemonsHouse_GetDexText:
-	text "<PLAYER> received"
-	line "#DEX!"
-	done
-
-MrPokemonsHouse_OakText2:
-	text "Go meet many kinds"
-	line "of #MON and"
-
-	para "complete that"
-	line "#DEX!"
-
-	para "But I've stayed"
-	line "too long."
-
-	para "I have to get to"
-	line "GOLDENROD for my"
-	cont "usual radio show."
-
-	para "<PLAY_G>, I'm"
-	line "counting on you!"
-	done
-
 MrPokemonText_GimmeTheScale:
+	text_ntag "Mr. #mon"
 	text "Hm? That Hair!"
 	line "What's that?"
 	cont "What's that from?"
@@ -274,6 +134,7 @@ MrPokemonText_GimmeTheScale:
 	done
 
 MrPokemonText_Disappointed:
+	text_ntag "Mr. #mon"
 	text "That's disappoint-"
 	line "ing. That happens"
 	cont "to be very rare."
@@ -302,6 +163,7 @@ MrPokemonsHouse_StrangeCoinsText:
 	done
 
 MythicalPasswordText:
+	text_ntag "Mr. #mon"
 	text "I often wonder"
 	line "about this Strange"
 	cont "Hair…"

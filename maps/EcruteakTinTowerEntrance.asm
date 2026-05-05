@@ -422,7 +422,8 @@ WhateverText:
 	done
 
 ThankYouAgainText:
-	text "Enoki: Thank you,"
+	text_ntag "Enoki"
+	text "Thank you,"
 	line "<PLAYER>."
 
 	para "You've helped me"
@@ -434,6 +435,7 @@ ThankYouAgainText:
 	done
 
 ThatsScytherCallText:
+	text_ntag "Enoki"
 	text "That's a Scyther"
 	line "Call."
 
@@ -454,6 +456,7 @@ ThatsScytherCallText:
 	done
 
 HoldItRightThereText:
+	text_ntag "Sherles"
 	text "Hold it right"
 	line "there."
 
@@ -497,6 +500,7 @@ HoldItRightThereText:
 	done
 
 SunglassesText:
+	text_ntag "Sherles"
 	text "Hm…"
 
 	para "So, a man in black"
@@ -504,6 +508,7 @@ SunglassesText:
 	done
 
 SorryImBusyText:
+	text_ntag "Sherles"
 	text "Sorry, but I'm"
 	line "busy right now."
 	done

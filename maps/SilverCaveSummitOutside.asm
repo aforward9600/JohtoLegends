@@ -81,10 +81,11 @@ SilverCaveSummitOutsideWalk:
 	step_end
 
 RivalComeWithMeText:
-	text "<RIVAL>: It looks"
-	line "like we're finally"
-	cont "both here, at the"
-	cont "top of Mt.Silver."
+	text_ntag "<RIVAL>"
+	text "It looks like we're"
+	line "finally both here,"
+	cont "at the top of Mt."
+	cont "Silver."
 
 	para "You wanna know why"
 	line "I called you here?"

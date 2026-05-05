@@ -96,6 +96,7 @@ FightingDojoSign2Text:
 	done
 
 KoichiIntroText:
+	text_ntag "Koichi"
 	text "Welcome, Champion"
 	line "<PLAYER>!"
 
@@ -127,8 +128,9 @@ KoichiLastMonText:
 	done
 
 YoureGivingMeBadgeText:
-	text "Koichi: So, what"
-	line "do you think?"
+	text_ntag "Koichi"
+	text "So, what do you"
+	line "think?"
 
 	para "Strong, huh?"
 
@@ -180,6 +182,7 @@ YoureGivingMeBadgeText:
 	done
 
 GoAndFaceSabrinaText:
+	text_ntag "Koichi"
 	text "Go on and face"
 	line "her."
 
@@ -189,6 +192,7 @@ GoAndFaceSabrinaText:
 	done
 
 KoichiAfterText:
+	text_ntag "Koichi"
 	text "I think we're ready"
 	line "to move on the"
 	cont "Feds."
@@ -235,8 +239,9 @@ NoRoomForDynamicpunchText:
 	done
 
 HereIsTM01Text:
-	text "Koichi: Welcome"
-	line "back, Champion."
+	text_ntag "Koichi"
+	text "Welcome back,"
+	line "Champion."
 
 	para "I apologize for"
 	line "not giving you"
@@ -254,10 +259,10 @@ HereIsTM01Text:
 	done
 
 KoichiAfterEpilogueText:
-	text "Koichi: I still"
-	line "feel like I haven't"
-	cont "redeemed myself"
-	cont "yet."
+	text_ntag "Koichi"
+	text "I still feel like"
+	line "I haven't redeemed"
+	cont "myself yet."
 
 	para "I do not deserve"
 	line "to be Gym Leader"

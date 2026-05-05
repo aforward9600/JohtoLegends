@@ -38,9 +38,11 @@ LighthouseArianaSeenText:
 	cont "us."
 
 	para "You can call me"
-	line "Ariana, child."
+	line "Ariana, child.@"
+	text_waitbutton
 
-	para "I'm pretty high up"
+	text_ntag "Ariana"
+	text "I'm pretty high up"
 	line "up in this little"
 	cont "team, despite my"
 	cont "age, so don't"
@@ -58,6 +60,7 @@ LighthouseArianaLossText:
 	done
 
 LighthouseArianaAfterBattleText:
+	text_ntag "Ariana"
 	text "I can't believe"
 	line "this!"
 

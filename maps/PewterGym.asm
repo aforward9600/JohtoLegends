@@ -82,7 +82,8 @@ TrainerEngineerBernie:
 	writetextend EngineerBernieAfterBattleText
 
 BrockIntroText:
-	text "???: Hm?"
+	text_ntag "???"
+	text "Hm?"
 
 	para "Who're you?"
 
@@ -111,9 +112,11 @@ BrockIntroText:
 
 	para "I'm Flint, the"
 	line "former Pewter Gym"
-	cont "Leader."
+	cont "Leader.@"
+	text_waitbutton
 
-	para "When I heard what"
+	text_ntag "Flint"
+	text "When I heard what"
 	line "the Feds did in"
 	cont "Cerulean, I knew"
 
@@ -173,7 +176,8 @@ ReceivedBoulderBadgeText:
 	done
 
 BrockBoulderBadgeText:
-	text "Flint: This badge…"
+	text_ntag "Flint"
+	text "This badge…"
 
 	para "It brings back"
 	line "memories…"
@@ -196,9 +200,9 @@ BrockBoulderBadgeText:
 	done
 
 BrockFightDoneText:
-	text "Flint: It's time"
-	line "we take back our"
-	cont "region!"
+	text_ntag "Flint"
+	text "It's time we take"
+	line "back our region!"
 
 	para "Let me know when"
 	line "you're ready!"
@@ -264,10 +268,11 @@ EngineerBernieAfterBattleText:
 	done
 
 FlintMySonText:
-	text "Flint: My son will"
-	line "get to grow up in"
-	cont "a world not"
-	cont "gripped by fear."
+	text_ntag "Flint"
+	text "My son will get to"
+	line "grow up in a world"
+	cont "not gripped by"
+	cont "fear."
 
 	para "I haven't felt"
 	line "this hopeful in a"
@@ -275,9 +280,10 @@ FlintMySonText:
 	done
 
 FlintRematchText:
-	text "Flint: Mining is"
-	line "fine, but battling"
-	cont "is where I'm at my"
+	text_ntag "Flint"
+	text "Mining is fine,"
+	line "but battling is"
+	cont "where I'm at my"
 	cont "most comfortable."
 
 	para "Time to keep up"
@@ -285,9 +291,10 @@ FlintRematchText:
 	done
 
 FlintAfterRematchText:
-	text "Flint: Looks like"
-	line "I'll have to keep"
-	cont "on improving to"
+	text_ntag "Flint"
+	text "Looks like I'll"
+	line "have to keep on"
+	cont "improving to"
 
 	para "make sure I can"
 	line "keep up as a Gym"

@@ -156,9 +156,11 @@ AcademyEarlSpinMovement:
 	step_end
 
 AcademyEarlIntroText:
-	text "Earl, I am!"
+	text "Earl, I am!@"
+	text_waitbutton
 
-	para "Wonderful are"
+	text_ntag "Earl"
+	text "Wonderful are"
 	line "#mon, yes!"
 
 	para "Teach you I will"
@@ -171,6 +173,7 @@ AcademyEarlIntroText:
 	done
 
 AcademyEarlTeachHowToWinText:
+	text_ntag "Earl"
 	text "Good! Teach you,"
 	line "I will!"
 
@@ -187,12 +190,14 @@ AcademyEarlTeachHowToWinText:
 	done
 
 AcademyEarlTeachMoreText:
+	text_ntag "Earl"
 	text "So, want to know"
 	line "how to raise"
 	cont "#mon well?"
 	done
 
 AcademyEarlTeachHowToRaiseWellText:
+	text_ntag "Earl"
 	text "Fine! Teach you,"
 	line "I will!"
 
@@ -221,6 +226,7 @@ AcademyEarlTeachHowToRaiseWellText:
 	done
 
 AcademyEarlNoMoreToTeachText:
+	text_ntag "Earl"
 	text "Oh! Smart student"
 	line "you are! Nothing"
 	cont "more do I teach!"

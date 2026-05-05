@@ -175,9 +175,11 @@ SilphCo1FGentlemanText2:
 
 DevonStoneText1:
 	text "My name is Joseph"
-	line "Stone."
+	line "Stone.@"
+	text_waitbutton
 
-	para "I am the owner of"
+	text_ntag "Mr. Stone"
+	text "I am the owner of"
 	line "Devon Corporation"
 	cont "in Hoenn."
 
@@ -231,11 +233,11 @@ DevonStoneText1:
 	done
 
 DevonStoneText2:
-	text "Joseph: Thinking"
-	line "of going home and"
-	cont "seeing my son"
-	cont "again fills me"
-	cont "hope again."
+	text_ntag "Mr. Stone"
+	text "Thinking of going"
+	line "home and seeing my"
+	cont "son again fills me"
+	cont "me hope again."
 	done
 
 GotBeldumText:
@@ -244,6 +246,7 @@ GotBeldumText:
 	done
 
 NoRoomBeldumText:
+	text_ntag "Mr. Stone"
 	text "Well, this is a"
 	line "predicament!"
 
@@ -252,6 +255,7 @@ NoRoomBeldumText:
 	done
 
 CantGiveBeldumText:
+	text_ntag "Mr. Stone"
 	text "Ah, my apologies."
 
 	para "I did not realize"

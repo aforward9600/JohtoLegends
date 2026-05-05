@@ -248,190 +248,7 @@ MovementData_0x6d212:
 	step LEFT
 	step_end
 
-MovementData_0x6d219:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step_end
-
-MovementData_0x6d21f:
-	step DOWN
-	step DOWN
-	step DOWN
-	turn_head RIGHT
-	step_end
-
-MovementData_0x6d224:
-	big_step LEFT
-	big_step LEFT
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	turn_head DOWN
-	step_end
-
-MovementData_0x6d22f:
-	big_step LEFT
-	big_step LEFT
-	big_step UP
-	big_step UP
-	big_step LEFT
-	big_step LEFT
-	step_end
-
-MovementData_0x6d236:
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	step_end
-
-MovementData_0x6d23b:
-	fix_facing
-	set_sliding
-	jump_step RIGHT
-	remove_sliding
-	remove_fixed_facing
-	step_end
-
-MovementData_0x6d241:
-	slow_step DOWN
-	turn_head LEFT
-	step_end
-
-MovementData_0x6d244:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step_end
-
-MovementData_0x6d248:
-	big_step LEFT
-	step_end
-
-MovementData_0x6d24a:
-	big_step LEFT
-	step_end
-
-MovementData_0x6d24c:
-	big_step LEFT
-	big_step UP
-	turn_head LEFT
-	step_end
-
-MovementData_0x6d250:
-	step RIGHT
-	step RIGHT
-	turn_head DOWN
-	step_end
-
-MovementData_0x6d254:
-	step UP
-	step UP
-	step UP
-	step_end
-
-MovementData_0x6d258:
-	step_sleep 8
-	step LEFT
-	step LEFT
-	turn_head UP
-	step_sleep 8
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	turn_head UP
-	step_sleep 8
-	step LEFT
-	step LEFT
-	turn_head DOWN
-	step_end
-
-MovementData_0x6d267:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
 MovementData_0x6d271:
-	step RIGHT
-	step_end
-
-MovementData_0x6d278:
-	step LEFT
-	step_end
-
-MovementData_0x6d27a:
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step LEFT
-	step LEFT
-	step LEFT
-	step_end
-
-MovementData_0x6d283:
-	step DOWN
-	step DOWN
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step_end
-
-MovementData_0x6d28c:
-	step RIGHT
-	step RIGHT
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step_end
-
-MovementData_0x6d299:
-	step RIGHT
-	step RIGHT
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step_end
-
-MovementData_0x6d2a4:
-	step RIGHT
-	step RIGHT
-	step DOWN
-	step DOWN
-	step RIGHT
-	step RIGHT
-	step RIGHT
 	step RIGHT
 	step_end
 
@@ -441,6 +258,7 @@ Archer3LastMonText:
 	done
 
 ArcherYouAgainText:
+	text_ntag "Archer"
 	text "I knew that cell"
 	line "couldn't hold you."
 
@@ -474,6 +292,7 @@ UnknownText_0x6d45c:
 	done
 
 HeresPassword2Text:
+	text_ntag "Archer"
 	text "Well, we're about"
 	line "done here anyway."
 
@@ -597,12 +416,14 @@ CantLeaveWithoutWingsText:
 	done
 
 ArcherGoAwayText:
-	text "You got my pass-"
-	line "word. Now go"
+	text_ntag "Archer"
+	text "You got my"
+	line "password. Now go"
 	cont "away already."
 	done
 
 YouFoundTheWingsText:
+	text_ntag "<RIVAL>"
 	text "Hey, you found"
 	line "the wings!"
 
@@ -624,6 +445,7 @@ GaveBackRainbowWingText:
 	done
 
 LearnWhirlpoolText:
+	text_ntag "<RIVAL>"
 	text "Oh, as a thanks,"
 	line "I can teach you a"
 	cont "new tune for your"
@@ -638,6 +460,7 @@ LearnWhirlpoolText:
 	done
 
 HaveYouSeenHerText:
+	text_ntag "<RIVAL>"
 	text "By the way, have"
 	line "you ran into,"
 	cont "HER yet?"

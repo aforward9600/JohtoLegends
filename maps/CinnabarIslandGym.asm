@@ -649,10 +649,10 @@ Question6Text:
 	done
 
 BlaineIntroText:
-	text "Blaine: My quiz"
-	line "machines still"
-	cont "work, after all"
-	cont "this time!"
+	text_ntag "Blaine"
+	text "My quiz machines"
+	line "still work, after"
+	cont "all this time!"
 
 	para "How did you enjoy"
 	line "them?"
@@ -691,9 +691,10 @@ ReceivedVolcanoBadgeText:
 	done
 
 BlaineVolcanoBadgeText:
-	text "Blaine: It's been a"
-	line "while since I've"
-	cont "held one of these."
+	text_ntag "Blaine"
+	text "It's been a while"
+	line "since I've held one"
+	cont "of these."
 
 	para "It feels nostalgic"
 	line "for me…"
@@ -711,6 +712,7 @@ BlaineVolcanoBadgeText:
 	done
 
 BlaineFightDoneText:
+	text_ntag "Blaine"
 	text "I have no doubt we"
 	line "can clear the land"
 	cont "of those Feds!"
@@ -837,8 +839,9 @@ BurglarKiddAfterBattleText:
 	done
 
 BlainePostText:
-	text "Blaine: Once, when"
-	line "I was lost in the"
+	text_ntag "Blaine"
+	text "Once, when I was"
+	line "lost in the"
 	cont "mountains,"
 
 	para "Moltres descended"
@@ -870,16 +873,18 @@ BlainePostText:
 	done
 
 BlaineRematchText:
-	text "Blaine: I've been"
-	line "looking forward to"
-	cont "a hot rematch!"
+	text_ntag "Blaine"
+	text "I've been looking"
+	line "forward to a hot"
+	cont "rematch!"
 
 	para "You'd better have a"
 	line "Burn Heal!"
 	done
 
 BlaineAfterRematchText:
-	text "Blaine: Quite the"
+	text_ntag "Blaine"
+	text "Quite the"
 	line "smoking match!"
 
 	para "I'd take my wig off"

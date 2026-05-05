@@ -132,6 +132,7 @@ Route38EcruteakGateOfficerText:
 	done
 
 GotAnEeveeText:
+	text_ntag "<RIVAL>"
 	text "Hey, <PLAYER>!"
 
 	para "I got an Eevee"
@@ -161,6 +162,7 @@ GotAnEeveeText:
 	done
 
 GotAnEeveeMaleText:
+	text_ntag "<RIVAL>"
 	text "Hey, <PLAYER>!"
 
 	para "I got an Eevee"
@@ -196,6 +198,7 @@ RivalEcruteakGateLossText:
 	done
 
 YouWonAgainText:
+	text_ntag "<RIVAL>"
 	text "Well, looks like"
 	line "you won again!"
 
