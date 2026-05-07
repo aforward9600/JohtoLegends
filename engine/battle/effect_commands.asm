@@ -7677,7 +7677,7 @@ GetUserItem:
 	ld hl, wEnemyMonItem
 .go
 	push hl
-	call IsOpponentItemUsable
+	call IsUserItemUsable
 	pop hl
 	ld b, [hl]
 	jr z, GetItemHeldEffect

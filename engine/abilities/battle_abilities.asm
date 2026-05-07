@@ -711,7 +711,8 @@ CheckContactAbilities:
 	farcall GetEighthMaxHP
 	farcall SubtractHPFromUser
 	ld hl, RoughSkinText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	jp CheckFaintAbilities
 
 .PerishBody:
 	ld hl, wPlayerSubStatus1
@@ -1817,7 +1818,8 @@ HandleEndMoveAbility:
 	farcall GetEighthMaxHP
 	farcall SubtractHPFromUser
 	ld hl, DrySkinHurtText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	jp CheckFaintAbilities
 
 .DrySkinRain:
 	jp CheckFullHPAbilities
@@ -1934,7 +1936,8 @@ HandleEndMoveAbility:
 	farcall GetEighthMaxHP
 	farcall SubtractHPFromUser
 	ld hl, SolarPowerText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	jp CheckFaintAbilities
 
 .ShedSkin:
 	call CheckStatusAbilities
@@ -2486,4 +2489,16 @@ CheckIfTargetIsGivenTypeAbility:
 	ret z
 	ld a, [de]
 	cp b
+	ret
+
+CheckFaintAbilities:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, PlayerFaintAbilities
+EnemyFaintAbilities:
+	farcall HandleEnemyMonFaint
+	ret
+
+PlayerFaintAbilities:
+	farcall HandlePlayerMonFaint
 	ret

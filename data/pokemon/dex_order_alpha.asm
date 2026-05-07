@@ -301,9 +301,9 @@ AlphabeticalPokedexOrder:
 	dw SABLEYE
 	dw SALAMENCE
 	dw SANDSHREW
-	dw SANDSHREW
+	dw SANDSHREW_A
 	dw SANDSLASH
-	dw SANDSLASH
+	dw SANDSLASH_A
 	dw SCIZOR
 	dw SCYTHER
 	dw SEADRA
