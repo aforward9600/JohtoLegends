@@ -271,16 +271,6 @@ HousePalette:
 INCLUDE "gfx/tilesets/house.pal"
 
 LoadUndergroundPalette:
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .male
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, UndergroundPaletteFemale
-	ld bc, 8 palettes
-	jp FarCopyWRAM
-
-.male
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1
 	ld hl, UndergroundPalette
@@ -289,9 +279,6 @@ LoadUndergroundPalette:
 
 UndergroundPalette:
 INCLUDE "gfx/tilesets/underground.pal"
-
-UndergroundPaletteFemale:
-INCLUDE "gfx/tilesets/underground_female.pal"
 
 MansionPalette1:
 INCLUDE "gfx/tilesets/mansion_1.pal"
@@ -344,13 +331,24 @@ INCLUDE "gfx/tilesets/tower_day.pal"
 LoadSpecialNPCPalette:
 	call GetMapTimeOfDay
 	bit IN_DARKNESS_F, a
-	jr z, .do_nothing
+	jr z, .not_dark
 	ld a, [wStatusFlags]
 	bit STATUSFLAGS_FLASH_F, a
-	jr nz, .do_nothing
+	jr z, .darkness
 
-;darkness
+.not_dark
+	ld a, [wMapTileset]
+	cp TILESET_UNDERGROUND
+	jr z, .underground
+	jr .do_nothing
+
+.darkness
 	call LoadNPCDarknessPalette
+	scf
+	ret
+
+.underground
+	call LoadNPCUndergroundPalette
 	scf
 	ret
 
@@ -367,3 +365,13 @@ LoadNPCDarknessPalette:
 
 NPCDarknessPalette:
 INCLUDE "gfx/overworld/npc_sprites_darkness.pal"
+
+LoadNPCUndergroundPalette:
+	ld a, BANK(wOBPals1)
+	ld de, wOBPals1
+	ld hl, NPCUndergroundPalette
+	ld bc, 8 palettes
+	jp FarCopyWRAM
+
+NPCUndergroundPalette:
+INCLUDE "gfx/overworld/npc_sprites_underground.pal"

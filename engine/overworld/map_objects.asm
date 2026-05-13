@@ -990,12 +990,12 @@ MapObjectMovementPattern:
 	jr ._MovementGrass_Puddle_End
 
 .MovementSand:
- 	call EndSpriteMovement
- 	call ._MovementShadow_Grass_Emote_BoulderDust
- 	ld hl, OBJECT_ACTION
- 	add hl, bc
- 	ld [hl], OBJECT_ACTION_SAND
- 	jr ._MovementGrass_Puddle_End
+	call EndSpriteMovement
+	call ._MovementShadow_Grass_Emote_BoulderDust
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], OBJECT_ACTION_SAND
+	jr ._MovementGrass_Puddle_End
 
 ._MovementShadow_Grass_Emote_BoulderDust:
 	ld hl, OBJECT_RANGE
@@ -1970,6 +1970,11 @@ ApplyMovementToFollower:
 	ld d, 0
 	ld hl, wFollowMovementQueue
 	add hl, de
+	ld a, [wFollowInSync]
+	and a
+	jr z, .no_sync
+	dec hl
+.no_sync
 	pop af
 	ld [hl], a
 	ret
@@ -2934,6 +2939,12 @@ InitSprites:
 	add hl, bc
 	add [hl]
 	add 12
+	ld hl, OBJECT_PALETTE
+	add hl, bc
+	bit BG_ALIGNED_F, [hl]
+	jr z, .not_bg_aligned
+	add 4
+.not_bg_aligned
 	ld e, a
 	ld a, [wPlayerBGMapOffsetY]
 	add e

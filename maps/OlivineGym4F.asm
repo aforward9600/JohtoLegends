@@ -1,4 +1,5 @@
 	object_const_def ; object_event constants
+	const OLIVINEGYM4F_LIFT
 	const OLIVINEGYM4F_BYRON
 
 OlivineGym4F_MapScripts:
@@ -154,7 +155,9 @@ AfterByronRematch:
 	writetextend BeatenByronAgainText
 
 EleventhElevator:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM4F_LIFT, 5, 4
+	appear OLIVINEGYM4F_LIFT
 	changeblock 4, 4, $8c
 	scall OlivineDownElevator
 	clearevent EVENT_GYM_ELEVENTH_ELEVATOR
@@ -162,7 +165,9 @@ EleventhElevator:
 	end
 
 TwelthElevator:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM4F_LIFT, 1, 2
+	appear OLIVINEGYM4F_LIFT
 	changeblock 0, 2, $8c
 	scall OlivineDownElevator
 	setevent EVENT_GYM_TWELTH_ELEVATOR
@@ -170,106 +175,170 @@ TwelthElevator:
 	end
 
 SeventeenthLift:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM4F_LIFT, 6, 1
+	appear OLIVINEGYM4F_LIFT
 	changeblock 6, 0, $a9
 	reloadmappart
 	playsound SFX_ELEVATOR
+	loadmem wFollowInSync, TRUE
+	follow PLAYER, OLIVINEGYM4F_LIFT
 	applymovement PLAYER, OlivineGymRight3Movement
+	stopfollow PLAYER, OLIVINEGYM4F_LIFT
+	loadmem wFollowInSync, FALSE
 	playsound SFX_BUMP
 	refreshscreen $86
 	changeblock 8, 0, $b0
-	scall OlivineRestorePlayerSpriteReloadMap
+	moveobject OLIVINEGYM4F_LIFT, 99, 99
+	disappear OLIVINEGYM4F_LIFT
+	reloadmappart
 	setevent EVENT_OLIVINE_GYM_SEVENTH_PLATFORM
 	end
 
 EighteenthLift:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM4F_LIFT, 9, 1
+	appear OLIVINEGYM4F_LIFT
 	changeblock 8, 0, $a9
 	reloadmappart
 	playsound SFX_ELEVATOR
+	loadmem wFollowInSync, TRUE
+	follow PLAYER, OLIVINEGYM4F_LIFT
 	applymovement PLAYER, OlivineGymLeft3Movement
+	stopfollow PLAYER, OLIVINEGYM4F_LIFT
+	loadmem wFollowInSync, FALSE
 	playsound SFX_BUMP
 	refreshscreen $86
 	changeblock 6, 0, $af
-	scall OlivineRestorePlayerSpriteReloadMap
+	moveobject OLIVINEGYM4F_LIFT, 99, 99
+	disappear OLIVINEGYM4F_LIFT
+	reloadmappart
 	clearevent EVENT_OLIVINE_GYM_SEVENTH_PLATFORM
 	end
 
 NineteenthLift:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM4F_LIFT, 10, 2
+	appear OLIVINEGYM4F_LIFT
 	changeblock 10, 2, $a6
 	reloadmappart
 	playsound SFX_ELEVATOR
+	loadmem wFollowInSync, TRUE
+	follow PLAYER, OLIVINEGYM4F_LIFT
 	applymovement PLAYER, OlivineGymDown5Movement
+	stopfollow PLAYER, OLIVINEGYM4F_LIFT
+	loadmem wFollowInSync, FALSE
 	playsound SFX_BUMP
 	refreshscreen $86
 	changeblock 10, 6, $b1
-	scall OlivineRestorePlayerSpriteReloadMap
+	moveobject OLIVINEGYM4F_LIFT, 99, 99
+	disappear OLIVINEGYM4F_LIFT
+	reloadmappart
 	setevent EVENT_OLIVINE_GYM_EIGHTH_PLATFORM
 	end
 
 TwentiethLift:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM4F_LIFT, 10, 7
+	appear OLIVINEGYM4F_LIFT
 	changeblock 10, 6, $a7
 	reloadmappart
 	playsound SFX_ELEVATOR
+	loadmem wFollowInSync, TRUE
+	follow PLAYER, OLIVINEGYM4F_LIFT
 	applymovement PLAYER, OlivineGymUp5Movement
+	stopfollow PLAYER, OLIVINEGYM4F_LIFT
+	loadmem wFollowInSync, FALSE
 	playsound SFX_BUMP
 	refreshscreen $86
 	changeblock 10, 2, $b2
-	scall OlivineRestorePlayerSpriteReloadMap
+	moveobject OLIVINEGYM4F_LIFT, 99, 99
+	disappear OLIVINEGYM4F_LIFT
+	reloadmappart
 	clearevent EVENT_OLIVINE_GYM_EIGHTH_PLATFORM
 	end
 
 TwentyfirstLift:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM4F_LIFT, 9, 8
+	appear OLIVINEGYM4F_LIFT
 	changeblock 8, 8, $ac
 	reloadmappart
 	playsound SFX_ELEVATOR
+	loadmem wFollowInSync, TRUE
+	follow PLAYER, OLIVINEGYM4F_LIFT
 	applymovement PLAYER, OlivineGymLeft9Movement
+	stopfollow PLAYER, OLIVINEGYM4F_LIFT
+	loadmem wFollowInSync, FALSE
 	playsound SFX_BUMP
 	refreshscreen $86
 	changeblock 2, 8, $ad
-	scall OlivineRestorePlayerSpriteReloadMap
+	moveobject OLIVINEGYM4F_LIFT, 99, 99
+	disappear OLIVINEGYM4F_LIFT
+	reloadmappart
 	setevent EVENT_OLIVINE_GYM_NINTH_PLATFORM
 	end
 
 TwentysecondLift:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM4F_LIFT, 2, 8
+	appear OLIVINEGYM4F_LIFT
 	changeblock 2, 8, $ac
 	reloadmappart
 	playsound SFX_ELEVATOR
+	loadmem wFollowInSync, TRUE
+	follow PLAYER, OLIVINEGYM4F_LIFT
 	applymovement PLAYER, OlivineGymRight9Movement
+	stopfollow PLAYER, OLIVINEGYM4F_LIFT
+	loadmem wFollowInSync, FALSE
 	playsound SFX_BUMP
 	refreshscreen $86
 	changeblock 8, 8, $ab
-	scall OlivineRestorePlayerSpriteReloadMap
+	moveobject OLIVINEGYM4F_LIFT, 99, 99
+	disappear OLIVINEGYM4F_LIFT
+	reloadmappart
 	clearevent EVENT_OLIVINE_GYM_NINTH_PLATFORM
 	end
 
 TwentythirdLift:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM4F_LIFT, 0, 7
+	appear OLIVINEGYM4F_LIFT
 	changeblock 0, 6, $a7
 	reloadmappart
 	playsound SFX_ELEVATOR
+	loadmem wFollowInSync, TRUE
+	follow PLAYER, OLIVINEGYM4F_LIFT
 	applymovement PLAYER, OlivineGymUp3Movement
+	stopfollow PLAYER, OLIVINEGYM4F_LIFT
+	loadmem wFollowInSync, FALSE
 	playsound SFX_BUMP
 	refreshscreen $86
 	changeblock 0, 4, $b2
-	scall OlivineRestorePlayerSpriteReloadMap
+	moveobject OLIVINEGYM4F_LIFT, 99, 99
+	disappear OLIVINEGYM4F_LIFT
+	reloadmappart
 	setevent EVENT_OLIVINE_GYM_TENTH_PLATFORM
 	end
 
 TwentyfourthLift:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM4F_LIFT, 0, 4
+	appear OLIVINEGYM4F_LIFT
 	changeblock 0, 4, $a6
 	reloadmappart
 	playsound SFX_ELEVATOR
+	loadmem wFollowInSync, TRUE
+	follow PLAYER, OLIVINEGYM4F_LIFT
 	applymovement PLAYER, OlivineGymDown3Movement
+	stopfollow PLAYER, OLIVINEGYM4F_LIFT
+	loadmem wFollowInSync, FALSE
 	playsound SFX_BUMP
 	refreshscreen $86
 	changeblock 0, 6, $b1
-	scall OlivineRestorePlayerSpriteReloadMap
+	moveobject OLIVINEGYM4F_LIFT, 99, 99
+	disappear OLIVINEGYM4F_LIFT
+	reloadmappart
 	clearevent EVENT_OLIVINE_GYM_TENTH_PLATFORM
 	end
 
@@ -425,5 +494,6 @@ OlivineGym4F_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
+	object_event 99, 99, SPRITE_LIFT, SPRITEMOVEDATA_LIFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  5,  0, SPRITE_BYRON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, OlivineGym1FByronScript, EVENT_OLIVINE_GYM_JASMINE

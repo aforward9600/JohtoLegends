@@ -1,4 +1,5 @@
 	object_const_def ; object_event constants
+	const OLIVINEGYM1F_LIFT
 	const OLIVINEGYM1F_GYM_GUY
 	const OLIVINEGYM1F_GENTLEMAN
 	const OLIVINEGYM1F_TEACHER
@@ -109,19 +110,10 @@ OlivineGym1FStatue:
 	gettrainername STRING_BUFFER_4, BYRON, BYRON1
 	jumpstd gymstatue5
 
-OlivineLiftSprite:
-	special LiftSprite
-	refreshscreen $86
-	end
-
-OlivineRestorePlayerSpriteReloadMap:
-	reloadmappart
-	special RestorePlayerSprite
-;	refreshscreen $86
-	end
-
 FirstElevator:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM1F_LIFT, 7, 5
+	appear OLIVINEGYM1F_LIFT
 	changeblock 6, 4, $99
 	scall OlivineElevatorEffect
 	setevent EVENT_GYM_FIRST_ELEVATOR
@@ -129,7 +121,9 @@ FirstElevator:
 	end
 
 SecondElevator:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM1F_LIFT, 11, 5
+	appear OLIVINEGYM1F_LIFT
 	changeblock 10, 4, $89
 	scall OlivineElevatorEffect
 	setevent EVENT_GYM_SECOND_ELEVATOR
@@ -137,7 +131,9 @@ SecondElevator:
 	end
 
 ThirdElevator:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM1F_LIFT, 14, 5
+	appear OLIVINEGYM1F_LIFT
 	changeblock 14, 4, $87
 	scall OlivineElevatorEffect
 	setevent EVENT_GYM_THIRD_ELEVATOR
@@ -145,7 +141,9 @@ ThirdElevator:
 	end
 
 FourthElevator:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM1F_LIFT, 18, 10
+	appear OLIVINEGYM1F_LIFT
 	changeblock 18, 10, $60
 	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_FOURTH_ELEVATOR
@@ -153,7 +151,9 @@ FourthElevator:
 	end
 
 FifthElevator:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM1F_LIFT, 17, 5
+	appear OLIVINEGYM1F_LIFT
 	changeblock 16, 4, $89
 	scall OlivineElevatorEffect
 	setevent EVENT_GYM_FIFTH_ELEVATOR
@@ -161,7 +161,9 @@ FifthElevator:
 	end
 
 SixthElevator:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM1F_LIFT, 21, 10
+	appear OLIVINEGYM1F_LIFT
 	changeblock 20, 10, $68
 	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_SIXTH_ELEVATOR
@@ -169,7 +171,9 @@ SixthElevator:
 	end
 
 SeventhElevator:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM1F_LIFT, 16, 10
+	appear OLIVINEGYM1F_LIFT
 	changeblock 16, 10, $aa
 	scall OlivineElevatorEffect
 	setevent EVENT_GYM_SEVENTH_ELEVATOR
@@ -177,7 +181,9 @@ SeventhElevator:
 	end
 
 TenthElevator:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM1F_LIFT, 19, 2
+	appear OLIVINEGYM1F_LIFT
 	changeblock 18, 2, $68
 	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_TENTH_ELEVATOR
@@ -185,7 +191,9 @@ TenthElevator:
 	end
 
 EleventhElevator1F:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM1F_LIFT, 13, 2
+	appear OLIVINEGYM1F_LIFT
 	changeblock 12, 2, $68
 	scall OlivineElevatorEffect
 	setevent EVENT_GYM_ELEVENTH_ELEVATOR
@@ -193,7 +201,9 @@ EleventhElevator1F:
 	end
 
 TwelthElevator1F:
-	scall OlivineLiftSprite
+	refreshscreen
+	moveobject OLIVINEGYM1F_LIFT, 5, 2
+	appear OLIVINEGYM1F_LIFT
 	changeblock 4, 2, $68
 	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_TWELTH_ELEVATOR
@@ -206,21 +216,24 @@ ResetElevators:
 OlivineElevatorEffect:
 	reloadmappart
 	playsound SFX_ELEVATOR
+	loadmem wFollowInSync, TRUE
+	follow PLAYER, OLIVINEGYM1F_LIFT
 	applymovement PLAYER, OlivineElevatorMovement
+	stopfollow PLAYER, OLIVINEGYM1F_LIFT
+	loadmem wFollowInSync, FALSE
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	special RestorePlayerSprite
 	end
 
 OlivineElevatorMovement:
-	turn_head DOWN
 	fix_facing
+	set_sliding
 	step UP
 	step UP
 	step UP
+	remove_sliding
 	remove_fixed_facing
 	step_end
-	
 
 GentlemanCrofton1FSeenText:
 	text "Steel is a hard"
@@ -313,7 +326,8 @@ OlivineGym1F_MapEvents:
 	bg_event 11, 11, BGEVENT_READ, OlivineGym1FStatue
 	bg_event 14, 11, BGEVENT_READ, OlivineGym1FStatue
 
-	db 3 ; object events
+	db 4 ; object events
+	object_event 99, 99, SPRITE_LIFT, SPRITEMOVEDATA_LIFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 12, 11, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGym1FGuyScript, -1
 	object_event  6,  7, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, OlivineGymTrainerGentlemanCrofton1F, -1
 	object_event 16,  6, SPRITE_TEACHER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerTeacherAbigail1F, -1
