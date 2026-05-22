@@ -6626,7 +6626,10 @@ BattleCommand_HeldFlinch:
 	ret nz
 
 	farcall CheckContactAbilities
+	jr nc, .FinishHeldFlinch
+	ret
 
+.FinishHeldFlinch
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_SUPER_FANG

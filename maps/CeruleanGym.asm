@@ -446,7 +446,7 @@ LilyIntroText:
 	text_waitbutton
 
 	text_ntag "Lily"
-	para "We've been having a"
+	text "We've been having a"
 	line "hard time moving"
 	cont "on…"
 

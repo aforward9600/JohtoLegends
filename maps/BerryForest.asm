@@ -161,16 +161,16 @@ BerryForest_MapEvents:
 	db 0 ; coord events
 
 	db 10 ; bg events
-	coord_event 22, 30, BGEVENT_READ, BerryForestBerrySign
-	coord_event  2, 20, BGEVENT_READ, BerryForestHypnoSign
-	coord_event 28,  1, BGEVENT_ITEM, BerryForestChestoBerry
-	coord_event  3,  1, BGEVENT_ITEM, BerryForestLumBerry
-	coord_event  2, 23, BGEVENT_ITEM, BerryForestPechaBerry
-	coord_event  8,  1, BGEVENT_ITEM, BerryForestRawstBerry
-	coord_event 23, 12, BGEVENT_ITEM, BerryForestOranBerry
-	coord_event 28, 26, BGEVENT_ITEM, BerryForestPersimBerry
-	coord_event 14,  1, BGEVENT_ITEM, BerryForestAspearBerry
-	coord_event  7, 17, BGEVENT_ITEM, BerryForestCheriBerry
+	bg_event 22, 30, BGEVENT_READ, BerryForestBerrySign
+	bg_event  2, 20, BGEVENT_READ, BerryForestHypnoSign
+	bg_event 28,  1, BGEVENT_ITEM, BerryForestChestoBerry
+	bg_event  3,  1, BGEVENT_ITEM, BerryForestLumBerry
+	bg_event  2, 23, BGEVENT_ITEM, BerryForestPechaBerry
+	bg_event  8,  1, BGEVENT_ITEM, BerryForestRawstBerry
+	bg_event 23, 12, BGEVENT_ITEM, BerryForestOranBerry
+	bg_event 28, 26, BGEVENT_ITEM, BerryForestPersimBerry
+	bg_event 14,  1, BGEVENT_ITEM, BerryForestAspearBerry
+	bg_event  7, 17, BGEVENT_ITEM, BerryForestCheriBerry
 
 	db 2 ; object events
 	object_event  2,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BerryForestYoungsterScript, EVENT_LOST_BOY_BERRY_FOREST

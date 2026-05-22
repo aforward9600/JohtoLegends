@@ -2491,14 +2491,27 @@ CheckIfTargetIsGivenTypeAbility:
 	cp b
 	ret
 
-CheckFaintAbilities:
+CheckFaintAbilities::
 	ldh a, [hBattleTurn]
 	and a
 	jr z, PlayerFaintAbilities
 EnemyFaintAbilities:
-	farcall HandleEnemyMonFaint
+	ld hl, wEnemyMonHP
+	call CheckIfHPIsZeroAbilities
+	ret nz
+;	farcall HandleEnemyMonFaint
+	scf
 	ret
 
 PlayerFaintAbilities:
-	farcall HandlePlayerMonFaint
+	ld hl, wBattleMonHP
+	call CheckIfHPIsZeroAbilities
+	ret nz
+;	farcall HandlePlayerMonFaint
+	scf
+	ret
+
+CheckIfHPIsZeroAbilities:
+	ld a, [hli]
+	or [hl]
 	ret
