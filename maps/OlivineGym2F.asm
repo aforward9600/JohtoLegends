@@ -1,4 +1,5 @@
 	object_const_def ; object_event constants
+	const OLIVINEGYM2F_LIFT
 	const OLIVINEGYM2F_ENGINEER
 	const OLIVINEGYM2F_BEAUTY
 
@@ -106,45 +107,64 @@ TrainerBeautyAshley:
 OlivineDownElevator:
 	reloadmappart
 	playsound SFX_ELEVATOR
+	loadmem wFollowInSync, TRUE
+	follow PLAYER, OLIVINEGYM2F_LIFT
 	applymovement PLAYER, OlivineDownElevatorMovement1
+	stopfollow PLAYER, OLIVINEGYM2F_LIFT
+	loadmem wFollowInSync, FALSE
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	special RestorePlayerSprite
 	end
 
 OlivineDownElevator2:
 	reloadmappart
 	playsound SFX_ELEVATOR
+	loadmem wFollowInSync, TRUE
+	follow PLAYER, OLIVINEGYM2F_LIFT
 	applymovement PLAYER, OlivineDownElevatorMovement2
+	stopfollow PLAYER, OLIVINEGYM2F_LIFT
+	loadmem wFollowInSync, FALSE
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
 	applymovement PLAYER, OlivineGymShowPlayer
-	special RestorePlayerSprite
+	applymovement OLIVINEGYM2F_LIFT, OlivineGymShowPlayer
 	end
 
 OlivineDownElevatorMovement1:
-	turn_head DOWN
+	fix_facing
+	set_sliding
 	hide_person
 	step DOWN
 	step DOWN
 	show_person
 	step DOWN
+	remove_sliding
+	remove_fixed_facing
 	step_end
 
 OlivineDownElevatorMovement2:
-	turn_head DOWN
+	fix_facing
+	set_sliding
 	hide_person
 	step DOWN
 	step DOWN
 	step DOWN
+	remove_sliding
+	remove_fixed_facing
 	step_end
 
 OlivineGymShowPlayer:
 	show_person
 	step_end
 
+AppearSecondElevator:
+	appear OLIVINEGYM2F_LIFT
+	refreshscreen
+	end
+
 First2FElevator:
-	scall OlivineLiftSprite
+	moveobject OLIVINEGYM2F_LIFT, 5, 5
+	scall AppearSecondElevator
 	changeblock 4, 4, $6d
 	scall OlivineDownElevator
 	clearevent EVENT_GYM_FIRST_ELEVATOR
@@ -152,7 +172,8 @@ First2FElevator:
 	end
 
 Second2FElevator:
-	scall OlivineLiftSprite
+	moveobject OLIVINEGYM2F_LIFT, 7, 5
+	scall AppearSecondElevator
 	changeblock 6, 4, $6f
 	scall OlivineDownElevator
 	clearevent EVENT_GYM_SECOND_ELEVATOR
@@ -160,7 +181,8 @@ Second2FElevator:
 	end
 
 Third2FElevator:
-	scall OlivineLiftSprite
+	moveobject OLIVINEGYM2F_LIFT, 9, 5
+	scall AppearSecondElevator
 	changeblock 8, 4, $70
 	scall OlivineDownElevator
 	clearevent EVENT_GYM_THIRD_ELEVATOR
@@ -168,7 +190,8 @@ Third2FElevator:
 	end
 
 Fourth2FElevator:
-	scall OlivineLiftSprite
+	moveobject OLIVINEGYM2F_LIFT, 13, 10
+	scall AppearSecondElevator
 	changeblock 12, 10, $6b
 	scall OlivineDownElevator
 	setevent EVENT_GYM_FOURTH_ELEVATOR
@@ -176,7 +199,8 @@ Fourth2FElevator:
 	end
 
 Fifth2FElevator:
-	scall OlivineLiftSprite
+	moveobject OLIVINEGYM2F_LIFT, 12, 5
+	scall AppearSecondElevator
 	changeblock 12, 4, $77
 	scall OlivineDownElevator2
 	clearevent EVENT_GYM_FIFTH_ELEVATOR
@@ -184,7 +208,8 @@ Fifth2FElevator:
 	end
 
 Sixth2FElevator:
-	scall OlivineLiftSprite
+	moveobject OLIVINEGYM2F_LIFT, 15, 10
+	scall AppearSecondElevator
 	changeblock 14, 10, $6b
 	scall OlivineDownElevator
 	setevent EVENT_GYM_SIXTH_ELEVATOR
@@ -192,7 +217,8 @@ Sixth2FElevator:
 	end
 
 Seventh2FElevator:
-	scall OlivineLiftSprite
+	moveobject OLIVINEGYM2F_LIFT, 11, 10
+	scall AppearSecondElevator
 	changeblock 10, 10, $82
 	scall OlivineDownElevator
 	clearevent EVENT_GYM_SEVENTH_ELEVATOR
@@ -200,7 +226,8 @@ Seventh2FElevator:
 	end
 
 Eighth2FElevator:
-	scall OlivineLiftSprite
+	moveobject OLIVINEGYM2F_LIFT, 2, 12
+	scall AppearSecondElevator
 	changeblock 2, 12, $86
 	scall OlivineElevatorEffect
 	setevent EVENT_GYM_EIGHTH_ELEVATOR
@@ -208,7 +235,8 @@ Eighth2FElevator:
 	end
 
 Ninth2FElevator:
-	scall OlivineLiftSprite
+	moveobject OLIVINEGYM2F_LIFT, 15, 3
+	scall AppearSecondElevator
 	changeblock 14, 2, $7a
 	scall OlivineElevatorEffect
 	clearevent EVENT_GYM_NINTH_ELEVATOR
@@ -216,7 +244,8 @@ Ninth2FElevator:
 	end
 
 Tenth2FElevator:
-	scall OlivineLiftSprite
+	moveobject OLIVINEGYM2F_LIFT, 13, 3
+	scall AppearSecondElevator
 	changeblock 12, 2, $79
 	scall OlivineDownElevator2
 	setevent EVENT_GYM_TENTH_ELEVATOR
@@ -224,57 +253,149 @@ Tenth2FElevator:
 	end
 
 FirstPlatform:
-	scall OlivineLiftSprite
+	moveobject OLIVINEGYM2F_LIFT, 9, 10
+	scall AppearSecondElevator
 	changeblock 8, 10, $ac
 	reloadmappart
 	playsound SFX_ELEVATOR
+	loadmem wFollowInSync, TRUE
+	follow PLAYER, OLIVINEGYM2F_LIFT
 	applymovement PLAYER, OlivineGymLeft5Movement
+	stopfollow PLAYER, OLIVINEGYM2F_LIFT
+	loadmem wFollowInSync, FALSE
 	playsound SFX_BUMP
-	refreshscreen $86
 	changeblock 4, 10, $ad
-	scall OlivineRestorePlayerSpriteReloadMap
+	refreshscreen $86
+	moveobject OLIVINEGYM2F_LIFT, 99, 99
+	disappear OLIVINEGYM2F_LIFT
+	reloadmappart
 	setevent EVENT_OLIVINE_GYM_FIRST_PLATFORM
 	end
 
 SecondPlatform:
-	scall OlivineLiftSprite
+	moveobject OLIVINEGYM2F_LIFT, 4, 10
+	scall AppearSecondElevator
 	changeblock 4, 10, $ac
 	reloadmappart
 	playsound SFX_ELEVATOR
+	loadmem wFollowInSync, TRUE
+	follow PLAYER, OLIVINEGYM2F_LIFT
 	applymovement PLAYER, OlivineGymRight5Movement
+	stopfollow PLAYER, OLIVINEGYM2F_LIFT
+	loadmem wFollowInSync, FALSE
 	playsound SFX_BUMP
-	refreshscreen $86
 	changeblock 8, 10, $ab
-	scall OlivineRestorePlayerSpriteReloadMap
+	refreshscreen $86
+	moveobject OLIVINEGYM2F_LIFT, 99, 99
+	disappear OLIVINEGYM2F_LIFT
+	reloadmappart
 	clearevent EVENT_OLIVINE_GYM_FIRST_PLATFORM
 	end
 
 OlivineGymLeft9Movement:
+	fix_facing
+	set_sliding
 	step LEFT
 	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	remove_sliding
+	remove_fixed_facing
+	step_end
+
 OlivineGymLeft5Movement:
+	fix_facing
+	set_sliding
 	step LEFT
 	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	remove_sliding
+	remove_fixed_facing
+	step_end
+
 OlivineGymLeft3Movement:
+	fix_facing
+	set_sliding
 	step LEFT
+	step LEFT
+	step LEFT
+	remove_sliding
+	remove_fixed_facing
+	step_end
+
 OlivineGymLeft2Movement:
+	fix_facing
+	set_sliding
 	step LEFT
+	step LEFT
+	remove_sliding
+	remove_fixed_facing
+	step_end
+
 OlivineGymLeft1Movement:
+	fix_facing
+	set_sliding
 	step LEFT
+	remove_sliding
+	remove_fixed_facing
 	step_end
 
 OlivineGymRight9Movement:
+	fix_facing
+	set_sliding
 	step RIGHT
 	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	remove_sliding
+	remove_fixed_facing
+	step_end
+
 OlivineGymRight5Movement:
+	fix_facing
+	set_sliding
 	step RIGHT
 	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	remove_sliding
+	remove_fixed_facing
+	step_end
+
 OlivineGymRight3Movement:
+	fix_facing
+	set_sliding
 	step RIGHT
+	step RIGHT
+	step RIGHT
+	remove_sliding
+	remove_fixed_facing
+	step_end
+
 OlivineGymRight2Movement:
+	fix_facing
+	set_sliding
 	step RIGHT
+	step RIGHT
+	remove_sliding
+	remove_fixed_facing
+	step_end
+
 OlivineGymRight1Movement:
+	fix_facing
+	set_sliding
 	step RIGHT
+	remove_sliding
+	remove_fixed_facing
 	step_end
 
 EngineerDanteSeenText:
@@ -340,6 +461,7 @@ OlivineGym2F_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 3 ; object events
+	object_event 99, 99, SPRITE_LIFT, SPRITEMOVEDATA_LIFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 14,  0, SPRITE_ENGINEER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerEngineerDante, -1
 	object_event  0, 10, SPRITE_BUENA, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyAshley, -1

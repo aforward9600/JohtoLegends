@@ -20,9 +20,9 @@ SCENE_FINISHED EQU 1
 	const SCENE_LANCESROOM_APPROACH_LANCE ; 1
 
 ; wCherrygroveCitySceneID
-	const_def
-	const SCENE_CHERRYGROVECITYHOUSE_MEET_CYNTHIA      ; 0
+	const_def      ; 0
 	const SCENE_CHERRYGROVECITYHOUSE_NOTHING   ; 1
+	const SCENE_CHERRYGROVECITYHOUSE_MEET_CYNTHIA
 
 ; wRoute35NationalParkGateSceneID
 	const_def

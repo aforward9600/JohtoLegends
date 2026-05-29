@@ -1,19 +1,3 @@
-LiftSprite::
-	push bc
-	ld a, PLAYER_LIFT
-	ld [wPlayerState], a
-	call ReplaceKrisSprite ; UpdateSprites
-	pop bc
-	ret
-
-RestorePlayerSprite::
-	push bc
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite ; UpdateSprites
-	pop bc
-	ret
-
 DoPlayerMovement::
 
 	call .GetDPad

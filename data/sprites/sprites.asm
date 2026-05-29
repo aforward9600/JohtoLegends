@@ -153,6 +153,5 @@ OverworldSprites:
 	overworld_sprite ChrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite RegigigasSpriteGFX, 12, STANDING_SPRITE, PAL_OW_SILVER
-	overworld_sprite ChrisLiftSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite KrisLiftSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite LiftSpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite CupSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN

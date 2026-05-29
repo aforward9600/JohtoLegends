@@ -80,11 +80,13 @@ OVERHEAD      EQU 1 << OVERHEAD_F
 USE_OBP1      EQU 1 << USE_OBP1_F
 
 ; object_struct OBJECT_PALETTE bit flags
-	const_def 5
+	const_def 4
+	const BG_ALIGNED_F       ; 4
 	const SWIMMING_F         ; 5
 	const STRENGTH_BOULDER_F ; 6
 	const BIG_OBJECT_F       ; 7
 
+BG_ALIGNED       EQU 1 << BG_ALIGNED_F
 SWIMMING         EQU 1 << SWIMMING_F
 STRENGTH_BOULDER EQU 1 << STRENGTH_BOULDER_F
 BIG_OBJECT       EQU 1 << BIG_OBJECT_F
@@ -170,6 +172,7 @@ MAPOBJECT_SCREEN_HEIGHT EQU (SCREEN_HEIGHT / 2) + 2
 	const SPRITEMOVEDATA_SWIM_WANDER          ; 24
 	const SPRITEMOVEDATA_PUDDLE
 	const SPRITEMOVEDATA_SAND
+	const SPRITEMOVEDATA_LIFT
 NUM_SPRITEMOVEDATA EQU const_value
 
 ; MapObjectMovementPattern.Pointers indexes (see engine/overworld/map_objects.asm)

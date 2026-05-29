@@ -149,8 +149,7 @@
 	const SPRITE_CHRIS_RUN ; 9c
 	const SPRITE_KRIS_RUN ; 9d
 	const SPRITE_REGIGIGAS ; 9e
-	const SPRITE_CHRIS_LIFT
-	const SPRITE_KRIS_LIFT
+	const SPRITE_LIFT
 	const SPRITE_CUP
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)

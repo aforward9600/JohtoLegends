@@ -2483,8 +2483,7 @@ wGameTimeFrames::  db ; d4c8
 
 wCurDay:: db ; d4cb
 
-	ds 1
-
+wFollowInSync:: db
 wObjectFollow_Leader:: db
 wObjectFollow_Follower:: db
 wCenteredObject:: db

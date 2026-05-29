@@ -24,9 +24,9 @@ CherrygroveGymSpeechHouse_MapScripts:
 	writetext CherrygroveCynthiaLetsDoThisText
 	waitbutton
 	closetext
+	winlosstext CynthiaBeatenAgainText, Cynthia2LastMonText
 	readvar VAR_BADGES
 	ifequal 7, .CynthiaBattle2
-	winlosstext CynthiaBeatenAgainText, Cynthia2LastMonText
 	loadtrainer TOURIST, CYNTHIA5
 .ResumeCynthiaBattle
 	startbattle
@@ -47,9 +47,8 @@ CherrygroveGymSpeechHouse_MapScripts:
 	end
 
 .CynthiaBattle2:
-	winlosstext CynthiaBeatenAgainText, Cynthia2LastMonText
 	loadtrainer TOURIST, CYNTHIA4
-	jr .ResumeCynthiaBattle
+	sjump .ResumeCynthiaBattle
 
 .RefusedCynthiaBattle1:
 	writetext CynthiaSomeOtherTimeText
@@ -77,9 +76,9 @@ CherrygroveGymSpeechHouseCynthiaScript:
 	writetext CherrygroveCynthiaLetsDoThisText
 	waitbutton
 	closetext
+	winlosstext CynthiaBeatenAgainText, Cynthia2LastMonText
 	readvar VAR_BADGES
 	ifequal 7, .CynthiaBattle1
-	winlosstext CynthiaBeatenAgainText, Cynthia2LastMonText
 	loadtrainer TOURIST, CYNTHIA5
 .ResumeCynthiaBattle
 	startbattle
@@ -95,9 +94,8 @@ CherrygroveGymSpeechHouseCynthiaScript:
 	end
 
 .CynthiaBattle1:
-	winlosstext CynthiaBeatenAgainText, Cynthia2LastMonText
 	loadtrainer TOURIST, CYNTHIA4
-	jr .ResumeCynthiaBattle
+	sjump .ResumeCynthiaBattle
 
 .BeatenCherrygroveCynthia:
 	writetextend CynthiaHelloAgainText
