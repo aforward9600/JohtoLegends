@@ -2327,8 +2327,7 @@ Pokedex_PutOldModeCursorOAM:
 
 Pokedex_PutNewModeABCModeCursorOAM:
 	ld hl, .CursorOAM
-	call Pokedex_LoadCursorOAM
-	ret
+	jp Pokedex_LoadCursorOAM
 
 .CursorOAM:
 	dsprite  3,  3,  9, -1, $30, 7
@@ -2739,7 +2738,7 @@ Pokedex_LoadGFX:
 	call LoadFontsExtra
 	ld hl, vTiles2 tile $60
 	ld bc, $20 tiles
-	call Pokedex_InvertTiles
+;	call Pokedex_InvertTiles
 	call Pokedex_CheckSGB
 	jr nz, .LoadPokedexLZ
 	farcall LoadSGBPokedexGFX
@@ -2759,9 +2758,26 @@ Pokedex_LoadGFX:
 	jp EnableLCD
 
 Pokedex_LoadInvertedFont:
-	call LoadStandardFont
+	ld de, FontInversed
+	ld hl, vTiles1
+	lb bc, BANK(FontInversed), 32 ; "A" to "]"
+	call Get1bpp_2
+	ld de, FontInversed + 32 * LEN_1BPP_TILE
+	ld hl, vTiles1 tile $20
+	lb bc, BANK(FontInversed), 26 ; "a" to "z" (skip "┌" to "┘")
+	call Get1bpp_2
+	ld de, FontInversed + 64 * LEN_1BPP_TILE
+	ld hl, vTiles1 tile $40
+	lb bc, BANK(FontInversed), 32 ; $c0 to "←"
+	call Get1bpp_2
+	ld de, FontInversed + 96 * LEN_1BPP_TILE
+	ld hl, vTiles1 tile $60
+	lb bc, BANK(FontInversed), 32 ; "'" to "9"
+	call Get1bpp_2
+;	call LoadStandardFont
 	ld hl, vTiles1
 	ld bc, $80 tiles
+	ret
 
 Pokedex_InvertTiles:
 .loop

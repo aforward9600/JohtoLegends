@@ -146,7 +146,6 @@ ROMX $34
 ROMX $35
 	"Pic Animations 2"
 ROMX $36
-	"Font Inversed"
 	"Pic Animations 3"
 ROMX $37
 	"Tileset Data 6"

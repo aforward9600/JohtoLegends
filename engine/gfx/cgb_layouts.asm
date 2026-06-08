@@ -372,7 +372,7 @@ _CGB_Pokedex:
 	pop hl
 	pop de
 	ld de, wBGPals1
-	ld a, PREDEFPAL_POKEDEX
+	ld a, PREDEFPAL_BETA_POKEGEAR
 	call GetPredefPal
 	call LoadHLPaletteIntoDE ; dex interface palette
 	ld a, [wCurPartySpecies]
@@ -423,7 +423,7 @@ _CGB_Pokedex:
 	pop hl
 	pop de
 	ld de, wBGPals1
-	ld a, PREDEFPAL_POKEDEX
+	ld a, PREDEFPAL_BETA_POKEGEAR
 	call GetPredefPal
 	call LoadHLPaletteIntoDE ; dex interface palette
 	ld a, [wCurPartySpecies]

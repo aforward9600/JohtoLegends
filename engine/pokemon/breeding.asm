@@ -30,7 +30,7 @@ CheckBreedmonCompatibility:
 	ld [wTempMonCaughtTime], a
 	ld a, TEMPMON
 	ld [wMonType], a
-	predef GetGender
+	call GetBreedmonGender2
 	pop bc
 	jr c, .genderless
 	ld a, $1
@@ -659,7 +659,7 @@ GetHeritableMoves:
 	ld [wTempMonCaughtTime], a
 	ld a, TEMPMON
 	ld [wMonType], a
-	predef GetGender
+	call GetBreedmonGender2
 	jr c, .inherit_mon2_moves
 	jr nz, .inherit_mon2_moves
 	jr .inherit_mon1_moves
@@ -677,7 +677,7 @@ GetHeritableMoves:
 	ld [wTempMonCaughtTime], a
 	ld a, TEMPMON
 	ld [wMonType], a
-	predef GetGender
+	call GetBreedmonGender2
 	jr c, .inherit_mon1_moves
 	jr nz, .inherit_mon1_moves
 
@@ -1041,3 +1041,15 @@ DayCareMonCompatibilityText:
 	; It shows interest in @ .
 	text_far UnknownText_0x1c0ec6
 	text_end
+
+GetBreedmonGender2:
+	ld a, [wBreedMon1CaughtTime]
+	and CAUGHT_MON_GENDER_MASK
+	jr z, .male
+	xor a
+	ret
+
+.male
+	ld a, 1
+	and a
+	ret

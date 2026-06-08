@@ -594,7 +594,7 @@ DayCare_InitBreeding:
 	cp c
 	ld a, $0
 	jr z, .LoadWhichBreedmonIsTheMother
-	farcall GetGender
+	call GetBreedmonGender
 	ld a, $0
 	jr z, .LoadWhichBreedmonIsTheMother
 	inc a
@@ -914,4 +914,16 @@ EggAbility:
 
 .HiddenAbility:
 	ld a, 2
+	ret
+
+GetBreedmonGender:
+	ld a, [wBreedMon1CaughtTime]
+	and CAUGHT_MON_GENDER_MASK
+	jr z, .male
+	xor a
+	ret
+
+.male
+	ld a, 1
+	and a
 	ret
