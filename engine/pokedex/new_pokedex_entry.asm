@@ -26,6 +26,9 @@ NewPokedexEntry:
 	pop af
 	ld [wPokedexStatus], a
 	call MaxVolume
+
+	farcall ChangePokedexColors
+
 	call RotateThreePalettesRight
 	ldh a, [hSCX]
 	add -POKEDEX_SCX

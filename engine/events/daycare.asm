@@ -579,6 +579,8 @@ DayCare_InitBreeding:
 	ld [wTempMonDVs], a
 	ld a, [wBreedMon1DVs + 1]
 	ld [wTempMonDVs + 1], a
+	ld a, [wBreedMon1CaughtTime]
+	ld [wTempMonCaughtTime], a
 	ld a, [wBreedMon1Species]
 	ld [wCurPartySpecies], a
 	ld a, $3
@@ -594,7 +596,7 @@ DayCare_InitBreeding:
 	cp c
 	ld a, $0
 	jr z, .LoadWhichBreedmonIsTheMother
-	call GetBreedmonGender
+	farcall GetGender
 	ld a, $0
 	jr z, .LoadWhichBreedmonIsTheMother
 	inc a

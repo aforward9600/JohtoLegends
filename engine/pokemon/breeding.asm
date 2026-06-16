@@ -30,7 +30,7 @@ CheckBreedmonCompatibility:
 	ld [wTempMonCaughtTime], a
 	ld a, TEMPMON
 	ld [wMonType], a
-	call GetBreedmonGender2
+	predef GetGender
 	pop bc
 	jr c, .genderless
 	ld a, $1

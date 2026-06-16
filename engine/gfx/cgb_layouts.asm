@@ -361,6 +361,12 @@ INCLUDE "gfx/stats/stats_sgb.pal"
 StatsScreenPagePalsSGB:
 INCLUDE "gfx/stats/pages_sgb.pal"
 
+ChangePokedexColors::
+	ld de, wBGPals1
+	ld a, PREDEFPAL_POKEDEX
+	call GetPredefPal
+	jp LoadHLPaletteIntoDE ; dex interface palette
+
 _CGB_Pokedex:
 	push de
 	push hl
@@ -1209,7 +1215,7 @@ _CGB_BetaPikachuMinigame:
 
 _CGB_PokedexSearchOption:
 	ld de, wBGPals1
-	ld a, PREDEFPAL_POKEDEX
+	ld a, PREDEFPAL_BETA_POKEGEAR
 	call GetPredefPal
 	call LoadHLPaletteIntoDE
 	call WipeAttrMap

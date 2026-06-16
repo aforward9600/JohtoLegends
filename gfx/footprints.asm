@@ -112,7 +112,7 @@ INCBIN "gfx/footprints/slowking.1bpp"
 INCBIN "gfx/footprints/slowking.1bpp" ; Slowking G
 INCBIN "gfx/footprints/magnemite.1bpp"
 INCBIN "gfx/footprints/magneton.1bpp"
-INCBIN "gfx/footprints/magnezone.1bpp"
+INCBIN "gfx/footprints/magneton.1bpp" ; Magnezone
 INCBIN "gfx/footprints/farfetch_d.1bpp"
 INCBIN "gfx/footprints/farfetch_d.1bpp" ; Farfetch'd G
 INCBIN "gfx/footprints/sirfetch_d.1bpp"

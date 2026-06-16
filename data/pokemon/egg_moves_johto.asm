@@ -41,6 +41,7 @@ EggMovePointers2::
 	dw ChikoritaEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw NoEggMoves2
 	dw CyndaquilEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
