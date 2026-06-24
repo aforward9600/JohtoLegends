@@ -1587,10 +1587,12 @@ CheckDefensiveAbilities:
 	call CheckMoveTypeAbilities
 	cp FIRE
 	ret nz
+	jr .FinishFlashFire
 .SapSipper:
 	call CheckMoveTypeAbilities
 	cp GRASS
 	ret nz
+.FinishFlashFire
 	call AnimateOppAbility
 	farcall BattleCommand_SwitchTurn
 	farcall BattleCommand_AttackUp

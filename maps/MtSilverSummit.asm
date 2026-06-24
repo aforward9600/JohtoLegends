@@ -44,7 +44,7 @@ MtSilverSummit_MapScripts:
 	follow MTSILVERSUMMIT_RIVAL, PLAYER
 	applymovement MTSILVERSUMMIT_RIVAL, MtSilverSummitWalk
 	stopfollow
-	turnobject MTSILVERSUMMIT_RIVAL, UP
+	applymovement MTSILVERSUMMIT_RIVAL, MtSilverSummitLookUp
 	turnobject PLAYER, UP
 	pause 60
 	opentext
@@ -52,9 +52,9 @@ MtSilverSummit_MapScripts:
 	waitbutton
 	closetext
 	pause 60
-	turnobject MTSILVERSUMMIT_RIVAL, LEFT
+	applymovement MTSILVERSUMMIT_RIVAL, MtSilverSummitLookLeft
 	pause 60
-	turnobject MTSILVERSUMMIT_RIVAL, UP
+	applymovement MTSILVERSUMMIT_RIVAL, MtSilverSummitLookUp
 	pause 60
 	opentext
 	checkevent EVENT_COMPLETED_EPILOGUE
@@ -109,6 +109,14 @@ MtSilverSummitWalk:
 	step UP
 	step UP
 	step RIGHT
+	step_end
+
+MtSilverSummitLookUp:
+	turn_head UP
+	step_end
+
+MtSilverSummitLookLeft:
+	turn_head LEFT
 	step_end
 
 BeautifulIsntItText:

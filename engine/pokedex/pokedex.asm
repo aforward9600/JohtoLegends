@@ -471,6 +471,7 @@ Pokedex_UpdateDexEntryScreen:
 	jp WaitSFX
 
 Pokedex_Page:
+	call Pokedex_DrawDexEntryScreenBG
 	ld a, [wPokedexStatus]
 	xor 1 ; toggle page
 	ld [wPokedexStatus], a
@@ -480,6 +481,8 @@ Pokedex_Page:
 	ld a, h
 	ld [wPrevDexEntry + 1], a
 	farcall DisplayDexEntry
+	call Pokedex_LoadCurrentFootprint
+	call Pokedex_DrawFootprint
 	jp WaitBGMap
 
 Pokedex_ReinitDexEntryScreen:
@@ -512,11 +515,11 @@ Pokedex_ReinitDexEntryScreen:
 	ret
 
 DexEntryScreen_ArrowCursorData:
-	db D_RIGHT | D_LEFT, 3
+	db D_RIGHT | D_LEFT, 4
 	dwcoord 1, 17  ; PAGE
 	dwcoord 6, 17  ; AREA
 	dwcoord 11, 17 ; CRY
-;	dwcoord 15, 17 ; PRNT
+	dwcoord 15, 17 ; PRNT
 
 DexEntryScreen_MenuActionJumptable:
 	dw Pokedex_Page
@@ -565,37 +568,16 @@ DexEntryScreen_MenuActionJumptable:
 	jp PlayCry
 
 .Print:
-	call Pokedex_ApplyPrintPals
-	xor a
-	ldh [hSCX], a
-	ld hl, wPrevDexEntryBackup
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	push hl
-	ld a, [wPrevDexEntryJumptableIndex]
-	push af
-	ld a, [wJumptableIndex]
-	push af
-	farcall PrintDexEntry
-	pop af
-	ld [wJumptableIndex], a
-	pop af
-	ld [wPrevDexEntryJumptableIndex], a
-	pop hl
+	ld a, [wPokedexStatus]
+	xor 1 ; toggle page
+	ld [wPokedexStatus], a
+	call Pokedex_GetSelectedMon
 	ld a, l
-	ld [wPrevDexEntryBackup], a
+	ld [wPrevDexEntry], a
 	ld a, h
-	ld [wPrevDexEntryBackup + 1], a
-	call ClearBGPalettes
-	call DisableLCD
-	call Pokedex_LoadInvertedFont
-	call Pokedex_RedisplayDexEntry
-	call EnableLCD
-	call WaitBGMap
-	ld a, POKEDEX_SCX
-	ldh [hSCX], a
-	jp Pokedex_ApplyUsualPals
+	ld [wPrevDexEntry + 1], a
+	farcall DisplayDexStats
+	jp WaitBGMap
 
 Pokedex_RedisplayDexEntry:
 	call Pokedex_DrawDexEntryScreenBG
@@ -1311,7 +1293,24 @@ Pokedex_DrawDexEntryScreenBG:
 .Weight:
 	db "WT   ???lb", -1 ; WT   ???lb
 .MenuItems:
-	db $3b, " Page Area Cry", -1
+	db $3b, " Page Area Cry Info", -1
+
+Pokedex_InfoBackground:
+	call Pokedex_FillBackgroundColor2
+	hlcoord 0, 0
+	lb bc, 15, 18
+	call Pokedex_PlaceBorder
+	hlcoord 19, 0
+	ld [hl], $34
+	hlcoord 19, 1
+	ld a, " "
+	ld b, 15
+	call Pokedex_FillColumn
+	ld [hl], $39
+	hlcoord 1, 10
+	ld bc, 19
+	ld a, $61
+	jp ByteFill
 
 Pokedex_DrawOptionScreenBG:
 	call Pokedex_FillBackgroundColor2

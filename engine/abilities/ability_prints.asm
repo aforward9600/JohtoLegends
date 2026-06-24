@@ -73,6 +73,44 @@ Ability_LoadAbilityName:
 	jr nz, .loop
     ret
 
+Load3Abilities::
+	ld a, [wBaseAbility1]
+	call LoadAbilityNameDex
+	hlcoord 8, 5
+	call PlaceString
+	ld a, [wBaseAbility2]
+	call LoadAbilityNameDex
+	hlcoord 8, 6
+	call PlaceString
+	ld a, [wBaseAbility3]
+	call LoadAbilityNameDex
+	hlcoord 8, 7
+	jp PlaceString
+
+Load2Abilities::
+	ld a, [wBaseAbility1]
+	call LoadAbilityNameDex
+	hlcoord 8, 5
+	call PlaceString
+	ld a, [wBaseAbility3]
+	call LoadAbilityNameDex
+	hlcoord 8, 6
+	jp PlaceString
+
+Load1Ability::
+	ld a, [wBaseAbility1]
+	call LoadAbilityNameDex
+	hlcoord 8, 5
+	jp PlaceString
+	
+
+LoadAbilityNameDex::
+	ld hl, AbilityNames
+	call GetNthString
+	ld d, h
+	ld e, l
+	ret
+
 AnimateUserAbility::
 	ldh a, [hBattleTurn]
 	and a

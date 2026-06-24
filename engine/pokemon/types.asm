@@ -17,7 +17,8 @@ PrintMonTypes:
 	ld a, [wBaseType2]
 	cp b
 	pop hl
-	jr z, .hide_type_2
+	ret z
+;	jr z, .hide_type_2
 
 	ld bc, SCREEN_WIDTH
 	add hl, bc

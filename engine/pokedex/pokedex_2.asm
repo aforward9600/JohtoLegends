@@ -75,6 +75,101 @@ DoDexSearchSlowpokeFrame:
 	dsprite 13, 0, 11, 0, $22, 0
 	db -1
 
+DisplayDexStats:
+	ld a, 1 ; page 1
+	ld [wPokedexStatus], a
+	hlcoord 1, 3
+	lb bc, 13, SCREEN_WIDTH - 1
+	call ClearBox
+;	farcall ChangePokedexColors
+	farcall Pokedex_PlaceFrontpicTopLeftCorner
+;	call GetPokemonName
+;	hlcoord 9, 3
+;	call PlaceString
+	hlcoord 12, 1
+	ld de, .DexType
+	call PlaceString
+	ld a, [wTempSpecies]
+	ld [wCurSpecies], a
+	hlcoord 8, 2
+	predef PrintMonTypes
+	call PrintDexAbilities
+	hlcoord 6, 9
+	ld de, .BaseStatsText4
+	call PlaceString
+	hlcoord 1, 11
+	ld de, .BaseStatsText1
+	call PlaceString
+	hlcoord 1, 12
+	ld de, .BaseStatsText2
+	call PlaceString
+	hlcoord 1, 13
+	ld de, .BaseStatsText3
+	call PlaceString
+	hlcoord 6, 11
+	ld de, wBaseHP
+	lb bc, 1, 3
+	call PrintNum
+	hlcoord 15, 11
+	ld de, wBaseSpeed
+	lb bc, 1, 3
+	call PrintNum
+	hlcoord 6, 12
+	ld de, wBaseAttack
+	lb bc, 1, 3
+	call PrintNum
+	hlcoord 15, 12
+	ld de, wBaseDefense
+	lb bc, 1, 3
+	call PrintNum
+	hlcoord 6, 13
+	ld de, wBaseSpecialAttack
+	lb bc, 1, 3
+	call PrintNum
+	hlcoord 15, 13
+	ld de, wBaseSpecialDefense
+	lb bc, 1, 3
+	jp PrintNum
+
+.BaseStatsText1:
+	db "  HP      Spe     @"
+.BaseStatsText2:
+	db " Atk      Def     @"
+.BaseStatsText3:
+	db " SpA      SpD     @"
+.BaseStatsText4:
+	db "Base Stats@"
+.DexType:
+	db "Type/@"
+
+PrintDexAbilities:
+	hlcoord 9, 4
+	ld de, .DexAbilityText
+	call PlaceString
+	ld a, [wBaseAbility1]
+	ld b, a
+	ld a, [wBaseAbility2]
+	cp b
+	jr z, .CheckHiddenSame
+	farcall Load3Abilities
+;	hlcoord 10, 5
+;	call PlaceString
+	ret
+
+.CheckHiddenSame:
+	ld a, [wBaseAbility3]
+	cp b
+	jr z, .SingleAbility
+	farcall Load2Abilities
+	ret
+
+.SingleAbility:
+	farcall Load1Ability
+	ret
+
+.DexAbilityText:
+	db "Abilities/@"
+
 DisplayDexEntry:
 	call GetPokemonName
 	hlcoord 9, 3
