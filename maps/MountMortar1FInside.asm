@@ -92,16 +92,7 @@ HikerStopsYou1:
 	waitbutton
 	closetext
 	applymovement MOUNTMORTAR1FINSIDE_HIKER1, HikerMovement2
-	disappear MOUNTMORTAR1FINSIDE_HIKER1
-	changeblock 16, 46, $02 ; rock
-	changeblock 10, 46, $24 ; exit
-	changeblock 12, 46, $02 ; rock
-	setevent EVENT_MOUNT_MORTAR_HIKER_1
-	setevent EVENT_MET_HIKER
-	setmapscene ROUTE_38_ECRUTEAK_GATE, SCENE_ECRUTEAK_GATE_RIVAL
-	setevent EVENT_RIVAL_AT_LAKE_OF_RAGE_1
-	setscene SCENE_DEFAULT
-	end
+	sjump FinishMtMortarHiker
 
 HikerStopsYou2:
 	moveobject MOUNTMORTAR1FINSIDE_HIKER1, 11, 42
@@ -113,6 +104,7 @@ HikerStopsYou2:
 	waitbutton
 	closetext
 	applymovement MOUNTMORTAR1FINSIDE_HIKER1, HikerMovement4
+FinishMtMortarHiker:
 	disappear MOUNTMORTAR1FINSIDE_HIKER1
 	changeblock 16, 46, $02 ; rock
 	changeblock 10, 46, $24 ; exit

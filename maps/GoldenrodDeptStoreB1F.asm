@@ -51,10 +51,7 @@ GoldenrodDeptStoreB1FMachopScript:
 	waitbutton
 	closepokepic
 	opentext
-	writetext GoldenrodDeptStoreB1FMachokeText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodDeptStoreB1FMachokeText
 
 GoldenrodDeptStoreB1FEther:
 	itemball ETHER

@@ -165,3 +165,8 @@
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; a4
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; a5
 	tilecoll FLOOR, HOP_DOWN, WALL, WALL ; a6
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a7
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a8
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a9
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; aa
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ab

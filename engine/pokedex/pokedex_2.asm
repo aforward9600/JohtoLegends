@@ -78,6 +78,12 @@ DoDexSearchSlowpokeFrame:
 DisplayDexStats:
 	ld a, 1 ; page 1
 	ld [wPokedexStatus], a
+	ld a, [wPokedexInfoStatus]
+	or a
+	ret nz
+;	jp nz, .SecondPage
+	ld a, 1 ; page 1
+	ld [wPokedexInfoStatus], a
 	hlcoord 1, 3
 	lb bc, 13, SCREEN_WIDTH - 1
 	call ClearBox
@@ -94,39 +100,39 @@ DisplayDexStats:
 	hlcoord 8, 2
 	predef PrintMonTypes
 	call PrintDexAbilities
-	hlcoord 6, 9
+	hlcoord 6, 10
 	ld de, .BaseStatsText4
 	call PlaceString
-	hlcoord 1, 11
+	hlcoord 1, 12
 	ld de, .BaseStatsText1
 	call PlaceString
-	hlcoord 1, 12
+	hlcoord 1, 13
 	ld de, .BaseStatsText2
 	call PlaceString
-	hlcoord 1, 13
+	hlcoord 1, 14
 	ld de, .BaseStatsText3
 	call PlaceString
-	hlcoord 6, 11
+	hlcoord 6, 12
 	ld de, wBaseHP
 	lb bc, 1, 3
 	call PrintNum
-	hlcoord 15, 11
+	hlcoord 15, 12
 	ld de, wBaseSpeed
 	lb bc, 1, 3
 	call PrintNum
-	hlcoord 6, 12
+	hlcoord 6, 13
 	ld de, wBaseAttack
 	lb bc, 1, 3
 	call PrintNum
-	hlcoord 15, 12
+	hlcoord 15, 13
 	ld de, wBaseDefense
 	lb bc, 1, 3
 	call PrintNum
-	hlcoord 6, 13
+	hlcoord 6, 14
 	ld de, wBaseSpecialAttack
 	lb bc, 1, 3
 	call PrintNum
-	hlcoord 15, 13
+	hlcoord 15, 14
 	ld de, wBaseSpecialDefense
 	lb bc, 1, 3
 	jp PrintNum
@@ -142,8 +148,77 @@ DisplayDexStats:
 .DexType:
 	db "Type/@"
 
+.SecondPage:
+	xor a
+	ld [wPokedexInfoStatus], a
+	call DisableSpriteUpdates
+	farcall ClearSpriteAnims2
+	farcall Pokedex_GetSelectedMon
+	hlcoord 1, 1
+	lb bc, 15, SCREEN_WIDTH - 1
+	call ClearBox
+;	hlcoord 1, 1
+;	lb bc, 15, SCREEN_WIDTH - 1
+;	call ClearBox
+	farcall Pokedex_PlaceFrontpicTopLeftCorner
+	ld a, [wTempSpecies]
+	ld [wTempMonSpecies], a
+	ld [wCurPartySpecies], a
+	ld [wCurSpecies], a
+;	farcall Pokedex_InitOptionScreen
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld hl, EvosAttacksPointers
+	ld a, BANK(EvosAttacksPointers)
+	call LoadDoubleIndirectPointer
+	ldh [hTemp], a
+.loop
+	call GetNextEvoAttackByte2
+	and a
+	ret z
+
+	ld b, a
+
+	cp EVOLVE_LEVEL
+	jr z, .Level
+	hlcoord 15, 2
+	ld de, .DexArrow
+	call PlaceString
+	ret
+
+.Level
+	push hl
+	hlcoord 8, 1
+	ld de, .LevelText
+	call PlaceString
+	pop hl
+	call GetNextEvoAttackByte2
+	ld [wDeciramBuffer], a
+	ld de, wDeciramBuffer
+	inc hl
+	hlcoord 8, 2
+	lb bc, 1, 2
+	call PrintNum
+	ldh a, [hTemp]
+	call GetFarHalfword
+	call GetPokemonIDFromIndex
+	ret
+
+.DexArrow:
+	db "→@"
+
+.LevelText:
+	db "Level@"
+
+GetNextEvoAttackByte2:
+	ldh a, [hTemp]
+	call GetFarByte
+	inc hl
+	ret
+
 PrintDexAbilities:
-	hlcoord 9, 4
+	hlcoord 9, 5
 	ld de, .DexAbilityText
 	call PlaceString
 	ld a, [wBaseAbility1]

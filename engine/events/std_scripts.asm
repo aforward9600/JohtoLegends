@@ -1227,7 +1227,7 @@ SwarmScript:
 	sjump .endswarmchannel
 
 .sneasel
-	checkflag ENGINE_FOGBADGE
+	checkflag ENGINE_GLACIERBADGE
 	iffalse .SwarmReroll
 	setflag ENGINE_SWARM
 	swarm ICE_PATH_B1F

@@ -129,6 +129,7 @@ HoOhTank:
 	waitbutton
 	closepokepic
 	opentext
+	getmonname STRING_BUFFER_3, HO_OH
 	writetextend HoOhIsInPainText
 
 .HoOhBattle:
@@ -163,7 +164,9 @@ HoOhTank:
 	applymovement HOOHLUGIAROOM_RIVAL3, RivalLugiaMovement
 	turnobject PLAYER, RIGHT
 	opentext
-	writetext ICaughtLugiaText
+	getmonname STRING_BUFFER_3, LUGIA
+	getmonname STRING_BUFFER_5, HO_OH
+	writetext ICaughtHoOhText
 	buttonsound
 	writetext LearnWaterfallText
 	buttonsound
@@ -191,7 +194,8 @@ LugiaTank:
 	waitbutton
 	closepokepic
 	opentext
-	writetextend LugiaIsInPainText
+	getmonname STRING_BUFFER_3, LUGIA
+	writetextend HoOhIsInPainText
 
 .LugiaBattle:
 	opentext
@@ -225,6 +229,8 @@ LugiaTank:
 	applymovement HOOHLUGIAROOM_RIVAL2, RivalHoOhMovement
 	turnobject PLAYER, LEFT
 	opentext
+	getmonname STRING_BUFFER_3, HO_OH
+	getmonname STRING_BUFFER_5, LUGIA
 	writetext ICaughtHoOhText
 	buttonsound
 	writetext LearnWaterfallText
@@ -275,6 +281,8 @@ HoOhLugiaRoomRivalScript:
 	opentext
 	checkevent EVENT_GOT_SILVER_WING
 	iftrue .CatchLugia
+	getmonname STRING_BUFFER_3, HO_OH
+.FinishHoLugiaRival
 	writetext CatchHoOhText
 	waitbutton
 	closetext
@@ -282,11 +290,8 @@ HoOhLugiaRoomRivalScript:
 	end
 
 .CatchLugia:
-	writetext CatchLugiaText
-	waitbutton
-	closetext
-	turnobject HOOHLUGIAROOM_RIVAL2, UP
-	end
+	getmonname STRING_BUFFER_3, LUGIA
+	sjump .FinishHoLugiaRival
 
 EinComputer:
 	jumptext EinComputerText
@@ -356,12 +361,8 @@ Rival3LeavesHoOhRoomMovement:
 	step_end
 
 HoOhIsInPainText:
-	text "Ho-Oh looks like"
-	line "it's in pain…"
-	done
-
-LugiaIsInPainText:
-	text "Lugia looks like"
+	text_ram wStringBuffer3
+	text " looks like"
 	line "it's in pain…"
 	done
 
@@ -577,25 +578,12 @@ ThatOuttaDoItText:
 	done
 
 CatchHoOhText:
+	text_ntag "<RIVAL>"
 	text "It looks like"
-	line "Ho-Oh wants you"
-	cont "to battle it."
-
-	para "I guess it's"
-	line "grateful for"
-	cont "freeing it."
-
-	para "Go on!"
-
-	para "Let it know how"
-	line "much you want to"
-	cont "catch it!"
-	done
-
-CatchLugiaText:
-	text "It looks like"
-	line "Lugia wants you"
-	cont "to battle it."
+	line "@"
+	text_ram wStringBuffer3
+	text "wants you"
+	line "to battle it."
 
 	para "I guess it's"
 	line "grateful for"
@@ -624,7 +612,9 @@ ICaughtHoOhText:
 	text_ntag "<RIVAL>"
 	text "…I…I did it…"
 
-	para "I caught Ho-Oh!"
+	para "I caught @"
+	text_ram wStringBuffer3
+	text "!"
 
 	para "Can you believe"
 	line "it?"
@@ -632,7 +622,10 @@ ICaughtHoOhText:
 	para "I guess it wanted"
 	line "me as its trainer."
 
-	para "Lugia wanted you"
+	para "@"
+
+	text_ram wStringBuffer5
+	text " wanted you"
 	line "as its trainer"
 	cont "as well."
 
@@ -643,36 +636,6 @@ ICaughtHoOhText:
 	para "We both are."
 
 	para "Here, take this."
-
-	para "It will help you"
-	line "get there."
-	done
-
-ICaughtLugiaText:
-	text_ntag "<RIVAL>"
-	text "…I…I did it…"
-
-	para "I caught Lugia!"
-
-	para "Can you believe"
-	line "it?"
-
-	para "I guess it wanted"
-	line "me as its trainer."
-
-	para "Ho-Oh wanted you"
-	line "as its trainer"
-	cont "as well."
-
-	para "…I think I'm ready"
-	line "to take on the"
-	cont "#mon League."
-
-	para "We both are."
-
-	para "Here, I'll teach"
-	line "you the last"
-	cont "tune for Lapras."
 
 	para "It will help you"
 	line "get there."

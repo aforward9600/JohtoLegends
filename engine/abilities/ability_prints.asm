@@ -76,9 +76,19 @@ Ability_LoadAbilityName:
 Load3Abilities::
 	ld a, [wBaseAbility1]
 	call LoadAbilityNameDex
-	hlcoord 8, 5
+	hlcoord 8, 6
 	call PlaceString
 	ld a, [wBaseAbility2]
+	call LoadAbilityNameDex
+	hlcoord 8, 7
+	call PlaceString
+	ld a, [wBaseAbility3]
+	call LoadAbilityNameDex
+	hlcoord 8, 8
+	jp PlaceString
+
+Load2Abilities::
+	ld a, [wBaseAbility1]
 	call LoadAbilityNameDex
 	hlcoord 8, 6
 	call PlaceString
@@ -87,20 +97,10 @@ Load3Abilities::
 	hlcoord 8, 7
 	jp PlaceString
 
-Load2Abilities::
-	ld a, [wBaseAbility1]
-	call LoadAbilityNameDex
-	hlcoord 8, 5
-	call PlaceString
-	ld a, [wBaseAbility3]
-	call LoadAbilityNameDex
-	hlcoord 8, 6
-	jp PlaceString
-
 Load1Ability::
 	ld a, [wBaseAbility1]
 	call LoadAbilityNameDex
-	hlcoord 8, 5
+	hlcoord 8, 6
 	jp PlaceString
 	
 

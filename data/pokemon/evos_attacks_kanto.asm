@@ -3659,6 +3659,7 @@ ScizorEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, METAL_CLAW
 	dbw 1, METAL_CLAW
+	dbw 1, BULLET_PUNCH
 	dbw 1, QUICK_ATTACK
 	dbw 1, LEER
 	dbw 5, FOCUS_ENERGY

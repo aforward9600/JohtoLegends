@@ -7,7 +7,12 @@ VermilionPortPassage_MapScripts:
 	db 0 ; callbacks
 
 VermilionPortPassageTeacherScript:
+	checkevent EVENT_BEAT_BIKER_BOSS
+	iftrue .VermilionPortPassageTeacher2
 	jumptextfaceplayer VermilionPortPassageTeacherText
+
+.VermilionPortPassageTeacher2
+	jumptextfaceplayer VermilionPortPassageTeacherText2
 
 VermilionPortPassageTeacherText:
 	text "There's no point in"
@@ -15,6 +20,12 @@ VermilionPortPassageTeacherText:
 
 	para "No ships leave the"
 	line "port."
+	done
+
+VermilionPortPassageTeacherText2:
+	text "The Sevii Islands"
+	line "should be open to"
+	cont "visitors soon."
 	done
 
 VermilionPortPassage_MapEvents:

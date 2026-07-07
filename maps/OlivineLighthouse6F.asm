@@ -134,16 +134,17 @@ OlivineLighthouse6F_MapScripts:
 	opentext
 	checkevent EVENT_GOT_LARVITAR_FROM_MASTER
 	iftrue .Dragonite
+	getmonname STRING_BUFFER_3, LARVITAR
+	getmonname STRING_BUFFER_5, TYRANITAR
+	sjump .RivalLeaves
+.Dragonite:
+	getmonname STRING_BUFFER_3, DRATINI
+	getmonname STRING_BUFFER_5, DRAGONITE
+
+.RivalLeaves:
 	writetext TyranitarText
 	waitbutton
 	closetext
-	sjump .RivalLeaves
-.Dragonite:
-	writetext DragoniteText
-	waitbutton
-	closetext
-
-.RivalLeaves:
 	applymovement OLIVINELIGHTHOUSE6F_RIVAL, RivalLeavesMovement
 	playsound SFX_EXIT_BUILDING
 	special FadeOutMusic
@@ -499,7 +500,6 @@ ThatsSurfText:
 	done
 
 TyranitarText:
-	text_ntag "<RIVAL>"
 	text "Hey, <PLAYER>."
 
 	para "I'm sorry I froze"
@@ -514,12 +514,17 @@ TyranitarText:
 
 	para "It was evening,"
 	line "I saw her, trying"
-	cont "to catch a"
-	cont "Larvitar, when its"
+
+	para "to catch a"
+	line "@"
+	text_ram wStringBuffer3
+	text ", when its"
 	cont "mother tried to"
 	cont "stop her."
 
-	para "But when Tyranitar"
+	para "But when @"
+	text_ram wStringBuffer5
+	text ""
 	line "attacked her…"
 
 	para "She killed it."
@@ -528,7 +533,10 @@ TyranitarText:
 	line "fast, I couldn't"
 	cont "process it."
 
-	para "Larvitar ran away,"
+	para "@"
+
+	text_ram wStringBuffer3
+	text " ran away,"
 	line "and she couldn't"
 	cont "find it."
 
@@ -542,7 +550,9 @@ TyranitarText:
 	cont "day, but now it's"
 	cont "all come back."
 
-	para "And the Larvitar,"
+	para "And the @"
+	text_ram wStringBuffer3
+	text ","
 	line "what do you think"
 	cont "happened to it?"
 
@@ -554,79 +564,9 @@ TyranitarText:
 	cont "doing anything."
 
 	para "I want to avenge"
-	line "Larvitar's mother."
-
-	para "I need to get"
-	line "stronger."
-
-	para "And I need your"
-	line "help to do so."
-
-	para "I'll keep going on"
-	line "until I achieve"
-	cont "that goal."
-
-	para "Thanks for listen-"
-	line "ing to me."
-	done
-
-DragoniteText:
-	text_ntag "<RIVAL>"
-	text "Hey, <PLAYER>."
-
-	para "I'm sorry I froze"
-	line "up back there."
-
-	para "I finally"
-	line "remembered where"
-	cont "I've seen her"
-	cont "before. It was 8"
-	cont "years ago on Route"
-	cont "45."
-
-	para "It was evening,"
-	line "I saw her, trying"
-	cont "to catch a"
-	cont "Dratini, when its"
-	cont "mother tried to"
-	cont "stop her."
-
-	para "But when Dragonite"
-	line "attacked her…"
-
-	para "She killed it."
-
-	para "It happened so"
-	line "fast, I couldn't"
-	cont "process it."
-
-	para "Dratini ran away,"
-	line "and she couldn't"
-	cont "find it."
-
-	para "She left, but"
-	line "before she did,"
-	cont "she turned and"
-	cont "smiled at me."
-
-	para "I tried my hardest"
-	line "to forget that"
-	cont "day, but now it's"
-	cont "all come back."
-
-	para "And the Dratini,"
-	line "what do you think"
-	cont "happened to it?"
-
-	para "It's right here,"
-	line "with me."
-
-	para "Now I just feel"
-	line "guilty for not"
-	cont "doing anything."
-
-	para "I want to avenge"
-	line "Dratini's mother."
+	line "@"
+	text_ram wStringBuffer3
+	text "'s mother."
 
 	para "I need to get"
 	line "stronger."

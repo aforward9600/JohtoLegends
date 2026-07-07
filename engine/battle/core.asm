@@ -3036,6 +3036,7 @@ ForceEnemySwitch:
 	call ResetEnemyStatLevels
 	call Function_SetEnemyMonAndSendOutAnimation
 	farcall BreakAttraction
+	farcall SetEnemyAbility
 	jp ResetBattleParticipants
 
 EnemySwitch:
@@ -3056,6 +3057,7 @@ EnemySwitch:
 	call Function_BattleTextEnemySentOut
 	call Function_SetEnemyMonAndSendOutAnimation
 	call FinalPkmnAnimation
+	farcall SetEnemyAbility
 	pop af
 	ret c
 	; If we're here, then we're switching too
@@ -3067,7 +3069,6 @@ EnemySwitch:
 	ld [wEnemyIsSwitching], a
 	call LoadTileMapToTempTileMap
 	farcall PlayerSwitchAbilities
-	farcall SetEnemyAbility
 	jp PlayerSwitch
 
 EnemySwitch_SetMode:
@@ -3084,6 +3085,7 @@ EnemySwitch_SetMode:
 	call ClearEnemyMonBox
 	call Function_BattleTextEnemySentOut
 	call Function_SetEnemyMonAndSendOutAnimation
+	farcall SetEnemyAbility
 	jp FinalPkmnAnimation
 
 CheckWhetherSwitchmonIsPredetermined:
@@ -3522,9 +3524,6 @@ Function_SetEnemyMonAndSendOutAnimation:
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
-;	farcall SetPokemonForm
-;	ld a, [wBufferMonForm]
-;	ld [wEnemyMonForm], a
 	call SetEnemyBufferForm
 	call GetBaseData
 	ld a, OTPARTYMON

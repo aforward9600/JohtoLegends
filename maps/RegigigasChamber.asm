@@ -8,8 +8,8 @@ RegigigasChamber_MapScripts:
 	callback MAPCALLBACK_TILES, .HiddenDoor
 
 .HiddenDoor:
-	changeblock 2, 0, $a0
-	changeblock 4, 0, $a0
+	changeblock 2, 0, $4d
+	changeblock 4, 0, $4d
 	return
 
 RegigigasScript:

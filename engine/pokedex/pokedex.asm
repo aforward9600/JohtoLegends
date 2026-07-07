@@ -475,6 +475,8 @@ Pokedex_Page:
 	ld a, [wPokedexStatus]
 	xor 1 ; toggle page
 	ld [wPokedexStatus], a
+	xor a
+	ld [wPokedexInfoStatus], a
 	call Pokedex_GetSelectedMon
 	ld a, l
 	ld [wPrevDexEntry], a

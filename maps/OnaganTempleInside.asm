@@ -10,7 +10,7 @@ OnaganTempleInside_MapScripts:
 .HiddenDoor:
 	checkevent EVENT_WALL_OPENED_IN_REGIGIGAS_CHAMBER
 	iftrue .WallOpen
-	changeblock 4, 0, $9f
+	changeblock 4, 0, $49
 .WallOpen:
 	return
 
@@ -47,7 +47,7 @@ OnaganTempleInsideWall:
 	showemote EMOTE_SHOCK, PLAYER, 20
 	pause 30
 	playsound SFX_STRENGTH
-	changeblock 4, 0, $9d
+	changeblock 4, 0, $4a
 	reloadmappart
 	earthquake 50
 	setevent EVENT_WALL_OPENED_IN_REGIGIGAS_CHAMBER

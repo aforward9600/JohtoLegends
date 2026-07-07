@@ -133,16 +133,10 @@ RooftopSale_FinishScript:
 	jump RooftopSaleLoopScript
 
 RooftopSaleCancel:
-	writetext RooftopSaleComeAgainText
-	waitbutton
-	closetext
-	end
+	writetextend RooftopSaleComeAgainText
 
 RooftopSaleNotEnoughMoney:
-	writetext NotEnoughMoneyRooftopSaleText
-	waitbutton
-	closetext
-	end
+	writetextend NotEnoughMoneyRooftopSaleText
 
 GoldenrodDeptStoreRoofPokefanFScript:
 	jumptextfaceplayer GoldenrodDeptStoreRoofPokefanFText
@@ -287,10 +281,7 @@ PokeDollVendingMachineCancel:
 	end
 
 PokeDollVendingMachineNotEnoughMoney:
-	writetext NotEnoughMoneyText
-	waitbutton
-	closetext
-	end
+	writetextend NotEnoughMoneyText
 
 GoldenrodDeptStoreRoofPokefanFText:
 	text "Whew, I'm tired."
