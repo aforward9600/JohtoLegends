@@ -1412,6 +1412,13 @@ FlashFireText:
 	cont "raised Attack!"
 	prompt
 
+FlashFireText2:
+	text "<TARGET>'s"
+	line "Flash Fire raised"
+	cont "the power of its"
+	cont "Fire-type moves!"
+	prompt
+
 SoundproofText:
 	text "<TARGET>'s"
 	line "@"

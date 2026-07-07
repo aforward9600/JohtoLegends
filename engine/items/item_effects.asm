@@ -545,8 +545,6 @@ PokeBallEffect:
 
 .skip_pokedex
 	ld a, [wBattleType]
-	cp BATTLETYPE_CONTEST
-	jp z, .catch_bug_contest_mon
 	cp BATTLETYPE_SHINY
 	jr z, .is_celebi
 	cp BATTLETYPE_HO_OH

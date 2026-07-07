@@ -213,6 +213,9 @@ SetBoxMonCaughtData:
 	call GetSRAMBank
 	ld hl, sBoxMon1CaughtTime
 	call SetBoxmonOrEggmonCaughtData
+	ld hl, sBoxMon1CaughtAbility
+	ld a, [wEnemyAbility]
+	ld [hl], a
 	jp CloseSRAM
 
 SetGiftBoxMonCaughtData:

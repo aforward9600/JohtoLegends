@@ -937,6 +937,7 @@ CheckBoostingAbilities:
 	dbw STEELY_SPIRIT,   .SteelySpirit
 	dbw BERSERK,         .Berserk
 	dbw PURE_POWER,      .HugePower
+	dbw FLASH_FIRE,      .FlashFire
 	db -1
 
 .Guts:
@@ -1091,6 +1092,12 @@ CheckBoostingAbilities:
 	cp GRASS
 	jr z, .PinchHPCheck
 	ret
+
+.FlashFire:
+	call CheckMoveTypeAbilities
+	cp FIRE
+	jp z, FiftyPercentBoost
+	jp .NoBoostingAbilities
 
 .Blaze:
 	call CheckMoveTypeAbilities
@@ -1587,12 +1594,27 @@ CheckDefensiveAbilities:
 	call CheckMoveTypeAbilities
 	cp FIRE
 	ret nz
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .EnemyFlashFire
+	ld a, 1
+	ld [wPlayerFlashFire], a
 	jr .FinishFlashFire
+
+.EnemyFlashFire:
+	ld a, 1
+	ld [wEnemyFlashFire], a
+.FinishFlashFire
+	call MoveDelayAbility
+	call GetTargetAbility
+	ld hl, FlashFireText2
+	call StdBattleTextbox
+	jp EndMoveEffectAbilities
+
 .SapSipper:
 	call CheckMoveTypeAbilities
 	cp GRASS
 	ret nz
-.FinishFlashFire
 	call AnimateOppAbility
 	farcall BattleCommand_SwitchTurn
 	farcall BattleCommand_AttackUp

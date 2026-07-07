@@ -8,6 +8,8 @@ DoBattle:
 	ld [wBattleEnded], a
 	ld [wPlayerKnockOff], a
 	ld [wEnemyKnockOff], a
+	ld [wPlayerFlashFire], a
+	ld [wEnemyFlashFire], a
 	inc a
 	ld [wBattleHasJustStarted], a
 	ld hl, wOTPartyMon1HP
@@ -3574,6 +3576,7 @@ Function_SetEnemyMonAndSendOutAnimation:
 
 NewEnemyMonStatus:
 	xor a
+	ld [wEnemyFlashFire], a
 	ld [wEnemyBloodMoon], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
@@ -4119,6 +4122,7 @@ SendOutPlayerMon:
 
 NewBattleMonStatus:
 	xor a
+	ld [wPlayerFlashFire], a
 	ld [wPlayerBloodMoon], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
