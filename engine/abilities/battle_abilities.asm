@@ -83,7 +83,6 @@ SetEnemyAbility::
 	jr .FullyFinishEnemyAbility
 
 SentOutAbilityBoth::
-	ld b,b
 	ld a, [wEnemyAbility]
 	cp NEUTRAL_GAS
 	jp z, EnemyNeutralGas
@@ -114,14 +113,15 @@ SentOutAbilityBoth::
 	jr c, .player_goes_first
 	jr .enemy_goes_first
 
-PlayerAbilityFirstSwitch:
+PlayerAbilityFirstSwitch::
+	xor a
+	ld [wEnemyMonFainted], a
 	call BattleCommand_SwitchTurnAbilities
 	call PlayerAbilityFirst
 	call BattleCommand_SwitchTurnAbilities
 	jp EnemyAbilityFirst
 
 SentOutAbility::
-	ld b,b
 	ld a, [wBothPokemonFainted]
 	cp $1
 	ret z
@@ -129,7 +129,9 @@ SentOutAbility::
 	and a
 	jr z, PlayerAbilityFirst
 
-EnemyAbilityFirst:
+EnemyAbilityFirst::
+	xor a
+	ld [wPlayerMonFainted], a
 	ld a, [wEnemyAbility]
 	cp NEUTRAL_GAS
 	jp z, EnemyNeutralGas
@@ -171,6 +173,7 @@ DoEntranceAbilities:
 .Intimidate:
 	xor a
 	ld [wEffectFailed], a
+	ld [wAttackMissed], a
 	ld a, BATTLE_VARS_SUBSTATUS4_OPP
 	call GetBattleVar
 	bit SUBSTATUS_MIST, a

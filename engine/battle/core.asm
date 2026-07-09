@@ -2209,7 +2209,15 @@ HandleEnemySwitch:
 .EnemyPartyMonEntrance:
 	call EnemyPartyMonEntrance
 	push af
+	ld a, [wEnemyMonFainted]
+	and a
+	jr z, .Skip
+	farcall PlayerAbilityFirstSwitch
+	jr .finish
+
+.Skip
 	farcall SentOutAbility
+.finish
 	pop af
 	ret
 
@@ -2557,7 +2565,15 @@ HandlePlayerMonFaint:
 	call HandleEnemySwitch
 	jp z, WildFled_EnemyFled_LinkBattleCanceled
 	call DoubleSwitch
+	ld a, [wPlayerMonFainted]
+	and a
+	jr z, .Skip
+	farcall EnemyAbilityFirst
+	jr .Finish
+
+.Skip
 	farcall PlayerAbilityFirstSwitch
+.Finish
 	jp ResetBothAbilitiesByte
 
 UpdateFaintedPlayerMon:
@@ -3088,6 +3104,7 @@ EnemySwitch_SetMode:
 	call Function_BattleTextEnemySentOut
 	call Function_SetEnemyMonAndSendOutAnimation
 	farcall SetEnemyAbility
+;	farcall SentOutAbility
 	jp FinalPkmnAnimation
 
 CheckWhetherSwitchmonIsPredetermined:
@@ -3659,10 +3676,6 @@ CheckIfCurPartyMonIsFitToFight:
 TryToRunAwayFromBattle:
 ; Run away from battle, with or without item
 	ld a, [wBattleType]
-	cp BATTLETYPE_DEBUG
-	jp z, .can_escape
-	cp BATTLETYPE_CONTEST
-	jp z, .can_escape
 	cp BATTLETYPE_TRAP
 	jp z, .cant_escape
 	cp BATTLETYPE_CELEBI
@@ -4118,6 +4131,8 @@ SendOutPlayerMon:
 	call UpdatePlayerHUD
 	ld a, $1
 	ldh [hBGMapMode], a
+	farcall SetPlayerAbility
+;	farcall SentOutAbility
 	ret
 
 NewBattleMonStatus:
@@ -4850,11 +4865,6 @@ BattleMenu:
 	ldh [hBGMapMode], a
 	call LoadTempTileMapToTileMap
 
-	ld a, [wBattleType]
-	cp BATTLETYPE_DEBUG
-	jr z, .ok
-	cp BATTLETYPE_TUTORIAL
-	jr z, .ok
 	call EmptyBattleTextbox
 	call UpdateBattleHuds
 	call EmptyBattleTextbox

@@ -996,9 +996,11 @@ wPrinterStatus:: db ; cbf8
 ; High nibble is for margin before the image, low nibble is for after.
 wPrinterMargins:: db ; cbfa
 wPrinterExposureTime:: db ; cbfb
-	ds 13
+	ds 11
 wPlayerFlashFire:: db
 wEnemyFlashFire:: db
+wPlayerMonFainted:: db
+wEnemyMonFainted:: db
 wPokedexInfoStatus:: db
 wGameboyPrinterRAMEnd::
 

@@ -19,6 +19,14 @@ BattleCommand_UTurn:
 	ld hl, UTurnOutPlayerText
 	call StdBattleTextbox
 
+	ld hl, wEnemyMonHP
+	ld a, [hli]
+	or [hl]
+	jr nz, .Skip
+	ld a, 1
+	ld [wEnemyMonFainted], a
+
+.Skip
 	call BattleCommand_Teleport.PlayerUTurn
 	callfar PursuitSwitch
 	ret
@@ -39,6 +47,13 @@ BattleCommand_UTurn:
 
 	ld hl, UTurnOutEnemyText
 	call StdBattleTextbox
+
+	ld hl, wBattleMonHP
+	ld a, [hli]
+	or [hl]
+	jp nz, BattleCommand_Teleport.enemy_uturn
+	ld a, 1
+	ld [wPlayerMonFainted], a
 
 	jp BattleCommand_Teleport.enemy_uturn
 

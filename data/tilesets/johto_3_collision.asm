@@ -126,3 +126,5 @@
 	tilecoll SAND, FLOOR, SAND, FLOOR ; 7d
 	tilecoll WALL, WALL, SAND, WALL ; 7e
 	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; 7f
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 80
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 81

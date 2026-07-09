@@ -2916,8 +2916,8 @@ UTurn:
     applydamage
     criticaltext
     supereffectivetext
-  	uturn
     kingsrock
+  	uturn
     checkfaint
     buildopponentrage
     endmove

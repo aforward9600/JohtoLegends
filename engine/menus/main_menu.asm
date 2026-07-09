@@ -119,19 +119,19 @@ MainMenuJoypadLoop:
 
 .build_string:
 if DEF(_CHALLENGEFRENCH)
-	db "V0.8.5.3 Défi@"
+	db "V0.8.5.4 Défi@"
 elif DEF(_CHALLENGE)
-	db "V0.8.5.3 Challenge@"
+	db "V0.8.5.4 Challenge@"
 elif DEF(_FAITHFULFRENCH)
-	db "V0.8.5.3 Fidèle@"
+	db "V0.8.5.4 Fidèle@"
 elif DEF(_FAITHFUL)
-	db "V0.8.5.3 Faithful@"
+	db "V0.8.5.4 Faithful@"
 elif DEF(_NOPSS)
-	db "V0.8.5.3 No PSS@"
+	db "V0.8.5.4 No PSS@"
 elif DEF(_FRENCH)
-	db "V0.8.5.3 Originale@"
+	db "V0.8.5.4 Originale@"
 elif DEF(_NORMAL)
-	db "V0.8.5.3 Original@"
+	db "V0.8.5.4 Original@"
 endc
 
 MainMenu_PrintCurrentTimeAndDay:

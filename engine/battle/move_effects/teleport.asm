@@ -124,7 +124,14 @@ BattleCommand_Teleport:
 	call StdBattleTextbox
 
 	ld hl, SpikesDamage
-	jp CallBattleCore
+	call CallBattleCore
+
+	ld a, [wEnemyMonFainted]
+	and a
+	ret nz
+
+	farcall SentOutAbility
+	ret
 
 .enemyswitch:
 	call FindAliveEnemyMons
@@ -196,4 +203,11 @@ BattleCommand_Teleport:
 	call CallBattleCore
 	
 	ld hl, SpikesDamage
-	jp CallBattleCore
+	call CallBattleCore
+
+	ld a, [wPlayerMonFainted]
+	and a
+	ret nz
+
+	farcall SentOutAbility
+	ret

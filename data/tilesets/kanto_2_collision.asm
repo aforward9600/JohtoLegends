@@ -169,4 +169,3 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a8
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a9
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; aa
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ab
