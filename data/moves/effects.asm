@@ -2507,13 +2507,6 @@ CloseCombat:
 	checkfaint
 	endmove
 
-BulkUp:
-	checkobedience
-	usedmovetext
-	doturn
-	bulkup
-	endmove
-
 Superpower:
 	checkobedience
 	usedmovetext
@@ -2522,9 +2515,9 @@ Superpower:
 	damagestats
 	damagecalc
 	stab
-	defensiveabilities
 	damagevariation
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage
@@ -2534,6 +2527,13 @@ Superpower:
 	buildopponentrage
 	superpower
 	checkfaint
+	endmove
+
+BulkUp:
+	checkobedience
+	usedmovetext
+	doturn
+	bulkup
 	endmove
 
 CalmMind:

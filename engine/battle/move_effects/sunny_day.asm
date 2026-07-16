@@ -2,6 +2,7 @@ BattleCommand_StartSun:
 ; startsun
 	ld a, WEATHER_SUN
 	ld [wBattleWeather], a
+	farcall SpeedAbilitiesBoth
 	call GetUserItem
 	ld a, b
 	cp HELD_WEATHER_ROCK

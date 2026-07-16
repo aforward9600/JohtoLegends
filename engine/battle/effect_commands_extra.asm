@@ -538,17 +538,51 @@ IsDarkType:
 	ret
 
 BattleCommand_Superpower:
-	call SetStatDropAbility
+	xor a
+	ld [wFailedMessage], a
+;	call SetStatDropAbility
+	ld b, ATTACK
+;	ld a, b
+;	ld [wLoweredStat], a
+	farcall LowerStatPop
+	ld a, [wFailedMessage]
+	and a
+	jr nz, .SkipAttack
 	call BattleCommand_SwitchTurn2
-	farcall BattleCommand_AttackDown
+	call AnimateAbilityStatsLower
 	farcall BattleCommand_StatDownMessage
-	call SetStatChangeAnimation
+	call BattleCommand_SwitchTurn2
+.SkipAttack
 	farcall ResetMiss
-	farcall BattleCommand_DefenseDown
+	xor a
+	ld [wFailedMessage], a
+	ld b, DEFENSE
+;	ld a, b
+;	ld [wLoweredStat], a
+	farcall LowerStatPop
+	ld a, [wFailedMessage]
+	and a
+	ret nz
+	call BattleCommand_SwitchTurn2
+	ld a, [wStatChangeHappened]
+	and a
+	jr z, .SkipAnimation
+	call AnimateAbilityStatsLower
+.SkipAnimation
 	farcall BattleCommand_StatDownMessage
 	call BattleCommand_SwitchTurn2
 	call ResetStatDropAbility
 	jp ResetStatChangeExtra
+	
+;	farcall BattleCommand_AttackDown
+;	farcall BattleCommand_StatDownMessage
+;	call SetStatChangeAnimation
+;	farcall ResetMiss
+;	farcall BattleCommand_DefenseDown
+;	farcall BattleCommand_StatDownMessage
+;	call BattleCommand_SwitchTurn2
+;	call ResetStatDropAbility
+;	jp ResetStatChangeExtra
 
 BattleCommand_CloseCombat:
 	call SetStatDropAbility
@@ -944,7 +978,6 @@ BattleCommand_BulkUp:
 	call ResetStatDropAbility
 	jr ResetStatChangeExtra
 
-
 BattleCommand_QuiverDance:
 	call CheckNeutralGas
 	jr z, .SkipContrary
@@ -1157,7 +1190,7 @@ AnimateAbilityStats:
 AnimateAbilityStatsLower:
 	ld a, [wStatChangeHappened]
 	and a
-	jr nz, .SkipAbility
+	ret nz
 	call CheckNeutralGas
 	jr z, .SkipContrary
 	call GetUserAbility
@@ -1169,17 +1202,10 @@ AnimateAbilityStatsLower:
 .SkipContrary
 	ld de, ANIM_PLAYER_STAT_DOWN
 .Contrary
+	call BattleCommand_SwitchTurn2
 	farcall Call_PlayBattleAnim
+	call BattleCommand_SwitchTurn2
 	jp SetStatChangeAnimation
-
-.SkipAbility
-	call CheckNeutralGas
-	jr z, .SkipContrary
-	call GetUserAbility
-	cp CONTRARY
-	ld de, ANIM_ENEMY_STAT_DOWN
-	jr nz, .SkipContrary
-	jr .Contrary
 
 NoStatRaise:
 	farcall MoveDelayAbility

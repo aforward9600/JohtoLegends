@@ -3101,7 +3101,6 @@ PlayerAttackDamage:
 	jp SetAToOne
 
 .Sacred_Sword:
-	ld b,b
 	ld hl, wEnemyDefense
 	call ApplyStatsBattle
 	jp .check_physicalcrit
@@ -5196,7 +5195,7 @@ BattleCommand_EvasionDown2:
 
 BattleCommand_StatDown:
 ; statdown
-	ld b, a
+	ld [wLoweredStat], a
 	call CheckNeutralGas
 	jr z, StatDownSkipContrary
 	call GetTargetAbility
@@ -5206,9 +5205,6 @@ BattleCommand_StatDown:
 	call StatUpSkipContrary
 	jp BattleCommand_SwitchTurn
 StatDownSkipContrary:
-	ld a, b
-	ld [wLoweredStat], a
-
 	call CheckMist
 	jp nz, .Mist
 
@@ -5707,6 +5703,7 @@ LowerStat:
 	ret
 
 .failed
+	ld b,b
 	inc [hl]
 
 .cant_lower_anymore
@@ -5771,6 +5768,8 @@ CalcPlayerStats:
 
 	call ApplyChoiceScarfOnSpeed
 
+	farcall ApplySpeedAbilities
+
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
 
@@ -5793,6 +5792,8 @@ CalcEnemyStats:
 	call BattleCommand_SwitchTurn
 
 	call ApplyChoiceScarfOnSpeed
+
+	farcall ApplySpeedAbilities
 
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore

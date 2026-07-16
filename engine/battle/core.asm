@@ -1162,25 +1162,26 @@ ResidualDamage:
 ;	jr .did_psn_brn
 
 .TryPoisonHeal
-	ld a, BATTLE_VARS_STATUS
-	call GetBattleVar
-	and 1 << PSN
-	jr z, .SkipShedSkin
+;	ld a, BATTLE_VARS_STATUS
+;	call GetBattleVar
+;	and 1 << PSN
+;	jr z, .SkipShedSkin
 	call CheckFullHP
 	jr z, .did_psn_brn
+	ld c, 40
+	call DelayFrames
+	farcall AnimateUserAbility
 	call GetEighthMaxHP
 	call SwitchTurnCore
 	call RestoreHP
-	call SwitchTurnCore
-	ld c, 40
-	jp DelayFrames
-	call GetUserAbility
+	call GetTargetAbility
 	ld b, a
 	farcall FarLoadAbilityName
 	ld a, b
 	and a
 	ld hl, WaterAbsorbText
 	call StdBattleTextbox
+	call SwitchTurnCore
 
 .did_psn_brn
 
@@ -1684,6 +1685,7 @@ HandleWeather:
 	jp StdBattleTextbox
 
 .ended
+	farcall SpeedAbilitiesBoth
 	ld hl, .WeatherEndedMessages
 	call .PrintWeatherMessage
 	xor a
@@ -3409,6 +3411,9 @@ LoadEnemyMonToSwitchTo:
 	ret
 
 FinalPkmnAnimation:
+	ld a, [wInBattleTowerBattle]
+	and a
+	ret nz
 	ld a, [wLinkMode]
 	and a
 	ret nz
@@ -7819,7 +7824,7 @@ CheckOpponentFullHP:
 ; check if the opponent has full HP
 ; z: yes, nz: no
 	ld hl, wEnemyMonHP
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jr z, DoCheckFullHP
 	ld hl, wBattleMonHP
@@ -7829,7 +7834,7 @@ CheckFullHP:
 ; check if the user has full HP
 ; z: yes, nz: no
 	ld hl, wBattleMonHP
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jr z, DoCheckFullHP
 	ld hl, wEnemyMonHP

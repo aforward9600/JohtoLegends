@@ -2,6 +2,7 @@ BattleCommand_StartRain:
 ; startrain
 	ld a, WEATHER_RAIN
 	ld [wBattleWeather], a
+	farcall SpeedAbilitiesBoth
 	call GetUserItem
 	ld a, b
 	cp HELD_WEATHER_ROCK

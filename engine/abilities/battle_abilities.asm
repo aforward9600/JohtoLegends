@@ -314,6 +314,9 @@ DoEntranceAbilities:
 	jp StdBattleTextbox
 
 .Drought:
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret z
 	call AnimateUserAbility
 	ld a, WEATHER_SUN
 	ld [wBattleWeather], a
@@ -325,6 +328,9 @@ DoEntranceAbilities:
 	jp StdBattleTextbox
 
 .SnowWarning:
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	ret z
 	call AnimateUserAbility
 	ld a, WEATHER_HAIL
 	ld [wBattleWeather], a
@@ -336,6 +342,9 @@ DoEntranceAbilities:
 	jp StdBattleTextbox
 
 .Drizzle:
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	ret z
 	call AnimateUserAbility
 	ld a, WEATHER_RAIN
 	ld [wBattleWeather], a
@@ -347,6 +356,9 @@ DoEntranceAbilities:
 	jp StdBattleTextbox
 
 .Sandstream:
+	ld a, [wBattleWeather]
+	cp WEATHER_SANDSTORM
+	ret z
 	call AnimateUserAbility
 	ld a, WEATHER_SANDSTORM
 	ld [wBattleWeather], a
@@ -389,6 +401,9 @@ DoEntranceAbilities:
 	jr .NoFirstAbility
 
 .Download:
+	xor a
+	ld [wEffectFailed], a
+	ld [wAttackMissed], a
 	call AnimateUserAbility
 	farcall BattleCommand_SpecialAttackUp
 	farcall BattleCommand_StatUpMessage
@@ -685,11 +700,11 @@ CheckContactAbilities:
 	call BattleCommand_SwitchTurnAbilities
 	call BattleRandom
 	cp 30 percent + 1
-	ret nc
+	jp nc, BattleCommand_SwitchTurnAbilities
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
 	and a
-	ret nz
+	jp nz, BattleCommand_SwitchTurnAbilities
 	call AnimateUserAbility
 	call BattleRandom
 	cp 33 percent + 1
@@ -1344,7 +1359,14 @@ HustleCheck:
 	ret nc
 	ret
 
+SpeedAbilitiesBoth::
+	call ApplySpeedAbilities
+	call BattleCommand_SwitchTurnAbilities
+	call ApplySpeedAbilities
+	jp BattleCommand_SwitchTurnAbilities
+
 ApplySpeedAbilities::
+	ld b,b
 	call CheckNeutralGas
 	ret z
 	ldh a, [hBattleTurn]
@@ -1375,6 +1397,7 @@ ApplySpeedAbilities::
 	db -1
 
 .SwiftSwim:
+	ld b,b
 	call CheckCloudNine
 	ret z
 	ld a, [wBattleWeather]
@@ -2397,7 +2420,8 @@ UnburdenScript:
 	call GetBattleVarAddr
 	set SUBSTATUS_UNBURDEN, [hl]
 	ld hl, UnburdenText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	jp SpeedAbilitiesBoth
 
 ContraryPinchBerries:
 	callfar GetUserItem
@@ -2462,7 +2486,6 @@ CheckMoveTypeAbilities:
 	ret
 
 CheckSubstituteMove::
-	ld b,b
 	xor a
 	ld [wSubstituteMoves], a
 	call CheckNeutralGas
