@@ -490,15 +490,17 @@ PokeBallEffect:
 	ld de, wEnemyMonPP
 	ld bc, NUM_MOVES
 	call CopyBytes
+	jr .FinishTransform
 
 .Transformed:
+	ld a, [wEnemyBackupAbility]
+	ld [wEnemyAbility], a
+.FinishTransform:
 	ld a, [wEnemyMonSpecies]
 	ld [wWildMon], a
 	ld [wCurPartySpecies], a
 	ld [wTempSpecies], a
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jp z, .FinishTutorial
 
 	farcall StubbedTrainerRankings_WildMonsCaught
 

@@ -1,6 +1,8 @@
 BattleCommand_Transform:
 ; transform
 
+	ld a, [wEnemyMonAbility]
+	ld [wEnemyBackupAbility], a
 	call ClearLastMove
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVarAddr

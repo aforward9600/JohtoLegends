@@ -398,6 +398,8 @@ DoEntranceAbilities:
 	ld de, ANIM_IMPOSTER
 	farcall FarPlayBattleAnimation
 	farcall BattleCommand_Transform
+	ld a, 2
+	ld [wEnemyBackupAbility], a
 	jr .NoFirstAbility
 
 .Download:
