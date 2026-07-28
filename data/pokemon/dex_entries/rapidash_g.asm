@@ -1,4 +1,4 @@
-	db "UniqueHorn@" ; species name
+	db "Unique Horn@" ; species name
 	dw 507, 1764 ; height, weight
 
 	db   "Little can stand"

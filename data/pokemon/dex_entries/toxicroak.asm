@@ -1,4 +1,4 @@
-	db "ToxicMouth@" ; species name
+	db "Toxic Mouth@" ; species name
 	dw 403, 979 ; height, weight
 
 	db   "It has a poison"

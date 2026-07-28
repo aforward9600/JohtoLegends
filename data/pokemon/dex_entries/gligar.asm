@@ -1,4 +1,4 @@
-	db "Flyscorpio@" ; species name
+	db "Fly Scorpio@" ; species name
 	dw 307, 1430 ; height, weight
 
 	db   "It builds its nest"

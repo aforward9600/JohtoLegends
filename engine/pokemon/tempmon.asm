@@ -9,8 +9,6 @@ CopyMonToTempMon:
 	ld [wCurSpecies], a
 	call GetBaseData
 
-	ld b,b
-
 	ld a, [wMonType]
 	ld hl, wPartyMon1Species
 	ld bc, PARTYMON_STRUCT_LENGTH

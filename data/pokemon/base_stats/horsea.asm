@@ -12,6 +12,7 @@
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/horsea/front.dimensions"
 	db SWIFT_SWIM, SNIPER, DAMP ; wBaseAbility1, wBaseAbility2, wBaseAbility3
+;	db SPEED_BOOST, SPEED_BOOST, SPEED_BOOST ; wBaseAbility1, wBaseAbility2, wBaseAbility3
 	db 0 ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_WATER_1, EGG_DRAGON ; egg groups

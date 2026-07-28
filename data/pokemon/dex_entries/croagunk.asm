@@ -1,4 +1,4 @@
-	db "ToxicMouth@" ; species name
+	db "Toxic Mouth@" ; species name
 	dw 204, 507 ; height, weight
 
 	db   "Inflating its poi-"

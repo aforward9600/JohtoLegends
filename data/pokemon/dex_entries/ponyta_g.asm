@@ -1,4 +1,4 @@
-	db "UniqueHorn@" ; species name
+	db "Unique Horn@" ; species name
 	dw 207, 529 ; height, weight
 
 	db   "This #mon will"

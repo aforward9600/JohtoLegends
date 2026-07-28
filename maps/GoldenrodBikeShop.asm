@@ -75,6 +75,31 @@ NoMoneyDubiousDisk:
 NoRoomForDubiousDisk:
 	writetextend NoRoomForDubiousDiskText
 
+GoldenrodBikeShopBicyclePillSalesman:
+	opentext
+	writetext BuyAbilityPillText
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .Refused
+	checkmoney YOUR_MONEY, 50000
+	ifequal HAVE_LESS, .NotEnoughMoney
+	verbosegiveitem ABILITY_PILL
+	iffalse .NoRoom
+	waitsfx
+	playsound SFX_TRANSACTION
+	takemoney YOUR_MONEY, 50000
+	special PlaceMoneyTopRight
+	writetextend RefusedAbilityPillText
+
+.Refused
+	writetextend RefusedAbilityPillText
+
+.NoRoom
+	writetextend MakeRoomText
+
+.NotEnoughMoney
+	writetextend NoMoneyAbilityPillText
+
 GoldenrodBikeShopBurglarScript:
 	checkflag ENGINE_HIVEBADGE
 	iftrue .NewItems
@@ -122,6 +147,15 @@ BikeShopBurglarText2:
 	para "Go ahead, buy to"
 	line "your heart's"
 	cont "content!"
+
+	para "By the way, have"
+	line "you heard weird"
+	cont "sounds coming"
+	cont "from the back"
+	cont "shelf?"
+
+	para "It sounds like"
+	line "whispering."
 	done
 
 GoldenrodBikeShopBicycleText:
@@ -168,8 +202,28 @@ NoRoomForDubiousDiskText:
 	done
 
 GotDubiousDiskText:
-	text "<PLAYER> got the"
-	line "DubiousDisk."
+	text "Good luck with"
+	line "that."
+	done
+
+BuyAbilityPillText:
+	text "Ability Pill."
+
+	para "¥50,000."
+
+	para "No refunds."
+	done
+
+RefusedAbilityPillText:
+	text "Go away now."
+	done
+
+MakeRoomText:
+	text "Make room."
+	done
+
+NoMoneyAbilityPillText:
+	text "Need more money."
 	done
 
 GoldenrodBikeShop_MapEvents:
@@ -181,11 +235,10 @@ GoldenrodBikeShop_MapEvents:
 
 	db 0 ; coord events
 
-	db 9 ; bg events
+	db 8 ; bg events
 	bg_event  1,  2, BGEVENT_READ, GoldenrodBikeShopBicycle
-	bg_event  0,  3, BGEVENT_READ, GoldenrodBikeShopBicycle
+	bg_event  5,  1, BGEVENT_READ, GoldenrodBikeShopBicyclePillSalesman
 	bg_event  1,  3, BGEVENT_READ, GoldenrodBikeShopBicycle
-	bg_event  0,  5, BGEVENT_READ, GoldenrodBikeShopBicycle
 	bg_event  1,  5, BGEVENT_READ, GoldenrodBikeShopBicycle
 	bg_event  0,  6, BGEVENT_READ, GoldenrodBikeShopBicycle
 	bg_event  1,  6, BGEVENT_READ, GoldenrodBikeShopBicycle

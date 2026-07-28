@@ -1,4 +1,4 @@
-	db "OgreScorp@" ; species name
+	db "Ogre Scorp@" ; species name
 	dw 403, 1356 ; height, weight
 
 	db   "It has the power"

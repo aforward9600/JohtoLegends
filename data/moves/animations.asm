@@ -1391,7 +1391,7 @@ BattleAnim_Surf:
 	anim_wait 32
 	anim_loop 4, .loop
 	anim_incobj 1
-	anim_wait 32
+	anim_wait 56
 	anim_jump ColorChangeBlue
 
 BattleAnim_WaveCrash:

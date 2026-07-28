@@ -1,4 +1,4 @@
-	db "StrongLegs@" ; species name
+	db "Strong Legs@" ; species name
 	dw 503, 1283 ; height, weight
 
 	db   "One kick from its"

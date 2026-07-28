@@ -538,51 +538,54 @@ IsDarkType:
 	ret
 
 BattleCommand_Superpower:
-	xor a
-	ld [wFailedMessage], a
+;	xor a
+;	ld [wFailedMessage], a
 ;	call SetStatDropAbility
-	ld b, ATTACK
+;	ld b, ATTACK
 ;	ld a, b
 ;	ld [wLoweredStat], a
-	farcall LowerStatPop
-	ld a, [wFailedMessage]
-	and a
-	jr nz, .SkipAttack
-	call BattleCommand_SwitchTurn2
-	call AnimateAbilityStatsLower
-	farcall BattleCommand_StatDownMessage
-	call BattleCommand_SwitchTurn2
-.SkipAttack
-	farcall ResetMiss
-	xor a
-	ld [wFailedMessage], a
-	ld b, DEFENSE
-;	ld a, b
-;	ld [wLoweredStat], a
-	farcall LowerStatPop
-	ld a, [wFailedMessage]
-	and a
-	ret nz
-	call BattleCommand_SwitchTurn2
-	ld a, [wStatChangeHappened]
-	and a
-	jr z, .SkipAnimation
-	call AnimateAbilityStatsLower
-.SkipAnimation
-	farcall BattleCommand_StatDownMessage
-	call BattleCommand_SwitchTurn2
-	call ResetStatDropAbility
-	jp ResetStatChangeExtra
-	
-;	farcall BattleCommand_AttackDown
+;	farcall LowerStatPop
+;	ld a, [wFailedMessage]
+;	and a
+;	jr nz, .SkipAttack
+;	call BattleCommand_SwitchTurn2
+;	call AnimateAbilityStatsLower
 ;	farcall BattleCommand_StatDownMessage
-;	call SetStatChangeAnimation
+;	call BattleCommand_SwitchTurn2
+;.SkipAttack
 ;	farcall ResetMiss
-;	farcall BattleCommand_DefenseDown
+;	xor a
+;	ld [wFailedMessage], a
+;	ld [wEffectFailed], a
+;	ld b, DEFENSE
+;	ld a, b
+;	ld [wLoweredStat], a
+;	farcall LowerStatPop
+;	ld a, [wFailedMessage]
+;	and a
+;	ret nz
+;	call BattleCommand_SwitchTurn2
+;	ld a, [wStatChangeHappened]
+;	and a
+;	jr z, .SkipAnimation
+;	call AnimateAbilityStatsLower
+;.SkipAnimation
 ;	farcall BattleCommand_StatDownMessage
 ;	call BattleCommand_SwitchTurn2
 ;	call ResetStatDropAbility
 ;	jp ResetStatChangeExtra
+	
+	call SetStatDropAbility
+	call BattleCommand_SwitchTurn2
+	farcall BattleCommand_AttackDown
+	farcall BattleCommand_StatDownMessage
+	call SetStatChangeAnimation
+	farcall ResetAllMisses
+	farcall BattleCommand_DefenseDown
+	farcall BattleCommand_StatDownMessage
+	call BattleCommand_SwitchTurn2
+	call ResetStatDropAbility
+	jp ResetStatChangeExtra
 
 BattleCommand_CloseCombat:
 	call SetStatDropAbility
@@ -590,7 +593,7 @@ BattleCommand_CloseCombat:
 	farcall BattleCommand_DefenseDown
 	farcall BattleCommand_StatDownMessage
 	call SetStatChangeAnimation
-	farcall ResetMiss
+	farcall ResetAllMisses
 	farcall BattleCommand_SpecialDefenseDown
 	farcall BattleCommand_StatDownMessage
 	call BattleCommand_SwitchTurn2

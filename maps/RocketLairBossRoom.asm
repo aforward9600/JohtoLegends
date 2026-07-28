@@ -9,13 +9,21 @@ RocketLairBossRoom_MapScripts:
 	scene_script .dummy0 ; SCENE_DEFAULT
 	scene_script .dummy1 ; SCENE_FINISHED
 
-	db 0 ; callback
+	db 1 ; callback
+	callback MAPCALLBACK_OBJECTS, .DisappearRival
 
 .dummy0:
 	end
 
 .dummy1:
 	end
+
+.DisappearRival:
+	checkevent EVENT_BEAT_MADAME_BOSS
+	iftrue .end
+	moveobject ROCKETLAIRBOSSROOM_RIVAL, 9, 15
+.end
+	return
 
 RocketLairBossRoom_Event1:
 	applymovement PLAYER, PlayerMovesRightLair

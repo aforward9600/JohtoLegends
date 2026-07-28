@@ -4910,6 +4910,7 @@ RaiseStat::
 	jr z, .got_stat_levels
 	ld hl, wEnemyStatLevels
 .got_stat_levels
+	ld b,b
 	ld a, [wAttackMissed]
 	and a
 	jp nz, .stat_raise_failed
@@ -5047,6 +5048,7 @@ BattleCommand_AttackDown:
 
 BattleCommand_DefenseDown:
 ; defensedown
+	ld b,b
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipAbilities
 	ld a, [wStatDropAbility]
@@ -5703,7 +5705,7 @@ LowerStat:
 	ret
 
 .failed
-	ld b,b
+;	ld b,b
 	inc [hl]
 
 .cant_lower_anymore

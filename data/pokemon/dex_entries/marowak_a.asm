@@ -1,4 +1,4 @@
-	db "Bonekeeper@" ; species name
+	db "Bone Keeper@" ; species name
 	dw 303, 750 ; height, weight
 
 	db   "This #mon sets"

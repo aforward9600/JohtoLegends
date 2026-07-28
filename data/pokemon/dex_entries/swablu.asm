@@ -1,4 +1,4 @@
-	db "CottonBird@" ; species name
+	db "Cotton Bird@" ; species name
 	dw 104, 206 ; height, weight
 
 	db   "For some reason,"

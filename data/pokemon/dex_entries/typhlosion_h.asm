@@ -1,4 +1,4 @@
-	db "GhostFlame@" ; species name
+	db "Ghost Flame@" ; species name
 	dw 503, 1539 ; height, weight
 
 	db   "It is said to"

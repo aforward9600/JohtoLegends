@@ -640,7 +640,6 @@ FrontFinishTaurosCheck::
 	jr FinishTaurosCheck
 
 FrontFinishUrsalunaCheck::
-	ld b,b
 	ld a, [wTempMonSpecies]
 	call GetPokemonIndexFromID
 	jr FinishUrsalunaCheck
@@ -758,4 +757,26 @@ BreakAttraction::
 	res SUBSTATUS_IN_LOVE, [hl]
 	ld hl, wEnemySubStatus1
 	res SUBSTATUS_IN_LOVE, [hl]
+	ret
+
+SetChoiceLock::
+	push bc
+	callfar GetUserItem
+	ld a, b
+	cp HELD_CHOICE_BOOST
+	jr nz, .done
+	ld hl, wPlayerEncoreCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .GotEncoreCount
+	ld hl, wEnemyEncoreCount
+.GotEncoreCount
+	ld a, -1 ; set encore count to 255
+	ld [hl], a
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	set SUBSTATUS_ENCORED, [hl]
+
+.done
+	pop bc
 	ret

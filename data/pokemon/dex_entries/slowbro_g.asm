@@ -1,4 +1,4 @@
-	db "Hermitcrab@" ; species name
+	db "Hermit Crab@" ; species name
 	dw 503, 1554 ; height, weight
 
 	db   "A Shellder bite"

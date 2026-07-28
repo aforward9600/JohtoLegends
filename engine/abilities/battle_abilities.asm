@@ -1368,7 +1368,6 @@ SpeedAbilitiesBoth::
 	jp BattleCommand_SwitchTurnAbilities
 
 ApplySpeedAbilities::
-	ld b,b
 	call CheckNeutralGas
 	ret z
 	ldh a, [hBattleTurn]
@@ -1399,7 +1398,6 @@ ApplySpeedAbilities::
 	db -1
 
 .SwiftSwim:
-	ld b,b
 	call CheckCloudNine
 	ret z
 	ld a, [wBattleWeather]
@@ -1782,7 +1780,7 @@ CheckFullHPDefenseAbilities:
 	call StdBattleTextbox
 	jr EndMoveEffectAbilities
 
-HandleEndMoveAbility:
+HandleEndMoveAbility::
 	ld de, wBattleMonSpeed
 	ld hl, wEnemyMonSpeed
 	ld c, 2
@@ -1790,10 +1788,25 @@ HandleEndMoveAbility:
 	jr z, .speed_tie
 	jr nc, .player_goes_first
 .enemy_goes_first
+	ld a, [wEnemySwitched]
+	and a
+	jr nz, .SkipEnemy
+	call ResetAllMisses
 	call SetEnemyTurn
 	call .do_it
+.SkipEnemy
+	ld a, [wPlayerSwitched]
+	and a
+	jr nz, .ResetSwitch
+	call ResetAllMisses
 	call SetPlayerTurn
-	jr .do_it
+	call .do_it
+
+.ResetSwitch
+	xor a
+	ld [wEnemySwitched], a
+	ld [wPlayerSwitched], a
+	ret
 
 .speed_tie
 	call BattleRandom
@@ -1802,9 +1815,20 @@ HandleEndMoveAbility:
 	jr .enemy_goes_first
 
 .player_goes_first
+	ld a, [wPlayerSwitched]
+	and a
+	jr nz, .SkipPlayer
+	call ResetAllMisses
 	call SetPlayerTurn
 	call .do_it
+.SkipPlayer
+	ld a, [wEnemySwitched]
+	and a
+	jr nz, .ResetSwitch
+	call ResetAllMisses
 	call SetEnemyTurn
+	call .do_it
+	jr .ResetSwitch
 
 .do_it
 	call CheckNeutralGas
@@ -2566,4 +2590,11 @@ PlayerFaintAbilities:
 CheckIfHPIsZeroAbilities:
 	ld a, [hli]
 	or [hl]
+	ret
+
+ResetAllMisses::
+	xor a
+	ld [wFailedMessage], a
+	ld [wEffectFailed], a
+	ld [wAttackMissed], a
 	ret

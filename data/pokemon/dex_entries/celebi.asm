@@ -1,4 +1,4 @@
-	db "TimeTravel@" ; species name
+	db "Time Travel@" ; species name
 	dw 200, 110 ; height, weight
 
 	db   "Revered as a"

@@ -72,18 +72,17 @@ Ax6Script:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	givepoke DITTO, 50
-	loadmem wPartyMon1DVs+0, $ea
-	loadmem wPartyMon1DVs+1, $aa
+	scall GiveShinyDitto
 	setevent EVENT_GOT_SHINY_DITTO
 	writetextend TakeCareOfDittoText
 
 .NoRooom:
-	readvar VAR_BOXSPACE
-	ifequal 0, .BoxFullBeldum
-	sjump .GetDitto
 
 .BoxFullBeldum:
 	writetextend NoRoomDittoText
+
+GiveShinyDitto:
+	jumpstd shinygiftpokemon
 
 CardboardBoxScript:
 	jumptextfaceplayer CardboardBoxText

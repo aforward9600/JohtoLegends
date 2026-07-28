@@ -50,6 +50,9 @@ DoBattle:
 	call DelayFrames
 
 .player_2
+	xor a
+	ld [wEnemySwitched], a
+	ld [wPlayerSwitched], a
 	call LoadTileMapToTempTileMap
 	call CheckPlayerPartyForFitMon
 	ld a, d
@@ -255,7 +258,6 @@ HandleBetweenTurnEffects:
 	jr z, .CheckEnemyFirst
 	call CheckFaint_PlayerThenEnemy
 	ret c
-	call HandleFlameToxicOrb
 	farcall HandleFutureSight
 	call CheckFaint_PlayerThenEnemy
 	ret c
@@ -275,7 +277,6 @@ HandleBetweenTurnEffects:
 .CheckEnemyFirst:
 	call CheckFaint_EnemyThenPlayer
 	ret c
-	call HandleFlameToxicOrb
 	farcall HandleFutureSight
 	call CheckFaint_EnemyThenPlayer
 	ret c
@@ -293,6 +294,7 @@ HandleBetweenTurnEffects:
 
 .NoMoreFaintingConditions:
 	farcall Core2_NewTurnEndEffects
+	call HandleFlameToxicOrb
 	call HandleHealingItems
 	call UpdateBattleMonInParty
 	call LoadTileMapToTempTileMap
@@ -664,7 +666,9 @@ ParsePlayerAction:
 	ldh [hBGMapMode], a
 	pop af
 	ret nz
-	call SetChoiceLock
+	push hl
+	farcall SetChoiceLock
+	pop hl
 
 .encored
 	call SetPlayerTurn
@@ -3043,9 +3047,8 @@ SlideBattlePicOut:
 	ret
 
 ForceEnemySwitch:
-;	farcall BattleCommand_SwitchTurn
-;	farcall EnemySwitchAbilities
-;	farcall BattleCommand_SwitchTurn
+;	ld a, 1
+;	ld [wEnemySwitched], a
 	call ResetEnemyBattleVars
 	ld a, [wEnemySwitchMonIndex]
 	dec a
@@ -3078,6 +3081,8 @@ EnemySwitch:
 	call Function_SetEnemyMonAndSendOutAnimation
 	call FinalPkmnAnimation
 	farcall SetEnemyAbility
+	ld a, 1
+	ld [wEnemySwitched], a
 	pop af
 	ret c
 	; If we're here, then we're switching too
@@ -3087,6 +3092,7 @@ EnemySwitch:
 	ld [wBattlePlayerAction], a
 	inc a
 	ld [wEnemyIsSwitching], a
+;	ld [wPlayerSwitched], a
 	call LoadTileMapToTempTileMap
 	farcall PlayerSwitchAbilities
 	jp PlayerSwitch
@@ -3102,6 +3108,7 @@ EnemySwitch_SetMode:
 	call LoadEnemyMonToSwitchTo
 	ld a, 1
 	ld [wEnemyIsSwitching], a
+;	ld [wEnemySwitched], a
 	call ClearEnemyMonBox
 	call Function_BattleTextEnemySentOut
 	call Function_SetEnemyMonAndSendOutAnimation
@@ -4175,12 +4182,7 @@ SpikesDamage:
 	ld de, wBattleMonType
 	ld bc, UpdatePlayerHUD
 	call CheckNeutralGas
-	jr z, .SkipSpikesAbility
-	ld a, [wPlayerAbility]
-	cp LEVITATE
-	ret z
-	cp MAGIC_GUARD
-	ret z
+	jr z, .ok
 .SkipSpikesAbility
 	ldh a, [hBattleTurn]
 	and a
@@ -4188,12 +4190,12 @@ SpikesDamage:
 	ld hl, wEnemyScreens
 	ld de, wEnemyMonType
 	ld bc, UpdateEnemyHUD
-	ld a, [wEnemyAbility]
+.ok
+	call GetUserAbility
 	cp LEVITATE
 	ret z
 	cp MAGIC_GUARD
 	ret z
-.ok
 
 	bit SCREENS_SPIKES, [hl]
 	ret z
@@ -5207,6 +5209,7 @@ TryPlayerSwitch:
 PlayerSwitch:
 	ld a, 1
 	ld [wPlayerIsSwitching], a
+	ld [wPlayerSwitched], a
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked
@@ -5254,6 +5257,8 @@ PlayerSwitch:
 
 EnemyMonEntrance:
 	callfar AI_Switch
+;	ld a, 1
+;	ld [wEnemySwitched], a
 	call SetEnemyTurn
 	farcall SetEnemyAbility
 ;	ld a, [wBothPokemonFainted]
@@ -5876,7 +5881,9 @@ ParseEnemyAction:
 	bit SUBSTATUS_ENCORED, [hl]
 	ld a, [wLastEnemyMove]
 	jp nz, .finish
-	call SetChoiceLock
+	push hl
+	farcall SetChoiceLock
+	pop hl
 	ld hl, wEnemyMonMoves
 	ld b, 0
 	add hl, bc
@@ -5967,7 +5974,9 @@ ParseEnemyAction:
 
 .skip_load
 	call SetEnemyTurn
-	call SetChoiceLock
+	push hl
+	farcall SetChoiceLock
+	pop hl
 	callfar UpdateMoveData
 	call CheckEnemyLockedIn
 	jr nz, .raging
@@ -6004,30 +6013,6 @@ ParseEnemyAction:
 	ld hl, STRUGGLE
 	call GetMoveIDFromIndex
 	jr .finish
-
-SetChoiceLock:
-	push hl
-	push bc
-	callfar GetUserItem
-	ld a, b
-	cp HELD_CHOICE_BOOST
-	jr nz, .done
-	ld hl, wPlayerEncoreCount
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .GotEncoreCount
-	ld hl, wEnemyEncoreCount
-.GotEncoreCount
-	ld a, -1 ; set encore count to 255
-	ld [hl], a
-	ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVarAddr
-	set SUBSTATUS_ENCORED, [hl]
-
-.done
-	pop bc
-	pop hl
-	ret
 
 ResetVarsForSubstatusRage:
 	xor a

@@ -1,4 +1,4 @@
-	db "OgreDarner@" ; species name
+	db "Ogre Darner@" ; species name
 	dw 603, 1135 ; weight
 
 	db   "Creates shock"

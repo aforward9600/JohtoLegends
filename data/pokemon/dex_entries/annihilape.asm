@@ -1,4 +1,4 @@
-	db "RageMonkey@" ; species name
+	db "Rage Monkey@" ; species name
 	dw 311, 1235 ; height, weight
 
 	db   "When its anger"

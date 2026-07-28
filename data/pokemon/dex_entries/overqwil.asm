@@ -1,4 +1,4 @@
-	db "PinCluster@" ; species name
+	db "Pin Cluster@" ; species name
 	dw 802, 1334 ; height, weight
 
 	db   "Its spikes will"

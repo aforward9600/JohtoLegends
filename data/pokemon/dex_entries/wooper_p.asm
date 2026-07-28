@@ -1,4 +1,4 @@
-	db "PoisonFish@" ; species name
+	db "Poison Fish@" ; species name
 	dw 104, 243 ; height, weight
 
 	db   "The #mon"
