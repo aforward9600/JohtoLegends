@@ -139,22 +139,6 @@ MomScript:
 	setmapscene ICE_PATH_B1F, SCENE_ICE_PATH_B1F_RIVAL
 	jumptext GrandmaJournalText
 
-;CheatFillPokedex:
-;	ld a, UNOWN_A
-;	ld [wFirstUnownSeen], a
-;	ret
-;  ld hl, wPokedexSeen
-;  call .Fill
-;  ld hl, wPokedexCaught
-;.Fill:
-;  ld a, %11111111
-;  ld bc, 31 ; 001-248
-;  call ByteFill
-;  ld a, %11111111
-;  ld bc, 19
-;  call ByteFill
-;  ret
-
 MeetGrandmaLeftScript:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 MeetGrandmaRightScript:

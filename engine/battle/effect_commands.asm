@@ -5048,7 +5048,6 @@ BattleCommand_AttackDown:
 
 BattleCommand_DefenseDown:
 ; defensedown
-	ld b,b
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipAbilities
 	ld a, [wStatDropAbility]
@@ -5443,6 +5442,8 @@ StatUpMessageSkipContrary2:
 
 TryLowerStat:
 ; Lower stat c from stat struct hl (buffer de).
+
+	ld b,b
 
 	push bc
 	sla c

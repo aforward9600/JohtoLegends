@@ -218,5 +218,3 @@ CopyBoxmonToTempMon:
 	call GetSRAMBank
 	call CopyBytes
 	jp CloseSRAM
-
-

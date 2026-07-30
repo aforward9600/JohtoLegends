@@ -227,8 +227,10 @@ DoEggStep::
 	cp EGG
 	jr nz, .nextmagmaarmor
 	dec [hl]
+	jr z, .skipmagmaarmor
 	dec [hl]
 	jr nz, .nextmagmaarmor
+.skipmagmaarmor
 	ld a, 1
 	and a
 	ret

@@ -1059,6 +1059,9 @@ BattleCommand_PowerUpPunch:
 	jp ResetStatDropAbility
 
 SetStatChangeAnimation:
+	ld a, [wFailedMessage]
+	and a
+	ret nz
 	ld a, 1
 	ld [wStatChangeHappened], a
 	ret
