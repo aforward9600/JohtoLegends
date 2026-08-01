@@ -1340,7 +1340,7 @@ MastersHouse1F_MapEvents:
 	warp_event  4, 13, BLACKTHORN_CITY, 10
 	warp_event  5, 13, BLACKTHORN_CITY, 10
 	warp_event  4,  1, MASTERS_HOUSE_2F, 1
-;	warp_event  4,  1, LANCES_ROOM, 1
+;	warp_event  4,  1, RUINS_OF_ALPH_OUTSIDE, 2
 
 	db 5 ; coord events
 	coord_event 2,  8, SCENE_CANT_LEAVE_HOUSE, TryToLeaveHouseScript

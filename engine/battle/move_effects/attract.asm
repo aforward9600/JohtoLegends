@@ -53,7 +53,7 @@ CheckOppositeGender:
 
 .got_gender
 	push bc
-	ld a, [wTempMonSpecies]
+	ld a, [wTempEnemyMonSpecies]
 	ld  [wCurPartySpecies], a
 	ld a, 3
 	ld [wMonType], a

@@ -6277,12 +6277,29 @@ LoadEnemyMon:
 .SkipShine
 	farcall SetPokemonForm
 ;	farcall SetEnemyHiddenPower
+	ld a, [wTempEnemyMonSpecies]
+	call GetPokemonIndexFromID ; will be preserved for the Magikarp check
+	ld a, l
+	sub LOW(UNOWN)
+	if HIGH(UNOWN) == 0
+		or h
+	else
+		jr z, .SkipUnown
+		ld a, h
+		if HIGH(UNOWN) == 1
+			dec a
+		else
+			cp HIGH(UNOWN)
+		endc
+	endc
+	jr z, .SkipUnown
 	ld de, ENGINE_ACTIVATED_MAX_DVS
 	ld b, CHECK_FLAG
 	farcall EngineFlagAction
 	ld a, c
 	and a
 	jr nz, .MaxDVs
+.SkipUnown
 	call BattleRandom
 	ld b, a
 	call BattleRandom

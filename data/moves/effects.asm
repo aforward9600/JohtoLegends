@@ -2474,6 +2474,7 @@ HammerArm:
 	stab
 	damagevariation
 	checkhit
+	defensiveabilities
 	moveanim
 	failuretext
 	applydamage

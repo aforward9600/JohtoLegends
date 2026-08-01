@@ -11,7 +11,7 @@
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/slowking_g/front.dimensions"
-	db UNAWARE, OWN_TEMPO, REGENERATOR ; wBaseAbility1, wBaseAbility2, wBaseAbility3
+	db UNAWARE, OWN_TEMPO, PRESSURE ; wBaseAbility1, wBaseAbility2, wBaseAbility3
 	db 0 ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_MONSTER, EGG_WATER_1 ; egg groups

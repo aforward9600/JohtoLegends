@@ -5209,6 +5209,8 @@ StatDownSkipContrary:
 	call CheckMist
 	jp nz, .Mist
 
+	ld b,b
+
 	ld hl, wEnemyStatLevels
 	ldh a, [hBattleTurn]
 	and a

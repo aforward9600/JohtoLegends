@@ -136,11 +136,6 @@ GetGender:
 ; Figure out what type of monster struct we're looking at.
 
 ; 0: PartyMon
-;	ld hl, wPartyMon1DVs
-;	ld bc, PARTYMON_STRUCT_LENGTH
-;	ld a, [wMonType]
-;	and a
-;	jr z, .PartyMon
 
 	ld hl, wPartyMon1CaughtTime
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -149,19 +144,12 @@ GetGender:
 	jr z, .PartyMon
 
 ; 1: OTPartyMon
-;	ld hl, wOTPartyMon1DVs
-;	dec a
-;	jr z, .PartyMon
 
 	ld hl, wOTPartyMon1CaughtTime
 	dec a
 	jr z, .PartyMon
 
 ; 2: sBoxMon
-;	ld hl, sBoxMon1DVs
-;	ld bc, BOXMON_STRUCT_LENGTH
-;	dec a
-;	jr z, .sBoxMon
 
 	ld hl, sBoxMon1CaughtTime
 	ld bc, BOXMON_STRUCT_LENGTH
@@ -169,17 +157,12 @@ GetGender:
 	jr z, .sBoxMon
 
 ; 3: Unknown
-;	ld hl, wTempMonDVs
-;	dec a
-;	jr z, .DVs
 
 	ld hl, wTempMonCaughtTime
 	dec a
 	jr z, .DVs
 
 ; else: WildMon
-;	ld hl, wEnemyMonDVs
-;	jr .DVs
 
 	ld hl, wEnemyMonForm
 	jr .DVs
@@ -197,31 +180,6 @@ GetGender:
 	cp BOXMON
 	ld a, BANK(sBox)
 	call z, GetSRAMBank
-
-; Attack DV
-;	ld a, [hl]
-;	cpl
-;	and $10
-;	swap a
-;	add a    ; Atk DV << 1
-;	ld b, a  ; Store it in register b
-; Defense DV
-;	ld a, [hli]
-;	and $1
-;	add a    ; Def DV << 1
-;	add a    ; Def DV << 2
-;	or b    ; Add (Atk DV << 1) + (Def DV << 2)
-;	ld b, a  ; Store result in b
-; Special DV
-;	ld a, [hl]
-;	cpl
-;	and $1
-;	add a    ; Spec DV << 1
-;	add a    ; Spec DV << 2
-;	add a    ; Spec DV << 3
-;	or b    ; Add (Spec DV << 3)
-;	swap a
-;	ld b, a  ; Again, stored in b.
 
 ; Close SRAM if we were dealing with a sBoxMon.
 	ld a, [wMonType]
