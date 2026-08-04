@@ -10,6 +10,8 @@ DoBattle:
 	ld [wEnemyKnockOff], a
 	ld [wPlayerFlashFire], a
 	ld [wEnemyFlashFire], a
+	ld [wPlayerSpikes], a
+	ld [wEnemySpikes], a
 	inc a
 	ld [wBattleHasJustStarted], a
 	ld hl, wOTPartyMon1HP
@@ -94,7 +96,7 @@ DoBattle:
 	call InitBattleMon
 	call ResetPlayerStatLevels
 	call SendOutMonText
-	call NewBattleMonStatus
+	farcall NewBattleMonStatus
 	farcall BreakAttraction
 	call SendOutPlayerMon
 	call EmptyBattleTextbox
@@ -1790,6 +1792,10 @@ GetQuarterMaxHP:
 	call GetHalfMaxHP
 	jr HalveBC
 
+GetSixthMaxHP:
+	call GetThirdMaxHP
+	jr HalveBC
+
 GetThirdMaxHP:
 ; Assumes HP<768
 	call GetMaxHP
@@ -2698,7 +2704,7 @@ ForcePlayerMonChoice:
 	call GetMemSGBLayout
 	call SetPalettes
 	call SendOutMonText
-	call NewBattleMonStatus
+	farcall NewBattleMonStatus
 	farcall BreakAttraction
 	call SendOutPlayerMon
 	call EmptyBattleTextbox
@@ -2721,7 +2727,7 @@ PlayerPartyMonEntrance:
 	call InitBattleMon
 	call ResetPlayerStatLevels
 	call SendOutMonText
-	call NewBattleMonStatus
+	farcall NewBattleMonStatus
 	farcall BreakAttraction
 	call SendOutPlayerMon
 	call EmptyBattleTextbox
@@ -4075,7 +4081,7 @@ SwitchPlayerMon:
 	call AddBattleParticipant
 	call InitBattleMon
 	call ResetPlayerStatLevels
-	call NewBattleMonStatus
+	farcall NewBattleMonStatus
 	farcall BreakAttraction
 	call SendOutPlayerMon
 	call EmptyBattleTextbox
@@ -4147,59 +4153,29 @@ SendOutPlayerMon:
 ;	farcall SentOutAbility
 	ret
 
-NewBattleMonStatus:
-	xor a
-	ld [wPlayerFlashFire], a
-	ld [wPlayerBloodMoon], a
-	ld [wLastPlayerCounterMove], a
-	ld [wLastEnemyCounterMove], a
-	ld [wLastPlayerMove], a
-	ld hl, wPlayerSubStatus1
-rept 4
-	ld [hli], a
-endr
-	ld [hl], a
-	ld hl, wPlayerUsedMoves
-	ld [hli], a
-	ld [hli], a
-	ld [hli], a
-	ld [hl], a
-	ld [wPlayerDisableCount], a
-	ld [wPlayerFuryCutterCount], a
-	ld [wPlayerProtectCount], a
-	ld [wPlayerRageCounter], a
-	ld [wDisabledMove], a
-	ld [wPlayerMinimized], a
-	ld [wEnemyWrapCount], a
-	ld [wPlayerWrapCount], a
-	ld [wPlayerTurnsTaken], a
-	ld hl, wEnemySubStatus5
-	res SUBSTATUS_CANT_RUN, [hl]
-	ret
-
 SpikesDamage:
-	ld hl, wPlayerScreens
+	ld hl, wPlayerSpikes
 	ld de, wBattleMonType
 	ld bc, UpdatePlayerHUD
-	call CheckNeutralGas
-	jr z, .ok
-.SkipSpikesAbility
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .ok
-	ld hl, wEnemyScreens
+	ld hl, wEnemySpikes
 	ld de, wEnemyMonType
 	ld bc, UpdateEnemyHUD
 .ok
+	ld a, [hl]
+	and a
+	ret z
+	call CheckNeutralGas
+	jr z, .SkipSpikesAbility
 	call GetUserAbility
 	cp LEVITATE
 	ret z
 	cp MAGIC_GUARD
 	ret z
 
-	bit SCREENS_SPIKES, [hl]
-	ret z
-
+.SkipSpikesAbility:
 	; Flying-types aren't affected by Spikes.
 	ld a, [de]
 	cp FLYING
@@ -4214,9 +4190,24 @@ SpikesDamage:
 	ld hl, BattleText_UserHurtBySpikes ; "hurt by SPIKES!"
 	call StdBattleTextbox
 
+	ld hl, wPlayerSpikes
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok2
+	ld hl, wEnemySpikes
+.ok2
+
+	ld a, [hl]
+	and a
+	cp 3
+	jr z, .ThreeLayers
+	cp 2
+	jr z, .TwoLayers
+
 	call GetEighthMaxHP
 	call SubtractHPFromTarget
 
+.FinishSpikes
 	pop hl
 	call .hl
 
@@ -4224,6 +4215,16 @@ SpikesDamage:
 
 .hl
 	jp hl
+
+.TwoLayers
+	call GetSixthMaxHP
+	call SubtractHPFromTarget
+	jr .FinishSpikes
+
+.ThreeLayers
+	call GetQuarterMaxHP
+	call SubtractHPFromTarget
+	jr .FinishSpikes
 
 PursuitSwitch:
 	ld a, BATTLE_VARS_MOVE
@@ -5291,7 +5292,7 @@ BattleMonEntrance:
 	call InitBattleMon
 	call ResetPlayerStatLevels
 	call SendOutMonText
-	call NewBattleMonStatus
+	farcall NewBattleMonStatus
 	farcall BreakAttraction
 	call SendOutPlayerMon
 	call EmptyBattleTextbox

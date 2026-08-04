@@ -2613,8 +2613,8 @@ AI_Smart_RapidSpin:
 	bit SUBSTATUS_LEECH_SEED, a
 	jr nz, .asm_39097
 
-	ld a, [wEnemyScreens]
-	bit SCREENS_SPIKES, a
+	ld a, [wEnemySpikes]
+	and a
 	ret z
 
 .asm_39097

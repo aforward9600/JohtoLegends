@@ -165,9 +165,11 @@ AI_Redundant:
 	ret
 
 .Spikes:
-	ld a, [wPlayerScreens]
-	bit SCREENS_SPIKES, a
-	ret
+	ld a, [wPlayerSpikes]
+	and a
+	cp 3
+	jp z, .Redundant
+	jp .NotRedundant
 
 .Foresight:
 	ld a, [wPlayerSubStatus1]

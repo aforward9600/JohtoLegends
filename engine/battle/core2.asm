@@ -780,3 +780,33 @@ SetChoiceLock::
 .done
 	pop bc
 	ret
+
+NewBattleMonStatus::
+	xor a
+	ld [wPlayerFlashFire], a
+	ld [wPlayerBloodMoon], a
+	ld [wLastPlayerCounterMove], a
+	ld [wLastEnemyCounterMove], a
+	ld [wLastPlayerMove], a
+	ld hl, wPlayerSubStatus1
+rept 4
+	ld [hli], a
+endr
+	ld [hl], a
+	ld hl, wPlayerUsedMoves
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	ld [wPlayerDisableCount], a
+	ld [wPlayerFuryCutterCount], a
+	ld [wPlayerProtectCount], a
+	ld [wPlayerRageCounter], a
+	ld [wDisabledMove], a
+	ld [wPlayerMinimized], a
+	ld [wEnemyWrapCount], a
+	ld [wPlayerWrapCount], a
+	ld [wPlayerTurnsTaken], a
+	ld hl, wEnemySubStatus5
+	res SUBSTATUS_CANT_RUN, [hl]
+	ret

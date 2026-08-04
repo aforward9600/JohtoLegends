@@ -25,6 +25,10 @@ BattleCommand_StrengthSap:
 	jr nz, .fail
 	jr .finishstrengthsap
 .SkipContrary
+	cp CLEAR_BODY
+	jr z, .SkipAttackDrop
+	cp HYPER_CUTTER
+	jr z, .SkipAttackDrop
     call StrengthSap_AttackDown
     and a
     jr nz, .fail
@@ -37,6 +41,9 @@ BattleCommand_StrengthSap:
     pop bc
     ret
 
+.SkipAttackDrop:
+	farcall AnimateCurrentMove
+	farcall PreventStatDrop
 .restorehp
 ; restore HP by value of opponents attack before it was lowered
     call CheckUserNeutralGasMoldBreaker
@@ -80,14 +87,6 @@ StrengthSap_AttackDown:
     bit SUBSTATUS_MIST, a
     jp nz, .mist
 
-	call CheckUserNeutralGasMoldBreaker
-	jr z, .SkipHyperCutter
-	call GetTargetAbility
-	cp HYPER_CUTTER
-	jr z, .AttackDropSkip
-	cp CLEAR_BODY
-	jr z, .AttackDropSkip
-.SkipHyperCutter
     ld hl, wEnemyStatLevels
     ldh a, [hBattleTurn]
     and a

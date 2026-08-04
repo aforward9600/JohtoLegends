@@ -15,8 +15,6 @@ _NameRater:
 	jr z, .egg
 ; ... or a Pokemon you got from a trade.
 	call GetCurNick
-	call CheckIfMonIsYourOT
-	jr c, .traded
 ; This name is good, but we can do better.  How about it?
 	ld hl, NameRaterIsGoodText
 	call PrintText
@@ -61,10 +59,6 @@ _NameRater:
 	ld hl, NameRaterDoneText
 	call PrintText
 	pop hl
-	jr .done
-
-.traded
-	ld hl, NameRaterTradedText
 	jr .done
 
 .cancel
