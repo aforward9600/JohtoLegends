@@ -772,8 +772,6 @@ MoltresGEvosAttacks:
 DratiniEvosAttacks:
 	dbbw EVOLVE_LEVEL, 20, DRAGONAIR
 	db 0 ; no more evolutions
-;	dbw 1, GROWL
-;	dbw 1, SUPERPOWER
 	dbw 1, DRAGON_RAGE
 	dbw 1, LEER
 	dbw 6, THUNDER_WAVE
@@ -1982,7 +1980,7 @@ WooperPEvosAttacks:
 	dbw 29, POISON_JAB
 	dbw 33, EARTHQUAKE
 	dbw 37, TOXIC
-	dbw 43, SPIKES
+	dbw 43, TOXIC_SPIKES
 	dbw 43, HAZE
 	dbw 47, SLUDGE_WAVE
 	dbw 51, EARTH_POWER
@@ -2023,7 +2021,7 @@ ClodsireEvosAttacks:
 	dbw 31, POISON_JAB
 	dbw 36, EARTHQUAKE
 	dbw 41, TOXIC
-	dbw 48, SPIKES
+	dbw 48, TOXIC_SPIKES
 	dbw 48, HAZE
 	dbw 53, SLUDGE_WAVE
 	dbw 57, EARTH_POWER
@@ -2189,6 +2187,7 @@ ForretressEvosAttacks:
 	dbw 1, MIRROR_SHOT
 	dbw 1, TACKLE
 	dbw 1, PROTECT
+	dbw 1, TOXIC_SPIKES
 	dbw 6, SELFDESTRUCT
 	dbw 9, PIN_MISSILE
 	dbw 12, TAKE_DOWN
@@ -2400,7 +2399,7 @@ QwilfishEvosAttacks:
 	dbw 9, MINIMIZE
 	dbw 13, AQUA_JET
 	dbw 17, ROLLOUT
-	dbw 21, TOXIC
+	dbw 21, TOXIC_SPIKES
 	dbw 25, DEFENSE_CURL
 	dbw 29, REVENGE
 	dbw 33, BUBBLEBEAM
@@ -2425,7 +2424,7 @@ OverqwilEvosAttacks:
 	dbw 9, MINIMIZE
 	dbw 13, AQUA_JET
 	dbw 17, ROLLOUT
-	dbw 21, TOXIC
+	dbw 21, TOXIC_SPIKES
 	dbw 25, DEFENSE_CURL
 	dbw 29, REVENGE
 	dbw 33, KNOCK_OFF

@@ -12,11 +12,13 @@ BattleCommand_ClearHazards:
 
 	ld hl, wPlayerSpikes
 	ld de, wPlayerWrapCount
+	ld bc, wPlayerToxicSpikes
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .got_screens_wrap
 	ld hl, wEnemySpikes
 	ld de, wEnemyWrapCount
+	ld bc, wEnemyToxicSpikes
 .got_screens_wrap
 	ld a, [hl]
 	and a
@@ -28,6 +30,18 @@ BattleCommand_ClearHazards:
 	call StdBattleTextbox
 	pop de
 .no_spikes
+
+	ld a, [bc]
+	and a
+	jr z, .no_toxic_spikes
+
+	xor a
+	ld [hl], a
+	ld hl, BlewToxicSpikesText
+	push de
+	call StdBattleTextbox
+	pop de
+.no_toxic_spikes
 
 	ld a, [de]
 	and a

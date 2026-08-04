@@ -412,6 +412,7 @@ VenonatEggMoves:
 	dw SCREECH
 	dw AGILITY
 	dw SIGNAL_BEAM
+	dw TOXIC_SPIKES
 	dw -1 ; end
 
 DiglettEggMoves:

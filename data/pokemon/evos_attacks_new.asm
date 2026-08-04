@@ -230,7 +230,7 @@ RoseliaEvosAttacks:
 	dbw 19, MAGICAL_LEAF
 	dbw 22, GRASSWHISTLE
 	dbw 25, GIGA_DRAIN
-	dbw 28, SPIKES
+	dbw 28, TOXIC_SPIKES
 	dbw 31, SWEET_SCENT
 	dbw 34, SLUDGE_BOMB
 	dbw 37, PETAL_BLIZZ
@@ -247,6 +247,7 @@ RoseradeEvosAttacks:
 	dbw 1, MEGA_DRAIN
 	dbw 1, MAGICAL_LEAF
 	dbw 1, SLUDGE_BOMB
+	dbw 1, TOXIC_SPIKES
 	db 0 ; no more level-up moves
 
 CarvanhaEvosAttacks:
@@ -1140,7 +1141,7 @@ SkorupiEvosAttacks:
 	dbw 23, POISON_FANG
 	dbw 27, VENOSHOCK
 	dbw 30, HONE_CLAWS
-	dbw 34, TOXIC
+	dbw 34, TOXIC_SPIKES
 	dbw 38, NIGHT_SLASH
 	dbw 41, SCARY_FACE
 	dbw 45, CRUNCH
@@ -1161,7 +1162,7 @@ DrapionEvosAttacks:
 	dbw 23, POISON_FANG
 	dbw 27, VENOSHOCK
 	dbw 30, HONE_CLAWS
-	dbw 34, TOXIC
+	dbw 34, TOXIC_SPIKES
 	dbw 38, NIGHT_SLASH
 	dbw 43, SCARY_FACE
 	dbw 49, CRUNCH

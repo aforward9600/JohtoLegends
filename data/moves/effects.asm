@@ -1541,6 +1541,14 @@ Spikes:
 	spikes
 	endmove
 
+ToxicSpikes:
+	checkobedience
+	usedmovetext
+	doturn
+	magicbounce
+	toxicspikes
+	endmove
+
 Foresight:
 	checkobedience
 	usedmovetext

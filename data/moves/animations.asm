@@ -458,6 +458,7 @@ BattleAnimations::
 	dw BattleAnim_BloodMoon
 	dw BattleAnim_SacredSword
 	dw BattleAnim_ChipAway
+	dw BattleAnim_ToxicSpikes
 ;	dw BattleAnim_WakeUpSlap
 
 BattleAnim_0:
@@ -3883,21 +3884,7 @@ BattleAnim_Curse:
 	anim_wait 1
 	anim_bgeffect ANIM_BG_16, $0, $1, $40
 .loop
-	anim_sound 0, 0, SFX_SWORDS_DANCE
-	anim_obj ANIM_OBJ_47, 44, 108, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 36, 108, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 52, 108, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 28, 108, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 60, 108, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 20, 108, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 68, 108, $8
-	anim_wait 2
+	anim_call BattleAnim_CurseAnim
 	anim_loop 3, .loop
 	anim_wait 8
 	anim_incbgeffect ANIM_BG_16
@@ -4240,6 +4227,11 @@ BattleAnim_Octazooka:
 .done
 	anim_ret
 
+BattleAnim_ToxicSpikes:
+	anim_call BattleAnim_Spikes
+	anim_clearobjs
+	anim_jump BattleAnim_Sludge
+
 BattleAnim_Spikes:
 	anim_1gfx ANIM_GFX_MISC
 	anim_sound 6, 2, SFX_MENU
@@ -4478,10 +4470,7 @@ BattleAnim_Endure:
 	anim_call BattleAnim_EndureLoop
 	anim_jump BattleAnim_ShowMon_0
 
-BattleAnim_EndureLoop:
-	anim_bgeffect ANIM_BG_1A, $0, $1, $20
-	anim_bgeffect ANIM_BG_07, $0, $2, $0
-.loop
+BattleAnim_CurseAnim:
 	anim_sound 0, 0, SFX_SWORDS_DANCE
 	anim_obj ANIM_OBJ_47, 44, 108, $6
 	anim_wait 2
@@ -4497,6 +4486,13 @@ BattleAnim_EndureLoop:
 	anim_wait 2
 	anim_obj ANIM_OBJ_47, 68, 108, $8
 	anim_wait 2
+	anim_ret
+
+BattleAnim_EndureLoop:
+	anim_bgeffect ANIM_BG_1A, $0, $1, $20
+	anim_bgeffect ANIM_BG_07, $0, $2, $0
+.loop
+	anim_call BattleAnim_CurseAnim
 	anim_loop 5, .loop
 	anim_wait 8
 	anim_incbgeffect ANIM_BG_1A

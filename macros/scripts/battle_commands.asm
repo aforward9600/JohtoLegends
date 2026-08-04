@@ -214,6 +214,7 @@ ENDM
 	command ragingbull
 	command direclaw
 	command bloodmoon
+	command toxicspikes
 ;	command wakeupslap
 ;	command awakenopponent
 

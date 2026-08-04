@@ -265,6 +265,30 @@ BattleText_UserHurtBySpikes:
 	line "hurt by Spikes!"
 	prompt
 
+BattleText_UserPoisonedByToxicSpikes:
+	text "<USER>'s"
+	line "poisoned by"
+	cont "Toxic Spikes!"
+	prompt
+
+BattleText_UserBadlyPoisonedByToxicSpikes:
+	text "<USER>'s"
+	line "badly poisoned by"
+	cont "Toxic Spikes!"
+	prompt
+
+ToxicSpikesText:
+	text "Toxic Spikes"
+	line "scattered around"
+	cont "<TARGET>!"
+	prompt
+
+BattleText_DissipateToxicSpikes:
+	text "<USER>"
+	line "dissipated Toxic"
+	cont "Spikes!"
+	prompt
+
 RecoveredUsingText:
 	text "<TARGET>"
 	line "recovered with its"
@@ -1006,6 +1030,12 @@ ShedLeechSeedText:
 BlewSpikesText:
 	text "<USER>"
 	line "blew away Spikes!"
+	prompt
+
+BlewToxicSpikesText:
+	text "<USER>"
+	line "blew away Toxic"
+	cont "Spikes!"
 	prompt
 
 BrokeReflectText:

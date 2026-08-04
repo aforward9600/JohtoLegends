@@ -4154,6 +4154,7 @@ SendOutPlayerMon:
 	ret
 
 SpikesDamage:
+	farcall ToxicSpikesCheck
 	ld hl, wPlayerSpikes
 	ld de, wBattleMonType
 	ld bc, UpdatePlayerHUD

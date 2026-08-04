@@ -426,7 +426,7 @@ BeedrillEvosAttacks:
 	dbw 20, FOCUS_ENERGY
 	dbw 23, VENOSHOCK
 	dbw 26, PAYBACK
-	dbw 29, TOXIC
+	dbw 29, TOXIC_SPIKES
 	dbw 32, PIN_MISSILE
 	dbw 35, POISON_JAB
 	dbw 38, AGILITY
@@ -788,7 +788,7 @@ NidoranFEvosAttacks:
 	dbw 19, FURY_SWIPES
 	dbw 21, BITE
 	dbw 25, DOUBLE_TEAM
-	dbw 31, TOXIC
+	dbw 31, TOXIC_SPIKES
 	dbw 33, FLATTER
 	dbw 37, CRUNCH
 	dbw 43, VENOSHOCK
@@ -806,7 +806,7 @@ NidorinaEvosAttacks:
 	dbw 20, FURY_SWIPES
 	dbw 23, BITE
 	dbw 28, DOUBLE_TEAM
-	dbw 35, TOXIC
+	dbw 35, TOXIC_SPIKES
 	dbw 38, FLATTER
 	dbw 43, CRUNCH
 	dbw 50, VENOSHOCK
@@ -821,6 +821,7 @@ NidoqueenEvosAttacks:
 	dbw 1, SCRATCH
 	dbw 1, DOUBLE_KICK
 	dbw 1, TAIL_WHIP
+	dbw 1, TOXIC_SPIKES
 	dbw 23, CHIP_AWAY
 	dbw 35, BODY_SLAM
 	dbw 43, EARTH_POWER
@@ -837,7 +838,7 @@ NidoranMEvosAttacks:
 	dbw 19, FURY_ATTACK
 	dbw 21, HORN_ATTACK
 	dbw 25, DOUBLE_TEAM
-	dbw 31, TOXIC
+	dbw 31, TOXIC_SPIKES
 	dbw 33, FLATTER
 	dbw 37, POISON_JAB
 	dbw 43, VENOSHOCK
@@ -855,7 +856,7 @@ NidorinoEvosAttacks:
 	dbw 20, FURY_ATTACK
 	dbw 23, HORN_ATTACK
 	dbw 28, DOUBLE_TEAM
-	dbw 35, TOXIC
+	dbw 35, TOXIC_SPIKES
 	dbw 38, FLATTER
 	dbw 43, POISON_JAB
 	dbw 50, VENOSHOCK
@@ -870,6 +871,7 @@ NidokingEvosAttacks:
 	dbw 1, HORN_ATTACK
 	dbw 1, DOUBLE_KICK
 	dbw 1, POISON_STING
+	dbw 1, TOXIC_SPIKES
 	dbw 23, CHIP_AWAY
 	dbw 35, THRASH
 	dbw 43, EARTH_POWER
@@ -1899,8 +1901,8 @@ TentacoolEvosAttacks:
 	dbw 1, POISON_STING
 	dbw 4, SUPERSONIC
 	dbw 7, CONSTRICT
-	dbw 10, BUBBLE
-	dbw 13, ACID
+	dbw 10, ACID
+	dbw 13, TOXIC_SPIKES
 	dbw 16, WATER_PULSE
 	dbw 19, WRAP
 	dbw 22, ACID_SPRAY
@@ -1922,8 +1924,8 @@ TentacruelEvosAttacks:
 	dbw 1, POISON_STING
 	dbw 4, SUPERSONIC
 	dbw 7, CONSTRICT
-	dbw 10, BUBBLE
-	dbw 13, ACID
+	dbw 10, ACID
+	dbw 13, TOXIC_SPIKES
 	dbw 16, WATER_PULSE
 	dbw 19, WRAP
 	dbw 22, ACID_SPRAY
@@ -2627,6 +2629,7 @@ CloysterEvosAttacks:
 	dbw 1, SUPERSONIC
 	dbw 1, AURORA_BEAM
 	dbw 1, PROTECT
+	dbw 1, TOXIC_SPIKES
 	dbw 13, SPIKE_CANNON
 	dbw 28, ICICLE_CRASH
 	dbw 61, EXPLOSION

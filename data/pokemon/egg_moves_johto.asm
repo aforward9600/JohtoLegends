@@ -252,6 +252,7 @@ OmanyteEggMoves:
 	dw WATER_PULSE
 	dw WHIRLPOOL
 	dw MUDDY_WATER
+	dw TOXIC_SPIKES
 	dw -1 ; end
 
 KabutoEggMoves:
@@ -372,6 +373,7 @@ SpinarakEggMoves:
 	dw MEGAHORN
 	dw NIGHT_SLASH
 	dw TWINEEDLE
+	dw TOXIC_SPIKES
 	dw -1 ; end
 
 ChinchouEggMoves:
@@ -541,6 +543,7 @@ PinecoEggMoves:
 	dw SWIFT
 	dw ENDURE
 	dw REVENGE
+	dw TOXIC_SPIKES
 	dw -1 ; end
 
 DunsparceEggMoves:

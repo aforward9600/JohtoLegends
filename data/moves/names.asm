@@ -427,4 +427,5 @@ MoveNames::
 	db "Blood Moon@"
 	db "Sacred Sword@"
 	db "Chip Away@"
+	db "Toxic Spikes@"
 ;	db "Wake Up Slap@"

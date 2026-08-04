@@ -400,6 +400,7 @@ AlphabeticalMoveList::
 	dw THUNDERSHOCK
 	dw THUNDER_WAVE
 	dw TOXIC
+	dw TOXIC_SPIKES
 	dw TRANSFORM
 	dw TRI_ATTACK
 	dw TRIPLE_KICK

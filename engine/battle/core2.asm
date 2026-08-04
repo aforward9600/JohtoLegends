@@ -810,3 +810,127 @@ endr
 	ld hl, wEnemySubStatus5
 	res SUBSTATUS_CANT_RUN, [hl]
 	ret
+
+ToxicSpikesCheck:
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVar
+	or a
+	ret nz
+	ld hl, wPlayerToxicSpikes
+	ld de, wBattleMonType
+	ld bc, UpdatePlayerHUD
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyToxicSpikes
+	ld de, wEnemyMonType
+	ld bc, UpdateEnemyHUD
+.ok
+	ld a, [hl]
+	and a
+	ret z
+	call CheckNeutralGas
+	jr z, .SkipToxicSpikesAbility
+	call GetUserAbility
+	cp LEVITATE
+	ret z
+	cp IMMUNITY
+	ret z
+	cp MAGIC_GUARD
+	ret z
+	cp LEAF_GUARD
+	jp z, .LeafGuard
+.SkipToxicSpikesAbility
+	ld a, [de]
+	cp FLYING
+	ret z
+	cp STEEL
+	ret z
+	cp POISON
+	jr z, .PoisonCheck
+	inc de
+	ld a, [de]
+	cp FLYING
+	ret z
+.Resume
+	cp STEEL
+	ret z
+	cp POISON
+	jr z, .Poison
+
+;	push bc
+
+	ld de, ANIM_PSN
+	call Call_PlayBattleAnim2
+
+	ld hl, wPlayerToxicSpikes
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok2
+	ld hl, wEnemyToxicSpikes
+.ok2
+	ld a, [hl]
+	and a
+	cp 2
+	jr z, .BadlyPoisoned
+
+	ld hl, BattleText_UserPoisonedByToxicSpikes ; "hurt by SPIKES!"
+	call StdBattleTextbox
+	jr .FinishToxicSpikes
+
+.BadlyPoisoned
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	ldh a, [hBattleTurn]
+	and a
+	ld de, wPlayerToxicCount
+	jr z, .ok4
+	ld de, wEnemyToxicCount
+.ok4
+	set SUBSTATUS_TOXIC, [hl]
+	ld hl, BattleText_UserBadlyPoisonedByToxicSpikes ; "hurt by SPIKES!"
+	call StdBattleTextbox
+.FinishToxicSpikes
+	farcall SwitchTurnCore
+	farcall PoisonOpponent
+	farcall SwitchTurnCore
+	call RefreshBattleHuds
+	ret
+	pop hl
+	call .hl
+
+	jp WaitBGMap
+
+.hl
+	jp hl
+
+.LeafGuard
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret z
+	jp .SkipToxicSpikesAbility
+
+.PoisonCheck
+	inc de
+	ld a, [de]
+	cp FLYING
+	jr z, .Resume
+.Poison
+	ld hl, wPlayerToxicSpikes
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok3
+	ld hl, wEnemyToxicSpikes
+.ok3
+	xor a
+	ld [hl], a
+	ld hl, BattleText_DissipateToxicSpikes
+	jp StdBattleTextbox
+
+Call_PlayBattleAnim2:
+	ld a, e
+	ld [wFXAnimID], a
+	ld a, d
+	ld [wFXAnimID + 1], a
+	call WaitBGMap
+	predef_jump PlayBattleAnim

@@ -64,6 +64,7 @@ AI_Redundant:
 	dbw EFFECT_ACCURACY_DOWN,  .AccuracyDown
 	dbw EFFECT_EVASION_DOWN,   .StatDown
 	dbw EFFECT_BLOOD_MOON,     .BloodMoon
+	dbw EFFECT_TOXIC_SPIKES,   .ToxicSpikes
 	db -1
 
 .LightScreen:
@@ -168,6 +169,13 @@ AI_Redundant:
 	ld a, [wPlayerSpikes]
 	and a
 	cp 3
+	jp z, .Redundant
+	jp .NotRedundant
+
+.ToxicSpikes:
+	ld a, [wPlayerToxicSpikes]
+	and a
+	cp 2
 	jp z, .Redundant
 	jp .NotRedundant
 

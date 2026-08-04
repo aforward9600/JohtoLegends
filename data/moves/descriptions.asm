@@ -433,6 +433,7 @@ MoveDescriptions1:
 	dw BloodMoonDescription
 	dw SacredSwordDescription
 	dw SacredSwordDescription ; Chip Away
+	dw ToxicSpikesDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1853,3 +1854,7 @@ BloodMoonDescription:
 SacredSwordDescription:
 	db   "Ignores foe's stat"
 	line "changes.@"
+
+ToxicSpikesDescription:
+	db   "Poisons foes when"
+	line "they switch out.@"
