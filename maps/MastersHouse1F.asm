@@ -131,12 +131,7 @@ DratiniPokeballScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-;	givepoke DRATINI, 5, ORAN_BERRY
-	givepoke TYPHLOSION, 5, ORAN_BERRY
-	givepoke BUTTERFREE, 5, ORAN_BERRY
-	givepoke PIDGEY, 5, ORAN_BERRY
-	givepoke GEODUDE, 5, ORAN_BERRY
-	givepoke LUCARIO, 5, ORAN_BERRY
+	givepoke DRATINI, 5, ORAN_BERRY
 	sjump RivalLarvitarScript
 
 ChooseBagon:

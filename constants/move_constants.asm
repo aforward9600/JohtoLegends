@@ -436,6 +436,7 @@
 	const CHIP_AWAY
 	const TOXIC_SPIKES
 	const STEALTH_ROCK
+	const STONE_AXE
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 

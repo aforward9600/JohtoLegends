@@ -365,6 +365,7 @@ AlphabeticalMoveList::
 	dw STEEL_SLICE
 	dw STEEL_WING
 	dw STOMP
+	dw STONE_AXE
 	dw STONE_EDGE
 	dw STONE_BASH
 	dw STRANGESTEAM

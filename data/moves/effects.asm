@@ -2644,6 +2644,27 @@ BrickBreak:
 	buildopponentrage
 	endmove
 
+StoneAxe:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	checkhit
+	damagevariation
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	kingsrock
+	stoneaxe
+	checkfaint
+	buildopponentrage
+	endmove
+
 Blizzard:
 	checkobedience
 	usedmovetext

@@ -216,5 +216,6 @@ BattleCommandPointers:
 	effectfn BattleCommand_BloodMoon
 	effectfn BattleCommand_ToxicSpikes
 	effectfn BattleCommand_StealthRock
+	effectfn BattleCommand_StoneAxe
 ;	effectfn BattleCommand_WakeUpSlap
 ;	effectfn BattleCommand_AwakenOpponent

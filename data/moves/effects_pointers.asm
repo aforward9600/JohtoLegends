@@ -206,4 +206,5 @@ MoveEffectsPointers:
 	dw SacredSword
 	dw ToxicSpikes
 	dw StealthRock
+	dw StoneAxe
 ;	dw WakeUpSlap

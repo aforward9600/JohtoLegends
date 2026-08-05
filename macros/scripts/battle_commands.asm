@@ -216,6 +216,7 @@ ENDM
 	command bloodmoon
 	command toxicspikes
 	command stealthrock
+	command stoneaxe
 ;	command wakeupslap
 ;	command awakenopponent
 

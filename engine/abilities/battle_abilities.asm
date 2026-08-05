@@ -1316,6 +1316,7 @@ SharpnessMoves:
 	dw SOLAR_BLADE
 	dw SHADOW_CLAW
 	dw SACRED_SWORD
+	dw STONE_AXE
 	dw -1
 
 MegaLauncherMoves:

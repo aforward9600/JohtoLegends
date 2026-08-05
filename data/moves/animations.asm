@@ -460,6 +460,7 @@ BattleAnimations::
 	dw BattleAnim_ChipAway
 	dw BattleAnim_ToxicSpikes
 	dw BattleAnim_StealthRock
+	dw BattleAnim_StoneAxe
 ;	dw BattleAnim_WakeUpSlap
 
 BattleAnim_0:
@@ -6222,6 +6223,15 @@ BattleAnim_BlazeKick:
 	anim_obj ANIM_OBJ_07, 136, 56, $0
 	anim_call BattleAnim_FirePunch_branch_cbbcc
 	anim_jump BattleAnim_Wait16
+
+BattleAnim_StoneAxe:
+	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_ROCKS
+	anim_sound 0, 1, SFX_CUT
+	anim_bgeffect ANIM_BG_1F, $08, $2, $0
+	anim_obj ANIM_OBJ_3A, 150, 40, $0
+	anim_call BattleAnim_RockDebris
+	anim_call BattleAnim_ShowMon_0
+	anim_jump BattleAnim_Wait32
 
 BattleAnim_LeafBlade:
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GREEN

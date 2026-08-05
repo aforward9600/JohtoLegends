@@ -3684,8 +3684,8 @@ ScizorEvosAttacks:
 
 KleavorEvosAttacks:
 	db 0 ; no more evolutions
-	dbw LEARN_EVO_MOVE, ROCK_TOMB
-	dbw 1, ROCK_TOMB
+	dbw LEARN_EVO_MOVE, STONE_AXE
+	dbw 1, STONE_AXE
 	dbw 1, QUICK_ATTACK
 	dbw 1, LEER
 	dbw 5, FOCUS_ENERGY

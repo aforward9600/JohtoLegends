@@ -1,4 +1,4 @@
-BattleCommand_StealthRock:
+BattleCommand_StoneAxe:
 ; stealthrock
 
 	ld hl, wEnemyStealthRocks
@@ -12,7 +12,7 @@ BattleCommand_StealthRock:
 
 	ld a, [hl]
 	and a
-	jr nz, .failed
+	ret nz
 
 ; Nothing else stops it from working.
 
@@ -20,11 +20,6 @@ BattleCommand_StealthRock:
 	ld [hl], a
 
 .FinishSpikes
-	farcall AnimateCurrentMove
 
 	ld hl, StealthRocksText
 	jp StdBattleTextbox
-
-.failed
-	farcall FailMove
-	ret
