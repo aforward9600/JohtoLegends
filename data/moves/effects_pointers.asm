@@ -205,4 +205,5 @@ MoveEffectsPointers:
 	dw HyperVoice
 	dw SacredSword
 	dw ToxicSpikes
+	dw StealthRock
 ;	dw WakeUpSlap

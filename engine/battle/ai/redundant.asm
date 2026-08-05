@@ -65,6 +65,7 @@ AI_Redundant:
 	dbw EFFECT_EVASION_DOWN,   .StatDown
 	dbw EFFECT_BLOOD_MOON,     .BloodMoon
 	dbw EFFECT_TOXIC_SPIKES,   .ToxicSpikes
+	dbw EFFECT_STEALTH_ROCK,   .StealthRock
 	db -1
 
 .LightScreen:
@@ -178,6 +179,12 @@ AI_Redundant:
 	cp 2
 	jp z, .Redundant
 	jp .NotRedundant
+
+.StealthRock:
+	ld a, [wPlayerStealthRocks]
+	and a
+	jp z, .NotRedundant
+	jp .Redundant
 
 .Foresight:
 	ld a, [wPlayerSubStatus1]

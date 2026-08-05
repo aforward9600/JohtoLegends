@@ -1953,7 +1953,7 @@ GeodudeEvosAttacks:
 	dbw 18, ROCK_TOMB
 	dbw 22, BULLDOZE
 	dbw 24, SELFDESTRUCT
-	dbw 28, SPIKES
+	dbw 28, STEALTH_ROCK
 	dbw 30, ROCK_BLAST
 	dbw 34, EARTHQUAKE
 	dbw 36, EXPLOSION
@@ -1974,7 +1974,7 @@ GeodudeAEvosAttacks:
 	dbw 18, ROCK_TOMB
 	dbw 22, THUNDERPUNCH
 	dbw 24, SELFDESTRUCT
-	dbw 28, SPIKES
+	dbw 28, STEALTH_ROCK
 	dbw 30, ROCK_BLAST
 	dbw 34, DISCHARGE
 	dbw 36, EXPLOSION
@@ -1995,7 +1995,7 @@ GravelerEvosAttacks:
 	dbw 18, ROCK_TOMB
 	dbw 22, BULLDOZE
 	dbw 24, SELFDESTRUCT
-	dbw 30, SPIKES
+	dbw 30, STEALTH_ROCK
 	dbw 34, ROCK_BLAST
 	dbw 40, EARTHQUAKE
 	dbw 44, EXPLOSION
@@ -2016,7 +2016,7 @@ GravelerAEvosAttacks:
 	dbw 18, ROCK_TOMB
 	dbw 22, THUNDERPUNCH
 	dbw 24, SELFDESTRUCT
-	dbw 30, SPIKES
+	dbw 30, STEALTH_ROCK
 	dbw 34, ROCK_BLAST
 	dbw 40, DISCHARGE
 	dbw 44, EXPLOSION
@@ -2038,7 +2038,7 @@ GolemAEvosAttacks:
 	dbw 18, ROCK_TOMB
 	dbw 22, THUNDERPUNCH
 	dbw 24, SELFDESTRUCT
-	dbw 30, SPIKES
+	dbw 30, STEALTH_ROCK
 	dbw 34, ROCK_BLAST
 	dbw 40, DISCHARGE
 	dbw 44, EXPLOSION
@@ -2060,7 +2060,7 @@ GolemEvosAttacks:
 	dbw 18, ROCK_TOMB
 	dbw 22, BULLDOZE
 	dbw 24, SELFDESTRUCT
-	dbw 30, SPIKES
+	dbw 30, STEALTH_ROCK
 	dbw 34, ROCK_BLAST
 	dbw 40, EARTHQUAKE
 	dbw 44, EXPLOSION
@@ -2708,7 +2708,7 @@ OnixEvosAttacks:
 	dbw 4, CURSE
 	dbw 7, ROCK_THROW
 	dbw 13, RAGE
-	dbw 16, SPIKES
+	dbw 16, STEALTH_ROCK
 	dbw 19, ROCK_POLISH
 	dbw 20, GYRO_BALL
 	dbw 22, ROCK_TOMB
@@ -2733,7 +2733,7 @@ SteelixEvosAttacks:
 	dbw 4, CURSE
 	dbw 7, ROCK_THROW
 	dbw 13, RAGE
-	dbw 16, SPIKES
+	dbw 16, STEALTH_ROCK
 	dbw 19, ROCK_POLISH
 	dbw 20, GYRO_BALL
 	dbw 22, ROCK_TOMB

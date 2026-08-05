@@ -996,7 +996,9 @@ wPrinterStatus:: db ; cbf8
 ; High nibble is for margin before the image, low nibble is for after.
 wPrinterMargins:: db ; cbfa
 wPrinterExposureTime:: db ; cbfb
-	ds 4
+	ds 2
+wPlayerStealthRocks:: db
+wEnemyStealthRocks:: db
 wPlayerSpikes:: db
 wEnemySpikes:: db
 wPlayerToxicSpikes:: db

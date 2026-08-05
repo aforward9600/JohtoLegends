@@ -428,4 +428,5 @@ MoveNames::
 	db "Sacred Sword@"
 	db "Chip Away@"
 	db "Toxic Spikes@"
+	db "Stealth Rock@"
 ;	db "Wake Up Slap@"

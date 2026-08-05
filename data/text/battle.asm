@@ -260,6 +260,18 @@ BattleText_UserFledUsingAStringBuffer1:
 	text "!"
 	prompt
 
+StealthRocksText:
+	text "Pointed stones"
+	line "float around"
+	cont "the foe!"
+	prompt
+
+BattleText_UserHurtByStealthRocksText:
+	text "Pointed stones dug"
+	line "into"
+	cont "<USER>!"
+	prompt
+
 BattleText_UserHurtBySpikes:
 	text "<USER>'s"
 	line "hurt by Spikes!"
@@ -1036,6 +1048,12 @@ BlewToxicSpikesText:
 	text "<USER>"
 	line "blew away Toxic"
 	cont "Spikes!"
+	prompt
+
+RemovedStealthRockText:
+	text "<USER>"
+	line "blew away Stealth"
+	cont "Rock!"
 	prompt
 
 BrokeReflectText:

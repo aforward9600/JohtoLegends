@@ -2617,6 +2617,10 @@ AI_Smart_RapidSpin:
 	and a
 	jr nz, .asm_39097
 
+	ld a, [wEnemyStealthRocks]
+	and a
+	jr nz, .asm_39097
+
 	ld a, [wEnemyToxicSpikes]
 	and a
 	ret z

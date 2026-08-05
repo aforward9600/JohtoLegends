@@ -434,6 +434,7 @@ MoveDescriptions1:
 	dw SacredSwordDescription
 	dw SacredSwordDescription ; Chip Away
 	dw ToxicSpikesDescription
+	dw StealthRockDescription
 ;	dw WakeUpSlapDescription
 
 InvalidMoveDescription:
@@ -1858,3 +1859,7 @@ SacredSwordDescription:
 ToxicSpikesDescription:
 	db   "Poisons foes when"
 	line "they switch out.@"
+
+StealthRockDescription:
+	db   "Stones dig into"
+	line "switched foes.@"

@@ -1549,6 +1549,14 @@ ToxicSpikes:
 	toxicspikes
 	endmove
 
+StealthRock:
+	checkobedience
+	usedmovetext
+	doturn
+	magicbounce
+	stealthrock
+	endmove
+
 Foresight:
 	checkobedience
 	usedmovetext

@@ -438,6 +438,7 @@ BonslyEggMoves:
 	dw ROLLOUT
 	dw DEFENSE_CURL
 	dw HARDEN
+	dw STEALTH_ROCK
 	dw -1 ; end
 
 HoppipEggMoves:

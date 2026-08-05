@@ -435,6 +435,7 @@
 	const SACRED_SWORD
 	const CHIP_AWAY
 	const TOXIC_SPIKES
+	const STEALTH_ROCK
 ;	const WAKE_UP_SLAP
 NUM_ATTACKS EQU const_value + -1
 

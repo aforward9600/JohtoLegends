@@ -677,6 +677,7 @@ OnixEggMoves:
 	dw DEFENSE_CURL
 	dw ROCK_BLAST
 	dw ROLLOUT
+	dw STEALTH_ROCK
 	dw -1 ; end
 
 DrowzeeEggMoves:

@@ -49,4 +49,18 @@ BattleCommand_ClearHazards:
 	xor a
 	ld [de], a
 	ld hl, ReleasedByText
+	call StdBattleTextbox
+
+	ld hl, wPlayerStealthRocks
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_stealth_rock
+	ld hl, wEnemyStealthRocks
+.got_stealth_rock
+	ld a, [hl]
+	and a
+	ret z
+	xor a
+	ld [hl], a
+	ld hl, RemovedStealthRockText
 	jp StdBattleTextbox

@@ -361,6 +361,7 @@ AlphabeticalMoveList::
 	dw SPIKES
 	dw SPITE
 	dw SPORE
+	dw STEALTH_ROCK
 	dw STEEL_SLICE
 	dw STEEL_WING
 	dw STOMP

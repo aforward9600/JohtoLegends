@@ -459,6 +459,7 @@ BattleAnimations::
 	dw BattleAnim_SacredSword
 	dw BattleAnim_ChipAway
 	dw BattleAnim_ToxicSpikes
+	dw BattleAnim_StealthRock
 ;	dw BattleAnim_WakeUpSlap
 
 BattleAnim_0:
@@ -2075,24 +2076,12 @@ BattleAnim_SkyAttack_branch_c9fb5:
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 .loop
 	anim_sound 0, 0, SFX_SWORDS_DANCE
-	anim_obj ANIM_OBJ_47, 44, 108, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 36, 108, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 52, 108, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 28, 108, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 60, 108, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 20, 108, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47, 68, 108, $8
-	anim_wait 2
+	anim_call BattleAnim_CurseAnim
 	anim_loop 3, .loop
 	anim_wait 8
 	anim_incbgeffect ANIM_BG_16
 	anim_jump BattleAnim_ShowMon_0
+
 BattleAnim_Bind:
 	anim_1gfx ANIM_GFX_ROPE
 	anim_sound 0, 1, SFX_BIND
@@ -4231,6 +4220,18 @@ BattleAnim_ToxicSpikes:
 	anim_call BattleAnim_Spikes
 	anim_clearobjs
 	anim_jump BattleAnim_Sludge
+
+BattleAnim_StealthRock:
+	anim_1gfx ANIM_GFX_ROCKS
+	anim_sound 6, 2, SFX_MENU
+	anim_obj ANIM_OBJ_STEALTH_ROCK, 48, 88, $20
+	anim_wait 8
+	anim_sound 6, 2, SFX_MENU
+	anim_obj ANIM_OBJ_STEALTH_ROCK, 48, 88, $30
+	anim_wait 8
+	anim_sound 6, 2, SFX_MENU
+	anim_obj ANIM_OBJ_STEALTH_ROCK, 48, 88, $28
+	anim_jump BattleAnim_Wait64
 
 BattleAnim_Spikes:
 	anim_1gfx ANIM_GFX_MISC

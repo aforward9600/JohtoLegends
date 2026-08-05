@@ -811,6 +811,79 @@ endr
 	res SUBSTATUS_CANT_RUN, [hl]
 	ret
 
+StealthRocksCheck:
+	call GetUserAbility
+	cp MAGIC_GUARD
+	ret z
+	ld hl, wPlayerStealthRocks
+	ld de, wBattleMonType
+	ld bc, UpdatePlayerHUD
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyStealthRocks
+	ld de, wEnemyMonType
+	ld bc, UpdateEnemyHUD
+.ok
+	ld a, [hl]
+	and a
+	ret z
+	push de
+	ld hl, BattleText_UserHurtByStealthRocksText
+	call StdBattleTextbox
+	pop de
+	ld h, d
+	ld l, e
+	callfar CheckStealthRockTypeMatchup
+	push de
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE + 11
+	jr nc, .StealthRock4
+	cp EFFECTIVE + 1
+	jr nc, .StealthRock2
+	cp EFFECTIVE
+	jr nc, .StealthRockDamage
+	cp EFFECTIVE - 6
+	jr nc, .StealthRockHalf
+
+.StealthRockQuarterDamage
+	call GetThirtySecondMaxHP
+	jr .pop
+
+.StealthRock4
+	farcall GetHalfMaxHP
+	jr .pop
+
+.StealthRock2
+	farcall GetQuarterMaxHP
+	jr .pop
+
+.StealthRockDamage
+	farcall GetEighthMaxHP
+	jr .pop
+
+.StealthRockHalf
+	farcall GetSixteenthMaxHP
+.pop
+	farcall SubtractHPFromTarget
+	call WaitBGMap
+	pop de
+	ret
+
+GetThirtySecondMaxHP:
+	farcall GetQuarterMaxHP
+	; eighth result
+	srl c
+	srl c
+	srl c
+	; round up
+	ld a, c
+	and a
+	jr nz, .ok
+	inc c
+.ok
+	ret
+
 ToxicSpikesCheck:
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVar
