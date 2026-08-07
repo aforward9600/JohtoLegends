@@ -4329,7 +4329,7 @@ BattleCommand_PoisonTarget:
 	call StdBattleTextbox
 
 .finish_poison
-	farcall SynchronizeCheck
+	farcall SynchronizePoisonCheck
 
 	farcall UseHeldStatusHealingItem
 	ret
@@ -4360,7 +4360,9 @@ BattleCommand_PoisonTarget:
 	call .apply_poison
 
 	ld hl, BadlyPoisonedText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	farcall SynchronizeToxicCheck
+	ret
 
 .apply_poison
 	call PoisonOpponent
@@ -4417,6 +4419,7 @@ BattleCommand_Poison:
 	call .apply_poison
 	ld hl, WasPoisonedText
 	call StdBattleTextbox
+	farcall SynchronizeCheck
 	jr .finished
 
 .toxic
@@ -4427,9 +4430,9 @@ BattleCommand_Poison:
 
 	ld hl, BadlyPoisonedText
 	call StdBattleTextbox
+	farcall SynchronizeToxicCheck
 
 .finished
-	farcall SynchronizeCheck
 	farcall UseHeldStatusHealingItem
 	ret
 
@@ -4460,7 +4463,7 @@ BattleCommand_Poison:
 
 .LeafGuard
 	call CheckSun
-	jr nz, .SkipImmunity
+	jp nz, .SkipImmunity
 .Immunity
 	jp _PreventAbilityText
 
@@ -4537,7 +4540,7 @@ BattleCommand_BurnTarget:
 	ld hl, WasBurnedText
 	call StdBattleTextbox
 
-	farcall SynchronizeCheck
+	farcall SynchronizeBurnCheck
 	farcall UseHeldStatusHealingItem
 	ret
 
@@ -4659,6 +4662,9 @@ BattleCommand_ParalyzeTarget:
 	cp LEAF_GUARD
 	jr z, .LeafGuard
 .SkipLimber
+	ld b, ELECTRIC
+	call CheckIfTargetIsGivenType ; Don't freeze an Ice-type
+	ret z
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
@@ -4691,7 +4697,7 @@ FinishParalysis:
 	call PlayOpponentBattleAnim
 	call RefreshBattleHuds
 	call PrintParalyze
-	farcall SynchronizeCheck
+	farcall SynchronizeParalyzeCheck
 	ret
 
 BattleCommand_SleepHit:
@@ -4794,7 +4800,7 @@ BattleCommand_Burn:
 	call UpdateBattleHuds
 	ld hl, WasBurnedText
 	call StdBattleTextbox
-	farcall SynchronizeCheck
+	farcall SynchronizeBurnCheck
 	ld hl, UseHeldStatusHealingItem
 	jp CallBattleCore
 
@@ -5771,11 +5777,7 @@ BattleCommand_LowerSubNoAnim:
 	call CallBattleCore
 	jp WaitBGMap
 
-CalcPlayerStats:
-	ld hl, wPlayerAtkLevel
-	ld de, wPlayerStats
-	ld bc, wBattleMonAttack
-
+CalcStatsBranch:
 	ld a, 5
 	call CalcBattleStats
 
@@ -5792,7 +5794,14 @@ CalcPlayerStats:
 ;	call CallBattleCore
 
 	ld hl, ApplyBrnEffectOnAttack
-	call CallBattleCore
+	jp CallBattleCore
+
+CalcPlayerStats:
+	ld hl, wPlayerAtkLevel
+	ld de, wPlayerStats
+	ld bc, wBattleMonAttack
+
+	call CalcStatsBranch
 
 	jp BattleCommand_SwitchTurn
 
@@ -5801,23 +5810,7 @@ CalcEnemyStats:
 	ld de, wEnemyStats
 	ld bc, wEnemyMonAttack
 
-	ld a, 5
-	call CalcBattleStats
-
-	call BattleCommand_SwitchTurn
-
-	call ApplyChoiceScarfOnSpeed
-
-	farcall ApplySpeedAbilities
-
-	ld hl, ApplyPrzEffectOnSpeed
-	call CallBattleCore
-
-;	ld hl, MachoBraceEffectOnSpeed
-;	call CallBattleCore
-
-	ld hl, ApplyBrnEffectOnAttack
-	call CallBattleCore
+	call CalcStatsBranch
 
 	jp BattleCommand_SwitchTurn
 
@@ -7076,6 +7069,9 @@ BattleCommand_Paralyze:
 	cp LEAF_GUARD
 	jr z, .LeafGuard
 .SkipLimber
+	ld b, ELECTRIC
+	call CheckIfTargetIsGivenType ; Don't freeze an Ice-type
+	jr z, .failed
 	call CheckForStatusIfAlreadyHasAny
 	jr nz, .hasstatus
 	ld a, [wTypeModifier]
@@ -7099,7 +7095,7 @@ BattleCommand_Paralyze:
 	call CallBattleCore
 	call UpdateBattleHuds
 	call PrintParalyze
-	farcall SynchronizeCheck
+	farcall SynchronizeParalyzeCheck
 	ld hl, UseHeldStatusHealingItem
 	jp CallBattleCore
 

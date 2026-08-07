@@ -486,6 +486,8 @@ CheckContactAbilities:
 	cp STATUS
 	ret nc
 .SpecialContactMoves
+	call CheckIfHPIsZeroAbilitiesFoe
+	jr z, .ReconveneContact
 	call GetUserAbility
 	cp POISON_TOUCH
 	jr z, .PoisonTouch
@@ -504,6 +506,12 @@ CheckContactAbilities:
 	jp hl
 
 .PoisonTouch:
+	ld b, POISON
+	call CheckIfTargetIsGivenTypeAbility
+	jr z, .ReconveneContact
+	ld b, STEEL
+	call CheckIfTargetIsGivenTypeAbility
+	jr z, .ReconveneContact
 	call GetTargetAbility
 	cp SHIELD_DUST
 	jr z, .ReconveneContact
@@ -604,6 +612,9 @@ CheckContactAbilities:
 	jp StdBattleTextbox
 
 .Static
+	ld b, ELECTRIC
+	call CheckIfTargetIsGivenTypeAbility
+	ret z
 	call SafeguardAbilities
 	ret nz
 	call GetUserAbility
@@ -620,25 +631,15 @@ CheckContactAbilities:
 	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
 	farcall FinishParalysis
-	call SynchronizeCheck
+	call SynchronizeParalyzeCheck
 	jp BattleCommand_SwitchTurnAbilities
 
 .PoisonPoint:
-	ld hl, wBattleMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .GotPlayerTypePoison
-	ld hl, wEnemyMonType1
-.GotPlayerTypePoison
-	ld a, [hli]
-	cp POISON
+	ld b, POISON
+	call CheckIfTargetIsGivenTypeAbility
 	ret z
-	cp STEEL
-	ret z
-	ld a, [hl]
-	cp POISON
-	ret z
-	cp STEEL
+	ld b, STEEL
+	call CheckIfTargetIsGivenTypeAbility
 	ret z
 	call SafeguardAbilities
 	ret nz
@@ -661,7 +662,7 @@ CheckContactAbilities:
 	call RefreshBattleHuds
 	ld hl, WasPoisonedText
 	call StdBattleTextbox
-	call SynchronizeCheck
+	call SynchronizePoisonCheck
 	jp BattleCommand_SwitchTurnAbilities
 
 .LeafGuard:
@@ -670,12 +671,9 @@ CheckContactAbilities:
 	ret
 
 .FlameBody:
-	ld hl, wBattleMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .GotPlayerType
-	ld hl, wEnemyMonType1
-.GotPlayerType
+	ld b, FIRE
+	call CheckIfTargetIsGivenTypeAbility
+	ret z
 	call SafeguardAbilities
 	ret nz
 	call GetUserAbility
@@ -692,7 +690,7 @@ CheckContactAbilities:
 	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
 	farcall BurnOpponent
-	call SynchronizeCheck
+	call SynchronizeBurnCheck
 	jp BattleCommand_SwitchTurnAbilities
 
 .EffectSpore:
@@ -714,10 +712,19 @@ CheckContactAbilities:
 	call BattleRandom
 	cp 50 percent + 1
 	jr c, .EffectSporeSleep
+	ld b, ELECTRIC
+	call CheckIfTargetIsGivenTypeAbility
+	jp z, BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_ParalyzeTarget
 	jr .FinishEffectSpore
 
 .EffectSporePoison:
+	ld b, POISON
+	call CheckIfTargetIsGivenTypeAbility
+	jp z, BattleCommand_SwitchTurnAbilities
+	ld b, STEEL
+	call CheckIfTargetIsGivenTypeAbility
+	jp z, BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_PoisonTarget
 	jr .FinishEffectSpore
 
@@ -2235,54 +2242,60 @@ SynchronizeCheck:
 	call GetBattleVarAddr
 	and a
 	ret nz
-	call CheckNeutralGas
-	ret z
 	call GetTargetAbility
 	cp SYNCHRONIZE
-	ret nz
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_POISON_MULTI_HIT
-	jp z, .SynchronizePoison
-	cp EFFECT_POISON_HIT
-	jp z, .SynchronizePoison
-	cp EFFECT_POISON
-	jp z, .SynchronizePoison
-	cp EFFECT_TOXIC
-	jp z, .SynchronizePoison
-	cp EFFECT_BURN
-	jp z, .SynchronizeBurn
-	cp EFFECT_BURN_HIT
-	jp z, .SynchronizeBurn
-	cp EFFECT_FLAME_WHEEL
-	jp z, .SynchronizeBurn
-	cp EFFECT_FLARE_BLITZ
-	jp z, .SynchronizeBurn
-	cp EFFECT_PARALYZE_HIT
-	jp z, .SynchronizePar
-	cp EFFECT_PARALYZE
-	ret nz
+	ret
 
-.SynchronizePar
+CheckPoisonSynchronize:
 	call GetUserAbility
-	cp LIMBER
+	cp IMMUNITY
+	ret z
+	ld b, POISON
+	call CheckIfTargetIsGivenTypeAbility
+	ret z
+	ld b, STEEL
+	jp CheckIfTargetIsGivenTypeAbility
+
+SynchronizePoisonCheck:
+	call SynchronizeCheck
+	ret nz
+	call CheckPoisonSynchronize
 	ret z
 	ld hl, SynchronizeText
 	call StdBattleTextbox
 	call BattleCommand_SwitchTurnAbilities
-	farcall BattleCommand_ParalyzeTarget
+	farcall BattleCommand_PoisonTarget
 	jp BattleCommand_SwitchTurnAbilities
 
-.SynchronizeBurn
+SynchronizeToxicCheck:
+	call SynchronizeCheck
+	ret nz
+	call CheckPoisonSynchronize
+	ret z
+	ld hl, SynchronizeText
+	call StdBattleTextbox
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	ldh a, [hBattleTurn]
+	and a
+	ld de, wPlayerToxicCount
+	jr z, .ok
+	ld de, wEnemyToxicCount
+.ok
+	set SUBSTATUS_TOXIC, [hl]
+	farcall BattleCommand_SwitchTurnAbilities
+	farcall PoisonOpponent
+	farcall BattleCommand_SwitchTurnAbilities
+	ret
+
+SynchronizeBurnCheck:
+	call SynchronizeCheck
+	ret nz
+	call CheckNeutralGas
+	ret z
 	call GetUserAbility
 	cp WATER_VEIL
 	ret z
-	ld hl, wBattleMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .GotPlayerType
-	ld hl, wEnemyMonType1
-.GotPlayerType
 	ld b, FIRE
 	call CheckIfTargetIsGivenTypeAbility
 	ret z
@@ -2292,17 +2305,21 @@ SynchronizeCheck:
 	farcall BattleCommand_BurnTarget
 	jp BattleCommand_SwitchTurnAbilities
 
-.SynchronizePoison
-	call GetUserAbility
-	cp IMMUNITY
+SynchronizeParalyzeCheck:
+	call SynchronizeCheck
+	ret nz
+	call CheckNeutralGas
 	ret z
-	ld b, POISON
+	ld b, ELECTRIC
 	call CheckIfTargetIsGivenTypeAbility
+	ret z
+	call GetUserAbility
+	cp LIMBER
 	ret z
 	ld hl, SynchronizeText
 	call StdBattleTextbox
 	call BattleCommand_SwitchTurnAbilities
-	farcall BattleCommand_PoisonTarget
+	farcall BattleCommand_ParalyzeTarget
 	jp BattleCommand_SwitchTurnAbilities
 
 TransformCopyAbility::
@@ -2579,6 +2596,17 @@ EnemyFaintAbilities:
 ;	farcall HandleEnemyMonFaint
 	scf
 	ret
+
+CheckIfHPIsZeroAbilitiesFoe:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .EnemyFaintAbilities
+	ld hl, wBattleMonHP
+	jp CheckIfHPIsZeroAbilities
+
+.EnemyFaintAbilities
+	ld hl, wEnemyMonHP
+	jp CheckIfHPIsZeroAbilities
 
 PlayerFaintAbilities:
 	ld hl, wBattleMonHP

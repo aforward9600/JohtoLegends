@@ -812,6 +812,7 @@ endr
 	ret
 
 StealthRocksCheck:
+	call ToxicSpikesCheck
 	call GetUserAbility
 	cp MAGIC_GUARD
 	ret z

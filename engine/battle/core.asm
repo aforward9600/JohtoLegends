@@ -4154,7 +4154,6 @@ SendOutPlayerMon:
 	ret
 
 SpikesDamage:
-	farcall ToxicSpikesCheck
 	farcall StealthRocksCheck
 	ld hl, wPlayerSpikes
 	ld de, wBattleMonType
