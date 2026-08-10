@@ -778,7 +778,6 @@ DratiniEvosAttacks:
 	dbw 9, WRAP
 	dbw 11, TWISTER
 	dbw 15, DRACO_FANG
-	dbw 16, SUPERPOWER
 	dbw 21, SLAM
 	dbw 25, AGILITY
 	dbw 31, DRAGON_TAIL

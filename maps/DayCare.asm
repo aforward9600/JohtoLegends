@@ -353,7 +353,7 @@ MrPokemonLegendaryText:
 
 DayCareDahliaFarewellText:
 	text_ntag "<RIVAL>"
-	text "So, Bell Tower huh?"
+	text "Bell Tower huh?"
 
 	para "I'm off then!"
 
