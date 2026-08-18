@@ -71,7 +71,7 @@ StringOptions:
 	db "        :<LF>"
 	db "Abilities<LF>"
 	db "        :<LF>"
-	db "Menu Account<LF>"
+	db "Physical/Special<LF>"
 	db "        :<LF>"
 	db "Frame<LF>"
 	db "        :Type<LF>"
@@ -95,7 +95,7 @@ GetOptionPointer:
 	dw Options_BattleStyle
 	dw Options_Sound
 	dw Options_Print
-	dw Options_MenuAccount
+	dw Options_Phys_Spec
 	dw Options_Frame
 	dw Options_Cancel
 
@@ -424,43 +424,43 @@ GetPrinterSetting:
 	lb de, GBPRINTER_DARKER, GBPRINTER_LIGHTEST
 	ret
 
-Options_MenuAccount:
+Options_Phys_Spec:
 	ld hl, wOptions2
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
-	bit MENU_ACCOUNT, [hl]
-	jr nz, .ToggleOff
-	jr .ToggleOn
+	bit PHYS_SPEC_SPLIT, [hl]
+	jr nz, .ToggleSplit
+	jr .ToggleClassic
 
 .LeftPressed:
-	bit MENU_ACCOUNT, [hl]
-	jr z, .ToggleOn
-	jr .ToggleOff
+	bit PHYS_SPEC_SPLIT, [hl]
+	jr z, .ToggleClassic
+	jr .ToggleSplit
 
 .NonePressed:
-	bit MENU_ACCOUNT, [hl]
-	jr nz, .ToggleOn
+	bit PHYS_SPEC_SPLIT, [hl]
+	jr nz, .ToggleClassic
 
-.ToggleOff:
-	res MENU_ACCOUNT, [hl]
-	ld de, .Off
+.ToggleSplit:
+	res PHYS_SPEC_SPLIT, [hl]
+	ld de, .Split
 	jr .Display
 
-.ToggleOn:
-	set MENU_ACCOUNT, [hl]
-	ld de, .On
+.ToggleClassic:
+	set PHYS_SPEC_SPLIT, [hl]
+	ld de, .Classic
 
 .Display:
-	hlcoord 11, 13
+	hlcoord 11, 13 ;7
 	call PlaceString
 	and a
 	ret
 
-.Off: db "Off@"
-.On:  db "On @"
+.Split:   db "Split  @"
+.Classic: db "Classic@"
 
 Options_Frame:
 	ld hl, wTextboxFrame

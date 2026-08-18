@@ -378,7 +378,7 @@ endr
 
 .IsMenuAccountOn:
 	ld a, [wOptions2]
-	and 1 << MENU_ACCOUNT
+	and 1 << PHYS_SPEC_SPLIT
 	ret
 
 .DrawBugContestStatusBox:

@@ -400,8 +400,19 @@ _UnawareBothPlayer::
 	ld d, a
 	ret z
 
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classicattacker
+
 	ld a, [hl]
 	cp SPECIAL
+	jr nc, .specialattacker
+	jr .physicalattacker
+
+.classicattacker
+	ld a, [hl]
+	and TYPE_MASK
+	cp SPECIAL_C
 	jr nc, .specialattacker
 
 .physicalattacker
@@ -466,8 +477,19 @@ _UnawareBothEnemy::
 	ld d, a
 	ret z
 
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classicattacker
+
 	ld a, [hl]
 	cp SPECIAL
+	jr nc, .specialattacker
+	jr .physicalattacker
+
+.classicattacker
+	ld a, [hl]
+	and TYPE_MASK
+	cp SPECIAL_C
 	jr nc, .specialattacker
 
 .physicalattacker
@@ -579,13 +601,29 @@ CheckDamageStatsCritical2:
 	ldh a, [hBattleTurn]
 	and a
 	jr nz, .enemy
+
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classic_p
+
 	ld a, [wPlayerMoveStructType]
 	cp SPECIAL
+	jr nc, .special_p
+	jr .physical_p
+
+.classic_p
+	ld a, [wPlayerMoveStructType]
+	and TYPE_MASK
+	cp SPECIAL_C
+	jr c, .physical_p
+
+.special_p
 ; special
 	ld a, [wPlayerSAtkLevel]
 	ld b, a
 	ld a, [wEnemySDefLevel]
-	jr nc, .end
+	jr .end
+.physical_p
 ; physical
 	ld a, [wPlayerAtkLevel]
 	ld b, a
@@ -593,13 +631,27 @@ CheckDamageStatsCritical2:
 	jr .end
 
 .enemy
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classic_e
 	ld a, [wEnemyMoveStructType]
 	cp SPECIAL
+	jr nc, .special_e
+	jr .physical_e
+
+.classic_e
+	ld a, [wEnemyMoveStructType]
+	and TYPE_MASK
+	cp SPECIAL_C
+	jr c, .physical_e
+
+.special_e
 ; special
 	ld a, [wEnemySAtkLevel]
 	ld b, a
 	ld a, [wPlayerSDefLevel]
-	jr nc, .end
+	jr .end
+.physical_e
 ; physical
 	ld a, [wEnemyAtkLevel]
 	ld b, a

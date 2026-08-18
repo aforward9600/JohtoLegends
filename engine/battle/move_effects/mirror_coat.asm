@@ -32,10 +32,22 @@ BattleCommand_MirrorCoat:
 	and a
 	ret z
 
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classic
+
 	ld a, [wStringBuffer1 + MOVE_TYPE]
 	cp SPECIAL
 	ret c
+	jr .proceed
 
+.classic
+	ld a, [wStringBuffer1 + MOVE_TYPE]
+	and TYPE_MASK
+	cp SPECIAL_C
+	ret c
+
+.proceed
 	; BUG: Move should fail with all non-damaging battle actions
 	ld hl, wCurDamage
 	ld a, [hli]

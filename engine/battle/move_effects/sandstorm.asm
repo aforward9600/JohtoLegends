@@ -7,7 +7,7 @@ BattleCommand_StartSandstorm:
 
 	ld a, WEATHER_SANDSTORM
 	ld [wBattleWeather], a
-	call GetUserItem
+	farcall GetUserItem
 	ld a, b
 	cp HELD_WEATHER_ROCK
 	jr z, .WeatherRock
@@ -18,12 +18,13 @@ BattleCommand_StartSandstorm:
 	ld a, 8
 .AfterWeatherRock
 	ld [wWeatherCount], a
-	call AnimateCurrentMove
-	call CalcPlayerStats
-	call CalcEnemyStats
+	farcall AnimateCurrentMove
+	farcall CalcPlayerStats
+	farcall CalcEnemyStats
 	ld hl, SandstormBrewedText
 	jp StdBattleTextbox
 
 .failed
-	call AnimateFailedMove
-	jp PrintButItFailed
+	farcall AnimateFailedMove
+	farcall PrintButItFailed
+	ret

@@ -179,6 +179,7 @@ CianwoodGymStatue:
 	iftrue .RivalBeaten
 	checkflag ENGINE_STORMBADGE
 	iftrue .Beaten
+	gettrainername STRING_BUFFER_4, CHIGUSA, CHIGUSA1
 	jumpstd gymstatue4
 .Beaten:
 	gettrainername STRING_BUFFER_4, CHIGUSA, CHIGUSA1

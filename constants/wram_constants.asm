@@ -64,7 +64,7 @@ GBPRINTER_DARKEST  EQU $7f
 
 ; wOptions2:: ; cfd1
 	const_def
-	const MENU_ACCOUNT ; 0
+	const PHYS_SPEC_SPLIT ; 0
 
 ; wWalkingDirection:: ; d043
 	const_def -1

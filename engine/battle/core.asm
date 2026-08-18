@@ -1,17 +1,8 @@
 ; Core components of the battle engine.
 
 DoBattle:
+	farcall ResetBattleParameters
 	xor a
-	ld [wBattleParticipantsNotFainted], a
-	ld [wBattleParticipantsIncludingFainted], a
-	ld [wBattlePlayerAction], a
-	ld [wBattleEnded], a
-	ld [wPlayerKnockOff], a
-	ld [wEnemyKnockOff], a
-	ld [wPlayerFlashFire], a
-	ld [wEnemyFlashFire], a
-	ld [wPlayerSpikes], a
-	ld [wEnemySpikes], a
 	inc a
 	ld [wBattleHasJustStarted], a
 	ld hl, wOTPartyMon1HP
@@ -5762,13 +5753,27 @@ MoveInfoBox:
 	ld b, a
 	farcall GetMoveCategoryName
 	hlcoord 1, 9
+
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classic
+
 	ld de, wStringBuffer1
 	call PlaceString
 
 	ld h, b
 	ld l, c
 	ld [hl], "/"
+	jr .print_it
 
+.classic
+	ld de, .Type
+	call PlaceString
+	hlcoord 7, 11
+	ld [hl], "/"
+	callfar UpdateMoveData
+
+.print_it
 	ld a, [wPlayerMoveStruct + MOVE_ANIM]
 	ld b, a
 	hlcoord 2, 10
@@ -6278,8 +6283,14 @@ LoadEnemyMon:
 
 .SkipShine
 	farcall SetPokemonForm
+	ld a, [wBattleType]
+	cp BATTLETYPE_SUICUNE
+	jr z, .NotUnown
+	ld a, [wMapTileset]
+	cp TILESET_RUINS_OF_ALPH
+	jr z, .SkipUnown
 ;	ld a, [wTempEnemyMonSpecies]
-;	call GetPokemonIndexFromID ; will be preserved for the Magikarp check
+;	call GetPokemonIndexFromID
 ;	ld a, l
 ;	sub LOW(UNOWN)
 ;	if HIGH(UNOWN) == 0
@@ -6294,14 +6305,14 @@ LoadEnemyMon:
 ;		endc
 ;	endc
 ;	jr z, .SkipUnown
-;	ld b,b
+.NotUnown
 	ld de, ENGINE_ACTIVATED_MAX_DVS
 	ld b, CHECK_FLAG
 	farcall EngineFlagAction
 	ld a, c
 	and a
 	jr nz, .MaxDVs
-;.SkipUnown
+.SkipUnown
 	call BattleRandom
 	ld b, a
 	call BattleRandom

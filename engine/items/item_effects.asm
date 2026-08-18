@@ -1568,6 +1568,8 @@ ChangePokemonAbility:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
 
+	jp c, RareCandy_StatBooster_ExitMenu
+
 ;	farcall SelectMonFromParty
 ;	jp c, .cancel
 ;

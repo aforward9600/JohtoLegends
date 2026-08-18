@@ -230,6 +230,10 @@ DoEntranceAbilities:
 	ret z
 	cp NEUTRAL_GAS
 	ret z
+	cp IMPOSTER
+	ret z
+	cp ALCHEMY_POWER
+	ret z
 	call AnimateUserAbility
 	ldh a, [hBattleTurn]
 	and a
@@ -965,6 +969,7 @@ CheckBoostingAbilities:
 	dbw BERSERK,         .Berserk
 	dbw PURE_POWER,      .HugePower
 	dbw FLASH_FIRE,      .FlashFire
+	dbw SHEER_FORCE,     .SheerForce
 	db -1
 
 .Guts:
@@ -1082,6 +1087,11 @@ CheckBoostingAbilities:
 	cp STEEL
 	ret nz
 .SandForceBoost:
+	jp ThirtyPercentBoost
+
+.SheerForce:
+	farcall SheerForceEffectCheck
+	ret nc
 	jp ThirtyPercentBoost
 
 .Hustle:

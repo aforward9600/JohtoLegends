@@ -1647,8 +1647,20 @@ AI_Smart_Counter:
 	and a
 	jr z, .asm_38c0e
 
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classic1
+
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
 	cp SPECIAL
+	jr nc, .asm_38c0e
+	inc b
+	jr .asm_38c0e
+
+.classic1
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
+	cp SPECIAL_C
 	jr nc, .asm_38c0e
 
 	inc b
@@ -1675,8 +1687,19 @@ AI_Smart_Counter:
 	and a
 	jr z, .asm_38c38
 
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classic2
+
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
 	cp SPECIAL
+	jr nc, .asm_38c38
+	jr .asm_38c30
+
+.classic2
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
+	cp SPECIAL_C
 	jr nc, .asm_38c38
 
 .asm_38c30
@@ -2861,8 +2884,20 @@ AI_Smart_MirrorCoat:
 	and a
 	jr z, .asm_391a8
 
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classic1
+
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
 	cp SPECIAL
+	jr c, .asm_391a8
+	inc b
+	jr .asm_391a8
+
+.classic1
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
+	cp SPECIAL_C
 	jr c, .asm_391a8
 
 	inc b
@@ -2889,8 +2924,19 @@ AI_Smart_MirrorCoat:
 	and a
 	jr z, .asm_391d2
 
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classic2
+
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
 	cp SPECIAL
+	jr c, .asm_391d2
+	jr .asm_391ca
+
+.classic2
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
+	cp SPECIAL_C
 	jr c, .asm_391d2
 
 .asm_391ca

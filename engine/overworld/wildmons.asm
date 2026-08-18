@@ -465,18 +465,8 @@ _ChooseWildEncounter:
 	call ValidateTempWildMonSpecies
 	jr c, .nowildbattle
 
-	ld a, l
-	sub LOW(UNOWN)
-	jr nz, .done
-	if HIGH(UNOWN) > 1
-		ld a, h
-		cp HIGH(UNOWN)
-	elif HIGH(UNOWN) == 1
-		ld a, h
-		dec a
-	else
-		or h
-	endc
+	ld a, [wMapTileset]
+	cp TILESET_RUINS_OF_ALPH
 	jr nz, .done
 
 	ld a, [wUnlockedUnowns]

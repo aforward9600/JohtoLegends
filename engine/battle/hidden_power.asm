@@ -44,9 +44,9 @@ GetHiddenPowerType::
 	inc a
 
 ; Skip unused types
-	cp UNUSED_TYPES
-	jr c, .done
-	add UNUSED_TYPES_END - UNUSED_TYPES
+;	cp UNUSED_TYPES
+;	jr c, .done
+;	add UNUSED_TYPES_END - UNUSED_TYPES
 .done
 ; Skip Dragon
 	cp DRAGON

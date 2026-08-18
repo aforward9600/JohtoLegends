@@ -161,6 +161,7 @@ AzaleaGymStatue:
 	iftrue .RivalBeatGym
 	checkflag ENGINE_HIVEBADGE
 	iftrue .Beaten
+	gettrainername STRING_BUFFER_4, KURT, KURT1
 	jumpstd gymstatue4
 .Beaten:
 	gettrainername STRING_BUFFER_4, KURT, KURT1

@@ -197,6 +197,7 @@ GoldenrodGymStatue:
 	iftrue .RivalBeatGym
 	checkflag ENGINE_PLAINBADGE
 	iftrue .Beaten
+	gettrainername STRING_BUFFER_4, MILTON, MILTON1
 	jumpstd gymstatue4
 .Beaten:
 	gettrainername STRING_BUFFER_4, MILTON, MILTON1

@@ -10,16 +10,6 @@ TypeNames:
 	dw Bug
 	dw Ghost
 	dw Steel
-	dw Normal
-	dw Normal
-	dw Normal
-	dw Normal
-	dw Normal
-	dw Normal
-	dw Normal
-	dw Normal
-	dw Normal
-	dw CurseType
 	dw Fire
 	dw Water
 	dw Grass
@@ -29,6 +19,7 @@ TypeNames:
 	dw Dragon
 	dw Dark
 	dw Fairy
+	dw CurseType
 
 Normal:    db "Normal@"
 Fighting:  db "Fighting@"

@@ -3028,8 +3028,19 @@ PlayerAttackDamage:
 	ld d, a
 	ret z
 
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classic
+
 	ld a, [hl]
 	cp SPECIAL
+	jr nc, .special
+	jr .physical
+
+.classic
+	ld a, [hl]
+	and TYPE_MASK
+	cp SPECIAL_C
 	jr nc, .special
 
 .physical
@@ -3173,13 +3184,30 @@ CheckDamageStatsCritical:
 	ldh a, [hBattleTurn]
 	and a
 	jr nz, .enemy
+
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classic_p
+
 	ld a, [wPlayerMoveStructType]
 	cp SPECIAL
+	jr nc, .special_p
+	jr .physical_p
+
+.classic_p
+	ld a, [wPlayerMoveStruct]
+	and TYPE_MASK
+	cp SPECIAL_C
+	jr c, .physical_p
+
+.special_p
 ; special
 	ld a, [wPlayerSAtkLevel]
 	ld b, a
 	ld a, [wEnemySDefLevel]
-	jr nc, .end
+	jr .end
+
+.physical_p
 ; physical
 	ld a, [wPlayerAtkLevel]
 	ld b, a
@@ -3187,13 +3215,29 @@ CheckDamageStatsCritical:
 	jr .end
 
 .enemy
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classic_e
+
 	ld a, [wEnemyMoveStructType]
 	cp SPECIAL
+	jr nc, .special_e
+	jr .physical_e
+
+.classic_e
+	ld a, [wEnemyMoveStruct]
+	and TYPE_MASK
+	cp SPECIAL_C
+	jr c, .physical_e
+
+.special_e
 ; special
 	ld a, [wEnemySAtkLevel]
 	ld b, a
 	ld a, [wPlayerSDefLevel]
-	jr nc, .end
+	jr .end
+
+.physical_e
 ; physical
 	ld a, [wEnemyAtkLevel]
 	ld b, a
@@ -3315,8 +3359,19 @@ EnemyAttackDamage:
 	and a
 	ret z
 
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classic
+
 	ld a, [hl]
 	cp SPECIAL
+	jr nc, .Special
+	jr .physical
+
+.classic
+	ld a, [hl]
+	and TYPE_MASK
+	cp SPECIAL_C
 	jr nc, .Special
 
 .physical
@@ -7522,10 +7577,6 @@ INCLUDE "engine/battle/move_effects/curse.asm"
 
 INCLUDE "engine/battle/move_effects/perish_song.asm"
 
-INCLUDE "engine/battle/move_effects/sandstorm.asm"
-
-INCLUDE "engine/battle/move_effects/hail.asm"
-
 INCLUDE "engine/battle/move_effects/rollout.asm"
 
 INCLUDE "engine/battle/move_effects/safeguard.asm"
@@ -7656,10 +7707,6 @@ BattleCommand_TimeBasedHealContinue:
 	dw GetTwoThirdsMaxHP
 
 INCLUDE "engine/battle/move_effects/hidden_power.asm"
-
-INCLUDE "engine/battle/move_effects/rain_dance.asm"
-
-INCLUDE "engine/battle/move_effects/sunny_day.asm"
 
 INCLUDE "engine/battle/move_effects/belly_drum.asm"
 

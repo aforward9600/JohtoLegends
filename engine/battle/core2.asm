@@ -1,3 +1,23 @@
+ResetBattleParameters::
+	xor a
+	ld [wBattleParticipantsNotFainted], a
+	ld [wBattleParticipantsIncludingFainted], a
+	ld [wBattlePlayerAction], a
+	ld [wBattleEnded], a
+	ld [wPlayerKnockOff], a
+	ld [wEnemyKnockOff], a
+	ld [wPlayerFlashFire], a
+	ld [wEnemyFlashFire], a
+	ld [wPlayerSpikes], a
+	ld [wEnemySpikes], a
+	ld [wPlayerStealthRocks], a
+	ld [wEnemyStealthRocks], a
+	ld [wPlayerToxicSpikes], a
+	ld [wEnemyToxicSpikes], a
+	ld [wPlayerSwitched], a
+	ld [wEnemySwitched], a
+	ret
+
 Core2_NewTurnEndEffects:
 	call HandleLeftovers
 	call HandleMysteryberry

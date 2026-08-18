@@ -3,7 +3,7 @@ BattleCommand_StartRain:
 	ld a, WEATHER_RAIN
 	ld [wBattleWeather], a
 	farcall SpeedAbilitiesBoth
-	call GetUserItem
+	farcall GetUserItem
 	ld a, b
 	cp HELD_WEATHER_ROCK
 	jr z, .WeatherRock
@@ -14,6 +14,6 @@ BattleCommand_StartRain:
 	ld a, 8
 .AfterWeatherRock
 	ld [wWeatherCount], a
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 	ld hl, DownpourText
 	jp StdBattleTextbox
