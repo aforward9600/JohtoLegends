@@ -251,6 +251,17 @@ endc
 ;	ld [wLevelCap], a
 ;endc
 
+	ld hl, wOptions2
+	bit LEVEL_CAPS, [hl]
+	jr z, .SkipCap
+	ld a, 15
+	ld [wLevelCap], a
+	jr .FinishCap
+
+.SkipCap
+	ld a, 100
+	ld [wLevelCap], a
+.FinishCap
 	call InitializeNPCNames
 
 	farcall InitDecorations

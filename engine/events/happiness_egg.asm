@@ -190,17 +190,10 @@ DayCareStep::
 	bit DAYCAREMAN_HAS_MON_F, a
 	jr z, .day_care_lady
 
-if DEF(_CHALLENGE)
 	ld a, [wLevelCap]
 	ld b, a
-endc
 	ld a, [wBreedMon1Level] ; level
-if !DEF(_CHALLENGE)
-	cp MAX_LEVEL
-endc
-if DEF(_CHALLENGE)
 	cp b
-endc
 	jr nc, .day_care_lady
 	ld hl, wBreedMon1Exp + 2 ; exp
 	inc [hl]

@@ -747,6 +747,10 @@ BattleCommand_CheckObedience:
 	and a
 	ret nz
 
+	ld a, [wOptions2]
+	bit LEVEL_CAPS, a
+	jp nz, .levelcap
+
 	; If the monster's id doesn't match the player's,
 	; some conditions need to be met.
 	ld a, MON_ID
@@ -914,6 +918,31 @@ BattleCommand_CheckObedience:
 .Print:
 	call StdBattleTextbox
 	jp .EndDisobedience
+
+.levelcap
+	ld a, [wLevelCap]
+	inc a
+	ld b, a
+	ld c, a
+
+	ld a, [wBattleMonLevel]
+	ld d, a
+
+	add b
+	ld b, a
+
+; No overflow (this should never happen)
+	jr nc, .checklevel2
+	ld b, $ff
+
+.checklevel2
+; If the monster's level is lower than the obedience level, it will obey.
+	ld a, c
+	cp d
+	ret nc
+
+; Random number from 0 to obedience level + monster level
+	jp .rand1
 
 .UseInstead:
 ; Can't use another move if the monster only has one!

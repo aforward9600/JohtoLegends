@@ -138,7 +138,7 @@ GetOptionPointer:
 	dw Options_Cancel
 
 	dw Options_Phys_Spec
-	dw Options_Cancel ; Level Caps
+	dw Options_LevelCaps
 	dw Options_RunningShoes
 	dw Options_Cancel
 	dw Options_Cancel
@@ -544,6 +544,46 @@ Options_RunningShoes:
 
 .Off: db "Hold@"
 .On:  db "Auto@"
+
+Options_LevelCaps:
+	ld hl, wOptions2
+	ldh a, [hJoyPressed]
+	bit D_LEFT_F, a
+	jr nz, .LeftPressed
+	bit D_RIGHT_F, a
+	jr z, .NonePressed
+	bit LEVEL_CAPS, [hl]
+	jr nz, .ToggleOff
+	jr .ToggleOn
+
+.LeftPressed:
+	bit LEVEL_CAPS, [hl]
+	jr z, .ToggleOn
+	jr .ToggleOff
+
+.NonePressed:
+	bit LEVEL_CAPS, [hl]
+	jr nz, .ToggleOn
+
+.ToggleOff:
+	res LEVEL_CAPS, [hl]
+	call Set100
+	ld de, .No
+	jr .Display
+
+.ToggleOn:
+	set LEVEL_CAPS, [hl]
+	call SetLevelCap
+	ld de, .Yes
+
+.Display:
+	hlcoord 11, 5
+	call PlaceString
+	and a
+	ret
+
+.No:  db "No @"
+.Yes: db "Yes@"
 
 GetPrinterSetting:
 ; converts GBPRINTER_* value in a to OPT_PRINT_* value in c,

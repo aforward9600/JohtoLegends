@@ -52,7 +52,7 @@ AzaleaGymKurtScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_HIVEBADGE
-	loadmem wLevelCap, 51
+	callasm .SetAzaleaLevelCap
 	readvar VAR_BADGES
 	setmapscene AZALEA_TOWN, SCENE_AZALEATOWN_RIVAL_BATTLE
 	setflag ENGINE_BEAT_KURT
@@ -74,6 +74,14 @@ AzaleaGymKurtScript:
 
 .GotFuryCutter:
 	writetextend KurtText_Retirement
+
+.SetAzaleaLevelCap
+	ld hl, wOptions2
+	bit LEVEL_CAPS, [hl]
+	ret z
+	ld a, 51
+	ld [wLevelCap], a
+	ret
 
 .Rematch:
 	checkevent EVENT_BEAT_ELITE_FOUR

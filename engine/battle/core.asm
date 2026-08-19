@@ -2807,8 +2807,6 @@ ForcePickPartyMonInBattle:
 .pick
 	call PickPartyMonInBattle
 	ret nc
-	call CheckMobileBattleError
-	ret c
 
 	ld de, SFX_WRONG
 	call PlaySFX
@@ -2829,8 +2827,6 @@ ForcePickSwitchMonInBattle:
 
 .pick
 	call ForcePickPartyMonInBattle
-	call CheckMobileBattleError
-	ret c
 	call SwitchMonAlreadyOut
 	jr c, .pick
 
@@ -3861,8 +3857,6 @@ TryToRunAwayFromBattle:
 	xor a
 	ld [wCurPlayerMove], a
 	call Call_LoadTempTileMapToTileMap
-	call CheckMobileBattleError
-	jr c, .mobile
 
 	; Got away safely
 	ld a, [wBattleAction]
@@ -3924,14 +3918,6 @@ TryToRunAwayFromBattle:
 	and a
 	ld hl, ArenaTrapText
 	jp .print_inescapable_text
-
-.mobile
-	call StopDangerSound
-	ld hl, wcd2a
-	bit 4, [hl]
-	jr nz, .skip_link_error
-	ld hl, BattleText_LinkErrorBattleCanceled
-	call StdBattleTextbox
 
 .skip_link_error
 	call WaitSFX
@@ -7445,7 +7431,6 @@ GiveExperiencePoints:
 	ld b, a
 	jr .ev_loop
 .evs_done
-if DEF(_CHALLENGE)
 	pop bc
 	ld hl, MON_LEVEL
 	add hl, bc
@@ -7457,7 +7442,6 @@ if DEF(_CHALLENGE)
 	pop bc
 	jp nc, .next_mon
 	push bc
-endc
 	pop bc
 	ld hl, MON_LEVEL
 	add hl, bc
@@ -7572,13 +7556,8 @@ endc
 ;	call SetPlayerBufferForm
 	call GetBaseData
 	push bc
-if !DEF(_CHALLENGE)
-	ld d, MAX_LEVEL
-endc
-if DEF(_CHALLENGE)
 	ld a, [wLevelCap]
 	ld d, a
-endc
 	callfar CalcExpAtLevel
 	pop bc
 	ld hl, MON_EXP + 2
@@ -7613,19 +7592,12 @@ endc
 	pop bc
 	ld hl, MON_LEVEL
 	add hl, bc
-if DEF(_CHALLENGE)
 	ld a, [wLevelCap]
 	push bc
 	ld b, a
-endc
 	ld a, [hl]
-if !DEF(_CHALLENGE)
-	cp MAX_LEVEL
-endc
-if DEF(_CHALLENGE)
 	cp b
 	pop bc
-endc
 	jp nc, .next_mon
 	cp d
 	jp z, .next_mon
@@ -7909,19 +7881,12 @@ AnimateExpBar:
 	cp [hl]
 	jp nz, .finish
 
-if DEF(_CHALLENGE)
 	ld a, [wLevelCap]
 	push bc
 	ld b, a
-endc
 	ld a, [wBattleMonLevel]
-if !DEF(_CHALLENGE)
-	cp MAX_LEVEL
-endc
-if DEF(_CHALLENGE)
 	cp b
 	pop bc
-endc
 	jp nc, .finish
 
 	ldh a, [hProduct + 3]
@@ -7958,13 +7923,8 @@ endc
 	ld [hl], a
 
 .NoOverflow:
-if !DEF(_CHALLENGE)
-	ld d, MAX_LEVEL
-endc
-if DEF(_CHALLENGE)
 	ld a, [wLevelCap]
 	ld d, a
-endc
 	callfar CalcExpAtLevel
 	ldh a, [hProduct + 1]
 	ld b, a
@@ -7999,19 +7959,12 @@ endc
 	ld d, a
 
 .LoopLevels:
-if DEF(_CHALLENGE)
 	ld a, [wLevelCap]
 	push bc
 	ld b, a
-endc
 	ld a, e
-if !DEF(_CHALLENGE)
-	cp MAX_LEVEL
-endc
-if DEF(_CHALLENGE)
 	cp b
 	pop bc
-endc
 	jr nc, .FinishExpBar
 	cp d
 	jr z, .FinishExpBar
@@ -9474,9 +9427,6 @@ BattleStartMessage:
 	farcall BattleStart_TrainerHuds
 	pop hl
 	call StdBattleTextbox
-
-	call IsMobileBattle2
-	ret nz
 
 	ld c, $2 ; start
 
