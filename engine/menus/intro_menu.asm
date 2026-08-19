@@ -50,7 +50,7 @@ MysteryGift:
 	ret
 
 OptionsMenu:
-	farcall _OptionsMenu
+	farcall _Option
 	ret
 
 NewGame:
@@ -246,10 +246,10 @@ endc
 	inc hl
 	ld [hl], LOW(MOM_MONEY)
 
-if DEF(_CHALLENGE)
-	ld a, 15
-	ld [wLevelCap], a
-endc
+;if DEF(_CHALLENGE)
+;	ld a, 15
+;	ld [wLevelCap], a
+;endc
 
 	call InitializeNPCNames
 

@@ -307,7 +307,14 @@ DoPlayerMovement::
 	ld a, [wCurInput]
 	and B_BUTTON
 	jr nz, .run
+
+	call RunningShoesCheck
+	jr z, .runningshoesinactive
+	ld a, STEP_RUN
+	jr .runinstead
+.runningshoesinactive
 	ld a, STEP_WALK
+.walkinstead
 	call .DoStep
 	scf
 	ret
@@ -319,7 +326,14 @@ DoPlayerMovement::
 	ret
 
 .run
+	call RunningShoesCheck
+	jr z, .runningshoesactive
+	ld a, STEP_WALK
+	jr .walkinstead
+
+.runningshoesactive
 	ld a, STEP_RUN
+.runinstead
 	call .DoStep
 	scf
 	ret
@@ -344,11 +358,18 @@ DoPlayerMovement::
 	ldh a, [hJoyDown]
 	and B_BUTTON
 	cp B_BUTTON
+	jr nz, .checkwalk
+	call RunningShoesCheck
 	jr nz, .ensurewalk
+.continuerun
 	ld a, [wPlayerState]
 	cp PLAYER_RUN
 	call nz, .StartRunning
 	jr .walk
+
+.checkwalk
+	call RunningShoesCheck
+	jr nz, .continuerun
 
 .ensurewalk
 	ld a, [wPlayerState]
@@ -1087,4 +1108,9 @@ AnyFacingPlayerDistance_bc::
 	ret nc
 	ld e, a
 	ld d, l
+	ret
+
+RunningShoesCheck:
+	ld a, [wOptions2]
+	bit RUNNING_SHOES, a
 	ret

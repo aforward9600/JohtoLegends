@@ -65,6 +65,8 @@ GBPRINTER_DARKEST  EQU $7f
 ; wOptions2:: ; cfd1
 	const_def
 	const PHYS_SPEC_SPLIT ; 0
+	const LEVEL_CAPS      ; 1
+	const RUNNING_SHOES   ; 2
 
 ; wWalkingDirection:: ; d043
 	const_def -1

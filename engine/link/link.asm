@@ -435,7 +435,7 @@ Gen2ToGen2LinkComms:
 	ld hl, wOptions
 	ld a, [hl]
 	push af
-	and 1 << STEREO
+;	and 1 << STEREO
 	or TEXT_DELAY_MED
 	ld [hl], a
 	ld hl, wOTPlayerName

@@ -1800,6 +1800,7 @@ BattleCommand_CheckHit:
 	ldh [hMultiplicand + 2], a
 	call GetUserItem
 	ld a, b
+	ld b,b
 	cp HELD_ACCURACY_BOOST
 	jr nz, .check_brightpowder
 	ld a, c ; % miss
@@ -4983,7 +4984,6 @@ RaiseStat::
 	jr z, .got_stat_levels
 	ld hl, wEnemyStatLevels
 .got_stat_levels
-	ld b,b
 	ld a, [wAttackMissed]
 	and a
 	jp nz, .stat_raise_failed
@@ -5282,8 +5282,6 @@ StatDownSkipContrary:
 	call CheckMist
 	jp nz, .Mist
 
-	ld b,b
-
 	ld hl, wEnemyStatLevels
 	ldh a, [hBattleTurn]
 	and a
@@ -5517,8 +5515,6 @@ StatUpMessageSkipContrary2:
 
 TryLowerStat:
 ; Lower stat c from stat struct hl (buffer de).
-
-	ld b,b
 
 	push bc
 	sla c
@@ -5781,7 +5777,6 @@ LowerStat:
 	ret
 
 .failed
-;	ld b,b
 	inc [hl]
 
 .cant_lower_anymore

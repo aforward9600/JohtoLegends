@@ -1,36 +1,25 @@
-_OptionsMenu:
+NUM_OPTIONS EQU 7
+
+_Option::
+	call ClearJoypad
 	ld hl, hInMenu
 	ld a, [hl]
 	push af
 	ld [hl], $1
 	call ClearBGPalettes
 	hlcoord 0, 0
-	ld b, 16
-	ld c, 18
+	lb bc, SCREEN_HEIGHT - 2, SCREEN_WIDTH - 2
 	call Textbox
 	hlcoord 2, 2
-	ld de, StringOptions
+	ld de, StringOptions1
 	call PlaceString
 	xor a
-	ld [wJumptableIndex], a
-	ld c, $6 ; number of items on the menu minus 1 (for cancel)
+	ld [wCurOptionsPage], a
 
-.print_text_loop ; this next will display the settings of each option when the menu is opened
-	push bc
-	xor a
-	ldh [hJoyLast], a
-	call GetOptionPointer
-	pop bc
-	ld hl, wJumptableIndex
-	inc [hl]
-	dec c
-	jr nz, .print_text_loop
+	call OptionsMenu_LoadOptions
 
-	call UpdateFrame
 	xor a
 	ld [wJumptableIndex], a
-	inc a
-	ldh [hBGMapMode], a
 	call WaitBGMap
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
@@ -60,7 +49,29 @@ _OptionsMenu:
 	ldh [hInMenu], a
 	ret
 
-StringOptions:
+OptionsMenu_LoadOptions:
+	xor a
+	ld [wJumptableIndex], a
+	ldh [hJoyPressed], a
+	ld c, $7
+.print_text_loop
+	push bc
+	xor a
+	ldh [hJoyLast], a
+	call GetOptionPointer
+	pop bc
+	ld hl, wJumptableIndex
+	inc [hl]
+	dec c
+	jr nz, .print_text_loop
+	ld a, [wCurOptionsPage]
+	and a
+	call z, UpdateFrame
+	ld a, 1
+	ldh [hBGMapMode], a
+	ret
+
+StringOptions1:
 	db "Text Speed<LF>"
 	db "        :<LF>"
 	db "Battle Scene<LF>"
@@ -71,23 +82,50 @@ StringOptions:
 	db "        :<LF>"
 	db "Abilities<LF>"
 	db "        :<LF>"
-	db "Physical/Special<LF>"
-	db "        :<LF>"
 	db "Frame<LF>"
 	db "        :Type<LF>"
+	db "Next<LF>"
+	db "         <LF>"
 	db "Cancel@"
 
-GetOptionPointer:
-	ld a, [wJumptableIndex] ; load the cursor position to a
-	ld e, a ; copy it to de
+StringOptions2:
+	db "Physical/Special<LF>"
+	db "        :<LF>"
+	db "Level Caps<LF>"
+	db "        :<LF>"
+	db "Running Shoes<LF>"
+	db "        :<LF>"
+	db "<LF>"
+	db "<LF>"
+	db "<LF>"
+	db "<LF>"
+	db "<LF>"
+	db "<LF>"
+	db "Back<LF>"
+	db "         <LF>"
+	db "Cancel@"
+
+StackJumpTable::
+	pop hl
+	push de
+	ld e, a
 	ld d, 0
-	ld hl, .Pointers
 	add hl, de
 	add hl, de
+	pop de
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	jp hl ; jump to the code of the current highlighted item
+	jp hl
+
+GetOptionPointer:
+	ld a, [wCurOptionsPage] ; load the cursor position to a
+	and a
+	ld a, [wJumptableIndex]
+	jr z, .page1
+	add NUM_OPTIONS + 1
+.page1
+	call StackJumpTable
 
 .Pointers:
 	dw Options_TextSpeed
@@ -95,8 +133,17 @@ GetOptionPointer:
 	dw Options_BattleStyle
 	dw Options_Sound
 	dw Options_Print
-	dw Options_Phys_Spec
 	dw Options_Frame
+	dw Options_NextPrevious
+	dw Options_Cancel
+
+	dw Options_Phys_Spec
+	dw Options_Cancel ; Level Caps
+	dw Options_RunningShoes
+	dw Options_Cancel
+	dw Options_Cancel
+	dw Options_Cancel
+	dw Options_NextPrevious
 	dw Options_Cancel
 
 	const_def
@@ -332,6 +379,79 @@ Options_Sound:
 	const OPT_PRINT_DARKER   ; 3
 	const OPT_PRINT_DARKEST  ; 4
 
+Set100:
+	ld a, 100
+	ld [wLevelCap], a
+	ret
+
+SetLevelCap:
+	ld de, EVENT_BEAT_BIKER_BOSS
+	call Options_CheckEvent
+	jr z, Set100
+
+	ld de, EVENT_GOT_RIVALS_MESSAGE
+	call Options_CheckEvent
+	jr z, .Set80
+
+	ld de, EVENT_BEAT_MADAME_BOSS
+	call Options_CheckEvent
+	jr z, .Set68
+
+	ld hl, wJohtoBadges
+
+	bit RISINGBADGE, [hl]
+	ld a, 60
+	jr nz, .getlevel
+
+	bit ZEPHYRBADGE, [hl]
+	ld a, 55
+	jr nz, .getlevel
+
+	bit HIVEBADGE, [hl]
+	ld a, 51
+	jr nz, .getlevel
+
+	bit PLAINBADGE, [hl]
+	ld a, 44
+	jr nz, .getlevel
+
+	bit MINERALBADGE, [hl]
+	ld a, 34
+	jr nz, .getlevel
+
+	bit STORMBADGE, [hl]
+	ld a, 31
+	jr nz, .getlevel
+
+	bit FOGBADGE, [hl]
+	ld a, 28
+	jr nz, .getlevel
+
+	bit GLACIERBADGE, [hl]
+	ld a, 22
+	jr nz, .getlevel
+
+	ld a, 15
+
+.getlevel
+	ld [wLevelCap], a
+	ret
+
+.Set80
+	ld a, 80
+	jr .getlevel
+
+.Set68
+	ld a, 68
+	jr .getlevel
+
+Options_CheckEvent:
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	ret
+
 Options_Print:
 	ld a, [wGBPrinterBrightness]
 	ld c, a
@@ -386,6 +506,44 @@ Options_Print:
 .Normal:   db "Normal  @"
 .Darker:   db "Darker  @"
 .Darkest:  db "Darkest @"
+
+Options_RunningShoes:
+	ld hl, wOptions2
+	ldh a, [hJoyPressed]
+	bit D_LEFT_F, a
+	jr nz, .LeftPressed
+	bit D_RIGHT_F, a
+	jr z, .NonePressed
+	bit RUNNING_SHOES, [hl]
+	jr nz, .ToggleOff
+	jr .ToggleOn
+
+.LeftPressed:
+	bit RUNNING_SHOES, [hl]
+	jr z, .ToggleOn
+	jr .ToggleOff
+
+.NonePressed:
+	bit RUNNING_SHOES, [hl]
+	jr nz, .ToggleOn
+
+.ToggleOff:
+	res RUNNING_SHOES, [hl]
+	ld de, .Off
+	jr .Display
+
+.ToggleOn:
+	set RUNNING_SHOES, [hl]
+	ld de, .On
+
+.Display:
+	hlcoord 11, 7
+	call PlaceString
+	and a
+	ret
+
+.Off: db "Hold@"
+.On:  db "Auto@"
 
 GetPrinterSetting:
 ; converts GBPRINTER_* value in a to OPT_PRINT_* value in c,
@@ -454,7 +612,7 @@ Options_Phys_Spec:
 	ld de, .Classic
 
 .Display:
-	hlcoord 11, 13 ;7
+	hlcoord 11, 3 ;7
 	call PlaceString
 	and a
 	ret
@@ -486,7 +644,7 @@ Options_Frame:
 	ld [hl], a
 UpdateFrame:
 	ld a, [wTextboxFrame]
-	hlcoord 16, 15 ; where on the screen the number is drawn
+	hlcoord 16, 13 ; where on the screen the number is drawn
 	add "1"
 	ld [hl], a
 	call LoadFontsExtra
@@ -516,17 +674,9 @@ OptionsControl:
 
 .DownPressed:
 	ld a, [hl] ; load the cursor position to a
-	cp $7 ; maximum number of items in option menu
-	jr nz, .CheckFive
-	ld [hl], $0
-	scf
-	ret
-
-.CheckFive: ; I have no idea why this exists...
-	cp $5
+	cp NUM_OPTIONS ; maximum number of items in option menu
 	jr nz, .Increase
-	ld [hl], $5
-
+	ld [hl], -1
 .Increase:
 	inc [hl]
 	scf
@@ -534,17 +684,9 @@ OptionsControl:
 
 .UpPressed:
 	ld a, [hl]
-	cp $6
-	jr nz, .NotSix
-	ld [hl], $5 ; Another thing where I'm not sure why it exists
-	scf
-	ret
-
-.NotSix:
 	and a
 	jr nz, .Decrease
-	ld [hl], $8 ; number of option items +1
-
+	ld [hl], NUM_OPTIONS + 1
 .Decrease:
 	dec [hl]
 	scf
@@ -564,4 +706,33 @@ Options_UpdateCursorPosition:
 	ld a, [wJumptableIndex]
 	call AddNTimes
 	ld [hl], "▶"
+	ret
+
+Options_NextPrevious:
+	ld hl, wCurOptionsPage
+	ldh a, [hJoyPressed]
+	and A_BUTTON | D_LEFT | D_RIGHT
+	jr z, .NonePressed
+	bit 0, [hl]
+	jr z, .Page2
+;.Page1:
+	res 0, [hl]
+	ld de, StringOptions1
+	jr .Display
+.Page2:
+	set 0, [hl]
+	ld de, StringOptions2
+.Display:
+	push de
+	hlcoord 0, 0
+	lb bc, 16, 18
+	call Textbox
+	pop de
+	hlcoord 2, 2
+	call PlaceString
+	call OptionsMenu_LoadOptions
+	ld a, $6
+	ld [wJumptableIndex], a
+.NonePressed:
+	and a
 	ret
