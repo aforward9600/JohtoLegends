@@ -68,6 +68,8 @@ PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
 
 	opentext
+	checkevent EVENT_FAST_NURSE
+	iftrue .ok
 	checktime MORN
 	iftrue .morn
 	checktime DAY
@@ -117,13 +119,14 @@ PokecenterNurseScript:
 	turnobject LAST_TALKED, DOWN
 	pause 10
 
-	checkphonecall ; elm already called about pokerus
-	iftrue .no
 	checkflag ENGINE_CAUGHT_POKERUS
 	iftrue .no
 	special CheckPokerus
 	iftrue .pokerus
 .no
+
+	checkevent EVENT_FAST_NURSE
+	iftrue .done
 
 	farwritetext NurseReturnPokemonText
 	pause 20
@@ -138,6 +141,7 @@ PokecenterNurseScript:
 
 	waitbutton
 	closetext
+	turnobject PLAYER, DOWN
 	end
 
 .pokerus

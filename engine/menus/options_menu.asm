@@ -95,8 +95,8 @@ StringOptions2:
 	db "        :<LF>"
 	db "Running Shoes<LF>"
 	db "        :<LF>"
-	db "<LF>"
-	db "<LF>"
+	db "Quick Healing<LF>"
+	db "        :<LF>"
 	db "<LF>"
 	db "<LF>"
 	db "<LF>"
@@ -140,7 +140,7 @@ GetOptionPointer:
 	dw Options_Phys_Spec
 	dw Options_LevelCaps
 	dw Options_RunningShoes
-	dw Options_Cancel
+	dw Options_Fast_Nurse
 	dw Options_Cancel
 	dw Options_Cancel
 	dw Options_NextPrevious
@@ -451,6 +451,50 @@ Options_CheckEvent:
 	ld a, c
 	and a
 	ret
+
+Options_Fast_Nurse:
+	ld hl, wOptions2
+ 	ldh a, [hJoyPressed]
+ 	bit D_LEFT_F, a
+ 	jr nz, .LeftPressed
+ 	bit D_RIGHT_F, a
+ 	jr z, .NonePressed
+ 	bit NURSE_HEAL, [hl]
+ 	jr nz, .ToggleOn
+ 	jr .ToggleOff
+ 
+ .LeftPressed:
+ 	bit NURSE_HEAL, [hl]
+ 	jr z, .ToggleOn
+ 	jr .ToggleOn
+ 
+ .NonePressed:
+ 	bit NURSE_HEAL, [hl]
+ 	jr nz, .ToggleOff
+ 
+ .ToggleOn:
+ 	res NURSE_HEAL, [hl]
+	ld de, EVENT_FAST_NURSE
+	ld b, RESET_FLAG
+	call EventFlagAction
+ 	ld de, .On
+ 	jr .Display
+ 
+ .ToggleOff:
+ 	set NURSE_HEAL, [hl]
+	ld de, EVENT_FAST_NURSE
+	ld b, SET_FLAG
+	call EventFlagAction
+ 	ld de, .Off
+ 
+.Display:
+	hlcoord 11, 9
+	call PlaceString
+	and a
+	ret
+
+.On:  db "Normal@"
+.Off: db "Quick @"
 
 Options_Print:
 	ld a, [wGBPrinterBrightness]

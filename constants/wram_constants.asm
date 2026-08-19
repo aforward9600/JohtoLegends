@@ -67,6 +67,7 @@ GBPRINTER_DARKEST  EQU $7f
 	const PHYS_SPEC_SPLIT ; 0
 	const LEVEL_CAPS      ; 1
 	const RUNNING_SHOES   ; 2
+	const NURSE_HEAL      ; 3
 
 ; wWalkingDirection:: ; d043
 	const_def -1
