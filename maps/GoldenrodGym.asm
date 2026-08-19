@@ -60,7 +60,7 @@ GoldenrodGymMiltonScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_PLAINBADGE
-	loadmem wLevelCap, 44
+	callasm .GoldenrodLevelCap
 	readvar VAR_BADGES
 	setflag ENGINE_BEAT_MILTON
 .FightDone:
@@ -85,6 +85,14 @@ GoldenrodGymMiltonScript:
 	checkevent EVENT_GOLDENROD_GYM_RIVAL_1
 	iffalse .ToughKid
 	writetextend MiltonSisterText
+
+.GoldenrodLevelCap:
+	ld a, [wOptions2]
+	bit LEVEL_CAPS, a
+	ret z
+	ld a, 44
+	ld [wLevelCap], a
+	ret
 
 .ToughKid:
 	writetext AsToughAsYouAreText

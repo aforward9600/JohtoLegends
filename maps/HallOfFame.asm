@@ -46,7 +46,6 @@ HallOfFame_MapScripts:
 	setevent EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR
 	setevent EVENT_PLAYERS_HOUSE_MOM_2
 	clearevent EVENT_PLAYERS_HOUSE_MOM_1
-	loadmem wLevelCap, 73
 .SkipRivalMessage:
 	scall StaticPokemonRefresh
 	halloffame

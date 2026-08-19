@@ -73,7 +73,7 @@ OlivineGym1FByronScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_MINERALBADGE
-	loadmem wLevelCap, 34
+	callasm .OlivineLevelCap
 	readvar VAR_BADGES
 	setflag ENGINE_BEAT_BYRON
 .FightDone:
@@ -93,6 +93,14 @@ OlivineGym1FByronScript:
 	setevent EVENT_BEAT_BEAUTY_ASHLEY
 	setevent EVENT_BEAT_ENGINEER_RUDY
 	writetextend Byron1F_FlashCannonSpeech
+
+.OlivineLevelCap:
+	ld a, [wOptions2]
+	bit LEVEL_CAPS, a
+	ret z
+	ld a, 34
+	ld [wLevelCap], a
+	ret
 
 .GotIronTail:
 	writetextend Byron1F_Sunnyshore

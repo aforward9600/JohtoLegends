@@ -145,10 +145,18 @@ BikerBossMovement2:
 	applymovement PLAYER, PlayerAppearsMovement
 	special ReloadSpritesNoPalettes
 	pause 45
-	loadmem wLevelCap, 100
+	callasm .FedHideoutLevelCap
 	warp CELADON_CITY, 20, 20
 	blackoutmod CELADON_CITY
 	end
+
+.FedHideoutLevelCap:
+	ld a, [wOptions2]
+	bit LEVEL_CAPS, a
+	ret z
+	ld a, 100
+	ld [wLevelCap], a
+	ret
 
 BikerBossLastMonText:
 	text "Paxton: This wasn't"

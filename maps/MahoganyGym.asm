@@ -59,7 +59,7 @@ MahoganyGymPryceScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_GLACIERBADGE
-	loadmem wLevelCap, 22
+	callasm .MahoganyLevelCap
 	readvar VAR_BADGES
 	setflag ENGINE_BEAT_PRYCE
 .FightDone:
@@ -76,6 +76,14 @@ MahoganyGymPryceScript:
 	setevent EVENT_GOT_TM16_ICY_WIND
 	setscene SCENE_GYM_GUIDE_STOPS_YOU
 	writetextend PryceText_IcyWindSpeech
+
+.MahoganyLevelCap:
+	ld a, [wOptions2]
+	bit LEVEL_CAPS, a
+	ret z
+	ld a, 22
+	ld [wLevelCap], a
+	ret
 
 .Rematch:
 	checkevent EVENT_BEAT_ELITE_FOUR

@@ -64,7 +64,7 @@ VioletGymWalkerScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_ZEPHYRBADGE
-	loadmem wLevelCap, 55
+	callasm .VioletLevelCap
 	setflag ENGINE_BEAT_WALKER
 .FightDone:
 	checkflag ENGINE_BEAT_WALKER
@@ -79,6 +79,14 @@ VioletGymWalkerScript:
 	verbosegiveitem TM_ROOST
 	setevent EVENT_GOT_TM31_MUD_SLAP
 	writetextend WalkerTMRoostText
+
+.VioletLevelCap:
+	ld a, [wOptions2]
+	bit LEVEL_CAPS, a
+	ret z
+	ld a, 55
+	ld [wLevelCap], a
+	ret
 
 .SpeechAfterTM:
 	writetextend WalkerFightDoneText

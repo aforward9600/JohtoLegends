@@ -62,7 +62,7 @@ CianwoodGymChigusaScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_STORMBADGE
-	loadmem wLevelCap, 31
+	callasm .CianwoodGymLevelCap
 	readvar VAR_BADGES
 	setscene SCENE_FINISHED
 	setmapscene WILD_AREA_OUTSIDE, SCENE_WILD_AREA_RIVAL
@@ -84,6 +84,14 @@ CianwoodGymChigusaScript:
 
 .AlreadyGotTM:
 	writetextend ChigusaAfterText
+
+.CianwoodGymLevelCap:
+	ld a, [wOptions2]
+	bit LEVEL_CAPS, a
+	ret z
+	ld a, 31
+	ld [wLevelCap], a
+	ret
 
 .Rematch:
 	checkevent EVENT_BEAT_ELITE_FOUR

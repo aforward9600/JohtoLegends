@@ -170,13 +170,21 @@ MeetGrandmaScript:
 	setscene SCENE_PLAYERS_HOUSE_NOTHING
 	setevent EVENT_GOT_RIVALS_MESSAGE
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
-	loadmem wLevelCap, 80
+	callasm .PlayersHouseLevelCap
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .Finish2
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	iffalse .FromLeft2
 	sjump .Finish2
+
+.PlayersHouseLevelCap:
+	ld a, [wOptions2]
+	bit LEVEL_CAPS, a
+	ret z
+	ld a, 80
+	ld [wLevelCap], a
+	ret
 
 .FromLeft2:
 	applymovement PLAYERSHOUSE1F_GRANNY1, MomWalksBackMovement

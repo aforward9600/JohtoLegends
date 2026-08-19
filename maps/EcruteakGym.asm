@@ -72,7 +72,7 @@ EcruteakGymEnokiScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_FOGBADGE
-	loadmem wLevelCap, 28
+	callasm .EcruteakLevelCap
 	readvar VAR_BADGES
 	setflag ENGINE_BEAT_ENOKI
 .FightDone:
@@ -112,6 +112,14 @@ EcruteakGymEnokiScript:
 
 .GotShadowBall:
 	writetextend EnokiFightDoneText
+
+.EcruteakLevelCap:
+	ld a, [wOptions2]
+	bit LEVEL_CAPS, a
+	ret z
+	ld a, 28
+	ld [wLevelCap], a
+	ret
 
 .EnokiAlternateBattle:
 	winlosstext EnokiWinLossText, EnokiWinText

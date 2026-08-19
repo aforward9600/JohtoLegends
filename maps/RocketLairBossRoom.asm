@@ -184,18 +184,25 @@ MadameBossBattle:
 	setevent EVENT_VICTORY_ROAD_GATE_RIVAL_2
 	setevent EVENT_VICTORY_ROAD_GATE_OAK
 	setevent EVENT_VICTORY_ROAD_GATE_RIVAL
+	callasm .RocketLairLevelCap
 	checkevent EVENT_GOT_SILVER_WING
 	iftrue .RemoveRival3
 	clearevent EVENT_HOOH_LUGIA_ROOM_RIVAL3
 	setevent EVENT_TIN_TOWER_1F_WISE_TRIO_2
-	loadmem wLevelCap, 68
 	end
 
 .RemoveRival3:
 	clearevent EVENT_HOOH_LUGIA_ROOM_RIVAL2
 	setevent EVENT_TIN_TOWER_1F_WISE_TRIO_2
-	loadmem wLevelCap, 68
 	end
+
+.RocketLairLevelCap:
+	ld a, [wOptions2]
+	bit LEVEL_CAPS, a
+	ret z
+	ld a, 68
+	ld [wLevelCap], a
+	ret
 
 MadameBossLastMonText:
 	text "What?!"

@@ -67,7 +67,7 @@ BlackthornGymMasterScript:
 	waitsfx
 	setflag ENGINE_RISINGBADGE
 	setflag ENGINE_BEAT_MASTER
-	loadmem wLevelCap, 60
+	callasm .BlackthornLevelCap
 	readvar VAR_BADGES
 .FightDone:
 	checkflag ENGINE_BEAT_MASTER
@@ -91,6 +91,14 @@ BlackthornGymMasterScript:
 
 .GotTM24:
 	writetextend BlackthornGymMasterText_League
+
+.BlackthornLevelCap:
+	ld a, [wOptions2]
+	bit LEVEL_CAPS, a
+	ret z
+	ld a, 60
+	ld [wLevelCap], a
+	ret
 
 .Rematch:
 	checkevent EVENT_BEAT_ELITE_FOUR
