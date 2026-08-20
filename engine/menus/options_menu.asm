@@ -97,8 +97,8 @@ StringOptions2:
 	db "        :<LF>"
 	db "Quick Healing<LF>"
 	db "        :<LF>"
-	db "<LF>"
-	db "<LF>"
+	db "Fast Battles<LF>"
+	db "        :<LF>"
 	db "<LF>"
 	db "<LF>"
 	db "Back<LF>"
@@ -141,7 +141,7 @@ GetOptionPointer:
 	dw Options_LevelCaps
 	dw Options_RunningShoes
 	dw Options_Fast_Nurse
-	dw Options_Cancel
+	dw Options_Fast_Battles
 	dw Options_Cancel
 	dw Options_NextPrevious
 	dw Options_Cancel
@@ -452,6 +452,44 @@ Options_CheckEvent:
 	and a
 	ret
 
+Options_Fast_Battles:
+	ld hl, wOptions2
+ 	ldh a, [hJoyPressed]
+ 	bit D_LEFT_F, a
+ 	jr nz, .LeftPressed
+ 	bit D_RIGHT_F, a
+ 	jr z, .NonePressed
+ 	bit FAST_BATTLES, [hl]
+ 	jr nz, .ToggleOff
+ 	jr .ToggleOn
+ 
+ .LeftPressed:
+ 	bit FAST_BATTLES, [hl]
+ 	jr z, .ToggleOn
+ 	jr .ToggleOff
+ 
+ .NonePressed:
+ 	bit FAST_BATTLES, [hl]
+ 	jr nz, .ToggleOn
+ 
+ .ToggleOff:
+ 	res FAST_BATTLES, [hl]
+ 	ld de, .Off
+ 	jr .Display
+ 
+ .ToggleOn:
+ 	set FAST_BATTLES, [hl]
+ 	ld de, .On
+ 
+.Display:
+	hlcoord 11, 11
+	call PlaceString
+	and a
+	ret
+
+.Off:  db "Off@"
+.On:   db "On @"
+
 Options_Fast_Nurse:
 	ld hl, wOptions2
  	ldh a, [hJoyPressed]
@@ -465,7 +503,7 @@ Options_Fast_Nurse:
  
  .LeftPressed:
  	bit NURSE_HEAL, [hl]
- 	jr z, .ToggleOn
+ 	jr z, .ToggleOff
  	jr .ToggleOn
  
  .NonePressed:

@@ -355,3 +355,8 @@ CheckCloudNine::
 UnawareCheck::
 	homecall _UnawarePlayer
 	ret
+
+CheckIfFastBattlesIsOn::
+	ld a, [wOptions2]
+	bit FAST_BATTLES, a
+	ret

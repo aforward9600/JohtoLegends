@@ -2768,6 +2768,9 @@ BattleCommand_SuperEffectiveLoopText:
 BattleCommand_SuperEffectiveText:
 ; supereffectivetext
 
+	call CheckIfFastBattlesIsOn
+	ret nz
+
 	ld a, [wTypeModifier]
 	and $7f
 	cp 10 ; 1.0

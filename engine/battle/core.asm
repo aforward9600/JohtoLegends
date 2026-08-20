@@ -2132,14 +2132,20 @@ StopDangerSound:
 FaintYourPokemon:
 	call StopDangerSound
 	call WaitSFX
+	call CheckIfFastBattlesIsOn
+	jr nz, .skip_player_mon_cry
 	ld a, $f0
 	ld [wCryTracks], a
 	ld a, [wBattleMonSpecies]
 	call PlayStereoCry
+
+.skip_player_mon_cry
 	call PlayerMonFaintedAnimation
 	hlcoord 9, 7
 	lb bc, 5, 11
 	call ClearBox
+	call CheckIfFastBattlesIsOn
+	ret nz
 	ld hl, BattleText_MonFainted
 	call StdBattleTextbox
 	farcall EnemyAlchemyPower
@@ -2148,10 +2154,15 @@ FaintYourPokemon:
 FaintEnemyPokemon:
 	call StopDangerSound
 	call WaitSFX
+
+	call CheckIfFastBattlesIsOn
+	jr nz, .skip_enemy_cry
 	ld a, $f0
 	ld [wCryTracks], a
 	ld a, [wTempEnemyMonSpecies]
 	call PlayStereoCry
+
+.skip_enemy_cry
 	ld de, SFX_KINESIS
 	call PlaySFX
 	call EnemyMonFaintedAnimation
@@ -2160,6 +2171,8 @@ FaintEnemyPokemon:
 	hlcoord 1, 0
 	lb bc, 4, 10
 	call ClearBox
+	call CheckIfFastBattlesIsOn
+	ret nz
 	ld hl, BattleText_EnemyMonFainted
 	call StdBattleTextbox
 	farcall UserAlchemyPower
@@ -2264,8 +2277,6 @@ WinTrainerBattle:
 	ld hl, BattleText_EnemyWasDefeated
 	call StdBattleTextbox
 
-	call IsMobileBattle
-	jr z, .mobile
 	ld a, [wLinkMode]
 	and a
 	ret nz
@@ -2908,27 +2919,11 @@ LostBattle:
 
 .not_tied
 	ld hl, LostAgainstText
-	call IsMobileBattle
-	jr z, .mobile
 
 .text
 	call StdBattleTextbox
 
 .end
-	scf
-	ret
-
-.mobile
-; Remove the enemy from the screen.
-	hlcoord 0, 0
-	lb bc, 8, 21
-	call ClearBox
-	call BattleWinSlideInEnemyTrainerFrontpic
-
-	ld c, 40
-	call DelayFrames
-
-	ld c, $3 ; lost
 	scf
 	ret
 
