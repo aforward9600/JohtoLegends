@@ -47,8 +47,6 @@ MaxDVsSetter:
 	writetextend NoPasswordText
 
 .SetCheater:
-	checkevent EVENT_RESET_MAX_DVS_PASSWORD
-	iftrue .ResetCheater
 	checkitem CANDY_POUCH
 	iftrue .MaxDVs
 	writetext HereIsCandyPouchText
@@ -56,20 +54,11 @@ MaxDVsSetter:
 	verbosegiveitem CANDY_POUCH
 	closetext
 	clearevent EVENT_PASSWORD_CHEATER
-	setevent EVENT_RESET_MAX_DVS_PASSWORD
 	end
 
 .MaxDVs:
-	setflag ENGINE_ACTIVATED_MAX_DVS
-	clearevent EVENT_PASSWORD_CHEATER
 	setevent EVENT_RESET_MAX_DVS_PASSWORD
 	writetextend MaxDVsText
-
-.ResetCheater:
-	clearevent EVENT_PASSWORD_CHEATER
-	clearevent EVENT_RESET_MAX_DVS_PASSWORD
-	clearflag ENGINE_ACTIVATED_MAX_DVS
-	writetextend ResetCheaterText
 
 .SetShiny:
 	clearevent EVENT_PASSWORD_SHINY
@@ -146,7 +135,6 @@ CheckForPassword:
 
 .cheaterpassword2:
 	setevent EVENT_PASSWORD_CHEATER
-	setflag ENGINE_ACTIVATED_MAX_DVS
 	end
 
 .monochromepassword:
@@ -255,11 +243,7 @@ TryPasswordLaterText:
 	done
 
 HereIsCandyPouchText:
-	text "All #mon you"
-	line "have will have"
-	cont "higher stats."
-
-	para "Also, take this."
+	text "Here, take this."
 
 	para "I am silently"
 	line "judging you."
@@ -306,8 +290,8 @@ ResetCheaterText:
 	done
 
 MaxDVsText:
-	text "#mon will have"
-	line "max strength."
+	text "You already have"
+	line "this, cheater."
 	done
 
 MoveDeletersHouse_MapEvents:

@@ -99,8 +99,8 @@ StringOptions2:
 	db "        :<LF>"
 	db "Fast Battles<LF>"
 	db "        :<LF>"
-	db "<LF>"
-	db "<LF>"
+	db "Max DVs<LF>"
+	db "        :<LF>"
 	db "Back<LF>"
 	db "         <LF>"
 	db "Cancel@"
@@ -142,7 +142,7 @@ GetOptionPointer:
 	dw Options_RunningShoes
 	dw Options_Fast_Nurse
 	dw Options_Fast_Battles
-	dw Options_Cancel
+	dw Options_MaxDVs
 	dw Options_NextPrevious
 	dw Options_Cancel
 
@@ -451,6 +451,50 @@ Options_CheckEvent:
 	ld a, c
 	and a
 	ret
+
+Options_MaxDVs:
+	ld hl, wOptions2
+ 	ldh a, [hJoyPressed]
+ 	bit D_LEFT_F, a
+ 	jr nz, .LeftPressed
+ 	bit D_RIGHT_F, a
+ 	jr z, .NonePressed
+ 	bit MAX_DVS, [hl]
+ 	jr nz, .ToggleOff
+ 	jr .ToggleOn
+ 
+ .LeftPressed:
+ 	bit MAX_DVS, [hl]
+ 	jr z, .ToggleOn
+ 	jr .ToggleOff
+ 
+ .NonePressed:
+ 	bit MAX_DVS, [hl]
+ 	jr nz, .ToggleOn
+ 
+ .ToggleOff:
+	res MAX_DVS, [hl]
+	ld de, ENGINE_ACTIVATED_MAX_DVS
+	ld b, RESET_FLAG
+	farcall EngineFlagAction
+ 	ld de, .Off
+ 	jr .Display
+ 
+ .ToggleOn:
+	set MAX_DVS, [hl]
+	ld de, ENGINE_ACTIVATED_MAX_DVS
+	ld b, SET_FLAG
+	farcall EngineFlagAction
+ 	ld de, .On
+ 
+.Display:
+	hlcoord 11, 13
+	call PlaceString
+	and a
+	ret
+
+.Off:  db "Off@"
+.On:   db "On @"
 
 Options_Fast_Battles:
 	ld hl, wOptions2

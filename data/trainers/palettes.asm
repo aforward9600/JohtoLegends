@@ -24,7 +24,7 @@ INCBIN "gfx/trainers/koga.gbcpal", middle_colors
 INCLUDE "gfx/trainers/kris.pal"
 INCLUDE "gfx/trainers/flint.pal"
 INCLUDE "gfx/trainers/violet.pal"
-INCLUDE "gfx/trainers/pvt_surge.pal"
+INCBIN "gfx/trainers/pvt_surge.gbcpal", middle_colors
 INCBIN "gfx/trainers/scientist.gbcpal", middle_colors
 INCLUDE "gfx/trainers/erika.pal"
 INCBIN "gfx/trainers/youngster.gbcpal", middle_colors

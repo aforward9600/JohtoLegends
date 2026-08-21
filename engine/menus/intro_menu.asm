@@ -246,11 +246,6 @@ endc
 	inc hl
 	ld [hl], LOW(MOM_MONEY)
 
-;if DEF(_CHALLENGE)
-;	ld a, 15
-;	ld [wLevelCap], a
-;endc
-
 	ld hl, wOptions2
 	bit LEVEL_CAPS, [hl]
 	jr z, .SkipCap
@@ -262,6 +257,19 @@ endc
 	ld a, 100
 	ld [wLevelCap], a
 .FinishCap
+	bit MAX_DVS, [hl]
+	jr z, .SkipDVs
+	ld de, ENGINE_ACTIVATED_MAX_DVS
+	ld b, SET_FLAG
+	farcall EngineFlagAction
+.SkipDVs
+	ld a, [wOptions2]
+	bit NURSE_HEAL, a
+	jr z, .SkipNurse
+	ld de, EVENT_FAST_NURSE
+	ld b, SET_FLAG
+	call EventFlagAction
+.SkipNurse
 	call InitializeNPCNames
 
 	farcall InitDecorations

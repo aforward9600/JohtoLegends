@@ -24,8 +24,19 @@ _UnawarePlayer::
 	ld d, a
 	ret z
 
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classic
+
 	ld a, [hl]
 	cp SPECIAL
+	jr nc, .specialattacker
+	jr .physicalattacker
+
+.classic
+	ld a, [hl]
+	and TYPE_MASK
+	cp SPECIAL_C
 	jr nc, .specialattacker
 
 .physicalattacker
@@ -45,7 +56,6 @@ _UnawarePlayer::
 .physicalcritattacker
 	ld hl, wBattleMonAttack
 	call CheckDamageStatsCritical2
-	ld b,b
 	jr c, .thickclub
 
 	ld hl, wEnemyDefense
@@ -107,8 +117,19 @@ _UnawarePlayerDefense::
 	ld d, a
 	ret z
 
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classicdefender
+
 	ld a, [hl]
 	cp SPECIAL
+	jr nc, .specialdefender
+	jr .physicaldefender
+
+.classicdefender
+	ld a, [hl]
+	and TYPE_MASK
+	cp SPECIAL_C
 	jr nc, .specialdefender
 
 .physicaldefender
@@ -213,14 +234,25 @@ _UnawareEnemy::
 	cp UNAWARE
 	jp z, _UnawareBothEnemy
 
-	ld hl, wPlayerMoveStructPower
+	ld hl, wEnemyMoveStructPower
 	ld a, [hli]
 	and a
 	ld d, a
 	ret z
 
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classic
+
 	ld a, [hl]
 	cp SPECIAL
+	jr nc, .specialattacker
+	jr .physicalattacker
+
+.classic
+	ld a, [hl]
+	and TYPE_MASK
+	cp SPECIAL_C
 	jr nc, .specialattacker
 
 .physicalattacker
@@ -295,14 +327,27 @@ _UnawareEnemy::
 _UnawareEnemyDefense::
 ; Player has Unaware during enemy's turn
 
-	ld hl, wPlayerMoveStructPower
+	ld b,b
+
+	ld hl, wEnemyMoveStructPower
 	ld a, [hli]
 	and a
 	ld d, a
 	ret z
 
+	ld a, [wOptions2]
+	bit PHYS_SPEC_SPLIT, a
+	jr nz, .classic
+
 	ld a, [hl]
 	cp SPECIAL
+	jr nc, .specialdefender
+	jr .physicaldefender
+
+.classic
+	ld a, [hl]
+	and TYPE_MASK
+	cp SPECIAL_C
 	jr nc, .specialdefender
 
 .physicaldefender

@@ -102,6 +102,6 @@ Route6_MapEvents:
 	bg_event 19,  5, BGEVENT_READ, Route6UndergroundPathSign
 
 	db 3 ; object events
-	object_event 16,  9, SPRITE_ENGINEER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSoldierDwight, -1
-	object_event  9, 15, SPRITE_ENGINEER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSoldierSherman, -1
+	object_event 16,  9, SPRITE_SOLDIER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerSoldierDwight, -1
+	object_event  9, 15, SPRITE_SOLDIER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerSoldierSherman, -1
 	object_event  2,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route6Teacher, -1

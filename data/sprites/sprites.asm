@@ -155,3 +155,4 @@ OverworldSprites:
 	overworld_sprite RegigigasSpriteGFX, 12, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite LiftSpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite CupSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite SoldierSpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
