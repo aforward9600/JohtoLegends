@@ -15,6 +15,12 @@ VioletLastMonText:
 	text "Not yet!"
 	done
 
+DaisyLastMonText:
+	text "Last one already?"
+
+	para "Man!"
+	done
+
 CeruleanGymVioletScript:
 	faceplayer
 	opentext
@@ -127,12 +133,6 @@ CeruleanGymVioletScript:
 
 .VioletPost:
 	writetextend VioletAfterRematchText
-
-DaisyLastMonText:
-	text "Last one already?"
-
-	para "Man!"
-	done
 
 LilyLastMonText:
 	text "…Last one, huh?"

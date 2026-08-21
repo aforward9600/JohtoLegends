@@ -106,6 +106,7 @@ if DEF(_CHALLENGE)
 	dn 12, 10, 13, 10 ; FNINJA_M
 	dn 10, 12, 13, 10 ; FNINJA_F
 	dn 15, 15, 15, 15 ; FERROPEXOLA
+	dn 15, 15, 15, 15 ; BLANK
 else
 	dn  9, 10,  7,  7 ; WALKER
 	dn  8,  8,  8,  8 ; MILTON
@@ -210,4 +211,5 @@ else
 	dn 10,  8, 11,  8 ; FNINJA_M
 	dn  8, 10, 11,  8 ; FNINJA_F
 	dn 15, 15, 15, 15 ; FERROPEXOLA
+	dn 15, 15, 15, 15 ; BLANK
 endc

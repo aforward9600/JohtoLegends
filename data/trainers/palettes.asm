@@ -109,6 +109,7 @@ INCBIN "gfx/trainers/karate_king.gbcpal", middle_colors
 INCBIN "gfx/trainers/ninja_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/ninja_f.gbcpal", middle_colors
 INCLUDE "gfx/trainers/ferropexola.pal"
+INCLUDE "gfx/trainers/blank.pal"
 
 KrisPalette:
 INCLUDE "gfx/player/kris.pal"

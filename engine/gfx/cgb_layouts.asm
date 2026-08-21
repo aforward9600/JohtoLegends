@@ -1071,22 +1071,22 @@ _CGB_TrainerCardKanto:
 	ld a, KRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, CHIGUSA
+	ld a, ERIKA ; erika & surge
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, MILTON
+	ld a, SENSATIONAL3 ; lily
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, KURT
+	ld a, BLAINE
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, WALKER ; CLAIR
+	ld a, KOGA ; koga and flint
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, BYRON
+	ld a, GIOVANNI ; giovanni and sabrina
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, PRYCE ; CHUCK
+	ld a, BLANK
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld hl, .BadgePalettesKanto
@@ -1115,37 +1115,100 @@ _CGB_TrainerCardKanto:
 	ld a, $1 ; kris
 .got_gender2
 	call FillBoxCGB
-	hlcoord 2, 11, wAttrMap
-	lb bc, 2, 4
-	ld a, $6 ; brock
+	hlcoord 3, 10, wAttrMap
+	lb bc, 3, 3
+	ld a, [wKantoBadges]
+	bit BOULDERBADGE, a
+	jr nz, .color_flint
+	ld a, $7
+	jr .after_flint
+
+.color_flint
+	ld a, $5 ; flint
+.after_flint
 	call FillBoxCGB
-	hlcoord 6, 11, wAttrMap
-	lb bc, 2, 4
-	ld a, $0 ; misty / chris
+	hlcoord 7, 10, wAttrMap
+	lb bc, 3, 3
+	ld a, [wKantoBadges]
+	bit CASCADEBADGE, a
+	jr nz, .color_lily
+	ld a, $7
+	jr .after_lily
+
+.color_lily
+	ld a, $3 ; lily
+.after_lily
 	call FillBoxCGB
-	hlcoord 10, 11, wAttrMap
-	lb bc, 2, 4
-	ld a, $3 ; lt.surge / erika
+	hlcoord 11, 10, wAttrMap
+	lb bc, 3, 3
+	ld a, [wKantoBadges]
+	bit THUNDERBADGE, a
+	jr nz, .color_surge
+	ld a, $7
+	jr .after_surge
+
+.color_surge
+	ld a, $2 ; lt.surge / erika
+.after_surge
 	call FillBoxCGB
-	hlcoord 14, 11, wAttrMap
-	lb bc, 2, 4
-	ld a, $3 ; erika / lt.surge
+	hlcoord 15, 10, wAttrMap
+	lb bc, 3, 3
+	ld a, [wKantoBadges]
+	bit RAINBOWBADGE, a
+	jr nz, .color_erika
+	ld a, $7
+	jr .after_erika
+
+.color_erika
+	ld a, $2 ; erika / lt.surge
+.after_erika
 	call FillBoxCGB
-	hlcoord 2, 14, wAttrMap
-	lb bc, 2, 4
-	ld a, $6 ; koga
+	hlcoord 3, 13, wAttrMap
+	lb bc, 3, 3
+	ld a, [wKantoBadges]
+	bit SOULBADGE, a
+	jr nz, .color_koga
+	ld a, $7
+	jr .after_koga
+.color_koga
+	ld a, $5 ; koga
+.after_koga
 	call FillBoxCGB
-	hlcoord 6, 14, wAttrMap
-	lb bc, 2, 4
-	ld a, $5 ; sabrina
+	hlcoord 7, 13, wAttrMap
+	lb bc, 3, 3
+	ld a, [wKantoBadges]
+	bit MARSHBADGE, a
+	jr nz, .color_sabrina
+	ld a, $7
+	jr .after_sabrina
+
+.color_sabrina
+	ld a, $6 ; sabrina
+.after_sabrina
 	call FillBoxCGB
-	hlcoord 10, 14, wAttrMap
-	lb bc, 2, 4
-	ld a, $7 ; blaine
+	hlcoord 11, 13, wAttrMap
+	lb bc, 3, 3
+	ld a, [wKantoBadges]
+	bit VOLCANOBADGE, a
+	jr nz, .color_blaine
+	ld a, $7
+	jr .after_blaine
+
+.color_blaine
+	ld a, $4 ; blaine
+.after_blaine
 	call FillBoxCGB
-	hlcoord 14, 14, wAttrMap
-	lb bc, 2, 4
-	ld a, $1 ; giovanni
+	hlcoord 15, 13, wAttrMap
+	lb bc, 3, 3
+	ld a, [wKantoBadges]
+	bit EARTHBADGE, a
+	jr nz, .color_giovanni
+	ld a, $7
+	jr .after_giovanni
+
+.color_giovanni
+	ld a, $6 ; giovanni
+.after_giovanni
 	call FillBoxCGB
 	; top-right corner still uses the border's palette
 	ld a, [wPlayerGender]

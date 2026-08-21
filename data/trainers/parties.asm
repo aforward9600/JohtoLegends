@@ -12190,3 +12190,11 @@ FerropexolaGroup:
 	db -1
 
 	end_list_items
+
+BlankGroup:
+	next_list_item ; BLANK1
+	db "@", TRAINERTYPE_NORMAL
+	db 100
+	dw SKARMORY
+
+	end_list_items

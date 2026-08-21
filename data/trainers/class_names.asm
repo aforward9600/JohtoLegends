@@ -102,3 +102,4 @@ TrainerClassNames::
 	db "Fuchsia@"
 	db "Fuchsia@"
 	db "Ferropexola@"
+	db "Blank@"

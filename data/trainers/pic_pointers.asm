@@ -104,3 +104,4 @@ TrainerPicPointers::
 	dba MahoganyNinjaMPic
 	dba MahoganyNinjaFPic
 	dba FerropexolaPic
+	dba FerropexolaPic

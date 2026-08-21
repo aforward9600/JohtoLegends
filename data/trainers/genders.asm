@@ -104,3 +104,4 @@ BTTrainerClassGenders:
 	db MALE   ; FNINJA_M
 	db FEMALE ; FNINJA_F
 	db MALE   ; FERROPEXOLA
+	db MALE   ; BLANK

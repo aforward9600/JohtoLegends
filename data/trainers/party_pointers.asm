@@ -104,3 +104,4 @@ TrainerGroups:
 	dba FuchsiaNinjaMGroup
 	dba FuchsiaNinjaFGroup
 	dba FerropexolaGroup
+	dba BlankGroup

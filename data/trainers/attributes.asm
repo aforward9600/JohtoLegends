@@ -612,3 +612,9 @@ TrainerClassAttributes:
 	db 25 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_SMART | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
+
+; Blank
+	db NO_ITEM, NO_ITEM ; items
+	db 1 ; base reward
+	dw AI_BASIC
+	dw CONTEXT_USE

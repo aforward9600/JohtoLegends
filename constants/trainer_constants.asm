@@ -766,5 +766,8 @@ CHRIS EQU __enum__
 	trainerclass FERROPEXOLA_TRAINER
 	const FERROPEXOLA1
 
+	trainerclass BLANK
+	const BLANK1
+
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__
