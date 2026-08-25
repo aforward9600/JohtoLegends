@@ -469,6 +469,10 @@ _ChooseWildEncounter:
 	cp TILESET_RUINS_OF_ALPH
 	jr nz, .done
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_SUICUNE
+	jr z, .done
+
 	ld a, [wUnlockedUnowns]
 	and a
 	jr z, .nowildbattle
