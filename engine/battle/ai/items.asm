@@ -689,7 +689,7 @@ AI_Switch:
 
 	push af
 
-	farcall EnemySwitchAbilities
+;	farcall EnemySwitchAbilities
 	call UpdateEnemyMonInParty
 	ld a, [wCurOTMon]
 	ld hl, wOTPartyMon1Status

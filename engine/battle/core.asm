@@ -3082,7 +3082,7 @@ EnemySwitch:
 	ld [wEnemyIsSwitching], a
 ;	ld [wPlayerSwitched], a
 	call LoadTileMapToTempTileMap
-	farcall PlayerSwitchAbilities
+;	farcall PlayerSwitchAbilities
 	jp PlayerSwitch
 
 EnemySwitch_SetMode:
@@ -4206,7 +4206,7 @@ PursuitSwitch:
 	call GetMoveEffect
 	ld a, b
 	cp EFFECT_PURSUIT
-	jr nz, .done
+	jr nz, .donecheck
 
 	ld a, [wCurBattleMon]
 	push af
@@ -4239,7 +4239,7 @@ PursuitSwitch:
 	ld hl, wBattleMonHP
 	ld a, [hli]
 	or [hl]
-	jr nz, .done
+	jr nz, .doneplayer
 
 	ld a, $f0
 	ld [wCryTracks], a
@@ -4258,7 +4258,7 @@ PursuitSwitch:
 	ld hl, wEnemyMonHP
 	ld a, [hli]
 	or [hl]
-	jr nz, .done
+	jr nz, .doneenemy
 
 	ld de, SFX_KINESIS
 	call PlaySFX
@@ -4273,6 +4273,17 @@ PursuitSwitch:
 	call StdBattleTextbox
 	scf
 	ret
+
+.donecheck
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .doneplayer
+.doneenemy
+	farcall EnemySwitchAbilities
+	jr .done
+
+.doneplayer
+	farcall PlayerSwitchAbilities
 
 .done
 	and a
@@ -5177,7 +5188,7 @@ TryPlayerSwitch:
 	call CloseWindow
 	call GetMemSGBLayout
 	call SetPalettes
-	farcall PlayerSwitchAbilities
+;	farcall PlayerSwitchAbilities
 	ld a, [wCurPartyMon]
 	ld [wCurBattleMon], a
 PlayerSwitch:

@@ -6125,6 +6125,7 @@ BattleCommand_ForceSwitch:
 	ld c, a
 ; select a random enemy mon to switch to
 .random_loop_trainer
+	farcall EnemySwitchAbilities
 	call BattleRandom
 	and $7
 	cp b
@@ -6206,9 +6207,7 @@ BattleCommand_ForceSwitch:
 	cp $1
 	jr z, .switch_fail
 
-	farcall BattleCommand_SwitchTurn
 	farcall PlayerSwitchAbilities
-	farcall BattleCommand_SwitchTurn
 
 	call UpdateBattleMonInParty
 	ld a, $1
