@@ -2087,7 +2087,7 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	ret z
 	ld a, [wBattleMode]
 	dec a
-	call z, PlayVictoryMusic
+	call z, FarPlayVictoryMusic
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
 	ld a, [wBattleResult]
@@ -2272,7 +2272,7 @@ WinTrainerBattle:
 	ld a, [wLinkMode]
 	and a
 	ld a, b
-	call z, PlayVictoryMusic
+	call z, FarPlayVictoryMusic
 	callfar Battle_GetTrainerName
 	ld hl, BattleText_EnemyWasDefeated
 	call StdBattleTextbox
@@ -2466,70 +2466,9 @@ AddBattleMoneyToAccount:
 	ld [hl], LOW(MAX_MONEY)
 	ret
 
-PlayVictoryMusic:
-	call IsDepressedRival
-	ret z
-	push de
-	ld de, MUSIC_NONE
-	call PlayMusic
-	call DelayFrame
-	ld de, MUSIC_WILD_VICTORY
-	ld a, [wBattleMode]
-	dec a
-	jr nz, .trainer_victory
-	ld hl, wPayDayMoney
-	ld a, [hli]
-	or [hl]
-	jr nz, .play_music
-	ld a, [wBattleParticipantsNotFainted]
-	and a
-	jr z, .lost
-	jr .play_music
-
-.trainer_victory
-	ld de, MUSIC_GYM_VICTORY
-	call IsGymLeader
-	jr c, .play_music
-
-	ld de, MUSIC_GYM_VICTORY
-	call IsVillainBoss
-	jr c, .play_music
-	ld de, MUSIC_TRAINER_VICTORY
-
-.play_music
-	call PlayMusic
-
-.lost
-	pop de
+FarPlayVictoryMusic:
+	farcall PlayVictoryMusic
 	ret
-
-IsKantoGymLeader:
-	ld hl, KantoGymLeaders
-	jr IsGymLeaderCommon
-
-IsDepressedRival:
-	ld hl, DepressedRivals
-	jr IsGymLeaderCommon
-
-IsEliteFour:
-	ld hl, EliteFour
-	jr IsGymLeaderCommon
-
-IsVillainBoss:
-	ld hl, VillainBosses
-	jr IsGymLeaderCommon
-
-IsGymLeader:
-	ld hl, GymLeaders
-IsGymLeaderCommon:
-	push de
-	ld a, [wOtherTrainerClass]
-	ld de, 1
-	call IsInArray
-	pop de
-	ret
-
-INCLUDE "data/trainers/leaders.asm"
 
 HandlePlayerMonFaint:
 	call FaintYourPokemon
@@ -3073,6 +3012,8 @@ EnemySwitch:
 	ld [wEnemySwitched], a
 	pop af
 	ret c
+	ld a, [wBufferMonFormBuffer]
+	ld [wCurBattleMon], a
 	; If we're here, then we're switching too
 	xor a
 	ld [wBattleParticipantsNotFainted], a
@@ -3082,7 +3023,6 @@ EnemySwitch:
 	ld [wEnemyIsSwitching], a
 ;	ld [wPlayerSwitched], a
 	call LoadTileMapToTempTileMap
-;	farcall PlayerSwitchAbilities
 	jp PlayerSwitch
 
 EnemySwitch_SetMode:
@@ -3493,16 +3433,22 @@ OfferSwitch:
 	ld a, [wMenuCursorY]
 	dec a
 	jr nz, .said_no
+;	call GetPartyMonForm
+;	ld a, [hl]
+;	ld [wBufferMonFormBuffer], a
 	call SetUpBattlePartyMenu_NoLoop
 	call PickSwitchMonInBattle
 	jr c, .canceled_switch
 	ld a, [wCurBattleMon]
 	ld [wLastPlayerMon], a
 	ld a, [wCurPartyMon]
-	ld [wCurBattleMon], a
+	ld [wBufferMonFormBuffer], a
+;	ld [wCurBattleMon], a
 	call ClearPalettes
 	call DelayFrame
 	call _LoadHPBar
+;	ld a, [wBufferMonFormBuffer]
+;	ld [wCurBattleMon], a
 	pop af
 	ld [wCurPartyMon], a
 	xor a
@@ -5242,12 +5188,8 @@ PlayerSwitch:
 
 EnemyMonEntrance:
 	callfar AI_Switch
-;	ld a, 1
-;	ld [wEnemySwitched], a
 	call SetEnemyTurn
 	farcall SetEnemyAbility
-;	ld a, [wBothPokemonFainted]
-;	jp nz, SpikesDamage
 	farcall SentOutAbility
 	jp SpikesDamage
 
@@ -5265,6 +5207,15 @@ BattleMonEntrance:
 	jr c, .ok
 	call RecallPlayerMon
 .ok
+
+;	ld a, [wBufferMonFormBuffer]
+;	and a
+;	jr z, .SkipBuffer
+
+;	ld [wBufferMonForm], a
+;	xor a
+;	ld [wBufferMonFormBuffer], a
+;.SkipBuffer
 
 	hlcoord 9, 7
 	lb bc, 5, 11

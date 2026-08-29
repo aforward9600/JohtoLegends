@@ -150,7 +150,7 @@ PokefanFEthelRematchText:
 
 PokefanFEthelLetsDoItText:
 	text "Come on, my"
-	line "Togepi!"
+	line "#mon!"
 	done
 
 PokefanFEthelRefusedText:

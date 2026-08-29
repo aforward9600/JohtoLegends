@@ -16,6 +16,7 @@ ResetBattleParameters::
 	ld [wEnemyToxicSpikes], a
 	ld [wPlayerSwitched], a
 	ld [wEnemySwitched], a
+	ld [wBufferMonFormBuffer], a
 	ret
 
 Core2_NewTurnEndEffects:
@@ -1028,3 +1029,68 @@ Call_PlayBattleAnim2:
 	ld [wFXAnimID + 1], a
 	call WaitBGMap
 	predef_jump PlayBattleAnim
+
+PlayVictoryMusic::
+	call IsDepressedRival
+	ret z
+	push de
+	ld de, MUSIC_NONE
+	call PlayMusic
+	call DelayFrame
+	ld de, MUSIC_WILD_VICTORY
+	ld a, [wBattleMode]
+	dec a
+	jr nz, .trainer_victory
+	ld hl, wPayDayMoney
+	ld a, [hli]
+	or [hl]
+	jr nz, .play_music
+	ld a, [wBattleParticipantsNotFainted]
+	and a
+	jr z, .lost
+	jr .play_music
+
+.trainer_victory
+	ld de, MUSIC_GYM_VICTORY
+	call IsGymLeader
+	jr c, .play_music
+
+	ld de, MUSIC_GYM_VICTORY
+	call IsVillainBoss
+	jr c, .play_music
+	ld de, MUSIC_TRAINER_VICTORY
+
+.play_music
+	call PlayMusic
+
+.lost
+	pop de
+	ret
+
+IsKantoGymLeader:
+	ld hl, KantoGymLeaders
+	jr IsGymLeaderCommon
+
+IsDepressedRival:
+	ld hl, DepressedRivals
+	jr IsGymLeaderCommon
+
+IsEliteFour:
+	ld hl, EliteFour
+	jr IsGymLeaderCommon
+
+IsVillainBoss:
+	ld hl, VillainBosses
+	jr IsGymLeaderCommon
+
+IsGymLeader:
+	ld hl, GymLeaders
+IsGymLeaderCommon:
+	push de
+	ld a, [wOtherTrainerClass]
+	ld de, 1
+	call IsInArray
+	pop de
+	ret
+
+INCLUDE "data/trainers/leaders.asm"

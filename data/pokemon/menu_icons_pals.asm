@@ -326,7 +326,7 @@ MonMenuIconPals:
 	icon_pals RED,    GREEN  ; SKARMORY
 	icon_pals RED,    GRAY   ; HOUNDOUR
 	icon_pals RED,    GRAY   ; HOUNDOOM
-	icon_pals BLUE,   RED    ; PHANPY
+	icon_pals BLUE,   GRAY   ; PHANPY
 	icon_pals BROWN,  RED    ; DONPHAN
 	icon_pals BROWN,  GREEN  ; STANTLER
 	icon_pals GRAY,   GREEN  ; WYRDEER

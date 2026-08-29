@@ -43,10 +43,10 @@ BattleCommand_ShellSmash:
 	ld [wKickCounter], a
 	farcall AnimateCurrentMove
 	farcall BattleCommand_RaiseSub
-	call AnimateAbilityStatsLower
 ; Defense
 	farcall ResetMiss
 	call BattleCommand_SwitchTurn2
+	call AnimateAbilityStatsLower
 	farcall BattleCommand_DefenseDown
 	farcall BattleCommand_StatDownMessage
 
