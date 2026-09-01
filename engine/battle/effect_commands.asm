@@ -1829,7 +1829,6 @@ BattleCommand_CheckHit:
 	ldh [hMultiplicand + 2], a
 	call GetUserItem
 	ld a, b
-	ld b,b
 	cp HELD_ACCURACY_BOOST
 	jr nz, .check_brightpowder
 	ld a, c ; % miss

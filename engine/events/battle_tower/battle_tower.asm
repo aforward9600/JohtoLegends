@@ -1,6 +1,5 @@
 BattleTowerRoomMenu:
 ; special
-	ld b,b
 	call InitBattleTowerChallengeRAM
 	farcall _BattleTowerRoomMenu
 	ret

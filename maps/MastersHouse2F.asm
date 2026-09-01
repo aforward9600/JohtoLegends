@@ -49,7 +49,6 @@ TrainerDragonKidClair:
 	checkevent EVENT_PASSWORD_STUPID
 	iftrue .CanLoseToClair
 	winlosstext DragonKidClairBeatenText, 0
-;	loadtrainer POKEMANIAC, JARVIS
 	loadtrainer CLAIR, CLAIR1
 	startbattle
 	reloadmapafterbattle

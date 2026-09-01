@@ -582,8 +582,8 @@ CatchHoOhText:
 	text "It looks like"
 	line "@"
 	text_ram wStringBuffer3
-	text "wants you"
-	line "to battle it."
+	text " wants you"
+	cont "to battle it."
 
 	para "I guess it's"
 	line "grateful for"
@@ -688,8 +688,8 @@ HoOhLugiaRoom_MapEvents:
 
 	db 8 ; object events
 	object_event  5,  7, SPRITE_EIN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EinScript, EVENT_HIDEOUT_EIN
-	object_event  4,  1, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_HO_OH
-	object_event  8,  1, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_LUGIA
+	object_event  4,  2, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_HO_OH
+	object_event  8,  2, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_LUGIA
 	object_event  6,  7, SPRITE_RAIKOU, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_RAIKOU
 	object_event  5, 11, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HOOH_LUGIA_ROOM_RIVAL1
 	object_event  4,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, HoOhLugiaRoomRivalScript, EVENT_HOOH_LUGIA_ROOM_RIVAL2

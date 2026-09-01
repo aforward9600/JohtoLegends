@@ -4221,19 +4221,44 @@ PursuitSwitch:
 	ret
 
 .donecheck
+	ld a, [wCurBattleMon]
+	push af
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .doneplayer
-.doneenemy
+	jr nz, .player1
 	farcall EnemySwitchAbilities
+	pop af
+	ld [wCurBattleMon], a
+	xor a
 	jr .done
 
 .doneplayer
+	ld a, [wCurBattleMon]
+	push af
+	ld a, [wLastPlayerMon]
+	ld [wCurBattleMon], a
 	farcall PlayerSwitchAbilities
+	pop af
+	ld [wCurBattleMon], a
+	xor a
 
 .done
 	and a
 	ret
+
+.player1
+	ld a, [wLastPlayerMon]
+	ld [wCurBattleMon], a
+	farcall PlayerSwitchAbilities
+	pop af
+	ld [wCurBattleMon], a
+	xor a
+	jr .done
+
+.doneenemy
+	farcall EnemySwitchAbilities
+	xor a
+	jr .done
 
 RecallPlayerMon:
 	ldh a, [hBattleTurn]

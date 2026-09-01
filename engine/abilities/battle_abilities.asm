@@ -1053,7 +1053,13 @@ CheckBoostingAbilities:
 	jp .AfterMarvelScale
 
 .Multiscale:
-	farcall CheckOpponentFullHP
+	ld hl, wEnemyMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .CheckEnemyHP
+	ld hl, wBattleMonHP
+.CheckEnemyHP
+	call DoCheckFullHPAbilities
 	jp nz, .AfterMarvelScale
 	call FiftyPercentNerf
 	jp .AfterMarvelScale
@@ -2089,6 +2095,18 @@ CheckFullHPAbilities:
 	ld hl, WaterAbsorbText
 	jp StdBattleTextbox
 
+DoCheckFullHPAbilities:
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	ret nz
+	ld a, [hl]
+	cp c
+	ret
+
 BulletproofMoves:
 	dw ACID_SPRAY
 	dw AURA_SPHERE
@@ -2151,6 +2169,10 @@ EnemySwitchAbilities:
 	jp UpdateEnemyMonInParty
 
 PlayerSwitchAbilities:
+	ld a, [wBattleHasJustStarted]
+	and a
+	ret nz
+	ld b,b
 	call CheckNeutralGas
 	ret z
 	ld a, [wPlayerAbility]
@@ -2158,7 +2180,6 @@ PlayerSwitchAbilities:
 	jr z, .PlayerRegeneratorAbility
 	cp NATURAL_CURE
 	ret nz
-;	ld b,b
 ;	ld a, BATTLE_VARS_STATUS
 ;	call GetBattleVarAddr
 ;	and a
@@ -2168,18 +2189,27 @@ PlayerSwitchAbilities:
 ;	xor a
 ;	ld [hl], a
 ;	ret
+	ld a, [wLastPlayerMon]
+	call UpdateBattleMon
 	xor a
 	ld [wBattleMonStatus], a
 	call UpdateBattleMonInParty
 	jp UpdateUserInParty
 
 .PlayerRegeneratorAbility
+	call SetPlayerTurn
+	ld a, [wLastPlayerMon]
+	call UpdateBattleMon
 	ld hl, wBattleMonMaxHP
+	call DoCheckFullHPAbilities
+	ret z
+	ld a, [wLastPlayerMon]
+	call UpdateBattleMon
 	call GetThirdMaxHPAbilities
-	call BattleCommand_SwitchTurnAbilities
+;	call BattleCommand_SwitchTurnAbilities
 	ld hl, wBattleMonMaxHP
 	call RestoreHPAbilities
-	call BattleCommand_SwitchTurnAbilities
+;	call BattleCommand_SwitchTurnAbilities
 	jp UpdateBattleMonInParty
 
 GetMaxHPAbilities:

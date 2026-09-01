@@ -521,7 +521,7 @@ _BuenaRadioText4::
 
 _BuenaRadioText5::
 	text_start
-	line "LyricWulf"
+	line "TriteHexagon"
 	done
 
 _BuenaRadioText6::
