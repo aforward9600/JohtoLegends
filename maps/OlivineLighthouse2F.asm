@@ -158,8 +158,6 @@ IllHealYouLighthouseText:
 	done
 
 OlivineLighthouse2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  3, 11, OLIVINE_LIGHTHOUSE_1F, 3
 	warp_event  5,  3, OLIVINE_LIGHTHOUSE_3F, 2

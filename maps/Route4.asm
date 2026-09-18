@@ -117,8 +117,6 @@ CeruleanCaveSignText:
 	done
 
 Route4_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  2,  5, MOUNT_MOON, 2
 	warp_event 38,  3, CERULEAN_CAVE_1F, 1

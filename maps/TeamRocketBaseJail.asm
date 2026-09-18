@@ -353,8 +353,6 @@ DoorIsUnlockedText:
 	done
 
 TeamRocketBaseJail_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  4,  2, TEAM_ROCKET_BASE_B3F, 5
 

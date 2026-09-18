@@ -189,8 +189,6 @@ IKnowWhatINeedToDoText:
 	done
 
 RivalsHouse2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  7,  0, RIVALS_HOUSE_1F, 3
 

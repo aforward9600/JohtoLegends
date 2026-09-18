@@ -69,8 +69,6 @@ ElmsHousePCText:
 	done
 
 ElmsHouse_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  2,  7, NEW_BARK_TOWN, 3
 	warp_event  3,  7, NEW_BARK_TOWN, 3

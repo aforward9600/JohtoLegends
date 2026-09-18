@@ -17,8 +17,6 @@ IcePathB2FMahoganySideHiddenCarbos:
 	hiddenitem CARBOS, EVENT_ICE_PATH_B2F_MAHOGANY_SIDE_HIDDEN_CARBOS
 
 IcePathB2FMahoganySide_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event 17,  1, ICE_PATH_B1F, 2
 	warp_event  9, 11, ICE_PATH_B3F, 1

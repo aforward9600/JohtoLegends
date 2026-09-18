@@ -157,8 +157,6 @@ NewBarkTownHouseText:
 	done
 
 NewBarkTown_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  6,  3, ELMS_LAB, 1
 	warp_event  3, 11, PLAYERS_NEIGHBORS_HOUSE, 1

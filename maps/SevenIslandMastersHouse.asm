@@ -84,8 +84,6 @@ SevenIslandMasterText2:
 	done
 
 SevenIslandMastersHouse_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  9, SEVEN_ISLAND, 3
 	warp_event  5,  9, SEVEN_ISLAND, 3

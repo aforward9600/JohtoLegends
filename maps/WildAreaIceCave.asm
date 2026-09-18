@@ -29,8 +29,6 @@ WildAreaIceCaveSignText:
 	done
 
 WildAreaIceCave_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  6, 11, WILD_AREA_CAVE, 3
 	warp_event  2,  6, WILD_AREA_6, 1

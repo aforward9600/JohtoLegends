@@ -161,8 +161,6 @@ Route8UndergroundPathSignText:
 	done
 
 Route8_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  4, ROUTE_8_SAFFRON_GATE, 3
 	warp_event  4,  5, ROUTE_8_SAFFRON_GATE, 4

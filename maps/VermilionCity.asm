@@ -202,8 +202,6 @@ VermilionCityLassText:
 	done
 
 VermilionCity_MapEvents:
-	db 0, 0 ; filler
-
 	db 10 ; warp events
 	warp_event  5,  5, VERMILION_FISHING_SPEECH_HOUSE, 1
 	warp_event  9,  5, VERMILION_POKECENTER_1F, 1

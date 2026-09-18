@@ -95,8 +95,6 @@ FiveIslandMenu:
 	db "Vermilion City@"
 
 FiveIslandPort_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  0, FIVE_ISLAND, 1
 	warp_event  5,  0, FIVE_ISLAND, 2

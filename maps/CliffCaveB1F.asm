@@ -11,8 +11,6 @@ CliffCaveB1F_MapScripts:
 	return
 
 CliffCaveB1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  5,  3, CLIFF_CAVE, 5
 	warp_event  5,  9, ROUTE_47, 4

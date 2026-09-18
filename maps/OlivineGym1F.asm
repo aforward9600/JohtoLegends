@@ -298,8 +298,6 @@ OlivineGym1FGuyWinText:
 	done
 
 OlivineGym1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event 12, 13, OLIVINE_CITY, 2
 	warp_event 13, 13, OLIVINE_CITY, 2

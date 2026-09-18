@@ -206,8 +206,6 @@ MewIsCaughtText:
 	done
 
 SilverCaveMewRoom_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  5,  7, SILVER_CAVE_SUMMIT_OUTSIDE, 3
 

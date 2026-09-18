@@ -113,8 +113,6 @@ CeladonDeptStore3FRoughneckText:
 	done
 
 CeladonDeptStore3F_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event 12,  0, CELADON_DEPT_STORE_2F, 1
 	warp_event 15,  0, CELADON_DEPT_STORE_4F, 2

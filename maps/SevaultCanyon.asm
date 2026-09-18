@@ -262,8 +262,6 @@ YoungsterJimmyAfterText:
 	done
 
 SevaultCanyon_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event 19, 67, SEVAULT_CANYON_HOUSE, 1
 

@@ -99,8 +99,6 @@ SproutTower1FStatueText:
 	done
 
 SproutTower1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event  9, 15, VIOLET_CITY, 7
 	warp_event 10, 15, VIOLET_CITY, 7

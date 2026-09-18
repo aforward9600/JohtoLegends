@@ -22,8 +22,6 @@ Route19FuchsiaGateOfficerText:
 	done
 
 Route19FuchsiaGate_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  4,  0, FUCHSIA_CITY, 8
 	warp_event  5,  0, FUCHSIA_CITY, 9

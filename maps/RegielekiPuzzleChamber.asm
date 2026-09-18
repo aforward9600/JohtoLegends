@@ -44,8 +44,6 @@ RegielekiRockText:
 	done
 
 RegielekiPuzzleChamber_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  5,  7, LOST_CAVE_ROOM_9, 4
 	warp_event  5,  1, LOST_CAVE_REGIELEKI, 1

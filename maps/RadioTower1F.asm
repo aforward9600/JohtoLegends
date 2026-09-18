@@ -592,8 +592,6 @@ IllHealYouGoldenrodTowerText:
 	done
 
 RadioTower1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  9, 15, GOLDENROD_CITY, 11
 	warp_event 10, 15, GOLDENROD_CITY, 11

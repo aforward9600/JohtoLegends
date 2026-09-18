@@ -4,8 +4,6 @@ CinnabarPokecenter2FBeta_MapScripts:
 	db 0 ; callbacks
 
 CinnabarPokecenter2FBeta_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  0,  7, CINNABAR_POKECENTER_1F, 3
 

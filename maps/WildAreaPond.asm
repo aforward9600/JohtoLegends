@@ -30,8 +30,6 @@ WildArea3SignText:
 	done
 
 WildAreaPond_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event 11, 7, WILD_AREA_CAVE, 2
 

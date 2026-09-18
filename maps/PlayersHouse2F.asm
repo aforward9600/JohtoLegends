@@ -89,8 +89,6 @@ PlayersHouseBookText:
 	done
 
 PlayersHouse2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  7,  0, PLAYERS_HOUSE_1F, 3
 

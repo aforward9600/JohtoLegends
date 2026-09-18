@@ -39,8 +39,6 @@ GoldenrodUndergroundSwitchRoomEntrances_MapScripts:
 	db 0 ; callbacks
 
 GoldenrodUndergroundSwitchRoomEntrances_MapEvents:
-	db 0, 0 ; filler
-
 	db 9 ; warp events
 	warp_event 23,  3, GOLDENROD_UNDERGROUND, 6
 	warp_event 22, 10, GOLDENROD_UNDERGROUND_WAREHOUSE, 1

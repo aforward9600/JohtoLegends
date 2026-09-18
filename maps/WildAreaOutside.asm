@@ -257,8 +257,6 @@ WildAreaOutsideSignText:
 	done
 
 WildAreaOutside_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  3, 13, WILD_AREA_POKECENTER, 1
 	warp_event 13, 13, WILD_AREA_MART, 1

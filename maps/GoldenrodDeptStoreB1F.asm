@@ -100,8 +100,6 @@ GoldenrodDeptStoreB1FMachokeText:
 	done
 
 GoldenrodDeptStoreB1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event 17,  2, GOLDENROD_CITY, 3
 	warp_event  9,  4, GOLDENROD_DEPT_STORE_ELEVATOR, 1

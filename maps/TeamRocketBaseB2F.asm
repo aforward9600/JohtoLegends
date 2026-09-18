@@ -482,8 +482,6 @@ HaveYouSeenHerText:
 	done
 
 TeamRocketBaseB2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event  3, 14, TEAM_ROCKET_BASE_B1F, 2
 	warp_event  3,  2, TEAM_ROCKET_BASE_B3F, 1

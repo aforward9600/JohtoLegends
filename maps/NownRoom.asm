@@ -42,8 +42,6 @@ AStrangeStatueText:
 	done
 
 NownRoom_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  3, 21, NOWN_PUZZLE_ROOM, 3
 	warp_event  4, 21, NOWN_PUZZLE_ROOM, 3

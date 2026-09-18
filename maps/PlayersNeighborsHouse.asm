@@ -42,8 +42,6 @@ PlayersNeighborText:
 	done
 
 PlayersNeighborsHouse_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  7, NEW_BARK_TOWN, 2
 	warp_event  5,  7, NEW_BARK_TOWN, 2

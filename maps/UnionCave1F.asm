@@ -165,8 +165,6 @@ FirebreatherBlartAfterBattleText:
 	done
 
 UnionCave1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  5, 19, UNION_CAVE_B1F, 3
 	warp_event  3, 33, UNION_CAVE_B1F, 4

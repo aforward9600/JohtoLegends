@@ -636,8 +636,6 @@ YouHaveMissingnoText:
 	done
 
 PokemonMansionB1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event 23, 22, POKEMON_MANSION_1F, 8
 	warp_event  4,  0, CINNABAR_VOLCANO_1F, 1

@@ -54,8 +54,6 @@ SlowpokeWellB2FGymGuyText_GotKingsRock:
 	done
 
 SlowpokeWellB2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  9, 11, SLOWPOKE_WELL_B1F, 2
 

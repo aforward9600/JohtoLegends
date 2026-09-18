@@ -469,8 +469,6 @@ BeatenByronAgainText2:
 	done
 
 OlivineGym4F_MapEvents:
-	db 0, 0 ; filler
-
 	db 0 ; warp events
 
 	db 10 ; coord events

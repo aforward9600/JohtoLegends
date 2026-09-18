@@ -213,8 +213,6 @@ RefusedAirBalloonText:
 	done
 
 GoldenrodDeptStore6F_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event 15,  0, GOLDENROD_DEPT_STORE_5F, 2
 	warp_event  2,  0, GOLDENROD_DEPT_STORE_ELEVATOR, 1

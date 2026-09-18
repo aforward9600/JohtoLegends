@@ -165,8 +165,6 @@ GruntF9AfterBattleText:
 	done
 
 RadioTower4F_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  3,  9, RADIO_TOWER_5F, 1
 	warp_event 11, 15, RADIO_TOWER_3F, 2

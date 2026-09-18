@@ -42,8 +42,6 @@ MovementData_BattleTowerElevatorPlayerWalksIn:
 	step_end
 
 BattleTowerElevator_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  1,  3, BATTLE_TOWER_HALLWAY, 1
 	warp_event  2,  3, BATTLE_TOWER_HALLWAY, 1

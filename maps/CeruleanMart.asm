@@ -51,8 +51,6 @@ CeruleanMart_CooltrainerFText2:
 	done
 
 CeruleanMart_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  2,  7, CERULEAN_CITY, 5
 	warp_event  3,  7, CERULEAN_CITY, 5

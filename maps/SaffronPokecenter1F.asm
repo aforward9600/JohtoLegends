@@ -134,8 +134,6 @@ SaffronPokecenter1FPokefanMText2:
 	done
 
 SaffronPokecenter1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  3,  7, SAFFRON_CITY, 4
 	warp_event  4,  7, SAFFRON_CITY, 4

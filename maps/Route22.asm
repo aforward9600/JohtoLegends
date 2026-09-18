@@ -89,8 +89,6 @@ VictoryRoadEntranceSignText:
 	done
 
 Route22_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event 13,  5, VICTORY_ROAD_GATE, 1
 

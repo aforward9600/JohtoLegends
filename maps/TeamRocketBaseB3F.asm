@@ -484,8 +484,6 @@ NinjaBookText:
 	done
 
 TeamRocketBaseB3F_MapEvents:
-	db 0, 0 ; filler
-
 	db 6 ; warp events
 	warp_event  3,  2, TEAM_ROCKET_BASE_B2F, 2
 	warp_event 27,  2, TEAM_ROCKET_BASE_B2F, 3

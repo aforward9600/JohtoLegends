@@ -27,8 +27,6 @@ SevenIslandMartDragonTamerMText:
 	done
 
 SevenIslandMart_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  2,  7, SEVEN_ISLAND, 5
 	warp_event  3,  7, SEVEN_ISLAND, 5

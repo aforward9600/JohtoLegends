@@ -4,8 +4,6 @@ RuinsOfAlphHoOhWordRoom_MapScripts:
 	db 0 ; callbacks
 
 RuinsOfAlphHoOhWordRoom_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  9,  9, RUINS_OF_ALPH_HO_OH_ITEM_ROOM, 3
 	warp_event 10,  9, RUINS_OF_ALPH_HO_OH_ITEM_ROOM, 4

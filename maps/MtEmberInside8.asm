@@ -10,8 +10,6 @@ MtEmberInside8_MapScripts:
 	db 0 ; callbacks
 
 MtEmberInside8_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event  3,  5, MT_EMBER_INSIDE_7, 2
 	warp_event  5, 17, MT_EMBER_INSIDE_9, 1

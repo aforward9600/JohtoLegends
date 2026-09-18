@@ -302,8 +302,6 @@ FlintAfterRematchText:
 	done
 
 PewterGym_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4, 13, PEWTER_CITY, 2
 	warp_event  5, 13, PEWTER_CITY, 2

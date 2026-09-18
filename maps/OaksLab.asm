@@ -343,8 +343,6 @@ OakBeatText:
 	done
 
 OaksLab_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4, 11, PALLET_TOWN, 3
 	warp_event  5, 11, PALLET_TOWN, 3

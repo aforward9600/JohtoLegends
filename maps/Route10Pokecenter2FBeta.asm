@@ -4,8 +4,6 @@ Route10Pokecenter2FBeta_MapScripts:
 	db 0 ; callbacks
 
 Route10Pokecenter2FBeta_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  0,  7, ROUTE_10_POKECENTER_1F, 3
 

@@ -58,8 +58,6 @@ Route17Route18GateCannotPassText:
 	done
 
 Route17Route18Gate_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  0,  4, ROUTE_17, 1
 	warp_event  0,  5, ROUTE_17, 2

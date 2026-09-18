@@ -21,8 +21,6 @@ Route36VioletGateOfficerText:
 	done
 
 Route36VioletGate_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  9,  4, VIOLET_CITY, 10
 	warp_event  9,  5, VIOLET_CITY, 11

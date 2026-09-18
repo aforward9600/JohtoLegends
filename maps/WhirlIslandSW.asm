@@ -10,8 +10,6 @@ WhirlIslandSWUltraBall:
 	itemball ULTRA_BALL
 
 WhirlIslandSW_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event  5,  7, ROUTE_41, 3
 	warp_event 17,  3, WHIRL_ISLAND_B1F, 5

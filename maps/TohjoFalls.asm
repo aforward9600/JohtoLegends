@@ -10,8 +10,6 @@ TohjoFallsLuckyEgg:
 	itemball LUCKY_EGG
 
 TohjoFalls_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event 13, 15, ROUTE_27, 2
 	warp_event 25, 15, ROUTE_27, 3

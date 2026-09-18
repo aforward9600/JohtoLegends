@@ -141,8 +141,6 @@ PowerPlantEngineerText2:
 	done
 
 PowerPlant_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  4, 35, ROUTE_10_NORTH, 2
 	warp_event  5, 35, ROUTE_10_NORTH, 2

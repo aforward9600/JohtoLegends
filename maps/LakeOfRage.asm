@@ -484,8 +484,6 @@ LakeOfRageMovingSignText:
 	done
 
 LakeOfRage_MapEvents:
-	db 0, 0 ; filler
-
 	db 6 ; warp events
 	warp_event 21,  5, LAKE_OF_RAGE_HIDDEN_POWER_HOUSE, 1
 	warp_event 35, 29, LAKE_OF_RAGE_MAGIKARP_HOUSE, 1

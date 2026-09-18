@@ -154,8 +154,6 @@ RuinsOfAlphInnerChamberScientistText2:
 	done
 
 RuinsOfAlphInnerChamber_MapEvents:
-	db 0, 0 ; filler
-
 	db 11 ; warp events
 	warp_event 10, 13, RUINS_OF_ALPH_OUTSIDE, 5
 	warp_event  3, 15, RUINS_OF_ALPH_HO_OH_CHAMBER, 3

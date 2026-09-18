@@ -22,8 +22,6 @@ LighthouseElevatorData:
 	db -1 ; end
 
 LighthouseElevator_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  1,  3, OLIVINE_LIGHTHOUSE_1F, -1
 	warp_event  2,  3, OLIVINE_LIGHTHOUSE_1F, -1

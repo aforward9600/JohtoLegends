@@ -170,8 +170,6 @@ BurglarHarryAfterBattleText:
 	done
 
 PokemonMansion3F_MapEvents:
-	db 0, 0 ; filler
-
 	db 6 ; warp events
 	warp_event  7, 10, POKEMON_MANSION_2F, 2
 	warp_event  6,  1, POKEMON_MANSION_2F, 3

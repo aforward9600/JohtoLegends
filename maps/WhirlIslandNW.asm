@@ -4,8 +4,6 @@ WhirlIslandNW_MapScripts:
 	db 0 ; callbacks
 
 WhirlIslandNW_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  5,  7, ROUTE_41, 1
 	warp_event  5,  3, WHIRL_ISLAND_B1F, 1

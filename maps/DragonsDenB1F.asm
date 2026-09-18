@@ -203,8 +203,6 @@ PlayerReceivedRattataDollText:
 	done
 
 DragonsDenB1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event 20,  3, DRAGONS_DEN_1F, 3
 	warp_event 19, 29, DRAGON_SHRINE, 1

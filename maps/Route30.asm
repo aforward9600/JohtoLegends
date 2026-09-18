@@ -198,8 +198,6 @@ MrPokemonsHouseSignText:
 	done
 
 Route30_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  7, 39, ROUTE_30_BERRY_HOUSE, 1
 	warp_event 17,  5, MR_POKEMONS_HOUSE, 1

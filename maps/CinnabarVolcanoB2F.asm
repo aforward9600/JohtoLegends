@@ -73,8 +73,6 @@ GotFlameDownText:
 	done
 
 CinnabarVolcanoB2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  5, 17, CINNABAR_VOLCANO_B1F, 2
 

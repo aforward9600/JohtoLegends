@@ -31,8 +31,6 @@ RuinsOfAlphKabutoItemRoomAncientReplicaText:
 	done
 
 RuinsOfAlphKabutoItemRoom_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  3,  9, RUINS_OF_ALPH_KABUTO_CHAMBER, 5
 	warp_event  4,  9, RUINS_OF_ALPH_KABUTO_CHAMBER, 5

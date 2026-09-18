@@ -17,8 +17,6 @@ CeruleanCave1FHiddenRareCandy:
 	hiddenitem RARE_CANDY, EVENT_CERULEAN_CAVE_HIDDEN_RARE_CANDY
 
 CeruleanCave1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 8 ; warp events
 	warp_event 27, 19, ROUTE_4, 2
 	warp_event  2,  8, CERULEAN_CAVE_B1F, 1

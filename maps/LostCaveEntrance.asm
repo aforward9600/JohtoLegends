@@ -6,8 +6,6 @@ LostCaveEntrance_MapScripts:
 	db 0 ; callbacks
 
 LostCaveEntrance_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  5,  7, RESORT_GORGEOUS, 2
 	warp_event  5,  5, LOST_CAVE_ROOM_1, 5

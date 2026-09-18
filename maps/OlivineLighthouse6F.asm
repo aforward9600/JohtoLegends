@@ -630,8 +630,6 @@ KeepingRosaCompanyText:
 	done
 
 OlivineLighthouse6F_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  8,  1, LIGHTHOUSE_ELEVATOR, 1
 	warp_event  9, 15, OLIVINE_LIGHTHOUSE_5F, 1

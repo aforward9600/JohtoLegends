@@ -36,8 +36,6 @@ VermilionMartBuenaText:
 	done
 
 VermilionMart_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  2,  7, VERMILION_CITY, 5
 	warp_event  3,  7, VERMILION_CITY, 5

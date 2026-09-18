@@ -112,8 +112,6 @@ Lighthouse3FOfficerText:
 	done
 
 OlivineLighthouse3F_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event 13,  3, OLIVINE_LIGHTHOUSE_4F, 1
 	warp_event  5,  3, OLIVINE_LIGHTHOUSE_2F, 2

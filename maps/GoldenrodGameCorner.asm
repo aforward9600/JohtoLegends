@@ -515,8 +515,6 @@ CannotGetPrizeText:
 	done
 
 GoldenrodGameCorner_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  2, 13, GOLDENROD_CITY, 10
 	warp_event  3, 13, GOLDENROD_CITY, 10

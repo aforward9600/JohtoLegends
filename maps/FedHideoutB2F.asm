@@ -129,8 +129,6 @@ RoughneckCameronAfterText:
 	done
 
 FedHideoutB2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event 27,  2, FED_HIDEOUT_B1F, 2
 	warp_event 21, 16, FED_HIDEOUT_B1F, 5

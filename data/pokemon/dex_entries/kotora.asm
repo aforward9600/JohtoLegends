@@ -1,7 +1,7 @@
 	db "Rotund@" ; species name
 	dw 203, 470 ; height, weight
 
-	db   "When charged up"
+	db   "When charged up,"
 	next "its fur crackles"
 	next "like lightning."
 

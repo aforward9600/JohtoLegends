@@ -298,8 +298,6 @@ SwimmerfWendyAfterBattleText:
 	done
 
 Route41_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event 12, 17, WHIRL_ISLAND_NW, 1
 	warp_event 36, 19, WHIRL_ISLAND_NE, 1

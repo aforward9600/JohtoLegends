@@ -62,8 +62,6 @@ PlayerMovesLeftDracoScene:
 	step_end
 
 DracoScene_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  6,  4, HO_OH_TOWER_SCENE, 2
 	warp_event  4,  9, DAHLIA_SCENE, 3

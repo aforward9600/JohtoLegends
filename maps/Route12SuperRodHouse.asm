@@ -35,8 +35,6 @@ GaveSuperRodText:
 	done
 
 Route12SuperRodHouse_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  7, ROUTE_12, 1
 	warp_event  5,  7, ROUTE_12, 1

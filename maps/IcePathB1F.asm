@@ -256,8 +256,6 @@ BoarderBrodyAfterText:
 	done
 
 IcePathB1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  3, 15, ICE_PATH_1F, 3
 	warp_event  5, 25, ICE_PATH_1F, 4

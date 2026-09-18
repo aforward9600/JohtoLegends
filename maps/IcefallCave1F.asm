@@ -12,8 +12,6 @@ IcefallCave1FUltraBall:
 	itemball ULTRA_BALL
 
 IcefallCave1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 10 ; warp events
 	warp_event  4, 15, ICEFALL_CAVE_ENTRANCE, 2
 	warp_event  3,  7, ICEFALL_CAVE_ENTRANCE, 3

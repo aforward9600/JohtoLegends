@@ -172,8 +172,6 @@ NotEnoughMoneyPeatBlock:
 	done
 
 MountMoonGiftShop_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  9,  7, MOUNT_MOON_SQUARE, 3
 	warp_event 10,  7, MOUNT_MOON_SQUARE, 3

@@ -312,8 +312,6 @@ CeruleanCityFisherText2:
 	done
 
 CeruleanCity_MapEvents:
-	db 0, 0 ; filler
-
 	db 6 ; warp events
 	warp_event  7, 15, CERULEAN_GYM_BADGE_SPEECH_HOUSE, 1
 	warp_event 13, 19, CERULEAN_TRADE_SPEECH_HOUSE, 1

@@ -294,8 +294,6 @@ LetsGoText:
 	done
 
 RadioTower5F_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  7, 17, RADIO_TOWER_4F, 1
 

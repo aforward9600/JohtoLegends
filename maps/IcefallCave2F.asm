@@ -12,8 +12,6 @@ IcefallCave2FFullRestore:
 	itemball FULL_RESTORE
 
 IcefallCave2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 7 ; warp events
 	warp_event  4,  4, ICEFALL_CAVE_1F, 4
 	warp_event  5,  7, ICEFALL_CAVE_1F, 5

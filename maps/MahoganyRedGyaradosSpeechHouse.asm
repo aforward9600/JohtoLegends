@@ -80,8 +80,6 @@ MahoganyRedGyaradosSpeechHouseHeracrossText:
 	done
 
 MahoganyRedGyaradosSpeechHouse_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  7, MAHOGANY_TOWN, 2
 	warp_event  5,  7, MAHOGANY_TOWN, 2

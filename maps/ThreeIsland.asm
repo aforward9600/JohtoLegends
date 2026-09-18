@@ -52,8 +52,6 @@ ThreeIslandSignText:
 	done
 
 ThreeIsland_MapEvents:
-	db 0, 0 ; filler
-
 	db 9 ; warp events
 	warp_event 13, 47, THREE_ISLAND_PORT, 1
 	warp_event 14, 47, THREE_ISLAND_PORT, 2

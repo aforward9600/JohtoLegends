@@ -49,8 +49,6 @@ Red:
 	done
 
 SilverCaveRoom3_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  9, 33, SILVER_CAVE_ROOM_2, 2
 

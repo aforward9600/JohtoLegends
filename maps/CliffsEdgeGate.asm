@@ -58,8 +58,6 @@ CliffsEdgeGateSignText:
 	done
 
 CliffsEdgeGate_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event 21,  7, CIANWOOD_CITY, 8
 	warp_event 13,  5, CLIFFS_EDGE_GATE, 3

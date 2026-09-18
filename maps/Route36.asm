@@ -377,8 +377,6 @@ Route36TrainerTips2Text:
 	done
 
 Route36_MapEvents:
-	db 0, 0 ; filler
-
 	db 6 ; warp events
 	warp_event 18,  8, ROUTE_36_NATIONAL_PARK_GATE, 3
 	warp_event 18,  9, ROUTE_36_NATIONAL_PARK_GATE, 4

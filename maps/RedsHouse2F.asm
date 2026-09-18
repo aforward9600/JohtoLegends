@@ -15,8 +15,6 @@ RedsHouse2FN64Text:
 	done
 
 RedsHouse2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  7,  0, REDS_HOUSE_1F, 3
 

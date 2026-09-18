@@ -77,8 +77,6 @@ SproutTower2FStatueText:
 	done
 
 SproutTower2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  6,  4, SPROUT_TOWER_1F, 3
 	warp_event  2,  6, SPROUT_TOWER_1F, 4

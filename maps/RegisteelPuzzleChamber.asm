@@ -44,8 +44,6 @@ RegisteelRockText:
 	done
 
 RegisteelPuzzleChamber_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  7,  5, DOTTED_HOLE_ENTRANCE, 3
 	warp_event  5,  1, REGISTEEL_CHAMBER, 1

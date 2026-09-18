@@ -158,8 +158,6 @@ FlorinaScript_FlorinaBeforeText2:
 	done
 
 WillsRoom_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  5, 17, INDIGO_PLATEAU_POKECENTER_1F, 3
 	warp_event  4,  2, KOGAS_ROOM, 1

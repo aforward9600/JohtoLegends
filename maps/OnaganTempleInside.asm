@@ -87,8 +87,6 @@ OnaganTemplePillarText:
 	done
 
 OnaganTempleInside_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  3,  9, ONAGAN_TEMPLE_OUTSIDE, 1
 	warp_event  4,  9, ONAGAN_TEMPLE_OUTSIDE, 1

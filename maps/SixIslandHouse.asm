@@ -34,8 +34,6 @@ SixIslandHouseBurglarText:
 	done
 
 SixIslandHouse_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  7, SIX_ISLAND, 5
 	warp_event  5,  7, SIX_ISLAND, 5

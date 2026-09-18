@@ -673,23 +673,19 @@ EinComputerText:
 	done
 
 HoOhLugiaRoom_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  5, 11, ROCKET_LAIR_HALLWAY_1, 3
 	warp_event  6, 11, ROCKET_LAIR_HALLWAY_1, 3
 
 	db 0 ; coord events
 
-	db 3 ; bg events
-	bg_event  4,  2, BGEVENT_READ, HoOhTank
-	bg_event  8,  2, BGEVENT_READ, LugiaTank
+	db 1 ; bg events
 	bg_event  5,  6, BGEVENT_READ, EinComputer
 
 	db 8 ; object events
 	object_event  5,  7, SPRITE_EIN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EinScript, EVENT_HIDEOUT_EIN
-	object_event  4,  2, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_HO_OH
-	object_event  8,  2, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_LUGIA
+	object_event  4,  2, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, HoOhTank, EVENT_HIDEOUT_HO_OH
+	object_event  8,  2, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LugiaTank, EVENT_HIDEOUT_LUGIA
 	object_event  6,  7, SPRITE_RAIKOU, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_RAIKOU
 	object_event  5, 11, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HOOH_LUGIA_ROOM_RIVAL1
 	object_event  4,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, HoOhLugiaRoomRivalScript, EVENT_HOOH_LUGIA_ROOM_RIVAL2

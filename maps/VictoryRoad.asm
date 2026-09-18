@@ -32,8 +32,6 @@ VictoryRoadHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_VICTORY_ROAD_HIDDEN_FULL_HEAL
 
 VictoryRoad_MapEvents:
-	db 0, 0 ; filler
-
 	db 10 ; warp events
 	warp_event  9, 67, VICTORY_ROAD_GATE, 5
 	warp_event  1, 49, VICTORY_ROAD, 3

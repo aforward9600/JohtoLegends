@@ -18,8 +18,6 @@ CeruleanCave2FUltraBall:
 	itemball ULTRA_BALL
 
 CeruleanCave2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 6 ; warp events
 	warp_event  3,  5, CERULEAN_CAVE_1F, 3
 	warp_event 11,  3, CERULEAN_CAVE_1F, 4

@@ -257,8 +257,6 @@ TohjoFallsSignText:
 	done
 
 Route27_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event 33,  7, ROUTE_27_SANDSTORM_HOUSE, 1
 	warp_event 26,  5, TOHJO_FALLS, 1

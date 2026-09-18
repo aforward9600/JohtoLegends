@@ -118,8 +118,6 @@ VermilionPortText:
 	done
 
 OneIslandPort_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  0, ONE_ISLAND, 1
 	warp_event  5,  0, ONE_ISLAND, 2

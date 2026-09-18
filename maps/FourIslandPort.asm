@@ -95,8 +95,6 @@ FourIslandMenu:
 	db "Vermilion City@"
 
 FourIslandPort_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  0, FOUR_ISLAND, 1
 	warp_event  5,  0, FOUR_ISLAND, 2

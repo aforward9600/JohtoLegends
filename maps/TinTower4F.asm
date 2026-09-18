@@ -51,8 +51,6 @@ GruntMAfterText:
 	done
 
 TinTower4F_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  2,  4, TIN_TOWER_5F, 2
 	warp_event 16,  2, TIN_TOWER_3F, 2

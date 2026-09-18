@@ -74,8 +74,6 @@ ResortGorgeousSignText:
 	done
 
 ResortGorgeous_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event 25,  9, SELPHYS_HOUSE, 1
 	warp_event 42,  9, LOST_CAVE_ENTRANCE, 1

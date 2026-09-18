@@ -420,8 +420,6 @@ MasterPostGameText:
 	done
 
 BlackthornGym1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 7 ; warp events
 	warp_event  4, 17, BLACKTHORN_CITY, 1
 	warp_event  5, 17, BLACKTHORN_CITY, 1

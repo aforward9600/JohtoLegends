@@ -51,8 +51,6 @@ SixIslandSignText:
 	done
 
 SixIsland_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event  7, 19, SIX_ISLAND_PORT, 1
 	warp_event  8, 19, SIX_ISLAND_PORT, 2

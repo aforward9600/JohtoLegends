@@ -111,8 +111,6 @@ BikerSpikeAfterText:
 	done
 
 FedHideout1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event 14, 13, CELADON_CITY, 6
 	warp_event 15, 13, CELADON_CITY, 6

@@ -421,8 +421,6 @@ ClairRematchAfterText:
 	done
 
 MastersHouse2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  4,  1, MASTERS_HOUSE_1F, 3
 

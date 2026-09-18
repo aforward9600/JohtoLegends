@@ -1334,8 +1334,6 @@ ChoseKabutoText:
 	done
 
 MastersHouse1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  4, 13, BLACKTHORN_CITY, 10
 	warp_event  5, 13, BLACKTHORN_CITY, 10

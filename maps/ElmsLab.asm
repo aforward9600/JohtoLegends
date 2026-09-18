@@ -480,8 +480,6 @@ ElmsLabPCText:
 	done
 
 ElmsLab_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4, 11, NEW_BARK_TOWN, 1
 	warp_event  5, 11, NEW_BARK_TOWN, 1

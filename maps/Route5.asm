@@ -26,8 +26,6 @@ Route5UndergroundPathSignText:
 	done
 
 Route5_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event 17, 15, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, 1
 	warp_event  8, 17, ROUTE_5_SAFFRON_GATE, 1

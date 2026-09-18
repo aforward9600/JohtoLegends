@@ -4,8 +4,6 @@ ViridianPokecenter2FBeta_MapScripts:
 	db 0 ; callbacks
 
 ViridianPokecenter2FBeta_MapEvents:
-	db 0, 0 ; filler
-
 	db 0 ; warp events
 
 	db 0 ; coord events

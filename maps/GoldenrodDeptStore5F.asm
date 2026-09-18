@@ -175,8 +175,6 @@ GoldenrodDeptStore5FDirectoryText:
 	done
 
 GoldenrodDeptStore5F_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event 12,  0, GOLDENROD_DEPT_STORE_4F, 1
 	warp_event 15,  0, GOLDENROD_DEPT_STORE_6F, 1

@@ -88,8 +88,6 @@ DarkCaveNewEntranceHikerText2:
 	done
 
 DarkCaveNewEntrance_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  5,  3, ROUTE_45, 1
 	warp_event  9,  3, DARK_CAVE_BLACKTHORN_ENTRANCE, 1

@@ -32,8 +32,6 @@ Route7SaffronGuardSeriousText:
 	done
 
 Route7SaffronGate_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  0,  4, ROUTE_7, 1
 	warp_event  0,  5, ROUTE_7, 2

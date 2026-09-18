@@ -53,8 +53,6 @@ SeafoamIsland1FBoulderFellText:
 	done
 
 SeafoamIsland1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 7 ; warp events
 	warp_event 26, 15, ROUTE_20, 1
 	warp_event  4, 15, ROUTE_20, 3

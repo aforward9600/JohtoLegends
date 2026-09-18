@@ -45,8 +45,6 @@ Route32RuinsOfAlphGateYoungsterText:
 	done
 
 Route32RuinsOfAlphGate_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  0,  4, RUINS_OF_ALPH_OUTSIDE, 10
 	warp_event  0,  5, RUINS_OF_ALPH_OUTSIDE, 11

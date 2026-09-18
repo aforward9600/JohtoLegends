@@ -124,8 +124,6 @@ Lighthouse4FCooltrainerFText:
 	done
 
 OlivineLighthouse4F_MapEvents:
-	db 0, 0 ; filler
-
 	db 7 ; warp events
 	warp_event 13,  3, OLIVINE_LIGHTHOUSE_3F, 1
 	warp_event  3,  5, OLIVINE_LIGHTHOUSE_5F, 2

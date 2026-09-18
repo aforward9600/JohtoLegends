@@ -111,8 +111,6 @@ Route2LassText:
 	done
 
 Route2_MapEvents:
-	db 0, 0 ; filler
-
 	db 9 ; warp events
 	warp_event 15, 15, ROUTE_2_NUGGET_HOUSE, 1
 	warp_event 15, 31, ROUTE_2_GATE, 3

@@ -702,8 +702,6 @@ BikerBlunoAfterText:
 	done
 
 FedHideoutB4F_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event 11, 10, FED_HIDEOUT_B3F, 2
 	warp_event 16, 15, FED_HIDEOUT_ELEVATOR, 1

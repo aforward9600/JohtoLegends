@@ -239,8 +239,6 @@ DeptStore1FLuckyNumberNoRoomForYourPrizeText:
 	done
 
 GoldenrodDeptStore1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  7,  7, GOLDENROD_CITY, 9
 	warp_event  8,  7, GOLDENROD_CITY, 9

@@ -423,8 +423,6 @@ GoldenrodCityBerryCafeSignText:
 	done
 
 GoldenrodCity_MapEvents:
-	db 0, 0 ; filler
-
 	db 14 ; warp events
 	warp_event 24,  7, GOLDENROD_GYM, 1
 	warp_event 29, 29, GOLDENROD_BIKE_SHOP, 1

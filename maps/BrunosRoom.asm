@@ -185,8 +185,6 @@ MarthaScript_MarthaBeforeText2:
 	done
 
 BrunosRoom_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  4, 17, KOGAS_ROOM, 3
 	warp_event  5, 17, KOGAS_ROOM, 4

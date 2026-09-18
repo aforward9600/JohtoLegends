@@ -64,8 +64,6 @@ PlayerMovesRightDahliaScene:
 	step_end
 
 DahliaScene_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  4,  4, HO_OH_TOWER_SCENE, 2
 	warp_event  6,  9, DRACO_SCENE, 3

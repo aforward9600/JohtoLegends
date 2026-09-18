@@ -107,8 +107,6 @@ ImEatingHereText:
 	done
 
 RocketLairBreakRoom_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  7, ROCKET_LAIR_HALLWAY_1, 4
 	warp_event  5,  7, ROCKET_LAIR_HALLWAY_1, 4

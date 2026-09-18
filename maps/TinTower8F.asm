@@ -18,8 +18,6 @@ TinTower8FFullRestore:
 	itemball FULL_RESTORE
 
 TinTower8F_MapEvents:
-	db 0, 0 ; filler
-
 	db 6 ; warp events
 	warp_event  2,  5, TIN_TOWER_7F, 2
 	warp_event  2, 11, TIN_TOWER_9F, 1

@@ -154,8 +154,6 @@ Route34IlexForestGateLassText:
 	done
 
 Route34IlexForestGate_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  4,  0, ROUTE_34, 1
 	warp_event  5,  0, ROUTE_34, 2

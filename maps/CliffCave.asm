@@ -22,8 +22,6 @@ CliffCaveSuperNerdText:
 	done
 
 CliffCave_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event  5,  5, ROUTE_47, 2
 	warp_event  3,  3, CLIFF_CAVE, 3

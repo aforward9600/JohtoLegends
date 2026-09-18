@@ -44,8 +44,6 @@ RegirockRockText:
 	done
 
 RegirockPuzzleChamber_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  5,  7, ALTERING_CAVE, 2
 	warp_event  5,  1, REGIROCK_CHAMBER, 1

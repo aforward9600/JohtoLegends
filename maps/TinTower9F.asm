@@ -58,8 +58,6 @@ TinTower9FArcherAfterText:
 	done
 
 TinTower9F_MapEvents:
-	db 0, 0 ; filler
-
 	db 7 ; warp events
 	warp_event 12,  3, TIN_TOWER_8F, 2
 	warp_event  2,  5, TIN_TOWER_8F, 3

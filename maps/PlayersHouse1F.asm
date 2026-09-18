@@ -660,8 +660,6 @@ GrandmaCongratsText:
 	done
 
 PlayersHouse1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 ;	warp_event  6,  7, HO_OH_LUGIA_ROOM, 1
 	warp_event  6,  7, BLACKTHORN_CITY, 9

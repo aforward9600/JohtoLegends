@@ -239,8 +239,6 @@ Lighthouse1FOfficerText:
 	done
 
 OlivineLighthouse1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event 10, 17, OLIVINE_CITY, 8
 	warp_event 11, 17, OLIVINE_CITY, 8

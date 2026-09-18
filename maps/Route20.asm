@@ -143,8 +143,6 @@ CooltrainerFTerraAfterBattleText:
 	done
 
 Route20_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event 38,  7, SEAFOAM_ISLAND_1F, 1
 	warp_event  0,  2, GLITCH_CITY, 1

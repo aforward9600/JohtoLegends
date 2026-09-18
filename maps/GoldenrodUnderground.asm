@@ -648,8 +648,6 @@ GoldenrodUndergroundNoEntryText:
 	done
 
 GoldenrodUnderground_MapEvents:
-	db 0, 0 ; filler
-
 	db 6 ; warp events
 	warp_event  3,  2, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 7
 	warp_event  3, 34, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 4

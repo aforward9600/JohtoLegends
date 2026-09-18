@@ -64,6 +64,18 @@ DoPoisonStep::
 	and 1 << PSN
 	ret z
 
+	ld a, MON_CAUGHTTIME
+	call GetPartyParamLocation
+	push hl
+	ld a, MON_SPECIES
+	call GetPartyParamLocation
+	ld a, [hl]
+	ld c, a
+	pop hl
+	call GetAbility
+	cp POISON_HEAL
+	ret z
+
 ; check if mon is already fainted, return if so
 	ld a, MON_HP
 	call GetPartyParamLocation

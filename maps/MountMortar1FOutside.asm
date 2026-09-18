@@ -17,8 +17,6 @@ MountMortar1FOutsideHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_MOUNT_MORTAR_1F_OUTSIDE_HIDDEN_HYPER_POTION
 
 MountMortar1FOutside_MapEvents:
-	db 0, 0 ; filler
-
 	db 11 ; warp events
 	warp_event  3, 33, ROUTE_42, 3
 	warp_event 17, 33, ROUTE_42, 4

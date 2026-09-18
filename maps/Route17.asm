@@ -137,8 +137,6 @@ BikerCharlesAfterBattleText:
 	done
 
 Route17_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event 17, 82, ROUTE_17_ROUTE_18_GATE, 1
 	warp_event 17, 83, ROUTE_17_ROUTE_18_GATE, 2

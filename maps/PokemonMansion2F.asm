@@ -159,8 +159,6 @@ PokemonMansion2FScientist2Text:
 	done
 
 PokemonMansion2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  5, 10, POKEMON_MANSION_1F, 7
 	warp_event  7, 10, POKEMON_MANSION_3F, 1

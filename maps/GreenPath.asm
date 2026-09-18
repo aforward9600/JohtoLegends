@@ -97,8 +97,6 @@ GreenPathSignText:
 	done
 
 GreenPath_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event 67, 13, GREEN_PATH_HOUSE_1, 1
 	warp_event 73, 17, GREEN_PATH_HOUSE_2, 1

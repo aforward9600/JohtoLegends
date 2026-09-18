@@ -4,8 +4,6 @@ RuinsOfAlphAerodactylWordRoom_MapScripts:
 	db 0 ; callbacks
 
 RuinsOfAlphAerodactylWordRoom_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  9,  5, RUINS_OF_ALPH_AERODACTYL_ITEM_ROOM, 3
 	warp_event 10,  5, RUINS_OF_ALPH_AERODACTYL_ITEM_ROOM, 4

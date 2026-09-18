@@ -69,8 +69,6 @@ Route10SignText:
 	done
 
 Route10South_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  6,  1, ROCK_TUNNEL_1F, 2
 

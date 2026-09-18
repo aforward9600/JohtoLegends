@@ -174,8 +174,6 @@ SurgeScript_SurgeBeforeText2:
 	done
 
 KogasRoom_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  4, 17, WILLS_ROOM, 2
 	warp_event  5, 17, WILLS_ROOM, 3

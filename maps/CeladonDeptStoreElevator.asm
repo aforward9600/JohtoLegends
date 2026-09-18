@@ -26,8 +26,6 @@ CeladonDeptStoreElevatorData:
 	db -1 ; end
 
 CeladonDeptStoreElevator_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  1,  3, CELADON_DEPT_STORE_1F, -1
 	warp_event  2,  3, CELADON_DEPT_STORE_1F, -1

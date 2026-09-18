@@ -29,8 +29,6 @@ IlexForestAzaleaGateGrannyText:
 	done
 
 IlexForestAzaleaGate_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  0,  4, ILEX_FOREST, 2
 	warp_event  0,  5, ILEX_FOREST, 3

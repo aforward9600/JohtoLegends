@@ -234,8 +234,6 @@ Route47SuperNerdText:
 	done
 
 Route47_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event 67, 21, CLIFFS_EDGE_GATE, 4
 	warp_event 53, 21, CLIFF_CAVE, 1

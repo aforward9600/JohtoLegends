@@ -25,8 +25,6 @@ CinnabarVolcanoB1FNugget:
 	itemball NUGGET
 
 CinnabarVolcanoB1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  3,  3, CINNABAR_VOLCANO_1F, 2
 	warp_event 11,  3, CINNABAR_VOLCANO_B2F, 1

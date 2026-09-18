@@ -75,8 +75,6 @@ BattleTowerHallway_MapScripts:
 	end
 
 BattleTowerHallway_MapEvents:
-	db 0, 0 ; filler
-
 	db 6 ; warp events
 	warp_event 11,  1, BATTLE_TOWER_ELEVATOR, 1
 	warp_event  5,  0, BATTLE_TOWER_BATTLE_ROOM, 1

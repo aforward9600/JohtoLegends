@@ -155,8 +155,6 @@ SilverCaveRadioText3:
 	done
 
 SilverCaveRestRoom_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  5,  5, SILVER_CAVE_ROOM_2, 3
 

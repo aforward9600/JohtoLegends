@@ -177,8 +177,6 @@ Lighthouse5FTwinText:
 	done
 
 OlivineLighthouse5F_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  9, 15, OLIVINE_LIGHTHOUSE_6F, 2
 	warp_event  3,  5, OLIVINE_LIGHTHOUSE_4F, 2

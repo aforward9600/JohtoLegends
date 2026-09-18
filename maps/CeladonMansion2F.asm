@@ -69,8 +69,6 @@ CeladonMansion2FMeetingRoomSignText:
 	done
 
 CeladonMansion2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  0,  0, CELADON_MANSION_1F, 4
 	warp_event  1,  0, CELADON_MANSION_3F, 2

@@ -79,8 +79,6 @@ GoldenrodDeptStore4FDirectoryText:
 	done
 
 GoldenrodDeptStore4F_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event 12,  0, GOLDENROD_DEPT_STORE_5F, 1
 	warp_event 15,  0, GOLDENROD_DEPT_STORE_3F, 2

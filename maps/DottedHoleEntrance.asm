@@ -6,8 +6,6 @@ DottedHoleEntrance_MapScripts:
 	db 0 ; callbacks
 
 DottedHoleEntrance_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  5,  9, RUIN_VALLEY, 1
 	warp_event  5,  5, DOTTED_HOLE_B1F, 1

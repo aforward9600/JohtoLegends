@@ -56,8 +56,6 @@ IWantMommyText:
 	done
 
 BurnedTower2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  5, 13, BURNED_TOWER_1F, 4
 

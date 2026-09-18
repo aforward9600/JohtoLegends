@@ -421,8 +421,6 @@ CamperGarretYesText:
 	done
 
 Route43_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event  9, 51, ROUTE_43_MAHOGANY_GATE, 1
 	warp_event 10, 51, ROUTE_43_MAHOGANY_GATE, 2

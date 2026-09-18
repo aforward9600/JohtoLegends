@@ -268,8 +268,6 @@ SuperNerdText_FedsGone:
 	done
 
 CeladonCafe_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  6,  7, CELADON_CITY, 8
 	warp_event  7,  7, CELADON_CITY, 8

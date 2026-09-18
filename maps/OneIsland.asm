@@ -30,8 +30,6 @@ OneIslandGrampsText:
 	done
 
 OneIsland_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event 11, 19, ONE_ISLAND_PORT, 1
 	warp_event 12, 19, ONE_ISLAND_PORT, 2

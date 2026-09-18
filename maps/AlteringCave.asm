@@ -6,8 +6,6 @@ AlteringCave_MapScripts:
 	db 0 ; callbacks
 
 AlteringCave_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event 13, 21, OUTCAST_ISLAND, 1
 	warp_event  5,  1, REGIROCK_PUZZLE_CHAMBER, 1

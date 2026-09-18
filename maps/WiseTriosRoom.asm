@@ -317,8 +317,6 @@ WiseTriosRoomSage3TakeoverText:
 	done
 
 WiseTriosRoom_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  7,  4, BELLCHIME_PATH, 1
 	warp_event  7,  5, BELLCHIME_PATH, 2

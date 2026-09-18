@@ -7,8 +7,6 @@ IcefallCaveBackCave_MapScripts:
 	db 0 ; callbacks
 
 IcefallCaveBackCave_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event 12, 21, ICEFALL_CAVE_1F, 3
 	warp_event 10,  3, REGICE_PUZZLE_CHAMBER, 1

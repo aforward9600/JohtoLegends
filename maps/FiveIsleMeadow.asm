@@ -79,8 +79,6 @@ FiveIsleMeadowCooltrainerFText:
 	done
 
 FiveIsleMeadow_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  8, 19, ROCKET_WAREHOUSE, 1
 

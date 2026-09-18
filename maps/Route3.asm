@@ -151,8 +151,6 @@ Route3GrampsText:
 	done
 
 Route3_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event 52,  1, MOUNT_MOON, 1
 

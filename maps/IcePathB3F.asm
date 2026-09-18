@@ -27,8 +27,6 @@ IcePath3FNurseRestAWhileText:
 	done
 
 IcePathB3F_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  3,  5, ICE_PATH_B2F_MAHOGANY_SIDE, 2
 	warp_event 15,  5, ICE_PATH_B2F_BLACKTHORN_SIDE, 2

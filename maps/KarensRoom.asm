@@ -216,8 +216,6 @@ AgathaScript_AgathaDefeatText2:
 	done
 
 KarensRoom_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  4, 17, BRUNOS_ROOM, 3
 	warp_event  5, 17, BRUNOS_ROOM, 4

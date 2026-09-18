@@ -218,8 +218,6 @@ SproutTowerWalkerText:
 	done
 
 SproutTower3F_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event 10, 14, SPROUT_TOWER_2F, 4
 

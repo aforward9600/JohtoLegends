@@ -40,8 +40,6 @@ TwoIslandGrampsText:
 	done
 
 TwoIsland_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event  5,  9, TWO_ISLAND_PORT, 1
 	warp_event  6,  9, TWO_ISLAND_PORT, 2

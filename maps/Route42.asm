@@ -279,8 +279,6 @@ TeacherCadiRefusedText:
 	done
 
 Route42_MapEvents:
-	db 0, 0 ; filler
-
 	db 6 ; warp events
 	warp_event  0,  8, ROUTE_42_ECRUTEAK_GATE, 3
 	warp_event  0,  9, ROUTE_42_ECRUTEAK_GATE, 4

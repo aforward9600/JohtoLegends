@@ -37,8 +37,6 @@ RegiceText:
 	done
 
 RegiceChamber_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  4,  7, REGICE_PUZZLE_CHAMBER, 2
 

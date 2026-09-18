@@ -18,8 +18,6 @@ Route42EcruteakGateOfficerText:
 	done
 
 Route42EcruteakGate_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  0,  4, ECRUTEAK_CITY, 1
 	warp_event  0,  5, ECRUTEAK_CITY, 2

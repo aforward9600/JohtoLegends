@@ -95,8 +95,6 @@ RivalComeWithMeText:
 	done
 
 SilverCaveSummitOutside_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event 18, 17, SILVER_CAVE_ITEM_ROOMS, 3
 	warp_event  6,  5, MT_SILVER_SUMMIT, 1

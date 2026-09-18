@@ -570,8 +570,6 @@ CantGetBagonText:
 	done
 
 DragonShrine_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  9, DRAGONS_DEN_B1F, 2
 	warp_event  5,  9, DRAGONS_DEN_B1F, 2

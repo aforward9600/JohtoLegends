@@ -57,8 +57,6 @@ PlaceOddKeystoneText:
 	done
 
 EmbeddedTower_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event 10, 23, ROUTE_47, 5
 	warp_event 11, 23, ROUTE_47, 5

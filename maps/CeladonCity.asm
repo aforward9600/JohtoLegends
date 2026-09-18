@@ -319,8 +319,6 @@ CeladonCityDelinquent2Text:
 	done
 
 CeladonCity_MapEvents:
-	db 0, 0 ; filler
-
 	db 8 ; warp events
 	warp_event  4,  9, CELADON_DEPT_STORE_1F, 1
 	warp_event 16,  9, CELADON_MANSION_1F, 1

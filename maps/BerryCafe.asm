@@ -541,8 +541,6 @@ WillYouBackOutText:
 	done
 
 BerryCafe_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  6,  7, GOLDENROD_CITY, 14
 	warp_event  7,  7, GOLDENROD_CITY, 14

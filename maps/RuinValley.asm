@@ -45,8 +45,6 @@ RuinValleyScientistText:
 	done
 
 RuinValley_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event 20, 17, DOTTED_HOLE_ENTRANCE, 1
 

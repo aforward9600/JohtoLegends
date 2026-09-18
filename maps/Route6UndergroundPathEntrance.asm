@@ -4,8 +4,6 @@ Route6UndergroundPathEntrance_MapScripts:
 	db 0 ; callbacks
 
 Route6UndergroundPathEntrance_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  3,  7, ROUTE_6, 1
 	warp_event  4,  7, ROUTE_6, 1

@@ -204,8 +204,6 @@ PokemonFanClubBraggingSignText:
 	done
 
 PokemonFanClub_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  2,  9, VERMILION_CITY, 3
 	warp_event  3,  9, VERMILION_CITY, 3

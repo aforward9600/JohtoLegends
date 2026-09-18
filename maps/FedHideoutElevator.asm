@@ -54,8 +54,6 @@ EnteredElevatorPasswordText:
 	done
 
 FedHideoutElevator_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  2,  2, FED_HIDEOUT_B1F, -1
 	warp_event  3,  2, FED_HIDEOUT_B1F, -1

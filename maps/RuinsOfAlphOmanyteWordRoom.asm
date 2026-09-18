@@ -4,8 +4,6 @@ RuinsOfAlphOmanyteWordRoom_MapScripts:
 	db 0 ; callbacks
 
 RuinsOfAlphOmanyteWordRoom_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  9,  7, RUINS_OF_ALPH_OMANYTE_ITEM_ROOM, 3
 	warp_event 10,  7, RUINS_OF_ALPH_OMANYTE_ITEM_ROOM, 4

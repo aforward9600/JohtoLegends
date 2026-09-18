@@ -138,8 +138,6 @@ Route25LassText:
 	done
 
 Route25_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event 47,  5, BILLS_HOUSE, 1
 

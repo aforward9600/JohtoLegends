@@ -121,8 +121,6 @@ Route46HikerText_RocksCleared:
 	done
 
 Route46_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  7, 33, ROUTE_29_ROUTE_46_GATE, 1
 	warp_event  8, 33, ROUTE_29_ROUTE_46_GATE, 2

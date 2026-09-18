@@ -106,8 +106,6 @@ CeladonDeptStore1FBikerText:
 	done
 
 CeladonDeptStore1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  7,  7, CELADON_CITY, 1
 	warp_event  8,  7, CELADON_CITY, 1

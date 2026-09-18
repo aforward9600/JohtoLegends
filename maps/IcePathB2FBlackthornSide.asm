@@ -25,8 +25,6 @@ IcePathB2FBlackthornRock:
 	jumpstd smashrock
 
 IcePathB2FBlackthornSide_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  3, 15, ICE_PATH_B1F, 3
 	warp_event  6,  0, ICE_PATH_B1F, 4

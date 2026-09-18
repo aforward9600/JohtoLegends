@@ -132,8 +132,6 @@ SeafoamIslandB4FBoulderText:
 	done
 
 SeafoamIslandB4F_MapEvents:
-	db 0, 0 ; filler
-
 	db 6 ; warp events
 	warp_event 11,  9, SEAFOAM_ISLAND_B3F, 4
 	warp_event 25,  5, SEAFOAM_ISLAND_B3F, 5

@@ -21,8 +21,6 @@ RockTunnelB1FHiddenMaxPotion:
 	hiddenitem MAX_POTION, EVENT_ROCK_TUNNEL_B1F_HIDDEN_MAX_POTION
 
 RockTunnelB1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  3,  3, ROCK_TUNNEL_1F, 6
 	warp_event 17,  9, ROCK_TUNNEL_1F, 4

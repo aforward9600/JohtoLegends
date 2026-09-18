@@ -69,8 +69,6 @@ SpearyText:
 	done
 
 ViridianNicknameSpeechHouse_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  7, VIRIDIAN_CITY, 2
 	warp_event  5,  7, VIRIDIAN_CITY, 2

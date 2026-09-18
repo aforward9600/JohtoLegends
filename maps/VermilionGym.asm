@@ -282,8 +282,6 @@ LtSurgeRematchAfterText:
 	done
 
 VermilionGym_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4, 17, VERMILION_CITY, 7
 	warp_event  5, 17, VERMILION_CITY, 7

@@ -80,8 +80,6 @@ DragonTamerFDorisAfterText:
 	done
 
 MountMoon_MapEvents:
-	db 0, 0 ; filler
-
 	db 8 ; warp events
 	warp_event  3,  3, ROUTE_3, 1
 	warp_event 15, 15, ROUTE_4, 1

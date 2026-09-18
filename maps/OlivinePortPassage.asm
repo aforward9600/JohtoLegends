@@ -42,8 +42,6 @@ OlivinePortPassagePokefanMText2:
 	done
 
 OlivinePortPassage_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event 15,  0, OLIVINE_CITY, 9
 	warp_event 16,  0, OLIVINE_CITY, 10

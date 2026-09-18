@@ -203,8 +203,6 @@ DarkCaveSignText:
 	done
 
 Route31_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  4,  6, ROUTE_31_VIOLET_GATE, 3
 	warp_event  4,  7, ROUTE_31_VIOLET_GATE, 4

@@ -342,8 +342,6 @@ NoRoomDittoText:
 	done
 
 CeladonMansion3F_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  0,  0, CELADON_MANSION_ROOF, 1
 	warp_event  1,  0, CELADON_MANSION_2F, 2

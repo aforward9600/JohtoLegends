@@ -157,8 +157,6 @@ YouAlreadyGotTheItemText:
 	done
 
 UnionCaveB2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  5,  3, UNION_CAVE_B1F, 5
 

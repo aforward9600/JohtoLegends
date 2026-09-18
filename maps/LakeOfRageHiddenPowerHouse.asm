@@ -67,8 +67,6 @@ HiddenPowerGuyText3:
 	done
 
 LakeOfRageHiddenPowerHouse_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  7, LAKE_OF_RAGE, 1
 	warp_event  5,  7, LAKE_OF_RAGE, 1

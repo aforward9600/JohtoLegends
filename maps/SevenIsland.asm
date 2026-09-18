@@ -63,8 +63,6 @@ OnaganTempleSignText:
 	done
 
 SevenIsland_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event 27, 29, SEVEN_ISLAND_PORT, 1
 	warp_event 28, 29, SEVEN_ISLAND_PORT, 2

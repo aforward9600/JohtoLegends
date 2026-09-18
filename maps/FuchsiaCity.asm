@@ -458,8 +458,6 @@ FuchsiaCityYoungsterText:
 	done
 
 FuchsiaCity_MapEvents:
-	db 0, 0 ; filler
-
 	db 9 ; warp events
 	warp_event  5, 13, FUCHSIA_MART, 2
 	warp_event  7, 27, FUCHSIA_GYM, 1

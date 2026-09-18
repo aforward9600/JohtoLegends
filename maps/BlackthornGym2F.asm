@@ -143,8 +143,6 @@ DragonTamerfDoraAfterBattleText:
 	done
 
 BlackthornGym2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event  1,  7, BLACKTHORN_GYM_1F, 3
 	warp_event  7,  9, BLACKTHORN_GYM_1F, 4

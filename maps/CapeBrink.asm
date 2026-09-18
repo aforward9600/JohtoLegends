@@ -6,8 +6,6 @@ CapeBrink_MapScripts:
 	db 0 ; callbacks
 
 CapeBrink_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event 11,  3, CAPE_BRINK_HOUSE, 1
 

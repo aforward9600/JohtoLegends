@@ -28,8 +28,6 @@ WildArea2SignText:
 	done
 
 WildArea23_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  6,  5, WILD_AREA_CAVE, 1
 

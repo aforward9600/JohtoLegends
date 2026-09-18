@@ -134,8 +134,6 @@ RuinsOfAlphOmanyteChamberDescriptionText:
 	done
 
 RuinsOfAlphOmanyteChamber_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event  3,  9, RUINS_OF_ALPH_OUTSIDE, 3
 	warp_event  4,  9, RUINS_OF_ALPH_OUTSIDE, 3

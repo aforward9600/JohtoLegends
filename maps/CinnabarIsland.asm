@@ -96,8 +96,6 @@ CinnabarGymDoorUnlockedText:
 	done
 
 CinnabarIsland_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event 11, 11, CINNABAR_POKECENTER_1F, 1
 	warp_event  7,  3, POKEMON_MANSION_1F, 2

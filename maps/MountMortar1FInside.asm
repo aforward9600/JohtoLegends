@@ -348,8 +348,6 @@ YoungsterBertAfterBattleText:
 	done
 
 MountMortar1FInside_MapEvents:
-	db 0, 0 ; filler
-
 	db 8 ; warp events
 	warp_event 11, 47, MOUNT_MORTAR_1F_OUTSIDE, 5
 	warp_event 29, 47, MOUNT_MORTAR_1F_OUTSIDE, 6

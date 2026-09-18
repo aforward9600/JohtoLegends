@@ -64,8 +64,6 @@ CopycatsHouse1FBlisseyText:
 	done
 
 CopycatsHouse1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  2,  7, SAFFRON_CITY, 7
 	warp_event  3,  7, SAFFRON_CITY, 7

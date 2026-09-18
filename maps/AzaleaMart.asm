@@ -49,8 +49,6 @@ AzaleaMartBugCatcherText:
 	done
 
 AzaleaMart_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  2,  7, AZALEA_TOWN, 3
 	warp_event  3,  7, AZALEA_TOWN, 3

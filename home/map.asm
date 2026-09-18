@@ -417,8 +417,6 @@ ReadMapEvents::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	inc hl
-	inc hl
 	call ReadWarps
 	call ReadCoordEvents
 	call ReadBGEvents
@@ -665,9 +663,7 @@ RestoreFacingAfterWarp::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-rept 3 ; get to the warp coords
 	inc hl
-endr
 	ld a, [wWarpNumber]
 	dec a
 	ld c, a

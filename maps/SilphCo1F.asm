@@ -264,8 +264,6 @@ CantGiveBeldumText:
 	done
 
 SilphCo1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event 10, 17, SAFFRON_CITY, 6
 	warp_event 11, 17, SAFFRON_CITY, 6

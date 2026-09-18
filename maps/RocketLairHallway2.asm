@@ -327,8 +327,6 @@ RocketLairHallway2OfficerText:
 	done
 
 RocketLairHallway2_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  2, 17, ROCKET_LAIR_HALLWAY_1, 5
 	warp_event  3, 17, ROCKET_LAIR_HALLWAY_1, 5

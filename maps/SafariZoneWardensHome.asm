@@ -74,8 +74,6 @@ SafariZonePhotoText:
 	done
 
 SafariZoneWardensHome_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  2,  9, FUCHSIA_CITY, 5
 	warp_event  3,  9, FUCHSIA_CITY, 5

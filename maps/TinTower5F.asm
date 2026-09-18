@@ -43,8 +43,6 @@ TinTower5FGruntFAfterText:
 	done
 
 TinTower5F_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event 11, 15, TIN_TOWER_6F, 2
 	warp_event  2,  4, TIN_TOWER_4F, 1

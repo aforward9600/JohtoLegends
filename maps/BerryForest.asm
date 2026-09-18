@@ -152,8 +152,6 @@ BerryForestHypnoSignText:
 	done
 
 BerryForest_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event 26, 37, BOND_BRIDGE, 1
 	warp_event 27, 37, BOND_BRIDGE, 2

@@ -18,8 +18,6 @@ GoldenrodNameRaterBookshelf:
 	jumpstd genericsink
 
 GoldenrodNameRater_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  7, GOLDENROD_CITY, 8
 	warp_event  5,  7, GOLDENROD_CITY, 8

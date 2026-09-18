@@ -44,8 +44,6 @@ Route26HealHouseKeepAtItText:
 	done
 
 Route26HealHouse_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  7, ROUTE_26, 2
 	warp_event  5,  7, ROUTE_26, 2

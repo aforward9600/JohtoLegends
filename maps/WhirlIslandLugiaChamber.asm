@@ -54,8 +54,6 @@ LugiaText:
 	done
 
 WhirlIslandLugiaChamber_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  9, 13, WHIRL_ISLAND_B2F, 3
 

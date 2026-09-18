@@ -166,8 +166,6 @@ RoughneckKyleElevatorText:
 	done
 
 FedHideoutB1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event 13,  2, FED_HIDEOUT_1F, 3
 	warp_event 15,  2, FED_HIDEOUT_B2F, 1

@@ -269,8 +269,6 @@ WalkThisWayText:
 	done
 
 VermilionPort_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  9,  5, VERMILION_PORT_PASSAGE, 5
 

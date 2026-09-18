@@ -24,8 +24,6 @@ Route30BerrySpeechHouseCheckTreesText:
 	done
 
 Route30BerryHouse_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  7, ROUTE_30, 1
 	warp_event  5,  7, ROUTE_30, 1

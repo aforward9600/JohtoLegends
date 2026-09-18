@@ -302,8 +302,6 @@ Route45GrampsText:
 	done
 
 Route45_MapEvents:
-	db 0, 0 ; filler
-
 	db 1 ; warp events
 	warp_event  2,  5, DARK_CAVE_NEW_ENTRANCE, 1
 

@@ -26,8 +26,6 @@ Route2GateScientistText:
 	done
 
 Route2Gate_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  4,  0, ROUTE_2, 3
 	warp_event  5,  0, ROUTE_2, 4

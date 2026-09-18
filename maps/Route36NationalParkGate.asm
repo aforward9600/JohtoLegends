@@ -38,8 +38,6 @@ Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText:
 	done
 
 Route36NationalParkGate_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  0,  4, NATIONAL_PARK, 1
 	warp_event  0,  5, NATIONAL_PARK, 2

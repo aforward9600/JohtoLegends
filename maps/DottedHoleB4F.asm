@@ -14,8 +14,6 @@ DottedHoleB4FRock:
 	end
 
 DottedHoleB4F_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event  3,  6, DOTTED_HOLE_B3F, 5
 	warp_event  4,  2, DOTTED_HOLE_ENTRANCE, 4 ; up

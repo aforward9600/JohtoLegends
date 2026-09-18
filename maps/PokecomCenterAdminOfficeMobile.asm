@@ -261,8 +261,6 @@ PokecomCenterAdminOfficeMobileComputer3Text:
 	done
 
 PokecomCenterAdminOfficeMobile_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  0, 31, GOLDENROD_POKECENTER_1F, 3
 	warp_event  1, 31, GOLDENROD_POKECENTER_1F, 3

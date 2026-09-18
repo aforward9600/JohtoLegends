@@ -325,8 +325,6 @@ OlivineCityBattleTowerSignText:
 	done
 
 OlivineCity_MapEvents:
-	db 0, 0 ; filler
-
 	db 10 ; warp events
 	warp_event 13, 21, OLIVINE_POKECENTER_1F, 1
 	warp_event 10, 11, OLIVINE_GYM_1F, 1

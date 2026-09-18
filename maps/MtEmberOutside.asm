@@ -10,8 +10,6 @@ MtEmberOutsideDragonFang:
 	itemball DRAGON_FANG
 
 MtEmberOutside_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  7, 11, MT_EMBER_INSIDE_1, 1
 	warp_event 24,  1, MT_EMBER_INSIDE_3, 2

@@ -1,4 +1,4 @@
-GenerateShinySwarm:
+GenerateShinySwarm::
 	ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]

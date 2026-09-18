@@ -37,8 +37,6 @@ Route6SaffronGuardMagnetTrainText:
 	done
 
 Route6SaffronGate_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  4,  0, SAFFRON_CITY, 11
 	warp_event  5,  0, SAFFRON_CITY, 12

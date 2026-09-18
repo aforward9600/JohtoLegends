@@ -126,8 +126,6 @@ RocketLairSherlesText:
 	done
 
 RocketLairHallway1_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event  4, 21, DARK_CAVE_BLACKTHORN_ENTRANCE, 3
 	warp_event  5, 21, DARK_CAVE_BLACKTHORN_ENTRANCE, 3

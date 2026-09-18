@@ -28,8 +28,6 @@ SilverCaveRoom1HiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_SILVER_CAVE_ROOM_1_HIDDEN_ULTRA_BALL
 
 SilverCaveRoom1_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  9, 33, SILVER_CAVE_OUTSIDE, 2
 	warp_event 15,  1, SILVER_CAVE_ROOM_2, 1

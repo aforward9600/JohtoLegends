@@ -77,8 +77,6 @@ GoldenrodPPSpeechHouseGrampsDrainPunchTaught:
 	done
 
 GoldenrodPPSpeechHouse_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  7, GOLDENROD_CITY, 7
 	warp_event  5,  7, GOLDENROD_CITY, 7

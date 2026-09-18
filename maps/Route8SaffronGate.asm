@@ -18,8 +18,6 @@ Route8SaffronGateOfficerText:
 	done
 
 Route8SaffronGate_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  0,  4, SAFFRON_CITY, 13
 	warp_event  0,  5, SAFFRON_CITY, 14

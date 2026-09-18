@@ -101,8 +101,6 @@ CinnabarPokecenter1FRivalText2:
 	done
 
 CinnabarPokecenter1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 3 ; warp events
 	warp_event  3,  7, CINNABAR_ISLAND, 1
 	warp_event  4,  7, CINNABAR_ISLAND, 1

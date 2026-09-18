@@ -19,8 +19,6 @@ DottedHoleRockText:
 	done
 
 DottedHoleB1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event  3,  6, DOTTED_HOLE_ENTRANCE, 2
 	warp_event  4,  2, DOTTED_HOLE_B2F, 1 ; up

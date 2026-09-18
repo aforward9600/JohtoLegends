@@ -162,8 +162,6 @@ RadioTower3FRocketText:
 	done
 
 RadioTower3F_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event 10, 14, RADIO_TOWER_2F, 1
 	warp_event 16,  2, RADIO_TOWER_4F, 2

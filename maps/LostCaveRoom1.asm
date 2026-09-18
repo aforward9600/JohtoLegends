@@ -6,8 +6,6 @@ LostCaveRoom1_MapScripts:
 	db 0 ; callbacks
 
 LostCaveRoom1_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event  7,  5, LOST_CAVE_ROOM_2, 3 ; right
 	warp_event  5,  7, LOST_CAVE_ROOM_1, 4 ; down

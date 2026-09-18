@@ -15,8 +15,6 @@ LavenderNameRater:
 	end
 
 LavenderNameRater_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  4,  7, LAVENDER_TOWN, 4
 	warp_event  5,  7, LAVENDER_TOWN, 4

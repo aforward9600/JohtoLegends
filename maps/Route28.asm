@@ -14,8 +14,6 @@ Route28SignText:
 	done
 
 Route28_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event  7,  3, ROUTE_28_STEEL_WING_HOUSE, 1
 	warp_event 33,  5, VICTORY_ROAD_GATE, 7

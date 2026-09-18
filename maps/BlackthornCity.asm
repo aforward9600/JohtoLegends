@@ -468,8 +468,6 @@ BlackthornHikerText:
 	done
 
 BlackthornCity_MapEvents:
-	db 0, 0 ; filler
-
 	db 10 ; warp events
 	warp_event 20, 11, BLACKTHORN_GYM_1F, 1
 	warp_event 15, 21, BLACKTHORN_DRAGON_SPEECH_HOUSE, 1

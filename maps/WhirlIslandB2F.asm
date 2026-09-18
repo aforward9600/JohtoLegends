@@ -87,8 +87,6 @@ ItsWaitingForYouText:
 	done
 
 WhirlIslandB2F_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event 11,  5, WHIRL_ISLAND_B1F, 7
 	warp_event  7, 11, WHIRL_ISLAND_B1F, 8

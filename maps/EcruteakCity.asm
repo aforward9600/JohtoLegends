@@ -374,8 +374,6 @@ PolitoedText:
 	done
 
 EcruteakCity_MapEvents:
-	db 0, 0 ; filler
-
 	db 13 ; warp events
 	warp_event 35, 26, ROUTE_42_ECRUTEAK_GATE, 1
 	warp_event 35, 27, ROUTE_42_ECRUTEAK_GATE, 2

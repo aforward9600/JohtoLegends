@@ -123,8 +123,6 @@ Route11SignText:
 	done
 
 Route11_MapEvents:
-	db 0, 0 ; filler
-
 	db 0 ; warp events
 
 	db 0 ; coord events

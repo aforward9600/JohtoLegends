@@ -140,8 +140,6 @@ ViridianForestPokefanFText:
 	done
 
 ViridianForest_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event 16, 45, ROUTE_2, 6
 	warp_event 17, 45, ROUTE_2, 7

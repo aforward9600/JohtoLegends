@@ -88,8 +88,6 @@ LavRadioTower1FSuperNerd1Text2:
 	done
 
 LavRadioTower1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 2 ; warp events
 	warp_event 10, 17, LAVENDER_TOWN, 6
 	warp_event 11, 17, LAVENDER_TOWN, 6

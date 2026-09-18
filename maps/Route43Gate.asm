@@ -45,8 +45,6 @@ OfficerText_AvoidGrass:
 	done
 
 Route43Gate_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event  4,  0, ROUTE_43, 4
 	warp_event  5,  0, ROUTE_43, 5

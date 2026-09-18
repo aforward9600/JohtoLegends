@@ -89,8 +89,6 @@ CeladonMansionManagersSuiteSignText:
 	done
 
 CeladonMansion1F_MapEvents:
-	db 0, 0 ; filler
-
 	db 5 ; warp events
 	warp_event  6,  9, CELADON_CITY, 2
 	warp_event  7,  9, CELADON_CITY, 2

@@ -245,8 +245,6 @@ ViridianCityBikerText4:
 	done
 
 ViridianCity_MapEvents:
-	db 0, 0 ; filler
-
 	db 4 ; warp events
 	warp_event 32,  7, VIRIDIAN_GYM, 1
 	warp_event 21,  9, VIRIDIAN_NICKNAME_SPEECH_HOUSE, 1

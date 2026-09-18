@@ -6,8 +6,6 @@ TanobiRuins_MapScripts:
 	db 0 ; callbacks
 
 TanobiRuins_MapEvents:
-	db 0, 0 ; filler
-
 	db 7 ; warp events
 	warp_event  7, 15, TANOBI_RUINS_INSIDE, 2
 	warp_event 17,  9, TANOBI_RUINS_INSIDE, 4
