@@ -575,29 +575,29 @@ BattleCommand_Superpower:
 ;	call ResetStatDropAbility
 ;	jp ResetStatChangeExtra
 	
-	call SetStatDropAbility
+;	call SetStatDropAbility
 	call BattleCommand_SwitchTurn2
 	farcall BattleCommand_AttackDown
 	farcall BattleCommand_StatDownMessage
-	call SetStatChangeAnimation
+;	call SetStatChangeAnimation
 	farcall ResetAllMisses
 	farcall BattleCommand_DefenseDown
 	farcall BattleCommand_StatDownMessage
 	call BattleCommand_SwitchTurn2
-	call ResetStatDropAbility
+;	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_CloseCombat:
-	call SetStatDropAbility
+;	call SetStatDropAbility
 	call BattleCommand_SwitchTurn2
 	farcall BattleCommand_DefenseDown
 	farcall BattleCommand_StatDownMessage
-	call SetStatChangeAnimation
+;	call SetStatChangeAnimation
 	farcall ResetAllMisses
 	farcall BattleCommand_SpecialDefenseDown
 	farcall BattleCommand_StatDownMessage
 	call BattleCommand_SwitchTurn2
-	call ResetStatDropAbility
+;	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_HammerArm:
@@ -673,7 +673,7 @@ BattleCommand_Growth:
 	jp z, NoStatRaise
 
 .raise
-	call SetStatDropAbility
+;	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	call CheckCloudNine
 	jr z, .SkipSun
@@ -683,21 +683,21 @@ BattleCommand_Growth:
 .SkipSun
 	farcall BattleCommand_AttackUp
 	farcall BattleCommand_StatUpMessage
-	call SetStatChangeAnimation
+;	call SetStatChangeAnimation
 	farcall ResetMiss
 	farcall BattleCommand_SpecialAttackUp
 	farcall BattleCommand_StatUpMessage
-	call ResetStatDropAbility
+;	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 .Sun
 	farcall BattleCommand_AttackUp2
 	farcall BattleCommand_StatUpMessage
-	call SetStatChangeAnimation
+;	call SetStatChangeAnimation
 	farcall ResetMiss
 	farcall BattleCommand_SpecialAttackUp2
 	farcall BattleCommand_StatUpMessage
-	call ResetStatDropAbility
+;	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_Coil:
@@ -746,18 +746,18 @@ BattleCommand_Coil:
 	jp z, NoStatRaise
 
 .raise
-	call SetStatDropAbility
+;	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	farcall BattleCommand_AttackUp
 	farcall BattleCommand_StatUpMessage
-	call SetStatChangeAnimation
+;	call SetStatChangeAnimation
 	farcall ResetMiss
 	farcall BattleCommand_DefenseUp
 	farcall BattleCommand_StatUpMessage
 	farcall ResetMiss
 	farcall BattleCommand_AccuracyUp
 	farcall BattleCommand_StatUpMessage
-	call ResetStatDropAbility
+;	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_CosmicPower:
@@ -768,7 +768,7 @@ BattleCommand_CosmicPower:
 	jr z, .Contrary
 .SkipContrary
 	call GetStatsExtra
-	inc b
+	inc bc
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
 	jr c, .raise
@@ -795,15 +795,15 @@ BattleCommand_CosmicPower:
 	jp z, NoStatRaise
 
 .raise
-	call SetStatDropAbility
+;	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	farcall BattleCommand_DefenseUp
 	farcall BattleCommand_StatUpMessage
-	call SetStatChangeAnimation
+;	call SetStatChangeAnimation
 	farcall ResetMiss
 	farcall BattleCommand_SpecialDefenseUp
 	farcall BattleCommand_StatUpMessage
-	call ResetStatDropAbility
+;	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_HoneClaws:
@@ -843,15 +843,15 @@ BattleCommand_HoneClaws:
 	jp z, NoStatRaise
 
 .raise
-	call SetStatDropAbility
+;	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	farcall BattleCommand_AttackUp
 	farcall BattleCommand_StatUpMessage
-	call SetStatChangeAnimation
+;	call SetStatChangeAnimation
 	farcall ResetMiss
 	farcall BattleCommand_AccuracyUp
 	farcall BattleCommand_StatUpMessage
-	call ResetStatDropAbility
+;	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_DragonDance:
@@ -885,15 +885,15 @@ BattleCommand_DragonDance:
 	jp z, NoStatRaise
 
 .raise
-	call SetStatDropAbility
+;	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	farcall BattleCommand_AttackUp
 	farcall BattleCommand_StatUpMessage
-	call SetStatChangeAnimation
+;	call SetStatChangeAnimation
 	farcall ResetMiss
 	farcall BattleCommand_SpeedUp
 	farcall BattleCommand_StatUpMessage
-	call ResetStatDropAbility
+;	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_CalmMind:
@@ -930,15 +930,15 @@ BattleCommand_CalmMind:
 	jp z, NoStatRaise
 
 .raise
-	call SetStatDropAbility
+;	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	farcall BattleCommand_SpecialAttackUp
 	farcall BattleCommand_StatUpMessage
-	call SetStatChangeAnimation
+;	call SetStatChangeAnimation
 	farcall ResetMiss
 	farcall BattleCommand_SpecialDefenseUp
 	farcall BattleCommand_StatUpMessage
-	call ResetStatDropAbility
+;	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_BulkUp:
@@ -970,15 +970,15 @@ BattleCommand_BulkUp:
 	jp z, NoStatRaise
 
 .raise
-	call SetStatDropAbility
+;	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	farcall BattleCommand_AttackUp
 	farcall BattleCommand_StatUpMessage
-	call SetStatChangeAnimation
+;	call SetStatChangeAnimation
 	farcall ResetMiss
 	farcall BattleCommand_DefenseUp
 	farcall BattleCommand_StatUpMessage
-	call ResetStatDropAbility
+;	call ResetStatDropAbility
 	jr ResetStatChangeExtra
 
 BattleCommand_QuiverDance:
@@ -1026,18 +1026,18 @@ BattleCommand_QuiverDance:
 	jp z, NoStatRaise
 
 .raise
-	call SetStatDropAbility
+;	call SetStatDropAbility
 	call RaiseLowerSubAnim
 	farcall BattleCommand_SpecialAttackUp
 	farcall BattleCommand_StatUpMessage
-	call SetStatChangeAnimation
+;	call SetStatChangeAnimation
 	farcall ResetMiss
 	farcall BattleCommand_SpecialDefenseUp
 	farcall BattleCommand_StatUpMessage
 	farcall ResetMiss
 	farcall BattleCommand_SpeedUp
 	farcall BattleCommand_StatUpMessage
-	call ResetStatDropAbility
+;	call ResetStatDropAbility
 
 ResetStatChangeExtra:
 	xor a
