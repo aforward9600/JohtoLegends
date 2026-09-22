@@ -82,3 +82,4 @@
 	const CRY_GARDEVOIR
 	const CRY_FEEBAS
 	const CRY_AMBIPOM
+	const CRY_MISMAGIUS

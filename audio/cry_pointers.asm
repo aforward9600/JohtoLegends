@@ -77,3 +77,4 @@ Cries:
 	dba Cry_Gardevoir
 	dba Cry_Feebas
 	dba Cry_Ambipom
+	dba Cry_Mismagius

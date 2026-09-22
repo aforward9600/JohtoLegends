@@ -277,7 +277,7 @@ PokemonCries::
 	mon_cry CRY_MARILL,     -$01f,  $180 ; MURKROW
 	mon_cry CRY_MARILL,      $be1,  $260 ; HONCHKROW
 	mon_cry CRY_HOOTHOOT,    $130,  $0e8 ; MISDREAVUS
-	mon_cry CRY_HOOTHOOT,    $1b4,  $1e8 ; MISMAGIUS
+	mon_cry CRY_MISMAGIUS,   $000,  $0ff ; MISMAGIUS
 	mon_cry CRY_HOOTHOOT,    $162,  $100 ; UNOWN
 	mon_cry CRY_AMPHAROS,    $28b,  $045 ; WYNAUT
 	mon_cry CRY_AMPHAROS,    $27b,  $144 ; WOBBUFFET
