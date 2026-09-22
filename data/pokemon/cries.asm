@@ -344,7 +344,7 @@ PokemonCries::
 	mon_cry CRY_SHROOMISH,   $0ff,  $070 ; SHROOMISH
 	mon_cry CRY_BRELOOM,     $050,  $116 ; BRELOOM
 	mon_cry CRY_RALTS,       $060,  $040 ; RALTS
-	mon_cry CRY_KIRLIA,      $060,  $080 ; KIRLIA
+	mon_cry CRY_KIRLIA,      $000,  $0ff ; KIRLIA
 	mon_cry CRY_KIRLIA,      $005,  $100 ; GARDEVOIR
 	mon_cry CRY_GALLADE,     $020,  $130 ; GALLADE
 	mon_cry CRY_CATERPIE,    $ee3,  $100 ; SABLEYE SourApple

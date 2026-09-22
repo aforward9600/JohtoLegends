@@ -2110,30 +2110,160 @@ Cry_Ralts_Ch8:
 	endchannel
 
 Cry_Kirlia:
-	musicheader 3, 5, Cry_Kirlia_Ch5
-	musicheader 1, 6, Cry_Kirlia_Ch6
-	musicheader 1, 8, Cry_Kirlia_Ch8
+	musicheader 3, 5, Cry_kirlia_Ch5
+	musicheader 1, 6, Cry_kirlia_Ch6
+	musicheader 1, 8, Cry_kirlia_Ch8
 
-Cry_Kirlia_Ch5:
-	sound_duty 1, 2, 1, 0
-	sound __, 9, $f7, $0725
-	sound __, 16, $d7, $0725
-	sound __, 9, $e7, $0724
-	sound __, 16, $d6, $0724
-	sound __, 9, $c3, $0724
+Cry_kirlia_Ch5:
+	dutycycle $1
+	sound __, 1, $a8, $0780
+	sound __, 1, $d8, $0780
+	dutycycle $3
+	sound __, 1, $d8, $0789
+	dutycycle $2
+	sound __, 1, $d8, $0788
+	dutycycle $1
+	sound __, 1, $d8, $0788
+	dutycycle $3
+	sound __, 1, $d8, $0788
+	sound __, 1, $d8, $0788
+	dutycycle $2
+	sound __, 1, $d8, $078c
+	dutycycle $3
+	sound __, 1, $d8, $0788
+	dutycycle $1
+	sound __, 1, $d8, $0787
+	sound __, 1, $d8, $0780
+	dutycycle $3
+	sound __, 1, $d8, $0787
+	sound __, 1, $d8, $0781
+	sound __, 1, $d8, $0781
+	dutycycle $2
+	sound __, 1, $d8, $078b
+	dutycycle $3
+	sound __, 1, $d8, $0789
+	sound __, 1, $d8, $0789
+	dutycycle $2
+	sound __, 1, $d8, $078c
+	dutycycle $3
+	sound __, 1, $c8, $0789
+	sound __, 1, $c8, $0786
+	dutycycle $1
+	sound __, 1, $a8, $0780
+	sound __, 1, $b8, $0781
+	dutycycle $3
+	sound __, 1, $a8, $0780
+	dutycycle $0
+	sound __, 1, $78, $0780
+	sound __, 1, $58, $0780
+	dutycycle $1
+	sound __, 1, $68, $0780
+	dutycycle $3
+	sound __, 1, $58, $0789
+	sound __, 1, $38, $0786
+	sound __, 1, $28, $0787
+	dutycycle $2
+	sound __, 1, $28, $0789
+	dutycycle $0
+	sound __, 1, $18, $0780
+	dutycycle $3
+	sound __, 1, $08, $0000
+	dutycycle $2
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	dutycycle $1
+	sound __, 1, $08, $0000
 	endchannel
 
-Cry_Kirlia_Ch6:
-	sound_duty  2, 1, 2, 1
-	sound __, 9, $65, $0406
-	sound __, 16, $45, $0406
-	sound __, 9, $55, $03fc
-	sound __, 16, $45, $03fc
-	sound __, 9, $33, $03fc
+Cry_kirlia_Ch6:
+	dutycycle $2
+	sound __, 1, $68, $078c
+	sound __, 1, $68, $078d
+	dutycycle $0
+	sound __, 1, $68, $073f
+	sound __, 1, $58, $073d
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $68, $073e
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $58, $0740
+	dutycycle $1
+	sound __, 1, $08, $0000
+	dutycycle $2
+	sound __, 1, $68, $0790
+	sound __, 1, $68, $078f
+	dutycycle $0
+	sound __, 1, $08, $0000
+	dutycycle $2
+	sound __, 1, $48, $077d
+	dutycycle $3
+	sound __, 1, $08, $0000
+	dutycycle $2
+	sound __, 1, $68, $0777
+	dutycycle $0
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	dutycycle $2
+	sound __, 1, $08, $0000
+	sound __, 1, $38, $078b
+	sound __, 1, $38, $078b
+	sound __, 1, $28, $078d
+	dutycycle $0
+	sound __, 1, $28, $073f
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	dutycycle $3
+	sound __, 1, $18, $077d
+	dutycycle $0
+	sound __, 1, $18, $074b
+	sound __, 1, 8, $0000
+	dutycycle $3
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	dutycycle $0
+	sound __, 1, $08, $0000
 	endchannel
 
-Cry_Kirlia_Ch8:
-	noise __, 9, $66, $91
+Cry_kirlia_Ch8:
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $38, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
 	endchannel
 
 Cry_Gallade:
