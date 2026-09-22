@@ -47,100 +47,100 @@ Cry_Cyndaquil:
 Cry_Chikorita:
 	musicheader 3, 5, Cry_Chikorita_Ch5
 	musicheader 1, 6, Cry_Chikorita_Ch6
-	musicheader 1, 8, Cry_Chikorita_Ch8
+	musicheader $1, 8, Cry_Chikorita_Ch8
 
 Cry_Gligar:
 	musicheader 2, 5, Cry_Gligar_Ch5
-	musicheader 1, 8, Cry_Gligar_Ch8
+	musicheader $1, 8, Cry_Gligar_Ch8
 
 Cry_Girafarig:
 	musicheader 3, 5, Cry_Girafarig_Ch5
 	musicheader 1, 6, Cry_Girafarig_Ch6
-	musicheader 1, 8, Cry_Girafarig_Ch8
+	musicheader $1, 8, Cry_Girafarig_Ch8
 
 Cry_Slugma:
 	musicheader 2, 5, Cry_Slugma_Ch5
-	musicheader 1, 8, Cry_Slugma_Ch8
+	musicheader $1, 8, Cry_Slugma_Ch8
 
 Cry_Ledyba:
 	musicheader 3, 5, Cry_Ledyba_Ch5
 	musicheader 1, 6, Cry_Ledyba_Ch6
-	musicheader 1, 8, Cry_Ledyba_Ch8
+	musicheader $1, 8, Cry_Ledyba_Ch8
 
 Cry_Wooper:
 	musicheader 3, 5, Cry_Wooper_Ch5
 	musicheader 1, 6, Cry_Wooper_Ch6
-	musicheader 1, 8, Cry_Wooper_Ch8
+	musicheader $1, 8, Cry_Wooper_Ch8
 
 Cry_Donphan:
 	musicheader 3, 5, Cry_Donphan_Ch5
 	musicheader 1, 6, Cry_Donphan_Ch6
-	musicheader 1, 8, Cry_Donphan_Ch8
+	musicheader $1, 8, Cry_Donphan_Ch8
 
 Cry_Typhlosion:
 	musicheader 3, 5, Cry_Typhlosion_Ch5
 	musicheader 1, 6, Cry_Typhlosion_Ch6
-	musicheader 1, 8, Cry_Typhlosion_Ch8
+	musicheader $1, 8, Cry_Typhlosion_Ch8
 
 Cry_Natu:
 	musicheader 3, 5, Cry_Natu_Ch5
 	musicheader 1, 6, Cry_Natu_Ch6
-	musicheader 1, 8, Cry_Natu_Ch8
+	musicheader $1, 8, Cry_Natu_Ch8
 
 Cry_Teddiursa:
 	musicheader 3, 5, Cry_Teddiursa_Ch5
 	musicheader 1, 6, Cry_Teddiursa_Ch6
-	musicheader 1, 8, Cry_Teddiursa_Ch8
+	musicheader $1, 8, Cry_Teddiursa_Ch8
 
 Cry_Sunflora:
 	musicheader 3, 5, Cry_Sunflora_Ch5
 	musicheader 1, 6, Cry_Sunflora_Ch6
-	musicheader 1, 8, Cry_Sunflora_Ch8
+	musicheader $1, 8, Cry_Sunflora_Ch8
 
 Cry_Ampharos:
 	musicheader 3, 5, Cry_Ampharos_Ch5
 	musicheader 1, 6, Cry_Ampharos_Ch6
-	musicheader 1, 8, Cry_Ampharos_Ch8
+	musicheader $1, 8, Cry_Ampharos_Ch8
 
 Cry_Totodile:
 	musicheader 3, 5, Cry_Totodile_Ch5
 	musicheader 1, 6, Cry_Totodile_Ch6
-	musicheader 1, 8, Cry_Totodile_Ch8
+	musicheader $1, 8, Cry_Totodile_Ch8
 
 Cry_Cleffa:
 	musicheader 3, 5, Cry_Cleffa_Ch5
 	musicheader 1, 6, Cry_Cleffa_Ch6
-	musicheader 1, 8, Cry_Cleffa_Ch8
+	musicheader $1, 8, Cry_Cleffa_Ch8
 
 Cry_Pichu:
 	musicheader 3, 5, Cry_Pichu_Ch5
 	musicheader 1, 6, Cry_Pichu_Ch6
-	musicheader 1, 8, Cry_Pichu_Ch8
+	musicheader $1, 8, Cry_Pichu_Ch8
 
 Cry_Aipom:
 	musicheader 3, 5, Cry_Aipom_Ch5
 	musicheader 1, 6, Cry_Aipom_Ch6
-	musicheader 1, 8, Cry_Aipom_Ch8
+	musicheader $1, 8, Cry_Aipom_Ch8
 
 Cry_Dunsparce:
 	musicheader 3, 5, Cry_Dunsparce_Ch5
 	musicheader 1, 6, Cry_Dunsparce_Ch6
-	musicheader 1, 8, Cry_Dunsparce_Ch8
+	musicheader $1, 8, Cry_Dunsparce_Ch8
 
 Cry_Magcargo:
 	musicheader 3, 5, Cry_Magcargo_Ch5
 	musicheader 1, 6, Cry_Magcargo_Ch6
-	musicheader 1, 8, Cry_Magcargo_Ch8
+	musicheader $1, 8, Cry_Magcargo_Ch8
 
 Cry_Entei:
 	musicheader 3, 5, Cry_Entei_Ch5
 	musicheader 1, 6, Cry_Entei_Ch6
-	musicheader 1, 8, Cry_Entei_Ch8
+	musicheader $1, 8, Cry_Entei_Ch8
 
 Cry_Mantine:
 	musicheader 3, 5, Cry_Mantine_Ch5
 	musicheader 1, 6, Cry_Mantine_Ch6
-	musicheader 1, 8, Cry_Mantine_Ch8
+	musicheader $1, 8, Cry_Mantine_Ch8
 
 Cry_Entei_Ch5:
 	soundinput $ff
@@ -201,7 +201,7 @@ Cry_Magcargo_Ch8:
 Cry_Dunsparce_Ch5:
 	sound_duty 2, 0, 2, 0
 	sound __,  2, $f8, $05b0
-	sound __,  2, $f8, $04b4
+	sound __,  2, $f8, $004b4
 	sound __,  2, $f8, $05b8
 	sound __,  4, $f8, $05c0
 	sound __,  9, $c8, $0490
@@ -360,7 +360,7 @@ Cry_Spinarak_Ch8:
 
 Cry_Raikou_Ch5:
 	sound_duty 0, 2, 3, 3
-	sound __,  3, $f1, $04b0
+	sound __,  3, $f1, $004b0
 	sound __,  3, $f7, $0590
 	sound __,  9, $f8, $0510
 	sound __,  4, $f2, $06c0
@@ -605,7 +605,7 @@ Cry_Teddiursa_Ch5:
 	sound __,  4, $c1, $0791
 	loopchannel 3, .loop1
 .loop2
-	sound __,  4, $d1, $04b1
+	sound __,  4, $d1, $004b1
 	loopchannel 6, .loop2
 .loop3
 	sound __,  2, $d1, $0491
@@ -830,192 +830,192 @@ Cry_Aipom_Ch8:
 Cry_Nidoran_M:
 	musicheader 3, 5, Cry_Nidoran_M_Ch5
 	musicheader 1, 6, Cry_Nidoran_M_Ch6
-	musicheader 1, 8, Cry_Nidoran_M_Ch8
+	musicheader $1, 8, Cry_Nidoran_M_Ch8
 
 Cry_Nidoran_F:
 	musicheader 3, 5, Cry_Nidoran_F_Ch5
 	musicheader 1, 6, Cry_Nidoran_F_Ch6
-	musicheader 1, 8, Cry_Nidoran_F_Ch8
+	musicheader $1, 8, Cry_Nidoran_F_Ch8
 
 Cry_Slowpoke:
 	musicheader 3, 5, Cry_Slowpoke_Ch5
 	musicheader 1, 6, Cry_Slowpoke_Ch6
-	musicheader 1, 8, Cry_Slowpoke_Ch8
+	musicheader $1, 8, Cry_Slowpoke_Ch8
 
 Cry_Kangaskhan:
 	musicheader 3, 5, Cry_Kangaskhan_Ch5
 	musicheader 1, 6, Cry_Kangaskhan_Ch6
-	musicheader 1, 8, Cry_Kangaskhan_Ch8
+	musicheader $1, 8, Cry_Kangaskhan_Ch8
 
 Cry_Charmander:
 	musicheader 3, 5, Cry_Charmander_Ch5
 	musicheader 1, 6, Cry_Charmander_Ch6
-	musicheader 1, 8, Cry_Charmander_Ch8
+	musicheader $1, 8, Cry_Charmander_Ch8
 
 Cry_Grimer:
 	musicheader 3, 5, Cry_Grimer_Ch5
 	musicheader 1, 6, Cry_Grimer_Ch6
-	musicheader 1, 8, Cry_Grimer_Ch8
+	musicheader $1, 8, Cry_Grimer_Ch8
 
 Cry_Voltorb:
 	musicheader 3, 5, Cry_Voltorb_Ch5
 	musicheader 1, 6, Cry_Voltorb_Ch6
-	musicheader 1, 8, Cry_Voltorb_Ch8
+	musicheader $1, 8, Cry_Voltorb_Ch8
 
 Cry_Muk:
 	musicheader 3, 5, Cry_Muk_Ch5
 	musicheader 1, 6, Cry_Muk_Ch6
-	musicheader 1, 8, Cry_Muk_Ch8
+	musicheader $1, 8, Cry_Muk_Ch8
 
 Cry_Oddish:
 	musicheader 3, 5, Cry_Oddish_Ch5
 	musicheader 1, 6, Cry_Oddish_Ch6
-	musicheader 1, 8, Cry_Oddish_Ch8
+	musicheader $1, 8, Cry_Oddish_Ch8
 
 Cry_Raichu:
 	musicheader 3, 5, Cry_Raichu_Ch5
 	musicheader 1, 6, Cry_Raichu_Ch6
-	musicheader 1, 8, Cry_Raichu_Ch8
+	musicheader $1, 8, Cry_Raichu_Ch8
 
 Cry_Nidoqueen:
 	musicheader 3, 5, Cry_Nidoqueen_Ch5
 	musicheader 1, 6, Cry_Nidoqueen_Ch6
-	musicheader 1, 8, Cry_Nidoqueen_Ch8
+	musicheader $1, 8, Cry_Nidoqueen_Ch8
 
 Cry_Diglett:
 	musicheader 3, 5, Cry_Diglett_Ch5
 	musicheader 1, 6, Cry_Diglett_Ch6
-	musicheader 1, 8, Cry_Diglett_Ch8
+	musicheader $1, 8, Cry_Diglett_Ch8
 
 Cry_Seel:
 	musicheader 3, 5, Cry_Seel_Ch5
 	musicheader 1, 6, Cry_Seel_Ch6
-	musicheader 1, 8, Cry_Seel_Ch8
+	musicheader $1, 8, Cry_Seel_Ch8
 
 Cry_Drowzee:
 	musicheader 3, 5, Cry_Drowzee_Ch5
 	musicheader 1, 6, Cry_Drowzee_Ch6
-	musicheader 1, 8, Cry_Drowzee_Ch8
+	musicheader $1, 8, Cry_Drowzee_Ch8
 
 Cry_Pidgey:
 	musicheader 3, 5, Cry_Pidgey_Ch5
 	musicheader 1, 6, Cry_Pidgey_Ch6
-	musicheader 1, 8, Cry_Pidgey_Ch8
+	musicheader $1, 8, Cry_Pidgey_Ch8
 
 Cry_Bulbasaur:
 	musicheader 3, 5, Cry_Bulbasaur_Ch5
 	musicheader 1, 6, Cry_Bulbasaur_Ch6
-	musicheader 1, 8, Cry_Bulbasaur_Ch8
+	musicheader $1, 8, Cry_Bulbasaur_Ch8
 
 Cry_Spearow:
 	musicheader 3, 5, Cry_Spearow_Ch5
 	musicheader 1, 6, Cry_Spearow_Ch6
-	musicheader 1, 8, Cry_Spearow_Ch8
+	musicheader $1, 8, Cry_Spearow_Ch8
 
 Cry_Rhydon:
 	musicheader 3, 5, Cry_Rhydon_Ch5
 	musicheader 1, 6, Cry_Rhydon_Ch6
-	musicheader 1, 8, Cry_Rhydon_Ch8
+	musicheader $1, 8, Cry_Rhydon_Ch8
 
 Cry_Golem:
 	musicheader 3, 5, Cry_Golem_Ch5
 	musicheader 1, 6, Cry_Golem_Ch6
-	musicheader 1, 8, Cry_Golem_Ch8
+	musicheader $1, 8, Cry_Golem_Ch8
 
 Cry_Blastoise:
 	musicheader 3, 5, Cry_Blastoise_Ch5
 	musicheader 1, 6, Cry_Blastoise_Ch6
-	musicheader 1, 8, Cry_Blastoise_Ch8
+	musicheader $1, 8, Cry_Blastoise_Ch8
 
 Cry_Pidgeotto:
 	musicheader 3, 5, Cry_Pidgeotto_Ch5
 	musicheader 1, 6, Cry_Pidgeotto_Ch6
-	musicheader 1, 8, Cry_Pidgeotto_Ch8
+	musicheader $1, 8, Cry_Pidgeotto_Ch8
 
 Cry_Weedle:
 	musicheader 3, 5, Cry_Weedle_Ch5
 	musicheader 1, 6, Cry_Weedle_Ch6
-	musicheader 1, 8, Cry_Weedle_Ch8
+	musicheader $1, 8, Cry_Weedle_Ch8
 
 Cry_Caterpie:
 	musicheader 3, 5, Cry_Caterpie_Ch5
 	musicheader 1, 6, Cry_Caterpie_Ch6
-	musicheader 1, 8, Cry_Caterpie_Ch8
+	musicheader $1, 8, Cry_Caterpie_Ch8
 
 Cry_Ekans:
 	musicheader 3, 5, Cry_Ekans_Ch5
 	musicheader 1, 6, Cry_Ekans_Ch6
-	musicheader 1, 8, Cry_Ekans_Ch8
+	musicheader $1, 8, Cry_Ekans_Ch8
 
 Cry_Fearow:
 	musicheader 3, 5, Cry_Fearow_Ch5
 	musicheader 1, 6, Cry_Fearow_Ch6
-	musicheader 1, 8, Cry_Fearow_Ch8
+	musicheader $1, 8, Cry_Fearow_Ch8
 
 Cry_Clefairy:
 	musicheader 3, 5, Cry_Clefairy_Ch5
 	musicheader 1, 6, Cry_Clefairy_Ch6
-	musicheader 1, 8, Cry_Clefairy_Ch8
+	musicheader $1, 8, Cry_Clefairy_Ch8
 
 Cry_Venonat:
 	musicheader 3, 5, Cry_Venonat_Ch5
 	musicheader 1, 6, Cry_Venonat_Ch6
-	musicheader 1, 8, Cry_Venonat_Ch8
+	musicheader $1, 8, Cry_Venonat_Ch8
 
 Cry_Lapras:
 	musicheader 3, 5, Cry_Lapras_Ch5
 	musicheader 1, 6, Cry_Lapras_Ch6
-	musicheader 1, 8, Cry_Lapras_Ch8
+	musicheader $1, 8, Cry_Lapras_Ch8
 
 Cry_Metapod:
 	musicheader 3, 5, Cry_Metapod_Ch5
 	musicheader 1, 6, Cry_Metapod_Ch6
-	musicheader 1, 8, Cry_Metapod_Ch8
+	musicheader $1, 8, Cry_Metapod_Ch8
 
 Cry_Squirtle:
 	musicheader 3, 5, Cry_Squirtle_Ch5
 	musicheader 1, 6, Cry_Squirtle_Ch6
-	musicheader 1, 8, Cry_Squirtle_Ch8
+	musicheader $1, 8, Cry_Squirtle_Ch8
 
 Cry_Paras:
 	musicheader 3, 5, Cry_Paras_Ch5
 	musicheader 1, 6, Cry_Paras_Ch6
-	musicheader 1, 8, Cry_Paras_Ch8
+	musicheader $1, 8, Cry_Paras_Ch8
 
 Cry_Growlithe:
 	musicheader 3, 5, Cry_Growlithe_Ch5
 	musicheader 1, 6, Cry_Growlithe_Ch6
-	musicheader 1, 8, Cry_Growlithe_Ch8
+	musicheader $1, 8, Cry_Growlithe_Ch8
 
 Cry_Krabby:
 	musicheader 3, 5, Cry_Krabby_Ch5
 	musicheader 1, 6, Cry_Krabby_Ch6
-	musicheader 1, 8, Cry_Krabby_Ch8
+	musicheader $1, 8, Cry_Krabby_Ch8
 
 Cry_Psyduck:
 	musicheader 3, 5, Cry_Psyduck_Ch5
 	musicheader 1, 6, Cry_Psyduck_Ch6
-	musicheader 1, 8, Cry_Psyduck_Ch8
+	musicheader $1, 8, Cry_Psyduck_Ch8
 
 Cry_Rattata:
 	musicheader 3, 5, Cry_Rattata_Ch5
 	musicheader 1, 6, Cry_Rattata_Ch6
-	musicheader 1, 8, Cry_Rattata_Ch8
+	musicheader $1, 8, Cry_Rattata_Ch8
 
 Cry_Vileplume:
 	musicheader 3, 5, Cry_Vileplume_Ch5
 	musicheader 1, 6, Cry_Vileplume_Ch6
-	musicheader 1, 8, Cry_Vileplume_Ch8
+	musicheader $1, 8, Cry_Vileplume_Ch8
 
 Cry_Vulpix:
 	musicheader 3, 5, Cry_Vulpix_Ch5
 	musicheader 1, 6, Cry_Vulpix_Ch6
-	musicheader 1, 8, Cry_Vulpix_Ch8
+	musicheader $1, 8, Cry_Vulpix_Ch8
 
 Cry_Weepinbell:
 	musicheader 3, 5, Cry_Weepinbell_Ch5
 	musicheader 1, 6, Cry_Weepinbell_Ch6
-	musicheader 1, 8, Cry_Weepinbell_Ch8
+	musicheader $1, 8, Cry_Weepinbell_Ch8
 
 Cry_Raichu_Ch5:
 	sound_duty 0, 0, 3, 3
@@ -1674,7 +1674,7 @@ Cry_Blastoise_Ch5:
 
 Cry_Blastoise_Ch6:
 	sound_duty 1, 2, 1, 2
-	sound __, 15, $c6, $04b1
+	sound __, 15, $c6, $004b1
 	sound __,  8, $c3, $04ad
 	sound __,  6, $b2, $04c1
 	sound __,  9, $92, $04d1
@@ -2017,7 +2017,7 @@ Cry_Rattata_Ch8:
 Cry_Shroomish:
 	musicheader 3, 5, Cry_Shroomish_Ch5
 	musicheader 1, 6, Cry_Shroomish_Ch6
-	musicheader 1, 8, Cry_Shroomish_Ch8
+	musicheader $1, 8, Cry_Shroomish_Ch8
 
 Cry_Shroomish_Ch5:
 	sound_duty 0, 0, 1, 0
@@ -2047,7 +2047,7 @@ Cry_Shroomish_Ch8:
 Cry_Breloom:
 	musicheader 3, 5, Cry_Breloom_Ch5
 	musicheader 1, 6, Cry_Breloom_Ch6
-	musicheader 1, 8, Cry_Breloom_Ch8
+	musicheader $1, 8, Cry_Breloom_Ch8
 
 Cry_Breloom_Ch5:
 	sound_duty 0, 3, 0, 1
@@ -2077,174 +2077,108 @@ Cry_Breloom_Ch8:
 Cry_Ralts:
 	musicheader 3, 5, Cry_Ralts_Ch5
 	musicheader 1, 6, Cry_Ralts_Ch6
-	musicheader 1, 8, Cry_Ralts_Ch8
+	musicheader $1, 8, Cry_Ralts_Ch8
 
 Cry_Ralts_Ch5:
-	sound_duty 1, 2, 1, 0
-	sound __, 5, $b7, $06a0
-	sound __, 9, $c7, $0722
-	sound __, 16, $e7, $0722
-	sound __, 5, $e6, $0722
-	sound __, 13, $b3, $06a0
-	sound __, 9, $e7, $0708
-	sound __, 16, $c6, $0708
-	sound __, 5, $b3, $0708
+	dutycycle $3
+	sound __, 1, $58, $0789
+	dutycycle $2
+	sound __, 1, $78, $078e
+	dutycycle $1
+	sound __, 1, $88, $0789
+	dutycycle $3
+	sound __, 1, $d8, $0789
+	sound __, 1, $b8, $0780
+	sound __, 1, $d8, $0786
+	dutycycle $2
+	sound __, 1, $c8, $0781
+	dutycycle $0
+	sound __, 1, $68, $0781
+	dutycycle $1
+	sound __, 1, $b8, $0782
+	dutycycle $2
+	sound __, 1, $c8, $078b
+	dutycycle $3
+	sound __, 1, $a8, $0780
+	dutycycle $0
+	sound __, 1, $78, $077f
+	dutycycle $3
+	sound __, 1, $a8, $0780
+	sound __, 1, $88, $076b
+	sound __, 1, $d8, $076a
+	dutycycle $2
+	sound __, 1, $d8, $076f
+	dutycycle $3
+	sound __, 1, $78, $076b
+	sound __, 1, $d8, $0761
+	dutycycle $2
+	sound __, 1, $b8, $076b
+	dutycycle $3
+	sound __, 1, $98, $075d
+	dutycycle $1
+	sound __, 1, $48, $075d
+	sound __, 1, $68, $0760
+	dutycycle $3
+	sound __, 1, $68, $0760
+	sound __, 1, $58, $076a
+	sound __, 1, $38, $076d
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	dutycycle $1
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
 	endchannel
 
 Cry_Ralts_Ch6:
-	sound_duty 2, 1, 2, 1
-	sound __, 5, $77, $0578
-	sound __, 9, $77, $0406
-	sound __, 16, $97, $0406
-	sound __, 5, $76, $0406
-	sound __, 13, $73, $028a
-	sound __, 9, $97, $02ee
-	sound __, 16, $76, $02ee
-	sound __, 5, $73, $02ee
+	dutycycle $2
+	sound __, 1, $28, $077e
+	dutycycle $3
+	sound __, 1, $48, $0780
+	dutycycle $2
+	sound __, 1, $08, $0000
+	sound __, 1, $88, $077d
+	sound __, 1, $48, $078e
+	sound __, 1, $68, $0777
+	sound __, 1, $68, $078c
+	sound __, 1, $38, $078c
+	sound __, 1, $68, $078d
+	dutycycle $3
+	sound __, 1, $08, $0000
+	dutycycle $2
+	sound __, 1, $48, $078a
+	dutycycle $3
+	sound __, 1, $48, $078a
+	dutycycle $2
+	sound __, 1, $48, $078d
+	sound __, 1, $08, $0000
+	dutycycle $3
+	sound __, 1, $58, $075b
+	sound __, 1, $78, $0760
+	sound __, 1, $28, $075c
+	dutycycle $2
+	sound __, 1, $68, $076e
+	sound __, 1, $48, $0754
+	sound __, 1, $58, $076f
+	dutycycle $3
+	sound __, 1, $28, $076c
+	sound __, 1, $38, $076c
+	dutycycle $2
+	sound __, 1, $28, $0770
+	dutycycle $0
+	sound __, 1, $28, $070b
+	dutycycle $3
+	sound __, 1, $28, $075d
+	dutycycle $0
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
 	endchannel
 
 Cry_Ralts_Ch8:
-	noise __, 9, $61, $1e
-	noise __, 9, $31, $1e
-	noise __, 9, $61, $64
-	endchannel
-
-Cry_Kirlia:
-	musicheader 3, 5, Cry_kirlia_Ch5
-	musicheader 1, 6, Cry_kirlia_Ch6
-	musicheader 1, 8, Cry_kirlia_Ch8
-
-Cry_kirlia_Ch5:
-	dutycycle $1
-	sound __, 1, $a8, $0780
-	sound __, 1, $d8, $0780
-	dutycycle $3
-	sound __, 1, $d8, $0789
-	dutycycle $2
-	sound __, 1, $d8, $0788
-	dutycycle $1
-	sound __, 1, $d8, $0788
-	dutycycle $3
-	sound __, 1, $d8, $0788
-	sound __, 1, $d8, $0788
-	dutycycle $2
-	sound __, 1, $d8, $078c
-	dutycycle $3
-	sound __, 1, $d8, $0788
-	dutycycle $1
-	sound __, 1, $d8, $0787
-	sound __, 1, $d8, $0780
-	dutycycle $3
-	sound __, 1, $d8, $0787
-	sound __, 1, $d8, $0781
-	sound __, 1, $d8, $0781
-	dutycycle $2
-	sound __, 1, $d8, $078b
-	dutycycle $3
-	sound __, 1, $d8, $0789
-	sound __, 1, $d8, $0789
-	dutycycle $2
-	sound __, 1, $d8, $078c
-	dutycycle $3
-	sound __, 1, $c8, $0789
-	sound __, 1, $c8, $0786
-	dutycycle $1
-	sound __, 1, $a8, $0780
-	sound __, 1, $b8, $0781
-	dutycycle $3
-	sound __, 1, $a8, $0780
-	dutycycle $0
-	sound __, 1, $78, $0780
-	sound __, 1, $58, $0780
-	dutycycle $1
-	sound __, 1, $68, $0780
-	dutycycle $3
-	sound __, 1, $58, $0789
-	sound __, 1, $38, $0786
-	sound __, 1, $28, $0787
-	dutycycle $2
-	sound __, 1, $28, $0789
-	dutycycle $0
-	sound __, 1, $18, $0780
-	dutycycle $3
-	sound __, 1, $08, $0000
-	dutycycle $2
-	sound __, 1, $08, $0000
-	sound __, 1, $08, $0000
-	dutycycle $1
-	sound __, 1, $08, $0000
-	endchannel
-
-Cry_kirlia_Ch6:
-	dutycycle $2
-	sound __, 1, $68, $078c
-	sound __, 1, $68, $078d
-	dutycycle $0
-	sound __, 1, $68, $073f
-	sound __, 1, $58, $073d
-	sound __, 1, $08, $0000
-	sound __, 1, $08, $0000
-	sound __, 1, $08, $0000
-	sound __, 1, $68, $073e
-	sound __, 1, $08, $0000
-	sound __, 1, $08, $0000
-	sound __, 1, $58, $0740
-	dutycycle $1
-	sound __, 1, $08, $0000
-	dutycycle $2
-	sound __, 1, $68, $0790
-	sound __, 1, $68, $078f
-	dutycycle $0
-	sound __, 1, $08, $0000
-	dutycycle $2
-	sound __, 1, $48, $077d
-	dutycycle $3
-	sound __, 1, $08, $0000
-	dutycycle $2
-	sound __, 1, $68, $0777
-	dutycycle $0
-	sound __, 1, $08, $0000
-	sound __, 1, $08, $0000
-	sound __, 1, $08, $0000
-	sound __, 1, $08, $0000
-	dutycycle $2
-	sound __, 1, $08, $0000
-	sound __, 1, $38, $078b
-	sound __, 1, $38, $078b
-	sound __, 1, $28, $078d
-	dutycycle $0
-	sound __, 1, $28, $073f
-	sound __, 1, $08, $0000
-	sound __, 1, $08, $0000
-	dutycycle $3
-	sound __, 1, $18, $077d
-	dutycycle $0
-	sound __, 1, $18, $074b
-	sound __, 1, 8, $0000
-	dutycycle $3
-	sound __, 1, $08, $0000
-	sound __, 1, $08, $0000
-	dutycycle $0
-	sound __, 1, $08, $0000
-	endchannel
-
-Cry_kirlia_Ch8:
-	noise __, 1, $28, $004b
-	noise __, 1, $28, $004b
-	noise __, 1, $28, $004b
-	noise __, 1, $28, $004b
-	noise __, 1, $28, $004b
-	noise __, 1, $28, $004b
-	noise __, 1, $28, $004b
-	noise __, 1, $28, $004b
-	noise __, 1, $28, $004b
-	noise __, 1, $28, $004b
-	noise __, 1, $28, $004b
-	noise __, 1, $28, $004b
-	noise __, 1, $28, $004b
-	noise __, 1, $38, $004b
-	noise __, 1, $28, $004b
-	noise __, 1, $28, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $18, $004b
 	noise __, 1, $28, $004b
 	noise __, 1, $28, $004b
 	noise __, 1, $28, $004b
@@ -2254,10 +2188,17 @@ Cry_kirlia_Ch8:
 	noise __, 1, $28, $004b
 	noise __, 1, $28, $004b
 	noise __, 1, $18, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $28, $004b
+	noise __, 1, $28, $004b
 	noise __, 1, $18, $004b
 	noise __, 1, $18, $004b
 	noise __, 1, $18, $004b
 	noise __, 1, $18, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $08, $004b
 	noise __, 1, $18, $004b
 	noise __, 1, $18, $004b
 	noise __, 1, $08, $004b
@@ -2269,7 +2210,7 @@ Cry_kirlia_Ch8:
 Cry_Gallade:
 	musicheader 3, 5, Cry_Gallade_Ch5
 	musicheader 1, 6, Cry_Gallade_Ch6
-	musicheader 1, 8, Cry_Gallade_Ch8
+	musicheader $1, 8, Cry_Gallade_Ch8
 
 Cry_Gallade_Ch5:
 	sound_duty 0, 0, 0, 0
@@ -2354,4 +2295,299 @@ Cry_Whimsicott_Ch6:
 	sound __, 8, $a1, 1684
 	sound __, 5, $a2, 1688
 	sound __, 5, $91, 1692
+	endchannel
+
+Cry_Gardevoir:
+	musicheader 3, 5, Cry_gardevoir_Ch5
+	musicheader 1, 6, Cry_gardevoir_Ch6
+	musicheader 1, 8, Cry_gardevoir_Ch8
+
+Cry_gardevoir_Ch5:
+	dutycycle $1
+	sound __, 1, $58, 1831
+	dutycycle $2
+	sound __, 1, $c8, 1837
+	dutycycle $1
+	sound __, 1, $d8, 1835
+	sound __, 1, $d8, 1834
+	sound __, 1, $d8, 1831
+	sound __, 1, $d8, 1818
+	dutycycle $2
+	sound __, 1, $d8, 1839
+	dutycycle $1
+	sound __, 1, $d8, 1835
+	dutycycle $2
+	sound __, 1, $d8, 1842
+	dutycycle $1
+	sound __, 1, $d8, 1820
+	sound __, 1, $d8, 1832
+	sound __, 1, $d8, 1835
+	sound __, 1, $d8, 1836
+	dutycycle $2
+	sound __, 1, $d8, 1841
+	sound __, 1, $d8, 1842
+	dutycycle $1
+	sound __, 1, $d8, 1833
+	sound __, 1, $d8, 1835
+	sound __, 1, $d8, 1837
+	dutycycle $2
+	sound __, 1, $a8, 1841
+	dutycycle $1
+	sound __, 1, $d8, 1821
+	sound __, 1, $d8, 1832
+	sound __, 1, $d8, 1837
+	sound __, 1, $d8, 1835
+	dutycycle $3
+	sound __, 1, $d8, 1819
+	dutycycle $1
+	sound __, 1, $d8, 1839
+	sound __, 1, $d8, 1833
+	sound __, 1, $b8, 1837
+	dutycycle $2
+	sound __, 1, $d8, 1841
+	dutycycle $3
+	sound __, 1, $d8, 1822
+	dutycycle $1
+	sound __, 1, $d8, 1821
+	sound __, 1, $d8, 1833
+	sound __, 1, $d8, 1831
+	sound __, 1, $d8, 1838
+	sound __, 1, $d8, 1834
+	dutycycle $2
+	sound __, 1, $d8, 1840
+	dutycycle $1
+	sound __, 1, $d8, 1824
+	sound __, 1, $d8, 1820
+	dutycycle $2
+	sound __, 1, $d8, 1841
+	dutycycle $1
+	sound __, 1, $d8, 1832
+	sound __, 1, $c8, 1837
+	sound __, 1, $c8, 1821
+	dutycycle $2
+	sound __, 1, $b8, 1839
+	sound __, 1, $b8, 1840
+	dutycycle $3
+	sound __, 1, $a8, 1817
+	dutycycle $2
+	sound __, 1, $b8, 1842
+	dutycycle $1
+	sound __, 1, $a8, 1832
+	sound __, 1, $98, 1818
+	sound __, 1, $98, 1822
+	sound __, 1, $88, 1835
+	dutycycle $2
+	sound __, 1, $78, 1840
+	dutycycle $1
+	sound __, 1, $88, 1816
+	dutycycle $2
+	sound __, 1, $78, 1841
+	dutycycle $1
+	sound __, 1, $78, 1832
+	sound __, 1, $68, 1820
+	sound __, 1, $68, 1834
+	sound __, 1, $58, 1821
+	sound __, 1, $48, 1824
+	sound __, 1, $58, 1820
+	dutycycle $3
+	sound __, 1, $48, 1817
+	dutycycle $1
+	sound __, 1, $38, 1822
+	sound __, 1, $28, 1821
+	sound __, 1, $28, 1832
+	dutycycle $3
+	sound __, 1, $18, 1820
+	dutycycle $1
+	sound __, 1, $08, $0000
+	dutycycle $3
+	sound __, 1, $08, $0000
+	dutycycle $1
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	dutycycle $2
+	sound __, 1, $08, $0000
+	endchannel
+
+Cry_gardevoir_Ch6:
+	dutycycle $0
+	sound __, 1, $28, 1727
+	dutycycle $2
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $68, 1804
+	dutycycle $0
+	sound __, 1, $58, 1725
+	dutycycle $2
+	sound __, 1, $78, 1854
+	dutycycle $0
+	sound __, 1, $08, $0000
+	dutycycle $3
+	sound __, 1, $48, 1814
+	dutycycle $1
+	sound __, 1, $78, 1820
+	dutycycle $2
+	sound __, 1, $78, 1844
+	dutycycle $0
+	sound __, 1, $48, 1701
+	sound __, 1, $58, 1733
+	sound __, 1, $08, $0000
+	dutycycle $3
+	sound __, 1, $08, $0000
+	dutycycle $1
+	sound __, 1, $88, 1819
+	dutycycle $0
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	dutycycle $3
+	sound __, 1, $58, 1818
+	dutycycle $2
+	sound __, 1, $68, 1842
+	dutycycle $0
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $48, 1707
+	sound __, 1, $58, 1727
+	sound __, 1, $08, $0000
+	dutycycle $3
+	sound __, 1, $68, 1809
+	dutycycle $0
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $48, 1701
+	sound __, 1, $58, 1705
+	sound __, 1, $08, $0000
+	dutycycle $1
+	sound __, 1, $58, 1816
+	dutycycle $2
+	sound __, 1, $48, 1852
+	dutycycle $0
+	sound __, 1, $08, $0000
+	dutycycle $2
+	sound __, 1, $58, 1843
+	sound __, 1, $58, 1839
+	dutycycle $1
+	sound __, 1, $78, 1819
+	dutycycle $0
+	sound __, 1, $08, $0000
+	dutycycle $1
+	sound __, 1, $58, 1816
+	dutycycle $2
+	sound __, 1, $48, 1851
+	dutycycle $3
+	sound __, 1, $08, $0000
+	dutycycle $0
+	sound __, 1, $08, $0000
+	dutycycle $2
+	sound __, 1, $38, 1839
+	dutycycle $1
+	sound __, 1, $58, 1818
+	dutycycle $0
+	sound __, 1, $08, $0000
+	sound __, 1, $38, 1725
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	dutycycle $2
+	sound __, 1, $58, 1841
+	dutycycle $3
+	sound __, 1, $48, 1816
+	dutycycle $0
+	sound __, 1, $28, 1705
+	sound __, 1, $28, 1699
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	dutycycle $2
+	sound __, 1, $28, 1843
+	sound __, 1, $38, 1843
+	sound __, 1, $28, 1844
+	dutycycle $0
+	sound __, 1, $08, $0000
+	sound __, 1, $18, 1705
+	sound __, 1, $08, $0000
+	dutycycle $2
+	sound __, 1, $18, 1848
+	dutycycle $0
+	sound __, 1, $08, $0000
+	dutycycle $2
+	sound __, 1, $08, $0000
+	dutycycle $0
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
+	endchannel
+
+Cry_gardevoir_Ch8:
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $18, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
+	noise __, 1, $08, $004b
 	endchannel

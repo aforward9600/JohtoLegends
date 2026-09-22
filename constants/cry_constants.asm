@@ -79,3 +79,4 @@
 	const CRY_GALLADE
 	const CRY_SNEASLER
 	const CRY_WHIMSICOTT
+	const CRY_GARDEVOIR

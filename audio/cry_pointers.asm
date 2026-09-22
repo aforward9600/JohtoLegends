@@ -74,3 +74,4 @@ Cries:
 	dba Cry_Gallade
 	dba Cry_Sneasler
 	dba Cry_Whimsicott
+	dba Cry_Gardevoir
