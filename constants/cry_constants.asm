@@ -84,3 +84,4 @@
 	const CRY_AMBIPOM
 	const CRY_MISMAGIUS
 	const CRY_HONCHKROW
+	const CRY_WEAVILE

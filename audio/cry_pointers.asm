@@ -79,3 +79,4 @@ Cries:
 	dba Cry_Ambipom
 	dba Cry_Mismagius
 	dba Cry_Honchkrow
+	dba Cry_Weavile

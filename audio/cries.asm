@@ -3154,3 +3154,92 @@ Cry_Honchkrow_Ch8:
 	noise __, 6, $53, 76
 	noise __, 5, $33, 76
 	endchannel
+
+Cry_Weavile:
+	musicheader 3, 5, Cry_Weavile_Ch5
+	musicheader 1, 6, Cry_Weavile_Ch6
+	musicheader 1, 8, Cry_Weavile_Ch8
+
+Cry_Weavile_Ch5:
+	dutycycle $2
+	sound __, 2, $d8, 1943
+	sound __, 2, $f8, 1943
+	sound __, 2, $d8, 1973
+	dutycycle $1
+	sound __, 2, $a8, 1959
+	sound __, 2, $68, 1964
+	dutycycle $2
+	sound __, 2, $78, 1964
+	sound __, 2, $88, 1964
+	sound __, 2, $a8, 1964
+	sound __, 2, $b8, 1965
+	dutycycle $1
+	sound __, 2, $98, 1962
+	dutycycle $2
+	sound __, 2, $98, 1928
+	sound __, 2, $d8, 1671
+	sound __, 2, $e8, 1312
+	sound __, 2, $a8, 1312
+	dutycycle $3
+	sound __, 2, $a8, 1312
+	dutycycle $2
+	sound __, 2, $98, 1286
+	dutycycle $3
+	sound __, 2, $88, 1365
+	dutycycle $2
+	sound __, 2, $58, 1218
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_Weavile_Ch6:
+	dutycycle $3
+	sound __, 2, $b8, 1893
+	dutycycle $1
+	sound __, 2, $f8, 1891
+	dutycycle $3
+	sound __, 2, $b8, 1919
+	dutycycle $0
+	sound __, 2, $b8, 1948
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $98, 1931
+	sound __, 2, $68, 1919
+	dutycycle $3
+	sound __, 2, $98, 1964
+	dutycycle $2
+	sound __, 2, $b8, 1911
+	sound __, 2, $08, 0
+	sound __, 2, $98, 1858
+	sound __, 2, $98, 1866
+	dutycycle $1
+	sound __, 2, $68, 1885
+	dutycycle $3
+	sound __, 2, $68, 1880
+	dutycycle $2
+	sound __, 2, $48, 1883
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_Weavile_Ch8:
+	noise __, 2, $b8, 44
+	noise __, 2, $f8, 44
+	noise __, 2, $f8, 44
+	noise __, 2, $78, 44
+	noise __, 2, $08, 44
+	noise __, 2, $78, 44
+	noise __, 2, $78, 44
+	noise __, 2, $78, 44
+	noise __, 2, $78, 44
+	noise __, 2, $78, 44
+	noise __, 2, $48, 44
+	noise __, 2, $78, 44
+	noise __, 2, $78, 44
+	noise __, 2, $78, 44
+	noise __, 2, $78, 44
+	noise __, 2, $08, 44
+	noise __, 2, $48, 44
+	noise __, 2, $48, 44
+	noise __, 2, $08, 44
+	endchannel

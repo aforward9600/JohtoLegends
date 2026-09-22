@@ -297,7 +297,7 @@ PokemonCries::
 	mon_cry CRY_AMPHAROS,    $035,  $0e0 ; HERACROSS
 	mon_cry CRY_WOOPER,      $053,  $0af ; SNEASEL
 	mon_cry CRY_WOOPER,      $053,  $0af ; SNEASEL_H
-	mon_cry CRY_MAREEP,      $058,  $132 ; WEAVILE
+	mon_cry CRY_WEAVILE,     $002,  $0ff ; WEAVILE
 	mon_cry CRY_SNEASLER,    $000,  $100 ; SNEASLER
 	mon_cry CRY_TEDDIURSA,   $7a2,  $06e ; TEDDIURSA
 	mon_cry CRY_TEDDIURSA,   $640,  $0d8 ; URSARING
