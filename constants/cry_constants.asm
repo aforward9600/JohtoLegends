@@ -80,3 +80,5 @@
 	const CRY_SNEASLER
 	const CRY_WHIMSICOTT
 	const CRY_GARDEVOIR
+	const CRY_FEEBAS
+	const CRY_AMBIPOM

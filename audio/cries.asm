@@ -2591,3 +2591,195 @@ Cry_gardevoir_Ch8:
 	noise __, 1, $08, $004b
 	noise __, 1, $08, $004b
 	endchannel
+
+Cry_Feebas:
+	musicheader 3, 5, Cry_feebas_Ch5
+	musicheader 1, 6, Cry_feebas_Ch6
+	musicheader 1, 8, Cry_feebas_Ch8
+
+Cry_feebas_Ch5:
+	dutycycle $0
+	sound __, 2, $d8, 1218
+	dutycycle $1
+	sound __, 2, $d8, 1452
+	dutycycle $3
+	sound __, 2, $d8, 1449
+	dutycycle $0
+	sound __, 2, $d8, 1447
+	sound __, 2, $d8, 1447
+	sound __, 2, $d8, 1449
+	dutycycle $1
+	sound __, 2, $d8, 1452
+	sound __, 2, $a8, 1455
+	dutycycle $0
+	sound __, 2, $88, 1458
+	sound __, 2, $58, 1208
+	sound __, 2, $18, 1436
+	endchannel
+
+Cry_feebas_Ch6:
+	dutycycle $2
+	sound __, 2, $08, 0
+	sound __, 2, $48, 1365
+	sound __, 2, $08, 0
+	dutycycle $0
+	sound __, 2, $58, 1229
+	sound __, 2, $68, 1197
+	dutycycle $2
+	sound __, 2, $08, 0
+	sound __, 2, $48, 1365
+	sound __, 2, $08, 0
+	sound __, 2, $28, 1372
+	dutycycle $0
+	sound __, 2, $28, 1452
+	sound __, 2, $18, 1268
+	endchannel
+
+Cry_feebas_Ch8:
+	noise __, 1, $18, 92
+	noise __, 1, $28, 92
+	noise __, 1, $38, 92
+	noise __, 1, $28, 92
+	noise __, 1, $28, 92
+	noise __, 1, $18, 92
+	noise __, 1, $28, 92
+	noise __, 1, $28, 92
+	noise __, 1, $28, 92
+	noise __, 1, $18, 92
+	noise __, 1, $08, 92
+	endchannel
+
+Cry_Ambipom:
+	musicheader 4, 5, Cry_Ambipom_Ch5
+	musicheader 3, 6, Cry_Ambipom_Ch6
+	musicheader 2, 7, Cry_Ambipom_Ch7
+	musicheader 1, 8, Cry_Ambipom_Ch8
+
+Cry_Ambipom_Ch5:
+	dutycycle $2
+	sound __, 1, $f8, 1891
+	dutycycle $0
+	sound __, 1, $c8, 1896
+	dutycycle $2
+	sound __, 1, $98, 1991
+	sound __, 1, $f8, 1924
+	sound __, 1, $f8, 1917
+	sound __, 1, $f8, 1912
+	sound __, 1, $c8, 1908
+	sound __, 1, $98, 1972
+	sound __, 1, $c8, 1993
+	sound __, 1, $c8, 1997
+	sound __, 1, $98, 1994
+	sound __, 1, $38, 1988
+	sound __, 1, $c8, 1976
+	sound __, 1, $c8, 1970
+	sound __, 1, $68, 1978
+	sound __, 6, $08, 0
+	sound __, 1, $68, 1841
+	sound __, 1, $f8, 1863
+	sound __, 1, $f8, 1875
+	sound __, 1, $f8, 1896
+	sound __, 1, $f8, 1888
+	sound __, 1, $f8, 1866
+	dutycycle $1
+	sound __, 1, $98, 1857
+	dutycycle $3
+	sound __, 1, $c8, 1943
+	dutycycle $2
+	sound __, 1, $f8, 1951
+	sound __, 1, $f8, 1966
+	sound __, 1, $c8, 1970
+	sound __, 1, $c8, 1963
+	sound __, 1, $f8, 1946
+	sound __, 1, $68, 1942
+	dutycycle $1
+	sound __, 1, $38, 1937
+	sound __, 2, $08, 0
+	dutycycle $2
+	sound __, 1, $c8, 1976
+	sound __, 1, $98, 2000
+	sound __, 1, $68, 2000
+	sound __, 1, $68, 1983
+	sound __, 1, $98, 1993
+	sound __, 1, $68, 1989
+	sound __, 1, $98, 1970
+	sound __, 1, $c8, 1971
+	sound __, 1, $98, 1974
+	endchannel
+
+Cry_Ambipom_Ch6:
+	sound __, 1, $08, 0
+	dutycycle $2
+	sound __, 1, $f8, 1998
+	sound __, 1, $b8, 1998
+	sound __, 28, $08, 0
+	sound __, 1, $b8, 2007
+	sound __, 1, $98, 2007
+	sound __, 11, $08, 0
+	sound __, 1, $d8, 1980
+	sound __, 1, $b8, 1980
+	sound __, 1, $98, 1979
+	endchannel
+
+Cry_Ambipom_Ch7:
+	sound __, 1, $11, 1970
+	sound __, 1, $13, 1972
+	sound __, 1, $11, 2020
+	sound __, 1, $13, 1986
+	sound __, 1, $11, 1983
+	sound __, 1, $11, 1980
+	sound __, 1, $10, 1978
+	sound __, 1, $11, 2010
+	sound __, 1, $11, 2020
+	sound __, 1, $11, 2023
+	sound __, 1, $11, 2021
+	sound __, 1, $21, 2018
+	sound __, 1, $11, 2012
+	sound __, 1, $11, 2009
+	sound __, 1, $21, 2013
+	sound __, 1, $31, 2012
+	sound __, 5, $00, 0
+	sound __, 1, $23, 1945
+	sound __, 1, $10, 1956
+	sound __, 1, $13, 1962
+	sound __, 1, $13, 1972
+	sound __, 1, $10, 1968
+	sound __, 1, $10, 1957
+	sound __, 1, $12, 1953
+	sound __, 1, $10, 1996
+	sound __, 1, $11, 2000
+	sound __, 1, $11, 2007
+	sound __, 1, $11, 2009
+	sound __, 1, $12, 2006
+	sound __, 1, $11, 1997
+	sound __, 1, $11, 1995
+	sound __, 1, $31, 1993
+	sound __, 2, $00, 0
+	sound __, 1, $11, 2012
+	sound __, 2, $11, 2024
+	sound __, 1, $11, 2016
+	sound __, 1, $11, 2020
+	sound __, 1, $11, 2019
+	sound __, 1, $11, 2009
+	sound __, 1, $11, 2010
+	sound __, 1, $12, 2011
+	endchannel
+
+Cry_Ambipom_Ch8:
+	noise __, 1, $88, 92
+	noise __, 2, $f8, 92
+	noise __, 3, $88, 92
+	noise __, 1, $f8, 92
+	noise __, 1, $88, 92
+	noise __, 2, $08, 0
+	noise __, 1, $88, 92
+	noise __, 10, $08, 0
+	noise __, 1, $88, 92
+	noise __, 1, $f8, 92
+	noise __, 1, $88, 92
+	noise __, 1, $08, 0
+	noise __, 1, $88, 92
+	noise __, 1, $f8, 92
+	noise __, 1, $88, 92
+	noise __, 19, $08, 0
+	endchannel

@@ -265,7 +265,7 @@ PokemonCries::
 	mon_cry CRY_CLEFFA,      $027,  $138 ; SKIPLOOM
 	mon_cry CRY_CLEFFA,      $000,  $180 ; JUMPLUFF
 	mon_cry CRY_AIPOM,      -$051,  $0e8 ; AIPOM
-	mon_cry CRY_CLEFFA,      $070,  $270 ; AMBIPOM
+	mon_cry CRY_AMBIPOM,     $008,  $0ff ; AMBIPOM
 	mon_cry CRY_MARILL,      $12b,  $0b8 ; SUNKERN
 	mon_cry CRY_SUNFLORA,   -$020,  $180 ; SUNFLORA
 	mon_cry CRY_TOTODILE,    $031,  $0c8 ; YANMA
@@ -370,7 +370,7 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,   $080,  $180 ; CACTURNE
 	mon_cry CRY_VENONAT,     $05d,  $0a0 ; SWABLU
 	mon_cry CRY_GLIGAR,      $059,  $150 ; ALTARIA
-	mon_cry CRY_DIGLETT,     $f57,  $062 ; FEEBAS
+	mon_cry CRY_FEEBAS,      $000,  $0ff ; FEEBAS
 	mon_cry CRY_GLIGAR,      $f39,  $4a0 ; MILOTIC
 	mon_cry CRY_CYNDAQUIL,   $10e,  $050 ; DUSKULL
 	mon_cry CRY_NATU,        $100,  $190 ; DUSCLOPS

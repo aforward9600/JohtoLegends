@@ -75,3 +75,5 @@ Cries:
 	dba Cry_Sneasler
 	dba Cry_Whimsicott
 	dba Cry_Gardevoir
+	dba Cry_Feebas
+	dba Cry_Ambipom
