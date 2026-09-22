@@ -83,3 +83,4 @@
 	const CRY_FEEBAS
 	const CRY_AMBIPOM
 	const CRY_MISMAGIUS
+	const CRY_HONCHKROW

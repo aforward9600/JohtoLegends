@@ -275,7 +275,7 @@ PokemonCries::
 	mon_cry CRY_WOOPER,     -$0c6,  $140 ; QUAGSIRE
 	mon_cry CRY_WOOPER,     -$0de,  $14c ; CLODSIRE
 	mon_cry CRY_MARILL,     -$01f,  $180 ; MURKROW
-	mon_cry CRY_MARILL,      $be1,  $260 ; HONCHKROW
+	mon_cry CRY_HONCHKROW,   $000,  $0ff ; HONCHKROW
 	mon_cry CRY_HOOTHOOT,    $130,  $0e8 ; MISDREAVUS
 	mon_cry CRY_MISMAGIUS,   $000,  $0ff ; MISMAGIUS
 	mon_cry CRY_HOOTHOOT,    $162,  $100 ; UNOWN

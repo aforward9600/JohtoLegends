@@ -3043,3 +3043,114 @@ Cry_Mismagius_Ch8:
 	noise __, 1, $18, 75
 	noise __, 11, $08, 75
 	endchannel
+
+Cry_Honchkrow:
+	musicheader 4, 5, Cry_Honchkrow_Ch5
+	musicheader 3, 6, Cry_Honchkrow_Ch6
+	musicheader 2, 7, Cry_Honchkrow_Ch7
+	musicheader 1, 8, Cry_Honchkrow_Ch8
+
+Cry_Honchkrow_Ch5:
+	sound_duty 2, 2, 1, 1
+	sound __, 3, $d8, 176
+	sound __, 3, $c8, 0
+	sound __, 3, $b8, 92
+	sound __, 3, $c8, 1850
+	sound __, 3, $b8, 1854
+	sound __, 3, $c8, 638
+	sound __, 3, $c8, 1192
+	sound __, 3, $e8, 1844
+	sound __, 3, $c8, 1032
+	sound __, 3, $c8, 0
+	sound __, 3, $d8, 0
+	sound __, 3, $c8, 1804
+	sound __, 3, $c8, 92
+	sound __, 3, $b8, 1708
+	sound __, 3, $d8, 0
+	sound __, 3, $b8, 0
+	sound __, 3, $b8, 176
+	sound __, 3, $b8, 1848
+	sound __, 3, $a8, 92
+	sound __, 3, $b8, 1770
+	sound __, 3, $98, 1770
+	sound __, 3, $78, 1750
+	sound __, 3, $58, 0
+	sound __, 3, $58, 0
+	sound __, 3, $38, 0
+	sound __, 2, $28, 0
+	endchannel
+
+Cry_Honchkrow_Ch6:
+	sound_duty 0, 3, 0, 3
+	sound __, 3, $a8, 0
+	sound __, 3, $a8, 1840
+	sound __, 3, $98, 1842
+	sound __, 3, $98, 1844
+	sound __, 3, $98, 1798
+	sound __, 3, $98, 1852
+	sound __, 3, $98, 1816
+	sound __, 3, $b8, 1818
+	sound __, 3, $98, 1796
+	sound __, 3, $a8, 1808
+	sound __, 3, $a8, 1804
+	sound __, 3, $a8, 1704
+	sound __, 3, $98, 1806
+	sound __, 3, $98, 1816
+	sound __, 3, $a8, 1854
+	sound __, 3, $98, 1856
+	sound __, 3, $98, 1846
+	sound __, 3, $98, 1866
+	sound __, 3, $88, 1850
+	sound __, 3, $98, 1838
+	sound __, 3, $78, 1776
+	sound __, 3, $58, 1758
+	sound __, 3, $48, 1838
+	sound __, 3, $38, 1844
+	sound __, 3, $28, 1796
+	sound __, 2, $28, 0
+	endchannel
+
+Cry_Honchkrow_Ch7:
+	sound __, 3, $28, 1112
+	sound __, 3, $23, 684
+	sound __, 3, $27, 1070
+	sound __, 3, $21, 1950
+	sound __, 3, $21, 1952
+	sound __, 3, $25, 1344
+	sound __, 3, $27, 1620
+	sound __, 3, $21, 1946
+	sound __, 3, $21, 1540
+	sound __, 3, $27, 0
+	sound __, 3, $24, 0
+	sound __, 3, $21, 1926
+	sound __, 3, $21, 1070
+	sound __, 3, $21, 1878
+	sound __, 3, $24, 0
+	sound __, 3, $27, 712
+	sound __, 3, $21, 1112
+	sound __, 3, $21, 1948
+	sound __, 3, $23, 1070
+	sound __, 3, $20, 1910
+	sound __, 3, $21, 1910
+	sound __, 3, $31, 1900
+	sound __, 3, $38, 764
+	sound __, 3, $38, 592
+	sound __, 3, $34, 278
+	sound __, 2, $34, 0
+	endchannel
+
+Cry_Honchkrow_Ch8:
+	noise __, 6, $94, 116
+	noise __, 6, $a8, 68
+	noise __, 6, $b2, 68
+	noise __, 6, $c8, 68
+	noise __, 6, $a5, 68
+	noise __, 6, $b8, 92
+	noise __, 6, $b2, 92
+	noise __, 6, $b3, 76
+	noise __, 6, $a8, 76
+	noise __, 6, $a3, 76
+	noise __, 6, $82, 76
+	noise __, 6, $53, 76
+	noise __, 5, $33, 76
+	endchannel
