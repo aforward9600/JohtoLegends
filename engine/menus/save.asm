@@ -25,7 +25,6 @@ SaveMenu:
 SaveAfterLinkTrade:
 	call PauseGameLogic
 	farcall StageRTCTimeForSave
-	farcall BackupMysteryGift
 	call SavePokemonData
 	call SaveIndexTables
 	call SaveChecksum
@@ -87,7 +86,6 @@ MoveMonWOMail_InsertMon_SaveGame:
 	ld a, TRUE
 	ld [wSaveFileExists], a
 	farcall StageRTCTimeForSave
-	farcall BackupMysteryGift
 	call ValidateSave
 	call SaveOptions
 	call SavePlayerData
@@ -222,7 +220,6 @@ SaveGameData:
 	ld a, TRUE
 	ld [wSaveFileExists], a
 	farcall StageRTCTimeForSave
-	farcall BackupMysteryGift
 	call ValidateSave
 	call SaveOptions
 	call SavePlayerData
@@ -414,7 +411,6 @@ TryLoadSaveFile:
 	call LoadBox
 	farcall RestorePartyMonMail
 	farcall RestoreMobileEventIndex
-	farcall RestoreMysteryGift
 	and a
 	ret
 

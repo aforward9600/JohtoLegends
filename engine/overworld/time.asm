@@ -218,32 +218,7 @@ _CheckLuckyNumberShowFlag:
 	jp CheckDayDependentEventHL
 
 DoMysteryGiftIfDayHasPassed:
-	ld a, BANK(sMysteryGiftTimer)
-	call GetSRAMBank
-	ld hl, sMysteryGiftTimer
-	ld a, [hli]
-	ld [wBuffer1], a
-	ld a, [hl]
-	ld [wBuffer2], a
-	call CloseSRAM
-
-	ld hl, wBuffer1
-	call CheckDayDependentEventHL
-	jr nc, .not_timed_out
-	ld hl, wBuffer1
-	call InitOneDayCountdown
-	call CloseSRAM
-	farcall Function1050c8
-
-.not_timed_out
-	ld a, BANK(sMysteryGiftTimer)
-	call GetSRAMBank
-	ld hl, wBuffer1
-	ld a, [hli]
-	ld [sMysteryGiftTimer], a
-	ld a, [hl]
-	ld [sMysteryGiftTimer + 1], a
-	jp CloseSRAM
+	ret
 
 UpdateTimeRemaining:
 ; If the amount of time elapsed exceeds the capacity of its
