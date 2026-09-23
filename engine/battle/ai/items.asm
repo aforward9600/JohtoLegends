@@ -308,14 +308,7 @@ AI_Items:
 	dbw HYPER_POTION, .HyperPotion
 	dbw SUPER_POTION, .SuperPotion
 	dbw POTION,       .Potion
-	dbw X_ACCURACY,   .XAccuracy
 	dbw FULL_HEAL,    .FullHeal
-	dbw GUARD_SPEC,   .GuardSpec
-	dbw DIRE_HIT,     .DireHit
-	dbw X_ATTACK,     .XAttack
-	dbw X_DEFEND,     .XDefend
-	dbw X_SPEED,      .XSpeed
-	dbw X_SPECIAL,    .XSpecial
 	db -1 ; end
 
 .FullHeal:
@@ -358,7 +351,7 @@ AI_Items:
 
 .FullRestore:
 	call .HealItem
-	jp nc, .UseFullRestore
+	jr nc, .UseFullRestore
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
 	jp z, .DontUse
@@ -385,142 +378,73 @@ AI_Items:
 	bit UNKNOWN_USE_F, a
 	jp nz, .CheckQuarterHP
 	callfar AICheckEnemyQuarterHP
-	jp nc, .UseHealItem
+	jr nc, .UseHealItem
 	call Random
 	cp 50 percent + 1
-	jp c, .UseHealItem
-	jp .DontUse
+	jr c, .UseHealItem
+	jr .DontUse
 
 .CheckQuarterHP:
 	callfar AICheckEnemyQuarterHP
-	jp c, .DontUse
+	jr c, .DontUse
 	call Random
 	cp 20 percent - 1
-	jp c, .DontUse
+	jr c, .DontUse
 	jr .UseHealItem
 
 .CheckHalfOrQuarterHP:
 	callfar AICheckEnemyHalfHP
-	jp c, .DontUse
+	jr c, .DontUse
 	callfar AICheckEnemyQuarterHP
-	jp nc, .UseHealItem
+	jr nc, .UseHealItem
 	call Random
 	cp 20 percent - 1
-	jp nc, .DontUse
+	jr nc, .DontUse
 
 .UseHealItem:
-	jp .Use
+	jr .Use
 
 .HyperPotion:
 	call .HealItem
-	jp c, .DontUse
+	jr c, .DontUse
 	ld b, 200
 	call EnemyUsedHyperPotion
-	jp .Use
+	jr .Use
 
 .SuperPotion:
 	call .HealItem
-	jp c, .DontUse
+	jr c, .DontUse
 	ld b, 50
 	call EnemyUsedSuperPotion
-	jp .Use
+	jr .Use
 
 .Potion:
 	call .HealItem
-	jp c, .DontUse
+	jr c, .DontUse
 	ld b, 20
 	call EnemyUsedPotion
-	jp .Use
+	jr .Use
 
 .check_50_percent
 	pop bc
 	ld a, [bc]
 	bit UNKNOWN_USE_F, a
-	jp z, .Use
+	jr z, .Use
 	call Random
 	cp 50 percent + 1
-	jp c, .Use
+	jr c, .Use
 
 .dont_use
-	jp .DontUse
+	jr .DontUse
 
 .check_40_percent
 	pop bc
 	ld a, [bc]
 	bit UNKNOWN_USE_F, a
-	jp z, .DontUse
+	jr z, .DontUse
 	call Random
 	cp 39 percent + 1
-	jp c, .Use
-	jp .DontUse
-
-.XAccuracy:
-	call .XItem
-	jp c, .DontUse
-	call EnemyUsedXAccuracy
-	jp .Use
-
-.GuardSpec:
-	call .XItem
-	jp c, .DontUse
-	call EnemyUsedGuardSpec
-	jp .Use
-
-.DireHit:
-	call .XItem
-	jp c, .DontUse
-	call EnemyUsedDireHit
-	jp .Use
-
-.XAttack:
-	call .XItem
-	jp c, .DontUse
-	call EnemyUsedXAttack
-	jp .Use
-
-.XDefend:
-	call .XItem
-	jp c, .DontUse
-	call EnemyUsedXDefend
-	jp .Use
-
-.XSpeed:
-	call .XItem
-	jp c, .DontUse
-	call EnemyUsedXSpeed
-	jp .Use
-
-.XSpecial:
-	call .XItem
-	jp c, .DontUse
-	call EnemyUsedXSpecial
-	jp .Use
-
-.XItem:
-	ld a, [wEnemyTurnsTaken]
-	and a
-	jr nz, .notfirstturnout
-	ld a, [bc]
-	bit ALWAYS_USE_F, a
-	jp nz, .Use
-	call Random
-	cp 50 percent + 1
-	jp c, .DontUse
-	ld a, [bc]
-	bit CONTEXT_USE_F, a
-	jp nz, .Use
-	call Random
-	cp 50 percent + 1
-	jp c, .DontUse
-	jp .Use
-.notfirstturnout
-	ld a, [bc]
-	bit ALWAYS_USE_F, a
-	jp z, .DontUse
-	call Random
-	cp 20 percent - 1
-	jp nc, .DontUse
-	jp .Use
+	jr c, .Use
 
 .DontUse:
 	scf
