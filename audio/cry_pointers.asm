@@ -88,3 +88,4 @@ Cries:
 	dba Cry_Azurill
 	dba Cry_Togekiss
 	dba Cry_Gliscor
+	dba Cry_Aggron

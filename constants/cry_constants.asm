@@ -93,3 +93,4 @@
 	const CRY_AZURILL
 	const CRY_TOGEKISS
 	const CRY_GLISCOR
+	const CRY_AGGRON

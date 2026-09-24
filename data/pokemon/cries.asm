@@ -351,7 +351,7 @@ PokemonCries::
 	mon_cry CRY_KRABBY,     -$2c4,  $0a0 ; MAWILE AzureKeys
 	mon_cry CRY_GROWLITHE,   $080,  $0b0 ; ARON
 	mon_cry CRY_WEEDLE,      $040,  $090 ; LAIRON
-	mon_cry CRY_SLOWKING,    $710,  $242 ; AGGRON
+	mon_cry CRY_AGGRON,      $000,  $0ff ; AGGRON
 	mon_cry CRY_METAPOD,     $096,  $160 ; MEDITITE
 	mon_cry CRY_METAPOD,     $12c,  $1f4 ; MEDICHAM
 	mon_cry CRY_PICHU,       $f17,  $270 ; ELECTRIKE
