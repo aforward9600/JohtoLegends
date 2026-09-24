@@ -215,7 +215,7 @@ PokemonCries::
 	mon_cry CRY_CATERPIE,    $0bb,  $0c0 ; KABUTO
 	mon_cry CRY_FEAROW,      $0ee,  $081 ; KABUTOPS
 	mon_cry CRY_VILEPLUME,   $020,  $170 ; AERODACTYL
-	mon_cry CRY_NIDOQUEEN,   $f30,  $0a0 ; MUNCHLAX
+	mon_cry CRY_MUNCHLAX,    $000,  $0ff ; MUNCHLAX
 	mon_cry CRY_GRIMER,      $055,  $081 ; SNORLAX
 	mon_cry CRY_RAICHU,      $080,  $0c0 ; ARTICUNO
 	mon_cry CRY_RAICHU,      $080,  $0c0 ; ARTICUNO_G
@@ -250,13 +250,13 @@ PokemonCries::
 	mon_cry CRY_CYNDAQUIL,   $2d0,  $110 ; LANTURN
 	mon_cry CRY_TOGEPI,      $010,  $100 ; TOGEPI
 	mon_cry CRY_TOGETIC,     $03b,  $038 ; TOGETIC
-	mon_cry CRY_AMPHAROS,    $3ab,  $270 ; TOGEKISS
+	mon_cry CRY_TOGEKISS,    $000,  $0ff ; TOGEKISS
 	mon_cry CRY_NATU,       -$067,  $100 ; NATU
 	mon_cry CRY_NATU,       -$0a7,  $168 ; XATU
 	mon_cry CRY_MAREEP,      $022,  $0d8 ; MAREEP
 	mon_cry CRY_MAREEP,     -$007,  $180 ; FLAAFFY
 	mon_cry CRY_AMPHAROS,   -$07c,  $0e8 ; AMPHAROS
-	mon_cry CRY_MARILL,      $130,  $140 ; AZURILL
+	mon_cry CRY_AZURILL,     $000,  $0ff ; AZURILL
 	mon_cry CRY_MARILL,      $11b,  $120 ; MARILL
 	mon_cry CRY_MARILL,      $0b6,  $180 ; AZUMARILL
 	mon_cry CRY_SPEAROW,     $040,  $090 ; BONSLY
@@ -384,7 +384,7 @@ PokemonCries::
 	mon_cry CRY_RAICHU,      $f1f,  $130 ; SALAMENCE
 	mon_cry CRY_CYNDAQUIL,   $40c,  $140 ; BELDUM
 	mon_cry CRY_SLOWKING,    $6af,  $17a ; METANG
-	mon_cry CRY_METAPOD,     $def,  $25a ; METAGROSS
+	mon_cry CRY_METAGROSS,   $000,  $0ff ; METAGROSS ; need to adjust pitch
 	mon_cry CRY_EKANS,       $101,  $086 ; BRONZOR
 	mon_cry CRY_EKANS,       $12a,  $170 ; BRONZONG
 	mon_cry CRY_WHIMSICOTT, -$086,  $150 ; SPIRITOMB

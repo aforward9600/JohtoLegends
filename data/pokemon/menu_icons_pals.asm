@@ -221,7 +221,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  TEAL   ; KABUTO
 	icon_pals BROWN,  TEAL   ; KABUTOPS
 	icon_pals GRAY,   PURPLE ; AERODACTYL
-	icon_pals BROWN,  BLUE   ; MUNCHLAX
+	icon_pals GREEN,  BLUE   ; MUNCHLAX
 	icon_pals BROWN,  BLUE   ; SNORLAX
 	icon_pals BLUE,   TEAL   ; ARTICUNO
 	icon_pals PURPLE, BLUE   ; ARTICUNO_G

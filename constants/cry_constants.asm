@@ -88,3 +88,7 @@
 	const CRY_LEAFEON
 	const CRY_GLACEON
 	const CRY_SYLVEON
+	const CRY_METAGROSS
+	const CRY_MUNCHLAX
+	const CRY_AZURILL
+	const CRY_TOGEKISS

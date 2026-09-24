@@ -83,3 +83,7 @@ Cries:
 	dba Cry_Leafeon
 	dba Cry_Glaceon
 	dba Cry_Sylveon
+	dba Cry_Metagross
+	dba Cry_Munchlax
+	dba Cry_Azurill
+	dba Cry_Togekiss
