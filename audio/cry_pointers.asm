@@ -80,3 +80,6 @@ Cries:
 	dba Cry_Mismagius
 	dba Cry_Honchkrow
 	dba Cry_Weavile
+	dba Cry_Leafeon
+	dba Cry_Glaceon
+	dba Cry_Sylveon

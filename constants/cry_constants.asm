@@ -85,3 +85,6 @@
 	const CRY_MISMAGIUS
 	const CRY_HONCHKROW
 	const CRY_WEAVILE
+	const CRY_LEAFEON
+	const CRY_GLACEON
+	const CRY_SYLVEON

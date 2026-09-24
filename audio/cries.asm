@@ -3245,3 +3245,651 @@ Cry_Weavile_Ch8:
 	noise __, 2, $48, 44
 	noise __, 2, $08, 44
 	endchannel
+
+Cry_Leafeon:
+	musicheader 4, 5, Cry_Leafeon_Ch5
+	musicheader 3, 6, Cry_Leafeon_Ch6
+	musicheader 2, 7, Cry_Leafeon_Ch7
+	musicheader 1, 8, Cry_Leafeon_Ch8
+
+Cry_Leafeon_Ch5:
+	dutycycle $2
+	sound __, 1, $68, 1909
+	sound __, 1, $d8, 1694
+	dutycycle $3
+	sound __, 1, $d8, 1761
+	dutycycle $2
+	sound __, 1, $b8, 1758
+	sound __, 1, $f8, 1646
+	sound __, 1, $f8, 1764
+	dutycycle $1
+	sound __, 1, $f8, 1763
+	dutycycle $2
+	sound __, 1, $f8, 1930
+	sound __, 1, $f8, 1909
+	sound __, 1, $f8, 1921
+	dutycycle $3
+	sound __, 1, $f8, 1918
+	dutycycle $1
+	sound __, 1, $e8, 1941
+	sound __, 1, $f8, 1946
+	dutycycle $2
+	sound __, 1, $f8, 1950
+	sound __, 1, $f8, 1951
+	sound __, 2, $f8, 1949
+	dutycycle $3
+	sound __, 1, $f8, 1949
+	dutycycle $2
+	sound __, 1, $f8, 1948
+	sound __, 1, $f8, 1947
+	sound __, 1, $f8, 1945
+	sound __, 1, $f8, 1943
+	sound __, 2, $f8, 1941
+	sound __, 1, $f8, 1940
+	sound __, 1, $f8, 1938
+	dutycycle $3
+	sound __, 1, $f8, 1938
+	sound __, 1, $d8, 1937
+	dutycycle $1
+	sound __, 1, $e8, 1936
+	dutycycle $2
+	sound __, 1, $a8, 1933
+	dutycycle $3
+	sound __, 1, $f8, 1932
+	dutycycle $1
+	sound __, 1, $f8, 1933
+	dutycycle $3
+	sound __, 1, $f8, 1934
+	dutycycle $2
+	sound __, 3, $f8, 1933
+	sound __, 1, $f8, 1931
+	sound __, 2, $f8, 1930
+	sound __, 1, $e8, 1927
+	sound __, 1, $98, 1927
+	sound __, 1, $98, 1933
+	sound __, 1, $98, 1892
+	sound __, 1, $a8, 1927
+	sound __, 1, $a8, 1928
+	sound __, 1, $98, 1927
+	sound __, 1, $88, 1925
+	sound __, 1, $98, 1925
+	sound __, 1, $68, 1923
+	sound __, 1, $58, 1923
+	sound __, 1, $58, 1921
+	sound __, 1, $58, 1920
+	sound __, 1, $58, 1921
+	sound __, 1, $28, 1928
+	sound __, 2, $18, 1920
+	sound __, 3, $08, 0
+	endchannel
+
+Cry_Leafeon_Ch6:
+	sound __, 2, $08, 0
+	dutycycle $2
+	sound __, 1, $c8, 1931
+	sound __, 1, $68, 1926
+	sound __, 1, $a8, 1912
+	sound __, 1, $78, 1920
+	sound __, 1, $f8, 1918
+	sound __, 1, $c8, 1914
+	sound __, 4, $08, 0
+	sound __, 1, $c8, 1904
+	sound __, 1, $78, 1909
+	sound __, 9, $08, 0
+	sound __, 1, $c8, 1920
+	sound __, 1, $c8, 1911
+	sound __, 1, $a8, 1901
+	sound __, 1, $98, 1902
+	sound __, 1, $98, 1901
+	sound __, 1, $c8, 1900
+	sound __, 1, $98, 1916
+	sound __, 1, $78, 1911
+	sound __, 1, $08, 0
+	sound __, 1, $c8, 1919
+	sound __, 1, $98, 1913
+	sound __, 1, $c8, 1906
+	sound __, 2, $08, 0
+	sound __, 2, $98, 1913
+	sound __, 1, $c8, 1902
+	sound __, 1, $78, 1895
+	sound __, 2, $08, 0
+	sound __, 1, $78, 1891
+	sound __, 1, $68, 1898
+	sound __, 14, $08, 0
+	endchannel
+
+Cry_Leafeon_Ch7:
+	sound __, 1, $21, 1992
+	sound __, 1, $11, 1983
+	sound __, 1, $11, 1984
+	sound __, 1, $15, 1853
+	sound __, 1, $12, 1911
+	sound __, 1, $11, 1895
+	sound __, 1, $15, 1994
+	sound __, 1, $13, 1952
+	sound __, 1, $11, 1957
+	sound __, 2, $11, 1986
+	sound __, 1, $11, 1993
+	sound __, 1, $11, 1995
+	sound __, 1, $12, 1996
+	sound __, 1, $11, 1998
+	sound __, 2, $11, 2001
+	sound __, 1, $11, 1997
+	sound __, 1, $11, 1996
+	sound __, 1, $11, 1995
+	sound __, 2, $11, 1998
+	sound __, 2, $11, 1997
+	sound __, 2, $11, 1996
+	sound __, 1, $11, 1995
+	sound __, 1, $11, 1990
+	sound __, 7, $11, 1994
+	sound __, 1, $11, 1993
+	sound __, 1, $11, 1992
+	sound __, 2, $11, 1987
+	sound __, 1, $11, 1990
+	sound __, 2, $21, 1989
+	sound __, 1, $21, 1986
+	sound __, 1, $11, 1986
+	sound __, 1, $11, 1990
+	sound __, 1, $21, 1989
+	sound __, 2, $21, 1988
+	sound __, 2, $21, 1983
+	sound __, 1, $31, 1982
+	sound __, 1, $21, 1986
+	sound __, 1, $31, 1982
+	sound __, 2, $31, 1986
+	sound __, 1, $31, 2032
+	sound __, 3, $00, 0
+	endchannel
+
+Cry_Leafeon_Ch8:
+	noise __, 1, $48, 100
+	noise __, 1, $88, 100
+	noise __, 1, $78, 100
+	noise __, 1, $48, 100
+	noise __, 1, $58, 100
+	noise __, 1, $a8, 100
+	noise __, 2, $b8, 100
+	noise __, 1, $f8, 100
+	noise __, 1, $b8, 100
+	noise __, 1, $c8, 100
+	noise __, 1, $88, 100
+	noise __, 1, $78, 100
+	noise __, 1, $58, 100
+	noise __, 4, $48, 100
+	noise __, 1, $58, 100
+	noise __, 1, $48, 100
+	noise __, 1, $38, 100
+	noise __, 5, $48, 100
+	noise __, 2, $38, 100
+	noise __, 1, $48, 100
+	noise __, 2, $18, 100
+	noise __, 2, $38, 100
+	noise __, 1, $18, 100
+	noise __, 3, $38, 100
+	noise __, 1, $18, 100
+	noise __, 1, $38, 100
+	noise __, 1, $48, 100
+	noise __, 1, $38, 100
+	noise __, 3, $18, 100
+	noise __, 5, $38, 100
+	noise __, 2, $18, 100
+	noise __, 1, $38, 100
+	noise __, 3, $18, 100
+	noise __, 4, $08, 0
+	endchannel
+
+Cry_Glaceon:
+	musicheader 4, 5, Cry_Glaceon_Ch5
+	musicheader 3, 6, Cry_Glaceon_Ch6
+	musicheader 2, 7, Cry_Glaceon_Ch7
+	musicheader 1, 8, Cry_Glaceon_Ch8
+
+Cry_Glaceon_Ch5:
+	dutycycle $2
+	sound __, 1, $68, 1970
+	sound __, 1, $f8, 1973
+	sound __, 1, $f8, 1909
+	sound __, 1, $f8, 1916
+	sound __, 1, $c8, 1911
+	sound __, 1, $68, 1911
+	dutycycle $1
+	sound __, 1, $68, 1911
+	sound __, 1, $38, 1912
+	dutycycle $2
+	sound __, 1, $68, 1919
+	sound __, 1, $38, 1913
+	sound __, 1, $38, 2006
+	sound __, 1, $98, 2006
+	sound __, 1, $68, 1917
+	sound __, 1, $68, 1916
+	sound __, 1, $68, 1917
+	sound __, 1, $98, 1915
+	sound __, 1, $98, 1907
+	sound __, 1, $68, 1903
+	sound __, 1, $c8, 1898
+	sound __, 1, $98, 1893
+	sound __, 1, $98, 1895
+	sound __, 1, $98, 1892
+	sound __, 1, $68, 1892
+	sound __, 1, $38, 1893
+	sound __, 1, $68, 1895
+	sound __, 1, $98, 1896
+	sound __, 1, $98, 1899
+	sound __, 1, $68, 1898
+	sound __, 1, $98, 1899
+	sound __, 1, $68, 1902
+	sound __, 1, $68, 1914
+	sound __, 1, $68, 1913
+	sound __, 1, $c8, 1914
+	sound __, 2, $f8, 1916
+	sound __, 1, $98, 1917
+	sound __, 1, $98, 1918
+	sound __, 1, $f8, 1919
+	sound __, 3, $f8, 1920
+	sound __, 3, $f8, 1921
+	sound __, 1, $f8, 1922
+	sound __, 1, $f8, 1923
+	sound __, 1, $f8, 1925
+	sound __, 1, $f8, 1937
+	sound __, 1, $f8, 1939
+	sound __, 1, $f8, 1924
+	sound __, 1, $c8, 1979
+	sound __, 1, $98, 1920
+	dutycycle $1
+	sound __, 1, $68, 1916
+	dutycycle $2
+	sound __, 1, $68, 1986
+	sound __, 1, $68, 1987
+	sound __, 1, $98, 1988
+	sound __, 1, $c8, 1917
+	sound __, 1, $68, 1919
+	sound __, 1, $98, 1920
+	sound __, 1, $68, 1991
+	sound __, 1, $c8, 1991
+	sound __, 1, $f8, 1989
+	sound __, 1, $68, 1989
+	sound __, 1, $f8, 1987
+	sound __, 1, $c8, 1984
+	sound __, 1, $98, 1984
+	sound __, 1, $98, 1983
+	dutycycle $3
+	sound __, 1, $68, 1922
+	dutycycle $2
+	sound __, 1, $68, 2003
+	dutycycle $3
+	sound __, 1, $98, 1961
+	dutycycle $2
+	sound __, 1, $68, 1955
+	sound __, 1, $68, 1952
+	sound __, 1, $68, 1948
+	sound __, 1, $68, 2001
+	sound __, 1, $98, 2001
+	sound __, 1, $68, 1932
+	sound __, 1, $68, 1928
+	sound __, 1, $68, 1924
+	sound __, 1, $98, 1921
+	sound __, 1, $98, 1919
+	sound __, 1, $68, 1906
+	sound __, 1, $68, 1902
+	sound __, 1, $68, 1893
+	sound __, 1, $68, 1892
+	sound __, 1, $68, 1894
+	sound __, 1, $38, 1893
+	sound __, 1, $38, 1894
+	sound __, 1, $38, 1892
+	sound __, 1, $38, 1919
+	sound __, 1, $38, 1921
+	sound __, 1, $38, 1914
+	sound __, 10, $08, 0
+	endchannel
+
+Cry_Glaceon_Ch6:
+	sound __, 3, $08, 0
+	dutycycle $2
+	sound __, 1, $88, 1973
+	sound __, 1, $78, 1973
+	sound __, 1, $08, 0
+	sound __, 2, $38, 1974
+	sound __, 9, $08, 0
+	sound __, 2, $88, 1985
+	sound __, 8, $08, 0
+	sound __, 1, $78, 1969
+	sound __, 1, $88, 1969
+	sound __, 18, $08, 0
+	sound __, 1, $c8, 1926
+	sound __, 1, $f8, 1926
+	sound __, 1, $08, 0
+	sound __, 1, $f8, 1938
+	sound __, 1, $a8, 1935
+	sound __, 1, $78, 1936
+	sound __, 3, $08, 0
+	sound __, 1, $d8, 1989
+	sound __, 1, $58, 1990
+	sound __, 1, $88, 1991
+	sound __, 3, $08, 0
+	sound __, 1, $88, 1992
+	sound __, 1, $88, 1991
+	sound __, 1, $c8, 1991
+	sound __, 1, $08, 0
+	sound __, 1, $78, 1988
+	sound __, 1, $78, 1986
+	sound __, 1, $78, 1985
+	sound __, 1, $58, 1984
+	sound __, 11, $08, 0
+	sound __, 1, $58, 2001
+	sound __, 1, $38, 2001
+	sound __, 5, $08, 0
+	sound __, 2, $28, 1892
+	sound __, 1, $28, 1890
+	sound __, 1, $28, 1893
+	sound __, 8, $08, 0
+	endchannel
+
+Cry_Glaceon_Ch7:
+	sound __, 1, $21, 2009
+	sound __, 1, $11, 2011
+	sound __, 1, $11, 1979
+	sound __, 1, $11, 1982
+	sound __, 2, $21, 1979
+	sound __, 1, $21, 1980
+	sound __, 1, $32, 1980
+	sound __, 1, $21, 1983
+	sound __, 1, $31, 1981
+	sound __, 1, $31, 2027
+	sound __, 1, $21, 2027
+	sound __, 1, $20, 1983
+	sound __, 1, $21, 1982
+	sound __, 1, $21, 1983
+	sound __, 1, $21, 1982
+	sound __, 1, $21, 1978
+	sound __, 1, $21, 1976
+	sound __, 1, $11, 1973
+	sound __, 2, $21, 1971
+	sound __, 2, $21, 1970
+	sound __, 1, $31, 1971
+	sound __, 1, $21, 1971
+	sound __, 1, $21, 1972
+	sound __, 2, $21, 1973
+	sound __, 1, $21, 1974
+	sound __, 1, $21, 1975
+	sound __, 2, $21, 1981
+	sound __, 1, $11, 1981
+	sound __, 2, $11, 1982
+	sound __, 2, $21, 1983
+	sound __, 1, $11, 1983
+	sound __, 5, $11, 1984
+	sound __, 2, $11, 1985
+	sound __, 2, $11, 1986
+	sound __, 1, $11, 1993
+	sound __, 1, $11, 1994
+	sound __, 1, $11, 1986
+	sound __, 1, $11, 2014
+	sound __, 1, $21, 1984
+	sound __, 1, $22, 1982
+	sound __, 1, $21, 2017
+	sound __, 2, $21, 2018
+	sound __, 1, $11, 1983
+	sound __, 2, $21, 1984
+	sound __, 1, $21, 2020
+	sound __, 1, $11, 2020
+	sound __, 1, $11, 2018
+	sound __, 1, $21, 2018
+	sound __, 1, $11, 2017
+	sound __, 1, $11, 2016
+	sound __, 2, $21, 2016
+	sound __, 1, $22, 1985
+	sound __, 1, $21, 2026
+	sound __, 1, $22, 2005
+	sound __, 1, $21, 2002
+	sound __, 1, $21, 2000
+	sound __, 1, $21, 1998
+	sound __, 2, $21, 2025
+	sound __, 1, $21, 1990
+	sound __, 1, $21, 1988
+	sound __, 1, $21, 1986
+	sound __, 1, $21, 1985
+	sound __, 1, $21, 1983
+	sound __, 1, $23, 1977
+	sound __, 1, $21, 1975
+	sound __, 1, $21, 1971
+	sound __, 1, $21, 1970
+	sound __, 1, $21, 1971
+	sound __, 2, $31, 1971
+	sound __, 1, $31, 1970
+	sound __, 1, $31, 1983
+	sound __, 1, $31, 1985
+	sound __, 1, $30, 1981
+	sound __, 1, $31, 1987
+	sound __, 1, $33, 1982
+	sound __, 1, $31, 1971
+	sound __, 5, $31, 1970
+	sound __, 2, $00, 0
+	endchannel
+
+Cry_Glaceon_Ch8:
+	noise __, 68, $08, 0
+	noise __, 1, $f8, 92
+	noise __, 32, $08, 0
+	endchannel
+
+Cry_Sylveon:
+	musicheader 4, 5, Cry_Sylveon_Ch5
+	musicheader 3, 6, Cry_Sylveon_Ch6
+	musicheader 2, 7, Cry_Sylveon_Ch7
+	musicheader 1, 8, Cry_Sylveon_Ch8
+
+Cry_Sylveon_Ch5:
+	dutycycle $2
+	sound __, 1, $58, 2007
+	sound __, 1, $b8, 1969
+	sound __, 1, $98, 1980
+	sound __, 1, $f8, 1984
+	sound __, 1, $f8, 1991
+	sound __, 1, $f8, 1998
+	sound __, 1, $f8, 2000
+	sound __, 1, $f8, 2001
+	sound __, 1, $e8, 2001
+	sound __, 1, $68, 2001
+	sound __, 1, $58, 2001
+	sound __, 1, $38, 2001
+	sound __, 1, $38, 1999
+	sound __, 1, $58, 1995
+	sound __, 1, $78, 1993
+	sound __, 1, $98, 1988
+	sound __, 1, $98, 2016
+	sound __, 1, $a8, 2015
+	sound __, 1, $b8, 2013
+	dutycycle $0
+	sound __, 1, $78, 1977
+	dutycycle $2
+	sound __, 1, $88, 1976
+	sound __, 1, $88, 1973
+	dutycycle $1
+	sound __, 1, $78, 1970
+	sound __, 1, $68, 1968
+	sound __, 1, $78, 1967
+	sound __, 1, $68, 1965
+	sound __, 1, $98, 1967
+	dutycycle $2
+	sound __, 1, $78, 1964
+	sound __, 1, $98, 1958
+	sound __, 1, $68, 1956
+	sound __, 1, $68, 1998
+	sound __, 1, $b8, 1995
+	dutycycle $3
+	sound __, 1, $e8, 1947
+	dutycycle $2
+	sound __, 1, $b8, 1996
+	dutycycle $1
+	sound __, 1, $b8, 1948
+	dutycycle $3
+	sound __, 1, $d8, 1949
+	dutycycle $2
+	sound __, 1, $a8, 2000
+	dutycycle $1
+	sound __, 1, $a8, 1955
+	dutycycle $3
+	sound __, 1, $f8, 1958
+	dutycycle $1
+	sound __, 1, $f8, 1964
+	dutycycle $3
+	sound __, 1, $f8, 1964
+	dutycycle $2
+	sound __, 1, $a8, 2006
+	dutycycle $1
+	sound __, 1, $b8, 1965
+	dutycycle $2
+	sound __, 1, $a8, 2007
+	sound __, 1, $78, 2007
+	sound __, 1, $78, 2008
+	dutycycle $0
+	sound __, 1, $98, 1969
+	dutycycle $2
+	sound __, 1, $a8, 2009
+	dutycycle $0
+	sound __, 1, $88, 1973
+	dutycycle $1
+	sound __, 1, $b8, 1973
+	sound __, 1, $98, 1973
+	dutycycle $0
+	sound __, 1, $a8, 1974
+	dutycycle $2
+	sound __, 1, $78, 2011
+	dutycycle $0
+	sound __, 1, $98, 1975
+	dutycycle $2
+	sound __, 1, $78, 2012
+	dutycycle $3
+	sound __, 1, $78, 1978
+	dutycycle $2
+	sound __, 1, $68, 2014
+	dutycycle $1
+	sound __, 1, $68, 1982
+	dutycycle $3
+	sound __, 1, $78, 1984
+	dutycycle $1
+	sound __, 1, $78, 1985
+	dutycycle $2
+	sound __, 1, $68, 1986
+	sound __, 1, $58, 1988
+	sound __, 1, $68, 1989
+	sound __, 2, $68, 1990
+	sound __, 1, $38, 1992
+	sound __, 1, $18, 1994
+	sound __, 1, $18, 1996
+	sound __, 27, $08, 0
+	endchannel
+
+Cry_Sylveon_Ch6:
+	dutycycle $2
+	sound __, 1, $68, 1972
+	sound __, 1, $f8, 1977
+	sound __, 11, $08, 0
+	sound __, 1, $68, 1999
+	sound __, 1, $c8, 2001
+	sound __, 80, $08, 0
+	endchannel
+
+Cry_Sylveon_Ch7:
+	sound __, 1, $31, 2027
+	sound __, 1, $22, 2011
+	sound __, 1, $21, 2015
+	sound __, 1, $11, 2017
+	sound __, 1, $11, 2020
+	sound __, 1, $11, 2021
+	sound __, 1, $11, 2024
+	sound __, 2, $11, 2025
+	sound __, 1, $21, 2024
+	sound __, 2, $31, 2024
+	sound __, 1, $31, 2023
+	sound __, 1, $32, 2022
+	sound __, 1, $22, 2019
+	sound __, 1, $26, 2018
+	sound __, 1, $21, 2032
+	sound __, 1, $21, 2031
+	sound __, 1, $21, 2030
+	sound __, 1, $22, 2012
+	sound __, 1, $22, 2011
+	sound __, 1, $21, 2011
+	sound __, 1, $21, 2010
+	sound __, 1, $21, 2009
+	sound __, 1, $21, 2008
+	sound __, 2, $21, 2006
+	sound __, 2, $21, 2004
+	sound __, 1, $21, 2003
+	sound __, 2, $21, 2023
+	sound __, 1, $11, 1999
+	sound __, 1, $21, 2023
+	sound __, 2, $21, 1997
+	sound __, 1, $21, 2024
+	sound __, 1, $22, 2000
+	sound __, 1, $11, 2004
+	sound __, 1, $10, 2005
+	sound __, 1, $11, 2005
+	sound __, 1, $21, 2027
+	sound __, 1, $21, 2007
+	sound __, 1, $22, 2006
+	sound __, 3, $21, 2028
+	sound __, 1, $21, 2029
+	sound __, 2, $21, 2010
+	sound __, 1, $21, 2029
+	sound __, 1, $21, 2011
+	sound __, 2, $21, 2012
+	sound __, 1, $21, 2013
+	sound __, 1, $22, 2012
+	sound __, 1, $21, 2031
+	sound __, 1, $21, 2014
+	sound __, 1, $21, 2015
+	sound __, 2, $22, 2017
+	sound __, 1, $36, 2018
+	sound __, 1, $22, 2018
+	sound __, 1, $31, 2019
+	sound __, 1, $21, 2019
+	sound __, 1, $31, 2020
+	sound __, 1, $31, 2021
+	sound __, 1, $31, 2029
+	sound __, 27, $00, 0
+	endchannel
+
+Cry_Sylveon_Ch8:
+	noise __, 1, $38, 100
+	noise __, 1, $98, 100
+	noise __, 1, $38, 100
+	noise __, 1, $68, 100
+	noise __, 2, $38, 100
+	noise __, 1, $08, 0
+	noise __, 1, $98, 100
+	noise __, 1, $f8, 100
+	noise __, 2, $68, 100
+	noise __, 2, $38, 100
+	noise __, 1, $68, 100
+	noise __, 2, $c8, 100
+	noise __, 6, $38, 100
+	noise __, 2, $68, 100
+	noise __, 2, $38, 100
+	noise __, 1, $68, 100
+	noise __, 1, $38, 100
+	noise __, 1, $c8, 100
+	noise __, 3, $68, 100
+	noise __, 2, $98, 100
+	noise __, 6, $68, 100
+	noise __, 1, $98, 100
+	noise __, 2, $68, 100
+	noise __, 1, $98, 100
+	noise __, 1, $68, 100
+	noise __, 1, $38, 100
+	noise __, 2, $68, 100
+	noise __, 1, $38, 100
+	noise __, 6, $68, 100
+	noise __, 3, $38, 100
+	noise __, 2, $98, 100
+	noise __, 1, $c8, 100
+	noise __, 1, $68, 100
+	noise __, 1, $98, 100
+	noise __, 1, $68, 100
+	noise __, 1, $98, 100
+	noise __, 1, $68, 100
+	noise __, 1, $38, 100
+	noise __, 28, $08, 0
+	endchannel

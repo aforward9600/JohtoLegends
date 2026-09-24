@@ -204,9 +204,9 @@ PokemonCries::
 	mon_cry CRY_VENONAT,     $010,  $0a0 ; FLAREON
 	mon_cry CRY_AIPOM,       $0a2,  $140 ; ESPEON
 	mon_cry CRY_VENONAT,    -$0e9,  $0f0 ; UMBREON
-	mon_cry CRY_GLIGAR,      $043,  $2a0 ; LEAFEON
-	mon_cry CRY_METAPOD,     $fcf,  $1a0 ; GLACEON
-	mon_cry CRY_MARILL,      $0d8,  $300 ; SYLVEON
+	mon_cry CRY_LEAFEON,    -$004,  $0ff ; LEAFEON
+	mon_cry CRY_GLACEON,     $000,  $0ff ; GLACEON
+	mon_cry CRY_SYLVEON,     $000,  $0ff ; SYLVEON
 	mon_cry CRY_WEEPINBELL,  $0aa,  $17f ; PORYGON
 	mon_cry CRY_GIRAFARIG,   $073,  $240 ; PORYGON2
 	mon_cry CRY_RHYDON,      $050,  $180 ; PORYGON_Z
