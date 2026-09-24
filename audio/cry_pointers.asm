@@ -87,3 +87,4 @@ Cries:
 	dba Cry_Munchlax
 	dba Cry_Azurill
 	dba Cry_Togekiss
+	dba Cry_Gliscor

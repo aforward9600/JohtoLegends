@@ -92,3 +92,4 @@
 	const CRY_MUNCHLAX
 	const CRY_AZURILL
 	const CRY_TOGEKISS
+	const CRY_GLISCOR

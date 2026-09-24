@@ -288,7 +288,7 @@ PokemonCries::
 	mon_cry CRY_DUNSPARCE,   $1c4,  $100 ; DUNSPARCE
 	mon_cry CRY_DUNSPARCE,   $1c4,  $1c8 ; DUDUNSPARS
 	mon_cry CRY_GLIGAR,     -$102,  $100 ; GLIGAR
-	mon_cry CRY_NIDOQUEEN,   $73d,  $1b0 ; GLISCOR
+	mon_cry CRY_GLISCOR,     $000,  $0ff ; GLISCOR
 	mon_cry CRY_DUNSPARCE,   $112,  $0e8 ; SNUBBULL
 	mon_cry CRY_DUNSPARCE,   $000,  $180 ; GRANBULL
 	mon_cry CRY_SLOWKING,    $160,  $0e0 ; QWILFISH
