@@ -108,3 +108,6 @@
 	const CRY_SHELGON
 	const CRY_METANG
 	const CRY_BELDUM
+	const CRY_GIBLE
+	const CRY_GABITE
+	const CRY_GARCHOMP

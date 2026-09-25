@@ -103,3 +103,6 @@ Cries:
 	dba Cry_Shelgon
 	dba Cry_Metang
 	dba Cry_Beldum
+	dba Cry_Gible
+	dba Cry_Gabite
+	dba Cry_Garchomp

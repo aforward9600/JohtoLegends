@@ -388,9 +388,9 @@ PokemonCries::
 	mon_cry CRY_EKANS,       $101,  $086 ; BRONZOR
 	mon_cry CRY_EKANS,       $12a,  $170 ; BRONZONG
 	mon_cry CRY_WHIMSICOTT, -$086,  $150 ; SPIRITOMB
-	mon_cry CRY_NIDORAN_F,   $f26,  $0c0 ; GIBLE
-	mon_cry CRY_NIDORAN_F,   $e15,  $200 ; GABITE
-	mon_cry CRY_RAICHU,      $f1f,  $130 ; GARCHOMP
+	mon_cry CRY_GIBLE,       $000,  $0ff ; GIBLE
+	mon_cry CRY_GABITE,      $000,  $0ff ; GABITE
+	mon_cry CRY_GARCHOMP,    $000,  $0ff ; GARCHOMP
 	mon_cry CRY_RIOLU,       $000,  $0ff ; RIOLU
 	mon_cry CRY_LUCARIO,     $000,  $0ff ; LUCARIO
 	mon_cry CRY_AMPHAROS,    $1c8,  $190 ; SKORUPI

@@ -1483,3 +1483,351 @@ Cry_beldum_Ch8:
 	noise __, 2, $08, 75
 	noise __, 1, $08, 75
 	endchannel
+
+Cry_Gible:
+	musicheader 3, 5, Cry_gible_Ch5
+	musicheader 1, 6, Cry_gible_Ch6
+	musicheader 1, 8, Cry_gible_Ch8
+
+Cry_gible_Ch5:
+	dutycycle $2
+	sound __, 2, $d8, 1929
+	sound __, 2, $d8, 1929
+	dutycycle $0
+	sound __, 2, $d8, 1926
+	sound __, 2, $d8, 1924
+	dutycycle $2
+	sound __, 2, $d8, 1924
+	sound __, 2, $d8, 1922
+	sound __, 2, $d8, 1917
+	sound __, 2, $d8, 1914
+	sound __, 2, $78, 1799
+	sound __, 2, $68, 1751
+	sound __, 2, $58, 1857
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_gible_Ch6:
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	dutycycle $2
+	sound __, 2, $58, 1832
+	sound __, 2, $08, 0
+	sound __, 2, $38, 1830
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_gible_Ch8:
+	noise __, 2, $48, 75
+	noise __, 2, $38, 75
+	noise __, 2, $28, 75
+	noise __, 2, $28, 75
+	noise __, 2, $28, 75
+	noise __, 2, $38, 75
+	noise __, 2, $28, 75
+	noise __, 2, $48, 75
+	noise __, 2, $28, 75
+	noise __, 2, $28, 75
+	noise __, 2, $18, 75
+	noise __, 1, $08, 75
+	endchannel
+
+Cry_Gabite:
+	musicheader 3, 5, Cry_gabite_Ch5
+	musicheader 1, 6, Cry_gabite_Ch6
+	musicheader 1, 8, Cry_gabite_Ch8
+
+Cry_gabite_Ch5:
+	dutycycle $2
+	sound __, 2, $d8, 1540
+	sound __, 2, $d8, 1940
+	sound __, 2, $d8, 1950
+	dutycycle $1
+	sound __, 2, $d8, 1959
+	dutycycle $2
+	sound __, 2, $d8, 1962
+	sound __, 2, $d8, 1963
+	sound __, 2, $d8, 1967
+	sound __, 2, $d8, 1966
+	sound __, 2, $d8, 1667
+	sound __, 2, $d8, 1754
+	sound __, 2, $d8, 1740
+	sound __, 2, $d8, 1785
+	sound __, 2, $d8, 1783
+	sound __, 2, $d8, 1783
+	sound __, 2, $d8, 1837
+	sound __, 2, $c8, 1828
+	endchannel
+
+Cry_gabite_Ch6:
+	dutycycle $2
+	sound __, 2, $68, 1935
+	sound __, 2, $78, 1930
+	sound __, 2, $68, 1940
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	dutycycle $1
+	sound __, 2, $48, 1867
+	sound __, 2, $08, 0
+	sound __, 2, $58, 1844
+	dutycycle $2
+	sound __, 2, $68, 1818
+	sound __, 2, $68, 1865
+	sound __, 2, $98, 1862
+	sound __, 2, $68, 1746
+	dutycycle $1
+	sound __, 2, $58, 1722
+	endchannel
+
+Cry_gabite_Ch8:
+	noise __, 2, $58, 44
+	noise __, 2, $68, 44
+	noise __, 2, $58, 44
+	noise __, 2, $38, 44
+	noise __, 2, $28, 44
+	noise __, 2, $58, 44
+	noise __, 2, $48, 44
+	noise __, 2, $48, 44
+	noise __, 2, $48, 44
+	noise __, 2, $58, 44
+	noise __, 2, $58, 44
+	noise __, 2, $48, 44
+	noise __, 2, $48, 44
+	noise __, 2, $38, 44
+	noise __, 2, $48, 44
+	noise __, 2, $68, 44
+	endchannel
+
+Cry_Garchomp:
+	musicheader 4, 5, Cry_Garchomp_Ch5
+	musicheader 3, 6, Cry_Garchomp_Ch6
+	musicheader 2, 7, Cry_Garchomp_Ch7
+	musicheader 1, 8, Cry_Garchomp_Ch8
+
+Cry_Garchomp_Ch5:
+	dutycycle $2
+	sound __, 1, $d8, 1365
+	sound __, 1, $d8, 1912
+	dutycycle $0
+	sound __, 1, $d8, 1441
+	dutycycle $2
+	sound __, 1, $d8, 1728
+	dutycycle $1
+	sound __, 1, $d8, 1762
+	dutycycle $2
+	sound __, 1, $d8, 956
+	dutycycle $0
+	sound __, 1, $d8, 1478
+	dutycycle $3
+	sound __, 1, $d8, 1758
+	dutycycle $0
+	sound __, 1, $d8, 1628
+	dutycycle $1
+	sound __, 1, $d8, 1631
+	dutycycle $0
+	sound __, 1, $d8, 1483
+	sound __, 1, $d8, 956
+	dutycycle $1
+	sound __, 1, $d8, 1763
+	sound __, 1, $d8, 1536
+	dutycycle $2
+	sound __, 1, $d8, 1412
+	sound __, 1, $d8, 1468
+	sound __, 1, $d8, 1816
+	sound __, 1, $d8, 1488
+	sound __, 1, $d8, 1841
+	sound __, 1, $d8, 1858
+	sound __, 1, $d8, 1859
+	sound __, 1, $d8, 1861
+	dutycycle $0
+	sound __, 1, $d8, 1866
+	dutycycle $1
+	sound __, 1, $d8, 1866
+	sound __, 1, $d8, 1870
+	dutycycle $2
+	sound __, 1, $d8, 1386
+	sound __, 1, $d8, 1528
+	sound __, 1, $d8, 1876
+	dutycycle $3
+	sound __, 1, $d8, 1452
+	dutycycle $0
+	sound __, 1, $d8, 1336
+	dutycycle $2
+	sound __, 1, $d8, 1295
+	dutycycle $0
+	sound __, 1, $d8, 1405
+	dutycycle $2
+	sound __, 1, $d8, 1493
+	dutycycle $3
+	sound __, 1, $d8, 1393
+	dutycycle $0
+	sound __, 1, $d8, 956
+	sound __, 1, $d8, 974
+	dutycycle $1
+	sound __, 1, $d8, 1483
+	dutycycle $3
+	sound __, 1, $d8, 1468
+	dutycycle $2
+	sound __, 1, $d8, 1473
+	dutycycle $1
+	sound __, 1, $d8, 1483
+	dutycycle $2
+	sound __, 1, $d8, 1776
+	sound __, 1, $d8, 1452
+	dutycycle $1
+	sound __, 1, $d8, 1412
+	dutycycle $2
+	sound __, 1, $d8, 1399
+	dutycycle $1
+	sound __, 1, $d8, 1497
+	sound __, 1, $d8, 1483
+	sound __, 1, $d8, 1478
+	dutycycle $2
+	sound __, 1, $d8, 1468
+	dutycycle $1
+	sound __, 1, $d8, 1418
+	sound __, 1, $d8, 1386
+	sound __, 1, $d8, 1393
+	dutycycle $2
+	sound __, 1, $d8, 1447
+	sound __, 1, $d8, 1386
+	sound __, 1, $d8, 1436
+	dutycycle $1
+	sound __, 1, $c8, 1399
+	sound __, 1, $78, 1320
+	endchannel
+
+Cry_Garchomp_Ch6:
+	sound __, 1, $08, 0
+	dutycycle $2
+	sound __, 1, $88, 1898
+	dutycycle $3
+	sound __, 1, $88, 1892
+	sound __, 2, $08, 0
+	sound __, 1, $98, 1790
+	dutycycle $2
+	sound __, 1, $88, 1779
+	sound __, 3, $08, 0
+	dutycycle $0
+	sound __, 1, $98, 1611
+	dutycycle $2
+	sound __, 1, $98, 1605
+	sound __, 10, $08, 0
+	sound __, 2, $68, 2003
+	sound __, 1, $58, 2004
+	dutycycle $3
+	sound __, 1, $88, 1869
+	sound __, 1, $88, 1876
+	sound __, 10, $08, 0
+	dutycycle $2
+	sound __, 1, $98, 1532
+	sound __, 1, $88, 1536
+	sound __, 2, $08, 0
+	dutycycle $3
+	sound __, 1, $78, 1365
+	dutycycle $2
+	sound __, 1, $78, 1312
+	sound __, 1, $08, 0
+	dutycycle $1
+	sound __, 1, $78, 1379
+	dutycycle $2
+	sound __, 1, $78, 1405
+	sound __, 1, $88, 1544
+	dutycycle $3
+	sound __, 1, $78, 1532
+	dutycycle $0
+	sound __, 1, $58, 1493
+	dutycycle $2
+	sound __, 1, $68, 1468
+	sound __, 1, $68, 1473
+	sound __, 2, $08, 0
+	dutycycle $0
+	sound __, 1, $88, 1343
+	dutycycle $2
+	sound __, 1, $78, 1295
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_Garchomp_Ch7:
+	sound __, 1, $13, 1167
+	sound __, 3, 1, 4, 1136
+	sound __, 1, $17, 1274
+	sound __, 1, $17, 1297
+	sound __, 1, $15, 1661
+	sound __, 1, $12, 1748
+	sound __, 1, $14, 1961
+	sound __, 1, $13, 1744
+	sound __, 1, $12, 1963
+	sound __, 1, $17, 1725
+	sound __, 1, $12, 1938
+	sound __, 1, $14, 1902
+	sound __, 1, $17, 1440
+	sound __, 1, $17, 1516
+	sound __, 1, $15, 1740
+	sound __, 1, $16, 1802
+	sound __, 1, $17, 1566
+	sound __, 1, $11, 1948
+	sound __, 1, $11, 1949
+	sound __, 1, $15, 1776
+	sound __, 1, $13, 1802
+	sound __, 1, $18, 1737
+	sound __, 1, $14, 1744
+	sound __, 1, $15, 1798
+	sound __, 1, $12, 1873
+	sound __, 1, $13, 1737
+	sound __, 1, $11, 1960
+	sound __, 1, $13, 1884
+	sound __, 1, $10, 1940
+	sound __, 1, $17, 1376
+	sound __, 1, $11, 1940
+	sound __, 1, $11, 1922
+	sound __, 1, $12, 1733
+	sound __, 1, $11, 1904
+	sound __, 1, $16, 1425
+	sound __, 1, $17, 1481
+	sound __, 1, $10, 1935
+	sound __, 1, $11, 1949
+	sound __, 1, $12, 1716
+	sound __, 1, $11, 1909
+	sound __, 1, $12, 1840
+	sound __, 1, $17, 1376
+	sound __, 1, $17, 1358
+	sound __, 1, $17, 1393
+	sound __, 1, $17, 1318
+	sound __, 1, $12, 1855
+	sound __, 1, $13, 1837
+	sound __, 1, $11, 1913
+	sound __, 1, $11, 1914
+	sound __, 1, $12, 1853
+	sound __, 1, $13, 1913
+	sound __, 1, $11, 1908
+	sound __, 1, $11, 1904
+	sound __, 1, $25, 1600
+	endchannel
+
+Cry_Garchomp_Ch8:
+	noise __, 1, $e8, 100
+	noise __, 12, $f8, 100
+	noise __, 1, $e8, 100
+	noise __, 11, $f8, 100
+	noise __, 1, $d8, 100
+	noise __, 1, $e8, 100
+	noise __, 20, $f8, 100
+	noise __, 1, $c8, 100
+	noise __, 1, $e8, 100
+	noise __, 2, $f8, 100
+	noise __, 1, $e8, 100
+	noise __, 1, $f8, 100
+	noise __, 1, $d8, 100
+	noise __, 1, $a8, 100
+	noise __, 1, $68, 100
+	endchannel
