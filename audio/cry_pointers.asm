@@ -89,3 +89,8 @@ Cries:
 	dba Cry_Togekiss
 	dba Cry_Gliscor
 	dba Cry_Aggron
+	dba Cry_Aron
+	dba Cry_Lairon
+	dba Cry_Flygon
+	dba Cry_Trapinch
+	dba Cry_Vibrava

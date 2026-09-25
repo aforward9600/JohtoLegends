@@ -94,3 +94,8 @@
 	const CRY_TOGEKISS
 	const CRY_GLISCOR
 	const CRY_AGGRON
+	const CRY_ARON
+	const CRY_LAIRON
+	const CRY_FLYGON
+	const CRY_TRAPINCH
+	const CRY_VIBRAVA

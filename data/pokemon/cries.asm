@@ -349,8 +349,8 @@ PokemonCries::
 	mon_cry CRY_GALLADE,     $020,  $130 ; GALLADE
 	mon_cry CRY_CATERPIE,    $ee3,  $100 ; SABLEYE SourApple
 	mon_cry CRY_KRABBY,     -$2c4,  $0a0 ; MAWILE AzureKeys
-	mon_cry CRY_GROWLITHE,   $080,  $0b0 ; ARON
-	mon_cry CRY_WEEDLE,      $040,  $090 ; LAIRON
+	mon_cry CRY_ARON,        $000,  $0ff ; ARON
+	mon_cry CRY_LAIRON,      $000,  $0ff ; LAIRON
 	mon_cry CRY_AGGRON,      $000,  $0ff ; AGGRON
 	mon_cry CRY_METAPOD,     $096,  $160 ; MEDITITE
 	mon_cry CRY_METAPOD,     $12c,  $1f4 ; MEDICHAM
@@ -363,9 +363,9 @@ PokemonCries::
 	mon_cry CRY_SQUIRTLE,    $007,  $100 ; SHARPEDO
 	mon_cry CRY_METAPOD,     $100,  $0c8 ; NUMEL
 	mon_cry CRY_METAPOD,     $9f0,  $117 ; CAMERUPT
-	mon_cry CRY_SLUGMA,      $324,  $0c7 ; TRAPINCH
-	mon_cry CRY_SLOWKING,    $050,  $185 ; VIBRAVA
-	mon_cry CRY_AMPHAROS,    $f09,  $1a2 ; FLYGON
+	mon_cry CRY_TRAPINCH,    $000,  $0ff ; TRAPINCH
+	mon_cry CRY_VIBRAVA,    -$00f,  $0ff ; VIBRAVA
+	mon_cry CRY_FLYGON,      $000,  $0ff ; FLYGON
 	mon_cry CRY_BULBASAUR,   $080,  $040 ; CACNEA
 	mon_cry CRY_BULBASAUR,   $080,  $180 ; CACTURNE
 	mon_cry CRY_VENONAT,     $05d,  $0a0 ; SWABLU

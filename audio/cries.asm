@@ -4813,3 +4813,133 @@ Cry_aggron_Ch8:
 	noise __, 2, $08, 75
 	noise __, 1, $08, 75
 	endchannel
+
+Cry_Aron:
+	musicheader 3, 5, Cry_aron_Ch5
+	musicheader 1, 6, Cry_aron_Ch6
+	musicheader 1, 8, Cry_aron_Ch8
+
+Cry_aron_Ch5:
+	dutycycle $2
+	sound __, 2, $d8, 1950
+	sound __, 2, $d8, 1950
+	sound __, 2, $d8, 1949
+	sound __, 2, $d8, 1950
+	dutycycle $3
+	sound __, 2, $d8, 1950
+	dutycycle $2
+	sound __, 2, $d8, 1951
+	sound __, 2, $d8, 1945
+	sound __, 2, $d8, 1947
+	sound __, 2, $d8, 1943
+	sound __, 2, $d8, 1941
+	sound __, 2, $78, 1943
+	sound __, 2, $58, 1942
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_aron_Ch6:
+	dutycycle $0
+	sound __, 2, $58, 1914
+	dutycycle $2
+	sound __, 2, $58, 1909
+	sound __, 2, $58, 1907
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $58, 1927
+	sound __, 2, $38, 1931
+	dutycycle $1
+	sound __, 2, $28, 1862
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_aron_Ch8:
+	noise __, 2, $48, 44
+	noise __, 2, $48, 44
+	noise __, 2, $48, 44
+	noise __, 2, $38, 44
+	noise __, 2, $38, 44
+	noise __, 2, $38, 44
+	noise __, 2, $38, 44
+	noise __, 2, $38, 44
+	noise __, 2, $38, 44
+	noise __, 2, $38, 44
+	noise __, 2, $28, 44
+	noise __, 2, $18, 44
+	noise __, 2, $08, 44
+	endchannel
+
+Cry_Trapinch:
+	musicheader 3, 5, Cry_trapinch_Ch5
+	musicheader 1, 6, Cry_trapinch_Ch6
+	musicheader 1, 8, Cry_trapinch_Ch8
+
+Cry_trapinch_Ch5:
+	dutycycle $2
+	sound __, 2, $d8, 1678
+	dutycycle $1
+	sound __, 2, $a8, 1682
+	dutycycle $2
+	sound __, 2, $d8, 1678
+	dutycycle $3
+	sound __, 2, $a8, 1682
+	dutycycle $2
+	sound __, 2, $d8, 1678
+	dutycycle $3
+	sound __, 2, $a8, 1684
+	dutycycle $2
+	sound __, 2, $d8, 1799
+	sound __, 2, $d8, 1791
+	sound __, 2, $d8, 1788
+	sound __, 2, $b8, 1785
+	sound __, 2, $78, 1779
+	dutycycle $1
+	sound __, 2, $78, 1412
+	dutycycle $2
+	sound __, 2, $78, 1753
+	sound __, 2, $78, 1740
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_trapinch_Ch6:
+	dutycycle $2
+	sound __, 2, $68, 1900
+	sound __, 2, $48, 1911
+	sound __, 2, $78, 1901
+	sound __, 2, $48, 1911
+	sound __, 2, $78, 1901
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $68, 1925
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $38, 1865
+	dutycycle $3
+	sound __, 2, $48, 1850
+	sound __, 2, $08, 0
+	dutycycle $2
+	sound __, 2, $38, 1846
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_trapinch_Ch8:
+	noise __, 2, $18, 75
+	noise __, 2, $18, 75
+	noise __, 2, $18, 75
+	noise __, 2, $18, 75
+	noise __, 2, $18, 75
+	noise __, 2, $28, 75
+	noise __, 2, $48, 75
+	noise __, 2, $48, 75
+	noise __, 2, $48, 75
+	noise __, 2, $48, 75
+	noise __, 2, $28, 75
+	noise __, 2, $28, 75
+	noise __, 2, $28, 75
+	noise __, 2, $28, 75
+	noise __, 1, $08, 75
+	endchannel
