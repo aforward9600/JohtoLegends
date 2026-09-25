@@ -112,7 +112,8 @@ MomScript:
 	iftrue .GaveMysteryEgg
 	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue .GotAPokemon
-	givepoke SWABLU, 5, ORAN_BERRY
+	givepoke BELDUM, 5, ORAN_BERRY
+	givepoke METANG, 5, ORAN_BERRY
 	jumptext HurryUpElmIsWaitingText
 
 .BeatLeague:

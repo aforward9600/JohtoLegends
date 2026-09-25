@@ -103,3 +103,8 @@
 	const CRY_LUCARIO
 	const CRY_ALTARIA
 	const CRY_SWABLU
+	const CRY_SALAMENCE
+	const CRY_BAGON
+	const CRY_SHELGON
+	const CRY_METANG
+	const CRY_BELDUM

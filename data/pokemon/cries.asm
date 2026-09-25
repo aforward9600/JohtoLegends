@@ -379,11 +379,11 @@ PokemonCries::
 	mon_cry CRY_PIDGEY,      $8a8,  $220 ; SNORUNT
 	mon_cry CRY_BULBASAUR,   $fe0,  $150 ; GLALIE
 	mon_cry CRY_PICHU,       $feb,  $500 ; FROSLASS
-	mon_cry CRY_NIDORAN_F,   $f26,  $0c0 ; BAGON
-	mon_cry CRY_NIDORAN_F,   $e15,  $200 ; SHELGON
-	mon_cry CRY_RAICHU,      $f1f,  $130 ; SALAMENCE
-	mon_cry CRY_CYNDAQUIL,   $40c,  $140 ; BELDUM
-	mon_cry CRY_SLOWKING,    $6af,  $17a ; METANG
+	mon_cry CRY_BAGON,       $000,  $0ff ; BAGON
+	mon_cry CRY_SHELGON,     $01e,  $0ff ; SHELGON
+	mon_cry CRY_SALAMENCE,   $000,  $0ff ; SALAMENCE
+	mon_cry CRY_BELDUM,      $000,  $0ff ; BELDUM
+	mon_cry CRY_METANG,      $000,  $0ff ; METANG
 	mon_cry CRY_METAGROSS,   $000,  $0ff ; METAGROSS ; need to adjust pitch
 	mon_cry CRY_EKANS,       $101,  $086 ; BRONZOR
 	mon_cry CRY_EKANS,       $12a,  $170 ; BRONZONG

@@ -98,3 +98,8 @@ Cries:
 	dba Cry_Lucario
 	dba Cry_Altaria
 	dba Cry_Swablu
+	dba Cry_Salamence
+	dba Cry_Bagon
+	dba Cry_Shelgon
+	dba Cry_Metang
+	dba Cry_Beldum
