@@ -786,3 +786,177 @@ Cry_lucario_Ch8:
 	noise __, 6, $71, 92
 	noise __, 2, $21, 92
 	endchannel
+
+Cry_Altaria:
+	musicheader 4, 5, Cry_altaria_Ch5
+	musicheader 3, 6, Cry_altaria_Ch6
+	musicheader 2, 7, Cry_altaria_Ch7
+	musicheader 1, 8, Cry_altaria_Ch8
+
+Cry_altaria_Ch5:
+	dutycycle $2
+	sound __, 2, $48, 1998
+	sound __, 1, $48, 1901
+	sound __, 1, $48, 1898
+	sound __, 1, $48, 2004
+	sound __, 1, $48, 1899
+	sound __, 1, $48, 2005
+	sound __, 1, $48, 2004
+	sound __, 1, $48, 1896
+	sound __, 1, $48, 1900
+	sound __, 1, $48, 2004
+	sound __, 1, $48, 1899
+	sound __, 1, $58, 1897
+	sound __, 1, $48, 1994
+	sound __, 1, $48, 1993
+	sound __, 1, $58, 1894
+	sound __, 1, $48, 1996
+	sound __, 1, $48, 1992
+	sound __, 1, $48, 1895
+	sound __, 1, $48, 1897
+	dutycycle $0
+	sound __, 1, $48, 1895
+	dutycycle $2
+	sound __, 1, $48, 1898
+	sound __, 1, $48, 1899
+	dutycycle $3
+	sound __, 1, $48, 1897
+	dutycycle $2
+	sound __, 2, $38, 1899
+	sound __, 1, $28, 2004
+	sound __, 1, $28, 1898
+	sound __, 2, $18, 1898
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_altaria_Ch6:
+	dutycycle $2
+	sound __, 1, $68, 2004
+	sound __, 1, $88, 2004
+	sound __, 1, $78, 2004
+	sound __, 1, $68, 2005
+	sound __, 2, $08, 0
+	sound __, 1, $88, 1996
+	sound __, 1, $58, 1996
+	sound __, 2, $68, 2005
+	sound __, 1, $08, 0
+	sound __, 1, $88, 1994
+	sound __, 1, $68, 1993
+	sound __, 4, $08, 0
+	sound __, 1, $58, 1997
+	sound __, 1, $78, 1997
+	sound __, 1, $58, 1996
+	sound __, 1, $78, 1997
+	sound __, 1, $08, 0
+	sound __, 1, $88, 1990
+	sound __, 1, $78, 1991
+	sound __, 1, $48, 1991
+	sound __, 1, $08, 0
+	sound __, 1, $48, 1989
+	sound __, 1, $38, 1990
+	sound __, 1, $38, 1988
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_altaria_Ch7:
+	sound __, 2, $11, 2023
+	sound __, 1, $15, 1975
+	sound __, 1, $14, 1973
+	sound __, 1, $11, 2026
+	sound __, 1, $10, 1974
+	sound __, 1, $11, 2027
+	sound __, 1, $11, 2026
+	sound __, 1, $15, 1972
+	sound __, 1, $15, 1974
+	sound __, 1, $11, 2026
+	sound __, 1, $10, 1974
+	sound __, 1, $10, 1973
+	sound __, 2, $11, 2021
+	sound __, 1, $13, 1971
+	sound __, 1, $11, 2022
+	sound __, 1, $11, 2020
+	sound __, 1, $15, 1972
+	sound __, 1, $11, 1973
+	sound __, 1, $13, 1972
+	sound __, 1, $13, 1973
+	sound __, 1, $13, 1974
+	sound __, 1, $13, 1973
+	sound __, 1, $19, 1974
+	sound __, 1, $13, 1974
+	sound __, 1, $11, 2026
+	sound __, 1, $25, 1973
+	sound __, 1, $29, 1973
+	sound __, 1, $33, 1973
+	sound __, 1, $31, 2026
+	endchannel
+
+Cry_altaria_Ch8:
+	noise __, 1, $48, 92
+	noise __, 1, $38, 92
+	noise __, 1, $48, 92
+	noise __, 3, $38, 92
+	noise __, 1, $48, 92
+	noise __, 2, $38, 92
+	noise __, 1, $48, 92
+	noise __, 1, $38, 92
+	noise __, 2, $48, 92
+	noise __, 2, $38, 92
+	noise __, 2, $48, 92
+	noise __, 1, $38, 92
+	noise __, 1, $48, 92
+	noise __, 2, $38, 92
+	noise __, 2, $48, 92
+	noise __, 2, $38, 92
+	noise __, 4, $28, 92
+	noise __, 2, $18, 92
+	endchannel
+
+Cry_Swablu:
+	musicheader 3, 5, Cry_swablu_Ch5
+	musicheader 1, 7, Cry_swablu_Ch7
+	musicheader 1, 8, Cry_swablu_Ch8
+
+Cry_swablu_Ch5:
+	dutycycle $2
+	sound __, 1, $d8, 2004
+	sound __, 1, $d8, 2003
+	sound __, 1, $98, 2003
+	sound __, 1, $d8, 2003
+	sound __, 1, $d8, 2004
+	sound __, 1, $98, 2005
+	sound __, 2, $d8, 2003
+	sound __, 1, $98, 2006
+	sound __, 1, $d8, 2004
+	sound __, 1, $c8, 2005
+	sound __, 1, $88, 2016
+	sound __, 1, $b8, 2016
+	sound __, 1, $68, 2015
+	sound __, 1, $38, 2015
+	sound __, 1, $18, 2015
+	endchannel
+
+Cry_swablu_Ch7:
+	sound __, 8, $11, 2026
+	sound __, 3, $11, 2027
+	sound __, 1, $12, 2017
+	sound __, 1, $11, 2017
+	sound __, 2, $21, 2032
+	sound __, 1, $31, 2032
+	endchannel
+
+Cry_swablu_Ch8:
+	noise __, 2, $b8, 100
+	noise __, 1, $88, 100
+	noise __, 2, $b8, 100
+	noise __, 1, $78, 100
+	noise __, 1, $c8, 100
+	noise __, 1, $b8, 100
+	noise __, 1, $88, 100
+	noise __, 1, $b8, 100
+	noise __, 1, $a8, 100
+	noise __, 1, $68, 100
+	noise __, 1, $98, 100
+	noise __, 1, $58, 100
+	noise __, 1, $38, 100
+	noise __, 1, $18, 100
+	endchannel

@@ -368,8 +368,8 @@ PokemonCries::
 	mon_cry CRY_FLYGON,      $000,  $0ff ; FLYGON
 	mon_cry CRY_BULBASAUR,   $080,  $040 ; CACNEA
 	mon_cry CRY_BULBASAUR,   $080,  $180 ; CACTURNE
-	mon_cry CRY_VENONAT,     $05d,  $0a0 ; SWABLU
-	mon_cry CRY_GLIGAR,      $059,  $150 ; ALTARIA
+	mon_cry CRY_SWABLU,      $000,  $0ff ; SWABLU
+	mon_cry CRY_ALTARIA,     $000,  $0ff ; ALTARIA
 	mon_cry CRY_FEEBAS,      $000,  $0ff ; FEEBAS
 	mon_cry CRY_GLIGAR,      $f39,  $4a0 ; MILOTIC
 	mon_cry CRY_CYNDAQUIL,   $10e,  $050 ; DUSKULL

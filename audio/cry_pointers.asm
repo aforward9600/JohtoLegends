@@ -96,3 +96,5 @@ Cries:
 	dba Cry_Vibrava
 	dba Cry_Riolu
 	dba Cry_Lucario
+	dba Cry_Altaria
+	dba Cry_Swablu

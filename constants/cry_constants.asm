@@ -101,3 +101,5 @@
 	const CRY_VIBRAVA
 	const CRY_RIOLU
 	const CRY_LUCARIO
+	const CRY_ALTARIA
+	const CRY_SWABLU
