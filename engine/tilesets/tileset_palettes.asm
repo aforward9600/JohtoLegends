@@ -20,8 +20,6 @@ LoadSpecialMapPalette:
 	jr z, .underground
 	cp TILESET_MANSION
 	jp z, .mansion_mobile
-	cp TILESET_TOWER
-	jp z, .tower
 	cp TILESET_KANTO
 	jp z, .kanto
 	cp TILESET_MART
@@ -90,30 +88,6 @@ LoadSpecialMapPalette:
 	ld de, wBGPals1
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
-	scf
-	ret
-
-.tower
-	ld a, [wEnvironment]
-	and $7
-	cp GATE
-	jr z, .LoadTowerPalette
-	cp ROUTE
-	jr z, .LoadTowerPalette
-	and a
-	ret
-
-.LoadTowerPalette
-	ld a, [wTimeOfDay]
-	and $7
-	cp NITE_F
-	jr z, .LoadTowerNightPalette
-	call LoadTowerDayPalette
-	scf
-	ret
-
-.LoadTowerNightPalette
-	call LoadTowerNightPalette
 	scf
 	ret
 
@@ -307,26 +281,6 @@ LoadMansionPalette:
 
 MansionPalette2:
 INCLUDE "gfx/tilesets/mansion_2.pal"
-
-LoadTowerNightPalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, TowerPalette
-	ld bc, 8 palettes
-	jp FarCopyWRAM
-
-TowerPalette:
-INCLUDE "gfx/tilesets/tower_night.pal"
-
-LoadTowerDayPalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, TowerDayPalette
-	ld bc, 8 palettes
-	jp FarCopyWRAM
-
-TowerDayPalette:
-INCLUDE "gfx/tilesets/tower_day.pal"
 
 LoadSpecialNPCPalette:
 	call GetMapTimeOfDay

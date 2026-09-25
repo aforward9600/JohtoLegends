@@ -150,11 +150,6 @@ Gen2ToGen1LinkComms:
 	cp -1
 	jr z, .done_party
 	ld [wTempSpecies], a
-	push hl
-	push de
-	callfar ConvertMon_1to2
-	pop de
-	ld a, [wTempSpecies]
 	ld l, a
 	ld h, 0
 	call GetPokemonIDFromIndex
@@ -667,7 +662,6 @@ Link_PrepPartyData_Gen1:
 	sbc a
 	or l
 	ld [wTempSpecies], a
-	callfar ConvertMon_2to1
 	pop de
 	pop hl
 	ld a, [wTempSpecies]
@@ -711,10 +705,6 @@ Link_PrepPartyData_Gen1:
 	sbc a
 	or l
 	ld [wTempSpecies], a
-	callfar ConvertMon_2to1
-	pop bc
-	pop de
-	ld a, [wTempSpecies]
 	ld [de], a
 	inc de
 	ld hl, MON_HP
@@ -807,14 +797,6 @@ Link_PrepPartyData_Gen1:
 	push bc
 
 	ld a, [bc]
-	push bc
-	call GetPokemonIndexFromID
-	ld bc, KantoMonSpecials - 1
-	add hl, bc
-	ld a, BANK(KantoMonSpecials)
-	call GetFarByte
-	ld [wBaseSpecialAttack], a
-	pop bc
 
 	ld hl, MON_EVS - 1
 	add hl, bc
@@ -1223,6 +1205,8 @@ Link_StageIndexListForTransfer:
 	swap a
 	add a, l
 	sub LOW(wStringBuffer4 + $21) ;+1 for the extra increment in [hli] and +$20 for the extra increment in the bit loop
+ConvertMon_1to2:
+ConvertMon_2to1:
 	ret
 
 Link_FixIndexListAfterTransfer:
@@ -1300,7 +1284,6 @@ Function2868a:
 	push bc
 	push de
 	ld [wTempSpecies], a
-	callfar ConvertMon_1to2
 	pop de
 	pop bc
 	ld a, [wTempSpecies]
@@ -1775,10 +1758,6 @@ Function28926:
 	call Function28b68
 	ld c, 100
 	call DelayFrames
-	farcall ValidateOTTrademon
-	jr c, .abnormal
-	farcall Functionfb5dd
-	jp nc, LinkTrade
 	xor a
 	ld [wcf57], a
 	ld [wOtherPlayerLinkAction], a
@@ -1790,29 +1769,6 @@ Function28926:
 	ld hl, .Text_CantTradeLastMon
 	bccoord 1, 14
 	call PlaceHLTextAtBC
-	jr .cancel_trade
-
-.abnormal
-	xor a
-	ld [wcf57], a
-	ld [wOtherPlayerLinkAction], a
-	ld a, [wd003]
-	ld hl, wOTPartySpecies
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	call GetPokemonName
-	hlcoord 0, 12
-	ld b, 4
-	ld c, 18
-	call LinkTextboxAtHL
-	farcall Link_WaitBGMap
-	ld hl, .Text_Abnormal
-	bccoord 1, 14
-	call PlaceHLTextAtBC
-
 .cancel_trade
 	hlcoord 0, 12
 	ld b, 4
@@ -1835,11 +1791,6 @@ Function28926:
 
 .String_Stats_Trade:
 	db "STATS     TRADE@"
-
-.Text_Abnormal:
-	; Your friend's @  appears to be abnormal!
-	text_far UnknownText_0x1c41e6
-	text_end
 
 Function28ac9:
 	ld a, [wMenuCursorY]
@@ -2305,8 +2256,7 @@ LoadTradeScreenBorder:
 
 SetTradeRoomBGPals:
 	farcall LoadTradeRoomBGPals ; just a nested farcall; so wasteful
-	call SetPalettes
-	ret
+	jp SetPalettes
 
 INCLUDE "engine/movie/trade_animation.asm"
 
@@ -2417,8 +2367,7 @@ Function29c67:
 	add hl, bc
 	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
-	call GetPokemonName
-	ret
+	jp GetPokemonName
 
 EnterTimeCapsule:
 	ld c, 10

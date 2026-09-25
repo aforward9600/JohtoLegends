@@ -112,3 +112,4 @@
 	const CRY_GABITE
 	const CRY_GARCHOMP
 	const CRY_MAMOSWINE
+	const CRY_YANMEGA

@@ -86,11 +86,52 @@ _LinkTextbox:
 	jr nz, .row_loop
 	ret
 
+PlaceTradePartnerNamesAndParty:
+	hlcoord 4, 0
+	ld de, wPlayerName
+	call PlaceString
+	ld a, $14
+	ld [bc], a
+	hlcoord 4, 8
+	ld de, wOTPlayerName
+	call PlaceString
+	ld a, $14
+	ld [bc], a
+	hlcoord 7, 1
+	ld de, wPartySpecies
+	call .PlaceSpeciesNames
+	hlcoord 7, 9
+	ld de, wOTPartySpecies
+.PlaceSpeciesNames:
+	ld c, $0
+.loop
+	ld a, [de]
+	cp -1
+	ret z
+	ld [wNamedObjectIndexBuffer], a
+	push bc
+	push hl
+	push de
+	push hl
+	ld a, c
+	ldh [hProduct], a
+	call GetPokemonName
+	pop hl
+	call PlaceString
+	pop de
+	inc de
+	pop hl
+	ld bc, SCREEN_WIDTH
+	add hl, bc
+	pop bc
+	inc c
+	jr .loop
+
 InitTradeSpeciesList:
 	call _LoadTradeScreenBorder
 	call Function16d6ae
 	farcall InitMG_Mobile_LinkTradePalMap
-	farcall PlaceTradePartnerNamesAndParty
+	call PlaceTradePartnerNamesAndParty
 	hlcoord 10, 17
 	ld de, .CANCEL
 	jp PlaceString

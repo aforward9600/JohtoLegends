@@ -70,14 +70,6 @@ UnknownText_0x1c41b1::
 	cont "be able to battle."
 	prompt
 
-UnknownText_0x1c41e6::
-	text "Your friend's"
-	line "@"
-	text_ram wStringBuffer1
-	text " appears"
-	cont "to be abnormal!"
-	prompt
-
 UnknownText_0x1c4212::
 	text "Trade @"
 	text_ram wd004

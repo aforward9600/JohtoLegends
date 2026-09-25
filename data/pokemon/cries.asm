@@ -269,7 +269,7 @@ PokemonCries::
 	mon_cry CRY_MARILL,      $12b,  $0b8 ; SUNKERN
 	mon_cry CRY_SUNFLORA,   -$020,  $180 ; SUNFLORA
 	mon_cry CRY_TOTODILE,    $031,  $0c8 ; YANMA
-	mon_cry CRY_TOTODILE,   -$16f,  $168 ; YANMEGA
+	mon_cry CRY_YANMEGA,     $000,  $0ff ; YANMEGA
 	mon_cry CRY_WOOPER,      $093,  $0af ; WOOPER
 	mon_cry CRY_WOOPER,      $093,  $0af ; WOOPER_P
 	mon_cry CRY_WOOPER,     -$0c6,  $140 ; QUAGSIRE

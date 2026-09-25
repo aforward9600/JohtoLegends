@@ -483,7 +483,6 @@ INCLUDE "engine/pokedex/unown_dex.asm"
 
 SECTION "Time Capsule 2", ROMX
 
-INCLUDE "engine/link/time_capsule_2.asm"
 INCLUDE "gfx/footprints.asm"
 
 SECTION "Magikarp Event", ROMX
@@ -647,7 +646,6 @@ SECTION "Battle Weather Images", ROMX
 
 INCLUDE "gfx/weather_images.asm"
 INCLUDE "engine/events/poisonstep_pals.asm"
-INCLUDE "engine/link/time_capsule.asm"
 INCLUDE "engine/battle/shiny_swarm.asm"
 INCLUDE "engine/events/move_relearner.asm"
 INCLUDE "engine/events/hidden_power_guru.asm"

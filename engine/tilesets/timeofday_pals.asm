@@ -1,13 +1,11 @@
-DummyPredef35:
-DummyPredef36:
-	ret
-
 UpdateTimeOfDayPal::
 	call UpdateTime
 	ld a, [wTimeOfDay]
 	ld [wCurTimeOfDay], a
 	call GetTimePalette
 	ld [wTimeOfDayPal], a
+DummyPredef35:
+DummyPredef36:
 	ret
 
 _TimeOfDayPals::

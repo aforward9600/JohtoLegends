@@ -1759,7 +1759,7 @@ Cry_Garchomp_Ch6:
 
 Cry_Garchomp_Ch7:
 	sound __, 1, $13, 1167
-	sound __, 3, 1, 4, 1136
+	sound __, 3, $14, 1136
 	sound __, 1, $17, 1274
 	sound __, 1, $17, 1297
 	sound __, 1, $15, 1661
@@ -1966,4 +1966,141 @@ Cry_Mamoswine_Ch8:
 	noise __, 6, $61, 108
 	noise __, 6, $18, 108
 	noise __, 2, $08, 108
+	endchannel
+
+Cry_Yanmega:
+	musicheader 4, 5, Cry_Yanmega_Ch5
+	musicheader 3, 6, Cry_Yanmega_Ch6
+	musicheader 2, 7, Cry_Yanmega_Ch7
+	musicheader 1, 8, Cry_Yanmega_Ch8
+
+Cry_Yanmega_Ch5:
+	sound_duty 2, 2, 1, 1
+	sound __, 3, $88, 1224
+	sound __, 3, $b8, 1224
+	sound __, 3, $a8, 1356
+	sound __, 3, $98, 1301
+	sound __, 3, $e8, 1255
+	sound __, 3, $b8, 1111
+	sound __, 3, $98, 1245
+	sound __, 3, $e8, 1224
+	sound __, 3, $88, 1178
+	sound __, 3, $88, 1166
+	sound __, 3, $b8, 1245
+	sound __, 3, $98, 1334
+	sound __, 3, $88, 1827
+	sound __, 3, $88, 1823
+	sound __, 3, $88, 1816
+	sound __, 3, $88, 1823
+	sound __, 3, $88, 1833
+	sound __, 3, $78, 1837
+	sound __, 3, $88, 1843
+	sound __, 6, $88, 1851
+	sound __, 3, $98, 1868
+	sound __, 3, $a8, 1944
+	sound __, 3, $a8, 1867
+	sound __, 3, $98, 1871
+	sound __, 3, $88, 1873
+	sound __, 1, $68, 1202
+	sound __, 2, $58, 1202
+	sound __, 3, $48, 1882
+	sound __, 3, $38, 1887
+	sound __, 3, $18, 1889
+	sound __, 3, $08, 0
+	sound __, 3, $08, 0
+	sound __, 5, $08, 0
+	endchannel
+
+Cry_Yanmega_Ch6:
+	sound_duty 0, 3, 0, 3
+	sound __, 3, $68, 1143
+	sound __, 3, $98, 1235
+	sound __, 3, $88, 1427
+	sound __, 3, $78, 1360
+	sound __, 3, $b8, 1331
+	sound __, 3, $98, 1235
+	sound __, 3, $78, 1103
+	sound __, 3, $c8, 1331
+	sound __, 3, $68, 1316
+	sound __, 3, $68, 950
+	sound __, 3, $98, 1346
+	sound __, 3, $78, 1849
+	sound __, 3, $68, 1777
+	sound __, 3, $68, 1945
+	sound __, 3, $68, 1915
+	sound __, 3, $68, 1760
+	sound __, 3, $68, 1819
+	sound __, 3, $68, 1785
+	sound __, 3, $78, 1829
+	sound __, 3, $68, 1797
+	sound __, 3, $78, 1853
+	sound __, 3, $78, 1935
+	sound __, 3, $88, 1915
+	sound __, 6, $78, 1945
+	sound __, 3, $68, 1824
+	sound __, 1, $58, 1872
+	sound __, 2, $48, 1872
+	sound __, 3, $38, 1838
+	sound __, 3, $28, 1841
+	sound __, 3, $18, 1863
+	sound __, 3, $08, 0
+	sound __, 3, $08, 0
+	sound __, 5, $08, 0
+	endchannel
+
+Cry_Yanmega_Ch7:
+	sound __, 3, $31, 1637
+	sound __, 3, $21, 1637
+	sound __, 3, $21, 1702
+	sound __, 3, $31, 1675
+	sound __, 3, $21, 1652
+	sound __, 3, $29, 1580
+	sound __, 3, $21, 1647
+	sound __, 3, $21, 1637
+	sound __, 3, $33, 1613
+	sound __, 3, $33, 1608
+	sound __, 3, $21, 1647
+	sound __, 3, $29, 1691
+	sound __, 3, $34, 1938
+	sound __, 3, $34, 1936
+	sound __, 3, $35, 1933
+	sound __, 3, $34, 1936
+	sound __, 3, $34, 1941
+	sound __, 3, $33, 1943
+	sound __, 3, $34, 1946
+	sound __, 3, $34, 1949
+	sound __, 3, $31, 1949
+	sound __, 3, $22, 1958
+	sound __, 3, $21, 1996
+	sound __, 3, $22, 1957
+	sound __, 3, $32, 1959
+	sound __, 3, $32, 1961
+	sound __, 3, $38, 1625
+	sound __, 3, $31, 1965
+	sound __, 3, $30, 1968
+	sound __, 1, $32, 1969
+	sound __, 2, $02, 1969
+	sound __, 3, $03, 1967
+	sound __, 3, $08, 1657
+	sound __, 5, $00, 0
+	endchannel
+
+Cry_Yanmega_Ch8:
+	noise __, 6, $92, 124
+	noise __, 6, $88, 124
+	noise __, 6, $84, 124
+	noise __, 6, $98, 124
+	noise __, 6, $73, 124
+	noise __, 6, $93, 124
+	noise __, 6, $78, 52
+	noise __, 6, $66, 52
+	noise __, 6, $74, 52
+	noise __, 12, $68, 52
+	noise __, 6, $58, 52
+	noise __, 6, $54, 36
+	noise __, 2, $43, 36
+	noise __, 4, $33, 36
+	noise __, 5, $23, 36
+	noise __, 1, $13, 36
+	noise __, 11, $08, 52
 	endchannel

@@ -425,9 +425,6 @@ Script_ReceivePhoneCall:
 	ld e, PHONE_BILL
 	jp LoadCallerScript
 
-UnknownScript_0x90261:
-	ret
-
 RingTwice_StartCall:
 	call .Ring
 	call .Ring
@@ -457,6 +454,7 @@ PhoneCall::
 	call Phone_FirstOfTwoRings
 	call Phone_FirstOfTwoRings
 	farcall StubbedTrainerRankings_PhoneCalls
+UnknownScript_0x90261:
 	ret
 
 Phone_FirstOfTwoRings:
