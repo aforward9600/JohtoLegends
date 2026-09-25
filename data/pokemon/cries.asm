@@ -307,7 +307,7 @@ PokemonCries::
 	mon_cry CRY_MAGCARGO,   -$20d,  $1c0 ; MAGCARGO
 	mon_cry CRY_CYNDAQUIL,   $1fe,  $140 ; SWINUB
 	mon_cry CRY_MAGCARGO,   -$109,  $100 ; PILOSWINE
-	mon_cry CRY_TYPHLOSION, -$160,  $0d3 ; MAMOSWINE
+	mon_cry CRY_MAMOSWINE,   $000,  $0ff ; MAMOSWINE
 	mon_cry CRY_MAGCARGO,    $0a1,  $0e8 ; CORSOLA_J
 	mon_cry CRY_MAGCARGO,    $0a1,  $0e8 ; CORSOLA
 	mon_cry CRY_MAGCARGO,    $fa1,  $188 ; CURSOLA

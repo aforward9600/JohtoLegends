@@ -111,3 +111,4 @@
 	const CRY_GIBLE
 	const CRY_GABITE
 	const CRY_GARCHOMP
+	const CRY_MAMOSWINE

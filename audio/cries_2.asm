@@ -1831,3 +1831,139 @@ Cry_Garchomp_Ch8:
 	noise __, 1, $a8, 100
 	noise __, 1, $68, 100
 	endchannel
+
+Cry_Mamoswine:
+	musicheader 4, 5, Cry_Mamoswine_Ch5
+	musicheader 3, 6, Cry_Mamoswine_Ch6
+	musicheader 2, 7, Cry_Mamoswine_Ch7
+	musicheader 1, 8, Cry_Mamoswine_Ch8
+
+Cry_Mamoswine_Ch5:
+	sound_duty 2, 2, 2, 2
+	sound __, 3, $98, 204
+	sound __, 3, $a8, 706
+	sound __, 3, $88, 1915
+	sound __, 3, $a8, 1805
+	sound __, 3, $e8, 1824
+	sound __, 3, $e8, 1834
+	sound __, 3, $f8, 1847
+	sound __, 3, $b8, 1850
+	sound __, 3, $b8, 1166
+	sound __, 3, $b8, 1154
+	sound __, 3, $d8, 1656
+	sound __, 3, $c8, 1651
+	sound __, 3, $a8, 1651
+	sound __, 3, $a8, 1721
+	sound __, 3, $a8, 1742
+	sound __, 3, $a8, 1653
+	sound __, 3, $b8, 1656
+	sound __, 3, $b8, 1652
+	sound __, 3, $c8, 1615
+	sound __, 3, $b8, 1646
+	sound __, 3, $98, 1629
+	sound __, 3, $a8, 1649
+	sound __, 3, $a8, 419
+	sound __, 3, $b8, 1854
+	sound __, 3, $a8, 1853
+	sound __, 3, $b8, 1621
+	sound __, 3, $b8, 1565
+	sound __, 3, $a8, 1698
+	sound __, 3, $48, 1506
+	sound __, 3, $28, 1306
+	sound __, 3, $18, 1606
+	sound __, 3, $18, 1626
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_Mamoswine_Ch6:
+	sound_duty 1, 2, 1, 2
+	sound __, 3, $98, 1619
+	sound __, 3, $b8, 1636
+	sound __, 3, $98, 1805
+	sound __, 3, $b8, 1695
+	sound __, 3, $f8, 1736
+	sound __, 3, $f8, 1748
+	sound __, 3, $f8, 1766
+	sound __, 3, $b8, 1771
+	sound __, 3, $b8, 1848
+	sound __, 3, $c8, 1644
+	sound __, 3, $e8, 1765
+	sound __, 3, $c8, 1908
+	sound __, 3, $b8, 1856
+	sound __, 3, $b8, 1825
+	sound __, 3, $b8, 1856
+	sound __, 3, $b8, 1908
+	sound __, 3, $c8, 1909
+	sound __, 3, $b8, 1830
+	sound __, 3, $c8, 1647
+	sound __, 3, $c8, 1596
+	sound __, 3, $98, 1571
+	sound __, 3, $b8, 1644
+	sound __, 3, $b8, 1591
+	sound __, 3, $b8, 1776
+	sound __, 3, $b8, 1803
+	sound __, 3, $c8, 1848
+	sound __, 3, $b8, 1795
+	sound __, 3, $b8, 1737
+	sound __, 3, $48, 1553
+	sound __, 3, $38, 1337
+	sound __, 3, $18, 1429
+	sound __, 3, $18, 1458
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_Mamoswine_Ch7:
+	sound __, 3, $17, 1125
+	sound __, 3, $15, 1376
+	sound __, 3, $21, 1981
+	sound __, 3, $16, 1927
+	sound __, 3, $11, 1936
+	sound __, 3, $11, 1940
+	sound __, 3, $11, 1947
+	sound __, 3, $13, 1950
+	sound __, 3, $16, 1608
+	sound __, 3, $13, 1602
+	sound __, 3, $12, 1852
+	sound __, 3, $14, 1849
+	sound __, 3, $13, 1849
+	sound __, 3, $12, 1885
+	sound __, 3, $16, 1895
+	sound __, 3, $12, 1850
+	sound __, 3, $12, 1852
+	sound __, 3, $13, 1850
+	sound __, 3, $16, 1832
+	sound __, 3, $13, 1847
+	sound __, 3, $14, 1839
+	sound __, 3, $13, 1849
+	sound __, 3, $17, 1235
+	sound __, 3, $11, 1952
+	sound __, 3, $11, 1952
+	sound __, 3, $12, 1835
+	sound __, 3, $16, 1806
+	sound __, 3, $12, 1874
+	sound __, 3, $22, 1778
+	sound __, 3, $22, 1678
+	sound __, 3, $21, 1827
+	sound __, 3, $24, 1837
+	sound __, 2, $00, 0
+	endchannel
+
+Cry_Mamoswine_Ch8:
+	noise __, 6, $d6, 84
+	noise __, 6, $b8, 84
+	noise __, 6, $e8, 92
+	noise __, 6, $e1, 92
+	noise __, 6, $d3, 84
+	noise __, 6, $f2, 84
+	noise __, 6, $d3, 68
+	noise __, 6, $d8, 92
+	noise __, 6, $d5, 92
+	noise __, 6, $f2, 108
+	noise __, 6, $d3, 92
+	noise __, 6, $b8, 92
+	noise __, 6, $b8, 92
+	noise __, 6, $92, 92
+	noise __, 6, $61, 108
+	noise __, 6, $18, 108
+	noise __, 2, $08, 108
+	endchannel

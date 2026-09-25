@@ -106,3 +106,4 @@ Cries:
 	dba Cry_Gible
 	dba Cry_Gabite
 	dba Cry_Garchomp
+	dba Cry_Mamoswine
