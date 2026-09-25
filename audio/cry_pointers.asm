@@ -94,3 +94,5 @@ Cries:
 	dba Cry_Flygon
 	dba Cry_Trapinch
 	dba Cry_Vibrava
+	dba Cry_Riolu
+	dba Cry_Lucario

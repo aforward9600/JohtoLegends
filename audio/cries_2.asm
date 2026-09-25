@@ -667,3 +667,122 @@ Cry_vibrava_Ch8:
 	noise __, 1, $08, 75
 	noise __, 1, $08, 75
 	endchannel
+
+Cry_Riolu:
+	musicheader 3, 5, Cry_riolu_Ch5
+	musicheader 1, 6, Cry_riolu_Ch6
+	musicheader 1, 8, Cry_riolu_Ch8
+
+Cry_riolu_Ch5:
+	dutycycle $1
+	sound __, 2, $98, 1891
+	dutycycle $2
+	sound __, 2, $d8, 1923
+	sound __, 2, $d8, 1922
+	sound __, 2, $d8, 1928
+	sound __, 2, $88, 1920
+	sound __, 2, $98, 1918
+	sound __, 2, $38, 1922
+	sound __, 2, $98, 1950
+	sound __, 2, $c8, 1969
+	sound __, 2, $d8, 1973
+	sound __, 2, $68, 1970
+	sound __, 2, $28, 1973
+	endchannel
+
+Cry_riolu_Ch6:
+	sound __, 2, $08, 0
+	dutycycle $2
+	sound __, 2, $58, 1963
+	sound __, 2, $78, 1963
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $38, 1877
+	sound __, 2, $28, 1936
+	sound __, 2, $38, 1972
+	sound __, 2, $68, 1949
+	sound __, 2, $08, 0
+	sound __, 2, $38, 1961
+	sound __, 2, $28, 1962
+	endchannel
+
+Cry_riolu_Ch8:
+	noise __, 2, $18, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 2, $28, 44
+	noise __, 2, $18, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	endchannel
+
+Cry_Lucario:
+	musicheader 4, 5, Cry_lucario_Ch5
+	musicheader 3, 6, Cry_lucario_Ch6
+	musicheader 2, 7, Cry_lucario_Ch7
+	musicheader 1, 8, Cry_lucario_Ch8
+
+Cry_lucario_Ch5:
+	sound_duty 2, 2, 1, 1
+	sound __, 3, $e8, 1975
+	sound __, 3, $e8, 1905
+	sound __, 3, $e8, 1918
+	sound __, 3, $e8, 1922
+	sound __, 3, $c8, 1680
+	sound __, 3, $d8, 368
+	sound __, 3, $d8, 368
+	sound __, 3, $b8, 368
+	sound __, 3, $b8, 1847
+	sound __, 3, $a8, 1638
+	sound __, 3, $98, 368
+	sound __, 3, $68, 1699
+	sound __, 2, $28, 1712
+	endchannel
+
+Cry_lucario_Ch6:
+	sound_duty 0, 3, 0, 3
+	sound __, 3, $b8, 1920
+	sound __, 3, $b8, 1939
+	sound __, 3, $b8, 1928
+	sound __, 3, $b8, 1880
+	sound __, 3, $a8, 1823
+	sound __, 3, $a8, 1832
+	sound __, 3, $b8, 1836
+	sound __, 3, $98, 1841
+	sound __, 3, $88, 1714
+	sound __, 3, $88, 1841
+	sound __, 3, $78, 1841
+	sound __, 3, $48, 1728
+	sound __, 2, $28, 1600
+	endchannel
+
+Cry_lucario_Ch7:
+	sound __, 3, $21, 2012
+	sound __, 3, $22, 1977
+	sound __, 3, $22, 1983
+	sound __, 3, $21, 1985
+	sound __, 3, $23, 1864
+	sound __, 3, $28, 1208
+	sound __, 3, $27, 1208
+	sound __, 3, $29, 1208
+	sound __, 3, $21, 1948
+	sound __, 3, $26, 1843
+	sound __, 3, $29, 1208
+	sound __, 3, $31, 1874
+	sound __, 2, $32, 1880
+	endchannel
+
+Cry_lucario_Ch8:
+	noise __, 6, $a3, 76
+	noise __, 6, $b2, 76
+	noise __, 6, $93, 92
+	noise __, 6, $92, 92
+	noise __, 6, $83, 92
+	noise __, 6, $71, 92
+	noise __, 2, $21, 92
+	endchannel

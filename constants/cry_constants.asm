@@ -99,3 +99,5 @@
 	const CRY_FLYGON
 	const CRY_TRAPINCH
 	const CRY_VIBRAVA
+	const CRY_RIOLU
+	const CRY_LUCARIO
