@@ -109,3 +109,6 @@ Cries:
 	dba Cry_Mamoswine
 	dba Cry_Yanmega
 	dba Cry_Porygon_Z
+	dba Cry_Bonsly
+	dba Cry_Mime_Jr
+	dba Cry_Happiny

@@ -114,3 +114,6 @@
 	const CRY_MAMOSWINE
 	const CRY_YANMEGA
 	const CRY_PORYGON_Z
+	const CRY_BONSLY
+	const CRY_MIME_JR
+	const CRY_HAPPINY

@@ -163,7 +163,7 @@ PokemonCries::
 	mon_cry CRY_CHARMANDER,  $000,  $100 ; RHYHORN
 	mon_cry CRY_RHYDON,      $000,  $100 ; RHYDON
 	mon_cry CRY_RHYDON,      $e00,  $170 ; RHYPERIOR
-	mon_cry CRY_SLOWKING,    $a50,  $130 ; HAPPINY
+	mon_cry CRY_HAPPINY,    -$010,  $0ff ; HAPPINY
 	mon_cry CRY_PIDGEOTTO,   $00a,  $140 ; CHANSEY
 	mon_cry CRY_SLOWKING,    $293,  $140 ; BLISSEY
 	mon_cry CRY_GOLEM,       $000,  $100 ; TANGELA
@@ -176,7 +176,7 @@ PokemonCries::
 	mon_cry CRY_CATERPIE,    $010,  $17f ; SEAKING
 	mon_cry CRY_PARAS,       $002,  $0a0 ; STARYU
 	mon_cry CRY_PARAS,       $000,  $100 ; STARMIE
-	mon_cry CRY_NIDORAN_M,   $047,  $150 ; MIME__JR
+	mon_cry CRY_MIME_JR,     $004,  $0ff ; MIME__JR
 	mon_cry CRY_KRABBY,      $008,  $0c0 ; MR__MIME
 	mon_cry CRY_KRABBY,      $008,  $0c0 ; MR__MIME_G
 	mon_cry CRY_KRABBY,      $e08,  $0f0 ; MR__RIME
@@ -259,7 +259,7 @@ PokemonCries::
 	mon_cry CRY_AZURILL,     $000,  $0ff ; AZURILL
 	mon_cry CRY_MARILL,      $11b,  $120 ; MARILL
 	mon_cry CRY_MARILL,      $0b6,  $180 ; AZUMARILL
-	mon_cry CRY_SPEAROW,     $040,  $090 ; BONSLY
+	mon_cry CRY_BONSLY,     -$008,  $0ff ; BONSLY
 	mon_cry CRY_CLEFFA,      $f40,  $180 ; SUDOWOODO
 	mon_cry CRY_CLEFFA,      $03b,  $0c8 ; HOPPIP
 	mon_cry CRY_CLEFFA,      $027,  $138 ; SKIPLOOM
