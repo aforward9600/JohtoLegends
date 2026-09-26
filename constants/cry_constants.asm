@@ -117,3 +117,6 @@
 	const CRY_BONSLY
 	const CRY_MIME_JR
 	const CRY_HAPPINY
+	const CRY_ELECTIVIRE
+	const CRY_MAGMORTAR
+	const CRY_MAGNEZONE

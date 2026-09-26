@@ -2633,3 +2633,591 @@ Cry_Happiny_Ch8:
 	noise __, 1, $88, 92
 	noise __, 7, $08, 0
 	endchannel
+
+Cry_Electivire:
+	musicheader 4, 5, Cry_Electivire_Ch5
+	musicheader 3, 6, Cry_Electivire_Ch6
+	musicheader 2, 7, Cry_Electivire_Ch7
+	musicheader 1, 8, Cry_Electivire_Ch8
+
+Cry_Electivire_Ch5:
+	sound_duty 2, 2, 2, 2
+	sound __, 3, $e8, 1320
+	sound __, 3, $e8, 1551
+	sound __, 3, $c8, 1820
+	sound __, 3, $e8, 1816
+	sound __, 3, $d8, 1812
+	sound __, 3, $d8, 1760
+	sound __, 3, $d8, 1763
+	sound __, 3, $d8, 1800
+	sound __, 3, $c8, 1793
+	sound __, 3, $c8, 1790
+	sound __, 3, $d8, 1787
+	sound __, 3, $c8, 1783
+	sound __, 3, $98, 1779
+	sound __, 3, $78, 1775
+	sound __, 3, $98, 1773
+	sound __, 3, $98, 1768
+	sound __, 3, $68, 1768
+	sound __, 3, $98, 1764
+	sound __, 3, $88, 1762
+	sound __, 3, $78, 1756
+	sound __, 3, $78, 1755
+	sound __, 3, $88, 1750
+	sound __, 3, $78, 1748
+	sound __, 3, $58, 1744
+	sound __, 6, $48, 1743
+	sound __, 3, $38, 1743
+	sound __, 2, $38, 1738
+	sound __, 1, $28, 1738
+	sound __, 3, $28, 1734
+	sound __, 3, $18, 1734
+	sound __, 1, $18, 1732
+	sound __, 5, $08, 0
+	sound __, 8, $08, 0
+	endchannel
+
+Cry_Electivire_Ch6:
+	sound_duty 2, 1, 2, 1
+	sound __, 3, $e8, 1440
+	sound __, 3, $e8, 1597
+	sound __, 3, $c8, 1706
+	sound __, 3, $e8, 1689
+	sound __, 3, $c8, 1727
+	sound __, 3, $e8, 1783
+	sound __, 3, $e8, 1774
+	sound __, 3, $e8, 1840
+	sound __, 3, $c8, 1828
+	sound __, 3, $b8, 1731
+	sound __, 3, $c8, 1872
+	sound __, 3, $b8, 1871
+	sound __, 3, $98, 1697
+	sound __, 3, $68, 1870
+	sound __, 3, $98, 1863
+	sound __, 3, $98, 1684
+	sound __, 3, $58, 1682
+	sound __, 3, $98, 1679
+	sound __, 3, $78, 1678
+	sound __, 3, $68, 1667
+	sound __, 3, $78, 1865
+	sound __, 3, $78, 1662
+	sound __, 3, $68, 1864
+	sound __, 3, $58, 1652
+	sound __, 9, $48, 1650
+	sound __, 1, $48, 1643
+	sound __, 2, $38, 1643
+	sound __, 1, $28, 1638
+	sound __, 5, $18, 1638
+	sound __, 1, $18, 1635
+	sound __, 5, $08, 0
+	sound __, 8, $08, 0
+	endchannel
+
+Cry_Electivire_Ch7:
+	sound __, 3, $12, 1684
+	sound __, 3, $18, 1800
+	sound __, 3, $11, 1934
+	sound __, 3, $11, 1932
+	sound __, 3, $12, 1930
+	sound __, 3, $16, 1904
+	sound __, 3, $13, 1906
+	sound __, 3, $11, 1924
+	sound __, 3, $16, 1921
+	sound __, 3, $11, 1920
+	sound __, 3, $13, 1918
+	sound __, 3, $13, 1916
+	sound __, 3, $11, 1914
+	sound __, 3, $21, 1911
+	sound __, 3, $11, 1911
+	sound __, 3, $24, 1908
+	sound __, 3, $21, 1908
+	sound __, 3, $24, 1906
+	sound __, 3, $23, 1906
+	sound __, 3, $21, 1902
+	sound __, 3, $21, 1901
+	sound __, 3, $25, 1900
+	sound __, 3, $29, 1898
+	sound __, 3, $29, 1896
+	sound __, 9, $23, 1895
+	sound __, 3, $21, 1893
+	sound __, 1, $21, 1891
+	sound __, 5, $31, 1891
+	sound __, 6, $31, 1890
+	sound __, 8, $00, 0
+	endchannel
+
+Cry_Electivire_Ch8:
+	noise __, 6, $e8, 68
+	noise __, 6, $e3, 84
+	noise __, 6, $b8, 52
+	noise __, 6, $d3, 52
+	noise __, 6, $c8, 52
+	noise __, 6, $d1, 52
+	noise __, 6, $b2, 52
+	noise __, 6, $b1, 52
+	noise __, 6, $98, 52
+	noise __, 6, $91, 52
+	noise __, 6, $92, 52
+	noise __, 6, $82, 100
+	noise __, 12, $28, 92
+	noise __, 1, $25, 92
+	noise __, 5, $15, 92
+	noise __, 1, $18, 92
+	noise __, 5, $08, 92
+	noise __, 6, $08, 76
+	noise __, 2, $08, 44
+	endchannel
+
+Cry_Magmortar:
+	musicheader 4, 5, Cry_Magmortar_Ch5
+	musicheader 3, 6, Cry_Magmortar_Ch6
+	musicheader 2, 7, Cry_Magmortar_Ch7
+	musicheader 1, 8, Cry_Magmortar_Ch8
+
+Cry_Magmortar_Ch5:
+	sound_duty 2, 2, 2, 2
+	sound __, 3, $e8, 1938
+	sound __, 3, $e8, 1821
+	sound __, 3, $e8, 1586
+	sound __, 3, $d8, 1614
+	sound __, 3, $e8, 1835
+	sound __, 3, $d8, 1848
+	sound __, 3, $e8, 1584
+	sound __, 3, $d8, 1812
+	sound __, 3, $d8, 1793
+	sound __, 3, $d8, 1748
+	sound __, 3, $b8, 1837
+	sound __, 3, $a8, 1609
+	sound __, 3, $c8, 315
+	sound __, 3, $c8, 864
+	sound __, 3, $e8, 1698
+	sound __, 3, $d8, 955
+	sound __, 3, $e8, 883
+	sound __, 3, $b8, 655
+	sound __, 3, $78, 1061
+	sound __, 3, $78, 178
+	sound __, 2, $68, 178
+	sound __, 1, $58, 178
+	sound __, 1, $68, 1182
+	sound __, 2, $58, 1182
+	sound __, 2, $68, 883
+	sound __, 1, $58, 883
+	sound __, 2, $58, 469
+	sound __, 1, $48, 469
+	sound __, 2, $28, 626
+	sound __, 1, $18, 626
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_Magmortar_Ch6:
+	sound_duty 2, 1, 2, 1
+	sound __, 3, $d8, 1903
+	sound __, 3, $d8, 1647
+	sound __, 3, $d8, 1625
+	sound __, 3, $c8, 1760
+	sound __, 3, $d8, 1855
+	sound __, 3, $c8, 1914
+	sound __, 3, $d8, 1919
+	sound __, 3, $c8, 1884
+	sound __, 3, $c8, 1928
+	sound __, 3, $c8, 1873
+	sound __, 3, $b8, 1751
+	sound __, 3, $98, 1647
+	sound __, 3, $c8, 1593
+	sound __, 3, $c8, 1722
+	sound __, 3, $d8, 1589
+	sound __, 3, $d8, 1148
+	sound __, 3, $d8, 1100
+	sound __, 3, $98, 1003
+	sound __, 3, $78, 1489
+	sound __, 3, $68, 1338
+	sound __, 2, $68, 1484
+	sound __, 1, $58, 1484
+	sound __, 2, $58, 1378
+	sound __, 1, $48, 1378
+	sound __, 2, $68, 1100
+	sound __, 1, $58, 1100
+	sound __, 1, $58, 843
+	sound __, 2, $48, 843
+	sound __, 1, $28, 938
+	sound __, 2, $18, 938
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_Magmortar_Ch7:
+	sound __, 3, $11, 1994
+	sound __, 3, $11, 1935
+	sound __, 3, $17, 1817
+	sound __, 3, $14, 1831
+	sound __, 3, $12, 1942
+	sound __, 3, $12, 1948
+	sound __, 3, $17, 1816
+	sound __, 3, $17, 1930
+	sound __, 3, $13, 1921
+	sound __, 3, $10, 1898
+	sound __, 3, $12, 1943
+	sound __, 3, $14, 1829
+	sound __, 3, $17, 1182
+	sound __, 3, $14, 1456
+	sound __, 3, $13, 1873
+	sound __, 3, $14, 1502
+	sound __, 3, $16, 1466
+	sound __, 3, $16, 1352
+	sound __, 3, $23, 1555
+	sound __, 3, $26, 1113
+	sound __, 3, $23, 1113
+	sound __, 3, $39, 1615
+	sound __, 3, $22, 1466
+	sound __, 1, $27, 1259
+	sound __, 2, $37, 1259
+	sound __, 2, $37, 1338
+	sound __, 1, $07, 1338
+	sound __, 2, $02, 1352
+	endchannel
+
+Cry_Magmortar_Ch8:
+	noise __, 6, $f8, 76
+	noise __, 6, $e8, 68
+	noise __, 6, $f4, 68
+	noise __, 6, $f3, 68
+	noise __, 6, $e8, 76
+	noise __, 6, $b2, 76
+	noise __, 12, $c8, 108
+	noise __, 6, $b2, 124
+	noise __, 6, $82, 124
+	noise __, 2, $88, 124
+	noise __, 2, $78, 124
+	noise __, 2, $68, 124
+	noise __, 1, $78, 124
+	noise __, 1, $68, 124
+	noise __, 2, $58, 124
+	noise __, 1, $48, 124
+	noise __, 1, $38, 124
+	noise __, 2, $21, 124
+	noise __, 2, $11, 124
+	noise __, 1, $01, 124
+	endchannel
+
+Cry_Magnezone:
+	musicheader 4, 5, Cry_Magnezone_Ch5
+	musicheader 3, 6, Cry_Magnezone_Ch6
+	musicheader 2, 7, Cry_Magnezone_Ch7
+	musicheader 1, 8, Cry_Magnezone_Ch8
+
+Cry_Magnezone_Ch5:
+	dutycycle $2
+	sound __, 1, $c8, 1970
+	sound __, 1, $c8, 1832
+	sound __, 1, $98, 1860
+	dutycycle $1
+	sound __, 1, $98, 1885
+	dutycycle $2
+	sound __, 1, $98, 1975
+	sound __, 1, $68, 2015
+	dutycycle $1
+	sound __, 1, $98, 1844
+	dutycycle $3
+	sound __, 1, $f8, 1900
+	dutycycle $1
+	sound __, 1, $f8, 1831
+	sound __, 1, $c8, 1859
+	sound __, 1, $c8, 1882
+	sound __, 1, $c8, 1895
+	dutycycle $0
+	sound __, 1, $98, 1908
+	dutycycle $2
+	sound __, 1, $98, 1955
+	dutycycle $1
+	sound __, 1, $c8, 1891
+	dutycycle $0
+	sound __, 1, $f8, 1806
+	dutycycle $2
+	sound __, 1, $f8, 1836
+	dutycycle $1
+	sound __, 1, $c8, 1873
+	sound __, 1, $c8, 1892
+	sound __, 1, $c8, 1902
+	sound __, 1, $98, 1850
+	sound __, 1, $f8, 1882
+	dutycycle $2
+	sound __, 1, $f8, 1966
+	dutycycle $1
+	sound __, 1, $f8, 1829
+	sound __, 1, $f8, 1862
+	sound __, 1, $f8, 1878
+	sound __, 1, $c8, 1894
+	dutycycle $0
+	sound __, 1, $c8, 1895
+	sound __, 1, $c8, 1638
+	dutycycle $2
+	sound __, 1, $f8, 1906
+	dutycycle $0
+	sound __, 1, $c8, 1777
+	dutycycle $1
+	sound __, 1, $c8, 1849
+	sound __, 1, $c8, 1865
+	sound __, 1, $f8, 1877
+	sound __, 1, $c8, 1886
+	sound __, 1, $c8, 1617
+	dutycycle $2
+	sound __, 1, $c8, 1897
+	sound __, 1, $f8, 1965
+	sound __, 1, $f8, 1966
+	sound __, 1, $c8, 1966
+	dutycycle $1
+	sound __, 1, $c8, 1871
+	dutycycle $0
+	sound __, 1, $f8, 1779
+	dutycycle $3
+	sound __, 1, $f8, 1559
+	dutycycle $2
+	sound __, 1, $f8, 1962
+	sound __, 1, $c8, 1961
+	sound __, 1, $c8, 1820
+	dutycycle $1
+	sound __, 1, $f8, 1837
+	sound __, 1, $c8, 1860
+	sound __, 1, $c8, 1859
+	dutycycle $2
+	sound __, 1, $c8, 1540
+	sound __, 1, $c8, 1967
+	dutycycle $1
+	sound __, 1, $c8, 1892
+	dutycycle $2
+	sound __, 1, $98, 1927
+	dutycycle $0
+	sound __, 1, $98, 1830
+	dutycycle $3
+	sound __, 1, $c8, 1845
+	dutycycle $2
+	sound __, 1, $c8, 1889
+	dutycycle $0
+	sound __, 1, $f8, 1524
+	dutycycle $1
+	sound __, 1, $f8, 1788
+	dutycycle $2
+	sound __, 1, $c8, 1828
+	dutycycle $3
+	sound __, 1, $f8, 1845
+	dutycycle $2
+	sound __, 1, $f8, 1867
+	sound __, 1, $f8, 1855
+	sound __, 1, $c8, 1851
+	sound __, 1, $c8, 1860
+	sound __, 1, $f8, 1962
+	sound __, 1, $f8, 1967
+	sound __, 1, $c8, 1966
+	dutycycle $3
+	sound __, 1, $c8, 1948
+	dutycycle $1
+	sound __, 1, $f8, 1875
+	dutycycle $2
+	sound __, 1, $c8, 1969
+	dutycycle $1
+	sound __, 1, $98, 1904
+	dutycycle $2
+	sound __, 1, $68, 1988
+	sound __, 1, $98, 1986
+	sound __, 1, $98, 1990
+	sound __, 2, $68, 1990
+	sound __, 1, $68, 1989
+	sound __, 1, $68, 1985
+	sound __, 1, $68, 1966
+	sound __, 1, $68, 1988
+	sound __, 1, $68, 1989
+	dutycycle $3
+	sound __, 1, $68, 1909
+	dutycycle $1
+	sound __, 1, $38, 1930
+	dutycycle $2
+	sound __, 1, $38, 1988
+	sound __, 1, $38, 1989
+	dutycycle $3
+	sound __, 1, $38, 1911
+	dutycycle $2
+	sound __, 7, $38, 1966
+	sound __, 7, $08, 0
+	endchannel
+
+Cry_Magnezone_Ch6:
+	sound __, 18, $08, 0
+	dutycycle $2
+	sound __, 1, $b8, 1967
+	sound __, 1, $88, 1966
+	sound __, 11, $08, 0
+	dutycycle $3
+	sound __, 1, $d8, 1932
+	sound __, 1, $b8, 1932
+	sound __, 2, $08, 0
+	dutycycle $2
+	sound __, 1, $f8, 1936
+	dutycycle $3
+	sound __, 1, $b8, 1933
+	sound __, 9, $08, 0
+	dutycycle $2
+	sound __, 1, $b8, 1947
+	sound __, 1, $98, 1945
+	sound __, 1, $98, 1966
+	sound __, 1, $b8, 1966
+	sound __, 3, $08, 0
+	dutycycle $3
+	sound __, 1, $88, 1967
+	dutycycle $2
+	sound __, 1, $f8, 1966
+	sound __, 1, $d8, 1965
+	sound __, 1, $b8, 1966
+	sound __, 2, $98, 1947
+	sound __, 2, $08, 0
+	sound __, 1, $b8, 1967
+	sound __, 1, $98, 1967
+	sound __, 1, $f8, 1967
+	sound __, 2, $b8, 1908
+	sound __, 1, $08, 0
+	sound __, 1, $b8, 1966
+	sound __, 1, $b8, 1967
+	sound __, 1, $08, 0
+	dutycycle $3
+	sound __, 1, $b8, 1940
+	sound __, 1, $88, 1941
+	sound __, 2, $08, 0
+	sound __, 1, $98, 1965
+	sound __, 1, $68, 1965
+	sound __, 3, $08, 0
+	dutycycle $2
+	sound __, 1, $88, 1966
+	sound __, 1, $68, 1966
+	sound __, 1, $88, 1966
+	sound __, 8, $08, 0
+	sound __, 2, $28, 1982
+	sound __, 8, $08, 0
+	endchannel
+
+Cry_Magnezone_Ch7:
+	sound __, 1, $11, 2009
+	sound __, 1, $17, 1940
+	sound __, 1, $12, 1954
+	sound __, 1, $12, 1967
+	sound __, 1, $11, 2012
+	sound __, 1, $11, 2032
+	sound __, 1, $12, 1946
+	sound __, 1, $12, 1974
+	sound __, 1, $15, 1940
+	sound __, 1, $12, 1954
+	sound __, 1, $12, 1965
+	sound __, 1, $12, 1972
+	sound __, 1, $12, 1978
+	sound __, 1, $10, 2002
+	sound __, 1, $12, 1970
+	sound __, 1, $15, 1927
+	sound __, 1, $14, 1942
+	sound __, 1, $16, 1961
+	sound __, 1, $12, 1970
+	sound __, 1, $12, 1975
+	sound __, 1, $16, 1949
+	sound __, 1, $12, 1965
+	sound __, 1, $11, 2007
+	sound __, 1, $12, 1939
+	sound __, 1, $16, 1955
+	sound __, 1, $12, 1963
+	sound __, 1, $12, 1971
+	sound __, 1, $12, 1972
+	sound __, 1, $17, 1843
+	sound __, 1, $11, 1977
+	sound __, 1, $12, 1913
+	sound __, 1, $16, 1949
+	sound __, 1, $16, 1957
+	sound __, 1, $12, 1963
+	sound __, 1, $12, 1967
+	sound __, 1, $16, 1833
+	sound __, 1, $13, 1973
+	sound __, 3, $11, 2007
+	sound __, 1, $12, 1960
+	sound __, 1, $15, 1914
+	sound __, 1, $17, 1804
+	sound __, 1, $12, 2005
+	sound __, 1, $11, 2004
+	sound __, 1, $12, 1934
+	sound __, 1, $12, 1943
+	sound __, 2, $12, 1954
+	sound __, 1, $17, 1794
+	sound __, 1, $11, 2008
+	sound __, 1, $13, 1970
+	sound __, 1, $10, 1988
+	sound __, 1, $12, 1939
+	sound __, 1, $12, 1947
+	sound __, 1, $13, 1969
+	sound __, 1, $17, 1786
+	sound __, 1, $16, 1918
+	sound __, 1, $13, 1938
+	sound __, 1, $12, 1947
+	sound __, 1, $13, 1958
+	sound __, 1, $14, 1952
+	sound __, 1, $11, 1950
+	sound __, 1, $12, 1954
+	sound __, 1, $16, 2005
+	sound __, 2, $11, 2007
+	sound __, 1, $10, 1998
+	sound __, 1, $12, 1962
+	sound __, 1, $10, 2008
+	sound __, 1, $11, 1976
+	sound __, 1, $21, 2018
+	sound __, 1, $11, 2017
+	sound __, 1, $11, 2019
+	sound __, 2, $21, 2019
+	sound __, 1, $21, 2018
+	sound __, 1, $21, 2016
+	sound __, 1, $21, 2007
+	sound __, 1, $21, 2018
+	sound __, 1, $21, 2019
+	sound __, 1, $22, 1979
+	sound __, 1, $22, 1989
+	sound __, 1, $21, 2018
+	sound __, 1, $21, 2019
+	sound __, 1, $32, 1980
+	sound __, 7, $31, 2007
+	sound __, 1, $30, 2007
+	sound __, 1, $31, 2007
+	sound __, 1, $33, 1973
+	sound __, 1, $31, 1998
+	sound __, 2, $30, 2007
+	sound __, 1, $00, 0
+	endchannel
+
+Cry_Magnezone_Ch8:
+	noise __, 2, $b8, 92
+	noise __, 2, $78, 92
+	noise __, 1, $b8, 92
+	noise __, 2, $78, 92
+	noise __, 2, $f8, 92
+	noise __, 1, $78, 92
+	noise __, 4, $a8, 92
+	noise __, 4, $f8, 92
+	noise __, 3, $b8, 92
+	noise __, 5, $f8, 92
+	noise __, 1, $b8, 92
+	noise __, 5, $f8, 92
+	noise __, 1, $b8, 92
+	noise __, 11, $f8, 92
+	noise __, 2, $b8, 92
+	noise __, 2, $f8, 92
+	noise __, 2, $b8, 92
+	noise __, 1, $f8, 92
+	noise __, 1, $b8, 92
+	noise __, 1, $78, 92
+	noise __, 1, $b8, 92
+	noise __, 1, $f8, 92
+	noise __, 2, $b8, 92
+	noise __, 1, $f8, 92
+	noise __, 2, $b8, 92
+	noise __, 2, $f8, 92
+	noise __, 1, $b8, 92
+	noise __, 4, $f8, 92
+	noise __, 1, $b8, 92
+	noise __, 2, $f8, 92
+	noise __, 1, $b8, 92
+	noise __, 1, $78, 92
+	noise __, 1, $b8, 92
+	noise __, 12, $78, 92
+	noise __, 9, $48, 92
+	noise __, 6, $08, 0
+	endchannel

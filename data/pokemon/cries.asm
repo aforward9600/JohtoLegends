@@ -118,7 +118,7 @@ PokemonCries::
 	mon_cry CRY_SLOWKING,    $104,  $200 ; SLOWKING_G
 	mon_cry CRY_METAPOD,     $080,  $0e0 ; MAGNEMITE
 	mon_cry CRY_METAPOD,     $020,  $140 ; MAGNETON
-	mon_cry CRY_DROWZEE,     $110,  $0e0 ; MAGNEZONE
+	mon_cry CRY_MAGNEZONE,  -$010,  $0ff ; MAGNEZONE
 	mon_cry CRY_SPEAROW,     $0dd,  $081 ; FARFETCH_D
 	mon_cry CRY_SPEAROW,     $0dd,  $081 ; FARFETCH_D_G
 	mon_cry CRY_SPEAROW,     $7dd,  $06b ; SIRFETCH_D
@@ -187,10 +187,10 @@ PokemonCries::
 	mon_cry CRY_DROWZEE,     $0ff,  $17f ; JYNX
 	mon_cry CRY_SUNFLORA,   -$2d8,  $0b4 ; ELEKID
 	mon_cry CRY_VOLTORB,     $08f,  $17f ; ELECTABUZZ
-	mon_cry CRY_TEDDIURSA,   $1d6,  $100 ; ELECTIVIRE
+	mon_cry CRY_ELECTIVIRE,  $000,  $0ff ; ELECTIVIRE
 	mon_cry CRY_TEDDIURSA,   $176,  $03a ; MAGBY
 	mon_cry CRY_CHARMANDER,  $0ff,  $0b0 ; MAGMAR
-	mon_cry CRY_CHARMANDER,  $710,  $130 ; MAGMORTAR
+	mon_cry CRY_MAGMORTAR,   $000,  $0ff ; MAGMORTAR
 	mon_cry CRY_PIDGEOTTO,   $000,  $100 ; PINSIR
 	mon_cry CRY_SQUIRTLE,    $011,  $0c0 ; TAUROS
 	mon_cry CRY_SQUIRTLE,    $011,  $0c0 ; TAUROS_P

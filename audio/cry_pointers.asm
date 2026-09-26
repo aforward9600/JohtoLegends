@@ -112,3 +112,6 @@ Cries:
 	dba Cry_Bonsly
 	dba Cry_Mime_Jr
 	dba Cry_Happiny
+	dba Cry_Electivire
+	dba Cry_Magmortar
+	dba Cry_Magnezone
