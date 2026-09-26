@@ -36,20 +36,7 @@ mountvesuviusScript:
 GameFreakGraphicArtistScript:
 	faceplayer
 	opentext
-	checkevent EVENT_ENABLE_DIPLOMA_PRINTING
-	iftrue .CanPrintDiploma
 	writetextend GameFreakGraphicArtistText
-
-.CanPrintDiploma:
-	writetext GameFreakGraphicArtistPrintDiplomaText
-	yesorno
-	iffalse .Refused
-	special PrintDiploma
-	closetext
-	end
-
-.Refused:
-	writetextend GameFreakGraphicArtistRefusedText
 
 Ax6Script:
 	faceplayer

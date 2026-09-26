@@ -108,3 +108,4 @@ Cries:
 	dba Cry_Garchomp
 	dba Cry_Mamoswine
 	dba Cry_Yanmega
+	dba Cry_Porygon_Z

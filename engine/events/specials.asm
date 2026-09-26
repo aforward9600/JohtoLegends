@@ -92,8 +92,7 @@ NameRivalFemale:
 	; default to "SILVER"
 	ld hl, wRivalName
 	ld de, .default
-	call InitName
-	ret
+	jp InitName
 
 .default
 	db "Draco@"
@@ -105,20 +104,16 @@ NameRater:
 OverworldTownMap:
 	call FadeToMenu
 	farcall _TownMap
-	call ExitAllMenus
-	ret
+	jp ExitAllMenus
 
 UnownPrinter:
 	call FadeToMenu
-	farcall _UnownPrinter
-	call ExitAllMenus
-	ret
+	jp ExitAllMenus
 
 DisplayLinkRecord:
 	call FadeToMenu
 	farcall _DisplayLinkRecord
-	call ExitAllMenus
-	ret
+	jp ExitAllMenus
 
 PlayersHousePC:
 	xor a
@@ -362,12 +357,7 @@ Diploma:
 	call FadeToMenu
 	farcall _Diploma
 	call ExitAllMenus
-	ret
-
 PrintDiploma:
-	call FadeToMenu
-	farcall _PrintDiploma
-	call ExitAllMenus
 	ret
 
 TrainerHouse:

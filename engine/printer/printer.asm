@@ -1,31 +1,3 @@
-SendScreenToPrinter:
-.loop
-	call JoyTextDelay
-	call CheckCancelPrint
-	jr c, .cancel
-	ld a, [wJumptableIndex]
-	bit 7, a
-	jr nz, .finished
-	call PrinterJumptableIteration
-	call CheckPrinterStatus
-	call PlacePrinterStatusString
-	call DelayFrame
-	jr .loop
-
-.finished
-	and a
-	ret
-
-.cancel
-	scf
-	ret
-
-Printer_CleanUpAfterSend:
-	xor a
-	ld [wPrinterConnectionOpen], a
-	ld [wPrinterOpcode], a
-	ret
-
 Printer_PrepareTileMapForPrint:
 	push af
 	call Printer_StartTransmission
@@ -60,7 +32,6 @@ PrintDexEntry:
 	call Printer_StartTransmission
 	ln a, 1, 0
 	ld [wPrinterMargins], a
-	farcall PrintPage1
 	call ClearTileMap
 	ld a, %11100100
 	call DmgToCgbBGPals
@@ -86,7 +57,6 @@ PrintDexEntry:
 	call Printer_StartTransmission
 	ln a, 0, 3
 	ld [wPrinterMargins], a
-	farcall PrintPage2
 	call Printer_ResetJoypadRegisters
 	ld a, 4
 	ld [wPrinterQueueLength], a
@@ -327,7 +297,6 @@ PrintPartymon:
 
 	xor a
 	ldh [hBGMapMode], a
-	farcall PrintPartyMonPage1
 	ln a, 1, 0 ; to be loaded to wPrinterMargins
 	call Printer_PrepareTileMapForPrint
 
@@ -348,7 +317,6 @@ PrintPartymon:
 
 	xor a
 	ldh [hBGMapMode], a
-	farcall PrintPartyMonPage2
 	ln a, 0, 3 ; to be loaded to wPrinterMargins
 	call Printer_PrepareTileMapForPrint
 
@@ -550,15 +518,12 @@ PlacePrinterStatusString:
 	pop af
 	ld e, a
 	ld d, 0
-	ld hl, PrinterStatusStringPointers
 	add hl, de
 	add hl, de
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
 	hlcoord 1, 7
-	ld a, BANK(GBPrinterStrings)
-	call FarString
 	hlcoord 2, 15
 	ld de, String_PressBToCancel
 	call PlaceString
@@ -570,16 +535,6 @@ PlacePrinterStatusString:
 
 String_PressBToCancel:
 	db "Press B to Cancel@"
-
-PrinterStatusStringPointers:
-	dw GBPrinterString_Null ; @
-	dw GBPrinterString_CheckingLink ; CHECKING LINK
-	dw GBPrinterString_Transmitting ; TRANSMITTING
-	dw GBPrinterString_Printing ; PRINTING
-	dw GBPrinterString_PrinterError1 ; error 1
-	dw GBPrinterString_PrinterError2 ; error 2
-	dw GBPrinterString_PrinterError3 ; error 3
-	dw GBPrinterString_PrinterError4 ; error 4
 
 PrintPCBox_Page1:
 	xor a

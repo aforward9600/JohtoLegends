@@ -10,7 +10,6 @@ PhotoStudio:
 	ld hl, .Text_HoldStill
 	call PrintText
 	call DisableSpriteUpdates
-	farcall PrintPartymon
 	call ReturnToMapWithSpeechTextbox
 	ldh a, [hPrinter]
 	and a

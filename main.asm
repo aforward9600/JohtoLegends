@@ -86,7 +86,6 @@ INCLUDE "engine/events/money.asm"
 INCLUDE "data/items/marts.asm"
 INCLUDE "engine/events/mom.asm"
 INCLUDE "engine/events/daycare.asm"
-INCLUDE "engine/events/print_unown.asm"
 INCLUDE "engine/events/print_photo.asm"
 INCLUDE "engine/pokemon/breeding.asm"
 INCLUDE "gfx/tilesets.asm"
@@ -301,7 +300,6 @@ endc
 SECTION "bank21", ROMX
 
 INCLUDE "engine/printer/printer_serial.asm"
-INCLUDE "engine/printer/printer.asm"
 INCLUDE "gfx/battle_anims.asm"
 INCLUDE "engine/events/halloffame.asm"
 
@@ -593,7 +591,6 @@ SECTION "bank77", ROMX
 UnownFont:
 INCBIN "gfx/font/unown_font.2bpp"
 
-INCLUDE "engine/printer/print_party.asm"
 INCLUDE "engine/pokemon/search.asm"
 INCLUDE "engine/events/poisonstep.asm"
 INCLUDE "engine/events/sweet_scent.asm"

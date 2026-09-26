@@ -3002,7 +3002,7 @@ Cry_Honchkrow:
 	musicheader 1, 8, Cry_Honchkrow_Ch8
 
 Cry_Honchkrow_Ch5:
-	sound_duty 2, 2, 1, 1
+	sound_duty  2, 1, 2, 2
 	sound __, 3, $d8, 176
 	sound __, 3, $c8, 0
 	sound __, 3, $b8, 92
@@ -3032,7 +3032,7 @@ Cry_Honchkrow_Ch5:
 	endchannel
 
 Cry_Honchkrow_Ch6:
-	sound_duty 0, 3, 0, 3
+	sound_duty 3, 0, 3, 0
 	sound __, 3, $a8, 0
 	sound __, 3, $a8, 1840
 	sound __, 3, $98, 1842
@@ -4071,7 +4071,7 @@ Cry_Munchlax:
 	musicheader 1, 8, Cry_Munchlax_Ch8
 
 Cry_Munchlax_Ch5:
-	sound_duty 1, 1, 0, 0
+	sound_duty 0, 0, 1, 1
 	sound __, 3, $d8, 323
 	sound __, 3, $e8, 176
 	sound __, 3, $e8, 654
@@ -4091,7 +4091,7 @@ Cry_Munchlax_Ch5:
 	endchannel
 
 Cry_Munchlax_Ch6:
-	sound_duty 0, 2, 0, 2
+	sound_duty 2, 0, 2, 0
 	sound __, 3, $c8, 1617
 	sound __, 3, $d8, 0
 	sound __, 3, $d8, 1566

@@ -209,7 +209,7 @@ PokemonCries::
 	mon_cry CRY_SYLVEON,     $000,  $0ff ; SYLVEON
 	mon_cry CRY_WEEPINBELL,  $0aa,  $17f ; PORYGON
 	mon_cry CRY_GIRAFARIG,   $073,  $240 ; PORYGON2
-	mon_cry CRY_RHYDON,      $050,  $180 ; PORYGON_Z
+	mon_cry CRY_PORYGON_Z,   $000,  $0ff ; PORYGON_Z
 	mon_cry CRY_GROWLITHE,   $0f0,  $081 ; OMANYTE
 	mon_cry CRY_GROWLITHE,   $0ff,  $0c0 ; OMASTAR
 	mon_cry CRY_CATERPIE,    $0bb,  $0c0 ; KABUTO

@@ -129,20 +129,7 @@ RuinsOfAlphResearchCenterComputer:
 	writetextend RuinsOfAlphResearchCenterComputerText_GotAllUnown
 
 RuinsOfAlphResearchCenterPrinter:
-	opentext
-	checkevent EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST
-	iftrue .SkipChecking
-	readvar VAR_UNOWNCOUNT
-	ifequal NUM_UNOWN, .PrinterAvailable
-.SkipChecking:
 	writetextend RuinsOfAlphResearchCenterPrinterText_DoesntWork
-
-.PrinterAvailable:
-	writetext RuinsOfAlphResearchCenterUnownPrinterText
-	waitbutton
-	special UnownPrinter
-	closetext
-	end
 
 RuinsOfAlphResearchCenterBookshelf:
 	jumptext RuinsOfAlphResearchCenterAcademicBooksText
@@ -202,8 +189,9 @@ RuinsOfAlphResearchCenterScientist3_PrinterAvailable:
 	line "printer here for"
 	cont "handling Unown."
 
-	para "Feel free to use"
-	line "it anytime."
+	para "Unfortunately, it"
+	line "won't be ready for"
+	cont "15 years or so."
 	done
 
 RuinsOfAlphResearchCenterScientist1Text:
