@@ -156,18 +156,18 @@ PokemonCries::
 	mon_cry CRY_SEEL,        $0ee,  $140 ; HITMONCHAN
 	mon_cry CRY_SLUGMA,      $000,  $100 ; HITMONTOP
 	mon_cry CRY_SEEL,        $000,  $100 ; LICKITUNG
-	mon_cry CRY_SEEL,        $030,  $200 ; LICKILICKY
+	mon_cry CRY_LICKILICKY,  $000,  $0ff ; LICKILICKY
 	mon_cry CRY_GOLEM,       $0e6,  $15d ; KOFFING
 	mon_cry CRY_GOLEM,       $0ff,  $17f ; WEEZING
 	mon_cry CRY_GOLEM,       $0ff,  $17f ; WEEZING_G
 	mon_cry CRY_CHARMANDER,  $000,  $100 ; RHYHORN
 	mon_cry CRY_RHYDON,      $000,  $100 ; RHYDON
-	mon_cry CRY_RHYDON,      $e00,  $170 ; RHYPERIOR
+	mon_cry CRY_RHYPERIOR,   $000,  $0ff ; RHYPERIOR
 	mon_cry CRY_HAPPINY,    -$010,  $0ff ; HAPPINY
 	mon_cry CRY_PIDGEOTTO,   $00a,  $140 ; CHANSEY
 	mon_cry CRY_SLOWKING,    $293,  $140 ; BLISSEY
 	mon_cry CRY_GOLEM,       $000,  $100 ; TANGELA
-	mon_cry CRY_GOLEM,       $100,  $170 ; TANGROWTH
+	mon_cry CRY_TANGROWTH,   $000,  $0ff ; TANGROWTH
 	mon_cry CRY_KANGASKHAN,  $000,  $100 ; KANGASKHAN
 	mon_cry CRY_CLEFAIRY,    $099,  $090 ; HORSEA
 	mon_cry CRY_CLEFAIRY,    $03c,  $081 ; SEADRA

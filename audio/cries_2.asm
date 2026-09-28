@@ -3221,3 +3221,393 @@ Cry_Magnezone_Ch8:
 	noise __, 9, $48, 92
 	noise __, 6, $08, 0
 	endchannel
+
+Cry_Rhyperior:
+	musicheader 4, 5, Cry_Rhyperior_Ch5
+	musicheader 3, 6, Cry_Rhyperior_Ch6
+	musicheader 2, 7, Cry_Rhyperior_Ch7
+	musicheader 1, 8, Cry_Rhyperior_Ch8
+
+Cry_Rhyperior_Ch5:
+	sound_duty 0, 0, 1, 1
+	sound __, 3, $f8, 1764
+	sound __, 3, $f8, 1781
+	sound __, 3, $e8, 1483
+	sound __, 3, $e8, 1775
+	sound __, 3, $e8, 1532
+	sound __, 3, $e8, 0
+	sound __, 3, $d8, 1674
+	sound __, 3, $e8, 1268
+	sound __, 3, $f8, 1775
+	sound __, 3, $e8, 1774
+	sound __, 3, $d8, 1773
+	sound __, 3, $e8, 1758
+	sound __, 3, $e8, 120
+	sound __, 3, $e8, 1762
+	sound __, 3, $e8, 1768
+	sound __, 3, $e8, 1641
+	sound __, 3, $f8, 1648
+	sound __, 3, $e8, 1909
+	sound __, 3, $e8, 1901
+	sound __, 3, $e8, 0
+	sound __, 3, $c8, 1483
+	sound __, 2, $58, 1596
+	endchannel
+
+Cry_Rhyperior_Ch6:
+	sound_duty 1, 0, 1, 0
+	sound __, 3, $c8, 1839
+	sound __, 3, $c8, 1946
+	sound __, 3, $b8, 1914
+	sound __, 3, $b8, 1944
+	sound __, 3, $b8, 1943
+	sound __, 3, $b8, 1784
+	sound __, 3, $a8, 1690
+	sound __, 3, $b8, 1685
+	sound __, 3, $c8, 1682
+	sound __, 3, $b8, 1928
+	sound __, 3, $b8, 1893
+	sound __, 3, $c8, 1661
+	sound __, 3, $b8, 1268
+	sound __, 3, $b8, 1676
+	sound __, 3, $b8, 1811
+	sound __, 3, $b8, 1910
+	sound __, 3, $c8, 1909
+	sound __, 3, $b8, 1874
+	sound __, 3, $c8, 1869
+	sound __, 3, $c8, 1876
+	sound __, 3, $98, 1620
+	sound __, 2, $48, 1636
+	endchannel
+
+Cry_Rhyperior_Ch7:
+	sound __, 3, $23, 1906
+	sound __, 3, $22, 1915
+	sound __, 3, $27, 1766
+	sound __, 3, $23, 1912
+	sound __, 3, $26, 1790
+	sound __, 3, $27, 1024
+	sound __, 3, $27, 1861
+	sound __, 3, $27, 1658
+	sound __, 3, $22, 1912
+	sound __, 3, $26, 1911
+	sound __, 3, $26, 1911
+	sound __, 3, $24, 1903
+	sound __, 3, $27, 1084
+	sound __, 3, $22, 1905
+	sound __, 3, $22, 1908
+	sound __, 3, $25, 1845
+	sound __, 3, $24, 1848
+	sound __, 3, $25, 1979
+	sound __, 3, $21, 1975
+	sound __, 3, $27, 1024
+	sound __, 3, $27, 1766
+	sound __, 2, $33, 1822
+	endchannel
+
+Cry_Rhyperior_Ch8:
+	noise __, 6, $e3, 92
+	noise __, 6, $e4, 92
+	noise __, 6, $e5, 76
+	noise __, 6, $e4, 68
+	noise __, 6, $d3, 68
+	noise __, 6, $e8, 84
+	noise __, 6, $e8, 84
+	noise __, 6, $e8, 68
+	noise __, 6, $d8, 68
+	noise __, 6, $d5, 92
+	noise __, 5, $a1, 92
+	endchannel
+
+Cry_Tangrowth:
+	musicheader 3, 5, Cry_tangrowth_Ch5
+	musicheader 1, 6, Cry_tangrowth_Ch6
+	musicheader 1, 8, Cry_tangrowth_Ch8
+
+Cry_tangrowth_Ch5:
+	dutycycle $2
+	sound __, 2, $d8, 1186
+	sound __, 2, $d8, 1229
+	sound __, 2, $d8, 683
+	sound __, 2, $d8, 1040
+	sound __, 2, $d8, 1112
+	sound __, 2, $d8, 1197
+	sound __, 2, $d8, 974
+	dutycycle $1
+	sound __, 2, $d8, 1277
+	dutycycle $2
+	sound __, 2, $d8, 683
+	sound __, 2, $c8, 1447
+	sound __, 2, $d8, 918
+	sound __, 2, $d8, 1239
+	sound __, 2, $d8, 1239
+	sound __, 2, $a8, 1239
+	sound __, 2, $d8, 1393
+	sound __, 2, $98, 1418
+	dutycycle $1
+	sound __, 2, $68, 937
+	sound __, 2, $78, 737
+	dutycycle $2
+	sound __, 2, $78, 1024
+	dutycycle $3
+	sound __, 2, $88, 1197
+	dutycycle $2
+	sound __, 2, $68, 592
+	dutycycle $1
+	sound __, 2, $38, 1436
+	dutycycle $0
+	sound __, 2, $48, 1458
+	dutycycle $2
+	sound __, 2, $48, 1008
+	sound __, 2, $68, 834
+	sound __, 2, $98, 1608
+	sound __, 2, $78, 1622
+	sound __, 2, $88, 1665
+	sound __, 2, $88, 1070
+	dutycycle $1
+	sound __, 2, $78, 1186
+	sound __, 2, $a8, 856
+	dutycycle $2
+	sound __, 2, $b8, 711
+	dutycycle $0
+	sound __, 2, $a8, 1239
+	dutycycle $1
+	sound __, 2, $98, 1303
+	dutycycle $2
+	sound __, 2, $68, 1617
+	sound __, 2, $78, 1631
+	sound __, 2, $78, 1573
+	dutycycle $1
+	sound __, 2, $28, 1405
+	endchannel
+
+Cry_tangrowth_Ch6:
+	dutycycle $2
+	sound __, 2, $38, 1559
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $38, 1730
+	sound __, 2, $58, 1731
+	sound __, 2, $58, 1174
+	dutycycle $1
+	sound __, 2, $78, 1084
+	dutycycle $2
+	sound __, 2, $48, 991
+	sound __, 2, $48, 1024
+	sound __, 2, $58, 1174
+	dutycycle $3
+	sound __, 2, $58, 1358
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	dutycycle $2
+	sound __, 2, $48, 1473
+	sound __, 2, $08, 0
+	sound __, 2, $38, 1418
+	sound __, 2, $38, 1040
+	sound __, 2, $38, 1208
+	sound __, 2, $38, 1436
+	sound __, 2, $28, 1441
+	dutycycle $3
+	sound __, 2, $18, 1641
+	dutycycle $2
+	sound __, 2, $28, 1854
+	sound __, 2, $18, 1839
+	sound __, 2, $38, 1842
+	sound __, 2, $38, 1731
+	sound __, 2, $38, 1715
+	dutycycle $3
+	sound __, 2, $38, 1559
+	sound __, 2, $38, 1620
+	dutycycle $2
+	sound __, 2, $38, 1618
+	sound __, 2, $48, 1617
+	dutycycle $1
+	sound __, 2, $58, 1658
+	dutycycle $0
+	sound __, 2, $58, 1566
+	dutycycle $2
+	sound __, 2, $58, 1628
+	sound __, 2, $28, 1737
+	sound __, 2, $08, 0
+	dutycycle $3
+	sound __, 2, $38, 1638
+	sound __, 2, $18, 1098
+	endchannel
+
+Cry_tangrowth_Ch8:
+	noise __, 2, $58, 44
+	noise __, 2, $68, 44
+	noise __, 2, $68, 44
+	noise __, 2, $58, 44
+	noise __, 2, $48, 44
+	noise __, 2, $78, 44
+	noise __, 2, $58, 44
+	noise __, 2, $58, 44
+	noise __, 2, $68, 44
+	noise __, 2, $68, 44
+	noise __, 2, $48, 44
+	noise __, 2, $58, 44
+	noise __, 2, $58, 44
+	noise __, 2, $68, 44
+	noise __, 2, $48, 44
+	noise __, 2, $68, 44
+	noise __, 2, $48, 44
+	noise __, 2, $48, 44
+	noise __, 2, $38, 44
+	noise __, 2, $48, 44
+	noise __, 2, $58, 44
+	noise __, 2, $18, 44
+	noise __, 2, $38, 44
+	noise __, 2, $38, 44
+	noise __, 2, $38, 44
+	noise __, 2, $68, 44
+	noise __, 2, $58, 44
+	noise __, 2, $58, 44
+	noise __, 2, $58, 44
+	noise __, 2, $58, 44
+	noise __, 2, $78, 44
+	noise __, 2, $68, 44
+	noise __, 2, $48, 44
+	noise __, 2, $58, 44
+	noise __, 2, $38, 44
+	noise __, 2, $58, 44
+	noise __, 2, $48, 44
+	noise __, 2, $18, 44
+	endchannel
+
+Cry_Lickilicky:
+	musicheader 4, 5, Cry_Lickilicky_Ch5
+	musicheader 3, 6, Cry_Lickilicky_Ch6
+	musicheader 2, 7, Cry_Lickilicky_Ch7
+	musicheader 1, 8, Cry_Lickilicky_Ch8
+
+Cry_Lickilicky_Ch5:
+	sound_duty 0, 0, 1, 1
+	sound __, 3, $68, 1839
+	sound __, 3, $a8, 1794
+	sound __, 3, $38, 1774
+	sound __, 3, $78, 1828
+	sound __, 3, $78, 1771
+	sound __, 3, $c8, 0
+	sound __, 3, $d8, 120
+	sound __, 3, $c8, 559
+	sound __, 3, $d8, 1815
+	sound __, 3, $c8, 1882
+	sound __, 3, $b8, 1870
+	sound __, 3, $b8, 1852
+	sound __, 3, $b8, 1868
+	sound __, 3, $c8, 1874
+	sound __, 3, $a8, 1881
+	sound __, 3, $b8, 1866
+	sound __, 3, $a8, 1832
+	sound __, 3, $c8, 1586
+	sound __, 3, $a8, 1665
+	sound __, 3, $b8, 1570
+	sound __, 2, $c8, 1703
+	sound __, 1, $b8, 1703
+	sound __, 1, $d8, 956
+	sound __, 1, $c8, 956
+	sound __, 1, $b8, 956
+	sound __, 1, $88, 0
+	sound __, 2, $78, 0
+	sound __, 1, $58, 0
+	sound __, 2, $48, 0
+	sound __, 5, $28, 0
+	sound __, 3, $18, 0
+	sound __, 1, $08, 0
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_Lickilicky_Ch6:
+	sound_duty 2, 0, 2, 0
+	sound __, 3, $78, 1914
+	sound __, 3, $b8, 1808
+	sound __, 3, $38, 1815
+	sound __, 3, $78, 1737
+	sound __, 3, $88, 1701
+	sound __, 3, $c8, 623
+	sound __, 3, $f8, 711
+	sound __, 3, $c8, 1847
+	sound __, 3, $e8, 1730
+	sound __, 3, $c8, 1821
+	sound __, 3, $c8, 1835
+	sound __, 3, $c8, 1954
+	sound __, 3, $c8, 1856
+	sound __, 3, $c8, 1864
+	sound __, 3, $b8, 1870
+	sound __, 3, $c8, 1886
+	sound __, 3, $b8, 1878
+	sound __, 3, $c8, 1631
+	sound __, 3, $b8, 1636
+	sound __, 3, $c8, 1617
+	sound __, 2, $e8, 1583
+	sound __, 1, $d8, 1583
+	sound __, 1, $e8, 1174
+	sound __, 1, $d8, 1174
+	sound __, 1, $c8, 1174
+	sound __, 2, $88, 0
+	sound __, 1, $78, 0
+	sound __, 1, $58, 1208
+	sound __, 2, $48, 1208
+	sound __, 3, $28, 0
+	sound __, 2, $28, 1229
+	sound __, 3, $18, 1229
+	sound __, 1, $08, 0
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_Lickilicky_Ch7:
+	sound __, 3, $20, 1944
+	sound __, 3, $13, 1921
+	sound __, 3, $27, 1911
+	sound __, 3, $21, 1938
+	sound __, 3, $27, 1910
+	sound __, 3, $16, 1024
+	sound __, 3, $13, 1084
+	sound __, 3, $18, 1304
+	sound __, 3, $10, 1932
+	sound __, 3, $10, 1965
+	sound __, 3, $10, 1959
+	sound __, 3, $11, 1950
+	sound __, 3, $13, 1958
+	sound __, 3, $11, 1961
+	sound __, 3, $10, 1965
+	sound __, 3, $14, 1957
+	sound __, 3, $14, 1940
+	sound __, 3, $14, 1817
+	sound __, 3, $12, 1857
+	sound __, 3, $17, 1809
+	sound __, 3, $16, 1876
+	sound __, 3, $14, 1502
+	sound __, 1, $16, 1024
+	sound __, 2, $26, 1024
+	sound __, 7, $36, 1024
+	sound __, 2, $06, 1024
+	sound __, 3, $02, 1024
+	sound __, 1, $04, 1605
+	endchannel
+
+Cry_Lickilicky_Ch8:
+	noise __, 6, $93, 92
+	noise __, 6, $a2, 76
+	noise __, 6, $f2, 100
+	noise __, 6, $d2, 116
+	noise __, 6, $e2, 92
+	noise __, 6, $e8, 76
+	noise __, 6, $a8, 76
+	noise __, 6, $b8, 76
+	noise __, 12, $d8, 92
+	noise __, 2, $d8, 84
+	noise __, 2, $c8, 84
+	noise __, 1, $b8, 84
+	noise __, 1, $a8, 84
+	noise __, 1, $72, 100
+	noise __, 2, $62, 100
+	noise __, 3, $52, 100
+	noise __, 1, $38, 116
+	noise __, 4, $28, 116
+	noise __, 1, $18, 116
+	noise __, 2, $11, 116
+	noise __, 2, $01, 116
+	endchannel

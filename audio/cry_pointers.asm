@@ -115,3 +115,6 @@ Cries:
 	dba Cry_Electivire
 	dba Cry_Magmortar
 	dba Cry_Magnezone
+	dba Cry_Rhyperior
+	dba Cry_Tangrowth
+	dba Cry_Lickilicky
