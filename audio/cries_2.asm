@@ -3611,3 +3611,390 @@ Cry_Lickilicky_Ch8:
 	noise __, 2, $11, 116
 	noise __, 2, $01, 116
 	endchannel
+
+Cry_Annihilape:
+	musicheader 3, 5, Cry_annihilape_Ch5
+	musicheader 1, 6, Cry_annihilape_Ch6
+	musicheader 1, 8, Cry_annihilape_Ch8
+
+Cry_annihilape_Ch5:
+	dutycycle $0
+	sound __, 2, $a8, 1040
+	sound __, 2, $d8, 1070
+	dutycycle $1
+	sound __, 2, $d8, 1055
+	dutycycle $3
+	sound __, 2, $d8, 1112
+	dutycycle $1
+	sound __, 2, $d8, 1024
+	dutycycle $2
+	sound __, 2, $d8, 1098
+	dutycycle $1
+	sound __, 2, $d8, 1040
+	sound __, 2, $d8, 1040
+	sound __, 2, $d8, 1024
+	dutycycle $2
+	sound __, 2, $d8, 1024
+	sound __, 2, $d8, 1084
+	dutycycle $1
+	sound __, 2, $d8, 1098
+	dutycycle $3
+	sound __, 2, $c8, 1084
+	dutycycle $0
+	sound __, 2, $b8, 1098
+	dutycycle $3
+	sound __, 2, $b8, 1112
+	dutycycle $0
+	sound __, 2, $a8, 1112
+	sound __, 2, $98, 1098
+	sound __, 2, $98, 1098
+	sound __, 2, $98, 1084
+	dutycycle $1
+	sound __, 2, $88, 1084
+	sound __, 2, $88, 1055
+	dutycycle $2
+	sound __, 2, $98, 1070
+	dutycycle $0
+	sound __, 2, $98, 1008
+	sound __, 2, $a8, 1040
+	dutycycle $1
+	sound __, 2, $a8, 1040
+	dutycycle $2
+	sound __, 2, $b8, 1055
+	sound __, 2, $98, 1070
+	dutycycle $1
+	sound __, 2, $a8, 1024
+	sound __, 2, $78, 410
+	dutycycle $2
+	sound __, 2, $88, 956
+	sound __, 2, $98, 1810
+	dutycycle $3
+	sound __, 2, $58, 1098
+	dutycycle $0
+	sound __, 2, $68, 974
+	sound __, 2, $88, 1960
+	dutycycle $3
+	sound __, 2, $58, 1811
+	dutycycle $1
+	sound __, 2, $88, 1820
+	dutycycle $2
+	sound __, 2, $58, 1820
+	sound __, 2, $58, 1937
+	dutycycle $3
+	sound __, 2, $78, 1832
+	dutycycle $2
+	sound __, 2, $78, 410
+	sound __, 2, $78, 1806
+	dutycycle $0
+	sound __, 2, $68, 1803
+	dutycycle $1
+	sound __, 2, $68, 410
+	dutycycle $2
+	sound __, 2, $68, 1774
+	sound __, 2, $68, 1770
+	sound __, 2, $58, 410
+	dutycycle $1
+	sound __, 2, $58, 410
+	sound __, 2, $58, 410
+	sound __, 2, $68, 410
+	sound __, 2, $58, 410
+	dutycycle $2
+	sound __, 2, $48, 410
+	sound __, 2, $28, 450
+	sound __, 2, $28, 450
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_annihilape_Ch6:
+	dutycycle $2
+	sound __, 2, $48, 1725
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $48, 1819
+	sound __, 2, $08, 0
+	sound __, 2, $48, 1821
+	sound __, 2, $48, 1824
+	sound __, 2, $48, 1824
+	sound __, 2, $58, 1819
+	sound __, 2, $58, 1820
+	sound __, 2, $48, 1803
+	sound __, 2, $48, 1811
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $48, 1731
+	sound __, 2, $08, 0
+	sound __, 2, $38, 1778
+	sound __, 2, $38, 1811
+	sound __, 2, $08, 0
+	sound __, 2, $38, 1775
+	sound __, 2, $28, 1766
+	dutycycle $1
+	sound __, 2, $48, 1821
+	dutycycle $2
+	sound __, 2, $48, 1790
+	sound __, 2, $48, 1794
+	sound __, 2, $48, 1754
+	sound __, 2, $08, 0
+	dutycycle $3
+	sound __, 2, $38, 1800
+	dutycycle $2
+	sound __, 2, $48, 1794
+	sound __, 2, $38, 1769
+	sound __, 2, $48, 1781
+	dutycycle $0
+	sound __, 2, $38, 1890
+	dutycycle $2
+	sound __, 2, $28, 1831
+	dutycycle $3
+	sound __, 2, $28, 1935
+	dutycycle $0
+	sound __, 2, $48, 1923
+	dutycycle $3
+	sound __, 2, $28, 1944
+	dutycycle $2
+	sound __, 2, $48, 1947
+	sound __, 2, $28, 1929
+	dutycycle $3
+	sound __, 2, $28, 1952
+	sound __, 2, $48, 1961
+	dutycycle $2
+	sound __, 2, $38, 1953
+	sound __, 2, $28, 1953
+	dutycycle $3
+	sound __, 2, $28, 1954
+	dutycycle $0
+	sound __, 2, $28, 1769
+	sound __, 2, $28, 1690
+	dutycycle $2
+	sound __, 2, $28, 1676
+	sound __, 2, $38, 1675
+	sound __, 2, $28, 1674
+	sound __, 2, $08, 0
+	sound __, 2, $28, 1701
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $18, 1817
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_annihilape_Ch8:
+	noise __, 2, $48, 75
+	noise __, 2, $b8, 75
+	noise __, 2, $98, 75
+	noise __, 2, $98, 75
+	noise __, 2, $98, 75
+	noise __, 2, $48, 75
+	noise __, 2, $48, 75
+	noise __, 2, $58, 75
+	noise __, 2, $38, 75
+	noise __, 2, $38, 75
+	noise __, 2, $48, 75
+	noise __, 2, $38, 75
+	noise __, 2, $58, 75
+	noise __, 2, $38, 75
+	noise __, 2, $48, 75
+	noise __, 2, $68, 75
+	noise __, 2, $78, 75
+	noise __, 2, $58, 75
+	noise __, 2, $68, 75
+	noise __, 2, $48, 75
+	noise __, 2, $58, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $b8, 75
+	noise __, 2, $a8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $98, 75
+	noise __, 2, $98, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $68, 75
+	noise __, 2, $98, 75
+	noise __, 2, $98, 75
+	noise __, 2, $68, 75
+	noise __, 2, $98, 75
+	noise __, 2, $68, 75
+	noise __, 2, $68, 75
+	noise __, 2, $98, 75
+	noise __, 2, $98, 75
+	noise __, 2, $98, 75
+	noise __, 2, $68, 75
+	noise __, 2, $68, 75
+	noise __, 2, $98, 75
+	noise __, 2, $68, 75
+	noise __, 2, $68, 75
+	noise __, 2, $68, 75
+	noise __, 2, $68, 75
+	noise __, 2, $88, 75
+	noise __, 2, $48, 75
+	noise __, 2, $28, 75
+	noise __, 2, $38, 75
+	noise __, 2, $38, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	endchannel
+
+Cry_Kleavor:
+	musicheader 3, 5, Cry_kleavor_Ch5
+	musicheader 1, 6, Cry_kleavor_Ch6
+	musicheader 1, 8, Cry_kleavor_Ch8
+
+Cry_kleavor_Ch5:
+	dutycycle $1
+	sound __, 2, $98, 1806
+	dutycycle $2
+	sound __, 2, $a8, 1405
+	sound __, 2, $b8, 1365
+	sound __, 2, $b8, 1844
+	sound __, 2, $b8, 1841
+	sound __, 2, $b8, 1759
+	dutycycle $0
+	sound __, 2, $a8, 1379
+	dutycycle $2
+	sound __, 2, $d8, 1844
+	sound __, 2, $b8, 1848
+	sound __, 2, $b8, 1877
+	sound __, 2, $d8, 1925
+	dutycycle $1
+	sound __, 2, $c8, 1926
+	dutycycle $2
+	sound __, 2, $b8, 1928
+	dutycycle $0
+	sound __, 2, $a8, 1774
+	sound __, 2, $b8, 1769
+	dutycycle $2
+	sound __, 2, $a8, 1763
+	dutycycle $0
+	sound __, 2, $b8, 1736
+	sound __, 2, $b8, 1751
+	sound __, 2, $78, 1859
+	sound __, 2, $48, 1776
+	sound __, 2, $38, 1821
+	sound __, 2, $28, 1854
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_kleavor_Ch6:
+	dutycycle $2
+	sound __, 2, $68, 1853
+	sound __, 2, $68, 1835
+	sound __, 2, $08, 0
+	dutycycle $0
+	sound __, 2, $48, 1755
+	sound __, 2, $78, 1762
+	dutycycle $3
+	sound __, 2, $78, 1849
+	dutycycle $2
+	sound __, 2, $78, 1841
+	sound __, 2, $78, 1869
+	sound __, 2, $68, 1877
+	dutycycle $3
+	sound __, 2, $78, 1911
+	sound __, 2, $68, 1909
+	dutycycle $0
+	sound __, 2, $58, 1917
+	sound __, 2, $58, 1913
+	sound __, 2, $78, 1927
+	dutycycle $3
+	sound __, 2, $88, 1918
+	sound __, 2, $68, 1920
+	sound __, 2, $88, 1918
+	sound __, 2, $88, 1925
+	dutycycle $2
+	sound __, 2, $58, 1784
+	dutycycle $0
+	sound __, 2, $38, 1810
+	sound __, 2, $28, 1751
+	sound __, 2, $18, 1767
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_kleavor_Ch8:
+	noise __, 2, $c8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $98, 75
+	noise __, 2, $68, 75
+	noise __, 2, $38, 75
+	noise __, 2, $38, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	endchannel

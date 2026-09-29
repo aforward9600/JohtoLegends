@@ -118,3 +118,5 @@ Cries:
 	dba Cry_Rhyperior
 	dba Cry_Tangrowth
 	dba Cry_Lickilicky
+	dba Cry_Annihilape
+	dba Cry_Kleavor

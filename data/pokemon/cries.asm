@@ -80,7 +80,7 @@ PokemonCries::
 	mon_cry CRY_PSYDUCK,     $0ff,  $0c0 ; GOLDUCK
 	mon_cry CRY_NIDOQUEEN,   $0dd,  $0e0 ; MANKEY
 	mon_cry CRY_NIDOQUEEN,   $0af,  $0c0 ; PRIMEAPE
-	mon_cry CRY_NIDOQUEEN,  -$113,  $0d4 ; ANNIHILAPE
+	mon_cry CRY_ANNIHILAPE,  $000,  $0ff ; ANNIHILAPE
 	mon_cry CRY_GROWLITHE,   $020,  $0c0 ; GROWLITHE
 	mon_cry CRY_GROWLITHE,   $020,  $0c0 ; GROWLITHE_H
 	mon_cry CRY_WEEDLE,      $000,  $100 ; ARCANINE
@@ -182,7 +182,7 @@ PokemonCries::
 	mon_cry CRY_KRABBY,      $e08,  $0f0 ; MR__RIME
 	mon_cry CRY_CATERPIE,    $000,  $100 ; SCYTHER
 	mon_cry CRY_AMPHAROS,    $000,  $160 ; SCIZOR
-	mon_cry CRY_CATERPIE,   -$040,  $100 ; KLEAVOR
+	mon_cry CRY_KLEAVOR,     $000,  $0ff ; KLEAVOR
 	mon_cry CRY_MARILL,      $068,  $100 ; SMOOCHUM
 	mon_cry CRY_DROWZEE,     $0ff,  $17f ; JYNX
 	mon_cry CRY_SUNFLORA,   -$2d8,  $0b4 ; ELEKID
