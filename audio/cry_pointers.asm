@@ -120,3 +120,5 @@ Cries:
 	dba Cry_Lickilicky
 	dba Cry_Annihilape
 	dba Cry_Kleavor
+	dba Cry_Meditite
+	dba Cry_Medicham

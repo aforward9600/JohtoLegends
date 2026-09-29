@@ -352,8 +352,8 @@ PokemonCries::
 	mon_cry CRY_ARON,        $000,  $0ff ; ARON
 	mon_cry CRY_LAIRON,      $000,  $0ff ; LAIRON
 	mon_cry CRY_AGGRON,      $000,  $0ff ; AGGRON
-	mon_cry CRY_METAPOD,     $096,  $160 ; MEDITITE
-	mon_cry CRY_METAPOD,     $12c,  $1f4 ; MEDICHAM
+	mon_cry CRY_MEDITITE,    $000,  $0ff ; MEDITITE
+	mon_cry CRY_MEDICHAM,    $000,  $0ff ; MEDICHAM
 	mon_cry CRY_PICHU,       $f17,  $270 ; ELECTRIKE
 	mon_cry CRY_RAICHU,      $f27,  $080 ; MANECTRIC
 	mon_cry CRY_VENONAT,     $00e,  $0be ; BUDEW

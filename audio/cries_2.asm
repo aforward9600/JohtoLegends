@@ -3998,3 +3998,322 @@ Cry_kleavor_Ch8:
 	noise __, 2, $08, 75
 	noise __, 2, $08, 75
 	endchannel
+
+Cry_Meditite:
+	musicheader 4, 5, Cry_meditite_Ch5
+	musicheader 3, 6, Cry_meditite_Ch6
+	musicheader 2, 7, Cry_meditite_Ch7
+	musicheader 1, 8, Cry_meditite_Ch8
+
+Cry_meditite_Ch5:
+	dutycycle $2
+	sound __, 1, $d8, 1722
+	sound __, 1, $c8, 1753
+	sound __, 1, $98, 1949
+	sound __, 1, $48, 1933
+	sound __, 1, $d8, 1952
+	sound __, 1, $d8, 1939
+	sound __, 1, $a8, 1931
+	sound __, 1, $58, 1899
+	sound __, 1, $b8, 1660
+	sound __, 1, $d8, 1684
+	sound __, 1, $78, 1944
+	sound __, 1, $38, 1902
+	dutycycle $1
+	sound __, 1, $b8, 1755
+	dutycycle $2
+	sound __, 1, $d8, 1724
+	sound __, 1, $68, 1942
+	sound __, 1, $28, 1904
+	sound __, 1, $d8, 1779
+	sound __, 1, $c8, 1953
+	sound __, 1, $38, 1954
+	sound __, 1, $38, 1971
+	sound __, 1, $58, 1958
+	sound __, 1, $28, 1962
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_meditite_Ch6:
+	dutycycle $2
+	sound __, 1, $98, 1940
+	sound __, 1, $78, 1932
+	sound __, 1, $78, 1937
+	sound __, 1, $28, 1887
+	dutycycle $3
+	sound __, 1, $88, 1895
+	sound __, 3, $08, 0
+	dutycycle $2
+	sound __, 1, $88, 1936
+	sound __, 1, $a8, 1937
+	sound __, 1, $58, 1892
+	sound __, 1, $28, 1887
+	sound __, 1, $68, 1960
+	sound __, 1, $88, 1959
+	sound __, 1, $48, 1955
+	dutycycle $3
+	sound __, 1, $18, 1948
+	dutycycle $2
+	sound __, 1, $88, 1946
+	sound __, 1, $58, 1946
+	sound __, 1, $28, 1922
+	sound __, 1, $28, 1914
+	sound __, 3, $08, 0
+	endchannel
+
+Cry_meditite_Ch7:
+	sound __, 1, $15, 1842
+	sound __, 1, $17, 1793
+	sound __, 1, $11, 2003
+	sound __, 1, $21, 1995
+	sound __, 1, $17, 1873
+	sound __, 1, $11, 1995
+	sound __, 1, $11, 1999
+	sound __, 1, $25, 1891
+	sound __, 1, $16, 1896
+	sound __, 1, $13, 1972
+	sound __, 1, $21, 1992
+	sound __, 1, $36, 1894
+	sound __, 1, $15, 1866
+	sound __, 1, $11, 2000
+	sound __, 1, $21, 1964
+	sound __, 1, $36, 1891
+	sound __, 1, $11, 2000
+	sound __, 1, $11, 2003
+	sound __, 1, $31, 2003
+	sound __, 1, $30, 2006
+	sound __, 1, $21, 2005
+	sound __, 1, $31, 2006
+	sound __, 1, $00, 0
+	endchannel
+
+Cry_meditite_Ch8:
+	noise __, 1, $f8, 100
+	noise __, 1, $a8, 100
+	noise __, 1, $78, 100
+	noise __, 1, $38, 100
+	noise __, 1, $d8, 100
+	noise __, 1, $f8, 100
+	noise __, 1, $88, 100
+	noise __, 1, $48, 100
+	noise __, 1, $98, 100
+	noise __, 1, $f8, 100
+	noise __, 1, $68, 100
+	noise __, 1, $38, 100
+	noise __, 1, $98, 100
+	noise __, 1, $d8, 100
+	noise __, 1, $58, 100
+	noise __, 1, $28, 100
+	noise __, 1, $b8, 100
+	noise __, 1, $a8, 100
+	noise __, 2, $28, 100
+	noise __, 1, $48, 100
+	noise __, 1, $18, 100
+	noise __, 1, $08, 0
+	endchannel
+
+Cry_Medicham:
+	musicheader 4, 5, Cry_medicham_Ch5
+	musicheader 1, 6, Cry_medicham_Ch6
+	musicheader 1, 7, Cry_medicham_Ch7
+	musicheader 1, 8, Cry_medicham_Ch8
+
+Cry_medicham_Ch5:
+	dutycycle $2
+	sound __, 1, $d8, 1593
+	dutycycle $1
+	sound __, 1, $d8, 1620
+	dutycycle $2
+	sound __, 1, $d8, 1916
+	sound __, 1, $d8, 1911
+	sound __, 1, $d8, 1916
+	sound __, 1, $a8, 1912
+	sound __, 1, $d8, 1920
+	sound __, 1, $d8, 1916
+	sound __, 1, $c8, 1919
+	sound __, 1, $c8, 1910
+	sound __, 1, $98, 1860
+	dutycycle $1
+	sound __, 1, $d8, 1620
+	dutycycle $2
+	sound __, 1, $d8, 1915
+	sound __, 1, $d8, 1917
+	dutycycle $1
+	sound __, 1, $b8, 1625
+	dutycycle $2
+	sound __, 1, $68, 1839
+	sound __, 1, $d8, 1593
+	sound __, 1, $d8, 1586
+	sound __, 1, $c8, 1916
+	sound __, 1, $d8, 1917
+	sound __, 1, $d8, 1916
+	sound __, 1, $98, 1919
+	sound __, 1, $d8, 1920
+	sound __, 1, $d8, 1917
+	sound __, 1, $d8, 1625
+	sound __, 1, $b8, 1911
+	sound __, 1, $c8, 1910
+	dutycycle $1
+	sound __, 1, $b8, 1622
+	dutycycle $2
+	sound __, 1, $d8, 1915
+	sound __, 1, $d8, 1916
+	dutycycle $1
+	sound __, 1, $d8, 1570
+	sound __, 1, $78, 1787
+	dutycycle $2
+	sound __, 1, $a8, 1837
+	sound __, 1, $d8, 1917
+	sound __, 1, $d8, 1919
+	dutycycle $1
+	sound __, 1, $d8, 1611
+	dutycycle $2
+	sound __, 1, $78, 1868
+	dutycycle $1
+	sound __, 1, $88, 1912
+	dutycycle $2
+	sound __, 2, $d8, 1918
+	sound __, 1, $98, 1915
+	sound __, 1, $48, 1921
+	dutycycle $1
+	sound __, 1, $68, 1922
+	dutycycle $2
+	sound __, 1, $b8, 1936
+	sound __, 1, $88, 1917
+	sound __, 1, $38, 1917
+	endchannel
+
+Cry_medicham_Ch6:
+	dutycycle $2
+	sound __, 1, $a8, 1917
+	sound __, 1, $98, 1913
+	sound __, 3, $08, 0
+	sound __, 1, $78, 1837
+	sound __, 1, $78, 1843
+	sound __, 1, $08, 0
+	sound __, 1, $88, 1891
+	sound __, 1, $58, 1892
+	sound __, 1, $68, 1914
+	sound __, 1, $98, 1917
+	sound __, 3, $08, 0
+	sound __, 1, $38, 1915
+	sound __, 1, $88, 1916
+	sound __, 1, $88, 1914
+	sound __, 2, $08, 0
+	sound __, 1, $68, 1892
+	sound __, 1, $48, 1895
+	sound __, 3, $08, 0
+	sound __, 1, $58, 1892
+	dutycycle $3
+	sound __, 1, $78, 1890
+	sound __, 6, $08, 0
+	dutycycle $2
+	sound __, 1, $88, 1893
+	sound __, 1, $68, 1892
+	sound __, 1, $08, 0
+	dutycycle $3
+	sound __, 1, $58, 1835
+	dutycycle $2
+	sound __, 1, $58, 1837
+	sound __, 1, $08, 0
+	sound __, 1, $68, 1928
+	sound __, 1, $58, 1937
+	sound __, 1, $28, 1878
+	sound __, 1, $48, 1867
+	sound __, 1, $78, 1860
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_medicham_Ch7:
+	sound __, 1, $11, 1969
+	sound __, 1, $11, 1967
+	sound __, 1, $17, 1795
+	sound __, 1, $11, 1982
+	sound __, 1, $11, 1922
+	sound __, 1, $11, 1984
+	sound __, 1, $13, 1820
+	sound __, 1, $12, 1824
+	sound __, 1, $13, 1832
+	sound __, 1, $11, 1983
+	sound __, 1, $00, 0
+	sound __, 1, $14, 1807
+	sound __, 1, $11, 1987
+	sound __, 1, $15, 1807
+	sound __, 1, $12, 1812
+	sound __, 1, $26, 1844
+	sound __, 1, $11, 1944
+	sound __, 1, $11, 1954
+	sound __, 1, $12, 1913
+	sound __, 1, $12, 1830
+	sound __, 1, $11, 1923
+	sound __, 1, $23, 1941
+	sound __, 1, $15, 1820
+	sound __, 1, $12, 1824
+	sound __, 1, $11, 1982
+	sound __, 1, $11, 1983
+	sound __, 1, $11, 1982
+	sound __, 1, $16, 1809
+	sound __, 1, $16, 1833
+	sound __, 1, $11, 1984
+	sound __, 1, $11, 1982
+	sound __, 1, $21, 1968
+	sound __, 1, $11, 1981
+	sound __, 1, $15, 1818
+	sound __, 1, $14, 1826
+	sound __, 1, $11, 1985
+	sound __, 1, $21, 1983
+	sound __, 1, $22, 1982
+	sound __, 1, $11, 1981
+	sound __, 1, $11, 1955
+	sound __, 1, $11, 1984
+	sound __, 1, $22, 1987
+	sound __, 1, $21, 2015
+	sound __, 1, $10, 1983
+	sound __, 1, $21, 1980
+	sound __, 1, $31, 1980
+	endchannel
+
+Cry_medicham_Ch8:
+	noise __, 2, $d8, 100
+	noise __, 1, $98, 100
+	noise __, 1, $e8, 100
+	noise __, 1, $b8, 100
+	noise __, 1, $88, 100
+	noise __, 1, $b8, 100
+	noise __, 1, $f8, 100
+	noise __, 1, $98, 100
+	noise __, 1, $a8, 100
+	noise __, 1, $88, 100
+	noise __, 2, $d8, 100
+	noise __, 1, $e8, 100
+	noise __, 1, $98, 100
+	noise __, 1, $58, 100
+	noise __, 1, $c8, 100
+	noise __, 1, $d8, 100
+	noise __, 1, $98, 100
+	noise __, 1, $d8, 100
+	noise __, 1, $c8, 100
+	noise __, 1, $78, 100
+	noise __, 1, $b8, 100
+	noise __, 1, $e8, 100
+	noise __, 1, $b8, 100
+	noise __, 1, $98, 100
+	noise __, 1, $a8, 100
+	noise __, 1, $98, 100
+	noise __, 1, $f8, 100
+	noise __, 1, $e8, 100
+	noise __, 1, $b8, 100
+	noise __, 1, $68, 100
+	noise __, 1, $88, 100
+	noise __, 2, $f8, 100
+	noise __, 1, $b8, 100
+	noise __, 1, $68, 100
+	noise __, 1, $78, 100
+	noise __, 2, $f8, 100
+	noise __, 1, $88, 100
+	noise __, 1, $38, 100
+	noise __, 1, $58, 100
+	noise __, 1, $98, 100
+	noise __, 1, $68, 100
+	noise __, 1, $28, 100
+	endchannel
