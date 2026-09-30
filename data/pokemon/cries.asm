@@ -179,7 +179,7 @@ PokemonCries::
 	mon_cry CRY_MIME_JR,     $004,  $0ff ; MIME__JR
 	mon_cry CRY_KRABBY,      $008,  $0c0 ; MR__MIME
 	mon_cry CRY_KRABBY,      $008,  $0c0 ; MR__MIME_G
-	mon_cry CRY_KRABBY,      $e08,  $0f0 ; MR__RIME
+	mon_cry CRY_MR__RIME,    $000,  $0ff ; MR__RIME
 	mon_cry CRY_CATERPIE,    $000,  $100 ; SCYTHER
 	mon_cry CRY_AMPHAROS,    $000,  $160 ; SCIZOR
 	mon_cry CRY_KLEAVOR,     $000,  $0ff ; KLEAVOR
@@ -282,7 +282,7 @@ PokemonCries::
 	mon_cry CRY_AMPHAROS,    $28b,  $045 ; WYNAUT
 	mon_cry CRY_AMPHAROS,    $27b,  $144 ; WOBBUFFET
 	mon_cry CRY_GIRAFARIG,   $041,  $200 ; GIRAFARIG
-	mon_cry CRY_GIRAFARIG,   $109,  $246 ; FARIGIRAF
+	mon_cry CRY_FARIGIRAF,   $000,  $0ff ; FARIGIRAF
 	mon_cry CRY_SLOWKING,    $080,  $100 ; PINECO
 	mon_cry CRY_SLOWKING,    $000,  $180 ; FORRETRESS
 	mon_cry CRY_DUNSPARCE,   $1c4,  $100 ; DUNSPARCE
@@ -302,7 +302,7 @@ PokemonCries::
 	mon_cry CRY_TEDDIURSA,   $7a2,  $06e ; TEDDIURSA
 	mon_cry CRY_TEDDIURSA,   $640,  $0d8 ; URSARING
 	mon_cry CRY_URSALUNA,    $000,  $0ff ; URSALUNA
-	mon_cry CRY_TEDDIURSA,   $578,  $07f ; URSALUNA_BLOOD
+	mon_cry CRY_URSALUNA,    $000,  $0ff ; URSALUNA_BLOOD
 	mon_cry CRY_SLUGMA,     -$1d8,  $140 ; SLUGMA
 	mon_cry CRY_MAGCARGO,   -$20d,  $1c0 ; MAGCARGO
 	mon_cry CRY_CYNDAQUIL,   $1fe,  $140 ; SWINUB
@@ -354,8 +354,8 @@ PokemonCries::
 	mon_cry CRY_AGGRON,      $000,  $0ff ; AGGRON
 	mon_cry CRY_MEDITITE,    $000,  $0ff ; MEDITITE
 	mon_cry CRY_MEDICHAM,    $000,  $0ff ; MEDICHAM
-	mon_cry CRY_PICHU,       $f17,  $270 ; ELECTRIKE
-	mon_cry CRY_RAICHU,      $f27,  $080 ; MANECTRIC
+	mon_cry CRY_ELECTRIKE,   $000,  $0ff ; ELECTRIKE
+	mon_cry CRY_MANECTRIC,   $000,  $0ff ; MANECTRIC
 	mon_cry CRY_VENONAT,     $00e,  $0be ; BUDEW
 	mon_cry CRY_AIPOM,       $041,  $0ae ; ROSELIA
 	mon_cry CRY_PICHU,      -$047,  $266 ; ROSERADE

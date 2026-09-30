@@ -125,3 +125,7 @@ Cries:
 	dba Cry_Perrserker
 	dba Cry_Overqwil
 	dba Cry_Ursaluna
+	dba Cry_Farigiraf
+	dba Cry_Mr_Rime
+	dba Cry_Electrike
+	dba Cry_Manectric
