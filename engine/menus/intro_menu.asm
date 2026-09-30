@@ -189,18 +189,6 @@ _ResetWRAM:
 	ld hl, wNumPCItems
 	call .InitList
 
-	xor a
-	ld [wRoamMon1Species], a
-	ld [wRoamMon2Species], a
-	ld [wRoamMon3Species], a
-	ld a, -1
-	ld [wRoamMon1MapGroup], a
-	ld [wRoamMon2MapGroup], a
-	ld [wRoamMon3MapGroup], a
-	ld [wRoamMon1MapNumber], a
-	ld [wRoamMon2MapNumber], a
-	ld [wRoamMon3MapNumber], a
-
 	ld a, BANK(sMysteryGiftItem)
 	call GetSRAMBank
 	ld hl, sMysteryGiftItem
@@ -418,7 +406,6 @@ Continue:
 	call ClearTileMap
 	ld c, 20
 	call DelayFrames
-	farcall JumpRoamMons
 	farcall Function140ae ; time-related
 	ld a, [wSpawnAfterChampion]
 	cp SPAWN_LANCE

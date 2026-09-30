@@ -75,7 +75,7 @@ PokemonCries::
 	mon_cry CRY_CLEFAIRY,    $077,  $090 ; MEOWTH_G
 	mon_cry CRY_CLEFAIRY,    $099,  $17f ; PERSIAN
 	mon_cry CRY_CLEFAIRY,    $099,  $17f ; PERSIAN_A
-	mon_cry CRY_CLEFAIRY,    $fc9,  $14f ; PERRSERKER
+	mon_cry CRY_PERRSERKER,  $000,  $0ff ; PERRSERKER
 	mon_cry CRY_PSYDUCK,     $020,  $0e0 ; PSYDUCK
 	mon_cry CRY_PSYDUCK,     $0ff,  $0c0 ; GOLDUCK
 	mon_cry CRY_NIDOQUEEN,   $0dd,  $0e0 ; MANKEY

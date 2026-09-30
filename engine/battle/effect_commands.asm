@@ -4508,7 +4508,7 @@ BattleCommand_Poison:
 	call .apply_poison
 	ld hl, WasPoisonedText
 	call StdBattleTextbox
-	farcall SynchronizeCheck
+	farcall SynchronizePoisonCheck
 	jr .finished
 
 .toxic

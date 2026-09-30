@@ -56,23 +56,21 @@ FindNest:
 	ld hl, JohtoGrassWildMons
 	call .FindGrass
 	ld hl, JohtoWaterWildMons
-	call .FindWater
-	call .RoamMon1
-	jp .RoamMon2
+	jr .FindWater
 
 .kanto
 	decoord 0, 0
 	ld hl, KantoGrassWildMons
 	call .FindGrass
 	ld hl, KantoWaterWildMons
-	jp .FindWater
+	jr .FindWater
 
 .sevii
 	decoord 0, 0
 	ld hl, SeviiGrassWildMons
 	call .FindGrass
 	ld hl, SeviiWaterWildMons
-	jp .FindWater
+	jr .FindWater
 
 .FindGrass:
 	ld a, [hl]
@@ -173,38 +171,6 @@ FindNest:
 .found_nest
 	pop de
 	and a
-	ret
-
-.RoamMon1:
-	ld a, [wRoamMon1Species]
-	ld b, a
-	ld a, [wNamedObjectIndexBuffer]
-	cp b
-	ret nz
-	ld a, [wRoamMon1MapGroup]
-	ld b, a
-	ld a, [wRoamMon1MapNumber]
-	ld c, a
-	call .AppendNest
-	ret nc
-	ld [de], a
-	inc de
-	ret
-
-.RoamMon2:
-	ld a, [wRoamMon2Species]
-	ld b, a
-	ld a, [wNamedObjectIndexBuffer]
-	cp b
-	ret nz
-	ld a, [wRoamMon2MapGroup]
-	ld b, a
-	ld a, [wRoamMon2MapNumber]
-	ld c, a
-	call .AppendNest
-	ret nc
-	ld [de], a
-	inc de
 	ret
 
 TryWildEncounter::
@@ -622,7 +588,11 @@ _WaterWildmonLookup:
 	ld bc, SeviiWaterWildMons
 	call _JohtoWildmonCheck
 	ld bc, WATER_WILDDATA_LENGTH
-	jr _NormalWildmonOK
+	ld a, [wMapGroup]
+	ld d, a
+	ld a, [wMapNumber]
+	ld e, a
+	jp LookUpWildmonsForMapDE
 
 _JohtoWildmonCheck:
 	push bc
@@ -663,9 +633,71 @@ _NormalWildmonOK:
 	jr LookUpWildmonsForMapDE
 
 CopyCurrMapDE:
+	push bc
 	ld a, [wMapGroup]
-	ld d, a
+	ld b, a
 	ld a, [wMapNumber]
+	ld c, a
+	ld d, b
+	ld e, c
+	push de
+	call GetWorldMapLocation
+	pop de
+	pop bc
+	ret
+	cp MT_EMBER
+	jr z, .LoadMtEmber
+	cp ICEFALL_CAVE
+	jr z, .LoadIcefallCave
+	cp SPROUT_TOWER
+	jr z, .LoadSproutTower
+	cp TANOBI_RUINS
+	jr z, .LoadTanobiRuins
+	cp UNION_CAVE
+	jr z, .LoadUnionCave
+	cp WHIRL_ISLANDS
+	jr z, .LoadWhirlIsland
+	ret
+
+.LoadMtEmber:
+	ld a, GROUP_MT_EMBER_OUTSIDE
+	ld d, a
+	ld a, MAP_MT_EMBER_OUTSIDE
+	ld e, a
+	ret
+
+.LoadIcefallCave:
+	ld a, GROUP_ICEFALL_CAVE_ENTRANCE
+	ld d, a
+	ld a, MAP_ICEFALL_CAVE_ENTRANCE
+	ld e, a
+	ret
+
+.LoadSproutTower:
+	ld a, GROUP_SPROUT_TOWER_1F
+	ld d, a
+	ld a, MAP_SPROUT_TOWER_1F
+	ld e, a
+	ret
+
+.LoadTanobiRuins:
+	ld a, GROUP_TANOBI_RUINS_INSIDE
+	ld d, a
+	ld a, MAP_TANOBI_RUINS_INSIDE
+	ld e, a
+	ret
+
+.LoadUnionCave:
+	ld a, GROUP_UNION_CAVE_1F
+	ld d, a
+	ld a, MAP_UNION_CAVE_1F
+	ld e, a
+	ret
+
+.LoadWhirlIsland:
+	ld a, GROUP_WHIRL_ISLAND_CAVE
+	ld d, a
+	ld a, MAP_WHIRL_ISLAND_CAVE
 	ld e, a
 	ret
 
@@ -702,39 +734,6 @@ LookUpWildmonsForMapDE:
 	ret
 
 InitRoamMons:
-; initialize wRoamMon structs
-
-; species
-	ld hl, RAIKOU
-	call GetPokemonIDFromIndex
-	ld [wRoamMon1Species], a
-	ld hl, ENTEI
-	call GetPokemonIDFromIndex
-	ld [wRoamMon2Species], a
-
-; level
-	ld a, 40
-	ld [wRoamMon1Level], a
-	ld [wRoamMon2Level], a
-
-; raikou starting map
-	ld a, GROUP_ROUTE_42
-	ld [wRoamMon1MapGroup], a
-	ld a, MAP_ROUTE_42
-	ld [wRoamMon1MapNumber], a
-
-; entei starting map
-	ld a, GROUP_ROUTE_37
-	ld [wRoamMon2MapGroup], a
-	ld a, MAP_ROUTE_37
-	ld [wRoamMon2MapNumber], a
-
-; hp
-	xor a ; generate new stats
-	ld [wRoamMon1HP], a
-	ld [wRoamMon2HP], a
-
-	ret
 
 CheckEncounterRoamMon:
 	push hl
@@ -784,170 +783,10 @@ CheckEncounterRoamMon:
 	ret
 
 UpdateRoamMons:
-	ld a, [wRoamMon1MapGroup]
-	cp GROUP_N_A
-	jr z, .SkipRaikou
-	ld b, a
-	ld a, [wRoamMon1MapNumber]
-	ld c, a
-	call .Update
-	ld a, b
-	ld [wRoamMon1MapGroup], a
-	ld a, c
-	ld [wRoamMon1MapNumber], a
-
-.SkipRaikou:
-	ld a, [wRoamMon2MapGroup]
-	cp GROUP_N_A
-	jr z, .SkipEntei
-	ld b, a
-	ld a, [wRoamMon2MapNumber]
-	ld c, a
-	call .Update
-	ld a, b
-	ld [wRoamMon2MapGroup], a
-	ld a, c
-	ld [wRoamMon2MapNumber], a
-
-.SkipEntei:
-	ld a, [wRoamMon3MapGroup]
-	cp GROUP_N_A
-	jr z, .Finished
-	ld b, a
-	ld a, [wRoamMon3MapNumber]
-	ld c, a
-	call .Update
-	ld a, b
-	ld [wRoamMon3MapGroup], a
-	ld a, c
-	ld [wRoamMon3MapNumber], a
-
-.Finished:
-	jp _BackUpMapIndices
-
-.Update:
-	ld hl, RoamMaps
-.loop
-; Are we at the end of the table?
-	ld a, [hl]
-	cp -1
-	ret z
-; Is this the correct entry?
-	ld a, b
-	cp [hl]
-	jr nz, .next
-	inc hl
-	ld a, c
-	cp [hl]
-	jr z, .yes
-; We don't have the correct entry yet, so let's continue.  A 0 terminates each entry.
-.next
-	ld a, [hli]
-	and a
-	jr nz, .next
-	jr .loop
-
-; We have the correct entry now, so let's choose a random map from it.
-.yes
-	inc hl
-	ld d, h
-	ld e, l
-.update_loop
-	ld h, d
-	ld l, e
-; Choose which map to warp to.
-	call Random
-	and %00011111 ; 1/8n chance it moves to a completely random map, where n is the number of roaming connections from the current map.
-	jr z, JumpRoamMon
-	and %11
-	cp [hl]
-	jr nc, .update_loop ; invalid index, try again
-	inc hl
-	ld c, a
-	ld b, 0
-	add hl, bc
-	add hl, bc
-	ld a, [wRoamMons_LastMapGroup]
-	cp [hl]
-	jr nz, .done
-	inc hl
-	ld a, [wRoamMons_LastMapNumber]
-	cp [hl]
-	jr z, .update_loop
-	dec hl
-
-.done
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-	ret
 
 JumpRoamMons:
-	ld a, [wRoamMon1MapGroup]
-	cp GROUP_N_A
-	jr z, .SkipRaikou
-	call JumpRoamMon
-	ld a, b
-	ld [wRoamMon1MapGroup], a
-	ld a, c
-	ld [wRoamMon1MapNumber], a
-
-.SkipRaikou:
-	ld a, [wRoamMon2MapGroup]
-	cp GROUP_N_A
-	jr z, .SkipEntei
-	call JumpRoamMon
-	ld a, b
-	ld [wRoamMon2MapGroup], a
-	ld a, c
-	ld [wRoamMon2MapNumber], a
-
-.SkipEntei:
-	ld a, [wRoamMon3MapGroup]
-	cp GROUP_N_A
-	jr z, .Finished
-	call JumpRoamMon
-	ld a, b
-	ld [wRoamMon3MapGroup], a
-	ld a, c
-	ld [wRoamMon3MapNumber], a
-
-.Finished:
-	jp _BackUpMapIndices
 
 JumpRoamMon:
-.loop
-	ld hl, RoamMaps
-.innerloop1                   ; This loop happens to be unnecessary.
-	call Random               ; Choose a random number.
-	maskbits NUM_ROAMMON_MAPS ; Mask the number to limit it between 0 and 15.
-	cp NUM_ROAMMON_MAPS       ; If the number is not less than 16, try again.
-	jr nc, .innerloop1        ; I'm sure you can guess why this check is bogus.
-	inc a
-	ld b, a
-.innerloop2 ; Loop to get hl to the address of the chosen roam map.
-	dec b
-	jr z, .ok
-.innerloop3 ; Loop to skip the current roam map, which is terminated by a 0.
-	ld a, [hli]
-	and a
-	jr nz, .innerloop3
-	jr .innerloop2
-; Check to see if the selected map is the one the player is currently in.  If so, try again.
-.ok
-	ld a, [wMapGroup]
-	cp [hl]
-	jr nz, .done
-	inc hl
-	ld a, [wMapNumber]
-	cp [hl]
-	jr z, .loop
-	dec hl
-; Return the map group and number in bc.
-.done
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
 	ret
 
 _BackUpMapIndices:

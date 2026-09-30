@@ -156,120 +156,30 @@ SeviiGrassWildMons:
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 75, GLALIE
-	dbw 75, GOLBAT
+	dbw 75, PILOSWINE
 	dbw 75, CROBAT
 	dbw 75, DEWGONG
-	dbw 75, SNEASEL
+	dbw 75, SNEASEL_H
 	dbw 75, GOLDUCK
 	dbw 75, SLOWBRO
-	dbw 75, SLOWKING
+	dbw 75, SNEASLER
 	; day
 	dbw 75, GLALIE
-	dbw 75, GOLBAT
+	dbw 75, PILOSWINE
 	dbw 75, CROBAT
 	dbw 75, DEWGONG
-	dbw 75, SNEASEL
+	dbw 75, SNEASEL_H
 	dbw 75, GOLDUCK
 	dbw 75, SLOWBRO
-	dbw 75, SLOWKING
+	dbw 75, SNEASLER
 	; nite
 	dbw 75, GLALIE
-	dbw 75, GOLBAT
+	dbw 75, PILOSWINE
 	dbw 75, CROBAT
 	dbw 75, DEWGONG
 	dbw 75, SNEASEL
 	dbw 75, GOLDUCK
-	dbw 75, SLOWBRO
 	dbw 75, SLOWKING
-
-	map_id ICEFALL_CAVE_1F
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 75, PILOSWINE
-	dbw 75, GOLBAT
-	dbw 75, CROBAT
-	dbw 75, DEWGONG
-	dbw 75, DELIBIRD
-	dbw 75, SNEASEL
-	dbw 75, MAMOSWINE
-	dbw 75, WEAVILE
-	; day
-	dbw 75, PILOSWINE
-	dbw 75, GOLBAT
-	dbw 75, CROBAT
-	dbw 75, DEWGONG
-	dbw 75, DELIBIRD
-	dbw 75, SNEASEL
-	dbw 75, MAMOSWINE
-	dbw 75, WEAVILE
-	; nite
-	dbw 75, PILOSWINE
-	dbw 75, GOLBAT
-	dbw 75, CROBAT
-	dbw 75, DEWGONG
-	dbw 75, DELIBIRD
-	dbw 75, SNEASEL
-	dbw 75, MAMOSWINE
-	dbw 75, WEAVILE
-
-	map_id ICEFALL_CAVE_2F
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 75, PILOSWINE
-	dbw 75, GOLBAT
-	dbw 75, CROBAT
-	dbw 75, DEWGONG
-	dbw 75, DELIBIRD
-	dbw 75, SNEASEL
-	dbw 75, MAMOSWINE
-	dbw 75, WEAVILE
-	; day
-	dbw 75, PILOSWINE
-	dbw 75, GOLBAT
-	dbw 75, CROBAT
-	dbw 75, DEWGONG
-	dbw 75, DELIBIRD
-	dbw 75, SNEASEL
-	dbw 75, MAMOSWINE
-	dbw 75, WEAVILE
-	; nite
-	dbw 75, PILOSWINE
-	dbw 75, GOLBAT
-	dbw 75, CROBAT
-	dbw 75, DEWGONG
-	dbw 75, DELIBIRD
-	dbw 75, SNEASEL
-	dbw 75, MAMOSWINE
-	dbw 75, WEAVILE
-
-	map_id ICEFALL_CAVE_BACK_CAVE
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 75, PILOSWINE
-	dbw 75, GOLBAT
-	dbw 75, CROBAT
-	dbw 75, DEWGONG
-	dbw 75, DELIBIRD
-	dbw 75, SNEASEL
-	dbw 75, MAMOSWINE
-	dbw 75, WEAVILE
-	; day
-	dbw 75, PILOSWINE
-	dbw 75, GOLBAT
-	dbw 75, CROBAT
-	dbw 75, DEWGONG
-	dbw 75, DELIBIRD
-	dbw 75, SNEASEL
-	dbw 75, MAMOSWINE
-	dbw 75, WEAVILE
-	; nite
-	dbw 75, PILOSWINE
-	dbw 75, GOLBAT
-	dbw 75, CROBAT
-	dbw 75, DEWGONG
-	dbw 75, DELIBIRD
-	dbw 75, SNEASEL
-	dbw 75, MAMOSWINE
 	dbw 75, WEAVILE
 
 	map_id FIVE_ISLE_MEADOW
@@ -512,274 +422,34 @@ SeviiGrassWildMons:
 	dbw 50, UNOWN
 	dbw 50, UNOWN
 
-	map_id SCUFIB_CHAMBER
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	; day
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	; nite
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-
-	map_id RIXY_CHAMBER
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	; day
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	; nite
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-
-	map_id VIAPOIS_CHAMBER
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	; day
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	; nite
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-	dbw 50, UNOWN
-
 	map_id MT_EMBER_OUTSIDE
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 75, FEAROW
-	dbw 75, PERSIAN
+	dbw 75, CROBAT
+	dbw 75, GOLEM
 	dbw 75, RAPIDASH
 	dbw 75, MAGCARGO
-	dbw 75, GOLDUCK
-	dbw 75, SLOWBRO
-	dbw 75, GOLEM
-	dbw 75, GOLEM
+	dbw 75, ARCANINE_H
+	dbw 75, MAGMORTAR
+	dbw 75, MAROWAK_A
+	dbw 75, MAROWAK_A
 	; day
-	dbw 75, FEAROW
-	dbw 75, PERSIAN
+	dbw 75, CROBAT
+	dbw 75, GOLEM
 	dbw 75, RAPIDASH
 	dbw 75, MAGCARGO
-	dbw 75, GOLDUCK
-	dbw 75, SLOWBRO
-	dbw 75, GOLEM
-	dbw 75, GOLEM
+	dbw 75, ARCANINE_H
+	dbw 75, MAGMORTAR
+	dbw 75, MAROWAK_A
+	dbw 75, MAROWAK_A
 	; nite
-	dbw 75, HONCHKROW
-	dbw 75, PERSIAN
-	dbw 75, RAPIDASH
-	dbw 75, MAGCARGO
-	dbw 75, GOLDUCK
-	dbw 75, SLOWKING
-	dbw 75, GOLEM
-	dbw 75, GOLEM
-
-	map_id MT_EMBER_INSIDE_7
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 75, MAGCARGO
 	dbw 75, CROBAT
+	dbw 75, GOLEM
 	dbw 75, RAPIDASH
 	dbw 75, MAGCARGO
-	dbw 75, MAGMAR
-	dbw 75, CAMERUPT
-	dbw 75, GOLEM
-	dbw 75, GOLEM
-	; day
-	dbw 75, MAGCARGO
-	dbw 75, CROBAT
-	dbw 75, RAPIDASH
-	dbw 75, MAGCARGO
-	dbw 75, MAGMAR
-	dbw 75, CAMERUPT
-	dbw 75, GOLEM
-	dbw 75, GOLEM
-	; nite
-	dbw 75, MAGCARGO
-	dbw 75, CROBAT
-	dbw 75, RAPIDASH
-	dbw 75, MAGCARGO
-	dbw 75, MAGMAR
-	dbw 75, CAMERUPT
-	dbw 75, GOLEM
-	dbw 75, GOLEM
-
-	map_id MT_EMBER_INSIDE_2
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 75, MAGCARGO
-	dbw 75, CROBAT
-	dbw 75, RAPIDASH
-	dbw 75, MAGCARGO
-	dbw 75, MAGMAR
-	dbw 75, CAMERUPT
-	dbw 75, GOLEM
-	dbw 75, GOLEM
-	; day
-	dbw 75, MAGCARGO
-	dbw 75, CROBAT
-	dbw 75, RAPIDASH
-	dbw 75, MAGCARGO
-	dbw 75, MAGMAR
-	dbw 75, CAMERUPT
-	dbw 75, GOLEM
-	dbw 75, GOLEM
-	; nite
-	dbw 75, MAGCARGO
-	dbw 75, CROBAT
-	dbw 75, RAPIDASH
-	dbw 75, MAGCARGO
-	dbw 75, MAGMAR
-	dbw 75, CAMERUPT
-	dbw 75, GOLEM
-	dbw 75, GOLEM
-
-	map_id MT_EMBER_INSIDE_3
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 75, MAGCARGO
-	dbw 75, CROBAT
-	dbw 75, RAPIDASH
-	dbw 75, MAGCARGO
-	dbw 75, MAGMAR
-	dbw 75, CAMERUPT
-	dbw 75, GOLEM
-	dbw 75, GOLEM
-	; day
-	dbw 75, MAGCARGO
-	dbw 75, CROBAT
-	dbw 75, RAPIDASH
-	dbw 75, MAGCARGO
-	dbw 75, MAGMAR
-	dbw 75, CAMERUPT
-	dbw 75, GOLEM
-	dbw 75, GOLEM
-	; nite
-	dbw 75, MAGCARGO
-	dbw 75, CROBAT
-	dbw 75, RAPIDASH
-	dbw 75, MAGCARGO
-	dbw 75, MAGMAR
-	dbw 75, CAMERUPT
-	dbw 75, GOLEM
-	dbw 75, GOLEM
-
-	map_id MT_EMBER_INSIDE_4
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 75, MAGCARGO
-	dbw 75, CROBAT
-	dbw 75, RAPIDASH
-	dbw 75, MAGCARGO
-	dbw 75, MAGMAR
-	dbw 75, CAMERUPT
-	dbw 75, GOLEM
-	dbw 75, GOLEM
-	; day
-	dbw 75, MAGCARGO
-	dbw 75, CROBAT
-	dbw 75, RAPIDASH
-	dbw 75, MAGCARGO
-	dbw 75, MAGMAR
-	dbw 75, CAMERUPT
-	dbw 75, GOLEM
-	dbw 75, GOLEM
-	; nite
-	dbw 75, MAGCARGO
-	dbw 75, CROBAT
-	dbw 75, RAPIDASH
-	dbw 75, MAGCARGO
-	dbw 75, MAGMAR
-	dbw 75, CAMERUPT
-	dbw 75, GOLEM
-	dbw 75, GOLEM
-
-	map_id MT_EMBER_INSIDE_8
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 75, MAGCARGO
-	dbw 75, CROBAT
-	dbw 75, RAPIDASH
-	dbw 75, MAGCARGO
-	dbw 75, MAGMAR
-	dbw 75, CAMERUPT
-	dbw 75, GOLEM
-	dbw 75, GOLEM
-	; day
-	dbw 75, MAGCARGO
-	dbw 75, CROBAT
-	dbw 75, RAPIDASH
-	dbw 75, MAGCARGO
-	dbw 75, MAGMAR
-	dbw 75, CAMERUPT
-	dbw 75, GOLEM
-	dbw 75, GOLEM
-	; nite
-	dbw 75, MAGCARGO
-	dbw 75, CROBAT
-	dbw 75, RAPIDASH
-	dbw 75, MAGCARGO
-	dbw 75, MAGMAR
-	dbw 75, CAMERUPT
-	dbw 75, GOLEM
-	dbw 75, GOLEM
+	dbw 75, ARCANINE_H
+	dbw 75, MAGMORTAR
+	dbw 75, MAROWAK_A
+	dbw 75, MAROWAK_A
 
 	db -1 ; end

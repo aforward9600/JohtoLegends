@@ -1163,55 +1163,6 @@ UnknownText_0x1c5fd1::
 	text "Which #mon?"
 	prompt
 
-Text_DSTIsThatOK::
-	text " DST,"
-	line "is that OK?"
-	done
-
-UnknownText_0x1c5ff1::
-	text ","
-	line "is that OK?"
-	done
-
-UnknownText_0x1c6000::
-	text "Do you want to"
-	line "switch to Daylight"
-	cont "Saving Time?"
-	done
-
-UnknownText_0x1c6030::
-	text "I set the clock"
-	line "forward by one"
-	cont "hour."
-	prompt
-
-UnknownText_0x1c6056::
-	text "Is Daylight Saving"
-	line "Time over?"
-	done
-
-UnknownText_0x1c6075::
-	text "I put the clock"
-	line "back one hour."
-	prompt
-
-UnknownText_0x1c6095::
-	text "Do you want to"
-	line "adjust your clock"
-
-	para "for Daylight"
-	line "Saving Time?"
-	done
-
-UnknownText_0x1c60d1::
-	text "I lost the in-"
-	line "struction booklet"
-	cont "for the Watch."
-
-	para "Come back again in"
-	line "a while."
-	prompt
-
 ShadyShop_IntroText::
 	text "Hey."
 

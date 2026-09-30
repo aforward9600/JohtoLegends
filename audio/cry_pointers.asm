@@ -122,3 +122,4 @@ Cries:
 	dba Cry_Kleavor
 	dba Cry_Meditite
 	dba Cry_Medicham
+	dba Cry_Perrserker

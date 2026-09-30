@@ -530,58 +530,10 @@ SetDayOfWeek:
 	text_end
 
 InitialSetDSTFlag:
-	ld a, [wDST]
-	set 7, a
-	ld [wDST], a
-	hlcoord 1, 14
-	lb bc, 3, 18
-	call ClearBox
-	ld hl, .Text
-	jp PlaceHLTextAtBC
-
-.Text:
-	text_asm
-	call UpdateTime
-	ldh a, [hHours]
-	ld b, a
-	ldh a, [hMinutes]
-	ld c, a
-	decoord 1, 14
-	farcall PrintHoursMins
-	ld hl, .DSTIsThatOK
 	ret
-
-.DSTIsThatOK:
-	; DST, is that OK?
-	text_far Text_DSTIsThatOK
-	text_end
 
 InitialClearDSTFlag:
-	ld a, [wDST]
-	res 7, a
-	ld [wDST], a
-	hlcoord 1, 14
-	lb bc, 3, 18
-	call ClearBox
-	ld hl, .Text
-	jp PlaceHLTextAtBC
-
-.Text:
-	text_asm
-	call UpdateTime
-	ldh a, [hHours]
-	ld b, a
-	ldh a, [hMinutes]
-	ld c, a
-	decoord 1, 14
-	farcall PrintHoursMins
-	ld hl, .IsThatOK
 	ret
-
-.IsThatOK:
-	; , is that OK?
-	text_far UnknownText_0x1c5ff1
-	text_end
 
 DebugDisplayTime:
 	hlcoord 1, 14
