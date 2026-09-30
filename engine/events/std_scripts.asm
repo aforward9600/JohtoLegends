@@ -995,90 +995,130 @@ TelevisionScript:
 	ifequal 12, .Aron
 	ifequal 13, .Gible
 	ifequal 14, .Tyrogue
-	ifequal 15, .Corsola
+	ifequal 15, .Beldum
 	ifequal 16, .Bonsly
 	ifequal 17, .MimeJr
 	ifequal 18, .Eevee
 	ifequal 19, .Bronzor
 
 .Skarmini:
-	farwritetext SkarminiOakText
+	getlandmarkname STRING_BUFFER_5, ROUTE_45
+	getmonname STRING_BUFFER_3, SKARMINI
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Cyndaquil:
-	farwritetext CyndaquilOakText
+	getlandmarkname STRING_BUFFER_5, DARK_CAVE
+	getmonname STRING_BUFFER_3, CYNDAQUIL
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Chikorita:
-	farwritetext ChikoritaOakText
+	getlandmarkname STRING_BUFFER_5, ROUTE_44
+	getmonname STRING_BUFFER_3, CHIKORITA
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Totodile:
-	farwritetext TotodileOakText
+	getlandmarkname STRING_BUFFER_5, ROUTE_43
+	getmonname STRING_BUFFER_3, TOTODILE
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Croagunk:
-	farwritetext CroagunkOakText
+	getlandmarkname STRING_BUFFER_5, LAKE_OF_RAGE
+	getmonname STRING_BUFFER_3, CROAGUNK
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Electrike:
-	farwritetext ElectrikeOakText
+	getlandmarkname STRING_BUFFER_5, LAKE_OF_RAGE
+	getmonname STRING_BUFFER_3, ELECTRIKE
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Ralts:
-	farwritetext RaltsOakText
+	getlandmarkname STRING_BUFFER_5, ROUTE_43
+	getmonname STRING_BUFFER_3, RALTS
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Duskull:
-	farwritetext DuskullOakText
+	getlandmarkname STRING_BUFFER_5, BURNED_TOWER
+	getmonname STRING_BUFFER_3, DUSKULL
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Wynaut:
-	farwritetext WynautOakText
+	getlandmarkname STRING_BUFFER_5, DARK_CAVE
+	getmonname STRING_BUFFER_3, WYNAUT
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Budew:
-	farwritetext BudewOakText
+	getlandmarkname STRING_BUFFER_5, ROUTE_44
+	getmonname STRING_BUFFER_3, BUDEW
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Cacnea:
-	farwritetext CacneaOakText
+	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
+	getmonname STRING_BUFFER_3, CACNEA
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Snorunt:
-	farwritetext SnoruntOakText
+	getlandmarkname STRING_BUFFER_5, ICE_PATH
+	getmonname STRING_BUFFER_3, SNORUNT
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Aron:
-	farwritetext AronOakText
+	getlandmarkname STRING_BUFFER_5, MT_MORTAR
+	getmonname STRING_BUFFER_3, ARON
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Gible:
-	farwritetext GibleOakText
+	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
+	getmonname STRING_BUFFER_3, GIBLE
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Tyrogue:
-	farwritetext TyrogueOakText
-	sjump .EndOakTalk
-
-.Corsola:
-	farwritetext CorsolaOakText
+	getlandmarkname STRING_BUFFER_5, MT_MORTAR
+	getmonname STRING_BUFFER_3, TYROGUE
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Bonsly:
-	farwritetext BonslyOakText
+	getlandmarkname STRING_BUFFER_5, ROUTE_42
+	getmonname STRING_BUFFER_3, SKARMINI
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .MimeJr:
-	farwritetext MimeJrOakText
+	getlandmarkname STRING_BUFFER_5, LAKE_OF_RAGE
+	getmonname STRING_BUFFER_3, MIME__JR
+	farwritetext OakOnText
+	sjump .EndOakTalk
+
+.Beldum:
+	getlandmarkname STRING_BUFFER_5, EMBEDDED_TOWER
+	getmonname STRING_BUFFER_3, BELDUM
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Eevee:
-	farwritetext EeveeOakText
+	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
+	getmonname STRING_BUFFER_3, EEVEE
+	farwritetext OakOnText
 	sjump .EndOakTalk
 
 .Bronzor:
-	farwritetext BronzorOakText
+	getlandmarkname STRING_BUFFER_5, WILD_AREA_OUTSIDE
+	getmonname STRING_BUFFER_3, BRONZOR
+	farwritetext OakOnText
 .EndOakTalk:
 	waitbutton
 	closetext

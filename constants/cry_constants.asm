@@ -134,3 +134,6 @@
 	const CRY_MR__RIME
 	const CRY_ELECTRIKE
 	const CRY_MANECTRIC
+	const CRY_WYRDEER
+	const CRY_CROAGUNK
+	const CRY_TOXICROAK

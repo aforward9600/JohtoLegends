@@ -129,3 +129,6 @@ Cries:
 	dba Cry_Mr_Rime
 	dba Cry_Electrike
 	dba Cry_Manectric
+	dba Cry_Wyrdeer
+	dba Cry_Croagunk
+	dba Cry_Toxicroak

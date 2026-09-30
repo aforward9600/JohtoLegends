@@ -1,11 +1,6 @@
 UnknownText_0x1c0000::
-	text "Oh, no picture?"
-	line "Come again, OK?"
-	done
 
 UnknownText_0x1c0021::
-	text "An Egg? My talent"
-	line "is worth more…"
 	done
 
 UnknownText_0x1c0043::
@@ -180,7 +175,6 @@ UnknownText_0x1c0373::
 	prompt
 
 UnknownText_0x1c0384::
-	text "Booted up an HM."
 	prompt
 
 UnknownText_0x1c0396::
@@ -225,8 +219,6 @@ UnknownText_0x1c0421::
 	prompt
 
 _BadgeRequiredText::
-	text "Sorry! A new Badge"
-	line "is required."
 	prompt
 
 UnknownText_0x1c05c8::
@@ -281,8 +273,8 @@ UnknownText_0x1c06a3::
 	done
 
 UnknownText_0x1c06bf::
-	text "Do you want to cl-"
-	line "imb the waterfall?"
+	text "Want to climb the"
+	line "waterfall?"
 	done
 
 UnknownText_0x1c06de::

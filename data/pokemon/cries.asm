@@ -323,7 +323,7 @@ PokemonCries::
 	mon_cry CRY_SENTRET,     $048,  $230 ; PHANPY
 	mon_cry CRY_DONPHAN,     $000,  $1a0 ; DONPHAN
 	mon_cry CRY_AIPOM,      -$160,  $180 ; STANTLER
-	mon_cry CRY_BLASTOISE,   $0c4,  $0bb ; WYRDEER
+	mon_cry CRY_WYRDEER,     $000,  $11c ; WYRDEER
 	mon_cry CRY_PICHU,      -$21a,  $1f0 ; SMEARGLE
 	mon_cry CRY_GLIGAR,     -$1cd,  $1a0 ; MILTANK
 	mon_cry CRY_RAIKOU,      $22e,  $120 ; RAIKOU
@@ -395,8 +395,8 @@ PokemonCries::
 	mon_cry CRY_LUCARIO,     $000,  $0ff ; LUCARIO
 	mon_cry CRY_AMPHAROS,    $1c8,  $190 ; SKORUPI
 	mon_cry CRY_CLEFFA,     -$33e,  $200 ; DRAPION
-	mon_cry CRY_DIGLETT,    -$133,  $125 ; CROAGUNK
-	mon_cry CRY_SLOWKING,    $002,  $2c6 ; TOXICROAK
+	mon_cry CRY_CROAGUNK,    $000,  $0ff ; CROAGUNK
+	mon_cry CRY_TOXICROAK,   $000,  $0ff ; TOXICROAK
 	mon_cry CRY_TEDDIURSA,   $58e,  $0c8 ; REGIROCK PLACEHOLDER
 	mon_cry CRY_MAGCARGO,    $f1c,  $20a ; REGICE PLACEHOLDER
 	mon_cry CRY_WOOPER,      $e82,  $480 ; REGISTEEL PLACEHOLDER

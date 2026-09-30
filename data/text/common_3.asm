@@ -34,10 +34,7 @@ _OakText7::
 	done
 
 UnknownText_0x1c40e6::
-	text "The clock's time"
-	line "may be wrong."
-
-	para "Please reset the"
+	text "Please reset the"
 	line "time."
 	prompt
 
@@ -1617,159 +1614,16 @@ WelcomeToPokemonTalk::
 	para "On this show, we"
 	line "talk about rare"
 	cont "#mon that can"
-	cont "be found in the"
-	cont "Johto and Kanto"
-	cont "regions!"
+	cont "be found!"
 	done
 
-SkarminiOakText::
-	text "Skarmini is quite"
-	line "an interesting"
-	cont "specimin."
-
-	para "Found on Route 45,"
-	line "Skarmini evolves"
-
-	para "into Skarmory,"
-	line "the Armor Bird"
-	cont "#mon."
-
-	para "It is flightless,"
-	line "and continues to"
-	cont "improve its wings"
-
-	para "by brushing them"
-	line "up against"
-	cont "bramble."
-
-	para "The existence of"
-	line "this #mon was"
-	cont "only recently"
-	cont "discovered."
-
-	para "Perhaps someday"
-	line "species will no"
-	cont "longer require"
-	cont "this earlier form"
-	cont "to survive."
-	done
-
-CyndaquilOakText::
-	text "Cyndaquil, found"
-	line "in Dark Cave, is"
-	cont "a Fire-type that"
-	cont "sprouts fire from"
-	cont "its back."
-
-	para "It evolves into"
-	line "Quilava, and again"
-	cont "into Typhlosion."
-
-	para "Typhlosion gains"
-	line "the Ground Type"
-	cont "upon evolution."
-
-	para "It can also evolve"
-	line "into a Fire/Ghost-"
-	cont "type version."
-
-	para "It lights up the"
-	line "portion of Dark"
-	cont "Cave it is in."
-	done
-
-ChikoritaOakText::
-	text "Chikorita can be"
-	line "found on Route 43,"
-	cont "even in the"
-	cont "current snow."
-
-	para "It evolves into"
-	line "Bayleef, and again"
-	cont "into Meganium."
-
-	para "Meganium gains the"
-	line "Fairy Type upon"
-	cont "evolution."
-
-	para "The plants around"
-	line "their bodies make"
-	cont "pleasant odors,"
-
-	para "making them great"
-	line "to have around the"
-	cont "house."
-	done
-
-TotodileOakText::
-	text "Totodile can be"
-	line "found on Route 43."
-
-	para "It evolves into"
-	line "Croconaw, and"
-	cont "again into"
-	cont "Feraligatr."
-
-	para "Feraligatr gains"
-	line "the Dark Type upon"
-	cont "evolution."
-
-	para "The Totodile line"
-	line "has a strong bite,"
-
-	para "so don't put your"
-	line "hands or head into"
-	cont "their mouths!"
-
-	para "Trust me, I've"
-	line "learned from"
-	cont "experience!"
-	done
-
-CroagunkOakText::
-	text "Croagunk can be"
-	line "found at the Lake"
-	cont "of Rage."
-
-	para "Croagunk evolves"
-	line "into Toxicroak."
-
-	para "Croagunk is native"
-	line "to Sinnoh."
-
-	para "The poison sacs on"
-	line "their cheeks can"
-	cont "be inflated with"
-
-	para "posion, which is"
-	line "then spat up on"
-	cont "its foes."
-
-	para "It's quite the"
-	line "nasty surprise!"
-	done
-
-ElectrikeOakText::
-	text "Electrike can be"
-	line "found at the Lake"
-	cont "of Rage."
-
-	para "Electrike evolves"
-	line "into Manectric."
-
-	para "Electrike are"
-	line "native to Hoenn."
-
-	para "When they gather,"
-	line "thunderstorms tend"
-	cont "to form near."
-
-	para "Don't go near"
-	line "them with anything"
-	cont "metal!"
-
-	para "You'll be in for"
-	line "a shock!"
+OakOnText::
+	text_ram wStringBuffer3
+	text " can be"
+	line "found at"
+	cont "@"
+	text_ram wStringBuffer5
+	text "."
 	done
 
 CantUsePokeBallMessageTextFar::

@@ -243,14 +243,6 @@ CoinVendor_CancelText:
 	done
 
 BugContestPrizeNoRoomText:
-	text "Oh? Your Pack is"
-	line "full."
-
-	para "We'll keep this"
-	line "for you today, so"
-
-	para "come back when you"
-	line "make room for it."
 	done
 
 HappinessText3:
@@ -276,17 +268,17 @@ HappinessText1:
 	done
 
 RegisteredNumber1Text:
-	text "<PLAYER> registered"
-	line "@"
-	text_ram wStringBuffer3
-	text "'s number."
+;	text "<PLAYER> registered"
+;	line "@"
+;	text_ram wStringBuffer3
+;	text "'s number."
 	done
 
 RegisteredNumber2Text:
-	text "<PLAYER> registered"
-	line "@"
-	text_ram wStringBuffer3
-	text "'s number."
+;	text "<PLAYER> registered"
+;	line "@"
+;	text_ram wStringBuffer3
+;	text "'s number."
 	done
 
 GymStatue_WinningTrainers5Text:
