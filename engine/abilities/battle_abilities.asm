@@ -2291,10 +2291,10 @@ CheckPoisonSynchronize:
 	cp IMMUNITY
 	ret z
 	ld b, POISON
-	call CheckIfTargetIsGivenTypeAbility
+	call CheckIfUserIsGivenTypeAbility
 	ret z
 	ld b, STEEL
-	jp CheckIfTargetIsGivenTypeAbility
+	jp CheckIfUserIsGivenTypeAbility
 
 SynchronizePoisonCheck:
 	call SynchronizeCheck
@@ -2337,7 +2337,7 @@ SynchronizeBurnCheck:
 	cp WATER_VEIL
 	ret z
 	ld b, FIRE
-	call CheckIfTargetIsGivenTypeAbility
+	call CheckIfUserIsGivenTypeAbility
 	ret z
 	ld hl, SynchronizeText
 	call StdBattleTextbox
@@ -2351,7 +2351,7 @@ SynchronizeParalyzeCheck:
 	call CheckNeutralGas
 	ret z
 	ld b, ELECTRIC
-	call CheckIfTargetIsGivenTypeAbility
+	call CheckIfUserIsGivenTypeAbility
 	ret z
 	call GetUserAbility
 	cp LIMBER
@@ -2615,6 +2615,21 @@ CheckIfTargetIsGivenTypeAbility:
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp b
+	ret z
+	ld a, [de]
+	cp b
+	ret
+
+CheckIfUserIsGivenTypeAbility:
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .ok
 	ld de, wBattleMonType1
 .ok
 	ld a, [de]

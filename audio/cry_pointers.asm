@@ -123,3 +123,5 @@ Cries:
 	dba Cry_Meditite
 	dba Cry_Medicham
 	dba Cry_Perrserker
+	dba Cry_Overqwil
+	dba Cry_Ursaluna

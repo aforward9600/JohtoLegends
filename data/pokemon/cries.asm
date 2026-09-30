@@ -292,7 +292,7 @@ PokemonCries::
 	mon_cry CRY_DUNSPARCE,   $112,  $0e8 ; SNUBBULL
 	mon_cry CRY_DUNSPARCE,   $000,  $180 ; GRANBULL
 	mon_cry CRY_SLOWKING,    $160,  $0e0 ; QWILFISH
-	mon_cry CRY_SLOWKING,    $2bc,  $0e0 ; OVERQWIL
+	mon_cry CRY_OVERQWIL,    $000,  $0ff ; OVERQWIL
 	mon_cry CRY_DUNSPARCE,   $290,  $0a8 ; SHUCKLE
 	mon_cry CRY_AMPHAROS,    $035,  $0e0 ; HERACROSS
 	mon_cry CRY_WOOPER,      $053,  $0af ; SNEASEL
@@ -301,7 +301,7 @@ PokemonCries::
 	mon_cry CRY_SNEASLER,    $000,  $100 ; SNEASLER
 	mon_cry CRY_TEDDIURSA,   $7a2,  $06e ; TEDDIURSA
 	mon_cry CRY_TEDDIURSA,   $640,  $0d8 ; URSARING
-	mon_cry CRY_TEDDIURSA,   $578,  $07f ; URSALUNA
+	mon_cry CRY_URSALUNA,    $000,  $0ff ; URSALUNA
 	mon_cry CRY_TEDDIURSA,   $578,  $07f ; URSALUNA_BLOOD
 	mon_cry CRY_SLUGMA,     -$1d8,  $140 ; SLUGMA
 	mon_cry CRY_MAGCARGO,   -$20d,  $1c0 ; MAGCARGO

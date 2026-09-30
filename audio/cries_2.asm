@@ -4448,3 +4448,163 @@ Cry_perrserker_Ch8:
 	noise __, 2, $18, 92
 	noise __, 10, $08, 0
 	endchannel
+
+Cry_Overqwil:
+	musicheader 4, 5, Cry_overqwil_Ch5
+	musicheader 1, 6, Cry_overqwil_Ch6
+	musicheader 1, 7, Cry_overqwil_Ch7
+	musicheader 1, 8, Cry_overqwil_Ch8
+
+Cry_overqwil_Ch5:
+	sound_duty 2, 2, 1, 1
+	sound __, 3, $b8, 1759
+	sound __, 3, $c8, 1303
+	sound __, 3, $88, 1208
+	sound __, 3, $58, 1838
+	sound __, 3, $48, 1268
+	sound __, 3, $98, 1112
+	sound __, 3, $68, 1218
+	sound __, 3, $38, 1807
+	sound __, 3, $28, 1887
+	sound __, 3, $28, 1949
+	sound __, 3, $18, 1933
+	sound __, 3, $08, 0
+	sound __, 3, $08, 0
+	sound __, 3, $08, 0
+	sound __, 3, $08, 0
+	sound __, 3, $08, 0
+	endchannel
+
+Cry_overqwil_Ch6:
+	sound_duty 2, 2, 1, 1
+	sound __, 3, $98, 1793
+	sound __, 3, $a8, 1784
+	sound __, 3, $68, 1614
+	sound __, 3, $48, 1913
+	sound __, 3, $38, 1336
+	sound __, 3, $78, 1268
+	sound __, 3, $58, 1638
+	sound __, 3, $28, 1904
+	sound __, 3, $28, 1851
+	sound __, 3, $28, 1916
+	sound __, 3, $18, 1895
+	sound __, 3, $08, 0
+	sound __, 3, $08, 0
+	sound __, 3, $08, 0
+	sound __, 3, $08, 0
+	sound __, 3, $08, 0
+	endchannel
+
+Cry_overqwil_Ch7:
+	sound __, 3, $25, 1904
+	sound __, 3, $27, 1676
+	sound __, 3, $37, 1628
+	sound __, 3, $37, 1943
+	sound __, 3, $34, 1658
+	sound __, 3, $37, 1580
+	sound __, 3, $37, 1633
+	sound __, 3, $37, 1928
+	sound __, 3, $35, 1968
+	sound __, 3, $31, 1999
+	sound __, 3, $37, 1991
+	sound __, 3, $00, 0
+	sound __, 3, $00, 0
+	sound __, 3, $00, 0
+	sound __, 3, $00, 0
+	sound __, 3, $00, 0
+	endchannel
+
+Cry_overqwil_Ch8:
+	noise __, 6, $d5, 68
+	noise __, 6, $c1, 52
+	noise __, 6, $f8, 52
+	noise __, 6, $a1, 52
+	noise __, 6, $34, 36
+	noise __, 6, $15, 36
+	noise __, 6, $08, 36
+	noise __, 6, $08, 36
+	endchannel
+
+Cry_Ursaluna:
+	musicheader 4, 5, Cry_Ursaluna_Ch5
+	musicheader 1, 6, Cry_Ursaluna_Ch6
+	musicheader 1, 7, Cry_Ursaluna_Ch7
+	musicheader 1, 8, Cry_Ursaluna_Ch8
+
+Cry_Ursaluna_Ch5:
+	sound_duty 1, 1, 0, 0
+	sound __, 3, $d8, 1347
+	sound __, 3, $e8, 928
+	sound __, 3, $f8, 1278
+	sound __, 3, $e8, 1269
+	sound __, 3, $f8, 1183
+	sound __, 3, $e8, 1357
+	sound __, 3, $e8, 973
+	sound __, 3, $e8, 1404
+	sound __, 3, $e8, 1191
+	sound __, 3, $e8, 1263
+	sound __, 1, $c8, 1384
+	sound __, 1, $a8, 1384
+	sound __, 1, $98, 1384
+	sound __, 1, $48, 1400
+	sound __, 1, $38, 1400
+	sound __, 1, $28, 1400
+	sound __, 1, $28, 1588
+	sound __, 1, $18, 1588
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_Ursaluna_Ch6:
+	sound_duty 3, 0, 3, 0
+	sound __, 3, $e8, 1709
+	sound __, 3, $f8, 1621
+	sound __, 3, $f8, 1671
+	sound __, 3, $f8, 1682
+	sound __, 3, $f8, 1646
+	sound __, 3, $f8, 1642
+	sound __, 3, $f8, 1668
+	sound __, 3, $f8, 1691
+	sound __, 3, $f8, 1561
+	sound __, 3, $f8, 1367
+	sound __, 1, $c8, 1644
+	sound __, 1, $b8, 1644
+	sound __, 1, $98, 1644
+	sound __, 2, $48, 1562
+	sound __, 1, $38, 1562
+	sound __, 1, $28, 1608
+	sound __, 1, $18, 1608
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_Ursaluna_Ch7:
+	sound __, 3, $14, 1698
+	sound __, 3, $17, 1489
+	sound __, 3, $12, 1664
+	sound __, 3, $14, 1659
+	sound __, 3, $16, 1616
+	sound __, 3, $10, 1703
+	sound __, 3, $17, 1511
+	sound __, 3, $17, 1727
+	sound __, 3, $15, 1620
+	sound __, 3, $16, 1656
+	sound __, 2, $11, 1717
+	sound __, 1, $21, 1717
+	sound __, 3, $31, 1725
+	sound __, 3, $01, 1819
+	endchannel
+
+Cry_Ursaluna_Ch8:
+	noise __, 6, $d8, 92
+	noise __, 6, $e8, 92
+	noise __, 6, $f4, 92
+	noise __, 6, $f8, 92
+	noise __, 6, $d8, 92
+	noise __, 1, $c1, 92
+	noise __, 1, $a1, 92
+	noise __, 1, $91, 92
+	noise __, 1, $71, 92
+	noise __, 1, $61, 92
+	noise __, 1, $41, 92
+	noise __, 2, $18, 92
+	noise __, 1, $08, 92
+	endchannel
