@@ -138,3 +138,6 @@ Cries:
 	dba Cry_Snorunt
 	dba Cry_Glalie
 	dba Cry_Froslass
+	dba Cry_Duskull
+	dba Cry_Dusclops
+	dba Cry_Dusknoir

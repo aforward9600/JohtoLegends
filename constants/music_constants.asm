@@ -7,7 +7,6 @@
 	const MUSIC_ROUTE_1                      ; 02
 	const MUSIC_ROUTE_3                      ; 03
 	const MUSIC_ROUTE_12                     ; 04
-	const MUSIC_MAGNET_TRAIN                 ; 05
 	const MUSIC_KANTO_GYM_LEADER_BATTLE      ; 06
 	const MUSIC_KANTO_TRAINER_BATTLE         ; 07
 	const MUSIC_KANTO_WILD_BATTLE            ; 08
@@ -56,7 +55,6 @@
 	const MUSIC_DARK_CAVE                    ; 33
 	const MUSIC_ROUTE_29                     ; 34
 	const MUSIC_ROUTE_36                     ; 35
-	const MUSIC_SS_AQUA                      ; 36
 	const MUSIC_YOUNGSTER_ENCOUNTER          ; 37
 	const MUSIC_BEAUTY_ENCOUNTER             ; 38
 	const MUSIC_ROCKET_ENCOUNTER             ; 39
@@ -89,13 +87,9 @@
 	const MUSIC_RUINS_OF_ALPH_INTERIOR       ; 55
 	const MUSIC_ROCKET_OVERTURE              ; 56
 	const MUSIC_DANCING_HALL                 ; 57
-	const MUSIC_BUG_CATCHING_CONTEST         ; 59
-	const MUSIC_PRINTER                      ; 5b
 	const MUSIC_POST_CREDITS                 ; 5c
 
 ; new to Crystal
-	const MUSIC_CLAIR                        ; 5d
-	const MUSIC_BUENAS_PASSWORD              ; 60
 	const MUSIC_MYSTICALMAN_ENCOUNTER        ; 61
 	const MUSIC_BATTLE_TOWER_THEME           ; 63
 	const MUSIC_SUICUNE_BATTLE               ; 64
@@ -140,7 +134,6 @@
 	const MUSIC_ROCKET_LAIR
 	const MUSIC_VICTORY_ROAD_RSE
 	const MUSIC_SILPH_CO
-	const MUSIC_POKEMON_TOWER
 	const MUSIC_OAK_BATTLE
 	const MUSIC_REGI_BATTLE
 

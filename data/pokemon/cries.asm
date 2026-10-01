@@ -372,9 +372,9 @@ PokemonCries::
 	mon_cry CRY_ALTARIA,     $000,  $0ff ; ALTARIA
 	mon_cry CRY_FEEBAS,      $000,  $0ff ; FEEBAS
 	mon_cry CRY_GLIGAR,      $f39,  $4a0 ; MILOTIC
-	mon_cry CRY_CYNDAQUIL,   $10e,  $050 ; DUSKULL
-	mon_cry CRY_NATU,        $100,  $190 ; DUSCLOPS
-	mon_cry CRY_DROWZEE,     $044,  $0c6 ; DUSKNOIR
+	mon_cry CRY_DUSKULL,     $000,  $0ff ; DUSKULL
+	mon_cry CRY_DUSCLOPS,    $000,  $0ff ; DUSCLOPS
+	mon_cry CRY_DUSKNOIR,    $000,  $0ff ; DUSKNOIR
 	mon_cry CRY_BLASTOISE,   $280,  $0a0 ; ABSOL
 	mon_cry CRY_SNORUNT,     $000,  $0ff ; SNORUNT
 	mon_cry CRY_GLALIE,      $000,  $0ff ; GLALIE

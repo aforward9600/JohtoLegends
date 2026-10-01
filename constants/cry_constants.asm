@@ -143,3 +143,6 @@
 	const CRY_SNORUNT
 	const CRY_GLALIE
 	const CRY_FROSLASS
+	const CRY_DUSKULL
+	const CRY_DUSCLOPS
+	const CRY_DUSKNOIR

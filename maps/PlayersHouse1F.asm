@@ -112,9 +112,10 @@ MomScript:
 	iftrue .GaveMysteryEgg
 	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue .GotAPokemon
-	givepoke SNORUNT, 5, ORAN_BERRY
-	givepoke GLALIE, 5, ORAN_BERRY
-	givepoke FROSLASS, 5, ORAN_BERRY
+	givepoke DUSKULL, 5, ORAN_BERRY
+	givepoke DUSCLOPS, 5, ORAN_BERRY
+	givepoke DUSKNOIR, 5, ORAN_BERRY
+	setflag ENGINE_RADIO_CARD
 	jumptext HurryUpElmIsWaitingText
 
 .BeatLeague:

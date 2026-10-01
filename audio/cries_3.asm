@@ -2114,3 +2114,641 @@ Cry_froslass_Ch8:
 	noise __, 2, $08, 44
 	noise __, 1, $08, 44
 	endchannel
+
+Cry_Duskull:
+	musicheader 3, 5, Cry_duskull_Ch5
+	musicheader 1, 6, Cry_duskull_Ch6
+	musicheader 1, 8, Cry_duskull_Ch8
+
+Cry_duskull_Ch5:
+	dutycycle $2
+	sound __, 1, $28, 1559
+	sound __, 1, $38, 1938
+	sound __, 1, $38, 1506
+	sound __, 1, $88, 1536
+	sound __, 1, $a8, 1552
+	sound __, 1, $b8, 1919
+	sound __, 1, $d8, 1372
+	sound __, 1, $d8, 1336
+	sound __, 1, $c8, 1358
+	sound __, 1, $d8, 1436
+	sound __, 1, $d8, 1447
+	sound __, 1, $d8, 1919
+	sound __, 1, $b8, 1399
+	sound __, 1, $d8, 1921
+	sound __, 1, $b8, 1418
+	sound __, 1, $d8, 1924
+	sound __, 1, $a8, 1923
+	sound __, 1, $b8, 1928
+	sound __, 1, $c8, 1928
+	sound __, 1, $a8, 1926
+	dutycycle $0
+	sound __, 1, $88, 1478
+	dutycycle $2
+	sound __, 1, $78, 1483
+	sound __, 1, $58, 1386
+	sound __, 1, $58, 1343
+	sound __, 1, $58, 1926
+	sound __, 1, $58, 1925
+	sound __, 1, $48, 1926
+	sound __, 1, $28, 1926
+	sound __, 1, $18, 1919
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_duskull_Ch6:
+	dutycycle $2
+	sound __, 1, $28, 1942
+	sound __, 1, $28, 1871
+	sound __, 1, $28, 1938
+	dutycycle $0
+	sound __, 1, $48, 1942
+	dutycycle $2
+	sound __, 1, $58, 1949
+	sound __, 1, $78, 1947
+	sound __, 1, $88, 1912
+	sound __, 1, $68, 1923
+	sound __, 1, $58, 1924
+	sound __, 1, $78, 1926
+	sound __, 1, $98, 1926
+	sound __, 1, $58, 1906
+	sound __, 1, $68, 1928
+	sound __, 1, $58, 1936
+	sound __, 1, $78, 1920
+	sound __, 1, $58, 1864
+	sound __, 1, $58, 1865
+	sound __, 1, $58, 1863
+	sound __, 1, $78, 1865
+	sound __, 1, $58, 1902
+	sound __, 1, $58, 1902
+	sound __, 1, $58, 1856
+	sound __, 1, $48, 1913
+	sound __, 1, $38, 1923
+	sound __, 1, $28, 1854
+	sound __, 1, $28, 1854
+	sound __, 1, $28, 1865
+	sound __, 1, $18, 1897
+	sound __, 1, $18, 1847
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_duskull_Ch8:
+	noise __, 1, $18, 75
+	noise __, 1, $18, 75
+	noise __, 1, $18, 75
+	noise __, 1, $38, 75
+	noise __, 1, $58, 75
+	noise __, 1, $68, 75
+	noise __, 1, $58, 75
+	noise __, 1, $58, 75
+	noise __, 1, $58, 75
+	noise __, 1, $58, 75
+	noise __, 1, $48, 75
+	noise __, 1, $58, 75
+	noise __, 1, $58, 75
+	noise __, 1, $58, 75
+	noise __, 1, $58, 75
+	noise __, 1, $58, 75
+	noise __, 1, $48, 75
+	noise __, 1, $58, 75
+	noise __, 1, $48, 75
+	noise __, 1, $48, 75
+	noise __, 1, $38, 75
+	noise __, 1, $38, 75
+	noise __, 1, $28, 75
+	noise __, 1, $28, 75
+	noise __, 1, $28, 75
+	noise __, 1, $28, 75
+	noise __, 1, $28, 75
+	noise __, 1, $18, 75
+	noise __, 1, $18, 75
+	noise __, 1, $08, 75
+	endchannel
+
+Cry_Dusclops:
+	musicheader 4, 5, Cry_dusclops_Ch5
+	musicheader 1, 6, Cry_dusclops_Ch6
+	musicheader 1, 7, Cry_dusclops_Ch7
+	musicheader 1, 8, Cry_dusclops_Ch8
+
+Cry_dusclops_Ch5:
+	dutycycle $1
+	sound __, 1, $48, 1197
+	dutycycle $2
+	sound __, 1, $38, 1295
+	sound __, 1, $48, 1208
+	sound __, 1, $58, 1218
+	sound __, 1, $48, 1229
+	sound __, 1, $48, 1218
+	sound __, 1, $48, 1186
+	dutycycle $1
+	sound __, 1, $48, 1208
+	dutycycle $2
+	sound __, 1, $48, 1218
+	sound __, 1, $48, 1208
+	sound __, 1, $48, 1197
+	dutycycle $1
+	sound __, 1, $48, 1268
+	dutycycle $2
+	sound __, 1, $48, 1239
+	sound __, 1, $58, 1218
+	dutycycle $1
+	sound __, 1, $48, 1197
+	sound __, 1, $58, 1218
+	sound __, 1, $38, 1208
+	dutycycle $2
+	sound __, 1, $38, 1208
+	dutycycle $3
+	sound __, 1, $28, 1229
+	dutycycle $2
+	sound __, 1, $18, 1643
+	dutycycle $1
+	sound __, 1, $48, 1295
+	sound __, 1, $58, 1249
+	sound __, 1, $48, 1909
+	sound __, 1, $48, 1208
+	dutycycle $2
+	sound __, 1, $48, 1112
+	dutycycle $1
+	sound __, 1, $48, 1150
+	dutycycle $2
+	sound __, 1, $38, 1138
+	dutycycle $1
+	sound __, 1, $48, 1197
+	sound __, 1, $48, 1162
+	dutycycle $2
+	sound __, 1, $38, 1150
+	dutycycle $1
+	sound __, 1, $58, 1150
+	dutycycle $0
+	sound __, 1, $58, 1138
+	dutycycle $2
+	sound __, 1, $58, 1218
+	sound __, 1, $48, 1258
+	dutycycle $1
+	sound __, 1, $48, 1186
+	sound __, 1, $38, 1150
+	sound __, 1, $28, 1229
+	dutycycle $2
+	sound __, 1, $28, 1112
+	dutycycle $0
+	sound __, 1, $28, 0
+	endchannel
+
+Cry_dusclops_Ch6:
+	sound __, 2, $08, 0
+	dutycycle $2
+	sound __, 1, $78, 1336
+	sound __, 1, $98, 1343
+	sound __, 1, $08, 0
+	dutycycle $3
+	sound __, 1, $68, 1343
+	sound __, 1, $68, 1320
+	dutycycle $2
+	sound __, 1, $68, 1343
+	dutycycle $3
+	sound __, 1, $88, 1343
+	dutycycle $2
+	sound __, 1, $68, 1336
+	dutycycle $3
+	sound __, 1, $98, 1328
+	sound __, 2, $08, 0
+	dutycycle $2
+	sound __, 1, $88, 1343
+	sound __, 1, $78, 1328
+	sound __, 1, $08, 0
+	sound __, 1, $48, 1336
+	sound __, 1, $58, 1343
+	sound __, 1, $38, 1351
+	sound __, 1, $28, 1365
+	sound __, 5, $08, 0
+	sound __, 1, $68, 1295
+	dutycycle $3
+	sound __, 1, $68, 1286
+	sound __, 12, $08, 0
+	endchannel
+
+Cry_dusclops_Ch7:
+	sound __, 1, $16, 1623
+	sound __, 1, $18, 1672
+	sound __, 1, $17, 1628
+	sound __, 1, $17, 1633
+	sound __, 1, $15, 1639
+	sound __, 1, $15, 1633
+	sound __, 1, $18, 1617
+	sound __, 1, $14, 1628
+	sound __, 1, $14, 1633
+	sound __, 1, $14, 1628
+	sound __, 1, $14, 1623
+	sound __, 1, $17, 1658
+	sound __, 1, $14, 1644
+	sound __, 1, $13, 1633
+	sound __, 1, $17, 1623
+	sound __, 1, $16, 1633
+	sound __, 2, $17, 1628
+	sound __, 1, $29, 1639
+	sound __, 1, $27, 1846
+	sound __, 1, $17, 1672
+	sound __, 1, $16, 1649
+	sound __, 1, $12, 1979
+	sound __, 1, $17, 1628
+	sound __, 1, $17, 1580
+	sound __, 1, $17, 1599
+	sound __, 1, $18, 1593
+	sound __, 1, $13, 1623
+	sound __, 1, $17, 1605
+	sound __, 1, $14, 1599
+	sound __, 1, $12, 1599
+	sound __, 1, $16, 1593
+	sound __, 1, $15, 1633
+	sound __, 1, $18, 1653
+	sound __, 1, $17, 1617
+	sound __, 1, $17, 1599
+	sound __, 1, $16, 1639
+	sound __, 1, $28, 1580
+	sound __, 1, $00, 0
+	endchannel
+
+Cry_dusclops_Ch8:
+	noise __, 1, $38, 92
+	noise __, 1, $28, 92
+	noise __, 5, $48, 92
+	noise __, 1, $38, 92
+	noise __, 1, $48, 92
+	noise __, 1, $38, 92
+	noise __, 6, $48, 92
+	noise __, 3, $28, 92
+	noise __, 1, $18, 92
+	noise __, 1, $38, 92
+	noise __, 5, $48, 92
+	noise __, 2, $38, 92
+	noise __, 1, $48, 92
+	noise __, 1, $38, 92
+	noise __, 2, $48, 92
+	noise __, 4, $38, 92
+	noise __, 1, $28, 92
+	noise __, 2, $18, 92
+	endchannel
+
+Cry_Dusknoir:
+	musicheader 4, 5, Cry_Dusknoir_Ch5
+	musicheader 1, 6, Cry_Dusknoir_Ch6
+	musicheader 1, 7, Cry_Dusknoir_Ch7
+	musicheader 1, 8, Cry_Dusknoir_Ch8
+
+Cry_Dusknoir_Ch5:
+	dutycycle $2
+	sound __, 2, $58, 1777
+	dutycycle $0
+	sound __, 1, $58, 1229
+	sound __, 1, $58, 1750
+	sound __, 1, $58, 410
+	sound __, 1, $48, 623
+	sound __, 1, $58, 524
+	dutycycle $2
+	sound __, 1, $48, 1889
+	dutycycle $0
+	sound __, 1, $48, 1544
+	sound __, 1, $58, 1786
+	dutycycle $1
+	sound __, 1, $58, 1682
+	dutycycle $2
+	sound __, 1, $48, 1961
+	sound __, 1, $48, 1963
+	sound __, 1, $58, 1962
+	sound __, 1, $58, 1973
+	dutycycle $3
+	sound __, 1, $58, 1897
+	dutycycle $2
+	sound __, 1, $58, 1775
+	dutycycle $1
+	sound __, 1, $48, 1758
+	sound __, 1, $48, 1969
+	dutycycle $2
+	sound __, 2, $58, 1963
+	dutycycle $1
+	sound __, 1, $58, 1869
+	dutycycle $2
+	sound __, 1, $58, 1758
+	dutycycle $0
+	sound __, 1, $58, 1922
+	sound __, 1, $58, 1528
+	dutycycle $2
+	sound __, 1, $58, 1913
+	sound __, 1, $58, 1911
+	dutycycle $0
+	sound __, 1, $d8, 1358
+	dutycycle $1
+	sound __, 1, $48, 1386
+	sound __, 1, $58, 1899
+	dutycycle $2
+	sound __, 1, $58, 1972
+	dutycycle $0
+	sound __, 1, $d8, 1746
+	dutycycle $2
+	sound __, 1, $48, 1968
+	dutycycle $1
+	sound __, 1, $48, 1740
+	sound __, 1, $48, 1767
+	dutycycle $2
+	sound __, 1, $48, 1820
+	sound __, 1, $58, 1819
+	sound __, 1, $58, 1820
+	sound __, 1, $48, 1823
+	sound __, 1, $48, 1826
+	sound __, 1, $58, 1829
+	sound __, 1, $48, 1832
+	sound __, 1, $58, 1831
+	sound __, 1, $58, 1957
+	sound __, 1, $58, 1643
+	dutycycle $1
+	sound __, 1, $48, 834
+	dutycycle $0
+	sound __, 1, $48, 811
+	dutycycle $2
+	sound __, 1, $48, 737
+	sound __, 1, $58, 654
+	sound __, 1, $58, 623
+	sound __, 1, $48, 956
+	dutycycle $3
+	sound __, 1, $58, 592
+	dutycycle $2
+	sound __, 1, $48, 559
+	dutycycle $1
+	sound __, 1, $48, 592
+	dutycycle $2
+	sound __, 1, $58, 1802
+	dutycycle $0
+	sound __, 1, $48, 811
+	dutycycle $2
+	sound __, 1, $58, 0
+	sound __, 1, $48, 1138
+	sound __, 1, $48, 1972
+	sound __, 1, $48, 1968
+	sound __, 1, $48, 1084
+	dutycycle $0
+	sound __, 1, $38, 1249
+	dutycycle $3
+	sound __, 1, $48, 1150
+	dutycycle $1
+	sound __, 2, $58, 1876
+	dutycycle $3
+	sound __, 1, $58, 1903
+	dutycycle $1
+	sound __, 1, $58, 1863
+	sound __, 1, $48, 1873
+	dutycycle $2
+	sound __, 1, $58, 1879
+	dutycycle $1
+	sound __, 3, $58, 1877
+	sound __, 1, $58, 1878
+	sound __, 1, $58, 1877
+	sound __, 4, $48, 1877
+	sound __, 2, $58, 1877
+	sound __, 2, $48, 1878
+	sound __, 2, $48, 1877
+	dutycycle $2
+	sound __, 1, $48, 2007
+	dutycycle $1
+	sound __, 1, $48, 1860
+	dutycycle $2
+	sound __, 1, $38, 1856
+	sound __, 1, $48, 1854
+	sound __, 1, $48, 1988
+	dutycycle $1
+	sound __, 1, $48, 1843
+	dutycycle $0
+	sound __, 1, $28, 1841
+	dutycycle $2
+	sound __, 1, $28, 1977
+	dutycycle $0
+	sound __, 1, $28, 1837
+	sound __, 1, $28, 1832
+	dutycycle $2
+	sound __, 1, $18, 1960
+	dutycycle $3
+	sound __, 1, $18, 1829
+	dutycycle $2
+	sound __, 1, $18, 1832
+	sound __, 4, $08, 0
+	endchannel
+
+Cry_Dusknoir_Ch6:
+	dutycycle $2
+	sound __, 1, $78, 1717
+	sound __, 1, $88, 1722
+	sound __, 3, $08, 0
+	dutycycle $3
+	sound __, 1, $98, 1838
+	sound __, 1, $98, 1834
+	sound __, 3, $08, 0
+	dutycycle $2
+	sound __, 1, $78, 1901
+	dutycycle $3
+	sound __, 1, $88, 1897
+	dutycycle $2
+	sound __, 1, $58, 1929
+	sound __, 1, $78, 1927
+	sound __, 3, $08, 0
+	sound __, 1, $78, 1957
+	sound __, 1, $68, 1955
+	sound __, 1, $58, 1948
+	sound __, 1, $68, 1946
+	sound __, 1, $78, 1945
+	sound __, 1, $08, 0
+	dutycycle $3
+	sound __, 1, $78, 1837
+	sound __, 1, $98, 1832
+	dutycycle $2
+	sound __, 1, $58, 1824
+	dutycycle $3
+	sound __, 1, $58, 1828
+	dutycycle $1
+	sound __, 1, $98, 1811
+	dutycycle $0
+	sound __, 1, $78, 1808
+	dutycycle $2
+	sound __, 1, $98, 1810
+	sound __, 5, $08, 0
+	sound __, 1, $68, 1972
+	sound __, 1, $78, 1973
+	sound __, 1, $98, 1973
+	sound __, 1, $68, 1973
+	sound __, 1, $68, 1971
+	sound __, 1, $68, 1970
+	sound __, 1, $58, 1968
+	dutycycle $3
+	sound __, 1, $78, 1895
+	dutycycle $1
+	sound __, 1, $68, 1892
+	sound __, 6, $08, 0
+	dutycycle $3
+	sound __, 1, $78, 1757
+	sound __, 1, $78, 1759
+	dutycycle $2
+	sound __, 1, $68, 1747
+	sound __, 1, $78, 1753
+	dutycycle $0
+	sound __, 1, $88, 1754
+	dutycycle $2
+	sound __, 1, $78, 1753
+	sound __, 4, $08, 0
+	sound __, 1, $88, 1969
+	sound __, 1, $78, 1971
+	sound __, 1, $08, 0
+	sound __, 1, $98, 1970
+	sound __, 1, $68, 1971
+	sound __, 1, $88, 1972
+	sound __, 1, $88, 1974
+	sound __, 4, $08, 0
+	dutycycle $3
+	sound __, 1, $68, 1898
+	dutycycle $2
+	sound __, 1, $78, 1902
+	sound __, 1, $88, 1905
+	sound __, 1, $78, 1906
+	dutycycle $3
+	sound __, 1, $58, 1906
+	dutycycle $2
+	sound __, 1, $58, 1906
+	sound __, 1, $68, 1906
+	dutycycle $0
+	sound __, 1, $78, 1906
+	sound __, 1, $68, 1905
+	sound __, 4, $08, 0
+	dutycycle $2
+	sound __, 1, $68, 1997
+	sound __, 1, $58, 1996
+	sound __, 1, $58, 1994
+	sound __, 1, $88, 1993
+	sound __, 3, $08, 0
+	sound __, 1, $38, 1966
+	sound __, 1, $48, 1964
+	sound __, 1, $38, 1962
+	sound __, 1, $08, 0
+	dutycycle $1
+	sound __, 1, $28, 1875
+	dutycycle $3
+	sound __, 1, $18, 1879
+	sound __, 4, $08, 0
+	endchannel
+
+Cry_Dusknoir_Ch7:
+	sound __, 1, $19, 1913
+	sound __, 1, $14, 1913
+	sound __, 1, $17, 1639
+	sound __, 1, $17, 1899
+	sound __, 1, $17, 1229
+	sound __, 1, $17, 1336
+	sound __, 1, $18, 1286
+	sound __, 1, $13, 1969
+	sound __, 1, $17, 1796
+	sound __, 1, $14, 1917
+	sound __, 1, $17, 1865
+	sound __, 1, $10, 2005
+	sound __, 1, $11, 2006
+	sound __, 1, $11, 2005
+	sound __, 1, $11, 2011
+	sound __, 1, $12, 1973
+	sound __, 1, $13, 1912
+	sound __, 1, $16, 1903
+	sound __, 1, $10, 2009
+	sound __, 1, $11, 2005
+	sound __, 1, $10, 2005
+	sound __, 1, $16, 1959
+	sound __, 1, $15, 1903
+	sound __, 1, $16, 1985
+	sound __, 1, $17, 1788
+	sound __, 1, $11, 1981
+	sound __, 1, $11, 1980
+	sound __, 1, $00, 0
+	sound __, 1, $17, 1717
+	sound __, 1, $12, 1974
+	sound __, 1, $11, 2010
+	sound __, 1, $00, 0
+	sound __, 1, $10, 2008
+	sound __, 1, $17, 1894
+	sound __, 1, $16, 1908
+	sound __, 3, $15, 1934
+	sound __, 1, $15, 1936
+	sound __, 1, $13, 1937
+	sound __, 1, $13, 1939
+	sound __, 2, $13, 1940
+	sound __, 1, $11, 2003
+	sound __, 1, $17, 1846
+	sound __, 1, $17, 1441
+	sound __, 1, $17, 1430
+	sound __, 1, $15, 1393
+	sound __, 1, $18, 1351
+	sound __, 1, $18, 1336
+	sound __, 1, $18, 1502
+	sound __, 1, $17, 1320
+	sound __, 1, $17, 1304
+	sound __, 1, $17, 1320
+	sound __, 1, $15, 1925
+	sound __, 1, $18, 1430
+	sound __, 1, $17, 1024
+	sound __, 1, $17, 1593
+	sound __, 1, $11, 2010
+	sound __, 1, $10, 2008
+	sound __, 1, $15, 1566
+	sound __, 1, $17, 1649
+	sound __, 1, $15, 1599
+	sound __, 1, $12, 1962
+	sound __, 1, $10, 1962
+	sound __, 1, $11, 1976
+	sound __, 1, $16, 1956
+	sound __, 1, $12, 1961
+	sound __, 1, $14, 1964
+	sound __, 1, $10, 1963
+	sound __, 14, $12, 1963
+	sound __, 1, $11, 2028
+	sound __, 1, $14, 1954
+	sound __, 1, $14, 1952
+	sound __, 1, $14, 1951
+	sound __, 1, $11, 2018
+	sound __, 1, $12, 1946
+	sound __, 1, $25, 1945
+	sound __, 1, $21, 2013
+	sound __, 1, $25, 1943
+	sound __, 1, $26, 1940
+	sound __, 1, $21, 2004
+	sound __, 1, $37, 1939
+	sound __, 1, $34, 1940
+	sound __, 1, $32, 1962
+	sound __, 1, $34, 1964
+	sound __, 1, $37, 1941
+	sound __, 1, $00, 0
+	endchannel
+
+Cry_Dusknoir_Ch8:
+	noise __, 14, $48, 92
+	noise __, 7, $38, 92
+	noise __, 1, $48, 92
+	noise __, 1, $38, 92
+	noise __, 1, $48, 92
+	noise __, 1, $38, 92
+	noise __, 9, $48, 92
+	noise __, 1, $38, 92
+	noise __, 10, $48, 92
+	noise __, 3, $38, 92
+	noise __, 5, $48, 92
+	noise __, 1, $38, 92
+	noise __, 1, $48, 92
+	noise __, 1, $38, 92
+	noise __, 3, $48, 92
+	noise __, 1, $38, 92
+	noise __, 1, $48, 92
+	noise __, 1, $38, 92
+	noise __, 2, $48, 92
+	noise __, 1, $38, 92
+	noise __, 16, $48, 92
+	noise __, 3, $38, 92
+	noise __, 2, $48, 92
+	noise __, 1, $38, 92
+	noise __, 1, $48, 92
+	noise __, 2, $38, 92
+	noise __, 5, $28, 92
+	noise __, 3, $18, 92
+	noise __, 3, $08, 0
+	endchannel

@@ -19,7 +19,6 @@ INCLUDE "audio/music/elmslab.asm"
 INCLUDE "audio/music/darkcave.asm"
 INCLUDE "audio/music/johtogymbattle.asm"
 INCLUDE "audio/music/championbattle.asm"
-INCLUDE "audio/music/ssaqua.asm"
 INCLUDE "audio/music/vermilioncity.asm"
 INCLUDE "audio/music/titlescreen.asm"
 INCLUDE "audio/music/ruinsofalphinterior.asm"
@@ -48,7 +47,6 @@ INCLUDE "audio/music/dragonsden.asm"
 INCLUDE "audio/music/ruinsofalphradio.asm"
 INCLUDE "audio/music/lookbeauty.asm"
 INCLUDE "audio/music/route26.asm"
-INCLUDE "audio/music/magnettrain.asm"
 INCLUDE "audio/music/dancinghall.asm"
 
 
@@ -94,12 +92,10 @@ INCLUDE "audio/music/lookrocket.asm"
 INCLUDE "audio/music/rockettheme.asm"
 INCLUDE "audio/music/mainmenu.asm"
 INCLUDE "audio/music/lookkimonogirl.asm"
-INCLUDE "audio/music/bugcatchingcontest.asm"
 
 
 SECTION "Songs 5", ROMX
 
-INCLUDE "audio/music/buenaspassword.asm"
 INCLUDE "audio/music/lookmysticalman.asm"
 INCLUDE "audio/music/battletowertheme.asm"
 INCLUDE "audio/music/suicunebattle.asm"
@@ -109,7 +105,6 @@ INCLUDE "audio/music/battletowerlobby.asm"
 SECTION "Extra Songs 1", ROMX
 
 INCLUDE "audio/music/credits.asm"
-INCLUDE "audio/music/clair.asm"
 
 
 SECTION "Extra Songs 2", ROMX
@@ -187,8 +182,6 @@ INCLUDE "audio/music/cynthiaencounter.asm"
 INCLUDE "audio/music/rocketlair.asm"
 INCLUDE "audio/music/victoryroadrse.asm"
 INCLUDE "audio/music/silphco.asm"
-INCLUDE "audio/music/pokemontower.asm"
 INCLUDE "audio/music/oakbattle.asm"
 INCLUDE "audio/music/regibattle.asm"
-INCLUDE "audio/music/printer.asm"
 INCLUDE "audio/music/dahliaafterbattle.asm"

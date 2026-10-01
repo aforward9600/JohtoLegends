@@ -7,7 +7,6 @@ Music:
 	dba Music_Route1
 	dba Music_Route3
 	dba Music_Route12
-	dba Music_MagnetTrain
 	dba Music_KantoGymBattle
 	dba Music_KantoTrainerBattle
 	dba Music_KantoWildBattle
@@ -56,7 +55,6 @@ Music:
 	dba Music_DarkCave
 	dba Music_Route29
 	dba Music_Route36
-	dba Music_SSAqua
 	dba Music_LookYoungster
 	dba Music_LookBeauty
 	dba Music_LookRocket
@@ -89,12 +87,8 @@ Music:
 	dba Music_RuinsOfAlphInterior
 	dba Music_RocketTheme
 	dba Music_DancingHall
-	dba Music_BugCatchingContest
-	dba Music_Printer
 	dba Music_PostCredits
 ; new to Crystal
-	dba Music_Clair
-	dba Music_BuenasPassword
 	dba Music_LookMysticalMan
 	dba Music_BattleTowerTheme
 	dba Music_SuicuneBattle
@@ -139,6 +133,5 @@ Music:
 	dba Music_RocketLair
 	dba Music_VictoryRoadRSE
 	dba Music_SilphCo
-	dba Music_PokemonTower
 	dba Music_OakBattle
 	dba Music_RegiBattle

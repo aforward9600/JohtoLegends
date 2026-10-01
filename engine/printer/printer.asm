@@ -458,7 +458,7 @@ Printer_ResetJoypadRegisters:
 	ret
 
 Printer_PlayMusic:
-	ld de, MUSIC_PRINTER
+	ld de, MUSIC_NONE
 	jp PlayMusic2
 
 Printer_RestartMapMusic:

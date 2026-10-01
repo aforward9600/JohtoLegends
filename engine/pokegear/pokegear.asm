@@ -1383,7 +1383,7 @@ AnimateTuningKnob:
 .up
 	ld hl, wRadioTuningKnob
 	ld a, [hl]
-	cp 160
+	cp 154
 	ret nc
 	inc [hl]
 	inc [hl]
@@ -1469,82 +1469,79 @@ MusicPlayerData:
 	dbw 12, .DanceTheatreMusic
 	dbw 14, .LakeOfRageMusic
 	dbw 16, .DragonsDenMusic
-	dbw 18, .SSAquaMusic
-	dbw 20, .IndigoPlateauMusic
-	dbw 22, .PalletTownMusic
-	dbw 24, .ViridianCityMusic
-	dbw 26, .VermilionCityMusic
-	dbw 28, .LavenderTownMusic
-	dbw 30, .CeladonCityMusic
-	dbw 32, .CinnabarIslandMusic
-	dbw 34, .Route1Music
-	dbw 36, .Route3Music
-	dbw 38, .Route12Music
-	dbw 40, .Route26Music
-	dbw 42, .Route29Music
-	dbw 44, .Route30Music
-	dbw 46, .Route36Music
-	dbw 48, .Route37Music
-	dbw 50, .Route47Music
-	dbw 52, .ElmsLabMusic
-	dbw 54, .DarkCaveMusic
-	dbw 56, .SproutTowerMusic
-	dbw 58, .RuinsOfAlphMusic
-	dbw 60, .UnionCaveMusic
-	dbw 62, .GameCornerMusic
-	dbw 64, .NationalForestMusic
-	dbw 66, .CatchingContestMusic
-	dbw 68, .BurnedTowerMusic
-	dbw 70, .BellTowerMusic
-	dbw 72, .LighthouseMusic
-	dbw 74, .WildAreaMusic
-	dbw 76, .WildAreaInsideMusic
-	dbw 78, .NinjaHideoutMusic
-	dbw 80, .VictoryRoadMusic
-	dbw 82, .OaksLabMusic
-	dbw 84, .ViridianForestMusic
-	dbw 86, .MtMoonMusic
-	dbw 88, .CeruleanCaveMusic
-	dbw 90, .SilphCoMusic
-	dbw 92, .PokemonMansionMusic
-	dbw 94, .VictoryRoadRSEMusic
-	dbw 96, .JohtoWildMusic
-	dbw 98, .JohtoTrainerMusic
-	dbw 100, .JohtoGymLeaderMusic
-	dbw 102, .DracoMusic
-	dbw 104, .DahliaMusic
-	dbw 106, .RocketBattleMusic
-	dbw 108, .MadameBossMusic
-	dbw 110, .SuicuneMusic
-	dbw 112, .LugiaMusic
-	dbw 114, .HoOhMusic
-	dbw 116, .EliteFourMusic
-	dbw 118, .ChampionMusic
-	dbw 120, .KantoWildMusic
-	dbw 122, .KantoTrainerMusic
-	dbw 124, .KantoGymLeaderMusic
-	dbw 126, .XYLegendaryMusic
-	dbw 128, .MewtwoMusic
-	dbw 130, .CynthiaBattleMusic
-	dbw 132, .OakBattleMusic
-	dbw 134, .Megalovania
-	dbw 136, .AnthemMusic
-	dbw 138, .MomsMusic
-	dbw 140, .EusineMusic
-	dbw 142, .CynthiaEncounterMusic
-	dbw 144, .UnwaveringHeartMusic
-	dbw 146, .SurfMusic
-	dbw 148, .ClairMusic
-	dbw 150, .UnownSignalMusic
-	dbw 152, .BikeMusic
-	dbw 154, .ProfessorOakMusic
-	dbw 156, .ClefairyDanceMusic
-	dbw 158, .PokemonMarchMusic
-	dbw 160, .BuenasPasswordMusic
+	dbw 18, .IndigoPlateauMusic
+	dbw 20, .PalletTownMusic
+	dbw 22, .ViridianCityMusic
+	dbw 24, .VermilionCityMusic
+	dbw 26, .LavenderTownMusic
+	dbw 28, .CeladonCityMusic
+	dbw 30, .CinnabarIslandMusic
+	dbw 32, .Route1Music
+	dbw 34, .Route3Music
+	dbw 36, .Route12Music
+	dbw 38, .Route26Music
+	dbw 40, .Route29Music
+	dbw 42, .Route30Music
+	dbw 44, .Route36Music
+	dbw 46, .Route37Music
+	dbw 48, .Route47Music
+	dbw 50, .ElmsLabMusic
+	dbw 52, .DarkCaveMusic
+	dbw 54, .SproutTowerMusic
+	dbw 56, .RuinsOfAlphMusic
+	dbw 58, .UnionCaveMusic
+	dbw 60, .GameCornerMusic
+	dbw 62, .NationalForestMusic
+	dbw 64, .BurnedTowerMusic
+	dbw 66, .BellTowerMusic
+	dbw 68, .LighthouseMusic
+	dbw 70, .WildAreaMusic
+	dbw 72, .WildAreaInsideMusic
+	dbw 74, .NinjaHideoutMusic
+	dbw 76, .VictoryRoadMusic
+	dbw 78, .OaksLabMusic
+	dbw 80, .ViridianForestMusic
+	dbw 82, .MtMoonMusic
+	dbw 84, .CeruleanCaveMusic
+	dbw 86, .SilphCoMusic
+	dbw 88, .PokemonMansionMusic
+	dbw 90, .VictoryRoadRSEMusic
+	dbw 92, .JohtoWildMusic
+	dbw 94, .JohtoTrainerMusic
+	dbw 96, .JohtoGymLeaderMusic
+	dbw 98, .DracoMusic
+	dbw 100, .DahliaMusic
+	dbw 102, .RocketBattleMusic
+	dbw 104, .MadameBossMusic
+	dbw 106, .SuicuneMusic
+	dbw 108, .LugiaMusic
+	dbw 110, .HoOhMusic
+	dbw 112, .EliteFourMusic
+	dbw 114, .ChampionMusic
+	dbw 116, .KantoWildMusic
+	dbw 118, .KantoTrainerMusic
+	dbw 120, .KantoGymLeaderMusic
+	dbw 122, .XYLegendaryMusic
+	dbw 124, .MewtwoMusic
+	dbw 126, .CynthiaBattleMusic
+	dbw 128, .OakBattleMusic
+	dbw 130, .Megalovania
+	dbw 132, .AnthemMusic
+	dbw 134, .MomsMusic
+	dbw 136, .EusineMusic
+	dbw 138, .CynthiaEncounterMusic
+	dbw 140, .UnwaveringHeartMusic
+	dbw 142, .SurfMusic
+	dbw 144, .UnownSignalMusic
+	dbw 146, .BikeMusic
+	dbw 148, .ProfessorOakMusic
+	dbw 150, .ClefairyDanceMusic
+	dbw 152, .PokemonMarchMusic
+	dbw 154, .RegiMusic
 	db -1
 
-.BuenasPasswordMusic:
-	ld de, MUSIC_BUENAS_PASSWORD
+.RegiMusic:
+	ld de, MUSIC_REGI_BATTLE
 	jp .RadioMusicRestartDE
 
 .PokemonMarchMusic:
@@ -1561,10 +1558,6 @@ MusicPlayerData:
 
 .BikeMusic:
 	ld de, MUSIC_BICYCLE
-	jp .RadioMusicRestartDE
-
-.ClairMusic:
-	ld de, MUSIC_CLAIR
 	jp .RadioMusicRestartDE
 
 .UnownSignalMusic:
@@ -1593,10 +1586,6 @@ MusicPlayerData:
 
 .AnthemMusic:
 	ld de, MUSIC_ANTHEM
-	jp .RadioMusicRestartDE
-
-.SSAquaMusic:
-	ld de, MUSIC_SS_AQUA
 	jp .RadioMusicRestartDE
 
 .DragonsDenMusic:
@@ -1755,10 +1744,6 @@ MusicPlayerData:
 	ld de, MUSIC_BURNED_TOWER
 	jp .RadioMusicRestartDE
 
-.CatchingContestMusic:
-	ld de, MUSIC_BUG_CATCHING_CONTEST
-	jp .RadioMusicRestartDE
-
 .NationalForestMusic:
 	ld de, MUSIC_NATIONAL_PARK
 	jp .RadioMusicRestartDE
@@ -1888,121 +1873,142 @@ RadioChannels:
 	dbw 12, .DanceTheatreMusic
 	dbw 14, .LakeOfRageMusic
 	dbw 16, .DragonsDenMusic
-	dbw 18, .SSAquaMusic
-	dbw 20, .IndigoPlateauMusic
-	dbw 22, .PalletTownMusic
-	dbw 24, .ViridianCityMusic
-	dbw 26, .VermilionCityMusic
-	dbw 28, .LavenderTownMusic
-	dbw 30, .CeladonCityMusic
-	dbw 32, .CinnabarIslandMusic
-	dbw 34, .Route1Music
-	dbw 36, .Route3Music
-	dbw 38, .Route12Music
-	dbw 40, .Route26Music
-	dbw 42, .Route29Music
-	dbw 44, .Route30Music
-	dbw 46, .Route36Music
-	dbw 48, .Route37Music
-	dbw 50, .Route47Music
-	dbw 52, .ElmsLabMusic
-	dbw 54, .DarkCaveMusic
-	dbw 56, .SproutTowerMusic
-	dbw 58, .RuinsOfAlphMusic
-	dbw 60, .UnionCaveMusic
-	dbw 62, .GameCornerMusic
-	dbw 64, .NationalForestMusic
-	dbw 66, .CatchingContestMusic
-	dbw 68, .BurnedTowerMusic
-	dbw 70, .BellTowerMusic
-	dbw 72, .LighthouseMusic
-	dbw 74, .WildAreaMusic
-	dbw 76, .WildAreaInsideMusic
-	dbw 78, .NinjaHideoutMusic
-	dbw 80, .VictoryRoadMusic
-	dbw 82, .OaksLabMusic
-	dbw 84, .ViridianForestMusic
-	dbw 86, .MtMoonMusic
-	dbw 88, .CeruleanCaveMusic
-	dbw 90, .SilphCoMusic
-	dbw 92, .PokemonMansionMusic
-	dbw 94, .VictoryRoadRSEMusic
-	dbw 96, .JohtoWildMusic
-	dbw 98, .JohtoTrainerMusic
-	dbw 100, .JohtoGymLeaderMusic
-	dbw 102, .DracoMusic
-	dbw 104, .DahliaMusic
-	dbw 106, .RocketBattleMusic
-	dbw 108, .MadameBossMusic
-	dbw 110, .SuicuneMusic
-	dbw 112, .LugiaMusic
-	dbw 114, .HoOhMusic
-	dbw 116, .EliteFourMusic
-	dbw 118, .ChampionMusic
-	dbw 120, .KantoWildMusic
-	dbw 122, .KantoTrainerMusic
-	dbw 124, .KantoGymLeaderMusic
-	dbw 126, .XYLegendaryMusic
-	dbw 128, .MewtwoMusic
-	dbw 130, .CynthiaBattleMusic
-	dbw 132, .OakBattleMusic
-	dbw 134, .Megalovania
-	dbw 136, .AnthemMusic
-	dbw 138, .MomsMusic
-	dbw 140, .EusineMusic
-	dbw 142, .CynthiaEncounterMusic
-	dbw 144, .UnwaveringHeartMusic
-	dbw 146, .SurfMusic
-	dbw 148, .ClairMusic
-	dbw 150, .UnownSignalMusic
-	dbw 152, .BikeMusic
-	dbw 154, .ProfessorOakMusic
-	dbw 156, .ClefairyDanceMusic
-	dbw 158, .PokemonMarchMusic
-	dbw 160, .BuenasPasswordMusic
+	dbw 18, .IndigoPlateauMusic
+	dbw 20, .PalletTownMusic
+	dbw 22, .ViridianCityMusic
+	dbw 24, .VermilionCityMusic
+	dbw 26, .LavenderTownMusic
+	dbw 28, .CeladonCityMusic
+	dbw 30, .CinnabarIslandMusic
+	dbw 32, .Route1Music
+	dbw 34, .Route3Music
+	dbw 36, .Route12Music
+	dbw 38, .Route26Music
+	dbw 40, .Route29Music
+	dbw 42, .Route30Music
+	dbw 44, .Route36Music
+	dbw 46, .Route37Music
+	dbw 48, .Route47Music
+	dbw 50, .ElmsLabMusic
+	dbw 52, .DarkCaveMusic
+	dbw 54, .SproutTowerMusic
+	dbw 56, .RuinsOfAlphMusic
+	dbw 58, .UnionCaveMusic
+	dbw 60, .GameCornerMusic
+	dbw 62, .NationalForestMusic
+	dbw 64, .BurnedTowerMusic
+	dbw 66, .BellTowerMusic
+	dbw 68, .LighthouseMusic
+	dbw 70, .WildAreaMusic
+	dbw 72, .WildAreaInsideMusic
+	dbw 74, .NinjaHideoutMusic
+	dbw 76, .VictoryRoadMusic
+	dbw 78, .OaksLabMusic
+	dbw 80, .ViridianForestMusic
+	dbw 82, .MtMoonMusic
+	dbw 84, .CeruleanCaveMusic
+	dbw 86, .SilphCoMusic
+	dbw 88, .PokemonMansionMusic
+	dbw 90, .VictoryRoadRSEMusic
+	dbw 92, .JohtoWildMusic
+	dbw 94, .JohtoTrainerMusic
+	dbw 96, .JohtoGymLeaderMusic
+	dbw 98, .DracoMusic
+	dbw 100, .DahliaMusic
+	dbw 102, .RocketBattleMusic
+	dbw 104, .MadameBossMusic
+	dbw 106, .SuicuneMusic
+	dbw 108, .LugiaMusic
+	dbw 110, .HoOhMusic
+	dbw 112, .EliteFourMusic
+	dbw 114, .ChampionMusic
+	dbw 116, .KantoWildMusic
+	dbw 118, .KantoTrainerMusic
+	dbw 120, .KantoGymLeaderMusic
+	dbw 122, .XYLegendaryMusic
+	dbw 124, .MewtwoMusic
+	dbw 126, .CynthiaBattleMusic
+	dbw 128, .OakBattleMusic
+	dbw 130, .Megalovania
+	dbw 132, .AnthemMusic
+	dbw 134, .MomsMusic
+	dbw 136, .EusineMusic
+	dbw 138, .CynthiaEncounterMusic
+	dbw 140, .UnwaveringHeartMusic
+	dbw 142, .SurfMusic
+	dbw 144, .UnownSignalMusic
+	dbw 146, .BikeMusic
+	dbw 148, .ProfessorOakMusic
+	dbw 150, .ClefairyDanceMusic
+	dbw 152, .PokemonMarchMusic
+	dbw 154, .RegiMusic
 	db -1
 
-.BuenasPasswordMusic:
-	jp LoadStation_BuenasPasswordMusic
-
 .PokemonMarchMusic:
-	jp LoadStation_PokemonMarchMusic
+	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
+	call StoreMusicPlayerData
+	ld de, PokemonMarchMusicName
+	ret
 
 .ClefairyDanceMusic:
-	jp LoadStation_ClefairyDanceMusic
+	ld a, BUENAS_PASSWORD ; Morikazu Aoki
+	call StoreMusicPlayerData
+	ld de, ClefairyDanceMusicName
+	ret
 
 .ProfessorOakMusic:
-	jp LoadStation_ProfessorOakMusic
+	ld a, BUENAS_PASSWORD ; Morikazu Aoki
+	call StoreMusicPlayerData
+	ld de, ProfessorOakMusicName
+	ret
 
 .BikeMusic:
-	jp LoadStation_BikeMusic
+	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
+	call StoreMusicPlayerData
+	ld de, BikeMusicName
+	ret
 
 .UnownSignalMusic:
-	jp LoadStation_UnownSignalMusic
-
-.ClairMusic:
-	jp LoadStation_ClairMusic
+	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
+	call StoreMusicPlayerData
+	ld de, UnownSignalMusicName
+	ret
 
 .SurfMusic:
-	jp LoadStation_SurfMusic
+	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
+	call StoreMusicPlayerData
+	ld de, SurfMusicName
+	ret
 
 .UnwaveringHeartMusic:
-	jp LoadStation_UnwaveringMusic
+	ld a, BUENAS_PASSWORD_19 ; Shota Kageyama & Lyric Wulf
+	call StoreMusicPlayerData
+	ld de, UnwaveringHeartMusicName
+	ret
 
 .CynthiaEncounterMusic:
-	jp LoadStation_CynthiaEncounterMusic
+	ld a, BUENAS_PASSWORD_3 ; Go Ichinose & TriteHexagon
+	call StoreMusicPlayerData
+	ld de, CynthiaEncounterMusicName
+	ret
 
 .EusineMusic:
-	jp LoadStation_EusineMusic
+	ld a, BUENAS_PASSWORD ; Morikazu Aoki
+	call StoreMusicPlayerData
+	ld de, EusineMusicName
+	ret
 
 .MomsMusic:
-	jp LoadStation_MomsMusic
+	xor a ; OAKS_POKEMON_TALK Masuda & Ichinose
+	call StoreMusicPlayerData
+	ld de, MomsMusicName
+	ret
 
 .AnthemMusic:
-	jp LoadStation_AnthemMusic
-
-.SSAquaMusic:
-	jp LoadStation_SSAquaMusic
+	ld a, POKEMON_MUSIC ; Hajime Wakai & ShockSlayer
+	call StoreMusicPlayerData
+	ld de, AnthemMusicName
+	ret
 
 .DragonsDenMusic:
 	jp LoadStation_DragonsDenMusic
@@ -2121,9 +2127,6 @@ RadioChannels:
 .BurnedTowerMusic:
 	jp LoadStation_BurnedTowerMusic
 
-.CatchingContestMusic:
-	jp LoadStation_CatchingContestMusic
-
 .NationalForestMusic:
 	jp LoadStation_NationalForestMusic
 
@@ -2131,16 +2134,28 @@ RadioChannels:
 	jp LoadStation_UnionCaveMusic
 
 .RuinsOfAlphMusic:
-	jp LoadStation_RuinsOfAlphMusic
+	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
+	call StoreMusicPlayerData
+	ld de, RuinsOfAlphMusicName
+	ret
 
 .SproutTowerMusic:
-	jp LoadStation_SproutTower
+	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
+	call StoreMusicPlayerData
+	ld de, SproutTowerMusicName
+	ret
 
 .DarkCaveMusic:
-	jp LoadStation_DarkCaveMusic
+	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
+	call StoreMusicPlayerData
+	ld de, DarkCaveMusicName
+	ret
 
 .ElmsLabMusic:
-	jp LoadStation_ElmsLabMusic
+	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
+	call StoreMusicPlayerData
+	ld de, ElmsLabMusicName
+	ret
 
 .PKMNTalkAndPokedexShow:
 	jp LoadStation_NewBarkTownMusic
@@ -2224,26 +2239,11 @@ RadioChannels:
 ;	call PlayMusic
 ;	ret
 
-.LuckyChannel:
-	jp LoadStation_LuckyChannel
-
-.BuenasPassword:
-	jp LoadStation_BuenasPassword
-
 .RuinsOfAlphRadio:
 	jp LoadStation_UnownRadio
 
-.PlacesAndPeople:
-	jp LoadStation_PlacesAndPeople
-
-.LetsAllSing:
-	jp LoadStation_LetsAllSing
-
-.PokeFluteRadio:
-	jp LoadStation_PokeFluteRadio
-
-.EvolutionRadio:
-	jp LoadStation_EvolutionRadio
+.RegiMusic:
+	jp LoadStation_RegiMusic
 
 .InJohto:
 ; if in Johto or on the S.S. Aqua, set carry
@@ -2267,90 +2267,6 @@ StoreMusicPlayerData:
 	ld a, BANK(PlayRadioShow)
 	ld hl, PlayRadioShow
 	jp Radio_BackUpFarCallParams
-
-LoadStation_SurfMusic:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, SurfMusicName
-	ret
-
-LoadStation_BuenasPasswordMusic:
-	ld a, BUENAS_PASSWORD ; Morikazu Aoki
-	call StoreMusicPlayerData
-	ld de, BuenasPasswordMusicName
-	ret
-
-LoadStation_PokemonMarchMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, PokemonMarchMusicName
-	ret
-
-LoadStation_ClefairyDanceMusic:
-	ld a, BUENAS_PASSWORD ; Morikazu Aoki
-	call StoreMusicPlayerData
-	ld de, ClefairyDanceMusicName
-	ret
-
-LoadStation_ProfessorOakMusic:
-	ld a, BUENAS_PASSWORD ; Morikazu Aoki
-	call StoreMusicPlayerData
-	ld de, ProfessorOakMusicName
-	ret
-
-LoadStation_BikeMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, BikeMusicName
-	ret
-
-LoadStation_UnownSignalMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, UnownSignalMusicName
-	ret
-
-LoadStation_ClairMusic:
-	ld a, BUENAS_PASSWORD ; Morikazu Aoki
-	call StoreMusicPlayerData
-	ld de, ClairMusicName
-	ret
-
-LoadStation_UnwaveringMusic:
-	ld a, BUENAS_PASSWORD_19 ; Shota Kageyama & Lyric Wulf
-	call StoreMusicPlayerData
-	ld de, UnwaveringHeartMusicName
-	ret
-
-LoadStation_EusineMusic:
-	ld a, BUENAS_PASSWORD ; Morikazu Aoki
-	call StoreMusicPlayerData
-	ld de, EusineMusicName
-	ret
-
-LoadStation_CynthiaEncounterMusic:
-	ld a, BUENAS_PASSWORD_3 ; Go Ichinose & TriteHexagon
-	call StoreMusicPlayerData
-	ld de, CynthiaEncounterMusicName
-	ret
-
-LoadStation_MomsMusic:
-	xor a ; OAKS_POKEMON_TALK Masuda & Ichinose
-	call StoreMusicPlayerData
-	ld de, MomsMusicName
-	ret
-
-LoadStation_AnthemMusic:
-	ld a, POKEMON_MUSIC ; Hajime Wakai & ShockSlayer
-	call StoreMusicPlayerData
-	ld de, AnthemMusicName
-	ret
-
-LoadStation_SSAquaMusic:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, SSAquaMusicName
-	ret
 
 LoadStation_DragonsDenMusic:
 	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
@@ -2586,46 +2502,16 @@ LoadStation_BurnedTowerMusic:
 	ld de, BurnedTowerMusicName
 	ret
 
-LoadStation_CatchingContestMusic:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, CatchingContestMusicName
-	ret
-
 LoadStation_NationalForestMusic:
 	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
 	call StoreMusicPlayerData
 	ld de, NationalForestMusicName
 	ret
 
-LoadStation_RuinsOfAlphMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, RuinsOfAlphMusicName
-	ret
-
 LoadStation_UnionCaveMusic:
 	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
 	call StoreMusicPlayerData
 	ld de, UnionCaveMusicName
-	ret
-
-LoadStation_SproutTower:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, SproutTowerMusicName
-	ret
-
-LoadStation_DarkCaveMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, DarkCaveMusicName
-	ret
-
-LoadStation_ElmsLabMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, ElmsLabMusicName
 	ret
 
 LoadStation_NewBarkTownMusic:
@@ -2754,6 +2640,12 @@ LoadStation_IndigoPlateauMusic:
 	ld de, IndigoPlateauPlayerName
 	ret
 
+LoadStation_RegiMusic:
+	ld a, ROCKET_RADIO_4 ; Junichi Masuda, Go Ichinose, TriteHexagon
+	call StoreMusicPlayerData
+	ld de, RegiBattleMusicName
+	ret
+
 LoadStation_LuckyChannel:
 
 LoadStation_BuenasPassword:
@@ -2860,7 +2752,6 @@ SproutTowerMusicName:      db "Sprout Tower    @"
 RuinsOfAlphMusicName:      db "Ruins of Alph   @"
 UnionCaveMusicName:        db "Union Cave      @"
 NationalForestMusicName:   db "National Forest @"
-CatchingContestMusicName:  db "Catching Contest@"
 BurnedTowerMusicName:      db "Burned Tower    @"
 BellTowerMusicName:        db "Bell Tower      @"
 LighthouseMusicName:       db "Lighthouse      @"
@@ -2900,20 +2791,18 @@ MegalovaniaMusicName:      db "Megalovania     @"
 DanceTheatreMusicName:     db "Dance Theatre   @"
 LakeOfRageMusicName:       db "Lake Of Rage    @"
 DragonsDenMusicName:       db "Dragon's Den    @"
-SSAquaMusicName:           db "S.S. Aqua       @"
 AnthemMusicName:           db "Stadium 2 Anthem@"
 MomsMusicName:             db "Mom             @"
 CynthiaEncounterMusicName: db "Meet Cynthia    @"
 EusineMusicName:           db "Eusine          @"
 UnwaveringHeartMusicName:  db "Unwavering Heart@"
 SurfMusicName:             db "Surf Theme      @"
-ClairMusicName:            db "Clair           @"
 UnownSignalMusicName:      db "Unown Signal    @"
 BikeMusicName:             db "Bicycle         @"
 ProfessorOakMusicName:     db "Professor Oak   @"
 ClefairyDanceMusicName:    db "Clefairy Dance  @"
 PokemonMarchMusicName:     db "#mon March   @"
-BuenasPasswordMusicName:   db "Buena's Password@"
+RegiBattleMusicName:       db "Regi Battle     @"
 
 _TownMap:
 	ld hl, wOptions
