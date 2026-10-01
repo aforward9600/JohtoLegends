@@ -73,7 +73,8 @@ Cries:
 	dba Cry_Kirlia
 	dba Cry_Gallade
 	dba Cry_Sneasler
-	dba Cry_Whimsicott
+;	dba Cry_Whimsicott
+	dba Cry_Spiritomb
 	dba Cry_Gardevoir
 	dba Cry_Feebas
 	dba Cry_Ambipom
@@ -132,3 +133,5 @@ Cries:
 	dba Cry_Wyrdeer
 	dba Cry_Croagunk
 	dba Cry_Toxicroak
+	dba Cry_Bronzor
+	dba Cry_Bronzong

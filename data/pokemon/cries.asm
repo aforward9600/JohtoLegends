@@ -385,9 +385,9 @@ PokemonCries::
 	mon_cry CRY_BELDUM,      $000,  $0ff ; BELDUM
 	mon_cry CRY_METANG,      $000,  $0ff ; METANG
 	mon_cry CRY_METAGROSS,   $000,  $0ff ; METAGROSS ; need to adjust pitch
-	mon_cry CRY_EKANS,       $101,  $086 ; BRONZOR
-	mon_cry CRY_EKANS,       $12a,  $170 ; BRONZONG
-	mon_cry CRY_WHIMSICOTT, -$086,  $150 ; SPIRITOMB
+	mon_cry CRY_BRONZOR,     $000,  $0ff ; BRONZOR
+	mon_cry CRY_BRONZONG,    $000,  $0ff ; BRONZONG
+	mon_cry CRY_SPIRITOMB,   $000,  $0ff ; SPIRITOMB
 	mon_cry CRY_GIBLE,       $000,  $0ff ; GIBLE
 	mon_cry CRY_GABITE,      $000,  $0ff ; GABITE
 	mon_cry CRY_GARCHOMP,    $000,  $0ff ; GARCHOMP
