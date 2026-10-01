@@ -140,3 +140,6 @@
 	const CRY_TOXICROAK
 	const CRY_BRONZOR
 	const CRY_BRONZONG
+	const CRY_SNORUNT
+	const CRY_GLALIE
+	const CRY_FROSLASS

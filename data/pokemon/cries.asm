@@ -376,9 +376,9 @@ PokemonCries::
 	mon_cry CRY_NATU,        $100,  $190 ; DUSCLOPS
 	mon_cry CRY_DROWZEE,     $044,  $0c6 ; DUSKNOIR
 	mon_cry CRY_BLASTOISE,   $280,  $0a0 ; ABSOL
-	mon_cry CRY_PIDGEY,      $8a8,  $220 ; SNORUNT
-	mon_cry CRY_BULBASAUR,   $fe0,  $150 ; GLALIE
-	mon_cry CRY_PICHU,       $feb,  $500 ; FROSLASS
+	mon_cry CRY_SNORUNT,     $000,  $0ff ; SNORUNT
+	mon_cry CRY_GLALIE,      $000,  $0ff ; GLALIE
+	mon_cry CRY_FROSLASS,    $000,  $0ff ; FROSLASS
 	mon_cry CRY_BAGON,       $000,  $0ff ; BAGON
 	mon_cry CRY_SHELGON,     $01e,  $0ff ; SHELGON
 	mon_cry CRY_SALAMENCE,   $000,  $0ff ; SALAMENCE

@@ -1685,3 +1685,432 @@ Cry_Bronzong_Ch8:
 	noise __, 6, $18, 100
 	noise __, 1, $08, 0
 	endchannel
+
+Cry_Snorunt:
+	musicheader 3, 5, Cry_snorunt_Ch5
+	musicheader 1, 6, Cry_snorunt_Ch6
+	musicheader 1, 8, Cry_snorunt_Ch8
+
+Cry_snorunt_Ch5:
+	dutycycle $2
+	sound __, 2, $58, 1955
+	sound __, 2, $98, 1956
+	sound __, 2, $d8, 1947
+	sound __, 2, $d8, 1947
+	sound __, 2, $c8, 1961
+	sound __, 2, $c8, 1960
+	sound __, 2, $d8, 1939
+	sound __, 2, $d8, 1939
+	sound __, 2, $c8, 1954
+	sound __, 2, $c8, 1953
+	sound __, 2, $d8, 1930
+	sound __, 2, $d8, 1931
+	sound __, 2, $d8, 1948
+	dutycycle $0
+	sound __, 2, $d8, 1945
+	dutycycle $2
+	sound __, 2, $d8, 1920
+	sound __, 2, $d8, 1922
+	dutycycle $0
+	sound __, 2, $98, 1921
+	dutycycle $2
+	sound __, 2, $98, 1939
+	sound __, 2, $68, 1911
+	sound __, 2, $68, 1910
+	sound __, 2, $58, 1911
+	sound __, 2, $28, 1911
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_snorunt_Ch6:
+	dutycycle $0
+	sound __, 2, $18, 1907
+	dutycycle $2
+	sound __, 2, $48, 1946
+	sound __, 2, $68, 1959
+	sound __, 2, $68, 1964
+	dutycycle $3
+	sound __, 2, $68, 1929
+	dutycycle $2
+	sound __, 2, $58, 1927
+	sound __, 2, $78, 1957
+	sound __, 2, $58, 1956
+	dutycycle $3
+	sound __, 2, $58, 1918
+	dutycycle $2
+	sound __, 2, $58, 1918
+	sound __, 2, $78, 1949
+	dutycycle $0
+	sound __, 2, $58, 1947
+	dutycycle $2
+	sound __, 2, $68, 1961
+	sound __, 2, $68, 1965
+	sound __, 2, $68, 1941
+	sound __, 2, $68, 1941
+	dutycycle $0
+	sound __, 2, $58, 1938
+	dutycycle $2
+	sound __, 2, $48, 1953
+	sound __, 2, $38, 1928
+	sound __, 2, $38, 1932
+	dutycycle $0
+	sound __, 2, $28, 1931
+	sound __, 2, $18, 1925
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	endchannel
+
+Cry_snorunt_Ch8:
+	noise __, 2, $68, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $e8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $68, 75
+	noise __, 2, $68, 75
+	noise __, 2, $68, 75
+	noise __, 2, $38, 75
+	noise __, 2, $08, 75
+	noise __, 2, $08, 75
+	endchannel
+
+Cry_Glalie:
+	musicheader 3, 5, Cry_glalie_Ch5
+	musicheader 1, 6, Cry_glalie_Ch6
+	musicheader 1, 8, Cry_glalie_Ch8
+
+Cry_glalie_Ch5:
+	dutycycle $1
+	sound __, 2, $a8, 1904
+	dutycycle $3
+	sound __, 2, $d8, 1904
+	dutycycle $2
+	sound __, 2, $b8, 1904
+	sound __, 2, $98, 1950
+	sound __, 2, $a8, 1945
+	sound __, 2, $88, 1945
+	dutycycle $0
+	sound __, 2, $b8, 1930
+	dutycycle $2
+	sound __, 2, $d8, 1926
+	sound __, 2, $88, 1927
+	sound __, 2, $a8, 1926
+	dutycycle $1
+	sound __, 2, $a8, 1372
+	dutycycle $3
+	sound __, 2, $98, 1393
+	dutycycle $2
+	sound __, 2, $b8, 1705
+	sound __, 2, $c8, 1717
+	dutycycle $3
+	sound __, 2, $d8, 1745
+	dutycycle $1
+	sound __, 2, $d8, 1386
+	dutycycle $2
+	sound __, 2, $d8, 1719
+	dutycycle $1
+	sound __, 2, $d8, 1286
+	sound __, 2, $d8, 1249
+	sound __, 2, $d8, 1239
+	dutycycle $2
+	sound __, 2, $c8, 1162
+	dutycycle $1
+	sound __, 2, $b8, 1138
+	sound __, 2, $88, 1150
+	dutycycle $2
+	sound __, 2, $58, 1138
+	sound __, 2, $68, 1070
+	sound __, 2, $48, 1040
+	dutycycle $0
+	sound __, 2, $38, 1084
+	dutycycle $2
+	sound __, 2, $38, 1024
+	dutycycle $3
+	sound __, 2, $28, 1784
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_glalie_Ch6:
+	dutycycle $2
+	sound __, 2, $48, 1888
+	sound __, 2, $58, 1945
+	sound __, 2, $68, 1945
+	sound __, 2, $48, 1958
+	dutycycle $0
+	sound __, 2, $38, 1955
+	dutycycle $2
+	sound __, 2, $48, 1934
+	sound __, 2, $48, 1872
+	sound __, 2, $68, 1872
+	sound __, 2, $48, 1872
+	sound __, 2, $48, 1859
+	dutycycle $3
+	sound __, 2, $48, 1790
+	dutycycle $1
+	sound __, 2, $48, 1764
+	dutycycle $2
+	sound __, 2, $58, 1799
+	sound __, 2, $68, 1778
+	sound __, 2, $68, 1837
+	sound __, 2, $48, 1860
+	sound __, 2, $08, 0
+	sound __, 2, $48, 1887
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $18, 1728
+	sound __, 2, $18, 1692
+	sound __, 2, $18, 1690
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_glalie_Ch8:
+	noise __, 2, $c8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $98, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $e8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $e8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $e8, 75
+	noise __, 2, $e8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $f8, 75
+	noise __, 2, $88, 75
+	noise __, 2, $58, 75
+	noise __, 2, $78, 75
+	noise __, 2, $68, 75
+	noise __, 2, $28, 75
+	noise __, 2, $38, 75
+	noise __, 2, $38, 75
+	noise __, 1, $08, 75
+	endchannel
+
+Cry_Froslass:
+	musicheader 3, 5, Cry_froslass_Ch5
+	musicheader 1, 6, Cry_froslass_Ch6
+	musicheader 1, 8, Cry_froslass_Ch8
+
+Cry_froslass_Ch5:
+	dutycycle $2
+	sound __, 2, $58, 1964
+	sound __, 2, $78, 1937
+	sound __, 2, $88, 1965
+	sound __, 2, $c8, 1938
+	sound __, 2, $d8, 1937
+	dutycycle $1
+	sound __, 2, $a8, 1829
+	sound __, 2, $a8, 1827
+	dutycycle $2
+	sound __, 2, $c8, 1937
+	sound __, 2, $b8, 1938
+	dutycycle $3
+	sound __, 2, $c8, 1937
+	dutycycle $1
+	sound __, 2, $d8, 1938
+	dutycycle $0
+	sound __, 2, $98, 1937
+	dutycycle $2
+	sound __, 2, $d8, 1937
+	sound __, 2, $d8, 1937
+	dutycycle $3
+	sound __, 2, $d8, 1938
+	dutycycle $2
+	sound __, 2, $a8, 1949
+	sound __, 2, $c8, 1948
+	sound __, 2, $c8, 1949
+	dutycycle $1
+	sound __, 2, $d8, 1940
+	dutycycle $2
+	sound __, 2, $d8, 1941
+	sound __, 2, $d8, 1937
+	sound __, 2, $d8, 1937
+	sound __, 2, $a8, 1938
+	sound __, 2, $d8, 1947
+	sound __, 2, $d8, 1949
+	sound __, 2, $d8, 1936
+	sound __, 2, $d8, 1936
+	sound __, 2, $c8, 1938
+	sound __, 2, $d8, 1956
+	sound __, 2, $d8, 1937
+	dutycycle $1
+	sound __, 2, $d8, 1957
+	dutycycle $2
+	sound __, 2, $c8, 1958
+	sound __, 2, $c8, 1925
+	sound __, 2, $b8, 1897
+	sound __, 2, $c8, 1937
+	sound __, 2, $d8, 1959
+	sound __, 2, $d8, 1936
+	sound __, 2, $d8, 1949
+	sound __, 2, $d8, 1926
+	sound __, 2, $d8, 1936
+	sound __, 2, $d8, 1957
+	sound __, 2, $c8, 1937
+	sound __, 2, $d8, 1912
+	sound __, 2, $d8, 1899
+	sound __, 2, $d8, 1900
+	sound __, 2, $d8, 1899
+	sound __, 2, $d8, 1897
+	sound __, 2, $c8, 1898
+	sound __, 2, $78, 1898
+	sound __, 2, $58, 1916
+	sound __, 2, $28, 1930
+	sound __, 2, $18, 1921
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_froslass_Ch6:
+	dutycycle $2
+	sound __, 2, $38, 1948
+	sound __, 2, $48, 1948
+	sound __, 2, $48, 1937
+	sound __, 2, $58, 1965
+	sound __, 2, $08, 0
+	sound __, 2, $58, 1960
+	sound __, 2, $68, 1955
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $78, 1949
+	sound __, 2, $48, 1949
+	sound __, 2, $48, 1948
+	sound __, 2, $08, 0
+	sound __, 2, $68, 1951
+	dutycycle $3
+	sound __, 2, $78, 1938
+	sound __, 2, $88, 1938
+	dutycycle $1
+	sound __, 2, $88, 1939
+	dutycycle $2
+	sound __, 2, $78, 1949
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	sound __, 2, $38, 1947
+	sound __, 2, $08, 0
+	dutycycle $3
+	sound __, 2, $58, 1938
+	sound __, 2, $58, 1950
+	dutycycle $2
+	sound __, 2, $68, 1949
+	dutycycle $0
+	sound __, 2, $78, 1955
+	sound __, 2, $08, 0
+	sound __, 2, $58, 1958
+	dutycycle $2
+	sound __, 2, $68, 1936
+	sound __, 2, $88, 1922
+	sound __, 2, $78, 1900
+	sound __, 2, $78, 1928
+	sound __, 2, $58, 1922
+	sound __, 2, $88, 1920
+	dutycycle $3
+	sound __, 2, $68, 1900
+	dutycycle $2
+	sound __, 2, $98, 1930
+	dutycycle $3
+	sound __, 2, $88, 1937
+	dutycycle $2
+	sound __, 2, $78, 1949
+	sound __, 2, $98, 1936
+	sound __, 2, $68, 1947
+	sound __, 2, $88, 1949
+	sound __, 2, $68, 1937
+	sound __, 2, $58, 1922
+	sound __, 2, $68, 1916
+	sound __, 2, $78, 1937
+	sound __, 2, $88, 1937
+	sound __, 2, $38, 1948
+	sound __, 2, $38, 1900
+	sound __, 2, $18, 1906
+	dutycycle $3
+	sound __, 2, $18, 1851
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_froslass_Ch8:
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $28, 44
+	noise __, 2, $28, 44
+	noise __, 2, $28, 44
+	noise __, 2, $18, 44
+	noise __, 2, $28, 44
+	noise __, 2, $28, 44
+	noise __, 2, $28, 44
+	noise __, 2, $28, 44
+	noise __, 2, $28, 44
+	noise __, 2, $18, 44
+	noise __, 2, $28, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $28, 44
+	noise __, 2, $18, 44
+	noise __, 2, $28, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $08, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 2, $08, 44
+	noise __, 1, $08, 44
+	endchannel

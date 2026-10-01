@@ -135,3 +135,6 @@ Cries:
 	dba Cry_Toxicroak
 	dba Cry_Bronzor
 	dba Cry_Bronzong
+	dba Cry_Snorunt
+	dba Cry_Glalie
+	dba Cry_Froslass
