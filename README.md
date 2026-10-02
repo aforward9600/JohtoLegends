@@ -59,9 +59,9 @@ Download a ROM of Crystal with the name: Pokemon - Crystal Version (UE) (V1.1) [
 
 It has to be v1.1 for the patch to work.
 
-Below is a link to the current patch, Version 0.8.5.6 Beta:
+Below is a link to the current patch, Version 0.8.8.0 Beta:
 
-https://www.mediafire.com/file/wiufhlse3wpiz8u/johtolegendsv0.8.5.6.ips/file
+https://www.mediafire.com/file/dmh0omcbynohi96/johtolegendsv0.8.8.0.ips/file
 
 Faithful:
 

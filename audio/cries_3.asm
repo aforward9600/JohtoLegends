@@ -135,14 +135,9 @@ Cry_manectric_Ch6:
 	sound __, 1, $98, 1890
 	dutycycle $2
 	sound __, 1, $78, 1886
+.loop
 	sound __, 1, $08, 0
-	sound __, 1, $08, 0
-	sound __, 1, $08, 0
-	sound __, 1, $08, 0
-	sound __, 1, $08, 0
-	sound __, 1, $08, 0
-	sound __, 1, $08, 0
-	sound __, 1, $08, 0
+	loopchannel 8, .loop
 	sound __, 1, $38, 1796
 	sound __, 1, $38, 1819
 	sound __, 1, $38, 1641
@@ -200,22 +195,17 @@ Cry_manectric_Ch6:
 	endchannel
 
 Cry_manectric_Ch8:
+.loop
 	noise __, 1, $68, 75
 	noise __, 1, $68, 75
 	noise __, 1, $58, 75
-	noise __, 1, $68, 75
-	noise __, 1, $68, 75
-	noise __, 1, $58, 75
+	loopchannel 2, .loop
 	noise __, 1, $38, 75
 	noise __, 1, $58, 75
 	noise __, 1, $58, 75
+.loop2
 	noise __, 1, $68, 75
-	noise __, 1, $68, 75
-	noise __, 1, $68, 75
-	noise __, 1, $68, 75
-	noise __, 1, $68, 75
-	noise __, 1, $68, 75
-	noise __, 1, $68, 75
+	loopchannel 7, .loop2
 	noise __, 1, $58, 75
 	noise __, 1, $68, 75
 	noise __, 1, $48, 75
@@ -230,9 +220,9 @@ Cry_manectric_Ch8:
 	noise __, 1, $68, 75
 	noise __, 1, $38, 75
 	noise __, 1, $68, 75
+.loop3
 	noise __, 1, $58, 75
-	noise __, 1, $58, 75
-	noise __, 1, $58, 75
+	loopchannel 3, .loop3
 	noise __, 1, $68, 75
 	noise __, 1, $58, 75
 	noise __, 1, $58, 75
@@ -248,17 +238,16 @@ Cry_manectric_Ch8:
 	noise __, 1, $58, 75
 	noise __, 1, $68, 75
 	noise __, 1, $68, 75
+.loop4
 	noise __, 1, $48, 75
 	noise __, 1, $38, 75
-	noise __, 1, $48, 75
-	noise __, 1, $38, 75
+	loopchannel 2, .loop4
+.loop5
 	noise __, 1, $28, 75
-	noise __, 1, $28, 75
-	noise __, 1, $28, 75
+	loopchannel 3, .loop5
+.loop6
 	noise __, 1, $18, 75
-	noise __, 1, $18, 75
-	noise __, 1, $18, 75
-	noise __, 1, $18, 75
+	loopchannel 4, .loop6
 	noise __, 1, $08, 75
 	endchannel
 
@@ -415,9 +404,9 @@ Cry_Wyrdeer_Ch6:
 	sound __, 1, $18, 1865
 	sound __, 1, $18, 1912
 	sound __, 1, $18, 1907
+.loop
 	sound __, 1, $08, 0
-	sound __, 1, $08, 0
-	sound __, 1, $08, 0
+	loopchannel 3, .loop
 	endchannel
 
 Cry_Wyrdeer_Ch8:
