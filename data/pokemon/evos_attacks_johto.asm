@@ -2308,7 +2308,7 @@ endc
 	db 0 ;  no more level-up moves
 
 GligarEvosAttacks:
-	dbbbw EVOLVE_HOLD, RAZOR_FANG, TR_MORNDAY, GLISCOR
+	dbbbw EVOLVE_HOLD, RAZOR_FANG, TR_EVENITE, GLISCOR
 	db 0 ; no more evolutions
 	dbw 1, POISON_STING
 	dbw 4, SAND_ATTACK
