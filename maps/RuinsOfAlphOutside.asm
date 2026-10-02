@@ -58,7 +58,6 @@ RuinsOfAlphOutsideScientistSceneContinue:
 	writetext RuinsOfAlphOutsideScientistText
 	waitbutton
 	closetext
-	playmusic MUSIC_SHOW_ME_AROUND
 	follow RUINSOFALPHOUTSIDE_SCIENTIST, PLAYER
 	applymovement RUINSOFALPHOUTSIDE_SCIENTIST, MovementData_0x580ba
 	disappear RUINSOFALPHOUTSIDE_SCIENTIST

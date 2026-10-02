@@ -103,7 +103,6 @@ BurnedTower1FEusineScript:
 	pause 15
 	applymovement PLAYER, BurnedTowerMovement_PlayerWalksToSilver
 	applymovement BURNEDTOWER1F_EUSINE, BurnedTowerMovement_SilverWalksToPlayer
-	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
 	opentext
 	writetext EusineHelloText
 	waitbutton

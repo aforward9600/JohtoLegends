@@ -146,3 +146,6 @@
 	const CRY_DUSKULL
 	const CRY_DUSCLOPS
 	const CRY_DUSKNOIR
+	const CRY_ABSOL
+	const CRY_SKORUPI
+	const CRY_DRAPION

@@ -18,7 +18,6 @@ Music:
 	dba Music_LavenderTown
 	dba Music_Route2
 	dba Music_MtMoon
-	dba Music_ShowMeAround
 	dba Music_GameCorner
 	dba Music_Bicycle
 	dba Music_HallOfFame
@@ -89,7 +88,6 @@ Music:
 	dba Music_DancingHall
 	dba Music_PostCredits
 ; new to Crystal
-	dba Music_LookMysticalMan
 	dba Music_BattleTowerTheme
 	dba Music_SuicuneBattle
 	dba Music_BattleTowerLobby

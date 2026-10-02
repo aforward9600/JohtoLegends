@@ -1528,16 +1528,15 @@ MusicPlayerData:
 	dbw 130, .Megalovania
 	dbw 132, .AnthemMusic
 	dbw 134, .MomsMusic
-	dbw 136, .EusineMusic
-	dbw 138, .CynthiaEncounterMusic
-	dbw 140, .UnwaveringHeartMusic
-	dbw 142, .SurfMusic
-	dbw 144, .UnownSignalMusic
-	dbw 146, .BikeMusic
-	dbw 148, .ProfessorOakMusic
-	dbw 150, .ClefairyDanceMusic
-	dbw 152, .PokemonMarchMusic
-	dbw 154, .RegiMusic
+	dbw 136, .CynthiaEncounterMusic
+	dbw 138, .UnwaveringHeartMusic
+	dbw 140, .SurfMusic
+	dbw 142, .UnownSignalMusic
+	dbw 144, .BikeMusic
+	dbw 146, .ProfessorOakMusic
+	dbw 148, .ClefairyDanceMusic
+	dbw 150, .PokemonMarchMusic
+	dbw 152, .RegiMusic
 	db -1
 
 .RegiMusic:
@@ -1574,10 +1573,6 @@ MusicPlayerData:
 
 .CynthiaEncounterMusic:
 	ld de, MUSIC_CYNTHIA_ENCOUNTER
-	jp .RadioMusicRestartDE
-
-.EusineMusic:
-	ld de, MUSIC_MYSTICALMAN_ENCOUNTER
 	jp .RadioMusicRestartDE
 
 .MomsMusic:
@@ -1932,16 +1927,15 @@ RadioChannels:
 	dbw 130, .Megalovania
 	dbw 132, .AnthemMusic
 	dbw 134, .MomsMusic
-	dbw 136, .EusineMusic
-	dbw 138, .CynthiaEncounterMusic
-	dbw 140, .UnwaveringHeartMusic
-	dbw 142, .SurfMusic
-	dbw 144, .UnownSignalMusic
-	dbw 146, .BikeMusic
-	dbw 148, .ProfessorOakMusic
-	dbw 150, .ClefairyDanceMusic
-	dbw 152, .PokemonMarchMusic
-	dbw 154, .RegiMusic
+	dbw 136, .CynthiaEncounterMusic
+	dbw 138, .UnwaveringHeartMusic
+	dbw 140, .SurfMusic
+	dbw 142, .UnownSignalMusic
+	dbw 144, .BikeMusic
+	dbw 146, .ProfessorOakMusic
+	dbw 148, .ClefairyDanceMusic
+	dbw 150, .PokemonMarchMusic
+	dbw 152, .RegiMusic
 	db -1
 
 .PokemonMarchMusic:
@@ -1990,12 +1984,6 @@ RadioChannels:
 	ld a, BUENAS_PASSWORD_3 ; Go Ichinose & TriteHexagon
 	call StoreMusicPlayerData
 	ld de, CynthiaEncounterMusicName
-	ret
-
-.EusineMusic:
-	ld a, BUENAS_PASSWORD ; Morikazu Aoki
-	call StoreMusicPlayerData
-	ld de, EusineMusicName
 	ret
 
 .MomsMusic:
@@ -2794,7 +2782,6 @@ DragonsDenMusicName:       db "Dragon's Den    @"
 AnthemMusicName:           db "Stadium 2 Anthem@"
 MomsMusicName:             db "Mom             @"
 CynthiaEncounterMusicName: db "Meet Cynthia    @"
-EusineMusicName:           db "Eusine          @"
 UnwaveringHeartMusicName:  db "Unwavering Heart@"
 SurfMusicName:             db "Surf Theme      @"
 UnownSignalMusicName:      db "Unown Signal    @"

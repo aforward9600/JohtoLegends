@@ -35,7 +35,6 @@ INCLUDE "audio/music/looklass.asm"
 INCLUDE "audio/music/lookofficer.asm"
 INCLUDE "audio/music/route2.asm"
 INCLUDE "audio/music/mtmoon.asm"
-INCLUDE "audio/music/showmearound.asm"
 INCLUDE "audio/music/gamecorner.asm"
 INCLUDE "audio/music/bicycle.asm"
 INCLUDE "audio/music/looksage.asm"
@@ -96,7 +95,6 @@ INCLUDE "audio/music/lookkimonogirl.asm"
 
 SECTION "Songs 5", ROMX
 
-INCLUDE "audio/music/lookmysticalman.asm"
 INCLUDE "audio/music/battletowertheme.asm"
 INCLUDE "audio/music/suicunebattle.asm"
 INCLUDE "audio/music/battletowerlobby.asm"

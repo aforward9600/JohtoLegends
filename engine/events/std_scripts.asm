@@ -973,7 +973,6 @@ TelevisionScript:
 	sjump .endchannel
 .Tuesday:
 	sjump SwarmScript
-	end
 .Wednesday:
 	playmusic MUSIC_POKEMON_TALK
 	opentext
@@ -1128,12 +1127,7 @@ TelevisionScript:
 	end
 
 .Thursday:
-	playmusic MUSIC_SHOW_ME_AROUND
-	opentext
-	farwritetext ComedyShowText
-	waitbutton
-	closetext
-	sjump .endchannel
+	sjump SwarmScript
 .Friday:
 	playmusic MUSIC_ELITE_FOUR
 	opentext

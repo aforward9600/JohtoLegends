@@ -76,7 +76,7 @@ SherlesTriesToArrestKoga:
 	moveobject MAHOGANYMART1F_SHERLES, 10, 7
 	turnobject MAHOGANYMART1F_SHERLES, UP
 	appear MAHOGANYMART1F_SHERLES
-	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
+	playmusic MUSIC_OFFICER_ENCOUNTER
 	applymovement MAHOGANYMART1F_SHERLES, MovementData_0x6c3f6
 	opentext
 	writetext ThankGoodnessIFoundYouText

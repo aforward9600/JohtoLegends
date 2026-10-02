@@ -18,7 +18,6 @@
 	const MUSIC_LAVENDER_TOWN                ; 0e
 	const MUSIC_ROUTE_2                      ; 0f
 	const MUSIC_MT_MOON                      ; 10
-	const MUSIC_SHOW_ME_AROUND               ; 11
 	const MUSIC_GAME_CORNER                  ; 12
 	const MUSIC_BICYCLE                      ; 13
 	const MUSIC_HALL_OF_FAME                 ; 14
@@ -90,7 +89,6 @@
 	const MUSIC_POST_CREDITS                 ; 5c
 
 ; new to Crystal
-	const MUSIC_MYSTICALMAN_ENCOUNTER        ; 61
 	const MUSIC_BATTLE_TOWER_THEME           ; 63
 	const MUSIC_SUICUNE_BATTLE               ; 64
 	const MUSIC_BATTLE_TOWER_LOBBY           ; 65

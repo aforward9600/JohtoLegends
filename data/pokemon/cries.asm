@@ -375,7 +375,7 @@ PokemonCries::
 	mon_cry CRY_DUSKULL,     $000,  $0ff ; DUSKULL
 	mon_cry CRY_DUSCLOPS,    $000,  $0ff ; DUSCLOPS
 	mon_cry CRY_DUSKNOIR,    $000,  $0ff ; DUSKNOIR
-	mon_cry CRY_BLASTOISE,   $280,  $0a0 ; ABSOL
+	mon_cry CRY_ABSOL,       $000,  $0ff ; ABSOL
 	mon_cry CRY_SNORUNT,     $000,  $0ff ; SNORUNT
 	mon_cry CRY_GLALIE,      $000,  $0ff ; GLALIE
 	mon_cry CRY_FROSLASS,    $000,  $0ff ; FROSLASS
@@ -393,8 +393,8 @@ PokemonCries::
 	mon_cry CRY_GARCHOMP,    $000,  $0ff ; GARCHOMP
 	mon_cry CRY_RIOLU,       $000,  $0ff ; RIOLU
 	mon_cry CRY_LUCARIO,     $000,  $0ff ; LUCARIO
-	mon_cry CRY_AMPHAROS,    $1c8,  $190 ; SKORUPI
-	mon_cry CRY_CLEFFA,     -$33e,  $200 ; DRAPION
+	mon_cry CRY_SKORUPI,     $000,  $0ff ; SKORUPI
+	mon_cry CRY_DRAPION,     $000,  $0ff ; DRAPION
 	mon_cry CRY_CROAGUNK,    $000,  $0ff ; CROAGUNK
 	mon_cry CRY_TOXICROAK,   $000,  $0ff ; TOXICROAK
 	mon_cry CRY_TEDDIURSA,   $58e,  $0c8 ; REGIROCK PLACEHOLDER

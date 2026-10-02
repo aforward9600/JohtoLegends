@@ -2752,3 +2752,519 @@ Cry_Dusknoir_Ch8:
 	noise __, 3, $18, 92
 	noise __, 3, $08, 0
 	endchannel
+
+Cry_Absol:
+	musicheader 3, 5, Cry_absol_Ch5
+	musicheader 1, 6, Cry_absol_Ch6
+	musicheader 1, 8, Cry_absol_Ch8
+
+Cry_absol_Ch5:
+	dutycycle $1
+	sound __, 2, $d8, 1870
+	sound __, 2, $d8, 1854
+	sound __, 2, $d8, 1874
+	sound __, 2, $d8, 1833
+	sound __, 2, $b8, 1832
+	sound __, 2, $d8, 1849
+	sound __, 2, $d8, 1823
+	dutycycle $3
+	sound __, 2, $88, 1812
+	dutycycle $1
+	sound __, 2, $d8, 1839
+	sound __, 2, $d8, 1868
+	sound __, 2, $c8, 1855
+	dutycycle $3
+	sound __, 2, $d8, 1856
+	dutycycle $2
+	sound __, 2, $b8, 1971
+	dutycycle $1
+	sound __, 2, $78, 1874
+	sound __, 2, $28, 1889
+	endchannel
+
+Cry_absol_Ch6:
+	dutycycle $2
+	sound __, 2, $78, 1962
+	sound __, 2, $98, 1962
+	sound __, 2, $88, 1951
+	dutycycle $3
+	sound __, 2, $98, 1856
+	dutycycle $1
+	sound __, 2, $78, 1853
+	dutycycle $2
+	sound __, 2, $68, 1824
+	dutycycle $3
+	sound __, 2, $78, 1842
+	dutycycle $1
+	sound __, 2, $38, 1841
+	sound __, 2, $68, 1863
+	dutycycle $2
+	sound __, 2, $88, 1849
+	dutycycle $1
+	sound __, 2, $88, 1873
+	sound __, 2, $98, 1877
+	dutycycle $2
+	sound __, 2, $68, 1961
+	sound __, 2, $48, 1971
+	sound __, 2, $28, 1971
+	endchannel
+
+Cry_absol_Ch8:
+	noise __, 2, $38, 44
+.loop
+	noise __, 2, $38, 44
+	noise __, 2, $48, 44
+	loopchannel 2, .loop
+.loop2
+	noise __, 2, $18, 44
+	noise __, 2, $08, 44
+	loopchannel 2, .loop2
+	noise __, 2, $28, 44
+	noise __, 2, $48, 44
+	noise __, 2, $48, 44
+	noise __, 2, $38, 44
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	endchannel
+
+Cry_Skorupi:
+	musicheader 4, 5, Cry_Skorupi_Ch5
+	musicheader 1, 6, Cry_Skorupi_Ch6
+	musicheader 1, 7, Cry_Skorupi_Ch7
+	musicheader 1, 8, Cry_Skorupi_Ch8
+
+Cry_Skorupi_Ch5:
+	sound __, 2, $08, 0
+	dutycycle $1
+	sound __, 1, $18, 1835
+	sound __, 1, $08, 0
+	dutycycle $0
+	sound __, 1, $18, 1977
+	dutycycle $1
+	sound __, 1, $18, 1977
+	dutycycle $0
+	sound __, 1, $18, 1328
+	dutycycle $1
+.loop
+	sound __, 1, $28, 1977
+	sound __, 1, $08, 0
+	loopchannel 2, .loop
+	dutycycle $0
+	sound __, 1, $28, 1682
+	sound __, 1, $08, 0
+	dutycycle $2
+	sound __, 1, $28, 1830
+	dutycycle $3
+	sound __, 1, $28, 1977
+	dutycycle $1
+	sound __, 1, $18, 1977
+	sound __, 1, $28, 1977
+	dutycycle $2
+	sound __, 1, $18, 1970
+	sound __, 1, $38, 1970
+	sound __, 1, $28, 2008
+	dutycycle $0
+	sound __, 1, $28, 1904
+	dutycycle $2
+	sound __, 1, $18, 1977
+	sound __, 1, $28, 2003
+	sound __, 1, $18, 2005
+	sound __, 1, $28, 1991
+	sound __, 1, $28, 2010
+	dutycycle $1
+	sound __, 1, $28, 1983
+	dutycycle $2
+	sound __, 1, $48, 1990
+	sound __, 1, $58, 1989
+	sound __, 2, $28, 1989
+	sound __, 2, $28, 1987
+	sound __, 1, $28, 1986
+	sound __, 1, $28, 1989
+	sound __, 1, $48, 1988
+	sound __, 1, $38, 1987
+	sound __, 1, $38, 1969
+	sound __, 1, $58, 1968
+	sound __, 1, $48, 1965
+	sound __, 1, $38, 2009
+	sound __, 1, $28, 1968
+	sound __, 1, $28, 1988
+	sound __, 1, $28, 1393
+	sound __, 1, $18, 2003
+	sound __, 1, $28, 1970
+	sound __, 1, $18, 1965
+	sound __, 1, $18, 1964
+	sound __, 1, $28, 1969
+	sound __, 1, $58, 1973
+	sound __, 1, $28, 1973
+	sound __, 1, $18, 1968
+	sound __, 1, $18, 1970
+	sound __, 1, $18, 1967
+	sound __, 1, $18, 1969
+	sound __, 1, $18, 1968
+	sound __, 1, $08, 0
+	sound __, 1, $18, 1969
+	sound __, 1, $18, 1998
+	sound __, 1, $18, 1969
+	sound __, 4, $08, 0
+	endchannel
+
+Cry_Skorupi_Ch6:
+	sound __, 18, $08, 0
+	dutycycle $2
+	sound __, 1, $58, 1985
+	sound __, 1, $38, 1985
+	sound __, 3, $08, 0
+	sound __, 1, $38, 2000
+	sound __, 1, $38, 1999
+	sound __, 3, $08, 0
+	dutycycle $0
+	sound __, 1, $68, 1949
+	sound __, 1, $58, 1949
+	sound __, 2, $08, 0
+	dutycycle $2
+	sound __, 1, $38, 1977
+	sound __, 1, $38, 1978
+	sound __, 5, $08, 0
+	sound __, 1, $48, 1986
+	sound __, 1, $58, 1987
+	sound __, 1, $48, 1976
+	dutycycle $3
+	sound __, 1, $48, 1977
+	sound __, 1, $38, 1976
+	sound __, 1, $08, 0
+	dutycycle $2
+	sound __, 1, $48, 1988
+	sound __, 1, $18, 1988
+	sound __, 6, $08, 0
+	sound __, 2, $18, 1988
+	sound __, 9, $08, 0
+	endchannel
+
+Cry_Skorupi_Ch7:
+	sound __, 1, $35, 1941
+	sound __, 1, $00, 0
+	sound __, 1, $35, 1942
+	sound __, 2, $31, 2013
+	sound __, 1, $21, 2013
+	sound __, 1, $37, 1688
+	sound __, 1, $21, 2013
+	sound __, 1, $31, 2024
+	sound __, 1, $21, 2013
+	sound __, 1, $31, 2013
+	sound __, 1, $27, 1865
+	sound __, 1, $31, 2013
+	sound __, 1, $25, 1939
+	sound __, 1, $21, 2013
+	sound __, 1, $31, 2013
+	sound __, 1, $21, 2013
+	sound __, 1, $21, 2009
+	sound __, 1, $11, 2009
+	sound __, 1, $21, 2028
+	sound __, 1, $26, 1976
+	sound __, 1, $21, 2013
+	sound __, 1, $21, 2026
+	sound __, 1, $21, 2027
+	sound __, 1, $21, 2020
+	sound __, 1, $21, 2029
+	sound __, 1, $22, 2016
+	sound __, 1, $11, 2019
+	sound __, 1, $12, 2018
+	sound __, 1, $21, 2018
+	sound __, 1, $22, 2019
+	sound __, 2, $21, 2018
+	sound __, 1, $21, 2017
+	sound __, 1, $21, 2019
+	sound __, 2, $11, 2018
+	sound __, 1, $11, 2009
+	sound __, 1, $11, 2008
+	sound __, 1, $11, 2007
+	sound __, 1, $11, 2029
+	sound __, 1, $20, 2008
+	sound __, 1, $21, 2018
+	sound __, 1, $28, 1721
+	sound __, 1, $31, 2026
+	sound __, 1, $22, 2009
+	sound __, 1, $30, 2007
+	sound __, 1, $31, 2006
+	sound __, 1, $21, 2009
+	sound __, 1, $11, 2010
+	sound __, 1, $21, 2010
+	sound __, 1, $21, 2008
+	sound __, 1, $31, 2009
+	sound __, 1, $31, 2008
+	sound __, 1, $31, 2009
+	sound __, 2, $31, 2008
+	sound __, 1, $31, 2009
+	sound __, 1, $31, 2023
+	sound __, 1, $31, 2009
+	sound __, 1, $31, 2008
+	sound __, 2, $31, 2009
+	sound __, 1, $00, 0
+	endchannel
+
+Cry_Skorupi_Ch8:
+	noise __, 2, $08, 0
+	noise __, 1, $18, 92
+	noise __, 1, $08, 0
+.loop
+	noise __, 1, $18, 92
+	noise __, 1, $28, 92
+	loopchannel 3, .loop
+	noise __, 1, $08, 0
+	noise __, 1, $28, 92
+	noise __, 1, $08, 0
+	noise __, 2, $28, 92
+	noise __, 1, $18, 92
+	noise __, 2, $28, 92
+	noise __, 1, $38, 92
+	noise __, 8, $28, 92
+	noise __, 1, $38, 92
+	noise __, 1, $48, 92
+	noise __, 6, $28, 92
+	noise __, 1, $48, 92
+	noise __, 4, $38, 92
+	noise __, 4, $28, 92
+	noise __, 1, $18, 92
+	noise __, 1, $28, 92
+	noise __, 1, $18, 92
+	noise __, 2, $08, 0
+	noise __, 4, $18, 92
+	noise __, 2, $08, 0
+	noise __, 1, $18, 92
+	noise __, 3, $08, 0
+	noise __, 1, $18, 92
+	noise __, 4, $08, 0
+	endchannel
+
+Cry_Drapion:
+	musicheader 4, 5, Cry_drapion_Ch5
+	musicheader 1, 6, Cry_drapion_Ch6
+	musicheader 1, 7, Cry_drapion_Ch7
+	musicheader 1, 8, Cry_drapion_Ch8
+
+Cry_drapion_Ch5:
+	dutycycle $3
+	sound __, 1, $68, 1943
+	dutycycle $2
+	sound __, 1, $78, 1964
+	sound __, 1, $68, 1885
+	sound __, 1, $78, 1885
+	sound __, 1, $78, 1959
+	sound __, 1, $68, 1970
+	sound __, 1, $68, 1955
+	sound __, 1, $58, 1955
+	sound __, 1, $68, 1953
+	sound __, 1, $b8, 1997
+	sound __, 1, $d8, 1995
+	sound __, 1, $b8, 2008
+	sound __, 1, $a8, 2007
+	sound __, 1, $c8, 2007
+	sound __, 1, $b8, 1997
+	sound __, 1, $a8, 1979
+	dutycycle $1
+	sound __, 1, $b8, 1979
+	dutycycle $2
+	sound __, 1, $b8, 1977
+	sound __, 1, $98, 1976
+	sound __, 1, $b8, 1982
+	sound __, 1, $b8, 1974
+	sound __, 1, $c8, 1975
+	dutycycle $1
+	sound __, 1, $c8, 1975
+	dutycycle $2
+	sound __, 1, $b8, 1983
+	sound __, 1, $c8, 1975
+	dutycycle $0
+	sound __, 1, $c8, 1956
+	dutycycle $1
+	sound __, 1, $d8, 1946
+	dutycycle $2
+	sound __, 1, $d8, 1944
+	dutycycle $3
+	sound __, 1, $d8, 1944
+	dutycycle $2
+	sound __, 1, $d8, 1955
+	dutycycle $3
+	sound __, 1, $d8, 1945
+	dutycycle $2
+	sound __, 1, $d8, 1961
+	sound __, 1, $d8, 1945
+	dutycycle $3
+	sound __, 1, $d8, 1941
+	dutycycle $2
+	sound __, 1, $d8, 1939
+	sound __, 1, $d8, 1956
+	sound __, 1, $d8, 1940
+	dutycycle $1
+	sound __, 1, $d8, 1941
+	dutycycle $2
+	sound __, 1, $d8, 1938
+	sound __, 1, $c8, 1954
+	dutycycle $1
+	sound __, 1, $d8, 1936
+	dutycycle $2
+	sound __, 1, $d8, 1934
+	sound __, 1, $d8, 1951
+	sound __, 1, $d8, 1941
+	dutycycle $1
+	sound __, 1, $d8, 1930
+	dutycycle $2
+	sound __, 1, $d8, 1927
+	sound __, 1, $a8, 1925
+	dutycycle $1
+	sound __, 1, $c8, 1923
+	dutycycle $3
+	sound __, 1, $d8, 1922
+	dutycycle $2
+	sound __, 1, $b8, 1920
+	sound __, 1, $78, 1958
+	endchannel
+
+Cry_drapion_Ch6:
+	sound __, 3, $08, 0
+	dutycycle $2
+	sound __, 1, $58, 1939
+	sound __, 1, $58, 1940
+	sound __, 1, $08, 0
+	sound __, 1, $48, 1926
+	sound __, 1, $38, 1925
+	sound __, 1, $48, 1929
+	sound __, 1, $08, 0
+	dutycycle $3
+	sound __, 1, $a8, 1979
+	sound __, 1, $78, 1978
+	sound __, 2, $08, 0
+	dutycycle $2
+	sound __, 1, $88, 2006
+	sound __, 1, $68, 2003
+	sound __, 1, $08, 0
+	dutycycle $1
+	sound __, 1, $78, 1984
+	dutycycle $2
+	sound __, 1, $78, 1983
+	sound __, 1, $88, 1987
+	sound __, 1, $78, 1987
+	sound __, 1, $88, 1988
+	sound __, 1, $98, 1987
+	sound __, 1, $08, 0
+	sound __, 1, $98, 1982
+	sound __, 1, $98, 1981
+	sound __, 1, $98, 1956
+	sound __, 1, $98, 1955
+	dutycycle $3
+	sound __, 1, $a8, 1953
+	dutycycle $2
+	sound __, 1, $98, 1945
+	sound __, 3, $08, 0
+	sound __, 1, $a8, 1951
+	sound __, 1, $98, 1949
+	sound __, 1, $08, 0
+	sound __, 1, $a8, 1958
+	dutycycle $3
+	sound __, 1, $88, 1958
+	sound __, 1, $a8, 1957
+	dutycycle $2
+	sound __, 1, $78, 1962
+	sound __, 1, $98, 1946
+	sound __, 1, $98, 1945
+	sound __, 1, $98, 1941
+	sound __, 1, $08, 0
+	sound __, 1, $88, 1941
+	dutycycle $3
+	sound __, 1, $a8, 1948
+	dutycycle $2
+	sound __, 1, $78, 1950
+	sound __, 1, $88, 1935
+	sound __, 1, $78, 1934
+	dutycycle $3
+	sound __, 1, $88, 1942
+	sound __, 1, $48, 1938
+	endchannel
+
+Cry_drapion_Ch7:
+	sound __, 1, $25, 1950
+	sound __, 1, $24, 1949
+	sound __, 1, $20, 1987
+	sound __, 1, $21, 2001
+	sound __, 2, $21, 2006
+	sound __, 1, $20, 1979
+	sound __, 1, $20, 1969
+	sound __, 1, $21, 1984
+	sound __, 1, $11, 2020
+	sound __, 1, $11, 2022
+	sound __, 2, $11, 2028
+	sound __, 1, $11, 2031
+	sound __, 1, $11, 2017
+	sound __, 1, $11, 2014
+	sound __, 2, $11, 2023
+	sound __, 1, $11, 2025
+	sound __, 1, $11, 2012
+	sound __, 2, $11, 2025
+	sound __, 1, $11, 2026
+	sound __, 2, $11, 2025
+	sound __, 1, $16, 1997
+	sound __, 2, $11, 2015
+	sound __, 1, $11, 2025
+	sound __, 2, $11, 2005
+	sound __, 1, $11, 2017
+	sound __, 1, $11, 2014
+	sound __, 1, $11, 2003
+	sound __, 1, $11, 2014
+	sound __, 1, $11, 2016
+	sound __, 1, $11, 2000
+	sound __, 2, $11, 2014
+	sound __, 1, $11, 1997
+	sound __, 2, $11, 2012
+	sound __, 1, $11, 2008
+	sound __, 1, $11, 1999
+	sound __, 2, $11, 2010
+	sound __, 1, $11, 2012
+	sound __, 3, $11, 2008
+	sound __, 1, $21, 1983
+	endchannel
+
+Cry_drapion_Ch8:
+	noise __, 1, $58, 100
+	noise __, 1, $68, 100
+	noise __, 1, $58, 100
+	noise __, 2, $68, 100
+	noise __, 2, $58, 100
+	noise __, 1, $48, 100
+	noise __, 1, $58, 100
+	noise __, 1, $98, 100
+	noise __, 1, $b8, 100
+	noise __, 2, $98, 100
+	noise __, 1, $a8, 100
+	noise __, 1, $98, 100
+.loop
+	noise __, 1, $88, 100
+	noise __, 2, $98, 100
+	loopchannel 2, .loop
+	noise __, 2, $a8, 100
+	noise __, 1, $98, 100
+	noise __, 2, $a8, 100
+	noise __, 2, $d8, 100
+	noise __, 1, $f8, 100
+	noise __, 1, $c8, 100
+	noise __, 1, $f8, 100
+	noise __, 1, $e8, 100
+	noise __, 1, $f8, 100
+	noise __, 1, $d8, 100
+	noise __, 1, $f8, 100
+	noise __, 1, $e8, 100
+	noise __, 1, $b8, 100
+	noise __, 1, $f8, 100
+	noise __, 1, $e8, 100
+	noise __, 1, $a8, 100
+	noise __, 1, $f8, 100
+	noise __, 1, $d8, 100
+	noise __, 1, $c8, 100
+	noise __, 1, $b8, 100
+	noise __, 1, $e8, 100
+	noise __, 1, $c8, 100
+	noise __, 1, $88, 100
+	noise __, 1, $98, 100
+	noise __, 1, $a8, 100
+	noise __, 1, $98, 100
+	noise __, 1, $68, 100
+	endchannel

@@ -141,3 +141,6 @@ Cries:
 	dba Cry_Duskull
 	dba Cry_Dusclops
 	dba Cry_Dusknoir
+	dba Cry_Absol
+	dba Cry_Skorupi
+	dba Cry_Drapion
