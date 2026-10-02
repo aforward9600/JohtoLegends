@@ -144,3 +144,9 @@ Cries:
 	dba Cry_Absol
 	dba Cry_Skorupi
 	dba Cry_Drapion
+	dba Cry_Cacnea
+	dba Cry_Cacturne
+	dba Cry_Carvanha
+	dba Cry_Sharpedo
+	dba Cry_Numel
+	dba Cry_Camerupt

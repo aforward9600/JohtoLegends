@@ -3171,3 +3171,589 @@ Cry_drapion_Ch8:
 	noise __, 1, $98, 100
 	noise __, 1, $68, 100
 	endchannel
+
+Cry_Cacnea:
+	musicheader 3, 5, Cry_cacnea_Ch5
+	musicheader 1, 6, Cry_cacnea_Ch6
+	musicheader 1, 8, Cry_cacnea_Ch8
+
+Cry_cacnea_Ch5:
+	dutycycle $0
+	sound __, 1, $78, 1897
+	dutycycle $2
+	sound __, 1, $88, 1933
+	sound __, 1, $d8, 1941
+	sound __, 1, $c8, 1939
+	dutycycle $3
+	sound __, 1, $c8, 1937
+	dutycycle $2
+	sound __, 1, $78, 1939
+	dutycycle $0
+	sound __, 1, $58, 1942
+	dutycycle $3
+	sound __, 1, $48, 1905
+	dutycycle $1
+	sound __, 1, $28, 1940
+	dutycycle $2
+	sound __, 1, $68, 1942
+	dutycycle $3
+	sound __, 1, $d8, 1940
+	dutycycle $2
+	sound __, 1, $b8, 1913
+	sound __, 1, $c8, 1910
+	dutycycle $3
+	sound __, 1, $c8, 1937
+	dutycycle $2
+	sound __, 1, $d8, 1910
+	dutycycle $3
+	sound __, 1, $b8, 1907
+	sound __, 1, $c8, 1908
+	dutycycle $2
+	sound __, 1, $98, 1907
+	dutycycle $3
+	sound __, 1, $98, 1903
+	sound __, 1, $98, 1906
+	dutycycle $0
+	sound __, 1, $78, 1906
+	sound __, 1, $68, 1904
+	sound __, 1, $38, 1906
+.loop
+	sound __, 1, $08, 0
+	loopchannel 3, .loop
+	endchannel
+
+Cry_cacnea_Ch6:
+	dutycycle $0
+	sound __, 1, $48, 1846
+	sound __, 1, $48, 1876
+	sound __, 1, $58, 1895
+	sound __, 1, $58, 1899
+	sound __, 1, $48, 1902
+	sound __, 1, $48, 1901
+	sound __, 1, $28, 1906
+	sound __, 1, $28, 1942
+	sound __, 1, $18, 1861
+	dutycycle $3
+	sound __, 1, $48, 1920
+	sound __, 1, $68, 1911
+	sound __, 1, $68, 1940
+	sound __, 1, $68, 1937
+	dutycycle $2
+	sound __, 1, $78, 1911
+	sound __, 1, $68, 1939
+	sound __, 1, $68, 1938
+	dutycycle $1
+	sound __, 1, $58, 1870
+	dutycycle $0
+	sound __, 1, $58, 1863
+	sound __, 1, $48, 1863
+	sound __, 1, $58, 1862
+	sound __, 1, $28, 1862
+	sound __, 1, $28, 1935
+	dutycycle $2
+	sound __, 1, $28, 1927
+.loop
+	sound __, 1, $08, 0
+	loopchannel 3, .loop
+	sound __, 1, $08, 0
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_cacnea_Ch8:
+	noise __, 1, $28, 75
+	noise __, 1, $28, 75
+.loop
+	noise __, 1, $48, 75
+	loopchannel 3, .loop
+.loop2
+	noise __, 1, $28, 75
+	loopchannel 3, .loop2
+	noise __, 1, $08, 75
+	noise __, 1, $18, 75
+	noise __, 1, $38, 75
+.loop3
+	noise __, 1, $48, 75
+	loopchannel 4, .loop3
+	noise __, 1, $38, 75
+	noise __, 1, $48, 75
+.loop4
+	noise __, 1, $38, 75
+	loopchannel 3, .loop4
+	noise __, 1, $38, 75
+	noise __, 1, $38, 75
+	noise __, 1, $28, 75
+	noise __, 1, $28, 75
+	noise __, 1, $18, 75
+.loop5
+	noise __, 1, $08, 75
+	loopchannel 3, .loop5
+	endchannel
+
+Cry_Cacturne:
+	musicheader 4, 5, Cry_cacturne_Ch5
+	musicheader 1, 6, Cry_cacturne_Ch6
+	musicheader 1, 7, Cry_cacturne_Ch7
+	musicheader 1, 8, Cry_cacturne_Ch8
+
+Cry_cacturne_Ch5:
+	sound_duty 1, 1, 2, 2
+	sound __, 3, $98, 1745
+	sound __, 3, $d8, 1909
+	sound __, 3, $c8, 1742
+	sound __, 3, $c8, 1705
+	sound __, 3, $a8, 1722
+	sound __, 3, $98, 1755
+	sound __, 3, $88, 1724
+	sound __, 3, $78, 1696
+	sound __, 3, $98, 1813
+	sound __, 3, $a8, 1816
+	sound __, 3, $c8, 1764
+	sound __, 3, $c8, 1786
+	sound __, 3, $b8, 1783
+	sound __, 3, $c8, 1766
+	sound __, 3, $a8, 1783
+	sound __, 3, $98, 1757
+	sound __, 3, $88, 1777
+	sound __, 3, $68, 1782
+	sound __, 3, $48, 1757
+	sound __, 3, $38, 1778
+	sound __, 3, $28, 1929
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_cacturne_Ch6:
+	sound_duty 3, 0, 3, 0
+	sound __, 3, $78, 1794
+	sound __, 3, $a8, 1911
+	sound __, 3, $98, 1921
+	sound __, 3, $a8, 1922
+	sound __, 3, $88, 1904
+	sound __, 3, $78, 1790
+	sound __, 3, $68, 1846
+	sound __, 3, $58, 1916
+	sound __, 3, $78, 1856
+	sound __, 3, $88, 1851
+	sound __, 3, $98, 1918
+	sound __, 3, $98, 1931
+	sound __, 3, $98, 1929
+	sound __, 3, $98, 1929
+	sound __, 3, $78, 1930
+	sound __, 3, $78, 1917
+	sound __, 3, $68, 1872
+	sound __, 3, $58, 1871
+	sound __, 3, $38, 1858
+	sound __, 3, $28, 1894
+	sound __, 3, $18, 1889
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_cacturne_Ch7:
+	sound __, 3, $23, 1897
+	sound __, 3, $21, 1979
+	sound __, 3, $21, 1895
+	sound __, 3, $21, 1877
+	sound __, 3, $22, 1885
+	sound __, 3, $32, 1902
+	sound __, 3, $31, 1886
+	sound __, 3, $32, 1872
+	sound __, 3, $22, 1931
+	sound __, 3, $22, 1932
+	sound __, 3, $20, 1906
+	sound __, 3, $26, 1917
+	sound __, 3, $22, 1916
+	sound __, 3, $20, 1907
+	sound __, 3, $21, 1916
+	sound __, 3, $25, 1903
+	sound __, 3, $37, 1913
+	sound __, 3, $36, 1915
+	sound __, 3, $31, 1903
+	sound __, 3, $32, 1913
+	sound __, 3, $31, 1989
+	sound __, 1, $00, 0
+	endchannel
+
+Cry_cacturne_Ch8:
+	noise __, 6, $d8, 76
+	noise __, 6, $c8, 76
+	noise __, 6, $88, 76
+	noise __, 6, $62, 92
+	noise __, 6, $f8, 76
+	noise __, 6, $e1, 76
+	noise __, 6, $d2, 76
+	noise __, 6, $b2, 76
+	noise __, 6, $83, 76
+	noise __, 6, $52, 76
+	noise __, 4, $21, 76
+	endchannel
+
+Cry_Carvanha:
+	musicheader 3, 5, Cry_carvanha_Ch5
+	musicheader 1, 6, Cry_carvanha_Ch6
+	musicheader 1, 8, Cry_carvanha_Ch8
+
+Cry_carvanha_Ch5:
+	dutycycle $1
+	sound __, 2, $98, 1463
+	dutycycle $2
+	sound __, 2, $98, 1828
+	sound __, 2, $48, 1832
+	dutycycle $0
+	sound __, 2, $88, 1827
+	dutycycle $3
+	sound __, 2, $c8, 1925
+	dutycycle $0
+	sound __, 2, $d8, 1873
+	sound __, 2, $d8, 1885
+	dutycycle $2
+	sound __, 2, $d8, 1835
+	dutycycle $3
+	sound __, 2, $c8, 1832
+	dutycycle $1
+	sound __, 2, $88, 1883
+	sound __, 2, $88, 1883
+	dutycycle $0
+	sound __, 2, $58, 1882
+	sound __, 2, $48, 1803
+	sound __, 2, $28, 1851
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_carvanha_Ch6:
+	dutycycle $2
+	sound __, 2, $68, 1832
+	sound __, 2, $78, 1802
+	dutycycle $0
+	sound __, 2, $38, 1893
+	dutycycle $1
+	sound __, 2, $58, 1892
+	dutycycle $0
+	sound __, 2, $98, 1909
+	sound __, 2, $98, 1908
+	sound __, 2, $98, 1904
+	dutycycle $3
+	sound __, 2, $88, 1901
+	dutycycle $0
+	sound __, 2, $68, 1902
+	sound __, 2, $68, 1838
+	sound __, 2, $68, 1838
+	sound __, 2, $48, 1849
+	sound __, 2, $38, 1885
+	dutycycle $1
+	sound __, 2, $18, 1875
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_carvanha_Ch8:
+	noise __, 2, $c8, 75
+	noise __, 2, $c8, 75
+	noise __, 2, $68, 75
+	noise __, 2, $98, 75
+.loop
+	noise __, 2, $f8, 75
+	loopchannel 5, .loop
+	noise __, 2, $98, 75
+	noise __, 2, $98, 75
+	noise __, 2, $68, 75
+	noise __, 2, $68, 75
+	noise __, 2, $38, 75
+	noise __, 1, $08, 75
+	endchannel
+
+Cry_Sharpedo:
+	musicheader 4, 5, Cry_sharpedo_Ch5
+	musicheader 1, 6, Cry_sharpedo_Ch6
+	musicheader 1, 7, Cry_sharpedo_Ch7
+	musicheader 1, 8, Cry_sharpedo_Ch8
+
+Cry_sharpedo_Ch5:
+	sound_duty 1, 1, 2, 2
+	sound __, 3, $58, 1447
+	sound __, 3, $d8, 1418
+	sound __, 3, $78, 1379
+	sound __, 3, $48, 1768
+	sound __, 3, $78, 1208
+	sound __, 3, $d8, 1674
+	sound __, 3, $c8, 1751
+	sound __, 3, $c8, 1680
+	sound __, 3, $b8, 1707
+	sound __, 3, $c8, 1706
+	sound __, 3, $d8, 1808
+	sound __, 3, $b8, 1894
+	sound __, 3, $d8, 1850
+	sound __, 3, $c8, 1608
+	sound __, 3, $c8, 1750
+	sound __, 3, $c8, 1701
+	sound __, 3, $d8, 1814
+	sound __, 3, $b8, 1777
+	sound __, 3, $b8, 1783
+	sound __, 3, $48, 1605
+	sound __, 3, $48, 1580
+	sound __, 2, $18, 1636
+	endchannel
+
+Cry_sharpedo_Ch6:
+	sound_duty 3, 0, 3, 0
+	sound __, 3, $48, 1436
+	sound __, 3, $a8, 1452
+	sound __, 3, $58, 1463
+	sound __, 3, $38, 1804
+	sound __, 3, $58, 1715
+	sound __, 3, $a8, 1827
+	sound __, 3, $98, 1862
+	sound __, 3, $a8, 1753
+	sound __, 3, $98, 1850
+	sound __, 3, $98, 1808
+	sound __, 3, $b8, 1754
+	sound __, 3, $88, 1853
+	sound __, 3, $a8, 1854
+	sound __, 3, $98, 1762
+	sound __, 3, $98, 1774
+	sound __, 3, $a8, 1900
+	sound __, 3, $b8, 1887
+	sound __, 3, $98, 1884
+	sound __, 3, $98, 1816
+	sound __, 3, $38, 1705
+	sound __, 3, $38, 1703
+	sound __, 2, $18, 1499
+	endchannel
+
+Cry_sharpedo_Ch7:
+	sound __, 3, $36, 1748
+	sound __, 3, $28, 1733
+	sound __, 3, $39, 1714
+	sound __, 3, $33, 1908
+	sound __, 3, $37, 1628
+	sound __, 3, $27, 1861
+	sound __, 3, $29, 1900
+	sound __, 3, $26, 1864
+	sound __, 3, $26, 1878
+	sound __, 3, $26, 1877
+	sound __, 3, $24, 1928
+	sound __, 3, $24, 1971
+	sound __, 3, $23, 1949
+	sound __, 3, $26, 1828
+	sound __, 3, $22, 1899
+	sound __, 3, $27, 1875
+	sound __, 3, $22, 1931
+	sound __, 3, $24, 1913
+	sound __, 3, $23, 1916
+	sound __, 3, $35, 1827
+	sound __, 3, $36, 1814
+	sound __, 2, $35, 1842
+	endchannel
+
+Cry_sharpedo_Ch8:
+	noise __, 6, $a3, 100
+	noise __, 6, $81, 92
+	noise __, 6, $c8, 76
+	noise __, 6, $c4, 68
+	noise __, 6, $d2, 68
+	noise __, 6, $c2, 68
+	noise __, 6, $c2, 76
+	noise __, 6, $a5, 76
+	noise __, 6, $c2, 76
+	noise __, 6, $91, 92
+	noise __, 5, $32, 92
+	endchannel
+
+Cry_Numel:
+	musicheader 3, 5, Cry_numel_Ch5
+	musicheader 1, 6, Cry_numel_Ch6
+	musicheader 1, 8, Cry_numel_Ch8
+
+Cry_numel_Ch5:
+	dutycycle $0
+	sound __, 1, $48, 1320
+	dutycycle $2
+	sound __, 1, $78, 1920
+	sound __, 1, $d8, 1921
+	sound __, 1, $d8, 1927
+	sound __, 1, $b8, 1854
+	dutycycle $1
+	sound __, 1, $98, 1860
+	dutycycle $2
+	sound __, 1, $68, 1351
+	sound __, 1, $08, 0
+	sound __, 1, $38, 1857
+	sound __, 1, $58, 1889
+	sound __, 1, $78, 1882
+	sound __, 1, $88, 1883
+	sound __, 1, $d8, 1876
+	sound __, 1, $d8, 1881
+	sound __, 1, $b8, 1790
+	dutycycle $1
+	sound __, 1, $c8, 1798
+	dutycycle $2
+	sound __, 1, $48, 1943
+	sound __, 1, $08, 0
+	sound __, 1, $18, 1893
+	sound __, 1, $58, 1920
+	sound __, 1, $c8, 1921
+	sound __, 1, $d8, 1929
+	sound __, 1, $c8, 1927
+	sound __, 1, $c8, 1854
+	dutycycle $0
+	sound __, 1, $88, 1824
+	sound __, 1, $38, 1295
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_numel_Ch6:
+	dutycycle $2
+	sound __, 1, $28, 1888
+	dutycycle $1
+	sound __, 1, $28, 1885
+	dutycycle $2
+	sound __, 1, $58, 1907
+	dutycycle $3
+	sound __, 1, $58, 1913
+	dutycycle $2
+	sound __, 1, $68, 1930
+	sound __, 1, $48, 1910
+	dutycycle $0
+	sound __, 1, $38, 1855
+	sound __, 1, $08, 0
+	dutycycle $2
+	sound __, 1, $28, 1880
+	sound __, 1, $38, 1873
+	sound __, 1, $08, 0
+	sound __, 1, $58, 1900
+	sound __, 1, $48, 1897
+	sound __, 1, $78, 1801
+	sound __, 1, $08, 0
+	sound __, 1, $58, 1863
+	dutycycle $1
+	sound __, 1, $28, 1869
+	sound __, 1, $08, 0
+	dutycycle $3
+	sound __, 1, $18, 1770
+	dutycycle $2
+	sound __, 1, $28, 1886
+	sound __, 1, $08, 0
+	sound __, 1, $78, 1905
+	dutycycle $3
+	sound __, 1, $58, 1913
+	dutycycle $2
+	sound __, 1, $58, 1930
+	dutycycle $3
+	sound __, 1, $48, 1860
+	dutycycle $0
+	sound __, 1, $28, 1791
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_numel_Ch8:
+.loop
+	noise __, 1, $08, 75
+	loopchannel 5, .loop
+	noise __, 1, $18, 75
+	noise __, 1, $18, 75
+.loop2
+	noise __, 1, $08, 75
+	loopchannel 9, .loop2
+	noise __, 1, $18, 75
+.loop3
+	noise __, 1, $08, 75
+	loopchannel 6, .loop3
+	noise __, 1, $18, 75
+	noise __, 1, $18, 75
+	noise __, 1, $08, 75
+	noise __, 1, $08, 75
+	endchannel
+
+Cry_Camerupt:
+	musicheader 4, 5, Cry_camerupt_Ch5
+	musicheader 1, 6, Cry_camerupt_Ch6
+	musicheader 1, 7, Cry_camerupt_Ch7
+	musicheader 1, 8, Cry_camerupt_Ch8
+
+Cry_camerupt_Ch5:
+	sound_duty 1, 1, 2, 2
+	sound __, 3, $68, 1849
+	sound __, 3, $b8, 1876
+	sound __, 3, $d8, 1878
+	sound __, 3, $d8, 1866
+	sound __, 3, $d8, 1880
+	sound __, 3, $d8, 1774
+	sound __, 3, $d8, 1239
+	sound __, 3, $c8, 1125
+	sound __, 3, $88, 918
+	sound __, 3, $48, 1894
+	sound __, 3, $58, 1798
+	sound __, 3, $98, 1837
+	sound __, 3, $c8, 1827
+	sound __, 3, $d8, 1816
+	sound __, 3, $d8, 1826
+	sound __, 3, $e8, 1822
+	sound __, 3, $d8, 1817
+	sound __, 3, $c8, 1705
+	sound __, 3, $c8, 1705
+	sound __, 3, $b8, 1559
+	sound __, 3, $78, 1519
+	sound __, 2, $48, 1628
+	endchannel
+
+Cry_camerupt_Ch6:
+	sound_duty 3, 0, 3, 0
+	sound __, 3, $58, 1770
+	sound __, 3, $98, 1855
+	sound __, 3, $a8, 1939
+	sound __, 3, $a8, 1858
+	sound __, 3, $b8, 1866
+	sound __, 3, $b8, 1832
+	sound __, 3, $a8, 1798
+	sound __, 3, $98, 1758
+	sound __, 3, $68, 1803
+	sound __, 3, $38, 1950
+	sound __, 3, $48, 1736
+	sound __, 3, $78, 1812
+	sound __, 3, $98, 1909
+	sound __, 3, $b8, 1906
+	sound __, 3, $a8, 1918
+	sound __, 3, $b8, 1772
+	sound __, 3, $a8, 1845
+	sound __, 3, $a8, 1483
+	sound __, 3, $a8, 1736
+	sound __, 3, $98, 1730
+	sound __, 3, $58, 1751
+	sound __, 2, $38, 1488
+	endchannel
+
+Cry_camerupt_Ch7:
+	sound __, 3, $31, 1949
+	sound __, 3, $21, 1962
+	sound __, 3, $20, 1963
+	sound __, 3, $21, 1957
+	sound __, 3, $21, 1964
+	sound __, 3, $21, 1911
+	sound __, 3, $27, 1644
+	sound __, 3, $27, 1587
+	sound __, 3, $37, 1483
+	sound __, 3, $31, 1971
+	sound __, 3, $31, 1923
+	sound __, 3, $21, 1943
+	sound __, 3, $21, 1938
+	sound __, 3, $21, 1932
+	sound __, 3, $21, 1937
+	sound __, 3, $21, 1935
+	sound __, 3, $21, 1933
+	sound __, 3, $21, 1877
+	sound __, 3, $23, 1877
+	sound __, 3, $27, 1804
+	sound __, 3, $37, 1784
+	sound __, 2, $37, 1838
+	endchannel
+
+Cry_camerupt_Ch8:
+	noise __, 6, $88, 92
+	noise __, 6, $88, 92
+	noise __, 6, $96, 92
+	noise __, 6, $a2, 92
+	noise __, 6, $71, 68
+	noise __, 6, $68, 92
+	noise __, 6, $88, 92
+	noise __, 6, $78, 92
+	noise __, 6, $83, 92
+	noise __, 6, $92, 92
+	noise __, 5, $61, 92
+	endchannel

@@ -112,9 +112,10 @@ MomScript:
 	iftrue .GaveMysteryEgg
 	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue .GotAPokemon
-;	givepoke LAIRON, 5, ORAN_BERRY
-;	givepoke KLEAVOR, 5, ORAN_BERRY
-;	givepoke DRAPION, 5, ORAN_BERRY
+;	givepoke CARVANHA, 5, ORAN_BERRY
+;	givepoke SHARPEDO, 5, ORAN_BERRY
+;	givepoke NUMEL, 5, ORAN_BERRY
+;	givepoke CAMERUPT, 5, ORAN_BERRY
 	setflag ENGINE_RADIO_CARD
 	jumptext HurryUpElmIsWaitingText
 

@@ -149,3 +149,9 @@
 	const CRY_ABSOL
 	const CRY_SKORUPI
 	const CRY_DRAPION
+	const CRY_CACNEA
+	const CRY_CACTURNE
+	const CRY_CARVANHA
+	const CRY_SHARPEDO
+	const CRY_NUMEL
+	const CRY_CAMERUPT

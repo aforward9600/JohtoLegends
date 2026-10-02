@@ -359,15 +359,15 @@ PokemonCries::
 	mon_cry CRY_VENONAT,     $00e,  $0be ; BUDEW
 	mon_cry CRY_AIPOM,       $041,  $0ae ; ROSELIA
 	mon_cry CRY_PICHU,      -$047,  $266 ; ROSERADE
-	mon_cry CRY_CHARMANDER,  $1f4,  $064 ; CARVANHA
-	mon_cry CRY_SQUIRTLE,    $007,  $100 ; SHARPEDO
-	mon_cry CRY_METAPOD,     $100,  $0c8 ; NUMEL
-	mon_cry CRY_METAPOD,     $9f0,  $117 ; CAMERUPT
+	mon_cry CRY_CARVANHA,    $000,  $0ff ; CARVANHA
+	mon_cry CRY_SHARPEDO,    $000,  $0ff ; SHARPEDO
+	mon_cry CRY_NUMEL,       $000,  $0ff ; NUMEL
+	mon_cry CRY_CAMERUPT,    $000,  $0ff ; CAMERUPT
 	mon_cry CRY_TRAPINCH,    $000,  $0ff ; TRAPINCH
 	mon_cry CRY_VIBRAVA,    -$00f,  $0ff ; VIBRAVA
 	mon_cry CRY_FLYGON,      $000,  $0ff ; FLYGON
-	mon_cry CRY_BULBASAUR,   $080,  $040 ; CACNEA
-	mon_cry CRY_BULBASAUR,   $080,  $180 ; CACTURNE
+	mon_cry CRY_CACNEA,      $000,  $0ff ; CACNEA
+	mon_cry CRY_CACTURNE,    $000,  $0ff ; CACTURNE
 	mon_cry CRY_SWABLU,      $000,  $0ff ; SWABLU
 	mon_cry CRY_ALTARIA,     $000,  $0ff ; ALTARIA
 	mon_cry CRY_FEEBAS,      $000,  $0ff ; FEEBAS
