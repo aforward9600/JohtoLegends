@@ -3791,14 +3791,10 @@ Cry_Sylveon_Ch8:
 	noise __, 1, $08, 0
 	noise __, 1, $98, 100
 	noise __, 1, $f8, 100
-	noise __, 2, $68, 100
-	noise __, 2, $38, 100
-	noise __, 1, $68, 100
+	callchannel Cry_Sylveon_3x
 	noise __, 2, $c8, 100
 	noise __, 6, $38, 100
-	noise __, 2, $68, 100
-	noise __, 2, $38, 100
-	noise __, 1, $68, 100
+	callchannel Cry_Sylveon_3x
 	noise __, 1, $38, 100
 	noise __, 1, $c8, 100
 	noise __, 3, $68, 100
@@ -3822,6 +3818,12 @@ Cry_Sylveon_Ch8:
 	noise __, 1, $68, 100
 	noise __, 1, $38, 100
 	noise __, 28, $08, 0
+	endchannel
+
+Cry_Sylveon_3x:
+	noise __, 2, $68, 100
+	noise __, 2, $38, 100
+	noise __, 1, $68, 100
 	endchannel
 
 Cry_Metagross:
@@ -3985,13 +3987,15 @@ Cry_metagross_Ch6:
 	endchannel
 
 Cry_metagross_Ch8:
-	noise __, 2, $48, 75
-	noise __, 2, $48, 75
+	callchannel Cry_48
+;	noise __, 2, $48, 75
+;	noise __, 2, $48, 75
 .loop
 	noise __, 2, $58, 75
 	loopchannel 3, .loop
-	noise __, 2, $48, 75
-	noise __, 2, $48, 75
+	callchannel Cry_48
+;	noise __, 2, $48, 75
+;	noise __, 2, $48, 75
 	noise __, 2, $58, 75
 .loop2
 	noise __, 2, $48, 75
@@ -4005,8 +4009,9 @@ Cry_metagross_Ch8:
 	loopchannel 3, .loop4
 	noise __, 2, $48, 75
 	noise __, 2, $58, 75
-	noise __, 2, $48, 75
-	noise __, 2, $48, 75
+	callchannel Cry_48
+;	noise __, 2, $48, 75
+;	noise __, 2, $48, 75
 	noise __, 2, $38, 75
 	noise __, 2, $58, 75
 .loop5
@@ -4037,6 +4042,11 @@ Cry_metagross_Ch8:
 .loop11
 	noise __, 2, $08, 75
 	loopchannel 3, .loop11
+	endchannel
+
+Cry_48:
+	noise __, 2, $48, 75
+	noise __, 2, $48, 75
 	endchannel
 
 Cry_Munchlax:
@@ -4295,7 +4305,7 @@ Cry_Togekiss_Ch6:
 	sound __, 2, $38, 1943
 .loop2
 	sound __, 2, $08, 0
-	loopchannel 3, .loop
+	loopchannel 3, .loop2
 	sound __, 2, $38, 1908
 	sound __, 2, $08, 0
 	sound __, 2, $38, 1930
@@ -4324,11 +4334,9 @@ Cry_Togekiss_Ch8:
 .loop4
 	noise __, 2, $88, 44
 	loopchannel 7, .loop4
+.loop6
 	noise __, 2, $88, 44
-	noise __, 2, $88, 44
-	noise __, 2, $88, 44
-	noise __, 2, $88, 44
-	noise __, 2, $88, 44
+	loopchannel 5, .loop6
 	noise __, 2, $88, 44
 	noise __, 2, $08, 44
 	noise __, 2, $88, 44

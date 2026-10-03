@@ -347,8 +347,8 @@ PokemonCries::
 	mon_cry CRY_KIRLIA,      $000,  $0ff ; KIRLIA
 	mon_cry CRY_GARDEVOIR,   $000,  $0ff ; GARDEVOIR
 	mon_cry CRY_GALLADE,     $020,  $130 ; GALLADE
-	mon_cry CRY_CATERPIE,    $ee3,  $100 ; SABLEYE SourApple
-	mon_cry CRY_KRABBY,     -$2c4,  $0a0 ; MAWILE AzureKeys
+	mon_cry CRY_SABLEYE,     $000,  $0ff ; SABLEYE
+	mon_cry CRY_MAWILE,      $000,  $0ff ; MAWILE
 	mon_cry CRY_ARON,        $000,  $0ff ; ARON
 	mon_cry CRY_LAIRON,      $000,  $0ff ; LAIRON
 	mon_cry CRY_AGGRON,      $000,  $0ff ; AGGRON
@@ -356,9 +356,9 @@ PokemonCries::
 	mon_cry CRY_MEDICHAM,    $000,  $0ff ; MEDICHAM
 	mon_cry CRY_ELECTRIKE,   $000,  $0ff ; ELECTRIKE
 	mon_cry CRY_MANECTRIC,   $000,  $0ff ; MANECTRIC
-	mon_cry CRY_VENONAT,     $00e,  $0be ; BUDEW
-	mon_cry CRY_AIPOM,       $041,  $0ae ; ROSELIA
-	mon_cry CRY_PICHU,      -$047,  $266 ; ROSERADE
+	mon_cry CRY_BUDEW,       $000,  $0ff ; BUDEW
+	mon_cry CRY_ROSELIA,     $000,  $0ff ; ROSELIA
+	mon_cry CRY_ROSERADE,    $000,  $0ff ; ROSERADE
 	mon_cry CRY_CARVANHA,    $000,  $0ff ; CARVANHA
 	mon_cry CRY_SHARPEDO,    $000,  $0ff ; SHARPEDO
 	mon_cry CRY_NUMEL,       $000,  $0ff ; NUMEL
@@ -371,7 +371,7 @@ PokemonCries::
 	mon_cry CRY_SWABLU,      $000,  $0ff ; SWABLU
 	mon_cry CRY_ALTARIA,     $000,  $0ff ; ALTARIA
 	mon_cry CRY_FEEBAS,      $000,  $0ff ; FEEBAS
-	mon_cry CRY_GLIGAR,      $f39,  $4a0 ; MILOTIC
+	mon_cry CRY_MILOTIC,     $000,  $0ff ; MILOTIC
 	mon_cry CRY_DUSKULL,     $000,  $0ff ; DUSKULL
 	mon_cry CRY_DUSCLOPS,    $000,  $0ff ; DUSCLOPS
 	mon_cry CRY_DUSKNOIR,    $000,  $0ff ; DUSKNOIR

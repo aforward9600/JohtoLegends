@@ -155,3 +155,9 @@
 	const CRY_SHARPEDO
 	const CRY_NUMEL
 	const CRY_CAMERUPT
+	const CRY_MILOTIC
+	const CRY_SABLEYE
+	const CRY_MAWILE
+	const CRY_BUDEW
+	const CRY_ROSELIA
+	const CRY_ROSERADE

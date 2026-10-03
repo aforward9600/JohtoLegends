@@ -150,3 +150,9 @@ Cries:
 	dba Cry_Sharpedo
 	dba Cry_Numel
 	dba Cry_Camerupt
+	dba Cry_Milotic
+	dba Cry_Sableye
+	dba Cry_Mawile
+	dba Cry_Budew
+	dba Cry_Roselia
+	dba Cry_Roserade

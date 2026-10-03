@@ -1,3 +1,8 @@
+Cry_208:
+	sound __, 2, $08, 0
+	sound __, 2, $08, 0
+	endchannel
+
 Cry_Kirlia:
 	musicheader 3, 5, Cry_kirlia_Ch5
 	musicheader 1, 6, Cry_kirlia_Ch6
@@ -58,8 +63,7 @@ Cry_kirlia_Ch5:
 	dutycycle $3
 	sound __, 1, $08, $0000
 	dutycycle $2
-	sound __, 1, $08, $0000
-	sound __, 1, $08, $0000
+	callchannel Cry_kirlia_08
 	dutycycle $1
 	sound __, 1, $08, $0000
 	endchannel
@@ -75,8 +79,7 @@ Cry_kirlia_Ch6:
 	sound __, 1, $08, $0000
 	loopchannel 3, .loop
 	sound __, 1, $68, $073e
-	sound __, 1, $08, $0000
-	sound __, 1, $08, $0000
+	callchannel Cry_kirlia_08
 	sound __, 1, $58, $0740
 	dutycycle $1
 	sound __, 1, $08, $0000
@@ -102,16 +105,14 @@ Cry_kirlia_Ch6:
 	sound __, 1, $28, $078d
 	dutycycle $0
 	sound __, 1, $28, $073f
-	sound __, 1, $08, $0000
-	sound __, 1, $08, $0000
+	callchannel Cry_kirlia_08
 	dutycycle $3
 	sound __, 1, $18, $077d
 	dutycycle $0
 	sound __, 1, $18, $074b
 	sound __, 1, $08, $0000
 	dutycycle $3
-	sound __, 1, $08, $0000
-	sound __, 1, $08, $0000
+	callchannel Cry_kirlia_08
 	dutycycle $0
 	sound __, 1, $08, $0000
 	endchannel
@@ -134,6 +135,11 @@ Cry_kirlia_Ch8:
 .loop5
 	noise __, 1, $08, $004b
 	loopchannel 4, .loop5
+	endchannel
+
+Cry_kirlia_08:
+	sound __, 1, $08, $0000
+	sound __, 1, $08, $0000
 	endchannel
 
 Cry_Sentret:
@@ -235,12 +241,10 @@ Cry_lairon_Ch6:
 	sound __, 2, $78, 1859
 	sound __, 2, $68, 1859
 	sound __, 2, $88, 1890
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
+	callchannel Cry_208
 	sound __, 2, $98, 1890
 	sound __, 2, $68, 1916
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
+	callchannel Cry_208
 	dutycycle $3
 	sound __, 2, $88, 1890
 	dutycycle $0
@@ -252,11 +256,9 @@ Cry_lairon_Ch6:
 	dutycycle $3
 	sound __, 2, $08, 0
 	dutycycle $2
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
+	callchannel Cry_208
 	dutycycle $0
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
+	callchannel Cry_208
 	dutycycle $2
 .loop
 	sound __, 2, $08, 0
@@ -279,6 +281,16 @@ Cry_lairon_Ch8:
 	noise __, 2, $98, 75
 	noise __, 2, $38, 75
 	noise __, 1, $08, 75
+	endchannel
+
+Cry_C8x2:
+	noise __, 2, $c8, 75
+	noise __, 2, $c8, 75
+	endchannel
+
+Cry_38x2:
+	noise __, 2, $38, 75
+	noise __, 2, $38, 75
 	endchannel
 
 Cry_Flygon:
@@ -422,12 +434,14 @@ Cry_flygon_Ch8:
 .loop4
 	noise __, 2, $f8, 75
 	loopchannel 4, .loop4
-	noise __, 2, $c8, 75
-	noise __, 2, $c8, 75
+	callchannel Cry_C8x2
+;	noise __, 2, $c8, 75
+;	noise __, 2, $c8, 75
 	noise __, 2, $98, 75
 	noise __, 2, $68, 75
-	noise __, 2, $38, 75
-	noise __, 2, $38, 75
+	callchannel Cry_38x2
+;	noise __, 2, $38, 75
+;	noise __, 2, $38, 75
 	noise __, 2, $68, 75
 	noise __, 2, $38, 75
 	endchannel
@@ -569,15 +583,13 @@ Cry_vibrava_Ch6:
 	endchannel
 
 Cry_vibrava_Ch8:
-	noise __, 1, $48, 75
-	noise __, 1, $48, 75
+	callchannel Cry_148
 	noise __, 1, $38, 75
 .loop
 	noise __, 1, $48, 75
 	loopchannel 6, .loop
 	noise __, 1, $38, 75
-	noise __, 1, $48, 75
-	noise __, 1, $48, 75
+	callchannel Cry_148
 .loop2
 	noise __, 1, $28, 75
 	loopchannel 4, .loop2
@@ -585,16 +597,14 @@ Cry_vibrava_Ch8:
 	noise __, 1, $48, 75
 	loopchannel 7, .loop3
 	noise __, 1, $38, 75
-	noise __, 1, $48, 75
-	noise __, 1, $38, 75
+	callchannel Cry_138
 .loop4
 	noise __, 1, $28, 75
 	loopchannel 6, .loop4
 	noise __, 1, $18, 75
 	noise __, 1, $28, 75
 	noise __, 1, $28, 75
-	noise __, 1, $18, 75
-	noise __, 1, $18, 75
+	callchannel Cry_118
 .loop5
 	noise __, 1, $08, 75
 	loopchannel 3, .loop5
@@ -627,8 +637,7 @@ Cry_riolu_Ch6:
 	dutycycle $2
 	sound __, 2, $58, 1963
 	sound __, 2, $78, 1963
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
+	callchannel Cry_208
 	sound __, 2, $38, 1877
 	sound __, 2, $28, 1936
 	sound __, 2, $38, 1972
@@ -1140,6 +1149,8 @@ Cry_shelgon_Ch5:
 	sound __, 2, $c8, 1478
 	sound __, 2, $88, 1488
 	sound __, 2, $38, 1641
+
+Cry_2081:
 	sound __, 2, $08, 0
 	sound __, 1, $08, 0
 	endchannel
@@ -1178,8 +1189,7 @@ Cry_shelgon_Ch6:
 	dutycycle $2
 	sound __, 2, $68, 1817
 	sound __, 2, $68, 1819
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
+	callchannel Cry_208
 	dutycycle $3
 	sound __, 2, $68, 1493
 	dutycycle $2
@@ -1187,8 +1197,7 @@ Cry_shelgon_Ch6:
 	sound __, 2, $38, 1633
 	dutycycle $3
 	sound __, 2, $18, 1497
-	sound __, 2, $08, 0
-	sound __, 1, $08, 0
+	callchannel Cry_2081
 	endchannel
 
 Cry_shelgon_Ch8:
@@ -1199,8 +1208,7 @@ Cry_shelgon_Ch8:
 	noise __, 2, $88, 75
 	noise __, 2, $a8, 75
 	noise __, 2, $98, 75
-	noise __, 2, $c8, 75
-	noise __, 2, $c8, 75
+	callchannel Cry_C8x2
 	noise __, 2, $e8, 75
 .loop
 	noise __, 2, $f8, 75
@@ -1356,8 +1364,7 @@ Cry_beldum_Ch5:
 	sound __, 2, $a8, 1524
 	dutycycle $0
 	sound __, 2, $28, 1511
-	sound __, 2, $08, 0
-	sound __, 1, $08, 0
+	callchannel Cry_2081
 	endchannel
 
 Cry_beldum_Ch6:
@@ -1381,14 +1388,14 @@ Cry_beldum_Ch6:
 	sound __, 2, $48, 1965
 	dutycycle $3
 	sound __, 2, $18, 1961
-	sound __, 2, $08, 0
-	sound __, 1, $08, 0
+	callchannel Cry_2081
 	endchannel
 
 Cry_beldum_Ch8:
 	noise __, 2, $f8, 75
-	noise __, 2, $c8, 75
-	noise __, 2, $c8, 75
+	callchannel Cry_C8x2
+;	noise __, 2, $c8, 75
+;	noise __, 2, $c8, 75
 .loop
 	noise __, 2, $f8, 75
 	noise __, 2, $98, 75
@@ -1500,8 +1507,7 @@ Cry_gabite_Ch6:
 	endchannel
 
 Cry_gabite_Ch8:
-	noise __, 2, $58, 44
-	noise __, 2, $68, 44
+	callchannel Cry_258
 	noise __, 2, $58, 44
 	noise __, 2, $38, 44
 	noise __, 2, $28, 44
@@ -1510,12 +1516,16 @@ Cry_gabite_Ch8:
 	noise __, 2, $48, 44
 	loopchannel 3, .loop
 	noise __, 2, $58, 44
-	noise __, 2, $58, 44
-	noise __, 2, $48, 44
+	callchannel Cry_25848
 	noise __, 2, $48, 44
 	noise __, 2, $38, 44
 	noise __, 2, $48, 44
 	noise __, 2, $68, 44
+	endchannel
+
+Cry_25848:
+	noise __, 2, $58, 44
+	noise __, 2, $48, 44
 	endchannel
 
 Cry_Garchomp:
@@ -2162,8 +2172,7 @@ Cry_porygon_z_Ch8:
 	noise __, 1, $88, 100
 	noise __, 1, $68, 100
 	noise __, 2, $78, 100
-	noise __, 1, $98, 100
-	noise __, 1, $a8, 100
+	callchannel Cry_98
 	noise __, 1, $68, 100
 	noise __, 1, $78, 100
 	noise __, 1, $c8, 100
@@ -2247,8 +2256,7 @@ Cry_Bonsly_Ch6:
 	sound __, 2, $c8, 1914
 	dutycycle $3
 	sound __, 2, $78, 1914
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
+	callchannel Cry_208
 	dutycycle $2
 	sound __, 2, $28, 1907
 	sound __, 2, $38, 1905
@@ -2343,25 +2351,22 @@ Cry_mime_jr_Ch5:
 	dutycycle $0
 	sound __, 1, $48, 1843
 	sound __, 1, $28, 1879
-	sound __, 1, $08, 0
-	sound __, 1, $08, 0
+	callchannel Cry_kirlia_08
 	endchannel
 
 Cry_mime_jr_Ch6:
+.loop
 	sound __, 1, $08, 0
-	sound __, 1, $08, 0
-	sound __, 1, $08, 0
+	loopchannel 3, .loop
 	dutycycle $2
 	sound __, 1, $78, 1928
 	sound __, 1, $08, 0
 	sound __, 1, $68, 1923
 	sound __, 1, $28, 1885
-	sound __, 1, $08, 0
-	sound __, 1, $08, 0
+	callchannel Cry_kirlia_08
 	sound __, 1, $88, 1889
 	sound __, 1, $68, 1909
-	sound __, 1, $08, 0
-	sound __, 1, $08, 0
+	callchannel Cry_kirlia_08
 	dutycycle $0
 	sound __, 1, $68, 1896
 	sound __, 1, $58, 1929
@@ -2388,16 +2393,14 @@ Cry_mime_jr_Ch6:
 	sound __, 1, $08, 0
 	sound __, 1, $28, 1745
 	sound __, 1, $18, 1793
-	sound __, 1, $08, 0
-	sound __, 1, $08, 0
+	callchannel Cry_kirlia_08
 	endchannel
 
 Cry_mime_jr_Ch8:
 	noise __, 1, $08, 75
 	noise __, 1, $18, 75
 	noise __, 1, $38, 75
-	noise __, 1, $18, 75
-	noise __, 1, $18, 75
+	callchannel Cry_118
 	noise __, 1, $48, 75
 	noise __, 1, $18, 75
 .loop4
@@ -2413,11 +2416,19 @@ Cry_mime_jr_Ch8:
 .loop
 	noise __, 1, $18, 75
 	noise __, 1, $08, 75
-	noise __, 1, $08, 75
-	noise __, 1, $08, 75
-	noise __, 1, $08, 75
-	noise __, 1, $08, 75
+	callchannel Cry_mime_jr_08
+	callchannel Cry_mime_jr_08
+;	noise __, 1, $08, 75
+;	noise __, 1, $08, 75
+;	noise __, 1, $08, 75
+;	noise __, 1, $08, 75
 	loopchannel 3, .loop
+	callchannel Cry_mime_jr_08
+;	noise __, 1, $08, 75
+;	noise __, 1, $08, 75
+	endchannel
+
+Cry_mime_jr_08:
 	noise __, 1, $08, 75
 	noise __, 1, $08, 75
 	endchannel
@@ -3093,10 +3104,10 @@ Cry_Magnezone_Ch8:
 	noise __, 1, $b8, 92
 	noise __, 1, $78, 92
 	noise __, 1, $b8, 92
+.loop
 	noise __, 1, $f8, 92
 	noise __, 2, $b8, 92
-	noise __, 1, $f8, 92
-	noise __, 2, $b8, 92
+	loopchannel 2, .loop
 	noise __, 2, $f8, 92
 	noise __, 1, $b8, 92
 	noise __, 4, $f8, 92
@@ -3272,8 +3283,7 @@ Cry_tangrowth_Ch5:
 Cry_tangrowth_Ch6:
 	dutycycle $2
 	sound __, 2, $38, 1559
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
+	callchannel Cry_208
 	sound __, 2, $08, 0
 	sound __, 2, $38, 1730
 	sound __, 2, $58, 1731
@@ -3286,8 +3296,7 @@ Cry_tangrowth_Ch6:
 	sound __, 2, $58, 1174
 	dutycycle $3
 	sound __, 2, $58, 1358
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
+	callchannel Cry_208
 	dutycycle $2
 	sound __, 2, $48, 1473
 	sound __, 2, $08, 0
@@ -3324,18 +3333,14 @@ Cry_tangrowth_Ch6:
 	endchannel
 
 Cry_tangrowth_Ch8:
-	noise __, 2, $58, 44
+	callchannel Cry_258
 	noise __, 2, $68, 44
-	noise __, 2, $68, 44
-	noise __, 2, $58, 44
-	noise __, 2, $48, 44
+	callchannel Cry_25848
 	noise __, 2, $78, 44
 	noise __, 2, $58, 44
-	noise __, 2, $58, 44
+	callchannel Cry_258
 	noise __, 2, $68, 44
-	noise __, 2, $68, 44
-	noise __, 2, $48, 44
-	noise __, 2, $58, 44
+	callchannel Cry_24858
 	noise __, 2, $58, 44
 .loop3
 	noise __, 2, $68, 44
@@ -3343,8 +3348,7 @@ Cry_tangrowth_Ch8:
 	loopchannel 2, .loop3
 	noise __, 2, $48, 44
 	noise __, 2, $38, 44
-	noise __, 2, $48, 44
-	noise __, 2, $58, 44
+	callchannel Cry_24858
 	noise __, 2, $18, 44
 .loop2
 	noise __, 2, $38, 44
@@ -3355,12 +3359,15 @@ Cry_tangrowth_Ch8:
 	loopchannel 4, .loop
 	noise __, 2, $78, 44
 	noise __, 2, $68, 44
-	noise __, 2, $48, 44
-	noise __, 2, $58, 44
+	callchannel Cry_24858
 	noise __, 2, $38, 44
-	noise __, 2, $58, 44
-	noise __, 2, $48, 44
+	callchannel Cry_25848
 	noise __, 2, $18, 44
+	endchannel
+
+Cry_258:
+	noise __, 2, $58, 44
+	noise __, 2, $68, 44
 	endchannel
 
 Cry_Lickilicky:
@@ -3402,8 +3409,7 @@ Cry_Lickilicky_Ch5:
 	sound __, 2, $48, 0
 	sound __, 5, $28, 0
 	sound __, 3, $18, 0
-	sound __, 1, $08, 0
-	sound __, 1, $08, 0
+	callchannel Cry_kirlia_08
 	endchannel
 
 Cry_Lickilicky_Ch6:
@@ -3440,8 +3446,7 @@ Cry_Lickilicky_Ch6:
 	sound __, 3, $28, 0
 	sound __, 2, $28, 1229
 	sound __, 3, $18, 1229
-	sound __, 1, $08, 0
-	sound __, 1, $08, 0
+	callchannel Cry_kirlia_08
 	endchannel
 
 Cry_Lickilicky_Ch7:
@@ -3597,8 +3602,7 @@ Cry_annihilape_Ch5:
 Cry_annihilape_Ch6:
 	dutycycle $2
 	sound __, 2, $48, 1725
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
+	callchannel Cry_208
 	sound __, 2, $48, 1819
 	sound __, 2, $08, 0
 	sound __, 2, $48, 1821
@@ -3608,8 +3612,7 @@ Cry_annihilape_Ch6:
 	sound __, 2, $58, 1820
 	sound __, 2, $48, 1803
 	sound __, 2, $48, 1811
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
+	callchannel Cry_208
 	sound __, 2, $48, 1731
 	sound __, 2, $08, 0
 	sound __, 2, $38, 1778
@@ -3678,8 +3681,9 @@ Cry_annihilape_Ch8:
 	noise __, 2, $48, 75
 	noise __, 2, $48, 75
 	noise __, 2, $58, 75
-	noise __, 2, $38, 75
-	noise __, 2, $38, 75
+	callchannel Cry_38x2
+;	noise __, 2, $38, 75
+;	noise __, 2, $38, 75
 	noise __, 2, $48, 75
 	noise __, 2, $38, 75
 	noise __, 2, $58, 75
@@ -3691,13 +3695,15 @@ Cry_annihilape_Ch8:
 	noise __, 2, $68, 75
 	noise __, 2, $48, 75
 	noise __, 2, $58, 75
-	noise __, 2, $c8, 75
-	noise __, 2, $c8, 75
+	callchannel Cry_C8x2
+;	noise __, 2, $c8, 75
+;	noise __, 2, $c8, 75
 	noise __, 2, $b8, 75
 	noise __, 2, $a8, 75
 	noise __, 2, $f8, 75
-	noise __, 2, $c8, 75
-	noise __, 2, $c8, 75
+	callchannel Cry_C8x2
+;	noise __, 2, $c8, 75
+;	noise __, 2, $c8, 75
 	noise __, 2, $98, 75
 	noise __, 2, $98, 75
 	noise __, 2, $c8, 75
@@ -3720,8 +3726,9 @@ Cry_annihilape_Ch8:
 	noise __, 2, $88, 75
 	noise __, 2, $48, 75
 	noise __, 2, $28, 75
-	noise __, 2, $38, 75
-	noise __, 2, $38, 75
+	callchannel Cry_38x2
+;	noise __, 2, $38, 75
+;	noise __, 2, $38, 75
 .loop
 	noise __, 2, $08, 75
 	loopchannel 13, .loop
@@ -3767,15 +3774,6 @@ Cry_kleavor_Ch5:
 .loop
 	sound __, 2, $08, 0
 	loopchannel 10, .loop
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
 	endchannel
 
 Cry_kleavor_Ch6:
@@ -3821,8 +3819,9 @@ Cry_kleavor_Ch8:
 	loopchannel 3, .loop2
 	noise __, 2, $f8, 75
 	noise __, 2, $f8, 75
-	noise __, 2, $c8, 75
-	noise __, 2, $c8, 75
+	callchannel Cry_C8x2
+;	noise __, 2, $c8, 75
+;	noise __, 2, $c8, 75
 .loop3
 	noise __, 2, $f8, 75
 	loopchannel 6, .loop3
@@ -3833,8 +3832,9 @@ Cry_kleavor_Ch8:
 	noise __, 2, $c8, 75
 	noise __, 2, $98, 75
 	noise __, 2, $68, 75
-	noise __, 2, $38, 75
-	noise __, 2, $38, 75
+	callchannel Cry_38x2
+;	noise __, 2, $38, 75
+;	noise __, 2, $38, 75
 .loop
 	noise __, 2, $08, 75
 	loopchannel 10, .loop
@@ -4117,13 +4117,11 @@ Cry_medicham_Ch7:
 Cry_medicham_Ch8:
 	noise __, 2, $d8, 100
 	noise __, 1, $98, 100
-	noise __, 1, $e8, 100
-	noise __, 1, $b8, 100
+	callchannel Cry_e8
 	noise __, 1, $88, 100
 	noise __, 1, $b8, 100
 	noise __, 1, $f8, 100
-	noise __, 1, $98, 100
-	noise __, 1, $a8, 100
+	callchannel Cry_98
 	noise __, 1, $88, 100
 	noise __, 2, $d8, 100
 	noise __, 1, $e8, 100
@@ -4136,14 +4134,11 @@ Cry_medicham_Ch8:
 	noise __, 1, $c8, 100
 	noise __, 1, $78, 100
 	noise __, 1, $b8, 100
-	noise __, 1, $e8, 100
-	noise __, 1, $b8, 100
-	noise __, 1, $98, 100
-	noise __, 1, $a8, 100
+	callchannel Cry_e8
+	callchannel Cry_98
 	noise __, 1, $98, 100
 	noise __, 1, $f8, 100
-	noise __, 1, $e8, 100
-	noise __, 1, $b8, 100
+	callchannel Cry_e8
 	noise __, 1, $68, 100
 	noise __, 1, $88, 100
 	noise __, 2, $f8, 100
@@ -4157,6 +4152,16 @@ Cry_medicham_Ch8:
 	noise __, 1, $98, 100
 	noise __, 1, $68, 100
 	noise __, 1, $28, 100
+	endchannel
+
+Cry_e8:
+	noise __, 1, $e8, 100
+	noise __, 1, $b8, 100
+	endchannel
+
+Cry_98:
+	noise __, 1, $98, 100
+	noise __, 1, $a8, 100
 	endchannel
 
 Cry_Perrserker:
@@ -4211,10 +4216,10 @@ Cry_perrserker_Ch5:
 Cry_perrserker_Ch6:
 	sound __, 10, $08, 0
 	dutycycle $2
+.loop
 	sound __, 1, $58, 1997
 	sound __, 1, $48, 1997
-	sound __, 1, $58, 1997
-	sound __, 1, $48, 1997
+	loopchannel 2, .loop
 	sound __, 2, $08, 0
 	sound __, 1, $78, 1999
 	sound __, 2, $98, 1999
@@ -4505,8 +4510,7 @@ Cry_Farigiraf_Ch5:
 	endchannel
 
 Cry_Farigiraf_Ch6:
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
+	callchannel Cry_208
 	dutycycle $1
 	sound __, 2, $78, 1920
 	sound __, 2, $68, 1944
@@ -4525,8 +4529,7 @@ Cry_Farigiraf_Ch6:
 	dutycycle $1
 	sound __, 2, $48, 1944
 	sound __, 2, $58, 1943
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
+	callchannel Cry_208
 	sound __, 2, $48, 1903
 	dutycycle $0
 	sound __, 2, $58, 1905
@@ -4536,8 +4539,7 @@ Cry_Farigiraf_Ch6:
 	sound __, 2, $68, 1966
 	dutycycle $1
 	sound __, 2, $68, 1965
-	sound __, 2, $08, 0
-	sound __, 2, $08, 0
+	callchannel Cry_208
 	sound __, 2, $28, 1964
 	sound __, 2, $08, 0
 	sound __, 2, $28, 1896
@@ -4545,18 +4547,16 @@ Cry_Farigiraf_Ch6:
 	sound __, 1, $08, 0
 	dutycycle $0
 	sound __, 1, $18, 1922
-	sound __, 1, $08, 0
-	sound __, 1, $08, 0
+	callchannel Cry_kirlia_08
 	endchannel
 
 Cry_Farigiraf_Ch8:
 	noise __, 2, $28, 44
-	noise __, 2, $48, 44
-	noise __, 2, $58, 44
+	callchannel Cry_24858
+.loop
 	noise __, 4, $48, 44
 	noise __, 2, $58, 44
-	noise __, 4, $48, 44
-	noise __, 2, $58, 44
+	loopchannel 2, .loop
 	noise __, 6, $48, 44
 	noise __, 2, $38, 44
 	noise __, 8, $48, 44
@@ -4570,6 +4570,11 @@ Cry_Farigiraf_Ch8:
 	noise __, 2, $08, 44
 	noise __, 1, $18, 44
 	noise __, 4, $08, 44
+	endchannel
+
+Cry_24858:
+	noise __, 2, $48, 44
+	noise __, 2, $58, 44
 	endchannel
 
 Cry_Mr_Rime:
@@ -4702,8 +4707,7 @@ Cry_electrike_Ch5:
 	sound __, 1, $d8, 1861
 	sound __, 1, $d8, 1769
 	sound __, 1, $c8, 1770
-	dutycycle $3
-	sound __, 1, $d8, 1769
+	callchannel Cry_1d8
 	dutycycle $1
 	sound __, 1, $d8, 1770
 	sound __, 1, $d8, 1769
@@ -4721,14 +4725,12 @@ Cry_electrike_Ch5:
 	dutycycle $2
 	sound __, 1, $d8, 1779
 	sound __, 1, $d8, 1768
-	dutycycle $3
-	sound __, 1, $d8, 1769
+	callchannel Cry_1d8
 	dutycycle $1
 	sound __, 1, $d8, 1769
 	dutycycle $2
 	sound __, 1, $d8, 1771
-	dutycycle $3
-	sound __, 1, $d8, 1769
+	callchannel Cry_1d8
 	dutycycle $1
 	sound __, 1, $c8, 1836
 	dutycycle $2
@@ -4809,8 +4811,7 @@ Cry_electrike_Ch6:
 	endchannel
 
 Cry_electrike_Ch8:
-	noise __, 1, $48, 75
-	noise __, 1, $38, 75
+	callchannel Cry_138
 .loop2
 	noise __, 1, $48, 75
 	loopchannel 5, .loop2
@@ -4822,24 +4823,40 @@ Cry_electrike_Ch8:
 	noise __, 1, $38, 75
 	noise __, 1, $38, 75
 .loop4
-	noise __, 1, $48, 75
-	noise __, 1, $38, 75
+	callchannel Cry_138
 	loopchannel 2, .loop4
-	noise __, 1, $48, 75
-	noise __, 1, $48, 75
+	callchannel Cry_148
 	noise __, 1, $28, 75
 .loop5
 	noise __, 1, $38, 75
 	loopchannel 3, .loop5
-	noise __, 1, $48, 75
-	noise __, 1, $48, 75
+	callchannel Cry_148
 	noise __, 1, $38, 75
 	noise __, 1, $38, 75
 	noise __, 1, $28, 75
-	noise __, 1, $18, 75
-	noise __, 1, $18, 75
+	callchannel Cry_118
 .loop
 	noise __, 1, $18, 75
 	noise __, 1, $08, 75
 	loopchannel 2, .loop
+	endchannel
+
+Cry_148:
+	noise __, 1, $48, 75
+	noise __, 1, $48, 75
+	endchannel
+
+Cry_118:
+	noise __, 1, $18, 75
+	noise __, 1, $18, 75
+	endchannel
+
+Cry_138:
+	noise __, 1, $48, 75
+	noise __, 1, $38, 75
+	endchannel
+
+Cry_1d8:
+	dutycycle $3
+	sound __, 1, $d8, 1769
 	endchannel
