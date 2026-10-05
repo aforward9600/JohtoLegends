@@ -24,10 +24,9 @@ GoldenrodNameRater_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 2 ; bg events
 	bg_event  0,  1, BGEVENT_READ, GoldenrodNameRaterBookshelf
 	bg_event  1,  1, BGEVENT_READ, GoldenrodNameRaterBookshelf
-	bg_event  4,  1, BGEVENT_READ, GoldenrodTelevision
 
 	db 1 ; object events
 	object_event  3,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodNameRater, -1

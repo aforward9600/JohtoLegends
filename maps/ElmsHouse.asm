@@ -75,10 +75,9 @@ ElmsHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 2 ; bg events
 	bg_event  6,  1, BGEVENT_READ, ElmsHouseBookshelf
 	bg_event  7,  1, BGEVENT_READ, ElmsHouseBookshelf
-	bg_event  4,  1, BGEVENT_READ, NewBarkTVScript
 
 	db 3 ; object events
 	object_event  1,  5, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ElmsWife, -1

@@ -21,9 +21,6 @@ EcruteakLugiaSpeechHouseMotherScript:
 EcruteakLugiaSpeechHouseDaughterScript:
 	jumptextfaceplayer EcruteakLugiaSpeechHouseDaughterText
 
-LugiaSpeechHouseRadio:
-	jumpstd televisionscript
-
 EcruteakLugiaSpeechHouseGrampsText:
 	text "This happened when"
 	line "I was young."
@@ -69,8 +66,7 @@ EcruteakLugiaSpeechHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  2,  1, BGEVENT_READ, LugiaSpeechHouseRadio
+	db 0 ; bg events
 
 	db 4 ; object events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakLugiaSpeechHouseGrampsScript, -1

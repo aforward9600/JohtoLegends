@@ -35,9 +35,6 @@ BillsBrotherHouseScript:
 BillsHouseBookshelf1:
 	jumpstd genericsink
 
-GoldenrodBillsTelevision:
-	jumpstd televisionscript
-
 BillsFamilyComputer:
 	opentext
 	readvar VAR_FACING
@@ -199,10 +196,9 @@ BillsFamilysHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, BillsHouseBookshelf1
 	bg_event  1,  1, BGEVENT_READ, BillsHouseBookshelf1
-	bg_event  4,  1, BGEVENT_READ, GoldenrodBillsTelevision
 	bg_event  9,  1, BGEVENT_READ, BillsFamilyComputer
 
 	db 3 ; object events

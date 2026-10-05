@@ -106,9 +106,6 @@ CherrygroveGymSpeechHouseCynthiaScript:
 .PsuedoPassword:
 	writetextend PsuedoPasswordText
 
-CherrygroveTelevision:
-	jumpstd televisionscript
-
 CherrygroveCynthiaMovement:
 	big_step DOWN
 	big_step DOWN
@@ -247,10 +244,9 @@ CherrygroveGymSpeechHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 2 ; bg events
 	bg_event  0,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf
-	bg_event  4,  1, BGEVENT_READ, CherrygroveTelevision
 
 	db 1 ; object events
 	object_event  3,  4, SPRITE_CYNTHIA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveGymSpeechHouseCynthiaScript, EVENT_CHERRYGROVE_CYNTHIA

@@ -338,9 +338,9 @@ PokemonCries::
 	mon_cry CRY_PICHU,       $f60,  $200 ; KOTORA
 	mon_cry CRY_RAIKOU,      $db3,  $168 ; RAITORA
 	mon_cry CRY_RAIKOU,      $cb3,  $201 ; GOROTORA
-	mon_cry CRY_SPINARAK,    $ff3,  $060 ; LOTAD
-	mon_cry CRY_FEAROW,      $680,  $090 ; LOMBRE
-	mon_cry CRY_KRABBY,      $0d0,  $0fa ; LUDICOLO
+	mon_cry CRY_LOTAD,       $000,  $0ff ; LOTAD
+	mon_cry CRY_LOMBRE,      $000,  $0ff ; LOMBRE
+	mon_cry CRY_LUDICOLO,    $000,  $0ff ; LUDICOLO
 	mon_cry CRY_SHROOMISH,   $0ff,  $070 ; SHROOMISH
 	mon_cry CRY_BRELOOM,     $050,  $116 ; BRELOOM
 	mon_cry CRY_RALTS,       $000,  $0ff ; RALTS

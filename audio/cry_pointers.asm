@@ -156,3 +156,6 @@ Cries:
 	dba Cry_Budew
 	dba Cry_Roselia
 	dba Cry_Roserade
+	dba Cry_Lotad
+	dba Cry_Lombre
+	dba Cry_Ludicolo

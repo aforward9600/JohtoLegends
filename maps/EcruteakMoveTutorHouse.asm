@@ -79,9 +79,6 @@ EcruteakMoveTutorHouseMoveTutorScript:
 .Incompatible:
 	writetextend HowUnfortunateText
 
-MoveTutorTV:
-	jumpstd televisionscript
-
 EcruteakMoveTutorHouseAskTeachAMoveText:
 	text "You ever wish your"
 	line "#mon's bite"
@@ -144,8 +141,7 @@ EcruteakMoveTutorHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  2,  1, BGEVENT_READ, MoveTutorTV
+	db 0 ; bg events
 
 	db 1 ; object events
 	object_event  5,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakMoveTutorHouseMoveTutorScript, -1

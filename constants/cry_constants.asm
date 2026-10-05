@@ -161,3 +161,6 @@
 	const CRY_BUDEW
 	const CRY_ROSELIA
 	const CRY_ROSERADE
+	const CRY_LOTAD
+	const CRY_LOMBRE
+	const CRY_LUDICOLO

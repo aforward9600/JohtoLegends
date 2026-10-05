@@ -9,9 +9,6 @@ PokeSeersHouse_MapScripts:
 SeerScript:
 	jumptextfaceplayer ShallITellYouText
 
-PokeSeerTelevision:
-	jumpstd televisionscript
-
 ShallITellYouText:
 	text "I see all."
 	line "I know all…"
@@ -42,8 +39,7 @@ PokeSeersHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  4,  1, BGEVENT_READ, PokeSeerTelevision
+	db 0 ; bg events
 
 	db 1 ; object events
 	object_event  3,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeerScript, -1

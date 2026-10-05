@@ -4463,3 +4463,319 @@ Cry_198:
 	noise __, 1, $98, 100
 	noise __, 1, $78, 100
 	endchannel
+
+Cry_Lotad:
+	musicheader 3, 5, Cry_Lotad_Ch5
+	musicheader 1, 6, Cry_Lotad_Ch6
+	musicheader 1, 8, Cry_Lotad_Ch8
+
+Cry_Lotad_Ch5:
+	dutycycle $0
+	sound __, 2, $d8, 1970
+	sound __, 2, $b8, 1970
+	sound __, 2, $d8, 1957
+	sound __, 2, $b8, 1970
+	sound __, 2, $68, 1972
+	sound __, 2, $38, 1958
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_Lotad_Ch6:
+	dutycycle $0
+	sound __, 2, $68, 1914
+	sound __, 2, $58, 1919
+	sound __, 2, $68, 1912
+	sound __, 2, $58, 1911
+	sound __, 2, $38, 1920
+	sound __, 2, $18, 1935
+	sound __, 1, $08, 0
+	endchannel
+
+Cry_Lotad_Ch8:
+	noise __, 2, $48, 44
+.loop
+	noise __, 2, $38, 44
+	loopchannel 3, .loop
+	noise __, 2, $18, 44
+	noise __, 2, $18, 44
+	noise __, 1, $08, 44
+	endchannel
+
+Cry_Lombre:
+	musicheader 3, 5, Cry_Lombre_Ch5
+	musicheader 1, 6, Cry_Lombre_Ch6
+	musicheader 1, 8, Cry_Lombre_Ch8
+
+Cry_Lombre_Ch5:
+	dutycycle $0
+	sound __, 2, $d8, 1902
+	sound __, 2, $d8, 1857
+	dutycycle $2
+	sound __, 2, $d8, 1916
+	dutycycle $0
+	sound __, 2, $d8, 1883
+	sound __, 2, $d8, 1719
+	sound __, 2, $d8, 1719
+	sound __, 2, $d8, 1866
+	sound __, 2, $b8, 1869
+	sound __, 2, $d8, 1809
+	sound __, 2, $d8, 1916
+	sound __, 2, $d8, 1889
+	sound __, 2, $b8, 1920
+.loop
+	sound __, 2, $d8, 1920
+	loopchannel 3, .loop
+	sound __, 2, $d8, 1882
+	sound __, 2, $c8, 1881
+	sound __, 2, $a8, 1881
+	sound __, 2, $68, 1866
+	dutycycle $3
+	sound __, 2, $38, 1916
+	dutycycle $2
+	sound __, 1, $18, 1917
+	endchannel
+
+Cry_Lombre_Ch6:
+	dutycycle $0
+	sound __, 2, $68, 1880
+	sound __, 2, $68, 1878
+	sound __, 2, $68, 1858
+	sound __, 2, $68, 1855
+	sound __, 2, $78, 1856
+	sound __, 2, $78, 1865
+	dutycycle $3
+	sound __, 2, $68, 1915
+	dutycycle $0
+	sound __, 2, $58, 1892
+	sound __, 2, $68, 1889
+	sound __, 2, $58, 1889
+	sound __, 2, $68, 1891
+	sound __, 2, $48, 1893
+	sound __, 2, $68, 1893
+	sound __, 2, $68, 1887
+	sound __, 2, $68, 1893
+	dutycycle $3
+	sound __, 2, $58, 1899
+	dutycycle $2
+	sound __, 2, $68, 1897
+	dutycycle $0
+	sound __, 2, $58, 1898
+	sound __, 2, $38, 1882
+	sound __, 2, $18, 1866
+	sound __, 1, $18, 1876
+	endchannel
+
+Cry_Lombre_Ch8:
+	noise __, 2, $98, 75
+	noise __, 2, $98, 75
+	noise __, 2, $68, 75
+	noise __, 2, $58, 75
+	noise __, 2, $48, 75
+	noise __, 2, $48, 75
+	noise __, 2, $58, 75
+	noise __, 2, $98, 75
+	noise __, 2, $98, 75
+	noise __, 2, $78, 75
+	noise __, 2, $98, 75
+	noise __, 2, $88, 75
+.loop
+	noise __, 2, $98, 75
+	loopchannel 3, .loop
+	noise __, 2, $68, 75
+	noise __, 2, $68, 75
+	noise __, 2, $48, 75
+	noise __, 2, $38, 75
+	noise __, 2, $18, 75
+	noise __, 1, $28, 75
+	endchannel
+
+Cry_Ludicolo:
+	musicheader 4, 5, Cry_Ludicolo_Ch5
+	musicheader 1, 6, Cry_Ludicolo_Ch6
+	musicheader 1, 7, Cry_Ludicolo_Ch7
+	musicheader 1, 8, Cry_Ludicolo_Ch8
+
+Cry_Ludicolo_Ch5:
+	dutycycle $1
+	sound __, 1, $58, 1961
+	dutycycle $2
+	sound __, 1, $38, 1996
+	dutycycle $1
+	sound __, 1, $38, 1931
+	sound __, 1, $58, 1939
+	dutycycle $2
+	sound __, 1, $58, 1935
+	sound __, 1, $58, 1915
+	sound __, 1, $48, 1939
+	sound __, 1, $38, 1940
+	sound __, 1, $48, 1941
+	sound __, 1, $28, 1971
+	sound __, 1, $48, 1972
+	dutycycle $3
+	sound __, 1, $48, 1952
+	dutycycle $2
+	sound __, 1, $48, 1982
+	sound __, 1, $38, 1971
+	sound __, 1, $48, 1949
+	sound __, 2, $58, 1949
+	dutycycle $3
+	sound __, 1, $58, 1927
+	sound __, 1, $58, 1939
+	dutycycle $2
+	sound __, 1, $48, 1948
+	dutycycle $3
+	sound __, 1, $78, 1946
+	dutycycle $1
+	sound __, 2, $48, 1956
+	sound __, 1, $48, 1954
+	dutycycle $3
+	sound __, 1, $38, 1954
+	dutycycle $2
+	sound __, 1, $48, 1987
+	dutycycle $3
+	sound __, 1, $48, 1948
+	dutycycle $1
+	sound __, 1, $38, 1949
+	sound __, 1, $58, 1920
+	dutycycle $2
+	sound __, 1, $48, 1945
+	sound __, 1, $48, 1951
+	sound __, 1, $38, 1944
+	sound __, 1, $28, 1989
+	dutycycle $1
+	sound __, 1, $38, 1971
+	dutycycle $2
+	sound __, 1, $38, 1970
+	sound __, 1, $38, 1971
+	sound __, 1, $28, 1982
+	sound __, 1, $18, 2002
+	sound __, 1, $28, 1948
+	sound __, 1, $28, 1945
+	dutycycle $3
+	sound __, 1, $28, 1944
+	sound __, 1, $18, 1944
+	dutycycle $2
+	sound __, 1, $18, 1994
+	dutycycle $3
+	sound __, 1, $18, 1918
+	sound __, 3, $08, 0
+	endchannel
+
+Cry_Ludicolo_Ch6:
+	dutycycle $2
+	sound __, 1, $78, 1973
+	sound __, 1, $78, 1974
+	sound __, 1, $68, 1973
+	sound __, 1, $88, 1912
+	dutycycle $3
+	sound __, 1, $98, 1910
+	sound __, 4, $08, 0
+	dutycycle $2
+	sound __, 1, $48, 1954
+	dutycycle $3
+	sound __, 1, $78, 1952
+	sound __, 3, $08, 0
+	sound __, 1, $88, 1922
+	dutycycle $2
+	sound __, 1, $98, 1926
+	sound __, 2, $08, 0
+	sound __, 1, $98, 1923
+	dutycycle $3
+	sound __, 1, $88, 1919
+	dutycycle $2
+	sound __, 1, $58, 1981
+	sound __, 1, $48, 1979
+	sound __, 2, $08, 0
+	sound __, 1, $68, 1979
+	sound __, 1, $78, 1980
+	sound __, 1, $08, 0
+	sound __, 1, $78, 1989
+	sound __, 1, $88, 1989
+	sound __, 1, $78, 1989
+	sound __, 1, $68, 1992
+	sound __, 1, $48, 1992
+	sound __, 3, $08, 0
+	sound __, 2, $48, 2006
+	sound __, 2, $08, 0
+	sound __, 1, $48, 1973
+	sound __, 1, $48, 1972
+	sound __, 1, $38, 1987
+	sound __, 1, $38, 1988
+	sound __, 1, $28, 1989
+	sound __, 3, $08, 0
+	endchannel
+
+Cry_Ludicolo_Ch7:
+	sound __, 1, $11, 2005
+	sound __, 1, $11, 2022
+	sound __, 1, $12, 1990
+	sound __, 1, $11, 1994
+	sound __, 1, $11, 1992
+	sound __, 1, $11, 1982
+	sound __, 2, $11, 1994
+	sound __, 1, $11, 1995
+	sound __, 2, $11, 2010
+	sound __, 1, $12, 2000
+	sound __, 1, $11, 2015
+	sound __, 1, $11, 2010
+	sound __, 1, $10, 1999
+	sound __, 2, $11, 1999
+	sound __, 1, $12, 1988
+	sound __, 1, $11, 1994
+	sound __, 1, $11, 1998
+	sound __, 1, $00, 0
+	sound __, 1, $12, 2002
+	sound __, 1, $10, 2002
+	sound __, 1, $11, 2001
+	sound __, 1, $12, 2001
+	sound __, 1, $11, 2018
+	sound __, 1, $10, 1998
+	sound __, 1, $11, 1999
+	sound __, 1, $12, 1984
+	sound __, 1, $10, 1997
+	sound __, 1, $11, 2000
+	sound __, 1, $11, 1996
+	sound __, 1, $11, 2019
+	sound __, 1, $11, 2010
+	sound __, 1, $16, 2009
+	sound __, 1, $11, 2010
+	sound __, 1, $11, 2015
+	sound __, 1, $21, 2025
+	sound __, 1, $21, 1998
+	sound __, 1, $22, 1997
+	sound __, 1, $21, 1996
+	sound __, 1, $22, 1996
+	sound __, 1, $21, 2021
+	sound __, 1, $32, 1983
+	sound __, 2, $31, 2020
+	sound __, 1, $31, 2010
+	endchannel
+
+Cry_Ludicolo_Ch8:
+	noise __, 1, $48, 92
+	noise __, 6, $38, 92
+	noise __, 1, $28, 92
+	noise __, 1, $48, 92
+	noise __, 1, $28, 92
+	noise __, 2, $38, 92
+	noise __, 1, $48, 92
+	noise __, 1, $28, 92
+	noise __, 4, $38, 92
+.loop
+	noise __, 1, $28, 92
+	noise __, 1, $38, 92
+	loopchannel 2, .loop
+	noise __, 1, $48, 92
+	noise __, 1, $38, 92
+.loop2
+	noise __, 1, $28, 92
+	noise __, 2, $38, 92
+	loopchannel 2, .loop2
+	noise __, 3, $28, 92
+	noise __, 3, $38, 92
+	noise __, 1, $28, 92
+	noise __, 7, $18, 92
+	noise __, 1, $08, 0
+	noise __, 1, $18, 92
+	noise __, 1, $08, 0
+	endchannel

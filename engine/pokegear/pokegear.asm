@@ -1939,38 +1939,32 @@ RadioChannels:
 	db -1
 
 .PokemonMarchMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
+	call JunichiMasudaSolo
 	ld de, PokemonMarchMusicName
 	ret
 
 .ClefairyDanceMusic:
-	ld a, BUENAS_PASSWORD ; Morikazu Aoki
-	call StoreMusicPlayerData
+	call MorikazuAokiSolo
 	ld de, ClefairyDanceMusicName
 	ret
 
 .ProfessorOakMusic:
-	ld a, BUENAS_PASSWORD ; Morikazu Aoki
-	call StoreMusicPlayerData
+	call MorikazuAokiSolo
 	ld de, ProfessorOakMusicName
 	ret
 
 .BikeMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
+	call JunichiMasudaSolo
 	ld de, BikeMusicName
 	ret
 
 .UnownSignalMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
+	call JunichiMasudaSolo
 	ld de, UnownSignalMusicName
 	ret
 
 .SurfMusic:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
+	call GoIchinoseSolo
 	ld de, SurfMusicName
 	ret
 
@@ -1999,149 +1993,243 @@ RadioChannels:
 	ret
 
 .DragonsDenMusic:
-	jp LoadStation_DragonsDenMusic
+	call JunichiMasudaSolo
+	ld de, DragonsDenMusicName
+	ret
 
 .LakeOfRageMusic:
-	jp LoadStation_LakeOfRageMusic
+	call JunichiMasudaSolo
+	ld de, LakeOfRageMusicName
+	ret
 
 .DanceTheatreMusic:
-	jp LoadStation_DanceTheatreMusic
+	call GoIchinoseSolo
+	ld de, DanceTheatreMusicName
+	ret
 
 .Megalovania:
-	jp LoadStation_Megalovania
+	ld a, BUENAS_PASSWORD_15 ; Radiation & ShockSlayer
+	call StoreMusicPlayerData
+	ld de, MegalovaniaMusicName
+	ret
 
 .OakBattleMusic:
-	jp LoadStation_OakBattleMusic
+	ld a, LETS_ALL_SING ; Junichi Masuda & Dannye
+	call StoreMusicPlayerData
+	ld de, OakBattleMusicName
+	ret
 
 .CynthiaBattleMusic:
-	jp LoadStation_CynthiaMusic
+	ld a, BUENAS_PASSWORD_3 ; Go Ichinose & TriteHexagon
+	call StoreMusicPlayerData
+	ld de, CynthiaMusicName
+	ret
 
 .MewtwoMusic:
-	jp LoadStation_MewtwoMusic
+	ld a, BUENAS_PASSWORD_10 ; Kenta Nagata, Hajime Wakai, Toru Minegishi, ShockSlayer
+	call StoreMusicPlayerData
+	ld de, MewtwoMusicName
+	ret
 
 .XYLegendaryMusic:
-	jp LoadStation_XYLegendaryMusic
+	ld a, BUENAS_PASSWORD_6 ; Shota Kageyama, GACT, Pigu
+	call StoreMusicPlayerData
+	ld de, XYLegendaryMusicName
+	ret
 
 .KantoGymLeaderMusic:
-	jp LoadStation_KantoGymLeaderMusic
+	call JunichiMasudaSolo
+	ld de, KantoGymLeaderMusicName
+	ret
 
 .KantoTrainerMusic:
-	jp LoadStation_KantoTrainerMusic
+	call GoIchinoseSolo
+	ld de, KantoTrainerMusicName
+	ret
 
 .KantoWildMusic:
-	jp LoadStation_KantoWildMusic
+	call GoIchinoseSolo
+	ld de, KantoWildMusicName
+	ret
 
 .ChampionMusic:
-	jp LoadStation_ChampionMusic
+	call JunichiMasudaSolo
+	ld de, ChampionMusicName
+	ret
 
 .EliteFourMusic:
-	jp LoadStation_EliteFourMusic
+	ld a, BUENAS_PASSWORD_3 ; Go Ichinose & TriteHexagon
+	call StoreMusicPlayerData
+	ld de, EliteFourMusicName
+	ret
 
 .HoOhMusic:
-	jp LoadStation_HoOhMusic
+	ld a, ROCKET_RADIO_8 ; Go Ichinose & Pigu
+	call StoreMusicPlayerData
+	ld de, HoOhMusicName
+	ret
 
 .LugiaMusic:
-	jp LoadStation_LugiaMusic
+	ld a, ROCKET_RADIO_8 ; Go Ichinose & Pigu
+	call StoreMusicPlayerData
+	ld de, LugiaMusicName
+	ret
 
 .SuicuneMusic:
-	jp LoadStation_SuicuneMusic
+	call JunichiMasudaSolo
+	ld de, SuicuneMusicName
+	ret
 
 .MadameBossMusic:
-	jp LoadStation_MadameBossMusic
+	ld a, ROCKET_RADIO_4 ; Junichi Masuda, Go Ichinose, TriteHexagon
+	call StoreMusicPlayerData
+	ld de, MadameBossMusicName
+	ret
 
 .RocketBattleMusic:
-	jp LoadStation_RocketBattleMusic
+	call JunichiMasudaSolo
+	ld de, RocketBattleMusicName
+	ret
 
 .DahliaMusic:
-	jp LoadStation_DahliaMusic
+	ld a, ROCKET_RADIO ; Junichi Masuda & ryanisthebomb203
+	call StoreMusicPlayerData
+	ld de, DahliaMusicName
+	ret
 
 .DracoMusic:
-	jp LoadStation_DracoMusic
+	call JunichiMasudaSolo
+	ld de, DracoMusicName
+	ret
 
 .JohtoGymLeaderMusic:
-	jp LoadStation_JohtoGymLeaderMusic
+	call JunichiMasudaSolo
+	ld de, JohtoGymLeaderMusicName
+	ret
 
 .JohtoTrainerMusic:
-	jp LoadStation_JohtoTrainerMusic
+	call JunichiMasudaSolo
+	ld de, JohtoTrainerMusicName
+	ret
 
 .JohtoWildMusic:
-	jp LoadStation_JohtoWildMusic
+	call JunichiMasudaSolo
+	ld de, JohtoWildMusicName
+	ret
 
 .CinnabarIslandMusic:
-	jp LoadStation_CinnabarIslandMusic
+	call JunichiMasudaSolo
+	ld de, JohtoWildMusicName
+	ret
 
 .PokemonMansionMusic:
-	jp LoadStation_PokemonMansionMusic
+	ld a, LETS_ALL_SING ; Junichi Masuda & Dannye
+	call StoreMusicPlayerData
+	ld de, PokemonMansionMusicName
+	ret
 
 .GameCornerMusic:
-	jp LoadStation_GameCornerMusic
+	call GoIchinoseSolo
+	ld de, GameCornerMusicName
+	ret
 
 .VictoryRoadRSEMusic:
-	jp LoadStation_VictoryRoadRSEMusic
+	ld a, OAKS_POKEMON_TALK_4 ; Go Ichinose & Monstarules
+	call StoreMusicPlayerData
+	ld de, VictoryRoadRSEMusicName
+	ret
 
 .SilphCoMusic:
-	jp LoadStation_SilphCoMusic
+	ld a, LETS_ALL_SING ; Junichi Masuda & Dannye
+	call StoreMusicPlayerData
+	ld de, SilphCoMusicName
+	ret
 
 .CeruleanCaveMusic:
-	jp LoadStation_CeruleanCaveMusic
+	ld a, LETS_ALL_SING ; Junichi Masuda & Dannye
+	call StoreMusicPlayerData
+	ld de, CeruleanCaveMusicName
+	ret
 
 .MtMoonMusic:
-	jp LoadStation_MtMoonMusic
+	call MorikazuAokiSolo
+	ld de, MtMoonMusicName
+	ret
 
 .ViridianForestMusic:
-	jp LoadStation_ViridianForestMusic
+	call GoIchinoseSolo
+	ld de, ViridianForestMusicName
+	ret
 
 .OaksLabMusic:
-	jp LoadStation_OaksLabMusic
+	call GoIchinoseSolo
+	ld de, OaksLabMusicName
+	ret
 
 .VictoryRoadMusic:
-	jp LoadStation_VictoryRoadMusic
+	call JunichiMasudaSolo
+	ld de, VictoryRoadMusicName
+	ret
 
 .NinjaHideoutMusic:
-	jp LoadStation_NinjaHideoutMusic
+	call JunichiMasudaSolo
+	ld de, NinjaHideoutMusicName
+	ret
 
 .WildAreaInsideMusic:
-	jp LoadStation_WildAreaInsideMusic
+	ld a, PLACES_AND_PEOPLE ; Hitomi Sato & Mmmmmm
+	call StoreMusicPlayerData
+	ld de, WildAreaInsideMusicName
+	ret
 
 .WildAreaMusic:
-	jp LoadStation_WildAreaMusic
+	ld a, PLACES_AND_PEOPLE ; Hitomi Sato & Mmmmmm
+	call StoreMusicPlayerData
+	ld de, WildAreaMusicName
+	ret
 
 .LighthouseMusic:
-	jp LoadStation_LighthouseMusic
+	call JunichiMasudaSolo
+	ld de, LighthouseMusicName
+	ret
 
 .BellTowerMusic:
-	jp LoadStation_BellTowerMusic
+	call JunichiMasudaSolo
+	ld de, BellTowerMusicName
+	ret
 
 .BurnedTowerMusic:
-	jp LoadStation_BurnedTowerMusic
+	call JunichiMasudaSolo
+	ld de, BurnedTowerMusicName
+	ret
 
 .NationalForestMusic:
-	jp LoadStation_NationalForestMusic
+	call GoIchinoseSolo
+	ld de, NationalForestMusicName
+	ret
 
 .UnionCaveMusic:
-	jp LoadStation_UnionCaveMusic
+	call JunichiMasudaSolo
+	ld de, UnionCaveMusicName
+	ret
 
 .RuinsOfAlphMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
+	call JunichiMasudaSolo
 	ld de, RuinsOfAlphMusicName
 	ret
 
 .SproutTowerMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
+	call JunichiMasudaSolo
 	ld de, SproutTowerMusicName
 	ret
 
 .DarkCaveMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
+	call JunichiMasudaSolo
 	ld de, DarkCaveMusicName
 	ret
 
 .ElmsLabMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
+	call JunichiMasudaSolo
 	ld de, ElmsLabMusicName
 	ret
 
@@ -2149,89 +2237,101 @@ RadioChannels:
 	jp LoadStation_NewBarkTownMusic
 
 .Route1Music:
-	jp LoadStation_Route1Music
+	call GoIchinoseSolo
+	ld de, Route1MusicName
+	ret
 
 .Route3Music:
-	jp LoadStation_Route3Music
+	call GoIchinoseSolo
+	ld de, Route3MusicName
+	ret
 
 .Route12Music:
-	jp LoadStation_Route12Music
+	call MorikazuAokiSolo
+	ld de, Route12MusicName
+	ret
 
 .Route26Music:
-	jp LoadStation_Route26Music
+	call GoIchinoseSolo
+	ld de, Route26MusicName
+	ret
 
 .Route29Music:
-	jp LoadStation_Route29Music
+	call JunichiMasudaSolo
+	ld de, Route29MusicName
+	ret
 
 .Route30Music:
-	jp LoadStation_Route30Music
+	call JunichiMasudaSolo
+	ld de, Route30MusicName
+	ret
 
 .Route36Music:
-	jp LoadStation_Route36Music
+	call JunichiMasudaSolo
+	ld de, Route36MusicName
+	ret
 
 .Route37Music:
-	jp LoadStation_Route37Music
+	call JunichiMasudaSolo
+	ld de, Route37MusicName
+	ret
 
 .Route47Music:
-	jp LoadStation_Route47Music
-
-.IntroMusic:
-.AzaleaTownMusic:
-	jp LoadStation_AzaleaTown
-
-.CherrygroveCityMusic:
-	jp LoadStation_CherrygroveCityMusic
-
-.NewBarkTownMusic:
-	jp LoadStation_NewBarkTownMusic
-
-.VioletCityMusic:
-	jp LoadStation_VioletCityMusic
+	ld a, PLACES_AND_PEOPLE ; Hitomi Sato & Mmmmmm
+	call StoreMusicPlayerData
+	ld de, Route47MusicName
+	ret
 
 .GoldenrodCityMusic:
-	jp LoadStation_GoldenrodCityMusic
+	ld a, LUCKY_CHANNEL
+	call StoreMusicPlayerData
+	ld de, GoldenrodCityMusicName
+	ret
 
 .EcruteakCityMusic:
-	jp LoadStation_EcruteakCityMusic
+	ld a, LUCKY_CHANNEL
+	call StoreMusicPlayerData
+	ld de, EcruteakCityMusicName
+	ret
 
 .PalletTownMusic:
-	jp LoadStation_PalletTownMusic
+	call MorikazuAokiSolo
+	ld de, PalletTownMusicName
+	ret
 
 .IndigoPlateauMusic:
-	jp LoadStation_IndigoPlateauMusic
+	call JunichiMasudaSolo
+	ld de, IndigoPlateauPlayerName
+	ret
 
 .ViridianCityMusic:
-	jp LoadStation_ViridianCityMusic
+	call GoIchinoseSolo
+	ld de, ViridianCityMusicName
+	ret
 
 .VermilionCityMusic:
-	jp LoadStation_VermilionCityMusic
+	call GoIchinoseSolo
+	ld de, VermilionCityMusicName
+	ret
 
 .CeladonCityMusic:
-	jp LoadStation_CeladonCityMusic
+	call MorikazuAokiSolo
+	ld de, CeladonCityMusicName
+	ret
 
 .LavenderTownMusic:
-	jp LoadStation_LavenderTownMusic
-
-;	call JoyTextDelay
-;	ld hl, hJoyPressed
-;	ld a, [hl]
-;	and A_BUTTON
-;	jr nz, .pressedA
-;	ret
-
-;.pressedA:
-;	push de
-;	ld a, RESTART_MAP_MUSIC
-;	ld [wPokegearRadioMusicPlaying], a
-;	ld de, MUSIC_GS_OPENING
-;	call PlayMusic
-;	ret
+	call GoIchinoseSolo
+	ld de, LavenderTownMusicName
+	ret
 
 .RuinsOfAlphRadio:
 	jp LoadStation_UnownRadio
 
 .RegiMusic:
-	jp LoadStation_RegiMusic
+	ld a, ROCKET_RADIO_4 ; Junichi Masuda, Go Ichinose, TriteHexagon
+	call StoreMusicPlayerData
+	ld de, RegiBattleMusicName
+	ret
 
 .InJohto:
 ; if in Johto or on the S.S. Aqua, set carry
@@ -2248,259 +2348,18 @@ RadioChannels:
 	scf
 	ret
 
-StoreMusicPlayerData:
-	ld [wCurRadioLine], a
-	xor a
-	ld [wNumRadioLinesPrinted], a
-	ld a, BANK(PlayRadioShow)
-	ld hl, PlayRadioShow
-	jp Radio_BackUpFarCallParams
+.IntroMusic:
+.AzaleaTownMusic:
+	jr LoadStation_AzaleaTown
 
-LoadStation_DragonsDenMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, DragonsDenMusicName
-	ret
+.CherrygroveCityMusic:
+	jr LoadStation_CherrygroveCityMusic
 
-LoadStation_LakeOfRageMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, LakeOfRageMusicName
-	ret
+.NewBarkTownMusic:
+	jr LoadStation_NewBarkTownMusic
 
-LoadStation_DanceTheatreMusic:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, DanceTheatreMusicName
-	ret
-
-LoadStation_Megalovania:
-	ld a, BUENAS_PASSWORD_15 ; Radiation & ShockSlayer
-	call StoreMusicPlayerData
-	ld de, MegalovaniaMusicName
-	ret
-
-LoadStation_OakBattleMusic:
-	ld a, LETS_ALL_SING ; Junichi Masuda & Dannye
-	call StoreMusicPlayerData
-	ld de, OakBattleMusicName
-	ret
-
-LoadStation_CynthiaMusic:
-	ld a, BUENAS_PASSWORD_3 ; Go Ichinose & TriteHexagon
-	call StoreMusicPlayerData
-	ld de, CynthiaMusicName
-	ret
-
-LoadStation_MewtwoMusic:
-	ld a, BUENAS_PASSWORD_10 ; Kenta Nagata, Hajime Wakai, Toru Minegishi, ShockSlayer
-	call StoreMusicPlayerData
-	ld de, MewtwoMusicName
-	ret
-
-LoadStation_XYLegendaryMusic:
-	ld a, BUENAS_PASSWORD_6 ; Shota Kageyama, GACT, Pigu
-	call StoreMusicPlayerData
-	ld de, XYLegendaryMusicName
-	ret
-
-LoadStation_KantoGymLeaderMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, KantoGymLeaderMusicName
-	ret
-
-LoadStation_KantoTrainerMusic:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, KantoTrainerMusicName
-	ret
-
-LoadStation_KantoWildMusic:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, KantoWildMusicName
-	ret
-
-LoadStation_ChampionMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, ChampionMusicName
-	ret
-
-LoadStation_EliteFourMusic:
-	ld a, BUENAS_PASSWORD_3 ; Go Ichinose & TriteHexagon
-	call StoreMusicPlayerData
-	ld de, EliteFourMusicName
-	ret
-
-LoadStation_HoOhMusic:
-	ld a, ROCKET_RADIO_8 ; Go Ichinose & Pigu
-	call StoreMusicPlayerData
-	ld de, HoOhMusicName
-	ret
-
-LoadStation_LugiaMusic:
-	ld a, ROCKET_RADIO_8 ; Go Ichinose & Pigu
-	call StoreMusicPlayerData
-	ld de, LugiaMusicName
-	ret
-
-LoadStation_SuicuneMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, SuicuneMusicName
-	ret
-
-LoadStation_RocketBattleMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, RocketBattleMusicName
-	ret
-
-LoadStation_MadameBossMusic:
-	ld a, ROCKET_RADIO_4 ; Junichi Masuda, Go Ichinose, TriteHexagon
-	call StoreMusicPlayerData
-	ld de, MadameBossMusicName
-	ret
-
-LoadStation_DahliaMusic:
-	ld a, ROCKET_RADIO ; Junichi Masuda & ryanisthebomb203
-	call StoreMusicPlayerData
-	ld de, DahliaMusicName
-	ret
-
-LoadStation_DracoMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, DracoMusicName
-	ret
-
-LoadStation_JohtoGymLeaderMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, JohtoGymLeaderMusicName
-	ret
-
-LoadStation_JohtoTrainerMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, JohtoTrainerMusicName
-	ret
-
-LoadStation_JohtoWildMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, JohtoWildMusicName
-	ret
-
-LoadStation_CinnabarIslandMusic:
-	ld a, OAKS_POKEMON_TALK_7 ; Hitomi Sato & TriteHexagon
-	call StoreMusicPlayerData
-	ld de, CinnabarIslandMusicName
-	ret
-
-LoadStation_PokemonMansionMusic:
-	ld a, LETS_ALL_SING ; Junichi Masuda & Dannye
-	call StoreMusicPlayerData
-	ld de, PokemonMansionMusicName
-	ret
-
-LoadStation_GameCornerMusic:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, GameCornerMusicName
-	ret
-
-LoadStation_VictoryRoadRSEMusic:
-	ld a, OAKS_POKEMON_TALK_4 ; Go Ichinose & Monstarules
-	call StoreMusicPlayerData
-	ld de, VictoryRoadRSEMusicName
-	ret
-
-LoadStation_SilphCoMusic:
-	ld a, LETS_ALL_SING ; Junichi Masuda & Dannye
-	call StoreMusicPlayerData
-	ld de, SilphCoMusicName
-	ret
-
-LoadStation_CeruleanCaveMusic:
-	ld a, LETS_ALL_SING ; Junichi Masuda & Dannye
-	call StoreMusicPlayerData
-	ld de, CeruleanCaveMusicName
-	ret
-
-LoadStation_MtMoonMusic:
-	ld a, BUENAS_PASSWORD ; Morikazu Aoki
-	call StoreMusicPlayerData
-	ld de, MtMoonMusicName
-	ret
-
-LoadStation_ViridianForestMusic:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, ViridianForestMusicName
-	ret
-
-LoadStation_OaksLabMusic:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, OaksLabMusicName
-	ret
-
-LoadStation_VictoryRoadMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, VictoryRoadMusicName
-	ret
-
-LoadStation_NinjaHideoutMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, NinjaHideoutMusicName
-	ret
-
-LoadStation_WildAreaInsideMusic:
-	ld a, PLACES_AND_PEOPLE ; Hitomi Sato & Mmmmmm
-	call StoreMusicPlayerData
-	ld de, WildAreaInsideMusicName
-	ret
-
-LoadStation_WildAreaMusic:
-	ld a, PLACES_AND_PEOPLE ; Hitomi Sato & Mmmmmm
-	call StoreMusicPlayerData
-	ld de, WildAreaMusicName
-	ret
-
-LoadStation_LighthouseMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, LighthouseMusicName
-	ret
-
-LoadStation_BellTowerMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, BellTowerMusicName
-	ret
-
-LoadStation_BurnedTowerMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, BurnedTowerMusicName
-	ret
-
-LoadStation_NationalForestMusic:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, NationalForestMusicName
-	ret
-
-LoadStation_UnionCaveMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, UnionCaveMusicName
-	ret
+.VioletCityMusic:
+	jr LoadStation_VioletCityMusic
 
 LoadStation_NewBarkTownMusic:
 	xor a ; OAKS_POKEMON_TALK Masuda & Ichinose
@@ -2509,130 +2368,37 @@ LoadStation_NewBarkTownMusic:
 	ret
 
 LoadStation_VioletCityMusic:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
+	call GoIchinoseSolo
 	ld de, VioletCityPlayerName
 	ret
 
-LoadStation_ViridianCityMusic:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, ViridianCityMusicName
-	ret
-
-LoadStation_VermilionCityMusic:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, VermilionCityMusicName
-	ret
-
 LoadStation_AzaleaTown:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
+	call GoIchinoseSolo
 	ld de, AzaleaTownMusicName
 	ret
 
-LoadStation_Route1Music:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, Route1MusicName
-	ret
-
-LoadStation_Route3Music:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, Route3MusicName
-	ret
-
-LoadStation_Route26Music:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, Route26MusicName
-	ret
-
-LoadStation_LavenderTownMusic:
-	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
-	call StoreMusicPlayerData
-	ld de, LavenderTownMusicName
-	ret
-
-LoadStation_PalletTownMusic:
-	ld a, BUENAS_PASSWORD ; Morikazu Aoki
-	call StoreMusicPlayerData
-	ld de, PalletTownMusicName
-	ret
-
-LoadStation_Route12Music:
-	ld a, BUENAS_PASSWORD ; Morikazu Aoki
-	call StoreMusicPlayerData
-	ld de, Route12MusicName
-	ret
-
-LoadStation_CeladonCityMusic:
-	ld a, BUENAS_PASSWORD ; Morikazu Aoki
-	call StoreMusicPlayerData
-	ld de, CeladonCityMusicName
-	ret
-
-LoadStation_EcruteakCityMusic:
-	ld a, LUCKY_CHANNEL
-	call StoreMusicPlayerData
-	ld de, EcruteakCityMusicName
-	ret
-
-LoadStation_GoldenrodCityMusic:
-	ld a, LUCKY_CHANNEL
-	call StoreMusicPlayerData
-	ld de, GoldenrodCityMusicName
-	ret
-
 LoadStation_CherrygroveCityMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
+	call JunichiMasudaSolo
 	ld de, CherrygroveCityPlayerName
 	ret
 
-LoadStation_Route29Music:
+GoIchinoseSolo:
+	ld a, LUCKY_CHANNEL ; Go Ichinose Solo
+	jr StoreMusicPlayerData
+
+MorikazuAokiSolo:
+	ld a, BUENAS_PASSWORD ; Morikazu Aoki
+	jr StoreMusicPlayerData
+
+JunichiMasudaSolo:
 	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, Route29MusicName
-	ret
-
-LoadStation_Route30Music:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, Route30MusicName
-	ret
-
-LoadStation_Route36Music:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, Route36MusicName
-	ret
-
-LoadStation_Route37Music:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, Route37MusicName
-	ret
-
-LoadStation_Route47Music:
-	ld a, PLACES_AND_PEOPLE ; Hitomi Sato & Mmmmmm
-	call StoreMusicPlayerData
-	ld de, Route47MusicName
-	ret
-
-LoadStation_IndigoPlateauMusic:
-	ld a, POKEDEX_SHOW ; Junichi Masuda Solo
-	call StoreMusicPlayerData
-	ld de, IndigoPlateauPlayerName
-	ret
-
-LoadStation_RegiMusic:
-	ld a, ROCKET_RADIO_4 ; Junichi Masuda, Go Ichinose, TriteHexagon
-	call StoreMusicPlayerData
-	ld de, RegiBattleMusicName
-	ret
+StoreMusicPlayerData:
+	ld [wCurRadioLine], a
+	xor a
+	ld [wNumRadioLinesPrinted], a
+	ld a, BANK(PlayRadioShow)
+	ld hl, PlayRadioShow
+	jp Radio_BackUpFarCallParams
 
 LoadStation_LuckyChannel:
 

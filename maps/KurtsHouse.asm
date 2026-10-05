@@ -108,9 +108,6 @@ KurtsHouseCelebiStatue:
 KurtsHouseBookshelf:
 	jumpstd difficultbookshelf
 
-KurtsHouseRadio:
-	jumpstd televisionscript
-
 KurtsHouseAskTeachAMoveText:
 	text "I'm just here to"
 	line "watch Kurt's"
@@ -214,8 +211,7 @@ KurtsHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 7 ; bg events
-	bg_event  6,  1, BGEVENT_READ, KurtsHouseRadio
+	db 6 ; bg events
 	bg_event  8,  0, BGEVENT_READ, KurtsHouseOakPhoto
 	bg_event  9,  0, BGEVENT_READ, KurtsHouseOakPhoto
 	bg_event  5,  1, BGEVENT_READ, KurtsHouseBookshelf

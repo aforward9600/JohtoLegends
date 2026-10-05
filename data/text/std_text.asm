@@ -88,9 +88,6 @@ MagazineBookshelfText:
 	line "#mon Graph…"
 	done
 
-TeamRocketOathText:
-	done
-
 IncenseBurnerText:
 	text "What is this?"
 

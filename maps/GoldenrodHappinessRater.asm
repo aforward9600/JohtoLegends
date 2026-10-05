@@ -44,9 +44,6 @@ GoldenrodHappinessRaterPokefanMScript:
 HappinessRatersHouseBookshelf:
 	jumpstd genericsink
 
-GoldenrodTelevision:
-	jumpstd televisionscript
-
 GoldenrodHappinessRaterTeacherText:
 	text "If you treat your"
 	line "#mon nicely,"
@@ -119,10 +116,9 @@ GoldenrodHappinessRater_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 2 ; bg events
 	bg_event  0,  1, BGEVENT_READ, HappinessRatersHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, HappinessRatersHouseBookshelf
-	bg_event  4,  1, BGEVENT_READ, GoldenrodTelevision
 
 	db 2 ; object events
 	object_event  3,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterTeacherScript, -1

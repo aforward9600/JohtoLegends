@@ -106,8 +106,8 @@ BlackthornDragonSpeechHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  4,  1, BGEVENT_READ, MoveDeleterTelevision
+	db 0 ; bg events
+;	bg_event  4,  1, BGEVENT_READ, MoveDeleterTelevision
 
 	db 2 ; object events
 	object_event  3,  3, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornDragonSpeechHouseGrannyScript, -1

@@ -152,9 +152,6 @@ AfterMiltonRematch:
 GoldenrodRockets:
 	jumpstd goldenrodrockets
 
-GoldenrodGymActivateRockets:
-	jumpstd radiotowerrockets
-
 GoldenrodGymRivalScript:
 	faceplayer
 	opentext

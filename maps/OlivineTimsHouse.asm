@@ -21,9 +21,6 @@ TimsMomScript:
 TimsHouseBookshelf:
 	jumpstd genericsink
 
-TimsHouseTelevision:
-	jumpstd televisionscript
-
 TimsMomText:
 	text "My son Tim loves"
 	line "the #mon he got"
@@ -44,10 +41,9 @@ OlivineTimsHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 2 ; bg events
 	bg_event  0,  1, BGEVENT_READ, TimsHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, TimsHouseBookshelf
-	bg_event  4,  1, BGEVENT_READ, TimsHouseTelevision
 
 	db 2 ; object events
 	object_event  6,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Tim, -1

@@ -44,10 +44,9 @@ CherrygroveEvolutionSpeechHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 2 ; bg events
 	bg_event  0,  1, BGEVENT_READ, CherrygroveEvolutionSpeechHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, CherrygroveEvolutionSpeechHouseBookshelf
-	bg_event  4,  1, BGEVENT_READ, CherrygroveTelevision
 
 	db 2 ; object events
 	object_event  4,  5, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CherrygroveEvolutionSpeechHouseGrannyScript, -1

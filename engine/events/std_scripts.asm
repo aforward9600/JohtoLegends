@@ -4,7 +4,6 @@ StdScripts::
 	dba DifficultBookshelfScript
 	dba PictureBookshelfScript
 	dba MagazineBookshelfScript
-	dba TeamRocketOathScript
 	dba IncenseBurnerScript
 	dba MerchandiseShelfScript
 	dba TownMapScript
@@ -19,32 +18,9 @@ StdScripts::
 	dba PokecenterSignScript
 	dba MartSignScript
 	dba GoldenrodRocketsScript
-	dba RadioTowerRocketsScript
 	dba ElevatorButtonScript
 	dba DayToTextScript
-	dba BugContestResultsWarpScript
-	dba BugContestResultsScript
 	dba InitializeEventsScript
-	dba AskNumber1MScript
-	dba AskNumber2MScript
-	dba RegisteredNumberMScript
-	dba NumberAcceptedMScript
-	dba NumberDeclinedMScript
-	dba PhoneFullMScript
-	dba RematchMScript
-	dba GiftMScript
-	dba PackFullMScript
-	dba RematchGiftMScript
-	dba AskNumber1FScript
-	dba AskNumber2FScript
-	dba RegisteredNumberFScript
-	dba NumberAcceptedFScript
-	dba NumberDeclinedFScript
-	dba PhoneFullFScript
-	dba RematchFScript
-	dba GiftFScript
-	dba PackFullFScript
-	dba RematchGiftFScript
 	dba GymStatue1Script
 	dba GymStatue2Script
 	dba ReceiveItemScript
@@ -56,9 +32,7 @@ StdScripts::
 	dba GymStatue4Script
 	dba NinjaHideoutClear
 	dba StaticPokemonRefresh
-	dba TelevisionScript
 	dba SwarmScript
-	dba GetDecoEvent
 	dba GymStatue5Script
 	dba GenericSinkScript
 	dba ShinyPasswordCheck
@@ -166,9 +140,6 @@ PictureBookshelfScript:
 MagazineBookshelfScript:
 	farjumptext MagazineBookshelfText
 
-TeamRocketOathScript:
-	farjumptext TeamRocketOathText
-
 IncenseBurnerScript:
 	farjumptext IncenseBurnerText
 
@@ -185,13 +156,6 @@ TownMapScript:
 
 WindowScript:
 	farjumptext WindowText
-
-TVScript:
-	opentext
-	farwritetext TVText
-	waitbutton
-	closetext
-	end
 
 HomepageScript:
 	farjumptext HomepageText
@@ -290,37 +254,6 @@ GoldenrodRocketsScript:
 	setflag ENGINE_ROCKETS_IN_RADIO_TOWER
 	end
 
-RadioTowerRocketsScript:
-
-BugContestResultsWarpScript:
-
-BugContestResultsScript:
-
-BugContestResults_DidNotWin:
-
-BugContestResults_ReturnAfterWinnersPrize:
-
-BugContestResults_FinishUp:
-BugContestResults_DidNotLeaveMons:
-BugContestResults_CleanUp:
-
-BugContestResults_FirstPlace:
-
-BugContestResults_SecondPlace:
-
-BugContestResults_ThirdPlace:
-
-BugContestResults_NoRoomForSunStone:
-
-BugContestResults_NoRoomForEverstone:
-
-BugContestResults_NoRoomForGoldBerry:
-
-BugContestResults_NoRoomForBerry:
-
-BugContestResults_CopyContestantsToResults:
-	end
-
 InitializeEventsScript:
 	setevent EVENT_SEVAULT_CANYON_ZAPDOS_1
 	setevent EVENT_SEVAULT_CANYON_ZAPDOS_2
@@ -346,17 +279,14 @@ InitializeEventsScript:
 	setevent EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
 	setevent EVENT_DECO_BED_1
 	setevent EVENT_DECO_PLANT_4
-	setevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
 	setevent EVENT_OLIVINE_GYM_JASMINE
 	setevent EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
-	setevent EVENT_MET_BILL
+;	setevent EVENT_MET_BILL
 	setevent EVENT_MYSTERY_GIFT_DELIVERY_GUY
 	setevent EVENT_LAKE_OF_RAGE_MIYAMOTO
 	setevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1
 	setevent EVENT_GOLDENROD_UNDERGROUND_WAREHOUSE_BLOCKED_OFF
-	setevent EVENT_RIVAL_VICTORY_ROAD
 	setevent EVENT_BURNED_TOWER_B1F_BEASTS_1
-	setevent EVENT_RED_IN_MT_SILVER
 	setevent EVENT_RANG_CLEAR_BELL_1
 	setevent EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER
 	setevent EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
@@ -374,8 +304,6 @@ InitializeEventsScript:
 	setevent EVENT_TIN_TOWER_1F_WISE_TRIO_2
 	setevent EVENT_SET_WHEN_FOUGHT_HO_OH
 	setevent EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
-	setflag ENGINE_ROCKET_SIGNAL_ON_CH20
-	setflag ENGINE_ROCKETS_IN_MAHOGANY
 	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_ROCKET
 	setevent EVENT_LOST_BOY_TWO_ISLAND
 	setevent EVENT_TRAINERS_IN_CERULEAN_GYM
@@ -434,148 +362,19 @@ InitializeEventsScript:
 	setevent EVENT_GOLDENROD_DEPT_STORE_POKEFAN_M
 	return
 
-AskNumber1MScript:
-	special RandomPhoneMon
-	readvar VAR_CALLERID
-	ifequal PHONE_SCHOOLBOY_JACK, .Jack
+;RegisteredNumberMScript:
+;	farwritetext RegisteredNumber1Text
+;	playsound SFX_REGISTER_PHONE_NUMBER
+;	waitsfx
+;	buttonsound
+;	end
 
-.Jack:
-	end
-
-AskNumber2MScript:
-	special RandomPhoneMon
-	readvar VAR_CALLERID
-	ifequal PHONE_SCHOOLBOY_JACK, .Jack
-
-.Jack:
-	end
-
-RegisteredNumberMScript:
-	farwritetext RegisteredNumber1Text
-	playsound SFX_REGISTER_PHONE_NUMBER
-	waitsfx
-	buttonsound
-	end
-
-NumberAcceptedMScript:
-	readvar VAR_CALLERID
-	ifequal PHONE_SCHOOLBOY_JACK, .Jack
-
-.Jack:
-	end
-
-NumberDeclinedMScript:
-	readvar VAR_CALLERID
-	ifequal PHONE_SCHOOLBOY_JACK, .Jack
-
-.Jack:
-	end
-
-PhoneFullMScript:
-	readvar VAR_CALLERID
-	ifequal PHONE_SCHOOLBOY_JACK, .Jack
-
-.Jack:
-	end
-
-RematchMScript:
-	readvar VAR_CALLERID
-	ifequal PHONE_SCHOOLBOY_JACK, .Jack
-
-.Jack:
-	end
-
-GiftMScript:
-	readvar VAR_CALLERID
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-
-.Jose:
-	end
-
-PackFullMScript:
-	readvar VAR_CALLERID
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-
-.Jose:
-	end
-
-RematchGiftMScript:
-	opentext
-	readvar VAR_CALLERID
-	ifequal PHONE_BIRDKEEPER_VANCE, .Vance
-
-.Vance:
-	end
-
-AskNumber1FScript:
-	readvar VAR_CALLERID
-	ifequal PHONE_COOLTRAINERF_REENA, .Reena
-
-.Reena:
-	end
-
-AskNumber2FScript:
-	readvar VAR_CALLERID
-	ifequal PHONE_COOLTRAINERF_REENA, .Reena
-
-.Reena:
-	end
-
-RegisteredNumberFScript:
-	farwritetext RegisteredNumber2Text
-	playsound SFX_REGISTER_PHONE_NUMBER
-	waitsfx
-	buttonsound
-	end
-
-NumberAcceptedFScript:
-	readvar VAR_CALLERID
-	ifequal PHONE_COOLTRAINERF_REENA, .Reena
-
-.Reena:
-	end
-
-NumberDeclinedFScript:
-	readvar VAR_CALLERID
-	ifequal PHONE_COOLTRAINERF_REENA, .Reena
-
-.Reena:
-	end
-
-PhoneFullFScript:
-	readvar VAR_CALLERID
-	ifequal PHONE_COOLTRAINERF_REENA, .Reena
-
-.Reena:
-	end
-
-RematchFScript:
-	readvar VAR_CALLERID
-	ifequal PHONE_COOLTRAINERF_REENA, .Reena
-
-.Reena:
-	end
-
-GiftFScript:
-	readvar VAR_CALLERID
-	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
-
-.Tiffany:
-	end
-
-PackFullFScript:
-	readvar VAR_CALLERID
-	ifequal PHONE_POKEFAN_BEVERLY, .Beverly
-
-.Beverly:
-	end
-
-RematchGiftFScript:
-	readvar VAR_CALLERID
-	ifequal PHONE_PICNICKER_ERIN, .Erin
-
-.Erin:
-	end
+;RegisteredNumberFScript:
+;	farwritetext RegisteredNumber2Text
+;	playsound SFX_REGISTER_PHONE_NUMBER
+;	waitsfx
+;	buttonsound
+;	end
 
 GymStatue1Script:
 	getcurlandmarkname STRING_BUFFER_3
@@ -690,7 +489,7 @@ CoinVendor_IntroScript:
 	db 3 ; items
 	db " 50 :  ¥1000@"
 	db "500 : ¥10000@"
-	db "CANCEL@"
+	db "Cancel@"
 
 HappinessCheckScript:
 	faceplayer
@@ -699,18 +498,15 @@ HappinessCheckScript:
 	ifless 50, .Unhappy
 	ifless 150, .KindaHappy
 	farwritetext HappinessText3
-	waitbutton
-	closetext
-	end
+	sjump .HappinessEnd
 
 .KindaHappy:
 	farwritetext HappinessText2
-	waitbutton
-	closetext
-	end
+	sjump .HappinessEnd
 
 .Unhappy:
 	farwritetext HappinessText1
+.HappinessEnd
 	waitbutton
 	closetext
 	end
@@ -756,22 +552,6 @@ Movement_ContestResults_WalkAfterWarp:
 	step DOWN
 	turn_head UP
 	step_resume
-
-GetDecoEvent:
-	setevent EVENT_DECO_TOTODILE_DOLL
-	setevent EVENT_DECO_GENGAR_DOLL
-	setevent EVENT_DECO_BULBASAUR_DOLL
-	setevent EVENT_DECO_CHARMANDER_DOLL
-	setevent EVENT_DECO_CHIKORITA_DOLL
-	setevent EVENT_DECO_CYNDAQUIL_DOLL
-	setevent EVENT_DECO_SQUIRTLE_DOLL
-	setevent EVENT_DECO_BIG_SALAMENCE_DOLL
-	setevent EVENT_DECO_PLANT_3
-	setevent EVENT_DECO_CARPET_1
-	setevent EVENT_DECO_PIKACHU_DOLL
-	setevent EVENT_DECO_POSTER_3
-	setevent EVENT_DECO_SILVER_TROPHY
-	return
 
 StaticPokemonRefresh:
 	checkevent EVENT_BEAT_FARFETCHD
@@ -946,7 +726,7 @@ StaticPokemonRefresh:
 	clearevent EVENT_MT_EMBER_MOLTRES_G
 	sjump StaticPokemonRefresh
 
-TelevisionScript:
+TVScript:
 	readvar VAR_WEEKDAY
 	ifequal MONDAY, .Monday
 	ifequal TUESDAY, .Tuesday

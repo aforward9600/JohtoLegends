@@ -66,8 +66,7 @@ ManiasHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  4,  1, BGEVENT_READ, CianwoodTelevision
+	db 0 ; bg events
 
 	db 4 ; object events
 	object_event  3,  4, SPRITE_KID, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ManiaScript, -1

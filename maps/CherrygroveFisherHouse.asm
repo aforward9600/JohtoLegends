@@ -12,9 +12,6 @@ CherrygroveFisherWifeScript:
 CherrygroveFisherHouseBookshelf:
 	jumpstd genericsink
 
-CherrygroveFisherTelevision:
-	jumpstd televisionscript
-
 CherrygroveFisherWifeText:
 	text "I love my husband,"
 	line "I really do, but"
@@ -34,10 +31,9 @@ CherrygroveFisherHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 2 ; bg events
 	bg_event  0,  1, BGEVENT_READ, CherrygroveFisherHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, CherrygroveFisherHouseBookshelf
-	bg_event  4,  1, BGEVENT_READ, CherrygroveFisherTelevision
 
 	db 1 ; object events
 	object_event  3,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveFisherWifeScript, -1

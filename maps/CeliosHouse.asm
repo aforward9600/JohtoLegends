@@ -16,9 +16,6 @@ CeliosDadScript:
 CeliosHouseBookshelf:
 	jumpstd genericsink
 
-CeliosHouseTelevision:
-	jumpstd televisionscript
-
 CeliosHouseComputer:
 	opentext
 	readvar VAR_FACING
@@ -80,10 +77,9 @@ CeliosHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, CeliosHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, CeliosHouseBookshelf
-	bg_event  4,  1, BGEVENT_READ, CeliosHouseTelevision
 	bg_event  9,  1, BGEVENT_READ, CeliosHouseComputer
 
 	db 2 ; object events

@@ -36,9 +36,6 @@ SootheBellHouseClefairyScript:
 	opentext
 	writetextend SootheBellHouseClefairyText
 
-SootheBellTelevision:
-	jumpstd televisionscript
-
 SootheBellHouseBlackBeltText:
 	text "My Cleffa evolved"
 	line "after I gave it a"
@@ -83,8 +80,7 @@ SootheBellHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  4,  1, BGEVENT_READ, SootheBellTelevision
+	db 0 ; bg events
 
 	db 3 ; object events
 	object_event  3,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SootheBellHouseBlackBeltScript, -1

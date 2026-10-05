@@ -78,9 +78,6 @@ EcruteakHistoryBook:
 .KeepReading:
 	writetextend EcruteakThreeMonText
 
-ItemFinderHouseRadio:
-	jumpstd televisionscript
-
 EcruteakItemfinderAdventureText:
 	text "I leave for a few"
 	line "minutes, and I"
@@ -216,8 +213,7 @@ EcruteakItemfinderHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  2,  1, BGEVENT_READ, ItemFinderHouseRadio
+	db 0 ; bg events
 
 	db 3 ; object events
 	object_event  2,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakItemfinderGuy, EVENT_ITEMFINDER_GUY

@@ -36,9 +36,6 @@ MahoganyRedGyaradosSpeechHouseHeracrossScript:
 	closepokepic
 	jumptext MahoganyRedGyaradosSpeechHouseHeracrossText
 
-MahoganyTelevision:
-	jumpstd televisionscript
-
 MahoganyRedGyaradosSpeechHouseBlackBeltText:
 	text "A Heracross once"
 	line "fell on my head"
@@ -86,8 +83,7 @@ MahoganyRedGyaradosSpeechHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  4,  1, BGEVENT_READ, MahoganyTelevision
+	db 0 ; bg events
 
 	db 3 ; object events
 	object_event  3,  3, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyRedGyaradosSpeechHouseBlackBeltScript, -1
