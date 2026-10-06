@@ -387,15 +387,16 @@ Set100:
 SetLevelCap:
 	ld de, EVENT_BEAT_BIKER_BOSS
 	call Options_CheckEvent
-	jr z, Set100
+	ld b,b
+	jr nz, Set100
 
 	ld de, EVENT_GOT_RIVALS_MESSAGE
 	call Options_CheckEvent
-	jr z, .Set80
+	jr nz, .Set80
 
 	ld de, EVENT_BEAT_MADAME_BOSS
 	call Options_CheckEvent
-	jr z, .Set68
+	jr nz, .Set68
 
 	ld hl, wJohtoBadges
 

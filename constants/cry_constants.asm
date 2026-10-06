@@ -164,3 +164,4 @@
 	const CRY_LOTAD
 	const CRY_LOMBRE
 	const CRY_LUDICOLO
+	const CRY_REGIROCK

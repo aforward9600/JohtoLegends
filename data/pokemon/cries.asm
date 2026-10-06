@@ -397,7 +397,7 @@ PokemonCries::
 	mon_cry CRY_DRAPION,     $000,  $0ff ; DRAPION
 	mon_cry CRY_CROAGUNK,    $000,  $0ff ; CROAGUNK
 	mon_cry CRY_TOXICROAK,   $000,  $0ff ; TOXICROAK
-	mon_cry CRY_TEDDIURSA,   $58e,  $0c8 ; REGIROCK PLACEHOLDER
+	mon_cry CRY_REGIROCK,    $000,  $0ff ; REGIROCK
 	mon_cry CRY_MAGCARGO,    $f1c,  $20a ; REGICE PLACEHOLDER
 	mon_cry CRY_WOOPER,      $e82,  $480 ; REGISTEEL PLACEHOLDER
 	mon_cry CRY_GRIMER,      $250,  $1c0 ; REGIELEKI PLACEHOLDER

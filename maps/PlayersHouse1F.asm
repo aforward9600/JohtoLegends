@@ -112,11 +112,10 @@ MomScript:
 	iftrue .GaveMysteryEgg
 	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue .GotAPokemon
-	givepoke TOGEKISS, 5, ORAN_BERRY
-	givepoke LOTAD, 5, ORAN_BERRY
-	givepoke LOMBRE, 5, ORAN_BERRY
-	givepoke LUDICOLO, 5, ORAN_BERRY
-	setflag ENGINE_RADIO_CARD
+;	givepoke REGIROCK, 5, ORAN_BERRY
+;	givepoke LOTAD, 5, ORAN_BERRY
+;	givepoke LOMBRE, 5, ORAN_BERRY
+;	givepoke LUDICOLO, 5, ORAN_BERRY
 	jumptext HurryUpElmIsWaitingText
 
 .BeatLeague:

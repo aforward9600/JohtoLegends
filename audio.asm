@@ -134,6 +134,10 @@ SECTION "Cries 3", ROMX
 
 INCLUDE "audio/cries_3.asm"
 
+SECTION "Cries 4", ROMX
+
+INCLUDE "audio/cries_4.asm"
+
 SECTION "New Songs", ROMX
 
 INCLUDE "audio/music/route47.asm"

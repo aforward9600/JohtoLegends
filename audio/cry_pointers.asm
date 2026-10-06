@@ -159,3 +159,4 @@ Cries:
 	dba Cry_Lotad
 	dba Cry_Lombre
 	dba Cry_Ludicolo
+	dba Cry_Regirock
