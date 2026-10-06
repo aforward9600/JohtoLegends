@@ -41,69 +41,58 @@ OlivinePunishmentSpeechHouseDaughter:
 	sjump .MaybeLater
 
 .NoStones:
-	writetext HowIsYourEeveeText
-	waitbutton
-	closetext
-	end
+	writetextend HowIsYourEeveeText
 
 .WaterStone:
 	writetext HereYouGoText
 	buttonsound
 	verbosegiveitem WATER_STONE
-	writetext VaporeonText
 	sjump .FinishEvolutionStone
 
 .ThunderStone:
 	writetext HereYouGoText
 	buttonsound
 	verbosegiveitem THUNDERSTONE
-	writetext JolteonText
 	sjump .FinishEvolutionStone
 
 .FireStone:
 	writetext HereYouGoText
 	buttonsound
 	verbosegiveitem FIRE_STONE
-	writetext FlareonText
 	sjump .FinishEvolutionStone
 
 .SunStone:
 	writetext HereYouGoText
 	buttonsound
 	verbosegiveitem SUN_STONE
-	writetext EspeonText
 	sjump .FinishEvolutionStone
 
 .MoonStone:
 	writetext HereYouGoText
 	buttonsound
 	verbosegiveitem MOON_STONE
-	writetext UmbreonText
 	sjump .FinishEvolutionStone
 
 .LeafStone:
 	writetext HereYouGoText
 	buttonsound
 	verbosegiveitem LEAF_STONE
-	writetext LeafeonText
 	sjump .FinishEvolutionStone
 
 .IceStone:
 	writetext HereYouGoText
 	buttonsound
 	verbosegiveitem ICE_STONE
-	writetext GlaceonText
 	sjump .FinishEvolutionStone
 
 .ShinyStone:
 	writetext HereYouGoText
 	buttonsound
 	verbosegiveitem SHINY_STONE
-	writetext SylveonText
 .FinishEvolutionStone
+	setevent EVENT_GOT_STONE_FROM_THEATRE
 	waitbutton
 	closetext
-	setevent EVENT_GOT_STONE_FROM_THEATRE
 	end
 
 .MaybeLater:
@@ -166,54 +155,8 @@ YouGotAnEeveeText:
 
 HereYouGoText:
 	text "Here you go."
-	done
 
-VaporeonText:
-	text "Vaporeon the Water"
-	line "type. An excellent"
-	cont "choice."
-	done
-
-JolteonText:
-	text "Jolteon the Elect-"
-	line "ric type. An exce-"
-	cont "llent choice."
-	done
-
-FlareonText:
-	text "Flareon the Fire"
-	line "type. An excellent"
-	cont "choice."
-	done
-
-EspeonText:
-	text "Espeon the Psychic"
-	line "type. An excellent"
-	cont "choice."
-	done
-
-UmbreonText:
-	text "Umbreon the Dark"
-	line "type. An excellent"
-	cont "choice."
-	done
-
-LeafeonText:
-	text "Leafeon the Grass"
-	line "type. An excellent"
-	cont "choice."
-	done
-
-GlaceonText:
-	text "Glaceon the Ice"
-	line "type. An excellent"
-	cont "choice."
-	done
-
-SylveonText:
-	text "Sylveon the Fairy"
-	line "type. An excellent"
-	cont "choice."
+	para "Use it well."
 	done
 
 HowIsYourEeveeText:

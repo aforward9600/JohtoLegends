@@ -342,127 +342,73 @@ ElmsLabWindowText1:
 	done
 
 ElmsLabTravelTip1Text:
-	text "<PLAYER> opened a"
-	line "book."
+	text "#mon Evolution"
+	line "Vol. 1"
 
-	para "Eevee is"
-	line "incredible!"
+	para "Eevee"
 
-	para "It can evolve into"
-	line "8 different"
-	cont "#mon!"
-
-	para "Water Stone:"
-	line "Vaporeon."
+	para "Water Stone"
 	
-	para "Thunderstone:"
-	line "Jolteon."
+	para "Thunderstone"
 
-	para "Fire Stone:"
-	line "Flareon."
+	para "Fire Stone"
 
-	para "Sun Stone:"
-	line "Espeon."
+	para "Sun Stone"
 
-	para "Moon Stone:"
-	line "Umbreon."
+	para "Moon Stone"
 
-	para "Leaf Stone:"
-	line "Leafeon."
+	para "Leaf Stone"
 
-	para "Ice Stone:"
-	line "Glaceon."
+	para "Ice Stone"
 
-	para "Shiny Stone:"
-	line "Sylveon."
+	para "Shiny Stone"
 	done
 
 ElmsLabTravelTip2Text:
-	text "<PLAYER> opened a"
-	line "book."
+	text "#mon Evolution"
+	line "Vol. 2"
 
-	para "Dusk Stone can be"
-	line "used to evolve"
-	cont "Murkrow, Dusclops"
-	cont "and Misdreavus!"
+	para "Dusk Stone:"
+	line "Misdreavus"
+	cont "Murkrow"
+	cont "Dusclops"
 
-	para "Astounding!"
+	para "Shiny Stone: Eevee"
+	line "Togetic"
 
-	para "Shiny Stone can"
-	line "be used to evolve"
-	cont "Togetic and Eevee!"
+	para "Dawn Stone: Kirlia"
+	line "Snorunt"
+	cont "Male only"
 
-	para "Remarkable!"
-
-	para "Dawn Stone can be"
-	line "used to evolve"
-	cont "Kirlia and"
-	cont "Snorunt!"
-	
-	para "Note: Only male"
-	line "Kirlia and female"
-	cont "Snorunt evolve by"
-	cont "this manner."
-
-	para "Need to research"
-	line "further."
-
-	para "Ice Stone can be"
-	line "used to evolve"
-	cont "Piloswine and"
-	cont "Eevee!"
-
-	para "Stupendous!"
+	para "Ice Stone: Eevee"
+	line "Alolan Vulpix"
 	done
 
 ElmsLabTravelTip3Text:
-	text "<PLAYER> opened a"
-	line "book."
+	text "#mon Evolution"
+	line "Vol. 3"
 
 	para "Link Cable:"
 
-	para "In the past,"
-	line "certain #mon"
-	cont "required trading"
-	cont "between two people"
-	cont "to evolve."
-
-	para "In recent years,"
-	line "Silph Co. created"
-	cont "an artificial"
-	cont "device to induce"
-	cont "evolution called"
-	cont "the Link Cable!"
-
 	para "Kadabra, Machoke,"
-	line "Graveler, and"
-	cont "Haunter are"
-	cont "compatible."
+	line "Graveler, Haunter"
 	done
 
 ElmsLabTravelTip4Text:
-	text "<PLAYER> opened a"
-	line "book."
+	text "#mon Evolution"
+	line "Vol. 4"
 
-	para "Sneasel and Gligar"
-	line "evolve through"
-	cont "the use of Razor"
-	cont "items, Claw and"
-	cont "Fang respectively."
+	para "Razor Claw:"
+	line "Sneasel"
+	cont "Hisuian Sneasel"
 
-	para "Electabuzz and"
-	line "Magmar evolve with"
-	cont "Electrizer and"
-	cont "Magmarizer"
-	cont "respectively."
+	para "Razor Fang: Gligar"
 
-	para "These items are"
-	line "not manufactured"
-	cont "in Johto, and are"
-	cont "often trafficked"
-	cont "from Sinnoh."
+	para "Electrizer:"
+	line "Electabuzz"
 
-	para "So I've heard."
+	para "Magmarizer:"
+	cont "Magmar"
 	done
 
 ElmsLabTrashcanText:

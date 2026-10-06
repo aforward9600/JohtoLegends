@@ -47,6 +47,8 @@ MeetMomScript:
 	special NameRival
 	writetext DahliasLookingForYouText
 .Finish3
+	waitbutton
+	writetext GetWatchText
 	buttonsound
 	waitsfx
 	writetext GotWatchText
@@ -112,10 +114,6 @@ MomScript:
 	iftrue .GaveMysteryEgg
 	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue .GotAPokemon
-;	givepoke REGIROCK, 5, ORAN_BERRY
-;	givepoke LOTAD, 5, ORAN_BERRY
-;	givepoke LOMBRE, 5, ORAN_BERRY
-;	givepoke LUDICOLO, 5, ORAN_BERRY
 	jumptext HurryUpElmIsWaitingText
 
 .BeatLeague:
@@ -206,22 +204,6 @@ NeighborScript:
 	opentext
 	checkevent EVENT_BEAT_CHAMPION_LANCE
 	iftrue .CongratulationsOnBeingChampion
-	checktime MORN
-	iftrue .MornScript
-	checktime DAY
-	iftrue .DayScript
-	checktime NITE
-	iftrue .NiteScript
-
-.NiteScript:
-	writetext NeighborNiteIntroText
-	buttonsound
-	sjump .Main
-
-.MornScript:
-	writetext NeighborMornIntroText
-	buttonsound
-	sjump .Main
 
 .DayScript:
 	writetext NeighborDayIntroText
@@ -297,27 +279,7 @@ DahliasLookingForYouText:
 	line "keep her and the"
 	cont "Master waiting, do"
 
-	para "you? I wish your"
-	line "parents were here"
-	cont "to see this."
-
-	para "They would be so"
-	line "proud of you,"
-	cont "starting on a"
-
-	para "journey with a"
-	line "#mon, just as"
-	cont "they did…"
-
-	para "Sorry, I was lost"
-	line "in a memory. You"
-	cont "better get going."
-
-	para "Here is a watch."
-	line "It will help you"
-	cont "keep track of time"
-
-	para "and location."
+	para "you?"
 	done
 
 MomGivesPokegearText:
@@ -326,11 +288,6 @@ MomGivesPokegearText:
 
 	para "You mustn't forget"
 	line "that!"
-	done
-
-IsItDSTText:
-	text "Is it Daylight"
-	line "Saving Time now?"
 	done
 
 ComeHomeForDSTText:
@@ -366,7 +323,11 @@ DracosLookingForYouText:
 	line "keep him and the"
 	cont "Master waiting, do"
 
-	para "you? I wish your"
+	para "you?"
+	done
+
+GetWatchText:
+	text "I wish your"
 	line "parents were here"
 	cont "to see this."
 
@@ -413,47 +374,26 @@ ImBehindYouText:
 	line "the way!"
 	done
 
-NeighborMornIntroText:
-	text "Good morning,"
-	line "<PLAY_G>!"
-
-	para "I'm visiting!"
-	done
-
 NeighborDayIntroText:
 	text "Hello, <PLAY_G>!"
 	line "I'm visiting!"
-	done
 
-NeighborNiteIntroText:
-	text "Good evening,"
-	line "<PLAY_G>!"
-
-	para "I'm visiting!"
-	done
-
-NeighborText:
-	text "It's hard to"
+	para "It's hard to"
 	line "believe that my"
 
 	para "baby is going on a"
 	line "journey, as are"
 	cont "you."
+	done
 
-	para "Keep a close eye"
+NeighborText:
+	text "Keep a close eye"
 	line "on her for me,"
 	cont "would you?"
 	done
 
 NeighborText2:
-	text "It's hard to"
-	line "believe that my"
-
-	para "baby is going on a"
-	line "journey, as are"
-	cont "you."
-
-	para "Keep a close eye"
+	text "Keep a close eye"
 	line "on him for me,"
 	cont "would you?"
 	done

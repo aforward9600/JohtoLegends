@@ -70,12 +70,7 @@ GoldenrodJailOfficerScript:
 	opentext
 	writetext HereIsTheItemText
 	buttonsound
-	giveitem STRANGE_HAIR
-	writetext ReceivedStrangeHairText
-	playsound SFX_ITEM
-	waitsfx
-	writetext PutStrangeHairInKeyItemText
-	waitbutton
+	verbosegiveitem STRANGE_HAIR
 	setevent EVENT_GOT_STRANGE_HAIR
 	closetext
 	applymovement GOLDENRODJAIL_ROCKET, RocketLeavesMovement
@@ -452,9 +447,8 @@ Bookshelf4Text:
 Bookshelf5Text:
 	text "Name: A. Wesker"
 
-	para "Crime: Unauthor-"
-	line "ized biological"
-	cont "experiments."
+	para "Crime: Illegal"
+	line "experiments."
 	done
 
 Bookshelf6Text:
@@ -503,18 +497,6 @@ HereIsTheItemText:
 	line "collector."
 
 	para "See ya."
-	done
-
-ReceivedStrangeHairText:
-	text "<PLAYER> received"
-	line "Strange Hair."
-	done
-
-PutStrangeHairInKeyItemText:
-	text "<PLAYER> put the"
-	line "Strange Hair in"
-	cont "the Key Item"
-	cont "pocket."
 	done
 
 HopeIDidTheRightThingText:

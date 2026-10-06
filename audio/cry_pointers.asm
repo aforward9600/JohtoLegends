@@ -160,3 +160,8 @@ Cries:
 	dba Cry_Lombre
 	dba Cry_Ludicolo
 	dba Cry_Regirock
+	dba Cry_Regice
+	dba Cry_Registeel
+	dba Cry_Regieleki
+	dba Cry_Regidrago
+	dba Cry_Regigigas

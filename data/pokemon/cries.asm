@@ -398,11 +398,11 @@ PokemonCries::
 	mon_cry CRY_CROAGUNK,    $000,  $0ff ; CROAGUNK
 	mon_cry CRY_TOXICROAK,   $000,  $0ff ; TOXICROAK
 	mon_cry CRY_REGIROCK,    $000,  $0ff ; REGIROCK
-	mon_cry CRY_MAGCARGO,    $f1c,  $20a ; REGICE PLACEHOLDER
-	mon_cry CRY_WOOPER,      $e82,  $480 ; REGISTEEL PLACEHOLDER
-	mon_cry CRY_GRIMER,      $250,  $1c0 ; REGIELEKI PLACEHOLDER
-	mon_cry CRY_CHARMANDER,  $c30,  $200 ; REGIDRAGO PLACEHOLDER
-	mon_cry CRY_TEDDIURSA,   $5bf,  $188 ; REGIGIGAS PLACEHOLDER
+	mon_cry CRY_REGICE,      $000,  $0ff ; REGICE
+	mon_cry CRY_REGISTEEL,   $000,  $0ff ; REGISTEEL
+	mon_cry CRY_REGIELEKI,   $000,  $0ff ; REGIELEKI
+	mon_cry CRY_REGIDRAGO,   $000,  $0ff ; REGIDRAGO
+	mon_cry CRY_REGIGIGAS,   $000,  $0ff ; REGIGIGAS
 	mon_cry CRY_HOOTHOOT,    $162,  $100 ; NOWN
 	mon_cry CRY_DROWZEE,     $000,  $000 ; MISSINGNO
 	mon_cry CRY_SQUIRTLE,    $011,  $0c0 ; TAUROS_P_FIRE
