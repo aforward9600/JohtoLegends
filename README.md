@@ -15,9 +15,8 @@ now there are 400 Pokémon from Generations 1-4, 6, 8, and 9, as well as
 regional forms and several Fakemon. There are also 428 moves, ranging from
 Generations 1-9, and a few original moves.
 
-There are four versions: Original, Faithful, No PSS and Challenge. Faithful version
-does not have the type-changes, while No PSS also does not have the type changes
-nor the Physical/Special Split. Challenge Mode has level-caps, the inability to use items in trainer battles, no EVs,
+There are three versions: Original, Faithful and Challenge. Faithful version
+does not have the type-changes. Challenge Mode has the inability to use items in trainer battles, no EVs,
 and higher IVs for opponents.
 
 Moves have been altered to fit their more modern versions.
@@ -61,19 +60,15 @@ It has to be v1.1 for the patch to work.
 
 Below is a link to the current patch, Version 0.8.8.0 Beta:
 
-https://www.mediafire.com/file/dmh0omcbynohi96/johtolegendsv0.8.8.0.ips/file
+https://www.mediafire.com/file/5u6bev7fsqlsgvw/johtolegendsv0.8.8.0.ips/file
 
 Faithful:
 
-https://www.mediafire.com/file/oaibn91mwojpcge/johtolegendsfaithfulv0.8.5.6.ips/file
-
-No PSS
-
-https://www.mediafire.com/file/tg5l4xcg9eipgik/johtolegendsnopssv0.8.5.6.ips/file 
+https://www.mediafire.com/file/6ylok049s6s4sop/johtolegendsfaithfulv0.8.8.0.ips/file
 
 Challenge:
 
-https://www.mediafire.com/file/al3otc36r1epvts/johtolegendschallengev0.8.5.6.ips/file
+https://www.mediafire.com/file/rjz8cv9peju6r6c/johtolegendschallengev0.8.8.0.ips/file
 
 Patch the ROM with the patch, and it is all set.
 

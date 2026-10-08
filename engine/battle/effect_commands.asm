@@ -720,7 +720,6 @@ HitConfusion:
 
 BattleCommand_CheckObedience:
 ; checkobedience
-
 	; Enemy can't disobey
 	ldh a, [hBattleTurn]
 	and a
@@ -5138,9 +5137,6 @@ BattleCommand_AttackDown:
 ; attackdown
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipAbilities
-	ld a, [wStatDropAbility]
-	and a
-	jr nz, .SkipAbilities
 	call GetTargetAbility
 	cp HYPER_CUTTER
 	jr z, _PreventStatDrop
@@ -5154,9 +5150,6 @@ BattleCommand_DefenseDown:
 ; defensedown
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipAbilities
-	ld a, [wStatDropAbility]
-	and a
-	jr nz, .SkipAbilities
 	call GetTargetAbility
 	cp BIG_PECKS
 	jr z, _PreventStatDrop
@@ -5170,9 +5163,6 @@ BattleCommand_SpeedDown:
 ; speeddown
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipAbilities
-	ld a, [wStatDropAbility]
-	and a
-	jr nz, .SkipAbilities
 	call GetTargetAbility
 	cp CLEAR_BODY
 	jr z, _PreventStatDrop
@@ -5195,9 +5185,6 @@ BattleCommand_SpecialDefenseDown:
 ; specialdefensedown
 	call CheckUserNeutralGasMoldBreaker
 	jr z, .SkipAbilities
-	ld a, [wStatDropAbility]
-	and a
-	jr nz, .SkipAbilities
 	call GetTargetAbility
 	cp CLEAR_BODY
 	jp z, _PreventStatDrop
@@ -5298,6 +5285,8 @@ BattleCommand_AccuracyDown2:
 BattleCommand_EvasionDown2:
 ; evasiondown2
 
+BattleCommand_StatDownFar:
+	ld a, b
 BattleCommand_StatDown:
 ; statdown
 	ld [wLoweredStat], a

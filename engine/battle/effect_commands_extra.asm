@@ -503,7 +503,6 @@ PranksterEffects:
 	db EFFECT_FLATTER
 	db EFFECT_BURN
 	db -1
-	
 
 PranksterCheck:
 	call CheckNeutralGas
@@ -538,86 +537,36 @@ IsDarkType:
 	ret
 
 BattleCommand_Superpower:
-;	xor a
-;	ld [wFailedMessage], a
-;	call SetStatDropAbility
-;	ld b, ATTACK
-;	ld a, b
-;	ld [wLoweredStat], a
-;	farcall LowerStatPop
-;	ld a, [wFailedMessage]
-;	and a
-;	jr nz, .SkipAttack
-;	call BattleCommand_SwitchTurn2
-;	call AnimateAbilityStatsLower
-;	farcall BattleCommand_StatDownMessage
-;	call BattleCommand_SwitchTurn2
-;.SkipAttack
-;	farcall ResetMiss
-;	xor a
-;	ld [wFailedMessage], a
-;	ld [wEffectFailed], a
-;	ld b, DEFENSE
-;	ld a, b
-;	ld [wLoweredStat], a
-;	farcall LowerStatPop
-;	ld a, [wFailedMessage]
-;	and a
-;	ret nz
-;	call BattleCommand_SwitchTurn2
-;	ld a, [wStatChangeHappened]
-;	and a
-;	jr z, .SkipAnimation
-;	call AnimateAbilityStatsLower
-;.SkipAnimation
-;	farcall BattleCommand_StatDownMessage
-;	call BattleCommand_SwitchTurn2
-;	call ResetStatDropAbility
-;	jp ResetStatChangeExtra
-	
-;	call SetStatDropAbility
 	call BattleCommand_SwitchTurn2
-	farcall BattleCommand_AttackDown
+	ld b, ATTACK
+	farcall BattleCommand_StatDownFar
 	farcall BattleCommand_StatDownMessage
-;	call SetStatChangeAnimation
 	farcall ResetAllMisses
-	farcall BattleCommand_DefenseDown
+	ld b, DEFENSE
+	farcall BattleCommand_StatDownFar
 	farcall BattleCommand_StatDownMessage
 	call BattleCommand_SwitchTurn2
-;	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_CloseCombat:
-;	call SetStatDropAbility
 	call BattleCommand_SwitchTurn2
-	farcall BattleCommand_DefenseDown
+	ld b, DEFENSE
+	farcall BattleCommand_StatDownFar
 	farcall BattleCommand_StatDownMessage
-;	call SetStatChangeAnimation
+	call SetStatChangeAnimation
 	farcall ResetAllMisses
-	farcall BattleCommand_SpecialDefenseDown
+	ld b, SP_DEFENSE
+	farcall BattleCommand_StatDownFar
 	farcall BattleCommand_StatDownMessage
 	call BattleCommand_SwitchTurn2
-;	call ResetStatDropAbility
 	jp ResetStatChangeExtra
 
 BattleCommand_HammerArm:
-	call SetStatDropAbility
 	call BattleCommand_SwitchTurn2
-	farcall BattleCommand_SpeedDown
+	ld b, SPEED
+	farcall BattleCommand_StatDownFar
 	farcall BattleCommand_StatDownMessage
-	xor a
-	ld [wStatDropAbility], a
 	jp BattleCommand_SwitchTurn2
-
-SetStatDropAbility:
-	ld a, 1
-	ld [wStatDropAbility], a
-	ret
-
-ResetStatDropAbility:
-	xor a
-	ld [wStatDropAbility], a
-	ret
 
 BellyDrumMessage:
 	call CheckNeutralGas
@@ -1053,10 +1002,9 @@ BattleCommand_PowerUpPunch:
 	call GetUserAbility
 	cp SHEER_FORCE
 	ret z
-	call SetStatDropAbility
 	farcall BattleCommand_AttackUp
 	farcall BattleCommand_StatUpMessage
-	jp ResetStatDropAbility
+	ret
 
 SetStatChangeAnimation:
 	ld a, [wFailedMessage]

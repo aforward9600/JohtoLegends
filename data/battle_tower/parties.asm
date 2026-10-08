@@ -402,7 +402,7 @@ BattleTowerMons1:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 0, 252, 0, 252, 0, 0 ; EVs
-	db 0, 1, 0, 0 ; padding
+	db 1, 1, 1, 1 ; padding
 	dn 15, 7, 15, 7 ; DVs
 	db 20, 10, 25, 15 ; PP
 	db 100 ; Happiness

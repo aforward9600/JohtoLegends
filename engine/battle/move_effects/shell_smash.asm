@@ -47,12 +47,14 @@ BattleCommand_ShellSmash:
 	farcall ResetMiss
 	call BattleCommand_SwitchTurn2
 	call AnimateAbilityStatsLower
-	farcall BattleCommand_DefenseDown
+	ld b, DEFENSE
+	farcall BattleCommand_StatDownFar
 	farcall BattleCommand_StatDownMessage
 
 ; Special Defense
 	farcall ResetMiss
-	farcall BattleCommand_SpecialDefenseDown
+	ld b, SP_DEFENSE
+	farcall BattleCommand_StatDownFar
 	farcall BattleCommand_StatDownMessage
 
 	call BattleCommand_SwitchTurn2

@@ -114,6 +114,10 @@ MomScript:
 	iftrue .GaveMysteryEgg
 	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue .GotAPokemon
+;	givepoke DRAGONITE, 10, SITRUS_BERRY
+;	givepoke SNORLAX, 10, LEFTOVERS
+;	givepoke ANNIHILAPE, 10, LIFE_ORB
+;	givepoke MEWTWO, 10, SPECIALSPECS
 	jumptext HurryUpElmIsWaitingText
 
 .BeatLeague:
@@ -605,7 +609,7 @@ GrandmaCongratsText:
 
 PlayersHouse1F_MapEvents:
 	db 3 ; warp events
-;	warp_event  6,  7, HO_OH_LUGIA_ROOM, 1
+;	warp_event  6,  7, BATTLE_TOWER_1F, 1
 	warp_event  6,  7, BLACKTHORN_CITY, 9
 	warp_event  7,  7, BLACKTHORN_CITY, 9
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1

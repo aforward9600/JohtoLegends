@@ -2301,6 +2301,7 @@ SynchronizePoisonCheck:
 	ret nz
 	call CheckPoisonSynchronize
 	ret z
+	call AnimateOppAbility
 	ld hl, SynchronizeText
 	call StdBattleTextbox
 	call BattleCommand_SwitchTurnAbilities
@@ -2312,6 +2313,7 @@ SynchronizeToxicCheck:
 	ret nz
 	call CheckPoisonSynchronize
 	ret z
+	call AnimateOppAbility
 	ld hl, SynchronizeText
 	call StdBattleTextbox
 	ld a, BATTLE_VARS_SUBSTATUS5
@@ -2339,6 +2341,7 @@ SynchronizeBurnCheck:
 	ld b, FIRE
 	call CheckIfUserIsGivenTypeAbility
 	ret z
+	call AnimateOppAbility
 	ld hl, SynchronizeText
 	call StdBattleTextbox
 	call BattleCommand_SwitchTurnAbilities
@@ -2356,6 +2359,7 @@ SynchronizeParalyzeCheck:
 	call GetUserAbility
 	cp LIMBER
 	ret z
+	call AnimateOppAbility
 	ld hl, SynchronizeText
 	call StdBattleTextbox
 	call BattleCommand_SwitchTurnAbilities

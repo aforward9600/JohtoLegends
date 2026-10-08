@@ -1436,6 +1436,7 @@ TogekissEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, AIR_SLASH
 	dbw 1, AIR_SLASH
+	dbw 1, THUNDER_WAVE
 	dbw 1, EXTREMESPEED
 	dbw 1, SKY_ATTACK
 	dbw 45, EXTREMESPEED

@@ -222,9 +222,7 @@ Cry_manectric_Ch8:
 	callchannel Cry_158
 	noise __, 1, $68, 75
 	callchannel Cry_1387
-	noise __, 1, $48, 75
-	noise __, 1, $58, 75
-	noise __, 1, $48, 75
+	callchannel Cry_485848
 	callchannel Cry_168
 	callchannel Cry_158
 	callchannel Cry_168
@@ -424,266 +422,112 @@ Cry_Wyrdeer_Ch8:
 	noise __, 6, $08, 75
 	endchannel
 
-Cry_Croagunk:
-	musicheader 4, 5, Cry_Croagunk_Ch5
-	musicheader 1, 6, Cry_Croagunk_Ch6
-	musicheader 1, 7, Cry_Croagunk_Ch7
-	musicheader 1, 8, Cry_Croagunk_Ch8
+Cry_Mr_Rime:
+	musicheader 4, 5, Cry_mr_rime_Ch5
+	musicheader 1, 6, Cry_mr_rime_Ch6
+	musicheader 1, 7, Cry_mr_rime_Ch7
+	musicheader 1, 8, Cry_mr_rime_Ch8
 
-Cry_Croagunk_Ch5:
-	dutycycle $1
-	sound __, 1, $38, 1969
-	sound __, 1, $38, 1963
-	dutycycle $2
-	sound __, 1, $18, 1953
-	dutycycle $1
-	sound __, 1, $38, 1975
-	dutycycle $2
-	sound __, 1, $48, 1978
-	dutycycle $1
-	sound __, 1, $38, 1980
-	sound __, 1, $38, 1972
-	sound __, 1, $28, 1972
-	dutycycle $2
-	sound __, 1, $18, 1990
-	sound __, 1, $28, 2001
-	sound __, 1, $28, 1997
-	sound __, 1, $28, 1993
-	dutycycle $1
-	sound __, 1, $28, 1583
-	dutycycle $2
-	sound __, 1, $48, 1590
-	sound __, 1, $48, 1665
-	sound __, 1, $58, 1995
-	sound __, 1, $48, 1737
-	sound __, 1, $48, 1676
-	sound __, 1, $48, 1656
-	dutycycle $1
-	sound __, 1, $28, 1636
-	dutycycle $2
-	sound __, 1, $38, 1733
-	sound __, 1, $58, 1982
-	sound __, 1, $58, 1948
-	sound __, 1, $48, 1917
-	dutycycle $3
-	sound __, 1, $28, 1931
-	dutycycle $1
-	sound __, 1, $18, 1854
-	dutycycle $2
-	sound __, 1, $38, 1859
-	dutycycle $1
-	sound __, 1, $48, 1983
-	dutycycle $2
-	sound __, 1, $58, 1974
-	dutycycle $0
-	sound __, 1, $48, 1722
-	dutycycle $3
-	sound __, 1, $28, 1824
-	sound __, 1, $58, 1851
-	dutycycle $2
-	sound __, 1, $58, 1989
-	dutycycle $0
-	sound __, 1, $58, 1792
-	dutycycle $2
-	sound __, 1, $48, 1777
-	sound __, 1, $48, 1987
-	dutycycle $3
-	sound __, 1, $38, 1928
-	dutycycle $2
-	sound __, 1, $28, 2006
-	sound __, 1, $38, 2004
-	sound __, 1, $48, 1993
-	sound __, 1, $38, 1908
-	sound __, 1, $18, 2003
-	sound __, 1, $18, 1802
-	sound __, 1, $08, 0
-	dutycycle $0
-	sound __, 1, $18, 1857
-	dutycycle $2
-	sound __, 1, $48, 2000
-	sound __, 1, $58, 1987
-	dutycycle $1
-	sound __, 1, $58, 1957
-	dutycycle $2
-	sound __, 1, $28, 1913
-	sound __, 1, $18, 1893
-	sound __, 1, $28, 1896
-	sound __, 1, $48, 1999
-	dutycycle $0
-	sound __, 1, $58, 1981
-	dutycycle $2
-	sound __, 1, $38, 2015
-	dutycycle $0
-	sound __, 1, $38, 1803
-	dutycycle $2
-	sound __, 1, $28, 1993
-	sound __, 1, $58, 1986
-	sound __, 1, $48, 1997
-	sound __, 1, $38, 1965
-	sound __, 1, $18, 1965
-	sound __, 1, $18, 1867
-	sound __, 1, $18, 1820
-	sound __, 1, $08, 0
-	dutycycle $1
-	sound __, 1, $18, 1532
-	dutycycle $2
-	sound __, 2, $18, 1975
-	sound __, 4, $08, 0
-	endchannel
-
-Cry_Croagunk_Ch6:
-	sound __, 9, $08, 0
-	dutycycle $2
-	sound __, 1, $38, 2017
-	sound __, 1, $38, 2016
+Cry_mr_rime_Ch5:
+	sound_duty 3, 0, 3, 0
+	sound __, 3, $d8, 1548
+	sound __, 3, $f8, 1150
+	sound __, 3, $c8, 1608
+	sound __, 3, $d8, 1703
+	sound __, 3, $d8, 1599
+	sound __, 3, $b8, 1602
+	sound __, 3, $d8, 1186
+	sound __, 3, $c8, 1566
+	sound __, 3, $e8, 1258
+	sound __, 3, $d8, 1055
+	sound __, 3, $b8, 1286
+	sound __, 3, $c8, 1218
+	sound __, 3, $d8, 1746
+	sound __, 3, $c8, 1602
+	sound __, 3, $c8, 1746
+	sound __, 3, $a8, 1791
+	sound __, 3, $98, 1788
+	sound __, 3, $88, 1343
+	sound __, 3, $68, 991
+	sound __, 3, $58, 937
+	sound __, 3, $38, 1528
+	sound __, 3, $38, 488
+	sound __, 3, $18, 524
+	sound __, 3, $18, 1665
 	sound __, 3, $08, 0
-	sound __, 1, $58, 1987
-	dutycycle $0
-	sound __, 1, $68, 1985
-	sound __, 7, $08, 0
-	dutycycle $2
-	sound __, 1, $68, 1942
-	sound __, 1, $38, 1943
-	sound __, 1, $28, 2011
-	sound __, 1, $68, 2010
-	sound __, 4, $08, 0
-	sound __, 1, $98, 2007
-	sound __, 1, $88, 2007
-	sound __, 1, $a8, 1995
-	sound __, 1, $68, 1994
-	sound __, 1, $58, 2003
-	sound __, 1, $48, 2003
-	sound __, 2, $08, 0
-	sound __, 1, $88, 1985
-	sound __, 1, $58, 1986
-	sound __, 13, $08, 0
-	sound __, 1, $28, 1987
-	sound __, 1, $38, 1988
-	sound __, 2, $08, 0
-	sound __, 1, $58, 1993
-	sound __, 1, $28, 1993
-	sound __, 10, $08, 0
 	endchannel
 
-Cry_Croagunk_Ch7:
-	sound __, 1, $11, 2009
-	sound __, 1, $10, 2006
-	sound __, 1, $21, 2001
-	sound __, 1, $11, 2011
-	sound __, 1, $11, 2013
-	sound __, 1, $12, 2014
-	sound __, 1, $11, 2010
-	sound __, 1, $21, 2010
-	sound __, 1, $21, 2019
-	sound __, 1, $21, 2025
-	sound __, 1, $21, 2023
-	sound __, 1, $21, 2021
-	sound __, 1, $27, 1816
-	sound __, 1, $14, 1819
-	sound __, 1, $15, 1857
-	sound __, 1, $11, 2022
-	sound __, 1, $14, 1893
-	sound __, 1, $18, 1862
-	sound __, 1, $14, 1852
-	sound __, 1, $23, 1842
-	sound __, 1, $16, 1891
-	sound __, 1, $11, 2015
-	sound __, 1, $11, 1998
-	sound __, 1, $11, 1983
-	sound __, 1, $22, 1990
-	sound __, 1, $29, 1951
-	sound __, 1, $19, 1954
-	sound __, 1, $11, 2016
-	sound __, 1, $11, 2011
-	sound __, 1, $17, 1885
-	sound __, 1, $27, 1936
-	sound __, 1, $14, 1950
-	sound __, 1, $11, 2019
-	sound __, 1, $16, 1920
-	sound __, 1, $17, 1913
-	sound __, 1, $11, 2018
-	sound __, 1, $12, 1988
-	sound __, 1, $21, 2027
-	sound __, 1, $11, 2026
-	sound __, 1, $11, 2021
-	sound __, 1, $10, 1978
-	sound __, 1, $21, 2026
-	sound __, 1, $35, 1925
-	sound __, 1, $39, 1924
-	sound __, 1, $24, 1953
-	sound __, 1, $11, 2024
-	sound __, 1, $11, 2018
-	sound __, 1, $13, 2003
-	sound __, 1, $22, 1981
-	sound __, 1, $35, 1971
-	sound __, 1, $25, 1972
-	sound __, 1, $11, 2023
-	sound __, 1, $12, 2015
-	sound __, 1, $11, 2032
-	sound __, 1, $00, 0
-	sound __, 1, $21, 2021
-	sound __, 1, $12, 2017
-	sound __, 1, $11, 2023
-	sound __, 1, $11, 2007
-	sound __, 1, $21, 2007
-	sound __, 1, $31, 1958
-	sound __, 1, $21, 1934
-	sound __, 1, $31, 1980
-	sound __, 1, $36, 1790
-	sound __, 2, $31, 2012
-	sound __, 1, $31, 2011
-	sound __, 1, $35, 1918
-	sound __, 1, $31, 1922
-	sound __, 1, $00, 0
+Cry_mr_rime_Ch6:
+	sound_duty 3, 0, 3, 0
+	sound __, 3, $a8, 1854
+	sound __, 3, $c8, 1751
+	sound __, 3, $98, 1566
+	sound __, 3, $b8, 1701
+	sound __, 3, $a8, 1714
+	sound __, 3, $88, 1802
+	sound __, 3, $a8, 1871
+	sound __, 3, $a8, 1796
+	sound __, 3, $b8, 1754
+	sound __, 3, $b8, 1599
+	sound __, 3, $98, 1792
+	sound __, 3, $98, 1779
+	sound __, 3, $a8, 1645
+	sound __, 3, $a8, 1555
+	sound __, 3, $a8, 1749
+	sound __, 3, $88, 1636
+	sound __, 3, $78, 1705
+	sound __, 3, $68, 1783
+	sound __, 3, $58, 1787
+	sound __, 3, $48, 1739
+	sound __, 3, $38, 1827
+	sound __, 3, $28, 1641
+	sound __, 3, $18, 16
+	sound __, 3, $18, 1537
+	sound __, 3, $08, 0
 	endchannel
 
-Cry_Croagunk_Ch8:
-	noise __, 1, $28, 92
-	noise __, 1, $38, 92
-	noise __, 2, $18, 92
-	noise __, 2, $28, 92
-	noise __, 1, $18, 92
-	noise __, 1, $28, 92
-	noise __, 3, $18, 92
-	noise __, 1, $28, 92
-	noise __, 1, $18, 92
-	noise __, 3, $38, 92
-	noise __, 1, $48, 92
-	noise __, 1, $38, 92
-	noise __, 1, $48, 92
-	noise __, 2, $28, 92
-	noise __, 2, $48, 92
-	noise __, 1, $38, 92
-	noise __, 2, $18, 92
-	noise __, 1, $38, 92
-	noise __, 2, $48, 92
-	noise __, 1, $38, 92
-	noise __, 1, $28, 92
-	noise __, 3, $48, 92
-	noise __, 3, $28, 92
-	noise __, 1, $18, 92
-	noise __, 1, $28, 92
-	noise __, 2, $38, 92
-	noise __, 1, $28, 92
-	noise __, 1, $18, 92
-	noise __, 1, $08, 0
-	noise __, 1, $18, 92
-	noise __, 1, $38, 92
-	noise __, 2, $48, 92
-	noise __, 1, $28, 92
-	noise __, 1, $08, 0
-	noise __, 1, $28, 92
-	noise __, 1, $38, 92
-	noise __, 1, $48, 92
-	noise __, 1, $38, 92
-	noise __, 2, $18, 92
-	noise __, 2, $38, 92
-	noise __, 2, $18, 92
-	noise __, 1, $08, 0
-	noise __, 1, $18, 92
-	noise __, 1, $08, 0
-	noise __, 3, $18, 92
-	noise __, 4, $08, 0
+Cry_mr_rime_Ch7:
+	sound __, 3, $36, 1798
+	sound __, 3, $27, 1599
+	sound __, 3, $27, 1828
+	sound __, 3, $27, 1876
+	sound __, 3, $28, 1824
+	sound __, 3, $26, 1825
+	sound __, 3, $27, 1617
+	sound __, 3, $27, 1807
+	sound __, 3, $24, 1653
+	sound __, 3, $27, 1552
+	sound __, 3, $25, 1667
+	sound __, 3, $27, 1633
+	sound __, 3, $23, 1897
+	sound __, 3, $27, 1825
+	sound __, 3, $27, 1897
+	sound __, 3, $23, 1920
+	sound __, 3, $22, 1918
+	sound __, 3, $37, 1696
+	sound __, 3, $37, 1520
+	sound __, 3, $37, 1493
+	sound __, 3, $34, 1788
+	sound __, 3, $35, 1268
+	sound __, 3, $37, 1286
+	sound __, 3, $35, 1857
+	sound __, 3, $00, 0
+	endchannel
+
+Cry_mr_rime_Ch8:
+	noise __, 6, $d8, 92
+	noise __, 6, $e8, 76
+	noise __, 6, $e1, 68
+	noise __, 6, $d5, 68
+	noise __, 6, $e8, 68
+	noise __, 6, $c8, 68
+	noise __, 6, $e4, 68
+	noise __, 6, $c8, 68
+	noise __, 6, $a2, 68
+	noise __, 6, $63, 92
+	noise __, 6, $38, 92
+	noise __, 6, $24, 92
+	noise __, 3, $08, 92
 	endchannel
 
 Cry_Toxicroak:
@@ -2113,9 +1957,7 @@ Cry_duskull_Ch8:
 .loop3
 	noise __, 1, $58, 75
 	loopchannel 5, .loop3
-	noise __, 1, $48, 75
-	noise __, 1, $58, 75
-	noise __, 1, $48, 75
+	callchannel Cry_485848
 	noise __, 1, $48, 75
 	callchannel Cry_1387
 .loop4
@@ -3564,109 +3406,104 @@ Cry_sharpedo_Ch8:
 	noise __, 5, $32, 92
 	endchannel
 
-Cry_Numel:
-	musicheader 3, 5, Cry_numel_Ch5
-	musicheader 1, 6, Cry_numel_Ch6
-	musicheader 1, 8, Cry_numel_Ch8
+Cry_Happiny:
+	musicheader 3, 5, Cry_Happiny_Ch5
+	musicheader 1, 7, Cry_Happiny_Ch7
+	musicheader 1, 8, Cry_Happiny_Ch8
 
-Cry_numel_Ch5:
-	dutycycle $0
-	sound __, 1, $48, 1320
-	dutycycle $2
-	sound __, 1, $78, 1920
-	sound __, 1, $d8, 1921
-	sound __, 1, $d8, 1927
-	sound __, 1, $b8, 1854
+Cry_Happiny_Ch5:
 	dutycycle $1
-	sound __, 1, $98, 1860
+	sound __, 1, $f8, 1928
+	dutycycle $3
+	sound __, 1, $f8, 1923
 	dutycycle $2
-	sound __, 1, $68, 1351
-	sound __, 1, $08, 0
-	sound __, 1, $38, 1857
-	sound __, 1, $58, 1889
-	sound __, 1, $78, 1882
-	sound __, 1, $88, 1883
-	sound __, 1, $d8, 1876
-	sound __, 1, $d8, 1881
-	sound __, 1, $b8, 1790
+	sound __, 1, $f8, 1972
+	dutycycle $3
+	sound __, 1, $f8, 1895
+	dutycycle $2
+	sound __, 1, $98, 1977
+	sound __, 1, $f8, 1975
+	sound __, 1, $f8, 1974
+	dutycycle $3
+	sound __, 1, $f8, 1900
 	dutycycle $1
-	sound __, 1, $c8, 1798
+	sound __, 1, $c8, 1898
 	dutycycle $2
-	sound __, 1, $48, 1943
-	sound __, 1, $08, 0
-	sound __, 1, $18, 1893
-	sound __, 1, $58, 1920
-	sound __, 1, $c8, 1921
-	sound __, 1, $d8, 1929
-	sound __, 1, $c8, 1927
-	sound __, 1, $c8, 1854
-	dutycycle $0
-	sound __, 1, $88, 1824
-	sound __, 1, $38, 1295
+	sound __, 1, $38, 1950
+	sound __, 1, $68, 1974
+	sound __, 1, $68, 1975
+	dutycycle $3
+	sound __, 1, $98, 1904
+	sound __, 3, $08, 0
+	dutycycle $2
+	sound __, 1, $f8, 1983
+	dutycycle $3
+	sound __, 1, $f8, 1919
+	dutycycle $1
+	sound __, 1, $f8, 1923
+	dutycycle $2
+	sound __, 1, $c8, 1947
+	sound __, 1, $38, 1968
+	sound __, 1, $c8, 1968
+	dutycycle $3
+	sound __, 1, $c8, 1937
+	dutycycle $2
+	sound __, 1, $c8, 1962
+	dutycycle $1
+	sound __, 1, $c8, 1882
+	dutycycle $2
+	sound __, 1, $68, 1960
+	sound __, 1, $38, 1966
+	sound __, 1, $38, 1987
+	sound __, 1, $38, 1992
+	sound __, 1, $38, 1993
 	sound __, 1, $08, 0
 	endchannel
 
-Cry_numel_Ch6:
-	dutycycle $2
-	sound __, 1, $28, 1888
-	dutycycle $1
-	sound __, 1, $28, 1885
-	dutycycle $2
-	sound __, 1, $58, 1907
-	dutycycle $3
-	sound __, 1, $58, 1913
-	dutycycle $2
-	sound __, 1, $68, 1930
-	sound __, 1, $48, 1910
-	dutycycle $0
-	sound __, 1, $38, 1855
-	sound __, 1, $08, 0
-	dutycycle $2
-	sound __, 1, $28, 1880
-	sound __, 1, $38, 1873
-	sound __, 1, $08, 0
-	sound __, 1, $58, 1900
-	sound __, 1, $48, 1897
-	sound __, 1, $78, 1801
-	sound __, 1, $08, 0
-	sound __, 1, $58, 1863
-	dutycycle $1
-	sound __, 1, $28, 1869
-	sound __, 1, $08, 0
-	dutycycle $3
-	sound __, 1, $18, 1770
-	dutycycle $2
-	sound __, 1, $28, 1886
-	sound __, 1, $08, 0
-	sound __, 1, $78, 1905
-	dutycycle $3
-	sound __, 1, $58, 1913
-	dutycycle $2
-	sound __, 1, $58, 1930
-	dutycycle $3
-	sound __, 1, $48, 1860
-	dutycycle $0
-	sound __, 1, $28, 1791
-	sound __, 1, $08, 0
+Cry_Happiny_Ch7:
+	sound __, 1, $16, 1988
+	sound __, 1, $12, 1986
+	sound __, 1, $11, 2010
+	sound __, 1, $16, 1972
+	sound __, 1, $11, 2012
+	sound __, 2, $11, 2011
+	sound __, 1, $16, 1974
+	sound __, 1, $16, 1973
+	sound __, 1, $21, 1999
+	sound __, 2, $21, 2011
+	sound __, 1, $00, 0
+	sound __, 1, $36, 1975
+	sound __, 1, $31, 2013
+	sound __, 1, $31, 2014
+	sound __, 1, $11, 2016
+	sound __, 1, $16, 1984
+	sound __, 1, $16, 1986
+	sound __, 1, $12, 1998
+	sound __, 1, $31, 2008
+	sound __, 1, $11, 2008
+	sound __, 1, $12, 1993
+	sound __, 1, $11, 2005
+	sound __, 1, $12, 1965
+	sound __, 1, $21, 2004
+	sound __, 1, $31, 2007
+	sound __, 1, $21, 2018
+	sound __, 1, $31, 2020
+	sound __, 2, $31, 2021
 	endchannel
 
-Cry_numel_Ch8:
-.loop
-	noise __, 1, $08, 75
-	loopchannel 5, .loop
-	noise __, 1, $18, 75
-	noise __, 1, $18, 75
-.loop2
-	noise __, 1, $08, 75
-	loopchannel 9, .loop2
-	noise __, 1, $18, 75
-.loop3
-	noise __, 1, $08, 75
-	loopchannel 6, .loop3
-	noise __, 1, $18, 75
-	noise __, 1, $18, 75
-	noise __, 1, $08, 75
-	noise __, 1, $08, 75
+Cry_Happiny_Ch8:
+	noise __, 8, $08, 0
+	noise __, 1, $88, 92
+	noise __, 3, $08, 0
+	noise __, 1, $88, 92
+	noise __, 4, $08, 0
+	noise __, 1, $88, 92
+	noise __, 1, $f8, 92
+	noise __, 1, $88, 92
+	noise __, 1, $08, 0
+	noise __, 2, $f8, 92
+	noise __, 1, $88, 92
+	noise __, 7, $08, 0
 	endchannel
 
 Cry_Camerupt:
@@ -4778,4 +4615,10 @@ Cry_Ludicolo_Ch8:
 	noise __, 1, $08, 0
 	noise __, 1, $18, 92
 	noise __, 1, $08, 0
+	endchannel
+
+Cry_485848:
+	noise __, 1, $48, 75
+	noise __, 1, $58, 75
+	noise __, 1, $48, 75
 	endchannel

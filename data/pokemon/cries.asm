@@ -298,7 +298,7 @@ PokemonCries::
 	mon_cry CRY_WOOPER,      $053,  $0af ; SNEASEL
 	mon_cry CRY_WOOPER,      $053,  $0af ; SNEASEL_H
 	mon_cry CRY_WEAVILE,     $002,  $0ff ; WEAVILE
-	mon_cry CRY_SNEASLER,    $000,  $100 ; SNEASLER
+	mon_cry CRY_SNEASLER,    $000,  $0ff ; SNEASLER
 	mon_cry CRY_TEDDIURSA,   $7a2,  $06e ; TEDDIURSA
 	mon_cry CRY_TEDDIURSA,   $640,  $0d8 ; URSARING
 	mon_cry CRY_URSALUNA,    $000,  $0ff ; URSALUNA

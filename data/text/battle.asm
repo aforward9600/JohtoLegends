@@ -1257,7 +1257,7 @@ TanglingHairContraryText:
 	prompt
 
 SynchronizeText:
-	text "<USER>'s"
+	text "<TARGET>'s"
 	line "Synchronize"
 	cont "activated!"
 	prompt

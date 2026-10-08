@@ -51,7 +51,7 @@ Function118125:
 	call Function118180
 	jp ReturnToMapFromSubmenu
 
-Function118180:
+Function118180: ; needed
 	ld a, [wScriptVar]
 	and a
 	ret nz
@@ -1821,75 +1821,32 @@ Function11a9f4:
 	and a
 	ret
 
-Text_SaveFileWillBeSent:
-	text "SAVE FILE will be"
-	line "sent."
-	done
-
-Text_SentSaveFileReadingNews:
-	text "Sent SAVE FILE."
-	line "Reading NEWS…"
-	done
-
-Text_ReadingNews:
-	text "Reading NEWS…"
-	done
-
-Text_ReceivedNews:
-	text "Received NEWS!"
-	done
-
 Text_QuitReadingNews:
 	text "Quit reading NEWS?"
 	done
 
-Text_CanceledSendingSaveFile:
-	text "Canceled sending"
-	line "SAVE FILE."
-	done
-
-Text_ReceivedOddEgg:
-	text "ODD EGG"
-	line "was received!"
-	done
-
-Text_RegisteringRecord:
-	text "Registering your"
-	line "record…"
-	done
-
-Text_BattleRoomVisitLimit:
-	text "One visit per day"
-	line "per BATTLE ROOM!"
-	done
-
 Text_PartyMonTopsThisLevel:
-	text "A party #MON"
+	text "A party #mon"
 	line "tops this level."
 	done
 
 Text_UberRestriction:
 	text_ram wcd49
 	text " may go"
-	line "only to BATTLE"
+	line "only to Battle"
 
-	para "ROOMS that are"
+	para "Rooms that are"
 	line "Lv.70 or higher."
 	done
 
 Text_CancelBattleRoomChallenge:
-	text "Cancel your BATTLE"
-	line "ROOM challenge?"
+	text "Cancel your Battle"
+	line "Room challenge?"
 	done
 
 Text_ExitGymLeaderHonorRoll:
 	text "Exit GYM LEADER"
 	line "HONOR ROLL?"
-	done
-
-Text_LinkingWithCenter:
-	text "Linking with the"
-	line "CENTER…"
 	done
 
 Text_WhatLevelDoYouWantToChallenge:
@@ -1898,26 +1855,8 @@ Text_WhatLevelDoYouWantToChallenge:
 	done
 
 Text_CheckBattleRoomListByMaxLevel:
-	text "Check BATTLE ROOM"
+	text "Check Battle Room"
 	line "list by max level?"
-	done
-
-Text_EnterWhichBattleRoom:
-	text "Enter which"
-	line "BATTLE ROOM?"
-	done
-
-Text_WhichBattleRoom:
-	text "Which BATTLE ROOM?"
-	done
-
-Text_ThisBattleRoomPleaseWait:
-	text_ram wStringBuffer3
-	text "'s ROOM"
-	line "@"
-	text_ram wStringBuffer4
-	text "?"
-	cont "Please wait…"
 	done
 
 Function11ac3e:
