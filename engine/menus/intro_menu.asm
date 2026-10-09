@@ -82,21 +82,6 @@ AreYouABoyOrAreYouAGirl:
 	farcall NamingScreen
 	ret
 
-;.SecondPassword:
-;	ld hl, TextJump_PasswordOption2
-;	call PrintText
-;	call YesNoBox
-;	ret c
-
-;	call RotateFourPalettesLeft
-;	call ClearTileMap
-
-;	ld b, NAME_PASSWORD
-;	ld de, wMomsName
-;	farcall NamingScreen
-
-;	ret
-
 .ok
 	ld c, 0
 	ret

@@ -569,20 +569,16 @@ INCLUDE "maps/SilphCo1F.asm"
 INCLUDE "maps/Route36VioletGate.asm"
 INCLUDE "maps/BerryCafe.asm"
 INCLUDE "maps/InfantGrove.asm"
-INCLUDE "maps/OneIslandPort.asm"
 INCLUDE "maps/OneIsland.asm"
 INCLUDE "maps/TreasureBeach.asm"
 INCLUDE "maps/KindleRoad.asm"
 INCLUDE "maps/MtEmberOutside.asm"
 INCLUDE "maps/OneIslandPokecenter.asm"
 INCLUDE "maps/TwoIsland.asm"
-INCLUDE "maps/TwoIslandPort.asm"
 INCLUDE "maps/CapeBrink.asm"
-INCLUDE "maps/ThreeIslandPort.asm"
 INCLUDE "maps/ThreeIsland.asm"
 INCLUDE "maps/BondBridge.asm"
 INCLUDE "maps/BerryForest.asm"
-INCLUDE "maps/FourIslandPort.asm"
 INCLUDE "maps/FourIsland.asm"
 INCLUDE "maps/IcefallCaveEntrance.asm"
 INCLUDE "maps/IcefallCave1F.asm"
@@ -591,41 +587,126 @@ INCLUDE "maps/IcefallCaveBackCave.asm"
 INCLUDE "maps/TwoIslandPokecenter.asm"
 INCLUDE "maps/ThreeIslandPokecenter.asm"
 INCLUDE "maps/FourIslandPokecenter.asm"
-INCLUDE "maps/FiveIslandPort.asm"
 INCLUDE "maps/FiveIsland.asm"
 INCLUDE "maps/FiveIsleMeadow.asm"
+
+SECTION "Sevii Ports", ROMX
+
 INCLUDE "maps/VermilionPort.asm"
+INCLUDE "maps/OneIslandPort.asm"
+INCLUDE "maps/TwoIslandPort.asm"
+INCLUDE "maps/ThreeIslandPort.asm"
+INCLUDE "maps/FourIslandPort.asm"
+INCLUDE "maps/FiveIslandPort.asm"
 INCLUDE "maps/SevenIslandPort.asm"
 INCLUDE "maps/SixIslandPort.asm"
 
-SECTION "Map Scripts 33", ROMX
+SECTION "Dotted Hole Entrance", ROMX
 
 INCLUDE "maps/DottedHoleEntrance.asm"
+
+SECTION "Dotted Hole B1F", ROMX
+
 INCLUDE "maps/DottedHoleB1F.asm"
+
+SECTION "Dotted Hole B2F", ROMX
+
 INCLUDE "maps/DottedHoleB2F.asm"
+
+SECTION "Dotted Hole B3F", ROMX
+
 INCLUDE "maps/DottedHoleB3F.asm"
+
+SECTION "Dotted Hole B4F", ROMX
+
 INCLUDE "maps/DottedHoleB4F.asm"
+
+SECTION "Registeel Chamber", ROMX
+
 INCLUDE "maps/RegisteelChamber.asm"
+
+SECTION "Regirock Puzzle Chamber", ROMX
+
 INCLUDE "maps/RegirockPuzzleChamber.asm"
+
+SECTION "Regirock Chamber", ROMX
+
 INCLUDE "maps/RegirockChamber.asm"
+
+SECTION "Altering Cave", ROMX
+
 INCLUDE "maps/AlteringCave.asm"
+
+SECTION "Seven Island", ROMX
+
 INCLUDE "maps/SevenIsland.asm"
+
+SECTION "Sevault Canyon", ROMX
+
 INCLUDE "maps/SevaultCanyon.asm"
+
+SECTION "Tanobi Ruins", ROMX
+
 INCLUDE "maps/TanobiRuins.asm"
+
+SECTION "Onagan Temple Outside", ROMX
+
 INCLUDE "maps/OnaganTempleOutside.asm"
+
+SECTION "Five Island Pokecenter", ROMX
+
 INCLUDE "maps/FiveIslandPokecenter.asm"
+
+SECTION "Memorial Island", ROMX
+
 INCLUDE "maps/MemorialIsland.asm"
+
+SECTION "Water Labyrinth", ROMX
+
 INCLUDE "maps/WaterLabyrinth.asm"
+
+SECTION "Resort Gorgeous", ROMX
+
 INCLUDE "maps/ResortGorgeous.asm"
+
+SECTION "Celios House", ROMX
+
 INCLUDE "maps/CeliosHouse.asm"
+
+SECTION "One Island House", ROMX
+
 INCLUDE "maps/OneIslandHouse.asm"
+
+SECTION "Seven Island Masters House", ROMX
+
 INCLUDE "maps/SevenIslandMastersHouse.asm"
+
+SECTION "Seven Island Pokecenter", ROMX
+
 INCLUDE "maps/SevenIslandPokecenter.asm"
+
+SECTION "Seven Island Mart", ROMX
+
 INCLUDE "maps/SevenIslandMart.asm"
+
+SECTION "Cape Brink House", ROMX
+
 INCLUDE "maps/CapeBrinkHouse.asm"
+
+SECTION "Two Island House", ROMX
+
 INCLUDE "maps/TwoIslandHouse.asm"
+
+SECTION "Two Island Game House", ROMX
+
 INCLUDE "maps/TwoIslandGameHouse.asm"
+
+SECTION "Regice Puzzle Chamber", ROMX
+
 INCLUDE "maps/RegicePuzzleChamber.asm"
+
+SECTION "Regice Chamber", ROMX
+
 INCLUDE "maps/RegiceChamber.asm"
 INCLUDE "maps/ThreeIslandMart.asm"
 INCLUDE "maps/RocketWarehouse.asm"

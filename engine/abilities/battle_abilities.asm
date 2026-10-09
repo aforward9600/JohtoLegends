@@ -590,24 +590,13 @@ CheckContactAbilities:
 	db -1
 
 .TanglingHair:
-;	ld a, BATTLE_VARS_SUBSTATUS4_OPP
-;	call GetBattleVar
-;	bit SUBSTATUS_MIST, a
-;	ret nz
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_SpeedDown
 	call AnimateUserAbility
 	farcall BattleCommand_StatDownMessage
 	jp BattleCommand_SwitchTurnAbilities
-;	ld hl, TanglingHairText
-;	jp StdBattleTextbox
 
 .TanglingHairContrary:
-;	ld b, SPEED
-;	farcall RaiseStat
-;	ld a, [wFailedMessage]
-;	and a
-;	ret nz
 	call BattleCommand_SwitchTurnAbilities
 	farcall BattleCommand_SpeedUp
 	farcall BattleCommand_StatUpMessage

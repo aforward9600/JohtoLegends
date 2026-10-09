@@ -475,7 +475,7 @@ MartBlackthornTMs:
 	db 4
 	db TM_DOUBLE_TEAM
 	db TM_SUBSTITUTE
-	db TM_SLEEP_TALK
+	db TM_ROAR
 	db TM_ATTRACT
 	db -1 ; end
 

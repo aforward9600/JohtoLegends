@@ -2698,7 +2698,7 @@ Function17e309:
 	call ClearScreen
 	call Function17e349
 	call Function17d5f6
-	farcall DisplayMobileError
+;	farcall DisplayMobileError
 	call Function17e349
 	call Function17dcaf
 	xor a
@@ -3411,86 +3411,11 @@ BattleTowerMobileError:
 	ld a, $1
 	ldh [rSVBK], a
 
-	call DisplayMobileError
+;	call DisplayMobileError
 
 	pop af
 	ldh [rSVBK], a
 	jp ExitAllMenus
-
-DisplayMobileError:
-.loop
-	call JoyTextDelay
-	call .RunJumptable
-	ld a, [wc303]
-	bit 7, a
-	jr nz, .quit
-	farcall HDMATransferAttrMapAndTileMapToWRAMBank3
-	jr .loop
-
-.quit
-
-.deinit
-	ld a, [wc300]
-	cp $22
-	jr z, .asm_17f597
-	cp $31
-	jr z, .asm_17f58a
-	cp $33
-	ret nz
-	ld a, [wc301]
-	cp $1
-	ret nz
-	ld a, [wc302]
-	cp $2
-	ret nz
-	jr .asm_17f5a1
-
-.asm_17f58a
-	ld a, [wc301]
-	cp $3
-	ret nz
-	ld a, [wc302]
-	and a
-	ret nz
-	jr .asm_17f5a1
-
-.asm_17f597
-	ld a, [wc301]
-	and a
-	ret nz
-	ld a, [wc302]
-	and a
-	ret nz
-
-.asm_17f5a1
-	ld a, BANK(sMobileLoginPassword)
-	call GetSRAMBank
-	xor a
-	ld [sMobileLoginPassword], a
-	jp CloseSRAM
-
-.RunJumptable:
-	jumptable .Jumptable, wc303
-
-.Jumptable:
-	dw Function17f5c3
-	dw Function17ff23
-	dw Function17f5d2
-
-Function17f5c3:
-	call Function17f5e4
-	farcall FinishExitMenu
-	ld a, $1
-	ld [wc303], a
-	ret
-
-Function17f5d2:
-	call Function17f5e4
-	farcall HDMATransferAttrMapAndTileMapToWRAMBank3
-	call SetPalettes
-	ld a, $1
-	ld [wc303], a
-	ret
 
 Function17f5e4:
 	ld a, $8
@@ -4014,20 +3939,6 @@ String_17fedf:
 	next "もういちど　かくにんをして"
 	next "でんわを　かけなおして　ください"
 	db   "@"
-
-Function17ff23:
-	ldh a, [hJoyPressed]
-	and a
-	ret z
-	ld a, $8
-	ld [wMusicFade], a
-	ld a, [wMapMusic]
-	ld [wMusicFadeID], a
-	xor a
-	ld [wMusicFadeID + 1], a
-	ld hl, wc303
-	set 7, [hl]
-	ret
 
 Function17ff3c:
 	nop

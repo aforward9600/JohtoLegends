@@ -67,7 +67,7 @@ ENDM
 	add_tm WATERFALL
 	add_tm CALM_MIND
 	add_tm NASTY_PLOT
-	add_tm DREAM_EATER
+	add_tm THUNDER_WAVE
 	add_tm SLEEP_TALK
 	add_tm POWERUPPUNCH
 	add_tm STONE_EDGE
@@ -115,6 +115,6 @@ ENDM
 	add_mt U_TURN
 	add_mt VOLT_SWITCH
 	add_mt MOONBLAST
-	add_mt HYPNOSIS
+	add_mt EARTH_POWER
 	add_mt GRASS_KNOT
 NUM_TM_HM_TUTOR EQU __enum__ + -1

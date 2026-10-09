@@ -174,7 +174,6 @@ INCLUDE "audio/music/route37.asm"
 
 SECTION "Newest Songs", ROMX
 
-INCLUDE "audio/music/madameboss.asm"
 INCLUDE "audio/music/cinnabarisland.asm"
 INCLUDE "audio/music/marniebattle.asm"
 INCLUDE "audio/music/friendlyshop.asm"
@@ -187,3 +186,7 @@ INCLUDE "audio/music/silphco.asm"
 INCLUDE "audio/music/oakbattle.asm"
 INCLUDE "audio/music/regibattle.asm"
 INCLUDE "audio/music/dahliaafterbattle.asm"
+
+SECTION "Madame Boss Music", ROMX
+
+INCLUDE "audio/music/madameboss.asm"

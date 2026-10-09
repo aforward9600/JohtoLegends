@@ -28,7 +28,7 @@ Route31MailRecipientScript:
 	iftrue .DescribeNightmare
 	writetext Text_Route31SleepyMan
 	buttonsound
-	verbosegiveitem TM_DREAM_EATER
+	verbosegiveitem TM_SLEEP_TALK
 	setevent EVENT_GOT_TM56_DREAM_EATER
 	closetext
 	end
@@ -143,11 +143,8 @@ Text_Route31DescribeNightmare:
 	line "have been eating"
 	cont "my dreams…"
 
-	para "When Dream Eater"
-	line "is used on a"
-
-	para "sleeping #mon,"
-	line "it heals the user."
+	para "It must have made"
+	line "me Sleep Talk."
 
 	para "Scary, huh?"
 	done

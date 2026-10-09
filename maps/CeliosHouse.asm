@@ -14,7 +14,7 @@ CeliosDadScript:
 	jumptextfaceplayer CeliosDadText
 
 CeliosHouseBookshelf:
-	jumpstd genericsink
+	jumpstd picturebookshelf
 
 CeliosHouseComputer:
 	opentext
