@@ -121,7 +121,7 @@ PokemonCries::
 	mon_cry CRY_MAGNEZONE,  -$010,  $0ff ; MAGNEZONE
 	mon_cry CRY_SPEAROW,     $0dd,  $081 ; FARFETCH_D
 	mon_cry CRY_SPEAROW,     $0dd,  $081 ; FARFETCH_D_G
-	mon_cry CRY_SPEAROW,     $7dd,  $06b ; SIRFETCH_D
+	mon_cry CRY_SIRFETCH_D,  $000,  $0ff ; SIRFETCH_D
 	mon_cry CRY_DIGLETT,     $0bb,  $081 ; DODUO
 	mon_cry CRY_DIGLETT,     $099,  $0a0 ; DODRIO
 	mon_cry CRY_SEEL,        $088,  $140 ; SEEL
@@ -279,7 +279,7 @@ PokemonCries::
 	mon_cry CRY_HOOTHOOT,    $130,  $0e8 ; MISDREAVUS
 	mon_cry CRY_MISMAGIUS,   $000,  $0ff ; MISMAGIUS
 	mon_cry CRY_HOOTHOOT,    $162,  $100 ; UNOWN
-	mon_cry CRY_AMPHAROS,    $28b,  $045 ; WYNAUT
+	mon_cry CRY_WYNAUT,      $000,  $0ff ; WYNAUT
 	mon_cry CRY_AMPHAROS,    $27b,  $144 ; WOBBUFFET
 	mon_cry CRY_GIRAFARIG,   $041,  $200 ; GIRAFARIG
 	mon_cry CRY_FARIGIRAF,   $000,  $0ff ; FARIGIRAF
@@ -314,7 +314,7 @@ PokemonCries::
 	mon_cry CRY_SUNFLORA,    $00d,  $100 ; REMORAID
 	mon_cry CRY_TOTODILE,    $000,  $180 ; OCTILLERY
 	mon_cry CRY_TEDDIURSA,   $002,  $06a ; DELIBIRD
-	mon_cry CRY_CATERPIE,    $05c,  $080 ; MANTYKE
+	mon_cry CRY_MANTYKE,     $000,  $0ff ; MANTYKE
 	mon_cry CRY_MANTINE,    -$0be,  $0f0 ; MANTINE
 	mon_cry CRY_AMPHAROS,    $8a9,  $096 ; SKARMINI
 	mon_cry CRY_AMPHAROS,    $8a9,  $180 ; SKARMORY

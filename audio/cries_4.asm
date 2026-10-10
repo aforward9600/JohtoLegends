@@ -1305,3 +1305,196 @@ Cry_regigigas_Ch8:
 	noise __, 6, $72, 76
 	noise __, 2, $41, 76
 	endchannel
+
+Cry_Wynaut:
+	musicheader 4, 5, Cry_wynaut_Ch5
+	musicheader 1, 6, Cry_wynaut_Ch6
+	musicheader 1, 7, Cry_wynaut_Ch7
+	musicheader 1, 8, Cry_wynaut_Ch8
+
+Cry_wynaut_Ch5:
+	sound_duty 1, 1, 2, 2
+	sound __, 3, $d8, 1312
+	sound __, 3, $e8, 1249
+	sound __, 3, $a8, 1943
+	sound __, 3, $68, 1671
+	sound __, 3, $88, 1943
+	sound __, 3, $68, 1648
+	sound __, 3, $b8, 1932
+	sound __, 3, $c8, 1932
+	sound __, 3, $88, 1847
+	sound __, 3, $88, 1636
+	sound __, 3, $88, 1358
+	sound __, 3, $68, 1336
+	sound __, 3, $38, 1580
+	endchannel
+
+Cry_wynaut_Ch6:
+	sound_duty 3, 0, 3, 0
+	sound __, 3, $a8, 1944
+	sound __, 3, $b8, 1941
+	sound __, 3, $78, 1907
+	sound __, 3, $48, 1851
+	sound __, 3, $68, 1872
+	sound __, 3, $48, 1698
+	sound __, 3, $88, 1868
+	sound __, 3, $98, 1860
+	sound __, 3, $78, 1936
+	sound __, 3, $68, 1913
+	sound __, 3, $68, 1937
+	sound __, 3, $58, 1934
+	sound __, 3, $28, 1580
+	endchannel
+
+Cry_wynaut_Ch7:
+	sound __, 3, $27, 1680
+	sound __, 3, $22, 1649
+	sound __, 3, $21, 1996
+	sound __, 3, $39, 1860
+	sound __, 3, $31, 1996
+	sound __, 3, $32, 1848
+	sound __, 3, $21, 1990
+	sound __, 3, $21, 1990
+	sound __, 3, $32, 1948
+	sound __, 3, $37, 1842
+	sound __, 3, $36, 1703
+	sound __, 3, $37, 1692
+	sound __, 3, $33, 1814
+	endchannel
+
+Cry_wynaut_Ch8:
+	noise __, 6, $a2, 84
+	noise __, 6, $61, 68
+	noise __, 6, $52, 68
+	noise __, 6, $63, 68
+	noise __, 6, $63, 68
+	noise __, 6, $52, 68
+	noise __, 3, $31, 68
+	endchannel
+
+Cry_Mantyke:
+	musicheader 2, 5, Cry_mantyke_Ch5
+	musicheader 1, 6, Cry_mantyke_Ch6
+
+Cry_mantyke_Ch5:
+	dutycycle $2
+	soundinput $26
+	sound __, 3, $e8, 1601
+	soundinput $16
+	sound __, 4, $e8, 1602
+	soundinput $2f
+	sound __, 3, $d8, 1727
+	soundinput 2, 7
+	sound __, 2, $d8, 1637
+	soundinput $14
+	sound __, 2, $c8, 1594
+	soundinput $16
+	sound __, 2, $e8, 1697
+	soundinput $1f
+	sound __, 2, $d8, 1711
+	soundinput $1f
+	sound __, 3, $98, 1704
+	sound __, 3, $88, 1642
+	soundinput $3f
+	sound __, 2, $58, 1673
+	soundinput $1f
+	sound __, 2, $38, 1777
+	endchannel
+
+Cry_mantyke_Ch6:
+	sound_duty 2, 3, 2, 1
+	sound __, 1, $58, 1824
+	sound __, 1, $68, 1841
+	sound __, 1, $58, 1844
+	sound __, 1, $58, 1826
+	sound __, 1, $48, 1853
+	sound __, 1, $58, 1879
+	sound __, 1, $58, 1894
+	sound __, 1, $58, 1888
+	sound __, 1, $48, 1873
+	sound __, 1, $58, 1819
+	sound __, 1, $58, 1843
+	sound __, 1, $58, 1847
+	sound __, 1, $58, 1821
+	sound __, 1, $38, 1893
+	sound __, 1, $58, 1872
+	sound __, 1, $58, 1893
+	sound __, 1, $58, 1880
+	sound __, 1, $48, 1871
+	sound __, 1, $38, 1876
+	sound __, 1, $38, 1864
+	sound __, 1, $48, 1807
+	sound __, 1, $48, 1845
+	sound __, 1, $38, 1800
+	sound __, 1, $28, 1794
+	sound __, 1, $28, 1860
+	sound __, 1, $28, 1858
+	sound __, 1, $18, 1912
+	sound __, 1, $18, 1877
+	endchannel
+
+Cry_Sirfetchd:
+	musicheader 4, 5, Cry_sirfetchd_Ch5
+	musicheader 1, 6, Cry_sirfetchd_Ch6
+	musicheader 1, 7, Cry_sirfetchd_Ch7
+	musicheader 1, 8, Cry_sirfetchd_Ch8
+
+Cry_sirfetchd_Ch5:
+	sound_duty 1, 1, 2, 2
+	sound __, 3, $88, 1852
+	sound __, 3, $b8, 1657
+	sound __, 3, $c8, 1913
+	sound __, 3, $c8, 1928
+	sound __, 3, $d8, 1927
+	sound __, 3, $b8, 1925
+	sound __, 3, $88, 1680
+	sound __, 3, $88, 1867
+	sound __, 3, $98, 1881
+	sound __, 3, $78, 1883
+	sound __, 3, $48, 1881
+	sound __, 3, $38, 1965
+	sound __, 3, $18, 1955
+	endchannel
+
+Cry_sirfetchd_Ch6:
+	sound_duty 3, 0, 3, 0
+	sound __, 3, $68, 1920
+	sound __, 3, $88, 1860
+	sound __, 3, $98, 1913
+	sound __, 3, $a8, 1952
+	sound __, 3, $a8, 1933
+	sound __, 3, $88, 1961
+	sound __, 3, $68, 1959
+	sound __, 3, $68, 1932
+	sound __, 3, $78, 1960
+	sound __, 3, $58, 1969
+	sound __, 3, $38, 1955
+	sound __, 3, $28, 1936
+	sound __, 3, $18, 1924
+	endchannel
+
+Cry_sirfetchd_Ch7:
+	sound __, 3, $32, 1950
+	sound __, 3, $26, 1853
+	sound __, 3, $22, 1981
+	sound __, 3, $21, 1988
+	sound __, 3, $21, 1988
+	sound __, 3, $20, 1987
+	sound __, 3, $37, 1864
+	sound __, 3, $37, 1958
+	sound __, 3, $21, 1965
+	sound __, 3, $32, 1966
+	sound __, 3, $31, 1965
+	sound __, 3, $31, 2007
+	sound __, 3, $30, 2002
+	endchannel
+
+Cry_sirfetchd_Ch8:
+	noise __, 6, $b8, 68
+	noise __, 6, $f8, 76
+	noise __, 6, $d1, 76
+	noise __, 6, $83, 76
+	noise __, 6, $91, 76
+	noise __, 6, $42, 76
+	noise __, 3, $18, 76
+	endchannel

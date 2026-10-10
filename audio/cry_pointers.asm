@@ -165,3 +165,6 @@ Cries:
 	dba Cry_Regieleki
 	dba Cry_Regidrago
 	dba Cry_Regigigas
+	dba Cry_Wynaut
+	dba Cry_Mantyke
+	dba Cry_Sirfetchd
