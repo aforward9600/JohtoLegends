@@ -142,8 +142,6 @@ CheckSandTile::
 
 CheckCutTreeTile::
 	cp COLL_CUT_TREE
-	ret z
-	cp COLL_CUT_TREE_1A
 	ret
 
 CheckHeadbuttTreeTile::
@@ -189,6 +187,8 @@ CheckWaterfallTile::
 CheckStandingOnEntrance::
 	ld a, [wPlayerStandingTile]
 	cp COLL_DOOR
+	ret z
+	cp COLL_SLIDING_DOOR
 	ret z
 	cp COLL_DOOR_79
 	ret z

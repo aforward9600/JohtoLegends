@@ -203,6 +203,8 @@ DoPlayerMovement::
 	ld a, c
 	cp COLL_DOOR
 	jr z, .down
+	cp COLL_SLIDING_DOOR
+	jr z, .down
 	cp COLL_DOOR_79
 	jr z, .down
 	cp COLL_STAIRCASE
@@ -466,10 +468,15 @@ DoPlayerMovement::
 ; making bumps silent.
 
 	ld a, [wWalkingDirection]
-	; cp STANDING
-	; jr z, .not_warp
+	cp STANDING
+	jr z, .not_warp
 	ld e, a
 	ld d, 0
+
+	ld a, [wPlayerStandingTile]
+	cp COLL_WARP_CARPET_DOWN_SLIDING
+	jr z, .TrySlidingWarp
+.NoSlidingWarp
 	ld hl, .EdgeWarps
 	add hl, de
 	ld a, [wPlayerStandingTile]
@@ -479,9 +486,6 @@ DoPlayerMovement::
 	ld a, TRUE
 	ld [wWalkingIntoEdgeWarp], a
 	ld a, [wWalkingDirection]
-	; This is in the wrong place.
-	cp STANDING
-	jr z, .not_warp
 
 	ld e, a
 	ld a, [wPlayerDirection]
@@ -490,6 +494,7 @@ DoPlayerMovement::
 	maskbits NUM_DIRECTIONS
 	cp e
 	jr nz, .not_warp
+.FinishSlidingWarp
 	call WarpCheck
 	jr nc, .not_warp
 
@@ -501,6 +506,23 @@ DoPlayerMovement::
 .not_warp
 	xor a
 	ret
+
+.TrySlidingWarp
+;	ld a, [wPlayerStandingTile]
+;	cp COLL_WARP_CARPET_DOWN_SLIDING
+;	jr z, .ContinueSlidingWarp
+;	jr .NoSlidingWarp
+;
+;.ContinueSlidingWarp
+	ld a, TRUE
+	ld [wWalkingIntoEdgeWarp], a
+	ld a, [wWalkingDirection]
+	ld e, a
+	ld a, [wPlayerDirection]
+	rrca
+	rrca
+	maskbits NUM_DIRECTIONS
+	jr .FinishSlidingWarp
 
 .EdgeWarps:
 	db COLL_WARP_CARPET_DOWN

@@ -35,6 +35,12 @@ MahoganyGym_MapScripts:
 	disappear MAHOGANYGYM_PRYCE
 	return
 
+PryceText_StillGotIt:
+	text "Winter is harsh,"
+	line "but we can bear"
+	cont "it!"
+	done
+
 MahoganyGymPryceScript:
 	faceplayer
 	opentext
@@ -285,7 +291,7 @@ PryceText_Intro:
 	cont "I am Pryce, the"
 
 	para "Gym Leader of"
-	line "Mahogany Town,"
+	line "the Lake of Rage,"
 	cont "although I'm sure"
 
 	para "you already know"
@@ -305,12 +311,6 @@ PryceText_Blizzard:
 
 	para "still hits like"
 	line "a Blizzard!"
-	done
-
-PryceText_StillGotIt:
-	text "Winter is harsh,"
-	line "but we can bear"
-	cont "it!"
 	done
 
 PryceText_After:
@@ -346,8 +346,7 @@ PryceText_GlacierBadgeSpeech:
 	cont "to Lv 20 obey you."
 
 	para "Here, take this"
-	cont "TM. It will teach"
-
+	line "TM. It will teach"
 
 	para "your #mon a"
 	line "move, and it can"

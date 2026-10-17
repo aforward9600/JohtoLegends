@@ -1,8 +1,8 @@
 	tilecoll WALL, WALL, WALL, WALL ; 00
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 01
-	tilecoll WALL, WALL, DOOR, WALL ; 02
+	tilecoll WALL, WALL, SLIDING_DOOR, WALL ; 02
 	tilecoll WALL, WALL, WALL, WALL ; 03
-	tilecoll WALL, WALL, DOOR, WALL ; 04
+	tilecoll WALL, WALL, SLIDING_DOOR, WALL ; 04
 	tilecoll WALL, WALL, WINDOW, WINDOW ; 05
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 06
 	tilecoll FLOOR, FLOOR, FLOOR, LADDER ; 07

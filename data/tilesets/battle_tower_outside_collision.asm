@@ -16,7 +16,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 0f
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 10
 	tilecoll WALL, WALL, FLOOR, WALL ; 11
-	tilecoll WALL, WALL, DOOR, DOOR ; 12
+	tilecoll WALL, WALL, SLIDING_DOOR, SLIDING_DOOR ; 12
 	tilecoll WALL, WALL, WALL, FLOOR ; 13
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 14
 	tilecoll WALL, WALL, WALL, WALL ; 15

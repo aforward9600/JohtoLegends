@@ -172,8 +172,8 @@
 	tilecoll LADDER, WATER, WATER, WATER ; ab
 	tilecoll WATER, WATER, LADDER, WATER ; ac
 	tilecoll FLOOR, FLOOR, WALL, WALL ; ad
-	tilecoll WALL, WALL, WALL, DOOR ; ae
-	tilecoll WALL, WALL, WALL, DOOR ; af
+	tilecoll WALL, WALL, WALL, SLIDING_DOOR ; ae
+	tilecoll WALL, WALL, WALL, SLIDING_DOOR ; af
 	tilecoll FLOOR, WALL, CUT_TREE, WALL ; b0
 	tilecoll FLOOR, FLOOR, WALL, WALL ; b1
 	tilecoll WALL, WALL, WALL, WALL ; b2

@@ -101,7 +101,7 @@
 	tilecoll WATER, WATER, WATER, WATER ; 64
 	tilecoll WATER, WATER, WATER, WATER ; 65
 	tilecoll WATER, WATER, WATER, WATER ; 66
-	tilecoll WALL, WALL, WALL, DOOR ; 67
+	tilecoll WALL, WALL, WALL, SLIDING_DOOR ; 67
 	tilecoll WATER, WATER, WATER, WATER ; 68
 	tilecoll WATER, WATER, WATER, WATER ; 69
 	tilecoll HOP_RIGHT, WALL, HOP_RIGHT, WALL ; 6a
@@ -126,7 +126,7 @@
 	tilecoll WALL, WALL, WALL, DOOR ; 7d
 	tilecoll WALL, WALL, WALL, WALL ; 7e
 	tilecoll WALL, WALL, WALL, WALL ; 7f
-	tilecoll WALL, WALL, WALL, DOOR ; 80
+	tilecoll WALL, WALL, WALL, SLIDING_DOOR ; 80
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 81
 	tilecoll WALL, WALL, WALL, WALL ; 82
 	tilecoll WALL, WALL, WALL, WALL ; 83

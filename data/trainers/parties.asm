@@ -8113,8 +8113,8 @@ if DEF(_CHALLENGE)
 else
 	db "Miyamoto@", TRAINERTYPE_ABILITY
 	db 15
-	dw HOUNDOUR
-	db 2 ; STRONG_JAW
+	dw CARVANHA
+	db 0 ; ROUGH_SKIN
 	db 15
 	dw ZUBAT
 	db 2 ; INFILTRATOR

@@ -774,7 +774,7 @@ CheckContactAbilities:
 	cp DAMP
 	ret z
 	call BattleCommand_SwitchTurnAbilities
-	farcall HasUserFainted
+	call CheckFaintAbilities
 	ret nz
 	call BattleCommand_SwitchTurnAbilities
 	call AnimateOppAbility
@@ -806,10 +806,7 @@ CheckContactAbilities:
 	jp StdBattleTextbox
 
 .WeakArmor:
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .HasEnemyFainted
-	farcall HasPlayerFainted
+	call CheckFaintTargetAbilities
 	ret z
 .ContinueWeakArmor
 	ld b, DEFENSE
@@ -835,14 +832,20 @@ CheckContactAbilities:
 	ld hl, WeakArmorSpeedText
 	jp StdBattleTextbox
 
-.HasEnemyFainted:
-	farcall HasEnemyFainted
-	ret z
-	jr .ContinueWeakArmor
-
 .Pickpocket:
+	call CheckFaintTargetAbilities
+	ret z
 	call GetUserAbility
 	cp STICKY_HOLD
+	ret z
+	ld a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonItem
+	jr z, .got_item
+	ld hl, wEnemyMonItem
+.got_item
+	ld a, [hl]
+	and a
 	ret z
 	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
@@ -2632,6 +2635,12 @@ CheckIfUserIsGivenTypeAbility:
 	ld a, [de]
 	cp b
 	ret
+
+CheckFaintTargetAbilities:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, EnemyFaintAbilities
+	jr PlayerFaintAbilities
 
 CheckFaintAbilities::
 	ldh a, [hBattleTurn]

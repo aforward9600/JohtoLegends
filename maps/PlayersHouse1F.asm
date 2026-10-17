@@ -114,10 +114,7 @@ MomScript:
 	iftrue .GaveMysteryEgg
 	checkevent EVENT_GOT_A_POKEMON_FROM_MASTER
 	iftrue .GotAPokemon
-;	givepoke DRAGONITE, 10, SITRUS_BERRY
-;	givepoke SNORLAX, 10, LEFTOVERS
-;	givepoke ANNIHILAPE, 10, LIFE_ORB
-;	givepoke MEWTWO, 10, SPECIALSPECS
+;	setflag ENGINE_EARTHBADGE
 	jumptext HurryUpElmIsWaitingText
 
 .BeatLeague:

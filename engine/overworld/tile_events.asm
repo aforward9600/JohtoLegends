@@ -21,6 +21,8 @@ CheckDirectionalWarp::
 	ld a, [wPlayerStandingTile]
 	cp COLL_WARP_CARPET_DOWN
 	jr z, .directional
+	cp COLL_WARP_CARPET_DOWN_SLIDING
+	jr z, .directional
 	cp COLL_WARP_CARPET_LEFT
 	jr z, .directional
 	cp COLL_WARP_CARPET_UP
@@ -42,11 +44,10 @@ CheckWarpFacingDown:
 
 .blocks
 	db COLL_DOOR
+	db COLL_SLIDING_DOOR
 	db COLL_DOOR_79
 	db COLL_STAIRCASE
-	db COLL_STAIRCASE_73
 	db COLL_CAVE
-	db COLL_CAVE_74
 	db COLL_WARP_PANEL
 	db COLL_DOOR_75
 	db COLL_DOOR_7D
@@ -79,8 +80,6 @@ CheckCutCollision:
 
 .blocks
 	db COLL_CUT_TREE
-	db COLL_CUT_TREE_1A
-	db COLL_TALL_GRASS_10
 	db COLL_TALL_GRASS
 	db COLL_LONG_GRASS
 	db COLL_LONG_GRASS_1C
@@ -93,6 +92,11 @@ GetWarpSFX::
 	ret z
 	ld de, SFX_WARP_TO
 	cp COLL_WARP_PANEL
+	ret z
+	ld de, SFX_CURSE
+	cp COLL_SLIDING_DOOR
+	ret z
+	cp COLL_WARP_CARPET_DOWN_SLIDING
 	ret z
 	ld de, SFX_EXIT_BUILDING
 	ret
