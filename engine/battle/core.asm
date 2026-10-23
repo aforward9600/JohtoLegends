@@ -3415,9 +3415,8 @@ if !DEF(_CHALLENGE)
 	ld [wCurPartyMon], a
 	jr c, .return_nc
 	scf
-endc
 	ret
-
+endc
 .return_nc
 	and a
 	ret
@@ -4371,7 +4370,6 @@ UseOpponentItem:
 	callfar ConsumeHeldItem
 	ld hl, RecoveredUsingText
 	call StdBattleTextbox
-	farcall UnburdenScript
 	ret
 
 ItemRecoveryAnim:
@@ -4892,20 +4890,11 @@ LoadBattleMenu2:
 	scf
 	ret
 
+if !DEF(_CHALLENGE)
 BattleMenu_Pack:
 	ld a, [wLinkMode]
 	and a
 	jp nz, .ItemsCantBeUsed
-
-if DEF(_CHALLENGE)
-	ld a, [wBattleType]
-	cp BATTLETYPE_CANLOSE
-	jp z, .ItemsCantBeUsed
-
-	ld a, [wBattleMode]
-	dec a
-	jp nz, .ItemsCantBeUsed
-endc
 
 	ld a, [wInBattleTowerBattle]
 	and a
@@ -4976,6 +4965,92 @@ endc
 	call SetPalettes
 	scf
 	ret
+endc
+
+if DEF(_CHALLENGE)
+BattleMenu_Pack:
+	ld a, [wLinkMode]
+	and a
+	jp nz, .ItemsCantBeUsed
+
+	ld a, [wBattleType]
+	cp BATTLETYPE_CANLOSE
+	jr z, .ItemsCantBeUsed
+
+	ld a, [wBattleMode]
+	dec a
+	jr nz, .ItemsCantBeUsed
+
+	ld a, [wInBattleTowerBattle]
+	and a
+	jp nz, .ItemsCantBeUsed
+
+	call LoadStandardMenuHeader
+
+	farcall BattlePack
+	ld a, [wBattlePlayerAction]
+	and a ; BATTLEPLAYERACTION_USEMOVE?
+	jr z, .didnt_use_item
+	jr .UseItem
+
+.didnt_use_item
+	call ClearPalettes
+	call DelayFrame
+	call _LoadBattleFontsHPBar
+	call SetEnemyBufferForm
+	call GetEnemyMonFrontpic
+	call GetBattleMonBackpic
+	call ExitMenu
+	call WaitBGMap
+	call FinishBattleAnim
+	call LoadTileMapToTempTileMap
+	jp BattleMenu
+
+.ItemsCantBeUsed:
+	ld hl, BattleText_ItemsCantBeUsedHere
+	call StdBattleTextbox
+	jp BattleMenu
+
+.UseItem:
+	ld a, [wWildMon]
+	and a
+	jr nz, .run
+	callfar CheckItemPocket
+	ld a, [wItemAttributeParamBuffer]
+	cp BALL
+	jr z, .ball
+	call ClearBGPalettes
+
+.ball
+	xor a
+	ldh [hBGMapMode], a
+	call _LoadBattleFontsHPBar
+	call ClearSprites
+	call SetEnemyBufferForm
+	call GetEnemyMonFrontpic
+	call GetBattleMonBackpic
+	ld a, $1
+	ld [wMenuCursorY], a
+	call ExitMenu
+	call UpdateBattleHUDs
+	call WaitBGMap
+	call LoadTileMapToTempTileMap
+	call ClearWindowData
+	call FinishBattleAnim
+	and a
+	ret
+
+.run
+	xor a
+	ld [wWildMon], a
+	ld a, [wBattleResult]
+	and BATTLERESULT_BITMASK
+	ld [wBattleResult], a ; WIN
+	call ClearWindowData
+	call SetPalettes
+	scf
+	ret
+endc
 
 BattleMenu_PKMN:
 	call LoadStandardMenuHeader
@@ -6257,22 +6332,6 @@ LoadEnemyMon:
 	ld a, [wMapTileset]
 	cp TILESET_RUINS_OF_ALPH
 	jr z, .SkipUnown
-;	ld a, [wTempEnemyMonSpecies]
-;	call GetPokemonIndexFromID
-;	ld a, l
-;	sub LOW(UNOWN)
-;	if HIGH(UNOWN) == 0
-;		or h
-;	else
-;		jr z, .SkipUnown
-;		ld a, h
-;		if HIGH(UNOWN) == 1
-;			dec a
-;		else
-;			cp HIGH(UNOWN)
-;		endc
-;	endc
-;	jr z, .SkipUnown
 .NotUnown
 	ld de, ENGINE_ACTIVATED_MAX_DVS
 	ld b, CHECK_FLAG

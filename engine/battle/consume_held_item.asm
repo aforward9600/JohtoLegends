@@ -52,6 +52,7 @@ ConsumeHeldItem:
 	pop bc
 	pop de
 	pop hl
+	farcall UnburdenScript
 	ret
 
 INCLUDE "data/battle/held_consumables.asm"

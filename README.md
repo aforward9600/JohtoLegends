@@ -68,7 +68,7 @@ https://www.mediafire.com/file/l7863zn7g86k7cf/johtolegendsfaithfulv0.8.8.2.ips/
 
 Challenge:
 
-https://www.mediafire.com/file/rprpelbk40073n5/johtolegendschallengev0.8.8.2.ips/file
+https://www.mediafire.com/file/zjqes6kko024wtw/johtolegendschallengev0.8.8.2.ips/file
 
 Patch the ROM with the patch, and it is all set.
 
