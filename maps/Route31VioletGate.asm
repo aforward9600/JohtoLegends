@@ -39,7 +39,6 @@ Route31VioletGateStopPlayer:
 	closetext
 	setscene SCENE_FINISHED
 	setevent EVENT_RIVAL_NEW_BARK_TOWN
-	setevent EVENT_RIVALS_HOUSE_RIVAL
 	checkevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
 	iffalse .ClearCynthia
 	end

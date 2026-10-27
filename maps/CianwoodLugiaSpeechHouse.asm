@@ -9,7 +9,130 @@ CianwoodLugiaSpeechHouse_MapScripts:
 	db 0 ; callbacks
 
 CianwoodLugiaSpeechHouseTeacherScript:
-	jumptextfaceplayer CianwoodLugiaSpeechHouseTeacherText
+	faceplayer
+	opentext
+	writetext FossilExchangeText
+	loadmenu .FossilMenu
+	verticalmenu
+	closewindow
+	ifequal 1, .OldAmber
+	ifequal 2, .HelixFossil
+	ifequal 3, .DomeFossil
+	sjump .Refused
+
+.Refused:
+	writetextend NoFossilText
+
+.FossilMenu:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, 15, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "Old Amber@"
+	db "Helix Fossil@"
+	db "Dome Fossil@"
+	db "Cancel@"
+
+.OldAmber:
+	checkitem OLD_AMBER
+	iffalse .DontHaveFossil
+	takeitem OLD_AMBER
+	scall ExchangeFossilScript
+	iffalse .NoRoom1
+	sjump .GaveFossil
+
+.HelixFossil:
+	checkitem HELIX_FOSSIL
+	iffalse .DontHaveFossil
+	takeitem HELIX_FOSSIL
+	scall ExchangeFossilScript
+	iffalse .NoRoom2
+	sjump .GaveFossil
+
+.DomeFossil:
+	checkitem DOME_FOSSIL
+	iffalse .DontHaveFossil
+	takeitem DOME_FOSSIL
+	scall ExchangeFossilScript
+	iffalse .NoRoom3
+	sjump .GaveFossil
+
+.DontHaveFossil:
+	jumptext DontHaveFossilText
+
+.GaveFossil:
+	writetextend FinishedFossilExchangeText
+
+.NoRoom1:
+	giveitem OLD_AMBER
+	writetextend NoRoomFossilText
+
+.NoRoom2:
+	giveitem HELIX_FOSSIL
+	writetextend NoRoomFossilText
+
+.NoRoom3:
+	giveitem DOME_FOSSIL
+	writetextend NoRoomFossilText
+
+ExchangeFossileScript:
+	writetext HereIsYourItemText
+	buttonsound
+	random 10
+	ifequal 0, .EonMail
+	ifequal 1, .PPUp
+	ifequal 2, .RareCandy
+	ifequal 3, .AbilityPill
+	ifequal 4, .MaxRevive
+	ifequal 5, .PeatBlock
+	ifequal 6, .AirBalloon
+	ifequal 7, .LightClay
+	ifequal 8, .WeatherRock
+	ifequal 9, .Nugget
+
+.EonMail
+	verbosegiveitem EON_MAIL
+	end
+
+.PPUp
+	verbosegiveitem PP_UP
+	end
+
+.RareCandy
+	verbosegiveitem RARE_CANDY
+	end
+
+.AbilityPill
+	verbosegiveitem ABILITY_PILL
+	end
+
+.MaxRevive
+	verbosegiveitem MAX_REVIVE
+	end
+
+.PeatBlock
+	verbosegiveitem PEAT_BLOCK
+	end
+
+.AirBalloon
+	verbosegiveitem AIR_BALLOON
+	end
+
+.LightClay
+	verbosegiveitem LIGHT_CLAY
+	end
+
+.WeatherRock
+	verbosegiveitem WEATHER_ROCK
+	end
+
+.Nugget
+	verbosegiveitem NUGGET
+	end
 
 CianwoodLugiaSpeechHouseLassScript:
 	jumptextfaceplayer CianwoodLugiaSpeechHouseLassText
@@ -20,11 +143,34 @@ CianwoodLugiaSpeechHouseTwinScript:
 CianwoodLugiaSpeechHouseBookshelf:
 	jumpstd genericsink
 
-CianwoodLugiaSpeechHouseTeacherText:
-	text "My grandfather saw"
-	line "a large creature"
-	cont "emerge from Whirl"
-	cont "Islands long ago."
+FossilExchangeText:
+	text "If you have any"
+	line "extra fossils, I"
+	cont "will trade you"
+	cont "rare items."
+	done
+
+DontHaveFossilText:
+	text "You don't have a"
+	line "fossil for me…"
+	done
+
+NoFossilText:
+	text "Fine…"
+	done
+
+HereIsYourItemText:
+	text "Thanks! Here you"
+	line "go!"
+	done
+
+FinishedFossilExchangeText:
+	text "Enjoy!"
+	done
+
+NoRoomFossilText:
+	text "You don't have"
+	line "room!"
 	done
 
 CianwoodLugiaSpeechHouseLassText:

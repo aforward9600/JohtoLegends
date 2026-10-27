@@ -606,7 +606,7 @@ GrandmaCongratsText:
 
 PlayersHouse1F_MapEvents:
 	db 3 ; warp events
-;	warp_event  6,  7, BATTLE_TOWER_1F, 1
+;	warp_event  6,  7, OLIVINE_GYM_1F, 1
 	warp_event  6,  7, BLACKTHORN_CITY, 9
 	warp_event  7,  7, BLACKTHORN_CITY, 9
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1

@@ -162,6 +162,7 @@ BlackthornCityMastersHouseSign:
 	jumptext BlackthornCityMastersHouseText
 
 BlackthornCityRivalsHouseSign:
+;	clearevent EVENT_RIVALS_HOUSE_RIVAL
 	jumptext BlackthornCityRivalsHouseText
 
 BlackthornCity_HikerStopsYou1:

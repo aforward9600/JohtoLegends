@@ -80,7 +80,7 @@ GoldenrodDeptStore1FLuckyNumber:
 	playsound SFX_2ND_PLACE
 	waitsfx
 	buttonsound
-	giveitem EON_MAIL
+	giveitem NUGGET
 	iffalse .BagFull
 	itemnotify
 	setflag ENGINE_LUCKY_NUMBER_SHOW

@@ -243,6 +243,7 @@ CheckPlayerTurn:
 .thawing_moves
 	dw FLAME_WHEEL
 	dw SACRED_FIRE
+	dw FLARE_BLITZ
 	dw -1
 
 .not_frozen
@@ -2767,17 +2768,38 @@ BattleCommand_SuperEffectiveText:
 ; supereffectivetext
 
 	call CheckIfFastBattlesIsOn
-	ret nz
+	jr nz, .Defrost
 
 	ld a, [wTypeModifier]
 	and $7f
 	cp 10 ; 1.0
-	ret z
+	jr z, .Defrost
 	ld hl, SuperEffectiveText
 	jr nc, .print
 	ld hl, NotVeryEffectiveText
 .print
-	jp StdBattleTextbox
+	call StdBattleTextbox
+
+.Defrost
+	call BattleCommand_CheckFaint
+	ret nz
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp FIRE
+	ret nz
+	call GetTargetAbility
+	cp FLASH_FIRE
+	ret z
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	call Defrost
+
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVarAddr
+	ld a, [hl]
+	ld [hl], a
+	ret
 
 BattleCommand_CheckFaint:
 ; checkfaint
@@ -4031,8 +4053,7 @@ BattleCommand_ConstantDamage:
 
 BattleCommand_DefrostOpponent:
 ; defrostopponent
-; Thaw the opponent if frozen, and
-; raise the user's Attack one stage.
+; Thaw the opponent if frozen.
 
 	call AnimateCurrentMove
 
@@ -4043,15 +4064,6 @@ BattleCommand_DefrostOpponent:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVarAddr
 	ld a, [hl]
-	push hl
-	push af
-
-	ld a, EFFECT_ATTACK_UP
-	ld [hl], a
-	call BattleCommand_StatUp
-
-	pop af
-	pop hl
 	ld [hl], a
 	ret
 
@@ -4336,17 +4348,11 @@ BattleCommand_SleepTarget:
 	
 .SkipVitalSpirit:
 	call AnimateCurrentMove
-	ld b, $7
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr z, .random_loop
 	ld b, $3
 
 .random_loop
 	call BattleRandom
 	and b
-	jr z, .random_loop
-	cp 7
 	jr z, .random_loop
 	inc a
 	ld [de], a
@@ -4607,10 +4613,6 @@ BattleCommand_BurnTarget:
 	cp LEAF_GUARD
 	jr z, .LeafGuard
 .SkipWaterVeil
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
-	and a
-	jp nz, Defrost
 	ld a, [wTypeModifier]
 	and $7f
 	ret z

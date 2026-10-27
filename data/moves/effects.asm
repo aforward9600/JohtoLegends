@@ -2452,6 +2452,7 @@ FlareBlitz:
 	criticaltext
 	supereffectivetext
 	recoil
+	defrost
 	kingsrock
 	checkfaint
 	buildopponentrage

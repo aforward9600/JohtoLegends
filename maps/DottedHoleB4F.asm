@@ -7,11 +7,16 @@ DottedHoleB4F_MapScripts:
 
 DottedHoleB4FRock:
 	opentext
-	writetext DottedHoleRockText
+	writetext DottedHoleRockText4
 	setval UNOWNWORDS_DOWN
 	special DisplayUnownWords
 	closetext
 	end
+
+DottedHoleRockText4:
+	text "There are some"
+	line "dots here."
+	done
 
 DottedHoleB4F_MapEvents:
 	db 5 ; warp events
