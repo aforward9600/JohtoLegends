@@ -3391,11 +3391,20 @@ FinalPkmnAnimation:
 	call DelayFrames
 	jp FinalPkmnSlideInEnemyMonFrontpic
 
+if DEF(_CHALLENGE)
+
+
+CheckWhetherToAskSwitch:
+.return_nc
+	and a
+	ret
+
+else
+
 CheckWhetherToAskSwitch:
 	ld a, [wBattleHasJustStarted]
 	dec a
 	jp z, .return_nc
-if !DEF(_CHALLENGE)
 	ld a, [wPartyCount]
 	dec a
 	jp z, .return_nc
@@ -3416,10 +3425,12 @@ if !DEF(_CHALLENGE)
 	jr c, .return_nc
 	scf
 	ret
-endc
+
 .return_nc
 	and a
 	ret
+
+endc
 
 OfferSwitch:
 	ld a, [wCurPartyMon]
@@ -4890,8 +4901,17 @@ LoadBattleMenu2:
 	scf
 	ret
 
-if !DEF(_CHALLENGE)
+if DEF(_CHALLENGE)
 BattleMenu_Pack:
+
+	ld a, [wBattleType]
+	cp BATTLETYPE_CANLOSE
+	jr z, .ItemsCantBeUsed
+
+	ld a, [wBattleMode]
+	dec a
+	jr nz, .ItemsCantBeUsed
+
 	ld a, [wLinkMode]
 	and a
 	jp nz, .ItemsCantBeUsed
@@ -4902,19 +4922,30 @@ BattleMenu_Pack:
 
 	call LoadStandardMenuHeader
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_CONTEST
+	jr z, .contest
+
 	farcall BattlePack
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
 	jr z, .didnt_use_item
+	jr .got_item
+
+.contest
+	ld a, PARK_BALL
+	ld [wCurItem], a
+	call DoItemEffect
+
+.got_item
 	jr .UseItem
 
 .didnt_use_item
 	call ClearPalettes
 	call DelayFrame
 	call _LoadBattleFontsHPBar
-	call SetEnemyBufferForm
-	call GetEnemyMonFrontpic
 	call GetBattleMonBackpic
+	call GetEnemyMonFrontpic
 	call ExitMenu
 	call WaitBGMap
 	call FinishBattleAnim
@@ -4941,9 +4972,10 @@ BattleMenu_Pack:
 	ldh [hBGMapMode], a
 	call _LoadBattleFontsHPBar
 	call ClearSprites
-	call SetEnemyBufferForm
-	call GetEnemyMonFrontpic
 	call GetBattleMonBackpic
+
+.tutorial2
+	call GetEnemyMonFrontpic
 	ld a, $1
 	ld [wMenuCursorY], a
 	call ExitMenu
@@ -4965,21 +4997,13 @@ BattleMenu_Pack:
 	call SetPalettes
 	scf
 	ret
-endc
 
-if DEF(_CHALLENGE)
+else
+
 BattleMenu_Pack:
 	ld a, [wLinkMode]
 	and a
 	jp nz, .ItemsCantBeUsed
-
-	ld a, [wBattleType]
-	cp BATTLETYPE_CANLOSE
-	jr z, .ItemsCantBeUsed
-
-	ld a, [wBattleMode]
-	dec a
-	jr nz, .ItemsCantBeUsed
 
 	ld a, [wInBattleTowerBattle]
 	and a
@@ -4987,19 +5011,30 @@ BattleMenu_Pack:
 
 	call LoadStandardMenuHeader
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_CONTEST
+	jr z, .contest
+
 	farcall BattlePack
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
 	jr z, .didnt_use_item
+	jr .got_item
+
+.contest
+	ld a, PARK_BALL
+	ld [wCurItem], a
+	call DoItemEffect
+
+.got_item
 	jr .UseItem
 
 .didnt_use_item
 	call ClearPalettes
 	call DelayFrame
 	call _LoadBattleFontsHPBar
-	call SetEnemyBufferForm
-	call GetEnemyMonFrontpic
 	call GetBattleMonBackpic
+	call GetEnemyMonFrontpic
 	call ExitMenu
 	call WaitBGMap
 	call FinishBattleAnim
@@ -5026,9 +5061,10 @@ BattleMenu_Pack:
 	ldh [hBGMapMode], a
 	call _LoadBattleFontsHPBar
 	call ClearSprites
-	call SetEnemyBufferForm
-	call GetEnemyMonFrontpic
 	call GetBattleMonBackpic
+
+.tutorial2
+	call GetEnemyMonFrontpic
 	ld a, $1
 	ld [wMenuCursorY], a
 	call ExitMenu

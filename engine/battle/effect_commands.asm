@@ -2781,8 +2781,8 @@ BattleCommand_SuperEffectiveText:
 	call StdBattleTextbox
 
 .Defrost
-	call BattleCommand_CheckFaint
-	ret nz
+	call HasTargetFainted
+	ret z
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	and TYPE_MASK
@@ -2799,6 +2799,22 @@ BattleCommand_SuperEffectiveText:
 	call GetBattleVarAddr
 	ld a, [hl]
 	ld [hl], a
+	ret
+
+HasTargetFainted:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .HasPlayerFainted
+.HasEnemyFainted:
+	ld hl, wEnemyMonHP
+	jr .CheckIfHPIsZero
+
+.HasPlayerFainted:
+	ld hl, wBattleMonHP
+
+.CheckIfHPIsZero:
+	ld a, [hli]
+	or [hl]
 	ret
 
 BattleCommand_CheckFaint:
@@ -2898,8 +2914,6 @@ BattleCommand_CheckFaint:
 
 BattleCommand_BuildOpponentRage:
 ; buildopponentrage
-
-	jp .start
 
 .start
 	ld a, [wAttackMissed]
@@ -3582,6 +3596,8 @@ BattleCommand_DamageCalc:
 	ld a, d
 	and a
 	ret z
+
+	ld b,b
 
 .skip_zero_damage_check
 ; Minimum defense value is 1.
@@ -6744,8 +6760,8 @@ BattleCommand_HeldFlinch:
 .SkipAbilities
 	call CheckSubstituteOpp
 	ret nz
-	call BattleCommand_CheckFaint
-	ret nz
+	call HasTargetFainted
+	ret z
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVarAddr
 	ld d, h

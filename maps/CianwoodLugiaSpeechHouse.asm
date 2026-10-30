@@ -79,7 +79,7 @@ CianwoodLugiaSpeechHouseTeacherScript:
 	giveitem DOME_FOSSIL
 	writetextend NoRoomFossilText
 
-ExchangeFossileScript:
+ExchangeFossilScript:
 	writetext HereIsYourItemText
 	buttonsound
 	random 10

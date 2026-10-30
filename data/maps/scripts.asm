@@ -708,6 +708,9 @@ INCLUDE "maps/RegicePuzzleChamber.asm"
 SECTION "Regice Chamber", ROMX
 
 INCLUDE "maps/RegiceChamber.asm"
+
+SECTION "Three Island Mart", ROMX
+
 INCLUDE "maps/ThreeIslandMart.asm"
 INCLUDE "maps/RocketWarehouse.asm"
 INCLUDE "maps/ThreeIslandHouse1.asm"
