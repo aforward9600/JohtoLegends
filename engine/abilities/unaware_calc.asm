@@ -327,8 +327,6 @@ _UnawareEnemy::
 _UnawareEnemyDefense::
 ; Player has Unaware during enemy's turn
 
-	ld b,b
-
 	ld hl, wEnemyMoveStructPower
 	ld a, [hli]
 	and a

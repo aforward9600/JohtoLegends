@@ -2164,7 +2164,6 @@ PlayerSwitchAbilities:
 	ld a, [wBattleHasJustStarted]
 	and a
 	ret nz
-	ld b,b
 	call CheckNeutralGas
 	ret z
 	ld a, [wPlayerAbility]

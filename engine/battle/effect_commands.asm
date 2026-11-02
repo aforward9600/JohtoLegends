@@ -3597,7 +3597,7 @@ BattleCommand_DamageCalc:
 	and a
 	ret z
 
-	ld b,b
+;	ld b,b
 
 .skip_zero_damage_check
 ; Minimum defense value is 1.
@@ -7608,8 +7608,6 @@ BattleCommand_Defrost:
 INCLUDE "engine/battle/move_effects/curse.asm"
 
 INCLUDE "engine/battle/move_effects/perish_song.asm"
-
-INCLUDE "engine/battle/move_effects/rollout.asm"
 
 INCLUDE "engine/battle/move_effects/safeguard.asm"
 

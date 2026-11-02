@@ -1062,6 +1062,9 @@ ResidualDamage:
 ; or as a result of residual damage.
 ; For Sandstorm damage, see HandleWeather.
 
+	xor a
+	ld [wMoveBounced], a
+
 	call HasUserFainted
 	ret z
 

@@ -15,7 +15,8 @@ BattleCommand_CheckCurl:
 	jr z, .reset
 
 	ld b, $4 ; doturn
-	jp SkipToBattleCommand
+	farcall SkipToBattleCommand
+	ret
 
 .reset
 	xor a

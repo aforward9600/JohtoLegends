@@ -1,6 +1,9 @@
 BattleCommand_MagicBounce:
 	call CheckUserNeutralGasMoldBreaker
 	ret z
+	ld a, [wMoveBounced]
+	and a
+	ret z
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_SWAGGER
@@ -36,6 +39,9 @@ BattleCommand_MagicBounce:
 	call GetMoveName
 	ld hl, BouncedBackText
 	call StdBattleTextbox
+
+	ld a, 1
+	ld [wMoveBounced], a
 
 	farcall UpdateMoveData
 	farcall BattleCommand_LowerSub

@@ -2737,7 +2737,9 @@ wHoOhTowerSceneID::                               db
 wOneIslandPortSceneID::                           db
 wSevaultCanyonSceneID::                           db
 
-	ds 32
+	ds 31
+wMoveBounced:: db
+
 wBufferMonForm::       db
 wPlayerBufferMonForm:: db
 

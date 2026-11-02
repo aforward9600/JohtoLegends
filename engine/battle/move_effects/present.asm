@@ -3,15 +3,15 @@ BattleCommand_Present:
 
 	push bc
 	push de
-	farcall BattleCommand_Stab
+	call BattleCommand_Stab
 	pop de
 	pop bc
 	ld a, [wTypeMatchup]
 	and a
-	jp z, AnimateFailedMovePresent
+	jp z, AnimateFailedMove
 	ld a, [wAttackMissed]
 	and a
-	jp nz, AnimateFailedMovePresent
+	jp nz, AnimateFailedMove
 
 	push bc
 	call BattleRandom
@@ -31,7 +31,7 @@ BattleCommand_Present:
 .got_power
 	ld a, c
 	ld [wPresentPower], a
-	farcall AnimateCurrentMoveEitherSide
+	call AnimateCurrentMoveEitherSide
 	ld d, [hl]
 	pop bc
 	ret
@@ -40,8 +40,8 @@ BattleCommand_Present:
 	pop bc
 	ld a, 3
 	ld [wPresentPower], a
-	farcall AnimateCurrentMove
-	call BattleCommand_SwitchTurn2
+	call AnimateCurrentMove
+	call BattleCommand_SwitchTurn
 	ld hl, AICheckPlayerMaxHP
 	ldh a, [hBattleTurn]
 	and a
@@ -53,30 +53,25 @@ BattleCommand_Present:
 	jr c, .already_fully_healed
 
 	ld hl, GetQuarterMaxHP
-	call CallBattleCore2
-	call BattleCommand_SwitchTurn2
+	call CallBattleCore
+	call BattleCommand_SwitchTurn
 	ld hl, RestoreHP
-	call CallBattleCore2
-	call BattleCommand_SwitchTurn2
+	call CallBattleCore
+	call BattleCommand_SwitchTurn
 	ld hl, RegainedHealthText
 	call StdBattleTextbox
-	call BattleCommand_SwitchTurn2
+	call BattleCommand_SwitchTurn
 	call UpdateOpponentInParty
 	jr .do_animation
 
 .already_fully_healed
-	call BattleCommand_SwitchTurn2
-	farcall _CheckBattleScene
+	call BattleCommand_SwitchTurn
+	call _CheckBattleScene
 	jr nc, .do_animation
-	farcall AnimateFailedMove
+	call AnimateFailedMove
 	ld hl, RefusedGiftText
 	call StdBattleTextbox
 .do_animation
-	farcall EndMoveEffect
-	ret
-
-AnimateFailedMovePresent:
-	farcall AnimateFailedMove
-	ret
+	jp EndMoveEffect
 
 INCLUDE "data/moves/present_power.asm"

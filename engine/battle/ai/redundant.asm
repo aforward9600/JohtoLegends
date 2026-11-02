@@ -333,8 +333,6 @@ AI_Redundant:
 	jr z, .Redundant
 	jr .NotRedundant
 
-	ld b,b
-
 .AccuracyDown:
 	ld a, [wGBPrinterBrightness]
 	cp OPT_PRINT_LIGHTEST

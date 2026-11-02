@@ -700,11 +700,11 @@ AttackUpHit:
 	criticaltext
 	supereffectivetext
 	kingsrock
-	checkfaint
-	buildopponentrage
 	sheerforce
 	attackup
 	statupmessage
+	checkfaint
+	buildopponentrage
 	endmove
 
 PowerUpPunch:
@@ -747,10 +747,10 @@ AllUpHit:
 	criticaltext
 	supereffectivetext
 	kingsrock
-	checkfaint
-	buildopponentrage
 	sheerforce
 	allstatsup
+	checkfaint
+	buildopponentrage
 	endmove
 
 PayDay:
@@ -2610,11 +2610,11 @@ SpeedUpHit:
 	criticaltext
 	supereffectivetext
 	kingsrock
-	checkfaint
-	buildopponentrage
 	sheerforce
 	speedup
 	statupmessage
+	checkfaint
+	buildopponentrage
 	endmove
 
 Hail:
@@ -2802,11 +2802,11 @@ SpecialAttackUpHit:
 	criticaltext
 	supereffectivetext
 	kingsrock
-	checkfaint
-	buildopponentrage
 	sheerforce
 	specialattackup
 	statupmessage
+	checkfaint
+	buildopponentrage
 	endmove
 
 SuckerPunch:
