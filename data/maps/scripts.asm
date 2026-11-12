@@ -290,8 +290,14 @@ INCLUDE "maps/TohjoFalls.asm"
 INCLUDE "maps/AzaleaPokecenter1F.asm"
 INCLUDE "maps/CharcoalKiln.asm"
 INCLUDE "maps/AzaleaMart.asm"
-INCLUDE "maps/KurtsHouse.asm"
+
+SECTION "Azalea Gym", ROMX
+
 INCLUDE "maps/AzaleaGym.asm"
+
+SECTION "Kurts House", ROMX
+
+INCLUDE "maps/KurtsHouse.asm"
 
 
 SECTION "Map Scripts 17", ROMX
@@ -316,6 +322,10 @@ INCLUDE "maps/EmbeddedTower.asm"
 INCLUDE "maps/CliffCaveB1F.asm"
 
 
+SECTION "Move Deleter House", ROMX
+
+INCLUDE "maps/MoveDeletersHouse.asm"
+
 SECTION "Map Scripts 18", ROMX
 
 INCLUDE "maps/BlackthornGym1F.asm"
@@ -324,7 +334,6 @@ INCLUDE "maps/BlackthornDragonSpeechHouse.asm"
 INCLUDE "maps/RivalsHouse1F.asm"
 INCLUDE "maps/BlackthornMart.asm"
 INCLUDE "maps/BlackthornPokecenter1F.asm"
-INCLUDE "maps/MoveDeletersHouse.asm"
 INCLUDE "maps/SafariZoneWardensHome.asm"
 INCLUDE "maps/CherrygroveMart.asm"
 INCLUDE "maps/CherrygrovePokecenter1F.asm"

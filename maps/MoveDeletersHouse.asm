@@ -43,6 +43,10 @@ MaxDVsSetter:
 	iftrue .SetNoMonochrome
 	checkevent EVENT_PASSWORD_SINGULAR
 	iftrue .SetSingular
+	checkevent EVENT_PASSWORD_MONEY
+	iftrue .Money
+	checkevent EVENT_PASSWORD_ROCKET_BALL
+	iftrue .RocketBall
 .NoPassword
 	writetextend NoPasswordText
 
@@ -57,8 +61,31 @@ MaxDVsSetter:
 	end
 
 .MaxDVs:
-	setevent EVENT_RESET_MAX_DVS_PASSWORD
 	writetextend MaxDVsText
+
+.Money:
+	clearevent EVENT_PASSWORD_MONEY
+	givemoney YOUR_MONEY, 999999
+	playsound SFX_TRANSACTION
+	writetextend CheatMoneyText
+
+.RocketBall:
+	clearevent EVENT_PASSWORD_ROCKET_BALL
+	checkitem MASTER_BALL
+	iftrue .NoRocketBall
+	writetext CheatMoneyText
+	buttonsound
+	getitemname STRING_BUFFER_4, MASTER_BALL
+	callstd receiveitem
+	giveitem MASTER_BALL, 99
+	buttonsound
+	itemnotify
+	waitbutton
+	closetext
+	end
+
+.NoRocketBall:
+	writetextend NoRocketBallText
 
 .SetShiny:
 	clearevent EVENT_PASSWORD_SHINY
@@ -83,6 +110,7 @@ MaxDVsSetter:
 	checkevent EVENT_PASSWORD_SET_3
 	iftrue .NoPassword
 	setevent EVENT_PASSWORD_SET_3
+	clearevent EVENT_PASSWORD_SINGULAR
 	writetextend SingularTextMoveDeleter
 
 .DontGivePassword:
@@ -107,6 +135,30 @@ CheckForPassword:
 	iftrue .nomonochromepassword2
 	callasm .singularpassword
 	iftrue .singularpassword2
+	callasm .moneypassword
+	iftrue .moneypassword2
+	callasm .rocketballpassword
+	iftrue .rocketballpassword2
+	end
+
+.moneypassword:
+	xor a
+	ld [wScriptVar], a
+	ld de, MoneyPassword
+	jp .FinishPassword
+
+.moneypassword2:
+	setevent EVENT_PASSWORD_MONEY
+	end
+
+.rocketballpassword:
+	xor a
+	ld [wScriptVar], a
+	ld de, RocketBallPassword
+	jp .FinishPassword
+
+.rocketballpassword2:
+	setevent EVENT_PASSWORD_ROCKET_BALL
 	end
 
 .shinypassword:
@@ -192,6 +244,12 @@ SingularPassword:
 NoMonochromePassword:
 	db "RESETCOLOR"
 
+MoneyPassword:
+	db "CHA-CHING"
+
+RocketBallPassword:
+	db "NEVER FAIL"
+
 SetMonochrome:
 	ld hl, wRedsName
 	ld de, wMomsName
@@ -217,7 +275,7 @@ MoveDeleterNoMonText:
 	para "Shall I make a"
 	line "#mon forget?"
 
-	para "....Hey!"
+	para "…Hey!"
 
 	para "You don't even"
 	line "have a #mon!"
@@ -289,6 +347,16 @@ ResetCheaterText:
 MaxDVsText:
 	text "You already have"
 	line "this, cheater."
+	done
+
+CheatMoneyText:
+	text "Don't ask me where"
+	line "I got this."
+	done
+
+NoRocketBallText:
+	text "You already have"
+	line "this."
 	done
 
 MoveDeletersHouse_MapEvents:

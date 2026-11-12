@@ -3,7 +3,7 @@ BattleCommand_MagicBounce:
 	ret z
 	ld a, [wMoveBounced]
 	and a
-	ret z
+	ret nz
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_SWAGGER

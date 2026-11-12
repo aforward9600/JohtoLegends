@@ -286,9 +286,9 @@ HandleBetweenTurnEffects:
 	farcall HandleEndMoveAbility
 
 .NoMoreFaintingConditions:
+	call HandleHealingItems
 	farcall Core2_NewTurnEndEffects
 	call HandleFlameToxicOrb
-	call HandleHealingItems
 	call UpdateBattleMonInParty
 	call LoadTileMapToTempTileMap
 	jp HandleEncore
@@ -942,9 +942,9 @@ Battle_EnemyFirst:
 	jp z, HandleEnemyMonFaint
 
 .switch_item
-	call SetEnemyTurn
-	call ResidualDamage
-	jp z, HandleEnemyMonFaint
+;	call SetEnemyTurn
+;	call ResidualDamage
+;	jp z, HandleEnemyMonFaint
 	call RefreshBattleHuds
 	call PlayerTurn_EndOpponentProtectEndureDestinyBond
 	call CheckMobileBattleError
@@ -957,8 +957,8 @@ Battle_EnemyFirst:
 	call HasPlayerFainted
 	jp z, HandlePlayerMonFaint
 	call SetPlayerTurn
-	call ResidualDamage
-	jp z, HandlePlayerMonFaint
+;	call ResidualDamage
+;	jp z, HandlePlayerMonFaint
 	call RefreshBattleHuds
 	xor a ; BATTLEPLAYERACTION_USEMOVE
 	ld [wBattlePlayerAction], a
@@ -983,9 +983,9 @@ Battle_PlayerFirst:
 	jp z, HandlePlayerMonFaint
 	push bc
 	call SetPlayerTurn
-	call ResidualDamage
+;	call ResidualDamage
 	pop bc
-	jp z, HandlePlayerMonFaint
+;	jp z, HandlePlayerMonFaint
 	push bc
 	call RefreshBattleHuds
 	pop af
@@ -1006,8 +1006,8 @@ Battle_PlayerFirst:
 
 .switched_or_used_item
 	call SetEnemyTurn
-	call ResidualDamage
-	jp z, HandleEnemyMonFaint
+;	call ResidualDamage
+;	jp z, HandleEnemyMonFaint
 	call RefreshBattleHuds
 	xor a ; BATTLEPLAYERACTION_USEMOVE
 	ld [wBattlePlayerAction], a
@@ -1061,9 +1061,6 @@ ResidualDamage:
 ; Return z if the user fainted before
 ; or as a result of residual damage.
 ; For Sandstorm damage, see HandleWeather.
-
-	xor a
-	ld [wMoveBounced], a
 
 	call HasUserFainted
 	ret z
@@ -1268,8 +1265,10 @@ ResidualDamage:
 	call RefreshBattleHuds
 	ld c, 20
 	call DelayFrames
-	xor a
-	ret
+	ldh a, [hBattleTurn]
+	and a
+	jp z, HandlePlayerMonFaint
+	jp HandleEnemyMonFaint
 
 HandleSlowStart:
 	ldh a, [hSerialConnectionStatus]
@@ -5004,13 +5003,21 @@ BattleMenu_Pack:
 else
 
 BattleMenu_Pack:
+;	ld a, [wBattleType]
+;	cp BATTLETYPE_CANLOSE
+;	jr z, .ItemsCantBeUsed
+
+;	ld a, [wBattleMode]
+;	dec a
+;	jr nz, .ItemsCantBeUsed
+
 	ld a, [wLinkMode]
 	and a
-	jp nz, .ItemsCantBeUsed
+	jr nz, .ItemsCantBeUsed
 
 	ld a, [wInBattleTowerBattle]
 	and a
-	jp nz, .ItemsCantBeUsed
+	jr nz, .ItemsCantBeUsed
 
 	call LoadStandardMenuHeader
 

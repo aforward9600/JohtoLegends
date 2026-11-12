@@ -202,6 +202,18 @@ KurtsHouseKurtText:
 
 	para "My son makes good"
 	line "money, at least…"
+
+	para "Also, I heard that"
+	line "Silph had a Ball"
+	cont "stolen that can"
+	cont "catch anything"
+	cont "without fail."
+
+	para "If I had made it,"
+	line "I'd call it the"
+	cont "NEVER FAIL Ball."
+
+	para "Whadya think?"
 	done
 
 KurtsHouse_MapEvents:

@@ -154,6 +154,14 @@ ViridianCityGrampsNearGymBlueReturnedText:
 
 	para "Wonder why he's"
 	line "away so often?"
+
+	para "Well, he is rich,"
+	line "after all."
+
+	para "If I had that kind"
+	line "money, I'd be set!"
+
+	para "CHA-CHING!"
 	done
 
 ViridianCityDreamEaterFisherText:

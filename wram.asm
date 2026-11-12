@@ -2737,8 +2737,7 @@ wHoOhTowerSceneID::                               db
 wOneIslandPortSceneID::                           db
 wSevaultCanyonSceneID::                           db
 
-	ds 31
-wMoveBounced:: db
+	ds 32
 
 wBufferMonForm::       db
 wPlayerBufferMonForm:: db
@@ -2845,7 +2844,9 @@ wPlayerMonSelection:: ds 3
 wdc5f:: db
 wdc60:: db
 
-	ds 18
+wMoveBounced:: db
+
+	ds 17
 
 wStepCount:: db ; dc73
 wPoisonStepCount:: db ; dc74

@@ -5,6 +5,8 @@ CallBattleCore2:
 
 BattleCommand_UsedMoveText:
 ; usedmovetext
+	xor a
+	ld [wMoveBounced], a
 	farcall DisplayUsedMoveText
 	jp ResetBloodMoon
 

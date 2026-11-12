@@ -17,6 +17,13 @@ ResetBattleParameters::
 	ld [wPlayerSwitched], a
 	ld [wEnemySwitched], a
 	ld [wBufferMonFormBuffer], a
+	ld [wMoveBounced], a
+	ret
+
+SwitchTurnCore2:
+	ldh a, [hBattleTurn]
+	xor 1
+	ldh [hBattleTurn], a
 	ret
 
 Core2_NewTurnEndEffects:
@@ -25,7 +32,31 @@ Core2_NewTurnEndEffects:
 	call HandleDefrost
 	call HandleSafeguard
 	call HandleScreens
-	jp HandleRoost
+	call HandleRoost
+	ld de, wBattleMonSpeed
+	ld hl, wEnemyMonSpeed
+	ld c, 2
+	call CompareBytes
+	jr z, .speed_tie
+	jr nc, .player_goes_first
+.enemy_goes_first
+	call SwitchTurnCore2
+	farcall ResidualDamage
+	call SwitchTurnCore2
+	farcall ResidualDamage
+	ret
+
+.player_goes_first
+	farcall ResidualDamage
+	call SwitchTurnCore2
+	farcall ResidualDamage
+	jr SwitchTurnCore2
+
+.speed_tie
+	call BattleRandom
+	cp 50 percent + 1
+	jr c, .player_goes_first
+	jr .enemy_goes_first
 
 HandleLeftovers:
 	ldh a, [hSerialConnectionStatus]
@@ -84,9 +115,9 @@ HandleLeftovers:
 
 .restore
 	farcall GetSixteenthMaxHP
-	farcall SwitchTurnCore
+	call SwitchTurnCore2
 	farcall RestoreHP
-	farcall SwitchTurnCore
+	call SwitchTurnCore2
 	ld hl, RecoveredWithSomethingText
 	jp StdBattleTextbox
 
@@ -233,9 +264,9 @@ HandleMysteryberry:
 
 .skip_consumption
 	call GetItemName
-	farcall SwitchTurnCore
+	call SwitchTurnCore2
 	farcall ItemRecoveryAnim
-	farcall SwitchTurnCore
+	call SwitchTurnCore2
 	ld hl, BattleText_UserRecoveredPPUsing
 	jp StdBattleTextbox
 
@@ -986,9 +1017,9 @@ ToxicSpikesCheck:
 	ld hl, BattleText_UserBadlyPoisonedByToxicSpikes ; "hurt by SPIKES!"
 	call StdBattleTextbox
 .FinishToxicSpikes
-	farcall SwitchTurnCore
+	call SwitchTurnCore2
 	farcall PoisonOpponent
-	farcall SwitchTurnCore
+	call SwitchTurnCore2
 	call RefreshBattleHuds
 	ret
 	pop hl
