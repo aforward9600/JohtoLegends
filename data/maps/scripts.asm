@@ -589,14 +589,41 @@ INCLUDE "maps/ThreeIsland.asm"
 INCLUDE "maps/BondBridge.asm"
 INCLUDE "maps/BerryForest.asm"
 INCLUDE "maps/FourIsland.asm"
+
+SECTION "Iecfall Cave Entrance", ROMX
+
 INCLUDE "maps/IcefallCaveEntrance.asm"
+
+SECTION "Iecfall Cave 1F", ROMX
+
 INCLUDE "maps/IcefallCave1F.asm"
+
+SECTION "Iecfall Cave 2F", ROMX
+
 INCLUDE "maps/IcefallCave2F.asm"
+
+SECTION "Iecfall Cave Back Cave", ROMX
+
 INCLUDE "maps/IcefallCaveBackCave.asm"
+
+SECTION "Two Island Pokecenter", ROMX
+
 INCLUDE "maps/TwoIslandPokecenter.asm"
+
+SECTION "Three Island Pokecenter", ROMX
+
 INCLUDE "maps/ThreeIslandPokecenter.asm"
+
+SECTION "Four Island Pokecenter", ROMX
+
 INCLUDE "maps/FourIslandPokecenter.asm"
+
+SECTION "Five Island", ROMX
+
 INCLUDE "maps/FiveIsland.asm"
+
+SECTION "Five Isle Meadow", ROMX
+
 INCLUDE "maps/FiveIsleMeadow.asm"
 
 SECTION "Sevii Ports", ROMX

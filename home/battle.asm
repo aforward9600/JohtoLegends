@@ -356,7 +356,15 @@ UnawareCheck::
 	homecall _UnawarePlayer
 	ret
 
-CheckIfFastBattlesIsOn::
-	ld a, [wOptions2]
-	bit FAST_BATTLES, a
+CheckSubstituteOpp::
+;	farcall CheckSubstituteMove
+;	ld a, [wSubstituteMoves]
+;	jr nz, .Yes
+	ld a, BATTLE_VARS_SUBSTATUS4_OPP
+	call GetBattleVar
+	bit SUBSTATUS_SUBSTITUTE, a
 	ret
+
+;.Yes
+;	xor a
+;	ret

@@ -17,7 +17,7 @@ ResetBattleParameters::
 	ld [wPlayerSwitched], a
 	ld [wEnemySwitched], a
 	ld [wBufferMonFormBuffer], a
-	ld [wMoveBounced], a
+;	ld [wMoveBounced], a
 	ret
 
 SwitchTurnCore2:

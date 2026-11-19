@@ -2767,7 +2767,7 @@ BattleCommand_SuperEffectiveLoopText:
 BattleCommand_SuperEffectiveText:
 ; supereffectivetext
 
-	call CheckIfFastBattlesIsOn
+	call CheckIfFastBattlesIsOn2
 	jr nz, .Defrost
 
 	ld a, [wTypeModifier]
@@ -7493,18 +7493,18 @@ PrintParalyze:
 	ld hl, ParalyzedText
 	jp StdBattleTextbox
 
-CheckSubstituteOpp:
+;CheckSubstituteOpp:
 ;	farcall CheckSubstituteMove
 ;	ld a, [wSubstituteMoves]
 ;	jr nz, .Yes
-	ld a, BATTLE_VARS_SUBSTATUS4_OPP
-	call GetBattleVar
-	bit SUBSTATUS_SUBSTITUTE, a
-	ret
+;	ld a, BATTLE_VARS_SUBSTATUS4_OPP
+;	call GetBattleVar
+;	bit SUBSTATUS_SUBSTITUTE, a
+;	ret
 
-.Yes
-	xor a
-	ret
+;.Yes
+;	xor a
+;	ret
 
 INCLUDE "engine/battle/move_effects/selfdestruct.asm"
 
@@ -8186,4 +8186,9 @@ SacredSwordCheck:
 SetAToOne:
 	ld a, 1
 	and a
+	ret
+
+CheckIfFastBattlesIsOn2:
+	ld a, [wOptions2]
+	bit FAST_BATTLES, a
 	ret

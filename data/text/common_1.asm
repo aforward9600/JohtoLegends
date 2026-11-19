@@ -476,7 +476,7 @@ _RocketRadioText1::
 
 _RocketRadioText2::
 	text_start
-	line "ryanisthebomb203"
+	line "TriteHexagon"
 	done
 
 _RocketRadioText4::

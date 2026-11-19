@@ -2844,9 +2844,7 @@ wPlayerMonSelection:: ds 3
 wdc5f:: db
 wdc60:: db
 
-wMoveBounced:: db
-
-	ds 17
+	ds 18
 
 wStepCount:: db ; dc73
 wPoisonStepCount:: db ; dc74
@@ -2860,7 +2858,9 @@ wSafariTimeRemaining:: dw ; dc7a
 
 wPhoneList:: ds CONTACT_LIST_SIZE ; dc7c
 ; dc86
-	ds 22
+wMoveBounced:: db
+
+	ds 21
 
 wLuckyNumberShowFlag:: db ; dc9d
 

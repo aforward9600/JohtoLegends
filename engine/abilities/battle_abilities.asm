@@ -466,6 +466,8 @@ CompetitiveAbility:
 CheckContactAbilities:
 	call CheckNeutralGas
 	ret z
+	call CheckSubstituteOpp
+	ret z
 	call GetTargetAbility
 	cp CURSED_BODY
 	jp z, .cursedbody
@@ -519,13 +521,15 @@ CheckContactAbilities:
 	call GetTargetAbility
 	cp SHIELD_DUST
 	jr z, .ReconveneContact
+	call CheckSubstituteOpp
+	jr z, .ReconveneContact
 	call BattleRandom
 	cp 30 percent + 1
-	ret nc
+	jr nc, .ReconveneContact
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
 	and a
-	ret nz
+	jr nz, .ReconveneContact
 	call AnimateUserAbility
 	farcall BattleCommand_PoisonTarget
 	jr .ReconveneContact
@@ -535,17 +539,17 @@ CheckContactAbilities:
 	cp SHIELD_DUST
 	jr z, .ReconveneContact
 	cp INNER_FOCUS
-	ret z
+	jr z, .ReconveneContact
 	call BattleRandom
 	cp 10 percent + 1
-	ret nc
+	jr nc, .ReconveneContact
 	farcall BattleCommand_FlinchTarget
 	jr .ReconveneContact
 
 .cursedbody:
 	call BattleRandom
 	cp 30 percent + 1
-	ret nc
+	jp nc, .AfterCursedBody
 	call AnimateOppAbility
 	call BattleCommand_SwitchTurnAbilities
 	farcall CursedBodyAbility

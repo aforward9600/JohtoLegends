@@ -272,5 +272,5 @@ Kanto Legend Battle XY: GACT and Pigu
 Ho-Oh Battle: Pigu
 Megalovania: Shockslayer, Radiation
 Unwavering Heart MIDI: LyricWulf
-Marnie's Theme/Dahlia's Theme MIDI: ryanisthebomb203
+Marnie's Theme/Dahlia's Theme: TriteHexagon
 RSE Victory Road: Monstarules
