@@ -610,7 +610,7 @@ CheckContactAbilities:
 
 .Static
 	ld b, ELECTRIC
-	call CheckIfTargetIsGivenTypeAbility
+	call CheckIfUserIsGivenTypeAbility
 	ret z
 	call SafeguardAbilities
 	ret nz
@@ -633,10 +633,10 @@ CheckContactAbilities:
 
 .PoisonPoint:
 	ld b, POISON
-	call CheckIfTargetIsGivenTypeAbility
+	call CheckIfUserIsGivenTypeAbility
 	ret z
 	ld b, STEEL
-	call CheckIfTargetIsGivenTypeAbility
+	call CheckIfUserIsGivenTypeAbility
 	ret z
 	call SafeguardAbilities
 	ret nz
@@ -669,7 +669,7 @@ CheckContactAbilities:
 
 .FlameBody:
 	ld b, FIRE
-	call CheckIfTargetIsGivenTypeAbility
+	call CheckIfUserIsGivenTypeAbility
 	ret z
 	call SafeguardAbilities
 	ret nz
