@@ -32,7 +32,7 @@ JohtoGrassWildMons:
 	dbw 44, DUSCLOPS
 	dbw 44, MISMAGIUS
 
-	map_id BURNED_TOWER_B1F
+	map_id BURNED_TOWER_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 12, MAGBY
